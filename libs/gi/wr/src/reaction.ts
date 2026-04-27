@@ -411,6 +411,21 @@ export function lunarDmg(
     }
   )
 
+  const reactionDmgInc = infoMut(
+    sum(
+      input.total[`${variant}_dmgInc`],
+      input.total[`${variant}_reactionDmgInc`]
+    ),
+    { pivot: true, ...input.total[`${variant}_dmgInc`].info! }
+  )
+  const directDmgInc = infoMut(
+    sum(
+      input.total[`${variant}_dmgInc`],
+      input.total[`${variant}_directDmgInc`]
+    ),
+    { pivot: true, ...input.total[`${variant}_dmgInc`].info! }
+  )
+
   return data(
     prod(
       sum(
@@ -423,8 +438,7 @@ export function lunarDmg(
             path: `${variant}_baseDmg_`,
           })
         ),
-        input.total[`${variant}_dmgInc`],
-        input.total[`${transformativeReactions[variant].resist}_dmgInc`]
+        ...(base === 'reaction' ? [reactionDmgInc] : [directDmgInc])
       ),
       lookup(
         input.hit.hitMode,

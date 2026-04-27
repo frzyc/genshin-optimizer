@@ -1,0 +1,183 @@
+{
+  "name": "Linnea",
+  "title": "Augure des merveilles",
+  "description": "Naturaliste et conseillère de la branche de Nod-Krai de la Guilde des aventuriers.",
+  "constellationName": "Alcyon",
+  "auto": {
+    "name": "Protocole de capture",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 3 tirs consécutifs."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Effectue un <strong>tir visé</strong> plus précis infligeant davantage de DGT.",
+        "2": "Lors de la visée, la flèche se charge de cristaux de pierre, infligeant des <geo>DGT Géo</geo> quand elle est complètement chargée."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Tire une pluie de flèches depuis les airs et plonge au sol, infligeant des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT tir visé",
+      "4": "DGT tir visé (pleine charge)",
+      "5": "DGT durant la chute",
+      "6": "DGT chute basse/élevée",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Contre-mesure : Cri de guerre de Lumi !",
+    "description": {
+      "0": "Partez à l'aventure avec Lumi ! L'attaque de Lumi est différente selon le type d'appui simple utilisé.",
+      "1": "<br/>",
+      "2": "<strong>Appui simple</strong>",
+      "3": "Lumi attaque sans cesse en <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>forme super puissante</tooltip></strong> les ennemis proches, infligeant des <geo>DGT Géo de zone</geo>. Si un voile lunaire est présent à proximité, Lumi inflige également des <geo>DGT Géo de zone</geo> considérés comme des DGT de réaction de Sélénocristallisation aux ennemis à proximité.",
+      "4": "<br/>",
+      "5": "<strong>Appui simple répété</strong>",
+      "6": "Il est temps de montrer ce dont vous êtes vraiment capables ! Après avoir utilisé une compétence élémentaire, Linnea peut utiliser un appui simple répété avec sa compétence élémentaire ou son attaque normale pour nourrir Lumi avec des gemmes scintillantes. Lumi, le ventre plein, frappe alors en <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>forme ultra puissante</tooltip></strong>, infligeant une fois de puissants <geo>DGT Géo de zone</geo> considérés comme des DGT de réaction de Sélénocristallisation aux ennemis proches, puis passe en <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>forme puissante</tooltip></strong>.",
+      "7": "De plus, utiliser sa compétence élémentaire avec un appui simple répété augmente la RÉS à l'interruption de Linnea.",
+      "8": "<br/>",
+      "9": "<i>« À toi, Lumi ! »</i>"
+    },
+    "skillParams": {
+      "0": "DGT de broyeur boum-boum (Lumi)",
+      "1": "DGT de marteau de surcouple (Lumi)",
+      "2": "DGT de marteau d'un million de tonnes (Lumi)",
+      "3": "Durée de Lumi",
+      "4": "Temps de recharge",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Mémo : Guide de survie en conditions extrêmes",
+    "description": {
+      "0": "Même les aventuriers les plus aguerris ont besoin de repos ! Linnea invoque Lumi pour frapper en <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>forme super puissante</tooltip></strong> : elle soigne tous les personnages de l'équipe à proximité et, pendant un certain temps, soigne de façon continue tous les personnages déployés à proximité selon la DÉF de Linnea.",
+      "1": "Si Lumi est déjà sur le terrain lors du déclenchement du déchaînement élémentaire, sa durée est réinitialisée, tandis que sa forme d'attaque reste inchangée.",
+      "2": "<br/>",
+      "3": "<i>« Tout aventurier professionnel digne de ce nom préfère se sortir d'une situation périlleuse plutôt que de faire des découvertes, aussi incroyables soient-elles ! »</i>"
+    },
+    "skillParams": {
+      "0": "Premiers soins",
+      "1": "Soins continus",
+      "2": "Durée des soins",
+      "3": "Temps de recharge",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Notes d'observation sur le terrain",
+    "description": {
+      "0": "Lorque Lumi est sur le terrain, la <geo>RÉS Géo</geo> des ennemis près d'elle diminue de 15 %.",
+      "1": "<br/>",
+      "2": "<strong>Signelune « Lueur ascendante »</strong> : la compétence élémentaire <strong><tooltip ns=char_Linnea_gen baseKey18=skill>Contre-mesure : Cri de guerre de Lumi !</tooltip></strong> et le déchaînement élémentaire <strong><tooltip ns=char_Linnea_gen baseKey18=burst>Mémo : Guide de survie en conditions extrêmes</tooltip></strong> de Linnea sont renforcés, et après avoir invoqué Lumi, la <geo>RÉS Géo</geo> des ennemis près d'elle diminue de 15 % supplémentaires."
+    }
+  },
+  "passive2": {
+    "name": "Archive naturaliste universelle",
+    "description": {
+      "0": "Linnea augmente la maîtrise élémentaire selon votre personnage déployé d'une valeur équivalant à 5 % de sa DÉF : ",
+      "1": [
+        " Si votre personnage déployé est un personnage signelunaire : la maîtrise élémentaire de ce dernier augmente.",
+        " Si votre personnage déployé n'est pas un personnage signelunaire : la maîtrise élémentaire de Linnea augmente."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Bénédiction de signelune : Enquête sur l'habitat",
+    "description": {
+      "0": "Lorsqu'un personnage de l'équipe déclenche une réaction de Cristallisation Hydro, elle est convertie en réaction de Sélénocristallisation, dont les DGT de base augmentent selon la DÉF de Linnea : chaque tranche de 100 pts de DÉF augmente les DGT de base de 0,7 %, les DGT pouvant être augmentés d'un maximum de 14 % de cette manière.",
+      "1": "<br/>",
+      "2": "De plus, la <strong>signelune</strong> de l'équipe augmente d'un niveau lorsque Linnea fait partie de l'équipe."
+    }
+  },
+  "passive": {
+    "name": "Aventurière experte",
+    "description": {
+      "0": "Lorsqu'elle n'est pas en combat, le temps de charge requis lorsque Linnea effectue un <strong>tir visé</strong> diminue grandement et elle tire une <strong>flèche ultra-rapide</strong> à la place, déclenchant divers effets selon la cible touchée : ",
+      "1": [
+        " Animal spécifique : la <strong>flèche ultra-rapide</strong> se transforme en filet spécial capable de capturer l'essence et la forme de l'animal, et de les utiliser comme support pour manifester à nouveau sa forme physique. Ce filet ne peut être utilisé qu'un nombre limité de fois par semaine.",
+        " Filon de minerai utilisable en forge : Linnea envoie Lumi, qui frappe rapidement le minerai marqué par la <strong>flèche ultra-rapide</strong> et récupère le minerai délogé. Si Lumi n'est pas sur le terrain, Linnea l'invoque brièvement pour l'aider à récupérer le minerai."
+      ],
+      "2": "<br/>",
+      "3": "Les DGT infligés aux ennemis par les <strong>flèches ultra-rapides</strong> diminuent à 20 % des DGT d'origine. De plus, Linnea doit se reposer un certain temps après avoir tiré un certain nombre de <strong>flèches ultra-rapides</strong> avant de pouvoir continuer à en tirer."
+    }
+  },
+  "constellation1": {
+    "name": "Classification provisoire",
+    "description": {
+      "0": "En utilisant sa compétence élémentaire <strong><tooltip ns=char_Linnea_gen baseKey18=skill>Contre-mesure : Cri de guerre de Lumi !</tooltip></strong> ou en activant une harmonie de voile lunaire, Linnea obtient 6 <strong>catalogues de terrain</strong> pendant 10 s, cet effet pouvant être cumulé 18 fois maximum. Lorsqu'un personnage de l'équipe à proximité inflige des DGT de réaction de Sélénocristallisation, un catalogue de terrain est consommé pour augmenter les DGT infligés d'une valeur équivalant à 75 % de la DÉF de Linnea.",
+      "1": "De plus, lorsque Lumi utilise son <strong>marteau d'un million de tonnes</strong> en <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>forme ultra puissante</tooltip></strong>, Linnea peut consommer jusqu'à 5 catalogues de terrain, chaque catalogue consommé augmentant les DGT infligés d'une valeur équivalant à 150 % de sa DÉF."
+    }
+  },
+  "constellation2": {
+    "name": "Présage de joie et de tristesse",
+    "description": {
+      "0": "Pendant 8 s après avoir activé une harmonie de voile lunaire, les DGT CRIT infligés par tous les personnages <hydro>Hydro</hydro> et <geo>Géo</geo> de l'équipe augmentent de 40 % et les DGT CRIT infligés par le <strong>marteau d'un million de tonnes</strong> de Lumi en <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>forme ultra puissante</tooltip></strong> augmentent de 150 % supplémentaires.",
+      "1": "<br/>",
+      "2": "<strong>Signelune « Lueur ascendante »</strong> : lorsque Lumi utilise son <strong>marteau de surcouple</strong> en <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>forme super puissante</tooltip></strong> ou utilise son <strong>marteau d'un million de tonnes</strong> en forme ultra puissante, elle active une harmonie de voile lunaire, harmonie pour laquelle tous les personnages <hydro>Hydro</hydro> et <geo>Géo</geo> de l'équipe sont considérés comme ayant appliqué leur élément lors de la réaction."
+    }
+  },
+  "constellation3": {
+    "name": "Page de journal d'événements",
+    "description": {
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Linnea_gen baseKey18=skill>Contre-mesure : Cri de guerre de Lumi !</tooltip></strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Instinct d'experte",
+    "description": {
+      "0": "Pendant 5 s après avoir activé une harmonie de voile lunaire, la DÉF de Linnea et de votre personnage déployé augmente de 25 %. Cet effet d'augmentation de DÉF peut être cumulé lorsque Linnea est sur le terrain."
+    }
+  },
+  "constellation5": {
+    "name": "Cadeau d'adieu du pays des fées",
+    "description": {
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Linnea_gen baseKey18=burst>Mémo : Guide de survie en conditions extrêmes</tooltip></strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Rêve du Brachet doré",
+    "description": {
+      "0": "La constellation <strong>Classification provisoire</strong> est renforcée : Linnea obtient directement le maximum de <strong>catalogues de terrain</strong> en utilisant la compétence élémentaire <strong><tooltip ns=char_Linnea_gen baseKey18=skill>Contre-mesure : Cri de guerre de Lumi !</tooltip></strong> ou en déclenchant une harmonie de voile lunaire, et consommer des <strong>catalogues de terrain</strong> consomme une quantité de catalogues d'une valeur équivalant à 2 fois la quantité d'origine consommée afin d'augmenter l'amélioration de DGT jusqu'à 150 % de sa valeur d'origine.",
+      "1": "<br/>",
+      "2": "<strong>Signelune « Lueur ascendante »</strong> : les DGT de réaction de Sélénocristallisation des personnages de l'équipe à proximité bénéficient d'une <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>élévation</strong></tooltip> de 25 %."
+    }
+  }
+}

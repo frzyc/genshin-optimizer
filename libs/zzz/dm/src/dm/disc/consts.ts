@@ -24,4 +24,6 @@ export const DiscIdMap = {
   '33400': 'MoonlightLullaby',
   '33500': 'WhiteWaterBallad',
   '33600': 'ShiningAria',
+  '33700': 'BunnyInWonderland',
+  '33800': 'NotesFromTheChained',
 } as const

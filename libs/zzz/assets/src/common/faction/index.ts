@@ -1,3 +1,4 @@
+import AngelsOfDelusion from './IconCampAngelsOfDelusion.png'
 import BelebogHeavyIndustries from './IconCampBelobogIndustries.png'
 import KrampusComplianceAuthority from './IconCampBlackRoot.png'
 import CunningHares from './IconCampGentleHouse.png'
@@ -13,6 +14,7 @@ import YunkuiSummit from './IconCampSuibian.png'
 import VictoriaHousekeepingCo from './IconCampVictoriaHousekeepingCo.png'
 
 const data = {
+  AngelsOfDelusion,
   BelebogHeavyIndustries,
   CunningHares,
   CriminalInvestigationSpecialResponseTeam,

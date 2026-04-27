@@ -1,5 +1,5 @@
 import type { AdDims, AdProps } from '@genshin-optimizer/common/ad'
-import { getGOAd, getZOLootbarAd } from '@genshin-optimizer/common/ad'
+import { getGOAd } from '@genshin-optimizer/common/ad'
 import { getGODrakeAd } from '@genshin-optimizer/common/ad'
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { getRandomElementFromArray } from '@genshin-optimizer/common/util'
@@ -40,7 +40,6 @@ function getAdComponents(
     getGOAd,
     // getGODevAd,
     getGODrakeAd,
-    getZOLootbarAd,
   ]
     .map((c) => c(dims))
     .filter(notEmpty)

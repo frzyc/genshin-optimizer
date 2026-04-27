@@ -49,6 +49,7 @@ import Gorou from './Gorou'
 import HuTao from './HuTao'
 import Iansan from './Iansan'
 import Ifa from './Ifa'
+import Illuga from './Illuga'
 import Ineffa from './Ineffa'
 import Jahoda from './Jahoda'
 import Jean from './Jean'
@@ -67,6 +68,7 @@ import KukiShinobu from './KukiShinobu'
 import LanYan from './LanYan'
 import Lauma from './Lauma'
 import Layla from './Layla'
+import Linnea from './Linnea'
 import Lisa from './Lisa'
 import Lynette from './Lynette'
 import Lyney from './Lyney'
@@ -111,6 +113,7 @@ import TravelerHydroM from './TravelerHydroM'
 import TravelerPyroF from './TravelerPyroF'
 import TravelerPyroM from './TravelerPyroM'
 import Varesa from './Varesa'
+import Varka from './Varka'
 import Venti from './Venti'
 import Wanderer from './Wanderer'
 import Wriothesley from './Wriothesley'
@@ -128,6 +131,7 @@ import Yoimiya from './Yoimiya'
 import YumemizukiMizuki from './YumemizukiMizuki'
 import YunJin from './YunJin'
 import Zhongli from './Zhongli'
+import Zibai from './Zibai'
 
 const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Aino,
@@ -172,6 +176,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   HuTao,
   Iansan,
   Ifa,
+  Illuga,
   Ineffa,
   Jahoda,
   Jean,
@@ -190,6 +195,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   LanYan,
   Lauma,
   Layla,
+  Linnea,
   Lisa,
   Lynette,
   Lyney,
@@ -234,6 +240,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   TravelerPyroF,
   TravelerPyroM,
   Varesa,
+  Varka,
   Venti,
   Wanderer,
   Wriothesley,
@@ -251,6 +258,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   YumemizukiMizuki,
   YunJin,
   Zhongli,
+  Zibai,
 } as const
 export function getCharSheet(charKey: CharacterKey, gender: GenderKey) {
   return characters[charKeyToCharSheetKey(charKey, gender)]

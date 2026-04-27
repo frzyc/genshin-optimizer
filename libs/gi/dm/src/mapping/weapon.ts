@@ -59,6 +59,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   11516: 'PeakPatrolSong',
   11517: 'Azurelight',
   11518: 'AthameArtis',
+  11519: 'LightbearingMoonshard',
 
   //claymore
   12101: 'WasterGreatsword',
@@ -107,6 +108,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   12512: 'Verdict',
   12513: 'FangOfTheMountainKing',
   12514: 'AThousandBlazingSuns',
+  12515: 'GestOfTheMightyWolf',
 
   //polearm
   13101: 'BeginnersProtector',
@@ -263,5 +265,6 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   15513: 'SilvershowerHeartstrings',
   15514: 'AstralVulturesCrimsonPlumage',
   15515: 'TheDaybreakChronicles',
+  15516: 'GoldenFrostboundOath',
 } as const
 export type WeaponId = keyof typeof weaponIdMap

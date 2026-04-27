@@ -2,6 +2,7 @@
 import type { TagMapNodeEntries } from '../util'
 import AstralVoice from './sheets/AstralVoice'
 import BranchBladeSong from './sheets/BranchBladeSong'
+import BunnyInWonderland from './sheets/BunnyInWonderland'
 import ChaosJazz from './sheets/ChaosJazz'
 import ChaoticMetal from './sheets/ChaoticMetal'
 import DawnsBloom from './sheets/DawnsBloom'
@@ -11,6 +12,7 @@ import HormonePunk from './sheets/HormonePunk'
 import InfernoMetal from './sheets/InfernoMetal'
 import KingOfTheSummit from './sheets/KingOfTheSummit'
 import MoonlightLullaby from './sheets/MoonlightLullaby'
+import NotesFromTheChained from './sheets/NotesFromTheChained'
 import PhaethonsMelody from './sheets/PhaethonsMelody'
 import PolarMetal from './sheets/PolarMetal'
 import ProtoPunk from './sheets/ProtoPunk'
@@ -28,6 +30,7 @@ import YunkuiTales from './sheets/YunkuiTales'
 const data: TagMapNodeEntries[] = [
   AstralVoice,
   BranchBladeSong,
+  BunnyInWonderland,
   ChaosJazz,
   ChaoticMetal,
   DawnsBloom,
@@ -37,6 +40,7 @@ const data: TagMapNodeEntries[] = [
   InfernoMetal,
   KingOfTheSummit,
   MoonlightLullaby,
+  NotesFromTheChained,
   PhaethonsMelody,
   PolarMetal,
   ProtoPunk,

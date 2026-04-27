@@ -1,0 +1,24 @@
+{
+  "name": "Ramo Dourado do Juramento Gelado",
+  "description": {
+    "0": "Um Arco Longo feito de madeira branca ancestral que, em um passado distante, pertenceu ao Rei dos Geladinhos do norte."
+  },
+  "passiveName": "Saudação da Alvorada",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta a DEF em <cryo>16%</cryo>. Quando a Habilidade Elemental ou ataques de Cristalização Lunar do portador atingirem o inimigo, obtém o efeito Gentileza Feérica por 6s: aumenta o Dano Geo do portador em <cryo>40%</cryo>, aumenta o Dano de Cristalização Lunar em <cryo>40%</cryo>. Na duração do efeito, se o portador estiver perto de uma Jaula Lunar, os outros membros próximos da equipe obtêm o efeito Truque Maléfico Feérico: aumenta o Dano Geo em <cryo>20%</cryo>, aumenta o Dano de Cristalização Lunar em <cryo>20%</cryo>. Esse efeito pode ser desencadeado mesmo quando o portador não for o personagem ativo."
+    },
+    "1": {
+      "0": "Aumenta a DEF em <cryo>20%</cryo>. Quando a Habilidade Elemental ou ataques de Cristalização Lunar do portador atingirem o inimigo, obtém o efeito Gentileza Feérica por 6s: aumenta o Dano Geo do portador em <cryo>50%</cryo>, aumenta o Dano de Cristalização Lunar em <cryo>50%</cryo>. Na duração do efeito, se o portador estiver perto de uma Jaula Lunar, os outros membros próximos da equipe obtêm o efeito Truque Maléfico Feérico: aumenta o Dano Geo em <cryo>25%</cryo>, aumenta o Dano de Cristalização Lunar em <cryo>25%</cryo>. Esse efeito pode ser desencadeado mesmo quando o portador não for o personagem ativo."
+    },
+    "2": {
+      "0": "Aumenta a DEF em <cryo>24%</cryo>. Quando a Habilidade Elemental ou ataques de Cristalização Lunar do portador atingirem o inimigo, obtém o efeito Gentileza Feérica por 6s: aumenta o Dano Geo do portador em <cryo>60%</cryo>, aumenta o Dano de Cristalização Lunar em <cryo>60%</cryo>. Na duração do efeito, se o portador estiver perto de uma Jaula Lunar, os outros membros próximos da equipe obtêm o efeito Truque Maléfico Feérico: aumenta o Dano Geo em <cryo>30%</cryo>, aumenta o Dano de Cristalização Lunar em <cryo>30%</cryo>. Esse efeito pode ser desencadeado mesmo quando o portador não for o personagem ativo."
+    },
+    "3": {
+      "0": "Aumenta a DEF em <cryo>28%</cryo>. Quando a Habilidade Elemental ou ataques de Cristalização Lunar do portador atingirem o inimigo, obtém o efeito Gentileza Feérica por 6s: aumenta o Dano Geo do portador em <cryo>70%</cryo>, aumenta o Dano de Cristalização Lunar em <cryo>70%</cryo>. Na duração do efeito, se o portador estiver perto de uma Jaula Lunar, os outros membros próximos da equipe obtêm o efeito Truque Maléfico Feérico: aumenta o Dano Geo em <cryo>35%</cryo>, aumenta o Dano de Cristalização Lunar em <cryo>35%</cryo>. Esse efeito pode ser desencadeado mesmo quando o portador não for o personagem ativo."
+    },
+    "4": {
+      "0": "Aumenta a DEF em <cryo>32%</cryo>. Quando a Habilidade Elemental ou ataques de Cristalização Lunar do portador atingirem o inimigo, obtém o efeito Gentileza Feérica por 6s: aumenta o Dano Geo do portador em <cryo>80%</cryo>, aumenta o Dano de Cristalização Lunar em <cryo>80%</cryo>. Na duração do efeito, se o portador estiver perto de uma Jaula Lunar, os outros membros próximos da equipe obtêm o efeito Truque Maléfico Feérico: aumenta o Dano Geo em <cryo>40%</cryo>, aumenta o Dano de Cristalização Lunar em <cryo>40%</cryo>. Esse efeito pode ser desencadeado mesmo quando o portador não for o personagem ativo."
+    }
+  }
+}

@@ -1,3 +1,4 @@
+import { deobfPropMappings } from '../../mapping'
 import { readDMJSON } from '../../util'
 
 type AvatarSkillDepotExcelConfigDataObf = {
@@ -9,18 +10,10 @@ type AvatarSkillDepotExcelConfigDataObf = {
   talents: number[] //[341, 342, 343, 344, 345, 346],
   talentStarName: string //"Talent_Noel",
   // inherentProudSkillOpens
-  LOAMPGAFLMA: {
+  inherentProudSkillOpens: {
     proudSkillGroupId?: number
-    AMKLKEEBGPM?: number // needAvatarPromoteLevel
+    needAvatarPromoteLevel?: number // needAvatarPromoteLevel
   }[]
-  // unlocked proudskills
-  GFFGFBCGBDH: [
-    {
-      BFCALCJMJKD: number[] // no clue [ 1000701 ],
-      AFMOAPEAINH: string // unlock condition "SPECIAL_PROUD_SKILL_OPEN_CONDITION_TYPE_QUEST_FINISH",
-      proudSkillGroupId: number // 2251
-    },
-  ]
   /*[
     {
       "proudSkillGroupId": 3421, //devotion passive1
@@ -36,6 +29,12 @@ type AvatarSkillDepotExcelConfigDataObf = {
     {},
     {}
   ],*/
+  // unlocked proudskills
+  [deobfPropMappings.lockedProudSkillOpens]: {
+    [deobfPropMappings.numberArray]: number[] // no clue, prob related to proudSkillId [ 1000701 ],
+    [deobfPropMappings.unlockCondition]: string // unlock condition "SPECIAL_PROUD_SKILL_OPEN_CONDITION_TYPE_QUEST_FINISH",
+    proudSkillGroupId: number // 2251
+  }[]
   skillDepotAbilityGroup: string //""
 }
 export type AvatarSkillDepotExcelConfigData = {
@@ -66,9 +65,9 @@ export type AvatarSkillDepotExcelConfigData = {
     {}
   ],*/
   lockedProudSkillOpens: {
-    proudSkillGroupId: number
-    unlockCondition: string
     numberArray: number[]
+    unlockCondition: string
+    proudSkillGroupId: number
   }[]
   skillDepotAbilityGroup: string //""
 }
@@ -92,21 +91,24 @@ const avatarSkillDepotExcelConfigData = Object.fromEntries(
   avatarSkillDepotExcelConfigDataSrc
     // Convert obfuscated properties to unobf names
     .map((obfSkill) => {
-      const { LOAMPGAFLMA: _, ...obfSkillTrim } = obfSkill
+      const {
+        [deobfPropMappings.lockedProudSkillOpens]: lockedProudSkillOpens,
+        ...obfSkillTrim
+      } = obfSkill
       return {
         ...obfSkillTrim,
-        inherentProudSkillOpens: obfSkill.LOAMPGAFLMA.map((openObf) => {
-          const { AMKLKEEBGPM: _, ...openObfTrim } = openObf
+        lockedProudSkillOpens: lockedProudSkillOpens.map((openObf) => {
+          const {
+            [deobfPropMappings.numberArray]: numberArray,
+            [deobfPropMappings.unlockCondition]: unlockCondition,
+            ...openObfTrim
+          } = openObf
           return {
             ...openObfTrim,
-            needAvatarPromoteLevel: openObf.AMKLKEEBGPM,
+            numberArray,
+            unlockCondition,
           }
         }),
-        lockedProudSkillOpens: obfSkill.GFFGFBCGBDH.map((openObf) => ({
-          ...openObf,
-          numberArray: openObf.BFCALCJMJKD,
-          unlockCondition: openObf.AFMOAPEAINH,
-        })),
       } as AvatarSkillDepotExcelConfigData
     })
     .map((skill) => {

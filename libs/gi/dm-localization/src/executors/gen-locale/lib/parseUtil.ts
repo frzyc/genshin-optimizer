@@ -223,7 +223,7 @@ export const parsingFunctions: {
         } as any
       }
     }
-    throw `parsing fields error[${keys}](${lang}): ${string}`
+    throw `parsing fields error[${keys}](${lang}) len ${strings.length}: ${string}`
   },
   paragraph: (lang, string) => paragraph(string),
   skillParam: (lang, string) => {

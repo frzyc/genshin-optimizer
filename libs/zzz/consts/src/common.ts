@@ -21,6 +21,7 @@ export const otherStatKeys = [
   'anom_crit_dmg_', // Anomaly CRIT DMG
   'dazeInc_', // Daze Increase
   'sheerForce',
+  'sheer_dmg_',
 ] as const
 
 export const unCondKeys = [

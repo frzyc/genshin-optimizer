@@ -56,7 +56,7 @@ export function UploadCard({
         return undefined
       }
       // Figure out the file format
-      if (parsed.format === 'ZOOD') {
+      if (parsed.format === 'ZOOD' || parsed.format === 'ZOD') {
         // Parse as ZOOD format
         const copyStorage = new SandboxStorage(undefined, 'zzz')
         copyStorage.copyFrom(database.storage)

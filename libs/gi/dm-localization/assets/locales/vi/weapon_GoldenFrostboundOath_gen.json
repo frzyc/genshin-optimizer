@@ -1,0 +1,24 @@
+{
+  "name": "Lời Thề Vàng Sương Giá",
+  "description": {
+    "0": "Cây cung được chế tác từ gỗ trắng cổ xưa, trong quá khứ xa xôi từng thuộc về Vua Sương Linh của vùng biên thùy phía bắc."
+  },
+  "passiveName": "Lời Chào Từ Ánh Bình Minh",
+  "passiveDescription": {
+    "0": {
+      "0": "Phòng Ngự tăng <cryo>16%</cryo>. Khi Kỹ Năng Nguyên Tố hoặc tấn công Nguyệt-Kết Tinh của người trang bị đánh trúng kẻ địch, sẽ nhận hiệu quả \"Trả Ơn Của Fae Sương Giá\" trong 6s: Sát Thương Nguyên Tố Nham gây ra bởi người trang bị tăng <cryo>40%</cryo>, sát thương phản ứng Nguyệt-Kết Tinh tăng <cryo>40%</cryo>. Trong thời gian duy trì, nếu tồn tại Trăng Trôi ở xung quanh người trang bị, thì tất cả nhân vật khác trong đội ở gần sẽ còn nhận được hiệu quả \"Trò Đùa Của Fae Sương Giá\": Sát Thương Nguyên Tố Nham gây ra tăng <cryo>20%</cryo>, sát thương phản ứng Nguyệt-Kết Tinh tăng <cryo>20%</cryo>. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "1": {
+      "0": "Phòng Ngự tăng <cryo>20%</cryo>. Khi Kỹ Năng Nguyên Tố hoặc tấn công Nguyệt-Kết Tinh của người trang bị đánh trúng kẻ địch, sẽ nhận hiệu quả \"Trả Ơn Của Fae Sương Giá\" trong 6s: Sát Thương Nguyên Tố Nham gây ra bởi người trang bị tăng <cryo>50%</cryo>, sát thương phản ứng Nguyệt-Kết Tinh tăng <cryo>50%</cryo>. Trong thời gian duy trì, nếu tồn tại Trăng Trôi ở xung quanh người trang bị, thì tất cả nhân vật khác trong đội ở gần sẽ còn nhận được hiệu quả \"Trò Đùa Của Fae Sương Giá\": Sát Thương Nguyên Tố Nham gây ra tăng <cryo>25%</cryo>, sát thương phản ứng Nguyệt-Kết Tinh tăng <cryo>25%</cryo>. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "2": {
+      "0": "Phòng Ngự tăng <cryo>24%</cryo>. Khi Kỹ Năng Nguyên Tố hoặc tấn công Nguyệt-Kết Tinh của người trang bị đánh trúng kẻ địch, sẽ nhận hiệu quả \"Trả Ơn Của Fae Sương Giá\" trong 6s: Sát Thương Nguyên Tố Nham gây ra bởi người trang bị tăng <cryo>60%</cryo>, sát thương phản ứng Nguyệt-Kết Tinh tăng <cryo>60%</cryo>. Trong thời gian duy trì, nếu tồn tại Trăng Trôi ở xung quanh người trang bị, thì tất cả nhân vật khác trong đội ở gần sẽ còn nhận được hiệu quả \"Trò Đùa Của Fae Sương Giá\": Sát Thương Nguyên Tố Nham gây ra tăng <cryo>30%</cryo>, sát thương phản ứng Nguyệt-Kết Tinh tăng <cryo>30%</cryo>. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "3": {
+      "0": "Phòng Ngự tăng <cryo>28%</cryo>. Khi Kỹ Năng Nguyên Tố hoặc tấn công Nguyệt-Kết Tinh của người trang bị đánh trúng kẻ địch, sẽ nhận hiệu quả \"Trả Ơn Của Fae Sương Giá\" trong 6s: Sát Thương Nguyên Tố Nham gây ra bởi người trang bị tăng <cryo>70%</cryo>, sát thương phản ứng Nguyệt-Kết Tinh tăng <cryo>70%</cryo>. Trong thời gian duy trì, nếu tồn tại Trăng Trôi ở xung quanh người trang bị, thì tất cả nhân vật khác trong đội ở gần sẽ còn nhận được hiệu quả \"Trò Đùa Của Fae Sương Giá\": Sát Thương Nguyên Tố Nham gây ra tăng <cryo>35%</cryo>, sát thương phản ứng Nguyệt-Kết Tinh tăng <cryo>35%</cryo>. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "4": {
+      "0": "Phòng Ngự tăng <cryo>32%</cryo>. Khi Kỹ Năng Nguyên Tố hoặc tấn công Nguyệt-Kết Tinh của người trang bị đánh trúng kẻ địch, sẽ nhận hiệu quả \"Trả Ơn Của Fae Sương Giá\" trong 6s: Sát Thương Nguyên Tố Nham gây ra bởi người trang bị tăng <cryo>80%</cryo>, sát thương phản ứng Nguyệt-Kết Tinh tăng <cryo>80%</cryo>. Trong thời gian duy trì, nếu tồn tại Trăng Trôi ở xung quanh người trang bị, thì tất cả nhân vật khác trong đội ở gần sẽ còn nhận được hiệu quả \"Trò Đùa Của Fae Sương Giá\": Sát Thương Nguyên Tố Nham gây ra tăng <cryo>40%</cryo>, sát thương phản ứng Nguyệt-Kết Tinh tăng <cryo>40%</cryo>. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    }
+  }
+}

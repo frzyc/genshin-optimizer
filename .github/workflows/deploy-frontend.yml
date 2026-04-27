@@ -36,7 +36,7 @@ jobs:
           echo "repo_deploy_secret_name=$(cat frontend_build/repo_deploy_secret_name)" >> $GITHUB_OUTPUT
           echo "ref=$(cat frontend_build/ref)" >> $GITHUB_OUTPUT
       - name: Checkout external gh-pages
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: ${{ vars[steps.vars.outputs.repo_var_name] }}
           ssh-key: ${{ secrets[steps.vars.outputs.repo_deploy_secret_name] }}

@@ -119,8 +119,7 @@ const a4AfterBurst_eleMasDisp = greaterEq(
     condA4AfterBurst,
     'on',
     prod(input.premod.atk, percent(dm.passive2.eleMasFromAtk))
-  ),
-  { path: 'eleMas', isTeamBuff: true }
+  )
 )
 const a4AfterBurst_eleMas = greaterEq(
   sum(
@@ -354,7 +353,10 @@ const sheet: TalentSheet = {
         on: {
           fields: [
             {
-              node: a4AfterBurst_eleMasDisp,
+              node: infoMut(a4AfterBurst_eleMasDisp, {
+                path: 'eleMas',
+                isTeamBuff: true,
+              }),
             },
             {
               text: stg('duration'),
