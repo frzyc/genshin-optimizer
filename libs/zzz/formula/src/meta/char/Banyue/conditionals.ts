@@ -1,8 +1,8 @@
 // WARNING: Generated file, do not modify
 export const conditionals = {
-  exSpecialBasicUsed: {
+  exSpecialFollowUpUsed: {
     sheet: 'Banyue',
-    name: 'exSpecialBasicUsed',
+    name: 'exSpecialFollowUpUsed',
     type: 'bool',
   },
   tremor: { sheet: 'Banyue', name: 'tremor', type: 'bool' },

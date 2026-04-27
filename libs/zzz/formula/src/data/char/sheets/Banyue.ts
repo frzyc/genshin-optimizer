@@ -27,7 +27,7 @@ const baseTag = getBaseTag(data_gen)
 
 const { char } = own
 
-const { exSpecialBasicUsed, tremor } = allBoolConditionals(key)
+const { exSpecialFollowUpUsed, tremor } = allBoolConditionals(key)
 const { vidyaraja } = allNumConditionals(key, true, 0, dm.ability.maxStacks)
 
 const m1_exSpecial_sheer_dmg_ = ownBuff.combat.sheer_dmg_.addWithDmgType(
@@ -156,19 +156,19 @@ const sheet = register(
   registerBuff(
     'core_sheerForce',
     ownBuff.combat.sheerForce.add(
-      exSpecialBasicUsed.ifOn(subscript(char.core, dm.core.sheerForce))
+      exSpecialFollowUpUsed.ifOn(subscript(char.core, dm.core.sheerForce))
     )
   ),
   registerBuff(
     'core_fire_dmg_',
     ownBuff.combat.dmg_.fire.add(
-      exSpecialBasicUsed.ifOn(percent(subscript(char.core, dm.core.fire_dmg_)))
+      exSpecialFollowUpUsed.ifOn(percent(subscript(char.core, dm.core.fire_dmg_)))
     )
   ),
   registerBuff(
     'core_crit_dmg_',
     ownBuff.combat.crit_dmg_.add(
-      exSpecialBasicUsed.ifOn(percent(subscript(char.core, dm.core.crit_dmg_)))
+      exSpecialFollowUpUsed.ifOn(percent(subscript(char.core, dm.core.crit_dmg_)))
     )
   ),
   registerBuff(
@@ -217,7 +217,7 @@ const sheet = register(
       cmpGE(
         char.mindscape,
         2,
-        exSpecialBasicUsed.ifOn(percent(dm.m2.crit_dmg_))
+        exSpecialFollowUpUsed.ifOn(percent(dm.m2.crit_dmg_))
       )
     )
   ),
@@ -227,7 +227,7 @@ const sheet = register(
       cmpGE(
         char.mindscape,
         2,
-        exSpecialBasicUsed.ifOn(percent(dm.m2.fire_dmg_))
+        exSpecialFollowUpUsed.ifOn(percent(dm.m2.fire_dmg_))
       )
     )
   ),

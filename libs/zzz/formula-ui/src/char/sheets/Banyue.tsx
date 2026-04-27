@@ -26,7 +26,7 @@ const sheet = createBaseSheet(key, {
       type: 'conditional',
       conditional: {
         label: coreCondText,
-        metadata: cond.exSpecialBasicUsed,
+        metadata: cond.exSpecialFollowUpUsed,
         fields: [
           fieldForBuff(buff.core_sheerForce),
           fieldForBuff(buff.core_fire_dmg_),
@@ -64,7 +64,7 @@ const sheet = createBaseSheet(key, {
       type: 'conditional',
       conditional: {
         label: coreCondText,
-        metadata: cond.exSpecialBasicUsed,
+        metadata: cond.exSpecialFollowUpUsed,
         fields: [
           fieldForBuff(buff.m2_fire_dmg_),
           fieldForBuff(buff.m2_crit_dmg_),
