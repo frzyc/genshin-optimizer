@@ -1,0 +1,24 @@
+{
+  "name": "Serment de gel doré",
+  "description": {
+    "0": "Un arc long taillé dans un bois blanc ancestral, manié jadis, en des âges révolus, par le roi des jack frost des terres du nord."
+  },
+  "passiveName": "L'aube du salut",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente la DÉF de <cryo>16 %</cryo>. Lorsque le personnage équipé de l'arme touche un ennemi avec une compétence élémentaire ou une réaction de Sélénocristallisation, il obtient l'effet Faveur de la nivéole glacée pendant 6 s : augmente ses DGT Géo de <cryo>40 %</cryo> et ses DGT de réaction de Sélénocristallisation de <cryo>40 %</cryo>. Pendant la durée de l'effet, tous les autres personnages de l'équipe à proximité obtiennent l'effet Malice de la nivéole glacée si un voile lunaire est présent à proximité du personnage équipé de l'arme : augmente les DGT Géo de <cryo>20 %</cryo> et les DGT de réaction de Sélénocristallisation de <cryo>20 %</cryo>, cet effet pouvant être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "1": {
+      "0": "Augmente la DÉF de <cryo>20 %</cryo>. Lorsque le personnage équipé de l'arme touche un ennemi avec une compétence élémentaire ou une réaction de Sélénocristallisation, il obtient l'effet Faveur de la nivéole glacée pendant 6 s : augmente ses DGT Géo de <cryo>50 %</cryo> et ses DGT de réaction de Sélénocristallisation de <cryo>50 %</cryo>. Pendant la durée de l'effet, tous les autres personnages de l'équipe à proximité obtiennent l'effet Malice de la nivéole glacée si un voile lunaire est présent à proximité du personnage équipé de l'arme : augmente les DGT Géo de <cryo>25 %</cryo> et les DGT de réaction de Sélénocristallisation de <cryo>25 %</cryo>, cet effet pouvant être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "2": {
+      "0": "Augmente la DÉF de <cryo>24 %</cryo>. Lorsque le personnage équipé de l'arme touche un ennemi avec une compétence élémentaire ou une réaction de Sélénocristallisation, il obtient l'effet Faveur de la nivéole glacée pendant 6 s : augmente ses DGT Géo de <cryo>60 %</cryo> et ses DGT de réaction de Sélénocristallisation de <cryo>60 %</cryo>. Pendant la durée de l'effet, tous les autres personnages de l'équipe à proximité obtiennent l'effet Malice de la nivéole glacée si un voile lunaire est présent à proximité du personnage équipé de l'arme : augmente les DGT Géo de <cryo>30 %</cryo> et les DGT de réaction de Sélénocristallisation de <cryo>30 %</cryo>, cet effet pouvant être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "3": {
+      "0": "Augmente la DÉF de <cryo>28 %</cryo>. Lorsque le personnage équipé de l'arme touche un ennemi avec une compétence élémentaire ou une réaction de Sélénocristallisation, il obtient l'effet Faveur de la nivéole glacée pendant 6 s : augmente ses DGT Géo de <cryo>70 %</cryo> et ses DGT de réaction de Sélénocristallisation de <cryo>70 %</cryo>. Pendant la durée de l'effet, tous les autres personnages de l'équipe à proximité obtiennent l'effet Malice de la nivéole glacée si un voile lunaire est présent à proximité du personnage équipé de l'arme : augmente les DGT Géo de <cryo>35 %</cryo> et les DGT de réaction de Sélénocristallisation de <cryo>35 %</cryo>, cet effet pouvant être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "4": {
+      "0": "Augmente la DÉF de <cryo>32 %</cryo>. Lorsque le personnage équipé de l'arme touche un ennemi avec une compétence élémentaire ou une réaction de Sélénocristallisation, il obtient l'effet Faveur de la nivéole glacée pendant 6 s : augmente ses DGT Géo de <cryo>80 %</cryo> et ses DGT de réaction de Sélénocristallisation de <cryo>80 %</cryo>. Pendant la durée de l'effet, tous les autres personnages de l'équipe à proximité obtiennent l'effet Malice de la nivéole glacée si un voile lunaire est présent à proximité du personnage équipé de l'arme : augmente les DGT Géo de <cryo>40 %</cryo> et les DGT de réaction de Sélénocristallisation de <cryo>40 %</cryo>, cet effet pouvant être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    }
+  }
+}

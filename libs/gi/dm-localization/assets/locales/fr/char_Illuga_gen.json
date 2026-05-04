@@ -161,7 +161,7 @@
   "constellation6": {
     "name": "Oriole des nuits terrifiantes",
     "description": {
-      "0": "L'effet Serment de ratniki de l'aptitude d'élévation <strong><tooltip ns=char_Illuga_gen baseKey18=passive1>« Pacte du forge-torche »</tooltip></strong> est renforcé : augmente les <geo>DGT Géo</geo> infligés aux ennemis et le taux CRIT de 10 % et les DGT CRIT de 30 %.",
+      "0": "L'effet Serment de ratniki de l'aptitude d'élévation <strong><tooltip ns=char_Illuga_gen baseKey18=passive1>« Pacte du forge-torche »</tooltip></strong> est renforcé : augmente le taux CRIT de 10 % et les DGT CRIT de 30 % en infligeant des <geo>DGT Géo</geo> à un ennemi.",
       "1": "<br/>",
       "2": "<strong>Signelune « Lueur ascendante »</strong>",
       "3": "La maîtrise élémentaire des personnages bénéficiant de l'effet Serment de ratniki augmente de 80 pts.",

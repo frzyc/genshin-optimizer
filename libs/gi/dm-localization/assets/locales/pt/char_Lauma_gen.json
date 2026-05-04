@@ -103,7 +103,7 @@
   "passive1": {
     "name": "Brilho da Noite Gelada",
     "description": {
-      "0": "Nos 20s depois de Lauma lançar sua Habilidade Elemental <strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo: Descanso da Noite Eterna</tooltip></strong>, gera efeitos de fortalecimento diferentes de acordo com o <strong>Presságio Lunar</strong>da equipe, níveis de Presságio Lunar diferentes fornecem bônus diferentes, e não acumulam.",
+      "0": "Nos 20s depois de Lauma lançar sua Habilidade Elemental <strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo: Descanso da Noite Eterna</tooltip></strong>, gera efeitos de fortalecimento diferentes de acordo com o <strong>Presságio Lunar</strong> da equipe, níveis de Presságio Lunar diferentes fornecem bônus diferentes, e não acumulam.",
       "1": "<br/>",
       "2": "<strong>Presságio Lunar: Reluzir Inicial</strong>",
       "3": "O Dano de Florescimento, Superflorescimento e Germinação causado por todos os personagens próximos pode causar um Acerto CRIT, com Taxa CRIT fixada em 15% e o Dano CRIT fixado em 100%. A Taxa CRIT fornecida por esse efeito pode acumular com a Taxa CRIT de efeitos similares que permitem essas reações elementais a causarem Acertos CRIT.",

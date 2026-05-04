@@ -156,6 +156,8 @@ export const allNonModStats = [
   ...allLunarReactionKeys.flatMap((lr) => [
     `${lr}_baseDmg_` as const,
     `${lr}_specialDmg_` as const,
+    `${lr}_reactionDmgInc` as const,
+    `${lr}_directDmgInc` as const,
   ]),
   ...allEleEnemyResKeys,
   'enemyDefRed_' as const,

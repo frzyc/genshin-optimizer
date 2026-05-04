@@ -1,4 +1,3 @@
-export * from './assets'
 export * from './components'
 export * from './GoAd'
 export * from './SroAd'

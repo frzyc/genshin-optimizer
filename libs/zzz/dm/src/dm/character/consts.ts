@@ -58,6 +58,8 @@ export const characterIdMap = {
   '1481': 'Dialyn',
   '1491': 'Sunna',
   '1501': 'Aria',
+  '1511': 'NangongYu',
+  '1521': 'Cissia',
 } as const
 
 export const attributeMap: Record<number, AttributeKey> = {
@@ -89,6 +91,7 @@ export const factionMap: Record<number, FactionKey> = {
   10: 'YunkuiSummit',
   11: 'SpookShack',
   12: 'KrampusComplianceAuthority',
+  13: 'AngelsOfDelusion',
 }
 
 export const characterRarityMap: Record<number, CharacterRarityKey> = {

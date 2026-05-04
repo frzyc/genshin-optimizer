@@ -1,0 +1,174 @@
+{
+  "name": "法爾伽",
+  "title": "北風騎士",
+  "description": "西風騎士團大團長，守護蒙德的北風騎士。",
+  "constellationName": "天狼座",
+  "auto": {
+    "name": "流光之舞",
+    "fields": {
+      "normal": {
+        "0": "<strong>普通攻擊</strong>",
+        "1": "仿擬古代騎士的戰舞，雙持大劍進行至多五段的連續攻擊。"
+      },
+      "charged": {
+        "0": "<strong>重擊</strong>",
+        "1": "消耗一定體力，向前方突進後，進行一次格外有力的雙劍揮砍。"
+      },
+      "plunging": {
+        "0": "<strong>下落攻擊</strong>",
+        "1": "從空中下墜衝擊地面，攻擊下落路徑上的敵人，並在落地時造成範圍傷害。"
+      }
+    },
+    "skillParams": {
+      "0": "一段傷害",
+      "1": "二段傷害",
+      "2": "三段傷害",
+      "3": "四段傷害",
+      "4": "五段傷害",
+      "5": "重擊傷害",
+      "6": "重擊體力消耗",
+      "7": "下墜期間傷害",
+      "8": "低空/高空墜地衝擊傷害",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "烈風終墜",
+    "description": {
+      "0": "以絕對的力量，呈現西風劍術的真髓，依據點按、長按，以不同的方式產生效果。",
+      "1": "<br/>",
+      "2": "<strong>點按</strong>",
+      "3": "向前方騰躍而起並順勢劈斬，造成<anemo>風元素範圍傷害</anemo>，並切換至<tooltip ns=tooltips_gen baseKey18=11280001 values=[]><strong>狂飆突進</strong></tooltip>模式。",
+      "4": "處於<strong>狂飆突進</strong>模式下時，法爾伽的普通攻擊與重擊造成的傷害提高，無法進行下落攻擊，且進行普通攻擊與重擊時，將根據隊伍中角色的元素類型，使雙持的大劍分別造成無法被附魔覆蓋的對應元素傷害。",
+      "5": "此外，處於<strong>狂飆突進</strong>模式下時，若隊伍中存在<pyro>火元素</pyro>、<hydro>水元素</hydro>、<electro>雷元素</electro>或<cryo>冰元素</cryo>角色，法爾伽的元素戰技<strong>烈風終墜</strong>將會被替換為特殊的元素戰技<tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>四風將起</strong></tooltip>，造成對應元素傷害與<anemo>風元素傷害</anemo>。此外，法爾伽還可以消耗特殊元素戰技<strong>四風將起</strong>的可使用次數，進行不消耗體力的特殊重擊<strong>蒼噬</strong>，造成對應元素傷害與<anemo>風元素傷害</anemo>。",
+      "6": "<br/>",
+      "7": "<strong>長按</strong>",
+      "8": "進行蓄力後，向前方騰躍而起，蓄力時間會提升騰躍距離。"
+    },
+    "skillParams": {
+      "0": "技能傷害",
+      "1": "點按冷卻時間",
+      "2": "長按冷卻時間",
+      "3": "狂飆突進·持續時間",
+      "4": "狂飆突進·一段傷害",
+      "5": "狂飆突進·二段傷害",
+      "6": "狂飆突進·三段傷害",
+      "7": "狂飆突進·四段傷害",
+      "8": "狂飆突進·五段傷害",
+      "9": "狂飆突進·重擊傷害",
+      "10": "四風將起傷害",
+      "11": "蒼噬傷害",
+      "12": "四風將起冷卻時間",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "我即朔風",
+    "description": {
+      "0": "以最強的北風騎士之名，向前方揮出強力的二連斬，造成兩次<anemo>風元素傷害</anemo>。",
+      "1": "若隊伍中存在<pyro>火元素</pyro>、<hydro>水元素</hydro>、<electro>雷元素</electro>或<cryo>冰元素</cryo>角色，則第一次斬擊將會按照上述元素類型的優先順序，轉為造成對應元素傷害。"
+    },
+    "skillParams": {
+      "0": "技能第一段傷害",
+      "1": "技能第二段傷害",
+      "2": "冷卻時間",
+      "3": "元素能量",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "曉風的行軍",
+    "description": {
+      "0": "隊伍中存在<pyro>火元素</pyro>、<hydro>水元素</hydro>、<electro>雷元素</electro>或<cryo>冰元素</cryo>角色時，按照上述元素類型的優先順序，基於法爾伽的攻擊力，每1000點攻擊力都將使法爾伽獲得10%<anemo>風元素傷害加成</anemo>與對應元素傷害加成（上述元素類型中，至多有一種元素類型可以依此方式獲得傷害加成），至多依此方式獲得25%。",
+      "1": "<br/>",
+      "2": "此外，如果隊伍中存在至少2名<anemo>風元素</anemo>角色，或存在至少2名元素類型相同的<pyro>火元素</pyro>、<hydro>水元素</hydro>、<electro>雷元素</electro>或<cryo>冰元素</cryo>角色，法爾伽在<tooltip ns=tooltips_gen baseKey18=11280001 values=[]><strong>狂飆突進</strong></tooltip>模式下進行的普通攻擊、重擊、特殊重擊<strong>蒼噬</strong>與施放的特殊元素戰技<tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>四風將起</strong></tooltip>將造成原本140%的傷害。若隊伍中同時存在至少2名<anemo>風元素</anemo>角色與至少2名元素類型相同的<pyro>火元素</pyro>、<hydro>水元素</hydro>、<electro>雷元素</electro>或<cryo>冰元素</cryo>角色，則會使上述效果提升至220%。"
+    }
+  },
+  "passive2": {
+    "name": "風幟的先引",
+    "description": {
+      "0": "隊伍中附近的角色觸發擴散反應時，法爾伽將獲得一層<strong>「蒼牙之誓」</strong>，使法爾伽的普通攻擊、重擊、特殊重擊<strong>蒼噬</strong>與施放的特殊元素戰技<tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>四風將起</strong></tooltip>造成的傷害提升7.5%。該效果持續8秒，至多疊加4層，每名角色每1秒至多依此方式使法爾伽獲得一層<strong>「蒼牙之誓」</strong>。"
+    }
+  },
+  "passive3": {
+    "name": "歸風的凱歌",
+    "description": {
+      "0": "隊伍中每有一名蒙德角色，透過長按施放的元素戰技<strong>烈風終墜</strong>的冷卻時間就會縮短5%。",
+      "1": "該效果在秘境、征討領域、深境螺旋中無效。"
+    }
+  },
+  "lockedPassive": {
+    "name": "魔女的前夜禮·重光臨晨",
+    "description": {
+      "0": "完成<strong>魔女的課業·無題之題</strong>後，法爾伽將成為<strong>魔導</strong>角色。隊伍中編入至少2名魔導角色時，將獲得<strong>魔導·秘儀</strong>效果，使魔導角色獲得強化。",
+      "1": "<br/>",
+      "2": "<strong>魔導·秘儀</strong>",
+      "3": "特殊元素戰技<tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>四風將起</strong></tooltip>獲得強化：法爾伽在<tooltip ns=tooltips_gen baseKey18=11280001 values=[]><strong>狂飆突進</strong></tooltip>模式下的普通攻擊命中敵人時，<strong>四風將起</strong>的冷卻時間將會轉為縮短1秒。"
+    }
+  },
+  "constellation1": {
+    "name": "「來吧，朋友，讓我們在月下共舞」",
+    "description": {
+      "0": "法爾伽切換至<tooltip ns=tooltips_gen baseKey18=11280001 values=[]><strong>狂飆突進</strong></tooltip>模式時，將額外獲得一次特殊元素戰技<tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>四風將起</strong></tooltip>的可用次數。",
+      "1": "此外，切換至<strong>狂飆突進</strong>模式後，法爾伽將獲得<strong>「歌中的佳釀」</strong>效果：施放特殊元素戰技<strong>四風將起</strong>時，或進行特殊重擊<strong>蒼噬</strong>時，將消耗該效果，使<strong>四風將起</strong>或<strong>蒼噬</strong>造成原本200%的傷害。"
+    }
+  },
+  "constellation2": {
+    "name": "「待天光破曉，我們便要踏上征途」",
+    "description": {
+      "0": "施放特殊元素戰技<tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>四風將起</strong></tooltip>時，或進行特殊重擊<strong>蒼噬</strong>時，法爾伽將會進行一次額外攻擊，造成800%攻擊力的<anemo>風元素範圍傷害</anemo>。"
+    }
+  },
+  "constellation3": {
+    "name": "「朋友，莫要再飲令人落淚的苦酒」",
+    "description": {
+      "0": "元素戰技<strong><tooltip ns=char_Varka_gen baseKey18=skill>烈風終墜</tooltip></strong>的技能等級提高3級。",
+      "1": "至多提升至15級。"
+    }
+  },
+  "constellation4": {
+    "name": "「因為無人能奪去我們歌唱的自由」",
+    "description": {
+      "0": "法爾伽觸發擴散反應時，依據參與反應的元素類型，使隊伍中附近的所有角色分別獲得20%<anemo>風元素傷害加成</anemo>與對應元素傷害加成，持續10秒。"
+    }
+  },
+  "constellation5": {
+    "name": "「斟滿杯中佳釀吧，暴君來了又去」",
+    "description": {
+      "0": "元素爆發<strong><tooltip ns=char_Varka_gen baseKey18=burst>我即朔風</tooltip></strong>的技能等級提高3級。",
+      "1": "至多提升至15級。"
+    }
+  },
+  "constellation6": {
+    "name": "「我心愛的蒙德呀，依然屹立如初」",
+    "description": {
+      "0": "<tooltip ns=tooltips_gen baseKey18=11280001 values=[]><strong>狂飆突進</strong></tooltip>模式獲得強化：",
+      "1": [
+        "施放特殊元素戰技<tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>四風將起</strong></tooltip>後的短暫時間內，法爾伽可以點按元素戰技或長按普通攻擊，不消耗四風將起的可用次數，進行一次額外的特殊重擊<strong>蒼噬</strong>。",
+        "進行特殊重擊<strong>蒼噬</strong>後的短暫時間內，法爾伽可以點按元素戰技，不消耗四風將起的可用次數，施放一次額外的<strong>四風將起</strong>。"
+      ],
+      "2": "透過上述方式進行額外的特殊重擊蒼噬或施放額外的特殊元素戰技四風將起時，無法觸發上述效果。",
+      "3": "<br/>",
+      "4": "此外，突破天賦<strong><tooltip ns=char_Varka_gen baseKey18=passive2>「風幟的先引」</tooltip></strong>中<strong>「蒼牙之誓」</strong>的效果獲得強化：每層<strong>「蒼牙之誓」</strong>還會使法爾伽的暴擊傷害提升20%。"
+    }
+  }
+}

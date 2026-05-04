@@ -1,0 +1,183 @@
+{
+  "name": "Linnea",
+  "title": "Premonitrice di meraviglie",
+  "description": "Naturalista e consulente della Gilda degli avventurieri di Nod-Krai.",
+  "constellationName": "Alcyon",
+  "auto": {
+    "name": "Protocollo di cattura",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attacco normale</strong>",
+        "1": "Effettua fino a 3 tiri consecutivi con un arco."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Effettua un <strong>attacco mirato</strong> ancora più preciso con DAN aumentati.",
+        "2": "Mentre mira, sulla punta della freccia si accumulano cristalli di pietra. Una freccia cristallina caricata al massimo infligge <geo>DAN da Geo</geo>."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Scocca una pioggia di frecce a mezz'aria prima di cadere e colpire il suolo, infliggendo DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "ATT mirato",
+      "4": "ATT mirato a piena carica",
+      "5": "DAN da ATT in picchiata",
+      "6": "DAN da ATT in picchiata basso/alto",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Contromisura: Grido di battaglia di Lumi!",
+    "description": {
+      "0": "All'avventura con Lumi! A seconda della pressione, Lumi attacca in diversi modi.",
+      "1": "<br/>",
+      "2": "<strong>Pressione</strong>",
+      "3": "Lumi entra nella sua <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Forma superpotente</tooltip></strong>, attaccando continuamente i nemici vicini e infliggendo <geo>DAN da Geo ad area</geo>. Se nelle vicinanze sono presenti delle Gabbie lunari, Lumi infligge ai nemici vicini <geo>DAN da Geo ad area</geo> che vengono considerati DAN da reazione di Cristallizzazione lunare.",
+      "4": "<br/>",
+      "5": "<strong>Pressione ripetuta</strong>",
+      "6": "È ora di far vedere di cosa siamo capaci! Dopo aver usato la sua abilità elementale, Linnea nutre Lumi con gemme scintillanti quando la sua abilità elementale o il suo attacco normale vengono azionati ripetutamente. Una volta satolla, Lumi entra nella sua <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Forma superpotente finale</tooltip></strong> e infligge un'iterazione particolarmente potente di <geo>DAN da Geo ad area</geo> considerati DAN da reazione di Cristallizzazione lunare, dopodiché passa alla <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Forma potente standard</tooltip></strong>.",
+      "7": "In aggiunta, la pressione dell'abilità elementale aumenta la resistenza all'interruzione di Linnea.",
+      "8": "<br/>",
+      "9": "<i>\"Tocca a te, Lumi!\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da Pestaggio martellante di Lumi",
+      "1": "DAN da Martello sovraccarico pesante di Lumi",
+      "2": "DAN da Polverizzazione devastante di Lumi",
+      "3": "Durata Lumi",
+      "4": "TdR",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Promemoria: Guida di sopravvivenza in condizioni estreme",
+    "description": {
+      "0": "Anche i maestri avventurieri hanno bisogno di riposo! Linnea evoca Lumi affinché colpisca nella sua <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Forma superpotente</tooltip></strong>, ripristinando i PS dei membri vicini del gruppo. Per un breve periodo di tempo, Lumi guarisce costantemente i membri attivi del gruppo vicini in base alla DIF di Linnea.",
+      "1": "Se Lumi è già in campo quando Linnea sprigiona il suo Tripudio elementale, la durata di Lumi viene ripristinata e la sua Forma d'attacco rimane invariata.",
+      "2": "<br/>",
+      "3": "<i>\"Per un avventuriero professionista, uscire sano e salvo da una situazione difficile è di gran lunga più importante che fare una scoperta senza precedenti!\"</i>"
+    },
+    "skillParams": {
+      "0": "Quantità guarigione iniziale",
+      "1": "Guarigione continua",
+      "2": "Durata guarigione",
+      "3": "TdR",
+      "4": "Costo energia",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Note di osservazione sul campo",
+    "description": {
+      "0": "Quando Lumi è in campo, la <geo>RES a Geo</geo> degli avversari vicini a lei diminuisce di un 15%.",
+      "1": "<br/>",
+      "2": "Quando <strong>Presagio lunare: Barlume ascendente</strong> è attivo, l'abilità elementale <strong><tooltip ns=char_Linnea_gen baseKey18=skill>Contromisura: Grido di battaglia di Lumi!</tooltip></strong> e il Tripudio elementale <strong><tooltip ns=char_Linnea_gen baseKey18=burst>Promemoria: Guida di sopravvivenza in condizioni estreme</tooltip></strong> di Linnea vengono potenziati. Dopo aver evocato Lumi, la <geo>RES a Geo</geo> degli avversari vicino a lei diminuisce di un ulteriore 15%."
+    }
+  },
+  "passive2": {
+    "name": "Diario naturalistico universale",
+    "description": {
+      "0": "Linnea aumenta la maestria elementale di alcuni personaggi del tuo gruppo in base a un 5% della sua DIF e a seconda del personaggio attivo attuale. Se il tuo personaggio attivo:",
+      "1": [
+        " è un personaggio con Presagio lunare, la sua maestria elementale aumenta;",
+        " non è un personaggio con Presagio lunare, la maestria elementale di Linnea aumenta."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Benedizione del Presagio lunare: Studio dell'habitat",
+    "description": {
+      "0": "Quando un membro del gruppo innesca una reazione di Cristallizzazione di Hydro, questa si converte in una reazione di Cristallizzazione lunare, i cui DAN base aumentano di uno 0,7% per ogni 100 di DIF di Linnea, fino a un 14% massimo.",
+      "1": "<br/>",
+      "2": "Inoltre, quando Linnea è nel gruppo, il <strong>Presagio lunare</strong> del gruppo aumenta di 1 livello."
+    }
+  },
+  "passive": {
+    "name": "Avventuriera esperta",
+    "description": {
+      "0": "Quando Linnea non è in un combattimento, il tempo di carica del suo <strong>attacco mirato</strong> è notevolmente ridotto, il che le permette di scoccare una <strong>Freccia rapida ultrapratica</strong>. Si verificano effetti diversi a seconda dei bersagli colpiti.",
+      "1": [
+        " Animali specifici: la <strong>Freccia rapida ultrapratica</strong> si trasforma in una speciale \"Rete\" in grado di catturare l'essenza e la forma di tali animali, usandole come tramite per manifestarne nuovamente la forma fisica. La \"Rete\" può essere utilizzata solo per un numero limitato di volte a settimana.",
+        " Giacimenti di minerali usati nella forgiatura: Linnea invia Lumi, che colpisce rapidamente il minerale indicato dalla <strong>Freccia rapida ultrapratica</strong>, raccogliendo poi il minerale estratto. Se Lumi non è in campo, Linnea la evoca brevemente per farle raccogliere i minerali."
+      ],
+      "2": "<br/>",
+      "3": "I DAN inflitti agli avversari dalla <strong>Freccia rapida ultrapratica</strong> di Linnea sono ridotti a un 20% della sua freccia caricata originale. Inoltre, dopo aver scoccato un certo numero di <strong>Frecce rapide ultrapratiche</strong> in un breve periodo di tempo, Linnea avrà bisogno di una pausa temporanea prima di poterle utilizzare di nuovo."
+    }
+  },
+  "constellation1": {
+    "name": "Classificazione provvisoria",
+    "description": {
+      "0": "Quando usa l'abilità elementale <strong><tooltip ns=char_Linnea_gen baseKey18=skill>Contromisura: Grido di battaglia di Lumi!</tooltip></strong> o quando si attiva Armonia della Gabbia lunare, Linnea ottiene 6 accumuli dell'effetto <strong>Catalogo da campo</strong> per 10 s, per un massimo di 18 accumuli. Quando i membri vicini del gruppo infliggono DAN da reazione di Cristallizzazione lunare, consumano 1 accumulo di Catalogo da campo per aumentare i DAN inflitti. L'aumento dei DAN è pari a un 75% della DIF di Linnea.",
+      "1": "Inoltre, quando Lumi usa <strong>Polverizzazione devastante</strong> nella sua <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Forma superpotente finale</tooltip></strong>, Linnea può consumare fino a 5 accumuli di Catalogo da campo, aumentando i DAN inflitti di un 150% della DIF di Linnea per ogni accumulo consumato."
+    }
+  },
+  "constellation2": {
+    "name": "Notizie di gioia e dolore",
+    "description": {
+      "0": "Entro 8 s dall'attivazione di Armonia della Gabbia lunare, i DAN da CRIT di tutti i membri del gruppo di <hydro>Hydro</hydro> e di <geo>Geo</geo> aumentano di un 40%. Inoltre, quando Lumi usa <strong>Polverizzazione devastante</strong> nella sua <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Forma superpotente finale</tooltip></strong>, i DAN da CRIT di tale attacco aumentano di un ulteriore 150%.",
+      "1": "<br/>",
+      "2": "Quando <strong>Presagio lunare: Barlume ascendente</strong> è attivo, se Lumi usa il <strong>Martello sovraccarico pesante</strong> nella sua <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Forma superpotente</tooltip></strong> o <strong>Polverizzazione devastante</strong> nella sua Forma superpotente finale, si innesca un'iterazione di Armonia della Gabbia lunare, durante la quale gli elementi dei personaggi di <hydro>Hydro</hydro> e di <geo>Geo</geo> presenti nel gruppo vengono considerati applicati alla reazione."
+    }
+  },
+  "constellation3": {
+    "name": "Pagina del registro ricca di eventi",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong><tooltip ns=char_Linnea_gen baseKey18=skill>Contromisura: Grido di battaglia di Lumi!</tooltip></strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Istinto dell'esperta",
+    "description": {
+      "0": "Entro 5 s dall'attivazione di Armonia della Gabbia lunare, la DIF di Linnea e quella del tuo personaggio attivo attuale aumentano di un 25%. Quando Linnea è in campo, l'effetto di aumento della DIF può accumularsi."
+    }
+  },
+  "constellation5": {
+    "name": "Dono d'addio della Terra delle Fate",
+    "description": {
+      "0": "Aumenta di 3 il livello del Tripudio elementale <strong><tooltip ns=char_Linnea_gen baseKey18=burst>Promemoria: Guida di sopravvivenza in condizioni estreme</tooltip></strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Sogno del Bracco dorato",
+    "description": {
+      "0": "Potenzia gli effetti della costellazione <strong>Classificazione provvisoria</strong>. Quando si sprigiona l'abilità elementale <strong><tooltip ns=char_Linnea_gen baseKey18=skill>Contromisura: Grido di battaglia di Lumi!</tooltip></strong> o quando si attiva Armonia della Gabbia lunare, Linnea ottiene direttamente il numero massimo di accumuli di <strong>Catalogo da campo</strong>. Nel consumare <strong>Catalogo da campo</strong>, consuma due volte il numero originale di accumuli, di modo che l'aumento dei DAN venga incrementato a un 150% del valore originale.",
+      "1": "<br/>",
+      "2": "Quando <strong>Presagio lunare: Barlume ascendente</strong> è attivo, i DAN da Cristallizzazione lunare inflitti dai membri del gruppo vicini vengono <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>innalzati</strong></tooltip> di un 25%."
+    }
+  }
+}

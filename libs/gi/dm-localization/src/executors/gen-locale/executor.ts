@@ -71,7 +71,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
       descTextMapHash
     )
     // layeredAssignment(mapHashData, [...keys, "descriptionDetail"], avatarDetailTextMapHash)
-    // Don't override constellation name if manually specified. For Zhongli
+    // Don't override constellation name if manually specified. For Zhongli and Columbina
     !mapHashData.char[characterIdMap[charid]]?.['constellationName'] &&
       layeredAssignment(
         mapHashData,

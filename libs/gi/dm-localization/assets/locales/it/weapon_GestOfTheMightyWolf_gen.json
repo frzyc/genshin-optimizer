@@ -1,0 +1,29 @@
+{
+  "name": "Gesta del Lupo maestoso",
+  "description": {
+    "0": "La leggenda narra che questo spadone sia stato forgiato da Ravenwood, erede del nome di Boreas, prima della sua ascesa al cavalierato."
+  },
+  "passiveName": "Cavalleria indomita",
+  "passiveDescription": {
+    "0": {
+      "0": "La VEL d'ATT aumenta di un 10%. Ogni volta che il personaggio che equipaggia l'arma colpisce gli avversari con un attacco normale, quando usa l'abilità elementale o quando dà inizio a un attacco caricato, ottiene 1/2/2 accumuli di Inno dei Quattro Venti rispettivamente, ciascuno dei quali aumenta i DAN inflitti di un <cryo>7,5%</cryo> per 4 s. L'effetto è cumulabile fino a 4 volte e può attivarsi una volta ogni 0,01 s.",
+      "1": "Inoltre, quando nel gruppo è attivo l'effetto Hexerei: Rito segreto, ogni accumulo di Inno dei Quattro Venti aumenta di un <cryo>7,5%</cryo> anche i DAN da CRIT del personaggio che equipaggia l'arma."
+    },
+    "1": {
+      "0": "La VEL d'ATT aumenta di un 10%. Ogni volta che il personaggio che equipaggia l'arma colpisce gli avversari con un attacco normale, quando usa l'abilità elementale o quando dà inizio a un attacco caricato, ottiene 1/2/2 accumuli di Inno dei Quattro Venti rispettivamente, ciascuno dei quali aumenta i DAN inflitti di un <cryo>9,5%</cryo> per 4 s. L'effetto è cumulabile fino a 4 volte e può attivarsi una volta ogni 0,01 s.",
+      "1": "Inoltre, quando nel gruppo è attivo l'effetto Hexerei: Rito segreto, ogni accumulo di Inno dei Quattro Venti aumenta di un <cryo>9,5%</cryo> anche i DAN da CRIT del personaggio che equipaggia l'arma."
+    },
+    "2": {
+      "0": "La VEL d'ATT aumenta di un 10%. Ogni volta che il personaggio che equipaggia l'arma colpisce gli avversari con un attacco normale, quando usa l'abilità elementale o quando dà inizio a un attacco caricato, ottiene 1/2/2 accumuli di Inno dei Quattro Venti rispettivamente, ciascuno dei quali aumenta i DAN inflitti di un <cryo>11,5%</cryo> per 4 s. L'effetto è cumulabile fino a 4 volte e può attivarsi una volta ogni 0,01 s.",
+      "1": "Inoltre, quando nel gruppo è attivo l'effetto Hexerei: Rito segreto, ogni accumulo di Inno dei Quattro Venti aumenta di un <cryo>11,5%</cryo> anche i DAN da CRIT del personaggio che equipaggia l'arma."
+    },
+    "3": {
+      "0": "La VEL d'ATT aumenta di un 10%. Ogni volta che il personaggio che equipaggia l'arma colpisce gli avversari con un attacco normale, quando usa l'abilità elementale o quando dà inizio a un attacco caricato, ottiene 1/2/2 accumuli di Inno dei Quattro Venti rispettivamente, ciascuno dei quali aumenta i DAN inflitti di un <cryo>13,5%</cryo> per 4 s. L'effetto è cumulabile fino a 4 volte e può attivarsi una volta ogni 0,01 s.",
+      "1": "Inoltre, quando nel gruppo è attivo l'effetto Hexerei: Rito segreto, ogni accumulo di Inno dei Quattro Venti aumenta di un <cryo>13,5%</cryo> anche i DAN da CRIT del personaggio che equipaggia l'arma."
+    },
+    "4": {
+      "0": "La VEL d'ATT aumenta di un 10%. Ogni volta che il personaggio che equipaggia l'arma colpisce gli avversari con un attacco normale, quando usa l'abilità elementale o quando dà inizio a un attacco caricato, ottiene 1/2/2 accumuli di Inno dei Quattro Venti rispettivamente, ciascuno dei quali aumenta i DAN inflitti di un <cryo>15,5%</cryo> per 4 s. L'effetto è cumulabile fino a 4 volte e può attivarsi una volta ogni 0,01 s.",
+      "1": "Inoltre, quando nel gruppo è attivo l'effetto Hexerei: Rito segreto, ogni accumulo di Inno dei Quattro Venti aumenta di un <cryo>15,5%</cryo> anche i DAN da CRIT del personaggio che equipaggia l'arma."
+    }
+  }
+}

@@ -60,6 +60,7 @@ import KukiShinobu from './KukiShinobu'
 import LanYan from './LanYan'
 import Lauma from './Lauma'
 import Layla from './Layla'
+import Linnea from './Linnea'
 import Lisa from './Lisa'
 import Lynette from './Lynette'
 import Lyney from './Lyney'
@@ -98,6 +99,7 @@ import TravelerGeo from './TravelerGeo'
 import TravelerHydro from './TravelerHydro'
 import TravelerPyro from './TravelerPyro'
 import Varesa from './Varesa'
+import Varka from './Varka'
 import Venti from './Venti'
 import Wanderer from './Wanderer'
 import Wriothesley from './Wriothesley'
@@ -179,6 +181,7 @@ const data: TagMapNodeEntries[] = [
   LanYan,
   Lauma,
   Layla,
+  Linnea,
   Lisa,
   Lynette,
   Lyney,
@@ -211,6 +214,7 @@ const data: TagMapNodeEntries[] = [
   Thoma,
   Tighnari,
   Varesa,
+  Varka,
   Venti,
   Wanderer,
   Wriothesley,

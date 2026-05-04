@@ -60,6 +60,7 @@ import KukiShinobu from './KukiShinobu'
 import LanYan from './LanYan'
 import Lauma from './Lauma'
 import Layla from './Layla'
+import Linnea from './Linnea'
 import Lisa from './Lisa'
 import Lynette from './Lynette'
 import Lyney from './Lyney'
@@ -100,6 +101,7 @@ import TravelerHydro from './TravelerHydro'
 import TravelerM from './TravelerM'
 import TravelerPyro from './TravelerPyro'
 import Varesa from './Varesa'
+import Varka from './Varka'
 import Venti from './Venti'
 import Wanderer from './Wanderer'
 import Wriothesley from './Wriothesley'
@@ -181,6 +183,7 @@ const data = {
   LanYan,
   Lauma,
   Layla,
+  Linnea,
   Lisa,
   Lynette,
   Lyney,
@@ -221,6 +224,7 @@ const data = {
   TravelerM,
   TravelerPyro,
   Varesa,
+  Varka,
   Venti,
   Wanderer,
   Wriothesley,

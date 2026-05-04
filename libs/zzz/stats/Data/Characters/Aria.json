@@ -3,6 +3,7 @@
   "rarity": "S",
   "attribute": "ether",
   "specialty": "anomaly",
+  "faction": "AngelsOfDelusion",
   "stats": {
     "atk_base": 124,
     "atk_growth": 7.4992,

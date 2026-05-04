@@ -16,8 +16,3 @@ export function isZOURL() {
 export const GO_LINK = 'https://frzyc.github.io/genshin-optimizer/'
 export const ZO_LINK = 'https://frzyc.github.io/zenless-optimizer/'
 export const DISCORD_LINK = 'https://discord.gg/CXUbQXyfUs'
-
-export const GO_LOOTBAR_LINK =
-  'https://lootbar.gg/top-up/genshin-impact-top-up?aff_short=frzyc'
-export const ZO_LOOTBAR_LINK =
-  'https://lootbar.gg/top-up/zenless-zone-zero?utm_source=ZO'

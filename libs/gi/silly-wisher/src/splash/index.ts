@@ -22,6 +22,7 @@ import Chongyun from './splash_chongyun.png'
 import Citlali from './splash_citlali.png'
 import Clorinde from './splash_clorinde.png'
 import Collei from './splash_collei.png'
+import Columbina from './splash_columbina.png'
 import Cyno from './splash_cyno.png'
 import Dahlia from './splash_dahlia.png'
 import Dehya from './splash_dehya.png'
@@ -44,6 +45,7 @@ import ShikanoinHeizou from './splash_heizou.png'
 import HuTao from './splash_hutao.png'
 import Iansan from './splash_iansan.png'
 import Ifa from './splash_ifa.png'
+import Illuga from './splash_illuga.png'
 import Ineffa from './splash_ineffa.png'
 import AratakiItto from './splash_itto.png'
 import Jahoda from './splash_jahoda.png'
@@ -92,6 +94,7 @@ import Tartaglia from './splash_tartaglia.png'
 import Thoma from './splash_thoma.png'
 import Tighnari from './splash_tighnari.png'
 import Varesa from './splash_varesa.png'
+import Varka from './splash_varka.png'
 import Venti from './splash_venti.png'
 import Wanderer from './splash_wanderer.png'
 import Wriothesley from './splash_wriothesley.png'
@@ -109,6 +112,7 @@ import Yoimiya from './splash_yoimiya.png'
 import YumemizukiMizuki from './splash_yumemizuki.png'
 import YunJin from './splash_yunjin.png'
 import Zhongli from './splash_zhongli.png'
+import Zibai from './splash_zibai.png'
 
 const charCards = {
   Aino,
@@ -131,6 +135,7 @@ const charCards = {
   Citlali,
   Clorinde,
   Collei,
+  Columbina,
   Cyno,
   Dahlia,
   Dehya,
@@ -152,6 +157,7 @@ const charCards = {
   HuTao,
   Iansan,
   Ifa,
+  Illuga,
   Ineffa,
   Jahoda,
   Jean,
@@ -203,6 +209,7 @@ const charCards = {
   TravelerF,
   TravelerM,
   Varesa,
+  Varka,
   Venti,
   Wanderer,
   Wriothesley,
@@ -220,6 +227,7 @@ const charCards = {
   YumemizukiMizuki,
   YunJin,
   Zhongli,
+  Zibai,
 } as const
 
 export function splash(charKey: CharacterKey, gender: GenderKey) {

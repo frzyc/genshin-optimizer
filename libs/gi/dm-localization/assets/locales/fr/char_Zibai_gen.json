@@ -55,7 +55,7 @@
       "4": "DGT attaque chargée (déphasage lunaire)",
       "5": "DGT 1er coup (foulée de destrier spirituel)",
       "6": "DGT 2e coup (foulée de destrier spirituel)",
-      "7": "DGT bonus 4e coup en lueur ascendante (déphasage lunaire)",
+      "7": "DGT bonus 4e coup (déphasage lunaire)",
       "8": "Durée de déphasage lunaire",
       "9": "Temps de recharge",
       "10": "",
@@ -143,7 +143,7 @@
   "constellation4": {
     "name": "L'esprit passe, puis la forme suit",
     "description": {
-      "0": "Pendant son <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>déphasage lunaire</strong></tooltip>, la séquence de l'attaque normale de Zibai ne se réinitialise pas, et Zibai obtient l'effet <strong>Splendeur lunaire dispersée</strong> lorsque sa <strong>foulée de destrier spirituel</strong> touche un ennemi : la prochaine fois qu'elle effectue une attaque normale, le 4e coup inflige des DGT supplémentaires de réaction de Sélénocristallisation d'une valeur équivalant à 250 % des DGT d'origine."
+      "0": "Pendant son <tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>déphasage lunaire</strong></tooltip>, la séquence de l'attaque normale de Zibai ne se réinitialise pas, et Zibai obtient l'effet <strong>Splendeur lunaire dispersée</strong> lorsque sa <strong>foulée de destrier spirituel</strong> touche un ennemi : la prochaine fois qu'elle effectue une attaque normale, l'attaque supplémentaire du 4e coup inflige des DGT de réaction de Sélénocristallisation d'une valeur équivalant à 250 % des DGT d'origine."
     }
   },
   "constellation5": {

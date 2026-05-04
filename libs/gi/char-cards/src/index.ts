@@ -11,6 +11,7 @@ import Barbara from './Character_Barbara_Card.jpg'
 import Beidou from './Character_Beidou_Card.jpg'
 import Bennett from './Character_Bennett_Card.jpg'
 import Candace from './Character_Candace_Card.jpg'
+import Varka from './Character_Card_Varka.webp'
 import Charlotte from './Character_Charlotte_Card.jpg'
 import Chasca from './Character_Chasca_Card.jpg'
 import Chevreuse from './Character_Chevreuse_Card.jpg'
@@ -60,6 +61,7 @@ import KukiShinobu from './Character_Kuki_Shinobu_Card.jpg'
 import LanYan from './Character_LanYan_Card.jpg'
 import Lauma from './Character_Lauma_Card.webp'
 import Layla from './Character_Layla_Card.jpeg'
+import Linnea from './Character_Linnea_Card.webp'
 import Lisa from './Character_Lisa_Card.jpg'
 import Lynette from './Character_Lynette_Card.jpg'
 import Lyney from './Character_Lyney_Card.jpg'
@@ -175,6 +177,7 @@ const charCards = {
   LanYan,
   Lauma,
   Layla,
+  Linnea,
   Lisa,
   Lyney,
   Lynette,
@@ -209,6 +212,7 @@ const charCards = {
   TravelerF,
   TravelerM,
   Varesa,
+  Varka,
   Venti,
   Wanderer,
   Wriothesley,

@@ -50,7 +50,7 @@
       "name": "Dash Attack: Silky-Smooth Combo",
       "desc": {
         "0": "Press <IconNormal /> during a dodge to activate:",
-        "1": "Flies forward with a swift slashing attack, dealing <ct color=#FE437E>Ether DMG</ct>.",
+        "1": "Launches a swift slashing attack forward, dealing <ct color=#FE437E>Ether DMG</ct>.",
         "2": "If activated during a <ct color=#FFFFFF>Basic Attack: Sweet Melody</ct> chain, this action does not reset the Basic Attack count."
       },
       "params": [
@@ -138,7 +138,7 @@
         "2": "Upon entering <ct color=#FFFFFF>Moment of Delusion</ct>, Aria gains 3 stacks of <ct color=#FFFFFF>All-Out Cheering</ct> and activates <ct color=#FFFFFF>Ether Veil: Delusion Reprise</ct>. While <ct color=#FFFFFF>Ether Veil: Delusion Reprise</ct> is active, all squad members gain an additional 50 ATK for 30s. Re-activating <ct color=#FFFFFF>Ether Veil: Delusion Reprise</ct> will first cancel any existing instance of <ct color=#FFFFFF>Ether Veil: Delusion Reprise</ct>.",
         "3": "While Aria is charging, if she has <ct color=#FFFFFF>All-Out Cheering</ct>, stacks of <ct color=#FFFFFF>All-Out Cheering</ct> are consumed first to charge. Each stack of <ct color=#FFFFFF>All-Out Cheering</ct> consumed increases the charge level by 2.",
         "4": "Upon entering <ct color=#FFFFFF>Moment of Delusion</ct>, if Aria already has <ct color=#FFFFFF>All-Out Cheering</ct>, all remaining stacks of <ct color=#FFFFFF>All-Out Cheering</ct> are first converted into <ct color=#FFFFFF>Fandom Power</ct> and generated on the field. Each stack of <ct color=#FFFFFF>All-Out Cheering</ct> is converted into 2 <ct color=#FFFFFF>Fandom Power</ct>.",
-        "5": "<ct color=#FFFFFF>Moment of Delusion</ct> lasts for up to 15s. During <ct color=#FFFFFF>Moment of Delusion</ct>, Aria's <ct color=#FFFFFF>Basic Attack: Perfect Pitch</ct> 3rd hit is upgraded to an enhanced version.",
+        "5": "<ct color=#FFFFFF>Moment of Delusion</ct> lasts for up to 15s. During <ct color=#FFFFFF>Moment of Delusion</ct>, Aria's <ct color=#FFFFFF>Basic Attack: Perfect Pitch</ct> 3rd attack is upgraded to an enhanced version.",
         "6": "When exiting <ct color=#FFFFFF>Moment of Delusion</ct>, if Aria has <ct color=#FFFFFF>All-Out Cheering</ct>, all remaining stacks of <ct color=#FFFFFF>All-Out Cheering</ct> are converted into <ct color=#FFFFFF>Fandom Power</ct> and generated on the field. Each stack of <ct color=#FFFFFF>All-Out Cheering</ct> is converted into 2 <ct color=#FFFFFF>Fandom Power</ct>.",
         "7": "Character is invulnerable while using this skill."
       },

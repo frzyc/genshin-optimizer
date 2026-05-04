@@ -9,6 +9,7 @@ import Ben from './maps/Ben'
 import Billy from './maps/Billy'
 import Burnice from './maps/Burnice'
 import Caesar from './maps/Caesar'
+import Cissia from './maps/Cissia'
 import Corin from './maps/Corin'
 import Dialyn from './maps/Dialyn'
 import Ellen from './maps/Ellen'
@@ -25,6 +26,7 @@ import Lucy from './maps/Lucy'
 import Lycaon from './maps/Lycaon'
 import Manato from './maps/Manato'
 import Miyabi from './maps/Miyabi'
+import NangongYu from './maps/NangongYu'
 import Nekomata from './maps/Nekomata'
 import Nicole from './maps/Nicole'
 import OrphieMagus from './maps/OrphieMagus'
@@ -60,6 +62,7 @@ const maps = {
   Billy,
   Burnice,
   Caesar,
+  Cissia,
   Corin,
   Dialyn,
   Ellen,
@@ -76,6 +79,7 @@ const maps = {
   Lycaon,
   Manato,
   Miyabi,
+  NangongYu,
   Nekomata,
   Nicole,
   OrphieMagus,

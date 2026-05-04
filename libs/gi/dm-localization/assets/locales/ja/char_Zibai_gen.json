@@ -94,7 +94,7 @@
   "passive1": {
     "name": "月下に舞い降りる天女",
     "description": {
-      "0": "元素スキル<strong><tooltip ns=char_Zibai_gen baseKey18=skill>衆生は忽然たるのみ</tooltip></strong>を発動、または付近にいるチーム内キャラクターが月籠の共鳴を発動した時、兹白は4秒間継続する<strong>「太陰降」</strong>効果を獲得し、<tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>翔ける霊駒</strong></tooltip>の与える2段目のダメージが兹白の防御力60%分アップする。"
+      "0": "元素スキル<strong><tooltip ns=char_Zibai_gen baseKey18=skill>衆生は忽然たるのみ</tooltip></strong>を発動、または付近にいるチーム内キャラクターが月籠の共鳴を発動した時、兹白は4秒間継続する<strong>「太陰降」</strong>効果を獲得し、<tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>翔ける霊駒</strong></tooltip>の与える2段目のダメージが兹白の防御力の60%分アップする。"
     }
   },
   "passive2": {
@@ -130,7 +130,7 @@
     "description": {
       "0": "<tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>「隙を過ぐる月」</strong></tooltip>状態における、付近にいるチーム全員の月結晶反応ダメージ+30%。",
       "1": "<br/>",
-      "2": "<strong>月兆・満照</strong>：固有天賦<strong><tooltip ns=char_Zibai_gen baseKey18=passive1>月下に舞い降りる天女</tooltip></strong>の効果が強化され、<strong>翔ける霊駒</strong>の二段目攻撃によるダメージが兹白の防御力の550%分アップする。固有天賦「月下に舞い降りる天女」を解放する必要がある。"
+      "2": "<strong>月兆・満照</strong>：固有天賦<strong><tooltip ns=char_Zibai_gen baseKey18=passive1>月下に舞い降りる天女</tooltip></strong>の効果が強化され、<strong>翔ける霊駒</strong>の二段目攻撃によるダメージがさらに兹白の防御力の550%分アップする。固有天賦「月下に舞い降りる天女」を解放する必要がある。"
     }
   },
   "constellation3": {

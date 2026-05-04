@@ -26,6 +26,7 @@ const swKeyMap = {
   citlali: 'Citlali',
   clorinde: 'Clorinde',
   collei: 'Collei',
+  columbina: 'Columbina',
   cyno: 'Cyno',
   dahlia: 'Dahlia',
   dehya: 'Dehya',
@@ -48,6 +49,7 @@ const swKeyMap = {
   hutao: 'HuTao',
   iansan: 'Iansan',
   ifa: 'Ifa',
+  illuga: 'Illuga',
   ineffa: 'Ineffa',
   itto: 'AratakiItto',
   jahoda: 'Jahoda',
@@ -96,6 +98,7 @@ const swKeyMap = {
   thoma: 'Thoma',
   tighnari: 'Tighnari',
   varesa: 'Varesa',
+  varka: 'Varka',
   venti: 'Venti',
   wanderer: 'Wanderer',
   wriothesley: 'Wriothesley',
@@ -113,6 +116,7 @@ const swKeyMap = {
   yumemizuki: 'YumemizukiMizuki',
   yunjin: 'YunJin',
   zhongli: 'Zhongli',
+  zibai: 'Zibai',
 } as const
 
 export default async function runExecutor(_options: GenAssetsExecutorSchema) {

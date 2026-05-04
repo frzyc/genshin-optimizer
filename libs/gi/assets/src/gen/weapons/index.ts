@@ -77,6 +77,8 @@ import FreedomSworn from './FreedomSworn'
 import Frostbearer from './Frostbearer'
 import FruitOfFulfillment from './FruitOfFulfillment'
 import FruitfulHook from './FruitfulHook'
+import GestOfTheMightyWolf from './GestOfTheMightyWolf'
+import GoldenFrostboundOath from './GoldenFrostboundOath'
 import HakushinRing from './HakushinRing'
 import Halberd from './Halberd'
 import Hamayumi from './Hamayumi'
@@ -309,6 +311,8 @@ const data = {
   Frostbearer,
   FruitOfFulfillment,
   FruitfulHook,
+  GestOfTheMightyWolf,
+  GoldenFrostboundOath,
   HakushinRing,
   Halberd,
   Hamayumi,
