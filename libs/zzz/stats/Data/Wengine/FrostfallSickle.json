@@ -1,0 +1,14 @@
+{
+  "rarity": "S",
+  "type": "anomaly",
+  "atk_base": 48,
+  "second_statkey": "anomMas_",
+  "second_statvalue": 0.12,
+  "phase": [
+    { "params": [0.2, 40, 2, 2, 0.35] },
+    { "params": [0.23, 40, 2, 2, 0.385] },
+    { "params": [0.26, 40, 2, 2, 0.42] },
+    { "params": [0.29, 40, 2, 2, 0.455] },
+    { "params": [0.32, 40, 2, 2, 0.5] }
+  ]
+}

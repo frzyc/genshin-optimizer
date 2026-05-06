@@ -32,6 +32,7 @@ import Nicole from './maps/Nicole'
 import OrphieMagus from './maps/OrphieMagus'
 import PanYinhu from './maps/PanYinhu'
 import Piper from './maps/Piper'
+import Promeia from './maps/Promeia'
 import Pulchra from './maps/Pulchra'
 import Qingyi from './maps/Qingyi'
 import Rina from './maps/Rina'
@@ -40,6 +41,7 @@ import Seth from './maps/Seth'
 import Soldier0Anby from './maps/Soldier0Anby'
 import Soldier11 from './maps/Soldier11'
 import Soukaku from './maps/Soukaku'
+import StarlightBilly from './maps/StarlightBilly'
 import Sunna from './maps/Sunna'
 import Trigger from './maps/Trigger'
 import Vivian from './maps/Vivian'
@@ -85,6 +87,7 @@ const maps = {
   OrphieMagus,
   PanYinhu,
   Piper,
+  Promeia,
   Pulchra,
   Qingyi,
   Rina,
@@ -93,6 +96,7 @@ const maps = {
   Soldier0Anby,
   Soldier11,
   Soukaku,
+  StarlightBilly,
   Sunna,
   Trigger,
   Vivian,

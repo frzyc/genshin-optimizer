@@ -20,6 +20,7 @@ import ElectroLipGloss from './sheets/ElectroLipGloss'
 import ElegantVanity from './sheets/ElegantVanity'
 import FlamemakerShaker from './sheets/FlamemakerShaker'
 import FlightOfFancy from './sheets/FlightOfFancy'
+import FrostfallSickle from './sheets/FrostfallSickle'
 import FusionCompiler from './sheets/FusionCompiler'
 import GildedBlossom from './sheets/GildedBlossom'
 import GrillOWisp from './sheets/GrillOWisp'
@@ -67,6 +68,7 @@ import SpectralGaze from './sheets/SpectralGaze'
 import SpringEmbrace from './sheets/SpringEmbrace'
 import StarlightEngine from './sheets/StarlightEngine'
 import StarlightEngineReplica from './sheets/StarlightEngineReplica'
+import StarlightRiderFaceplate from './sheets/StarlightRiderFaceplate'
 import SteamOven from './sheets/SteamOven'
 import SteelCushion from './sheets/SteelCushion'
 import StreetSuperstar from './sheets/StreetSuperstar'
@@ -109,6 +111,7 @@ const data: TagMapNodeEntries[] = [
   ElegantVanity,
   FlamemakerShaker,
   FlightOfFancy,
+  FrostfallSickle,
   FusionCompiler,
   GildedBlossom,
   GrillOWisp,
@@ -156,6 +159,7 @@ const data: TagMapNodeEntries[] = [
   SpringEmbrace,
   StarlightEngine,
   StarlightEngineReplica,
+  StarlightRiderFaceplate,
   SteamOven,
   SteelCushion,
   StreetSuperstar,

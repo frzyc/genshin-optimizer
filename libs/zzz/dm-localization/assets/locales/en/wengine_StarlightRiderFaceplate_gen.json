@@ -1,0 +1,24 @@
+{
+  "name": "Starlight Rider Faceplate",
+  "desc": {
+    "0": "What is a knight?",
+    "1": "The Crimson Knight says, \"Carrying out the justice in my heart!\"",
+    "2": "The Amber Knight says, \"Dealing with each sin in this world!\"",
+    "3": "The Verdant Knight says, \"Protecting everyone's hope!\"",
+    "4": "So what is a knight, in the end? The advanced tactical construct suddenly falls into serious thought over this profound question, no different from the philosophers who have long pondered the ultimate meaning of existence.",
+    "5": "Regrettably, this great and noble meditation on chivalric aesthetics is cut short in under ten seconds by an unceremonious interruption from a companion.",
+    "6": "\"Billy, you've watched 'Starlight Knight: A Knight's Proof' a hundred times already. So what even is the proof?\"",
+    "7": "\"I'll know when I've watched it another hundred times!\"",
+    "8": "— Two people arguing over the remote at the Cunning Hares' base."
+  },
+  "desc2": "Equip to increase Rupture Agents' combat capabilities",
+  "desc3": "The proof of being a knight is within your grasp.",
+  "phase": "Knight's Morale",
+  "phaseDescs": [
+    "Increases CRIT Rate by <ct color=#2BAD00>20%</ct>. When the equipper launches a <ct color=#FFFFFF>Special Attack</ct>, their <ct color=#F0D12B>Physical Sheer DMG</ct> increases by <ct color=#2BAD00>10%</ct>, stacking up to 2 times and lasting 30s. Repeated triggers reset the duration.",
+    "Increases CRIT Rate by <ct color=#2BAD00>23%</ct>. When the equipper launches a <ct color=#FFFFFF>Special Attack</ct>, their <ct color=#F0D12B>Physical Sheer DMG</ct> increases by <ct color=#2BAD00>11.5%</ct>, stacking up to 2 times and lasting 30s. Repeated triggers reset the duration.",
+    "Increases CRIT Rate by <ct color=#2BAD00>26%</ct>. When the equipper launches a <ct color=#FFFFFF>Special Attack</ct>, their <ct color=#F0D12B>Physical Sheer DMG</ct> increases by <ct color=#2BAD00>13%</ct>, stacking up to 2 times and lasting 30s. Repeated triggers reset the duration.",
+    "Increases CRIT Rate by <ct color=#2BAD00>29%</ct>. When the equipper launches a <ct color=#FFFFFF>Special Attack</ct>, their <ct color=#F0D12B>Physical Sheer DMG</ct> increases by <ct color=#2BAD00>14.5%</ct>, stacking up to 2 times and lasting 30s. Repeated triggers reset the duration.",
+    "Increases CRIT Rate by <ct color=#2BAD00>32%</ct>. When the equipper launches a <ct color=#FFFFFF>Special Attack</ct>, their <ct color=#F0D12B>Physical Sheer DMG</ct> increases by <ct color=#2BAD00>16%</ct>, stacking up to 2 times and lasting 30s. Repeated triggers reset the duration."
+  ]
+}
