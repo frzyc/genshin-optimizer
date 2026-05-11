@@ -38,6 +38,20 @@ export const formulas = {
       name: 'disorderDmgInst_ice',
     },
   },
+  abloomDmgInst: {
+    sheet: 'Promeia',
+    name: 'abloomDmgInst',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'Promeia',
+      attribute: 'ice',
+      damageType1: 'anomaly',
+      damageType2: 'abloom',
+      name: 'abloomDmgInst',
+    },
+  },
   anomalyBuildupInst: {
     sheet: 'Promeia',
     name: 'anomalyBuildupInst',
