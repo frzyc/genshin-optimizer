@@ -1,16 +1,12 @@
-import { subscript } from '@genshin-optimizer/pando/engine'
+import { cmpEq, cmpGE, prod, subscript } from '@genshin-optimizer/pando/engine'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import { mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
-  allBoolConditionals,
-  allListConditionals,
   allNumConditionals,
-  enemyDebuff,
   own,
   ownBuff,
   percent,
   registerBuff,
-  teamBuff,
 } from '../../util'
 import {
   cmpSpecialtyAndEquipped,
@@ -23,39 +19,44 @@ const key: WengineKey = 'FrostfallSickle'
 const dm = mappedStats.wengine[key]
 const { phase } = own.wengine
 
-// TODO: Add conditionals
-const { boolConditional } = allBoolConditionals(key)
-const { listConditional } = allListConditionals(key, ['val1', 'val2'])
-const { numConditional } = allNumConditionals(key, true, 0, 2)
+const { specialUsed } = allNumConditionals(key, true, 0, dm.stacks)
 
 const sheet = registerWengine(
   key,
   // Handles base stats and passive buffs
   entriesForWengine(key),
 
-  // TODO: Add formulas/buffs
   // Conditional buffs
   registerBuff(
-    'cond_dmg_',
-    ownBuff.combat.common_dmg_.add(
+    'cond_ice_dmg_',
+    ownBuff.combat.common_dmg_.ice.add(
       cmpSpecialtyAndEquipped(
         key,
-        boolConditional.ifOn(percent(subscript(phase, dm.cond_dmg_)))
+        cmpEq(
+          own.char.attribute,
+          'ice',
+          prod(specialUsed, percent(subscript(phase, dm.ice_dmg_)))
+        )
       )
     ),
     showSpecialtyAndEquipped(key)
   ),
   registerBuff(
-    'team_dmg_',
-    teamBuff.combat.common_dmg_.add(
-      cmpSpecialtyAndEquipped(key, listConditional.map({ val1: 1, val2: 2 }))
-    ),
-    showSpecialtyAndEquipped(key)
-  ),
-  registerBuff(
-    'enemy_defIgn_',
-    enemyDebuff.common.dmgRed_.add(
-      cmpSpecialtyAndEquipped(key, numConditional)
+    'cond_abloom_dmg_',
+    ownBuff.combat.common_dmg_.addWithDmgType(
+      'abloom',
+      cmpSpecialtyAndEquipped(
+        key,
+        cmpEq(
+          own.char.attribute,
+          'ice',
+          cmpGE(
+            specialUsed,
+            dm.stack_threshold,
+            percent(subscript(phase, dm.abloom_dmg_))
+          )
+        )
+      )
     ),
     showSpecialtyAndEquipped(key)
   )

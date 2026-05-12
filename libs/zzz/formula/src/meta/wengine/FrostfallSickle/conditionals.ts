@@ -1,19 +1,8 @@
 // WARNING: Generated file, do not modify
 export const conditionals = {
-  boolConditional: {
+  specialUsed: {
     sheet: 'FrostfallSickle',
-    name: 'boolConditional',
-    type: 'bool',
-  },
-  listConditional: {
-    sheet: 'FrostfallSickle',
-    name: 'listConditional',
-    type: 'list',
-    list: ['val1', 'val2'],
-  },
-  numConditional: {
-    sheet: 'FrostfallSickle',
-    name: 'numConditional',
+    name: 'specialUsed',
     type: 'num',
     int_only: true,
     min: 0,

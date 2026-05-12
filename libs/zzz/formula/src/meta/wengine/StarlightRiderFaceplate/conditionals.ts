@@ -1,19 +1,8 @@
 // WARNING: Generated file, do not modify
 export const conditionals = {
-  boolConditional: {
+  specialUsed: {
     sheet: 'StarlightRiderFaceplate',
-    name: 'boolConditional',
-    type: 'bool',
-  },
-  listConditional: {
-    sheet: 'StarlightRiderFaceplate',
-    name: 'listConditional',
-    type: 'list',
-    list: ['val1', 'val2'],
-  },
-  numConditional: {
-    sheet: 'StarlightRiderFaceplate',
-    name: 'numConditional',
+    name: 'specialUsed',
     type: 'num',
     int_only: true,
     min: 0,

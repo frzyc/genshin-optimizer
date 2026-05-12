@@ -1,36 +1,26 @@
 // WARNING: Generated file, do not modify
 export const buffs = {
-  cond_dmg_: {
+  passive_crit_: {
     sheet: 'StarlightRiderFaceplate',
-    name: 'cond_dmg_',
+    name: 'passive_crit_',
     tag: {
       et: 'display',
       qt: 'combat',
-      q: 'common_dmg_',
+      q: 'crit_',
       sheet: 'StarlightRiderFaceplate',
-      name: 'cond_dmg_',
+      name: 'passive_crit_',
     },
   },
-  team_dmg_: {
+  cond_physical_sheer_dmg_: {
     sheet: 'StarlightRiderFaceplate',
-    name: 'team_dmg_',
+    name: 'cond_physical_sheer_dmg_',
     tag: {
       et: 'display',
       qt: 'combat',
-      q: 'common_dmg_',
+      q: 'sheer_dmg_',
       sheet: 'StarlightRiderFaceplate',
-      name: 'team_dmg_',
-    },
-  },
-  enemy_defIgn_: {
-    sheet: 'StarlightRiderFaceplate',
-    name: 'enemy_defIgn_',
-    tag: {
-      et: 'display',
-      qt: 'common',
-      q: 'dmgRed_',
-      sheet: 'StarlightRiderFaceplate',
-      name: 'enemy_defIgn_',
+      attribute: 'physical',
+      name: 'cond_physical_sheer_dmg_',
     },
   },
 } as const
