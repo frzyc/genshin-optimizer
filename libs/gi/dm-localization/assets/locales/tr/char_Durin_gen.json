@@ -1,0 +1,188 @@
+{
+  "name": "Durin",
+  "title": "\"Sönmeyen Ateş\"",
+  "description": "M'nin kaleminden doğup insanların dünyasına gelen bir ejderha. \"Hikayesi\" anlatılmaya devam ediyor.",
+  "constellationName": "Kızıl Ejderha",
+  "auto": {
+    "name": "Parlak Kanat Darbesi",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 4 kılıç saldırısı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcayarak ileri doğru bir darbe yapar."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "Yüklü Saldırı Hasarı",
+      "5": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "6": "Havadan Saldırı Hasarı",
+      "7": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "İkili Form: Birleşme ve Ayrılma",
+    "description": {
+      "0": "Ruhların ve dileklerin özünü saflaştırarak <tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>Temel Dönüşüm</strong></tooltip> geçirir. Dönüşüm sırasında Durin'in <strong>İkili Form: Birleşme ve Ayrılma</strong> Element Becerisi, <strong>Dönüşüm: Saflığın Kabulü</strong> özel Element Becerisi olarak değişir. <strong>Parlak Kanat Darbesi</strong> Normal Saldırısı ise <strong>Dönüşüm: Karanlığın Reddi</strong> özel Element Becerisi olarak değişir.",
+      "1": "<br/>",
+      "2": "<strong>Dönüşüm: Saflığın Kabulü</strong>",
+      "3": "Yakındaki düşmanlara 1 defa <pyro>Ateş Alan Hasarı</pyro> verir, Temel Dönüşümü tersine çevirir ve 30 saniyeliğine <strong>Saflığın Kabulü</strong> durumuna girer.",
+      "4": "<br/>",
+      "5": "<strong>Dönüşüm: Karanlığın Reddi</strong>",
+      "6": "Öndeki düşmanlara art arda 3 defa <pyro>Ateş Hasarı</pyro> verir, Temel Dönüşümü tersine çevirir ve 30 saniyeliğine <strong>Karanlığın Reddi</strong> durumuna girer.",
+      "7": "<br/>",
+      "8": "Durin savaştayken <strong>Saflığın Kabulü</strong> veya <strong>Karanlığın Reddi</strong> durumuna girdiğinde belirli miktarda Element Enerjisi yeniler. Element Enerjisi bu şekilde her 6 saniyede bir yenilenebilir."
+    },
+    "skillParams": {
+      "0": "Dönüşüm: Saflığın Kabulü Hasarı",
+      "1": "Dönüşüm: Karanlığın Reddi Hasarı",
+      "2": "Enerji Yenilenmesi",
+      "3": "BS",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Saflık İlkesi: Değişen Işık Misali",
+    "description": {
+      "0": "\"Canavar\"ın gücünü farklı şekillerde ortaya çıkar. Durin, <tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>Temel Dönüşüm</strong></tooltip> durumuna bağlı olarak farklı Element Patlamaları kullanabilir.",
+      "1": "<br/>",
+      "2": "<strong>Saflık İlkesi: Değişen Işık Misali</strong>",
+      "3": "Durin, <strong>Saflığın Kabulü</strong> durumundayken <strong>Saflık İlkesi: Değişen Işık Misali</strong> Element Patlamasını kullanarak önündeki düşmanlara 3 defa <pyro>Ateş Alan Hasarı</pyro> verir ve gücünü <strong>Beyaz Alev Ejderhası</strong> formunda ortaya çıkarır. Beyaz Alev Ejderhası mevcut aktif karakteri takip eder ve belirli aralıklarla yakındaki düşmanlara saldırarak <pyro>Ateş Alan Hasarı</pyro> verir. Bu Hasar Element Patlaması Hasarı sayılır.",
+      "4": "<br/>",
+      "5": "<strong>Karanlık İlkesi: Korlaşan Yıldız Misali</strong>",
+      "6": "Durin, <strong>Karanlığın Reddi</strong> durumundayken <strong>Karanlık İlkesi: Korlaşan Yıldız Misali</strong> Element Patlamasını kullanarak önündeki düşmanlara 3 defa <pyro>Ateş Alan Hasarı</pyro> verir ve gücünü <strong>Karanlık Çürüme Ejderhası</strong> formunda ortaya çıkarır. Karanlık Çürüme Ejderhası mevcut aktif karakteri takip eder ve belirli aralıklarla yakındaki tek bir düşmana saldırarak <pyro>Ateş Hasarı</pyro> verir. Bu Hasar Element Patlaması Hasarı sayılır.",
+      "7": "<br/>",
+      "8": "Durin, Temel Dönüşüm sonucunda özel bir durumda değilse <strong>Saflık İlkesi: Değişen Işık Misali</strong> Element Patlamasını kullanır."
+    },
+    "skillParams": {
+      "0": "Saflık İlkesi: Değişen Işık Misali Hasarı",
+      "1": "Karanlık İlkesi: Korlaşan Yıldız Misali Hasarı",
+      "2": "Beyaz Alev Ejderhası Hasarı",
+      "3": "Karanlık Çürüme Ejderhası Hasarı",
+      "4": "Beyaz Alev Ejderhası Süresi",
+      "5": "Karanlık Çürüme Ejderhası Süresi",
+      "6": "BS",
+      "7": "Enerji Maliyeti",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Kutsal Hesabın Işık Tezahürü",
+    "description": {
+      "0": "Durin, Element Patlamasını kullandığında gücünün ortaya çıktığı forma bağlı olarak farklı güçlendirmeler tetikler.",
+      "1": "<br/>",
+      "2": "<strong>Beyaz Alev Ejderhası</strong> formunda:",
+      "3": "Yakındaki grup üyeleri bir düşman üzerinde Yanma, Yüksek Voltaj, Ateş Girdabı veya Ateş Kristalleşmesi tepkimelerini tetiklediğinde ya da Yanma etkisindeki bir düşmana <pyro>Ateş Hasarı</pyro> veya <dendro>Doğa Hasarı</dendro> verdiğinde, 6sn boyunca o düşmanın <pyro>Ateş Direnci</pyro> ve tepkimeye dahil olan ilgili Elementin Direnci %20 azalır.",
+      "4": "<br/>",
+      "5": "<strong>Karanlık Çürüme Ejderhası</strong> formunda:",
+      "6": "Durin'in Buharlaşma ve Erime Tepkimesi Hasarı %40 artar."
+    }
+  },
+  "passive2": {
+    "name": "Gecenin Formuna Bürünen Kaos",
+    "description": {
+      "0": "Durin, bir Element Patlaması kullandıktan sonra 20 saniyeliğine Ezeli Form Birleşimi etkisi kazanır ve 10 kademe Ezeli Birleşim elde eder. <strong>Beyaz Alev Ejderhası</strong> veya <strong>Karanlık Çürüme Ejderhası</strong> tarafından aralıklarla yapılan bir saldırı Hasar verdiğinde 1 kademe Ezeli Birleşim tüketilir ve verilen Hasar, her 100 Saldırı için orijinal Hasarın %3'ü kadar artar . Bu şekilde en fazla %75 ek Hasar verilebilir. <strong>Beyaz Alev Ejderhası</strong> veya <strong>Karanlık Çürüme Ejderhası</strong> tarafından yapılan tek bir saldırı birden fazla düşmana isabet ettiğinde yalnızca bir kademe Ezeli Birleşim tüketilir.",
+      "1": "Element Patlaması tekrar kullanıldığında Ezeli Kaynaşım kademeleri sıfırlanır."
+    }
+  },
+  "passive3": {
+    "name": "Kabaran Toprağın Yankıları",
+    "description": {
+      "0": "20 saatliğine bir Mondstadt Keşfine gönderildiğinde %25 daha fazla ödül kazanır."
+    }
+  },
+  "lockedPassive": {
+    "name": "Cadının Gece Ayini: Yükselişe Övgü",
+    "description": {
+      "0": "<strong>Cadının Ödevi: Bu Dünyaya Ait</strong> tamamlandıktan sonra Durin bir <strong>Cadılık</strong> karakteri olur. Grupta en az 2 Cadılık karakteri olduğunda, Cadılık karakterlerini güçlendiren <strong>Cadılık: Saklı Ayin</strong> etkisi kazanırsın.",
+      "1": "<br/>",
+      "2": "<strong>Cadılık: Saklı Ayin</strong>",
+      "3": "<tooltip ns=char_Durin_gen baseKey18=passive1><strong>Kutsal Hesabın Işık Tezahürü</strong></tooltip> Yükseltme Yeteneğinin süresi hariç tüm etkilerini %75 artırır."
+    }
+  },
+  "constellation1": {
+    "name": "Adamah'nın Kurtuluşu",
+    "description": {
+      "0": "Durin Element Patlamasını kullandıktan sonra etkileri Element Patlamasının türüne göre değişir:",
+      "1": [
+        "<strong>Saflık İlkesi: Değişen Işık Misali</strong>: Yakındaki diğer tüm grup üyeleri 20 <strong>Aydınlanma Döngüsü</strong> kademesi kazanır, 20sn sürer. Yakındaki aktif karakterler Normal Saldırı, Yüklü Saldırı, Havadan Saldırı, Element Becerisi veya Element Patlaması Hasarı verdiğinde 1 Aydınlanma Döngüsü kademesi tüketilir ve verilen Hasar, Durin'in Saldırısının %60'ı kadar artar. Gruptaki Aydınlanma Döngüsüne sahip karakterler için kademe sayıları ayrı hesaplanır.",
+        "<strong>Karanlık İlkesi: Korlaşan Yıldız Misali</strong>: Durin 20 <strong>Aydınlanma Döngüsü</strong> kademesi kazanır, 20sn sürer. Durin Element Patlaması Hasarı verdiğinde 2 Aydınlanma Döngüsü kademesi tüketilir ve verilen Hasarı Durin'in Saldırısının %150'si kadar artar."
+      ],
+      "2": "<br/>",
+      "3": "Bir Element Patlaması kullanıldığında <strong>Aydınlanma Döngüsü</strong> kademeleri yenilenir."
+    }
+  },
+  "constellation2": {
+    "name": "Temelsiz Görüler",
+    "description": {
+      "0": "Durin Element Patlamasını kullandıktan sonraki 20sn boyunca, yakındaki grup üyeleri Buharlaşma, Erime, Yanma, Yüksek Voltaj, Ateş Girdabı veya Ateş Kristalleşmesi tepkimeleri tetiklediğinde ya da Yanma etkisindeki bir düşmana <pyro>Ateş Hasarı</pyro> veya <dendro>Doğa Hasarı</dendro> verdiğinde yakındaki tüm grup üyelerinin 6sn boyunca <pyro>Ateş Hasarı</pyro> ve tepkimeye dahil olan ilgili Element Hasarı %50 artar."
+    }
+  },
+  "constellation3": {
+    "name": "Alev Aynasındaki Hakikat",
+    "description": {
+      "0": "<strong><tooltip ns=char_Durin_gen baseKey18=burst>Saflık İlkesi: Değişen Işık Misali</tooltip></strong> Seviyesini 3 arttırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Taşkının Kaynağı",
+    "description": {
+      "0": "Durin'in Element Patlaması Hasarı %40 artar. Ayrıca, <strong><tooltip ns=char_Durin_gen baseKey18=constellation1>Adamah'nın Kurtuluşu</tooltip></strong> Takımyıldızına bağlı olarak <strong>Aydınlanma Döngüsü</strong> kademesi tüketen etkiler tetiklendiğinde %30 ihtimalle Aydınlanma Döngüsü kademesi tüketilmeyebilir."
+    }
+  },
+  "constellation5": {
+    "name": "Yakıcı Alevlerin Parçalanışı",
+    "description": {
+      "0": "<strong><tooltip ns=char_Durin_gen baseKey18=skill>İkili Form: Birleşme ve Ayrılma</tooltip></strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Çifte Doğum",
+    "description": {
+      "0": "Durin'in Element Patlaması Hasarı, düşmanların Savunmasının %30'unu yok sayar.",
+      "1": "Ayrıca Durin'in <strong>Saflık İlkesi: Değişen Işık Misali</strong> ve <strong>Karanlık İlkesi: Korlaşan Yıldız Misali</strong> Element Patlamaları geliştirilir:",
+      "2": [
+        "<strong>Saflık İlkesi: Değişen Işık Misali</strong> ve <strong>Beyaz Alev Ejderhası</strong> bir düşmana isabet ettiğinde 6 saniyeliğine o düşmanın Savunması %30 azalır.",
+        "<strong>Karanlık İlkesi: Korlaşan Yıldız Misali</strong> ve <strong>Karanlık Çürüme Ejderhası</strong> tarafından verilen Hasar, düşmanların Savunmasının %40'ını daha yok sayar."
+      ]
+    }
+  }
+}

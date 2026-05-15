@@ -1,0 +1,297 @@
+{
+  "name": "Lucia",
+  "fullName": "Lucia Elowen",
+  "basic": {
+    "BasicAttackOrbitalCombo": {
+      "name": "Basic Attack: Orbital Combo",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Perform up to five forward strikes, dealing <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "The fifth attack is a <ct color=#FFFFFF>Whim</ct>, conjuring an Ethereal figure that inflicts <ct color=#FE437E>Ether DMG</ct> on enemies in a circular area ahead.",
+        "3": "When in combat and not in the <ct color=#FFFFFF>Dream</ct> state, Lucia gains 40 <ct color=#FFFFFF>Dream Points</ct> upon using this <ct color=#FFFFFF>Whim</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "Whim ",
+        "Harmony ",
+        "Aftershock "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeFadingSilhouette": {
+      "name": "Dodge: Fading Silhouette",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackRefraction": {
+      "name": "Dash Attack: Refraction",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Deliver a quick strike forward, dealing <ct color=#FE437E>Ether DMG</ct>."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterStardustEcho": {
+      "name": "Dodge Counter: Stardust Echo",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "This Dodge Counter is a <ct color=#FFFFFF>Whim</ct>. When activated, summons an Ethereal figure that delivers a downward attack in a circular area ahead, dealing <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "If not in the <ct color=#FFFFFF>Dream</ct> state, Lucia gains 20 <ct color=#FFFFFF>Dream Points</ct> upon using this <ct color=#FFFFFF>Whim</ct>. This effect can trigger once every 5s.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Whim ",
+        "Harmony "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackSymphonyOfTheReaperStorm": {
+      "name": "Special Attack: Symphony of the Reaper - Storm",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "This Special Attack is a <ct color=#FFFFFF>Whim</ct>. When activated, it recreates an Ethereal figure that slashes forward in a line, dealing <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "When in combat and not in the <ct color=#FFFFFF>Dream</ct> state, Lucia gains 20 <ct color=#FFFFFF>Dream Points</ct> upon using this <ct color=#FFFFFF>Whim</ct>. This effect can trigger once every 5s."
+      },
+      "params": [
+        "Whim ",
+        "Harmony ",
+        "Aftershock "
+      ]
+    },
+    "EXSpecialAttackSymphonyOfTheReaperDaybreak": {
+      "name": "EX Special Attack: Symphony of the Reaper - Daybreak",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "This EX Special Attack is a <ct color=#FFFFFF>Harmony</ct>. When activated, it summons an Ethereal figure that delivers a powerful forward slash in a line, dealing <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "When Lucia uses any <ct color=#FFFFFF>Harmony</ct>, all squad members gain the <ct color=#FFFFFF>Darkbreaker</ct> state. While in <ct color=#FFFFFF>Darkbreaker</ct> state, Sheer Force increases by 12. Every 200 points of Lucia's initial Max HP grants an additional <ct color=#2BAD00>{CAL:5+AvatarSkillLevel(1)*0.2,1,1}</ct> Sheer Force. The <ct color=#FFFFFF>Darkbreaker</ct> state can increase Sheer Force by up to a maximum of <ct color=#2BAD00>{CAL:612+AvatarSkillLevel(1)*24,1,2}</ct>, lasting 20s and repeated triggers reset the duration. When Lucia's initial Max HP reaches 24,000, the above bonus effect reaches its maximum value.",
+        "3": "When any <ct color=#FFFFFF>Harmony</ct> deals DMG, Lucia increases the final attack's DMG by an additional <ct color=#2BAD00>{CAL:0.34+AvatarSkillLevel(1)*0.03,100,2}%</ct> of her Max HP.",
+        "4": "If she activates this EX Special Attack while in the <ct color=#FFFFFF>Dream</ct> state and under the effect of <ct color=#FFFFFF>Ether Veil: Wellspring</ct>, <ct color=#FFFFFF>Ether Veil: Wellspring</ct> duration is extended by 16s.",
+        "5": "After activating her EX Special Attack, Lucia can immediately follow up with the 5th hit of her <ct color=#FFFFFF>Basic Attack</ct>.",
+        "6": "If not in the <ct color=#FFFFFF>Dream</ct> state, Lucia gains 60 <ct color=#FFFFFF>Dream Points</ct> upon using this <ct color=#FFFFFF>Harmony</ct>.",
+        "7": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "Energy Cost ",
+        "Max Additional Sheer Force Increase ",
+        "Harmony Additional "
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackStageOfBrilliance": {
+      "name": "Chain Attack: Stage of Brilliance",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "This Chain Attack is a <ct color=#FFFFFF>Harmony</ct>. When activated, it summons an Ethereal figure that pulls in enemies in a circular area ahead and deals <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "If not in the <ct color=#FFFFFF>Dream</ct> state, Lucia gains 40 <ct color=#FFFFFF>Dream Points</ct> upon using this <ct color=#FFFFFF>Harmony</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateChargeGreatArmor": {
+      "name": "Ultimate: Charge, Great Armor!",
+      "desc": {
+        "0": "When Decibel Rating is at Maximum, press <IconUltimateReady /> to activate:",
+        "1": "This Ultimate is a <ct color=#FFFFFF>Harmony</ct>. When activated, Lucia summons an Ethereal figure and rides it forward in a charge. Holding a directional button allows her to steer and extend the charge, up to 3s. During the charge, Anti-Interrupt Level is increased, DMG taken is reduced by 40%, and when Lucia takes fatal DMG, she remains in battle with HP not dropping below 1.",
+        "2": "When the charge ends, Lucia unleashes a powerful strike in a large area around her, dealing <ct color=#FE437E>Ether DMG</ct>. A <ct color=#FFFFFF>Quick Assist</ct> is triggered when this skill hits an enemy, and after the skill is used, it leaves behind a <ct color=#FFFFFF>Starlight Convergence</ct>. <ct color=#FFFFFF>Starlight Convergence</ct> lasts 8s. While inside <ct color=#FFFFFF>Starlight Convergence</ct>, the currently active character gains HP regeneration equal to <ct color=#2BAD00>{CAL:0.01+AvatarSkillLevel(3)*0.0005,100,2}%</ct> of Lucia's Max HP per second. This effect ends 4s after leaving the <ct color=#FFFFFF>Starlight Convergence</ct> or immediately when switching out.",
+        "3": "After activation, if Lucia is in the <ct color=#FFFFFF>Dream</ct> state and <ct color=#FFFFFF>Ether Veil: Wellspring</ct> is active, <ct color=#FFFFFF>Ether Veil: Wellspring</ct> duration is extended by 32s.",
+        "4": "If not in the <ct color=#FFFFFF>Dream</ct> state, Lucia gains 100 <ct color=#FFFFFF>Dream Points</ct> upon using this <ct color=#FFFFFF>Harmony</ct>. If she is in the <ct color=#FFFFFF>Dream</ct> state when activating this <ct color=#FFFFFF>Harmony</ct>, she will gain 100 <ct color=#FFFFFF>Dream Points</ct> and re-enter <ct color=#FFFFFF>Dream</ct> state the next time she exits it. This effect cannot be stacked.",
+        "5": "Character is invulnerable while performing the powerful strike."
+      },
+      "params": [
+        "Charge Single-Hit ",
+        "Ultimate ",
+        "Percent HP Recovered Per Second "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistCrushingMist": {
+      "name": "Quick Assist: Crushing Mist",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "This Quick Assist is a <ct color=#FFFFFF>Whim</ct>. When activated, it summons an Ethereal figure that delivers a downward attack in a circular area ahead, dealing <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "If not in the <ct color=#FFFFFF>Dream</ct> state, Lucia gains 20 <ct color=#FFFFFF>Dream Points</ct> upon using this <ct color=#FFFFFF>Whim</ct>. This effect can trigger once every 5s.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Whim ",
+        "Harmony ",
+        "Aftershock "
+      ]
+    },
+    "DefensiveAssistVoiceOfIllusoryDreams": {
+      "name": "Defensive Assist: Voice of Illusory Dreams",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpHarmonyOfPaintedDreams": {
+      "name": "Assist Follow-Up: Harmony of Painted Dreams",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "This Assist Follow-Up is a <ct color=#FFFFFF>Harmony</ct>. When activated, it summons an Ethereal figure that delivers a downward attack in a circular area ahead, dealing <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "If not in the <ct color=#FFFFFF>Dream</ct> state, Lucia gains 40 <ct color=#FFFFFF>Dream Points</ct> upon using this <ct color=#FFFFFF>Harmony</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Lost Nocturne",
+    "desc": [
+      {
+        "0": "When entering the battlefield, Lucia immediately gains 60 <ct color=#FFFFFF>Dream Points</ct>. If her <ct color=#FFFFFF>Dream Points</ct> reaches 100 upon activating a <ct color=#FFFFFF>Whim</ct> or <ct color=#FFFFFF>Harmony</ct>, she enters the <ct color=#FFFFFF>Dream</ct> state.",
+        "1": "When entering the <ct color=#FFFFFF>Dream</ct> state, it triggers a <ct color=#FFFFFF>Quick Assist</ct> and simultaneously activates <ct color=#FFFFFF>Ether Veil: Wellspring</ct>. While <ct color=#FFFFFF>Ether Veil: Wellspring</ct> is active, all squad members' Max HP increase by 5%, lasting 40s. Repeated triggers extend the duration, up to a max of 300s.",
+        "2": "While Lucia is in the <ct color=#FFFFFF>Dream</ct> state, using any <ct color=#FFFFFF>Whim</ct> consumes 25 <ct color=#FFFFFF>Dream Points</ct> and upgrades it to <ct color=#FFFFFF>Harmony</ct>. Whenever another active character's attack hits an enemy, Lucia consumes 25 <ct color=#FFFFFF>Dream Points</ct> to unleash an <ct color=#FFFFFF>Aftershock</ct>. This <ct color=#FFFFFF>Aftershock</ct> is a <ct color=#FFFFFF>Harmony</ct>. After Lucia triggers a skill upgrade or <ct color=#FFFFFF>Aftershock</ct>, <ct color=#FFFFFF>Aftershock</ct> cannot be triggered for 8s.",
+        "3": "When Lucia triggers a skill upgrade or an <ct color=#FFFFFF>Aftershock</ct>, all squad members gain the <ct color=#FFFFFF>Dreamer's Nursery Rhyme</ct> state. While in <ct color=#FFFFFF>Dreamer's Nursery Rhyme</ct> state, DMG dealt increases by <ct color=#2BAD00>10%</ct> for 12s. Repeated triggers reset the duration.",
+        "4": "If Lucia runs out of <ct color=#FFFFFF>Dream Points</ct> or she leaves the <ct color=#FFFFFF>Ether Veil</ct>, she exits the <ct color=#FFFFFF>Dream</ct> state."
+      },
+      {
+        "0": "When entering the battlefield, Lucia immediately gains 60 <ct color=#FFFFFF>Dream Points</ct>. If her <ct color=#FFFFFF>Dream Points</ct> reaches 100 upon activating a <ct color=#FFFFFF>Whim</ct> or <ct color=#FFFFFF>Harmony</ct>, she enters the <ct color=#FFFFFF>Dream</ct> state.",
+        "1": "When entering the <ct color=#FFFFFF>Dream</ct> state, it triggers a <ct color=#FFFFFF>Quick Assist</ct> and simultaneously activates <ct color=#FFFFFF>Ether Veil: Wellspring</ct>. While <ct color=#FFFFFF>Ether Veil: Wellspring</ct> is active, all squad members' Max HP increase by 5%, lasting 40s. Repeated triggers extend the duration, up to a max of 300s.",
+        "2": "While Lucia is in the <ct color=#FFFFFF>Dream</ct> state, using any <ct color=#FFFFFF>Whim</ct> consumes 25 <ct color=#FFFFFF>Dream Points</ct> and upgrades it to <ct color=#FFFFFF>Harmony</ct>. Whenever another active character's attack hits an enemy, Lucia consumes 25 <ct color=#FFFFFF>Dream Points</ct> to unleash an <ct color=#FFFFFF>Aftershock</ct>. This <ct color=#FFFFFF>Aftershock</ct> is a <ct color=#FFFFFF>Harmony</ct>. After Lucia triggers a skill upgrade or <ct color=#FFFFFF>Aftershock</ct>, <ct color=#FFFFFF>Aftershock</ct> cannot be triggered for 8s.",
+        "3": "When Lucia triggers a skill upgrade or an <ct color=#FFFFFF>Aftershock</ct>, all squad members gain the <ct color=#FFFFFF>Dreamer's Nursery Rhyme</ct> state. While in <ct color=#FFFFFF>Dreamer's Nursery Rhyme</ct> state, DMG dealt increases by <ct color=#2BAD00>11.7%</ct> for 12s. Repeated triggers reset the duration.",
+        "4": "If Lucia runs out of <ct color=#FFFFFF>Dream Points</ct> or she leaves the <ct color=#FFFFFF>Ether Veil</ct>, she exits the <ct color=#FFFFFF>Dream</ct> state."
+      },
+      {
+        "0": "When entering the battlefield, Lucia immediately gains 60 <ct color=#FFFFFF>Dream Points</ct>. If her <ct color=#FFFFFF>Dream Points</ct> reaches 100 upon activating a <ct color=#FFFFFF>Whim</ct> or <ct color=#FFFFFF>Harmony</ct>, she enters the <ct color=#FFFFFF>Dream</ct> state.",
+        "1": "When entering the <ct color=#FFFFFF>Dream</ct> state, it triggers a <ct color=#FFFFFF>Quick Assist</ct> and simultaneously activates <ct color=#FFFFFF>Ether Veil: Wellspring</ct>. While <ct color=#FFFFFF>Ether Veil: Wellspring</ct> is active, all squad members' Max HP increase by 5%, lasting 40s. Repeated triggers extend the duration, up to a max of 300s.",
+        "2": "While Lucia is in the <ct color=#FFFFFF>Dream</ct> state, using any <ct color=#FFFFFF>Whim</ct> consumes 25 <ct color=#FFFFFF>Dream Points</ct> and upgrades it to <ct color=#FFFFFF>Harmony</ct>. Whenever another active character's attack hits an enemy, Lucia consumes 25 <ct color=#FFFFFF>Dream Points</ct> to unleash an <ct color=#FFFFFF>Aftershock</ct>. This <ct color=#FFFFFF>Aftershock</ct> is a <ct color=#FFFFFF>Harmony</ct>. After Lucia triggers a skill upgrade or <ct color=#FFFFFF>Aftershock</ct>, <ct color=#FFFFFF>Aftershock</ct> cannot be triggered for 8s.",
+        "3": "When Lucia triggers a skill upgrade or an <ct color=#FFFFFF>Aftershock</ct>, all squad members gain the <ct color=#FFFFFF>Dreamer's Nursery Rhyme</ct> state. While in <ct color=#FFFFFF>Dreamer's Nursery Rhyme</ct> state, DMG dealt increases by <ct color=#2BAD00>13.3%</ct> for 12s. Repeated triggers reset the duration.",
+        "4": "If Lucia runs out of <ct color=#FFFFFF>Dream Points</ct> or she leaves the <ct color=#FFFFFF>Ether Veil</ct>, she exits the <ct color=#FFFFFF>Dream</ct> state."
+      },
+      {
+        "0": "When entering the battlefield, Lucia immediately gains 60 <ct color=#FFFFFF>Dream Points</ct>. If her <ct color=#FFFFFF>Dream Points</ct> reaches 100 upon activating a <ct color=#FFFFFF>Whim</ct> or <ct color=#FFFFFF>Harmony</ct>, she enters the <ct color=#FFFFFF>Dream</ct> state.",
+        "1": "When entering the <ct color=#FFFFFF>Dream</ct> state, it triggers a <ct color=#FFFFFF>Quick Assist</ct> and simultaneously activates <ct color=#FFFFFF>Ether Veil: Wellspring</ct>. While <ct color=#FFFFFF>Ether Veil: Wellspring</ct> is active, all squad members' Max HP increase by 5%, lasting 40s. Repeated triggers extend the duration, up to a max of 300s.",
+        "2": "While Lucia is in the <ct color=#FFFFFF>Dream</ct> state, using any <ct color=#FFFFFF>Whim</ct> consumes 25 <ct color=#FFFFFF>Dream Points</ct> and upgrades it to <ct color=#FFFFFF>Harmony</ct>. Whenever another active character's attack hits an enemy, Lucia consumes 25 <ct color=#FFFFFF>Dream Points</ct> to unleash an <ct color=#FFFFFF>Aftershock</ct>. This <ct color=#FFFFFF>Aftershock</ct> is a <ct color=#FFFFFF>Harmony</ct>. After Lucia triggers a skill upgrade or <ct color=#FFFFFF>Aftershock</ct>, <ct color=#FFFFFF>Aftershock</ct> cannot be triggered for 8s.",
+        "3": "When Lucia triggers a skill upgrade or an <ct color=#FFFFFF>Aftershock</ct>, all squad members gain the <ct color=#FFFFFF>Dreamer's Nursery Rhyme</ct> state. While in <ct color=#FFFFFF>Dreamer's Nursery Rhyme</ct> state, DMG dealt increases by <ct color=#2BAD00>15%</ct> for 12s. Repeated triggers reset the duration.",
+        "4": "If Lucia runs out of <ct color=#FFFFFF>Dream Points</ct> or she leaves the <ct color=#FFFFFF>Ether Veil</ct>, she exits the <ct color=#FFFFFF>Dream</ct> state."
+      },
+      {
+        "0": "When entering the battlefield, Lucia immediately gains 60 <ct color=#FFFFFF>Dream Points</ct>. If her <ct color=#FFFFFF>Dream Points</ct> reaches 100 upon activating a <ct color=#FFFFFF>Whim</ct> or <ct color=#FFFFFF>Harmony</ct>, she enters the <ct color=#FFFFFF>Dream</ct> state.",
+        "1": "When entering the <ct color=#FFFFFF>Dream</ct> state, it triggers a <ct color=#FFFFFF>Quick Assist</ct> and simultaneously activates <ct color=#FFFFFF>Ether Veil: Wellspring</ct>. While <ct color=#FFFFFF>Ether Veil: Wellspring</ct> is active, all squad members' Max HP increase by 5%, lasting 40s. Repeated triggers extend the duration, up to a max of 300s.",
+        "2": "While Lucia is in the <ct color=#FFFFFF>Dream</ct> state, using any <ct color=#FFFFFF>Whim</ct> consumes 25 <ct color=#FFFFFF>Dream Points</ct> and upgrades it to <ct color=#FFFFFF>Harmony</ct>. Whenever another active character's attack hits an enemy, Lucia consumes 25 <ct color=#FFFFFF>Dream Points</ct> to unleash an <ct color=#FFFFFF>Aftershock</ct>. This <ct color=#FFFFFF>Aftershock</ct> is a <ct color=#FFFFFF>Harmony</ct>. After Lucia triggers a skill upgrade or <ct color=#FFFFFF>Aftershock</ct>, <ct color=#FFFFFF>Aftershock</ct> cannot be triggered for 8s.",
+        "3": "When Lucia triggers a skill upgrade or an <ct color=#FFFFFF>Aftershock</ct>, all squad members gain the <ct color=#FFFFFF>Dreamer's Nursery Rhyme</ct> state. While in <ct color=#FFFFFF>Dreamer's Nursery Rhyme</ct> state, DMG dealt increases by <ct color=#2BAD00>16.7%</ct> for 12s. Repeated triggers reset the duration.",
+        "4": "If Lucia runs out of <ct color=#FFFFFF>Dream Points</ct> or she leaves the <ct color=#FFFFFF>Ether Veil</ct>, she exits the <ct color=#FFFFFF>Dream</ct> state."
+      },
+      {
+        "0": "When entering the battlefield, Lucia immediately gains 60 <ct color=#FFFFFF>Dream Points</ct>. If her <ct color=#FFFFFF>Dream Points</ct> reaches 100 upon activating a <ct color=#FFFFFF>Whim</ct> or <ct color=#FFFFFF>Harmony</ct>, she enters the <ct color=#FFFFFF>Dream</ct> state.",
+        "1": "When entering the <ct color=#FFFFFF>Dream</ct> state, it triggers a <ct color=#FFFFFF>Quick Assist</ct> and simultaneously activates <ct color=#FFFFFF>Ether Veil: Wellspring</ct>. While <ct color=#FFFFFF>Ether Veil: Wellspring</ct> is active, all squad members' Max HP increase by 5%, lasting 40s. Repeated triggers extend the duration, up to a max of 300s.",
+        "2": "While Lucia is in the <ct color=#FFFFFF>Dream</ct> state, using any <ct color=#FFFFFF>Whim</ct> consumes 25 <ct color=#FFFFFF>Dream Points</ct> and upgrades it to <ct color=#FFFFFF>Harmony</ct>. Whenever another active character's attack hits an enemy, Lucia consumes 25 <ct color=#FFFFFF>Dream Points</ct> to unleash an <ct color=#FFFFFF>Aftershock</ct>. This <ct color=#FFFFFF>Aftershock</ct> is a <ct color=#FFFFFF>Harmony</ct>. After Lucia triggers a skill upgrade or <ct color=#FFFFFF>Aftershock</ct>, <ct color=#FFFFFF>Aftershock</ct> cannot be triggered for 8s.",
+        "3": "When Lucia triggers a skill upgrade or an <ct color=#FFFFFF>Aftershock</ct>, all squad members gain the <ct color=#FFFFFF>Dreamer's Nursery Rhyme</ct> state. While in <ct color=#FFFFFF>Dreamer's Nursery Rhyme</ct> state, DMG dealt increases by <ct color=#2BAD00>18.3%</ct> for 12s. Repeated triggers reset the duration.",
+        "4": "If Lucia runs out of <ct color=#FFFFFF>Dream Points</ct> or she leaves the <ct color=#FFFFFF>Ether Veil</ct>, she exits the <ct color=#FFFFFF>Dream</ct> state."
+      },
+      {
+        "0": "When entering the battlefield, Lucia immediately gains 60 <ct color=#FFFFFF>Dream Points</ct>. If her <ct color=#FFFFFF>Dream Points</ct> reaches 100 upon activating a <ct color=#FFFFFF>Whim</ct> or <ct color=#FFFFFF>Harmony</ct>, she enters the <ct color=#FFFFFF>Dream</ct> state.",
+        "1": "When entering the <ct color=#FFFFFF>Dream</ct> state, it triggers a <ct color=#FFFFFF>Quick Assist</ct> and simultaneously activates <ct color=#FFFFFF>Ether Veil: Wellspring</ct>. While <ct color=#FFFFFF>Ether Veil: Wellspring</ct> is active, all squad members' Max HP increase by 5%, lasting 40s. Repeated triggers extend the duration, up to a max of 300s.",
+        "2": "While Lucia is in the <ct color=#FFFFFF>Dream</ct> state, using any <ct color=#FFFFFF>Whim</ct> consumes 25 <ct color=#FFFFFF>Dream Points</ct> and upgrades it to <ct color=#FFFFFF>Harmony</ct>. Whenever another active character's attack hits an enemy, Lucia consumes 25 <ct color=#FFFFFF>Dream Points</ct> to unleash an <ct color=#FFFFFF>Aftershock</ct>. This <ct color=#FFFFFF>Aftershock</ct> is a <ct color=#FFFFFF>Harmony</ct>. After Lucia triggers a skill upgrade or <ct color=#FFFFFF>Aftershock</ct>, <ct color=#FFFFFF>Aftershock</ct> cannot be triggered for 8s.",
+        "3": "When Lucia triggers a skill upgrade or an <ct color=#FFFFFF>Aftershock</ct>, all squad members gain the <ct color=#FFFFFF>Dreamer's Nursery Rhyme</ct> state. While in <ct color=#FFFFFF>Dreamer's Nursery Rhyme</ct> state, DMG dealt increases by <ct color=#2BAD00>20%</ct> for 12s. Repeated triggers reset the duration.",
+        "4": "If Lucia runs out of <ct color=#FFFFFF>Dream Points</ct> or she leaves the <ct color=#FFFFFF>Ether Veil</ct>, she exits the <ct color=#FFFFFF>Dream</ct> state."
+      }
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Ballad of the Long Night",
+    "desc": {
+      "0": "When another character in your squad is a <ct color=#FFFFFF>Rupture</ct> or <ct color=#FFFFFF>Stun</ct> character:",
+      "1": "When applying <ct color=#FFFFFF>Darkbreaker</ct>, additionally applies a 30% CRIT DMG increase effect."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Secret Friend",
+      "desc": "When <ct color=#FFFFFF>Dreamer's Nursery Rhyme</ct> deals additional DMG, ignore 18% of enemy All-Attribute RES and have 5% increased Decibel Generation Rate. Each time Lucia performs a skill upgrade, she gains 1 stack of <ct color=#FFFFFF>Echo</ct>, stacking up to 4 times. When <ct color=#FFFFFF>Dreamer's Nursery Rhyme</ct> ends, if Lucia has any <ct color=#FFFFFF>Echo</ct> stacks, 1 stack is consumed to reapply <ct color=#FFFFFF>Dreamer's Nursery Rhyme</ct> to all squad members.",
+      "flavor": {
+        "0": "As a child, Lucia's grandmother took her by the hand and led her into the Hollows.",
+        "1": "From that moment on, she roamed its darkened trails and hunted in its boundless depths. With her brush, she painted the Ethereals she encountered, and the glow of Ether became the brilliance that lit her childhood.",
+        "2": "\"When I was little, I had three friends: the mighty black shield, the teleporting Thana, and the super-powerful great armor!\"",
+        "3": "\"Then one day, they were gone...\"",
+        "4": "\"But it's okay! I drew them in my notebook. Now, with just a wave of my staff, I can summon them all back!\""
+      }
+    },
+    "2": {
+      "name": "Great Magician",
+      "desc": "While Lucia is inside <ct color=#FFFFFF>Ether Veil: Wellspring</ct>, <ct color=#FFFFFF>Harmony</ct> deals 15% more DMG. Agents in the <ct color=#FFFFFF>Darkbreaker</ct> state gain an additional 15% Sheer DMG increase while in <ct color=#FFFFFF>Ether Veil: Wellspring</ct>.",
+      "flavor": {
+        "0": "Lately, a tale has been spreading through New Eridu about the Night Emissary.",
+        "1": "\"Every night at midnight, the Night Emissary shows up on the streets to tell us all kinds of stories!\"",
+        "2": "\"She's also an amazing magician! Just by chanting a spell, there's a 'Woosh!' and she summons a whole swarm of Ethereals to fight for us!\"",
+        "3": "\"Last time we got lost in a Hollow, the Night Emissary used that very trick to save us!\"",
+        "4": "—As told by Avocaboo, Devilboo and Boollseye."
+      }
+    },
+    "3": {
+      "name": "The Best Partner",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "—Knock, knock knock. ",
+        "1": "With the steady rhythm of knocks, a kebab was passed through the window.",
+        "2": "\"Proxy, take it! Hot off the fire — roast skewers with lemon popping candy, paired as perfectly as a Dullahan's sword and shield!\"",
+        "3": "\"Once you finish eating... let's head out and play!\"",
+        "4": "\"I have a feeling... tonight we'll find some amazing inspiration for an urban legend, the kind that can make the entire forum explode!\""
+      }
+    },
+    "4": {
+      "name": "Late-Night Hours",
+      "desc": "When <ct color=#FFFFFF>Ether Veil</ct> is activated or extended on the field, Lucia grants all squad members 100 Decibels. This effect can trigger once every 15s.",
+      "flavor": {
+        "0": "A Scholar of Urban Legends must have keen curiosity, plenty of drive, and the guts to set off without hesitation. Lucia is no exception.",
+        "1": "That's why, during her early days in New Eridu, she became a regular at Public Security.",
+        "2": "\"How many times do I have to tell you? Chasing after ghost stories doesn't give you the right to wander into construction zones!\"",
+        "3": "\"Don't sleep on the streets, don't run around in the middle of the night, and don't go diving into Hollows in front of everyone... These are all part of the 'Rules for Life in New Eridu,' and you need to take them seriously!\"",
+        "4": "\"If you really can't sleep, then... uh, why not go explore Thymefield manor, and tell Alice a few ghost stories while you're there?\""
+      }
+    },
+    "5": {
+      "name": "Dream Watcher",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "Night falls dark as ink, the stars shining bright and brilliant.",
+        "1": "She journeys from afar, carrying stories, ballads, and unfinished verses.",
+        "2": "She plucks a flower, dew gathered upon its petals, and sets it on the windowsill.",
+        "3": "She watches over your dreams, keeping them warm and safe.",
+        "4": "",
+        "5": "\"Good morning... Huh? When did you get here, Lucia?\"",
+        "6": "\"I'm not sure, but it hasn't been too long... time just seems to fly when I'm around you, Proxy.\""
+      }
+    },
+    "6": {
+      "name": "The Never-Ending Journey",
+      "desc": "When Lucia is inside any <ct color=#FFFFFF>Ether Veil</ct>, her ATK increases by 2% of her initial Max HP, and <ct color=#FFFFFF>Harmony</ct> always triggers a CRIT with <ct color=#FFFFFF>Harmony</ct> CRIT DMG increased by 30%.",
+      "flavor": {
+        "0": "Lucia's life is an endless journey. She runs beneath the moonlight, searching, crossing street after street, city after city.",
+        "1": "Stories intertwine like threads, spinning endless dreams, while gentle song flows beneath the glow of the night lanterns.",
+        "2": "Her search never stops, and under the stars, the journey goes on without end.",
+        "3": "",
+        "4": "Only when the night fades and the sun rises does the girl step out of the Hollows, stretching lazily.",
+        "5": "\"Yaaawn... I'm so tired... but everyone says it's best not to sleep inside a Hollow...\"",
+        "6": "\"Maybe I should just crash on the floor at the video store instead!\""
+      }
+    }
+  },
+  "potential": {}
+}

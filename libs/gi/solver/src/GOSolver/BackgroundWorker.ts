@@ -52,11 +52,12 @@ async function handleEvent(e: MessageEvent<WorkerCommand>): Promise<void> {
       const { exclusion, maxIterateSize } = data,
         arts = computeWorker.arts
       const perms = filterFeasiblePerm(
-        artSetPerm(exclusion, [
-          ...new Set(
+        artSetPerm(
+          exclusion,
+          new Set(
             Object.values(arts.values).flatMap((x) => x.map((x) => x.set!))
-          ),
-        ]),
+          )
+        ),
         arts
       )
       let count = 0

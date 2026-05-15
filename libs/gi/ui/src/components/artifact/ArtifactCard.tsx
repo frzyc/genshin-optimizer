@@ -1,4 +1,3 @@
-'use client'
 // use client due to hydration difference between client rendering and server in translation
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
@@ -10,7 +9,6 @@ import {
   InfoTooltip,
   InfoTooltipInline,
   ModalWrapper,
-  NextImage,
   SqBadge,
   StarsDisplay,
 } from '@genshin-optimizer/common/ui'
@@ -157,6 +155,7 @@ export function ArtifactCardObj({
     mainStatKey,
     substats,
     location = '',
+    unactivatedSubstats,
   } = artifact
   const mainStatLevel = Math.max(
     Math.min(mainStatAssumptionLevel, rarity * 4),
@@ -312,7 +311,7 @@ export function ArtifactCardObj({
               sx={{ height: '100%', position: 'absolute', right: 0, top: 0 }}
             >
               <Box
-                component={NextImage ? NextImage : 'img'}
+                component="img"
                 alt="Artifact Piece Image"
                 src={artifactAsset(setKey, slotKey)}
                 sx={{
@@ -344,6 +343,18 @@ export function ArtifactCardObj({
                     stat={stat}
                     effFilter={effFilter}
                     rarity={rarity}
+                  />
+                )
+            )}
+            {unactivatedSubstats?.map(
+              (stat: ICachedSubstat) =>
+                !!stat.value && (
+                  <SubstatDisplay
+                    key={stat.key}
+                    stat={stat}
+                    effFilter={effFilter}
+                    rarity={rarity}
+                    isActiveStat={false}
                   />
                 )
             )}
@@ -483,12 +494,14 @@ function SubstatDisplay({
   stat,
   effFilter,
   rarity,
+  isActiveStat = true,
 }: {
   stat: ICachedSubstat
   effFilter: Set<SubstatKey>
   rarity: ArtifactRarity
+  isActiveStat?: boolean
 }) {
-  const { t: tk } = useTranslation('statKey_gen')
+  const { t: tk } = useTranslation(['statKey_gen', 'ui'])
   const numRolls = stat.rolls?.length ?? 0
   const maxRoll = stat.key ? getSubstatValue(stat.key) : 0
   const rollData = useMemo(
@@ -525,16 +538,28 @@ function SubstatDisplay({
       ),
     [inFilter, stat.rolls, maxRoll, rollData, rollOffset]
   )
+  const getSubstatColor = (
+    numRolls: number,
+    isActiveStat: boolean,
+    rollColor: string
+  ) => {
+    if (numRolls && isActiveStat) return `${rollColor}.main`
+    if (!isActiveStat) return 'secondary'
+    return 'error.main'
+  }
   return (
     <Box display="flex" gap={1} alignContent="center">
       <Typography
         sx={{ flexGrow: 1 }}
-        color={numRolls ? `${rollColor}.main` : 'error.main'}
+        color={getSubstatColor(numRolls, isActiveStat, rollColor)}
         component="span"
       >
         <StatIcon statKey={stat.key} iconProps={iconInlineProps} />{' '}
-        {tk(stat.key)}
+        {tk(`statKey_gen:${stat.key}`)}
         {`+${artDisplayValue(stat.value, getUnitStr(stat.key))}${unit}`}
+        <Typography sx={{ ml: 0.5 }} component="span">
+          {!isActiveStat && tk(`ui:${'notActive'}`)}
+        </Typography>
       </Typography>
       {progresses}
       <Typography

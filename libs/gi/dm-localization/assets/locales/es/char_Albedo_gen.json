@@ -109,6 +109,10 @@
     "name": "Fuerza caliza",
     "description": {
       "0": "Aumenta en un 25% el daño infligido por la flor fugaz de <strong>Abiogénesis: Isotoma solar</strong> contra enemigos con menos del 50% de Vida."
+    },
+    "upgradedDescription": {
+      "0": "Aumenta en un 25% el daño que infligen las flores fugaces creadas con isotomas solares de la Habilidad Elemental, <strong>Abiogénesis: Isotoma solar</strong>, contra los enemigos con menos del 50% de Vida.",
+      "1": "Además, si en el campo de batalla hay alguna isotoma argéntea creada por Albedo, el daño infligido aumenta adicionalmente en una cantidad equivalente al 240% de la DEF de Albedo."
     }
   },
   "passive2": {
@@ -123,10 +127,27 @@
       "0": "Al crear materiales de ascensión de arma, hay una probabilidad del 10% de recibir el doble."
     }
   },
+  "lockedPassive": {
+    "name": "Rito de la noche de brujas: Libro de la luz albar",
+    "description": {
+      "0": "Tras completar la misión <strong>«Lecciones del Aquelarre: De preguntas más allá de las preguntas»</strong>, Albedo se convertirá en un personaje <strong>taumatúrgico</strong>. Cuando en el equipo haya al menos 2 personajes taumatúrgicos, estos obtendrán el efecto de <strong>taumaturgia: rito secreto</strong>, el cual les otorgará ciertos fortalecimientos.",
+      "1": "<br/>",
+      "2": "<strong>Taumaturgia: rito secreto</strong>",
+      "3": [
+        "Durante 20 s tras usar la Habilidad Elemental y golpear con ella a un enemigo, se crearán cerca de dicho enemigo unas <strong>isotomas argénteas</strong> que duran 10 s. Si en el campo de batalla no hay ninguna isotoma solar creada por Albedo y este no ha sido derrotado, habrá una isotoma argéntea que pueda crear flores fugaces, igual que la isotoma solar. Solo puede haber al mismo tiempo dos isotomas argénteas creadas por Albedo.",
+        "Tras crear una isotoma solar, el daño de los Ataques Normales, Cargados y Descendentes y de la Habilidad Elemental y Definitiva de los personajes cercanos del equipo aumenta durante 20 s en un 4% por cada 1000 pts. de DEF que tenga Albedo, hasta un máximo de un 12%.",
+        "Tras crear una isotoma argéntea, el daño de los Ataques Normales, Cargados y Descendentes y de la Habilidad Elemental y Definitiva de los personajes taumatúrgicos cercanos del equipo aumenta durante 20 s en un 10% por cada 1000 pts. de DEF que tenga Albedo, hasta un máximo de un 30%."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Flor del Edén",
     "description": {
       "0": "Cuando explota una flor fugaz de <strong>Abiogénesis: Isotoma solar</strong> creada por Albedo, este recupera 1.2 pts. de Energía Elemental."
+    },
+    "upgradedDescription": {
+      "0": "Cuando explota una flor fugaz de la Habilidad Elemental, <strong>Abiogénesis: Isotoma solar</strong>, creada por Albedo, este recupera 1.2 pts. de Energía Elemental.",
+      "1": "Además, tras usar la Habilidad Elemental, <strong>Abiogénesis: Isotoma solar</strong>, la DEF de Albedo aumenta en un 50% durante 20 s."
     }
   },
   "constellation2": {
@@ -137,6 +158,18 @@
         "Al utilizar <strong>Creación: Marea tectónica</strong>, se consumen todas las acumulaciones de aritmética fatídica y el daño infligido por las explosiones de Creación: Marea tectónica y de las flores de la muerte aumenta en una cantidad equivalente al 30% de la DEF de Albedo por cada acumulación.",
         "Este efecto puede acumularse un máximo de 4 veces."
       ]
+    },
+    "upgradedDescription": {
+      "0": "Al explotar, las flores fugaces de la Habilidad Elemental, <strong>Abiogénesis: Isotoma solar</strong>, otorgan a Albedo el efecto de “aritmética fatídica” durante 30 s:",
+      "1": [
+        "Al utilizar la Habilidad Definitiva, <strong>Creación: Marea tectónica</strong>, se consumen todas las acumulaciones de aritmética fatídica, lo que aumenta el daño infligido por las explosiones de “Creación: Marea tectónica” y de las flores de la muerte."
+      ],
+      "2": "Por cada acumulación, dicho daño aumenta en una cantidad equivalente al 30% de la DEF de Albedo.",
+      "3": [
+        "Este efecto puede acumularse un máximo de 4 veces."
+      ],
+      "4": "<br/>",
+      "5": "Además, cuando Albedo está en tu equipo pero no en uso y el efecto de aritmética fatídica tiene 4 acumulaciones, se eliminan todos los efectos de aritmética fatídica y cerca de tu personaje en uso se crean 3 flores de la muerte que explotan e infligen una cantidad de <geo>Daño Geo en el AdE</geo> equivalente al 300% de la DEF de Albedo. Este daño se considera daño de Habilidad Definitiva. Tras desbloquear el talento pasivo <tooltip ns=char_Albedo_gen baseKey18=passive2><strong>Sabiduría del homúnculo</strong></tooltip>, también se activará el efecto de dicho talento, lo que aumenta la Maestría Elemental de los personajes del equipo cercanos en 125 pts. durante 10 s."
     }
   },
   "constellation3": {
@@ -150,6 +183,10 @@
     "name": "Caída divina",
     "description": {
       "0": "Si los personajes en uso están en el área de la isotoma solar, aumenta en un 30% el daño de sus Ataques Descendentes."
+    },
+    "upgradedDescription": {
+      "0": "Si los personajes en uso están en el área de la isotoma solar, aumenta en un 30% el daño de sus Ataques Descendentes.",
+      "1": "Además, si un personaje en uso cercano del equipo salta cerca de una isotoma argéntea, esta se destruirá, aumentará considerablemente la altura del salto, y el daño de impacto de caída del Ataque Descendente de dicho personaje aumentará en un 30% durante los siguientes 3 s. Este efecto se anulará 0.1 s después de infligir daño con el Ataque Descendente."
     }
   },
   "constellation5": {
@@ -162,7 +199,11 @@
   "constellation6": {
     "name": "Tierra purificadora",
     "description": {
-      "0": "Aumenta en un 17% el daño de los personajes en uso si estos están en el área de la isotoma solar y bajo la protección de un escudo creado mediante Cristalización."
+      "0": "Aumenta en un 17% el daño de los personajes en uso si estos están en el área de la isotoma solar y bajo la protección de un escudo creado mediante Cristalización, o si en el área de la isotoma solar hay algún pilar lunar."
+    },
+    "upgradedDescription": {
+      "0": "Aumenta en un 17% el daño de los personajes en uso si estos están en el área de la isotoma solar y bajo la protección de un escudo creado mediante Cristalización, o si en el área de la isotoma solar hay algún pilar lunar.",
+      "1": "Además, al usar la Habilidad Definitiva, <strong>Creación: Marea tectónica</strong>, se destruirán todas las isotomas argénteas activas. Al destruir isotomas argénteas de esta manera, se considerará como si la Habilidad Definitiva hubiera consumido las 4 cargas de aritmética fatídica de la constelación, {LINK#TE382}<strong>Eón Fanerozoico</strong></tooltip>, y además, el daño de las flores de la muerte aumentará en una cantidad equivalente al 250% de la DEF de Albedo durante los siguientes 20 s."
     }
   }
 }

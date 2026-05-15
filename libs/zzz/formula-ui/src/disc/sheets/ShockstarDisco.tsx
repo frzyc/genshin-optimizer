@@ -1,14 +1,14 @@
 import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
 import { discDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
-import { buffs } from '@genshin-optimizer/zzz/formula'
+import { ShockstarDisco } from '@genshin-optimizer/zzz/formula'
 import { trans } from '../../util'
 import { Set2Display, Set4Display } from '../components'
 
 const key: DiscSetKey = 'ShockstarDisco'
 const [chg, _ch] = trans('disc', key)
 const icon = discDefIcon(key)
-const buff = buffs[key]
+const buff = ShockstarDisco.buffs
 
 const sheet: UISheet<'2' | '4'> = {
   2: {

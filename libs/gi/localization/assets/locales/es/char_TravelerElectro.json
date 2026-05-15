@@ -1,0 +1,16 @@
+{
+  "skill": {
+    "amuletGenAmt": "Número de Abalorios de la Profusión generados",
+    "absorb": "Después de absorber un Abalorio de la Profusión"
+  },
+  "burst": {
+    "3rd": "Daño del 3er Rayo Temible",
+    "thunderCd": "Tiempo de Recarga de Rayo Temible"
+  },
+  "passive2": {
+    "enerRech_": "Recarga de Energía adicional de Abalorio de la Profusión"
+  },
+  "c2": {
+    "thunderHit": "Oponentes siendo golpeados por <strong>Rayo Temible</strong>"
+  }
+}

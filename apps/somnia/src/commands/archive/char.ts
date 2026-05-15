@@ -1,4 +1,4 @@
-import { getUnitStr, valueString } from '@genshin-optimizer/common/util'
+import { clamp, getUnitStr, valueString } from '@genshin-optimizer/common/util'
 import { AssetData, CommonAssetData } from '@genshin-optimizer/gi/assets-data'
 import {
   type CharacterSheetKey,
@@ -19,8 +19,8 @@ import {
   StringSelectMenuOptionBuilder,
 } from 'discord.js'
 import { elementColors } from '../../assets/assets'
-import { giURL } from '../../lib/util'
-import { clean, slashcommand, talentlist, translate } from '../archive'
+import { fieldsJoin, giURL } from '../../lib/util'
+import { clean, slashcommand, talentlist, tooltip, translate } from '../archive'
 import { baseCharStats, getFixed } from '../go/calculator'
 
 function getEmbed(
@@ -33,53 +33,86 @@ function getEmbed(
     embed: {} as EmbedBuilder,
     components: [],
   }
+
+  //get embed
+  const embedFn = {
+    p: profileEmbed,
+    n: normalsEmbed,
+    e: skillEmbed,
+    q: burstEmbed,
+    a: passivesEmbed,
+    c: constellationsEmbed,
+  }[arg[0]]
+  if (!embedFn) throw 'Invalid talent name.'
+
+  //create dropdown menu
+  const options = []
   //parse level
-  let level = arg.length > 1 ? parseInt(arg.substring(1)) : NaN
-
+  let level = arg.length > 1 ? Number(arg.substring(1)) : 0
+  if (isNaN(level)) level = 0
   //talent level dropdown
-  if ('neq'.includes(arg[0])) {
-    if (isNaN(level)) level = 10
-
-    //create dropdown menu
-    const options = []
+  if (['n', 'e', 'q'].includes(arg[0])) {
+    level = clamp(level, 0, 15)
+    options.push(
+      new StringSelectMenuOptionBuilder()
+        .setLabel('Tooltip')
+        .setValue(arg[0] + '0')
+    )
     for (const tl of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) {
       const menu = new StringSelectMenuOptionBuilder()
         .setLabel('Talent Level ' + tl)
         .setValue(arg[0] + tl)
-      if (tl === level) menu.setDefault(true)
       options.push(menu)
     }
+    options[level].setDefault(true)
+    const label = options[level].data.label as string
     res.components = [
       new StringSelectMenuBuilder()
         .setCustomId(`${slashcommand.name} char ${id} ${arg} ${lang} 1`)
-        .setPlaceholder('Talent Level ' + level)
+        .setPlaceholder(label)
         .addOptions(options),
     ]
-  }
-
-  //character profile
-  if (arg === 'p') res.embed = profileEmbed(id, namespace, lang)
-  //normal/charged/plunging attacks
-  else if (arg[0] === 'n') res.embed = normalsEmbed(id, namespace, level, lang)
-  //elemental skill
-  else if (arg[0] === 'e') res.embed = skillEmbed(id, namespace, level, lang)
-  //elemental burst
-  else if (arg[0] === 'q') res.embed = burstEmbed(id, namespace, level, lang)
-  //passives
-  else if (arg[0] === 'a') res.embed = passivesEmbed(id, namespace, level, lang)
-  //constellations
-  else if (arg[0] === 'c') {
-    res.embed = constellationsEmbed(id, namespace, level, lang)
-
-    //create dropdown menu
-    const options = []
+  } else if (arg[0] === 'a') {
+    level = [0, 1, 4, 5].includes(level) ? level : 0
+    //passive dropdown
+    options.push(
+      new StringSelectMenuOptionBuilder()
+        .setLabel('All Passives')
+        .setValue(arg[0] + '0')
+    )
+    options.push(
+      new StringSelectMenuOptionBuilder()
+        .setLabel('1st Ascension Passive')
+        .setValue(arg[0] + '1')
+    )
+    options.push(
+      new StringSelectMenuOptionBuilder()
+        .setLabel('4th Ascension Passive')
+        .setValue(arg[0] + '4')
+    )
+    options.push(
+      new StringSelectMenuOptionBuilder()
+        .setLabel('Other Passives')
+        .setValue(arg[0] + '5')
+    )
+    const selected = options.find((o) => o.data.value === arg[0] + level)
+    const label = selected?.data.label || 'Talent Level ' + level
+    if (selected) selected.setDefault(true)
+    res.components = [
+      new StringSelectMenuBuilder()
+        .setCustomId(`${slashcommand.name} char ${id} ${arg} ${lang} 1`)
+        .setPlaceholder(label)
+        .addOptions(options),
+    ]
+  } else if (arg[0] === 'c') {
+    level = clamp(level, 0, 6)
+    //constellation dropdown
     for (const cl of [0, 1, 2, 3, 4, 5, 6]) {
       const label = cl ? 'Constellation ' + cl : 'All Constellations'
-      const value = cl ? 'c' + cl : 'c'
       const menu = new StringSelectMenuOptionBuilder()
         .setLabel(label)
-        .setValue(value)
-      if (value === arg) menu.setDefault(true)
+        .setValue(arg[0] + cl)
+      if (level === cl) menu.setDefault(true)
       options.push(menu)
     }
     const label = level ? 'Constellation ' + level : 'All Constellations'
@@ -89,8 +122,9 @@ function getEmbed(
         .setPlaceholder(label)
         .addOptions(options),
     ]
-  } else throw 'Invalid talent name.'
+  }
 
+  res.embed = embedFn(id, namespace, level, lang)
   return res
 }
 
@@ -107,8 +141,7 @@ function getName(id: CharacterSheetKey, lang: string) {
 
 function baseEmbed(id: CharacterSheetKey, lang: string) {
   const element = getCharEle(id)
-  let icon = getAssets(id).icon
-  if (!icon) icon = CommonAssetData.elemIcons[element]
+  const icon = getAssets(id).icon || CommonAssetData.elemIcons[element]
   return new EmbedBuilder()
     .setFooter({
       text: 'Character Archive',
@@ -160,7 +193,12 @@ function talentFields(
   ]
 }
 
-function profileEmbed(id: CharacterSheetKey, namespace: string, lang: string) {
+function profileEmbed(
+  id: CharacterSheetKey,
+  namespace: string,
+  level: number,
+  lang: string
+) {
   const element = getCharEle(id)
   let text = ''
   //base stats
@@ -207,28 +245,26 @@ function normalsEmbed(
 ) {
   const auto = translate(namespace, 'auto', lang, true)
   const weapon = getCharStat(sheetKeyToCharKey(id)).weaponType
-  const scalings = talentFields(
-    namespace,
-    'auto',
-    getCharParam(id).auto,
-    level,
-    lang
-  )
+
+  const talentobj = auto.upgradedFields || auto.fields
+  let output =
+    Object.keys(talentobj)
+      .map((key) => {
+        return fieldsJoin(talentobj[key])
+      })
+      .join('\n\n') + '\n\n'
+  if (level === 0) output += tooltip(output, lang)
+
   //make embed
-  return baseEmbed(id, lang)
+  const embed = baseEmbed(id, lang)
     .setTitle(auto.name)
-    .setDescription(
-      clean(
-        Object.values(auto.fields.normal).join('\n') +
-          '\n\n' +
-          Object.values(auto.fields.charged).join('\n') +
-          '\n\n' +
-          Object.values(auto.fields.plunging).join('\n') +
-          '\n\n'
-      )
-    )
+    .setDescription(clean(output))
     .setThumbnail(giURL(CommonAssetData.normalIcons[weapon]))
-    .addFields(scalings)
+  if (level > 0)
+    embed.addFields(
+      talentFields(namespace, 'auto', getCharParam(id).auto, level, lang)
+    )
+  return embed
 }
 
 function skillEmbed(
@@ -238,20 +274,20 @@ function skillEmbed(
   lang: string
 ) {
   const skill = translate(namespace, 'skill', lang, true)
-  const scalings = talentFields(
-    namespace,
-    'skill',
-    getCharParam(id).skill,
-    level,
-    lang
-  )
+
+  let output = Object.values(skill.description).flat().join('\n') + '\n\n'
+  if (level === 0) output += tooltip(output, lang)
+
+  //make embed
   const embed = baseEmbed(id, lang)
     .setTitle(skill.name)
-    .setDescription(clean(Object.values(skill.description).flat().join('\n')))
-    .addFields(scalings)
+    .setDescription(clean(output))
   const thumbnail = getAssets(id).skill
   if (thumbnail) embed.setThumbnail(giURL(thumbnail))
-
+  if (level > 0)
+    embed.addFields(
+      talentFields(namespace, 'skill', getCharParam(id).skill, level, lang)
+    )
   return embed
 }
 
@@ -262,29 +298,36 @@ function burstEmbed(
   lang: string
 ) {
   const burst = translate(namespace, 'burst', lang, true)
-  const scalings = talentFields(
-    namespace,
-    'burst',
-    getCharParam(id).burst,
-    level,
-    lang
-  )
+
+  let output = Object.values(burst.description).flat().join('\n') + '\n\n'
+  if (level === 0) output += tooltip(output, lang)
+
+  //make embed
   const embed = baseEmbed(id, lang)
     .setTitle(burst.name)
-    .setDescription(clean(Object.values(burst.description).flat().join('\n')))
-    .addFields(scalings)
+    .setDescription(clean(output))
   const thumbnail = getAssets(id).burst
   if (thumbnail) embed.setThumbnail(giURL(thumbnail))
+  if (level > 0)
+    embed.addFields(
+      talentFields(namespace, 'burst', getCharParam(id).burst, level, lang)
+    )
   return embed
 }
 
-type Passives = 'passive1' | 'passive2' | 'passive3' | 'passive'
+type Passives =
+  | 'passive1'
+  | 'passive2'
+  | 'passive3'
+  | 'passive'
+  | 'lockedPassive'
 function selectPassive(p: number): Passives[] {
   if (p) {
     if (p === 1) return ['passive1']
     if (p === 4) return ['passive2']
+    if (p === 5) return ['passive3', 'passive', 'lockedPassive']
   }
-  return ['passive1', 'passive2', 'passive3', 'passive']
+  return ['passive1', 'passive2', 'passive3', 'passive', 'lockedPassive']
 }
 
 function passivesEmbed(
@@ -300,14 +343,22 @@ function passivesEmbed(
   for (const passiveId of showPassives) {
     const passive = translate(namespace, passiveId, lang, true)
     if (passive == passiveId) continue
-    //ascension 1
-    if (passiveId === 'passive1') text += `**${passive.name}** (A1)\n`
-    //ascension 4
-    else if (passiveId === 'passive2') text += `**${passive.name}** (A4)\n`
-    //innate passives
-    else text += `**${passive.name}** \n`
+    //ascension passive suffix
+    const suffix = {
+      passive1: ' (A1)',
+      passive2: ' (A4)',
+      passive3: '',
+      passive: '',
+      lockedPassive: '',
+    }[passiveId]
+    text += `**${passive.name}${suffix}** \n`
     //passive text
-    text += Object.values(passive.description).flat().join('\n') + '\n\n'
+    const description = passive.upgradedDescription || passive.description
+    text += Object.values(description).flat().join('\n') + '\n\n'
+  }
+
+  if (showPassives.length === 1) {
+    text += tooltip(text, lang)
   }
   const embed = baseEmbed(id, lang).setDescription(clean(text))
   const thumbnail = getAssets(id)[showPassives[0]]
@@ -324,7 +375,7 @@ function constellationsEmbed(
   let text = ''
   //select constellations
   const allCons = ['1', '2', '3', '4', '5', '6'] as const
-  if (level < 1 || level > 6) throw 'Invalid constellation.'
+  if (level < 0 || level > 6) throw 'Invalid constellation.'
   const showCons = level ? [allCons[level - 1]] : allCons
   for (const constellationId of showCons) {
     const constellation = translate(
@@ -333,10 +384,17 @@ function constellationsEmbed(
       lang,
       true
     )
-    text +=
-      `**${constellationId}. ${constellation.name}** ` +
-      Object.values(constellation.description).flat().join('\n') +
-      '\n\n'
+    text += `**C${constellationId}: ${constellation.name}**\n`
+
+    //hexerei upgrade
+    const description =
+      constellation.upgradedDescription || constellation.description
+    text += Object.values(description).flat().join('\n') + '\n\n'
+
+    //add tooltips for single con
+    if (showCons.length === 1) {
+      text += tooltip(text, lang)
+    }
   }
   //make embed
   const embed = baseEmbed(id, lang).setDescription(clean(text))
@@ -387,12 +445,10 @@ export async function charArchive(
 export async function charReaction(reaction: MessageReaction) {
   let message = reaction.message
   if (message.partial) message = await message.fetch()
-
   if (!message.embeds[0]) return
+
   const embed = message.embeds[0].toJSON()
-
   const emoji = reaction.emoji.name
-
   //reactions to change traveler gender
   if (
     embed.author?.name.includes('Traveler') &&

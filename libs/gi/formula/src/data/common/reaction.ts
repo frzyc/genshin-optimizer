@@ -290,6 +290,18 @@ const transInfo: Record<TransformativeReactionKey, TransInfo> = {
     triggeredBy: ['electro'],
     variants: ['dendro'],
   },
+  lunarbloom: {
+    multi: 0,
+    canCrit: true,
+    triggeredBy: ['dendro', 'hydro'],
+    variants: ['dendro'],
+  },
+  lunarcrystallize: {
+    multi: 0,
+    canCrit: true,
+    triggeredBy: ['geo', 'hydro'],
+    variants: ['geo'],
+  },
 }
 const transTriggerByEle = Object.fromEntries(
   allElementWithPhyKeys.map((ele) => [ele, new Set()])

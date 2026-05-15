@@ -4,12 +4,17 @@
     "artifacts": "Thánh Di Vật",
     "characters": "Nhân Vật",
     "tools": "Công Cụ",
-    "weapons": "Vũ khí",
-    "doc": "Docs",
-    "scanner": "Máy quét"
+    "weapons": "Vũ Khí",
+    "doc": "Tài Liệu",
+    "setting": "Cài Đặt",
+    "scanner": "Scanner",
+    "teams": "Đội",
+    "archive": "Thư Viện",
+    "loadouts": "Bộ Trang Bị",
+    "builds": "Build"
   },
   "social": {
-    "paypal": "Paypal",
+    "paypal": "PayPal",
     "patreon": "Patreon",
     "discord": "Discord"
   },
@@ -20,25 +25,51 @@
   "rightsDisclaimer": "Genshin Optimizer không được liên kết hoặc chứng thực bởi HoYoverse",
   "appVersion": "Phiên bản của $t(pageTitle): {{version}}",
   "error": "Lỗi",
-  "reset": "Cài lại",
+  "reset": "Đặt lại",
   "info": "Thông tin",
   "inventory": "Túi",
   "close": "Đóng",
   "sortMap": {
     "new": "Mới",
     "name": "Tên",
-    "level": "Cấp độ",
+    "level": "Cấp",
     "rarity": "Độ hiếm",
-    "efficiency": "Hiệu suất chỉ số phụ hiện tại",
-    "mefficiency": "Hiệu suất chỉ số phụ tối đa",
-    "artsetkey": "Bộ Thánh Di Vật"
+    "efficiency": "Chỉ số RV hiện tại",
+    "mefficiency": "RV tối đa",
+    "artsetkey": "Bộ Thánh Di Vật",
+    "lastEdit": "Đã sửa gần đây"
   },
   "link": {
-    "download": "Download Link",
-    "discord": "Discord Invite Link"
+    "download": "Link tải về",
+    "discord": "Link mời vào Discord"
   },
   "sortBy": "Sắp xếp theo: ",
   "delete": "Xóa",
   "locked": "Đã khóa",
-  "unlocked": "Đã mở khóa"
+  "unlocked": "Đã mở khóa",
+  "refinement": "Tinh Luyện {{value}}",
+  "selectlevel": "Chọn cấp",
+  "gender": {
+    "F": "Nữ",
+    "M": "Nam"
+  },
+  "statGroupKey": {
+    "basic_stats": "Thuộc tính căn bản",
+    "elem_dmg_bonus": "Tăng Sát Thương Nguyên Tố",
+    "enemy_debuffs": "Hiệu ứng xấu kẻ địch",
+    "self_res": "Kháng Của Bản Thân",
+    "reaction_dmg_bonus": "Tăng Sát Thương Phản Ứng",
+    "reaction_crit": "Tăng Bạo Kích Phản Ứng",
+    "elem_dmgInc": "Tăng Sát Thương Nguyên Tố",
+    "talent_dmgInc": "Tăng Sát Thương Thiên Phú",
+    "elem_crit": "Tăng Bạo Kích Đòn Nguyên Tố",
+    "talent_dmg_bonus": "Tăng Sát Thương Thiên Phú",
+    "talent_crit": "Tăng Bạo Kích Thiên Phú",
+    "talent_level_boost": "Tăng Cấp Thiên Phú",
+    "base_stat_mod": "Điều Chỉnh Chỉ Số Căn Bản",
+    "stamina_buffs": "Buff Thể Lực",
+    "misc": "Thuộc tính khác"
+  },
+  "sillyPageTitle": "Silly Optimizer",
+  "excluded": "Loại trừ"
 }

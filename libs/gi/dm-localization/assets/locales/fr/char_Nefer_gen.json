@@ -1,0 +1,169 @@
+{
+  "name": "Nefer",
+  "title": "Secret enfoui sous les sables",
+  "description": "La propriétaire incroyablement ingénieuse du Curatorium des secrets.",
+  "constellationName": "Ludus Latrunculorum",
+  "auto": {
+    "name": "Serpent frappant",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 4 coups de pied, qui infligent des <dendro>DGT Dendro</dendro>, avec la férocité et la grâce d'un serpent frappant."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Nefer passe en état de locomotion serpentine, pouvant avancer rapidement pendant un maximum de 2,5 s en consommant de l'endurance. Lorsque le bouton de compétence est relâché, que la durée prend fin ou que l'endurance est épuisée, Nefer met fin à sa locomotion serpentine et consomme une certaine quantité d'endurance supplémentaire pour infliger des <dendro>DGT Dendro</dendro> aux ennemis. Pendant l'état <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Danse d'ombre</strong></tooltip>, la consommation supplémentaire d'endurance diminue.",
+        "2": "De plus, utiliser le déchaînement élémentaire <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Tactique de senet : Danse des mille nuits</tooltip></strong> et effectuer un sprint pendant la locomotion serpentine ne met pas fin à l'état."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs en concentrant ses pouvoirs Dendro, infligeant des DGT aux ennemis en chemin et des <dendro>DGT Dendro de zone</dendro> à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT attaque chargée",
+      "5": "Coût d'endurance (charge d'attaque chargée)",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "Coût d'endurance attaque chargée (danse d'ombre)",
+      "8": "DGT durant la chute",
+      "9": "DGT chute basse/élevée",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Tactique de senet : Danse des mille nuits",
+    "description": {
+      "0": "Cette danse, qui a dissous des dynasties, est aussi glaciale qu'une nuit d'hiver sur la grande mer de sable, mais elle persiste avec la tendresse du clair de lune. Nefer charge en avant, infligeant des <dendro>DGT Dendro de zone</dendro> et entrant dans l'état <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Danse d'ombre</strong></tooltip>.",
+      "1": "Dans cet état, les attaques chargées de Nefer sont remplacées par l'attaque chargée spéciale <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Performance fantasmatique</strong></tooltip> si l'équipe possède au moins 1 <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>rosée verdoyante</strong></tooltip>, cette attaque ne consommant pas d'endurance. Pendant l'état Danse d'ombre, la RÉS à l'interruption de Nefer augmente.",
+      "2": "<br/>",
+      "3": "Nefer commence avec 2 utilisations disponibles.",
+      "4": "<br/>",
+      "5": "<i>« Le monde est un jeu dont les pièces restent cachées derrière un voile. Pour éviter de tomber dans un piège, il faut collecter toutes les informations possibles. Ainsi est le sens des secrets. »</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT performance fantasmatique (1er coup de Nefer)",
+      "2": "DGT performance fantasmatique (2e coup de Nefer)",
+      "3": "DGT ombre de performance fantasmatique (1er coup)",
+      "4": "DGT ombre de performance fantasmatique (2e coup)",
+      "5": "DGT ombre de performance fantasmatique (3e coup)",
+      "6": "Utilisations de performances fantasmatiques",
+      "7": "Durée de danse d'ombre",
+      "8": "Temps de recharge",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Vœu sacré : Illusion de regard pur",
+    "description": {
+      "0": "La vision véritable de Thoth accorde la « révélation » des mystères du faux, infligeant des <dendro>DGT Dendro de zone</dendro> aux ennemis en face. Lors de l'utilisation, Nefer consomme tous ses <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>voiles mensongers</strong></tooltip> pour augmenter les DGT infligés par le déchaînement élémentaire concerné.",
+      "1": "<br/>",
+      "2": "<i>Les bénédictions du roi ibis proclamées par les chanteurs des sables brûlants s'apparentent, en vérité, davantage à de terribles malédictions.</i>"
+    },
+    "skillParams": {
+      "0": "DGT (1e phase)",
+      "1": "DGT (2e phase)",
+      "2": "Bonus de DGT",
+      "3": "Temps de recharge",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Pari au clair de lune",
+    "description": {
+      "0": "Nefer obtient différents bonus selon la <strong>signelune</strong> de l'équipe.",
+      "1": "<br/>",
+      "2": "<strong>Signelune « Lueur ascendante »</strong> : en utilisant sa compétence élémentaire <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Tactique de senet : Danse des mille nuits</tooltip></strong>, tous les noyaux Dendro actuellement sur le terrain sont convertis en graines de tromperie, et toutes les réactions de Sélénofleurissement déclenchées par un personnage proche dans les 15 s génèrent des graines de tromperie à la place de noyaux Dendro et de noyaux d'abondance. Les graines de tromperie ne peuvent pas déclencher de réactions d'Exubérance et de Bourgeonnement et ne peuvent pas éclater.",
+      "3": "Lorsque Nefer utilise une attaque chargée ou une <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>performance fantasmatique</strong></tooltip>, elle peut absorber les graines de tromperie à portée, chaque graine absorbée lui accordant un cumul de <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>voile mensonger</strong></tooltip>. En atteignant 3 cumuls ou lorsque la durée du 3e cumul est actualisée, la maîtrise élémentaire de Nefer augmente de 100 pts pendant 8 s."
+    }
+  },
+  "passive2": {
+    "name": "Fille de la poussière et du sable",
+    "description": {
+      "0": "Lorsque Nefer est dans l'état <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Danse d'ombre</strong></tooltip>, sa <strong><tooltip ns=char_Nefer_gen baseKey18=normal>locomotion serpentine</tooltip></strong> accorde de la <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>rosée verdoyante</strong></tooltip> supplémentaire à l'équipe pendant 5 s après qu'un personnage de l'équipe déclenche une réaction de Sélénofleurissement. Chaque tranche de 100 pts de maîtrise élémentaire au-delà de 500 pts renforce cet effet de 10 %, jusqu'à un maximum de 50 %."
+    }
+  },
+  "passive3": {
+    "name": "Bénédiction de signelune : Avant-toits sous le crépuscule",
+    "description": {
+      "0": "Lorsqu'un personnage de l'équipe déclenche une réaction de Fleurissement, elle est convertie en réaction de Sélénofleurissement, dont les DGT de base augmentent selon la maîtrise élémentaire de Nefer : chaque point de maîtrise élémentaire augmente les DGT de base de 0,0175 %, les DGT pouvant être augmentés d'un maximum de 14 % de cette manière.",
+      "1": "<br/>",
+      "2": "De plus, la <strong>signelune</strong> de l'équipe augmente d'un niveau lorsque Nefer fait partie de l'équipe."
+    }
+  },
+  "passive": {
+    "name": "Conspiration du coffre-fort doré",
+    "description": {
+      "0": "Augmente les récompenses d'une expédition de 20 h à Nod-Krai de 25 %."
+    }
+  },
+  "constellation1": {
+    "name": "La planification engendre le succès",
+    "description": {
+      "0": "Les DGT de base des réactions de Sélénofleurissement déclenchées par les <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>performances fantasmatiques</strong></tooltip> de Nefer augmentent d'une valeur équivalant à 60 % de sa maîtrise élémentaire. Cet effet est également amélioré par les cumuls de <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>voile mensonger</strong></tooltip>."
+    }
+  },
+  "constellation2": {
+    "name": "L'observation nourrit la stratégie",
+    "description": {
+      "0": "L'aptitude d'élévation « <tooltip ns=char_Nefer_gen baseKey18=passive1><strong>Pari au clair de lune</strong></tooltip> » est renforcée : augmente la durée du <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>voile mensonger</strong></tooltip> de 5 s, augmente la limite à 5 cumuls et permet aux <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>performances fantasmatiques</strong></tooltip> d'infliger jusqu'à 140 % des DGT d'origine ; de plus, Nefer obtient immédiatement 2 cumuls de voile mensonger lorsqu'elle utilise sa compétence élémentaire <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Tactique de senet : Danse des mille nuits</tooltip></strong> ; finalement, en atteignant 5 cumuls de voile mensonger ou lorsque la durée du 5e cumul est actualisée, la maîtrise élémentaire de Nefer augmente maintenant de 200 pts pendant 8 s.",
+      "1": "L'aptitude d'élévation « Pari au clair de lune » doit être déjà débloquée."
+    }
+  },
+  "constellation3": {
+    "name": "La tromperie masque la vérité",
+    "description": {
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Tactique de senet : Danse des mille nuits</tooltip></strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "L'illusion piège la raison",
+    "description": {
+      "0": "Lorsque Nefer est sur le terrain dans l'état <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Danse d'ombre</strong></tooltip>, elle obtient des rosées verdoyantes 25 % plus rapidement.",
+      "1": "De plus, la <dendro>RÉS Dendro</dendro> des ennemis proches diminue de 20 % lorsque Nefer est dans l'état Danse d'ombre, cet effet prenant fin 4,5 s après que Nefer n'est plus dans l'état Danse d'ombre ou s'est trop éloignée d'un ennemi."
+    }
+  },
+  "constellation5": {
+    "name": "L'opportunité se cache dans les marges",
+    "description": {
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Nefer_gen baseKey18=burst>Vœu sacré : Illusion de regard pur</tooltip></strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "La victoire découle des retournements",
+    "description": {
+      "0": "Lorsque Nefer utilise une <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>performance fantasmatique</strong></tooltip>, les DGT de son 2e coup sont convertis en <dendro>DGT Dendro de zone</dendro> d'une valeur équivalant à 85 % de la maîtrise élémentaire de Nefer. De plus, une instance supplémentaire de <dendro>DGT Dendro de zone</dendro> d'une valeur équivalant à 120 % de la maîtrise élémentaire de Nefer est infligée lorsque l'attaque de la performance fantasmatique finit. Les DGT mentionnés ci-dessous sont considérés comme des DGT de réaction de Sélénofleurissement infligés par la performance fantasmatique.",
+      "1": "<br/>",
+      "2": "<strong>Signelune « Lueur ascendante »</strong>",
+      "3": "Les DGT infligés par les réactions de Sélénofleurissement de Nefer bénéficient d'une <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>élévation</strong></tooltip> de 15 %."
+    }
+  }
+}

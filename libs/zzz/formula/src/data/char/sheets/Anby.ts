@@ -1,9 +1,9 @@
-import { cmpEq, cmpGE, cmpNE, subscript } from '@genshin-optimizer/pando/engine'
+import { cmpGE, subscript } from '@genshin-optimizer/pando/engine'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
+import { isStunned } from '../../common/enemy'
 import {
   allBoolConditionals,
-  enemy,
   own,
   ownBuff,
   register,
@@ -34,11 +34,11 @@ const core_after3rdBasic_dazeInc_ = ownBuff.combat.dazeInc_.add(
 
 const m2_stunned_basic_dmg_ = ownBuff.combat.dmg_.addWithDmgType(
   'basic',
-  cmpGE(char.mindscape, 2, cmpEq(enemy.common.isStunned, 1, dm.m2.dmg_))
+  cmpGE(char.mindscape, 2, isStunned.ifOn(dm.m2.dmg_))
 )
 const m2_unstunned_ex_dazeInc_ = ownBuff.combat.dazeInc_.addWithDmgType(
   'exSpecial',
-  cmpGE(char.mindscape, 2, cmpNE(enemy.common.isStunned, 1, dm.m2.daze_))
+  cmpGE(char.mindscape, 2, isStunned.ifOff(dm.m2.daze_))
 )
 
 const sheet = register(

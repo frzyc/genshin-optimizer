@@ -1,0 +1,29 @@
+{
+  "name": "Corrupção Sombria",
+  "description": {
+    "0": "Uma espada preciosa presenteada pelo Rei do Dia para o corajoso herói na história da Bruxa. No final, a Bruxa a roubou e derrotou o herói sozinha."
+  },
+  "passiveName": "Esplendor do Rei Diurno",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta o Dano CRIT do Supremo em <cryo>16%</cryo>. Obtém o efeito Lâmina do Dia ao atingir o Supremo no inimigo: aumenta o ATQ em <cryo>20%</cryo>; aumenta o ATQ de personagens ativos próximos que não sejam o portador em <cryo>16%</cryo> por 3s.",
+      "1": "Além disso, quando a equipe possuir o efeito Mágico: Ritual Secreto, o efeito de Lâmina do Dia será aumentado em mais 75%. Esse efeito pode ser desencadeado mesmo que o portador não seja o personagem ativo."
+    },
+    "1": {
+      "0": "Aumenta o Dano CRIT do Supremo em <cryo>20%</cryo>. Obtém o efeito Lâmina do Dia ao atingir o Supremo no inimigo: aumenta o ATQ em <cryo>25%</cryo>; aumenta o ATQ de personagens ativos próximos que não sejam o portador em <cryo>20%</cryo> por 3s.",
+      "1": "Além disso, quando a equipe possuir o efeito Mágico: Ritual Secreto, o efeito de Lâmina do Dia será aumentado em mais 75%. Esse efeito pode ser desencadeado mesmo que o portador não seja o personagem ativo."
+    },
+    "2": {
+      "0": "Aumenta o Dano CRIT do Supremo em <cryo>24%</cryo>. Obtém o efeito Lâmina do Dia ao atingir o Supremo no inimigo: aumenta o ATQ em <cryo>30%</cryo>; aumenta o ATQ de personagens ativos próximos que não sejam o portador em <cryo>24%</cryo> por 3s.",
+      "1": "Além disso, quando a equipe possuir o efeito Mágico: Ritual Secreto, o efeito de Lâmina do Dia será aumentado em mais 75%. Esse efeito pode ser desencadeado mesmo que o portador não seja o personagem ativo."
+    },
+    "3": {
+      "0": "Aumenta o Dano CRIT do Supremo em <cryo>28%</cryo>. Obtém o efeito Lâmina do Dia ao atingir o Supremo no inimigo: aumenta o ATQ em <cryo>35%</cryo>; aumenta o ATQ de personagens ativos próximos que não sejam o portador em <cryo>28%</cryo> por 3s.",
+      "1": "Além disso, quando a equipe possuir o efeito Mágico: Ritual Secreto, o efeito de Lâmina do Dia será aumentado em mais 75%. Esse efeito pode ser desencadeado mesmo que o portador não seja o personagem ativo."
+    },
+    "4": {
+      "0": "Aumenta o Dano CRIT do Supremo em <cryo>32%</cryo>. Obtém o efeito Lâmina do Dia ao atingir o Supremo no inimigo: aumenta o ATQ em <cryo>40%</cryo>; aumenta o ATQ de personagens ativos próximos que não sejam o portador em <cryo>32%</cryo> por 3s.",
+      "1": "Além disso, quando a equipe possuir o efeito Mágico: Ritual Secreto, o efeito de Lâmina do Dia será aumentado em mais 75%. Esse efeito pode ser desencadeado mesmo que o portador não seja o personagem ativo."
+    }
+  }
+}

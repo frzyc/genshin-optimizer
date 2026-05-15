@@ -109,6 +109,10 @@
     "name": "Calcite Might",
     "description": {
       "0": "Transient Blossom ที่เกิดจาก <strong>Abiogenesis: Solar Isotoma</strong> จะสร้างความเสียหายแก่ศัตรูที่มีพลังชีวิตต่ำกว่า 50% เพิ่มขึ้น 25%"
+    },
+    "upgradedDescription": {
+      "0": "ในสกิลธาตุ <strong>Abiogenesis: Solar Isotoma</strong> Transient Blossom ที่เกิดจาก Solar Isotoma สร้างความเสียหายเพิ่มขึ้น 25% แก่ศัตรูที่มีค่าพลังชีวิตต่ำกว่า 50%",
+      "1": "นอกจากนี้ หากในสนามมี Silver Isotoma ที่ Albedo สร้างขึ้น จะเพิ่มความเสียหายที่สร้างในครั้งนี้ โดยค่าที่เพิ่มขึ้นเท่ากับ 240% ของพลังป้องกันของ Albedo"
     }
   },
   "passive2": {
@@ -123,21 +127,48 @@
       "0": "เมื่อสร้างวัสดุเลื่อนขั้นอาวุธ จะมีโอกาส 10% ที่จะได้รับผลผลิตเพิ่มเป็น 2 เท่า"
     }
   },
+  "lockedPassive": {
+    "name": "Witch's Eve Rite: Book of Blinding Light",
+    "description": {
+      "0": "หลังจากสำเร็จ<strong>แบบฝึกหัดของแม่มด: ปริศนานอกโจทย์</strong> Albedo จะกลายเป็นตัวละคร<strong>มนตรา</strong> เมื่อจัดทีมโดยมีตัวละครมนตราอย่างน้อย 2 ตัว จะได้รับเอฟเฟกต์ <strong>Hexerei: Secret Rite</strong> ซึ่งจะเสริมพลังให้กับตัวละครมนตรา",
+      "1": "<br/>",
+      "2": "<strong>Hexerei: Secret Rite</strong>",
+      "3": [
+        "ภายใน 20 วินาทีหลังจากใช้สกิลธาตุ เมื่อสกิลธาตุของ Albedo โจมตีโดนศัตรู จะหลอมสร้าง <strong>Silver Isotoma</strong> ขึ้นใกล้กับศัตรู เป็นเวลา 10 วินาที; เมื่อไม่มี Solar Isotoma ที่ Albedo สร้างขึ้นอยู่ในสนาม หาก Albedo ยังไม่หมดสติ Silver Isotoma 1 อันจะได้รับเอฟเฟกต์เดียวกันกับ Solar Isotoma ในการสร้าง Transient Blossom โดยสามารถมี Silver Isotoma ที่ Albedo สร้างขึ้นอยู่พร้อมกันได้ไม่เกิน 2 อัน",
+        "ภายใน 20 วินาทีหลังจากสร้าง Solar Isotoma จะเพิ่มความเสียหายจากการโจมตีปกติ, ชาร์จโจมตี, โจมตีพุ่งลงจากอากาศ, สกิลธาตุ และท่าไม้ตายของตัวละครในทีมที่อยู่ใกล้เคียง ตามพลังป้องกันของ Albedo: พลังป้องกันทุก 1,000 หน่วย จะเพิ่มความเสียหาย 4% ซึ่งสามารถเพิ่มความเสียหายด้วยวิธีนี้ได้สูงสุด 12%",
+        "ภายใน 20 วินาทีหลังจากสร้าง Silver Isotoma จะเพิ่มความเสียหายจากการโจมตีปกติ, ชาร์จโจมตี, โจมตีพุ่งลงจากอากาศ, สกิลธาตุ และท่าไม้ตายของตัวละครมนตราในทีมที่อยู่ใกล้เคียง ตามพลังป้องกันของ Albedo: พลังป้องกันทุก 1,000 หน่วย จะเพิ่มความเสียหาย 10% ซึ่งสามารถเพิ่มความเสียหายด้วยวิธีนี้ได้สูงสุด 30%"
+      ]
+    }
+  },
   "constellation1": {
     "name": "Flower of Eden",
     "description": {
-      "0": "เมื่อ Transient Blossom ที่เกิดขึ้นจาก <strong>Abiogenesis: Solar Isotoma</strong> ของ Albedo เบ่งบาน จะฟื้นฟูพลังงานธาตุ 1.2 หน่วย ให้แก่ตัวของ Albedo เอง"
+      "0": "เมื่อ Transient Blossom ที่เกิดขึ้นจาก <strong>Abiogenesis: Solar Isotoma</strong> ของ Albedo งอกเงย จะฟื้นฟูพลังงานธาตุ 1.2 หน่วย ให้แก่ตัวของ Albedo เอง"
+    },
+    "upgradedDescription": {
+      "0": "เมื่อ Transient Blossom ที่เกิดขึ้นจาก Solar Isotoma ในสกิลธาตุ <strong>Abiogenesis: Solar Isotoma</strong> ของ Albedo งอกเงย จะฟื้นฟูพลังงานธาตุ 1.2 หน่วยให้ตัว Albedo เอง",
+      "1": "นอกจากนี้ ภายใน 20 วินาทีหลังจาก Albedo ใช้สกิลธาตุ <strong>Abiogenesis: Solar Isotoma</strong> พลังป้องกันของตัว Albedo เองจะเพิ่มขึ้น 50%"
     }
   },
   "constellation2": {
     "name": "Opening of Phanerozoic",
     "description": {
-      "0": "เมื่อ Transient Blossom ที่เกิดจาก <strong>Abiogenesis: Solar Isotoma</strong> เบ่งบาน จะมอบเอฟเฟกต์ Fatal Reckoning ให้แก่ Albedo เป็นเวลา 30 วินาที:",
+      "0": "เมื่อ Transient Blossom ที่เกิดจาก <strong>Abiogenesis: Solar Isotoma</strong> งอกเงย จะมอบเอฟเฟกต์ Fatal Reckoning ให้แก่ Albedo เป็นเวลา 30 วินาที:",
       "1": [
         "เมื่อปล่อย <strong>Rite of Progeniture: Tectonic Tide</strong> จะเป็นการล้างเอฟเฟกต์ทั้งหมดของ Fatal Reckoning และเพิ่มความเสียหายของ Rite of Progeniture: Tectonic Tide และ Fatal Blossom ตามจำนวนชั้นของเอฟเฟกต์ที่ถูกล้าง;",
         "Fatal Reckoning แต่ละชั้นที่ถูกใช้ จะเพิ่มความเสียหายเท่ากับ 30% ของพลังป้องกันของ Albedo ให้กับ Rite of Progeniture: Tectonic Tide และ Fatal Blossom;",
         "เอฟเฟกต์ดังกล่าวสามารถซ้อนทับได้มากสุด 4 ครั้ง"
       ]
+    },
+    "upgradedDescription": {
+      "0": "เมื่อ Transient Blossom ที่เกิดจากสกิลธาตุ <strong>Abiogenesis: Solar Isotoma</strong> งอกเงย จะมอบเอฟเฟกต์ Fatal Reckoning ให้แก่ Albedo เป็นเวลา 30 วินาที:",
+      "1": [
+        "เมื่อปล่อย <strong>Rite of Progeniture: Tectonic Tide</strong> จะเป็นการล้างเอฟเฟกต์ Fatal Reckoning ทั้งหมด และเพิ่มความเสียหายระเบิดพลังของ Rite of Progeniture: Tectonic Tide และ Fatal Blossom ตามจำนวนชั้นของเอฟเฟกต์ที่ถูกล้าง;",
+        "Fatal Reckoning แต่ละชั้นที่ถูกใช้ จะเพิ่มความเสียหายเท่ากับ 30% ของพลังป้องกันของ Albedo ให้กับ Rite of Progeniture: Tectonic Tide และ Fatal Blossom;",
+        "เอฟเฟกต์ดังกล่าวสามารถซ้อนทับได้มากสุด 4 ครั้ง;"
+      ],
+      "2": "<br/>",
+      "3": "นอกจากนี้ เมื่อ Albedo ไม่ได้เข้าร่วมการต่อสู้ และ Fatal Reckoning ซ้อนทับถึง 4 ชั้น จะล้างเอฟเฟกต์ Fatal Reckoning ทั้งหมด และสร้าง Fatal Blossom 3 ดอกใกล้กับตัวละครที่เข้าร่วมการต่อสู้ในขณะนั้น ซึ่งจะเบ่งบานอย่างรุนแรง และสร้าง<geo>ความเสียหายหินวงกว้าง</geo> เท่ากับ 300% ของพลังป้องกันของ Albedo และถูกนับเป็นความเสียหายท่าไม้ตาย หลังจากปลดล็อกพรสวรรค์ติดตัว <tooltip ns=char_Albedo_gen baseKey18=passive2><strong>Homuncular Nature</strong></tooltip> จะทำให้เกิดเอฟเฟกต์ของพรสวรรค์ติดตัวนี้ด้วย ซึ่งทำให้ความชำนาญธาตุของตัวละครในทีมที่อยู่ใกล้เคียงเพิ่มขึ้น 125 หน่วย เป็นเวลา 10 วินาที"
     }
   },
   "constellation3": {
@@ -151,6 +182,10 @@
     "name": "Descent of Divinity",
     "description": {
       "0": "ตัวละครในทีมที่เข้าร่วมการต่อสู้ในขณะนั้น และอยู่ในพื้นที่ของ Solar Isotoma จะสร้างความเสียหายจากการโจมตีพุ่งลงจากอากาศเพิ่มขึ้น 30%"
+    },
+    "upgradedDescription": {
+      "0": "ตัวละครในทีมที่เข้าร่วมการต่อสู้ในขณะนั้น และอยู่ในพื้นที่ของ Solar Isotoma จะสร้างความเสียหายจากการโจมตีพุ่งลงจากอากาศเพิ่มขึ้น 30%",
+      "1": "นอกจากนี้ เมื่อตัวละครที่เข้าร่วมการต่อสู้ในขณะนั้นที่อยู่ใกล้เคียง กระโดดใกล้กับ Silver Isotoma จะทำลาย Silver Isotoma และเพิ่มความสูงในการกระโดดครั้งนี้อย่างมาก และภายใน 3 วินาทีหลังจากนั้น จะทำให้ความเสียหายพุ่งถึงพื้นจากการโจมตีพุ่งลงจากอากาศของตัวละครเพิ่มขึ้น 30% เอฟเฟกต์นี้จะหายไป หลังจากที่การโจมตีพุ่งลงจากอากาศสร้างความเสียหายพุ่งถึงพื้นไปแล้ว 0.1 วินาที"
     }
   },
   "constellation5": {
@@ -163,7 +198,12 @@
   "constellation6": {
     "name": "Dust of Purification",
     "description": {
-      "0": "เมื่อตัวละครในทีมที่เข้าร่วมการต่อสู้ในขณะนั้น และอยู่ในพื้นที่ของ Solar Isotoma ได้รับการปกป้องโดยโล่ที่เกิดจากปฏิกิริยาตกผลึก ความเสียหายที่สร้างจะเพิ่มขึ้น 17%"
+      "0": "เมื่อตัวละครในทีมที่เข้าร่วมการต่อสู้ในขณะนั้น และอยู่ในพื้นที่ของ Solar Isotoma ได้รับการปกป้องโดยโล่ที่เกิดจากปฏิกิริยาตกผลึก หรือมี Moondrift อยู่ในพื้นที่ของ Solar Isotoma ความเสียหายที่สร้างจะเพิ่มขึ้น 17%"
+    },
+    "upgradedDescription": {
+      "0": "หากตัวละครในทีมที่เข้าร่วมการต่อสู้ในขณะนั้น ที่อยู่ในพื้นที่ของ Solar Isotoma ได้รับการปกป้องจากโล่ที่เกิดจากปฏิกิริยาตกผลึก หรือมี Moondrift อยู่ในพื้นที่ของ Solar Isotoma จะสร้างความเสียหายเพิ่มขึ้น 17%",
+      "1": "<br/>",
+      "2": "นอกจากนี้ เมื่อปล่อยท่าไม้ตาย <strong>Rite of Progeniture: Tectonic Tide</strong> จะทำลาย Silver Isotoma ทั้งหมดที่อยู่ในสนาม; เมื่อทำลาย Silver Isotoma ด้วยวิธีนี้ ท่าไม้ตายในครั้งนี้จะลบล้าง Fatal Reckoning 4 ชั้น จากกลุ่มดาว {LINK#TE382}<strong>Opening of Phanerozoic</strong></tooltip> และความเสียหายที่เกิดจาก Fatal Blossom จะเพิ่มขึ้น เท่ากับ 250% ของพลังป้องกันของ Albedo ภายใน 20 วินาทีหลังจากนั้น"
     }
   }
 }

@@ -77,16 +77,16 @@
   "burst": {
     "name": "Răng Sét",
     "description": {
-      "0": "Đánh thức sói vô hình để bảo vệ bản thân, gây cho địch xung quanh <electro>Sát Thương Nguyên Tố Lôi</electro>, và tiêu hao tất cả Ấn Lôi, hồi năng lượng nguyên tố cho Razor.",
-      "1": "Trong thời gian Sói tồn tại, sẽ chiến đấu cùng Razor.",
+      "0": "Đánh thức Lôi Lang vô hình để bảo vệ bản thân, gây cho địch xung quanh <electro>Sát Thương Nguyên Tố Lôi</electro>, và tiêu hao tất cả Ấn Lôi, hồi năng lượng nguyên tố cho Razor.",
+      "1": "Trong thời gian Lôi Lang tồn tại, sẽ chiến đấu cùng Razor.",
       "2": "<br/>",
-      "3": "<strong>Sói</strong>",
+      "3": "<strong>Lôi Lang</strong>",
       "4": [
-        "sẽ cùng Razor tấn công thường, gây <electro>Sát Thương Nguyên Tố Lôi</electro>;",
+        "Sẽ cùng Razor tấn công thường, gây <electro>Sát Thương Nguyên Tố Lôi</electro>;",
         "Tăng tốc độ tấn công của Razor và <electro>Kháng Nguyên Tố Lôi</electro>;",
         "Giúp Razor miễn nhiễm với sát thương phản ứng <electro>Điện Cảm</electro>;",
         "Không thể thi triển Trọng Kích;",
-        "Tăng khả năng chống gián đoạn cho Razor."
+        "Tăng khả năng kháng gián đoạn cho Razor."
       ],
       "5": "<br/>",
       "6": "Hiệu quả sẽ mất khi Razor rời khỏi trận.",
@@ -133,6 +133,16 @@
       "1": "Không thể cộng dồn với buff Thiên Phú cố định có cùng hiệu quả."
     }
   },
+  "lockedPassive": {
+    "name": "Đêm Lễ Ma Nữ - Sấm Sét Dâng Trào",
+    "description": {
+      "0": "Sau khi hoàn thành <strong>Bài Tập Của Ma Nữ - Về Đàn Sói Nhỏ</strong>, Razor sẽ trở thành nhân vật <strong>Hexerei</strong>. Khi đội hình có ít nhất 2 nhân vật Hexerei, sẽ nhận được hiệu quả <strong>Hexerei - Nghi Thức Bí Mật</strong>, giúp nhân vật Hexerei nhận được cường hóa.",
+      "1": "Ngoài ra, Kỹ Năng Nộ của Razor <strong>Răng Sét</strong> sẽ được cường hóa: Tăng sát thương <strong>Lôi Lang</strong> gây ra, mức tăng tương đương 70% Tấn Công của Razor.",
+      "2": "<br/>",
+      "3": "<strong>Hexerei - Nghi Thức Bí Mật</strong>",
+      "4": "Trong thời gian tồn tại Lôi Lang triệu hồi từ Kỹ Năng Nộ <strong>Răng Sét</strong>, nếu Razor tích lũy Ấn Lôi từ Kỹ Năng Nguyên Tố <strong>Vuốt Và Sấm</strong> vượt mức giới hạn, Lôi Lang sẽ tạo ra sấm sét tấn công kẻ địch ở gần, gây Sát Thương Phạm Vi Nguyên Tố Lôi tương đương 150% Tấn Công của Razor và hồi phục 7 điểm Năng Lượng Nguyên Tố cho Razor. Hiệu quả nêu trên mỗi 1s tối đa kích hoạt một lần."
+    }
+  },
   "constellation1": {
     "name": "Bản Chất Của Sói",
     "description": {
@@ -170,6 +180,12 @@
     "description": {
       "0": "Mỗi 10s, kiếm của Razor sẽ tự động nạp năng lượng, khiến cho tấn công thường lần sau sẽ kích hoạt sấm sét gây ra <electro>sát thương nguyên tố Lôi</electro> bằng 100% tấn công.",
       "1": "Khi không ở trong trạng thái <strong>Răng Sét</strong>, nếu sét đánh trúng kẻ địch, sẽ tích luỹ cho Razor 1 Ấn Lôi của <strong>Vuốt Và Sấm</strong>."
+    },
+    "upgradedDescription": {
+      "0": "Mỗi 10s, kiếm của Razor sẽ tự động nạp năng lượng, khiến lần Tấn Công Thường tiếp theo sẽ kích hoạt sấm sét, gây <electro>Sát Thương Nguyên Tố Lôi</electro> bằng 100% Tấn Công.",
+      "1": "Khi không trong trạng thái <strong>Răng Sét</strong>, nếu sấm sét đánh trúng kẻ địch, sẽ tích lũy cho Razor 3 Ấn Lôi của Kỹ Năng Nguyên Tố <strong>Vuốt Và Sấm</strong>.",
+      "2": "Ngoài ra, khi Razor tích lũy Ấn Lôi thông qua Kỹ Năng Nguyên Tố <strong>Vuốt Và Sấm</strong>, sẽ chuyển sang tích lũy cho Razor 3 Ấn Lôi.",
+      "3": "Trong 15s sau khi tiêu hao Ấn Lôi, Razor sẽ tăng thêm 10% Tỷ Lệ Bạo Kích và 50% Sát Thương Bạo Kích."
     }
   }
 }

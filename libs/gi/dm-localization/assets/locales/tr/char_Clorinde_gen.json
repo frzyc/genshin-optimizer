@@ -142,8 +142,8 @@
   "constellation2": {
     "name": "\"Uzun Gecenin Tehlikeleriyle Yüzleştim\"",
     "description": {
-      "0": "\"Karanlığı Yaran Alev\" Pasif Yeteneği güçlenir: Yakındaki bir grup üyesi düşman üzerinde <electro>Elektrikle ilgili bir tepkime</electro> tetiklediğinde 15sn boyunca Clorinde'in Normal Saldırıları ve <strong>Son Parıltı</strong> ile verilen <electro>Elektrik Hasarı</electro> Clorinde'in Saldırısının %30'u kadar artar. En fazla 3 kademeye kadar birikir, her kademenin süresi birbirinden bağımsızdır. 3 kademe biriktiğinde Clorinde'in müdahaleye karşı olan direnci artar. Bu saldırılar için kazanılabilecek Maksimum Hasar artışı 2.700 olabilir.",
-      "1": "\"Karanlığı Yaran Alev\" Pasif Yeteneğinin açılmış olması gerekir."
+      "0": "\"Karanlığı Yaran Alev\" Yükseltme Yeteneği güçlenir: Yakındaki bir grup üyesi düşman üzerinde <electro>Elektrikle ilgili bir tepkime</electro> tetiklediğinde 15sn boyunca Clorinde'in Normal Saldırıları ve <strong>Son Parıltı</strong> ile verilen <electro>Elektrik Hasarı</electro> Clorinde'in Saldırısının %30'u kadar artar. 3 kademeye kadar birikebilir, her kademenin süresi birbirinden bağımsızdır. 3 kademe biriktiğinde Clorinde'in müdahaleye karşı direnci artar. Bu saldırılar için kazanılabilecek Maksimum Hasar artışı 2.700 olabilir.",
+      "1": "\"Karanlığı Yaran Alev\" Yükseltme Yeteneğinin açılmış olması gerekir."
     }
   },
   "constellation3": {

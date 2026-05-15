@@ -1,0 +1,169 @@
+{
+  "name": "Nefer",
+  "title": "Segreto insabbiato",
+  "description": "L'intraprendente direttrice del Consiglio dei segreti.",
+  "constellationName": "Ludus Latrunculorum",
+  "auto": {
+    "name": "Colpo serpentino",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attacco normale</strong>",
+        "1": "Sferra fino a 4 calci che infliggono <dendro>DAN da Dendro</dendro> con la ferocia e la grazia di un serpente."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Nefer entra nello stato Serpentiforme e consuma vigore per muoversi rapidamente in avanti per un massimo di 2,5 s. Quando l'abilità viene rilasciata e quando la durata o il vigore terminano, Nefer esce dallo stato Serpentiforme e consuma una certa quantità di vigore aggiuntiva per infliggere <dendro>DAN da Dendro</dendro> agli avversari. Quando è in stato di <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Danza dell'ombra</strong></tooltip>, il consumo maggiorato di vigore diminuisce.",
+        "2": "Inoltre, quando Nefer è in stato Serpentiforme, scatenare l'abilità elementale <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Strategia del senet: Danza delle mille notti</tooltip></strong> o eseguire uno Scatto non causa il termine del suddetto stato."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Evocando il potere di Dendro, Nefer si scaglia verso il suolo da mezz'aria, danneggiando tutti gli avversari lungo la sua traiettoria e infliggendo <dendro>DAN da Dendro ad area</dendro> all'impatto con il suolo."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da ATT caricato",
+      "5": "Consumo vigore caricamento attacco caricato",
+      "6": "Costo vigore ATT caricato",
+      "7": "Costo vigore ATT caricato Danza dell'ombra",
+      "8": "DAN da ATT in picchiata",
+      "9": "DAN da ATT in picchiata basso/alto",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Strategia del senet: Danza delle mille notti",
+    "description": {
+      "0": "Una danza che ha dissolto dinastie, fredda come una notte d'inverno nel vasto mare di sabbia, eppure persistente con la tenue delicatezza di un velo illuminato dalla luna. Nefer si lancia in avanti, infliggendo <dendro>DAN da Dendro ad area</dendro> ed entrando nello stato di <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Danza dell'ombra</strong></tooltip>.",
+      "1": "Quando Nefer è in questo stato, se ha almeno 1 unità di <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>Rugiada verdeggiante</strong></tooltip> a disposizione, i suoi attacchi caricati vengono sostituiti dall'attacco caricato speciale <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Spettacolo fantasma</strong></tooltip> che non consuma vigore. Inoltre, la sua resistenza all'interruzione aumenta.",
+      "2": "<br/>",
+      "3": "Il numero di cariche iniziali è pari a 2.",
+      "4": "<br/>",
+      "5": "<i>\"Il mondo è un grande gioco, in cui le pedine rimangono nascoste sotto un velo. Per evitare di cadere in una trappola, bisogna raccogliere tutte le informazioni possibili. Questo è il significato dei segreti.\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "DAN da 1º colpo Spettacolo fantasma (Nefer)",
+      "2": "DAN da 2º colpo Spettacolo fantasma (Nefer)",
+      "3": "DAN da 1º colpo Spettacolo fantasma (Ombre)",
+      "4": "DAN da 2º colpo Spettacolo fantasma (Ombre)",
+      "5": "DAN da 3º colpo Spettacolo fantasma (Ombre)",
+      "6": "Cariche Spettacolo fantasma",
+      "7": "Durata Danza dell'ombra",
+      "8": "TdR",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Voto sacro: Fantasma del Vero Occhio",
+    "description": {
+      "0": "Conferisce \"rivelazioni\" ai misteri del falso grazie alla visione del vero di Thoth, infliggendo <dendro>DAN da Dendro ad area</dendro> agli avversari di fronte a lei. Quando viene sprigionato, Nefer consuma tutti i <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>Veli della menzogna</strong></tooltip> per aumentare i DAN inflitti dall'attuale Tripudio elementale.",
+      "1": "<br/>",
+      "2": "<i>Le benedizioni del Re Ibis proclamate dai cantori delle sabbie ardenti sono, in realtà, più simili a terribili maledizioni.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "Bonus DAN Velo della menzogna",
+      "3": "TdR",
+      "4": "Costo energia",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Scommessa al chiaro di luna",
+    "description": {
+      "0": "Nefer ottiene gli effetti positivi corrispondenti in base al <strong>Presagio lunare</strong> del gruppo.",
+      "1": "<br/>",
+      "2": "Quando <strong>Presagio lunare: Barlume ascendente</strong> è attivo, scatenare la sua abilità elementale <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Strategia del senet: Danza delle mille notti</tooltip></strong> converte tutti i nuclei di Dendro in campo in Semi dell'inganno. Inoltre, qualsiasi reazione di Fioritura lunare innescata dai personaggi vicini nei successivi 15 s che creerebbe dei nuclei di Dendro o dei Nuclei munifici, crea Semi dell'inganno al loro posto. Questi ultimi non possono innescare reazioni di Iperfioritura o di Germinazione, né possono esplodere.",
+      "3": "Quando Nefer usa un attacco caricato o uno <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Spettacolo fantasma</strong></tooltip>, può assorbire i Semi dell'inganno entro una certa area d'effetto e ottenere 1 accumulo di <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>Velo della menzogna</strong></tooltip> per ogni seme assorbito. Quando quest'effetto raggiunge i 3 accumuli, o quando la durata del terzo accumulo viene ripristinata, la maestria elementale di Nefer aumenta di 100 per 8 s."
+    }
+  },
+  "passive2": {
+    "name": "Figlia della polvere e della sabbia",
+    "description": {
+      "0": "Quando Nefer è nello stato di <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Danza dell'ombra</strong></tooltip>, per 5 s dopo che i membri del gruppo hanno innescato reazioni di Fioritura lunare, il suo stato <strong><tooltip ns=char_Nefer_gen baseKey18=normal>Serpentiforme</tooltip></strong> fornisce della <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>Rugiada verdeggiante</strong></tooltip> aggiuntiva. Per ogni 100 punti di maestria elementale di Nefer al di sopra di 500, il suddetto effetto di rigenerazione aumenta di un 10%, fino a un 50% massimo."
+    }
+  },
+  "passive3": {
+    "name": "Benedizione del Presagio lunare: Gronde al crepuscolo",
+    "description": {
+      "0": "Quando un membro del gruppo innesca una reazione di Fioritura, questa si converte in una reazione di Fioritura lunare, i cui DAN base aumentano di uno 0,0175% per ogni punto di maestria elementale di Nefer, fino a un 14% massimo.",
+      "1": "<br/>",
+      "2": "Inoltre, quando Nefer è nel gruppo, il <strong>Presagio lunare</strong> del gruppo aumenta di 1 livello."
+    }
+  },
+  "passive": {
+    "name": "Cospirazione della camera dorata",
+    "description": {
+      "0": "Ottiene un 25% in più di ricompense quando intraprende una spedizione a Nod-Krai per 20 ore."
+    }
+  },
+  "constellation1": {
+    "name": "Un buon piano porta successo",
+    "description": {
+      "0": "I DAN base per le reazioni di Fioritura lunare innescate dallo <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Spettacolo fantasma</strong></tooltip> di Nefer aumentano di un 60% della sua maestria elementale. Quest'effetto viene aumentato anche da <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>Velo della menzogna</strong></tooltip>."
+    }
+  },
+  "constellation2": {
+    "name": "L'osservazione nutre la strategia",
+    "description": {
+      "0": "Potenzia gli effetti del talento d'ascensione <tooltip ns=char_Nefer_gen baseKey18=passive1><strong>Scommessa al chiaro di luna</strong></tooltip>. La durata di <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>Velo della menzogna</strong></tooltip> aumenta di 5 s, il suo limite di accumuli sale a 5 e <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Spettacolo fantasma</strong></tooltip> infligge fino a un 140% dei suoi DAN originali. Quando Nefer scatena la sua abilità elementale <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Strategia del senet: Danza delle mille notti</tooltip></strong>, ottiene immediatamente 2 accumuli di Velo della menzogna. Inoltre, quando quest'ultimo raggiunge i 5 accumuli, o quando la durata del quinto accumulo si ripristina, la maestria elementale di Nefer aumenta di 200 per 8 s.",
+      "1": "Richiede il talento d'ascensione Scommessa al chiaro di luna."
+    }
+  },
+  "constellation3": {
+    "name": "L'inganno cela la verità",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Strategia del senet: Danza delle mille notti</tooltip></strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Le illusioni intrappolano la ragione",
+    "description": {
+      "0": "Quando Nefer è in campo ed è nello stato di <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Danza dell'ombra</strong></tooltip>, si ottiene Rugiada verdeggiante un 25% più velocemente.",
+      "1": "Mentre Nefer è in questo stato, la <dendro>RES a Dendro</dendro> degli avversari vicini diminuisce di un 20%. Quando lo stato di Danza dell'ombra di Nefer termina, o quando quest'ultima si allontana di una certa distanza dagli avversari, quest'effetto viene annullato dopo 4,5 s."
+    }
+  },
+  "constellation5": {
+    "name": "L'opportunità si cela tra i margini",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong><tooltip ns=char_Nefer_gen baseKey18=burst>Voto sacro: Fantasma del Vero Occhio</tooltip></strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "La vittoria giunge quando gira la sorte",
+    "description": {
+      "0": "Quando Nefer scatena <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Spettacolo fantasma</strong></tooltip>, i DAN della seconda fase da lei inflitti subiscono una conversione per infliggere <dendro>DAN da Dendro ad area</dendro> pari a un 85% della sua maestria elementale. Inoltre, al termine degli attacchi di Spettacolo fantasma, viene inflitta un'iterazione aggiuntiva di <dendro>DAN da Dendro ad area</dendro> pari a un 120% della maestria elementale di Nefer. Tutti i DAN sopracitati sono considerati DAN da Fioritura lunare inflitti da Spettacolo fantasma.",
+      "1": "<br/>",
+      "2": "<strong>Presagio lunare: Barlume ascendente</strong>",
+      "3": "I DAN da Fioritura lunare di Nefer vengono <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>innalzati</strong></tooltip> di un 15%."
+    }
+  }
+}

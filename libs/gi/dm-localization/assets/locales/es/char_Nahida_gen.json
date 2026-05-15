@@ -145,8 +145,9 @@
     "description": {
       "0": "Los enemigos afectados por una <strong>semilla skandha</strong> aplicada por Nahida reciben los siguientes efectos:",
       "1": [
-        "El daño que reciben por medio de las reacciones de Quemadura, Florecimiento, Sobreflorecimiento y Crepitar puede infligir críticos contra ellos, con una Prob. CRIT fija del 20% y un Daño CRIT fijo del 100%.",
-        "La DEF de dichos enemigos se reduce en un 30% durante 8 s al ser afectados por las reacciones de Aceleración, Intensificación y Propagación."
+        "El daño que reciben por medio de las reacciones de Quemadura, Florecimiento, Sobreflorecimiento y Crepitar puede asestar golpes CRIT contra ellos, con una Prob. CRIT fija del 20% y un Daño CRIT fijo del 100%. La Prob. CRIT otorgada por este efecto puede acumularse con otras bonificaciones similares que proporcionen Prob. CRIT a dichas reacciones",
+        "La DEF de dichos enemigos se reduce en un 30% durante 8 s al ser afectados por las reacciones de Aceleración, Intensificación y Propagación.",
+        "Aumenta en un 10% la Prob. CRIT de la reacción de Florecimiento Lunar, y en un 20% su Daño CRIT."
       ]
     }
   },

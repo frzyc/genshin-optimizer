@@ -1,17 +1,11 @@
-import {
-  cmpEq,
-  cmpGE,
-  prod,
-  subscript,
-  sum,
-} from '@genshin-optimizer/pando/engine'
+import { cmpGE, prod, subscript, sum } from '@genshin-optimizer/pando/engine'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
+import { isStunned } from '../../common/enemy'
 import {
   allBoolConditionals,
   allNumConditionals,
   customDmg,
-  enemy,
   own,
   ownBuff,
   percent,
@@ -152,11 +146,7 @@ const sheet = register(
           team.common.count.withSpecialty('rupture')
         ),
         3,
-        cmpEq(
-          enemy.common.isStunned,
-          1,
-          prod(exSpecial_debuff, percent(dm.ability.chain_dmg_))
-        )
+        isStunned.ifOn(prod(exSpecial_debuff, percent(dm.ability.chain_dmg_)))
       )
     ),
     undefined,

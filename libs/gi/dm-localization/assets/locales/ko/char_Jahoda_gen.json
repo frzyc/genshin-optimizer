@@ -1,0 +1,168 @@
+{
+  "name": "야호다",
+  "title": "바람을 묶는 그림자",
+  "description": "믿음직스럽고 뭐든지 할 수 있는(자칭) 「비밀의 집」 직원",
+  "constellationName": "딸기자리",
+  "auto": {
+    "name": "틈새 사격",
+    "fields": {
+      "normal": {
+        "0": "<strong>일반 공격</strong>",
+        "1": "활로 최대 3번 공격한다."
+      },
+      "charged": {
+        "0": "<strong>강공격</strong>",
+        "1": "피해가 더 크고 정확한 <strong>조준 사격</strong>을 한다.",
+        "2": "조준 시 강풍이 화살촉에 계속해서 모인다. 바람의 힘이 가득 찬 화살은 <anemo>바람 원소 피해</anemo>를 준다."
+      },
+      "plunging": {
+        "0": "<strong>낙하 공격</strong>",
+        "1": "공중에서 화살비를 쏜 후 빠른 속도로 땅에 착지한다. 경로상의 적을 공격하고 착지 시 범위 피해를 준다"
+      }
+    },
+    "skillParams": {
+      "0": "1단 공격 피해",
+      "1": "2단 공격 피해",
+      "2": "3단 공격 피해",
+      "3": "조준 사격",
+      "4": "풀차지 조준 사격",
+      "5": "낙하 기간 피해",
+      "6": "저공/고공 추락 충격 피해",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "기책·부의 재분배",
+    "description": {
+      "0": "야호다가 적을 향해 돌진한다. 적과 접촉 시 「그림자 습격」 상태에 진입한다. 해당 상태에서 야호다는 계속해서 빠르게 이동한다. 주변의 적이 <pyro>불 원소</pyro>, <hydro>물 원소</hydro>, <electro>번개 원소</electro> 또는 <cryo>얼음 원소</cryo> 부착 상태일 경우, 야호다는 몰래 가지고 있던 <tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>냥냥병</strong></tooltip>을 대응하는 원소 속성으로 전환한 후 지속적으로 병을 충전한다. 지속 시간이 끝나거나 재발동 시, 야호다는 <strong>냥냥병</strong>을 비우고 주변의 적에게 <anemo>바람 원소 피해</anemo>를 1회 준다. <strong>냥냥병</strong> 충전 완료 시, 야호다는 <strong>냥냥병</strong>을 비우고 그림자 습격 상태를 종료하며, 주변의 적에게 더 큰 <anemo>바람 원소 피해</anemo>를 1회 준다.",
+      "1": "만약 야호다의 돌진이 적에게 닿지 않은 경우, 야호다는 그 자리에서 연막탄 1개를 던져 주변의 적에게 <anemo>바람 원소 피해</anemo>를 1회 준다.",
+      "2": "<br/>",
+      "3": "<strong>달빛 징조·보름</strong>: <strong>냥냥병</strong> 충전 완료 시, 야호다는 <strong>냥냥병</strong>을 즉시 비우지 않고 일정 시간 동안 병에 채워진 원소를 지속적으로 소모하여, 주변의 적에게 간헐적으로 <strong>냥냥볼</strong>을 발사해 <strong>냥냥병</strong>과 대응하는 원소 타입 피해를 준다. <strong>냥냥볼</strong>이 적 명중 시, 야호다의 원소 에너지가 2pt 회복된다. 해당 효과는 3.5초마다 최대 1회 발동된다.",
+      "4": "<br/>",
+      "5": "<i>세상에는 재산을 분배하는 방법이 아주 많지만, 노드크라이의 보물 사냥꾼과 보물 사냥단에게 가장 효율적인 분배 방식은 언제나 하나뿐이다</i>"
+    },
+    "skillParams": {
+      "0": "연막탄 피해",
+      "1": "냥냥병 미충전 피해",
+      "2": "냥냥병 충전 완료 피해",
+      "3": "냥냥병 지속 시간",
+      "4": "냥냥볼 피해",
+      "5": "재사용 대기시간",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "비기·사냥꾼의 일곱 도구",
+    "description": {
+      "0": "비장의 무기를 써야겠어! 야호다가 <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>가정용 냥냥 상호협동기</strong></tooltip>를 2개 꺼내 주변의 적에게 <anemo>바람 원소 피해</anemo>를 1회 준다.",
+      "1": "<br/>",
+      "2": "<i>「소위 말하는 상호협동이라는 건, 네가 모라를 내면 우리가 협조해 준다는 뜻이야. 어때, 꽤 합리적이지?」</i>"
+    },
+    "skillParams": {
+      "0": "스킬 피해",
+      "1": "가정용 냥냥 상호협동기 피해",
+      "2": "가정용 냥냥 상호협동기 지속 시간",
+      "3": "가정용 냥냥 상호협동기 치유량",
+      "4": "HP가 가장 낮은 캐릭터 추가 치유량",
+      "5": "재사용 대기시간",
+      "6": "원소 에너지",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "수금 기술",
+    "description": {
+      "0": "파티에 <pyro>불 원소</pyro>, <hydro>물 원소</hydro>, <electro>번개 원소</electro> 또는 <cryo>얼음 원소</cryo> 타입의 캐릭터가 1명 이상 존재할 경우, 대응하는 원소 타입 캐릭터의 수량에 따라 원소폭발 <strong>비기·사냥꾼의 일곱 도구</strong>의 <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>가정용 냥냥 상호협동기</strong></tooltip>가 강화된다.",
+      "1": "야호다는 파티의 상술한 원소 타입 캐릭터들을 몰래 기록한다. 해당 캐릭터들 중 가장 많은 원소 타입이:",
+      "2": [
+        "<pyro>불 원소</pyro>일 경우: <strong>가정용 냥냥 상호협동기</strong>가 기존의 130%에 해당하는 피해를 준다.",
+        "<hydro>물 원소</hydro>일 경우: <strong>가정용 냥냥 상호협동기</strong>의 치유량이 기존의 120%가 된다.",
+        "<electro>번개 원소</electro>일 경우: <strong>가정용 냥냥 상호협동기</strong>의 수량이 1개 증가한다.",
+        "<cryo>얼음 원소</cryo>일 경우: <strong>가정용 냥냥 상호협동기</strong>의 공격 간격이 10% 감소한다."
+      ],
+      "3": "<br/>",
+      "4": "상술한 원소 타입의 캐릭터 수가 동일할 경우, <pyro>불 원소</pyro>, <hydro>물 원소</hydro>, <electro>번개 원소</electro>, <cryo>얼음 원소</cryo> 순서로 기록한다. 시작 시 최대 한 가지 원소 타입에 대응하는 효과만 발동된다"
+    }
+  },
+  "passive2": {
+    "name": "딸기의 보상",
+    "description": {
+      "0": "원소폭발 <strong>비기·사냥꾼의 일곱 도구</strong>의 <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>가정용 냥냥 상호협동기</strong></tooltip>가 파티 내 자신의 현재 필드 위 캐릭터에게 치유 발동 시, 치유를 받는 캐릭터의 HP가 70%를 초과한 경우, 해당 캐릭터의 원소 마스터리가 100pt 증가한다. 지속 시간: 6초"
+    }
+  },
+  "passive3": {
+    "name": "달빛 징조의 축복·지붕 질주",
+    "description": {
+      "0": "야호다가 파티에 있을 경우 파티의 <strong>달빛 징조</strong>가 1레벨 상승한다"
+    }
+  },
+  "passive": {
+    "name": "뒷골목의 지혜",
+    "description": {
+      "0": "노드크라이에서 탐색 임무 수행 시 소모하는 시간이 25% 감소한다"
+    }
+  },
+  "constellation1": {
+    "name": "한 병 더!",
+    "description": {
+      "0": "원소전투 스킬 <strong>기책·부의 재분배</strong>의 <tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>냥냥병</strong></tooltip>이 발사한 <strong>냥냥볼</strong>이 적에게 명중 시, 50% 확률로 1회 튕기고 주변의 적에게 대응하는 원소 피해를 준다"
+    }
+  },
+  "constellation2": {
+    "name": "도적의 임기응변",
+    "description": {
+      "0": "<strong>달빛 징조·보름</strong>: 돌파 특성 <tooltip ns=char_Jahoda_gen baseKey18=passive1><strong>「수금 기술」</strong></tooltip>에서 야호다는 캐릭터 수가 가장 많은 원소 타입을 제외한 나머지 원소 타입 중 캐릭터 수가 가장 많은 원소 타입을 몰래 기록한다. 최대 두 가지 원소 타입과 대응하는 효과를 발동할 수 있다. 해당 효과는 돌파 특성 「수금 기술」을 해금해야 한다"
+    }
+  },
+  "constellation3": {
+    "name": "퇴로가 없는 도박수",
+    "description": {
+      "0": "원소폭발 <strong><tooltip ns=char_Jahoda_gen baseKey18=burst>비기·사냥꾼의 일곱 도구</tooltip></strong>의 스킬 레벨+3",
+      "1": "최대 Lv.15까지 상승"
+    }
+  },
+  "constellation4": {
+    "name": "야생의 딸기",
+    "description": {
+      "0": "원소폭발 <strong>비기·사냥꾼의 일곱 도구</strong>의 <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>가정용 냥냥 상호협동기</strong></tooltip>에 원소 전환이 발생 시, 야호다의 원소 에너지가 4pt 회복된다"
+    }
+  },
+  "constellation5": {
+    "name": "가장 위대한 보물",
+    "description": {
+      "0": "원소전투 스킬 <strong><tooltip ns=char_Jahoda_gen baseKey18=skill>기책·부의 재분배</tooltip></strong>의 스킬 레벨+3",
+      "1": "최대 Lv.15까지 상승"
+    }
+  },
+  "constellation6": {
+    "name": "가장 사소한 행운",
+    "description": {
+      "0": "<strong>달빛 징조·보름</strong>: 원소전투 스킬 <strong>기책·부의 재분배</strong>의 <tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>냥냥병</strong></tooltip> 충전 완료 후 20초 동안, 파티 내 주변에 있는 달빛 징조 캐릭터의 치명타 확률이 5% 증가하고, 치명타 피해가 40% 증가한다"
+    }
+  }
+}

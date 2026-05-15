@@ -1,0 +1,190 @@
+{
+  "name": "Lauma",
+  "title": "Ode sacrée à la lune éternelle",
+  "description": "Dame bénie par le clair de lune et la forêt. Une lueur d'espoir née parmi les Descendants de givrelune.",
+  "constellationName": "Cerva Nivea",
+  "auto": {
+    "name": "Pérégrination de la linnunrata",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 3 attaques qui infligent des <dendro>DGT Dendro</dendro>."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Lauma subit une métamorphose d'envoyée spirituelle, se transformant en envoyée de la forêt paisible et pouvant charger en avant pendant un maximum de 10 s en consommant de l'endurance. Dans cet état, sa RÉS à l'interruption augmente et elle peut consommer de l'endurance supplémentaire pour effectuer jusqu'à deux sauts consécutifs.",
+        "2": "Lorsque Lauma quitte cet état, sa métamorphose d'envoyée spirituelle entre en TdR, période pendant laquelle son attaque chargée est convertie en prière de nécromancesprit : consomme de l'endurance pour infliger des <dendro>DGT Dendro de zone</dendro> vers l'avant après un court délai."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs en concentrant ses pouvoirs Dendro, infligeant des DGT aux ennemis en chemin et des <dendro>DGT Dendro de zone</dendro> à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "Coût d'endurance de déplacement d'envoyée spirituelle",
+      "4": "Coût d'endurance de saut d'envoyée spirituelle",
+      "5": "Durée max d'envoyée spirituelle",
+      "6": "TdR métamorphose d'envoyée spirituelle",
+      "7": "Coût d'endurance de prière de nécromancesprit",
+      "8": "DGT prière de nécromancesprit",
+      "9": "DGT durant la chute",
+      "10": "DGT chute basse/élevée",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Runo : Repos sans aube de karsikko",
+    "description": {
+      "0": "Lauma récite silencieusement un hymne ancien, invoquant un <tooltip ns=tooltips_gen baseKey18=11190001 values=[]><strong>sanctuaire du givrebois</strong></tooltip> : différents effets se produisent selon la méthode de déclenchement :",
+      "1": "<br/>",
+      "2": "<strong>Appui simple</strong>",
+      "3": "Lauma entonne un hymne de chasse, infligeant des <dendro>DGT Dendro de zone</dendro>.",
+      "4": "<br/>",
+      "5": "<strong>Appui long</strong>",
+      "6": "Utilisable si Lauma possède au moins 1 <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>rosée verdoyante</strong></tooltip> : Lauma consomme toutes ses rosées verdoyantes pour entonner un hymne de repos éternel infligeant une fois des <dendro>DGT Dendro de zone</dendro> et une fois des <dendro>DGT Dendro de zone</dendro> considérés comme des DGT de réaction de Sélénofleurissement. Chaque rosée verdoyante consommée accorde à Lauma 1 cumul de <tooltip ns=tooltips_gen baseKey18=11190002 values=[]><strong>chant lunaire</strong></tooltip>. Un maximum de 3 rosées verdoyantes peut être consommé de cette manière à chaque appui long de la compétence élémentaire.",
+      "7": "<br/>",
+      "8": "De plus, lorsque Lauma touche un ennemi avec une compétence élémentaire ou une attaque de son sanctuaire du givrebois, la <dendro>RÉS Dendro</dendro> et la <hydro>RÉS Hydro</hydro> de ce dernier diminuent pendant 10 s."
+    },
+    "skillParams": {
+      "0": "DGT appui simple",
+      "1": "DGT appui long (1er coup)",
+      "2": "DGT appui long (2e coup)",
+      "3": "DGT sanctuaire du givrebois",
+      "4": "Durée de sanctuaire du givrebois",
+      "5": "Durée de chant lunaire",
+      "6": "Baisse RÉS élémentaire",
+      "7": "Durée de baisse de RÉS élémentaire",
+      "8": "Temps de recharge",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Runo : Cœurs devenant la lune battante",
+    "description": {
+      "0": "Espérant que les souhaits de tous les êtres deviennent comme le clair de lune qui baigne la terre, Lauma entonne un chant sacré du grand nord, obtenant 18 cumuls d'<tooltip ns=tooltips_gen baseKey18=11190003 values=[]><strong>hymne pâle</strong></tooltip>.",
+      "1": "De plus, lorsque Lauma utilise son déchaînement élémentaire alors qu'elle possède des cumuls de <tooltip ns=tooltips_gen baseKey18=11190002 values=[]><strong>chant lunaire</strong></tooltip> ou en obtient moins de 15 s après l'utilisation de son déchaînement élémentaire, elle consomme tous ses cumuls de chant lunaire et obtient 6 cumuls d'hymne pâle par cumul de chant lunaire consommé. Cet effet peut être déclenché une fois pendant les 15 s qui suivent l'utilisation d'un déchaînement élémentaire.",
+      "2": "<br/>",
+      "3": "<strong>Hymne pâle</strong>",
+      "4": "Lorsqu'un personnage de l'équipe à proximité inflige des DGT avec une réaction de Fleurissement, d'Exubérance, de Bourgeonnement ou de Sélénofleurissement, un cumul d'hymne pâle est consommé pour augmenter les DGT infligés selon la maîtrise élémentaire de Lauma. Un nombre de cumuls égal au nombre d'ennemis touchés sera consommé si ces DGT touchent plusieurs ennemis en même temps.",
+      "5": "La durée de chaque cumul d'hymne pâle est calculée de façon indépendante."
+    },
+    "skillParams": {
+      "0": "Gain d'hymne pâle lors d'un déchaînement élémentaire",
+      "1": "Conversion de chant lunaire en hymne pâle",
+      "2": "Bonus de DGT (Fleurissement, Exubérance, Bourgeonnement)",
+      "3": "Bonus de DGT (Sélénofleurissement)",
+      "4": "Durée d'hymne pâle",
+      "5": "Temps de recharge",
+      "6": "Énergie élémentaire",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Lumière pour la nuit glaciale",
+    "description": {
+      "0": "Pendant 20 s après avoir utilisé la compétence élémentaire <strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo : Repos sans aube de karsikko</tooltip></strong> de Lauma, différents bonus sont accordés selon la <strong>signelune</strong> de l'équipe, les bonus de différents cycles signelunaires ne pouvant pas se cumuler.",
+      "1": "<br/>",
+      "2": "<strong>Signelune « Lueur naissante »</strong>",
+      "3": "Les DGT infligés par les réactions de Fleurissement, d'Exubérance et de Bourgeonnement de tous les personnages de l'équipe à proximité peuvent déclencher des coups CRIT dont le taux CRIT est fixé à 15 % et les DGT CRIT à 100 %. Le taux CRIT accordé par cet effet peut se cumuler avec le taux CRIT des effets similaires qui permettent aux réactions élémentaires de déclencher des coups CRIT.",
+      "4": "<br/>",
+      "5": "<strong>Signelune « Lueur ascendante »</strong>",
+      "6": "Lorsqu'un personnage de l'équipe à proximité inflige des DGT avec une réaction de Sélénofleurissement, le taux CRIT augmente de 10 % et les DGT CRIT de 20 %."
+    }
+  },
+  "passive2": {
+    "name": "Purification pour la source",
+    "description": {
+      "0": "Chaque point de maîtrise élémentaire de Lauma lui accorde les bonus suivants :",
+      "1": [
+        " Augmente les DGT infligés par sa compétence élémentaire de 0,04 %, les DGT pouvant être augmentés d'un maximum de 32 % de cette manière.",
+        " Diminue le TdR de la <strong>métamorphose d'envoyée spirituelle</strong> de son attaque chargée de 0,02 %, ce TdR pouvant être diminué d'un maximum de 20 % de cette manière."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Bénédiction de signelune : Chœur de la nature",
+    "description": {
+      "0": "Lorsqu'un personnage de l'équipe déclenche une réaction de Fleurissement, elle est convertie en réaction de Sélénofleurissement, dont les DGT de base augmentent selon la maîtrise élémentaire de Lauma : chaque point de maîtrise élémentaire augmente les DGT de base de 0,0175 %, les DGT pouvant être augmentés d'un maximum de 14 % de cette manière.",
+      "1": "<br/>",
+      "2": "De plus, la <strong>signelune</strong> de l'équipe augmente d'un niveau lorsque Lauma fait partie de l'équipe."
+    }
+  },
+  "passive": {
+    "name": "Prière pour la forêt",
+    "description": {
+      "0": "Affiche l'emplacement des <strong>produits de Nod-Krai</strong> sur la mini-carte.",
+      "1": "De plus, Lauma semble avoir une affinité particulière avec certains petits animaux affectés par le kuuvahki..."
+    }
+  },
+  "constellation1": {
+    "name": "« Ô lèvres, tissez des psaumes et chantez le folklore »",
+    "description": {
+      "0": "Lorsque Lauma a utilisé sa compétence élémentaire <strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo : Repos sans aube de karsikko</tooltip></strong> ou son déchaînement élémentaire <strong><tooltip ns=char_Lauma_gen baseKey18=burst>Runo : Cœurs devenant la lune battante</tooltip></strong>, elle obtient l'effet Trames de la vie pendant 20 s.",
+      "1": "Pendant la durée de cet effet, les personnages déployés à proximité récupèrent des PV pour une valeur équivalant à 500 % de la maîtrise élémentaire de Lauma lorsqu'un membre de l'équipe à proximité déclenche une réaction de Sélénofleurissement, cet effet pouvant être déclenché une fois toutes les 1,9 s.",
+      "2": "De plus, l'endurance consommée par la forme d'envoyée spirituelle de Lauma diminue de 40 % et sa durée max augmente de 5 s."
+    }
+  },
+  "constellation2": {
+    "name": "« Tressez les avertissements et les contes du nord »",
+    "description": {
+      "0": "Le déchaînement élémentaire <strong><tooltip ns=char_Lauma_gen baseKey18=burst>Runo : Cœurs devenant la lune battante</tooltip></strong> est renforcé :",
+      "1": [
+        " Les effets de l'<tooltip ns=tooltips_gen baseKey18=11190003 values=[]><strong>hymne pâle</strong></tooltip> s'améliorent, augmentant davantage les DGT infligés par les réactions de Fleurissement, d'Exubérance et de Bourgeonnement de tous les personnages de l'équipe à proximité d'une valeur équivalant à 500 % de la maîtrise élémentaire de Lauma et les DGT infligés par leurs réactions de Sélénofleurissement d'une valeur équivalant à 400 % de la maîtrise élémentaire de Lauma."
+      ],
+      "2": "<br/>",
+      "3": "<strong>Signelune « Lueur ascendante »</strong> : les DGT des réactions de Sélénofleurissement de tous les personnages de l'équipe à proximité augmentent de 40 %."
+    }
+  },
+  "constellation3": {
+    "name": "« Il ne faut point chercher le chemin du renard rusé »",
+    "description": {
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Lauma_gen baseKey18=burst>Runo : Cœurs devenant la lune battante</tooltip></strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "« Ni aspirer à la puissance de l'ours distingué »",
+    "description": {
+      "0": "Lorsque le <tooltip ns=tooltips_gen baseKey18=11190001 values=[]><strong>sanctuaire du givrebois</strong></tooltip> de sa compétence élémentaire <strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo : Repos sans aube de karsikko</tooltip></strong> touche un ennemi, Lauma récupère 4 pts d'énergie élémentaire, cet effet pouvant être déclenché une fois toutes les 5 s."
+    }
+  },
+  "constellation5": {
+    "name": "« Si la vérité se dévoile devant moi »",
+    "description": {
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo : Repos sans aube de karsikko</tooltip></strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "« À la lune, j'offre mon sang et mes émois »",
+    "description": {
+      "0": "Lorsque le <tooltip ns=tooltips_gen baseKey18=11190001 values=[]><strong>sanctuaire du givrebois</strong></tooltip> attaque un ennemi, elle inflige une fois supplémentaire des <dendro>DGT Dendro de zone</dendro> d'une valeur équivalant à 185 % de la maîtrise élémentaire de Lauma. Ces DGT sont considérés comme des DGT de réaction de Sélénofleurissement, ne consomment pas d'<tooltip ns=tooltips_gen baseKey18=11190003 values=[]><strong>hymne pâle</strong></tooltip> et accordent au contraire 2 cumuls d'hymne pâle à Lauma, tout en actualisant la durée de l'hymne pâle obtenu de cette manière.",
+      "1": "Cet effet peut être déclenché un maximum de 8 fois pendant la durée d'un sanctuaire du givrebois et utiliser la compétence élémentaire <strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo : Repos sans aube de karsikko</tooltip></strong> supprime tous les cumuls d'hymne pâle obtenus de cette manière.",
+      "2": "<br/>",
+      "3": "De plus, lorsque Lauma effectue une attaque normale alors qu'elle possède de l'hymne pâle, elle en consomme un cumul pour convertir les DGT en <dendro>DGT Dendro</dendro> d'une valeur équivalant à 150 % de sa maîtrise élémentaire, ces DGT étant considérés comme des DGT de réaction de Sélénofleurissement.",
+      "4": "<br/>",
+      "5": "<strong>Signelune « Lueur ascendante »</strong> : les DGT infligés par les réactions de Sélénofleurissement de tous les personnages de l'équipe à proximité bénéficient d'une <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>élévation</strong></tooltip> de 25 %."
+    }
+  }
+}

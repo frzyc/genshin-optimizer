@@ -1,0 +1,163 @@
+{
+  "name": "Aino",
+  "title": "กลไกมหัศจรรย์กรุ๊งกริ๊ง",
+  "description": "นักประดิษฐ์จักรกลอัจฉริยะแห่ง Nod-Krai ชื่นชอบจักรกลที่น่าสนใจ และของหวาน",
+  "constellationName": "Cistellula Mira",
+  "auto": {
+    "name": "Bish-Bash-Bosh Repair",
+    "fields": {
+      "normal": {
+        "0": "<strong>โจมตีปกติ</strong>",
+        "1": "โจมตีต่อเนื่องมากสุด 3 ครั้ง"
+      },
+      "charged": {
+        "0": "<strong>ชาร์จโจมตี</strong>",
+        "1": "ใช้พลังกายอย่างต่อเนื่อง เพื่อหมุนโจมตีศัตรูรอบตัวด้วยดาบขนาดใหญ่",
+        "2": "เมื่อหยุดหมุนจะทำการฟันเพิ่มอย่างรุนแรงอีกหนึ่งครั้ง"
+      },
+      "plunging": {
+        "0": "<strong>โจมตีพุ่งลงจากอากาศ</strong>",
+        "1": "กระโจนจากกลางอากาศลงมายังพื้นดิน เพื่อโจมตีศัตรูที่อยู่ในเส้นทางการโจมตี โดยจะสร้างความเสียหายวงกว้างเมื่อลงถึงพื้น"
+      }
+    },
+    "skillParams": {
+      "0": "ความเสียหายขั้น 1",
+      "1": "ความเสียหายขั้น 2",
+      "2": "ความเสียหายขั้น 3",
+      "3": "ความเสียหายขณะชาร์จโจมตี",
+      "4": "ความเสียหายชาร์จโจมตีสุดท้าย",
+      "5": "ชาร์จโจมตีใช้พลังกาย",
+      "6": "ระยะเวลาต่อเนื่องสูงสุด",
+      "7": "ความเสียหายพุ่งลง",
+      "8": "ความเสียหายพุ่งถึงพื้นจากที่ต่ำ/สูง",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Musecatcher",
+    "description": {
+      "0": "ขว้าง <strong>Musecatcher</strong> ไปข้างหน้า เพื่อสร้าง<hydro>ความเสียหายน้ำ</hydro> และดึงตัวเองไปข้างหน้าในเวลาเดียวกัน พร้อมทั้งสร้าง<hydro>ความเสียหายน้ำวงกว้าง</hydro>แก่ศัตรูที่อยู่ใกล้เมื่อการเคลื่อนที่สิ้นสุดลง",
+      "1": "เมื่อกดค้าง จะทำการปล่อยด้วยวิธีที่แตกต่างกัน",
+      "2": "<br/>",
+      "3": "<strong>กดค้าง</strong>",
+      "4": "เข้าสู่สถานะการเล็ง เพื่อปรับทิศทางการขว้าง \"Musecatcher\""
+    },
+    "skillParams": {
+      "0": "ความเสียหายขั้น 1",
+      "1": "ความเสียหายขั้น 2",
+      "2": "คูลดาวน์",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Precision Hydronic Cooler",
+    "description": {
+      "0": "ปล่อยซูเปอร์กลไกพ่นน้ำสั่งทำพิเศษ <strong>\"Cool Your Jets Ducky\"</strong> เพื่อสร้าง<strong>พื้นที่เย็นชุ่มฉ่ำ</strong>",
+      "1": "ในช่วงเวลาต่อเนื่อง \"Cool Your Jets Ducky\" จะยิงกระสุนน้ำใส่ศัตรูที่อยู่ใกล้เคียงเป็นระยะ เพื่อสร้าง<hydro>ความเสียหายน้ำ</hydro>"
+    },
+    "skillParams": {
+      "0": "ความเสียหายกระสุนน้ำ",
+      "1": "ระยะเวลาต่อเนื่อง",
+      "2": "คูลดาวน์",
+      "3": "พลังงานธาตุ",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Modular Efficiency Protocol",
+    "description": {
+      "0": "Aino จะได้รับ เอฟเฟกต์เสริมพลังที่สอดคล้องกัน โดยขึ้นอยู่กับ<strong>ลัคนาจันทร์</strong>ของทีม",
+      "1": "<br/>",
+      "2": "<strong>ลัคนาจันทร์ - จรัสแสง</strong>: ท่าไม้ตาย <strong><tooltip ns=char_Aino_gen baseKey18=burst>Precision Hydronic Cooler</tooltip></strong> จะได้รับการเสริมพลัง: <strong>Cool Your Jets Ducky</strong> จะยิงกระสุนน้ำถี่ขึ้นกว่าเดิม และกระสุนน้ำจะสร้าง<hydro>ความเสียหายน้ำวงกว้าง</hydro> ที่มีขอบเขตกว้างขึ้น"
+    }
+  },
+  "passive2": {
+    "name": "Structured Power Booster",
+    "description": {
+      "0": "ท่าไม้ตายของ Aino สร้างความเสียหายเพิ่มขึ้น โดยค่าที่เพิ่มขึ้นจะเท่ากับ 50% ของความชำนาญธาตุของ Aino"
+    }
+  },
+  "passive3": {
+    "name": "Moonsign Benediction: Force Limit Analysis",
+    "description": {
+      "0": "เมื่อ Aino อยู่ในทีม <strong>ลัคนาจันทร์</strong>ของทีมจะเพิ่มขึ้น 1 ระดับ"
+    }
+  },
+  "passive": {
+    "name": "Miniaturized Detection Sensor",
+    "description": {
+      "0": "แสดงตำแหน่ง<strong>ของพิเศษเฉพาะใน Nod-Krai</strong> บนมินิแมป",
+      "1": "นอกจากนี้ Aino ดูเหมือนจะสามารถเปลี่ยนรูปลักษณ์ของ \"Cool Your Jets Ducky\" ได้ด้วยวิธีการบางอย่าง..."
+    }
+  },
+  "constellation1": {
+    "name": "The Theory of Ash—Field Equilibrium",
+    "description": {
+      "0": "หลังจากที่ Aino ใช้สกิลธาตุ <strong><tooltip ns=char_Aino_gen baseKey18=skill>Musecatcher</tooltip></strong> หรือท่าไม้ตาย <strong><tooltip ns=char_Aino_gen baseKey18=burst>Precision Hydronic Cooler</tooltip></strong> ความชำนาญธาตุของตัว Aino เองจะเพิ่มขึ้น 80 หน่วย และความชำนาญธาตุของตัวละครอื่น ๆ ที่เข้าร่วมการต่อสู้ในขณะนั้นที่อยู่ในบริเวณใกล้เคียงเพิ่มขึ้น 80 หน่วย เป็นเวลา 15 วินาที",
+      "1": "<br/>",
+      "2": "เอฟเฟกต์การเพิ่มความชำนาญธาตุของกลุ่มดาวดังกล่าวจะไม่ซ้อนทับกัน"
+    }
+  },
+  "constellation2": {
+    "name": "The Principle of Transference in Gear Differentials",
+    "description": {
+      "0": "ในช่วงเวลาต่อเนื่องของ<strong>พื้นที่เย็นชุ่มฉ่ำ</strong> ของท่าไม้ตาย <strong><tooltip ns=char_Aino_gen baseKey18=burst>Precision Hydronic Cooler</tooltip></strong> หาก Aino อยู่ในทีม แต่ไม่ได้เข้าร่วมการต่อสู้ เมื่อการโจมตีของตัวละครในทีมของตัวเอง ที่เข้าร่วมการต่อสู้ในขณะนั้น ถูกศัตรูที่อยู่ในบริเวณใกล้เคียง <strong>\"Cool Your Jets Ducky\"</strong> จะยิงกระสุนน้ำใส่ศัตรูดังกล่าวเพิ่มอีก 1 นัด สร้าง<hydro>ความเสียหายน้ำวงกว้าง</hydro> เท่ากับ 25% ของพลังโจมตี และ 100% ของความชำนาญธาตุของ Aino เอฟเฟกต์นี้จะเกิดขึ้นได้มากสุดหนึ่งครั้ง ในทุก 5 วินาที และความเสียหายที่สร้าง จะถูกนับเป็นความเสียหายท่าไม้ตาย"
+    }
+  },
+  "constellation3": {
+    "name": "Cake and the Art of Mechanism Repair",
+    "description": {
+      "0": "เพิ่มเลเวลสกิลของท่าไม้ตาย <strong><tooltip ns=char_Aino_gen baseKey18=burst>Precision Hydronic Cooler</tooltip></strong> ขึ้น 3 ระดับ",
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
+    }
+  },
+  "constellation4": {
+    "name": "Butter and Cats and the Law of Energy Supply",
+    "description": {
+      "0": "เมื่อสกิลธาตุ <strong><tooltip ns=char_Aino_gen baseKey18=skill>Musecatcher</tooltip></strong> โจมตีโดนศัตรู จะฟื้นฟูพลังงานธาตุให้แก่ Aino 10 หน่วย โดยสามารถฟื้นฟูพลังงานธาตุด้วยวิธีนี้ ได้มากสุดหนึ่งครั้งในทุก 10 วินาที"
+    }
+  },
+  "constellation5": {
+    "name": "Perpetual Turbine of Metal and Light",
+    "description": {
+      "0": "เพิ่มเลเวลสกิลของสกิลธาตุ <strong><tooltip ns=char_Aino_gen baseKey18=skill>Musecatcher</tooltip></strong> ขึ้น 3 ระดับ",
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
+    }
+  },
+  "constellation6": {
+    "name": "The Burden of Creative Genius",
+    "description": {
+      "0": "ภายใน 15 วินาที หลังจากใช้ท่าไม้ตาย <strong><tooltip ns=char_Aino_gen baseKey18=burst>Precision Hydronic Cooler</tooltip></strong> ความเสียหายที่เกิดจากปฏิกิริยาชาร์จไฟฟ้า, งอกเงย, ชาร์จจันทรา, งอกเงยจันทรา และตกผลึกจันทรา ของตัวละครที่เข้าร่วมการต่อสู้ในขณะนั้น และอยู่ในบริเวณใกล้เคียง จะเพิ่มขึ้น 15%",
+      "1": "<strong>ลัคนาจันทร์ - จรัสแสง</strong>: ความเสียหายที่เกิดจากปฏิกิริยาข้างต้นจะเพิ่มขึ้นอีก 20%"
+    }
+  }
+}

@@ -129,7 +129,7 @@
     "name": "« Le plus heureux des esprits peut-il comprendre l'anxiété ? »",
     "description": {
       "0": "Les bulles d'eau curative d'<strong>Hydrothérapie rebondissante</strong> peuvent rebondir 3 fois supplémentaires et les 3 premiers rebonds ne font pas rapetisser les grandes bulles d'eau curative.",
-      "1": "De plus, l'aptitude passive « Repos adéquat requis » est améliorée : chaque rebond des bulles d'eau curative accorde 1 cumul d'analepsie à Sigewinne et le bonus de DGT généré par l'analepsie est modifié, chaque tranche de 1 000 PV max au-dessus de 30 000 que Sigewinne possède augmentant maintenant les DGT de 100 pts. Les DGT peuvent être augmentés d'un maximum de 3 500 pts de cette manière. L'aptitude passive « Repos adéquat requis » doit être déjà débloquée."
+      "1": "De plus, l'aptitude d'élévation « Repos adéquat requis » est améliorée : chaque rebond des bulles d'eau curative accorde 1 cumul d'analepsie à Sigewinne et le bonus de DGT généré par l'analepsie est modifié, chaque tranche de 1 000 PV max au-dessus de 30 000 que Sigewinne possède augmentant maintenant les DGT de 100 pts. Les DGT peuvent être augmentés d'un maximum de 3 500 pts de cette manière. L'aptitude d'élévation « Repos adéquat requis » doit être déjà débloquée."
     }
   },
   "constellation2": {

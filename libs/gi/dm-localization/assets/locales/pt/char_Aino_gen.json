@@ -1,0 +1,163 @@
+{
+  "name": "Aino",
+  "title": "Máquinas Milagrosas Trim-Trim-Bum",
+  "description": "Uma gênio mecânica de Nod-Krai, gosta muito de máquinas divertidas e doces.",
+  "constellationName": "Cistellula Mira",
+  "auto": {
+    "name": "Reparo Bang-Bang",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza até 3 golpes consecutivos."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Drena Stamina ao longo do tempo para realizar um ataque giratório contínuo contra todos os inimigos próximos.",
+        "2": "Ao final da sequência, realiza um corte poderoso."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos em seu caminho e infligindo Dano em uma AdE durante o impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano de Loop de Ataque Carregado",
+      "4": "Dano Final de Ataque Carregado",
+      "5": "Consumo de Stamina de Ataque Carregado",
+      "6": "Duração Máxima",
+      "7": "Dano Durante a Queda",
+      "8": "Dano de Queda de Baixa/Alta Altitude",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Captura de Ideias",
+    "description": {
+      "0": "Arremessa em frente <strong>Captura de Ideias</strong>, causando <hydro>Dano Hydro</hydro> e atraindo o que está em frente, e quando acabar de se mover, causa <hydro>Dano Hydro em AdE</hydro> contra os inimigos próximos.",
+      "1": "É lançado de forma diferente ao manter pressionado.",
+      "2": "<br/>",
+      "3": "<strong>Manter Pressionado</strong>",
+      "4": "Entra no modo de mira e ajusta a orientação de arremesso de Captura de Ideias."
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Recarga",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Dispositivo Refrigerador Preciso",
+    "description": {
+      "0": "Aino joga um dispositivo disparador de água, o <strong>Patinho Fica Frio</strong>, criando uma <strong>Zona Focada Hydro</strong>.",
+      "1": "Em sua duração, o Patinho Fica Frio periodicamente disparará Projéteis Hydro contra os inimigos próximos, causando <hydro>Dano Hydro</hydro>."
+    },
+    "skillParams": {
+      "0": "Dano de Projétil Aquático",
+      "1": "Duração",
+      "2": "Recarga",
+      "3": "Energia Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Protocolo de Eficiência Modular",
+    "description": {
+      "0": "Dependendo do <strong>Presságio Lunar</strong> da equipe, Aino obtém fortalecimentos correspondentes.",
+      "1": "<br/>",
+      "2": "<strong>Presságio Lunar: Reluzir Cheio</strong>: fortalece o Supremo <strong><tooltip ns=char_Aino_gen baseKey18=burst>Dispositivo Refrigerador Preciso</tooltip></strong>: o intervalo de disparo de Projéteis Hydro do <strong>Patinho Fica Frio</strong> é reduzido, e aumenta a AdE do <hydro>Dano Hydro em AdE</hydro>."
+    }
+  },
+  "passive2": {
+    "name": "Amplificador de Resultado Estruturado",
+    "description": {
+      "0": "Aumenta o Dano causado pelo Supremo de Aino em 50% de sua Proficiência Elemental."
+    }
+  },
+  "passive3": {
+    "name": "Bênção do Presságio Lunar: Cálculo Extremo",
+    "description": {
+      "0": "Quando Aino está na equipe, aumenta o nível de <strong>Presságio Lunar</strong> da equipe em 1 nível."
+    }
+  },
+  "passive": {
+    "name": "Sensor Detector Miniaturizado",
+    "description": {
+      "0": "Mostra a localização de <strong>Especialidades de Nod-Krai</strong> próximas no mapa.",
+      "1": "Além disso, Aino parece poder alterar a aparência de seu Patinho Fica Frio..."
+    }
+  },
+  "constellation1": {
+    "name": "Teoria do Equilíbrio do Campo de Cinzas",
+    "description": {
+      "0": "Depois que Aino lança sua Habilidade Elemental <strong><tooltip ns=char_Aino_gen baseKey18=skill>Captura de Ideias</tooltip></strong> ou o Supremo <strong><tooltip ns=char_Aino_gen baseKey18=burst>Dispositivo Refrigerador Preciso</tooltip></strong>, aumenta sua Proficiência Elemental em 80, e a Proficiência Elemental dos outros personagens ativos próximos em 80 por 15s.",
+      "1": "<br/>",
+      "2": "O efeito de aumento de Proficiência Elemental dessa Constelação não é acumulável."
+    }
+  },
+  "constellation2": {
+    "name": "O Princípio da Transferência em Diferenciais de Engrenagens",
+    "description": {
+      "0": "Quando a <strong><tooltip ns=char_Aino_gen baseKey18=burst>Zona Focada Hydro</tooltip></strong> do Supremo <strong>Dispositivo Refrigerador Preciso</strong> está em sua duração, se Aino não for a personagem ativa, e o personagem ativo da equipe atingir um ataque no inimigo próximo, <strong>Patinho Fica Frio</strong> dispara um Projétil Aquático adicional nesse inimigo, causando <hydro>Dano Hydro em AdE</hydro> equivalente a 100% da Proficiência Elemental e 25% do ATQ de Aino. Esse efeito pode ser desencadeado uma vez a cada 5s, e seu Dano é considerado Dano de Supremo."
+    }
+  },
+  "constellation3": {
+    "name": "O Bolo e a Arte do Reparo Mecânico",
+    "description": {
+      "0": "Aumenta o nível do Supremo <strong><tooltip ns=char_Aino_gen baseKey18=burst>Dispositivo Refrigerador Preciso</tooltip></strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Manteiga, Gatos e a Lei da Energia",
+    "description": {
+      "0": "Quando a Habilidade Elemental <strong><tooltip ns=char_Aino_gen baseKey18=skill>Captura de Ideias</tooltip></strong> atinge um inimigo, regenera 10 de Energia para Aino. É possível regenerar Energia uma vez a cada 10s dessa forma."
+    }
+  },
+  "constellation5": {
+    "name": "A Turbina Perpétua de Metal e Luz",
+    "description": {
+      "0": "Aumenta o nível da Habilidade Elemental <strong><tooltip ns=char_Aino_gen baseKey18=skill>Captura de Ideias</tooltip></strong> em 3 níveis. ",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "A Responsabilidade de um Gênio Mecânico",
+    "description": {
+      "0": "Nos 15s depois de lançar o Supremo <strong><tooltip ns=char_Aino_gen baseKey18=burst>Dispositivo Refrigerador Preciso</tooltip></strong>, se um personagem ativo próximo desencadear Eletricamente Carregado, Florescimento, Carga Lunar, Florescimento Lunar ou Cristalização Lunar aumenta o Dano causado em 15%.",
+      "1": "<strong>Presságio Lunar: Reluzir Cheio</strong>: aumenta o Dano da reação em mais 20%."
+    }
+  }
+}

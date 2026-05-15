@@ -154,17 +154,17 @@
   "constellation1": {
     "name": "Cylinder, the Restless Roulette",
     "description": {
-      "0": "Memicu efek \"Spiritbinding Conversion\" dari Talenta Pasif \"Bullet Trick\" akan mengakibatkan <strong>Shadowhunt Shell</strong> kedua yang dimasukkan ke silinder peluru berubah menjadi <strong>Shining Shadowhunt Shell</strong>.",
+      "0": "Memicu efek \"Spiritbinding Conversion\" dari Talenta Ascension \"Bullet Trick\" akan mengakibatkan <strong>Shadowhunt Shell</strong> kedua yang dimasukkan ke silinder peluru berubah menjadi <strong>Shining Shadowhunt Shell</strong>.",
       "1": "Kemungkinan untuk memicu \"Spiritbinding Conversion\" akan meningkat: jika terdapat Karakter dengan jenis elemen yang sesuai dengan syarat konversi elemen di dalam party, kemungkinan untuk memicu \"Spiritbinding Conversion\" meningkat 33,3%, hingga maksimum 100%.",
       "2": "<br/>",
-      "3": "Harus membuka Talenta Pasif \"Bullet Trick\" terlebih dahulu.",
+      "3": "Harus membuka Talenta Ascension \"Bullet Trick\" terlebih dahulu.",
       "4": "Selain itu, saat tidak berada dalam kondisi bertempur, konsumsi Phlogiston dan poin Nightsoul Chasca dalam status Nightsoul's Blessing akan berkurang 30%."
     }
   },
   "constellation2": {
     "name": "Muzzle, the Searing Smoke",
     "description": {
-      "0": "Saat Chasca memasuki medan pertempuran, mendapatkan satu lapis \"Spirit of the Radiant Shadow\" dari Talenta Pasif \"Bullet Trick\".",
+      "0": "Saat Chasca memasuki medan pertempuran, mendapatkan satu lapis \"Spirit of the Radiant Shadow\" dari Talenta Ascension \"Bullet Trick\".",
       "1": "Selain itu, saat <strong>Shining Shadowhunt Shell</strong> dari serangan <strong>Multitarget Fire</strong> milik Elemental Skill <strong>Spirit Reins, Shadow Hunt</strong> mengenai musuh, akan mengakibatkan Elemental DMG Area sebesar 400% ATK Chasca yang elemennya sesuai dengan jenis elemen dari <strong>Shining Shadowhunt Shell</strong>. DMG ini dianggap sebagai DMG Charged Attack. Efek ini dapat terpicu sekali setiap kali Chasca melancarkan <strong>Multitarget Fire</strong>."
     }
   },
@@ -192,9 +192,9 @@
   "constellation6": {
     "name": "Showdown, the Glory of Battle",
     "description": {
-      "0": "Durasi charge <strong>Multitarget Fire</strong> menjadi lebih singkat, dan setelah efek \"Spiritbinding Conversion\" dari Talenta Pasif \"Bullet Trick\" terpicu, Chasca akan memasuki status \"Fatal Rounds\": Dalam 3 detik berikutnya, saat Chasca melancarkan <strong>Multitarget Fire</strong> dari Elemental Skill <strong>Spirit Reins, Shadow Hunt</strong> kali berikutnya, tembakannya akan langsung selesai melakukan charge, dan CRIT DMG <strong>Shadowhunt Shell</strong> dan <strong>Shining Shadowhunt Shell</strong> dari <strong>Multitarget Fire</strong> tersebut meningkat sebesar 120%. Chasca bisa memasuki status \"Fatal Rounds\" sekali setiap 3 detik.",
+      "0": "Durasi charge <strong>Multitarget Fire</strong> menjadi lebih singkat, dan setelah efek \"Spiritbinding Conversion\" dari Talenta Ascension \"Bullet Trick\" terpicu, Chasca akan memasuki status \"Fatal Rounds\": Dalam 3 detik berikutnya, saat Chasca melancarkan <strong>Multitarget Fire</strong> dari Elemental Skill <strong>Spirit Reins, Shadow Hunt</strong> kali berikutnya, tembakannya akan langsung selesai melakukan charge, dan CRIT DMG <strong>Shadowhunt Shell</strong> dan <strong>Shining Shadowhunt Shell</strong> dari <strong>Multitarget Fire</strong> tersebut meningkat sebesar 120%. Chasca bisa memasuki status \"Fatal Rounds\" sekali setiap 3 detik.",
       "1": "<br/>",
-      "2": "Efek di atas harus membuka Talenta Pasif \"Bullet Trick\" terlebih dahulu."
+      "2": "Efek di atas harus membuka Talenta Ascension \"Bullet Trick\" terlebih dahulu."
     }
   }
 }

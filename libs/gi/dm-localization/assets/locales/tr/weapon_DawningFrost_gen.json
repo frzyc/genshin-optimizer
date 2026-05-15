@@ -1,0 +1,24 @@
+{
+  "name": "Sabah Ayazı",
+  "description": {
+    "0": "Gümüşten dövülmüş bir ayin kabı, tamamen saf ve lekesizdir. Uzak kuzeyin rahibeleri arasında nesilden nesile aktarılmış kutsal bir yadigar olduğu söylenir."
+  },
+  "passiveName": "Gece Rüyaları",
+  "passiveDescription": {
+    "0": {
+      "0": "Bir Yüklü Saldırı bir düşmana isabet ettikten sonra 10 saniyeliğine Element Ustalığı <cryo>72</cryo> artar. Bir Element Becerisi bir düşmana isabet ettikten sonra 10 saniyeliğine Element Ustalığı <cryo>48</cryo> artar."
+    },
+    "1": {
+      "0": "Bir Yüklü Saldırı bir düşmana isabet ettikten sonra 10 saniyeliğine Element Ustalığı <cryo>90</cryo> artar. Bir Element Becerisi bir düşmana isabet ettikten sonra 10 saniyeliğine Element Ustalığı <cryo>60</cryo> artar."
+    },
+    "2": {
+      "0": "Bir Yüklü Saldırı bir düşmana isabet ettikten sonra 10 saniyeliğine Element Ustalığı <cryo>108</cryo> artar. Bir Element Becerisi bir düşmana isabet ettikten sonra 10 saniyeliğine Element Ustalığı <cryo>72</cryo> artar."
+    },
+    "3": {
+      "0": "Bir Yüklü Saldırı bir düşmana isabet ettikten sonra 10 saniyeliğine Element Ustalığı <cryo>126</cryo> artar. Bir Element Becerisi bir düşmana isabet ettikten sonra 10 saniyeliğine Element Ustalığı <cryo>84</cryo> artar."
+    },
+    "4": {
+      "0": "Bir Yüklü Saldırı bir düşmana isabet ettikten sonra 10 saniyeliğine Element Ustalığı <cryo>144</cryo> artar. Bir Element Becerisi bir düşmana isabet ettikten sonra 10 saniyeliğine Element Ustalığı <cryo>96</cryo> artar."
+    }
+  }
+}

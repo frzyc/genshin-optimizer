@@ -114,7 +114,7 @@
       "0": "Os valores de Dano de Cyno aumentam baseados na Proficiência Elemental do seguinte modo:",
       "1": [
         " O Dano de Ataque Normal no estado Juramento Desbravador é aumentado em 150% da Proficiência Elemental.",
-        " O Dano do Raio da Desolação do seu Talento Passivo \"Julgamento das Plumas\" é aumentado em 250% da Proficiência Elemental."
+        " O Dano do Raio da Desolação do seu Talento de Ascensão \"Julgamento das Plumas\" é aumentado em 250% da Proficiência Elemental."
       ]
     }
   },
@@ -127,8 +127,8 @@
   "constellation1": {
     "name": "Decreto: Vigilância Incansável",
     "description": {
-      "0": "Ao lançar <strong>Ritual Sagrado: Agilidade Lupina</strong>, aumenta a Vel. de ATQ do Ataque Normal de Cyno em 20% por 10s. Se ao lançar <strong>Ritual Secreto: Travessia Abissal</strong> desencadear o efeito \"Adjudicação\" do Talento Passivo \"Julgamento das Plumas\", redefinirá a duração do efeito de aumento da Vel. de ATQ do Ataque Normal.",
-      "1": "Você deve desbloquear o Talento Passivo \"Julgamento das Plumas\" primeiro."
+      "0": "Ao lançar <strong>Ritual Sagrado: Agilidade Lupina</strong>, aumenta a Vel. de ATQ do Ataque Normal de Cyno em 20% por 10s. Se ao lançar <strong>Ritual Secreto: Travessia Abissal</strong> desencadear o efeito \"Adjudicação\" do Talento de Ascensão \"Julgamento das Plumas\", redefinirá a duração do efeito de aumento da Vel. de ATQ do Ataque Normal.",
+      "1": "Você deve desbloquear o Talento de Ascensão \"Julgamento das Plumas\" primeiro."
     }
   },
   "constellation2": {
@@ -161,10 +161,10 @@
   "constellation6": {
     "name": "Vestes: Balança da Justiça",
     "description": {
-      "0": "Após usar <strong>Ritual Sagrado: Agilidade Lupina</strong> ou desencadear o efeito \"Adjudicação\" do Talento Passivo \"Julgamento das Plumas\", Cyno ganha 4 acúmulos do efeito \"Dia do Chacal\". Quando Cyno acerta oponentes com Ataques Normais, será consumido 1 acúmulo de \"Dia do Chacal\" para lançar um Raio da Desolação.",
+      "0": "Após usar <strong>Ritual Sagrado: Agilidade Lupina</strong> ou desencadear o efeito \"Adjudicação\" do Talento de Ascensão \"Julgamento das Plumas\", Cyno ganha 4 acúmulos do efeito \"Dia do Chacal\". Quando Cyno acerta oponentes com Ataques Normais, será consumido 1 acúmulo de \"Dia do Chacal\" para lançar um Raio da Desolação.",
       "1": "O \"Dia do Chacal\" dura por 8s, e possui no máximo 8 acúmulos. Ele será cancelado quando o estado Juramento Desbravador do \"Ritual Sagrado: Agilidade Lupina\" acabar.",
       "2": "O máximo de 1 Raio da Desolação pode ser lançado a cada 0,4s.",
-      "3": "Você precisa desbloquear o Talento Passivo \"Julgamento das Plumas\" primeiro."
+      "3": "Você precisa desbloquear o Talento de Ascensão \"Julgamento das Plumas\" primeiro."
     }
   }
 }

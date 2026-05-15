@@ -2,7 +2,7 @@
   "setName": "Flor do Paraíso Perdido",
   "setEffects": {
     "2": "Aumenta a Proficiência Elemental em 80.",
-    "4": "Aumenta em 40% o Dano infligido pelas reações de Florescimento, Superflorescimento e Germinação de seu portador. Além disto, após o personagem que está equipado com este conjunto de artefatos desencadear as reações de Florescimento, Superflorescimento e Germinação, o bônus descrito acima é aumentado em 25%. Este efeito dura 10s e pode ser acumulado até 4 vezes, podendo ser desencadeado 1 vez por segundo. Este efeito pode ser desencadeado também quando o seu portador está na equipe, porém fora do campo de batalha."
+    "4": "Aumenta em 40% o Dano infligido pelas reações de Florescimento, Superflorescimento e Germinação de seu portador; aumenta o Dano de Florescimento Lunar em 10%. Além disto, após o personagem que está com isso equipado desencadear as reações de Florescimento, Superflorescimento, Germinação e Florescimento Lunar o bônus descrito acima é aumentado em 25%. Este efeito dura 10s e pode ser acumulado até 4 vezes, podendo ser desencadeado 1 vez por segundo. Este efeito pode ser desencadeado também quando o seu portador está na equipe, porém fora do campo de batalha."
   },
   "pieces": {
     "flower": {

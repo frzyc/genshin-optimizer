@@ -1,8 +1,10 @@
 import type { RarityKey } from './common'
 
 export const allArtifactSetKeys = [
+  'ADayCarvedFromRisingWinds',
   'Adventurer',
   'ArchaicPetra',
+  'AubadeOfMorningstarAndMoon',
   'Berserker',
   'BlizzardStrayer',
   'BloodstainedChivalry',
@@ -29,6 +31,7 @@ export const allArtifactSetKeys = [
   'MaidenBeloved',
   'MarechausseeHunter',
   'MartialArtist',
+  'NightOfTheSkysUnveiling',
   'NighttimeWhispersInTheEchoingWoods',
   'NoblesseOblige',
   'NymphsDream',
@@ -44,6 +47,7 @@ export const allArtifactSetKeys = [
   'Scholar',
   'ScrollOfTheHeroOfCinderCity',
   'ShimenawasReminiscence',
+  'SilkenMoonsSerenade',
   'SongOfDaysPast',
   'TenacityOfTheMillelith',
   'TheExile',

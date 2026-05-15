@@ -1,0 +1,24 @@
+{
+  "name": "Llave Maestra",
+  "description": {
+    "0": "Una gran espada muy pesada y afilada. Con la suficiente fuerza, puede usarse para abrir la mayoría de las cerraduras."
+  },
+  "passiveName": "Fácil solución",
+  "passiveDescription": {
+    "0": {
+      "0": "Tras causar una Reacción Elemental, la Maestría Elemental aumenta en <cryo>60</cryo> pts. durante 12 s. Con “presagio lunar: resplandor ascendente”, la Maestría Elemental otorgada por este efecto aumenta en <cryo>60</cryo> pts. adicionales. Este efecto se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "1": {
+      "0": "Tras causar una Reacción Elemental, la Maestría Elemental aumenta en <cryo>75</cryo> pts. durante 12 s. Con “presagio lunar: resplandor ascendente”, la Maestría Elemental otorgada por este efecto aumenta en <cryo>75</cryo> pts. adicionales. Este efecto se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "2": {
+      "0": "Tras causar una Reacción Elemental, la Maestría Elemental aumenta en <cryo>90</cryo> pts. durante 12 s. Con “presagio lunar: resplandor ascendente”, la Maestría Elemental otorgada por este efecto aumenta en <cryo>90</cryo> pts. adicionales. Este efecto se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "3": {
+      "0": "Tras causar una Reacción Elemental, la Maestría Elemental aumenta en <cryo>105</cryo> pts. durante 12 s. Con “presagio lunar: resplandor ascendente”, la Maestría Elemental otorgada por este efecto aumenta en <cryo>105</cryo> pts. adicionales. Este efecto se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "4": {
+      "0": "Tras causar una Reacción Elemental, la Maestría Elemental aumenta en <cryo>120</cryo> pts. durante 12 s. Con “presagio lunar: resplandor ascendente”, la Maestría Elemental otorgada por este efecto aumenta en <cryo>120</cryo> pts. adicionales. Este efecto se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    }
+  }
+}

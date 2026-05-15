@@ -8,6 +8,8 @@ import { objPathValue } from '@genshin-optimizer/common/util'
 import type {
   AdditiveReactionKey,
   AmpReactionKey,
+  AmplifyingReactionKey,
+  ElementKey,
   InfusionAuraElementKey,
 } from '@genshin-optimizer/gi/consts'
 import {
@@ -27,7 +29,7 @@ import {
   infusionVals,
 } from '@genshin-optimizer/gi/ui'
 import type { CalcResult } from '@genshin-optimizer/gi/uidata'
-import { allInputPremodKeys } from '@genshin-optimizer/gi/wr'
+import { allInputPremodKeys } from '@genshin-optimizer/gi/wr-types'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
@@ -328,10 +330,10 @@ function ReactionDropdown({
     return null
   const reactions = [
     ...new Set([
-      ...(allowedAmpReactions[ele] ?? []),
-      ...(allowedAmpReactions[infusionAura ?? ''] ?? []),
-      ...(allowedAdditiveReactions[ele] ?? []),
-      ...(allowedAdditiveReactions[infusionAura ?? ''] ?? []),
+      ...(allowedAmpReactions[ele as ElementKey] ?? []),
+      ...(allowedAmpReactions[(infusionAura ?? '') as ElementKey] ?? []),
+      ...(allowedAdditiveReactions[ele as ElementKey] ?? []),
+      ...(allowedAdditiveReactions[(infusionAura ?? '') as ElementKey] ?? []),
     ]),
   ]
   const title = reaction ? (
@@ -355,9 +357,9 @@ function ReactionDropdown({
           onClick={() => setReactionMode(rm)}
         >
           {([...allAmpReactionKeys] as string[]).includes(rm) ? (
-            <AmpReactionModeText reaction={rm} />
+            <AmpReactionModeText reaction={rm as AmplifyingReactionKey} />
           ) : (
-            <AdditiveReactionModeText reaction={rm} />
+            <AdditiveReactionModeText reaction={rm as AdditiveReactionKey} />
           )}
         </MenuItem>
       ))}

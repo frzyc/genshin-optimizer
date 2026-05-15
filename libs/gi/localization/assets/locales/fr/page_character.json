@@ -71,10 +71,6 @@
     },
     "optAlert": {
       "feasibilty": "Il peut y avoir des substats supplémentaires qui devraient être distribuées aux statistiques sans scaling pour garantir que la solution est réalisable."
-    },
-    "constraint": {
-      "title": "Contrainte de Stat",
-      "add": "Ajouter une Contrainte de Stat"
     }
   },
   "tabTeambuff": {

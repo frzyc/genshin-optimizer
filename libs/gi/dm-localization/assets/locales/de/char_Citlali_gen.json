@@ -150,8 +150,8 @@
       "0": "Erhöht Citlalis Elementarkunde um 125 Punkte. Erhöht die Elementarkunde anderer Figuren im Schutz vom Opal-Schild sowie derer, denen Itzpapa folgt, um 250 Punkte.",
       "1": "Verleiht außerdem anderen aktuellen Figuren in der Nähe beim Auslösen der Elementarfähigkeit <strong>Schwarzer Stern am frostigen Tag</strong> ebenfalls den Opal-Schild.",
       "2": "<br/>",
-      "3": "Verstärkt den Effekt des passiven Talents „Mamaloacos eisiger Regen“:",
-      "4": "Verringert, wenn Itzpapa auf dem Feld ist und ein in der Nähe befindliches Truppenmitglied die Reaktionen „Gefroren“ oder „Schmelzen“ auslöst, den <pyro>Pyro-</pyro> sowie <hydro>Hydro-</hydro>WDS des von der diesmaligen Reaktion betroffenen Gegners 12 s lang zusätzlich um 20 %. Das passive Talent „Mamaloacos eisiger Regen“ muss für diesen Effekt zuerst freigeschaltet werden."
+      "3": "Verstärkt den Effekt des Aufstiegstalents „Mamaloacos eisiger Regen“:",
+      "4": "Verringert, wenn Itzpapa auf dem Feld ist und ein in der Nähe befindliches Truppenmitglied die Reaktionen „Gefroren“ oder „Schmelzen“ auslöst, den <pyro>Pyro-</pyro> sowie <hydro>Hydro-</hydro>WDS des von der diesmaligen Reaktion betroffenen Gegners 12 s lang zusätzlich um 20 %. Das Aufstiegstalent „Mamaloacos eisiger Regen“ muss für diesen Effekt zuerst freigeschaltet werden."
     }
   },
   "constellation3": {

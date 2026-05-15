@@ -154,17 +154,17 @@
   "constellation1": {
     "name": "Cylindre, la roulette agitée",
     "description": {
-      "0": "Déclencher une conversion spirituelle de l'aptitude passive « Astuce balistique » modifie également la 2e <strong>cartouche de chassombre</strong> chargée dans l'arme en <strong>cartouche radieuse de chassombre</strong>.",
+      "0": "Déclencher une conversion spirituelle de l'aptitude d'élévation « Astuce balistique » modifie également la 2e <strong>cartouche de chassombre</strong> chargée dans l'arme en <strong>cartouche radieuse de chassombre</strong>.",
       "1": "Les chances de déclencher une conversion spirituelle augmentent : si l'équipe contient un personnage avec un type élémentaire convenant aux conditions d'absorption élémentaire, les chances de déclencher une conversion spirituelle augmentent de 33,3 %, jusqu'à un maximum de 100 %.",
       "2": "<br/>",
-      "3": "L'aptitude passive « Astuce balistique » doit être déjà débloquée.",
+      "3": "L'aptitude d'élévation « Astuce balistique » doit être déjà débloquée.",
       "4": "De plus, la consommation de points de noctâme et de phlogistique de Chasca pendant sa bénédiction noctâme diminue de 30 % lorsqu'elle n'est pas en combat."
     }
   },
   "constellation2": {
     "name": "Museau, la fumée brûlante",
     "description": {
-      "0": "Chasca obtient 1 cumul d'esprit d'ombre radieuse d'Astuce balistique lorsqu'elle est déployée au combat, l'aptitude passive « Astuce balistique » devant être déjà débloquée.",
+      "0": "Chasca obtient 1 cumul d'esprit d'ombre radieuse d'Astuce balistique lorsqu'elle est déployée au combat, l'aptitude d'élévation « Astuce balistique » devant être déjà débloquée.",
       "1": "De plus, lorsqu'une <strong>cartouche radieuse de chassombre</strong> de la <strong>visée multiple</strong> de la compétence élémentaire <strong>Chasse des rênes spirituelles</strong> touche un ennemi, elle inflige des DGT de zone de son élément <strong></strong>d'une valeur équivalant à 400 % de l'ATQ de Chasca. Ces DGT sont considérés comme des DGT d'attaque chargée. Cet effet peut être déclenché une fois par <strong>visée multiple</strong>."
     }
   },
@@ -192,9 +192,9 @@
   "constellation6": {
     "name": "Affrontement, la gloire guerrière",
     "description": {
-      "0": "Le temps de charge requis lorsque Chasca effectue une <strong>visée multiple</strong> diminue et, après avoir déclenché une conversion spirituelle de l'aptitude passive « Astuce balistique », Chasca passe en état Assaut fatal : pendant les 3 prochaines secondes, la prochaine <strong>visée multiple</strong> de la compétence élémentaire <strong>Chasse des rênes spirituelles</strong> de Chasca est immédiatement chargée au maximum et les DGT des <strong>cartouches de chassombre</strong> et des <strong>cartouches radieuses de chassombre</strong> de cette <strong>visée multiple</strong> augmentent de 120 %. L'état Assaut fatal peut être obtenu une fois toutes les 3 s.",
+      "0": "Le temps de charge requis lorsque Chasca effectue une <strong>visée multiple</strong> diminue et, après avoir déclenché une conversion spirituelle de l'aptitude d'élévation « Astuce balistique », Chasca passe en état Assaut fatal : pendant les 3 prochaines secondes, la prochaine <strong>visée multiple</strong> de la compétence élémentaire <strong>Chasse des rênes spirituelles</strong> de Chasca est immédiatement chargée au maximum et les DGT des <strong>cartouches de chassombre</strong> et des <strong>cartouches radieuses de chassombre</strong> de cette <strong>visée multiple</strong> augmentent de 120 %. L'état Assaut fatal peut être obtenu une fois toutes les 3 s.",
       "1": "<br/>",
-      "2": "L'aptitude passive « Astuce balistique » doit être déjà débloquée."
+      "2": "L'aptitude d'élévation « Astuce balistique » doit être déjà débloquée."
     }
   }
 }

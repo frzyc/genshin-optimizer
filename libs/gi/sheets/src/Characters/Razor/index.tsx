@@ -13,6 +13,7 @@ import {
   prod,
   subscript,
   sum,
+  tally,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
@@ -28,7 +29,11 @@ import {
 const key: CharacterKey = 'Razor'
 const elementKey: ElementKey = 'electro'
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key)
+
+const [condLockHomeworkPath, condLockHomework] = cond(key, 'lockHomework')
+const lockHomework_hexerei = equal(condLockHomework, 'on', 1)
+
+const ct = charTemplates(key, lockHomework_hexerei)
 
 let a = 0,
   s = 0,
@@ -81,6 +86,12 @@ const dm = {
   passive3: {
     sprintStaminaDec: 0.2,
   },
+  lockedPassive: {
+    burst_dmgInc: skillParam_gen.lockedPassive![0][0],
+    dmg: skillParam_gen.lockedPassive![1][0],
+    energyRegen: skillParam_gen.lockedPassive![2][0],
+    cd: skillParam_gen.lockedPassive![3][0],
+  },
   constellation1: {
     allDmgInc: 0.1,
     duration: 8,
@@ -97,6 +108,9 @@ const dm = {
     dmg: 1,
     electroSigilGenerated: 1,
     cd: 10,
+    critRate_: skillParam_gen.constellation6[0],
+    critDMG_: skillParam_gen.constellation6[1],
+    duration: skillParam_gen.constellation6[2],
   },
 } as const
 
@@ -144,6 +158,37 @@ const enemyDefRed_ = greaterEq(
   equal('on', condC4, percent(dm.constellation4.defDec))
 )
 
+const lock_burst_dmgInc = equal(
+  condLockHomework,
+  'on',
+  prod(percent(dm.lockedPassive.burst_dmgInc), input.total.atk)
+)
+const companion_addl = {
+  premod: {
+    burst_dmgInc: lock_burst_dmgInc,
+  },
+}
+
+const [condLockC6SigilPath, condLockC6Sigil] = cond(key, 'lockC6Sigil')
+const lockC6Sigil_critRate_ = greaterEq(
+  input.constellation,
+  6,
+  equal(
+    condLockHomework,
+    'on',
+    equal(condLockC6Sigil, 'on', dm.constellation6.critRate_)
+  )
+)
+const lockC6Sigil_critDMG_ = greaterEq(
+  input.constellation,
+  6,
+  equal(
+    condLockHomework,
+    'on',
+    equal(condLockC6Sigil, 'on', dm.constellation6.critDMG_)
+  )
+)
+
 const dmgFormulas = {
   normal: Object.fromEntries(
     dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
@@ -167,7 +212,8 @@ const dmgFormulas = {
         ),
         input.total.atk
       ),
-      'burst'
+      'burst',
+      companion_addl
     ),
     companionDmg2: customDmgNode(
       prod(
@@ -177,7 +223,8 @@ const dmgFormulas = {
         ),
         input.total.atk
       ),
-      'burst'
+      'burst',
+      companion_addl
     ),
     companionDmg3: customDmgNode(
       prod(
@@ -187,7 +234,8 @@ const dmgFormulas = {
         ),
         input.total.atk
       ),
-      'burst'
+      'burst',
+      companion_addl
     ),
     companionDmg4: customDmgNode(
       prod(
@@ -197,7 +245,23 @@ const dmgFormulas = {
         ),
         input.total.atk
       ),
-      'burst'
+      'burst',
+      companion_addl
+    ),
+  },
+  lockedPassive: {
+    dmg: greaterEq(
+      tally.hexerei,
+      2,
+      equal(
+        condLockHomework,
+        'on',
+        customDmgNode(
+          prod(percent(dm.lockedPassive.dmg), input.total.atk),
+          'elemental',
+          { hit: { ele: constant('electro') } }
+        )
+      )
     ),
   },
   constellation6: {
@@ -224,13 +288,15 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
     electro_res_,
     atkSPD_,
     all_dmg_,
-    critRate_,
+    critRate_: sum(critRate_, lockC6Sigil_critRate_),
+    critDMG_: lockC6Sigil_critDMG_,
   },
   teamBuff: {
     premod: {
       enemyDefRed_,
     },
   },
+  isHexerei: lockHomework_hexerei,
 })
 
 const sheet: TalentSheet = {
@@ -444,6 +510,43 @@ const sheet: TalentSheet = {
     }),
   ]),
   passive3: ct.talentTem('passive3'),
+  lockedPassive: ct.talentTem('lockedPassive', [
+    ct.condTem('lockedPassive', {
+      path: condLockHomeworkPath,
+      value: condLockHomework,
+      teamBuff: true,
+      name: st('hexerei.homeworkDone'),
+      states: {
+        on: {
+          fields: [
+            {
+              text: st('hexerei.becomeHexerei', {
+                val: `$t(charNames_gen:${key})`,
+              }),
+            },
+            {
+              text: st('hexerei.talentEnhance'),
+            },
+            {
+              node: infoMut(lock_burst_dmgInc, { name: ct.ch('wolf_dmgInc') }),
+            },
+          ],
+        },
+      },
+    }),
+    ct.fieldsTem('lockedPassive', {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.lockedPassive.dmg, { name: st('dmg') }),
+        },
+        {
+          text: stg('cd'),
+          value: dm.lockedPassive.cd,
+          unit: 's',
+        },
+      ],
+    }),
+  ]),
   constellation1: ct.talentTem('constellation1', [
     ct.condTem('constellation1', {
       value: condC1,
@@ -476,7 +579,7 @@ const sheet: TalentSheet = {
         on: {
           fields: [
             {
-              node: critRate_,
+              node: infoMut(critRate_, { path: 'critRate_' }),
             },
           ],
         },
@@ -527,6 +630,29 @@ const sheet: TalentSheet = {
           unit: 's',
         },
       ],
+    }),
+    ct.condTem('constellation6', {
+      path: condLockC6SigilPath,
+      value: condLockC6Sigil,
+      canShow: lockHomework_hexerei,
+      name: ct.ch('c6LockCond'),
+      states: {
+        on: {
+          fields: [
+            {
+              node: infoMut(lockC6Sigil_critRate_, { path: 'critRate_' }),
+            },
+            {
+              node: lockC6Sigil_critDMG_,
+            },
+            {
+              text: stg('duration'),
+              value: dm.constellation6.duration,
+              unit: 's',
+            },
+          ],
+        },
+      },
     }),
   ]),
 }

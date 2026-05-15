@@ -9,7 +9,7 @@
     "gen-file": {
       "executor": "@genshin-optimizer/zzz/formula:gen-desc",
       "options": {
-        "outputPath": "libs/zzz/formula/src/meta.ts"
+        "outputPath": "libs/zzz/formula/src/meta"
       }
     },
     "test": {

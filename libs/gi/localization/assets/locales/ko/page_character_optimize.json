@@ -84,7 +84,10 @@
     "selExc": "이 캐릭터의 제외 리스트에 추가할 성유물 선택",
     "deSelectExc": "제외 리스트에서 제거하기 위해선 해당 성유물을 클릭하세요",
     "usingNum": "<1>{{totalStr}}</1>개의 제외된 성유물 사용중",
-    "button_txt": "성유물 제외"
+    "button_txt": "성유물 제외",
+    "excNum_other": "<0>{{count}}</0> 개의 성유물이 제외됨",
+    "includeArtifactTip": "성유물을 포함 시키면 현재 캐릭터의 빌드 생성에 사용됩니다.",
+    "includeArtifactButton": "이 성유물을 최적화에 포함."
   },
   "excludeChar": {
     "title": "착용 중인 성유물 설정",
@@ -93,7 +96,6 @@
       "disallow_All": "모든 캐릭터를 허용 리스트에서 제거"
     },
     "allowEquip": "이 캐릭터의 성유물을 사용:",
-    "tooltip": "캐릭터들을 허용 리스트에 추가합니다. 이 허용 리스트의 캐릭터들은 조합 생성에 사용됩니다. 또한 미착용 성유물만 사용하거나 사용자 정의 리스트, 그리고 모든 착용 및 미착용 성유물을 사용하도록 선택할 수 있습니다.",
     "chars": "캐릭터",
     "artis": "성유물",
     "states": {
@@ -101,8 +103,25 @@
       "customList": "사용자 정의 리스트",
       "all": "모든 성유물"
     },
-    "usingState": "선택된 방식"
+    "usingState": "선택된 방식",
+    "usingNumTot_other": "<3>{{count}}</3> 캐릭터의 <1>{{arts}}</1>개 성유물 사용 중"
   },
   "buildCompleted": "생성 완료",
-  "notifyTooltip": "생성이 완료되면 소리로 알려줍니다. 또한 탭을 전환한 경우 경고창도 표시합니다."
+  "notifyTooltip": "생성이 완료되면 소리로 알려줍니다. 또한 탭을 전환한 경우 경고창도 표시합니다.",
+  "bonusStats": {
+    "title": "보너스 스탯"
+  },
+  "build_other": "<0>{{count}}</0> 빌드",
+  "thread_other": "<0>{{count}}</0> 쓰레드",
+  "upOptLevelFilter": "성유물 업그레이드 레벨 필터",
+  "upOptLevelFilterTooltip": "레벨 필터는 최적화 설정과 동기화 되지 않습니다.",
+  "upOptNoResults": "강화 할 수 있는 성유물이 없습니다. 성유물 조건에 만족하는 경우가 없습니다. 좀 더 나은 빌드를 위해서는 기본 성유물 최적화를 시도할 수 있습니다.",
+  "upOptInfo": "성유물 업그레이드는 강화시 최적화 목표를 최대화 할 수 있는 가능성이 있는 성유물을 찾습니다.<br/>소유중인 모든 성유물에서만 교체하길 원한다면 기본 성유물 최적화를 사용하세요.",
+  "upOptEmptyBuild": "현재 일부가 빠진 빌드를 사용중입니다. 성유물 업그레이드는 각 성유물을 교체만 합니다. 기본 최적화를 통해 생성된 기본 빌드에서 시작하는 것을 추천드립니다.",
+  "targetSelectorTitle": "대상 선택",
+  "compareArtModal": {
+    "newArt": "새 성유물",
+    "oldArt": "기존 성유물",
+    "tcArt": "실험실 성유물"
+  }
 }

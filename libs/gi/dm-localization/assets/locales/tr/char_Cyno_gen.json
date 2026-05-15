@@ -114,7 +114,7 @@
       "0": "Cyno'nun Hasar değerleri Element Ustalığına göre şu şekilde artar:",
       "1": [
         "Sadık Öncünün Normal Saldırı Hasarı Element Ustalığının %150'si kadar artar.",
-        "Tüy Yargısı Pasif Yeteneğinden gelen Yaban Yıldırımı Hasarı Element Ustalığının %250'si kadar artar."
+        "Tüy Yargısı Yükseltme Yeteneğinden gelen Yaban Yıldırımı Hasarı Element Ustalığının %250'si kadar artar."
       ]
     }
   },
@@ -127,8 +127,8 @@
   "constellation1": {
     "name": "Yazgı: Ebedi Nöbet",
     "description": {
-      "0": "<strong>Kutsal Ayin: Kurt Çevikliği</strong> kullanıldıktan sonra 10 saniyeliğine Cyno'nun Normal Saldırı Hızı %20 artar. Tüy Yargısı Pasif Yeteneğinin Hakim etkisi <strong>Saklı Ayin: Ahir Rehberi</strong> sırasında tetiklenirse bu artışın süresi yenilenir.",
-      "1": "\"Tüy Yargısı\" Pasif Yeteneğinin açılmış olması gerekir."
+      "0": "<strong>Kutsal Ayin: Kurt Çevikliği</strong> kullanıldıktan sonra 10 saniyeliğine Cyno'nun Normal Saldırı Hızı %20 artar. Tüy Yargısı Yükseltme Yeteneğinin Hakim etkisi <strong>Saklı Ayin: Ahir Rehberi</strong> sırasında tetiklenirse bu artışın süresi yenilenir.",
+      "1": "\"Tüy Yargısı\" Yükseltme Yeteneğinin açılmış olması gerekir."
     }
   },
   "constellation2": {
@@ -161,10 +161,10 @@
   "constellation6": {
     "name": "Kıyafet: Adalet Terazisi",
     "description": {
-      "0": "<strong>Kutsal Ayin: Kurt Çevikliği</strong> kullandıktan veya \"Tüy Yargısı\" Pasif Yeteneğinin Hakim etkisini tetikledikten sonra Cyno, \"Çakal Günü\" etkisinden 4 kademe biriktirir. Düşmanlara Normal Saldırı ile vurduğunda bir Yaban Yıldırımı atmak için 1 \"Çakal Günü\" kademesi harcar.",
+      "0": "<strong>Kutsal Ayin: Kurt Çevikliği</strong> kullandıktan veya \"Tüy Yargısı\" Yükseltme Yeteneğinin Hakim etkisini tetikledikten sonra Cyno, \"Çakal Günü\" etkisinden 4 kademe biriktirir. Düşmanlara Normal Saldırı ile vurduğunda bir Yaban Yıldırımı atmak için 1 \"Çakal Günü\" kademesi harcar.",
       "1": "\"Çakal Günü\" 8 saniye sürer. 8 kademeye kadar birikebilir. Sadık Öncü sona erdiğinde iptal olur.",
       "2": "Her 0,4 saniyede 1 Yaban Yıldırımı atılabilir.",
-      "3": "\"Tüy Yargısı\" Pasif Yeteneğinin açılmış olması gerekir."
+      "3": "\"Tüy Yargısı\" Yükseltme Yeteneğinin açılmış olması gerekir."
     }
   }
 }

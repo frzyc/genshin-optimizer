@@ -111,13 +111,13 @@
   "passive1": {
     "name": "優しき風の寵愛",
     "description": {
-      "0": "元素爆発<strong>純光の祈り</strong>の「西風の恵み」効果を受けているキャラクターが敵に凍結反応を起こした時、ダリアに「祝福」効果を2層付与する。この効果は8秒毎に1回のみ発動可能。"
+      "0": "元素爆発<strong><tooltip ns=char_Dahlia_gen baseKey18=burst>純光の祈り</tooltip></strong>の「西風の恵み」効果を受けているキャラクターが敵に凍結反応を起こした時、ダリアに「祝福」効果を2層付与する。この効果は8秒毎に1回のみ発動可能。"
     }
   },
   "passive2": {
     "name": "遊び心に満ちた祈り",
     "description": {
-      "0": "チーム内にいる自身のフィールド上キャラクターが、元素爆発<strong>純光の祈り</strong>の「西風の恵み」効果を受けている時、その攻撃速度はダリアのHP上限を基準に増加する。HP上限1000毎に攻撃速度+0.5%。この方法でアップできる攻撃速度は最大20%まで。"
+      "0": "チーム内にいる自身のフィールド上キャラクターが、元素爆発<strong><tooltip ns=char_Dahlia_gen baseKey18=burst>純光の祈り</tooltip></strong>の「西風の恵み」効果を受けている時、その攻撃速度はダリアのHP上限を基準に増加する。HP上限1000毎に攻撃速度+0.5%。この方法でアップできる攻撃速度は最大20%まで。"
     }
   },
   "passive3": {
@@ -130,39 +130,39 @@
   "constellation1": {
     "name": "無瑕の導き",
     "description": {
-      "0": "ダリアが元素爆発<strong>純光の祈り</strong>の「祝福」効果を1層獲得するたびに、元素エネルギーを2.5回復する。"
+      "0": "ダリアが元素爆発<strong><tooltip ns=char_Dahlia_gen baseKey18=burst>純光の祈り</tooltip></strong>の「祝福」効果を1層獲得するたびに、元素エネルギーを2.5回復する。"
     }
   },
   "constellation2": {
     "name": "慈愛の啓示",
     "description": {
-      "0": "ダリアが元素爆発<strong>純光の祈り</strong>の「祝福」を消費して聖眷シールドを召喚した後、聖眷シールドに守られているキャラクターのシールド強化+25%。12秒間継続する。"
+      "0": "ダリアが元素爆発<strong><tooltip ns=char_Dahlia_gen baseKey18=burst>純光の祈り</tooltip></strong>の「祝福」を消費して聖眷シールドを召喚した後、聖眷シールドに守られているキャラクターのシールド強化+25%。12秒間継続する。"
     }
   },
   "constellation3": {
     "name": "風花の奉納",
     "description": {
-      "0": "元素爆発<strong>純光の祈り</strong>のスキルLv.+3。",
+      "0": "元素爆発<strong><tooltip ns=char_Dahlia_gen baseKey18=burst>純光の祈り</tooltip></strong>のスキルLv.+3。",
       "1": "最大Lv.15まで。"
     }
   },
   "constellation4": {
     "name": "人々の祈り",
     "description": {
-      "0": "元素爆発<strong>純光の祈り</strong>の「西風の恵み」効果の継続時間+3秒。"
+      "0": "元素爆発<strong><tooltip ns=char_Dahlia_gen baseKey18=burst>純光の祈り</tooltip></strong>の「西風の恵み」効果の継続時間+3秒。"
     }
   },
   "constellation5": {
     "name": "狡知の完成",
     "description": {
-      "0": "元素スキル<strong>受洗の礼典</strong>のスキルLv.+3。",
+      "0": "元素スキル<strong><tooltip ns=char_Dahlia_gen baseKey18=skill>受洗の礼典</tooltip></strong>のスキルLv.+3。",
       "1": "最大Lv.15まで。"
     }
   },
   "constellation6": {
     "name": "あらゆる喜びが 君とあらんことを",
     "description": {
-      "0": "元素爆発<strong>純光の祈り</strong>の「西風の恵み」効果を受けているフィールド上キャラクターの攻撃速度+10%。",
+      "0": "元素爆発<strong><tooltip ns=char_Dahlia_gen baseKey18=burst>純光の祈り</tooltip></strong>の「西風の恵み」効果を受けているフィールド上キャラクターの攻撃速度+10%。",
       "1": "また、「西風の恵み」効果を受けているフィールド上キャラクターが戦闘不能になると、以下の効果が発動する。",
       "2": "・そのキャラクターが復活する。",
       "3": "・そのキャラクターのHPを100%回復する。",

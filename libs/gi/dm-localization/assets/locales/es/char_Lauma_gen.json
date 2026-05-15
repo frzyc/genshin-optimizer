@@ -1,0 +1,192 @@
+{
+  "name": "Lauma",
+  "title": "La Cantora Lunaperpetua",
+  "description": "Una dama bendecida por la luz de la luna y el bosque, la esperanza que nació en los Descendientes Lunaescarcha.",
+  "constellationName": "Cerva Nivea",
+  "auto": {
+    "name": "Peregrinaje de la Linnunrata",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Ataca hasta 3 veces para infligir <dendro>Daño Dendro</dendro>."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Usa “metamorfosis de la emisaria espiritual”. Lauma se convierte en una emisaria espiritual del bosque y consume Aguante para esprintar durante un máximo de 10 s. En este estado, la RES a interrupción de Lauma aumentará y podrá consumir Aguante adicional para realizar un doble salto.",
+        "2": "Tras salir de dicho estado, la metamorfosis de la emisaria espiritual entrará en TdE. Durante ese tiempo, el Ataque Cargado de Lauma se convertirá en “Plegaria convocaespíritus”, el cual consume una cierta cantidad de Aguante para infligir <dendro>Daño Dendro en el AdE</dendro> frente a sí misma después de un corto tiempo de canalización."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Concentra el poder de las plantas y se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo <dendro>Daño Dendro en el AdE</dendro> en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Coste de Aguante al moverse en forma de emisaria espiritual",
+      "4": "Coste de Aguante al saltar en forma de emisaria espiritual",
+      "5": "Duración máx. de emisaria espiritual",
+      "6": "TdE de metamorfosis de la emisaria espiritual",
+      "7": "Coste de Aguante de Plegaria convocaespíritus",
+      "8": "Daño de Plegaria convocaespíritus",
+      "9": "Daño de Caída",
+      "10": "Daño de impacto de caída baja/alta",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Runo: Reposo sin alba del Karsikko",
+    "description": {
+      "0": "Entona una silenciosa y antigua letanía para invocar un <tooltip ns=tooltips_gen baseKey18=11190001 values=[]><strong>santuario bosquescarcha</strong></tooltip>, el cual producirá diferentes efectos dependiendo de si se pulsa una vez o se mantiene pulsado.",
+      "1": "<br/>",
+      "2": "<strong>Pulsar una vez</strong>",
+      "3": "Recita la letanía de la caza, lo que inflige <dendro>Daño Dendro en el AdE</dendro>.",
+      "4": "<br/>",
+      "5": "<strong>Mantener pulsado</strong>",
+      "6": "Puede usarse cuando se tenga al menos 1 gota de <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>rocío de la espesura</strong></tooltip>. Lauma consume todo el rocío de la espesura para entonar la letanía del sueño eterno, lo que inflige un golpe de <dendro>Daño Dendro en el AdE</dendro> y otro de <dendro>Daño Dendro en el AdE</dendro> considerado como daño de Florecimiento Lunar. Por cada gota de rocío de la espesura consumida, Lauma obtiene 1 <tooltip ns=tooltips_gen baseKey18=11190002 values=[]><strong>cántico lunar</strong></tooltip>. Lauma puede consumir un máximo de 3 gotas de rocío de la espesura de esta manera cada vez que use su Habilidad Elemental manteniéndola pulsada.",
+      "7": "<br/>",
+      "8": "Además, cuando Lauma golpea a un enemigo con su Habilidad Elemental o con santuario bosquescarcha, la <dendro>RES Dendro</dendro> y la <hydro>RES Hydro</hydro> de dicho enemigo se reducen durante 10 s."
+    },
+    "skillParams": {
+      "0": "Daño al pulsar una vez",
+      "1": "Daño al mantener pulsado (1er golpe)",
+      "2": "Daño al mantener pulsado (2.º golpe)",
+      "3": "Daño de ataque de santuario bosquescarcha",
+      "4": "Duración de santuario bosquescarcha",
+      "5": "Duración de cántico lunar",
+      "6": "Reducción de RES Elemental",
+      "7": "Duración de reducción de RES Elemental",
+      "8": "TdE",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Runo: Luna de mil corazones",
+    "description": {
+      "0": "Que los deseos de todos los seres vivos se conviertan en la luz de la luna que ilumina la tierra. Lauma entona el himno sagrado del Lejano Norte y obtiene 18 cargas de <tooltip ns=tooltips_gen baseKey18=11190003 values=[]><strong>letanía albar</strong></tooltip>.",
+      "1": "Además, si Lauma usa su Habilidad Definitiva mientras posee un <tooltip ns=tooltips_gen baseKey18=11190002 values=[]><strong>cántico lunar</strong></tooltip> u obtiene uno durante los 15 s posteriores al uso de dicha habilidad, consumirá todos los cánticos lunares que tenga y obtendrá 6 cargas de letanía albar por cada cántico lunar consumido. Este efecto solo puede activarse 1 vez por cada uso de la Habilidad Definitiva y en los 15 s posteriores a usarla.",
+      "2": "<br/>",
+      "3": "<strong>Letanía albar</strong>",
+      "4": "Cuando un personaje cercano del equipo inflija daño a través de las reacciones de Florecimiento, Sobreflorecimiento, Crepitar o Florecimiento Lunar, se consumirá 1 carga de letanía albar para aumentar el daño infligido en función de la Maestría Elemental de Lauma. Si dicho daño golpea a varios enemigos a la vez, se consumirán cargas según el número de enemigos golpeados.",
+      "5": "Cada carga de letanía albar tiene su propia duración individual."
+    },
+    "skillParams": {
+      "0": "Cargas de letanía albar obtenidas al usar la Habilidad Definitiva",
+      "1": "Conversión de cántico lunar a letanía albar",
+      "2": "Aumento de daño de Florecimiento, Sobreflorecimiento y Crepitar",
+      "3": "Aumento de daño de Florecimiento Lunar",
+      "4": "Duración de letanía albar",
+      "5": "TdE",
+      "6": "Energía Elemental",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Fulgor para la noche escarchada",
+    "description": {
+      "0": "Después de que Lauma use su Habilidad Elemental, <strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo: Reposo sin alba del Karsikko</tooltip></strong>, se generarán diferentes fortalecimientos durante 20 s según el <strong>presagio lunar</strong> del equipo. Los fortalecimientos otorgados por los distintos niveles de presagio lunar no se pueden acumular.",
+      "1": "<br/>",
+      "2": "<strong>Presagio lunar: resplandor naciente</strong>",
+      "3": "El daño infligido por las reacciones de Florecimiento, Sobreflorecimiento y Crepitar causadas por todos los personajes cercanos del equipo puede asestar golpes CRIT, con una Prob. CRIT fija del 15% y un Daño CRIT fijo del 100%. La Prob. CRIT otorgada por este efecto puede acumularse con otras bonificaciones similares que proporcionen Prob. CRIT a dichas reacciones.",
+      "4": "<br/>",
+      "5": "<strong>Presagio lunar: resplandor ascendente</strong>",
+      "6": "La Prob. CRIT y el Daño CRIT de las reacciones de Florecimiento Lunar causadas por todos los personajes cercanos del equipo aumentan en un 10% y en un 20% respectivamente."
+    }
+  },
+  "passive2": {
+    "name": "Purificación para el manantial",
+    "description": {
+      "0": "Lauma obtiene las siguientes bonificaciones por cada punto de Maestría Elemental que tenga:",
+      "1": [
+        "Aumenta en un 0.04% el daño infligido por su Habilidad Elemental. Como máximo, el daño puede aumentar en un 32% de esta manera.",
+        "Reduce en un 0.02% el TdE de la <strong>metamorfosis de la emisaria espiritual</strong> de su Ataque Cargado. Como máximo, el TdE de la metamorfosis de la emisaria espiritual puede reducirse en un 20% de esta manera."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Bendición presagiolunar: Coro de la naturaleza",
+    "description": {
+      "0": "Cuando un personaje del equipo cause una reacción de Florecimiento, esta se transformará en una reacción de Florecimiento Lunar. El daño base de las reacciones de Florecimiento Lunar de los personajes del equipo aumentará en un 0.0175% por cada punto de Maestría Elemental que tenga Lauma. Como máximo, dicho daño puede aumentar en un 14% de esta manera.",
+      "1": "<br/>",
+      "2": "Además, cuando Lauma esté en el equipo, el nivel de <strong>presagio lunar</strong> de los personajes aumentará en 1."
+    }
+  },
+  "passive": {
+    "name": "Rezos para el bosque",
+    "description": {
+      "0": "Muestra la ubicación de los <strong>objetos típicos de Nod Krai</strong> cercanos en el minimapa.",
+      "1": "Además, parece que Lauma tiene un vínculo especial con algunos animales pequeños afectados por el kuuvahki..."
+    }
+  },
+  "constellation1": {
+    "name": "“¡Oh, labios, tejan para mí salmos y cantares!”",
+    "description": {
+      "0": "Después de que Lauma use su Habilidad Elemental, <strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo: Reposo sin alba del Karsikko</tooltip></strong>, o su Habilidad Definitiva, <strong><tooltip ns=char_Lauma_gen baseKey18=burst>Runo: Luna de mil corazones</tooltip></strong>, obtendrá el efecto de “hilos de la vida” durante 20 s.",
+      "1": "Mientras este efecto esté activo, cuando un personaje cercano del equipo cause una reacción de Florecimiento Lunar, los personajes en uso cercanos recuperarán Vida en una cantidad equivalente al 500% de la Maestría Elemental de Lauma. Dicho efecto solo se puede activar una vez cada 1.9 s.",
+      "2": "Además, reduce en un 40% el Coste de Aguante de la forma de emisaria espiritual de Lauma, y su duración máxima aumenta en 5 s."
+    }
+  },
+  "constellation2": {
+    "name": "“Entretejan advertencias y relatos del Lejano Norte”",
+    "description": {
+      "0": "Fortalece la Habilidad Definitiva, <strong><tooltip ns=char_Lauma_gen baseKey18=burst>Runo: Luna de mil corazones</tooltip></strong>:",
+      "1": [
+        "Mejora el efecto de <tooltip ns=tooltips_gen baseKey18=11190003 values=[]><strong>letanía albar</strong></tooltip>, de manera que el daño de las reacciones de Florecimiento, Sobreflorecimiento y Crepitar causadas por todos los personajes cercanos del equipo aumenta adicionalmente en una cantidad equivalente al 500% de la Maestría Elemental de Lauma, y el daño de Florecimiento Lunar también aumenta adicionalmente en una cantidad equivalente al 400% de su Maestría Elemental."
+      ],
+      "2": "<br/>",
+      "3": "<strong>Presagio lunar: resplandor ascendente</strong>",
+      "4": "El daño infligido por las reacciones de Florecimiento Lunar causadas por todos los personajes cercanos del equipo aumenta en un 40%."
+    }
+  },
+  "constellation3": {
+    "name": "“No codicies seguir el camino de la raposería”",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_Lauma_gen baseKey18=burst>Runo: Luna de mil corazones</tooltip></strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "“No anheles la autoridad del gran oso”",
+    "description": {
+      "0": "Cuando el <tooltip ns=tooltips_gen baseKey18=11190001 values=[]><strong>santuario bosquescarcha</strong></tooltip> de la Habilidad Elemental, <strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo: Reposo sin alba del Karsikko</tooltip></strong>, golpea a un enemigo, Lauma recupera 4 pts. de Energía Elemental. Este efecto solo puede ocurrir una vez cada 5 s."
+    }
+  },
+  "constellation5": {
+    "name": "“Si la verdad puede ser contemplada...”",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo: Reposo sin alba del Karsikko</tooltip></strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "“Ofrezco mi sangre y mis lágrimas a la luna”",
+    "description": {
+      "0": "Cuando el <tooltip ns=tooltips_gen baseKey18=11190001 values=[]><strong>santuario bosquescarcha</strong></tooltip> golpea a un enemigo, inflige un golpe adicional de <dendro>Daño Dendro en el AdE</dendro> equivalente al 185% de la Maestría Elemental de Lauma y que se considera daño de Florecimiento Lunar. En lugar de consumir cargas de <tooltip ns=tooltips_gen baseKey18=11190003 values=[]><strong>letanía albar</strong></tooltip>, esto le otorgará a Lauma 2 cargas de dicho efecto y reiniciará la duración de la letanía albar obtenida de esta forma.",
+      "1": "Este efecto podrá ocurrir hasta 8 veces a lo largo de la duración de un mismo santuario bosquescarcha. Al utilizar la Habilidad Elemental, <strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo: Reposo sin alba del Karsikko</tooltip></strong>, se eliminarán todas las cargas de letanía albar obtenidas de esta forma.",
+      "2": "<br/>",
+      "3": "Además, al realizar un Ataque Normal mientras Lauma esté bajo los efectos de letanía albar, se consumirá una carga de dicho efecto e infligirá <dendro>Daño Dendro</dendro> equivalente al 150% de la Maestría Elemental de Lauma, el cual se considerará daño de Florecimiento Lunar.",
+      "4": "<br/>",
+      "5": "<strong>Presagio lunar: resplandor ascendente</strong>",
+      "6": "El daño de la reacción de Florecimiento Lunar de todos los personajes cercanos del equipo <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>asciende</strong></tooltip> en un 25%."
+    }
+  }
+}

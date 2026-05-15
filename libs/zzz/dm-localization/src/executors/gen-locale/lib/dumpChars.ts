@@ -21,35 +21,52 @@ export function dumpChars(fileDir: string) {
       core: getCoreStrings(charData.cores),
       ability: getAbilityStrings(charData.cores),
       mindscapes: getMindscapeStrings(charData.mindscapes),
+      potential: getPotentialStrings(charData.potential),
     })
   })
   dumpFile(`${fileDir}/charNames_gen.json`, charNames)
 }
 
 function getSkillStrings(data: CharacterData['skills']) {
+  const skillExceptions = new Set([
+    'StanceJougen',
+    'StanceKagen',
+    'DashAttackTigerSevenFormsMountainKingsGameMomentum',
+    'BasicAttackFallingPetalsDownfallFirstForm',
+    'BasicAttackFallingPetalsDownfallSecondForm',
+    'ChasingThunder',
+  ])
   return Object.fromEntries(
     Object.entries(data).map(([key, skill]) => [
       `${key.charAt(0).toLowerCase()}${key.slice(1)}`,
       Object.fromEntries(
-        skill.Description.filter((ability) => !!ability.Desc)
+        skill.Description.filter(
+          (ability) =>
+            !!ability.Desc || skillExceptions.has(nameToKey(ability.Name))
+        )
           .filter(filterUnbuffedKits)
-          .map((ability) => [
-            nameToKey(ability.Name),
-            {
-              name: ability.Name,
-              desc: processText(ability.Desc!),
-              // Copy param text by iterating again and finding the param details
-              params: skill.Description.filter(
-                (ability2) => ability2.Name === ability.Name && !!ability2.Param
-              )
-                .filter(filterUnbuffedKits)
-                .flatMap((ability2) => [
-                  ...new Set(
-                    ability2.Param!.map((param) => processParamText(param.Name))
-                  ),
-                ]),
-            },
-          ])
+          .map((ability) => {
+            return [
+              nameToKey(ability.Name),
+              {
+                name: ability.Name,
+                desc: processText(ability.Desc || ''),
+                // Copy param text by iterating again and finding the param details
+                params: skill.Description.filter(
+                  (ability2) =>
+                    ability2.Name === ability.Name && !!ability2.Param
+                )
+                  .filter(filterUnbuffedKits)
+                  .flatMap((ability2) => [
+                    ...new Set(
+                      ability2.Param!.map((param) =>
+                        processParamText(param.Name)
+                      )
+                    ),
+                  ]),
+              },
+            ]
+          })
       ),
     ])
   )
@@ -70,8 +87,10 @@ function getCoreStrings(data: CharacterData['cores']) {
 
 function getAbilityStrings(data: CharacterData['cores']) {
   return {
-    name: Object.values(data.Level)[1].Name[1],
-    desc: processText(Object.values(data.Level)[1].Desc[1]),
+    name: Object.values(data.Level).filter(filterUnbuffedKits)[1].Name[1],
+    desc: processText(
+      Object.values(data.Level).filter(filterUnbuffedKits)[1].Desc[1]
+    ),
   }
 }
 
@@ -86,4 +105,14 @@ function getMindscapeStrings(data: CharacterData['mindscapes']) {
       },
     ])
   )
+}
+
+function getPotentialStrings(data: CharacterData['potential']) {
+  if (Object.keys(data).length === 0) {
+    return {}
+  }
+  return {
+    name: Object.values(data).filter((_, i) => i > 0)[0].Name,
+    desc: Object.values(data).map((pot) => processText(pot.Desc)),
+  }
 }

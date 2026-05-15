@@ -1,5 +1,12 @@
 // WARNING: Generated file, do not modify
 export const conditionals = {
+  ADayCarvedFromRisingWinds: {
+    someBoolConditional: {
+      sheet: 'ADayCarvedFromRisingWinds',
+      name: 'someBoolConditional',
+      type: 'bool',
+    },
+  },
   Adventurer: {
     someBoolConditional: {
       sheet: 'Adventurer',
@@ -10,6 +17,13 @@ export const conditionals = {
   ArchaicPetra: {
     someBoolConditional: {
       sheet: 'ArchaicPetra',
+      name: 'someBoolConditional',
+      type: 'bool',
+    },
+  },
+  AubadeOfMorningstarAndMoon: {
+    someBoolConditional: {
+      sheet: 'AubadeOfMorningstarAndMoon',
       name: 'someBoolConditional',
       type: 'bool',
     },
@@ -240,6 +254,13 @@ export const conditionals = {
     isActive: { sheet: 'Nahida', name: 'isActive', type: 'bool' },
     partyInBurst: { sheet: 'Nahida', name: 'partyInBurst', type: 'bool' },
   },
+  NightOfTheSkysUnveiling: {
+    someBoolConditional: {
+      sheet: 'NightOfTheSkysUnveiling',
+      name: 'someBoolConditional',
+      type: 'bool',
+    },
+  },
   NighttimeWhispersInTheEchoingWoods: {
     someBoolConditional: {
       sheet: 'NighttimeWhispersInTheEchoingWoods',
@@ -344,6 +365,13 @@ export const conditionals = {
   ShimenawasReminiscence: {
     someBoolConditional: {
       sheet: 'ShimenawasReminiscence',
+      name: 'someBoolConditional',
+      type: 'bool',
+    },
+  },
+  SilkenMoonsSerenade: {
+    someBoolConditional: {
+      sheet: 'SilkenMoonsSerenade',
       name: 'someBoolConditional',
       type: 'bool',
     },
@@ -460,6 +488,20 @@ export const conditionals = {
   },
 } as const
 export const formulas = {
+  Aino: {
+    normal1: {
+      sheet: 'Aino',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Aino',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   Albedo: {
     normal1: {
       sheet: 'Albedo',
@@ -905,6 +947,20 @@ export const formulas = {
       },
     },
   },
+  Columbina: {
+    normal1: {
+      sheet: 'Columbina',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Columbina',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   Cyno: {
     normal1: {
       sheet: 'Cyno',
@@ -989,6 +1045,20 @@ export const formulas = {
       },
     },
   },
+  Durin: {
+    normal1: {
+      sheet: 'Durin',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Durin',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   Emilie: {
     normal1: {
       sheet: 'Emilie',
@@ -1054,6 +1124,20 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         sheet: 'Fischl',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  Flins: {
+    normal1: {
+      sheet: 'Flins',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Flins',
         move: 'normal',
         name: 'normal1',
       },
@@ -1157,15 +1241,15 @@ export const formulas = {
       },
     },
   },
-  Ineffa: {
+  Illuga: {
     normal1: {
-      sheet: 'Ineffa',
+      sheet: 'Illuga',
       name: 'normal1',
       tag: {
         et: 'own',
         qt: 'formula',
         q: 'dmg',
-        sheet: 'Ineffa',
+        sheet: 'Illuga',
         move: 'normal',
         name: 'normal1',
       },
@@ -1180,6 +1264,34 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         sheet: 'Ifa',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  Ineffa: {
+    normal1: {
+      sheet: 'Ineffa',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Ineffa',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  Jahoda: {
+    normal1: {
+      sheet: 'Jahoda',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Jahoda',
         move: 'normal',
         name: 'normal1',
       },
@@ -1381,6 +1493,20 @@ export const formulas = {
       },
     },
   },
+  Lauma: {
+    normal1: {
+      sheet: 'Lauma',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Lauma',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   Layla: {
     normal1: {
       sheet: 'Layla',
@@ -1390,6 +1516,20 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         sheet: 'Layla',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  Linnea: {
+    normal1: {
+      sheet: 'Linnea',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Linnea',
         move: 'normal',
         name: 'normal1',
       },
@@ -1636,6 +1776,20 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         sheet: 'Navia',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  Nefer: {
+    normal1: {
+      sheet: 'Nefer',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Nefer',
         move: 'normal',
         name: 'normal1',
       },
@@ -2141,6 +2295,20 @@ export const formulas = {
       },
     },
   },
+  Varka: {
+    normal1: {
+      sheet: 'Varka',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Varka',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   Venti: {
     normal1: {
       sheet: 'Venti',
@@ -2374,6 +2542,20 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         sheet: 'Zhongli',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  Zibai: {
+    normal1: {
+      sheet: 'Zibai',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Zibai',
         move: 'normal',
         name: 'normal1',
       },

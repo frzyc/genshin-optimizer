@@ -137,7 +137,7 @@
   "constellation4": {
     "name": "Hojas marchitas",
     "description": {
-      "0": "Al usar <strong>Flecha enredadora artificial</strong>, la Maestría Elemental de todos los miembros del equipo cercanos aumenta en 60 pts. durante 8 s. Si esta habilidad causa una reacción de Quemadura, Florecimiento, Aceleración o Propagación, la Maestría Elemental aumenta en 60 pts. adicionales y se reinicia la duración de esta bonificación de estado."
+      "0": "Al usar <strong>Flecha enredadora artificial</strong>, la Maestría Elemental de todos los miembros del equipo cercanos aumenta en 60 pts. durante 8 s. Si esta habilidad causa una reacción de Quemadura, Florecimiento, Florecimiento Lunar, Aceleración o Propagación, la Maestría Elemental aumenta en 60 pts. adicionales y se reinicia la duración de esta bonificación de estado."
     }
   },
   "constellation5": {

@@ -142,7 +142,7 @@
     "name": "Sisli Ormandaki İzler",
     "description": {
       "0": "<strong>Gece Sapanı</strong> Element Becerisinin <strong>Ruh Küresi</strong> 2 defa daha sekebilir.",
-      "1": "Ayrıca <strong>Ruh Küresi</strong> bir düşmana isabet ettikten sonra 12 saniyeliğine Gece Gelgiti etkisi uygular. Gece Gelgiti etkisindeki düşmanların \"Gece Gölgesi Sinestezisi\" Pasif Yeteneği tarafından tetiklenen Süper Duyudan aldıkları Hasar %50 artar. Bu etkiyi tetiklemek için \"Gece Gölgesi Sinestezisi\" Pasif Yeteneğinin açılmış olması gerekir."
+      "1": "Ayrıca <strong>Ruh Küresi</strong> bir düşmana isabet ettikten sonra 12 saniyeliğine Gece Gelgiti etkisi uygular. Gece Gelgiti etkisindeki düşmanların \"Gece Gölgesi Sinestezisi\" Yükseltme Yeteneği tarafından tetiklenen Süper Duyudan aldıkları Hasar %50 artar. \"Gece Gölgesi Sinestezisi\" Yükseltme Yeteneğinin açılmış olması gerekir."
     }
   },
   "constellation2": {
@@ -179,9 +179,9 @@
   "constellation6": {
     "name": "Derin Pınarların Kasidesi",
     "description": {
-      "0": "Pasif Yetenek Gece Gölgesi Sinestezisi ile Süper Duyu tetiklendikten sonra 9 saniyeliğine aktif karakterinin Saldırısı %10 artar. En fazla 3 kademe birikir, her kademenin süresi birbirinden bağımsızdır.",
+      "0": "\"Gece Gölgesi Sinestezisi\" Yükseltme Yeteneği ile Süper Duyu tetiklendikten sonra 9 saniyeliğine aktif karakterinin Saldırısı %10 artar. 3 kademeye kadar birikebilir, her kademenin süresi birbirinden bağımsızdır.",
       "1": "Ayrıca, Element Patlaması <strong>Karanlık Seslerin Yankıları</strong> kullandığında \"Süper Duyu\" ile eşdeğer bir etki tetiklenir ve orijinal Hasarın %200'ü kadar Hasar verir.",
-      "2": "\"Gece Gölgesi Sinestezisi\" Pasif Yeteneğinin açılmış olması gerekir."
+      "2": "\"Gece Gölgesi Sinestezisi\" Yükseltme Yeteneğinin açılmış olması gerekir."
     }
   }
 }

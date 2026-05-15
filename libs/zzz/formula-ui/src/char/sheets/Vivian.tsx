@@ -1,13 +1,13 @@
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { buffs, conditionals, formulas } from '@genshin-optimizer/zzz/formula'
+import { Vivian } from '@genshin-optimizer/zzz/formula'
 import { trans } from '../../util'
 import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 
 const key: CharacterKey = 'Vivian'
 const [, ch] = trans('char', key)
-const cond = conditionals[key]
-const buff = buffs[key]
-const formula = formulas[key]
+const cond = Vivian.conditionals
+const buff = Vivian.buffs
+const formula = Vivian.formulas
 
 const sheet = createBaseSheet(key, {
   core: [

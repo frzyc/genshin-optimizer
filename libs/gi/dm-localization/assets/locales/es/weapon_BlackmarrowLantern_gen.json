@@ -1,0 +1,24 @@
+{
+  "name": "Lámpara Medulaoscura",
+  "description": {
+    "0": "Una lámpara portátil con un brillo tenue y tenebroso, y envuelta en una aleación de color oscuro que recuerda a las articulaciones del cuerpo. Dicen que había una organización secreta que la consideraba su mayor tesoro."
+  },
+  "passiveName": "Prueba del pacto",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta en un <cryo>48%</cryo> el daño de la reacción de Florecimiento, y en un <cryo>12%</cryo> el de Florecimiento Lunar. Con “presagio lunar: resplandor ascendente”, el daño de la reacción de Florecimiento Lunar aumenta en un <cryo>12%</cryo> adicional."
+    },
+    "1": {
+      "0": "Aumenta en un <cryo>60%</cryo> el daño de la reacción de Florecimiento, y en un <cryo>15%</cryo> el de Florecimiento Lunar. Con “presagio lunar: resplandor ascendente”, el daño de la reacción de Florecimiento Lunar aumenta en un <cryo>15%</cryo> adicional."
+    },
+    "2": {
+      "0": "Aumenta en un <cryo>72%</cryo> el daño de la reacción de Florecimiento, y en un <cryo>18%</cryo> el de Florecimiento Lunar. Con “presagio lunar: resplandor ascendente”, el daño de la reacción de Florecimiento Lunar aumenta en un <cryo>18%</cryo> adicional."
+    },
+    "3": {
+      "0": "Aumenta en un <cryo>84%</cryo> el daño de la reacción de Florecimiento, y en un <cryo>21%</cryo> el de Florecimiento Lunar. Con “presagio lunar: resplandor ascendente”, el daño de la reacción de Florecimiento Lunar aumenta en un <cryo>21%</cryo> adicional."
+    },
+    "4": {
+      "0": "Aumenta en un <cryo>96%</cryo> el daño de la reacción de Florecimiento, y en un <cryo>24%</cryo> el de Florecimiento Lunar. Con “presagio lunar: resplandor ascendente”, el daño de la reacción de Florecimiento Lunar aumenta en un <cryo>24%</cryo> adicional."
+    }
+  }
+}

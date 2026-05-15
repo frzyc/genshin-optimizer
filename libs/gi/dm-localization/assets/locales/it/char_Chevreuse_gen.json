@@ -102,7 +102,7 @@
     "name": "Tattiche coordinate dell'avanguardia",
     "description": {
       "0": "Quando tutti i membri del gruppo appartengono a <pyro>Pyro</pyro> ed <electro>Electro</electro>, e ci sono almeno un personaggio di tipo Pyro e uno di tipo Electro nel gruppo, Chevreuse conferisce Tattiche coordinate ai membri del gruppo vicini: quando un personaggio innesca la reazione di Sovraccarico, le RES a <pyro>Pyro</pyro> ed <electro>Electro</electro> degli avversari colpiti da tale reazione diminuisce di un 40% per 6 s.",
-      "1": "L'effetto Tattiche coordinate viene rimosso quando i tipi elementali dei personaggi del gruppo non rispettano i requisiti minimi del talento passivo."
+      "1": "L'effetto Tattiche coordinate viene rimosso quando i tipi elementali dei personaggi del gruppo non rispettano i requisiti minimi del talento d'ascensione."
     }
   },
   "passive2": {
@@ -122,7 +122,7 @@
     "name": "Risolutezza della prima linea",
     "description": {
       "0": "Quando il personaggio attivo nello stato di Tattiche coordinate (a esclusione di Chevreuse) innesca una reazione di Sovraccarico, recupera 6 di energia. Quest'effetto può attivarsi una volta ogni 10 s.",
-      "1": "Richiede il talento passivo Tattiche coordinate dell'avanguardia."
+      "1": "Richiede il talento d'ascensione Tattiche coordinate dell'avanguardia."
     }
   },
   "constellation2": {

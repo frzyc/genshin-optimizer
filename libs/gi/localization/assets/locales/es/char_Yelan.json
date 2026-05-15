@@ -4,5 +4,8 @@
   },
   "c4": {
     "condName": "Número de oponentes marcados por Atadura Salvavidas"
+  },
+  "c6": {
+    "dmg": "Daño de Planificación Táctica Flechas Irruptoras"
   }
 }

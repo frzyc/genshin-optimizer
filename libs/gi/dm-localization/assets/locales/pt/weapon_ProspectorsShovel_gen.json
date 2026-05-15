@@ -1,0 +1,24 @@
+{
+  "name": "Pá do Escavador",
+  "description": {
+    "0": "Uma lança que parece ter sido criada de uma ferramenta agrícola. A primeira vista, não poderia ser mais ordinária, mas seu desenho discreto esconde truques refinados e luxuosos."
+  },
+  "passiveName": "Decisões Imediatas",
+  "passiveDescription": {
+    "0": {
+      "0": "Dano de Eletricamente Carregado é aumentado em <cryo>48%</cryo>. Dano de Carga Lunar é aumentado em <cryo>12%</cryo>. Presságio Lunar: Reluzir Cheio: aumenta o Dano de Carga Lunar em mais <cryo>12%</cryo>."
+    },
+    "1": {
+      "0": "Dano de Eletricamente Carregado é aumentado em <cryo>60%</cryo>. Dano de Carga Lunar é aumentado em <cryo>15%</cryo>. Presságio Lunar: Reluzir Cheio: aumenta o Dano de Carga Lunar em mais <cryo>15%</cryo>."
+    },
+    "2": {
+      "0": "Dano de Eletricamente Carregado é aumentado em <cryo>72%</cryo>. Dano de Carga Lunar é aumentado em <cryo>18%</cryo>. Presságio Lunar: Reluzir Cheio: aumenta o Dano de Carga Lunar em mais <cryo>18%</cryo>."
+    },
+    "3": {
+      "0": "Dano de Eletricamente Carregado é aumentado em <cryo>84%</cryo>. Dano de Carga Lunar é aumentado em <cryo>21%</cryo>. Presságio Lunar: Reluzir Cheio: aumenta o Dano de Carga Lunar em mais <cryo>21%</cryo>."
+    },
+    "4": {
+      "0": "Dano de Eletricamente Carregado é aumentado em <cryo>96%</cryo>. Dano de Carga Lunar é aumentado em <cryo>24%</cryo>. Presságio Lunar: Reluzir Cheio: aumenta o Dano de Carga Lunar em mais <cryo>24%</cryo>."
+    }
+  }
+}

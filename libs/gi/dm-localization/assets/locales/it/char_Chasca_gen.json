@@ -155,17 +155,17 @@
   "constellation1": {
     "name": "Il tamburo, una roulette irrequieta",
     "description": {
-      "0": "Quando si innesca la Conversione del Vincolo spirituale del talento passivo Trucco del proiettile, anche il 2º <strong>Proiettile Cacciaombre</strong> caricato nel tamburo viene convertito in un <strong>Proiettile Cacciaombre radioso</strong>.",
+      "0": "Quando si innesca la Conversione del Vincolo spirituale del talento d'ascensione Trucco del proiettile, anche il 2º <strong>Proiettile Cacciaombre</strong> caricato nel tamburo viene convertito in un <strong>Proiettile Cacciaombre radioso</strong>.",
       "1": "La probabilità che si inneschi la Conversione del Vincolo spirituale aumenta: se ci sono membri del gruppo che rispettano i requisiti della conversione del tipo elementale, la probabilità di innescare la Conversione del Vincolo spirituale aumenta di un 33,3%, fino a un 100% massimo.",
       "2": "<br/>",
-      "3": "Richiede il talento passivo Trucco del proiettile.",
+      "3": "Richiede il talento d'ascensione Trucco del proiettile.",
       "4": "Inoltre, quando Chasca non è in un combattimento, il suo stato di Grazia dell'Anima della Notte consuma un 30% di Flogisto e di punti Anima della Notte in meno."
     }
   },
   "constellation2": {
     "name": "La volata, il fumo ustionante",
     "description": {
-      "0": "Se il talento passivo Trucco del proiettile è sbloccato, Chasca ottiene 1 accumulo di Spirito dell'Ombra raggiante quando entra in campo.",
+      "0": "Se il talento d'ascensione Trucco del proiettile è sbloccato, Chasca ottiene 1 accumulo di Spirito dell'Ombra raggiante quando entra in campo.",
       "1": "In più, quando i <strong>Proiettili Cacciaombre radiosi</strong> di <strong>Fuoco multibersaglio</strong> dell'abilità elementale <strong>Redini dello spirito, Caccia nell'ombra</strong> colpiscono gli avversari, infliggono DAN elementali ad area del tipo elementale corrispondente pari a un 400% dell'ATT di Chasca. Tali DAN sono considerati DAN da attacco caricato. Quest'effetto può attivarsi una volta per ciascun uso di <strong>Fuoco multibersaglio</strong>."
     }
   },
@@ -193,9 +193,9 @@
   "constellation6": {
     "name": "La resa dei conti, la gloria della battaglia",
     "description": {
-      "0": "Il tempo di carica del <strong>Fuoco multibersaglio</strong> di Chasca si riduce e, dopo aver innescato la Conversione del Vincolo spirituale del talento passivo Trucco del proiettile, Chasca entra nello stato Colpi fatali: nei successivi 3 s, la volta seguente che Chasca usa il <strong>Fuoco multibersaglio</strong> dell'abilità elementale <strong>Redini dello spirito, Caccia nell'ombra</strong>, i proiettili si caricano all'istante, e i DAN da CRIT di tale iterazione dei <strong>Proiettili Cacciaombre</strong> e dei <strong>Proiettili Cacciaombre radiosi</strong> di <strong>Fuoco multibersaglio</strong> aumentano di un 120%. Si può ottenere l'effetto Colpi fatali una volta ogni 3 s.",
+      "0": "Il tempo di carica del <strong>Fuoco multibersaglio</strong> di Chasca si riduce e, dopo aver innescato la Conversione del Vincolo spirituale del talento d'ascensione Trucco del proiettile, Chasca entra nello stato Colpi fatali: nei successivi 3 s, la volta seguente che Chasca usa il <strong>Fuoco multibersaglio</strong> dell'abilità elementale <strong>Redini dello spirito, Caccia nell'ombra</strong>, i proiettili si caricano all'istante, e i DAN da CRIT di tale iterazione dei <strong>Proiettili Cacciaombre</strong> e dei <strong>Proiettili Cacciaombre radiosi</strong> di <strong>Fuoco multibersaglio</strong> aumentano di un 120%. Si può ottenere l'effetto Colpi fatali una volta ogni 3 s.",
       "1": "<br/>",
-      "2": "L'accesso al suddetto effetto richiede il talento passivo Trucco del proiettile."
+      "2": "L'accesso al suddetto effetto richiede il talento d'ascensione Trucco del proiettile."
     }
   }
 }

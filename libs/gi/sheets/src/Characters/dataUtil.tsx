@@ -5,19 +5,27 @@ import type {
   MainStatKey,
   SubstatKey,
 } from '@genshin-optimizer/gi/consts'
-import { allElementKeys, allMainStatKeys } from '@genshin-optimizer/gi/consts'
+import {
+  allElementKeys,
+  allLunarReactionKeys,
+  allMainStatKeys,
+} from '@genshin-optimizer/gi/consts'
 import type { CharacterGrowCurveKey } from '@genshin-optimizer/gi/dm'
 import { allStats, getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import type { Data, DisplaySub, NumNode } from '@genshin-optimizer/gi/wr'
 import {
   constant,
   data,
+  equal,
+  equalStr,
+  greaterEq,
   inferInfoMut,
   infoMut,
   infusionNode,
   input,
   lookup,
   mergeData,
+  min,
   one,
   percent,
   prod,
@@ -25,7 +33,9 @@ import {
   stringPrio,
   subscript,
   sum,
+  tally,
 } from '@genshin-optimizer/gi/wr'
+import { cond, nonStackBuff } from '../SheetUtil'
 
 const commonBasic = objKeyMap(
   ['hp', 'atk', 'def', 'eleMas', 'enerRech_', 'critRate_', 'critDMG_', 'heal_'],
@@ -172,9 +182,10 @@ export function splitScaleDmgNode(
     | 'skill'
     | 'burst',
   additional: Data = {},
-  specialMultiplier?: NumNode
+  specialMultiplier?: NumNode,
+  overrideTalentType?: 'skill' | 'burst' | 'auto'
 ): NumNode {
-  const talentType = getTalentType(move)
+  const talentType = overrideTalentType ?? getTalentType(move)
   return customDmgNode(
     sum(
       ...bases.map((base, i) =>
@@ -222,12 +233,18 @@ export function plungingDmgNodes(
 /** Note: `additional` applies only to this formula */
 export function shieldNode(
   base: MainStatKey | SubstatKey,
-  percent: NumNode | number,
-  flat: NumNode | number,
+  percentVal: NumNode | number,
+  flatVal: NumNode | number,
   additional?: Data
 ): NumNode {
   return customShieldNode(
-    sum(prod(percent, input.total[base]), flat),
+    sum(
+      prod(
+        typeof percentVal === 'number' ? percent(percentVal) : percentVal,
+        input.total[base]
+      ),
+      flatVal
+    ),
     additional
   )
 }
@@ -306,7 +323,7 @@ export function healNodeTalent(
 export function dataObjForCharacterSheet(
   key: CharacterKey,
   display: { [key: string]: DisplaySub },
-  additional: Data = {}
+  ...additional: Data[]
 ): Data {
   function curve(base: number, lvlCurve: CharacterGrowCurveKey): NumNode {
     return prod(
@@ -314,8 +331,25 @@ export function dataObjForCharacterSheet(
       subscript<number>(input.lvl, allStats.char.expCurve[lvlCurve])
     )
   }
+  const [_condMoonsignAfterSkillBurstPath, condMoonsignAfterSkillBurst] = cond(
+    key,
+    'moonsignAfterSkillBurst'
+  )
+  function moonsignBuff(path: string, value: NumNode) {
+    return nonStackBuff(
+      'moonsignascend',
+      path,
+      greaterEq(
+        tally.moonsign,
+        2,
+        equal(condMoonsignAfterSkillBurst, 'on', min(value, percent(0.36))),
+        { path, isTeamBuff: true }
+      )
+    )
+  }
   const element = getCharEle(key)
-  const { region, weaponType, lvlCurves, ascensionBonus } = getCharStat(key)
+  const { region, weaponType, lvlCurves, ascensionBonus, baseStats } =
+    getCharStat(key)
   display['basic'] = { ...commonBasic }
   const data: Data = {
     charKey: constant(key),
@@ -323,15 +357,64 @@ export function dataObjForCharacterSheet(
     weaponType: constant(weaponType),
     premod: {},
     display,
-    teamBuff: { tally: { maxEleMas: input.premod.eleMas } },
+    teamBuff: { tally: { maxEleMas: input.premod.eleMas }, nonStacking: {} },
+  }
+  const moonsignData: Data = {
+    teamBuff: {
+      premod: {},
+    },
   }
   if (element) {
     data.charEle = constant(element)
     data.teamBuff!.tally![element] = constant(1)
     data.display!['basic'][`${element}_dmg_`] = input.total[`${element}_dmg_`]
     data.display!['reaction'] = reactions[element]
+
+    // Moonsign buff handling for non-moonsign chars
+    if (additional[0]?.isMoonsign === undefined) {
+      let moonsignBase: NumNode
+      const moonsignTallyWrite = equalStr(
+        condMoonsignAfterSkillBurst,
+        'on',
+        input.charKey
+      )
+      switch (element) {
+        case 'pyro':
+        case 'electro':
+        case 'cryo':
+          moonsignBase = prod(input.total.atk, 1 / 100, percent(0.009))
+          break
+        case 'hydro':
+          moonsignBase = prod(input.total.hp, 1 / 1000, percent(0.006))
+          break
+        case 'geo':
+          moonsignBase = prod(input.total.def, 1 / 100, percent(0.01))
+          break
+        case 'anemo':
+        case 'dendro':
+          moonsignBase = prod(input.total.eleMas, 1 / 100, percent(0.0225))
+          break
+      }
+      data.teamBuff!.nonStacking!.moonsignascend = moonsignTallyWrite
+      data.display!['moonsign'] = Object.fromEntries(
+        allLunarReactionKeys.flatMap((lr) => {
+          const key = `${lr}_dmg_` as const
+          const moonsign = moonsignBuff(`${lr}_dmg_`, moonsignBase)
+          moonsignData.teamBuff!.premod![key] = moonsign[0]
+          return [
+            [key, moonsign[0]],
+            [`${key}Inactive`, moonsign[1]],
+          ]
+        })
+      )
+    }
   }
+
+  // Tally handling for faction stuff
+  data.teamBuff!.tally!.hexerei = additional[0]?.isHexerei
+  data.teamBuff!.tally!.moonsign = additional[0]?.isMoonsign
   if (region) data.teamBuff!.tally![region] = constant(1)
+
   if (weaponType !== 'catalyst')
     data.display!['basic']!['physical_dmg_'] = input.total.physical_dmg_
 
@@ -342,6 +425,8 @@ export function dataObjForCharacterSheet(
 
     const asc = ascensionBonus[stat]
     if (asc) list.push(subscript(input.asc, asc))
+    const otherBase = stat === 'def' ? undefined : baseStats?.[stat]
+    if (otherBase) list.push(constant(otherBase))
 
     if (!list.length) continue
 
@@ -354,11 +439,22 @@ export function dataObjForCharacterSheet(
     if (stat === 'atk' || stat === 'def' || stat === 'hp')
       data.base![stat] = result
     else {
-      if (data.special) throw new Error('Multiple Char Special')
-      data.special = result
-      data.premod![stat] = input.special
+      // Special ascension stat
+      if (asc) {
+        if (data.special) throw new Error('Multiple Char Special')
+        data.special = result
+        data.premod![stat] = input.special
+      }
+      // Other base stat
+      else {
+        data.premod![stat] = result
+      }
     }
   }
 
-  return mergeData([data, inferInfoMut(additional)])
+  return mergeData([
+    data,
+    moonsignData,
+    ...additional.map((d) => inferInfoMut(d)),
+  ])
 }

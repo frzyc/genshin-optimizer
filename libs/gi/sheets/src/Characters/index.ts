@@ -7,6 +7,7 @@ import type {
 import { allTravelerKeys } from '@genshin-optimizer/gi/consts'
 import type { CharacterSheet } from './CharacterSheet'
 
+import Aino from './Aino'
 import Albedo from './Albedo'
 import Alhaitham from './Alhaitham'
 import Aloy from './Aloy'
@@ -26,17 +27,20 @@ import Chongyun from './Chongyun'
 import Citlali from './Citlali'
 import Clorinde from './Clorinde'
 import Collei from './Collei'
+import Columbina from './Columbina'
 import Cyno from './Cyno'
 import Dahlia from './Dahlia'
 import Dehya from './Dehya'
 import Diluc from './Diluc'
 import Diona from './Diona'
 import Dori from './Dori'
+import Durin from './Durin'
 import Emilie from './Emilie'
 import Escoffier from './Escoffier'
 import Eula from './Eula'
 import Faruzan from './Faruzan'
 import Fischl from './Fischl'
+import Flins from './Flins'
 import Freminet from './Freminet'
 import Furina from './Furina'
 import Gaming from './Gaming'
@@ -45,7 +49,9 @@ import Gorou from './Gorou'
 import HuTao from './HuTao'
 import Iansan from './Iansan'
 import Ifa from './Ifa'
+import Illuga from './Illuga'
 import Ineffa from './Ineffa'
+import Jahoda from './Jahoda'
 import Jean from './Jean'
 import Kachina from './Kachina'
 import KaedeharaKazuha from './KaedeharaKazuha'
@@ -60,7 +66,9 @@ import Klee from './Klee'
 import KujouSara from './KujouSara'
 import KukiShinobu from './KukiShinobu'
 import LanYan from './LanYan'
+import Lauma from './Lauma'
 import Layla from './Layla'
+import Linnea from './Linnea'
 import Lisa from './Lisa'
 import Lynette from './Lynette'
 import Lyney from './Lyney'
@@ -70,6 +78,7 @@ import Mona from './Mona'
 import Mualani from './Mualani'
 import Nahida from './Nahida'
 import Navia from './Navia'
+import Nefer from './Nefer'
 import Neuvillette from './Neuvillette'
 import Nilou from './Nilou'
 import Ningguang from './Ningguang'
@@ -104,6 +113,7 @@ import TravelerHydroM from './TravelerHydroM'
 import TravelerPyroF from './TravelerPyroF'
 import TravelerPyroM from './TravelerPyroM'
 import Varesa from './Varesa'
+import Varka from './Varka'
 import Venti from './Venti'
 import Wanderer from './Wanderer'
 import Wriothesley from './Wriothesley'
@@ -121,8 +131,10 @@ import Yoimiya from './Yoimiya'
 import YumemizukiMizuki from './YumemizukiMizuki'
 import YunJin from './YunJin'
 import Zhongli from './Zhongli'
+import Zibai from './Zibai'
 
 const characters: Record<CharacterSheetKey, CharacterSheet> = {
+  Aino,
   Albedo,
   Alhaitham,
   Aloy,
@@ -142,17 +154,20 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Citlali,
   Clorinde,
   Collei,
+  Columbina,
   Cyno,
   Dahlia,
   Dehya,
   Diluc,
   Diona,
   Dori,
+  Durin,
   Emilie,
   Escoffier,
   Eula,
   Faruzan,
   Fischl,
+  Flins,
   Freminet,
   Furina,
   Gaming,
@@ -161,7 +176,9 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   HuTao,
   Iansan,
   Ifa,
+  Illuga,
   Ineffa,
+  Jahoda,
   Jean,
   Kachina,
   KaedeharaKazuha,
@@ -176,7 +193,9 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   KujouSara,
   KukiShinobu,
   LanYan,
+  Lauma,
   Layla,
+  Linnea,
   Lisa,
   Lynette,
   Lyney,
@@ -186,6 +205,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Mualani,
   Nahida,
   Navia,
+  Nefer,
   Neuvillette,
   Nilou,
   Ningguang,
@@ -220,6 +240,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   TravelerPyroF,
   TravelerPyroM,
   Varesa,
+  Varka,
   Venti,
   Wanderer,
   Wriothesley,
@@ -237,6 +258,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   YumemizukiMizuki,
   YunJin,
   Zhongli,
+  Zibai,
 } as const
 export function getCharSheet(charKey: CharacterKey, gender: GenderKey) {
   return characters[charKeyToCharSheetKey(charKey, gender)]

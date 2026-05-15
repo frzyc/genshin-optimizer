@@ -5,5 +5,18 @@
   "addWeapon": "Adicionar Arma",
   "showingNum_one": "Mostrando <1>{{count}}</1> de {{value}} Arma",
   "showingNum_other": "Mostrando <1>{{count}}</1> de {{value}} Armas",
-  "cantDeleteLock": "Não é possível excluir a arma, pois ela está trancada"
+  "cantDeleteLock": "Não é possível excluir a arma, pois ela está trancada",
+  "button": {
+    "deleteWeapons": "Excluir Armas",
+    "lockWeapons": "Bloquear Armas",
+    "unlockWeapons": "Desbloquear Armas"
+  },
+  "buttonHint": "Nota: os botões vermelhos acima apenas se aplicam para <1>armas filtradas<1>",
+  "equippedWeapon": "Todas as Armas Equipadas",
+  "weaponInInv": "Todas as Armas Desequipadas",
+  "locationsTooltip": "Desabilite \"Todas as Armas Equipadas\" para filtrar por personagens específicos",
+  "subheadings": {
+    "general": "Geral",
+    "inventory": "Inventário"
+  }
 }

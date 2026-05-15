@@ -20,7 +20,8 @@ import {
   resolveInfo,
 } from '@genshin-optimizer/gi/ui'
 import type { ReadNode } from '@genshin-optimizer/gi/wr'
-import { allInputPremodKeys, uiInput as input } from '@genshin-optimizer/gi/wr'
+import { uiInput as input } from '@genshin-optimizer/gi/wr'
+import { allInputPremodKeys } from '@genshin-optimizer/gi/wr-types'
 import BarChartIcon from '@mui/icons-material/BarChart'
 import CloseIcon from '@mui/icons-material/Close'
 import {

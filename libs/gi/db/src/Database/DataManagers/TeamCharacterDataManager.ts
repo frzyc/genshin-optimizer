@@ -19,20 +19,18 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import type { IGOOD } from '@genshin-optimizer/gi/good'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
-import type {
-  BuildTc,
-  CustomMultiTarget,
-  ICachedArtifact,
-  ICachedWeapon,
-} from '../../Interfaces'
-import type { InputPremodKey } from '../../legacy/keys'
+import type { InputPremodKey } from '@genshin-optimizer/gi/wr-types'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
 import type { IGO, ImportResult } from '../exim'
+import type { ICachedArtifact } from './ArtifactDataManager'
 import type { Build } from './BuildDataManager'
+import type { BuildTc } from './BuildTcDataManager'
 import { initCharTC, toBuildTc } from './BuildTcDataManager'
+import type { CustomMultiTarget } from './CustomMultiTarget'
 import { validateCustomMultiTarget } from './CustomMultiTarget'
 import type { LoadoutExportSetting } from './TeamDataManager'
+import type { ICachedWeapon } from './WeaponDataManager'
 import { defaultInitialWeaponKey, initialWeapon } from './WeaponDataManager'
 
 type CondKey = CharacterKey | ArtifactSetKey | WeaponKey

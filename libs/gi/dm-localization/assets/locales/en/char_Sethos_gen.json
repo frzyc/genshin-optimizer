@@ -188,7 +188,7 @@
     "description": {
       "0": "When any of the following conditions are met, Sethos gains a 15% <electro>Electro DMG Bonus</electro> for 10s that may stack twice, with each stack duration counted independently:",
       "1": [
-        " Consuming Elemental Energy through Aimed Shots; you must first unlock the Passive Talent \"Black Kite's Enigma\" to trigger this condition.",
+        " Consuming Elemental Energy through Aimed Shots. You must first unlock the Ascension Talent \"Black Kite's Enigma\" to trigger this condition.",
         " Regaining Elemental Energy by triggering Elemental Reactions using <strong>Ancient Rite: The Thundering Sands</strong>.",
         " Using <strong>Secret Rite: Twilight Shadowpiercer</strong>."
       ]
@@ -217,7 +217,7 @@
   "constellation6": {
     "name": "Pylon of the Sojourning Sun Temple",
     "description": {
-      "0": "After <strong>Shadowpiercing Shot</strong> strikes an opponent, the Elemental Energy consumed by the Passive Talent \"Black Kite's Enigma\" will be returned. This effect can be triggered up to once every 15s. You must first unlock the Passive Talent \"Black Kite's Enigma.\""
+      "0": "After <strong>Shadowpiercing Shot</strong> strikes an opponent, the Elemental Energy consumed by the Ascension Talent \"Black Kite's Enigma\" will be returned. This effect can be triggered up to once every 15s. You must first unlock the Ascension Talent \"Black Kite's Enigma.\""
     }
   }
 }

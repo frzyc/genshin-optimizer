@@ -1,6 +1,7 @@
 import type {
   ElementKey,
   LocationCharacterKey,
+  MainStatKey,
   NonTravelerCharacterKey,
   RegionKey,
   WeaponTypeKey,
@@ -38,6 +39,7 @@ export type CharacterDataGen = {
     base: number
     curve: CharacterGrowCurveKey
   }[]
+  baseStats?: Partial<Record<MainStatKey, number>>
   rarity: 1 | 2 | 3 | 4 | 5
   ascensionBonus: { [key in StatKey]?: number[] }
   birthday: {
@@ -61,6 +63,7 @@ export default function characterData() {
         hpBase,
         attackBase,
         defenseBase,
+        elementMastery,
         propGrowCurves,
         skillDepotId,
       } = charData
@@ -99,6 +102,11 @@ export default function characterData() {
           { key: 'def', base: defenseBase, curve: curves.def },
         ],
         ascensionBonus,
+      }
+      if (elementMastery !== 0) {
+        result.baseStats = {
+          eleMas: elementMastery,
+        }
       }
       return [locCharKey, result]
     })

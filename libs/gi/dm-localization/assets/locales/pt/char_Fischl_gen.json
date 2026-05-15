@@ -118,6 +118,20 @@
       "0": "Quando despachada em uma expedição em Mondstadt, o tempo consumido é reduzido em 25%"
     }
   },
+  "lockedPassive": {
+    "name": "Presente da Noite da Bruxa: Concerto da Noite",
+    "description": {
+      "0": "Depois de completar a <strong>Tarefa da Bruxa: Do Inesperado</strong>, Fischl se tornará uma personagem <strong>Mágica</strong>. Quando a equipe possuir pelo menos 2 personagens Mágicos, obtém o efeito <strong>Mágico: Ritual Secreto</strong>, fazendo com que os personagens Mágicos sejam fortalecidos.",
+      "1": "<br/>",
+      "2": "<strong>Mágico: Ritual Secreto</strong>",
+      "3": "Vejam, o Príncipe Corvo da Noite Ozvaldo Hrafnavines, aquele que testemunhou a queda de incontáveis mundos. Cantem o septeto estelar para seu soberano, pois esse é o momento do mais profundo pecado, quando as almas reunidos no fim da causalidade destroem a escuridão do destino.",
+      "4": "Além disso, quando Oz está ativo, os personagens da equipe obtêm os seguintes fortalecimentos adicionais:",
+      "5": [
+        " Aumenta o ATQ de Fischl e dos outros membros personagens ativos próximos em 22.5% nos 10s após um personagem próximo desencadear Sobrecarga.",
+        " Aumenta a Proficiência Elemental de Fischl e dos outros personagens próximos ativos da equipe em 90 por 10s após um personagem próximo desencadear Eletricamente Carregado ou Carga Lunar."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Olhar das Profundezas",
     "description": {
@@ -155,6 +169,10 @@
     "name": "Corvo da Noite Eterna",
     "description": {
       "0": "Aumenta a duração da evocação de Oz por 2 segundos. Adicionalmente, Oz ataca juntamente com o seu próprio personagem quando presente, causando 30% do ATQ de Fischl como <electro>Dano Electro</electro>."
+    },
+    "upgradedDescription": {
+      "0": "Aumenta a duração da evocação de Oz por 2 segundos. Adicionalmente, Oz ataca juntamente com o seu próprio personagem quando presente, causando 30% do ATQ de Fischl como <electro>Dano Electro</electro>.",
+      "1": "Depois de Oz fazer seu Ataque Coordenado, os efeitos de aumento de ATQ e Proficiência Elemental de <strong>Presente da Noite da Bruxa: Concerto da Noite</strong> aumentam em 100% adicional por 10s."
     }
   }
 }

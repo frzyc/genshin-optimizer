@@ -1,0 +1,24 @@
+{
+  "name": "Prospector's Shovel",
+  "description": {
+    "0": "A polearm that appears to have been crafted from a metal agricultural tool. At first glance, it could not look more ordinary, yet its discreet design hides fittings that are both lavish and undeniably exquisite."
+  },
+  "passiveName": "Swift and Sure",
+  "passiveDescription": {
+    "0": {
+      "0": "Electro-Charged DMG is increased by <cryo>48%</cryo>, and Lunar-Charged DMG is increased by <cryo>12%</cryo>. Moonsign: Ascendant Gleam: Lunar-Charged DMG is increased by an additional <cryo>12%</cryo>."
+    },
+    "1": {
+      "0": "Electro-Charged DMG is increased by <cryo>60%</cryo>, and Lunar-Charged DMG is increased by <cryo>15%</cryo>. Moonsign: Ascendant Gleam: Lunar-Charged DMG is increased by an additional <cryo>15%</cryo>."
+    },
+    "2": {
+      "0": "Electro-Charged DMG is increased by <cryo>72%</cryo>, and Lunar-Charged DMG is increased by <cryo>18%</cryo>. Moonsign: Ascendant Gleam: Lunar-Charged DMG is increased by an additional <cryo>18%</cryo>."
+    },
+    "3": {
+      "0": "Electro-Charged DMG is increased by <cryo>84%</cryo>, and Lunar-Charged DMG is increased by <cryo>21%</cryo>. Moonsign: Ascendant Gleam: Lunar-Charged DMG is increased by an additional <cryo>21%</cryo>."
+    },
+    "4": {
+      "0": "Electro-Charged DMG is increased by <cryo>96%</cryo>, and Lunar-Charged DMG is increased by <cryo>24%</cryo>. Moonsign: Ascendant Gleam: Lunar-Charged DMG is increased by an additional <cryo>24%</cryo>."
+    }
+  }
+}

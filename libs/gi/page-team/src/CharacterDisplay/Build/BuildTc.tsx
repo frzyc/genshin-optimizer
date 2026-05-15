@@ -8,6 +8,7 @@ import {
 } from '@genshin-optimizer/common/ui'
 import { getUnitStr } from '@genshin-optimizer/common/util'
 import { artifactAsset } from '@genshin-optimizer/gi/assets'
+import { getCharLevelString } from '@genshin-optimizer/gi/consts'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
@@ -22,7 +23,7 @@ import {
   StatWithUnit,
   WeaponCardNanoObj,
 } from '@genshin-optimizer/gi/ui'
-import { artDisplayValue, getLevelString } from '@genshin-optimizer/gi/util'
+import { artDisplayValue } from '@genshin-optimizer/gi/util'
 import CloseIcon from '@mui/icons-material/Close'
 import {
   Box,
@@ -115,7 +116,7 @@ function TcEquip({ buildTcId }: { buildTcId: string }) {
           <CardContent sx={{ display: 'flex', gap: 1 }}>
             <Chip
               size="small"
-              label={`Lv. ${getLevelString(
+              label={`Lv. ${getCharLevelString(
                 character.level,
                 character.ascension
               )}`}

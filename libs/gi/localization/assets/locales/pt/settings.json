@@ -42,7 +42,11 @@
     "invalid": "Inválido:",
     "upgraded": "Aprimorados:",
     "dbTotal": "Total Combinado:",
-    "notInImport": "Fora da Base de Dados:"
+    "notInImport": "Fora da Base de Dados:",
+    "teams": "Equipes:",
+    "loadouts": "Loadouts:",
+    "builds": "Builds: ",
+    "buildTcs": "Builds Teóricas: "
   },
   "DatabaseCard": {
     "title": "Base de Dados",

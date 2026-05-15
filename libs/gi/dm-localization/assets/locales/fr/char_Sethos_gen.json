@@ -134,7 +134,7 @@
     "description": {
       "0": "Le <electro>bonus de DGT Électro</electro> de Sethos augmente de 15 % pendant 10 s en remplissant une des conditions suivantes (Cet effet peut être cumulé 2 fois maximum, la durée de chaque cumul étant calculée de façon indépendante.) :",
       "1": [
-        " En consommant de l'énergie élémentaire pendant un tir visé, l'aptitude passive « Énigme du milan noir » devant être déjà débloquée.",
+        " En consommant de l'énergie élémentaire pendant un tir visé, l'aptitude d'élévation « Énigme du milan noir » devant être déjà débloquée.",
         " En restaurant de l'énergie élémentaire après avoir déclenché une réaction élémentaire avec <strong>Rituel ancien : Clameur tonitruante des sables</strong>.",
         " En utilisant <strong>Rituel secret : Percée crépusculaire des ombres</strong>."
       ]
@@ -163,7 +163,7 @@
   "constellation6": {
     "name": "Manuscrit du soleil vagabond",
     "description": {
-      "0": "Toucher un ennemi avec une <strong>flèche de perce-ombre</strong> restaure l'énergie élémentaire consommée par l'aptitude passive « Énigme du milan noir ». Cet effet peut être déclenché une fois toutes les 15 s. L'aptitude passive « Énigme du milan noir » doit être déjà débloquée."
+      "0": "Toucher un ennemi avec une <strong>flèche de perce-ombre</strong> restaure l'énergie élémentaire consommée par l'aptitude d'élévation « Énigme du milan noir ». Cet effet peut être déclenché une fois toutes les 15 s. L'aptitude d'élévation « Énigme du milan noir » doit être déjà débloquée."
     }
   }
 }

@@ -1,0 +1,176 @@
+{
+  "name": "Flins",
+  "title": "Gölgeli Işıklar, Tuhaf Hayaletler",
+  "description": "Kuzeydeki bir adanın deniz fenerini ve mezarlığını gözeten Nod-Krailı bir Işık Muhafızı. Oldukça esrarengiz, kültürlü ve nazik bir beyefendi.",
+  "constellationName": "Nöbet Feneri",
+  "auto": {
+    "name": "Pocztowy İblis Mızrağı",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 5 mızrak saldırısı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcar ve ileri doğru bir mızrak atışı yapar."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "5 Vuruş Hasarı",
+      "5": "Yüklü Saldırı Hasarı",
+      "6": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "7": "Havadan Saldırı Hasarı",
+      "8": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Kadim Ayin: Sırlı Işık",
+    "description": {
+      "0": "Flins, lambasındaki gizli kadim güçleri çağırarak <strong>Alev Sureti</strong> formuna geçer. Bu formun şu özellikleri vardır:",
+      "1": [
+        "Flins'in Normal ve Yüklü Saldırıları, diğer element tesirleriyle değişmeyecek şekilde <electro>Elektrik Hasarı</electro> verir, ayrıca Flins Havadan Saldırı yapamaz.",
+        "Müdahaleye karşı direnci artar.",
+        "<strong>Kadim Ayin: Sırlı Işık</strong> Element Becerisi, özel <strong>Kuzey Diyarı Mızrak Fırtınası</strong> Element Becerisi olarak değişir."
+      ],
+      "2": "<br/>",
+      "3": "<strong>Kuzey Diyarı Mızrak Fırtınası</strong>",
+      "4": "Flins önünde bir dizi mızrak çağırarak <electro>Elektrik Alan Hasarı</electro> verir ve 6sn boyunca <strong>Kadim Ritüel: Gecenin Varışı</strong> Element Patlaması, özel <tooltip ns=tooltips_gen baseKey18=11200001 values=[]><strong>Gürleyen Senfoni</strong></tooltip> olarak değişir.",
+      "5": "<strong>Kuzey Diyarı Mızrak Fırtınası</strong> temel Bekleme Süresi 6 saniyedir ve diğer etkiler tarafından değiştirilemez."
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "5 Vuruş Hasarı",
+      "5": "Yüklü Saldırı Hasarı",
+      "6": "Kuzey Diyarı Mızrak Fırtınası Hasarı",
+      "7": "Kuzey Diyarı Mızrak Fırtınası BS",
+      "8": "Alev Sureti Süresi",
+      "9": "Beceri Bekleme Süresi",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Kadim Ritüel: Gecenin Varışı",
+    "description": {
+      "0": "Flins lambasının gerçek gücünü ortaya çıkarır, <electro>Elektrik Alan Hasarı</electro> verdikten kısa bir süre sonra 2 defa orta aşama ve 1 defa son aşama <electro>Elektrik Alan Hasarı</electro> verir ve bunların tümü Ay Yüklü Hasarı sayılır.",
+      "1": "<strong>Ay Sembolü: Yükselen Parıltı</strong>: Flins'in Becerisi güçlenir: Yakında Şimşek Bulutları olması halinde fazladan 2 defa daha orta aşama Ay Yüklü <electro>Elektrik Alan Hasarı</electro> verir.",
+      "2": "<br/>",
+      "3": "Flins <strong>Kuzey Diyarı Mızrak Fırtınası</strong> özel Element Becerisini kullandığında 6sn boyunca <strong>Kadim Ritüel: Gecenin Varışı</strong> Element Patlaması, özel <strong>Gürleyen Senfoniye</strong> dönüşür.",
+      "4": "<br/>",
+      "5": "<strong>Gürleyen Senfoni</strong>",
+      "6": "Flins daha az Element Enerjisi tüketerek özel bir Element Patlaması kullanır ve bir defa Ay Yüklü Hasarı sayılan <electro>Elektrik Alan Hasarı</electro> verir.",
+      "7": "<strong>Ay Sembolü: Yükselen Parıltı</strong>: Flins'in Becerisi güçlenir: Yakında Şimşek Bulutları olması halinde Flins fazladan bir defa daha Ay Yüklü <electro>Elektrik Alan Hasarı</electro> verir."
+    },
+    "skillParams": {
+      "0": "İlk Beceri Hasarı",
+      "1": "Orta Aşama Ay Yüklü Hasarı",
+      "2": "Son Aşama Ay Yüklü Hasarı",
+      "3": "Enerji Maliyeti",
+      "4": "BS",
+      "5": "Gürleyen Senfoni Hasarı",
+      "6": "Gürleyen Senfoni Ek Hasarı",
+      "7": "Gürleyen Senfoni Enerji Maliyeti",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Kış Senfonisi",
+    "description": {
+      "0": "Flins, grubun <strong>Ay Sembolüne</strong> göre güçlendirmeler kazanır.",
+      "1": "<br/>",
+      "2": "<strong>Ay Sembolü: Yükselen Parıltı</strong>: Flins'in tetiklediği Ay Yüklü tepkimeleri %20 daha fazla Hasar verir."
+    }
+  },
+  "passive2": {
+    "name": "Alev Fısıltısı",
+    "description": {
+      "0": "Flins'in Element Ustalığı, Saldırısının %8'i kadar artar. Bu şekilde en fazla 160 Element Ustalığı artışı sağlanabilir."
+    }
+  },
+  "passive3": {
+    "name": "Ay Sembolü Kutsaması: Eski Dünyanın Sırları",
+    "description": {
+      "0": "Bir grup üyesi Elektrik Yüklü tepkimesi tetiklediğinde bu Ay Yüklü tepkimesine dönüşür. Flins'in sahip olduğu her 100 Saldırı, Ay Yüklü tepkimesinin Temel Hasarını %0,7 artırır; bu Temel Hasar en fazla %14 artabilir.",
+      "1": "<br/>",
+      "2": "Ayrıca grubunda Flins olduğunda, grubunun <strong>Ay Sembolü</strong> 1 seviye yükselir."
+    }
+  },
+  "passive": {
+    "name": "Karanlıktaki Işık",
+    "description": {
+      "0": "Yakınlardaki <strong>Nod-Krai'a özgü kaynakların</strong> yerini mini haritada gösterir.",
+      "1": "Ayrıca Flins, Vahşi Avın fısıltılarını deşifre edebiliyor..."
+    }
+  },
+  "constellation1": {
+    "name": "Kar Perdesini Arala",
+    "description": {
+      "0": "<strong>Kuzey Diyarı Mızrak Fırtınası</strong> özel Element Becerisinin Temel Bekleme Süresi kısalır ve 4sn olur.",
+      "1": "Ayrıca grup üyeleri Ay Yüklü tepkimeleri tetiklediklerinde Flins 8 Element Enerjisi yeniler. Bu etki 5,5 saniyede bir tetiklenebilir."
+    }
+  },
+  "constellation2": {
+    "name": "İblisin Duvarı",
+    "description": {
+      "0": "<strong>Kuzey Diyarı Mızrak Fırtınası</strong> özel Element Becerisini kullandıktan sonra 6sn içinde Flins'in sıradaki Normal Saldırısı bir düşmana isabet ettiğinde, Flins'in Saldırısının %50'si kadar fazladan <electro>Elektrik Alan Hasarı</electro> verir. Bu Hasar, Ay Yüklü Hasarı sayılır.",
+      "1": "<strong>Ay Sembolü: Yükselen Parıltı</strong>: Flins savaş alanındayken <electro>Elektrik Saldırıları</electro> düşmanlara isabet ettikten sonra 7sn boyunca düşmanların <electro>Elektrik Direnci</electro> %25 azalır."
+    }
+  },
+  "constellation3": {
+    "name": "Gecedeki Yabancı",
+    "description": {
+      "0": "<tooltip ns=char_Flins_gen baseKey18=burst><strong>Kadim Ritüel: Gecenin Varışı</strong></tooltip> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Kel Tepedeki Gece",
+    "description": {
+      "0": "Flins'in Saldırısı %20 artar.",
+      "1": "Ayrıca <tooltip ns=char_Flins_gen baseKey18=passive2><strong>\"Alev Fısıltısı\"</strong></tooltip> Yükseltme Yeteneği gelişir: Flins'in Element Ustalığı, Saldırısının %10'u kadar artar. Bu şekilde en fazla 220 artış sağlanabilir."
+    }
+  },
+  "constellation5": {
+    "name": "Sürgünün Gölgesi",
+    "description": {
+      "0": "<tooltip ns=char_Flins_gen baseKey18=skill><strong>Kadim Ayin: Sırlı Işık</strong></tooltip> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Ölüm Dansının Şarkıları",
+    "description": {
+      "0": "Flins'in tetiklediği Ay Yüklü tepkimelerinin verdiği Hasar %35 <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>artar</strong></tooltip>.",
+      "1": "<strong>Ay Sembolü: Yükselen Parıltı</strong>: Yakındaki tüm grup üyelerinin verdiği Ay Yüklü Hasarı %10 <strong>artar</strong>."
+    }
+  }
+}

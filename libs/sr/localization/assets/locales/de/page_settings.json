@@ -1,0 +1,36 @@
+{
+  "DatabaseCard": {
+    "title": "Datenbank",
+    "button": {
+      "swap": "Wechseln",
+      "copy": "Zwischenablage",
+      "upload": "Hochladen",
+      "download": "Herunterladen",
+      "delete": "Löschen"
+    },
+    "currentDB": "Aktuelle Datenbank"
+  },
+  "count": {
+    "chars": "Figuren:",
+    "relics": "Relikte: ",
+    "lightCones": "Lichtkegel:",
+    "teams": "Teams:",
+    "builds": "Builds:",
+    "new": "Neu:",
+    "unchanged": "Unverändert:",
+    "upgraded": "Aufgewertet:",
+    "removed": "Gelöscht:",
+    "invalid": "Invalide:"
+  },
+  "uploadCard": {
+    "title": "Datenbank hochladen",
+    "buttons": {
+      "open": "Öffnen",
+      "detectDups": "Aufwertungen/Duplikate erkennen"
+    },
+    "hint": "Lade die JSON-Datei hier hoch...",
+    "hintPaste": "... oder kopiere den Datentext hierhin.",
+    "dbSource": "Datenquelle:",
+    "replaceDatabase": "Datenbank aktualisieren"
+  }
+}

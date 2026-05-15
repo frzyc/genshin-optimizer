@@ -1,0 +1,31 @@
+{
+  "social": {
+    "paypal": "PayPal",
+    "patreon": "Patreon",
+    "discord": "Discord"
+  },
+  "link": {
+    "download": "Link tải",
+    "discord": "Link mời vào Discord"
+  },
+  "unselect": "Bỏ chọn",
+  "inventory": "Túi",
+  "ascending": "Tăng dần",
+  "descending": "Giảm dần",
+  "sortBy": "Sắp xếp theo: ",
+  "loading": "Đang tải...",
+  "error": "Lỗi",
+  "reset": "Reset",
+  "info": "Thông tin",
+  "close": "Đóng",
+  "delete": "Xóa",
+  "locked": "Khóa",
+  "unlocked": "Mở khóa",
+  "excluded": "Loại trừ",
+  "included": "Bao gồm",
+  "selectlevel": "Chọn cấp",
+  "gender": {
+    "F": "Nữ",
+    "M": "Nam"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Goldener Frostschwur",
+  "description": {
+    "0": "Ein Langbogen aus uraltem Weißholz, der in der fernen Vergangenheit einst dem König der Jack Frosts des Nordens gehörte."
+  },
+  "passiveName": "Grüßende Morgendämmerung",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht die VTD um <cryo>16 %</cryo>. Verleiht dem Träger, wenn er Gegner mit seiner Elementarfähigkeit oder Mond-Kristallisation trifft, 6 s lang den Effekt „Dank der Frostfee“: Erhöht den durch den Träger verursachten Geo-SCH um <cryo>40 %</cryo> und den verursachten Mond-Kristallisations-SCH um <cryo>40 %</cryo>. Verleiht, wenn sich während der Dauer ein Mondkäfig in der Nähe des Trägers befindet, allen anderen Truppenmitgliedern in der Nähe zusätzlich den Effekt „Untaten der Frostfee“: Erhöht den verursachten Geo-SCH um <cryo>20 %</cryo> und den verursachten Mond-Kristallisations-SCH um <cryo>20 %</cryo>. Dieser Effekt kann auch ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet."
+    },
+    "1": {
+      "0": "Erhöht die VTD um <cryo>20 %</cryo>. Verleiht dem Träger, wenn er Gegner mit seiner Elementarfähigkeit oder Mond-Kristallisation trifft, 6 s lang den Effekt „Dank der Frostfee“: Erhöht den durch den Träger verursachten Geo-SCH um <cryo>50 %</cryo> und den verursachten Mond-Kristallisations-SCH um <cryo>50 %</cryo>. Verleiht, wenn sich während der Dauer ein Mondkäfig in der Nähe des Trägers befindet, allen anderen Truppenmitgliedern in der Nähe zusätzlich den Effekt „Untaten der Frostfee“: Erhöht den verursachten Geo-SCH um <cryo>25 %</cryo> und den verursachten Mond-Kristallisations-SCH um <cryo>25 %</cryo>. Dieser Effekt kann auch ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet."
+    },
+    "2": {
+      "0": "Erhöht die VTD um <cryo>24 %</cryo>. Verleiht dem Träger, wenn er Gegner mit seiner Elementarfähigkeit oder Mond-Kristallisation trifft, 6 s lang den Effekt „Dank der Frostfee“: Erhöht den durch den Träger verursachten Geo-SCH um <cryo>60 %</cryo> und den verursachten Mond-Kristallisations-SCH um <cryo>60 %</cryo>. Verleiht, wenn sich während der Dauer ein Mondkäfig in der Nähe des Trägers befindet, allen anderen Truppenmitgliedern in der Nähe zusätzlich den Effekt „Untaten der Frostfee“: Erhöht den verursachten Geo-SCH um <cryo>30 %</cryo> und den verursachten Mond-Kristallisations-SCH um <cryo>30 %</cryo>. Dieser Effekt kann auch ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet."
+    },
+    "3": {
+      "0": "Erhöht die VTD um <cryo>28 %</cryo>. Verleiht dem Träger, wenn er Gegner mit seiner Elementarfähigkeit oder Mond-Kristallisation trifft, 6 s lang den Effekt „Dank der Frostfee“: Erhöht den durch den Träger verursachten Geo-SCH um <cryo>70 %</cryo> und den verursachten Mond-Kristallisations-SCH um <cryo>70 %</cryo>. Verleiht, wenn sich während der Dauer ein Mondkäfig in der Nähe des Trägers befindet, allen anderen Truppenmitgliedern in der Nähe zusätzlich den Effekt „Untaten der Frostfee“: Erhöht den verursachten Geo-SCH um <cryo>35 %</cryo> und den verursachten Mond-Kristallisations-SCH um <cryo>35 %</cryo>. Dieser Effekt kann auch ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet."
+    },
+    "4": {
+      "0": "Erhöht die VTD um <cryo>32 %</cryo>. Verleiht dem Träger, wenn er Gegner mit seiner Elementarfähigkeit oder Mond-Kristallisation trifft, 6 s lang den Effekt „Dank der Frostfee“: Erhöht den durch den Träger verursachten Geo-SCH um <cryo>80 %</cryo> und den verursachten Mond-Kristallisations-SCH um <cryo>80 %</cryo>. Verleiht, wenn sich während der Dauer ein Mondkäfig in der Nähe des Trägers befindet, allen anderen Truppenmitgliedern in der Nähe zusätzlich den Effekt „Untaten der Frostfee“: Erhöht den verursachten Geo-SCH um <cryo>40 %</cryo> und den verursachten Mond-Kristallisations-SCH um <cryo>40 %</cryo>. Dieser Effekt kann auch ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet."
+    }
+  }
+}

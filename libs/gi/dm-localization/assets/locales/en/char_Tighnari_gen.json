@@ -193,7 +193,7 @@
   "constellation4": {
     "name": "Withering Glimpsed in the Leaves",
     "description": {
-      "0": "When <strong>Fashioner's Tanglevine Shaft</strong> is unleashed, all nearby party members gain 60 Elemental Mastery for 8s. If the Fashioner's Tanglevine Shaft triggers a Burning, Bloom, Quicken, or Spread reaction, their Elemental Mastery will be further increased by 60. This latter case will also refresh the buff state's duration."
+      "0": "When <strong>Fashioner's Tanglevine Shaft</strong> is unleashed, all nearby party members gain 60 Elemental Mastery for 8s. If the Fashioner's Tanglevine Shaft triggers a Burning, Bloom, Lunar-Bloom, Quicken, or Spread reaction, their Elemental Mastery will be further increased by 60. This latter case will also refresh the buff state's duration."
     }
   },
   "constellation5": {

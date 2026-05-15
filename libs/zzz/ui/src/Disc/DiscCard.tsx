@@ -4,7 +4,6 @@ import {
   CardThemed,
   ColorText,
   ConditionalWrapper,
-  NextImage,
 } from '@genshin-optimizer/common/ui'
 import {
   getUnitStr,
@@ -227,7 +226,7 @@ export function DiscCardObj({
                     }}
                   >
                     <Box
-                      component={NextImage ? NextImage : 'img'}
+                      component="img"
                       alt="Disc Piece Image"
                       src={discDefIcon(setKey)}
                       style={{

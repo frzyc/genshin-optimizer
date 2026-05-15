@@ -1,0 +1,165 @@
+{
+  "name": "Aino",
+  "title": "La Mecánica Cling-clang",
+  "description": "Una inventora y genio de la mecánica de Nod Krai. Le encantan las máquinas interesantes y el dulce.",
+  "constellationName": "Cistellula Mira",
+  "auto": {
+    "name": "Reparación “pum-pam-pam”",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 3 ataques consecutivos."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume Aguante de manera constante para realizar golpes de espada giratorios contra los enemigos cercanos.",
+        "2": "Al final del Ataque Cargado, realizará un golpe de espada más poderoso."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de ATQ Cargado en ciclo",
+      "4": "Daño final de ATQ Cargado",
+      "5": "Coste de Aguante de ATQ Cargado",
+      "6": "Duración máx.",
+      "7": "Daño de Caída",
+      "8": "Daño de impacto de caída baja/alta",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Capturaideas",
+    "description": {
+      "0": "Lanza hacia delante un <strong>capturaideas</strong> que inflige <hydro>Daño Hydro</hydro>, arrastra a Aino consigo e inflige <hydro>Daño Hydro en el AdE</hydro> a los enemigos cercanos una vez finalizado el movimiento.",
+      "1": "Esta habilidad se libera de manera distinta al mantener pulsado.",
+      "2": "<br/>",
+      "3": "<strong>Mantener pulsado</strong>",
+      "4": "Apunta para ajustar la dirección en la que se lanza el capturaideas."
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "TdE",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Refrigerador hidrónico de precisión",
+    "description": {
+      "0": "Lanza el <strong>patito bajahumos</strong>, una supermáquina escupeagua especial que crea un <strong>área hidrónica concentrada</strong>.",
+      "1": "Mientras el patito bajahumos esté activo, disparará intermitentemente proyectiles acuáticos contra los enemigos cercanos para infligirles <hydro>Daño Hydro</hydro>."
+    },
+    "skillParams": {
+      "0": "Daño de proyectil acuático",
+      "1": "Duración",
+      "2": "TdE",
+      "3": "Energía Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Protocolo de eficacia modular",
+    "description": {
+      "0": "Aino obtiene el fortalecimiento correspondiente según el <strong>presagio lunar</strong> del equipo.",
+      "1": "<br/>",
+      "2": "<strong>Presagio lunar: resplandor ascendente</strong>",
+      "3": "Su Habilidad Definitiva, <strong><tooltip ns=char_Aino_gen baseKey18=burst>Refrigerador hidrónico de precisión</tooltip></strong>, se fortalece, de manera que el <strong>patito bajahumos</strong> dispara proyectiles acuáticos con más frecuencia e inflige <hydro>Daño Hydro en el AdE</hydro> en un área más grande."
+    }
+  },
+  "passive2": {
+    "name": "Potenciador de eficiencia estructural",
+    "description": {
+      "0": "El daño de la Habilidad Definitiva de Aino aumenta en una cantidad equivalente al 50% de su Maestría Elemental."
+    }
+  },
+  "passive3": {
+    "name": "Bendición presagiolunar: Aritmética definitiva",
+    "description": {
+      "0": "Cuando Aino esté en el equipo, el nivel de <strong>presagio lunar</strong> de los personajes aumentará en 1."
+    }
+  },
+  "passive": {
+    "name": "Sensor de detección en miniatura",
+    "description": {
+      "0": "Muestra la ubicación de los <strong>objetos típicos de Nod Krai</strong> cercanos en el minimapa.",
+      "1": "Además, parece que Aino es capaz de cambiar la apariencia del patito bajahumos a través de cierto método..."
+    }
+  },
+  "constellation1": {
+    "name": "La teoría del equilibrio ceniza-campo de fuerza",
+    "description": {
+      "0": "Tras usar la Habilidad Elemental, <strong><tooltip ns=char_Aino_gen baseKey18=skill>Capturaideas</tooltip></strong>, o la Habilidad Definitiva, <strong><tooltip ns=char_Aino_gen baseKey18=burst>Refrigerador hidrónico de precisión</tooltip></strong>, tanto la Maestría Elemental de Aino como la de los demás personajes en uso cercanos aumentan en 80 pts. durante 15 s.",
+      "1": "<br/>",
+      "2": "Los efectos de aumento de Maestría Elemental que proporciona esta constelación no son acumulables."
+    }
+  },
+  "constellation2": {
+    "name": "La transferencia en diferenciales de engranajes",
+    "description": {
+      "0": "Si Aino está en tu equipo pero no en uso mientras el <strong><tooltip ns=char_Aino_gen baseKey18=burst>área hidrónica concentrada</tooltip></strong> de su Habilidad Definitiva, <strong>Refrigerador hidrónico de precisión</strong>, está activa, cuando tu personaje en uso del equipo golpee a un enemigo cercano con un ataque, el <strong>patito bajahumos</strong> disparará un proyectil acuático adicional a dicho enemigo y le infligirá <hydro>Daño Hydro en el AdE</hydro> en una cantidad equivalente al 25% del ATQ de Aino y el 100% de su Maestría Elemental. Este efecto solo se puede activar una vez cada 5 s, y su daño se considera daño de Habilidad Definitiva."
+    }
+  },
+  "constellation3": {
+    "name": "Los pasteles y el arte de la reparación mecánica",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_Aino_gen baseKey18=burst>Refrigerador hidrónico de precisión</tooltip></strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Mantequilla, gatos y la ley de la alimentación de energía",
+    "description": {
+      "0": "Al golpear a un enemigo con la Habilidad Elemental, <strong><tooltip ns=char_Aino_gen baseKey18=skill>Capturaideas</tooltip></strong>, Aino recupera 10 pts. de Energía Elemental. Solo se puede recuperar Energía Elemental una vez cada 10 s de esta manera."
+    }
+  },
+  "constellation5": {
+    "name": "Turbina perpetua del metal y la luz",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_Aino_gen baseKey18=skill>Capturaideas</tooltip></strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "El deber de creación de un genio",
+    "description": {
+      "0": "Tras usar la Habilidad Definitiva, <strong><tooltip ns=char_Aino_gen baseKey18=burst>Refrigerador hidrónico de precisión</tooltip></strong>, el daño de las reacciones de Electrocargado, Florecimiento, Electrocargado Lunar, Florecimiento Lunar y Cristalización Lunar causadas por los personajes en uso cercanos aumenta en un 15% durante 15 s.",
+      "1": "<strong>Presagio lunar: resplandor ascendente</strong>",
+      "2": "El daño infligido por las reacciones mencionadas aumenta en un 20% adicional."
+    }
+  }
+}

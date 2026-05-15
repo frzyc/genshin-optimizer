@@ -350,6 +350,7 @@ describe('Database', () => {
       setKey: 'Instructor',
       slotKey: 'plume',
       substats: [{ key: 'atk_', value: 5 }],
+      unactivatedSubstats: [{ key: 'atk_', value: 5 }],
     }
     const a2new: IArtifact = {
       // upgrade
@@ -364,6 +365,7 @@ describe('Database', () => {
         { key: 'atk_', value: 5 },
         { key: 'def_', value: 5 },
       ],
+      unactivatedSubstats: [{ key: 'atk_', value: 5 }],
     }
     const a3 = randomizeArtifact({ slotKey: 'goblet' }) // in db but not in import
     const a4 = randomizeArtifact({ slotKey: 'circlet' }) // in import but not in db

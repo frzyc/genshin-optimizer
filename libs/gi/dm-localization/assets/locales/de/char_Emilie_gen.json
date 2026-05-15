@@ -125,14 +125,14 @@
   "constellation1": {
     "name": "Auslaugung leichter Düfte",
     "description": {
-      "0": "Erhöht den durch die Fähigkeit <strong>„Essenzsammlung und Duftmischung“</strong> und den Duft des klaren Taus des passiven Talents „Nachklingender Wohlgeruch“ verursachten Schaden um 20 %. Das passive Talent „Nachklingender Wohlgeruch“ muss für das Letztere zuerst freigeschaltet werden.",
+      "0": "Erhöht den durch die Fähigkeit <strong>„Essenzsammlung und Duftmischung“</strong> und den Duft des klaren Taus des Aufstiegstalents „Nachklingender Wohlgeruch“ verursachten Schaden um 20 %. Das Aufstiegstalent „Nachklingender Wohlgeruch“ muss für das Letztere zuerst freigeschaltet werden.",
       "1": "Wenn Truppenmitglieder in der Nähe an Gegnern die Reaktion „In Flammen“ auslösen oder den im Zustand „In Flammen“ befindlichen Gegnern <dendro>Dendro-Schaden</dendro> zufügen, wird außerdem eine zusätzliche <strong>Essenz</strong> erschaffen, 2,9 s Abklingzeit."
     }
   },
   "constellation2": {
     "name": "Angeruch der Seebrise",
     "description": {
-      "0": "Verringert den <dendro>Dendro-WDS</dendro> des Gegners 10 s lang um 30 %, wenn dieser von <strong>„Essenzsammlung und Duftmischung“</strong>, <strong>„Manifestation der driftenden Essenzen“</strong> oder Duft des klaren Taus des passiven Talents „Nachklingender Wohlgeruch“ (muss zuerst freigeschaltet werden) getroffen wird."
+      "0": "Verringert den <dendro>Dendro-WDS</dendro> des Gegners 10 s lang um 30 %, wenn dieser von <strong>„Essenzsammlung und Duftmischung“</strong>, <strong>„Manifestation der driftenden Essenzen“</strong> oder Duft des klaren Taus des Aufstiegstalents „Nachklingender Wohlgeruch“ (muss zuerst freigeschaltet werden) getroffen wird."
     }
   },
   "constellation3": {

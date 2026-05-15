@@ -208,17 +208,17 @@
   "constellation1": {
     "name": "Cylinder, the Restless Roulette",
     "description": {
-      "0": "When triggering the Passive Talent \"Bullet Trick\"'s \"Spiritbinding Conversion,\" the 2nd <strong>Shadowhunt Shell</strong> loaded into the cylinder will be additionally converted into a <strong>Shining Shadowhunt Shell</strong>.",
+      "0": "When triggering the Ascension Talent \"Bullet Trick\"'s \"Spiritbinding Conversion,\" the 2nd <strong>Shadowhunt Shell</strong> loaded into the cylinder will be additionally converted into a <strong>Shining Shadowhunt Shell</strong>.",
       "1": "The chance to trigger \"Spiritbinding Conversion\" is increased: If there are party members who meet the Elemental Conversion Type requirements, the chance to trigger \"Spiritbinding Conversion\" is increased by 33.3%, up to a maximum of 100%.",
       "2": "<br/>",
-      "3": "You must first unlock the Passive Talent \"Bullet Trick.\"",
+      "3": "You must first unlock the Ascension Talent \"Bullet Trick.\"",
       "4": "In addition, Chasca's Nightsoul point and Phlogiston consumption in her Nightsoul's Blessing state is decreased by 30% while out of combat."
     }
   },
   "constellation2": {
     "name": "Muzzle, the Searing Smoke",
     "description": {
-      "0": "When Chasca takes the field, she will obtain 1 stack of \"Spirit of the Radiant Shadow\" from the Passive Talent \"Bullet Trick.\" You must first unlock the Passive Talent \"Bullet Trick\" for this effect.",
+      "0": "When Chasca takes the field, she will obtain 1 stack of \"Spirit of the Radiant Shadow\" from the Ascension Talent \"Bullet Trick.\" You must first unlock the Ascension Talent \"Bullet Trick\" for this effect.",
       "1": "In addition, when the <strong>Shining Shadowhunt Shells</strong> from <strong>Spirit Reins, Shadow Hunt</strong>'s <strong>Multitarget Fire</strong> hit opponents, they will deal AoE Elemental DMG of the corresponding Elemental Type of the <strong>Shining Shadowhunt Shells</strong> equal to 400% of Chasca's ATK. This DMG is considered Charged Attack DMG. This effect can be triggered once each time Chasca uses <strong>Multitarget Fire</strong>."
     }
   },
@@ -246,9 +246,9 @@
   "constellation6": {
     "name": "Showdown, the Glory of Battle",
     "description": {
-      "0": "Chasca's <strong>Multitarget Fire</strong> charge time is decreased, and after the Passive Talent \"Bullet Trick\"'s \"Spiritbinding Conversion\" is triggered, Chasca will gain the \"Fatal Rounds\" state: For the next 3s, the next time Chasca uses <strong>Spirit Reins, Shadow Hunt</strong>'s <strong>Multitarget Fire</strong>, the shots will finish charging instantly, and the CRIT DMG of that instance of <strong>Multitarget Fire</strong>'s <strong>Shadowhunt Shells</strong> and <strong>Shining Shadowhunt Shells</strong> increases by 120%. 1 \"Fatal Rounds\" effect can be gained once every 3s.",
+      "0": "Chasca's <strong>Multitarget Fire</strong> charge time is decreased, and after the Ascension Talent \"Bullet Trick\"'s \"Spiritbinding Conversion\" is triggered, Chasca will gain the \"Fatal Rounds\" state: For the next 3s, the next time Chasca uses <strong>Spirit Reins, Shadow Hunt</strong>'s <strong>Multitarget Fire</strong>, the shots will finish charging instantly, and the CRIT DMG of that instance of <strong>Multitarget Fire</strong>'s <strong>Shadowhunt Shells</strong> and <strong>Shining Shadowhunt Shells</strong> increases by 120%. 1 \"Fatal Rounds\" effect can be gained once every 3s.",
       "1": "<br/>",
-      "2": "You must first unlock the Passive Talent \"Bullet Trick\" to gain access to the above effect."
+      "2": "You must first unlock the Ascension Talent \"Bullet Trick\" to gain access to the above effect."
     }
   }
 }

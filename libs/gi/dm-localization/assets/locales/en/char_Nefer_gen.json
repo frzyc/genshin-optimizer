@@ -1,0 +1,223 @@
+{
+  "name": "Nefer",
+  "title": "Secret Beneath the Sands",
+  "description": "The remarkably resourceful owner of the Curatorium of Secrets.",
+  "constellationName": "Ludus Latrunculorum",
+  "auto": {
+    "name": "Striking Serpent",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Performs up to 4 kicks that deal <dendro>Dendro DMG</dendro> with the ferocity and grace of a striking serpent."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Nefer enters the Slither state, consuming Stamina to move rapidly forward for up to 2.5s. When the skill button is released, the duration ends, or Stamina runs out, Nefer will exit the Slither state and consume a certain amount of additional Stamina to deal <dendro>Dendro DMG</dendro> to opponents. When in the <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Shadow Dance</strong></tooltip> state, additional Stamina consumption is decreased.",
+        "2": "Additionally, unleashing the Elemental Skill <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Senet Strategy: Dance of a Thousand Nights</tooltip></strong> or sprinting while Nefer is in the Slither state will not cause her to exit the state."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Calling upon the might of Dendro, Nefer plunges towards the ground from mid-air, damaging all opponents in her path and dealing <dendro>AoE Dendro DMG</dendro> upon impact with the ground."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "Charged Attack DMG",
+      "5": "Charged Attack Charging Stamina Drain",
+      "6": "Charged Attack Stamina Cost",
+      "7": "Shadow Dance Charged Attack Stamina Cost",
+      "8": "Plunge DMG",
+      "9": "Low/High Plunge DMG",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, percent(fixed: 1)}}%×2",
+      "3": "{{3, percent(fixed: 1)}}%",
+      "4": "{{4, percent(fixed: 1)}}%",
+      "5": "{{5, fixed(fixed: 1)}}/s",
+      "6": "{{6, fixed(fixed: 1)}}",
+      "7": "{{10, fixed(fixed: 1)}}",
+      "8": "{{7, percent(fixed: 1)}}%",
+      "9": "{{8, percent}}%/{{9, percent}}%",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Senet Strategy: Dance of a Thousand Nights",
+    "description": {
+      "0": "A dance that dissolved dynasties, as chilling as a winter's night on the great sea of sand, yet lingering with the tenderness of moonlit gauze. Nefer charges forward, dealing <dendro>AoE Dendro DMG</dendro> and entering the <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Shadow Dance</strong></tooltip> state.",
+      "1": "While in the Shadow Dance state, if you have at least 1 <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>Verdant Dew</strong></tooltip>, Nefer's Charged Attacks will be replaced with the special Charged Attack <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Phantasm Performance</strong></tooltip>, which will not consume Stamina. When in the Shadow Dance state, Nefer's resistance to interruption is increased.",
+      "2": "<br/>",
+      "3": "Two initial charges.",
+      "4": "<br/>",
+      "5": "<i>\"The world is a game in which the pieces remain hidden behind a veil. To avoid falling into a trap, one must collect every piece of information one can. This is the meaning of secrets.\"</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Phantasm Performance 1-Hit DMG (Nefer)",
+      "2": "Phantasm Performance 2-Hit DMG (Nefer)",
+      "3": "Phantasm Performance 1-Hit DMG (Shades)",
+      "4": "Phantasm Performance 2-Hit DMG (Shades)",
+      "5": "Phantasm Performance 3-Hit DMG (Shades)",
+      "6": "Phantasm Performance Charges",
+      "7": "Shadow Dance Duration",
+      "8": "CD",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}% ATK+{{1, percent(fixed: 1)}}% Elemental Mastery",
+      "1": "{{4, percent(fixed: 1)}}% ATK+{{5, percent(fixed: 1)}}% Elemental Mastery",
+      "2": "{{6, percent(fixed: 1)}}% ATK+{{7, percent(fixed: 1)}}% Elemental Mastery",
+      "3": "{{8, percent(fixed: 1)}}% Elemental Mastery",
+      "4": "{{9, percent(fixed: 1)}}% Elemental Mastery",
+      "5": "{{10, percent(fixed: 1)}}% Elemental Mastery",
+      "6": "{{2}}",
+      "7": "{{3, fixed(fixed: 1)}}s",
+      "8": "{{11, fixed(fixed: 1)}}s",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Sacred Vow: True Eye's Phantasm",
+    "description": {
+      "0": "Grant \"revelation\" to the mysteries of the false through Thoth's true sight, dealing <dendro>AoE Dendro DMG</dendro> to opponents ahead. When unleashed, Nefer will consume all <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>Veils of Falsehood</strong></tooltip> to increase the DMG dealt by the current Elemental Burst.",
+      "1": "<br/>",
+      "2": "<i>The blessings of the Ibis King proclaimed by the singers of the burning sands are, in truth, more akin to dire curses.</i>"
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "DMG Bonus",
+      "3": "CD",
+      "4": "Energy Cost",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}% ATK+{{1, percent(fixed: 1)}}% Elemental Mastery",
+      "1": "{{2, percent(fixed: 1)}}% ATK+{{3, percent(fixed: 1)}}% Elemental Mastery",
+      "2": "{{4, percent(fixed: 1)}}% Per Veil of Falsehood Stack",
+      "3": "{{5, fixed(fixed: 1)}}s",
+      "4": "{{6}}",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "A Wager of Moonlight",
+    "description": {
+      "0": "Nefer will be granted the corresponding buff effects based on the party's <strong>Moonsign</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Moonsign: Ascendant Gleam</strong>: When she unleashes her Elemental Skill <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Senet Strategy: Dance of a Thousand Nights</tooltip></strong>, any Dendro Cores on the field will be converted to Seeds of Deceit, and any Lunar-Bloom reactions triggered by nearby characters in the following 15s that would create Dendro Cores or Bountiful Cores will instead create Seeds of Deceit. Seeds of Deceit cannot trigger Hyperbloom or Burgeon reactions and will not burst.",
+      "3": "When Nefer unleashes a Charged Attack or <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Phantasm Performance</strong></tooltip>, she can absorb Seeds of Deceit within a certain range, gaining 1 stack of <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>Veil of Falsehood</strong></tooltip> for every seed absorbed. When this effect reaches 3 stacks, or when the third stack's duration is refreshed, Nefer's Elemental Mastery will be increased by 100 for 8s."
+    }
+  },
+  "passive2": {
+    "name": "Daughter of the Dust and Sand",
+    "description": {
+      "0": "When Nefer is in the <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Shadow Dance</strong></tooltip> state, for 5s after a party member triggers a Lunar-Bloom reaction, Nefer's <strong><tooltip ns=char_Nefer_gen baseKey18=normal>Slither</tooltip></strong> state will provide additional <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>Verdant Dew</strong></tooltip>. Every 100 points of Nefer's Elemental Mastery beyond 500 will strengthen this additional provision effect by 10%. The maximum increase that can be achieved this way is 50%."
+    }
+  },
+  "passive3": {
+    "name": "Moonsign Benediction: Dusklit Eaves",
+    "description": {
+      "0": "When a party member triggers a Bloom reaction, it will be converted into the Lunar-Bloom reaction, with every point of Elemental Mastery that Nefer has increasing Lunar-Bloom's Base DMG by 0.0175%, up to a maximum of 14%.",
+      "1": "<br/>",
+      "2": "Additionally, when Nefer is in the party, the party's <strong>Moonsign</strong> will increase by 1 level."
+    }
+  },
+  "passive": {
+    "name": "Conspiracy of the Golden Vault",
+    "description": {
+      "0": "Gains 25% more rewards when dispatched on a Nod-Krai Expedition for 20 hours."
+    }
+  },
+  "constellation1": {
+    "name": "Planning Breeds Success",
+    "description": {
+      "0": "The Base DMG for Lunar-Bloom reactions caused by Nefer's <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Phantasm Performance</strong></tooltip> is increased by 60% of her Elemental Mastery. This effect is also boosted by <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>Veil of Falsehood</strong></tooltip>."
+    }
+  },
+  "constellation2": {
+    "name": "Observation Feeds Strategy",
+    "description": {
+      "0": "Enhances the effects of the Ascension Talent <tooltip ns=char_Nefer_gen baseKey18=passive1><strong>A Wager of Moonlight</strong></tooltip>: Extends <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>Veil of Falsehood</strong></tooltip>'s duration by 5s, and increases its stack limit to 5, as well as causing <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Phantasm Performance</strong></tooltip> to deal up to 140% of its original DMG. When Nefer unleashes her Elemental Skill <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Senet Strategy: Dance of a Thousand Nights</tooltip></strong>, she will instantly gain 2 stacks of Veil of Falsehood. Additionally, when Veil of Falsehood reaches 5 stacks, or when the fifth stack's duration is refreshed, Nefer's Elemental Mastery will be increased by 200 for 8s instead.",
+      "1": "You must first unlock the Ascension Talent \"A Wager of Moonlight.\""
+    }
+  },
+  "constellation3": {
+    "name": "Deceit Cloaks the Truth",
+    "description": {
+      "0": "Increases the Level of <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Senet Strategy: Dance of a Thousand Nights</tooltip></strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "Delusion Ensnares Reason",
+    "description": {
+      "0": "When Nefer is on the field and in the <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Shadow Dance</strong></tooltip> state, you will gain Verdant Dew 25% faster.",
+      "1": "Additionally, while Nefer is in the Shadow Dance state, nearby opponents will have their <dendro>Dendro RES</dendro> decreased by 20%. When Nefer exits the Shadow Dance state or after she strays a certain distance away from the opponents, this effect will be removed after 4.5s."
+    }
+  },
+  "constellation5": {
+    "name": "Opportunity Hides in the Margins",
+    "description": {
+      "0": "Increases the Level of <strong><tooltip ns=char_Nefer_gen baseKey18=burst>Sacred Vow: True Eye's Phantasm</tooltip></strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "Victory Flows from the Turning of Tides",
+    "description": {
+      "0": "When Nefer unleashes <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Phantasm Performance</strong></tooltip>, the second stage of DMG dealt by herself will be converted to deal <dendro>AoE Dendro DMG</dendro> equal to 85% of her Elemental Mastery. Additionally, when the attacks from Phantasm Performance end, an extra instance of <dendro>AoE Dendro DMG</dendro> equal to 120% of Nefer's Elemental Mastery will be dealt. All of the aforementioned DMG is considered Lunar-Bloom DMG dealt by Phantasm Performance.",
+      "1": "<br/>",
+      "2": "<strong>Moonsign: Ascendant Gleam</strong>",
+      "3": "Nefer's Lunar-Bloom DMG is <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>elevated</strong></tooltip> by 15%."
+    }
+  }
+}

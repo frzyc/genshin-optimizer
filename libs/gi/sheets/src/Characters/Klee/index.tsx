@@ -1,3 +1,4 @@
+import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
@@ -6,8 +7,15 @@ import {
   greaterEq,
   infoMut,
   input,
+  lookup,
+  naught,
+  one,
   percent,
   prod,
+  sum,
+  tally,
+  target,
+  unequal,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
@@ -22,7 +30,11 @@ import {
 
 const key: CharacterKey = 'Klee'
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key)
+
+const [condLockHomeworkPath, condLockHomework] = cond(key, 'lockHomework')
+const lockHomework_hexerei = equal(condLockHomework, 'on', 1)
+
+const ct = charTemplates(key, lockHomework_hexerei)
 
 let a = 0,
   s = 0,
@@ -62,25 +74,39 @@ const dm = {
   passive1: {
     charged_dmg_: 0.5,
   },
+  lockedPassive: {
+    duration: skillParam_gen.lockedPassive![0][0],
+    mult: [
+      skillParam_gen.lockedPassive![1][0],
+      skillParam_gen.lockedPassive![2][0],
+      skillParam_gen.lockedPassive![3][0],
+    ],
+    idk2: skillParam_gen.lockedPassive![4][0],
+  },
   constellation1: {
     dmg_: 1.2,
+    duration: skillParam_gen.constellation1[0],
+    atk_: skillParam_gen.constellation1[1],
   },
   constellation2: {
     enemyDefRed_: 0.23,
   },
   constellation4: {
     dmg: 5.55,
+    dmg_: skillParam_gen.constellation4[0],
   },
   constellation6: {
-    pyro_dmg_: 0.1,
+    team_pyro_dmg_: 0.1,
+    self_pyro_dmg_: skillParam_gen.constellation6[0],
+    chance1: skillParam_gen.constellation6[1],
+    chance2: skillParam_gen.constellation6[2],
   },
 } as const
 
-const [condA1Path, condA1] = cond(key, 'PoundingSurprise')
-const charged_dmg_ = greaterEq(
+const boomCharged_dmg_ = greaterEq(
   input.asc,
   1,
-  equal('on', condA1, percent(dm.passive1.charged_dmg_))
+  percent(dm.passive1.charged_dmg_)
 )
 
 const [condC2Path, condC2] = cond(key, 'ExplosiveFrags')
@@ -91,10 +117,66 @@ const enemyDefRed_ = greaterEq(
 )
 
 const [condC6Path, condC6] = cond(key, 'BlazingDelight')
-const pyro_dmg_ = greaterEq(
+const team_pyro_dmg_disp = greaterEq(
   input.constellation,
   6,
-  equal('on', condC6, percent(dm.constellation6.pyro_dmg_))
+  equal('on', condC6, percent(dm.constellation6.team_pyro_dmg_))
+)
+const team_pyro_dmg_ = greaterEq(
+  sum(
+    equal(condLockHomework, 'on', unequal(target.charKey, key, 1)),
+    unequal(condLockHomework, 'on', 1)
+  ),
+  1,
+  team_pyro_dmg_disp
+)
+
+const lockBadgeArr = range(1, dm.lockedPassive.mult.length)
+const [condLockBadgePath, condLockBadge] = cond(key, 'lockBadge')
+const lockBadge_mult_ = sum(
+  one,
+  equal(
+    condLockHomework,
+    'on',
+    greaterEq(
+      tally.hexerei,
+      2,
+      lookup(
+        condLockBadge,
+        objKeyMap(lockBadgeArr, (badge) =>
+          percent(dm.lockedPassive.mult[badge - 1])
+        ),
+        naught
+      )
+    )
+  )
+)
+
+const [condLockC1Path, condLockC1] = cond(key, 'lockC1')
+const lockC1_atk_ = greaterEq(
+  input.constellation,
+  1,
+  equal(condLockHomework, 'on', equal(condLockC1, 'on', dm.constellation1.atk_))
+)
+
+const lockC4_dmg_ = greaterEq(
+  input.constellation,
+  4,
+  equal(
+    condLockHomework,
+    'on',
+    equal(input.activeCharKey, key, dm.constellation4.dmg_)
+  )
+)
+
+const lockC6_pyro_dmg_ = greaterEq(
+  input.constellation,
+  6,
+  equal(
+    condC6,
+    'on',
+    equal(condLockHomework, 'on', dm.constellation6.self_pyro_dmg_)
+  )
 )
 
 const dmgFormulas = {
@@ -112,13 +194,33 @@ const dmgFormulas = {
   burst: {
     dmg: dmgNode('atk', dm.burst.dmg, 'burst'),
   },
+  passive1: {
+    dmg: greaterEq(
+      input.asc,
+      1,
+      dmgNode(
+        'atk',
+        dm.charged.dmg,
+        'charged',
+        {
+          premod: {
+            charged_dmg_: boomCharged_dmg_,
+          },
+        },
+        lockBadge_mult_
+      )
+    ),
+  },
   constellation1: {
     chainedReactionsDmg: greaterEq(
       input.constellation,
       1,
-      prod(
-        percent(dm.constellation1.dmg_),
-        dmgNode('atk', dm.burst.dmg, 'burst')
+      dmgNode(
+        'atk',
+        dm.burst.dmg,
+        'burst',
+        undefined,
+        percent(dm.constellation1.dmg_)
       )
     ),
   },
@@ -129,7 +231,12 @@ const dmgFormulas = {
       customDmgNode(
         prod(percent(dm.constellation4.dmg), input.total.atk),
         'elemental',
-        { hit: { ele: constant('pyro') } }
+        {
+          hit: { ele: constant('pyro') },
+          premod: {
+            pyro_dmg_: lockC4_dmg_,
+          },
+        }
       )
     ),
   },
@@ -141,14 +248,16 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
   premod: {
     skillBoost: nodeC3,
     burstBoost: nodeC5,
-    charged_dmg_,
+    atk_: lockC1_atk_,
+    pyro_dmg_: lockC6_pyro_dmg_,
   },
   teamBuff: {
     premod: {
-      pyro_dmg_,
+      pyro_dmg_: team_pyro_dmg_,
       enemyDefRed_,
     },
   },
+  isHexerei: lockHomework_hexerei,
 })
 
 const sheet: TalentSheet = {
@@ -261,26 +370,59 @@ const sheet: TalentSheet = {
   ]),
 
   passive1: ct.talentTem('passive1', [
-    ct.condTem('passive1', {
-      value: condA1,
-      path: condA1Path,
-      name: ct.ch('a1CondName'),
+    ct.fieldsTem('passive1', {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.passive1.dmg, { name: ct.ch('boomDmg') }),
+        },
+        {
+          text: ct.ch('boomStam'),
+          value: 0,
+        },
+        {
+          node: infoMut(boomCharged_dmg_, { name: ct.ch('boom_dmg_') }),
+        },
+      ],
+    }),
+  ]),
+  passive2: ct.talentTem('passive2'),
+  passive3: ct.talentTem('passive3'),
+  lockedPassive: ct.talentTem('lockedPassive', [
+    ct.condTem('lockedPassive', {
+      path: condLockHomeworkPath,
+      value: condLockHomework,
+      teamBuff: true,
+      name: st('hexerei.homeworkDone'),
       states: {
         on: {
           fields: [
             {
-              node: charged_dmg_,
+              text: st('hexerei.becomeHexerei', {
+                val: `$t(charNames_gen:${key})`,
+              }),
             },
             {
-              text: ct.ch('a1CondName2'),
+              text: st('hexerei.talentEnhance'),
             },
           ],
         },
       },
     }),
+    ct.condTem('lockedPassive', {
+      path: condLockBadgePath,
+      value: condLockBadge,
+      name: ct.ch('lockedCond'),
+      canShow: greaterEq(tally.hexerei, 2, lockHomework_hexerei),
+      states: objKeyMap(lockBadgeArr, (badge) => ({
+        name: `${badge}`,
+        fields: [
+          {
+            node: infoMut(lockBadge_mult_, { name: ct.ch('boom_mult_') }),
+          },
+        ],
+      })),
+    }),
   ]),
-  passive2: ct.talentTem('passive2'),
-  passive3: ct.talentTem('passive3'),
   constellation1: ct.talentTem('constellation1', [
     ct.fieldsTem('constellation1', {
       fields: [
@@ -291,6 +433,27 @@ const sheet: TalentSheet = {
         },
       ],
     }),
+    ct.condTem('constellation1', {
+      path: condLockC1Path,
+      value: condLockC1,
+      teamBuff: true,
+      name: ct.ch('c1Cond'),
+      canShow: lockHomework_hexerei,
+      states: {
+        on: {
+          fields: [
+            {
+              node: lockC1_atk_,
+            },
+            {
+              text: stg('duration'),
+              value: dm.constellation1.duration,
+              unit: 's',
+            },
+          ],
+        },
+      },
+    }),
   ]),
   constellation2: ct.talentTem('constellation2', [
     ct.condTem('constellation2', {
@@ -298,6 +461,28 @@ const sheet: TalentSheet = {
       path: condC2Path,
       teamBuff: true,
       name: ct.ch('c2CondName'),
+      canShow: unequal(condLockHomework, 'on', 1),
+      states: {
+        on: {
+          fields: [
+            {
+              node: enemyDefRed_,
+            },
+            {
+              text: stg('duration'),
+              value: 10,
+              unit: 's',
+            },
+          ],
+        },
+      },
+    }),
+    ct.condTem('constellation2', {
+      value: condC2,
+      path: condC2Path,
+      teamBuff: true,
+      name: st('hitOp.skill'),
+      canShow: lockHomework_hexerei,
       states: {
         on: {
           fields: [
@@ -325,6 +510,9 @@ const sheet: TalentSheet = {
             name: st(`dmg`),
           }),
         },
+        {
+          node: infoMut(lockC4_dmg_, { path: 'all_dmg_' }),
+        },
       ],
     }),
   ]),
@@ -341,7 +529,13 @@ const sheet: TalentSheet = {
         on: {
           fields: [
             {
-              node: pyro_dmg_,
+              node: infoMut(team_pyro_dmg_disp, {
+                path: 'pyro_dmg_',
+                isTeamBuff: true,
+              }),
+            },
+            {
+              node: lockC6_pyro_dmg_,
             },
             {
               text: stg('duration'),

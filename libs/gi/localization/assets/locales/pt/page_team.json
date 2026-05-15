@@ -1,0 +1,19 @@
+{
+  "buildInfo": {
+    "equipped": "Essa é a build equipada atualmente por seu personagem, isso representa o equipamento do jogo e é persistente fora do Loadout.",
+    "build": "Uma <strong>Build</strong> é composta por uma arma e 5 artefatos.",
+    "tcbuild": "Uma <strong>Build Teórica</strong> permite definir uma build utilizando apenas atributos."
+  },
+  "buildTcCharOverride": {
+    "btn": "Substituir Dados do Personagem para essa Build Teórica"
+  },
+  "team": {
+    "editNameDesc": "Editar Nome da Equipe e Descrição",
+    "name": "Nome da Equipe",
+    "desc": "Descrição da Equipe"
+  },
+  "loadout": {
+    "name": "Nome do Loadout",
+    "desc": "Descrição do Loadout"
+  }
+}

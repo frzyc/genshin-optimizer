@@ -1,0 +1,29 @@
+{
+  "name": "The Daybreak Chronicles",
+  "description": {
+    "0": "Semua puisi dan lagu tentang perlawanan jatuh bagai nada lembut di dawai. Kekuatannya yang seperti sinar fajar mampu memecah kegelapan dari malam yang tiada henti."
+  },
+  "passiveName": "Ode Beyond Time",
+  "passiveDescription": {
+    "0": {
+      "0": "Karakter yang mengenakan mendapatkan Stirring Dawn Breeze: Setelah keluar dari kondisi bertempur selama 3 detik, DMG Normal Attack, Elemental Skill, dan Elemental Burst +<cryo>60%</cryo>. Saat dalam kondisi bertempur, efek peningkatan DMG di atas berkurang <cryo>10%</cryo> setiap detiknya, hingga mencapai 0%. Saat Normal Attack, Elemental Skill, atau Elemental Burst mengenai musuh, efek peningkatan DMG dari serangan tersebut +<cryo>10%</cryo> hingga mencapai <cryo>60%</cryo>. Efek setiap jenis serangan di atas dapat terpicu sekali setiap 0,1 detik. Efek di atas tetap dapat terpicu saat Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran.",
+      "1": "Selain itu, jika party sedang memiliki efek Hexerei: Secret Rite, saat Normal Attack, Elemental Skill, atau Elemental Burst mengenai musuh, efek peningkatan DMG semua jenis serangan ini akan berubah menjadi +<cryo>20%</cryo>."
+    },
+    "1": {
+      "0": "Karakter yang mengenakan mendapatkan Stirring Dawn Breeze: Setelah keluar dari kondisi bertempur selama 3 detik, DMG Normal Attack, Elemental Skill, dan Elemental Burst +<cryo>75%</cryo>. Saat dalam kondisi bertempur, efek peningkatan DMG di atas berkurang <cryo>12,5%</cryo> setiap detiknya, hingga mencapai 0%. Saat Normal Attack, Elemental Skill, atau Elemental Burst mengenai musuh, efek peningkatan DMG dari serangan tersebut +<cryo>12,5%</cryo> hingga mencapai <cryo>75%</cryo>. Efek setiap jenis serangan di atas dapat terpicu sekali setiap 0,1 detik. Efek di atas tetap dapat terpicu saat Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran.",
+      "1": "Selain itu, jika party sedang memiliki efek Hexerei: Secret Rite, saat Normal Attack, Elemental Skill, atau Elemental Burst mengenai musuh, efek peningkatan DMG semua jenis serangan ini akan berubah menjadi +<cryo>25%</cryo>."
+    },
+    "2": {
+      "0": "Karakter yang mengenakan mendapatkan Stirring Dawn Breeze: Setelah keluar dari kondisi bertempur selama 3 detik, DMG Normal Attack, Elemental Skill, dan Elemental Burst +<cryo>90%</cryo>. Saat dalam kondisi bertempur, efek peningkatan DMG di atas berkurang <cryo>15%</cryo> setiap detiknya, hingga mencapai 0%. Saat Normal Attack, Elemental Skill, atau Elemental Burst mengenai musuh, efek peningkatan DMG dari serangan tersebut +<cryo>15%</cryo> hingga mencapai <cryo>90%</cryo>. Efek setiap jenis serangan di atas dapat terpicu sekali setiap 0,1 detik. Efek di atas tetap dapat terpicu saat Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran.",
+      "1": "Selain itu, jika party sedang memiliki efek Hexerei: Secret Rite, saat Normal Attack, Elemental Skill, atau Elemental Burst mengenai musuh, efek peningkatan DMG semua jenis serangan ini akan berubah menjadi +<cryo>30%</cryo>."
+    },
+    "3": {
+      "0": "Karakter yang mengenakan mendapatkan Stirring Dawn Breeze: Setelah keluar dari kondisi bertempur selama 3 detik, DMG Normal Attack, Elemental Skill, dan Elemental Burst +<cryo>105%</cryo>. Saat dalam kondisi bertempur, efek peningkatan DMG di atas berkurang <cryo>17,5%</cryo> setiap detiknya, hingga mencapai 0%. Saat Normal Attack, Elemental Skill, atau Elemental Burst mengenai musuh, efek peningkatan DMG dari serangan tersebut +<cryo>17,5%</cryo> hingga mencapai <cryo>105%</cryo>. Efek setiap jenis serangan di atas dapat terpicu sekali setiap 0,1 detik. Efek di atas tetap dapat terpicu saat Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran.",
+      "1": "Selain itu, jika party sedang memiliki efek Hexerei: Secret Rite, saat Normal Attack, Elemental Skill, atau Elemental Burst mengenai musuh, efek peningkatan DMG semua jenis serangan ini akan berubah menjadi +<cryo>35%</cryo>."
+    },
+    "4": {
+      "0": "Karakter yang mengenakan mendapatkan Stirring Dawn Breeze: Setelah keluar dari kondisi bertempur selama 3 detik, DMG Normal Attack, Elemental Skill, dan Elemental Burst +<cryo>120%</cryo>. Saat dalam kondisi bertempur, efek peningkatan DMG di atas berkurang <cryo>20%</cryo> setiap detiknya, hingga mencapai 0%. Saat Normal Attack, Elemental Skill, atau Elemental Burst mengenai musuh, efek peningkatan DMG dari serangan tersebut +<cryo>20%</cryo> hingga mencapai <cryo>120%</cryo>. Efek setiap jenis serangan di atas dapat terpicu sekali setiap 0,1 detik. Efek di atas tetap dapat terpicu saat Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran.",
+      "1": "Selain itu, jika party sedang memiliki efek Hexerei: Secret Rite, saat Normal Attack, Elemental Skill, atau Elemental Burst mengenai musuh, efek peningkatan DMG semua jenis serangan ini akan berubah menjadi +<cryo>40%</cryo>."
+    }
+  }
+}

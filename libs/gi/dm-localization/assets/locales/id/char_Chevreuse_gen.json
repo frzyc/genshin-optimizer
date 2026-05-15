@@ -105,7 +105,7 @@
     "description": {
       "0": "Saat seluruh anggota party adalah Karakter <pyro>Pyro</pyro> dan <electro>Electro</electro>, serta terdapat minimal 1 Karakter Pyro dan 1 Karakter Electro:",
       "1": "Chevreuse akan memberikan \"Coordinated Tactics\" kepada Karakter dalam party di sekitarnya: Setelah Karakter memicu reaksi Overloaded, <pyro>Pyro</pyro> dan <electro>Electro</electro> RES milik target tersebut akan berkurang 40% selama 6 detik.",
-      "2": "Saat jenis elemen Karakter di dalam party tidak cukup untuk memicu Talenta Pasif, maka efek Coordinated Tactics yang sudah dimiliki akan dihapus."
+      "2": "Saat jenis elemen Karakter di dalam party tidak cukup untuk memicu Talenta Ascension, maka efek Coordinated Tactics yang sudah dimiliki akan dihapus."
     }
   },
   "passive2": {
@@ -125,7 +125,7 @@
     "name": "Stable Front Line's Resolve",
     "description": {
       "0": "Saat Karakter aktif yang berada dalam status \"Coordinated Tactics\" (tidak termasuk Chevreuse sendiri) memicu Reaksi Overloaded, akan memulihkan 6 Energy. Efek ini dapat terpicu sekali setiap 10 detik.",
-      "1": "Harus membuka Talenta Pasif \"Vanguard's Coordinated Tactics\" terlebih dahulu."
+      "1": "Harus membuka Talenta Ascension \"Vanguard's Coordinated Tactics\" terlebih dahulu."
     }
   },
   "constellation2": {

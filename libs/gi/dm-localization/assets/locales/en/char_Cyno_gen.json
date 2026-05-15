@@ -167,8 +167,8 @@
     "description": {
       "0": "Cyno's DMG values will be increased based on his Elemental Mastery as follows:",
       "1": [
-        "Pactsworn Pathclearer's Normal Attack DMG is increased by 150% of his Elemental Mastery.",
-        "Duststalker Bolt DMG from his Passive Talent Featherfall Judgment is increased by 250% of his Elemental Mastery."
+        " Pactsworn Pathclearer's Normal Attack DMG is increased by 150% of his Elemental Mastery.",
+        " Duststalker Bolt DMG from his Ascension Talent Featherfall Judgment is increased by 250% of his Elemental Mastery."
       ]
     }
   },
@@ -181,8 +181,8 @@
   "constellation1": {
     "name": "Ordinance: Unceasing Vigil",
     "description": {
-      "0": "After using <strong>Sacred Rite: Wolf's Swiftness</strong>, Cyno's Normal Attack SPD will be increased by 20% for 10s. If the Judication effect of his Passive Talent Featherfall Judgment is triggered during <strong>Secret Rite: Chasmic Soulfarer</strong>, the duration of this increase will be refreshed.",
-      "1": "You need to unlock the Passive Talent \"Featherfall Judgment.\""
+      "0": "After using <strong>Sacred Rite: Wolf's Swiftness</strong>, Cyno's Normal Attack SPD will be increased by 20% for 10s. If the Judication effect of his Ascension Talent Featherfall Judgment is triggered during <strong>Secret Rite: Chasmic Soulfarer</strong>, the duration of this increase will be refreshed.",
+      "1": "You must first unlock the Ascension Talent \"Featherfall Judgment.\""
     }
   },
   "constellation2": {
@@ -215,10 +215,10 @@
   "constellation6": {
     "name": "Raiment: Just Scales",
     "description": {
-      "0": "After using <strong>Sacred Rite: Wolf's Swiftness</strong> or triggering the Judication effect of the Passive Talent \"Featherfall Judgment,\" Cyno will gain 4 stacks of the \"Day of the Jackal\" effect. When he hits opponents with Normal Attacks, he will consume 1 stack of \"Day of the Jackal\" to fire off one Duststalker Bolt.",
+      "0": "After using <strong>Sacred Rite: Wolf's Swiftness</strong> or triggering the Judication effect of the Ascension Talent \"Featherfall Judgment,\" Cyno will gain 4 stacks of the \"Day of the Jackal\" effect. When he hits opponents with Normal Attacks, he will consume 1 stack of \"Day of the Jackal\" to fire off one Duststalker Bolt.",
       "1": "\"Day of the Jackal\" lasts for 8s. Max 8 stacks. It will be canceled once Pactsworn Pathclearer ends.",
       "2": "A maximum of 1 Duststalker Bolt can be unleashed this way every 0.4s.",
-      "3": "You must first unlock the Passive Talent \"Featherfall Judgment.\""
+      "3": "You must first unlock the Ascension Talent \"Featherfall Judgment.\""
     }
   }
 }

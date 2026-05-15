@@ -1,0 +1,24 @@
+{
+  "name": "Gökkuşağı Yılanının Yağmur Yayı",
+  "description": {
+    "0": "Gece Rüzgarının Ustalarının nesilden nesile aktardığı kadim bir tören silahı. Bu karanlık yay, sonsuza dek sarsılmaz bir soğukla sarılıdır."
+  },
+  "passiveName": "Kutsal Taht Ardında Kozmik Fısıltılar",
+  "passiveDescription": {
+    "0": {
+      "0": "Kuşanan karakter savaş alanında değilken saldırıları düşmana isabet ettiğinde 8 saniyeliğine Saldırı <cryo>%28</cryo> artar."
+    },
+    "1": {
+      "0": "Kuşanan karakter savaş alanında değilken saldırıları düşmana isabet ettiğinde 8 saniyeliğine Saldırı <cryo>%35</cryo> artar."
+    },
+    "2": {
+      "0": "Kuşanan karakter savaş alanında değilken saldırıları düşmana isabet ettiğinde 8 saniyeliğine Saldırı <cryo>%42</cryo> artar."
+    },
+    "3": {
+      "0": "Kuşanan karakter savaş alanında değilken saldırıları düşmana isabet ettiğinde 8 saniyeliğine Saldırı <cryo>%49</cryo> artar."
+    },
+    "4": {
+      "0": "Kuşanan karakter savaş alanında değilken saldırıları düşmana isabet ettiğinde 8 saniyeliğine Saldırı <cryo>%56</cryo> artar."
+    }
+  }
+}

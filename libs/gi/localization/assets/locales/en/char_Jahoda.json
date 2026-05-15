@@ -1,0 +1,6 @@
+{
+  "robotDmg_mult_": "Purrsonal Coordinated Assistance Robot DMG Mult.",
+  "robotHeal_mult_": "Purrsonal Coordinated Assistance Robot Heal Mult.",
+  "a4Cond": "Purrsonal Coordinated Assistance Robot heals an active character with HP above 70%",
+  "c6Cond": "After the Purr-loined Treasure Flask is full"
+}

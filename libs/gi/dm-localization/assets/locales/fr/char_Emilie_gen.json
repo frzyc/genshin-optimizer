@@ -125,14 +125,14 @@
   "constellation1": {
     "name": "Lessivage d'aromate léger",
     "description": {
-      "0": "Les DGT infligés par <strong>Extraction de fragrance</strong> et par la cologne d'aiguail clair d'Arôme persistant augmentent de 20 %. L'aptitude passive « Arôme persistant » doit être déjà débloquée pour pouvoir augmenter les DGT infligés par la cologne d'aiguail clair.",
+      "0": "Les DGT infligés par <strong>Extraction de fragrance</strong> et par la cologne d'aiguail clair d'Arôme persistant augmentent de 20 %. L'aptitude d'élévation « Arôme persistant » doit être déjà débloquée pour pouvoir augmenter les DGT infligés par la cologne d'aiguail clair.",
       "1": "De plus, lorsqu'un membre de l'équipe à proximité déclenche une réaction de Brûlure sur un ennemi ou inflige des <dendro>DGT Dendro</dendro> à un ennemi brûlé, ce dernier dégage une <strong>senteur</strong> supplémentaire. Cet effet peut être déclenché une fois toutes les 2,9 s"
     }
   },
   "constellation2": {
     "name": "Exhalaison lacmineuse",
     "description": {
-      "0": "Lorsqu'<strong>Extraction de fragrance</strong>, <strong>Explication de parfum</strong> ou une cologne d'aiguail clair créée par l'aptitude passive « Arôme persistant », cette aptitude devant être déjà débloquée, touche un ennemi, la <dendro>RÉS Dendro</dendro> de ce dernier diminue de 30 % pendant 10 s."
+      "0": "Lorsqu'<strong>Extraction de fragrance</strong>, <strong>Explication de parfum</strong> ou une cologne d'aiguail clair créée par l'aptitude d'élévation « Arôme persistant », cette aptitude devant être déjà débloquée, touche un ennemi, la <dendro>RÉS Dendro</dendro> de ce dernier diminue de 30 % pendant 10 s."
     }
   },
   "constellation3": {

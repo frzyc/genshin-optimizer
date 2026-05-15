@@ -5,6 +5,7 @@ import type {
 } from '@genshin-optimizer/gi/consts'
 import type { UIData } from '@genshin-optimizer/gi/uidata'
 import type { NumNode, ReadNode } from '@genshin-optimizer/gi/wr'
+import type { ReactNode } from 'react'
 import type { IFieldDisplay } from './fieldDisplay'
 
 interface IDocumentBase {

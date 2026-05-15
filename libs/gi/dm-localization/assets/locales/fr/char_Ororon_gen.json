@@ -142,7 +142,7 @@
     "name": "Traces de la forêt brumeuse",
     "description": {
       "0": "Les <strong>spiritorbes</strong> de la compétence élémentaire <strong>Cordon fermement crépusculaire</strong> peuvent rebondir 2 fois supplémentaires.",
-      "1": "De plus, lorsqu'un <strong>spiritorbe</strong> a touché un ennemi, ce dernier est affligé de l'effet Nuit noire pendant 12 s : les DGT infligés par l'hyper-sens de l'aptitude passive « Synesthésie sombrement nocturne » aux ennemis sous l'effet d'une nuit noire augmentent de 50 %, l'aptitude passive « Synesthésie sombrement nocturne » devant être déjà débloquée."
+      "1": "De plus, lorsqu'un <strong>spiritorbe</strong> a touché un ennemi, ce dernier est affligé de l'effet Nuit noire pendant 12 s : les DGT infligés par l'hyper-sens de l'aptitude d'élévation « Synesthésie sombrement nocturne » aux ennemis sous l'effet d'une nuit noire augmentent de 50 %, l'aptitude d'élévation « Synesthésie sombrement nocturne » devant être déjà débloquée."
     }
   },
   "constellation2": {
@@ -179,9 +179,9 @@
   "constellation6": {
     "name": "Hymne de source profonde",
     "description": {
-      "0": "Après avoir déclenché l'hyper-sens de l'aptitude passive « Synesthésie sombrement nocturne », l'ATQ de votre personnage déployé augmente de 10 % pendant 9 s. Cet effet peut être cumulé 3 fois maximum, la durée de chaque cumul étant calculée de façon indépendante.",
+      "0": "Après avoir déclenché l'hyper-sens de l'aptitude d'élévation « Synesthésie sombrement nocturne », l'ATQ de votre personnage déployé augmente de 10 % pendant 9 s. Cet effet peut être cumulé 3 fois maximum, la durée de chaque cumul étant calculée de façon indépendante.",
       "1": "De plus, utiliser le déchaînement élémentaire <strong>Écho opaquement étouffé</strong> déclenche un effet équivalant à l'hyper-sens, infligeant des DGT équivalant à 200 % des DGT d'origine.",
-      "2": "L'aptitude passive « Synesthésie sombrement nocturne » doit être déjà débloquée."
+      "2": "L'aptitude d'élévation « Synesthésie sombrement nocturne » doit être déjà débloquée."
     }
   }
 }

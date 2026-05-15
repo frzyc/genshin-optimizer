@@ -1,0 +1,24 @@
+{
+  "name": "Brina mattutina",
+  "description": {
+    "0": "Un recipiente rituale forgiato in argento, puro e immacolato. Si dice essere una reliquia sacra tramandata per generazioni dalle sacerdotesse dell'Estremo Nord."
+  },
+  "passiveName": "Sogni notturni",
+  "passiveDescription": {
+    "0": {
+      "0": "Per 10 s dopo aver colpito un avversario con un attacco caricato, la maestria elementale aumenta di <cryo>72</cryo>. Per 10 s dopo aver colpito un avversario con un'abilità elementale, la maestria elementale aumenta di <cryo>48</cryo>."
+    },
+    "1": {
+      "0": "Per 10 s dopo aver colpito un avversario con un attacco caricato, la maestria elementale aumenta di <cryo>90</cryo>. Per 10 s dopo aver colpito un avversario con un'abilità elementale, la maestria elementale aumenta di <cryo>60</cryo>."
+    },
+    "2": {
+      "0": "Per 10 s dopo aver colpito un avversario con un attacco caricato, la maestria elementale aumenta di <cryo>108</cryo>. Per 10 s dopo aver colpito un avversario con un'abilità elementale, la maestria elementale aumenta di <cryo>72</cryo>."
+    },
+    "3": {
+      "0": "Per 10 s dopo aver colpito un avversario con un attacco caricato, la maestria elementale aumenta di <cryo>126</cryo>. Per 10 s dopo aver colpito un avversario con un'abilità elementale, la maestria elementale aumenta di <cryo>84</cryo>."
+    },
+    "4": {
+      "0": "Per 10 s dopo aver colpito un avversario con un attacco caricato, la maestria elementale aumenta di <cryo>144</cryo>. Per 10 s dopo aver colpito un avversario con un'abilità elementale, la maestria elementale aumenta di <cryo>96</cryo>."
+    }
+  }
+}

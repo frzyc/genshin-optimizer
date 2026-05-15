@@ -10,5 +10,7 @@
     "rarity": "Rarity"
   },
   "phase": "Phase {{value}}",
-  "selectlevel": "Select Level"
+  "selectlevel": "Select Level",
+  "rightsDisclaimer": "Zenless Optimizer is not affiliated with or endorsed by HoYoverse.",
+  "appVersion": "Zenless Optimizer Version: <1>{{version}}</1>"
 }

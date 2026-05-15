@@ -1,0 +1,168 @@
+{
+  "name": "Jahoda",
+  "title": "Sombras da Ventania",
+  "description": "A faz-tudo extremamente confiável (segundo ela) da Curadoria dos Segredos.",
+  "constellationName": "Fragum",
+  "auto": {
+    "name": "Flechada no Momento Preciso",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza até 3 disparos consecutivos com um arco."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Realiza um <strong>Disparo com Mira </strong>mais preciso e com Dano aumentado.",
+        "2": "Ao mirar, ventos fortes se acumularão na ponta da flecha. Uma flecha completamente carregada com ventos fortes irá infligir <anemo>Dano Anemo</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Dispara uma chuva de flechas no ar que atingirão o solo rapidamente, alcançando os inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Disparo com Mira",
+      "4": "Disparo com Mira com Energização Completa",
+      "5": "Dano Durante a Queda",
+      "6": "Dano de Queda de Baixa/Alta Altitude",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Estratagema Impressionante: Plano de Redistribuição de Riqueza",
+    "description": {
+      "0": "Jahoda avança em frente, entrando no estado Perseguição Sombria ao tocar um inimigo. Nesse estado, Jahoda se move mais rapidamente continuamente. Se houver um inimigo por perto afetado por <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro> ou <cryo>Cryo</cryo>, Jahoda converterá discretamente sua <tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>Garrafa Secreta Ronron</strong></tooltip> para esse elemento, enchendo-a gradualmente. Quando a duração acabar ou lançar novamente, Jahoda esvaziará a <strong>Garrafa Secreta Ronron</strong> e causará <anemo>Dano Anemo</anemo> uma vez contra o inimigo próximo. Quando a <strong>Garrafa Secreta Ronron</strong> estiver cheia, Jahoda também esvaziará a <strong>Garrafa Secreta Ronron</strong> para sair do estado Perseguição Sombria, causando ainda mais <anemo>Dano Anemo</anemo> contra os inimigos próximos uma vez.",
+      "1": "Se Jahoda não tocar em nenhum inimigo ao fazer sua investida, jogará uma Bomba de Fumaça na posição original que causa <anemo>Dano Anemo</anemo> uma vez contra os inimigos próximos.",
+      "2": "<br/>",
+      "3": "<strong>Presságio Lunar: Reluzir Cheio</strong>: quando a <strong>Garrafa Secreta Ronron</strong> estiver cheia, Jahoda não esvaziará a <strong>Garrafa Secreta Ronron</strong> imediatamente, mas sim passará a consumir o Elemento que está dentro da garrafa continuamente por um certo tempo, e periodicamente disparará contra os inimigos próximos <strong>Bolas Miaufinhas</strong>, causando Dano Elemental correspondente a <strong>Garrafa Secreta Ronron</strong>. Quando a <strong>Bola Miaufinha</strong> atinge um inimigo, regenera 2 de Energia Elemental para Jahoda. Esse efeito pode ser desencadeado uma vez a cada 3.5s.",
+      "4": "<br/>",
+      "5": "<i>Há muitas formas de se dividir a riqueza do mundo, mas para os caçadores e ladrões de tesouro de Nod-Krai, só uma se mostrou eficaz.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Bomba de Fumaça",
+      "1": "Dano de Garrafa Secreta Não Cheia",
+      "2": "Dano de Garrafa Secreta Cheia",
+      "3": "Duração de Garrafa Secreta",
+      "4": "Dano da Bola Miaufinha",
+      "5": "Tempo de Recarga",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Dispositivo Secreto: Sete Itens do Caçador",
+    "description": {
+      "0": "É hora de usar o pacote que tá no fundo! Jahoda puxa dois <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>Coordenadores Felinos de Assistência Doméstica</strong></tooltip> e causa <anemo>Dano Anemo</anemo> contra os inimigos próximos uma vez.",
+      "1": "<br/>",
+      "2": "<i>\"Coordenação mútua? Você paga a Mora da cooperação, e eu faço a coordenação. É justo, não?\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Dano de Coordenador Felino de Assistência Doméstica",
+      "2": "Duração de Coordenador Felino de Assistência Doméstica",
+      "3": "Cura de Coordenador Felino de Assistência Doméstica",
+      "4": "Cura Adicional de Personagem com Vida Mais Baixa",
+      "5": "Tempo de Recarga",
+      "6": "Energia Elemental",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Plano de Recompensas",
+    "description": {
+      "0": "Quando a equipe possui pelo menos um personagem <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro> ou <cryo>Cryo</cryo>, fortalece o <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>Coordenador Felino de Assistência Doméstica</strong></tooltip> do Supremo <strong>Dispositivo Secreto: Sete Itens do Caçador</strong> de acordo com a quantidade de personagens do Tipo Elemental correspondente.",
+      "1": "Jahoda secretamente registra o número de personagens dos Tipos Elementais acima. Se o número de personagens do maior Tipo Elemental for:",
+      "2": [
+        " <pyro>Pyro</pyro>: aumenta o Dano original de <strong>Coordenador Felino de Assistência Doméstica</strong> em 130%.",
+        " <hydro>Hydro</hydro>: aumenta a Cura original de <strong>Coordenador Felino de Assistência Doméstica</strong> em 120%.",
+        " <electro>Electro</electro>: aumenta os usos de <strong>Coordenador Felino de Assistência Doméstica</strong> em 1.",
+        " <cryo>Cryo</cryo>: diminui o intervalo do ataque de <strong>Coordenador Felino de Assistência Doméstica</strong> em 10%."
+      ],
+      "3": "<br/>",
+      "4": "Se o número de personagens dos Tipos Elementais acima forem iguais, registrará seguindo a ordem <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro> e <cryo>Cryo</cryo>. Inicialmente só é possível possuir o efeito correspondente a um Tipo Elemental."
+    }
+  },
+  "passive2": {
+    "name": "Recompensa Frutada Doce",
+    "description": {
+      "0": "Quando <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>Coordenador Felino de Assistência Doméstica</strong></tooltip> do Supremo <strong>Dispositivo Secreto: Sete Itens do Caçador</strong> cura o personagem ativo, se o personagem curado tiver mais de 70% de Vida, aumenta sua Proficiência Elemental em 100 por 6s."
+    }
+  },
+  "passive3": {
+    "name": "Bênção do Presságio Lunar: Corrida pelos Telhados",
+    "description": {
+      "0": "Quando Jahoda está na equipe, aumenta o nível de <strong>Presságio Lunar</strong> da equipe em 1 nível."
+    }
+  },
+  "passive": {
+    "name": "Esperteza dos Becos",
+    "description": {
+      "0": "Quando despachada em uma expedição em Nod-Krai, o tempo consumido é reduzido em 25%"
+    }
+  },
+  "constellation1": {
+    "name": "Mais Uma Garrafa!",
+    "description": {
+      "0": "Quando as <strong>Bolas Miaufinhas</strong> de <tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>Garrafa Secreta Ronron</strong></tooltip> da Habilidade Elemental <strong>Estratagema Impressionante: Plano de Redistribuição de Riqueza</strong> atingem um inimigo, possuem 50% de chance de ricochetear, causando Dano Elemental correspondente contra os inimigos próximos."
+    }
+  },
+  "constellation2": {
+    "name": "Pensamento Rápido da Ladra",
+    "description": {
+      "0": "<strong>Presságio Lunar: Reluzir Cheio</strong>: no Talento de Ascensão <tooltip ns=char_Jahoda_gen baseKey18=passive1><strong>Plano de Recompensas</strong></tooltip>, Jahoda pode registrar secretamente, além do Elemento com maior número de personagens, o Elemento com maior número de personagens em seguida dentre os Tipos Elementais restantes, permitindo com que até dois efeitos Elementais estejam ativos simultaneamente. É necessário desbloquear o Talento de Ascensão \"Plano de Recompensas\" primeiro."
+    }
+  },
+  "constellation3": {
+    "name": "Aposta Desesperada",
+    "description": {
+      "0": "Aumenta o nível do Supremo <strong><tooltip ns=char_Jahoda_gen baseKey18=burst>Dispositivo Secreto: Sete Itens do Caçador</tooltip></strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Frutas Selvagens na Poeira",
+    "description": {
+      "0": "Quando os <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>Coordenadores Felino de Assistência Doméstica</strong></tooltip> do Supremo <strong>Dispositivo Secreto: Sete Itens do Caçador</strong> passarem por Conversão Elemental, regenera 4 de Energia Elemental para Jahoda."
+    }
+  },
+  "constellation5": {
+    "name": "O Maior Tesouro",
+    "description": {
+      "0": "Aumenta o nível da Habilidade Elemental <strong><tooltip ns=char_Jahoda_gen baseKey18=skill>Plano de Redistribuição de Riqueza</tooltip></strong> em 3 níveis. ",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "A Menor Sorte",
+    "description": {
+      "0": "<strong>Presságio Lunar: Reluzir Cheio</strong>: nos 20s depois de a <tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>Garrafa Secreta Ronron</strong></tooltip> da Habilidade Elemental <strong>Estratagema Impressionante: Plano de Redistribuição de Riqueza</strong> encher, aumenta a Taxa CRIT dos personagens de Presságio Lunar próximos em 5% e o Dano CRIT em 40%."
+    }
+  }
+}

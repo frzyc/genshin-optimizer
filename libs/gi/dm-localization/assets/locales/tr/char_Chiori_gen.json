@@ -139,8 +139,8 @@
       "0": "<strong>Hasode Darbesi</strong> ile çağrılan kukla canavar makinası \"Tamoto\"nun Etki Alanı %50 artar.",
       "1": "Buna ek olarak grupta Chiori dışında bir <geo>Toprak</geo> karakteri olması halinde, Hasode Darbesi hareketi tamamlandığında şu etkiler tetiklenir:",
       "2": [
-        "Bir tane daha Tamoto çağrılır. Chiori'nin bu yöntemle çağırdığı veya Toprak Yapılardan gelen yalnızca 1 ek Tamoto aynı anda var olabilir.",
-        "\"Son Dokunuş\" Pasif Yeteneğini tetikler. \"Son Dokunuş\" Pasif Yeteneğinin açılmış olması gerekir."
+        "Bir tane daha Tamoto çağrılır. Chiori'nin bu yöntemle çağırdığı veya Toprak Yapılarından gelen yalnızca 1 ek Tamoto aynı anda var olabilir.",
+        "\"Son Dokunuş\" Yükseltme Yeteneğini tetikler. \"Son Dokunuş\" Yükseltme Yeteneğinin açılmış olması gerekir."
       ]
     }
   },
@@ -161,8 +161,8 @@
   "constellation4": {
     "name": "Terzinin Üç Görgü Kuralı",
     "description": {
-      "0": "\"Terzi İşi\" Pasif Yeteneğinin iki farklı takip etkisinden herhangi biri tetiklendikten sonra 8sn boyunca, mevcut aktif karakterinin Normal, Yüklü veya Havadan Saldırıları yakındaki bir düşmana vurduğunda, isabet alan düşmanın yanına daha basit bir kukla canavar makinası olan \"Kinu\" çağrılır. Bu şekilde her 1 saniyede 1 Kinu çağrılabilir ve \"Terzi İşi\" Pasif Yeteneğinin Anı Yakala veya Terzilik etkileri tetiklenerek en fazla 3 Kinu çağrılabilir. Yukarıdaki etki her 15 saniyede bir defa tetiklenebilir.",
-      "1": "\"Terzi İşi\" Pasif Yeteneğinin açılmış olması gerekir."
+      "0": "\"Terzi İşi\" Yükseltme Yeteneğinin iki farklı takip etkisinden herhangi biri tetiklendikten sonra 8sn boyunca, mevcut aktif karakterinin Normal, Yüklü veya Havadan Saldırıları yakındaki bir düşmana vurduğunda, isabet alan düşmanın yanına daha basit bir kukla canavar makinası olan \"Kinu\" çağrılır. Bu şekilde her 1 saniyede 1 Kinu çağrılabilir ve \"Terzi İşi\" Pasif Yeteneğinin Anı Yakala veya Terzilik etkileri tetiklenerek en fazla 3 Kinu çağrılabilir. Yukarıdaki etki her 15 saniyede bir defa tetiklenebilir.",
+      "1": "\"Terzi İşi\" Yükseltme Yeteneğinin açılmış olması gerekir."
     }
   },
   "constellation5": {
@@ -175,7 +175,7 @@
   "constellation6": {
     "name": "Tek ve Esas Hedef",
     "description": {
-      "0": "\"Terzi İşi\" Pasif Yeteneğinin bir takip etkisi tetiklendiğinde Chiori'nin kendi <strong>Hasode Darbesi</strong> becerisinin Bekleme Süresi 12sn azalır. \"Terzi İşi\" Pasif Yeteneğinin açılmış olması gerekir.",
+      "0": "\"Terzi İşi\" Yükseltme Yeteneğinin bir takip etkisi tetiklendiğinde Chiori'nin kendi <strong>Hasode Darbesi</strong> becerisinin Bekleme Süresi 12sn azalır. \"Terzi İşi\" Yükseltme Yeteneğinin açılmış olması gerekir.",
       "1": "Buna ek olarak, Chiori'nin kendi Normal Saldırılarının verdiği Hasar, Savunmasının %235'i kadar artar."
     }
   }

@@ -139,9 +139,9 @@
     "name": "Graznido ermitaño",
     "description": {
       "0": "Tras efectuar un impulso célico de <strong>Grulla del celaje</strong>, el ATQ de Xianyun aumenta en un 20% durante 15 s.",
-      "1": "Además, los efectos del talento pasivo “Cual Adeptus en su morada” se fortalecen, de manera que, cuando el lucero de bambú de <strong>Estrellas del crepúsculo</strong> tiene cargas de potenciación adéptica, el daño del Ataque Descendente de los personajes en uso cercanos aumenta en una cantidad equivalente al 400% del ATQ de Xianyun. Este daño solo puede aumentar en un máximo de 18 000 pts. de esta manera.",
+      "1": "Además, los efectos del talento de ascensión “Cual Adeptus en su morada” se fortalecen, de manera que, cuando el lucero de bambú de <strong>Estrellas del crepúsculo</strong> tiene cargas de potenciación adéptica, el daño del Ataque Descendente de los personajes en uso cercanos aumenta en una cantidad equivalente al 400% del ATQ de Xianyun. Este daño solo puede aumentar en un máximo de 18 000 pts. de esta manera.",
       "2": "El daño aumentado de cada Ataque Descendente solo puede surtir efecto contra 1 enemigo, y cada personaje solo podrá activar este efecto una vez cada 0.4 s.",
-      "3": "Para activar este efecto, es necesario desbloquear el talento pasivo “Cual Adeptus en su morada”."
+      "3": "Para activar este efecto, es necesario desbloquear el talento de ascensión “Cual Adeptus en su morada”."
     }
   },
   "constellation3": {

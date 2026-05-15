@@ -1,0 +1,163 @@
+{
+  "name": "Aino",
+  "title": "Clinky-Clank Diệu Kỳ",
+  "description": "Nhà phát minh thiên tài của Nod-Krai, thích những loại máy móc thú vị và đồ ngọt.",
+  "constellationName": "Cung Phanh Phanh Hạp",
+  "auto": {
+    "name": "Phương Pháp Tu Sửa Gõ Và Đập",
+    "fields": {
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 3 lần tấn công liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực để xoay kiếm tấn công kẻ địch xung quanh.",
+        "2": "Khi ngừng quay, sẽ bổ một nhát cực mạnh."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Trọng Kích Tuần Hoàn",
+      "4": "Sát Thương Trọng Kích Kết Thúc",
+      "5": "Thể Lực Trọng Kích Tiêu Hao",
+      "6": "Thời Gian Duy Trì Tối Đa",
+      "7": "Sát Thương Khi Đáp",
+      "8": "Sát Thương Khi Đáp Từ Độ Cao Thấp/Cao",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Bàn Tay Kỳ Diệu",
+    "description": {
+      "0": "Ném <strong>Bàn Tay Kỳ Diệu</strong> về phía trước, gây <hydro>Sát Thương Nguyên Tố Thủy</hydro>, đồng thời kéo bản thân về phía trước. Khi kết thúc di chuyển sẽ gây <hydro>Sát Thương Phạm Vi Nguyên Tố Thủy</hydro> cho kẻ địch cạnh bên.",
+      "1": "Khi Nhấn Giữ sẽ thi triển theo cách thức khác.",
+      "2": "<br/>",
+      "3": "<strong>Nhấn Giữ</strong>",
+      "4": "Vào trạng thái nhắm chuẩn để điều chỉnh hướng ném Bàn Tay Kỳ Diệu."
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "CD",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Máy Làm Lạnh Tinh Xảo",
+    "description": {
+      "0": "Ném thiết bị phun nước siêu cấp đặc chế <strong>Vịt Bình Tĩnh</strong>, tạo ra <strong>Vùng Làm Mát Tập Trung</strong>.",
+      "1": "Trong thời gian duy trì, Vịt Bình Tĩnh sẽ bắn đạn nước vào kẻ địch gần đó theo chu kỳ, gây <hydro>Sát Thương Nguyên Tố Thủy</hydro>."
+    },
+    "skillParams": {
+      "0": "Sát Thương Đạn Nước",
+      "1": "Thời Gian Duy Trì",
+      "2": "CD",
+      "3": "Năng Lượng Nguyên Tố",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Vận Hành Mô Đun Hiệu Quả",
+    "description": {
+      "0": "Căn cứ vào <strong>Nguyệt Triệu</strong> của đội, Aino sẽ nhận được hiệu quả cường hóa tương ứng.",
+      "1": "<br/>",
+      "2": "<strong>Nguyệt Triệu - Rực Sáng</strong>: Kỹ Năng Nộ <strong><tooltip ns=char_Aino_gen baseKey18=burst>Máy Làm Lạnh Tinh Xảo</tooltip></strong> được cường hóa: <strong>Vịt Bình Tĩnh</strong> sẽ tăng tần suất bắn đạn nước, gây <hydro>Sát Thương Phạm Vi Nguyên Tố Thủy</hydro> rộng hơn."
+    }
+  },
+  "passive2": {
+    "name": "Tăng Hiệu Suất Kết Cấu",
+    "description": {
+      "0": "Tăng sát thương Kỹ Năng Nộ của Aino, mức tăng dựa trên 50% Tinh Thông Nguyên Tố của Aino."
+    }
+  },
+  "passive3": {
+    "name": "Chúc Phúc Nguyệt Triệu - Tính Giới Hạn Lực",
+    "description": {
+      "0": "Khi Aino trong đội, <strong>Nguyệt Triệu</strong> của đội sẽ tăng 1 cấp."
+    }
+  },
+  "passive": {
+    "name": "Cảm Biến Nhận Dạng Cỡ Nhỏ",
+    "description": {
+      "0": "Hiển thị vị trí <strong>đặc sản khu vực Nod-Krai</strong> trên bản đồ nhỏ.",
+      "1": "Ngoài ra, dường như Aino có thể cải tạo ngoại hình của Vịt Bình Tĩnh bằng cách nào đó..."
+    }
+  },
+  "constellation1": {
+    "name": "Lý Thuyết Cân Bằng Bụi Và Từ Trường",
+    "description": {
+      "0": "Sau khi Aino thi triển Kỹ Năng Nguyên Tố <strong><tooltip ns=char_Aino_gen baseKey18=skill>Bàn Tay Kỳ Diệu</tooltip></strong> hoặc Kỹ Năng Nộ <strong><tooltip ns=char_Aino_gen baseKey18=burst>Máy Làm Lạnh Tinh Xảo</tooltip></strong>, Tinh Thông Nguyên Tố của Aino tăng 80 điểm, Tinh Thông Nguyên Tố của nhân vật khác trong trận gần đó tăng 80 điểm, duy trì 15s.",
+      "1": "<br/>",
+      "2": "Hiệu quả tăng Tinh Thông Nguyên Tố từ Cung Mệnh này sẽ không thể cộng dồn."
+    }
+  },
+  "constellation2": {
+    "name": "Nguyên Lý Truyền Động Vi Sai Bánh Răng",
+    "description": {
+      "0": "Trong thời gian duy trì <strong>Vùng Làm Mát Tập Trung</strong> từ Kỹ Năng Nộ <strong><tooltip ns=char_Aino_gen baseKey18=burst>Máy Làm Lạnh Tinh Xảo</tooltip></strong>, nếu Aino không ra trận, nhân vật ra trận trong đội hiện tại của bản thân khi đánh trúng kẻ địch gần đó, <strong>Vịt Bình Tĩnh</strong> sẽ bắn thêm một viên đạn nước vào kẻ địch đó, gây <hydro>Sát Thương Phạm Vi Nguyên Tố Thủy</hydro> tương đương 25% Tấn Công và 100% Tinh Thông Nguyên Tố của Aino. Hiệu quả này mỗi 5s tối đa kích hoạt một lần, và sát thương này được tính là sát thương Kỹ Năng Nộ."
+    }
+  },
+  "constellation3": {
+    "name": "Nghệ Thuật Bánh Kem Và Sửa Chữa Máy Móc",
+    "description": {
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Aino_gen baseKey18=burst>Máy Làm Lạnh Tinh Xảo</tooltip></strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Bơ, Mèo Và Quy Tắc Cung Cấp Năng Lượng",
+    "description": {
+      "0": "Khi Kỹ Năng Nguyên Tố <strong><tooltip ns=char_Aino_gen baseKey18=skill>Bàn Tay Kỳ Diệu</tooltip></strong> đánh trúng kẻ địch, sẽ hồi phục 10 điểm Năng Lượng Nguyên Tố cho Aino. Mỗi 10s tối đa hồi phục một lần Năng Lượng Nguyên Tố thông qua cách này."
+    }
+  },
+  "constellation5": {
+    "name": "Vòng Xoáy Bất Hủ Của Kim Loại Và Ánh Sáng",
+    "description": {
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Aino_gen baseKey18=skill>Bàn Tay Kỳ Diệu</tooltip></strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Trách Nhiệm Của Người Sáng Tạo Thiên Tài",
+    "description": {
+      "0": "Trong 15s sau khi thi triển Kỹ Năng Nộ <strong><tooltip ns=char_Aino_gen baseKey18=burst>Máy Làm Lạnh Tinh Xảo</tooltip></strong>, nhân vật trong trận hiện tại gần đó tăng 15% sát thương phản ứng Điện Cảm, Sum Suê, Nguyệt-Điện Cảm, Nguyệt-Sum Suê, Nguyệt-Kết Tinh gây ra.",
+      "1": "<strong>Nguyệt Triệu - Rực Sáng</strong>: Sát thương phản ứng nêu trên tăng thêm 20%."
+    }
+  }
+}

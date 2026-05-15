@@ -1,0 +1,190 @@
+{
+  "name": "Lauma",
+  "title": "Sakrallied des Ewigmonds",
+  "description": "Die vom Mondlicht und Wald gesegnete hehre Jungfer, die inmitten der Nachkommen des Frostmonds geborene Hoffnung.",
+  "constellationName": "Cerva Nivea",
+  "auto": {
+    "name": "Wanderung auf der Linnunrata",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 3 Angriffe aus und verursacht <dendro>Dendro-Schaden</dendro>."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Setzt „Geistergestalt“ ein. Verwandelt Lauma in eine Geistergesandte des stillen Waldes, verbraucht Ausdauer und lässt sie bis zu 10 s lang vorstürmen. Erhöht in diesem Zustand Laumas Unterbrechungs-WDS und kann zusätzlich Ausdauer verbrauchen, um bis zu zwei aufeinanderfolgende Sprünge zu machen.",
+        "2": "Beginnt beim Verlassen des Modus Geistergesandte die Abklingphase von „Geistergestalt“, während derer Laumas heftiger Schlag in „Anrufung der Geister“ umgewandelt wird: Verbraucht beim Ausführen eine gewisse Menge Ausdauer und verursacht nach kurzer Aufladezeit im Bereich vor der Figur <dendro>Dendro-Flächenschaden</dendro>."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Konzentriert die Kraft der Pflanzen, schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen <dendro>Dendro-Flächenschaden</dendro>."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "Ausdauerverbrauch des Laufens im Modus Geistergesandte",
+      "4": "Ausdauerverbrauch des Springens im Modus Geistergesandte",
+      "5": "Höchstdauer des Modus Geistergesandte",
+      "6": "Abklingzeit von „Geistergestalt“",
+      "7": "Ausdauerverbrauch von Anrufung der Geister",
+      "8": "SCH von Anrufung der Geister",
+      "9": "SCH beim Fallen",
+      "10": "SCH beim Fallen aus niedriger/großer Höhe",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Runo – Ewiger Schlaf am Karsikko",
+    "description": {
+      "0": "Psalmodiert lautlos eine uralte Hymne und erschafft damit ein <tooltip ns=tooltips_gen baseKey18=11190001 values=[]><strong>Heiligtum des Frostwaldes</strong></tooltip>. Verursacht je nachdem, ob gedrückt oder gedrückt gehalten wird, unterschiedliche Effekte.",
+      "1": "<br/>",
+      "2": "<strong>Drücken</strong>",
+      "3": "Psalmodiert einen Bittgesang zur Jagd und verursacht <dendro>Dendro-Flächenschaden</dendro>.",
+      "4": "<br/>",
+      "5": "<strong>Gedrückt halten</strong>",
+      "6": "Kann ausgelöst werden, wenn mindestens 1 Stapelung <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>Grünender Tau</strong></tooltip> vorhanden ist. Lauma verbraucht den gesamten Grünenden Tau und psalmodiert einen Bittgesang zum ewigen Schlaf, der 1-mal <dendro>Dendro-Flächenschaden</dendro> verursacht und 1-mal <dendro>Dendro-Flächenschaden</dendro>, der als Schaden der Reaktion Mondspross gilt. Verleiht Lauma für jede Stapelung verbrauchten Grünenden Tau eine Stapelung <tooltip ns=tooltips_gen baseKey18=11190002 values=[]><strong>„Mondgesang“</strong></tooltip>. Auf diese Weise können bei jeder Anwendung der Elementarfähigkeit durchs Gedrückthalten bis zu 3 Stapelungen Grünender Tau verbraucht werden.",
+      "7": "<br/>",
+      "8": "Verringert außerdem 10 s lang den <dendro>Dendro-WDS</dendro> sowie den <hydro>Hydro-WDS</hydro> der von Laumas Elementarfähigkeit oder Angriffen des Heiligtums des Frostwaldes getroffenen Gegner."
+    },
+    "skillParams": {
+      "0": "SCH bei Drücken",
+      "1": "SCH Phase 1 bei Gedrückthalten",
+      "2": "SCH Phase 2 bei Gedrückthalten",
+      "3": "SCH von Heiligtum des Frostwaldes",
+      "4": "Dauer von Heiligtum des Frostwaldes",
+      "5": "Dauer von Mondgesang",
+      "6": "Verringerung des Elementar-WDS",
+      "7": "Dauer des verringerten Elementar-WDS",
+      "8": "Abklingzeit",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Runo – Vereint im Monde",
+    "description": {
+      "0": "Lässt die Wünsche der Lebewesen zu Mondlicht werden, das die Erde erhellt. Lauma psalmodiert lautlos einen heiligen Gesang des hohen Nordens und erhält 18 Stapelungen <tooltip ns=tooltips_gen baseKey18=11190003 values=[]><strong>„Aschfahler Bittgesang“</strong></tooltip>.",
+      "1": "Verbraucht außerdem, wenn Lauma ihre Spezialfähigkeit anwendet, während sie über „Mondgesang“ verfügt, oder wenn sie innerhalb von 15 s nach Anwenden ihrer Spezialfähigkeit „Mondgesang“ erhält, alle Stapelungen von <tooltip ns=tooltips_gen baseKey18=11190002 values=[]><strong>Mondgesang</strong></tooltip> und erhält für jede verbrauchte Stapelung 6 Stapelungen „Aschfahler Bittgesang“. Dieser Effekt kann beim Auslösen ihrer Spezialfähigkeit sowie innerhalb von 15 s nach dem Auslösen ihrer Spezialfähigkeit nur einmal ausgelöst werden.",
+      "2": "<br/>",
+      "3": "<strong>Aschfahler Bittgesang</strong>",
+      "4": "Verbraucht, wenn ein Truppenmitglied in der Nähe die Reaktionen Sprießen, Supraspross, Flammenspross oder Mondspross auslöst, 1 Stapelung von „Aschfahler Bittgesang“ und erhöht damit den verursachten Schaden basierend auf Laumas Elementarkunde. Verbraucht, wenn der oben beschriebene Schaden gleichzeitig mehrere Gegner trifft, so viele Stapelungen „Aschfahler Bittgesang“, wie Gegner getroffen werden.",
+      "5": "Die Wirkungsdauer jeder Stapelung von „Aschfahler Bittgesang“ wird unabhängig voneinander berechnet."
+    },
+    "skillParams": {
+      "0": "Durch Spezialfähigkeit erhaltene Stapelungen von Aschfahler Bittgesang",
+      "1": "Aschfahler Bittgesang, umgewandelt von Mondgesang",
+      "2": "SCH-Bonus für Sprießen, Supraspross und Flammenspross",
+      "3": "SCH-Bonus für Mondspross",
+      "4": "Dauer von „Aschfahler Bittgesang“",
+      "5": "Abklingzeit",
+      "6": "Elementarenergie",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Licht für die Frostnacht",
+    "description": {
+      "0": "Erzeugt innerhalb von 20 s nach Anwenden von Laumas Elementarfähigkeit <strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo – Ewiger Schlaf am Karsikko</tooltip></strong> basierend auf dem <strong>Mondomen</strong> in der Truppe unterschiedliche Verstärkungseffekte. Durch unterschiedliche Mondomenstufen bereitgestellte Verstärkungseffekte sind nicht stapelbar.",
+      "1": "<br/>",
+      "2": "<strong>Mondomen – Anfänglicher Glanz</strong>",
+      "3": "Beim Auslösen der Reaktionen „Sprießen“, „Supraspross“ und „Flammenspross“ durch alle Truppenmitglieder in der Nähe können kritische Treffer verursacht werden, wobei die KT auf 15 % und der KSCH auf 100 % festgelegt sind. Die KT-Rate dieses Effekts ist mit der KT-Rate ähnlicher Effekte stapelbar, die den entsprechenden Elementarreaktionen kritische Treffer ermöglichen.",
+      "4": "<br/>",
+      "5": "<strong>Mondomen – Reifer Glanz</strong>",
+      "6": "Erhöht die KT des Schadens der Reaktion „Mondspross“ durch alle Truppenmitglieder in der Nähe um 10 % und den KSCH um 20 %."
+    }
+  },
+  "passive2": {
+    "name": "Reinheit für die Quelle",
+    "description": {
+      "0": "Verleiht Lauma für jeden Punkt Elementarkunde, den sie besitzt, folgende Boni:",
+      "1": [
+        " Erhöht den durch die Elementarfähigkeit verursachten Schaden um 0,04 %. Die maximale SCH-Erhöhung auf diese Weise liegt bei 32 %.",
+        " Verkürzt die Abklingzeit des heftigen Schlags <strong>„Geistergestalt“</strong> um 0,02 %. Die maximale Verkürzung der Abklingzeit der „Geistergestalt“ auf diese Weise liegt bei 20 %."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Mondomen-Segen – Gunst der tausend Melodien",
+    "description": {
+      "0": "Wandelt, wenn eine Figur in der Truppe die Reaktion Sprießen auslöst, diese in die Reaktion Mondspross um, wobei der Basis-SCH der Reaktion Mondspross auf der Grundlage von Laumas Elementarkunde erhöht wird: Erhöht für jeden Punkt Elementarkunde den Basis-SCH der Reaktion Mondspross um 0,0175 %. Auf diese Weise kann der Schaden um bis zu 14 % erhöht werden.",
+      "1": "<br/>",
+      "2": "Erhöht zudem die Stufe vom <strong>Mondomen</strong> der Truppe um 1, wenn sich Lauma in der Truppe befindet."
+    }
+  },
+  "passive": {
+    "name": "Gebete für den Wald",
+    "description": {
+      "0": "Zeigt alle <strong>Besonderheiten von Nod-Krai</strong> in der Nähe auf der Minikarte an.",
+      "1": "Außerdem scheint Lauma eine besondere Verbindung zu einigen kleinen Tieren zu haben, die von Kuuvahki beeinflusst sind ..."
+    }
+  },
+  "constellation1": {
+    "name": "„O Lippen, webt mir Lieder und Psalmen“",
+    "description": {
+      "0": "Verleiht Lauma nach dem Anwenden ihrer Elementarfähigkeit <strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo – Ewiger Schlaf am Karsikko</tooltip></strong> oder ihrer Spezialfähigkeit <strong><tooltip ns=char_Lauma_gen baseKey18=burst>Runo – Vereint im Monde</tooltip></strong> 20 s lang „Fäden des Lebens“.",
+      "1": "Stellt während der Dauer, wenn ein Truppenmitglied in der Nähe die Reaktion „Mondspross“ auslöst, den aktuellen Figuren in der Nähe LP in Höhe von 500 % von Laumas Elementarkunde wieder her, 1,9 s Abklingzeit.",
+      "2": "Verringert zudem Laumas Ausdauerverbrauch für den Modus Geistergesandte um 40 % und verlängert die Dauer um 5 s."
+    }
+  },
+  "constellation2": {
+    "name": "„Webt Warnungen und Erzählung des Nordens“",
+    "description": {
+      "0": "Verstärkt die Spezialfähigkeit <strong><tooltip ns=char_Lauma_gen baseKey18=burst>Runo – Vereint im Monde</tooltip></strong>: ",
+      "1": [
+        " Verstärkt den Effekt <tooltip ns=tooltips_gen baseKey18=11190003 values=[]><strong>Aschfahler Bittgesang</strong></tooltip>: Erhöht zusätzlich den von allen Truppenmitgliedern in der Nähe durch die Reaktionen „Sprießen“, „Supraspross“ und „Flammenspross“ verursachten Schaden um 500 % von Laumas Elementarkunde. Erhöht zusätzlich den von allen Truppenmitgliedern in der Nähe durch die Reaktion „Mondspross“ verursachten Schaden um 400 % von Laumas Elementarkunde."
+      ],
+      "2": "<br/>",
+      "3": "<strong>Mondomen – Reifer Glanz</strong>: Erhöht den Schaden der von allen Truppenmitgliedern in der Nähe ausgelösten Reaktion „Mondspross“ um 40 %."
+    }
+  },
+  "constellation3": {
+    "name": "„Sei nicht gierig nach den Pfaden der listigen Füchse“",
+    "description": {
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong><tooltip ns=char_Lauma_gen baseKey18=burst>Runo – Vereint im Monde</tooltip></strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "„Sei nicht gierig nach der Macht des großen Bären“",
+    "description": {
+      "0": "Stellt Lauma, wenn Angriffe des durch ihre Elementarfähigkeit <strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo – Ewiger Schlaf am Karsikko</tooltip></strong> beschworenen <tooltip ns=tooltips_gen baseKey18=11190001 values=[]><strong>Heiligtums des Frostwaldes</strong></tooltip> einen Gegner treffen, 4 Punkte Elementarenergie wieder her; 5 s Abklingzeit."
+    }
+  },
+  "constellation5": {
+    "name": "„Wenn ich die Zeugin der Wahrheit werden kann“",
+    "description": {
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo – Ewiger Schlaf am Karsikko</tooltip></strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "„Blut und Tränen opfere ich dem Mond“",
+    "description": {
+      "0": "Verursacht, wenn <tooltip ns=tooltips_gen baseKey18=11190001 values=[]><strong>Heiligtum des Frostwaldes</strong></tooltip> Gegner angreift, einmal zusätzlich <dendro>Dendro-Flächenschaden</dendro>, der als Schaden der Reaktion Mondspross gilt, in Höhe von 185 % von Laumas Elementarkunde, ohne dabei <tooltip ns=tooltips_gen baseKey18=11190003 values=[]><strong>„Aschfahler Bittgesang“</strong></tooltip> zu verbrauchen. Verleiht Lauma stattdessen 2 Stapelungen von „Aschfahler Bittgesang“ und aktualisiert die Wirkungsdauer der auf diese Weise erhaltenen Stapelungen von „Aschfahler Bittgesang“.",
+      "1": "Während der Wirkungsdauer eines einzelnen Heiligtums des Frostwaldes kann dieser Effekt höchstens 8-mal ausgelöst werden. Beim Anwenden der Elementarfähigkeit <strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo – Ewiger Schlaf am Karsikko</tooltip></strong> wird „Aschfahler Bittgesang“ entfernt, der auf diese Weise erhalten wurde.",
+      "2": "<br/>",
+      "3": "Verbraucht, wenn Lauma „Aschfahler Bittgesang“ besitzt, beim Anwenden von Laumas Standardangriff außerdem 1 Stapelung von „Aschfahler Bittgesang“, wodurch dieser Standardangriff <dendro>Dendro-Schaden</dendro> in Höhe von 150 % von Laumas Elementarkunde verursacht. Dieser Schaden gilt als Schaden der Reaktion Mondspross.",
+      "4": "<br/>",
+      "5": "<strong>Mondomen – Reifer Glanz</strong>: <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Steigert</strong></tooltip> den von allen Truppenmitgliedern in der Nähe mit der Reaktion Mondspross verursachten Schaden um 25 %."
+    }
+  }
+}

@@ -6,16 +6,22 @@
   },
   "as": {
     "title": "AdeptiScanner",
-    "p1": "Escanea todos tus artefactos en el inventario. Tiene un modo de escaneo manual.",
-    "p2": "Este escáner también puede ser configurado para nuevos artefactos en versiones nuevas del juego sin necesidad de una actualización."
+    "p1": "Escanea todos tus artefactos en el inventario. Tiene un modo de escaneo manual."
   },
   "goodeng": "Este escáner solamente escanea en inglés y exporta al formato GOOD.",
+  "tosWarn": "Como cualquier herramienta que interactúe indirectamente con el juego, aunque su uso sea prácticamente indetectable, <1>todavía podría haber riesgo al usarlas.</1> Se recomienda discreción al usuario.",
   "tags": {
     "pc": "PC",
     "mobile": "Móvil",
     "ps": "PlayStation",
+    "gameMani": "Control Automático",
     "materials": "Materiales",
     "characters": "Personajes"
+  },
+  "nb": {
+    "title": "Artiscan",
+    "p1": "Este escáner basado en la web puede capturar tu ventana del juego, escanear desde una captura de pantalla o escanear desde un video. La captura de pantalla/video puede ser a pantalla completa y no necesita ser recortada.",
+    "p2": "Los dispositivos móviles/PlayStation solo pueden ser escaneados desde capturas de pantalla o videos."
   },
   "seelieme": "Este escáner también puede escanear materiales para <1>Seelie.me</1>."
 }

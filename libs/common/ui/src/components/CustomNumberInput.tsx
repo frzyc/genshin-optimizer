@@ -1,4 +1,3 @@
-'use client'
 import type { ButtonProps, InputProps } from '@mui/material'
 import { Button, InputBase, styled } from '@mui/material'
 import type { ChangeEvent, KeyboardEvent } from 'react'

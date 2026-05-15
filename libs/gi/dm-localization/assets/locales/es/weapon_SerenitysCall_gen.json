@@ -1,0 +1,24 @@
+{
+  "name": "Silbido Melifluo",
+  "description": {
+    "0": "Una espada de metal que emite un melancólico silbido al blandirse."
+  },
+  "passiveName": "Silencio profundo",
+  "passiveDescription": {
+    "0": {
+      "0": "Tras causar una Reacción Elemental, la Vida Máx. aumenta en un <cryo>16%</cryo> durante 12 s. Con “presagio lunar: resplandor ascendente”, la Vida Máx. otorgada por este efecto aumenta en un <cryo>16%</cryo> adicional. Este efecto se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "1": {
+      "0": "Tras causar una Reacción Elemental, la Vida Máx. aumenta en un <cryo>20%</cryo> durante 12 s. Con “presagio lunar: resplandor ascendente”, la Vida Máx. otorgada por este efecto aumenta en un <cryo>20%</cryo> adicional. Este efecto se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "2": {
+      "0": "Tras causar una Reacción Elemental, la Vida Máx. aumenta en un <cryo>24%</cryo> durante 12 s. Con “presagio lunar: resplandor ascendente”, la Vida Máx. otorgada por este efecto aumenta en un <cryo>24%</cryo> adicional. Este efecto se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "3": {
+      "0": "Tras causar una Reacción Elemental, la Vida Máx. aumenta en un <cryo>28%</cryo> durante 12 s. Con “presagio lunar: resplandor ascendente”, la Vida Máx. otorgada por este efecto aumenta en un <cryo>28%</cryo> adicional. Este efecto se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "4": {
+      "0": "Tras causar una Reacción Elemental, la Vida Máx. aumenta en un <cryo>32%</cryo> durante 12 s. Con “presagio lunar: resplandor ascendente”, la Vida Máx. otorgada por este efecto aumenta en un <cryo>32%</cryo> adicional. Este efecto se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    }
+  }
+}

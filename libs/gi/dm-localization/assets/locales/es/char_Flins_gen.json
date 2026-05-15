@@ -1,0 +1,181 @@
+{
+  "name": "Flins",
+  "title": "La Sombra de las Luces Engañosas",
+  "description": "Un Lamparero de Nod Krai que vigila el faro y el cementerio de una pequeña isla del norte, así como un misterioso caballero muy culto y refinado.",
+  "constellationName": "Laterna Vigilis",
+  "auto": {
+    "name": "Demonilanza pocztowy",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 5 ataques rápidos con lanza."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante para arrojar su lanza hacia delante."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de 5.º golpe",
+      "5": "Daño de ATQ Cargado",
+      "6": "Coste de Aguante de ATQ Cargado",
+      "7": "Daño de Caída",
+      "8": "Daño de impacto de caída baja/alta",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Ley ancestral: Luz arcana",
+    "description": {
+      "0": "Flins invoca el antiguo poder de su lámpara para entrar en el modo de <strong>llamas manifiestas</strong>, el cual tiene las siguientes características:",
+      "1": [
+        "El daño de los Ataques Normales y Cargados de Flins se convierte en <electro>Daño Electro</electro>, el cual no puede sustituirse imbuyéndose de otro elemento, y tampoco podrá realizar Ataques Descendentes.",
+        "Aumenta la RES a interrupción de Flins.",
+        "La Habilidad Elemental, <strong>Ley ancestral: Luz arcana</strong>, se convierte en la Habilidad Elemental especial <strong>Electrolanza del Reino del Norte</strong>."
+      ],
+      "2": "<br/>",
+      "3": "<strong>Electrolanza del Reino del Norte</strong>",
+      "4": "Flins invoca frente a sí mismo una ráfaga de lanzas que inflige <electro>Daño Electro en el AdE</electro>, y que convierte durante 6 s su Habilidad Definitiva, <strong>Rito arcaico: Visita noctívaga</strong>, en la Habilidad Definitiva especial <tooltip ns=tooltips_gen baseKey18=11200001 values=[]><strong>Sinfonía del trueno</strong></tooltip>.",
+      "5": "El TdE base de <strong>Electrolanza del Reino del Norte</strong> es de 6 s, y no puede ser afectado por otros efectos."
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de 5.º golpe",
+      "5": "Daño de ATQ Cargado",
+      "6": "Daño de Electrolanza del Reino del Norte",
+      "7": "TdE de Electrolanza del Reino del Norte",
+      "8": "Duración de llamas manifiestas",
+      "9": "TdE de habilidad",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Rito arcaico: Visita noctívaga",
+    "description": {
+      "0": "Flins libera el verdadero poder de la lámpara para infligir <electro>Daño Electro en el AdE</electro> y, tras un breve lapso de tiempo, realiza 2 golpes intermedios y 1 golpe final que infligen <electro>Daño Electro en el AdE</electro> considerado como daño de Electrocargado Lunar.",
+      "1": "<strong>Presagio lunar: resplandor ascendente</strong>",
+      "2": "Fortalece esta habilidad, de manera que, si hay alguna nube de tormenta en las cercanías, inflige 2 golpes intermedios más de <electro>Daño Electro en el AdE</electro> considerado como daño de Electrocargado Lunar.",
+      "3": "<br/>",
+      "4": "Durante 6 s después de usar la Habilidad Elemental especial, <strong>Electrolanza del Reino del Norte</strong>, la Habilidad Definitiva de Flins, <strong>Rito arcaico: Visita noctívaga</strong>, se sustituye por la Habilidad Definitiva especial <strong>Sinfonía del trueno</strong>.",
+      "5": "<br/>",
+      "6": "<strong>Sinfonía del trueno</strong>",
+      "7": "Gasta menos Energía Elemental para usar la Habilidad Definitiva especial. Flins inflige un golpe de <electro>Daño Electro en el AdE</electro> considerado como daño de Electrocargado Lunar.",
+      "8": "<strong>Presagio lunar: resplandor ascendente</strong>",
+      "9": "Fortalece esta habilidad, de manera que, si hay alguna nube de tormenta en las cercanías, inflige 1 golpe más de <electro>Daño Electro en el AdE</electro> considerado como daño de Electrocargado Lunar."
+    },
+    "skillParams": {
+      "0": "Daño inicial de habilidad",
+      "1": "Daño de golpe intermedio de Electrocargado Lunar",
+      "2": "Daño de golpe final de Electrocargado Lunar",
+      "3": "Energía Elemental",
+      "4": "TdE",
+      "5": "Daño de Sinfonía del trueno",
+      "6": "Daño adicional de Sinfonía del trueno",
+      "7": "Energía Elemental de Sinfonía del trueno",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Sinfonía del invierno",
+    "description": {
+      "0": "Flins obtiene el fortalecimiento correspondiente según el <strong>presagio lunar</strong> del equipo.",
+      "1": "<br/>",
+      "2": "<strong>Presagio lunar: resplandor ascendente</strong>",
+      "3": "Aumenta en un 20% el daño de la reacción de Electrocargado Lunar de Flins."
+    }
+  },
+  "passive2": {
+    "name": "Susurro de las llamas",
+    "description": {
+      "0": "La Maestría Elemental de Flins aumenta en una cantidad equivalente al 8% de su ATQ. La Maestría Elemental solo puede aumentar en un máximo de 160 pts. de esta manera."
+    }
+  },
+  "passive3": {
+    "name": "Bendición presagiolunar: Secretos del viejo mundo",
+    "description": {
+      "0": "Cuando un personaje del equipo cause una reacción de Electrocargado, esta se transformará en una reacción de Electrocargado Lunar cuyo daño base aumentará en un 0.7% por cada 100 pts. de ATQ que tenga Flins. Como máximo, dicho daño puede aumentar en un 14% de esta manera.",
+      "1": "<br/>",
+      "2": "Además, cuando Flins esté en el equipo, el nivel de <strong>presagio lunar</strong> de los personajes aumentará en 1."
+    }
+  },
+  "passive": {
+    "name": "Luz en la oscuridad",
+    "description": {
+      "0": "Muestra la ubicación de los <strong>objetos típicos de Nod Krai</strong> cercanos en el minimapa.",
+      "1": "Además, parece que Flins es capaz de entender los susurros de la Cacería salvaje..."
+    }
+  },
+  "constellation1": {
+    "name": "Aparta el velo de las nieves",
+    "description": {
+      "0": "El TdE base de la Habilidad Elemental especial, <strong>Electrolanza del Reino del Norte</strong>, se reduce a 4 s.",
+      "1": "Además, cuando un personaje del equipo causa una reacción de Electrocargado Lunar, Flins recupera 8 pts. de Energía Elemental. Este efecto solo se puede activar una vez cada 5.5 s."
+    }
+  },
+  "constellation2": {
+    "name": "El muro del diablo",
+    "description": {
+      "0": "Durante 6 s después de usar la Habilidad Elemental especial, <strong>Electrolanza del Reino del Norte</strong>, el siguiente Ataque Normal de Flins que golpee a un enemigo infligirá <electro>Daño Electro en el AdE</electro> adicional en una cantidad equivalente al 50% del ATQ de Flins. Este daño se considera daño de Electrocargado Lunar.",
+      "1": "<strong>Presagio lunar: resplandor ascendente</strong>",
+      "2": "Cuando Flins está en uso y golpea a un enemigo con un ataque <electro>Electro</electro>, la <electro>RES Electro</electro> de dicho enemigo se reduce en un 25% durante 7 s."
+    }
+  },
+  "constellation3": {
+    "name": "Extraños en la noche",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <tooltip ns=char_Flins_gen baseKey18=burst><strong>Rito arcaico: Visita noctívaga</strong></tooltip> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Una noche en el Monte Pelado",
+    "description": {
+      "0": "El ATQ de Flins aumenta en un 20%.",
+      "1": "Además, fortalece el talento de ascensión <tooltip ns=char_Flins_gen baseKey18=passive2><strong>Susurro de las llamas</strong></tooltip>, de manera que la Maestría Elemental de Flins aumenta en una cantidad equivalente al 10% de su ATQ. La Maestría Elemental solo puede aumentar en un máximo de 220 pts. de esta manera."
+    }
+  },
+  "constellation5": {
+    "name": "La sombra exiliada",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <tooltip ns=char_Flins_gen baseKey18=skill><strong>Ley ancestral: Luz arcana</strong></tooltip> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Cantos y danzas de la muerte",
+    "description": {
+      "0": "El daño que inflige Flins a los enemigos con la reacción de Electrocargado Lunar <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>asciende</strong></tooltip> en un 35%.",
+      "1": "<strong>Presagio lunar: resplandor ascendente</strong>",
+      "2": "El daño que infligen todos los personajes cercanos del equipo a los enemigos con la reacción de Electrocargado Lunar <strong>asciende</strong> en un 10%."
+    }
+  }
+}

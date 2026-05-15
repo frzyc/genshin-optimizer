@@ -1,16 +1,10 @@
-import {
-  cmpEq,
-  cmpGE,
-  prod,
-  subscript,
-  sum,
-} from '@genshin-optimizer/pando/engine'
+import { cmpGE, prod, subscript, sum } from '@genshin-optimizer/pando/engine'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
+import { isStunned } from '../../common/enemy'
 import {
   allBoolConditionals,
   allNumConditionals,
-  enemy,
   own,
   ownBuff,
   percent,
@@ -199,7 +193,7 @@ const sheet = register(
         3,
         sum(
           dm.ability.fire_dmg_,
-          cmpEq(enemy.common.isStunned, 1, dm.ability.fire_dmg_additional)
+          isStunned.ifOn(dm.ability.fire_dmg_additional)
         )
       )
     )

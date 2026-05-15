@@ -154,17 +154,17 @@
   "constellation1": {
     "name": "Munição Carregada, Roleta Engatilhada",
     "description": {
-      "0": "Quando desencadear a Conversão Espiritual do Talento Passivo \"Truque do Projétil\", o segundo <strong>Projétil Caçador de Sombras</strong> adicional será convertido em <strong>Projétil Caçador de Sombras Brilhantes</strong>.",
+      "0": "Quando desencadear a Conversão Espiritual do Talento de Ascensão \"Truque do Projétil\", o segundo <strong>Projétil Caçador de Sombras</strong> adicional será convertido em <strong>Projétil Caçador de Sombras Brilhantes</strong>.",
       "1": "Aumenta a chance de desencadear \"Conversão Espiritual\": se houver personagens na equipe com Tipos Elementais com as condições de Conversão Elemental correspondentes, aumenta a chance de Conversão Espiritual para 33.3%, podendo aumentar em até 100%.",
       "2": "<br/>",
-      "3": "É necessário ter desbloqueado o Talento Passivo \"Truque do Projétil\".",
+      "3": "É necessário ter desbloqueado o Talento de Ascensão \"Truque do Projétil\".",
       "4": "Além disso, quando não está ativo em batalha, o estado Bênção do Espírito da Noite de Chasca consumirá 30% a menos de pontos de Espírito da Noite e de Flogisto."
     }
   },
   "constellation2": {
     "name": "Fumaça Flamejante do Disparo",
     "description": {
-      "0": "Quando Chasca se torna a personagem ativa no campo de batalha, ela obtém um acúmulo de \"Espírito da Sombra\" do Talento Passivo \"Truque do Projétil\". É necessário ter desbloqueado o Talento Passivo \"Truque do Projétil\" para esse efeito.",
+      "0": "Quando Chasca se torna a personagem ativa no campo de batalha, ela obtém um acúmulo de \"Espírito da Sombra\" do Talento de Ascensão \"Truque do Projétil\". É necessário ter desbloqueado o Talento de Ascensão \"Truque do Projétil\" para esse efeito.",
       "1": "Além disso, ao lançar os <strong>Disparos Múltiplos</strong> da Habilidade Elemental <strong>Rédeas Espirituais, Caça Sombria</strong>, quando os <strong>Projéteis Caçadores de Sombras Brilhantes</strong> de Chasca atingirem os inimigos, causarão 400% do ATQ de Chasca como Dano Elemental em AdE do Elemento correspondente de <strong>Projéteis Caçadores de Sombras Brilhantes</strong>, esse Dano é considerado Dano de Ataque Carregado. Esse efeito pode ser desencadeado uma vez por <strong>Disparos Múltiplos</strong> lançados."
     }
   },
@@ -192,9 +192,9 @@
   "constellation6": {
     "name": "Batalha Gloriosa Decisiva",
     "description": {
-      "0": "O tempo necessário de carregamento do <strong>Disparo Múltiplo</strong> de Chasca é reduzido, e depois de desencadear a Conversão Espiritual do Talento Passivo \"Truque do Projétil\", Chasca obtém o estado \"Ataque Predestinado\", fazendo com que nos próximos 3s, o próximo<strong>Disparo Múltiplo</strong> da próxima <strong>Rédeas Espirituais, Caça Sombria</strong> lançada carregue completamente imediatamente, e aumentando o Dano CRIT do <strong>Projétil Caçador de Sombras</strong> e do <strong>Projétil Caçador de Sombras Brilhantes</strong> do <strong>Disparo Múltiplo</strong> em 120%. 1 efeito de \"Ataque Predestinado\" pode ser obtido a cada 3s.",
+      "0": "O tempo necessário de carregamento do <strong>Disparo Múltiplo</strong> de Chasca é reduzido, e depois de desencadear a Conversão Espiritual do Talento de Ascensão \"Truque do Projétil\", Chasca obtém o estado \"Ataque Predestinado\", fazendo com que nos próximos 3s, o próximo<strong>Disparo Múltiplo</strong> da próxima <strong>Rédeas Espirituais, Caça Sombria</strong> lançada carregue completamente imediatamente, e aumentando o Dano CRIT do <strong>Projétil Caçador de Sombras</strong> e do <strong>Projétil Caçador de Sombras Brilhantes</strong> do <strong>Disparo Múltiplo</strong> em 120%. 1 efeito de \"Ataque Predestinado\" pode ser obtido a cada 3s.",
       "1": "<br/>",
-      "2": "Esse efeito requer ter desbloqueado o Talento Passivo \"Truque do Projétil\"."
+      "2": "Esse efeito requer ter desbloqueado o Talento de Ascensão \"Truque do Projétil\"."
     }
   }
 }

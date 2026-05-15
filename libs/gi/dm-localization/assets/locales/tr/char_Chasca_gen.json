@@ -154,10 +154,10 @@
   "constellation1": {
     "name": "Silindir, Huzursuz Rulet",
     "description": {
-      "0": "\"Mermi Numarası\" Pasif Yeteneğinin \"Ruh Bağlama Dönüşümü\" tetiklendiğinde silindire yüklenen 2. <strong>Gölge Avı Mermisi</strong> bir <strong>Parıltılı Gölge Avı Mermisine</strong> dönüşür.",
+      "0": "\"Mermi Numarası\" Yükseltme Yeteneğinin \"Ruh Bağlama Dönüşümü\" tetiklendiğinde silindire yüklenen 2. <strong>Gölge Avı Mermisi</strong> bir <strong>Parıltılı Gölge Avı Mermisine</strong> dönüşür.",
       "1": "\"Ruh Bağlama Dönüşümü\"nün tetiklenme olasılığı artar. Eğer Element Dönüşümü Türü şartlarını karşılayan grup üyeleri varsa \"Ruh Bağlama Dönüşümü\"nün tetiklenme olasılığı %33,3 artar, en fazla %100 olur.",
       "2": "<br/>",
-      "3": "\"Mermi Numarası\" Pasif Yeteneğinin açılmış olması gerekir.",
+      "3": "\"Mermi Numarası\" Yükseltme Yeteneğinin açılmış olması gerekir.",
       "4": "<br/>",
       "5": "Ayrıca Chasca savaşta değilken Gece Ruhunun Lütfu sırasındaki Gece Ruhu puanı ve Filojiston tüketimi %30 azalır."
     }
@@ -165,7 +165,7 @@
   "constellation2": {
     "name": "Namlu, Kavuran Duman",
     "description": {
-      "0": "Chasca alana çıktığında \"Mermi Numarası\" Pasif Yeteneğinden 1 kademe \"Parlak Gölge Ruhu\" elde eder. \"Mermi Numarası\" Pasif Yeteneğinin açılmış olması gerekir.",
+      "0": "Chasca alana çıktığında \"Mermi Numarası\" Yükseltme Yeteneğinden 1 kademe \"Parlak Gölge Ruhu\" elde eder. \"Mermi Numarası\" Yükseltme Yeteneğinin açılmış olması gerekir.",
       "1": "Ayrıca, <strong>Ruh Dizginleri, Gölge Avı</strong> Becerisinin <strong>Çoklu Hedefleme</strong> ile ateşlenen <strong>Parıltılı Gölge Avı Mermileri</strong> düşmanlara isabet ettiğinde, bu mermilerin Element Türünde Chasca'nın Saldırısının %400'ü kadar Alan Hasarı verir. Bu Hasar, Yüklü Saldırı Hasarı sayılır. Bu etki Chasca her <strong>Çoklu Hedefleme</strong> kullandığında bir defa tetiklenebilir."
     }
   },
@@ -193,9 +193,9 @@
   "constellation6": {
     "name": "Yüzleşme, Savaşın İhtişamı",
     "description": {
-      "0": "Chasca'nın <strong>Çoklu Hedeflemesinin</strong> yüklenme süresi azalır ve \"Mermi Numarası\" Pasif Yeteneğinin \"Ruh Bağlama Dönüşümü\" tetiklendikten sonra Chasca, \"Ölümcül Darbe\" durumu kazanır: Sonraki 3 saniye boyunca Chasca'nın <strong>Ruh Dizginleri, Gölge Avı</strong> Becerisinin <strong>Çoklu Hedeflemesini</strong> kullandığı bir sonraki sefer mermiler hemen yüklenir ve <strong>Çoklu Hedeflemesinin</strong> <strong>Gölge Avı Mermileri</strong> ile <strong>Parıltılı Gölge Avı Mermilerinin</strong> o seferlik Kritik Hasarı %120 artar. Her 3 saniyede 1 \"Ölümcül Darbe\" etkisi kazanılabilir.",
+      "0": "Chasca'nın <strong>Çoklu Hedeflemesinin</strong> yüklenme süresi azalır ve \"Mermi Numarası\" Yükseltme Yeteneğinin \"Ruh Bağlama Dönüşümü\" tetiklendikten sonra Chasca, \"Ölümcül Darbe\" durumu kazanır: Sonraki 3 saniye boyunca Chasca'nın <strong>Ruh Dizginleri, Gölge Avı</strong> Becerisinin <strong>Çoklu Hedeflemesini</strong> kullandığı bir sonraki sefer mermiler hemen yüklenir ve <strong>Çoklu Hedeflemesinin</strong> <strong>Gölge Avı Mermileri</strong> ile <strong>Parıltılı Gölge Avı Mermilerinin</strong> o seferlik Kritik Hasarı %120 artar. Her 3 saniyede 1 \"Ölümcül Darbe\" etkisi kazanılabilir.",
       "1": "<br/>",
-      "2": "Bu etkiyi elde etmek için \"Mermi Numarası\" Pasif Yeteneğinin açılmış olması gerekir."
+      "2": "Bu etkiyi elde etmek için \"Mermi Numarası\" Yükseltme Yeteneğinin açılmış olması gerekir."
     }
   }
 }

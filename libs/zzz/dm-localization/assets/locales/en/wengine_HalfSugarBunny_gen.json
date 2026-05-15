@@ -1,0 +1,18 @@
+{
+  "name": "Half-Sugar Bunny",
+  "desc": {
+    "0": "100% cold, and 120% sweet. The maker says it's his best custom W-Engine of the year. \"So, Miss Zhao, what do you think? I've named this one 'Full-Sugar Bunny.' Fits your style, right? Huh? Change it to Half-Sugar? But why...? Ah, no no, you're the client, you get to name it however you like!\"",
+    "1": "",
+    "2": "<ct color=#959595>\"Equivalent exchange means finding a balance — not a bit more, not a bit less.\" —That was Xiao'Zhao's answer after Dialyn asked her several times, \"What's wrong with full-sugar?\"</ct>"
+  },
+  "desc2": "Equip to increase Defense Agents' combat capabilities",
+  "desc3": "Not too sweet, and not too cold.",
+  "phase": "Fragile Sweetness",
+  "phaseDescs": [
+    "The equipper's Energy Regen increases by <ct color=#2BAD00>0.46</ct>/s. All squad members gain <ct color=#2BAD00>10%</ct> ATK and <ct color=#2BAD00>10%</ct> Max HP. Only one instance of this effect can exist in the same squad. When the equipper activates or extends an <ct color=#FFFFFF>Ether Veil</ct>, all squad members gain <ct color=#2BAD00>30%</ct> CRIT DMG for 60s. Repeated triggers reset the duration.",
+    "The equipper's Energy Regen increases by <ct color=#2BAD00>0.53</ct>/s. All squad members gain <ct color=#2BAD00>11.5%</ct> ATK and <ct color=#2BAD00>11.5%</ct> Max HP. Only one instance of this effect can exist in the same squad. When the equipper activates or extends an <ct color=#FFFFFF>Ether Veil</ct>, all squad members gain <ct color=#2BAD00>34.5%</ct> CRIT DMG for 60s. Repeated triggers reset the duration.",
+    "The equipper's Energy Regen increases by <ct color=#2BAD00>0.6</ct>/s. All squad members gain <ct color=#2BAD00>13%</ct> ATK and <ct color=#2BAD00>13%</ct> Max HP. Only one instance of this effect can exist in the same squad. When the equipper activates or extends an <ct color=#FFFFFF>Ether Veil</ct>, all squad members gain <ct color=#2BAD00>39%</ct> CRIT DMG for 60s. Repeated triggers reset the duration.",
+    "The equipper's Energy Regen increases by <ct color=#2BAD00>0.67</ct>/s. All squad members gain <ct color=#2BAD00>14.5%</ct> ATK and <ct color=#2BAD00>14.5%</ct> Max HP. Only one instance of this effect can exist in the same squad. When the equipper activates or extends an <ct color=#FFFFFF>Ether Veil</ct>, all squad members gain <ct color=#2BAD00>43.5%</ct> CRIT DMG for 60s. Repeated triggers reset the duration.",
+    "The equipper's Energy Regen increases by <ct color=#2BAD00>0.74</ct>/s. All squad members gain <ct color=#2BAD00>16%</ct> ATK and <ct color=#2BAD00>16%</ct> Max HP. Only one instance of this effect can exist in the same squad. When the equipper activates or extends an <ct color=#FFFFFF>Ether Veil</ct>, all squad members gain <ct color=#2BAD00>48%</ct> CRIT DMG for 60s. Repeated triggers reset the duration."
+  ]
+}

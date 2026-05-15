@@ -1,0 +1,24 @@
+{
+  "name": "Quyền Trượng Kẻ Thánh Tế",
+  "description": {
+    "0": "Trường thương trắng bạc thuần khiết. Truyền thuyết kể rằng trong quá khứ, chủ tế của Hyperborea đã dùng nó để chỉ dẫn cho Dòng Dõi Sương Nguyệt tiến về phía trước."
+  },
+  "passiveName": "Mong Muốn Chưa Vấy Bẩn",
+  "passiveDescription": {
+    "0": {
+      "0": "Trong 6s sau khi Kỹ Năng Nguyên Tố đánh trúng kẻ địch, Tấn Công tăng <cryo>8%</cryo>, Hiệu Quả Nạp Nguyên Tố tăng <cryo>6%</cryo>. Hiệu quả này tối đa cộng dồn 3 tầng, người trang bị khi không ra trận vẫn có thể kích hoạt."
+    },
+    "1": {
+      "0": "Trong 6s sau khi Kỹ Năng Nguyên Tố đánh trúng kẻ địch, Tấn Công tăng <cryo>10%</cryo>, Hiệu Quả Nạp Nguyên Tố tăng <cryo>7.5%</cryo>. Hiệu quả này tối đa cộng dồn 3 tầng, người trang bị khi không ra trận vẫn có thể kích hoạt."
+    },
+    "2": {
+      "0": "Trong 6s sau khi Kỹ Năng Nguyên Tố đánh trúng kẻ địch, Tấn Công tăng <cryo>12%</cryo>, Hiệu Quả Nạp Nguyên Tố tăng <cryo>9%</cryo>. Hiệu quả này tối đa cộng dồn 3 tầng, người trang bị khi không ra trận vẫn có thể kích hoạt."
+    },
+    "3": {
+      "0": "Trong 6s sau khi Kỹ Năng Nguyên Tố đánh trúng kẻ địch, Tấn Công tăng <cryo>14%</cryo>, Hiệu Quả Nạp Nguyên Tố tăng <cryo>10.5%</cryo>. Hiệu quả này tối đa cộng dồn 3 tầng, người trang bị khi không ra trận vẫn có thể kích hoạt."
+    },
+    "4": {
+      "0": "Trong 6s sau khi Kỹ Năng Nguyên Tố đánh trúng kẻ địch, Tấn Công tăng <cryo>16%</cryo>, Hiệu Quả Nạp Nguyên Tố tăng <cryo>12%</cryo>. Hiệu quả này tối đa cộng dồn 3 tầng, người trang bị khi không ra trận vẫn có thể kích hoạt."
+    }
+  }
+}

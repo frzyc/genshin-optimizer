@@ -1,0 +1,29 @@
+{
+  "artifactFilter": "Filtro Artefatti",
+  "filterLocation": {
+    "inventory": "Inventario",
+    "currentlyEquipped": "Equipaggiato"
+  },
+  "button": {
+    "unequipArtifacts": "Disequipaggia Artefatti",
+    "deleteArtifacts": "Elimina Artefatti"
+  },
+  "buttonHint": "Nota: I pulsanti rossi precedenti si applicano solo a <1>filtered artifacts</1>",
+  "mainStat": "Stat Principale",
+  "slot": "Slot",
+  "editor": {
+    "substat": {
+      "noSubstat": "Vuoto",
+      "selectSub": "Seleziona Valore",
+      "noStat": "Nessun Valore"
+    },
+    "rarity": "Rarità",
+    "level": "Livello",
+    "unknownPieceName": "Nome Sconosciuto",
+    "preview": "Anteprima Artefatto",
+    "dupArt": "Artefatto Duplicato Trovato",
+    "upArt": "Artefatto Aggiornato Trovato",
+    "btnSave": "Salva Artefatto",
+    "btnAdd": "Aggiungi Artefatto"
+  }
+}

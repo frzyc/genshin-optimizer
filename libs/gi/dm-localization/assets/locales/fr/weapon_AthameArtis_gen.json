@@ -1,0 +1,29 @@
+{
+  "name": "Athame Artis",
+  "description": {
+    "0": "Une épée précieuse offerte par le roi du jour au brave héros de l'histoire de la petite sorcière, mais la sorcière s'en empara et vainquit elle-même le héros."
+  },
+  "passiveName": "Gloire ardente du roi du jour",
+  "passiveDescription": {
+    "0": {
+      "0": "Les DGT CRIT infligés par les déchaînements élémentaires augmentent de <cryo>16 %</cryo> et toucher un ennemi avec un déchaînement élémentaire accorde l'effet Lame du jour : augmente l'ATQ de <cryo>20 %</cryo> et augmente l'ATQ des personnages déployés à proximité autre que le personnage équipé de l'arme de <cryo>16 %</cryo>, le tout pendant 3 s.",
+      "1": "De plus, lorsque l'équipe bénéficie de l'effet Hexerei : Rituel secret, les effets de la lame du jour augmentent de 75 % de plus. Cet effet peut être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "1": {
+      "0": "Les DGT CRIT infligés par les déchaînements élémentaires augmentent de <cryo>20 %</cryo> et toucher un ennemi avec un déchaînement élémentaire accorde l'effet Lame du jour : augmente l'ATQ de <cryo>25 %</cryo> et augmente l'ATQ des personnages déployés à proximité autre que le personnage équipé de l'arme de <cryo>20 %</cryo>, le tout pendant 3 s.",
+      "1": "De plus, lorsque l'équipe bénéficie de l'effet Hexerei : Rituel secret, les effets de la lame du jour augmentent de 75 % de plus. Cet effet peut être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "2": {
+      "0": "Les DGT CRIT infligés par les déchaînements élémentaires augmentent de <cryo>24 %</cryo> et toucher un ennemi avec un déchaînement élémentaire accorde l'effet Lame du jour : augmente l'ATQ de <cryo>30 %</cryo> et augmente l'ATQ des personnages déployés à proximité autre que le personnage équipé de l'arme de <cryo>24 %</cryo>, le tout pendant 3 s.",
+      "1": "De plus, lorsque l'équipe bénéficie de l'effet Hexerei : Rituel secret, les effets de la lame du jour augmentent de 75 % de plus. Cet effet peut être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "3": {
+      "0": "Les DGT CRIT infligés par les déchaînements élémentaires augmentent de <cryo>28 %</cryo> et toucher un ennemi avec un déchaînement élémentaire accorde l'effet Lame du jour : augmente l'ATQ de <cryo>35 %</cryo> et augmente l'ATQ des personnages déployés à proximité autre que le personnage équipé de l'arme de <cryo>28 %</cryo>, le tout pendant 3 s.",
+      "1": "De plus, lorsque l'équipe bénéficie de l'effet Hexerei : Rituel secret, les effets de la lame du jour augmentent de 75 % de plus. Cet effet peut être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "4": {
+      "0": "Les DGT CRIT infligés par les déchaînements élémentaires augmentent de <cryo>32 %</cryo> et toucher un ennemi avec un déchaînement élémentaire accorde l'effet Lame du jour : augmente l'ATQ de <cryo>40 %</cryo> et augmente l'ATQ des personnages déployés à proximité autre que le personnage équipé de l'arme de <cryo>32 %</cryo>, le tout pendant 3 s.",
+      "1": "De plus, lorsque l'équipe bénéficie de l'effet Hexerei : Rituel secret, les effets de la lame du jour augmentent de 75 % de plus. Cet effet peut être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    }
+  }
+}

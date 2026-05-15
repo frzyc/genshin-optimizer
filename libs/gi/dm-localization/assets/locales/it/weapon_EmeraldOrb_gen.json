@@ -6,19 +6,19 @@
   "passiveName": "Rapide",
   "passiveDescription": {
     "0": {
-      "0": "Dopo aver causato una reazione di Vaporizzazione, Electrocarica, Congelamento, Fioritura, Carica lunare o Turbinio di Hydro, l'ATT aumenta di un <cryo>20%</cryo> per 12 s."
+      "0": "Dopo aver causato una reazione di Vaporizzazione, Electrocarica, Congelamento, Fioritura, Carica lunare, Fioritura lunare o Turbinio di Hydro, l'ATT aumenta di un <cryo>20%</cryo> per 12 s."
     },
     "1": {
-      "0": "Dopo aver causato una reazione di Vaporizzazione, Electrocarica, Congelamento, Fioritura, Carica lunare o Turbinio di Hydro, l'ATT aumenta di un <cryo>25%</cryo> per 12 s."
+      "0": "Dopo aver causato una reazione di Vaporizzazione, Electrocarica, Congelamento, Fioritura, Carica lunare, Fioritura lunare o Turbinio di Hydro, l'ATT aumenta di un <cryo>25%</cryo> per 12 s."
     },
     "2": {
-      "0": "Dopo aver causato una reazione di Vaporizzazione, Electrocarica, Congelamento, Fioritura, Carica lunare o Turbinio di Hydro, l'ATT aumenta di un <cryo>30%</cryo> per 12 s."
+      "0": "Dopo aver causato una reazione di Vaporizzazione, Electrocarica, Congelamento, Fioritura, Carica lunare, Fioritura lunare o Turbinio di Hydro, l'ATT aumenta di un <cryo>30%</cryo> per 12 s."
     },
     "3": {
-      "0": "Dopo aver causato una reazione di Vaporizzazione, Electrocarica, Congelamento, Fioritura, Carica lunare o Turbinio di Hydro, l'ATT aumenta di un <cryo>35%</cryo> per 12 s."
+      "0": "Dopo aver causato una reazione di Vaporizzazione, Electrocarica, Congelamento, Fioritura, Carica lunare, Fioritura lunare o Turbinio di Hydro, l'ATT aumenta di un <cryo>35%</cryo> per 12 s."
     },
     "4": {
-      "0": "Dopo aver causato una reazione di Vaporizzazione, Electrocarica, Congelamento, Fioritura, Carica lunare o Turbinio di Hydro, l'ATT aumenta di un <cryo>40%</cryo> per 12 s."
+      "0": "Dopo aver causato una reazione di Vaporizzazione, Electrocarica, Congelamento, Fioritura, Carica lunare, Fioritura lunare o Turbinio di Hydro, l'ATT aumenta di un <cryo>40%</cryo> per 12 s."
     }
   }
 }

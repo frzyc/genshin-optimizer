@@ -2,7 +2,7 @@
   "setName": "Murmure nocturne en forêt d'échos",
   "setEffects": {
     "2": "Augmente l'ATQ de 18 %.",
-    "4": "Après l'utilisation d'une compétence élémentaire, le bonus de DGT Géo augmente de 20 % pendant 10 s. Sous la protection d'un bouclier généré par une réaction de Cristallisation, cet effet augmente de 150 %, cette augmentation supplémentaire disparaissant 1 s après la perte du bouclier."
+    "4": "Après l'utilisation d'une compétence élémentaire, le bonus de DGT Géo augmente de 20 % pendant 10 s. Sous la protection d'un bouclier généré par une réaction de Cristallisation, ou s'il existe un voile lunaire créé par une réaction de Sélénocristallisation à proximité, cet effet augmente de 150 %, cette augmentation supplémentaire disparaissant 1 s après que ces conditions ne sont pas remplies."
   },
   "pieces": {
     "flower": {

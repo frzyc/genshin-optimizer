@@ -1,0 +1,29 @@
+{
+  "setName": "Khúc Ca Trăng Lụa",
+  "setEffects": {
+    "2": "Hiệu Quả Nạp Nguyên Tố tăng 20%.",
+    "4": "Khi gây sát thương nguyên tố, sẽ nhận hiệu quả \"Trăng Sáng - Tín Ngưỡng\" trong 8s: Khi Nguyệt Triệu của đội là Hé Sáng/Rực Sáng, tất cả nhân vật trong đội sẽ tăng 60/120 điểm Tinh Thông Nguyên Tố. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên. Với mỗi hiệu quả \"Trăng Sáng\" khác nhau mà nhân vật trong đội sở hữu, tất cả nhân vật trong đội sẽ tăng 10% sát thương phản ứng Nguyệt. Hiệu quả sản sinh từ \"Trăng Sáng\" sẽ không thể cộng dồn."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Nước Mắt Của Kẻ Lang Bạt",
+      "desc": "Đóa hoa thuần khiết, nghe nói vì gió băng mà giữ được vẻ đẹp vĩnh hằng."
+    },
+    "plume": {
+      "name": "Lông Trắng Của Người Được Phúc",
+      "desc": "Trang sức lông vũ thuần khiết, nghe nói được chế tạo bởi Vịnh Nguyệt Sứ đầu tiên."
+    },
+    "sands": {
+      "name": "Cuồng Si Của Kẻ Tế Sương",
+      "desc": "Đồng hồ thuần khiết, nay đã ngừng quay cùng với sự cố chấp của người chủ cũ."
+    },
+    "goblet": {
+      "name": "Vinh Quang Của Kẻ Thuần Khiết",
+      "desc": "Ly bạc thuần khiết, nghe nói từng được dùng làm thánh khí trong nghi lễ của Dòng Dõi Sương Nguyệt. Nghi thức hiện nay đã không còn dùng đến ly bạc này nữa."
+    },
+    "circlet": {
+      "name": "Vương Miện Của Nhà Tiên Tri",
+      "desc": "Trang sức đầu thuần khiết, hình dạng dường như được chế tạo dựa theo chiếc sừng của sứ giả rừng xanh."
+    }
+  }
+}

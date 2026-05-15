@@ -1,0 +1,50 @@
+{
+  "DatabaseCard": {
+    "title": "Cơ Sở Dữ Liệu",
+    "button": {
+      "swap": "Đổi",
+      "copy": "Lưu vào bộ nhớ tạm",
+      "upload": "Tải lên",
+      "download": "Tải xuống",
+      "delete": "Xóa"
+    },
+    "currentDB": "CSDL hiện tại"
+  },
+  "count": {
+    "chars": "Nhân vật:",
+    "relics": "Di Vật: ",
+    "lightCones": "Nón Ánh Sáng:",
+    "teams": "Đội:",
+    "builds": "Build:",
+    "new": "Mới:",
+    "unchanged": "Không thay đổi:",
+    "upgraded": "Đã tăng cấp:",
+    "removed": "Đã loại bỏ:",
+    "notInImport": "Không trong bản nhập:",
+    "dbTotal": "Tổng hợp nhất:",
+    "invalid": "Không hợp lệ:"
+  },
+  "uploadCard": {
+    "error": {
+      "jsonParse": "Không thể xử lý JSON cơ sở dữ liệu.",
+      "sroInvalid": "Tập tin CSDL SRO không hợp lệ.",
+      "unknown": "Một lỗi không xác định đã xảy ra."
+    },
+    "title": "Tải lên CSDL",
+    "buttons": {
+      "open": "Mở",
+      "detectDups": "Phát hiện tăng cấp/trùng lặp",
+      "delNotInImport": "Xóa vật phẩm không có trong bản nhập"
+    },
+    "hint": "Tải tệp JSON của bạn tại đây...",
+    "tooltip": {
+      "ignoreDup": "Không tự phát hiện món tăng cấp/trùng lặp. Bản nhập sẽ được thêm vào túi đồ SRO đang có.",
+      "detectDup": "Tìm những món đã tăng cấp/trùng lặp trong túi đồ SRO và hợp nhất bản nhập vào SRO.",
+      "keepNotInImport": "Giả sử rằng bản nhập này chỉ là một phần túi. Sẽ không xóa gì cả.",
+      "delNotInImport": "Giả sử rằng bản nhập này bao gồm toàn bộ túi của bạn. Các món trong túi đồ SRO mà không tồn tại trong bản nhập sẽ bị xóa."
+    },
+    "hintPaste": "...hoặc dán dữ liệu của bạn xuống dưới.",
+    "dbSource": "Nguồn dữ liệu:",
+    "replaceDatabase": "Cập nhật CSDL"
+  }
+}

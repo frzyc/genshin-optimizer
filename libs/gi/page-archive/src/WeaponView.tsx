@@ -4,6 +4,7 @@ import {
   StarsDisplay,
 } from '@genshin-optimizer/common/ui'
 import { weaponAsset } from '@genshin-optimizer/gi/assets'
+import { getLevelString as getWeaponLevelString } from '@genshin-optimizer/gi/consts'
 import type { IWeapon } from '@genshin-optimizer/gi/good'
 import { getWeaponStat } from '@genshin-optimizer/gi/stats'
 import {
@@ -15,7 +16,6 @@ import {
   WeaponPassiveName,
 } from '@genshin-optimizer/gi/ui'
 import type { UIData } from '@genshin-optimizer/gi/uidata'
-import { getLevelString } from '@genshin-optimizer/gi/util'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import CloseIcon from '@mui/icons-material/Close'
 import {
@@ -96,7 +96,7 @@ export function WeaponView({
                   )}
                 </Box>
                 <Typography>
-                  Lv. {getLevelString(level, ascension)} R{refinement}
+                  Lv. {getWeaponLevelString(level, ascension)} R{refinement}
                 </Typography>
                 <StarsDisplay stars={weaponStat.rarity} />
                 <Typography variant="subtitle1">

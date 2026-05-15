@@ -1,5 +1,4 @@
-import type { AscensionKey } from './character'
-import type { RarityKey } from './common'
+import { type AscensionKey, type RarityKey, validateLevelAsc } from './common'
 
 export const allWeaponTypeKeys = [
   'sword',
@@ -14,6 +13,7 @@ export const allWeaponSwordKeys = [
   'Absolution',
   'AmenomaKageuchi',
   'AquilaFavonia',
+  'AthameArtis',
   'Azurelight',
   'BlackcliffLongsword',
   'CalamityOfEshu',
@@ -33,15 +33,18 @@ export const allWeaponSwordKeys = [
   'IronSting',
   'KagotsurubeIsshin',
   'KeyOfKhajNisut',
+  'LightbearingMoonshard',
   'LightOfFoliarIncision',
   'LionsRoar',
   'MistsplitterReforged',
+  'MoonweaversDawn',
   'PeakPatrolSong',
   'PrimordialJadeCutter',
   'PrototypeRancour',
   'RoyalLongsword',
   'SacrificialSword',
   'SapwoodBlade',
+  'SerenitysCall',
   'SilverSword',
   'SkyriderSword',
   'SkywardBlade',
@@ -76,11 +79,13 @@ export const allWeaponClaymoreKeys = [
   'FlameForgedInsight',
   'ForestRegalia',
   'FruitfulHook',
+  'GestOfTheMightyWolf',
   'KatsuragikiriNagamasa',
   'LithicBlade',
   'LuxuriousSeaLord',
   'MailedFlower',
   'MakhairaAquamarine',
+  'MasterKey',
   'OldMercsPal',
   'PortablePowerSaw',
   'PrototypeArchaic',
@@ -111,6 +116,7 @@ export const allWeaponPolearmKeys = [
   'BeginnersProtector',
   'BlackcliffPole',
   'BlackTassel',
+  'BloodsoakedRuins',
   'CalamityQueller',
   'CrescentPike',
   'CrimsonMoonsSemblance',
@@ -132,9 +138,11 @@ export const allWeaponPolearmKeys = [
   'MountainBracingBolt',
   'PrimordialJadeWingedSpear',
   'ProspectorsDrill',
+  'ProspectorsShovel',
   'PrototypeStarglitter',
   'RightfulReward',
   'RoyalSpear',
+  'SacrificersStaff',
   'SkywardSpine',
   'StaffOfHoma',
   'StaffOfTheScarletSands',
@@ -161,6 +169,7 @@ export const allWeaponBowKeys = [
   'FadingTwilight',
   'FavoniusWarbow',
   'FlowerWreathedFeathers',
+  'GoldenFrostboundOath',
   'Hamayumi',
   'HuntersBow',
   'HuntersPath',
@@ -172,6 +181,7 @@ export const allWeaponBowKeys = [
   'PolarStar',
   'Predator',
   'PrototypeCrescent',
+  'RainbowSerpentsRainBow',
   'RangeGauge',
   'RavenBow',
   'RecurveBow',
@@ -185,7 +195,9 @@ export const allWeaponBowKeys = [
   'SilvershowerHeartstrings',
   'SkywardHarp',
   'Slingshot',
+  'SnareHook',
   'SongOfStillness',
+  'TheDaybreakChronicles',
   'TheFirstGreatMagic',
   'TheStringless',
   'TheViridescentHunt',
@@ -200,10 +212,13 @@ export const allWeaponCatalystKeys = [
   'AThousandFloatingDreams',
   'BalladOfTheBoundlessBlue',
   'BlackcliffAgate',
+  'BlackmarrowLantern',
   'CashflowSupervision',
   'CranesEchoingCall',
+  'DawningFrost',
   'DodocoTales',
   'EmeraldOrb',
+  'EtherlightSpindlelute',
   'EverlastingMoonglow',
   'EyeOfPerception',
   'FavoniusCodex',
@@ -217,11 +232,14 @@ export const allWeaponCatalystKeys = [
   'MagicGuide',
   'MappaMare',
   'MemoryOfDust',
+  'NightweaversLookingGlass',
+  'NocturnesCurtainCall',
   'OathswornEye',
   'OtherworldlyStory',
   'PocketGrimoire',
   'PrototypeAmber',
   'QuantumCatalyst',
+  'ReliquaryOfTruth',
   'RingOfYaxche',
   'RoyalGrimoire',
   'SacrificialFragments',
@@ -287,3 +305,13 @@ export const allWeaponSubstatKeys = [
   'physical_dmg_',
 ] as const
 export type WeaponSubstatKey = (typeof allWeaponSubstatKeys)[number]
+
+// Weapon global max level constant
+const weaponGlobalMaxLevel = 90
+
+export function validateWeaponLevelAsc(
+  level: number,
+  ascension: AscensionKey
+): { level: number; ascension: AscensionKey } {
+  return validateLevelAsc(level, ascension, weaponGlobalMaxLevel)
+}

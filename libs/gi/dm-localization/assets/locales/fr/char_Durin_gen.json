@@ -1,0 +1,188 @@
+{
+  "name": "Durin",
+  "title": "« Feu inextinguible »",
+  "description": "Un dragon né de la plume de M, qui a atterri dans le monde des humains. Son « histoire » continue de se dévoiler...",
+  "constellationName": "Draco Rubedo",
+  "auto": {
+    "name": "Coupe d'aile radieuse",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 4 coups d'épée."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour exécuter une entaille vers l'avant."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT attaque chargée",
+      "5": "Coût d'endurance attaque chargée",
+      "6": "DGT durant la chute",
+      "7": "DGT chute basse/élevée",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Forme binaire : Convergence et division",
+    "description": {
+      "0": "Purifie la substance des âmes et en appelle au désir de la <tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>transmutation essentielle</strong></tooltip>. Pendant la transmutation de Durin, sa compétence élémentaire <strong>Forme binaire : Convergence et division</strong> est convertie en compétence élémentaire spéciale <strong>Transmutation : Confirmation de pureté</strong> et son attaque normale <strong>Coupe d'aile radieuse</strong> en la compétence élémentaire spéciale <strong>Transmutation : Déni de ténèbre</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Transmutation : Confirmation de pureté</strong>",
+      "3": "Inflige une fois des <pyro>DGT Pyro de zone</pyro> aux ennemis proches, annule la transmutation essentielle et active l'état <strong>Confirmation de pureté</strong> pendant 30 s.",
+      "4": "<br/>",
+      "5": "<strong>Transmutation : Déni de ténèbre</strong>",
+      "6": "Inflige 3 fois de suite des <pyro>DGT Pyro</pyro> aux ennemis en face, annule la transmutation essentielle et active l'état <strong>Déni de ténèbre</strong> pendant 30 s.",
+      "7": "<br/>",
+      "8": "Lorsque Durin entre dans l'état <strong>Confirmation de pureté</strong> ou <strong>Déni de ténèbre</strong> en combat, il récupère de l'énergie élémentaire, l'énergie élémentaire pouvant être restaurée une fois toutes les 6 s de cette manière."
+    },
+    "skillParams": {
+      "0": "DGT Transmutation : Confirmation de pureté",
+      "1": "DGT Transmutation : Déni de ténèbre",
+      "2": "Restauration énergie élémentaire",
+      "3": "Temps de recharge",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Principe de pureté : Comme la lumière qui fluctue",
+    "description": {
+      "0": "Libère la puissance de la « bête » de différentes manières. Durin peut utiliser différents déchaînements élémentaires selon sa <tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>transmutation essentielle</strong></tooltip>.",
+      "1": "<br/>",
+      "2": "<strong>Principe de pureté : Comme la lumière qui fluctue</strong>",
+      "3": "En <strong>confirmation de pureté</strong>, Durin utilise le déchaînement élémentaire <strong>Principe de pureté : Comme la lumière qui fluctue</strong> pour infliger 3 fois des <pyro>DGT Pyro de zone</pyro> aux ennemis en avant et matérialiser sa puissance en un <strong>dragon de flamme blanche</strong>. Le dragon de flamme blanche suit le personnage déployé et attaque de façon intermittente les ennemis à portée, infligeant des <pyro>DGT Pyro de zone</pyro> considérés comme des DGT de déchaînement élémentaire.",
+      "4": "<br/>",
+      "5": "<strong>Principe de ténèbre : Comme les étoiles qui brûlent</strong>",
+      "6": "En <strong>déni de ténèbre</strong>, Durin utilise le déchaînement élémentaire <strong>Principe de ténèbre : Comme les étoiles qui brûlent</strong> pour infliger 3 fois des <pyro>DGT Pyro de zone</pyro> aux ennemis en avant et matérialiser sa puissance en un <strong>dragon de corrosion noire</strong>. Le dragon de corrosion noire suit le personnage déployé et attaque de façon intermittente un ennemi à portée, infligeant des <pyro>DGT Pyro</pyro> considérés comme des DGT de déchaînement élémentaire.",
+      "7": "<br/>",
+      "8": "De plus, Durin déclenche le déchaînement élémentaire <strong>Principe de pureté : Comme la lumière qui fluctue</strong> s'il n'est pas dans un état spécial de sa transmutation essentielle."
+    },
+    "skillParams": {
+      "0": "DGT Principe de pureté : Comme la lumière qui fluctue",
+      "1": "DGT Principe de ténèbre : Comme les étoiles qui brûlent",
+      "2": "DGT dragon de flamme blanche",
+      "3": "DGT dragon de corrosion noire",
+      "4": "Durée de dragon de flamme blanche",
+      "5": "Durée de dragon de corrosion noire",
+      "6": "Temps de recharge",
+      "7": "Énergie élémentaire",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Manifestation lumineuse du calcul divin",
+    "description": {
+      "0": "Durin déclenche différents bonus selon la forme sous laquelle il matérialise son pouvoir lors de son déchaînement élémentaire :",
+      "1": "<br/>",
+      "2": "<strong>Dragon de flamme blanche</strong>",
+      "3": "Lorsqu'un personnage de l'équipe à proximité a déclenché une réaction de Brûlure, de Surcharge, de Dispersion Pyro ou de Cristallisation Pyro sur un ennemi ou inflige des <pyro>DGT Pyro</pyro> ou des <dendro>DGT Dendro</dendro> sur un ennemi brûlé, la <pyro>RÉS Pyro</pyro> et la RÉS de l'élément impliqué dans la réaction de l'ennemi diminuent de 20 % pendant 6 s.",
+      "4": "<br/>",
+      "5": "<strong>Dragon de corrosion noire</strong>",
+      "6": "Les DGT infligés par les réactions d'Évaporation et de Fonte déclenchées par Durin augmentent de 40 %."
+    }
+  },
+  "passive2": {
+    "name": "Chaos, semblable à la nuit",
+    "description": {
+      "0": "Après avoir utilisé un déchaînement élémentaire, Durin obtient l'effet Fusion primordiale des formes pendant 20 s, lui accordant 10 cumuls de fusion primordiale. Lorsqu'une attaque intermittente du <strong>dragon de flamme blanche</strong> ou du <strong>dragon de corrosion noire</strong> inflige des DGT, 1 cumul de fusion primordiale est consommé pour augmenter davantage les DGT d'une valeur équivalant à 3 % des DGT d'origine par tranche de 100 pts d'ATQ, les DGT pouvant être augmentés d'un maximum de 75 % de cette manière. Un seul cumul est consommé si un <strong>dragon de flamme blanche</strong> ou un <strong>dragon de corrosion noire</strong> touche plusieurs ennemis en même temps.",
+      "1": "Déclencher à nouveau un déchaînement élémentaire réinitialise la quantité de cumuls de fusion primordiale."
+    }
+  },
+  "passive3": {
+    "name": "Échos de la terre jaillissante",
+    "description": {
+      "0": "Augmente les récompenses d'une expédition de 20 h à Mondstadt de 25 %."
+    }
+  },
+  "lockedPassive": {
+    "name": "Veillée de la sorcière : Ode à l'ascension",
+    "description": {
+      "0": "Après avoir terminé le <strong>devoir de la sorcière « De ce monde »</strong>, Durin devient un personnage <strong>héxère</strong>. Si l'équipe contient au moins 2 personnages héxères, elle bénéficie de l'effet <strong>Hexerei : Rituel secret</strong> qui améliore les personnages héxères.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei : Rituel secret</strong>",
+      "3": "Tous les effets, sauf la durée, de l'aptitude d'élévation <tooltip ns=char_Durin_gen baseKey18=passive1><strong>Manifestation lumineuse du calcul divin</strong></tooltip> augmentent de 75 %."
+    }
+  },
+  "constellation1": {
+    "name": "Rédemption de l'adamah",
+    "description": {
+      "0": "Déclencher un déchaînement élémentaire provoque divers effets en fonction du type de déchaînement élémentaire que Durin déclenche :",
+      "1": [
+        " <strong>Principe de pureté : Comme la lumière qui fluctue</strong> : tous les autres personnages de l'équipe à proximité obtiennent 20 cumuls de <strong>cycle d'illumination</strong> pendant 20 s. Lorsque le personnage déployé inflige des DGT avec une attaque normale, une attaque chargée, une attaque plongeante, une compétence élémentaire ou un déchaînement élémentaire, il consomme 1 cumul de cycle d'illumination pour augmenter les DGT infligés d'une valeur équivalant à 60 % de l'ATQ de Durin. Le compte de cumuls des personnages de l'équipe possédant du cycle d'illumination est géré individuellement.",
+        " <strong>Principe de ténèbre : Comme les étoiles qui brûlent</strong> : Durin obtient 20 cumuls de <strong>cycle d'illumination</strong> pendant 20 s. Lorsque Durin inflige des DGT avec un déchaînement élémentaire, il consomme 2 cumuls de cycle d'illumination pour augmenter les DGT infligés d'une valeur équivalant à 150 % de l'ATQ de Durin."
+      ],
+      "2": "<br/>",
+      "3": "Lorsqu'un déchaînement élémentaire est utilisé, les cumuls de <strong>cycle d'illumination</strong> sont réinitialisés."
+    }
+  },
+  "constellation2": {
+    "name": "Visions sans fond",
+    "description": {
+      "0": "Si un personnage de l'équipe à proximité a déclenché une réaction d'Évaporation, de Fonte, de Brûlure, de Surcharge, de Dispersion Pyro ou de Cristallisation Pyro sur un ennemi, ou bien inflige des <pyro>DGT Pyro</pyro> ou des <dendro>DGT Dendro</dendro> sur un ennemi brûlé, pendant 20 s après que Durin utilise un déchaînement élémentaire, le personnage de l'équipe à proximité obtient un <pyro>bonus de DGT Pyro</pyro> et un bonus de DGT de l'élément impliqué dans la réaction de 50 % pendant 6 s."
+    }
+  },
+  "constellation3": {
+    "name": "Révélation du miroir de flammes",
+    "description": {
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Durin_gen baseKey18=burst>Principe de pureté : Comme la lumière qui fluctue</tooltip></strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Source d'emanare",
+    "description": {
+      "0": "Les DGT de déchaînement élémentaire infligés par Durin augmentent de 40 %. De plus, en déclenchant un effet consommant des cumuls de <strong>cycle d'illumination</strong> de la constellation <strong><tooltip ns=char_Durin_gen baseKey18=constellation1>Rédemption de l'adamah</tooltip></strong>, il y a 30 % de chances de ne pas consommer de cycle d'illumination."
+    }
+  },
+  "constellation5": {
+    "name": "Déchirure du feu purgateur",
+    "description": {
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Durin_gen baseKey18=skill>Forme binaire : Convergence et division</tooltip></strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Double naissance",
+    "description": {
+      "0": "Les DGT de déchaînement élémentaire infligés par Durin ignorent 30 % de la DÉF des ennemis.",
+      "1": "De plus, les déchaînements élémentaires <strong>Principe de pureté : Comme la lumière qui fluctue</strong> et <strong>Principe de ténèbre : Comme les étoiles qui brûlent</strong> de Durin sont renforcés :",
+      "2": [
+        " Lorsque le déchaînement élémentaire <strong>Principe de pureté : Comme la lumière qui fluctue</strong> ou le <strong>dragon de flamme blanche</strong> touche un ennemi, la DÉF de ce dernier diminue de 30 % pendant 6 s.",
+        " Les DGT infligés par le déchaînement élémentaire <strong>Principe de ténèbre : Comme les étoiles qui brûlent</strong> et le <strong>dragon de corrosion noire</strong> ignorent 40 % de DÉF des ennemis en plus."
+      ]
+    }
+  }
+}

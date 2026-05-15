@@ -1,0 +1,24 @@
+{
+  "name": "Richiamo della serenità",
+  "description": {
+    "0": "Una spada lunga di metallo che emette un suono afflitto quando viene fatta oscillare."
+  },
+  "passiveName": "Silenzio solenne",
+  "passiveDescription": {
+    "0": {
+      "0": "Dopo aver innescato una reazione elementale, aumenta i PS max di un <cryo>16%</cryo> per 12 s. Quando Presagio lunare: Barlume ascendente è attivo, i PS max di questo effetto aumentano di un ulteriore <cryo>16%</cryo>. L'effetto si innesca anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "1": {
+      "0": "Dopo aver innescato una reazione elementale, aumenta i PS max di un <cryo>20%</cryo> per 12 s. Quando Presagio lunare: Barlume ascendente è attivo, i PS max di questo effetto aumentano di un ulteriore <cryo>20%</cryo>. L'effetto si innesca anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "2": {
+      "0": "Dopo aver innescato una reazione elementale, aumenta i PS max di un <cryo>24%</cryo> per 12 s. Quando Presagio lunare: Barlume ascendente è attivo, i PS max di questo effetto aumentano di un ulteriore <cryo>24%</cryo>. L'effetto si innesca anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "3": {
+      "0": "Dopo aver innescato una reazione elementale, aumenta i PS max di un <cryo>28%</cryo> per 12 s. Quando Presagio lunare: Barlume ascendente è attivo, i PS max di questo effetto aumentano di un ulteriore <cryo>28%</cryo>. L'effetto si innesca anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "4": {
+      "0": "Dopo aver innescato una reazione elementale, aumenta i PS max di un <cryo>32%</cryo> per 12 s. Quando Presagio lunare: Barlume ascendente è attivo, i PS max di questo effetto aumentano di un ulteriore <cryo>32%</cryo>. L'effetto si innesca anche quando il personaggio che equipaggia l'arma non è in campo."
+    }
+  }
+}

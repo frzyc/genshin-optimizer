@@ -147,7 +147,7 @@
   "constellation2": {
     "name": "Sitting Hound: Steady as a Clock",
     "description": {
-      "0": "Selama durasi <strong>General's Glory</strong> berlangsung, setelah Karakter aktif di sekitar memperoleh Elemental Shard dari reaksi Crystallize, maka durasi General's Glory milik Gorou sendiri akan bertambah 1 detik.",
+      "0": "Selama durasi <strong>General's Glory</strong> berlangsung, setelah Karakter aktif di sekitar memperoleh Elemental Shard dari reaksi Crystallize atau memicu reaksi Lunar-Crystallize, maka durasi General's Glory milik Gorou sendiri akan bertambah 1 detik.",
       "1": "Efek ini dapat terpicu sekali setiap 0,1 detik dan durasi General's Glory dapat bertambah hingga 3 detik dengan cara ini."
     }
   },

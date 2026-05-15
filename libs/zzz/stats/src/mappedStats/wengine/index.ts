@@ -1,4 +1,5 @@
 // WARNING: Generated file, do not modify
+import AngelInTheShell from './maps/AngelInTheShell'
 import BashfulDemon from './maps/BashfulDemon'
 import BellicoseBlaze from './maps/BellicoseBlaze'
 import BigCylinder from './maps/BigCylinder'
@@ -6,10 +7,13 @@ import BlazingLaurel from './maps/BlazingLaurel'
 import BoxCutter from './maps/BoxCutter'
 import BunnyBand from './maps/BunnyBand'
 import CannonRotor from './maps/CannonRotor'
+import CauldronOfClarity from './maps/CauldronOfClarity'
 import CinderCobalt from './maps/CinderCobalt'
+import CloudcleaveRadiance from './maps/CloudcleaveRadiance'
 import CordisGermina from './maps/CordisGermina'
 import DeepSeaVisitor from './maps/DeepSeaVisitor'
 import DemaraBatteryMarkII from './maps/DemaraBatteryMarkII'
+import DreamlitHearth from './maps/DreamlitHearth'
 import DrillRigRedAxis from './maps/DrillRigRedAxis'
 import ElectroLipGloss from './maps/ElectroLipGloss'
 import ElegantVanity from './maps/ElegantVanity'
@@ -17,7 +21,9 @@ import FlamemakerShaker from './maps/FlamemakerShaker'
 import FlightOfFancy from './maps/FlightOfFancy'
 import FusionCompiler from './maps/FusionCompiler'
 import GildedBlossom from './maps/GildedBlossom'
+import GrillOWisp from './maps/GrillOWisp'
 import HailstormShrine from './maps/HailstormShrine'
+import HalfSugarBunny from './maps/HalfSugarBunny'
 import HeartstringNocturne from './maps/HeartstringNocturne'
 import HellfireGears from './maps/HellfireGears'
 import Housekeeper from './maps/Housekeeper'
@@ -25,6 +31,7 @@ import IceJadeTeapot from './maps/IceJadeTeapot'
 import IdentityBase from './maps/IdentityBase'
 import IdentityInflection from './maps/IdentityInflection'
 import KaboomTheCannon from './maps/KaboomTheCannon'
+import KrakensCradle from './maps/KrakensCradle'
 import LunarDecrescent from './maps/LunarDecrescent'
 import LunarNoviluna from './maps/LunarNoviluna'
 import LunarPleniluna from './maps/LunarPleniluna'
@@ -34,6 +41,7 @@ import MagneticStormCharlie from './maps/MagneticStormCharlie'
 import MarcatoDesire from './maps/MarcatoDesire'
 import Metanukimorphosis from './maps/Metanukimorphosis'
 import MyriadEclipse from './maps/MyriadEclipse'
+import NeonFantasies from './maps/NeonFantasies'
 import OriginalTransmorpher from './maps/OriginalTransmorpher'
 import PeacekeeperSpecialized from './maps/PeacekeeperSpecialized'
 import PracticedPerfection from './maps/PracticedPerfection'
@@ -49,6 +57,7 @@ import ReverbMarkIII from './maps/ReverbMarkIII'
 import RiotSuppressorMarkVI from './maps/RiotSuppressorMarkVI'
 import RoaringFurnace from './maps/RoaringFurnace'
 import RoaringRide from './maps/RoaringRide'
+import SerpentineSeeker from './maps/SerpentineSeeker'
 import SeveredInnocence from './maps/SeveredInnocence'
 import SharpenedStinger from './maps/SharpenedStinger'
 import SixShooter from './maps/SixShooter'
@@ -62,7 +71,9 @@ import SteelCushion from './maps/SteelCushion'
 import StreetSuperstar from './maps/StreetSuperstar'
 import TheBrimstone from './maps/TheBrimstone'
 import TheRestrained from './maps/TheRestrained'
+import TheSimmeringPot from './maps/TheSimmeringPot'
 import TheVault from './maps/TheVault'
+import Thoughtbop from './maps/Thoughtbop'
 import Timeweaver from './maps/Timeweaver'
 import TremorTrigramVessel from './maps/TremorTrigramVessel'
 import TusksOfFury from './maps/TusksOfFury'
@@ -72,9 +83,12 @@ import VortexHatchet from './maps/VortexHatchet'
 import VortexRevolver from './maps/VortexRevolver'
 import WeepingCradle from './maps/WeepingCradle'
 import WeepingGemini from './maps/WeepingGemini'
+import WrathfulVajra from './maps/WrathfulVajra'
+import YesterdayCalls from './maps/YesterdayCalls'
 import ZanshinHerbCase from './maps/ZanshinHerbCase'
 
 const maps = {
+  AngelInTheShell,
   BashfulDemon,
   BellicoseBlaze,
   BigCylinder,
@@ -82,10 +96,13 @@ const maps = {
   BoxCutter,
   BunnyBand,
   CannonRotor,
+  CauldronOfClarity,
   CinderCobalt,
+  CloudcleaveRadiance,
   CordisGermina,
   DeepSeaVisitor,
   DemaraBatteryMarkII,
+  DreamlitHearth,
   DrillRigRedAxis,
   ElectroLipGloss,
   ElegantVanity,
@@ -93,7 +110,9 @@ const maps = {
   FlightOfFancy,
   FusionCompiler,
   GildedBlossom,
+  GrillOWisp,
   HailstormShrine,
+  HalfSugarBunny,
   HeartstringNocturne,
   HellfireGears,
   Housekeeper,
@@ -101,6 +120,7 @@ const maps = {
   IdentityBase,
   IdentityInflection,
   KaboomTheCannon,
+  KrakensCradle,
   LunarDecrescent,
   LunarNoviluna,
   LunarPleniluna,
@@ -110,6 +130,7 @@ const maps = {
   MarcatoDesire,
   Metanukimorphosis,
   MyriadEclipse,
+  NeonFantasies,
   OriginalTransmorpher,
   PeacekeeperSpecialized,
   PracticedPerfection,
@@ -125,6 +146,7 @@ const maps = {
   RiotSuppressorMarkVI,
   RoaringFurnace,
   RoaringRide,
+  SerpentineSeeker,
   SeveredInnocence,
   SharpenedStinger,
   SixShooter,
@@ -138,7 +160,9 @@ const maps = {
   StreetSuperstar,
   TheBrimstone,
   TheRestrained,
+  TheSimmeringPot,
   TheVault,
+  Thoughtbop,
   Timeweaver,
   TremorTrigramVessel,
   TusksOfFury,
@@ -148,6 +172,8 @@ const maps = {
   VortexRevolver,
   WeepingCradle,
   WeepingGemini,
+  WrathfulVajra,
+  YesterdayCalls,
   ZanshinHerbCase,
 }
 export default maps

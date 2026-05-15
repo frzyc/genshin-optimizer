@@ -26,18 +26,18 @@ export class DataManager<
         this.database.storage.remove(key)
       }
   }
-  exportZOD(zo: Partial<IZenlessObjectDescription & IZZZDatabase>) {
+  exportZOOD(zood: Partial<IZenlessObjectDescription & IZZZDatabase>) {
     const key = this.dataKey
-    zo[key] = Object.entries(this.data).map(([id, value]) => ({
+    zood[key] = Object.entries(this.data).map(([id, value]) => ({
       ...this.deCache(value),
       id,
     }))
   }
-  importZOD(
-    zo: IZenlessObjectDescription & IZZZDatabase,
+  importZOOD(
+    zood: IZenlessObjectDescription & IZZZDatabase,
     _result: ImportResult
   ) {
-    const entries = zo[this.dataKey]
+    const entries = zood[this.dataKey]
     if (entries && Array.isArray(entries))
       entries.forEach((ele) => ele.id && this.set(ele.id, ele))
   }

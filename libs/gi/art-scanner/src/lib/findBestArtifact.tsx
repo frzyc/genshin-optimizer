@@ -32,6 +32,7 @@ export type TextKey =
   | 'rarity'
   | 'level'
   | 'substats'
+  | 'unactivatedSubstats'
   | 'setKey'
   | 'location'
   | 'lock'
@@ -41,6 +42,7 @@ export function findBestArtifact(
   textSetKeys: Set<ArtifactSetKey>,
   slotKeys: Set<ArtifactSlotKey>,
   substats: ISubstat[],
+  unactivatedSubstats: ISubstat[],
   mainStatKeys: Set<MainStatKey>,
   mainStatValues: { mainStatValue: number; unit?: string }[],
   location: LocationKey,
@@ -53,6 +55,9 @@ export function findBestArtifact(
   } as Partial<Record<TextKey, ReactNode>>
   if (location)
     texts.location = detectedText(location, 'Location', (value) => value)
+  if (unactivatedSubstats.length) {
+    substats.splice(3, unactivatedSubstats.length)
+  }
 
   const relevantSetKey: ArtifactSetKey[] = textSetKeys.size
     ? [...textSetKeys]
@@ -69,6 +74,7 @@ export function findBestArtifact(
         substats: [],
         location: location ?? '',
         lock,
+        unactivatedSubstats: [],
       },
     ]
 
@@ -152,6 +158,7 @@ export function findBestArtifact(
                 substats: [],
                 location: location ?? '',
                 lock,
+                unactivatedSubstats: [],
               })
             }
           }
@@ -172,6 +179,7 @@ export function findBestArtifact(
               substats: [],
               location: location ?? '',
               lock,
+              unactivatedSubstats: [],
             })
           }
         }
@@ -199,6 +207,11 @@ export function findBestArtifact(
       substat.key !== result.mainStatKey &&
       substats.slice(0, i).every((other) => other.key !== substat.key)
   )
+
+  result.unactivatedSubstats = unactivatedSubstats.filter(
+    (substat) => substat.key !== result.mainStatKey
+  )
+
   for (let i = result.substats.length; i < 4; i++)
     result.substats.push({ key: '', value: 0 })
 
@@ -305,6 +318,24 @@ export function findBestArtifact(
         .map((substat, i) => (
           <div key={i}>
             {detectedText(substat, 'Sub Stat', (value) => (
+              <>
+                {statMap[value.key]}+
+                {artDisplayValue(value.value, getUnitStr(value.key))}
+                {getUnitStr(value.key)}
+              </>
+            ))}
+          </div>
+        ))}
+    </>
+  )
+
+  texts.unactivatedSubstats = (
+    <>
+      {result.unactivatedSubstats
+        .filter((substat) => substat.key !== '')
+        .map((substat, i) => (
+          <div key={i}>
+            {detectedText(substat, 'Unactivated Sub Stat', (value) => (
               <>
                 {statMap[value.key]}+
                 {artDisplayValue(value.value, getUnitStr(value.key))}

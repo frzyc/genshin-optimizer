@@ -8,6 +8,10 @@
     "replaceDatabase": "แทนที่ฐานข้อมูลเก่า",
     "hint": "อัปโหลดไฟล์ JSON ของคุณที่นี่...",
     "hintPaste": "...หรือวางข้อมูลของคุณด้านล่าง",
+    "error": {
+      "jsonParse": "ไม่สามารถแปลงไฟล์ JSON ได้",
+      "goInvalid": "รูปแบบไฟล์สำรอง GO ไม่ถูกต้อง"
+    },
     "dbSource": "แหล่งข้อมูล:",
     "goodUpload": {
       "title": "<strong>Genshin Open Object Description</strong> (GOOD) format"

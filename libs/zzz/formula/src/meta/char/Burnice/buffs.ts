@@ -1,0 +1,110 @@
+// WARNING: Generated file, do not modify
+export const buffs = {
+  core_afterburn_dmg_: {
+    sheet: 'Burnice',
+    name: 'core_afterburn_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'common_dmg_',
+      sheet: 'Burnice',
+      name: 'core_afterburn_dmg_',
+    },
+  },
+  ability_fire_anomBuildup_: {
+    sheet: 'Burnice',
+    name: 'ability_fire_anomBuildup_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'anomBuildup_',
+      sheet: 'Burnice',
+      attribute: 'fire',
+      name: 'ability_fire_anomBuildup_',
+    },
+  },
+  m1_afterburn_fire_anomBuildup_: {
+    sheet: 'Burnice',
+    name: 'm1_afterburn_fire_anomBuildup_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'anomBuildup_',
+      sheet: 'Burnice',
+      attribute: 'fire',
+      name: 'm1_afterburn_fire_anomBuildup_',
+    },
+  },
+  m2_pen_: {
+    sheet: 'Burnice',
+    name: 'm2_pen_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'pen_',
+      sheet: 'Burnice',
+      name: 'm2_pen_',
+    },
+  },
+  m4_exSpecial_crit_: {
+    sheet: 'Burnice',
+    name: 'm4_exSpecial_crit_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'crit_',
+      sheet: 'Burnice',
+      damageType1: 'exSpecial',
+      name: 'm4_exSpecial_crit_',
+    },
+  },
+  m4_assistSkill_crit_: {
+    sheet: 'Burnice',
+    name: 'm4_assistSkill_crit_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'crit_',
+      sheet: 'Burnice',
+      skillType: 'assistSkill',
+      name: 'm4_assistSkill_crit_',
+    },
+  },
+  m6_burn_fire_resIgn_: {
+    sheet: 'Burnice',
+    name: 'm6_burn_fire_resIgn_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'resIgn_',
+      sheet: 'Burnice',
+      attribute: 'fire',
+      damageType1: 'anomaly',
+      name: 'm6_burn_fire_resIgn_',
+    },
+  },
+  m6_fire_resIgn_: {
+    sheet: 'Burnice',
+    name: 'm6_fire_resIgn_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'resIgn_',
+      sheet: 'Burnice',
+      attribute: 'fire',
+      name: 'm6_fire_resIgn_',
+    },
+  },
+  m6_fire_anom_mv_mult_: {
+    sheet: 'Burnice',
+    name: 'm6_fire_anom_mv_mult_',
+    tag: {
+      et: 'display',
+      qt: 'dmg',
+      q: 'anom_mv_mult_',
+      sheet: 'Burnice',
+      attribute: 'fire',
+      name: 'm6_fire_anom_mv_mult_',
+    },
+  },
+} as const

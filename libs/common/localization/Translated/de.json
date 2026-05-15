@@ -7,41 +7,46 @@
         "noSubstat": "Kein Bonusattribut",
         "selectSub": "Bonusattribut auswählen",
         "error": {
-          "noCalc": "Zufällige Aufwertungen konnten nicht automatisch bestimmt werden.",
+          "noCalc": "Aufwertungen konnten nicht bestimmt werden.",
           "noOverRoll": "Bonusattribute können nicht mehr als {{value}}-mal aufgewertet werden."
         },
-        "noRoll": "Keine zufälligen Aufwertungen",
+        "noRoll": "Keine Aufwertungen",
         "noStat": "Kein Wert",
-        "eff": "Effizenz: <1></1>"
+        "eff": "RV: <1></1>"
       },
       "rarity": "Qualität",
       "level": "Level",
-      "unknownPieceName": "Name nicht bekannt",
-      "curSubEff": "Aktuelle Rollwertung",
-      "curSubEffDesc": "Alle 4 Artefakt-Stufen, wird 1 zufälliges Bonusattribut erhöht. <strong>Rollwertung</strong> zeigt, wie hoch die Bonusattributsaufwertung prozentual ausgefallen ist.",
-      "maxSubEff": "Max. Rollwertung",
-      "maxSubEffDesc": "Die <strong>Maximale Bonusattributseffizienz</strong> eines Artefakts berechnet die Effizienz unter der Annahme, dass alle verbleibenden zufälligen Aufwertungen maximal gut ausfallen.",
+      "unknownPieceName": "Teil nicht bekannt",
+      "curSubEff": "Aktuelle Attributwertung",
+      "curSubEffDesc": "Alle 4 Artefakt-Stufen, wird 1 zufälliges Bonusattribut erhöht. <strong>Attributwertung</strong> zeigt, wie hoch die Bonusattributsaufwertung prozentual ausgefallen ist.",
+      "maxSubEff": "Max. Attributwertung",
+      "maxSubEffDesc": "Die <strong>Maximale Attributwertung</strong> eines Artefakts berechnet die Wertung unter der Annahme, dass alle verbleibenden zufälligen Aufwertungen maximal gut ausfallen.",
       "preview": "Artefaktvorschau",
-      "dupArt": "Artefaktduplikate entdeckt.",
-      "upArt": "Verstärktes Artefakt entdeckt.",
+      "dupArt": "Artefaktduplikat entdeckt",
+      "upArt": "Aufgewertetes Artefakt entdeckt",
       "beforeEdit": "Vor dem Bearbeiten",
-      "btnSave": "Artefakt sichern",
-      "btnAdd": "Artefakt hinzufügen",
+      "btnSave": "Artefakt Speichern",
+      "btnAdd": "Artefakt Hinzufügen",
       "btnClear": "Eingaben löschen",
       "btnRandom": "Zufällig ausfüllen",
-      "btnUpdate": "Artefakt aktualisieren",
-      "clearPrompt": "Artefakt in Bearbeitung. Soll die Eingabe abgebrochen werden?"
+      "btnUpdate": "Artefakt Aktualisieren",
+      "clearPrompt": "Artefakt in Bearbeitung. Soll die Eingabe abgebrochen werden?",
+      "unknownSetName": "Set nicht bekannt",
+      "delete": "Löschen",
+      "confirmDelete": "Bist du sicher, dass du dieses Artefakt löschen willst?"
     },
     "artifactFilter": "Artefakt Filter",
     "filterLocation": {
       "inventory": "Inventar",
-      "currentlyEquipped": "Aktuell ausgerüstet"
+      "currentlyEquipped": "Aktuell Ausgerüstet",
+      "location": "Figuren"
     },
     "button": {
-      "unequipArtifacts": "Artefakte ablegen",
-      "deleteArtifacts": "Artefakte löschen",
+      "unequipArtifacts": "Artefakte Ablegen",
+      "deleteArtifacts": "Artefakte Löschen",
       "lockArtifacts": "Artefakte Sperren",
-      "unlockrtifacts": "Artefakte Entsperren"
+      "unlockrtifacts": "Artefakte Entsperren",
+      "unequipArtifact": "Artefakt ablegen"
     },
     "buttonHint": "Hinweis: Die oberen roten Knöpfe gelten nur für <1>gefilterte Artefakte</1>",
     "tipsOfTheDay": [
@@ -63,22 +68,36 @@
     },
     "info": {
       "title": "Anleitung zum Bearbeiten/Verwalten von Artefakten",
-      "section1": "<0>Zufällige Bonusattribut-Aufwertungen</0><1>Die <1>Anzahl zufälliger Aufwertungen</1> eines Bonusattributs steht lings vom Bonusattribut. Je höher diese Zahl, desto farbiger wird das Bonusattribut dargestellt:<3></3>.</1><2>Bonusattributseffizienz</2><3>Die Effizienz eines Bonusattributs ist eine prozentuale Angabe des aktuellen Werts in Bezug auf den höchstmöglichen 5<1></1> Wert. Bezogen auf das Bild ist der maximale KSCH einer Aufwertung 7,8%. Daraus resultiert die Effizienz: <3>5,8/7,8 = 69,2%.</3></3><4>Aktuelle Effizienz vs. Maximales Potential des Effizienz</4><5>Ein 5<1></1> Artefakt mit 9(4+5) zufälligen Aufwertungen, bei dem jede Aufwertung den höchstmöglichen Wert erhalten hat, besitzt 100% Effizienz. Die meisten Artefakte werden diese Effizienz nicht erreichen. Die <3>Aktuelle Effizienz</3> gib dabei an, wie nahe das Artefakt aktuell an dieser 100% Effizienz liegt. Die <5>Mazimale Effizienz</5> gibt an, wie Effizient dieses Artefakt wäre, wenn alle verbleibenden Auffwertungen den höchstmöglichen Wert erhalten würden.</5><6>Artefakte sperren</6><7>Wenn ein Artefakt gesperrt ist <1></1>, so wird dieses vom Build-Generator nicht verwendet. Ein ausgerüstetes Artefakt ist automatisch auch gesperrt.</7>",
+      "section1": "<0>Aufwertungen</0><1>Die <1>Anzahl der Aufwertungen</1> eines Bonusattributs ist rechts vom Attribut sichtbar und in Form von Balken dargestellt. Je höher die Anzahl der Aufwertungen, desto farbiger werden sowohl das Bonusattribut als auch der Balken dargstellt:<3></3>.</1><2>Attributwertung</2><3>Die Attributwertung (RV vom englischen Begriff \"Roll-Value\") eines Bonusattributs ist eine prozentuale Angabe des aktuellen Werts in Bezug auf den höchstmöglichen 5<1></1> Wert. Unser Beispielartefakt im Bild hat ein LP%-Attribut in Höhe von 5,3%, der maximal erreichbare Wert ist 5,8%. Daraus resultiert die Attributwertung: <3>5,3/5,8 = ~90%.</3></3><4>Aktuelle Wertung vs. Maximales Potential der Wertung</4><5>Ein 5<1></1> Artefakte mit 9 (4 anfänglichen + 5 zusätzlichen) zufälligen Aufwertungen, bei denen jede Aufwertung den höchstmöglichen Wert erhalten hat, besitzt 900% Attributwertung. Die meisten Artefakte werden diese Wertung nicht erreichen. Die <3>Aktuelle Attributwertung</3> gib dabei an, wie nahe das Artefakt aktuell diesem Maximalwert ist. Die <5>Maximale Attributwertung</5> gibt die höchstmögliche Attributwertung an, die erreicht werden kann, wenn alle Aufwertungen den höchstmöglichen Wert haben.</5>",
       "section2": "<0>Artefakt Editor</0><1>Ein vollwertiger Artefakt-Editor für 3<1></1> bis 5<3></3> Artefakte. Wenn Bonusattribute eingetragen werden, werden die Werte jeder einzelnen Aufwertung und die Höhe der Aufwertung berechnet und angezeigt. Zusätzlich wird das überprüft ob das eingegebene Artefakt die korrekte Stufe hat und ob sonstige Eigenschaften stimmen.</1><2>Screenshot einscannen</2><3>Manuelle Eingabe liegt dir nicht? Artefakte können auf einem Bild automatisiert erkannt werden! Ein Klick auf <1>Zeig mir wie!</1> gibt eine Einführung.</3><4>Automatischer Artefaktscanner</4><5>Falls du Genshin auf dem PC spielst kannst du dir ein Programm herunterladen welches automatisch alle deine Artefakt für dich einscannt, importieren kannst du diese Daten dann in <1></1> Einstellungen. <3>Klicke hier</3> für eine Liste aller mit GO kompatiblen Scanner.</5><6>Erkennung von Duplikaten / Aufwertungen</6><7>Wusstest du das GO erkennen kann wenn du ein <1>Artefaktduplikat</1>, welches bereits in deiner Datenbank vorhanden ist, hinzufügst? Es kann auch erkennen ob das Artefakt im Editor die <3>aufgewertete Version</3> eines bereits vorhandenen Artefakts ist. Falls ein Duplikat oder eine Aufwertung erkannt wird, werden dir beide relevanten Artefakte in einer Vorschau angezeigt damit du diese vergleichen kannst(Siehe Bild).</7>",
-      "section3": "<0>Artefakt Inventar</0><p>Hier sind alle Artefakte zu sehen, die zum Genshin Optimizer hinzugefügt wurden. Mit den Filtern kannst du die Auswahl an angezeigten Artefakte weiter verfeinern.</p><2>Beispiel: Finding Fodder Artifacts</2><p>Durch die Verwendung von Filtern und Effizenz-Berechnungen können schnell Artefakte gefunden werden, die zur Aufwertung anderer Artefakte verwendet werden können.</p><4>In diesem Beispiel sind die Filter wie folgt gesetzt: </4><5><0>Level zwischen 0 und 8.</0><1>Nicht gesperrte im Inventar.</1><2>Ausschluss von LP, VTD und Aufladerate aus der Berechnung der Effizienz.</2><3>Aufsteigend sortiert nach maximaler Effizienz.</3></5><p>Dies sortiert die Artefakte nach geringster Effizienz für die gewählten Bonusattribute.</p>"
+      "section3": "<0>Artefakt Inventar</0><1>Hier sind alle Artefakte zu sehen, die zum Genshin Optimizer hinzugefügt wurden. Mit den Filtern kannst du die Auswahl an angezeigten Artefakte weiter verfeinern.</1><2>Beispiel: Schrott-Artefakte finden</2><3>Durch die Verwendung von Filtern und dem anpassen der gewünschten Attributwertung können schnell Artefakte gefunden werden, die zur Aufwertung anderer Artefakte verwendet werden können.</3><4>In diesem Beispiel sind die Filter wie folgt gesetzt: </4><5><0><0>Level zwischen 0 und 8.</0><1>Nicht gesperrte Artefakte im Inventar.</1><2>Ausschluss von LP, VTD und Aufladerate aus der Berechnung der Attributwertung.</2><3>Aufsteigend sortiert nach maximaler Attributwertung.</3></0></5><6>Dies sortiert die Artefakte nach geringster Wertung für die gewählten Bonusattribute.</6>"
     },
     "sortMap": {
       "level": "Level",
-      "efficiency": "Aktuelle Rollwertung",
-      "mefficiency": "Maximale Rollwertung"
+      "efficiency": "Aktuelle Attributwertung",
+      "mefficiency": "Maximale Attributwertung"
     },
     "efficiencyFilter": {
-      "title": "In Berechnung der Rollwertung zu berücksichtigende Bonusattribute"
+      "title": "In Berechnung der Attributwertung zu berücksichtigende Bonusattribute"
     },
     "resetFilters": "Filter zurücksetzen",
-    "setEffectNum": "Set mit {{setNum}} Teilen",
+    "setEffectNum": "{{setNum}}er-Set",
+    "edit": "Artefakt bearbeiten",
     "autocompleteLabels": {
-      "substats": "Bonusattribute"
+      "sets": "Artefaktsets",
+      "mainStats": "Hauptattribute",
+      "substats": "Bonusattribute",
+      "set": "Artefaktset"
+    },
+    "addNew": "Neues Artefakt Hinzufügen",
+    "equippedArt": "Alle Ausgerüsteten Artefakte",
+    "artInInv": "Alle unausgerüsteten Artefakte",
+    "showDup": "Duplikate anzeigen",
+    "noDupAlert": "Es sind keine Artefaktduplikate in deinem Inventar vorhanden.",
+    "subheadings": {
+      "general": "Generell",
+      "inventory": "Inventar",
+      "rollvalue": "Attributwertung"
     }
   },
   "languages": {
@@ -94,7 +113,9 @@
     "pt": "Portugisisch",
     "ru": "Russisch",
     "th": "Thailändisch",
-    "vi": "Vietnamesisch"
+    "vi": "Vietnamesisch",
+    "it": "Italienisch",
+    "tr": "Türkisch"
   },
   "settings": {
     "title": "Einstellungen",
@@ -102,19 +123,26 @@
       "languageFormat": "Sprache: {{language}}"
     },
     "uploadCard": {
-      "title": "Datenbank importieren",
-      "replaceDatabase": "Datenbank ersetzen",
+      "title": "Datenbank Hochladen",
+      "replaceDatabase": "Datenbank Aktualisieren",
       "hint": "Lade die JSON-Datei hier hoch...",
-      "hintPaste": "... oder kopiere den Text hierhin.",
+      "hintPaste": "... oder kopiere den Datentext hierhin.",
       "error": {
         "jsonParse": "Kann JSON-File nicht parsen.",
         "unknown": "Unbekanntes Dateiformat.",
         "monaInvalid": "Ungültiges Mona-Uranai Dateiformat",
         "goInvalid": "Ungültiges GO Backupdateiformat"
+      },
+      "dbSource": "Datenquelle:",
+      "goodUpload": {
+        "title": "<strong>Genshin Open Object Description</strong> (GOOD) Format"
+      },
+      "buttons": {
+        "open": "Öffnen"
       }
     },
     "count": {
-      "chars": "Charaktere:",
+      "chars": "Figuren:",
       "arts": "Artefakte:",
       "weapons": "Waffen:",
       "total": "Insgesamt:",
@@ -122,7 +150,11 @@
       "updated": "Aktualisiert:",
       "removed": "Entfernt:",
       "unchanged": "Unverändert:",
-      "invalid": "Ungültig:"
+      "invalid": "Ungültig:",
+      "upgraded": "Aufgewertet:",
+      "teams": "Teams:",
+      "builds": "Builds: ",
+      "buildTcs": "TC Builds: "
     },
     "DatabaseCard": {
       "title": "Datenbank",
@@ -135,6 +167,13 @@
       },
       "currentDB": "Aktuelle Datenbank"
     },
+    "sillyCard": {
+      "desc": "Wir haben ein paar Charakterportraits von <strong>Silly Wisher</strong> <1>gestohlen</1> ausgeliehen (mit Erlaubnis) und den Genshin Optimizer damit genetisch modifiziert.",
+      "toggle": {
+        "enabled": "Silly Optimizer An",
+        "disabled": "Silly Optimizer Aus"
+      }
+    },
     "letsnow": "Lass es schneien!"
   },
   "ui": {
@@ -144,10 +183,15 @@
       "characters": "Figuren",
       "tools": "Extras",
       "weapons": "Waffen",
-      "setting": "Einstellungen"
+      "doc": "Docs",
+      "setting": "Einstellungen",
+      "scanner": "Scanner",
+      "teams": "Teams",
+      "archive": "Archiv",
+      "builds": "Builds"
     },
     "social": {
-      "paypal": "Paypal",
+      "paypal": "PayPal",
       "patreon": "Patreon",
       "discord": "Discord"
     },
@@ -155,8 +199,8 @@
     "ascending": "Aufsteigend",
     "descending": "Absteigend",
     "loading": "Laden...",
-    "rightsDisclaimer": "Genshin Optimizer ist kein Teil von miHoYo und wird nicht davon unterstützt.",
-    "appVersion": "$t(pageTitle) Version: {{version}}",
+    "rightsDisclaimer": "Genshin Optimizer ist kein Teil von HoYoverse und wird nicht davon unterstützt.",
+    "appVersion": "$t(pageTitle) Version: <1>{{version}}</1>",
     "error": "Fehler",
     "reset": "Zurücksetzen",
     "info": "Info",
@@ -166,11 +210,31 @@
       "new": "Neu",
       "name": "Name",
       "level": "Stufe",
+      "rarity": "Qualität",
       "efficiency": "Aktuelle RV",
       "mefficiency": "Maximale RV",
-      "artsetkey": "Artefaktset"
+      "artsetkey": "Artefaktset",
+      "lastEdit": "Zuletzt Bearbeitet"
     },
-    "refinement": "Verfeinerung {{value}}"
+    "link": {
+      "discord": "Discord Einladungslink"
+    },
+    "sortBy": "Sortieren Nach: ",
+    "delete": "Löschen",
+    "locked": "Gesperrt",
+    "unlocked": "Entsperrt",
+    "refinement": "Verfeinerung {{value}}",
+    "selectlevel": "Stufe Einstellen",
+    "gender": {
+      "F": "Weiblich",
+      "M": "Männlich"
+    },
+    "statGroupKey": {
+      "basic_stats": "Attribute"
+    },
+    "sillyPageTitle": "Silly Optimizer",
+    "excluded": "Ausgeschlossen",
+    "included": "Einbezogen"
   },
   "char_Eula": {
     "burstC": {
@@ -192,9 +256,9 @@
     "addAimed": "Zusätzlicher Schaden durch gezielte Schüsse",
     "addFullAimed": "Zusätzlicher Schaden durch voll aufgeladene gezielte Schüsse",
     "upcurrentDuration": "Dauer der Luftströmung",
-    "regenEner": "Stellt Venti nach Ende des Effekts 15 Elementarenergie wiederher.",
+    "regenEner": "Stellt Venti nach Ende des Effekts 15 Elementarenergie wieder her",
     "c6": "Ziele, denen mit <strong>Ode vom Anemo-Archon</strong> Schaden zugefügt wird",
-    "q": "Stellt allen <1>{{elementKey}}</1> Figuren 15 Elementarenergie wieder her.",
+    "q": "Stellt allen Figuren 15 Elementarenergie wieder her",
     "c2": {
       "hit": "getroffene Gegner",
       "launched": "weggeschleuderte Gegner"
@@ -223,17 +287,39 @@
       "burst": "Nach Anwendung von Spezialfähigkeiten"
     },
     "afterSprint": "Nach dem Sprinten",
-    "energy": "Energie"
+    "1set": "1er-Set",
+    "2set": "2er-Set",
+    "4set": "4er-Set",
+    "talents": {
+      "passive1": "A1",
+      "passive2": "A4",
+      "passive3": "Passive",
+      "sprint": "Rennen",
+      "constellation1": "C1",
+      "constellation2": "C2",
+      "constellation3": "C3",
+      "constellation4": "C4",
+      "constellation5": "C5",
+      "constellation6": "C6"
+    },
+    "energy": "Energie",
+    "interval": "Intervall",
+    "bonusScaling": {
+      "value": "{{value}}% "
+    },
+    "hpChange": "Nach Veränderung der LP",
+    "level": "Stufe {{count}}"
   },
   "weapon_SongOfBrokenPines": {
-    "name": "Bewegung des Jahrtausends – Lied vom Aufstand"
+    "name": "Bewegung des Jahrtausends – Lied vom Aufstand aktiv"
   },
   "char_KaedeharaKazuha": {
     "c1": "Überspringt die Abklingzeit bei Anwendung von <strong>Kazuha-Schlag</strong>",
     "c2": "Innerhalb des wirbelnden Herbstfeldes",
     "c6": {
       "after": "Bei Anwendung von <strong>Chihayaburu</strong> oder <strong>Kazuha-Schlag</strong>"
-    }
+    },
+    "skillPlunge": "Midare Ranzan"
   },
   "char_Rosaria": {
     "a1": "Bei Angriffen von hinten",
@@ -257,10 +343,12 @@
   },
   "char_RaidenShogun": {
     "skill": {
-      "eye": "Unheilvolles Auge der Blitzstrafe aktiv"
+      "eye": "Unheilvolles Auge der Blitzstrafe aktiv",
+      "partyCost": "Energiekosten"
     },
     "burst": {
-      "resolves": "Stapelungen von Entschlusskraft"
+      "resolves": "Stapelungen von Entschlusskraft",
+      "burstDmg": "Musou no Hitotachi-SCH"
     },
     "a4": {
       "eleDMG": "Elektro-SCH-Bonus"
@@ -268,34 +356,89 @@
   },
   "char_Aloy": {
     "skill": {
-      "coil": "Spule"
+      "coil": "Spule",
+      "rush": "Eisige Eile"
+    }
+  },
+  "char_KujouSara": {
+    "skill": {
+      "ambush": "Tengu Juurai - Hinterhalt aktiv"
     }
   },
   "char_SangonomiyaKokomi": {
     "burst": "Rituelles Federkleid angelegt",
-    "c2": "Charaktere haben 50% oder weniger LP"
+    "c2": "Charaktere haben 50% oder weniger LP",
+    "c6": "Nachdem Standardangriffe oder heftige Schläge einen Charakter mit mehr als 80% LP heilen"
   },
   "page_home": {
-    "intro": "Der <strong>ultimative</strong> <3><i>Genshin Impact</i></3>-Rechner, GO behält den Überblick über dein Artefakt-/Waffen-/Charakterinventar und hilft dir, mit was du hast den besten Build zu erstellen, basierend auf deiner Spielweise."
+    "intro": "Der <strong>ultimative</strong> <3><i>Genshin Impact</i></3>-Rechner, GO behält den Überblick über dein Artefakt-/Waffen-/Charakterinventar und hilft dir, mit was du hast den besten Build zu erstellen, basierend auf deiner Spielweise.",
+    "quickLinksCard": {
+      "buttons": {
+        "scanners": {
+          "title": "Automatische Scanner"
+        },
+        "kqm": {
+          "title": "Keqing Mains"
+        },
+        "devDiscord": {
+          "title": "Genshin Entwickler Discord"
+        },
+        "good": {
+          "title": "GOOD Dokumentation"
+        },
+        "patchNotes": {
+          "title": "Patchnotizen"
+        }
+      }
+    },
+    "inventoryCard": {
+      "title": "GO Inventar"
+    },
+    "teamCard": {
+      "title": "Lern das Team Kennen",
+      "jobTitle": {
+        "dev": "Entwickler",
+        "mod": "Moderator",
+        "admin": "Administrator",
+        "translator": "Übersetzungsmanager"
+      }
+    }
   },
   "page_scanner": {
     "intro": "<0>Scanner</0><1>Scanner sind Tools welche spielbezogene Daten aus Screenshots oder direkt aus dem Spiel auslesen können.</1><2>Unten sind mehrere Scanner aufgelistet welche mit GO getestet wurden.</2><3>Um die exportierte Datei hochzuladen, gehe auf die Seite <1>Einstellungen</1> und lade dort deine Datei in der Sektion <strong>Datenbank Hochladen</strong> hoch.</3>",
     "ik": {
-      "title": "Inventory Kamera"
+      "title": "Inventory Kamera",
+      "p1": "Diese Anwendung kann alle Charaktere, Waffen und Artefakte auf deinem Account einscannen. Folge den Anweisungen im Programm um alles richtig einzustellen. "
     },
     "as": {
       "title": "AdeptiScanner",
       "p1": "Scannt alle Artefakte und Waffen in deinem Inventar. Hat einen manuellen Scanmodus und kann zudem Daten von <1>Enka.Network</1> importieren."
     },
+    "goodeng": "Diese Anwendung kann nur scannen, wenn das Spiel auf Englisch gestellt ist und exportiert Ergebnisse im <1>GOOD</1> Format.",
     "tags": {
       "pc": "PC",
+      "mobile": "Handy",
       "ps": "PlayStation",
       "materials": "Materialien",
-      "characters": "Charaktere"
-    }
+      "characters": "Charaktere",
+      "weapons": "Waffen",
+      "achievements": "Errungenschaften"
+    },
+    "nb": {
+      "title": "Artiscan",
+      "p1": "Dieser Browser-basierte Scanner kann entweder dein Spielefenster erfassen und scannen, oder eine Bildschirmaufnahme (Foto/Video) scannen. Die Bildschirmaufnahme kann im Vollbild aufgenommen sein und muss nicht zugeschnitten werden.",
+      "p2": "Handy/PlayStation Spieler können Artefakte nur per Screenshot oder Videoaufnahme scannen."
+    },
+    "seelieme": "Diese Anwendung kann auch Materialien für <1>Seelie.me</1> einscannen."
+  },
+  "artifact_ViridescentVenerer": {
+    "condName": "Verwirbeltes Element"
   },
   "weapon_CinnabarSpindle": {
     "name": "Effekt ist aktiv"
+  },
+  "weapon_ElegyForTheEnd": {
+    "condName": "Bewegung des Jahrtausends - Lied vom Abschied aktiv"
   },
   "artifact_BlizzardStrayer": {
     "condName": "Gegner ist",
@@ -304,6 +447,12 @@
   },
   "artifact_HuskOfOpulentDreams": {
     "condName": "Neugier"
+  },
+  "artifact_ShimenawasReminiscence": {
+    "afterUseEnergy": "15 Elementarenergie konsumiert"
+  },
+  "artifact_TinyMiracle": {
+    "condName": "Elementar-SCH erlitten"
   },
   "char_Bennett": {
     "c4DMG": "Fantastische Reise-SCH"
@@ -326,14 +475,25 @@
       "lingerDuration": "Effekt-Anhaltedauer"
     }
   },
+  "char_Mona": {
+    "uponSprint": "Nach Nutzung von Irreführende Strömung"
+  },
+  "char_Razor": {
+    "electroSigil": "Elektro-Siegel"
+  },
   "char_Shenhe": {
     "quill": "Eisfeder ist aktiv",
     "c4": "Frosthimmelmantra ausgelöst",
     "pressQuota": "Stapelungen bei Drücken",
     "holdQuota": "Stapelungen bei Gedrückthalten"
   },
+  "char_Xiao": {
+    "burst": {
+      "inBurst": "<strong>Geistervertreibung</strong> aktiv"
+    }
+  },
   "char_Xingqiu": {
-    "burstCond": "Regenbogentechnik"
+    "burstCond": "Regenbogentechnik aktiv"
   },
   "char_Yanfei": {
     "seals": ["0 Siegel", "1 Siegel", "2 Siegel", "3 Siegel", "4 Siegel"],
@@ -371,52 +531,332 @@
     },
     "p1cond": "Wenn der <strong>Jadeblock-Schild</strong> Schaden nimmt"
   },
+  "weapon_BlackTassel": {
+    "condName": "Gegner ist ein Schleim"
+  },
+  "weapon_Deathmatch": {
+    "condName": "Gegner in der Nähe"
+  },
   "weapon_TheWidsith": {
     "aria": "Arie",
     "interlude": "Intermezzo",
     "recitative": "Rezitativ"
   },
+  "artifact_EchoesOfAnOffering": {
+    "avg": "Durschnitt",
+    "always": "Immer"
+  },
   "page_character": {
+    "addNew": "Figur Hinzufügen",
+    "tabs": {
+      "overview": "Übersicht",
+      "talent": "Talente",
+      "optimize": "Optimieren",
+      "theorycraft": "Theorycraften",
+      "upopt": "Artefaktverbesserer"
+    },
+    "delete": "Charakter löschen",
     "hitmode": {
+      "hit": "Nicht-Krit. Treffer",
+      "avgHit": "Durchschn.-SCH",
       "critHit": "KRIT Treffer-SCH"
     },
     "tabEquip": {
-      "compare": "Mit aktuellem Build vergleichen"
+      "swapWeapon": "Waffe Wechseln",
+      "swapArt": "Artefakt Wechseln",
+      "compare": "Mit aktuellem Build vergleichen",
+      "unequipArts": "Alle Artefakte ablegen"
+    },
+    "characterName": "Name der Figur",
+    "noReaction": "Keine Reaktion",
+    "multiTarget": {
+      "title": "Konfiguration Multi-Optimierungsziele",
+      "addNewTarget": "Ziel Hinzufügen",
+      "description": "Beschreibung",
+      "duplicate": "Kopie erstellen"
+    },
+    "addStats": {
+      "title": "Zusätzliche Attribute",
+      "label": "Neues Zusatzattribut"
     },
     "tabTheorycraft": {
       "maxTotalRolls": "Ein \"zulässiger\" Build kann maximal 45 Rolls haben.",
+      "distribute": "Verteilen",
+      "compareToggle": {
+        "equipped": "Vergleich mit Ausgerüstetem"
+      },
       "kqmsDialog": {
         "kqmsBtn": "KQMS verwenden",
         "title": "KQMS verwenden?",
         "content": "Dies wird deine aktuellen <strong>Bonusattribute</strong> mit den von den <4>KQM Standards</4> vorgesehenen ersetzen."
+      },
+      "gcsimDialog": {
+        "title": "gcsim Export"
       }
     },
-    "addStats": {
-      "label": "Neues Zusatzattribut"
+    "teammateUsing": {
+      "weapon": "Truppenmitglied <strong><1></1></strong> benutzt diese Waffe.",
+      "artifact": "Truppenmitglied <strong><1></1></strong> benutzt bereits <3></3>"
     }
   },
+  "page_weapon": {
+    "edit": "Waffe bearbeiten",
+    "weaponName": "Waffenname",
+    "addWeapon": "Neue Waffe Hinzufügen",
+    "cantDeleteLock": "Waffe nicht löschbar, da sie gesperrt ist",
+    "button": {
+      "deleteWeapons": "Waffen löschen",
+      "lockWeapons": "Waffen sperren",
+      "unlockWeapons": "Waffen entsperren"
+    },
+    "equippedWeapon": "Alle Ausgerüsteten Waffen",
+    "weaponInInv": "Alle unausgerüsteten Waffen",
+    "locationsTooltip": "Schalte \"Alle Ausgerüsteten Waffen\" aus um nach spezifischen Charakteren zu filtern",
+    "subheadings": {
+      "general": "Generell",
+      "inventory": "Inventar"
+    }
+  },
+  "weapon_AquaSimulacra": {
+    "condName": "Gegner in der Nähe"
+  },
   "page_character_optimize": {
+    "tcGraph": {
+      "notSel": "Nicht Ausgewählt",
+      "downloadData": "Daten Herunterladen",
+      "generatedBuilds": "Generierte Builds",
+      "currentBuild": "Aktueller Build"
+    },
     "allowPartial": "Erlaube Teil-Builds (<5 Artefakte)",
     "constraintFilter": {
       "title": "Build-Beschränkungen",
       "tooltip": "Lege bestimmte Anforderungen fest, die generierte Builds erfüllen müssen. z.B. generierte Builds müssen mindestens 140% Aufladerate haben."
     },
     "artSetConfig": {
+      "title": "Artefaktset-Einstellungen",
+      "setEffCond": "Seteffekt Bedingungen",
+      "enabled": "Aktiv",
+      "allowed": "Erlaubt",
+      "excluded": "Ausgeschlossen",
+      "selected": "Aktiv",
       "2rainbow": "3-Regenbogen",
       "4rainbow": "5-Regenbogen",
-      "alExRainbow": "<0>Erlaube <1></1></0> / <2>Sperre <1></1></2> Regenbogen-Builds",
+      "allowAll2set": "Alle 2er-Sets erlauben",
+      "excludeAll2set": "Alle 2er-Sets Ausschließen",
+      "allowAll4set": "Alle 4er-Sets erlauben",
+      "excludeAll4set": "Alle 4er-Sets Ausschließen",
+      "alExRainbow": "<0>Erlauben <1></1></0> / <2>Ausschließen <1></1></2> Regenbogen-Builds",
       "modal": {
         "setCond": {
+          "title": "Effekte durch Erfüllen von Artefaktsetbedingungen",
+          "reset": "Bedingungen zurücksetzen",
           "text": "Einige Artefakt-Set-Effekte bieten bedingte Stats. In diesem Fenster kannst du diese Effekte auswählen, so dass sie bei der Berechnung eines Builds, der einen Set-Effekt erfüllt, während der Optimierung Werte beitragen können."
         },
         "ArtSetFilter": {
-          "intro": "Du kannst erlauben/sperren, welche Sets der Builder berücksichtigen soll. In den folgenden Beispielen ist <strong>A</strong> on-set und <strong>R</strong> Regenbogen(off-set)",
-          "2set": "<0><0>Sperre<1></1> 2-Set</0></0> würde 2-Set-Builds ausschließen: <2><0>AA</0>RRR</2> und <4><0>AAA</0>RR</4>.",
-          "4set": "<0><0>Sperre<1></1> 4-Set</0></0> würde 4-Set-Builds ausschließen: <2><0>AAAA</0>R</2> und <4><0>AAAAA</0></4>.",
-          "2rain": "<0><0>Sperre<1></1> 3-Regenbogen</0></0> würde 2-Set + 3-Regenbogen-Builds ausschließen: <2>AA<1>RRR</1></2> und <4>AAA<1>RR</1></4>.",
-          "4rain": "<0><0>Sperre<1></1> 5-Regenbogen</0></0> würde vollständige 5-Regenbogen-Builds ausschließen: <2><0>RRRRR</0></2>."
+          "title": "Artefaktsets <1>Erlaubt<1></1></1> / <3>Ausgeschlossen<1></1></3>",
+          "intro": "Du kannst erlauben/ausschließen, welche Sets der Builder berücksichtigen soll. In den folgenden Beispielen ist <strong>A</strong> on-set und <strong>R</strong> Regenbogen(off-set)",
+          "2set": "<0><0>Ausschließen<1></1> 2er-Sets</0></0> würde 2er-Set-Builds ausschließen: <2><0>AA</0>RRR</2> und <4><0>AAA</0>RR</4>.",
+          "4set": "<0><0>Ausschließen<1></1> 4er-Set</0></0> würde 4er-Set-Builds ausschließen: <2><0>AAAA</0>R</2> und <4><0>AAAAA</0></4>.",
+          "2rain": "<0><0>Ausschließen<1></1> 3er-Regenbogen</0></0> würde 2er-Set + 3-Regenbogen-Builds ausschließen: <2>AA<1>RRR</1></2> und <4>AAA<1>RR</1></4>.",
+          "4rain": "<0><0>Ausschließen<1></1> 5-Regenbogen</0></0> würde vollständige 5-Regenbogen-Builds ausschließen: <2><0>RRRRR</0></2>."
         }
       }
+    },
+    "targetSelector": {
+      "selectOptTarget": "Optimierungsziel auswählen",
+      "selectGraphTarget": "Graphisches Optimierungsziel auswählen"
+    },
+    "selectTargetFirst": "Wähle zuerst ein Optimierungsziel",
+    "generateButton": {
+      "cancel": "Abbrechen",
+      "generateBuilds": "Builds Generieren"
+    },
+    "removeBuildButton": "Build Löschen",
+    "theorycraftButton": "Theorycraften",
+    "currentlyEquippedBuild": "Aktuell Ausgerüstet",
+    "excludeChar": {
+      "title": "Ausgerüstete Artefakte Nutzen",
+      "modal": {
+        "allow_all": "Alle angezeigten Charaktere erlauben",
+        "disallow_All": "Alle angezeigten Charaktere nicht erlauben"
+      },
+      "allowEquip": "Erlaube die Nutzung der Artefakte von",
+      "artis": "Ausgerüstete Artefakte",
+      "states": {
+        "unequippedOnly": "Nur Unausgerüstete"
+      }
+    },
+    "excludeArt": {
+      "button_txt": "Artefakte ausschließen",
+      "includeArtifactButton": "Dieses Artefakt beim Optimieren einbeziehen"
+    },
+    "upOptNoResults": "Scheinbar sind keine Artefakte vorhanden die deinen aktuellen Build verbessern könnten. Deine Artefaktfilter sind möglicherweise zu restriktiv eingestellt. Ansonsten kannst du auch versuchen mit den normalen Artefaktoptimierungstool deinen Build zu verbessern.",
+    "upOptInfo": "Der Artefaktverbesserer hilft dir beim Finden von Artefakten die eine hohe Chance haben, den Wert deines Optimierungsziels zu erhöhen. <br/>Da der Verbesserer nur jeweils ein Artefakt tauscht nutze das normale Optimierungstool für das Zusammenstellen von Gesamtbuilds.",
+    "targetSelectorTitle": "Zielauswahl",
+    "compareArtModal": {
+      "newArt": "Neues Artefakt",
+      "oldArt": "Altes Artefakt",
+      "tcArt": "TC Artefakt"
     }
+  },
+  "page_newTab": {
+    "title": "🛑 Neuer Optimizer Tab Erkannt 🛑",
+    "p1": "Es scheint so, als ob du Genshin in einem anderen Tab geöffnet hast 💞. GO ist nicht für das Nutzen in mehreren Tabs ausgelegt📵! Dies trotzdem zu tun kann zu folgenden Problemen führen:",
+    "symptom": {
+      "1": "Desynchronisation von Daten zwischen Tabs🙃",
+      "2": "Datenbankkorruption 💔",
+      "3": "Bauchschmerzen🤰 und frustrierte Genshin Optimizer Entwickler😡",
+      "4": "In seltenen Fällen, TOD☠️"
+    },
+    "p2": "Wir haben dies verhindert, indem wir diese Nachricht angezeigt haben 📝. Du hast nun die Wahl, du kannst nun entweder:",
+    "choice": {
+      "1": "Diesen Tab schließen 🔪, und den neuen Tab nutzen 🆕",
+      "2": "Den neuen Tab schließen ↩️, und nur dann wenn du auch WIRKLICH sicher bist, dass dies hier der EINZIGE offene Tab ist 🔂, diese Seite neu laden🔄"
+    },
+    "refresh": "Seite neu Laden"
+  },
+  "page_error": {
+    "fixes": {
+      "1": "Seite neu laden"
+    },
+    "refresh": "Seite neu Laden",
+    "confirmNuke": "Bist du sicher, dass du ALLE GO Daten löschen willst? Dies ist unumkehrbar!",
+    "nuke": "ALLE GO Daten löschen"
+  },
+  "char_Somnia": {
+    "name": "Somnia",
+    "constellationName": "Mathematica Felina",
+    "burst": {
+      "name": "Parallaxenpfötchen"
+    },
+    "passive2": {
+      "name": "Mathegenie"
+    },
+    "constellation2": {
+      "name": "Primzahl"
+    },
+    "constellation3": {
+      "name": "Unendliche Zahlenreihe",
+      "description": {
+        "0": "Erhöht die Stufe der Fähigkeit <strong>Parallaxen Pfötchen</strong> um 3."
+      }
+    },
+    "constellation4": {
+      "name": "Perfekte Quadratzahl"
+    },
+    "constellation5": {
+      "name": "Katzenminze-Koeffizient"
+    },
+    "constellation6": {
+      "name": "Goldener Schnitt"
+    },
+    "multCond": "Im Multiplikationsmodus",
+    "subCond": "Im Subtraktionsmodus",
+    "average": "Durchschnitt",
+    "always": "Immer"
+  },
+  "weapon_QuantumCatalyst": {
+    "name": "Quanten-Katzalysator",
+    "description": "Dieser hochfortgeschrittene Katz-alysator ist mit der Macht der Quantenmechanik ausgestattet und erinnert stark an das Aussehen einer neugierigen Katze mit grünen, leuchtenden, Augen, einem Schwanz der pure Elektro Energie ausstrahlt, und flauschigen Ohren die zwischen denen gelegentlich Blitze hin- und herzischen.",
+    "passiveName": "Miauonen Miaumentum"
+  },
+  "char_Furina": {
+    "fanfarePoints": "Pomp"
+  },
+  "weapon_UltimateOverlordsMegaMagicSword": {
+    "condName": "Melusinen geholfen"
+  },
+  "common_common": {
+    "social": {
+      "paypal": "PayPal",
+      "patreon": "Patreon",
+      "discord": "Discord"
+    },
+    "link": {
+      "discord": "Discord Einladungslink"
+    },
+    "unselect": "Abwählen",
+    "inventory": "Inventar",
+    "ascending": "Aufsteigend",
+    "descending": "Absteigend",
+    "sortBy": "Sortieren Nach: ",
+    "loading": "Lädt...",
+    "error": "Fehler",
+    "reset": "Zurücksetzen",
+    "info": "Info",
+    "close": "Schließen",
+    "delete": "Löschen",
+    "locked": "Gesperrt",
+    "unlocked": "Entsperrt",
+    "excluded": "Ausgeschlossen",
+    "included": "Einbezogen",
+    "selectlevel": "Stufe Einstellen",
+    "gender": {
+      "F": "Weiblich",
+      "M": "Männlich"
+    }
+  },
+  "char_Arlecchino": {
+    "bloodfireDmg": "SCH Blutflammen des Mondes des Verdebens"
+  },
+  "char_Chiori": {
+    "a1Cond": "Brokatschnitt aktiv"
+  },
+  "char_Sethos": {
+    "a4Cond": "Sengender Sandschatten aktiv"
+  },
+  "page_team": {
+    "team": {
+      "name": "Truppenname",
+      "desc": "Truppenbeschreibung"
+    }
+  },
+  "sr_header": {
+    "tabs": {
+      "relics": "Relikte",
+      "lightcones": "Lichtkegel",
+      "characters": "Figuren",
+      "teams": "Teams",
+      "settings": "Einstellungen"
+    }
+  },
+  "sr_page_settings": {
+    "DatabaseCard": {
+      "title": "Datenbank",
+      "button": {
+        "swap": "Wechseln",
+        "copy": "Zwischenablage",
+        "upload": "Hochladen",
+        "download": "Herunterladen",
+        "delete": "Löschen"
+      },
+      "currentDB": "Aktuelle Datenbank"
+    },
+    "count": {
+      "chars": "Figuren:",
+      "relics": "Relikte: ",
+      "lightCones": "Lichtkegel:",
+      "teams": "Teams:",
+      "builds": "Builds:",
+      "new": "Neu:",
+      "unchanged": "Unverändert:",
+      "upgraded": "Aufgewertet:",
+      "removed": "Gelöscht:",
+      "invalid": "Invalide:"
+    },
+    "uploadCard": {
+      "title": "Datenbank hochladen",
+      "buttons": {
+        "open": "Öffnen",
+        "detectDups": "Aufwertungen/Duplikate erkennen"
+      },
+      "hint": "Lade die JSON-Datei hier hoch...",
+      "hintPaste": "... oder kopiere den Datentext hierhin.",
+      "dbSource": "Datenquelle:",
+      "replaceDatabase": "Datenbank aktualisieren"
+    }
+  },
+  "sr_ui": {
+    "pageTitle": "Star Rail Optimizer"
   }
 }

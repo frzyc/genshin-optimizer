@@ -1,0 +1,171 @@
+{
+  "name": "Jahoda",
+  "title": "La Sombra Dominavientos",
+  "description": "La empleada superfiable que todo lo puede hacer (o eso dice ella) de la Cámara de Secretos.",
+  "constellationName": "Fragum",
+  "auto": {
+    "name": "Flechazo oportuno",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 3 disparos consecutivos con arco."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Realiza un <strong>Disparo Preciso</strong> que inflige mayor daño y tiene mayor precisión.",
+        "2": "Al apuntar, un fuerte viento se acumulará en la punta de la flecha que, al estar totalmente cargada con la fuerza del viento, infligirá <anemo>Daño Anemo</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Dispara una lluvia de flechas desde el aire y desciende rápidamente mientras ataca a los enemigos a su paso, infligiendo Daño en el AdE al impactar contra el suelo."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Disparo Preciso",
+      "4": "Disparo Preciso (carga completa)",
+      "5": "Daño de Caída",
+      "6": "Daño de impacto de caída baja/alta",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Estratagema: Plan de reparto de riqueza",
+    "description": {
+      "0": "Jahoda carga contra el enemigo y, al golpearlo, entra en el estado “persecución saqueasombras”. Mientras esté en este estado, Jahoda se moverá continuamente a gran velocidad. Si los enemigos cercanos están afectados por <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro> o <cryo>Cryo</cryo>, el <tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>frasco maullisecreto</strong></tooltip> que Jahoda lleva consigo cambiará al tipo elemental correspondiente y empezará a llenarse continuamente. Cuando termine la duración o se vuelva a usar la habilidad, Jahoda vaciará el contenido del <strong>frasco maullisecreto</strong> para infligir una vez <anemo>Daño Anemo</anemo> a los enemigos cercanos. Cuando el frasco se llene por completo, Jahoda también lo vaciará, saldrá del estado de persecución saqueasombras e infligirá una vez un mayor <anemo>Daño Anemo</anemo>.",
+      "1": "Si Jahoda no golpea a ningún enemigo al cargar, arrojará una bomba de humo en la ubicación original e infligirá una vez <anemo>Daño Anemo</anemo> a los enemigos cercanos.",
+      "2": "<br/>",
+      "3": "<strong>Presagio lunar: resplandor ascendente</strong>",
+      "4": "Cuando el <strong>frasco maullisecreto</strong> esté lleno, Jahoda no lo vaciará de inmediato, sino que consumirá continuamente el elemento del frasco durante un tiempo para disparar periódicamente <strong>gatibolitas blandisuaves</strong> a los enemigos cercanos, las cuales infligen daño del mismo tipo elemental que el frasco. Cuando una <strong>gatibolita blandisuave</strong> golpee a un enemigo, Jahoda recuperará 2 pts. de Energía Elemental. Este efecto solo puede ocurrir una vez cada 3.5 s.",
+      "5": "<br/>",
+      "6": "<i>Hay muchas formas de distribuir la riqueza en este mundo, pero, para los cazadores de tesoros y los Ladrones de Tesoros de Nod Krai, solo existe una única manera eficiente de hacerlo.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de bomba de humo",
+      "1": "Daño de frasco sin llenar",
+      "2": "Daño de frasco lleno",
+      "3": "Duración del frasco",
+      "4": "Daño de gatibolita",
+      "5": "TdE",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Dispositivo secreto: Los siete artilugios de una cazadora",
+    "description": {
+      "0": "¡Hora de usar por fin ese tesoro que quedaba en el fondo del baúl! Jahoda saca dos <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>coordinadores gatunos de asistencia doméstica</strong></tooltip> e inflige una vez <anemo>Daño Anemo</anemo> a los enemigos cercanos.",
+      "1": "<br/>",
+      "2": "<i>“Eso de ‘coordinación de asistencia’ quiere decir que tú prestas ‘asistencia’ sacando tus Moras y nosotros ya nos encargamos de la ‘coordinación’. ¿Qué te parece? ¿A que no está nada mal?”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de coordinadores gatunos de asistencia doméstica",
+      "2": "Duración de coordinadores gatunos de asistencia doméstica",
+      "3": "Curación de coordinadores gatunos de asistencia doméstica",
+      "4": "Curación adicional al personaje con menos Vida",
+      "5": "TdE",
+      "6": "Energía Elemental",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Argucia remunerativa",
+    "description": {
+      "0": "Cuando en el equipo haya al menos 1 personaje <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro> o <cryo>Cryo</cryo>, los <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>coordinadores gatunos de asistencia doméstica</strong></tooltip> de la Habilidad Definitiva, <strong>Dispositivo secreto: Los siete artilugios de una cazadora</strong>, se fortalecerán en función del número de personajes de cada tipo elemental.",
+      "1": "Jahoda hará una nota mental de los personajes de los tipos elementales anteriormente mencionados. Si entre estos personajes el tipo elemental más numeroso es:",
+      "2": [
+        "<pyro>Pyro</pyro>: los <strong>coordinadores gatunos de asistencia doméstica</strong> infligirán un 130% de su daño original.",
+        "<hydro>Hydro</hydro>: los <strong>coordinadores gatunos de asistencia doméstica</strong> curarán un 120% de su cantidad original.",
+        "<electro>Electro</electro>: aumentará en 1 el número de <strong>coordinadores gatunos de asistencia doméstica</strong>.",
+        "<cryo>Cryo</cryo>: el intervalo de ataque de los <strong>coordinadores gatunos de asistencia doméstica</strong> se reducirá en un 10%."
+      ],
+      "3": "<br/>",
+      "4": "Si existe el mismo número de personajes de los tipos elementales mencionados, el registro se llevará a cabo en el siguiente orden: <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro>, <cryo>Cryo</cryo>. Inicialmente solo se podrá obtener el efecto correspondiente a un único tipo elemental."
+    }
+  },
+  "passive2": {
+    "name": "Dulce recompensa",
+    "description": {
+      "0": "Cuando los <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>coordinadores gatunos de asistencia doméstica</strong></tooltip> de la Habilidad Definitiva, <strong>Dispositivo secreto: Los siete artilugios de una cazadora</strong>, curen a tu personaje en uso del equipo, si este tiene más del 70% de la Vida, su Maestría Elemental aumentará en 100 pts. durante 6 s."
+    }
+  },
+  "passive3": {
+    "name": "Bendición presagiolunar: Carrera por los aleros",
+    "description": {
+      "0": "Cuando Jahoda esté en el equipo, el nivel de <strong>presagio lunar</strong> de los personajes aumentará en 1."
+    }
+  },
+  "passive": {
+    "name": "Astucia callejera",
+    "description": {
+      "0": "Reduce en un 25% el tiempo necesario para completar una expedición en Nod Krai."
+    }
+  },
+  "constellation1": {
+    "name": "¡Un frasco más!",
+    "description": {
+      "0": "Durante su Habilidad Elemental, <strong>Estratagema: Plan de reparto de riqueza</strong>, cuando las <strong>gatibolitas blandisuaves</strong> disparadas por el <tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>frasco maullisecreto</strong></tooltip> golpeen a un enemigo, habrá una probabilidad del 50% de que reboten, lo que infligirá daño del elemento correspondiente a los enemigos cercanos."
+    }
+  },
+  "constellation2": {
+    "name": "Rapidez mental del pícaro",
+    "description": {
+      "0": "<strong>Presagio lunar: resplandor ascendente</strong>",
+      "1": "Con el talento de ascensión <tooltip ns=char_Jahoda_gen baseKey18=passive1><strong>Argucia remunerativa</strong></tooltip>, aparte del tipo elemental con más personajes, Jahoda también podrá registrar el siguiente tipo elemental con más personajes para activar el efecto en un máximo de dos tipos elementales. Es necesario desbloquear el talento de ascensión “Argucia remunerativa”."
+    }
+  },
+  "constellation3": {
+    "name": "Apuesta desesperada",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <tooltip ns=char_Jahoda_gen baseKey18=burst><strong>Dispositivo secreto: Los siete artilugios de una cazadora</strong></tooltip> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Bayas silvestres sobre la arena",
+    "description": {
+      "0": "Cuando los <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>coordinadores gatunos de asistencia doméstica</strong></tooltip> de la Habilidad Definitiva, <strong>Dispositivo secreto: Los siete artilugios de una cazadora</strong>, sufren un cambio elemental, Jahoda recupera 4 pts. de Energía Elemental."
+    }
+  },
+  "constellation5": {
+    "name": "El más grandioso de los tesoros",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <tooltip ns=char_Jahoda_gen baseKey18=skill><strong>Estratagema: Plan de reparto de riqueza</strong></tooltip> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "La más diminuta de las suertes",
+    "description": {
+      "0": "<strong>Presagio lunar: resplandor ascendente</strong>",
+      "1": "Tras llenar el <tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>frasco maullisecreto</strong></tooltip> de la Habilidad Elemental, <strong>Estratagema: Plan de reparto de riqueza</strong>, la Prob. CRIT y el Daño CRIT de los personajes con presagio lunar cercanos del equipo aumentarán en un 5% y en un 40% respectivamente durante 20 s."
+    }
+  }
+}

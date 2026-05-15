@@ -1,0 +1,24 @@
+{
+  "name": "Moonweaver's Dawn",
+  "description": {
+    "0": "An immaculate, sharp silver sword that can slice through armor like moonlight flowing through the empty night. According to legend, it is a divine blade, blessed by the first Moonchanter herself."
+  },
+  "passiveName": "Secret Silver's Testament",
+  "passiveDescription": {
+    "0": {
+      "0": "Increases Elemental Burst DMG by <cryo>20%</cryo>. When the equipping character's Energy Capacity does not exceed 60/40, their Elemental Burst DMG is increased by an additional <cryo>16%/28%</cryo>."
+    },
+    "1": {
+      "0": "Increases Elemental Burst DMG by <cryo>25%</cryo>. When the equipping character's Energy Capacity does not exceed 60/40, their Elemental Burst DMG is increased by an additional <cryo>20%/35%</cryo>."
+    },
+    "2": {
+      "0": "Increases Elemental Burst DMG by <cryo>30%</cryo>. When the equipping character's Energy Capacity does not exceed 60/40, their Elemental Burst DMG is increased by an additional <cryo>24%/42%</cryo>."
+    },
+    "3": {
+      "0": "Increases Elemental Burst DMG by <cryo>35%</cryo>. When the equipping character's Energy Capacity does not exceed 60/40, their Elemental Burst DMG is increased by an additional <cryo>28%/49%</cryo>."
+    },
+    "4": {
+      "0": "Increases Elemental Burst DMG by <cryo>40%</cryo>. When the equipping character's Energy Capacity does not exceed 60/40, their Elemental Burst DMG is increased by an additional <cryo>32%/56%</cryo>."
+    }
+  }
+}

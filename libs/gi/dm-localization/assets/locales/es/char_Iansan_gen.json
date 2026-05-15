@@ -151,7 +151,7 @@
   "constellation2": {
     "name": "¡Prohibido holgazanear durante el entrenamiento!",
     "description": {
-      "0": "Al usar su Habilidad Definitiva, <strong>Los tres principios de la fuerza</strong>, Iansán obtiene el efecto de movimiento preciso del talento pasivo “Entrenamiento de resistencia” durante 15 s. Además, mientras dicho efecto esté activo y Iansán se encuentre en tu equipo pero no en uso, el ATQ de tu personaje en uso del equipo aumentará en un 30%. Para activar este efecto, es necesario desbloquear el talento pasivo “Entrenamiento de resistencia”."
+      "0": "Al usar su Habilidad Definitiva, <strong>Los tres principios de la fuerza</strong>, Iansán obtiene el efecto de movimiento preciso del talento de ascensión “Entrenamiento de resistencia” durante 15 s. Además, mientras dicho efecto esté activo y Iansán se encuentre en tu equipo pero no en uso, el ATQ de tu personaje en uso del equipo aumentará en un 30%. Para activar este efecto, es necesario desbloquear el talento de ascensión “Entrenamiento de resistencia”."
     }
   },
   "constellation3": {

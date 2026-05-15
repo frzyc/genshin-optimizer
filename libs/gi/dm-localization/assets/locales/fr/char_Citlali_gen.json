@@ -150,8 +150,8 @@
       "0": "La maîtrise élémentaire de Citlali augmente de 125 pts et celle des autres personnages protégés par un bouclier d'opale ou ayant Itzpapa les suivant de 250 pts.",
       "1": "De plus, utiliser la compétence élémentaire <strong>Étoile d'aurore givrée</strong> accorde un bouclier d'opale aux membres de l'équipe déployé à proximité.",
       "2": "<br/>",
-      "3": "L'effet de l'aptitude passive « Pluie frigide de Mamaloaco » est également amélioré :",
-      "4": "Lorsqu'un membre de l'équipe à proximité a déclenché une réaction de Gel ou de Fonte pendant la durée d'Itzpapa, les RÉS <pyro>Pyro</pyro> et <hydro>Hydro</hydro> des ennemis affectés par la réaction diminuent de 20 % supplémentaires pendant 12 s, l'aptitude passive « Pluie frigide de Mamaloaco » devant être déjà débloquée."
+      "3": "L'effet de l'aptitude d'élévation « Pluie frigide de Mamaloaco » est également amélioré :",
+      "4": "Lorsqu'un membre de l'équipe à proximité a déclenché une réaction de Gel ou de Fonte pendant la durée d'Itzpapa, les RÉS <pyro>Pyro</pyro> et <hydro>Hydro</hydro> des ennemis affectés par la réaction diminuent de 20 % supplémentaires pendant 12 s, l'aptitude d'élévation « Pluie frigide de Mamaloaco » devant être déjà débloquée."
     }
   },
   "constellation3": {

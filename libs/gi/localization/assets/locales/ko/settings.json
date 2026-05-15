@@ -42,7 +42,11 @@
     "invalid": "비정상:",
     "upgraded": "강화됨:",
     "dbTotal": "총 개수:",
-    "notInImport": "가져오기에 미포함:"
+    "notInImport": "가져오기에 미포함:",
+    "teams": "팀:",
+    "loadouts": "구성:",
+    "builds": "빌드: ",
+    "buildTcs": "연구용 빌드: "
   },
   "DatabaseCard": {
     "title": "데이터베이스",

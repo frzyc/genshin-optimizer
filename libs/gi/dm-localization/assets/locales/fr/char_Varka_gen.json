@@ -1,0 +1,174 @@
+{
+  "name": "Varka",
+  "title": "Chevalier de Borée",
+  "description": "Le Grand Maître de l'Ordre de Favonius, le Chevalier de Borée et le protecteur de Mondstadt.",
+  "constellationName": "Lupus Majoris",
+  "auto": {
+    "name": "Valse radieuse",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Imite une ancienne valse chevaleresque pour enchaîner jusqu'à 5 coups avec ses lames."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour foncer en avant et exécuter une attaque puissante avec deux lames."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "DGT durant la chute",
+      "8": "DGT Chute basse/élevée",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Exécution liée au vent",
+    "description": {
+      "0": "Varka déchaîne la véritable essence de l'escrime de Favonius avec une puissance absolue, différents effets se produisant selon la méthode de déclenchement :",
+      "1": "<br/>",
+      "2": "<strong>Appui simple</strong>",
+      "3": "Varka bondit en avant et frappe d'un seul mouvement fluide, infligeant des <anemo>DGT Anémo de zone</anemo> et activant son mode <tooltip ns=tooltips_gen baseKey18=11280001 values=[]><strong>Charge de tempête</strong></tooltip>.",
+      "4": "Pendant sa <strong>charge de tempête</strong>, les DGT infligés par les attaques normales et chargées de Varka augmentent, Varka ne peut plus effectuer d'attaques plongeantes, et les deux lames de ses attaques normales et chargées infligent chacune des DGT élémentaires ne pouvant pas être enchantés selon les éléments des personnages de l'équipe.",
+      "5": "De plus, si l'équipe contient un personnage <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Électro</electro> ou <cryo>Cryo</cryo> pendant sa <strong>charge de tempête</strong>, la compétence élémentaire <strong>Exécution liée au vent</strong> de Varka est convertie en la compétence élémentaire spéciale <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Ascension des quatre vents</strong></tooltip>, infligeant des DGT élémentaires correspondants et des <anemo>DGT Anémo</anemo>. Varka peut également consommer le nombre d'utilisations de sa compétence élémentaire spéciale <strong>Ascension des quatre vents</strong> pour effectuer une attaque chargée spéciale <strong>Dévoreur azur</strong> qui ne consomme pas d'endurance et inflige des DGT élémentaires correspondants et des <anemo>DGT Anémo</anemo>.",
+      "6": "<br/>",
+      "7": "<strong>Appui long</strong>",
+      "8": "Après une période de charge, Varka effectue un bond en avant, la durée de la charge déterminant la distance du saut."
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "TdR appui simple",
+      "2": "TdR appui long",
+      "3": "Durée de charge de tempête",
+      "4": "DGT 1er coup (charge de tempête)",
+      "5": "DGT 2e coup (charge de tempête)",
+      "6": "DGT 3e coup (charge de tempête)",
+      "7": "DGT 4e coup (charge de tempête)",
+      "8": "DGT 5e coup (charge de tempête)",
+      "9": "DGT attaque chargée (charge de tempête)",
+      "10": "DGT Ascension des quatre vents",
+      "11": "DGT Dévoreur azur",
+      "12": "TdR d'Ascension des quatre vents",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Avatar du vent du nord",
+    "description": {
+      "0": "Au nom du plus grand Chevalier de Borée, Varka lance une puissante attaque de double taillade vers l'avant, infligeant deux fois des <anemo>DGT Anémo</anemo>.",
+      "1": "Si l'équipe contient un personnage <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Électro</electro> ou <cryo>Cryo</cryo>, la première taillade est convertie pour infliger des DGT élémentaires selon l'ordre de priorité des éléments concernés."
+    },
+    "skillParams": {
+      "0": "DGT 1er coup de capacité",
+      "1": "DGT 2e coup de capacité",
+      "2": "Temps de recharge",
+      "3": "Énergie élémentaire",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Marche du vent d'aube",
+    "description": {
+      "0": "Lorsque l'équipe contient un personnage <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Électro</electro> ou <cryo>Cryo</cryo>, chaque tranche de 1 000 pts d'ATQ de Varka lui accorde un <anemo>bonus de DGT Anémo</anemo> et de l'élément correspondant, selon ce même ordre de priorité, de 10 % (un seul des éléments mentionnés précédemment peut bénéficier d'un bonus de DGT de cette manière), un bonus maximum de 25 % pouvant être obtenu de cette manière.",
+      "1": "<br/>",
+      "2": "De plus, si l'équipe contient au moins 2 personnages <anemo>Anémo</anemo> ou au moins 2 personnages d'un élément identique parmi les éléments <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Électro</electro> et <cryo>Cryo</cryo>, les attaques normales, les attaques chargées, les attaques chargées spéciales <strong>Dévoreur azur</strong> et les compétences élémentaires spéciales <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Ascension des quatre vents</strong></tooltip> que Varka utilise pendant sa <tooltip ns=tooltips_gen baseKey18=11280001 values=[]><strong>charge de tempête</strong></tooltip> infligent des DGT d'une valeur équivalant à 140 % des DGT d'origine. Si l'équipe contient au moins 2 personnages <anemo>Anémo</anemo> et au moins 2 personnages d'un élément identique parmi les éléments <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Électro</electro> et <cryo>Cryo</cryo>, cet effet passe à 220 %."
+    }
+  },
+  "passive2": {
+    "name": "Avant-garde du vent",
+    "description": {
+      "0": "Lorsqu'un membre de l'équipe à proximité déclenche une réaction de Dispersion, Varka obtient un cumul de <strong>serment de croc azur</strong>, augmentant les DGT de ses attaques normales, de ses attaques chargées, de ses attaques chargées spéciales <strong>Dévoreur azur</strong> et de ses compétences élémentaires spéciales <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Ascension des quatre vents</strong></tooltip> de 7,5 % pendant 8 s, cet effet pouvant être cumulé 4 fois maximum. Chaque personnage peut accorder un cumul de <strong>serment de croc azur</strong> toutes les secondes à Varka de cette manière."
+    }
+  },
+  "passive3": {
+    "name": "Péan du vent de retour",
+    "description": {
+      "0": "Chaque personnage de Mondstadt dans l'équipe diminue le TdR de la version déclenchée avec un appui long de la compétence élémentaire <strong>Exécution liée au vent</strong> de 5 %.",
+      "1": "Cet effet ne s'applique pas dans les donjons, dans les Donjons de la conquête et dans les Profondeurs spiralées."
+    }
+  },
+  "lockedPassive": {
+    "name": "Veillée des sorcières : Retour de l'aube",
+    "description": {
+      "0": "Après avoir terminé le <strong>devoir de la sorcière « Question sans titre »</strong>, Varka devient un personnage <strong>héxère</strong>. Si l'équipe contient au moins 2 personnages héxères, elle bénéficie de l'effet <strong>Hexerei : Rituel secret</strong> qui améliore les personnages héxères.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei : Rituel secret</strong>",
+      "3": "La compétence élémentaire spéciale <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Ascension des quatre vents</strong></tooltip> est renforcée : lorsque Varka touche un ennemi avec une attaque normale pendant sa <tooltip ns=tooltips_gen baseKey18=11280001 values=[]><strong>charge de tempête</strong></tooltip>, le TdR d'<strong>Ascension des quatre vents</strong> diminue maintenant de 1 s."
+    }
+  },
+  "constellation1": {
+    "name": "« Viens, mon ami, dansons la valse sous la douce lueur de la lune. »",
+    "description": {
+      "0": "Varka obtient une utilisation supplémentaire de sa compétence élémentaire spéciale <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Ascension des quatre vents</strong></tooltip> lorsqu'il active sa <tooltip ns=tooltips_gen baseKey18=11280001 values=[]><strong>charge de tempête</strong></tooltip>.",
+      "1": "De plus, Varka obtient l'effet <strong>Libation lyrique</strong> pendant sa <strong>charge de tempête</strong> : cet effet est consommé en utilisant la compétence élémentaire spéciale <strong>Ascension des quatre vents</strong> ou en effectuant l'attaque chargée spéciale <strong>Dévoreur azur</strong> pour que les DGT d'<strong>Ascension des quatre vents</strong> ou de <strong>Dévoreur azur</strong> soient d'une valeur équivalant à 200 % des DGT d'origine."
+    }
+  },
+  "constellation2": {
+    "name": "« Au lever du jour, notre voyage prendra son envol. »",
+    "description": {
+      "0": "En utilisant la compétence élémentaire spéciale <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Ascension des quatre vents</strong></tooltip> et en effectuant l'attaque chargée spéciale <strong>Dévoreur azur</strong>, Varka déclenche une attaque supplémentaire infligeant des <anemo>DGT Anémo de zone</anemo> d'une valeur équivalant à 800 % de son ATQ."
+    }
+  },
+  "constellation3": {
+    "name": "« Ô ami, ne bois pas ce vin amer qui fait couler des larmes de douleur. »",
+    "description": {
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Varka_gen baseKey18=skill>Exécution liée au vent</tooltip></strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "« Car personne ne peut nous priver de notre liberté de chanter... »",
+    "description": {
+      "0": "Lorsque Varka déclenche une réaction de Dispersion, tous les personnages de l'équipe à proximité bénéficient d'un <anemo>bonus de DGT Anémo</anemo> et de l'élément correspondant de 20 % pendant 10 s."
+    }
+  },
+  "constellation5": {
+    "name": "« Remplis la coupe de bon vin, car les tyrans vont et viennent. »",
+    "description": {
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Varka_gen baseKey18=burst>Avatar du vent du nord</tooltip></strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "« Ô Mondstadt bien-aimée, tu brilleras à jamais avec constance. »",
+    "description": {
+      "0": "La <tooltip ns=tooltips_gen baseKey18=11280001 values=[]><strong>charge de tempête</strong></tooltip> est renforcée :",
+      "1": [
+        " Pendant un court moment après avoir utilisé sa compétence élémentaire spéciale <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Ascension des quatre vents</strong></tooltip>, Varka peut utiliser sa compétence élémentaire avec un appui simple ou son attaque normale avec un appui long pour déclencher une fois supplémentaire une attaque chargée spéciale <strong>Dévoreur azur</strong> sans consommer d'utilisation d'Ascension des quatre vents.",
+        " Pendant un court moment après avoir effectué son attaque chargée spéciale <strong>Dévoreur azur</strong>, Varka peut utiliser sa compétence élémentaire avec un appui simple pour déclencher une fois supplémentaire <strong>Ascension des quatre vents</strong> sans consommer d'utilisation d'Ascension des quatre vents."
+      ],
+      "2": "Lorsque vous déclenchez une fois supplémentaire une attaque chargée spéciale Dévoreur azur ou une compétence élémentaire spéciale Ascension des quatre vents de ces manières, les effets mentionnés ci-dessus ne peuvent pas être déclenchés.",
+      "3": "<br/>",
+      "4": "De plus, l'effet du <strong>serment de croc azur</strong> de l'aptitude d'élévation <strong><tooltip ns=char_Varka_gen baseKey18=passive2>Avant-garde du vent</tooltip></strong> est renforcé : chaque cumul de <strong>serment de croc azur</strong> augmente également les DGT CRIT de Varka de 20 %."
+    }
+  }
+}

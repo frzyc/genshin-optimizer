@@ -116,9 +116,9 @@
   "passive2": {
     "name": "Mapeamento Topográfico",
     "description": {
-      "0": "Personagens ativos que estiverem simultaneamente no estado Pena do Falcão de <strong>Canção da Pena do Céu</strong> e Alma do Vento de <strong>Redemoinho Estelar Gelado</strong>, ao causarem Dano CRIT com um ataque farão o estado Alma do Vento gerar 1 acúmulo do efeito Detector do Talento Passivo \"Supressão de Disparo Rápido\". É possível gerar até 1 acúmulo do efeito Detector em uma duração do estado Alma do Vento.",
+      "0": "Personagens ativos que estiverem simultaneamente no estado Pena do Falcão de <strong>Canção da Pena do Céu</strong> e Alma do Vento de <strong>Redemoinho Estelar Gelado</strong>, ao causarem Dano CRIT com um ataque farão o estado Alma do Vento gerar 1 acúmulo do efeito Detector do Talento de Ascensão \"Supressão de Disparo Rápido\". É possível gerar até 1 acúmulo do efeito Detector em uma duração do estado Alma do Vento.",
       "1": "Além disso, o número máximo de acúmulos do efeito Detector que podem ser obtidos no estado Alma do Vento é aumentado em 1.",
-      "2": "É necessário desbloquear o Talento Passivo \"Supressão de Disparo Rápido\"."
+      "2": "É necessário desbloquear o Talento de Ascensão \"Supressão de Disparo Rápido\"."
     }
   },
   "passive3": {
@@ -136,8 +136,8 @@
   "constellation2": {
     "name": "Jornada Acompanhada",
     "description": {
-      "0": "Quando a Flecha Gélida de <strong>Redemoinho Estelar Gelado</strong> atinge o primeiro inimigo, ou quando o Sinal Estelar Gélido atinge um inimigo, gerará 1 acúmulo do efeito Detector do Talento Passivo \"Supressão de Disparo Rápido\".",
-      "1": "É necessário desbloquear o Talento Passivo \"Supressão de Disparo Rápido\"."
+      "0": "Quando a Flecha Gélida de <strong>Redemoinho Estelar Gelado</strong> atinge o primeiro inimigo, ou quando o Sinal Estelar Gélido atinge um inimigo, gerará 1 acúmulo do efeito Detector do Talento de Ascensão \"Supressão de Disparo Rápido\".",
+      "1": "É necessário desbloquear o Talento de Ascensão \"Supressão de Disparo Rápido\"."
     }
   },
   "constellation3": {
@@ -163,7 +163,7 @@
   "constellation6": {
     "name": "Conselheiro Acompanhante",
     "description": {
-      "0": "Aumenta em 1 o número máximo de acúmulos do efeito Detector do estado Alma do Vento de <strong>Redemoinho Estelar Gelado</strong>. É necessário desbloquear o Talento Passivo \"Supressão de Disparo Rápido\".",
+      "0": "Aumenta em 1 o número máximo de acúmulos do efeito Detector do estado Alma do Vento de <strong>Redemoinho Estelar Gelado</strong>. É necessário desbloquear o Talento de Ascensão \"Supressão de Disparo Rápido\".",
       "1": "Além disso, personagens ativos sob o estado Alma do Vento obterão 60% de aumento de Dano Físico CRIT."
     }
   }

@@ -1,0 +1,163 @@
+{
+  "name": "Aino",
+  "title": "Magico tintinnio",
+  "description": "Una geniale meccanica e inventrice di Nod-Krai. Ama le macchine interessanti e i dolci.",
+  "constellationName": "Cistellula Mira",
+  "auto": {
+    "name": "Riparazione Bink-Bank-Bonk",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attacco normale</strong>",
+        "1": "Sferra fino a 3 colpi consecutivi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma vigore nel tempo per sferrare attacchi rotanti contro tutti gli avversari vicini.",
+        "2": "Al termine della sequenza, sferra un fendente più potente. "
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da ATT caricato continuo",
+      "4": "DAN da ATT caricato finali",
+      "5": "Costo vigore ATT caricato",
+      "6": "Durata massima",
+      "7": "DAN da ATT in picchiata",
+      "8": "DAN da ATT in picchiata basso/alto",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Catturaidee",
+    "description": {
+      "0": "Aino lancia un <strong>Catturaidee</strong> davanti a sé, infliggendo <hydro>DAN da Hydro</hydro> e facendosi poi trascinare da esso. Quando si ferma, Aino infligge <hydro>DAN da Hydro ad area</hydro> agli avversari vicini.",
+      "1": "La pressione prolungata permette di eseguire una versione alternativa dell'abilità.",
+      "2": "<br/>",
+      "3": "<strong>Pressione prolungata</strong>",
+      "4": "Entra in modalità di mira per regolare la direzione del lancio del Catturaidee."
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "TdR",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Raffreddatore idronico di precisione",
+    "description": {
+      "0": "Aino schiera un dispositivo personalizzato che spruzza acqua, la <strong>Papera-calma-bollenti-spiriti</strong>, per creare una <strong>Zona di raffreddamento idronico mirata</strong>.",
+      "1": "Finché è attiva, la Papera-calma-bollenti-spiriti spara periodicamente dei proiettili d'acqua agli avversari vicini, infliggendo <hydro>DAN da Hydro</hydro>."
+    },
+    "skillParams": {
+      "0": "DAN da proiettile d'acqua",
+      "1": "Durata",
+      "2": "TdR",
+      "3": "Costo energia",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Protocollo di efficienza modulare",
+    "description": {
+      "0": "Aino ottiene gli effetti positivi corrispondenti in base al <strong>Presagio lunare</strong> del gruppo.",
+      "1": "<br/>",
+      "2": "Quando <strong>Presagio lunare: Barlume ascendente</strong> è attivo, il suo Tripudio elementale <strong><tooltip ns=char_Aino_gen baseKey18=burst>Raffreddatore idronico di precisione</tooltip></strong> riceve un potenziamento: la <strong>Papera-calma-bollenti-spiriti</strong> spara proiettili d'acqua con una cadenza di tiro maggiore, e quest'ultimi infliggono <hydro>DAN da Hydro ad area</hydro> in un'area d'effetto più grande."
+    }
+  },
+  "passive2": {
+    "name": "Amplificatore di potenza strutturato",
+    "description": {
+      "0": "I DAN da Tripudio elementale di Aino aumentano di un 50% della sua maestria elementale."
+    }
+  },
+  "passive3": {
+    "name": "Benedizione del Presagio lunare: Analisi del limite di forza",
+    "description": {
+      "0": "Quando Aino è nel gruppo, il <strong>Presagio lunare</strong> del gruppo aumenta di 1 livello."
+    }
+  },
+  "passive": {
+    "name": "Sensore di rilevamento in miniatura",
+    "description": {
+      "0": "Mostra sulla minimappa la posizione delle <strong>risorse uniche di Nod-Krai</strong>.",
+      "1": "Inoltre, Aino sembra poter cambiare l'aspetto della Papera-calma-bollenti-spiriti in qualche modo..."
+    }
+  },
+  "constellation1": {
+    "name": "Teoria dell'equilibrio cenere-campo",
+    "description": {
+      "0": "Dopo che Aino ha utilizzato la sua abilità elementale <strong><tooltip ns=char_Aino_gen baseKey18=skill>Catturaidee</tooltip></strong> o il suo Tripudio elementale <strong><tooltip ns=char_Aino_gen baseKey18=burst>Raffreddatore idronico di precisione</tooltip></strong>, la sua maestria elementale aumenta di 80. La maestria elementale degli altri membri attivi del gruppo vicini aumenta di 80 per 15 s.",
+      "1": "<br/>",
+      "2": "Gli effetti di questa costellazione che aumentano la maestria elementale non sono cumulabili."
+    }
+  },
+  "constellation2": {
+    "name": "Principio di trasferimento nei differenziali",
+    "description": {
+      "0": "Se Aino non è in campo mentre la <strong>Zona di raffreddamento idronico mirata</strong> del suo Tripudio elementale <strong><tooltip ns=char_Aino_gen baseKey18=burst>Raffreddatore idronico di precisione</tooltip></strong> è attiva, quando il membro attivo del gruppo colpisce un avversario vicino con un attacco, la <strong>Papera-calma-bollenti-spiriti</strong> spara un proiettile d'acqua aggiuntivo contro il suddetto avversario, infliggendo <hydro>DAN da Hydro ad area</hydro> pari a un 25% dell'ATT di Aino e a un 100% della sua maestria elementale. Tali DAN sono considerati DAN da Tripudio elementale. Quest'effetto può attivarsi una volta ogni 5 s."
+    }
+  },
+  "constellation3": {
+    "name": "Torte e l'arte della riparazione meccanica",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong><tooltip ns=char_Aino_gen baseKey18=burst>Raffreddatore idronico di precisione</tooltip></strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Burro, gatti e la legge del rifornimento energetico",
+    "description": {
+      "0": "Quando l'abilità elementale <strong><tooltip ns=char_Aino_gen baseKey18=skill>Catturaidee</tooltip></strong> colpisce un avversario, l'energia elementale di Aino si ripristina di 10. Un ripristino di energia di questo tipo può innescarsi una volta ogni 10 s."
+    }
+  },
+  "constellation5": {
+    "name": "Turbina perpetua di metallo e luce",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong><tooltip ns=char_Aino_gen baseKey18=skill>Catturaidee</tooltip></strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Il peso della genialità",
+    "description": {
+      "0": "Per i 15 s successivi all'utilizzo del Tripudio elementale <strong><tooltip ns=char_Aino_gen baseKey18=burst>Raffreddatore idronico di precisione</tooltip></strong>, i DAN delle reazioni di Electrocarica, Fioritura, Carica lunare, Fioritura lunare e Cristallizzazione lunare dei personaggi attivi vicini aumentano di un 15%.",
+      "1": "Quando <strong>Presagio lunare: Barlume ascendente</strong> è attivo, i DAN delle reazioni sopracitate aumentano di un ulteriore 20%."
+    }
+  }
+}

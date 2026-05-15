@@ -1,0 +1,26 @@
+{
+  "link": {
+    "download": "다운로드 링크",
+    "discord": "디스코드 초대 링크"
+  },
+  "unselect": "선택해제",
+  "inventory": "보관함",
+  "ascending": "오름차순",
+  "descending": "내림차순",
+  "sortBy": "정렬 기준: ",
+  "loading": "로딩중...",
+  "error": "에러",
+  "reset": "리셋",
+  "info": "정보",
+  "close": "닫기",
+  "delete": "삭제",
+  "locked": "잠금",
+  "unlocked": "잠금 해제",
+  "excluded": "제외됨",
+  "included": "포함됨",
+  "selectlevel": "레벨 선택",
+  "gender": {
+    "F": "여성",
+    "M": "남성"
+  }
+}

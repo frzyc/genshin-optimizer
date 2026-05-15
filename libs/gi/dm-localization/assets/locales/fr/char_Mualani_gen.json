@@ -141,7 +141,7 @@
     "name": "Mualani à fond !",
     "description": {
       "0": "Mualani obtient 2 cumuls d'élan houleux de <strong>Squalisurf brise-vagues</strong> lorsqu'elle active sa bénédiction noctâme et 1 cumul lorsqu'elle collecte une globi-bouée.",
-      "1": "De plus, lorsque Mualani collecte 2 globi-bouées pendant une seule bénédiction noctâme, elle récupère 12 pts de noctâme supplémentaires pendant 2 s. L'aptitude passive « Bouée d'eau douce thermorésistante » doit être déjà débloquée pour cet effet."
+      "1": "De plus, lorsque Mualani collecte 2 globi-bouées pendant une seule bénédiction noctâme, elle récupère 12 pts de noctâme supplémentaires pendant 2 s. L'aptitude d'élévation « Bouée d'eau douce thermorésistante » doit être déjà débloquée pour cet effet."
     }
   },
   "constellation3": {
@@ -154,7 +154,7 @@
   "constellation4": {
     "name": "Requinou mange des bouées",
     "description": {
-      "0": "Mualani récupère 8 pts d'énergie élémentaire lorsqu'elle collecte une globi-bouée. L'aptitude passive « Bouée d'eau douce thermorésistante » doit être déjà débloquée.",
+      "0": "Mualani récupère 8 pts d'énergie élémentaire lorsqu'elle collecte une globi-bouée. L'aptitude d'élévation « Bouée d'eau douce thermorésistante » doit être déjà débloquée.",
       "1": "De plus, les DGT infligés par <strong>Requin-pact boum</strong> augmentent de 75 %."
     }
   },

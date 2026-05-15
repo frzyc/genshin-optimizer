@@ -124,23 +124,23 @@
   "constellation1": {
     "name": "Terror for the Evildoers",
     "description": {
-      "0": "\"Gracious Rebuke\" ของพรสวรรค์ติดตัว \"There Shall Be a Plea for Justice\" จะเปลี่ยนเป็น:",
-      "1": "ขณะที่ค่าพลังชีวิตของ Wriothesley ต่ำกว่า 60% หรือในระหว่างช่วงเวลาคงอยู่ของ Chilling Penalty ที่เกิดจาก <strong>Icefang Rush</strong> นั้น เมื่อ Repelling Fist ขั้นที่ห้าโจมตีโดนเป้าหมาย จะได้รับ \"Gracious Rebuke\" และจะได้รับเอฟเฟกต์ของ \"Gracious Rebuke\" มากสุดหนึ่งครั้งในทุก 2.5 วินาที",
+      "0": "\"Gracious Rebuke\" ของพรสวรรค์เพิ่มเติม \"There Shall Be a Plea for Justice\" จะเปลี่ยนเป็น:",
+      "1": "ขณะที่ค่าพลังชีวิตของ Wriothesley ต่ำกว่า 60% หรือในระหว่างช่วงเวลาคงอยู่ของ Chilling Penalty ที่เกิดจาก <strong>Icefang Rush</strong> เมื่อ Repelling Fist ขั้นที่ห้าโจมตีโดนเป้าหมาย จะได้รับ \"Gracious Rebuke\" และจะได้รับเอฟเฟกต์ของ \"Gracious Rebuke\" มากสุดหนึ่งครั้งในทุก 2.5 วินาที",
       "2": "<br/>",
       "3": "นอกจากนี้ Rebuke: Vaulting Fist จะได้รับการเสริมพลังต่อไปนี้:",
       "4": [
-        "ความเสียหายที่สร้างจะเพิ่มขึ้นอีกขั้นเป็น 200%",
+        "ความเสียหายที่สร้างจะเพิ่มขึ้นอีกขั้นเป็น 200%;",
         "เมื่อโจมตีโดนเป้าหมาย หากอยู่ในสถานะ Chilling Penalty ระยะเวลาของสถานะนี้ จะเพิ่มขึ้น 4 วินาที ระหว่างช่วงเวลาคงอยู่หนึ่งครั้งของ Chilling Penalty จะสามารถยืดเวลาด้วยวิธีนี้ได้มากสุดหนึ่งครั้ง"
       ],
       "5": "<br/>",
-      "6": "ต้องปลดล็อกพรสวรรค์ติดตัว \"There Shall Be a Plea for Justice\" ก่อน"
+      "6": "ต้องปลดล็อกพรสวรรค์เพิ่มเติม \"There Shall Be a Plea for Justice\" ก่อน"
     }
   },
   "constellation2": {
     "name": "Shackles for the Arrogant",
     "description": {
-      "0": "เมื่อปล่อย <strong>Darkgold Wolfbite</strong> เอฟเฟกต์ \"Prosecution Edict\" แต่ละชั้นของพรสวรรค์ติดตัว \"There Shall Be a Reckoning for Sin\" จะทำให้ความเสียหายที่สร้างเพิ่มขึ้น 40%",
-      "1": "ต้องปลดล็อกพรสวรรค์ติดตัว \"There Shall Be a Reckoning for Sin\" ก่อน"
+      "0": "เมื่อปล่อย <strong>Darkgold Wolfbite</strong> เอฟเฟกต์ \"Prosecution Edict\" แต่ละชั้นของพรสวรรค์เพิ่มเติม \"There Shall Be a Reckoning for Sin\" จะทำให้ความเสียหายที่สร้างเพิ่มขึ้น 40%",
+      "1": "ต้องปลดล็อกพรสวรรค์เพิ่มเติม \"There Shall Be a Reckoning for Sin\" ก่อน"
     }
   },
   "constellation3": {
@@ -153,7 +153,7 @@
   "constellation4": {
     "name": "Redemption for the Suffering",
     "description": {
-      "0": "Rebuke: Vaulting Fist จะฟื้นฟูพลังชีวิตให้ Wriothesley เพิ่มขึ้นเป็น 50% ของพลังชีวิตสูงสุด ต้องปลดล็อกพรสวรรค์ติดตัว \"There Shall Be a Plea for Justice\" ก่อน",
+      "0": "Rebuke: Vaulting Fist จะฟื้นฟูพลังชีวิตให้ Wriothesley เพิ่มขึ้นเป็น 50% ของพลังชีวิตสูงสุด ต้องปลดล็อกพรสวรรค์เพิ่มเติม \"There Shall Be a Plea for Justice\" ก่อน",
       "1": "นอกจากนี้ เมื่อ Wriothesley ได้รับการรักษา หากปริมาณการรักษามากเกินไป การรักษาที่เอ่อล้นจะทำให้เกิดเอฟเฟกต์ที่แตกต่างกัน โดยขึ้นอยู่กับว่า Wriothesley อยู่ในการต่อสู้หรือไม่: หากอยู่ในการต่อสู้ ความเร็วในการโจมตีของ Wriothesley จะเพิ่มขึ้น 20% เป็นเวลา 4 วินาที หากอยู่ในทีมแต่ไม่ได้เข้าร่วมการต่อสู้ ความเร็วในการโจมตีของสมาชิกทั้งหมดในทีมตัวเองจะเพิ่มขึ้น 10% เป็นเวลา 6 วินาที เอฟเฟกต์เพิ่มความเร็วในการโจมตีทั้งสองประเภทข้างต้นไม่สามารถซ้อนทับกันได้"
     }
   },
@@ -168,7 +168,7 @@
     "name": "Esteem for the Innocent",
     "description": {
       "0": "Rebuke: Vaulting Fist จะมีอัตราคริเพิ่มขึ้น 10% และมีความแรงคริเพิ่มขึ้น 80% และสามารถสร้างแท่งน้ำแข็งเพิ่มเติม โดยจะสร้าง<cryo>ความเสียหายน้ำแข็ง</cryo> 100% ของความเสียหายพื้นฐานของ Rebuke: Vaulting Fist ความเสียหายที่สร้างด้วยวิธีนี้ จะถือว่าเป็นความเสียหายชาร์จโจมตี",
-      "1": "ต้องปลดล็อกพรสวรรค์ติดตัว \"There Shall Be a Plea for Justice\" ก่อน"
+      "1": "ต้องปลดล็อกพรสวรรค์เพิ่มเติม \"There Shall Be a Plea for Justice\" ก่อน"
     }
   }
 }

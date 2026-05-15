@@ -1,0 +1,24 @@
+{
+  "name": "Espejo Tejenoches",
+  "description": {
+    "0": "Un espejo hecho con la plata más inmaculada. Cuenta la leyenda que fue testigo del nacimiento de la Doncella Lunar, por lo que los Descendientes Lunaescarcha lo consideran un objeto verdaderamente sagrado."
+  },
+  "passiveName": "Letanía milenaria",
+  "passiveDescription": {
+    "0": {
+      "0": "Al infligir Daño Hydro o Daño Dendro con la Habilidad Elemental, el portador de esta arma obtiene el efecto de “runo del Lejano Norte”, el cual aumenta la Maestría Elemental en <cryo>60</cryo> pts. durante 4.5 s. Cuando un personaje cercano del equipo causa una reacción de Florecimiento Lunar, el portador obtiene el efecto de “cantar de la luna nueva”, el cual aumenta la Maestría Elemental en <cryo>60</cryo> pts. durante 10 s. Si ambos efectos están activos al mismo tiempo, el daño de la reacción de Florecimiento que infligen todos los personajes cercanos del equipo aumenta en un <cryo>120%</cryo>, el de las reacciones de Sobreflorecimiento y Crepitar aumenta en un <cryo>80%</cryo>, y el de Florecimiento Lunar aumenta en un <cryo>40%</cryo>. Este efecto no se puede acumular, y puede activarse incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "1": {
+      "0": "Al infligir Daño Hydro o Daño Dendro con la Habilidad Elemental, el portador de esta arma obtiene el efecto de “runo del Lejano Norte”, el cual aumenta la Maestría Elemental en <cryo>75</cryo> pts. durante 4.5 s. Cuando un personaje cercano del equipo causa una reacción de Florecimiento Lunar, el portador obtiene el efecto de “cantar de la luna nueva”, el cual aumenta la Maestría Elemental en <cryo>75</cryo> pts. durante 10 s. Si ambos efectos están activos al mismo tiempo, el daño de la reacción de Florecimiento que infligen todos los personajes cercanos del equipo aumenta en un <cryo>150%</cryo>, el de las reacciones de Sobreflorecimiento y Crepitar aumenta en un <cryo>100%</cryo>, y el de Florecimiento Lunar aumenta en un <cryo>50%</cryo>. Este efecto no se puede acumular, y puede activarse incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "2": {
+      "0": "Al infligir Daño Hydro o Daño Dendro con la Habilidad Elemental, el portador de esta arma obtiene el efecto de “runo del Lejano Norte”, el cual aumenta la Maestría Elemental en <cryo>90</cryo> pts. durante 4.5 s. Cuando un personaje cercano del equipo causa una reacción de Florecimiento Lunar, el portador obtiene el efecto de “cantar de la luna nueva”, el cual aumenta la Maestría Elemental en <cryo>90</cryo> pts. durante 10 s. Si ambos efectos están activos al mismo tiempo, el daño de la reacción de Florecimiento que infligen todos los personajes cercanos del equipo aumenta en un <cryo>180%</cryo>, el de las reacciones de Sobreflorecimiento y Crepitar aumenta en un <cryo>120%</cryo>, y el de Florecimiento Lunar aumenta en un <cryo>60%</cryo>. Este efecto no se puede acumular, y puede activarse incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "3": {
+      "0": "Al infligir Daño Hydro o Daño Dendro con la Habilidad Elemental, el portador de esta arma obtiene el efecto de “runo del Lejano Norte”, el cual aumenta la Maestría Elemental en <cryo>105</cryo> pts. durante 4.5 s. Cuando un personaje cercano del equipo causa una reacción de Florecimiento Lunar, el portador obtiene el efecto de “cantar de la luna nueva”, el cual aumenta la Maestría Elemental en <cryo>105</cryo> pts. durante 10 s. Si ambos efectos están activos al mismo tiempo, el daño de la reacción de Florecimiento que infligen todos los personajes cercanos del equipo aumenta en un <cryo>210%</cryo>, el de las reacciones de Sobreflorecimiento y Crepitar aumenta en un <cryo>140%</cryo>, y el de Florecimiento Lunar aumenta en un <cryo>70%</cryo>. Este efecto no se puede acumular, y puede activarse incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "4": {
+      "0": "Al infligir Daño Hydro o Daño Dendro con la Habilidad Elemental, el portador de esta arma obtiene el efecto de “runo del Lejano Norte”, el cual aumenta la Maestría Elemental en <cryo>120</cryo> pts. durante 4.5 s. Cuando un personaje cercano del equipo causa una reacción de Florecimiento Lunar, el portador obtiene el efecto de “cantar de la luna nueva”, el cual aumenta la Maestría Elemental en <cryo>120</cryo> pts. durante 10 s. Si ambos efectos están activos al mismo tiempo, el daño de la reacción de Florecimiento que infligen todos los personajes cercanos del equipo aumenta en un <cryo>240%</cryo>, el de las reacciones de Sobreflorecimiento y Crepitar aumenta en un <cryo>160%</cryo>, y el de Florecimiento Lunar aumenta en un <cryo>80%</cryo>. Este efecto no se puede acumular, y puede activarse incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    }
+  }
+}

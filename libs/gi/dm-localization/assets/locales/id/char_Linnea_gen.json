@@ -1,0 +1,183 @@
+{
+  "name": "Linnea",
+  "title": "Augur of Wonders",
+  "description": "Naturalis dan Konsultan Adventurers' Guild cabang Nod-Krai.",
+  "constellationName": "Alcyon",
+  "auto": {
+    "name": "Capture Protocol",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 3 serangan berturut-turut menggunakan busur."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Melancarkan sebuah <strong>Serangan Membidik</strong> yang lebih akurat untuk mengakibatkan DMG lebih besar.",
+        "2": "Saat membidik, kristal batu akan berkumpul di ujung anak panah. Setelah terkumpul penuh, anak panah yang diluncurkan akan mengakibatkan <geo>Geo DMG</geo>."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Melancarkan hujan panah dari udara dan menerjang tanah dengan kecepatan tinggi, mengakibatkan DMG Area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Membidik",
+      "4": "DMG Membidik Penuh",
+      "5": "DMG Selama Plunging",
+      "6": "DMG Plunging Attack Rendah/Tinggi",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Countermeasure: Lumi's Battle Cry!",
+    "description": {
+      "0": "Bertualanglah bersama Lumi! Lumi akan melancarkan jenis serangan yang berbeda berdasarkan Mode Tekan yang berbeda.",
+      "1": "<br/>",
+      "2": "<strong>Mode Tekan</strong>",
+      "3": "Lumi akan menyerang musuh di sekitar dalam <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Super Power Form</tooltip>-nya</strong> tanpa henti, mengakibatkan <geo>Geo DMG Area</geo>. Jika ada Moondrift di sekitar, Lumi akan mengakibatkan <geo>Geo DMG Area</geo> yang dianggap sebagai DMG Lunar-Crystallize terhadap musuh di sekitar.",
+      "4": "<br/>",
+      "5": "<strong>Mode Tekan Beruntun</strong>",
+      "6": "Saatnya unjuk gigi! Setelah menggunakan Elemental Skill, saat menekan Elemental Skill atau Normal Attack secara terus-menerus, Linnea akan memberi Lumi makan permata-permata yang berkilauan. Lumi yang sudah kenyang akan menyerang dengan <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Ultimate Power Form</tooltip>-nya</strong>, mengakibatkan satu kali <geo>Geo DMG Area</geo> yang sangat kuat dan dianggap sebagai DMG Lunar-Crystallize terhadap musuh di sekitar, kemudian berganti ke <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Standard Power Form</tooltip></strong>.",
+      "7": "Selain itu, ketahanan Linnea terhadap interupsi akan meningkat saat menekan Elemental Skill terus-menerus.",
+      "8": "<br/>",
+      "9": "<i>\"Giliranmu, Lumi!\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Pound-Pound Pummeler Lumi",
+      "1": "DMG Heavy Overdrive Hammer Lumi",
+      "2": "DMG Million Ton Crush Lumi",
+      "3": "Durasi Lumi",
+      "4": "Cooldown",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Memo: Survival Guide in Extreme Conditions",
+    "description": {
+      "0": "Bahkan petualang paling hebat pun perlu istirahat yang cukup! Linnea memanggil Lumi dalam bentuk <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Super Power Form</tooltip></strong> untuk menyerang dan memulihkan HP seluruh anggota party di sekitar. Selama beberapa waktu berikutnya, Lumi akan terus memulihkan HP Karakter aktif di sekitarnya. Jumlah pemulihan ini didasarkan pada DEF Linnea.",
+      "1": "Jika Lumi sudah menyerang saat Elemental Burst dilancarkan, maka durasi Lumi akan diulang dan Bentuk Serangan Lumi tidak akan berubah.",
+      "2": "<br/>",
+      "3": "<i>\"Bagi petualang profesional, aturan nomor satu saat menghadapi situasi yang membahayakan nyawa adalah: lebih baik mundur menyelamatkan diri daripada memaksa membuat penemuan baru!\"</i>"
+    },
+    "skillParams": {
+      "0": "Pemulihan HP Awal",
+      "1": "Pemulihan Berkelanjutan",
+      "2": "Durasi Pemulihan",
+      "3": "Cooldown",
+      "4": "Konsumsi Energy",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Field Observation Notes",
+    "description": {
+      "0": "Saat Lumi berada di medan pertempuran, <geo>Geo RES</geo> musuh di sekitar Lumi berkurang 15%.",
+      "1": "<br/>",
+      "2": "<strong>Moonsign: Ascendant Gleam</strong>: Elemental Skill Linnea <strong><tooltip ns=char_Linnea_gen baseKey18=skill>Countermeasure: Lumi's Battle Cry!</tooltip></strong> dan Elemental Burst Linnea <strong><tooltip ns=char_Linnea_gen baseKey18=burst>Memo: Survival Guide in Extreme Conditions</tooltip></strong> akan diperkuat: Setelah memanggil Lumi ke medan pertempuran, <geo>Geo RES</geo> musuh di sekitar berkurang 15% lagi."
+    }
+  },
+  "passive2": {
+    "name": "Universal Naturalist Archive",
+    "description": {
+      "0": "Linnea akan meningkatkan Elemental Mastery Karakter tertentu di dalam party berdasarkan Karakter aktif di dalam party. Jumlah peningkatannya adalah sebesar 5% DEF Linnea. Jika Karakter aktif dalam party sendiri adalah:",
+      "1": [
+        "Karakter Moonsign: Meningkatkan Elemental Mastery Karakter ini.",
+        "Bukan Karakter Moonsign: Meningkatkan Elemental Mastery Linnea sendiri."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Moonsign Benediction: Habitat Survey",
+    "description": {
+      "0": "Saat Karakter dalam party memicu reaksi Hydro Crystallize, reaksi tersebut akan dikonversi menjadi Lunar-Crystallize. Untuk setiap 100 poin DEF Linnea, DMG dasar reaksi Lunar-Crystallize meningkat 0,7%, dengan maksimum 14% peningkatan yang bisa didapatkan dengan cara ini.",
+      "1": "<br/>",
+      "2": "Selain itu, saat Linnea ada di dalam party, <strong>Moonsign</strong> party akan meningkat 1 level."
+    }
+  },
+  "passive": {
+    "name": "Master Adventurer",
+    "description": {
+      "0": "Saat tidak dalam kondisi bertempur, waktu yang diperlukan untuk melakukan charge <strong>Mode Membidik</strong> Linnea akan berkurang drastis, dan anak panahnya akan dikonversi menjadi <strong>Ultra Convenient Quick Arrow</strong> yang khusus. Tembakan ini akan menghasilkan efek yang berbeda berdasarkan jenis target yang terkena:",
+      "1": [
+        "Hewan tertentu: <strong>Ultra Convenient Quick Arrow</strong> akan dikonversi menjadi \"jaring\" khusus yang dapat menangkap bentuk ajaib hewan kecil dan menggunakannya sebagai media untuk mewujudkan kembali bentuk hewan tersebut. Jumlah \"jaring\" khusus yang dapat digunakan setiap minggu bersifat terbatas.",
+        "Bijih bebatuan yang dipakai untuk menempa: Linnea akan mengutus Lumi untuk menghancurkan bijih yang ditandai oleh <strong>Ultra Convenient Quick Arrow</strong> dan mengumpulkan bijih yang terjatuh. Jika Lumi tidak ada di medan, maka Linnea akan memanggil Lumi sejenak untuk membantunya mengumpulkan bijih."
+      ],
+      "2": "<br/>",
+      "3": "DMG yang diakibatkan <strong>Ultra Convenient Quick Arrow</strong> terhadap musuh berkurang menjadi 20% dari DMG Charged Arrow awalnya. Selain itu, setelah menembakkan <strong>Ultra Convenient Quick Arrow</strong> beberapa kali sekaligus dalam waktu singkat, Linnea harus beristirahat sejenak untuk dapat menggunakannya kembali."
+    }
+  },
+  "constellation1": {
+    "name": "Provisional Classification",
+    "description": {
+      "0": "Saat melancarkan Elemental Skill <strong><tooltip ns=char_Linnea_gen baseKey18=skill>Countermeasure: Lumi's Battle Cry!</tooltip></strong>, atau saat memicu Moondrift Harmony, Linnea akan mendapatkan 6 lapis efek <strong>Field Catalog</strong> yang bertahan 10 detik dan dapat ditumpuk sampai 18 lapis. Saat Karakter sekitar di dalam party mengakibatkan DMG reaksi Lunar-Crystallize, akan mengonsumsi satu lapis efek Field Catalog untuk meningkatkan DMG yang diakibatkan sebesar 75% DEF Linnea.",
+      "1": "Selain itu, saat Lumi menggunakan <strong>Million Ton Crush</strong>-nya dalam bentuk <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Ultimate Power Form</tooltip></strong>, Linnea dapat mengonsumsi maksimum 5 lapis Field Catalog untuk meningkatkan DMG yang diakibatkan sebesar 150% DEF Linnea setiap lapisnya."
+    }
+  },
+  "constellation2": {
+    "name": "Tidings of Joy and Sorrow",
+    "description": {
+      "0": "Dalam 8 detik setelah memicu Moondrift Harmony, CRIT DMG seluruh Karakter <hydro>Hydro</hydro> dan <geo>Geo</geo> di dalam party meningkat 40%. Selain itu CRIT DMG Lumi saat menggunakan <strong>Million Ton Crush</strong> dalam bentuk <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Ultimate Power Form</tooltip></strong> akan meningkat 150% lagi.",
+      "1": "<br/>",
+      "2": "<strong>Moonsign: Ascendant Gleam</strong>: Saat Lumi menggunakan <strong>Heavy Overdrive Hammer</strong> dalam bentuk <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Super Power Form</tooltip></strong>, atau saat menggunakan <strong>Million Ton Crush</strong> dalam bentuk Ultimate Power Form, maka akan terpicu satu kali Moondrift Harmony. Moondrift Harmony yang terpicu kali ini akan menganggap semua Karakter dalam party dengan jenis elemen <hydro>Hydro</hydro> dan <geo>Geo</geo> telah mengaplikasikan elemen mereka ke dalam reaksinya."
+    }
+  },
+  "constellation3": {
+    "name": "Eventful Log Page",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Skill <strong><tooltip ns=char_Linnea_gen baseKey18=skill>Countermeasure: Lumi's Battle Cry!</tooltip></strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Expert Instinct",
+    "description": {
+      "0": "Setelah memicu Moondrift Harmony, DEF Linnea dan Karakter aktif sendiri dalam party meningkat 25% selama 5 detik. Saat Linnea ada di medan pertempuran, efek peningkatan DEF di atas dapat ditumpuk."
+    }
+  },
+  "constellation5": {
+    "name": "Fairyland's Farewell Gift",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Burst <strong><tooltip ns=char_Linnea_gen baseKey18=burst>Memo: Survival Guide in Extreme Conditions</tooltip></strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Golden Beagle's Dream",
+    "description": {
+      "0": "Efek Konstelasi <strong>Provisional Classification</strong> diperkuat: Saat melancarkan Elemental Skill <strong><tooltip ns=char_Linnea_gen baseKey18=skill>Countermeasure: Lumi's Battle Cry!</tooltip></strong> atau saat memicu Moondrift Harmony, Linnea akan langsung mendapatkan efek <strong>Field Catalog</strong> dengan jumlah lapisan maksimum. Saat mengonsumsi <strong>Field Catalog</strong>, akan mengonsumsi lapisan sebanyak 2 kali lapisan awalnya untuk membuat efek peningkatan DMG-nya menjadi 150% dari awalnya.",
+      "1": "<br/>",
+      "2": "<strong>Moonsign: Ascendant Gleam</strong>: DMG yang diakibatkan reaksi Lunar-Crystallize Karakter party di sekitar <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>bertumbuh</strong></tooltip> 25%."
+    }
+  }
+}

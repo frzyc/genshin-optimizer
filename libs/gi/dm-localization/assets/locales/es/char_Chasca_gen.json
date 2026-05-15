@@ -154,17 +154,17 @@
   "constellation1": {
     "name": "Cargador: Ruleta perpetua",
     "description": {
-      "0": "Al activarse la conversión espiritual del talento pasivo “Truco balístico”, la segunda <strong>bala persiguesombras</strong> que se recargue en el rifle también se convertirá en una <strong>brillobala persiguesombras</strong>.",
+      "0": "Al activarse la conversión espiritual del talento de ascensión “Truco balístico”, la segunda <strong>bala persiguesombras</strong> que se recargue en el rifle también se convertirá en una <strong>brillobala persiguesombras</strong>.",
       "1": "Si en el equipo hay personajes cuyos tipos elementales cumplan con los requisitos necesarios para que se produzca un cambio elemental, la probabilidad de que se active la conversión espiritual aumenta en un 33.3%, hasta un máximo de un 100%.",
       "2": "<br/>",
-      "3": "Es necesario desbloquear el talento pasivo “Truco balístico”.",
+      "3": "Es necesario desbloquear el talento de ascensión “Truco balístico”.",
       "4": "Además, reduce en un 30% el coste de pts. de noctambulismo y de flogisto de la bendición noctámbula de Chasca cuando no está en combate."
     }
   },
   "constellation2": {
     "name": "Cañón: Humo ardiente",
     "description": {
-      "0": "Cuando Chasca entra en el campo de batalla, obtiene 1 carga del efecto espíritu brillosombra del talento pasivo “Truco balístico”. Para que se active este efecto, es necesario desbloquear el talento pasivo “Truco balístico”.",
+      "0": "Cuando Chasca entra en el campo de batalla, obtiene 1 carga del efecto espíritu brillosombra del talento de ascensión “Truco balístico”. Para que se active este efecto, es necesario desbloquear el talento de ascensión “Truco balístico”.",
       "1": "Además, al usar el <strong>multiapuntamiento</strong> de la Habilidad Elemental, <strong>Riendas persiguesombras</strong>, cuando Chasca golpee a un enemigo con una <strong>brillobala persiguesombras</strong>, infligirá Daño en el AdE del elemento correspondiente en una cantidad equivalente al 400% de su ATQ según el tipo elemental de la <strong>brillobala persiguesombras</strong>. Este daño se considera Daño de Ataque Cargado, y este efecto solo se puede activar una vez por cada <strong>multiapuntamiento</strong>."
     }
   },
@@ -192,9 +192,9 @@
   "constellation6": {
     "name": "Contienda: Honor de la batalla",
     "description": {
-      "0": "Reduce el tiempo de carga necesario para que Chasca ejecute el <strong>multiapuntamiento</strong>. Además, tras activar la conversión espiritual del talento pasivo “Truco balístico”, Chasca entra en el estado de “asalto letal”, de manera que durante los siguientes 3 s, la próxima vez que use el <strong>multiapuntamiento</strong> de la Habilidad Elemental, <strong>Riendas persiguesombras</strong>, el disparo se cargará inmediatamente y aumentará en un 120% el Daño CRIT de las <strong>balas persiguesombras</strong> y las <strong>brillobalas persiguesombras</strong> de dicho <strong>multiapuntamiento</strong>. El efecto de asalto letal solo se puede obtener una vez cada 3 s.",
+      "0": "Reduce el tiempo de carga necesario para que Chasca ejecute el <strong>multiapuntamiento</strong>. Además, tras activar la conversión espiritual del talento de ascensión “Truco balístico”, Chasca entra en el estado de “asalto letal”, de manera que durante los siguientes 3 s, la próxima vez que use el <strong>multiapuntamiento</strong> de la Habilidad Elemental, <strong>Riendas persiguesombras</strong>, el disparo se cargará inmediatamente y aumentará en un 120% el Daño CRIT de las <strong>balas persiguesombras</strong> y las <strong>brillobalas persiguesombras</strong> de dicho <strong>multiapuntamiento</strong>. El efecto de asalto letal solo se puede obtener una vez cada 3 s.",
       "1": "<br/>",
-      "2": "Para que se activen estos efectos, es necesario desbloquear el talento pasivo “Truco balístico”."
+      "2": "Para que se activen estos efectos, es necesario desbloquear el talento de ascensión “Truco balístico”."
     }
   }
 }

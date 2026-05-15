@@ -1,6 +1,9 @@
 name: Deploy Somnia from artifact
 run-name: Deploy Somnia from artifact created by "${{ github.event.workflow_run.display_title }}"
 
+permissions:
+  id-token: write
+
 on:
   workflow_run:
     workflows:
@@ -32,7 +35,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 20
     needs: set-env
     environment:
       name: ${{ needs.set-env.outputs.env }}
@@ -46,10 +49,6 @@ jobs:
         with:
           run-id: ${{ github.event.workflow_run.id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Login to Azure
-        uses: azure/login@v2
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
       - name: Setup config.json and others
         run: |
           printf '%s' "$CONFIG" > somnia_build/dist/apps/somnia/apps/somnia/src/config.json
@@ -57,6 +56,13 @@ jobs:
           echo ${{ needs.set-env.outputs.prNumber }} > somnia_build/dist/apps/somnia/prNumber
         env:
           CONFIG: ${{ secrets.SOMNIA_CREDENTIALS }}
+      - name: 'Login to Azure with OpenID Connect + Managed Identity'
+        id: login-to-azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3

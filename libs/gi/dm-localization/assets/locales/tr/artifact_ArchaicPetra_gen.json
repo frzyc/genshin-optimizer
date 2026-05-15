@@ -2,7 +2,7 @@
   "setName": "Arkaik Taşlar",
   "setEffects": {
     "2": "+%15 Toprak Hasarı Bonusu.",
-    "4": "Kristalleştirme Tepkimesi ile bir Element Parçası elde edildiğinde, 10 saniyeliğine tüm grup üyeleri o element için %35 Hasar Bonusu kazanır. Bu yöntemle aynı anda yalnızca bir tür Element Hasarı Bonusu kazanılabilir."
+    "4": "Kristalleşme ile oluşan bir Element Parçası elde edildiğinde veya bir Ay Kristalleşmesi tepkimesi tetiklendiğinde 10 saniyeliğine tüm grup üyeleri o element için %35 Hasar Bonusu kazanır. Bu yöntemle aynı anda yalnızca bir tür Element Hasarı Bonusu kazanılabilir."
   },
   "pieces": {
     "flower": {

@@ -1,0 +1,348 @@
+{
+  "name": "Yidhari",
+  "fullName": "Yidhari Murphy",
+  "basic": {
+    "BasicAttackCrushingStrike": {
+      "name": "Basic Attack: Crushing Strike",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Unleashes up to 3 strikes, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "On the 3rd hit, Yidhari recovers 10% HP."
+      },
+      "params": [
+        "1st-Hit ",
+        "1st-Hit (ALT) ",
+        "2nd-Hit ",
+        "3rd-Hit "
+      ]
+    },
+    "BasicAttackFrostbiteEmbrace": {
+      "name": "Basic Attack: Frostbite Embrace",
+      "desc": {
+        "0": "Hold <IconNormal /> to activate:",
+        "1": "Yidhari begins charging, continuously consuming HP to reach up to three levels of charge. When <IconNormal /> is released, Yidhari unleashes a powerful charged hammer attack in front based on the current charge level, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "The higher Yidhari's HP, the faster charging consumes it. HP consumption will at most reduce Yidhari's HP to 25% of Max HP.",
+        "3": "At 2 charge levels, after using the skill, press <IconNormal /> to immediately follow up with the 3rd hit of <ct color=#FFFFFF>Basic Attack: Crushing Strike</ct>. The DMG of a <ct color=#FFFFFF>Basic Attack: Crushing Strike</ct> triggered this way increases based on the current charge level, up to 30%.",
+        "4": "At 3 charge levels, Yidhari gains increased Anti-Interrupt level during the charged skill. Press <IconNormal /> to chain early into the finishing smash."
+      },
+      "params": [
+        "Level-1 Charged Attack ",
+        "Level-2 Charged Attack ",
+        "Level-3 Charged Smash ",
+        "Level-3 Charged Spin ",
+        "Level-1 Charged ",
+        "Level-2 Charged "
+      ]
+    },
+    "FrostsCrushingWeight": {
+      "name": "Frost's Crushing Weight",
+      "desc": {
+        "0": "While charging or spinning during <ct color=#FFFFFF>Basic Attack: Frostbite Embrace</ct>, if hit by an enemy, Yidhari can block with her tentacles, reducing the DMG taken by 25%.",
+        "1": "If charging or not yet at full charge, Yidhari counterattacks with her tentacles, returning to the charging stance and instantly gaining 1 charge level, while also dealing <ct color=#98EFF0>Ice DMG</ct> to enemies ahead.",
+        "2": "While Frost's Crushing Weight is active, pressing <IconNormal /> makes Yidhari immediately unleash the finishing slam of <ct color=#FFFFFF>Basic Attack: Frostbite Embrace</ct> based on her current charge level.",
+        "3": "While Frost's Crushing Weight is active, pressing <IconSpecial /> or <IconSpecialReadyRp /> makes Yidhari unleash a <ct color=#FFFFFF>Special Attack: Surging Cold, Crushing Pursuit</ct> that is guaranteed to trigger Surging Cold."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeDreamshift": {
+      "name": "Dodge: Dreamshift",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackFrostbloomImpact": {
+      "name": "Dash Attack: Frostbloom Impact",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Strike forward, dealing <ct color=#98EFF0>Ice DMG</ct>."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterIcehaulReverb": {
+      "name": "Dodge Counter: Icehaul Reverb",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Strikes enemies in front, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackCeaseThoughts": {
+      "name": "Special Attack: Cease Thoughts",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Launches enemies in front into the air, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackFrostCoil": {
+      "name": "EX Special Attack: Frost Coil",
+      "desc": {
+        "0": "With enough Adrenaline, press <IconSpecialReadyRp /> to activate:",
+        "1": "Perform two consecutive upward strikes, then release an icy mist, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "If EX Special Attack: Frost Coil hits an enemy, Yidhari recovers HP at the end of the skill equal to 33% of her missing HP.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "Adrenaline Cost "
+      ]
+    },
+    "SpecialAttackSurgingColdCrushingPursuit": {
+      "name": "Special Attack: Surging Cold, Crushing Pursuit",
+      "desc": {
+        "0": "Press <IconSpecial /> or <IconSpecialReadyRp /> while charging or spinning during <ct color=#FFFFFF>Basic Attack: Frostbite Embrace</ct>, or press <IconEvade /> while holding <IconNormal /> to activate:",
+        "1": "Launches enemies in front into the air, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "When the skill's attack collides with an enemy's attack, it triggers Surging Cold.",
+        "3": "If the skill hits a Stunned enemy, and with sufficient Adrenaline, it triggers Crushing Pursuit.",
+        "4": "Triggering Surging Cold or Crushing Pursuit instantly raises the charge level to maximum.",
+        "5": "During this skill, press <IconNormal /> and Yidhari will immediately unleash the finishing slam of <ct color=#FFFFFF>Basic Attack: Frostbite Embrace</ct> based on the current charge level.",
+        "6": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackGlacialCrush": {
+      "name": "EX Special Attack: Glacial Crush",
+      "desc": {
+        "0": "When triggering Surging Cold or Crushing Pursuit, and with enough Adrenaline, press <IconSpecialReadyRp /> or <IconNormal /> to activate:",
+        "1": "Dash forward with an upward attack, then leap into the air before delivering a powerful downward smash, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "If <ct color=#FFFFFF>EX Special Attack: Glacial Crush</ct> hits an enemy, Yidhari heals at the end of the skill for 33% of her missing HP.",
+        "3": "If the skill is used after Surging Cold, it grants an additional 15 Adrenaline. This effect can trigger once every 1s.",
+        "4": "After using this skill, press <IconNormal /> to immediately unleash the finishing slam of <ct color=#FFFFFF>Basic Attack: Frostbite Embrace</ct> based on the current charge level.",
+        "5": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "EX Special Attack: Glacial Crush ",
+        "Additional Ability Icy Tentacle ",
+        "Adrenaline Cost "
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackFrostboundOath": {
+      "name": "Chain Attack: Frostbound Oath",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Unleash a powerful strike against enemies in a small area ahead, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "If inside <ct color=#FFFFFF>Ether Veil: Wellspring</ct>, tentacles join in the assault, further enhancing the skill's power.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "in Ether Veil: Wellspring "
+      ]
+    },
+    "EtherVeilWellspring": {
+      "name": "Ether Veil: Wellspring",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, the final hit of <ct color=#FFFFFF>Basic Attack: Frostbite Embrace</ct>, <ct color=#FFFFFF>EX Special Attack: Frost Coil</ct>, <ct color=#FFFFFF>EX Special Attack: Glacial Crush</ct>, and <ct color=#FFFFFF>Chain Attack: Frostbound Oath</ct> will consume 3,000 Decibels to activate an <ct color=#FFFFFF>Ether Veil: Wellspring</ct>. While <ct color=#FFFFFF>Ether Veil: Wellspring</ct> is active, all squad members' Max HP increase by 5% for 30s. Repeated triggers extend the duration, up to a maximum of 300s.",
+        "1": "While Yidhari is within <ct color=#FFFFFF>Ether Veil: Wellspring</ct>, the charge speed of <ct color=#FFFFFF>Basic Attack: Frostbite Embrace</ct> increases, and HP is consumed faster during charging."
+      },
+      "params": []
+    },
+    "UltimateFinalActCrossingTheRiverOfRegret": {
+      "name": "Ultimate: Final Act - Crossing the River of Regret",
+      "desc": {
+        "0": "After Yidhari expends Decibels to activate <ct color=#FFFFFF>Ether Veil: Wellspring</ct>, press <IconUltimateReady /> within 30s to activate:",
+        "1": "Deliver a powerful strike to enemies in a large area ahead, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Character is invulnerable while using this skill.",
+        "3": "Each time Yidhari expends Decibels to activate an <ct color=#FFFFFF>Ether Veil: Wellspring</ct>, she can use <ct color=#FFFFFF>Ultimate: Final Act - Crossing the River of Regret</ct> once."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistFrostshockReinforcement": {
+      "name": "Quick Assist: Frostshock Reinforcement",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Strikes enemies in front, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistFlashquakeRejection": {
+      "name": "Defensive Assist: Flashquake Rejection",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpGlacialOnslaught": {
+      "name": "Assist Follow-Up: Glacial Onslaught",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Execute an ice shard hammer attack against enemies in front, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Dreamscape Collection",
+    "desc": [
+      {
+        "0": "Yidhari gains extra Sheer Force based on her Max HP, with every 1 point of Max HP increasing Sheer Force by 0.1.",
+        "1": "All <ct color=#98EFF0>Ice DMG</ct> dealt by Yidhari deals is Sheer DMG, ignoring enemy DEF and using her Sheer Force stat as the DMG Multiplier. When Yidhari enters battle, she immediately gains 60 Adrenaline. In Investigation Zone Mode, this effect can trigger once every 180s.",
+        "2": "Yidhari's skill DMG increases as her current HP percentage decreases.",
+        "3": "When her HP falls below 50%, the buff reaches its maximum value, increasing her DMG by up to <ct color=#2BAD00>50%</ct>. Once her HP is restored to 50%, the maximum bonus remains for 5s thereafter.",
+        "4": "Yidhari gains fewer Decibels from landing skills. Instead, she gains Decibels as her HP decreases, with every 1% HP lost granting 10 Decibels."
+      },
+      {
+        "0": "Yidhari gains extra Sheer Force based on her Max HP, with every 1 point of Max HP increasing Sheer Force by 0.1.",
+        "1": "All <ct color=#98EFF0>Ice DMG</ct> dealt by Yidhari deals is Sheer DMG, ignoring enemy DEF and using her Sheer Force stat as the DMG Multiplier. When Yidhari enters battle, she immediately gains 60 Adrenaline. In Investigation Zone Mode, this effect can trigger once every 180s.",
+        "2": "Yidhari's skill DMG increases as her current HP percentage decreases.",
+        "3": "When her HP falls below 50%, the buff reaches its maximum value, increasing her DMG by up to <ct color=#2BAD00>58%</ct>. Once her HP is restored to 50%, the maximum bonus remains for 5s thereafter.",
+        "4": "Yidhari gains fewer Decibels from landing skills. Instead, she gains Decibels as her HP decreases, with every 1% HP lost granting 10 Decibels."
+      },
+      {
+        "0": "Yidhari gains extra Sheer Force based on her Max HP, with every 1 point of Max HP increasing Sheer Force by 0.1.",
+        "1": "All <ct color=#98EFF0>Ice DMG</ct> dealt by Yidhari deals is Sheer DMG, ignoring enemy DEF and using her Sheer Force stat as the DMG Multiplier. When Yidhari enters battle, she immediately gains 60 Adrenaline. In Investigation Zone Mode, this effect can trigger once every 180s.",
+        "2": "Yidhari's skill DMG increases as her current HP percentage decreases.",
+        "3": "When her HP falls below 50%, the buff reaches its maximum value, increasing her DMG by up to <ct color=#2BAD00>66%</ct>. Once her HP is restored to 50%, the maximum bonus remains for 5s thereafter.",
+        "4": "Yidhari gains fewer Decibels from landing skills. Instead, she gains Decibels as her HP decreases, with every 1% HP lost granting 10 Decibels."
+      },
+      {
+        "0": "Yidhari gains extra Sheer Force based on her Max HP, with every 1 point of Max HP increasing Sheer Force by 0.1.",
+        "1": "All <ct color=#98EFF0>Ice DMG</ct> dealt by Yidhari deals is Sheer DMG, ignoring enemy DEF and using her Sheer Force stat as the DMG Multiplier. When Yidhari enters battle, she immediately gains 60 Adrenaline. In Investigation Zone Mode, this effect can trigger once every 180s.",
+        "2": "Yidhari's skill DMG increases as her current HP percentage decreases.",
+        "3": "When her HP falls below 50%, the buff reaches its maximum value, increasing her DMG by up to <ct color=#2BAD00>74%</ct>. Once her HP is restored to 50%, the maximum bonus remains for 5s thereafter.",
+        "4": "Yidhari gains fewer Decibels from landing skills. Instead, she gains Decibels as her HP decreases, with every 1% HP lost granting 10 Decibels."
+      },
+      {
+        "0": "Yidhari gains extra Sheer Force based on her Max HP, with every 1 point of Max HP increasing Sheer Force by 0.1.",
+        "1": "All <ct color=#98EFF0>Ice DMG</ct> dealt by Yidhari deals is Sheer DMG, ignoring enemy DEF and using her Sheer Force stat as the DMG Multiplier. When Yidhari enters battle, she immediately gains 60 Adrenaline. In Investigation Zone Mode, this effect can trigger once every 180s.",
+        "2": "Yidhari's skill DMG increases as her current HP percentage decreases.",
+        "3": "When her HP falls below 50%, the buff reaches its maximum value, increasing her DMG by up to <ct color=#2BAD00>82%</ct>. Once her HP is restored to 50%, the maximum bonus remains for 5s thereafter.",
+        "4": "Yidhari gains fewer Decibels from landing skills. Instead, she gains Decibels as her HP decreases, with every 1% HP lost granting 10 Decibels."
+      },
+      {
+        "0": "Yidhari gains extra Sheer Force based on her Max HP, with every 1 point of Max HP increasing Sheer Force by 0.1.",
+        "1": "All <ct color=#98EFF0>Ice DMG</ct> dealt by Yidhari deals is Sheer DMG, ignoring enemy DEF and using her Sheer Force stat as the DMG Multiplier. When Yidhari enters battle, she immediately gains 60 Adrenaline. In Investigation Zone Mode, this effect can trigger once every 180s.",
+        "2": "Yidhari's skill DMG increases as her current HP percentage decreases.",
+        "3": "When her HP falls below 50%, the buff reaches its maximum value, increasing her DMG by up to <ct color=#2BAD00>90%</ct>. Once her HP is restored to 50%, the maximum bonus remains for 5s thereafter.",
+        "4": "Yidhari gains fewer Decibels from landing skills. Instead, she gains Decibels as her HP decreases, with every 1% HP lost granting 10 Decibels."
+      },
+      {
+        "0": "Yidhari gains extra Sheer Force based on her Max HP, with every 1 point of Max HP increasing Sheer Force by 0.1.",
+        "1": "All <ct color=#98EFF0>Ice DMG</ct> dealt by Yidhari deals is Sheer DMG, ignoring enemy DEF and using her Sheer Force stat as the DMG Multiplier. When Yidhari enters battle, she immediately gains 60 Adrenaline. In Investigation Zone Mode, this effect can trigger once every 180s.",
+        "2": "Yidhari's skill DMG increases as her current HP percentage decreases.",
+        "3": "When her HP falls below 50%, the buff reaches its maximum value, increasing her DMG by up to <ct color=#2BAD00>100%</ct>. Once her HP is restored to 50%, the maximum bonus remains for 5s thereafter.",
+        "4": "Yidhari gains fewer Decibels from landing skills. Instead, she gains Decibels as her HP decreases, with every 1% HP lost granting 10 Decibels."
+      }
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Narrative Completion",
+    "desc": {
+      "0": "When another character in your squad is a <ct color=#FFFFFF>Stun</ct> or <ct color=#FFFFFF>Support</ct> character:",
+      "1": "When Yidhari's HP falls below 50%, CRIT DMG increases by 30% and DMG taken is reduced by 25%.",
+      "2": "While Yidhari is within <ct color=#FFFFFF>Ether Veil: Wellspring</ct>, she gains the following additional effect:",
+      "3": "After the level 3 charged attack of Yidhari's <ct color=#FFFFFF>Basic Attack: Frostbite Embrace</ct> or <ct color=#FFFFFF>EX Special Attack: Glacial Crush</ct>, an icy tentacle is summoned to attack, dealing extra damage. This effect can trigger once every 12s.",
+      "4": "The above skill is considered an <ct color=#FFFFFF>EX Special Attack</ct>, the DMG multiplier increases based on the EX Special Attack's level."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "The Past Lost Beneath the Abyss",
+      "desc": "The Adrenaline cost to activate Yidhari's <ct color=#FFFFFF>EX Special Attack</ct> is reduced by 10. After using <ct color=#FFFFFF>EX Special Attack: Frost Coil</ct> or <ct color=#FFFFFF>EX Special Attack: Glacial Crush</ct>, keeping hold of the Basic Attack or Special Attack button consumes 35 Adrenaline to forgo healing and immediately chain into another <ct color=#FFFFFF>EX Special Attack: Glacial Crush</ct>. The HP restored by this <ct color=#FFFFFF>EX Special Attack: Glacial Crush</ct> is increased by 100% of the original value. Yidhari's <ct color=#FFFFFF>Basic Attacks</ct> and <ct color=#FFFFFF>EX Special Attacks</ct> ignore 20% of targets' <ct color=#98EFF0>Ice RES</ct>.",
+      "flavor": {
+        "0": "She plunged into an unfathomable abyss.",
+        "1": "—What is this place, and where will it carry her?",
+        "2": "The moment doubt arose, a voice whispered from the darkness:",
+        "3": "\"This is the realm of the unknown, opening the path to all that is known.\"",
+        "4": "Endless shadows tumbled down with her.",
+        "5": "—Who are they, and why do their shadows fall here?",
+        "6": "As the question rose in her thoughts, the voice replied once more:",
+        "7": "\"They are those cut off from fate. What falls here are the remnants of their past.\"",
+        "8": "And so, the little girl hugged herself in solitude, carried downward by countless bygone memories.",
+        "9": "Her eyes widened in bewilderment, seeing only cold, stillness, and loneliness blooming at the bottom of the abyss."
+      }
+    },
+    "2": {
+      "name": "Who Lingers Here, Lost in Thought?",
+      "desc": "Yidhari's CRIT DMG increases by 40%. Triggering <ct color=#FFFFFF>Surging Cold</ct> or <ct color=#FFFFFF>Crushing Pursuit</ct> grants Adrenaline regen of 0.5/s for up to 30s. Repeated triggers reset the duration.",
+      "flavor": {
+        "0": "In the darkness lay the girl's slumbering thoughts.",
+        "1": "They were not innocent daydreams, nor carefree flights of fancy.",
+        "2": "Her mind was fixed on the memories she had witnessed.",
+        "3": "\"What must I do? What must I bear?\"",
+        "4": "\"Good thing it's me, and not someone else.\"",
+        "5": "\"I know how to deal with being alone... I think.\"",
+        "6": "As she sifted through those pasts, the girl calmly accepted this heavy gift."
+      }
+    },
+    "3": {
+      "name": "A Story Without an Audience",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "So this is what humanity is — such a complex existence.",
+        "1": "A lifetime can hold so much joy, and just as much sorrow.",
+        "2": "Yet now, all of it has fallen into this void, to be swallowed, erased, and buried.",
+        "3": "No one will ever care again for those joyful laughs, or those grief-stricken cries.",
+        "4": "Still... every one of those untold stories has been etched into this abyss of the soul."
+      }
+    },
+    "4": {
+      "name": "Blooming in Silence",
+      "desc": "Yidhari gains 10% more Decibels when losing HP for <ct color=#FFFFFF>Core Passive: Dreamscape Collection</ct>. While in <ct color=#FFFFFF>Ether Veil: Wellspring</ct>, Yidhari's Max HP is further increased by 5%.",
+      "flavor": {
+        "0": "The flower trembled as it bloomed in the dark, white and translucent, as though it reflected the lone light of the abyss's depths.",
+        "1": "—It was, in truth, a soul, fragile yet unyielding.",
+        "2": "Amid the countless falling shadows, amid the flood of cascading memories... she remained untouched, still blooming with her own strength.",
+        "3": "But in the end... will she too fade away, drifting with nothing to hold on to?"
+      }
+    },
+    "5": {
+      "name": "This Solace Is Real",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "\"Such beautiful eyes... am I still inside a dream?\"",
+        "1": "It was their first meeting, and her first brush with something real.",
+        "2": "Amid the emptiness and the grotesque, in the barren abyss that threatened to devour everything, she caught sight of those eyes.",
+        "3": "They were like a hint of green breaking through the burning desert, like a clear spring rising from a parched riverbed.",
+        "4": "\"I think I've found it... the hope of someone who will willingly respond to me.\""
+      }
+    },
+    "6": {
+      "name": "At Last, a Peaceful Dream",
+      "desc": "After Yidhari spends Decibels to activate or extend <ct color=#FFFFFF>Ether Veil: Wellspring</ct>, she gains <ct color=#FFFFFF>Erudition</ct> for 30s. While <ct color=#FFFFFF>Erudition</ct> is active, her Sheer DMG increases by 25%. Also, upon taking fatal DMG for the first time, her HP is reduced to at most 1, and for the next 5s, she cannot be defeated and will restore 25% HP over time.",
+      "flavor": {
+        "0": "Immersed in the tide of memories, she had never found even fleeting rest.",
+        "1": "Her only refuge was solitude, escaping the bustle of the world, losing herself in strange tales, seeking quiet beneath veils of misty rain or within the embrace of warm waters.",
+        "2": "But now, she can walk calmly among the crowds, no longer troubled by noise or the burning sun, for \"illusion\" no longer binds her spirit, and \"reality\" has become the anchor of her soul."
+      }
+    }
+  },
+  "potential": {}
+}

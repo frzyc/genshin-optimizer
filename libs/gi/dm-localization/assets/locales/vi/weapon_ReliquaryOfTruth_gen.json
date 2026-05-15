@@ -1,0 +1,24 @@
+{
+  "name": "Chân Ngôn Bí Hạp",
+  "description": {
+    "0": "Chiếc hộp được chạm khắc từ vàng và ngọc thạch. Theo truyền thuyết, từng được thờ ở ngôi đền nơi sâu thẳm của thành phố lam bảo thạch Tulaytullah."
+  },
+  "passiveName": "Thành Ý Dối Trá",
+  "passiveDescription": {
+    "0": {
+      "0": "Tỷ Lệ Bạo Kích tăng <cryo>8%</cryo>. Khi thi triển Kỹ Năng Nguyên Tố, người trang bị sẽ nhận hiệu quả \"Bí Ẩn Dối Trá\": Tinh Thông Nguyên Tố tăng <cryo>80</cryo> điểm trong 12s. Khi người trang bị gây sát thương phản ứng Nguyệt-Sum Suê lên kẻ địch, người trang bị sẽ nhận hiệu quả \"Ánh Trăng Sự Thật\": Sát Thương Bạo Kích tăng <cryo>24%</cryo> trong 4s. Khi Bí Ẩn Dối Trá và Ánh Trăng Sự Thật cùng tồn tại, các hiệu quả này sẽ lần lượt tăng thêm 50%."
+    },
+    "1": {
+      "0": "Tỷ Lệ Bạo Kích tăng <cryo>10%</cryo>. Khi thi triển Kỹ Năng Nguyên Tố, người trang bị sẽ nhận hiệu quả \"Bí Ẩn Dối Trá\": Tinh Thông Nguyên Tố tăng <cryo>100</cryo> điểm trong 12s. Khi người trang bị gây sát thương phản ứng Nguyệt-Sum Suê lên kẻ địch, người trang bị sẽ nhận hiệu quả \"Ánh Trăng Sự Thật\": Sát Thương Bạo Kích tăng <cryo>30%</cryo> trong 4s. Khi Bí Ẩn Dối Trá và Ánh Trăng Sự Thật cùng tồn tại, các hiệu quả này sẽ lần lượt tăng thêm 50%."
+    },
+    "2": {
+      "0": "Tỷ Lệ Bạo Kích tăng <cryo>12%</cryo>. Khi thi triển Kỹ Năng Nguyên Tố, người trang bị sẽ nhận hiệu quả \"Bí Ẩn Dối Trá\": Tinh Thông Nguyên Tố tăng <cryo>120</cryo> điểm trong 12s. Khi người trang bị gây sát thương phản ứng Nguyệt-Sum Suê lên kẻ địch, người trang bị sẽ nhận hiệu quả \"Ánh Trăng Sự Thật\": Sát Thương Bạo Kích tăng <cryo>36%</cryo> trong 4s. Khi Bí Ẩn Dối Trá và Ánh Trăng Sự Thật cùng tồn tại, các hiệu quả này sẽ lần lượt tăng thêm 50%."
+    },
+    "3": {
+      "0": "Tỷ Lệ Bạo Kích tăng <cryo>14%</cryo>. Khi thi triển Kỹ Năng Nguyên Tố, người trang bị sẽ nhận hiệu quả \"Bí Ẩn Dối Trá\": Tinh Thông Nguyên Tố tăng <cryo>140</cryo> điểm trong 12s. Khi người trang bị gây sát thương phản ứng Nguyệt-Sum Suê lên kẻ địch, người trang bị sẽ nhận hiệu quả \"Ánh Trăng Sự Thật\": Sát Thương Bạo Kích tăng <cryo>42%</cryo> trong 4s. Khi Bí Ẩn Dối Trá và Ánh Trăng Sự Thật cùng tồn tại, các hiệu quả này sẽ lần lượt tăng thêm 50%."
+    },
+    "4": {
+      "0": "Tỷ Lệ Bạo Kích tăng <cryo>16%</cryo>. Khi thi triển Kỹ Năng Nguyên Tố, người trang bị sẽ nhận hiệu quả \"Bí Ẩn Dối Trá\": Tinh Thông Nguyên Tố tăng <cryo>160</cryo> điểm trong 12s. Khi người trang bị gây sát thương phản ứng Nguyệt-Sum Suê lên kẻ địch, người trang bị sẽ nhận hiệu quả \"Ánh Trăng Sự Thật\": Sát Thương Bạo Kích tăng <cryo>48%</cryo> trong 4s. Khi Bí Ẩn Dối Trá và Ánh Trăng Sự Thật cùng tồn tại, các hiệu quả này sẽ lần lượt tăng thêm 50%."
+    }
+  }
+}

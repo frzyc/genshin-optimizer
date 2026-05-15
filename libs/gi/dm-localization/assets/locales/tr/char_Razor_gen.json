@@ -133,6 +133,16 @@
       "1": "Aynı etkiyi veren Pasif Yeteneklerle birikmez."
     }
   },
+  "lockedPassive": {
+    "name": "Cadının Gece Ayini: Yıldırım Taşkını",
+    "description": {
+      "0": "<strong>Cadının Ödevi: Küçük Kurt Sürüsü</strong> tamamlandıktan sonra Razor bir <strong>Cadılık</strong> karakteri olur. Grupta en az 2 Cadılık karakteri olduğunda, Cadılık karakterlerini geliştiren <strong>Cadılık: Saklı Ayin</strong> etkisi kazanırsın.",
+      "1": "Ayrıca Razor'ın <strong>Şimşek Diş</strong> Element Patlaması gelişir: <strong>Kurt Yoldaş</strong> ile verilen Hasar, Razor'ın Saldırısının %70'i kadar artar.",
+      "2": "<br/>",
+      "3": "<strong>Cadılık: Saklı Ayin</strong>",
+      "4": "Razor'ın <strong>Şimşek Diş</strong> Element Patlaması ile çağrılan Kurt Yoldaş etkinken, Razor'ın <strong>Pençe ve Yıldırım</strong> Element Becerisinden gelen Elektrik Mühürleri sınırı aştığında, Kurt Yoldaş yakındaki düşmanların üzerine bir yıldırım atarak Razor'ın Saldırısının %150'si kadar Elektrik Alan Hasarı verir ve Razor için 7 Enerji yeniler. Bu etki her saniyede bir tetiklenebilir."
+    }
+  },
   "constellation1": {
     "name": "Kurdun İçgüdüsü",
     "description": {
@@ -170,6 +180,12 @@
     "description": {
       "0": "Razor'ın kılıcı her 10 saniyede bir yük biriktirir. Yapılan bir sonraki Normal Saldırı, Razor'ın Saldırısının %100'ü kadar <electro>Elektrik Hasarı</electro> veren bir yıldırım çakar.",
       "1": "Razor, <strong>Şimşek Diş</strong> becerisini kullanmıyorken düşmana çarpan bir şimşek Razor'a <strong>Pençe ve Yıldırım</strong> becerisi için Elektrik Mührü kazandırır."
+    },
+    "upgradedDescription": {
+      "0": "Razor'ın kılıcı her 10 saniyede bir yük biriktirir. Yapılan bir sonraki Normal Saldırı, Razor'ın Saldırısının %100'ü kadar <electro>Elektrik Hasarı</electro> veren bir yıldırım çakar.",
+      "1": "Razor <strong>Şimşek Diş</strong> kullanmıyorken düşman yıldırımla vurulduğunda <strong>Pençe ve Yıldırım</strong> Element Becerisi 3 Elektrik Mührü kazanır.",
+      "2": "Ayrıca Razor <strong>Pençe ve Yıldırım</strong> Element Becerisiyle Elektrik Mühürleri kazandığında 3 Mühür elde eder.",
+      "3": "Elektrik Mühürlerini tükettikten sonra 15 saniyeliğine Razor'ın Kritik Oranı %10, Kritik Hasarı %50 artar."
     }
   }
 }

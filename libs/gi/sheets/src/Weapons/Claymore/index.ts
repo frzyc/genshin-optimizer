@@ -14,11 +14,13 @@ import FerrousShadow from './FerrousShadow'
 import FlameForgedInsight from './FlameForgedInsight'
 import ForestRegalia from './ForestRegalia'
 import FruitfulHook from './FruitfulHook'
+import GestOfTheMightyWolf from './GestOfTheMightyWolf'
 import KatsuragikiriNagamasa from './KatsuragikiriNagamasa'
 import LithicBlade from './LithicBlade'
 import LuxuriousSeaLord from './LuxuriousSeaLord'
 import MailedFlower from './MailedFlower'
 import MakhairaAquamarine from './MakhairaAquamarine'
+import MasterKey from './MasterKey'
 import OldMercsPal from './OldMercsPal'
 import PortablePowerSaw from './PortablePowerSaw'
 import PrototypeArchaic from './PrototypeArchaic'
@@ -55,11 +57,13 @@ const claymore: Record<WeaponClaymoreKey, WeaponSheet> = {
   FlameForgedInsight,
   ForestRegalia,
   FruitfulHook,
+  GestOfTheMightyWolf,
   KatsuragikiriNagamasa,
   LithicBlade,
   LuxuriousSeaLord,
   MailedFlower,
   MakhairaAquamarine,
+  MasterKey,
   OldMercsPal,
   PortablePowerSaw,
   PrototypeArchaic,

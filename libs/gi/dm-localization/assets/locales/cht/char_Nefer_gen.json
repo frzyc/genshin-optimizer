@@ -1,0 +1,169 @@
+{
+  "name": "奈芙爾",
+  "title": "湮沙的秘聞",
+  "description": "神通廣大的「秘聞館」之主。",
+  "constellationName": "遊棋座",
+  "auto": {
+    "name": "遊虵吐信",
+    "fields": {
+      "normal": {
+        "0": "<strong>普通攻擊</strong>",
+        "1": "以游蛇般凶銳與優雅的儀態，進行至多四段的踢擊，造成<dendro>草元素傷害</dendro>。"
+      },
+      "charged": {
+        "0": "<strong>重擊</strong>",
+        "1": "進入蛇行狀態，以消耗體力為代價，進行至多2.5秒的高速移動。鬆開技能、持續時間結束或體力耗盡時，奈芙爾將退出蛇行狀態，並額外消耗一定體力，對敵人造成<dendro>草元素傷害</dendro>；處於<tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>「影舞」</strong></tooltip>狀態下時，額外消耗的體力會降低。",
+        "2": "此外，奈芙爾處於蛇行狀態下時，施放元素戰技<strong><tooltip ns=char_Nefer_gen baseKey18=skill>弈術·千夜一舞</tooltip></strong>或進行衝刺不會使奈芙爾退出蛇行狀態。"
+      },
+      "plunging": {
+        "0": "<strong>下落攻擊</strong>",
+        "1": "凝聚草元素的力量，從空中下墜衝擊地面，攻擊下落路徑上的敵人，並在落地時造成<dendro>草元素範圍傷害</dendro>。"
+      }
+    },
+    "skillParams": {
+      "0": "一段傷害",
+      "1": "二段傷害",
+      "2": "三段傷害",
+      "3": "四段傷害",
+      "4": "重擊傷害",
+      "5": "重擊蓄力持續體力消耗",
+      "6": "重擊體力消耗",
+      "7": "影舞狀態下重擊體力消耗",
+      "8": "下墜期間傷害",
+      "9": "低空/高空墜地衝擊傷害",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "弈術·千夜一舞",
+    "description": {
+      "0": "如月色的輕紗般纏綿，又如寒夜的砂海般凜冽的傾國之舞。奈芙爾向前方突進一段距離，造成<dendro>草元素範圍傷害</dendro>，並進入<tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>「影舞」</strong></tooltip>狀態。",
+      "1": "處於「影舞」狀態下時，若擁有至少1枚<tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>草露</strong></tooltip>，奈芙爾施放的重擊將會被替換為特殊的、不消耗體力的重擊<tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>幻戲</strong></tooltip>。「影舞」狀態下將提高奈芙爾的抗打斷能力。",
+      "2": "<br/>",
+      "3": "初始擁有2次可用次數。",
+      "4": "<br/>",
+      "5": "<i>「世事如棋局，棋手們總是隱藏在帷幕之後。若是不想在不知不覺間墜入羅網，就必須掌握充足的情報，這便是『秘聞』的意義。」</i>"
+    },
+    "skillParams": {
+      "0": "技能傷害",
+      "1": "幻戲自身一段傷害",
+      "2": "幻戲自身二段傷害",
+      "3": "幻戲虛影一段",
+      "4": "幻戲虛影二段",
+      "5": "幻戲虛影三段",
+      "6": "幻戲可用次數",
+      "7": "影舞持續時間",
+      "8": "冷卻時間",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "聖約·真眸幻戲",
+    "description": {
+      "0": "以圖特的真視，向偽物的謎題奉上「解明」，對前方的敵人造成<dendro>草元素範圍傷害</dendro>。施放時，奈芙爾還會消耗所有的<tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>「偽秘之帷」</strong></tooltip>，提升本次元素爆發造成的傷害。",
+      "1": "<br/>",
+      "2": "<i>在熱砂的歌者們所傳唱的古老詩篇中，䴉之王的饋贈與其說是祝福，不如說更像是詛咒。</i>"
+    },
+    "skillParams": {
+      "0": "一段傷害",
+      "1": "二段傷害",
+      "2": "傷害提升",
+      "3": "冷卻時間",
+      "4": "元素能量",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "月下的豪賭",
+    "description": {
+      "0": "依據隊伍的<strong>月兆</strong>，奈芙爾將獲得對應的強化效果。",
+      "1": "<br/>",
+      "2": "<strong>月兆·滿輝</strong>：施放元素戰技<strong><tooltip ns=char_Nefer_gen baseKey18=skill>弈術·千夜一舞</tooltip></strong>時，將使目前場上的草原核轉化為「誑言之核」，且附近所有角色在接下來的15秒內觸發月綻放反應時，將取代草原核與豐穰之核產生誑言之核。誑言之核無法觸發超綻放與烈綻放反應，也無法迸發。",
+      "3": "奈芙爾施放重擊或<tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>幻戲</strong></tooltip>時，可以吸收附近一定範圍內的誑言之核，每吸收一枚誑言之核，奈芙爾便會獲得一層<tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>「偽秘之帷」</strong></tooltip>效果。該效果疊加至3層或3層的持續時間重置時，奈芙爾的元素精通提升100點，持續8秒。"
+    }
+  },
+  "passive2": {
+    "name": "塵沙的女兒",
+    "description": {
+      "0": "奈芙爾處於<tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>「影舞」</strong></tooltip>狀態下時，隊伍中的角色觸發月綻放反應後的5秒內，奈芙爾的<strong><tooltip ns=char_Nefer_gen baseKey18=normal>蛇行</tooltip></strong>狀態還會額外為隊伍提供<tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>草露</strong></tooltip>；依據奈芙爾的元素精通超過500的部分，每100點元素精通都將使上述提供草露的效果提升10%，至多依此方式提升50%。"
+    }
+  },
+  "passive3": {
+    "name": "月兆祝賜·廊下暮影",
+    "description": {
+      "0": "隊伍中的角色觸發綻放反應時，將轉為觸發月綻放反應，且基於奈芙爾的元素精通，提升隊伍中角色造成的月綻放反應的基礎傷害：每點元素精通都將提升0.0175%月綻放反應的基礎傷害，至多依此方式提升14%傷害。",
+      "1": "<br/>",
+      "2": "此外，奈芙爾在隊伍中時，隊伍的<strong>月兆</strong>將會上升一級。"
+    }
+  },
+  "passive": {
+    "name": "金室的密謀",
+    "description": {
+      "0": "在挪德卡萊執行時長為20小時的探索派遣任務時，獲得的獎勵增加25%。"
+    }
+  },
+  "constellation1": {
+    "name": "謀篇乃成敗之始",
+    "description": {
+      "0": "奈芙爾的<tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>幻戲</strong></tooltip>造成的月綻放反應傷害的基礎傷害提升，提升值相當於奈芙爾的元素精通的60%。該效果同樣會受到<tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>「偽秘之帷」</strong></tooltip>的加成。"
+    }
+  },
+  "constellation2": {
+    "name": "明察為籌算之先",
+    "description": {
+      "0": "突破天賦<tooltip ns=char_Nefer_gen baseKey18=passive1><strong>「月下的豪賭」</strong></tooltip>的效果獲得強化：<tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>「偽秘之帷」</strong></tooltip>的持續時間延長5秒，上限提升至5層，且至多使<tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>幻戲</strong></tooltip>造成原本140%的傷害；奈芙爾施放元素戰技<strong><tooltip ns=char_Nefer_gen baseKey18=skill>弈術·千夜一舞</tooltip></strong>時，將立刻獲得2層「偽秘之帷」。此外，「偽秘之帷」疊加至5層或5層的持續時間更新時，奈芙爾的元素精通改為提升200點，持續8秒。",
+      "1": "需要解鎖突破天賦「月下的豪賭」。"
+    }
+  },
+  "constellation3": {
+    "name": "誑言掩虛實之跡",
+    "description": {
+      "0": "元素戰技<strong><tooltip ns=char_Nefer_gen baseKey18=skill>弈術·千夜一舞</tooltip></strong>的技能等級提高3級。",
+      "1": "至多提升至15級。"
+    }
+  },
+  "constellation4": {
+    "name": "眩惑入謎局之網",
+    "description": {
+      "0": "奈芙爾在場上且處於<tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>「影舞」</strong></tooltip>狀態下時，獲得草露的速度提升25%。",
+      "1": "此外，奈芙爾處於「影舞」狀態下時，還會使附近敵人的<dendro>草元素抗性</dendro>降低20%，當奈芙爾不處於「影舞」狀態或離開敵人一定距離後，該效果會在4.5秒後移除。"
+    }
+  },
+  "constellation5": {
+    "name": "見機在忽微之間",
+    "description": {
+      "0": "元素爆發<strong><tooltip ns=char_Nefer_gen baseKey18=burst>聖約·真眸幻戲</tooltip></strong>的技能等級提高3級。",
+      "1": "至多提升至15級。"
+    }
+  },
+  "constellation6": {
+    "name": "決勝於逆轉之時",
+    "description": {
+      "0": "奈芙爾施放<tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>幻戲</strong></tooltip>時，自身的第二段傷害將轉為造成相當於奈芙爾元素精通85%的<dendro>草元素範圍傷害</dendro>。此外，幻戲的攻擊結束時，還會造成一次相當於奈芙爾元素精通120%的<dendro>草元素範圍傷害</dendro>。上述傷害均視為由幻戲造成的月綻放反應傷害。",
+      "1": "<br/>",
+      "2": "<strong>月兆·滿輝</strong>",
+      "3": "奈芙爾造成的月綻放反應傷害<tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>擢升</strong></tooltip>15%。"
+    }
+  }
+}

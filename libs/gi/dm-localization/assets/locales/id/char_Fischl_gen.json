@@ -120,6 +120,20 @@
       "0": "Ketika dikirim untuk melakukan ekspedisi di Mondstadt, waktu yang dibutuhkan berkurang 25%."
     }
   },
+  "lockedPassive": {
+    "name": "Witch's Eve Rite: Phantasmal Nocturne",
+    "description": {
+      "0": "Setelah menyelesaikan <strong>PR Penyihir: Tentang Tak Terduga</strong>, Fischl akan berubah menjadi Karakter <strong>Hexerei</strong>. Saat ada setidaknya 2 Karakter Hexerei di dalam party, akan mendapatkan efek <strong>Hexerei: Secret Rite</strong> yang memperkuat Karakter Hexerei.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei: Secret Rite</strong>",
+      "3": "Hark, Prince Nachtraben, Ozvaldo Hrafnavins, yang telah menyaksikan kejatuhan dunia yang tak terhingga jumlahnya, nyanyikanlah septet berbintang untuk penguasa engkau, karena ini adalah saat dosa terdalam, ketika jiwa-jiwa yang berkumpul di ujung sebab-akibat menghancurkan kegelapan takdir.",
+      "4": "Selain itu, saat Oz ada di medan pertempuran, Karakter di dalam party akan mendapatkan efek penguatan tambahan:",
+      "5": [
+        "Setelah Karakter party di sekitar memicu reaksi Overloaded, ATK Fischl dan Karakter aktif lainnya di dalam party meningkat 22,5% selama 10 detik.",
+        "Setelah Karakter party di sekitar memicu reaksi Electro-Charged atau Lunar-Charged, Elemental Mastery Fischl dan Karakter aktif sekitar di dalam party meningkat 90 poin selama 10 detik."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Gaze of the Deep",
     "description": {
@@ -157,6 +171,10 @@
     "name": "Evernight Raven",
     "description": {
       "0": "Memperpanjang durasi keberadaan Oz selama 2 detik. Selama di medan pertempuran, Oz akan menyerang bersama Karakter aktif dan mengakibatkan <electro>Electro DMG</electro> sebesar 30% ATK Fischl."
+    },
+    "upgradedDescription": {
+      "0": "Durasi Oz di medan pertempuran diperpanjang 2 detik. Selain itu, Oz akan menyerang bersama dengan Karakter aktif sendiri, mengakibatkan <electro>Electro DMG</electro> sebesar 30% ATK Fischl.",
+      "1": "Setelah Oz melancarkan serangan terkoordinasi, efek peningkatan ATK dan Elemental Mastery dari <strong>Witch's Eve Rite: Phantasmal Nocturne</strong> meningkat 100% lagi selama 10 detik."
     }
   }
 }

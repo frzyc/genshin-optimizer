@@ -1,0 +1,24 @@
+{
+  "name": "Gancho da Armadilha",
+  "description": {
+    "0": "Esse arco é composto de ligas metálicas, e ainda assim é surpreendentemente leve. Mesmo quando é fortemente retesado, as flechas que dispara passam sem dificuldade."
+  },
+  "passiveName": "Lampejo Fantasma",
+  "passiveDescription": {
+    "0": {
+      "0": "Nos 12s depois de causar uma reação Elemental, aumenta a Proficiência Elemental em <cryo>60</cryo>. Presságio Lunar: Reluzir Cheio: esse efeito aumenta Proficiência Elemental em mais <cryo>60</cryo>. Esse efeito pode ser ativado mesmo quando o personagem que está com essa arma equipada não estiver ativo."
+    },
+    "1": {
+      "0": "Nos 12s depois de causar uma reação Elemental, aumenta a Proficiência Elemental em <cryo>75</cryo>. Presságio Lunar: Reluzir Cheio: esse efeito aumenta Proficiência Elemental em mais <cryo>75</cryo>. Esse efeito pode ser ativado mesmo quando o personagem que está com essa arma equipada não estiver ativo."
+    },
+    "2": {
+      "0": "Nos 12s depois de causar uma reação Elemental, aumenta a Proficiência Elemental em <cryo>90</cryo>. Presságio Lunar: Reluzir Cheio: esse efeito aumenta Proficiência Elemental em mais <cryo>90</cryo>. Esse efeito pode ser ativado mesmo quando o personagem que está com essa arma equipada não estiver ativo."
+    },
+    "3": {
+      "0": "Nos 12s depois de causar uma reação Elemental, aumenta a Proficiência Elemental em <cryo>105</cryo>. Presságio Lunar: Reluzir Cheio: esse efeito aumenta Proficiência Elemental em mais <cryo>105</cryo>. Esse efeito pode ser ativado mesmo quando o personagem que está com essa arma equipada não estiver ativo."
+    },
+    "4": {
+      "0": "Nos 12s depois de causar uma reação Elemental, aumenta a Proficiência Elemental em <cryo>120</cryo>. Presságio Lunar: Reluzir Cheio: esse efeito aumenta Proficiência Elemental em mais <cryo>120</cryo>. Esse efeito pode ser ativado mesmo quando o personagem que está com essa arma equipada não estiver ativo."
+    }
+  }
+}

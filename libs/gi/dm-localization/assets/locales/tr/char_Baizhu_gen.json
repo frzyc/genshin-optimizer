@@ -111,7 +111,7 @@
   "passive2": {
     "name": "Her Şey Topraktan Doğar",
     "description": {
-      "0": "<strong>Kusursuz Kalkan</strong> tarafından iyileştirilen karakterler, Yeşil Talihin Yılı etkisini kazanır. Baizhu'nun 50.000'e kadar sahip olduğu her 1.000 Maks. Can, iyileştirilen karakterlerin verdiği Yanma, Çiçeklenme, Aşırı Çiçeklenme ve Filizlenme tepkimelerinin Hasarını %2 artırırken Şiddetlenme ve Yayılma tepkimelerinin verdiği Hasar Bonusunu ise %0,8 artırır. Bu etki 6 saniye sürer."
+      "0": "<strong>Kusursuz Kalkan</strong> tarafından iyileştirilen karakterler, Yeşil Talihin Yılı etkisini kazanır. Baizhu'nun 50.000'e kadar sahip olduğu her 1.000 Maks. Can, iyileştirilen karakterlerin verdiği Yanma, Çiçeklenme, Aşırı Çiçeklenme ve Filizlenme tepkimelerinin Hasarını %2, Ay Çiçeklenmesi Hasarını %0,7, Şiddetlenme ve Yayılma tepkimelerinin verdiği Hasar Bonusunu ise %0,8 artırır. Bu etki 6 saniye sürer."
     }
   },
   "passive3": {

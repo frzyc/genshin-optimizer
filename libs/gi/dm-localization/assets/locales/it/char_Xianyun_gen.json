@@ -138,8 +138,8 @@
     "name": "Vita da eremita",
     "description": {
       "0": "Dopo aver usato Scala celeste di <strong>Candide nuvole dell'alba</strong>, l'ATT di Xianyun aumenta di un 20% per 15 s.",
-      "1": "In più, l'effetto del talento passivo Rimira l'Adepta nel suo reame riceve un potenziamento: quando il Giuncostella creato da <strong>Riunione astrale del tramonto</strong> ha degli accumuli di Assistenza adeptica a disposizione, i DAN dell'onda d'urto degli attacchi in picchiata sferrati dai personaggi attivi vicini aumentano di un 400% dell'ATT di Xianyun. L'aumento di DAN massimo che è possibile ottenere in questo modo è pari a 18.000, e può essere applicato a un solo avversario per ogni onda d'urto sprigionata dagli attacchi in picchiata. Ciascun personaggio può attivare quest'effetto una volta ogni 0,4 s.",
-      "2": "Richiede il talento passivo Rimira l'Adepta nel suo reame."
+      "1": "In più, l'effetto del talento d'ascensione Rimira l'Adepta nel suo reame riceve un potenziamento: quando il Giuncostella creato da <strong>Riunione astrale del tramonto</strong> ha degli accumuli di Assistenza adeptica a disposizione, i DAN dell'onda d'urto degli attacchi in picchiata sferrati dai personaggi attivi vicini aumentano di un 400% dell'ATT di Xianyun. L'aumento di DAN massimo che è possibile ottenere in questo modo è pari a 18.000, e può essere applicato a un solo avversario per ogni onda d'urto sprigionata dagli attacchi in picchiata. Ciascun personaggio può attivare quest'effetto una volta ogni 0,4 s.",
+      "2": "Richiede il talento d'ascensione Rimira l'Adepta nel suo reame."
     }
   },
   "constellation3": {

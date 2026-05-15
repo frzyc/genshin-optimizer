@@ -1,0 +1,169 @@
+{
+  "name": "네페르",
+  "title": "모래의 비밀",
+  "description": "뛰어난 수완을 지닌 「비밀의 집」의 사장",
+  "constellationName": "장기말자리",
+  "auto": {
+    "name": "춤추는 뱀",
+    "fields": {
+      "normal": {
+        "0": "<strong>일반 공격</strong>",
+        "1": "뱀처럼 날카롭고 우아한 자태의 발차기로 최대 4번 공격해 <dendro>풀 원소 피해</dendro>를 준다."
+      },
+      "charged": {
+        "0": "<strong>강공격</strong>",
+        "1": "뱀걸음 상태에 진입해 스태미나 소모를 대가로 최대 2.5초 동안 빠른 속도로 이동한다. 스킬 버튼에서 손을 떼거나 지속 시간 종료 또는 스태미나 소진 시, 뱀걸음 상태가 종료되고 추가로 일정 스태미나를 소모해 적에게 <dendro>풀 원소 피해</dendro>를 준다. <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>「그림자 춤」</strong></tooltip> 상태에서 추가로 소모되는 스태미나가 감소한다.",
+        "2": "또한, 뱀걸음 상태인 네페르가 원소전투 스킬 <strong><tooltip ns=char_Nefer_gen baseKey18=skill>대국·천일 밤의 춤</tooltip></strong> 또는 대시를 사용해도 네페르의 뱀걸음 상태가 종료되지 않는다."
+      },
+      "plunging": {
+        "0": "<strong>낙하 공격</strong>",
+        "1": "풀 원소의 힘을 모아 공중에서 땅을 내려찍어 경로상의 적을 공격하고 착지 시 <dendro>풀 원소 범위 피해</dendro>를 준다"
+      }
+    },
+    "skillParams": {
+      "0": "1단 공격 피해",
+      "1": "2단 공격 피해",
+      "2": "3단 공격 피해",
+      "3": "4단 공격 피해",
+      "4": "강공격 피해",
+      "5": "강공격 차지 지속 스태미나 소모",
+      "6": "강공격 스태미나 소모",
+      "7": "그림자 춤 상태에서 강공격 스태미나 소모",
+      "8": "낙하 기간 피해",
+      "9": "저공/고공 추락 충격 피해",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "대국·천일 밤의 춤",
+    "description": {
+      "0": "달빛 비단처럼 부드럽고, 밤의 모래바다만큼 차가운 경국의 춤을 춘다. 네페르가 전방으로 일정 거리 돌진하면서 <dendro>풀 원소 범위 피해</dendro>를 주고 <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>「그림자 춤」</strong></tooltip> 상태에 진입한다.",
+      "1": "「그림자 춤」 상태에서 보유한 <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>풀 이슬</strong></tooltip>이 최소 1개 이상인 경우, 네페르가 발동하는 강공격이 스태미나가 소모되지 않는 특수 강공격 <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>환영극</strong></tooltip>으로 대체된다. 「그림자 춤」 상태에서 네페르의 경직 저항력이 증가한다.",
+      "2": "<br/>",
+      "3": "초기 사용 가능 횟수: 2회.",
+      "4": "<br/>",
+      "5": "<i>「세상은 장기판과 같고, 사람들은 장막 뒤에서 수를 두지. 함정에 빠지기 싫다면 충분한 정보를 파악해야 해. 그래서 『비밀』이 중요한 거야」</i>"
+    },
+    "skillParams": {
+      "0": "스킬 피해",
+      "1": "환영극 자신의 1단 공격 피해",
+      "2": "환영극 자신의 2단 공격 피해",
+      "3": "환영극 그림자의 1단",
+      "4": "환영극 그림자의 2단",
+      "5": "환영극 그림자의 3단",
+      "6": "환영극 사용 가능 횟수",
+      "7": "그림자 춤 지속 시간",
+      "8": "재사용 대기시간",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "성약·진실의 눈동자",
+    "description": {
+      "0": "토트의 진실한 눈으로 거짓의 수수께끼를 「해명」해 전방의 적에게 <dendro>풀 원소 범위 피해</dendro>를 준다. 발동 시 네페르가 모든 <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>「기만의 장막」</strong></tooltip>을 소모하고, 이번 원소폭발로 주는 피해가 증가한다.",
+      "1": "<br/>",
+      "2": "<i>뜨거운 사막의 가수가 전하는 고대 시가 속에서, 따오기왕의 선물은 축복이라기보다는 저주에 가깝다</i>"
+    },
+    "skillParams": {
+      "0": "1단 공격 피해",
+      "1": "2단 공격 피해",
+      "2": "피해 증가",
+      "3": "재사용 대기시간",
+      "4": "원소 에너지",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "달빛 승부사",
+    "description": {
+      "0": "파티의 <strong>달빛 징조</strong>에 따라 네페르가 상응하는 강화 효과를 획득한다.",
+      "1": "<br/>",
+      "2": "<strong>달빛 징조·보름</strong>: 원소전투 스킬 <strong><tooltip ns=char_Nefer_gen baseKey18=skill>대국·천일 밤의 춤</tooltip></strong> 발동 시, 현재 필드 위의 풀 원핵이 「기만의 핵」으로 전환되고, 그 후 15초 동안 주변에 있는 모든 캐릭터가 달 개화 반응 발동 시 풀 원핵과 풍요의 핵 대신 기만의 핵이 생성된다. 기만의 핵은 만개와 발화 반응을 발동할 수 없으며, 폭발하지도 않는다.",
+      "3": "네페르가 강공격 또는 <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>환영극</strong></tooltip> 발동 시, 주변 일정 범위 내의 기만의 핵을 흡수하고, 흡수한 기만의 핵 1개당 네페르가 <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>「기만의 장막」</strong></tooltip> 효과를 1스택 획득한다. 해당 효과가 3스택까지 중첩되거나, 3스택의 지속 시간이 갱신되면, 네페르의 원소 마스터리가 100pt 증가한다. 지속 시간: 8초"
+    }
+  },
+  "passive2": {
+    "name": "모래의 딸",
+    "description": {
+      "0": "네페르가 <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>「그림자 춤」</strong></tooltip> 상태 시, 파티 내 캐릭터가 달 개화 반응 발동 후 5초 동안, 네페르의 <strong><tooltip ns=char_Nefer_gen baseKey18=normal>뱀걸음</tooltip></strong> 상태가 파티에게 추가로 <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>풀 이슬</strong></tooltip>을 제공한다. 네페르의 원소 마스터리가 500pt를 초과하면, 초과한 원소 마스터리 100pt마다 상술한 풀 이슬 제공 효과가 10% 증가한다. 해당 방식으로 최대 50% 증가한다"
+    }
+  },
+  "passive3": {
+    "name": "달빛 징조의 축복·황혼의 그림자",
+    "description": {
+      "0": "파티 내 캐릭터가 개화 반응 발동 시, 달 개화 반응으로 전환되며, 네페르의 원소 마스터리에 기반해 파티 내 캐릭터가 주는 달 개화 반응의 기본 피해가 증가한다: 원소 마스터리 1pt마다 달 개화 반응의 기본 피해가 0.0175% 증가한다. 해당 방식으로 피해가 최대 14%까지 증가한다.",
+      "1": "<br/>",
+      "2": "또한, 네페르가 파티에 있을 경우 파티의 <strong>달빛 징조</strong>가 1레벨 상승한다"
+    }
+  },
+  "passive": {
+    "name": "황금 밀실의 모략",
+    "description": {
+      "0": "노드크라이에서 20시간의 탐사 파견 임무 수행 시 획득하는 보상이 25% 증가한다"
+    }
+  },
+  "constellation1": {
+    "name": "계획은 성공의 시작",
+    "description": {
+      "0": "네페르의 <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>환영극</strong></tooltip>으로 주는 달 개화 반응의 기본 피해가 네페르 원소 마스터리의 60%만큼 증가한다. 해당 효과도 <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>「기만의 장막」</strong></tooltip> 보너스의 영향을 받는다"
+    }
+  },
+  "constellation2": {
+    "name": "관찰은 계획의 초석",
+    "description": {
+      "0": "돌파 특성 <tooltip ns=char_Nefer_gen baseKey18=passive1><strong>「달빛 승부사」</strong></tooltip>의 효과가 강화된다: <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>「기만의 장막」</strong></tooltip>의 지속 시간이 5초 연장되고, 스택 최대치가 5스택으로 증가한다. 또한 <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>환영극</strong></tooltip>이 최대 기존의 140%에 해당하는 피해를 준다. 네페르가 원소전투 스킬 <strong><tooltip ns=char_Nefer_gen baseKey18=skill>대국·천일 밤의 춤</tooltip></strong>을 발동하면 즉시 「기만의 장막」을 2스택 획득하고, 「기만의 장막」이 5스택을 달성하거나 5스택의 지속 시간이 갱신되면 네페르의 원소 마스터리 증가 효과가 200pt로 변경된다. 지속 시간: 8초",
+      "1": "돌파 특성 「달빛 승부사」를 해금해야 한다"
+    }
+  },
+  "constellation3": {
+    "name": "진실을 가리는 거짓",
+    "description": {
+      "0": "원소전투 스킬 <strong><tooltip ns=char_Nefer_gen baseKey18=skill>대국·천일 밤의 춤</tooltip></strong>의 스킬 레벨+3",
+      "1": "최대 Lv.15까지 상승"
+    }
+  },
+  "constellation4": {
+    "name": "마음을 홀리는 함정",
+    "description": {
+      "0": "네페르가 필드 위에서 <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>「그림자 춤」</strong></tooltip> 상태일 때 풀 이슬 획득 속도가 25% 증가한다.",
+      "1": "또한, 네페르가 「그림자 춤」 상태일 때 주변에 있는 적의 <dendro>풀 원소 내성</dendro>이 20% 감소한다. 해당 효과는 네페르가 「그림자 춤」 상태가 아니거나, 적과 일정 거리 이상 멀어지면 4.5초 후에 사라진다"
+    }
+  },
+  "constellation5": {
+    "name": "기회를 포착한 순간",
+    "description": {
+      "0": "원소폭발 <strong><tooltip ns=char_Nefer_gen baseKey18=burst>성약·진실의 눈동자</tooltip></strong>의 스킬 레벨+3",
+      "1": "최대 Lv.15까지 상승"
+    }
+  },
+  "constellation6": {
+    "name": "거머쥔 역전의 승리",
+    "description": {
+      "0": "네페르가 <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>환영극</strong></tooltip> 발동 시, 자신의 제2단 공격 피해가 네페르 원소 마스터리의 85%에 해당하는 <dendro>풀 원소 범위 피해</dendro>로 전환된다. 또한, 환영극 공격 종료 시, 네페르 원소 마스터리의 120%에 해당하는 <dendro>풀 원소 범위 피해</dendro>를 1회 준다. 상술한 피해는 모두 환영극으로 주는 달 개화 반응 피해로 간주한다.",
+      "1": "<br/>",
+      "2": "<strong>달빛 징조·보름</strong>",
+      "3": "네페르가 주는 달빛 개화 반응 피해가 15% <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>승격</strong></tooltip>된다"
+    }
+  }
+}

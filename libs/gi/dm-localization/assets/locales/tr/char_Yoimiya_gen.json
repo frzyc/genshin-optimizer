@@ -115,7 +115,7 @@
   "passive2": {
     "name": "Yaz Şafağı Sökerken",
     "description": {
-      "0": "<strong>Taşkıran Ryuukin</strong> kullanıldığında 15 saniyeliğine yakındaki (Yoimiya hariç) grup üyelerinin Saldırısı %10 artar. Buna ek olarak <strong>Taşkıran Ryuukin</strong> becerisini kullanırken Yoimiya'nın sahip olduğu \"Haylaz Muziplikler\" kademelerinin sayısına göre daha fazla Saldırı Bonusu eklenir. Her kademe bu Saldırı Bonusunu %1 artırır."
+      "0": "<strong>Taşkıran Ryuukin</strong> kullanıldığında 15 saniyeliğine yakındaki (Yoimiya hariç) grup üyelerinin Saldırısı %10 artar. Buna ek olarak <strong>Taşkıran Ryuukin</strong> becerisini kullanırken Yoimiya'nın sahip olduğu \"Haylaz Muziplikler\" Yükseltme Yeteneği kademelerinin sayısına göre daha fazla Saldırı Bonusu eklenir. Her kademe bu Saldırı Bonusunu %1 artırır."
     }
   },
   "passive3": {

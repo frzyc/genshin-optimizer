@@ -1,4 +1,6 @@
 {
   "p4cd": "24s -1s mỗi 4 lần đánh trúng",
-  "c6duration": "15s +1s mỗi lần đánh bại kẻ địch (tối đa 25s)"
+  "c6duration": "15s +1s mỗi lần đánh bại kẻ địch (tối đa 25s)",
+  "c4dmg": "Sát thương gây ra khi Giáp Hộ Tâm vỡ",
+  "qlarger": "Tăng phạm vi tấn công"
 }

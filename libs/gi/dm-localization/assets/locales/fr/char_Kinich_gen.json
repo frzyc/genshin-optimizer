@@ -176,7 +176,7 @@
     "name": "Forme de bête augurale",
     "description": {
       "0": "Après avoir touché un ennemi, le canon à pointe d'écailles rebondit une fois entre les ennemis, infligeant des <dendro>DGT Dendro</dendro> d'une valeur équivalant à 700 % de l'ATQ de Kinich.",
-      "1": "Si ce canon à pointe d'écailles déclenche les améliorations que l'aptitude passive « Pacte de l'esprit enflammé » ou la constellation « Paume de coléoptère » peuvent lui conférer, l'attaque rebondissante en bénéficie également."
+      "1": "Si ce canon à pointe d'écailles déclenche les améliorations que l'aptitude d'élévation « Pacte de l'esprit enflammé » ou la constellation « Paume de coléoptère » peuvent lui conférer, l'attaque rebondissante en bénéficie également."
     }
   }
 }

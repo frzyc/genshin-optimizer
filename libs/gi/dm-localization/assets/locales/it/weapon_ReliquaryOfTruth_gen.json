@@ -1,0 +1,24 @@
+{
+  "name": "Reliquiario della verità",
+  "description": {
+    "0": "Uno scrignetto angolato, realizzato in oro e giada. Secondo la leggenda, anticamente era custodito in un tempio nelle profondità di Tulaytullah, la Città di Zaffiro."
+  },
+  "passiveName": "Essenza della falsità",
+  "passiveDescription": {
+    "0": {
+      "0": "Il tasso di CRIT aumenta di un <cryo>8%</cryo>. Quando il personaggio che equipaggia l'arma usa l'abilità elementale, ottiene l'effetto Segreto della menzogna, che aumenta la maestria elementale del personaggio di <cryo>80</cryo> per 12 s. Quando il personaggio infligge DAN da Fioritura lunare a un avversario, ottiene l'effetto Luna della verità, che aumenta i DAN da CRIT di un <cryo>24%</cryo> per 4 s. Quando i due effetti sono attivi contemporaneamente, il risultato di entrambi aumenta di un 50%."
+    },
+    "1": {
+      "0": "Il tasso di CRIT aumenta di un <cryo>10%</cryo>. Quando il personaggio che equipaggia l'arma usa l'abilità elementale, ottiene l'effetto Segreto della menzogna, che aumenta la maestria elementale del personaggio di <cryo>100</cryo> per 12 s. Quando il personaggio infligge DAN da Fioritura lunare a un avversario, ottiene l'effetto Luna della verità, che aumenta i DAN da CRIT di un <cryo>30%</cryo> per 4 s. Quando i due effetti sono attivi contemporaneamente, il risultato di entrambi aumenta di un 50%."
+    },
+    "2": {
+      "0": "Il tasso di CRIT aumenta di un <cryo>12%</cryo>. Quando il personaggio che equipaggia l'arma usa l'abilità elementale, ottiene l'effetto Segreto della menzogna, che aumenta la maestria elementale del personaggio di <cryo>120</cryo> per 12 s. Quando il personaggio infligge DAN da Fioritura lunare a un avversario, ottiene l'effetto Luna della verità, che aumenta i DAN da CRIT di un <cryo>36%</cryo> per 4 s. Quando i due effetti sono attivi contemporaneamente, il risultato di entrambi aumenta di un 50%."
+    },
+    "3": {
+      "0": "Il tasso di CRIT aumenta di un <cryo>14%</cryo>. Quando il personaggio che equipaggia l'arma usa l'abilità elementale, ottiene l'effetto Segreto della menzogna, che aumenta la maestria elementale del personaggio di <cryo>140</cryo> per 12 s. Quando il personaggio infligge DAN da Fioritura lunare a un avversario, ottiene l'effetto Luna della verità, che aumenta i DAN da CRIT di un <cryo>42%</cryo> per 4 s. Quando i due effetti sono attivi contemporaneamente, il risultato di entrambi aumenta di un 50%."
+    },
+    "4": {
+      "0": "Il tasso di CRIT aumenta di un <cryo>16%</cryo>. Quando il personaggio che equipaggia l'arma usa l'abilità elementale, ottiene l'effetto Segreto della menzogna, che aumenta la maestria elementale del personaggio di <cryo>160</cryo> per 12 s. Quando il personaggio infligge DAN da Fioritura lunare a un avversario, ottiene l'effetto Luna della verità, che aumenta i DAN da CRIT di un <cryo>48%</cryo> per 4 s. Quando i due effetti sono attivi contemporaneamente, il risultato di entrambi aumenta di un 50%."
+    }
+  }
+}

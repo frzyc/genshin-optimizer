@@ -62,7 +62,7 @@ function DataCard({ index }: { index: number }) {
   const copyToClipboard = useCallback(
     () =>
       navigator.clipboard
-        .writeText(JSON.stringify(database.exportZOD()))
+        .writeText(JSON.stringify(database.exportZOOD()))
         .then(() => alert('Copied database to clipboard.'))
         .catch(console.error),
     [database]
@@ -81,7 +81,7 @@ function DataCard({ index }: { index: number }) {
       .split('.')[0]
       .replace('T', '_')
       .replaceAll(':', '-')
-    const JSONStr = JSON.stringify(database.exportZOD())
+    const JSONStr = JSON.stringify(database.exportZOOD())
     const filename = `${name.trim().replaceAll(' ', '_')}_${dateStr}.json`
     const contentType = 'application/json;charset=utf-8'
     const a = document.createElement('a')

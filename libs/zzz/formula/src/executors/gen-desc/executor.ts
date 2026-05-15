@@ -1,13 +1,18 @@
-import { writeFileSync } from 'fs'
 import * as path from 'path'
 import { formatText } from '@genshin-optimizer/common/pipeline'
 import {
   extractCondMetadata,
   extractFormulaMetadata,
 } from '@genshin-optimizer/game-opt/formula'
+import {
+  allCharacterKeys,
+  allDiscSetKeys,
+  allWengineKeys,
+} from '@genshin-optimizer/zzz/consts'
 import { workspaceRoot } from '@nx/devkit'
+import { writeFile } from 'fs/promises'
 import { data } from '../../data'
-import type { Tag } from '../../data/util'
+import { type Tag, commonSheets } from '../../data/util'
 import type { GenDescExecutorSchema } from './schema'
 
 export default async function runExecutor(
@@ -75,15 +80,48 @@ export default async function runExecutor(
     }
   )
 
+  const mapMeta = async (type: string, key: string) => {
+    await dumpMeta(
+      path.join(outputPath, type, key),
+      'formulas',
+      formulas[key] ?? {}
+    )
+    await dumpMeta(path.join(outputPath, type, key), 'buffs', buffs[key] ?? {})
+    await dumpMeta(
+      path.join(outputPath, type, key),
+      'conditionals',
+      conditionals[key] ?? {}
+    )
+  }
+
+  await Promise.all([
+    ...allCharacterKeys.map(async (ck) => {
+      await mapMeta('char', ck)
+    }),
+    ...allWengineKeys.map(async (wk) => {
+      await mapMeta('wengine', wk)
+    }),
+    ...allDiscSetKeys.map(async (dk) => {
+      await mapMeta('disc', dk)
+    }),
+    ...commonSheets.map(async (key) => {
+      await mapMeta('common', key)
+    }),
+  ])
+
+  return { success: true }
+}
+
+async function dumpMeta(
+  outputPath: string,
+  metaType: 'conditionals' | 'formulas' | 'buffs',
+  data: any
+) {
   const cwd = path.join(workspaceRoot, outputPath)
   const str = `
 // WARNING: Generated file, do not modify
-export const conditionals = ${JSON.stringify(conditionals)} as const
-export const formulas = ${JSON.stringify(formulas)} as const
-export const buffs = ${JSON.stringify(buffs)} as const
+export const ${metaType} = ${JSON.stringify(data)} as const
 `
   const formatted = await formatText('index.ts', str)
-  writeFileSync(cwd, formatted)
-
-  return { success: true }
+  await writeFile(path.join(cwd, `${metaType}.ts`), formatted)
 }

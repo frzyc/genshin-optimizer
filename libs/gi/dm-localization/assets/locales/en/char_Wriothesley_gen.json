@@ -178,23 +178,23 @@
   "constellation1": {
     "name": "Terror for the Evildoers",
     "description": {
-      "0": "The Gracious Rebuke from the Passive Talent \"There Shall Be a Plea for Justice\" is changed to this:",
+      "0": "The Gracious Rebuke from the Ascension Talent \"There Shall Be a Plea for Justice\" is changed to this:",
       "1": "When Wriothesley's HP is less than 60% or while he is in the Chilling Penalty state caused by <strong>Icefang Rush</strong>, when the fifth attack of Repelling Fists hits, it will create a Gracious Rebuke. 1 Gracious Rebuke effect can be obtained every 2.5s.",
       "2": "<br/>",
       "3": "Additionally, Rebuke: Vaulting Fist will obtain the following enhancement:",
       "4": [
-        "The DMG Bonus gained will be further increased to 200%.",
-        "When it hits while Wriothesley is in the Chilling Penalty state, that state's duration is extended by 4s. 1 such extension can occur per 1 Chilling Penalty duration."
+        " The DMG Bonus gained will be further increased to 200%.",
+        " When it hits while Wriothesley is in the Chilling Penalty state, that state's duration is extended by 4s. 1 such extension can occur per 1 Chilling Penalty duration."
       ],
       "5": "<br/>",
-      "6": "You must first unlock the Passive Talent \"There Shall Be a Plea for Justice.\""
+      "6": "You must first unlock the Ascension Talent \"There Shall Be a Plea for Justice.\""
     }
   },
   "constellation2": {
     "name": "Shackles for the Arrogant",
     "description": {
-      "0": "When using <strong>Darkgold Wolfbite</strong>, each Prosecution Edict stack from the Passive Talent \"There Shall Be a Reckoning for Sin\" will increase said ability's DMG dealt by 40%.",
-      "1": "You must first unlock the Passive Talent \"There Shall Be a Reckoning for Sin.\""
+      "0": "When using <strong>Darkgold Wolfbite</strong>, each Prosecution Edict stack from the Ascension Talent \"There Shall Be a Reckoning for Sin\" will increase said ability's DMG dealt by 40%.",
+      "1": "You must first unlock the Ascension Talent \"There Shall Be a Reckoning for Sin.\""
     }
   },
   "constellation3": {
@@ -207,7 +207,7 @@
   "constellation4": {
     "name": "Redemption for the Suffering",
     "description": {
-      "0": "The HP restored to Wriothesley through Rebuke: Vaulting Fist will be increased to 50% of his Max HP. You must first unlock the Passive Talent \"There Shall Be a Plea for Justice.\"",
+      "0": "The HP restored to Wriothesley through Rebuke: Vaulting Fist will be increased to 50% of his Max HP. You must first unlock the Ascension Talent \"There Shall Be a Plea for Justice.\"",
       "1": "Additionally, when Wriothesley is healed, if the amount of healing overflows, the following effects will occur depending on whether he is on the field or not. If he is on the field, his ATK SPD will be increased by 20% for 4s. If he is off-field, all of your own party members' ATK SPD will be increased by 10% for 6s. These two methods of increasing ATK SPD cannot stack."
     }
   },
@@ -222,7 +222,7 @@
     "name": "Esteem for the Innocent",
     "description": {
       "0": "The CRIT Rate of Rebuke: Vaulting Fist will be increased by 10%, and its CRIT DMG by 80%. When unleashed, it will also create an additional icicle that deals 100% of Rebuke: Vaulting Fist's Base DMG as <cryo>Cryo DMG</cryo>. DMG dealt this way is regarded as Charged Attack DMG.",
-      "1": "You must first unlock the Passive Talent \"There Shall Be a Plea for Justice.\""
+      "1": "You must first unlock the Ascension Talent \"There Shall Be a Plea for Justice.\""
     }
   }
 }

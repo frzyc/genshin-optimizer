@@ -1,0 +1,24 @@
+{
+  "name": "Tàn Tích Nhuốm Máu",
+  "description": {
+    "0": "Trường thương nhuốm màu đen thẫm từ những cuộc chiến lâu dài, dưới ánh lửa xanh u tối tỏa ra ánh sáng khác biệt."
+  },
+  "passiveName": "Tưởng Niệm Bi Thương",
+  "passiveDescription": {
+    "0": {
+      "0": "Trong 3.5s sau khi thi triển Kỹ Năng Nộ, người trang bị tăng <cryo>36%</cryo> sát thương Nguyệt-Điện Cảm gây ra cho kẻ địch. Ngoài ra, sau khi người trang bị kích hoạt phản ứng Nguyệt-Điện Cảm, sẽ nhận được \"Khúc Bi Ca Đổ Nát\": Tăng <cryo>28%</cryo> Sát Thương Bạo Kích trong 6s, đồng thời hồi phục <cryo>12</cryo> điểm Năng Lượng Nguyên Tố cho người trang bị. Mỗi 14s tối đa hồi phục một lần Năng Lượng Nguyên Tố theo cách này."
+    },
+    "1": {
+      "0": "Trong 3.5s sau khi thi triển Kỹ Năng Nộ, người trang bị tăng <cryo>48%</cryo> sát thương Nguyệt-Điện Cảm gây ra cho kẻ địch. Ngoài ra, sau khi người trang bị kích hoạt phản ứng Nguyệt-Điện Cảm, sẽ nhận được \"Khúc Bi Ca Đổ Nát\": Tăng <cryo>35%</cryo> Sát Thương Bạo Kích trong 6s, đồng thời hồi phục <cryo>13</cryo> điểm Năng Lượng Nguyên Tố cho người trang bị. Mỗi 14s tối đa hồi phục một lần Năng Lượng Nguyên Tố theo cách này."
+    },
+    "2": {
+      "0": "Trong 3.5s sau khi thi triển Kỹ Năng Nộ, người trang bị tăng <cryo>60%</cryo> sát thương Nguyệt-Điện Cảm gây ra cho kẻ địch. Ngoài ra, sau khi người trang bị kích hoạt phản ứng Nguyệt-Điện Cảm, sẽ nhận được \"Khúc Bi Ca Đổ Nát\": Tăng <cryo>42%</cryo> Sát Thương Bạo Kích trong 6s, đồng thời hồi phục <cryo>14</cryo> điểm Năng Lượng Nguyên Tố cho người trang bị. Mỗi 14s tối đa hồi phục một lần Năng Lượng Nguyên Tố theo cách này."
+    },
+    "3": {
+      "0": "Trong 3.5s sau khi thi triển Kỹ Năng Nộ, người trang bị tăng <cryo>72%</cryo> sát thương Nguyệt-Điện Cảm gây ra cho kẻ địch. Ngoài ra, sau khi người trang bị kích hoạt phản ứng Nguyệt-Điện Cảm, sẽ nhận được \"Khúc Bi Ca Đổ Nát\": Tăng <cryo>49%</cryo> Sát Thương Bạo Kích trong 6s, đồng thời hồi phục <cryo>15</cryo> điểm Năng Lượng Nguyên Tố cho người trang bị. Mỗi 14s tối đa hồi phục một lần Năng Lượng Nguyên Tố theo cách này."
+    },
+    "4": {
+      "0": "Trong 3.5s sau khi thi triển Kỹ Năng Nộ, người trang bị tăng <cryo>84%</cryo> sát thương Nguyệt-Điện Cảm gây ra cho kẻ địch. Ngoài ra, sau khi người trang bị kích hoạt phản ứng Nguyệt-Điện Cảm, sẽ nhận được \"Khúc Bi Ca Đổ Nát\": Tăng <cryo>56%</cryo> Sát Thương Bạo Kích trong 6s, đồng thời hồi phục <cryo>16</cryo> điểm Năng Lượng Nguyên Tố cho người trang bị. Mỗi 14s tối đa hồi phục một lần Năng Lượng Nguyên Tố theo cách này."
+    }
+  }
+}

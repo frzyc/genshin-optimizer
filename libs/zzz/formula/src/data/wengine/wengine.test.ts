@@ -69,7 +69,6 @@ function testCharacterData(wengineKey: WengineKey) {
     own.common.critMode.add('avg'),
     enemy.common.def.add(953),
     enemy.common.res_.electric.add(0.1),
-    enemy.common.isStunned.add(0),
     enemyDebuff.common.resRed_.electric.add(0.15),
     enemyDebuff.common.dmgInc_.add(0.1),
     enemyDebuff.common.dmgRed_.add(0.15),

@@ -8,8 +8,6 @@ on:
     paths-ignore:
       - 'apps/frontend/**'
       - 'apps/frontend-e2e/**'
-      - 'apps/gi-frontend/**'
-      - 'apps/gi-frontend-e2e/**'
       - 'apps/sr-frontend/**'
       - 'apps/sr-frontend-e2e/**'
       - 'apps/zzz-frontend/**'
@@ -32,7 +30,6 @@ on:
       - 'libs/gi/silly-wisher-names/**'
       - 'libs/gi/solver/**'
       - 'libs/gi/solver-tc/**'
-      - 'libs/gi/supabase/**'
       - 'libs/gi/svgicons/**'
       - 'libs/gi/ui/**'
       - 'libs/gi/uidata/**'
@@ -51,33 +48,34 @@ jobs:
     timeout-minutes: 15
     name: 'call-build / build'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Get Cache Key
         id: get-cache-key
         run: |
           echo "key=$(git ls-tree -r HEAD | grep '^160000' | sha256sum | cut -d " " -f 1)" >> $GITHUB_OUTPUT
-      - uses: actions/cache/restore@v4
+      - uses: actions/cache/restore@v5
         with:
           path: .git/modules
           key: submodule-${{ steps.get-cache-key.outputs.key }}
           restore-keys: |
             submodule-
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           persist-credentials: false
           submodules: true
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
-          node-version: 20
+          node-version: 24
           cache: 'yarn'
       - name: Yarn install
         run: |
           yarn install --immutable --immutable-cache
       - name: Build Somnia
         run: |
-          NX_DAEMON="false"
           cp apps/somnia/src/config.empty.json apps/somnia/src/config.json
           yarn run nx run somnia:build:production
+        env:
+          NX_DAEMON: false
       - name: echos
         run: |
           if [[ "${{ github.ref }}" == "refs/heads/master" ]]; then

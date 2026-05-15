@@ -86,7 +86,8 @@
     "usingNum": "Utilisation de <1>{{totalStr}}</1> artefact(s) exclu(s)",
     "button_txt": "Exclure les artefacts",
     "excNum_one": "<0>{{count}}</0> l'artefact est exclu",
-    "excNum_other": "Théorie de la construction"
+    "excNum_other": "Théorie de la construction",
+    "includeArtifactButton": "Inclure cet artéfact dans l'optimisation"
   },
   "excludeChar": {
     "title": "Configuration de l'artefact équipé",
@@ -95,7 +96,6 @@
       "disallow_All": "Supprimer tous les caractères affichés de la liste d'autorisation"
     },
     "allowEquip": "Permettre l'utilisation d'objets provenant de",
-    "tooltip": "Ajouter des personnages à la liste d'autorisation de ce personnage. Les personnages de la liste d'autorisation seront pris en compte lors de la génération de la construction. Vous pouvez également basculer entre l'utilisation des artefacts non équipés, votre liste d'autorisation personnalisée et l'utilisation de tous les artefacts.",
     "chars": "Personnages",
     "artis": "Artéfacts",
     "states": {
@@ -115,5 +115,9 @@
   "build_one": "<0>{{count}}</0> Construire",
   "build_other": "<0><0>Excluding<1></1> 4-Set</0></0> exclurait les constructions en 4-Set : <2><0>AAAA</0>R</2> and <4><0>AAAAA</0></4>.",
   "thread_one": "<0>{{count}}</0> File d'attente",
-  "thread_other": "<0><0>Excluding<1></1> 5-Arc-en-ciel</0></0>} exclurait les constructions complètes à 5 arcs-en-ciel : <2><0>RRRRR</0></2>."
+  "thread_other": "<0><0>Excluding<1></1> 5-Arc-en-ciel</0></0>} exclurait les constructions complètes à 5 arcs-en-ciel : <2><0>RRRRR</0></2>.",
+  "compareArtModal": {
+    "newArt": "Nouveau artéfact",
+    "oldArt": "Ancien artéfact"
+  }
 }

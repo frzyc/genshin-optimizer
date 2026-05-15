@@ -1,0 +1,163 @@
+{
+  "name": "Aino",
+  "title": "Scheppernde Wundermaschinen",
+  "description": "Die geniale Maschinenerfinderin aus Nod-Krai. Sie liebt interessante Maschinen und Süßigkeiten.",
+  "constellationName": "Cistellula Mira",
+  "auto": {
+    "name": "Klopf-mal-drauf-Reparatur",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 3 Angriffe hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht fortlaufend Ausdauer, wirbelt das Großschwert und greift Gegner in der Umgebung an.",
+        "2": "Schwingt das Großschwert am Ende mit besonders großer Wucht."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH heftiger Schläge pro Runde",
+      "4": "SCH heftiger Schläge am Ende",
+      "5": "Ausdauerverbrauch heftiger Schläge",
+      "6": "Max. Dauer",
+      "7": "SCH beim Fallen",
+      "8": "SCH beim Fallen aus niedriger/großer Höhe",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Ideenfänger",
+    "description": {
+      "0": "Wirft einen <strong>Ideenfänger</strong> nach vorne, der <hydro>Hydro-SCH</hydro> verursacht, und zieht sich selbst hinterher. Fügt zum Ende dieser Bewegung Gegnern in der Nähe <hydro>Hydro-Flächenschaden</hydro> zu.",
+      "1": "Beim Gedrückthalten nimmt diese Fähigkeit einen anderen Modus an.",
+      "2": "<br/>",
+      "3": "<strong>Gedrückthalten</strong>",
+      "4": "Wechselt in den Zielmodus, um die Wurfrichtung von „Ideenfänger“ anzupassen."
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "Abklingzeit",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Präzises Wasserkühlgerät",
+    "description": {
+      "0": "Schleudert die spezielle Super-Wassersprühvorrichtung <strong>„Sprudelente“</strong> hervor, die einen <strong>fokussierten Wasserkühlungsbereich</strong> generiert.",
+      "1": "Während der Wirkungsdauer schießt „Sprudelente“ in gewissen Abständen Wassergeschosse auf Gegner, die <hydro>Hydro-SCH</hydro> verursachen."
+    },
+    "skillParams": {
+      "0": "Wassergeschoss-SCH",
+      "1": "Dauer",
+      "2": "Abklingzeit",
+      "3": "Elementarenergie",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Modularer Hochleistungsbetrieb",
+    "description": {
+      "0": "Verleiht Aino basierend auf dem <strong>Mondomen</strong> in der Truppe verschiedene Verstärkungseffekte.",
+      "1": "<br/>",
+      "2": "<strong>Mondomen – Reifer Glanz</strong>: Verstärkt die Spezialfähigkeit <strong><tooltip ns=char_Aino_gen baseKey18=burst>Präzises Wasserkühlgerät</tooltip></strong>: <strong>Sprudelente</strong> feuert häufiger Wassergeschosse und verursacht <hydro>Hydro-Flächenschaden</hydro> mit größerer Reichweite."
+    }
+  },
+  "passive2": {
+    "name": "Strukturierte Leistungsverbesserung",
+    "description": {
+      "0": "Erhöht basierend auf 50 % Ainos Elementarkunde den mit ihrer Spezialfähigkeit verursachten Schaden."
+    }
+  },
+  "passive3": {
+    "name": "Mondomen-Segen – Ultimative Rechnung",
+    "description": {
+      "0": "Erhöht die Stufe vom <strong>Mondomen</strong> der Truppe um 1, wenn sich Aino in der Truppe befindet."
+    }
+  },
+  "passive": {
+    "name": "Kleiner Erkennungssensor",
+    "description": {
+      "0": "Zeigt alle <strong>Besonderheiten Nod-Krais</strong> in der Nähe auf der Minikarte an.",
+      "1": "Außerdem scheint Aino auf irgendeine Art und Weise das Aussehen der „Sprudelente“ ändern zu können ..."
+    }
+  },
+  "constellation1": {
+    "name": "Theorie der Balance zwischen Grau und Kraftfeld",
+    "description": {
+      "0": "Erhöht nach Anwenden von Ainos Elementarfähigkeit <strong><tooltip ns=char_Aino_gen baseKey18=skill>Ideenfänger</tooltip></strong> oder ihrer Spezialfähigkeit <strong><tooltip ns=char_Aino_gen baseKey18=burst>Präzises Wasserkühlgerät</tooltip></strong> 15 s lang die Elementarkunde von Aino selbst sowie der anderen aktuellen Figuren in der Nähe auf dem Feld um 80 Punkte.",
+      "1": "<br/>",
+      "2": "Die Elementarkunde-Bonuseffekte dieses Sternbilds können nicht gestapelt werden."
+    }
+  },
+  "constellation2": {
+    "name": "Prinzip der Übertragung bei Zahnraddifferentialen",
+    "description": {
+      "0": "Schießt während der Dauer des durch Ainos Spezialfähigkeit <strong><tooltip ns=char_Aino_gen baseKey18=burst>Präzises Wasserkühlgerät</tooltip></strong> generierten <strong>fokussierten Wasserkühlungsbereichs</strong>, wenn Aino inaktiv in der Truppe ist und die aktuelle eigene Figur einen Gegner in der Nähe trifft, mithilfe von <strong>„Sprudelente“</strong> ein zusätzliches Wassergeschoss auf den Gegner. Dieses verursacht <hydro>Hydro-Flächenschaden</hydro> basierend auf 25 % von Ainos ANG und 100 % von Ainos Elementarkunde. 5 s Abklingzeit. Der verursachte Schaden wird als Spezialfähigkeits-SCH gewertet."
+    }
+  },
+  "constellation3": {
+    "name": "Kunst von Kuchen und Vorrichtungen",
+    "description": {
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong><tooltip ns=char_Aino_gen baseKey18=burst>Präzises Wasserkühlgerät</tooltip></strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Butter, Katzen und die Regeln der Energieversorgung",
+    "description": {
+      "0": "Stellt Aino beim Treffen von Gegnern mit der Elementarfähigkeit <strong><tooltip ns=char_Aino_gen baseKey18=skill>Ideenfänger</tooltip></strong> 10 Punkte Elementarenergie wieder her, 10 s Abklingzeit."
+    }
+  },
+  "constellation5": {
+    "name": "Unvergängliche Turbinen aus Metall und Licht",
+    "description": {
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong><tooltip ns=char_Aino_gen baseKey18=skill>Ideenfänger</tooltip></strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Die Last des kreativen Genies",
+    "description": {
+      "0": "Erhöht nach Anwenden der Spezialfähigkeit <strong><tooltip ns=char_Aino_gen baseKey18=burst>Präzises Wasserkühlgerät</tooltip></strong> 15 s lang den Schaden der von den aktuellen Figuren in der Nähe ausgelösten Reaktionen „Unter Strom“, „Sprießen“, „Mond unter Strom“, „Mondspross“ und „Mond-Kristallisation“ um 15 %.",
+      "1": "<strong>Mondomen – Reifer Glanz</strong>: Erhöht den durch obige Reaktionen verursachten Schaden zusätzlich um 20 %."
+    }
+  }
+}

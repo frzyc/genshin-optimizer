@@ -1,0 +1,163 @@
+{
+  "name": "Aino",
+  "title": "Mécano aux gadgets à gogo",
+  "description": "Une inventeuse et mécanicienne de génie de Nod-Krai qui aime les machines intéressantes et les friandises.",
+  "constellationName": "Cistellula Mira",
+  "auto": {
+    "name": "Réparation toc-tac-toc",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 3 attaques."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance de façon continue pour exécuter une succession d'attaques tournoyantes contre les ennemis proches.",
+        "2": "L'attaque chargée se termine sur un coup puissant."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT boucle attaque chargée",
+      "4": "DGT coup final attaque chargée",
+      "5": "Coût d'endurance attaque chargée",
+      "6": "Durée max",
+      "7": "DGT durant la chute",
+      "8": "DGT chute basse/élevée",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Inspirateur",
+    "description": {
+      "0": "Aino lance un <strong>inspirateur</strong> vers l'avant pour infliger des <hydro>DGT Hydro</hydro> et se faire tirer en même temps, puis inflige des <hydro>DGT Hydro de zone</hydro> aux ennemis proches à la fin du déplacement.",
+      "1": "En cas d'appui long, la compétence est déclenchée différemment.",
+      "2": "<br/>",
+      "3": "<strong>Appui long</strong>",
+      "4": "Aino bascule en mode visée, ce qui lui permet d'ajuster la direction dans laquelle elle envoie son inspirateur."
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "Temps de recharge",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Refroidisseur hydronique de précision",
+    "description": {
+      "0": "Aino utilise son dispositif de pulvérisation d'eau personnalisé, le <strong>canardeur tranquille</strong> pour déployer une <strong>zone à refroidissement hydronique focalisée</strong>.",
+      "1": "Pendant sa durée, le canardeur tranquille tire des ballons d'eau de façon intermittente sur les ennemis proches, infligeant des <hydro>DGT Hydro</hydro>."
+    },
+    "skillParams": {
+      "0": "DGT ballon d'eau",
+      "1": "Durée",
+      "2": "Temps de recharge",
+      "3": "Énergie élémentaire",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Protocole d'efficience modulaire",
+    "description": {
+      "0": "Aino obtient différents bonus selon la <strong>signelune</strong> de l'équipe.",
+      "1": "<br/>",
+      "2": "<strong>Signelune « Lueur ascendante »</strong> : le déchaînement élémentaire <strong><tooltip ns=char_Aino_gen baseKey18=burst>Refroidisseur hydronique de précision</tooltip></strong> d'Aino est renforcé, permettant au <strong>canardeur tranquille</strong> de tirer des ballons d'eau plus fréquemment et à ces derniers d'infliger des <hydro>DGT Hydro de zone</hydro> sur une plus large zone."
+    }
+  },
+  "passive2": {
+    "name": "Amplificateur de sortie structuré",
+    "description": {
+      "0": "Les DGT infligés par les déchaînements élémentaires d'Aino augmentent d'une valeur équivalant à 50 % de sa maîtrise élémentaire."
+    }
+  },
+  "passive3": {
+    "name": "Bénédiction de signelune : Analyse de limite de force",
+    "description": {
+      "0": "Lorsque Aino fait partie de l'équipe, la <strong>signelune</strong> de l'équipe augmente d'un niveau."
+    }
+  },
+  "passive": {
+    "name": "Capteur miniaturisé de détection",
+    "description": {
+      "0": "Affiche l'emplacement des <strong>produits de Nod-Krai</strong> sur la mini-carte.",
+      "1": "De plus, Aino semble être capable de modifier l'apparence de son canardeur tranquille d'une manière ou d'une autre..."
+    }
+  },
+  "constellation1": {
+    "name": "Théorie de l'équilibre cendres–champs",
+    "description": {
+      "0": "Lorsque Aino a utilisé sa compétence élémentaire <strong><tooltip ns=char_Aino_gen baseKey18=skill>Inspirateur</tooltip></strong> ou son déchaînement élémentaire <strong><tooltip ns=char_Aino_gen baseKey18=burst>Refroidisseur hydronique de précision</tooltip></strong>, sa maîtrise élémentaire et celle des autres personnages déployés à proximité augmentent de 80 pts pendant 15 s.",
+      "1": "<br/>",
+      "2": "Les effets d'augmentation de maîtrise élémentaire de cette constellation ne se cumulent pas."
+    }
+  },
+  "constellation2": {
+    "name": "Principe de transfert des différentiels d'engrenages",
+    "description": {
+      "0": "Si Aino fait partie de l'équipe mais n'est pas déployée pendant la durée de la <strong>zone à refroidissement hydronique focalisée</strong> de son déchaînement élémentaire <strong><tooltip ns=char_Aino_gen baseKey18=burst>Refroidisseur hydronique de précision</tooltip></strong>, le <strong>canardeur tranquille</strong> tire un ballon d'eau supplémentaire infligeant des <hydro>DGT Hydro de zone</hydro> d'une valeur équivalant à 25 % de l'ATQ d'Aino et 100 % de sa maîtrise élémentaire sur tout ennemi proche touché par une attaque de votre personnage déployé, ces DGT étant considérés comme des DGT de déchaînement élémentaire. Cet effet peut être déclenché une fois toutes les 5 s."
+    }
+  },
+  "constellation3": {
+    "name": "Les gâteaux et l'art de la réparation mécanique",
+    "description": {
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Aino_gen baseKey18=burst>Refroidisseur hydronique de précision</tooltip></strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Beurre, chats et loi de l'alimentation énergétique",
+    "description": {
+      "0": "Lorsque sa compétence élémentaire <strong><tooltip ns=char_Aino_gen baseKey18=skill>Inspirateur</tooltip></strong> touche un ennemi, Aino récupère 10 pts d'énergie élémentaire, l'énergie élémentaire pouvant être restaurée une fois toutes les 10 s de cette manière."
+    }
+  },
+  "constellation5": {
+    "name": "Turbine impérissable de métal et de lumière",
+    "description": {
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Aino_gen baseKey18=skill>Inspirateur</tooltip></strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Fardeau du génie créatif",
+    "description": {
+      "0": "Après l'utilisation du déchaînement élémentaire <strong><tooltip ns=char_Aino_gen baseKey18=burst>Refroidisseur hydronique de précision</tooltip></strong>, les DGT infligés par les réactions d'Électrocution, de Sélénocution, de Fleurissement, de Sélénofleurissement et de Sélénocristallisation des personnages déployés à proximité augmentent de 15 % pendant 15 s.",
+      "1": "<strong>Signelune « Lueur ascendante »</strong> : les DGT infligés par ces réactions augmentent de 20 % supplémentaires."
+    }
+  }
+}

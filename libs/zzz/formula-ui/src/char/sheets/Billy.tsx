@@ -1,12 +1,12 @@
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { buffs, conditionals } from '@genshin-optimizer/zzz/formula'
+import { Billy } from '@genshin-optimizer/zzz/formula'
 import { st, trans } from '../../util'
 import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 
 const key: CharacterKey = 'Billy'
 const [, ch] = trans('char', key)
-const cond = conditionals[key]
-const buff = buffs[key]
+const cond = Billy.conditionals
+const buff = Billy.buffs
 
 const sheet = createBaseSheet(key, {
   core: [

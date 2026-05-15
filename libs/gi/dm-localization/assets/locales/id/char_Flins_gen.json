@@ -1,0 +1,176 @@
+{
+  "name": "Flins",
+  "title": "Shadowy Lights, Stranger Wights",
+  "description": "Lightkeeper dari Nod-Krai yang menjaga mercusuar dan kuburan di pulau kecil di utara. Seorang pria misterius dengan perilaku yang sangat sopan.",
+  "constellationName": "Laterna Vigilis",
+  "auto": {
+    "name": "Pocztowy Demonspear",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 5 serangan tombak berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk melemparkan tombak ke depan."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah di bawahnya, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Charged Attack",
+      "6": "Konsumsi Stamina Charged Attack",
+      "7": "DMG Selama Plunging",
+      "8": "DMG Plunging Attack Rendah/Tinggi",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Ancient Rite: Arcane Light",
+    "description": {
+      "0": "Flins memanggil kekuatan kuno dari dalam lenteranya dan berubah ke mode <strong>Manifest Flame</strong>. Mode ini memiliki karakteristik sebagai berikut:",
+      "1": [
+        "Normal Attack dan Charged Attack Flins akan berubah menjadi <electro>Electro DMG</electro> yang tidak bisa ditimpa Elemental Infusion lainnya, dan Flins tidak bisa melakukan Plunging Attack dalam mode ini.",
+        "Meningkatkan ketahanan Flins terhadap interupsi.",
+        "Elemental Skill <strong>Ancient Rite: Arcane Light</strong> akan diubah menjadi Elemental Skill khusus <strong>Northland Spearstorm</strong>."
+      ],
+      "2": "<br/>",
+      "3": "<strong>Northland Spearstorm</strong>",
+      "4": "Flins memanggil sekumpulan tombak di hadapannya dan mengakibatkan <electro>Electro DMG Area</electro>. Selama 6 detik ke depan, Elemental Burst <strong>Ancient Ritual: Cometh the Night</strong> Flins juga akan berubah menjadi Elemental Burst khusus <tooltip ns=tooltips_gen baseKey18=11200001 values=[]><strong>Thunderous Symphony</strong></tooltip>.",
+      "5": "Cooldown dasar <strong>Northland Spearstorm</strong> adalah 6 detik, dan tidak akan terpengaruh oleh efek lain."
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Charged Attack",
+      "6": "DMG Northland Spearstorm",
+      "7": "Cooldown Northland Spearstorm",
+      "8": "Durasi Manifest Flame",
+      "9": "Cooldown Skill",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ancient Ritual: Cometh the Night",
+    "description": {
+      "0": "Flins melepaskan kekuatan sejati lenteranya untuk mengakibatkan <electro>Electro DMG Area</electro>, dan setelah jeda sesaat, mengakibatkan 2 kali <electro>Electro DMG Area</electro> di fase tengah dan 1 kali <electro>Electro DMG Area</electro> di fase akhir yang dianggap sebagai DMG reaksi Lunar-Charged.",
+      "1": "<strong>Moonsign: Ascendant Gleam</strong>: Skill akan diperkuat: Jika ada awan petir di sekitar, Flins akan mengakibatkan 2 kali <electro>Electro DMG Area</electro> tambahan di fase tengah dan 1 kali <electro>Electro DMG Area</electro> tambahan di fase akhir yang dianggap sebagai DMG reaksi Lunar-Charged.",
+      "2": "<br/>",
+      "3": "Selama 6 detik setelah melancarkan Elemental Skill khusus <strong>Northland Spearstorm</strong>, Elemental Burst Flins <strong>Ancient Ritual: Cometh the Night</strong> akan diubah menjadi Elemental Burst khusus <strong>Thunderous Symphony</strong>.",
+      "4": "<br/>",
+      "5": "<strong>Thunderous Symphony</strong>",
+      "6": "Mengonsumsi Energy yang lebih sedikit untuk melancarkan Elemental Burst khusus. Flins mengakibatkan 1 kali <electro>Electro DMG Area</electro> yang dianggap sebagai DMG reaksi Lunar-Charged.",
+      "7": "<strong>Moonsign: Ascendant Gleam</strong>: Skill akan akan diperkuat: Jika ada awan petir di sekitar, Flins akan mengakibatkan 1 kali <electro>Electro DMG Area</electro> tambahan yang dianggap sebagai DMG reaksi Lunar-Charged."
+    },
+    "skillParams": {
+      "0": "DMG Awal Skill",
+      "1": "DMG Lunar-Charged Fase Tengah",
+      "2": "DMG Lunar-Charged Tahap Akhir",
+      "3": "Konsumsi Energy",
+      "4": "Cooldown",
+      "5": "DMG Thunderous Symphony",
+      "6": "DMG Tambahan Thunderous Symphony",
+      "7": "Konsumsi Energy Thunderous Symphony",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Symphony of Winter",
+    "description": {
+      "0": "Flins akan mendapatkan efek penguatan yang berbeda berdasarkan <strong>Moonsign</strong> milik party.",
+      "1": "<br/>",
+      "2": "<strong>Moonsign: Ascendant Gleam</strong>: DMG reaksi Lunar-Charged yang dipicu oleh Flins +20%."
+    }
+  },
+  "passive2": {
+    "name": "Whispering Flame",
+    "description": {
+      "0": "Elemental Mastery Flins meningkat sebesar 8% dari ATK Flins. Peningkatan Elemental Mastery yang bisa diperoleh Flins dengan cara ini adalah maksimum 160 poin."
+    }
+  },
+  "passive3": {
+    "name": "Moonsign Benediction: Old World Secrets",
+    "description": {
+      "0": "Saat Karakter di dalam party memicu reaksi Electro-Charged, reaksi ini akan diubah menjadi reaksi Lunar-Charged. DMG dasar reaksi Lunar-Charged meningkat: Untuk setiap 100 poin ATK Flins, DMG dasar meningkat 0,7%, dapat meningkat hingga maksimum 14% dengan cara ini.",
+      "1": "<br/>",
+      "2": "Selain itu, saat Flins berada di dalam party, <strong>Moonsign</strong> party meningkat 1 level."
+    }
+  },
+  "passive": {
+    "name": "A Light in the Dark",
+    "description": {
+      "0": "Memperlihatkan lokasi <strong>produk khas Nod-Krai</strong> di sekitar pada peta kecil.",
+      "1": "Selain itu, Flins sepertinya bisa mendengar bisikan dari Perburuan Liar ...."
+    }
+  },
+  "constellation1": {
+    "name": "Part the Veil of Snow",
+    "description": {
+      "0": "Cooldown dasar Elemental Skill khusus <strong>Northland Spearstorm</strong> berkurang menjadi 4 detik.",
+      "1": "Selain itu, saat Karakter dalam party memicu reaksi Lunar-Charged, Flins akan mendapatkan 8 poin Energy. Efek ini dapat terpicu sekali setiap 5,5 detik."
+    }
+  },
+  "constellation2": {
+    "name": "The Devil's Wall",
+    "description": {
+      "0": "Dalam 6 detik setelah melancarkan Elemental Skill khusus <strong>Northland Spearstorm</strong>, saat Normal Attack Flins yang selanjutnya mengenai musuh, akan mengakibatkan <electro>Electro DMG Area</electro> sebesar 50% ATK Flins. DMG ini dianggap sebagai DMG Lunar-Charged.",
+      "1": "<strong>Moonsign: Ascendant Gleam</strong>: Saat Flins berada di medan pertempuran, setelah serangan <electro>Electro</electro> Flins mengenai musuh, maka <electro>Electro RES</electro> musuh ini berkurang 25% selama 7 detik."
+    }
+  },
+  "constellation3": {
+    "name": "Stranger in the Night",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Burst <strong><tooltip ns=char_Flins_gen baseKey18=burst>Ancient Ritual: Cometh the Night</tooltip></strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Night on Bald Mountain",
+    "description": {
+      "0": "ATK Flins meningkat 20%.",
+      "1": "Selain itu, Talenta Ascension <tooltip ns=char_Flins_gen baseKey18=passive2><strong>Whispering Flame</strong></tooltip> miliknya diperkuat: Elemental Mastery Flins meningkat sebesar 10% ATK Flins. Peningkatan Elemental Mastery yang dapat diperoleh dengan cara ini adalah maksimum 220 poin."
+    }
+  },
+  "constellation5": {
+    "name": "Exile's Shadow",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Skill <strong><tooltip ns=char_Flins_gen baseKey18=skill>Ancient Rite: Arcane Light</tooltip></strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Songs and Dances of Death",
+    "description": {
+      "0": "DMG reaksi Lunar-Charged Flins terhadap musuh <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>bertumbuh</strong></tooltip> 35%.",
+      "1": "<strong>Moonsign: Ascendant Gleam</strong>: DMG reaksi Lunar-Charged yang diakibatkan semua Karakter sekitar dalam party <strong>bertumbuh</strong> 10%."
+    }
+  }
+}

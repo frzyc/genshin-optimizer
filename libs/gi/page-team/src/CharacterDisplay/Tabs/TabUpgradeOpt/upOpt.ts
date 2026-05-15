@@ -225,7 +225,7 @@ export class UpOptCalculator {
   toUpOptArtifact(art: ICachedArtifact): UpOptArtifact {
     const maxLevel = artMaxLevel[art.rarity]
     const mainStatVal = getMainStatValue(art.mainStatKey, art.rarity, maxLevel) // 5* only
-    return {
+    const out: UpOptArtifact = {
       id: art.id,
       rollsLeft: getRollsRemaining(art.level, art.rarity),
       slotKey: art.slotKey,
@@ -246,6 +246,15 @@ export class UpOptCalculator {
         ), // Assumes substats cannot match main stat key
       },
     }
+    if (art.unactivatedSubstats) {
+      art.unactivatedSubstats.forEach(({ key, value }) => {
+        if (key === '') return
+        out.subs.push(key)
+        out.values[key] = toDecimal(key, value)
+        out.rollsLeft -= 1
+      })
+    }
+    return out
   }
   reCalc(ix: number, art: ICachedArtifact) {
     this.artifacts[ix] = this.toUpOptArtifact(art)

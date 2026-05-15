@@ -1,9 +1,9 @@
 // This is a generated index file.
-import burst from './Skill_E_SkirkNew_01.png'
-import bar from './Skill_S_SkirkNew_01.png'
+import burst from './Skill_E_SkirkNew_01_HD.png'
 import skill from './Skill_S_SkirkNew_01.png'
 import iconSide from './UI_AvatarIcon_Side_SkirkNew.png'
 import icon from './UI_AvatarIcon_SkirkNew.png'
+import bar from './UI_NameCardPic_SkirkNew_Alpha.png'
 import banner from './UI_NameCardPic_SkirkNew_P.png'
 import constellation1 from './UI_Talent_S_SkirkNew_01.png'
 import constellation2 from './UI_Talent_S_SkirkNew_02.png'

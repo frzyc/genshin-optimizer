@@ -133,6 +133,16 @@
       "1": "Nicht mit passiven Talenten mit völlig gleichen Effekten stapelbar."
     }
   },
+  "lockedPassive": {
+    "name": "Geschenk der Hexennacht – Dunkler Donnersturm",
+    "description": {
+      "0": "Wandelt Razor nach dem Abschluss von <strong>Aufgabe der Hexe – Von den kleinen Wölfen</strong> in eine <strong>Hexerei</strong>-Figur um. Verleiht, wenn sich in der Truppe mindestens 2 Hexerei-Figuren befinden, den Effekt <strong>Hexerei – Geheimes Ritual</strong>, der Hexerei-Figuren verstärkt.",
+      "1": "Verstärkt zudem Razors Spezialfähigkeit <strong>Blitzklauen</strong>: Erhöht den durch <strong>Blitzwolf</strong> verursachten SCH um 70 % von Razors ANG.",
+      "2": "<br/>",
+      "3": "<strong>Hexerei – Geheimes Ritual</strong>",
+      "4": "Lässt den durch die Spezialfähigkeit <strong>Blitzklauen</strong> herbeigerufener Blitzwolf, solange dieser auf dem Feld existiert und die von Razor durch die Elementarfähigkeit <strong>Klauen und Donner</strong> gesammelten Elektro-Siegel überschüssig sind, Gegner in der Nähe mit Blitzschlägen treffen, die Elektro-Flächenschaden in Höhe von 150 % von Razors ANG verursachen, und Razor 7 Punkte Elementarenergie wiederherstellen, 1 s Abklingzeit."
+    }
+  },
   "constellation1": {
     "name": "Wolfsinstinkte",
     "description": {
@@ -170,6 +180,12 @@
     "description": {
       "0": "Razors Großschwert lädt sich alle 10 s auf, elektrisiert den nächsten Standardangriff und verursacht damit <electro>Elektro-Schaden</electro> in Höhe von 100 % ANG.",
       "1": "Wenn Razor sich nicht im Zustand <strong>Blitzklauen</strong> befindet und einen Gegner mit dem elektrifizierten Angriff trifft, erhält er ein Elektro-Siegel der Fähigkeit <strong>Klauen und Donner</strong>."
+    },
+    "upgradedDescription": {
+      "0": "Lädt Razors Großschwert alle 10 s automatisch auf, ruft beim nächsten Standardangriff einen Blitz hervor und verursacht damit <electro>Elektro-Schaden</electro> in Höhe von 100 % des ANG.",
+      "1": "Verleiht Razor, wenn er sich nicht im Zustand <strong>Blitzklauen</strong> befindet und einen Gegner mit dem Blitzangriff trifft, 3 Elektro-Siegel der Fähigkeit <strong>Klauen und Donner</strong>.",
+      "2": "Verleiht Razor zudem, wenn er über die Elementarfähigkeit <strong>Klauen und Donner</strong> ein Elektro-Siegel sammelt, stattdessen 3 Elektro-Siegel.",
+      "3": "Erhöht zudem nach dem Verbrauch der Elektro-Siegel innerhalb von 15 s Razors KT um 10 % sowie seinen kritischen Schaden um 50 %."
     }
   }
 }

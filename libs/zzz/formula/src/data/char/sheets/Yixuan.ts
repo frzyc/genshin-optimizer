@@ -1,18 +1,12 @@
 import type { NumNode } from '@genshin-optimizer/pando/engine'
-import {
-  cmpEq,
-  cmpGE,
-  prod,
-  subscript,
-  sum,
-} from '@genshin-optimizer/pando/engine'
+import { cmpGE, prod, subscript, sum } from '@genshin-optimizer/pando/engine'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
+import { isStunned } from '../../common/enemy'
 import {
   allBoolConditionals,
   allNumConditionals,
   customSheerDmg,
-  enemy,
   own,
   ownBuff,
   percent,
@@ -51,7 +45,7 @@ const ability_check = (node: NumNode) =>
     node
   )
 const ability_dmg_ = ownBuff.combat.common_dmg_.add(
-  ability_check(cmpEq(enemy.common.isStunned, 1, dm.ability.dmg_))
+  ability_check(isStunned.ifOn(dm.ability.dmg_))
 )
 const m4_dmg_ = ownBuff.combat.common_dmg_.add(
   cmpGE(char.mindscape, 4, prod(tranquility, percent(dm.m4.dmg_)))

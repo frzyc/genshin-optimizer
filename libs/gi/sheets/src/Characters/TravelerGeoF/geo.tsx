@@ -9,6 +9,7 @@ import {
   constant,
   equal,
   greaterEq,
+  inferInfoMut,
   infoMut,
   input,
   percent,
@@ -18,7 +19,12 @@ import {
 import { cond, st, stg, trans } from '../../SheetUtil'
 import type { TalentSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
-import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import {
+  customDmgNode,
+  dataObjForCharacterSheet,
+  dmgNode,
+  hitEle,
+} from '../dataUtil'
 
 export default function geo(
   key: CharacterSheetKey,
@@ -33,6 +39,10 @@ export default function geo(
   let s = 0,
     b = 0
   const dm = {
+    charged: {
+      dmg1: skillParam_gen.auto[5],
+      dmg2: skillParam_gen.auto[6],
+    },
     skill: {
       dmg: skillParam_gen.skill[s++],
       duration: skillParam_gen.skill[s++][0],
@@ -50,6 +60,13 @@ export default function geo(
     },
     passive2: {
       geoDmg: percent(0.6),
+    },
+    lockedPassive: {
+      charged_dmgInc: skillParam_gen.lockedPassive![7][0],
+      cd: skillParam_gen.lockedPassive![8][0],
+      shield_: skillParam_gen.lockedPassive![9][0],
+      duration: skillParam_gen.lockedPassive![10][0],
+      one: skillParam_gen.lockedPassive![11][0],
     },
     constellation1: {
       critRate_: percent(0.1),
@@ -79,6 +96,26 @@ export default function geo(
     c1BurstArea_critRate_Disp
   )
 
+  const [, condLockedPassive] = cond('Traveler', 'lockedPassive')
+  const lockedPassive_charged_dmgInc = equal(
+    condLockedPassive,
+    'on',
+    prod(percent(dm.lockedPassive.charged_dmgInc), input.total.atk)
+  )
+  const lockedPassiveData = inferInfoMut({
+    ...hitEle.geo,
+    premod: { charged_dmgInc: lockedPassive_charged_dmgInc },
+  })
+  const [condLockedPassiveHitPath, condLockedPassiveHit] = cond(
+    condCharKey,
+    'lockedPassiveHit'
+  )
+  const lockedPassiveHit_shield_ = equal(
+    condLockedPassive,
+    'on',
+    equal(condLockedPassiveHit, 'on', dm.lockedPassive.shield_)
+  )
+
   const dmgFormulas = {
     ...dmgForms,
     skill: {
@@ -92,6 +129,18 @@ export default function geo(
         prod(input.total.atk, dm.passive2.geoDmg),
         'elemental',
         { hit: { ele: constant('geo') } }
+      ),
+    },
+    lockedPassive: {
+      dmg1: equal(
+        condLockedPassive,
+        'on',
+        dmgNode('atk', dm.charged.dmg1, 'charged', lockedPassiveData)
+      ),
+      dmg2: equal(
+        condLockedPassive,
+        'on',
+        dmgNode('atk', dm.charged.dmg2, 'charged', lockedPassiveData)
       ),
     },
     constellation2: {
@@ -114,6 +163,7 @@ export default function geo(
     teamBuff: {
       premod: {
         critRate_: c1BurstArea_critRate_,
+        shield_: lockedPassiveHit_shield_,
       },
     },
   })
@@ -255,6 +305,54 @@ export default function geo(
             }),
           },
         ],
+      }),
+    ]),
+    lockedPassive: ct.talentTem('lockedPassive', [
+      ct.fieldsTem('lockedPassive', {
+        canShow: equal(condLockedPassive, 'on', 1),
+        fields: [
+          {
+            node: infoMut(dmgFormulas.lockedPassive.dmg1, {
+              name: ct.chg('auto.skillParams.5'),
+              textSuffix: '(1)',
+            }),
+          },
+          {
+            node: infoMut(dmgFormulas.lockedPassive.dmg2, {
+              name: ct.chg('auto.skillParams.5'),
+              textSuffix: '(2)',
+            }),
+          },
+          {
+            node: lockedPassive_charged_dmgInc,
+          },
+          {
+            text: stg('cd'),
+            value: dm.lockedPassive.cd,
+            unit: 's',
+          },
+        ],
+      }),
+      ct.condTem('lockedPassive', {
+        canShow: equal(condLockedPassive, 'on', 1),
+        path: condLockedPassiveHitPath,
+        value: condLockedPassiveHit,
+        name: st('hitOp.none'),
+        teamBuff: true,
+        states: {
+          on: {
+            fields: [
+              {
+                node: lockedPassiveHit_shield_,
+              },
+              {
+                text: stg('duration'),
+                value: dm.lockedPassive.duration,
+                unit: 's',
+              },
+            ],
+          },
+        },
       }),
     ]),
     constellation1: ct.talentTem('constellation1'),

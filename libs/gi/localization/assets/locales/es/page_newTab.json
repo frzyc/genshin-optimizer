@@ -1,0 +1,16 @@
+{
+  "title": "🛑 Nueva Pestaña de Optimizador Detectada 🛑",
+  "p1": "Parece que has abierto Genshin Optimizer en otra pestaña 💞. ¡GO no está diseñado para operar en múltiples pestañas 📵! Hacerlo puede resultar en:",
+  "symptom": {
+    "1": "Desincronización de datos entre pestañas 🙃",
+    "2": "Corrupción de la base de datos 💔",
+    "3": "Malestar estomacal 🤰 y desarrolladores de Genshin Optimizer frustrados 😡",
+    "4": "En casos raros, MUERTE ☠️"
+  },
+  "p2": "Hemos evitado que esto ocurra mostrándote este mensaje 📝. Ahora tienes la opción de:",
+  "choice": {
+    "1": "Cerrar esta pestaña 🔪 y usar la nueva pestaña 🆕",
+    "2": "Cerrar la nueva pestaña ↩️ y, una vez que estés seguro de que esta es la única pestaña restante 🔂, puedes actualizar esta página 🔄"
+  },
+  "refresh": "Actualizar Página"
+}

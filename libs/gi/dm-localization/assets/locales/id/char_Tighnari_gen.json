@@ -139,7 +139,7 @@
   "constellation4": {
     "name": "Withering Glimpsed in the Leaves",
     "description": {
-      "0": "Saat melancarkan <strong>Fashioner's Tanglevine Shaft</strong>, Elemental Mastery seluruh anggota party di sekitar akan meningkat 60 poin selama 8 detik. Jika Fashioner's Tanglevine Shaft memicu reaksi Burning, Bloom, Quicken, atau Spread, maka Elemental Mastery mereka akan mengalami peningkatan tambahan sebesar 60 poin dan akan memperbarui durasi berlangsungnya buff ini."
+      "0": "Saat melancarkan <strong>Fashioner's Tanglevine Shaft</strong>, Elemental Mastery seluruh anggota party di sekitar akan meningkat 60 poin selama 8 detik. Jika Fashioner's Tanglevine Shaft memicu reaksi Burning, Bloom, Lunar-Bloom, Quicken, atau Spread, maka Elemental Mastery anggota party akan meningkat lagi sebesar 60 poin dan akan memperbarui durasi berlangsungnya buff ini."
     }
   },
   "constellation5": {

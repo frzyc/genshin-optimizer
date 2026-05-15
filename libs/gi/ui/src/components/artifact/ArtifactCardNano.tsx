@@ -2,7 +2,6 @@ import {
   BootstrapTooltip,
   ColorText,
   ConditionalWrapper,
-  NextImage,
 } from '@genshin-optimizer/common/ui'
 import { clamp, getUnitStr } from '@genshin-optimizer/common/util'
 import { artifactAsset, imgAssets } from '@genshin-optimizer/gi/assets'
@@ -69,14 +68,22 @@ export function ArtifactCardNano({
         }}
       >
         <Box
-          component={NextImage ? NextImage : 'img'}
+          component="img"
           src={imgAssets.slot[pSlotKey]}
           sx={{ width: '25%', height: 'auto', opacity: 0.7 }}
         />
       </Box>
     )
 
-  const { slotKey, rarity, level, mainStatKey, substats, location } = art
+  const {
+    slotKey,
+    rarity,
+    level,
+    mainStatKey,
+    substats,
+    location,
+    unactivatedSubstats,
+  } = art
   const mainStatLevel = Math.max(
     Math.min(mainStatAssumptionLevel, rarity * 4),
     level
@@ -103,7 +110,7 @@ export function ArtifactCardNano({
         >
           <ArtifactTooltip art={art}>
             <Box
-              component={NextImage ? NextImage : 'img'}
+              component="img"
               src={artifactAsset(art.setKey, slotKey)}
               sx={{ m: -1, maxHeight: '110%', maxWidth: '110%' }}
             />
@@ -198,12 +205,22 @@ export function ArtifactCardNano({
           {substats.map((stat: ICachedSubstat, i: number) => (
             <SubstatDisplay key={i + stat.key} stat={stat} />
           ))}
+          {unactivatedSubstats?.map((stat: ICachedSubstat, i: number) => (
+            <SubstatDisplay
+              key={i + stat.key}
+              stat={stat}
+              isActiveStat={false}
+            />
+          ))}
         </Box>
       </Box>
     </ConditionalWrapper>
   )
 }
-function SubstatDisplay({ stat }: { stat: ICachedSubstat }) {
+function SubstatDisplay({
+  stat,
+  isActiveStat = true,
+}: { stat: ICachedSubstat; isActiveStat?: boolean }) {
   if (!stat.value) return null
   const numRolls = stat.rolls?.length ?? 0
   const rollColor = `roll${clamp(numRolls, 1, 6)}`
@@ -212,7 +229,13 @@ function SubstatDisplay({ stat }: { stat: ICachedSubstat }) {
     <Box display="flex" gap={1} alignContent="center">
       <Typography
         sx={{ flexGrow: 1, display: 'flex', gap: 0.5, alignItems: 'center' }}
-        color={(numRolls ? `${rollColor}.main` : 'error.main') as any}
+        color={
+          (numRolls
+            ? `${rollColor}.main`
+            : !isActiveStat
+              ? 'secondary'
+              : 'error.main') as any
+        }
         component="span"
       >
         <BootstrapTooltip

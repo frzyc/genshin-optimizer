@@ -1,0 +1,33 @@
+{
+  "seals": [
+    "0 ấn",
+    "1 ấn",
+    "2 ấn",
+    "3 ấn",
+    "4 ấn"
+  ],
+  "perSeal": "(với mỗi ấn)",
+  "maxSeals": "Giới hạn Đan Ấn Hỏa tăng thêm",
+  "charged": {
+    "0": "Sát thương với 0 ấn",
+    "1": "Sát thương với 1 ấn",
+    "2": "Sát thương với 2 ấn",
+    "3": "Sát thương với 3 ấn",
+    "4": "Sát thương với 4 ấn"
+  },
+  "burst": {
+    "grantMax": "Nhận tối đa số lượng Đan Hỏa Ấn có thể sở hữu"
+  },
+  "passive1": {
+    "sealsConsumed": "Số ấn trọng kích tiêu hao"
+  },
+  "passive2": {
+    "key": "Sát thương của Pháp Thú Chước Nhãn"
+  },
+  "c1": {
+    "sealChargedStam_": "Giảm thể lực trọng kích tiêu hao"
+  },
+  "c6": {
+    "maxSealInc": "Số lượng Đan Hỏa Ấn tối đa"
+  }
+}

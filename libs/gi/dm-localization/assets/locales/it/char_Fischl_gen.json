@@ -121,6 +121,20 @@
       "0": "Quando intraprende una spedizione a Mondstadt, il tempo impiegato per portarla a termine si riduce di un 25%."
     }
   },
+  "lockedPassive": {
+    "name": "Rito della Vigilia della strega: Notturno fantasmatico",
+    "description": {
+      "0": "Dopo aver completato <strong>Compiti della strega: Sull'inaspettato</strong>, Fischl acquisisce l'attributo <strong>Hexerei</strong>. Quando il gruppo include almeno 2 personaggi con attributo Hexerei, questi ultimi ottengono l'effetto di potenziamento <strong>Hexerei: Rito segreto</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei: Rito segreto</strong>",
+      "3": "Odi, o Principe Nachtraben, Ozvaldo Hrafnavins, tu che d'innumerevoli mondi la caduta hai contemplato. Canta per la sovrana tua lo stellato settetto, poiché giunta è l'ora del peccato più profondo, quando le anime radunate alla fine della causalità infrangono del destino l'oscurità.",
+      "4": "Inoltre, quando Oz è in campo, i membri del gruppo ottengono effetti positivi aggiuntivi:",
+      "5": [
+        " dopo che un membro del gruppo vicino ha innescato una reazione di Sovraccarico, l'ATT di Fischl e degli altri membri attivi del gruppo vicini aumenta di un 22,5% per 10 s;",
+        " dopo che un membro del gruppo vicino ha innescato una reazione di Electrocarica o Carica lunare, la maestria elementale di Fischl e degli altri membri attivi del gruppo vicini aumenta di 90 per 10 s."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Occhio del corvo",
     "description": {
@@ -157,7 +171,11 @@
   "constellation6": {
     "name": "Corvo dell'Immernacht",
     "description": {
-      "0": "Estende di 2 s la durata della presenza di Oz sul campo. Inoltre, quando presente, Oz effettua un attacco coordinato con il tuo personaggio attivo, infliggendo <electro>DAN da Electro</electro> pari a un 30% dell'ATT di Fischl."
+      "0": "La durata della presenza di Oz sul campo si estende di 2 s. Inoltre, quando presente, Oz effettua un attacco coordinato con il tuo personaggio attivo, infliggendo <electro>DAN da Electro</electro> pari a un 30% dell'ATT di Fischl."
+    },
+    "upgradedDescription": {
+      "0": "La durata della presenza di Oz sul campo si estende di 2 s. Inoltre, quando presente, Oz effettua un attacco coordinato con il tuo personaggio attivo, infliggendo <electro>DAN da Electro</electro> pari a un 30% dell'ATT di Fischl.",
+      "1": "Dopo che Oz ha effettuato un attacco coordinato, gli effetti di aumento dell'ATT e della maestria elementale di <strong>Rito della Vigilia della strega: Notturno fantasmatico</strong> aumentano ulteriormente di un 100% per 10 s."
     }
   }
 }

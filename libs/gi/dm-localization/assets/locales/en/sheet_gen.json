@@ -83,5 +83,9 @@
   },
   "unlockPassive1": "Unlocks at Character Ascension Phase 1",
   "unlockPassive2": "Unlocks at Character Ascension Phase 4",
-  "unlockPassive3": "Passive Talent"
+  "unlockPassive3": "Passive Talent",
+  "unlockLockedPassive": "Unlocks after completing the prerequisite quests",
+  "witchPassive": "Witch's Homework",
+  "moonsign": "Moonsign",
+  "hexerei": "Hexerei"
 }

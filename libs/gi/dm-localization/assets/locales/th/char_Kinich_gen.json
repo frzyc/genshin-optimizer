@@ -176,7 +176,7 @@
     "name": "Auspicious Beast's Shape",
     "description": {
       "0": "หลังจาก Scalespiker Cannon โจมตีโดนศัตรู จะทำการกระดอนระหว่างศัตรูหนึ่งครั้ง สร้าง<dendro>ความเสียหายไม้</dendro>เทียบเท่ากับ 700% ของพลังโจมตีของ Kinich",
-      "1": "หาก Scalespiker Cannon ในครั้งนี้ ทำให้เกิดเอฟเฟกต์บัฟของพรสวรรค์ติดตัว \"Flame Spirit Pact\" หรือกลุ่มดาว \"Tiger Beetle's Palm\" ให้กับ Scalespiker Cannon การโจมตีแบบกระดอนของมัน จะได้รับบัฟของเอฟเฟกต์ที่เกี่ยวข้องด้วย"
+      "1": "หาก Scalespiker Cannon ในครั้งนี้ ทำให้เกิดเอฟเฟกต์บัฟของพรสวรรค์เพิ่มเติม \"Flame Spirit Pact\" หรือกลุ่มดาว \"Tiger Beetle's Palm\" ให้กับ Scalespiker Cannon การโจมตีแบบกระดอนของมัน จะได้รับบัฟของเอฟเฟกต์ที่เกี่ยวข้องด้วย"
     }
   }
 }

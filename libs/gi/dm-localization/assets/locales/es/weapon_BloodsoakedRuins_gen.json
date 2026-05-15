@@ -1,0 +1,24 @@
+{
+  "name": "Ruinas Ensangrentadas",
+  "description": {
+    "0": "Una lanza que se tiñó de un color oscuro después de muchas batallas. Emite un brillo muy especial debido al reflejo de la azulada llama que cuelga de ella."
+  },
+  "passiveName": "Ceremonia de lamentación",
+  "passiveDescription": {
+    "0": {
+      "0": "Tras usar la Habilidad Definitiva, el daño que inflige el portador de esta arma a los enemigos con la reacción de Electrocargado Lunar aumenta en un <cryo>36%</cryo> durante 3.5 s. Además, tras causar una reacción de Electrocargado Lunar, el portador obtiene el efecto de “elegía de la desolación”, el cual aumenta el Daño CRIT en un <cryo>28%</cryo> durante 6 s, y también recupera <cryo>12</cryo> pts. de Energía Elemental. Solo se puede recuperar Energía Elemental una vez cada 14 s de esta manera."
+    },
+    "1": {
+      "0": "Tras usar la Habilidad Definitiva, el daño que inflige el portador de esta arma a los enemigos con la reacción de Electrocargado Lunar aumenta en un <cryo>48%</cryo> durante 3.5 s. Además, tras causar una reacción de Electrocargado Lunar, el portador obtiene el efecto de “elegía de la desolación”, el cual aumenta el Daño CRIT en un <cryo>35%</cryo> durante 6 s, y también recupera <cryo>13</cryo> pts. de Energía Elemental. Solo se puede recuperar Energía Elemental una vez cada 14 s de esta manera."
+    },
+    "2": {
+      "0": "Tras usar la Habilidad Definitiva, el daño que inflige el portador de esta arma a los enemigos con la reacción de Electrocargado Lunar aumenta en un <cryo>60%</cryo> durante 3.5 s. Además, tras causar una reacción de Electrocargado Lunar, el portador obtiene el efecto de “elegía de la desolación”, el cual aumenta el Daño CRIT en un <cryo>42%</cryo> durante 6 s, y también recupera <cryo>14</cryo> pts. de Energía Elemental. Solo se puede recuperar Energía Elemental una vez cada 14 s de esta manera."
+    },
+    "3": {
+      "0": "Tras usar la Habilidad Definitiva, el daño que inflige el portador de esta arma a los enemigos con la reacción de Electrocargado Lunar aumenta en un <cryo>72%</cryo> durante 3.5 s. Además, tras causar una reacción de Electrocargado Lunar, el portador obtiene el efecto de “elegía de la desolación”, el cual aumenta el Daño CRIT en un <cryo>49%</cryo> durante 6 s, y también recupera <cryo>15</cryo> pts. de Energía Elemental. Solo se puede recuperar Energía Elemental una vez cada 14 s de esta manera."
+    },
+    "4": {
+      "0": "Tras usar la Habilidad Definitiva, el daño que inflige el portador de esta arma a los enemigos con la reacción de Electrocargado Lunar aumenta en un <cryo>84%</cryo> durante 3.5 s. Además, tras causar una reacción de Electrocargado Lunar, el portador obtiene el efecto de “elegía de la desolación”, el cual aumenta el Daño CRIT en un <cryo>56%</cryo> durante 6 s, y también recupera <cryo>16</cryo> pts. de Energía Elemental. Solo se puede recuperar Energía Elemental una vez cada 14 s de esta manera."
+    }
+  }
+}

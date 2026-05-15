@@ -1,0 +1,176 @@
+{
+  "name": "Flins",
+  "title": "Ombre di luci ingannevoli",
+  "description": "Un Guardaluce di Nod-Krai, guardiano del faro e del cimitero in un'isola a nord. Un gentiluomo enigmatico, colto e raffinato.",
+  "constellationName": "Laterna Vigilis",
+  "auto": {
+    "name": "Lancia demoniaca del Pocztowy",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attacco normale</strong>",
+        "1": "Sferra fino a 5 colpi di lancia consecutivi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per lanciare in avanti la lancia."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da 5º colpo",
+      "5": "DAN da ATT caricato",
+      "6": "Costo vigore ATT caricato",
+      "7": "DAN da ATT in picchiata",
+      "8": "DAN da ATT in picchiata basso/alto",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Rito ancestrale: Luce arcana",
+    "description": {
+      "0": "Flins evoca l'antico potere nascosto nella sua lanterna ed entra nella sua forma di <strong>Fiamma manifesta</strong>. La forma ha le seguenti caratteristiche:",
+      "1": [
+        " gli attacchi normali e caricati di Flins infliggono <electro>DAN da Electro</electro> non influenzabili da altre infusioni elementali, e Flins non può più eseguire attacchi in picchiata;",
+        " la resistenza alle interruzioni aumenta;",
+        " l'abilità elementale <strong>Rito ancestrale: Luce arcana</strong> viene sostituita con l'abilità elementale speciale <strong>Lancia burrascosa del Nord</strong>."
+      ],
+      "2": "<br/>",
+      "3": "<strong>Lancia burrascosa del Nord</strong>",
+      "4": "Flins evoca una tempesta di lance dinanzi a sé, infliggendo <electro>DAN da Electro ad area</electro> e trasformando il suo Tripudio elementale <strong>Rito ancestrale: Venuta della Notte</strong> nel Tripudio elementale speciale <tooltip ns=tooltips_gen baseKey18=11200001 values=[]><strong>Sinfonia tonante</strong></tooltip> per i successivi 6 s.",
+      "5": "Il TdR di base di <strong>Lancia burrascosa del Nord</strong> è di 6 s e non viene influenzato da altri effetti."
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da 5º colpo",
+      "5": "DAN da ATT caricato",
+      "6": "DAN da Lancia burrascosa del Nord",
+      "7": "TdR Lancia burrascosa del Nord",
+      "8": "Durata Fiamma manifesta",
+      "9": "TdR abilità",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Rito ancestrale: Venuta della Notte",
+    "description": {
+      "0": "Flins scatena il vero potere della sua lanterna, infliggendo <electro>DAN da Electro ad area</electro>. Dopo un breve lasso di tempo, infligge 2 iterazioni di fase intermedia e 1 iterazione di fase finale di <electro>DAN da Electro ad area</electro>. Tali DAN sono tutti considerati DAN da Carica lunare.",
+      "1": "Quando <strong>Presagio lunare: Barlume ascendente</strong>, è attivo, l'abilità di Flins viene potenziata. Se sono presenti delle nubi temporalesche nelle vicinanze, Flins infligge 2 iterazioni di fase intermedia aggiuntive di <electro>DAN da Electro ad area</electro>. Tali DAN sono considerati DAN da Carica lunare.",
+      "2": "<br/>",
+      "3": "Dopo aver usato l'abilità elementale speciale <strong>Lancia burrascosa del Nord</strong>, il Tripudio elementale di Flins <strong>Rito ancestrale: Venuta della Notte</strong> viene sostituito dal Tripudio elementale speciale <strong>Sinfonia tonante</strong> per i successivi 6 s.",
+      "4": "<br/>",
+      "5": "<strong>Sinfonia tonante</strong>",
+      "6": "Consuma meno energia elementale per usare un Tripudio elementale speciale. Flins infligge un'iterazione di <electro>DAN da Electro ad area</electro>. Tali DAN sono considerati DAN da Carica lunare.",
+      "7": "Quando <strong>Presagio lunare: Barlume ascendente</strong> è attivo, l'abilità di Flins viene potenziata. Se sono presenti delle nubi temporalesche nelle vicinanze, Flins infligge un'iterazione aggiuntiva di <electro>DAN da Electro ad area</electro>. Tali DAN sono considerati DAN da Carica lunare."
+    },
+    "skillParams": {
+      "0": "DAN iniziali da abilità",
+      "1": "DAN da Carica lunare fase intermedia",
+      "2": "DAN da Carica lunare fase finale",
+      "3": "Costo energia",
+      "4": "TdR",
+      "5": "DAN da Sinfonia tonante",
+      "6": "DAN aggiuntivi da Sinfonia tonante",
+      "7": "Costo energia Sinfonia tonante",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Sinfonia d'inverno",
+    "description": {
+      "0": "Flins ottiene un effetto positivo corrispondente in base al <strong>Presagio lunare</strong> del gruppo.",
+      "1": "<br/>",
+      "2": "Quando <strong>Presagio lunare: Barlume ascendente</strong> è attivo, le reazioni di Carica lunare innescate da Flins infliggono un 20% di DAN aggiuntivi."
+    }
+  },
+  "passive2": {
+    "name": "Fiamma sussurrante",
+    "description": {
+      "0": "La maestria elementale di Flins aumenta di un 8% del suo ATT. L'incremento massimo ottenibile in questo modo è di 160."
+    }
+  },
+  "passive3": {
+    "name": "Benedizione del Presagio lunare: Segreti del vecchio mondo",
+    "description": {
+      "0": "Quando un membro del gruppo innesca una reazione di Electrocarica, questa si converte in una reazione di Carica lunare, i cui DAN base aumentano di uno 0,7% per ogni 100 di ATT di Flins, fino a un 14% massimo.",
+      "1": "<br/>",
+      "2": "Inoltre, quando Flins è nel gruppo, il <strong>Presagio lunare</strong> del gruppo aumenta di 1 livello."
+    }
+  },
+  "passive": {
+    "name": "Luce nell'oscurità",
+    "description": {
+      "0": "Mostra sulla minimappa la posizione delle <strong>risorse uniche di Nod-Krai</strong>.",
+      "1": "Inoltre, Flins sembra in grado di decifrare i sussurri della Caccia selvaggia..."
+    }
+  },
+  "constellation1": {
+    "name": "Separazione del velo di neve",
+    "description": {
+      "0": "Il TdR di base dell'abilità elementale speciale <strong>Lancia burrascosa del Nord</strong> si riduce a 4 s.",
+      "1": "Inoltre, quando i membri del gruppo innescano reazioni di Carica lunare, l'energia elementale di Flins si ripristina di 8. Quest'effetto può verificarsi una volta ogni 5,5 s."
+    }
+  },
+  "constellation2": {
+    "name": "Muro del diavolo",
+    "description": {
+      "0": "Per i successivi 6 s dopo aver usato l'abilità elementale speciale <strong>Lancia burrascosa del Nord</strong>, quando Flins colpisce un avversario con il suo attacco normale successivo, quest'ultimo infligge <electro>DAN da Electro ad area</electro> aggiuntivi pari a un 50% dell'ATT di Flins. Tali DAN sono considerati DAN da Carica lunare.",
+      "1": "Quando <strong>Presagio lunare: Barlume ascendente</strong> è attivo e Flins è in campo, se i suoi attacchi di <electro>Electro</electro> colpiscono un avversario, la <electro>RES a Electro</electro> di quest'ultimo diminuisce di un 25% per 7 s."
+    }
+  },
+  "constellation3": {
+    "name": "Straniero nella notte",
+    "description": {
+      "0": "Aumenta di 3 il livello di <tooltip ns=char_Flins_gen baseKey18=burst><strong>Rito ancestrale: Venuta della Notte</strong></tooltip>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Notte sulla montagna desolata",
+    "description": {
+      "0": "L'ATT di Flins aumenta di un 20%.",
+      "1": "Inoltre, il suo talento d'ascensione <tooltip ns=char_Flins_gen baseKey18=passive2><strong>Fiamma sussurrante</strong></tooltip> viene potenziato: la maestria elementale di Flins aumenta di un 10% del suo ATT. L'incremento massimo ottenibile in questo modo è di 220."
+    }
+  },
+  "constellation5": {
+    "name": "Ombra dell'esule",
+    "description": {
+      "0": "Aumenta di 3 il livello di <tooltip ns=char_Flins_gen baseKey18=skill><strong>Rito ancestrale: Luce arcana</strong></tooltip>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Canti e danze della morte",
+    "description": {
+      "0": "I DAN inflitti agli avversari dalle reazioni di Carica lunare di Flins vengono <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>innalzati</strong></tooltip> di un 35%.",
+      "1": "Quando <strong>Presagio lunare: Barlume ascendente</strong> è attivo, i DAN da Carica lunare di tutti i membri vicini del gruppo vengono <strong>innalzati</strong> di un 10%."
+    }
+  }
+}

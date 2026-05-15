@@ -5,7 +5,7 @@
   },
   "uploadCard": {
     "title": "Carga Base de Datos",
-    "replaceDatabase": "Reemplazar Base de Datos",
+    "replaceDatabase": "Actualizar Base de Datos",
     "hint": "Cargue su archivo JSON aquí...",
     "hintPaste": "...o pegue su contenido a continuación.",
     "error": {
@@ -17,6 +17,17 @@
     "dbSource": "Origen de Datos:",
     "goodUpload": {
       "title": "Formato <strong>Genshin Open Object Description</strong> (GOOD)"
+    },
+    "buttons": {
+      "open": "Abrir",
+      "detectDups": "Detectar Actualizaciones/Duplicados",
+      "delNotInImport": "Eliminar elementos no incluidos en la importación"
+    },
+    "tooltip": {
+      "detectdup": "Encuentra actualizaciones/duplicados en el inventario GO y combina la importación con GO.",
+      "ignoreDup": "No detectar actualizaciones/duplicados. La importación se añadirá sobre el inventario GO existente.",
+      "delNotInImport": "Asume que la importación es tu inventario completo. Los elementos en el Inventario GO que no existan en la importación serán eliminados.",
+      "keepNotInImport": "Asume que la importación es un inventario parcial. No se eliminará nada."
     }
   },
   "count": {
@@ -28,7 +39,10 @@
     "updated": "Actualizados:",
     "removed": "Borrados:",
     "unchanged": "Sin cambios:",
-    "invalid": "No válidos:"
+    "invalid": "No válidos:",
+    "upgraded": "actualizado:",
+    "dbTotal": "Total Combinado:",
+    "notInImport": "No en Importar:"
   },
   "DatabaseCard": {
     "title": "Base de datos",

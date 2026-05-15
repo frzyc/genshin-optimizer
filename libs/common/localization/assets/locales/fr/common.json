@@ -1,0 +1,27 @@
+{
+  "social": {
+    "paypal": "PayPal",
+    "patreon": "Patreon",
+    "discord": "Discord"
+  },
+  "unselect": "Déseléctionner",
+  "inventory": "Inventaire",
+  "ascending": "Croissant",
+  "descending": "Décroissant",
+  "sortBy": "Trier par: ",
+  "loading": "Chargement...",
+  "error": "Erreur",
+  "reset": "Réinitialiser",
+  "info": "Information",
+  "close": "Fermer",
+  "delete": "Supprimer",
+  "locked": "Verrouillé",
+  "unlocked": "Deverrouillé",
+  "excluded": "Exclus",
+  "included": "Inclus",
+  "selectlevel": "Sélectionner le niveau",
+  "gender": {
+    "F": "Femme",
+    "M": "Homme"
+  }
+}

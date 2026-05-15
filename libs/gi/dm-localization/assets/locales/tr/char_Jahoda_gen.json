@@ -1,0 +1,168 @@
+{
+  "name": "Jahoda",
+  "title": "Rüzgar Ören Gölge",
+  "description": "Kendi deyimiyle Sırlar Arşivi'nin \"son derece güvenilir\" ve \"elinden her iş gelen\" çalışanı.",
+  "constellationName": "Dağ Çileği",
+  "auto": {
+    "name": "Ok Kızgınken Atılır",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 3 ok atar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Daha isabetli ve daha yüksek Hasar veren bir <strong>Hedefli Atış</strong> yapar.",
+        "2": "Nişan alırken okun ucunda güçlü rüzgarlar toplanır. Tam yüklü bu rüzgar oku <anemo>Rüzgar Hasarı</anemo> verir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken yaylım ok atışı yapar ve dalışa geçerek yere vurur. Yoluna çıkan düşmanlara saldırır ve yere vurduğunda Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "Hedefli Atış",
+      "4": "Tam Yüklü Hedefli Atış",
+      "5": "Havadan Saldırı Hasarı",
+      "6": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Kurnaz Strateji: Ganimet Paylaşımı",
+    "description": {
+      "0": "Jahoda düşmana doğru atılır ve düşmana temas ettiğinde Gölge Takibi durumuna girer. Bu durumdayken Jahoda hızla ve sürekli olarak hareket eder: Yakındaki düşmanlar <pyro>Ateş</pyro>, <hydro>Su</hydro>, <electro>Elektrik</electro> veya <cryo>Buz</cryo> etkisindeyse Jahoda <tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>Miyavtastik Hazine Şişesini</strong></tooltip> sessizce ilgili elemente dönüştürür ve kademeli olarak doldurur. Süre sona erdiğinde veya beceri tekrar kullanıldığında Jahoda <strong>Miyavtastik Hazine Şişesini</strong> boşaltarak yakındaki düşmanlara tek seferlik <anemo>Rüzgar Hasarı</anemo> verir. <strong>Miyavtastik Hazine Şişesi</strong> dolduğunda Jahoda onu anında boşaltır, Gölge Takibi durumundan çıkar ve daha güçlü bir <anemo>Rüzgar Hasarı</anemo> verir.",
+      "1": "Jahoda ileri atıldığında düşmanla temas edemezse bunun yerine bulunduğu yere bir Sis Bombası bırakarak yakındaki düşmanlara tek seferlik <anemo>Rüzgar Hasarı</anemo> verir.",
+      "2": "<br/>",
+      "3": "<strong>Ay Sembolü: Yükselen Parıltı</strong>: <strong>Miyavtastik Hazine Şişesi</strong> dolduğunda Jahoda onu hemen boşaltmaz. Bunun yerine kısa bir süre boyunca, depolanan element enerjisini sürekli olarak tüketir ve yakındaki düşmanlara belirli aralıklarla <strong>Pofuduk Kedi Yumakları</strong> fırlatarak <strong>Miyavtastik Hazine Şişesinde</strong> depolanan element türünde Hasar verir. Bir <strong>Pofuduk Kedi Yumağı</strong> düşmana isabet ettiğinde Jahoda 2 Element Enerjisi yeniler. Bu etki 3,5 saniyede bir tetiklenebilir.",
+      "4": "<br/>",
+      "5": "<i>Bu dünyada serveti dağıtmanın birçok yolu vardır, ancak Nod-Krai definecileri ve hazine avcıları için bu yollardan yalnızca bir tanesi gerçekten etkili olduğunu kanıtlamıştır.</i>"
+    },
+    "skillParams": {
+      "0": "Sis Bombası Hasarı",
+      "1": "Boş Hazine Şişesi Hasarı",
+      "2": "Dolu Hazine Şişesi Hasarı",
+      "3": "Hazine Şişesi Süresi",
+      "4": "Kedi Yumağı Hasarı",
+      "5": "BS",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Gizli Yetenekler: Avcının Yedi Aleti",
+    "description": {
+      "0": "Saklı kozları ortaya çıkarma zamanı! Jahoda, 2 <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>Kedisel Koordineli Destek Robotu</strong></tooltip> çağırır ve yakındaki düşmanlara bir defa <anemo>Rüzgar Hasarı</anemo> verir.",
+      "1": "<br/>",
+      "2": "<i>\"Koordineli destek ne mi demek? Yani sen Morayla 'destek' sağlarsın, biz de 'koordine' ederiz. Kulağa mivkemmel geliyor, öyle değil mi?\"</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Kedisel Koordineli Destek Robotu Hasarı",
+      "2": "Kedisel Koordineli Destek Robotu Süresi",
+      "3": "Kedisel Koordineli Destek Robotu İyileştirmesi",
+      "4": "En Düşük Canlı Karakter Ek İyileştirmesi",
+      "5": "BS",
+      "6": "Enerji Maliyeti",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Ödeme Alma Taktiği",
+    "description": {
+      "0": "Takımında en az bir <pyro>Ateş</pyro>, <hydro>Su</hydro>, <electro>Elektrik</electro> veya <cryo>Buz</cryo> karakteri olduğunda <strong>Gizli Yetenekler: Avcının Yedi Aleti</strong> Element Patlamasından gelen <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>Kedisel Koordineli Destek Robotları</strong></tooltip>, ilgili her bir elementin karakter sayısına bağlı olarak güçlendirilir.",
+      "1": "Jahoda gizlice bu karakterlerin hesabını tutar. Bunlar arasında en yüksek karakter sayısına sahip element, güçlendirme etkisinin ne olacağını belirler:",
+      "2": [
+        "<pyro>Ateş</pyro>: <strong>Kedisel Koordineli Destek Robotları</strong> orijinal Hasarlarının %130'u kadar Hasar verir.",
+        "<hydro>Su</hydro>: <strong>Kedisel Koordineli Destek Robotları</strong> orijinal iyileştirme miktarlarının %120'si kadar Can yeniler.",
+        "<electro>Elektrik</electro>: <strong>Kedisel Koordineli Destek Robotlarının</strong> sayısı 1 artar.",
+        "<cryo>Buz</cryo>: <strong>Kedisel Koordineli Destek Robotlarının</strong> saldırı aralığı %10 kısalır."
+      ],
+      "3": "<br/>",
+      "4": "En yüksek karakter sayısına sahip birden fazla element varsa şu öncelik sırasına göre güçlendirme yapılır: <pyro>Ateş</pyro> > <hydro>Su</hydro> > <electro>Elektrik</electro> > <cryo>Buz</cryo>. Başlangıçta yalnızca bir element etkisi tetiklenebilir."
+    }
+  },
+  "passive2": {
+    "name": "Tatlı Böğürtlen Ganimeti",
+    "description": {
+      "0": "<strong>Gizli Yetenekler: Avcının Yedi Aleti</strong> Element Patlamasından gelen bir <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>Kedisel Koordineli Destek Robotu</strong></tooltip>, aktif bir takım üyesi üzerinde İyileştirme tetiklediğinde eğer o karakterin Canı %70'in üzerindeyse 6 saniyeliğine Element Ustalığı 100 artar."
+    }
+  },
+  "passive3": {
+    "name": "Ay Sembolü Kutsaması: Çatı Koşuşturması",
+    "description": {
+      "0": "Jahoda gruptayken grubun <strong>Ay Sembolü</strong> 1 seviye yükselir."
+    }
+  },
+  "passive": {
+    "name": "Arka Sokak Kurnazlığı",
+    "description": {
+      "0": "Nod-Krai içinde keşfe gönderildiğinde harcanan zaman %25 azalır."
+    }
+  },
+  "constellation1": {
+    "name": "Bir Şişe Daha!",
+    "description": {
+      "0": "<strong>Kurnaz Strateji: Ganimet Paylaşımı</strong> Element Becerisiyle gelen <tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>Miyavtastik Hazine Şişesi</strong></tooltip> tarafından fırlatılan bir <strong>Pofuduk Kedi Yumağı</strong> bir düşmana isabet ettiğinde %50 ihtimalle sekerek yakındaki düşmanlara ilgili Element Türünde Hasar verir."
+    }
+  },
+  "constellation2": {
+    "name": "Hırsızın Pratik Zekası",
+    "description": {
+      "0": "<strong>Ay Sembolü: Yükselen Parıltı</strong>: <tooltip ns=char_Jahoda_gen baseKey18=passive1><strong>\"Ödeme Alma Taktiği\"</strong></tooltip> Yükseltme Yeteneğinde Jahoda, en yüksek karakter sayısına sahip elementin yanı sıra kalan element türleri arasında en çok karaktere sahip ikinci elementin de gizlice hesabını tutabilir. Bu, aynı anda en fazla iki element etkisinin aktif olmasına olanak tanır. \"Ödeme Alma Taktiği\" Pasif Yeteneğinin açılmış olması gerekir."
+    }
+  },
+  "constellation3": {
+    "name": "Umutsuz Kumar",
+    "description": {
+      "0": "<strong><tooltip ns=char_Jahoda_gen baseKey18=burst>Gizli Yetenekler: Avcının Yedi Aleti</tooltip></strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Toz İçindeki Yabani Böğürtlen",
+    "description": {
+      "0": "<strong>Gizli Yetenekler: Avcının Yedi Aleti</strong> Element Patlamasından gelen <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>Kedisel Koordineli Destek Robotu</strong></tooltip> bir Element Dönüşümü geçirdiğinde Jahoda 4 Element Enerjisi yeniler."
+    }
+  },
+  "constellation5": {
+    "name": "En Büyük Hazine",
+    "description": {
+      "0": "<strong><tooltip ns=char_Jahoda_gen baseKey18=skill>Kurnaz Strateji: Ganimet Paylaşımı</tooltip></strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "En Ufak Şans",
+    "description": {
+      "0": "<strong>Ay Sembolü: Yükselen Parıltı</strong>: <strong>Kurnaz Strateji: Ganimet Paylaşımı</strong> Element Becerisiyle gelen <tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>Miyavtastik Hazine Şişesi</strong></tooltip> dolduğunda yakındaki Ay Sembolü grup üyelerinin 20sn boyunca Kritik Oranı %5, Kritik Hasarı ise %40 artar."
+    }
+  }
+}

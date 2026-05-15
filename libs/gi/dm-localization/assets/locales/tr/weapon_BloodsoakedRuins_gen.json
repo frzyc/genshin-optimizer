@@ -1,0 +1,24 @@
+{
+  "name": "Kanlı Harabe",
+  "description": {
+    "0": "Acımasız savaşlar sırasında siyah renge bürünmüş bir uzun mızrak. Fener ışığının ruhani mavi ışığında havai bir renkle parlıyor."
+  },
+  "passiveName": "Yas Adağı",
+  "passiveDescription": {
+    "0": {
+      "0": "Bir Element Patlaması kullandıktan sonra 3,5sn boyunca kuşanan karakterin düşmanlara verdiği Ay Yüklü Hasarı <cryo>%36</cryo> artar. Ayrıca Ay Yüklü tepkimesi tetikledikten sonra kuşanan karakter Yıkım Ağıdı etkisi kazanır: 6sn boyunca Kritik Hasarı <cryo>%28</cryo> artar ve ayrıca <cryo>12</cryo> Element Enerjisi yeniler. Element Enerjisi bu şekilde her 14 saniyede bir yenilenebilir."
+    },
+    "1": {
+      "0": "Bir Element Patlaması kullandıktan sonra 3,5sn boyunca kuşanan karakterin düşmanlara verdiği Ay Yüklü Hasarı <cryo>%48</cryo> artar. Ayrıca Ay Yüklü tepkimesi tetikledikten sonra kuşanan karakter Yıkım Ağıdı etkisi kazanır: 6sn boyunca Kritik Hasarı <cryo>%35</cryo> artar ve ayrıca <cryo>13</cryo> Element Enerjisi yeniler. Element Enerjisi bu şekilde her 14 saniyede bir yenilenebilir."
+    },
+    "2": {
+      "0": "Bir Element Patlaması kullandıktan sonra 3,5sn boyunca kuşanan karakterin düşmanlara verdiği Ay Yüklü Hasarı <cryo>%60</cryo> artar. Ayrıca Ay Yüklü tepkimesi tetikledikten sonra kuşanan karakter Yıkım Ağıdı etkisi kazanır: 6sn boyunca Kritik Hasarı <cryo>%42</cryo> artar ve ayrıca <cryo>14</cryo> Element Enerjisi yeniler. Element Enerjisi bu şekilde her 14 saniyede bir yenilenebilir."
+    },
+    "3": {
+      "0": "Bir Element Patlaması kullandıktan sonra 3,5sn boyunca kuşanan karakterin düşmanlara verdiği Ay Yüklü Hasarı <cryo>%72</cryo> artar. Ayrıca Ay Yüklü tepkimesi tetikledikten sonra kuşanan karakter Yıkım Ağıdı etkisi kazanır: 6sn boyunca Kritik Hasarı <cryo>%49</cryo> artar ve ayrıca <cryo>15</cryo> Element Enerjisi yeniler. Element Enerjisi bu şekilde her 14 saniyede bir yenilenebilir."
+    },
+    "4": {
+      "0": "Bir Element Patlaması kullandıktan sonra 3,5sn boyunca kuşanan karakterin düşmanlara verdiği Ay Yüklü Hasarı <cryo>%84</cryo> artar. Ayrıca Ay Yüklü tepkimesi tetikledikten sonra kuşanan karakter Yıkım Ağıdı etkisi kazanır: 6sn boyunca Kritik Hasarı <cryo>%56</cryo> artar ve ayrıca <cryo>16</cryo> Element Enerjisi yeniler. Element Enerjisi bu şekilde her 14 saniyede bir yenilenebilir."
+    }
+  }
+}

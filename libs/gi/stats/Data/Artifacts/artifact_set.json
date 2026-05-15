@@ -916,5 +916,73 @@
       "flower",
       "sands"
     ]
+  },
+  "NightOfTheSkysUnveiling": {
+    "setNum": [
+      2,
+      4
+    ],
+    "rarities": [
+      4,
+      5
+    ],
+    "slots": [
+      "goblet",
+      "plume",
+      "circlet",
+      "flower",
+      "sands"
+    ]
+  },
+  "SilkenMoonsSerenade": {
+    "setNum": [
+      2,
+      4
+    ],
+    "rarities": [
+      4,
+      5
+    ],
+    "slots": [
+      "goblet",
+      "plume",
+      "circlet",
+      "flower",
+      "sands"
+    ]
+  },
+  "AubadeOfMorningstarAndMoon": {
+    "setNum": [
+      2,
+      4
+    ],
+    "rarities": [
+      4,
+      5
+    ],
+    "slots": [
+      "goblet",
+      "plume",
+      "circlet",
+      "flower",
+      "sands"
+    ]
+  },
+  "ADayCarvedFromRisingWinds": {
+    "setNum": [
+      2,
+      4
+    ],
+    "rarities": [
+      4,
+      5
+    ],
+    "slots": [
+      "goblet",
+      "plume",
+      "circlet",
+      "flower",
+      "sands"
+    ]
   }
 }

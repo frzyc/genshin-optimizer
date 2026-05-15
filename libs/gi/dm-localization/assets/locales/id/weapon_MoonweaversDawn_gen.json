@@ -1,0 +1,24 @@
+{
+  "name": "Moonweaver's Dawn",
+  "description": {
+    "0": "Pedang perak murni dan tajam, cukup kuat untuk menembus baju besi kokoh bagai cahaya bulan yang mengalir. Legenda mengatakan bahwa pedang ini adalah senjata suci yang diberkati oleh Pelantun Rembulan yang paling awal."
+  },
+  "passiveName": "Secret Silver's Testament",
+  "passiveDescription": {
+    "0": {
+      "0": "DMG Elemental Burst +<cryo>20%</cryo>. Saat Energy maksimum Karakter yang mengenakan tidak lebih dari 60/40 poin, maka DMG Elemental Burst +<cryo>16%/28%</cryo> lagi."
+    },
+    "1": {
+      "0": "DMG Elemental Burst +<cryo>25%</cryo>. Saat Energy maksimum Karakter yang mengenakan tidak lebih dari 60/40 poin, DMG Elemental Burst +<cryo>20%/35%</cryo> lagi."
+    },
+    "2": {
+      "0": "DMG Elemental Burst +<cryo>30%</cryo>. Saat Energy maksimum Karakter yang mengenakan tidak lebih dari 60/40 poin, DMG Elemental Burst +<cryo>24%/42%</cryo> lagi."
+    },
+    "3": {
+      "0": "DMG Elemental Burst +<cryo>35%</cryo>. Saat Energy maksimum Karakter yang mengenakan tidak lebih dari 60/40 poin, DMG Elemental Burst +<cryo>28%/49%</cryo> lagi."
+    },
+    "4": {
+      "0": "DMG Elemental Burst +<cryo>40%</cryo>. Saat Energy maksimum Karakter yang mengenakan tidak lebih dari 60/40 poin, DMG Elemental Burst +<cryo>32%/56%</cryo> lagi."
+    }
+  }
+}

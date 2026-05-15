@@ -16,7 +16,8 @@
     "none": "Golpes sobre enemigos",
     "normalOrCharged": "Ataque Normal / Cargado golpea a enemigos",
     "skillOrBurst": "Habilidad Elemental o Definitiva golpea a enemigos",
-    "crit": "Golpe CRIT golpea a enemigos"
+    "crit": "Golpe CRIT golpea a enemigos",
+    "normalChargedOrPlunging": "Después de golpear a un oponente con un Ataque Normal/Cargado/Descendente"
   },
   "eleAbsor": "Absorción Elemental",
   "absorDot": "DoT de Absorción",
@@ -77,18 +78,29 @@
     "electro": "Absorción de Daño Electro",
     "dendro": "Absorción de Daño Dendro",
     "geo": "Absorción de Daño Geo",
+    "none": "Absorción de Daño del Escudo",
     "max": {
       "none": "Absorción de Daño máximo",
       "pyro": "Absorción de Daño Pyro máximo"
     }
   },
   "addlCharge": "Carga adicional",
-  "1set": "1-set",
-  "2set": "2-set",
-  "4set": "4-set",
+  "conditional": "Condicional",
+  "maxStacks": "Cargas Máximas",
+  "1set": "1-Conjunto",
+  "2set": "2-Conjunto",
+  "4set": "4-Conjunto",
+  "activationStam": "Consumo de Aguante de Activación",
+  "stamDrain": "Drenaje de Aguante",
   "talents": {
+    "auto": "Automático",
+    "skill": "Habilidad",
+    "burst": "Definitiva",
+    "passive": "Pasiva",
     "passive1": "Ascensión 1",
     "passive2": "Ascensión 4",
+    "passive3": "Pasiva",
+    "sprint": "Carrera",
     "constellation1": "C1",
     "constellation2": "C2",
     "constellation3": "C3",
@@ -96,5 +108,21 @@
     "constellation5": "C5",
     "constellation6": "C6"
   },
+  "swirlReaction": {
+    "hydro": "Después de activar una reacción <hydro>Hydro</hydro> de Torbellino",
+    "pyro": "Después de activar una reacción <pyro>Pyro</pyro> de Torbellino",
+    "electro": "Después de activar una reacción <electro>Electro</electro> de Torbellino",
+    "cryo": "Después de activar una reacción <cryo>Cryo</cryo> de Torbellino"
+  },
+  "afterReaction": "Después de activar una Reacción Elemental",
+  "aoeInc": "Aumento de Área de Efecto",
+  "elementalReaction": {
+    "hydro": "Después de activar una Reacción Elemental <hydro>relacionada con Hydro</hydro>",
+    "electro": "Después de activar una Reacción Elemental <electro>relacionada con Electro</electro>"
+  },
+  "bonusScaling": {
+    "skill_": "Escalado de Bonificación de Habilidad Ele."
+  },
+  "energy": "Energía",
   "getElementalOrbParticle": "Tras recoger un Orbe o Partícula Elemental"
 }

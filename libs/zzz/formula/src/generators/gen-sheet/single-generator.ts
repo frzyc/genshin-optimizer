@@ -6,6 +6,7 @@ import {
 } from '@genshin-optimizer/zzz/consts'
 import type { Tree } from '@nx/devkit'
 import genIndex from './genIndex'
+import genMeta from './genMeta'
 import genSheet from './genSheet'
 import type { GenSheetGeneratorSchema } from './schema'
 export default async function genSheetGenerator(
@@ -32,5 +33,6 @@ export default async function genSheetGenerator(
   }
   await genSheet(tree, options, true)
   await genIndex(tree, sheet_type)
+  await genMeta(tree, options, true)
   console.log('Generated sheet and index file.')
 }

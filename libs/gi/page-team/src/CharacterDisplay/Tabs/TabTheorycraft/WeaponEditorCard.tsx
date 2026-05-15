@@ -9,9 +9,9 @@ import {
   DataContext,
   DocumentDisplay,
   FieldDisplayList,
-  LevelSelect,
   NodeFieldDisplay,
   RefinementDropdown,
+  WeaponLevelSelect,
   WeaponName,
   WeaponSelectionModal,
 } from '@genshin-optimizer/gi/ui'
@@ -105,7 +105,7 @@ export function WeaponEditorCard({
             )}
           </Stack>
         </Box>
-        <LevelSelect
+        <WeaponLevelSelect
           level={level}
           ascension={ascension}
           setBoth={setWeapon}

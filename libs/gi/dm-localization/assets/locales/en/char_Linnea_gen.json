@@ -1,0 +1,237 @@
+{
+  "name": "Linnea",
+  "title": "Augur of Wonders",
+  "description": "Naturalist and Advisor to the Nod-Krai Branch of the Adventurers' Guild.",
+  "constellationName": "Alcyon",
+  "auto": {
+    "name": "Capture Protocol",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Performs up to 3 consecutive shots with a bow."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Performs a more precise <strong>Aimed Shot</strong> with increased DMG.",
+        "2": "While aiming, stone crystals will accumulate on the arrowhead. A fully charged crystalline arrow will deal <geo>Geo DMG</geo>."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "Aimed Shot",
+      "4": "Fully-Charged Aimed Shot",
+      "5": "Plunge DMG",
+      "6": "Low/High Plunge DMG",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, percent(fixed: 1)}}%",
+      "3": "{{3, percent(fixed: 1)}}%",
+      "4": "{{4, percent}}%",
+      "5": "{{5, percent(fixed: 1)}}%",
+      "6": "{{6, percent}}%/{{7, percent}}%",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Countermeasure: Lumi's Battle Cry!",
+    "description": {
+      "0": "Adventure with Lumi! Depending on how you Tap, Lumi attacks in different forms.",
+      "1": "<br/>",
+      "2": "<strong>Tap</strong>",
+      "3": "Lumi strikes in a <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Super Power Form</tooltip></strong>, attacking nearby enemies continuously, dealing <geo>AoE Geo DMG</geo>. If there are Moondrifts nearby, Lumi will also deal <geo>AoE Geo DMG</geo> to nearby enemies, which will be considered Lunar-Crystallize Reaction DMG.",
+      "4": "<br/>",
+      "5": "<strong>Continuous Tapping</strong>",
+      "6": "Time to show what we're really capable of! After using her Elemental Skill, Linnea will feed Lumi sparkling gemstones when her Elemental Skill or Normal Attack is Tapped repeatedly. A full-bellied Lumi will strike in her <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Ultimate Power Form</tooltip></strong>, dealing an especially powerful instance of <geo>AoE Geo DMG</geo> that is considered Lunar-Crystallize Reaction DMG, switching to <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Standard Power Form</tooltip></strong>.",
+      "7": "Additionally, tapping the Elemental Skill increases Linnea's interruption resistance.",
+      "8": "<br/>",
+      "9": "<i>\"You're up, Lumi!\"</i>"
+    },
+    "skillParams": {
+      "0": "Lumi Pound-Pound Pummeler DMG",
+      "1": "Lumi Heavy Overdrive Hammer DMG",
+      "2": "Lumi Million Ton Crush DMG",
+      "3": "Lumi Duration",
+      "4": "CD",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}% DEF ×2",
+      "1": "{{1, percent(fixed: 1)}}% DEF",
+      "2": "{{2, percent(fixed: 1)}}% DEF",
+      "3": "{{3, fixed(fixed: 1)}}s",
+      "4": "{{4, fixed(fixed: 1)}}s",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Memo: Survival Guide in Extreme Conditions",
+    "description": {
+      "0": "Even master adventurers need proper rest! Linnea summons Lumi to strike in <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Super Power Form</tooltip></strong>, healing nearby party members. For a short duration, she will continuously heal nearby active party members based on Linnea's DEF.",
+      "1": "If Lumi is already on the field when Linnea unleashes Elemental Burst, Lumi's active duration will be reset instead and her Strike Form will not change.",
+      "2": "<br/>",
+      "3": "<i>\"Any professional adventurer worth their salt prizes making it out of a serious jam over making discoveries, however unprecedented!\"</i>"
+    },
+    "skillParams": {
+      "0": "Initial Healing Amount",
+      "1": "Continuous Healing",
+      "2": "Healing Duration",
+      "3": "CD",
+      "4": "Energy Cost",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{1, percent(fixed: 1)}}% DEF+{{0}}",
+      "1": "{{3, percent(fixed: 1)}}% DEF+{{2}}",
+      "2": "{{4, fixed(fixed: 1)}}s",
+      "3": "{{5, fixed(fixed: 1)}}s",
+      "4": "{{6}}",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Field Observation Notes",
+    "description": {
+      "0": "When Lumi is present on the field, the <geo>Geo RES</geo> of opponents near Lumi will decrease by 15%.",
+      "1": "<br/>",
+      "2": "<strong>Moonsign: Ascendant Gleam</strong>: Linnea's Elemental Skill <strong><tooltip ns=char_Linnea_gen baseKey18=skill>Countermeasure: Lumi's Battle Cry!</tooltip></strong> and Elemental Burst <strong><tooltip ns=char_Linnea_gen baseKey18=burst>Memo: Survival Guide in Extreme Conditions</tooltip></strong> are enhanced. After summoning Lumi, the <geo>Geo RES</geo> of opponents near Lumi will be further decreased by 15%."
+    }
+  },
+  "passive2": {
+    "name": "Universal Naturalist Archive",
+    "description": {
+      "0": "Linnea will increase the Elemental Mastery of certain characters in your party according to your current active character. Increase in Elemental Mastery is based on 5% of Linnea's DEF. If your current active character:",
+      "1": [
+        " Is a Moonsign character: Increase this character's Elemental Mastery.",
+        " Is not a Moonsign character: Increase Linnea's own Elemental Mastery."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Moonsign Benediction: Habitat Survey",
+    "description": {
+      "0": "When a party member triggers a Hydro Crystallize reaction, it will be converted into the Lunar-Crystallize reaction, with every 100 DEF that Linnea has increasing Lunar-Crystallize's Base DMG by 0.7%, up to a maximum of 14%.",
+      "1": "<br/>",
+      "2": "Additionally, when Linnea is in the party, the party's <strong>Moonsign</strong> will increase by 1 level."
+    }
+  },
+  "passive": {
+    "name": "Master Adventurer",
+    "description": {
+      "0": "When Linnea is not in combat, the charge time of her <strong>Aimed Shot</strong> is greatly decreased, and she will shoot an <strong>Ultra Convenient Quick Arrow</strong> instead. Different effects will occur depending on the targets hit:",
+      "1": [
+        " Specific animals: <strong>Ultra Convenient Quick Arrow</strong> will be transformed into a special \"Net\" that can capture the essence and form of these animals, using them as a medium to manifest the animal's physical form again. The \"Net\" can only be used for a limited number of times each week. ",
+        " Ore veins used in forging: Linnea will dispatch Lumi, who will quickly strike at the ore marked by the <strong>Ultra Convenient Quick Arrow</strong>, then collect the dislodged ore. If Lumi is not on the field, Linnea will summon her for a short duration to help obtain the ore."
+      ],
+      "2": "<br/>",
+      "3": "The DMG dealt to opponents by Linnea's <strong>Ultra Convenient Quick Arrow</strong> is reduced to 20% of her original Charged Arrow. Additionally, after firing a certain number of <strong>Ultra Convenient Quick Arrows</strong> within a short period of time, Linnea needs to take a temporary break before she can continue using them."
+    }
+  },
+  "constellation1": {
+    "name": "Provisional Classification",
+    "description": {
+      "0": "When unleashing Elemental Skill <strong><tooltip ns=char_Linnea_gen baseKey18=skill>Countermeasure: Lumi's Battle Cry!</tooltip></strong>, or when triggering Moondrift Harmony, Linnea gains 6 stacks of the <strong>Field Catalog</strong> effect for 10s. Max 18 stacks. When nearby party members deal Lunar-Crystallize Reaction DMG, consume 1 stack of Field Catalog to increase the DMG dealt. The increase in DMG is equal to 75% of Linnea's DEF.",
+      "1": "Additionally, when Lumi uses <strong>Million Ton Crush</strong> in her <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Ultimate Power Form</tooltip></strong>, Linnea can consume up to 5 stacks of Field Catalog. Each stack will increase the DMG dealt by 150% of Linnea's DEF."
+    }
+  },
+  "constellation2": {
+    "name": "Tidings of Joy and Sorrow",
+    "description": {
+      "0": "Within 8s after triggering Moondrift Harmony, all <hydro>Hydro</hydro> and <geo>Geo</geo> party members have their CRIT DMG increased by 40%. Additionally, when Lumi uses <strong>Million Ton Crush</strong> in her <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Ultimate Power Form</tooltip></strong>, the CRIT DMG of that attack increases by an additional 150%. ",
+      "1": "<br/>",
+      "2": "<strong>Moonsign: Ascendant Gleam</strong>: When Lumi uses <strong>Heavy Overdrive Hammer</strong> in her <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Super Power Form</tooltip></strong>, or when she uses <strong>Million Ton Crush</strong> in her Ultimate Power Form, an instance of Moondrift Harmony will be triggered. For this instance of Moondrift Harmony, all <hydro>Hydro</hydro> and <geo>Geo</geo> characters in the party will be considered to have applied their Elements in the reaction."
+    }
+  },
+  "constellation3": {
+    "name": "Eventful Log Page",
+    "description": {
+      "0": "Increases the Level of <strong><tooltip ns=char_Linnea_gen baseKey18=skill>Countermeasure: Lumi's Battle Cry!</tooltip></strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "Expert Instinct",
+    "description": {
+      "0": "Within 5s after Moondrift Harmony is triggered, increase the DEF of Linnea and your current active character by 25% respectively. When Linnea is on field, the DEF-increasing effect can be stacked."
+    }
+  },
+  "constellation5": {
+    "name": "Fairyland's Farewell Gift",
+    "description": {
+      "0": "Elemental Burst <strong><tooltip ns=char_Linnea_gen baseKey18=burst>Memo: Survival Guide in Extreme Conditions</tooltip></strong> increases by 3 Levels.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "Golden Beagle's Dream",
+    "description": {
+      "0": "The effects of the Constellation, <strong>Provisional Classification</strong>, are enhanced: When unleashing Elemental Skill <strong><tooltip ns=char_Linnea_gen baseKey18=skill>Countermeasure: Lumi's Battle Cry!</tooltip></strong>, or when triggering Moondrift Harmony, Linnea will directly gain the maximum number of <strong>Field Catalog</strong> stacks. When consuming <strong>Field Catalog</strong>, consume twice the original number of stacks, such that the increase in DMG will be boosted to 150% of the original value.",
+      "1": "<br/>",
+      "2": "<strong>Moonsign: Ascendant Gleam</strong>: Lunar-Crystallize Reaction DMG dealt by nearby party members is <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>elevated</strong></tooltip> by 25%."
+    }
+  }
+}

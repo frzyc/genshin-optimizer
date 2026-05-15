@@ -1,0 +1,14 @@
+{
+  "rarity": "S",
+  "type": "support",
+  "atk_base": 48,
+  "second_statkey": "hp_",
+  "second_statvalue": 0.12,
+  "phase": [
+    { "params": [0.4, 0.25, 0.15, 45] },
+    { "params": [0.46, 0.288, 0.173, 45] },
+    { "params": [0.52, 0.325, 0.195, 45] },
+    { "params": [0.58, 0.363, 0.218, 45] },
+    { "params": [0.64, 0.4, 0.24, 45] }
+  ]
+}

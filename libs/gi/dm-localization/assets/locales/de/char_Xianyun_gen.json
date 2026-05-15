@@ -139,9 +139,9 @@
     "name": "Ausgestiegen aus der Welt",
     "description": {
       "0": "Erhöht den ANG von Xianyun 15 s lang um 20 %, nachdem die Wolkenleiter von <strong>Weiße Wolken der Morgenröte</strong> eingesetzt wurde.",
-      "1": "Außerdem werden die Effekte des passiven Talents „Siehe, die Adeptin in ihrem Reich“ verstärkt: Erhöht, wenn der durch <strong>Sich versammelnde Sterne der Dämmerung</strong> erschaffene Weidenstern über „adeptische Unterstützung“ verfügt, den von aktiven Figuren in der Nähe mit Angriffen aus dem Fall beim Aufkommen verursachten Schaden um 400 % von Xianyuns ANG. Der max. Schadens-Bonus, der auf diese Weise erreicht werden kann, beträgt 18.000 Punkte.",
+      "1": "Außerdem werden die Effekte des Aufstiegstalents „Siehe, die Adeptin in ihrem Reich“ verstärkt: Erhöht, wenn der durch <strong>Sich versammelnde Sterne der Dämmerung</strong> erschaffene Weidenstern über „adeptische Unterstützung“ verfügt, den von aktiven Figuren in der Nähe mit Angriffen aus dem Fall beim Aufkommen verursachten Schaden um 400 % von Xianyuns ANG. Der max. Schadens-Bonus, der auf diese Weise erreicht werden kann, beträgt 18.000 Punkte.",
       "2": "Nur 1 Gegner kann von dem oben erwähnten erhöhten Schaden durch das Aufkommen jedes einzelnen Angriffs aus dem Fall betroffen sein. Jede Figur kann diesen Effekt einmal alle 0,4 s auslösen.",
-      "3": "Das passive Talent „Siehe, die Adeptin in ihrem Reich“ muss zuerst freigeschaltet werden."
+      "3": "Das Aufstiegstalent „Siehe, die Adeptin in ihrem Reich“ muss zuerst freigeschaltet werden."
     }
   },
   "constellation3": {

@@ -21,5 +21,26 @@
     "burst": "Nach Anwendung von Spezialfähigkeiten"
   },
   "afterSprint": "Nach dem Sprinten",
-  "energy": "Energie"
+  "1set": "1er-Set",
+  "2set": "2er-Set",
+  "4set": "4er-Set",
+  "talents": {
+    "passive1": "A1",
+    "passive2": "A4",
+    "passive3": "Passive",
+    "sprint": "Rennen",
+    "constellation1": "C1",
+    "constellation2": "C2",
+    "constellation3": "C3",
+    "constellation4": "C4",
+    "constellation5": "C5",
+    "constellation6": "C6"
+  },
+  "energy": "Energie",
+  "interval": "Intervall",
+  "bonusScaling": {
+    "value": "{{value}}% "
+  },
+  "hpChange": "Nach Veränderung der LP",
+  "level": "Stufe {{count}}"
 }

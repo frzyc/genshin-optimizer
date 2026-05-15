@@ -1,9 +1,11 @@
 {
   "skill": {
-    "eye": "Unheilvolles Auge der Blitzstrafe aktiv"
+    "eye": "Unheilvolles Auge der Blitzstrafe aktiv",
+    "partyCost": "Energiekosten"
   },
   "burst": {
-    "resolves": "Stapelungen von Entschlusskraft"
+    "resolves": "Stapelungen von Entschlusskraft",
+    "burstDmg": "Musou no Hitotachi-SCH"
   },
   "a4": {
     "eleDMG": "Elektro-SCH-Bonus"

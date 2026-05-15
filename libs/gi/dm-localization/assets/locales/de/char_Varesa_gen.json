@@ -171,9 +171,9 @@
   "constellation1": {
     "name": "Nicht auslöschbare Leidenschaft",
     "description": {
-      "0": "Verstärkt den Effekt des passiven Talents „Siegesbewusster Dreifachsprung!“:",
+      "0": "Verstärkt den Effekt des Aufstiegstalents „Siegesbewusster Dreifachsprung!“:",
       "1": "Verleiht Varesa auch beim Ausführen des besonderen „Angriffs aus dem Fall – Wilder Vulkanwirbel“ 5 s lang den „Regenbogensturzangriff“.",
-      "2": "Verursacht während der Dauer des „Regenbogensturzangriffs“ beim Aufkommen mit dem Angriff aus dem Fall stattdessen zusätzlich Schaden in Höhe von 180 % ANG, unabhängig davon, ob Varesa sich im Zustand der „Brennende Leidenschaft“ befindet. Das passive Talent „Siegesbewusster Dreifachsprung!“ muss zuerst freigeschaltet werden.",
+      "2": "Verursacht während der Dauer des „Regenbogensturzangriffs“ beim Aufkommen mit dem Angriff aus dem Fall stattdessen zusätzlich Schaden in Höhe von 180 % ANG, unabhängig davon, ob Varesa sich im Zustand der „Brennende Leidenschaft“ befindet. Das Aufstiegstalent „Siegesbewusster Dreifachsprung!“ muss zuerst freigeschaltet werden.",
       "3": "<br/>",
       "4": "Verringert Varesas Verbrauch an Nachtseelenpunkten oder Phlogiston, wenn sie sich im Modus „Stürmischer Vorstoß“ des Zustands Nachtseelensegen befindet, um 30 %."
     }

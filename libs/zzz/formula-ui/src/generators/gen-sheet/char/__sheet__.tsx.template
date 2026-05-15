@@ -1,5 +1,5 @@
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { buffs, conditionals } from '@genshin-optimizer/zzz/formula'
+import { <%= sheet %> } from '@genshin-optimizer/zzz/formula'
 import { trans } from '../../util'
 import { createBaseSheet } from '../sheetUtil'
 
@@ -13,12 +13,12 @@ const [, ch] = trans('char', key)
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const cond = conditionals[key]
+const cond = <%= sheet %>.conditionals
 // TODO: Cleanup
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const buff = buffs[key]
+const buff = <%= sheet %>.buffs
 
 const sheet = createBaseSheet(key)
 

@@ -62,6 +62,7 @@ type CharacterIcon = {
   passive2?: string
   passive3?: string
   passive?: string
+  lockedPassive?: string
   constellation1?: string
   constellation2?: string
   constellation3?: string
@@ -160,6 +161,7 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
         skills: [_normal, skill, sprint],
         talents,
         inherentProudSkillOpens: [passive1, passive2, passive3, , passive],
+        lockedProudSkillOpens: [lockedPassive],
       } = depot
 
       // skill icon
@@ -201,12 +203,18 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
           proudSkillExcelConfigData[passive3.proudSkillGroupId][0].icon
         )
 
-      // Seems to be only used by SangonomiyaKokomi
       if (passive?.proudSkillGroupId)
         layeredAssignment(
           assetChar,
           [ck, 'passive'],
           proudSkillExcelConfigData[passive.proudSkillGroupId][0].icon
+        )
+
+      if (lockedPassive?.proudSkillGroupId)
+        layeredAssignment(
+          assetChar,
+          [ck, 'lockedPassive'],
+          proudSkillExcelConfigData[lockedPassive.proudSkillGroupId][0].icon
         )
 
       talents.forEach((skId, i) => {

@@ -111,6 +111,22 @@
       "1": "Sát thương tăng thêm tối đa 5000 thông qua cách này."
     }
   },
+  "lockedPassive": {
+    "name": "Nước Đọng Dị Bang",
+    "description": {
+      "0": "Đúc kết sức mạnh mới từ những chuyến hành trình đã qua. Khi cộng hưởng với mỗi loại nguyên tố, sẽ nhận được <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>hiệu quả cường hóa</strong></tooltip> thêm.",
+      "1": "<br/>",
+      "2": "Ngoài ra, khi HP hiện tại của nhân vật trong đội ở gần tăng hoặc giảm 5%, Nhà Lữ Hành sẽ nhận được 1 tầng \"Lưỡi Đao Muôn Nước\", mỗi 4s tối đa nhận 1 tầng Lưỡi Đao Muôn Nước theo cách này, tối đa cộng dồn 3 tầng. Khi có 3 tầng Lưỡi Đao Muôn Nước và thực hiện Trọng Kích, sẽ tiêu hao toàn bộ Lưỡi Đao Muôn Nước và chuyển sang thực hiện <strong>Trọng Kích - Thủy Ngục</strong> đặc biệt.",
+      "3": "<br/>",
+      "4": "<strong>Trọng Kích - Thủy Ngục</strong>",
+      "5": [
+        "Mỗi đòn Trọng Kích sẽ gây <hydro>Sát Thương Nguyên Tố Thủy</hydro> cao hơn, sát thương tăng thêm tương đương 150% Tấn Công của Nhà Lữ Hành.",
+        "Khi HP của Nhà Lữ Hành không dưới 50%, sẽ tiêu hao 10% Giới Hạn HP, tăng thêm sát thương của mỗi đòn Trọng Kích tương đương 100% Tấn Công của Nhà Lữ Hành.",
+        "Khi HP của Nhà Lữ Hành dưới 50%, khi đánh trúng kẻ địch sẽ hồi phục một lần HP cho Nhà Lữ Hành, lượng hồi phục tương đương 25% Giới Hạn HP của Nhà Lữ Hành.",
+        "Mỗi 15s tối đa được thực hiện một lần <strong>Trọng Kích - Thủy Ngục</strong>."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Nước Hồ Lăn Tăn",
     "description": {

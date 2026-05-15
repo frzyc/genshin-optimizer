@@ -12,7 +12,8 @@
       "noRoll": "추가옵션 없음",
       "noStat": "값 없음",
       "eff": "효율: <1></1>",
-      "nextRolls": "다음 강화:"
+      "nextRolls": "다음 강화:",
+      "RollCount_other": "{{count}} 회"
     },
     "rarity": "등급",
     "level": "레벨",
@@ -31,7 +32,9 @@
     "btnRandom": "무작위",
     "btnUpdate": "성유물 업데이트",
     "clearPrompt": "편집 중인 성유물이 있습니다. 정말 편집기의 내용을 비우시겠습니까?",
-    "unknownSetName": "성유물 세트 미지정"
+    "unknownSetName": "성유물 세트 미지정",
+    "delete": "삭제",
+    "confirmDelete": "정말 이 성유물을 삭제하시겠습니까?"
   },
   "artifactFilter": "성유물 필터",
   "filterLocation": {
@@ -43,7 +46,8 @@
     "unequipArtifacts": "미착용 성유물",
     "deleteArtifacts": "성유물 삭제",
     "lockArtifacts": "성유물 잠금",
-    "unlockrtifacts": "성유물 잠금 해제"
+    "unlockrtifacts": "성유물 잠금 해제",
+    "unequipArtifact": "성유물 착용 해제"
   },
   "buttonHint": "주의: 위 빨간 버튼들은 <1>필터링된 성유물</1>에만 적용됩니다",
   "tipsOfTheDay": [
@@ -92,5 +96,14 @@
   "artInInv": "보관함의 성유물",
   "locationsTooltip": "특정 캐릭터로 필터링 하기 위해선 \"착용 중인 성유물\"을 비활성화 하세요",
   "showDup": "중복 표시",
-  "noDupAlert": "보관함에 중복된 성유물이 없습니다."
+  "noDupAlert": "보관함에 중복된 성유물이 없습니다.",
+  "showingNum_other": "총 {{value}} 성유물 중 <1>{{count}}</1> 개 표시 중",
+  "substat_other": "{{count}} 부옵션",
+  "sub_other": "부옵 {{count}}개",
+  "noArtifacts": "아직 성유물이 하나도 없습니다. 원하시면 <1>automatic scanners</1>을 사용해서 빨리 추가할 수 있습니다!",
+  "subheadings": {
+    "general": "일반",
+    "inventory": "보관함",
+    "rollvalue": "부옵션 효율"
+  }
 }

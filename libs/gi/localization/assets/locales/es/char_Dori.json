@@ -1,0 +1,6 @@
+{
+  "c2MultiplierKey_": "Multiplicador de Cañonazo de Genio",
+  "c2DmgKey": "Daño de Cañonazo de Genio",
+  "c4ConnectedBelowHp": "Personaje conectado al genio de la lámpara y con menos del 50% de HP",
+  "c4ConnectedBelowEner": "Personaje conectado al genio de la lámpara y con menos del 50% de Energía"
+}

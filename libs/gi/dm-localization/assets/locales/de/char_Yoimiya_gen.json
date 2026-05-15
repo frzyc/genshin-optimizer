@@ -115,7 +115,7 @@
   "passive2": {
     "name": "Sommerhitze",
     "description": {
-      "0": "Erhöht nach Anwendung von <strong>Ryuukin-Steinbrech</strong> den ANG aller Truppenmitglieder in der Nähe außer Yoimiya selbst 15 s lang um 10 %. Erhöht den ANG für jede Stapelung des passiven Talents „Unruhestifter“ zum Zeitpunkt der Anwendung von <strong>Ryuukin-Steinbrech</strong> durch Yoimiya selbst zusätzlich um 1 %."
+      "0": "Erhöht nach Anwendung von <strong>Ryuukin-Steinbrech</strong> den ANG aller Truppenmitglieder in der Nähe außer Yoimiya selbst 15 s lang um 10 %. Erhöht den ANG für jede Stapelung des Aufstiegstalents „Unruhestifter“ zum Zeitpunkt der Anwendung von <strong>Ryuukin-Steinbrech</strong> durch Yoimiya selbst zusätzlich um 1 %."
     }
   },
   "passive3": {

@@ -124,7 +124,7 @@
   "constellation1": {
     "name": "Terror for the Evildoers",
     "description": {
-      "0": "Gracious Rebuke dari \"There Shall Be a Plea for Justice\" akan dikonversi menjadi:",
+      "0": "Gracious Rebuke dari Talenta Ascension \"There Shall Be a Plea for Justice\" akan dikonversi menjadi:",
       "1": "Saat HP Wriothesley kurang dari 60% atau saat status Chilling Penalty dari <strong>Icefang Rush</strong> sedang berlangsung, akan mendapatkan \"Gracious Rebuke\" saat serangan Repelling Fist tahap ke-lima mengenai musuh. Efek \"Gracious Rebuke\" dapat diperoleh dengan cara ini satu kali setiap 2,5 detik.",
       "2": "<br/>",
       "3": "Selain itu, Rebuke: Vaulting Fist akan mendapatkan penguatan sebagai berikut:",
@@ -133,14 +133,14 @@
         "Saat mengenai musuh, jika sedang berada dalam status Chilling Penalty, durasi status ini akan bertambah 4 detik. Selama satu kali durasi Chilling Penalty berlangsung, hanya dapat menerima perpanjangan durasi satu kali."
       ],
       "5": "<br/>",
-      "6": "Harus membuka Talenta Pasif \"There Shall Be a Plea for Justice\" terlebih dahulu."
+      "6": "Harus membuka Talenta Ascension \"There Shall Be a Plea for Justice\" terlebih dahulu."
     }
   },
   "constellation2": {
     "name": "Shackles for the Arrogant",
     "description": {
-      "0": "Saat melancarkan <strong>Darkgold Wolfbite</strong>, setiap lapis Prosecution Edict dari Talenta Pasif \"There Shall Be a Reckoning for Sin\" akan memberikan peningkatan DMG sebesar 40%.",
-      "1": "Harus membuka Talenta Pasif \"There Shall Be a Reckoning for Sin\" terlebih dahulu."
+      "0": "Saat melancarkan <strong>Darkgold Wolfbite</strong>, setiap lapis Prosecution Edict dari Talenta Ascension \"There Shall Be a Reckoning for Sin\" akan memberikan peningkatan DMG sebesar 40%.",
+      "1": "Harus membuka Talenta Ascension \"There Shall Be a Reckoning for Sin\" terlebih dahulu."
     }
   },
   "constellation3": {
@@ -153,7 +153,7 @@
   "constellation4": {
     "name": "Redemption for the Suffering",
     "description": {
-      "0": "Batas pemulihan yang diberikan Rebuke: Vaulting Fist kepada Wriothesley akan meningkat menjadi 50% Max HP-nya. Harus membuka Talenta Pasif \"There Shall Be a Plea for Justice\" terlebih dahulu.",
+      "0": "Batas pemulihan yang diberikan Rebuke: Vaulting Fist kepada Wriothesley akan meningkat menjadi 50% Max HP-nya. Harus membuka Talenta Ascension \"There Shall Be a Plea for Justice\" terlebih dahulu.",
       "1": "Selain itu, saat Wriothesley menerima pemulihan, jika pemulihan kali ini ada yang berlebihan, maka akan menghasilkan efek berdasarkan ada atau tidaknya Wriothesley di medan pertempuran pada saat ini: Jika Wriothesley berada di medan pertempuran, maka ATK SPD Wriothesley meningkat 20% selama 4 detik; Saat Wriothesley ada di dalam party namun tidak berada di medan pertempuran, ATK SPD seluruh anggota party sendiri akan meningkat 10% selama 6 detik. Kedua efek peningkatan ATK SPD tersebut tidak dapat ditumpuk."
     }
   },
@@ -168,7 +168,7 @@
     "name": "Esteem for the Innocent",
     "description": {
       "0": "CRIT Rate Rebuke: Vaulting Fist meningkat 10%, CRIT DMG Vaulting Fist meningkat 80%. Saat dilancarkan, akan menghasilkan untaian es tambahan yang mengakibatkan <cryo>Cryo DMG</cryo> sebesar 100% DMG awal. DMG yang diakibatkan dengan cara ini akan dianggap sebagai DMG Charged Attack.",
-      "1": "Harus membuka Talenta Pasif \"There Shall Be a Plea for Justice\" terlebih dahulu."
+      "1": "Harus membuka Talenta Ascension \"There Shall Be a Plea for Justice\" terlebih dahulu."
     }
   }
 }

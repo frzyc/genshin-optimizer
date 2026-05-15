@@ -139,9 +139,9 @@
     "name": "Hạc Lệ Viễn Nhân Gian",
     "description": {
       "0": "Sau khi thi triển Bộ Thiên Thê của <strong>Mây Trắng Bình Minh</strong>, Tấn Công của Xianyun tăng 20% trong 15s.",
-      "1": "Ngoài ra, hiệu quả của thiên phú cố định \"Thầm Nghĩ Hẳn Là Tiên Trong Động\" sẽ được cường hóa: Trúc Tinh của <strong>Hái Sao Chạng Vạng</strong> khi có Tiên Lực Trợ Giúp, sẽ tăng sát thương xung kích từ Tấn Công Khi Đáp của nhân vật ra trận trong đội gần đó, mức tăng tương đương với 400% Tấn Công của Xianyun. Thông qua cách thức này, tối đa có thể khiến sát thương xung kích từ Tấn Công Khi Đáp của nhân vật ra trận trong đội gần đó tăng 18000.",
+      "1": "Ngoài ra, hiệu quả của thiên phú đột phá \"Thầm Nghĩ Hẳn Là Tiên Trong Động\" sẽ được cường hóa: Trúc Tinh của <strong>Hái Sao Chạng Vạng</strong> khi có Tiên Lực Trợ Giúp, sẽ tăng sát thương xung kích từ Tấn Công Khi Đáp của nhân vật ra trận trong đội gần đó, mức tăng tương đương với 400% Tấn Công của Xianyun. Thông qua cách thức này, tối đa có thể khiến sát thương xung kích từ Tấn Công Khi Đáp của nhân vật ra trận trong đội gần đó tăng 18000.",
       "2": "Trong một lần sát thương xung kích của Tấn Công Khi Đáp, chỉ có thể gây sát thương nêu trên cho một kẻ địch. Mỗi nhân vật mỗi 0.4s tối đa kích hoạt một lần.",
-      "3": "Hiệu quả này cần mở khóa thiên phú cố định \"Thầm Nghĩ Hẳn Là Tiên Trong Động\"."
+      "3": "Hiệu quả này cần mở khóa thiên phú đột phá \"Thầm Nghĩ Hẳn Là Tiên Trong Động\"."
     }
   },
   "constellation3": {

@@ -1,0 +1,190 @@
+{
+  "name": "Lauma",
+  "title": "Ode alla Luna imperitura",
+  "description": "Una Signora benedetta sia dal chiaro di luna che dalla foresta, la speranza nata dagli Eredi della Luna gelata.",
+  "constellationName": "Cerva Nivea",
+  "auto": {
+    "name": "Pellegrinaggio di Linnunrata",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attacco normale</strong>",
+        "1": "Sferra fino a 3 attacchi che infliggono <dendro>DAN da Dendro</dendro>."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Lauma entra nello stato di Metamorfosi dell'Emissaria spirituale e si trasforma in un'emissaria della foresta, consumando vigore per muoversi per un massimo di 10 s. Quando è in questo stato, Lauma possiede una resistenza all'interruzione aumentata e può consumare vigore aggiuntivo per effettuare due salti consecutivi.",
+        "2": "Quando lo stato di Emissaria spirituale termina, la Metamorfosi entra in TdR. Durante questo periodo di tempo, gli attacchi caricati di Lauma si trasformano in una Preghiera invocaspiriti, grazie alla quale può consumare una certa quantità di vigore per infliggere <dendro>DAN da Dendro ad area</dendro> agli avversari davanti a sé dopo un breve periodo di lancio."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Evocando il potere di Dendro, Lauma si scaglia verso il suolo da mezz'aria, danneggiando tutti gli avversari lungo la sua traiettoria e infliggendo <dendro>DAN da Dendro ad area</dendro> all'impatto con il suolo."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "Costo vigore movimento forma Emissaria spirituale",
+      "4": "Costo vigore salto forma Emissaria spirituale",
+      "5": "Durata max forma Emissaria spirituale",
+      "6": "TdR Metamorfosi dell'Emissaria spirituale",
+      "7": "Costo vigore Preghiera invocaspiriti",
+      "8": "DAN da Preghiera invocaspiriti",
+      "9": "DAN da ATT in picchiata",
+      "10": "DAN da ATT in picchiata basso/alto",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Runo: Riposo senz'alba di Karsikko",
+    "description": {
+      "0": "Intonando silenziosamente un antico inno, Lauma evoca un <tooltip ns=tooltips_gen baseKey18=11190001 values=[]><strong>Santuario di Boscogelo</strong></tooltip> con effetti diversi in base al tipo di pressione dell'abilità.",
+      "1": "<br/>",
+      "2": "<strong>Pressione</strong>",
+      "3": "Intona un Inno della caccia, infliggendo <dendro>DAN da Dendro ad area</dendro>.",
+      "4": "<br/>",
+      "5": "<strong>Pressione prolungata</strong>",
+      "6": "È richiesta almeno 1 unità di <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>Rugiada verdeggiante</strong></tooltip>. Lauma consuma tutta la Rugiada verdeggiante a disposizione e intona un Inno del riposo eterno, infliggendo un'iterazione di <dendro>DAN da Dendro ad area</dendro> normali e un'altra iterazione di <dendro>DAN da Dendro ad area</dendro> considerati DAN da Fioritura lunare. Lauma ottiene un accumulo di <tooltip ns=tooltips_gen baseKey18=11190002 values=[]><strong>Canto della luna</strong></tooltip> per ogni unità di Rugiada verdeggiante consumata. Con la pressione prolungata dell'abilità elementale, Lauma può consumare un massimo di 3 unità di Rugiada verdeggiante.",
+      "7": "<br/>",
+      "8": "Inoltre, quando l'abilità elementale di Lauma o gli attacchi del Santuario di Boscogelo colpiscono un avversario, le <dendro>RES a Dendro</dendro> e a <hydro>Hydro</hydro> di quest'ultimo diminuiscono per 10 s."
+    },
+    "skillParams": {
+      "0": "DAN da pressione",
+      "1": "DAN da 1º colpo pressione prolungata",
+      "2": "DAN da 2º colpo pressione prolungata",
+      "3": "DAN da ATT Santuario di Boscogelo",
+      "4": "Durata Santuario di Boscogelo",
+      "5": "Durata Canto della luna",
+      "6": "Riduzione RES elementale",
+      "7": "Durata riduzione RES elementale",
+      "8": "TdR",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Runo: Cuori uniti nella luna battente",
+    "description": {
+      "0": "Lascia che i desideri di tutti gli esseri viventi diventino il chiaro di luna che bagna la terra. Lauma intona una canzone sacra dell'Estremo Nord e ottiene 18 accumuli di <tooltip ns=tooltips_gen baseKey18=11190003 values=[]><strong>Inno pallido</strong></tooltip>.",
+      "1": "Inoltre, se Lauma usa il suo Tripudio elementale mentre ha degli accumuli di <tooltip ns=tooltips_gen baseKey18=11190002 values=[]><strong>Canto della luna</strong></tooltip>, o se ne ottiene nei 15 s successivi all'utilizzo del Tripudio, li consuma tutti e, per ogni accumulo consumato, ne ottiene 6 di Inno pallido. Quest'effetto può essere innescato una volta per ogni Tripudio elementale, inclusi i 15 s successivi al suo utilizzo.",
+      "2": "<br/>",
+      "3": "<strong>Inno pallido</strong>",
+      "4": "Quando i membri vicini del gruppo infliggono DAN da Fioritura, Iperfioritura, Germinazione o Fioritura lunare, viene consumato 1 accumulo di Inno pallido e i DAN inflitti aumentano in base alla maestria elementale di Lauma. Se più avversari contemporaneamente subiscono DAN, vengono consumati più accumuli di Inno pallido in base al numero di avversari colpiti.",
+      "5": "La durata di ogni accumulo di Inno pallido è indipendente dalle altre."
+    },
+    "skillParams": {
+      "0": "Inno pallido da Tripudio elementale",
+      "1": "Conversione Canto della luna in Inno pallido",
+      "2": "Aumento DAN da Fioritura, Iperfioritura e Germinazione",
+      "3": "Aumento DAN da Fioritura lunare",
+      "4": "Durata Inno pallido",
+      "5": "TdR",
+      "6": "Costo energia",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Luce per la notte glaciale",
+    "description": {
+      "0": "Quando Lauma usa la sua abilità elementale <strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo: Riposo senz'alba di Karsikko</tooltip></strong>, conferisce vari effetti positivi per i 20 s successivi in base al <strong>Presagio lunare</strong> del gruppo. Gli effetti positivi conferiti da livelli diversi di Presagio lunare non si accumulano.",
+      "1": "<br/>",
+      "2": "<strong>Presagio lunare: Barlume nascente</strong>",
+      "3": "I DAN da Fioritura, Iperfioritura e Germinazione inflitti da tutti i membri vicini del gruppo possono convertirsi in colpi CRIT, con un tasso di CRIT e un DAN da CRIT fissati rispettivamente a un 15% e un 100%. Il tasso di CRIT di quest'effetto si può accumulare con il tasso di CRIT ottenuto da effetti simili che permettono a queste reazioni elementali di innescare colpi CRIT.",
+      "4": "<br/>",
+      "5": "<strong>Presagio lunare: Barlume ascendente</strong>",
+      "6": "Il tasso di CRIT e i DAN da CRIT dei DAN da Fioritura lunare dei membri vicini del gruppo aumentano rispettivamente di un 10% e di un 20%."
+    }
+  },
+  "passive2": {
+    "name": "Purificazione nella sorgente",
+    "description": {
+      "0": "Per ogni punto di maestria elementale in suo possesso, Lauma ottiene i seguenti benefici:",
+      "1": [
+        " i DAN inflitti dalla sua abilità elementale aumentano di uno 0,04%, fino a un 32% di aumento complessivo;",
+        " il TdR dell'attacco caricato <strong>Metamorfosi dell'Emissaria spirituale</strong> si riduce di uno 0,02%, fino a un 20% di riduzione complessiva."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Benedizione del Presagio lunare: Coro della natura",
+    "description": {
+      "0": "Quando un membro del gruppo innesca una reazione di Fioritura, questa si converte in una reazione di Fioritura lunare, i cui DAN base aumentano di uno 0,0175% per ogni punto di maestria elementale di Lauma, fino a un 14% massimo.",
+      "1": "<br/>",
+      "2": "Inoltre, quando Lauma è nel gruppo, il <strong>Presagio lunare</strong> del gruppo aumenta di 1 livello."
+    }
+  },
+  "passive": {
+    "name": "Preghiere per la foresta",
+    "description": {
+      "0": "Mostra sulla minimappa la posizione delle <strong>risorse uniche di Nod-Krai</strong>.",
+      "1": "Inoltre, Lauma sembra avere un'affinità speciale con alcuni animaletti affetti dal Kuuvahki..."
+    }
+  },
+  "constellation1": {
+    "name": "\"Salmodiate, o mie labbra\"",
+    "description": {
+      "0": "Dopo aver usato la sua abilità elementale <strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo: Riposo senz'alba di Karsikko</tooltip></strong> o il Tripudio elementale <strong><tooltip ns=char_Lauma_gen baseKey18=burst>Runo: Cuori uniti nella luna battente</tooltip></strong>, Lauma ottiene Fili della vita per 20 s.",
+      "1": "In questo periodo di tempo, quando i membri del gruppo vicini innescano reazioni di Fioritura lunare, i PS dei personaggi attivi nelle vicinanze si ripristinano di una quantità pari a un 500% della maestria elementale di Lauma. Quest'effetto può attivarsi una volta ogni 1,9 s.",
+      "2": "Inoltre, il costo di vigore della forma di Emissaria spirituale di Lauma si riduce di un 40%, e la sua durata massima aumenta di 5 s."
+    }
+  },
+  "constellation2": {
+    "name": "\"Intessete moniti e novelle del Nord\"",
+    "description": {
+      "0": "Il Tripudio elementale <strong><tooltip ns=char_Lauma_gen baseKey18=burst>Runo: Cuori uniti nella luna battente</tooltip></strong> viene potenziato.",
+      "1": [
+        " Gli effetti di <tooltip ns=tooltips_gen baseKey18=11190003 values=[]><strong>Inno pallido</strong></tooltip> ricevono un potenziamento: i DAN da Fioritura, Iperfioritura e Germinazione inflitti da tutti i membri vicini del gruppo aumentano di un 500% della maestria elementale di Lauma, mentre i DAN da Fioritura lunare aumentano di un 400% della medesima statistica."
+      ],
+      "2": "<br/>",
+      "3": "Quando <strong>Presagio lunare: Barlume ascendente</strong> è attivo, i DAN da Fioritura lunare inflitti da tutti i membri vicini del gruppo aumentano di un 40%."
+    }
+  },
+  "constellation3": {
+    "name": "\"Della scaltra volpe non percorrerete il sentiero\"",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong><tooltip ns=char_Lauma_gen baseKey18=burst>Runo: Cuori uniti nella luna battente</tooltip></strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "\"Né bramerete del grande orso la forza\"",
+    "description": {
+      "0": "Quando gli attacchi del <tooltip ns=tooltips_gen baseKey18=11190001 values=[]><strong>Santuario di Boscogelo</strong></tooltip> evocato dall'abilità elementale <strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo: Riposo senz'alba di Karsikko</tooltip></strong> colpiscono gli avversari, i punti di energia elementale di Lauma si ripristinano di 4. Quest'effetto può attivarsi una volta ogni 5 s."
+    }
+  },
+  "constellation5": {
+    "name": "\"Se della verità dovrò dar testimonianza\"",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo: Riposo senz'alba di Karsikko</tooltip></strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "\"Sangue e lacrime offro al chiaro di luna\"",
+    "description": {
+      "0": "Quando il <tooltip ns=tooltips_gen baseKey18=11190001 values=[]><strong>Santuario di Boscogelo</strong></tooltip> attacca gli avversari, infligge un'iterazione aggiuntiva di <dendro>DAN da Dendro ad area</dendro> pari a un 185% della maestria elementale di Lauma. Tali DAN sono considerati DAN da Fioritura lunare. Quest'iterazione di DAN non consuma accumuli di <tooltip ns=tooltips_gen baseKey18=11190003 values=[]><strong>Inno pallido</strong></tooltip>, conferendone a Lauma altri 2 e ripristinando inoltre la durata degli accumuli ottenuti in questo modo.",
+      "1": "Quest'effetto può innescarsi fino a 8 volte per ciascun uso del Santuario di Boscogelo. Quando usa l'abilità elementale <strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo: Riposo senz'alba di Karsikko</tooltip></strong>, tutti gli accumuli di Inno pallido ottenuti nel modo sopra descritto vengono rimossi.",
+      "2": "<br/>",
+      "3": "In più, se Lauma usa un attacco normale mentre ha degli accumuli di Inno pallido, ne consuma 1 affinché il suddetto attacco infligga <dendro>DAN da Dendro</dendro> pari a un 150% della sua maestria elementale. Tali DAN sono considerati DAN da Fioritura lunare.",
+      "4": "<br/>",
+      "5": "Quando <strong>Presagio lunare: Barlume ascendente</strong> è attivo, i DAN da Fioritura lunare di tutti i membri vicini del gruppo vengono <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>innalzati</strong></tooltip> di un 25%."
+    }
+  }
+}

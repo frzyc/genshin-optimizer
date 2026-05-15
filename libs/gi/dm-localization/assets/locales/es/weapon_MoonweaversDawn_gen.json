@@ -1,0 +1,24 @@
+{
+  "name": "Alba de la Tejelunas",
+  "description": {
+    "0": "Una afilada espada de plata pura e impoluta que puede atravesar armaduras muy robustas con la suavidad de la luz lunar. Dicen que fue un objeto sagrado bendecido por la primera Cantalunas."
+  },
+  "passiveName": "Testamento de la plata secreta",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta en un <cryo>20%</cryo> el daño de la Habilidad Definitiva. Si la Energía Elemental máxima del personaje no supera los 60/40 pts., el daño de la Habilidad Definitiva aumenta en un <cryo>16/28%</cryo> adicional."
+    },
+    "1": {
+      "0": "Aumenta en un <cryo>25%</cryo> el daño de la Habilidad Definitiva. Si la Energía Elemental máxima del personaje no supera los 60/40 pts., el daño de la Habilidad Definitiva aumenta en un <cryo>20/35%</cryo> adicional."
+    },
+    "2": {
+      "0": "Aumenta en un <cryo>30%</cryo> el daño de la Habilidad Definitiva. Si la Energía Elemental máxima del personaje no supera los 60/40 pts., el daño de la Habilidad Definitiva aumenta en un <cryo>24/42%</cryo> adicional."
+    },
+    "3": {
+      "0": "Aumenta en un <cryo>35%</cryo> el daño de la Habilidad Definitiva. Si la Energía Elemental máxima del personaje no supera los 60/40 pts., el daño de la Habilidad Definitiva aumenta en un <cryo>28/49%</cryo> adicional."
+    },
+    "4": {
+      "0": "Aumenta en un <cryo>40%</cryo> el daño de la Habilidad Definitiva. Si la Energía Elemental máxima del personaje no supera los 60/40 pts., el daño de la Habilidad Definitiva aumenta en un <cryo>32/56%</cryo> adicional."
+    }
+  }
+}

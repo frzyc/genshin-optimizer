@@ -1,14 +1,39 @@
 {
   "intro": "<0>¿Qué es Genshin Optimizer?</0><1>Genshin Optimizer (GO) es una página web de código libre hecha por fans del juego RPG de acción gacha <1><strong>Genshin Impact</strong></1>. Está principalmente dirigido a ayudar a los jugadores con un aspecto complejo del juego: la Optimización de Artefactos. Ya que los artefactos son elementos altamente aleatorizados que contribuyen directamente a cómo de efectivos son tus personajes en el juego, GO tratará de encontrar los mejores artefactos para tus personajes basado en tu inventario de artefactos actual.</1><2>GO puede realizar un seguimiento de tus artefactos, permitiendo filtrar/comparar artefactos con más facilidad, sirviendo como herramienta para ayudar a los usuarios a encontrar buenos artefactos en su inventario para subir de nivel, y malos artefactos para usar como relleno.</2><3>Como GO puede replicar las estadísticas exactas de cualquier personaje, junto con los cálculos de todas sus cifras de daño hasta un 1% de precisión, también puede servir como calculadora de Daño, y como herramienta para teorizar.</3>",
   "quickLinksCard": {
+    "title": "Enlaces Rápidos",
     "buttons": {
+      "tyGuide": {
+        "title": "Lista de Reproducción de Guías de Youtube",
+        "tooltip": "Aprende a usar el Optimizador de Genshin"
+      },
+      "scanners": {
+        "title": "Escáneres Automáticos",
+        "tooltip": "Programas de terceros que escanean automáticamente artefactos del juego"
+      },
       "kqm": {
         "title": "KeqingMains"
+      },
+      "devDiscord": {
+        "title": "Discord de Desarrollo de Genshin",
+        "tooltip": "Comunidad de desarrolladores de herramientas de Genshin"
+      },
+      "good": {
+        "title": "BUENA Documentación",
+        "tooltip": "Documentación del Descriptor de Objetos Abiertos de Genshin"
       }
     }
   },
+  "inventoryCard": {
+    "title": "Inventario del Optimizador de Genshin"
+  },
+  "vidGuideCard": {
+    "title": "Guías de Video"
+  },
   "teamCard": {
+    "title": "Conoce al Equipo",
     "jobTitle": {
+      "leadDev": "Desarrollador Principal",
       "dev": "Desarrollador",
       "mod": "Moderador"
     }

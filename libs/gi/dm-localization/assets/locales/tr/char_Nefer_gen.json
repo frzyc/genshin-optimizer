@@ -1,0 +1,169 @@
+{
+  "name": "Nefer",
+  "title": "Kumların Altındaki Sır",
+  "description": "Sırlar Arşivi'nin son derece yetenekli sahibi.",
+  "constellationName": "Strateji Oyunu",
+  "auto": {
+    "name": "Saldıran Yılan",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "Saldıran bir yılanın hiddeti ve zarafetiyle <dendro>Doğa Hasarı</dendro> veren en fazla 4 tekme gerçekleştirir."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Nefer Sürünme durumuna girer ve en fazla 2,5 saniyeliğine Dayanıklılık tüketerek hızla ileri gider. Beceri düğmesi bırakıldığında, yeteneğin süresi bittiğinde veya Dayanıklılık kalmadığında Nefer Sürünme durumundan çıkar ve belirli bir miktar ek Dayanıklılık tüketerek düşmanlara <dendro>Doğa Hasarı</dendro> verir. <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Gölge Dansı</strong></tooltip> durumundayken ek Dayanıklılık tüketimi daha az olur.",
+        "2": "Ayrıca <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Senet Stratejisi: Binbir Gece Dansı</tooltip></strong> Element Becerisini kullanmak veya Nefer Sürünme durumundayken depar atmak Nefer'ı bu durumdan çıkarmaz."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Nefer, Doğanın gücünü çağırarak havadayken yere doğru atılır ve yoluna çıkan tüm düşmanlara hasar verir. Yere vurduğunda <dendro>Doğa Alan Hasarı</dendro> verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "Yüklü Saldırı Hasarı",
+      "5": "Yüklü Saldırı Yükleme Dayanıklılık Tüketimi",
+      "6": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "7": "Gölge Dansı Yüklü Saldırı Dayanıklılık Maliyeti",
+      "8": "Havadan Saldırı Hasarı",
+      "9": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Senet Stratejisi: Binbir Gece Dansı",
+    "description": {
+      "0": "Hanedanları yıkan, büyük kum denizinde bir kış gecesi kadar soğuk fakat ay ışığının düştüğü ipek örtüler kadar zarif bir dans. Nefer ileri atılarak <dendro>Doğa Alan Hasarı</dendro> verir ve <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Gölge Dansı</strong></tooltip> durumuna girer.",
+      "1": "Gölge Dansı durumundayken eğer en az 1 <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>Taze Çiyin</strong></tooltip> varsa Nefer'ın Yüklü Saldırıları değişerek özel Yüklü Saldırı <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Hayali Performans</strong></tooltip> olur ve Dayanıklılık tüketmez. Gölge Dansı durumundayken Nefer'ın müdahaleye karşı direnci artar.",
+      "2": "<br/>",
+      "3": "Başlangıçta iki yüke sahiptir.",
+      "4": "<br/>",
+      "5": "<i>\"Dünya bir oyun, piyonlarıysa bir perdenin arkasında saklı. Tuzağa düşmemek için elde edebileceğin tüm bilgileri toplamalısın. Sırların anlamı işte budur.\"</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Hayali Performans 1 Vuruş Hasarı (Nefer)",
+      "2": "Hayali Performans 2 Vuruş Hasarı (Nefer)",
+      "3": "Hayali Performans 1 Vuruş Hasarı (Gölgeler)",
+      "4": "Hayali Performans 2 Vuruş Hasarı (Gölgeler)",
+      "5": "Hayali Performans 3 Vuruş Hasarı (Gölgeler)",
+      "6": "Hayali Performans Yük Sayısı",
+      "7": "Gölge Dansı Süresi",
+      "8": "BS",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Kutsal Yemin: Gerçek Gözün Yanılsaması",
+    "description": {
+      "0": "Thoth'un gerçek görüşüyle sahte gizemleri \"ifşa\" eder ve önündeki düşmanlara <dendro>Doğa Alan Hasarı</dendro> verir. Nefer, Element Patlamasını kullanırken sahip olduğu tüm <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>Yanılgı Perdelerini</strong></tooltip> tüketerek o anki Element Patlamasının verdiği Hasarı artırır.",
+      "1": "<br/>",
+      "2": "<i>Yakıcı kumlardaki şarkıcıların seslendirdiği Leylek Kral'ın lütufları, aslında vahim lanetlere benzer.</i>"
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "Hasar Bonusu",
+      "3": "BS",
+      "4": "Enerji Maliyeti",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Ay Işığına Bahis",
+    "description": {
+      "0": "Nefer, grubun <strong>Ay Sembolüne</strong> karşılık gelen farklı güçlendirmeler kazanır.",
+      "1": "<br/>",
+      "2": "<strong>Ay Sembolü: Yükselen Parıltı</strong>: Nefer, <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Senet Stratejisi: Binbir Gece Dansı</tooltip></strong> Element Becerisini kullandığında alandaki tüm Doğa Çekirdekleri ve Bereketli Çekirdekler dönüşerek Aldatıcı Tohumlar haline gelir. Ayrıca sonraki 15sn içinde yakındaki karakterlerin tetiklediği ve Doğa Çekirdeği oluşturan tüm Ay Çiçeklenmesi tepkimeleri de Aldatıcı Tohumlar oluşturur. Aldatıcı Tohumlar, Aşırı Çiçeklenme veya Filizlenme tepkimelerini tetikleyemez ve patlamaz.",
+      "3": "Nefer bir Yüklü Saldırı veya <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Hayali Performans</strong></tooltip> gerçekleştirdiğinde belirli bir menzildeki Aldatıcı Tohumları toplayabilir ve topladığı her tohum başına 1 kademe <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>Yanılgı Perdesi</strong></tooltip> kazanır. Bu etki 3 kademeye ulaştığında üçüncü kademenin süresi yenilenir ve 8 saniyeliğine Nefer'ın Element Ustalığı 100 artar."
+    }
+  },
+  "passive2": {
+    "name": "Tozun ve Kumun Kızı",
+    "description": {
+      "0": "Nefer <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Gölge Dansı</strong></tooltip> durumundayken, bir grup üyesinin Ay Çiçeklenmesi tepkimesi tetiklemesinden sonraki 5sn boyunca Nefer'ın <strong><tooltip ns=char_Nefer_gen baseKey18=normal>Sürünme</tooltip></strong> durumu ilave <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>Taze Çiy</strong></tooltip> verir. Nefer'ın 500 üzerindeki her 100 Element Ustalığı bu ilave Taze Çiy etkisini %10 artırır, bu şekilde en fazla %50 olabilir."
+    }
+  },
+  "passive3": {
+    "name": "Ay Sembolü Kutsaması: Gün Batımıyla Aydınlanan Saçaklar",
+    "description": {
+      "0": "Bir grup üyesi Çiçeklenme tepkimesi tetiklediğinde bu Ay Çiçeklenmesi tepkimesine dönüşür. Nefer'ın sahip olduğu her Element Ustalığı puanı, Ay Çiçeklenmesi tepkimesinin Temel Hasarını %0,0175 artırır, Temel Hasar bu şekilde en fazla %14 artabilir.",
+      "1": "<br/>",
+      "2": "Ayrıca grubunda Nefer olduğunda grubunun <strong>Ay Sembolü</strong> 1 seviye yükselir."
+    }
+  },
+  "passive": {
+    "name": "Altın Kasa Komplosu",
+    "description": {
+      "0": "20 saatliğine bir Nod-Krai Keşfine gönderildiğinde %25 daha fazla ödül kazanır."
+    }
+  },
+  "constellation1": {
+    "name": "Planlama Başarı Getirir",
+    "description": {
+      "0": "Nefer'ın <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Hayali Performansı</strong></tooltip> tarafından tetiklenen Ay Çiçeklenmesi tepkimelerinin Temel Hasarı, Nefer'ın Element Ustalığının %60'ı kadar artar. Bu etki <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>Yanılgı Perdesi</strong></tooltip> ile de güçlenir."
+    }
+  },
+  "constellation2": {
+    "name": "Gözlem Stratejiyi Destekler",
+    "description": {
+      "0": "<tooltip ns=char_Nefer_gen baseKey18=passive1><strong>Ay Işığına Bahis</strong></tooltip> Yükseltme Yeteneğinin etkilerini geliştirir: <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>Yanılgı Perdesi</strong></tooltip> süresini 5sn uzatır ve kademe sınırını 5'e yükseltir; ayrıca <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Hayali Performansın</strong></tooltip> verdiği Hasar, orijinal Hasarının %140'ına kadar artabilir. Nefer <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Senet Stratejisi: Binbir Gece Dansı</tooltip></strong> Element Becerisini kullandığında anında 2 kademe Yanılgı Perdesi kazanır. Ayrıca Yanılgı Perdesi 5 kademeye ulaştığında beşinci kademenin süresi yenilenir ve 8 saniyeliğine Nefer'ın Element Ustalığı 200 artar.",
+      "1": "\"Ay Işığına Bahis\" Yükseltme Yeteneğinin açılmış olması gerekir."
+    }
+  },
+  "constellation3": {
+    "name": "Aldatmaca Gerçeği Gizler",
+    "description": {
+      "0": "<strong><tooltip ns=char_Nefer_gen baseKey18=skill>Senet Stratejisi: Binbir Gece Dansı</tooltip></strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Sanrı Mantığı Hapseder",
+    "description": {
+      "0": "Nefer alandayken ve <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Gölge Dansı</strong></tooltip> durumundayken %25 daha hızlı Taze Çiy kazanırsın.",
+      "1": "Ayrıca Nefer Gölge Dansı durumundayken yakındaki düşmanların <dendro>Doğa Direnci</dendro> %20 düşer. Nefer Gölge Dansı durumundan çıktıktan veya düşmanlardan belirli bir mesafe uzak kaldıktan 4,5 saniye sonra bu etki kaldırılır."
+    }
+  },
+  "constellation5": {
+    "name": "Uçlarda Fırsatlar Bekler",
+    "description": {
+      "0": "<strong><tooltip ns=char_Nefer_gen baseKey18=burst>Kutsal Yemin: Gerçek Gözün Yanılsaması</tooltip></strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Rüzgar Tersine Estiğinde Zafer Gelir",
+    "description": {
+      "0": "Nefer <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Hayali Performans</strong></tooltip> gerçekleştirdiğinde kendi verdiği ikinci aşama Hasar değişerek Element Ustalığının %85'i kadar <dendro>Doğa Alan Hasarı</dendro> verir. Ayrıca Hayali Performans saldırıları sona erdiğinde Nefer'ın Element Ustalığının %120'si kadar <dendro>Doğa Alan Hasarı</dendro> veren ek bir saldırı gerçekleşir. Yukarıda bahsedilen tüm Hasarlar, Hayali Performans tarafından verilen Ay Çiçeklenmesi Hasarı sayılır.",
+      "1": "<br/>",
+      "2": "<strong>Ay Sembolü: Yükselen Parıltı</strong>",
+      "3": "Nefer'ın Ay Çiçeklenmesi Hasarı %15 <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>artar</strong></tooltip>."
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "title": "🛑 Neuer Optimizer Tab Erkannt 🛑",
+  "p1": "Es scheint so, als ob du Genshin in einem anderen Tab geöffnet hast 💞. GO ist nicht für das Nutzen in mehreren Tabs ausgelegt📵! Dies trotzdem zu tun kann zu folgenden Problemen führen:",
+  "symptom": {
+    "1": "Desynchronisation von Daten zwischen Tabs🙃",
+    "2": "Datenbankkorruption 💔",
+    "3": "Bauchschmerzen🤰 und frustrierte Genshin Optimizer Entwickler😡",
+    "4": "In seltenen Fällen, TOD☠️"
+  },
+  "p2": "Wir haben dies verhindert, indem wir diese Nachricht angezeigt haben 📝. Du hast nun die Wahl, du kannst nun entweder:",
+  "choice": {
+    "1": "Diesen Tab schließen 🔪, und den neuen Tab nutzen 🆕",
+    "2": "Den neuen Tab schließen ↩️, und nur dann wenn du auch WIRKLICH sicher bist, dass dies hier der EINZIGE offene Tab ist 🔂, diese Seite neu laden🔄"
+  },
+  "refresh": "Seite neu Laden"
+}

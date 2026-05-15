@@ -1,0 +1,24 @@
+{
+  "name": "Relicário da Verdade",
+  "description": {
+    "0": "Um baú de chifres cravejado de citrinitas e jade. Dizem as lendas que já foi consagrado num templo nas profundezas de Tulaytullah, a Cidade de Safira."
+  },
+  "passiveName": "Essência da Falsidade",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta a Taxa CRIT em <cryo>8%</cryo>. Ao lançar a Habilidade Elemental, o portador obtém o efeito Segredo das Falsas Palavras: aumenta a Proficiência Elemental em <cryo>80</cryo> por 12s. Quando o portador causa Dano de Florescimento Lunar contra o inimigo, obtém o efeito Lua da Verdade: aumenta o Dano CRIT em <cryo>24%</cryo> por 4s. Quando os efeitos Segredo das Falsas Palavras e Lua da Verdade existirem simultaneamente, esses efeitos aumentarão em 50% cada."
+    },
+    "1": {
+      "0": "Aumenta a Taxa CRIT em <cryo>10%</cryo>. Ao lançar a Habilidade Elemental, o portador obtém o efeito Segredo das Falsas Palavras: aumenta a Proficiência Elemental em <cryo>100</cryo> por 12s. Quando o portador causa Dano de Florescimento Lunar contra o inimigo, obtém o efeito Lua da Verdade: aumenta o Dano CRIT em <cryo>30%</cryo> por 4s. Quando os efeitos Segredo das Falsas Palavras e Lua da Verdade existirem simultaneamente, esses efeitos aumentarão em 50% cada."
+    },
+    "2": {
+      "0": "Aumenta a Taxa CRIT em <cryo>12%</cryo>. Ao lançar a Habilidade Elemental, o portador obtém o efeito Segredo das Falsas Palavras: aumenta a Proficiência Elemental em <cryo>120</cryo> por 12s. Quando o portador causa Dano de Florescimento Lunar contra o inimigo, obtém o efeito Lua da Verdade: aumenta o Dano CRIT em <cryo>36%</cryo> por 4s. Quando os efeitos Segredo das Falsas Palavras e Lua da Verdade existirem simultaneamente, esses efeitos aumentarão em 50% cada."
+    },
+    "3": {
+      "0": "Aumenta a Taxa CRIT em <cryo>14%</cryo>. Ao lançar a Habilidade Elemental, o portador obtém o efeito Segredo das Falsas Palavras: aumenta a Proficiência Elemental em <cryo>140</cryo> por 12s. Quando o portador causa Dano de Florescimento Lunar contra o inimigo, obtém o efeito Lua da Verdade: aumenta o Dano CRIT em <cryo>42%</cryo> por 4s. Quando os efeitos Segredo das Falsas Palavras e Lua da Verdade existirem simultaneamente, esses efeitos aumentarão em 50% cada."
+    },
+    "4": {
+      "0": "Aumenta a Taxa CRIT em <cryo>16%</cryo>. Ao lançar a Habilidade Elemental, o portador obtém o efeito Segredo das Falsas Palavras: aumenta a Proficiência Elemental em <cryo>160</cryo> por 12s. Quando o portador causa Dano de Florescimento Lunar contra o inimigo, obtém o efeito Lua da Verdade: aumenta o Dano CRIT em <cryo>48%</cryo> por 4s. Quando os efeitos Segredo das Falsas Palavras e Lua da Verdade existirem simultaneamente, esses efeitos aumentarão em 50% cada."
+    }
+  }
+}

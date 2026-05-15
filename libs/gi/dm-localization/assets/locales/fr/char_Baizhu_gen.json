@@ -111,7 +111,7 @@
   "passive2": {
     "name": "Terre mère",
     "description": {
-      "0": "Les personnages soignés par un <strong>bouclier aseptique</strong> obtiennent l'effet Année de la chance boisée : pour chaque tranche de 1 000 PV max que Baizhu possède jusqu'à 50 000 PV, les DGT infligés par leurs réactions de Brûlure, de Fleurissement, d'Exubérance et de Bourgeonnement augmentent de 2 % et les augmentations de DGT accordées par leurs réactions de Suractivation et de Propagation augmentent de 0,8 %, pendant 6 s."
+      "0": "Les personnages soignés par un <strong>bouclier aseptique</strong> obtiennent l'effet Année de la chance boisée : pour chaque tranche de 1 000 PV max que Baizhu possède jusqu'à 50 000 PV, les DGT infligés par leurs réactions de Brûlure, de Fleurissement, d'Exubérance et de Bourgeonnement augmentent de 2 %, les DGT infligés par leurs réactions de Sélénofleurissement augmentent de 0,7 % et les augmentations de DGT accordées par leurs réactions de Suractivation et de Propagation augmentent de 0,8 %, pendant 6 s."
     }
   },
   "passive3": {

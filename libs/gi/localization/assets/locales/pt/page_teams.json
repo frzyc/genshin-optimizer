@@ -1,0 +1,4 @@
+{
+  "showingNum_one": "Mostrando <1>{{count}}</1> de {{value}} Equipe",
+  "showingNum_other": "Mostrando <1>{{count}}</1> de {{value}} Equipes"
+}

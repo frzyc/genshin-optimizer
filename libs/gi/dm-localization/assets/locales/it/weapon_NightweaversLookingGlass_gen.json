@@ -1,0 +1,24 @@
+{
+  "name": "Specchio dell'Intessinotte",
+  "description": {
+    "0": "Uno specchio realizzato in argento, che si dice abbia assistito alla nascita della Fanciulla lunare. Viene considerato una reliquia sacra dagli Eredi della Luna gelata."
+  },
+  "passiveName": "Inno millenario",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando l'abilità elementale del personaggio che equipaggia l'arma infligge DAN da Hydro o da Dendro, ottiene l'effetto Preghiera dell'Estremo Nord, che aumenta la maestria elementale di <cryo>60</cryo> per 4,5 s. Quando i membri vicini del gruppo innescano una reazione di Fioritura lunare, il personaggio che equipaggia l'arma ottiene Verso della Luna nuova, che aumenta la maestria elementale di <cryo>60</cryo> per 10 s. Quando sono attivi sia Preghiera dell'Estremo Nord che Verso della Luna nuova, i DAN da Fioritura di tutti i membri vicini del gruppo aumentano di un <cryo>120%</cryo>, quelli da Iperfioritura e da Germinazione di un <cryo>80%</cryo> e quelli da Fioritura lunare di un <cryo>40%</cryo>. Non cumulabile. Gli effetti sopracitati possono attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "1": {
+      "0": "Quando l'abilità elementale del personaggio che equipaggia l'arma infligge DAN da Hydro o da Dendro, ottiene l'effetto Preghiera dell'Estremo Nord, che aumenta la maestria elementale di <cryo>75</cryo> per 4,5 s. Quando i membri vicini del gruppo innescano una reazione di Fioritura lunare, il personaggio che equipaggia l'arma ottiene Verso della Luna nuova, che aumenta la maestria elementale di <cryo>75</cryo> per 10 s. Quando sono attivi sia Preghiera dell'Estremo Nord che Verso della Luna nuova, i DAN da Fioritura di tutti i membri vicini del gruppo aumentano di un <cryo>150%</cryo>, quelli da Iperfioritura e da Germinazione di un <cryo>100%</cryo> e quelli da Fioritura lunare di un <cryo>50%</cryo>. Non cumulabile. Gli effetti sopracitati possono attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "2": {
+      "0": "Quando l'abilità elementale del personaggio che equipaggia l'arma infligge DAN da Hydro o da Dendro, ottiene l'effetto Preghiera dell'Estremo Nord, che aumenta la maestria elementale di <cryo>90</cryo> per 4,5 s. Quando i membri vicini del gruppo innescano una reazione di Fioritura lunare, il personaggio che equipaggia l'arma ottiene Verso della Luna nuova, che aumenta la maestria elementale di <cryo>90</cryo> per 10 s. Quando sono attivi sia Preghiera dell'Estremo Nord che Verso della Luna nuova, i DAN da Fioritura di tutti i membri vicini del gruppo aumentano di un <cryo>180%</cryo>, quelli da Iperfioritura e da Germinazione di un <cryo>120%</cryo> e quelli da Fioritura lunare di un <cryo>60%</cryo>. Non cumulabile. Gli effetti sopracitati possono attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "3": {
+      "0": "Quando l'abilità elementale del personaggio che equipaggia l'arma infligge DAN da Hydro o da Dendro, ottiene l'effetto Preghiera dell'Estremo Nord, che aumenta la maestria elementale di <cryo>105</cryo> per 4,5 s. Quando i membri vicini del gruppo innescano una reazione di Fioritura lunare, il personaggio che equipaggia l'arma ottiene Verso della Luna nuova, che aumenta la maestria elementale di <cryo>105</cryo> per 10 s. Quando sono attivi sia Preghiera dell'Estremo Nord che Verso della Luna nuova, i DAN da Fioritura di tutti i membri vicini del gruppo aumentano di un <cryo>210%</cryo>, quelli da Iperfioritura e da Germinazione di un <cryo>140%</cryo> e quelli da Fioritura lunare di un <cryo>70%</cryo>. Non cumulabile. Gli effetti sopracitati possono attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "4": {
+      "0": "Quando l'abilità elementale del personaggio che equipaggia l'arma infligge DAN da Hydro o da Dendro, ottiene l'effetto Preghiera dell'Estremo Nord, che aumenta la maestria elementale di <cryo>120</cryo> per 4,5 s. Quando i membri vicini del gruppo innescano una reazione di Fioritura lunare, il personaggio che equipaggia l'arma ottiene Verso della Luna nuova, che aumenta la maestria elementale di <cryo>120</cryo> per 10 s. Quando sono attivi sia Preghiera dell'Estremo Nord che Verso della Luna nuova, i DAN da Fioritura di tutti i membri vicini del gruppo aumentano di un <cryo>240%</cryo>, quelli da Iperfioritura e da Germinazione di un <cryo>160%</cryo> e quelli da Fioritura lunare di un <cryo>80%</cryo>. Non cumulabile. Gli effetti sopracitati possono attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    }
+  }
+}

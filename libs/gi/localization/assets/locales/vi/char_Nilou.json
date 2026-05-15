@@ -1,0 +1,22 @@
+{
+  "skill": {
+    "dance1": "Sát thương Vũ Điệu Bão Kiếm lần 1",
+    "dance2": "Sát thương Vũ Điệu Bão Kiếm lần 2",
+    "whirl1": "Sát thương Vũ Điệu Xoay Vòng lần 1",
+    "whirl2": "Sát thương Vũ Điệu Xoay Vòng lần 2",
+    "wheel": "Sát thương Thủy Luân",
+    "illusion": "Sát thương Thủy Nguyệt"
+  },
+  "passive1": {
+    "underChaliceEffect": "Phước Lành Ly Vàng có hiệu lực",
+    "notDendroHydroTeam": "Nhắc nhở: thiết lập đội của bạn với chỉ nhân vật nguyên tố Thảo và Thủy để xem thêm các điều kiện và hiệu quả",
+    "condName": "Sau khi chịu <dendro>sát thương nguyên tố Thảo</dendro> trong lúc Phước Lành Ly Vàng có hiệu lực",
+    "bountifulCores": "Phản ứng Sum Suê sẽ tạo ra Hạt Nhân Căng Tràn"
+  },
+  "c4": {
+    "condName": "Sau khi vũ điệu thứ ba đánh trúng kẻ địch"
+  },
+  "c1": {
+    "illusion_dmg_": "Tăng sát thương Thủy Nguyệt"
+  }
+}

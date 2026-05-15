@@ -1,0 +1,190 @@
+{
+  "name": "Lauma",
+  "title": "Ebedi Ayın Mukaddes Şarkısı",
+  "description": "Ay ışığı ve ormanın kutsamasıyla halkına umut olmuş, Donuk Ayın Çocuklarının Hanımı.",
+  "constellationName": "Gümüş Geyik",
+  "auto": {
+    "name": "Linnunrata Yolculuğu",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "<dendro>Doğa Hasarı</dendro> veren en fazla 3 saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Lauma Ruh Elçisi Dönüşümü geçirir ve sessiz ormanların elçisi haline gelerek 10sn boyunca Dayanıklılık tüketerek ileri doğru atılır. Bu durumdayken Lauma'nın müdahaleye karşı direnci artar ve fazladan Dayanıklılık tüketerek iki defa arka arkaya sıçrayabilir.",
+        "2": "Ruh Elçisi durumundan çıktığında Ruh Elçisi Dönüşümünün bekleme süresi başlar ve bu süre boyunca Lauma'nın Yüklü Saldırıları Ruh Çağırma Duasına dönüşür: Kısa bir sürenin ardından belirli bir miktarda Dayanıklılık tüketerek önündeki düşmanlara <dendro>Doğa Alan Hasarı</dendro> verir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Lauma, Doğanın gücünü çağırarak havadayken yere doğru atılır ve yoluna çıkan tüm düşmanlara hasar verir. Yere vurduğunda <dendro>Doğa Alan Hasarı</dendro> verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "Ruh Elçisi Formu Hareket Dayanıklılık Maliyeti",
+      "4": "Ruh Elçisi Formu Sıçrama Dayanıklılık Maliyeti",
+      "5": "Ruh Elçisi Maks. Süre",
+      "6": "Ruh Elçisi Dönüşümü BS",
+      "7": "Ruh Çağırma Duası Dayanıklılık Maliyeti",
+      "8": "Ruh Çağırma Duası Hasarı",
+      "9": "Havadan Saldırı Hasarı",
+      "10": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Runo: Karsikko'nun Şafaksız İstirahati",
+    "description": {
+      "0": "Sessizce kadim bir ilahi okur ve Dokunma ya da Basılı Tutmaya göre farklı etkiler gösteren bir <tooltip ns=tooltips_gen baseKey18=11190001 values=[]><strong>Donuk Koru Mabedi</strong></tooltip> çağırır.",
+      "1": "<br/>",
+      "2": "<strong>Dokun</strong>",
+      "3": "<dendro>Doğa Alan Hasarı</dendro> veren bir Av İlahisi söyler.",
+      "4": "<br/>",
+      "5": "<strong>Basılı Tut</strong>",
+      "6": "En az 1 <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>Taze Çiy</strong></tooltip> olduğunda kullanılabilir. Lauma tüm Taze Çiyleri tüketerek bir Ebedi İstirahat İlahisi söyler, bir defa normal <dendro>Doğa Alan Hasarı</dendro> ve bir defa Ay Çiçeklenmesi Hasarı sayılan <dendro>Doğa Alan Hasarı</dendro> verir. Tüketilen her Taze Çiy Lauma'ya bir kademe <tooltip ns=tooltips_gen baseKey18=11190002 values=[]><strong>Ay Ezgisi</strong></tooltip> kazandırır. Bu şekilde bir Element Becerisi kullanmak için Basılı Tuttuğun her seferde en fazla 3 Taze Çiy tüketilebilir. ",
+      "7": "<br/>",
+      "8": "Ayrıca Lauma'nın Element Becerisi veya Donuk Koru Mabedi saldırıları bir düşmana isabet ettiğinde, o düşmanın 10sn boyunca <dendro>Doğa Direnci</dendro> ve <hydro>Su Direnci</hydro> azalır."
+    },
+    "skillParams": {
+      "0": "Basma Hasarı",
+      "1": "1 Vuruş Basılı Tutma Hasarı",
+      "2": "2 Vuruş Basılı Tutma Hasarı",
+      "3": "Donuk Koru Mabedi Saldırı Hasarı",
+      "4": "Donuk Koru Mabedi Süresi",
+      "5": "Ay Ezgisi Süresi",
+      "6": "Element Direnci Azalması",
+      "7": "Element Direnci Azalma Süresi",
+      "8": "BS",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Runo: Ay İle Çarpan Kalpler",
+    "description": {
+      "0": "Tüm canlıların dilekleri, dünyayı aydınlatan ay ışığına dönüşsün. Lauma, kutsal bir kuzey şarkısı söyler ve 18 kademe <tooltip ns=tooltips_gen baseKey18=11190003 values=[]><strong>Solgun İlahi</strong></tooltip> kazanır.",
+      "1": "Lauma, <tooltip ns=tooltips_gen baseKey18=11190002 values=[]><strong>Ay Ezgisi</strong></tooltip> mevcutken Element Patlaması kullandığında veya Element Patlaması kullandıktan sonra 15sn içinde Ay Ezgisi etkisi kazandığında tüm Ay Ezgisi kademelerini tüketir ve tüketilen her Ay Ezgisi kademesi başına 6 kademe Solgun İlahi kazanır. Bu etki, Element Patlaması kullanıldıktan sonraki 15sn dahil olmak üzere her Element Patlaması için bir defa tetiklenebilir.",
+      "2": "<br/>",
+      "3": "<strong>Solgun İlahi</strong>",
+      "4": "Yakındaki grup üyeleri Çiçeklenme, Aşırı Çiçeklenme, Filizlenme veya Ay Çiçeklenmesi Hasarı verdiğinde 1 kademe Solgun İlahi tüketilir ve verilen Hasar, Lauma'nın Element Ustalığına göre artar. Birden fazla düşmana aynı anda Hasar verilmesi halinde, vurulan düşman sayısına bağlı olarak birden fazla Solgun İlahi kademesi tüketilir.",
+      "5": "Her Solgun İlahi kademesinin süresi ayrı hesaplanır."
+    },
+    "skillParams": {
+      "0": "Element Patlamasından Kazanılan Solgun İlahi Kademesi",
+      "1": "Ay Ezgisinden Solgun İlahiye Dönüşüm",
+      "2": "Çiçeklenme, Aşırı Çiçeklenme ve Filizlenme Hasar Artışı",
+      "3": "Ay Çiçeklenmesi Hasar Artışı",
+      "4": "Solgun İlahi Süresi",
+      "5": "BS",
+      "6": "Enerji Maliyeti",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Donuk Gecenin Işıkları",
+    "description": {
+      "0": "Lauma, <strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo: Karsikko'nun Şafaksız İstirahati</tooltip></strong> Element Becerisini kullandıktan sonra 20sn boyunca grup üyelerinin <strong>Ay Sembolüne</strong> karşılık gelen farklı güçlendirme etkileri kazanılır. Farklı Ay Sembolü seviyelerinden alınan güçlendirmeler birikmez.",
+      "1": "<br/>",
+      "2": "<strong>Ay Sembolü: İlk Parıltı</strong>",
+      "3": "Grup üyelerinin verdiği Çiçeklenme, Aşırı Çiçeklenme ve Filizlenme Hasarları Kritik Vuruş gerçekleştirebilir. Kritik Oranı %15, Kritik Hasarı ise %100 olarak sabittir. Bu etkilerden alınan Kritik Oranı, bu Element Tepkimelerinin Kritik Vuruş yapmasını sağlayan diğer benzer etkilerden alınan Kritik Oranı ile birikir.",
+      "4": "<br/>",
+      "5": "<strong>Ay Sembolü: Yükselen Parıltı</strong>",
+      "6": "Yakındaki tüm grup üyelerinin Ay Çiçeklenmesi Hasarı Kritik Oranı %10 ve Kritik Hasarı %20 artar."
+    }
+  },
+  "passive2": {
+    "name": "Arınma Pınarı",
+    "description": {
+      "0": "Lauma, sahip olduğu her Element Ustalığı puanı başına şu bonusları kazanır:",
+      "1": [
+        "Element Becerisi Hasarı %0,04 artar. Bu şekilde en fazla %32 artış sağlanabilir.",
+        "<strong>Ruh Elçisi Dönüşümü</strong> Yüklü Saldırısının Bekleme Süresi %0,02 azalır. Bu şekilde en fazla %20 azalma sağlanabilir."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Ay Sembolü Kutsaması: Doğanın Korosu",
+    "description": {
+      "0": "Bir grup üyesi Çiçeklenme tepkimesi tetiklediğinde bu Ay Çiçeklenmesi tepkimesine dönüşür. Lauma'nın sahip olduğu her Element Ustalığı puanı, Ay Çiçeklenmesi tepkimesinin Temel Hasarını %0,0175 artırır; bu Temel Hasar en fazla %14 artabilir.",
+      "1": "<br/>",
+      "2": "Ayrıca grubunda Lauma olduğunda grubunun <strong>Ay Sembolü</strong> 1 seviye yükselir."
+    }
+  },
+  "passive": {
+    "name": "Orman Duası",
+    "description": {
+      "0": "Yakınlardaki <strong>Nod-Krai'a özgü kaynakların</strong> yerini mini haritada gösterir.",
+      "1": "Ayrıca Lauma, Kuuvahkiden etkilenen bazı küçük hayvanlara karşı özel bir yakınlık duyuyor..."
+    }
+  },
+  "constellation1": {
+    "name": "\"Şarkıdan ve İlahiden Başkasını Okumasın Bu Dudaklar\"",
+    "description": {
+      "0": "Lauma, <strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo: Karsikko'nun Şafaksız İstirahati</tooltip></strong> Element Becerisini veya <strong><tooltip ns=char_Lauma_gen baseKey18=burst>Runo: Ay İle Çarpan Kalpler</tooltip></strong> Element Patlamasını kullandıktan sonra 20sn boyunca Yaşam İplikleri kazanır.",
+      "1": "Bu süre boyunca yakındaki aktif grup üyeleri Ay Çiçeklenmesi tepkimesi tetiklediğinde, yakındaki aktif karakterler Lauma'nın Element Ustalığının %500'ü kadar Can yeniler. Bu etki 1,9 saniyede bir tetiklenebilir.",
+      "2": "Ayrıca Lauma'nın Ruh Elçisi Formunun tükettiği Dayanıklılık %40 azalır ve Maks. Süresi 5sn uzar."
+    }
+  },
+  "constellation2": {
+    "name": "\"Sicim Gibi Örülsün Kuzeyden Nasihatlerle Masallar\"",
+    "description": {
+      "0": "<strong><tooltip ns=char_Lauma_gen baseKey18=burst>Runo: Ay İle Çarpan Kalpler</tooltip></strong> Element Patlaması gelişir: ",
+      "1": [
+        "<tooltip ns=tooltips_gen baseKey18=11190003 values=[]><strong>Solgun İlahi</strong></tooltip> etkileri artar: Yakındaki tüm grup üyelerinin verdiği Çiçeklenme, Aşırı Çiçeklenme ve Filizlenme Hasarları, Lauma'nın Element Ustalığının %500'ü kadar; Ay Çiçeklenmesi Hasarı ise Lauma'nın Element Ustalığının %400'ü kadar artar."
+      ],
+      "2": "<br/>",
+      "3": "<strong>Ay Sembolü: Yükselen Parıltı</strong>: Yakındaki tüm grup üyelerinin verdiği Ay Çiçeklenmesi Hasarı %40 artar."
+    }
+  },
+  "constellation3": {
+    "name": "\"Ne Kurnaz Tilkinin Yolundan Şaşarım\"",
+    "description": {
+      "0": "<strong><tooltip ns=char_Lauma_gen baseKey18=burst>Runo: Ay İle Çarpan Kalpler</tooltip></strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "\"Ne De Yüce Ayının Azametini Ararım\"",
+    "description": {
+      "0": "<strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo: Karsikko'nun Şafaksız İstirahati</tooltip></strong> Element Becerisi ile çağrılan <tooltip ns=tooltips_gen baseKey18=11190001 values=[]><strong>Donuk Koru Mabedi</strong></tooltip> düşmanlara vurduğunda Lauma 4 Element Enerjisi yeniler. Bu etki 5 saniyede bir tetiklenebilir."
+    }
+  },
+  "constellation5": {
+    "name": "\"Hakikate Şahitlik Edebileceksem Eğer\"",
+    "description": {
+      "0": "<strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo: Karsikko'nun Şafaksız İstirahati</tooltip></strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "\"Kanımı ve Terimi Ay Işığına Adarım\"",
+    "description": {
+      "0": "<tooltip ns=tooltips_gen baseKey18=11190001 values=[]><strong>Donuk Koru Mabedi</strong></tooltip> düşmanlara vurduğunda, fazladan 1 kere daha Lauma'nın Element Ustalığının %185'i kadar <dendro>Doğa Alan Hasarı</dendro> verir. Bu Hasar, Ay Çiçeklenmesi Hasarı sayılır. Bu şekilde verilen Hasar, <tooltip ns=tooltips_gen baseKey18=11190003 values=[]><strong>Solgun İlahi</strong></tooltip> kademesi tüketmez ve Lauma'ya 2 kademe Solgun İlahi kazandırır, ayrıca bu şekilde kazanılan Solgun İlahi kademelerinin süresini yeniler.",
+      "1": "Bu etki her Donuk Koru Mabedi için en fazla 8 defa tekrarlanabilir. <strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo: Karsikko'nun Şafaksız İstirahati</tooltip></strong> Element Becerisi kullanıldığında, bu şekilde kazanılan tüm Solgun İlahi kademeleri kaldırılır.",
+      "2": "<br/>",
+      "3": "Ayrıca Lauma, Solgun İlahi kademesi varken bir Normal Saldırı yaptığında 1 kademe tüketerek Hasar türünü çevirir ve Element Ustalığının %150'si kadar <dendro>Doğa Hasarı</dendro> verir. Bu Hasar, Ay Çiçeklenmesi Hasarı sayılır.",
+      "4": "<br/>",
+      "5": "<strong>Ay Sembolü: Yükselen Parıltı</strong>: Yakındaki tüm grup üyelerinin Ay Çiçeklenmesi Hasarı %25 <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>artar</strong></tooltip>."
+    }
+  }
+}

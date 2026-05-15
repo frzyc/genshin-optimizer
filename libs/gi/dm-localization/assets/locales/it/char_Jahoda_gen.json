@@ -1,0 +1,169 @@
+{
+  "name": "Jahoda",
+  "title": "Ombra tessivento",
+  "description": "La fantastica ed estremamente affidabile (a suo dire) dipendente tuttofare del Consiglio dei segreti.",
+  "constellationName": "Fragum",
+  "auto": {
+    "name": "Fai breccia scagliando una freccia",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attacco normale</strong>",
+        "1": "Scocca fino a 3 frecce consecutive con un arco."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Effettua un <strong>attacco mirato</strong> ancora più preciso con DAN aumentati.",
+        "2": "Mentre mira, sulla punta della freccia convergono dei venti impetuosi. Una freccia di vento caricata al massimo infligge <anemo>DAN da Anemo</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Scocca una pioggia di frecce a mezz'aria prima di cadere al suolo, colpendo gli avversari lungo il percorso e infliggendo DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "ATT mirato",
+      "4": "ATT mirato a piena carica",
+      "5": "DAN da ATT in picchiata",
+      "6": "DAN da ATT in picchiata basso/alto",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Strategia ingegnosa: Condivisione del bottino",
+    "description": {
+      "0": "Jahoda scatta verso il suo avversario, entrando nello stato di Inseguimento ombroso dopo aver colpito il nemico. In questo stato, Jahoda si muove rapidamente e senza sosta: se gli avversari vicini sono sotto l'effetto di <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro> o <cryo>Cryo</cryo>, converte silenziosamente la sua <tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>Fiaschetta preziosa Purr purr</strong></tooltip> in quell'elemento, riempiendola gradualmente. Al termine della durata o quando l'abilità viene usata di nuovo, Jahoda svuota la <strong>Fiaschetta preziosa Purr purr</strong> per infliggere un'iterazione di <anemo>DAN da Anemo</anemo> agli avversari vicini. Quando la <strong>Fiaschetta preziosa Purr purr</strong> è piena, Jahoda la svuota immediatamente, uscendo dallo stato di Inseguimento ombroso e scatenando un'iterazione più potente di <anemo>DAN da Anemo</anemo>.",
+      "1": "Se il suo scatto non colpisce alcun bersaglio, Jahoda lascia cadere una Bomba fumogena nella sua posizione, infliggendo un'iterazione di <anemo>DAN da Anemo</anemo> agli avversari vicini.",
+      "2": "<br/>",
+      "3": "<strong>Presagio lunare: Barlume ascendente</strong>",
+      "4": "Quando la <strong>Fiaschetta preziosa Purr purr</strong> si riempie, Jahoda non la svuota immediatamente. Al contrario, per un breve periodo di tempo, consuma costantemente l'elemento accumulato al suo interno, scagliando a intermittenza delle <strong>Miciosfere morbidose</strong> contro gli avversari vicini, infliggendo DAN dello stesso elemento accumulato nella <strong>Fiaschetta preziosa Purr purr</strong>. Quando una <strong>Miciosfera morbidosa</strong> colpisce un avversario, l'energia elementale di Jahoda si ripristina di 2. Quest'effetto può attivarsi una volta ogni 3,5 s.",
+      "5": "<br/>",
+      "6": "<i>A questo mondo, esistono molti modi per suddividere la ricchezza; ma, per i cacciatori di tesori a Nod-Krai, solo uno si è dimostrato veramente efficiente.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da Bomba fumogena",
+      "1": "DAN da Fiaschetta preziosa semipiena",
+      "2": "DAN da Fiaschetta preziosa piena",
+      "3": "Durata Fiaschetta preziosa",
+      "4": "DAN da Miciosfera",
+      "5": "TdR",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Assi segreti: Sette strumenti della cacciatrice",
+    "description": {
+      "0": "È ora che Jahoda riveli i suoi assi nella manica! Estrae 2 <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>Robot di assistenza coordinata purrsonali</strong></tooltip> e infligge un'iterazione di <anemo>DAN da Anemo</anemo> agli avversari vicini.",
+      "1": "<br/>",
+      "2": "<i>\"Assistenza coordinata? Significa che tu ci 'assisti' con i Mora e noi ci occupiamo della 'coordinazione'. Ha perfettamente senso, no?\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "DAN da Robot di assistenza coordinata purrsonale",
+      "2": "Durata Robot di assistenza coordinata purrsonale",
+      "3": "Guarigione da Robot di assistenza coordinata purrsonale",
+      "4": "Guarigione aggiuntiva personaggio con PS più bassi",
+      "5": "TdR",
+      "6": "Costo energia",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Obiettivo: Stipendio",
+    "description": {
+      "0": "Quando nella tua squadra è presente almeno un personaggio di <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro> o <cryo>Cryo</cryo>, i <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>Robot di assistenza coordinata purrsonali</strong></tooltip> del Tripudio elementale <strong>Assi segreti: Sette strumenti della cacciatrice</strong> ottengono dei potenziamenti in base al numero di personaggi corrispondenti a ciascun elemento.",
+      "1": "Jahoda tiene segretamente traccia di questi personaggi, e l'elemento con il maggior numero di personaggi determina l'effetto.",
+      "2": [
+        " <pyro>Pyro</pyro>: i <strong>Robot di assistenza coordinata purrsonali</strong> infliggono un 130% dei loro DAN originali.",
+        " <hydro>Hydro</hydro>: i <strong>Robot di assistenza coordinata purrsonali</strong> ripristinano PS pari a un 120% della quantità originale.",
+        " <electro>Electro</electro>: il numero di <strong>Robot di assistenza coordinata purrsonali</strong> aumenta di 1.",
+        " <cryo>Cryo</cryo>: l'intervallo d'attacco dei <strong>Robot di assistenza coordinata purrsonali</strong> si riduce di un 10%."
+      ],
+      "3": "<br/>",
+      "4": "In caso di parità tra più elementi, viene applicato il seguente ordine di priorità: <pyro>Pyro</pyro> > <hydro>Hydro</hydro> > <electro>Electro</electro> > <cryo>Cryo</cryo>. Inizialmente, può essere innescato un solo effetto elementale."
+    }
+  },
+  "passive2": {
+    "name": "Dolce ricompensa",
+    "description": {
+      "0": "Quando un <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>Robot di assistenza coordinata purrsonale</strong></tooltip> del Tripudio elementale <strong>Assi segreti: Sette strumenti della cacciatrice</strong> ripristina i PS di un membro attivo della squadra, se i PS di quest'ultimo sono superiori a un 70%, la maestria elementale del suddetto personaggio aumenta di 100 per 6 s."
+    }
+  },
+  "passive3": {
+    "name": "Benedizione del Presagio lunare: Scatto sui tetti",
+    "description": {
+      "0": "Quando Jahoda è nel gruppo, il <strong>Presagio lunare</strong> del gruppo aumenta di 1 livello."
+    }
+  },
+  "passive": {
+    "name": "Astuzia dei vicoli",
+    "description": {
+      "0": "Quando intraprende una spedizione a Nod-Krai, il tempo impiegato per portarla a termine si riduce di un 25%."
+    }
+  },
+  "constellation1": {
+    "name": "Un'altra fiaschetta!",
+    "description": {
+      "0": "Quando la <tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>Fiaschetta preziosa Purr purr</strong></tooltip> dell'abilità elementale <strong>Strategia ingegnosa: Condivisione del bottino</strong> lancia una <strong>Miciosfera morbidosa</strong> che colpisce un nemico, c'è un 50% di probabilità che la Miciosfera rimbalzi, infliggendo DAN elementali corrispondenti agli avversari vicini."
+    }
+  },
+  "constellation2": {
+    "name": "Prontezza del furfante",
+    "description": {
+      "0": "Quando <strong>Presagio lunare: Barlume ascendente</strong> è attivo, il talento d'ascensione <tooltip ns=char_Jahoda_gen baseKey18=passive1><strong>Obiettivo: Stipendio</strong></tooltip> di Jahoda può registrare in segreto, oltre all'elemento con il maggior numero di personaggi, anche l'elemento con il secondo maggior numero tra i tipi rimanenti. Ciò permette di avere fino a due effetti elementali attivi contemporaneamente. Richiede il talento d'ascensione Obiettivo: Stipendio."
+    }
+  },
+  "constellation3": {
+    "name": "Scommessa disperata",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong><tooltip ns=char_Jahoda_gen baseKey18=burst>Assi segreti: Sette strumenti della cacciatrice</tooltip></strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Bacca selvatica nella polvere",
+    "description": {
+      "0": "Quando un <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>Robot di assistenza coordinata purrsonale</strong></tooltip> del Tripudio elementale <strong>Assi segreti: Sette strumenti della cacciatrice</strong> subisce una Conversione elementale, Jahoda recupera 4 di energia elementale."
+    }
+  },
+  "constellation5": {
+    "name": "Il tesoro più grande",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong><tooltip ns=char_Jahoda_gen baseKey18=skill>Strategia ingegnosa: Condivisione del bottino</tooltip></strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Un briciolo di fortuna",
+    "description": {
+      "0": "Quando <strong>Presagio lunare: Barlume ascendente</strong> è attivo, dopo che la <tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>Fiaschetta preziosa Purr purr</strong></tooltip> dell'abilità elementale <strong>Strategia ingegnosa: Condivisione del bottino</strong> si è riempita, il tasso di CRIT e i DAN da CRIT dei personaggi con Presagio lunare vicini presenti nella tua squadra aumentano rispettivamente di un 5% e di un 40% per i 20 s successivi."
+    }
+  }
+}

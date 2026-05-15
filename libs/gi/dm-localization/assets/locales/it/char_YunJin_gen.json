@@ -145,7 +145,7 @@
   "constellation4": {
     "name": "Un fiore come scudo",
     "description": {
-      "0": "Quando Yun Jin innesca una reazione di Cristallizzazione, la sua DIF aumenta di un 20% per 12 s."
+      "0": "Quando Yun Jin innesca reazioni di Cristallizzazione o di Cristallizzazione lunare, la sua DIF aumenta di un 20% per 12 s."
     }
   },
   "constellation5": {

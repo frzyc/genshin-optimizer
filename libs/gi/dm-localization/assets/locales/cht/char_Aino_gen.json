@@ -1,0 +1,163 @@
+{
+  "name": "愛諾",
+  "title": "妙械咣咣鐺",
+  "description": "挪德卡萊的天才機械發明家，喜歡有趣的機械和甜食。",
+  "constellationName": "砰砰盒座",
+  "auto": {
+    "name": "敲打修理法",
+    "fields": {
+      "normal": {
+        "0": "<strong>普通攻擊</strong>",
+        "1": "進行至多三段的連續攻擊。"
+      },
+      "charged": {
+        "0": "<strong>重擊</strong>",
+        "1": "持續消耗體力，旋轉大劍攻擊周圍的敵人。",
+        "2": "停止旋轉時，會進行一次格外有力的揮砍。"
+      },
+      "plunging": {
+        "0": "<strong>下落攻擊</strong>",
+        "1": "從空中下墜衝擊地面，攻擊下落路徑上的敵人，並在落地時造成範圍傷害。"
+      }
+    },
+    "skillParams": {
+      "0": "一段傷害",
+      "1": "二段傷害",
+      "2": "三段傷害",
+      "3": "重擊循環傷害",
+      "4": "重擊終結傷害",
+      "5": "重擊體力消耗",
+      "6": "最大持續時間",
+      "7": "下墜期間傷害",
+      "8": "低空/高空墜地衝擊傷害",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "妙思捕手",
+    "description": {
+      "0": "向前方投擲<strong>「妙思捕手」</strong>，造成<hydro>水元素傷害</hydro>，同時將自己牽引至前方，並在移動結束時對身邊的敵人造成<hydro>水元素範圍傷害</hydro>。",
+      "1": "長按時將以不同的方式施放。",
+      "2": "<br/>",
+      "3": "<strong>長按</strong>",
+      "4": "進入瞄準狀態，以調整投出「妙思捕手」的方向。"
+    },
+    "skillParams": {
+      "0": "一段傷害",
+      "1": "二段傷害",
+      "2": "冷卻時間",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "精密水冷儀",
+    "description": {
+      "0": "投擲特製的超級噴水機關<strong>「冷靜一下鴨」</strong>，展開<strong>對點水冷域</strong>。",
+      "1": "持續期間，「冷靜一下鴨」會間歇性對附近的敵人發射水彈，造成<hydro>水元素傷害</hydro>。"
+    },
+    "skillParams": {
+      "0": "水彈傷害",
+      "1": "持續時間",
+      "2": "冷卻時間",
+      "3": "元素能量",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "模組式高效運作",
+    "description": {
+      "0": "依據隊伍的<strong>月兆</strong>，愛諾將獲得對應的強化效果。",
+      "1": "<br/>",
+      "2": "<strong>月兆·滿輝</strong>：元素爆發<strong><tooltip ns=char_Aino_gen baseKey18=burst>精密水冷儀</tooltip></strong>將獲得強化：<strong>「冷靜一下鴨」</strong>將以更短的間隔發射水彈，造成範圍更大的<hydro>水元素範圍傷害</hydro>。"
+    }
+  },
+  "passive2": {
+    "name": "結構化功率提升",
+    "description": {
+      "0": "愛諾元素爆發造成的傷害提升，提升值基於愛諾的元素精通的50%。"
+    }
+  },
+  "passive3": {
+    "name": "月兆祝賜·力極演算",
+    "description": {
+      "0": "愛諾在隊伍中時，隊伍的<strong>月兆</strong>將會上升一級。"
+    }
+  },
+  "passive": {
+    "name": "小型識別偵測器",
+    "description": {
+      "0": "在小地圖上顯示周圍的<strong>挪德卡萊區域特產</strong>的位置。",
+      "1": "此外，愛諾似乎可以透過某種途徑來改變「冷靜一下鴨」的外觀…"
+    }
+  },
+  "constellation1": {
+    "name": "灰與力場的平衡理論",
+    "description": {
+      "0": "愛諾施放元素戰技<strong><tooltip ns=char_Aino_gen baseKey18=skill>妙思捕手</tooltip></strong>或元素爆發<strong><tooltip ns=char_Aino_gen baseKey18=burst>精密水冷儀</tooltip></strong>後，愛諾自身的元素精通提升80點，附近的目前場上其他角色的元素精通提升80點，持續15秒。",
+      "1": "<br/>",
+      "2": "該命之座提供的元素精通提升效果無法疊加。"
+    }
+  },
+  "constellation2": {
+    "name": "齒輪差分的進位原理",
+    "description": {
+      "0": "元素爆發<strong><tooltip ns=char_Aino_gen baseKey18=burst>精密水冷儀</tooltip></strong>中的<strong>對點水冷域</strong>持續期間，若愛諾處於隊伍後臺，隊伍中自己的目前場上角色的攻擊命中附近的敵人時，<strong>「冷靜一下鴨」</strong>將對該敵人發射一枚額外的水彈，基於愛諾攻擊力的25%與元素精通的100%，造成<hydro>水元素範圍傷害</hydro>。該效果每5秒至多觸發一次，且造成的傷害視為元素爆發傷害。"
+    }
+  },
+  "constellation3": {
+    "name": "蛋糕與機關維修藝術",
+    "description": {
+      "0": "元素爆發<strong><tooltip ns=char_Aino_gen baseKey18=burst>精密水冷儀</tooltip></strong>的技能等級提高3級。",
+      "1": "至多提升至15級。"
+    }
+  },
+  "constellation4": {
+    "name": "奶油與貓與供能法則",
+    "description": {
+      "0": "元素戰技<strong><tooltip ns=char_Aino_gen baseKey18=skill>妙思捕手</tooltip></strong>命中敵人時，將為愛諾恢復10點元素能量，每10秒至多依此方式恢復一次元素能量。"
+    }
+  },
+  "constellation5": {
+    "name": "金屬與光的不朽渦輪",
+    "description": {
+      "0": "元素戰技<strong><tooltip ns=char_Aino_gen baseKey18=skill>妙思捕手</tooltip></strong>的技能等級提高3級。",
+      "1": "至多提升至15級。"
+    }
+  },
+  "constellation6": {
+    "name": "天才之為構造之責任",
+    "description": {
+      "0": "施放元素爆發<strong><tooltip ns=char_Aino_gen baseKey18=burst>精密水冷儀</tooltip></strong>後的15秒內，附近的目前場上角色觸發的感電、綻放、月感電、月綻放、月結晶造成的傷害提升15%。",
+      "1": "<strong>月兆·滿輝</strong>：上述反應造成的傷害額外提升20%。"
+    }
+  }
+}

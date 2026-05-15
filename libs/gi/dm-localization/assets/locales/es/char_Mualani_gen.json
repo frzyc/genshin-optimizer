@@ -141,7 +141,7 @@
     "name": "¡Mualani dándolo todo!",
     "description": {
       "0": "Al entrar en estado de bendición noctámbula, Mualani obtiene 2 cargas de energía mareal de <strong>Escualosurf rompeolas</strong>, y al recoger un peciglobo, obtiene 1 carga.",
-      "1": "Además, cuando Mualani recoja 2 peciglobos durante una bendición noctámbula, recuperará 12 pts. de noctambulismo en 2 s. Para que se active este efecto, es necesario desbloquear el talento pasivo “Peciglobo antitérmico de agua dulce”."
+      "1": "Además, cuando Mualani recoja 2 peciglobos durante una bendición noctámbula, recuperará 12 pts. de noctambulismo en 2 s. Para que se active este efecto, es necesario desbloquear el talento de ascensión “Peciglobo antitérmico de agua dulce”."
     }
   },
   "constellation3": {
@@ -154,7 +154,7 @@
   "constellation4": {
     "name": "Tiburón devorapeciglobos",
     "description": {
-      "0": "Al recoger un peciglobo, Mualani obtiene 8 pts. de Energía Elemental. Para que se active este efecto, es necesario desbloquear el talento pasivo “Peciglobo antitérmico de agua dulce”.",
+      "0": "Al recoger un peciglobo, Mualani obtiene 8 pts. de Energía Elemental. Para que se active este efecto, es necesario desbloquear el talento de ascensión “Peciglobo antitérmico de agua dulce”.",
       "1": "Además, aumenta en un 75% el daño infligido con <strong>Misil acuaexplosivo</strong>."
     }
   },

@@ -1,0 +1,176 @@
+{
+  "name": "Flins",
+  "title": "Kỳ Ảnh Bên Đèn",
+  "description": "Người Giữ Đèn của Nod-Krai, canh giữ ngọn hải đăng và nghĩa trang trên hòn đảo phía bắc. Một quý ông thần bí có lời nói và hành động vô cùng lịch sự.",
+  "constellationName": "Cung Dạ Hành Đăng",
+  "auto": {
+    "name": "Ma Thương Pocztowy",
+    "fields": {
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 5 lần đánh liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định để ném ngọn thương về phía trước."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Lần 5",
+      "5": "Sát Thương Trọng Kích",
+      "6": "Thể lực Trọng Kích tiêu hao",
+      "7": "Sát Thương Khi Đáp",
+      "8": "Sát Thương Khi Đáp Từ Độ Cao Thấp/Cao",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Lễ Nghi Cổ - Ngọn Đèn Huyền Bí",
+    "description": {
+      "0": "Flins triệu hồi sức mạnh cổ xưa trong chiếc đèn, chuyển sang chế độ <strong>U Hỏa Hóa Hình</strong>. Chế độ này có đặc tính sau:",
+      "1": [
+        "Tấn Công Thường và Trọng Kích của Flins sẽ chuyển thành <electro>Sát Thương Nguyên Tố Lôi</electro> không thể bị thay thế, không thể thực hiện Tấn Công Khi Đáp.",
+        "Tăng Kháng Gián Đoạn của Flins.",
+        "Kỹ Năng Nguyên Tố <strong>Lễ Nghi Cổ - Ngọn Đèn Huyền Bí</strong> sẽ được thay thế bằng Kỹ Năng Nguyên Tố đặc biệt <strong>Thương Trận Bắc Quốc</strong>."
+      ],
+      "2": "<br/>",
+      "3": "<strong>Thương Trận Bắc Quốc</strong>",
+      "4": "Flins triệu hồi thương trận ở phía trước, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro>, đồng thời trong 6s tiếp theo sẽ khiến Kỹ Năng Nộ <strong>Nghi Thức Cổ - Khách Đêm Ghé Thăm</strong> của Flins được thay thế bằng Kỹ Năng Nộ đặc biệt <tooltip ns=tooltips_gen baseKey18=11200001 values=[]><strong>Giao Hưởng Sấm Sét</strong></tooltip>.",
+      "5": "Thời gian chờ cơ bản của <strong>Thương Trận Bắc Quốc</strong> là 6s, và sẽ không bị ảnh hưởng bởi hiệu quả khác."
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Lần 5",
+      "5": "Sát Thương Trọng Kích",
+      "6": "Sát Thương Thương Trận Bắc Quốc",
+      "7": "CD Thương Trận Bắc Quốc",
+      "8": "Thời Gian Duy Trì U Hỏa Hóa Hình",
+      "9": "CD",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Nghi Thức Cổ - Khách Đêm Ghé Thăm",
+    "description": {
+      "0": "Flins giải phóng sức mạnh thực sự trong ngọn đèn, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro>, đồng thời sau giây lát sẽ lần lượt gây 2 lần Đòn Đánh Xen Giữa và một lần Đòn Đánh Cuối Cùng, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> được tính là sát thương phản ứng Nguyệt-Điện Cảm.",
+      "1": "<strong>Nguyệt Triệu - Rực Sáng</strong>: Kỹ năng được cường hóa: Nếu gần đó có Mây Sấm Sét, sẽ gây thêm 2 lần Đòn Đánh Xen Giữa, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> được tính là sát thương phản ứng Nguyệt-Điện Cảm.",
+      "2": "<br/>",
+      "3": "Trong vòng 6 giây sau khi thi triển Kỹ Năng Nguyên Tố đặc biệt <strong>Thương Trận Bắc Quốc</strong>, Kỹ Năng Nộ <strong>Nghi Thức Cổ - Khách Đêm Ghé Thăm</strong> của Flins sẽ được thay thế bằng Kỹ Năng Nộ đặc biệt <strong>Giao Hưởng Sấm Sét</strong>.",
+      "4": "<br/>",
+      "5": "<strong>Giao Hưởng Sấm Sét</strong>",
+      "6": "Kỹ Năng Nộ đặc biệt có thể thi triển với ít Năng Lượng Nguyên Tố hơn. Flins gây một lần <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> được tính là sát thương phản ứng Nguyệt-Điện Cảm.",
+      "7": "<strong>Nguyệt Triệu - Rực Sáng</strong>: Kỹ năng được cường hóa: Nếu gần đó có Mây Sấm Sét, sẽ gây thêm một lần <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> được tính là sát thương phản ứng Nguyệt-Điện Cảm."
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng Ban Đầu",
+      "1": "Sát Thương Nguyệt-Điện Cảm Đòn Đánh Xen Giữa",
+      "2": "Sát Thương Nguyệt-Điện Cảm Đòn Đánh Cuối Cùng",
+      "3": "Năng Lượng Nguyên Tố",
+      "4": "CD",
+      "5": "Sát Thương Giao Hưởng Sấm Sét",
+      "6": "Sát Thương Thêm Giao Hưởng Sấm Sét",
+      "7": "Năng Lượng Nguyên Tố Giao Hưởng Sấm Sét",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Bản Giao Hưởng Mùa Đông",
+    "description": {
+      "0": "Flins sẽ nhận được hiệu quả cường hóa tương ứng căn cứ theo <strong>Nguyệt Triệu</strong> của đội.",
+      "1": "<br/>",
+      "2": "<strong>Nguyệt Triệu - Rực Sáng</strong>: Sát thương phản ứng Nguyệt-Điện Cảm do Flins kích hoạt sẽ tăng 20%."
+    }
+  },
+  "passive2": {
+    "name": "Lời Thì Thầm Của Lửa",
+    "description": {
+      "0": "Tăng Tinh Thông Nguyên Tố của Flins, mức tăng tương đương 8% Tấn Công của Flins. Tối đa tăng 160 Tinh Thông Nguyên Tố của Flins thông qua cách này."
+    }
+  },
+  "passive3": {
+    "name": "Chúc Phúc Nguyệt Triệu - Bí Mật Thế Giới Cũ",
+    "description": {
+      "0": "Khi nhân vật trong đội kích hoạt phản ứng Điện Cảm, sẽ chuyển thành phản ứng Nguyệt-Điện Cảm, đồng thời tăng sát thương cơ bản của phản ứng Nguyệt-Điện Cảm dựa trên Tấn Công của Flins: Mỗi 100 Tấn Công sẽ tăng 0.7% sát thương cơ bản, tối đa tăng 14% sát thương theo cách này.",
+      "1": "<br/>",
+      "2": "Ngoài ra, khi Flins trong đội, <strong>Nguyệt Triệu</strong> của đội sẽ tăng 1 cấp."
+    }
+  },
+  "passive": {
+    "name": "Giữ Đèn Trong Đêm",
+    "description": {
+      "0": "Hiển thị vị trí <strong>đặc sản khu vực Nod-Krai</strong> trên bản đồ nhỏ.",
+      "1": "Ngoài ra, dường như Flins có thể nghe hiểu lời thì thầm của Cuộc Săn Hoang Dã..."
+    }
+  },
+  "constellation1": {
+    "name": "Vén Lên Bức Màn Tuyết",
+    "description": {
+      "0": "Thời gian chờ cơ bản của Kỹ Năng Nguyên Tố đặc biệt <strong>Thương Trận Bắc Quốc</strong> rút ngắn còn 4s.",
+      "1": "Ngoài ra, khi nhân vật trong đội kích hoạt phản ứng Nguyệt-Điện Cảm, sẽ hồi phục 8 điểm Năng Lượng Nguyên Tố cho Flins. Hiệu quả này mỗi 5.5s tối đa kích hoạt một lần."
+    }
+  },
+  "constellation2": {
+    "name": "Vượt Qua Bức Tường Ma",
+    "description": {
+      "0": "Trong vòng 6s sau khi thi triển Kỹ Năng Nguyên Tố đặc biệt <strong>Thương Trận Bắc Quốc</strong>, khi lần Tấn Công Thường tiếp theo của Flins đánh trúng kẻ địch, sẽ gây thêm <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> tương đương 50% Tấn Công của Flins, sát thương này được tính là sát thương phản ứng Nguyệt-Điện Cảm.",
+      "1": "<strong>Nguyệt Triệu - Rực Sáng</strong>: Nếu Flins trong trận, sau khi đòn tấn công <electro>Nguyên Tố Lôi</electro> của Flins đánh trúng kẻ địch, kẻ địch này sẽ giảm 25% <electro>Kháng Nguyên Tố Lôi</electro> trong 7s."
+    }
+  },
+  "constellation3": {
+    "name": "Khách Lạ Giữa Đêm Khuya",
+    "description": {
+      "0": "Cấp kỹ năng <tooltip ns=char_Flins_gen baseKey18=burst><strong>Nghi Thức Cổ - Khách Đêm Ghé Thăm</strong></tooltip> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Đêm Núi Rừng Gào Thét",
+    "description": {
+      "0": "Flins tăng 20% Tấn Công.",
+      "1": "Ngoài ra, thiên phú <tooltip ns=char_Flins_gen baseKey18=passive2><strong>Lời Thì Thầm Của Lửa</strong></tooltip> được cường hóa: Tăng Tinh Thông Nguyên Tố của Flins, mức tăng tương đương 10% Tấn Công của Flins. Tối đa tăng 220 Tinh Thông Nguyên Tố của Flins thông qua cách này."
+    }
+  },
+  "constellation5": {
+    "name": "Bóng Hình Kẻ Lưu Đày",
+    "description": {
+      "0": "Cấp kỹ năng <tooltip ns=char_Flins_gen baseKey18=skill><strong>Lễ Nghi Cổ - Ngọn Đèn Huyền Bí</strong></tooltip> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Vũ Khúc Của Cái Chết",
+    "description": {
+      "0": "Sát thương phản ứng Nguyệt-Điện Cảm mà Flins gây ra cho kẻ địch <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Thăng Tiến</strong></tooltip> 35%.",
+      "1": "<strong>Nguyệt Triệu - Rực Sáng</strong>: Sát thương phản ứng Nguyệt-Điện Cảm của tất cả nhân vật trong đội gần đó gây ra sẽ <strong>Thăng Tiến</strong> 10%."
+    }
+  }
+}

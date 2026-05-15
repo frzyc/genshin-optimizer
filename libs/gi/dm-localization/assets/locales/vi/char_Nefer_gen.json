@@ -1,0 +1,169 @@
+{
+  "name": "Nefer",
+  "title": "Bí Mật Cát Phủ",
+  "description": "Cô chủ \"Hội Đồng Bí Mật\" thần thông quảng đại.",
+  "constellationName": "Cung Du Kỳ",
+  "auto": {
+    "name": "Rắn Xung Kích",
+    "fields": {
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 4 đòn đá bằng tư thế sắc bén và tao nhã như rắn, gây <dendro>Sát Thương Nguyên Tố Thảo</dendro>."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Vào trạng thái Rắn Trườn, tiêu hao Thể Lực để tiến hành di chuyển nhanh tối đa 2.5s. Khi thả nhấn kỹ năng, kết thúc thời gian duy trì hoặc tiêu hao hết Thể Lực, Nefer sẽ thoát trạng thái Rắn Trườn, đồng thời tiêu hao thêm Thể Lực nhất định để gây <dendro>Sát Thương Nguyên Tố Thảo</dendro> cho kẻ địch. Khi trong trạng thái <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Ảnh Vũ</strong></tooltip>, Thể Lực tiêu hao thêm sẽ giảm xuống.",
+        "2": "Ngoài ra, khi Nefer trong trạng thái Rắn Trườn, thi triển Kỹ Năng Nguyên Tố <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Chiến Thuật Senet - Vũ Điệu Ngàn Đêm</tooltip></strong> hoặc thực hiện Xung Kích sẽ không khiến Nefer thoát khỏi trạng thái Rắn Trườn."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Ngưng tụ sức mạnh Nguyên Tố Thảo, lao xuống đất từ trên không, tấn công kẻ địch trên đường đi và gây <dendro>Sát Thương Phạm Vi Nguyên Tố Thảo</dendro> khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Trọng Kích",
+      "5": "Tụ Lực Trọng Kích Rút Thể Lực",
+      "6": "Trọng Kích Tiêu Hao Thể Lực",
+      "7": "Trạng Thái Ảnh Vũ Trọng Kích Tiêu Hao Thể Lực",
+      "8": "Sát Thương Khi Đáp",
+      "9": "Sát Thương Khi Đáp Từ Độ Cao Thấp/Cao",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Chiến Thuật Senet - Vũ Điệu Ngàn Đêm",
+    "description": {
+      "0": "Vũ điệu nghiêng nước nghiêng thành, như lụa là uyển chuyển dưới ánh trăng, như biển cát lạnh lẽo đêm sương giá. Nefer đột kích về phía trước một đoạn, gây <dendro>Sát Thương Phạm Vi Nguyên Tố Thảo</dendro> và tiến vào trạng thái <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Ảnh Vũ</strong></tooltip>.",
+      "1": "Trong trạng thái Ảnh Vũ, nếu có ít nhất 1 <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>Sương Xanh</strong></tooltip>, Nefer thi triển Trọng Kích sẽ thay thế bằng Trọng Kích đặc biệt <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Ảo Kịch</strong></tooltip> không tiêu hao thể lực. Trong trạng thái Ảnh Vũ, Nefer sẽ tăng khả năng Kháng Gián Đoạn.",
+      "2": "<br/>",
+      "3": "Ban đầu sở hữu 2 lần sử dụng.",
+      "4": "<br/>",
+      "5": "<i>\"Thế sự cũng như bàn cờ, các kỳ thủ luôn ẩn mình phía sau bức màn. Nếu không muốn vô tình lọt vào lưới, thì phải nắm bắt đầy đủ thông tin, đó cũng là ý nghĩa của 'Bí Mật'.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Sát Thương Ảo Kịch Đòn 1 (Nefer)",
+      "2": "Sát Thương Ảo Kịch Đòn 2 (Nefer)",
+      "3": "Sát Thương Ảo Kịch Đòn 1 (Hư Ảnh)",
+      "4": "Sát Thương Ảo Kịch Đòn 2 (Hư Ảnh)",
+      "5": "Sát Thương Ảo Kịch Đòn 3 (Hư Ảnh)",
+      "6": "Số Lần Ảo Kịch Khả Dụng",
+      "7": "Thời Gian Duy Trì Ảnh Vũ",
+      "8": "CD",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Thánh Ước - Ảo Kịch Chân Nhãn",
+    "description": {
+      "0": "Dùng thị giác thực sự của Thoth, dâng lên \"chân tướng\" cho những bí ẩn của sự dối trá, gây <dendro>Sát Thương Phạm Vi Nguyên Tố Thảo</dendro> lên kẻ địch phía trước. Khi thi triển, Nefer sẽ còn tiêu hao toàn bộ <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>Bức Màn Lừa Dối</strong></tooltip> để tăng sát thương Kỹ Năng Nộ lần này.",
+      "1": "<br/>",
+      "2": "<i>\"Trong các bài thơ cổ xưa được truyền tụng bởi các ca nhân cát nóng, thay vì nói quà tặng của Vua Loài Cò là một sự chúc phúc, chi bằng nói đó là lời nguyền thì hơn.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Tăng Sát Thương",
+      "3": "CD",
+      "4": "Năng Lượng Nguyên Tố",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Đánh Cược Dưới Trăng",
+    "description": {
+      "0": "Căn cứ vào <strong>Nguyệt Triệu</strong> của đội, Nefer sẽ nhận được hiệu quả cường hóa tương ứng.",
+      "1": "<br/>",
+      "2": "<strong>Nguyệt Triệu - Rực Sáng</strong>: Khi thi triển Kỹ Năng Nguyên Tố <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Chiến Thuật Senet - Vũ Điệu Ngàn Đêm</tooltip></strong>, sẽ chuyển hóa Hạt Nhân Thảo trên sân thành \"Hạt Dối Trá\", đồng thời tất cả nhân vật ở gần khi kích hoạt phản ứng Nguyệt-Sum Suê trong 15s sau đó, sẽ sản sinh Hạt Dối Trá thay vì Hạt Nhân Thảo và Hạt Nhân Căng Tràn. Hạt Dối Trá sẽ không thể kích hoạt phản ứng Nở Rộ và Bung Tỏa, cũng không bùng nổ.",
+      "3": "Khi Nefer thi triển Trọng Kích hoặc <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Ảo Kịch</strong></tooltip>, có thể hấp thụ Hạt Dối Trá trong phạm vi nhất định ở gần. Với mỗi Hạt Dối Trá hấp thụ, Nefer sẽ nhận một tầng <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>Bức Màn Lừa Dối</strong></tooltip>. Khi hiệu quả này cộng dồn đến 3 tầng hoặc thời gian duy trì tầng 3 được làm mới, Nefer sẽ tăng 100 điểm Tinh Thông Nguyên Tố trong 8s."
+    }
+  },
+  "passive2": {
+    "name": "Con Gái Của Cát Bụi",
+    "description": {
+      "0": "Khi Nefer trong trạng thái <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Ảnh Vũ</strong></tooltip>, trong 5s sau khi nhân vật trong đội kích hoạt phản ứng Nguyệt-Sum Suê, trạng thái <strong><tooltip ns=char_Nefer_gen baseKey18=normal>Rắn Trườn</tooltip></strong> của Nefer sẽ còn cung cấp thêm <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>Sương Xanh</strong></tooltip> cho đội. Dựa trên phần Tinh Thông Nguyên Tố vượt quá 500 của Nefer, mỗi 100 điểm Tinh Thông Nguyên Tố sẽ khiến hiệu quả cung cấp Sương Xanh nêu trên gia tăng 10%, tối đa tăng 50% theo cách này."
+    }
+  },
+  "passive3": {
+    "name": "Chúc Phúc Nguyệt Triệu - Hành Lang Hoàng Hôn",
+    "description": {
+      "0": "Khi nhân vật trong đội kích hoạt phản ứng Sum Suê, sẽ chuyển thành phản ứng Nguyệt-Sum Suê, đồng thời tăng sát thương cơ bản của phản ứng Nguyệt-Sum Suê dựa trên Tinh Thông Nguyên Tố của Nefer: Mỗi điểm Tinh Thông Nguyên Tố sẽ tăng 0.0175% sát thương cơ bản của phản ứng Nguyệt-Sum Suê, tối đa tăng 14% sát thương theo cách này.",
+      "1": "<br/>",
+      "2": "Ngoài ra, khi có Nefer trong đội, <strong>Nguyệt Triệu</strong> của đội sẽ tăng 1 cấp."
+    }
+  },
+  "passive": {
+    "name": "Âm Mưu Căn Phòng Vàng",
+    "description": {
+      "0": "Khi làm nhiệm vụ Phái Đi Thám Hiểm có thời gian là 20 giờ ở Nod-Krai, phần thưởng nhận được tăng 25%."
+    }
+  },
+  "constellation1": {
+    "name": "Kế Hoạch Là Khởi Đầu Của Thành Bại",
+    "description": {
+      "0": "Tăng sát thương cơ bản của phản ứng Nguyệt-Sum Suê gây ra bởi <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Ảo Kịch</strong></tooltip> của Nefer, lượng tăng lên tương đương 60% Tinh Thông Nguyên Tố của Nefer. Hiệu quả này cũng sẽ được buff bởi <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>Bức Màn Lừa Dối</strong></tooltip>."
+    }
+  },
+  "constellation2": {
+    "name": "Quan Sát Chuẩn Bị Là Ưu Thế",
+    "description": {
+      "0": "Hiệu quả Thiên Phú Đột Phá <tooltip ns=char_Nefer_gen baseKey18=passive1><strong>Đánh Cược Dưới Trăng</strong></tooltip> được cường hóa: Thời gian duy trì <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>Bức Màn Lừa Dối</strong></tooltip> kéo dài 5s, giới hạn tăng đến 5 tầng, và tối đa khiến <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Ảo Kịch</strong></tooltip> gây ra 140% sát thương gốc. Khi Nefer thi triển Kỹ Năng Nguyên Tố <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Chiến Thuật Senet - Vũ Điệu Ngàn Đêm</tooltip></strong>, sẽ lập tức nhận 2 tầng Bức Màn Lừa Dối. Ngoài ra, khi Bức Màn Lừa Dối cộng dồn đến 5 tầng hoặc thời gian duy trì tầng 5 được làm mới, Tinh Thông Nguyên Tố của Nefer sẽ chuyển thành tăng 200 điểm trong 8s.",
+      "1": "Cần mở khóa thiên phú \"Đánh Cược Dưới Trăng\"."
+    }
+  },
+  "constellation3": {
+    "name": "Dấu Vết Dối Trá Che Sự Thật",
+    "description": {
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Chiến Thuật Senet - Vũ Điệu Ngàn Đêm</tooltip></strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Tấm Lưới Mê Hoặc Kéo Vào Bẫy",
+    "description": {
+      "0": "Khi Nefer trong trận và đang trong trạng thái <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Ảnh Vũ</strong></tooltip>, tốc độ nhận Sương Xanh tăng 25%.",
+      "1": "Ngoài ra, khi Nefer trong trạng thái Ảnh Vũ, sẽ còn khiến kẻ địch ở gần giảm 20% <dendro>Kháng Nguyên Tố Thảo</dendro>. Khi Nefer không trong trạng thái Ảnh Vũ hoặc rời xa kẻ địch một khoảng cách nhất định, hiệu quả này sẽ bị xóa sau 4.5s."
+    }
+  },
+  "constellation5": {
+    "name": "Cơ Hội Chỉ Đến Trong Khoảnh Khắc",
+    "description": {
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Nefer_gen baseKey18=burst>Thánh Ước - Ảo Kịch Chân Nhãn</tooltip></strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Thời Khắc Nghịch Chuyển Để Chiến Thắng",
+    "description": {
+      "0": "Khi Nefer thi triển <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Ảo Kịch</strong></tooltip>, sát thương đòn hai do bản thân gây ra sẽ chuyển thành gây <dendro>Sát Thương Phạm Vi Nguyên Tố Thảo</dendro> tương đương 85% Tinh Thông Nguyên Tố của Nefer. Ngoài ra, khi kết thúc tấn công Ảo Kịch, sẽ gây thêm một lần <dendro>Sát Thương Phạm Vi Nguyên Tố Thảo</dendro> tương đương 120% Tinh Thông Nguyên Tố của Nefer. Sát thương nêu trên đều được xem là sát thương phản ứng Nguyệt-Sum Suê do Ảo Kịch gây ra.",
+      "1": "<br/>",
+      "2": "<strong>Nguyệt Triệu - Rực Sáng</strong>",
+      "3": "Sát thương phản ứng Nguyệt-Sum Suê do Nefer gây ra sẽ <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Thăng Tiến</strong></tooltip> 15%."
+    }
+  }
+}

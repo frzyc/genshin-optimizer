@@ -139,7 +139,7 @@
   "constellation4": {
     "name": "Yapraklardaki Solgunluk",
     "description": {
-      "0": "<strong>Serseri Sarmaşık Ok</strong> kullanıldığında, 8 saniyeliğine yakındaki tüm grup üyeleri 60 Element Ustalığı kazanır. Serseri Sarmaşık Ok bir Yanma, Çiçeklenme, Hızlanma veya Yayılma tepkimesi tetiklerse grup üyelerinin Element Ustalığı 60 daha artar. Bu ayrıca güçlendirme durumunun süresini de yeniler."
+      "0": "<strong>Serseri Sarmaşık Ok</strong> kullanıldığında, 8 saniyeliğine yakındaki tüm grup üyeleri 60 Element Ustalığı kazanır. Serseri Sarmaşık Ok bir Yanma, Çiçeklenme, Ay Çiçeklenmesi, Hızlanma veya Yayılma tepkimesi tetiklerse grup üyelerinin Element Ustalığı 60 daha artar. Bu ayrıca güçlendirme durumunun süresini de yeniler."
     }
   },
   "constellation5": {

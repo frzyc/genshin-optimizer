@@ -1,0 +1,24 @@
+{
+  "name": "Cortinas Noturnas",
+  "description": {
+    "0": "Uma pérola de jade envolvida pela luz do luar. Mesmo nas noites mais frias de inverno, seu calor gentil permanece como uma canção."
+  },
+  "passiveName": "Canção das Encruzilhadas",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta a Vida Máxima em <cryo>10%</cryo>. Quando o portador desencadear Reações Lunares ou causar Dano de Reações Lunares contra os inimigos, regenera <cryo>14</cryo> de Energia Elemental para o portador, e obtém por 12s o efeito \"Vinho Divino\": aumenta a Vida Máxima em mais <cryo>14%</cryo> e aumenta o Dano CRIT das Reações Lunares em mais <cryo>60%</cryo>. Esses efeitos de regeneração de Energia Elemental podem ser desencadeados uma vez a cada 18s. Esses efeitos podem ser desencadeados, mesmo quando o portador não é o personagem ativo."
+    },
+    "1": {
+      "0": "Aumenta a Vida Máxima em <cryo>12%</cryo>. Quando o portador desencadear Reações Lunares ou causar Dano de Reações Lunares contra os inimigos, regenera <cryo>15</cryo> de Energia Elemental para o portador, e obtém por 12s o efeito \"Vinho Divino\": aumenta a Vida Máxima em mais <cryo>16%</cryo> e aumenta o Dano CRIT das Reações Lunares em mais <cryo>80%</cryo>. Esses efeitos de regeneração de Energia Elemental podem ser desencadeados uma vez a cada 18s. Esses efeitos podem ser desencadeados, mesmo quando o portador não é o personagem ativo."
+    },
+    "2": {
+      "0": "Aumenta a Vida Máxima em <cryo>14%</cryo>. Quando o portador desencadear Reações Lunares ou causar Dano de Reações Lunares contra os inimigos, regenera <cryo>16</cryo> de Energia Elemental para o portador, e obtém por 12s o efeito \"Vinho Divino\": aumenta a Vida Máxima em mais <cryo>18%</cryo> e aumenta o Dano CRIT das Reações Lunares em mais <cryo>100%</cryo>. Esses efeitos de regeneração de Energia Elemental podem ser desencadeados uma vez a cada 18s. Esses efeitos podem ser desencadeados, mesmo quando o portador não é o personagem ativo."
+    },
+    "3": {
+      "0": "Aumenta a Vida Máxima em <cryo>16%</cryo>. Quando o portador desencadear Reações Lunares ou causar Dano de Reações Lunares contra os inimigos, regenera <cryo>17</cryo> de Energia Elemental para o portador, e obtém por 12s o efeito \"Vinho Divino\": aumenta a Vida Máxima em mais <cryo>20%</cryo> e aumenta o Dano CRIT das Reações Lunares em mais <cryo>120%</cryo>. Esses efeitos de regeneração de Energia Elemental podem ser desencadeados uma vez a cada 18s. Esses efeitos podem ser desencadeados, mesmo quando o portador não é o personagem ativo."
+    },
+    "4": {
+      "0": "Aumenta a Vida Máxima em <cryo>18%</cryo>. Quando o portador desencadear Reações Lunares ou causar Dano de Reações Lunares contra os inimigos, regenera <cryo>18</cryo> de Energia Elemental para o portador, e obtém por 12s o efeito \"Vinho Divino\": aumenta a Vida Máxima em mais <cryo>22%</cryo> e aumenta o Dano CRIT das Reações Lunares em mais <cryo>140%</cryo>. Esses efeitos de regeneração de Energia Elemental podem ser desencadeados uma vez a cada 18s. Esses efeitos podem ser desencadeados, mesmo quando o portador não é o personagem ativo."
+    }
+  }
+}

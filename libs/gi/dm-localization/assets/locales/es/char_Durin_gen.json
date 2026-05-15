@@ -1,0 +1,192 @@
+{
+  "name": "Durin",
+  "title": "“El Fuego Inextinguible”",
+  "description": "Un dragón nacido de la pluma de la bruja M y llegado al mundo de los humanos. Su “historia” continúa desarrollándose.",
+  "constellationName": "Draco Rubedo",
+  "auto": {
+    "name": "Corte del ala ardiente",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 4 ataques consecutivos con espada."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante para ejecutar un golpe frontal."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendiente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de ATQ Cargado",
+      "5": "Coste de Aguante de ATQ Cargado",
+      "6": "Daño de Caída",
+      "7": "Daño de impacto de caída baja/alta",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Forma binaria: Convergencia y división",
+    "description": {
+      "0": "Purifica la esencia del alma y los deseos para realizar una <tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>transmutación esencial</strong></tooltip>. Durante este proceso, la Habilidad Elemental de Durin, <strong>Forma binaria: Convergencia y división</strong>, será reemplazada por la Habilidad Elemental especial <strong>Transmutación: Confirmación de la pureza</strong>, y su Ataque Normal, <strong>Corte del ala ardiente</strong>, será reemplazado por la Habilidad Elemental especial <strong>Transmutación: Negación de la oscuridad</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Transmutación: Confirmación de la pureza</strong>",
+      "3": "Inflige <pyro>Daño Pyro en el AdE</pyro> una vez a los enemigos cercanos, anula la transmutación esencial y entra en el estado de <strong>confirmación de la pureza</strong> durante 30 s.",
+      "4": "<br/>",
+      "5": "<strong>Transmutación: Negación de la oscuridad</strong>",
+      "6": "Inflige <pyro>Daño Pyro</pyro> tres veces consecutivas a los enemigos que tenga enfrente, anula la transmutación esencial y entra en el estado de <strong>negación de la oscuridad</strong> durante 30 s.",
+      "7": "<br/>",
+      "8": "Cuando Durin entre en el estado de <strong>confirmación de la pureza</strong> o <strong>negación de la oscuridad</strong> mientras esté en combate, también recuperará cierta cantidad de Energía Elemental. Solo puede recuperar Energía Elemental de esta manera una vez cada 6 s."
+    },
+    "skillParams": {
+      "0": "Daño de Transmutación: Confirmación de la pureza",
+      "1": "Daño de Transmutación: Negación de la oscuridad",
+      "2": "Energía Elemental recuperada",
+      "3": "TdE",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Principio de pureza: Fluctuación lumínica",
+    "description": {
+      "0": "Libera el poder de la “bestia” de diferentes maneras. Durin podrá usar distintas Habilidades Definitivas según el estado de <tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>transmutación esencial</strong></tooltip> en el que se encuentre.",
+      "1": "<br/>",
+      "2": "<strong>Principio de pureza: Fluctuación lumínica</strong>",
+      "3": "Si Durin está en estado de <strong>confirmación de la pureza</strong>, usará la Habilidad Definitiva <strong>Principio de pureza: Fluctuación lumínica</strong>, la cual inflige tres veces <pyro>Daño Pyro en el AdE</pyro> a los enemigos que tenga enfrente, y manifestará su poder en forma de un <strong>dragón alboflamígero</strong>. El dragón alboflamígero seguirá al personaje en uso y atacará cada cierto tiempo a los enemigos cercanos para infligirles <pyro>Daño Pyro en el AdE</pyro>, el cual se considera daño de Habilidad Definitiva.",
+      "4": "<br/>",
+      "5": "<strong>Principio de oscuridad: Combustión estelar</strong>",
+      "6": "Si Durin está en estado de <strong>negación de la oscuridad</strong>, usará la Habilidad Definitiva <strong>Principio de oscuridad: Combustión estelar</strong>, la cual inflige tres veces <pyro>Daño Pyro en el AdE</pyro> a los enemigos que tenga enfrente, y manifestará su poder en forma de un <strong>dragón de corrosión sombría</strong>. El dragón de corrosión sombría seguirá al personaje en uso y atacará cada cierto tiempo a un enemigo cercano para infligirle <pyro>Daño Pyro</pyro>, el cual se considera daño de Habilidad Definitiva.",
+      "7": "<br/>",
+      "8": "Si Durin no está en ningún estado especial de transmutación esencial, usará la Habilidad Definitiva <strong>Principio de pureza: Fluctuación lumínica</strong>."
+    },
+    "skillParams": {
+      "0": "Daño de Principio de pureza: Fluctuación lumínica",
+      "1": "Daño de Principio de oscuridad: Combustión estelar",
+      "2": "Daño del dragón alboflamígero",
+      "3": "Daño del dragón de corrosión sombría",
+      "4": "Duración del dragón alboflamígero",
+      "5": "Duración del dragón de corrosión sombría",
+      "6": "TdE",
+      "7": "Energía Elemental",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Lumimanifestación del cálculo divino",
+    "description": {
+      "0": "Otorga diferentes fortalecimientos según la forma de poder que manifieste Durin al usar su Habilidad Definitiva.",
+      "1": "<br/>",
+      "2": "<strong>Dragón alboflamígero</strong>",
+      "3": "Después de que un personaje cercano del equipo cause una reacción de Quemadura, Sobrecarga, Torbellino Pyro o Cristalización Pyro contra un enemigo, o inflija <pyro>Daño Pyro</pyro> o <dendro>Daño Dendro</dendro> contra un enemigo quemado, tanto la <pyro>RES Pyro</pyro> de dicho enemigo como la RES del otro elemento usado para causar la reacción se reducirán en un 20% durante 6 s.",
+      "4": "<br/>",
+      "5": "<strong>Dragón de corrosión sombría</strong>",
+      "6": "El daño que infligen las reacciones de Vaporización y Derretido causadas por Durin aumenta en un 40%."
+    }
+  },
+  "passive2": {
+    "name": "El caos se forma como la noche",
+    "description": {
+      "0": "Durante 20 s tras usar la Habilidad Definitiva, Durin obtendrá el efecto “fundición primigenia de formas”. Mientras este esté activo, Durin obtendrá 10 cargas de “fundición primigenia” y, cuando los ataques periódicos del <strong>dragón alboflamígero</strong> o del <strong>dragón de corrosión sombría</strong> inflijan daño, consumirá una carga para incrementar dicho daño. Por cada 100 pts. de ATQ que tenga, infligirá un 3% adicional del daño original. Como máximo, se podrá aumentar el daño infligido hasta un 75% adicional del daño original de esta manera. Si el <strong>dragón alboflamígero</strong> y el <strong>dragón de corrosión sombría</strong> golpean a varios enemigos a la vez, solo se consumirá una carga de fundición primigenia.",
+      "1": "Las cargas de fundición primigenia se reiniciarán al volver a usar la Habilidad Definitiva."
+    }
+  },
+  "passive3": {
+    "name": "Ecos de la tierra",
+    "description": {
+      "0": "Aumenta en un 25% las recompensas de las expediciones de 20 h en Mondstadt."
+    }
+  },
+  "lockedPassive": {
+    "name": "Rito de la noche de brujas: Oda a la ascensión",
+    "description": {
+      "0": "Tras completar la misión <strong>«Lecciones del Aquelarre: De este mundo»</strong>, Durin se convertirá en un personaje <strong>taumatúrgico</strong>. Cuando en el equipo haya al menos 2 personajes taumatúrgicos, estos obtendrán el efecto de <strong>taumaturgia: rito secreto</strong>, el cual les otorgará ciertos fortalecimientos.",
+      "1": "<br/>",
+      "2": "<strong>Taumaturgia: rito secreto</strong>",
+      "3": "Potencia en un 75% todos los efectos (excepto la duración) del talento de ascensión <tooltip ns=char_Durin_gen baseKey18=passive1><strong>Lumimanifestación del cálculo divino</strong></tooltip>."
+    }
+  },
+  "constellation1": {
+    "name": "Redención de Adamah",
+    "description": {
+      "0": "Tras usar la Habilidad Definitiva, se producirán distintos efectos dependiendo de la forma de Habilidad Definitiva que haya usado.",
+      "1": [
+        "<strong>Principio de pureza: Fluctuación lumínica</strong>"
+      ],
+      "2": "Todos los personajes cercanos del equipo obtienen 20 cargas de <strong>iluminación cíclica</strong> durante 20 s. Cuando los personajes en uso cercanos que posean iluminación cíclica inflijan daño con un Ataque Normal, Cargado o Descendente, o con la Habilidad Elemental o Definitiva, consumirán 1 carga de iluminación cíclica para aumentar el daño infligido en una cantidad equivalente al 60% del ATQ de Durin. El número de cargas de los personajes del equipo con iluminación cíclica se calcula de forma independiente.",
+      "3": [
+        "<strong>Principio de oscuridad: Combustión estelar</strong>"
+      ],
+      "4": "Durin obtiene 20 cargas de <strong>iluminación cíclica</strong> durante 20 s. Cuando inflija daño con su Habilidad Definitiva, consumirá 2 cargas para aumentar el daño infligido en una cantidad equivalente al 150% de su ATQ.",
+      "5": "<br/>",
+      "6": "Al usar la Habilidad Definitiva, las cargas de <strong>iluminación cíclica</strong> se reiniciarán."
+    }
+  },
+  "constellation2": {
+    "name": "Visiones sin fondo",
+    "description": {
+      "0": "Durante 20 s después de que Durin use su Habilidad Definitiva, cuando un personaje cercano del equipo cause una reacción de Vaporización, Derretido, Quemadura, Sobrecarga, Torbellino Pyro o Cristalización Pyro contra un enemigo, o cuando inflija <pyro>Daño Pyro</pyro> o <dendro>Daño Dendro</dendro> contra un enemigo quemado, todos los personajes cercanos del equipo infligirán un 50% más de <pyro>Daño Pyro</pyro> y del daño del elemento correspondiente que haya participado en la reacción durante 6 s."
+    }
+  },
+  "constellation3": {
+    "name": "Revelación del espejo ardiente",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_Durin_gen baseKey18=burst>Principio de pureza: Fluctuación lumínica</tooltip></strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Fuente desbordante",
+    "description": {
+      "0": "El daño infligido por la Habilidad Definitiva de Durin aumenta en un 40%. Al activarse el efecto de consumo de <strong>iluminación cíclica</strong> de la constelación <strong><tooltip ns=char_Durin_gen baseKey18=constellation1>Redención de Adamah</tooltip></strong>, hay un 30% de probabilidad de que las cargas no se consuman."
+    }
+  },
+  "constellation5": {
+    "name": "Fisura del fuego amargo",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_Durin_gen baseKey18=skill>Forma binaria: Convergencia y división</tooltip></strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Nacimiento doble",
+    "description": {
+      "0": "El daño de la Habilidad Definitiva de Durin ignora el 30% de la DEF del enemigo.",
+      "1": "Además, las Habilidades Definitivas de Durin, <strong>Principio de pureza: Fluctuación lumínica</strong> y <strong>Principio de oscuridad: Combustión estelar</strong>, se fortalecen respectivamente de la siguiente manera:",
+      "2": [
+        "Tras golpear a un enemigo con la Habilidad Definitiva <strong>Principio de pureza: Fluctuación lumínica</strong> y el <strong>dragón alboflamígero</strong>, la DEF de dicho enemigo se reduce en un 30% durante 6 s.",
+        "El daño de la Habilidad Definitiva <strong>Principio de oscuridad: Combustión estelar</strong> y del <strong>dragón de corrosión sombría</strong> ignora un 40% adicional de la DEF del enemigo."
+      ]
+    }
+  }
+}

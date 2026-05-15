@@ -111,7 +111,7 @@
   "passive2": {
     "name": "Tại Địa Vi Hóa",
     "description": {
-      "0": "Nhân vật nhận được trị liệu từ <strong>Vô Khích Khí Thuẫn</strong> sẽ nhận được hiệu quả \"Mộc Vận Chi Tuế\": Căn cứ vào lượng giới hạn HP dưới 50000 của Baizhu, mỗi 1000 điểm sẽ tăng 2% sát thương gây ra từ phản ứng Thiêu Đốt, Sum Suê, Nở Rộ, Bung Tỏa của nhân vật đó; Đồng thời tăng 0.8% lượng sát thương thêm từ phản ứng Tăng Cường, Lan Tràn, duy trì 6s."
+      "0": "Nhân vật nhận được trị liệu từ <strong>Vô Khích Khí Thuẫn</strong> sẽ nhận được hiệu quả \"Mộc Vận Chi Tuế\": Căn cứ vào lượng giới hạn HP dưới 50000 của Baizhu, mỗi 1000 điểm sẽ tăng 2% sát thương gây ra từ phản ứng Thiêu Đốt, Sum Suê, Nở Rộ, Bung Tỏa của nhân vật đó; Đồng thời tăng 0.8% lượng sát thương thêm từ phản ứng Tăng Cường, Lan Tràn; tăng 0.7% lượng sát thương thêm từ phản ứng Nguyệt-Sum Suê, duy trì 6s."
     }
   },
   "passive3": {

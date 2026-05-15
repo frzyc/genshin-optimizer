@@ -83,5 +83,9 @@
   },
   "unlockPassive1": "Si sblocca dopo aver raggiunto la fase d'ascensione 1",
   "unlockPassive2": "Si sblocca dopo aver raggiunto la fase d'ascensione 4",
-  "unlockPassive3": "Talento passivo"
+  "unlockPassive3": "Talento passivo",
+  "unlockLockedPassive": "Si sblocca dopo aver completato le missioni preliminari",
+  "witchPassive": "Compiti della strega",
+  "moonsign": "Presagio lunare",
+  "hexerei": "Hexerei"
 }

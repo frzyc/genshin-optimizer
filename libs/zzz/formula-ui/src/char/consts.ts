@@ -4,6 +4,7 @@ import { allSkillKeys } from '@genshin-optimizer/zzz/consts'
 export const allTalentSheetElementKey = [
   ...allSkillKeys,
   'core',
+  'potential',
   'm1',
   'm2',
   'm3',

@@ -1,0 +1,24 @@
+{
+  "name": "Prospector's Shovel",
+  "description": {
+    "0": "Tombak yang sepertinya ditempa dari alat pertanian. Dilihat sekilas, tampak biasa saja, namun aksesorisnya sangat berharga, dan desainnya yang sederhana menyembunyikan keindahan yang tak bisa diabaikan."
+  },
+  "passiveName": "Swift and Sure",
+  "passiveDescription": {
+    "0": {
+      "0": "DMG reaksi Electro-Charged +<cryo>48%</cryo> dan DMG reaksi Lunar-Charged +<cryo>12%</cryo>. Moonsign: Ascendant Gleam: DMG reaksi Lunar-Charged meningkat <cryo>12%</cryo> lagi."
+    },
+    "1": {
+      "0": "DMG reaksi Electro-Charged +<cryo>60%</cryo> dan DMG reaksi Lunar-Charged +<cryo>15%</cryo>. Moonsign: Ascendant Gleam: DMG reaksi Lunar-Charged meningkat <cryo>15%</cryo> lagi."
+    },
+    "2": {
+      "0": "DMG reaksi Electro-Charged +<cryo>72%</cryo> dan DMG reaksi Lunar-Charged +<cryo>18%</cryo>. Moonsign: Ascendant Gleam: DMG reaksi Lunar-Charged meningkat <cryo>18%</cryo> lagi."
+    },
+    "3": {
+      "0": "DMG reaksi Electro-Charged +<cryo>84%</cryo> dan DMG reaksi Lunar-Charged +<cryo>21%</cryo>. Moonsign: Ascendant Gleam: DMG reaksi Lunar-Charged meningkat <cryo>21%</cryo> lagi."
+    },
+    "4": {
+      "0": "DMG reaksi Electro-Charged +<cryo>96%</cryo> dan DMG reaksi Lunar-Charged +<cryo>24%</cryo>. Moonsign: Ascendant Gleam: DMG reaksi Lunar-Charged meningkat <cryo>24%</cryo> lagi."
+    }
+  }
+}

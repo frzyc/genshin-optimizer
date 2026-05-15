@@ -2,7 +2,7 @@ import type {
   LocationCharacterKey,
   LocationGenderedCharacterKey,
 } from '@genshin-optimizer/gi/consts'
-import type { Translatable } from '../common'
+import { MediumTextMapOffset, type Translatable } from '../common'
 
 type CharData = Record<
   string,
@@ -11,6 +11,9 @@ type CharData = Record<
 const char: Partial<
   Record<LocationCharacterKey | LocationGenderedCharacterKey, CharData>
 > = {
+  Columbina: {
+    constellationName: 2821104034,
+  },
   Eula: {
     skill: {
       brandDMG: [3765549071, 'skillParam'],
@@ -26,26 +29,26 @@ const char: Partial<
   },
   KamisatoAyaka: {
     burst: {
-      cutting: [373269062, 'skillParam'],
+      cutting: [373269062 - MediumTextMapOffset, 'skillParam'],
       bloom: [2543020158, 'skillParam'],
     },
   },
   Neuvillette: {
-    constellationName: 1525610219,
+    constellationName: 1525610219 - MediumTextMapOffset,
   },
   Noelle: {
     skill: {
-      triggerChance: [3971383039, 'skillParam'],
+      triggerChance: [3971383039 - MediumTextMapOffset, 'skillParam'],
     },
     burst: {
-      atkBonus: [4151293863, 'skillParam'],
+      atkBonus: [4151293863 - MediumTextMapOffset, 'skillParam'],
     },
   },
   Traveler: {
     electro: {
       skill: {
         enerRegen: [2165261751, 'skillParam'],
-        enerRechInc: [3328414367, 'skillParam'],
+        enerRechInc: [3328414367 - MediumTextMapOffset, 'skillParam'],
       },
       burst: {
         thunderDMG: [3560985918, 'skillParam'],

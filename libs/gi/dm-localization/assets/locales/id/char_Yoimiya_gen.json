@@ -115,7 +115,7 @@
   "passive2": {
     "name": "Summer Night's Dawn",
     "description": {
-      "0": "Melancarkan <strong>Ryuukin Saxifrage</strong> akan meningkatkan 10% ATK seluruh anggota party di sekitar (tidak termasuk Yoimiya) selama 15 detik. Selain itu, Karakter juga akan mendapatkan peningkatan ATK tambahan berdasarkan jumlah lapisan \"Tricks of the Trouble-Maker\" yang dimiliki Yoimiya saat menggunakan <strong>Ryuukin Saxifrage</strong>. Setiap lapisan akan meningkatkan 1% peningkatan ATK."
+      "0": "Melancarkan <strong>Ryuukin Saxifrage</strong> akan meningkatkan 10% ATK seluruh anggota party di sekitar (tidak termasuk Yoimiya) selama 15 detik. Selain itu, Karakter juga akan mendapatkan peningkatan ATK tambahan berdasarkan jumlah lapisan Talenta Ascension \"Tricks of the Trouble-Maker\" yang dimiliki Yoimiya saat menggunakan <strong>Ryuukin Saxifrage</strong>. Setiap lapisan akan meningkatkan 1% peningkatan ATK."
     }
   },
   "passive3": {

@@ -151,7 +151,7 @@
   "constellation2": {
     "name": "Tembelliktir Baş Düşman!",
     "description": {
-      "0": "Iansan, <strong>Gücün Üç Prensibi</strong> Element Patlamasını kullandığında 15 saniyeliğine \"Gelişmiş Direnç Antrenmanı\" Pasif Yeteneğinden gelen Hassas Hareket etkisini de kazanır. Ayrıca Hassas Hareket etkinken Iansan savaş alanında değilse mevcut aktif karakterinin Saldırısı %30 artar. Bu etkiyi kullanmak için \"Gelişmiş Direnç Antrenmanı\" Pasif Yeteneğinin açılmış olması gerekir."
+      "0": "Iansan, <strong>Gücün Üç Prensibi</strong> Element Patlamasını kullandığında 15 saniyeliğine \"Gelişmiş Direnç Antrenmanı\" Yükseltme Yeteneğinden gelen Hassas Hareket etkisini de kazanır. Ayrıca Hassas Hareket etkinken Iansan savaş alanında değilse mevcut aktif karakterinin Saldırısı %30 artar. Bu etkiyi kullanmak için \"Gelişmiş Direnç Antrenmanı\" Yükseltme Yeteneğinin açılmış olması gerekir."
     }
   },
   "constellation3": {
@@ -176,7 +176,7 @@
     }
   },
   "constellation6": {
-    "name": "Bereket Kolektifi Öğretileri",
+    "name": "Bereket Kolektifi Öğretisi",
     "description": {
       "0": "Kinetik Enerji Ölçeğinin süresi 3sn artar.",
       "1": "Buna ek olarak Iansan, Gece Ruhu puanı yenilediğinde maksimumun üzerinde Gece Ruhu puanı yenilerse Ekstrem Kuvvet etkisini kazanır. Bu etki, 3 saniyeliğine mevcut aktif karakterinin verdiği Hasarı %25 artırır."

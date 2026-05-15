@@ -1,6 +1,20 @@
 {
   "edit": "Điều chỉnh Vũ khí",
   "weaponName": "Tên vũ khí",
-  "removeWeapon": "Bạn có chắc bạn muốn xóa {{value}}?",
-  "addWeapon": "Thêm Vũ khí mới"
+  "removeWeapon": "Xác nhận xóa {{value}}?",
+  "addWeapon": "Thêm vũ khí mới",
+  "showingNum_other": "Đang hiện <1>{{count}}</1> trên tổng số {{value}} Vũ Khí",
+  "cantDeleteLock": "Không thể xóa vũ khí do đã bị khóa",
+  "button": {
+    "deleteWeapons": "Xóa Vũ Khí",
+    "lockWeapons": "Khóa Vũ Khí",
+    "unlockWeapons": "Mở Khóa Vũ Khí"
+  },
+  "buttonHint": "Lưu ý: các nút đỏ phía trên chỉ áp dụng cho các <1>vũ khí đã lọc</1>",
+  "equippedWeapon": "Tất Cả Vũ Khí Đã Trang Bị",
+  "weaponInInv": "Tất Cả Vũ Khí Chưa Trang Bị",
+  "subheadings": {
+    "general": "Tổng Quan",
+    "inventory": "Túi"
+  }
 }

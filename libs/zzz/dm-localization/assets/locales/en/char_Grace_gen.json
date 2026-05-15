@@ -7,7 +7,7 @@
       "desc": {
         "0": "Press <IconNormal /> to activate:",
         "1": "Unleashes up to 4 attacks, dealing <ct color=#F0D12B>Physical DMG</ct> and <ct color=#2EB6FF>Electric DMG</ct>.",
-        "2": "While launching <ct color=#FFFFFF>Basic Attacks</ct>, drag the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} to attack while moving. This allows Grace to reposition herself and deal <ct color=#F0D12B>Physical DMG</ct>.",
+        "2": "While launching <ct color=#FFFFFF>Basic Attacks</ct>, drag the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} to move while attacking. This allows Grace to reposition herself and deal <ct color=#F0D12B>Physical DMG</ct>. If used after the 1st or 2nd hit of a <ct color=#FFFFFF>Basic Attack</ct>, pressing <IconNormal /> again resumes the combo from the 3rd or 4th hit of the <ct color=#FFFFFF>Basic Attack</ct>.",
         "3": "While Grace is launching <ct color=#FFFFFF>Basic Attacks</ct>, her <ct color=#FFFFFF>Basic Attack</ct> combo will not be interrupted by her <ct color=#FFFFFF>Special Attacks</ct>, <ct color=#FFFFFF>EX Special Attacks</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Dash Attacks</ct>, or <ct color=#FFFFFF>Dodge Counter</ct>."
       },
       "params": [
@@ -43,7 +43,7 @@
       "name": "Dodge Counter: Violation Penalty",
       "desc": {
         "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
-        "1": "Throws a grenade at enemies, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "1": "Throws a grenade at enemies, dealing <ct color=#2EB6FF>Electric DMG</ct>, then automatically triggers the <ct color=#FFFFFF>Basic Attack</ct>'s 4th hit.",
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
@@ -56,9 +56,10 @@
       "name": "Special Attack: Obstruction Removal",
       "desc": {
         "0": "Press <IconSpecial /> to activate:",
-        "1": "Throws a grenade to the front, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
-        "2": "Upon use, drag the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} to change directions.",
-        "3": "Anti-Interrupt level is increased while using this skill."
+        "1": "Throws a grenade forward, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "During the skill, drag the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} to reposition in that direction.",
+        "3": "When activated via consuming <ct color=#FFFFFF>Zap</ct>, dodge incoming enemy attacks.",
+        "4": "Anti-Interrupt level is increased while using this skill."
       },
       "params": [
         " "
@@ -68,13 +69,35 @@
       "name": "EX Special Attack: Supercharged Obstruction Removal",
       "desc": {
         "0": "With enough Energy, press <IconSpecialReady /> to activate:",
-        "1": "Leap in the air and throw two grenades to the front, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
-        "2": "Upon use, drag the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} to change directions.",
-        "3": "Character is invulnerable while using this skill."
+        "1": "Leaps into the air and throws two grenades forward, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "During the skill, drag the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} to change directions.",
+        "3": "If <ct color=#FFFFFF>Zap</ct> reaches max stacks, throws an additional Vortex Cluster Grenade, generating an electromagnetic field at the point of detonation that pulls in enemies and deals <ct color=#2EB6FF>Electric DMG</ct>.",
+        "4": "Character is invulnerable while using this skill."
       },
       "params": [
         " ",
         "Energy Cost "
+      ]
+    },
+    "Pulse": {
+      "name": "Pulse",
+      "desc": {
+        "0": "Activating an <ct color=#FFFFFF>Ultimate</ct> grants 25 stacks of <ct color=#FFFFFF>Pulse</ct> (max 25 stacks). When gaining <ct color=#FFFFFF>Zap</ct>, consumes 1 stack of <ct color=#FFFFFF>Pulse</ct>.",
+        "1": "After consuming <ct color=#FFFFFF>Pulse</ct> to obtain 8 stacks of <ct color=#FFFFFF>Zap</ct>, the next grenade throw includes an additional Pulse Grenade. If it hits an enemy suffering <ct color=#FE437E>Ether</ct>, <ct color=#2EB6FF>Electric</ct>, <ct color=#FF5521>Fire</ct>, <ct color=#F0D12B>Physical</ct>, or <ct color=#98EFF0>Ice</ct> Anomaly, it triggers <ct color=#FFFFFF>Abloom</ct>: deals an additional instance of DMG equal to <ct color=#FE437E>560%</ct>/<ct color=#2EB6FF>280%</ct>/<ct color=#FF5521>700%</ct>/<ct color=#F0D12B>50%</ct>/<ct color=#98EFF0>70%</ct> of the original Anomaly's DMG.",
+        "2": "While in the Pulse state, <ct color=#FFFFFF>Special Attack: Obstruction Removal - Cycle</ct> is unlocked."
+      },
+      "params": []
+    },
+    "SpecialAttackObstructionRemovalCycle": {
+      "name": "Special Attack: Obstruction Removal - Cycle",
+      "desc": {
+        "0": "While in the Pulse state, hold <IconSpecial /> to activate:",
+        "1": "Repeatedly hurls grenades forward during the skill, dealing <ct color=#2EB6FF>Electric DMG</ct> and granting 1 <ct color=#FFFFFF>Zap</ct> stack each time grenades are thrown.",
+        "2": "During the skill, tilt the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} to reposition and dodge enemy attacks.",
+        "3": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        " "
       ]
     }
   },
@@ -95,7 +118,8 @@
       "desc": {
         "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
         "1": "Throws a custom grenade which explodes in the air and splits into four smaller grenades, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
-        "2": "Character is invulnerable while using this skill."
+        "2": "Gains 8 stacks of <ct color=#FFFFFF>Zap</ct> and 25 stacks of <ct color=#FFFFFF>Pulse</ct> (max 25 stacks).",
+        "3": "Character is invulnerable while using this skill."
       },
       "params": [
         " "
@@ -150,8 +174,8 @@
   "ability": {
     "name": "Additional Ability: Tech Support Dept.",
     "desc": {
-      "0": "When another character in your squad shares the same Attribute or Faction:",
-      "1": "Upon hitting an enemy with an <ct color=#FFFFFF>EX Special Attack</ct>, the next <ct color=#2EB6FF>Shock</ct> effect inflicted on the target increases <ct color=#2EB6FF>Shock</ct> DMG by 18%. This effect can stack up to 2 times, and each enemy can trigger it once per skill use. Resets when the <ct color=#2EB6FF>Shock</ct> effect ends."
+      "0": "When another character in your squad shares the same Attribute or Faction, or is an <ct color=#FFFFFF>Anomaly</ct> character:",
+      "1": "When Grace's <ct color=#FFFFFF>EX Special Attack</ct> hits an enemy, the next time that target is afflicted with <ct color=#2EB6FF>Shock</ct>, that instance of <ct color=#2EB6FF>Shock</ct> DMG is increased by 18%, stacking up to 2 times. This effect can trigger on each enemy only once per skill use, and all stacks reset when the <ct color=#2EB6FF>Shock</ct> state ends."
     }
   },
   "mindscapes": {
@@ -200,5 +224,16 @@
         "1": "When even Grace gives up control, it's a sign for everyone to cover their ears."
       }
     }
+  },
+  "potential": {
+    "name": "Awakened Potential: Overclocked Engineering Engine",
+    "desc": [
+      "",
+      "When consuming <ct color=#FFFFFF>Zap</ct>, gain <ct color=#FFFFFF>Enhanced Zap</ct>, increasing <ct color=#2EB6FF>Electric DMG</ct> by <ct color=#2BAD00>10%</ct> for 25s. Repeated triggers reset the duration.",
+      "When consuming <ct color=#FFFFFF>Zap</ct>, gain <ct color=#FFFFFF>Enhanced Zap</ct>, increasing <ct color=#2EB6FF>Electric DMG</ct> by <ct color=#2BAD00>15%</ct> for 25s. Repeated triggers reset the duration.",
+      "When consuming <ct color=#FFFFFF>Zap</ct>, gain <ct color=#FFFFFF>Enhanced Zap</ct>, increasing <ct color=#2EB6FF>Electric DMG</ct> by <ct color=#2BAD00>20%</ct> for 25s. Repeated triggers reset the duration.",
+      "When consuming <ct color=#FFFFFF>Zap</ct>, gain <ct color=#FFFFFF>Enhanced Zap</ct>, increasing <ct color=#2EB6FF>Electric DMG</ct> by <ct color=#2BAD00>25%</ct> for 25s. Repeated triggers reset the duration.",
+      "When consuming <ct color=#FFFFFF>Zap</ct>, gain <ct color=#FFFFFF>Enhanced Zap</ct>, increasing <ct color=#2EB6FF>Electric DMG</ct> by <ct color=#2BAD00>30%</ct> for 25s. Repeated triggers reset the duration."
+    ]
   }
 }

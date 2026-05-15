@@ -42,7 +42,9 @@
     "invalid": "Non valide:",
     "upgraded": "Amélioré :",
     "dbTotal": "Total fusionné :",
-    "notInImport": "Pas d'importation :"
+    "notInImport": "Pas d'importation :",
+    "teams": "Équipes:",
+    "builds": "Builds: "
   },
   "DatabaseCard": {
     "title": "Base de données",

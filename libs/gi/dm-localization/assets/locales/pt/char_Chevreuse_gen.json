@@ -105,7 +105,7 @@
     "description": {
       "0": "Quando todos os personagens da equipe têm Tipo Elemental <pyro>Pyro</pyro> e <electro>Electro</electro>, e há pelo menos um personagem Pyro e um personagem Electro:",
       "1": "Chevreuse aplica \"Táticas Coordenadas\" para os membros próximos da equipe: quando o personagem causar uma reação de Sobrecarga, reduzirá a RES <pyro>Pyro</pyro> e <electro>Electro</electro> do inimigo afetado em 40% por 6s.",
-      "2": "O efeito das \"Táticas Coordenadas\" será removido quando o Tipo Elemental dos personagens na equipe não cumprir os requisitos do Talento Passivo."
+      "2": "O efeito das \"Táticas Coordenadas\" será removido quando o Tipo Elemental dos personagens na equipe não cumprir os requisitos do Talento de Ascensão."
     }
   },
   "passive2": {
@@ -125,7 +125,7 @@
     "name": "Coragem da Formação Firme",
     "description": {
       "0": "Quando o personagem ativo que está no estado \"Táticas Coordenadas\" (exceto Chevreuse) desencadear uma reação de Sobrecarga, regenerará 6 de Energia Elemental. Esse efeito pode ser desencadeado uma vez a cada 10s.",
-      "1": "É necessário ter desbloqueado o Talento Passivo \"Táticas de Combate Coordenado\"."
+      "1": "É necessário ter desbloqueado o Talento de Ascensão \"Táticas de Combate Coordenado\"."
     }
   },
   "constellation2": {

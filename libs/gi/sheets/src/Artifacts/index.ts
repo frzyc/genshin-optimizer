@@ -4,8 +4,10 @@ import type { UIData } from '@genshin-optimizer/gi/uidata'
 import { input, mergeData } from '@genshin-optimizer/gi/wr'
 import type { ArtifactSheet } from './ArtifactSheet'
 
+import ADayCarvedFromRisingWinds from './ADayCarvedFromRisingWinds'
 import Adventurer from './Adventurer'
 import ArchaicPetra from './ArchaicPetra'
+import AubadeOfMorningstarAndMoon from './AubadeOfMorningstarAndMoon'
 import Berserker from './Berserker'
 import BlizzardStrayer from './BlizzardStrayer'
 import BloodstainedChivalry from './BloodstainedChivalry'
@@ -32,6 +34,7 @@ import LuckyDog from './LuckyDog'
 import MaidenBeloved from './MaidenBeloved'
 import MarechausseeHunter from './MarechausseeHunter'
 import MartialArtist from './MartialArtist'
+import NightOfTheSkysUnveiling from './NightOfTheSkysUnveiling'
 import NighttimeWhispersInTheEchoingWoods from './NighttimeWhispersInTheEchoingWoods'
 import NoblesseOblige from './NoblesseOblige'
 import NymphsDream from './NymphsDream'
@@ -47,6 +50,7 @@ import RetracingBolide from './RetracingBolide'
 import Scholar from './Scholar'
 import ScrollOfTheHeroOfCinderCity from './ScrollOfTheHeroOfCinderCity'
 import ShimenawasReminiscence from './ShimenawasReminiscence'
+import SilkenMoonsSerenade from './SilkenMoonsSerenade'
 import SongOfDaysPast from './SongOfDaysPast'
 import TenacityOfTheMillelith from './TenacityOfTheMillelith'
 import TheExile from './TheExile'
@@ -61,8 +65,10 @@ import VourukashasGlow from './VourukashasGlow'
 import WanderersTroupe from './WanderersTroupe'
 
 export const artifactSheets: Record<ArtifactSetKey, ArtifactSheet> = {
+  ADayCarvedFromRisingWinds,
   Adventurer,
   ArchaicPetra,
+  AubadeOfMorningstarAndMoon,
   Berserker,
   BlizzardStrayer,
   BloodstainedChivalry,
@@ -89,6 +95,7 @@ export const artifactSheets: Record<ArtifactSetKey, ArtifactSheet> = {
   MaidenBeloved,
   MarechausseeHunter,
   MartialArtist,
+  NightOfTheSkysUnveiling,
   NighttimeWhispersInTheEchoingWoods,
   NoblesseOblige,
   NymphsDream,
@@ -104,6 +111,7 @@ export const artifactSheets: Record<ArtifactSetKey, ArtifactSheet> = {
   Scholar,
   ScrollOfTheHeroOfCinderCity,
   ShimenawasReminiscence,
+  SilkenMoonsSerenade,
   SongOfDaysPast,
   TenacityOfTheMillelith,
   TheExile,

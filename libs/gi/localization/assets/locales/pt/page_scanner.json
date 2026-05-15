@@ -6,8 +6,7 @@
   },
   "as": {
     "title": "AdeptiScanner",
-    "p1": "Escaneia todos os artefatos no seu inventário. Possui um modo de leitura manual.",
-    "p2": "Esse scanner pode também ser configurado para artefatos em novas versões sem precisar ser atualizado."
+    "p1": "Escaneia todos os artefatos e armas no seu inventário. Possui um modo de escaneamento manual e também é capaz de importar dados de <1>Enka.Network</1>."
   },
   "goodeng": "Esse scanner lê apenas o idioma inglês e exporta no formato <1>GOOD</1>.",
   "tosWarn": "Assim como qualquer outra ferramenta que interage indiretamente com o jogo, apesar de seu uso ser praticamente indetectável, <1>seu uso pode acarretar algum risco.</1> Sua utilização fica a critério do usuário.",
@@ -25,11 +24,6 @@
     "title": "Artiscan",
     "p1": "Esse escaneador localizado no navegador pode obter dados a partir da janela do seu jogo, de uma captura de tela, ou escanear um vídeo.",
     "p2": "A captura de tela ou vídeo pode ser em tela cheia e não precisa ser recortada."
-  },
-  "ak": {
-    "title": "Akasha Scanner",
-    "p1": "Automaticamente escaneia artefatos e também personagens e armas. Permite a exportação de escaneamentos passados através de um histórico no app. Escaneia apenas em Inglês.",
-    "p2": "Este aplicativo também pode escanear conquistas para o <Paimon.moe</1> e <1>Seelie.me</1>."
   },
   "seelieme": "O aplicativo também pode escanear materiais para o <1>Seelie.me</1>."
 }

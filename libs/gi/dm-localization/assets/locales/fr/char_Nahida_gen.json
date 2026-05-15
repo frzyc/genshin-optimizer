@@ -145,8 +145,9 @@
     "description": {
       "0": "Les ennemis affectés par une <strong>graine de Skandha</strong> de Nahida subissent les effets suivants :",
       "1": [
-        " Les réactions subies de Brûlure, de Fleurissement, d'Exubérance et de Bourgeonnement peuvent leur infliger des coups CRIT, dont le taux CRIT est fixé à 20 % et les DGT CRIT à 100 %.",
-        " Pendant 8 s après avoir subi une réaction de Stimulation, de Suractivation ou de Propagation, leur DÉF diminue de 30 %."
+        " Les réactions subies de Brûlure, de Fleurissement, d'Exubérance et de Bourgeonnement peuvent leur infliger des coups CRIT, dont le taux CRIT est fixé à 20 % et les DGT CRIT à 100 %. Le taux CRIT accordé par cet effet peut se cumuler avec le taux CRIT des effets similaires qui permettent aux réactions élémentaires de déclencher des coups CRIT.",
+        " Pendant 8 s après avoir subi une réaction de Stimulation, de Suractivation ou de Propagation, leur DÉF diminue de 30 %.",
+        " Le taux CRIT en subissant des DGT d'une réaction de Sélénofleurissement augmente de 10 %, et les DGT CRIT de 20 %."
       ]
     }
   },

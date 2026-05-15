@@ -1,0 +1,24 @@
+{
+  "name": "Bâton de sacrificateur",
+  "description": {
+    "0": "Une lance d'un blanc argenté, pure et sans défaut. La légende raconte qu'elle était utilisée par les grandes prêtresses de l'Hyperborée d'autrefois pour guider leur congrégation des Descendants de givrelune."
+  },
+  "passiveName": "Désir pur",
+  "passiveDescription": {
+    "0": {
+      "0": "Toucher un ennemi avec une compétence élémentaire augmente l'ATQ de <cryo>8 %</cryo> et la recharge d'énergie de <cryo>6 %</cryo> pendant 6 s. Cet effet peut être cumulé 3 fois maximum et peut être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "1": {
+      "0": "Toucher un ennemi avec une compétence élémentaire augmente l'ATQ de <cryo>10 %</cryo> et la recharge d'énergie de <cryo>7,5 %</cryo> pendant 6 s. Cet effet peut être cumulé 3 fois maximum et peut être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "2": {
+      "0": "Toucher un ennemi avec une compétence élémentaire augmente l'ATQ de <cryo>12 %</cryo> et la recharge d'énergie de <cryo>9 %</cryo> pendant 6 s. Cet effet peut être cumulé 3 fois maximum et peut être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "3": {
+      "0": "Toucher un ennemi avec une compétence élémentaire augmente l'ATQ de <cryo>14 %</cryo> et la recharge d'énergie de <cryo>10,5 %</cryo> pendant 6 s. Cet effet peut être cumulé 3 fois maximum et peut être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "4": {
+      "0": "Toucher un ennemi avec une compétence élémentaire augmente l'ATQ de <cryo>16 %</cryo> et la recharge d'énergie de <cryo>12 %</cryo> pendant 6 s. Cet effet peut être cumulé 3 fois maximum et peut être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    }
+  }
+}

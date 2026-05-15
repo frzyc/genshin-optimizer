@@ -1,15 +1,15 @@
 import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
 import { wengineAsset } from '@genshin-optimizer/zzz/assets'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
-import { buffs, conditionals } from '@genshin-optimizer/zzz/formula'
+import { CordisGermina } from '@genshin-optimizer/zzz/formula'
 import { st, tagToTagField, trans } from '../../util'
 import { PhaseWrapper } from '../components'
 
 const key: WengineKey = 'CordisGermina'
 const [chg, _ch] = trans('wengine', key)
 const icon = wengineAsset(key, 'icon')
-const cond = conditionals[key]
-const buff = buffs[key]
+const cond = CordisGermina.conditionals
+const buff = CordisGermina.buffs
 
 const sheet: UISheetElement = {
   title: chg('phase'),

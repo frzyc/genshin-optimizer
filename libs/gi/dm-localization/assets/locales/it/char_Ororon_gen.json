@@ -142,7 +142,7 @@
     "name": "Tracce nel bosco brumoso",
     "description": {
       "0": "La <strong>Sfera spiritica</strong> dell'abilità elementale <strong>Lancio della Notte</strong> può rimbalzare 2 volte in più.",
-      "1": "Inoltre, quando la <strong>Sfera spiritica</strong> colpisce un avversario, applica l'effetto Nottescura per 12 s. Se il talento passivo Sinestesia notturna è sbloccato, gli avversari sotto l'effetto di Nottescura subiscono un 50% di DAN in più dall'effetto Ultrasenso innescato dal suddetto talento passivo."
+      "1": "Inoltre, quando la <strong>Sfera spiritica</strong> colpisce un avversario, applica l'effetto Nottescura per 12 s. Se il talento d'ascensione Sinestesia notturna è sbloccato, gli avversari sotto l'effetto di Nottescura subiscono un 50% di DAN in più dall'effetto Ultrasenso innescato dal suddetto talento d'ascensione."
     }
   },
   "constellation2": {
@@ -179,9 +179,9 @@
   "constellation6": {
     "name": "Ode alle sorgenti profonde",
     "description": {
-      "0": "Dopo aver innescato Ultrasenso tramite il talento passivo Sinestesia notturna, l'ATT del personaggio attivo aumenta di un 10% per 9 s. Tale aumento è cumulabile fino a 3 volte, e ciascun accumulo è conteggiato in modo indipendente.",
+      "0": "Dopo aver innescato Ultrasenso tramite il talento d'ascensione Sinestesia notturna, l'ATT del personaggio attivo aumenta di un 10% per 9 s. Tale aumento è cumulabile fino a 3 volte, e ciascun accumulo è conteggiato in modo indipendente.",
       "1": "Inoltre, usare il Tripudio elementale <strong>Eco di voci oscure</strong> innesca un'iterazione di un effetto equivalente a Ultrasenso che infligge il 200% dei suoi DAN originali.",
-      "2": "Richiede il talento passivo Sinestesia notturna."
+      "2": "Richiede il talento d'ascensione Sinestesia notturna."
     }
   }
 }

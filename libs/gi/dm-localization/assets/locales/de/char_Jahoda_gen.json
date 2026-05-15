@@ -1,0 +1,168 @@
+{
+  "name": "Jahoda",
+  "title": "Den Wind zähmen, die Schatten bannen",
+  "description": "Die äußerst zuverlässige und – laut eigener Aussage – allmächtige Mitarbeiterin des „Kuratoriums der Geheimnisse“.",
+  "constellationName": "Fragum",
+  "auto": {
+    "name": "Windgeführter Pfeil",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 3 Pfeilschüsse hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Führt einen <strong>gezielten Schuss</strong> mit höherem Schaden und höherer Genauigkeit aus.",
+        "2": "Konzentriert den Wind während des Zielens an der Pfeilspitze, die voll aufgeladen <anemo>Anemo-Schaden</anemo> verursacht."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schießt in der Luft einen Pfeilregen ab, trifft schnell auf dem Boden auf, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "Gezielte Schüsse",
+      "4": "Voll aufgeladene gezielte Schüsse",
+      "5": "SCH beim Fallen",
+      "6": "SCH beim Fallen aus niedriger/großer Höhe",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Atemberaubende Kriegslist – Plan zur Reichtumsverteilung",
+    "description": {
+      "0": "Jahoda stürzt auf Gegner zu und tritt beim Kontakt mit ihnen in den Zustand „Schattenverfolgung“ ein. In diesem Zustand bewegt sie sich fortlaufend schnell. Wandelt, wenn sich in der Nähe vom <pyro>Pyro</pyro>-, <hydro>Hydro</hydro>-, <electro>Elektro</electro>- oder <cryo>Kryo</cryo>-Element betroffene Gegner befinden, heimlich Jahodas mitgeführte <tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>Hululu-Geheimflasche</strong></tooltip> in den entsprechenden Elementartyp um und füllt sie kontinuierlich auf. Leert nach Ablauf der Dauer oder bei erneuter Anwendung die <strong>Hululu-Geheimflasche</strong> und fügt Gegnern in der Nähe einmal <anemo>Anemo-SCH</anemo> zu. Wenn die <strong>Hululu-Geheimflasche</strong> voll ist, leert Jahoda sie ebenfalls, verlässt den Zustand „Schattenverfolgung“ und fügt den Gegnern in der Nähe einmal erhöhten <anemo>Anemo-SCH</anemo> zu.",
+      "1": "Lässt Jahoda, wenn ihr Vorstoß keinen Gegner trifft, an der Stelle eine Rauchbombe werfen, die den Gegnern in der Nähe einmal <anemo>Anemo-SCH</anemo> zufügt.",
+      "2": "<br/>",
+      "3": "<strong>Mondomen – Reifer Glanz</strong>: Wenn die <strong>Hululu-Geheimflasche</strong> voll ist, leert Jahoda diese nicht sofort, sondern verbraucht fortlaufend das gefüllte Element über einen bestimmten Zeitraum und schießt in gewissen Abständen <strong>flauschige Katzenbälle</strong> auf Gegner in der Nähe, die Schaden des entsprechenden Elementartyps der <strong>Hululu-Geheimflasche</strong> verursachen. Stellt, wenn die <strong>flauschigen Katzenbälle</strong> Gegner treffen, Jahoda 2 Punkte Elementarenergie wieder her, 3,5 s Abklingzeit.",
+      "4": "<br/>",
+      "5": "<i>Es gibt viele Arten, Reichtum zu verteilen, aber für die Schatzjäger und Schatzräuber aus Nod-Krai gab es schon immer nur eine effiziente Methode.</i>"
+    },
+    "skillParams": {
+      "0": "Rauchbomben-SCH",
+      "1": "SCH durch nicht volle Geheimflasche",
+      "2": "SCH durch volle Geheimflasche",
+      "3": "Dauer von Geheimflasche",
+      "4": "SCH durch Katzenball",
+      "5": "Abklingzeit",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Geheimgeräte – Die sieben Objekte des Jägers",
+    "description": {
+      "0": "Zeit, die geheimen Schätze zu verwenden! Jahoda nimmt zwei <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>katzenförmige Geräte für Hilfe und Koordination im Haushalt</strong></tooltip> heraus und fügt Gegnern in der Nähe einmal <anemo>Anemo-SCH</anemo> zu.",
+      "1": "<br/>",
+      "2": "<i>„Was Hilfe und Koordination angeht: Du hilfst mit Mora aus und wir koordinieren. Na, das klingt doch fair, oder?“</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "SCH durch katzenförmige Geräte für Hilfe und Koordination im Haushalt",
+      "2": "Dauer der katzenförmigen Geräte für Hilfe und Koordination im Haushalt",
+      "3": "Heilung durch katzenförmige Geräte für Hilfe und Koordination im Haushalt",
+      "4": "Zusätzliche Heilung für Figur mit niedrigsten LP",
+      "5": "Abklingzeit",
+      "6": "Elementarenergie",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Listiger Belohnungsplan",
+    "description": {
+      "0": "Verstärkt, wenn sich mindestens 1 <pyro>Pyro</pyro>-, <hydro>Hydro</hydro>-, <electro>Elektro</electro>- oder <cryo>Kryo</cryo>-Figur in der Truppe befindet, die <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>katzenförmigen Geräte für Hilfe und Koordination im Haushalt</strong></tooltip> der Spezialfähigkeit <strong>Geheimgeräte – Die sieben Objekte des Jägers</strong> basierend auf der Anzahl der Figuren des entsprechenden Elementartyps.",
+      "1": "Jahoda merkt sich heimlich die Figuren der oben genannten Elementartypen in der Truppe. Wenn unter diesen Figuren die meisten zu folgendem Elementartyp gehören:",
+      "2": [
+        " <pyro>Pyro</pyro>: Lässt die <strong>katzenförmigen Geräte für Hilfe und Koordination im Haushalt</strong> 130 % des ursprünglichen Schadens verursachen.",
+        " <hydro>Hydro</hydro>: Lässt die <strong>katzenförmigen Geräte für Hilfe und Koordination im Haushalt</strong> 120 % der ursprünglichen Heilung erzielen.",
+        " <electro>Elektro</electro>: Erhöht die Anzahl der <strong>katzenförmigen Geräte für Hilfe und Koordination im Haushalt</strong> um 1.",
+        " <cryo>Kryo</cryo>: Verringert das Angriffsintervall der <strong>katzenförmigen Geräte für Hilfe und Koordination im Haushalt</strong> um 10 %."
+      ],
+      "3": "<br/>",
+      "4": "Wenn die Anzahl der Figuren verschiedener Elementartypen gleich ist, gilt die Reihenfolge <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Elektro</electro> und <cryo>Kryo</cryo>. Anfänglich kann nur für einen Elementartyp der entsprechende Effekt aktiv sein."
+    }
+  },
+  "passive2": {
+    "name": "Honigbeeren-Belohnung",
+    "description": {
+      "0": "Erhöht, wenn die <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>katzenförmigen Geräte für Hilfe und Koordination im Haushalt</strong></tooltip> der Spezialfähigkeit <strong>Geheimgeräte – Die sieben Objekte des Jägers</strong> LP beim aktuellen Truppenmitglied wiederherstellen und die LP dieser Figur bei über 70 % liegen, die Elementarkunde dieser Figur 6 s lang um 100 Punkte."
+    }
+  },
+  "passive3": {
+    "name": "Mondomen-Segen – Dächersprint",
+    "description": {
+      "0": "Erhöht die Stufe vom <strong>Mondomen</strong> der Truppe um 1, wenn sich Jahoda in der Truppe befindet."
+    }
+  },
+  "passive": {
+    "name": "Weisheit der Gassen",
+    "description": {
+      "0": "Verkürzt die bei Erkundungen innerhalb des Einflussbereichs von Nod-Krai verbrauchte Zeit um 25 %."
+    }
+  },
+  "constellation1": {
+    "name": "Noch eine Flasche!",
+    "description": {
+      "0": "Führt, wenn mithilfe der <tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>Hululu-Geheimflasche</strong></tooltip> der Elementarfähigkeit <strong>Atemberaubende Kriegslist – Plan zur Reichtumsverteilung</strong> ein <strong>flauschiger Katzenball</strong> abgefeuert wird und Gegner trifft, mit einer Wahrscheinlichkeit von 50 % einen Sprung aus und fügt Gegnern in der Nähe entsprechenden Elementar-SCH zu."
+    }
+  },
+  "constellation2": {
+    "name": "Improvisation des Gesetzesbrechers",
+    "description": {
+      "0": "<strong>Mondomen – Reifer Glanz</strong>: Im Aufstiegstalent <tooltip ns=char_Jahoda_gen baseKey18=passive1><strong>„Listiger Belohnungsplan“</strong></tooltip> kann sich Jahoda zusätzlich zum Elementartyp mit den meisten Figuren auch heimlich den Elementartyp mit den zweitmeisten Figuren merken und die Effekte von bis zu zwei Elementartypen aktivieren. Das Aufstiegstalent „Listiger Belohnungsplan“ muss zuerst freigeschaltet werden."
+    }
+  },
+  "constellation3": {
+    "name": "Heimatloser Glücksspieler",
+    "description": {
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong><tooltip ns=char_Jahoda_gen baseKey18=burst>Geheimgeräte – Die sieben Objekte des Jägers</tooltip></strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Wildbeeren auf dem Staub",
+    "description": {
+      "0": "Stellt, wenn das Element der <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>katzenförmigen Geräte für Hilfe und Koordination im Haushalt</strong></tooltip> der Spezialfähigkeit <strong>Geheimgeräte – Die sieben Objekte des Jägers</strong> umgewandelt wird, Jahoda 4 Punkte Elementarenergie wieder her."
+    }
+  },
+  "constellation5": {
+    "name": "Der größte Schatz",
+    "description": {
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong><tooltip ns=char_Jahoda_gen baseKey18=skill>Atemberaubende Kriegslist – Plan zur Reichtumsverteilung</tooltip></strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Das kleinste Glück",
+    "description": {
+      "0": "<strong>Mondomen – Reifer Glanz</strong>: Erhöht, wenn die <tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>Hululu-Geheimflasche</strong></tooltip> der Elementarfähigkeit <strong>Atemberaubende Kriegslist – Plan zur Reichtumsverteilung</strong> voll gefüllt ist, 20 s lang die KT der Mondomen-Truppenmitglieder in der Nähe um 5 % und ihren kritischen Schaden um 40 %."
+    }
+  }
+}

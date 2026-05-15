@@ -1,9 +1,7 @@
-'use client'
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   ModalWrapper,
-  NextImage,
   StarsDisplay,
 } from '@genshin-optimizer/common/ui'
 import { weaponAsset } from '@genshin-optimizer/gi/assets'
@@ -39,9 +37,9 @@ import { useCallback, useContext, useMemo } from 'react'
 import { DataContext } from '../../context'
 import { DocumentDisplay } from '../DocumentDisplay'
 import { FieldDisplayList, NodeFieldDisplay } from '../FieldDisplay'
-import { LevelSelect } from '../LevelSelect'
 import { RefinementDropdown } from '../RefinementDropdown'
 import { LocationAutocomplete } from '../character'
+import { WeaponLevelSelect } from './WeaponLevelSelect'
 import { WeaponSelectionModal } from './WeaponSelectionModal'
 import {
   WeaponDesc,
@@ -130,7 +128,7 @@ export function WeaponEditor({
                   <Grid item xs={6} sm={12}>
                     <Box sx={{ position: 'relative', display: 'flex' }}>
                       <Box
-                        component={NextImage ? NextImage : 'img'}
+                        component="img"
                         src={img}
                         className={`grad-${weaponStat.rarity}star`}
                         sx={{
@@ -192,7 +190,7 @@ export function WeaponEditor({
                 </Box>
                 <Box display="flex" gap={1} flexWrap="wrap">
                   {key && (
-                    <LevelSelect
+                    <WeaponLevelSelect
                       level={level}
                       ascension={ascension}
                       setBoth={weaponDispatch}

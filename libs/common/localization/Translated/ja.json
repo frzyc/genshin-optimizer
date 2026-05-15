@@ -3,37 +3,39 @@
     "editor": {
       "title": "聖遺物エディター",
       "substat": {
-        "substatFormat": "サブステータス {{value}}",
+        "substatFormat": "{{value}}箇所目",
         "noSubstat": "サブステータスなし",
         "selectSub": "サブステータスを選択",
         "error": {
-          "noCalc": "サブステータス効果を計算できません。",
-          "noOverRoll": "サブステータス効果は {{value}} 回以上強化できません。"
+          "noCalc": "スコアを計算できません。",
+          "noOverRoll": "サブステータスは {{value}} 回以上強化できません。"
         },
-        "noRoll": "強化なし",
-        "noStat": "スコアなし",
-        "eff": "サブ効果スコア（RV）： <1></1>",
-        "nextRolls": "可能な効果値：",
-        "RollCount_other": "{{count}} 強化回数"
+        "noRoll": "サブステータス未追加",
+        "noStat": "0%",
+        "eff": "スコア：<1></1>",
+        "nextRolls": "候補：",
+        "RollCount_other": "{{count}}回強化"
       },
-      "rarity": "レア度別",
+      "rarity": "レア度",
       "level": "レベル",
-      "unknownPieceName": "ピース名不明",
-      "curSubEff": "サブ効果スコア",
-      "curSubEffDesc": "4レベルごとに、ひとつのサブステータスが増加します。<strong>サブステータス効率</strong>はどれだけ高くなったかパーセンテージとして計算します。",
-      "maxSubEff": "最大サブ効果スコア",
-      "maxSubEffDesc": "聖遺物の<strong>最大サブ効果スコア</strong>は、残る強化が最大値で強化した場合のスコアを計算します。",
+      "unknownPieceName": "部位が未選択",
+      "curSubEff": "現在スコア",
+      "curSubEffDesc": "聖遺物のレベルが4の倍数に達する毎に、サブステータスが成長します。<strong>現在スコア</strong>は、成長の度合いをパーセンテージの合計として表します。",
+      "maxSubEff": "上限スコア",
+      "maxSubEffDesc": "<strong>上限スコア</strong>は、残りの全ての強化で最大限の成長をした場合のスコアを表します。",
       "preview": "聖遺物プレビュー",
       "dupArt": "重複する聖遺物が検出されました。",
       "upArt": "強化された聖遺物が検出されました",
-      "beforeEdit": "改造前",
-      "btnSave": "聖遺物を保存する",
+      "beforeEdit": "編集前",
+      "btnSave": "聖遺物を保存",
       "btnAdd": "聖遺物を追加",
-      "btnClear": "削除",
-      "btnRandom": "ランダム",
+      "btnClear": "エディターをリセット",
+      "btnRandom": "ランダムな聖遺物に変更",
       "btnUpdate": "聖遺物を変更する",
-      "clearPrompt": "改造中の聖遺物があります。エディターを解除されてもよろしいですか？",
-      "unknownSetName": "不明なセット名"
+      "clearPrompt": "編集中の聖遺物があります。編集をキャンセルして、エディターをリセットしてもよろしいですか？",
+      "unknownSetName": "セット名が未選択",
+      "delete": "聖遺物を削除",
+      "confirmDelete": "この聖遺物を削除してもよろしいですか？"
     },
     "artifactFilter": "聖遺物フィルター",
     "filterLocation": {
@@ -43,18 +45,19 @@
     },
     "button": {
       "unequipArtifacts": "聖遺物を外す",
-      "deleteArtifacts": "聖遺物削除",
+      "deleteArtifacts": "聖遺物を削除",
       "lockArtifacts": "聖遺物をロック",
-      "unlockrtifacts": "聖遺物をアンロック"
+      "unlockrtifacts": "聖遺物をアンロック",
+      "unequipArtifact": "聖遺物を外す"
     },
     "buttonHint": "注：上の赤いボタンはフィルターされた聖遺物のみに適用されます",
     "tipsOfTheDay": [
-      "4星聖遺物の最高サブ効果スコアは約540%です。",
-      "普通、サブ効果スコアは聖遺物が強化するにつれて減少されます。",
-      "「1」の数字を含むサブ効果は、スクリーンショットのスキャンで問題が発生する可能性があります。",
-      "全てのサブ効果 (6) が一つのステータスに強化された場合、その数字が紫色になります！",
-      "ゲーム内で聖遺物を強化する度スキャンされる際は「詳細」をクリックしてスキャンしてください。",
-      "複数の聖遺物のスクリーンショットをアップロードしてスキャンできるようになりました！"
+      "☆4聖遺物の上限スコアはおおよそ540%程度です。",
+      "大抵の場合、上限スコアは強化が進むほど減少していきます。非常に幸運な場合を除き、これは普通のことです。",
+      "スクリーンショットで聖遺物をスキャンする際、サブステータスに数字の「1」が含まれる場合はスキャンが困難になります。",
+      "全ての強化(6回)が一つのサブステータスに集中した場合、そのサブステータスは紫色で表示されます！",
+      "ゲーム内で聖遺物を強化する際、逐一スクリーンショットでスキャンしたい場合は、ゲーム内で「詳細」を開くことでスキャン可能な画面に切り替えられます。",
+      "一度に複数のスクリーンショットをアップロードして聖遺物をスキャンできるようになりました！"
     ],
     "mainStat": "メインステータス",
     "slot": "スロット",
@@ -66,39 +69,44 @@
       "circlet": "理の冠"
     },
     "info": {
-      "title": "聖遺物改造・管理ガイド",
-      "section1": "<0>サブ効果強化</0><1>サブ効果<1>強化数</1>は、サブステータスの右側にバーの数で表示されます。 強化数が増える度サブステータスが明るくなります。また、強化値が増加するにつれて、個々のバーの色は濃くなります：<3></3>。</1><2>サブ効果スコア</2><3>サブ効果スコア（RV）は、潜在的な最大値に対する現在値の比率です。画像から、HP%の最大強化値は5.8%です。RV: <3>5.3/5.8 ~ 90%。</3></3><4>現サブ効果スコアと最大サブ効果スコア</4><5>5<1></1> の場合、合計9（基礎4+追加5）の各強化は最高値で、900% RV聖遺物として定義されます。ただし、このような結果になる可能性は非常に低いとご留意ください。聖遺物の <3>現RV</3> は、聖遺物の最大値に対する比率です。<5>最大RV</5> は、残りの可能な強化最大値が達成できる聖遺物の最大のRVです。</5>",
-      "section2": "<0>聖遺物エディター</0><1>聖遺物エディターは3<1></1> ～ 5<3></3> の聖遺物を付加えることができます。サブステータスを入力すると、正確な強化値が計算されます。また、他の指標を検証するとともに、レベルに応じて聖遺物の正しい強化数を確認します。</1><2>スクリーンショットをスキャン</2><3>スクリーンショットを使用して聖遺物を付加える事も可能です。聖遺物エディターで、[<1>方法を表示！</1>] ボタンをクリックして詳細を確認してください。</3><4>聖遺物自動スキャナー</4><5>PCでGenshinをプレイしている場合は、さらに次のことができます。すべての聖遺物を自動的にスキャンするツールをダウンロードすると、そのデータを<1></1>設定にインポートできます。Genshin Optimizerと互換性のあるスキャナーについては、<3>ここをクリック</3>してください。</5><6>重複・強化済み聖遺物の検出</6><7>Genshin Optimizerはシステム内に存在する聖遺物が<1>重複</1>、またはエディター内の現在の聖遺物が既存の聖遺物の<3>強化</3>であるかどうかも検出できます。 重複・強化済み聖遺物が検出されると、プレビューで問題の二つの聖遺物を比較できるようになります。（画像を参照）</7>",
-      "section3": "<0>聖遺物インベントリー</0><1>Genshin Optimizerに追加されたすべての聖遺物はこちらに表示されます。フィルターを使用すると、聖遺物の表示をさらに調整できます。</1><2>例：聖遺物強化用の飼料検索</2><3>聖遺物フィルターとサブ効果スコアを利用すると、餌として消費できる不要な聖遺物を検出することができます。</3><4>例えば、フィルターは次のように設定します：</4><5><0><0>レベルを0~8に制限し、</0><1>インベントリー内のロック解除された聖遺物のみを選択、</1><2>そして基礎HP・DEF及び元素チャージ効率をサブ効果スコアの計算から外します。</2><3>最大サブ効果スコア値を昇順で並べ替えられます。</3></0></5><6>これにより、聖遺物をスコア、又は必要なサブステータスでフィルタリングできます。</6>"
+      "title": "聖遺物編集/管理ガイド",
+      "section1": "<0>サブステータスの強化</0><1>サブステータスの<1>追加/成長した回数</1>は、サブステータスの右側にバーの本数で表示されます。 また、追加/成長の回数を重ねるほど、サブステータスの文字色は明るく表示されます。 さらに、より高い数値を引き当てるほど、各バーの色はよりカラフル <3></3> になります。</1><2>サブステータスのスコア</2><3>スコア (原文：Roll Value = RV) は、<1></1>5聖遺物のサブステータスの伸び幅の最大値を100%とした比率を表します。 画像の例では、<1></1>5聖遺物のHP%の伸び幅の最大値は<3>5.8%</3>なので、 <3>5.3 ÷ 5.8 ≒ 0.9</3> よって<3>90%</3>となります。</3><4>現在スコアと上限スコア</4><5><1></1>5聖遺物を取得した際、理論上は最大9回の追加/成長のチャンスがあります(レベル0時点で4OPだった場合)。 その全てで最大の伸び幅を引き当てた場合、スコアの合計は900%となります(ただし、これほどの幸運は滅多に起きません)。 <3>現在スコア</3> (原文：Current RV) は、各サブステータスのスコアの合計を表します。 <5>上限スコア</5> (原文：Maximum RV) は、残りの全てのチャンスで最大の伸び幅を引き当てた場合に達成できるスコアを表します。</5>",
+      "section2": "<0>聖遺物エディター</0><1>聖遺物エディターは<1></1>3～5の聖遺物を追加/編集することができます。 サブステータスを入力すると、自動的にスコアが計算されます。 また、レベルに応じて正しい強化回数を分析し、数値が不正でないかも判断します。</1><2>スクリーンショットによるスキャン</2><3>いちいち手入力するのが面倒なら、スクリーンショットで聖遺物を追加する事もできます。 聖遺物エディターで <1>？</1> ボタンをクリックして詳細を確認してください。</3><4>聖遺物自動スキャナー</4><5>原神をPCでプレイしている場合は、全ての聖遺物を自動的にスキャンするツールをダウンロードして、取得したデータを <1></1>設定 からインポートできます。 Genshin Optimizerと互換性のあるスキャナーについては、<3>こちらをクリック</3>してください。</5><6>重複/強化済み聖遺物の検出</6><7>Genshin Optimizerは、システム内に存在する聖遺物が<1>重複</1>しているか、または編集中の聖遺物が既に持っている聖遺物を<3>強化</3>したものであるかも検出できます。 重複/強化済み聖遺物が検出されると、画像の例のようにプレビューで問題の二つの聖遺物の比較が表示されます。</7>",
+      "section3": "<0>聖遺物インベントリー</0><1>Genshin Optimizerに追加された全ての聖遺物がここに表示されます。 フィルターを使用すると、聖遺物の表示をさらに絞り込むことができます。</1><2>使い方の例：餌にする聖遺物の検索</2><3>聖遺物フィルターとスコアを組み合わせることで、餌として消費できる不要な聖遺物を絞り込むことができます。</3><4>例えば、フィルターは次のように設定します：</4><5><0><0>レベルを0～8に絞り込む</0><1>未ロックの聖遺物のみを選択</1><2>HP固定値、防御力固定値、元素チャージ効率をスコアの評価対象外にする</2><3>上限スコアを昇順で並べ替える</3></0></5><6>こうすることで、最も需要の低い聖遺物を絞り込むことができます。</6>"
     },
     "sortMap": {
       "level": "レベル",
-      "efficiency": "現サブ効果スコア",
-      "mefficiency": "最大サブ効果スコア"
+      "efficiency": "現在スコア",
+      "mefficiency": "上限スコア"
     },
     "efficiencyFilter": {
-      "title": "サブ効果スコアの計算で使用するサブ統計"
+      "title": "スコアの対象にするサブステータス"
     },
     "resetFilters": "フィルターをリセット",
-    "setEffectNum": "{{setNum}}-セット",
-    "edit": "聖遺物を改造",
+    "setEffectNum": "{{setNum}}セット",
+    "edit": "聖遺物を編集",
     "autocompleteLabels": {
-      "sets": "聖遺物セット",
-      "mainStats": "メイン効果",
-      "substats": "サブ効果",
-      "set": "聖遺物セット"
+      "sets": "セット名",
+      "mainStats": "メインステータス",
+      "substats": "サブステータス",
+      "set": "セット名"
     },
-    "addNew": "新規聖遺物追加",
+    "addNew": "新しい聖遺物を追加",
     "cantDeleteLock": "この聖遺物はロックされているため削除できません",
-    "equippedArt": "装備されている全ての聖遺物",
-    "artInInv": "装備されていない全ての聖遺物",
-    "locationsTooltip": "特定のキャラクターでフィルタリングするためには「装備されている全ての聖遺物」を無効にしてください",
-    "showDup": "重複聖遺物を表示",
+    "equippedArt": "装備中のすべての聖遺物",
+    "artInInv": "未装備のすべての聖遺物",
+    "locationsTooltip": "特定のキャラクターでフィルタリングするには「装備中のすべての聖遺物」を無効にしてください",
+    "showDup": "重複した聖遺物を表示",
     "noDupAlert": "インベントリーに重複している聖遺物はありません。",
-    "showingNum_other": "{{value}}個の聖遺物のうち<1>{{count}}</1>個を表示",
-    "substat_other": "{{count}}サブ効果",
-    "sub_other": "{{count}}サブステ",
-    "noArtifacts": "まだ聖遺物が追加されていないようです。よろしければ、使いやすい<1>自動スキャナー</1>をご利用ください！"
+    "showingNum_other": "{{value}}個中 <1>{{count}}個</1>の聖遺物を表示",
+    "substat_other": "{{count}}OP",
+    "sub_other": "{{count}}OP",
+    "noArtifacts": "まだ聖遺物が追加されていないようです。よろしければ、使いやすい<1>自動スキャナー</1>をご利用ください！",
+    "subheadings": {
+      "general": "全般",
+      "inventory": "インベントリー",
+      "rollvalue": "スコア"
+    }
   },
   "languages": {
     "chs": "中国語 (簡体字)",
@@ -120,33 +128,33 @@
   "settings": {
     "title": "設定",
     "languageCard": {
-      "languageFormat": "言語: {{language}}"
+      "languageFormat": "言語：{{language}}"
     },
     "uploadCard": {
       "title": "データベースをアップロード",
       "replaceDatabase": "データベースを入れ替え",
-      "hint": "JSONファイルアップロードはこちら…",
-      "hintPaste": "…又はデータを下記にて貼付けください",
+      "hint": "JSONファイルのアップロードはこちらから",
+      "hintPaste": "もしくはテキストデータを下欄に貼り付けてください",
       "error": {
         "jsonParse": "JSON ファイルを解析できません。",
-        "unknown": "ファイルの形式が不明。",
-        "monaInvalid": "Mona-Uranaiファイル形式が無効です。",
-        "goInvalid": "Genshin Optimizerバックアップファイル形式が無効。"
+        "unknown": "不明な形式のファイルです。",
+        "monaInvalid": "無効な Mona-Uranai ファイル形式です。",
+        "goInvalid": "無効なGO バックアップファイル形式です。"
       },
       "dbSource": "データソース：",
       "goodUpload": {
-        "title": "<strong>Genshin Open Object Description</strong> (GOOD) 原神オープンオブジェクト詳細形式"
+        "title": "<strong>Genshin Open Object Description</strong> (GOOD) 形式"
       },
       "buttons": {
-        "open": "オープン",
-        "detectDups": "改良中・重複を検出",
-        "delNotInImport": "インポートに含まれないものを削除"
+        "open": "ファイルを選択する",
+        "detectDups": "強化された/重複している項目を検出",
+        "delNotInImport": "インポートデータに存在しない項目を削除"
       },
       "tooltip": {
-        "detectdup": "GOのインベントリーに改良中・重複するものを検出し、インポートをGOと統合します。",
-        "ignoreDup": "改良中・重複のものを検出せず、インポートをGOの既存のインベントリーに追加されます。",
-        "delNotInImport": "インポートが全てのアイテムであると考慮します。GOインベントリー内の、インポートにないものを削除します。",
-        "keepNotInImport": "インポートがアイテム全ての一部であると考慮します。なにも削除されません。"
+        "detectdup": "GOのインベントリーに強化された/重複している項目がないかを検出し、インポートデータを統合します。",
+        "ignoreDup": "強化された/重複している項目を検出しません。インポートデータ内の全ての項目が既存のインベントリーに追加されます。",
+        "delNotInImport": "インポートデータを、ゲーム内のすべてのデータを含んでいるものとして扱います。インポートデータに存在しないインベントリー内の項目は削除されます。",
+        "keepNotInImport": "インポートデータを、ゲーム内の一部のデータだけを含んでいるものとして扱います。なにも削除されません。"
       }
     },
     "count": {
@@ -154,14 +162,18 @@
       "arts": "聖遺物：",
       "weapons": "武器：",
       "total": "合計：",
-      "new": "新規：",
-      "updated": "更新済：",
-      "removed": "削除：",
-      "unchanged": "未更新：",
-      "invalid": "無効：",
-      "upgraded": "強化済：",
-      "dbTotal": "統合合計：",
-      "notInImport": "インポートに含まれない"
+      "new": "追加される数：",
+      "updated": "更新される数：",
+      "removed": "削除される数：",
+      "unchanged": "変更なしの数：",
+      "invalid": "無効数：",
+      "upgraded": "強化される数：",
+      "dbTotal": "統合後の合計数：",
+      "notInImport": "インポートに存在しない項目：",
+      "teams": "チーム：",
+      "loadouts": "戦闘設定：",
+      "builds": "装備：",
+      "buildTcs": "TC Builds："
     },
     "DatabaseCard": {
       "title": "データベース",
@@ -170,15 +182,15 @@
         "copy": "クリップボード",
         "delete": "削除",
         "upload": "アップロード",
-        "swap": "変更"
+        "swap": "データベースを切り替え"
       },
-      "currentDB": "現データベース"
+      "currentDB": "選択中のデータベース"
     },
     "sillyCard": {
-      "desc": "すべてのキャラクターアセットを<strong>Silly Wisher（やけくそ祈願）</strong>から（許可を得て）ぬす・・・<1>借用し</1>、それらをGenshin Optimizerに遺伝子スプライシングを成功しました。",
+      "desc": "我々は <strong>Silly Wisher</strong> からすべてのキャラクターアセットを<1>盗み</1> (許可を得て)借用し、それらの遺伝子を Genshin Optimizer に組み換えました。",
       "toggle": {
-        "enabled": "やけくそオプティマイザー有効",
-        "disabled": "やけくそオプティマイザー無効"
+        "enabled": "Silly Optimizer 有効",
+        "disabled": "Silly Optimizer 無効"
       }
     },
     "letsnow": "雪よ降れ"
@@ -192,19 +204,23 @@
       "weapons": "武器",
       "doc": "ドキュメント",
       "setting": "設定",
-      "scanner": "スキャナー"
+      "scanner": "スキャナー",
+      "teams": "チーム",
+      "archive": "アーカイブ",
+      "loadouts": "戦闘設定",
+      "builds": "装備"
     },
     "social": {
       "paypal": "PayPal",
       "patreon": "Patreon",
       "discord": "Discord"
     },
-    "unselect": "選択削除",
+    "unselect": "選択解除",
     "ascending": "昇順",
     "descending": "降順",
     "loading": "ロード中",
     "rightsDisclaimer": "「Genshin Optimizer」は、MiHoYoと提携しておりません。または、当該企業から承認を受けておりません。",
-    "appVersion": "$t(pageTitle) バージョン: {{version}}",
+    "appVersion": "$t(pageTitle) バージョン：<1>{{version}}</1>",
     "error": "エラー",
     "reset": "リセット",
     "info": "概要",
@@ -214,21 +230,22 @@
       "new": "新規",
       "name": "キャラクター名",
       "level": "レベル",
-      "rarity": "レアリティ",
-      "efficiency": "現スコア",
-      "mefficiency": "最大スコア",
-      "artsetkey": "聖遺物セット"
+      "rarity": "レア度",
+      "efficiency": "現在スコア",
+      "mefficiency": "上限スコア",
+      "artsetkey": "セット名",
+      "lastEdit": "編集日時"
     },
     "link": {
       "download": "ダウンロードリンク",
       "discord": "Discord招待リンク"
     },
-    "sortBy": "選別：␣",
+    "sortBy": "並び替え：",
     "delete": "削除",
-    "locked": "ロック",
-    "unlocked": "アンロック",
+    "locked": "ロック済み",
+    "unlocked": "未ロック",
     "refinement": "精錬{{value}}",
-    "selectlevel": "レベル選択",
+    "selectlevel": "レベルを選択",
     "gender": {
       "F": "女性",
       "M": "男性"
@@ -250,7 +267,9 @@
       "stamina_buffs": "スタミナバフ",
       "misc": "その他のステータス"
     },
-    "sillyPageTitle": "やけくそオプティマイザー"
+    "sillyPageTitle": "Silly Optimizer",
+    "excluded": "Excluded",
+    "included": "Included"
   },
   "char_Eula": {
     "burstC": {
@@ -270,8 +289,8 @@
     }
   },
   "char_Noelle": {
-    "p4cd": "24秒　4ヒットごとに-1秒",
-    "c6duration": "15秒　敵一体倒す度に+1秒（最大25秒）",
+    "p4cd": "24秒 4ヒットごとに-1秒",
+    "c6duration": "15秒 敵一体倒す度に+1秒（最大25秒）",
     "c4dmg": "護心鎧破壊ダメージ",
     "qlarger": "攻撃範囲がアップ"
   },
@@ -289,60 +308,60 @@
   },
   "sheet": {
     "dmg": "ダメージ",
-    "lessPercentHP": "HPが{{percent}}%未満",
+    "lessPercentHP": "HPが{{percent}}%より小さい",
     "hitOp": {
-      "normal": "敵に通常攻撃をヒット",
-      "charged": "敵に重撃をヒット",
-      "plunging": "敵に落下攻撃をヒット",
-      "skill": "敵に元素スキルをヒット",
-      "burst": "敵に元素爆発をヒット",
-      "geo": "敵に<geo>岩元素ダメージ</geo>をヒット",
-      "anemo": "敵に<anemo>風元素ダメージ</anemo>をヒット",
-      "hydro": "敵に<hydro>水元素ダメージ</hydro>をヒット",
-      "cryo": "敵に <cryo>氷元素ダメージ</cryo>をヒット",
-      "pyro": "敵に<pyro>炎元素ダメージ</pyro>をヒット",
-      "electro": "敵に<electro>雷元素ダメージ</electro>をヒット",
-      "none": "敵にヒット後",
-      "normalOrCharged": "敵に通常攻撃・重撃でヒット",
-      "skillOrBurst": "敵に元素スキル・爆発でヒット",
-      "crit": "会心攻撃を命中後",
-      "normalChargedOrPlunging": "敵に通常攻撃・重撃・落下攻撃をヒット",
-      "dendro": "<dendro>草元素ダメージ</dendro>を与えた後",
-      "normalEle": "通常攻撃で元素ダメージを与えた後",
-      "ele": "元素ダメージを与えた後",
-      "weakSpot": "狙い撃ちで敵の弱点に命中した後",
-      "normalChargedSkillBurst": "敵に通常攻撃、重撃、または元素スキル・爆発をヒット後",
-      "self": "敵にヒットされた後"
+      "normal": "通常攻撃が敵にヒットした",
+      "charged": "重撃が敵にヒットした",
+      "plunging": "落下攻撃が敵にヒットした",
+      "skill": "元素スキルが敵にヒットした",
+      "burst": "元素爆発が敵にヒットした",
+      "geo": "<geo>岩元素ダメージ</geo>を与えた",
+      "anemo": "<anemo>風元素ダメージ</anemo>を与えた",
+      "hydro": "<hydro>水元素ダメージ</hydro>を与えた",
+      "cryo": " <cryo>氷元素ダメージ</cryo>を与えた",
+      "pyro": "<pyro>炎元素ダメージ</pyro>を与えた",
+      "electro": "<electro>雷元素ダメージ</electro>を与えた",
+      "none": "攻撃が敵にヒットした",
+      "normalOrCharged": "通常攻撃/重撃が敵にヒットした",
+      "skillOrBurst": "元素スキル/元素爆発が敵にヒットした",
+      "crit": "会心攻撃を与えた",
+      "normalChargedOrPlunging": "通常攻撃/重撃/落下攻撃が敵にヒットした",
+      "dendro": "<dendro>草元素ダメージ</dendro>を与えた",
+      "normalEle": "通常攻撃で元素ダメージを与えた",
+      "ele": "元素ダメージを与えた",
+      "weakSpot": "狙い撃ちで敵の弱点に命中した",
+      "normalChargedSkillBurst": "通常攻撃/重撃/元素スキル/元素爆発が敵にヒットした",
+      "self": "敵に攻撃された"
     },
     "eleAbsor": "元素変化",
     "absorDot": "拡散DoT",
     "afterUse": {
-      "skill": "元素スキル起動中",
-      "burst": "元素爆発起動中",
-      "skillOrBurst": "元素スキルまたは元素爆発を発動後",
-      "skillPress": "元素スキル（単押し）使用後",
-      "skillHold": "元素スキル（長押し）使用後"
+      "skill": "元素スキルを発動した",
+      "burst": "元素爆発を発動した",
+      "skillOrBurst": "元素スキルまたは元素爆発を発動した",
+      "skillPress": "元素スキル(単押し)使用後",
+      "skillHold": "元素スキル(長押し)使用後"
     },
-    "lessEqPercentHP": "HPが{{percent}}%、またはその以下",
-    "greaterPercentHP": "HPが{{percent}}%以上",
-    "greaterEqPercentHP": "HPが{{percent}}%、またはその以上",
-    "lessPercentEnergy": "元素エネルギーが{{percent}}%以下",
+    "lessEqPercentHP": "HPが{{percent}}%以下",
+    "greaterPercentHP": "HPが{{percent}}%より大きい",
+    "greaterEqPercentHP": "HPが{{percent}}%以上",
+    "lessPercentEnergy": "元素エネルギーが{{percent}}%より小さい",
     "enemyLessPercentHP": "敵のHPが{{percent}}%以下",
-    "enemyLessEqPercentHP": "敵のHPが{{percent}}%、またはその以下",
-    "enemyGreaterPercentHP": "敵のHPが{{percent}}%以上",
-    "enemyGreaterEqPercentHP": "敵のHPが{{percent}}%、またはその以上",
-    "afterDefeatEnemy": "敵を倒した後",
+    "enemyLessEqPercentHP": "敵のHPが{{percent}}%以下",
+    "enemyGreaterPercentHP": "敵のHPが{{percent}}%より大きい",
+    "enemyGreaterEqPercentHP": "敵のHPが{{percent}}%以上",
+    "afterDefeatEnemy": "敵を倒した",
     "afterSprint": "ダッシュ後",
     "skillCDRed": "元素スキルクールダウン減少",
     "burstCDRed": "元素爆発クールダウン減少",
     "triggerCD": "反応クールダウン",
-    "incInterRes": "中断耐性の増加",
+    "incInterRes": "中断耐性が増加",
     "charges": "チャージ",
     "cooldown": "クールダウン",
-    "addlCharges": "スキルチャージ追加",
-    "activeCharField": "キャラクターが能力のフィールド範囲以内",
-    "opponentsField": "敵が能力のフィールド範囲以内",
-    "takeDmg": "ダメージを受けた後",
+    "addlCharges": "スキル使用回数が追加",
+    "activeCharField": "キャラクターが能力の範囲内にいる",
+    "opponentsField": "敵が能力の範囲内にいる",
+    "takeDmg": "ダメージを受けた",
     "infusion": {
       "pyro": "炎元素付与",
       "cryo": "氷元素付与",
@@ -353,20 +372,20 @@
       "geo": "岩元素付与"
     },
     "effectDuration": {
-      "pyro": "炎元素影響継続時間",
-      "cryo": "氷元素影響継続時間",
-      "anemo": "風元素影響継続時間",
-      "hydro": "水元素影響継続時間",
-      "electro": "雷元素影響継続時間",
-      "dendro": "草元素影響継続時間",
-      "geo": "岩元素影響継続時間"
+      "pyro": "炎元素の影響 継続時間",
+      "cryo": "氷元素の影響 継続時間",
+      "anemo": "風元素の影響 継続時間",
+      "hydro": "水元素の影響 継続時間",
+      "electro": "雷元素の影響 継続時間",
+      "dendro": "草元素の影響 継続時間",
+      "geo": "岩元素の影響 継続時間"
     },
     "durationInc": "継続時間の増加",
     "base": "基礎",
     "stacks": "スタック",
     "protectedByShield": "シールドに守られている",
     "protectedByShieldCrystal": "結晶シールドに守られている",
-    "staminaDec_": "スタミナ消費減少",
+    "staminaDec_": "スタミナ消費量減少",
     "dmgAbsorption": {
       "pyro": "シールドの炎元素ダメージ吸収量",
       "cryo": "シールドの氷元素ダメージ吸収量",
@@ -376,28 +395,28 @@
       "dendro": "シールドの草元素ダメージ吸収量",
       "geo": "シールドの岩元素ダメージ吸収量",
       "none": "シールドのダメージ吸収量",
-      "increase": "シールド吸収増加",
+      "increase": "シールドのダメージ吸収量増加",
       "max": {
         "none": "シールドのダメージ最大吸収量",
         "pyro": "シールドの炎元素ダメージ最大吸収量",
         "dendro": "シールドの草元素ダメージ最大吸収量"
       }
     },
-    "addlCharge": "スキルチャージ追加",
+    "addlCharge": "スキル使用回数が追加",
     "conditional": "条件",
     "maxStacks": "最大スタック",
-    "1set": "1-セット",
-    "2set": "2-セット",
-    "4set": "4-セット",
-    "activationStam": "スタミナ消費発動",
-    "stamDrain": "スタミナ消耗",
+    "1set": "1セット",
+    "2set": "2セット",
+    "4set": "4セット",
+    "activationStam": "発動時のスタミナ消費量",
+    "stamDrain": "継続中のスタミナ消費量",
     "talents": {
       "auto": "オート",
       "skill": "元素スキル",
       "burst": "元素爆発",
       "passive": "固有天賦",
-      "passive1": "突破段階1固有天賦1",
-      "passive2": "突破段階4固有天賦2",
+      "passive1": "固有天賦1",
+      "passive2": "固有天賦2",
       "passive3": "固有天賦3",
       "sprint": "ダッシュ",
       "constellation1": "1凸",
@@ -416,10 +435,10 @@
     "afterReaction": "元素反応を発動後",
     "aoeInc": "範囲増加",
     "elementalReaction": {
-      "hydro": "<hydro>水元素に関連</hydro>する反応を起こした後",
-      "electro": "<electro>雷元素に関連</electro>する反応を起こした後",
-      "shatter": "<shattered>粉砕</shattered>反応を起こした後",
-      "cryo": "</cryo>氷元素関連</cryo>反応を起こした後"
+      "hydro": "<hydro>水元素関連</hydro>反応を起こした",
+      "electro": "<electro>雷元素関連</electro>反応を起こした",
+      "shatter": "<shattered>粉砕</shattered>反応を起こした",
+      "cryo": "</cryo>氷元素関連</cryo>反応を起こした"
     },
     "bonusScaling": {
       "skill_": "元素スキルボーナス倍率",
@@ -433,8 +452,8 @@
       "charged": "重撃ダメージ倍率",
       "skill": "元素スキルダメージ倍率"
     },
-    "stamRestored": "スタミナ回復",
-    "triggerQuota": "ノルマ達成",
+    "stamRestored": "スタミナ回復量",
+    "triggerQuota": "効果発動可能回数",
     "enemyAffected": {
       "burningOrPyro": "敵は<pyro>燃焼</pyro>、または<pyro>炎元素</pyro>の影響を受けている時",
       "frozenOrCryo": "敵は<cryo>凍結</cryo>、または<cryo>氷元素</cryo>の影響を受けている時",
@@ -446,19 +465,19 @@
       "cryo": "敵が<cryo>氷元素</cryo>の影響を受けた時",
       "pyro": "敵が<pyro>炎元素</pyro>の影響を受けている"
     },
-    "getElementalOrbParticle": "元素粒子・オーブを拾った後",
+    "getElementalOrbParticle": "元素粒子/オーブを拾った",
     "notProtectedByShield": "シールドに守られていない時",
-    "percentCurrentHP": "現HP%",
-    "enerRegenPerHit": "ヒットごとの元素チャージ",
+    "percentCurrentHP": "現在HP%",
+    "enerRegenPerHit": "ヒットごとの元素エネルギー回復量",
     "interval": "間隔",
     "immuneToElectroCharged": "<electrocharged>感電</electrocharged>耐性",
-    "charOffField": "キャラクターは待機中",
-    "attackAoeInc": "攻撃範囲がアップ",
-    "charOnField": "キャラクターはフィールド上",
-    "timeOnField": "フィールド上での時間",
-    "hpChange": "HP増減後",
-    "afterHeal": "回復後",
-    "hits_other": "{{count}}ヒット数",
+    "charOffField": "キャラクターが待機中",
+    "attackAoeInc": "攻撃範囲が拡大",
+    "charOnField": "キャラクターがフィールドにいる",
+    "timeOnField": "フィールドにいる時間",
+    "hpChange": "HPが増減した",
+    "afterHeal": "回復した",
+    "hits_other": "{{count}}ヒット",
     "percentMaxHP": "最大HP%",
     "stack_other": "{{count}}層",
     "seconds_other": "{{count}}秒",
@@ -467,11 +486,23 @@
     "members_other": "{{count}}人のチームメンバー",
     "times_other": "{{count}}回",
     "activeChar": "フィールド上のキャラクター",
-    "otherHpChange": "チームメンバーのHPが増減後",
+    "otherHpChange": "チームメンバーのHPが増減した",
     "reactionOp": {
       "overload": "<overloaded>過負荷反応</overloaded>を発動後"
     },
-    "afterOverflow": "回復上限を超えた"
+    "afterOverflow": "回復上限を超えた",
+    "level": "レベル{{count}}",
+    "teamHitOp": {
+      "geo": "付近のチーム内キャラクターが<geo>岩元素ダメージ</geo>を与えた",
+      "electroReaction": "付近のチーム内キャラクターが<electro>雷元素関連反応</electro>を起こした"
+    },
+    "afterPerformHeal": "治療を行った",
+    "bond": {
+      "current": "命の契約の現在値",
+      "changes": "命の契約の数値が増減した",
+      "increases": "命の契約の数値が増加した",
+      "percentOf": "% of Bond of Life"
+    }
   },
   "weapon_SongOfBrokenPines": {
     "name": "千年の大楽章：旗掲げの歌効果発動中"
@@ -500,8 +531,8 @@
     "emblem": "霧切の巴紋"
   },
   "char_Yoimiya": {
-    "c1": "<strong>琉金の炎</strong>の影響を受けた敵を倒した後\n",
-    "c2": "<pyro>炎元素ダメージ</pyro>で会心が発生した後",
+    "c1": "<strong>琉金の炎</strong>の影響を受けた敵を倒した",
+    "c2": "<pyro>炎元素ダメージ</pyro>で会心が発生した",
     "normPyroInfus": "<pyro>通常攻撃炎元素付与</pyro>",
     "c6Key_": "熾焔の矢の倍率"
   },
@@ -531,7 +562,7 @@
       "rush": "アイスラッシュ",
       "rushState": "ライスラッシュ状態で費やした時間"
     },
-    "a1CondName": "コイル効果を受けた後",
+    "a1CondName": "コイル効果を受けた",
     "normCryoInfus": "<cryo>通常攻撃氷元素付与</cryo>"
   },
   "char_KujouSara": {
@@ -550,12 +581,12 @@
     "c2BurstHeal": "<strong>海人の羽衣</strong>治療ボーナス"
   },
   "page_home": {
-    "intro": "<strong>究極</strong>の<3><i>原神</i></3>ビルド改良ツール。Genshin Optimizer（GO）は聖遺物・武器・キャラクターのインベントリーを管理し、好みに基づいて最適なビルドを計算するのに役立ちます。",
+    "intro": "Genshin Optimizer (GO) は<strong>究極</strong>の<3><i>原神</i></3>装備最適化ツールです。あなたが所持している聖遺物/武器/キャラクターを管理し、プレイスタイルに基づいて装備を最適化するのに役立ちます。",
     "quickLinksCard": {
       "title": "クイックリンク",
       "buttons": {
         "tyGuide": {
-          "title": "YouTubeガイド再生リスト",
+          "title": "YouTubeのガイド プレイリスト",
           "tooltip": "Genshin Optimizerの使用方法を学ぶ"
         },
         "scanners": {
@@ -563,7 +594,7 @@
           "tooltip": "ゲーム内から聖遺物を自動的にスキャンするサードパーティーソフト"
         },
         "kqm": {
-          "title": "Keqing Mains（KQM刻晴メインズ）",
+          "title": "Keqing Mains",
           "tooltip": "セオリークラフティング＆ガイドのコミュニティ"
         },
         "devDiscord": {
@@ -571,11 +602,11 @@
           "tooltip": "原神ツール開発者コミュニティ"
         },
         "good": {
-          "title": "GOODドキュメンテーション",
+          "title": "GOOD 形式について",
           "tooltip": "Genshin Open Object Descriptorドキュメンテーション"
         },
         "patchNotes": {
-          "title": "原神オプティマイザーパッチノート",
+          "title": "パッチノート",
           "tooltip": "GOパッチノート一覧"
         }
       }
@@ -599,23 +630,22 @@
     }
   },
   "page_scanner": {
-    "intro": "<0>スキャナー</0><1>スキャナーは、スクリーンショット、またはゲームから直接データを自動的にスキャンできる原神ツールです。</1><2>こちらはGenshin Optimizerでテストされたいくつかのスキャナーです。</2 ><3>エクスポートしたファイルをアップロードするには、[<1>設定</1>] ページに移動し、[<strong>データベースアップロード</strong>]にてファイルをアップロードできます。</3>",
+    "intro": "<0>スキャナー</0><1>スキャナーは、スクリーンショット、またはゲームから直接データを自動的にスキャンできるツールです。</1><2>以下は、GO でテスト済みのスキャナーです。</2><3>エクスポートしたファイルをアップロードするには、<1>設定</1>ページに移動し、<strong>データベースアップロード</strong>にてファイルをアップロードできます。</3>",
     "ik": {
-      "title": "インベントリーカメラ",
+      "title": "Inventory Kamera",
       "p1": "この軽量アプリは、インベントリー内のすべてのキャラクター、武器、聖遺物をスキャンします。アプリの手順を参照して設定してください。"
     },
     "as": {
       "title": "AdeptiScanner",
-      "p1": "インベントリー内のすべての聖遺物と武器をスキャンします。手動スキャンモードがあり、<1>Enka.Network</1> からデータをインポートすることもできます。",
-      "p2": "このスキャナーは、更新を必要とせずに、新しいゲームバージョンの新聖遺物用に構成することもできます。"
+      "p1": "インベントリー内のすべての聖遺物と武器をスキャンします。手動スキャンモードがあり、<1>Enka.Network</1> からデータをインポートすることもできます。"
     },
     "goodeng": "このアプリは英語でのみスキャンし、<1>GOOD</1> 形式でエクスポートします。",
-    "tosWarn": "ゲームと間接的に連携するどのツールと同様、その使用法は事実上検出できませんが、<1>使用にはリスクが存在する可能性があります。</1>ユーザーの使用判断が推奨されます。",
+    "tosWarn": "ゲームと間接的にやり取りするツールは、事実上使用を検出されないものの、<1>使用には依然としてリスクを伴う可能性があります。</1> 使用の是非はユーザーの判断に委ねられます。",
     "tags": {
       "pc": "PC",
       "mobile": "モバイル",
       "ps": "PlayStation",
-      "gameMani": "自動コントロール",
+      "gameMani": "自動操作",
       "materials": "素材",
       "characters": "キャラクター",
       "weapons": "武器",
@@ -626,21 +656,16 @@
       "p1": "このスキャナーはWebベースで使いやすく、ゲーム画面、スクリーンショットや動画からトリミングする必要なくスキャンできます。",
       "p2": "モバイル・PlayStationでは、スクリーンショットまたは動画のみからスキャンできます。"
     },
-    "ak": {
-      "title": "アーカーシャスキャナー",
-      "p1": "キャラクターや武器だけでなく、聖遺物も自動的にスキャンします。アプリ内に履歴が残るため、過去のスキャンをエクスポートできます。スキャンは英語のみで行われます。",
-      "p2": "このアプリは<1>Paimon.moe</1>と<1>Seelie.me</1>用のアチーブメントもスキャンできます"
-    },
     "seelieme": "このアプリは<1>Seelie.me</1>用の素材もスキャンできます"
   },
   "weapon_Akuoumaru": {
-    "party": "パーティーの元素エネルギー容量"
+    "party": "チームの元素エネルギー上限の合計"
   },
   "artifact_ArchaicPetra": {
-    "condName": "結晶の欠片を獲得"
+    "condName": "結晶の欠片を獲得した"
   },
   "artifact_ViridescentVenerer": {
-    "condName": "拡散された元素"
+    "condName": "拡散された元素タイプ"
   },
   "weapon_CinnabarSpindle": {
     "name": "効果発動中"
@@ -649,30 +674,30 @@
     "condName": "千年の大楽章：別れの歌状態"
   },
   "weapon_MouunsMoon": {
-    "party": "パーティーの元素エネルギー容量"
+    "party": "チームの元素エネルギー上限の合計"
   },
   "weapon_ThrillingTalesOfDragonSlayers": {
-    "condName": "このキャラクターから乗換後"
+    "condName": "このキャラクターから切り替えた"
   },
   "weapon_WavebreakersFin": {
-    "party": "パーティーの元素エネルギー容量"
+    "party": "チームの元素エネルギー上限の合計"
   },
   "artifact_BlizzardStrayer": {
-    "condName": "敵は",
+    "condName": "敵が",
     "condCryo": "氷元素の影響を受けている",
-    "condFrozen": "凍結されている"
+    "condFrozen": "凍結している"
   },
   "artifact_HuskOfOpulentDreams": {
-    "condName": "問答"
+    "condName": "「問答」効果"
   },
   "artifact_OceanHuedClam": {
-    "condName": "海染の泡最大ダメージ"
+    "condName": "「海染の泡」最大ダメージ"
   },
   "artifact_ShimenawasReminiscence": {
-    "afterUseEnergy": "元素エネルギーを15消費"
+    "afterUseEnergy": "元素エネルギーを15消費した"
   },
   "artifact_TinyMiracle": {
-    "condName": "元素ダメージを受けた後"
+    "condName": "元素ダメージを受けた"
   },
   "char_Albedo": {
     "blossomCD": "刹那の花クールダウン",
@@ -758,7 +783,7 @@
   },
   "char_Ganyu": {
     "a1": {
-      "condName": "霜華の矢を放った後",
+      "condName": "霜華の矢を放った",
       "critRateInc": "霜華の会心率アップ"
     },
     "c1": {
@@ -777,7 +802,7 @@
       "applyBloodBlossom": "<strong>血梅香</strong>状態を与える"
     },
     "constellation4": {
-      "condName": "<strong>血梅香</strong>状態の敵を倒した後"
+      "condName": "<strong>血梅香</strong>状態の敵を倒した"
     },
     "constellation6": {
       "condName": "HPが25%以下、または戦闘不能に至るダメージを受けた"
@@ -816,12 +841,12 @@
     "aoeGems": "通常攻撃が範囲ダメージを与える",
     "starJadeStaminaCost": "星璇がついている間、凝光の重撃はスタミナを消費しない",
     "skillReset": "粉砕時に、6秒ごとにクールダウンがリセットされます",
-    "a4toggle": "璇璣屏を突き抜けた後",
+    "a4toggle": "キャラクターが璇璣屏を突き抜けた",
     "c4toggle": "キャラクターが璇璣屏の10m以内",
     "c6bonus": "星璇を獲得"
   },
   "char_Qiqi": {
-    "a1C": "<strong>仙法・寒病鬼差</strong>状態で元素反応を起こした後\n"
+    "a1C": "<strong>仙法・寒病鬼差</strong>状態で元素反応を起こした"
   },
   "char_Razor": {
     "electroSigil": "雷の印",
@@ -848,10 +873,10 @@
   "char_Shenhe": {
     "quill": "氷翎発動後",
     "c4": "霜霄訣消費後",
-    "pressQuota": "単押し場合の発動回数",
-    "holdQuota": "長押し場合の発動数",
-    "pressDuration": "単押し場合の継続時間",
-    "holdDuration": "長押し場合の継続時間"
+    "pressQuota": "単押し時の発動回数",
+    "holdQuota": "長押し時の発動回数",
+    "pressDuration": "単押し時の継続時間",
+    "holdDuration": "長押し時の継続時間"
   },
   "char_Thoma": {
     "a2": "熾炎崩滅ダメージアップ",
@@ -859,7 +884,7 @@
     "refreshBarrier": "<strong>烈炎侍立シールド</strong>を獲得・重ね掛け"
   },
   "char_Xiangling": {
-    "afterChili": "グゥオパァーの唐辛子を拾った後",
+    "afterChili": "グゥオパァーの唐辛子を拾った",
     "explosionDMG": "爆発ダメージ",
     "afterGuobaHit": "敵にグゥオパァーの攻撃がヒット",
     "duringPyronado": "旋火輪発動後",
@@ -878,7 +903,7 @@
   "char_Xingqiu": {
     "skillCond": "雨すだれの剣に守られている",
     "burstCond": "虹剣勢状態発動中",
-    "c2Cond": "敵に剣雨をヒット"
+    "c2Cond": "敵が剣雨攻撃を受けた"
   },
   "char_Xinyan": {
     "skill": {
@@ -939,7 +964,7 @@
   "char_YunJin": {
     "burst": "飛雲旗陣状態",
     "a4Inc_": "パーティーの元素タイプによる増加",
-    "c4": "結晶反応後"
+    "c4": "結晶反応を起こした"
   },
   "char_Zhongli": {
     "skill": {
@@ -948,7 +973,7 @@
       "maxStele": "岩柱の最大数",
       "nearShield": "敵が<strong>玉璋シールド</strong>付近範囲内"
     },
-    "p1cond": "<strong>玉璋シールド</strong>がダメージを受けた後",
+    "p1cond": "<strong>玉璋シールド</strong>がダメージを受けた",
     "c6heal": "最大HP回復量"
   },
   "weapon_AlleyHunter": {
@@ -961,22 +986,22 @@
     "condName": "敵はスライム"
   },
   "weapon_Deathmatch": {
-    "condName": "敵が付近内"
+    "condName": "周囲に敵がいる"
   },
   "weapon_DragonspineSpear": {
     "aoeDmg": "恒氷晶核ダメージ",
-    "cryoAffectedDmg": "<cryo>氷元素</cryo>に影響された敵にダメージ"
+    "cryoAffectedDmg": "<cryo>氷元素</cryo>の影響を受けている敵に命中"
   },
   "weapon_FerrousShadow": {
     "condName": "HPノルマ達成",
     "resistance": "重撃の中断耐性アップ"
   },
   "weapon_FreedomSworn": {
-    "sigilsConsumed": "奮起の欠片消費後"
+    "sigilsConsumed": "奮起の欠片を消費した"
   },
   "weapon_Frostbearer": {
     "aoeDmg": "恒氷晶核ダメージ",
-    "cryoAffectedDmg": "<cryo>氷元素</cryo>に影響された敵にダメージ"
+    "cryoAffectedDmg": "<cryo>氷元素</cryo>の影響を受けている敵に命中"
   },
   "weapon_Hamayumi": {
     "condName": "元素エネルギーが100%"
@@ -991,9 +1016,9 @@
     "takeMoreDmg": "受けたダメージごとに増加量"
   },
   "weapon_Slingshot": {
-    "condName": "通常攻撃・重撃攻撃がヒット",
-    "less": "矢が発射後0.3秒以内",
-    "more": "矢が発射後0.3秒以降"
+    "condName": "通常攻撃/重撃がヒット",
+    "less": "発射から0.3秒以内",
+    "more": "発射から0.3秒以降"
   },
   "weapon_SnowTombedStarsilver": {
     "aoeDmg": "恒氷晶核ダメージ",
@@ -1020,9 +1045,9 @@
     "atkEffInc": "攻撃効果アップ"
   },
   "artifact_EchoesOfAnOffering": {
-    "mode": "発動モード",
-    "avg": "平均",
-    "always": "常に"
+    "mode": "発動間隔",
+    "avg": "平均値 (50.204%)",
+    "always": "常に発動"
   },
   "char_KamisatoAyato": {
     "skill": {
@@ -1064,59 +1089,61 @@
     }
   },
   "page_character": {
-    "addNew": "キャラクター加入",
+    "addNew": "キャラクターを追加",
     "tabs": {
       "overview": "概要",
       "talent": "天賦",
-      "optimize": "改良",
-      "theorycraft": "セオリークラフト"
+      "optimize": "最適化",
+      "theorycraft": "セオリークラフト",
+      "upopt": "聖遺物アップグレーダー"
     },
-    "formulas": "式",
-    "calculations": "計算",
-    "selectCharacter": "キャラクター選択",
-    "removeCharacter": "{{value}}を削除してもよろしいですか?",
+    "formulas": "計算式",
+    "calculations": "数値",
+    "selectCharacter": "キャラクターを選択",
+    "removeCharacter": "{{value}}を削除してもよろしいですか？ このキャラクターの「戦闘設定」や「複合的な最適化設定」などのすべてのデータも削除され、割り当てられているすべてのチームからこのキャラクターが削除されます。",
     "delete": "キャラクター削除",
     "teammates": "チーム",
     "hitmode": {
-      "hit": "非会心攻撃ダメージ",
+      "hit": "非会心ダメージ",
       "avgHit": "平均ダメージ",
-      "critHit": "会心攻撃ダメージ",
+      "critHit": "会心ダメージ",
       "global": "グローバル標準"
     },
     "tabEquip": {
-      "swapWeapon": "武器変更",
-      "swapArt": "聖遺物変更",
-      "compare": "現ビルドと比較する",
+      "swapWeapon": "武器を変更",
+      "swapArt": "聖遺物を変更",
+      "compare": "現在の装備と比較する",
       "unequipArts": "全ての聖遺物を外す"
     },
     "characterName": "キャラクター名",
-    "teammate": "パーティーメンバー{{count}}",
-    "noReaction": "反応なし",
+    "teammate": "チームメンバー{{count}}",
+    "noReaction": "元素反応なし",
     "multiTarget": {
-      "title": "複数改良ターゲット構成",
-      "addNewTarget": "ターゲットを追加",
-      "addNewMTarget": "複数の改良ターゲットを作成",
-      "info1": "注：コミュニティが作成した複数改良ターゲットは、<1>GO Discord</1>または、<3>KQM</3>の複数改良ガイド内にありますが、その有効性は保証できません。",
-      "info2": "構成が正確に設定されている事を確認ください。",
-      "description": "詳細",
-      "duplicate": "重複",
-      "target_other": "<0>{{count}}</0>つのターゲット"
+      "title": "複合的な攻撃手段の設定",
+      "addNewTarget": "攻撃手段を追加",
+      "addNewMTarget": "最適化設定を作成",
+      "info1": "注：複数の攻撃手段を考慮した最適化 (原文：Multi-Optimization Targets) はコミュニティによって考案され、GOの <1>Discord</1> または KQMの <3>Multi-Optimization Guide</3> で詳細を知ることができます。 ただし、このような設定の有効性を保証するものではありません。",
+      "info2": "設定が実使用に即したものであるかは、自己の責任において確認してください。",
+      "description": "最適化設定の説明",
+      "duplicate": "最適化設定を複製",
+      "target_other": "<0>{{count}}</0>個のターゲット",
+      "jsonDescWarning": "最適化設定のデータが貼り付けられましたが、適切な場所ではありません。 設定をインポートするにはこのウィンドウを閉じ、「<strong>最適化設定をインポート</strong>」ボタンを押してください。"
     },
     "addStats": {
-      "title": "敵・ボーナスステータスの構成",
-      "info": "こちらでは、GOでサポートされていない食べ物バフ、アビスカードや、超電導などのバフ・デバフを追加できます。具体的な値については、<1>原神Wiki</1>を参照してください。",
-      "label": "新規ボーナスステータス"
+      "title": "バフ・デバフの設定",
+      "info": "食べ物・オイル、螺旋の深秘降福、超伝導の物理耐性デバフなどの設定をこちらで追加できます。具体的な数値については <1>原神 Wiki</1> を参照してください。",
+      "label": "バフ・デバフを追加"
     },
     "tabTheorycraft": {
       "substatType": {
-        "min": "最低サブ効果スコア",
-        "max": "最大サブ効果スコア",
-        "mid": "平均サブ効果スコア"
+        "min": "伸び幅：最小値",
+        "max": "伸び幅：最大値",
+        "mid": "伸び幅：平均値"
       },
-      "maxTotalRolls": "現ビルドは最大<strong>{{value}}</strong>のスコアが可能です",
-      "maxRolls": "このサブステータスは最大30回のスコアが可能です。",
-      "maxRollsMain": "最低1つのメイン効果が同じステータスのため、このサブ効果は最大{{value}}回のスコアが可能です。",
-      "distribute": "分配",
+      "maxTotalRolls": "現在の装備には最大<strong>{{value}}</strong>回まで割り当て可能です",
+      "maxRolls": "このサブステータスは最大30回まで割り当て可能です。",
+      "maxRollsMain": "同じ種類のメインステータスを指定しているため、このサブステータスは最大{{value}}回まで割り当て可能です。",
+      "distribute": "最適に割り振る",
       "compareToggle": {
         "equipped": "装備中の聖遺物と比較",
         "tc": "セオリークラフトステータスを表示"
@@ -1131,49 +1158,63 @@
         "content": "今設定されているセオリークラフトビルドが装備中のビルドに換えます。"
       },
       "kqmsDialog": {
-        "kqmsBtn": "KQM（刻晴メインズ）を使用",
-        "title": "KQMを使用しますか？",
-        "content": "今設定されている<strong>サブステ</strong>を<4>KQM標準</4>に準拠したものに換えます。"
+        "kqmsBtn": "KQMスタンダードを適用",
+        "title": "KQMスタンダードを適用しますか？",
+        "content": "現在割り当てられている<strong>サブステータス</strong>が、<5>KQMスタンダード</5>に準拠したものに置き換えられます。"
       },
       "gcsimDialog": {
-        "title": "gcsimエクスポート",
-        "content": "下記のコードからビルドをコピーし、<2>gcsim</2>にインポートできます",
-        "copied": "クリップボードにgcsim configをコピーしました。"
+        "title": "gcsim 向けにエクスポート",
+        "content": "下記のコードをコピーして、現在の構成を <2>gcsim</2> にインポートできます。",
+        "copied": "クリップボードにコピーしました。"
       },
       "all": {
-        "rolls": "全ての強化",
-        "max": "全てをマックス"
+        "rolls": "均等に割り当て：",
+        "max": "割り当て上限："
       },
       "substat": {
-        "max": "マックス"
+        "max": "割り当て上限："
       },
-      "feasibilityAlert": "現サブ効果の分布には、少なくとも <strong>{{minSubLines}}</strong> 行のサブ効果が必要です。よって、<strong>{{minOtherRolls}}</strong> の強化を他のサブステータスに割り当てる必要があります。",
+      "feasibilityAlert": "現在の装備には最低<strong>{{minSubLines}}回</strong>以上サブステータスを割り振る必要があります。必要な割り当て回数まで残り<strong>{{minOtherRolls}}回</strong>です。",
       "optAlert": {
-        "scalesWith": "選択された改良ターゲットと制約が計算する倍率は、次のサブステです：",
-        "distribute": "ステータスをこれらのサブ効果にのみ分配します。",
-        "feasibilty": "非倍率のサブ効果に分散する必要がある可能性があります。"
-      },
-      "constraint": {
-        "title": "ステータス制約",
-        "add": "ステータス制約を追加"
+        "scalesWith": "ステータスの下限値を満たしつつ、最適化したい項目を伸ばすために必要な割り当て先は次の通りです： ",
+        "distribute": "。 「最適に割り振る」を押すと、残りの割り当て回数をこれらのサブステータスに最適な比率で割り振ります。",
+        "feasibilty": " 割り当て回数を最低限満たすために、最適化したい項目と関係のないサブステータスに割り振られる場合があります。"
       }
     },
     "tabTeambuff": {
       "team_reso": "元素共鳴",
-      "resonance_tip": "元素共鳴の効果を発揮するためには、パーティーが4人揃っている必要があります。"
+      "resonance_tip": "元素共鳴の効果を発揮するためには、チームメンバーが4人揃っている必要があります。"
     },
-    "showingNum_other": "{{value}}人のキャラクターの内、<1>{{count}}</1> 人を表示中"
+    "showingNum_other": "{{value}}人中 <1>{{count}}</1>人のキャラクターを表示",
+    "noLoadout": "このキャラクターの戦闘設定 / チームはまだ追加されていないようです。<strong>装備を作成</strong>、<strong>セオリークラフト</strong>、または<strong>最適化</strong>するには、このキャラクターの戦闘設定とチームを作成する必要があります。",
+    "teammateUsing": {
+      "weapon": "同じ武器をチームメンバーの<strong><1></1></strong>も装備しています。",
+      "artifact": "同じ<3></3>をチームメンバーの<strong><1></1></strong>も装備しています。"
+    }
   },
   "page_weapon": {
-    "edit": "武器改造",
-    "weaponName": "武器名",
+    "edit": "武器を編集",
+    "weaponName": "武器の名前で検索",
     "removeWeapon": "{{value}}を削除してよろしいですか？",
     "addWeapon": "武器を追加",
-    "showingNum_other": "武器{{value}}つの内、<1>{{count}}</1>つを表示中",
-    "cantDeleteLock": "武器がロックされているため解除できません"
+    "showingNum_other": "{{value}}個中 <1>{{count}}</1>個の武器を表示",
+    "cantDeleteLock": "武器がロックされているため削除できません",
+    "button": {
+      "deleteWeapons": "武器を削除",
+      "lockWeapons": "武器をロックする",
+      "unlockWeapons": "武器のロックを解除する"
+    },
+    "buttonHint": "注：上の赤いボタンは<1>フィルターされた武器</1>のみに適用されます",
+    "equippedWeapon": "装備中のすべての武器",
+    "weaponInInv": "未装備のすべての武器",
+    "locationsTooltip": "特定のキャラクターでフィルタリングするには「装備中のすべての武器」を無効にしてください",
+    "subheadings": {
+      "general": "全般",
+      "inventory": "インベントリー"
+    }
   },
   "weapon_AquaSimulacra": {
-    "condName": "敵が付近内"
+    "condName": "周囲に敵がいる"
   },
   "weapon_FadingTwilight": {
     "states": {
@@ -1200,146 +1241,158 @@
     "takingField": "フィールド登場後"
   },
   "char_Tighnari": {
-    "p1Cond": "<strong>花筐の矢</strong>を放った後",
-    "c4ReactCond": "<strong>蔓纏いの矢</strong>が元素反応を起こした後",
+    "p1Cond": "<strong>花筐の矢</strong>を放った",
+    "c4ReactCond": "<strong>蔓纏いの矢</strong>が元素反応を起こした",
     "c6DmgKey": "蔵蘊の花矢の追加ダメージ",
     "c6WreathRed": "<strong>花筐の矢</strong>のチャージ時間減少"
   },
   "elementalResonance": {
     "SprawlingGreenery": {
-      "cond2ele": "<pyro>燃焼</pyro>、<spread>原激化</spread>、または<bloom>開花</bloom>反応を発動後",
-      "cond3ele": "<aggravate>超激化</aggravate>、<spread>草激化</spread>、<hyperbloom>超開花</hyperbloom>、または<burgeon>烈開花</burgeon>反応を発動後"
+      "cond2ele": "<pyro>燃焼</pyro>、<spread>原激化</spread>、または<bloom>開花</bloom>反応を発動した",
+      "cond3ele": "<aggravate>超激化</aggravate>、<spread>草激化</spread>、<hyperbloom>超開花</hyperbloom>、または<burgeon>烈開花</burgeon>反応を発動した"
     },
     "EnduringRock": {
-      "hitCond": "キャラクターがシールドで守られている時、敵にダメージを与えた後"
+      "hitCond": "キャラクターがシールドで守られている時、敵にダメージを与えた"
     }
   },
   "page_character_optimize": {
     "mainStat": {
       "levelAssTooltip": {
-        "title": "メイン効果レベル仮定",
-        "desc": "メイン効果値を指定レベル以上に設定します。サブ効果に変更はしません。"
+        "title": "聖遺物のレベルを引き上げて計算",
+        "desc": "指定レベル未満の聖遺物のメインステータスの数値を、指定レベルまで引き上げて計算します。サブステータスの数値は変更しません。"
       },
       "assumptionLvl": {
-        "no": "メイン効果レベル仮定なし",
-        "lvl": "メイン効果は最低{{lvl}}レベルと仮定"
+        "no": "聖遺物のレベルを引き上げない",
+        "lvl": "聖遺物のレベルを{{lvl}}まで引き上げる"
       },
-      "title": "メイン効果フィルター・構成"
+      "title": "メインステータスフィルター/設定"
     },
     "tcGraph": {
-      "vs": "対改良ターゲットを複合",
-      "notSel": "選択なし",
+      "vs": "比較対象：",
+      "notSel": "未選択",
       "downloadData": "データをダウンロード",
-      "desc": "オプティマイザーからのデータで改良ターゲットと選択したグラフターゲットを複合してグラフを表しされます。グラフには、選択したグラフターゲットの0.01ごとの最大改良ターゲット値が表示されます。これらを有効にするのはオプションであり、有効に場合計算時間が遅くなります。",
-      "showStatThr": "ステータスのしきい値を表示",
-      "generatedBuilds": "生成されたビルド",
-      "statReqThr": "ステータス要件のしきい値",
-      "currentBuild": "現ビルド",
-      "highlightedBuilds": "注目ビルド",
-      "buildAlreadyInList": "ビルドは既にリストにあります"
+      "desc": "最適化したい項目と、比較したい項目との対比グラフを生成します。グラフには、比較したい項目の0.01ごとの最適化したい項目の値が表示されます。このオプションは任意であり、有効にすると最適化に要する時間が増加します。",
+      "showStatThr": "ステータスのしきい値を線で表示",
+      "generatedBuilds": "生成された装備",
+      "statReqThr": "ステータスのしきい値",
+      "currentBuild": "現在の装備",
+      "highlightedBuilds": "注目の装備",
+      "buildAlreadyInList": "この装備は既にリストにあります"
     },
     "levelFilter": "聖遺物レベルフィルター",
-    "allowPartial": "部分的なビルドを許可する（5聖遺物以下）",
+    "allowPartial": "5箇所未満の装備構成を許可",
     "constraintFilter": {
-      "title": "最小ビルド制約",
-      "tooltip": "構成されたビルドが考慮する特定の最小要件を設定します。たとえば、最低140%の元素チャージをターゲットとします。"
+      "title": "パラメータの下限値を設定",
+      "tooltip": "生成する装備が満たすべき最低限のパラメータ要求を設定します。 例： 元素チャージ効率140%以上 など"
     },
     "artSetConfig": {
-      "title": "聖遺物セットの設定",
-      "setEffCond": "効果条件の設定",
-      "enabled": "有効",
+      "title": "聖遺物セットの許可設定",
+      "setEffCond": "セット効果の発動条件",
+      "enabled": "種類が有効",
       "allowed": "許可",
       "excluded": "除外",
-      "selected": "選択済み",
-      "2rainbow": "2セット効果のみ",
-      "4rainbow": "セット効果なし",
+      "selected": "種類が有効",
+      "2rainbow": "セット効果なし/3箇所",
+      "4rainbow": "セット効果なし/5箇所",
       "allowAll2set": "全ての2セットを許可",
       "excludeAll2set": "全ての2セットを除外",
       "allowAll4set": "全ての4セットを許可",
       "excludeAll4set": "全ての4セットを除外",
-      "alExRainbow": "<0>許可<1></1></0> / <2>除外<1></1></2>レインボービルド",
+      "alExRainbow": "セット効果なし構成を <0>許可<1></1></0> または <2>除外<1></1></2>",
       "modal": {
         "setCond": {
-          "title": "聖遺物セットの効果条件",
+          "title": "発動させるセット効果",
           "reset": "条件をリセット",
-          "text": "一部の聖遺物セットの中、条件を満たして発揮するバフするものがあります。こちらではこれらの効果を選択でき、目指している改良に必要な計算をより的確に設定できます。"
+          "text": "一部のセット効果は、戦闘中に条件を満たした場合にのみ効果を発揮します。 この画面では発動させるセット効果の条件を設定でき、セット効果が与える影響を織り込んで最適化を行うことができます。"
         },
         "ArtSetFilter": {
-          "title": "聖遺物セット<1>許可<1></1></1> / <3>除外<1></1></3>",
-          "intro": "ビルド改良計算に考慮させたいセットを許可・除外できます。次の例では、<strong>A</strong>はオンセット、<strong>R</strong>はレインボー（オフセット）です。",
-          "2set": "<0><0>除外<1></1>2セット</0></0>は、2セットが含むビルドを除外します：<2><0>AA</0>RRR</2>と<4><0>AAA</0>RR</4>。",
-          "4set": "<0><0>除外<1></1>4セット</0></0>は、4セットが含むビルドを除外します：<2><0>AAAA</0>R</2>と<4><0>AAAAA</0></4>。",
-          "2rain": "<0><0>除外<1></1>3レインボー</0></0>は、2セット＋3レインボーが含むビルドを除外します：<2>AA<1>RRR</1></2>と<4>AAA<1>RR</1></4>。",
-          "4rain": "<0><0>除外<1></1>5レインボー</0></0>は、バラバラの5レインボービルドを除外します: <2><0>RRRRR</0></2>。"
+          "title": "聖遺物セットを <1>許可<1></1></1> または <3>除外<1></1></3>",
+          "intro": "最適化に反映させたい聖遺物の組み合わせを設定できます。 下記の例では、<strong>A</strong>は同種類の組を表し、<strong>R</strong>は別種類の組を表します。",
+          "2set": "特定の2セットを<0><0>除外<1></1></0></0>すると、その2セット効果を発動する構成を除外します： <2><0>AA</0>RRR</2> および <4><0>AAA</0>RR</4>。",
+          "4set": "特定の4セットを<0><0>除外<1></1></0></0>すると、その4セット効果を発動する構成を除外します： <2><0>AAAA</0>R</2> および <4><0>AAAAA</0></4>。",
+          "2rain": "セット効果なし/3箇所を<0><0>除外<1></1></0></0>すると、2セット効果を一種類しか発動していない構成を除外します： <2>AA<1>RRR</1></2> および <4>AAA<1>RR</1></4>。",
+          "4rain": "セット効果なし/5箇所を<0><0>除外<1></1></0></0>すると、一つもセット効果を発動していない構成を除外します： <2><0>RRRRR</0></2>。"
         }
       }
     },
-    "buildDropdownDesc": "生成されるビルドの数を減らすと、多数のビルドの計算時間が短縮されます。",
-    "threadDropdownDesc": "スレッド数を増やすとビルド時間は短縮されますが、CPUの使用量も増加します。",
-    "noArtis": "注！まだGOに聖遺物を追加していないようです。<1>聖遺物</1>ページに移動して追加してください。",
+    "buildDropdownDesc": "生成する装備の数を減らすと、候補が多い場合の計算時間を短縮できます。",
+    "threadDropdownDesc": "スレッドの数を増やすと計算時間が短縮されますが、CPUの使用率も増加します。",
+    "noArtis": "おおっと！ まだGenshin Optimizerに聖遺物を追加していないようです。<1>聖遺物</1>ページに移動して聖遺物を追加してください。",
     "targetSelector": {
-      "selectOptTarget": "改良ターゲットを選択",
-      "selectGraphTarget": "グラフターゲットを選択",
-      "invalidTarget": "ターゲット無効",
-      "selectBuildTarget": "ビルド制約ターゲットを選択"
+      "selectOptTarget": "最適化したい項目を選択",
+      "selectGraphTarget": "比較したい項目を選択",
+      "invalidTarget": "無効な項目",
+      "selectBuildTarget": "パラメータを選択"
     },
-    "selectTargetFirst": "先ずは改良ターゲットを選択ください",
+    "selectTargetFirst": "先に最適化したい項目を選択してください",
     "generateButton": {
       "cancel": "キャンセル",
-      "generateBuilds": "ビルドを生成"
+      "generateBuilds": "生成を開始"
     },
-    "removeBuildButton": "ビルドを削除",
-    "theorycraftButton": "セオリークラフト",
+    "removeBuildButton": "リストから削除",
+    "theorycraftButton": "Theorycraft",
     "currentlyEquippedBuild": "装備中",
-    "addBuildToList": "ビルドをリストに追加",
+    "addBuildToList": "この装備をリストに追加",
     "graphBuildLabel": "グラフ＃<1>{{count}}</1>",
     "excludeArt": {
       "title_exclude": "除外された聖遺物",
-      "title_tooltip": "このキャラクターの除外リストに聖遺物を追加できます。除外リスト内の聖遺物は、ビルド生成の計算に対象されません。",
-      "addExc": "このキャラクターの除外リストに聖遺物を追加してください",
-      "selExc": "このキャラクターの除外リストに追加する聖遺物を選択してください",
-      "deSelectExc": "除外リストから外す聖遺物をクリックしてください",
-      "usingNum": "除外聖遺物<1>{{totalStr}}</1>個使用中",
+      "title_tooltip": "特定の聖遺物をキャラクター毎の除外リストに追加できます。除外リストに追加された聖遺物は装備の最適化に使用されません。",
+      "addExc": "除外リストに聖遺物を追加する",
+      "selExc": "除外リストに追加する聖遺物を選択",
+      "deSelectExc": "聖遺物をクリックして除外リストから消去",
+      "usingNum": "{{totalStr}}</1>個を除外",
       "button_txt": "聖遺物を除外",
-      "excNum_other": "<0>{{count}}</0>個の聖遺物を除外"
+      "excNum_other": "<0>{{count}}</0>個を除外中",
+      "includeArtifactTip": "聖遺物の許可設定をすると、最適化の際に考慮されるようになります。",
+      "includeArtifactButton": "この聖遺物を許可"
     },
     "excludeChar": {
-      "title": "装備中聖遺物構成",
+      "title": "装備中の聖遺物の許可設定",
       "modal": {
-        "allow_all": "表示されている全てのキャラクターを許可リストに追加",
-        "disallow_All": "表示されている全てのキャラクターを許可リストから外す"
+        "allow_all": "表示中の全キャラクターを許可リストに追加",
+        "disallow_All": "表示中の全キャラクターを許可リストから除外"
       },
       "allowEquip": "下記キャラクターからの聖遺物を使用の許可する",
-      "tooltip": "許可リストにキャラクターを追加できます。当リスト内のキャラクターはビルド生成の計算に対象されます。また、装備されていない聖遺物のみ使用、許可リスト内の聖遺物のみ使用、およびすべての聖遺物の使用要件を切替えることもできます。",
-      "chars": "キャラクター",
-      "artis": "聖遺物",
+      "chars": "キャラクター人数",
+      "artis": "装備中の聖遺物の数",
       "states": {
         "unequippedOnly": "装備されていないもののみ",
         "customList": "カスタムリスト",
         "all": "全聖遺物"
       },
       "usingState": "使用中",
-      "usingNumTot_other": "<3>{{count}}</3>人のキャラクターからの<1>{{arts}}</1>個の聖遺物を使用中"
+      "usingNumTot_other": "<3>{{count}}</3>人のキャラクターから<1>{{arts}}</1>個の聖遺物を借りています"
     },
-    "buildCompleted": "ビルド生成完了",
-    "notifyTooltip": "ビルドの生成が完了したら通知音が鳴ります。タブアウト時にも通知が表示されます。",
+    "buildCompleted": "生成完了",
+    "notifyTooltip": "生成が完了した際に通知音を鳴らします。タブが非アクティブでも通知が表示されます。",
     "bonusStats": {
       "title": "ボーナスステータス"
     },
-    "build_other": "<0>{{count}}</0>つのビルド",
-    "thread_other": "<0>{{count}}</0>つのスレッド"
+    "build_other": "生成数：<0>{{count}}</0>",
+    "thread_other": "<0>{{count}}</0>スレッド",
+    "upOptLevelFilter": "聖遺物アップグレーダー レベルフィルター",
+    "upOptLevelFilterTooltip": "このレベルフィルターは最適化タブの設定と連動しません。",
+    "upOptNoResults": "現在の装備を強化できる可能性のある聖遺物はありません。 フィルターの条件が厳しすぎるかもしれません。 または、メインの最適化でより優れた装備を見つけてください。",
+    "upOptInfo": "聖遺物アップグレーダーは、最適化したい項目を更に成長させる可能性が高い聖遺物を特定し、育成する価値のある聖遺物を示します。<br/>一度に入れ替えるのは一箇所だけであるため、全ての聖遺物の組み合わせを考慮した最適な装備を得るには、メインの最適化を行ってください。",
+    "upOptEmptyBuild": "聖遺物の一部が未装備です。 聖遺物アップグレーダーは一度に一箇所だけを入れ替えるため、セットが完成する可能性は低いです。 可能な限りメインの最適化で生成された装備をベースに始めることをお勧めします。",
+    "targetSelectorTitle": "項目を選択",
+    "compareArtModal": {
+      "newArt": "New Artifact",
+      "oldArt": "Old Artifact",
+      "tcArt": "TC Artifact"
+    }
   },
   "weapon_ForestRegalia": {
-    "condName": "唯識の葉を拾った後"
+    "condName": "唯識の葉を拾った"
   },
   "weapon_FruitOfFulfillment": {
     "stackName": "盈虚効果"
   },
   "weapon_Moonpiercer": {
-    "condName": "蘇生の葉を拾った後"
+    "condName": "蘇生の葉を拾った"
   },
   "weapon_SapwoodBlade": {
-    "condName": "唯識の葉を拾った後"
+    "condName": "唯識の葉を拾った"
   },
   "char_TravelerAnemo": {
     "p1": "風の刃ダメージ",
@@ -1353,7 +1406,7 @@
   "char_TravelerElectro": {
     "skill": {
       "amuletGenAmt": "生成された豊穣の勾玉の数",
-      "absorb": "豊穣の勾玉を拾った後",
+      "absorb": "豊穣の勾玉を拾った",
       "enerRest": {
         "none": "勾玉ごとの元素チャージ",
         "over35": "勾玉ごとの元素チャージ（元素エネルギー35%以上）",
@@ -1380,20 +1433,20 @@
     }
   },
   "page_newTab": {
-    "title": "🛑新しいオプティマイザータブが検出されました🛑",
-    "p1": "💞原神オプティマイザーを別のタブで開いたようです。📵GOは複数のタブで操作すると、様々なエラーが発生する可能性があります：",
+    "title": "🛑 新しいタブを検出しました 🛑",
+    "p1": "Genshin Optimizer が別のタブ💞で開かれたようです。 GO は複数のタブで動作するように設計されていません📵！ 複数のタブで動作させると、次のような結果を招きます：",
     "symptom": {
-      "1": "データの非同期🙃",
+      "1": "タブ間でのデータの同期ずれ🙃",
       "2": "データベースの破損💔",
-      "3": "胃痛🤰と開発者の発狂😡",
-      "4": "まれに、デス☠️"
+      "3": "胃のむかつき🤰 および Genshin Optimizer 開発者が発狂😡",
+      "4": "ごくまれに… DEATH☠️"
     },
-    "p2": "よって、📝次のいずれかを選択ください：",
+    "p2": "このメッセージ📝を表示することで、このような事態を防止しました。 次の選択肢のいずれかを行ってください：",
     "choice": {
-      "1": "このタブを閉じて🔪、新しいタブ🆕を使用ください",
-      "2": "新しいタブを閉じ↩️、こちらが唯一残っているタブであることを確認し🔂、このページを更新します🔄"
+      "1": "このタブを閉じ🔪、新しいタブ🆕を利用する",
+      "2": "新しいタブを閉じ↩️、こちらが唯一残っているタブであることを確認し🔂、このページを更新する🔄"
     },
-    "refresh": "ページ更新"
+    "refresh": "ページを更新する"
   },
   "char_Candace": {
     "hydroInfusion": "<hydro>片手剣、両手剣、長柄武器に水元素付与状態</hydro>"
@@ -1419,7 +1472,7 @@
     "passive1": {
       "underChaliceEffect": "金盃の豊穣状態",
       "notDendroHydroTeam": "ヒント：チーム全員の元素タイプが草元素と水元素であり、かつ草元素と水元素のキャラクターが少なくとも一人ずつ編成すると追加の条件と効果が見れます",
-      "condName": "金盃の豊穣状態で<dendro>草元素ダメージ</dendro>を受けた後",
+      "condName": "金盃の豊穣状態で<dendro>草元素ダメージ</dendro>を受けた",
       "bountifulCores": "開花反応は豊穣の核を生成"
     },
     "c4": {
@@ -1434,17 +1487,17 @@
     "karmaCritRate_": "滅浄三業の会心率ボーナス",
     "karmaIntervalDec": "滅浄三業の発動間隔減少",
     "noBurstEffect": "ヒント：元素爆発効果がありません。凸1を有効、または<pyro>炎元素</pyro>、<electro>雷元素</electro>か<hydro>水元素</hydro>のチームメンバーを加入ください。",
-    "partyInBurst": "チームメンバーがフィールド範囲内",
+    "partyInBurst": "ナヒーダが摩耶の宮殿にいる",
     "c1Key": "摩耶の宮殿の効果ボーナス発動のため、追加の<pyro>炎元素</pyro>、<electro>雷元素</electro>と<hydro>水元素</hydro>のチームメンバーを加入",
     "c2": {
       "bloomCondName": "敵に<strong>蘊種印</strong>を付与",
-      "qasCondName": "蘊種印状態にある敵が<spread>原激化</spread>、<aggravate>超激化</aggravate>、または<spread>草激化</spread>反応を受けた後"
+      "qasCondName": "蘊種印状態にある敵が<spread>原激化</spread>、<aggravate>超激化</aggravate>、または<spread>草激化</spread>反応を受けた"
     },
     "c4CondName": "<strong>蘊種印</strong>状態にある敵",
     "c6KarmicDmg": "破業障ダメージ"
   },
   "artifact_FlowerOfParadiseLost": {
-    "condName": "開花、超開花、烈開花を起こした後"
+    "condName": "開花、超開花、烈開花を起こした"
   },
   "char_Faruzan": {
     "giftCondName": "祈風の恵み状態",
@@ -1464,8 +1517,8 @@
   "char_Wanderer": {
     "windfavoredState": "<strong>児姿優風</strong>状態",
     "p1": {
-      "pyroCondName": "<strong>羽画・風姿華歌</strong>を発動時、<pyro>炎元素</pyro>に触れた後",
-      "cryoCondName": "<strong>羽画・風姿華歌</strong>を発動時、<cryo>氷元素</cryo>に触れた後"
+      "pyroCondName": "<strong>羽画・風姿華歌</strong>を発動時、<pyro>炎元素</pyro>に触れた",
+      "cryoCondName": "<strong>羽画・風姿華歌</strong>を発動時、<cryo>氷元素</cryo>に触れた"
     },
     "p2Dmg": "風の矢ダメージ",
     "c1BonusKey": "風の矢ダメージボーナス倍率",
@@ -1477,10 +1530,10 @@
   },
   "char_Alhaitham": {
     "withMirrors": "琢光鏡を所持",
-    "debateStacks": "琢光鏡を凝集した後",
+    "debateStacks": "琢光鏡を生成した",
     "mirrorsConsumed": "<strong>殊境・顕象結縛</strong>を発動し、琢光鏡を消費",
     "projectionAttack_dmg_": "光幕攻撃ダメージボーナス",
-    "excessMirror": "限界に達し、琢光鏡を生成した後",
+    "excessMirror": "上限を超えて琢光鏡を生成した",
     "projectionDmg": "光幕攻撃ダメージ"
   },
   "char_Yaoyao": {
@@ -1490,33 +1543,33 @@
     "megaHeal": "超スゴイ! 大根治療"
   },
   "page_error": {
-    "title": "🛑エラー発生🛑",
-    "p1.1": "エラーが発生しました。解決のため、しばらくのご協力をお願い致します。",
-    "p1.2": "次を参照してください：",
+    "title": "🛑 予期せぬエラーが発生しました 🛑",
+    "p1.1": "GOで予期せぬエラーが発生しました。 この原因はおそらく私たちにあります。 お手数ですが、当ページの案内を御覧ください。",
+    "p1.2": "問題を解決するために、以下の方法をお試しください：",
     "fixes": {
-      "1": "ページを更新",
-      "2": "ブラウザ拡張機能をすべて無効にし、再度更新してください",
-      "3": "データベースをダウンロードし、保管してください。「すべてのGOデータを削除」をクリックし、データベースを再アップロードしてください"
+      "1": "ページを更新してください",
+      "2": "ブラウザの拡張機能をすべて無効にし、再度更新してください",
+      "3": "データベースをダウンロードし保管した後、「すべてのデータを削除」ボタンをクリックし、データベースを再アップロードしてください"
     },
-    "p2": "上記を行っても解決されていない場合は、「GitHub Issues」ページ、またはDiscordのバグレポートチャンネルにご連絡ください",
+    "p2": "上記を行っても解決されない場合は、 GitHub の Issues ページ、またはDiscordのバグ報告チャンネルまでご連絡ください",
     "report": {
-      "1": "下記のデータベースをダウンロード",
-      "2": "下記のレポートをコピーする",
-      "3": "GitHubと連絡するには、<1>ここ</1>をクリックしてください。内容にテキストを貼付け、再現手順を記入し、JSON ファイルを添付してください（ファイル名を「.txt」で終わるように変更する必要があります）",
-      "4": "または、<1>ここ</1>をクリックしてDiscordと連絡ください。「#🐛bug-reports」チャネルにて、新しいスレッドを作成し、メッセージ ボックスにテキストを貼付けください。再現手順を入力し、JSONファイルもアップロードしてください。"
+      "1": "下記からデータベースをダウンロードしてください",
+      "2": "下記のレポートテキストをコピーしてください",
+      "3": "<1>こちら</1>をクリックして GitHub までご報告ください。 説明欄にテキストを貼り付け、再現手順を記入し、JSON ファイルを添付してください (ファイル名を「.txt」で終わるように変更する必要があります)",
+      "4": "または、<1>こちら</1>をクリックしてDiscordまでご連絡ください。「#🐛bug-reports」チャネルにて、新しいスレッドを作成し、メッセージボックスにテキストを貼り付けてください。再現手順を記入し、JSONファイルもアップロードしてください。"
     },
-    "refresh": "ページ更新",
+    "refresh": "ページを更新",
     "caption": "エラーを調査している運営のライブ映像",
-    "confirmNuke": "すべてのGOデータを削除してよろしいですか？取り返しのつかない事です！",
-    "finishNuke": "全てのGOデータを削除。ページ更新中。",
-    "nuke": "すべてのGOデータを削除"
+    "confirmNuke": "すべてのデータを削除してよろしいですか？ この操作を行うと元に戻せません！",
+    "finishNuke": "すべてのデータを削除しました。ページを更新しています。",
+    "nuke": "すべてのデータを削除"
   },
   "char_Dehya": {
-    "inFieldAndTakeDmg": "浄焔剣獄領域内のフィールド上キャラクターがダメージを受けた後",
+    "inFieldAndTakeDmg": "浄焔剣獄領域内のフィールド上キャラクターがダメージを受けた",
     "field_dmg_": "浄焔剣獄ダメージボーナス",
     "initialHeal": "治療発動回復量",
     "dotHeal": "追加の回復",
-    "critHitDuringBurst": "熾鬣拳が会心ダメージを命中後"
+    "critHitDuringBurst": "熾鬣拳が敵に会心を起こした"
   },
   "char_Mika": {
     "inSoulwind": "霊風状態",
@@ -1524,10 +1577,10 @@
     "incDetectorStacks": "偵察の最大層数増加"
   },
   "weapon_MailedFlower": {
-    "condName": "敵に元素スキルをヒット、または元素反応を起こした後"
+    "condName": "敵に元素スキルをヒット、または元素反応を起こした"
   },
   "artifact_NymphsDream": {
-    "condName": "鏡中の水仙"
+    "condName": "「鏡中の水仙」効果"
   },
   "char_Somnia": {
     "name": "ソムニァ",
@@ -1704,8 +1757,8 @@
     "condName": "定土玉圭状態"
   },
   "artifact_GildedDreams": {
-    "overrideSameCond": "同じ元素タイプのチームメンバー数",
-    "overrideOtherCond": "異なる元素タイプのチームメンバー数"
+    "overrideSameCond": "同じ元素タイプのチーム人数を上書きする",
+    "overrideOtherCond": "異なる元素タイプのチーム人数を上書きする"
   },
   "char_Lynette": {
     "c6CondName": "<strong>エニグマティック・フェイント</strong>のエニグマ・スラストを発動後"
@@ -1724,16 +1777,16 @@
     "skillCondName": "充満状態"
   },
   "weapon_FinaleOfTheDeep": {
-    "bondCondName": "命の契約クリア後"
+    "bondCondName": "命の契約をクリアした"
   },
   "weapon_FlowingPurity": {
-    "bondCondName": "命の契約クリア後"
+    "bondCondName": "命の契約をクリアした"
   },
   "weapon_SacrificialJade": {
     "condOffField": "キャラクターが5秒以上待機"
   },
   "weapon_ScionOfTheBlazingSun": {
-    "condName": "敵に陽炎の矢をヒット後",
+    "condName": "陽炎の矢が敵にヒットした",
     "dmg": "陽炎の矢ダメージ"
   },
   "weapon_TalkingStick": {
@@ -1743,7 +1796,7 @@
     }
   },
   "artifact_SongOfDaysPast": {
-    "condName": "渇望効果の記録された回復量"
+    "condName": "「渇望」効果で記録した回復量"
   },
   "char_Charlotte": {
     "c2Cond": "敵にヴェリテくんがヒット",
@@ -1803,7 +1856,7 @@
     "condName": "強靭マークを消費"
   },
   "weapon_UltimateOverlordsMegaMagicSword": {
-    "condName": "助けられたメリュジーヌの数"
+    "condName": "助けたメリュジーヌの人数"
   },
   "weapon_Verdict": {
     "condName": "契印"
@@ -1824,5 +1877,53 @@
     "wave_critDMG_": "閑雲衝撃波の会心ダメージ",
     "a1Cond": "風翎",
     "c6Cond": "天梯昇り発動数"
+  },
+  "char_Arlecchino": {
+    "bloodfireDmg": "凶月血炎のダメージ",
+    "c2Cond": "<strong>血償の勅令</strong>を回収した"
+  },
+  "char_Chiori": {
+    "a1Cond": "裁錦発動中",
+    "a4Cond": "近くのチームキャラクターが<geo>岩元素創造物</geo>を創造した"
+  },
+  "char_Sethos": {
+    "shadow_dmgInc": "貫影の矢の与えるダメージアップ",
+    "shadow_critRate_": "貫影の矢の会心率",
+    "a4Cond": "「熱砂の眩影」発動中",
+    "c4Cond": "<strong>貫影の矢</strong>または<strong>瞑弦の矢</strong>が2体以上の敵に命中した"
+  },
+  "char_Sigewinne": {
+    "skillTierCond": "ヒーリングバブルの長押し時のサイズ",
+    "bubbleHeal_": "ヒーリングバブルの回復量ボーナス",
+    "convaCond": "静養カウントを所持している",
+    "a4Cond": "チームの命の契約の合計"
+  },
+  "page_team": {
+    "buildInfo": {
+      "equipped": "これが現在ゲーム内でキャラクターに装備されている武器と聖遺物を表します。 戦闘設定の装備によって上書きされることはありません。",
+      "build": "<strong>装備</strong>は1つの武器と5つの聖遺物から構成されます。",
+      "tcbuild": "<strong>セオリークラフト</strong> (Theorycraft = TC) とは英語圏において、数学的な分析を用いてゲームの最適な戦略を探究する試みを指します。<br><strong>TC装備</strong>では、ユーザーが装備やステータスの数値を自由に割り振ることができます。"
+    },
+    "buildTcCharOverride": {
+      "btn": "Override Character Data for This TC build"
+    },
+    "team": {
+      "editNameDesc": "チームの名前と説明を編集",
+      "name": "チームの名前",
+      "desc": "チームの説明"
+    },
+    "loadout": {
+      "name": "戦闘設定の名前",
+      "desc": "戦闘設定の説明"
+    }
+  },
+  "page_teams": {
+    "showingNum_other": "{{value}}チーム中 <1>{{count}}</1>チームを表示"
+  },
+  "weapon_Cloudforged": {
+    "cond": "元素エネルギーが減少した"
+  },
+  "weapon_SilvershowerHeartstrings": {
+    "cond": "Blessing stacks"
   }
 }

@@ -83,5 +83,9 @@
   },
   "unlockPassive1": "Nhân vật đột phá Cấp 1 sẽ mở",
   "unlockPassive2": "Nhân vật đột phá Cấp 4 sẽ mở",
-  "unlockPassive3": "Thiên Phú Cố Định"
+  "unlockPassive3": "Thiên Phú Cố Định",
+  "unlockLockedPassive": "Hoàn thành nhiệm vụ trước đó sẽ mở khóa",
+  "witchPassive": "Bài Tập Của Ma Nữ",
+  "moonsign": "Nguyệt Triệu",
+  "hexerei": "Hexerei"
 }

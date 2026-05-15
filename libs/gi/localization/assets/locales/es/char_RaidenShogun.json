@@ -4,7 +4,9 @@
     "partyCost": "Coste de Energía"
   },
   "burst": {
-    "resolves": "Cargas de Ambición"
+    "resolves": "Cargas de Ambición",
+    "resolveInitial_": "<electro>Escalado de Bonificación de Daño del Corte Onírico</electro",
+    "resolveInfused_": "<electro>Escalado de Bonificación de Daño de Mente onírica</electro>"
   },
   "a4": {
     "enerRest": "Regeneración de Energía otorgada por <strong>Mente Onírica</strong>",

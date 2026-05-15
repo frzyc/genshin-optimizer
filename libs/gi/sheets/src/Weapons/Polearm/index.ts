@@ -4,6 +4,7 @@ import BalladOfTheFjords from './BalladOfTheFjords'
 import BeginnersProtector from './BeginnersProtector'
 import BlackTassel from './BlackTassel'
 import BlackcliffPole from './BlackcliffPole'
+import BloodsoakedRuins from './BloodsoakedRuins'
 import CalamityQueller from './CalamityQueller'
 import CrescentPike from './CrescentPike'
 import CrimsonMoonsSemblance from './CrimsonMoonsSemblance'
@@ -25,9 +26,11 @@ import Moonpiercer from './Moonpiercer'
 import MountainBracingBolt from './MountainBracingBolt'
 import PrimordialJadeWingedSpear from './PrimordialJadeWingedSpear'
 import ProspectorsDrill from './ProspectorsDrill'
+import ProspectorsShovel from './ProspectorsShovel'
 import PrototypeStarglitter from './PrototypeStarglitter'
 import RightfulReward from './RightfulReward'
 import RoyalSpear from './RoyalSpear'
+import SacrificersStaff from './SacrificersStaff'
 import SkywardSpine from './SkywardSpine'
 import StaffOfHoma from './StaffOfHoma'
 import StaffOfTheScarletSands from './StaffOfTheScarletSands'
@@ -42,6 +45,7 @@ const polearm: Record<WeaponPoleArmKey, WeaponSheet> = {
   BeginnersProtector,
   BlackcliffPole,
   BlackTassel,
+  BloodsoakedRuins,
   CalamityQueller,
   CrescentPike,
   CrimsonMoonsSemblance,
@@ -63,9 +67,11 @@ const polearm: Record<WeaponPoleArmKey, WeaponSheet> = {
   MountainBracingBolt,
   PrimordialJadeWingedSpear,
   ProspectorsDrill,
+  ProspectorsShovel,
   PrototypeStarglitter,
   RightfulReward,
   RoyalSpear,
+  SacrificersStaff,
   SkywardSpine,
   StaffOfHoma,
   StaffOfTheScarletSands,

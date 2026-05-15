@@ -176,6 +176,11 @@ const c4FpApex_burst_dmg_ = greaterEq(
   4,
   equal(condC4FpApex, 'on', dm.constellation4.burst_dmg_)
 )
+const c4FpApex_volcano_dmg_ = greaterEq(
+  input.constellation,
+  4,
+  equal(condC4FpApex, 'on', dm.constellation4.burst_dmg_)
+)
 
 const c6_plunging_critRate_ = greaterEq(
   input.constellation,
@@ -242,6 +247,7 @@ const dmgFormulas = {
             1,
             a1Rainbow_fpImpact_dmgInc
           ),
+          plunging_dmg_: c4FpApex_volcano_dmg_,
         },
       },
       undefined,
@@ -533,6 +539,12 @@ const sheet: TalentSheet = {
           fields: [
             {
               node: c4FpApex_burst_dmg_,
+            },
+            {
+              node: infoMut(c4FpApex_volcano_dmg_, {
+                name: ct.ch('volcanoDmg_'),
+                unit: '%',
+              }),
             },
           ],
         },

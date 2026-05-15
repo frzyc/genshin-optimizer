@@ -163,7 +163,7 @@ describe('example', () => {
       'skill_hold',
       'skill_press',
     ])
-    expect(listing.filter((x) => x.sheet === 'static').length).toEqual(6)
+    expect(listing.filter((x) => x.sheet === 'static').length).toEqual(7)
   })
   test('calculate formulas in a listing', () => {
     const read = mem0

@@ -1,0 +1,24 @@
+{
+  "name": "Dämmerlicht des Mondwebers",
+  "description": {
+    "0": "Ein reines, makelloses Silberschwert, das starke Rüstungen wie das Mondlicht durchdringen kann. Der Legende nach handelt es sich um ein heiliges Artefakt, das von der ersten Mondkantorin gesegnet wurde."
+  },
+  "passiveName": "Blut des geheimen Silbers",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den mit Spezialfähigkeiten verursachten Schaden um <cryo>20 %</cryo>. Erhöht den mit Spezialfähigkeiten verursachten Schaden zusätzlich um <cryo>16 % / 28 %</cryo>, wenn die max. Elementarenergie des Trägers nicht mehr als 60/40 Punkte ist."
+    },
+    "1": {
+      "0": "Erhöht den mit Spezialfähigkeiten verursachten Schaden um <cryo>25 %</cryo>. Erhöht den mit Spezialfähigkeiten verursachten Schaden zusätzlich um <cryo>20 % / 35 %</cryo>, wenn die max. Elementarenergie des Trägers nicht mehr als 60/40 Punkte ist."
+    },
+    "2": {
+      "0": "Erhöht den mit Spezialfähigkeiten verursachten Schaden um <cryo>30 %</cryo>. Erhöht den mit Spezialfähigkeiten verursachten Schaden zusätzlich um <cryo>24 % / 42 %</cryo>, wenn die max. Elementarenergie des Trägers nicht mehr als 60/40 Punkte ist."
+    },
+    "3": {
+      "0": "Erhöht den mit Spezialfähigkeiten verursachten Schaden um <cryo>35 %</cryo>. Erhöht den mit Spezialfähigkeiten verursachten Schaden zusätzlich um <cryo>28 % / 49 %</cryo>, wenn die max. Elementarenergie des Trägers nicht mehr als 60/40 Punkte ist."
+    },
+    "4": {
+      "0": "Erhöht den mit Spezialfähigkeiten verursachten Schaden um <cryo>40 %</cryo>. Erhöht den mit Spezialfähigkeiten verursachten Schaden zusätzlich um <cryo>32 % / 56 %</cryo>, wenn die max. Elementarenergie des Trägers nicht mehr als 60/40 Punkte ist."
+    }
+  }
+}

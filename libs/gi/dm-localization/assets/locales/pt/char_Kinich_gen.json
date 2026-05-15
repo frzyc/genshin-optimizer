@@ -176,7 +176,7 @@
     "name": "Forma da Besta Auspiciosa",
     "description": {
       "0": "Quando o Canhão Perfurador Giratório atinge um inimigo, ricocheteia entre inimigos uma vez, causando <dendro>Dano Dendro</dendro> equivalente a 700% do ATQ de Kinich.",
-      "1": "Se esse Canhão Perfurador Giratório desencadear o efeito de fortalecimento do Canhão Perfurador Giratório do Talento Passivo \"Contrato do Espírito Flamejante\" ou da Constelação \"Palma do Tigre Estelar\" , o ataque ricocheteador obterá o efeito de fortalecimento descrito acima."
+      "1": "Se esse Canhão Perfurador Giratório desencadear o efeito de fortalecimento do Canhão Perfurador Giratório do Talento de Ascensão \"Contrato do Espírito Flamejante\" ou da Constelação \"Palma do Tigre Estelar\" , o ataque ricocheteador obterá o efeito de fortalecimento descrito acima."
     }
   }
 }

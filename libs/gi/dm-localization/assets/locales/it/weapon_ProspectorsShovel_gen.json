@@ -1,0 +1,24 @@
+{
+  "name": "Pala del prospettore",
+  "description": {
+    "0": "Una lancia apparentemente ricavata da uno strumento agricolo di metallo. A prima vista, non sembra avere nulla di speciale, ma la sua forma discreta nasconde accessori che sono allo stesso tempo sontuosi e innegabilmente ricercati."
+  },
+  "passiveName": "Veloce ed efficace",
+  "passiveDescription": {
+    "0": {
+      "0": "I DAN da Electrocarica aumentano di un <cryo>48%</cryo> e i DAN da Carica lunare di un <cryo>12%</cryo>. Quando Presagio lunare: Barlume ascendente è attivo, i DAN da Carica lunare aumentano di un ulteriore <cryo>12%</cryo>."
+    },
+    "1": {
+      "0": "I DAN da Electrocarica aumentano di un <cryo>60%</cryo> e i DAN da Carica lunare di un <cryo>15%</cryo>. Quando Presagio lunare: Barlume ascendente è attivo, i DAN da Carica lunare aumentano di un ulteriore <cryo>15%</cryo>."
+    },
+    "2": {
+      "0": "I DAN da Electrocarica aumentano di un <cryo>72%</cryo> e i DAN da Carica lunare di un <cryo>18%</cryo>. Quando Presagio lunare: Barlume ascendente è attivo, i DAN da Carica lunare aumentano di un ulteriore <cryo>18%</cryo>."
+    },
+    "3": {
+      "0": "I DAN da Electrocarica aumentano di un <cryo>84%</cryo> e i DAN da Carica lunare di un <cryo>21%</cryo>.Quando Presagio lunare: Barlume ascendente è attivo, i DAN da Carica lunare aumentano di un ulteriore <cryo>21%</cryo>."
+    },
+    "4": {
+      "0": "I DAN da Electrocarica aumentano di un <cryo>96%</cryo> e i DAN da Carica lunare di un <cryo>24%</cryo>. Quando Presagio lunare: Barlume ascendente è attivo, i DAN da Carica lunare aumentano di un ulteriore <cryo>24%</cryo>."
+    }
+  }
+}

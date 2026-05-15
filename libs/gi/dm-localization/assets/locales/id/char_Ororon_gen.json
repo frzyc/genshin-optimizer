@@ -142,7 +142,7 @@
     "name": "Trails Amidst the Forest Fog",
     "description": {
       "0": "<strong>Spirit Orb</strong> dari Elemental Skill <strong>Night's Sling</strong> bisa memantul 2 kali lebih banyak.",
-      "1": "Selain itu, setelah <strong>Spirit Orb</strong> mengenai musuh, akan menambahkan efek Nighttide terhadap musuh tersebut selama 12 detik. Musuh yang berada dalam pengaruh efek Nighttide akan menerima peningkatan 50% DMG yang diakibatkan oleh Hypersense dari Talenta Pasif \"Nightshade Synesthesia\". Harus membuka Talenta Pasif \"Nightshade Synesthesia\" terlebih dahulu."
+      "1": "Selain itu, setelah <strong>Spirit Orb</strong> mengenai musuh, akan menambahkan efek Nighttide terhadap musuh tersebut selama 12 detik. Musuh yang berada dalam pengaruh efek Nighttide akan menerima peningkatan 50% DMG yang diakibatkan oleh Hypersense dari Talenta Ascension \"Nightshade Synesthesia\". Harus membuka Talenta Ascension \"Nightshade Synesthesia\" terlebih dahulu."
     }
   },
   "constellation2": {
@@ -179,9 +179,9 @@
   "constellation6": {
     "name": "Ode to Deep Springs",
     "description": {
-      "0": "Setelah memicu Hypersense dari Talenta Pasif \"Nightshade Synesthesia\", ATK Karakter aktif dalam party sendiri akan meningkat 10% selama 9 detik. Efek ini dapat ditumpuk sampai 3 lapis dan durasi setiap lapisnya dihitung terpisah.",
-      "1": "Selain itu, saat melancarkan Elemental Burst <strong>Dark Voices Echo</strong>, akan memicu efek yang setara dengan Hypersense satu kali dan mengakibatkan 200% DMG aslinya.",
-      "2": "Harus membuka Talenta Pasif \"Nightshade Synesthesia\" terlebih dahulu."
+      "0": "Setelah memicu Hypersense dari Talenta Ascension \"Nightshade Synesthesia\", ATK Karakter aktif dalam party sendiri akan meningkat 10% selama 9 detik. Efek ini dapat ditumpuk sampai 3 lapis dan durasi setiap lapisnya dihitung terpisah.",
+      "1": "Selain itu, melancarkan Elemental Burst <strong>Dark Voices Echo</strong> akan memicu efek yang setara dengan Hypersense sebanyak satu kali dan mengakibatkan 200% DMG aslinya.",
+      "2": "Harus membuka Talenta Ascension \"Nightshade Synesthesia\" terlebih dahulu."
     }
   }
 }

@@ -7,7 +7,11 @@
     "weapons": "Armas",
     "doc": "Docs",
     "setting": "Ajustes",
-    "scanner": "Scanners"
+    "scanner": "Scanners",
+    "teams": "Equipes",
+    "archive": "Arquivo",
+    "loadouts": "Loadouts",
+    "builds": "Builds"
   },
   "social": {
     "paypal": "PayPal",
@@ -32,7 +36,8 @@
     "rarity": "Raridade",
     "efficiency": "RV Atual",
     "mefficiency": "RV Máximo",
-    "artsetkey": "Conjunto de Artefatos"
+    "artsetkey": "Conjunto de Artefatos",
+    "lastEdit": "Editados Recentemente"
   },
   "link": {
     "download": "Link para Download",
@@ -65,5 +70,7 @@
     "stamina_buffs": "Efeitos de Stamina",
     "misc": "Outros Atributos"
   },
-  "sillyPageTitle": "Silly Optimizer"
+  "sillyPageTitle": "Silly Optimizer",
+  "excluded": "Excluídos",
+  "included": "Incluídos"
 }

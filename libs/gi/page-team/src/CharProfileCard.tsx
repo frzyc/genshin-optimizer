@@ -1,5 +1,5 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { CardThemed, NextImage } from '@genshin-optimizer/common/ui'
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import { CharacterContext, useDBMeta } from '@genshin-optimizer/gi/db-ui'
 import type { TalentSheetElementKey } from '@genshin-optimizer/gi/sheets'
@@ -69,7 +69,7 @@ export function CharacterCompactConstellation() {
       {range(1, 6).map((i) => (
         <Grid item xs={4} key={i}>
           <Box
-            component={NextImage ? NextImage : 'img'}
+            component="img"
             src={
               characterSheet.getTalentOfKey(
                 `constellation${i}` as TalentSheetElementKey

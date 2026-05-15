@@ -20,6 +20,29 @@
         "1": "Tire une pluie de flèches depuis les airs et plonge au sol, infligeant des DGT de zone à l'impact."
       }
     },
+    "upgradedFields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 6 tirs consécutifs."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Effectue un <strong>tir visé</strong> plus précis infligeant davantage de DGT.",
+        "2": "Lors de la visée, la flèche se charge en élément Anémo, infligeant de considérables <anemo>DGT Anémo</anemo> quand elle est complètement chargée."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Tire une pluie de flèches depuis les airs et plonge au sol, infligeant des DGT de zone à l'impact."
+      },
+      "hexerei": {
+        "0": "<strong>Hexerei : Rituel secret</strong>",
+        "1": "Pendant la durée de l'œil de la tempête créé par son déchaînement élémentaire <strong>Ode au vent</strong>, Venti obtient différents bonus supplémentaires :",
+        "2": [
+          " Son attaque normale est convertie pour tirer des <strong>flèches de tourbillon</strong> pouvant percer les ennemis, infligeant encore plus de <anemo>DGT Anémo</anemo> aux ennemis en chemin.",
+          " Lorsqu'une attaque normale de Venti touche un ennemi, la durée de l'œil de la tempête augmente de 1 s et son TdR de 0,5 s, cet effet pouvant être déclenché une fois toutes les 0,1 s et un maximum de 2 fois après chaque utilisation du déchaînement élémentaire <strong>Ode au vent</strong>."
+        ]
+      }
+    },
     "skillParams": {
       "0": "DGT 1er coup",
       "1": "DGT 2e coup",
@@ -31,7 +54,7 @@
       "7": "DGT tir visé (pleine charge)",
       "8": "DGT durant la chute",
       "9": "DGT chute basse/élevée",
-      "10": "",
+      "10": "DGT flèche de tourbillon",
       "11": "",
       "12": "",
       "13": "",
@@ -124,10 +147,23 @@
       "1": "Ne peut pas être cumulé avec d'autres aptitudes passives aux effets identiques."
     }
   },
+  "lockedPassive": {
+    "name": "Veillée de la sorcière : Éloge au vent temporel",
+    "description": {
+      "0": "Après avoir terminé le <strong>devoir de la sorcière « Du réveil du vent »</strong>, Venti devient un personnage <strong>héxère</strong>. Si l'équipe contient au moins 2 personnages héxères, elle bénéficie de l'effet <strong>Hexerei : Rituel secret</strong> qui améliore les personnages héxères.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei : Rituel secret</strong>",
+      "3": "Pendant la durée de l'œil de la tempête créé par son déchaînement élémentaire <strong>Ode au vent</strong>, pendant 4 s après qu'un personnage déployé à proximité a déclenché une réaction de Dispersion, ses DGT augmentent de 50 % et l'œil de la tempête de Venti inflige des DGT d'une valeur équivalant à 135 % des DGT d'origine."
+    }
+  },
   "constellation1": {
     "name": "Vent violent fractionné",
     "description": {
       "0": "Le <strong>tir visé</strong> tire 2 flèches supplémentaires, chacune infligeant 33 % des DGT de la flèche d'origine."
+    },
+    "upgradedDescription": {
+      "0": "Le <strong>tir visé</strong> tire 2 flèches supplémentaires, chacune infligeant 33 % des DGT de la flèche d'origine.",
+      "1": "De plus, les <strong>flèches de tourbillon</strong> tirent également 2 flèches supplémentaires traquant les ennemis, chacune infligeant 20 % des DGT d'origine. Cet effet peut être déclenché une fois toutes les 0,25 s."
     }
   },
   "constellation2": {
@@ -135,6 +171,13 @@
     "description": {
       "0": "<strong>Sonnet des Vents célestes</strong> diminue la <anemo>RÉS Anémo</anemo> et la RÉS physique des ennemis de 12 % pendant 10 s.",
       "1": "La <anemo>RÉS Anémo</anemo> et la RÉS physique des ennemis projetés en l'air par <strong>Sonnet des Vents célestes</strong> diminuent de 12 % tant qu'ils sont en l'air."
+    },
+    "upgradedDescription": {
+      "0": "<strong>Sonnet des vents célestes</strong> diminue la <anemo>RÉS Anémo</anemo> et la RÉS physique des ennemis de 24 % pendant 10 s.",
+      "1": "De plus, après avoir utilisé son déchaînement élémentaire <strong>Ode au vent</strong>, Venti obtient l'effet <strong>Quand la brise souffle</strong> et le TdR de la compétence élémentaire <strong>Sonnet des vents célestes</strong> est réinitialisé. Lorsqu'une <strong>flèche de tourbillon</strong> a touché un ennemi, il y a également 25 % de chances d'accorder l'effet <strong>Quand la brise souffle</strong> à Venti.",
+      "2": "<br/>",
+      "3": "<strong>Quand la brise souffle</strong>",
+      "4": "Utiliser la compétence élémentaire <strong>Sonnet des vents célestes</strong> avec un appui simple permet d'infliger 300 % des DGT d'origine. Cet effet dure 15 s et s'annule lorsque Venti a utilisé sa compétence élémentaire <strong>Sonnet des vents célestes</strong> avec un appui simple."
     }
   },
   "constellation3": {
@@ -148,6 +191,9 @@
     "name": "Vent glacial de liberté",
     "description": {
       "0": "Venti inflige 25 % de <anemo>DGT Anémo</anemo> supplémentaires pendant 10 s lorsqu'il obtient un orbe ou une particule élémentaire."
+    },
+    "upgradedDescription": {
+      "0": "Après avoir utilisé sa compétence élémentaire <strong>Sonnet des vents célestes</strong> ou son déchaînement élémentaire <strong>Ode au vent</strong>, Venti et les autres personnages déployés de son équipe obtiennent un <anemo>bonus de DGT Anémo</anemo> de 25 % pendant 10 s."
     }
   },
   "constellation5": {
@@ -162,6 +208,11 @@
     "description": {
       "0": "La <anemo>RÉS Anémo</anemo> des ennemis touchés par <strong>Ode au Vent</strong> diminue de 20 %.",
       "1": "En cas d'absorption élémentaire, leur RÉS à l'élément correspondant diminue également de 20 %."
+    },
+    "upgradedDescription": {
+      "0": "La <anemo>RÉS Anémo</anemo> des ennemis touchés par <strong>Ode au vent</strong> diminue de 20 %.",
+      "1": "En cas d'absorption élémentaire, leur RÉS à l'élément correspondant diminue également de 20 %.",
+      "2": "De plus, les DGT que Venti inflige à ces ennemis obtiennent un bonus de DGT CRIT de 100 %."
     }
   }
 }

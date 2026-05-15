@@ -175,6 +175,20 @@
       "0": "When dispatched on an expedition in Mondstadt, time consumed is reduced by 25%."
     }
   },
+  "lockedPassive": {
+    "name": "Witch's Eve Rite: Phantasmal Nocturne",
+    "description": {
+      "0": "After completing <strong>Witch's Homework: Of the Unexpected</strong>, Fischl will become a <strong>Hexerei</strong> character. When the party includes at least 2 Hexerei characters, you will gain the <strong>Hexerei: Secret Rite</strong> effect, which enhances Hexerei characters.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei: Secret Rite</strong>",
+      "3": "Hark, Prince Nachtraben, Ozvaldo Hrafnavins, he who has witnessed the fall of countless worlds. Sing now the starry septet for your sovereign, for this is the moment of deepest sin, when the gathered souls at the end of causality shatter the darkness of fate.",
+      "4": "Additionally, when Oz is on the field, party members will gain additional buff effects:",
+      "5": [
+        " After a nearby party member triggers an Overloaded reaction, Fischl and other nearby active party members have their ATK increased by 22.5% for 10s.",
+        " After a nearby party member triggers an Electro-Charged or Lunar-Charged reaction, Fischl and other nearby active party members have their Elemental Mastery increased by 90 for 10s."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Gaze of the Deep",
     "description": {
@@ -212,6 +226,10 @@
     "name": "Evernight Raven",
     "description": {
       "0": "Extends the duration of Oz's presence on the field by 2s. Additionally, Oz performs coordinated attacks with your active character when present, dealing 30% of Fischl's ATK as <electro>Electro DMG</electro>."
+    },
+    "upgradedDescription": {
+      "0": "Extends the duration of Oz's presence on the field by 2s. Additionally, Oz performs coordinated attacks with your active character when present, dealing 30% of Fischl's ATK as <electro>Electro DMG</electro>.",
+      "1": "After Oz performs a coordinated attack, the increased ATK and Elemental Mastery effects of <strong>Witch's Eve Rite: Phantasmal Nocturne</strong> are further increased by 100% for 10s."
     }
   }
 }

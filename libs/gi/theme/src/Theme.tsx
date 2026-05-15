@@ -29,6 +29,8 @@ declare module '@mui/material/styles' {
     bloom: Palette['primary']
     burgeon: Palette['primary']
     hyperbloom: Palette['primary']
+    lunarbloom: Palette['primary']
+    lunarcrystallize: Palette['primary']
   }
 
   interface PaletteOptions {
@@ -57,6 +59,8 @@ declare module '@mui/material/styles' {
     bloom?: PaletteOptions['primary']
     burgeon?: PaletteOptions['primary']
     hyperbloom?: PaletteOptions['primary']
+    lunarbloom?: PaletteOptions['primary']
+    lunarcrystallize?: PaletteOptions['primary']
   }
 }
 
@@ -87,6 +91,8 @@ declare module '@mui/material/Button' {
     bloom: true
     burgeon: true
     hyperbloom: true
+    lunarbloom: true
+    lunarcrystallize: true
   }
 }
 
@@ -117,6 +123,8 @@ declare module '@mui/material/Chip' {
     bloom: true
     burgeon: true
     hyperbloom: true
+    lunarbloom: true
+    lunarcrystallize: true
   }
 }
 
@@ -163,6 +171,8 @@ declare module '@mui/material/SvgIcon' {
     bloom: true
     burgeon: true
     hyperbloom: true
+    lunarbloom: true
+    lunarcrystallize: true
   }
 }
 
@@ -171,11 +181,11 @@ export const theme = createTheme({
   palette: {
     ...commonTheme.palette,
     geo: commonTheme.palette.augmentColor({
-      color: { main: '#f8ba4e', contrastText: '#fff' },
+      color: { main: '#f8ba4e', contrastText: '#222' },
       name: 'geo',
     }),
     dendro: commonTheme.palette.augmentColor({
-      color: { main: '#a5c83b', contrastText: '#fff' },
+      color: { main: '#a5c83b', contrastText: '#222' },
       name: 'dendro',
     }),
     pyro: commonTheme.palette.augmentColor({
@@ -255,7 +265,7 @@ export const theme = createTheme({
       name: 'heal',
     }),
     bloom: commonTheme.palette.augmentColor({
-      color: { main: '#47c83b', contrastText: '#fff' },
+      color: { main: '#47c83b', contrastText: '#222' },
       name: 'bloom',
     }),
     burgeon: commonTheme.palette.augmentColor({
@@ -265,6 +275,14 @@ export const theme = createTheme({
     hyperbloom: commonTheme.palette.augmentColor({
       color: { main: '#3b8dc8', contrastText: '#fff' },
       name: 'hyperbloom',
+    }),
+    lunarbloom: commonTheme.palette.augmentColor({
+      color: { main: '#c8efc4', contrastText: '#222' },
+      name: 'lunarbloom',
+    }),
+    lunarcrystallize: commonTheme.palette.augmentColor({
+      color: { main: '#fff2baff', contrastText: '#222' },
+      name: 'lunarcrystallize',
     }),
   },
 })

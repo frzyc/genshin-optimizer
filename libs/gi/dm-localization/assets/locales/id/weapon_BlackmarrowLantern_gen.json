@@ -1,0 +1,24 @@
+{
+  "name": "Blackmarrow Lantern",
+  "description": {
+    "0": "Lentera yang memancarkan cahaya redup, terbungkus logam paduan hitam yang berbentuk seperti rangkaian tulang. Menurut legenda, lentera ini pernah dianggap sebagai harta karun oleh sebuah organisasi rahasia."
+  },
+  "passiveName": "Token of Covenant",
+  "passiveDescription": {
+    "0": {
+      "0": "DMG reaksi Bloom +<cryo>48%</cryo> dan DMG reaksi Lunar-Bloom +<cryo>12%</cryo>. Moonsign: Ascendant Gleam: DMG reaksi Lunar-Bloom meningkat <cryo>12%</cryo> lagi."
+    },
+    "1": {
+      "0": "DMG reaksi Bloom +<cryo>60%</cryo> dan DMG reaksi Lunar-Bloom +<cryo>15%</cryo>. Moonsign: Ascendant Gleam: DMG reaksi Lunar-Bloom meningkat <cryo>15%</cryo> lagi."
+    },
+    "2": {
+      "0": "DMG reaksi Bloom +<cryo>72%</cryo> dan DMG reaksi Lunar-Bloom +<cryo>18%</cryo>. Moonsign: Ascendant Gleam: DMG reaksi Lunar-Bloom meningkat <cryo>18%</cryo> lagi."
+    },
+    "3": {
+      "0": "DMG reaksi Bloom +<cryo>84%</cryo> dan DMG reaksi Lunar-Bloom +<cryo>21%</cryo>. Moonsign: Ascendant Gleam: DMG reaksi Lunar-Bloom meningkat <cryo>21%</cryo> lagi."
+    },
+    "4": {
+      "0": "DMG reaksi Bloom +<cryo>96%</cryo> dan DMG reaksi Lunar-Bloom +<cryo>24%</cryo>. Moonsign: Ascendant Gleam: DMG reaksi Lunar-Bloom meningkat <cryo>24%</cryo> lagi."
+    }
+  }
+}

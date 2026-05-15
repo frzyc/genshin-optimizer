@@ -1,0 +1,24 @@
+{
+  "name": "Kutsal Adak Asası",
+  "description": {
+    "0": "Tamamen saf ve lekesiz, gümüş beyazı bir mızrak. Efsaneye göre Hyperborea Başrahibeleri geçmişte Donuk Ayın Çocuklarına bununla yol gösterirmiş."
+  },
+  "passiveName": "Lekesiz Arzu",
+  "passiveDescription": {
+    "0": {
+      "0": "Bir Element Becerisi bir düşmana isabet ettikten sonra 6sn boyunca Saldırı <cryo>%8</cryo>, Enerji Yüklemesi <cryo>%6</cryo> artar. 3 kademeye kadar birikebilir. Bu etki, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "1": {
+      "0": "Bir Element Becerisi bir düşmana isabet ettikten sonra 6sn boyunca Saldırı <cryo>%10</cryo>, Enerji Yüklemesi <cryo>%7,5</cryo> artar. 3 kademeye kadar birikebilir. Bu etki, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "2": {
+      "0": "Bir Element Becerisi bir düşmana isabet ettikten sonra 6sn boyunca Saldırı <cryo>%12</cryo>, Enerji Yüklemesi <cryo>%9</cryo> artar. 3 kademeye kadar birikebilir. Bu etki, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "3": {
+      "0": "Bir Element Becerisi bir düşmana isabet ettikten sonra 6sn boyunca Saldırı <cryo>%14</cryo>, Enerji Yüklemesi <cryo>%10,5</cryo> artar. 3 kademeye kadar birikebilir. Bu etki, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    },
+    "4": {
+      "0": "Bir Element Becerisi bir düşmana isabet ettikten sonra 6sn boyunca Saldırı <cryo>%16</cryo>, Enerji Yüklemesi <cryo>%12</cryo> artar. 3 kademeye kadar birikebilir. Bu etki, kuşanan karakter savaş alanında olmasa da tetiklenebilir."
+    }
+  }
+}

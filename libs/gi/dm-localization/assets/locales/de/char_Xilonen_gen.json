@@ -52,7 +52,7 @@
       "3": "<strong>Urtonsampler</strong>",
       "4": "Xilonen besitzt 3 Sampler, die je nach Elementartyp der anderen Truppenmitglieder unterschiedliche Klangmerkmale aufweisen können und bei Aktivierung den jeweiligen Elementar-WDS der Gegner in der Nähe verringern.",
       "5": "Der anfänglich aufgezeichnete Urton in jedem Sampler ist vom <geo>Geo</geo>-Element und für jedes Truppenmitglied, das vom <pyro>Pyro</pyro>-/<hydro>Hydro</hydro>-/<cryo>Kryo</cryo>-/<electro>Elektro</electro>-Element ist, wechselt 1 <geo>Geo</geo>-Sampler zu dem entsprechenden Element.",
-      "6": "Wenn sich Xilonen im Zustand „Nachtseelensegen“ befindet, bleiben die <geo>Geo</geo>-Sampler, die sie trägt, durchgehend aktiv. Nach dem Freischalten ihres passiven Talents „Netotiliztlis Echos“ kann Xilonen die Effekte dieses passiven Talents auslösen, um für sich selbst Nachtseelenpunkte wiederherzustellen. Wenn ihre Nachtseelenpunkte den Höchstwert erreichen, verbraucht Xilonen die gesamten Nachtseelenpunkte, um so die von ihr getragenen 3 Sampler zu aktivieren, hält 15 s.",
+      "6": "Wenn sich Xilonen im Zustand „Nachtseelensegen“ befindet, bleiben die <geo>Geo</geo>-Sampler, die sie trägt, durchgehend aktiv. Nach dem Freischalten ihres Aufstiegstalents „Netotiliztlis Echos“ kann Xilonen die Effekte dieses Aufstiegstalents auslösen, um für sich selbst Nachtseelenpunkte wiederherzustellen. Wenn ihre Nachtseelenpunkte den Höchstwert erreichen, verbraucht Xilonen die gesamten Nachtseelenpunkte, um so die von ihr getragenen 3 Sampler zu aktivieren, hält 15 s.",
       "7": "Wenn die Sampler aktiv sind, wird der entsprechende Elementar-WDS der Gegner in der Nähe verringert. Sampler-Effekte desselben Elementartyps können nicht gestapelt werden. Diese Effekte können auch ausgelöst werden, wenn sich Xilonen inaktiv in der Truppe befindet.",
       "8": "<br/>",
       "9": "<strong>Nachtseelensegen – Xilonen</strong>",
@@ -62,7 +62,7 @@
         " Der Zustand „Nachtseelensegen“ von Xilonen hat folgende Einschränkungen: Wenn sich Xilonen in diesem Zustand befindet, haben ihre Nachtseelenpunkte ein Zeitlimit von 9 s. Wenn dieses Limit überschritten wird, werden ihre Nachtseelenpunkte sofort aufgebraucht."
       ],
       "12": "<br/>",
-      "13": "Wenn Xilonens Nachtseelenpunkte aufgebraucht sind, während sie sich im Zustand „Nachtseelensegen“ befindet, kann sie keine Nachtseelenpunkte mehr über das passive Talent „Netotiliztlis Echos“ erzeugen.",
+      "13": "Wenn Xilonens Nachtseelenpunkte aufgebraucht sind, während sie sich im Zustand „Nachtseelensegen“ befindet, kann sie keine Nachtseelenpunkte mehr über das Aufstiegstalent „Netotiliztlis Echos“ erzeugen.",
       "14": "<br/>",
       "15": "<i>Das Edelsteinhandwerk und das Abmischen von Tönen haben in gewisser Weise ähnliche Prinzipien: Unreinheiten herausfiltern und nur die strahlendsten Dinge zurückbehalten.",
       "16": "Xilonen ist jedoch nicht wählerisch, was beides angeht. Schließlich genießt sie beides sehr!</i>"

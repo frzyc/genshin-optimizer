@@ -1,23 +1,22 @@
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { buffs, conditionals, formulas } from '@genshin-optimizer/zzz/formula'
+import { Lycaon } from '@genshin-optimizer/zzz/formula'
 import { st, trans } from '../../util'
 import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 
 const key: CharacterKey = 'Lycaon'
 const [, ch] = trans('char', key)
-const cond = conditionals[key]
-const buff = buffs[key]
-const formula = formulas[key]
+const cond = Lycaon.conditionals
+const buff = Lycaon.buffs
+const formula = Lycaon.formulas
 
 const sheet = createBaseSheet(key, {
   core: [
     {
       type: 'fields',
       fields: [
-        {
-          title: ch('core_dazeInc_'),
-          fieldRef: buff.core_dazeInc_.tag,
-        },
+        fieldForBuff(buff.core_basic_dazeInc_),
+        fieldForBuff(buff.core_dodgeCounter_dazeInc_),
+        fieldForBuff(buff.core_dash_dazeInc_),
       ],
     },
     {
@@ -25,7 +24,21 @@ const sheet = createBaseSheet(key, {
       conditional: {
         label: ch('coreCond'),
         metadata: cond.exSpecial_assistFollowUp_hit,
-        fields: [fieldForBuff(buff.core_ice_resRed_)],
+        fields: [
+          fieldForBuff(buff.core_ice_resRed_),
+          fieldForBuff(buff.core_ether_resRed_),
+          fieldForBuff(buff.core_electric_resRed_),
+          fieldForBuff(buff.core_fire_resRed_),
+          fieldForBuff(buff.core_physical_resRed_),
+        ],
+      },
+    },
+    {
+      type: 'conditional',
+      conditional: {
+        label: ch('durationLeft'),
+        metadata: cond.durationLeft,
+        fields: [fieldForBuff(buff.core_assistFollowUp_dazeInc_)],
       },
     },
   ],

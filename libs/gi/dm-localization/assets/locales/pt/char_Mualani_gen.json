@@ -141,7 +141,7 @@
     "name": "Mualani, Força Total!",
     "description": {
       "0": "Ao entrar em Bênção do Espírito da Noite, Mualani obtém 2 acúmulos de Impulso da Onda de <strong>Tubarão Surfista das Ondas</strong>. Quando Mualani obtém um Flutuador, obtém 1 acúmulo de Impulso da Onda.",
-      "1": "Além disso, quando Mualani obter 2 Flutuadores em uma instância de Bênção do Espírito da Noite, regenerará 12 pontos de Espírito da Noite em 2s. Esse efeito requer que o Talento Passivo \"Flutuador de Água Doce Antitérmico\" esteja desbloqueado."
+      "1": "Além disso, quando Mualani obter 2 Flutuadores em uma instância de Bênção do Espírito da Noite, regenerará 12 pontos de Espírito da Noite em 2s. Esse efeito requer que o Talento de Ascensão \"Flutuador de Água Doce Antitérmico\" esteja desbloqueado."
     }
   },
   "constellation3": {
@@ -154,7 +154,7 @@
   "constellation4": {
     "name": "Tubarãozinho Come Flutuadorzinho",
     "description": {
-      "0": "Mualani regenera 8 de Energia Elemental ao obter um Flutuador. Primeiro é necessário desbloquear o Talento Passivo \"Flutuador de Água Doce Antitérmico\".",
+      "0": "Mualani regenera 8 de Energia Elemental ao obter um Flutuador. Primeiro é necessário desbloquear o Talento de Ascensão \"Flutuador de Água Doce Antitérmico\".",
       "1": "Além disso, <strong>Disparo da Tempestade Explosiva</strong> causa 75% a mais de Dano."
     }
   },

@@ -1,0 +1,24 @@
+{
+  "name": "Ruines sanglantes",
+  "description": {
+    "0": "Une longue lance teintée de noir par une bataille acharnée, brillant d'une lueur éthérée sous la lumière bleue fantomatique du feu de la lanterne."
+  },
+  "passiveName": "Louange du deuil",
+  "passiveDescription": {
+    "0": {
+      "0": "Pendant 3,5 s après avoir utilisé un déchaînement élémentaire, les DGT infligés aux ennemis par les réactions de Sélénocution du personnage équipé de l'arme augmentent de <cryo>36 %</cryo>. De plus, le personnage équipé de l'arme obtient l'effet Requiem de ruine après avoir déclenché une réaction de Sélénocution : augmente ses DGT CRIT de <cryo>28 %</cryo> pendant 6 s et lui restaure <cryo>12</cryo> pts d'énergie élémentaire, l'énergie élémentaire pouvant être restaurée une fois toutes les 14 s de cette manière."
+    },
+    "1": {
+      "0": "Pendant 3,5 s après avoir utilisé un déchaînement élémentaire, les DGT infligés aux ennemis par les réactions de Sélénocution du personnage équipé de l'arme augmentent de <cryo>48 %</cryo>. De plus, le personnage équipé de l'arme obtient l'effet Requiem de ruine après avoir déclenché une réaction de Sélénocution : augmente ses DGT CRIT de <cryo>35 %</cryo> pendant 6 s et lui restaure <cryo>13</cryo> pts d'énergie élémentaire, l'énergie élémentaire pouvant être restaurée une fois toutes les 14 s de cette manière."
+    },
+    "2": {
+      "0": "Pendant 3,5 s après avoir utilisé un déchaînement élémentaire, les DGT infligés aux ennemis par les réactions de Sélénocution du personnage équipé de l'arme augmentent de <cryo>60 %</cryo>. De plus, le personnage équipé de l'arme obtient l'effet Requiem de ruine après avoir déclenché une réaction de Sélénocution : augmente ses DGT CRIT de <cryo>42 %</cryo> pendant 6 s et lui restaure <cryo>14</cryo> pts d'énergie élémentaire, l'énergie élémentaire pouvant être restaurée une fois toutes les 14 s de cette manière."
+    },
+    "3": {
+      "0": "Pendant 3,5 s après avoir utilisé un déchaînement élémentaire, les DGT infligés aux ennemis par les réactions de Sélénocution du personnage équipé de l'arme augmentent de <cryo>72 %</cryo>. De plus, le personnage équipé de l'arme obtient l'effet Requiem de ruine après avoir déclenché une réaction de Sélénocution : augmente ses DGT CRIT de <cryo>49 %</cryo> pendant 6 s et lui restaure <cryo>15</cryo> pts d'énergie élémentaire, l'énergie élémentaire pouvant être restaurée une fois toutes les 14 s de cette manière."
+    },
+    "4": {
+      "0": "Pendant 3,5 s après avoir utilisé un déchaînement élémentaire, les DGT infligés aux ennemis par les réactions de Sélénocution du personnage équipé de l'arme augmentent de <cryo>84 %</cryo>. De plus, le personnage équipé de l'arme obtient l'effet Requiem de ruine après avoir déclenché une réaction de Sélénocution : augmente ses DGT CRIT de <cryo>56 %</cryo> pendant 6 s et lui restaure <cryo>16</cryo> pts d'énergie élémentaire, l'énergie élémentaire pouvant être restaurée une fois toutes les 14 s de cette manière."
+    }
+  }
+}

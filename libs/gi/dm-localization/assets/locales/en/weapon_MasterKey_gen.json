@@ -1,0 +1,24 @@
+{
+  "name": "Master Key",
+  "description": {
+    "0": "A heavy greatsword with a razor-sharp blade. Power is a key that can open almost any lock."
+  },
+  "passiveName": "Fall Into Place",
+  "passiveDescription": {
+    "0": {
+      "0": "Upon causing an Elemental Reaction, increases Elemental Mastery by <cryo>60</cryo> for 12s. Moonsign: Ascendant Gleam: Elemental Mastery from this effect is further increased by <cryo>60</cryo>. This effect can be triggered even if the equipping character is off-field."
+    },
+    "1": {
+      "0": "Upon causing an Elemental Reaction, increases Elemental Mastery by <cryo>75</cryo> for 12s. Moonsign: Ascendant Gleam: Elemental Mastery from this effect is further increased by <cryo>75</cryo>. This effect can be triggered even if the equipping character is off-field."
+    },
+    "2": {
+      "0": "Upon causing an Elemental Reaction, increases Elemental Mastery by <cryo>90</cryo> for 12s. Moonsign: Ascendant Gleam: Elemental Mastery from this effect is further increased by <cryo>90</cryo>. This effect can be triggered even if the equipping character is off-field."
+    },
+    "3": {
+      "0": "Upon causing an Elemental Reaction, increases Elemental Mastery by <cryo>105</cryo> for 12s. Moonsign: Ascendant Gleam: Elemental Mastery from this effect is further increased by <cryo>105</cryo>. This effect can be triggered even if the equipping character is off-field."
+    },
+    "4": {
+      "0": "Upon causing an Elemental Reaction, increases Elemental Mastery by <cryo>120</cryo> for 12s. Moonsign: Ascendant Gleam: Elemental Mastery from this effect is further increased by <cryo>120</cryo>. This effect can be triggered even if the equipping character is off-field."
+    }
+  }
+}

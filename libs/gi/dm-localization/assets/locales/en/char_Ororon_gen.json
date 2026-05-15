@@ -196,7 +196,7 @@
     "name": "Trails Amidst the Forest Fog",
     "description": {
       "0": "The Elemental Skill <strong>Night's Sling</strong>'s <strong>Spirit Orb</strong> can bounce 2 additional times.",
-      "1": "Additionally, after the <strong>Spirit Orb</strong> hits an opponent, it will apply the Nighttide effect to them for 12s. Opponents affected by Nighttide take 50% increased DMG from Hypersense triggered by the Passive Talent, \"Nightshade Synesthesia.\" Unlock the aforementioned Passive Talent to trigger this effect."
+      "1": "Additionally, after the <strong>Spirit Orb</strong> hits an opponent, it will apply the Nighttide effect to them for 12s. Opponents affected by Nighttide take 50% increased DMG from Hypersense triggered by the Ascension Talent, \"Nightshade Synesthesia.\" You must first unlock the Ascension Talent \"Nightshade Synesthesia.\""
     }
   },
   "constellation2": {
@@ -233,9 +233,9 @@
   "constellation6": {
     "name": "Ode to Deep Springs",
     "description": {
-      "0": "After triggering Hypersense through the Passive Talent, Nightshade Synesthesia, your current active character's ATK is increased by 10% for 9s. Max 3 stacks, each stack is counted independently.",
+      "0": "After triggering Hypersense through the Ascension Talent, Nightshade Synesthesia, your current active character's ATK is increased by 10% for 9s. Max 3 stacks, each stack is counted independently.",
       "1": "Additionally, when you use the Elemental Burst <strong>Dark Voices Echo</strong>, you will trigger one instance of an effect equivalent to Hypersense, dealing 200% of its original DMG.",
-      "2": "You must unlock the Passive Talent \"Nightshade Synesthesia\" first."
+      "2": "You must first unlock the Ascension Talent \"Nightshade Synesthesia.\""
     }
   }
 }

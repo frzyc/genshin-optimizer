@@ -151,7 +151,7 @@
   "constellation2": {
     "name": "Faulheit ist der größte Feind der Fitness!",
     "description": {
-      "0": "Verleiht Iansan beim Anwenden der Spezialfähigkeit <strong>Drei Prinzipien der Stärke</strong> 15 s lang den Effekt „Exakte Bewegung“ ihres passiven Talents „Intensives Widerstandstraining“. Erhöht außerdem den ANG der aktuellen eigenen Figur in der Truppe um 30 %, wenn sich Iansan während der Wirkungsdauer des Effekts „Exakte Bewegung“ inaktiv in der Truppe befindet. Das passive Talent „Intensives Widerstandstraining“ muss zuerst freigeschaltet werden."
+      "0": "Verleiht Iansan beim Anwenden der Spezialfähigkeit <strong>Drei Prinzipien der Stärke</strong> 15 s lang den Effekt „Exakte Bewegung“ ihres Aufstiegstalents „Intensives Widerstandstraining“. Erhöht außerdem den ANG der aktuellen eigenen Figur in der Truppe um 30 %, wenn sich Iansan während der Wirkungsdauer des Effekts „Exakte Bewegung“ inaktiv in der Truppe befindet. Das Aufstiegstalent „Intensives Widerstandstraining“ muss zuerst freigeschaltet werden."
     }
   },
   "constellation3": {

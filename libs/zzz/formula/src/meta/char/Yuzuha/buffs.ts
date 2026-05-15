@@ -1,0 +1,140 @@
+// WARNING: Generated file, do not modify
+export const buffs = {
+  basic_anomBuildup_: {
+    sheet: 'Yuzuha',
+    name: 'basic_anomBuildup_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'anomBuildup_',
+      sheet: 'Yuzuha',
+      damageType1: 'basic',
+      name: 'basic_anomBuildup_',
+    },
+  },
+  core_atk: {
+    sheet: 'Yuzuha',
+    name: 'core_atk',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'atk',
+      sheet: 'Yuzuha',
+      name: 'core_atk',
+    },
+  },
+  core_common_dmg_: {
+    sheet: 'Yuzuha',
+    name: 'core_common_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'common_dmg_',
+      sheet: 'Yuzuha',
+      name: 'core_common_dmg_',
+    },
+  },
+  ability_anomBuildup_: {
+    sheet: 'Yuzuha',
+    name: 'ability_anomBuildup_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'anomBuildup_',
+      sheet: 'Yuzuha',
+      name: 'ability_anomBuildup_',
+    },
+  },
+  ability_anomaly_buff_: {
+    sheet: 'Yuzuha',
+    name: 'ability_anomaly_buff_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'buff_',
+      sheet: 'Yuzuha',
+      damageType1: 'anomaly',
+      name: 'ability_anomaly_buff_',
+    },
+  },
+  ability_disorder_buff_: {
+    sheet: 'Yuzuha',
+    name: 'ability_disorder_buff_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'buff_',
+      sheet: 'Yuzuha',
+      damageType1: 'disorder',
+      name: 'ability_disorder_buff_',
+    },
+  },
+  m1_resRed_: {
+    sheet: 'Yuzuha',
+    name: 'm1_resRed_',
+    tag: {
+      et: 'display',
+      qt: 'common',
+      q: 'resRed_',
+      sheet: 'Yuzuha',
+      name: 'm1_resRed_',
+    },
+  },
+  m2_common_dmg_: {
+    sheet: 'Yuzuha',
+    name: 'm2_common_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'common_dmg_',
+      sheet: 'Yuzuha',
+      name: 'm2_common_dmg_',
+    },
+  },
+  m2_anomBuildup_: {
+    sheet: 'Yuzuha',
+    name: 'm2_anomBuildup_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'anomBuildup_',
+      sheet: 'Yuzuha',
+      name: 'm2_anomBuildup_',
+    },
+  },
+  m4_assistFollowUp_dmg_: {
+    sheet: 'Yuzuha',
+    name: 'm4_assistFollowUp_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'dmg_',
+      sheet: 'Yuzuha',
+      damageType1: 'assistFollowUp',
+      name: 'm4_assistFollowUp_dmg_',
+    },
+  },
+  m4_assistFollowUp_anomBuildup_: {
+    sheet: 'Yuzuha',
+    name: 'm4_assistFollowUp_anomBuildup_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'anomBuildup_',
+      sheet: 'Yuzuha',
+      damageType1: 'assistFollowUp',
+      name: 'm4_assistFollowUp_anomBuildup_',
+    },
+  },
+  m6_addl_disorder_: {
+    sheet: 'Yuzuha',
+    name: 'm6_addl_disorder_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'addl_disorder_',
+      sheet: 'Yuzuha',
+      name: 'm6_addl_disorder_',
+    },
+  },
+} as const

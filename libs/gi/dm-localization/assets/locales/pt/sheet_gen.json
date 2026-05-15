@@ -83,5 +83,9 @@
   },
   "unlockPassive1": "Desbloqueia quando nível de Ascensão do personagem alcançar Nv.1",
   "unlockPassive2": "Desbloqueia quando nível de Ascensão do personagem alcançar Nv.4",
-  "unlockPassive3": "Talento Passivo"
+  "unlockPassive3": "Talento Passivo",
+  "unlockLockedPassive": "Desbloqueia após concluir tarefas de pré-requisito",
+  "witchPassive": "Tarefa da Bruxa",
+  "moonsign": "Presságio Lunar",
+  "hexerei": "Mágico"
 }

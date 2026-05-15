@@ -116,9 +116,9 @@
   "passive2": {
     "name": "Cartographie géomorphologique",
     "description": {
-      "0": "Lorsqu'un personnage déployé affecté simultanément par les états Plume d'alérion de <strong>Chant de plume céleste</strong> et Spirivent de <strong>Tourbillon de givre étoilé</strong> inflige un coup CRIT, l'état Spirivent lui accorde 1 cumul de localisation de l'aptitude passive « Épinglage rapide ». Un état Spirivent peut accorder un maximum de 1 cumul de localisation de cette manière.",
+      "0": "Lorsqu'un personnage déployé affecté simultanément par les états Plume d'alérion de <strong>Chant de plume céleste</strong> et Spirivent de <strong>Tourbillon de givre étoilé</strong> inflige un coup CRIT, l'état Spirivent lui accorde 1 cumul de localisation de l'aptitude d'élévation « Épinglage rapide ». Un état Spirivent peut accorder un maximum de 1 cumul de localisation de cette manière.",
       "1": "De plus, le nombre maximum de cumuls de localisation pouvant être obtenus grâce à l'état Spirivent augmente de 1.",
-      "2": "L'aptitude passive « Épinglage rapide » doit être déjà débloquée."
+      "2": "L'aptitude d'élévation « Épinglage rapide » doit être déjà débloquée."
     }
   },
   "passive3": {
@@ -136,8 +136,8 @@
   "constellation2": {
     "name": "Entrée du compagnon",
     "description": {
-      "0": "Lorsqu'une flèche de givreflux de <strong>Tourbillon de givre étoilé</strong> touche pour la première fois un ennemi ou lorsqu'une balise de givrétoile touche un ennemi, 1 cumul de localisation de l'aptitude passive « Épinglage rapide » est généré.",
-      "1": "L'aptitude passive « Épinglage rapide » doit être déjà débloquée."
+      "0": "Lorsqu'une flèche de givreflux de <strong>Tourbillon de givre étoilé</strong> touche pour la première fois un ennemi ou lorsqu'une balise de givrétoile touche un ennemi, 1 cumul de localisation de l'aptitude d'élévation « Épinglage rapide » est généré.",
+      "1": "L'aptitude d'élévation « Épinglage rapide » doit être déjà débloquée."
     }
   },
   "constellation3": {
@@ -163,7 +163,7 @@
   "constellation6": {
     "name": "Conseil du compagnon",
     "description": {
-      "0": "Augmente le nombre maximum de cumuls de localisation pouvant être obtenus grâce à l'état Spirivent de <strong>Tourbillon de givre étoilé</strong> de 1. L'aptitude passive « Épinglage rapide » doit être déjà débloquée.",
+      "0": "Augmente le nombre maximum de cumuls de localisation pouvant être obtenus grâce à l'état Spirivent de <strong>Tourbillon de givre étoilé</strong> de 1. L'aptitude d'élévation « Épinglage rapide » doit être déjà débloquée.",
       "1": "De plus, les personnages déployés affectés par l'état Spirivent voient les DGT CRIT de leurs DGT physiques augmenter de 60 %."
     }
   }

@@ -382,10 +382,17 @@ export function threshold(
 export function threshold(
   v1: Num,
   v2: Num,
-  ge: Num,
-  le: Num,
+  ge: Str,
+  le: Str,
   info?: Info
-): ThresholdNode<NumNode> {
+): ThresholdNode<StrNode>
+export function threshold(
+  v1: Num,
+  v2: Num,
+  ge: N_S,
+  le: N_S,
+  info?: Info
+): ThresholdNode<AnyNode> {
   return {
     operation: 'threshold',
     operands: [intoV(v1), intoV(v2), intoV(ge), intoV(le)],

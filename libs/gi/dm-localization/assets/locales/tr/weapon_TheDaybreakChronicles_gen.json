@@ -1,0 +1,29 @@
+{
+  "name": "Şafak Günlükleri",
+  "description": {
+    "0": "Direniş şarkıları buraya rüzgarla taşınır ve yumuşak ezgiler halinde bu tellere yerleşir. Birleşmiş güçleri, sonsuz karanlığı şafağın ışığıyla yırtıp atacak kadar kudretlidir."
+  },
+  "passiveName": "Zamanın Ötesindeki Ağıt",
+  "passiveDescription": {
+    "0": {
+      "0": "Kuşanan karakter Şafağın Coşkulu Esintisi kazanır: Savaştan çıktıktan 3sn sonra Normal Saldırı, Element Becerisi ve Element Patlaması Hasarı <cryo>%60</cryo> artar. Savaş sırasında bu Hasar Bonusu %0 olana kadar her saniye <cryo>%10</cryo> azalır. Kuşanan karakterin Normal Saldırıları, Element Becerileri veya Element Patlamaları bir düşmana isabet ettiğinde, ilgili Hasar türündeki Hasar Bonusu <cryo>%60</cryo> olana kadar <cryo>%10</cryo> artar. Bu etki, yukarıda belirtilen her saldırı türü için 0,1 saniyede bir ve kuşanan karakter savaş alanında olmasa da tetiklenebilir.",
+      "1": "Ayrıca grup Cadılık: Saklı Ayin etkilerine sahipken kuşanan karakterin Normal Saldırıları, Element Becerileri veya Element Patlamaları bir düşmana isabet ettiğinde, tüm bu Hasar türlerindeki Hasar Bonusu artışı <cryo>%20</cryo> olur."
+    },
+    "1": {
+      "0": "Kuşanan karakter Şafağın Coşkulu Esintisi kazanır: Savaştan çıktıktan 3sn sonra Normal Saldırı, Element Becerisi ve Element Patlaması Hasarı <cryo>%75</cryo> artar. Savaş sırasında bu Hasar Bonusu %0 olana kadar her saniye <cryo>%12,5</cryo> azalır. Kuşanan karakterin Normal Saldırıları, Element Becerileri veya Element Patlamaları bir düşmana isabet ettiğinde, ilgili Hasar türündeki Hasar Bonusu <cryo>%75</cryo> olana kadar <cryo>%12,5</cryo> artar. Bu etki, yukarıda belirtilen her saldırı türü için 0,1 saniyede bir ve kuşanan karakter savaş alanında olmasa da tetiklenebilir.",
+      "1": "Ayrıca grup Cadılık: Saklı Ayin etkilerine sahipken kuşanan karakterin Normal Saldırıları, Element Becerileri veya Element Patlamaları bir düşmana isabet ettiğinde, tüm bu Hasar türlerindeki Hasar Bonusu artışı <cryo>%25</cryo> olur."
+    },
+    "2": {
+      "0": "Kuşanan karakter Şafağın Coşkulu Esintisi kazanır: Savaştan çıktıktan 3sn sonra Normal Saldırı, Element Becerisi ve Element Patlaması Hasarı <cryo>%90</cryo> artar. Savaş sırasında bu Hasar Bonusu %0 olana kadar her saniye <cryo>%15</cryo> azalır. Kuşanan karakterin Normal Saldırıları, Element Becerileri veya Element Patlamaları bir düşmana isabet ettiğinde, ilgili Hasar türündeki Hasar Bonusu <cryo>%90</cryo> olana kadar <cryo>%15</cryo> artar. Bu etki, yukarıda belirtilen her saldırı türü için 0,1 saniyede bir tetiklenebilir. Bu etki, yukarıda belirtilen her saldırı türü için 0,1 saniyede bir ve kuşanan karakter savaş alanında olmasa da tetiklenebilir.",
+      "1": "Ayrıca grup Cadılık: Saklı Ayin etkilerine sahipken kuşanan karakterin Normal Saldırıları, Element Becerileri veya Element Patlamaları bir düşmana isabet ettiğinde, tüm bu Hasar türlerindeki Hasar Bonusu artışı <cryo>%30</cryo> olur."
+    },
+    "3": {
+      "0": "Kuşanan karakter Şafağın Coşkulu Esintisi kazanır: Savaştan çıktıktan 3sn sonra Normal Saldırı, Element Becerisi ve Element Patlaması Hasarı <cryo>%105</cryo> artar. Savaş sırasında bu Hasar Bonusu %0 olana kadar her saniye <cryo>%17,5</cryo> azalır. Kuşanan karakterin Normal Saldırıları, Element Becerileri veya Element Patlamaları bir düşmana isabet ettiğinde, ilgili Hasar türündeki Hasar Bonusu <cryo>%105</cryo> olana kadar <cryo>%17,5</cryo> artar. Bu etki, yukarıda belirtilen her saldırı türü için 0,1 saniyede bir ve kuşanan karakter savaş alanında olmasa da tetiklenebilir.",
+      "1": "Ayrıca grup Cadılık: Saklı Ayin etkilerine sahipken kuşanan karakterin Normal Saldırıları, Element Becerileri veya Element Patlamaları bir düşmana isabet ettiğinde, tüm bu Hasar türlerindeki Hasar Bonusu artışı <cryo>%35</cryo> olur."
+    },
+    "4": {
+      "0": "Kuşanan karakter Şafağın Coşkulu Esintisi kazanır: Savaştan çıktıktan 3sn sonra Normal Saldırı, Element Becerisi ve Element Patlaması Hasarı <cryo>%120</cryo> artar. Savaş sırasında bu Hasar Bonusu %0 olana kadar her saniye <cryo>%20</cryo> azalır. Kuşanan karakterin Normal Saldırıları, Element Becerileri veya Element Patlamaları bir düşmana isabet ettiğinde, ilgili Hasar türündeki Hasar Bonusu <cryo>%120</cryo> olana kadar <cryo>%20</cryo> artar. Bu etki, yukarıda belirtilen her saldırı türü için 0,1 saniyede bir ve kuşanan karakter savaş alanında olmasa da tetiklenebilir.",
+      "1": "Ayrıca grup Cadılık: Saklı Ayin etkilerine sahipken kuşanan karakterin Normal Saldırıları, Element Becerileri veya Element Patlamaları bir düşmana isabet ettiğinde, tüm bu Hasar türlerindeki Hasar Bonusu artışı <cryo>%40</cryo> olur."
+    }
+  }
+}

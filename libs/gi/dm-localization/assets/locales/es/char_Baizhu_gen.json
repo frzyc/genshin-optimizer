@@ -111,7 +111,7 @@
   "passive2": {
     "name": "Madre tierra",
     "description": {
-      "0": "El personaje que sea curado con el <strong>escudo incólume</strong> obtendrá el efecto de “fortuna de la madera”, el cual hace que, por cada 1000 pts. de Vida Máx. de Baizhu que no superen los 50 000 pts., el daño que inflige dicho personaje con las reacciones de Quemadura, Florecimiento, Sobreflorecimiento y Crepitar aumenta en un 2%, y el aumento de daño generado por las reacciones de Intensificación y Propagación aumenta en un 0.8% durante 6 s."
+      "0": "El personaje que sea curado con el <strong>escudo incólume</strong> obtendrá el efecto de “fortuna de la madera”, el cual hace que, por cada 1000 pts. de Vida Máx. de Baizhu que no superen los 50 000 pts., el daño que inflige dicho personaje con las reacciones de Quemadura, Florecimiento, Sobreflorecimiento y Crepitar aumente en un 2%, el aumento de daño generado por las reacciones de Intensificación y Propagación aumente en un 0.8%, y el daño de la reacción de Florecimiento Lunar aumente en un 0.7% durante 6 s."
     }
   },
   "passive3": {

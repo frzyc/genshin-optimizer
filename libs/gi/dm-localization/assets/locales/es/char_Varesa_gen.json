@@ -171,9 +171,9 @@
   "constellation1": {
     "name": "Fervor inextinguible",
     "description": {
-      "0": "Fortalece el efecto del talento pasivo “Impulso y... ¡salto triple!”:",
+      "0": "Fortalece el efecto del talento de ascensión “Impulso y... ¡salto triple!”:",
       "1": "Al ejecutar el Ataque Descendente especial: Erupción furiatormenta, Varesa obtendrá también el efecto de colisión iridiscente durante 5 s.",
-      "2": "Mientras el efecto de “colisión iridiscente” esté activo, el daño de los Ataques Descendentes de Varesa aumentará en una cantidad equivalente al 180% de su ATQ, independientemente de si está en el estado de fervor ardiente o no. Para activar este efecto, es necesario desbloquear el talento pasivo “Impulso y... ¡salto triple!”.",
+      "2": "Mientras el efecto de “colisión iridiscente” esté activo, el daño de los Ataques Descendentes de Varesa aumentará en una cantidad equivalente al 180% de su ATQ, independientemente de si está en el estado de fervor ardiente o no. Para activar este efecto, es necesario desbloquear el talento de ascensión “Impulso y... ¡salto triple!”.",
       "3": "<br/>",
       "4": "Además, cuando Varesa está en el modo de avance impetuoso del estado de bendición noctámbula, el consumo de pts. de noctambulismo o flogisto disminuye en un 30%."
     }

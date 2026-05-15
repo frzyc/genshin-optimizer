@@ -109,6 +109,10 @@
     "name": "Kreideweiße Macht",
     "description": {
       "0": "Erhöht den Gegnern mit weniger als 50 % LP mit Blüten der Vergänglichkeit von <strong>Chemische Evolution – Sonnennachbildung</strong> zugefügten Schaden um 25 %."
+    },
+    "upgradedDescription": {
+      "0": "Erhöht den Schaden, den die mit der Elementarfähigkeit <strong>Chemische Evolution – Sonnennachbildung</strong> durch Sonnennachbildung generierte Blüte der Vergänglichkeit Gegnern mit LP von weniger als 50 % LP zufügt, um 25 %.",
+      "1": "Erhöht zudem, wenn sich ein von Albedo selbst erstelltes „Prächtiges Silber“ auf dem Feld befindet, den diesmaligen Schaden um 240 % von Albedos VTD."
     }
   },
   "passive2": {
@@ -123,10 +127,27 @@
       "0": "Stellt beim Zusammensetzen von Material zum Aufstieg von Waffen mit einer Wahrscheinlichkeit von 10 % den 2-fachen Ertrag her."
     }
   },
+  "lockedPassive": {
+    "name": "Geschenk der Hexennacht – Buch des weißen Strahls",
+    "description": {
+      "0": "Wandelt Albedo nach dem Abschluss von <strong>Aufgabe der Hexe – Von Fragen über Fragen</strong> in eine <strong>Hexerei</strong>-Figur um. Verleiht, wenn sich in der Truppe mindestens 2 Hexerei-Figuren befinden, den Effekt <strong>Hexerei – Geheimes Ritual</strong>, der Hexerei-Figuren verstärkt.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei – Geheimes Ritual</strong>",
+      "3": [
+        " Generiert innerhalb von 20 s nach dem Anwenden der Elementarfähigkeit, wenn Albedo einen Gegner mit seiner Elementarfähigkeit trifft, in der Nähe der Gegner <strong>Prächtiges Silber</strong>, hält 10 s. Lässt ein „Prächtiges Silber“, wenn sich auf dem Feld keine von Albedo generierten Sonnennachbildungen befinden und Albedo nicht ohnmächtig ist, genau wie Sonnennachbildungen ebenfalls Blüten der Vergänglichkeit generieren. Gleichzeitig können sich nur zwei von Albedo generierte „Prächtige Silber“ auf dem Feld befinden.",
+        " Erhöht innerhalb von 20 s nach dem Generieren von Sonnennachbildungen den von Truppenmitgliedern in der Nähe durch Standardangriffe, heftige Schläge, Angriffe aus dem Fall, Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden basierend auf Albedos VTD: Erhöht den Schaden pro 1.000 Punkte VTD um 4 %, max. um 12 %.",
+        " Erhöht innerhalb von 20 s nach dem Generieren von „Prächtigem Silber“ den von Hexerei-Figuren in der Truppe in der Nähe durch Standardangriffe, heftige Schläge, Angriffe aus dem Fall, Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden basierend auf Albedos VTD: Erhöht den Schaden pro 1.000 Punkte VTD um 10 %, max. um 30 %."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Blume von Eden",
     "description": {
       "0": "Stellt Albedo beim Erblühen der Blüte der Vergänglichkeit von <strong>Chemische Evolution – Sonnennachbildung</strong> 1,2 Punkte Elementarenergie wieder her."
+    },
+    "upgradedDescription": {
+      "0": "Stellt Albedo 1,2 Punkte Elementarenergie wieder her, wenn die mit der Elementarfähigkeit <strong>Chemische Evolution – Sonnennachbildung</strong> durch Sonnennachbildung generierte Blüte der Vergänglichkeit erblüht.",
+      "1": "Erhöht zudem innerhalb von 20 s nach Anwendung der Elementarfähigkeit <strong>Chemische Evolution – Sonnennachbildung</strong> Albedos eigene VTD um 50 %."
     }
   },
   "constellation2": {
@@ -138,6 +159,16 @@
         " Erhöht den Schaden in Höhe von 30 % von Albedos VTD pro Stapelung von Tödliche Abrechnung.",
         " 4-fach stapelbar."
       ]
+    },
+    "upgradedDescription": {
+      "0": "Verleiht Albedo beim Erblühen der durch die Elementarfähigkeit <strong>Chemische Evolution – Sonnennachbildung</strong> generierten Blüten der Vergänglichkeit 30 s lang den Effekt Tödliche Abrechnung:",
+      "1": [
+        " Beendet den Effekt von Tödliche Abrechnung bei Anwendung der Spezialfähigkeit <strong>Fortpflanzung – Tektonische Welle</strong> und erhöht den Explosionsschaden von Fortpflanzung – Tektonische Welle sowie den von Blüten der Sterblichkeit gemäß den Stapelungen des beendeten Effekts.",
+        " Erhöht den Schaden in Höhe von 30 % von Albedos VTD pro Stapelung Tödlicher Abrechnung.",
+        " 4-fach stapelbar."
+      ],
+      "2": "<br/>",
+      "3": "Beendet zudem den Effekt von Tödliche Abrechnung, wenn Albedo inaktiv ist und 4 Stapelungen Tödliche Abrechnung erhalten hat. Generiert dabei 3 Blüten der Sterblichkeit in der Nähe der eigenen aktiven Figur, die wild erblühen und <geo>Geo-Flächenschaden</geo> in Höhe von 300 % von Albedos VTD verursachen. Dieser Schaden gilt als Spezialfähigkeits-Schaden. Löst, wenn das passive Talent <tooltip ns=char_Albedo_gen baseKey18=passive2><strong>Weisheit aus der Flasche</strong></tooltip> freigeschaltet ist, dessen Effekt aus und erhöht die Elementarkunde der Truppenmitglieder in der Nähe um 125 Punkte, hält 10 s."
     }
   },
   "constellation3": {
@@ -151,6 +182,10 @@
     "name": "Gefallene Gottheit",
     "description": {
       "0": "Erhöht den Schaden von Angriffen aus dem Fall von aktuellen Figuren in der Truppe innerhalb des Wirkungsbereichs der Sonnennachbildung um 30 %."
+    },
+    "upgradedDescription": {
+      "0": "Erhöht den Schaden von Angriffen aus dem Fall der aktuellen Figuren in der Truppe innerhalb des Wirkungsbereichs der Sonnennachbildung um 30 %.",
+      "1": "Zerstört „Prächtiges Silber“, wenn das aktuelle Truppenmitglied in dessen Nähe hochspringt, erhöht die Höhe dieses Sprungs beträchtlich sowie den von dieser Figur durch Angriffe aus dem Fall beim Aufkommen verursachten Schaden 3 s lang um 30 %. Dieser Effekt wird 0,1 s nach dem Verursachen von Schaden durch den Angriff aus dem Fall beim Aufkommen aufgehoben."
     }
   },
   "constellation5": {
@@ -163,7 +198,11 @@
   "constellation6": {
     "name": "Reine Erde",
     "description": {
-      "0": "Erhöht den Schaden von aktuellen Figuren in der Truppe im Schutz von durch Kristallisation entstandenen Schilden innerhalb des Wirkungsbereichs der Sonnennachbildung um 17 %."
+      "0": "Erhöht den Schaden von aktuellen Figuren in der Truppe im Schutz von durch Kristallisation entstandenen Schilden innerhalb des Wirkungsbereichs der Sonnennachbildung, oder wenn sich innerhalb des Wirkungsbereichs der Sonnennachbildung ein Mondkäfig befindet, um 17 %"
+    },
+    "upgradedDescription": {
+      "0": "Erhöht den Schaden von aktuellen Figuren in der Truppe innerhalb des Wirkungsbereichs der Sonnennachbildung, wenn diese sich unter dem Schutz von durch Kristallisation entstandenen Schilden befinden, oder sich im Wirkungsbereich der Sonnennachbildung ein Mondkäfig befindet, um 17 %.",
+      "1": "Zerstört beim Anwenden der Spezialfähigkeit <strong>Fortpflanzung – Tektonische Welle</strong> zudem alle „Prächtigen Silber“ auf dem Feld. Wenn „Prächtiges Silber“ auf diese Weise zerstört wird, gilt die diesmalige Spezialfähigkeit als eine Fortpflanzung – Tektonische Welle, die 4 Stapelungen Tödliche Abrechnung des Sternbilds {LINK#TE382}<strong>Zeit des Lebens</strong></tooltip> beendet hat. Erhöht außerdem 20 s lang den durch Blüte der Sterblichkeit verursachten Schaden um 250 % von Albedos VTD."
     }
   }
 }

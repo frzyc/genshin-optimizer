@@ -4,7 +4,7 @@
       "title": "Trình chỉnh sửa Thánh Di Vật",
       "substat": {
         "substatFormat": "Chỉ số phụ {{value}}",
-        "noSubstat": "Không có chỉ số phụ",
+        "noSubstat": "Trống",
         "selectSub": "Chọn chỉ số phụ",
         "error": {
           "noCalc": "Không thể tính được chỉ số roll.",
@@ -12,43 +12,49 @@
         },
         "noRoll": "Không có roll",
         "noStat": "Không có giá trị",
-        "eff": "Hiệu suất: <1></1>",
-        "nextRolls": "Rolls kế tiếp:"
+        "eff": "RV: <1></1>",
+        "nextRolls": "Lượt UP tiếp theo:",
+        "RollCount_other": "{{count}} Roll"
       },
       "rarity": "Phẩm chất",
       "level": "Cấp độ",
       "unknownPieceName": "Tên món TDV không rõ",
       "curSubEff": "RV hiện tại",
-      "curSubEffDesc": "Mỗi 4 cấp thánh di vật sẽ có thêm 1 chỉ số phụ. <strong>Hiệu suất chỉ số phụ</strong> thể hiện chỉ số phụ đã roll cao thấp bao nhiêu theo tỉ lệ phần trăm.",
-      "maxSubEff": "Hiệu suất chỉ số phụ tối đa",
-      "maxSubEffDesc": "<strong>Hiệu suất chỉ số phụ tối đa</strong> của một thánh di vật được tính theo giá trị tối đa của những lần nâng cấp còn lại.",
+      "curSubEffDesc": "Mỗi 4 cấp thánh di vật sẽ có thêm 1 lần nhảy dòng phụ. <strong>Roll Value</strong> ở đây thể hiện mức độ cao thấp của các lần nhảy dưới dạng phần trăm.",
+      "maxSubEff": "Roll Value tối đa",
+      "maxSubEffDesc": "<strong>Roll Value dòng phụ tối đa</strong> của một thánh di vật được tính theo giá trị tối đa của những lần nâng cấp còn lại.",
       "preview": "Xem trước Thánh Di Vật",
-      "dupArt": "Thánh di vật trùng lặp",
-      "upArt": "Thánh di vật đã được nâng cấp",
+      "dupArt": "Phát hiện thánh di vật trùng lặp",
+      "upArt": "Phát hiện thánh di vật được nâng cấp",
       "beforeEdit": "Trước khi sửa",
       "btnSave": "Lưu Thánh Di Vật",
       "btnAdd": "Thêm Thánh Di Vật",
       "btnClear": "Xóa",
       "btnRandom": "Ngẫu nhiên",
       "btnUpdate": "Nâng cấp thánh di vật",
-      "clearPrompt": "Đang có thánh di vật trong trình chỉnh sửa. Bạn có chắc chắn muốn xóa không?"
+      "clearPrompt": "Đang có thánh di vật trong trình chỉnh sửa. Bạn có chắc chắn muốn xóa không?",
+      "unknownSetName": "Tên bộ không rõ",
+      "delete": "Xóa",
+      "confirmDelete": "Xác nhận xóa món thánh di vật này?"
     },
     "artifactFilter": "Bộ lọc Thánh Di Vật",
     "filterLocation": {
       "inventory": "Túi",
-      "currentlyEquipped": "Đang trang bị"
+      "currentlyEquipped": "Đang trang bị",
+      "location": "Nhân vật"
     },
     "button": {
       "unequipArtifacts": "Gỡ Thánh Di Vật",
       "deleteArtifacts": "Xóa Thánh Di Vật",
       "lockArtifacts": "Khoá Thánh di vật",
-      "unlockrtifacts": "Mở khoá Thánh di vật"
+      "unlockrtifacts": "Mở khoá Thánh di vật",
+      "unequipArtifact": "Tháo Thánh Di Vật"
     },
-    "buttonHint": "Ghi chú: Các nút màu đỏ ở trên chỉ áp dụng cho <1>bộ lọc thánh di vật</1>",
+    "buttonHint": "Ghi chú: Các nút màu đỏ ở trên chỉ áp dụng cho các <1>thánh di vật đã lọc</1>",
     "tipsOfTheDay": [
       "RV tối đa của một Thánh Di Vật 4 sao rơi vào khoảng 540%.",
-      "RV tối đa của một Thánh Di Vật thường sẽ giảm đi khi bạn nâng nó lên: Đó là chuyện bình thường!",
-      "Các thuộc tính phụ có số \"1\" là những cái khó quét nhất trong ảnh chụp.",
+      "RV tối đa của một Thánh Di Vật thường sẽ giảm đi khi bạn nâng nó lên: Đây là chuyện bình thường!",
+      "Các dòng phụ có số \"1\" là những món khó quét nhất trong ảnh chụp.",
       "Nếu tất cả số lần nhảy chỉ số (6 lần) đều vào một dòng, nó sẽ có màu tím!",
       "Nhấn vào \"Chi Tiết\" khi bạn đang nâng thánh di vật trong game để có thể đồng thời vừa nâng vừa quét.",
       "Giờ bạn có thể tải lên nhiều ảnh chụp thánh di vật để quét!"
@@ -57,27 +63,49 @@
     "slot": "Vị Trí",
     "slotName": {
       "flower": "Hoa Sự Sống",
-      "plume": "Lông vũ tử vong",
-      "sands": "Cát thời gian",
-      "goblet": "Ly không gian",
-      "circlet": "Nón lý trí"
+      "plume": "Lông Vũ Tử Vong",
+      "sands": "Cát Thời Gian",
+      "goblet": "Ly Không Gian",
+      "circlet": "Nón Lý Trí"
     },
     "info": {
       "title": "Hướng dẫn Chỉnh sửa/Quản lý Thánh Di Vật",
-      "section1": "<0>Rolls của chỉ số phụ</0><1><1>Số rolls</1> của chỉ số phụ được hiển thị phía bên trái của chỉ số phụ đó. Càng nhiều rolls thì càng màu mè:<3></3>.</1><2>Hiệu suất chỉ số phụ</2><3>Hiệu suất của một chỉ số phụ là tỉ lệ phần trăm của giá trị hiện tại với giá trị tiềm năng cao nhất của thánh di vật 5 <1></1>. Từ trong hình, giá trị roll cao nhất của Sát thương bạo kích là 7.8%. Hiệu suất: <3>5.8/7.8 = 69.2%.</3></3><4>Hiệu suất hiên tại đối với Hiệu suất tiềm năng cao nhất</4><5>Khi một thánh di vật 5<1></1> có tất cả 9(4+5) rolls, và tất cả các rolls đều có giá trị cao nhất, thì nó là thánh di vật có hiệu suất 100%. Tuy nhiên, đa số là chuyện đó khó mà xảy ra. <3>Hiệu suất hiện tại</3> của một thánh di vật là tỉ lệ phần trăm hiệu suất đối với thánh di vật có 100% hiệu suất. <5>Hiệu suất tối đa</5> là hiệu suất cao nhất mà thánh di vật có thể đạt được, nếu tất cả rolls còn lại đạt giá trị tối đa.</5><6>Khóa thánh di vật</6><7>Bằng việc khóa thánh di vật <1></1> sẽ làm cho thánh di vật đó không được chọn khi tạo build. Thánh di vật đã được trang bị sẽ mặc định bị khóa.</7>",
+      "section1": "<0>Số lần nhảy dòng phụ</0><1><1>Số lần nhảy</1> chỉ số của một dòng phụ có thể được thấy ở bên phải dòng đó, mỗi cột là một lần nhảy. Dòng nào nhảy càng nhiều thì chữ sẽ càng sáng. Ngoài ra, nếu giá trị của lần nhảy càng cao thì màu của cột sẽ càng rực rỡ: <3></3>.</1><2>Roll Value dòng phụ</2><3>Roll Value (RV) của một dòng phụ được biểu hiện bằng phần trăm của giá trị lần nhảy hiện tại so với giá trị cao nhất có thể đạt được trên món 5<1></1>. Trong ảnh, giá trị một lần nhảy cao nhất của thuộc tính Tỷ Lệ HP là 5,8%. Quy đổi qua RV: <3>5,3/5,8 ~ 90%.</3></3><4>RV hiện tại và RV tối đa</4><5>Khi một món 5<1></1> có 9 (4 có sẵn + 5 nâng cấp) lần nhảy, giả sử cả 9 lần nhảy đều cho giá trị cao nhất thì RV của nó sẽ là 900%. Tuy nhiên đây là điều gần như không thể.<3>RV hiện tại</3> của một thánh di vật là phần trăm so với trường hợp giả sử như trên. <5>RV tối đa</5> là giá trị RV cao nhất món thánh di vật đó có thể đạt được trong trường hợp những lần nhảy còn lại đều cho ra giá trị cao nhất.</5>",
       "section2": "<0>Trình chỉnh sửa thánh di vật</0><1>Trình chỉnh sửa có đầy đủ chức năng, có thể chấp nhận thánh di vật từ 3<1></1> tới 5<3></3>. Khi một chỉ số phụ được nhập, nó có thể tính toán chính xác giá trị của rolls và hiệu suất. Nó cũng có thể đưa ra con số chính xác về mỗi roll của thánh di vật đó, cùng với các số liệu xác thực khác.</1><2>Quét hình ảnh</2><3>Bạn lười phải nhập chỉ số bằng tay? Bạn có thể quét thánh di vật bằng hình ảnh! Ở trang Trình chỉnh sửa thánh di vật, bấm vào <1>Cách chụp hình chính xác!</1> để có thể biết thêm chi tiết.</3><4>Phát hiện thánh di vật bị trùng lặp/ đã được nâng cấp</4><5>Bạn có biết GO có thể phát hiện ra thánh di vật bị <1>trùng lặp</1> cái mà đã có trong hệ thống? Nó cũng có thể phát hiện nếu thánh di vật trong trình chỉnh sửa là phiên bản <3>nâng cấp</3> của thánh di vật có sẵn. Một khi phát hiện trùng lặp hoặc đã nâng cấp bạn có thể xem trước để so sánh hai thánh di vật này(Xem hình).</5>",
       "section3": "<0>Túi thánh di vật</0><1>Tất cả những thánh di vật đã thêm vào của bạn được hiển thị ở đây. Bộ lọc ở đây cho phép bạn tìm kiếm thánh di vật dễ hơn. </1><2>Ví dụ: Tìm Thánh Di vật làm nguyên liệu cường hoá</2><3>Bằng bộ lọc bạn có thể tìm kiếm thánh di vật làm nguyên liệu cường hoá nhanh hơn.</3><4>Ở ví dụ này, bộ được thiết lập như này: </4><5><0>Thánh Di Vật không khóa trong túi.</0><1>Với chỉ số phụ: Tấn công và phòng ngự.</1><2>Xếp theo thứ tự hiệu suất tối đa tăng dần</2></5><6>Một khi thánh di vật đã được đem làm nguyên liệu cường hoá, bấm vào <1>Xóa thánh di vật</1> để xóa thánh di vật vừa được lọc.</6>"
     },
     "sortMap": {
       "level": "Cấp",
-      "efficiency": "Hiệu suất hiện tại.",
-      "mefficiency": "Hiệu suất tối đa."
+      "efficiency": "RV hiện tại",
+      "mefficiency": "RV tối đa"
     },
     "efficiencyFilter": {
-      "title": "Chỉ số phụ để dùng ở công thức tính hiệu suất"
+      "title": "Chỉ số phụ để dùng ở công thức tính RV"
     },
-    "resetFilters": "Cài lại bộ lọc",
-    "setEffectNum": "Bộ {{setNum}} món"
+    "resetFilters": "Đặt lại bộ lọc",
+    "setEffectNum": "Bộ {{setNum}} món",
+    "edit": "Sửa thánh di vật",
+    "autocompleteLabels": {
+      "sets": "Bộ Thánh Di Vật",
+      "mainStats": "Chỉ số chính",
+      "substats": "Chỉ số phụ",
+      "set": "Bộ Thánh Di Vật"
+    },
+    "addNew": "Thêm thánh di vật mới",
+    "cantDeleteLock": "Không thể xóa thánh di vật do đã bị khóa",
+    "equippedArt": "Tất cả Thánh Di Vật đã trang bị",
+    "artInInv": "Tất cả Thánh Di Vật chưa trang bị",
+    "showDup": "Hiện trùng lặp",
+    "noDupAlert": "Trong túi không có thánh di vật nào trùng lặp.",
+    "showingNum_other": "Đang hiện <1>{{count}}</1> trên tổng số {{value}} Thánh Di Vật",
+    "substat_other": "{{count}} dòng phụ",
+    "sub_other": "{{count}} dòng",
+    "noArtifacts": "Có vẻ như bạn vẫn chưa thêm thánh di vật nào cả. Nếu bạn muốn thì có một vài <1>scanner tự động</1> có thể giúp bạn đẩy nhanh tiến trình nhập đấy!",
+    "subheadings": {
+      "general": "Tổng Quan",
+      "inventory": "Túi",
+      "rollvalue": "Roll Value"
+    }
   },
   "languages": {
     "chs": "Tiếng Trung (giản thể)",
@@ -92,7 +120,9 @@
     "pt": "Tiếng Bồ Đào Nha",
     "ru": "Tiếng Nga",
     "th": "Tiếng Thái",
-    "vi": "Tiếng Việt"
+    "vi": "Tiếng Việt",
+    "it": "Tiếng Ý",
+    "tr": "Tiếng Thổ Nhĩ Kỳ"
   },
   "settings": {
     "title": "Cài Đặt",
@@ -107,12 +137,23 @@
       "error": {
         "jsonParse": "Không thể phân tích tập tin JSON.",
         "unknown": "Định dạng tập tin không xác định.",
-        "monaInvalid": "Định dạng file Mona-Uranai không hợp lệ",
-        "goInvalid": "Định dạng file backup GO không hợp lệ"
+        "monaInvalid": "Định dạng tập tin Mona-Uranai không hợp lệ",
+        "goInvalid": "Định dạng tập tin sao lưu GO không hợp lệ."
       },
       "dbSource": "Nguồn dữ liệu:",
       "goodUpload": {
-        "title": "Định dạng <strong>Genshin Open Object Description</strong> (Tốt)"
+        "title": "Định dạng <strong>Genshin Open Object Description</strong> (GOOD)"
+      },
+      "buttons": {
+        "open": "Mở",
+        "detectDups": "Phát hiện tăng cấp/trùng lặp",
+        "delNotInImport": "Xóa vật phẩm không có trong bản nhập"
+      },
+      "tooltip": {
+        "detectdup": "Tìm những món đã tăng cấp/trùng lặp trong túi đồ GO và hợp nhất bản nhập vào GO.",
+        "ignoreDup": "Không tự phát hiện món tăng cấp/trùng lặp. Bản nhập sẽ được thêm vào túi đồ GO đang có.",
+        "delNotInImport": "Giả sử rằng bản nhập này bao gồm toàn bộ túi của bạn. Các món trong túi đồ GO mà không tồn tại trong bản nhập sẽ bị xóa.",
+        "keepNotInImport": "Giả sử rằng bản nhập này chỉ là một phần túi. Sẽ không xóa gì cả."
       }
     },
     "count": {
@@ -124,7 +165,14 @@
       "updated": "Đã cập nhật:",
       "removed": "Đã loại bỏ:",
       "unchanged": "Không thay đổi:",
-      "invalid": "Không hợp lệ:"
+      "invalid": "Không hợp lệ:",
+      "upgraded": "Đã tăng cấp:",
+      "dbTotal": "Tổng hợp nhất:",
+      "notInImport": "Không trong bản nhập:",
+      "teams": "Đội:",
+      "loadouts": "Bộ Trang Bị:",
+      "builds": "Build: ",
+      "buildTcs": "Build TC: "
     },
     "DatabaseCard": {
       "title": "Cơ sở dữ liệu",
@@ -136,7 +184,15 @@
         "swap": "Đổi"
       },
       "currentDB": "Cơ sở dữ liệu đã chọn"
-    }
+    },
+    "sillyCard": {
+      "desc": "Chúng tôi đã <1>ăn cắp</1> mượn (đã được cho phép) tất cả hình ảnh của <strong>Silly Wisher</strong> và nhét chúng vào Genshin Optimizer.",
+      "toggle": {
+        "enabled": "Silly Optimizer đang bật",
+        "disabled": "Silly Optimizer đang tắt"
+      }
+    },
+    "letsnow": "Tuyết rơi"
   },
   "ui": {
     "pageTitle": "Genshin Optimizer",
@@ -144,12 +200,17 @@
       "artifacts": "Thánh Di Vật",
       "characters": "Nhân Vật",
       "tools": "Công Cụ",
-      "weapons": "Vũ khí",
-      "doc": "Docs",
-      "scanner": "Máy quét"
+      "weapons": "Vũ Khí",
+      "doc": "Tài Liệu",
+      "setting": "Cài Đặt",
+      "scanner": "Scanner",
+      "teams": "Đội",
+      "archive": "Thư Viện",
+      "loadouts": "Bộ Trang Bị",
+      "builds": "Build"
     },
     "social": {
-      "paypal": "Paypal",
+      "paypal": "PayPal",
       "patreon": "Patreon",
       "discord": "Discord"
     },
@@ -160,50 +221,83 @@
     "rightsDisclaimer": "Genshin Optimizer không được liên kết hoặc chứng thực bởi HoYoverse",
     "appVersion": "Phiên bản của $t(pageTitle): {{version}}",
     "error": "Lỗi",
-    "reset": "Cài lại",
+    "reset": "Đặt lại",
     "info": "Thông tin",
     "inventory": "Túi",
     "close": "Đóng",
     "sortMap": {
       "new": "Mới",
       "name": "Tên",
-      "level": "Cấp độ",
+      "level": "Cấp",
       "rarity": "Độ hiếm",
-      "efficiency": "Hiệu suất chỉ số phụ hiện tại",
-      "mefficiency": "Hiệu suất chỉ số phụ tối đa",
-      "artsetkey": "Bộ Thánh Di Vật"
+      "efficiency": "Chỉ số RV hiện tại",
+      "mefficiency": "RV tối đa",
+      "artsetkey": "Bộ Thánh Di Vật",
+      "lastEdit": "Đã sửa gần đây"
     },
     "link": {
-      "download": "Download Link",
-      "discord": "Discord Invite Link"
+      "download": "Link tải về",
+      "discord": "Link mời vào Discord"
     },
     "sortBy": "Sắp xếp theo: ",
     "delete": "Xóa",
     "locked": "Đã khóa",
-    "unlocked": "Đã mở khóa"
+    "unlocked": "Đã mở khóa",
+    "refinement": "Tinh Luyện {{value}}",
+    "selectlevel": "Chọn cấp",
+    "gender": {
+      "F": "Nữ",
+      "M": "Nam"
+    },
+    "statGroupKey": {
+      "basic_stats": "Thuộc tính căn bản",
+      "elem_dmg_bonus": "Tăng Sát Thương Nguyên Tố",
+      "enemy_debuffs": "Hiệu ứng xấu kẻ địch",
+      "self_res": "Kháng Của Bản Thân",
+      "reaction_dmg_bonus": "Tăng Sát Thương Phản Ứng",
+      "reaction_crit": "Tăng Bạo Kích Phản Ứng",
+      "elem_dmgInc": "Tăng Sát Thương Nguyên Tố",
+      "talent_dmgInc": "Tăng Sát Thương Thiên Phú",
+      "elem_crit": "Tăng Bạo Kích Đòn Nguyên Tố",
+      "talent_dmg_bonus": "Tăng Sát Thương Thiên Phú",
+      "talent_crit": "Tăng Bạo Kích Thiên Phú",
+      "talent_level_boost": "Tăng Cấp Thiên Phú",
+      "base_stat_mod": "Điều Chỉnh Chỉ Số Căn Bản",
+      "stamina_buffs": "Buff Thể Lực",
+      "misc": "Thuộc tính khác"
+    },
+    "sillyPageTitle": "Silly Optimizer",
+    "excluded": "Loại trừ"
   },
   "char_Eula": {
     "burstC": {
       "name": "Kiếm Ánh Sáng",
       "start5": "Bắt đầu ở 5 tầng",
-      "addStacks": "50% cơ hội nhận thêm mỗi tầng"
+      "addStacks": "50% cơ hội nhận thêm mỗi tầng",
+      "dmg": "Sát thương nổ Kiếm Ánh Sáng",
+      "bonusScaling": "Lượng tăng bội số của Kiếm Ánh Sáng"
     },
     "c1C": {
       "name": "Sau khi hiệu quả <strong>Trái Tim Băng Giá</strong> bị tiêu hao",
       "durationStack": "6s + 6s mỗi tầng, tối đa 18s"
     },
-    "passive1": "Sát thương Kiếm Ánh Sáng"
+    "passive1": "Sát thương Kiếm Ánh Sáng",
+    "c4C": {
+      "dmgBonus": "Tăng sát thương nổ Kiếm Ánh Sáng"
+    }
   },
   "char_Noelle": {
     "p4cd": "24s -1s mỗi 4 lần đánh trúng",
-    "c6duration": "15s +1s mỗi lần đánh bại kẻ địch (tối đa 25s)"
+    "c6duration": "15s +1s mỗi lần đánh bại kẻ địch (tối đa 25s)",
+    "c4dmg": "Sát thương gây ra khi Giáp Hộ Tâm vỡ",
+    "qlarger": "Tăng phạm vi tấn công"
   },
   "char_Venti": {
     "addAimed": "Sát thương mũi tên tăng thêm",
     "addFullAimed": "Sát thương tụ lực của mũi tên tăng thêm",
     "upcurrentDuration": "Thời gian luồng gió duy trì",
     "regenEner": "Hồi phục 15 điểm Năng lượng nguyên tố cho Venti sau khi kết thúc hiệu ứng",
-    "c6": "Mục tiệu nhận sát thương từ <strong>Bài thơ thần gió</strong>",
+    "c6": "Địch đã chịu đòn của <strong>Bài Thơ Thần Gió</strong>",
     "q": "Hồi phục 15 năng lượng nguyên tố cho tất cả nhân vật trong đội có nguyên tố tương ứng.",
     "c2": {
       "hit": "Địch bị đánh trúng",
@@ -212,215 +306,907 @@
   },
   "sheet": {
     "dmg": "Sát thương",
-    "lessPercentHP": "< {{percent}}% HP",
+    "lessPercentHP": "HP thấp hơn {{percent}}%",
     "hitOp": {
       "normal": "Tấn công thường đánh trúng kẻ địch",
       "charged": "Trọng kích đánh trúng kẻ địch",
       "plunging": "Tấn công đáp đánh trúng kẻ địch",
       "skill": "Kỹ năng nguyên tố đánh trúng kẻ địch",
       "burst": "Kỹ năng nộ đánh trúng kẻ địch",
-      "geo": "Sát thương nguyên tố Nham khi đánh trúng đối thủ",
-      "anemo": "Sát thương nguyên tố Phong khi đánh trúng đối thủ",
-      "hydro": "Sát thương nguyên tố Thuỷ khi đánh trúng đối thủ",
-      "cryo": "Sát thương nguyên tố Băng khi đánh trúng đối thủ",
-      "pyro": "Sát thương nguyên tố Hoả khi đánh trúng đối thủ",
-      "electro": "Sát thương nguyên tố Lôi khi đánh trúng đối thủ"
+      "geo": "Sau khi gây ra <geo>sát thương nguyên tố Nham</geo>",
+      "anemo": "Sau khi gây ra <anemo>sát thương nguyên tố Phong</anemo>",
+      "hydro": "Sau khi gây ra <hydro>sát thương nguyên tố Thủy</hydro>",
+      "cryo": "Sau khi gây ra <cryo>sát thương nguyên tố Băng</cryo>",
+      "pyro": "Sau khi gây ra <pyro>sát thương nguyên tố Hỏa</pyro>",
+      "electro": "Sau khi gây ra <electro>sát thương nguyên tố Lôi</electro>",
+      "none": "Sau khi đánh trúng kẻ địch",
+      "normalOrCharged": "Sau khi đánh trúng kẻ địch bằng tấn công thường/trọng kích",
+      "skillOrBurst": "Sau khi đánh trúng kẻ địch bằng Kỹ Năng Nguyên Tố/Kỹ Năng Nộ",
+      "crit": "Sau khi tạo thành đòn bạo kích",
+      "normalChargedOrPlunging": "Sau khi đánh trúng kẻ địch bằng Tấn Công Thường/Trọng Kích/Tấn Công Đáp",
+      "dendro": "Sau khi gây <dendro>sát thương nguyên tố Thảo</dendro>",
+      "normalEle": "Sau khi gây sát thương Nguyên Tố thông qua Tấn Công Thường",
+      "ele": "Sau khi gây sát thương Nguyên Tố",
+      "weakSpot": "Sau khi bắn trúng điểm yếu kẻ địch bằng đòn Tụ Lực Ngắm Bắn",
+      "normalChargedSkillBurst": "Sau khi đánh trúng kẻ địch bằng Tấn Công Thường/Trọng Kích hoặc Kỹ Năng Nguyên Tố/Kỹ Năng Nộ",
+      "self": "Sau khi trúng đòn của địch"
     },
     "eleAbsor": "Chuyển hóa nguyên tố",
     "absorDot": "Sát thương chuyển hóa theo thời gian",
     "afterUse": {
-      "skill": "Sau khi sử dụng Kỹ năng Nguyên tố",
-      "burst": "Sau khi sử dụng Kỹ năng Nộ"
+      "skill": "Sau khi sử dụng Kỹ Năng Nguyên Tố",
+      "burst": "Sau khi sử dụng Kỹ Năng Nộ",
+      "skillOrBurst": "Sau khi sử dụng Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ",
+      "skillPress": "Sau khi sử dụng Kỹ Năng Nguyên Tố (nhấn)",
+      "skillHold": "Sau khi sử dụng Kỹ Năng Nguyên Tố (nhấn giữ)"
     },
-    "conditional": "Điều kiện",
+    "lessEqPercentHP": "HP thấp hơn hoặc bằng {{percent}}%",
+    "greaterPercentHP": "HP cao hơn {{percent}}%",
+    "greaterEqPercentHP": "HP cao hơn hoặc bằng {{percent}}%",
+    "lessPercentEnergy": "Năng Lượng ít hơn {{percent}}%",
+    "enemyLessPercentHP": "HP kẻ địch thấp hơn {{percent}}%",
+    "enemyLessEqPercentHP": "HP kẻ địch thấp hơn hoặc bằng {{percent}}%",
+    "enemyGreaterPercentHP": "HP kẻ địch cao hơn {{percent}}%",
+    "enemyGreaterEqPercentHP": "HP kẻ địch cao hơn hoặc bằng {{percent}}%",
+    "afterDefeatEnemy": "Sau khi đánh bại kẻ địch",
+    "afterSprint": "Sau khi lướt",
+    "skillCDRed": "Giảm CD Kỹ Năng Nguyên Tố",
+    "burstCDRed": "Giảm CD Kỹ Năng Nộ",
+    "triggerCD": "CD Kích hoạt",
+    "incInterRes": "Tăng kháng gián đoạn",
+    "charges": "Số lần sử dụng",
+    "cooldown": "CD",
+    "addlCharges": "Số lần sử dụng tăng thêm",
+    "activeCharField": "Nhân vật đứng trong phạm vi kỹ năng",
+    "opponentsField": "Kẻ địch đứng trong phạm vi kỹ năng",
+    "takeDmg": "Sau khi chịu sát thương",
+    "infusion": {
+      "pyro": "Đính kèm nguyên tố Hỏa",
+      "cryo": "Đính kèm nguyên tố Băng",
+      "anemo": "Đính kèm nguyên tố Phong",
+      "hydro": "Đính kèm nguyên tố Thủy",
+      "electro": "Đính kèm nguyên tố Lôi",
+      "dendro": "Đính kèm nguyên tố Thảo",
+      "geo": "Đính kèm nguyên tố Nham"
+    },
+    "effectDuration": {
+      "pyro": "Thời gian duy trì nguyên tố Hỏa",
+      "cryo": "Thời gian duy trì nguyên tố Băng",
+      "anemo": "Thời gian duy trì nguyên tố Phong",
+      "hydro": "Thời gian duy trì nguyên tố Thủy",
+      "electro": "Thời gian duy trì nguyên tố Lôi",
+      "dendro": "Thời gian duy trì nguyên tố Thảo",
+      "geo": "Thời gian duy trì nguyên tố Nham"
+    },
+    "durationInc": "Tăng thời gian duy trì",
+    "base": "Nội Tại",
+    "stacks": "Tầng",
+    "protectedByShield": "Được bảo vệ bởi khiên",
+    "protectedByShieldCrystal": "Được bảo vệ bởi khiên tạo bởi phản ứng Kết Tinh",
+    "staminaDec_": "Giảm thể lực tiêu hao",
+    "dmgAbsorption": {
+      "pyro": "Lượng sát thương Hỏa khiên hấp thụ",
+      "cryo": "Lượng sát thương Băng khiên hấp thụ",
+      "anemo": "Lượng sát thương Phong khiên hấp thụ",
+      "hydro": "Lượng sát thương Thủy khiên hấp thụ",
+      "electro": "Lượng sát thương Lôi khiên hấp thụ",
+      "dendro": "Lượng sát thương Thảo khiên hấp thụ",
+      "geo": "Lượng sát thương Nham khiên hấp thụ",
+      "none": "Lượng sát thương khiên hấp thụ",
+      "increase": "Tăng lượng hấp thụ của khiên",
+      "max": {
+        "none": "Giới hạn sát thương khiên hấp thụ",
+        "pyro": "Giới hạn sát thương Hỏa khiên hấp thụ",
+        "dendro": "Giới hạn sát thương Thảo khiên hấp thụ"
+      }
+    },
+    "addlCharge": "Số lần sử dụng tăng thêm",
+    "conditional": "Có điều kiện",
     "maxStacks": "Tầng hiệu ứng tối đa",
-    "1set": "Bộ lẻ",
-    "2set": "Bộ hai",
-    "4set": "Bộ bốn",
+    "1set": "Bộ 1",
+    "2set": "Bộ 2",
+    "4set": "Bộ 4",
+    "activationStam": "Khởi Động Tiêu Hao Thể Lực",
     "stamDrain": "Thể lực tiêu hao",
     "talents": {
       "auto": "Tự động",
-      "skill": "Kĩ năng",
-      "burst": "Kĩ năng nộ",
-      "passive": "Hiệu ứng",
-      "passive1": "Tinh luyện 1",
-      "passive2": "Tinh luyện 4",
-      "passive3": "Hiệu ứng đặc biệt",
-      "sprint": "Chạy",
+      "skill": "Kỹ Năng",
+      "burst": "Kỹ Năng Nộ",
+      "passive": "Nội Tại",
+      "passive1": "A1",
+      "passive2": "A4",
+      "passive3": "Thiên Phú Cố Định",
+      "sprint": "Xung Kích",
       "constellation1": "C1",
       "constellation2": "C2",
       "constellation3": "C3",
       "constellation4": "C4",
       "constellation5": "C5",
       "constellation6": "C6"
+    },
+    "swirlReaction": {
+      "hydro": "Sau khi kích hoạt phản ứng Khuếch Tán <hydro>Thủy</hydro>",
+      "pyro": "Sau khi kích hoạt phản ứng Khuếch Tán <pyro>Hỏa</pyro>",
+      "electro": "Sau khi kích hoạt phản ứng Khuếch Tán <electro>Lôi</electro>",
+      "cryo": "Sau khi kích hoạt phản ứng Khuếch Tán <cryo>Băng</cryo>"
+    },
+    "afterReaction": "Sau khi kích hoạt phản ứng nguyên tố",
+    "aoeInc": "Tăng phạm vi",
+    "elementalReaction": {
+      "hydro": "Sau khi kích hoạt Phản Ứng Nguyên Tố <hydro>liên quan tới Thủy</hydro>",
+      "electro": "Sau khi kích hoạt Phản Ứng Nguyên Tố <electro>liên quan tới Lôi</electro>",
+      "shatter": "Sau khi kích hoạt Phản Ứng Nguyên Tố <shattered>Phá Băng</shattered>",
+      "cryo": "Sau khi kích hoạt phản ứng nguyên tố <cryo>liên quan tới nguyên tố Thủy</cryo>"
+    },
+    "bonusScaling": {
+      "skill_": "Tăng sát thương Kỹ Năng Nguyên Tố",
+      "atkInc": "Tăng bội số Tấn Công",
+      "value": "{{value}}% "
+    },
+    "energy": "Năng Lượng",
+    "teamBuff": "Buff Đội",
+    "dmgMult": {
+      "normal": "Bội số sát thương Tấn Công Thường",
+      "charged": "Bội số sát thương Trọng Kích",
+      "skill": "Bội số sát thương kỹ năng"
+    },
+    "stamRestored": "Hồi Thể Lực",
+    "triggerQuota": "Số lần kích hoạt tối đa",
+    "enemyAffected": {
+      "burningOrPyro": "Địch đang bị <pyro>Thiêu Đốt</pyro> hoặc mang ấn <pyro>Hỏa</pyro>",
+      "frozenOrCryo": "Địch đang bị <cryo>Đóng Băng</cryo> hoặc mang ấn <cryo>Băng</cryo>",
+      "pyroOrElectro": "Địch đang mang ấn <pyro>Hỏa</pyro> hoặc <electro>Lôi</electro>",
+      "hydroOrCryo": "Địch đang mang ấn <hydro>Thủy</hydro> hoặc <cryo>Băng</cryo>",
+      "hydroOrPyro": "Địch đang mang ấn <hydro>Thủy</hydro> hoặc <pyro>Hỏa</pyro>",
+      "hydroOrElectro": "Địch đang mang ấn <hydro>Thủy</hydro> hoặc <electro>Lôi</electro>",
+      "electro": "Địch đang mang ấn <electro>Lôi</electro>",
+      "cryo": "Địch đang mang ấn <cryo>Băng</cryo>",
+      "pyro": "Địch đang mang ấn <pyro>Hỏa</pyro>"
+    },
+    "getElementalOrbParticle": "Sau khi nhặt Nguyên Tố Tinh Cầu hoặc Hạt Nhân",
+    "notProtectedByShield": "Không được khiên bảo vệ",
+    "percentCurrentHP": "Phần Trăm HP Hiện Tại",
+    "enerRegenPerHit": "Năng lượng hồi với mỗi đòn",
+    "interval": "Thời gian chờ",
+    "immuneToElectroCharged": "Miễn nhiễm <electrocharged>Điện Cảm</electrocharged>",
+    "charOffField": "Nhân vật ở ngoài sân",
+    "attackAoeInc": "Tăng phạm vi tấn công",
+    "charOnField": "Nhân vật đang trên sân",
+    "timeOnField": "Thời gian trên sân",
+    "hpChange": "Sau khi HP tăng/giảm",
+    "afterHeal": "Sau khi nhận trị liệu",
+    "hits_other": "{{count}} Đòn",
+    "percentMaxHP": "% Giới Hạn HP",
+    "stack_other": "{{count}} Tầng",
+    "seconds_other": "{{count}} Giây",
+    "uses_other": "{{count}} Lần",
+    "opponents_other": "{{count}} Kẻ Địch",
+    "members_other": "{{count}} Thành Viên",
+    "times_other": "{{count}} Lần",
+    "activeChar": "Nhân vật đứng sân",
+    "otherHpChange": "Sau khi HP đồng đội tăng/giảm",
+    "reactionOp": {
+      "overload": "Sau khi kích hoạt phản ứng <overloaded>Quá Tải</overloaded>"
+    },
+    "afterOverflow": "Lượng trị liệu đã vượt mức",
+    "level": "Cấp {{count}}",
+    "teamHitOp": {
+      "geo": "Sau khi thành viên đội gần đó gây <geo>ST Nguyên Tố Nham</geo>",
+      "electroReaction": "Sau khi thành viên đội gần đó kích hoạt <electro>phản ứng liên quan đến Nguyên Tố Lôi</electro>"
+    },
+    "afterPerformHeal": "Sau khi thực hiện trị liệu",
+    "bond": {
+      "current": "Phần trăm Khế Ước Sinh Mệnh hiện có",
+      "changes": "Sau khi Khế Ước Sinh Mệnh tăng hoặc giảm",
+      "increases": "Sau khi Khế Ước Sinh Mệnh tăng",
+      "percentOf": "% Khế Ước Sinh Mệnh"
     }
   },
   "weapon_SongOfBrokenPines": {
-    "name": "Ca Khúc Thời Đại Nghìn Năm: Khúc ca vén cờ"
+    "name": "Ca Khúc Thời Đại Nghìn Năm - Khúc Ca Vén Cờ có hiệu lực"
   },
   "char_KaedeharaKazuha": {
-    "c1": "Thi triển <strong>Kazuha nhất đao trảm</strong> làm mới thời gian CD",
-    "c2": "Trong Một khắc gió thu",
+    "c1": "Thi triển <strong>Kazuha Nhất Đao Trảm</strong> làm mới CD",
+    "c2": "Một Khắc Gió Thu tồn tại trên sân",
     "c6": {
-      "after": "Sau khi thi truyển <strong>Chihayaburu</strong> hoặc <strong>Kazuha Nhất đao trảm</strong>"
-    }
+      "after": "Sau khi thi triển <strong>Chihayaburu</strong> hoặc <strong>Kazuha Nhất Đao Trảm</strong>"
+    },
+    "skillPlunge": "Xua Tan Mây Mù"
   },
   "char_Rosaria": {
-    "a1": "Sau khi tấn công từ phía sau",
+    "a1": "Đánh trúng từ phía sau lưng kẻ địch",
     "a4": {
-      "name": "Khi thi triển <strong>Thánh lễ cuối cùng</strong>"
+      "name": "Sau khi thi triển <strong>Thánh Lễ Cuối Cùng</strong>"
     }
   },
   "char_KamisatoAyaka": {
-    "afterSprintCryo": "Nhận <cryo>Nguyên tố băng</cyro> sau khi lướt",
-    "snowflakeDMG": "Sát thương Cổng băng tuyết",
-    "dmgBySnowflake": "Kẻ địch chịu sát thương do Cổng băng tuyết của <strong>Trường phái Kamisato-Soumetsu</strong> gây ra"
+    "afterSprintCryo": "Gán ấn <cryo>nguyên tố Băng</cryo> sau khi lướt",
+    "snowflakeDMG": "Sát thương Cổng Băng Tuyết",
+    "dmgBySnowflake": "Kẻ địch đã bị đánh trúng bởi <strong>Cổng Băng Tuyết</strong>",
+    "c6Active": "Hiệu quả Usurahi Butou đang có hiệu lực"
   },
   "weapon_MistsplitterReforged": {
-    "emblem": "Vết cắt sương mù"
+    "emblem": "Vết Cắt Sương Mù"
   },
   "char_Yoimiya": {
-    "c1": "Đánh bại kẻ địch ảnh hưởng bởi <strong>Lưu kim quang hỏa</strong>",
-    "c2": "Bạo kịch từ <pyro> Sát thương nguyên tố Hỏa</pyro>"
+    "c1": "Sau khi đánh bại kẻ địch chịu hiệu quả <strong>Lưu Kim Quang Hỏa</strong>",
+    "c2": "Sau khi gây ra <pyro>đòn bạo kích nguyên tố Hỏa</pyro>",
+    "normPyroInfus": "<pyro>Đính kèm nguyên tố Hỏa lên tấn công thường</pyro>",
+    "c6Key_": "Bội số mũi tên lửa"
   },
   "char_RaidenShogun": {
     "skill": {
-      "eye": "Con mắt lôi phạt",
-      "partyCost": "Năng lượng nguyên tố của kỹ năng nộ"
+      "eye": "Con Mắt Lôi Phạt đang có hiệu lực",
+      "partyCost": "Năng Lượng Tiêu Hao"
     },
     "burst": {
-      "resolves": "Ý lực"
+      "resolves": "Ý Lực",
+      "resolveInitial_": "<electro>Lượng tăng bội số sát thương của Lưỡi Đao Vô Tưởng</electro>",
+      "resolveInfused_": "<electro>Lượng tăng bội số sát thương của Mộng Tưởng Nhất Tâm</electro>",
+      "burstDmg": "Sát thương Lưỡi Đao Vô Tưởng",
+      "active": "Trong trạng thái <strong>Mộng Tưởng Nhất Tâm</strong>"
     },
     "a4": {
-      "enerRest": "Năng lượng nguyên tố hồi phục bởi <strong>Mộng tưởng nhất tâm</strong>",
+      "enerRest": "Năng lượng nguyên tố hồi phục bởi <strong>Mộng Tưởng Nhất Tâm</strong>",
       "eleDMG": "Sát thương nguyên tố lôi tăng thêm"
     },
     "c4": {
-      "expires": "Trạng thái <strong>Mộng tưởng nhất tâm</strong> của <strong>Bí kỹ: Mộng tưởng chân quyết</strong> kết thúc"
+      "expires": "Sau khi trạng thái <strong>Mộng Tưởng Nhất Tâm</strong> kết thúc"
     }
   },
   "char_Aloy": {
     "skill": {
       "coil": "Dây Móc",
-      "rush": "Hồ Băng"
-    }
+      "rush": "Hồ Băng",
+      "rushState": "Thời gian duy trì trong trạng thái Hồ Băng"
+    },
+    "a1CondName": "Sau khi nhận hiệu quả Dây Móc",
+    "normCryoInfus": "<cryo>Đính kèm nguyên tố Băng lên tấn công thường</cryo>"
   },
   "char_KujouSara": {
     "skill": {
-      "ambush": "Tengu Juurai: Phục kích"
+      "ambush": "Tengu Juurai - Phục Kích có hiệu lực"
+    },
+    "c6": {
+      "electroCritDmg": "Nhân vật ở trạng thái tăng tấn công nhờ Tengu Juurai"
     }
   },
   "char_SangonomiyaKokomi": {
-    "burst": "Lễ phục nghi thức",
-    "c2": "Nhân vật có lượng HP bằng hoặc thấp hơn 50%",
-    "c6": "Lúc đòn tấn công thường và trọng kích trị liệu cho nhân vật có HP từ 80% trở lên"
+    "burst": "Lễ Phục Nghi Thức",
+    "c2": "HP nhân vật bằng hoặc thấp hơn 50%",
+    "c6": "Sau khi tấn công thường và trọng kích trị liệu cho nhân vật có HP trên 80%",
+    "c2SkillHeal": "Tăng trị liệu <strong>Lời Thề Kurage</strong>",
+    "c2BurstHeal": "Tăng trị liệu <strong>Nghi Lễ Nereid</strong>"
   },
   "page_home": {
-    "intro": "<0>Giới thiệu về Genshin Optimizer</0><1>Genshin Optimizer (GO) là một trang web mã nguồn mở do người hâm mộ tạo ra cho trò chơi gacha hành động nhập vai <1><strong>Genshin Impact</strong></1>. Nó chủ yếu nhằm mục đích giúp đỡ người chơi về khía cạnh phức tạp của trò chơi: Tối ưu hoá Thánh Di Vật. Vì Thánh Di Vật là các yếu tố dựa trên RNG (Random Number Generator) góp phần trực tiếp vào mức độ hiệu quả của các nhân vật của bạn trong trò chơi, GO sẽ cố gắng tìm các Thánh Di Vật tốt nhất cho các nhân vật dựa trên Túi chứa Thánh Di Vật hiện tại của bạn.</1><2>GO có thể theo dõi các Thánh Di Vật và cho phép dễ dàng hơn trong việc lọc/so sánh các Thánh Di Vật, nó đóng vai trò như một công cụ giúp người dùng tìm Thánh Di Vật tốt trong túi để tăng cấp và Thánh Di Vật xấu để sử dụng làm nguyên liệu cường hoá.</2><3>Vì GO có thể sao chép các chỉ số chính xác của bất kỳ nhân vật nào, cùng với việc tính toán tất cả các con số sát thương với độ chính xác lên đến 1%, GO cũng có thể tính sát thương và là công cụ tính toán lý thuyết.</3>",
+    "intro": "Nhân danh trang tính toán <strong>tối thượng</strong> cho <3><i>Genshin Impact</i></3>, GO sẽ note lại túi đồ thánh di vật/vũ khí/nhân vật của bạn, từ đó giúp bạn tạo ra build tối ưu nhất dựa vào cách bạn chơi chỉ với những thứ mà bạn đã có sẵn.",
     "quickLinksCard": {
       "title": "Danh sách liên kết",
       "buttons": {
         "tyGuide": {
-          "tooltip": "Cách dùng công cụ tối ưu hóa Genshin"
+          "title": "Danh sách phát Youtube hướng dẫn",
+          "tooltip": "Học cách dùng Genshin Optimizer"
         },
         "scanners": {
           "title": "Tự động nhập dữ liệu",
-          "tooltip": "Phần mềm từ phía thứ 3 cho phép thực hiện lấy dữ liệu tdv tự động"
+          "tooltip": "Phần mềm từ phía thứ 3 cho phép thực hiện lấy dữ liệu thánh di vật tự động từ trong game"
+        },
+        "kqm": {
+          "title": "Keqing Mains",
+          "tooltip": "Cộng đồng theorycraft & làm guide"
         },
         "devDiscord": {
-          "title": "Discord của nhà phát triển Genshin ",
+          "title": "Discord của nhà phát triển Genshin",
           "tooltip": "Cộng đồng các nhà phát triển dành cho Genshin"
         },
         "good": {
-          "title": "Tài liệu về \"GOOD\""
+          "title": "Tài liệu về \"GOOD\"",
+          "tooltip": "Genshin Open Object Descriptor Documentation"
+        },
+        "patchNotes": {
+          "title": "Chi tiết cập nhật",
+          "tooltip": "Tất cả chi tiết cập nhật của GO"
         }
       }
     },
     "inventoryCard": {
-      "title": "ĐI ĐẾN túi đồ"
+      "title": "Túi đồ GO"
     },
     "vidGuideCard": {
       "title": "Video hướng dẫn"
     },
     "teamCard": {
-      "title": "Gặp nhóm chúng tôi",
+      "title": "Gặp gỡ đội ngũ",
       "jobTitle": {
         "leadDev": "Trưởng nhóm phát triển",
         "dev": "Nhà phát triển",
-        "mod": "Quản trị viên"
+        "mod": "Điều phối viên",
+        "admin": "Quản Trị Viên",
+        "translator": "Quản lý dịch thuật",
+        "TC": "Phụ trách Theorycraft"
       }
     }
   },
+  "page_scanner": {
+    "intro": "<0>Scanner</0><1>Scanner là các công cụ Genshin mà có thể tự động scan dữ liệu game từ ảnh chụp hoặc trực tiếp từ trong game.</1><2>Dưới đây là một số scanner đã được thử nghiệm với GO.</2><3>Để tải lên tập tin lấy được từ scanner, hãy tới trang <1>Cài Đặt</1> và tải tập tin đó lên ở mục <strong>Cơ sở dữ liệu</strong>.</3>",
+    "ik": {
+      "title": "Inventory Kamera",
+      "p1": "Ứng dụng này sẽ quét tất cả các nhân vật, vũ khí, thánh di vật trong túi của bạn. Làm theo hướng dẫn trong ứng dụng để thiết lập. Ứng dụng này chỉ quét bằng ngôn ngữ tiếng Anh."
+    },
+    "as": {
+      "title": "AdeptiScanner",
+      "p1": "Quét tất cả thánh di vật của bạn trong túi. Có chế độ quét thủ công và có thể nhập dữ liệu từ <1>Enka.Network</1>."
+    },
+    "goodeng": "Ứng dụng này chỉ có thể quét ngôn ngữ tiếng Anh và xuất sang định dạng <1>GOOD</1>.",
+    "tosWarn": "Cũng giống với các tool tương tác với game một cách gián tiếp khác, mặc dù việc bị phát hiện là gần như không thể, <1>nó luôn luôn có rủi ro đi kèm</1>. Người dùng nên cân nhắc trước khi sử dụng.",
+    "tags": {
+      "pc": "PC",
+      "mobile": "Di động",
+      "ps": "PlayStation",
+      "gameMani": "Điều khiển tự động",
+      "materials": "Nguyên Liệu",
+      "characters": "Nhân Vật",
+      "weapons": "Vũ Khí",
+      "achievements": "Thành Tựu"
+    },
+    "nb": {
+      "title": "Artiscan",
+      "p1": "Đây là một scanner gốc web có khả năng ghi hình màn hình game của bạn, scan từ ảnh chụp hoặc video. Các ảnh chụp/video cần scan có thể giữ nguyên định dạng toàn màn hình mà không cần phải chỉnh sửa gì thêm.",
+      "p2": "Nền tảng Di động/PlayStation chỉ có thể scan được thông qua hình ảnh hoặc video."
+    },
+    "seelieme": "Ứng dụng này cũng có thể scan nguyên liệu cho <1>Seelie.me</1>"
+  },
   "weapon_Akuoumaru": {
-    "party": "Tổng giới hạn năng lượng nguyên tố"
+    "party": "Tổng giới hạn năng lượng nguyên tố đội"
   },
   "artifact_ArchaicPetra": {
-    "condName": "Nhận hạt kết tinh"
+    "condName": "Sau khi nhặt mảnh Kết Tinh"
   },
   "artifact_ViridescentVenerer": {
     "condName": "Khuếch tán nguyên tố"
   },
   "weapon_CinnabarSpindle": {
-    "name": "Tăng sát thương tấn công thường"
+    "name": "Hiệu quả vũ khí đang có hiệu lực"
   },
   "weapon_ElegyForTheEnd": {
-    "condName": "Ca khúc thời đại nghìn năm: Bài ca ly biệt"
+    "condName": "Ca Khúc Thời Đại Nghìn Năm - Bài Ca Ly Biệt có hiệu lực"
   },
   "weapon_MouunsMoon": {
-    "party": "Tổng giới hạn năng lượng nguyên tố"
+    "party": "Tổng giới hạn năng lượng nguyên tố đội"
   },
   "weapon_ThrillingTalesOfDragonSlayers": {
-    "condName": "Đổi nhân vật"
+    "condName": "Sau khi đổi qua nhân vật khác"
   },
   "weapon_WavebreakersFin": {
-    "party": "Tổng giới hạn năng lượng nguyên tố"
-  },
-  "page_scanner": {
-    "ik": {
-      "title": "Inventory Kamera",
-      "p1": "Ứng dụng này sẽ quét tất cả các nhân vật + vũ khí + thánh di vật trong túi của bạn. Làm theo hướng dẫn trong ứng dụng để thiết lập. Ứng dụng này chỉ quét bằng ngôn ngữ tiếng Anh."
-    },
-    "as": {
-      "title": "AdeptiScanner",
-      "p1": "Quét tất cả thánh di vật của bạn trong túi. Có chế độ quét thủ công.",
-      "p2": "Ứng dụng này cũng có thể được thiết lập cho các thánh di vật mới trong các phiên bản mới nhất của Genshin mà không cần cập nhật."
-    },
-    "goodeng": "Ứng dụng này chỉ quét bằng tiếng Anh và xuất sang định dạng GOOD.",
-    "seelieme": "Phần mềm này cũng có thể quét dữ liệu cho <1> Seelie.me </1>."
+    "party": "Tổng giới hạn năng lượng nguyên tố đội"
   },
   "artifact_BlizzardStrayer": {
-    "condName": "kẻ địch",
-    "condCryo": "đang bị Nguyên Tố Băng ảnh hưởng",
-    "condFrozen": "đóng băng"
+    "condName": "Kẻ địch đang",
+    "condCryo": "mang ấn Băng",
+    "condFrozen": "bị đóng băng"
+  },
+  "artifact_HuskOfOpulentDreams": {
+    "condName": "Vấn Đáp"
+  },
+  "artifact_OceanHuedClam": {
+    "condName": "Giới hạn sát thương của Bọt Biển"
   },
   "artifact_ShimenawasReminiscence": {
     "afterUseEnergy": "Sau khi tiêu hao 15 năng lượng"
   },
+  "artifact_TinyMiracle": {
+    "condName": "Sau khi chịu sát thương nguyên tố"
+  },
+  "char_Albedo": {
+    "blossomCD": "Thời gian chờ Hoa Khoảnh Khắc",
+    "blossomDmg_": "Tăng sát thương của Hoa Khoảnh Khắc",
+    "isotomaOnField": "Hoa Mặt Trời ở trên sân",
+    "enerPerBlossom": "Năng lượng hồi mỗi lần sinh ra Hoa Khoảnh Khắc",
+    "c2Stacks": "Số tầng Sinh Tử đã tiêu hao"
+  },
+  "char_Amber": {
+    "secondArrow": "(mũi tên thứ hai)",
+    "critRateBonus": "Tỷ lệ bạo cộng thêm cho <strong>Mưa Tên</strong>",
+    "aoeRangeBonus": "Phạm vi mở rộng cho <strong>Mưa Tên</strong>",
+    "manualDetonationDmg": "Sát thương tự kích nổ Bá Tước Thỏ",
+    "c6CondName": "Sau khi thi triển <strong>Mưa Tên</strong>"
+  },
   "char_AratakiItto": {
+    "a1": {
+      "name": "Số lần thi triển liên tục Arataki Kesagiri"
+    },
     "a4": {
-      "dmgInc": "Tăng sát thương gây ra từ Arataki Kesagiri"
+      "dmgInc": "Sát thương tăng thêm cho Arataki Kesagiri"
     },
     "c1": {
-      "initialGain": "nhận tầng hiệu ứng \"Quỷ Lực Vô Song\"",
-      "timedGain": "Sau 1s, Arataki Itto mỗi 0.5s sẽ nhận thêm 1 tầng \"Quỷ Lực Vô Song\", duy trì 1.5s"
+      "initialGain": "Số tầng Quỷ Lực Vô Song nhận được",
+      "timedGain": "Sau 1s, mỗi 0,5s tiếp sẽ nhận thêm 1 tầng Quỷ Lực Vô Song, duy trì 1,5s"
+    },
+    "c4": {
+      "name": "Sau khi kết thúc trạng thái Nộ Mục Quỷ Vương"
+    }
+  },
+  "char_Barbara": {
+    "passive1": {
+      "cond": "Trong vòng âm thanh của <strong>Buổi Diễn, Bắt đầu♪</strong>"
+    },
+    "constellation2": {
+      "cond": "<strong>Buổi Diễn, Bắt đầu♪</strong> có tồn tại"
+    }
+  },
+  "char_Beidou": {
+    "skillOneHit": "Sát thương gây ra khi chịu 1 đòn",
+    "skillTwoHit": "Sát thương gây ra khi chịu 2 đòn",
+    "duringBurst": "Chước Lôi có hiệu lực",
+    "tidecallerMaxDmg": "Kích hoạt phản đòn sau khi đạt buff sát thương cao nhất",
+    "a4charge": "Giảm thời gian tụ lực của trọng kích",
+    "c4dmg": "Sát thương Lôi của Sao Trời Dẫn Lối"
+  },
+  "char_Bennett": {
+    "skill": {
+      "lvl1CD": "CD Tụ Lực Lần 1",
+      "lvl2CD": "CD Tụ Lực Lần 2"
+    },
+    "c4DMG": "Sát thương của Nhiệt Huyết Bất Diệt",
+    "c6PyroInfusion": "<pyro>Đính kèm nguyên tố Hỏa cho Kiếm Đơn, Trọng Kiếm và Vũ Khí Cán Dài</pyro>"
+  },
+  "char_Chongyun": {
+    "infusion": "Đính kèm nguyên tố Băng cho Kiếm Đơn, Trọng Kiếm và Vũ Khí Cán Dài",
+    "passive2": "Sát thương của Linh Đao gọi thêm",
+    "asc4Cond": "Địch đã chịu đòn của Truy Băng Kiếm Quyết",
+    "constellation1": "Sát thương của Đao Băng",
+    "constellation6": "Địch có phần trăm HP hiện tại thấp hơn Chongyun",
+    "blades": "Số linh kiếm triệu hồi"
+  },
+  "char_Diluc": {
+    "skillB": {
+      "0": "Sát Thương Lần 2 (buff C4)",
+      "1": "Sát Thương Lần 3 (buff C4)"
+    }
+  },
+  "char_Diona": {
+    "skillDuration": "Thời gian khiên với mỗi Móng Mèo",
+    "holdShield": "Lượng sát thương khiên hấp thụ khi nhấn giữ",
+    "a1shielded": "Nhân vật được bảo vệ bởi khiên <strong>Móng Mèo</strong>",
+    "holdCryoShield": "Lượng sát thương Băng khiên hấp thụ khi nhấn giữ",
+    "pressShield": "Lượng sát thương Băng khiên hấp thụ khi nhấn",
+    "pressCryoShield": "Lượng sát thương Băng khiên hấp thụ khi nhấn"
+  },
+  "char_Fischl": {
+    "a1Name": "Sát thương của Quả Báo Sấm Sét khi tụ lực ngắm bắn vào Oz",
+    "a2Name": "Sát thương của Quả Báo Sấm Sét",
+    "c1Name": "Sát thương của đòn hỗ trợ",
+    "c4AoeDmg": "Sát thương phạm vi thêm",
+    "c6OzDmg": "Sát thương đòn tấn công cùng"
+  },
+  "char_Ganyu": {
+    "a1": {
+      "condName": "Sau khi bắn Cung Sương Hoa",
+      "critRateInc": "Tỷ lệ bạo kích cộng thêm cho Cung Sương Hoa"
+    },
+    "c1": {
+      "condName": "Kẻ địch đã bị Cung Sương Hoa hoặc Sương Giá Tung Bay đánh trúng"
+    },
+    "c4": {
+      "lingerDuration": "Thời gian hiệu quả duy trì sau khi rời khu vực"
+    }
+  },
+  "char_HuTao": {
+    "paramita": {
+      "enter": "Trong trạng thái <strong>Bỉ Ngạn Điệp Vũ</strong>",
+      "end": "Sau khi trạng thái <strong>Bỉ Ngạn Điệp Vũ</strong> kết thúc"
+    },
+    "constellation2": {
+      "applyBloodBlossom": "Áp dụng hiệu quả <strong>Huyết Mai Hương</strong>"
+    },
+    "constellation4": {
+      "condName": "Sau khi đánh bại kẻ địch chịu hiệu quả <strong>Huyết Mai Hương</strong>"
+    },
+    "constellation6": {
+      "condName": "Sau khi HP giảm xuống dưới 25% hoặc chịu đòn chí tử"
+    }
+  },
+  "char_Jean": {
+    "c1CondName": "Nhấn giữ kỹ năng trong hơn 1s",
+    "c1PullSpeed": "Tăng tốc độ kéo"
+  },
+  "char_Kaeya": {
+    "c2burstDuration": "15s + 2,5s với mỗi kẻ địch đánh bại, tối đa +15s"
+  },
+  "char_Keqing": {
+    "c1DMG": "Sát thương của Sấm Sét Trừng Phạt",
+    "recast": "Sau khi thi triển <strong>Tinh Đẩu Quy Vị</strong> lần nữa"
+  },
+  "char_Klee": {
+    "a1CondName": "Có Hoa Tia Lửa",
+    "a1CondName2": "Lần trọng kích tiếp theo không tiêu hao thể lực",
+    "c2CondName": "Địch đã chịu đòn từ Quỷ Lôi của <strong>Bom Nảy</strong>",
+    "c6CondName": "Sau khi thi triển Tia Lửa Mãnh Liệt"
+  },
+  "char_Lisa": {
+    "a4C": "Địch đã chịu đòn của <strong>Tường Vi Sấm Sét</strong>",
+    "c2C": "Nhấn Giữ <strong>Sấm Giội</strong>"
+  },
+  "char_Mona": {
+    "omen": "Địch chịu ảnh hưởng của Điềm Xấu",
+    "hitOp": {
+      "affectedByOmen": "Sau khi tấn công kẻ địch chịu ảnh hưởng của Điềm Xấu"
+    },
+    "frozenDuration": "Tăng thời gian <shattered>Đóng Băng</shattered>",
+    "uponSprint": "Sau khi vào trạng thái Dòng Chảy Ảo"
+  },
+  "char_Ningguang": {
+    "aoeGems": "Tấn công thường sẽ gây sát thương phạm vi",
+    "starJadeStaminaCost": "Khi có Tinh Thạch, trọng kích của Ningguang sẽ không tiêu hao thể lực",
+    "skillReset": "Làm mới CD khi Vách Toàn Cơ vỡ tan, mỗi 6s kích hoạt tối đa 1 lần",
+    "a4toggle": "Sau khi đi qua Vách Toàn Cơ",
+    "c4toggle": "Trong phạm vi 10m của Vách Toàn Cơ",
+    "c6bonus": "Số Tinh Thạch nhận được"
+  },
+  "char_Qiqi": {
+    "a1C": "Gây ra phản ứng nguyên tố khi hiệu quả <strong>Tiên Pháp - Hàn Bệnh Quỷ Sai</strong> đang có hiệu lực"
+  },
+  "char_Razor": {
+    "electroSigil": "Ấn Lôi",
+    "electroSigilAbsorbed": "Lượng năng lượng sinh ra khi xóa bỏ Ấn Lôi",
+    "opHitWithClawAndThunder": "Địch đã chịu đòn của <strong>Vuốt Và Sấm</strong> (nhấn)",
+    "electroSigilPerProc": "Ấn Lôi nhận được mỗi khi sét đánh",
+    "soulCompanion": {
+      "1": "Sát thương lần 1 của Sói",
+      "2": "Sát thương lần 2 của Sói",
+      "3": "Sát thương lần 3 của Sói",
+      "4": "Sát thương lần 4 của Sói"
+    }
+  },
+  "char_Sayu": {
+    "burstHits": "Số lần hành động của Muji-Muji Daruma",
+    "p2Heal": "Lượng trị liệu cho nhân vật ở gần",
+    "c1Text": "Muji-Muji Daruma sẽ bỏ qua hạn chế HP, có thể cùng lúc tấn công kẻ địch và hồi HP cho nhân vật",
+    "c2KickPressDmg_": "Tăng sát thương nhấn của Cú Đá Lốc Xoáy",
+    "c2KickDmg_": "Tăng sát thương Cú Đá Lốc Xoáy",
+    "c2Cond": "Thời gian trong trạng thái <strong>Bánh Xe Gió Fuufuu</strong>",
+    "c6DarumaDmgInc": "Lượng sát thương thêm của Muji-Muji Daruma",
+    "c6DarumaHealInc": "Lượng trị liệu thêm của Muji-Muji Daruma"
+  },
+  "char_Shenhe": {
+    "quill": "Băng Linh có hiệu lực",
+    "c4": "Số tầng Sương Tiêu Quyết tiêu hao",
+    "pressQuota": "Giới hạn kích hoạt khi nhấn",
+    "holdQuota": "Giới hạn kích hoạt khi nhấn giữ",
+    "pressDuration": "Thời gian tồn tại khi nhấn",
+    "holdDuration": "Thời gian tồn tại khi nhấn giữ"
+  },
+  "char_Thoma": {
+    "a2": "Lượng sát thương thêm của Lửa Đỏ Công Phá",
+    "c2": "Tăng thời gian duy trì <strong>Chiến Giáp Rực Cháy</strong>",
+    "refreshBarrier": "Sau khi nhận hoặc làm mới <strong>Khiên Lửa Hộ Mệnh</strong>"
+  },
+  "char_Xiangling": {
+    "afterChili": "Sau khi nhặt quả ớt Guoba để lại",
+    "explosionDMG": "Sát thương nổ",
+    "afterGuobaHit": "Địch đã chịu đòn của Guoba",
+    "duringPyronado": "Bánh Xe Lửa có hiệu lực",
+    "c6Exception": "Hiệu quả này không ảnh hưởng đến <pyro>Sát Thương Chém Lần 1</pyro>, <pyro>Sát Thương Chém Lần 2</pyro> hay <pyro>Sát Thương Bánh Xe Lửa</pyro>"
+  },
+  "char_Xiao": {
+    "burst": {
+      "lifeDrain_": "Mất HP",
+      "currentHPPerSec": "(HP hiện tại/giây)",
+      "incJump": "Tăng khả năng nhảy",
+      "inBurst": "<strong>Vũ Điệu Trừ Yêu</strong> có hiệu lực",
+      "stack": "Thời gian trong trạng thái <strong>Vũ Điệu Trừ Yêu</strong>"
+    },
+    "skillStack": "Số lần đã thi triển <strong>Đôi Bánh Xe Gió</strong>"
+  },
+  "char_Xingqiu": {
+    "skillCond": "Được bảo vệ bởi Vũ Liêm Kiếm",
+    "burstCond": "Kiếm Cầu Vồng có hiệu lực",
+    "c2Cond": "Địch đã chịu đòn của Mưa Kiếm"
+  },
+  "char_Xinyan": {
+    "skill": {
+      "pyroShield": {
+        "1": "Lượng sát thương Hỏa khiên Cấp 1 hấp thụ",
+        "2": "Lượng sát thương Hỏa khiên Cấp 2 hấp thụ",
+        "3": "Lượng sát thương Hỏa khiên Cấp 3 hấp thụ"
+      }
+    },
+    "p1": {
+      "desc": "Giảm yêu cầu đánh trúng của <strong>Khuấy Động Nhiệt Huyết</strong> đi 1"
+    },
+    "p2": {
+      "activeShield": "Nhân vật mang khiên của <strong>Khuấy Động Nhiệt Huyết</strong>"
+    },
+    "c2": {
+      "key_": "Tăng tỷ lệ bạo của sát thương vật lý do <strong>Cung Đàn Ngỗ Ngược</strong> gây ra",
+      "shield": "Hình thành lớp Khiên Cấp 3 - Vũ Điệu Tiết Tấu khi thi triển"
+    },
+    "c4": {
+      "swingHit": "Địch đã chịu <pyro>Sát Thương Chém</pyro>"
+    },
+    "c6": {
+      "duringCharge": "Trong khi thi triển Trọng Kích"
+    }
+  },
+  "char_YaeMiko": {
+    "c4": "Địch đã bị <strong>Sesshou Sakura</strong> giáng sét",
+    "c6": "Lượng phòng ngự Sesshou Sakura bỏ qua"
+  },
+  "char_Yanfei": {
+    "seals": ["0 ấn", "1 ấn", "2 ấn", "3 ấn", "4 ấn"],
+    "perSeal": "(với mỗi ấn)",
+    "maxSeals": "Giới hạn Đan Ấn Hỏa tăng thêm",
+    "charged": {
+      "0": "Sát thương với 0 ấn",
+      "1": "Sát thương với 1 ấn",
+      "2": "Sát thương với 2 ấn",
+      "3": "Sát thương với 3 ấn",
+      "4": "Sát thương với 4 ấn"
+    },
+    "burst": {
+      "grantMax": "Nhận tối đa số lượng Đan Hỏa Ấn có thể sở hữu"
+    },
+    "passive1": {
+      "sealsConsumed": "Số ấn trọng kích tiêu hao"
+    },
+    "passive2": {
+      "key": "Sát thương của Pháp Thú Chước Nhãn"
+    },
+    "c1": {
+      "sealChargedStam_": "Giảm thể lực trọng kích tiêu hao"
+    },
+    "c6": {
+      "maxSealInc": "Số lượng Đan Hỏa Ấn tối đa"
+    }
+  },
+  "char_YunJin": {
+    "burst": "Phi Vân Kỳ Trận có hiệu lực",
+    "a4Inc_": "Lượng tăng thêm dựa vào loại nguyên tố trong đội",
+    "c4": "Sau khi kích hoạt phản ứng Kết Tinh"
+  },
+  "char_Zhongli": {
+    "skill": {
+      "stele": "Sát thương Vách Đá",
+      "resonance": "Sát thương Cộng Hưởng",
+      "maxStele": "Giới hạn Vách Đá tồn tại",
+      "nearShield": "Địch đang đứng gần <strong>Khiên Ngọc</strong>"
+    },
+    "p1cond": "Sau khi <strong>Khiên Ngọc</strong> chịu sát thương",
+    "c6heal": "Lượng hồi phục tối đa"
+  },
+  "weapon_AlleyHunter": {
+    "condName": "Thời gian ở ngoài sân"
+  },
+  "weapon_AmosBow": {
+    "condName": "Thời gian tên bay"
+  },
+  "weapon_BlackTassel": {
+    "condName": "Kẻ địch là Slime"
+  },
+  "weapon_Deathmatch": {
+    "condName": "Số kẻ địch ở gần"
+  },
+  "weapon_DragonspineSpear": {
+    "aoeDmg": "Sát thương Đá Vĩnh Hằng",
+    "cryoAffectedDmg": "Sát thương trên kẻ địch chịu ấn <cryo>Băng</cryo>"
+  },
+  "weapon_FerrousShadow": {
+    "condName": "HP đạt ngưỡng",
+    "resistance": "Tăng kháng gián đoạn khi trọng kích"
+  },
+  "weapon_FreedomSworn": {
+    "sigilsConsumed": "Sau khi tiêu hao Lá Bùa Phấn Khởi"
+  },
+  "weapon_Frostbearer": {
+    "aoeDmg": "Sát thương Đá Vĩnh Hằng",
+    "cryoAffectedDmg": "Sát thương trên kẻ địch chịu ấn <cryo>Băng</cryo>"
+  },
+  "weapon_Hamayumi": {
+    "condName": "Năng lượng nguyên tố đạt 100%"
+  },
+  "weapon_MemoryOfDust": {
+    "atkEffInc": "Tăng hiệu quả tăng tấn công"
+  },
+  "weapon_PolarStar": {
+    "condName": "Ngôi Sao Đêm Trắng"
+  },
+  "weapon_SerpentSpine": {
+    "takeMoreDmg": "Lượng sát thương phải chịu tăng"
+  },
+  "weapon_Slingshot": {
+    "condName": "Mũi tên bắn trúng địch",
+    "less": "0,3s sau khi bắn",
+    "more": "Sau khi bắn được 0,3s"
+  },
+  "weapon_SnowTombedStarsilver": {
+    "aoeDmg": "Sát thương Đá Vĩnh Hằng",
+    "cryoAffectedDmg": "Sát thương trên kẻ địch chịu ấn <cryo>Băng</cryo>"
+  },
+  "weapon_SummitShaper": {
+    "atkEffInc": "Tăng hiệu quả tăng tấn công"
+  },
+  "weapon_TheAlleyFlash": {
+    "condName": "Không chịu sát thương"
+  },
+  "weapon_TheUnforged": {
+    "atkEffInc": "Tăng hiệu quả tăng tấn công"
+  },
+  "weapon_TheWidsith": {
+    "aria": "Điệp Khúc",
+    "interlude": "Khúc Nhạc Ngắn",
+    "recitative": "Nhạc Dạo"
+  },
+  "weapon_ThunderingPulse": {
+    "condName": "Vết Cắt Sấm Sét"
+  },
+  "weapon_VortexVanquisher": {
+    "atkEffInc": "Tăng hiệu quả tăng tấn công"
+  },
+  "artifact_EchoesOfAnOffering": {
+    "mode": "Xác suất kích hoạt",
+    "avg": "Trung bình",
+    "always": "Luôn luôn"
+  },
+  "char_KamisatoAyato": {
+    "skill": {
+      "unableToAuto": "Không thể sử dụng trọng kích hoặc tấn công khi đáp",
+      "namisenStacks": "Namisen",
+      "shun_dmgInc": "<hydro>Lượng sát thương tăng cho Shunsuiken</hydro>"
+    },
+    "passive1": {
+      "afterUse": "Số tầng Namisen nhận sau khi dùng kỹ năng",
+      "afterExplode": "Số tầng Namisen nhận sau khi Thủy Ảnh phát nổ"
+    },
+    "c1": {
+      "shun_dmg_": "<hydro>Tăng sát thương Shunsuiken</hydro>"
+    },
+    "c2": {
+      "addlStacks": "Tăng giới hạn số tầng Namisen"
+    },
+    "c6": {
+      "dmg": "Sát thương Ngọn Nguồn Bất Tận"
+    }
+  },
+  "char_KukiShinobu": {
+    "a4": {
+      "heal": "Lượng tăng trị liệu kỹ năng nguyên tố"
+    },
+    "c4": {
+      "dmg": "Sát thương Lôi Thảo Ấn"
+    }
+  },
+  "char_Yelan": {
+    "c2": {
+      "dmg": "Sát thương mũi tên nước hỗ trợ"
+    },
+    "c4": {
+      "condName": "Kẻ địch bị đánh dấu bởi Lạc Mệnh Tơ"
+    },
+    "c6": {
+      "dmg": "Sát thương Mũi Tên Phá Trận"
     }
   },
   "page_character": {
+    "addNew": "Thêm nhân vật",
+    "tabs": {
+      "overview": "Tổng quan",
+      "talent": "Thiên Phú",
+      "optimize": "Tối Ưu",
+      "theorycraft": "Theorycraft",
+      "upopt": "Trình Nâng Cấp TDV"
+    },
+    "formulas": "Công thức",
+    "calculations": "Tính toán",
+    "selectCharacter": "Chọn nhân vật",
+    "removeCharacter": "Chắc chắn xóa {{value}} chứ? Việc này cũng sẽ xóa tất cả dữ liệu như trang bị và tối ưu đa mục tiêu, cũng như xóa nhân vật này khỏi các đội hình liên quan.",
+    "delete": "Xóa nhân vật",
+    "teammates": "Đồng đội",
+    "hitmode": {
+      "hit": "ST Không Bạo",
+      "avgHit": "ST T.Bình",
+      "critHit": "ST Đòn Bạo",
+      "global": "Tuân theo quy tắc chung"
+    },
     "tabEquip": {
       "swapWeapon": "Đổi vũ khí",
       "swapArt": "Đổi thánh di vật",
-      "compare": "So sánh với bộ tdv hiện tại"
+      "compare": "So sánh với build hiện tại",
+      "unequipArts": "Gỡ toàn bộ thánh di vật"
     },
-    "characterName": "Tên nhân vật"
+    "characterName": "Tên nhân vật",
+    "teammate": "Đồng đội {{count}}",
+    "noReaction": "Không phản ứng",
+    "multiTarget": {
+      "title": "Cấu hình tối ưu đa mục tiêu",
+      "addNewTarget": "Thêm mục tiêu",
+      "addNewMTarget": "Tạo mục tối ưu đa mục tiêu",
+      "info1": "Ghi chú: Bạn có thể tìm mục tiêu tối ưu đa mục tiêu được tạo bởi cộng đồng ở trong <1>Discord của GO<1/> hoặc trang <3>hướng dẫn về tối ưu đa mục tiêu của KQM</3>, tuy nhiên tính hiệu lực của những cấu hình đó sẽ không thể được đảm bảo.",
+      "info2": "Người dùng có trách nhiệm đảm bảo rằng các thiết lập đã phản ánh chính xác cách sử dụng của bản thân.",
+      "description": "Mô tả",
+      "duplicate": "Trùng lặp",
+      "target_other": "<0>{{count}}</0> Mục Tiêu",
+      "jsonDescWarning": "Có vẻ bạn đang muốn nhập vào cấu hình tối ưu đa mục tiêu. Vào nhầm chỗ rồi! Hãy quay lại một đề mục và nhấn vào <strong>Import Multi-Opt</strong>."
+    },
+    "addStats": {
+      "title": "Thuộc tính thêm",
+      "info": "Bạn có thể dùng mục này để thêm buff/hiệu ứng xấu mà GO không hỗ trợ như buff món ăn, chúc phúc La Hoàn, Siêu Dẫn, v.v.. Xem <1>wiki Genshin Impact</1> để biết thông số cụ thể.",
+      "label": "Thuộc tính thêm mới"
+    },
+    "tabTheorycraft": {
+      "maxTotalRolls": "Build hiện tại chỉ có thể có tối đa <strong>{{value}}</strong> lần nhảy.",
+      "maxRolls": "Dòng phụ này có thể được nhảy tối đa 30 lần.",
+      "maxRollsMain": "Do có ít nhất một dòng chính trùng thuộc tính, dòng này có thể được nhảy tối đa {{value}} lần.",
+      "distribute": "Phân Phối",
+      "compareToggle": {
+        "equipped": "So sánh với hiện tại",
+        "tc": "Hiện chỉ số TC"
+      },
+      "resetDialog": {
+        "title": "Thiết lập lại cấu hình build TC?",
+        "content": "Việc này sẽ xóa cấu hình build TC hiện tại mà bạn đang có."
+      },
+      "copyDialog": {
+        "copyBtn": "Sao chép từ đã trang bị",
+        "title": "Sao chép dữ liệu từ thánh di vật và vũ khí đã trang bị?",
+        "content": "Việc này sẽ xóa cấu hình build TC hiện tại mà bạn đang có, kèm theo dữ liệu từ build đã trang bị."
+      },
+      "kqmsDialog": {
+        "kqmsBtn": "Dùng của KQM",
+        "title": "Dùng của KQM?",
+        "content": "Việc này sẽ thay thế <strong>thiết lập dòng phụ</strong>của bạn với thiết lập tuân theo <5>quy chuẩn của KQM</5>"
+      },
+      "gcsimDialog": {
+        "title": "Xuất ra gcsim",
+        "content": "Sao chép đoạn code phía dưới để nhập build này vào <2>gcsim</2>.",
+        "copied": "Đã sao chép cấu hình gcsim vào bộ nhớ tạm."
+      },
+      "all": {
+        "rolls": "Set hết lần nhảy",
+        "max": "Set hết tối đa"
+      },
+      "substat": {
+        "max": "Tối đa"
+      },
+      "feasibilityAlert": "Lượt phân phối substat này yêu cầu tối thiểu <strong>{{minSubLines}}</strong> lần nhảy chỉ số phụ. Cần phải chỉ định <strong>{{minOtherRolls}}</strong> lần nhảy cho các dòng phụ khác để hướng đi này khả thi.",
+      "optAlert": {
+        "scalesWith": "Mục tiêu Tối Ưu và yêu cầu tối thiểu đã chọn sẽ phụ thuộc vào: ",
+        "distribute": ". Thuật toán sẽ chỉ phân phối chỉ số cho các dòng phụ được nêu.",
+        "feasibilty": "Có thể sẽ có một số lần nhảy chỉ số thừa ra được phân phối cho các thuộc tính không phụ thuộc để hướng đi này khả thi."
+      }
+    },
+    "tabTeambuff": {
+      "team_reso": "Cộng Hưởng Đội",
+      "resonance_tip": "Đội phải đủ 4 nhân vật để Cộng Hưởng Nguyên Tố có hiệu lực."
+    },
+    "showingNum_other": "Đang hiện <1>{{count}}</1> trên tổng số {{value}} Nhân Vật",
+    "noLoadout": "Có vẻ bạn vẫn chưa thêm bất kỳ bộ trang bị/Đội nào có nhân vật này. Bạn cần phải tạo một bộ trang bị+đội với nhân vật này để có thể <strong>tạo build</strong>, <strong>theorycraft</strong> hay <strong>tối ưu</strong>",
+    "teammateUsing": {
+      "weapon": "Đồng đội <strong><1></1></strong> đang dùng vũ khí này.",
+      "artifact": "Đồng đội <strong><1></1></strong> đang dùng <3></3>"
+    }
   },
   "page_weapon": {
     "edit": "Điều chỉnh Vũ khí",
     "weaponName": "Tên vũ khí",
-    "removeWeapon": "Bạn có chắc bạn muốn xóa {{value}}?",
-    "addWeapon": "Thêm Vũ khí mới"
+    "removeWeapon": "Xác nhận xóa {{value}}?",
+    "addWeapon": "Thêm vũ khí mới",
+    "showingNum_other": "Đang hiện <1>{{count}}</1> trên tổng số {{value}} Vũ Khí",
+    "cantDeleteLock": "Không thể xóa vũ khí do đã bị khóa",
+    "button": {
+      "deleteWeapons": "Xóa Vũ Khí",
+      "lockWeapons": "Khóa Vũ Khí",
+      "unlockWeapons": "Mở Khóa Vũ Khí"
+    },
+    "buttonHint": "Lưu ý: các nút đỏ phía trên chỉ áp dụng cho các <1>vũ khí đã lọc</1>",
+    "equippedWeapon": "Tất Cả Vũ Khí Đã Trang Bị",
+    "weaponInInv": "Tất Cả Vũ Khí Chưa Trang Bị",
+    "subheadings": {
+      "general": "Tổng Quan",
+      "inventory": "Túi"
+    }
   },
   "weapon_AquaSimulacra": {
-    "condName": "Kẻ địch ở gần"
+    "condName": "Có kẻ địch ở gần"
   },
   "weapon_FadingTwilight": {
     "states": {
@@ -431,6 +1217,641 @@
     "condName": "Trạng thái hiện tại"
   },
   "weapon_HaranGeppakuFutsu": {
-    "consumed": "Tầng đã tiêu hao từ hiệu ứng \"mũi sóng\""
+    "consumed": "Số tầng Mũi Sóng tiêu hao"
+  },
+  "char_Collei": {
+    "sproutDmg": "Sát thương Lá Mới",
+    "miniAnbarDmg": "Sát thương Cuilein-Anbar Mini"
+  },
+  "char_Dori": {
+    "c2MultiplierKey_": "Bội số Pháo Trấn Linh",
+    "c2DmgKey": "Sát thương Pháo Trấn Linh",
+    "c4ConnectedBelowHp": "Nhân vật kết nối với Linh Hồn Đèn có HP thấp hơn 50%",
+    "c4ConnectedBelowEner": "Nhân vật kết nối với Linh Hồn Đèn có năng lượng nguyên tố thấp hơn 50%"
+  },
+  "char_ShikanoinHeizou": {
+    "takingField": "Sau khi ra trận"
+  },
+  "char_Tighnari": {
+    "p1Cond": "Sau khi bắn <strong>Mũi Tên Hoa</strong>",
+    "c4ReactCond": "Sau khi <strong>Mũi Tên Dây Leo</strong> kích hoạt phản ứng",
+    "c6DmgKey": "Sát thương thêm Mũi Tên Bung Tỏa",
+    "c6WreathRed": "Thời gian tụ lực <strong>Mũi Tên Hoa</strong> giảm"
+  },
+  "elementalResonance": {
+    "SprawlingGreenery": {
+      "cond2ele": "Sau khi kích hoạt <pyro>Thiêu Đốt</pyro>, <spread>Sinh Trưởng</spread> hoặc <bloom>Sum Suê</bloom>",
+      "cond3ele": "Sau khi kích hoạt <aggravate>Tăng Cường</aggravate>, <spread>Lan Tràn</spread>, <hyperbloom>Nở Rộ</hyperbloom> hoặc <burgeon>Bung Tỏa</burgeon>"
+    },
+    "EnduringRock": {
+      "hitCond": "Khi được khiên bảo hộ, gây sát thương cho địch"
+    }
+  },
+  "page_character_optimize": {
+    "mainStat": {
+      "levelAssTooltip": {
+        "title": "Giả sử cấp chỉ số chính",
+        "desc": "Giả sử chỉ số chính, coi nó có giá trị tối thiểu là giá trị ở cấp đã cho. Không ảnh hưởng đến chỉ số phụ."
+      },
+      "assumptionLvl": {
+        "no": "Không có giả sử cấp chỉ số chính",
+        "lvl": "Giả sử chỉ số chính từ Lv. {{lvl}} trở lên"
+      },
+      "title": "Lọc/Thiết Lập Dòng Chính"
+    },
+    "tcGraph": {
+      "vs": "Biểu đồ so sánh mục tiêu Tối Ưu với",
+      "notSel": "Không chọn",
+      "downloadData": "Tải dữ liệu",
+      "generatedBuilds": "Build Được Tạo",
+      "currentBuild": "Build Hiện Tại",
+      "highlightedBuilds": "Build Nổi Bật (là các build ở phía dưới)",
+      "buildAlreadyInList": "Build đã ở trong danh sách rồi"
+    },
+    "levelFilter": "Lọc cấp Thánh Di Vật",
+    "allowPartial": "Cho phép build dở (không đủ 5 món)",
+    "constraintFilter": {
+      "title": "Đặt yêu cầu tối thiểu",
+      "tooltip": "Điều chỉnh yêu cầu tối thiểu mà các build tạo ra phải thỏa mãn; ví dụ như: ít nhất 140% hiệu quả nạp."
+    },
+    "artSetConfig": {
+      "title": "Thiết lập Bộ Thánh Di Vật",
+      "setEffCond": "Hiệu quả bộ trùng nhau",
+      "enabled": "Đã bật",
+      "allowed": "Cho phép",
+      "excluded": "Loại trừ",
+      "selected": "Đã chọn",
+      "2rainbow": "Hỗn hợp 3",
+      "4rainbow": "Hỗn hợp 5",
+      "allowAll2set": "Cho phép tất cả bộ 2",
+      "excludeAll2set": "Loại trừ tất cả bộ 2",
+      "allowAll4set": "Cho phép tất cả bộ 4",
+      "excludeAll4set": "Loại trừ tất cả bộ 4",
+      "alExRainbow": "<0>Cho phép <1></1></0> / <2>Loại trừ <1></1></2> build hỗn hợp",
+      "modal": {
+        "setCond": {
+          "title": "Bộ thánh di vật trùng hiệu quả",
+          "reset": "Đặt lại điều kiện",
+          "text": "Một số bộ thánh di vật có hiệu quả kích hoạt khi thỏa điều kiện. Cửa sổ này cho phép bạn chọn các hiệu quả đó, từ đó chúng có thể đóng góp vào chỉ số khi có build thỏa mãn hiệu quả bộ được tính trong quá trình tối ưu."
+        },
+        "ArtSetFilter": {
+          "title": "Bộ Thánh Di Vật <1>Cho phép<1></1></1> / <3>Loại trừ<1></1></3>",
+          "intro": "Bạn có thể cho phép/loại trừ các bộ mà bạn muốn được cân nhắc trong quá trình tối ưu. Ở các ví dụ dưới đây, <strong>A</strong> là món đúng bộ và <strong>R</strong> là món hỗn hợp (của bộ khác)",
+          "2set": "<0><0>Loại trừ<1></1> Bộ 2</0></0> sẽ loại trừ các build dùng bộ 2: <2><0>AA</0>RRR</2> và <4><0>AAA</0>RR</4>.",
+          "4set": "<0><0>Loại trừ<1></1> Bộ 4</0></0> sẽ loại trừ các build dùng bộ 4: <2><0>AAAA</0>R</2> và <4><0>AAAAA</0></4>.",
+          "2rain": "<0><0>Loại trừ<1></1> Hỗn hợp 3</0></0> sẽ loại trừ các build dùng bộ 2 + 3 hỗn hợp: <2>AA<1>RRR</1></2> và <4>AAA<1>RR</1></4>.",
+          "4rain": "<0><0>Loại trừ<1></1> Hỗn hợp 5</0></0> sẽ loại trừ các build dùng cả 5 hỗn hợp: <2><0>RRRRR</0></2>."
+        }
+      }
+    },
+    "buildDropdownDesc": "Giảm số lượng build muốn tạo sẽ giảm thời gian tinh toán cho số lượng lớn build.",
+    "threadDropdownDesc": "Tăng số luồng sử dụng sẽ giảm thời gian tính toán nhưng sẽ dùng CPU nhiều hơn.",
+    "noArtis": "Úi! Có vẻ bạn chưa thêm món Thánh Di Vật nào cho GO! Hãy đi tới mục <1>Thánh Di Vật</1> và thêm vài món đi!",
+    "targetSelector": {
+      "selectOptTarget": "Chọn Mục Tiêu Tối Ưu",
+      "selectGraphTarget": "Chọn Mục Tiêu Biểu Đồ",
+      "invalidTarget": "MỤC TIÊU KHÔNG HỢP LỆ"
+    },
+    "selectTargetFirst": "Hãy chọn Mục Tiêu Tối Ưu trước",
+    "generateButton": {
+      "cancel": "Hủy",
+      "generateBuilds": "Tạo Build"
+    },
+    "removeBuildButton": "Xóa build",
+    "theorycraftButton": "Theorycraft",
+    "currentlyEquippedBuild": "Đang trang bị",
+    "addBuildToList": "Thêm build vào danh sách",
+    "graphBuildLabel": "Biểu đồ #<1>{{count}}</1>",
+    "excludeArt": {
+      "title_exclude": "Thánh Di Vật loại trừ",
+      "title_tooltip": "Thêm Thánh Di Vật vào danh sách loại trừ của nhân vật này. Các Thánh Di Vật trong danh sách loại trừ sẽ bị bỏ qua trong quá trình tính toán.",
+      "addExc": "Thêm Thánh Di Vật vào danh sách loại trừ của nhân vật này",
+      "selExc": "Chọn Thánh Di Vật để thêm vào danh sách loại trừ của nhân vật này",
+      "deSelectExc": "Nhấn vào Thánh Di Vật để xóa nó khỏi danh sách loại trừ",
+      "usingNum": "Đang dùng <1>{{totalStr}}</1> thánh di vật bị loại trừ",
+      "button_txt": "Loại Trừ Thánh Di Vật",
+      "excNum_other": "<0>{{count}}</0> thánh di vật loại trừ",
+      "includeArtifactButton": "Đẩy thánh di vật này vào tối ưu"
+    },
+    "excludeChar": {
+      "title": "Dùng Thánh Di Vật Đã Trang Bị",
+      "modal": {
+        "allow_all": "Cho phép lấy ở tất cả nhân vật phía dưới",
+        "disallow_All": "Không cho phép lấy ở tất cả nhân vật phía dưới"
+      },
+      "allowEquip": "Cho phép lấy Thánh Di Vật từ",
+      "chars": "Lấy của nhân vật",
+      "artis": "Thánh Di Vật đã trang bị",
+      "states": {
+        "unequippedOnly": "Chỉ dùng món chưa trang bị",
+        "customList": "Danh Sách Tùy Chọn",
+        "all": "Tất cả thánh di vật"
+      },
+      "usingState": "Dùng",
+      "usingNumTot_other": "Đang dùng <1>{{arts}}</1> thánh di vật của <3>{{count}}</3> nhân vật"
+    },
+    "buildCompleted": "Build Đã Hoàn Thành",
+    "notifyTooltip": "Phát âm thanh thông báo khi tính xong. Nếu đang không ở tab hiện tại thì sẽ hiện nhắc nhở.",
+    "bonusStats": {
+      "title": "Thuộc tính thêm"
+    },
+    "build_other": "<0>{{count}}</0> Build",
+    "thread_other": "<0>{{count}}</0> Luồng",
+    "upOptLevelFilter": "Bộ Lọc Nâng Cấp Thánh Di Vật",
+    "upOptLevelFilterTooltip": "Bọ lọc cấp độ này không liên quan với cấu hình Tối Ưu.",
+    "upOptEmptyBuild": "Bạn đang sử dụng một build không hoàn thiện. Do trình Nâng Cấp Thánh Di Vật chỉ lần lượt tráo thánh di vật nên việc hoàn thành một bộ là việc khó mà thực hiện. Đề xuất bạn nên bắt đầu từ một build nền tảng trước, có thể được tạo từ trình Tối Ưu chính.",
+    "targetSelectorTitle": "Chọn Mục Tiêu",
+    "compareArtModal": {
+      "newArt": "Thánh Di Vật Mới",
+      "oldArt": "Thánh Di Vật Cũ",
+      "tcArt": "Thánh Di Vật TC"
+    }
+  },
+  "weapon_ForestRegalia": {
+    "condName": "Sau khi nhặt Lá Tri Thức"
+  },
+  "weapon_FruitOfFulfillment": {
+    "stackName": "HIệu quả Doanh Khuyết"
+  },
+  "weapon_Moonpiercer": {
+    "condName": "Sau khi nhặt Lá Phục Sinh"
+  },
+  "weapon_SapwoodBlade": {
+    "condName": "Sau khi nhặt Lá Tri Thức"
+  },
+  "char_TravelerAnemo": {
+    "p1": "Sát thương Kiếm Gió Lốc",
+    "c6": "Địch đã trúng đòn <strong>Khuấy Động Gió Tàn</strong>",
+    "c4": "Giảm sát thương phải chịu khi thi triển",
+    "initialEleDmg": "Sát thương Cắt Chuyển Hóa Ban Đầu",
+    "maxEleDmg": "Sát thương Cắt Chuyển Hóa Lớn Nhất",
+    "stormEleDmg": "Sát thương Bạo Phong Chuyển Hóa Ban Đầu",
+    "stormEleMaxDmg": "Sát thương Bạo Phong Chuyển Hóa Lớn Nhất"
+  },
+  "char_TravelerElectro": {
+    "skill": {
+      "amuletGenAmt": "Số Khuyết Ngọc Dậy Sóng tạo ra",
+      "absorb": "Sau khi hấp thụ Khuyết Ngọc Dậy Sóng",
+      "enerRest": {
+        "none": "Lượng hồi Năng Lượng với mỗi Ngọc",
+        "over35": "Lượng hồi Năng Lượng với mỗi Ngọc (năng lượng trên 35%)",
+        "under35": "Lượng hồi Năng Lượng với mỗi Ngọc (năng lượng dưới 35%)"
+      }
+    },
+    "burst": {
+      "3rd": "Sát thương Sấm Sét Uy Vũ thứ 3",
+      "thunderCd": "Thời gian chờ Sấm Sét Uy Vũ"
+    },
+    "passive2": {
+      "enerRech_": "Hiệu Quả Nạp Nguyên Tố nhận thêm từ Khuyết Ngọc Dậy Sóng"
+    },
+    "c2": {
+      "thunderHit": "Địch đã trúng đòn <Strong>Sấm Sét Uy Vũ</strong>"
+    }
+  },
+  "char_TravelerGeo": {
+    "passive2": {
+      "key": "Sát thương sụp đổ"
+    },
+    "c2": {
+      "key": "Sát thương Dung Nham Bất Ổn"
+    }
+  },
+  "page_newTab": {
+    "title": "🛑 Phát hiện tab GO mới 🛑",
+    "p1": "Hệ thống đã phát hiện bạn vừa mở Genshin Optimizer trong một tab khác 💞. Trang web này không được thiết kế để sử dụng cùng lúc trên các tab khác nhau 📵! Việc này có thể sẽ gây:",
+    "symptom": {
+      "1": "Dữ liệu không đồng nhất giữa các tab 🙃",
+      "2": "Làm hỏng cơ sở dữ liệu 💔",
+      "3": "Đau bụng 🤰 và khiến các nhà phát triển GO cực kỳ nhức đầu 😡",
+      "4": "Trong trường hợp hiếm gặp, TỬ VONG ☠️"
+    },
+    "p2": "Chúng tôi đã ngăn chặn các hành động trên, thay vào đó bạn đã thấy tin nhắn này 📝. Giờ bạn có thể:",
+    "choice": {
+      "1": "Đóng tab này 🔪 và chuyển qua dùng tab mới 🆕",
+      "2": "Đóng tab mới mở ↩️ và chỉ sau khi bạn chắc chắn rằng đây là tab GO DUY NHẤT còn đang mở 🔂, ấn tải lại trang này 🔄"
+    },
+    "refresh": "Tải lại trang"
+  },
+  "char_Candace": {
+    "hydroInfusion": "<hydro>Đính kèm nguyên tố Thủy lên Kiếm Đơn, Trọng Kiếm và Vũ Khí Cán Dài</hydro>"
+  },
+  "char_Cyno": {
+    "p1Dmg": "Sát thương Tia Sét Xuyên Thấu",
+    "judication": "Kích hoạt hiệu quả Phán Quyết",
+    "burstNormalDmgInc": "Lượng tăng ST Tấn Công Thường từ Sứ Giả Dẫn Lối",
+    "boltDmgInc": "Lượng tăng sát thương Tia Sét Xuyên Thấu",
+    "duringBurst": "Trong trạng thái <strong>Sứ Giả Dẫn Lối</strong>",
+    "afterBurstOrJudication": "Sau khi thi triển <strong>Nghi Thức Thần Thánh - Nhanh Như Sói</strong> hoặc kích hoạt hiệu quả Phán Quyết",
+    "a1soulfarer_dmg_": "Tăng sát thương Dẫn Hồn Đáy Vực"
+  },
+  "char_Nilou": {
+    "skill": {
+      "dance1": "Sát thương Vũ Điệu Bão Kiếm lần 1",
+      "dance2": "Sát thương Vũ Điệu Bão Kiếm lần 2",
+      "whirl1": "Sát thương Vũ Điệu Xoay Vòng lần 1",
+      "whirl2": "Sát thương Vũ Điệu Xoay Vòng lần 2",
+      "wheel": "Sát thương Thủy Luân",
+      "illusion": "Sát thương Thủy Nguyệt"
+    },
+    "passive1": {
+      "underChaliceEffect": "Phước Lành Ly Vàng có hiệu lực",
+      "notDendroHydroTeam": "Nhắc nhở: thiết lập đội của bạn với chỉ nhân vật nguyên tố Thảo và Thủy để xem thêm các điều kiện và hiệu quả",
+      "condName": "Sau khi chịu <dendro>sát thương nguyên tố Thảo</dendro> trong lúc Phước Lành Ly Vàng có hiệu lực",
+      "bountifulCores": "Phản ứng Sum Suê sẽ tạo ra Hạt Nhân Căng Tràn"
+    },
+    "c4": {
+      "condName": "Sau khi vũ điệu thứ ba đánh trúng kẻ địch"
+    },
+    "c1": {
+      "illusion_dmg_": "Tăng sát thương Thủy Nguyệt"
+    }
+  },
+  "char_Nahida": {
+    "karmaDmg_": "Tăng sát thương Diệt Tịnh Tam Nghiệp",
+    "karmaCritRate_": "Tăng Tỷ Lệ Bạo Kích cho Diệt Tịnh Tam Nghiệp",
+    "karmaIntervalDec": "Giãn cách kích hoạt Diệt Tịnh Tam Nghiệp giảm",
+    "noBurstEffect": "Nhắc nhở: Không có hiệu quả nào của Kỹ Năng Nộ có hiệu lực. Hãy bật C1 và/hoặc thêm nhân vật nguyên tố <pyro>Hỏa</pyro>, <electro>Lôi</electro> và/hoặc <hydro>Thủy</hydro> vào đội.",
+    "partyInBurst": "Đội đang đứng trong phạm vi kỹ năng",
+    "c1Key": "Số nhân vật nguyên tố <pyro>Hỏa</pyro>, <electro>Lôi</electro> và <hydro>Thủy</hydro> được tính thêm cho hiệu quả của <strong>Cung Điện Maya</strong>",
+    "c2": {
+      "bloomCondName": "Địch bị đánh dấu bởi <strong>Hạt Giống Skandha</strong>",
+      "qasCondName": "Sau khi kích hoạt phản ứng <spread>Sinh Trưởng</spread>, <aggravate>Tăng Cường</aggravate> hoặc <spread>Lan Tràn</spread> lên kẻ địch bị đánh dấu bởi Hạt Giống Skandha"
+    },
+    "c4CondName": "Số kẻ địch bị ảnh hưởng bởi <strong>Hạt Giống Skandha</strong>",
+    "c6KarmicDmg": "Sát thương Giải Nghiệp"
+  },
+  "artifact_FlowerOfParadiseLost": {
+    "condName": "Sau khi kích hoạt Sum Suê, Nở Rộ hoặc Bung Tỏa"
+  },
+  "char_Faruzan": {
+    "giftCondName": "Trong hiệu ứng Ngọn Gió Cầu Phúc",
+    "a4CondName": "Bảo Hộ Gió Gầm có hiệu lực",
+    "c2DurationInc": "Thời gian tồn tại Khối Đa Diện Sáng Chói tăng",
+    "c6Arrow": "Áp dụng Áp Suất Sụp Đổ khi gây sát thương",
+    "baleCondName": "Địch chịu ảnh hưởng của Ngọn Gió Tai Họa"
+  },
+  "char_Layla": {
+    "starDmgInc": "Sát thương cộng thêm Sao Bay",
+    "c1ShieldBonusKey_": "Hiệu quả Thành Trì Ngủ Ngon",
+    "c4CondKey": "Ngôi Sao Hừng Đông có hiệu lực",
+    "starDmg_": "Tăng sát thương Sao Bay",
+    "slugDmg_": "Tăng sát thương Đạn Ánh Sao",
+    "starInterval_": "Thời gian giãn cách tạo ra Sao Đêm"
+  },
+  "char_Wanderer": {
+    "windfavoredState": "Trong trạng thái <strong>Tựa Gió Bay Cao</strong>",
+    "p1": {
+      "pyroCondName": "<strong>Hanega - Hùng Ca Gió Thoảng</strong> tiếp xúc với <pyro>nguyên tố Hỏa</pyro>",
+      "cryoCondName": "<strong>Hanega - Hùng Ca Gió Thoảng</strong> tiếp xúc với <cryo>nguyên tố Băng</cryo>"
+    },
+    "p2Dmg": "Sát thương mũi tên gió",
+    "c1BonusKey": "Lượng tăng bội số sát thương của mũi tên gió",
+    "c2CondName": "Cách biệt giữa Ngự Không Lực tối đa và hiện tại",
+    "c6Key": "Bội số Lời Chúc - Màn Sương Nghiêng Gió Rừng"
+  },
+  "weapon_ToukabouShigure": {
+    "condName": "Địch đang chịu trạng thái Dù Giấy Tác Quái"
+  },
+  "char_Alhaitham": {
+    "withMirrors": "Đang có Trác Quang Kính",
+    "debateStacks": "Sau khi sản sinh Trác Quang Kính",
+    "mirrorsConsumed": "Số Kính tiêu hao sau khi thi triển <strong>Khu Vực - Xiềng Xích Cảnh Tượng</strong>",
+    "projectionAttack_dmg_": "Tăng sát thương Ánh Sáng Xung Kích",
+    "excessMirror": "Sinh ra Trác Quang Kính sau khi đạt giới hạn số lượng tồn tại",
+    "projectionDmg": "Sát thương Ánh Sáng Xung Kích"
+  },
+  "char_Yaoyao": {
+    "inExplosionAoE": "Sau khi đứng trong phạm vi nổ của <strong>Củ Cải Bạch Ngọc</strong>",
+    "inLegacy": "Trong trạng thái Kế Thừa Tiên Nhân",
+    "megaDmg": "Sát thương Củ Cải Siêu Khủng Khiếp",
+    "megaHeal": "Củ Cải Siêu Khủng Khiếp trị liệu"
+  },
+  "page_error": {
+    "title": "🛑 Đã xảy ra lỗi bất ngờ 🛑",
+    "p1.1": "Một lỗi bất ngờ đã xảy ra. Việc này thường là lỗi do phía chúng tôi, vậy nên hãy giúp chúng tôi giúp bạn!",
+    "p1.2": "Bạn có thể thử một số việc dưới đây:",
+    "fixes": {
+      "1": "Tải lại trang",
+      "2": "Tắt phần mở rộng trên trình duyệt và tải lại trang lần nữa",
+      "3": "Tải CSDL của bạn ở phía dưới về. Sau đó chọn 'Xóa TẤT CẢ dữ liệu trên GO' và tải lên lại tập tin CSDL của bạn"
+    },
+    "p2": "Nếu các việc trên đều không có tác dụng, hãy gửi báo cáo cho chúng tôi qua trang Issues của GitHub hoặc kênh Bug Reports trong máy chủ Discord",
+    "report": {
+      "1": "Tải về CSDL của bạn ở dưới đây",
+      "2": "Sao chép văn bản báo cáo ở hộp phía dưới",
+      "3": "Nhấn <1>vào đây</1> để mở trang báo lỗi GitHub. Dán văn bản vào phần mô tả (description), ghi lại những việc bạn làm trước khi xảy ra lỗi và đính kèm tập tin JSON của bạn (bạn có thể sẽ phải đổi tên lại tập tin để nó có đuôi '.txt')",
+      "4": "Hoặc nhấn <1>vào đây</1> để gửi báo cáo trong Discord. Mở kênh #🐛bug-reports, tạo một chủ đề mới và dán văn bản vào phần tín nhắn. ghi lại những việc bạn làm trước khi xảy ra lỗi và đính kèm tập tin JSON."
+    },
+    "refresh": "Tải lại trang",
+    "caption": "Trực tiếp tại hiện trường: đội ngũ kỹ sư đang điều tra vấn đề",
+    "confirmNuke": "Chắc chắn xóa TẤT CẢ dữ liệu trên GO? Hành động này không thể được hoàn tác!",
+    "finishNuke": "Đã tẩy sạch dữ liệu trên GO. Chuẩn bị tải lại trang.",
+    "nuke": "Xóa TẤT CẢ dữ liệu trên GO"
+  },
+  "char_Dehya": {
+    "inFieldAndTakeDmg": "Nhân vật đứng sân nhận sát thương trong phạm vi Thánh Địa Sôi Trào",
+    "field_dmg_": "Tăng sát thương Thánh Địa Sôi Trào",
+    "initialHeal": "Lượng trị liệu ban đầu",
+    "dotHeal": "Lượng trị liệu theo sau",
+    "critHitDuringBurst": "Sau khi Nắm Đấm Lửa gây đòn bạo kích"
+  },
+  "char_Mika": {
+    "inSoulwind": "Trong trạng thái Gió Linh Hồn",
+    "numDetectorStacks": "Do Thám",
+    "incDetectorStacks": "Tăng giới hạn số tầng Do Thám"
+  },
+  "weapon_MailedFlower": {
+    "condName": "Sau khi Kỹ Năng Nguyên Tố đánh trúng kẻ địch hoặc kích hoạt phản ứng nguyên tố"
+  },
+  "artifact_NymphsDream": {
+    "condName": "Thủy Tiên Trong Kính"
+  },
+  "char_Somnia": {
+    "name": "Somnia",
+    "c1Key": "Bội số sát thương Tấn Công Thường và Trọng Kích"
+  },
+  "char_Baizhu": {
+    "seamlessDendro": "Lượng sát thương Thảo khiên Vô Khích Khí Thuẫn hấp thụ",
+    "a4Cond": "Mộc Vận Chi Tuế có hiệu lực",
+    "c2Dmg": "Sát thương Linh Hồn Tơ - Nối",
+    "c2Heal": "Lượng trị liệu Linh Hồn Tơ - Nối"
+  },
+  "char_Kaveh": {
+    "c6Dmg": "Sát thương Vòng Sáng Pairidaeza"
+  },
+  "char_Kirara": {
+    "extraCardamom": "Số Đậu Khấu Cỏ Mèo sinh ra thêm",
+    "c4Dmg": "Sát thương Đậu Khấu Cỏ Mèo hỗ trợ"
+  },
+  "weapon_CalamityQueller": {
+    "effectName": "Viên Đột",
+    "active": "Bội số khi đứng sân",
+    "inactive": "Bội số khi không đứng sân"
+  },
+  "weapon_JadefallsSplendor": {
+    "condName": "Ngọc Định Thổ có hiệu lực"
+  },
+  "artifact_GildedDreams": {
+    "overrideSameCond": "Ghi đè số nhân vật cùng nguyên tố",
+    "overrideOtherCond": "Ghi đè số nhân vật khác nguyên tố"
+  },
+  "char_Lynette": {
+    "c6CondName": "Sau khi thi triển Đột Kích Ảo Ảnh của <strong>Thủ Thuật Che Mắt</strong>"
+  },
+  "char_Lyney": {
+    "propStacks": "Đạo Cụ Dự Phòng",
+    "propStacksUsed": "Đạo Cụ Dự Phòng tiêu hao",
+    "hatDmgInc": "Lượng tăng sát thương Pháo Hoa Ảo Thuật",
+    "a1CondName": "<strong>Mũi Tên Ảo Thuật</strong> đã tiêu HP",
+    "c6Dmg": "Sát thương Pháo Hoa Ảo Thuật - Hợp Tấu"
+  },
+  "char_TravelerHydro": {
+    "dewdropDmgInc": "Lượng tăng sát thương Sương Mai",
+    "a4CondName": "Phần trăm Giới Hạn HP tiêu hao bởi Dồi Dào",
+    "surgeDmgInc": "Lượng tăng sát thương Dòng Nước Dâng Trào",
+    "skillCondName": "Trong trạng thái Dồi Dào"
+  },
+  "weapon_FinaleOfTheDeep": {
+    "bondCondName": "Sau khi xóa trạng thái Khế Ước Sinh Mệnh"
+  },
+  "weapon_FlowingPurity": {
+    "bondCondName": "Sau khi xóa trạng thái Khế Ước Sinh Mệnh"
+  },
+  "weapon_SacrificialJade": {
+    "condOffField": "Nhân vật không ra trận trên 5 giây"
+  },
+  "weapon_ScionOfTheBlazingSun": {
+    "condName": "Địch trúng đòn Mũi Tên Mặt Trời",
+    "dmg": "Sát thương Mũi Tên Mặt Trời"
+  },
+  "weapon_TalkingStick": {
+    "condName": {
+      "atk_": "Nhân vật mang ấn <pyro>Hỏa</pyro>",
+      "dmg_": "Nhân vật mang ấn <hydro>Thủy</hydro>, <cryo>Băng</cryo> hoặc <electro>Lôi</electro>"
+    }
+  },
+  "artifact_SongOfDaysPast": {
+    "condName": "Hiệu quả Mong Mỏi tích lũy được"
+  },
+  "char_Charlotte": {
+    "c2Cond": "Ngài Verite đánh trúng địch",
+    "c4Cond": "Địch bị đánh dấu bởi Cắt Hình Siêu Tốc hoặc Ấn Tượng Tập Trung"
+  },
+  "char_Freminet": {
+    "frost_dmgMult_": "Bội số sát thương Băng Sương",
+    "pressure_dmg_": "Tăng sát thương Áp Lực Nghiền Nát",
+    "pressure_critRate_": "Tỷ Lệ Bạo Kích Áp Lực Nghiền Nát"
+  },
+  "char_Furina": {
+    "fanfarePoints": "Điểm Náo Nhiệt",
+    "memberMult_": "Bội số của Thành Viên Salon",
+    "numOffer": "Số nhân vật có thể cho HP",
+    "c1Inc": "Giới hạn Điểm Náo Nhiệt tăng",
+    "c1Bonus": "Điểm Náo Nhiệt nhận khi thi triển",
+    "a4MemberDmg": "Tăng sát thương Thành Viên Salon",
+    "a4HealInterval": "Thời gian giãn cách trị liệu của Ca Sĩ Nước Nguồn",
+    "c2Points": "Điểm Náo Nhiệt vượt giới hạn",
+    "c6Healing": "Trị liệu liên tục ở dạng Ousia",
+    "c6Pneuma": "Sức mạnh nền tảng Pneuma"
+  },
+  "char_Navia": {
+    "skillTotalShardDmg": "Tổng sát thương Đạn Pha Lê Rosula",
+    "shot_dmg_": "Tăng sát thương Đạn Pha Lê Rosula",
+    "shot_mult_": "Bội số Đạn Pha Lê Rosula",
+    "shot_critRate_": "Tỷ Lệ Bạo Kích Đạn Pha Lê Rosula",
+    "shot_critDMG_": "ST Bạo Kích Đạn Pha Lê Rosula",
+    "chargesCond": "Số lượng Mảnh Đạn Pha Lê tiêu hao",
+    "shotsFired": "Số lượng Đạn Pha Lê Rosula đã bắn",
+    "shotsHitCond": "Số lượng Đạn Pha Lê Rosula bắn trúng"
+  },
+  "char_Neuvillette": {
+    "a1Cond": "Vinh Dự Của Rồng",
+    "judgmentSpecialMult_": "Bội số của Phán Quyết Công Bằng",
+    "judgment_critDMG_": "ST Bạo Kích Phán Quyết Công Bằng",
+    "currentDmg": "Sát thương dòng thủy lưu"
+  },
+  "char_Wriothesley": {
+    "rebukeDmg": "Sát thương Cú Đấm Trừng Phạt",
+    "a4Cond": "Sắc Lệnh Truy Tố",
+    "icicleDmg": "Sát thương nhũ băng",
+    "rebuke_critRate_": "Tỷ Lệ Bạo Kích Cú Đấm Trừng Phạt",
+    "rebuke_critDMG_": "ST Bạo Kích Cú Đấm Trừng Phạt",
+    "rebuke_dmg_": "Tăng sát thương Cú Đấm Trừng Phạt"
+  },
+  "weapon_PortablePowerSaw": {
+    "condName": "Số Ký Hiệu Kiên Nhẫn tiêu hao"
+  },
+  "weapon_ProspectorsDrill": {
+    "condName": "Số Ký Hiệu Đoàn Kết tiêu hao"
+  },
+  "weapon_RangeGauge": {
+    "condName": "Số Ký Hiệu Đoàn Kết tiêu hao"
+  },
+  "weapon_TheDockhandsAssistant": {
+    "condName": "Số Ký Hiệu Kiên Nhẫn tiêu hao"
+  },
+  "weapon_UltimateOverlordsMegaMagicSword": {
+    "condName": "Melusine đã giúp đỡ"
+  },
+  "weapon_Verdict": {
+    "condName": "Ấn Ký"
+  },
+  "char_Chevreuse": {
+    "notPyroElectroTeam": "Nhắc nhở: thiết lập đội của bạn với chỉ nhân vật nguyên tố <pyro>Hỏa</pyro> và <electro>Lôi</electro> để xem thêm các điều kiện và hiệu quả",
+    "a4CondName": "Sau khi bắn Đầu Đạn Quá Tải",
+    "c6CondName": "Sau khi được trị liệu bởi Đánh Chặn Nhanh Tầm Gần"
+  },
+  "char_Gaming": {
+    "cloudstrider_critRate_": "Tỷ Lệ Bạo Kích Tấn Công Khi Đáp - Đạp Vân Hiến Thụy",
+    "cloudstrider_critDMG_": "ST Bạo Kích Tấn Công Khi Đáp - Đạp Vân Hiến Thụy",
+    "cloudstrider_dmg_": "Tăng sát thương Tấn Công Khi Đáp - Đạp Vân Hiến Thụy"
+  },
+  "char_Xianyun": {
+    "a4Cond": "Trúc Tinh có tầng Tiên Lực Trợ Giúp",
+    "c4Heal": "Lượng trị liệu Áo Diệu Phanh Thử Châu",
+    "wave_critDMG_": "ST Bạo Kích Sóng Xung Kích Mây Trôi",
+    "a1Cond": "Phong Linh",
+    "c6Cond": "Số lần dùng Bộ Thiên Thê"
+  },
+  "common_common": {
+    "social": {
+      "paypal": "PayPal",
+      "patreon": "Patreon",
+      "discord": "Discord"
+    },
+    "link": {
+      "download": "Link tải",
+      "discord": "Link mời vào Discord"
+    },
+    "unselect": "Bỏ chọn",
+    "inventory": "Túi",
+    "ascending": "Tăng dần",
+    "descending": "Giảm dần",
+    "sortBy": "Sắp xếp theo: ",
+    "loading": "Đang tải...",
+    "error": "Lỗi",
+    "reset": "Reset",
+    "info": "Thông tin",
+    "close": "Đóng",
+    "delete": "Xóa",
+    "locked": "Khóa",
+    "unlocked": "Mở khóa",
+    "excluded": "Loại trừ",
+    "included": "Bao gồm",
+    "selectlevel": "Chọn cấp",
+    "gender": {
+      "F": "Nữ",
+      "M": "Nam"
+    }
+  },
+  "char_Arlecchino": {
+    "bloodfireDmg": "Sát thương Ách Nguyệt Huyết Hỏa",
+    "c2Cond": "Sau khi thu hồi <strong>Chỉ Lệnh Nợ Máu</strong>"
+  },
+  "char_Chiori": {
+    "a1Cond": "Cắt Lụa có hiệu lực",
+    "a4Cond": "Sau khi nhân vật trong đội gần đó tạo ra <geo>tạo vật nguyên tố Nham</geo>"
+  },
+  "char_Sethos": {
+    "shadow_dmgInc": "Lượng tăng sát thương Mũi Tên Xuyên Bóng Tối",
+    "shadow_critRate_": "Tỷ Lệ Bạo Kích Mũi Tên Xuyên Bóng Tối",
+    "a4Cond": "Ảo Ảnh Cát Nóng có hiệu lực",
+    "c4Cond": "Sau khi <strong>Mũi Tên Xuyên Bóng Tối</strong> hoặc <strong>Mũi Tên Chạng Vạng</strong> bắn trúng ít nhất 2 kẻ địch"
+  },
+  "char_Sigewinne": {
+    "skillTierCond": "Cấp của Bong Bóng Chữa Trị",
+    "bubbleHeal_": "Tăng trị liệu Bong Bóng Chữa Trị",
+    "convaCond": "Đã tiêu hao tầng Tịnh Dưỡng",
+    "a4Cond": "Tổng Khế Ước Sinh Mệnh của đội"
+  },
+  "page_team": {
+    "buildInfo": {
+      "build": "Một <strong>Build</strong> bao gồm một vũ khí và 5 thánh di vật.",
+      "tcbuild": "Một <strong>>Build Theorycraft</strong> cho phép định rõ build bằng chỉ số thuần túy."
+    },
+    "buildTcCharOverride": {
+      "btn": "Ghi đè dữ liệu nhân vật cho build TC này"
+    },
+    "team": {
+      "editNameDesc": "Sửa Tên Đội & Mô Tả",
+      "name": "Tên Đội",
+      "desc": "Mô Tả Đội"
+    },
+    "loadout": {
+      "name": "Tên Bộ Trang Bị",
+      "desc": "Mô Tả Bộ Trang Bị"
+    }
+  },
+  "page_teams": {
+    "showingNum_other": "Đang hiện <1>{{count}}</1> trên tổng số {{value}} Đội"
+  },
+  "weapon_Cloudforged": {
+    "cond": "Sau khi sử dụng hoặc bị rút Năng Lượng Nguyên Tố"
+  },
+  "weapon_SilvershowerHeartstrings": {
+    "cond": "Số tầng Khôi Phục"
+  },
+  "sr_header": {
+    "tabs": {
+      "relics": "Di Vật",
+      "lightcones": "Nón Ánh Sáng",
+      "characters": "Nhân Vật",
+      "teams": "Đội",
+      "settings": "Cài Đặt"
+    }
+  },
+  "sr_page_settings": {
+    "DatabaseCard": {
+      "title": "Cơ Sở Dữ Liệu",
+      "button": {
+        "swap": "Đổi",
+        "copy": "Lưu vào bộ nhớ tạm",
+        "upload": "Tải lên",
+        "download": "Tải xuống",
+        "delete": "Xóa"
+      },
+      "currentDB": "CSDL hiện tại"
+    },
+    "count": {
+      "chars": "Nhân vật:",
+      "relics": "Di Vật: ",
+      "lightCones": "Nón Ánh Sáng:",
+      "teams": "Đội:",
+      "builds": "Build:",
+      "new": "Mới:",
+      "unchanged": "Không thay đổi:",
+      "upgraded": "Đã tăng cấp:",
+      "removed": "Đã loại bỏ:",
+      "notInImport": "Không trong bản nhập:",
+      "dbTotal": "Tổng hợp nhất:",
+      "invalid": "Không hợp lệ:"
+    },
+    "uploadCard": {
+      "error": {
+        "jsonParse": "Không thể xử lý JSON cơ sở dữ liệu.",
+        "sroInvalid": "Tập tin CSDL SRO không hợp lệ.",
+        "unknown": "Một lỗi không xác định đã xảy ra."
+      },
+      "title": "Tải lên CSDL",
+      "buttons": {
+        "open": "Mở",
+        "detectDups": "Phát hiện tăng cấp/trùng lặp",
+        "delNotInImport": "Xóa vật phẩm không có trong bản nhập"
+      },
+      "hint": "Tải tệp JSON của bạn tại đây...",
+      "tooltip": {
+        "ignoreDup": "Không tự phát hiện món tăng cấp/trùng lặp. Bản nhập sẽ được thêm vào túi đồ SRO đang có.",
+        "detectDup": "Tìm những món đã tăng cấp/trùng lặp trong túi đồ SRO và hợp nhất bản nhập vào SRO.",
+        "keepNotInImport": "Giả sử rằng bản nhập này chỉ là một phần túi. Sẽ không xóa gì cả.",
+        "delNotInImport": "Giả sử rằng bản nhập này bao gồm toàn bộ túi của bạn. Các món trong túi đồ SRO mà không tồn tại trong bản nhập sẽ bị xóa."
+      },
+      "hintPaste": "...hoặc dán dữ liệu của bạn xuống dưới.",
+      "dbSource": "Nguồn dữ liệu:",
+      "replaceDatabase": "Cập nhật CSDL"
+    }
+  },
+  "sr_ui": {
+    "pageTitle": "Star Rail Optimizer"
   }
 }

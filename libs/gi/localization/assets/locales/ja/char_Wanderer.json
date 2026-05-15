@@ -1,8 +1,8 @@
 {
   "windfavoredState": "<strong>児姿優風</strong>状態",
   "p1": {
-    "pyroCondName": "<strong>羽画・風姿華歌</strong>を発動時、<pyro>炎元素</pyro>に触れた後",
-    "cryoCondName": "<strong>羽画・風姿華歌</strong>を発動時、<cryo>氷元素</cryo>に触れた後"
+    "pyroCondName": "<strong>羽画・風姿華歌</strong>を発動時、<pyro>炎元素</pyro>に触れた",
+    "cryoCondName": "<strong>羽画・風姿華歌</strong>を発動時、<cryo>氷元素</cryo>に触れた"
   },
   "p2Dmg": "風の矢ダメージ",
   "c1BonusKey": "風の矢ダメージボーナス倍率",

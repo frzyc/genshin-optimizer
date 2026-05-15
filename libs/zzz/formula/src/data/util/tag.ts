@@ -146,6 +146,7 @@ export const ownTag = {
     faction: iso,
     promotion: iso,
     mindscape: iso,
+    potential: iso,
     basic: agg,
     dodge: agg,
     special: agg,
@@ -217,8 +218,6 @@ export const enemyTag = {
     dazeInc_: agg,
     dazeRed_: agg,
     anomBuildupRes_: agg,
-    isStunned: iso,
-    anomTimePassed: iso,
   },
 } as const
 

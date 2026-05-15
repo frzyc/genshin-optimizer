@@ -1,0 +1,24 @@
+{
+  "name": "Cajado do Sacrificador",
+  "description": {
+    "0": "Uma lança branca prateada, pura e completamente imaculada. Dizem as lendas que foi usada pelas Arquissacerdotisas de Hiperbórea de eras passadas para guiar seus rebanhos aos Filhos da Lua Gelada."
+  },
+  "passiveName": "Desejo Puro",
+  "passiveDescription": {
+    "0": {
+      "0": "Nos 6s depois da Habilidade Elemental atingir o inimigo, aumenta o ATQ em <cryo>8%</cryo> e a Recarga de Energia em <cryo>6%</cryo>. Esse efeito pode acumular até 3 vezes, e também surtirá se o portador não for o personagem ativo."
+    },
+    "1": {
+      "0": "Nos 6s depois da Habilidade Elemental atingir o inimigo, aumenta o ATQ em <cryo>10%</cryo> e a Recarga de Energia em <cryo>7.5%</cryo>. Esse efeito pode acumular até 3 vezes, e também surtirá se o portador não for o personagem ativo."
+    },
+    "2": {
+      "0": "Nos 6s depois da Habilidade Elemental atingir o inimigo, aumenta o ATQ em <cryo>12%</cryo> e a Recarga de Energia em <cryo>9%</cryo>. Esse efeito pode acumular até 3 vezes, e também surtirá se o portador não for o personagem ativo."
+    },
+    "3": {
+      "0": "Nos 6s depois da Habilidade Elemental atingir o inimigo, aumenta o ATQ em <cryo>14%</cryo> e a Recarga de Energia em <cryo>10.5%</cryo>. Esse efeito pode acumular até 3 vezes, e também surtirá se o portador não for o personagem ativo."
+    },
+    "4": {
+      "0": "Nos 6s depois da Habilidade Elemental atingir o inimigo, aumenta o ATQ em <cryo>16%</cryo> e a Recarga de Energia em <cryo>12%</cryo>. Esse efeito pode acumular até 3 vezes, e também surtirá se o portador não for o personagem ativo."
+    }
+  }
+}

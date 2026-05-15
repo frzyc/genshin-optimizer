@@ -1,4 +1,4 @@
 {
   "aoeDmg": "恒氷晶核ダメージ",
-  "cryoAffectedDmg": "<cryo>氷元素</cryo>に影響された敵にダメージ"
+  "cryoAffectedDmg": "<cryo>氷元素</cryo>の影響を受けている敵に命中"
 }

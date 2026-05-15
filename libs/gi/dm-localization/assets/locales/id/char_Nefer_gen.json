@@ -1,0 +1,169 @@
+{
+  "name": "Nefer",
+  "title": "Secret Beneath the Sands",
+  "description": "Pemilik Curatorium of Secrets yang lihai dan penuh akal.",
+  "constellationName": "Ludus Latrunculorum",
+  "auto": {
+    "name": "Striking Serpent",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 4 tendangan dengan keganasan dan keanggunan seekor ular untuk mengakibatkan <dendro>Dendro DMG</dendro>."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Nefer memasuki status Slither dan mengonsumsi sejumlah Stamina untuk bergerak dengan cepat ke arah depan selama maksimum 2,5 detik. Saat tombol skill ini dilepas, durasinya berakhir, atau Stamina-nya habis, maka Nefer akan keluar dari status Slither dan mengonsumsi Stamina tambahan untuk mengakibatkan <dendro>Dendro DMG</dendro> terhadap musuh. Saat berada dalam status <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Shadow Dance</strong></tooltip>, Stamina tambahan yang dikonsumsi akan berkurang.",
+        "2": "Selain itu, saat Nefer berada dalam status Slither, melancarkan Elemental Skill <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Senet Strategy: Dance of a Thousand Nights</tooltip></strong> atau berlari tidak akan membuat Nefer keluar dari status Slither."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Mengumpulkan kekuatan Dendro dan menerjang tanah, menyerang musuh di jalur terjangan dan mengakibatkan <dendro>Dendro DMG Area</dendro> saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Charged Attack",
+      "5": "Konsumsi Stamina Selama Charged Attack",
+      "6": "Konsumsi Stamina Charged Attack",
+      "7": "Konsumsi Stamina Charged Attack dalam Shadow Dance",
+      "8": "DMG Selama Plunging",
+      "9": "DMG Plunging Attack Rendah/Tinggi",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Senet Strategy: Dance of a Thousand Nights",
+    "description": {
+      "0": "Sebuah tarian memikat yang mampu meruntuhkan bangsa, lembut bagaikan kerudung cahaya bulan yang membelai mesra, juga bagaikan lautan pasir di malam dingin yang menusuk tulang. Nefer menerjang ke depan dengan jarak tertentu, mengakibatkan <dendro>Dendro DMG Area</dendro>, dan memasuki status <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Shadow Dance</strong></tooltip>.",
+      "1": "Saat dalam status Shadow Dance dan jika memiliki setidaknya 1 <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>Verdant Dew</strong></tooltip>, maka Charged Attack Nefer akan berubah menjadi Charged Attack Khusus yang tidak mengonsumsi Stamina, yaitu <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Phantasm Performance</strong></tooltip>. Ketahanan Nefer terhadap interupsi juga akan meningkat saat berada dalam status Shadow Dance.",
+      "2": "<br/>",
+      "3": "Jumlah penggunaan awal adalah 2 kali.",
+      "4": "<br/>",
+      "5": "<i>\"Dunia ini bagaikan permainan, kepingan-kepingan tetap tersembunyi di balik tabir. Agar tidak terjebak, kamu harus mengumpulkan setiap informasi yang bisa dikumpulkan. Inilah arti dari sebuah rahasia.\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Tahap 1 Phantasm Performance (Nefer)",
+      "2": "DMG Tahap 2 Phantasm Performance (Nefer)",
+      "3": "DMG Phantasm Performance Tahap 1 (Bayangan)",
+      "4": "DMG Phantasm Performance Tahap 2 (Bayangan)",
+      "5": "DMG Phantasm Performance Tahap 3 (Bayangan)",
+      "6": "Jumlah Penggunaan Phantasm Performance",
+      "7": "Durasi Shadow Dance",
+      "8": "Cooldown",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Sacred Vow: True Eye's Phantasm",
+    "description": {
+      "0": "Memberikan \"penglihatan\" untuk misteri yang berdusta melalui penglihatan Thoth, mengakibatkan <dendro>Dendro DMG Area</dendro> terhadap musuh di depan.",
+      "1": "Saat dilancarkan, Nefer akan mengonsumsi seluruh <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>Veil of Falsehood</strong></tooltip> yang dimilikinya untuk meningkatkan DMG Elemental Burst kali ini.",
+      "2": "<br/>",
+      "3": "<i>\"Berkah Raja Ibis yang dikumandangkan oleh para penyanyi pasir yang membakar, sebenarnya lebih mirip kutukan yang mengerikan.\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "Peningkatan DMG",
+      "3": "Cooldown",
+      "4": "Konsumsi Energy",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "A Wager of Moonlight",
+    "description": {
+      "0": "Nefer mendapatkan efek penguatan berdasarkan <strong>Moonsign</strong> party.",
+      "1": "<br/>",
+      "2": "<strong>Moonsign: Ascendant Gleam</strong>: Saat melancarkan Elemental Skill <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Senet Strategy: Dance of a Thousand Nights</tooltip></strong>, Dendro Core di medan pertempuran akan dikonversi menjadi Seed of Deceit, dan reaksi Lunar-Bloom yang dipicu oleh seluruh Karakter di sekitar dalam 15 detik selanjutnya akan menghasilkan Seed of Deceit sebagai ganti Dendro Core dan Bountiful Core. Seed of Deceit tidak dapat memicu reaksi Hyperbloom dan Burgeon, juga tidak dapat meledak.",
+      "3": "Saat Nefer melancarkan Charged Attack atau <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Phantasm Performance</strong></tooltip>, ia akan menyerap Seed of Deceit yang ada di sekitar dalam jarak tertentu. Untuk setiap Seed of Deceit yang diserapnya, Nefer akan mendapatkan satu lapis efek <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>Veil of Falsehood</strong></tooltip>. Saat efek ini ditumpuk sampai 3 lapis atau saat durasi 3 lapis diperbarui, Elemental Mastery Nefer meningkat 100 poin selama 8 detik."
+    }
+  },
+  "passive2": {
+    "name": "Daughter of the Dust and Sand",
+    "description": {
+      "0": "Saat Nefer berada dalam status <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Shadow Dance</strong></tooltip>, dan jika Karakter di dalam party memicu reaksi Lunar-Bloom dalam kurun waktu 5 detik, maka status <strong><tooltip ns=char_Nefer_gen baseKey18=normal>Slither</tooltip></strong> Nefer akan memberikan <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>Verdant Dew</strong></tooltip> tambahan untuk party. Untuk setiap 100 poin Elemental Mastery Nefer di atas angka 500, efek pemberian Verdant Dew akan meningkat 10%, hingga maksimum 50%."
+    }
+  },
+  "passive3": {
+    "name": "Moonsign Benediction: Dusklit Eaves",
+    "description": {
+      "0": "Saat Karakter di dalam party memicu reaksi Bloom, akan dikonversi menjadi reaksi Lunar-Bloom. DMG dasar reaksi Lunar-Bloom meningkat berdasarkan Elemental Mastery Nefer. Setiap poin Elemental Mastery akan membuat DMG dasar reaksi Lunar-Bloom meningkat 0,0175%, hingga maksimum 14%.",
+      "1": "<br/>",
+      "2": "Selain itu saat Nefer berada di dalam party, <strong>Moonsign</strong> party meningkat 1 level."
+    }
+  },
+  "passive": {
+    "name": "Conspiracy of the Golden Vault",
+    "description": {
+      "0": "Ketika dikirim untuk melakukan ekspedisi di Nod-Krai selama 20 jam, hadiah yang didapatkan akan bertambah 25%."
+    }
+  },
+  "constellation1": {
+    "name": "Planning Breeds Success",
+    "description": {
+      "0": "DMG dasar reaksi Lunar-Bloom yang diakibatkan oleh <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Phantasm Performance</strong></tooltip> meningkat sebesar 60% Elemental Mastery Nefer. Efek ini tetap terpengaruh oleh bonus <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>Veil of Falsehood</strong></tooltip>."
+    }
+  },
+  "constellation2": {
+    "name": "Observation Feeds Strategy",
+    "description": {
+      "0": "Talenta Ascension <tooltip ns=char_Nefer_gen baseKey18=passive1><strong>A Wager of Moonlight</strong></tooltip> diperkuat: Durasi <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>Veil of Falsehood</strong></tooltip> diperpanjang 5 detik, batas lapisan meningkat menjadi 5 lapis, dan dapat mengakibatkan maksimum 140% DMG <strong><tooltip ns=tooltips_gen baseKey18=11220002 values=[]>Phantasm Performance</tooltip></strong> dari DMG awalnya. Saat melancarkan Elemental Skill <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Senet Strategy: Dance of a Thousand Nights</tooltip></strong>, Nefer langsung mendapatkan 2 lapis Veil of Falsehood. Selain itu, saat Veil of Falsehood ditumpuk sampai 5 lapis atau saat durasi 5 lapis diperbarui, Elemental Mastery Nefer akan meningkat 200 poin selama 8 detik.",
+      "1": "Harus membuka Talenta Ascension \"A Wager of Moonlight\" terlebih dahulu."
+    }
+  },
+  "constellation3": {
+    "name": "Deceit Cloaks the Truth",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Skill <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Senet Strategy: Dance of a Thousand Nights</tooltip></strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Delusion Ensnares Reason",
+    "description": {
+      "0": "Saat Nefer berada di medan pertempuran dan berada dalam status <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Shadow Dance</strong></tooltip>, kecepatan memulihkan Verdant Dew meningkat 25%.",
+      "1": "Selain itu, saat Nefer dalam status Shadow Dance, <dendro>Dendro RES</dendro> musuh di sekitar berkurang 20%. Saat Nefer tidak berada dalam status Shadow Dance atau setelah menjauh dari musuh dalam jarak tertentu, efek ini akan hilang 4,5 detik setelahnya."
+    }
+  },
+  "constellation5": {
+    "name": "Opportunity Hides in the Margins",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Burst <strong><tooltip ns=char_Nefer_gen baseKey18=burst>Sacred Vow: True Eye's Phantasm</tooltip></strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Victory Flows from the Turning of Tides",
+    "description": {
+      "0": "Saat Nefer melancarkan <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Phantasm Performance</strong></tooltip>, DMG tahap 2 milik dirinya sendiri akan dikonversi menjadi <dendro>Dendro DMG Area</dendro> sebesar 85% Elemental Mastery Nefer. Selain itu, saat serangan Phantasm Performance berakhir, akan mengakibatkan 1 kali <dendro>Dendro DMG Area</dendro> sebesar 120% Elemental Mastery Nefer. Semua DMG yang disebutkan di atas dianggap sebagai DMG Lunar-Bloom dari Phantasm Performance.",
+      "1": "<br/>",
+      "2": "<strong>Moonsign: Ascendant Gleam</strong>: DMG reaksi Lunar-Bloom <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>bertumbuh</strong></tooltip> 15%."
+    }
+  }
+}

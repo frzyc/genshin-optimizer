@@ -1,0 +1,29 @@
+{
+  "setName": "Noite da Revelação do Céu",
+  "setEffects": {
+    "2": "Aumenta a Proficiência Elemental em 80.",
+    "4": "Quando um personagem próximo da equipe desencadear Reações Lunares, se o personagem que está com esse conjunto equipado estiver ativo, obtém por 4s o efeito \"Resplandecer Lunar: Memórias Cheias\": quando o Presságio Lunar da equipe estiver no Reluzir Inicial/Cheio, aumenta a Taxa CRIT em 15%/30%. Para cada efeito Resplandecer Lunar diferente que o membro da equipe possuir, aumenta o Dano causado pelas Reações Lunares em 10% para todos os membros da equipe. O efeito gerado por Resplandecer Lunar não é acumulável."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Flor do Desejo Mental",
+      "desc": "Uma relíquia sagrada esculpida na forma de flor. Parece representar uma presença aterradora que desabrocha."
+    },
+    "plume": {
+      "name": "Pena do Pecado",
+      "desc": "Uma pena que servia de acessório em um chapéu de veludo. Parece que saiu de moda entre os nobres de Snezhnaya, com seu gosto para o esplendor."
+    },
+    "sands": {
+      "name": "Relógio do Anúncio",
+      "desc": "Um relógio refinado energizado por um poder misterioso. Não parece que seu propósito é marcar a hora."
+    },
+    "goblet": {
+      "name": "Cálice Transbordante",
+      "desc": "Um cálice feito especialmente para banquetes do palácio. Foi utilizado no passado para realizar algum tipo de mágica."
+    },
+    "circlet": {
+      "name": "Coroa dos Caídos",
+      "desc": "Uma coroa feita do círculo utilizado por um Pecador. Talvez no coração de alguém, o amor e o pecado sejam da mesma origem."
+    }
+  }
+}

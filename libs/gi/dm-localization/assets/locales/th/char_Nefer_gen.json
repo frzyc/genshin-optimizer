@@ -1,0 +1,169 @@
+{
+  "name": "Nefer",
+  "title": "ความลับใต้ผืนทราย",
+  "description": "เจ้าของ \"เคหาสน์แห่งความลับ\" ผู้เก่งกาจและกว้างขวาง",
+  "constellationName": "Ludus Latrunculorum",
+  "auto": {
+    "name": "Striking Serpent",
+    "fields": {
+      "normal": {
+        "0": "<strong>โจมตีปกติ</strong>",
+        "1": "ทำการเตะต่อเนื่องมากสุด 4 ครั้ง ด้วยท่วงท่าที่เฉียบคม และสง่างามดุจอสรพิษ เพื่อสร้าง<dendro>ความเสียหายไม้</dendro>"
+      },
+      "charged": {
+        "0": "<strong>ชาร์จโจมตี</strong>",
+        "1": "เข้าสู่สถานะ Slither (อสรพิษเลื้อย) และใช้พลังกาย เพื่อเคลื่อนที่ด้วยความเร็วสูง สูงสุด 2.5 วินาที เมื่อปล่อยสกิล, สิ้นสุดช่วงเวลาต่อเนื่อง หรือใช้พลังกายจนหมด Nefer จะออกจากสถานะ Slither และใช้พลังกายจำนวนหนึ่งเพิ่มเติม สร้าง<dendro>ความเสียหายไม้</dendro>แก่ศัตรู; เมื่ออยู่ภายใต้สถานะ <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Shadow Dance</strong></tooltip> พลังกายที่ใช้เพิ่มเติมจะลดลง",
+        "2": "นอกจากนี้ ในขณะที่ Nefer อยู่ในสถานะ Slither การใช้สกิลธาตุ <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Senet Strategy: Dance of a Thousand Nights</tooltip></strong> หรือวิ่ง จะไม่ทำให้ Nefer ออกจากสถานะ Slither"
+      },
+      "plunging": {
+        "0": "<strong>โจมตีพุ่งลงจากอากาศ</strong>",
+        "1": "รวบรวมพลังของธาตุไม้ กระโจนจากกลางอากาศลงมายังพื้นดิน เพื่อโจมตีศัตรูที่อยู่ในเส้นทางการโจมตี และสร้าง<dendro>ความเสียหายไม้วงกว้าง</dendro>เมื่อลงถึงพื้น"
+      }
+    },
+    "skillParams": {
+      "0": "ความเสียหายขั้น 1",
+      "1": "ความเสียหายขั้น 2",
+      "2": "ความเสียหายขั้น 3",
+      "3": "ความเสียหายขั้น 4",
+      "4": "ความเสียหายชาร์จโจมตี",
+      "5": "ชาร์จโจมตีใช้พลังกายต่อเนื่อง",
+      "6": "ชาร์จโจมตีใช้พลังกาย",
+      "7": "ชาร์จโจมตีในสถานะ Shadow Dance ใช้พลังกาย",
+      "8": "ความเสียหายพุ่งลง",
+      "9": "ความเสียหายพุ่งถึงพื้นจากที่ต่ำ/สูง",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Senet Strategy: Dance of a Thousand Nights",
+    "description": {
+      "0": "ระบำล่มเมืองที่อ่อนหวานพลิ้วไหว ดุจแพรบางต้องแสงจันทร์ ทว่าคมกริบและเย็นเยียบ ดั่งทะเลทรายในค่ำคืนอันหนาวเหน็บ Nefer พุ่งตัวไปข้างหน้าเป็นระยะทางหนึ่ง เพื่อสร้าง<dendro>ความเสียหายไม้วงกว้าง</dendro> และเข้าสู่สถานะ <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Shadow Dance (ระบำเงา)</strong></tooltip>",
+      "1": "เมื่ออยู่ในสถานะ Shadow Dance หากมี<tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>หยาดพฤกษา</strong></tooltip>อย่างน้อย 1 อัน การชาร์จโจมตีของ Nefer จะถูกแทนที่ด้วยการชาร์จโจมตีพิเศษ <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Phantasm Performance (ละครมายา)</strong></tooltip> ที่ไม่ใช้พลังกาย นอกจากนี้ภายใต้สถานะ Shadow Dance จะเพิ่มความสามารถในการต้านทานการหยุดชะงักของ Nefer",
+      "2": "<br/>",
+      "3": "ในตอนเริ่มต้นจะมีจำนวนครั้งที่ใช้ได้ 2 ครั้ง",
+      "4": "<br/>",
+      "5": "<i>\"โลกก็เหมือนกระดานหมากรุก ซึ่งเหล่าผู้เล่นมักจะซ่อนตัว อยู่หลังม่านเสมอ หากไม่อยากตกหลุมพรางโดยไม่รู้ตัว ก็จำเป็นต้องมีข้อมูลที่มากพอ นี่แหละคือความหมายของ 'ความลับ'\"</i>"
+    },
+    "skillParams": {
+      "0": "ความเสียหายสกิล",
+      "1": "ความเสียหายละครมายา ครั้งที่ 1 (Nefer)",
+      "2": "ความเสียหายละครมายา ครั้งที่ 2 (Nefer)",
+      "3": "ละครมายา ครั้งที่ 1 (เงาลวงตา)",
+      "4": "ละครมายา ครั้งที่ 2 (เงาลวงตา)",
+      "5": "ละครมายา ครั้งที่ 3 (เงาลวงตา)",
+      "6": "จำนวนครั้งที่ใช้ได้ของละครมายา",
+      "7": "ระยะเวลาของ Shadow Dance",
+      "8": "คูลดาวน์",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Sacred Vow: True Eye's Phantasm",
+    "description": {
+      "0": "มอบ \"คำเฉลย\" ให้แก่ปริศนาของสิ่งจอมปลอม ด้วยเนตรรู้แจ้งแห่ง Thoth สร้าง<dendro>ความเสียหายไม้วงกว้าง</dendro> แก่ศัตรูที่อยู่ข้างหน้า โดยขณะปล่อย Nefer ยังจะใช้ <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>Veil of Falsehood (ม่านแห่งความเท็จ)</strong></tooltip> ทั้งหมดที่มี เพื่อเพิ่มความเสียหาย ที่เกิดจากท่าไม้ตายในครั้งนี้",
+      "1": "<br/>",
+      "2": "<i>ของขวัญจากราชาแห่งนกกุลา ซึ่งกล่าวในบทกวีโบราณ ที่ถูกขับขานโดยเหล่ากวี แห่งผืนทรายอันร้อนระอุนั้น แทนที่จะบอกว่าเป็นพร ความจริงแล้วน่าจะเรียกว่า เป็นคำสาปเสียมากกว่า</i>"
+    },
+    "skillParams": {
+      "0": "ความเสียหายขั้น 1",
+      "1": "ความเสียหายขั้น 2",
+      "2": "เพิ่มความเสียหาย",
+      "3": "คูลดาวน์",
+      "4": "พลังงานธาตุ",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "A Wager of Moonlight",
+    "description": {
+      "0": "Nefer จะได้รับเอฟเฟกต์เสริมพลัง ที่สอดคล้องกัน โดยขึ้นอยู่กับ<strong>ลัคนาจันทร์</strong>ในทีม",
+      "1": "<br/>",
+      "2": "<strong>ลัคนาจันทร์ - จรัสแสง</strong>: เมื่อใช้สกิลธาตุ <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Senet Strategy: Dance of a Thousand Nights</tooltip></strong> จะทำให้ Dendro Core ที่อยู่ในสนามขณะนั้นเปลี่ยนเป็น \"Seeds of Deceit\" และเมื่อตัวละครทั้งหมดที่อยู่ใกล้เคียงทำให้เกิดปฏิกิริยางอกเงยจันทราภายใน 15 วินาทีหลังจากนั้น จะเกิด Seeds of Deceit ขึ้นแทน Dendro Core และ Bountiful Core โดย Seeds of Deceit นั้นไม่สามารถทำให้เกิดปฏิกิริยาไฮเปอร์บลูมและเบ่งบานได้ และไม่สามารถระเบิดได้",
+      "3": "เมื่อ Nefer ใช้การชาร์จโจมตี หรือ <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Phantasm Performance</strong></tooltip> จะสามารถดูดซับ Seeds of Deceit ที่อยู่บริเวณใกล้เคียงในระยะที่กำหนด โดย Seeds of Deceit แต่ละอันที่ดูดซับ จะทำให้ Nefer ได้รับเอฟเฟกต์ <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>Veil of Falsehood</strong></tooltip> 1 ชั้น; เมื่อเอฟเฟกต์นี้ซ้อนทับถึง 3 ชั้น หรือระยะเวลาต่อเนื่องของชั้นที่ 3 รีเฟรช ความชำนาญธาตุของ Nefer จะเพิ่มขึ้น 100 หน่วย เป็นเวลา 8 วินาที"
+    }
+  },
+  "passive2": {
+    "name": "Daughter of the Dust and Sand",
+    "description": {
+      "0": "เมื่อ Nefer อยู่ในสถานะ <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Shadow Dance</strong></tooltip> ภายใน 5 วินาที หลังจากตัวละครในทีมทำให้เกิดปฏิกิริยางอกเงยจันทรา สถานะ <strong><tooltip ns=char_Nefer_gen baseKey18=normal>Slither</tooltip></strong> ของ Nefer จะสร้าง <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>หยาดพฤกษา</strong></tooltip>ให้แก่ทีมเพิ่มเติม โดยที่ค่าความชำนาญธาตุทุก 100 หน่วยที่เกินจาก 500 ของ Nefer จะทำให้เอฟเฟกต์การสร้างหยาดพฤกษาข้างต้นเพิ่มขึ้น 10% และเพิ่มด้วยวิธีนี้ได้สูงสุด 50%"
+    }
+  },
+  "passive3": {
+    "name": "Moonsign Benediction: Dusklit Eaves",
+    "description": {
+      "0": "เมื่อตัวละครในทีมทำให้เกิดปฏิกิริยางอกเงย จะเปลี่ยนเป็นปฏิกิริยางอกเงยจันทราแทน และเพิ่มความเสียหายพื้นฐาน ของปฏิกิริยางอกเงยจันทราที่ตัวละครในทีมสร้างขึ้น ตามความชำนาญธาตุของ Nefer: ความชำนาญธาตุแต่ละหน่วย จะเพิ่มความเสียหายพื้นฐานของปฏิกิริยางอกเงยจันทรา 0.0175% โดยสามารถเพิ่มความเสียหายด้วยวิธีนี้ได้มากสุด 14%",
+      "1": "<br/>",
+      "2": "นอกจากนี้ เมื่อมี Nefer อยู่ในทีม <strong>ลัคนาจันทร์</strong>ของทีมจะเพิ่มขึ้น 1 ระดับ"
+    }
+  },
+  "passive": {
+    "name": "Conspiracy of the Golden Vault",
+    "description": {
+      "0": "เมื่อทำคำขอการออกสำรวจของ Nod-Krai ที่ใช้เวลา 20 ชั่วโมง รางวัลที่ได้รับจะเพิ่มขึ้น 25%"
+    }
+  },
+  "constellation1": {
+    "name": "Planning Breeds Success",
+    "description": {
+      "0": "เพิ่มความเสียหายพื้นฐานของความเสียหายที่เกิดจากปฏิกิริยางอกเงยจันทราของ <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Phantasm Performance</strong></tooltip> ของ Nefer โดยค่าที่เพิ่มขึ้นจะเท่ากับ 60% ของความชำนาญธาตุของ Nefer เอฟเฟกต์นี้จะได้รับโบนัสของ <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>Veil of Falsehood</strong></tooltip> ด้วยเช่นกัน"
+    }
+  },
+  "constellation2": {
+    "name": "Observation Feeds Strategy",
+    "description": {
+      "0": "เอฟเฟกต์ของพรสวรรค์เพิ่มเติม <tooltip ns=char_Nefer_gen baseKey18=passive1><strong>A Wager of Moonlight</strong></tooltip> ได้รับการเสริมพลัง: ช่วงเวลาต่อเนื่องของ <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>Veil of Falsehood</strong></tooltip> เพิ่มขึ้น 5 วินาที และขีดจำกัดสูงสุดเพิ่มขึ้นเป็น 5 ชั้น อีกทั้งสามารถทำให้ <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Phantasm Performance</strong></tooltip> สร้างความเสียหายเป็น 140% ของความเสียหายเดิม; เมื่อ Nefer ใช้สกิลธาตุ <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Senet Strategy: Dance of a Thousand Nights</tooltip></strong> จะได้รับ \"Veil of Falsehood\" 2 ชั้นทันที นอกจากนี้เมื่อ \"Veil of Falsehood\" ซ้อนทับถึง 5 ชั้น หรือเมื่อรีเฟรชช่วงเวลาต่อเนื่องของชั้นที่ 5 ความชำนาญธาตุของ Nefer จะเพิ่มขึ้น 200 หน่วย เป็นเวลา 8 วินาที",
+      "1": "ต้องปลดล็อกพรสวรรค์เพิ่มเติม \"A Wager of Moonlight\" ก่อน"
+    }
+  },
+  "constellation3": {
+    "name": "Deceit Cloaks the Truth",
+    "description": {
+      "0": "เพิ่มเลเวลสกิลของสกิลธาตุ <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Senet Strategy: Dance of a Thousand Nights</tooltip></strong> ขึ้น 3 ระดับ",
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
+    }
+  },
+  "constellation4": {
+    "name": "Delusion Ensnares Reason",
+    "description": {
+      "0": "เมื่อ Nefer อยู่ในสนาม และอยู่ในสถานะ <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Shadow Dance</strong></tooltip> ความเร็วในการได้รับหยาดพฤกษาจะเพิ่มขึ้น 25%",
+      "1": "นอกจากนี้ ขณะที่ Nefer อยู่ในสถานะ \"Shadow Dance\" จะทำให้<dendro>ความต้านทานไม้</dendro>ของศัตรูที่อยู่ในบริเวณใกล้เคียงลดลง 20% เมื่อ Nefer ไม่ได้อยู่ในสถานะ \"Shadow Dance\" หรืออยู่ห่างจากศัตรูในระยะหนึ่ง เอฟเฟกต์นี้จะหายไปหลังจาก 4.5 วินาที"
+    }
+  },
+  "constellation5": {
+    "name": "Opportunity Hides in the Margins",
+    "description": {
+      "0": "เพิ่มเลเวลสกิลของท่าไม้ตาย <strong><tooltip ns=char_Nefer_gen baseKey18=burst>Sacred Vow: True Eye's Phantasm</tooltip></strong> ขึ้น 3 ระดับ",
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
+    }
+  },
+  "constellation6": {
+    "name": "Victory Flows from the Turning of Tides",
+    "description": {
+      "0": "เมื่อ Nefer ปล่อย <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Phantasm Performance</strong></tooltip> ความเสียหายขั้น 2 ของเธอจะเปลี่ยนเป็น<dendro>ความเสียหายไม้วงกว้าง</dendro> เท่ากับ 85% ของความชำนาญธาตุของ Nefer; นอกจากนี้ เมื่อการโจมตีของ Phantasm Performance สิ้นสุดลง จะสร้าง<dendro>ความเสียหายไม้วงกว้าง</dendro>หนึ่งครั้ง เท่ากับ 120% ของความชำนาญธาตุของ Nefer โดยความเสียหายดังกล่าวทั้งหมดจะถูกมองว่าเป็นความเสียหายจากปฏิกิริยางอกเงยจันทราของ Phantasm Performance",
+      "1": "<br/>",
+      "2": "<strong>ลัคนาจันทร์ - จรัสแสง</strong>",
+      "3": "ความเสียหายปฏิกิริยางอกเงยจันทราที่ Nefer สร้าง จะ<tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>ยกระดับ</strong></tooltip>ขึ้น 15%"
+    }
+  }
+}

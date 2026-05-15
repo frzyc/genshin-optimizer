@@ -1,0 +1,8 @@
+{
+  "fixes": {
+    "1": "Seite neu laden"
+  },
+  "refresh": "Seite neu Laden",
+  "confirmNuke": "Bist du sicher, dass du ALLE GO Daten löschen willst? Dies ist unumkehrbar!",
+  "nuke": "ALLE GO Daten löschen"
+}

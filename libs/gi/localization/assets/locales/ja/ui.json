@@ -7,19 +7,23 @@
     "weapons": "武器",
     "doc": "ドキュメント",
     "setting": "設定",
-    "scanner": "スキャナー"
+    "scanner": "スキャナー",
+    "teams": "チーム",
+    "archive": "アーカイブ",
+    "loadouts": "戦闘設定",
+    "builds": "装備"
   },
   "social": {
     "paypal": "PayPal",
     "patreon": "Patreon",
     "discord": "Discord"
   },
-  "unselect": "選択削除",
+  "unselect": "選択解除",
   "ascending": "昇順",
   "descending": "降順",
   "loading": "ロード中",
   "rightsDisclaimer": "「Genshin Optimizer」は、MiHoYoと提携しておりません。または、当該企業から承認を受けておりません。",
-  "appVersion": "$t(pageTitle) バージョン: {{version}}",
+  "appVersion": "$t(pageTitle) バージョン：<1>{{version}}</1>",
   "error": "エラー",
   "reset": "リセット",
   "info": "概要",
@@ -29,21 +33,22 @@
     "new": "新規",
     "name": "キャラクター名",
     "level": "レベル",
-    "rarity": "レアリティ",
-    "efficiency": "現スコア",
-    "mefficiency": "最大スコア",
-    "artsetkey": "聖遺物セット"
+    "rarity": "レア度",
+    "efficiency": "現在スコア",
+    "mefficiency": "上限スコア",
+    "artsetkey": "セット名",
+    "lastEdit": "編集日時"
   },
   "link": {
     "download": "ダウンロードリンク",
     "discord": "Discord招待リンク"
   },
-  "sortBy": "選別：␣",
+  "sortBy": "並び替え：",
   "delete": "削除",
-  "locked": "ロック",
-  "unlocked": "アンロック",
+  "locked": "ロック済み",
+  "unlocked": "未ロック",
   "refinement": "精錬{{value}}",
-  "selectlevel": "レベル選択",
+  "selectlevel": "レベルを選択",
   "gender": {
     "F": "女性",
     "M": "男性"
@@ -65,5 +70,7 @@
     "stamina_buffs": "スタミナバフ",
     "misc": "その他のステータス"
   },
-  "sillyPageTitle": "やけくそオプティマイザー"
+  "sillyPageTitle": "Silly Optimizer",
+  "excluded": "Excluded",
+  "included": "Included"
 }

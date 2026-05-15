@@ -52,7 +52,7 @@
       "3": "<strong>Muestras musicales</strong>",
       "4": "Xilonen posee tres sámplers que presentarán diferentes marcas musicales dependiendo del tipo elemental de los demás miembros del equipo, y que pueden activarse para reducir la RES de los enemigos cercanos a esos elementos en particular.",
       "5": "Inicialmente, las muestras musicales recolectadas por los tres sámplers serán todas <geo>Geo</geo>, y por cada personaje del equipo que sea <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo> o <electro>Electro</electro>, una muestra <geo>Geo</geo> se transformará en el tipo elemental correspondiente.",
-      "6": "Mientras esté en estado de bendición noctámbula, las muestras musicales <geo>Geo</geo> que lleve Xilonen permanecerán activas. Tras desbloquear el talento pasivo “Eco de Netotiliztli”, Xilonen podrá recuperar pts. de noctambulismo al activar los efectos de dicho talento, y al alcanzar el máximo de pts., los consumirá todos para activar durante 15 s las tres muestras musicales que lleve.",
+      "6": "Mientras esté en estado de bendición noctámbula, las muestras musicales <geo>Geo</geo> que lleve Xilonen permanecerán activas. Tras desbloquear el talento de ascensión “Eco de Netotiliztli”, Xilonen podrá recuperar pts. de noctambulismo al activar los efectos de dicho talento, y al alcanzar el máximo de pts., los consumirá todos para activar durante 15 s las tres muestras musicales que lleve.",
       "7": "Al hacerlo, reducirá las RES Elementales correspondientes de los enemigos, pero los efectos de las muestras musicales no se podrán acumular para un mismo tipo elemental. Esto puede ocurrir incluso cuando Xilonen está en tu equipo pero no en uso.",
       "8": "<br/>",
       "9": "<strong>Bendición noctámbula: Xilonen</strong>",
@@ -62,7 +62,7 @@
         "El estado de bendición noctámbula de Xilonen tiene una restricción por la cual, cuando se encuentre en dicho estado, sus pts. de noctambulismo solo durarán 9 s y, transcurrido ese tiempo, se agotarán."
       ],
       "12": "<br/>",
-      "13": "Tras agotarse todos los pts. de noctambulismo mientras está en estado de bendición noctámbula, Xilonen no podrá obtener más pts. por medio del talento pasivo “Eco de Netotiliztli”.",
+      "13": "Tras agotarse todos los pts. de noctambulismo mientras está en estado de bendición noctámbula, Xilonen no podrá obtener más pts. por medio del talento de ascensión “Eco de Netotiliztli”.",
       "14": "<br/>",
       "15": "<i>En cierto modo, la joyería y la mezcla musical tienen un funcionamiento parecido: ambas consisten en desechar las impurezas para quedarse únicamente con lo más brillante.",
       "16": "Sin embargo, Xilonen no es quisquillosa en cuanto a una opción u otra, ¡ya que ambas le causan una inmensa felicidad!</i>"

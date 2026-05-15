@@ -145,17 +145,33 @@
       "0": "Quando Mona crea materiali d'ascensione delle armi, ha un 25% di probabilità di restituire una parte dei materiali per la creazione utilizzati."
     }
   },
+  "lockedPassive": {
+    "name": "Rito della Vigilia della strega: Genesi del Presagio stellare",
+    "description": {
+      "0": "Dopo aver completato <strong>Compiti della strega: Sull'intuizione indimostrata</strong>, Mona acquisisce l'attributo <strong>Hexerei</strong>. Quando il gruppo include almeno 2 personaggi con attributo Hexerei, questi ultimi ottengono l'effetto di potenziamento <strong>Hexerei: Rito segreto</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei: Rito segreto</strong>",
+      "3": "Quando Mona colpisce un avversario con attacchi normali o caricati, ottiene 1 accumulo di <strong>Bagliore astrale di Mercurio</strong> per 8 s, per un massimo di 3. È possibile ottenere 1 accumulo ogni 0,1 s. Quando gli altri membri del gruppo innescano una reazione di Vaporizzazione su un nemico, tutti gli accumuli di Bagliore astrale di Mercurio vengono consumati, aumentando i DAN della suddetta reazione di un 5% per ciascun accumulo.",
+      "4": "Inoltre, quando Mona colpisce un avversario con attacchi normali o caricati, la durata del <strong>Presagio</strong> del suddetto avversario si estende di 2 s. Quest'effetto può attivarsi una volta ogni 0,5 s, e in questo modo è possibile estendere la durata di Presagio fino a 8 s."
+    }
+  },
   "constellation1": {
     "name": "Profezia sommersa",
     "description": {
-      "0": "Quando un membro del tuo gruppo colpisce un avversario sotto l'effetto di un Presagio, gli effetti delle <hydro>reazioni elementali di Hydro</hydro> sono potenziati per 8 s.",
+      "0": "Quando un membro del tuo gruppo colpisce un avversario sotto l'effetto di un Presagio, gli effetti delle <hydro>reazioni elementali di Hydro</hydro> vengono potenziati per 8 s.",
       "1": [
-        " I DAN da Electrocarica aumentano di un 15%.",
-        " I DAN da Carica lunare aumentano di un 15%.",
-        " I DAN da Vaporizzazione aumentano di un 15%.",
-        " I DAN da Turbinio di Hydro aumentano di un 15%.",
+        " I DAN da Electrocarica, Carica lunare, Vaporizzazione, Turbinio di Hydro e Cristallizzazione lunare aumentano di un 15%.",
         " La durata di Congelamento si estende di un 15%."
       ]
+    },
+    "upgradedDescription": {
+      "0": "Quando un membro del tuo gruppo colpisce un avversario sotto l'effetto di un Presagio, gli effetti delle <hydro>reazioni elementali di Hydro</hydro> vengono potenziati per 8 s.",
+      "1": [
+        " I DAN da Electrocarica, Carica lunare, Vaporizzazione, Turbinio di Hydro e Cristallizzazione lunare aumentano di un 15%.",
+        " La durata di Congelamento si estende di un 15%."
+      ],
+      "2": "<br/>",
+      "3": "Inoltre, quando i membri del gruppo non in campo innescano questo effetto, il bonus DAN delle suddette reazioni elementali di Hydro aumenta a un 160% dell'effetto originale."
     }
   },
   "constellation2": {
@@ -163,6 +179,12 @@
     "description": {
       "0": "Dopo che un attacco normale va a segno, c'è un 20% di probabilità che venga effettuato un attacco caricato.",
       "1": "Si può verificare una sola volta ogni 5 s."
+    },
+    "upgradedDescription": {
+      "0": "Dopo che un attacco normale va a segno, c'è un 20% di probabilità che venga effettuato un attacco caricato.",
+      "1": "Inoltre, nei 5 s dopo che Mona ha scatenato il suo Tripudio elementale <strong>Fantasma stellaris</strong>, il suo successivo attacco normale che colpisce un avversario innesca automaticamente un attacco caricato.",
+      "2": "Il suddetto attacco caricato si può verificare una sola volta ogni 5 s.",
+      "3": "Quando l'attacco caricato di Mona colpisce un avversario, la maestria elementale di tutti i membri del gruppo vicini aumenta di 80 per 12 s."
     }
   },
   "constellation3": {
@@ -176,6 +198,10 @@
     "name": "Profezia dell'oblio",
     "description": {
       "0": "Quando un membro del gruppo attacca un avversario sotto l'effetto di un Presagio, il suo tasso di CRIT aumenta di un 15%."
+    },
+    "upgradedDescription": {
+      "0": "Quando un membro del gruppo attacca un avversario sotto l'effetto di un Presagio, il suo tasso di CRIT aumenta di un 15%.",
+      "1": "Quando un membro del gruppo dotato di attributo Hexerei attacca un avversario sotto l'effetto di Presagio, i suoi DAN da CRIT aumentano di un 15%."
     }
   },
   "constellation5": {
@@ -190,6 +216,10 @@
     "description": {
       "0": "Quando entra in <strong>Torrente illusorio</strong>, Mona ottiene un 60% di aumento dei DAN del suo prossimo attacco caricato per ogni secondo in movimento.",
       "1": "In questo modo è possibile ottenere fino a un 180% di bonus DAN. Quest'effetto non dura più di 8 s."
+    },
+    "upgradedDescription": {
+      "0": "Mentre Mona è il personaggio attivo, quando è nello stato di <strong>Torrente illusorio</strong> o se ci sono avversari affetti da Presagio nelle vicinanze, ottiene un 60% di aumento dei DAN al secondo per il suo successivo attacco caricato. In questo modo è possibile ottenere fino a un 180% di bonus DAN massimo. Quest'effetto non dura più di 8 s.",
+      "1": "Inoltre, i DAN degli attacchi caricati di Mona inflitti agli avversari affetti da Presagio aumentano a un 200% dei DAN originali."
     }
   }
 }

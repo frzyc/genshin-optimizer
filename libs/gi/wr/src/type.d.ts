@@ -2,12 +2,12 @@ import type {
   ArtifactSetKey,
   CharacterSheetKey,
   ElementWithPhyKey,
+  TransformativeReactionKey,
   WeaponKey,
 } from '@genshin-optimizer/gi/consts'
 import type {
   AdditiveReactionsKey,
   AmplifyingReactionsKey,
-  TransformativeReactionsKey,
 } from '@genshin-optimizer/gi/keymap'
 import type { input, uiInput } from './formula'
 
@@ -58,7 +58,7 @@ export type Info = {
 }
 export type Variant =
   | ElementWithPhyKey
-  | TransformativeReactionsKey
+  | TransformativeReactionKey
   | AmplifyingReactionsKey
   | AdditiveReactionsKey
   | 'heal'

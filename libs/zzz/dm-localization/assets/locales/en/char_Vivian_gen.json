@@ -1,6 +1,6 @@
 {
   "name": "Vivian",
-  "fullName": "Vivian",
+  "fullName": "Vivian Banshee",
   "basic": {
     "BasicAttackFeatheredStrike": {
       "name": "Basic Attack: Feathered Strike",
@@ -302,5 +302,6 @@
         "2": "\"So, please allow me to write the rest of my life as your footnotes.\""
       }
     }
-  }
+  },
+  "potential": {}
 }

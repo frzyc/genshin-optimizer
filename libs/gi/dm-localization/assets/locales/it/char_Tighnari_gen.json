@@ -139,7 +139,7 @@
   "constellation4": {
     "name": "Avvizzimento intravisto nelle foglie",
     "description": {
-      "0": "Quando le <strong>Frecce a groviglio</strong> vengono scoccate, la maestria elementale di tutti i membri del gruppo nelle vicinanze aumenta di 60 per 8 s. Se le Frecce a groviglio innescano una reazione di Ustione, Fioritura, Vivificazione o Propagazione, la maestria elementale aumenta ulteriormente di 60. Quest'ultimo caso ripristinerà anche la durata dello stato dell'effetto positivo."
+      "0": "Quando le <strong>Frecce a groviglio</strong> vengono scoccate, la maestria elementale di tutti i membri del gruppo nelle vicinanze aumenta di 60 per 8 s. Se le Frecce a groviglio innescano una reazione di Ustione, Fioritura, Fioritura lunare, Vivificazione o Propagazione, la maestria elementale aumenta ulteriormente di 60. Quest'ultimo caso ripristinerà anche la durata dello stato dell'effetto positivo."
     }
   },
   "constellation5": {

@@ -173,9 +173,9 @@
   "constellation4": {
     "name": "Determinazione di una comandante",
     "description": {
-      "0": "Aumenta gli effetti del talento passivo \"Kiongozi\":",
+      "0": "Aumenta gli effetti del talento d'ascensione \"Kiongozi\":",
       "1": "l'incremento dei DAN ottenuto dopo aver usato il Tripudio elementale <strong>L'ora dei cieli in fiamme</strong> non diminuisce nel tempo, e si ottiene un 10% di bonus DAN aggiuntivo.",
-      "2": "Richiede il talento passivo \"Kiongozi\"."
+      "2": "Richiede il talento d'ascensione \"Kiongozi\"."
     }
   },
   "constellation5": {

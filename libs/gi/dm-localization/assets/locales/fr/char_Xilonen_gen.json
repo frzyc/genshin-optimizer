@@ -52,7 +52,7 @@
       "3": "<strong>Échantillons sources</strong>",
       "4": "Xilonen possède 3 échantillonneurs qui peuvent générer différentes ambiances sonores en fonction des types élémentaires des autres personnages de l'équipe, diminuant ainsi les RÉS élémentaires correspondantes des ennemis proches lorsqu'ils sont activés.",
       "5": "Les échantillons sources des 3 échantillonneurs sont de l'élément <geo>Géo</geo> d'origine et chaque personnage de l'équipe de l'élément <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo> ou <electro>Électro</electro> changera le type élémentaire d'un échantillonneur <geo>Géo</geo> en l'élément correspondant.",
-      "6": "Lorsque Xilonen bénéficie d'une bénédiction noctâme, les échantillons sources <geo>Géo</geo> qu'elle possède restent activés. Après avoir débloqué l'aptitude passive « Écho de Netotiliztli », Xilonen peut déclencher l'effet de cette dernière pour restaurer ses points de noctâme. Lorsque ses points de noctâme atteignent le maximum, Xilonen les consomme tous pour activer les 3 échantillons sources qu'elle possède pendant 15 s.",
+      "6": "Lorsque Xilonen bénéficie d'une bénédiction noctâme, les échantillons sources <geo>Géo</geo> qu'elle possède restent activés. Après avoir débloqué l'aptitude d'élévation « Écho de Netotiliztli », Xilonen peut déclencher l'effet de cette dernière pour restaurer ses points de noctâme. Lorsque ses points de noctâme atteignent le maximum, Xilonen les consomme tous pour activer les 3 échantillons sources qu'elle possède pendant 15 s.",
       "7": "Lorsque les échantillons sources sont activés, les RÉS élémentaires correspondantes des ennemis proches diminuent. Les effets des échantillons sources du même type élémentaire ne se cumulent pas et Xilonen peut déclencher ces effets même lorsqu'elle fait partie de l'équipe mais n'est pas déployée.",
       "8": "<br/>",
       "9": "<strong>Bénédiction noctâme : Xilonen</strong>",
@@ -62,7 +62,7 @@
         " La bénédiction noctâme de Xilonen a certaines restrictions : lorsque Xilonen bénéficie d'une bénédiction noctâme, ses points de noctâme ont une limite de 9 s, après quoi ils sont immédiatement épuisés."
       ],
       "12": "<br/>",
-      "13": "Lorsque les points de noctâme de Xilonen ont été épuisés pendant sa bénédiction noctâme, elle ne peut plus en générer grâce à l'aptitude passive « Écho de Netotiliztli ».",
+      "13": "Lorsque les points de noctâme de Xilonen ont été épuisés pendant sa bénédiction noctâme, elle ne peut plus en générer grâce à l'aptitude d'élévation « Écho de Netotiliztli ».",
       "14": "<br/>",
       "15": "<i>D'une certaine manière, la fabrication de pierres précieuses et le mixage musical partagent des principes similaires : filtrer les impuretés et ne conserver que les choses les plus rayonnantes.",
       "16": "Xilonen n'est pas difficile pour les deux. Et puis, elle les apprécie énormément l'un et l'autre !</i>"

@@ -67,11 +67,11 @@
   "burst": {
     "name": "Forbidden Creation - Isomer 75 / Type II",
     "description": {
-      "0": "Sucrose melemparkan sebuah ramuan yang menciptakan Large Wind Spirit.",
-      "1": "Selama ramuan itu ada, Large Wind Spirit akan terus-menerus menarik musuh dan obyek yang ada di sekitar, menghasilkan <anemo>Anemo DMG</anemo>.",
+      "0": "Sucrose melemparkan sebuah ramuan yang menciptakan Wind Spirit besar.",
+      "1": "Selama ramuan itu ada, Wind Spirit besar akan terus-menerus menarik musuh dan obyek yang ada di sekitar, menghasilkan <anemo>Anemo DMG</anemo>.",
       "2": "<br/>",
       "3": "<strong>Elemental Absorption</strong>",
-      "4": "Ketika Wind Spirit bersentuhan dengan elemen<hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, maka akan mengakibatkan elemental DMG tambahan dari tipe tersebut.",
+      "4": "Ketika Wind Spirit bersentuhan dengan elemen <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, maka akan mengakibatkan elemental DMG tambahan dari tipe tersebut.",
       "5": "Elemental Absorption hanya dapat muncul satu kali dalam sekali penggunaan.",
       "6": "<br/>",
       "7": "<i>Sucrose dulunya selalu memberikan nama kepada Anemo Hypostases miliknya. Namun mereka berkembang biak dengan cepat sampai melampaui Baron Bunny ke-893.</i>"
@@ -113,6 +113,18 @@
       "0": "Saat Sucrose membuat Material Penguatan Senjata dan Karakter, memiliki 10% kemungkinan untuk mendapatkan hasil 2 kali lipat."
     }
   },
+  "lockedPassive": {
+    "name": "Witch's Eve Rite: Sevenfold Transmutation",
+    "description": {
+      "0": "Setelah menyelesaikan <strong>PR Penyihir: Tentang Bunga di Tanah Ajaib</strong>, Sucrose akan berubah menjadi Karakter <strong>Hexerei</strong>. Saat ada setidaknya 2 Karakter Hexerei di dalam party, akan mendapatkan efek <strong>Hexerei: Secret Rite</strong> yang memperkuat Karakter Hexerei.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei: Secret Rite</strong>",
+      "3": [
+        "Setelah memanggil Small Wind Spirit, DMG Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, dan Elemental Burst Karakter di sekitar dalam party meningkat 5,71428% selama 15 detik.",
+        "Setelah memanggil Large Wind Spirit, DMG Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, dan Elemental Burst Karakter Hexerei di sekitar dalam party meningkat 7,14285% selama 20 detik."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Clustered Vacuum Field",
     "description": {
@@ -150,6 +162,9 @@
     "name": "Chaotic Entropy",
     "description": {
       "0": "Jika <strong>Forbidden Creation - Isomer 75 / Type II</strong> memicu Elemental Absorption, seluruh anggota party mendapatkan 20% Elemental DMG Bonus untuk elemen sesuai yang diserap selama durasinya."
+    },
+    "upgradedDescription": {
+      "0": "Jika <strong>Forbidden Creation - Isomer 75 / Type II</strong> memicu Elemental Absorption, seluruh anggota party mendapatkan 20% Elemental DMG Bonus untuk jenis elemen yang diserap selama durasinya, dan Karakter Hexerei dalam party di sekitar mendapatkan 8,57142% Elemental DMG Bonus dengan jenis elemen yang sesuai."
     }
   }
 }

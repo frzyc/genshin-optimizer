@@ -1,16 +1,27 @@
 {
   "intro": "<0>Scanner</0><1>Scanner sind Tools welche spielbezogene Daten aus Screenshots oder direkt aus dem Spiel auslesen können.</1><2>Unten sind mehrere Scanner aufgelistet welche mit GO getestet wurden.</2><3>Um die exportierte Datei hochzuladen, gehe auf die Seite <1>Einstellungen</1> und lade dort deine Datei in der Sektion <strong>Datenbank Hochladen</strong> hoch.</3>",
   "ik": {
-    "title": "Inventory Kamera"
+    "title": "Inventory Kamera",
+    "p1": "Diese Anwendung kann alle Charaktere, Waffen und Artefakte auf deinem Account einscannen. Folge den Anweisungen im Programm um alles richtig einzustellen. "
   },
   "as": {
     "title": "AdeptiScanner",
     "p1": "Scannt alle Artefakte und Waffen in deinem Inventar. Hat einen manuellen Scanmodus und kann zudem Daten von <1>Enka.Network</1> importieren."
   },
+  "goodeng": "Diese Anwendung kann nur scannen, wenn das Spiel auf Englisch gestellt ist und exportiert Ergebnisse im <1>GOOD</1> Format.",
   "tags": {
     "pc": "PC",
+    "mobile": "Handy",
     "ps": "PlayStation",
     "materials": "Materialien",
-    "characters": "Charaktere"
-  }
+    "characters": "Charaktere",
+    "weapons": "Waffen",
+    "achievements": "Errungenschaften"
+  },
+  "nb": {
+    "title": "Artiscan",
+    "p1": "Dieser Browser-basierte Scanner kann entweder dein Spielefenster erfassen und scannen, oder eine Bildschirmaufnahme (Foto/Video) scannen. Die Bildschirmaufnahme kann im Vollbild aufgenommen sein und muss nicht zugeschnitten werden.",
+    "p2": "Handy/PlayStation Spieler können Artefakte nur per Screenshot oder Videoaufnahme scannen."
+  },
+  "seelieme": "Diese Anwendung kann auch Materialien für <1>Seelie.me</1> einscannen."
 }

@@ -1,0 +1,24 @@
+{
+  "name": "Laúd de la Luz Celestial",
+  "description": {
+    "0": "Un laúd hecho con cuerdas doradas como la luz celestial. Parece ser una antigua reliquia de los Seelies."
+  },
+  "passiveName": "El último cantor",
+  "passiveDescription": {
+    "0": {
+      "0": "Tras usar la Habilidad Elemental, la Maestría Elemental del portador de esta arma aumenta en <cryo>100</cryo> pts. durante 20 s."
+    },
+    "1": {
+      "0": "Tras usar la Habilidad Elemental, la Maestría Elemental del portador de esta arma aumenta en <cryo>125</cryo> pts. durante 20 s."
+    },
+    "2": {
+      "0": "Tras usar la Habilidad Elemental, la Maestría Elemental del portador de esta arma aumenta en <cryo>150</cryo> pts. durante 20 s."
+    },
+    "3": {
+      "0": "Tras usar la Habilidad Elemental, la Maestría Elemental del portador de esta arma aumenta en <cryo>175</cryo> pts. durante 20 s."
+    },
+    "4": {
+      "0": "Tras usar la Habilidad Elemental, la Maestría Elemental del portador de esta arma aumenta en <cryo>200</cryo> pts. durante 20 s."
+    }
+  }
+}

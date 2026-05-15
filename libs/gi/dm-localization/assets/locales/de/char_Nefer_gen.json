@@ -1,0 +1,169 @@
+{
+  "name": "Nefer",
+  "title": "Geheimnis unter den Sanden",
+  "description": "Die unglaublich fähige Besitzerin des „Kuratoriums der Geheimnisse“.",
+  "constellationName": "Ludus Latrunculorum",
+  "auto": {
+    "name": "Gespaltene Zunge",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong> ",
+        "1": "Führt mit schlangenartiger Wildheit und anmutiger Haltung bis zu vier Tritte aus und fügt <dendro>Dendro-Schaden</dendro> zu."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong> ",
+        "1": "Wechselt in den Schlangenzustand und verbraucht Ausdauer, um sich bis zu 2,5 s lang schnell zu bewegen. Beim Loslassen der Fähigkeit, bei der Beendigung der Dauer oder beim Aufbrauchen der Ausdauer verlässt Nefer den Schlangenzustand und verbraucht zusätzlich eine bestimmte Menge Ausdauer, um Gegnern <dendro>Dendro-Schaden</dendro> zuzufügen. Im Zustand <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Schattentanz</strong></tooltip> verringert sich die zusätzlich verbrauchte Ausdauer.",
+        "2": "Beim Anwenden der Elementarfähigkeit <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Spielstrategie – Tanz der tausend Nächte</tooltip></strong> im Schlangenzustand oder beim Rennen im Schlangenzustand verlässt Nefer diesen nicht."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong> ",
+        "1": "Konzentriert die Dendro-Kraft, um sich aus der Luft auf den Boden zu stürzen, Gegner in der Bahn anzugreifen und beim Aufprall auf den Boden <dendro>Dendro-Flächenschaden</dendro> zu verursachen."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH heftiger Schläge",
+      "5": "Fortlaufender Ausdauerverbrauch beim Aufladen heftiger Schläge",
+      "6": "Ausdauerverbrauch heftiger Schläge",
+      "7": "Ausdauerverbrauch heftiger Schläge im Zustand Schattentanz",
+      "8": "SCH beim Fallen",
+      "9": "SCH beim Fallen aus niedriger/großer Höhe",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Spielstrategie – Tanz der tausend Nächte",
+    "description": {
+      "0": "Ein überwältigender Tanz, so sanft wie ein mondbeschienener Schleier, doch so durchdringend wie ein Sandmeer in der kalten Nacht. Nefer stürmt eine gewisse Strecke nach vorne, verursacht <dendro>Dendro-Flächenschaden</dendro> und tritt in den Zustand <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Schattentanz</strong></tooltip> ein.",
+      "1": "Wandelt, wenn Nefer sich im Zustand „Schattentanz“ befindet und über mindestens 1 Stapelung <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>Grünender Tau</strong></tooltip> verfügt, ihren heftigen Schlag in den keine Ausdauer verbrauchenden, besonderen heftigen Schlag <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Fantasmaauftritt</strong></tooltip> um. Im Zustand „Schattentanz“ wird Nefers Unterbrechungs-WDS erhöht.",
+      "2": "<br/>",
+      "3": "Kann anfänglich zweimal angewendet werden.",
+      "4": "<br/>",
+      "5": "<i>„Die Welt ist wie ein Spielbrett, auf dem die Spieler ständig hinter dem Vorhang verborgen bleiben. Um nicht unabsichtlich in eine Falle zu tappen, musst du über ausreichend Informationen verfügen – darin liegt die Bedeutung von ‚Geheimnissen‘.“</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "SCH Phase 1 von Fantasmaauftritt (Nefer)",
+      "2": "SCH Phase 2 von Fantasmaauftritt (Nefer)",
+      "3": "SCH Phase 1 von Fantasmaauftritt (Trugbild)",
+      "4": "SCH Phase 2 von Fantasmaauftritt (Trugbild)",
+      "5": "SCH Phase 3 von Fantasmaauftritt (Trugbild)",
+      "6": "Einsatzmöglichkeiten von Fantasmaauftritt",
+      "7": "Dauer von Schattentanz",
+      "8": "Abklingzeit",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Heiliger Pakt – Fantasmaauftritt vor wahren Augen",
+    "description": {
+      "0": "Schenkt dem Rätsel der Fälschung mithilfe von Thoths wahrer Sicht eine „Erleuchtung“ und fügt Gegnern vor sich <dendro>Dendro-Flächenschaden</dendro> zu. Beim Anwenden verbraucht Nefer alle <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>Schleier der Scheingeheimnisse</strong></tooltip>, um den durch diese Spezialfähigkeit verursachten Schaden zu erhöhen.",
+      "1": "<br/>",
+      "2": "<i>In den alten Versen, die von den Sängern der Sandwüsten gesungen werden, ist die Gabe des Königs der Ibisse weniger ein Segen als vielmehr ein Fluch.</i>"
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH-Bonus",
+      "3": "Abklingzeit",
+      "4": "Elementarenergie",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Glücksspiel im Mondschein",
+    "description": {
+      "0": "Verleiht Nefer basierend auf dem in der Truppe vorhandenen <strong>Mondomen</strong> den entsprechenden Verstärkungseffekt.",
+      "1": "<br/>",
+      "2": "<strong>Mondomen – Reifer Glanz</strong>: Wandelt beim Anwenden der Elementarfähigkeit <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Spielstrategie – Tanz der tausend Nächte</tooltip></strong> die sich aktuell auf dem Feld befindenden „Dendro-Kerne“ in „Kerne der List“ um. Erzeugt beim Auslösen der Reaktion Mondspross durch alle Figuren in der Nähe zudem 15 s lang „Kerne der List“ anstelle von „Dendro-Kernen“ und „Kernen der Fülle“. „Kerne der List“ können weder die Reaktionen Supraspross oder Flammenspross auslösen, noch aufbrechen.",
+      "3": "Bei heftigen Schlägen oder <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Fantasmaauftritten</strong></tooltip> kann Nefer „Kerne der List“ in einem bestimmten Bereich absorbieren. Für jeden absorbierten „Kern der List“ erhält sie 1 Stapelung des Effekts <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>Schleier der Scheingeheimnisse</strong></tooltip>. Wenn dieser Effekt 3-fach gestapelt oder die Dauer der 3 Stapelungen aktualisiert wird, erhöht sich Nefers Elementarkunde um 100 Punkte, hält 8 s."
+    }
+  },
+  "passive2": {
+    "name": "Tochter von Staub und Sand",
+    "description": {
+      "0": "Während Nefer sich im Zustand <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Schattentanz</strong></tooltip> befindet, gewährt ihr <strong><tooltip ns=char_Nefer_gen baseKey18=normal>Schlangenzustand</tooltip></strong> der Truppe für 5 s, nachdem eine Figur in der Truppe die Mondspross-Reaktion ausgelöst hat, zusätzlichen <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>Grünenden Tau</strong></tooltip>. Für je 100 Punkte Elementarkunde über 500 erhöht sich dieser zusätzlichen Grünenden Tau spendende Effekt um 10 %, höchstens um 50 %."
+    }
+  },
+  "passive3": {
+    "name": "Mondomen-Segen – Schatten unter dem Sims",
+    "description": {
+      "0": "Wandelt, wenn eine Figur in der Truppe die Reaktion Sprießen auslöst, diese in die Reaktion Mondspross um, wobei der Basis-SCH der Reaktion Mondspross, die durch Truppenmitglieder ausgelöst wird, auf der Grundlage von Nefers Elementarkunde erhöht wird: Erhöht für jeden Punkt Elementarkunde den Basis-SCH der Reaktion Mondspross um 0,0175 %. Auf diese Weise kann der Schaden um bis zu 14 % erhöht werden.",
+      "1": "<br/>",
+      "2": "Erhöht zudem die Stufe vom <strong>Mondomen</strong> der Truppe um 1, wenn sich Nefer in der Truppe befindet."
+    }
+  },
+  "passive": {
+    "name": "Verschwörung der Goldenen Kammer",
+    "description": {
+      "0": "Bringt bei 20-stündigen Erkundungsentsendungen in Nod-Krai 25 % mehr Belohnungen."
+    }
+  },
+  "constellation1": {
+    "name": "Erfolg durch Planung",
+    "description": {
+      "0": "Erhöht den Basis-SCH der mithilfe von <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Fantasmaauftritt</strong></tooltip> ausgelösten Reaktion Mondspross um 60 % von Nefers Elementarkunde. Dieser Effekt wird von <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>Schleier der Scheingeheimnisse</strong></tooltip> verstärkt."
+    }
+  },
+  "constellation2": {
+    "name": "Strategie durch Beobachtung",
+    "description": {
+      "0": "Verstärkt die Effekte des Aufstiegstalents <tooltip ns=char_Nefer_gen baseKey18=passive1><strong>Glücksspiel im Mondschein</strong></tooltip>: Verlängert die Dauer von <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>Schleier der Scheingeheimnisse</strong></tooltip> um 5 s, erhöht die Obergrenze der Stapelungen auf 5 und lässt <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Fantasmaauftritt</strong></tooltip> bis zu 140 % des ursprünglichen Schadens verursachen. Verleiht Nefer beim Anwenden ihrer Elementarfähigkeit <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Spielstrategie – Tanz der tausend Nächte</tooltip></strong> sofort 2 Stapelungen „Schleier der Scheingeheimnisse“. Erhöht zudem, wenn „Schleier der Scheingeheimnisse“ 5-fach gestapelt wird oder die Dauer der 5 Stapelungen aktualisiert wird, Nefers Elementarkunde nun um 200 Punkte, hält 8 s.",
+      "1": "Das Aufstiegstalent „Glücksspiel im Mondschein“ muss vorab freigeschaltet werden."
+    }
+  },
+  "constellation3": {
+    "name": "Lügen verschleiern die Wahrheit",
+    "description": {
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Spielstrategie – Tanz der tausend Nächte</tooltip></strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Gefangen im Labyrinth der Rätsel",
+    "description": {
+      "0": "Erhöht, wenn Nefer sich auf dem Feld und im Zustand <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>Schattentanz</strong></tooltip> befindet, ihre Effizienz zum Erhalt von „Grünender Tau“ um 25 %.",
+      "1": "Verringert zudem, wenn Nefer sich im Zustand „Schattentanz“ befindet, den <dendro>Dendro-WDS</dendro> von Gegnern in der Nähe um 20 %. Dieser Effekt endet 4,5 s, nachdem Nefer den Zustand „Schattentanz“ verlassen oder sich eine gewisse Distanz von den Gegnern entfernt hat."
+    }
+  },
+  "constellation5": {
+    "name": "Chance im Verborgenen",
+    "description": {
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong><tooltip ns=char_Nefer_gen baseKey18=burst>Heiliger Pakt – Fantasmaauftritt vor wahren Augen</tooltip></strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Sieg entspringt dem Umbruch der Zeit",
+    "description": {
+      "0": "Wandelt, wenn Nefer <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Fantasmaauftritt</strong></tooltip> anwendet, die zweite Phase des von ihr selbst verursachten Schadens in <dendro>Dendro-Flächenschaden</dendro> in Höhe von 85 % von Nefers Elementarkunde um. Verursacht zudem, wenn der Fantasmaauftritt-Angriff beendet ist, einmal <dendro>Dendro-Flächenschaden</dendro> in Höhe von 120 % von Nefers Elementarkunde. Oben genannter Schaden gilt beides als mit Fantasmaauftritt verursachter Schaden der Reaktion Mondspross.",
+      "1": "<br/>",
+      "2": "<strong>Mondomen – Reifer Glanz</strong> ",
+      "3": "<tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Steigert</strong></tooltip> den von Nefer mit der Reaktion Mondspross verursachten Schaden um 15 %."
+    }
+  }
+}

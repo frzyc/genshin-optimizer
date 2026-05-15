@@ -1,0 +1,15 @@
+{
+  "paramita": {
+    "enter": "Trong trạng thái <strong>Bỉ Ngạn Điệp Vũ</strong>",
+    "end": "Sau khi trạng thái <strong>Bỉ Ngạn Điệp Vũ</strong> kết thúc"
+  },
+  "constellation2": {
+    "applyBloodBlossom": "Áp dụng hiệu quả <strong>Huyết Mai Hương</strong>"
+  },
+  "constellation4": {
+    "condName": "Sau khi đánh bại kẻ địch chịu hiệu quả <strong>Huyết Mai Hương</strong>"
+  },
+  "constellation6": {
+    "condName": "Sau khi HP giảm xuống dưới 25% hoặc chịu đòn chí tử"
+  }
+}

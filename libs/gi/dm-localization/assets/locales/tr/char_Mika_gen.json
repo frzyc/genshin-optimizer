@@ -116,9 +116,9 @@
   "passive2": {
     "name": "Topografik Haritalandırma",
     "description": {
-      "0": "Hem <strong>Göktüyü Şarkısının</strong> Kartal Tüyünden hem de <strong>Kırağı Girdabının</strong> Ruh Esintisinden aynı anda etkilenen bir aktif karakter, saldırılarıyla bir Kritik Vuruş yaparsa Ruh Esintisi ona Bastırıcı Ok Yağmurundan 1 Dedektör kademesi verir. Tek bir Ruh Esintisi ile bu şekilde 1 Dedektör kademesi elde edilebilir.",
+      "0": "Hem <strong>Göktüyü Şarkısının</strong> Kartal Tüyünden hem de <strong>Kırağı Girdabının</strong> Ruh Esintisinden aynı anda etkilenen bir aktif karakter, saldırılarıyla bir Kritik Vuruş yaparsa Ruh Esintisi ona Bastırıcı Ok Yağmuru Yükseltme Yeteneğinden 1 Dedektör kademesi verir. Tek bir Ruh Esintisi ile bu şekilde 1 Dedektör kademesi elde edilebilir.",
       "1": "Ek olarak, yalnızca Ruh Esintisinden kazanılabilecek maksimum kademe sayısı 1 artar.",
-      "2": "Öncelikle Bastırıcı Ok Yağmurunun açılmış olması gerekir."
+      "2": "Öncelikle Bastırıcı Ok Yağmuru Yükseltme Yeteneğinin açılmış olması gerekir."
     }
   },
   "passive3": {
@@ -136,8 +136,8 @@
   "constellation2": {
     "name": "Yoldaşın Girişi",
     "description": {
-      "0": "<strong>Kırağı Girdabının</strong> Dondurucu Oku bir düşmana ilk defa isabet ettiğinde veya Kutup Yıldızı Fişeği düşmanlara isabet ettiğinde \"Bastırıcı Ok Yağmuru\" Pasif Yeteneği ile 1 Dedektör kademesi oluşur.",
-      "1": "\"Bastırıcı Ok Yağmuru\" Pasif Yeteneğinin açılmış olması gerekir."
+      "0": "<strong>Kırağı Girdabının</strong> Dondurucu Oku bir düşmana ilk defa isabet ettiğinde veya Kutup Yıldızı Fişeği düşmanlara isabet ettiğinde \"Bastırıcı Ok Yağmuru\" Yükseltme Yeteneği ile 1 Dedektör kademesi oluşur.",
+      "1": "\"Bastırıcı Ok Yağmuru\" Yükseltme Yeteneğinin açılmış olması gerekir."
     }
   },
   "constellation3": {
@@ -163,7 +163,7 @@
   "constellation6": {
     "name": "Yoldaş Yardımı",
     "description": {
-      "0": "<strong>Kırağı Girdabının</strong> Ruh Esintisinin kazanabileceği Dedektör kademesi sınırı 1 artar. \"Bastırıcı Ok Yağmuru\" Pasif Yeteneğinin açılmış olması gerekir.",
+      "0": "<strong>Kırağı Girdabının</strong> Ruh Esintisinin kazanabileceği Dedektör kademesi sınırı 1 artar. \"Bastırıcı Ok Yağmuru\" Yükseltme Yeteneğinin açılmış olması gerekir.",
       "1": "Ayrıca Ruh Esintisinden etkilenen aktif karakterler %60 daha fazla Fiziksel Kritik Hasar verir."
     }
   }

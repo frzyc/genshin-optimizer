@@ -230,6 +230,30 @@
   "SunspraySpirit": {
     "name": "ความสนุกของฤดูร้อน"
   },
+  "LegionMorale": {
+    "name": "ขวัญกำลังใจกองทัพ"
+  },
+  "PrepProgress": {
+    "name": "ความคืบหน้าการเตรียมการ"
+  },
+  "BlazingSpirit": {
+    "name": "จิตห้าวหาญโชติช่วง"
+  },
+  "FortuneCoin": {
+    "name": "เหรียญมงคล"
+  },
+  "WindscapeSplendor": {
+    "name": "ความงามแห่งสายลม"
+  },
+  "SightseeingExperience": {
+    "name": "ประสบการณ์ท่องเที่ยว"
+  },
+  "TreasuredInsights": {
+    "name": "เรื่องราวล้ำค่า"
+  },
+  "JointExhibitionPopularity": {
+    "name": "ความนิยมของนิทรรศการ"
+  },
   "Primogem": {
     "name": "Primogem"
   },
@@ -266,6 +290,36 @@
   "AcquaintFate": {
     "name": "Acquaint Fate"
   },
+  "ChronalNexus": {
+    "name": "Chronal Nexus"
+  },
+  "ArcaneKeystone": {
+    "name": "Arcane Keystone"
+  },
+  "GeodeOfReplication": {
+    "name": "คริสตัลเนรมิต"
+  },
+  "EngravedShard": {
+    "name": "เสี้ยวตราสลัก"
+  },
+  "FestiveKey": {
+    "name": "กุญแจงานรื่นเริง"
+  },
+  "LuminousKeystone": {
+    "name": "Luminous Keystone"
+  },
+  "WonderlandEXP": {
+    "name": "ค่าประสบการณ์แดนอัศจรรย์"
+  },
+  "ChronicleEXP": {
+    "name": "EXP บันทึก"
+  },
+  "ChroniclesOfTheRealms": {
+    "name": "บันทึกข้ามภพ"
+  },
+  "PrismaticCrystal": {
+    "name": "Prismatic Crystal"
+  },
   "PyroSigil": {
     "name": "Pyro Sigil"
   },
@@ -286,6 +340,9 @@
   },
   "GeoSigil": {
     "name": "Geo Sigil"
+  },
+  "LunaSigil": {
+    "name": "Luna Sigil"
   },
   "InazumaReputationEXP": {
     "name": "EXP ชื่อเสียงประจำเมือง Inazuma"
@@ -872,6 +929,12 @@
   "ReaffirmedAccordOfAppellation": {
     "name": "พันธสัญญาแห่งชื่อใหม่"
   },
+  "OverwriteKeyLeft": {
+    "name": "กุญแจเขียนทับ - ซ้าย"
+  },
+  "OverwriteKeyRight": {
+    "name": "กุญแจเขียนทับ - ขวา"
+  },
   "EnergyOrbPyro": {
     "name": "Energy Orb (Pyro)"
   },
@@ -937,6 +1000,12 @@
   },
   "PhlogistonEnergyOrbCloseRange": {
     "name": "Phlogiston Energy Orb (ระยะประชิด)"
+  },
+  "MagneticEnergyOrb": {
+    "name": "Magnetic Energy Orb"
+  },
+  "LargeMagneticEnergyOrb": {
+    "name": "Large Magnetic Energy Orb"
   },
   "TestRandomTreasureChest": {
     "name": ""
@@ -1049,6 +1118,39 @@
   "Ineffa": {
     "name": "Ineffa"
   },
+  "Lauma": {
+    "name": "Lauma"
+  },
+  "Flins": {
+    "name": "Flins"
+  },
+  "Aino": {
+    "name": "Aino"
+  },
+  "Nefer": {
+    "name": "Nefer"
+  },
+  "Durin": {
+    "name": "Durin"
+  },
+  "Jahoda": {
+    "name": "Jahoda"
+  },
+  "Columbina": {
+    "name": "Columbina"
+  },
+  "Zibai": {
+    "name": "Zibai"
+  },
+  "Illuga": {
+    "name": "Illuga"
+  },
+  "Varka": {
+    "name": "Varka"
+  },
+  "Linnea": {
+    "name": "Linnea"
+  },
   "KachinasStellaFortuna": {
     "name": "ดวงดาวแห่งชีวิตของ Kachina"
   },
@@ -1099,6 +1201,39 @@
   },
   "IneffasStellaFortuna": {
     "name": "ดวงดาวแห่งชีวิตของ Ineffa"
+  },
+  "LaumasStellaFortuna": {
+    "name": "ดวงดาวแห่งชีวิตของ Lauma"
+  },
+  "FlinssStellaFortuna": {
+    "name": "ดวงดาวแห่งชีวิตของ Flins"
+  },
+  "AinosStellaFortuna": {
+    "name": "ดวงดาวแห่งชีวิตของ Aino"
+  },
+  "NefersStellaFortuna": {
+    "name": "ดวงดาวแห่งชีวิตของ Nefer"
+  },
+  "DurinsStellaFortuna": {
+    "name": "ดวงดาวแห่งชีวิตของ Durin"
+  },
+  "JahodasStellaFortuna": {
+    "name": "ดวงดาวแห่งชีวิตของ Jahoda"
+  },
+  "ColumbinasStellaFortuna": {
+    "name": "ดวงดาวแห่งชีวิตของ Columbina"
+  },
+  "ZibaisStellaFortuna": {
+    "name": "ดวงดาวแห่งชีวิตของ Zibai"
+  },
+  "IllugasStellaFortuna": {
+    "name": "ดวงดาวแห่งชีวิตของ Illuga"
+  },
+  "VarkasStellaFortuna": {
+    "name": "ดวงดาวแห่งชีวิตของ Varka"
+  },
+  "LinneasStellaFortuna": {
+    "name": "ดวงดาวแห่งชีวิตของ Linnea"
   },
   "Apple": {
     "name": "Apple"
@@ -1315,6 +1450,9 @@
   },
   "FermentedJuice": {
     "name": "Fermented Juice"
+  },
+  "Rye": {
+    "name": "Rye"
   },
   "JeansDocumentPackage": {
     "name": "แพ็กเอกสารของ Jean"
@@ -3302,6 +3440,9 @@
   "CondessenceCrystal": {
     "name": "Condessence Crystal"
   },
+  "RainbowdropCrystal": {
+    "name": "Rainbowdrop Crystal"
+  },
   "NorthlanderSwordBillet": {
     "name": "Northlander Sword Billet"
   },
@@ -3530,6 +3671,39 @@
   "RedBerryshroom": {
     "name": "Red Berryshroom"
   },
+  "PortableBearing": {
+    "name": "Portable Bearing"
+  },
+  "IcyPebble": {
+    "name": "Icy Pebble"
+  },
+  "FrostlampFlower": {
+    "name": "Frostlamp Flower"
+  },
+  "NocturnalBlossom": {
+    "name": "Nocturnal Blossom"
+  },
+  "MoonfallSilver": {
+    "name": "Moonfall Silver"
+  },
+  "Lakkaberry": {
+    "name": "Lakkaberry"
+  },
+  "MidsommarBerry": {
+    "name": "Midsommar Berry"
+  },
+  "WinterIcelea": {
+    "name": "Winter Icelea"
+  },
+  "PineAmber": {
+    "name": "Pine Amber"
+  },
+  "WindrestFlower": {
+    "name": "Windrest Flower"
+  },
+  "EtherwingMoth": {
+    "name": "Etherwing Moth"
+  },
   "BirchWood": {
     "name": "ไม้เบิร์ช"
   },
@@ -3604,6 +3778,18 @@
   },
   "PeachPalmWood": {
     "name": "ไม้พีชปาล์ม"
+  },
+  "SilverFirWood": {
+    "name": "ไม้เฟอร์เงิน"
+  },
+  "HazelnutWood": {
+    "name": "ไม้เฮเซลนัต"
+  },
+  "PedunculateOakWood": {
+    "name": "ไม้โอ๊กฤดูร้อน"
+  },
+  "AlderWood": {
+    "name": "ไม้อัลเดอร์"
   },
   "Fabric": {
     "name": "ผ้า"
@@ -4079,7 +4265,7 @@
   "BloodiedSergeantsInsignia": {
     "name": "ตราสัญลักษณ์ทหารเปื้อนเลือด"
   },
-  "CorporalNikolaysDiary": {
+  "KapralNikolaysDiary": {
     "name": "บันทึกของสิบโท Nikolay"
   },
   "MoraPurse": {
@@ -4976,6 +5162,9 @@
   "DustOfAzoth": {
     "name": "Dust of Azoth"
   },
+  "MasterlessStellaFortuna": {
+    "name": "ดวงดาวแห่งชีวิตไร้เจ้าของ"
+  },
   "TeachingsOfFreedom": {
     "name": "Teachings of Freedom"
   },
@@ -5141,6 +5330,33 @@
   "PhilosophiesOfConflict": {
     "name": "Philosophies of Conflict"
   },
+  "TeachingsOfMoonlight": {
+    "name": "Teachings of Moonlight"
+  },
+  "GuideToMoonlight": {
+    "name": "Guide to Moonlight"
+  },
+  "PhilosophiesOfMoonlight": {
+    "name": "Philosophies of Moonlight"
+  },
+  "TeachingsOfElysium": {
+    "name": "Teachings of Elysium"
+  },
+  "GuideToElysium": {
+    "name": "Guide to Elysium"
+  },
+  "PhilosophiesOfElysium": {
+    "name": "Philosophies of Elysium"
+  },
+  "TeachingsOfVagrancy": {
+    "name": "Teachings of Vagrancy"
+  },
+  "GuideToVagrancy": {
+    "name": "Guide to Vagrancy"
+  },
+  "PhilosophiesOfVagrancy": {
+    "name": "Philosophies of Vagrancy"
+  },
   "SanctifyingDroplet": {
     "name": "Sanctifying Droplet"
   },
@@ -5248,6 +5464,18 @@
   },
   "JubilantFeather": {
     "name": "ขนนกครื้นเครง"
+  },
+  "Lunoculus": {
+    "name": "Lunoculus"
+  },
+  "BorderlandShrineOfDepthsKey": {
+    "name": "Borderland Shrine of Depths Key"
+  },
+  "MnemonicCluster": {
+    "name": "กลุ่มก้อนแห่งทักษะ"
+  },
+  "MemoryFactor": {
+    "name": "อนุภาคความทรงจำ"
   },
   "Dish": {
     "name": "เมนู"
@@ -7781,6 +8009,315 @@
   "DeliciousShrimpBisque": {
     "name": "Shrimp Bisque แสนอร่อย"
   },
+  "SuspiciousThickCutDuelistsBurger": {
+    "name": "Thick-Cut Duelist's Burger รสประหลาด"
+  },
+  "ThickCutDuelistsBurger": {
+    "name": "Thick-Cut Duelist's Burger"
+  },
+  "DeliciousThickCutDuelistsBurger": {
+    "name": "Thick-Cut Duelist's Burger แสนอร่อย"
+  },
+  "SuspiciousLakkaberryKrumkakes": {
+    "name": "Lakkaberry Krumkake รสประหลาด"
+  },
+  "LakkaberryKrumkakes": {
+    "name": "Lakkaberry Krumkake"
+  },
+  "DeliciousLakkaberryKrumkakes": {
+    "name": "Lakkaberry Krumkake แสนอร่อย"
+  },
+  "SuspiciousTodaysBoon": {
+    "name": "Today's Boon รสประหลาด"
+  },
+  "TodaysBoon": {
+    "name": "Today's Boon"
+  },
+  "DeliciousTodaysBoon": {
+    "name": "Today's Boon แสนอร่อย"
+  },
+  "SuspiciousSmokedFishSteak": {
+    "name": "Smoked Fish Steak รสประหลาด"
+  },
+  "SmokedFishSteak": {
+    "name": "Smoked Fish Steak"
+  },
+  "DeliciousSmokedFishSteak": {
+    "name": "Smoked Fish Steak แสนอร่อย"
+  },
+  "SuspiciousBorderlandCrispbread": {
+    "name": "Borderland Crispbread รสประหลาด"
+  },
+  "BorderlandCrispbread": {
+    "name": "Borderland Crispbread"
+  },
+  "DeliciousBorderlandCrispbread": {
+    "name": "Borderland Crispbread แสนอร่อย"
+  },
+  "SuspiciousMidsommarTorte": {
+    "name": "Midsommar Torte รสประหลาด"
+  },
+  "MidsommarTorte": {
+    "name": "Midsommar Torte"
+  },
+  "DeliciousMidsommarTorte": {
+    "name": "Midsommar Torte แสนอร่อย"
+  },
+  "SuspiciousFruitTandemTurnovers": {
+    "name": "Fruit Tandem Turnovers รสประหลาด"
+  },
+  "FruitTandemTurnovers": {
+    "name": "Fruit Tandem Turnovers"
+  },
+  "DeliciousFruitTandemTurnovers": {
+    "name": "Fruit Tandem Turnovers แสนอร่อย"
+  },
+  "SuspiciousBerriesAndFriedMeat": {
+    "name": "Berries and Fried Meat รสประหลาด"
+  },
+  "BerriesAndFriedMeat": {
+    "name": "Berries and Fried Meat"
+  },
+  "DeliciousBerriesAndFriedMeat": {
+    "name": "Berries and Fried Meat แสนอร่อย"
+  },
+  "SuspiciousRouletteSpecial": {
+    "name": "Roulette Special รสประหลาด"
+  },
+  "RouletteSpecial": {
+    "name": "Roulette Special"
+  },
+  "DeliciousRouletteSpecial": {
+    "name": "Roulette Special แสนอร่อย"
+  },
+  "SuspiciousNodKraiHotDog": {
+    "name": "Nod-Krai Hot Dog รสประหลาด"
+  },
+  "NodKraiHotDog": {
+    "name": "Nod-Krai Hot Dog"
+  },
+  "DeliciousNodKraiHotDog": {
+    "name": "Nod-Krai Hot Dog แสนอร่อย"
+  },
+  "SuspiciousCrispyRoast": {
+    "name": "Crispy Roast รสประหลาด"
+  },
+  "CrispyRoast": {
+    "name": "Crispy Roast"
+  },
+  "DeliciousCrispyRoast": {
+    "name": "Crispy Roast แสนอร่อย"
+  },
+  "SuspiciousLakkaberryMadame": {
+    "name": "Lakkaberry Madame รสประหลาด"
+  },
+  "LakkaberryMadame": {
+    "name": "Lakkaberry Madame"
+  },
+  "DeliciousLakkaberryMadame": {
+    "name": "Lakkaberry Madame แสนอร่อย"
+  },
+  "ThunderclapSlash": {
+    "name": "Thunderclap Slash!"
+  },
+  "WhisperInTheWoods": {
+    "name": "Whisper in the Woods"
+  },
+  "LongNightAlight": {
+    "name": "Long Night Alight"
+  },
+  "ClinkClankConfectioneryCup": {
+    "name": "Clink-Clank Confectionery Cup"
+  },
+  "SugarSculptureRimehornDeer": {
+    "name": "น้ำตาลปั้น: กวางเขาน้ำแข็ง"
+  },
+  "SugarSculptureChicBadger": {
+    "name": "น้ำตาลปั้น: แบดเจอร์สุดเก๋"
+  },
+  "SugarSculptureDualblazeLongplumeIbis": {
+    "name": "น้ำตาลปั้น: นกกุลาสองประกาย"
+  },
+  "SugarSculpturePuffin": {
+    "name": "น้ำตาลปั้น: นกแก้วผาทะเล"
+  },
+  "SugarSculptureFrostfinWhale": {
+    "name": "น้ำตาลปั้น: วาฬฟินหิมะ"
+  },
+  "SugarSculptureIneffa": {
+    "name": "น้ำตาลปั้น: Ineffa"
+  },
+  "SugarSculptureLauma": {
+    "name": "น้ำตาลปั้น: Lauma"
+  },
+  "SugarSculptureAino": {
+    "name": "น้ำตาลปั้น: Aino"
+  },
+  "SugarSculptureFlins": {
+    "name": "น้ำตาลปั้น: Flins"
+  },
+  "SuspiciousLakkaberryPie": {
+    "name": "Lakkaberry Pie รสประหลาด"
+  },
+  "LakkaberryPie": {
+    "name": "Lakkaberry Pie"
+  },
+  "DeliciousLakkaberryPie": {
+    "name": "Lakkaberry Madame แสนอร่อย"
+  },
+  "SuspiciousLohikeitto": {
+    "name": "Lohikeitto รสประหลาด"
+  },
+  "Lohikeitto": {
+    "name": "Lohikeitto"
+  },
+  "DeliciousLohikeitto": {
+    "name": "Lohikeitto แสนอร่อย"
+  },
+  "PiramidaNightingale": {
+    "name": "Piramida Nightingale"
+  },
+  "FrontierLand": {
+    "name": "Frontier Land"
+  },
+  "WildberryTrail": {
+    "name": "Wildberry Trail"
+  },
+  "SecretsExchanged": {
+    "name": "Secrets Exchanged"
+  },
+  "SugarSculptureNefer": {
+    "name": "น้ำตาลปั้น - Nefer"
+  },
+  "AfterClassPractice": {
+    "name": "\"After-Class Practice\""
+  },
+  "AppleStewTrialVersion": {
+    "name": "Apple Stew (เวอร์ชันทดลอง)"
+  },
+  "SuspiciousSpicedFriedChicken": {
+    "name": "Spiced Fried Chicken รสประหลาด"
+  },
+  "SpicedFriedChicken": {
+    "name": "Spiced Fried Chicken"
+  },
+  "DeliciousSpicedFriedChicken": {
+    "name": "Spiced Fried Chicken แสนอร่อย"
+  },
+  "SugarSculptureJahoda": {
+    "name": "น้ำตาลปั้น: Jahoda"
+  },
+  "SugarSculptureKuuhenki": {
+    "name": "น้ำตาลปั้น: ภูตจันทรา"
+  },
+  "SuspiciousLuckySnowDelight": {
+    "name": "Lucky Snow Delight รสประหลาด"
+  },
+  "LuckySnowDelight": {
+    "name": "Lucky Snow Delight"
+  },
+  "DeliciousLuckySnowDelight": {
+    "name": "Lucky Snow Delight แสนอร่อย"
+  },
+  "SuspiciousCrispySpringRolls": {
+    "name": "Crispy Spring Roll รสประหลาด"
+  },
+  "CrispySpringRolls": {
+    "name": "Crispy Spring Roll"
+  },
+  "DeliciousCrispySpringRolls": {
+    "name": "Crispy Spring Roll แสนอร่อย"
+  },
+  "SuspiciousBerryHerbalCandy": {
+    "name": "Berry Herbal Candy รสประหลาด"
+  },
+  "BerryHerbalCandy": {
+    "name": "Berry Herbal Candy"
+  },
+  "DeliciousBerryHerbalCandy": {
+    "name": "Berry Herbal Candy แสนอร่อย"
+  },
+  "SuspiciousVeggiePotSoup": {
+    "name": "Veggie Pot Soup รสประหลาด"
+  },
+  "VeggiePotSoup": {
+    "name": "Veggie Pot Soup"
+  },
+  "DeliciousVeggiePotSoup": {
+    "name": "Veggie Pot Soup แสนอร่อย"
+  },
+  "SuspiciousFiresideMerriment": {
+    "name": "Fireside Merriment รสประหลาด"
+  },
+  "FiresideMerriment": {
+    "name": "Fireside Merriment"
+  },
+  "DeliciousFiresideMerriment": {
+    "name": "Fireside Merriment แสนอร่อย"
+  },
+  "SuspiciousMushroomPhantasm": {
+    "name": "Mushroom Phantasm รสประหลาด"
+  },
+  "MushroomPhantasm": {
+    "name": "Mushroom Phantasm"
+  },
+  "DeliciousMushroomPhantasm": {
+    "name": "Mushroom Phantasm แสนอร่อย"
+  },
+  "FlavorOfSpring": {
+    "name": "Flavor of Spring"
+  },
+  "MoonlitMirage": {
+    "name": "Moonlit Mirage"
+  },
+  "NightwatchSoup": {
+    "name": "Nightwatch Soup"
+  },
+  "SugarSculptureColumbina": {
+    "name": "น้ำตาลปั้น: Columbina"
+  },
+  "SugarSculptureIlluga": {
+    "name": "น้ำตาลปั้น: Illuga"
+  },
+  "CharredMushroomPhantasm": {
+    "name": "Mushroom Phantasm ที่ไหม้เกรียม"
+  },
+  "SuspiciousGoldenTemperedJade": {
+    "name": "Golden-Tempered Jade รสประหลาด"
+  },
+  "GoldenTemperedJade": {
+    "name": "Golden-Tempered Jade"
+  },
+  "DeliciousGoldenTemperedJade": {
+    "name": "Golden-Tempered Jade แสนอร่อย"
+  },
+  "HeartyIndulgence": {
+    "name": "Hearty Indulgence"
+  },
+  "SuspiciousHarborFishBurger": {
+    "name": "Harbor Fish Burger รสประหลาด"
+  },
+  "HarborFishBurger": {
+    "name": "Harbor Fish Burger"
+  },
+  "DeliciousHarborFishBurger": {
+    "name": "Harbor Fish Burger แสนอร่อย"
+  },
+  "SuspiciousMillhavensMorningPlate": {
+    "name": "Millhaven Morning Plate รสประหลาด"
+  },
+  "MillhavensMorningPlate": {
+    "name": "Millhaven Morning Plate"
+  },
+  "DeliciousMillhavensMorningPlate": {
+    "name": "Millhaven Morning Plate แสนอร่อย"
+  },
+  "IridescenceUnderTheTreesShade": {
+    "name": "Iridescence Under the Tree's Shade"
+  },
+  "SugarSculptureLinnea": {
+    "name": "น้ำตาลปั้น: Linnea"
+  },
   "RecipeItem": {
     "name": "Cooking Ingredients"
   },
@@ -8510,6 +9047,78 @@
   "RecipeShrimpBisque": {
     "name": "สูตรอาหาร: Shrimp Bisque"
   },
+  "RecipeThickCutDuelistsBurger": {
+    "name": "สูตรอาหาร: Thick-Cut Duelist's Burger"
+  },
+  "RecipeLakkaberryKrumkakes": {
+    "name": "สูตรอาหาร: Lakkaberry Krumkake"
+  },
+  "RecipeTodaysBoon": {
+    "name": "สูตรอาหาร: Today's Boon"
+  },
+  "RecipeSmokedFishSteak": {
+    "name": "สูตรอาหาร: Smoked Fish Steak"
+  },
+  "RecipeBorderlandCrispbread": {
+    "name": "สูตรอาหาร: Borderland Crispbread"
+  },
+  "RecipeMidsommarTorte": {
+    "name": "สูตรอาหาร: Midsommar Torte"
+  },
+  "RecipeFruitTandemTurnovers": {
+    "name": "สูตรอาหาร: Fruit Tandem Turnovers"
+  },
+  "RecipeBerriesAndFriedMeat": {
+    "name": "สูตรอาหาร: Berries and Fried Meat"
+  },
+  "RecipeRouletteSpecial": {
+    "name": "สูตรอาหาร: Roulette Special"
+  },
+  "RecipeNodKraiHotDog": {
+    "name": "สูตรอาหาร: Nod-Krai Hot Dog"
+  },
+  "RecipeCrispyRoast": {
+    "name": "สูตรอาหาร: Crispy Roast"
+  },
+  "RecipeLakkaberryMadame": {
+    "name": "สูตรอาหาร: Lakkaberry Madame"
+  },
+  "RecipeLakkaberryPie": {
+    "name": "สูตรอาหาร: Lakkaberry Pie"
+  },
+  "RecipeLohikeitto": {
+    "name": "สูตรอาหาร: Lohikeitto"
+  },
+  "RecipeSpicedFriedChicken": {
+    "name": "สูตรอาหาร: Spiced Fried Chicken"
+  },
+  "RecipeLuckySnowDelight": {
+    "name": "สูตรอาหาร: Lucky Snow Delight"
+  },
+  "RecipeCrispySpringRolls": {
+    "name": "สูตรอาหาร: Crispy Spring Roll"
+  },
+  "RecipeBerryHerbalCandy": {
+    "name": "สูตรอาหาร: Berry Herbal Candy"
+  },
+  "RecipeVeggiePotSoup": {
+    "name": "สูตรอาหาร: Veggie Pot Soup"
+  },
+  "RecipeFiresideMerriment": {
+    "name": "สูตรอาหาร: Fireside Merriment"
+  },
+  "RecipeMushroomPhantasm": {
+    "name": "สูตรอาหาร: Mushroom Phantasm"
+  },
+  "RecipeGoldenTemperedJade": {
+    "name": "สูตรอาหาร: Golden-Tempered Jade"
+  },
+  "RecipeHarborFishBurger": {
+    "name": "สูตรอาหาร: Harbor Fish Burger"
+  },
+  "RecipeMillhavensMorningPlate": {
+    "name": "สูตรอาหาร: Millhaven Morning Plate"
+  },
   "CraftedItems": {
     "name": "ไอเทมจากการสร้าง"
   },
@@ -8551,6 +9160,12 @@
   },
   "Spice": {
     "name": "เครื่องเทศ"
+  },
+  "Smetana": {
+    "name": "Smetana"
+  },
+  "RyeFlour": {
+    "name": "Rye Flour"
   },
   "HeatshieldPotion": {
     "name": "Heatshield Potion"
@@ -8638,6 +9253,12 @@
   },
   "EmberglowBait": {
     "name": "Emberglow Bait"
+  },
+  "BerryBait": {
+    "name": "Berry Bait"
+  },
+  "RefreshingLakkaBait": {
+    "name": "Refreshing Lakka Bait"
   },
   "PrimordialEssence": {
     "name": "วัสดุตั้งต้น"
@@ -9002,6 +9623,69 @@
   "BlazingPrismshell": {
     "name": "Blazing Prismshell"
   },
+  "BrokenDriveShaft": {
+    "name": "Broken Drive Shaft"
+  },
+  "ReinforcedDriveShaft": {
+    "name": "Reinforced Drive Shaft"
+  },
+  "PrecisionDriveShaft": {
+    "name": "Precision Drive Shaft"
+  },
+  "TatteredWarrant": {
+    "name": "Tattered Warrant"
+  },
+  "ImmaculateWarrant": {
+    "name": "Immaculate Warrant"
+  },
+  "FrostEtchedWarrant": {
+    "name": "Frost-Etched Warrant"
+  },
+  "FrostnightsGlimmer": {
+    "name": "Frostnight's Glimmer"
+  },
+  "FrostnightsGlow": {
+    "name": "Frostnight's Glow"
+  },
+  "FrostnightsGlory": {
+    "name": "Frostnight's Glory"
+  },
+  "LightlessBone": {
+    "name": "Lightless Bone"
+  },
+  "GlowingRemains": {
+    "name": "Glowing Remains"
+  },
+  "RadiantExoskeleton": {
+    "name": "Radiant Exoskeleton"
+  },
+  "MistshroudManifestation": {
+    "name": "Mistshroud Manifestation"
+  },
+  "MistshroudPlate": {
+    "name": "Mistshroud Plate"
+  },
+  "MistshroudHelmet": {
+    "name": "Mistshroud Helmet"
+  },
+  "FracturedEyeOfTheDeepShadow": {
+    "name": "Fractured Eye of the Deep Shadow"
+  },
+  "AberrantCoreOfTheDeepShadow": {
+    "name": "Aberrant Core of the Deep Shadow"
+  },
+  "HookedBeakOfTheDeepShadow": {
+    "name": "Hooked Beak of the Deep Shadow"
+  },
+  "FadedFlamingHilt": {
+    "name": "Faded Flaming Hilt"
+  },
+  "FracturedFlamingHilt": {
+    "name": "Fractured Flaming Hilt"
+  },
+  "JeweledFlamingHilt": {
+    "name": "Jeweled Flaming Hilt"
+  },
   "HurricaneSeed": {
     "name": "Hurricane Seed"
   },
@@ -9230,6 +9914,36 @@
   "SecretSourceAirflowAccumulator": {
     "name": "Secret Source Airflow Accumulator"
   },
+  "PrecisionKuuvahkiStampingDie": {
+    "name": "Precision Kuuvahki Stamping Die"
+  },
+  "LightbearingScaleFeather": {
+    "name": "Lightbearing Scale-Feather"
+  },
+  "RadiantAntler": {
+    "name": "Radiant Antler"
+  },
+  "CyclicMilitaryKuuvahkiCore": {
+    "name": "Cyclic Military Kuuvahki Core"
+  },
+  "MaskOfTheVirtuousDoctor": {
+    "name": "Mask of the Virtuous Doctor"
+  },
+  "MadmansRestraint": {
+    "name": "Madman's Restraint"
+  },
+  "ElixirOfTheHeretic": {
+    "name": "Elixir of the Heretic"
+  },
+  "RemnantOfTheDreadwing": {
+    "name": "Remnant of the Dreadwing"
+  },
+  "PrismaticSeveredTail": {
+    "name": "Prismatic Severed Tail"
+  },
+  "PlumeOfTheFallenWatcher": {
+    "name": "Plume of the Fallen Watcher"
+  },
   "TileOfDecarabiansTower": {
     "name": "Tile of Decarabian's Tower"
   },
@@ -9446,6 +10160,42 @@
   "NightWindsMysticRevelation": {
     "name": "Night-Wind's Mystic Revelation"
   },
+  "ArtfulDeviceFragment": {
+    "name": "Artful Device Fragment"
+  },
+  "ArtfulDeviceReplica": {
+    "name": "Artful Device Replica"
+  },
+  "ArtfulDeviceInheritance": {
+    "name": "Artful Device Inheritance"
+  },
+  "ArtfulDeviceWish": {
+    "name": "Artful Device Wish"
+  },
+  "EmberOfLongNightFlint": {
+    "name": "Ember of Long Night Flint"
+  },
+  "AfterglowOfLongNightFlint": {
+    "name": "Afterglow of Long Night Flint"
+  },
+  "FlareOfLongNightFlint": {
+    "name": "Flare of Long Night Flint"
+  },
+  "BlazeOfLongNightFlint": {
+    "name": "Blaze of Long Night Flint"
+  },
+  "SunderedGloryOfTheFarNorthScions": {
+    "name": "Sundered Glory of the Far-North Scions"
+  },
+  "UnyieldingDelusionOfTheFarNorthScions": {
+    "name": "Unyielding Delusion of the Far-North Scions"
+  },
+  "OblationOfTheFarNorthScions": {
+    "name": "Oblation of the Far-North Scions"
+  },
+  "AureateRadianceOfTheFarNorthScions": {
+    "name": "Aureate Radiance of the Far-North Scions"
+  },
   "StarterSupplyBundle": {
     "name": "แพ็กไอเทมเริ่มต้น"
   },
@@ -9465,7 +10215,7 @@
     "name": "แพ็กเลื่อนขั้นตัวละคร (ขั้นสูงมาก)"
   },
   "PackOfVirtuousTeachings": {
-    "name": "Pack of Virtuous Teachings"
+    "name": "แพ็กอบรมบ่มนิสัย"
   },
   "VirtuousShareBundle": {
     "name": "แพ็กแบ่งปันคุณธรรม"
@@ -9551,6 +10301,12 @@
   "MaskedBallInvitationLetter": {
     "name": "จดหมายเชิญงานเลี้ยงปลอมตัว"
   },
+  "SetGiftBoxGallop": {
+    "name": "เซ็ตกล่องของขวัญ - \"โลดแล่น\""
+  },
+  "TemperedInPractice": {
+    "name": "รางวัลการฝึกตน"
+  },
   "BEP": {
     "name": "EXP BP"
   },
@@ -9595,6 +10351,9 @@
   },
   "PhilosophiesOfAJourney": {
     "name": "Philosophies of a Journey"
+  },
+  "TravelingBounties": {
+    "name": "รางวัลจากการเดินทาง"
   },
   "DomainReliquaryTierIII": {
     "name": "กล่องเก็บของศักดิ์สิทธิ์แห่งห้วงลึก - ระดับ 3"
@@ -10097,13 +10856,13 @@
   "FlyingSerpentsHorn": {
     "name": "เขาของอสรพิษบันเหิน"
   },
-  "CaptainZoyaSnezhevnasReportI": {
+  "KapitanPoruchikZoyaSnezhevnasReportI": {
     "name": "รายงานปฏิบัติการของกัปตัน Zoya Snezhevna (I)"
   },
-  "CaptainZoyaSnezhevnasReportII": {
+  "KapitanPoruchikZoyaSnezhevnasReportII": {
     "name": "รายงานปฏิบัติการของกัปตัน Zoya Snezhevna (II)"
   },
-  "CaptainZoyaSnezhevnasReportIII": {
+  "KapitanPoruchikZoyaSnezhevnasReportIII": {
     "name": "รายงานปฏิบัติการของกัปตัน Zoya Snezhevna (III)"
   },
   "DamagedRecordsI": {
@@ -12188,8 +12947,8 @@
   "FusionProfusionDJRemixSelections": {
     "name": "\"Fusion Profusion: DJ Remix Selections\""
   },
-  "Kamera": {
-    "name": "กล่องถ่ายรูป"
+  "PhotographyRecords": {
+    "name": "บันทึกการถ่ายภาพ"
   },
   "CafLuteceHouseGrounds": {
     "name": "กาแฟลิมิเต็ดของร้านกาแฟ Lutece"
@@ -12281,14 +13040,20 @@
   "MysteriousMap": {
     "name": "แผนที่ลึกลับ"
   },
-  "DazzlingMysteriousGift": {
-    "name": "ของขวัญลึกลับสุดพิศวง"
+  "WonderlandCosmosphere": {
+    "name": "ลูกแก้วลับแดนอัศจรรย์"
   },
   "LetterOfUnknownOrigin": {
     "name": "จดหมายที่ไม่ทราบที่มา"
   },
+  "PortableKuuvahkiChargingComponent": {
+    "name": "อุปกรณ์ชาร์จพลังงานแรงจันทราผันแบบพกพา"
+  },
   "RantiysHat": {
     "name": "หมวกของ Rantiy"
+  },
+  "WelcomeToNashaTown": {
+    "name": "\"ยินดีต้อนรับสู่เมือง Nasha!\""
   },
   "KeyToTheHibernationChamber": {
     "name": "กุญแจ \"แคปซูลจำศีล\""
@@ -12307,6 +13072,18 @@
   },
   "RekissOrders": {
     "name": "คำสั่งของ Rekis"
+  },
+  "AinosToolbox": {
+    "name": "กล่องเครื่องมือของ Aino"
+  },
+  "AinosToolboxEmpty": {
+    "name": "กล่องเครื่องมือของ Aino (ว่างเปล่า)"
+  },
+  "IneffasToolbox": {
+    "name": "กล่องเครื่องมือของ Ineffa"
+  },
+  "IneffasToolboxEmpty": {
+    "name": "กล่องเครื่องมือของ Ineffa (ว่างเปล่า)"
   },
   "InvitationLetterForABallNowPast": {
     "name": "จดหมายเชิญปิดฉากงานเลี้ยง"
@@ -12350,6 +13127,9 @@
   "MiniatureSun": {
     "name": "\"ดวงอาทิตย์\" ขนาดจิ๋ว"
   },
+  "MaitesIOU": {
+    "name": "ใบแจ้งหนี้ของ Maite"
+  },
   "TeyvatCommemorativeAlbum": {
     "name": "อัลบั้มภาพ Teyvat"
   },
@@ -12362,8 +13142,8 @@
   "DecipheredMessage": {
     "name": "ข้อมูลจากการถอดรหัส"
   },
-  "MysteriousBolt": {
-    "name": "สลักเกลียวประหลาด"
+  "KrumkakeBolt": {
+    "name": "สลักเกลียว Krumkake"
   },
   "InvestigativeReportBakunawa": {
     "name": "รายงานการตรวจสอบ - Bakunawa"
@@ -12373,6 +13153,9 @@
   },
   "InvestigativeReportSecretCave": {
     "name": "รายงานการตรวจสอบ - ถ้ำลึกลับ"
+  },
+  "EvermoonSeal": {
+    "name": "Evermoon Seal"
   },
   "CryptexLetter": {
     "name": "จดหมายในรหัสลิขิต"
@@ -12416,8 +13199,17 @@
   "YellowedNotes": {
     "name": "บันทึกที่เหลืองซีด"
   },
+  "InvestmentCoupon": {
+    "name": "ตั๋วลงทุน"
+  },
   "EasybreezeBadge": {
     "name": "เข็มกลัดแสนสบาย"
+  },
+  "InvestmentReturns": {
+    "name": "ผลตอบแทนการลงทุน"
+  },
+  "SugarSculptureBox": {
+    "name": "กล่องน้ำตาลปั้น"
   },
   "SundjattasPhlogistonForgeNotes": {
     "name": "บันทึกการหลอมโฟลจิสตันของ Sundjatta"
@@ -12431,6 +13223,21 @@
   "PriestesssRecordsIII": {
     "name": "บันทึกของนักบวช (III)"
   },
+  "UndyingOnesMourningBell": {
+    "name": "Undying One's Mourning Bell"
+  },
+  "AHornUnwinded": {
+    "name": "A Horn Unwinded"
+  },
+  "DyedTassel": {
+    "name": "Dyed Tassel"
+  },
+  "MedicineFromTheCuratoriumOfSecrets": {
+    "name": "ยารักษาที่ \"เคหาสน์แห่งความลับ\" จัดหามาให้"
+  },
+  "WildHuntPhenomenaLocationMap": {
+    "name": "แผนที่พิกัดปรากฏการณ์ \"การล่าอันบ้าคลั่ง\""
+  },
   "LetterAddressedToTheCaptain": {
     "name": "จดหมายที่ส่งถึงกัปตัน"
   },
@@ -12440,11 +13247,530 @@
   "SomeonesLostPassword": {
     "name": "รหัสลับที่ใครบางคนทำหาย"
   },
+  "MemorataCognoscentisJest": {
+    "name": "เรื่องตลกของผู้หยั่งรู้ความทรงจำ"
+  },
+  "InscriptaCognoscentisFeather": {
+    "name": "ขนอีกาแห่งผู้รู้แจ้ง"
+  },
+  "DevocinaCognoscentisSorrow": {
+    "name": "โศกนาฏกรรมของผู้หยั่งรู้ความอาวรณ์"
+  },
+  "WeavenexaCognoscentisIntoxication": {
+    "name": "สุนทรีย์แห่งผู้ถักทอปัญญา"
+  },
+  "StratagemaCognoscentisMask": {
+    "name": "หน้ากากแห่งปราชญ์กลศึก"
+  },
+  "SpecialSugarSculptureBox": {
+    "name": "กล่องน้ำตาลปั้นรุ่นพิเศษ"
+  },
+  "SomeonesRequestForHelp": {
+    "name": "จดหมายขอความช่วยเหลือจากใครบางคน"
+  },
+  "SpareBunkerHandwheel": {
+    "name": "วาล์วมือสำรองสำหรับที่หลบภัย"
+  },
+  "BountyTokenTrickstersRedSatin": {
+    "name": "หลักฐานนำจับ: ผ้าซาตินสีแดงของจอมลวงโลก"
+  },
+  "BountyTokenLadysBrooch": {
+    "name": "หลักฐานนำจับ: เข็มกลัดของสุภาพสตรี"
+  },
+  "BountyTokenMudStainedHandguard": {
+    "name": "หลักฐานนำจับ: โกร่งดาบอาบโคลน"
+  },
+  "RecordedIntel": {
+    "name": "ข่าวกรองที่บันทึกไว้"
+  },
+  "MessilyScribbledNotesI": {
+    "name": "บันทึกที่เขียนขึ้นอย่างลวก ๆ (I)"
+  },
+  "MessilyScribbledNotesII": {
+    "name": "บันทึกที่เขียนขึ้นอย่างลวก ๆ (II)"
+  },
+  "MessilyScribbledNotesIII": {
+    "name": "บันทึกที่เขียนขึ้นอย่างลวก ๆ (III)"
+  },
+  "MessilyScribbledNotesIV": {
+    "name": "บันทึกที่เขียนขึ้นอย่างลวก ๆ (IV)"
+  },
+  "DataStorageCassette": {
+    "name": "เทปบันทึกข้อมูล"
+  },
+  "PatrolRecords": {
+    "name": "บันทึกการลาดตระเวน"
+  },
+  "DimasReflection": {
+    "name": "หนังสือสารภาพผิดของ Dima"
+  },
+  "AMerchantsLetter": {
+    "name": "จดหมายจากนักธุรกิจคนหนึ่ง"
+  },
+  "ConchPatternedPages": {
+    "name": "กระดาษลายหอยสังข์"
+  },
+  "ConchPatternedNotebook": {
+    "name": "สมุดบันทึกลายหอยสังข์"
+  },
+  "SemyonsNotes": {
+    "name": "บันทึกของ Semyon"
+  },
+  "WellPreservedPunchedTape": {
+    "name": "เทปเจาะรูที่ถูกเก็บรักษาไว้อย่างดี"
+  },
+  "AirspaceDataCollector20": {
+    "name": "เครื่องเก็บข้อมูลน่านฟ้า 2.0"
+  },
+  "PrivatesNotesIII": {
+    "name": "บันทึกของนายทหาร (III)"
+  },
+  "PrivatesNotesI": {
+    "name": "บันทึกของนายทหาร (I)"
+  },
+  "PrivatesNotesII": {
+    "name": "บันทึกของนายทหาร (II)"
+  },
+  "SomeonesResearchNotes": {
+    "name": "บันทึกการวิจัยของใครบางคน"
+  },
+  "TierIBunkerAccessCard": {
+    "name": "คีย์การ์ดที่หลบภัยทั่วไป"
+  },
+  "TierIIBunkerAccessCard": {
+    "name": "คีย์การ์ดที่หลบภัยพิเศษ"
+  },
+  "TierIIIBunkerAccessCard": {
+    "name": "คีย์การ์ดที่หลบภัยระดับสูง"
+  },
+  "Toolkit": {
+    "name": "กระเป๋าเครื่องมือ"
+  },
+  "KuuvahkiExperimentalDesignBureauFloorPlan": {
+    "name": "แผนผังสำนักงานออกแบบการทดลองแรงจันทราผัน"
+  },
+  "SparePart": {
+    "name": "ชิ้นส่วนสำรอง"
+  },
+  "Lever": {
+    "name": "คันโยก"
+  },
+  "PhotoWithColonelIronWhale": {
+    "name": "รูปคู่กับ \"พันเอกวาฬเหล็ก\""
+  },
+  "OldPortableBearing": {
+    "name": "Old Portable Bearing"
+  },
+  "Stellafruit": {
+    "name": "\"ผลดารา\""
+  },
+  "TrainingGroundTarget": {
+    "name": "เป้าในสนามฝึกซ้อม"
+  },
+  "AunisNotes": {
+    "name": "บันทึกของ Auni"
+  },
+  "CollatedIntel": {
+    "name": "หนังสือรวบรวมข่าวกรอง"
+  },
+  "BackupProgramModule": {
+    "name": "โมดูลโปรแกรมสำรอง"
+  },
+  "DamagedPhoto": {
+    "name": "รูปภาพที่เสียหาย"
+  },
+  "OpenedSecretLetter": {
+    "name": "จดหมายลับที่ถูกเปิดอ่านแล้ว"
+  },
+  "WayOpeningKey": {
+    "name": "กุญแจเปิดเส้นทาง"
+  },
+  "RaggedNotes": {
+    "name": "บันทึกโทรม ๆ"
+  },
+  "OrderedNotes": {
+    "name": "บันทึกที่เรียบเรียงแล้ว"
+  },
+  "GoldenKey": {
+    "name": "กุญแจทอง"
+  },
+  "SilverKey": {
+    "name": "กุญแจเงิน"
+  },
+  "IronKey": {
+    "name": "กุญแจเหล็ก"
+  },
+  "StrangeIronCoin": {
+    "name": "Iron Coin ประหลาด"
+  },
+  "ConchNotebook": {
+    "name": "สมุดบันทึกหอยสังข์"
+  },
+  "ResearchLog": {
+    "name": "บันทึกการวิจัย"
+  },
+  "ResearchRecords": {
+    "name": "บันทึกการวิจัย"
+  },
+  "TheLegendsOfReedMillerThiefExtraordinaireI": {
+    "name": "ตำนานจอมโจรผู้ยิ่งใหญ่ Reed Miller (I)"
+  },
+  "TheLegendsOfReedMillerThiefExtraordinaireII": {
+    "name": "ตำนานจอมโจรผู้ยิ่งใหญ่ Reed Miller (II)"
+  },
+  "TheLegendsOfReedMillerThiefExtraordinaireIII": {
+    "name": "ตำนานจอมโจรผู้ยิ่งใหญ่ Reed Miller (III)"
+  },
+  "HymnsOfTheFarNorthI": {
+    "name": "เพลงสวดแห่งสุดเขตแดนเหนือ (I)"
+  },
+  "HymnsOfTheFarNorthII": {
+    "name": "เพลงสวดแห่งสุดเขตแดนเหนือ (II)"
+  },
+  "HymnsOfTheFarNorthIII": {
+    "name": "เพลงสวดแห่งสุดเขตแดนเหนือ (III)"
+  },
+  "ConchEchoesI": {
+    "name": "เสียงสะท้อนจากหอยสังข์ (I)"
+  },
+  "ConchEchoesII": {
+    "name": "เสียงสะท้อนจากหอยสังข์ (II)"
+  },
+  "MaitesNotes": {
+    "name": "บันทึกของ Maite"
+  },
+  "LetterForLovia": {
+    "name": "จดหมายถึง Lovia"
+  },
+  "LetterForAila": {
+    "name": "จดหมายถึง Aila"
+  },
+  "AilasNotes": {
+    "name": "บันทึกของ Aila"
+  },
+  "TheManWhoBecameAMule": {
+    "name": "ชายผู้กลายเป็นล่อ"
+  },
+  "HalfBurnedPage": {
+    "name": "หน้ากระดาษที่ไหม้ไปครึ่งหนึ่ง"
+  },
+  "AgedPinecone": {
+    "name": "ลูกสนเก่าเก็บ"
+  },
+  "AgedRye": {
+    "name": "ข้าวไรย์เก่าเก็บ"
+  },
+  "CuratoriumFunds": {
+    "name": "เงินทุนของ \"เคหาสน์แห่งความลับ\""
+  },
+  "ShutterflashKamera": {
+    "name": "กล่องถ่ายรูป \"ภาพพริบตา\""
+  },
+  "TheShiniestAndBrightestBerylConch": {
+    "name": "Beryl Conch \"ที่สว่างไสวแวววาวที่สุด\""
+  },
+  "RhinedottirsGift": {
+    "name": "\"ของขวัญ\" จาก Rhinedottir"
+  },
+  "RaggedDoll": {
+    "name": "\"ตุ๊กตา\" ที่เก่าซอมซ่อ"
+  },
+  "AccessInsignia": {
+    "name": "ตราสัญลักษณ์สิทธิ์"
+  },
+  "SeverelyContaminatedTeardropCrystal": {
+    "name": "Teardrop Crystal ที่ปนเปื้อนอย่างรุนแรง"
+  },
+  "ScribbledLetter": {
+    "name": "จดหมายลายมือหวัด ๆ"
+  },
+  "MoonPrayerNightPamphlet": {
+    "name": "คู่มือนำเที่ยว \"คืนจันทราธิษฐาน\""
+  },
+  "GreetingCardForColumbina": {
+    "name": "การ์ดอวยพรสำหรับ Columbina"
+  },
+  "MoonPrayerCandyFromColumbina": {
+    "name": "ลูกอมจันทราธิษฐานที่ Columbina เตรียมไว้"
+  },
+  "TheSoulblazerSagaVolume2": {
+    "name": "มหากาพย์นักรบวิญญาณโชติช่วง: เล่ม 2"
+  },
+  "TaleOfDurin": {
+    "name": "เรื่องราวที่มีชื่อว่า \"Durin\""
+  },
+  "LanternRiteGiftGiftOfRadiantNight": {
+    "name": "ของขวัญ Lantern Rite: ฟ้ายามราตรี"
+  },
+  "LanternRiteGiftGiftOfSeekingLight": {
+    "name": "ของขวัญ Lantern Rite: การตามรอยประทีป"
+  },
+  "LanternRiteGiftGiftOfDistantLonging": {
+    "name": "ของขวัญ Lantern Rite: การคะนึงหา"
+  },
+  "LanternRiteGiftGiftOfJoyousWishes": {
+    "name": "ของขวัญ Lantern Rite: ปีติปรารถนา"
+  },
+  "LanternRiteGiftGiftOfVenerableVirtue": {
+    "name": "ของขวัญ Lantern Rite: สดุดีคุณธรรม"
+  },
+  "LanternRiteGiftGiftOfGuidingMoonlight": {
+    "name": "ของขวัญ Lantern Rite: แสงจันทร์นำทาง"
+  },
+  "AncientIncantations": {
+    "name": "คาถาโบราณ"
+  },
+  "Wish": {
+    "name": "ความปรารถนา"
+  },
+  "Moonlight": {
+    "name": "แสงจันทรา"
+  },
+  "LostNotesIV": {
+    "name": "บันทึกที่สาบสูญ IV"
+  },
+  "LostNotesII": {
+    "name": "บันทึกที่สาบสูญ II"
+  },
+  "LostNotesI": {
+    "name": "บันทึกที่สาบสูญ I"
+  },
+  "IrismoonSeal": {
+    "name": "Irismoon Seal"
+  },
+  "MultiPurposeNegotiationTool": {
+    "name": "ไอเทมเจรจาอเนกประสงค์"
+  },
+  "TheWhiteHorseAdeptusMeetsTheWhiteHorseAdeptusInLiyueHarbor": {
+    "name": "\"เซียนม้าขาวเยี่ยมชมเซียนม้าขาวที่ท่าเรือ Liyue\""
+  },
+  "AnAncientPoem": {
+    "name": "บทกวีโบราณ"
+  },
+  "MarionettesNotebook": {
+    "name": "สมุดบันทึกของ Marionette"
+  },
+  "LostNotesIII": {
+    "name": "บันทึกที่สาบสูญ III"
+  },
+  "ProspectorsCommand": {
+    "name": "คำสั่งสำรวจ"
+  },
+  "ThatWhichHasLostItsPower": {
+    "name": "วัตถุที่สูญเสียพลังวิญญาณ"
+  },
+  "FreshRye": {
+    "name": "ข้าวไรย์สด"
+  },
+  "TheFirstIronCoin": {
+    "name": "\"Iron Coin เหรียญแรก\""
+  },
+  "SilverLampwick": {
+    "name": "ไส้ตะเกียงเงิน"
+  },
+  "UnknownPersonsAbandonedDiary": {
+    "name": "ไดอารี่ที่ไม่รู้ว่าใครเป็นคนเขียนทิ้งไว้"
+  },
+  "NeatlyWrittenDiaryI": {
+    "name": "ไดอารี่ที่เขียนอย่างเรียบร้อย I"
+  },
+  "NeatlyWrittenDiaryII": {
+    "name": "ไดอารี่ที่เขียนอย่างเรียบร้อย II"
+  },
+  "NeatlyWrittenDiaryIII": {
+    "name": "ไดอารี่ที่เขียนอย่างเรียบร้อย III"
+  },
+  "ForgottenKey": {
+    "name": "กุญแจที่หายไป"
+  },
+  "AncientLogCarterScherbius": {
+    "name": "บันทึกโบราณ (Carter Scherbius)"
+  },
+  "AncientLogAlainGuillotin": {
+    "name": "บันทึกโบราณ (Alain Guillotin)"
+  },
+  "AncientLogJakobIngold": {
+    "name": "บันทึกโบราณ (Jakob Ingold)"
+  },
+  "TheResearchNotesOfMasterRuggiero": {
+    "name": "บันทึกการวิจัยของอาจารย์ Ruggiero"
+  },
+  "TheBiographyOfGuillotinDeluxeEdition": {
+    "name": "ตำนาน Guillotin (ฉบับปรับปรุงปกแข็ง)"
+  },
+  "TheHistoryOfTheDeclineAndFallOfRemuria": {
+    "name": "ประวัติศาสตร์การล่มสลายแห่ง Remuria"
+  },
+  "TimeTrekker": {
+    "name": "นักท่องเวลา"
+  },
+  "AutomnequiSermonDictationConcerningTheApocalypse": {
+    "name": "บันทึกคำบอกเล่าแนวคิดในช่วงศารทวิษุวัต: เกี่ยวกับวันสิ้นโลก"
+  },
+  "AutomnequiSermonDictationExplicationsOnTheChymicalMarriage": {
+    "name": "บันทึกคำบอกเล่าแนวคิดในช่วงศารทวิษุวัต: คำอธิบายการผนึก"
+  },
+  "GreatDetectiveHurlockTheAlchemistAndTheClockworkSaint": {
+    "name": "ยอดนักสืบ Hurlock: นักเล่นแร่แปรธาตุและนักบุญแห่งกลไก"
+  },
+  "EventInvitation": {
+    "name": "จดหมายเชิญร่วมกิจกรรม"
+  },
+  "FeatherlightMora": {
+    "name": "Mora ที่เบาหวิว"
+  },
+  "HighlyElasticFishMeat": {
+    "name": "เนื้อปลาสดที่มีความยืดหยุ่นสูง"
+  },
+  "DamagedLogs": {
+    "name": "บันทึกที่เสียหาย"
+  },
+  "BloodstainedLogs": {
+    "name": "บันทึกที่เปื้อนเลือด"
+  },
+  "MessilyWrittenNotes": {
+    "name": "ลายมือที่บิดเบี้ยว"
+  },
+  "CommunicationsLog": {
+    "name": "บันทึกการติดต่อสื่อสาร"
+  },
+  "TerminalLog": {
+    "name": "บันทึกเทอร์มินัล"
+  },
+  "NoteClippedInABook": {
+    "name": "กระดาษโน้ตที่แนบอยู่ในหนังสือ"
+  },
+  "DodocosEnchantedCandy": {
+    "name": "\"ลูกกวาดวิเศษ Dodoco\""
+  },
+  "AMessageFromTheLegendaryThiefReedMiller": {
+    "name": "ข้อความจากจอมโจรผู้ยิ่งใหญ่ Reed Miller"
+  },
+  "BrahesNotesI": {
+    "name": "บันทึกของ Brahe I"
+  },
+  "BrahesNotesII": {
+    "name": "บันทึกของ Brahe II"
+  },
+  "BrahesNotesIII": {
+    "name": "บันทึกของ Brahe III"
+  },
+  "BrahesNotesIV": {
+    "name": "บันทึกของ Brahe IV"
+  },
+  "LetterBuriedInTheTimeCapsule": {
+    "name": "จดหมายที่ฝังไว้ในแคปซูลกาลเวลา"
+  },
+  "ABriefHistoryOfThePaleStarborn": {
+    "name": "ประวัติศาสตร์ภูตดาราสีจาง"
+  },
+  "NightMurmursFromTheFarBorderVarcolac": {
+    "name": "เรื่องเล่ายามราตรีจากชายแดน: วาร์โคลัก"
+  },
+  "TalesCarriedByTheNorthwind": {
+    "name": "บทแห่งสายลมเหนือ"
+  },
+  "AncientHandwriting": {
+    "name": "ลายมือโบราณ"
+  },
+  "ALetterCarriedByTheWind": {
+    "name": "จดหมายจากสายลม"
+  },
+  "VarkasInvitationTicket": {
+    "name": "คูปองเลี้ยงข้าวของ Varka"
+  },
+  "VarkasSecretStashOfCash": {
+    "name": "เงินเก็บส่วนตัวของ Varka"
+  },
+  "OnFungiCommunitiesDraftManuscript": {
+    "name": "\"สรุปข้อมูลเกี่ยวกับเผ่าพันธุ์ Fungus\" ฉบับร่าง"
+  },
+  "LetterFromYaePublishingHouse": {
+    "name": "จดหมายจากสำนักพิมพ์ Yae"
+  },
+  "LetterFromTheAkademiya": {
+    "name": "จดหมายจากสถาบัน"
+  },
+  "Unadorned": {
+    "name": "ไม่มีของตกแต่ง"
+  },
+  "BadgeNocturnalBlossom": {
+    "name": "เข็มกลัด: Nocturnal Blossom"
+  },
+  "BadgeRainbowdropCrystal": {
+    "name": "เข็มกลัด: Rainbowdrop Crystal"
+  },
+  "BadgeCapybara": {
+    "name": "เข็มกลัด: Capybara"
+  },
+  "CompanionExclusive": {
+    "name": "คู่หู: พิเศษ"
+  },
+  "CompanionShared": {
+    "name": "คู่หู: แบ่งปัน"
+  },
+  "SpiritEnvoyChampionshipChampionMedal": {
+    "name": "เหรียญรางวัลชนะเลิศ \"พิธีชิงแชมป์ทูตวิญญาณ\""
+  },
+  "SpecialPerfumeWindsBreath": {
+    "name": "น้ำหอมสูตรพิเศษ - สายลมโชย"
+  },
+  "ReassembledNote": {
+    "name": "โน้ตที่ปะติดปะต่อกัน"
+  },
+  "CargoCrateFilledWithHeavyParts": {
+    "name": "กล่องสินค้าที่บรรจุชิ้นส่วนหนัก"
+  },
+  "LostBalloon": {
+    "name": "ลูกโป่งที่หายไป"
+  },
+  "AStackOfPaper": {
+    "name": "กระดาษหนึ่งปึก"
+  },
+  "SelectedMoonfallSilver": {
+    "name": "Moonfall Silver ที่คัดสรรมาแล้ว"
+  },
+  "LohensWorkReport": {
+    "name": "รายงานการทำงานของ Lohen"
+  },
+  "ArcadiaTheEntombedCapital": {
+    "name": "\"นครร้างในโลงศพ: Arcadia\""
+  },
+  "ACornerOfValivija": {
+    "name": "\"มุมหนึ่งของ Valivija\""
+  },
+  "VerasMelancholyFinalVolumeVersionII": {
+    "name": "ความเศร้าโศกของ Vera (เล่มจบ - เวอร์ชัน II)"
+  },
+  "VerasMelancholyFinalVolumeVersionI": {
+    "name": "ความเศร้าโศกของ Vera (เล่มจบ - เวอร์ชัน I)"
+  },
+  "TheDreamOfRhonabwy": {
+    "name": "ความฝันของ Rhonabwy"
+  },
+  "TheSongOfAyKhanoum": {
+    "name": "\"บทเพลงแห่ง Ay-Khanoum\""
+  },
+  "TheCanonOfLoveDivineInspirationAndVirtue": {
+    "name": "\"บัญญัติแห่งรัก ศรัทธา และคุณธรรม\""
+  },
+  "Note": {
+    "name": "กระดาษโน้ต"
+  },
+  "AncientMondstadtRoyalSeal": {
+    "name": "ตราประทับราชวงศ์ Mondstadt โบราณ"
+  },
+  "SegmentDomainControlModuleZeroParticle": {
+    "name": "โมดูลควบคุมเขตแดนเศษเสี้ยว: อนุภาคมวลศูนย์"
+  },
   "TearsAmongTheStars": {
     "name": "น้ำตาแห่งดวงดาว"
   },
   "ObsidianAncientName": {
     "name": "ออบซิเดียนนามโบราณ"
+  },
+  "MoonPrayerBlossomFromColumbina": {
+    "name": "ดอกไม้จันทราธิษฐานที่ Columbina มอบให้คุณ"
   },
   "SilkFlowerSeed": {
     "name": "Silk Flower Seed"
@@ -12559,6 +13885,21 @@
   },
   "SkysplitGembloomSeed": {
     "name": "Skysplit Gembloom Seed"
+  },
+  "FrostlampFlowerSeed": {
+    "name": "Frostlamp Flower Seed"
+  },
+  "MidsommarBerrySeed": {
+    "name": "Midsommar Berry Seed"
+  },
+  "LakkaberrySeed": {
+    "name": "Lakkaberry Seed"
+  },
+  "WinterIceleaSeed": {
+    "name": "Winter Icelea Seed"
+  },
+  "PineAmberSeed": {
+    "name": "Pine Amber Seed"
   },
   "Medaka": {
     "name": "Medaka"
@@ -12695,6 +14036,30 @@
   "SecretSourceScoutSweeper": {
     "name": "Secret Source Scout Sweeper"
   },
+  "CommonAxeheadFish": {
+    "name": "ปลาหัวขวานทั่วไป"
+  },
+  "FrostedAxeheadFish": {
+    "name": "ปลาหัวขวานเยือกแข็ง"
+  },
+  "BlazingAxeheadFish": {
+    "name": "ปลาหัวขวานโลหะเดือด"
+  },
+  "VeggieMaulerShark": {
+    "name": "ฉลามดุสายคลีน"
+  },
+  "NeonMaulerShark": {
+    "name": "ฉลามดุประกายรุ้ง"
+  },
+  "AzuregazeCrystalEye": {
+    "name": "ปลาตาใสทิวาคราม"
+  },
+  "NightgazeCrystalEye": {
+    "name": "ปลาตาใสยามราตรี"
+  },
+  "CeruleanDoppeldrake": {
+    "name": "Cerulean Doppeldrake"
+  },
   "WingsOfFirstFlight": {
     "name": "Wings of First Flight"
   },
@@ -12742,6 +14107,12 @@
   },
   "WingsOfFatesCourseIntertwined": {
     "name": "Wings of Fate's Course Intertwined"
+  },
+  "WingsOfTheSilentMoon": {
+    "name": "Wings of the Silent Moon"
+  },
+  "WingsOfLeisurelyMoments": {
+    "name": "Wings of Leisurely Moments"
   },
   "RadiantSpincrystal1": {
     "name": "Radiant Spincrystal 1"
@@ -13259,6 +14630,90 @@
   "RadiantSpincrystal156": {
     "name": "Radiant Spincrystal 156"
   },
+  "RadiantSpincrystalTheLongWayHomePartI": {
+    "name": "Radiant Spincrystal - \"The Long Way Home: Part I\""
+  },
+  "RadiantSpincrystalTheLongWayHomePartII": {
+    "name": "Radiant Spincrystal - \"The Long Way Home: Part II\""
+  },
+  "RadiantSpincrystal157": {
+    "name": "Radiant Spincrystal 157"
+  },
+  "RadiantSpincrystal158": {
+    "name": "Radiant Spincrystal 158"
+  },
+  "RadiantSpincrystal159": {
+    "name": "Radiant Spincrystal 159"
+  },
+  "RadiantSpincrystal160": {
+    "name": "Radiant Spincrystal 160"
+  },
+  "RadiantSpincrystal161": {
+    "name": "Radiant Spincrystal 161"
+  },
+  "RadiantSpincrystal162": {
+    "name": "Radiant Spincrystal 162"
+  },
+  "RadiantSpincrystal163": {
+    "name": "Radiant Spincrystal 163"
+  },
+  "RadiantSpincrystal164": {
+    "name": "Radiant Spincrystal 164"
+  },
+  "RadiantSpincrystal165": {
+    "name": "Radiant Spincrystal 165"
+  },
+  "RadiantSpincrystal166": {
+    "name": "Radiant Spincrystal 166"
+  },
+  "RadiantSpincrystal167": {
+    "name": "Radiant Spincrystal 167"
+  },
+  "RadiantSpincrystal168": {
+    "name": "Radiant Spincrystal 168"
+  },
+  "RadiantSpincrystal169": {
+    "name": "Radiant Spincrystal 169"
+  },
+  "RadiantSpincrystal170": {
+    "name": "Radiant Spincrystal 170"
+  },
+  "RadiantSpincrystal171": {
+    "name": "Radiant Spincrystal 171"
+  },
+  "RadiantSpincrystal172": {
+    "name": "Radiant Spincrystal 172"
+  },
+  "RadiantSpincrystal173": {
+    "name": "Radiant Spincrystal 173"
+  },
+  "RadiantSpincrystal174": {
+    "name": "Radiant Spincrystal 174"
+  },
+  "RadiantSpincrystal175": {
+    "name": "Radiant Spincrystal 175"
+  },
+  "RadiantSpincrystal176": {
+    "name": "Radiant Spincrystal 176"
+  },
+  "RadiantSpincrystal177": {
+    "name": "Radiant Spincrystal 177"
+  },
+  "RadiantSpincrystal178": {
+    "name": "Radiant Spincrystal 178"
+  },
+  "RadiantSpincrystal179": {
+    "name": "Radiant Spincrystal 179"
+  },
+  "RadiantSpincrystal180": {
+    "name": "Radiant Spincrystal 180"
+  },
+  "RadiantSpincrystal181": {
+    "name": "Radiant Spincrystal 181"
+  },
+  "RadiantSpincrystal182": {
+    "name": "Radiant Spincrystal 182"
+  },
   "LanternFiber": {
     "name": "Lantern Fiber"
   },
@@ -13270,6 +14725,18 @@
   },
   "XiaoLantern": {
     "name": "โคม Xiao"
+  },
+  "CelebratoryXiaoLantern": {
+    "name": "โคม Xiao เทศกาล"
+  },
+  "GiftXiaoLantern": {
+    "name": "โคม Xiao ของขวัญ"
+  },
+  "XiaoLanternFlightManual": {
+    "name": "คู่มือจัดรูปแบบการลอยโคม Xiao"
+  },
+  "MoonLightsTheSkySpringBlossomsHigh": {
+    "name": "แสงจันทร์ส่องนำทาง สรรพสิ่งเบิกบานสู่วสันต์"
   },
   "RimeWornFragment": {
     "name": "Rime-Worn Fragment"
@@ -13293,7 +14760,7 @@
     "name": "Ako's Sake Vessel"
   },
   "Alkahest": {
-    "name": "\"Solvent\""
+    "name": "Alkahest"
   },
   "OintmentOfSight": {
     "name": "Ointment of Sight"
@@ -13317,13 +14784,13 @@
     "name": "Congealed Pupa Wax"
   },
   "MartensOmniFix": {
-    "name": "น้ำยาสารพัดประโยชน์ของ Marten"
+    "name": "Martens' Omni-Fix"
   },
   "DandelionBookmark": {
     "name": "Dandelion Bookmark"
   },
   "SurgingSacredChalice": {
-    "name": "จอกศักดิ์สิทธิ์แห่งการอุบัติ"
+    "name": "Surging Sacred Chalice"
   },
   "SuperDuperInvincibleShiningSparklyMagicCrystal": {
     "name": "Super-Duper Invincible Shining Sparkly Magic Crystal"
@@ -13348,6 +14815,12 @@
   },
   "DriftersCrystalMarrow": {
     "name": "Drifter's Crystal Marrow"
+  },
+  "GoldenStrings": {
+    "name": "Golden Strings"
+  },
+  "RefinedHeart": {
+    "name": "Refined Heart"
   },
   "FalconsDance": {
     "name": "Falcon's Dance"
@@ -13498,6 +14971,9 @@
   },
   "FlowhornFlounderfinder": {
     "name": "Flowhorn Flounderfinder"
+  },
+  "MoongleamSapling": {
+    "name": "Moongleam Sapling"
   },
   "GenshinImpactANewWorld": {
     "name": "Genshin Impact - ความประทับใจ"
@@ -14243,6 +15719,84 @@
   "CelebrationTunaOnRice": {
     "name": "การฉลอง - ข้าวทูน่า"
   },
+  "LaumaBranchedAntlers": {
+    "name": "Lauma - กิ่งเขา"
+  },
+  "FlinsOathkeepersLantern": {
+    "name": "Flins - ตะเกียงแห่งคำปฏิญาณ"
+  },
+  "AinoWhoopsieDucksie": {
+    "name": "Aino - หนูช่วยเย็นก่อนจิ"
+  },
+  "NodKraiMoonlight": {
+    "name": "Nod-Krai - แสงจันทร์"
+  },
+  "NodKraiSacredRealm": {
+    "name": "Nod-Krai - แดนศักดิ์สิทธิ์"
+  },
+  "AchievementTimeApart": {
+    "name": "ความสำเร็จ - พรากจาก"
+  },
+  "TravelNotesGlacialMoon": {
+    "name": "บันทึก - จันทราน้ำแข็ง"
+  },
+  "CelebrationSublimeFlavors": {
+    "name": "การฉลอง - เลิศรส"
+  },
+  "NeferSecrets": {
+    "name": "Nefer - ความลับ"
+  },
+  "TravelNotesBygoneRuins": {
+    "name": "บันทึก - ซากอดีตกาล"
+  },
+  "DurinRadiantHeart": {
+    "name": "Durin - หัวใจเรืองรอง"
+  },
+  "JahodaHelpingHand": {
+    "name": "Jahoda - ผู้ช่วย"
+  },
+  "TravelNotesBlazingSnow": {
+    "name": "บันทึก - หิมะโชติช่วง"
+  },
+  "CelebrationDreamReader": {
+    "name": "การฉลอง - อ่านฝัน"
+  },
+  "ColumbinaSomeday": {
+    "name": "Columbina - สักวันหนึ่ง"
+  },
+  "ZibaiVeiledVista": {
+    "name": "Zibai - ม่านมายาทัศนา"
+  },
+  "IllugaNightmareSongbird": {
+    "name": "Illuga - วิหคนิทราทมิฬ"
+  },
+  "AchievementFarSighted": {
+    "name": "ความสำเร็จ - มองการณ์ไกล"
+  },
+  "NodKraiLanternOfLongestNight": {
+    "name": "Nod-Krai - ตะเกียงแห่งค่ำคืนอันยาวนาน"
+  },
+  "TravelNotesLanternlitOde": {
+    "name": "บันทึก - พราวประทีป"
+  },
+  "VarkaLeadWolf": {
+    "name": "Varka - จ่าฝูงหมาป่า"
+  },
+  "TravelNotesNortherlyWinds": {
+    "name": "บันทึก - ลมเหนือ"
+  },
+  "LinneaRattlingResonance": {
+    "name": "Linnea - เสียงกังวาน"
+  },
+  "MondstadtWatchtower": {
+    "name": "Mondstadt - หอคอยสังเกตการณ์"
+  },
+  "EmptyTempleOverflowingMemories": {
+    "name": "วิหารร้าง - เปี่ยมความทรงจำ"
+  },
+  "TravelNotesHomecoming": {
+    "name": "บันทึก - การหวนคืน"
+  },
   "EchoDandelionKnight": {
     "name": "เอฟเฟกต์วิ่ง - อัศวิน Dandelion"
   },
@@ -14281,6 +15835,36 @@
   },
   "EchoLonesomeTranscendence": {
     "name": "เอฟเฟกต์วิ่ง - ห้วงคำนึงแสนอ้างว้าง"
+  },
+  "EchoValleyOrchid": {
+    "name": "เอฟเฟกต์วิ่ง - กล้วยไม้งามกลางหุบเขา"
+  },
+  "EchoPhysicOfPurity": {
+    "name": "เอฟเฟกต์วิ่ง - พฤกษาช้อยวิสุทธิ์"
+  },
+  "EchoKreideprinz": {
+    "name": "เอฟเฟกต์วิ่ง - องค์ชายชอล์กขาว"
+  },
+  "EchoFleeingSunlight": {
+    "name": "เอฟเฟกต์วิ่ง - ดวงอาทิตย์ที่หลบหนี"
+  },
+  "EchoFrostflakeHeron": {
+    "name": "เอฟเฟกต์วิ่ง - กระเรียนขาวกลางหิมะ"
+  },
+  "EchoPillarOfFortitude": {
+    "name": "เอฟเฟกต์วิ่ง - เล่ห์เหลี่ยมแห่งเกียรติยศ"
+  },
+  "FaintGlow": {
+    "name": "แสงอ่อนจาง"
+  },
+  "FirstLight": {
+    "name": "แย้มแสง"
+  },
+  "GlimmeringGlory": {
+    "name": "แสงเรืองรอง"
+  },
+  "BrimmingSpiritflow": {
+    "name": "กระแสวิญญาณ"
   },
   "AnemoculusResonanceStone": {
     "name": "Anemoculus Resonance Stone"
@@ -14323,6 +15907,9 @@
   },
   "WarmingBottle": {
     "name": "Warming Bottle"
+  },
+  "Kamera": {
+    "name": "กล่องถ่ายรูป"
   },
   "KuriousKamera": {
     "name": "กล่องถ่ายรูปสุดประหลาด"
@@ -14579,6 +16166,42 @@
   "LeapingSpiritPiano": {
     "name": "เปียโนเริงระบำ"
   },
+  "UjolaCat": {
+    "name": "แมว Ujola"
+  },
+  "RotorHoveringDaybed": {
+    "name": "เตียงลอยฟ้าระบบใบพัด"
+  },
+  "MementoKamera": {
+    "name": "\"กล่องถ่ายรูปแห่งความทรงจำ\""
+  },
+  "LunaTreasureCompass": {
+    "name": "Luna Treasure Compass"
+  },
+  "TravelAccounts": {
+    "name": "บันทึกย่างก้าวเล่าเรื่อง"
+  },
+  "LunarArcanaCase": {
+    "name": "กล่องจันทรา"
+  },
+  "TheLittleWitchsDictionary": {
+    "name": "พจนานุกรมแม่มดน้อย"
+  },
+  "JadelightCanopy": {
+    "name": "กลดหยกครามสุริยัน"
+  },
+  "SpotterKamera": {
+    "name": "กล่องถ่ายรูปแกะรอย"
+  },
+  "HarmonicKeys": {
+    "name": "คีย์บอร์ดฮาร์มอนิก"
+  },
+  "SegmentDomainTreasureCompass": {
+    "name": "Segment-Domain Treasure Compass"
+  },
+  "LinneasNaturalistArchive": {
+    "name": "บันทึกธรรมชาติวิทยาของ Linnea"
+  },
   "InstructionsAnemoculusResonanceStone": {
     "name": "คู่มือ: Anemoculus Resonance Stone"
   },
@@ -14702,6 +16325,21 @@
   "DiagramChainBreaker": {
     "name": "แบบแปลน: Chain Breaker"
   },
+  "DiagramSerenitysCall": {
+    "name": "แบบแปลน: Serenity's Call"
+  },
+  "DiagramSnareHook": {
+    "name": "แบบแปลน: Snare Hook"
+  },
+  "DiagramMasterKey": {
+    "name": "แบบแปลน: Master Key"
+  },
+  "DiagramBlackmarrowLantern": {
+    "name": "แบบแปลน: Blackmarrow Lantern"
+  },
+  "DiagramProspectorsShovel": {
+    "name": "แบบแปลน: Prospector's Shovel"
+  },
   "InstructionsDendroculusResonanceStone": {
     "name": "คู่มือ: Dendroculus Resonance Stone"
   },
@@ -14732,6 +16370,12 @@
   "FormulaEmberglowBait": {
     "name": "สูตร: Emberglow Bait"
   },
+  "FormulaBerryBait": {
+    "name": "สูตร: Berry Bait"
+  },
+  "FormulaRefreshingLakkaBait": {
+    "name": "สูตร: Refreshing Lakka Bait"
+  },
   "SilkenPrint": {
     "name": "\"Silken Print\""
   },
@@ -14743,6 +16387,9 @@
   },
   "ScrollOfTheFieryFirmament": {
     "name": "Scroll of the Fiery Firmament"
+  },
+  "SphereOfFleetingShadow": {
+    "name": "\"กลไกฉายเงาพราย\""
   },
   "TheMountainCloudsLetDownGoldenRain": {
     "name": "เมฆโปรยปรายสายฝนสีทอง"
@@ -14999,6 +16646,147 @@
   "HandEyeBodyCoordination": {
     "name": "มือเท้าตาประสาน"
   },
+  "IntimidatingStance": {
+    "name": "ท่าทีคุกคาม"
+  },
+  "LeisurelyMoment": {
+    "name": "ช่วงเวลาพักผ่อน"
+  },
+  "SeriousContemplation": {
+    "name": "ครุ่นคิดจริงจัง"
+  },
+  "BurstOfInspiration": {
+    "name": "ไอเดียบรรเจิด"
+  },
+  "ReadyAndRaringToGo": {
+    "name": "พร้อมลุย"
+  },
+  "DignifiedCountenance": {
+    "name": "ท่วงท่าภูมิฐาน"
+  },
+  "ScaryStance": {
+    "name": "ท่าทีข่มขู่"
+  },
+  "CarefulCommunication": {
+    "name": "เรียบเรียงคำพูด"
+  },
+  "BattlePreparation": {
+    "name": "เตรียมพร้อมต่อสู้"
+  },
+  "GatheredOverDrinks": {
+    "name": "คำเชิญร่วมดื่ม"
+  },
+  "BrandishingWeapons": {
+    "name": "ควงอาวุธ"
+  },
+  "TeachingAjawALesson": {
+    "name": "ฝึกสอน Ajaw"
+  },
+  "ALittleScare": {
+    "name": "แอบตกใจเบา ๆ"
+  },
+  "EagerAndReady": {
+    "name": "คันไม้คันมือ"
+  },
+  "SharpObserver": {
+    "name": "สำรวจและค้นหา"
+  },
+  "TeaTime": {
+    "name": "เวลาจิบชา"
+  },
+  "MerchantsAura": {
+    "name": "ออร่านักธุรกิจผู้ร่ำรวย"
+  },
+  "IngeniousForesight": {
+    "name": "คิดอย่างแยบยล"
+  },
+  "CelebrityCountenance": {
+    "name": "รูปลักษณ์ดารา"
+  },
+  "CoolWatcher": {
+    "name": "ดูอย่างใจเย็น"
+  },
+  "SignOfProsperity": {
+    "name": "ลางความมั่งคั่ง"
+  },
+  "CaseOverview": {
+    "name": "ภาพรวมที่ครอบคลุม"
+  },
+  "SnapshotEssentials": {
+    "name": "หลักการวาดเร็ว"
+  },
+  "UnderControl": {
+    "name": "อยู่ในการควบคุม"
+  },
+  "TalismanicGrace": {
+    "name": "ควบคุมวิญญาณ"
+  },
+  "TheArtOfCreation": {
+    "name": "วิถีสร้างชีวิต"
+  },
+  "AdeptalArtisanry": {
+    "name": "ศิลปะกลไกเทพ"
+  },
+  "ByDecree": {
+    "name": "ตามคำสั่ง"
+  },
+  "PoisedToDance": {
+    "name": "ท่วงท่าพร้อมเต้นรำ"
+  },
+  "FragrantTouch": {
+    "name": "กลิ่นหอมจาง ๆ"
+  },
+  "BlearyEyes": {
+    "name": "สายตาง่วงซึม"
+  },
+  "LittleFriend": {
+    "name": "เพื่อนตัวน้อย"
+  },
+  "DignifiedAppearance": {
+    "name": "ท่วงท่าอันสง่า"
+  },
+  "TranquilRadiance": {
+    "name": "ชมแสงเงียบงัน"
+  },
+  "NinjaReady": {
+    "name": "วิชานินจาพร้อมแล้ว"
+  },
+  "BubblesDrifting": {
+    "name": "ฟองลอยละล่อง"
+  },
+  "ValiantHero": {
+    "name": "ท่วงท่าผู้กล้า"
+  },
+  "ReaderInspired": {
+    "name": "ความรู้สึกจากการอ่าน"
+  },
+  "PreparingForTreatment": {
+    "name": "เตรียมรักษา"
+  },
+  "OniKingDominion": {
+    "name": "อำนาจราชาปีศาจ"
+  },
+  "RelaxedAppearance": {
+    "name": "ท่วงท่าสบาย ๆ"
+  },
+  "AmiableConversation": {
+    "name": "สนทนากลมกลืน"
+  },
+  "RelaxedBearing": {
+    "name": "ท่วงท่าผ่อนคลาย"
+  },
+  "ContemplativePrayer": {
+    "name": "ตั้งจิตอธิษฐาน"
+  },
+  "SumptuousFeast": {
+    "name": "อิ่มหนำสำราญ"
+  },
+  "VanquishingEvil": {
+    "name": "กำจัดความชั่วร้าย"
+  },
+  "MeditativeReading": {
+    "name": "อ่านด้วยใจสงบ"
+  },
   "FantasticalMarvel": {
     "name": "มายาลวงตาพิศวง"
   },
@@ -15047,8 +16835,29 @@
   "EternalDreamsOfSerenity": {
     "name": "ฝันนิรันดร์ไร้พะวง"
   },
+  "FalconWingsAblaze": {
+    "name": "ปีกปักษาแผดเผา"
+  },
+  "WisdomOfCherriedFrost": {
+    "name": "เกล็ดซากุระเบิกบาน"
+  },
+  "RedHotMeter": {
+    "name": "จังหวะสุดร้อนแรง"
+  },
+  "ElysiumAndTheMoon": {
+    "name": "ดวงจันทร์กับสรวงสวรรค์"
+  },
+  "FrostmoonPrayers": {
+    "name": "คำอธิษฐานแห่งจันทราน้ำค้างแข็ง"
+  },
+  "MysteriousWhiteStar": {
+    "name": "ดาวขาวลึกลับ"
+  },
   "VigorousYapping": {
     "name": "พูดคุยอย่างคึกคัก"
+  },
+  "DiligentStudy": {
+    "name": "ขยันคิด ขยันเรียน"
   },
   "RhodeiaOfLoch": {
     "name": "Rhodeia of Loch"
@@ -15136,6 +16945,24 @@
   },
   "GluttonousYumkasaurMountainKing": {
     "name": "ราชาแห่งขุนเขา Yumkasaurus จอมตะกละ"
+  },
+  "LordOfErodedPrimalFire": {
+    "name": "Lord of Eroded Primal Fire"
+  },
+  "HydroTulpa": {
+    "name": "Hydro Tulpa"
+  },
+  "BlackSerpentKnightRockbreakerAx": {
+    "name": "Black Serpent Knight: Rockbreaker Ax"
+  },
+  "ConsecratedHornedCrocodile": {
+    "name": "Consecrated Horned Crocodile"
+  },
+  "GoldflameQucusaurTyrant": {
+    "name": "ทรราช Qucusaurus เพลิงทอง"
+  },
+  "ConsecratedFangedBeast": {
+    "name": "Consecrated Fanged Beast"
   },
   "UndividedHeart": {
     "name": "Undivided Heart"
@@ -15491,6 +17318,60 @@
   "TheAllDevourer": {
     "name": "The All-Devourer"
   },
+  "TeachingsOfTheCollectiveOfPlenty": {
+    "name": "Teachings of the Collective of Plenty"
+  },
+  "YourEchoIMeetInDreams": {
+    "name": "Your Echo I Meet in Dreams"
+  },
+  "UndyingFury": {
+    "name": "Undying Fury"
+  },
+  "AHeroOfJusticesTriumph": {
+    "name": "A Hero of Justice's Triumph"
+  },
+  "TacticalWarmCompressBandaging": {
+    "name": "Tactical Warm Compress Bandaging"
+  },
+  "FlowConvergence": {
+    "name": "Flow Convergence"
+  },
+  "TeaPartiesBurstingWithColor": {
+    "name": "Tea Parties Bursting With Color"
+  },
+  "BringerOfBlessing": {
+    "name": "Bringer of Blessing"
+  },
+  "OnceStoodAgainstTheTideOfDarkWatersLikeBedrock": {
+    "name": "\"Once Stood Against the Tide of Dark Waters Like Bedrock...\""
+  },
+  "FarToFall": {
+    "name": "Far to Fall"
+  },
+  "TrailsAmidstTheForestFog": {
+    "name": "Trails Amidst the Forest Fog"
+  },
+  "DeathlyOverflow": {
+    "name": "Deathly Overflow"
+  },
+  "CompanionsCounsel": {
+    "name": "Companion's Counsel"
+  },
+  "RectifyingProcessor": {
+    "name": "Rectifying Processor"
+  },
+  "FlamelordsBlessing": {
+    "name": "\"พรแห่งจ้าวอัคคี\""
+  },
+  "YouShallGoOutWithJoy": {
+    "name": "You Shall Go Out With Joy"
+  },
+  "TheBurdenOfCreativeGenius": {
+    "name": "The Burden of Creative Genius"
+  },
+  "WitheredReedsEclipseTheSun": {
+    "name": "Withered Reeds Eclipse the Sun"
+  },
   "MagicGuide": {
     "name": "Magic Guide"
   },
@@ -15800,6 +17681,42 @@
   "WhimsicalDanceOfTheWithered": {
     "name": "Whimsical Dance of the Withered"
   },
+  "RoyalMasque": {
+    "name": "Royal Masque"
+  },
+  "UnfinishedReverie": {
+    "name": "Unfinished Reverie"
+  },
+  "FragmentOfHarmonicWhimsy": {
+    "name": "Fragment of Harmonic Whimsy"
+  },
+  "AquaSimulacra": {
+    "name": "Aqua Simulacra"
+  },
+  "EverlastingMoonglow": {
+    "name": "Everlasting Moonglow"
+  },
+  "FellDragonsMonocle": {
+    "name": "Fell Dragon's Monocle"
+  },
+  "NoblesseOblige": {
+    "name": "Noblesse Oblige"
+  },
+  "NymphsDream": {
+    "name": "Nymph's Dream"
+  },
+  "StarcallersWatch": {
+    "name": "Starcaller's Watch"
+  },
+  "FlameForgedInsight": {
+    "name": "Flame-Forged Insight"
+  },
+  "SnareHook": {
+    "name": "Snare Hook"
+  },
+  "Blubberbeast": {
+    "name": "Blubberbeast"
+  },
   "LiyueHarborWharf": {
     "name": "Liyue Harbor Wharf"
   },
@@ -15982,6 +17899,45 @@
   },
   "GiftOfTheGoddessOfProphecy": {
     "name": "ของขวัญจากเทพธิดาพยากรณ์"
+  },
+  "AdventurersGuild": {
+    "name": "กิลด์นักผจญภัย"
+  },
+  "Seymour": {
+    "name": "Seymour"
+  },
+  "BonaAndCocouik": {
+    "name": "Bona และ \"Cocouik\""
+  },
+  "SilvermoonHall": {
+    "name": "โถงจันทราสีเงิน"
+  },
+  "TidesealStone": {
+    "name": "ศิลาผนึกวังวน"
+  },
+  "FrostmoonEnclave": {
+    "name": "หอจันทราน้ำค้างแข็ง"
+  },
+  "NashaTown": {
+    "name": "เมือง Nasha"
+  },
+  "KuuvahkiExperimentalDesignBureau": {
+    "name": "สำนักงานออกแบบการทดลองแรงจันทราผัน"
+  },
+  "ElementalTransfigurationSuperconductBlessing": {
+    "name": "การแปรธาตุ: พรนำไฟฟ้า"
+  },
+  "ElementalTransfigurationVaporizeBlessing": {
+    "name": "การแปรธาตุ: พรระเหย"
+  },
+  "LepinePauline": {
+    "name": "Lepine-Pauline"
+  },
+  "ElementalTransfigurationBloomBlessing": {
+    "name": "การแปรธาตุ: พรงอกเงย"
+  },
+  "ElementalTransfigurationLavaBlessing": {
+    "name": "การแปรธาตุ: พรไฟและหิน"
   },
   "ElementalResonanceWovenIce": {
     "name": "Elemental Resonance: Woven Ice"
@@ -16193,6 +18149,51 @@
   "AwesomeBro": {
     "name": "เยี่ยมเลย พวก"
   },
+  "FellDragonsAwakening": {
+    "name": "Fell Dragon's Awakening"
+  },
+  "NarrationFootnotes": {
+    "name": "หมายเหตุของผู้บรรยาย"
+  },
+  "BrokenSea": {
+    "name": "ทะเลแหลกลาญ"
+  },
+  "ABlessingFromM": {
+    "name": "\"พรจากแม่มด M\""
+  },
+  "RevelrousBeats": {
+    "name": "\"เทศกาลรื่นเริง\""
+  },
+  "AnAncientSacrificeOfSacredBrocade": {
+    "name": "หยกปฏิญาณในอดีต เปี่ยมด้วยจิตวิญญาณที่สัตย์ซื่อ"
+  },
+  "LostLegaciesInTheSand": {
+    "name": "\"สิ่งที่หลงเหลือไว้ในเม็ดทราย\""
+  },
+  "TheNarzissenkreuzAdventure": {
+    "name": "การผจญภัยแห่ง Narzissenkreuz"
+  },
+  "PlanToSaveTheWorld": {
+    "name": "แผนการช่วยเหลือโลก"
+  },
+  "AnAdventureThroughTheMorningMist": {
+    "name": "\"การผจญภัยผ่านหมอกยามเช้า\""
+  },
+  "GeniussUpgradeTechnique": {
+    "name": "วิธีดัดแปลงของอัจฉริยะ"
+  },
+  "ClinkClankLegion": {
+    "name": "กองทัพกรุ๊งกริ๊ง"
+  },
+  "MoonsignAscendantGleam": {
+    "name": "ลัคนาจันทร์ - จรัสแสง"
+  },
+  "MoonAndHomeland": {
+    "name": "Moon and Homeland"
+  },
+  "CleaningTime": {
+    "name": "Cleaning Time"
+  },
   "Origin": {
     "name": "แรกเริ่ม"
   },
@@ -16261,6 +18262,18 @@
   },
   "FontaPassionateRed": {
     "name": "Fonta: Passionate Red"
+  },
+  "SeaOfBygoneErasSlumber": {
+    "name": "Sea of Bygone Eras - นิทรา"
+  },
+  "FontaLakelightLuminescence": {
+    "name": "Fonta - Lakelight Luminescence"
+  },
+  "SeaOfBygoneErasCrown": {
+    "name": "Sea of Bygone Eras - Crown"
+  },
+  "NodKrai": {
+    "name": "Nod-Krai"
   },
   "BeginnerPlayerBadge": {
     "name": "ตราผู้เล่นระดับต้น"
@@ -16346,6 +18359,18 @@
   "AdventuresInBlazingHue": {
     "name": "การผจญภัยอันลุกโชน"
   },
+  "AsHeavenAndEarthAreMadeAnew": {
+    "name": "คืนพิภพสร้างนภา"
+  },
+  "TowardTheDistantHorizon": {
+    "name": "ปลายทางอันไกลโพ้นของเรื่องราว"
+  },
+  "MelusentGift": {
+    "name": "ของขวัญจากเมลูซีน"
+  },
+  "RainlitBambooReverie": {
+    "name": "สดับเสียงฝนยลทิวไผ่"
+  },
   "RadiantPhantasm": {
     "name": "จินตนาการช่วงโชติ"
   },
@@ -16381,6 +18406,12 @@
   },
   "StarpiercerSublimation": {
     "name": "ทะลวงดารา - ร่างบริสุทธิ์"
+  },
+  "PhantasmalGiftStarOmen": {
+    "name": "ของขวัญมายา - ดารานิมิต"
+  },
+  "UnbreakableDurandarte": {
+    "name": "ไร้พินาศ - Durandarte"
   },
   "AdventurerCamp": {
     "name": "แคมป์ชั่วคราวของนักผจญภัย"
@@ -16673,6 +18704,39 @@
   "CompanionsHaven": {
     "name": "คู่หูและบ้าน"
   },
+  "AComfyRoomForGuestsFromNearAndFar": {
+    "name": "ห้องพักแสนสบายของแขกจากทั่วทุกสารทิศ"
+  },
+  "SweetSlumberBeneathTheMoon": {
+    "name": "นิทราใต้แสงจันทร์"
+  },
+  "TheOrderlyGridOfSecrets": {
+    "name": "โครงสร้างระเบียบแห่งความลับ"
+  },
+  "TheBestestAndWarmestHome": {
+    "name": "บ้านแสนอบอุ่นที่ดีที่สุด"
+  },
+  "PreBattleRespite": {
+    "name": "พักผ่อนก่อนทำศึก"
+  },
+  "WildernessOfTheFarNorth": {
+    "name": "ที่ราบกว้างสุดเขตแดนเหนือ"
+  },
+  "BustlingBorderTown": {
+    "name": "เมืองชายขอบเล็ก ๆ ที่แสนวุ่นวาย"
+  },
+  "TranquilPrayerUnderTheMoon": {
+    "name": "เพลงสวดอันสงบใต้แสงจันทร์"
+  },
+  "SolitaryLightInTheLongNight": {
+    "name": "ตะเกียงเดียวดายในค่ำคืนที่ยาวนาน"
+  },
+  "PromisingWorkshops": {
+    "name": "เวิร์กชอปที่กำลังเติบโต"
+  },
+  "CrescentMoonSerenity": {
+    "name": "ทิวทัศน์สงบแห่งจันทราใหม่"
+  },
   "TimberWallWithJadeEaves": {
     "name": "กำแพงหยก"
   },
@@ -16690,6 +18754,9 @@
   },
   "LoftyTowersFashionableCanvas": {
     "name": "\"ผ้าใบวาดภาพสุดอินเทรนด์ของหอคอย\""
+  },
+  "BasesCoolingSecret": {
+    "name": "\"เคล็ดลับความเย็นของฐาน\""
   },
   "TraditionalCedarFlooring": {
     "name": "พื้นไม้หอมแบบดั้งเดิม"
@@ -16709,6 +18776,9 @@
   "LoftyTowersFloorOfTrials": {
     "name": "\"สถานที่แข่งขันของหอคอย\""
   },
+  "BaseAlloyFlooring": {
+    "name": "\"พื้นโลหะผสมของฐาน\""
+  },
   "CheckeredCedarCeiling": {
     "name": "เพดานไม้ลายตาราง"
   },
@@ -16726,6 +18796,9 @@
   },
   "LoftyTowersRadiantCeiling": {
     "name": "\"ช่องแสงบนเพดานของหอคอย\""
+  },
+  "BasePaneledCeiling": {
+    "name": "\"เพดานที่มั่นคงของฐาน\""
   },
   "TwoTierCandleChandelier": {
     "name": "โคมไฟแชนเดอร์เลียเชิงเทียนสองชั้น"
@@ -16898,6 +18971,42 @@
   "StandingFlammabombWoodStreetLamp": {
     "name": "เสาไฟไม้ Flammabomb แบบตั้งพื้น"
   },
+  "CityStreetLampClearPathAhead": {
+    "name": "ไฟถนนในเมือง - \"เส้นทางข้างหน้าราบรื่น\""
+  },
+  "SimpleLuminescentLamp": {
+    "name": "ตะเกียงเรืองแสงแบบเรียบง่าย"
+  },
+  "PaleMoonlightGuidesTheWayHome": {
+    "name": "\"แสงกระจ่างนำพากลับบ้าน\""
+  },
+  "CloudWrappedMoon": {
+    "name": "\"ดุจปุยเมฆโอบกอด\""
+  },
+  "TheLonelyWayfarer": {
+    "name": "\"ผู้เดินเดียวดาย\""
+  },
+  "TimelessShine": {
+    "name": "\"แสงสว่างที่ไม่เปลี่ยนแปลง\""
+  },
+  "LightweightMetalLamp": {
+    "name": "ตะเกียงโลหะเบา"
+  },
+  "StandingStreetLampEfficiencyMaxed": {
+    "name": "โคมไฟตั้งถนน - \"ประหยัดและทนทาน\""
+  },
+  "VibrantXiaoLanternMayMyWishTravelFar": {
+    "name": "โคม Xiao หลากสี - \"ความปรารถนาดีเดินทางไกล\""
+  },
+  "VibrantXiaoLanternAMeetingWithFriends": {
+    "name": "โคม Xiao หลากสี - \"นัดพบปะเพื่อน\""
+  },
+  "ShimmeringLuster": {
+    "name": "\"แสงระยิบระยับ\""
+  },
+  "CityStreetLampLowLanternlight": {
+    "name": "ไฟถนนในเมือง - \"แสงสว่างระยะต่ำ\""
+  },
   "EfflorescentIllumination": {
     "name": "\"กลีบดอกทอแสง\""
   },
@@ -16906,6 +19015,9 @@
   },
   "LoftyTowersFlamingBrazier": {
     "name": "\"ลำแสงลุกโชนของหอคอย\""
+  },
+  "BasesSoftTranquility": {
+    "name": "\"แสงพร่าอันสงบแห่งฐาน\""
   },
   "NorthernBirchFoldingCounter": {
     "name": "เคาน์เตอร์ไม้เบิร์ชเข้ามุม"
@@ -16960,6 +19072,27 @@
   },
   "XochicuicatlMarketingMethod": {
     "name": "\"วิธีโปรโมตของร้าน Xochicuicatl\""
+  },
+  "DeductionAndInduction": {
+    "name": "\"การอนุมานและรวบรวม\""
+  },
+  "FactoryCabinetSlapdashStorage": {
+    "name": "ตู้เก็บของในโรงงาน - \"กองสะเปะสะปะ\""
+  },
+  "IndoorLowTableUniqueImportance": {
+    "name": "โต๊ะเตี้ยในร่ม - \"คุณค่าที่ไม่เหมือนใคร\""
+  },
+  "IndoorBookshelfReaderlyLeisure": {
+    "name": "ชั้นวางหนังสือในร่ม - \"อ่านยามว่าง\""
+  },
+  "IndoorCounterVisitorsWelcome": {
+    "name": "เคาน์เตอร์ในร่ม - \"มาเยือนอย่างเป็นทางการ\""
+  },
+  "ToweringCabinet": {
+    "name": "\"หอคอยสูงตระหง่าน\""
+  },
+  "HotelWardrobeExtraRoom": {
+    "name": "ตู้เสื้อผ้าโรงแรม - \"ขยายความจุ\""
   },
   "TwoTierLibraryBookshelf": {
     "name": "ชั้นวางหนังสือสองชั้นสำหรับห้องสมุด"
@@ -17132,6 +19265,27 @@
   "FairsSimpleSalesStrategy": {
     "name": "\"กลยุทธ์การขายของตลาด\""
   },
+  "FactoryLongTableNoTimeToWaste": {
+    "name": "โต๊ะยาวในโรงงาน - \"เวลาเร่งรีบ\""
+  },
+  "TavernSquareTableSelfDefense": {
+    "name": "โต๊ะสี่เหลี่ยมในร้านเหล้า - \"ป้องกันตัวเอง\""
+  },
+  "IndoorLongTableMarksOfLove": {
+    "name": "โต๊ะยาวในห้อง - \"ดูแลรักษาอย่างดี\""
+  },
+  "WhispersInTheMoonlight": {
+    "name": "\"สนทนาลับในราตรีสงัด\""
+  },
+  "CookieRound": {
+    "name": "\"คุกกี้กลม ๆ\""
+  },
+  "ClinkClankHouseOfStorage": {
+    "name": "\"ห้องเก็บของกรุ๊งกริ๊ง\""
+  },
+  "FrostMoonRoundTableASoftBlueSky": {
+    "name": "โต๊ะกลมจันทราน้ำค้างแข็ง - \"ฟ้าครามอ่อนนุ่ม\""
+  },
   "BreezeBlessedBed": {
     "name": "เตียงพื้นเตี้ยทรงโบราณแห่งสายลม"
   },
@@ -17159,6 +19313,21 @@
   "StoneBedPeacefulSleep": {
     "name": "เตียงหิน - \"หลับสบาย\""
   },
+  "FriendsThroughFriction": {
+    "name": "\"มิตรภาพจากความกระทบกระทั่ง\""
+  },
+  "TavernBedNotGreatNotTerrible": {
+    "name": "เตียงในร้านเหล้า - \"นอนสบายกำลังดี\""
+  },
+  "SimpleCareBed": {
+    "name": "เตียงปฐมพยาบาลอย่างง่าย"
+  },
+  "BestestLittleNest": {
+    "name": "\"รังน้อยที่ดีที่สุด\""
+  },
+  "FrostMoonStoneBedFreshCool": {
+    "name": "เตียงหินจันทราน้ำค้างแข็ง - \"ความเย็นฉ่ำชุ่มใจ\""
+  },
   "PineReceptionCounter": {
     "name": "เคาน์เตอร์ไม้สนสำหรับโรงแรม"
   },
@@ -17185,6 +19354,9 @@
   },
   "TeahouseStoveSlowSteaming": {
     "name": "เตาโรงน้ำชา - \"ตากจนแห้งคั่วจนหอม\""
+  },
+  "QuestionWithAPriceTag": {
+    "name": "\"คำถามที่อยู่ในราคา\""
   },
   "SoftLoungeSofa": {
     "name": "โซฟาห้องนั่งเล่นสุดนุ่ม"
@@ -17263,6 +19435,24 @@
   },
   "StadiumSpeedySnackRoundStool": {
     "name": "เก้าอี้ทรงกลมลานประลอง \"อาหารจานด่วน\""
+  },
+  "GlugInOneGo": {
+    "name": "\"อึกในหนึ่งคำ\""
+  },
+  "QuietAndCozy": {
+    "name": "\"เงียบสงบและอบอุ่น\""
+  },
+  "HazelwoodJadeBackedChair": {
+    "name": "เก้าอี้พนักพิงไม้เฮเซลนัตเขียวหยก"
+  },
+  "FactoryStoolMultiroleSeatingDevice": {
+    "name": "เก้าอี้เตี้ยในโรงงาน - \"เหมาะกับงานหลากหลาย\""
+  },
+  "ToAFriend": {
+    "name": "\"ถึงเพื่อน\""
+  },
+  "PedunculateOakWoodMoonrestBackedChair": {
+    "name": "เก้าอี้พนักพิงไม้โอ๊กฤดูร้อน \"หนุนจันทร์\""
   },
   "NorthernStoneHearth": {
     "name": "เตาผิงหินแดนเหนือ"
@@ -17450,6 +19640,24 @@
   "PortableAllPurposeGrill": {
     "name": "เตาย่างอเนกประสงค์แบบพกพา"
   },
+  "BoatOfClouds": {
+    "name": "\"ดั่งเรือเมฆลำน้อย\""
+  },
+  "TipsyPlaylist": {
+    "name": "\"ดนตรีคลอเคล้าชวนมึนเมา\""
+  },
+  "MultifunctionalPedunculateOakWoodCatTree": {
+    "name": "คอนโดแมวไม้โอ๊กฤดูร้อนหลายฟังก์ชัน"
+  },
+  "SimpleStretcherSteadyEvacuation": {
+    "name": "เปลหามแบบง่าย - \"เคลื่อนย้ายอย่างมั่นคง\""
+  },
+  "BottomsUp": {
+    "name": "\"ดื่มให้สุดเหวี่ยง\""
+  },
+  "HiddenSecrets": {
+    "name": "\"ความลับที่ซ่อนเร้น\""
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "พรม Mondstadt - \"สีแดงสุดร้อนแรง\""
   },
@@ -17503,6 +19711,18 @@
   },
   "FairCarpetWarmthAndPassion": {
     "name": "พรมตลาด - \"ความรักและความอบอุ่น\""
+  },
+  "IndoorRugSoftPlush": {
+    "name": "พรมในห้อง - \"หนาและนุ่มละมุน\""
+  },
+  "IndoorRugStarlitNight": {
+    "name": "พรมในห้อง - \"ดาวพร่างพราวยามค่ำคืน\""
+  },
+  "FrostMoonCarpetLimpidHue": {
+    "name": "พรมจันทราน้ำค้างแข็ง - \"สีสันอันกระจ่าง\""
+  },
+  "FluffyLittleRug": {
+    "name": "\"พรมผืนน้อยขนนุ่ม\""
   },
   "VibrantPotBornInFlames": {
     "name": "แจกันดินเผาสุดบรรเจิด - \"ถือกำเนิดจากเปลวเพลิง\""
@@ -17569,6 +19789,12 @@
   },
   "MiniatureCandlestandMiniatureSun": {
     "name": "เชิงเทียนจิ๋ว - \"ดวงอาทิตย์ขนาดจิ๋ว\""
+  },
+  "RimehornGlimmer": {
+    "name": "\"ประกายแสงริบหรี่\""
+  },
+  "TwistyMushroom": {
+    "name": "\"เห็ดบิดเกลียว\""
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "ดอกไม้ขวดแก้ว - \"สีฟ้าแห่งความเงียบสงบ\""
@@ -17765,6 +19991,18 @@
   "ModelDishSaurusCrackers": {
     "name": "โมเดลอาหารปลอม - \"Saurus Cracker\""
   },
+  "GleamGlow": {
+    "name": "\"ประกายมหัศจรรย์\""
+  },
+  "LuckySpin": {
+    "name": "\"หมุนทำนาย\""
+  },
+  "BurstOfAppetite": {
+    "name": "\"เรียกน้ำย่อย\""
+  },
+  "FrostMoonSmallTableAromaOfFreshFruit": {
+    "name": "โต๊ะเล็กจันทราน้ำค้างแข็ง - \"อวลกลิ่นผลไม้\""
+  },
   "RealizationsFromTheLandOfWisdom": {
     "name": "\"สำนึกของดินแดนแห่งวิสัยทัศน์\""
   },
@@ -17791,6 +20029,12 @@
   },
   "MountainFireworks": {
     "name": "\"เพลิงผลาญม่านภูผา\""
+  },
+  "BranchesAgainstTheBlueSky": {
+    "name": "\"กิ่งก้านเชื่อมสีคราม\""
+  },
+  "DecorativePottedPlantBuddingFragrance": {
+    "name": "กระถางต้นไม้ประดับ - \"เกสรอ่อนแย้มกลิ่นหอม\""
   },
   "LandscapePaintingCountryHome": {
     "name": "ภาพวิว - \"บ้านชนบท\""
@@ -17884,6 +20128,30 @@
   },
   "SaveyWaveyLifeRing": {
     "name": "\"ห่วงชูชีพฉุกเฉิน\""
+  },
+  "FactoryBroadcastInvigoration": {
+    "name": "เสียงตามสายของโรงงาน - \"สดชื่นตื่นตัว\""
+  },
+  "TavernDartboardValidThrow": {
+    "name": "กระดานปาเป้าในร้านเหล้า - \"คะแนนสุทธิ\""
+  },
+  "TavernNoticeWhispersOfTheStreet": {
+    "name": "ประกาศจากร้านเหล้า - \"เรื่องเล่าในเมือง\""
+  },
+  "FlagOfPiramida": {
+    "name": "\"ธงแห่ง Piramida\""
+  },
+  "SteadfastAsIron": {
+    "name": "\"ประจำการดุจเหล็กกล้า\""
+  },
+  "BannerOfTheLightkeepers": {
+    "name": "\"ธงของทหารประภาคาร\""
+  },
+  "TavernWallLampHoveringHallwayLight": {
+    "name": "โคมไฟติดผนังร้านเหล้า - \"แสงลอยกลางโถง\""
+  },
+  "TempleWallLampWarmRadiance": {
+    "name": "โคมไฟผนังวิหาร - \"แสงอุ่นละมุน\""
   },
   "LingeringMoment": {
     "name": "\"ช่วงเวลาที่ผ่อนคลาย\""
@@ -18124,6 +20392,12 @@
   },
   "AlluringFlavorsOfTheSacredFlame": {
     "name": "\"ส่วนผสมพิเศษในแดนเพลิงศักดิ์สิทธิ์\""
+  },
+  "NashaStallEmergencyProvisions": {
+    "name": "ร้านแผงลอย Nasha - \"เสบียงฉุกเฉิน\""
+  },
+  "NashaStallUnendingSearch": {
+    "name": "ร้านแผงลอย Nasha - \"การตามหาที่ไม่สิ้นสุด\""
   },
   "HilichurlOutpostHut": {
     "name": "กระท่อมด่าน Hilichurl"
@@ -18622,6 +20896,81 @@
   },
   "ReimaginedColors": {
     "name": "\"สีสันที่ถูกสร้างขึ้นใหม่\""
+  },
+  "WorkshopCabinSteadyShroom": {
+    "name": "กระท่อมเวิร์กชอป - \"เห็ดมั่นคง\""
+  },
+  "WorkshopCabinShipAshore": {
+    "name": "กระท่อมเวิร์กชอป - \"เดินเรือบนบก\""
+  },
+  "NashaMarketSeeingIsBelieving": {
+    "name": "ตลาด Nasha - \"เชื่อในสิ่งที่เห็น\""
+  },
+  "NashaMarketWaresWorthStayingFor": {
+    "name": "ตลาด Nasha - \"ของดีดึงดูดคนได้\""
+  },
+  "NashaMarketImpenetrableVault": {
+    "name": "ตลาด Nasha - \"การป้องกันที่แน่นหนา\""
+  },
+  "NashaMarketLureOfLingeringFragrance": {
+    "name": "ตลาด Nasha - \"กลิ่นหอมซ่อนเร้นอันดึงดูด\""
+  },
+  "NashaMarketForgeOfAThousandTrials": {
+    "name": "ตลาด Nasha - \"หลอมพันเจียระไน\""
+  },
+  "NashaMarketSeizeTheDawn": {
+    "name": "ตลาด Nasha - \"คว้าโอกาสก่อนใคร\""
+  },
+  "ColossalAssistedMovementPivot": {
+    "name": "\"ศูนย์กลางขนส่งพลังงานขนาดใหญ่พิเศษ\""
+  },
+  "SteelboundSecrecy": {
+    "name": "\"แน่วแน่ดุจหินผา\""
+  },
+  "AdjustableMetalBarrier": {
+    "name": "แนวกั้นเหล็กปรับได้"
+  },
+  "SolitudeInTheCityOfTheEverWatchful": {
+    "name": "\"สถานที่โดดเดี่ยวแห่งนครเฝ้าระวัง\""
+  },
+  "ShelterInTheCityOfTheEverWatchful": {
+    "name": "\"ที่พักพิงแห่งนครเฝ้าระวัง\""
+  },
+  "ACornerOfOnesOwn": {
+    "name": "\"มุมเล็ก ๆ\""
+  },
+  "CareInTheCityOfTheEverWatchful": {
+    "name": "\"การดูแลแห่งนครเฝ้าระวัง\""
+  },
+  "ForgeInTheCityOfTheEverWatchful": {
+    "name": "\"ขัดเกลาแห่งนครเฝ้าระวัง\""
+  },
+  "StarshynaWalking": {
+    "name": "\"ถือดาบเดินทางไกล\""
+  },
+  "BaseAuxiliaryBuildingMultipurposeGreenhouse": {
+    "name": "อาคารเสริมฐาน - \"เรือนกระจกสารพัดประโยชน์\""
+  },
+  "BaseAuxiliaryBuildingSecretSpace": {
+    "name": "อาคารเสริมฐาน - \"พื้นที่ลับ\""
+  },
+  "BaseAuxiliaryBuildingWaterTower": {
+    "name": "อาคารเสริมฐาน - \"หอคอยน้ำสูงตระหง่าน\""
+  },
+  "BaseWindwheelAuxiliaryPower": {
+    "name": "กังหันลมฐาน - \"พลังงานเสริม\""
+  },
+  "BaseGateAccessLogic": {
+    "name": "ประตูฐาน - \"ตรรกะการขนส่ง\""
+  },
+  "BasePlatformSolidFoundation": {
+    "name": "แท่นฐาน - \"รากฐานที่แข็งแกร่ง\""
+  },
+  "BaseWallLineOfObstruction": {
+    "name": "กำแพงรั้วฐาน - \"แนวป้องกัน\""
+  },
+  "BasePillarUniversalBeacon": {
+    "name": "เสาหลักของฐาน - \"สัญญาณอเนกประสงค์\""
   },
   "BirdAndBlossomDesignFountain": {
     "name": "น้ำพุกลางสวน"
@@ -19235,6 +21584,33 @@
   "SolidRoots": {
     "name": "\"รากฐานอันมั่นคง\""
   },
+  "TwilightThreadedLeaves": {
+    "name": "\"ท่ามกลางเมฆไม้ร้อยเรียง\""
+  },
+  "SoftHuedHydrangeas": {
+    "name": "\"ช่อดอกไม้สีอ่อน\""
+  },
+  "PetalsWithoutPerfume": {
+    "name": "\"ดอกไม้ที่ไร้กลิ่นหอม\""
+  },
+  "LushVerdure": {
+    "name": "\"พฤกษาขจีพลิ้วไหว\""
+  },
+  "BrightVerdure": {
+    "name": "\"พืชพรรณขจีพลิ้วไหว\""
+  },
+  "CradleOfFragrance": {
+    "name": "\"ตะกร้าอวลกลิ่นกรุ่น\""
+  },
+  "DecorativeFlowerBedVerdantOrder": {
+    "name": "แปลงดอกไม้ประดับ - \"จัดเรียงเป็นระเบียบ\""
+  },
+  "FragrantConfluence": {
+    "name": "\"ชั้นวางพรรณไม้อวลกลิ่นกรุ่น\""
+  },
+  "AsRainfallCascades": {
+    "name": "\"ดั่งหยาดพิรุณโปรยปราย\""
+  },
   "FirShelves": {
     "name": "ชั้นวางของไม้สนหนาม"
   },
@@ -19655,6 +22031,21 @@
   "ParasolSandAndTheSeaBreeze": {
     "name": "ร่มชายหาด - \"สายลมกับผืนทราย\""
   },
+  "HeavyHooffall": {
+    "name": "\"กวางก้าวย่างหนักแน่น\""
+  },
+  "ShadowOfTheFrostmoon": {
+    "name": "\"แสงจันทร์เงาน้ำค้าง\""
+  },
+  "TwinHandledHangingPotHotSoup": {
+    "name": "หม้อแขวนสองหู - \"ซุปร้อน ๆ\""
+  },
+  "PaintedPedunculateOakWoodBarrel": {
+    "name": "ถังไม้โอ๊กฤดูร้อนหลากสี"
+  },
+  "LittleCover": {
+    "name": "\"ปกปิดเล็กน้อย\""
+  },
   "BookshelfFreeReading": {
     "name": "ชั้นวางหนังสือ - \"อ่านอิสระ\""
   },
@@ -19672,6 +22063,12 @@
   },
   "CouriersSystemOfSortAndDispatch": {
     "name": "\"ระบบคัดแยกและจัดส่งของผู้ส่งสาร\""
+  },
+  "MoonlitQuietude": {
+    "name": "\"อ่านเงียบ ๆ ใต้แสงจันทร์\""
+  },
+  "SmallStandingGlassDisplayCase": {
+    "name": "ตู้โชว์โปร่งใสขนาดเล็กแบบตั้งพื้น"
   },
   "PoolOfSapphireGrace": {
     "name": "สระภูตเมฆา"
@@ -19769,6 +22166,24 @@
   "FixedTorchExtremity": {
     "name": "คบเพลิงคงที่ - \"สุดแกร่ง\""
   },
+  "MechanicalOrnamentBeepBop": {
+    "name": "ของตกแต่งจักรกล - \"ปี๊บ ปี๊บ\""
+  },
+  "MechanicalOrnamentWaaaaah": {
+    "name": "ของตกแต่งจักรกล - \"ว้าววววว\""
+  },
+  "IceCreamCutie": {
+    "name": "\"ไอศกรีมหวานใจ\""
+  },
+  "SmallCargoContainerSafeStowage": {
+    "name": "กล่องสินค้าขนาดเล็ก - \"จัดวางอย่างเหมาะสม\""
+  },
+  "UtilityPocketDetector": {
+    "name": "\"เครื่องตรวจจับพกพาอเนกประสงค์\""
+  },
+  "GentleEmbrace": {
+    "name": "\"อ้อมกอดอันอ่อนโยน\""
+  },
   "WeatheredBambooFence": {
     "name": "รั้วไม้ไผ่ทนสภาพอากาศ"
   },
@@ -19850,6 +22265,18 @@
   "LandOfPlentysBounds": {
     "name": "\"เชือกกั้นของแดนแห่งความสงบ\""
   },
+  "UncertainBoundaries": {
+    "name": "\"เส้นแบ่งอันซ่อนเร้น\""
+  },
+  "TownRailingConvenientBench": {
+    "name": "รั้วกั้นในเมือง - \"ที่นั่งแสนสะดวก\""
+  },
+  "TownRailingBlueBlueWaves": {
+    "name": "รั้วกั้นในเมือง - \"ระลอกคลื่นสีคราม\""
+  },
+  "TempleOpenworkRailing": {
+    "name": "\"รั้วฉลุลายของวิหาร\""
+  },
   "SmoothWoodenBench": {
     "name": "ม้านั่งยาวไม้ผิวเรียบ"
   },
@@ -19903,6 +22330,18 @@
   },
   "DeckchairHealthyGlow": {
     "name": "เก้าอี้ชายหาด - \"อาบแดดเพื่อสุขภาพ\""
+  },
+  "WarmthSharedWithFriends": {
+    "name": "\"ความอบอุ่นที่ได้อิงแอบ\""
+  },
+  "PedunculateOakWoodMoonwardBackedChair": {
+    "name": "เก้าอี้พนักพิงไม้โอ๊กฤดูร้อน \"มองจันทร์\""
+  },
+  "DiningBenchSteadfast": {
+    "name": "ม้านั่งร้านอาหาร - \"นิ่งไม่ไหวติง\""
+  },
+  "EchoesOfSilence": {
+    "name": "\"เสียงสะท้อนแห่งความเงียบงัน\""
   },
   "TwoStoryHilichurlSentryTower": {
     "name": "ป้อมรักษาการณ์ Hilichurl สองชั้น"
@@ -19985,6 +22424,18 @@
   "FairTableUncutOriginal": {
     "name": "โต๊ะไม้ตลาด - \"เสมือนดั้งเดิม\""
   },
+  "RustySheetMetalWorkbench": {
+    "name": "โต๊ะทำงานเหล็กขึ้นสนิม"
+  },
+  "SilverFirWoodRoundLowTable": {
+    "name": "โต๊ะเตี้ยทรงกลมจากไม้เฟอร์เงิน"
+  },
+  "LeisurelyFeast": {
+    "name": "\"งานเลี้ยงในยามว่าง\""
+  },
+  "WarmAndCozy": {
+    "name": "\"อบอุ่นเป็นกันเอง\""
+  },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "ตู้โชว์ไวน์ - \"เครื่องดื่มที่รู้ใจนับร้อยแก้ว\""
   },
@@ -20014,6 +22465,9 @@
   },
   "TearstoneTilePerspectiveTheory": {
     "name": "แผ่น Tearstone - \"ทฤษฎีมุมมอง\""
+  },
+  "BlanketOfStars": {
+    "name": "\"ดั่งดวงดาวบนผืนน้ำ\""
   },
   "SwordBearingStatueEternalWatch": {
     "name": "รูปปั้นถือดาบ - \"ผู้พิทักษ์ชั่วนิรันดร์\""
@@ -20099,10 +22553,82 @@
   "FlyHigherTogether": {
     "name": "\"ชิงช้ามหาสนุก\""
   },
+  "MechanicalFigurineFlashOfInspiration": {
+    "name": "หุ่นยนต์จิ๋ว - \"ปิ๊งไอเดีย\""
+  },
+  "LittleRoundBelly": {
+    "name": "\"เจ้าหนูพุงโต\""
+  },
+  "MediumCargoHoldSwiftTransport": {
+    "name": "ตู้สินค้าขนาดกลาง - \"การขนส่งประสิทธิภาพสูง\""
+  },
+  "PuzzlepalKeepCalmAndCarryOn": {
+    "name": "คู่หูไขปริศนา - \"จากไปอย่างรีบร้อน\""
+  },
+  "OneSecWhiz": {
+    "name": "\"หนึ่งวิพริบตาเดียว\""
+  },
+  "GrillmasterSupreme": {
+    "name": "\"ตำนานสุดยอดเนื้อย่าง\""
+  },
+  "WobblyPonyRide": {
+    "name": "\"ม้าจิ๋วโยกเยก\""
+  },
+  "VerticalBipolarTriLegTower": {
+    "name": "หอคอยสามขาแบบตั้งสองขั้ว"
+  },
+  "CommandWithConfidence": {
+    "name": "\"คำสั่งที่แน่วแน่\""
+  },
+  "SimpleWeaponRackEasyAccess": {
+    "name": "ชั้นวางอาวุธอย่างง่าย - \"หยิบใช้ได้สะดวก\""
+  },
+  "LightkeepersMovingLighthouse": {
+    "name": "\"บ้านเคลื่อนที่สว่างไสว\""
+  },
+  "ShimmerOfLife": {
+    "name": "\"ดั่งประกายแห่งชีวิต\""
+  },
+  "PavilionOfHiddenTreasures": {
+    "name": "\"ศาลาเร้นสมบัติ\""
+  },
+  "TownNoticeboardOddsEndsAndEverythingBetween": {
+    "name": "ป้ายประกาศในเมือง - \"เรื่องสัพเพเหระ\""
+  },
+  "CrimsonFlow": {
+    "name": "\"กระแสสีแดง\""
+  },
+  "BloomingSplendor": {
+    "name": "\"กลุ่มก้อนกรวดหลากสีสัน\""
+  },
   "SirCapyOfTheLongIncisors": {
     "name": "\"อัศวินฟันยื่นขี้เซา\""
   },
   "DanceOffStageRevelrousRhythm": {
     "name": "มิกเซอร์แดนซ์สุดเร่าร้อน - \"จังหวะหฤหรรษ์\""
+  },
+  "PorkyWorkyChef": {
+    "name": "\"เชฟใหญ่หมวกกลม\""
+  },
+  "LoafingKitty": {
+    "name": "\"แมวน้อยนอนหมอบ\""
+  },
+  "LittleFinchie": {
+    "name": "\"นกน้อยจิ๊บจิ๊บ\""
+  },
+  "GourmetBandit": {
+    "name": "\"โจรขโมยอาหาร\""
+  },
+  "MasterWeaselmind": {
+    "name": "\"วีเซลวายร้ายจอมบงการ\""
+  },
+  "DragonOnTheMove": {
+    "name": "\"มังกรพร้อมรบ\""
+  },
+  "JumboSparksNSplashStatue": {
+    "name": "\"รูปปั้นเทพเจ้า Sparks 'n' Splash\""
+  },
+  "AllFangsAndSnarls": {
+    "name": "\"เขี้ยวแหลมจอมโหยหวน\""
   }
 }

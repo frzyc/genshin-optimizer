@@ -1,5 +1,4 @@
 import {
-  cmpEq,
   lookup,
   max,
   prod,
@@ -9,6 +8,7 @@ import {
 } from '@genshin-optimizer/pando/engine'
 import type { TagMapNodeEntries } from '../util'
 import { enemy, own, ownBuff, percent } from '../util'
+import { isStunned } from './enemy'
 
 const defLevelFactor = [
   -1, 50, 54, 58, 62, 66, 71, 76, 82, 88, 94, 100, 107, 114, 121, 129, 137, 145,
@@ -70,7 +70,7 @@ const data: TagMapNodeEntries = [
   ),
   // Stunned Multiplier
   ownBuff.dmg.stunned_mult_.add(
-    cmpEq(enemy.common.isStunned, 1, enemy.common.stun_, enemy.common.unstun_)
+    isStunned.ifOn(enemy.common.stun_, enemy.common.unstun_)
   ),
 
   // Standard dmg Crit Multiplier

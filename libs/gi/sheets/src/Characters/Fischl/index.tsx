@@ -2,7 +2,9 @@ import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import type { UIData } from '@genshin-optimizer/gi/uidata'
 import {
+  compareEq,
   constant,
+  equal,
   greaterEq,
   infoMut,
   input,
@@ -10,8 +12,11 @@ import {
   prod,
   subscript,
   sum,
+  tally,
+  target,
+  unequal,
 } from '@genshin-optimizer/gi/wr'
-import { st, stg } from '../../SheetUtil'
+import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
 import type { TalentSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
@@ -25,7 +30,11 @@ import {
 
 const key: CharacterKey = 'Fischl'
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key)
+
+const [condLockHomeworkPath, condLockHomework] = cond(key, 'lockHomework')
+const lockHomework_hexerei = equal(condLockHomework, 'on', 1)
+
+const ct = charTemplates(key, lockHomework_hexerei)
 
 let a = 0,
   s = 0,
@@ -68,6 +77,12 @@ const dm = {
   passive2: {
     dmg: skillParam_gen.passive2[p2++][0],
   },
+  lockedPassive: {
+    atk_duration: skillParam_gen.lockedPassive![0][0],
+    atk_: skillParam_gen.lockedPassive![1][0],
+    eleMasDuration: skillParam_gen.lockedPassive![2][0],
+    eleMas: skillParam_gen.lockedPassive![3][0],
+  },
   constellation1: {
     dmg: skillParam_gen.constellation1[0],
   },
@@ -81,8 +96,61 @@ const dm = {
   constellation6: {
     dmg: skillParam_gen.constellation6[0],
     duration: skillParam_gen.constellation6[1],
+    lockIncrease_: skillParam_gen.constellation6[2],
+    lockDuration: skillParam_gen.constellation6[3],
   },
 } as const
+
+const [condLockC6OzPath, condLockC6Oz] = cond(key, 'lockC6Oz')
+const [condLockOverloadPath, condLockOverload] = cond(key, 'lockOverload')
+const lockOverload_atk_disp = greaterEq(
+  tally.hexerei,
+  2,
+  equal(
+    condLockHomework,
+    'on',
+    equal(
+      condLockHomework,
+      'on',
+      equal(
+        condLockOverload,
+        'on',
+        prod(compareEq(condLockC6Oz, 'on', 2, 1), dm.lockedPassive.atk_)
+      )
+    )
+  )
+)
+const lockOverload_atk_self = { ...lockOverload_atk_disp }
+const lockOverload_atk_active = equal(
+  input.activeCharKey,
+  target.charKey,
+  unequal(input.activeCharKey, key, lockOverload_atk_disp)
+)
+
+const [condLockEcLcPath, condLockEcLc] = cond(key, 'lockEcLc')
+const lockEcLc_eleMasDisp = greaterEq(
+  tally.hexerei,
+  2,
+  equal(
+    condLockHomework,
+    'on',
+    equal(
+      condLockHomework,
+      'on',
+      equal(
+        condLockEcLc,
+        'on',
+        prod(compareEq(condLockC6Oz, 'on', 2, 1), dm.lockedPassive.eleMas)
+      )
+    )
+  )
+)
+const lockEcLc_eleMasSelf = { ...lockEcLc_eleMasDisp }
+const lockEcLc_eleMasActive = equal(
+  input.activeCharKey,
+  target.charKey,
+  unequal(input.activeCharKey, key, lockEcLc_eleMasDisp)
+)
 
 const dmgFormulas = {
   normal: Object.fromEntries(
@@ -187,7 +255,16 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
   premod: {
     skillBoost: nodeC3,
     burstBoost: nodeC5,
+    atk_: lockOverload_atk_self,
+    eleMas: lockEcLc_eleMasSelf,
   },
+  teamBuff: {
+    premod: {
+      atk_: lockOverload_atk_active,
+      eleMas: lockEcLc_eleMasActive,
+    },
+  },
+  isHexerei: lockHomework_hexerei,
 })
 
 const sheet: TalentSheet = {
@@ -346,6 +423,98 @@ const sheet: TalentSheet = {
   passive1: ct.talentTem('passive1'),
   passive2: ct.talentTem('passive2'),
   passive3: ct.talentTem('passive3'),
+  lockedPassive: ct.talentTem('lockedPassive', [
+    ct.condTem('lockedPassive', {
+      path: condLockHomeworkPath,
+      value: condLockHomework,
+      teamBuff: true,
+      name: st('hexerei.homeworkDone'),
+      states: {
+        on: {
+          fields: [
+            {
+              text: st('hexerei.becomeHexerei', {
+                val: `$t(charNames_gen:${key})`,
+              }),
+            },
+            {
+              text: st('hexerei.talentEnhance'),
+            },
+          ],
+        },
+      },
+    }),
+    ct.condTem('lockedPassive', {
+      path: condLockOverloadPath,
+      value: condLockOverload,
+      teamBuff: true,
+      canShow: lockHomework_hexerei,
+      name: st('elementalReaction.team.overload'),
+      states: {
+        on: {
+          fields: [
+            {
+              node: infoMut(
+                { ...lockOverload_atk_disp },
+                {
+                  path: 'atk_',
+                }
+              ),
+            },
+            {
+              node: infoMut(
+                { ...lockOverload_atk_disp },
+                {
+                  path: 'atk_',
+                  isTeamBuff: true,
+                }
+              ),
+            },
+            {
+              text: stg('duration'),
+              value: dm.lockedPassive.atk_duration,
+              unit: 's',
+            },
+          ],
+        },
+      },
+    }),
+    ct.condTem('lockedPassive', {
+      path: condLockEcLcPath,
+      value: condLockEcLc,
+      teamBuff: true,
+      canShow: lockHomework_hexerei,
+      name: ct.ch('lockEcLcCond'),
+      states: {
+        on: {
+          fields: [
+            {
+              node: infoMut(
+                { ...lockEcLc_eleMasDisp },
+                {
+                  path: 'eleMas',
+                }
+              ),
+            },
+            {
+              node: infoMut(
+                { ...lockEcLc_eleMasDisp },
+                {
+                  path: 'eleMas',
+                  isTeamBuff: true,
+                }
+              ),
+            },
+            {
+              text: stg('duration'),
+              value: dm.lockedPassive.eleMasDuration,
+              unit: 's',
+            },
+          ],
+        },
+      },
+    }),
+  ]),
   constellation1: ct.talentTem('constellation1', [
     ct.fieldsTem('constellation1', {
       fields: [
@@ -365,6 +534,34 @@ const sheet: TalentSheet = {
   constellation5: ct.talentTem('constellation5', [
     { fields: [{ node: nodeC5 }] },
   ]),
-  constellation6: ct.talentTem('constellation6'),
+  constellation6: ct.talentTem('constellation6', [
+    ct.condTem('constellation6', {
+      path: condLockC6OzPath,
+      value: condLockC6Oz,
+      teamBuff: true,
+      canShow: greaterEq(
+        sum(equal(condLockOverload, 'on', 1), equal(condLockEcLc, 'on', 1)),
+        1,
+        lockHomework_hexerei
+      ),
+      name: ct.ch('c6Cond'),
+      states: {
+        on: {
+          fields: [
+            {
+              text: ct.ch('c6Text'),
+              value: dm.constellation6.lockIncrease_ * 100,
+              unit: '%',
+            },
+            {
+              text: stg('duration'),
+              value: dm.constellation6.lockDuration,
+              unit: 's',
+            },
+          ],
+        },
+      },
+    }),
+  ]),
 }
 export default new CharacterSheet(sheet, data)

@@ -72,5 +72,6 @@
     "base_stat_mod": "Base Stat Modifications",
     "stamina_buffs": "Stamina Buffs",
     "misc": "Misc. Stats"
-  }
+  },
+  "notActive": "(Unactivated)"
 }

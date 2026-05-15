@@ -1,0 +1,122 @@
+// WARNING: Generated file, do not modify
+export const buffs = {
+  core_hpSheerForce: {
+    sheet: 'Manato',
+    name: 'core_hpSheerForce',
+    tag: {
+      et: 'display',
+      qt: 'initial',
+      q: 'sheerForce',
+      sheet: 'Manato',
+      name: 'core_hpSheerForce',
+    },
+  },
+  core_basic_crit_dmg_: {
+    sheet: 'Manato',
+    name: 'core_basic_crit_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'crit_dmg_',
+      sheet: 'Manato',
+      damageType1: 'basic',
+      name: 'core_basic_crit_dmg_',
+    },
+  },
+  core_assistFollowUp_crit_dmg_: {
+    sheet: 'Manato',
+    name: 'core_assistFollowUp_crit_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'crit_dmg_',
+      sheet: 'Manato',
+      damageType1: 'assistFollowUp',
+      name: 'core_assistFollowUp_crit_dmg_',
+    },
+  },
+  core_crit_: {
+    sheet: 'Manato',
+    name: 'core_crit_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'crit_',
+      sheet: 'Manato',
+      name: 'core_crit_',
+    },
+  },
+  core_fire_dmg_: {
+    sheet: 'Manato',
+    name: 'core_fire_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'dmg_',
+      sheet: 'Manato',
+      attribute: 'fire',
+      name: 'core_fire_dmg_',
+    },
+  },
+  m1_assistFollowUp_fire_dmg_: {
+    sheet: 'Manato',
+    name: 'm1_assistFollowUp_fire_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'dmg_',
+      sheet: 'Manato',
+      attribute: 'fire',
+      damageType1: 'assistFollowUp',
+      name: 'm1_assistFollowUp_fire_dmg_',
+    },
+  },
+  m1_basic_fire_dmg_: {
+    sheet: 'Manato',
+    name: 'm1_basic_fire_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'dmg_',
+      sheet: 'Manato',
+      attribute: 'fire',
+      damageType1: 'basic',
+      name: 'm1_basic_fire_dmg_',
+    },
+  },
+  m2_fire_resIgn_: {
+    sheet: 'Manato',
+    name: 'm2_fire_resIgn_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'resIgn_',
+      sheet: 'Manato',
+      attribute: 'fire',
+      name: 'm2_fire_resIgn_',
+    },
+  },
+  m4_hp_: {
+    sheet: 'Manato',
+    name: 'm4_hp_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'hp_',
+      sheet: 'Manato',
+      name: 'm4_hp_',
+    },
+  },
+  m6_fire_dmg_: {
+    sheet: 'Manato',
+    name: 'm6_fire_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'dmg_',
+      sheet: 'Manato',
+      attribute: 'fire',
+      name: 'm6_fire_dmg_',
+    },
+  },
+} as const

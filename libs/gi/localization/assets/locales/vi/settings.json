@@ -11,12 +11,23 @@
     "error": {
       "jsonParse": "Không thể phân tích tập tin JSON.",
       "unknown": "Định dạng tập tin không xác định.",
-      "monaInvalid": "Định dạng file Mona-Uranai không hợp lệ",
-      "goInvalid": "Định dạng file backup GO không hợp lệ"
+      "monaInvalid": "Định dạng tập tin Mona-Uranai không hợp lệ",
+      "goInvalid": "Định dạng tập tin sao lưu GO không hợp lệ."
     },
     "dbSource": "Nguồn dữ liệu:",
     "goodUpload": {
-      "title": "Định dạng <strong>Genshin Open Object Description</strong> (Tốt)"
+      "title": "Định dạng <strong>Genshin Open Object Description</strong> (GOOD)"
+    },
+    "buttons": {
+      "open": "Mở",
+      "detectDups": "Phát hiện tăng cấp/trùng lặp",
+      "delNotInImport": "Xóa vật phẩm không có trong bản nhập"
+    },
+    "tooltip": {
+      "detectdup": "Tìm những món đã tăng cấp/trùng lặp trong túi đồ GO và hợp nhất bản nhập vào GO.",
+      "ignoreDup": "Không tự phát hiện món tăng cấp/trùng lặp. Bản nhập sẽ được thêm vào túi đồ GO đang có.",
+      "delNotInImport": "Giả sử rằng bản nhập này bao gồm toàn bộ túi của bạn. Các món trong túi đồ GO mà không tồn tại trong bản nhập sẽ bị xóa.",
+      "keepNotInImport": "Giả sử rằng bản nhập này chỉ là một phần túi. Sẽ không xóa gì cả."
     }
   },
   "count": {
@@ -28,7 +39,14 @@
     "updated": "Đã cập nhật:",
     "removed": "Đã loại bỏ:",
     "unchanged": "Không thay đổi:",
-    "invalid": "Không hợp lệ:"
+    "invalid": "Không hợp lệ:",
+    "upgraded": "Đã tăng cấp:",
+    "dbTotal": "Tổng hợp nhất:",
+    "notInImport": "Không trong bản nhập:",
+    "teams": "Đội:",
+    "loadouts": "Bộ Trang Bị:",
+    "builds": "Build: ",
+    "buildTcs": "Build TC: "
   },
   "DatabaseCard": {
     "title": "Cơ sở dữ liệu",
@@ -40,5 +58,13 @@
       "swap": "Đổi"
     },
     "currentDB": "Cơ sở dữ liệu đã chọn"
-  }
+  },
+  "sillyCard": {
+    "desc": "Chúng tôi đã <1>ăn cắp</1> mượn (đã được cho phép) tất cả hình ảnh của <strong>Silly Wisher</strong> và nhét chúng vào Genshin Optimizer.",
+    "toggle": {
+      "enabled": "Silly Optimizer đang bật",
+      "disabled": "Silly Optimizer đang tắt"
+    }
+  },
+  "letsnow": "Tuyết rơi"
 }

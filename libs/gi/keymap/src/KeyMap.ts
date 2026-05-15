@@ -1,8 +1,12 @@
 import type {
   ElementWithPhyKey,
+  LunarReactionKey,
   TransformativeReactionKey,
 } from '@genshin-optimizer/gi/consts'
-import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
+import {
+  allElementWithPhyKeys,
+  allLunarReactionKeys,
+} from '@genshin-optimizer/gi/consts'
 
 import elementalData from './ElementalData'
 import type {
@@ -67,7 +71,6 @@ const baseMap = {
   base_amplifying_multi_: 'Base Amplifying Multiplier',
   base_transformative_multi_: 'Base Transformative Multiplier',
   base_crystallize_multi_: 'Base Crystallize Multiplier',
-  swirl_dmgInc: 'Swirl DMG Increase',
 
   // Enemy
   enemyLevel: 'Enemy Level',
@@ -123,6 +126,7 @@ export const allEleEnemyResKeys = allElementWithPhyKeys.map(
   (e) => `${e}_enemyRes_`
 ) as EleEnemyResKey[]
 
+type EleECritRateKey = `${ElementWithPhyKey}_critRate_`
 type EleECritDmgKey = `${ElementWithPhyKey}_critDMG_`
 
 Object.entries(elementalData).forEach(([e, { name }]) => {
@@ -131,6 +135,7 @@ Object.entries(elementalData).forEach(([e, { name }]) => {
 
   statMap[`${e}_enemyRes_`] = `Enemy ${name} DMG RES`
   statMap[`${e}_dmgInc`] = `${name} DMG Increase`
+  statMap[`${e}_critRate_`] = `${name} CRIT Rate Bonus`
   statMap[`${e}_critDMG_`] = `${name} CRIT DMG Bonus`
 })
 
@@ -139,6 +144,7 @@ type ElementExtKey =
   | EleResKey
   | EleEnemyResKey
   | EleDmgIncKey
+  | EleECritRateKey
   | EleECritDmgKey
 
 /* Hit move extension keys */
@@ -161,9 +167,10 @@ type MoveExtKey =
 
 /* Transformation extension keys */
 type TransformativeReactionsDmgKey = `${TransformativeReactionKey}_dmg_`
-
+type TransformativeReactionsDmgIncKey = `${TransformativeReactionKey}_dmgInc`
 Object.entries(transformativeReactions).forEach(([reaction, { name }]) => {
   statMap[`${reaction}_dmg_`] = `${name} DMG Bonus`
+  statMap[`${reaction}_dmgInc`] = `${name} DMG Increase`
 })
 
 type SwirlReactionKey =
@@ -176,8 +183,10 @@ type NonSwirlReactionHitKey = `${
   | 'superconduct'
   | 'burning'
   | 'bloom'
+  | 'lunarbloom'
   | 'burgeon'
-  | 'hyperbloom'}_hit`
+  | 'hyperbloom'
+  | 'lunarcrystallize'}_hit`
 type NonSwirlReactionMultiKey = `${keyof typeof transformativeReactions}_multi_`
 type TransformativeReactions =
   | SwirlReactionKey
@@ -191,19 +200,33 @@ Object.entries(transformativeReactions).forEach(([reaction, { name }]) => {
   else statMap[`${reaction}_hit`] = `${name} DMG`
   statMap[`${reaction}_multi_`] = `${name} Multiplier`
 })
-statMap.lunarcharged_baseDmg_ = 'Lunar-Charged Base DMG Multiplier'
+
+type LunarReactionsBaseDmgKey = `${LunarReactionKey}_baseDmg_`
+type LunarReactionsSpecialDmgKey = `${LunarReactionKey}_specialDmg_`
+type LunarReactionsReactionDmgIncKey = `${LunarReactionKey}_reactionDmgInc`
+type LunarReactionsDirectDmgIncKey = `${LunarReactionKey}_directDmgInc`
+allLunarReactionKeys.forEach((lr) => {
+  statMap[`${lr}_baseDmg_`] =
+    `${transformativeReactions[lr].name} Base DMG Multiplier`
+  statMap[`${lr}_specialDmg_`] =
+    `${transformativeReactions[lr].name} Special DMG Bonus`
+  statMap[`${lr}_reactionDmgInc`] =
+    `${transformativeReactions[lr].name} Reaction DMG Increase`
+  statMap[`${lr}_directDmgInc`] =
+    `${transformativeReactions[lr].name} Direct DMG Increase`
+})
 
 type TransformativeReactionsCritRateKey =
   `${CrittableTransformativeReactionsKey}_critRate_`
 type TransformativeReactionsCritDMGKey =
   `${CrittableTransformativeReactionsKey}_critDMG_`
-
 crittableTransformativeReactions.forEach((reaction) => {
   statMap[`${reaction}_critRate_`] =
     `${transformativeReactions[reaction].name} Crit Rate`
   statMap[`${reaction}_critDMG_`] =
     `${transformativeReactions[reaction].name} Crit DMG`
 })
+
 const crystallizeElements = ['cryo', 'hydro', 'pyro', 'electro'] as const
 export type CrystallizeKey =
   `${(typeof crystallizeElements)[number]}_crystallize`
@@ -235,9 +258,13 @@ export type StatKey =
   | MoveExtKey
   | TransformativeReactions
   | TransformativeReactionsDmgKey
+  | TransformativeReactionsDmgIncKey
   | TransformativeReactionsCritRateKey
   | TransformativeReactionsCritDMGKey
-  | 'lunarcharged_baseDmg_'
+  | LunarReactionsBaseDmgKey
+  | LunarReactionsSpecialDmgKey
+  | LunarReactionsReactionDmgIncKey
+  | LunarReactionsDirectDmgIncKey
   | CrystallizeKey
   | AmplifyingReactionsDmgKey
   | AmplifyingReactionsMultiKey

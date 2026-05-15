@@ -1,0 +1,10 @@
+{
+  "burstHits": "Số lần hành động của Muji-Muji Daruma",
+  "p2Heal": "Lượng trị liệu cho nhân vật ở gần",
+  "c1Text": "Muji-Muji Daruma sẽ bỏ qua hạn chế HP, có thể cùng lúc tấn công kẻ địch và hồi HP cho nhân vật",
+  "c2KickPressDmg_": "Tăng sát thương nhấn của Cú Đá Lốc Xoáy",
+  "c2KickDmg_": "Tăng sát thương Cú Đá Lốc Xoáy",
+  "c2Cond": "Thời gian trong trạng thái <strong>Bánh Xe Gió Fuufuu</strong>",
+  "c6DarumaDmgInc": "Lượng sát thương thêm của Muji-Muji Daruma",
+  "c6DarumaHealInc": "Lượng trị liệu thêm của Muji-Muji Daruma"
+}

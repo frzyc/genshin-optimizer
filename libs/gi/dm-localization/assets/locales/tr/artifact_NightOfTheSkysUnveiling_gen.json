@@ -1,0 +1,29 @@
+{
+  "setName": "Gökyüzü Duvağının Açıldığı Gece",
+  "setEffects": {
+    "2": "Element Ustalığını 80 artırır.",
+    "4": "Yakındaki grup üyeleri Ay Tepkimeleri tetiklediğinde kuşanan karakter alandaysa 4sn boyunca Ay Parıltısı: Niyet etkisi kazanır: Ay Sembolü, İlk Parıltı/Yükselen Parıltı olduğunda 4sn boyunca Kritik Oranı %15/%30 artar. Tüm grup üyelerinin Ay Tepkimesi Hasarı, üyelerin sahip olduğu farklı her Ay Parıltısı etkisi için %10 artar. Ay Parıltısı etkileri birikmez."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Aklın Arzu Çiçeği",
+      "desc": "Bir çiçek şeklinde oyulmuş kutsal bir yadigar. Çiçek gibi açılan korkutucu bir varlığı temsil ettiği anlaşılıyor."
+    },
+    "plume": {
+      "name": "Affedilmez Günahın Tüyü",
+      "desc": "Eskiden fötr şapkalara takılan tüylü bir aksesuar. Snezhnayalı soylular ve onların gösteriş tarzlarına pek uyumlu değil."
+    },
+    "sands": {
+      "name": "Kehanetin Bedeli",
+      "desc": "Gizemli bir güç ile hareket eden zarif bir zilli saat. Amacının zamanı göstermekten farklı olduğu anlaşılıyor."
+    },
+    "goblet": {
+      "name": "Bereket Çömleği",
+      "desc": "Saraydaki ziyafetlerde kullanılmak için özel olarak yapılmış bir kadeh. Bir zamanlar bir tür sihir gösterisi için kullanılırmış."
+    },
+    "circlet": {
+      "name": "Kadersizin Tacı",
+      "desc": "Bir günahkarın taktığı model temel alınarak yapılmış bir taç. Belki birilerinin kalbinde aşk ve günah aynı kaynaktan geliyordur."
+    }
+  }
+}

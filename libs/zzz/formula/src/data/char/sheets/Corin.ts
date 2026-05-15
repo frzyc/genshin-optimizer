@@ -1,17 +1,11 @@
-import {
-  cmpEq,
-  cmpGE,
-  prod,
-  subscript,
-  sum,
-} from '@genshin-optimizer/pando/engine'
+import { cmpGE, prod, subscript, sum } from '@genshin-optimizer/pando/engine'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
+import { isStunned } from '../../common/enemy'
 import {
   allBoolConditionals,
   allNumConditionals,
   customDmg,
-  enemy,
   enemyDebuff,
   own,
   ownBuff,
@@ -180,7 +174,7 @@ const sheet = register(
           team.common.count.withFaction('VictoriaHousekeepingCo')
         ),
         3,
-        cmpEq(enemy.common.isStunned, 1, percent(dm.ability.common_dmg_))
+        isStunned.ifOn(percent(dm.ability.common_dmg_))
       )
     )
   ),

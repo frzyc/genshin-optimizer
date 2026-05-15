@@ -340,10 +340,17 @@ const dmgFormulas = {
       undefined,
       'skill'
     ),
-    // TODO: Check what damage type this is
-    sprintDmg: dmgNode('atk', dm.skill.sprintDmg, 'skill', {
-      premod: { enemyDefRed_: antiC2RingForm_enemyDefRed_ },
-    }),
+    sprintDmg: customDmgNode(
+      prod(
+        subscript(input.total.skillIndex, dm.skill.sprintDmg, { unit: '%' }),
+        input.total.atk
+      ),
+      'elemental',
+      {
+        hit: { ele: constant('pyro') },
+        premod: { enemyDefRed_: antiC2RingForm_enemyDefRed_ },
+      }
+    ),
     chargedCyclicDmg: dmgNode(
       'atk',
       dm.skill.chargedCyclicDmg,

@@ -33,7 +33,9 @@
     "btnRandom": "Aleatório",
     "btnUpdate": "Atualizar Artefato",
     "clearPrompt": "Você está editando um artefato. Tem certeza de que limpar o editor?",
-    "unknownSetName": "Conjunto Desconhecido"
+    "unknownSetName": "Conjunto Desconhecido",
+    "delete": "Excluir",
+    "confirmDelete": "Você tem certeza que deseja excluir este artefato?"
   },
   "artifactFilter": "Filtrar Artefatos",
   "filterLocation": {
@@ -45,7 +47,8 @@
     "unequipArtifacts": "Desequipar Artefatos",
     "deleteArtifacts": "Excluir Artefatos",
     "lockArtifacts": "Trancar Artefatos",
-    "unlockrtifacts": "Destrancar Artefatos"
+    "unlockrtifacts": "Destrancar Artefatos",
+    "unequipArtifact": "Desequipar Artefato"
   },
   "buttonHint": "Nota: as opções acima só são aplicadas nos <1>artefatos filtrados</1>",
   "tipsOfTheDay": [
@@ -101,5 +104,10 @@
   "substat_other": "{{count}} secundários",
   "sub_one": "{{count}} secundário",
   "sub_other": "{{count}} secundários",
-  "noArtifacts": "Parece que você ainda não adicionou artefatos. Se você quiser, há <1>scanners automáticos</1> para você importá-los mais rapidamente!"
+  "noArtifacts": "Parece que você ainda não adicionou artefatos. Se você quiser, há <1>scanners automáticos</1> para você importá-los mais rapidamente!",
+  "subheadings": {
+    "general": "Geral",
+    "inventory": "Inventário",
+    "rollvalue": "Valor de Roll"
+  }
 }

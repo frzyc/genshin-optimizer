@@ -1,0 +1,170 @@
+{
+  "name": "Néfer",
+  "title": "La Guardasecretos de las Arenas",
+  "description": "La increíblemente ingeniosa dueña de la Cámara de Secretos.",
+  "constellationName": "Ludus Latrunculorum",
+  "auto": {
+    "name": "Lengua bífida",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 4 patadas con la ferocidad y la gracilidad de una serpiente para infligir <dendro>Daño Dendro</dendro>."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Entra en el estado de “movimiento serpentino” y consume Aguante para moverse rápidamente durante un máximo de 2.5 s. Al dejar de mantener pulsado, cuando acabe la duración o cuando se quede sin Aguante, Néfer saldrá de dicho estado y consumirá Aguante adicional para infligir <dendro>Daño Dendro</dendro> a los enemigos. Cuando se encuentre en el estado de <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>danza de las sombras</strong></tooltip>, el Aguante adicional consumido será menor.",
+        "2": "Además, mientras Néfer esté en el estado de movimiento serpentino, usar su Habilidad Elemental, <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Estrategia de senet: Danza de las mil noches</tooltip></strong>, o esprintar no hará que salga de él."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Concentra el poder de las plantas y se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo <dendro>Daño Dendro en el AdE</dendro> en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de ATQ Cargado",
+      "5": "Coste de Aguante continuo de Ataque Potenciado",
+      "6": "Coste de Aguante de ATQ Cargado",
+      "7": "Coste de Aguante de ATQ Cargado en estado de danza de las sombras",
+      "8": "Daño de Caída",
+      "9": "Daño de impacto de caída baja/alta",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Estrategia de senet: Danza de las mil noches",
+    "description": {
+      "0": "Una danza que derrocó naciones enteras, tan gélida como las noches de invierno del gran mar de arena y, al mismo tiempo, tierna como la fina luz lunar. Néfer arremete cierta distancia hacia delante para infligir <dendro>Daño Dendro en el AdE</dendro> y entrar en el estado de <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>danza de las sombras</strong></tooltip>.",
+      "1": "Si tiene al menos 1 gota de <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>rocío de la espesura</strong></tooltip> mientras está en dicho estado, el Ataque Cargado de Néfer se sustituye por el Ataque Cargado especial <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Espectáculo fantasmagórico</strong></tooltip>, el cual no consume Aguante. La RES a interrupción de Néfer aumenta mientras está en el estado de danza de las sombras.",
+      "2": "<br/>",
+      "3": "Inicialmente, esta habilidad tiene 2 cargas.",
+      "4": "<br/>",
+      "5": "<i>“La vida es como una partida de ajedrez en la que los jugadores se esconden tras un telón. Si no quieres que te atrapen cuando menos te lo esperas, lo mejor que puedes hacer es poseer una gran cantidad de información. En eso consisten los secretos”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de 1er golpe de Espectáculo fantasmagórico (Néfer)",
+      "2": "Daño de 2.º golpe de Espectáculo fantasmagórico (Néfer)",
+      "3": "Daño de 1er golpe de Espectáculo fantasmagórico (ilusión)",
+      "4": "Daño de 2.º golpe de Espectáculo fantasmagórico (ilusión)",
+      "5": "Daño de 3er golpe de Espectáculo fantasmagórico (ilusión)",
+      "6": "Cargas de Espectáculo fantasmagórico",
+      "7": "Duración de danza de las sombras",
+      "8": "TdE",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Voto sagrado: Fantasmagoría del ojo verdadero",
+    "description": {
+      "0": "Esclarece los enigmas de lo falso a través de la clarividencia de Thot e inflige <dendro>Daño Dendro en el AdE</dendro> a los enemigos frente a sí misma. Al usar la Habilidad Definitiva, Néfer también consumirá todas las cargas de <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>velo de la falsedad</strong></tooltip> que tenga para aumentar el daño de dicha habilidad.",
+      "1": "<br/>",
+      "2": "<i>Según los poemas épicos recitados por la gente del ardiente desierto, las bendiciones del rey ibis son, más bien, maldiciones.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Aumento de daño",
+      "3": "TdE",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Apuesta bajo la luna",
+    "description": {
+      "0": "Néfer obtiene el fortalecimiento correspondiente según el <strong>presagio lunar</strong> del equipo.",
+      "1": "<br/>",
+      "2": "<strong>Presagio lunar: resplandor ascendente</strong>",
+      "3": "Al usar la Habilidad Elemental, <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Estrategia de senet: Danza de las mil noches</tooltip></strong>, todos los núcleos Dendro que haya en el campo de batalla se transformarán en núcleos artificiosos, y los núcleos Dendro y núcleos feraces que creen todos los personajes cercanos del equipo en los próximos 15 s con la reacción de Florecimiento Lunar serán, en su lugar, núcleos artificiosos. Estos núcleos no podrán activar reacciones de Sobreflorecimiento o Crepitar, ni tampoco explotarán.",
+      "4": "Cuando Néfer use su Ataque Cargado o <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Espectáculo fantasmagórico</strong></tooltip>, absorberá los núcleos artificiosos que haya en cierta área y, por cada uno, obtendrá una carga de <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>velo de la falsedad</strong></tooltip>. Cuando este efecto tenga 3 cargas o cuando se reinicie la duración de ellas, la Maestría Elemental de Néfer aumentará en 100 pts. durante 8 s."
+    }
+  },
+  "passive2": {
+    "name": "Hija de las arenas",
+    "description": {
+      "0": "Cuando Néfer se encuentre en el estado de <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>danza de las sombras</strong></tooltip>, en los 5 s siguientes a que algún personaje del equipo haya causado una reacción de Florecimiento Lunar, el <strong><tooltip ns=char_Nefer_gen baseKey18=normal>movimiento serpentino</tooltip></strong> de Néfer otorgará <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>rocío de la espesura</strong></tooltip> adicional. Por cada 100 pts. de Maestría Elemental que tenga Néfer por encima de los 500 pts., dicha regeneración se potenciará en un 10%. Se puede alcanzar hasta un máximo de un 50% de potenciación de esta manera."
+    }
+  },
+  "passive3": {
+    "name": "Bendición presagiolunar: Tejados vespertinos",
+    "description": {
+      "0": "Cuando un personaje del equipo cause una reacción de Florecimiento, esta se transformará en una reacción de Florecimiento Lunar. El daño base de las reacciones de Florecimiento Lunar de los personajes del equipo aumentará en un 0.0175% por cada punto de Maestría Elemental que tenga Néfer. Como máximo, dicho daño puede aumentar en un 14% de esta manera.",
+      "1": "<br/>",
+      "2": "Además, cuando Néfer esté en el equipo, el nivel de <strong>presagio lunar</strong> de los personajes aumentará en 1."
+    }
+  },
+  "passive": {
+    "name": "Intrigas de la cámara dorada",
+    "description": {
+      "0": "Aumenta en un 25% las recompensas de las expediciones de 20 h en Nod Krai."
+    }
+  },
+  "constellation1": {
+    "name": "La planificación otorga el éxito",
+    "description": {
+      "0": "El daño base de la reacción de Florecimiento Lunar causada con el <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Espectáculo fantasmagórico</strong></tooltip> de Néfer aumenta en una cantidad equivalente al 60% de su Maestría Elemental. Este efecto también se beneficiará del bono otorgado por <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>velo de la falsedad</strong></tooltip>."
+    }
+  },
+  "constellation2": {
+    "name": "La estrategia se basa en la observación",
+    "description": {
+      "0": "Fortalece el efecto del talento de ascensión <tooltip ns=char_Nefer_gen baseKey18=passive1><strong>Apuesta bajo la luna</strong></tooltip>, de manera que la duración de <tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>velo de la falsedad</strong></tooltip> se prolonga 5 s, su límite de cargas aumenta a 5 y <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Espectáculo fantasmagórico</strong></tooltip> puede infligir, como máximo, un 140% de su daño original. Cuando Néfer usa su Habilidad Elemental, <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Estrategia de senet: Danza de las mil noches</tooltip></strong>, obtiene inmediatamente 2 cargas de velo de la falsedad. Además, cuando dicho efecto acumule 5 cargas o cuando la duración de estas se reinicie, la Maestría Elemental de Néfer aumentará en 200 pts. durante 8 s.",
+      "1": "Es necesario desbloquear el talento de ascensión “Apuesta bajo la luna”."
+    }
+  },
+  "constellation3": {
+    "name": "Los engaños ocultan la verdad",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_Nefer_gen baseKey18=skill>Estrategia de senet: Danza de las mil noches</tooltip></strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "La ilusión es una trampa para la razón",
+    "description": {
+      "0": "Si Néfer está en uso y en el estado de <tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>danza de las sombras</strong></tooltip>, su velocidad de obtención de rocío de la espesura aumenta en un 25%.",
+      "1": "Además, al estar en el estado de danza de las sombras, la <dendro>RES Dendro</dendro> de los enemigos cercanos se reduce en un 20%. Este efecto se anula 4.5 s después de que Néfer no esté en dicho estado o 4.5 s después de mantenerse a cierta distancia de los enemigos."
+    }
+  },
+  "constellation5": {
+    "name": "Las oportunidades se esconden en los detalles",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_Nefer_gen baseKey18=burst>Voto sagrado: Fantasmagoría del ojo verdadero</tooltip></strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "La victoria se consigue cuando se vuelven las tornas",
+    "description": {
+      "0": "Cuando Néfer usa <tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>Espectáculo fantasmagórico</strong></tooltip>, su segundo golpe pasa a infligir <dendro>Daño Dendro en el AdE</dendro> equivalente al 85% de su Maestría Elemental. Además, al terminar de atacar con Espectáculo fantasmagórico, Néfer asesta otro golpe que inflige <dendro>Daño Dendro en el AdE</dendro> equivalente al 120% de su Maestría Elemental. Ambos daños se consideran daño de Florecimiento Lunar infligido por medio de Espectáculo fantasmagórico.",
+      "1": "<br/>",
+      "2": "<strong>Presagio lunar: resplandor ascendente</strong>",
+      "3": "El daño que inflige Néfer con la reacción de Florecimiento Lunar <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>asciende</strong></tooltip> en un 15%."
+    }
+  }
+}
