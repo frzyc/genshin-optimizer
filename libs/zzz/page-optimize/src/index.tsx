@@ -8,19 +8,11 @@ import {
   DebugReadModal,
   TagContext,
 } from '@genshin-optimizer/game-opt/formula-ui'
-import type {
-  FormulaTextFunc,
-  FullTagDisplayComponent,
-  SetConditionalFunc,
-  TagDisplayComponent,
-} from '@genshin-optimizer/game-opt/sheet-ui'
+import type { SetConditionalFunc } from '@genshin-optimizer/game-opt/sheet-ui'
 import {
   ConditionalValuesContext,
-  FormulaTextContext,
-  FullTagDisplayContext,
   SetConditionalContext,
   SrcDstDisplayContext,
-  TagDisplayContext,
 } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { BaseRead } from '@genshin-optimizer/pando/engine'
 import { characterAsset } from '@genshin-optimizer/zzz/assets'
@@ -38,12 +30,7 @@ import {
   isMember,
   isSheet,
 } from '@genshin-optimizer/zzz/formula'
-import {
-  CharCalcProvider,
-  FullTagDisplay,
-  TagDisplay,
-  formulaText,
-} from '@genshin-optimizer/zzz/formula-ui'
+import { CharCalcProvider } from '@genshin-optimizer/zzz/formula-ui'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
 import {
   CharacterName,
@@ -131,8 +118,7 @@ export default function PageOptimize() {
     [debugRead]
   )
   return (
-    <Providers>
-      <Box>
+    <Box>
         <Suspense fallback={false}>
           <CharacterSingleSelectionModal
             show={show}
@@ -205,20 +191,6 @@ export default function PageOptimize() {
             </TagContext.Provider>
           </CharacterContext.Provider>
         )}
-      </Box>
-    </Providers>
-  )
-}
-function Providers({ children }: { children: React.ReactNode }) {
-  return (
-    <FormulaTextContext.Provider value={formulaText as FormulaTextFunc}>
-      <TagDisplayContext.Provider value={TagDisplay as TagDisplayComponent}>
-        <FullTagDisplayContext.Provider
-          value={FullTagDisplay as FullTagDisplayComponent}
-        >
-          {children}
-        </FullTagDisplayContext.Provider>
-      </TagDisplayContext.Provider>
-    </FormulaTextContext.Provider>
+    </Box>
   )
 }

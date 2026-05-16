@@ -14,7 +14,13 @@ import {
 import { read } from '@genshin-optimizer/pando/engine'
 import GroupsIcon from '@mui/icons-material/Groups'
 import HelpIcon from '@mui/icons-material/Help'
-import type { ListProps, Palette, PaletteColor } from '@mui/material'
+import type {
+  ListProps,
+  Palette,
+  PaletteColor,
+  SxProps,
+  Theme,
+} from '@mui/material'
 import {
   Box,
   Divider,
@@ -30,6 +36,7 @@ import {
   FormulaTextCacheContext,
   FormulaTextContext,
   FullTagDisplayContext,
+  TagRowSxContext,
 } from '../context'
 import type { Field, TagField, TextField } from '../types'
 
@@ -104,6 +111,11 @@ export function TagFieldDisplay({
   component = ListItem,
   emphasize,
   showZero = process.env['NODE_ENV'] === 'development',
+  calcRead: calcReadOverride,
+  rowSx,
+  onClickFormula,
+  onMouseEnter,
+  onMouseLeave,
 }: {
   field: TagField
   component?: React.ElementType
@@ -111,18 +123,34 @@ export function TagFieldDisplay({
 
   // Show field, even if the value is zero
   showZero?: boolean
+  /** Use when `listFormulas` returns a full `Read`. */
+  calcRead?: Read
+  rowSx?: SxProps<Theme>
+  /** Override help-icon click; pass a no-op to disable debug read. */
+  onClickFormula?: () => void
+  onMouseEnter?: () => void
+  onMouseLeave?: () => void
 }) {
   const calc = useContext(CalcContext)
   const contextTag = useContext(TagContext)
+  const getTagRowSx = useContext(TagRowSxContext)
   const { setRead } = useContext(DebugReadContext)
-  const calcRead = read(field.fieldRef) // we assume default accumulator
+  const contextRowSx = getTagRowSx?.(field.fieldRef)
+  const fieldRead = useMemo(
+    () => calcReadOverride ?? read(field.fieldRef),
+    [calcReadOverride, field.fieldRef]
+  )
 
-  const onClick = useCallback(() => setRead(calcRead), [calcRead, setRead])
+  const defaultHelpClick = useCallback(
+    () => setRead(fieldRead),
+    [fieldRead, setRead]
+  )
+  const onClick = onClickFormula ?? defaultHelpClick
   // const compareCalc: null | Calculator = null //TODO: compare calcs
   if (!calc) return null
   // if (!calc && !compareCalc) return null
 
-  const valueCalcRes = calc.withTag(contextTag).compute(calcRead)
+  const valueCalcRes = calc.withTag(contextTag).compute(fieldRead)
   // const compareValueCalcRes: CalcResult<number, CalcMeta> | null = null
 
   // const { setFormulaData } = useContext(FormulaDataContext)
@@ -135,7 +163,7 @@ export function TagFieldDisplay({
   if (!showZero && !calcValue && !compareCalcValue) return null
 
   let fieldVal = false as ReactNode
-  const unit = (field.fieldRef['q'] ?? '')?.endsWith('_') ? '%' : ''
+  const unit = getUnitStr(field.fieldRef['name'] || field.fieldRef['q'] || '')
   const variant = '' // TODO: variant from tag like { ele: amp: cata: trans: }
   const fixed = undefined // TODO: what do here?
   // const calcDisplay = <span>TODO formula</span> //TODO: Formula display
@@ -190,13 +218,24 @@ export function TagFieldDisplay({
   return (
     <Box
       width="100%"
-      sx={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        gap: 1,
-        boxShadow: emphasize ? '0px 0px 0px 2px red inset' : undefined,
-        py: 0.25,
-      }}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      sx={[
+        {
+          display: 'flex',
+          justifyContent: 'space-between',
+          gap: 1,
+          // Red inset: sheet conditional emphasis. Green opt-target uses `TagRowSxContext`.
+          boxShadow: emphasize ? '0px 0px 0px 2px red inset' : undefined,
+          py: 0.25,
+        },
+        ...(contextRowSx
+          ? Array.isArray(contextRowSx)
+            ? contextRowSx
+            : [contextRowSx]
+          : []),
+        ...(rowSx ? (Array.isArray(rowSx) ? rowSx : [rowSx]) : []),
+      ]}
       component={component}
     >
       <Typography
