@@ -11,12 +11,24 @@ on:
     branches:
       - master
 
+env:
+  NX_DAEMON: false
+  # PR: diff vs origin/master.
+  # Push to master: event.before→sha
+  NX_BASE: ${{ github.event_name == 'push' && github.event.before || 'origin/master' }}
+  NX_HEAD: ${{ github.event_name == 'push' && github.sha || 'HEAD' }}
+
 jobs:
   lint:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Fetch master
+        run: |
+          git fetch --no-tags --no-recurse-submodules --filter=blob:none origin +master:refs/heads/master
       - uses: actions/setup-node@v6
         with:
           node-version: 24
@@ -26,25 +38,19 @@ jobs:
           yarn install --immutable --immutable-cache
       - name: Run lint
         run: |
-          yarn run nx run-many --target=eslint:lint --fix=false --max-warnings=0
+          yarn nx affected -t eslint:lint --fix=false --max-warnings=0 --parallel=3
   test:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    env:
+      CI: true
     steps:
       - uses: actions/checkout@v6
-      - name: Get Cache Key
-        id: get-cache-key
+        with:
+          fetch-depth: 0
+      - name: Fetch master
         run: |
-          echo "key=$(git ls-tree -r HEAD | grep '^160000' | sha256sum | cut -d " " -f 1)" >> $GITHUB_OUTPUT
-      - uses: actions/cache/restore@v5
-        with:
-          path: .git/modules
-          key: submodule-${{ steps.get-cache-key.outputs.key }}
-          restore-keys: |
-            submodule-
-      - uses: actions/checkout@v6
-        with:
-          submodules: true
+          git fetch --no-tags --no-recurse-submodules --filter=blob:none origin +master:refs/heads/master
       - uses: actions/setup-node@v6
         with:
           node-version: 24
@@ -54,7 +60,7 @@ jobs:
           yarn install --immutable --immutable-cache
       - name: Run Tests
         run: |
-          yarn run nx run-many --target=test
+          yarn nx affected -t test --parallel=3
   format:
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -87,6 +93,11 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Fetch master
+        run: |
+          git fetch --no-tags --no-recurse-submodules --filter=blob:none origin +master:refs/heads/master
       - uses: actions/setup-node@v6
         with:
           node-version: 24
@@ -96,7 +107,7 @@ jobs:
           yarn install --immutable --immutable-cache
       - name: Check types
         run: |
-          yarn run nx run-many --target=typecheck
+          yarn nx affected -t typecheck --parallel=3
   gen-file:
     runs-on: ubuntu-latest
     timeout-minutes: 10
