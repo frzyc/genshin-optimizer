@@ -119,78 +119,71 @@ export default function PageOptimize() {
   )
   return (
     <Box>
-        <Suspense fallback={false}>
-          <CharacterSingleSelectionModal
-            show={show}
-            onHide={onHide}
-            onSelect={setCharacterKey}
-          />
-        </Suspense>
-        <Box
+      <Suspense fallback={false}>
+        <CharacterSingleSelectionModal
+          show={show}
+          onHide={onHide}
+          onSelect={setCharacterKey}
+        />
+      </Suspense>
+      <Box
+        sx={{
+          position: 'sticky',
+          top: 0,
+          zIndex: 100,
+          background: '#0C1020',
+        }}
+      >
+        <Button
+          fullWidth
+          color={getCharStat(characterKey).attribute}
           sx={{
-            position: 'sticky',
-            top: 0,
-            zIndex: 100,
-            background: '#0C1020',
+            justifyContent: 'flex-start',
+            pl: '6px',
           }}
+          onClick={onShow}
         >
-          <Button
-            fullWidth
-            color={getCharStat(characterKey).attribute}
-            sx={{
-              justifyContent: 'flex-start',
-              pl: '6px',
-            }}
-            onClick={onShow}
-          >
-            <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-              <ImgIcon size={2} src={characterAsset(characterKey, 'circle')} />
-              {t(`charNames_gen:${characterKey}`)}
-            </Box>
-          </Button>
-        </Box>
-        {character && charOpt && (
-          <CharacterContext.Provider value={character}>
-            <TagContext.Provider value={tag}>
-              <CharCalcProvider
-                character={character}
-                charOpt={charOpt}
-                wengineId={character.equippedWengine}
-                discIds={character.equippedDiscs}
-              >
-                <SrcDstDisplayContext.Provider
-                  value={srcDstDisplayContextValue}
-                >
-                  <ConditionalValuesContext.Provider
-                    value={charOpt.conditionals}
-                  >
-                    <SetConditionalContext.Provider value={setConditional}>
-                      <DebugReadContext.Provider value={debugObj}>
-                        <DebugReadModal />
-                        <Box
-                          sx={{
-                            display: 'flex',
-                            gap: 1,
-                            flexDirection: 'column',
-                            mt: 1,
-                          }}
-                        >
-                          <OptTargetRow
-                            character={character}
-                            charOpt={charOpt}
-                          />
-                          <TeamHeaderHeightContext.Provider value={74}>
-                            <CharacterOptDisplay key={character.key} />
-                          </TeamHeaderHeightContext.Provider>
-                        </Box>
-                      </DebugReadContext.Provider>
-                    </SetConditionalContext.Provider>
-                  </ConditionalValuesContext.Provider>
-                </SrcDstDisplayContext.Provider>
-              </CharCalcProvider>
-            </TagContext.Provider>
-          </CharacterContext.Provider>
-        )}
+          <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+            <ImgIcon size={2} src={characterAsset(characterKey, 'circle')} />
+            {t(`charNames_gen:${characterKey}`)}
+          </Box>
+        </Button>
+      </Box>
+      {character && charOpt && (
+        <CharacterContext.Provider value={character}>
+          <TagContext.Provider value={tag}>
+            <CharCalcProvider
+              character={character}
+              charOpt={charOpt}
+              wengineId={character.equippedWengine}
+              discIds={character.equippedDiscs}
+            >
+              <SrcDstDisplayContext.Provider value={srcDstDisplayContextValue}>
+                <ConditionalValuesContext.Provider value={charOpt.conditionals}>
+                  <SetConditionalContext.Provider value={setConditional}>
+                    <DebugReadContext.Provider value={debugObj}>
+                      <DebugReadModal />
+                      <Box
+                        sx={{
+                          display: 'flex',
+                          gap: 1,
+                          flexDirection: 'column',
+                          mt: 1,
+                        }}
+                      >
+                        <OptTargetRow character={character} charOpt={charOpt} />
+                        <TeamHeaderHeightContext.Provider value={74}>
+                          <CharacterOptDisplay key={character.key} />
+                        </TeamHeaderHeightContext.Provider>
+                      </Box>
+                    </DebugReadContext.Provider>
+                  </SetConditionalContext.Provider>
+                </ConditionalValuesContext.Provider>
+              </SrcDstDisplayContext.Provider>
+            </CharCalcProvider>
+          </TagContext.Provider>
+        </CharacterContext.Provider>
+      )}
     </Box>
   )
 }
