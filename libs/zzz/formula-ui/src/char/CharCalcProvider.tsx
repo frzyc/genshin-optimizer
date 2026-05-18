@@ -48,10 +48,12 @@ export function CharCalcProvider({
     () =>
       zzzCalculatorWithEntries([
         // Specify members present in the team
-        ...teamData([character.key]),
+        ...teamData([
+          character.key,
+          ...charOpt.teammates.map((charKey) => charKey),
+        ]),
         // Add actual member data
         ...member0,
-        // TODO: Get enemy values from db
         ownBuff.common.critMode.add(charOpt.critMode),
         enemy.common.lvl.add(charOpt.enemyLvl),
         enemy.common.def.add(charOpt.enemyDef),
@@ -106,7 +108,7 @@ export function CharCalcProvider({
 }
 
 function useCharacterAndEquipment(
-  character: ICachedCharacter,
+  character: ICachedCharacter | undefined,
   wengineId: string | undefined,
   discIds: DiscIds
 ) {
@@ -122,12 +124,14 @@ function useCharacterAndEquipment(
   )
   return useMemo(
     () =>
-      withMember(
-        character.key,
-        ...charTagMapNodeEntries(character),
-        ...wengineTagEntries,
-        ...discTagEntries
-      ),
+      character
+        ? withMember(
+            character.key,
+            ...charTagMapNodeEntries(character),
+            ...wengineTagEntries,
+            ...discTagEntries
+          )
+        : [],
     [character, wengineTagEntries, discTagEntries]
   )
 }

@@ -79,7 +79,9 @@ export default function PageOptimize() {
     }, [characterKey, t])
   )
   const srcDstDisplayContextValue = useMemo(() => {
-    const charList = characterKey ? [characterKey] : []
+    const charList = charOpt?.teammates
+      ? [characterKey, ...charOpt.teammates]
+      : [characterKey]
     const charDisplay = objKeyMap(charList, (ck) => (
       <CharacterName characterKey={ck} />
     ))
@@ -87,7 +89,7 @@ export default function PageOptimize() {
       srcDisplay: charDisplay,
       dstDisplay: charDisplay,
     }
-  }, [characterKey])
+  }, [charOpt?.teammates, characterKey])
 
   const setConditional = useCallback<SetConditionalFunc>(
     (

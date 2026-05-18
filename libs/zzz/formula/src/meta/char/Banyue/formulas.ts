@@ -1239,4 +1239,17 @@ export const formulas = {
       name: 'AssistFollowUpPierceHeavens_0_anomBuildup',
     },
   },
+  m6_dmg: {
+    sheet: 'Banyue',
+    name: 'm6_dmg',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'sheerDmg',
+      sheet: 'Banyue',
+      attribute: 'fire',
+      damageType1: 'elemental',
+      name: 'm6_dmg',
+    },
+  },
 } as const
