@@ -31,9 +31,11 @@ const data: TagMapNodeEntries = [
   // Anomaly Level Multiplier
   // 1 + 1/59 * (level - 1)
   ownBuff.formula.anomalyDmg.add(sum(1, prod(1 / 59, sum(own.char.lvl, -1)))),
+
   ownBuff.formula.shield.add(
     prod(own.formula.base, sum(percent(1), own.final.shield_))
   ),
+
   ownBuff.formula.heal.add(own.formula.base),
 ]
 export default data

@@ -95,7 +95,7 @@
         "1": "Unleash multiple long-range snake bites forward, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
         "2": "Grants 5 Energy when the move is used.",
         "3": "When activating by holding, consumes additional Energy. For every 20 additional Energy consumed, unleash 1 extra strike that deals <ct color=#2EB6FF>Electric DMG</ct>, up to a maximum of 60 additional Energy.",
-        "4": "After activating by holding, gain 3 <ct color=#FFFFFF>Venom</ct>. For every additional 20 Energy consumed while holding, gain 1 more <ct color=#FFFFFF>Venom</ct>.",
+        "4": "After activation, gain 3 <ct color=#FFFFFF>Venom</ct>. For every additional 20 Energy consumed while holding, gain 1 more <ct color=#FFFFFF>Venom</ct>.",
         "5": "After using this skill, it can be immediately followed up with the 4th hit of <ct color=#FFFFFF>Basic Attack: Tongue Flick</ct>.",
         "6": "A <ct color=#FFFFFF>Quick Assist</ct> is triggered when this skill hits an enemy.",
         "7": "Character is invulnerable while using this skill."
@@ -125,7 +125,7 @@
       "name": "Ultimate: Ophidiophobia",
       "desc": {
         "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
-        "1": "Deliver a downward smash in front, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "1": "Deliver a thunderbolt attack in front, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
         "2": "After using this skill, obtain 3 <ct color=#FFFFFF>Venom</ct>.",
         "3": "After using this skill, activate <ct color=#FFFFFF>Ether Veil: Cold-Blooded</ct>, lasting 30s. All squad members' CRIT DMG increases by 5% for the duration.",
         "4": "Re-activating <ct color=#FFFFFF>Ether Veil: Cold-Blooded</ct> a second time will first deactivate the active <ct color=#FFFFFF>Ether Veil: Cold-Blooded</ct>.",
@@ -167,7 +167,7 @@
       "name": "Assist Follow-Up: Partners in Crime",
       "desc": {
         "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
-        "1": "Unleash a series of downward smash attacks, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "1": "Unleash a series of attacks, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
@@ -181,57 +181,57 @@
       {
         "0": "Upon entering the battlefield, gain 3 <ct color=#FFFFFF>Venom</ct>. In Investigation Zone mode, this effect can trigger once every 180s.",
         "1": "While possessing <ct color=#FFFFFF>Venom</ct>, consume 1 <ct color=#FFFFFF>Venom</ct> every 5s while in combat to trigger <ct color=#FFFFFF>Corrode Bone</ct>, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
-        "2": "With <ct color=#FFFFFF>Venom</ct>, the squad's <ct color=#2EB6FF>Electric DMG</ct> ignores <ct color=#2BAD00>3%</ct> of enemy DEF. If initial Energy Regen is higher than 1.4, for every additional 0.12 above that threshold, an additional <ct color=#2BAD00>0.52%</ct> of the enemy's DEF is ignored, up to a maximum of <ct color=#2BAD00>12.88%</ct> of enemy DEF. This effect lasts until 30s after <ct color=#FFFFFF>Venom</ct> is depleted.",
+        "2": "With <ct color=#FFFFFF>Venom</ct>, all squad memebrs' <ct color=#2EB6FF>Electric DMG</ct> ignores <ct color=#2BAD00>3%</ct> of enemy DEF. If initial Energy Regen is higher than 1.4, for every additional 0.12 above that threshold, an additional <ct color=#2BAD00>0.52%</ct> of the enemy's DEF is ignored, up to a maximum of <ct color=#2BAD00>12.88%</ct> of enemy DEF. This effect lasts until 30s after <ct color=#FFFFFF>Venom</ct> is depleted.",
         "3": "<ct color=#FFFFFF>Corrode Bone</ct> deals additional <ct color=#2EB6FF>Electric DMG</ct> equal to <ct color=#2BAD00>227%</ct> of ATK.",
-        "4": "When there are 1/2 Electric characters in the squad, the Daze dealt by <ct color=#FFFFFF>Corrode Bone</ct> increases by 40%/60%.",
+        "4": "When there are 1/2 <ct color=#2EB6FF>Electric</ct> characters in the squad, the Daze dealt by <ct color=#FFFFFF>Corrode Bone</ct> increases by 40%/60%.",
         "5": "When gaining <ct color=#FFFFFF>Venom</ct>, every 1 excess point of <ct color=#FFFFFF>Venom</ct> triggers <ct color=#FFFFFF>Corrode Bone</ct> once."
       },
       {
         "0": "Upon entering the battlefield, gain 3 <ct color=#FFFFFF>Venom</ct>. In Investigation Zone mode, this effect can trigger once every 180s.",
         "1": "While possessing <ct color=#FFFFFF>Venom</ct>, consume 1 <ct color=#FFFFFF>Venom</ct> every 5s while in combat to trigger <ct color=#FFFFFF>Corrode Bone</ct>, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
-        "2": "With <ct color=#FFFFFF>Venom</ct>, the squad's <ct color=#2EB6FF>Electric DMG</ct> ignores <ct color=#2BAD00>3.5%</ct> of enemy DEF. If initial Energy Regen is higher than 1.4, for every additional 0.12 above that threshold, an additional <ct color=#2BAD00>0.6%</ct> of the enemy's DEF is ignored, up to a maximum of <ct color=#2BAD00>14.9%</ct> of enemy DEF. This effect lasts until 30s after <ct color=#FFFFFF>Venom</ct> is depleted.",
+        "2": "With <ct color=#FFFFFF>Venom</ct>, all squad memebrs' <ct color=#2EB6FF>Electric DMG</ct> ignores <ct color=#2BAD00>3.5%</ct> of enemy DEF. If initial Energy Regen is higher than 1.4, for every additional 0.12 above that threshold, an additional <ct color=#2BAD00>0.6%</ct> of the enemy's DEF is ignored, up to a maximum of <ct color=#2BAD00>14.9%</ct> of enemy DEF. This effect lasts until 30s after <ct color=#FFFFFF>Venom</ct> is depleted.",
         "3": "<ct color=#FFFFFF>Corrode Bone</ct> deals additional <ct color=#2EB6FF>Electric DMG</ct> equal to <ct color=#2BAD00>245%</ct> of ATK.",
-        "4": "When there are 1/2 Electric characters in the squad, the Daze dealt by <ct color=#FFFFFF>Corrode Bone</ct> increases by 40%/60%.",
+        "4": "When there are 1/2 <ct color=#2EB6FF>Electric</ct> characters in the squad, the Daze dealt by <ct color=#FFFFFF>Corrode Bone</ct> increases by 40%/60%.",
         "5": "When gaining <ct color=#FFFFFF>Venom</ct>, every 1 excess point of <ct color=#FFFFFF>Venom</ct> triggers <ct color=#FFFFFF>Corrode Bone</ct> once."
       },
       {
         "0": "Upon entering the battlefield, gain 3 <ct color=#FFFFFF>Venom</ct>. In Investigation Zone mode, this effect can trigger once every 180s.",
         "1": "While possessing <ct color=#FFFFFF>Venom</ct>, consume 1 <ct color=#FFFFFF>Venom</ct> every 5s while in combat to trigger <ct color=#FFFFFF>Corrode Bone</ct>, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
-        "2": "With <ct color=#FFFFFF>Venom</ct>, the squad's <ct color=#2EB6FF>Electric DMG</ct> ignores <ct color=#2BAD00>4%</ct> of enemy DEF. If initial Energy Regen is higher than 1.4, for every additional 0.12 above that threshold, an additional <ct color=#2BAD00>0.68%</ct> of the enemy's DEF is ignored, up to a maximum of <ct color=#2BAD00>16.92%</ct> of enemy DEF. This effect lasts until 30s after <ct color=#FFFFFF>Venom</ct> is depleted.",
+        "2": "With <ct color=#FFFFFF>Venom</ct>, all squad memebrs' <ct color=#2EB6FF>Electric DMG</ct> ignores <ct color=#2BAD00>4%</ct> of enemy DEF. If initial Energy Regen is higher than 1.4, for every additional 0.12 above that threshold, an additional <ct color=#2BAD00>0.68%</ct> of the enemy's DEF is ignored, up to a maximum of <ct color=#2BAD00>16.92%</ct> of enemy DEF. This effect lasts until 30s after <ct color=#FFFFFF>Venom</ct> is depleted.",
         "3": "<ct color=#FFFFFF>Corrode Bone</ct> deals additional <ct color=#2EB6FF>Electric DMG</ct> equal to <ct color=#2BAD00>263%</ct> of ATK.",
-        "4": "When there are 1/2 Electric characters in the squad, the Daze dealt by <ct color=#FFFFFF>Corrode Bone</ct> increases by 40%/60%.",
+        "4": "When there are 1/2 <ct color=#2EB6FF>Electric</ct> characters in the squad, the Daze dealt by <ct color=#FFFFFF>Corrode Bone</ct> increases by 40%/60%.",
         "5": "When gaining <ct color=#FFFFFF>Venom</ct>, every 1 excess point of <ct color=#FFFFFF>Venom</ct> triggers <ct color=#FFFFFF>Corrode Bone</ct> once."
       },
       {
         "0": "Upon entering the battlefield, gain 3 <ct color=#FFFFFF>Venom</ct>. In Investigation Zone mode, this effect can trigger once every 180s.",
         "1": "While possessing <ct color=#FFFFFF>Venom</ct>, consume 1 <ct color=#FFFFFF>Venom</ct> every 5s while in combat to trigger <ct color=#FFFFFF>Corrode Bone</ct>, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
-        "2": "With <ct color=#FFFFFF>Venom</ct>, the squad's <ct color=#2EB6FF>Electric DMG</ct> ignores <ct color=#2BAD00>4.5%</ct> of enemy DEF. If initial Energy Regen is higher than 1.4, for every additional 0.12 above that threshold, an additional <ct color=#2BAD00>0.76%</ct> of the enemy's DEF is ignored, up to a maximum of <ct color=#2BAD00>18.94%</ct> of enemy DEF. This effect lasts until 30s after <ct color=#FFFFFF>Venom</ct> is depleted.",
+        "2": "With <ct color=#FFFFFF>Venom</ct>, all squad memebrs' <ct color=#2EB6FF>Electric DMG</ct> ignores <ct color=#2BAD00>4.5%</ct> of enemy DEF. If initial Energy Regen is higher than 1.4, for every additional 0.12 above that threshold, an additional <ct color=#2BAD00>0.76%</ct> of the enemy's DEF is ignored, up to a maximum of <ct color=#2BAD00>18.94%</ct> of enemy DEF. This effect lasts until 30s after <ct color=#FFFFFF>Venom</ct> is depleted.",
         "3": "<ct color=#FFFFFF>Corrode Bone</ct> deals additional <ct color=#2EB6FF>Electric DMG</ct> equal to <ct color=#2BAD00>281%</ct> of ATK.",
-        "4": "When there are 1/2 Electric characters in the squad, the Daze dealt by <ct color=#FFFFFF>Corrode Bone</ct> increases by 40%/60%.",
+        "4": "When there are 1/2 <ct color=#2EB6FF>Electric</ct> characters in the squad, the Daze dealt by <ct color=#FFFFFF>Corrode Bone</ct> increases by 40%/60%.",
         "5": "When gaining <ct color=#FFFFFF>Venom</ct>, every 1 excess point of <ct color=#FFFFFF>Venom</ct> triggers <ct color=#FFFFFF>Corrode Bone</ct> once."
       },
       {
         "0": "Upon entering the battlefield, gain 3 <ct color=#FFFFFF>Venom</ct>. In Investigation Zone mode, this effect can trigger once every 180s.",
         "1": "While possessing <ct color=#FFFFFF>Venom</ct>, consume 1 <ct color=#FFFFFF>Venom</ct> every 5s while in combat to trigger <ct color=#FFFFFF>Corrode Bone</ct>, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
-        "2": "With <ct color=#FFFFFF>Venom</ct>, the squad's <ct color=#2EB6FF>Electric DMG</ct> ignores <ct color=#2BAD00>5%</ct> of enemy DEF. If initial Energy Regen is higher than 1.4, for every additional 0.12 above that threshold, an additional <ct color=#2BAD00>0.84%</ct> of the enemy's DEF is ignored, up to a maximum of <ct color=#2BAD00>20.96%</ct> of enemy DEF. This effect lasts until 30s after <ct color=#FFFFFF>Venom</ct> is depleted.",
+        "2": "With <ct color=#FFFFFF>Venom</ct>, all squad memebrs' <ct color=#2EB6FF>Electric DMG</ct> ignores <ct color=#2BAD00>5%</ct> of enemy DEF. If initial Energy Regen is higher than 1.4, for every additional 0.12 above that threshold, an additional <ct color=#2BAD00>0.84%</ct> of the enemy's DEF is ignored, up to a maximum of <ct color=#2BAD00>20.96%</ct> of enemy DEF. This effect lasts until 30s after <ct color=#FFFFFF>Venom</ct> is depleted.",
         "3": "<ct color=#FFFFFF>Corrode Bone</ct> deals additional <ct color=#2EB6FF>Electric DMG</ct> equal to <ct color=#2BAD00>299%</ct> of ATK.",
-        "4": "When there are 1/2 Electric characters in the squad, the Daze dealt by <ct color=#FFFFFF>Corrode Bone</ct> increases by 40%/60%.",
+        "4": "When there are 1/2 <ct color=#2EB6FF>Electric</ct> characters in the squad, the Daze dealt by <ct color=#FFFFFF>Corrode Bone</ct> increases by 40%/60%.",
         "5": "When gaining <ct color=#FFFFFF>Venom</ct>, every 1 excess point of <ct color=#FFFFFF>Venom</ct> triggers <ct color=#FFFFFF>Corrode Bone</ct> once."
       },
       {
         "0": "Upon entering the battlefield, gain 3 <ct color=#FFFFFF>Venom</ct>. In Investigation Zone mode, this effect can trigger once every 180s.",
         "1": "While possessing <ct color=#FFFFFF>Venom</ct>, consume 1 <ct color=#FFFFFF>Venom</ct> every 5s while in combat to trigger <ct color=#FFFFFF>Corrode Bone</ct>, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
-        "2": "With <ct color=#FFFFFF>Venom</ct>, the squad's <ct color=#2EB6FF>Electric DMG</ct> ignores <ct color=#2BAD00>5.5%</ct> of enemy DEF. If initial Energy Regen is higher than 1.4, for every additional 0.12 above that threshold, an additional <ct color=#2BAD00>0.92%</ct> of the enemy's DEF is ignored, up to a maximum of <ct color=#2BAD00>22.98%</ct> of enemy DEF. This effect lasts until 30s after <ct color=#FFFFFF>Venom</ct> is depleted.",
+        "2": "With <ct color=#FFFFFF>Venom</ct>, all squad memebrs' <ct color=#2EB6FF>Electric DMG</ct> ignores <ct color=#2BAD00>5.5%</ct> of enemy DEF. If initial Energy Regen is higher than 1.4, for every additional 0.12 above that threshold, an additional <ct color=#2BAD00>0.92%</ct> of the enemy's DEF is ignored, up to a maximum of <ct color=#2BAD00>22.98%</ct> of enemy DEF. This effect lasts until 30s after <ct color=#FFFFFF>Venom</ct> is depleted.",
         "3": "<ct color=#FFFFFF>Corrode Bone</ct> deals additional <ct color=#2EB6FF>Electric DMG</ct> equal to <ct color=#2BAD00>317%</ct> of ATK.",
-        "4": "When there are 1/2 Electric characters in the squad, the Daze dealt by <ct color=#FFFFFF>Corrode Bone</ct> increases by 40%/60%.",
+        "4": "When there are 1/2 <ct color=#2EB6FF>Electric</ct> characters in the squad, the Daze dealt by <ct color=#FFFFFF>Corrode Bone</ct> increases by 40%/60%.",
         "5": "When gaining <ct color=#FFFFFF>Venom</ct>, every 1 excess point of <ct color=#FFFFFF>Venom</ct> triggers <ct color=#FFFFFF>Corrode Bone</ct> once."
       },
       {
         "0": "Upon entering the battlefield, gain 3 <ct color=#FFFFFF>Venom</ct>. In Investigation Zone mode, this effect can trigger once every 180s.",
         "1": "While possessing <ct color=#FFFFFF>Venom</ct>, consume 1 <ct color=#FFFFFF>Venom</ct> every 5s while in combat to trigger <ct color=#FFFFFF>Corrode Bone</ct>, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
-        "2": "With <ct color=#FFFFFF>Venom</ct>, the squad's <ct color=#2EB6FF>Electric DMG</ct> ignores <ct color=#2BAD00>6%</ct> of enemy DEF. If initial Energy Regen is higher than 1.4, for every additional 0.12 above that threshold, an additional <ct color=#2BAD00>1%</ct> of the enemy's DEF is ignored, up to a maximum of <ct color=#2BAD00>25%</ct> of enemy DEF. This effect lasts until 30s after <ct color=#FFFFFF>Venom</ct> is depleted.",
+        "2": "With <ct color=#FFFFFF>Venom</ct>, all squad memebrs' <ct color=#2EB6FF>Electric DMG</ct> ignores <ct color=#2BAD00>6%</ct> of enemy DEF. If initial Energy Regen is higher than 1.4, for every additional 0.12 above that threshold, an additional <ct color=#2BAD00>1%</ct> of the enemy's DEF is ignored, up to a maximum of <ct color=#2BAD00>25%</ct> of enemy DEF. This effect lasts until 30s after <ct color=#FFFFFF>Venom</ct> is depleted.",
         "3": "<ct color=#FFFFFF>Corrode Bone</ct> deals additional <ct color=#2EB6FF>Electric DMG</ct> equal to <ct color=#2BAD00>335%</ct> of ATK.",
-        "4": "When there are 1/2 Electric characters in the squad, the Daze dealt by <ct color=#FFFFFF>Corrode Bone</ct> increases by 40%/60%.",
+        "4": "When there are 1/2 <ct color=#2EB6FF>Electric</ct> characters in the squad, the Daze dealt by <ct color=#FFFFFF>Corrode Bone</ct> increases by 40%/60%.",
         "5": "When gaining <ct color=#FFFFFF>Venom</ct>, every 1 excess point of <ct color=#FFFFFF>Venom</ct> triggers <ct color=#FFFFFF>Corrode Bone</ct> once."
       }
     ]

@@ -2,21 +2,6 @@
   "name": "Jane",
   "fullName": "Jane Doe",
   "basic": {
-    "BasicAttackDancingBlades": {
-      "name": "Basic Attack: Dancing Blades",
-      "desc": {
-        "0": "Press <IconNormal /> to activate:",
-        "1": "Unleashes up to 6 attacks in front, dealing <ct color=#F0D12B>Physical DMG</ct>."
-      },
-      "params": [
-        "1st-Hit ",
-        "2nd-Hit ",
-        "3rd-Hit ",
-        "4th-Hit ",
-        "5th-Hit ",
-        "6th-Hit "
-      ]
-    },
     "Passion": {
       "name": "Passion",
       "desc": {
@@ -25,21 +10,6 @@
         "2": "In the <ct color=#FFFFFF>Passion</ct> state, Jane's skills that deal damage consume <ct color=#FFFFFF>Passion Stream</ct>. Activating a <ct color=#FFFFFF>Perfect Dodge</ct> or <ct color=#FFFFFF>Defensive Assist</ct> regenerates <ct color=#FFFFFF>Passion Stream</ct>. Jane exits the <ct color=#FFFFFF>Passion</ct> state when all of her <ct color=#FFFFFF>Passion Stream</ct> is consumed."
       },
       "params": []
-    },
-    "BasicAttackSalchowJump": {
-      "name": "Basic Attack: Salchow Jump",
-      "desc": {
-        "0": "Entering the <ct color=#FFFFFF>Passion</ct> state grants Jane one use of <ct color=#FFFFFF>Basic Attack: Salchow Jump</ct>.",
-        "1": "When available, hold <IconNormal /> to activate:",
-        "2": "Launch rapid consecutive attacks forward, followed by a Finishing Move, dealing <ct color=#F0D12B>Physical DMG</ct>.",
-        "3": "Hold the button during the consecutive attacks to extend the skill duration. Release <IconNormal /> to trigger the Finishing Move early.",
-        "4": "Anti-Interrupt level is increased during the consecutive attacks, and Jane takes 40% reduced DMG. Jane is invulnerable during the Finishing Move.",
-        "5": "Using and damaging an enemy with <ct color=#FFFFFF>Basic Attack: Salchow Jump</ct> while in the <ct color=#FFFFFF>Passion</ct> state generates <ct color=#FFFFFF>Passion Stream</ct>."
-      },
-      "params": [
-        "Consecutive Attack ",
-        "Finishing Move "
-      ]
     }
   },
   "dodge": {
@@ -110,18 +80,6 @@
       },
       "params": [
         " "
-      ]
-    },
-    "EXSpecialAttackAerialSweepClearout": {
-      "name": "EX Special Attack: Aerial Sweep - Clearout",
-      "desc": {
-        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
-        "1": "Leaps into the air to launch multiple consecutive kicks forward, then sweeps across, dealing massive <ct color=#F0D12B>Physical DMG</ct>.",
-        "2": "Character is invulnerable while using this skill."
-      },
-      "params": [
-        " ",
-        "Energy Cost "
       ]
     }
   },

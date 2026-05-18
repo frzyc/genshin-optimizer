@@ -60,6 +60,8 @@ export const characterIdMap = {
   '1501': 'Aria',
   '1511': 'NangongYu',
   '1521': 'Cissia',
+  '1531': 'StarlightBilly',
+  '1541': 'Promeia',
 } as const
 
 export const attributeMap: Record<number, AttributeKey> = {
