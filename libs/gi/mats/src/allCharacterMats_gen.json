@@ -73157,6 +73157,627 @@
       }
     }
   },
+  "Nicole": {
+    "talents": {
+      "normal": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfElysium",
+              "amount": 3
+            },
+            {
+              "item": "TatteredWarrant",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToElysium",
+              "amount": 2
+            },
+            {
+              "item": "ImmaculateWarrant",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToElysium",
+              "amount": 4
+            },
+            {
+              "item": "ImmaculateWarrant",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToElysium",
+              "amount": 6
+            },
+            {
+              "item": "ImmaculateWarrant",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToElysium",
+              "amount": 9
+            },
+            {
+              "item": "ImmaculateWarrant",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfElysium",
+              "amount": 4
+            },
+            {
+              "item": "FrostEtchedWarrant",
+              "amount": 4
+            },
+            {
+              "item": "CounterfeitResin",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfElysium",
+              "amount": 6
+            },
+            {
+              "item": "FrostEtchedWarrant",
+              "amount": 6
+            },
+            {
+              "item": "CounterfeitResin",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfElysium",
+              "amount": 12
+            },
+            {
+              "item": "FrostEtchedWarrant",
+              "amount": 9
+            },
+            {
+              "item": "CounterfeitResin",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfElysium",
+              "amount": 16
+            },
+            {
+              "item": "FrostEtchedWarrant",
+              "amount": 12
+            },
+            {
+              "item": "CounterfeitResin",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "skill": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfElysium",
+              "amount": 3
+            },
+            {
+              "item": "TatteredWarrant",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToElysium",
+              "amount": 2
+            },
+            {
+              "item": "ImmaculateWarrant",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToElysium",
+              "amount": 4
+            },
+            {
+              "item": "ImmaculateWarrant",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToElysium",
+              "amount": 6
+            },
+            {
+              "item": "ImmaculateWarrant",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToElysium",
+              "amount": 9
+            },
+            {
+              "item": "ImmaculateWarrant",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfElysium",
+              "amount": 4
+            },
+            {
+              "item": "FrostEtchedWarrant",
+              "amount": 4
+            },
+            {
+              "item": "CounterfeitResin",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfElysium",
+              "amount": 6
+            },
+            {
+              "item": "FrostEtchedWarrant",
+              "amount": 6
+            },
+            {
+              "item": "CounterfeitResin",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfElysium",
+              "amount": 12
+            },
+            {
+              "item": "FrostEtchedWarrant",
+              "amount": 9
+            },
+            {
+              "item": "CounterfeitResin",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfElysium",
+              "amount": 16
+            },
+            {
+              "item": "FrostEtchedWarrant",
+              "amount": 12
+            },
+            {
+              "item": "CounterfeitResin",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "burst": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfElysium",
+              "amount": 3
+            },
+            {
+              "item": "TatteredWarrant",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToElysium",
+              "amount": 2
+            },
+            {
+              "item": "ImmaculateWarrant",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToElysium",
+              "amount": 4
+            },
+            {
+              "item": "ImmaculateWarrant",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToElysium",
+              "amount": 6
+            },
+            {
+              "item": "ImmaculateWarrant",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToElysium",
+              "amount": 9
+            },
+            {
+              "item": "ImmaculateWarrant",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfElysium",
+              "amount": 4
+            },
+            {
+              "item": "FrostEtchedWarrant",
+              "amount": 4
+            },
+            {
+              "item": "CounterfeitResin",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfElysium",
+              "amount": 6
+            },
+            {
+              "item": "FrostEtchedWarrant",
+              "amount": 6
+            },
+            {
+              "item": "CounterfeitResin",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfElysium",
+              "amount": 12
+            },
+            {
+              "item": "FrostEtchedWarrant",
+              "amount": 9
+            },
+            {
+              "item": "CounterfeitResin",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfElysium",
+              "amount": 16
+            },
+            {
+              "item": "FrostEtchedWarrant",
+              "amount": 12
+            },
+            {
+              "item": "CounterfeitResin",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      }
+    },
+    "ascension": {
+      "0": {
+        "cost": 0,
+        "items": []
+      },
+      "1": {
+        "cost": 20000,
+        "items": [
+          {
+            "item": "AgnidusAgateSliver",
+            "amount": 1
+          },
+          {
+            "item": "PineAmber",
+            "amount": 3
+          },
+          {
+            "item": "TatteredWarrant",
+            "amount": 3
+          }
+        ]
+      },
+      "2": {
+        "cost": 40000,
+        "items": [
+          {
+            "item": "AgnidusAgateFragment",
+            "amount": 3
+          },
+          {
+            "item": "RemnantOfTheDreadwing",
+            "amount": 2
+          },
+          {
+            "item": "PineAmber",
+            "amount": 10
+          },
+          {
+            "item": "TatteredWarrant",
+            "amount": 15
+          }
+        ]
+      },
+      "3": {
+        "cost": 60000,
+        "items": [
+          {
+            "item": "AgnidusAgateFragment",
+            "amount": 6
+          },
+          {
+            "item": "RemnantOfTheDreadwing",
+            "amount": 4
+          },
+          {
+            "item": "PineAmber",
+            "amount": 20
+          },
+          {
+            "item": "ImmaculateWarrant",
+            "amount": 12
+          }
+        ]
+      },
+      "4": {
+        "cost": 80000,
+        "items": [
+          {
+            "item": "AgnidusAgateChunk",
+            "amount": 3
+          },
+          {
+            "item": "RemnantOfTheDreadwing",
+            "amount": 8
+          },
+          {
+            "item": "PineAmber",
+            "amount": 30
+          },
+          {
+            "item": "ImmaculateWarrant",
+            "amount": 18
+          }
+        ]
+      },
+      "5": {
+        "cost": 100000,
+        "items": [
+          {
+            "item": "AgnidusAgateChunk",
+            "amount": 6
+          },
+          {
+            "item": "RemnantOfTheDreadwing",
+            "amount": 12
+          },
+          {
+            "item": "PineAmber",
+            "amount": 45
+          },
+          {
+            "item": "FrostEtchedWarrant",
+            "amount": 12
+          }
+        ]
+      },
+      "6": {
+        "cost": 120000,
+        "items": [
+          {
+            "item": "AgnidusAgateGemstone",
+            "amount": 6
+          },
+          {
+            "item": "RemnantOfTheDreadwing",
+            "amount": 20
+          },
+          {
+            "item": "PineAmber",
+            "amount": 60
+          },
+          {
+            "item": "FrostEtchedWarrant",
+            "amount": 24
+          }
+        ]
+      }
+    }
+  },
   "Somnia": {
     "talents": {
       "normal": {

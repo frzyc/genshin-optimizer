@@ -54730,6 +54730,434 @@
         ],
         "upgradeableSkills": []
       },
+      "Nicole": {
+        "auto": [
+          [
+            0.351792,
+            0.378176,
+            0.404561,
+            0.43974,
+            0.466124,
+            0.492509,
+            0.527688,
+            0.562867,
+            0.598046,
+            0.633226,
+            0.668405,
+            0.703584,
+            0.747558,
+            0.791532,
+            0.835506
+          ],
+          [
+            0.296336,
+            0.318561,
+            0.340786,
+            0.37042,
+            0.392645,
+            0.41487,
+            0.444504,
+            0.474138,
+            0.503771,
+            0.533405,
+            0.563038,
+            0.592672,
+            0.629714,
+            0.666756,
+            0.703798
+          ],
+          [
+            0.46188,
+            0.496521,
+            0.531162,
+            0.57735,
+            0.611991,
+            0.646632,
+            0.69282,
+            0.739008,
+            0.785196,
+            0.831384,
+            0.877572,
+            0.92376,
+            0.981495,
+            1.03923,
+            1.096965
+          ],
+          [
+            1.1232,
+            1.20744,
+            1.29168,
+            1.404,
+            1.48824,
+            1.57248,
+            1.6848,
+            1.79712,
+            1.90944,
+            2.02176,
+            2.13408,
+            2.2464,
+            2.3868,
+            2.5272,
+            2.6676
+          ],
+          [
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50
+          ],
+          [
+            0.568288,
+            0.614544,
+            0.6608,
+            0.72688,
+            0.773136,
+            0.826,
+            0.898688,
+            0.971376,
+            1.044064,
+            1.12336,
+            1.202656,
+            1.281952,
+            1.361248,
+            1.440544,
+            1.51984
+          ],
+          [
+            1.136335,
+            1.228828,
+            1.32132,
+            1.453452,
+            1.545944,
+            1.65165,
+            1.796995,
+            1.94234,
+            2.087686,
+            2.246244,
+            2.404802,
+            2.563361,
+            2.721919,
+            2.880478,
+            3.039036
+          ],
+          [
+            1.419344,
+            1.534872,
+            1.6504,
+            1.81544,
+            1.930968,
+            2.063,
+            2.244544,
+            2.426088,
+            2.607632,
+            2.80568,
+            3.003728,
+            3.201776,
+            3.399824,
+            3.597872,
+            3.79592
+          ]
+        ],
+        "skill": [
+          [
+            1.384,
+            1.4878,
+            1.5916,
+            1.73,
+            1.8338,
+            1.9376,
+            2.076,
+            2.2144,
+            2.3528,
+            2.4912,
+            2.6296,
+            2.768,
+            2.941,
+            3.114,
+            3.287
+          ],
+          [
+            2.21184,
+            2.377728,
+            2.543616,
+            2.7648,
+            2.930688,
+            3.096576,
+            3.31776,
+            3.538944,
+            3.760128,
+            3.981312,
+            4.202496,
+            4.42368,
+            4.70016,
+            4.97664,
+            5.25312
+          ],
+          [
+            1386.6697,
+            1525.356,
+            1675.5994,
+            1837.4,
+            2010.7578,
+            2195.6729,
+            2392.145,
+            2600.1743,
+            2819.761,
+            3050.9045,
+            3293.6055,
+            3547.8638,
+            3813.679,
+            4091.0515,
+            4379.981
+          ],
+          [
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20
+          ],
+          [
+            0.0825,
+            0.09,
+            0.0975,
+            0.105,
+            0.1125,
+            0.12,
+            0.1275,
+            0.135,
+            0.1425,
+            0.15,
+            0.159,
+            0.168,
+            0.177,
+            0.186,
+            0.195
+          ],
+          [
+            330,
+            360,
+            390,
+            420,
+            450,
+            480,
+            510,
+            540,
+            570,
+            600,
+            636,
+            672,
+            708,
+            744,
+            780
+          ],
+          [
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20
+          ],
+          [
+            16,
+            16,
+            16,
+            16,
+            16,
+            16,
+            16,
+            16,
+            16,
+            16,
+            16,
+            16,
+            16,
+            16,
+            16
+          ]
+        ],
+        "burst": [
+          [
+            3.168,
+            3.4056,
+            3.6432,
+            3.96,
+            4.1976,
+            4.4352,
+            4.752,
+            5.0688,
+            5.3856,
+            5.7024,
+            6.0192,
+            6.336,
+            6.732,
+            7.128,
+            7.524
+          ],
+          [
+            0.99,
+            1.08,
+            1.17,
+            1.26,
+            1.35,
+            1.44,
+            1.53,
+            1.62,
+            1.71,
+            1.8,
+            1.908,
+            2.016,
+            2.124,
+            2.232,
+            2.34
+          ],
+          [
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          [
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20,
+            20
+          ],
+          [
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15
+          ],
+          [
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60
+          ]
+        ],
+        "passive1": [
+          [
+            20
+          ],
+          [
+            3
+          ],
+          [
+            300
+          ]
+        ],
+        "passive2": [
+          [
+            8
+          ]
+        ],
+        "passive3": [
+          [
+            5
+          ]
+        ],
+        "lockedPassive": [
+          [
+            3
+          ]
+        ],
+        "constellation1": [
+          6,
+          6
+        ],
+        "constellation2": [
+          300,
+          0.25
+        ],
+        "constellation3": [],
+        "constellation4": [
+          20,
+          16,
+          0.7,
+          8
+        ],
+        "constellation5": [],
+        "constellation6": [
+          0.4
+        ],
+        "upgradeableSkills": []
+      },
       "Somnia": {
         "auto": [
           [
@@ -62689,6 +63117,71 @@
             0.096,
             0.144,
             0.192
+          ]
+        }
+      },
+      "Nicole": {
+        "key": "Nicole",
+        "ele": "pyro",
+        "weaponType": "catalyst",
+        "birthday": {
+          "month": 9,
+          "day": 29
+        },
+        "rarity": 5,
+        "lvlCurves": [
+          {
+            "key": "hp",
+            "base": 810.322,
+            "curve": "GROW_CURVE_HP_S5"
+          },
+          {
+            "key": "atk",
+            "base": 26.6266,
+            "curve": "GROW_CURVE_ATTACK_S5"
+          },
+          {
+            "key": "def",
+            "base": 43.79556,
+            "curve": "GROW_CURVE_HP_S5"
+          }
+        ],
+        "ascensionBonus": {
+          "hp": [
+            0,
+            694.77783,
+            1188.4358,
+            1846.6464,
+            2340.3042,
+            2833.9622,
+            3327.62
+          ],
+          "def": [
+            0,
+            37.5516,
+            64.233,
+            99.8082,
+            126.4896,
+            153.171,
+            179.8524
+          ],
+          "atk": [
+            0,
+            22.828234,
+            39.048294,
+            60.67504,
+            76.8951,
+            93.115166,
+            109.33523
+          ],
+          "atk_": [
+            0,
+            0,
+            0.072,
+            0.144,
+            0.144,
+            0.216,
+            0.288
           ]
         }
       },
@@ -71856,6 +72349,53 @@
           ]
         }
       },
+      "AngelosHeptades": {
+        "weaponType": "catalyst",
+        "rarity": 5,
+        "mainStat": {
+          "type": "atk",
+          "base": 49.1377,
+          "curve": "GROW_CURVE_ATTACK_303"
+        },
+        "subStat": {
+          "type": "atk_",
+          "base": 0.036,
+          "curve": "GROW_CURVE_CRITICAL_301"
+        },
+        "lvlCurves": [
+          {
+            "key": "atk",
+            "base": 49.1377,
+            "curve": "GROW_CURVE_ATTACK_303"
+          },
+          {
+            "key": "atk_",
+            "base": 0.036,
+            "curve": "GROW_CURVE_CRITICAL_301"
+          }
+        ],
+        "refinementBonus": {
+          "atk_": [
+            -1,
+            0.12,
+            0.15,
+            0.18,
+            0.21,
+            0.24
+          ]
+        },
+        "ascensionBonus": {
+          "atk": [
+            0,
+            31.1,
+            62.2,
+            93.4,
+            124.5,
+            155.6,
+            186.7
+          ]
+        }
+      },
       "HuntersBow": {
         "weaponType": "bow",
         "rarity": 1,
@@ -74691,6 +75231,40 @@
         ]
       },
       "ADayCarvedFromRisingWinds": {
+        "setNum": [
+          2,
+          4
+        ],
+        "rarities": [
+          4,
+          5
+        ],
+        "slots": [
+          "goblet",
+          "plume",
+          "circlet",
+          "flower",
+          "sands"
+        ]
+      },
+      "CelestialGift": {
+        "setNum": [
+          2,
+          4
+        ],
+        "rarities": [
+          4,
+          5
+        ],
+        "slots": [
+          "goblet",
+          "plume",
+          "circlet",
+          "flower",
+          "sands"
+        ]
+      },
+      "DisenchantmentInDeepShadow": {
         "setNum": [
           2,
           4
@@ -85413,6 +85987,9 @@
     "JointExhibitionPopularity": {
       "type": "MATERIAL_NONE"
     },
+    "PalsSynergy": {
+      "type": "MATERIAL_NONE"
+    },
     "Primogem": {
       "type": "MATERIAL_ADSORBATE"
     },
@@ -86278,10 +86855,10 @@
       "type": "MATERIAL_GCG_CARD_FACE"
     },
     "Lauma": {
-      "type": "MATERIAL_AVATAR"
+      "type": "MATERIAL_GCG_CARD_FACE"
     },
     "Flins": {
-      "type": "MATERIAL_AVATAR"
+      "type": "MATERIAL_GCG_CARD_FACE"
     },
     "Aino": {
       "type": "MATERIAL_GCG_CARD_FACE"
@@ -86307,7 +86884,16 @@
     "Varka": {
       "type": "MATERIAL_AVATAR"
     },
+    "Lohen": {
+      "type": "MATERIAL_AVATAR"
+    },
     "Linnea": {
+      "type": "MATERIAL_AVATAR"
+    },
+    "Nicole": {
+      "type": "MATERIAL_AVATAR"
+    },
+    "Prune": {
       "type": "MATERIAL_AVATAR"
     },
     "KachinasStellaFortuna": {
@@ -86391,7 +86977,16 @@
     "VarkasStellaFortuna": {
       "type": "MATERIAL_AVATAR_TALENT_MATERIAL"
     },
+    "LohensStellaFortuna": {
+      "type": "MATERIAL_AVATAR_TALENT_MATERIAL"
+    },
     "LinneasStellaFortuna": {
+      "type": "MATERIAL_AVATAR_TALENT_MATERIAL"
+    },
+    "NicolesStellaFortuna": {
+      "type": "MATERIAL_AVATAR_TALENT_MATERIAL"
+    },
+    "PrunesStellaFortuna": {
       "type": "MATERIAL_AVATAR_TALENT_MATERIAL"
     },
     "Apple": {
@@ -86980,6 +87575,15 @@
       "type": "MATERIAL_QUEST"
     },
     "FischlDictionaryDieNeuauflageDerPrinzessin": {
+      "type": "MATERIAL_QUEST"
+    },
+    "TheOriginsOfTheExperiment": {
+      "type": "MATERIAL_QUEST"
+    },
+    "NotesOnTheExperimentalSubjects": {
+      "type": "MATERIAL_QUEST"
+    },
+    "ScribbledNotes": {
       "type": "MATERIAL_QUEST"
     },
     "WyattsRedKey": {
@@ -93244,7 +93848,7 @@
       "type": "MATERIAL_FOOD"
     },
     "RouletteSpecial": {
-      "type": "MATERIAL_FOOD"
+      "type": "MATERIAL_GCG_CARD_FACE"
     },
     "DeliciousRouletteSpecial": {
       "type": "MATERIAL_FOOD"
@@ -93476,6 +94080,33 @@
     },
     "SugarSculptureLinnea": {
       "type": "MATERIAL_NOTICE_ADD_HP"
+    },
+    "SuspiciousStuffedTofuWithMincedMeat": {
+      "type": "MATERIAL_FOOD"
+    },
+    "StuffedTofuWithMincedMeat": {
+      "type": "MATERIAL_FOOD"
+    },
+    "DeliciousStuffedTofuWithMincedMeat": {
+      "type": "MATERIAL_FOOD"
+    },
+    "SuspiciousMintBubblegum": {
+      "type": "MATERIAL_FOOD"
+    },
+    "MintBubblegum": {
+      "type": "MATERIAL_FOOD"
+    },
+    "DeliciousMintBubblegum": {
+      "type": "MATERIAL_FOOD"
+    },
+    "SpinningSpecial": {
+      "type": "MATERIAL_FOOD"
+    },
+    "GildedChest": {
+      "type": "MATERIAL_FOOD"
+    },
+    "BoredomBustingBubblegum": {
+      "type": "MATERIAL_FOOD"
     },
     "RecipeItem": {
       "type": "MATERIAL_CONSUME"
@@ -94276,6 +94907,12 @@
       "type": "MATERIAL_CONSUME"
     },
     "RecipeMillhavensMorningPlate": {
+      "type": "MATERIAL_CONSUME"
+    },
+    "RecipeStuffedTofuWithMincedMeat": {
+      "type": "MATERIAL_CONSUME"
+    },
+    "RecipeMintBubblegum": {
       "type": "MATERIAL_CONSUME"
     },
     "CraftedItems": {
@@ -95101,6 +95738,15 @@
       "type": "MATERIAL_AVATAR_MATERIAL"
     },
     "PlumeOfTheFallenWatcher": {
+      "type": "MATERIAL_AVATAR_MATERIAL"
+    },
+    "CounterfeitResin": {
+      "type": "MATERIAL_AVATAR_MATERIAL"
+    },
+    "TwistedWitheredBranch": {
+      "type": "MATERIAL_AVATAR_MATERIAL"
+    },
+    "ProfanedSprout": {
       "type": "MATERIAL_AVATAR_MATERIAL"
     },
     "TileOfDecarabiansTower": {
@@ -98331,9 +98977,6 @@
     "EasybreezeHolidayResortMap": {
       "type": "MATERIAL_QUEST"
     },
-    "ScribbledNotes": {
-      "type": "MATERIAL_QUEST"
-    },
     "BeautifullyWrittenNotes": {
       "type": "MATERIAL_QUEST"
     },
@@ -98892,6 +99535,9 @@
     "LohensWorkReport": {
       "type": "MATERIAL_QUEST"
     },
+    "LohensFriendshipFee": {
+      "type": "MATERIAL_QUEST"
+    },
     "ArcadiaTheEntombedCapital": {
       "type": "MATERIAL_QUEST"
     },
@@ -98904,16 +99550,37 @@
     "VerasMelancholyFinalVolumeVersionI": {
       "type": "MATERIAL_QUEST"
     },
-    "TheDreamOfRhonabwy": {
+    "TheDreamOfRhonabouillet": {
       "type": "MATERIAL_QUEST"
     },
     "TheSongOfAyKhanoum": {
       "type": "MATERIAL_QUEST"
     },
-    "TheCanonOfLoveDivineInspirationAndVirtue": {
+    "RevelationsOfDivineLove": {
       "type": "MATERIAL_QUEST"
     },
     "Note": {
+      "type": "MATERIAL_QUEST"
+    },
+    "PhotoWithTheLittleWitchesAndTheirImaginaryFriends": {
+      "type": "MATERIAL_QUEST"
+    },
+    "AnomalousTreeMarrowI": {
+      "type": "MATERIAL_QUEST"
+    },
+    "AnomalousTreeMarrowII": {
+      "type": "MATERIAL_QUEST"
+    },
+    "AnomalousTreeMarrowIII": {
+      "type": "MATERIAL_QUEST"
+    },
+    "AnomalousTreeMarrow": {
+      "type": "MATERIAL_QUEST"
+    },
+    "DangoMilkInfusedWithMagic": {
+      "type": "MATERIAL_QUEST"
+    },
+    "PrimalConstructComponent": {
       "type": "MATERIAL_QUEST"
     },
     "AncientMondstadtRoyalSeal": {
@@ -100956,6 +101623,18 @@
     "TravelNotesHomecoming": {
       "type": "MATERIAL_NAMECARD"
     },
+    "NicoleHeavenlyStairway": {
+      "type": "MATERIAL_NAMECARD"
+    },
+    "LohenBenevolence": {
+      "type": "MATERIAL_NAMECARD"
+    },
+    "PruneJudgment": {
+      "type": "MATERIAL_NAMECARD"
+    },
+    "TravelNotesGiftOfSplendor": {
+      "type": "MATERIAL_NAMECARD"
+    },
     "EchoDandelionKnight": {
       "type": "MATERIAL_AVATAR_TRACE"
     },
@@ -101011,6 +101690,12 @@
       "type": "MATERIAL_AVATAR_TRACE"
     },
     "EchoPillarOfFortitude": {
+      "type": "MATERIAL_AVATAR_TRACE"
+    },
+    "EchoEonsAdrift": {
+      "type": "MATERIAL_AVATAR_TRACE"
+    },
+    "EchoHelmOfTheRadiantRose": {
       "type": "MATERIAL_AVATAR_TRACE"
     },
     "FaintGlow": {
@@ -101946,6 +102631,30 @@
     "MeditativeReading": {
       "type": "MATERIAL_PHOTOGRAPH_POSE"
     },
+    "PatrolBreak": {
+      "type": "MATERIAL_PHOTOGRAPH_POSE"
+    },
+    "MasterpieceComplete": {
+      "type": "MATERIAL_PHOTOGRAPH_POSE"
+    },
+    "ReadyToSprint": {
+      "type": "MATERIAL_PHOTOGRAPH_POSE"
+    },
+    "InterludeRest": {
+      "type": "MATERIAL_PHOTOGRAPH_POSE"
+    },
+    "HarnessTheBlaze": {
+      "type": "MATERIAL_PHOTOGRAPH_POSE"
+    },
+    "PerfectRating": {
+      "type": "MATERIAL_PHOTOGRAPH_POSE"
+    },
+    "RhythmMoment": {
+      "type": "MATERIAL_PHOTOGRAPH_POSE"
+    },
+    "ShareWithYou": {
+      "type": "MATERIAL_PHOTOGRAPH_POSE"
+    },
     "FantasticalMarvel": {
       "type": "MATERIAL_MUSIC_GAME_BOOK_THEME"
     },
@@ -102010,6 +102719,12 @@
       "type": "MATERIAL_MUSIC_GAME_BOOK_THEME"
     },
     "MysteriousWhiteStar": {
+      "type": "MATERIAL_MUSIC_GAME_BOOK_THEME"
+    },
+    "EclipsingFlame": {
+      "type": "MATERIAL_MUSIC_GAME_BOOK_THEME"
+    },
+    "DemonSlayingGale": {
       "type": "MATERIAL_MUSIC_GAME_BOOK_THEME"
     },
     "VigorousYapping": {
@@ -102121,6 +102836,9 @@
       "type": "MATERIAL_GCG_CARD_FACE"
     },
     "ConsecratedFangedBeast": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
+    "ExperimentalFieldGenerator": {
       "type": "MATERIAL_GCG_CARD_FACE"
     },
     "UndividedHeart": {
@@ -102531,6 +103249,15 @@
     "WitheredReedsEclipseTheSun": {
       "type": "MATERIAL_GCG_CARD_FACE"
     },
+    "PartTheVeilOfSnow": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
+    "OLipsWeaveMeSongsAndPsalms": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
+    "GravityField": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
     "MagicGuide": {
       "type": "MATERIAL_GCG_CARD_FACE"
     },
@@ -102876,6 +103603,9 @@
     "Blubberbeast": {
       "type": "MATERIAL_GCG_CARD_FACE"
     },
+    "GladiatorsFinale": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
     "LiyueHarborWharf": {
       "type": "MATERIAL_GCG_CARD_FACE"
     },
@@ -103096,6 +103826,15 @@
       "type": "MATERIAL_GCG_CARD_FACE"
     },
     "ElementalTransfigurationLavaBlessing": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
+    "Netochka": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
+    "ElementalTransfigurationRimegrassBlessing": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
+    "ElementalTransfigurationStormgaleBlessing": {
       "type": "MATERIAL_GCG_CARD_FACE"
     },
     "ElementalResonanceWovenIce": {
@@ -103353,6 +104092,9 @@
     "CleaningTime": {
       "type": "MATERIAL_GCG_CARD_FACE"
     },
+    "TheOtherSideOfTheFrostmoon": {
+      "type": "MATERIAL_GCG_CARD_FACE"
+    },
     "Origin": {
       "type": "MATERIAL_GCG_CARD_BACK"
     },
@@ -103567,6 +104309,9 @@
       "type": "MATERIAL_WEAPON_SKIN"
     },
     "PhantasmalGiftStarOmen": {
+      "type": "MATERIAL_WEAPON_SKIN"
+    },
+    "SuperAwesomeMagicKey": {
       "type": "MATERIAL_WEAPON_SKIN"
     },
     "UnbreakableDurandarte": {
@@ -107788,6 +108533,9 @@
       "type": "MATERIAL_FURNITURE_FORMULA"
     },
     "AllFangsAndSnarls": {
+      "type": "MATERIAL_FURNITURE_FORMULA"
+    },
+    "MiniatureStonecraft": {
       "type": "MATERIAL_FURNITURE_FORMULA"
     }
   }

@@ -1,0 +1,166 @@
+{
+  "name": "Nicole",
+  "title": "Huyên Náo Trong Tim",
+  "description": "Ma Nữ Lặng Im, Thiên Sứ Từ Bỏ Giọng Nói.",
+  "constellationName": "Cung Kim Hạp",
+  "auto": {
+    "name": "Ngụ Ý",
+    "fields": {
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Dùng lời nói thuở sơ khai để ban sắc lệnh, thực hiện tối đa 3 lần tấn công, gây <pyro>Sát Thương Nguyên Tố Hỏa</pyro>."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, sau khi tụ lực, gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro> cho khu vực phía trước."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Từ trên không lao xuống mặt đất, tấn công kẻ địch trên đường và gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro> khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát thương lần 1",
+      "1": "Sát thương lần 2",
+      "2": "Sát thương lần 3",
+      "3": "Sát thương Trọng Kích",
+      "4": "Thể lực Trọng Kích tiêu hao",
+      "5": "Sát thương khi đáp",
+      "6": "Sát thương khi đáp từ độ cao thấp/cao",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Khải Huyền - Ánh Sáng Chưa Hiển Hiện",
+    "description": {
+      "0": "Tái hiện bóng hình đại diện cho thần quyền trời cao ngày cũ, ban cho tất cả nhân vật trong đội ở gần hiệu quả <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Ân Huệ Khiêm Nhường</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11310002 values=[]></tooltip>, tăng Tấn Công của các nhân vật này, gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro> và triển khai Khiên Rực Sáng.",
+      "1": "Lượng hấp thụ sát thương của Khiên Rực Sáng sẽ căn cứ vào Tấn Công của Nicole, có 250% hiệu quả hấp thụ đối với <pyro>Sát Thương Nguyên Tố Hỏa</pyro>."
+    },
+    "skillParams": {
+      "0": "Sát thương kỹ năng",
+      "1": "Khiên hấp thụ",
+      "2": "Thời gian khiên duy trì",
+      "3": "Tỷ lệ tăng Tấn Công của Ân Huệ Khiêm Nhường",
+      "4": "Giới hạn tăng Tấn Công của Ân Huệ Khiêm Nhường",
+      "5": "Thời gian duy trì Ân Huệ Khiêm Nhường",
+      "6": "CD",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Khải Huyền - Hành Trình Trời Cao",
+    "description": {
+      "0": "Dùng sợi chỉ vàng của ánh sáng để dệt nên con đường vận mệnh \"neo giữ\", gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro> và chuyển sang chế độ \"Chiêm Nghiệm Thầm Lặng\".",
+      "1": "Khi Nicole trong chế độ này, nhân vật ra trận hiện tại trong đội ở gần đánh trúng kẻ địch sẽ triệu hồi \"Ảo Ảnh Huyền Bí\" hỗ trợ tấn công, dựa trên Loại Nguyên Tố của nhân vật đó để gây sát thương phạm vi nguyên tố tương ứng. Sát thương này sẽ dựa trên Tấn Công của nhân vật đó, và được xem là sát thương do nhân vật đó gây ra.",
+      "2": "Hiệu quả này mỗi 3s tối đa kích hoạt một lần, sau mỗi lần Nicole chuyển sang chế độ Chiêm Nghiệm Thầm Lặng tối đa được kích hoạt 4 lần.",
+      "3": "<br/>",
+      "4": "Ngoài ra, Ảo Ảnh Huyền Bí của nhân vật Hexerei dường như sẽ có khác biệt về ngoại hình..."
+    },
+    "skillParams": {
+      "0": "Sát thương kỹ năng",
+      "1": "Sát thương Ảo Ảnh Huyền Bí",
+      "2": "Số lần Ảo Ảnh Huyền Bí tấn công",
+      "3": "Thời gian duy trì Chiêm Nghiệm Thầm Lặng",
+      "4": "CD",
+      "5": "Năng Lượng Nguyên Tố",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Sự Sẻ Chia",
+    "description": {
+      "0": "Trong 20s sau khi thi triển Kỹ Năng Nguyên Tố <strong><tooltip ns=char_Nicole_gen baseKey18=skill>Khải Huyền - Ánh Sáng Chưa Hiển Hiện</tooltip></strong>, Nicole sẽ liên tục \"Quan Sát\" nhân vật khác ra trận hiện tại trong đội bản thân. Nhân vật được quan sát sau khi liên tục ở trong trận 3s, hiệu quả <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Ân Huệ Khiêm Nhường</strong></tooltip> mà nhân vật đó sở hữu sẽ nâng cấp thành <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Chỉ Dẫn Thần Thánh</strong></tooltip>, giúp tăng thêm 300 điểm Tấn Công. Nếu nhân vật được quan sát là nhân vật Hexerei, thì hiệu quả <strong>Ân Huệ Khiêm Nhường</strong> sẽ trực tiếp nâng cấp thành <strong>Chỉ Dẫn Thần Thánh</strong>.",
+      "1": "Ngoài Nicole, <strong>Chỉ Dẫn Thần Thánh</strong> mà các nhân vật khác sở hữu sẽ khôi phục về trạng thái <strong>Ân Huệ Khiêm Nhường</strong> khi họ rời trận."
+    }
+  },
+  "passive2": {
+    "name": "Sự Hướng Thiện",
+    "description": {
+      "0": "Sau khi Sát Thương Nguyên Tố của nhân vật ra trận hiện tại trong đội ở gần đánh trúng kẻ địch, <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Ân Huệ Khiêm Nhường</strong></tooltip> mà bản thân Nicole sở hữu sẽ nâng cấp thành <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Chỉ Dẫn Thần Thánh</strong></tooltip> trong vòng 8s."
+    }
+  },
+  "passive3": {
+    "name": "Sự Tỉnh Thức",
+    "description": {
+      "0": "Tại Teyvat, khi không trong trạng thái chiến đấu, nếu đã sở hữu La Bàn Tầm Bảo của khu vực hiện tại, thì Trọng Kích của Nicole sẽ chuyển thành thi triển \"Chỉ Dẫn Ngự Sử\": Triệu hồi Tiên Linh ở gần để dẫn lối, kích hoạt hiệu quả tương đương La Bàn Tầm Bảo của khu vực hiện tại.",
+      "1": "Hiệu quả này có thời gian hồi là 5s và vô hiệu trong Bí Cảnh, Vùng Đất Thảo Phạt, La Hoàn Thâm Cảnh."
+    }
+  },
+  "lockedPassive": {
+    "name": "Đêm Lễ Ma Nữ - Ánh Sáng Từ Bóng Tối",
+    "description": {
+      "0": "Sau khi hoàn thành <strong>Bài Tập Của Ma Nữ - Trách Nhiệm Dẫn Dắt...?</strong>, Nicole sẽ trở thành nhân vật <strong>Hexerei</strong>. Khi đội hình có ít nhất 2 nhân vật Hexerei, sẽ nhận được hiệu quả <strong>Hexerei - Nghi Thức Bí Mật</strong>, giúp nhân vật Hexerei nhận được cường hóa.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei - Nghi Thức Bí Mật</strong>",
+      "3": "Tăng sát thương gây ra bởi <strong><tooltip ns=char_Nicole_gen baseKey18=burst>Ảo Ảnh Huyền Bí</tooltip></strong> của nhân vật Hexerei, mức tăng tương đương 300% Tấn Công của Nicole."
+    }
+  },
+  "constellation1": {
+    "name": "\"Đừng Sợ Hãi, Đứa Con Nhân Loại Được Yêu Thương\"",
+    "description": {
+      "0": "Khi nhân vật ra trận hiện tại trong đội bản thân tấn công trúng kẻ địch, sẽ triệu hồi thêm \"Ảo Ảnh Huyền Bí - Hợp Nhất\" đặc biệt để hợp sức tấn công, dựa trên Loại Nguyên Tố của nhân vật đó để gây sát thương phạm vi nguyên tố tương ứng. Sát thương này tương đương 600% Tấn Công của nhân vật và được tính là sát thương do nhân vật đó gây ra.",
+      "1": "Hiệu quả này mỗi 6s tối đa kích hoạt một lần."
+    }
+  },
+  "constellation2": {
+    "name": "\"Tôi Sẽ Chỉ Dạy, Dẫn Dắt Con Đường Nên Đi\"",
+    "description": {
+      "0": "Hiệu quả của Kỹ Năng Nguyên Tố <strong><tooltip ns=char_Nicole_gen baseKey18=skill>Khải Huyền - Ánh Sáng Chưa Hiển Hiện</tooltip></strong> được cường hóa: <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Ân Huệ Khiêm Nhường</strong></tooltip> sẽ tăng thêm 300 điểm Tấn Công (không tính vào giới hạn tăng Tấn Công của hiệu quả này), <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Chỉ Dẫn Thần Thánh</strong></tooltip> sẽ căn cứ vào Loại Nguyên Tố của nhân vật để giảm 25% Kháng Nguyên Tố tương ứng của kẻ địch gần đó, hiệu quả giảm kháng cho cùng loại nguyên tố sẽ không thể cộng dồn.",
+      "1": "Ngoài ra, khi Nicole thi triển Kỹ Năng Nguyên Tố <strong>Khải Huyền - Ánh Sáng Chưa Hiển Hiện</strong>, cũng sẽ ban Khiên Rực Sáng cho nhân vật trong trận ở gần."
+    }
+  },
+  "constellation3": {
+    "name": "\"Là Ngọn Đèn Bầu Bạn, Là Ánh Sáng Phía Trước\"",
+    "description": {
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Nicole_gen baseKey18=skill>Khải Huyền - Ánh Sáng Chưa Hiển Hiện</tooltip></strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "\"Dù Là Trái Hay Phải, Dù Là Đi Hướng Nào\"",
+    "description": {
+      "0": "Khi <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Ân Huệ Khiêm Nhường</strong></tooltip> mà nhân vật trong đội ở gần sở hữu được nâng cấp thành <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Chỉ Dẫn Thần Thánh</strong></tooltip>, Nicole sẽ còn ban cho họ hiệu quả \"Phước Lành Dẫn Lối\" duy trì 20s. Mỗi nhân vật mỗi 16s tối đa nhận một lần hiệu quả này.",
+      "1": "Nhân vật sở hữu Phước Lành Dẫn Lối sẽ tăng sát thương Tấn Công Thường, Trọng Kích, Tấn Công Khi Đáp, Kỹ Năng Nguyên Tố và Kỹ Năng Nộ, mức tăng tương đương 70% Tấn Công của Nicole. Hiệu quả này sẽ bị xóa sau khi hiệu lực 8 lần hoặc kết thúc thời gian duy trì.",
+      "2": "Khi cùng lúc đánh trúng nhiều kẻ địch, sẽ tiêu hao số lần hiệu lực dựa trên số kẻ địch bị đánh trúng. Số lần hiệu lực của nhân vật sở hữu Phước Lành Dẫn Lối trong đội sẽ được tính riêng."
+    }
+  },
+  "constellation5": {
+    "name": "\"Có Nhiều Điều Muốn Nói, Luôn Kề Cận Bên Vai\"",
+    "description": {
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Nicole_gen baseKey18=burst>Khải Huyền - Hành Trình Trời Cao</tooltip></strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "\"Đừng Do Dự, Đây Chính Là Con Đường Đúng Đắn\"",
+    "description": {
+      "0": "Khi <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Ân Huệ Khiêm Nhường</strong></tooltip> mà Nicole sở hữu được nâng cấp thành <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Chỉ Dẫn Thần Thánh</strong></tooltip>, <strong>Ân Huệ Khiêm Nhường</strong> của toàn bộ nhân vật trong đội ở gần cũng sẽ đồng thời nâng cấp thành <strong>Chỉ Dẫn Thần Thánh</strong>. Tất cả <strong>Chỉ Dẫn Thần Thánh</strong> đã nâng cấp sẽ không khôi phục về trạng thái <strong>Ân Huệ Khiêm Nhường</strong>.",
+      "1": "Ngoài ra, sát thương gây ra bởi nhân vật sở hữu <strong>Chỉ Dẫn Thần Thánh</strong> sẽ bỏ qua 40% Phòng Ngự của kẻ địch."
+    }
+  }
+}

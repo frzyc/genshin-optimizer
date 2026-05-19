@@ -1,0 +1,29 @@
+{
+  "setName": "Désenchantement dans l'ombre profonde",
+  "setEffects": {
+    "2": "Augmente l'ATQ de 18 %.",
+    "4": "Augmente les DGT infligés par les réactions de Supraconduction de 80 %. Lorsque le personnage équipé de l'artéfact attaque un ennemi affecté par une réaction de Supraconduction, le taux CRIT de cette attaque augmente de 16 %. Une toute nouvelle bénédiction peut vous être accordée en vous rendant à Snezhnaya..."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Iridescence cessant au milieu de la gloire",
+      "desc": "C'était une fleur de ruban offerte en cadeau par un ami dont les mains étaient froides comme de la glace."
+    },
+    "plume": {
+      "name": "Netteté cessant sur la merveilleuse création",
+      "desc": "C'était une plume offerte pour écrire des rêves fantastiques à ses adeptes."
+    },
+    "sands": {
+      "name": "Moment cessant au réveil d'un grand rêve",
+      "desc": "C'était un moment fugace accordé pour rappeler à un alchimiste silencieux chacun de ses rendez-vous."
+    },
+    "goblet": {
+      "name": "Ovations cessant pendant les festivités",
+      "desc": "C'était un gobelet de vin accepté en signe de célébration, des mains d'un collègue."
+    },
+    "circlet": {
+      "name": "Pendule cessant au milieu d'une grande chute",
+      "desc": "C'était une décoration délicate offerte en signe de louange de la main de son unique maître."
+    }
+  }
+}

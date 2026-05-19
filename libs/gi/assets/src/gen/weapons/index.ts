@@ -6,6 +6,7 @@ import Akuoumaru from './Akuoumaru'
 import AlleyHunter from './AlleyHunter'
 import AmenomaKageuchi from './AmenomaKageuchi'
 import AmosBow from './AmosBow'
+import AngelosHeptades from './AngelosHeptades'
 import ApprenticesNotes from './ApprenticesNotes'
 import AquaSimulacra from './AquaSimulacra'
 import AquilaFavonia from './AquilaFavonia'
@@ -240,6 +241,7 @@ const data = {
   AlleyHunter,
   AmenomaKageuchi,
   AmosBow,
+  AngelosHeptades,
   ApprenticesNotes,
   AquaSimulacra,
   AquilaFavonia,

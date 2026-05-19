@@ -254,6 +254,9 @@
   "JointExhibitionPopularity": {
     "name": "賑わい度"
   },
+  "PalsSynergy": {
+    "name": "空想の友との絆"
+  },
   "Primogem": {
     "name": "原石"
   },
@@ -1148,8 +1151,17 @@
   "Varka": {
     "name": "ファルカ"
   },
+  "Lohen": {
+    "name": "ローエン"
+  },
   "Linnea": {
     "name": "リンネア"
+  },
+  "Nicole": {
+    "name": "ニコ"
+  },
+  "Prune": {
+    "name": "プルーネ"
   },
   "KachinasStellaFortuna": {
     "name": "カチーナの星屑"
@@ -1232,8 +1244,17 @@
   "VarkasStellaFortuna": {
     "name": "ファルカの星屑"
   },
+  "LohensStellaFortuna": {
+    "name": "ローエンの星屑"
+  },
   "LinneasStellaFortuna": {
     "name": "リンネアの星屑"
+  },
+  "NicolesStellaFortuna": {
+    "name": "ニコの星屑"
+  },
+  "PrunesStellaFortuna": {
+    "name": "プルーネの星屑"
   },
   "Apple": {
     "name": "リンゴ"
@@ -1822,6 +1843,15 @@
   },
   "FischlDictionaryDieNeuauflageDerPrinzessin": {
     "name": "フィッシュル辞書・皇女改訂版"
+  },
+  "TheOriginsOfTheExperiment": {
+    "name": "実験の起源"
+  },
+  "NotesOnTheExperimentalSubjects": {
+    "name": "実験体に関するノート"
+  },
+  "ScribbledNotes": {
+    "name": "乱雑に書かれたノート"
   },
   "WyattsRedKey": {
     "name": "ワイアットの赤い鍵"
@@ -8318,6 +8348,33 @@
   "SugarSculptureLinnea": {
     "name": "飴細工・リンネア"
   },
+  "SuspiciousStuffedTofuWithMincedMeat": {
+    "name": "微妙な肉詰め豆腐"
+  },
+  "StuffedTofuWithMincedMeat": {
+    "name": "肉詰め豆腐"
+  },
+  "DeliciousStuffedTofuWithMincedMeat": {
+    "name": "美味しそうな肉詰め豆腐"
+  },
+  "SuspiciousMintBubblegum": {
+    "name": "微妙なミントバブルガム"
+  },
+  "MintBubblegum": {
+    "name": "ミントバブルガム"
+  },
+  "DeliciousMintBubblegum": {
+    "name": "美味しそうなミントバブルガム"
+  },
+  "SpinningSpecial": {
+    "name": "くるくるスペシャル"
+  },
+  "GildedChest": {
+    "name": "「金細工の宝箱」"
+  },
+  "BoredomBustingBubblegum": {
+    "name": "退屈しのぎのバブルガム"
+  },
   "RecipeItem": {
     "name": "レシピアイテム"
   },
@@ -9118,6 +9175,12 @@
   },
   "RecipeMillhavensMorningPlate": {
     "name": "レシピ：ウィンドミル・モーニング"
+  },
+  "RecipeStuffedTofuWithMincedMeat": {
+    "name": "レシピ：肉詰め豆腐"
+  },
+  "RecipeMintBubblegum": {
+    "name": "レシピ：ミントバブルガム"
   },
   "CraftedItems": {
     "name": "合成産物"
@@ -9943,6 +10006,15 @@
   },
   "PlumeOfTheFallenWatcher": {
     "name": "堕天の羽"
+  },
+  "CounterfeitResin": {
+    "name": "偽りの樹脂"
+  },
+  "TwistedWitheredBranch": {
+    "name": "歪曲した枯れ枝"
+  },
+  "ProfanedSprout": {
+    "name": "冒涜の新芽"
   },
   "TileOfDecarabiansTower": {
     "name": "高塔の王の瓦"
@@ -13172,9 +13244,6 @@
   "EasybreezeHolidayResortMap": {
     "name": "のびのびリゾートマップ"
   },
-  "ScribbledNotes": {
-    "name": "乱雑に書かれたノート"
-  },
   "BeautifullyWrittenNotes": {
     "name": "綺麗な筆跡のノート"
   },
@@ -13733,6 +13802,9 @@
   "LohensWorkReport": {
     "name": "ローエンの報告書"
   },
+  "LohensFriendshipFee": {
+    "name": "ローエンの「友達料」"
+  },
   "ArcadiaTheEntombedCapital": {
     "name": "「棺の中の廃都・アルカディア」"
   },
@@ -13745,23 +13817,44 @@
   "VerasMelancholyFinalVolumeVersionI": {
     "name": "少女ヴィーラの憂鬱・最終巻（第一稿）"
   },
-  "TheDreamOfRhonabwy": {
+  "TheDreamOfRhonabouillet": {
     "name": "『ロナブイの夢』"
   },
   "TheSongOfAyKhanoum": {
     "name": "『アイ・ハヌムの歌』"
   },
-  "TheCanonOfLoveDivineInspirationAndVirtue": {
+  "RevelationsOfDivineLove": {
     "name": "『愛、聖なる啓示と美徳の典律』"
   },
   "Note": {
     "name": "便箋"
   },
+  "PhotoWithTheLittleWitchesAndTheirImaginaryFriends": {
+    "name": "小さな魔女と空想の友達の記念写真"
+  },
+  "AnomalousTreeMarrowI": {
+    "name": "異質な樹核・一"
+  },
+  "AnomalousTreeMarrowII": {
+    "name": "異質な樹核・二"
+  },
+  "AnomalousTreeMarrowIII": {
+    "name": "異質な樹核・三"
+  },
+  "AnomalousTreeMarrow": {
+    "name": "異質な樹核"
+  },
+  "DangoMilkInfusedWithMagic": {
+    "name": "「魔法の気配」を帯びた団子牛乳"
+  },
+  "PrimalConstructComponent": {
+    "name": "プライマル構造体のパーツ"
+  },
   "AncientMondstadtRoyalSeal": {
     "name": "古モンドの旧貴族の印"
   },
   "SegmentDomainControlModuleZeroParticle": {
-    "name": "断片領域制御モジュール・零質点"
+    "name": "断片領域制御モジュール・質点ゼロ"
   },
   "TearsAmongTheStars": {
     "name": "星間の涙"
@@ -15797,6 +15890,18 @@
   "TravelNotesHomecoming": {
     "name": "紀行・帰逢"
   },
+  "NicoleHeavenlyStairway": {
+    "name": "ニコ・天の階段"
+  },
+  "LohenBenevolence": {
+    "name": "ローエン・仁愛"
+  },
+  "PruneJudgment": {
+    "name": "プルーネ・制裁"
+  },
+  "TravelNotesGiftOfSplendor": {
+    "name": "紀行・綺夢"
+  },
   "EchoDandelionKnight": {
     "name": "軌跡·蒲公英騎士"
   },
@@ -15853,6 +15958,12 @@
   },
   "EchoPillarOfFortitude": {
     "name": "軌跡・磐祭葉守"
+  },
+  "EchoEonsAdrift": {
+    "name": "軌跡・久世浮傾"
+  },
+  "EchoHelmOfTheRadiantRose": {
+    "name": "軌跡・舵を這うラディアントローズ"
   },
   "FaintGlow": {
     "name": "薄明"
@@ -16787,6 +16898,30 @@
   "MeditativeReading": {
     "name": "平穏な読書"
   },
+  "PatrolBreak": {
+    "name": "巡航の合間に"
+  },
+  "MasterpieceComplete": {
+    "name": "逸品完成"
+  },
+  "ReadyToSprint": {
+    "name": "滑走準備"
+  },
+  "InterludeRest": {
+    "name": "ダンスの小休止"
+  },
+  "HarnessTheBlaze": {
+    "name": "熾烈なる掌握"
+  },
+  "PerfectRating": {
+    "name": "満点の評価"
+  },
+  "RhythmMoment": {
+    "name": "リズム・モーメント"
+  },
+  "ShareWithYou": {
+    "name": "おすそわけ"
+  },
   "FantasticalMarvel": {
     "name": "素晴らしきトリック"
   },
@@ -16852,6 +16987,12 @@
   },
   "MysteriousWhiteStar": {
     "name": "鏡煙の白星"
+  },
+  "EclipsingFlame": {
+    "name": "輪廻の蝕炎"
+  },
+  "DemonSlayingGale": {
+    "name": "斬魔の烈風"
   },
   "VigorousYapping": {
     "name": "元気いっぱいのお話し！"
@@ -16963,6 +17104,9 @@
   },
   "ConsecratedFangedBeast": {
     "name": "聖骸牙獣"
+  },
+  "ExperimentalFieldGenerator": {
+    "name": "実験用フィールド生成装置"
   },
   "UndividedHeart": {
     "name": "唯一の心"
@@ -17372,6 +17516,15 @@
   "WitheredReedsEclipseTheSun": {
     "name": "天を覆う枯れ草"
   },
+  "PartTheVeilOfSnow": {
+    "name": "雪影の幕をひらく時"
+  },
+  "OLipsWeaveMeSongsAndPsalms": {
+    "name": "「唇よ歌を紡ぎて詩を織りなせ」"
+  },
+  "GravityField": {
+    "name": "グラビティフィールド"
+  },
   "MagicGuide": {
     "name": "魔導緒論"
   },
@@ -17717,6 +17870,9 @@
   "Blubberbeast": {
     "name": "プクプク獣"
   },
+  "GladiatorsFinale": {
+    "name": "剣闘士のフィナーレ"
+  },
   "LiyueHarborWharf": {
     "name": "璃月港口"
   },
@@ -17938,6 +18094,15 @@
   },
   "ElementalTransfigurationLavaBlessing": {
     "name": "元素変幻・炎と岩の祝福"
+  },
+  "Netochka": {
+    "name": "ニェドチカ"
+  },
+  "ElementalTransfigurationRimegrassBlessing": {
+    "name": "元素変幻・氷と草の祝福"
+  },
+  "ElementalTransfigurationStormgaleBlessing": {
+    "name": "元素変幻・雷と風の祝福"
   },
   "ElementalResonanceWovenIce": {
     "name": "元素共鳴：交錯の氷"
@@ -18194,6 +18359,9 @@
   "CleaningTime": {
     "name": "お掃除の時間"
   },
+  "TheOtherSideOfTheFrostmoon": {
+    "name": "向こう側の霜月"
+  },
   "Origin": {
     "name": "原初"
   },
@@ -18409,6 +18577,9 @@
   },
   "PhantasmalGiftStarOmen": {
     "name": "幻のギフト・スターオーメン"
+  },
+  "SuperAwesomeMagicKey": {
+    "name": "「マジカルマジックキー」"
   },
   "UnbreakableDurandarte": {
     "name": "無毀・デュランガルド"
@@ -22630,5 +22801,8 @@
   },
   "AllFangsAndSnarls": {
     "name": "「ガウガウオオカミ」"
+  },
+  "MiniatureStonecraft": {
+    "name": "「石間の小像」"
   }
 }

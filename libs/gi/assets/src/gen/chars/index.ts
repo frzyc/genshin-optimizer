@@ -72,6 +72,7 @@ import Nahida from './Nahida'
 import Navia from './Navia'
 import Nefer from './Nefer'
 import Neuvillette from './Neuvillette'
+import Nicole from './Nicole'
 import Nilou from './Nilou'
 import Ningguang from './Ningguang'
 import Noelle from './Noelle'
@@ -195,6 +196,7 @@ const data = {
   Navia,
   Nefer,
   Neuvillette,
+  Nicole,
   Nilou,
   Ningguang,
   Noelle,
