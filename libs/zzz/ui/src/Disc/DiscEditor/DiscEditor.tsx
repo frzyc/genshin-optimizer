@@ -66,9 +66,16 @@ import { DiscCardObj } from '../DiscCard'
 import { DiscMainStatGroup } from '../DiscMainStatGroup'
 import { DiscRarityDropdown } from '../DiscRarityDropdown'
 import { DiscSetAutocomplete } from '../DiscSetAutocomplete'
+import cameraShutterSound from './camera-shutter-01.mp3'
 import { ScanInfoModal } from './ScanInfoModal'
 import { textsFromImage } from './ScanningUtil'
 import SubstatInput from './SubstatInput'
+
+const captureShutterAudio = new Audio(cameraShutterSound)
+function playCaptureShutterSound() {
+  captureShutterAudio.currentTime = 0
+  void captureShutterAudio.play().catch(() => {})
+}
 
 // for pasting in screenshots
 const InputInvis = styled('input')({
@@ -324,6 +331,8 @@ export function DiscEditor({
               const file = new File([blob], `screen-capture-${timestamp}.png`, {
                 type: 'image/png',
               })
+
+              playCaptureShutterSound()
 
               // Add to scanning queue
               queue.addFiles([{ f: file, fName: file.name }])
