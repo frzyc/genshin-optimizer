@@ -7,10 +7,5 @@ export function useTeam(
   characterKey: CharacterKey | '' | undefined
 ): Team | undefined {
   const { database } = useDatabaseContext()
-  const manager = database.teams
-
-  if (characterKey && !manager.get(characterKey))
-    manager.getOrCreate(characterKey)
-
-  return useDataManagerBase(manager, characterKey as CharacterKey)
+  return useDataManagerBase(database.teams, characterKey as CharacterKey)
 }
