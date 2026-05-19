@@ -4,6 +4,7 @@ import type {
   Calculator,
   Tag,
 } from '@genshin-optimizer/game-opt/engine'
+import { presets } from '@genshin-optimizer/game-opt/engine'
 import { CalcContext } from '@genshin-optimizer/game-opt/formula-ui'
 import type { FormulaText } from '@genshin-optimizer/game-opt/sheet-ui'
 import type {
@@ -21,10 +22,12 @@ import type { CalcResult } from '@genshin-optimizer/pando/engine'
 import { constant } from '@genshin-optimizer/pando/engine'
 import { allDiscSetKeys, allWengineKeys } from '@genshin-optimizer/zzz/consts'
 import type {
-  CharOpt,
   DiscIds,
   ICachedCharacter,
+  Team,
+  TeamConditional,
 } from '@genshin-optimizer/zzz/db'
+import { getTeamFrame0, teamCharacterKeys } from '@genshin-optimizer/zzz/db'
 import { useDiscs, useWengine } from '@genshin-optimizer/zzz/db-ui'
 import {
   charTagMapNodeEntries,
@@ -49,57 +52,60 @@ import { formulaText } from '../formulaText'
 
 export function CharCalcProvider({
   character,
-  charOpt,
+  team,
   wengineId,
   discIds,
   children,
 }: {
   character: ICachedCharacter
-  charOpt: CharOpt
+  team: Team
   wengineId?: string
   discIds: DiscIds
   children: ReactNode
 }) {
   const member0 = useCharacterAndEquipment(character, wengineId, discIds)
 
-  const calc = useMemo(
-    () =>
-      zzzCalculatorWithEntries([
-        // Specify members present in the team
-        ...teamData([
-          character.key,
-          ...charOpt.teammates.map((charKey) => charKey),
-        ]),
-        // Add actual member data
-        ...member0,
-        ownBuff.common.critMode.add(charOpt.critMode),
-        enemy.common.lvl.add(charOpt.enemyLvl),
-        enemy.common.def.add(charOpt.enemyDef),
-        enemy.common.stun_.add(charOpt.enemyStunMultiplier / 100),
-        enemy.common.unstun_.add(1),
-        ...charOpt.conditionals.flatMap(
-          ({ sheet, src, dst, condKey, condValue }) =>
-            withPreset(
-              `preset0`,
-              conditionalEntries(sheet, src, dst)(condKey, condValue)
-            )
-        ),
-        ...charOpt.bonusStats
-          .filter(({ disabled }) => !disabled)
-          .flatMap(({ tag, value }) =>
-            withPreset(`preset0`, {
-              // since bonusStats are applied to own*, needs {src:key, dst:never}
-              tag: { ...tag, src: character.key, sheet: 'agg', et: 'own' },
+  const calc = useMemo(() => {
+    const frames = team.frames.length > 0 ? team.frames : [getTeamFrame0(team)]
+    return zzzCalculatorWithEntries([
+      ...teamData(teamCharacterKeys(team)),
+      ...member0,
+      enemy.common.lvl.add(team.enemyLvl),
+      enemy.common.def.add(team.enemyDef),
+      enemy.common.stun_.add(team.enemyStunMultiplier / 100),
+      enemy.common.unstun_.add(1),
+      ...frames.flatMap((frame, i) => {
+        const preset = presets[i] ?? 'preset0'
+        return [
+          ...withPreset(preset, ownBuff.common.critMode.add(frame.critMode)),
+          ...frame.conditionals.flatMap(
+            ({ sheet, src, dst, condKey, condValue }) =>
+              withPreset(
+                preset,
+                conditionalEntries(sheet, src, dst)(condKey, condValue)
+              )
+          ),
+          ...frame.bonusStats
+            .filter(({ disabled }) => !disabled)
+            .flatMap(({ tag, value }) =>
+              withPreset(preset, {
+                // since bonusStats are applied to own*, needs {src:key, dst:never}
+                tag: { ...tag, src: character.key, sheet: 'agg', et: 'own' },
+                value: constant(toDecimal(value, tag.q ?? '')),
+              })
+            ),
+          ...frame.enemyStats.flatMap(({ tag, value }) =>
+            withPreset(preset, {
+              tag: { ...tag, qt: 'common', et: 'enemy', sheet: 'agg' },
               value: constant(toDecimal(value, tag.q ?? '')),
             })
           ),
-        ...charOpt.enemyStats.flatMap(({ tag, value }) =>
-          withPreset(`preset0`, {
-            tag: { ...tag, qt: 'common', et: 'enemy', sheet: 'agg' },
-            value: constant(toDecimal(value, tag.q ?? '')),
-          })
-        ),
-        ...charOpt.teammates.flatMap((charKey) => [
+        ]
+      }),
+      // Non-main teammates only; main counts come from charTagMapNodeEntries in member0.
+      ...team.teammates
+        .filter((t) => t.characterKey !== character.key)
+        .flatMap(({ characterKey: charKey }) => [
           ownBuff.common.count
             .withSpecialty(allStats.char[charKey].specialty)
             .add(1),
@@ -110,9 +116,8 @@ export function CharCalcProvider({
             .withTag({ attribute: allStats.char[charKey].attribute })
             .add(1),
         ]),
-      ]),
-    [member0, charOpt, character.key]
-  )
+    ])
+  }, [member0, team, character.key])
   // New map per calc so formula tooltips do not reuse stale nodes after gear/opt changes.
   const formulaTextCache = useMemo(() => calc && new Map(), [calc])
 
@@ -185,7 +190,7 @@ export function CharCalcMockCountProvider({
   children,
 }: {
   character: ICachedCharacter
-  conditionals: CharOpt['conditionals']
+  conditionals: readonly TeamConditional[]
   children: ReactNode
 }) {
   const calc = useMemo(

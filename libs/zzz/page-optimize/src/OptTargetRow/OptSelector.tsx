@@ -1,8 +1,9 @@
 import { DropdownButton } from '@genshin-optimizer/common/ui'
 import type { TargetTag } from '@genshin-optimizer/zzz/db'
 import {
-  type CharOpt,
   type ICachedCharacter,
+  type Team,
+  getTeamFrame0,
   targetTag,
 } from '@genshin-optimizer/zzz/db'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
@@ -25,11 +26,12 @@ const statTargets = [
 
 export function OptSelector({
   character: { key: characterKey },
-  charOpt: { target },
+  team,
 }: {
-  charOpt: CharOpt
+  team: Team
   character: ICachedCharacter
 }) {
+  const { tag: target } = getTeamFrame0(team)
   const calc = useZzzCalcContext()
   const { database } = useDatabaseContext()
   const tag = useMemo(() => {
@@ -61,8 +63,8 @@ export function OptSelector({
           <MenuItem
             key={`${i}_${tag.sheet}_${tag.name}`}
             onClick={() =>
-              database.charOpts.set(characterKey, {
-                target: {
+              database.teams.setFrame0(characterKey, {
+                tag: {
                   sheet,
                   name,
                 },
@@ -84,8 +86,8 @@ export function OptSelector({
           <MenuItem
             key={`${i}_${q}_${qt}`}
             onClick={() =>
-              database.charOpts.set(characterKey, {
-                target: {
+              database.teams.setFrame0(characterKey, {
+                tag: {
                   q: q as TargetTag['q'],
                   qt: qt as 'final',
                 },

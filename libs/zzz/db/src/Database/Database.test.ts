@@ -1,19 +1,49 @@
 import { createTestDBStorage } from '@genshin-optimizer/common/database'
+import { currentDBVersion, zzzSource } from '../Interfaces'
 import { ZzzDatabase } from './Database'
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const testDatabaseJson = require('./Van_2025-07-16_20-54-24.json')
+const testDatabaseJson = {
+  format: 'ZOD',
+  dbVersion: currentDBVersion,
+  source: zzzSource,
+  version: 1,
+  characters: [{ key: 'Anby', level: 1, ascension: 0, core: 0, skill: {} }],
+  discs: [],
+  wengines: [],
+  charMetas: [],
+  generatedBuildList: [],
+  optConfigs: [],
+  teams: [
+    {
+      id: 'Anby',
+      teammates: [{ characterKey: 'Anby' }],
+      frames: [
+        {
+          tag: { q: 'atk', qt: 'final' },
+          multiplier: 1,
+          critMode: 'avg',
+          bonusStats: [],
+          conditionals: [],
+          enemyStats: [],
+        },
+      ],
+      enemyLvl: 80,
+      enemyDef: 953,
+      enemyStunMultiplier: 150,
+    },
+  ],
+}
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function normalizeForComparison(data: any) {
+function normalizeForComparison(data: Record<string, unknown>) {
   const clone = structuredClone(data)
-  // Remove time-based fields that change between imports
-  if (clone.dbMeta) {
-    delete clone.dbMeta.lastEdit
+  if (clone.dbMeta && typeof clone.dbMeta === 'object') {
+    delete (clone.dbMeta as Record<string, unknown>).lastEdit
   }
   if (Array.isArray(clone.generatedBuildList)) {
     for (const build of clone.generatedBuildList) {
-      delete build.buildDate
+      if (build && typeof build === 'object') {
+        delete (build as Record<string, unknown>).buildDate
+      }
     }
   }
   return clone
@@ -21,23 +51,19 @@ function normalizeForComparison(data: any) {
 
 describe('Database import/export round trip', () => {
   it('should produce identical JSON across import/export cycles', () => {
-    // First cycle: import raw JSON, export normalized data
     const dbStorage1 = createTestDBStorage('zzz')
     const database1 = new ZzzDatabase(1, dbStorage1)
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const input = structuredClone(testDatabaseJson) as any
+    const input = structuredClone(testDatabaseJson)
     database1.importZOOD(input, false, false)
     const firstExport = database1.exportZOOD()
 
-    // Second cycle: import normalized data, export again
     const dbStorage2 = createTestDBStorage('zzz')
     const database2 = new ZzzDatabase(1, dbStorage2)
 
     database2.importZOOD(firstExport, false, false)
     const secondExport = database2.exportZOOD()
 
-    // The normalized JSON should be identical
     const firstJson = JSON.stringify(normalizeForComparison(firstExport))
     const secondJson = JSON.stringify(normalizeForComparison(secondExport))
 

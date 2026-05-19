@@ -1,7 +1,6 @@
 import {
   zodBoolean,
   zodEnumWithDefault,
-  zodFilteredArray,
 } from '@genshin-optimizer/common/database'
 import {
   notEmpty,
@@ -39,7 +38,7 @@ export const critModeKeys = ['avg', 'crit', 'nonCrit'] as const
 
 export type SpecificDmgTypeKey = Exclude<
   DamageType,
-  'anomaly' | 'disorder' | 'aftershock' | 'elemental' | 'sheer' | 'abloom'
+  'anomaly' | 'disorder' | 'aftershock' | 'elemental'
 >
 export const specificDmgTypeKeys: SpecificDmgTypeKey[] = [
   'basic',
@@ -70,7 +69,6 @@ export const targetQ = [
 ] as const
 export const targetQt = ['initial', 'final'] as const
 
-// Bonus Stats
 export const bonusStatQtKeys = ['combat', 'base', 'initial'] as const
 export const bonusStatKeys: Array<keyof typeof own.final> = [
   'hp',
@@ -169,6 +167,8 @@ const conditionalSchema = z.object({
   condValue: z.number(),
 })
 
+export type TeamConditional = z.infer<typeof conditionalSchema>
+
 export type BonusStatTag = {
   q: BonusStatKey
   qt: (typeof bonusStatQtKeys)[number]
@@ -191,6 +191,8 @@ const bonusStatSchema = z.object({
   disabled: zodBoolean(),
 })
 
+export type TeamBonusStat = z.infer<typeof bonusStatSchema>
+
 export type EnemyStatsTag = {
   q: EnemyStatKey
   attribute?: AttributeKey
@@ -206,55 +208,165 @@ const enemyStatSchema = z.object({
   value: z.number().catch(0),
 })
 
-const charOptSchema = z.object({
-  target: targetTagSchema,
-  conditionals: z.array(conditionalSchema).catch([]),
-  bonusStats: z.array(bonusStatSchema).catch([]),
-  teammates: zodFilteredArray(allCharacterKeys, []) as z.ZodType<
-    CharacterKey[]
-  >,
-  critMode: zodEnumWithDefault(critModeKeys, 'avg'),
+export type TeamEnemyStat = z.infer<typeof enemyStatSchema>
 
+const optFrameSchema = z.object({
+  tag: targetTagSchema,
+  multiplier: z.number().positive().catch(1),
+  critMode: zodEnumWithDefault(critModeKeys, 'avg'),
+  bonusStats: z.array(bonusStatSchema).catch([]),
+  conditionals: z.array(conditionalSchema).catch([]),
+  enemyStats: z.array(enemyStatSchema).catch([]),
+  description: z.string().optional(),
+})
+
+export type OptFrame = z.infer<typeof optFrameSchema>
+
+const teammateDatumSchema = z.object({
+  characterKey: z.enum(allCharacterKeys),
+  optConfigId: z.string().optional(),
+  // Future: build inforamtion like buildId, buildTcId, etc.
+})
+
+export type TeammateDatum = z.infer<typeof teammateDatumSchema>
+
+const teamSchema = z.object({
+  teammates: z.array(teammateDatumSchema).catch([]),
+  frames: z.array(optFrameSchema).catch([]),
   enemyLvl: z.number().catch(80),
   enemyDef: z.number().catch(953),
   enemyStunMultiplier: z.number().catch(150),
-  enemyStats: z.array(enemyStatSchema).catch([]),
-
-  optConfigId: z.string().optional(),
 })
 
-export type CharOpt = z.infer<typeof charOptSchema>
+export type Team = z.infer<typeof teamSchema>
 
-export class CharacterOptManager extends DataManager<
+export class TeamDataManager extends DataManager<
   CharacterKey,
-  'charOpts',
-  CharOpt,
-  CharOpt
+  'teams',
+  Team,
+  Team
 > {
   constructor(database: ZzzDatabase) {
-    super(database, 'charOpts')
+    super(database, 'teams')
   }
-  override validate(obj: unknown): CharOpt | undefined {
-    const result = charOptSchema.safeParse(obj)
+
+  override validate(obj: unknown, key: CharacterKey): Team | undefined {
+    const result = teamSchema.safeParse(obj)
     if (!result.success) return undefined
 
     const {
-      target: rawTarget,
-      conditionals: rawConditionals,
-      bonusStats: rawBonusStats,
       teammates: rawTeammates,
-      critMode,
+      frames: rawFrames,
       enemyLvl,
       enemyDef,
       enemyStunMultiplier,
-      enemyStats: rawEnemyStats,
-      optConfigId: rawOptConfigId,
     } = result.data
 
-    // Validate target for formula
-    let target: TargetTag | undefined
-    if (rawTarget?.name) {
-      const formula = getFormula(rawTarget as TargetTag)
+    const teammates = this.validateTeammates(rawTeammates, key)
+    if (!teammates) return undefined
+
+    const frames = rawFrames
+      .map((frame) => this.validateOptFrame(frame))
+      .filter(notEmpty)
+
+    return {
+      teammates,
+      frames,
+      enemyLvl,
+      enemyDef,
+      enemyStunMultiplier,
+    }
+  }
+
+  private validateTeammates(
+    rawTeammates: TeammateDatum[],
+    cacheKey: CharacterKey
+  ): TeammateDatum[] | undefined {
+    if (rawTeammates.length > 3) return undefined
+    if (rawTeammates[0]?.characterKey !== cacheKey) return undefined
+
+    const seen = new Set<CharacterKey>()
+    const teammates: TeammateDatum[] = []
+
+    for (const raw of rawTeammates) {
+      if (seen.has(raw.characterKey)) continue
+      seen.add(raw.characterKey)
+
+      const optConfigId =
+        raw.optConfigId &&
+        this.database.optConfigs.keys.includes(raw.optConfigId)
+          ? raw.optConfigId
+          : undefined
+
+      teammates.push({
+        characterKey: raw.characterKey,
+        optConfigId,
+      })
+    }
+
+    return teammates
+  }
+
+  private validateOptFrame(raw: OptFrame): OptFrame | undefined {
+    const result = optFrameSchema.safeParse(raw)
+    if (!result.success) return undefined
+
+    const {
+      tag: rawTarget,
+      multiplier,
+      critMode,
+      bonusStats: rawBonusStats,
+      conditionals: rawConditionals,
+      enemyStats: rawEnemyStats,
+      description,
+    } = result.data
+
+    const tag = this.validateTargetTag(rawTarget)
+    const bonusStats = this.validateBonusStats(rawBonusStats)
+    const conditionals = this.validateConditionals(rawConditionals)
+    const enemyStats = this.validateEnemyStats(rawEnemyStats)
+
+    return {
+      tag,
+      multiplier,
+      critMode,
+      bonusStats,
+      conditionals,
+      enemyStats,
+      description,
+    }
+  }
+
+  private validateEnemyStats(rawEnemyStats: TeamEnemyStat[]): TeamEnemyStat[] {
+    return rawEnemyStats
+      .map(({ tag, value }) => {
+        const q = validateValue(tag.q, enemyStatKeys)
+        if (!q) return undefined
+
+        let { attribute } = tag
+        if (attribute)
+          attribute = validateValue(attribute, allAttributeKeys) as
+            | AttributeKey
+            | undefined
+
+        return {
+          tag: removeUndefinedFields({
+            q,
+            attribute,
+          }) as EnemyStatsTag,
+          value,
+        }
+      })
+      .filter(notEmpty)
+  }
+
+  private validateTargetTag(
+    rawTarget: TargetTag | undefined
+  ): TargetTag | undefined {
+    if (!rawTarget) return undefined
+
+    if (rawTarget.name) {
+      const formula = getFormula(rawTarget)
       if (formula) {
         let damageType1: SpecificDmgTypeKey | undefined
         let damageType2: 'aftershock' | 'abloom' | undefined
@@ -273,23 +385,28 @@ export class CharacterOptManager extends DataManager<
           )
             damageType2 = rawTarget.damageType2
         }
-        target = removeUndefinedFields({
+        return removeUndefinedFields({
           sheet: formula.sheet,
           name: formula.name,
           damageType1,
           damageType2,
         }) as TargetTag
       }
-    } else if (rawTarget) {
-      const { q, qt } = rawTarget
-      if (q && qt && targetQ.includes(q) && targetQt.includes(qt)) {
-        target = { q, qt }
-      }
+      return undefined
     }
 
-    // Validate conditionals
+    const { q, qt } = rawTarget
+    if (q && qt && targetQ.includes(q) && targetQt.includes(qt)) {
+      return { q, qt }
+    }
+    return undefined
+  }
+
+  private validateConditionals(
+    rawConditionals: TeamConditional[]
+  ): TeamConditional[] {
     const hashList: string[] = []
-    const conditionals = rawConditionals
+    return rawConditionals
       .map(({ sheet, condKey, src, dst, condValue }) => {
         if (!condValue) return undefined
         if (!isMember(src) || !(dst === null || isMember(dst))) return undefined
@@ -300,20 +417,19 @@ export class CharacterOptManager extends DataManager<
         if (hashList.includes(hash)) return undefined
         hashList.push(hash)
 
-        const correctedCondValue = correctConditionalValue(cond, condValue)
-
         return {
           sheet,
           src,
           dst,
           condKey,
-          condValue: correctedCondValue,
+          condValue: correctConditionalValue(cond, condValue),
         }
       })
       .filter(notEmpty)
+  }
 
-    // Validate bonusStats
-    const bonusStats = rawBonusStats
+  private validateBonusStats(rawBonusStats: TeamBonusStat[]): TeamBonusStat[] {
+    return rawBonusStats
       .map(({ tag, value, disabled }) => {
         const q = validateValue(tag.q, bonusStatKeys)
         const qt = validateValue(tag.qt, bonusStatQtKeys)
@@ -355,50 +471,6 @@ export class CharacterOptManager extends DataManager<
         }
       })
       .filter(notEmpty)
-
-    // Validate enemyStats
-    const enemyStats = rawEnemyStats
-      .map(({ tag, value }) => {
-        const q = validateValue(tag.q, enemyStatKeys)
-        if (!q) return undefined
-
-        let { attribute } = tag
-        if (attribute)
-          attribute = validateValue(attribute, allAttributeKeys) as
-            | AttributeKey
-            | undefined
-
-        return {
-          tag: removeUndefinedFields({
-            q,
-            attribute,
-          }) as EnemyStatsTag,
-          value,
-        }
-      })
-      .filter(notEmpty)
-
-    // Validate teammates (limit to 2)
-    const teammates = rawTeammates.slice(0, 2) as CharacterKey[]
-
-    // Validate optConfigId
-    const optConfigId =
-      rawOptConfigId && this.database.optConfigs.keys.includes(rawOptConfigId)
-        ? rawOptConfigId
-        : undefined
-
-    return {
-      target,
-      conditionals,
-      bonusStats,
-      teammates,
-      critMode,
-      enemyLvl,
-      enemyDef,
-      enemyStunMultiplier,
-      enemyStats,
-      optConfigId,
-    }
   }
 
   override toStorageKey(key: string): string {
@@ -407,22 +479,29 @@ export class CharacterOptManager extends DataManager<
   override toCacheKey(key: string): CharacterKey {
     return key.split(`${this.goKeySingle}_`)[1] as CharacterKey
   }
-  getOrCreate(key: CharacterKey): CharOpt {
+
+  getOrCreate(key: CharacterKey): Team {
     if (!this.keys.includes(key)) {
-      this.set(key, initialCharOpt())
+      this.set(key, initialTeam(key))
     }
-    return this.get(key) as CharOpt
+    return this.get(key) as Team
   }
-  setConditional(
-    charKey: CharacterKey,
+
+  setFrameConditional(
+    teamKey: CharacterKey,
+    frameIndex: number,
     sheet: Sheet,
     condKey: string,
     src: Src,
     dst: Dst,
     condValue: number
   ) {
-    this.set(charKey, (charOpt) => {
-      const conditionals = [...charOpt.conditionals]
+    this.set(teamKey, (team) => {
+      const frames = [...team.frames]
+      const frame = frames[frameIndex]
+      if (!frame) return false
+
+      const conditionals = [...frame.conditionals]
       const condIndex = conditionals.findIndex(
         (c) =>
           c.condKey === condKey &&
@@ -431,13 +510,7 @@ export class CharacterOptManager extends DataManager<
           c.dst === dst
       )
       if (condIndex === -1) {
-        conditionals.push({
-          sheet,
-          src,
-          dst,
-          condKey,
-          condValue,
-        })
+        conditionals.push({ sheet, src, dst, condKey, condValue })
       } else {
         const cond = conditionals[condIndex]
         if (
@@ -454,18 +527,25 @@ export class CharacterOptManager extends DataManager<
         cond.condKey = condKey
         cond.condValue = condValue
       }
-      return { conditionals }
+      frames[frameIndex] = { ...frame, conditionals }
+      return { frames }
     })
   }
-  setBonusStat(
-    charKey: CharacterKey,
+
+  setFrameBonusStat(
+    teamKey: CharacterKey,
+    frameIndex: number,
     tag: BonusStatTag,
     value: number | null,
     disabled: boolean,
     index = -1
   ) {
-    this.set(charKey, (charOpt) => {
-      const bonusStats = [...charOpt.bonusStats]
+    this.set(teamKey, (team) => {
+      const frames = [...team.frames]
+      const frame = frames[frameIndex]
+      if (!frame) return false
+
+      const bonusStats = [...frame.bonusStats]
       if (index === -1 && value !== null) {
         bonusStats.push({ tag, value, disabled })
       } else if (value === null && index > -1) {
@@ -475,20 +555,27 @@ export class CharacterOptManager extends DataManager<
         bonusStats[index].tag = tag
         bonusStats[index].disabled = disabled
       }
-      return { bonusStats }
+      frames[frameIndex] = { ...frame, bonusStats }
+      return { frames }
     })
   }
-  setEnemyStat(
-    charKey: CharacterKey,
+
+  setFrameEnemyStat(
+    teamKey: CharacterKey,
+    frameIndex: number,
     tag: EnemyStatsTag,
     value: number | null,
     index?: number
   ) {
-    this.set(charKey, (charOpt) => {
+    this.set(teamKey, (team) => {
+      const frames = [...team.frames]
+      const frame = frames[frameIndex]
+      if (!frame) return false
+
       const statIndex =
         index ??
-        charOpt.enemyStats.findIndex((s) => shallowCompareObj(s.tag, tag))
-      const enemyStats = [...charOpt.enemyStats]
+        frame.enemyStats.findIndex((s) => shallowCompareObj(s.tag, tag))
+      const enemyStats = [...frame.enemyStats]
       if (statIndex === -1 && value !== null) {
         enemyStats.push({ tag, value })
       } else if (value === null && statIndex > -1) {
@@ -497,24 +584,68 @@ export class CharacterOptManager extends DataManager<
         enemyStats[statIndex].value = value
         enemyStats[statIndex].tag = tag
       }
-      return { enemyStats }
+      frames[frameIndex] = { ...frame, enemyStats }
+      return { frames }
     })
   }
-  setTeammate(
-    charKey: CharacterKey,
-    teammate: CharacterKey | null,
-    index?: number
+
+  setFrame0(
+    teamKey: CharacterKey,
+    update: Partial<OptFrame> | ((frame: OptFrame) => Partial<OptFrame> | false)
   ) {
-    this.set(charKey, (charOpt) => {
-      const teammateIndex =
-        index ?? charOpt.teammates.findIndex((t) => t === teammate)
-      const teammates = [...charOpt.teammates]
-      if (teammateIndex === -1 && teammate !== null) {
-        teammates.push(teammate)
-      } else if (teammate === null && teammateIndex > -1) {
-        teammates.splice(teammateIndex, 1)
-      } else if (teammate !== null && teammateIndex > -1) {
-        teammates[teammateIndex] = teammate
+    this.set(teamKey, (team) => {
+      const frame0 = getTeamFrame0(team)
+      const patch = typeof update === 'function' ? update(frame0) : update
+      if (patch === false) return false
+      const frames = [...team.frames]
+      frames[0] = { ...frame0, ...patch }
+      return { frames }
+    })
+  }
+
+  setTeammateOptConfigId(
+    teamKey: CharacterKey,
+    characterKey: CharacterKey,
+    optConfigId: string
+  ) {
+    this.set(teamKey, (team) => ({
+      teammates: team.teammates.map((t) =>
+        t.characterKey === characterKey ? { ...t, optConfigId } : t
+      ),
+    }))
+  }
+
+  /** UI picker index 0–1 maps to teammates slots [1] and [2]. */
+  setTeammate(
+    teamKey: CharacterKey,
+    teammate: CharacterKey | null,
+    uiPickerIndex?: number
+  ) {
+    this.set(teamKey, (team) => {
+      const slotIndex =
+        uiPickerIndex === undefined
+          ? team.teammates.findIndex((t) => t.characterKey === teammate)
+          : uiPickerIndex + 1
+
+      if (slotIndex < 1) return false
+
+      const teammates = [...team.teammates]
+
+      if (teammate === null && slotIndex > 0 && slotIndex < teammates.length) {
+        teammates.splice(slotIndex, 1)
+      } else if (teammate !== null) {
+        const existing = teammates.find((t) => t.characterKey === teammate)
+        if (existing && teammates.indexOf(existing) !== slotIndex) {
+          teammates.splice(teammates.indexOf(existing), 1)
+        }
+        if (slotIndex < teammates.length) {
+          teammates[slotIndex] = {
+            ...teammates[slotIndex],
+            characterKey: teammate,
+          }
+        } else if (teammates.length < 3) {
+          teammates.push({ characterKey: teammate })
+        }
       }
 
       return { teammates }
@@ -522,20 +653,67 @@ export class CharacterOptManager extends DataManager<
   }
 }
 
-export function initialCharOpt(): CharOpt {
-  return {
-    target: undefined,
-    conditionals: [],
-    bonusStats: [],
-    teammates: [],
-    critMode: 'avg',
+const emptyFrame0 = (): OptFrame => ({
+  tag: undefined,
+  multiplier: 1,
+  critMode: 'avg',
+  bonusStats: [],
+  conditionals: [],
+  enemyStats: [],
+})
 
+// for the current implementation the team is limited to only the first frame.
+export function getTeamFrame0(team: Team): OptFrame {
+  return team.frames[0] ?? emptyFrame0()
+}
+
+export function initialTeam(mainKey: CharacterKey): Team {
+  return {
+    teammates: [{ characterKey: mainKey, optConfigId: undefined }],
+    frames: [emptyFrame0()],
     enemyLvl: 80,
     enemyDef: 953,
     enemyStunMultiplier: 150,
-    enemyStats: [],
-    optConfigId: undefined,
   }
+}
+
+// for the current implementation, the opt is only for the first/main character
+export function getMainCharacterKey(team: Team): CharacterKey {
+  return team.teammates[0].characterKey
+}
+export function getMainCharacterOptConfigId(team: Team): string | undefined {
+  return team.teammates[0].optConfigId
+}
+
+export function findTeammate(
+  team: Team,
+  characterKey: CharacterKey
+): TeammateDatum | undefined {
+  return team.teammates.find((t) => t.characterKey === characterKey)
+}
+
+export function getTeamOptConfigId(
+  team: Team,
+  characterKey: CharacterKey
+): string | undefined {
+  return findTeammate(team, characterKey)?.optConfigId
+}
+
+export function teamCharacterKeys(team: Team): CharacterKey[] {
+  return team.teammates.map((t) => t.characterKey)
+}
+
+export function teamToSolverFrames(team: Team) {
+  return team.frames
+    .map(({ tag, multiplier }) =>
+      tag
+        ? {
+            tag: targetTag(tag),
+            multiplier,
+          }
+        : undefined
+    )
+    .filter(notEmpty)
 }
 
 export function applyDamageTypeToTag(
@@ -561,7 +739,7 @@ function getFormula({ sheet, name }: TargetTag) {
     | undefined
 }
 
-export function targetTag(target: Exclude<CharOpt['target'], undefined>): Tag {
+export function targetTag(target: TargetTag): Tag {
   const { damageType1, damageType2 } = target
   const formula = getFormula(target)
   if (formula)

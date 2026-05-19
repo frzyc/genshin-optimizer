@@ -1,12 +1,12 @@
-import { useDataManagerBase } from '@genshin-optimizer/common/database-ui'
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { valueString } from '@genshin-optimizer/common/util'
+import { useDataManagerBase } from '@genshin-optimizer/common/database-ui'
 import type { GeneratedBuild } from '@genshin-optimizer/zzz/db'
 import {
   OptConfigContext,
-  useCharOpt,
   useCharacterContext,
   useDatabaseContext,
+  useTeam,
 } from '@genshin-optimizer/zzz/db-ui'
 import {
   CharCalcProvider,
@@ -91,11 +91,11 @@ function GeneratedBuildDisplay({
   index: number
 }) {
   const character = useCharacterContext()!
-  const charOpt = useCharOpt(character.key)!
+  const team = useTeam(character.key)!
   return (
     <CharCalcProvider
       character={character}
-      charOpt={charOpt}
+      team={team}
       discIds={build.discIds}
       wengineId={build.wengineId}
     >
