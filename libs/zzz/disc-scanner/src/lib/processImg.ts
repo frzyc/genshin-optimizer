@@ -66,6 +66,26 @@ export function zzzPreprocessImage(pixelData: ImageData) {
   return new ImageData(imageClone, pixelData.width, pixelData.height)
 }
 
+/** Matches processEntry slices: setLvl, mainStat, substat, and optionally setEffect texts. */
+function ocrLinesForPreview(
+  ocrLines: OcrTextLine[],
+  mainStatTextIndex: number,
+  substatTextIndex: number,
+  setEffectTextIndex: number,
+  setEffectLabelIndex: number,
+  includeSetEffectLines: boolean
+): OcrTextLine[] {
+  return ocrLines.filter((_, i) => {
+    if (i === mainStatTextIndex || i === substatTextIndex) return false
+    if (setEffectLabelIndex !== -1 && i === setEffectLabelIndex) return false
+    if (i < mainStatTextIndex) return true
+    if (i > mainStatTextIndex && i < substatTextIndex) return true
+    if (i > substatTextIndex && i < setEffectTextIndex) return true
+    if (includeSetEffectLines && i > setEffectTextIndex) return true
+    return false
+  })
+}
+
 export async function processEntry(
   entry: Outstanding,
   linesFromImage: (
@@ -98,7 +118,6 @@ export async function processEntry(
   }
 
   const ocrLines = await linesFromImage(bwHeader)
-  retProcessed.ocrLines = ocrLines
   const whiteTexts = ocrLines.map((line) => line.text)
   const mainStatTextIndex = whiteTexts.findIndex(
     (t) => levenshteinDistance(t.toLowerCase(), 'main stat') < 2
@@ -106,12 +125,14 @@ export async function processEntry(
   const substatTextIndex = whiteTexts.findIndex(
     (t) => levenshteinDistance(t.toLowerCase(), 'sub-stats') < 2
   )
-  let setEffectTextIndex = whiteTexts.findIndex(
+  const setEffectLabelIndex = whiteTexts.findIndex(
     (t) => levenshteinDistance(t.toLowerCase(), 'set effect') < 2
   )
+  let setEffectTextIndex = setEffectLabelIndex
   if (setEffectTextIndex === -1) setEffectTextIndex = whiteTexts.length - 1
 
   if (mainStatTextIndex === -1 || substatTextIndex === -1) {
+    retProcessed.ocrLines = ocrLines
     retProcessed.texts.push(
       'Could not detect main stat, substats or set effect.'
     )
@@ -132,6 +153,14 @@ export async function processEntry(
     mainStatTexts.length === 0 ||
     substatTexts.length === 0
   ) {
+    retProcessed.ocrLines = ocrLinesForPreview(
+      ocrLines,
+      mainStatTextIndex,
+      substatTextIndex,
+      setEffectTextIndex,
+      setEffectLabelIndex,
+      true
+    )
     retProcessed.texts.push(
       'Could not detect main stat, substats or set effect.'
     )
@@ -140,6 +169,7 @@ export async function processEntry(
 
   // Join all text above the "Main Stat" text due to set text wrapping
   let { slotKey, setKey } = parseSetSlot([setLvlTexts.join('')])
+  const setFromHeader = !!setKey
   if (!setKey) {
     if (setEffectTexts.length) setKey = parseSet(setEffectTexts)
     if (!setKey) {
@@ -189,6 +219,14 @@ export async function processEntry(
     substats,
   }
   retProcessed.disc = disc
+  retProcessed.ocrLines = ocrLinesForPreview(
+    ocrLines,
+    mainStatTextIndex,
+    substatTextIndex,
+    setEffectTextIndex,
+    setEffectLabelIndex,
+    !setFromHeader
+  )
   return retProcessed
 }
 function greyBorderHistogram(imageData: ImageData, horizontal: boolean) {
@@ -252,9 +290,31 @@ function cardLeftRightBorderColumnHistogram(imageData: ImageData) {
   return raw.map((v, i) => (i >= x0 && i <= x1 && v >= minRun ? v : 0))
 }
 
+type BorderPeak = { index: number; score: number }
+
+/** Local maxima above threshold within [from, to). */
+function findHistogramPeaks(
+  histogram: number[],
+  from: number,
+  to: number,
+  minScore: number
+): BorderPeak[] {
+  const peaks: BorderPeak[] = []
+  const i0 = Math.max(1, from)
+  const i1 = Math.min(histogram.length - 1, to)
+  for (let i = i0; i < i1; i++) {
+    const v = histogram[i]
+    if (v < minScore) continue
+    if (v >= histogram[i - 1] && v >= histogram[i + 1]) {
+      peaks.push({ index: i, score: v })
+    }
+  }
+  return peaks
+}
+
 /**
- * Card borders are two strong peaks (top/bottom or left/right), not one long plateau.
- * findHistogramRange's first-to-last peak picks almost the full axis when many rows qualify.
+ * Card borders are paired grey-line spikes (top/bottom or left/right) with similar
+ * height. Among valid pairs, pick the tallest (highest min peak score).
  */
 function findBorderPeaks(
   histogram: number[],
@@ -269,28 +329,39 @@ function findBorderPeaks(
   const max = Math.max(...histogram)
   if (max <= 0) return null
   const minScore = max * 0.35
+  /** Min ratio min(h1,h2)/max(h1,h2) for a border pair (even grey border). */
+  const minHeightSimilarity = 0.5
 
-  let start = a0
-  let startScore = 0
-  for (let i = a0; i < a1; i++) {
-    if (histogram[i] > startScore) {
-      startScore = histogram[i]
-      start = i
+  const startPeaks = findHistogramPeaks(histogram, a0, a1, minScore)
+  const endPeaks = findHistogramPeaks(histogram, b0, b1, minScore)
+  if (!startPeaks.length || !endPeaks.length) return null
+
+  let best: {
+    start: number
+    end: number
+    pairHeight: number
+    similarity: number
+  } | null = null
+  for (const s of startPeaks) {
+    for (const e of endPeaks) {
+      if (e.index - s.index < minSpan) continue
+      const hi = Math.max(s.score, e.score)
+      const lo = Math.min(s.score, e.score)
+      const similarity = lo / hi
+      if (similarity < minHeightSimilarity) continue
+      const pairHeight = lo
+      if (
+        !best ||
+        pairHeight > best.pairHeight ||
+        (pairHeight === best.pairHeight && similarity > best.similarity)
+      ) {
+        best = { start: s.index, end: e.index, pairHeight, similarity }
+      }
     }
   }
 
-  let end = b0
-  let endScore = 0
-  for (let i = b0; i < b1; i++) {
-    if (histogram[i] > endScore) {
-      endScore = histogram[i]
-      end = i
-    }
-  }
-
-  if (startScore < minScore || endScore < minScore) return null
-  if (end - start < minSpan) return null
-  return [start, end] as const
+  if (!best) return null
+  return [best.start, best.end] as const
 }
 
 function findVerticalCardBounds(imageData: ImageData) {
@@ -302,6 +373,28 @@ function findVerticalCardBounds(imageData: ImageData) {
     [Math.floor(height * 0.07), Math.floor(height * 0.42)],
     [Math.floor(height * 0.58), Math.floor(height * 0.93)]
   )
+}
+
+/** Gate for each vertical pass: row-border run spans > this fraction of current width. */
+function hasWideVerticalBorderSpike(imageData: ImageData, widthFraction = 0.8) {
+  const histogram = cardTopBottomBorderRowHistogram(imageData)
+  return Math.max(...histogram) >= imageData.width * widthFraction
+}
+
+function cropVerticalSlice(imageData: ImageData, inset: number) {
+  const { height } = imageData
+  const verticalSpan = findVerticalCardBounds(imageData)
+  if (!verticalSpan) return null
+  let [top, bottom] = verticalSpan
+  top = clamp(top + inset, 0, height - 1)
+  bottom = clamp(bottom - inset, top + 1, height)
+  const cropped = crop(imageDataToCanvas(imageData), {
+    x1: 0,
+    x2: imageData.width,
+    y1: top,
+    y2: bottom,
+  })
+  return { cropped, top, bottom }
 }
 
 function findHorizontalCardBounds(imageData: ImageData) {
@@ -332,13 +425,9 @@ function cropInnerDiscCard(
 ) {
   const { width, height } = imageData
   const sourceCanvas = imageDataToCanvas(imageData)
+  const inset = 3
 
-  // Detect all edges on the panel image, then crop once (matches debug histogram lines)
-  let top = 0
-  let bottom = height
-  const verticalSpan = findVerticalCardBounds(imageData)
-  if (verticalSpan) [top, bottom] = verticalSpan
-
+  // Pass 1: horizontal bounds on the full panel, then slice
   let left = 0
   let right = width
   const horizontalGrey = findHorizontalCardBounds(imageData)
@@ -353,19 +442,17 @@ function cropInnerDiscCard(
     )
     if (horizontalFill) [left, right] = horizontalFill
   }
+  left = clamp(left + inset, 0, width - 1)
+  right = clamp(right - inset, left + 1, width)
+
+  const horizontalSlice = crop(sourceCanvas, {
+    x1: left,
+    x2: right,
+    y1: 0,
+    y2: height,
+  })
 
   if (debugImgs) {
-    const vertCanvas = imageDataToCanvas(imageData)
-    drawHistogram(
-      vertCanvas,
-      cardTopBottomBorderRowHistogram(imageData),
-      { r: 255, g: 0, b: 0, a: 100 },
-      false
-    )
-    drawCropMark(vertCanvas, top, { r: 0, g: 255, b: 0, a: 220 }, true)
-    drawCropMark(vertCanvas, bottom, { r: 0, g: 128, b: 255, a: 220 }, true)
-    debugImgs['innerCard vertical'] = vertCanvas.toDataURL()
-
     const horiCanvas = imageDataToCanvas(imageData)
     drawHistogram(horiCanvas, cardLeftRightBorderColumnHistogram(imageData), {
       r: 255,
@@ -376,26 +463,54 @@ function cropInnerDiscCard(
     drawCropMark(horiCanvas, left, { r: 0, g: 255, b: 0, a: 220 }, false)
     drawCropMark(horiCanvas, right, { r: 0, g: 128, b: 255, a: 220 }, false)
     debugImgs['innerCard horizontal'] = horiCanvas.toDataURL()
+    debugImgs['innerCard horizontal sliced'] =
+      imageDataToCanvas(horizontalSlice).toDataURL()
   }
 
-  const inset = 3
-  left = clamp(left + inset, 0, width - 1)
-  right = clamp(right - inset, left + 1, width)
-  top = clamp(top + inset, 0, height - 1)
-  bottom = clamp(bottom - inset, top + 1, height)
+  // Pass 2+: vertical trim while a row-border run spans >80% of current width (max 2 passes)
+  let verticalWork = horizontalSlice
+  for (let pass = 0; pass < 2; pass++) {
+    if (!hasWideVerticalBorderSpike(verticalWork)) break
+    const verticalCrop = cropVerticalSlice(verticalWork, inset)
+    if (!verticalCrop) break
 
-  const cropped = crop(sourceCanvas, {
-    x1: left,
-    x2: right,
-    y1: top,
-    y2: bottom,
-  })
+    if (debugImgs) {
+      const label = pass === 0 ? 'innerCard vertical' : 'innerCard vertical 2'
+      const slicedLabel =
+        pass === 0 ? 'innerCard vertical sliced' : 'innerCard vertical sliced 2'
+      const vertCanvas = imageDataToCanvas(verticalWork)
+      drawHistogram(
+        vertCanvas,
+        cardTopBottomBorderRowHistogram(verticalWork),
+        { r: 255, g: 0, b: 0, a: 100 },
+        false
+      )
+      drawCropMark(
+        vertCanvas,
+        verticalCrop.top,
+        { r: 0, g: 255, b: 0, a: 220 },
+        true
+      )
+      drawCropMark(
+        vertCanvas,
+        verticalCrop.bottom,
+        { r: 0, g: 128, b: 255, a: 220 },
+        true
+      )
+      debugImgs[label] = vertCanvas.toDataURL()
+      debugImgs[slicedLabel] = imageDataToCanvas(
+        verticalCrop.cropped
+      ).toDataURL()
+    }
+
+    verticalWork = verticalCrop.cropped
+  }
 
   if (debugImgs) {
-    debugImgs['innerCard cropped'] = imageDataToCanvas(cropped).toDataURL()
+    debugImgs['innerCard cropped'] = imageDataToCanvas(verticalWork).toDataURL()
   }
 
-  return cropped
+  return verticalWork
 }
 
 function cropDiscCard(
