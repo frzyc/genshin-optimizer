@@ -39,6 +39,20 @@ export const formulas = {
       name: 'disorderDmgInst_fire',
     },
   },
+  abloomDmgInst: {
+    sheet: 'Manato',
+    name: 'abloomDmgInst',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'Manato',
+      attribute: 'fire',
+      damageType1: 'anomaly',
+      damageType2: 'abloom',
+      name: 'abloomDmgInst',
+    },
+  },
   anomalyBuildupInst: {
     sheet: 'Manato',
     name: 'anomalyBuildupInst',

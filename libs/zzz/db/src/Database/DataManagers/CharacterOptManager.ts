@@ -39,7 +39,7 @@ export const critModeKeys = ['avg', 'crit', 'nonCrit'] as const
 
 export type SpecificDmgTypeKey = Exclude<
   DamageType,
-  'anomaly' | 'disorder' | 'aftershock' | 'elemental'
+  'anomaly' | 'disorder' | 'aftershock' | 'elemental' | 'sheer' | 'abloom'
 >
 export const specificDmgTypeKeys: SpecificDmgTypeKey[] = [
   'basic',
@@ -138,13 +138,14 @@ export const bonusStatDamageTypes: BonusStatDamageType[] = [
   'assistFollowUp',
   'anomaly',
   'disorder',
+  'abloom',
 ] as const
 
 export type TargetTag = {
   sheet?: string
   name?: string
   damageType1?: SpecificDmgTypeKey
-  damageType2?: 'aftershock'
+  damageType2?: 'aftershock' | 'abloom'
   q?: (typeof targetQ)[number]
   qt?: (typeof targetQt)[number]
 }
@@ -154,7 +155,7 @@ const targetTagSchema = z
     sheet: z.string().optional(),
     name: z.string().optional(),
     damageType1: z.string().optional(),
-    damageType2: z.literal('aftershock').optional(),
+    damageType2: z.literal('aftershock').or(z.literal('abloom')).optional(),
     q: z.enum(targetQ).optional(),
     qt: z.enum(targetQt).optional(),
   })
@@ -173,7 +174,7 @@ export type BonusStatTag = {
   qt: (typeof bonusStatQtKeys)[number]
   attribute?: AttributeKey
   damageType1?: BonusStatDamageType
-  damageType2?: 'aftershock'
+  damageType2?: 'aftershock' | 'abloom'
 }
 
 const bonusStatTagSchema = z.object({
@@ -181,7 +182,7 @@ const bonusStatTagSchema = z.object({
   qt: z.string(),
   attribute: z.string().optional(),
   damageType1: z.string().optional(),
-  damageType2: z.literal('aftershock').optional(),
+  damageType2: z.literal('aftershock').or(z.literal('abloom')).optional(),
 }) as z.ZodType<BonusStatTag>
 
 const bonusStatSchema = z.object({
@@ -256,7 +257,7 @@ export class CharacterOptManager extends DataManager<
       const formula = getFormula(rawTarget as TargetTag)
       if (formula) {
         let damageType1: SpecificDmgTypeKey | undefined
-        let damageType2: 'aftershock' | undefined
+        let damageType2: 'aftershock' | 'abloom' | undefined
         if (
           formula.name === 'standardDmgInst' ||
           formula.name === 'sheerDmgInst'
@@ -266,7 +267,10 @@ export class CharacterOptManager extends DataManager<
             isSpecificDmgTypeKey(rawTarget.damageType1)
           )
             damageType1 = rawTarget.damageType1
-          if (rawTarget.damageType2 === 'aftershock')
+          if (
+            rawTarget.damageType2 === 'aftershock' ||
+            rawTarget.damageType2 === 'abloom'
+          )
             damageType2 = rawTarget.damageType2
         }
         target = removeUndefinedFields({

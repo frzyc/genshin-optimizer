@@ -1,7 +1,23 @@
 import { notEmpty, objKeyMap, toDecimal } from '@genshin-optimizer/common/util'
-import type { Calculator } from '@genshin-optimizer/game-opt/engine'
+import type {
+  CalcMeta,
+  Calculator,
+  Tag,
+} from '@genshin-optimizer/game-opt/engine'
 import { CalcContext } from '@genshin-optimizer/game-opt/formula-ui'
-import { FormulaTextCacheContext } from '@genshin-optimizer/game-opt/sheet-ui'
+import type { FormulaText } from '@genshin-optimizer/game-opt/sheet-ui'
+import type {
+  FormulaTextFunc,
+  FullTagDisplayComponent,
+  TagDisplayComponent,
+} from '@genshin-optimizer/game-opt/sheet-ui'
+import {
+  FormulaTextCacheContext,
+  FormulaTextContext,
+  FullTagDisplayContext,
+  TagDisplayContext,
+} from '@genshin-optimizer/game-opt/sheet-ui'
+import type { CalcResult } from '@genshin-optimizer/pando/engine'
 import { constant } from '@genshin-optimizer/pando/engine'
 import { allDiscSetKeys, allWengineKeys } from '@genshin-optimizer/zzz/consts'
 import type {
@@ -28,6 +44,8 @@ import {
 import { allStats } from '@genshin-optimizer/zzz/stats'
 import type { ReactNode } from 'react'
 import { useMemo } from 'react'
+import { FullTagDisplay, TagDisplay } from '../components'
+import { formulaText } from '../formulaText'
 
 export function CharCalcProvider({
   character,
@@ -48,10 +66,12 @@ export function CharCalcProvider({
     () =>
       zzzCalculatorWithEntries([
         // Specify members present in the team
-        ...teamData([character.key]),
+        ...teamData([
+          character.key,
+          ...charOpt.teammates.map((charKey) => charKey),
+        ]),
         // Add actual member data
         ...member0,
-        // TODO: Get enemy values from db
         ownBuff.common.critMode.add(charOpt.critMode),
         enemy.common.lvl.add(charOpt.enemyLvl),
         enemy.common.def.add(charOpt.enemyDef),
@@ -93,20 +113,42 @@ export function CharCalcProvider({
       ]),
     [member0, charOpt, character.key]
   )
-  // Refresh the formula text cache per calc
+  // New map per calc so formula tooltips do not reuse stale nodes after gear/opt changes.
   const formulaTextCache = useMemo(() => calc && new Map(), [calc])
 
   return (
-    <FormulaTextCacheContext.Provider value={formulaTextCache}>
+    <ZzzSheetUiProviders formulaTextCache={formulaTextCache}>
       <CalcContext.Provider value={calc as Calculator}>
         {children}
       </CalcContext.Provider>
+    </ZzzSheetUiProviders>
+  )
+}
+
+function ZzzSheetUiProviders({
+  children,
+  formulaTextCache,
+}: {
+  children: ReactNode
+  formulaTextCache: Map<CalcResult<number, CalcMeta<Tag, never>>, FormulaText>
+}) {
+  return (
+    <FormulaTextCacheContext.Provider value={formulaTextCache}>
+      <FormulaTextContext.Provider value={formulaText as FormulaTextFunc}>
+        <TagDisplayContext.Provider value={TagDisplay as TagDisplayComponent}>
+          <FullTagDisplayContext.Provider
+            value={FullTagDisplay as FullTagDisplayComponent}
+          >
+            {children}
+          </FullTagDisplayContext.Provider>
+        </TagDisplayContext.Provider>
+      </FormulaTextContext.Provider>
     </FormulaTextCacheContext.Provider>
   )
 }
 
 function useCharacterAndEquipment(
-  character: ICachedCharacter,
+  character: ICachedCharacter | undefined,
   wengineId: string | undefined,
   discIds: DiscIds
 ) {
@@ -122,12 +164,14 @@ function useCharacterAndEquipment(
   )
   return useMemo(
     () =>
-      withMember(
-        character.key,
-        ...charTagMapNodeEntries(character),
-        ...wengineTagEntries,
-        ...discTagEntries
-      ),
+      character
+        ? withMember(
+            character.key,
+            ...charTagMapNodeEntries(character),
+            ...wengineTagEntries,
+            ...discTagEntries
+          )
+        : [],
     [character, wengineTagEntries, discTagEntries]
   )
 }
@@ -183,9 +227,13 @@ export function CharCalcMockCountProvider({
     [character, conditionals]
   )
 
+  const formulaTextCache = useMemo(() => calc && new Map(), [calc])
+
   return (
-    <CalcContext.Provider value={calc as Calculator}>
-      {children}
-    </CalcContext.Provider>
+    <ZzzSheetUiProviders formulaTextCache={formulaTextCache}>
+      <CalcContext.Provider value={calc as Calculator}>
+        {children}
+      </CalcContext.Provider>
+    </ZzzSheetUiProviders>
   )
 }

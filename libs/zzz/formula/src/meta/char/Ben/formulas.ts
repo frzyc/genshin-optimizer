@@ -38,6 +38,20 @@ export const formulas = {
       name: 'disorderDmgInst_fire',
     },
   },
+  abloomDmgInst: {
+    sheet: 'Ben',
+    name: 'abloomDmgInst',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'Ben',
+      attribute: 'fire',
+      damageType1: 'anomaly',
+      damageType2: 'abloom',
+      name: 'abloomDmgInst',
+    },
+  },
   anomalyBuildupInst: {
     sheet: 'Ben',
     name: 'anomalyBuildupInst',

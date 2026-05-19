@@ -19,6 +19,7 @@ import ElectroLipGloss from './maps/ElectroLipGloss'
 import ElegantVanity from './maps/ElegantVanity'
 import FlamemakerShaker from './maps/FlamemakerShaker'
 import FlightOfFancy from './maps/FlightOfFancy'
+import FrostfallSickle from './maps/FrostfallSickle'
 import FusionCompiler from './maps/FusionCompiler'
 import GildedBlossom from './maps/GildedBlossom'
 import GrillOWisp from './maps/GrillOWisp'
@@ -66,6 +67,7 @@ import SpectralGaze from './maps/SpectralGaze'
 import SpringEmbrace from './maps/SpringEmbrace'
 import StarlightEngine from './maps/StarlightEngine'
 import StarlightEngineReplica from './maps/StarlightEngineReplica'
+import StarlightRiderFaceplate from './maps/StarlightRiderFaceplate'
 import SteamOven from './maps/SteamOven'
 import SteelCushion from './maps/SteelCushion'
 import StreetSuperstar from './maps/StreetSuperstar'
@@ -108,6 +110,7 @@ const maps = {
   ElegantVanity,
   FlamemakerShaker,
   FlightOfFancy,
+  FrostfallSickle,
   FusionCompiler,
   GildedBlossom,
   GrillOWisp,
@@ -155,6 +158,7 @@ const maps = {
   SpringEmbrace,
   StarlightEngine,
   StarlightEngineReplica,
+  StarlightRiderFaceplate,
   SteamOven,
   SteelCushion,
   StreetSuperstar,

@@ -514,6 +514,20 @@
       "trap": "IconRoleGeneral60.png",
       "select": "IconRoleSelect60.png",
       "interknot": "IconInterKnotRole0060.png"
+    },
+    "StarlightBilly": {
+      "full": "IconRole62.png",
+      "circle": "IconRoleCircle62.png",
+      "trap": "IconRoleGeneral62.png",
+      "select": "IconRoleSelect62.png",
+      "interknot": "IconInterKnotRole0062.png"
+    },
+    "Promeia": {
+      "full": "IconRole61.png",
+      "circle": "IconRoleCircle61.png",
+      "trap": "IconRoleGeneral61.png",
+      "select": "IconRoleSelect61.png",
+      "interknot": "IconInterKnotRole0061.png"
     }
   },
   "wengines": {
@@ -864,6 +878,14 @@
     "SerpentineSeeker": {
       "icon": "Weapon_S_1521.png",
       "big": "Weapon_S_1521Big.png"
+    },
+    "StarlightRiderFaceplate": {
+      "icon": "Weapon_S_1531.png",
+      "big": "Weapon_S_1531Big.png"
+    },
+    "FrostfallSickle": {
+      "icon": "Weapon_S_1541.png",
+      "big": "Weapon_S_1541Big.png"
     }
   }
 }

@@ -113,7 +113,8 @@ function registerFormula(
     | 'shield'
     | 'anomalyDmg'
     | 'dazeBuildup'
-    | 'anomBuildup',
+    | 'anomBuildup'
+    | 'abloomDmg',
   cond: string | StrNode,
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {

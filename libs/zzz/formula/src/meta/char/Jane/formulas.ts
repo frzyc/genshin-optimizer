@@ -38,6 +38,20 @@ export const formulas = {
       name: 'disorderDmgInst_physical',
     },
   },
+  abloomDmgInst: {
+    sheet: 'Jane',
+    name: 'abloomDmgInst',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'Jane',
+      attribute: 'physical',
+      damageType1: 'anomaly',
+      damageType2: 'abloom',
+      name: 'abloomDmgInst',
+    },
+  },
   anomalyBuildupInst: {
     sheet: 'Jane',
     name: 'anomalyBuildupInst',
