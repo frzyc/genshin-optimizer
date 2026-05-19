@@ -25,9 +25,15 @@ import type {
   own,
 } from '@genshin-optimizer/zzz/formula'
 import {
+  type FormulaDimension,
+  formulaDimensionByQ,
+  formulaDimensions,
+  formulaMetaKey,
   formulas,
   getConditional,
   isMember,
+  parseLegacyFormulaName,
+  qByFormulaDimension,
 } from '@genshin-optimizer/zzz/formula'
 import { z } from 'zod'
 import type { ZzzDatabase } from '../..'
@@ -140,9 +146,12 @@ export const bonusStatDamageTypes: BonusStatDamageType[] = [
   'vortex',
 ] as const
 
+export type { FormulaDimension } from '@genshin-optimizer/zzz/formula'
+
 export type TargetTag = {
   sheet?: string
   name?: string
+  formulaDimension?: FormulaDimension
   damageType1?: SpecificDmgTypeKey
   damageType2?: 'aftershock' | 'abloom'
   q?: (typeof targetQ)[number]
@@ -153,6 +162,7 @@ const targetTagSchema = z
   .object({
     sheet: z.string().optional(),
     name: z.string().optional(),
+    formulaDimension: z.enum(formulaDimensions).optional(),
     damageType1: z.string().optional(),
     damageType2: z.literal('aftershock').or(z.literal('abloom')).optional(),
     q: z.enum(targetQ).optional(),
@@ -367,13 +377,21 @@ export class TeamDataManager extends DataManager<
     if (!rawTarget) return undefined
 
     if (rawTarget.name) {
-      const formula = getFormula(rawTarget)
+      const normalized = normalizeFormulaTarget(rawTarget)
+      const { name } = normalized
+      if (!name) return undefined
+      const sheet =
+        normalized.sheet ??
+        resolveFormulaSheet(name, normalized.formulaDimension)
+      const formula = getFormula({ ...normalized, sheet })
       if (formula) {
+        const abilityName = formula.tag.name
+        if (!abilityName) return undefined
         let damageType1: SpecificDmgTypeKey | undefined
         let damageType2: 'aftershock' | 'abloom' | undefined
         if (
-          formula.name === 'standardDmgInst' ||
-          formula.name === 'sheerDmgInst'
+          abilityName === 'standardDmgInst' ||
+          abilityName === 'sheerDmgInst'
         ) {
           if (
             rawTarget.damageType1 &&
@@ -386,9 +404,13 @@ export class TeamDataManager extends DataManager<
           )
             damageType2 = rawTarget.damageType2
         }
+        const formulaDimension =
+          normalized.formulaDimension ??
+          dimensionFromFormulaTag(formula.tag.q)
         return removeUndefinedFields({
-          sheet: formula.sheet,
-          name: formula.name,
+          sheet: sheet ?? formula.sheet,
+          name: abilityName,
+          formulaDimension,
           damageType1,
           damageType2,
         }) as TargetTag
@@ -742,15 +764,96 @@ export function applyDamageTypeToTag(
   }
 }
 
-function getFormula({ sheet, name }: TargetTag) {
-  if (!sheet || !name) return
-  return (formulas as any)[sheet]?.[name] as
-    | {
-        sheet: Sheet
-        name: string
-        tag: Tag
-      }
+function dimensionFromFormulaTag(
+  q: string | null | undefined
+): FormulaDimension | undefined {
+  if (!q) return undefined
+  return formulaDimensionByQ[q as keyof typeof formulaDimensionByQ]
+}
+
+function normalizeFormulaTarget(target: TargetTag): TargetTag {
+  const { sheet, name, formulaDimension } = target
+  if (!sheet || !name) return target
+  if (formulaDimension) return target
+  const legacy = parseLegacyFormulaName(name)
+  if (legacy)
+    return {
+      ...target,
+      name: legacy.baseName,
+      formulaDimension: legacy.formulaDimension,
+    }
+  return target
+}
+
+function resolveFormulaSheet(
+  name: string,
+  formulaDimension?: FormulaDimension
+): Sheet | undefined {
+  const legacy = parseLegacyFormulaName(name)
+  const baseName = legacy?.baseName ?? name
+  const dim = formulaDimension ?? legacy?.formulaDimension
+
+  for (const sheet of allCharacterKeys) {
+    const sheetFormulas = (formulas as Record<string, Record<string, unknown>>)[
+      sheet
+    ]
+    if (!sheetFormulas) continue
+    if (dim) {
+      const q = qByFormulaDimension[dim]
+      const compositeKey = formulaMetaKey(baseName, q)
+      const legacySuffix =
+        dim === 'anomBuildup'
+          ? '_anomBuildup'
+          : dim === 'daze'
+            ? '_daze'
+            : '_dmg'
+      if (
+        sheetFormulas[compositeKey] ||
+        sheetFormulas[`${baseName}${legacySuffix}`]
+      )
+        return sheet as Sheet
+    } else if (sheetFormulas[name] || sheetFormulas[baseName]) {
+      return sheet as Sheet
+    }
+  }
+  return undefined
+}
+
+function getFormula(target: TargetTag) {
+  const normalized = normalizeFormulaTarget(target)
+  const name = normalized.name
+  if (!name) return
+  const sheet = normalized.sheet ?? resolveFormulaSheet(name, normalized.formulaDimension)
+  if (!sheet) return
+  const { formulaDimension } = normalized
+  const sheetFormulas = (formulas as any)[sheet] as
+    | Record<
+        string,
+        {
+          sheet: Sheet
+          name: string
+          tag: Tag
+        }
+      >
     | undefined
+  if (!sheetFormulas) return
+
+  if (formulaDimension) {
+    const q = qByFormulaDimension[formulaDimension]
+    const compositeKey = formulaMetaKey(name, q)
+    const legacySuffix =
+      formulaDimension === 'anomBuildup'
+        ? '_anomBuildup'
+        : formulaDimension === 'daze'
+          ? '_daze'
+          : '_dmg'
+    return (
+      sheetFormulas[compositeKey] ??
+      sheetFormulas[`${name}${legacySuffix}`]
+    )
+  }
+
+  return sheetFormulas[name]
 }
 
 export function targetTag(target: TargetTag): Tag {

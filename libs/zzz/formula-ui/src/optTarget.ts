@@ -1,14 +1,18 @@
-import type { TargetTag } from '@genshin-optimizer/zzz/db'
+import { type TargetTag, targetTag } from '@genshin-optimizer/zzz/db'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 
 export function isOptTargetTag(
   tag: Tag,
-  target: TargetTag | undefined
+  target: TargetTag | undefined,
+  resolvedTag?: Tag
 ): boolean {
   if (!target) return false
+  if (target.q && target.qt) return target.q === tag.q && target.qt === tag.qt
+  const resolved = resolvedTag ?? targetTag(target)
   return (
-    (tag.sheet === target.sheet && tag.name === target.name) ||
-    target.q === tag.q
+    tag.sheet === resolved.sheet &&
+    tag.name === resolved.name &&
+    tag.q === resolved.q
   )
 }
 

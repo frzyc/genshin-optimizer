@@ -15,6 +15,36 @@ import { data } from '../../data'
 import { type Tag, commonSheets } from '../../data/util'
 import type { GenDescExecutorSchema } from './schema'
 
+const legacyNameSuffix = /_(dmg|daze|anomBuildup)$/
+
+function resolveFormulaMetaKey(
+  sheet: string,
+  abilityName: string,
+  q: string,
+  result: Record<string, Record<string, { tag: Tag; name: string }>>
+): string {
+  if (legacyNameSuffix.test(abilityName)) return abilityName
+
+  const sheetFormulas = result[sheet] ?? {}
+  const existing = sheetFormulas[abilityName]
+  const hasCompositeSibling = Object.keys(sheetFormulas).some(
+    (k) => k.startsWith(`${abilityName}:`)
+  )
+  if (hasCompositeSibling || (existing && existing.tag.q !== q)) {
+    if (existing && existing.tag.q !== q) {
+      const existingQ = existing.tag.q as string
+      const compositeExisting = `${abilityName}:${existingQ}`
+      sheetFormulas[compositeExisting] = {
+        ...existing,
+        name: compositeExisting,
+      }
+      delete sheetFormulas[abilityName]
+    }
+    return `${abilityName}:${q}`
+  }
+  return abilityName
+}
+
 export default async function runExecutor(
   options: GenDescExecutorSchema
 ): Promise<{ success: boolean }> {
@@ -24,7 +54,7 @@ export default async function runExecutor(
     sheet: sheet!,
     name: q!,
   }))
-  const formulas = extractFormulaMetadata(data, (tag: Tag, value) => {
+  const formulas = extractFormulaMetadata(data, (tag: Tag, value, result) => {
     if (
       // sheet-specific
       tag.sheet !== 'agg' &&
@@ -39,8 +69,14 @@ export default async function runExecutor(
       'q' in value.tag
     ) {
       const sheet = tag.sheet!
-      const name = value.tag['name']!
-      return { sheet, name, tag: { ...tag, ...value.tag } }
+      const abilityName = value.tag['name']!
+      const q = value.tag['q']!
+      const metaKey = resolveFormulaMetaKey(sheet, abilityName, q, result)
+      return {
+        sheet,
+        name: metaKey,
+        tag: { ...tag, ...value.tag, name: abilityName },
+      }
     }
     return undefined
   })

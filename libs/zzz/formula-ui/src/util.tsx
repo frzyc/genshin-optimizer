@@ -38,9 +38,14 @@ export function trans(
   ]
 }
 
-export function tagToTagField(tag: Tag): TagField {
+export function tagToTagField(
+  tag: Tag,
+  opts?: { preventRecursion?: boolean }
+): TagField {
   return {
-    title: <TagDisplay tag={tag} />,
+    title: (
+      <TagDisplay tag={tag} preventRecursion={opts?.preventRecursion} />
+    ),
     fieldRef: tag,
   }
 }

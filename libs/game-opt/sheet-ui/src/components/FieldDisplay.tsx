@@ -31,7 +31,8 @@ import {
   FullTagDisplayContext,
   TagRowSxContext,
 } from '../context'
-import type { Field, TagField, TextField } from '../types'
+import type { Field, MultiTagField, TagField, TextField } from '../types'
+import { isMultiTagField } from '../types'
 
 export function FieldsDisplay({
   fields,
@@ -58,6 +59,9 @@ function FieldDisplay({
 }) {
   if ('fieldValue' in field)
     return <TextFieldDisplay field={field} component={component} />
+  if (isMultiTagField(field)) {
+    return <MultiTagFieldDisplay field={field} component={component} />
+  }
   if ('fieldRef' in field) {
     return <TagFieldDisplay field={field} component={component} />
   }
@@ -94,6 +98,129 @@ export function TextFieldDisplay({
           ? fieldValue.toFixed?.(toFixed)
           : fieldValue}
         {unit}
+      </Typography>
+    </Box>
+  )
+}
+
+export function MultiTagFieldDisplay({
+  field,
+  component = ListItem,
+  showZero = process.env['NODE_ENV'] === 'development',
+  rowSx,
+  onClickFormula,
+  onMouseEnter,
+  onMouseLeave,
+}: {
+  field: MultiTagField
+  component?: React.ElementType
+  showZero?: boolean
+  rowSx?: SxProps<Theme>
+  onClickFormula?: (read: Read) => void
+  onMouseEnter?: () => void
+  onMouseLeave?: () => void
+}) {
+  const calc = useContext(CalcContext)
+  const contextTag = useContext(TagContext)
+  const getTagRowSx = useContext(TagRowSxContext)
+  const { setRead } = useContext(DebugReadContext)
+  const { icon, title, subtitle, fieldRefs } = field
+
+  if (!calc) return null
+
+  const computed = fieldRefs.map(({ label, ref: fieldRef }) => {
+    const fieldRead = read(fieldRef)
+    const valueCalcRes = calc.withTag(contextTag).compute(fieldRead)
+    return { label, fieldRef, fieldRead, valueCalcRes }
+  })
+
+  if (
+    !showZero &&
+    computed.every(({ valueCalcRes }) => !valueCalcRes.val)
+  )
+    return null
+
+  const contextRowSx = computed
+    .map(({ fieldRef }) => getTagRowSx?.(fieldRef))
+    .find(Boolean)
+
+  return (
+    <Box
+      width="100%"
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      sx={[
+        {
+          display: 'flex',
+          justifyContent: 'space-between',
+          gap: 1,
+          py: 0.25,
+        },
+        ...(contextRowSx
+          ? Array.isArray(contextRowSx)
+            ? contextRowSx
+            : [contextRowSx]
+          : []),
+        ...(rowSx ? (Array.isArray(rowSx) ? rowSx : [rowSx]) : []),
+      ]}
+      component={component}
+    >
+      <Typography
+        component="div"
+        sx={{
+          display: 'flex',
+          gap: 1,
+          alignItems: 'center',
+          marginRight: 'auto',
+        }}
+      >
+        {icon}
+        {title}
+        {subtitle}
+      </Typography>
+      <Typography
+        component="div"
+        sx={{
+          display: 'flex',
+          gap: 1,
+          alignItems: 'center',
+          justifyContent: 'flex-end',
+          flexWrap: 'wrap',
+        }}
+      >
+        {computed.map(({ label, fieldRead, valueCalcRes }) => {
+          const calcValue = valueCalcRes.val
+          if (!showZero && !calcValue) return null
+          const tag = fieldRead.tag
+          const unit = getUnitStr(tag['name'] || tag['q'] || '')
+          const defaultHelpClick = () => setRead(fieldRead)
+          const onClick = onClickFormula
+            ? () => onClickFormula(fieldRead as Read)
+            : defaultHelpClick
+          return (
+            <Box
+              key={`${tag.sheet}_${tag.name}_${tag.q}`}
+              component="span"
+              sx={{
+                display: 'inline-flex',
+                gap: 0.5,
+                alignItems: 'center',
+              }}
+            >
+              {label && (
+                <Typography
+                  component="span"
+                  variant="body2"
+                  color="text.secondary"
+                >
+                  {label}
+                </Typography>
+              )}
+              <span>{valueString(calcValue, unit)}</span>
+              <FormulaHelpIcon computed={valueCalcRes} onClick={onClick} />
+            </Box>
+          )
+        })}
       </Typography>
     </Box>
   )
