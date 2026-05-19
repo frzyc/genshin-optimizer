@@ -1,7 +1,7 @@
 import { stableArr } from '@genshin-optimizer/common/util'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
-import type { TeamConditional } from '@genshin-optimizer/zzz/db'
 import { isDiscSetKey } from '@genshin-optimizer/zzz/consts'
+import type { TeamConditional } from '@genshin-optimizer/zzz/db'
 import { useCharacterContext, useTeam } from '@genshin-optimizer/zzz/db-ui'
 import { DiscSheetDisplay } from '@genshin-optimizer/zzz/formula-ui'
 import { DiscSetAutocomplete } from '@genshin-optimizer/zzz/ui'

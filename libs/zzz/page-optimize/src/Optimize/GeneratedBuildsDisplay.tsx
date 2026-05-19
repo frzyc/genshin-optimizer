@@ -1,6 +1,6 @@
+import { useDataManagerBase } from '@genshin-optimizer/common/database-ui'
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { valueString } from '@genshin-optimizer/common/util'
-import { useDataManagerBase } from '@genshin-optimizer/common/database-ui'
 import type { GeneratedBuild } from '@genshin-optimizer/zzz/db'
 import {
   OptConfigContext,

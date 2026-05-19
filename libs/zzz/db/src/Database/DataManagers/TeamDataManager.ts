@@ -456,7 +456,12 @@ export class TeamDataManager extends DataManager<
             | undefined
 
         if (q !== 'dmg_' && q !== 'crit_dmg_') damageType2 = undefined
-        if (damageType2 && damageType2 !== 'aftershock') damageType2 = undefined
+        if (
+          damageType2 &&
+          damageType2 !== 'aftershock' &&
+          damageType2 !== 'abloom'
+        )
+          damageType2 = undefined
 
         return {
           tag: removeUndefinedFields({
@@ -548,9 +553,17 @@ export class TeamDataManager extends DataManager<
       const bonusStats = [...frame.bonusStats]
       if (index === -1 && value !== null) {
         bonusStats.push({ tag, value, disabled })
-      } else if (value === null && index > -1) {
+      } else if (
+        value === null &&
+        index >= 0 &&
+        index < bonusStats.length
+      ) {
         bonusStats.splice(index, 1)
-      } else if (value !== null && index > -1) {
+      } else if (
+        value !== null &&
+        index >= 0 &&
+        index < bonusStats.length
+      ) {
         bonusStats[index].value = value
         bonusStats[index].tag = tag
         bonusStats[index].disabled = disabled
@@ -578,9 +591,17 @@ export class TeamDataManager extends DataManager<
       const enemyStats = [...frame.enemyStats]
       if (statIndex === -1 && value !== null) {
         enemyStats.push({ tag, value })
-      } else if (value === null && statIndex > -1) {
+      } else if (
+        value === null &&
+        statIndex >= 0 &&
+        statIndex < enemyStats.length
+      ) {
         enemyStats.splice(statIndex, 1)
-      } else if (value !== null && statIndex > -1) {
+      } else if (
+        value !== null &&
+        statIndex >= 0 &&
+        statIndex < enemyStats.length
+      ) {
         enemyStats[statIndex].value = value
         enemyStats[statIndex].tag = tag
       }

@@ -1,5 +1,4 @@
 import { useDataManagerBase } from '@genshin-optimizer/common/database-ui'
-import { stableArr } from '@genshin-optimizer/common/util'
 import {
   CardThemed,
   ColorText,
@@ -7,6 +6,7 @@ import {
   NumberInputLazy,
   TextFieldLazy,
 } from '@genshin-optimizer/common/ui'
+import { stableArr } from '@genshin-optimizer/common/util'
 import type { StatKey } from '@genshin-optimizer/zzz/consts'
 import { allAttributeKeys } from '@genshin-optimizer/zzz/consts'
 import type {
@@ -21,9 +21,9 @@ import {
 } from '@genshin-optimizer/zzz/db'
 import { bonusStatKeys, newBonusStatTag } from '@genshin-optimizer/zzz/db'
 import {
-  useTeam,
   useCharacterContext,
   useDatabaseContext,
+  useTeam,
 } from '@genshin-optimizer/zzz/db-ui'
 import type { Attribute, Tag } from '@genshin-optimizer/zzz/formula'
 import { TagDisplay, qtMap } from '@genshin-optimizer/zzz/formula-ui'
