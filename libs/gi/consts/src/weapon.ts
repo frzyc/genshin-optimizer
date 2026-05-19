@@ -207,6 +207,7 @@ export const allWeaponBowKeys = [
 export type WeaponBowKey = (typeof allWeaponBowKeys)[number]
 
 export const allWeaponCatalystKeys = [
+  'AngelosHeptades',
   'ApprenticesNotes',
   'AshGravenDrinkingHorn',
   'AThousandFloatingDreams',

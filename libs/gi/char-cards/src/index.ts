@@ -73,6 +73,7 @@ import Nahida from './Character_Nahida_Card.jpeg'
 import Navia from './Character_Navia_Card.jpg'
 import Nefer from './Character_Nefer_Card.webp'
 import Neuvillette from './Character_Neuvillette_Card.jpg'
+import Nicole from './Character_Nicole_Card.png'
 import Nilou from './Character_Nilou_Card.jpg'
 import Ningguang from './Character_Ningguang_Card.jpg'
 import Noelle from './Character_Noelle_Card.jpg'
@@ -189,6 +190,7 @@ const charCards = {
   Navia,
   Nefer,
   Neuvillette,
+  Nicole,
   Nilou,
   Ningguang,
   Noelle,
