@@ -66,15 +66,26 @@ import { DiscCardObj } from '../DiscCard'
 import { DiscMainStatGroup } from '../DiscMainStatGroup'
 import { DiscRarityDropdown } from '../DiscRarityDropdown'
 import { DiscSetAutocomplete } from '../DiscSetAutocomplete'
-import cameraShutterSound from './camera-shutter-01.mp3'
+import { ScanImagePreview } from './ScanImagePreview'
 import { ScanInfoModal } from './ScanInfoModal'
-import { textsFromImage } from './ScanningUtil'
+import { linesFromImage } from './ScanningUtil'
 import SubstatInput from './SubstatInput'
+import cameraShutterSound from './camera-shutter-01.mp3'
+import scanErrorSound from './scan-error.mp3'
+
+const CAPTURE_INTERVAL_MS = 5000
 
 const captureShutterAudio = new Audio(cameraShutterSound)
+const scanErrorAudio = new Audio(scanErrorSound)
+
 function playCaptureShutterSound() {
   captureShutterAudio.currentTime = 0
   void captureShutterAudio.play().catch(() => {})
+}
+
+function playScanErrorSound() {
+  scanErrorAudio.currentTime = 0
+  void scanErrorAudio.play().catch(() => {})
 }
 
 // for pasting in screenshots
@@ -183,7 +194,12 @@ export function DiscEditor({
     )
     return {
       prev: duplicated[0] ?? upgraded[0],
-      prevEditType: duplicated.length !== 0 ? 'duplicate' : 'upgrade',
+      prevEditType:
+        duplicated.length !== 0
+          ? 'duplicate'
+          : upgraded.length !== 0
+            ? 'upgrade'
+            : '',
     }
   }, [disc, database])
 
@@ -196,6 +212,7 @@ export function DiscEditor({
     cancelEdit?.()
     setDisc({})
     setScannedData(undefined)
+    lastAutoAddKeyRef.current = null
   }, [cancelEdit, setDisc])
 
   const setSubstat = useCallback(
@@ -229,7 +246,7 @@ export function DiscEditor({
 
   // Scanning stuff
   const queueRef = useRef(
-    new ScanningQueue(textsFromImage, shouldShowDevComponents)
+    new ScanningQueue(linesFromImage, shouldShowDevComponents)
   )
   const queue = queueRef.current
   const [{ processedNum, outstandingNum, scanningNum }, setScanningData] =
@@ -244,11 +261,41 @@ export function DiscEditor({
   const [captureInterval, setCaptureInterval] = useState<NodeJS.Timeout | null>(
     null
   )
+  const [captureProgress, setCaptureProgress] = useState(0)
+  const captureCycleStartRef = useRef(Date.now())
+  const captureProgressRafRef = useRef<number | null>(null)
+  const scanningDataRef = useRef({
+    processedNum: 0,
+    outstandingNum: 0,
+    scanningNum: 0,
+  })
+  const scannedDataRef = useRef(scannedData)
+  const lastAutoAddKeyRef = useRef<string | null>(null)
 
   // Use captureStream existence as isCapturing indicator
   const isCapturing = !!captureStream
 
-  const { fileName, imageURL, debugImgs, texts } = scannedData ?? {}
+  const isCaptureIdle =
+    !processedNum && !outstandingNum && !scanningNum && !scannedData
+
+  scanningDataRef.current = { processedNum, outstandingNum, scanningNum }
+  scannedDataRef.current = scannedData
+
+  const resetCaptureCycle = useCallback(() => {
+    captureCycleStartRef.current = Date.now()
+    setCaptureProgress(0)
+  }, [])
+
+  const {
+    fileName,
+    imageURL,
+    imageWidth,
+    imageHeight,
+    ocrLines,
+    debugImgs,
+    texts,
+  } = scannedData ?? {}
+  const hasEditorContent = !!scannedData || Object.keys(disc).length > 0
   const queueTotal = processedNum + outstandingNum + scanningNum
 
   const uploadFiles = useCallback(
@@ -336,6 +383,7 @@ export function DiscEditor({
 
               // Add to scanning queue
               queue.addFiles([{ f: file, fName: file.name }])
+              resetCaptureCycle()
             }
           }, 'image/png')
 
@@ -350,7 +398,7 @@ export function DiscEditor({
         console.error('Failed to capture screenshot:', error)
       }
     },
-    [queue]
+    [queue, resetCaptureCycle]
   )
 
   const stopScreenCapture = useCallback(() => {
@@ -359,11 +407,50 @@ export function DiscEditor({
       setCaptureInterval(null)
     }
 
+    if (captureProgressRafRef.current !== null) {
+      cancelAnimationFrame(captureProgressRafRef.current)
+      captureProgressRafRef.current = null
+    }
+
     if (captureStream) {
       captureStream.getTracks().forEach((track) => track.stop())
       setCaptureStream(null)
     }
+
+    setCaptureProgress(0)
   }, [captureInterval, captureStream])
+
+  useEffect(() => {
+    if (!isCapturing) return
+
+    const tick = () => {
+      const {
+        processedNum: p,
+        outstandingNum: o,
+        scanningNum: s,
+      } = scanningDataRef.current
+      const idle = !p && !o && !s && !scannedDataRef.current
+
+      if (idle) {
+        const elapsed = Date.now() - captureCycleStartRef.current
+        setCaptureProgress(Math.min(100, (elapsed / CAPTURE_INTERVAL_MS) * 100))
+      } else {
+        setCaptureProgress(0)
+        captureCycleStartRef.current = Date.now()
+      }
+
+      captureProgressRafRef.current = requestAnimationFrame(tick)
+    }
+
+    captureProgressRafRef.current = requestAnimationFrame(tick)
+
+    return () => {
+      if (captureProgressRafRef.current !== null) {
+        cancelAnimationFrame(captureProgressRafRef.current)
+        captureProgressRafRef.current = null
+      }
+    }
+  }, [isCapturing])
 
   const startScreenCapture = async () => {
     try {
@@ -382,12 +469,18 @@ export function DiscEditor({
 
       setCaptureStream(stream)
       onShow()
+      resetCaptureCycle()
 
       // Set up interval to capture screenshots every 5 second
       const interval = setInterval(() => {
-        if (processedNum || outstandingNum || scanningNum || scannedData) return
+        const {
+          processedNum: p,
+          outstandingNum: o,
+          scanningNum: s,
+        } = scanningDataRef.current
+        if (p || o || s || scannedDataRef.current) return
         captureScreenshot(stream)
-      }, 5000)
+      }, CAPTURE_INTERVAL_MS)
 
       setCaptureInterval(interval)
 
@@ -426,17 +519,39 @@ export function DiscEditor({
     const { disc: scannedDisc, ...rest } = processed
     setScannedData(rest)
     setDisc((scannedDisc ?? {}) as Partial<ICachedDisc>)
+    if (!scannedDisc && rest.texts.length > 0) {
+      playScanErrorSound()
+    }
   }, [queue, processedNum, scannedData, setDisc])
 
-  // Auto-reset when duplicate is detected during capture mode
-  if (
-    isCapturing &&
-    prevEditType === 'duplicate' &&
-    disc &&
-    Object.keys(disc).length > 0
-  ) {
+  // During capture: skip duplicates, auto-add new discs, leave upgrades for manual confirm
+  useEffect(() => {
+    if (!isCapturing || !validatedDisc || !isValid) return
+    if (!disc || Object.keys(disc).length === 0) return
+
+    const { duplicated, upgraded } = database.discs.findDups(validatedDisc)
+
+    if (duplicated.length > 0) {
+      reset()
+      return
+    }
+    if (upgraded.length > 0) return
+
+    const addKey = scannedData?.fileName
+    if (!addKey || lastAutoAddKeyRef.current === addKey) return
+    lastAutoAddKeyRef.current = addKey
+
+    database.discs.new(validatedDisc)
     reset()
-  }
+  }, [
+    isCapturing,
+    validatedDisc,
+    isValid,
+    disc,
+    scannedData?.fileName,
+    database.discs,
+    reset,
+  ])
 
   useEffect(() => {
     const pasteFunc = (e: Event) => {
@@ -668,19 +783,57 @@ export function DiscEditor({
                           </Button>
                         </Grid> */}
                         </Grid>
-
+                        {isCapturing && (
+                          <Alert severity="info" sx={{ mt: 1 }}>
+                            <Typography sx={{ mb: 1 }}>
+                              Screen capture is active. Screenshots will be
+                              taken every 5 seconds when idle.
+                            </Typography>
+                            {isCaptureIdle ? (
+                              <>
+                                <LinearProgress
+                                  variant="determinate"
+                                  value={captureProgress}
+                                />
+                                <Typography
+                                  variant="caption"
+                                  sx={{ mt: 0.5, display: 'block' }}
+                                >
+                                  Next capture in{' '}
+                                  {Math.max(
+                                    0,
+                                    Math.ceil(
+                                      (CAPTURE_INTERVAL_MS *
+                                        (1 - captureProgress / 100)) /
+                                        1000
+                                    )
+                                  )}
+                                  s
+                                </Typography>
+                              </>
+                            ) : (
+                              <>
+                                <LinearProgress />
+                                <Typography
+                                  variant="caption"
+                                  sx={{ mt: 0.5, display: 'block' }}
+                                >
+                                  Waiting for current scan to finish…
+                                </Typography>
+                              </>
+                            )}
+                          </Alert>
+                        )}
                         {imageURL && (
                           <Box display="flex" justifyContent="center">
-                            <Box
-                              component="img"
-                              src={imageURL}
-                              width="100%"
-                              maxWidth={350}
-                              height="auto"
-                              maxHeight={1500} // so badly cropped images don't overflow
+                            <ScanImagePreview
+                              imageURL={imageURL}
+                              imageWidth={imageWidth ?? 1}
+                              imageHeight={imageHeight ?? 1}
+                              ocrLines={ocrLines ?? []}
                               alt={
                                 fileName ||
-                                'Screenshot to parse for artifact values'
+                                'Screenshot to parse for disc values'
                               }
                             />
                           </Box>
@@ -694,12 +847,7 @@ export function DiscEditor({
                             }
                           />
                         )}
-                        {isCapturing && (
-                          <Alert severity="info" sx={{ mt: 1 }}>
-                            Screen capture is active. Screenshots will be taken
-                            every 5 seconds.
-                          </Alert>
-                        )}
+
                         {!!queueTotal && (
                           <CardThemed sx={{ pl: 2 }}>
                             <Box display="flex" alignItems="center">
@@ -857,7 +1005,7 @@ export function DiscEditor({
               {allowEmpty && (
                 <Button
                   startIcon={<ReplayIcon />}
-                  disabled={!disc}
+                  disabled={!hasEditorContent}
                   onClick={() => {
                     canClearDisc() && reset()
                   }}

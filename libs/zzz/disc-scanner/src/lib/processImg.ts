@@ -2,7 +2,6 @@ import {
   crop,
   darkerColor,
   drawHistogram,
-  drawline,
   fileToURL,
   findHistogramRange,
   histogramContAnalysis,
@@ -12,12 +11,13 @@ import {
   thresholdFilter,
   urlToImageData,
 } from '@genshin-optimizer/common/img-util'
-import { levenshteinDistance } from '@genshin-optimizer/common/util'
+import type { Color } from '@genshin-optimizer/common/img-util'
+import { clamp, levenshteinDistance } from '@genshin-optimizer/common/util'
 import type { DiscSlotKey } from '@genshin-optimizer/zzz/consts'
 import { discSlotToMainStatKeys } from '@genshin-optimizer/zzz/consts'
 import type { IDisc } from '@genshin-optimizer/zzz/zood'
 import type { ReactNode } from 'react'
-import { blackColor, greyBorderColor } from './consts'
+import { cardFillColor, greyBorderColor } from './consts'
 import { statMapEngMap } from './enStringMap'
 import {
   parseLvlRarity,
@@ -27,9 +27,28 @@ import {
   parseSubstats,
 } from './parse'
 
+export type OcrBox = {
+  x: number
+  y: number
+  width: number
+  height: number
+}
+
+export type OcrWordBox = OcrBox & {
+  text: string
+}
+
+export type OcrTextLine = OcrBox & {
+  text: string
+  words: OcrWordBox[]
+}
+
 export type Processed = {
   fileName: string
   imageURL: string
+  imageWidth: number
+  imageHeight: number
+  ocrLines: OcrTextLine[]
   disc?: IDisc
   texts: ReactNode[]
   debugImgs?: Record<string, string> | undefined
@@ -49,10 +68,10 @@ export function zzzPreprocessImage(pixelData: ImageData) {
 
 export async function processEntry(
   entry: Outstanding,
-  textsFromImage: (
+  linesFromImage: (
     imageData: ImageData,
     options?: object | undefined
-  ) => Promise<string[]>,
+  ) => Promise<OcrTextLine[]>,
   debug = false
 ): Promise<Processed> {
   const { f, fName } = entry
@@ -65,6 +84,9 @@ export async function processEntry(
   const retProcessed: Processed = {
     fileName: fName,
     imageURL: imageDataToCanvas(discCardImageData).toDataURL(),
+    imageWidth: discCardImageData.width,
+    imageHeight: discCardImageData.height,
+    ocrLines: [],
     texts: [],
     debugImgs,
   }
@@ -75,7 +97,9 @@ export async function processEntry(
     debugImgs['bwHeader'] = imageDataToCanvas(bwHeader).toDataURL()
   }
 
-  const whiteTexts = (await textsFromImage(bwHeader)).map((t) => t.trim())
+  const ocrLines = await linesFromImage(bwHeader)
+  retProcessed.ocrLines = ocrLines
+  const whiteTexts = ocrLines.map((line) => line.text)
   const mainStatTextIndex = whiteTexts.findIndex(
     (t) => levenshteinDistance(t.toLowerCase(), 'main stat') < 2
   )
@@ -167,6 +191,213 @@ export async function processEntry(
   retProcessed.disc = disc
   return retProcessed
 }
+function greyBorderHistogram(imageData: ImageData, horizontal: boolean) {
+  // Row scan: ignore top nav + bottom chrome. Column scan: ignore far-left disc list.
+  const range = horizontal ? [0.12, 0.98] : [0.07, 0.93]
+  return histogramContAnalysis(
+    imageData,
+    darkerColor(greyBorderColor, 20),
+    lighterColor(greyBorderColor, 20),
+    horizontal,
+    range
+  )
+}
+
+function drawCropMark(
+  canvas: HTMLCanvasElement,
+  pos: number,
+  color: Color,
+  horizontal: boolean,
+  thickness = 3
+) {
+  const ctx = canvas.getContext('2d')!
+  ctx.fillStyle = `rgba(${color.r},${color.g},${color.b},${
+    color.a ? color.a / 255 : 1
+  })`
+  const half = Math.floor(thickness / 2)
+  if (horizontal) {
+    ctx.fillRect(0, pos - half, canvas.width, thickness)
+  } else {
+    ctx.fillRect(pos - half, 0, thickness, canvas.height)
+  }
+  return canvas
+}
+
+function cardFillHistogram(imageData: ImageData, horizontal: boolean) {
+  return histogramContAnalysis(
+    imageData,
+    darkerColor(cardFillColor, 12),
+    lighterColor(cardFillColor, 18),
+    horizontal
+  )
+}
+
+/** Rows where the longest grey run spans most of the width (top/bottom card border). */
+function cardTopBottomBorderRowHistogram(imageData: ImageData) {
+  const { width, height } = imageData
+  const raw = greyBorderHistogram(imageData, false)
+  const minRun = Math.floor(width * 0.22)
+  const y0 = Math.floor(height * 0.07)
+  const y1 = Math.floor(height * 0.93)
+  return raw.map((v, i) => (i >= y0 && i <= y1 && v >= minRun ? v : 0))
+}
+
+/** Columns where the longest grey run spans most of the height (left/right card border). */
+function cardLeftRightBorderColumnHistogram(imageData: ImageData) {
+  const { width, height } = imageData
+  const raw = greyBorderHistogram(imageData, true)
+  const minRun = Math.floor(height * 0.22)
+  const x0 = Math.floor(width * 0.12)
+  const x1 = Math.floor(width * 0.98)
+  return raw.map((v, i) => (i >= x0 && i <= x1 && v >= minRun ? v : 0))
+}
+
+/**
+ * Card borders are two strong peaks (top/bottom or left/right), not one long plateau.
+ * findHistogramRange's first-to-last peak picks almost the full axis when many rows qualify.
+ */
+function findBorderPeaks(
+  histogram: number[],
+  imageSpan: number,
+  startBand: [number, number],
+  endBand: [number, number],
+  minFraction = 0.12
+) {
+  const [a0, a1] = startBand
+  const [b0, b1] = endBand
+  const minSpan = Math.max(48, imageSpan * minFraction)
+  const max = Math.max(...histogram)
+  if (max <= 0) return null
+  const minScore = max * 0.35
+
+  let start = a0
+  let startScore = 0
+  for (let i = a0; i < a1; i++) {
+    if (histogram[i] > startScore) {
+      startScore = histogram[i]
+      start = i
+    }
+  }
+
+  let end = b0
+  let endScore = 0
+  for (let i = b0; i < b1; i++) {
+    if (histogram[i] > endScore) {
+      endScore = histogram[i]
+      end = i
+    }
+  }
+
+  if (startScore < minScore || endScore < minScore) return null
+  if (end - start < minSpan) return null
+  return [start, end] as const
+}
+
+function findVerticalCardBounds(imageData: ImageData) {
+  const { height } = imageData
+  const histogram = cardTopBottomBorderRowHistogram(imageData)
+  return findBorderPeaks(
+    histogram,
+    height,
+    [Math.floor(height * 0.07), Math.floor(height * 0.42)],
+    [Math.floor(height * 0.58), Math.floor(height * 0.93)]
+  )
+}
+
+function findHorizontalCardBounds(imageData: ImageData) {
+  const { width } = imageData
+  const histogram = cardLeftRightBorderColumnHistogram(imageData)
+  return findBorderPeaks(
+    histogram,
+    width,
+    [Math.floor(width * 0.12), Math.floor(width * 0.52)],
+    [Math.floor(width * 0.48), Math.floor(width * 0.98)]
+  )
+}
+
+function findCardSpan(
+  histogram: number[],
+  imageSpan: number,
+  minFraction = 0.12
+) {
+  const [a, b] = findHistogramRange(histogram, 0.3, 4)
+  const minSpan = Math.max(48, imageSpan * minFraction)
+  if (b - a >= minSpan) return [a, b] as const
+  return null
+}
+
+function cropInnerDiscCard(
+  imageData: ImageData,
+  debugImgs?: Record<string, string>
+) {
+  const { width, height } = imageData
+  const sourceCanvas = imageDataToCanvas(imageData)
+
+  // Detect all edges on the panel image, then crop once (matches debug histogram lines)
+  let top = 0
+  let bottom = height
+  const verticalSpan = findVerticalCardBounds(imageData)
+  if (verticalSpan) [top, bottom] = verticalSpan
+
+  let left = 0
+  let right = width
+  const horizontalGrey = findHorizontalCardBounds(imageData)
+  if (horizontalGrey) {
+    left = horizontalGrey[0]
+    right = horizontalGrey[1]
+  } else {
+    const horizontalFill = findCardSpan(
+      cardFillHistogram(imageData, true),
+      width,
+      0.2
+    )
+    if (horizontalFill) [left, right] = horizontalFill
+  }
+
+  if (debugImgs) {
+    const vertCanvas = imageDataToCanvas(imageData)
+    drawHistogram(
+      vertCanvas,
+      cardTopBottomBorderRowHistogram(imageData),
+      { r: 255, g: 0, b: 0, a: 100 },
+      false
+    )
+    drawCropMark(vertCanvas, top, { r: 0, g: 255, b: 0, a: 220 }, true)
+    drawCropMark(vertCanvas, bottom, { r: 0, g: 128, b: 255, a: 220 }, true)
+    debugImgs['innerCard vertical'] = vertCanvas.toDataURL()
+
+    const horiCanvas = imageDataToCanvas(imageData)
+    drawHistogram(horiCanvas, cardLeftRightBorderColumnHistogram(imageData), {
+      r: 255,
+      g: 0,
+      b: 0,
+      a: 100,
+    })
+    drawCropMark(horiCanvas, left, { r: 0, g: 255, b: 0, a: 220 }, false)
+    drawCropMark(horiCanvas, right, { r: 0, g: 128, b: 255, a: 220 }, false)
+    debugImgs['innerCard horizontal'] = horiCanvas.toDataURL()
+  }
+
+  const inset = 3
+  left = clamp(left + inset, 0, width - 1)
+  right = clamp(right - inset, left + 1, width)
+  top = clamp(top + inset, 0, height - 1)
+  bottom = clamp(bottom - inset, top + 1, height)
+
+  const cropped = crop(sourceCanvas, {
+    x1: left,
+    x2: right,
+    y1: top,
+    y2: bottom,
+  })
+
+  if (debugImgs) {
+    debugImgs['innerCard cropped'] = imageDataToCanvas(cropped).toDataURL()
+  }
+
+  return cropped
+}
+
 function cropDiscCard(
   imageData: ImageData,
   debugImgs?: Record<string, string>
@@ -184,78 +415,18 @@ function cropDiscCard(
     const sourceX = Math.floor((imageData.width * 2) / 3) // Start from 2/3 of the width
     const sourceWidth = Math.floor(imageData.width / 3) // Take only 1/3 of the width
 
-    // Use the existing crop function
     processedImageData = crop(imageDataToCanvas(imageData), {
       x1: sourceX,
       x2: sourceX + sourceWidth,
       y1: 0,
       y2: imageData.height,
     })
+
+    if (debugImgs) {
+      debugImgs['panel crop'] =
+        imageDataToCanvas(processedImageData).toDataURL()
+    }
   }
 
-  const histogram = histogramContAnalysis(
-    processedImageData,
-    darkerColor(greyBorderColor, 20),
-    lighterColor(greyBorderColor, 20)
-  )
-
-  // look for the grey outline of the card.
-  // eslint-disable-next-line @typescript-eslint/no-extra-semi
-  let [a, b] = findHistogramRange(histogram, 0.3, 4)
-
-  if (b - a < 100) {
-    a = 0
-    b = processedImageData.width
-  }
-
-  const cropped = crop(imageDataToCanvas(processedImageData), { x1: a, x2: b })
-
-  if (debugImgs) {
-    const canvas = imageDataToCanvas(processedImageData)
-
-    drawHistogram(canvas, histogram, {
-      r: 255,
-      g: 0,
-      b: 0,
-      a: 100,
-    })
-    drawline(canvas, a, { r: 0, g: 255, b: 0, a: 150 })
-    drawline(canvas, b, { r: 0, g: 0, b: 255, a: 150 })
-
-    debugImgs['fullAnalysis'] = canvas.toDataURL()
-  }
-  const horihistogram = histogramContAnalysis(
-    cropped,
-    darkerColor(blackColor),
-    lighterColor(blackColor),
-    false
-  )
-
-  // look for the black line outside the card outline. This will likely be only a pixel wide
-  // eslint-disable-next-line @typescript-eslint/no-extra-semi
-  const [bot, top] = findHistogramRange(horihistogram, 0.9, 1)
-
-  const cropped2 = crop(imageDataToCanvas(cropped), { y1: bot, y2: top })
-
-  if (debugImgs) {
-    const canvas = imageDataToCanvas(cropped)
-
-    drawHistogram(
-      canvas,
-      horihistogram,
-      {
-        r: 255,
-        g: 0,
-        b: 0,
-        a: 100,
-      },
-      false
-    )
-    drawline(canvas, a, { r: 0, g: 255, b: 0, a: 150 }, false)
-    drawline(canvas, b, { r: 0, g: 0, b: 255, a: 150 }, false)
-
-    debugImgs['fullAnalysis horizontal'] = canvas.toDataURL()
-  }
-
-  return cropped2
+  return cropInnerDiscCard(processedImageData, debugImgs)
 }
