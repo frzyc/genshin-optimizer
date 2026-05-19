@@ -553,17 +553,9 @@ export class TeamDataManager extends DataManager<
       const bonusStats = [...frame.bonusStats]
       if (index === -1 && value !== null) {
         bonusStats.push({ tag, value, disabled })
-      } else if (
-        value === null &&
-        index >= 0 &&
-        index < bonusStats.length
-      ) {
+      } else if (value === null && index >= 0 && index < bonusStats.length) {
         bonusStats.splice(index, 1)
-      } else if (
-        value !== null &&
-        index >= 0 &&
-        index < bonusStats.length
-      ) {
+      } else if (value !== null && index >= 0 && index < bonusStats.length) {
         bonusStats[index].value = value
         bonusStats[index].tag = tag
         bonusStats[index].disabled = disabled
