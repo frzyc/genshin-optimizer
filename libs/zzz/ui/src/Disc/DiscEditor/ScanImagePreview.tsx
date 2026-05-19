@@ -18,12 +18,19 @@ export function ScanImagePreview({
   const wordStrokeWidth = Math.max(1, imageWidth / 700)
 
   return (
-    <Stack spacing={1} alignItems="center" width="100%">
+    <Stack
+      direction={{ xs: 'column', sm: 'row' }}
+      spacing={2}
+      alignItems={{ xs: 'center', sm: 'flex-start' }}
+      width="100%"
+    >
       <Box
         sx={{
           position: 'relative',
           width: '100%',
-          maxWidth: 350,
+          flex: { sm: '1 1 0' },
+          minWidth: 0,
+          maxWidth: { xs: 350, sm: 'none' },
           maxHeight: 1500,
           aspectRatio: `${imageWidth} / ${imageHeight}`,
         }}
@@ -85,14 +92,16 @@ export function ScanImagePreview({
         )}
       </Box>
       {ocrLines.length > 0 && (
-        <>
-          <Stack
-            direction="row"
-            flexWrap="wrap"
-            gap={1.5}
-            justifyContent="center"
-            sx={{ maxWidth: 350 }}
-          >
+        <Stack
+          spacing={1}
+          sx={{
+            width: '100%',
+            flex: { sm: '1 1 0' },
+            minWidth: 0,
+            maxWidth: { xs: 350, sm: 'none' },
+          }}
+        >
+          <Stack direction="row" flexWrap="wrap" gap={1.5}>
             <Typography variant="caption" color="text.secondary">
               <Box
                 component="span"
@@ -122,7 +131,7 @@ export function ScanImagePreview({
               Word
             </Typography>
           </Stack>
-          <Stack spacing={0.25} sx={{ maxWidth: 350, width: '100%' }}>
+          <Stack spacing={0.25} sx={{ width: '100%' }}>
             {ocrLines.map((line, index) => (
               <Typography
                 key={`${index}-${line.text}`}
@@ -134,7 +143,7 @@ export function ScanImagePreview({
               </Typography>
             ))}
           </Stack>
-        </>
+        </Stack>
       )}
     </Stack>
   )

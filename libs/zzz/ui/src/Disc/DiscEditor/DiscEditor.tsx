@@ -825,7 +825,7 @@ export function DiscEditor({
                           </Alert>
                         )}
                         {imageURL && (
-                          <Box display="flex" justifyContent="center">
+                          <Box width="100%">
                             <ScanImagePreview
                               imageURL={imageURL}
                               imageWidth={imageWidth ?? 1}
