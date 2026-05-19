@@ -42,13 +42,20 @@ export class ScanningQueue {
       this.outstanding.splice(0, numProcessing).map((p) => {
         const prom = processEntry(p, this.linesFromImage, this.debug)
         this.scanning.push(prom)
-        prom.then((procesResult) => {
-          const index = this.scanning.indexOf(prom)
-          if (index === -1) return // probably because the queue has been cleared.
-          this.scanning.splice(index, 1)
-          this.processed.push(procesResult)
-          this.processQueue()
-        })
+        prom
+          .then((procesResult) => {
+            const index = this.scanning.indexOf(prom)
+            if (index === -1) return // probably because the queue has been cleared.
+            this.scanning.splice(index, 1)
+            this.processed.push(procesResult)
+            this.processQueue()
+          })
+          .catch(() => {
+            const index = this.scanning.indexOf(prom)
+            if (index === -1) return
+            this.scanning.splice(index, 1)
+            this.processQueue()
+          })
       })
     this.callCB()
   }

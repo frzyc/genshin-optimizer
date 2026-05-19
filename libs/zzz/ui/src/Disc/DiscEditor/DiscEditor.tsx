@@ -223,20 +223,7 @@ export function DiscEditor({
     },
     [disc, setDisc]
   )
-  const onCloseModal = useCallback(
-    (e: MouseEvent) => {
-      if (
-        (disc.id || Object.keys(disc).length > 0) &&
-        !window.confirm(t('editor.clearPrompt') as string)
-      ) {
-        e?.preventDefault()
-        return
-      }
-      onClose()
-      reset()
-    },
-    [t, disc, onClose, reset]
-  )
+
   const isValid = !errors?.length
   const theme = useTheme()
   const grmd = useMediaQuery(theme.breakpoints.up('md'))
@@ -419,6 +406,22 @@ export function DiscEditor({
 
     setCaptureProgress(0)
   }, [captureInterval, captureStream])
+
+  const onCloseModal = useCallback(
+    (e: MouseEvent) => {
+      if (
+        (disc.id || Object.keys(disc).length > 0) &&
+        !window.confirm(t('editor.clearPrompt') as string)
+      ) {
+        e?.preventDefault()
+        return
+      }
+      stopScreenCapture()
+      onClose()
+      reset()
+    },
+    [t, disc, onClose, reset, stopScreenCapture]
+  )
 
   useEffect(() => {
     if (!isCapturing) return
