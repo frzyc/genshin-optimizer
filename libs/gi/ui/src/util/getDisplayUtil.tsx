@@ -60,6 +60,8 @@ export function getDisplayHeader(
     return { title: 'Received Team Buffs', icon: <GroupsIcon /> }
   else if (sectionKey === 'reaction')
     return { title: 'Transformative Reactions' }
+  else if (sectionKey === 'nicole')
+    return { title: "Nicole's Astral Projections" }
   else if (sectionKey === 'moonsign')
     return {
       title: 'Moonsign: Ascendant Gleam',

@@ -36,6 +36,7 @@ import {
   tally,
 } from '@genshin-optimizer/gi/wr'
 import { cond, nonStackBuff } from '../SheetUtil'
+import { projections } from './nicoleProjection'
 
 const commonBasic = objKeyMap(
   ['hp', 'atk', 'def', 'eleMas', 'enerRech_', 'critRate_', 'critDMG_', 'heal_'],
@@ -369,6 +370,7 @@ export function dataObjForCharacterSheet(
     data.teamBuff!.tally![element] = constant(1)
     data.display!['basic'][`${element}_dmg_`] = input.total[`${element}_dmg_`]
     data.display!['reaction'] = reactions[element]
+    data.display!['nicole'] = projections
 
     // Moonsign buff handling for non-moonsign chars
     if (additional[0]?.isMoonsign === undefined) {
