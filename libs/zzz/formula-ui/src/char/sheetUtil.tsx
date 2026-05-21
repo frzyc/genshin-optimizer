@@ -1,4 +1,4 @@
-import { ImgIcon } from '@genshin-optimizer/common/ui'
+import { ColorText, ImgIcon } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { IFormulaData } from '@genshin-optimizer/game-opt/engine'
 import type {
@@ -14,6 +14,7 @@ import { getCharStat, mappedStats } from '@genshin-optimizer/zzz/stats'
 import { TagDisplay } from '../components'
 import { st, trans } from '../util'
 import type { CharUISheet } from './consts'
+import { getVariant } from './util'
 
 type AddlDocumentsPerSkillAbility = Partial<
   Record<SkillKey, Partial<Record<string, Document[]>>>
@@ -65,6 +66,21 @@ export function fieldForBuff(buff: IFormulaData<Tag>) {
   }
 }
 
+function fieldForSkillFormula(
+  charKey: CharacterKey,
+  skill: SkillKey,
+  formula: IFormulaData<Tag>
+) {
+  return {
+    title: (
+      <ColorText color={getVariant(formula.tag)}>
+        {abilityFormulaNameToTranslated(charKey, skill, formula.name)}
+      </ColorText>
+    ),
+    fieldRef: formula.tag,
+  }
+}
+
 function createSkillsSheets(
   charKey: CharacterKey,
   addlDocumentsPerSkillAbility?: AddlDocumentsPerSkillAbility
@@ -90,10 +106,7 @@ function createSkillsSheets(
           type: 'fields',
           fields: Object.values(form)
             .filter((f: any) => f.name.split('_')[0] === ability)
-            .map((f: any) => ({
-              title: abilityFormulaNameToTranslated(charKey, skill, f.name), // TODO: Translate
-              fieldRef: f.tag,
-            })),
+            .map((f: any) => fieldForSkillFormula(charKey, skill, f)),
         },
         ...(addlDocumentsPerSkillAbility?.[skill]?.[ability] ?? []),
       ]),
@@ -108,7 +121,7 @@ function abilityFormulaNameToTranslated(
 ) {
   const [ability, hitNumber, type] = abilityFormulaName.split('_')
   return st(type, {
-    val: `$t(char_${charKey}_gen:${skill}.${ability}.params.${hitNumber.replace(/\D/g, '')})`, // Only grab number for special overrides
+    val: `$t(char_${charKey}_gen:${skill}.${ability}.params.${hitNumber.replace(/\D/g, '')})`,
   })
 }
 
