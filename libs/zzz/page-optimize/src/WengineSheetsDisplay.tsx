@@ -1,6 +1,8 @@
+import { stableArr } from '@genshin-optimizer/common/util'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import { isWengineKey } from '@genshin-optimizer/zzz/consts'
-import { useCharOpt, useCharacterContext } from '@genshin-optimizer/zzz/db-ui'
+import type { TeamConditional } from '@genshin-optimizer/zzz/db'
+import { useCharacterContext, useTeam } from '@genshin-optimizer/zzz/db-ui'
 import { WengineSheetDisplay } from '@genshin-optimizer/zzz/formula-ui'
 import { WengineAutocomplete } from '@genshin-optimizer/zzz/ui'
 import { Box, Grid, Stack } from '@mui/material'
@@ -8,7 +10,9 @@ import { useMemo, useState } from 'react'
 
 export function WengineSheetsDisplay() {
   const { key: characterKey } = useCharacterContext()!
-  const { conditionals } = useCharOpt(characterKey)!
+  const team = useTeam(characterKey)
+  const conditionals =
+    team?.frames?.[0]?.conditionals ?? stableArr<TeamConditional>()
   const [wkey, setWkey] = useState<WengineKey | ''>('')
   const wList = useMemo(() => {
     const sets = conditionals.map((c) => c.sheet).filter(isWengineKey)

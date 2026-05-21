@@ -1,9 +1,9 @@
-import type { CharOpt } from '@genshin-optimizer/zzz/db'
+import type { TargetTag } from '@genshin-optimizer/zzz/db'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 
 export function isOptTargetTag(
   tag: Tag,
-  target: CharOpt['target'] | undefined
+  target: TargetTag | undefined
 ): boolean {
   if (!target) return false
   return (

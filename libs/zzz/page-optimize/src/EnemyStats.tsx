@@ -9,11 +9,15 @@ import type { Document } from '@genshin-optimizer/game-opt/sheet-ui'
 import { DocumentDisplay } from '@genshin-optimizer/game-opt/sheet-ui'
 import { allAttributeKeys } from '@genshin-optimizer/zzz/consts'
 import type { EnemyStatKey, EnemyStatsTag } from '@genshin-optimizer/zzz/db'
-import { enemyStatKeys, newEnemyStatTag } from '@genshin-optimizer/zzz/db'
 import {
-  useCharOpt,
+  enemyStatKeys,
+  getTeamFrame0,
+  newEnemyStatTag,
+} from '@genshin-optimizer/zzz/db'
+import {
   useCharacterContext,
   useDatabaseContext,
+  useTeam,
 } from '@genshin-optimizer/zzz/db-ui'
 import {
   type Attribute,
@@ -37,16 +41,29 @@ import { useCallback } from 'react'
 export function EnemyStatsSection() {
   const { database } = useDatabaseContext()
   const { key: characterKey } = useCharacterContext()!
-  const { enemyStats, enemyLvl, enemyDef, enemyStunMultiplier } =
-    useCharOpt(characterKey)!
+  const team = useTeam(characterKey)!
+  const { enemyLvl, enemyDef, enemyStunMultiplier } = team
+  const { enemyStats } = getTeamFrame0(team)
+  const frameIndex = 0
 
   const setStat = useCallback(
     (tag: EnemyStatsTag, value: number | null, index?: number) =>
-      database.charOpts.setEnemyStat(characterKey, tag, value, index),
+      database.teams.setFrameEnemyStat(
+        characterKey,
+        frameIndex,
+        tag,
+        value,
+        index
+      ),
     [database, characterKey]
   )
   const newTarget = (q: EnemyStatKey) =>
-    database.charOpts.setEnemyStat(characterKey, newEnemyStatTag(q), 0)
+    database.teams.setFrameEnemyStat(
+      characterKey,
+      frameIndex,
+      newEnemyStatTag(q),
+      0
+    )
 
   return (
     <Stack spacing={1}>
@@ -55,20 +72,20 @@ export function EnemyStatsSection() {
           label="Enemy Lvl"
           value={enemyLvl}
           inputProps={{ min: 0, sx: { width: '4em' } }}
-          onChange={(v) => database.charOpts.set(characterKey, { enemyLvl: v })}
+          onChange={(v) => database.teams.set(characterKey, { enemyLvl: v })}
         />
         <NumberInputLazy
           label="Enemy DEF"
           value={enemyDef}
           inputProps={{ min: 0, sx: { width: '4em' } }}
-          onChange={(v) => database.charOpts.set(characterKey, { enemyDef: v })}
+          onChange={(v) => database.teams.set(characterKey, { enemyDef: v })}
         />
         <NumberInputLazy
           label="Enemy Stun Multiplier"
           value={enemyStunMultiplier}
           inputProps={{ min: 0, sx: { width: '8em' } }}
           onChange={(v) =>
-            database.charOpts.set(characterKey, { enemyStunMultiplier: v })
+            database.teams.set(characterKey, { enemyStunMultiplier: v })
           }
           InputProps={{
             endAdornment: <InputAdornment position="end">%</InputAdornment>,

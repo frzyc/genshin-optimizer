@@ -2,12 +2,13 @@ import { CardThemed, useScrollRef } from '@genshin-optimizer/common/ui'
 import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
 import { DebugListingsDisplay } from '@genshin-optimizer/game-opt/formula-ui'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
+import { getMainCharacterOptConfigId } from '@genshin-optimizer/zzz/db'
 import {
   OptConfigProvider,
-  useCharOpt,
   useCharacterContext,
   useDiscSets,
   useDiscs,
+  useTeam,
   useWengine,
 } from '@genshin-optimizer/zzz/db-ui'
 import { own } from '@genshin-optimizer/zzz/formula'
@@ -263,7 +264,8 @@ function OptimizeSection() {
 }
 function BuildsSection() {
   const { key: characterKey } = useCharacterContext()!
-  const { optConfigId } = useCharOpt(characterKey)!
+  const team = useTeam(characterKey)!
+  const optConfigId = getMainCharacterOptConfigId(team)
   if (!optConfigId) return null
   return (
     <OptConfigProvider optConfigId={optConfigId}>

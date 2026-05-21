@@ -1,4 +1,3 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { CardThemed, ImgIcon } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import {
@@ -9,9 +8,9 @@ import {
 
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import {
-  useCharOpt,
   useCharacterContext,
   useDatabaseContext,
+  useTeam,
 } from '@genshin-optimizer/zzz/db-ui'
 import { allStats, getCharStat } from '@genshin-optimizer/zzz/stats'
 import { ElementIcon } from '@genshin-optimizer/zzz/svgicons'
@@ -24,17 +23,18 @@ import { Button, Grid, Stack } from '@mui/material'
 import { Box } from '@mui/system'
 import { Suspense, useCallback, useState } from 'react'
 
+const EXTRA_TEAMMATE_SLOTS = [1, 2] as const
+
 export function TeammatesSection() {
   const { database } = useDatabaseContext()
   const { key: characterKey } = useCharacterContext()!
-  const { teammates } = useCharOpt(characterKey)!
-  const [show, onShow, onHide] = useBoolState()
-  const [teammateIndex, setTeammateIndex] = useState<number | undefined>()
+  const team = useTeam(characterKey)!
+  const [pickingSlot, setPickingSlot] = useState<1 | 2>()
   const setTeammate = useCallback(
-    (teammateKey: CharacterKey | null, index?: number) => {
-      database.charOpts.setTeammate(characterKey, teammateKey, index)
+    (teammateKey: CharacterKey | null, slot: 1 | 2) => {
+      database.teams.setTeammate(characterKey, teammateKey, slot - 1)
     },
-    [characterKey, database]
+    [characterKey, database.teams]
   )
   const icons = useCallback(
     (charKey: CharacterKey | undefined) =>
@@ -52,60 +52,65 @@ export function TeammatesSection() {
     <Grid container spacing={1} columns={{ xs: 1, md: 2 }}>
       <Suspense fallback={false}>
         <CharacterSingleSelectionModal
-          show={show}
-          onHide={onHide}
-          onSelect={(ck) => setTeammate(ck, teammateIndex)}
+          show={pickingSlot !== undefined}
+          onHide={() => setPickingSlot(undefined)}
+          onSelect={(ck) => {
+            if (pickingSlot) setTeammate(ck, pickingSlot)
+            setPickingSlot(undefined)
+          }}
           showNone
         />
       </Suspense>
-      {range(0, 1).map((i) => (
-        <Grid item xs={1} key={i}>
-          <Stack gap={1}>
-            <Button
-              fullWidth
-              color={
-                (!!teammates[i] && getCharStat(teammates[i]).attribute) ||
-                undefined
-              }
-              onClick={() => {
-                setTeammateIndex(i)
-                onShow()
-              }}
-            >
-              {(!!teammates[i] && (
-                <CharacterName characterKey={teammates[i]} />
-              )) ||
-                `Add ${i === 0 ? 'First' : 'Second'} Teammate`}
-            </Button>
-            {!!teammates[i] && (
-              <ZCard bgt="dark">
-                <Grid
-                  container
-                  sx={{ display: 'flex', padding: 0.5 }}
-                  columns={{ xs: 2, lg: 4 }}
-                  spacing={0.5}
-                >
-                  {range(0, 2).map((icon) => (
-                    <Grid item xs={1} key={icon} height="90px">
+      {EXTRA_TEAMMATE_SLOTS.map((slot) => {
+        const teammateKey = team.teammates[slot]?.characterKey
+        return (
+          <Grid item xs={1} key={slot}>
+            <Stack gap={1}>
+              <Button
+                fullWidth
+                color={
+                  (teammateKey && getCharStat(teammateKey).attribute) ||
+                  undefined
+                }
+                onClick={() => setPickingSlot(slot)}
+              >
+                {(teammateKey && (
+                  <CharacterName characterKey={teammateKey} />
+                )) ||
+                  `Add ${slot === 1 ? 'First' : 'Second'} Teammate`}
+              </Button>
+              {teammateKey && (
+                <ZCard bgt="dark">
+                  <Grid
+                    container
+                    sx={{ display: 'flex', padding: 0.5 }}
+                    columns={{ xs: 2, lg: 4 }}
+                    spacing={0.5}
+                  >
+                    {range(0, 2).map((icon) => (
+                      <Grid item xs={1} key={icon} height="90px">
+                        <TeammateIconCard>
+                          <ImgIcon size={5} src={icons(teammateKey)?.[icon]} />
+                        </TeammateIconCard>
+                      </Grid>
+                    ))}
+                    <Grid item xs={1}>
                       <TeammateIconCard>
-                        <ImgIcon size={5} src={icons(teammates[i])?.[icon]} />
+                        <ElementIcon
+                          ele={getCharStat(teammateKey)?.attribute}
+                          iconProps={{
+                            sx: { width: '2.5em', height: '2.5em' },
+                          }}
+                        />
                       </TeammateIconCard>
                     </Grid>
-                  ))}
-                  <Grid item xs={1}>
-                    <TeammateIconCard>
-                      <ElementIcon
-                        ele={getCharStat(teammates[i])?.attribute}
-                        iconProps={{ sx: { width: '2.5em', height: '2.5em' } }}
-                      />
-                    </TeammateIconCard>
                   </Grid>
-                </Grid>
-              </ZCard>
-            )}
-          </Stack>
-        </Grid>
-      ))}
+                </ZCard>
+              )}
+            </Stack>
+          </Grid>
+        )
+      })}
     </Grid>
   )
 }

@@ -7,7 +7,8 @@ import {
 } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { StatKey } from '@genshin-optimizer/zzz/consts'
 import { applyDamageTypeToTag } from '@genshin-optimizer/zzz/db'
-import { useCharOpt, useCharacterContext } from '@genshin-optimizer/zzz/db-ui'
+import { getTeamFrame0 } from '@genshin-optimizer/zzz/db'
+import { useCharacterContext, useTeam } from '@genshin-optimizer/zzz/db-ui'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { own } from '@genshin-optimizer/zzz/formula'
 import {
@@ -37,25 +38,26 @@ export function CharStatsDisplay() {
 function CharStatRow({ read }: { read: Read<Tag> }) {
   const { setRead } = useContext(DebugReadContext)
   const character = useCharacterContext()
-  const charOpt = useCharOpt(character?.key)
+  const team = useTeam(character?.key)
+  const optTarget = team ? getTeamFrame0(team).tag : undefined
 
   const mergedTag = useMemo(() => {
     if (
-      read.tag.sheet === charOpt?.target?.sheet &&
-      read.tag.name === charOpt?.target?.name
+      read.tag.sheet === optTarget?.sheet &&
+      read.tag.name === optTarget?.name
     )
       return applyDamageTypeToTag(
         read.tag,
-        charOpt?.target?.damageType1,
-        charOpt?.target?.damageType2
+        optTarget?.damageType1,
+        optTarget?.damageType2
       )
     return read.tag
   }, [
     read.tag,
-    charOpt?.target?.sheet,
-    charOpt?.target?.name,
-    charOpt?.target?.damageType1,
-    charOpt?.target?.damageType2,
+    optTarget?.sheet,
+    optTarget?.name,
+    optTarget?.damageType1,
+    optTarget?.damageType2,
   ])
 
   const calcRead = useMemo(() => read.withTag(mergedTag), [mergedTag, read])
