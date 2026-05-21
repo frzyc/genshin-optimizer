@@ -77,6 +77,7 @@ import Nilou from './Nilou'
 import Ningguang from './Ningguang'
 import Noelle from './Noelle'
 import Ororon from './Ororon'
+import Prune from './Prune'
 import Qiqi from './Qiqi'
 import RaidenShogun from './RaidenShogun'
 import Razor from './Razor'
@@ -201,6 +202,7 @@ const data = {
   Ningguang,
   Noelle,
   Ororon,
+  Prune,
   Qiqi,
   RaidenShogun,
   Razor,

@@ -3307,6 +3307,24 @@
       "constellation5": "UI_Talent_U_Nicole_02",
       "constellation6": "UI_Talent_S_Nicole_04"
     },
+    "Prune": {
+      "icon": "UI_AvatarIcon_Prune",
+      "iconSide": "UI_AvatarIcon_Side_Prune",
+      "banner": "UI_NameCardPic_Prune_P",
+      "bar": "UI_NameCardPic_Prune_Alpha",
+      "skill": "Skill_S_Prune_01",
+      "burst": "Skill_E_Prune_01_HD",
+      "passive1": "UI_Talent_S_Prune_05",
+      "passive2": "UI_Talent_S_Prune_06",
+      "passive3": "UI_Talent_S_Prune_08",
+      "lockedPassive": "UI_Talent_S_Prune_07",
+      "constellation1": "UI_Talent_S_Prune_01",
+      "constellation2": "UI_Talent_S_Prune_02",
+      "constellation3": "UI_Talent_U_Prune_01",
+      "constellation4": "UI_Talent_S_Prune_03",
+      "constellation5": "UI_Talent_U_Prune_02",
+      "constellation6": "UI_Talent_S_Prune_04"
+    },
     "TravelerAnemo": {
       "skill": "Skill_S_PlayerWind_01",
       "burst": "Skill_E_PlayerWind_01_HD",
