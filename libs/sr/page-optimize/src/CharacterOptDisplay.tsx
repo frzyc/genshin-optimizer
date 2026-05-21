@@ -3,6 +3,7 @@ import { DebugListingsDisplay } from '@genshin-optimizer/game-opt/formula-ui'
 import { type CharacterKey } from '@genshin-optimizer/sr/consts'
 import { useCharacterContext } from '@genshin-optimizer/sr/db-ui'
 import { own } from '@genshin-optimizer/sr/formula'
+import { CharStatsDisplay } from '@genshin-optimizer/sr/formula-ui'
 import {
   CharacterCard,
   CharacterEditor,
@@ -19,7 +20,6 @@ import {
 import type { ReactNode } from 'react'
 import { createContext, useContext, useMemo, useState } from 'react'
 import { BonusStatsSection } from './BonusStats'
-import { CharStatsDisplay } from './CharStatsDisplay'
 import { LightConeSheetsDisplay } from './LightConeSheetsDisplay'
 import Optimize from './Optimize'
 import { RelicSheetsDisplay } from './RelicSheetsDisplay'

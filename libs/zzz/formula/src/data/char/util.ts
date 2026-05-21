@@ -379,7 +379,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     },
     {} as Partial<Record<CoreStatKey, number[]>>
   )
-  const miyabiCheck = data_gen.id === '1091'
+  const isMiyabi = data_gen.id === '1091'
 
   return [
     ownBuff.char.attribute.add(data_gen.attribute),
@@ -447,32 +447,45 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
       )
     ),
     ...customAnomalyDmg(
-      `disorderDmgInst_${miyabiCheck ? 'frost' : data_gen.attribute}`,
+      `disorderDmgInst_${isMiyabi ? 'frost' : data_gen.attribute}`,
       {
-        attribute: miyabiCheck ? 'ice' : data_gen.attribute,
+        attribute: data_gen.attribute,
         damageType1: 'disorder',
       },
       prod(
         sum(
-          percent(miyabiCheck ? 6 : 4.5),
+          percent(isMiyabi ? 6 : 4.5),
           own.final.addl_disorder_,
           prod(
             max(
               0,
               sum(
-                constant(miyabiCheck ? 20 : 10),
+                constant(isMiyabi ? 20 : 10),
                 prod(constant(-1), anomTimePassed)
               )
             ),
             percent(
-              disorderTimeMultipliers[
-                miyabiCheck ? 'frost' : data_gen.attribute
-              ]
+              disorderTimeMultipliers[isMiyabi ? 'frost' : data_gen.attribute]
             )
           )
         ),
         own.final.atk
       )
+    ),
+    // Abloom DMG
+    ...customAnomalyDmg(
+      'abloomDmgInst',
+      {
+        attribute: data_gen.attribute,
+        damageType1: 'anomaly',
+        damageType2: 'abloom',
+      },
+      prod(
+        percent(anomalyMultipliers[data_gen.attribute]),
+        own.final.atk,
+        cmpEq(own.dmg.anom_mv_mult_, 0, percent(1), own.dmg.anom_mv_mult_)
+      ),
+      { cond: cmpEq(own.dmg.anom_mv_mult_, 0, '', 'infer') }
     ),
     ...customAnomalyBuildup(
       'anomalyBuildupInst',

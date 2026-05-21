@@ -8,7 +8,7 @@ function sheet(weaponKey: WeaponKey) {
     : `weapon_${weaponKey}_gen`
 }
 export function WeaponName({ weaponKey }: { weaponKey: WeaponKey }) {
-  return <Translate ns={sheet(weaponKey)} key18={`name`} />
+  return <Translate ns="weaponNames_gen" key18={weaponKey} />
 }
 export function WeaponDesc({ weaponKey }: { weaponKey: WeaponKey }) {
   return <Translate ns={sheet(weaponKey)} key18={`description`} />

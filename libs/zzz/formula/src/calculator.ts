@@ -6,7 +6,11 @@ import type {
 import { Calculator as Base } from '@genshin-optimizer/game-opt/engine'
 import { createFilterDebug } from '@genshin-optimizer/game-opt/formula'
 import { DebugCalculator } from '@genshin-optimizer/pando/engine'
-import { allDiscSetKeys, allWengineKeys } from '@genshin-optimizer/zzz/consts'
+import {
+  allAttributeKeys,
+  allDiscSetKeys,
+  allWengineKeys,
+} from '@genshin-optimizer/zzz/consts'
 import type { Read, Tag } from './data/util'
 import { enemyTag, ownTag, tagStr } from './data/util'
 
@@ -48,8 +52,11 @@ export class Calculator extends Base<Tag, never> {
             'standardDmgInst',
             'sheerDmgInst',
             'anomalyDmgInst',
+            'abloomDmgInst',
             'anomalyBuildupInst',
             'dazeInst',
+            ...allAttributeKeys.map((k) => `disorderDmgInst_${k}`),
+            'disorderDmgInst_frost',
           ].includes(r.tag.name ?? '')
       )
   }

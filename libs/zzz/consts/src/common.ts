@@ -132,7 +132,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   anomBuildup_: 'Anomaly Buildup',
   anom_crit_: 'Anomaly CRIT Rate',
   anom_crit_dmg_: 'Anomaly CRIT DMG',
-  anom_mv_mult_: 'Anomaly Damage Multiplier Increase',
+  anom_mv_mult_: 'Anomaly Damage Multiplier',
   addl_disorder_: 'Additional Disorder Multiplier',
   anom_base_: 'Anomaly Base DMG Increase',
   anom_flat_dmg: 'Anomaly Flat DMG Bonus',

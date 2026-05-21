@@ -39,6 +39,20 @@ export const formulas = {
       name: 'disorderDmgInst_fire',
     },
   },
+  abloomDmgInst: {
+    sheet: 'Banyue',
+    name: 'abloomDmgInst',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'Banyue',
+      attribute: 'fire',
+      damageType1: 'anomaly',
+      damageType2: 'abloom',
+      name: 'abloomDmgInst',
+    },
+  },
   anomalyBuildupInst: {
     sheet: 'Banyue',
     name: 'anomalyBuildupInst',
@@ -1237,6 +1251,19 @@ export const formulas = {
       damageType1: 'assistFollowUp',
       skillType1: 'assistSkill',
       name: 'AssistFollowUpPierceHeavens_0_anomBuildup',
+    },
+  },
+  m6_dmg: {
+    sheet: 'Banyue',
+    name: 'm6_dmg',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'sheerDmg',
+      sheet: 'Banyue',
+      attribute: 'fire',
+      damageType1: 'elemental',
+      name: 'm6_dmg',
     },
   },
 } as const

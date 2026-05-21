@@ -34,4 +34,16 @@ export const buffs = {
       name: 'cond_anomaly_dmg_',
     },
   },
+  cond_disorder_dmg_: {
+    sheet: 'AngelInTheShell',
+    name: 'cond_disorder_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'buff_',
+      sheet: 'AngelInTheShell',
+      damageType1: 'disorder',
+      name: 'cond_disorder_dmg_',
+    },
+  },
 } as const

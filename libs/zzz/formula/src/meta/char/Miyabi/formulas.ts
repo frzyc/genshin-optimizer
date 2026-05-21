@@ -38,6 +38,20 @@ export const formulas = {
       name: 'disorderDmgInst_frost',
     },
   },
+  abloomDmgInst: {
+    sheet: 'Miyabi',
+    name: 'abloomDmgInst',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'Miyabi',
+      attribute: 'ice',
+      damageType1: 'anomaly',
+      damageType2: 'abloom',
+      name: 'abloomDmgInst',
+    },
+  },
   anomalyBuildupInst: {
     sheet: 'Miyabi',
     name: 'anomalyBuildupInst',

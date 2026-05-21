@@ -4,17 +4,16 @@ import {
   ColorText,
 } from '@genshin-optimizer/common/ui'
 import { getUnitStr, valueString } from '@genshin-optimizer/common/util'
-import type { Tag } from '@genshin-optimizer/game-opt/engine'
-import { Read } from '@genshin-optimizer/game-opt/engine'
+import type { CalcMeta, Read, Tag } from '@genshin-optimizer/game-opt/engine'
 import {
   CalcContext,
   DebugReadContext,
   TagContext,
 } from '@genshin-optimizer/game-opt/formula-ui'
+import type { CalcResult } from '@genshin-optimizer/pando/engine'
 import { read } from '@genshin-optimizer/pando/engine'
-import GroupsIcon from '@mui/icons-material/Groups'
 import HelpIcon from '@mui/icons-material/Help'
-import type { ListProps, Palette, PaletteColor } from '@mui/material'
+import type { ListProps, PaletteColor, SxProps, Theme } from '@mui/material'
 import {
   Box,
   Divider,
@@ -30,6 +29,7 @@ import {
   FormulaTextCacheContext,
   FormulaTextContext,
   FullTagDisplayContext,
+  TagRowSxContext,
 } from '../context'
 import type { Field, TagField, TextField } from '../types'
 
@@ -104,6 +104,11 @@ export function TagFieldDisplay({
   component = ListItem,
   emphasize,
   showZero = process.env['NODE_ENV'] === 'development',
+  calcRead: calcReadOverride,
+  rowSx,
+  onClickFormula,
+  onMouseEnter,
+  onMouseLeave,
 }: {
   field: TagField
   component?: React.ElementType
@@ -111,18 +116,34 @@ export function TagFieldDisplay({
 
   // Show field, even if the value is zero
   showZero?: boolean
+  /** Use when `listFormulas` returns a full `Read`. */
+  calcRead?: Read
+  rowSx?: SxProps<Theme>
+  /** Override help-icon click; pass a no-op to disable debug read. */
+  onClickFormula?: () => void
+  onMouseEnter?: () => void
+  onMouseLeave?: () => void
 }) {
   const calc = useContext(CalcContext)
   const contextTag = useContext(TagContext)
+  const getTagRowSx = useContext(TagRowSxContext)
   const { setRead } = useContext(DebugReadContext)
-  const calcRead = read(field.fieldRef) // we assume default accumulator
+  const contextRowSx = getTagRowSx?.(field.fieldRef)
+  const fieldRead = useMemo(
+    () => calcReadOverride ?? read(field.fieldRef),
+    [calcReadOverride, field.fieldRef]
+  )
 
-  const onClick = useCallback(() => setRead(calcRead), [calcRead, setRead])
+  const defaultHelpClick = useCallback(
+    () => setRead(fieldRead),
+    [fieldRead, setRead]
+  )
+  const onClick = onClickFormula ?? defaultHelpClick
   // const compareCalc: null | Calculator = null //TODO: compare calcs
   if (!calc) return null
   // if (!calc && !compareCalc) return null
 
-  const valueCalcRes = calc.withTag(contextTag).compute(calcRead)
+  const valueCalcRes = calc.withTag(contextTag).compute(fieldRead)
   // const compareValueCalcRes: CalcResult<number, CalcMeta> | null = null
 
   // const { setFormulaData } = useContext(FormulaDataContext)
@@ -135,29 +156,24 @@ export function TagFieldDisplay({
   if (!showZero && !calcValue && !compareCalcValue) return null
 
   let fieldVal = false as ReactNode
-  const unit = (field.fieldRef['q'] ?? '')?.endsWith('_') ? '%' : ''
-  const variant = '' // TODO: variant from tag like { ele: amp: cata: trans: }
-  const fixed = undefined // TODO: what do here?
-  // const calcDisplay = <span>TODO formula</span> //TODO: Formula display
-  const isTeamBuff = false //TODO: teambuff?
+  const unit = getUnitStr(fieldRead.tag['name'] || fieldRead.tag['q'] || '')
 
   const diff = calcValue - compareCalcValue
   const pctDiff =
     compareCalcValue &&
     unit !== '%' &&
     (calcValue > 100 || compareCalcValue > 100)
-      ? valueString(diff / compareCalcValue, '%', fixed)
+      ? valueString(diff / compareCalcValue, '%')
       : null
 
   fieldVal = (
     <>
-      <span>{valueString(calcValue, unit, fixed)}</span>
+      <span>{valueString(calcValue, unit)}</span>
       {Math.abs(diff) > 0.0001 && !!compareCalcValue && (
         <BootstrapTooltip
           title={
             <Typography>
-              Compare to{' '}
-              <strong>{valueString(compareCalcValue, unit, fixed)}</strong>
+              Compare to <strong>{valueString(compareCalcValue, unit)}</strong>
             </Typography>
           }
         >
@@ -173,7 +189,7 @@ export function TagFieldDisplay({
           >
             <span>
               ({diff > 0 ? '+' : ''}
-              {valueString(diff, unit, fixed)})
+              {valueString(diff, unit)})
             </span>
             {!!pctDiff && (
               <span>
@@ -190,13 +206,24 @@ export function TagFieldDisplay({
   return (
     <Box
       width="100%"
-      sx={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        gap: 1,
-        boxShadow: emphasize ? '0px 0px 0px 2px red inset' : undefined,
-        py: 0.25,
-      }}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      sx={[
+        {
+          display: 'flex',
+          justifyContent: 'space-between',
+          gap: 1,
+          // Red inset: sheet conditional emphasis. Green opt-target uses `TagRowSxContext`.
+          boxShadow: emphasize ? '0px 0px 0px 2px red inset' : undefined,
+          py: 0.25,
+        },
+        ...(contextRowSx
+          ? Array.isArray(contextRowSx)
+            ? contextRowSx
+            : [contextRowSx]
+          : []),
+        ...(rowSx ? (Array.isArray(rowSx) ? rowSx : [rowSx]) : []),
+      ]}
       component={component}
     >
       <Typography
@@ -208,12 +235,9 @@ export function TagFieldDisplay({
           marginRight: 'auto',
         }}
       >
-        {!!isTeamBuff && <GroupsIcon />}
         {icon}
-        <ColorText color={variant as unknown as keyof Palette}>
-          {title}
-          {subtitle}
-        </ColorText>
+        {title}
+        {subtitle}
       </Typography>
       <Typography
         sx={{
@@ -227,30 +251,28 @@ export function TagFieldDisplay({
         {multiDisplay}
         {fieldVal}
       </Typography>
-      <FormulaHelpIcon tag={field.fieldRef} onClick={onClick} />
+      <FormulaHelpIcon computed={valueCalcRes} onClick={onClick} />
     </Box>
   )
 }
-export function FormulaHelpIcon({
-  tag,
+function FormulaHelpIcon({
+  computed,
   onClick,
-}: { tag: Tag; onClick?: () => void }) {
-  const calc = useContext(CalcContext)
-  const contextTag = useContext(TagContext)
+}: {
+  computed: CalcResult<number, CalcMeta<Tag, string>>
+  onClick?: () => void
+}) {
   const FullTagDisplay = useContext(FullTagDisplayContext)
   const formulaText = useContext(FormulaTextContext)
   const formulaTextCache = useContext(FormulaTextCacheContext)
-  const name = tag.name || tag.q
-  const read = useMemo(() => new Read(tag, undefined), [tag])
-  const computed = useMemo(
-    () => calc?.withTag(contextTag).compute(read),
-    [calc, contextTag, read]
-  )
-  const valDisplay = valueString(computed?.val ?? 0, getUnitStr(name ?? ''))
+  const tag = computed.meta.tag
+  const name = tag?.['name'] || tag?.['q'] || ''
+  const valDisplay = valueString(computed.val, getUnitStr(name))
   const fText = useMemo(
-    () => computed && formulaText(computed as any, formulaTextCache),
+    () => formulaText(computed as any, formulaTextCache),
     [computed, formulaText, formulaTextCache]
   )
+  if (!tag) return null
   return (
     <BootstrapTooltip
       title={

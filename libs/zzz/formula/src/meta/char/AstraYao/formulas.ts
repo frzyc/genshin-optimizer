@@ -38,6 +38,20 @@ export const formulas = {
       name: 'disorderDmgInst_ether',
     },
   },
+  abloomDmgInst: {
+    sheet: 'AstraYao',
+    name: 'abloomDmgInst',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'AstraYao',
+      attribute: 'ether',
+      damageType1: 'anomaly',
+      damageType2: 'abloom',
+      name: 'abloomDmgInst',
+    },
+  },
   anomalyBuildupInst: {
     sheet: 'AstraYao',
     name: 'anomalyBuildupInst',

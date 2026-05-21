@@ -17,7 +17,7 @@ import type { ArtifactBuildData, ArtifactsBySlot } from './common'
 import { artSetPerm, exclusionToAllowed, pruneAll } from './common'
 
 function* allCombinations(
-  sets: Record<ArtifactSlotKey, ArtifactSetKey[]>
+  sets: Record<ArtifactSlotKey, Iterable<ArtifactSetKey>>
 ): Iterable<Record<ArtifactSlotKey, ArtifactSetKey>> {
   for (const flower of sets.flower)
     for (const circlet of sets.circlet)
@@ -35,12 +35,12 @@ describe('common.ts', () => {
       Berserker: [2, 4],
       rainbow: [2, 4],
     }
-    const artSets: ArtifactSetKey[] = [
+    const artSets: Set<ArtifactSetKey> = new Set([
       'Adventurer',
       'ArchaicPetra',
       'Berserker',
       'BloodstainedChivalry',
-    ]
+    ])
     const perm = [...artSetPerm(filter, artSets)],
       allowedRainbows = exclusionToAllowed(filter.rainbow)
 
