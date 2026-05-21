@@ -3,6 +3,7 @@ import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import {
+  active,
   compareEq,
   constant,
   equal,
@@ -20,6 +21,7 @@ import {
   tally,
   target,
   threshold,
+  unequal,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
@@ -137,13 +139,12 @@ const a1Lumi_geo_enemyRes_ = greaterEq(
   )
 )
 
-const [condA4ActivePath, condA4Active] = cond(key, 'a4Active')
 const a4_eleMas = greaterEq(
   input.asc,
   4,
   prod(percent(dm.passive2.eleMas), input.premod.def)
 )
-const a4Active_teammate_eleMasDisp = equal(condA4Active, 'moonsign', {
+const a4Active_teammate_eleMasDisp = equal(active.isMoonsign, 1, {
   ...a4_eleMas,
 })
 const a4Active_teammate_eleMas = equal(
@@ -151,7 +152,7 @@ const a4Active_teammate_eleMas = equal(
   target.charKey,
   a4Active_teammate_eleMasDisp
 )
-const a4Active_self_eleMas = equal(condA4Active, 'nonMoonsign', {
+const a4Active_self_eleMas = unequal(active.isMoonsign, 1, {
   ...a4_eleMas,
 })
 
@@ -286,10 +287,10 @@ const dmgFormulas = {
   },
   passive2: {
     a4_eleMas: compareEq(
-      condA4Active,
-      'moonsign',
+      active.isMoonsign,
+      1,
       a4Active_teammate_eleMasDisp,
-      equal(condA4Active, 'nonMoonsign', a4Active_self_eleMas)
+      unequal(active.isMoonsign, 1, a4Active_self_eleMas)
     ),
   },
   passive3: {
@@ -466,32 +467,19 @@ const sheet: TalentSheet = {
     }),
   ]),
   passive2: ct.talentTem('passive2', [
-    ct.condTem('passive2', {
-      value: condA4Active,
-      path: condA4ActivePath,
-      name: ct.ch('a4Cond'),
+    ct.headerTem('passive2', {
       teamBuff: true,
-      states: {
-        moonsign: {
-          name: ct.ch('a4Moonsign'),
-          fields: [
-            {
-              node: infoMut(
-                a4Active_teammate_eleMasDisp,
-                a4Active_teammate_eleMas.info!
-              ),
-            },
-          ],
+      fields: [
+        {
+          node: infoMut(
+            a4Active_teammate_eleMasDisp,
+            a4Active_teammate_eleMas.info!
+          ),
         },
-        nonMoonsign: {
-          name: ct.ch('a4NonMoonsign'),
-          fields: [
-            {
-              node: a4Active_self_eleMas,
-            },
-          ],
+        {
+          node: a4Active_self_eleMas,
         },
-      },
+      ],
     }),
   ]),
   passive3: ct.talentTem('passive3', [

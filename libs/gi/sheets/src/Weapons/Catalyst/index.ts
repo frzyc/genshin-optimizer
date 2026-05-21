@@ -1,6 +1,7 @@
 import type { WeaponCatalystKey } from '@genshin-optimizer/gi/consts'
 import type { WeaponSheet } from '../WeaponSheet'
 import AThousandFloatingDreams from './AThousandFloatingDreams'
+import AngelosHeptades from './AngelosHeptades'
 import ApprenticesNotes from './ApprenticesNotes'
 import AshGravenDrinkingHorn from './AshGravenDrinkingHorn'
 import BalladOfTheBoundlessBlue from './BalladOfTheBoundlessBlue'
@@ -52,9 +53,10 @@ import WanderingEvenstar from './WanderingEvenstar'
 import WaveridingWhirl from './WaveridingWhirl'
 import WineAndSong from './WineAndSong'
 const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
+  AThousandFloatingDreams,
+  AngelosHeptades,
   ApprenticesNotes,
   AshGravenDrinkingHorn,
-  AThousandFloatingDreams,
   BalladOfTheBoundlessBlue,
   BlackcliffAgate,
   BlackmarrowLantern,

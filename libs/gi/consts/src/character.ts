@@ -167,6 +167,7 @@ export const nonTravelerCharacterKeys = [
   'Ningguang',
   'Noelle',
   'Ororon',
+  'Prune',
   'Qiqi',
   'RaidenShogun',
   'Razor',

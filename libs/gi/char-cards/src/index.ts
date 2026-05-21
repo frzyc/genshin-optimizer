@@ -78,6 +78,7 @@ import Nilou from './Character_Nilou_Card.jpg'
 import Ningguang from './Character_Ningguang_Card.jpg'
 import Noelle from './Character_Noelle_Card.jpg'
 import Ororon from './Character_Ororon_Card.jpg'
+import Prune from './Character_Prune_Card.png'
 import Qiqi from './Character_Qiqi_Card.jpg'
 import RaidenShogun from './Character_Raiden_Shogun_Card.png'
 import Razor from './Character_Razor_Card.jpg'
@@ -195,6 +196,7 @@ const charCards = {
   Ningguang,
   Noelle,
   Ororon,
+  Prune,
   Qiqi,
   RaidenShogun,
   Razor,

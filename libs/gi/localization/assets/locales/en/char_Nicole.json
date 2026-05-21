@@ -1,0 +1,11 @@
+{
+  "skillCond": "Under the Grace of Kenosis effect",
+  "guidanceCond": "Active character under the Guidance of Theosis effect",
+  "nicoleGuidanceCond": "Nicole under the Guidance of Theosis effect",
+  "projectionExplain": "Projection DMG can be found within each teammates targets",
+  "arcaneProjectionDmg": "Arcane Projection: Unity DMG",
+  "graceEnhanced": "Grace of Kenosis effect enhanced",
+  "guidanceEnhanced": "Guidance of Theosis effect enhanced",
+  "c4Cond": "Under the Pathfinder's Blessing effect",
+  "projectionDmgInc": "Arcane Project Addl. DMG Increase"
+}
