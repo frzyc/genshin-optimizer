@@ -75,6 +75,13 @@ export const conditionals = {
       type: 'bool',
     },
   },
+  CelestialGift: {
+    someBoolConditional: {
+      sheet: 'CelestialGift',
+      name: 'someBoolConditional',
+      type: 'bool',
+    },
+  },
   CrimsonWitchOfFlames: {
     someBoolConditional: {
       sheet: 'CrimsonWitchOfFlames',
@@ -99,6 +106,13 @@ export const conditionals = {
   DesertPavilionChronicle: {
     someBoolConditional: {
       sheet: 'DesertPavilionChronicle',
+      name: 'someBoolConditional',
+      type: 'bool',
+    },
+  },
+  DisenchantmentInDeepShadow: {
+    someBoolConditional: {
+      sheet: 'DisenchantmentInDeepShadow',
       name: 'someBoolConditional',
       type: 'bool',
     },
@@ -1809,6 +1823,20 @@ export const formulas = {
       },
     },
   },
+  Nicole: {
+    normal1: {
+      sheet: 'Nicole',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Nicole',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   Nilou: {
     normal_0: {
       sheet: 'Nilou',
@@ -2052,6 +2080,20 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         sheet: 'Ororon',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  Prune: {
+    normal1: {
+      sheet: 'Prune',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Prune',
         move: 'normal',
         name: 'normal1',
       },

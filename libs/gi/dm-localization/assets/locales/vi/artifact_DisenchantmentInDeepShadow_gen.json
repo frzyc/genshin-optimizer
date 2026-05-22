@@ -1,0 +1,29 @@
+{
+  "setName": "Ảo Tưởng Vụn Vỡ Trong Bóng Tối",
+  "setEffects": {
+    "2": "Tấn Công tăng 18%.",
+    "4": "Sát thương phản ứng Siêu Dẫn tăng 80%. Khi người trang bị tấn công kẻ địch bị ảnh hưởng bởi phản ứng Siêu Dẫn, lần tấn công này tăng 16% Tỷ Lệ Bạo Kích. Trên đường đến Snezhnaya, có lẽ sẽ nhận được sự chúc phúc hoàn toàn mới..."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Hào Quang Ngưng Tại Vinh Dự",
+      "desc": "Đó là thứ mà nàng nhận được từ người bạn có đôi tay lạnh giá, đóa hoa ruy băng như một món quà."
+    },
+    "plume": {
+      "name": "Bút Sắc Ngưng Tại Kỳ Diệu",
+      "desc": "Đó là thứ mà nàng ban tặng cho những người đi theo mình, cây bút lông từng dùng để viết giấc mộng hoang đường."
+    },
+    "sands": {
+      "name": "Thời Khắc Ngưng Tại Thức Tỉnh",
+      "desc": "Đó là thứ mà nàng trao tặng cho vị giả kim thuật sĩ trầm lặng ấy, là thời khắc nhắc nhở về mọi lịch trình."
+    },
+    "goblet": {
+      "name": "Rượu Lễ Ngưng Tại Chúc Mừng",
+      "desc": "Đó là thứ mà nàng nhận được từ tay đồng nghiệp của mình, là ly rượu dùng để chúc mừng."
+    },
+    "circlet": {
+      "name": "Con Lắc Ngưng Tại Sa Ngã",
+      "desc": "Đó là thứ mà nàng nhận được từ vị chủ nhân duy nhất của mình, món trang sức như một phần thưởng."
+    }
+  }
+}

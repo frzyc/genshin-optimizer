@@ -1,4 +1,5 @@
 import {
+  allElementKeys,
   allElementWithPhyKeys,
   allLunarReactionKeys,
 } from '@genshin-optimizer/gi/consts'
@@ -55,6 +56,9 @@ export const allNonstackBuffs = [
   'gleamingmoondevotion',
   'nightweaver',
   'bloomcd',
+  ...allElementKeys.map((ele) => `lightGuidance${ele}` as const),
+  ...allElementKeys.map((ele) => `mortalHymn${ele}` as const),
+  'angelos',
 ] as const
 export type NonStackBuff = (typeof allNonstackBuffs)[number]
 export const allMoves = [

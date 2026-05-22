@@ -541,6 +541,7 @@ const sheet: TalentSheet = {
         },
         {
           text: stg('cd'),
+          canShow: (data) => data.get(input.isHexerei).value === 1,
           value: dm.lockedPassive.cd,
           unit: 's',
         },

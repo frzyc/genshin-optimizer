@@ -254,6 +254,9 @@
   "JointExhibitionPopularity": {
     "name": "联展热度"
   },
+  "PalsSynergy": {
+    "name": "幻友默契"
+  },
   "Primogem": {
     "name": "原石"
   },
@@ -1148,8 +1151,17 @@
   "Varka": {
     "name": "法尔伽"
   },
+  "Lohen": {
+    "name": "洛恩"
+  },
   "Linnea": {
     "name": "莉奈娅"
+  },
+  "Nicole": {
+    "name": "尼可"
+  },
+  "Prune": {
+    "name": "布伦妮"
   },
   "KachinasStellaFortuna": {
     "name": "卡齐娜的命星"
@@ -1232,8 +1244,17 @@
   "VarkasStellaFortuna": {
     "name": "法尔伽的命星"
   },
+  "LohensStellaFortuna": {
+    "name": "洛恩的命星"
+  },
   "LinneasStellaFortuna": {
     "name": "莉奈娅的命星"
+  },
+  "NicolesStellaFortuna": {
+    "name": "尼可的命星"
+  },
+  "PrunesStellaFortuna": {
+    "name": "布伦妮的命星"
   },
   "Apple": {
     "name": "苹果"
@@ -1822,6 +1843,15 @@
   },
   "FischlDictionaryDieNeuauflageDerPrinzessin": {
     "name": "菲谢尔辞典·皇女新编版"
+  },
+  "TheOriginsOfTheExperiment": {
+    "name": "关于实验的源起"
+  },
+  "NotesOnTheExperimentalSubjects": {
+    "name": "关于实验体的笔记"
+  },
+  "ScribbledNotes": {
+    "name": "潦草的笔记"
   },
   "WyattsRedKey": {
     "name": "怀尔德的红色钥匙"
@@ -8318,6 +8348,33 @@
   "SugarSculptureLinnea": {
     "name": "糖雕・莉奈娅"
   },
+  "SuspiciousStuffedTofuWithMincedMeat": {
+    "name": "奇怪的肉末酿豆腐"
+  },
+  "StuffedTofuWithMincedMeat": {
+    "name": "肉末酿豆腐"
+  },
+  "DeliciousStuffedTofuWithMincedMeat": {
+    "name": "美味的肉末酿豆腐"
+  },
+  "SuspiciousMintBubblegum": {
+    "name": "奇怪的薄荷泡泡糖"
+  },
+  "MintBubblegum": {
+    "name": "薄荷泡泡糖"
+  },
+  "DeliciousMintBubblegum": {
+    "name": "美味的薄荷泡泡糖"
+  },
+  "SpinningSpecial": {
+    "name": "转转特调"
+  },
+  "GildedChest": {
+    "name": "「镂金的宝箱」"
+  },
+  "BoredomBustingBubblegum": {
+    "name": "解闷泡泡糖"
+  },
   "RecipeItem": {
     "name": "食谱道具"
   },
@@ -9118,6 +9175,12 @@
   },
   "RecipeMillhavensMorningPlate": {
     "name": "食谱：早安风车镇"
+  },
+  "RecipeStuffedTofuWithMincedMeat": {
+    "name": "食谱：肉末酿豆腐"
+  },
+  "RecipeMintBubblegum": {
+    "name": "食谱：薄荷泡泡糖"
   },
   "CraftedItems": {
     "name": "合成产物"
@@ -9943,6 +10006,15 @@
   },
   "PlumeOfTheFallenWatcher": {
     "name": "堕天的落羽"
+  },
+  "CounterfeitResin": {
+    "name": "赝作的树脂"
+  },
+  "TwistedWitheredBranch": {
+    "name": "扭曲的枯枝"
+  },
+  "ProfanedSprout": {
+    "name": "亵渎的新芽"
   },
   "TileOfDecarabiansTower": {
     "name": "高塔孤王的破瓦"
@@ -13172,9 +13244,6 @@
   "EasybreezeHolidayResortMap": {
     "name": "悠悠度假村地图"
   },
-  "ScribbledNotes": {
-    "name": "潦草的笔记"
-  },
   "BeautifullyWrittenNotes": {
     "name": "字迹娟秀的笔记"
   },
@@ -13733,6 +13802,9 @@
   "LohensWorkReport": {
     "name": "洛恩的工作报告"
   },
+  "LohensFriendshipFee": {
+    "name": "洛恩的「朋友费」"
+  },
   "ArcadiaTheEntombedCapital": {
     "name": "「棺中的废都·阿卡狄亚」"
   },
@@ -13745,17 +13817,38 @@
   "VerasMelancholyFinalVolumeVersionI": {
     "name": "少女薇拉的忧郁·最终卷（版本一）"
   },
-  "TheDreamOfRhonabwy": {
+  "TheDreamOfRhonabouillet": {
     "name": "《罗纳布韦之梦》"
   },
   "TheSongOfAyKhanoum": {
     "name": "《阿伊·哈努姆之歌》"
   },
-  "TheCanonOfLoveDivineInspirationAndVirtue": {
+  "RevelationsOfDivineLove": {
     "name": "《爱、圣启与美德的典律》"
   },
   "Note": {
     "name": "便签"
+  },
+  "PhotoWithTheLittleWitchesAndTheirImaginaryFriends": {
+    "name": "与小魔女和幻想朋友们的合影"
+  },
+  "AnomalousTreeMarrowI": {
+    "name": "异质的树髓·一"
+  },
+  "AnomalousTreeMarrowII": {
+    "name": "异质的树髓·二"
+  },
+  "AnomalousTreeMarrowIII": {
+    "name": "异质的树髓·三"
+  },
+  "AnomalousTreeMarrow": {
+    "name": "异质的树髓"
+  },
+  "DangoMilkInfusedWithMagic": {
+    "name": "沾染「魔法气息」的团子牛奶"
+  },
+  "PrimalConstructComponent": {
+    "name": "元能构装体零部件"
   },
   "AncientMondstadtRoyalSeal": {
     "name": "古蒙德宗室之印"
@@ -15797,6 +15890,18 @@
   "TravelNotesHomecoming": {
     "name": "纪行·逢归"
   },
+  "NicoleHeavenlyStairway": {
+    "name": "尼可·天阶"
+  },
+  "LohenBenevolence": {
+    "name": "洛恩·仁蔼"
+  },
+  "PruneJudgment": {
+    "name": "布伦妮·制裁"
+  },
+  "TravelNotesGiftOfSplendor": {
+    "name": "纪行·赠绮"
+  },
   "EchoDandelionKnight": {
     "name": "游迹·蒲公英骑士"
   },
@@ -15853,6 +15958,12 @@
   },
   "EchoPillarOfFortitude": {
     "name": "游迹·磐祭叶守"
+  },
+  "EchoEonsAdrift": {
+    "name": "游迹·久世浮倾"
+  },
+  "EchoHelmOfTheRadiantRose": {
+    "name": "游迹·明花蔓舵"
   },
   "FaintGlow": {
     "name": "薄光"
@@ -16787,6 +16898,30 @@
   "MeditativeReading": {
     "name": "静心阅览"
   },
+  "PatrolBreak": {
+    "name": "巡航间隙"
+  },
+  "MasterpieceComplete": {
+    "name": "臻品已成"
+  },
+  "ReadyToSprint": {
+    "name": "速滑准备"
+  },
+  "InterludeRest": {
+    "name": "舞间休憩"
+  },
+  "HarnessTheBlaze": {
+    "name": "掌握炽烈"
+  },
+  "PerfectRating": {
+    "name": "满分评价"
+  },
+  "RhythmMoment": {
+    "name": "律动时刻"
+  },
+  "ShareWithYou": {
+    "name": "与你分享"
+  },
   "FantasticalMarvel": {
     "name": "幻戏瑰意"
   },
@@ -16852,6 +16987,12 @@
   },
   "MysteriousWhiteStar": {
     "name": "镜烟的白星"
+  },
+  "EclipsingFlame": {
+    "name": "轮变的蚀焰"
+  },
+  "DemonSlayingGale": {
+    "name": "斩魔的烈风"
   },
   "VigorousYapping": {
     "name": "活力相谈"
@@ -16963,6 +17104,9 @@
   },
   "ConsecratedFangedBeast": {
     "name": "圣骸牙兽"
+  },
+  "ExperimentalFieldGenerator": {
+    "name": "实验性场力发生装置"
   },
   "UndividedHeart": {
     "name": "唯此一心"
@@ -17372,6 +17516,15 @@
   "WitheredReedsEclipseTheSun": {
     "name": "亡草蔽日"
   },
+  "PartTheVeilOfSnow": {
+    "name": "拨开雪翳之幕"
+  },
+  "OLipsWeaveMeSongsAndPsalms": {
+    "name": "「唇啊，为我纺出歌与吟哦」"
+  },
+  "GravityField": {
+    "name": "重力场域"
+  },
   "MagicGuide": {
     "name": "魔导绪论"
   },
@@ -17717,6 +17870,9 @@
   "Blubberbeast": {
     "name": "膨膨兽"
   },
+  "GladiatorsFinale": {
+    "name": "角斗士的终幕礼"
+  },
   "LiyueHarborWharf": {
     "name": "璃月港口"
   },
@@ -17938,6 +18094,15 @@
   },
   "ElementalTransfigurationLavaBlessing": {
     "name": "元素幻变：火岩祝佑"
+  },
+  "Netochka": {
+    "name": "涅朵奇卡"
+  },
+  "ElementalTransfigurationRimegrassBlessing": {
+    "name": "元素幻变：冰草祝佑"
+  },
+  "ElementalTransfigurationStormgaleBlessing": {
+    "name": "元素幻变：雷风祝佑"
   },
   "ElementalResonanceWovenIce": {
     "name": "元素共鸣：交织之冰"
@@ -18194,6 +18359,9 @@
   "CleaningTime": {
     "name": "清扫时间"
   },
+  "TheOtherSideOfTheFrostmoon": {
+    "name": "另一侧的霜月"
+  },
   "Origin": {
     "name": "原初"
   },
@@ -18409,6 +18577,9 @@
   },
   "PhantasmalGiftStarOmen": {
     "name": "幻礼·星兆"
+  },
+  "SuperAwesomeMagicKey": {
+    "name": "「超厉害魔法钥匙」"
   },
   "UnbreakableDurandarte": {
     "name": "无毁·督兰嘉德"
@@ -22630,5 +22801,8 @@
   },
   "AllFangsAndSnarls": {
     "name": "「嚎嚎利齿」"
+  },
+  "MiniatureStonecraft": {
+    "name": "「石间小塑」"
   }
 }

@@ -205,11 +205,13 @@ export default function CharacterTalentPane() {
 function ReactionDisplay() {
   const { data } = useContext(DataContext)
   const reaction = data.getDisplay()['reaction'] as Record<string, CalcResult>
+  // Add Nicole projections here, idk where else
+  const nicole = data.getDisplay()['nicole'] as Record<string, CalcResult>
   return (
     <CardThemed bgt="light">
       <CardContent>
         <Grid container spacing={1}>
-          {Object.entries(reaction)
+          {[...Object.entries(reaction), ...Object.entries(nicole)]
             .filter(([_, node]) => !node.isEmpty)
             .map(([key, node]) => {
               return (

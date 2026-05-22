@@ -73,10 +73,12 @@ import Nahida from './Character_Nahida_Card.jpeg'
 import Navia from './Character_Navia_Card.jpg'
 import Nefer from './Character_Nefer_Card.webp'
 import Neuvillette from './Character_Neuvillette_Card.jpg'
+import Nicole from './Character_Nicole_Card.png'
 import Nilou from './Character_Nilou_Card.jpg'
 import Ningguang from './Character_Ningguang_Card.jpg'
 import Noelle from './Character_Noelle_Card.jpg'
 import Ororon from './Character_Ororon_Card.jpg'
+import Prune from './Character_Prune_Card.png'
 import Qiqi from './Character_Qiqi_Card.jpg'
 import RaidenShogun from './Character_Raiden_Shogun_Card.png'
 import Razor from './Character_Razor_Card.jpg'
@@ -189,10 +191,12 @@ const charCards = {
   Navia,
   Nefer,
   Neuvillette,
+  Nicole,
   Nilou,
   Ningguang,
   Noelle,
   Ororon,
+  Prune,
   Qiqi,
   RaidenShogun,
   Razor,

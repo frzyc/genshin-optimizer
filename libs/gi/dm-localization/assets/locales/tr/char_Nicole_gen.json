@@ -1,0 +1,166 @@
+{
+  "name": "Nicole",
+  "title": "İçeride Kopan Fırtına",
+  "description": "Sessiz \"büyücü\", dilsiz \"melek\".",
+  "constellationName": "Altın Sandık",
+  "auto": {
+    "name": "Alegori",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "Ezeli dilde bir ferman okuyarak <pyro>Ateş Hasarı</pyro> veren en fazla 3 saldırı gerçekleştirir."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Kısa süre kullanıldıktan sonra belirli miktarda Dayanıklılık harcayarak önündeki düşmanlara <pyro>Ateş Alan Hasarı</pyro> verir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Nicole, havadayken yere doğru atılır ve yoluna çıkan tüm düşmanlara hasar verir. Ayrıca yere vurduğunda <pyro>Ateş Alan Hasarı</pyro> verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "Yüklü Saldırı Hasarı",
+      "4": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "5": "Havadan Saldırı Hasarı",
+      "6": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Vahiy: Var Edilmemiş Işık",
+    "description": {
+      "0": "Meleklerin göklerin iktidarıyla hareket ettiği kadim çağdan kısacık bir anı yeniden canlandırarak yakındaki grup üyelerine <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Fedakarlık Lütfu</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11310002 values=[]></tooltip> etkisini bahşeder. Bu etki grup üyelerinin Saldırısını artırır, <pyro>Ateş Alan Hasarı</pyro> verir ve bir Yakıcı Işık Kalkanı yaratır.",
+      "1": "Yakıcı Işık Kalkanının Hasar Emilimi, Nicole'un Saldırısına göre hesaplanır ve bu kalkan <pyro>Ateş Hasarını</pyro> %250 verimlilikle emer."
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Kalkanın Hasar Emilimi",
+      "2": "Kalkan Süresi",
+      "3": "Fedakarlık Lütfu Saldırı Bonusu Oranı",
+      "4": "Fedakarlık Lütfu Maks. Saldırı Bonusu",
+      "5": "Fedakarlık Lütfu Süresi",
+      "6": "BS",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Vahiy: İlahi Yükseliş Merdiveni",
+    "description": {
+      "0": "Kaderin sarsılmaz yolunu altın ışık iplikleriyle dokuyarak <pyro>Ateş Alan Hasarı</pyro> verir ve Sessiz Tefekkür moduna geçer.",
+      "1": "Nicole bu moddayken yakındaki aktif grup üyeleri bir düşmana vurduğunda, düşmana karşı Ortak Saldırı gerçekleştiren bir Büyülü Yansıma çağrılır ve aktif karakterle aynı Element Türünde Element Alan Hasarı verir. Bu Hasar, aktif karakterin Saldırısına göre hesaplanır ve o karakter tarafından verilmiş sayılır.",
+      "2": "Bu etki her 3 saniyede bir gerçekleşebilir ve Nicole Sessiz Tefekkür moduna her geçtiğinde en fazla 4 defa tetiklenebilir.",
+      "3": "<br/>",
+      "4": "Nedense Cadılık karakterlerinin Büyülü Yansımaları diğerlerinden daha farklı görünüyor..."
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Büyülü Yansıma Hasarı",
+      "2": "Büyülü Yansıma Saldırı Sayısı",
+      "3": "Sessiz Tefekkür Süresi",
+      "4": "BS",
+      "5": "Enerji Maliyeti",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "İştirak",
+    "description": {
+      "0": "<strong><tooltip ns=char_Nicole_gen baseKey18=skill>Vahiy: Var Edilmemiş Işık</tooltip></strong> Element Becerisi kullanıldıktan sonraki 20 saniye boyunca Nicole diğer aktif grup üyelerini devamlı olarak \"gözlem\" altına alır. Gözlem altındaki karakter 3 saniye boyunca alanda kaldığında <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Fedakarlık Lütfu</strong></tooltip> gelişerek <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>İlahi Rehberlik</strong></tooltip> halini alır ve bu karakterin Saldırısı 300 daha artar. Gözlem altındaki karakter bir Cadılık karakteriyse <strong>Fedakarlık Lütfu</strong> doğrudan <strong>İlahi Rehberlik</strong> seviyesine yükselir.",
+      "1": "<strong>İlahi Rehberlik</strong> etkisine sahip olan Nicole dışındaki karakterler alandan ayrıldığında etkileri tekrar <strong>Fedakarlık Lütfu</strong> haline döner."
+    }
+  },
+  "passive2": {
+    "name": "İyilik Sevgisi",
+    "description": {
+      "0": "Yakındaki aktif grup üyelerinin Element Hasarı bir düşmana isabet ettiğinde, Nicole'un kendi <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Fedakarlık Lütfu</strong></tooltip> etkisi de 8 saniyeliğine gelişerek <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>İlahi Rehberlik</strong></tooltip> halini alır."
+    }
+  },
+  "passive3": {
+    "name": "Farkındalık",
+    "description": {
+      "0": "Teyvat'ta savaş dışındayken mevcut bölgeye ait Hazine Pusulasına sahipsen Nicole'un Yüklü Saldırısı, \"Elçinin Rehberliği\"ne dönüşür. Elçinin Rehberliği: Yakındaki Perilere yol göstermeleri için çağrı yaparak bölgenin Hazine Pusulasına benzer bir etkiyi tetikler.",
+      "1": "Bu etkinin 5 saniyelik bir bekleme süresi vardır ve Zindanlarda, Ezici Zindanlarda ve Hiçlik Sarmalında çalışmaz."
+    }
+  },
+  "lockedPassive": {
+    "name": "Cadının Gece Ayini: Karanlıktaki Işık",
+    "description": {
+      "0": "<strong>Cadının Ödevi: Rehberin Rolü (?)</strong> tamamlandıktan sonra Nicole bir <strong>Cadılık</strong> karakterine dönüşür. Grupta en az 2 Cadılık karakteri olduğunda, Cadılık karakterlerini güçlendiren <strong>Cadılık: Saklı Ayin</strong> etkisi kazanırsın.",
+      "1": "<br/>",
+      "2": "<strong>Cadılık: Saklı Ayin</strong>",
+      "3": "Cadılık karakterlerinin <strong><tooltip ns=char_Nicole_gen baseKey18=burst>Büyülü Yansıma</tooltip></strong> ile verdiği Hasarı Nicole'un Saldırısının %300'ü kadar artırır."
+    }
+  },
+  "constellation1": {
+    "name": "\"Korkma, Ey Sevilen Çocuk\"",
+    "description": {
+      "0": "Gruptaki mevcut aktif karakterin bir düşmana vurduğunda, düşmana karşı Ortak Saldırı gerçekleştiren ek bir özel \"Büyülü Yansıma: Birlik\" çağrılır. Bu özel beceri, aktif karakterin Element Türünde ve Saldırısının %600'üne eşit Element Alan Hasarı verir. Bu Hasar aktif karakter tarafından verilmiş sayılır.",
+      "1": "Bu etki 6 saniyede bir tetiklenebilir."
+    }
+  },
+  "constellation2": {
+    "name": "\"Sana Rehber Olacağım, Yürüyeceğin Yolu Göstereceğim\"",
+    "description": {
+      "0": "<strong><tooltip ns=char_Nicole_gen baseKey18=skill>Vahiy: Var Edilmemiş Işık</tooltip></strong> Element Becerisinin etkilerini geliştirir: <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Fedakarlık Lütfu</strong></tooltip> Saldırıyı ek olarak 300 artırır. (Bu etkinin Saldırı Bonusu sınırına dahil olmaz.) <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>İlahi Rehberlik</strong></tooltip> ise yakındaki düşmanların karakterin Element Türüne karşı Element Direncini %25 düşürür. Bu etki aynı element için birikmez.",
+      "1": "Ayrıca Nicole <strong>Vahiy: Var Edilmemiş Işık</strong> Element Becerisini kullandığında yakındaki aktif grup üyeleri de bir Yakıcı Işık Kalkanı kazanır."
+    }
+  },
+  "constellation3": {
+    "name": "\"Adımların İçin Çıra, Yolun İçin Işık\"",
+    "description": {
+      "0": "<strong><tooltip ns=char_Nicole_gen baseKey18=skill>Vahiy: Var Edilmemiş Işık</tooltip></strong> seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "\"İster Sağa Sap İster Sola\"",
+    "description": {
+      "0": "Yakındaki grup üyelerinin <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Fedakarlık Lütfu</strong></tooltip> gelişerek <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>İlahi Rehberlik</strong></tooltip> halini aldığında Nicole 20 saniyeliğine grup üyelerine Öncünün Kutsaması bahşeder. Her karakter bu etkiyi 16 saniyede bir kazanabilir.",
+      "1": "Öncünün Kutsaması etkisine sahip karakterlerin Normal Saldırı, Yüklü Saldırı, Havadan Saldırı, Element Becerisi ve Element Patlaması Hasarı; Nicole'un Saldırısının %70'i kadar artar. Bu etki 8 defa tetiklendiğinde veya süresi dolduğunda kaybolur.",
+      "2": "Aynı anda birden fazla düşman isabet aldığında, isabet alan düşman sayısı kadar Öncünün Kutsaması kullanılır. Her karakterin Öncünün Kutsaması etkisi birbirinden bağımsızdır."
+    }
+  },
+  "constellation5": {
+    "name": "\"Sesimi Duyacaksın Kulağında\"",
+    "description": {
+      "0": "<strong><tooltip ns=char_Nicole_gen baseKey18=burst>Vahiy: İlahi Yükseliş Merdiveni</tooltip></strong> seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "\"Yolun Budur, Yürümekten Korkma\"",
+    "description": {
+      "0": "Nicole'un kendi <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Fedakarlık Lütfu</strong></tooltip> becerisi gelişip <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>İlahi Rehberlik</strong></tooltip> halini aldığında yakındaki tüm grup üyelerinin <strong>Fedakarlık Lütfu</strong> da gelişerek <strong>İlahi Rehberlik</strong> olur. <strong>İlahi Rehberlik</strong> etkisi yükseltildiğinde artık <strong>Fedakarlık Lütfu</strong> haline geri dönmez.",
+      "1": "Ayrıca <strong>İlahi Rehberlik</strong> etkisindeki karakterlerin verdiği Hasar, düşmanın Savunmasının %40'ını yok sayar."
+    }
+  }
+}

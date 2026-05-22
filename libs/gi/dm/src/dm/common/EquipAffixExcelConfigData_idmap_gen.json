@@ -138,6 +138,7 @@
   "113514": "SeasonedSymphony",
   "113515": "PurifyingCrown",
   "113516": "MournfulTribute",
+  "113517": "DolorousStroke",
   "114301": "BaneOfStormAndTide",
   "114302": "Heritage",
   "114303": "EnergyShower",
@@ -189,6 +190,7 @@
   "114520": "MillennialHymn",
   "114521": "EssenceOfFalsity",
   "114522": "BalladOfTheCrossroads",
+  "114523": "CrownOfTheFinalScion",
   "115301": "BaneOfFlameAndWater",
   "115302": "Precise",
   "115303": "CullTheWeak",
@@ -297,5 +299,7 @@
   "215041": "NightOfTheSkysUnveiling",
   "215042": "SilkenMoonsSerenade",
   "215043": "AubadeOfMorningstarAndMoon",
-  "215044": "ADayCarvedFromRisingWinds"
+  "215044": "ADayCarvedFromRisingWinds",
+  "215045": "CelestialGift",
+  "215046": "DisenchantmentInDeepShadow"
 }

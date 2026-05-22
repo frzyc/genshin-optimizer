@@ -3,6 +3,7 @@ import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import {
+  active,
   compareEq,
   constant,
   equal,
@@ -20,6 +21,7 @@ import {
   tally,
   target,
   threshold,
+  unequal,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
@@ -137,13 +139,12 @@ const a1Lumi_geo_enemyRes_ = greaterEq(
   )
 )
 
-const [condA4ActivePath, condA4Active] = cond(key, 'a4Active')
 const a4_eleMas = greaterEq(
   input.asc,
   4,
   prod(percent(dm.passive2.eleMas), input.premod.def)
 )
-const a4Active_teammate_eleMasDisp = equal(condA4Active, 'moonsign', {
+const a4Active_teammate_eleMasDisp = equal(active.isMoonsign, 1, {
   ...a4_eleMas,
 })
 const a4Active_teammate_eleMas = equal(
@@ -151,7 +152,7 @@ const a4Active_teammate_eleMas = equal(
   target.charKey,
   a4Active_teammate_eleMasDisp
 )
-const a4Active_self_eleMas = equal(condA4Active, 'nonMoonsign', {
+const a4Active_self_eleMas = unequal(active.isMoonsign, 1, {
   ...a4_eleMas,
 })
 
@@ -178,10 +179,18 @@ const c1TeamStacks_lunarcrystallize_dmgInc = greaterEq(
 )
 
 const c1LumiStacksArr = range(1, dm.constellation1.lumiMaxStacksConsume)
+const c1LumiStacksArrForC6 = range(
+  1,
+  dm.constellation1.lumiMaxStacksConsume * 2
+)
 const [condC1LumiStacksPath, condC1LumiStacks] = cond(key, 'c1LumiStacks')
 const c1LumiStacks = lookup(
   condC1LumiStacks,
-  objKeyMap(c1LumiStacksArr, (s) => constant(s)),
+  objKeyMap(c1LumiStacksArrForC6, (s) =>
+    s > dm.constellation1.lumiMaxStacksConsume
+      ? greaterEq(input.constellation, 6, s)
+      : constant(s)
+  ),
   naught
 )
 const c1LumiStacks_lunarcrystallize_dmgInc = greaterEq(
@@ -286,10 +295,10 @@ const dmgFormulas = {
   },
   passive2: {
     a4_eleMas: compareEq(
-      condA4Active,
-      'moonsign',
+      active.isMoonsign,
+      1,
       a4Active_teammate_eleMasDisp,
-      equal(condA4Active, 'nonMoonsign', a4Active_self_eleMas)
+      unequal(active.isMoonsign, 1, a4Active_self_eleMas)
     ),
   },
   passive3: {
@@ -466,32 +475,19 @@ const sheet: TalentSheet = {
     }),
   ]),
   passive2: ct.talentTem('passive2', [
-    ct.condTem('passive2', {
-      value: condA4Active,
-      path: condA4ActivePath,
-      name: ct.ch('a4Cond'),
+    ct.headerTem('passive2', {
       teamBuff: true,
-      states: {
-        moonsign: {
-          name: ct.ch('a4Moonsign'),
-          fields: [
-            {
-              node: infoMut(
-                a4Active_teammate_eleMasDisp,
-                a4Active_teammate_eleMas.info!
-              ),
-            },
-          ],
+      fields: [
+        {
+          node: infoMut(
+            a4Active_teammate_eleMasDisp,
+            a4Active_teammate_eleMas.info!
+          ),
         },
-        nonMoonsign: {
-          name: ct.ch('a4NonMoonsign'),
-          fields: [
-            {
-              node: a4Active_self_eleMas,
-            },
-          ],
+        {
+          node: a4Active_self_eleMas,
         },
-      },
+      ],
     }),
   ]),
   passive3: ct.talentTem('passive3', [
@@ -544,25 +540,31 @@ const sheet: TalentSheet = {
       value: condC1LumiStacks,
       path: condC1LumiStacksPath,
       name: ct.ch('c1LumiCond'),
-      states: objKeyMap(c1LumiStacksArr, (stack) => ({
-        name: st('stack', { count: stack }),
-        fields: [
-          {
-            node: infoMut(c1LumiStacks_lunarcrystallize_dmgInc, {
-              name: ct.ch('lumiDmgInc'),
-            }),
-          },
-          {
-            text: st('triggerQuota'),
-            value: dm.constellation1.maxStacks,
-          },
-          {
-            text: stg('duration'),
-            value: dm.constellation1.duration,
-            unit: 's',
-          },
-        ],
-      })),
+      states: (data) =>
+        objKeyMap(
+          data.get(input.constellation).value >= 6
+            ? c1LumiStacksArrForC6
+            : c1LumiStacksArr,
+          (stack) => ({
+            name: st('stack', { count: stack }),
+            fields: [
+              {
+                node: infoMut(c1LumiStacks_lunarcrystallize_dmgInc, {
+                  name: ct.ch('lumiDmgInc'),
+                }),
+              },
+              {
+                text: st('triggerQuota'),
+                value: dm.constellation1.maxStacks,
+              },
+              {
+                text: stg('duration'),
+                value: dm.constellation1.duration,
+                unit: 's',
+              },
+            ],
+          })
+        ),
     }),
   ]),
   constellation2: ct.talentTem('constellation2', [

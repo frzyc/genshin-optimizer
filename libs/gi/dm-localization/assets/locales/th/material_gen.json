@@ -254,6 +254,9 @@
   "JointExhibitionPopularity": {
     "name": "ความนิยมของนิทรรศการ"
   },
+  "PalsSynergy": {
+    "name": "มิตรภาพเพื่อนในจินตนาการ"
+  },
   "Primogem": {
     "name": "Primogem"
   },
@@ -1148,8 +1151,17 @@
   "Varka": {
     "name": "Varka"
   },
+  "Lohen": {
+    "name": "Lohen"
+  },
   "Linnea": {
     "name": "Linnea"
+  },
+  "Nicole": {
+    "name": "Nicole"
+  },
+  "Prune": {
+    "name": "Prune"
   },
   "KachinasStellaFortuna": {
     "name": "ดวงดาวแห่งชีวิตของ Kachina"
@@ -1232,8 +1244,17 @@
   "VarkasStellaFortuna": {
     "name": "ดวงดาวแห่งชีวิตของ Varka"
   },
+  "LohensStellaFortuna": {
+    "name": "ดวงดาวแห่งชีวิตของ Lohen"
+  },
   "LinneasStellaFortuna": {
     "name": "ดวงดาวแห่งชีวิตของ Linnea"
+  },
+  "NicolesStellaFortuna": {
+    "name": "ดวงดาวแห่งชีวิตของ Nicole"
+  },
+  "PrunesStellaFortuna": {
+    "name": "ดวงดาวแห่งชีวิตของ Prune"
   },
   "Apple": {
     "name": "Apple"
@@ -1822,6 +1843,15 @@
   },
   "FischlDictionaryDieNeuauflageDerPrinzessin": {
     "name": "พจนานุกรม Fischl: ฉบับพิมพ์ใหม่ของเจ้าหญิง"
+  },
+  "TheOriginsOfTheExperiment": {
+    "name": "เกี่ยวกับที่มาของการทดลอง"
+  },
+  "NotesOnTheExperimentalSubjects": {
+    "name": "บันทึกเกี่ยวกับร่างทดลอง"
+  },
+  "ScribbledNotes": {
+    "name": "บันทึกที่เขียนขึ้นอย่างลวก ๆ"
   },
   "WyattsRedKey": {
     "name": "Wyatt's Red Key"
@@ -8304,19 +8334,46 @@
     "name": "Harbor Fish Burger แสนอร่อย"
   },
   "SuspiciousMillhavensMorningPlate": {
-    "name": "Millhaven Morning Plate รสประหลาด"
+    "name": "Millhaven's Morning Plate รสประหลาด"
   },
   "MillhavensMorningPlate": {
-    "name": "Millhaven Morning Plate"
+    "name": "Millhaven's Morning Plate"
   },
   "DeliciousMillhavensMorningPlate": {
-    "name": "Millhaven Morning Plate แสนอร่อย"
+    "name": "Millhaven's Morning Plate แสนอร่อย"
   },
   "IridescenceUnderTheTreesShade": {
     "name": "Iridescence Under the Tree's Shade"
   },
   "SugarSculptureLinnea": {
     "name": "น้ำตาลปั้น: Linnea"
+  },
+  "SuspiciousStuffedTofuWithMincedMeat": {
+    "name": "Stuffed Tofu with Minced Meat รสประหลาด"
+  },
+  "StuffedTofuWithMincedMeat": {
+    "name": "Stuffed Tofu with Minced Meat"
+  },
+  "DeliciousStuffedTofuWithMincedMeat": {
+    "name": "Stuffed Tofu with Minced Meat แสนอร่อย"
+  },
+  "SuspiciousMintBubblegum": {
+    "name": "Mint Bubblegum รสประหลาด"
+  },
+  "MintBubblegum": {
+    "name": "Mint Bubblegum"
+  },
+  "DeliciousMintBubblegum": {
+    "name": "Mint Bubblegum แสนอร่อย"
+  },
+  "SpinningSpecial": {
+    "name": "Spinning Special"
+  },
+  "GildedChest": {
+    "name": "Gilded Chest"
+  },
+  "BoredomBustingBubblegum": {
+    "name": "Boredom-Busting Bubblegum"
   },
   "RecipeItem": {
     "name": "Cooking Ingredients"
@@ -9117,7 +9174,13 @@
     "name": "สูตรอาหาร: Harbor Fish Burger"
   },
   "RecipeMillhavensMorningPlate": {
-    "name": "สูตรอาหาร: Millhaven Morning Plate"
+    "name": "สูตรอาหาร: Millhaven's Morning Plate"
+  },
+  "RecipeStuffedTofuWithMincedMeat": {
+    "name": "สูตรอาหาร: Stuffed Tofu with Minced Meat"
+  },
+  "RecipeMintBubblegum": {
+    "name": "สูตรอาหาร: Mint Bubblegum"
   },
   "CraftedItems": {
     "name": "ไอเทมจากการสร้าง"
@@ -9943,6 +10006,15 @@
   },
   "PlumeOfTheFallenWatcher": {
     "name": "Plume of the Fallen Watcher"
+  },
+  "CounterfeitResin": {
+    "name": "Counterfeit Resin"
+  },
+  "TwistedWitheredBranch": {
+    "name": "Twisted Withered Branch"
+  },
+  "ProfanedSprout": {
+    "name": "Profaned Sprout"
   },
   "TileOfDecarabiansTower": {
     "name": "Tile of Decarabian's Tower"
@@ -13172,9 +13244,6 @@
   "EasybreezeHolidayResortMap": {
     "name": "แผนที่รีสอร์ตแสนสบาย"
   },
-  "ScribbledNotes": {
-    "name": "บันทึกที่เขียนขึ้นอย่างลวก ๆ"
-  },
   "BeautifullyWrittenNotes": {
     "name": "บันทึกที่เขียนอย่างสวยงาม"
   },
@@ -13733,6 +13802,9 @@
   "LohensWorkReport": {
     "name": "รายงานการทำงานของ Lohen"
   },
+  "LohensFriendshipFee": {
+    "name": "\"ค่าความเป็นเพื่อน\" ของ Lohen"
+  },
   "ArcadiaTheEntombedCapital": {
     "name": "\"นครร้างในโลงศพ: Arcadia\""
   },
@@ -13745,17 +13817,38 @@
   "VerasMelancholyFinalVolumeVersionI": {
     "name": "ความเศร้าโศกของ Vera (เล่มจบ - เวอร์ชัน I)"
   },
-  "TheDreamOfRhonabwy": {
-    "name": "ความฝันของ Rhonabwy"
+  "TheDreamOfRhonabouillet": {
+    "name": "\"ความฝันของ Rhonabouillet\""
   },
   "TheSongOfAyKhanoum": {
     "name": "\"บทเพลงแห่ง Ay-Khanoum\""
   },
-  "TheCanonOfLoveDivineInspirationAndVirtue": {
+  "RevelationsOfDivineLove": {
     "name": "\"บัญญัติแห่งรัก ศรัทธา และคุณธรรม\""
   },
   "Note": {
     "name": "กระดาษโน้ต"
+  },
+  "PhotoWithTheLittleWitchesAndTheirImaginaryFriends": {
+    "name": "ภาพถ่ายหมู่กับแม่มดน้อยและผองเพื่อนในจินตนาการ"
+  },
+  "AnomalousTreeMarrowI": {
+    "name": "แก่นไม้ที่ผิดแผก - 1"
+  },
+  "AnomalousTreeMarrowII": {
+    "name": "แก่นไม้ที่ผิดแผก - 2"
+  },
+  "AnomalousTreeMarrowIII": {
+    "name": "แก่นไม้ที่ผิดแผก - 3"
+  },
+  "AnomalousTreeMarrow": {
+    "name": "แก่นไม้ที่ผิดแผก"
+  },
+  "DangoMilkInfusedWithMagic": {
+    "name": "Dango Milk ที่เจือปน \"กลิ่นอายเวท\""
+  },
+  "PrimalConstructComponent": {
+    "name": "ชิ้นส่วน Primal Construct"
   },
   "AncientMondstadtRoyalSeal": {
     "name": "ตราประทับราชวงศ์ Mondstadt โบราณ"
@@ -15797,6 +15890,18 @@
   "TravelNotesHomecoming": {
     "name": "บันทึก - การหวนคืน"
   },
+  "NicoleHeavenlyStairway": {
+    "name": "Nicole - บันไดสวรรค์"
+  },
+  "LohenBenevolence": {
+    "name": "Lohen - ผู้เมตตา"
+  },
+  "PruneJudgment": {
+    "name": "Prune - ลงทัณฑ์"
+  },
+  "TravelNotesGiftOfSplendor": {
+    "name": "บันทึก - ของขวัญอันงดงาม"
+  },
   "EchoDandelionKnight": {
     "name": "เอฟเฟกต์วิ่ง - อัศวิน Dandelion"
   },
@@ -15853,6 +15958,12 @@
   },
   "EchoPillarOfFortitude": {
     "name": "เอฟเฟกต์วิ่ง - เล่ห์เหลี่ยมแห่งเกียรติยศ"
+  },
+  "EchoEonsAdrift": {
+    "name": "เอฟเฟกต์วิ่ง - กัปกัลป์อสงไขย"
+  },
+  "EchoHelmOfTheRadiantRose": {
+    "name": "เอฟเฟกต์วิ่ง - หางเสือแห่งมวลกุหลาบ"
   },
   "FaintGlow": {
     "name": "แสงอ่อนจาง"
@@ -16787,6 +16898,30 @@
   "MeditativeReading": {
     "name": "อ่านด้วยใจสงบ"
   },
+  "PatrolBreak": {
+    "name": "พักเบรกจากลาดตระเวน"
+  },
+  "MasterpieceComplete": {
+    "name": "ผลงานชิ้นเอกเสร็จสมบูรณ์"
+  },
+  "ReadyToSprint": {
+    "name": "เตรียมพุ่งตัว"
+  },
+  "InterludeRest": {
+    "name": "พักระหว่างเต้น"
+  },
+  "HarnessTheBlaze": {
+    "name": "ควบคุมเพลิงโชติช่วง"
+  },
+  "PerfectRating": {
+    "name": "ให้คะแนนเต็ม"
+  },
+  "RhythmMoment": {
+    "name": "ช่วงเวลาแห่งจังหวะ"
+  },
+  "ShareWithYou": {
+    "name": "แบ่งปันกับคุณ"
+  },
   "FantasticalMarvel": {
     "name": "มายาลวงตาพิศวง"
   },
@@ -16852,6 +16987,12 @@
   },
   "MysteriousWhiteStar": {
     "name": "ดาวขาวลึกลับ"
+  },
+  "EclipsingFlame": {
+    "name": "เพลิงผลาญแห่งวัฏจักร"
+  },
+  "DemonSlayingGale": {
+    "name": "วายุโหมสยบมาร"
   },
   "VigorousYapping": {
     "name": "พูดคุยอย่างคึกคัก"
@@ -16963,6 +17104,9 @@
   },
   "ConsecratedFangedBeast": {
     "name": "Consecrated Fanged Beast"
+  },
+  "ExperimentalFieldGenerator": {
+    "name": "Experimental Field Generator"
   },
   "UndividedHeart": {
     "name": "Undivided Heart"
@@ -17372,6 +17516,15 @@
   "WitheredReedsEclipseTheSun": {
     "name": "Withered Reeds Eclipse the Sun"
   },
+  "PartTheVeilOfSnow": {
+    "name": "Part the Veil of Snow"
+  },
+  "OLipsWeaveMeSongsAndPsalms": {
+    "name": "\"O Lips, Weave Me Songs and Psalms\""
+  },
+  "GravityField": {
+    "name": "สนามแรงโน้มถ่วง"
+  },
   "MagicGuide": {
     "name": "Magic Guide"
   },
@@ -17717,6 +17870,9 @@
   "Blubberbeast": {
     "name": "Blubberbeast"
   },
+  "GladiatorsFinale": {
+    "name": "Gladiator's Finale"
+  },
   "LiyueHarborWharf": {
     "name": "Liyue Harbor Wharf"
   },
@@ -17938,6 +18094,15 @@
   },
   "ElementalTransfigurationLavaBlessing": {
     "name": "การแปรธาตุ: พรไฟและหิน"
+  },
+  "Netochka": {
+    "name": "Netochka"
+  },
+  "ElementalTransfigurationRimegrassBlessing": {
+    "name": "การแปรธาตุ: พรพฤกษาน้ำแข็ง"
+  },
+  "ElementalTransfigurationStormgaleBlessing": {
+    "name": "การแปรธาตุ: พรลมสายฟ้า"
   },
   "ElementalResonanceWovenIce": {
     "name": "Elemental Resonance: Woven Ice"
@@ -18194,6 +18359,9 @@
   "CleaningTime": {
     "name": "Cleaning Time"
   },
+  "TheOtherSideOfTheFrostmoon": {
+    "name": "จันทราน้ำค้างแข็งอีกด้าน"
+  },
   "Origin": {
     "name": "แรกเริ่ม"
   },
@@ -18409,6 +18577,9 @@
   },
   "PhantasmalGiftStarOmen": {
     "name": "ของขวัญมายา - ดารานิมิต"
+  },
+  "SuperAwesomeMagicKey": {
+    "name": "กุญแจเวทมนตร์สุดเจ๋ง"
   },
   "UnbreakableDurandarte": {
     "name": "ไร้พินาศ - Durandarte"
@@ -22630,5 +22801,8 @@
   },
   "AllFangsAndSnarls": {
     "name": "\"เขี้ยวแหลมจอมโหยหวน\""
+  },
+  "MiniatureStonecraft": {
+    "name": "\"รูปปั้นจิ๋วท่ามกลางหิน\""
   }
 }

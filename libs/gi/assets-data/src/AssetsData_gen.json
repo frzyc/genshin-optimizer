@@ -736,6 +736,10 @@
       "icon": "UI_EquipIcon_Catalyst_Brisingamen",
       "awakenIcon": "UI_EquipIcon_Catalyst_Brisingamen_Awaken"
     },
+    "AngelosHeptades": {
+      "icon": "UI_EquipIcon_Catalyst_FairyGarden",
+      "awakenIcon": "UI_EquipIcon_Catalyst_FairyGarden_Awaken"
+    },
     "HuntersBow": {
       "icon": "UI_EquipIcon_Bow_Hunters",
       "awakenIcon": "UI_EquipIcon_Bow_Hunters_Awaken"
@@ -1323,6 +1327,20 @@
       "sands": "UI_RelicIcon_15044_5",
       "goblet": "UI_RelicIcon_15044_1",
       "circlet": "UI_RelicIcon_15044_3"
+    },
+    "CelestialGift": {
+      "flower": "UI_RelicIcon_15045_4",
+      "plume": "UI_RelicIcon_15045_2",
+      "sands": "UI_RelicIcon_15045_5",
+      "goblet": "UI_RelicIcon_15045_1",
+      "circlet": "UI_RelicIcon_15045_3"
+    },
+    "DisenchantmentInDeepShadow": {
+      "flower": "UI_RelicIcon_15046_4",
+      "plume": "UI_RelicIcon_15046_2",
+      "sands": "UI_RelicIcon_15046_5",
+      "goblet": "UI_RelicIcon_15046_1",
+      "circlet": "UI_RelicIcon_15046_3"
     }
   },
   "chars": {
@@ -3270,6 +3288,42 @@
       "constellation4": "UI_Talent_S_Linnea_03",
       "constellation5": "UI_Talent_U_Linnea_02",
       "constellation6": "UI_Talent_S_Linnea_04"
+    },
+    "Nicole": {
+      "icon": "UI_AvatarIcon_Nicole",
+      "iconSide": "UI_AvatarIcon_Side_Nicole",
+      "banner": "UI_NameCardPic_Nicole_P",
+      "bar": "UI_NameCardPic_Nicole_Alpha",
+      "skill": "Skill_S_Nicole_01",
+      "burst": "Skill_E_Nicole_01_HD",
+      "passive1": "UI_Talent_S_Nicole_05",
+      "passive2": "UI_Talent_S_Nicole_06",
+      "passive3": "UI_Talent_S_Nicole_08",
+      "lockedPassive": "UI_Talent_S_Nicole_07",
+      "constellation1": "UI_Talent_S_Nicole_01",
+      "constellation2": "UI_Talent_S_Nicole_02",
+      "constellation3": "UI_Talent_U_Nicole_01",
+      "constellation4": "UI_Talent_S_Nicole_03",
+      "constellation5": "UI_Talent_U_Nicole_02",
+      "constellation6": "UI_Talent_S_Nicole_04"
+    },
+    "Prune": {
+      "icon": "UI_AvatarIcon_Prune",
+      "iconSide": "UI_AvatarIcon_Side_Prune",
+      "banner": "UI_NameCardPic_Prune_P",
+      "bar": "UI_NameCardPic_Prune_Alpha",
+      "skill": "Skill_S_Prune_01",
+      "burst": "Skill_E_Prune_01_HD",
+      "passive1": "UI_Talent_S_Prune_05",
+      "passive2": "UI_Talent_S_Prune_06",
+      "passive3": "UI_Talent_S_Prune_08",
+      "lockedPassive": "UI_Talent_S_Prune_07",
+      "constellation1": "UI_Talent_S_Prune_01",
+      "constellation2": "UI_Talent_S_Prune_02",
+      "constellation3": "UI_Talent_U_Prune_01",
+      "constellation4": "UI_Talent_S_Prune_03",
+      "constellation5": "UI_Talent_U_Prune_02",
+      "constellation6": "UI_Talent_S_Prune_04"
     },
     "TravelerAnemo": {
       "skill": "Skill_S_PlayerWind_01",

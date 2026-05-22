@@ -254,6 +254,9 @@
   "JointExhibitionPopularity": {
     "name": "Joint Exhibition Popularity"
   },
+  "PalsSynergy": {
+    "name": "Pals Synergy"
+  },
   "Primogem": {
     "name": "Primogem"
   },
@@ -1148,8 +1151,17 @@
   "Varka": {
     "name": "Varka"
   },
+  "Lohen": {
+    "name": "Lohen"
+  },
   "Linnea": {
     "name": "Linnea"
+  },
+  "Nicole": {
+    "name": "Nicole"
+  },
+  "Prune": {
+    "name": "Prune"
   },
   "KachinasStellaFortuna": {
     "name": "Kachina's Stella Fortuna"
@@ -1232,8 +1244,17 @@
   "VarkasStellaFortuna": {
     "name": "Varka's Stella Fortuna"
   },
+  "LohensStellaFortuna": {
+    "name": "Lohen's Stella Fortuna"
+  },
   "LinneasStellaFortuna": {
     "name": "Linnea's Stella Fortuna"
+  },
+  "NicolesStellaFortuna": {
+    "name": "Nicole's Stella Fortuna"
+  },
+  "PrunesStellaFortuna": {
+    "name": "Prune's Stella Fortuna"
   },
   "Apple": {
     "name": "Apple"
@@ -1822,6 +1843,15 @@
   },
   "FischlDictionaryDieNeuauflageDerPrinzessin": {
     "name": "Fischl Dictionary: Die Neuauflage der Prinzessin"
+  },
+  "TheOriginsOfTheExperiment": {
+    "name": "Tentang Asal Eksperimen"
+  },
+  "NotesOnTheExperimentalSubjects": {
+    "name": "Catatan Tentang Subjek Eksperimen"
+  },
+  "ScribbledNotes": {
+    "name": "Catatan Coretan"
   },
   "WyattsRedKey": {
     "name": "Kunci Merah Wyatt"
@@ -8318,6 +8348,33 @@
   "SugarSculptureLinnea": {
     "name": "Sugar Sculpture: Linnea"
   },
+  "SuspiciousStuffedTofuWithMincedMeat": {
+    "name": "Suspicious Stuffed Tofu with Minced Meat"
+  },
+  "StuffedTofuWithMincedMeat": {
+    "name": "Stuffed Tofu with Minced Meat"
+  },
+  "DeliciousStuffedTofuWithMincedMeat": {
+    "name": "Delicious Stuffed Tofu with Minced Meat"
+  },
+  "SuspiciousMintBubblegum": {
+    "name": "Suspicious Mint Bubblegum"
+  },
+  "MintBubblegum": {
+    "name": "Mint Bubblegum"
+  },
+  "DeliciousMintBubblegum": {
+    "name": "Delicious Mint Bubblegum"
+  },
+  "SpinningSpecial": {
+    "name": "Spinning Special"
+  },
+  "GildedChest": {
+    "name": "Gilded Chest"
+  },
+  "BoredomBustingBubblegum": {
+    "name": "Boredom-Busting Bubblegum"
+  },
   "RecipeItem": {
     "name": "Bahan Resep"
   },
@@ -9118,6 +9175,12 @@
   },
   "RecipeMillhavensMorningPlate": {
     "name": "Resep: Millhaven's Morning Plate"
+  },
+  "RecipeStuffedTofuWithMincedMeat": {
+    "name": "Resep: Stuffed Tofu with Minced Meat"
+  },
+  "RecipeMintBubblegum": {
+    "name": "Resep: Mint Bubblegum"
   },
   "CraftedItems": {
     "name": "Hasil Craft"
@@ -9943,6 +10006,15 @@
   },
   "PlumeOfTheFallenWatcher": {
     "name": "Plume of the Fallen Watcher"
+  },
+  "CounterfeitResin": {
+    "name": "Counterfeit Resin"
+  },
+  "TwistedWitheredBranch": {
+    "name": "Twisted Withered Branch"
+  },
+  "ProfanedSprout": {
+    "name": "Profaned Sprout"
   },
   "TileOfDecarabiansTower": {
     "name": "Tile of Decarabian's Tower"
@@ -13172,9 +13244,6 @@
   "EasybreezeHolidayResortMap": {
     "name": "Peta Easybreeze Holiday Resort"
   },
-  "ScribbledNotes": {
-    "name": "Catatan Coretan"
-  },
   "BeautifullyWrittenNotes": {
     "name": "Catatan dengan Tulisan Indah"
   },
@@ -13733,6 +13802,9 @@
   "LohensWorkReport": {
     "name": "Laporan Kerja Lohen"
   },
+  "LohensFriendshipFee": {
+    "name": "Lohen's \"Friendship Fee\""
+  },
   "ArcadiaTheEntombedCapital": {
     "name": "Arcadia, Ibu Kota yang Terkubur"
   },
@@ -13745,17 +13817,38 @@
   "VerasMelancholyFinalVolumeVersionI": {
     "name": "Kemelankolisan Vera (Volume Terakhir Versi I)"
   },
-  "TheDreamOfRhonabwy": {
-    "name": "Mimpi Rhonabwy"
+  "TheDreamOfRhonabouillet": {
+    "name": "Mimpi Rhonabouillet"
   },
   "TheSongOfAyKhanoum": {
     "name": "Kidung Ay-Khanoum"
   },
-  "TheCanonOfLoveDivineInspirationAndVirtue": {
-    "name": "Kitab Cinta, Inspirasi Ilahi, dan Kebajikan"
+  "RevelationsOfDivineLove": {
+    "name": "Wahyu Kasih Ilahi"
   },
   "Note": {
     "name": "Catatan"
+  },
+  "PhotoWithTheLittleWitchesAndTheirImaginaryFriends": {
+    "name": "Foto dengan Penyihir Cilik dan Teman Khayalannya"
+  },
+  "AnomalousTreeMarrowI": {
+    "name": "Sumsum Pohon Heterogen I"
+  },
+  "AnomalousTreeMarrowII": {
+    "name": "Sumsum Pohon Heterogen II"
+  },
+  "AnomalousTreeMarrowIII": {
+    "name": "Sumsum Pohon Heterogen III"
+  },
+  "AnomalousTreeMarrow": {
+    "name": "Sumsum Pohon Heterogen"
+  },
+  "DangoMilkInfusedWithMagic": {
+    "name": "Susu Dango \"Rasa Sihir\""
+  },
+  "PrimalConstructComponent": {
+    "name": "Komponen Primal Construct"
   },
   "AncientMondstadtRoyalSeal": {
     "name": "Ancient Mondstadt Royal Seal"
@@ -15797,6 +15890,18 @@
   "TravelNotesHomecoming": {
     "name": "Catatan Perjalanan: Pulang Kampung"
   },
+  "NicoleHeavenlyStairway": {
+    "name": "Nicole: Heavenly Stairway"
+  },
+  "LohenBenevolence": {
+    "name": "Lohen: Benevolence"
+  },
+  "PruneJudgment": {
+    "name": "Prune: Judgment"
+  },
+  "TravelNotesGiftOfSplendor": {
+    "name": "Catatan Perjalanan: Hadiah Kemegahan"
+  },
   "EchoDandelionKnight": {
     "name": "Echo: Dandelion Knight"
   },
@@ -15853,6 +15958,12 @@
   },
   "EchoPillarOfFortitude": {
     "name": "Echo: Pillar of Fortitude"
+  },
+  "EchoEonsAdrift": {
+    "name": "Echo: Eons Adrift"
+  },
+  "EchoHelmOfTheRadiantRose": {
+    "name": "Echo: Helm of the Radiant Rose"
   },
   "FaintGlow": {
     "name": "Faint Glow"
@@ -16787,6 +16898,30 @@
   "MeditativeReading": {
     "name": "Membaca Bermeditasi"
   },
+  "PatrolBreak": {
+    "name": "Istirahat Patroli"
+  },
+  "MasterpieceComplete": {
+    "name": "Penyelesaian Maha Karya"
+  },
+  "ReadyToSprint": {
+    "name": "Siap Berlari"
+  },
+  "InterludeRest": {
+    "name": "Jeda Pertunjukan"
+  },
+  "HarnessTheBlaze": {
+    "name": "Menguasai Bara"
+  },
+  "PerfectRating": {
+    "name": "Nilai Sempurna"
+  },
+  "RhythmMoment": {
+    "name": "Momen Ritme"
+  },
+  "ShareWithYou": {
+    "name": "Berbagi Denganmu"
+  },
   "FantasticalMarvel": {
     "name": "Fantastical Marvel"
   },
@@ -16852,6 +16987,12 @@
   },
   "MysteriousWhiteStar": {
     "name": "Mysterious White Star"
+  },
+  "EclipsingFlame": {
+    "name": "Eclipsing Flame"
+  },
+  "DemonSlayingGale": {
+    "name": "Demon-Slaying Gale"
   },
   "VigorousYapping": {
     "name": "Celotehan Bersemangat"
@@ -16963,6 +17104,9 @@
   },
   "ConsecratedFangedBeast": {
     "name": "Consecrated Fanged Beast"
+  },
+  "ExperimentalFieldGenerator": {
+    "name": "Experimental Field Generator"
   },
   "UndividedHeart": {
     "name": "Undivided Heart"
@@ -17372,6 +17516,15 @@
   "WitheredReedsEclipseTheSun": {
     "name": "Withered Reeds Eclipse the Sun"
   },
+  "PartTheVeilOfSnow": {
+    "name": "Part the Veil of Snow"
+  },
+  "OLipsWeaveMeSongsAndPsalms": {
+    "name": "\"O Lips, Weave Me Songs and Psalms\""
+  },
+  "GravityField": {
+    "name": "Gravity Field"
+  },
   "MagicGuide": {
     "name": "Magic Guide"
   },
@@ -17717,6 +17870,9 @@
   "Blubberbeast": {
     "name": "Blubberbeast"
   },
+  "GladiatorsFinale": {
+    "name": "Gladiator's Finale"
+  },
   "LiyueHarborWharf": {
     "name": "Liyue Harbor Wharf"
   },
@@ -17938,6 +18094,15 @@
   },
   "ElementalTransfigurationLavaBlessing": {
     "name": "Elemental Transfiguration: Lava Blessing"
+  },
+  "Netochka": {
+    "name": "Netochka"
+  },
+  "ElementalTransfigurationRimegrassBlessing": {
+    "name": "Elemental Transfiguration: Rimegrass Blessing"
+  },
+  "ElementalTransfigurationStormgaleBlessing": {
+    "name": "Elemental Transfiguration: Stormgale Blessing"
   },
   "ElementalResonanceWovenIce": {
     "name": "Resonansi Elemental: Woven Ice"
@@ -18194,6 +18359,9 @@
   "CleaningTime": {
     "name": "Cleaning Time"
   },
+  "TheOtherSideOfTheFrostmoon": {
+    "name": "The Other Side of the Frostmoon"
+  },
   "Origin": {
     "name": "Origin"
   },
@@ -18409,6 +18577,9 @@
   },
   "PhantasmalGiftStarOmen": {
     "name": "Phantasmal Gift: Star Omen"
+  },
+  "SuperAwesomeMagicKey": {
+    "name": "Super Awesome Magic Key"
   },
   "UnbreakableDurandarte": {
     "name": "Unbreakable: Durandarte"
@@ -22630,5 +22801,8 @@
   },
   "AllFangsAndSnarls": {
     "name": "Taring Tajam Melolong"
+  },
+  "MiniatureStonecraft": {
+    "name": "Kerajinan Batu Miniatur"
   }
 }

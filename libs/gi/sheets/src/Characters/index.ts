@@ -80,10 +80,12 @@ import Nahida from './Nahida'
 import Navia from './Navia'
 import Nefer from './Nefer'
 import Neuvillette from './Neuvillette'
+import Nicole from './Nicole'
 import Nilou from './Nilou'
 import Ningguang from './Ningguang'
 import Noelle from './Noelle'
 import Ororon from './Ororon'
+import Prune from './Prune'
 import Qiqi from './Qiqi'
 import RaidenShogun from './RaidenShogun'
 import Razor from './Razor'
@@ -207,10 +209,12 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Navia,
   Nefer,
   Neuvillette,
+  Nicole,
   Nilou,
   Ningguang,
   Noelle,
   Ororon,
+  Prune,
   Qiqi,
   RaidenShogun,
   Razor,
