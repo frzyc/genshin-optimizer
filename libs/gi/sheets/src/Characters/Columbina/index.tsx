@@ -460,8 +460,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       electro_critDMG_: c6_electro_critDMG_,
       dendro_critDMG_: c6_dendro_critDMG_,
       geo_critDMG_: c6_geo_critDMG_,
-    },
-    total: {
+      // Even though these are scaling buffs, they are marked as non-extra in-game so they are used in other scaling buffs
       atk: c2Lunarcharged_atk,
       eleMas: c2Lunarbloom_eleMas,
       def: c2Lunarcrystallize_def,
