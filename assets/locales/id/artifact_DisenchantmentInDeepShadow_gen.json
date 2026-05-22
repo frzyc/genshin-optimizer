@@ -1,0 +1,29 @@
+{
+  "setName": "Disenchantment in Deep Shadow",
+  "setEffects": {
+    "2": "ATK +18%.",
+    "4": "DMG reaksi Superconduct +80%. Saat Karakter yang mengenakan menyerang musuh yang terpengaruh oleh reaksi Superconduct, CRIT Rate dari serangan ini +16%. Dalam perjalanan ke Snezhnaya, mungkin kamu akan mendapatkan berkah baru ...."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Iridescence That Ceased Amidst Glory",
+      "desc": "Itu adalah bunga pita yang dia terima sebagai hadiah dari sahabatnya yang memiliki tangan dingin."
+    },
+    "plume": {
+      "name": "Sharpness That Ceased Upon Wondrous Creation",
+      "desc": "Itu adalah pena yang diberikan kepada pengikutnya. Pena ini pernah digunakannya untuk menulis mimpi yang tak masuk akal."
+    },
+    "sands": {
+      "name": "Moment That Ceased Upon Waking From Grand Dreams",
+      "desc": "Itu adalah momen yang dia berikan kepada alkemis yang pendiam untuk mengingatkan segala jadwalnya."
+    },
+    "goblet": {
+      "name": "Ovations That Ceased Upon Festivity",
+      "desc": "Itu adalah cawan anggur yang dia terima dari rekannya sebagai hadiah perayaan."
+    },
+    "circlet": {
+      "name": "Pendulum That Ceased Amidst a Great Fall",
+      "desc": "Itu adalah hadiah pajangan yang didapatkannya dari tuannya satu-satunya."
+    }
+  }
+}

@@ -102,7 +102,7 @@
   "passive1": {
     "name": "Notes d'observation sur le terrain",
     "description": {
-      "0": "Lorque Lumi est sur le terrain, la <geo>RÉS Géo</geo> des ennemis près d'elle diminue de 15 %.",
+      "0": "Lorsque Lumi est sur le terrain, la <geo>RÉS Géo</geo> des ennemis près d'elle diminue de 15 %.",
       "1": "<br/>",
       "2": "<strong>Signelune « Lueur ascendante »</strong> : la compétence élémentaire <strong><tooltip ns=char_Linnea_gen baseKey18=skill>Contre-mesure : Cri de guerre de Lumi !</tooltip></strong> et le déchaînement élémentaire <strong><tooltip ns=char_Linnea_gen baseKey18=burst>Mémo : Guide de survie en conditions extrêmes</tooltip></strong> de Linnea sont renforcés, et après avoir invoqué Lumi, la <geo>RÉS Géo</geo> des ennemis près d'elle diminue de 15 % supplémentaires."
     }

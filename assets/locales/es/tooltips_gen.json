@@ -351,6 +351,40 @@
       "3": "Además, Varka puede consumir los usos de <strong>Alzamiento de los Cuatro Vientos</strong> para ejecutar el Ataque Cargado especial <strong>Devorazul</strong>, el cual no consume Aguante. Este ataque infligirá 2 golpes de daño del elemento correspondiente al mandoble que empuña en la mano derecha, el cual no puede sustituirse imbuyéndose de otro elemento, y 2 golpes de <anemo>Daño Anemo</anemo>."
     }
   },
+  "11290001": {
+    "name": "Maestro estratega",
+    "description": {
+      "0": "Lohen entra en este estado tras usar su Habilidad Elemental, <strong>Estacazo súbito</strong>. El estado de maestro estratega tiene las siguientes características:",
+      "1": [
+        "El daño de los Ataques Normales, Cargados y Descendentes de Lohen se transforma en <cryo>Daño Cryo</cryo>, el cual no puede sustituirse imbuyéndose de otro elemento.",
+        "Cuando Lohen golpea a un enemigo con un Ataque Normal o Cargado, obtiene <strong>exultación</strong>, la cual le sirve para usar su Habilidad Elemental especial <strong>Grabado hasta la médula</strong>. Tras usar un máximo de 3 veces <strong>Grabado hasta la médula</strong> en el estado de <strong>maestro estratega</strong>, Lohen no podrá obtener <strong>exultación</strong>.",
+        "Cuando otros personajes cercanos del equipo infligen daño, otorgan <strong>ansia de victoria</strong> a Lohen, lo que aumenta el daño que inflige con su Habilidad Elemental especial <strong>Grabado hasta la médula</strong>.",
+        "Cuando Lohen se retire de combate, el estado de maestro estratega se anulará. Al salir de dicho estado, también se eliminarán la <strong>exultación</strong> y el <strong>ansia de victoria</strong> que haya acumulado."
+      ]
+    }
+  },
+  "11290002": {
+    "name": "Grabado hasta la médula",
+    "description": {
+      "0": "Una Habilidad Elemental especial que Lohen puede usar cuando alcanza el máximo de <strong>exultación</strong>.",
+      "1": "Tras golpear a un enemigo, consume toda la <strong>exultación</strong> y el <strong>ansia de victoria</strong> para infligir <cryo>Daño Cryo</cryo>. El daño infligido será mayor cuanta más <strong>ansia de victoria</strong> se consuma."
+    }
+  },
+  "11290003": {
+    "name": "Exultación",
+    "description": {
+      "0": "Cuando Lohen golpea a un enemigo con un Ataque Normal o Cargado mientras está en estado de maestro estratega, obtendrá 0.381298 pts. de <strong>exultación</strong>, hasta un máximo de 100 pts.",
+      "1": "Como máximo, solo se puede obtener <strong>exultación</strong> una vez cada 0.1 s. Al alcanzar la cantidad máxima, la Habilidad Elemental de Lohen, <strong>Estacazo súbito</strong>, se remplazará por la Habilidad Elemental especial <strong>Grabado hasta la médula</strong>."
+    }
+  },
+  "11290004": {
+    "name": "Ansia de victoria",
+    "description": {
+      "0": "Un recurso especial que los personajes cercanos del equipo pueden otorgar a Lohen cuando infligen daño mientras él está en estado de maestro estratega. Como máximo, Lohen podrá obtener hasta 100 pts. de ansia de victoria.",
+      "1": "Mientras el estado de maestro estratega esté activo, si el daño infligido por los demás personajes cercanos del equipo es igual o superior al 55.2868% del ATQ Base de Lohen, este obtendrá 0.829302 pts. de <strong>ansia de victoria</strong>. De lo contrario, obtendrá 1 pt.",
+      "2": "Como máximo, cada personaje solo puede otorgar <strong>ansia de victoria</strong> a Lohen una vez cada 0.1 s."
+    }
+  },
   "11300001": {
     "name": "Formas de ataque de Lumi",
     "description": {
@@ -366,6 +400,51 @@
       "9": "<strong>Forma poderosa</strong>",
       "10": "Aunque no sea tan espectacular como las otras formas, sigue siendo bastante poderosa.",
       "11": "Lumi usará sus <strong>aporreadores pum-pum</strong> a intervalos más largos para atacar continuamente a los enemigos cercanos e infligirles <geo>Daño Geo en el AdE</geo> 2 veces con cada ataque."
+    }
+  },
+  "11310001": {
+    "name": "Gracia de la kénosis",
+    "description": {
+      "0": "Tras usar su Habilidad Elemental, <strong>Revelación: Luz no manifiesta</strong>, Nicole otorgará a todos los personajes cercanos del equipo un efecto de aumento de ATQ según el propio ATQ de Nicole.",
+      "1": "Si se cumplen ciertos requisitos especiales, el efecto de <strong>gracia de la kénosis</strong> mejorará a <strong>guía de la teosis</strong>, lo que aumentará aún más el ATQ."
+    }
+  },
+  "11310002": {
+    "name": "Guía de la teosis",
+    "description": {
+      "0": "El efecto mejorado de la <strong>gracia de la kénosis</strong>, que aumenta el ATQ en 300 pts. adicionales.",
+      "1": "Tras desbloquear el talento de ascensión “Méthexis” y alcanzar cualquiera de los siguientes requisitos de observación, la <strong>gracia de la kénosis</strong> mejorará a <strong>guía de la teosis</strong> en el tiempo restante de su duración:",
+      "2": [
+        "Si el personaje observado permanece en el campo de batalla durante más de 3 s.",
+        "Si el personaje observado es un personaje taumatúrgico."
+      ],
+      "3": "<br/>",
+      "4": "Además, tras desbloquear el talento de ascensión “Filocalia”, cuando un personaje en uso cercano del equipo golpee a un enemigo con Daño Elemental, la <strong>gracia de la kénosis</strong> de Nicole se convertirá en <strong>guía de la teosis</strong> durante 8 s.",
+      "5": "<br/>",
+      "6": "A excepción de Nicole, cuando los demás personajes se retiren del combate, su <strong>guía de la teosis</strong> volverá a convertirse en <strong>gracia de la kénosis</strong>."
+    }
+  },
+  "11320001": {
+    "name": "Martillo del Juramento Cazahecatombes",
+    "description": {
+      "0": "¡Un compañero de confianza para cazar brujas! Tras cumplirse ciertas condiciones, podrá sufrir un cambio elemental mediante el cual todo el daño infligido a los enemigos con el Martillo del Juramento Cazahecatombes pasará a ser daño del elemento correspondiente.",
+      "1": "Prune puede invocar de las siguientes formas el Martillo del Juramento Cazahecatombes que ha sufrido un cambio elemental:",
+      "2": [
+        "Durante cierto tiempo después de que Prune cause una reacción de Torbellino contra un enemigo con la Habilidad Elemental, <strong>“¡Tilín!”: Tañido cazaconjuros</strong>, podrá usar la Habilidad Elemental especial <strong>“¡Clang-clang!”: Retribución juzgabrujas</strong>. Al usar esta habilidad especial, el Martillo del Juramento Cazahecatombes cambiará al otro elemento que participó en la reacción de Torbellino.",
+        "Tras desbloquear el talento de ascensión “Juicio y condena”, si el Cascabel Cautivabrujas causa una reacción de Torbellino contra un enemigo en el modo rastreapresas, se invocará un Martillo del Juramento Cazahecatombes que haya sufrido el cambio elemental correspondiente para atacar al enemigo."
+      ]
+    }
+  },
+  "11320002": {
+    "name": "Juicio y condena",
+    "description": {
+      "0": "Durante la Habilidad Definitiva, <strong>“¡Ding-ding!”: ¡A la caza de la bruja!</strong>, cuando el Cascabel Cautivabrujas inflija daño a un enemigo en el modo rastreapresas, si dicho daño causa una reacción de Torbellino, Prune invocará frente al enemigo un <strong>Martillo del Juramento Cazahecatombes</strong> que haya sufrido el cambio elemental correspondiente para atacarlo e infligir daño del elemento correspondiente. Este daño se considera daño de Habilidad Definitiva."
+    }
+  },
+  "11320003": {
+    "name": "Sincronía tintineante",
+    "description": {
+      "0": "Cuando Prune golpee a un enemigo con su <strong>Martillo del Juramento Cazahecatombes</strong> después de que este haya sufrido un cambio elemental, los demás personajes cercanos del equipo obtendrán el efecto de “inspiración tintineante”, el cual aumenta el daño que infligen con sus ataques en función del ATQ de Prune."
     }
   }
 }

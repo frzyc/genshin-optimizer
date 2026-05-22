@@ -254,6 +254,9 @@
   "JointExhibitionPopularity": {
     "name": "전시회 인기"
   },
+  "PalsSynergy": {
+    "name": "우정"
+  },
   "Primogem": {
     "name": "원석"
   },
@@ -1148,8 +1151,17 @@
   "Varka": {
     "name": "바르카"
   },
+  "Lohen": {
+    "name": "로엔"
+  },
   "Linnea": {
     "name": "린네아"
+  },
+  "Nicole": {
+    "name": "니콜"
+  },
+  "Prune": {
+    "name": "프루네"
   },
   "KachinasStellaFortuna": {
     "name": "카치나의 운명의 별"
@@ -1232,8 +1244,17 @@
   "VarkasStellaFortuna": {
     "name": "바르카의 운명의 별"
   },
+  "LohensStellaFortuna": {
+    "name": "로엔의 운명의 별"
+  },
   "LinneasStellaFortuna": {
     "name": "린네아의 운명의 별"
+  },
+  "NicolesStellaFortuna": {
+    "name": "니콜의 운명의 별"
+  },
+  "PrunesStellaFortuna": {
+    "name": "프루네의 운명의 별"
   },
   "Apple": {
     "name": "사과"
@@ -1822,6 +1843,15 @@
   },
   "FischlDictionaryDieNeuauflageDerPrinzessin": {
     "name": "피슬 사전·황녀 개정판"
+  },
+  "TheOriginsOfTheExperiment": {
+    "name": "실험의 기원"
+  },
+  "NotesOnTheExperimentalSubjects": {
+    "name": "실험체 기록 노트"
+  },
+  "ScribbledNotes": {
+    "name": "휘갈긴 노트"
   },
   "WyattsRedKey": {
     "name": "와이엇의 빨간 열쇠"
@@ -8318,6 +8348,33 @@
   "SugarSculptureLinnea": {
     "name": "설탕 공예·린네아"
   },
+  "SuspiciousStuffedTofuWithMincedMeat": {
+    "name": "이상한 냥더우푸"
+  },
+  "StuffedTofuWithMincedMeat": {
+    "name": "냥더우푸"
+  },
+  "DeliciousStuffedTofuWithMincedMeat": {
+    "name": "맛있는 냥더우푸"
+  },
+  "SuspiciousMintBubblegum": {
+    "name": "이상한 민트 풍선껌"
+  },
+  "MintBubblegum": {
+    "name": "민트 풍선껌"
+  },
+  "DeliciousMintBubblegum": {
+    "name": "맛있는 민트 풍선껌"
+  },
+  "SpinningSpecial": {
+    "name": "돌려돌려 칵테일"
+  },
+  "GildedChest": {
+    "name": "「황금 보물상자」"
+  },
+  "BoredomBustingBubblegum": {
+    "name": "심심풀이용 풍선껌"
+  },
   "RecipeItem": {
     "name": "레시피 아이템"
   },
@@ -9118,6 +9175,12 @@
   },
   "RecipeMillhavensMorningPlate": {
     "name": "레시피: 아침의 풍차 마을"
+  },
+  "RecipeStuffedTofuWithMincedMeat": {
+    "name": "레시피: 냥더우푸"
+  },
+  "RecipeMintBubblegum": {
+    "name": "레시피: 민트 풍선껌"
   },
   "CraftedItems": {
     "name": "합성 산물"
@@ -9943,6 +10006,15 @@
   },
   "PlumeOfTheFallenWatcher": {
     "name": "타락한 깃털"
+  },
+  "CounterfeitResin": {
+    "name": "거짓된 레진"
+  },
+  "TwistedWitheredBranch": {
+    "name": "뒤틀린 가지"
+  },
+  "ProfanedSprout": {
+    "name": "모독의 새싹"
   },
   "TileOfDecarabiansTower": {
     "name": "고탑 왕의 잔해"
@@ -13172,9 +13244,6 @@
   "EasybreezeHolidayResortMap": {
     "name": "느긋한 휴양촌 지도"
   },
-  "ScribbledNotes": {
-    "name": "휘갈긴 메모"
-  },
   "BeautifullyWrittenNotes": {
     "name": "아름다운 필체의 노트"
   },
@@ -13733,6 +13802,9 @@
   "LohensWorkReport": {
     "name": "로엔의 업무 보고서"
   },
+  "LohensFriendshipFee": {
+    "name": "로엔의 「친구비」"
+  },
   "ArcadiaTheEntombedCapital": {
     "name": "「관 속의 폐허·아르카디아」"
   },
@@ -13745,17 +13817,38 @@
   "VerasMelancholyFinalVolumeVersionI": {
     "name": "소녀 베라의 우울·최종권(버전1)"
   },
-  "TheDreamOfRhonabwy": {
-    "name": "《로나뷔의 꿈》"
+  "TheDreamOfRhonabouillet": {
+    "name": "《로나부예의 꿈》"
   },
   "TheSongOfAyKhanoum": {
     "name": "《아이·하눔의 노래》"
   },
-  "TheCanonOfLoveDivineInspirationAndVirtue": {
-    "name": "《사랑과 계시 그리고 미덕의 법률》"
+  "RevelationsOfDivineLove": {
+    "name": "《신성한 사랑의 계시》"
   },
   "Note": {
     "name": "메모지"
+  },
+  "PhotoWithTheLittleWitchesAndTheirImaginaryFriends": {
+    "name": "꼬마 마녀와 상상 친구의 기념 사진"
+  },
+  "AnomalousTreeMarrowI": {
+    "name": "이상한 레진·첫 번째"
+  },
+  "AnomalousTreeMarrowII": {
+    "name": "이상한 레진·두 번째"
+  },
+  "AnomalousTreeMarrowIII": {
+    "name": "이상한 레진·세 번째"
+  },
+  "AnomalousTreeMarrow": {
+    "name": "이상한 레진"
+  },
+  "DangoMilkInfusedWithMagic": {
+    "name": "「마법의 기운」이 깃든 경단 우유"
+  },
+  "PrimalConstructComponent": {
+    "name": "태고의 구조체 부품"
   },
   "AncientMondstadtRoyalSeal": {
     "name": "몬드 왕실의 인장"
@@ -15797,6 +15890,18 @@
   "TravelNotesHomecoming": {
     "name": "기행·귀환"
   },
+  "NicoleHeavenlyStairway": {
+    "name": "니콜·하늘 계단"
+  },
+  "LohenBenevolence": {
+    "name": "로엔·인애"
+  },
+  "PruneJudgment": {
+    "name": "프루네·망치"
+  },
+  "TravelNotesGiftOfSplendor": {
+    "name": "기행·선물"
+  },
   "EchoDandelionKnight": {
     "name": "궤적·민들레 기사"
   },
@@ -15853,6 +15958,12 @@
   },
   "EchoPillarOfFortitude": {
     "name": "궤적·잎을 수호하는 반석"
+  },
+  "EchoEonsAdrift": {
+    "name": "궤적·기나긴 방황"
+  },
+  "EchoHelmOfTheRadiantRose": {
+    "name": "궤적·빛나는 장미의 타륜"
   },
   "FaintGlow": {
     "name": "삭"
@@ -16787,6 +16898,30 @@
   "MeditativeReading": {
     "name": "차분한 열람"
   },
+  "PatrolBreak": {
+    "name": "여정 중의 휴식"
+  },
+  "MasterpieceComplete": {
+    "name": "걸작 완성"
+  },
+  "ReadyToSprint": {
+    "name": "질주 준비"
+  },
+  "InterludeRest": {
+    "name": "막간 휴식"
+  },
+  "HarnessTheBlaze": {
+    "name": "불꽃"
+  },
+  "PerfectRating": {
+    "name": "만점"
+  },
+  "RhythmMoment": {
+    "name": "리듬 타임"
+  },
+  "ShareWithYou": {
+    "name": "너와의 공유"
+  },
   "FantasticalMarvel": {
     "name": "절묘한 트릭"
   },
@@ -16852,6 +16987,12 @@
   },
   "MysteriousWhiteStar": {
     "name": "흰별과 거울 연기"
+  },
+  "EclipsingFlame": {
+    "name": "흑염과 백염"
+  },
+  "DemonSlayingGale": {
+    "name": "맹렬한 북풍"
   },
   "VigorousYapping": {
     "name": "활기찬 대화"
@@ -16963,6 +17104,9 @@
   },
   "ConsecratedFangedBeast": {
     "name": "성해 검치호"
+  },
+  "ExperimentalFieldGenerator": {
+    "name": "실험성 역장 발생 장치"
   },
   "UndividedHeart": {
     "name": "단 하나의 마음"
@@ -17372,6 +17516,15 @@
   "WitheredReedsEclipseTheSun": {
     "name": "태양을 가린 죽음의 풀"
   },
+  "PartTheVeilOfSnow": {
+    "name": "걷힌 눈의 장막"
+  },
+  "OLipsWeaveMeSongsAndPsalms": {
+    "name": "「입술이여, 나를 위해 시와 노래로」"
+  },
+  "GravityField": {
+    "name": "중력장"
+  },
   "MagicGuide": {
     "name": "마도 서론"
   },
@@ -17717,6 +17870,9 @@
   "Blubberbeast": {
     "name": "탱탱 물범"
   },
+  "GladiatorsFinale": {
+    "name": "검투사의 피날레"
+  },
   "LiyueHarborWharf": {
     "name": "리월 항구"
   },
@@ -17938,6 +18094,15 @@
   },
   "ElementalTransfigurationLavaBlessing": {
     "name": "원소 변환: 불바위 축복"
+  },
+  "Netochka": {
+    "name": "네토치카"
+  },
+  "ElementalTransfigurationRimegrassBlessing": {
+    "name": "원소 변환: 얼음풀 축복"
+  },
+  "ElementalTransfigurationStormgaleBlessing": {
+    "name": "원소 변환: 번개바람 축복"
   },
   "ElementalResonanceWovenIce": {
     "name": "원소 공명: 뒤엉킨 얼음"
@@ -18194,6 +18359,9 @@
   "CleaningTime": {
     "name": "청소 시간"
   },
+  "TheOtherSideOfTheFrostmoon": {
+    "name": "서리달의 저편"
+  },
   "Origin": {
     "name": "원초"
   },
@@ -18409,6 +18577,9 @@
   },
   "PhantasmalGiftStarOmen": {
     "name": "선물·마법 구슬"
+  },
+  "SuperAwesomeMagicKey": {
+    "name": "「슈퍼 울트라 마법 열쇠」"
   },
   "UnbreakableDurandarte": {
     "name": "불멸·듀란달"
@@ -22630,5 +22801,8 @@
   },
   "AllFangsAndSnarls": {
     "name": "「늑대의 포효」"
+  },
+  "MiniatureStonecraft": {
+    "name": "「돌 속의 선령」"
   }
 }

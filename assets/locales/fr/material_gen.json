@@ -254,6 +254,9 @@
   "JointExhibitionPopularity": {
     "name": "Popularité d'exposition conjointe"
   },
+  "PalsSynergy": {
+    "name": "Synergie d'amis"
+  },
   "Primogem": {
     "name": "Primo-gemme"
   },
@@ -1148,8 +1151,17 @@
   "Varka": {
     "name": "Varka"
   },
+  "Lohen": {
+    "name": "Lohen"
+  },
   "Linnea": {
     "name": "Linnea"
+  },
+  "Nicole": {
+    "name": "Nicole"
+  },
+  "Prune": {
+    "name": "Prune"
   },
   "KachinasStellaFortuna": {
     "name": "Stella Fortuna de Kachina"
@@ -1232,8 +1244,17 @@
   "VarkasStellaFortuna": {
     "name": "Stella Fortuna de Varka"
   },
+  "LohensStellaFortuna": {
+    "name": "Stella Fortuna de Lohen"
+  },
   "LinneasStellaFortuna": {
     "name": "Stella Fortuna de Linnea"
+  },
+  "NicolesStellaFortuna": {
+    "name": "Stella Fortuna de Nicole"
+  },
+  "PrunesStellaFortuna": {
+    "name": "Stella Fortuna de Prune"
   },
   "Apple": {
     "name": "Pomme"
@@ -1822,6 +1843,15 @@
   },
   "FischlDictionaryDieNeuauflageDerPrinzessin": {
     "name": "Dictionnaire Fischl : Nouvelle édition de la Prinzessin"
+  },
+  "TheOriginsOfTheExperiment": {
+    "name": "Les origines du test"
+  },
+  "NotesOnTheExperimentalSubjects": {
+    "name": "Notes sur le sujet d'expérience"
+  },
+  "ScribbledNotes": {
+    "name": "Note griffonnée"
   },
   "WyattsRedKey": {
     "name": "Clé rouge de Wyatt"
@@ -8318,6 +8348,33 @@
   "SugarSculptureLinnea": {
     "name": "Sculpture en sucre : Linnea"
   },
+  "SuspiciousStuffedTofuWithMincedMeat": {
+    "name": "Tofu farci à la viande hachée (suspect)"
+  },
+  "StuffedTofuWithMincedMeat": {
+    "name": "Tofu farci à la viande hachée"
+  },
+  "DeliciousStuffedTofuWithMincedMeat": {
+    "name": "Tofu farci à la viande hachée (délicieux)"
+  },
+  "SuspiciousMintBubblegum": {
+    "name": "Chewing-gum à la menthe (suspect)"
+  },
+  "MintBubblegum": {
+    "name": "Chewing-gum à la menthe"
+  },
+  "DeliciousMintBubblegum": {
+    "name": "Chewing-gum à la menthe (délicieux)"
+  },
+  "SpinningSpecial": {
+    "name": "Tournette spéciale"
+  },
+  "GildedChest": {
+    "name": "Coffre doré"
+  },
+  "BoredomBustingBubblegum": {
+    "name": "Bonbon bullé brise-ennui"
+  },
   "RecipeItem": {
     "name": "Ingrédient"
   },
@@ -9118,6 +9175,12 @@
   },
   "RecipeMillhavensMorningPlate": {
     "name": "Recette : Assiette matinale de Meulavre"
+  },
+  "RecipeStuffedTofuWithMincedMeat": {
+    "name": "Recette : Tofu farci à la viande hachée"
+  },
+  "RecipeMintBubblegum": {
+    "name": "Recette : Chewing-gum à la menthe"
   },
   "CraftedItems": {
     "name": "Produit synthétisé"
@@ -9943,6 +10006,15 @@
   },
   "PlumeOfTheFallenWatcher": {
     "name": "Plume de veilleur déchu"
+  },
+  "CounterfeitResin": {
+    "name": "Résine contrefaite"
+  },
+  "TwistedWitheredBranch": {
+    "name": "Branche flétrie et tordue"
+  },
+  "ProfanedSprout": {
+    "name": "Pousse profane"
   },
   "TileOfDecarabiansTower": {
     "name": "Tuile cassée de Décarabian"
@@ -13172,9 +13244,6 @@
   "EasybreezeHolidayResortMap": {
     "name": "Carte de la Station balnéaire Brisedouce"
   },
-  "ScribbledNotes": {
-    "name": "Note griffonnée"
-  },
   "BeautifullyWrittenNotes": {
     "name": "Notes joliment rédigées"
   },
@@ -13733,6 +13802,9 @@
   "LohensWorkReport": {
     "name": "Rapport de travail de Lohen"
   },
+  "LohensFriendshipFee": {
+    "name": "Frais d'amitié de Lohen"
+  },
   "ArcadiaTheEntombedCapital": {
     "name": "Arcadia, la capitale ensevelie"
   },
@@ -13745,17 +13817,38 @@
   "VerasMelancholyFinalVolumeVersionI": {
     "name": "La mélancolie de Véra - Tome final (Version 1)"
   },
-  "TheDreamOfRhonabwy": {
-    "name": "Le rêve de Rhonabwy"
+  "TheDreamOfRhonabouillet": {
+    "name": "Le rêve de Rhonabouillet"
   },
   "TheSongOfAyKhanoum": {
     "name": "La chanson d'Ay-Khanoum"
   },
-  "TheCanonOfLoveDivineInspirationAndVirtue": {
-    "name": "Le code de l'amour, de l'inspiration divine et de la vertu"
+  "RevelationsOfDivineLove": {
+    "name": "Révélations sur l'amour divin"
   },
   "Note": {
     "name": "Lettre"
+  },
+  "PhotoWithTheLittleWitchesAndTheirImaginaryFriends": {
+    "name": "Photo avec les petites sorcières et leurs amis imaginaires"
+  },
+  "AnomalousTreeMarrowI": {
+    "name": "Moelle hétérogène d'arbre (1)"
+  },
+  "AnomalousTreeMarrowII": {
+    "name": "Moelle hétérogène d'arbre (2)"
+  },
+  "AnomalousTreeMarrowIII": {
+    "name": "Moelle hétérogène d'arbre (3)"
+  },
+  "AnomalousTreeMarrow": {
+    "name": "Moelle hétérogène d'arbre"
+  },
+  "DangoMilkInfusedWithMagic": {
+    "name": "Lait au dango infusé de magie"
+  },
+  "PrimalConstructComponent": {
+    "name": "Composant de Structure primale"
   },
   "AncientMondstadtRoyalSeal": {
     "name": "Ancien sceau royal de Mondstadt"
@@ -15797,6 +15890,18 @@
   "TravelNotesHomecoming": {
     "name": "PB - Retour"
   },
+  "NicoleHeavenlyStairway": {
+    "name": "Nicole - Marche céleste"
+  },
+  "LohenBenevolence": {
+    "name": "Lohen - Bienveillance"
+  },
+  "PruneJudgment": {
+    "name": "Prune - Jugement"
+  },
+  "TravelNotesGiftOfSplendor": {
+    "name": "PB - Don de splendeur"
+  },
   "EchoDandelionKnight": {
     "name": "Écho : Chevalier au Pissenlit"
   },
@@ -15853,6 +15958,12 @@
   },
   "EchoPillarOfFortitude": {
     "name": "Écho : Pilier de vaillance"
+  },
+  "EchoEonsAdrift": {
+    "name": "Écho : L'éternellement égaré"
+  },
+  "EchoHelmOfTheRadiantRose": {
+    "name": "Écho : Nautonière de la rose radieuse"
   },
   "FaintGlow": {
     "name": "Scintillement léger"
@@ -16787,6 +16898,30 @@
   "MeditativeReading": {
     "name": "Lecture méditative"
   },
+  "PatrolBreak": {
+    "name": "Pause de patrouille"
+  },
+  "MasterpieceComplete": {
+    "name": "Chef-d'œuvre achevé"
+  },
+  "ReadyToSprint": {
+    "name": "Prêt à sprinter"
+  },
+  "InterludeRest": {
+    "name": "Interlude de repos"
+  },
+  "HarnessTheBlaze": {
+    "name": "Dompter la flamme"
+  },
+  "PerfectRating": {
+    "name": "Note parfaite"
+  },
+  "RhythmMoment": {
+    "name": "Moment rythmique"
+  },
+  "ShareWithYou": {
+    "name": "Partager avec vous"
+  },
   "FantasticalMarvel": {
     "name": "Merveille fantastique"
   },
@@ -16852,6 +16987,12 @@
   },
   "MysteriousWhiteStar": {
     "name": "Étoile blanche mystérieuse"
+  },
+  "EclipsingFlame": {
+    "name": "Flamme éclipsante"
+  },
+  "DemonSlayingGale": {
+    "name": "Rafale pourfendeuse de démons"
   },
   "VigorousYapping": {
     "name": "Parlotte énergétique"
@@ -16963,6 +17104,9 @@
   },
   "ConsecratedFangedBeast": {
     "name": "Caniné sacralisé"
+  },
+  "ExperimentalFieldGenerator": {
+    "name": "Générateur de champ expérimental"
   },
   "UndividedHeart": {
     "name": "Cœur indivisible"
@@ -17372,6 +17516,15 @@
   "WitheredReedsEclipseTheSun": {
     "name": "Roseaux desséchés éclipsant le soleil"
   },
+  "PartTheVeilOfSnow": {
+    "name": "Voile de neige écarté"
+  },
+  "OLipsWeaveMeSongsAndPsalms": {
+    "name": "« Ô lèvres, tissez des psaumes et chantez le folklore »"
+  },
+  "GravityField": {
+    "name": "Champ gravitationnel"
+  },
   "MagicGuide": {
     "name": "Guide de magie"
   },
@@ -17717,6 +17870,9 @@
   "Blubberbeast": {
     "name": "Boudiné"
   },
+  "GladiatorsFinale": {
+    "name": "Rideau du Gladiateur"
+  },
   "LiyueHarborWharf": {
     "name": "Quai du Port de Liyue"
   },
@@ -17938,6 +18094,15 @@
   },
   "ElementalTransfigurationLavaBlessing": {
     "name": "Transfiguration élémentaire : Grâce de lave"
+  },
+  "Netochka": {
+    "name": "Netochka"
+  },
+  "ElementalTransfigurationRimegrassBlessing": {
+    "name": "Transfiguration élémentaire : Grâce de frimas"
+  },
+  "ElementalTransfigurationStormgaleBlessing": {
+    "name": "Transfiguration élémentaire : Grâce d'électropropagation"
   },
   "ElementalResonanceWovenIce": {
     "name": "Résonance élémentaire : Glace tissée"
@@ -18194,6 +18359,9 @@
   "CleaningTime": {
     "name": "Temps de nettoyage"
   },
+  "TheOtherSideOfTheFrostmoon": {
+    "name": "L'autre versant de la lune de givre"
+  },
   "Origin": {
     "name": "Origine"
   },
@@ -18409,6 +18577,9 @@
   },
   "PhantasmalGiftStarOmen": {
     "name": "Cadeau illusoire : Présage étoilé"
+  },
+  "SuperAwesomeMagicKey": {
+    "name": "Super clé magique géniale"
   },
   "UnbreakableDurandarte": {
     "name": "Invaincu : Durandal"
@@ -22630,5 +22801,8 @@
   },
   "AllFangsAndSnarls": {
     "name": "« Tout croc, tout grognement »"
+  },
+  "MiniatureStonecraft": {
+    "name": "Miniature en pierre"
   }
 }

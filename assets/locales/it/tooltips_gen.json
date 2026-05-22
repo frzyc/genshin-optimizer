@@ -353,6 +353,40 @@
       "3": "Inoltre, Varka può consumare le cariche di <strong>Ascensione dei Quattro Venti</strong> per eseguire l'attacco caricato speciale <strong>Divorazzurro</strong>, che non consuma vigore e infligge 2 iterazioni di DAN elementali corrispondenti all'elemento della claymore impugnata nella mano destra (non influenzabili da altre infusioni) e 2 iterazioni di <anemo>DAN da Anemo</anemo>."
     }
   },
+  "11290001": {
+    "name": "Colpo da maestro",
+    "description": {
+      "0": "Una modalità di Lohen che si attiva dopo aver sprigionato l'abilità elementale <strong>Colpo imprevisto</strong>. La modalità Colpo da maestro ha le seguenti caratteristiche.",
+      "1": [
+        " I DAN inflitti da attacchi normali, attacchi caricati e attacchi in picchiata di Lohen vengono convertiti in <cryo>DAN da Cryo</cryo> non influenzabili da altre infusioni.",
+        " Quando Lohen colpisce un nemico con un attacco normale o un attacco caricato, accumula <strong>Gioia</strong> utilizzabile per sprigionare l'abilità elementale speciale <strong>Nelle ossa e nell'anima</strong>. Lohen può sprigionare <strong>Nelle ossa e nell'anima</strong> fino a 3 volte durante la modalità <strong>Colpo da maestro</strong>, dopo le quali non può più accumulare <strong>Gioia</strong>.",
+        " Quando i membri vicini del gruppo infliggono DAN, accumulano <strong>Voglia di vincere</strong> per Lohen, utilizzabile per aumentare i DAN inflitti da <strong>Nelle ossa e nell'anima</strong>.",
+        " La modalità Colpo da maestro termina quando Lohen lascia il campo. Al termine della modalità, <strong>Gioia</strong> e <strong>Voglia di vincere</strong> si azzerano."
+      ]
+    }
+  },
+  "11290002": {
+    "name": "Nelle ossa e nell'anima",
+    "description": {
+      "0": "Un'abilità elementale speciale che Lohen può impiegare dopo che la sua <strong>Gioia</strong> ha raggiunto il livello massimo.",
+      "1": "Dopo aver colpito un avversario, consuma tutta la <strong>Gioia</strong> e la <strong>Voglia di vincere</strong> per infliggere <cryo>DAN da Cryo</cryo>. Tali DAN aumentano in base alla quantità di <strong>Voglia di vincere</strong> consumata."
+    }
+  },
+  "11290003": {
+    "name": "Gioia",
+    "description": {
+      "0": "Lohen accumula 0.381298 punti <strong>Gioia</strong> ogni volta che colpisce gli avversari con attacchi normali o caricati durante la modalità Colpo da maestro. È possibile accumulare fino a un massimo di 100 punti Gioia alla volta.",
+      "1": "È possibile ottenere <strong>Gioia</strong> una volta ogni 0,1 s. Quando i punti <strong>Gioia</strong> raggiungono il limite massimo, l'abilità elementale di Lohen <strong>Colpo imprevisto</strong> viene sostituita dall'abilità elementale speciale <strong>Nelle ossa e nell'anima</strong>."
+    }
+  },
+  "11290004": {
+    "name": "Voglia di vincere",
+    "description": {
+      "0": "Una risorsa speciale che si accumula quando gli altri membri vicini del gruppo infliggono DAN mentre Lohen è in modalità Colpo da maestro. È possibile accumulare fino a un massimo di 100 punti Voglia di vincere.",
+      "1": "Mentre la modalità Colpo da maestro è attiva, quando gli altri membri vicini del gruppo infliggono DAN, se tali DAN non sono inferiori a un 55.2868% dell'ATT di base di Lohen, quest'ultimo accumula 0.829302 punti <strong>Voglia di vincere</strong>; in caso contrario, ne accumula 1.",
+      "2": "Ogni personaggio può fornire <strong>Voglia di vincere</strong> a Lohen una volta ogni 0,1 s."
+    }
+  },
   "11300001": {
     "name": "Lumi: Forme d'attacco",
     "description": {
@@ -368,6 +402,51 @@
       "9": "<strong>Forma potente standard</strong>",
       "10": "Nonostante non sia appariscente come le altre forme, è in grado di fare parecchio male.",
       "11": "Lumi usa <strong>Pestaggio martellante</strong> a intervalli più lunghi per attaccare continuamente gli avversari vicini. Ogni attacco infligge 2 iterazioni di <geo>DAN da Geo ad area</geo>."
+    }
+  },
+  "11310001": {
+    "name": "Grazia della kenosis",
+    "description": {
+      "0": "Un effetto conferito da Nicole a tutti i membri vicini del gruppo dopo aver sprigionato l'abilità elementale <strong>Rivelazione: Luce increata</strong>, che aumenta l'ATT in base all'ATT di Nicole.",
+      "1": "Una volta soddisfatte determinate condizioni, l'effetto <strong>Grazia della kenosis</strong> si potenzia in <strong>Guida della theosis</strong>, che aumenta ulteriormente l'ATT."
+    }
+  },
+  "11310002": {
+    "name": "Guida della theosis",
+    "description": {
+      "0": "Potenziare l'effetto <strong>Grazia della kenosis</strong> aumenta l'ATT di ulteriori 300.",
+      "1": "Dopo aver sbloccato il talento d'ascensione \"Methexis\" e soddisfatto una delle seguenti condizioni di osservazione, <strong>Grazia della kenosis</strong> si potenzia in <strong>Guida della theosis</strong> per il resto della sua durata.",
+      "2": [
+        " Un altro personaggio sotto osservazione rimane in campo per più di 3 s.",
+        " Un altro personaggio sotto osservazione è un personaggio con attributo Hexerei."
+      ],
+      "3": "<br/>",
+      "4": "Inoltre, dopo aver sbloccato il talento d'ascensione \"Philokalia\", quando un membro attivo del gruppo nelle vicinanze colpisce un avversario con DAN elementali, l'effetto <strong>Grazia della kenosis</strong> attivo su Nicole si potenzia in <strong>Guida della theosis</strong> per 8 s.",
+      "5": "<br/>",
+      "6": "Quando i personaggi diversi da Nicole che possiedono <strong>Guida della theosis</strong> lasciano il campo, il loro effetto regredisce in <strong>Grazia della kenosis</strong>."
+    }
+  },
+  "11320001": {
+    "name": "Martello Scacciamali",
+    "description": {
+      "0": "Il fidato compagno di ogni Cacciastreghe! In determinate condizioni, il Martello Scacciamali viene sottoposto a una Conversione elementale, trasformando tutti i suoi DAN in DAN del tipo elementale corrispondente.",
+      "1": "Prune può evocare il Martello Scacciamali sottoposto a Conversione elementale nei seguenti modi.",
+      "2": [
+        " Per un certo periodo di tempo dopo aver innescato una reazione di Turbinio su un avversario tramite l'abilità elementale <strong>Din-din-dan! Scampanio Scacciastreghe</strong>, Prune può sferrare l'abilità elementale speciale <strong>Don don! Castigo della strega!</strong>. Usando quest'abilità speciale, il Martello Scacciamali viene convertito nell'altro tipo elementale coinvolto nella suddetta reazione di Turbinio.",
+        " Dopo aver sbloccato il talento d'ascensione \"Verdetto e punizione\", quando la Campana Ammaliastreghe in modalità Caccia innesca un Turbinio su un avversario, evoca un Martello Scacciamali sottoposto alla Conversione elementale corrispondente per attaccare l'avversario."
+      ]
+    }
+  },
+  "11320002": {
+    "name": "Verdetto e punizione",
+    "description": {
+      "0": "Durante il Tripudio elementale <strong>La campana rintocca! La caccia è aperta!</strong>, dopo che la Campana Ammaliastreghe in modalità Caccia ha inflitto DAN a un avversario, se tali DAN innescano un Turbinio su un avversario, evoca anche un <strong>Martello Scacciamali</strong> che infligge DAN del tipo corrispondente alla Conversione elementale derivante dal Turbinio. Tali DAN sono considerati DAN da Tripudio elementale."
+    }
+  },
+  "11320003": {
+    "name": "Rintocchi sincronizzati",
+    "description": {
+      "0": "Dopo che Prune ha colpito un avversario con il <strong>Martello Scacciamali</strong> sottoposto a Conversione elementale, gli altri membri vicini del gruppo ottengono l'effetto Adunanza del rintocco, che aumenta i DAN da ATT in base all'ATT di Prune."
     }
   }
 }

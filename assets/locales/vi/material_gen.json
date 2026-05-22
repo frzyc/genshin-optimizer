@@ -254,6 +254,9 @@
   "JointExhibitionPopularity": {
     "name": "Sức Nóng Triển Lãm"
   },
+  "PalsSynergy": {
+    "name": "Bạn Bè Ăn Ý"
+  },
   "Primogem": {
     "name": "Nguyên Thạch"
   },
@@ -1148,8 +1151,17 @@
   "Varka": {
     "name": "Varka"
   },
+  "Lohen": {
+    "name": "Lohen"
+  },
   "Linnea": {
     "name": "Linnea"
+  },
+  "Nicole": {
+    "name": "Nicole"
+  },
+  "Prune": {
+    "name": "Prune"
   },
   "KachinasStellaFortuna": {
     "name": "Chòm Sao Của Kachina"
@@ -1232,8 +1244,17 @@
   "VarkasStellaFortuna": {
     "name": "Chòm Sao Của Varka"
   },
+  "LohensStellaFortuna": {
+    "name": "Chòm Sao Của Lohen"
+  },
   "LinneasStellaFortuna": {
     "name": "Chòm Sao Của Linnea"
+  },
+  "NicolesStellaFortuna": {
+    "name": "Chòm Sao Của Nicole"
+  },
+  "PrunesStellaFortuna": {
+    "name": "Chòm Sao Của Prune"
   },
   "Apple": {
     "name": "Táo"
@@ -1822,6 +1843,15 @@
   },
   "FischlDictionaryDieNeuauflageDerPrinzessin": {
     "name": "Từ Điển Fischl: Phiên Bản Mới Của Công Chúa"
+  },
+  "TheOriginsOfTheExperiment": {
+    "name": "Khởi Nguồn Của Thí Nghiệm"
+  },
+  "NotesOnTheExperimentalSubjects": {
+    "name": "Ghi Chép Về Vật Thí Nghiệm"
+  },
+  "ScribbledNotes": {
+    "name": "Bút Ký Nguệch Ngoạc"
   },
   "WyattsRedKey": {
     "name": "Chìa Khóa Đỏ Của Wyatt"
@@ -8318,6 +8348,33 @@
   "SugarSculptureLinnea": {
     "name": "Điêu Khắc Đường - Linnea"
   },
+  "SuspiciousStuffedTofuWithMincedMeat": {
+    "name": "Đậu Phụ Nhồi Thịt Kỳ Lạ"
+  },
+  "StuffedTofuWithMincedMeat": {
+    "name": "Đậu Phụ Nhồi Thịt"
+  },
+  "DeliciousStuffedTofuWithMincedMeat": {
+    "name": "Đậu Phụ Nhồi Thịt Ngon"
+  },
+  "SuspiciousMintBubblegum": {
+    "name": "Kẹo Cao Su Bạc Hà Kỳ Lạ"
+  },
+  "MintBubblegum": {
+    "name": "Kẹo Cao Su Bạc Hà"
+  },
+  "DeliciousMintBubblegum": {
+    "name": "Kẹo Cao Su Bạc Hà Ngon"
+  },
+  "SpinningSpecial": {
+    "name": "Vòng Xoay Đặc Biệt"
+  },
+  "GildedChest": {
+    "name": "Rương Vàng Chạm Trổ"
+  },
+  "BoredomBustingBubblegum": {
+    "name": "Kẹo Cao Su Giải Sầu"
+  },
   "RecipeItem": {
     "name": "Đạo Cụ Công Thức"
   },
@@ -9118,6 +9175,12 @@
   },
   "RecipeMillhavensMorningPlate": {
     "name": "Công Thức: Chào Buổi Sáng Thị Trấn Cối Xay Gió"
+  },
+  "RecipeStuffedTofuWithMincedMeat": {
+    "name": "Công Thức: Đậu Phụ Nhồi Thịt"
+  },
+  "RecipeMintBubblegum": {
+    "name": "Công Thức: Kẹo Cao Su Bạc Hà"
   },
   "CraftedItems": {
     "name": "Sản Phẩm Ghép"
@@ -9943,6 +10006,15 @@
   },
   "PlumeOfTheFallenWatcher": {
     "name": "Lông Vũ Sa Ngã"
+  },
+  "CounterfeitResin": {
+    "name": "Nhựa Cây Giả Tạo"
+  },
+  "TwistedWitheredBranch": {
+    "name": "Cành Khô Vặn Xoắn"
+  },
+  "ProfanedSprout": {
+    "name": "Chồi Non Báng Bổ"
   },
   "TileOfDecarabiansTower": {
     "name": "Ngói Vỡ Tháp Cô Vương"
@@ -13172,9 +13244,6 @@
   "EasybreezeHolidayResortMap": {
     "name": "Bản Đồ Khu Nghỉ Dưỡng Nhàn Nhã"
   },
-  "ScribbledNotes": {
-    "name": "Bút Ký Nguệch Ngoạc"
-  },
   "BeautifullyWrittenNotes": {
     "name": "Bút Ký Chữ Đẹp"
   },
@@ -13733,6 +13802,9 @@
   "LohensWorkReport": {
     "name": "Báo Cáo Công Việc Của Lohen"
   },
+  "LohensFriendshipFee": {
+    "name": "\"Phí Bạn Bè\" của Lohen"
+  },
   "ArcadiaTheEntombedCapital": {
     "name": "Arcadia, Phế Đô Bị Chôn Vùi"
   },
@@ -13745,17 +13817,38 @@
   "VerasMelancholyFinalVolumeVersionI": {
     "name": "Vera Sầu Muộn - Quyển Cuối (Phiên Bản I)"
   },
-  "TheDreamOfRhonabwy": {
-    "name": "\"Giấc Mơ Của Rhonabwy\""
+  "TheDreamOfRhonabouillet": {
+    "name": "\"Giấc Mơ Của Rhonabouillet\""
   },
   "TheSongOfAyKhanoum": {
     "name": "\"Khúc Ca Ay-Khanoum\""
   },
-  "TheCanonOfLoveDivineInspirationAndVirtue": {
+  "RevelationsOfDivineLove": {
     "name": "\"Điển Luật Về Tình Yêu, Khải Huyền Và Đức Hạnh\""
   },
   "Note": {
     "name": "Giấy Nhớ"
+  },
+  "PhotoWithTheLittleWitchesAndTheirImaginaryFriends": {
+    "name": "Ảnh Chụp Cùng Ma Nữ Nhỏ Và Bạn Bè Tưởng Tượng"
+  },
+  "AnomalousTreeMarrowI": {
+    "name": "Tủy Cây Dị Chất I"
+  },
+  "AnomalousTreeMarrowII": {
+    "name": "Tủy Cây Dị Chất II"
+  },
+  "AnomalousTreeMarrowIII": {
+    "name": "Tủy Cây Dị Chất III"
+  },
+  "AnomalousTreeMarrow": {
+    "name": "Tủy Cây Dị Chất"
+  },
+  "DangoMilkInfusedWithMagic": {
+    "name": "Sữa Dango Nhiễm \"Ma Thuật\""
+  },
+  "PrimalConstructComponent": {
+    "name": "Linh Kiện Kết Cấu Nguyên Thủy"
   },
   "AncientMondstadtRoyalSeal": {
     "name": "Ấn Tông Thất Mondstadt Cổ"
@@ -15797,6 +15890,18 @@
   "TravelNotesHomecoming": {
     "name": "Nhật Ký Hành Trình - Trở Về"
   },
+  "NicoleHeavenlyStairway": {
+    "name": "Nicole - Thang Trời"
+  },
+  "LohenBenevolence": {
+    "name": "Lohen - Nhân Ái"
+  },
+  "PruneJudgment": {
+    "name": "Prune - Trừng Phạt"
+  },
+  "TravelNotesGiftOfSplendor": {
+    "name": "Nhật Ký Hành Trình - Quà Đẹp"
+  },
   "EchoDandelionKnight": {
     "name": "Vết Tích - Kỵ Sĩ Bồ Công Anh"
   },
@@ -15854,6 +15959,12 @@
   "EchoPillarOfFortitude": {
     "name": "Vết Tích - Trụ Cột Vững Vàng"
   },
+  "EchoEonsAdrift": {
+    "name": "Vết Tích - Đoạn Tuyệt Thế Gian"
+  },
+  "EchoHelmOfTheRadiantRose": {
+    "name": "Vết Tích - Bánh Lái Hoa Lệ"
+  },
   "FaintGlow": {
     "name": "Hé Sáng"
   },
@@ -15873,7 +15984,7 @@
     "name": "Đá Cộng Hưởng Nham Thần Đồng"
   },
   "GeoTreasureCompass": {
-    "name": "La Bàn Tìm Báu Vật - Nham"
+    "name": "La Bàn Tầm Bảo - Nham"
   },
   "WindCatcher": {
     "name": "Bình Bắt Gió"
@@ -15891,7 +16002,7 @@
     "name": "Túi Dinh Dưỡng Bỏ Túi - Mẫu 30"
   },
   "AnemoTreasureCompass": {
-    "name": "La Bàn Tìm Báu Vật - Phong"
+    "name": "La Bàn Tầm Bảo - Phong"
   },
   "TreasureSeekingSeelie": {
     "name": "Tiên Linh Tầm Bảo"
@@ -15957,7 +16068,7 @@
     "name": "Hộp Hạt Giống"
   },
   "ElectroTreasureCompass": {
-    "name": "La Bàn Tìm Báu Vật - Lôi"
+    "name": "La Bàn Tầm Bảo - Lôi"
   },
   "RedFeatherFan": {
     "name": "Quạt Lông Đỏ"
@@ -16011,7 +16122,7 @@
     "name": "Đá Cộng Hưởng Thảo Thần Đồng"
   },
   "DendroTreasureCompass": {
-    "name": "La Bàn Tìm Báu Vật - Thảo"
+    "name": "La Bàn Tầm Bảo - Thảo"
   },
   "TheBoonOfTheElderTree": {
     "name": "\"Phù Hộ Của Cây Vua\""
@@ -16083,7 +16194,7 @@
     "name": "Đá Cộng Hưởng Thủy Thần Đồng"
   },
   "HydroTreasureCompass": {
-    "name": "La Bàn Tìm Báu Vật - Thủy"
+    "name": "La Bàn Tầm Bảo - Thủy"
   },
   "CrystalflyTrap": {
     "name": "Thiết Bị Bắt Tinh Điệp"
@@ -16128,7 +16239,7 @@
     "name": "Đá Cộng Hưởng Hỏa Thần Đồng"
   },
   "PyroTreasureCompass": {
-    "name": "La Bàn Tìm Báu Vật - Hỏa"
+    "name": "La Bàn Tầm Bảo - Hỏa"
   },
   "FirstbornFiresprite": {
     "name": "Tinh Linh Lửa Mới Nở"
@@ -16176,7 +16287,7 @@
     "name": "Máy Ảnh Bắt Hồi Ức"
   },
   "LunaTreasureCompass": {
-    "name": "La Bàn Tìm Báu Vật - Nguyệt"
+    "name": "La Bàn Tầm Bảo - Nguyệt"
   },
   "TravelAccounts": {
     "name": "Ghi Chép Lữ Hành"
@@ -16209,7 +16320,7 @@
     "name": "Giải Thích: Đá Cộng Hưởng Nham Thần Đồng"
   },
   "DiagramGeoTreasureCompass": {
-    "name": "Bản Vẽ: La Bàn Tìm Báu Vật Nham"
+    "name": "Bản Vẽ: La Bàn Tầm Bảo - Nham"
   },
   "DiagramWindCatcher": {
     "name": "Bản Vẽ: Bình Bắt Gió"
@@ -16227,7 +16338,7 @@
     "name": "Bản Vẽ: Túi Dinh Dưỡng Bỏ Túi - Mẫu 30"
   },
   "DiagramAnemoTreasureCompass": {
-    "name": "Bản Vẽ: La Bàn Tìm Báu Vật Phong"
+    "name": "Bản Vẽ: La Bàn Tầm Bảo - Phong"
   },
   "MemoryOfTheEntombedCity": {
     "name": "Ký ức Cố Đô Tuyết Vùi"
@@ -16287,7 +16398,7 @@
     "name": "Giải Thích: Đá Cộng Hưởng Lôi Thần Đồng"
   },
   "DiagramElectroTreasureCompass": {
-    "name": "Bản Vẽ: La Bàn Tìm Báu Vật - Lôi"
+    "name": "Bản Vẽ: La Bàn Tầm Bảo - Lôi"
   },
   "FormulaFruitPasteBait": {
     "name": "Công Thức: Mồi Lên Men"
@@ -16344,13 +16455,13 @@
     "name": "Giải Thích: Đá Cộng Hưởng Thảo Thần Đồng"
   },
   "DiagramDendroTreasureCompass": {
-    "name": "Bản Vẽ: La Bàn Tìm Báu Vật - Thảo"
+    "name": "Bản Vẽ: La Bàn Tầm Bảo - Thảo"
   },
   "InstructionsHydroculusResonanceStone": {
     "name": "Giải Thích: Đá Cộng Hưởng Thủy Thần Đồng"
   },
   "DiagramHydroTreasureCompass": {
-    "name": "Bản Vẽ: La Bàn Tìm Báu Vật Thủy"
+    "name": "Bản Vẽ: La Bàn Tầm Bảo - Thủy"
   },
   "FormulaPureWater": {
     "name": "Công Thức: \"Nước Tinh Khiết\""
@@ -16362,7 +16473,7 @@
     "name": "Giải Thích: Đá Cộng Hưởng Hỏa Thần Đồng"
   },
   "DiagramPyroTreasureCompass": {
-    "name": "Bản Vẽ: La Bàn Tìm Báu Vật Hỏa"
+    "name": "Bản Vẽ: La Bàn Tầm Bảo - Hỏa"
   },
   "FormulaSpinelgrainBait": {
     "name": "Công Thức: Mồi Bột Spinel"
@@ -16787,6 +16898,30 @@
   "MeditativeReading": {
     "name": "Tĩnh Tâm Đọc Hiểu"
   },
+  "PatrolBreak": {
+    "name": "Khoảng Nghỉ Tuần Tra"
+  },
+  "MasterpieceComplete": {
+    "name": "Kiệt Tác Hoàn Thành"
+  },
+  "ReadyToSprint": {
+    "name": "Chuẩn Bị Trượt Nhanh"
+  },
+  "InterludeRest": {
+    "name": "Nhịp Nghỉ Giữa Vũ Điệu"
+  },
+  "HarnessTheBlaze": {
+    "name": "Làm Chủ Nhiệt Huyết"
+  },
+  "PerfectRating": {
+    "name": "Đánh Giá Hoàn Hảo"
+  },
+  "RhythmMoment": {
+    "name": "Khoảnh Khắc Nhịp Điệu"
+  },
+  "ShareWithYou": {
+    "name": "Chia Sẻ Cùng Nhau"
+  },
   "FantasticalMarvel": {
     "name": "Ảo Kịch Tuyệt Ý"
   },
@@ -16852,6 +16987,12 @@
   },
   "MysteriousWhiteStar": {
     "name": "Sao Trắng Huyền Ảo"
+  },
+  "EclipsingFlame": {
+    "name": "Lửa Ăn Mòn Luân Biến"
+  },
+  "DemonSlayingGale": {
+    "name": "Cuồng Phong Trảm Ma"
   },
   "VigorousYapping": {
     "name": "Trò Chuyện Sôi Nổi"
@@ -16963,6 +17104,9 @@
   },
   "ConsecratedFangedBeast": {
     "name": "Nanh Thú Thánh Hóa"
+  },
+  "ExperimentalFieldGenerator": {
+    "name": "Máy Tạo Trường Lực Thí Nghiệm"
   },
   "UndividedHeart": {
     "name": "Duy Thử Nhất Tâm"
@@ -17372,6 +17516,15 @@
   "WitheredReedsEclipseTheSun": {
     "name": "Cỏ Tàn Át Nắng"
   },
+  "PartTheVeilOfSnow": {
+    "name": "Vén Lên Bức Màn Tuyết"
+  },
+  "OLipsWeaveMeSongsAndPsalms": {
+    "name": "\"Hỡi Đôi Môi, Hãy Dệt Và Ngân Nga Khúc Hát\""
+  },
+  "GravityField": {
+    "name": "Vùng Trọng Lực"
+  },
   "MagicGuide": {
     "name": "Tóm Tắt Ma Pháp"
   },
@@ -17717,6 +17870,9 @@
   "Blubberbeast": {
     "name": "Hải Thú Bồng Bềnh"
   },
+  "GladiatorsFinale": {
+    "name": "Lễ Bế Mạc Của Giác Đấu Sĩ"
+  },
   "LiyueHarborWharf": {
     "name": "Bến Cảng Liyue"
   },
@@ -17938,6 +18094,15 @@
   },
   "ElementalTransfigurationLavaBlessing": {
     "name": "Biến Ảo Nguyên Tố: Chúc Phúc Hỏa Nham"
+  },
+  "Netochka": {
+    "name": "Netochka"
+  },
+  "ElementalTransfigurationRimegrassBlessing": {
+    "name": "Biến Ảo Nguyên Tố: Chúc Phúc Băng Thảo"
+  },
+  "ElementalTransfigurationStormgaleBlessing": {
+    "name": "Biến Ảo Nguyên Tố: Chúc Phúc Lôi Phong"
   },
   "ElementalResonanceWovenIce": {
     "name": "Cộng Hưởng Nguyên Tố: Băng Giao Thoa"
@@ -18194,6 +18359,9 @@
   "CleaningTime": {
     "name": "Thời Gian Quét Dọn"
   },
+  "TheOtherSideOfTheFrostmoon": {
+    "name": "Phía Bên Kia Của Sương Nguyệt"
+  },
   "Origin": {
     "name": "Nguyên Sơ"
   },
@@ -18409,6 +18577,9 @@
   },
   "PhantasmalGiftStarOmen": {
     "name": "Ảo Lễ - Tinh Tượng"
+  },
+  "SuperAwesomeMagicKey": {
+    "name": "Chìa Khóa Phép Thuật Siêu Đỉnh"
   },
   "UnbreakableDurandarte": {
     "name": "Bất Hoại - Durandal"
@@ -22630,5 +22801,8 @@
   },
   "AllFangsAndSnarls": {
     "name": "Nanh Nhọn Gầm Vang"
+  },
+  "MiniatureStonecraft": {
+    "name": "Tượng Nhỏ Giữa Đá"
   }
 }

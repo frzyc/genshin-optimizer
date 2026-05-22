@@ -254,6 +254,9 @@
   "JointExhibitionPopularity": {
     "name": "Ortak Sergi Popülerliği"
   },
+  "PalsSynergy": {
+    "name": "Dost Sinerjisi"
+  },
   "Primogem": {
     "name": "Köken Taşı"
   },
@@ -1148,8 +1151,17 @@
   "Varka": {
     "name": "Varka"
   },
+  "Lohen": {
+    "name": "Lohen"
+  },
   "Linnea": {
     "name": "Linnea"
+  },
+  "Nicole": {
+    "name": "Nicole"
+  },
+  "Prune": {
+    "name": "Prune"
   },
   "KachinasStellaFortuna": {
     "name": "Kachina'nın Yaşam Yıldızı"
@@ -1232,8 +1244,17 @@
   "VarkasStellaFortuna": {
     "name": "Varka'nın Yaşam Yıldızı"
   },
+  "LohensStellaFortuna": {
+    "name": "Lohen'in Yaşam Yıldızı"
+  },
   "LinneasStellaFortuna": {
     "name": "Linnea'nın Yaşam Yıldızı"
+  },
+  "NicolesStellaFortuna": {
+    "name": "Nicole'un Yaşam Yıldızı"
+  },
+  "PrunesStellaFortuna": {
+    "name": "Prune'un Yaşam Yıldızı"
   },
   "Apple": {
     "name": "Elma"
@@ -1822,6 +1843,15 @@
   },
   "FischlDictionaryDieNeuauflageDerPrinzessin": {
     "name": "Fischl Sözlüğü: Yeni Prinzessin Baskısı"
+  },
+  "TheOriginsOfTheExperiment": {
+    "name": "Deneyin Kökeni"
+  },
+  "NotesOnTheExperimentalSubjects": {
+    "name": "Denekler Hakkında Notlar"
+  },
+  "ScribbledNotes": {
+    "name": "Karalanmış Notlar"
   },
   "WyattsRedKey": {
     "name": "Wyatt'ın Kırmızı Anahtarı"
@@ -8318,6 +8348,33 @@
   "SugarSculptureLinnea": {
     "name": "Şeker Heykelcik: Linnea"
   },
+  "SuspiciousStuffedTofuWithMincedMeat": {
+    "name": "Kıymalı Tofu Dolması (Tuhaf)"
+  },
+  "StuffedTofuWithMincedMeat": {
+    "name": "Kıymalı Tofu Dolması"
+  },
+  "DeliciousStuffedTofuWithMincedMeat": {
+    "name": "Kıymalı Tofu Dolması (Lezzetli)"
+  },
+  "SuspiciousMintBubblegum": {
+    "name": "Balonlu Nane Sakızı (Tuhaf)"
+  },
+  "MintBubblegum": {
+    "name": "Balonlu Nane Sakızı"
+  },
+  "DeliciousMintBubblegum": {
+    "name": "Balonlu Nane Sakızı (Lezzetli)"
+  },
+  "SpinningSpecial": {
+    "name": "Dönen Spesiyal"
+  },
+  "GildedChest": {
+    "name": "Yaldızlı Sandık"
+  },
+  "BoredomBustingBubblegum": {
+    "name": "Sıkıntı Geçiren Balonlu Sakız"
+  },
   "RecipeItem": {
     "name": "Yemek Malzemesi"
   },
@@ -9118,6 +9175,12 @@
   },
   "RecipeMillhavensMorningPlate": {
     "name": "Tarif: Değirmenköy Kahvaltı Tabağı"
+  },
+  "RecipeStuffedTofuWithMincedMeat": {
+    "name": "Tarif: Kıymalı Tofu Dolması"
+  },
+  "RecipeMintBubblegum": {
+    "name": "Tarif: Balonlu Nane Sakızı"
   },
   "CraftedItems": {
     "name": "Üretilen Malzemeler"
@@ -9943,6 +10006,15 @@
   },
   "PlumeOfTheFallenWatcher": {
     "name": "Düşmüş Gözcünün Tüyü"
+  },
+  "CounterfeitResin": {
+    "name": "Sahte Reçine"
+  },
+  "TwistedWitheredBranch": {
+    "name": "Kurumuş Çarpık Dal"
+  },
+  "ProfanedSprout": {
+    "name": "Kirlenmiş Filiz"
   },
   "TileOfDecarabiansTower": {
     "name": "Decarabian'ın Kırık Çinisi"
@@ -13172,9 +13244,6 @@
   "EasybreezeHolidayResortMap": {
     "name": "Sefa Yeli Tatil Köyü Haritası"
   },
-  "ScribbledNotes": {
-    "name": "Karalanmış Notlar"
-  },
   "BeautifullyWrittenNotes": {
     "name": "Güzel Yazılmış Notlar"
   },
@@ -13733,6 +13802,9 @@
   "LohensWorkReport": {
     "name": "Lohen'in Çalışma Raporu"
   },
+  "LohensFriendshipFee": {
+    "name": "Lohen'in \"Arkadaşlık Ücreti\""
+  },
   "ArcadiaTheEntombedCapital": {
     "name": "Arkadya, Gömülü Başkent"
   },
@@ -13745,17 +13817,38 @@
   "VerasMelancholyFinalVolumeVersionI": {
     "name": "Vera'nın Melankolisi: Son Cilt (I. Versiyon)"
   },
-  "TheDreamOfRhonabwy": {
-    "name": "Rhonabwy'nin Rüyası"
+  "TheDreamOfRhonabouillet": {
+    "name": "Rhonabouillet'nin Rüyası"
   },
   "TheSongOfAyKhanoum": {
     "name": "Ay-Khanoum'un Şarkısı"
   },
-  "TheCanonOfLoveDivineInspirationAndVirtue": {
-    "name": "Sevgi, İlahi İlham ve Erdem Kanonu"
+  "RevelationsOfDivineLove": {
+    "name": "İlahi Aşkın Tezahürü"
   },
   "Note": {
     "name": "Not"
+  },
+  "PhotoWithTheLittleWitchesAndTheirImaginaryFriends": {
+    "name": "Küçük Cadıların ve Hayali Arkadaşlarının Fotoğrafı"
+  },
+  "AnomalousTreeMarrowI": {
+    "name": "Anormal Ağaç İliği I"
+  },
+  "AnomalousTreeMarrowII": {
+    "name": "Anormal Ağaç İliği II"
+  },
+  "AnomalousTreeMarrowIII": {
+    "name": "Anormal Ağaç İliği III"
+  },
+  "AnomalousTreeMarrow": {
+    "name": "Anormal Ağaç İliği"
+  },
+  "DangoMilkInfusedWithMagic": {
+    "name": "\"Büyüyle Harmanlanmış\" Sütlü Dango"
+  },
+  "PrimalConstructComponent": {
+    "name": "Kadim Yapı Bileşeni"
   },
   "AncientMondstadtRoyalSeal": {
     "name": "Kadim Mondstadt Kraliyet Mührü"
@@ -15797,6 +15890,18 @@
   "TravelNotesHomecoming": {
     "name": "Gezi Notları: Eve Dönüş"
   },
+  "NicoleHeavenlyStairway": {
+    "name": "Nicole: Semavi Merdiven"
+  },
+  "LohenBenevolence": {
+    "name": "Lohen: İyilikseverlik"
+  },
+  "PruneJudgment": {
+    "name": "Prune: Yargı"
+  },
+  "TravelNotesGiftOfSplendor": {
+    "name": "Gezi Notları: Görkemli Armağan"
+  },
   "EchoDandelionKnight": {
     "name": "Yankı: Karahindiba Şövalyesi"
   },
@@ -15853,6 +15958,12 @@
   },
   "EchoPillarOfFortitude": {
     "name": "Yankı: Metanet Abidesi"
+  },
+  "EchoEonsAdrift": {
+    "name": "Yankı: Sonsuzluğa Sürüklenme"
+  },
+  "EchoHelmOfTheRadiantRose": {
+    "name": "Yankı: Parlak Gülün Önderi"
   },
   "FaintGlow": {
     "name": "Soluk Işıltı"
@@ -16787,6 +16898,30 @@
   "MeditativeReading": {
     "name": "Meditatif Okuma"
   },
+  "PatrolBreak": {
+    "name": "Devriye Arası"
+  },
+  "MasterpieceComplete": {
+    "name": "Şaheser Tamamlandı"
+  },
+  "ReadyToSprint": {
+    "name": "Depara Hazır"
+  },
+  "InterludeRest": {
+    "name": "Kulis Molası"
+  },
+  "HarnessTheBlaze": {
+    "name": "Alevin Dizginleri"
+  },
+  "PerfectRating": {
+    "name": "Mükemmel Derece"
+  },
+  "RhythmMoment": {
+    "name": "Ritim Anı"
+  },
+  "ShareWithYou": {
+    "name": "Seninle Paylaşalım"
+  },
   "FantasticalMarvel": {
     "name": "Olağanüstü Mucize"
   },
@@ -16852,6 +16987,12 @@
   },
   "MysteriousWhiteStar": {
     "name": "Gizemli Beyaz Yıldız"
+  },
+  "EclipsingFlame": {
+    "name": "Alev Gölgesi"
+  },
+  "DemonSlayingGale": {
+    "name": "İblis Kesen Fırtına"
   },
   "VigorousYapping": {
     "name": "Heyecanlı Sohbet"
@@ -16963,6 +17104,9 @@
   },
   "ConsecratedFangedBeast": {
     "name": "Kutsanmış Sivri Dişli Canavar"
+  },
+  "ExperimentalFieldGenerator": {
+    "name": "Deneysel Alan Oluşturucu"
   },
   "UndividedHeart": {
     "name": "Tek Yürek"
@@ -17372,6 +17516,15 @@
   "WitheredReedsEclipseTheSun": {
     "name": "Solmuş Sazlar Güneşi Kapatır"
   },
+  "PartTheVeilOfSnow": {
+    "name": "Kar Perdesini Arala"
+  },
+  "OLipsWeaveMeSongsAndPsalms": {
+    "name": "\"Şarkıdan ve İlahiden Başkasını Okumasın Bu Dudaklar\""
+  },
+  "GravityField": {
+    "name": "Yer Çekimi Alanı"
+  },
   "MagicGuide": {
     "name": "Büyü Rehberi"
   },
@@ -17717,6 +17870,9 @@
   "Blubberbeast": {
     "name": "Tombalak"
   },
+  "GladiatorsFinale": {
+    "name": "Gladyatörün Son Yemini"
+  },
   "LiyueHarborWharf": {
     "name": "Liyue Limanı Rıhtımı"
   },
@@ -17938,6 +18094,15 @@
   },
   "ElementalTransfigurationLavaBlessing": {
     "name": "Element Başkalaşımı: Lav Lütfu"
+  },
+  "Netochka": {
+    "name": "Netochka"
+  },
+  "ElementalTransfigurationRimegrassBlessing": {
+    "name": "Element Başkalaşımı: Buz Otu Lütfu"
+  },
+  "ElementalTransfigurationStormgaleBlessing": {
+    "name": "Element Başkalaşımı: Şiddetli Fırtına Lütfu"
   },
   "ElementalResonanceWovenIce": {
     "name": "Element Rezonansı: Örülü Buzlar"
@@ -18194,6 +18359,9 @@
   "CleaningTime": {
     "name": "Temizlik Vakti"
   },
+  "TheOtherSideOfTheFrostmoon": {
+    "name": "Donuk Ayın Öteki Tarafı"
+  },
   "Origin": {
     "name": "Köken"
   },
@@ -18409,6 +18577,9 @@
   },
   "PhantasmalGiftStarOmen": {
     "name": "Hayali Hediye: Yıldız Alameti"
+  },
+  "SuperAwesomeMagicKey": {
+    "name": "Süper Müthiş Büyülü Anahtar"
   },
   "UnbreakableDurandarte": {
     "name": "Sarsılmaz: Durandarte"
@@ -22630,5 +22801,8 @@
   },
   "AllFangsAndSnarls": {
     "name": "\"Keskin Dişler ve Hırıltılar\""
+  },
+  "MiniatureStonecraft": {
+    "name": "\"İşlenmiş Minyatür Taş\""
   }
 }

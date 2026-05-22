@@ -228,6 +228,7 @@
     "cryo": "Enemy is affected by <cryo>Cryo</cryo>",
     "frozenOrCryo": "Enemy is <cryo>Frozen</cryo> or affected by <cryo>Cryo</cryo>",
     "pyro": "Enemy is affected by <pyro>Pyro</pyro>",
+    "superconduct": "Enemy is affected by <superconduct>Superconduct</superconduct>",
     "burning": "Enemy in the <pyro>Burning</pyro> state",
     "quicken": "Enemy in the <spread>Quicken</spread> state"
   },

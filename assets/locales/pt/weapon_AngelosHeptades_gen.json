@@ -1,0 +1,29 @@
+{
+  "name": "Os Sete Éditos da Poeira e Luz",
+  "description": {
+    "0": "Uma caixa dourada tão esplêndida quanto a luz dos céus. Segundo a lenda, ela já pertenceu a um enviado divino da Corte da Eternidade."
+  },
+  "passiveName": "Coroa do Advento Final",
+  "passiveDescription": {
+    "0": {
+      "0": "O ATQ é aumentado em <cryo>12%</cryo>. Após o portador criar um Escudo, ele obtém \"Luz Pioneira\" por 20s: aumenta o Dano do membro da equipe em campo em <cryo>10%</cryo> para cada 1.000 de ATQ do portador, até um máximo de <cryo>26%</cryo>. Além disso, quando o portador criar um Escudo, ele também obtém \"Gula do Guia\": restaura <cryo>14</cryo> de Energia Elemental para o portador. O efeito mencionado pode ser ativado uma vez a cada 14s, e também pode ser ativado quando um baú é aberto fora de combate. Esse efeito pode ser desencadeado mesmo que o portador não seja o personagem ativo.",
+      "1": "Mágico: Ritual Secreto: quando houver personagens Mágicos fora de campo na sua equipe, eles também receberão 50% do aumento de Dano de Luz Pioneira."
+    },
+    "1": {
+      "0": "O ATQ é aumentado em <cryo>15%</cryo>. Após o portador criar um Escudo, ele obtém \"Luz Pioneira\" por 20s: aumenta o Dano do membro da equipe em campo em <cryo>13%</cryo> para cada 1.000 de ATQ do portador, até um máximo de <cryo>34%</cryo>. Além disso, quando o portador criar um Escudo, ele também obtém \"Gula do Guia\": restaura <cryo>15</cryo> de Energia Elemental para o portador. O efeito mencionado pode ser ativado uma vez a cada 14s, e também pode ser ativado quando um baú é aberto fora de combate. Esse efeito pode ser desencadeado mesmo que o portador não seja o personagem ativo.",
+      "1": "Mágico: Ritual Secreto: quando houver personagens Mágicos fora de campo na sua equipe, eles também receberão 50% do aumento de Dano de Luz Pioneira."
+    },
+    "2": {
+      "0": "O ATQ é aumentado em <cryo>18%</cryo>. Após o portador criar um Escudo, ele obtém \"Luz Pioneira\" por 20s: aumenta o Dano do membro da equipe em campo em <cryo>16%</cryo> para cada 1.000 de ATQ do portador, até um máximo de <cryo>42%</cryo>. Além disso, quando o portador criar um Escudo, ele também obtém \"Gula do Guia\": restaura <cryo>16</cryo> de Energia Elemental para o portador. O efeito mencionado pode ser ativado uma vez a cada 14s, e também pode ser ativado quando um baú é aberto fora de combate. Esse efeito pode ser desencadeado mesmo que o portador não seja o personagem ativo.",
+      "1": "Mágico: Ritual Secreto: quando houver personagens Mágicos fora de campo na sua equipe, eles também receberão 50% do aumento de Dano de Luz Pioneira."
+    },
+    "3": {
+      "0": "O ATQ é aumentado em <cryo>21%</cryo>. Após o portador criar um Escudo, ele obtém \"Luz Pioneira\" por 20s: aumenta o Dano do membro da equipe em campo em <cryo>19%</cryo> para cada 1.000 de ATQ do portador, até um máximo de <cryo>50%</cryo>. Além disso, quando o portador criar um Escudo, ele também obtém \"Gula do Guia\": restaura <cryo>17</cryo> de Energia Elemental para o portador. O efeito mencionado pode ser ativado uma vez a cada 14s, e também pode ser ativado quando um baú é aberto fora de combate. Esse efeito pode ser desencadeado mesmo que o portador não seja o personagem ativo.",
+      "1": "Mágico: Ritual Secreto: quando houver personagens Mágicos fora de campo na sua equipe, eles também receberão 50% do aumento de Dano de Luz Pioneira."
+    },
+    "4": {
+      "0": "O ATQ é aumentado em <cryo>24%</cryo>. Após o portador criar um Escudo, ele obtém \"Luz Pioneira\" por 20s: aumenta o Dano do membro da equipe em campo em <cryo>22%</cryo> para cada 1.000 de ATQ do portador, até um máximo de <cryo>58%</cryo>. Além disso, quando o portador criar um Escudo, ele também obtém \"Gula do Guia\": restaura <cryo>18</cryo> de Energia Elemental para o portador. O efeito mencionado pode ser ativado uma vez a cada 14s, e também pode ser ativado quando um baú é aberto fora de combate. Esse efeito pode ser desencadeado mesmo que o portador não seja o personagem ativo.",
+      "1": "Mágico: Ritual Secreto: quando houver personagens Mágicos fora de campo na sua equipe, eles também receberão 50% do aumento de Dano de Luz Pioneira."
+    }
+  }
+}
