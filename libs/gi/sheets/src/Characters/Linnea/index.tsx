@@ -179,10 +179,18 @@ const c1TeamStacks_lunarcrystallize_dmgInc = greaterEq(
 )
 
 const c1LumiStacksArr = range(1, dm.constellation1.lumiMaxStacksConsume)
+const c1LumiStacksArrForC6 = range(
+  1,
+  dm.constellation1.lumiMaxStacksConsume * 2
+)
 const [condC1LumiStacksPath, condC1LumiStacks] = cond(key, 'c1LumiStacks')
 const c1LumiStacks = lookup(
   condC1LumiStacks,
-  objKeyMap(c1LumiStacksArr, (s) => constant(s)),
+  objKeyMap(c1LumiStacksArrForC6, (s) =>
+    s > dm.constellation1.lumiMaxStacksConsume
+      ? greaterEq(input.constellation, 6, s)
+      : constant(s)
+  ),
   naught
 )
 const c1LumiStacks_lunarcrystallize_dmgInc = greaterEq(
@@ -532,25 +540,31 @@ const sheet: TalentSheet = {
       value: condC1LumiStacks,
       path: condC1LumiStacksPath,
       name: ct.ch('c1LumiCond'),
-      states: objKeyMap(c1LumiStacksArr, (stack) => ({
-        name: st('stack', { count: stack }),
-        fields: [
-          {
-            node: infoMut(c1LumiStacks_lunarcrystallize_dmgInc, {
-              name: ct.ch('lumiDmgInc'),
-            }),
-          },
-          {
-            text: st('triggerQuota'),
-            value: dm.constellation1.maxStacks,
-          },
-          {
-            text: stg('duration'),
-            value: dm.constellation1.duration,
-            unit: 's',
-          },
-        ],
-      })),
+      states: (data) =>
+        objKeyMap(
+          data.get(input.constellation).value >= 6
+            ? c1LumiStacksArrForC6
+            : c1LumiStacksArr,
+          (stack) => ({
+            name: st('stack', { count: stack }),
+            fields: [
+              {
+                node: infoMut(c1LumiStacks_lunarcrystallize_dmgInc, {
+                  name: ct.ch('lumiDmgInc'),
+                }),
+              },
+              {
+                text: st('triggerQuota'),
+                value: dm.constellation1.maxStacks,
+              },
+              {
+                text: stg('duration'),
+                value: dm.constellation1.duration,
+                unit: 's',
+              },
+            ],
+          })
+        ),
     }),
   ]),
   constellation2: ct.talentTem('constellation2', [
