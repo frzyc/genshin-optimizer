@@ -45,7 +45,11 @@ const lightGuidanceWriteObj = objKeyValMap(
             equalStr(
               input.charEle,
               ele,
-              equalStr(input.nonStacking[`mortalHymn${ele}`], '', input.charKey)
+              equalStr(
+                input.nonStacking[`mortalHymn${ele}`],
+                undefined,
+                input.charKey
+              )
             )
           )
         )

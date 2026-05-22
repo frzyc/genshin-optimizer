@@ -140,7 +140,7 @@ const lockRallyReaction_selfAtk_ = greaterEq(
     greaterEq(
       input.asc,
       4,
-      unequal(condLockRallyReaction, '', dm.lockedPassive.teamAtk_)
+      unequal(condLockRallyReaction, undefined, dm.lockedPassive.selfAtk_)
     )
   )
 )
@@ -489,7 +489,7 @@ const sheet: TalentSheet = {
             },
             {
               text: stg('duration'),
-              value: dm.lockedPassive.selfDuration,
+              value: dm.lockedPassive.teamDuration,
               unit: 's',
             },
           ],

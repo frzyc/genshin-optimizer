@@ -445,6 +445,11 @@ const sheet: TalentSheet = {
     }),
     ct.headerTem('skill', {
       teamBuff: true,
+      canShow: any(
+        1,
+        equal(condA1GuidanceActive, 'on', 1),
+        equal(condA4NicoleGuidance, 'on', 1)
+      ),
       fields: [
         {
           node: a4NicoleGuidanceActive_atk,
