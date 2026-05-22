@@ -1,0 +1,29 @@
+{
+  "setName": "Bedrückende Desillusionierung im Schatten",
+  "setEffects": {
+    "2": "Erhöht den ANG um 18 %.",
+    "4": "Erhöht den durch die Reaktion Supraleiter verursachten Schaden um 80 %. Erhöht, wenn der Träger einen Gegner angreift, der von der Reaktion Supraleiter betroffen ist, die KT dieses Angriffs um 16 %. Auf dem Weg nach Snezhnaya erhältst du möglicherweise neue Segnungen ..."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Schillern, das mit der Herrlichkeit erlosch",
+      "desc": "Die Schleifenblume, die sie als Geschenk von einem Freund mit eiskalten Händen erhalten hat."
+    },
+    "plume": {
+      "name": "Schärfe, die mit der wundersamen Schöpfung verschwand",
+      "desc": "Die Schreibfeder, die sie ihren Anhängern schenkte, mit der sie einst absurde Träume niedergeschrieben hatte."
+    },
+    "sands": {
+      "name": "Moment, der mit dem Erwachen aus großen Träumen erlosch",
+      "desc": "Der Moment, den sie dem schweigsamen Alchimisten schenkte, um ihn an alle Termine zu erinnern."
+    },
+    "goblet": {
+      "name": "Beifall, der mit dem Fest endete",
+      "desc": "Der gut gefüllte Becher, den sie von ihren Kollegen als Geschenk zur Feier erhalten hatte."
+    },
+    "circlet": {
+      "name": "Pendel, das mit dem großen Sturz verstummte",
+      "desc": "Das Schmuckstück, das sie als Belohnung von ihrem einzigen Meister erhalten hatte."
+    }
+  }
+}

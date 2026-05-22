@@ -1,0 +1,29 @@
+{
+  "setName": "Desencantamento na Sombra Profunda",
+  "setEffects": {
+    "2": "ATQ +18%",
+    "4": "Aumenta o Dano de Supercondutor em 80%. Quando o portador atacar inimigos afetados por Supercondutor, aumenta a Taxa CRIT deste ataque em 16%. Ao se aventurar por Snezhnaya, talvez você possa obter alguma bênção nova..."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Iridescência que Cessou Entre a Glória",
+      "desc": "Era uma flor de laço concedida como presente por um amigo cujas mãos eram frias como gelo."
+    },
+    "plume": {
+      "name": "Afiação que Cessou na Criação Maravilhosa",
+      "desc": "Era uma pena dada para escrever sonhos fantásticos para os seguidores dela."
+    },
+    "sands": {
+      "name": "Momento que Cessou ao Despertar dos Grandes Sonhos",
+      "desc": "Era um momento passageiro concedido para lembrar um alquimista silencioso de seu cronograma."
+    },
+    "goblet": {
+      "name": "Ovações que Cessaram na Festividade",
+      "desc": "Era um cálice de vinho, aceito em comemoração das mãos de um colega."
+    },
+    "circlet": {
+      "name": "Pêndulo que Cessou na Grande Queda",
+      "desc": "Era uma bugiganga delicada, premiada em louvor pela mão do único mestre dela."
+    }
+  }
+}
