@@ -114,7 +114,7 @@ const a4Rally_normal_dmg_ = greaterEq(
       min(
         prod(
           percent(dm.passive2.dmg_),
-          sum(input.total.atk, -dm.passive2.atkThresh)
+          sum(input.premod.atk, -dm.passive2.atkThresh)
         ),
         percent(dm.passive2.maxDmg_)
       ),

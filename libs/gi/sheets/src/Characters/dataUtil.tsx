@@ -499,19 +499,19 @@ function findNicoleData(
     defaultV
   )
 }
-const nicoleBurst = findNicoleData((data) => data.total.burst, -1)
+const nicoleBurst = findNicoleData((data) => data.total.burstIndex, -1)
 const nicoleConstellation = findNicoleData((data) => data.constellation, naught)
 const nicoleAtk = findNicoleData((data) => data.total.atk, naught)
+const nicoleHex = findNicoleData((data) => data.isHexerei, 0)
 const nicoleBurstScaling = allStats.char.skillParam.Nicole.burst[1]
 const nicoleC1Scaling = allStats.char.skillParam.Nicole.constellation1[0]
 const nicoleLockAddlScaling =
   allStats.char.skillParam.Nicole.lockedPassive![0][0]
-const [, nicoleCondLock] = cond('Nicole', 'lockHomework')
 const nicoleCt = charTemplates('Nicole')
 const nicoleLockProjectionAddl = infoMut(
   equal(
-    nicoleCondLock,
-    'on',
+    nicoleHex,
+    1,
     greaterEq(tally.hexerei, 2, prod(percent(nicoleLockAddlScaling), nicoleAtk))
   ),
   { name: nicoleCt.ch('projection_dmgInc') }
