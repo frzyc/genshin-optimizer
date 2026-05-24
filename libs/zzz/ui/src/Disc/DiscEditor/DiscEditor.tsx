@@ -1,9 +1,7 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { CardThemed, ModalWrapper, usePrev } from '@genshin-optimizer/common/ui'
 import {
   getUnitStr,
   range,
-  shouldShowDevComponents,
   statKeyToFixed,
   toPercent,
 } from '@genshin-optimizer/common/util'
@@ -18,8 +16,6 @@ import {
   validateDiscBasedOnRarity,
 } from '@genshin-optimizer/zzz/db'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
-import type { Processed } from '@genshin-optimizer/zzz/disc-scanner'
-import { ScanningQueue } from '@genshin-optimizer/zzz/disc-scanner'
 import type { IDisc, ISubstat } from '@genshin-optimizer/zzz/zood'
 import AddIcon from '@mui/icons-material/Add'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
@@ -27,10 +23,7 @@ import CloseIcon from '@mui/icons-material/Close'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenIcon from '@mui/icons-material/LockOpen'
-import PhotoCameraIcon from '@mui/icons-material/PhotoCamera'
 import ReplayIcon from '@mui/icons-material/Replay'
-import ScreenShareIcon from '@mui/icons-material/ScreenShare'
-import StopIcon from '@mui/icons-material/Stop'
 import UpdateIcon from '@mui/icons-material/Update'
 import {
   Alert,
@@ -39,17 +32,14 @@ import {
   ButtonGroup,
   CardContent,
   CardHeader,
-  CircularProgress,
   Grid,
   IconButton,
-  LinearProgress,
-  Skeleton,
   TextField,
   Typography,
   useMediaQuery,
   useTheme,
 } from '@mui/material'
-import { Stack, styled } from '@mui/system'
+import { Stack } from '@mui/system'
 import type { ChangeEvent, MouseEvent } from 'react'
 import {
   Suspense,
@@ -58,7 +48,6 @@ import {
   useMemo,
   useReducer,
   useRef,
-  useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { LocationAutocomplete } from '../../Character/LocationAutocomplete'
@@ -66,32 +55,10 @@ import { DiscCardObj } from '../DiscCard'
 import { DiscMainStatGroup } from '../DiscMainStatGroup'
 import { DiscRarityDropdown } from '../DiscRarityDropdown'
 import { DiscSetAutocomplete } from '../DiscSetAutocomplete'
-import { ScanImagePreview } from './ScanImagePreview'
-import { ScanInfoModal } from './ScanInfoModal'
-import { linesFromImage } from './ScanningUtil'
+import { DiscScanPanel } from './DiscScanPanel'
 import SubstatInput from './SubstatInput'
-import cameraShutterSound from './camera-shutter-01.mp3'
-import scanErrorSound from './scan-error.mp3'
-
-const CAPTURE_INTERVAL_MS = 5000
-
-const captureShutterAudio = new Audio(cameraShutterSound)
-const scanErrorAudio = new Audio(scanErrorSound)
-
-function playCaptureShutterSound() {
-  captureShutterAudio.currentTime = 0
-  void captureShutterAudio.play().catch(() => {})
-}
-
-function playScanErrorSound() {
-  scanErrorAudio.currentTime = 0
-  void scanErrorAudio.play().catch(() => {})
-}
-
-// for pasting in screenshots
-const InputInvis = styled('input')({
-  display: 'none',
-})
+import { useDiscScanQueue } from './useDiscScanQueue'
+import { useScreenCapture } from './useScreenCapture'
 
 interface DiscReducerState {
   disc: Partial<ICachedDisc>
@@ -208,12 +175,41 @@ export function DiscEditor({
     return fixedSlotKey ?? disc?.slotKey
   }, [fixedSlotKey, disc])
 
+  const isCapturingRef = useRef(false)
+  const lastAutoAddKeyRef = useRef<string | null>(null)
+
+  const scan = useDiscScanQueue(
+    onShow,
+    (scanned) => setDisc(scanned),
+    isCapturingRef
+  )
+
+  const capture = useScreenCapture(
+    onShow,
+    scan.addCaptureFile,
+    scan.shouldSkipCapture,
+    () => scan.isCaptureProgressIdle,
+    isCapturingRef
+  )
+
+  const stopCapture = useCallback(() => {
+    capture.stopCapture()
+    scan.clearCaptureIdleBlocked()
+    lastAutoAddKeyRef.current = null
+  }, [capture, scan])
+
+  const startCapture = useCallback(async () => {
+    scan.clearCaptureIdleBlocked()
+    await capture.startCapture()
+  }, [capture, scan])
+
   const reset = useCallback(() => {
     cancelEdit?.()
     setDisc({})
-    setScannedData(undefined)
+    scan.clearScannedData()
+    scan.clearCaptureIdleBlocked()
     lastAutoAddKeyRef.current = null
-  }, [cancelEdit, setDisc])
+  }, [cancelEdit, scan, setDisc])
 
   const setSubstat = useCallback(
     (index: number, substat?: ISubstat) => {
@@ -231,47 +227,14 @@ export function DiscEditor({
   const canClearDisc = (): boolean =>
     window.confirm(t('editor.clearPrompt') as string)
 
-  // Scanning stuff
-  const queueRef = useRef(
-    new ScanningQueue(linesFromImage, shouldShowDevComponents)
-  )
-  const queue = queueRef.current
-  const [{ processedNum, outstandingNum, scanningNum }, setScanningData] =
-    useState({ processedNum: 0, outstandingNum: 0, scanningNum: 0 })
-
-  const [scannedData, setScannedData] = useState(
-    undefined as undefined | Omit<Processed, 'disc'>
-  )
-
-  // Screen capture state
-  const [captureStream, setCaptureStream] = useState<MediaStream | null>(null)
-  const [captureInterval, setCaptureInterval] = useState<NodeJS.Timeout | null>(
-    null
-  )
-  const [captureProgress, setCaptureProgress] = useState(0)
-  const captureCycleStartRef = useRef(Date.now())
-  const captureProgressRafRef = useRef<number | null>(null)
-  const scanningDataRef = useRef({
-    processedNum: 0,
-    outstandingNum: 0,
-    scanningNum: 0,
-  })
-  const scannedDataRef = useRef(scannedData)
-  const lastAutoAddKeyRef = useRef<string | null>(null)
-
-  // Use captureStream existence as isCapturing indicator
-  const isCapturing = !!captureStream
-
-  const isCaptureIdle =
-    !processedNum && !outstandingNum && !scanningNum && !scannedData
-
-  scanningDataRef.current = { processedNum, outstandingNum, scanningNum }
-  scannedDataRef.current = scannedData
-
-  const resetCaptureCycle = useCallback(() => {
-    captureCycleStartRef.current = Date.now()
-    setCaptureProgress(0)
-  }, [])
+  const {
+    scannedData,
+    processedNum,
+    scanningNum,
+    queueTotal,
+    uploadFiles,
+    clearQueue,
+  } = scan
 
   const {
     fileName,
@@ -283,129 +246,6 @@ export function DiscEditor({
     texts,
   } = scannedData ?? {}
   const hasEditorContent = !!scannedData || Object.keys(disc).length > 0
-  const queueTotal = processedNum + outstandingNum + scanningNum
-
-  const uploadFiles = useCallback(
-    (files?: FileList | null) => {
-      if (!files) return
-      onShow()
-      queue.addFiles(Array.from(files).map((f) => ({ f, fName: f.name })))
-    },
-    [onShow, queue]
-  )
-  const clearQueue = useCallback(() => {
-    queue.clearQueue()
-  }, [queue])
-
-  // Screen capture functions
-  const captureScreenshot = useCallback(
-    (stream: MediaStream) => {
-      try {
-        // Create video element to capture frame
-        const video = document.createElement('video')
-        video.srcObject = stream
-        video.muted = true
-        video.playsInline = true
-
-        const handleLoadedMetadata = () => {
-          // Create canvas to capture the frame
-          const canvas = document.createElement('canvas')
-          const ctx = canvas.getContext('2d')
-
-          if (!ctx) {
-            video.removeEventListener('loadedmetadata', handleLoadedMetadata)
-            return
-          }
-
-          const originalWidth = video.videoWidth
-          const originalHeight = video.videoHeight
-
-          // Check if the capture is within 90% of 16:9 ratio
-          const aspectRatio = originalWidth / originalHeight
-          const targetRatio = 16 / 9
-          const ratioTolerance = 0.1 // 10% tolerance
-          const isNear16to9 =
-            Math.abs(aspectRatio - targetRatio) <= targetRatio * ratioTolerance
-
-          let canvasWidth = originalWidth
-          let canvasHeight = originalHeight
-          let sourceX = 0
-          const sourceY = 0
-          let sourceWidth = originalWidth
-          const sourceHeight = originalHeight
-
-          // If it's close to 16:9 ratio, crop to keep only the right 1/3
-          if (isNear16to9) {
-            sourceX = Math.floor((originalWidth * 2) / 3) // Start from 2/3 of the width
-            sourceWidth = Math.floor(originalWidth / 3) // Take only 1/3 of the width
-            canvasWidth = sourceWidth
-            canvasHeight = originalHeight
-          }
-
-          canvas.width = canvasWidth
-          canvas.height = canvasHeight
-
-          // Draw the video frame to canvas with cropping
-          ctx.drawImage(
-            video,
-            sourceX,
-            sourceY,
-            sourceWidth,
-            sourceHeight,
-            0,
-            0,
-            canvasWidth,
-            canvasHeight
-          )
-
-          // Convert canvas to blob and create file
-          canvas.toBlob((blob) => {
-            if (blob) {
-              const timestamp = new Date().toISOString().replace(/[:.]/g, '-')
-              const file = new File([blob], `screen-capture-${timestamp}.png`, {
-                type: 'image/png',
-              })
-
-              playCaptureShutterSound()
-
-              // Add to scanning queue
-              queue.addFiles([{ f: file, fName: file.name }])
-              resetCaptureCycle()
-            }
-          }, 'image/png')
-
-          // Clean up
-          video.removeEventListener('loadedmetadata', handleLoadedMetadata)
-          video.srcObject = null
-        }
-
-        video.addEventListener('loadedmetadata', handleLoadedMetadata)
-        video.play().catch(console.error)
-      } catch (error) {
-        console.error('Failed to capture screenshot:', error)
-      }
-    },
-    [queue, resetCaptureCycle]
-  )
-
-  const stopScreenCapture = useCallback(() => {
-    if (captureInterval) {
-      clearInterval(captureInterval)
-      setCaptureInterval(null)
-    }
-
-    if (captureProgressRafRef.current !== null) {
-      cancelAnimationFrame(captureProgressRafRef.current)
-      captureProgressRafRef.current = null
-    }
-
-    if (captureStream) {
-      captureStream.getTracks().forEach((track) => track.stop())
-      setCaptureStream(null)
-    }
-
-    setCaptureProgress(0)
-  }, [captureInterval, captureStream])
 
   const onCloseModal = useCallback(
     (e: MouseEvent) => {
@@ -416,94 +256,12 @@ export function DiscEditor({
         e?.preventDefault()
         return
       }
-      stopScreenCapture()
+      stopCapture()
       onClose()
       reset()
     },
-    [t, disc, onClose, reset, stopScreenCapture]
+    [t, disc, onClose, reset, stopCapture]
   )
-
-  useEffect(() => {
-    if (!isCapturing) return
-
-    const tick = () => {
-      const {
-        processedNum: p,
-        outstandingNum: o,
-        scanningNum: s,
-      } = scanningDataRef.current
-      const idle = !p && !o && !s && !scannedDataRef.current
-
-      if (idle) {
-        const elapsed = Date.now() - captureCycleStartRef.current
-        setCaptureProgress(Math.min(100, (elapsed / CAPTURE_INTERVAL_MS) * 100))
-      } else {
-        setCaptureProgress(0)
-        captureCycleStartRef.current = Date.now()
-      }
-
-      captureProgressRafRef.current = requestAnimationFrame(tick)
-    }
-
-    captureProgressRafRef.current = requestAnimationFrame(tick)
-
-    return () => {
-      if (captureProgressRafRef.current !== null) {
-        cancelAnimationFrame(captureProgressRafRef.current)
-        captureProgressRafRef.current = null
-      }
-    }
-  }, [isCapturing])
-
-  const startScreenCapture = async () => {
-    try {
-      // Check if getDisplayMedia is supported
-      if (!navigator.mediaDevices || !navigator.mediaDevices.getDisplayMedia) {
-        alert(
-          'Screen capture is not supported in this browser. Please use a modern browser like Chrome, Firefox, or Edge.'
-        )
-        return
-      }
-
-      // Request screen capture permission
-      const stream = await navigator.mediaDevices.getDisplayMedia({
-        video: true,
-      })
-
-      setCaptureStream(stream)
-      onShow()
-      resetCaptureCycle()
-
-      // Set up interval to capture screenshots every 5 second
-      const interval = setInterval(() => {
-        const {
-          processedNum: p,
-          outstandingNum: o,
-          scanningNum: s,
-        } = scanningDataRef.current
-        if (p || o || s || scannedDataRef.current) return
-        captureScreenshot(stream)
-      }, CAPTURE_INTERVAL_MS)
-
-      setCaptureInterval(interval)
-
-      // Handle stream end (user stops sharing)
-      stream.getVideoTracks()[0].addEventListener('ended', () => {
-        stopScreenCapture()
-      })
-    } catch (error) {
-      console.error('Failed to start screen capture:', error)
-      if (error instanceof Error && error.name === 'NotAllowedError') {
-        alert(
-          'Screen capture permission was denied. Please allow screen sharing to use this feature.'
-        )
-      } else {
-        alert(
-          'Failed to start screen capture. Please ensure you grant permission to share your screen.'
-        )
-      }
-    }
-  }
 
   const onUpload = useCallback(
     (e: ChangeEvent<HTMLInputElement>) => {
@@ -514,22 +272,9 @@ export function DiscEditor({
     [uploadFiles]
   )
 
-  // When there is scanned artifacts and no artifact in editor, put latest scanned artifact in editor
-  useEffect(() => {
-    if (!processedNum || scannedData) return
-    const processed = queue.shiftProcessed()
-    if (!processed) return
-    const { disc: scannedDisc, ...rest } = processed
-    setScannedData(rest)
-    setDisc((scannedDisc ?? {}) as Partial<ICachedDisc>)
-    if (!scannedDisc && rest.texts.length > 0) {
-      playScanErrorSound()
-    }
-  }, [queue, processedNum, scannedData, setDisc])
-
   // During capture: skip duplicates, auto-add new discs, leave upgrades for manual confirm
   useEffect(() => {
-    if (!isCapturing || !validatedDisc || !isValid) return
+    if (!capture.isCapturing || !validatedDisc || !isValid) return
     if (!disc || Object.keys(disc).length === 0) return
 
     const { duplicated, upgraded } = database.discs.findDups(validatedDisc)
@@ -547,7 +292,7 @@ export function DiscEditor({
     database.discs.new(validatedDisc)
     reset()
   }, [
-    isCapturing,
+    capture.isCapturing,
     validatedDisc,
     isValid,
     disc,
@@ -575,21 +320,6 @@ export function DiscEditor({
       if (allowUpload) window.removeEventListener('paste', pasteFunc)
     }
   }, [uploadFiles, allowUpload])
-
-  // register callback to scanning queue
-  useEffect(() => {
-    queue.callback = setScanningData
-    return () => {
-      queue.callback = () => {}
-    }
-  }, [queue])
-
-  // Cleanup screen capture on unmount
-  useEffect(() => {
-    return () => {
-      stopScreenCapture()
-    }
-  }, [stopScreenCapture])
 
   return (
     <Suspense fallback={false}>
@@ -726,156 +456,32 @@ export function DiscEditor({
                 />
                 {/* Image OCR */}
                 {allowUpload && (
-                  <CardThemed bgt="light">
-                    <CardContent
-                      sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
-                    >
-                      {/* TODO: artifactDispatch not overwrite */}
-                      <Suspense
-                        fallback={<Skeleton width="100%" height="100" />}
-                      >
-                        <Grid container spacing={1} alignItems="center">
-                          <Grid item flexGrow={1}>
-                            <label htmlFor="contained-button-file">
-                              <InputInvis
-                                accept="image/*"
-                                id="contained-button-file"
-                                multiple
-                                type="file"
-                                onChange={onUpload}
-                              />
-                              <Button
-                                component="span"
-                                startIcon={<PhotoCameraIcon />}
-                              >
-                                {t('editor.uploadBtn')}
-                              </Button>
-                            </label>
-                          </Grid>
-                          <Grid item>
-                            <Button
-                              onClick={
-                                isCapturing
-                                  ? stopScreenCapture
-                                  : startScreenCapture
-                              }
-                              startIcon={
-                                isCapturing ? <StopIcon /> : <ScreenShareIcon />
-                              }
-                              color={isCapturing ? 'error' : 'primary'}
-                              variant={'contained'}
-                            >
-                              {isCapturing ? 'Stop Capture' : 'Capture Screen'}
-                            </Button>
-                          </Grid>
-                          {shouldShowDevComponents && debugImgs && (
-                            <Grid item>
-                              <DebugModal imgs={debugImgs} />
-                            </Grid>
-                          )}
-                          <Grid item>
-                            <ScanInfoModal />
-                          </Grid>
-                          {/* <Grid item>
-                          <Button
-                            color="info"
-                            sx={{ px: 2, minWidth: 0 }}
-                            onClick={() => setModalShow(true)}
-                          >
-                            <HelpIcon />
-                          </Button>
-                        </Grid> */}
-                        </Grid>
-                        {isCapturing && (
-                          <Alert severity="info" sx={{ mt: 1 }}>
-                            <Typography sx={{ mb: 1 }}>
-                              Screen capture is active. Screenshots will be
-                              taken every 5 seconds when idle.
-                            </Typography>
-                            {isCaptureIdle ? (
-                              <>
-                                <LinearProgress
-                                  variant="determinate"
-                                  value={captureProgress}
-                                />
-                                <Typography
-                                  variant="caption"
-                                  sx={{ mt: 0.5, display: 'block' }}
-                                >
-                                  Next capture in{' '}
-                                  {Math.max(
-                                    0,
-                                    Math.ceil(
-                                      (CAPTURE_INTERVAL_MS *
-                                        (1 - captureProgress / 100)) /
-                                        1000
-                                    )
-                                  )}
-                                  s
-                                </Typography>
-                              </>
-                            ) : (
-                              <>
-                                <LinearProgress />
-                                <Typography
-                                  variant="caption"
-                                  sx={{ mt: 0.5, display: 'block' }}
-                                >
-                                  Waiting for current scan to finish…
-                                </Typography>
-                              </>
-                            )}
-                          </Alert>
-                        )}
-                        {imageURL && (
-                          <Box width="100%">
-                            <ScanImagePreview
-                              imageURL={imageURL}
-                              imageWidth={imageWidth ?? 1}
-                              imageHeight={imageHeight ?? 1}
-                              ocrLines={ocrLines ?? []}
-                              alt={
-                                fileName ||
-                                'Screenshot to parse for disc values'
-                              }
-                            />
-                          </Box>
-                        )}
-                        {!!queueTotal && (
-                          <LinearProgress
-                            variant="buffer"
-                            value={(100 * processedNum) / queueTotal}
-                            valueBuffer={
-                              (100 * (processedNum + scanningNum)) / queueTotal
-                            }
-                          />
-                        )}
-
-                        {!!queueTotal && (
-                          <CardThemed sx={{ pl: 2 }}>
-                            <Box display="flex" alignItems="center">
-                              {!!scanningNum && <CircularProgress size="1em" />}
-                              <Typography sx={{ flexGrow: 1, ml: 1 }}>
-                                <span>
-                                  Screenshots in file-queue:
-                                  <b>{queueTotal}</b>
-                                  {/* {process.env.NODE_ENV === "development" && ` (Debug: Processed ${processed.length}/${maxProcessedCount}, Processing: ${outstanding.filter(entry => entry.result).length}/${maxProcessingCount}, Outstanding: ${outstanding.length})`} */}
-                                </span>
-                              </Typography>
-
-                              <Button
-                                size="small"
-                                color="error"
-                                onClick={clearQueue}
-                              >
-                                Clear file-queue
-                              </Button>
-                            </Box>
-                          </CardThemed>
-                        )}
-                      </Suspense>
-                    </CardContent>
-                  </CardThemed>
+                  <DiscScanPanel
+                    uploadLabel={t('editor.uploadBtn')}
+                    onUpload={onUpload}
+                    isCapturing={capture.isCapturing}
+                    captureProgress={capture.captureProgress}
+                    isCaptureProgressIdle={scan.isCaptureProgressIdle}
+                    onToggleCapture={
+                      capture.isCapturing ? stopCapture : startCapture
+                    }
+                    preview={
+                      imageURL
+                        ? {
+                            fileName,
+                            imageURL,
+                            imageWidth: imageWidth ?? 1,
+                            imageHeight: imageHeight ?? 1,
+                            ocrLines: ocrLines ?? [],
+                            debugImgs,
+                          }
+                        : undefined
+                    }
+                    queueTotal={queueTotal}
+                    processedNum={processedNum}
+                    scanningNum={scanningNum}
+                    onClearQueue={clearQueue}
+                  />
                 )}
               </Grid>
 
@@ -1050,30 +656,5 @@ export function DiscEditor({
         </CardThemed>
       </ModalWrapper>
     </Suspense>
-  )
-}
-
-function DebugModal({ imgs }: { imgs: Record<string, string> }) {
-  const [show, onOpen, onClose] = useBoolState()
-  return (
-    <>
-      <Button color="warning" onClick={onOpen}>
-        DEBUG
-      </Button>
-      <ModalWrapper open={show} onClose={onClose}>
-        <CardThemed>
-          <CardContent>
-            <Stack spacing={1}>
-              {Object.entries(imgs).map(([key, url]) => (
-                <Box key={key}>
-                  <Typography>{key}</Typography>
-                  <Box component="img" src={url} maxWidth="100%" />
-                </Box>
-              ))}
-            </Stack>
-          </CardContent>
-        </CardThemed>
-      </ModalWrapper>
-    </>
   )
 }
