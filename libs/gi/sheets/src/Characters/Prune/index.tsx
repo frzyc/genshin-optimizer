@@ -156,7 +156,11 @@ const lockRallyReaction_teamAtk_ = greaterEq(
       equal(
         condLockRallyReaction,
         'swirl',
-        equal(target.isHexerei, 1, dm.lockedPassive.teamAtk_)
+        equal(
+          target.isHexerei,
+          1,
+          equal(target.charEle, 'anemo', dm.lockedPassive.teamAtk_)
+        )
       )
     )
   )
