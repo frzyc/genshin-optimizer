@@ -159,6 +159,7 @@ const lockRallyReaction_teamAtk_ = greaterEq(
         equal(
           target.isHexerei,
           1,
+          // Technically non-anemo can trigger this, but it requires enemy with anemo aura, which is not realy a thing
           equal(target.charEle, 'anemo', dm.lockedPassive.teamAtk_)
         )
       )
