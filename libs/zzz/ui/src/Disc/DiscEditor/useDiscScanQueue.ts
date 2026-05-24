@@ -1,7 +1,7 @@
 import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
+import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
 import type { Processed } from '@genshin-optimizer/zzz/disc-scanner'
 import { ScanningQueue } from '@genshin-optimizer/zzz/disc-scanner'
-import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
 import type { MutableRefObject } from 'react'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { linesFromImage } from './ScanningUtil'
@@ -25,18 +25,28 @@ export function useDiscScanQueue(
   >()
 
   const captureIdleBlockedRef = useRef(false)
-  const scanningDataRef = useRef({ processedNum: 0, outstandingNum: 0, scanningNum: 0 })
+  const scanningDataRef = useRef({
+    processedNum: 0,
+    outstandingNum: 0,
+    scanningNum: 0,
+  })
 
   scanningDataRef.current = { processedNum, outstandingNum, scanningNum }
 
   const queueTotal = processedNum + outstandingNum + scanningNum
 
   const isCaptureProgressIdle =
-    !processedNum && !outstandingNum && !scanningNum && !captureIdleBlockedRef.current
+    !processedNum &&
+    !outstandingNum &&
+    !scanningNum &&
+    !captureIdleBlockedRef.current
 
   const shouldSkipCapture = () => {
-    const { processedNum: p, outstandingNum: o, scanningNum: s } =
-      scanningDataRef.current
+    const {
+      processedNum: p,
+      outstandingNum: o,
+      scanningNum: s,
+    } = scanningDataRef.current
     return !!(p || o || s || captureIdleBlockedRef.current)
   }
 

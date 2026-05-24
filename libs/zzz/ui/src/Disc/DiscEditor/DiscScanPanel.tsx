@@ -1,5 +1,5 @@
-import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
 import { CardThemed } from '@genshin-optimizer/common/ui'
+import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
 import type { OcrTextLine } from '@genshin-optimizer/zzz/disc-scanner'
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera'
 import ScreenShareIcon from '@mui/icons-material/ScreenShare'
@@ -18,9 +18,9 @@ import {
 import { styled } from '@mui/system'
 import type { ChangeEvent } from 'react'
 import { Suspense } from 'react'
+import { ScanDebugModal } from './ScanDebugModal'
 import { ScanImagePreview } from './ScanImagePreview'
 import { ScanInfoModal } from './ScanInfoModal'
-import { ScanDebugModal } from './ScanDebugModal'
 import { CAPTURE_INTERVAL_MS } from './useScreenCapture'
 
 const InputInvis = styled('input')({
@@ -112,7 +112,10 @@ export function DiscScanPanel({
                     variant="determinate"
                     value={captureProgress}
                   />
-                  <Typography variant="caption" sx={{ mt: 0.5, display: 'block' }}>
+                  <Typography
+                    variant="caption"
+                    sx={{ mt: 0.5, display: 'block' }}
+                  >
                     Next capture in{' '}
                     {Math.max(
                       0,
@@ -127,7 +130,10 @@ export function DiscScanPanel({
               ) : (
                 <>
                   <LinearProgress />
-                  <Typography variant="caption" sx={{ mt: 0.5, display: 'block' }}>
+                  <Typography
+                    variant="caption"
+                    sx={{ mt: 0.5, display: 'block' }}
+                  >
                     Waiting for current scan to finish…
                   </Typography>
                 </>
