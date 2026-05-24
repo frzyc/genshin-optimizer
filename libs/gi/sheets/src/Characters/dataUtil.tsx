@@ -510,9 +510,13 @@ const nicoleLockAddlScaling =
 const nicoleCt = charTemplates('Nicole')
 const nicoleLockProjectionAddl = infoMut(
   equal(
-    nicoleHex,
+    input.isHexerei,
     1,
-    greaterEq(tally.hexerei, 2, prod(percent(nicoleLockAddlScaling), nicoleAtk))
+    greaterEq(
+      tally.hexerei,
+      2,
+      equal(nicoleHex, 1, prod(percent(nicoleLockAddlScaling), nicoleAtk))
+    )
   ),
   { name: nicoleCt.ch('projection_dmgInc') }
 )
