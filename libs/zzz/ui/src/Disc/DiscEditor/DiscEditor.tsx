@@ -41,24 +41,20 @@ import {
 } from '@mui/material'
 import { Stack } from '@mui/system'
 import type { ChangeEvent, MouseEvent } from 'react'
-import {
-  Suspense,
-  useCallback,
-  useEffect,
-  useMemo,
-  useReducer,
-  useRef,
-} from 'react'
+import { Suspense, useCallback, useEffect, useMemo, useReducer } from 'react'
 import { useTranslation } from 'react-i18next'
 import { LocationAutocomplete } from '../../Character/LocationAutocomplete'
 import { DiscCardObj } from '../DiscCard'
 import { DiscMainStatGroup } from '../DiscMainStatGroup'
 import { DiscRarityDropdown } from '../DiscRarityDropdown'
 import { DiscSetAutocomplete } from '../DiscSetAutocomplete'
+import { useDiscEditorSnackbar } from './DiscEditorSnackbarContext'
+import type { DiscEditorSnackbarKind } from './DiscEditorSnackbarContext'
 import { DiscScanPanel } from './DiscScanPanel'
 import SubstatInput from './SubstatInput'
-import { useDiscScanQueue } from './useDiscScanQueue'
-import { useScreenCapture } from './useScreenCapture'
+import type { CycleTickResult } from './useGameCapture'
+import { useGameCapture } from './useGameCapture'
+import { useHandleScanningQueue } from './useHandleScanningQueue'
 
 interface DiscReducerState {
   disc: Partial<ICachedDisc>
@@ -120,6 +116,7 @@ function useDiscValidation(discFromProp: Partial<ICachedDisc>) {
 
   return { disc, validatedDisc, errors, setDisc }
 }
+
 export function DiscEditor({
   disc: discFromProp,
   show,
@@ -143,6 +140,7 @@ export function DiscEditor({
 }) {
   const { t } = useTranslation('disc')
   const { database } = useDatabaseContext()
+  const { pushSnackbar } = useDiscEditorSnackbar()
   const { disc, validatedDisc, setDisc, errors } =
     useDiscValidation(discFromProp)
   const {
@@ -175,41 +173,101 @@ export function DiscEditor({
     return fixedSlotKey ?? disc?.slotKey
   }, [fixedSlotKey, disc])
 
-  const isCapturingRef = useRef(false)
-  const lastAutoAddKeyRef = useRef<string | null>(null)
+  const {
+    scannedData,
+    processedNum,
+    scanningNum,
+    queueTotal,
+    queueBusy,
+    addFiles,
+    uploadFiles,
+    clearQueue,
+    clearScannedData,
+  } = useHandleScanningQueue(onShow, (scanned) => setDisc(scanned))
 
-  const scan = useDiscScanQueue(
-    onShow,
-    (scanned) => setDisc(scanned),
-    isCapturingRef
-  )
+  const onCapture = useCallback((file: File) => addFiles([file]), [addFiles])
 
-  const capture = useScreenCapture(
-    onShow,
-    scan.addCaptureFile,
-    scan.shouldSkipCapture,
-    () => scan.isCaptureProgressIdle,
-    isCapturingRef
-  )
+  const isValid = !errors?.length
 
-  const stopCapture = useCallback(() => {
-    capture.stopCapture()
-    scan.clearCaptureIdleBlocked()
-    lastAutoAddKeyRef.current = null
-  }, [capture, scan])
-
-  const startCapture = useCallback(async () => {
-    scan.clearCaptureIdleBlocked()
-    await capture.startCapture()
-  }, [capture, scan])
-
-  const reset = useCallback(() => {
+  const clearEditor = useCallback(() => {
     cancelEdit?.()
     setDisc({})
-    scan.clearScannedData()
-    scan.clearCaptureIdleBlocked()
-    lastAutoAddKeyRef.current = null
-  }, [cancelEdit, scan, setDisc])
+    clearScannedData()
+  }, [cancelEdit, clearScannedData, setDisc])
+  const addDisc = useCallback(
+    (discToAdd: IDisc) => {
+      database.discs.new(discToAdd)
+      pushSnackbar('added')
+      clearEditor()
+    },
+    [database.discs, pushSnackbar, clearEditor]
+  )
+
+  const updateDisc = useCallback(
+    (
+      id: string,
+      discToUpdate: Partial<ICachedDisc>,
+      kind: DiscEditorSnackbarKind = 'updated'
+    ) => {
+      database.discs.set(id, discToUpdate)
+      pushSnackbar(kind)
+      clearEditor()
+    },
+    [database.discs, pushSnackbar, clearEditor]
+  )
+  const removeDisc = useCallback(
+    (id: string) => {
+      database.discs.remove(id)
+      pushSnackbar('removed')
+      clearEditor()
+    },
+    [database.discs, clearEditor, pushSnackbar]
+  )
+
+  const commitCaptureScan = useCallback((): CycleTickResult => {
+    if (!isValid) return 'pause'
+    if (validatedDisc) {
+      const prevId = prev?.id
+      if (prevId) {
+        updateDisc(
+          prevId,
+          validatedDisc,
+          prevEditType === 'duplicate' ? 'duplicate' : 'updated'
+        )
+      } else {
+        addDisc(validatedDisc)
+      }
+    }
+    return 'proceed'
+  }, [addDisc, isValid, prev?.id, prevEditType, updateDisc, validatedDisc])
+
+  const {
+    capturePhase,
+    captureDeadlineAt,
+    isCapturing,
+    scheduleCycleTimer,
+    startCapture: startGameCapture,
+    stopCapture: stopGameCapture,
+  } = useGameCapture({
+    onShow,
+    onCapture,
+    queueBusy,
+    onCycleTick: commitCaptureScan,
+  })
+  useEffect(() => {
+    if (!isValid) return
+    if (capturePhase === 'paused' && !queueBusy) {
+      scheduleCycleTimer()
+    }
+  }, [capturePhase, queueBusy, scheduleCycleTimer, isValid])
+
+  const stopCapture = useCallback(() => {
+    stopGameCapture()
+  }, [stopGameCapture])
+
+  const startCapture = useCallback(async () => {
+    await startGameCapture()
+  }, [startGameCapture])
 
   const setSubstat = useCallback(
     (index: number, substat?: ISubstat) => {
@@ -220,21 +278,11 @@ export function DiscEditor({
     [disc, setDisc]
   )
 
-  const isValid = !errors?.length
   const theme = useTheme()
   const grmd = useMediaQuery(theme.breakpoints.up('md'))
   const removeId = disc?.id || prev?.id
   const canClearDisc = (): boolean =>
     window.confirm(t('editor.clearPrompt') as string)
-
-  const {
-    scannedData,
-    processedNum,
-    scanningNum,
-    queueTotal,
-    uploadFiles,
-    clearQueue,
-  } = scan
 
   const {
     fileName,
@@ -258,9 +306,9 @@ export function DiscEditor({
       }
       stopCapture()
       onClose()
-      reset()
+      clearEditor()
     },
-    [t, disc, onClose, reset, stopCapture]
+    [t, disc, onClose, clearEditor, stopCapture]
   )
 
   const onUpload = useCallback(
@@ -271,35 +319,6 @@ export function DiscEditor({
     },
     [uploadFiles]
   )
-
-  // During capture: skip duplicates, auto-add new discs, leave upgrades for manual confirm
-  useEffect(() => {
-    if (!capture.isCapturing || !validatedDisc || !isValid) return
-    if (!disc || Object.keys(disc).length === 0) return
-
-    const { duplicated, upgraded } = database.discs.findDups(validatedDisc)
-
-    if (duplicated.length > 0) {
-      reset()
-      return
-    }
-    if (upgraded.length > 0) return
-
-    const addKey = scannedData?.fileName
-    if (!addKey || lastAutoAddKeyRef.current === addKey) return
-    lastAutoAddKeyRef.current = addKey
-
-    database.discs.new(validatedDisc)
-    reset()
-  }, [
-    capture.isCapturing,
-    validatedDisc,
-    isValid,
-    disc,
-    scannedData?.fileName,
-    database.discs,
-    reset,
-  ])
 
   useEffect(() => {
     const pasteFunc = (e: Event) => {
@@ -324,336 +343,332 @@ export function DiscEditor({
   return (
     <Suspense fallback={false}>
       <ModalWrapper open={show} onClose={onCloseModal}>
-        <CardThemed bgt="dark">
-          <CardHeader
-            title="Disc Editor"
-            action={
-              <IconButton onClick={onCloseModal}>
-                <CloseIcon />
-              </IconButton>
-            }
-          />
-          <CardContent
-            sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
-          >
-            <Grid container spacing={1} columns={{ xs: 1, md: 2 }}>
-              {/* left column */}
-              <Grid item xs={1} display="flex" flexDirection="column" gap={1}>
-                {/* set */}
-                <Box sx={{ display: 'flex', gap: 1 }}>
-                  <DiscSetAutocomplete
-                    disabled={disableSet || !!disc.id}
-                    size="small"
-                    discSetKey={disc?.setKey ?? ''}
-                    setDiscSetKey={(key) =>
-                      setDisc({ setKey: key as DiscSetKey })
-                    }
-                    sx={{ flexGrow: 1 }}
-                    label={disc?.setKey ? '' : t('editor.unknownSetName')}
-                  />
-                  <DiscRarityDropdown
-                    rarity={disc ? rarity : undefined}
-                    onRarityChange={(rarity) => setDisc({ rarity })}
-                    disabled={!disc.mainStatKey || !!disc.id}
-                  />
-                </Box>
-                {/* level */}
-                <Box component="div" display="flex">
-                  <TextField
-                    label="Level"
-                    variant="filled"
-                    sx={{ flexShrink: 1, flexGrow: 1, mr: 1, my: 0 }}
-                    margin="dense"
-                    size="small"
-                    value={level}
-                    disabled={!disc.rarity}
-                    onChange={(e) => {
-                      const value = parseInt(e.target.value) || 0
-                      setDisc({ level: value })
-                    }}
-                  />
-                  <ButtonGroup>
-                    <Button
-                      onClick={() => setDisc({ level: level - 1 })}
-                      disabled={!disc.rarity || level === 0}
-                    >
-                      -
-                    </Button>
-                    {rarity
-                      ? range(0, discMaxLevel[rarity] / 3)
-                          .map((i) => 3 * i)
-                          .map((i) => (
-                            <Button
-                              key={i}
-                              onClick={() => setDisc({ level: i })}
-                              disabled={!disc.rarity || level === i}
-                            >
-                              {i}
-                            </Button>
-                          ))
-                      : null}
-                    <Button
-                      onClick={() => setDisc({ level: level + 1 })}
-                      disabled={!disc.rarity || level === discMaxLevel[rarity]}
-                    >
-                      +
-                    </Button>
-                  </ButtonGroup>
-                </Box>
-                {/* slot */}
-                <Stack direction="row" gap={1}>
-                  <CardThemed bgt="light" sx={{ px: 2, py: 1 }}>
-                    <Typography color="text.secondary">
-                      Slot [{slotKey}]
-                    </Typography>
-                  </CardThemed>
-                  <ButtonGroup sx={{ flexGrow: 1 }}>
-                    {allDiscSlotKeys.map((sk) => (
+        <Box>
+          <CardThemed bgt="dark">
+            <CardHeader
+              title="Disc Editor"
+              action={
+                <IconButton onClick={onCloseModal}>
+                  <CloseIcon />
+                </IconButton>
+              }
+            />
+            <CardContent
+              sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+            >
+              <Grid container spacing={1} columns={{ xs: 1, md: 2 }}>
+                {/* left column */}
+                <Grid item xs={1} display="flex" flexDirection="column" gap={1}>
+                  {/* set */}
+                  <Box sx={{ display: 'flex', gap: 1 }}>
+                    <DiscSetAutocomplete
+                      disabled={disableSet || !!disc.id}
+                      size="small"
+                      discSetKey={disc?.setKey ?? ''}
+                      setDiscSetKey={(key) =>
+                        setDisc({ setKey: key as DiscSetKey })
+                      }
+                      sx={{ flexGrow: 1 }}
+                      label={disc?.setKey ? '' : t('editor.unknownSetName')}
+                    />
+                    <DiscRarityDropdown
+                      rarity={disc ? rarity : undefined}
+                      onRarityChange={(rarity) => setDisc({ rarity })}
+                      disabled={!disc.mainStatKey || !!disc.id}
+                    />
+                  </Box>
+                  {/* level */}
+                  <Box component="div" display="flex">
+                    <TextField
+                      label="Level"
+                      variant="filled"
+                      sx={{ flexShrink: 1, flexGrow: 1, mr: 1, my: 0 }}
+                      margin="dense"
+                      size="small"
+                      value={level}
+                      disabled={!disc.rarity}
+                      onChange={(e) => {
+                        const value = parseInt(e.target.value) || 0
+                        setDisc({ level: value })
+                      }}
+                    />
+                    <ButtonGroup>
                       <Button
-                        key={sk}
-                        color={sk === slotKey ? 'success' : undefined}
-                        onClick={() => setDisc({ slotKey: sk })}
-                        disabled={
-                          !!disc.id || !!fixedSlotKey || !disc.mainStatKey
-                        }
-                        sx={{ flexGrow: 1 }}
+                        onClick={() => setDisc({ level: level - 1 })}
+                        disabled={!disc.rarity || level === 0}
                       >
-                        {sk}
+                        -
                       </Button>
-                    ))}
-                  </ButtonGroup>
-                  <Button
-                    onClick={() => setDisc({ lock: !disc?.lock })}
-                    color={disc?.lock ? 'success' : 'primary'}
-                    disabled={!disc || !disc.mainStatKey}
-                  >
-                    {disc?.lock ? <LockIcon /> : <LockOpenIcon />}
-                  </Button>
-                </Stack>
-                {/* main stat */}
-                <Box component="div" display="flex" gap={1}>
-                  <DiscMainStatGroup
-                    slotKey={slotKey}
-                    statKey={disc?.mainStatKey}
-                    setStatKey={(mainStatKey) => setDisc({ mainStatKey })}
-                  />
-                  <CardThemed bgt="light" sx={{ p: 1, flexGrow: 1 }}>
-                    <Typography color="text.secondary">
-                      {disc?.mainStatKey
-                        ? `${toPercent(
-                            getDiscMainStatVal(rarity, disc.mainStatKey, level),
-                            disc.mainStatKey
-                          ).toFixed(
-                            statKeyToFixed(disc.mainStatKey)
-                          )}${getUnitStr(disc.mainStatKey)}`
-                        : t('mainStat')}
-                    </Typography>
-                  </CardThemed>
-                </Box>
-                <LocationAutocomplete
-                  locKey={disc?.location ?? ''}
-                  setLocKey={(charKey) => setDisc({ location: charKey })}
-                />
-                {/* Image OCR */}
-                {allowUpload && (
-                  <DiscScanPanel
-                    uploadLabel={t('editor.uploadBtn')}
-                    onUpload={onUpload}
-                    isCapturing={capture.isCapturing}
-                    captureProgress={capture.captureProgress}
-                    isCaptureProgressIdle={scan.isCaptureProgressIdle}
-                    onToggleCapture={
-                      capture.isCapturing ? stopCapture : startCapture
-                    }
-                    preview={
-                      imageURL
-                        ? {
-                            fileName,
-                            imageURL,
-                            imageWidth: imageWidth ?? 1,
-                            imageHeight: imageHeight ?? 1,
-                            ocrLines: ocrLines ?? [],
-                            debugImgs,
+                      {rarity
+                        ? range(0, discMaxLevel[rarity] / 3)
+                            .map((i) => 3 * i)
+                            .map((i) => (
+                              <Button
+                                key={i}
+                                onClick={() => setDisc({ level: i })}
+                                disabled={!disc.rarity || level === i}
+                              >
+                                {i}
+                              </Button>
+                            ))
+                        : null}
+                      <Button
+                        onClick={() => setDisc({ level: level + 1 })}
+                        disabled={
+                          !disc.rarity || level === discMaxLevel[rarity]
+                        }
+                      >
+                        +
+                      </Button>
+                    </ButtonGroup>
+                  </Box>
+                  {/* slot */}
+                  <Stack direction="row" gap={1}>
+                    <CardThemed bgt="light" sx={{ px: 2, py: 1 }}>
+                      <Typography color="text.secondary">
+                        Slot [{slotKey}]
+                      </Typography>
+                    </CardThemed>
+                    <ButtonGroup sx={{ flexGrow: 1 }}>
+                      {allDiscSlotKeys.map((sk) => (
+                        <Button
+                          key={sk}
+                          color={sk === slotKey ? 'success' : undefined}
+                          onClick={() => setDisc({ slotKey: sk })}
+                          disabled={
+                            !!disc.id || !!fixedSlotKey || !disc.mainStatKey
                           }
-                        : undefined
-                    }
-                    queueTotal={queueTotal}
-                    processedNum={processedNum}
-                    scanningNum={scanningNum}
-                    onClearQueue={clearQueue}
-                  />
-                )}
-              </Grid>
-
-              {/* right column */}
-              <Grid item xs={1} display="flex" flexDirection="column" gap={1}>
-                {/* substat selections */}
-                {[0, 1, 2, 3].map((index) => (
-                  <SubstatInput
-                    rarity={rarity}
-                    key={index}
-                    index={index}
-                    disc={disc}
-                    setSubstat={setSubstat}
-                  />
-                ))}
-                {!!texts?.length && (
-                  <CardThemed bgt="light">
-                    <CardContent>
-                      {texts.map((text, i) => (
-                        <Typography key={i} color="warning.main">
-                          {text}
-                        </Typography>
+                          sx={{ flexGrow: 1 }}
+                        >
+                          {sk}
+                        </Button>
                       ))}
-                    </CardContent>
-                  </CardThemed>
-                )}
-              </Grid>
-            </Grid>
-
-            {/* Duplicate/Updated/Edit UI */}
-            {prev && (
-              <Grid
-                container
-                sx={{ justifyContent: 'space-around' }}
-                spacing={1}
-              >
-                <Grid
-                  item
-                  xs={12}
-                  md={5.5}
-                  lg={4}
-                  sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
-                >
-                  <CardThemed bgt="light">
-                    <Typography
-                      sx={{ textAlign: 'center' }}
-                      py={1}
-                      variant="h6"
-                      color="text.secondary"
+                    </ButtonGroup>
+                    <Button
+                      onClick={() => setDisc({ lock: !disc?.lock })}
+                      color={disc?.lock ? 'success' : 'primary'}
+                      disabled={!disc || !disc.mainStatKey}
                     >
-                      {prevEditType !== 'edit'
-                        ? prevEditType === 'duplicate'
-                          ? t('editor.dupeDisc')
-                          : t('editor.updateDisc')
-                        : t('editor.beforeEdit')}
-                    </Typography>
-                  </CardThemed>
-                  <DiscCardObj disc={prev} />
+                      {disc?.lock ? <LockIcon /> : <LockOpenIcon />}
+                    </Button>
+                  </Stack>
+                  {/* main stat */}
+                  <Box component="div" display="flex" gap={1}>
+                    <DiscMainStatGroup
+                      slotKey={slotKey}
+                      statKey={disc?.mainStatKey}
+                      setStatKey={(mainStatKey) => setDisc({ mainStatKey })}
+                    />
+                    <CardThemed bgt="light" sx={{ p: 1, flexGrow: 1 }}>
+                      <Typography color="text.secondary">
+                        {disc?.mainStatKey
+                          ? `${toPercent(
+                              getDiscMainStatVal(
+                                rarity,
+                                disc.mainStatKey,
+                                level
+                              ),
+                              disc.mainStatKey
+                            ).toFixed(
+                              statKeyToFixed(disc.mainStatKey)
+                            )}${getUnitStr(disc.mainStatKey)}`
+                          : t('mainStat')}
+                      </Typography>
+                    </CardThemed>
+                  </Box>
+                  <LocationAutocomplete
+                    locKey={disc?.location ?? ''}
+                    setLocKey={(charKey) => setDisc({ location: charKey })}
+                  />
+                  {/* Image OCR */}
+                  {allowUpload && (
+                    <DiscScanPanel
+                      uploadLabel={t('editor.uploadBtn')}
+                      onUpload={onUpload}
+                      capturePhase={capturePhase}
+                      captureDeadlineAt={captureDeadlineAt}
+                      onToggleCapture={isCapturing ? stopCapture : startCapture}
+                      preview={
+                        imageURL
+                          ? {
+                              fileName,
+                              imageURL,
+                              imageWidth: imageWidth ?? 1,
+                              imageHeight: imageHeight ?? 1,
+                              ocrLines: ocrLines ?? [],
+                              debugImgs,
+                            }
+                          : undefined
+                      }
+                      queueTotal={queueTotal}
+                      processedNum={processedNum}
+                      scanningNum={scanningNum}
+                      onClearQueue={clearQueue}
+                    />
+                  )}
                 </Grid>
-                {grmd && (
+
+                {/* right column */}
+                <Grid item xs={1} display="flex" flexDirection="column" gap={1}>
+                  {/* substat selections */}
+                  {[0, 1, 2, 3].map((index) => (
+                    <SubstatInput
+                      rarity={rarity}
+                      key={index}
+                      index={index}
+                      disc={disc}
+                      setSubstat={setSubstat}
+                    />
+                  ))}
+                  {!!texts?.length && (
+                    <CardThemed bgt="light">
+                      <CardContent>
+                        {texts.map((text, i) => (
+                          <Typography key={i} color="warning.main">
+                            {text}
+                          </Typography>
+                        ))}
+                      </CardContent>
+                    </CardThemed>
+                  )}
+                </Grid>
+              </Grid>
+
+              {/* Duplicate/Updated/Edit UI */}
+              {prev && (
+                <Grid
+                  container
+                  sx={{ justifyContent: 'space-around' }}
+                  spacing={1}
+                >
                   <Grid
                     item
-                    md={1}
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="center"
+                    xs={12}
+                    md={5.5}
+                    lg={4}
+                    sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
                   >
-                    <CardThemed bgt="light" sx={{ display: 'flex' }}>
-                      <ChevronRightIcon sx={{ fontSize: 40 }} />
+                    <CardThemed bgt="light">
+                      <Typography
+                        sx={{ textAlign: 'center' }}
+                        py={1}
+                        variant="h6"
+                        color="text.secondary"
+                      >
+                        {prevEditType !== 'edit'
+                          ? prevEditType === 'duplicate'
+                            ? t('editor.dupeDisc')
+                            : t('editor.updateDisc')
+                          : t('editor.beforeEdit')}
+                      </Typography>
                     </CardThemed>
+                    <DiscCardObj disc={prev} />
                   </Grid>
-                )}
-                <Grid
-                  item
-                  xs={12}
-                  md={5.5}
-                  lg={4}
-                  sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
-                >
-                  <CardThemed bgt="light">
-                    <Typography
-                      sx={{ textAlign: 'center' }}
-                      py={1}
-                      variant="h6"
-                      color="text.secondary"
+                  {grmd && (
+                    <Grid
+                      item
+                      md={1}
+                      display="flex"
+                      alignItems="center"
+                      justifyContent="center"
                     >
-                      {t('editor.preview')}
-                    </Typography>
-                  </CardThemed>
-                  {validatedDisc && <DiscCardObj disc={validatedDisc} />}
+                      <CardThemed bgt="light" sx={{ display: 'flex' }}>
+                        <ChevronRightIcon sx={{ fontSize: 40 }} />
+                      </CardThemed>
+                    </Grid>
+                  )}
+                  <Grid
+                    item
+                    xs={12}
+                    md={5.5}
+                    lg={4}
+                    sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+                  >
+                    <CardThemed bgt="light">
+                      <Typography
+                        sx={{ textAlign: 'center' }}
+                        py={1}
+                        variant="h6"
+                        color="text.secondary"
+                      >
+                        {t('editor.preview')}
+                      </Typography>
+                    </CardThemed>
+                    {validatedDisc && <DiscCardObj disc={validatedDisc} />}
+                  </Grid>
                 </Grid>
-              </Grid>
-            )}
-            {/* Error alert */}
-            {!isValid && (
-              <Alert variant="filled" severity="error">
-                {errors?.map((e, i) => (
-                  <div key={i}>{e}</div>
-                ))}
-              </Alert>
-            )}
-            {/* Buttons */}
-            <Box display="flex" gap={2}>
-              {prevEditType === 'edit' && prev?.id ? (
-                <Button
-                  startIcon={<AddIcon />}
-                  onClick={() => {
-                    disc && database.discs.set(prev.id, disc)
-                    reset()
-                  }}
-                  disabled={!validatedDisc || !isValid}
-                  color="primary"
-                >
-                  {t('editor.btnSave')}
-                </Button>
-              ) : (
-                <Button
-                  startIcon={<AddIcon />}
-                  onClick={() => {
-                    if (!validatedDisc) return
-                    database.discs.new(validatedDisc)
-                    reset()
-                  }}
-                  disabled={!validatedDisc || !isValid}
-                  color={prevEditType === 'duplicate' ? 'warning' : 'primary'}
-                >
-                  {t('editor.btnAdd')}
-                </Button>
               )}
-              {allowEmpty && (
-                <Button
-                  startIcon={<ReplayIcon />}
-                  disabled={!hasEditorContent}
-                  onClick={() => {
-                    canClearDisc() && reset()
-                  }}
-                  color="error"
-                >
-                  {t('editor.btnClear')}
-                </Button>
+              {/* Error alert */}
+              {!isValid && (
+                <Alert variant="filled" severity="error">
+                  {errors?.map((e, i) => (
+                    <div key={i}>{e}</div>
+                  ))}
+                </Alert>
               )}
-              {prev && prevEditType !== 'edit' && (
-                <Button
-                  startIcon={<UpdateIcon />}
-                  onClick={() => {
-                    if (!validatedDisc) return
-                    database.discs.set(prev.id, validatedDisc)
-                    reset()
-                  }}
-                  disabled={!isValid}
-                  color="success"
-                >
-                  {t('editor.btnUpdate')}
-                </Button>
-              )}
-              {!!removeId && (
-                <Button
-                  startIcon={<DeleteForeverIcon />}
-                  onClick={() => {
-                    if (!window.confirm(t('editor.confirmDelete'))) return
-                    database.discs.remove(removeId)
-                    reset()
-                  }}
-                  disabled={!removeId}
-                  color="error"
-                >
-                  {t('editor.delete')}
-                </Button>
-              )}
-            </Box>
-          </CardContent>
-        </CardThemed>
+              {/* Buttons */}
+              <Box display="flex" gap={2}>
+                {prevEditType === 'edit' && prev?.id ? (
+                  <Button
+                    startIcon={<AddIcon />}
+                    onClick={() => updateDisc(prev.id, disc)}
+                    disabled={!validatedDisc || !isValid}
+                    color="primary"
+                  >
+                    {t('editor.btnSave')}
+                  </Button>
+                ) : (
+                  <Button
+                    startIcon={<AddIcon />}
+                    onClick={() => validatedDisc && addDisc(validatedDisc)}
+                    disabled={!validatedDisc || !isValid}
+                    color={prevEditType === 'duplicate' ? 'warning' : 'primary'}
+                  >
+                    {t('editor.btnAdd')}
+                  </Button>
+                )}
+                {allowEmpty && (
+                  <Button
+                    startIcon={<ReplayIcon />}
+                    disabled={!hasEditorContent}
+                    onClick={() => {
+                      canClearDisc() && clearEditor()
+                    }}
+                    color="error"
+                  >
+                    {t('editor.btnClear')}
+                  </Button>
+                )}
+                {prev && prevEditType !== 'edit' && (
+                  <Button
+                    startIcon={<UpdateIcon />}
+                    onClick={() => {
+                      if (!validatedDisc) return
+                      updateDisc(prev.id, validatedDisc)
+                    }}
+                    disabled={!isValid}
+                    color="success"
+                  >
+                    {t('editor.btnUpdate')}
+                  </Button>
+                )}
+                {!!removeId && (
+                  <Button
+                    startIcon={<DeleteForeverIcon />}
+                    onClick={() => {
+                      if (!window.confirm(t('editor.confirmDelete'))) return
+                      removeDisc(removeId)
+                    }}
+                    disabled={!removeId}
+                    color="error"
+                  >
+                    {t('editor.delete')}
+                  </Button>
+                )}
+              </Box>
+            </CardContent>
+          </CardThemed>
+        </Box>
       </ModalWrapper>
     </Suspense>
   )

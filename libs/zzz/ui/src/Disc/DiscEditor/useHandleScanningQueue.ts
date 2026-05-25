@@ -2,15 +2,13 @@ import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
 import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
 import type { Processed } from '@genshin-optimizer/zzz/disc-scanner'
 import { ScanningQueue } from '@genshin-optimizer/zzz/disc-scanner'
-import type { MutableRefObject } from 'react'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { linesFromImage } from './ScanningUtil'
 import { playScanErrorSound } from './scanSounds'
 
-export function useDiscScanQueue(
+export function useHandleScanningQueue(
   onShow: () => void,
-  setDiscFromScan: (disc: Partial<ICachedDisc>) => void,
-  isCapturingRef: MutableRefObject<boolean>
+  setDiscFromScan: (disc: Partial<ICachedDisc>) => void
 ) {
   const queueRef = useRef(
     new ScanningQueue(linesFromImage, shouldShowDevComponents)
@@ -19,61 +17,32 @@ export function useDiscScanQueue(
 
   const [{ processedNum, outstandingNum, scanningNum }, setScanningData] =
     useState({ processedNum: 0, outstandingNum: 0, scanningNum: 0 })
-
   const [scannedData, setScannedData] = useState<
     undefined | Omit<Processed, 'disc'>
   >()
 
-  const captureIdleBlockedRef = useRef(false)
-  const scanningDataRef = useRef({
-    processedNum: 0,
-    outstandingNum: 0,
-    scanningNum: 0,
-  })
-
-  scanningDataRef.current = { processedNum, outstandingNum, scanningNum }
-
   const queueTotal = processedNum + outstandingNum + scanningNum
+  const queueBusy = !!(processedNum || outstandingNum || scanningNum)
 
-  const isCaptureProgressIdle =
-    !processedNum &&
-    !outstandingNum &&
-    !scanningNum &&
-    !captureIdleBlockedRef.current
-
-  const shouldSkipCapture = () => {
-    const {
-      processedNum: p,
-      outstandingNum: o,
-      scanningNum: s,
-    } = scanningDataRef.current
-    return !!(p || o || s || captureIdleBlockedRef.current)
-  }
-
-  const uploadFiles = useCallback(
-    (files?: FileList | null) => {
-      if (!files) return
+  const addFiles = useCallback(
+    (files: File[]) => {
       onShow()
-      queue.addFiles(Array.from(files).map((f) => ({ f, fName: f.name })))
+      queue.addFiles(files.map((f) => ({ f, fName: f.name })))
     },
     [onShow, queue]
   )
 
-  const addCaptureFile = useCallback(
-    (file: File) => {
-      onShow()
-      queue.addFiles([{ f: file, fName: file.name }])
+  const uploadFiles = useCallback(
+    (files?: FileList | null) => {
+      if (!files) return
+      addFiles(Array.from(files))
     },
-    [onShow, queue]
+    [addFiles]
   )
 
   const clearQueue = useCallback(() => {
     queue.clearQueue()
   }, [queue])
-
-  const clearCaptureIdleBlocked = useCallback(() => {
-    captureIdleBlockedRef.current = false
-  }, [])
 
   const clearScannedData = useCallback(() => {
     setScannedData(undefined)
@@ -93,25 +62,20 @@ export function useDiscScanQueue(
     const { disc: scannedDisc, ...rest } = processed
     setScannedData(rest)
     setDiscFromScan((scannedDisc ?? {}) as Partial<ICachedDisc>)
-    if (isCapturingRef.current) captureIdleBlockedRef.current = true
     if (!scannedDisc && rest.texts.length > 0) {
       playScanErrorSound()
     }
-  }, [queue, processedNum, scannedData, setDiscFromScan, isCapturingRef])
+  }, [queue, processedNum, scannedData, setDiscFromScan])
 
   return {
-    queue,
     scannedData,
     processedNum,
-    outstandingNum,
     scanningNum,
     queueTotal,
-    isCaptureProgressIdle,
-    shouldSkipCapture,
+    queueBusy,
+    addFiles,
     uploadFiles,
-    addCaptureFile,
     clearQueue,
-    clearCaptureIdleBlocked,
     clearScannedData,
   }
 }

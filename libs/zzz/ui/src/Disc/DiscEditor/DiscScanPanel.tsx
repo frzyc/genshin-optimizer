@@ -17,22 +17,75 @@ import {
 } from '@mui/material'
 import { styled } from '@mui/system'
 import type { ChangeEvent } from 'react'
-import { Suspense } from 'react'
+import { Suspense, useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { ScanDebugModal } from './ScanDebugModal'
 import { ScanImagePreview } from './ScanImagePreview'
 import { ScanInfoModal } from './ScanInfoModal'
-import { CAPTURE_INTERVAL_MS } from './useScreenCapture'
+import type { CapturePhase } from './useGameCapture'
+import { CAPTURE_INTERVAL_MS } from './useGameCapture'
 
 const InputInvis = styled('input')({
   display: 'none',
 })
 
+function useCaptureCountdown(deadlineAt: number) {
+  const [now, setNow] = useState(() => Date.now())
+
+  useEffect(() => {
+    const tick = () => setNow(Date.now())
+    tick()
+    const id = window.setInterval(tick, 250)
+    return () => clearInterval(id)
+  }, [deadlineAt])
+
+  const msLeft = Math.max(0, deadlineAt - now)
+  return {
+    progress: Math.min(100, 100 * (1 - msLeft / CAPTURE_INTERVAL_MS)),
+    secondsLeft: Math.ceil(msLeft / 1000),
+  }
+}
+
+function CaptureCountdownAlert({
+  deadlineAt,
+  hint,
+}: {
+  deadlineAt: number
+  hint: string
+}) {
+  const { progress, secondsLeft } = useCaptureCountdown(deadlineAt)
+
+  return (
+    <Alert severity="info" sx={{ mt: 1 }}>
+      <Typography sx={{ mb: 1 }}>{hint}</Typography>
+      <LinearProgress variant="determinate" value={progress} />
+      <Typography variant="caption" sx={{ mt: 0.5, display: 'block' }}>
+        Next capture in {secondsLeft}s
+      </Typography>
+    </Alert>
+  )
+}
+
+function CapturePausedAlert({
+  hint,
+  pausedHint,
+}: { hint: string; pausedHint: string }) {
+  return (
+    <Alert severity="info" sx={{ mt: 1 }}>
+      <Typography sx={{ mb: 1 }}>{hint}</Typography>
+      <LinearProgress />
+      <Typography variant="caption" sx={{ mt: 0.5, display: 'block' }}>
+        {pausedHint}
+      </Typography>
+    </Alert>
+  )
+}
+
 export type DiscScanPanelProps = {
   uploadLabel: string
   onUpload: (e: ChangeEvent<HTMLInputElement>) => void
-  isCapturing: boolean
-  captureProgress: number
-  isCaptureProgressIdle: boolean
+  capturePhase: CapturePhase | null
+  captureDeadlineAt: number | null
   onToggleCapture: () => void
   preview?: {
     fileName?: string
@@ -51,9 +104,8 @@ export type DiscScanPanelProps = {
 export function DiscScanPanel({
   uploadLabel,
   onUpload,
-  isCapturing,
-  captureProgress,
-  isCaptureProgressIdle,
+  capturePhase,
+  captureDeadlineAt,
   onToggleCapture,
   preview,
   queueTotal,
@@ -61,6 +113,9 @@ export function DiscScanPanel({
   scanningNum,
   onClearQueue,
 }: DiscScanPanelProps) {
+  const { t } = useTranslation('disc')
+  const isCapturing = capturePhase !== null
+
   return (
     <CardThemed bgt="light">
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
@@ -100,46 +155,18 @@ export function DiscScanPanel({
             </Grid>
           </Grid>
 
-          {isCapturing && (
-            <Alert severity="info" sx={{ mt: 1 }}>
-              <Typography sx={{ mb: 1 }}>
-                Screen capture is active. Screenshots will be taken every 5
-                seconds when idle.
-              </Typography>
-              {isCaptureProgressIdle ? (
-                <>
-                  <LinearProgress
-                    variant="determinate"
-                    value={captureProgress}
-                  />
-                  <Typography
-                    variant="caption"
-                    sx={{ mt: 0.5, display: 'block' }}
-                  >
-                    Next capture in{' '}
-                    {Math.max(
-                      0,
-                      Math.ceil(
-                        (CAPTURE_INTERVAL_MS * (1 - captureProgress / 100)) /
-                          1000
-                      )
-                    )}
-                    s
-                  </Typography>
-                </>
-              ) : (
-                <>
-                  <LinearProgress />
-                  <Typography
-                    variant="caption"
-                    sx={{ mt: 0.5, display: 'block' }}
-                  >
-                    Waiting for current scan to finish…
-                  </Typography>
-                </>
-              )}
-            </Alert>
-          )}
+          {isCapturing &&
+            (capturePhase === 'countdown' && captureDeadlineAt !== null ? (
+              <CaptureCountdownAlert
+                deadlineAt={captureDeadlineAt}
+                hint={t('editor.captureActiveHint')}
+              />
+            ) : (
+              <CapturePausedAlert
+                hint={t('editor.captureActiveHint')}
+                pausedHint={t('editor.capturePausedInvalid')}
+              />
+            ))}
 
           {preview?.imageURL && (
             <Box width="100%">
