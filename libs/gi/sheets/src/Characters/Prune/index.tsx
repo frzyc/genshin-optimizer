@@ -144,7 +144,7 @@ const lockRallyReaction_selfAtk_ = greaterEq(
     )
   )
 )
-const lockRallyReaction_teamAtk_ = greaterEq(
+const lockRallyReaction_teamAtk_disp = greaterEq(
   tally.hexerei,
   2,
   equal(
@@ -160,6 +160,12 @@ const lockRallyReaction_teamAtk_ = greaterEq(
       )
     )
   )
+)
+// Technically non-anemo can trigger this, but it requires enemy with anemo aura, which is not realy a thing
+const lockRallyReaction_teamAtk_ = equal(
+  target.charEle,
+  'anemo',
+  lockRallyReaction_teamAtk_disp
 )
 
 const [condC2StackPath, condC2Stack] = cond(key, 'c2Stack')
@@ -485,7 +491,10 @@ const sheet: TalentSheet = {
               node: lockRallyReaction_selfAtk_,
             },
             {
-              node: lockRallyReaction_teamAtk_,
+              node: infoMut(lockRallyReaction_teamAtk_disp, {
+                path: 'atk_',
+                isTeamBuff: true,
+              }),
             },
             {
               text: stg('duration'),
