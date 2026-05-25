@@ -378,6 +378,7 @@ export class UIData {
         if (process.env['NODE_ENV'] !== 'development') {
           const identity = allOperations[operation]([])
           operands = operands.filter((operand) => operand.value !== identity)
+          if (operands.length === 0) return makeEmpty(identity)
         }
       }
     }
