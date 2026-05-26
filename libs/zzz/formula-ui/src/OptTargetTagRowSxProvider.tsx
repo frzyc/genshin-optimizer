@@ -1,6 +1,7 @@
 import type { TagRowSxFunc } from '@genshin-optimizer/game-opt/sheet-ui'
 import { TagRowSxContext } from '@genshin-optimizer/game-opt/sheet-ui'
-import { useCharOpt, useCharacterContext } from '@genshin-optimizer/zzz/db-ui'
+import { getTeamFrame0 } from '@genshin-optimizer/zzz/db'
+import { useCharacterContext, useTeam } from '@genshin-optimizer/zzz/db-ui'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import type { ReactNode } from 'react'
 import { useCallback } from 'react'
@@ -12,12 +13,12 @@ export function OptTargetTagRowSxProvider({
   children: ReactNode
 }) {
   const character = useCharacterContext()
-  const charOpt = useCharOpt(character?.key)
+  const team = useTeam(character?.key)
+  const optTarget = team ? getTeamFrame0(team).tag : undefined
 
   const getTagRowSx = useCallback(
-    (tag: Tag) =>
-      isOptTargetTag(tag, charOpt?.target) ? optTargetRowSx : undefined,
-    [charOpt?.target]
+    (tag: Tag) => (isOptTargetTag(tag, optTarget) ? optTargetRowSx : undefined),
+    [optTarget]
   )
 
   return (

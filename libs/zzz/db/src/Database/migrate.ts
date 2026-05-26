@@ -13,7 +13,6 @@ import type {
   IZZZDatabase,
   IZenlessObjectDescription,
 } from '../Interfaces'
-import type { CharOpt } from './DataManagers'
 
 export const currentDBVersion = 2
 
@@ -40,25 +39,6 @@ export function migrateZOOD(
         if (char) {
           char.key = newKey
           ;(char as any).id = newKey
-        }
-      }
-
-      const charOpts = zood['charOpts'] as CharOpt[]
-      if (charOpts) {
-        const charOpt = charOpts.find(
-          (c) => ((c as any)['id'] as string) === oldKey
-        )
-        if (charOpt) {
-          // eslint-disable-next-line @typescript-eslint/no-extra-semi
-          ;(charOpt as any)['id'] = newKey
-          if (charOpt.target?.sheet === oldKey) {
-            charOpt.target.sheet = newKey
-          }
-          if (charOpt.conditionals) {
-            charOpt.conditionals
-              .filter((cond) => (cond.src as string) === oldKey)
-              .forEach((cond) => (cond.src = newKey))
-          }
         }
       }
 

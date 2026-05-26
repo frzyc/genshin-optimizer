@@ -7,10 +7,12 @@ import Berserker from './Berserker'
 import BlizzardStrayer from './BlizzardStrayer'
 import BloodstainedChivalry from './BloodstainedChivalry'
 import BraveHeart from './BraveHeart'
+import CelestialGift from './CelestialGift'
 import CrimsonWitchOfFlames from './CrimsonWitchOfFlames'
 import DeepwoodMemories from './DeepwoodMemories'
 import DefendersWill from './DefendersWill'
 import DesertPavilionChronicle from './DesertPavilionChronicle'
+import DisenchantmentInDeepShadow from './DisenchantmentInDeepShadow'
 import EchoesOfAnOffering from './EchoesOfAnOffering'
 import EmblemOfSeveredFate from './EmblemOfSeveredFate'
 import FinaleOfTheDeepGalleries from './FinaleOfTheDeepGalleries'
@@ -68,10 +70,12 @@ const data = {
   BlizzardStrayer,
   BloodstainedChivalry,
   BraveHeart,
+  CelestialGift,
   CrimsonWitchOfFlames,
   DeepwoodMemories,
   DefendersWill,
   DesertPavilionChronicle,
+  DisenchantmentInDeepShadow,
   EchoesOfAnOffering,
   EmblemOfSeveredFate,
   FinaleOfTheDeepGalleries,

@@ -22,9 +22,9 @@ import {
   allSpecialityKeys,
 } from '@genshin-optimizer/zzz/consts'
 import {
-  useCharOpt,
   useCharacter,
   useDatabaseContext,
+  useTeam,
 } from '@genshin-optimizer/zzz/db-ui'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import {
@@ -96,9 +96,9 @@ export default function PageCharacter() {
     return characterKeyRaw as CharacterKey
   }, [characterKeyRaw, navigate])
   const character = useCharacter(characterKey ?? undefined)
-  const charOpt =
-    useCharOpt(characterKey ?? undefined) ??
-    (characterKey && database.charOpts.getOrCreate(characterKey))
+  const team =
+    useTeam(characterKey ?? undefined) ??
+    (characterKey && database.teams.getOrCreate(characterKey))
   const tag = useMemo<Tag>(
     () => ({
       src: characterKey,
@@ -218,12 +218,12 @@ export default function PageCharacter() {
   }
   return (
     <Box display="flex" flexDirection="column" gap={2}>
-      {characterKey && character && charOpt && (
+      {characterKey && character && team && (
         <TagContext.Provider value={tag}>
           <StatHighlightContext.Provider value={statHLContextObj}>
             <CharCalcProvider
               character={character}
-              charOpt={charOpt}
+              team={team}
               wengineId={character.equippedWengine}
               discIds={character.equippedDiscs}
             >

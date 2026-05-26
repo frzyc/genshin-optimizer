@@ -1,0 +1,29 @@
+{
+  "setName": "Don céleste",
+  "setEffects": {
+    "2": "Augmente la recharge d'énergie de 20 %.",
+    "4": "Si le personnage équipé de l'artéfact a terminé son devoir de la sorcière et a utilisé une compétence élémentaire, il obtient l'effet Guidance de la lumière : accorde un bonus de DGT de l'élément du personnage de l'artéfact de 20 % pendant 20 s à tous les personnages de l'équipe à proximité. L'effet ci-dessus peut être déclenché même si le personnage équipé de l'artéfact n'est pas déployé, et les effets d'augmentation des DGT accordés par les sets d'artéfacts du même nom ne se cumulent pas.\\nLorsque l'équipe bénéficie de l'effet Hexerei : Rituel secret, l'effet Guidance de la lumière est amélioré en Hymne mortel, accordant un bonus de DGT de l'élément du personnage équipé de l'artéfact et de l'élément de votre personnage déployé de 40 % à tous les personnages de l'équipe à proximité, ce bonus n'étant pas doublé si leurs éléments sont identiques."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Senteur grâcielle",
+      "desc": "Les hauts cieux donnèrent une fleur impérissable à leur envoyé, et un destin sans fin n'engendra que la cupidité."
+    },
+    "plume": {
+      "name": "Cessation grâcielle",
+      "desc": "Les hauts cieux remirent une plume de renaissance à leur envoyé, et tout péché fut pardonné à l'achèvement du destin."
+    },
+    "sands": {
+      "name": "Décret grâciel",
+      "desc": "Les hauts cieux remirent un cadran solaire inversé à leur envoyé, et une interdiction inviolable devint une source de rage."
+    },
+    "goblet": {
+      "name": "Récompense grâcielle",
+      "desc": "Les hauts cieux offrirent un doux nectar à leur envoyé, et le festin éternel ouvrit grand les portes au désir."
+    },
+    "circlet": {
+      "name": "Couronne grâcielle",
+      "desc": "Les hauts cieux donnèrent une splendide couronne à leur envoyé, et un pouvoir sans entraves contribua à nourrir les germes de l'arrogance."
+    }
+  }
+}

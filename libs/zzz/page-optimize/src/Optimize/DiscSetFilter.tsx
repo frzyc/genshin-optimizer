@@ -1,9 +1,13 @@
 import { SqBadge } from '@genshin-optimizer/common/ui'
-import { objKeyMap, toggleInArr } from '@genshin-optimizer/common/util'
+import {
+  objKeyMap,
+  stableArr,
+  toggleInArr,
+} from '@genshin-optimizer/common/util'
 import type { DiscSetKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
 import { allDiscSetKeys, allDiscSlotKeys } from '@genshin-optimizer/zzz/consts'
-import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
-import { useCharOpt, useCharacterContext } from '@genshin-optimizer/zzz/db-ui'
+import type { ICachedDisc, TeamConditional } from '@genshin-optimizer/zzz/db'
+import { useCharacterContext, useTeam } from '@genshin-optimizer/zzz/db-ui'
 import {
   CharCalcMockCountProvider,
   DiscSheetDisplay,
@@ -26,7 +30,9 @@ export function DiscSetFilter({
   setSetFilter2: (setFilter2: DiscSetKey[]) => void
 }) {
   const character = useCharacterContext()
-  const charOpt = useCharOpt(character?.key)
+  const team = useTeam(character?.key)
+  const conditionals =
+    team?.frames[0]?.conditionals ?? stableArr<TeamConditional>()
   const discSetBySlot = useMemo(() => {
     const discSetBySlot: Record<
       DiscSetKey,
@@ -54,10 +60,10 @@ export function DiscSetFilter({
       </Box>
 
       <Box>
-        {character && charOpt && (
+        {character && team && (
           <CharCalcMockCountProvider
             character={character}
-            conditionals={charOpt.conditionals}
+            conditionals={conditionals}
           >
             <Grid container spacing={1}>
               {allDiscSetKeys.map((d) => (

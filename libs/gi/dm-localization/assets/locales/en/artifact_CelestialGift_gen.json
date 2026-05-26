@@ -1,0 +1,29 @@
+{
+  "setName": "Celestial Gift",
+  "setEffects": {
+    "2": "Energy Recharge +20%.",
+    "4": "If the equipping character has completed Witch's Homework, after they use an Elemental Skill, they gain \"Light's Guidance\" for 20s: All nearby party members gain a 20% Elemental DMG Bonus corresponding to the equipping character's Elemental Type. The equipping character can trigger this effect while off-field. DMG Bonuses provided by Artifact Sets with the same name do not stack.\\n· When your party has the Hexerei: Secret Rite effect, Light's Guidance is upgraded to \"Mortal Hymn\": All nearby party members gain a 40% Elemental DMG Bonus corresponding to both the equipping character and the current active party member's Elemental Type instead. If both characters have the same Elemental Type, these bonuses will not stack."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Heavensent Fragrance",
+      "desc": "The high heavens bestowed an everlasting flower on their envoy, and greed was born of a life without end."
+    },
+    "plume": {
+      "name": "Heavensent Demise",
+      "desc": "The high heavens bestowed a feather of rebirth on their envoy, with all sin to be forgiven where even fate meets its very end."
+    },
+    "sands": {
+      "name": "Heavensent Decree",
+      "desc": "The high heavens bestowed a sundial of counter-time on their envoy, and an inviolable interdiction became a wellspring of rage."
+    },
+    "goblet": {
+      "name": "Heavensent Reward",
+      "desc": "The high heavens bestowed sweet nectar on their envoy, and the unending feast opened wide the doors to desire."
+    },
+    "circlet": {
+      "name": "Heavensent Crown",
+      "desc": "The high heavens bestowed a splendid crown on their envoy, and arrogance was born out of power unchecked."
+    }
+  }
+}

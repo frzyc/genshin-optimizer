@@ -1,0 +1,166 @@
+{
+  "name": "尼可",
+  "title": "喧寂于心",
+  "description": "无言的「魔女」，弃声的「天使」。",
+  "constellationName": "金匣座",
+  "auto": {
+    "name": "托喻",
+    "fields": {
+      "normal": {
+        "0": "<strong>普通攻击</strong>",
+        "1": "以原初的言语降下敕命，进行至多三段的攻击，造成<pyro>火元素伤害</pyro>。"
+      },
+      "charged": {
+        "0": "<strong>重击</strong>",
+        "1": "消耗一定体力，短暂咏唱后，对前方区域造成<pyro>火元素范围伤害</pyro>。"
+      },
+      "plunging": {
+        "0": "<strong>下落攻击</strong>",
+        "1": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成<pyro>火元素范围伤害</pyro>。"
+      }
+    },
+    "skillParams": {
+      "0": "一段伤害",
+      "1": "二段伤害",
+      "2": "三段伤害",
+      "3": "重击伤害",
+      "4": "重击体力消耗",
+      "5": "下坠期间伤害",
+      "6": "低空/高空坠地冲击伤害",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "圣言默示·未现之光",
+    "description": {
+      "0": "重现旧日代行高天神权的片影，为队伍中附近的所有角色赋予<tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>虚己之赐</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11310002 values=[]></tooltip>效果，提升这些角色的攻击力，造成<pyro>火元素范围伤害</pyro>，并展开炽光护盾。",
+      "1": "炽光护盾的伤害吸收量受益于尼可的攻击力，对<pyro>火元素伤害</pyro>有250%的吸收效果。"
+    },
+    "skillParams": {
+      "0": "技能伤害",
+      "1": "护盾吸收量",
+      "2": "护盾持续时间",
+      "3": "虚己之赐攻击力加成比例",
+      "4": "虚己之赐攻击力加成上限",
+      "5": "虚己之赐持续时间",
+      "6": "冷却时间",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "圣言默示·天路历程",
+    "description": {
+      "0": "以天光的金缕，纺出「锚定」的命途，造成<pyro>火元素范围伤害</pyro>，并切换至「默观颂祷」模式。",
+      "1": "尼可处于该模式下时，队伍中附近的当前场上角色的攻击命中敌人时，将会召唤出「奥迹造影」，对敌人发起协同攻击，依据该角色的元素类型，造成对应的元素范围伤害。该伤害受益于该角色的攻击力，并视为由该角色造成的伤害。",
+      "2": "该效果每3秒至多触发一次，尼可每次切换至「默观颂祷」模式后，至多触发4次。",
+      "3": "<br/>",
+      "4": "此外，魔导角色的「奥迹造影」在外观上似乎会有所不同…"
+    },
+    "skillParams": {
+      "0": "技能伤害",
+      "1": "奥迹造影伤害",
+      "2": "奥迹造影攻击次数",
+      "3": "默观颂祷持续时间",
+      "4": "冷却时间",
+      "5": "元素能量",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "分有",
+    "description": {
+      "0": "施放元素战技<strong><tooltip ns=char_Nicole_gen baseKey18=skill>圣言默示·未现之光</tooltip></strong>后的20秒内，尼可将持续「观测」队伍中自己的当前场上其他角色。受观测的角色持续处于场上3秒后，其拥有的<tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>虚己之赐</strong></tooltip>效果将会升变为<tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>圣祝之引</strong></tooltip>，使其额外提升300点攻击力；若受观测的角色为魔导角色，则<strong>虚己之赐</strong>效果将会直接升变为<strong>圣祝之引</strong>。",
+      "1": "除尼可外，其他角色拥有的<strong>圣祝之引</strong>将在退场时还原为<strong>虚己之赐</strong>。"
+    }
+  },
+  "passive2": {
+    "name": "慕善",
+    "description": {
+      "0": "队伍中附近的当前场上角色的元素伤害命中敌人后，尼可自己拥有的<tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>虚己之赐</strong></tooltip>将会升变为<tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>圣祝之引</strong></tooltip>，持续8秒。"
+    }
+  },
+  "passive3": {
+    "name": "静念",
+    "description": {
+      "0": "在提瓦特，不处于战斗状态下时，若已获得当前区域的寻宝罗盘，则尼可的重击将会转而施放「御使之引」：呼唤附近的仙灵指引道路，触发等同于当前区域寻宝罗盘的效果。",
+      "1": "该效果有5秒的冷却时间，且在秘境、征讨领域、深境螺旋中无效。"
+    }
+  },
+  "lockedPassive": {
+    "name": "魔女的前夜礼·光自暗来",
+    "description": {
+      "0": "完成<strong>魔女的课业·导引之职…？</strong>后，尼可将成为<strong>魔导</strong>角色。队伍中编入至少2名魔导角色时，将获得<strong>魔导·秘仪</strong>效果，使魔导角色获得强化。",
+      "1": "<br/>",
+      "2": "<strong>魔导·秘仪</strong>",
+      "3": "魔导角色的<strong><tooltip ns=char_Nicole_gen baseKey18=burst>奥迹造影</tooltip></strong>造成的伤害提升，提升值相当于尼可攻击力的300%。"
+    }
+  },
+  "constellation1": {
+    "name": "「不要惧怕，蒙眷爱的人之子呀」",
+    "description": {
+      "0": "队伍中自己的当前场上角色攻击命中敌人时，将会额外召唤出特殊的「奥迹造影·合一」，对敌人进行协同攻击，依据该角色的元素类型，造成对应元素范围伤害，该伤害相当于该角色攻击力的600%，并视为由该角色造成的伤害。",
+      "1": "该效果每6秒至多触发一次。"
+    }
+  },
+  "constellation2": {
+    "name": "「我要教导你，指引你应走的路」",
+    "description": {
+      "0": "元素战技<strong><tooltip ns=char_Nicole_gen baseKey18=skill>圣言默示·未现之光</tooltip></strong>的效果获得强化：<tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>虚己之赐</strong></tooltip>还会额外提升300点攻击力（不计入该效果的攻击力加成上限），<tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>圣祝之引</strong></tooltip>还会依据角色的元素类型，使附近敌人的对应元素抗性降低25%，同元素类型的元素抗性降低效果不能叠加。",
+      "1": "此外，尼可施放元素战技<strong>圣言默示·未现之光</strong>时，也会为附近的当前场上角色赋予炽光护盾。"
+    }
+  },
+  "constellation3": {
+    "name": "「为你身边的灯，为你前方的光」",
+    "description": {
+      "0": "元素战技<strong><tooltip ns=char_Nicole_gen baseKey18=skill>圣言默示·未现之光</tooltip></strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
+    }
+  },
+  "constellation4": {
+    "name": "「向左或向右，无论你行往何方」",
+    "description": {
+      "0": "队伍中附近的角色拥有的<tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>虚己之赐</strong></tooltip>升变为<tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>圣祝之引</strong></tooltip>时，尼可还会为其赋予「先导之佑」效果，持续20秒，每名角色每16秒至多获得一次该效果。",
+      "1": "拥有「先导之佑」的角色的普通攻击、重击、下落攻击、元素战技与元素爆发造成的伤害提升，提升值相当于尼可攻击力的70%。该效果将在生效8次或持续时间结束时解除。",
+      "2": "同时命中多名敌人时，会依据命中敌人的数量消耗生效次数；队伍中具有「先导之佑」的角色，其生效次数单独计算。"
+    }
+  },
+  "constellation5": {
+    "name": "「我就要有话对你说，在你身旁」",
+    "description": {
+      "0": "元素爆发<strong><tooltip ns=char_Nicole_gen baseKey18=burst>圣言默示·天路历程</tooltip></strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
+    }
+  },
+  "constellation6": {
+    "name": "「这便是正确的道路，莫要彷徨」",
+    "description": {
+      "0": "尼可拥有的<tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>虚己之赐</strong></tooltip>升变为<tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>圣祝之引</strong></tooltip>时，队伍中附近的所有角色拥有的<strong>虚己之赐</strong>将会一同升变为<strong>圣祝之引</strong>。所有升变后的<strong>圣祝之引</strong>不再会还原为<strong>虚己之赐</strong>。",
+      "1": "此外，拥有<strong>圣祝之引</strong>的角色造成的伤害将无视敌人40%的防御力。"
+    }
+  }
+}

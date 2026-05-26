@@ -724,7 +724,6 @@ function ArtifactSetCard({
                   setKey={setKey}
                   setNumKey={parseInt(setNumKey) as SetNum}
                   hideHeader
-                  conditionalsOnly
                 />
               ))}
             </CardContent>

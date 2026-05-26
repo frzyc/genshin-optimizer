@@ -14,11 +14,16 @@ import type { CharacterGrowCurveKey } from '@genshin-optimizer/gi/dm'
 import { allStats, getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import type { Data, DisplaySub, NumNode } from '@genshin-optimizer/gi/wr'
 import {
+  active,
+  compareEq,
   constant,
   data,
   equal,
   equalStr,
   greaterEq,
+  inactive1,
+  inactive2,
+  inactive3,
   inferInfoMut,
   infoMut,
   infusionNode,
@@ -26,6 +31,7 @@ import {
   lookup,
   mergeData,
   min,
+  naught,
   one,
   percent,
   prod,
@@ -34,8 +40,10 @@ import {
   subscript,
   sum,
   tally,
+  unequal,
 } from '@genshin-optimizer/gi/wr'
 import { cond, nonStackBuff } from '../SheetUtil'
+import { charTemplates } from './charTemplates'
 
 const commonBasic = objKeyMap(
   ['hp', 'atk', 'def', 'eleMas', 'enerRech_', 'critRate_', 'critDMG_', 'heal_'],
@@ -369,6 +377,7 @@ export function dataObjForCharacterSheet(
     data.teamBuff!.tally![element] = constant(1)
     data.display!['basic'][`${element}_dmg_`] = input.total[`${element}_dmg_`]
     data.display!['reaction'] = reactions[element]
+    data.display!['nicole'] = projections
 
     // Moonsign buff handling for non-moonsign chars
     if (additional[0]?.isMoonsign === undefined) {
@@ -457,4 +466,93 @@ export function dataObjForCharacterSheet(
     moonsignData,
     ...additional.map((d) => inferInfoMut(d)),
   ])
+}
+
+// Handling for Nicole's projection attacks
+function findNicoleData(
+  cb: (data: typeof input) => NumNode,
+  defaultV: number | NumNode
+) {
+  return lookup(
+    compareEq(
+      active.charKey,
+      'Nicole',
+      'active',
+      compareEq(
+        inactive1.charKey,
+        'Nicole',
+        'inactive1',
+        compareEq(
+          inactive2.charKey,
+          'Nicole',
+          'inactive2',
+          equalStr(inactive3.charKey, 'Nicole', 'inactive3')
+        )
+      )
+    ),
+    {
+      active: cb(active),
+      inactive1: cb(inactive1),
+      inactive2: cb(inactive2),
+      inactive3: cb(inactive3),
+    },
+    defaultV
+  )
+}
+const nicoleBurst = findNicoleData((data) => data.total.burstIndex, -1)
+const nicoleConstellation = findNicoleData((data) => data.constellation, naught)
+const nicoleAtk = findNicoleData((data) => data.total.atk, naught)
+const nicoleHex = findNicoleData((data) => data.isHexerei, 0)
+const nicoleBurstScaling = allStats.char.skillParam.Nicole.burst[1]
+const nicoleC1Scaling = allStats.char.skillParam.Nicole.constellation1[0]
+const nicoleLockAddlScaling =
+  allStats.char.skillParam.Nicole.lockedPassive![0][0]
+const nicoleCt = charTemplates('Nicole')
+const nicoleLockProjectionAddl = infoMut(
+  equal(
+    input.isHexerei,
+    1,
+    greaterEq(
+      tally.hexerei,
+      2,
+      equal(nicoleHex, 1, prod(percent(nicoleLockAddlScaling), nicoleAtk))
+    )
+  ),
+  { name: nicoleCt.ch('projection_dmgInc') }
+)
+
+export const projections = {
+  burstArcaneProjectionDmg: infoMut(
+    unequal(
+      nicoleBurst,
+      -1,
+      customDmgNode(
+        prod(
+          subscript(nicoleBurst, nicoleBurstScaling, { unit: '%' }),
+          input.total.atk
+        ),
+        'elemental',
+        {
+          hit: { ele: input.charEle },
+          premod: { all_dmgInc: nicoleLockProjectionAddl },
+        }
+      )
+    ),
+    { name: nicoleCt.chg('burst.skillParams.1') }
+  ),
+  c1ArcaneProjectionUnityDmg: infoMut(
+    greaterEq(
+      nicoleConstellation,
+      1,
+      customDmgNode(
+        prod(percent(nicoleC1Scaling), input.total.atk),
+        'elemental',
+        {
+          hit: { ele: input.charEle },
+          premod: { all_dmgInc: nicoleLockProjectionAddl },
+        }
+      )
+    ),
+    { name: nicoleCt.ch('arcaneProjectionDmg') }
+  ),
 }

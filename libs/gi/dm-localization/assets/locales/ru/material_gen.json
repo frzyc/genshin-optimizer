@@ -254,6 +254,9 @@
   "JointExhibitionPopularity": {
     "name": "Популярность выставки"
   },
+  "PalsSynergy": {
+    "name": "Гармония друзей"
+  },
   "Primogem": {
     "name": "Камень Истока"
   },
@@ -1148,8 +1151,17 @@
   "Varka": {
     "name": "Варка"
   },
+  "Lohen": {
+    "name": "Лоэн"
+  },
   "Linnea": {
     "name": "Линнея"
+  },
+  "Nicole": {
+    "name": "Николь"
+  },
+  "Prune": {
+    "name": "Прюн"
   },
   "KachinasStellaFortuna": {
     "name": "Удача Качины"
@@ -1232,8 +1244,17 @@
   "VarkasStellaFortuna": {
     "name": "Удача Варки"
   },
+  "LohensStellaFortuna": {
+    "name": "Удача Лоэна"
+  },
   "LinneasStellaFortuna": {
     "name": "Удача Линнеи"
+  },
+  "NicolesStellaFortuna": {
+    "name": "Удача Николь"
+  },
+  "PrunesStellaFortuna": {
+    "name": "Удача Прюн"
   },
   "Apple": {
     "name": "Яблоко"
@@ -1822,6 +1843,15 @@
   },
   "FischlDictionaryDieNeuauflageDerPrinzessin": {
     "name": "Словарь Фишль: Новое издание принцессы"
+  },
+  "TheOriginsOfTheExperiment": {
+    "name": "Происхождение эксперимента"
+  },
+  "NotesOnTheExperimentalSubjects": {
+    "name": "Заметки о подопытном"
+  },
+  "ScribbledNotes": {
+    "name": "Небрежные записи"
   },
   "WyattsRedKey": {
     "name": "Красный ключ"
@@ -8318,6 +8348,33 @@
   "SugarSculptureLinnea": {
     "name": "Сахарная фигурка: Линнея"
   },
+  "SuspiciousStuffedTofuWithMincedMeat": {
+    "name": "Странный тофу с мясным фаршем"
+  },
+  "StuffedTofuWithMincedMeat": {
+    "name": "Тофу с мясным фаршем"
+  },
+  "DeliciousStuffedTofuWithMincedMeat": {
+    "name": "Вкусный тофу с мясным фаршем"
+  },
+  "SuspiciousMintBubblegum": {
+    "name": "Странная мятная жвачка"
+  },
+  "MintBubblegum": {
+    "name": "Мятная жвачка"
+  },
+  "DeliciousMintBubblegum": {
+    "name": "Вкусная мятная жвачка"
+  },
+  "SpinningSpecial": {
+    "name": "Суперкрутилка"
+  },
+  "GildedChest": {
+    "name": "Позолоченный сундук"
+  },
+  "BoredomBustingBubblegum": {
+    "name": "Жвачка от скуки"
+  },
   "RecipeItem": {
     "name": "Ингредиенты"
   },
@@ -9118,6 +9175,12 @@
   },
   "RecipeMillhavensMorningPlate": {
     "name": "Рецепт: «Завтрак Мельничной Пристани»"
+  },
+  "RecipeStuffedTofuWithMincedMeat": {
+    "name": "Рецепт: Тофу с мясным фаршем"
+  },
+  "RecipeMintBubblegum": {
+    "name": "Рецепт: Мятная жвачка"
   },
   "CraftedItems": {
     "name": "Созданные Предметы"
@@ -9943,6 +10006,15 @@
   },
   "PlumeOfTheFallenWatcher": {
     "name": "Перо падшего созерцателя"
+  },
+  "CounterfeitResin": {
+    "name": "Поддельная смола"
+  },
+  "TwistedWitheredBranch": {
+    "name": "Искажённая сухая ветка"
+  },
+  "ProfanedSprout": {
+    "name": "Осквернённый росток"
   },
   "TileOfDecarabiansTower": {
     "name": "Плитка башни Декарабиана"
@@ -13172,9 +13244,6 @@
   "EasybreezeHolidayResortMap": {
     "name": "Карта курорта «Оазис отдыха»"
   },
-  "ScribbledNotes": {
-    "name": "Небрежные записи"
-  },
   "BeautifullyWrittenNotes": {
     "name": "Записи, написанные элегантным почерком"
   },
@@ -13733,6 +13802,9 @@
   "LohensWorkReport": {
     "name": "Рабочий отчёт Лоэна"
   },
+  "LohensFriendshipFee": {
+    "name": "Дружеская плата Лоэна"
+  },
   "ArcadiaTheEntombedCapital": {
     "name": "Похороненная столица Аркадия"
   },
@@ -13745,17 +13817,38 @@
   "VerasMelancholyFinalVolumeVersionI": {
     "name": "Меланхолия Веры: Финальный том (Версия 1)"
   },
-  "TheDreamOfRhonabwy": {
-    "name": "Сон Ронабви"
+  "TheDreamOfRhonabouillet": {
+    "name": "Сон Ронабуйе"
   },
   "TheSongOfAyKhanoum": {
     "name": "Песни Ай-Ханум»"
   },
-  "TheCanonOfLoveDivineInspirationAndVirtue": {
-    "name": "Канон о любви, добродетели и божественных откровениях"
+  "RevelationsOfDivineLove": {
+    "name": "Откровения о божественной любви"
   },
   "Note": {
     "name": "Записка"
+  },
+  "PhotoWithTheLittleWitchesAndTheirImaginaryFriends": {
+    "name": "Фото с ведьмочками и воображаемыми друзьями"
+  },
+  "AnomalousTreeMarrowI": {
+    "name": "Аномальная древесная смола I"
+  },
+  "AnomalousTreeMarrowII": {
+    "name": "Аномальная древесная смола II"
+  },
+  "AnomalousTreeMarrowIII": {
+    "name": "Аномальная древесная смола III"
+  },
+  "AnomalousTreeMarrow": {
+    "name": "Аномальная древесная смола"
+  },
+  "DangoMilkInfusedWithMagic": {
+    "name": "Молоко с данго: Магическая аура"
+  },
+  "PrimalConstructComponent": {
+    "name": "Деталь первозданной конструкции"
   },
   "AncientMondstadtRoyalSeal": {
     "name": "Печать аристократов древнего Мондштадта"
@@ -15797,6 +15890,18 @@
   "TravelNotesHomecoming": {
     "name": "Возвращение"
   },
+  "NicoleHeavenlyStairway": {
+    "name": "Дворцовая лестница"
+  },
+  "LohenBenevolence": {
+    "name": "Милосердие"
+  },
+  "PruneJudgment": {
+    "name": "Наказание"
+  },
+  "TravelNotesGiftOfSplendor": {
+    "name": "Великолепный подарок"
+  },
   "EchoDandelionKnight": {
     "name": "Эхо: Рыцарь Одуванчик"
   },
@@ -15853,6 +15958,12 @@
   },
   "EchoPillarOfFortitude": {
     "name": "Эхо: Оплот стойкости"
+  },
+  "EchoEonsAdrift": {
+    "name": "Эхо: Затерявшийся в вечности"
+  },
+  "EchoHelmOfTheRadiantRose": {
+    "name": "Эхо: Штурвал цветущей розы"
   },
   "FaintGlow": {
     "name": "Бледный свет"
@@ -16787,6 +16898,30 @@
   "MeditativeReading": {
     "name": "Медитативное чтение"
   },
+  "PatrolBreak": {
+    "name": "Пространство патрулирования"
+  },
+  "MasterpieceComplete": {
+    "name": "Превосходство"
+  },
+  "ReadyToSprint": {
+    "name": "Бег на коньках"
+  },
+  "InterludeRest": {
+    "name": "Перерыв в танце"
+  },
+  "HarnessTheBlaze": {
+    "name": "Управление пламенем"
+  },
+  "PerfectRating": {
+    "name": "Высший балл"
+  },
+  "RhythmMoment": {
+    "name": "Момент ритма"
+  },
+  "ShareWithYou": {
+    "name": "Делюсь"
+  },
   "FantasticalMarvel": {
     "name": "Чудесная идея"
   },
@@ -16852,6 +16987,12 @@
   },
   "MysteriousWhiteStar": {
     "name": "Загадочная белая звезда"
+  },
+  "EclipsingFlame": {
+    "name": "Затмевающее пламя"
+  },
+  "DemonSlayingGale": {
+    "name": "Король Штормов Истребителя Демонов"
   },
   "VigorousYapping": {
     "name": "Активное общение"
@@ -16963,6 +17104,9 @@
   },
   "ConsecratedFangedBeast": {
     "name": "Священный клыкастый зверь"
+  },
+  "ExperimentalFieldGenerator": {
+    "name": "Экспериментальный генератор поля"
   },
   "UndividedHeart": {
     "name": "Неразделённое сердце"
@@ -17372,6 +17516,15 @@
   "WitheredReedsEclipseTheSun": {
     "name": "Увядшие тростники затмевают солнце"
   },
+  "PartTheVeilOfSnow": {
+    "name": "Отстраняя снежную завесу"
+  },
+  "OLipsWeaveMeSongsAndPsalms": {
+    "name": "«О уста, сплетите мне песни и стихи!»"
+  },
+  "GravityField": {
+    "name": "Гравитационное поле"
+  },
   "MagicGuide": {
     "name": "Руководство по магии"
   },
@@ -17717,6 +17870,9 @@
   "Blubberbeast": {
     "name": "Пухлень"
   },
+  "GladiatorsFinale": {
+    "name": "Конец гладиатора"
+  },
   "LiyueHarborWharf": {
     "name": "Гавань Ли Юэ"
   },
@@ -17938,6 +18094,15 @@
   },
   "ElementalTransfigurationLavaBlessing": {
     "name": "Трансформация элементов: Благословение лавы"
+  },
+  "Netochka": {
+    "name": "Неточка"
+  },
+  "ElementalTransfigurationRimegrassBlessing": {
+    "name": "Трансформация элементов: Благословение Ледяной травы"
+  },
+  "ElementalTransfigurationStormgaleBlessing": {
+    "name": "Трансформация элементов: Благословение Грозового шторма"
   },
   "ElementalResonanceWovenIce": {
     "name": "Элементальный резонанс: Переплетение Крио"
@@ -18194,6 +18359,9 @@
   "CleaningTime": {
     "name": "Время убираться"
   },
+  "TheOtherSideOfTheFrostmoon": {
+    "name": "Обратная сторона Морозной Луны"
+  },
   "Origin": {
     "name": "Изначальный"
   },
@@ -18409,6 +18577,9 @@
   },
   "PhantasmalGiftStarOmen": {
     "name": "Иллюзорный дар: Звёздное знамение"
+  },
+  "SuperAwesomeMagicKey": {
+    "name": "Сверхкрутой магический ключ"
   },
   "UnbreakableDurandarte": {
     "name": "Несокрушимый: Дюрандаль"
@@ -22630,5 +22801,8 @@
   },
   "AllFangsAndSnarls": {
     "name": "Острые клыки"
+  },
+  "MiniatureStonecraft": {
+    "name": "Статуя в камне"
   }
 }

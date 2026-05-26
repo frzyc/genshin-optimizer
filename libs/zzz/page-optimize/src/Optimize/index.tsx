@@ -7,14 +7,17 @@ import {
   type DiscSlotKey,
   allDiscSlotKeys,
 } from '@genshin-optimizer/zzz/consts'
-
-import { type ICachedDisc, targetTag } from '@genshin-optimizer/zzz/db'
+import {
+  type ICachedDisc,
+  getTeamFrame0,
+  targetTag,
+} from '@genshin-optimizer/zzz/db'
 import {
   OptConfigContext,
   OptConfigProvider,
-  useCharOpt,
   useCharacterContext,
   useDatabaseContext,
+  useTeam,
 } from '@genshin-optimizer/zzz/db-ui'
 import { useZzzCalcContext } from '@genshin-optimizer/zzz/formula-ui'
 import { createSolverConfig } from '@genshin-optimizer/zzz/solver'
@@ -46,16 +49,20 @@ import { WengineFilter } from './WengineFilter'
 
 export default function Optimize() {
   const { key: characterKey } = useCharacterContext()!
-  const { optConfigId } = useCharOpt(characterKey)!
+  const team = useTeam(characterKey)!
   const { database } = useDatabaseContext()
+  const mate = team.teammates.find((t) => t.characterKey === characterKey)
+  const optConfigId = mate?.optConfigId
 
   if (!optConfigId) {
     const newOptConfigId = database.optConfigs.new({
       wEngineTypes: [getCharStat(characterKey).specialty],
     })
-    database.charOpts.set(characterKey, {
-      optConfigId: newOptConfigId,
-    })
+    database.teams.setTeammateOptConfigId(
+      characterKey,
+      characterKey,
+      newOptConfigId
+    )
     return null
   }
   return (
@@ -70,7 +77,8 @@ function OptimizeWrapper() {
   const { database } = useDatabaseContext()
   const calc = useZzzCalcContext()
   const { key: characterKey } = useCharacterContext()!
-  const { target } = useCharOpt(characterKey)!
+  const team = useTeam(characterKey)!
+  const { tag: target } = getTeamFrame0(team)
   const [numWorkers, setNumWorkers] = useState(8)
   const [progress, setProgress] = useState<Progress | undefined>(undefined)
   const { optConfig, optConfigId } = useContext(OptConfigContext)

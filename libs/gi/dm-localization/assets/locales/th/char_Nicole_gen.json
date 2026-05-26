@@ -1,0 +1,166 @@
+{
+  "name": "Nicole",
+  "title": "เสียงสงัดในใจ",
+  "description": "\"แม่มด\" ผู้เงียบงัน, \"ทูตสวรรค์\" ผู้สละเสียง",
+  "constellationName": "Reliquiarium",
+  "auto": {
+    "name": "Allegoria",
+    "fields": {
+      "normal": {
+        "0": "<strong>โจมตีปกติ</strong>",
+        "1": "บัญชาด้วยภาษาบรรพกาล ทำการโจมตีต่อเนื่องมากสุด 3 ครั้ง เพื่อสร้าง<pyro>ความเสียหายไฟ</pyro>"
+      },
+      "charged": {
+        "0": "<strong>ชาร์จโจมตี</strong>",
+        "1": "ใช้พลังกายบางส่วน โดยหลังจากร่ายเสร็จ จะสร้าง<pyro>ความเสียหายไฟวงกว้าง</pyro> ไปยังพื้นที่ด้านหน้า"
+      },
+      "plunging": {
+        "0": "<strong>โจมตีพุ่งลงจากอากาศ</strong>",
+        "1": "กระโจนจากกลางอากาศลงมายังพื้นดิน เพื่อโจมตีศัตรูที่อยู่ในเส้นทางการโจมตี โดยจะสร้าง<pyro>ความเสียหายไฟวงกว้าง</pyro> เมื่อลงสู่พื้น"
+      }
+    },
+    "skillParams": {
+      "0": "ความเสียหายขั้น 1",
+      "1": "ความเสียหายขั้น 2",
+      "2": "ความเสียหายขั้น 3",
+      "3": "ความเสียหายชาร์จโจมตี",
+      "4": "ชาร์จโจมตีใช้พลังกาย",
+      "5": "ความเสียหายพุ่งลง",
+      "6": "ความเสียหายพุ่งถึงพื้นจากที่ต่ำ/สูง",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Revelation: Uncreated Light",
+    "description": {
+      "0": "จำลองภาพของตัวแทนอำนาจศักดิ์สิทธิ์จากสวรรค์ในอดีตขึ้นมาใหม่ มอบเอฟเฟกต์ <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Grace of Kenosis</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11310002 values=[]></tooltip> ให้กับตัวละครทั้งหมดในทีมที่อยู่ใกล้เคียง เพิ่มพลังโจมตีของตัวละครเหล่านี้ สร้าง<pyro>ความเสียหายไฟวงกว้าง</pyro> และกางโล่แสงโชติ",
+      "1": "ปริมาณการดูดซับความเสียหายของโล่แสงโชติ จะขึ้นอยู่กับพลังโจมตีของ Nicole และมีเอฟเฟกต์ดูดซับ<pyro>ความเสียหายไฟ</pyro> 250%"
+    },
+    "skillParams": {
+      "0": "ความเสียหายสกิล",
+      "1": "ปริมาณการดูดซับของโล่",
+      "2": "ระยะเวลาต่อเนื่องของโล่",
+      "3": "อัตราส่วนโบนัสพลังโจมตี Grace of Kenosis",
+      "4": "โบนัสพลังโจมตี Grace of Kenosis สูงสุด",
+      "5": "ระยะเวลาของ Grace of Kenosis",
+      "6": "คูลดาวน์",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Revelation: Ladder of Divine Ascent",
+    "description": {
+      "0": "ถักทอโชคชะตาแห่งการ \"เหนี่ยวรั้ง\" ด้วยเส้นด้ายสีทองจากแสงสวรรค์ สร้าง<pyro>ความเสียหายไฟวงกว้าง</pyro> และสลับเข้าสู่โหมด \"Silent Contemplation\" (ภาวนาพินิจ)",
+      "1": "เมื่อ Nicole อยู่ในโหมดดังกล่าว เมื่อตัวละครในทีมที่เข้าร่วมการต่อสู้ในขณะนั้นที่อยู่ใกล้เคียงโจมตีโดนศัตรู จะอัญเชิญ \"ภาพเงาเร้นลับ\" ออกมา เพื่อประสานการโจมตีใส่ศัตรู โดยจะสร้างความเสียหายธาตุวงกว้างที่สอดคล้องกัน ตามประเภทธาตุของตัวละครดังกล่าว ซึ่งความเสียหายนี้จะขึ้นอยู่กับพลังโจมตีของตัวละครดังกล่าว และถือว่าเป็นความเสียหายที่สร้างโดยตัวละครนั้น",
+      "2": "เอฟเฟกต์นี้จะเกิดขึ้นได้มากสุดหนึ่งครั้งในทุก 3 วินาที และหลังจาก Nicole สลับเข้าสู่โหมด \"Silent Contemplation\" ในแต่ละครั้ง จะเกิดขึ้นได้มากสุด 4 ครั้ง",
+      "3": "<br/>",
+      "4": "นอกจากนี้ ดูเหมือนว่า \"ภาพเงาเร้นลับ\" ของตัวละครมนตรา จะมีลักษณะที่แตกต่างกันออกไป..."
+    },
+    "skillParams": {
+      "0": "ความเสียหายสกิล",
+      "1": "ความเสียหาย ภาพเงาเร้นลับ",
+      "2": "จำนวนการโจมตีของ ภาพเงาเร้นลับ",
+      "3": "ระยะเวลาของ Silent Contemplation",
+      "4": "คูลดาวน์",
+      "5": "พลังงานธาตุ",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Methexis",
+    "description": {
+      "0": "ภายใน 20 วินาทีหลังจากใช้สกิลธาตุ <strong><tooltip ns=char_Nicole_gen baseKey18=skill>Revelation: Uncreated Light</tooltip></strong> แล้ว Nicole จะ \"สังเกตการณ์\" ตัวละครอื่นในทีมที่เข้าต่อสู้อยู่อย่างต่อเนื่อง หลังจากตัวละครที่ถูกสังเกตการณ์ อยู่ในสนามเป็นเวลา 3 วินาที เอฟเฟกต์ <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Grace of Kenosis</strong></tooltip> ที่มีอยู่จะเลื่อนขั้นเป็น <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Guidance of Theosis</strong></tooltip> ทำให้พลังโจมตีเพิ่มขึ้น 300 หน่วย; หากตัวละครที่ถูกสังเกตการณ์เป็นตัวละครมนตรา เอฟเฟกต์ <strong>Grace of Kenosis</strong> จะเลื่อนขั้นเป็น <strong>Guidance of Theosis</strong> ทันที",
+      "1": "เมื่อตัวละครอื่นที่มี <strong>Guidance of Theosis</strong> ยกเว้น Nicole ออกจากการต่อสู้ เอฟเฟกต์จะถูกเปลี่ยนกลับคืนเป็น <strong>Grace of Kenosis</strong>"
+    }
+  },
+  "passive2": {
+    "name": "Philokalia",
+    "description": {
+      "0": "หลังจากตัวละครในทีมที่เข้าร่วมการต่อสู้ในขณะนั้น ที่อยู่ใกล้เคียงสร้างความเสียหายธาตุโดนศัตรู <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Grace of Kenosis</strong></tooltip> ที่ Nicole มีอยู่ จะเลื่อนขั้นเป็น <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Guidance of Theosis</strong></tooltip> เป็นเวลา 8 วินาที"
+    }
+  },
+  "passive3": {
+    "name": "Nepsis",
+    "description": {
+      "0": "เมื่อ Nicole ไม่ได้อยู่ในสถานะต่อสู้ขณะอยู่ใน Teyvat หากได้รับ Treasure Compass ของพื้นที่ปัจจุบันแล้ว การชาร์จโจมตีของ Nicole จะเปลี่ยนเป็นการปล่อย \"Emissarial Guidance\": เรียก Seelie ที่อยู่ใกล้เคียงมาช่วยนำทาง ทำให้เกิดเอฟเฟกต์ที่เทียบเท่ากับ Treasure Compass ของพื้นที่ปัจจุบัน",
+      "1": "เอฟเฟกต์นี้มีช่วงเวลาคูลดาวน์ 5 วินาที และจะไร้ผลเมื่ออยู่ในดันเจี้ยน, Trounce Domain และ Spiral Abyss"
+    }
+  },
+  "lockedPassive": {
+    "name": "Witch's Eve Rite: Light in the Darkness",
+    "description": {
+      "0": "หลังจากสำเร็จ <strong>แบบฝึกหัดของแม่มด: หน้าที่ของผู้นำทาง...?</strong> Nicole จะกลายเป็นตัวละคร<strong>มนตรา</strong> เมื่อจัดทีมที่มีตัวละครมนตราอย่างน้อย 2 ตัว จะได้รับเอฟเฟกต์ <strong>Hexerei: Secret Rite</strong> ซึ่งจะเสริมพลังให้กับตัวละครมนตรา",
+      "1": "<br/>",
+      "2": "<strong>Hexerei: Secret Rite</strong>",
+      "3": "เพิ่มความเสียหายที่เกิดจาก <strong><tooltip ns=char_Nicole_gen baseKey18=burst>ภาพเงาเร้นลับ</tooltip></strong> ของตัวละครมนตรา โดยค่าที่เพิ่มขึ้นเท่ากับ 300% ของพลังโจมตีของ Nicole"
+    }
+  },
+  "constellation1": {
+    "name": "\"Do Not Be Afraid, Child Who Is Loved\"",
+    "description": {
+      "0": "เมื่อการโจมตีของตัวละครในทีมตัวเองที่เข้าร่วมการต่อสู้ในขณะนั้นโดนศัตรู จะอัญเชิญ \"ภาพเงาเร้นลับ: ผสานรวม\" พิเศษออกมาเพิ่มเติม เพื่อทำการโจมตีประสานใส่ศัตรู และสร้างความเสียหายวงกว้างของธาตุที่สอดคล้องกัน ตามประเภทธาตุของตัวละครดังกล่าว โดยความเสียหายนี้เท่ากับ 600% ของพลังโจมตีของตัวละครดังกล่าว และจะถูกนับเป็นความเสียหายที่ตัวละครนั้นสร้างขึ้น",
+      "1": "เอฟเฟกต์นี้จะเกิดขึ้นได้มากสุดหนึ่งครั้ง ในทุก 6 วินาที"
+    }
+  },
+  "constellation2": {
+    "name": "\"I Will Guide You and Show You the Path You Should Tread\"",
+    "description": {
+      "0": "เอฟเฟกต์ของสกิลธาตุ <strong><tooltip ns=char_Nicole_gen baseKey18=skill>Revelation: Uncreated Light</tooltip></strong> จะได้รับการเสริมพลัง: <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Grace of Kenosis</strong></tooltip> จะเพิ่มพลังโจมตีขึ้นอีก 300 หน่วย (ไม่นำไปคำนวณรวมกับขีดจำกัดโบนัสพลังโจมตีของเอฟเฟกต์ดังกล่าว) <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Guidance of Theosis</strong></tooltip> จะลดความต้านทานธาตุที่สอดคล้องกับประเภทธาตุของตัวละคร ของศัตรูที่อยู่ใกล้เคียงลง 25% โดยเอฟเฟกต์ลดความต้านทานธาตุจากประเภทธาตุเดียวกัน จะไม่สามารถซ้อนทับกันได้",
+      "1": "นอกจากนี้ เมื่อ Nicole ใช้สกิลธาตุ <strong>Revelation: Uncreated Light</strong> จะมอบโล่แสงโชติให้กับตัวละครที่เข้าร่วมการต่อสู้ในขณะนั้นที่อยู่ใกล้เคียงด้วย"
+    }
+  },
+  "constellation3": {
+    "name": "\"A Lamp by Your Side, A Light to Shine the Way\"",
+    "description": {
+      "0": "เพิ่มเลเวลสกิลของสกิลธาตุ <strong><tooltip ns=char_Nicole_gen baseKey18=skill>Revelation: Uncreated Light</tooltip></strong> ขึ้น 3 ระดับ",
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
+    }
+  },
+  "constellation4": {
+    "name": "\"Whether Left or Right, No Matter Which Way You Turn\"",
+    "description": {
+      "0": "เมื่อ <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Grace of Kenosis</strong></tooltip> ที่ตัวละครในทีมที่อยู่ใกล้เคียงมีอยู่เลื่อนขั้นเป็น <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Guidance of Theosis</strong></tooltip> Nicole จะมอบเอฟเฟกต์ \"Pathfinder's Blessing\" ให้กับพวกเขา เป็นเวลา 20 วินาที โดยตัวละครแต่ละตัวจะได้รับเอฟเฟกต์นี้มากสุดหนึ่งครั้ง ในทุก 16 วินาที",
+      "1": "ความเสียหายที่เกิดจากการโจมตีปกติ, ชาร์จโจมตี, โจมตีพุ่งลงจากอากาศ, สกิลธาตุ และท่าไม้ตายของตัวละครที่มี \"Pathfinder's Blessing\" จะเพิ่มขึ้น โดยค่าที่เพิ่มจะเท่ากับ 70% ของพลังโจมตีของ Nicole เอฟเฟกต์นี้จะหายไป เมื่อเกิดผล 8 ครั้ง หรือเมื่อสิ้นสุดระยะเวลาต่อเนื่อง",
+      "2": "เมื่อโจมตีโดนศัตรูหลายตัวพร้อมกัน จะใช้จำนวนการเกิดผลตามจำนวนศัตรูที่โดนโจมตี; จำนวนการเกิดผลของ \"Pathfinder's Blessing\" ที่ตัวละครในทีมแต่ละตัวมี จะคำนวณแยกกัน"
+    }
+  },
+  "constellation5": {
+    "name": "\"You Will Hear My Voice Beside You\"",
+    "description": {
+      "0": "เพิ่มเลเวลสกิลของท่าไม้ตาย <strong><tooltip ns=char_Nicole_gen baseKey18=burst>Revelation: Ladder of Divine Ascent</tooltip></strong> ขึ้น 3 ระดับ",
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
+    }
+  },
+  "constellation6": {
+    "name": "\"This Is the Path, Walk It Without Delay\"",
+    "description": {
+      "0": "เมื่อ <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Grace of Kenosis</strong></tooltip> ที่ Nicole มีอยู่เลื่อนขั้นเป็น <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Guidance of Theosis</strong></tooltip> แล้ว <strong>Grace of Kenosis</strong> ที่ตัวละครทั้งหมดในทีมที่อยู่ใกล้เคียงมีอยู่ จะเลื่อนขั้นเป็น <strong>Guidance of Theosis</strong> ไปพร้อมกัน ทั้งนี้ <strong>Guidance of Theosis</strong> ที่เลื่อนขั้นแล้วทั้งหมด จะไม่ถูกเปลี่ยนกลับเป็น <strong>Grace of Kenosis</strong> อีกต่อไป",
+      "1": "นอกจากนี้ ความเสียหายที่สร้างโดยตัวละครที่มี <strong>Guidance of Theosis</strong> จะเพิกเฉยต่อพลังป้องกันของศัตรู 40%"
+    }
+  }
+}

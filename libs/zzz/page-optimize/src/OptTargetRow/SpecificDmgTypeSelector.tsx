@@ -1,9 +1,10 @@
 import type { SpecificDmgTypeKey } from '@genshin-optimizer/zzz/db'
 import { specificDmgTypeKeys } from '@genshin-optimizer/zzz/db'
+import { getTeamFrame0 } from '@genshin-optimizer/zzz/db'
 import {
-  useCharOpt,
   useCharacterContext,
   useDatabaseContext,
+  useTeam,
 } from '@genshin-optimizer/zzz/db-ui'
 import { useCallback } from 'react'
 import { DmgTypeDropdown } from '../DmgTypeDropdown'
@@ -11,18 +12,19 @@ import { DmgTypeDropdown } from '../DmgTypeDropdown'
 export function SpecificDmgTypeSelector() {
   const { database } = useDatabaseContext()
   const character = useCharacterContext()!
-  const charOpt = useCharOpt(character.key)!
-  const { target } = charOpt
+  const team = useTeam(character.key)!
+  const { tag: target } = getTeamFrame0(team)
   const setDmgType = useCallback(
     (dmgType?: SpecificDmgTypeKey) =>
-      database.charOpts.set(character.key, ({ target: oldTarget = {} }) => {
+      database.teams.setFrame0(character.key, (frame) => {
+        const { tag: oldTarget = {} } = frame
         const { damageType1, ...oTarget } = oldTarget
-        if (!dmgType) return { target: oTarget }
+        if (!dmgType) return { tag: oTarget }
         return {
-          target: { ...oTarget, damageType1: dmgType },
+          tag: { ...oTarget, damageType1: dmgType },
         }
       }),
-    [database, character.key]
+    [database.teams, character.key]
   )
   if (target?.name !== 'standardDmgInst' && target?.name !== 'sheerDmgInst')
     return null

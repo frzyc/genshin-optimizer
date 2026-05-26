@@ -7,9 +7,9 @@ import { DisplayCharacterEntry } from './DataEntries/DisplayCharacterEntry'
 import { DisplayWengineEntry } from './DataEntries/DisplayWengineEntry'
 import { CharMetaDataManager, DiscDataManager } from './DataManagers/'
 import { CharacterDataManager } from './DataManagers/CharacterDataManager'
-import { CharacterOptManager } from './DataManagers/CharacterOptManager'
 import { GeneratedBuildListDataManager } from './DataManagers/GeneratedBuildListDataManager'
 import { OptConfigDataManager } from './DataManagers/OptConfigDataManager'
+import { TeamDataManager } from './DataManagers/TeamDataManager'
 import { WengineDataManager } from './DataManagers/WengineDataManager'
 import type { ImportResult } from './exim'
 import { newImportResult } from './exim'
@@ -17,7 +17,7 @@ import { currentDBVersion, migrateStorage, migrateZOOD } from './migrate'
 export class ZzzDatabase extends Database {
   discs: DiscDataManager
   chars: CharacterDataManager
-  charOpts: CharacterOptManager
+  teams: TeamDataManager
   wengines: WengineDataManager
   optConfigs: OptConfigDataManager
   charMeta: CharMetaDataManager
@@ -56,7 +56,7 @@ export class ZzzDatabase extends Database {
     this.optConfigs = new OptConfigDataManager(this)
 
     // Depends on optConfigs
-    this.charOpts = new CharacterOptManager(this)
+    this.teams = new TeamDataManager(this)
     this.charMeta = new CharMetaDataManager(this)
 
     // Handle DataEntries
@@ -93,7 +93,7 @@ export class ZzzDatabase extends Database {
       this.charMeta,
       this.generatedBuildList,
       this.optConfigs,
-      this.charOpts,
+      this.teams,
     ] as const
   }
   get dataEntries() {

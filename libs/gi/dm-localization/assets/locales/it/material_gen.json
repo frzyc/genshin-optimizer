@@ -254,6 +254,9 @@
   "JointExhibitionPopularity": {
     "name": "Popolarità fiera congiunta"
   },
+  "PalsSynergy": {
+    "name": "Sinergia fantasmica"
+  },
   "Primogem": {
     "name": "Primogemma"
   },
@@ -1148,8 +1151,17 @@
   "Varka": {
     "name": "Varka"
   },
+  "Lohen": {
+    "name": "Lohen"
+  },
   "Linnea": {
     "name": "Linnea"
+  },
+  "Nicole": {
+    "name": "Nicole"
+  },
+  "Prune": {
+    "name": "Prune"
   },
   "KachinasStellaFortuna": {
     "name": "Stella Fortuna di Kachina"
@@ -1232,8 +1244,17 @@
   "VarkasStellaFortuna": {
     "name": "Stella Fortuna di Varka"
   },
+  "LohensStellaFortuna": {
+    "name": "Stella Fortuna di Lohen"
+  },
   "LinneasStellaFortuna": {
     "name": "Stella Fortuna di Linnea"
+  },
+  "NicolesStellaFortuna": {
+    "name": "Stella Fortuna di Nicole"
+  },
+  "PrunesStellaFortuna": {
+    "name": "Stella Fortuna di Prune"
   },
   "Apple": {
     "name": "Mela"
@@ -1822,6 +1843,15 @@
   },
   "FischlDictionaryDieNeuauflageDerPrinzessin": {
     "name": "Dizionario di Fischl: Die Neuauflage der Prinzessin"
+  },
+  "TheOriginsOfTheExperiment": {
+    "name": "Le origini dell'esperimento"
+  },
+  "NotesOnTheExperimentalSubjects": {
+    "name": "Appunti sui soggetti sperimentali"
+  },
+  "ScribbledNotes": {
+    "name": "Appunti scarabocchiati"
   },
   "WyattsRedKey": {
     "name": "Chiave rossa di Wyatt"
@@ -4974,7 +5004,7 @@
     "name": "Vecchi appunti di Soheil"
   },
   "RecordOfAarusShut": {
-    "name": "Testimonianza sulla shut di Aaru"
+    "name": "Testimonianza sul Riflesso di Aaru"
   },
   "TwilightTheaterHeadsNotes": {
     "name": "Appunti del direttore della Compagnia teatrale del crepuscolo"
@@ -8318,6 +8348,33 @@
   "SugarSculptureLinnea": {
     "name": "Scultura di zucchero: Linnea"
   },
+  "SuspiciousStuffedTofuWithMincedMeat": {
+    "name": "Tofu ripieno di carne macinata sospetto"
+  },
+  "StuffedTofuWithMincedMeat": {
+    "name": "Tofu ripieno di carne macinata"
+  },
+  "DeliciousStuffedTofuWithMincedMeat": {
+    "name": "Tofu ripieno di carne macinata delizioso"
+  },
+  "SuspiciousMintBubblegum": {
+    "name": "Gomme da masticare alla menta sospette"
+  },
+  "MintBubblegum": {
+    "name": "Gomme da masticare alla menta"
+  },
+  "DeliciousMintBubblegum": {
+    "name": "Gomme da masticare alla menta deliziose"
+  },
+  "SpinningSpecial": {
+    "name": "Roulette roteante"
+  },
+  "GildedChest": {
+    "name": "Baule dorato"
+  },
+  "BoredomBustingBubblegum": {
+    "name": "Gomme da masticare scaccianoia"
+  },
   "RecipeItem": {
     "name": "Ingrediente"
   },
@@ -9118,6 +9175,12 @@
   },
   "RecipeMillhavensMorningPlate": {
     "name": "Ricetta: Piatto del mattino di Borgo Mulino"
+  },
+  "RecipeStuffedTofuWithMincedMeat": {
+    "name": "Ricetta: tofu ripieno di carne macinata"
+  },
+  "RecipeMintBubblegum": {
+    "name": "Ricetta: gomme da masticare alla menta"
   },
   "CraftedItems": {
     "name": "Oggetti creati"
@@ -9943,6 +10006,15 @@
   },
   "PlumeOfTheFallenWatcher": {
     "name": "Piuma dell'Osservatore caduto"
+  },
+  "CounterfeitResin": {
+    "name": "Resina contraffatta"
+  },
+  "TwistedWitheredBranch": {
+    "name": "Ramo avvizzito contorto"
+  },
+  "ProfanedSprout": {
+    "name": "Germoglio profanato"
   },
   "TileOfDecarabiansTower": {
     "name": "Tegola della Torre di Decarabian"
@@ -13172,9 +13244,6 @@
   "EasybreezeHolidayResortMap": {
     "name": "Mappa del Resort Dolcebrezza"
   },
-  "ScribbledNotes": {
-    "name": "Appunti scarabocchiati"
-  },
   "BeautifullyWrittenNotes": {
     "name": "Appunti ben scritti"
   },
@@ -13733,6 +13802,9 @@
   "LohensWorkReport": {
     "name": "Rapporto di lavoro di Lohen"
   },
+  "LohensFriendshipFee": {
+    "name": "\"Tassa dell'amicizia\" di Lohen"
+  },
   "ArcadiaTheEntombedCapital": {
     "name": "Arcadia, la capitale sepolta"
   },
@@ -13745,17 +13817,38 @@
   "VerasMelancholyFinalVolumeVersionI": {
     "name": "Malinconia di Vera: volume finale (versione I)"
   },
-  "TheDreamOfRhonabwy": {
-    "name": "Il sogno di Rhonabwy"
+  "TheDreamOfRhonabouillet": {
+    "name": "Il sogno di Rhonabouillet"
   },
   "TheSongOfAyKhanoum": {
     "name": "Il canto di Ay-Khanoum"
   },
-  "TheCanonOfLoveDivineInspirationAndVirtue": {
-    "name": "Canone dell'Amore, dell'Ispirazione divina e della Virtù"
+  "RevelationsOfDivineLove": {
+    "name": "Rivelazioni d'amore divino"
   },
   "Note": {
     "name": "Nota"
+  },
+  "PhotoWithTheLittleWitchesAndTheirImaginaryFriends": {
+    "name": "Foto con le streghette e i loro amici immaginari"
+  },
+  "AnomalousTreeMarrowI": {
+    "name": "Midollo d'albero anomalo I"
+  },
+  "AnomalousTreeMarrowII": {
+    "name": "Midollo d'albero anomalo II"
+  },
+  "AnomalousTreeMarrowIII": {
+    "name": "Midollo d'albero anomalo III"
+  },
+  "AnomalousTreeMarrow": {
+    "name": "Midollo d'albero anomalo"
+  },
+  "DangoMilkInfusedWithMagic": {
+    "name": "Latte ai dango \"infuso di magia\""
+  },
+  "PrimalConstructComponent": {
+    "name": "Componente Costrutto primordiale"
   },
   "AncientMondstadtRoyalSeal": {
     "name": "Antico sigillo reale di Mondstadt"
@@ -15797,6 +15890,18 @@
   "TravelNotesHomecoming": {
     "name": "Appunti di viaggio: Ritorno a casa"
   },
+  "NicoleHeavenlyStairway": {
+    "name": "Nicole: Scala celestiale"
+  },
+  "LohenBenevolence": {
+    "name": "Lohen: Benevolenza"
+  },
+  "PruneJudgment": {
+    "name": "Prune: Giudizio"
+  },
+  "TravelNotesGiftOfSplendor": {
+    "name": "Appunti di viaggio: Dono dello splendore"
+  },
   "EchoDandelionKnight": {
     "name": "Eco: Cavaliere del Dente di leone"
   },
@@ -15854,6 +15959,12 @@
   "EchoPillarOfFortitude": {
     "name": "Eco: Pilastro della forza d'animo"
   },
+  "EchoEonsAdrift": {
+    "name": "Eco: Eternamente perduto"
+  },
+  "EchoHelmOfTheRadiantRose": {
+    "name": "Eco: Timoniere della rosa splendente"
+  },
   "FaintGlow": {
     "name": "Flebile bagliore"
   },
@@ -15873,7 +15984,7 @@
     "name": "Pietra di risonanza per Geoculi"
   },
   "GeoTreasureCompass": {
-    "name": "Bussola di Geo"
+    "name": "Bussola cercatesori di Geo"
   },
   "WindCatcher": {
     "name": "Acchiappaventi"
@@ -15891,7 +16002,7 @@
     "name": "Sacca di nutrienti (ver. 30)"
   },
   "AnemoTreasureCompass": {
-    "name": "Bussola di Anemo"
+    "name": "Bussola cercatesori di Anemo"
   },
   "TreasureSeekingSeelie": {
     "name": "Seelie cercatesori"
@@ -15957,7 +16068,7 @@
     "name": "Scatola di semi"
   },
   "ElectroTreasureCompass": {
-    "name": "Bussola di Electro"
+    "name": "Bussola cercatesori di Electro"
   },
   "RedFeatherFan": {
     "name": "Ventaglio di piume rosse"
@@ -16011,7 +16122,7 @@
     "name": "Pietra di risonanza per Dendroculi"
   },
   "DendroTreasureCompass": {
-    "name": "Bussola di Dendro"
+    "name": "Bussola cercatesori di Dendro"
   },
   "TheBoonOfTheElderTree": {
     "name": "Dono dell'Albero anziano"
@@ -16083,7 +16194,7 @@
     "name": "Pietra di risonanza per Hydroculi"
   },
   "HydroTreasureCompass": {
-    "name": "Bussola di Hydro"
+    "name": "Bussola cercatesori di Hydro"
   },
   "CrystalflyTrap": {
     "name": "Trappola per Cristallotteri"
@@ -16128,7 +16239,7 @@
     "name": "Pietra di risonanza per Pyroculi"
   },
   "PyroTreasureCompass": {
-    "name": "Bussola di Pyro"
+    "name": "Bussola cercatesori di Pyro"
   },
   "FirstbornFiresprite": {
     "name": "Spirito della Fiamma primordiale"
@@ -16176,7 +16287,7 @@
     "name": "Fotokamera ricordo"
   },
   "LunaTreasureCompass": {
-    "name": "Bussola lunare"
+    "name": "Bussola cercatesori lunare"
   },
   "TravelAccounts": {
     "name": "Registri di viaggio"
@@ -16197,7 +16308,7 @@
     "name": "Tasti armonici"
   },
   "SegmentDomainTreasureCompass": {
-    "name": "Bussola dei tesori del Dominio-Segmento"
+    "name": "Bussola cercatesori del Dominio-Segmento"
   },
   "LinneasNaturalistArchive": {
     "name": "Diario naturalistico di Linnea"
@@ -16209,7 +16320,7 @@
     "name": "Istruzioni: pietra di risonanza per Geoculi"
   },
   "DiagramGeoTreasureCompass": {
-    "name": "Diagramma: bussola di Geo"
+    "name": "Diagramma: Bussola cercatesori di Geo"
   },
   "DiagramWindCatcher": {
     "name": "Diagramma: Acchiappaventi"
@@ -16227,7 +16338,7 @@
     "name": "Diagramma: sacca di nutrienti (ver. 30)"
   },
   "DiagramAnemoTreasureCompass": {
-    "name": "Diagramma: bussola di Anemo"
+    "name": "Diagramma: Bussola cercatesori di Anemo"
   },
   "MemoryOfTheEntombedCity": {
     "name": "Memorie della Città sepolta"
@@ -16287,7 +16398,7 @@
     "name": "Istruzioni: pietra di risonanza per Electroculi"
   },
   "DiagramElectroTreasureCompass": {
-    "name": "Diagramma: bussola di Electro"
+    "name": "Diagramma: Bussola cercatesori di Electro"
   },
   "FormulaFruitPasteBait": {
     "name": "Ricetta: esca di pasta di frutta"
@@ -16344,13 +16455,13 @@
     "name": "Istruzioni: pietra di risonanza per Dendroculi"
   },
   "DiagramDendroTreasureCompass": {
-    "name": "Diagramma: bussola di Dendro"
+    "name": "Diagramma: Bussola cercatesori di Dendro"
   },
   "InstructionsHydroculusResonanceStone": {
     "name": "Istruzioni: pietra di risonanza per Hydroculi"
   },
   "DiagramHydroTreasureCompass": {
-    "name": "Diagramma: bussola di Hydro"
+    "name": "Diagramma: Bussola cercatesori di Hydro"
   },
   "FormulaPureWater": {
     "name": "Ricetta: \"Acqua pura\""
@@ -16362,7 +16473,7 @@
     "name": "Istruzioni: pietra di risonanza per Pyroculi"
   },
   "DiagramPyroTreasureCompass": {
-    "name": "Diagramma: bussola di Pyro"
+    "name": "Diagramma: Bussola cercatesori di Pyro"
   },
   "FormulaSpinelgrainBait": {
     "name": "Ricetta: esca almandina"
@@ -16787,6 +16898,30 @@
   "MeditativeReading": {
     "name": "Lettura meditativa"
   },
+  "PatrolBreak": {
+    "name": "Pausa di pattuglia"
+  },
+  "MasterpieceComplete": {
+    "name": "Capolavoro completo"
+  },
+  "ReadyToSprint": {
+    "name": "Pronta a scattare"
+  },
+  "InterludeRest": {
+    "name": "Riposo intermedio"
+  },
+  "HarnessTheBlaze": {
+    "name": "Controlla la fiamma"
+  },
+  "PerfectRating": {
+    "name": "Valutazione perfetta"
+  },
+  "RhythmMoment": {
+    "name": "Momento ritmico"
+  },
+  "ShareWithYou": {
+    "name": "Condividere con te"
+  },
   "FantasticalMarvel": {
     "name": "Prodigio fantastico"
   },
@@ -16852,6 +16987,12 @@
   },
   "MysteriousWhiteStar": {
     "name": "Stella bianca misteriosa"
+  },
+  "EclipsingFlame": {
+    "name": "Fiamma eclissante"
+  },
+  "DemonSlayingGale": {
+    "name": "Burrasca ammazzademoni"
   },
   "VigorousYapping": {
     "name": "Chiacchiera vivace"
@@ -16963,6 +17104,9 @@
   },
   "ConsecratedFangedBeast": {
     "name": "Bestia zannuta consacrata"
+  },
+  "ExperimentalFieldGenerator": {
+    "name": "Generatore di campo sperimentale"
   },
   "UndividedHeart": {
     "name": "Cuore indivisibile"
@@ -17372,6 +17516,15 @@
   "WitheredReedsEclipseTheSun": {
     "name": "Giunchi avvizziti eclissano il sole"
   },
+  "PartTheVeilOfSnow": {
+    "name": "Separazione del velo di neve"
+  },
+  "OLipsWeaveMeSongsAndPsalms": {
+    "name": "\"Salmodiate, o mie labbra\""
+  },
+  "GravityField": {
+    "name": "Campo gravitazionale"
+  },
   "MagicGuide": {
     "name": "Manuale di magia"
   },
@@ -17717,6 +17870,9 @@
   "Blubberbeast": {
     "name": "Blobbofoca"
   },
+  "GladiatorsFinale": {
+    "name": "Ultimo atto del gladiatore"
+  },
   "LiyueHarborWharf": {
     "name": "Molo del Porto di Liyue"
   },
@@ -17938,6 +18094,15 @@
   },
   "ElementalTransfigurationLavaBlessing": {
     "name": "Trasfigurazione elementale: Benedizione della lava"
+  },
+  "Netochka": {
+    "name": "Netochka"
+  },
+  "ElementalTransfigurationRimegrassBlessing": {
+    "name": "Trasfigurazione elementale: Benedizione dell'Erbaverna"
+  },
+  "ElementalTransfigurationStormgaleBlessing": {
+    "name": "Trasfigurazione elementale: Benedizione dell'Elettrobufera"
   },
   "ElementalResonanceWovenIce": {
     "name": "Risonanza elementale: Ghiaccio intrecciato"
@@ -18194,6 +18359,9 @@
   "CleaningTime": {
     "name": "Ora delle pulizie"
   },
+  "TheOtherSideOfTheFrostmoon": {
+    "name": "L'altra faccia della Luna gelata"
+  },
   "Origin": {
     "name": "Origine"
   },
@@ -18409,6 +18577,9 @@
   },
   "PhantasmalGiftStarOmen": {
     "name": "Dono fantasmico: Presagio stellare"
+  },
+  "SuperAwesomeMagicKey": {
+    "name": "Chiave fantasmagorica"
   },
   "UnbreakableDurandarte": {
     "name": "Indistruttibile: Durandarte"
@@ -21006,7 +21177,7 @@
     "name": "Angolo del cortile del maniero Armonia misurata"
   },
   "WhitestoneHotSpringDiffusingWarmth": {
-    "name": "Sorgente in pietra bianca Calore traboccante"
+    "name": "Sorgente in Pietrabianca Calore traboccante"
   },
   "OfFieldsGreenClearSpringFountain": {
     "name": "Fontana Campi verdi"
@@ -21231,7 +21402,7 @@
     "name": "Scala in legno comune"
   },
   "TexturedWhitestoneStairs": {
-    "name": "Scala in pietra bianca goffrata"
+    "name": "Scala in Pietrabianca goffrata"
   },
   "CourtyardCorridorTheMoraDividend": {
     "name": "Sentiero del cortile Il dividendo dei Mora"
@@ -21864,7 +22035,7 @@
     "name": "Tre raggi brillanti"
   },
   "WhitestoneMeichuuStandingLamp": {
-    "name": "Lanterna Meichuu in pietra bianca"
+    "name": "Lanterna Meichuu in Pietrabianca"
   },
   "OtogiMeichuuStandingLamp": {
     "name": "Lanterna Meichuu in legno Otogi"
@@ -22630,5 +22801,8 @@
   },
   "AllFangsAndSnarls": {
     "name": "Zanne ululanti"
+  },
+  "MiniatureStonecraft": {
+    "name": "\"Scultura di pietra in miniatura\""
   }
 }

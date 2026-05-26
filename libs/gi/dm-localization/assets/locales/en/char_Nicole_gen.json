@@ -1,0 +1,220 @@
+{
+  "name": "Nicole",
+  "title": "Clamor Within",
+  "description": "The Silent \"Mage,\" the Voiceless \"Angel.\"",
+  "constellationName": "Reliquiarium",
+  "auto": {
+    "name": "Allegoria",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Proclaims a decree in the primordial tongue and performs up to 3 attacks that deal <pyro>Pyro DMG</pyro>."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to deal <pyro>AoE Pyro DMG</pyro> to opponents in front of her after a short casting time."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Nicole plunges towards the ground from mid-air, damaging all opponents in her path. Also deals <pyro>AoE Pyro DMG</pyro> upon impact with the ground."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "Charged Attack DMG",
+      "4": "Charged Attack Stamina Cost",
+      "5": "Plunge DMG",
+      "6": "Low/High Plunge DMG",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, percent(fixed: 1)}}%",
+      "3": "{{3, percent(fixed: 1)}}%",
+      "4": "{{4, fixed(fixed: 1)}}",
+      "5": "{{5, percent(fixed: 1)}}%",
+      "6": "{{6, percent(fixed: 1)}}%/{{7, percent(fixed: 1)}}%",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Revelation: Uncreated Light",
+    "description": {
+      "0": "Recreates a fleeting glimpse of an age long past, when the angels acted on the authority of the heavens, bestowing the <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Grace of Kenosis</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11310002 values=[]></tooltip> effect on nearby party members. This increases their ATK and deals <pyro>AoE Pyro DMG</pyro>, as well as creates a Shield of Blazing Light.",
+      "1": "The Shield of Blazing Light's DMG Absorption is based on Nicole's ATK, and it will absorb <pyro>Pyro DMG</pyro> at 250% effectiveness."
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Shield DMG Absorption",
+      "2": "Shield Duration",
+      "3": "Grace of Kenosis ATK Bonus Ratio",
+      "4": "Grace of Kenosis Max ATK Bonus",
+      "5": "Grace of Kenosis Duration",
+      "6": "CD",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}% ATK+{{2}}",
+      "2": "{{3, fixed(fixed: 1)}}s",
+      "3": "{{4, percent(fixed: 2)}}% ATK",
+      "4": "{{5, fixed(fixed: 1)}}",
+      "5": "{{6, fixed(fixed: 1)}}s",
+      "6": "{{7, fixed(fixed: 1)}}s",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Revelation: Ladder of Divine Ascent",
+    "description": {
+      "0": "As Nicole weaves the path of anchored fate with golden threads of light, she deals <pyro>AoE Pyro DMG</pyro> and switches to Silent Contemplation mode.",
+      "1": "In this mode, when nearby active party members hit an opponent, an Arcane Projection is summoned to perform a Coordinated Attack against the opponent, dealing AoE Elemental DMG of the character's corresponding Elemental Type. This DMG scales based on the corresponding character's ATK and will be considered as having been dealt by them.",
+      "2": "This effect can occur once every 3s, and can be triggered up to 4 times each time Nicole switches to Silent Contemplation mode.",
+      "3": "<br/>",
+      "4": "It is worth noting that Hexerei characters' Arcane Projections appear to differ somehow in appearance from the others..."
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Arcane Projection DMG",
+      "2": "Arcane Projection Attack Count",
+      "3": "Silent Contemplation Duration",
+      "4": "CD",
+      "5": "Energy Cost",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}% Corresponding Character's ATK",
+      "2": "{{2}}",
+      "3": "{{3, fixed(fixed: 1)}}s",
+      "4": "{{4, fixed(fixed: 1)}}s",
+      "5": "{{5}}",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Methexis",
+    "description": {
+      "0": "For 20s after unleashing the Elemental Skill <strong><tooltip ns=char_Nicole_gen baseKey18=skill>Revelation: Uncreated Light</tooltip></strong>, Nicole will continuously \"observe\" the other current active party members. After the observed character has remained on the field for 3s, their <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Grace of Kenosis</strong></tooltip> is upgraded to <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Guidance of Theosis</strong></tooltip>, increasing their ATK by an additional 300. If the observed character is a Hexerei character, <strong>Grace of Kenosis</strong> is upgraded to <strong>Guidance of Theosis</strong> straight away.",
+      "1": "When characters other than Nicole who have <strong>Guidance of Theosis</strong> leave the field, their effect reverts to <strong>Grace of Kenosis</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Philokalia",
+    "description": {
+      "0": "When Elemental DMG from nearby active party members hits an opponent, Nicole's own <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Grace of Kenosis</strong></tooltip> effect is upgraded to <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Guidance of Theosis</strong></tooltip> for 8s."
+    }
+  },
+  "passive3": {
+    "name": "Nepsis",
+    "description": {
+      "0": "When you are in Teyvat and not in combat, Nicole's Charged Attack becomes \"Emissarial Guidance\" if you have already obtained the current region's Treasure Compass. Emissarial Guidance: Calls upon nearby Seelie to show the way, triggering an effect similar to the region's Treasure Compass.",
+      "1": "This effect has a cooldown time of 5 seconds and does not work in Domains, Trounce Domains, and the Spiral Abyss."
+    }
+  },
+  "lockedPassive": {
+    "name": "Witch's Eve Rite: Light in the Darkness",
+    "description": {
+      "0": "After completing <strong>Witch's Homework: The Role of a Guide...?</strong>, Nicole becomes a <strong>Hexerei</strong> character. When the party includes at least 2 Hexerei characters, you gain the <strong>Hexerei: Secret Rite</strong> effect, which enhances Hexerei characters.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei: Secret Rite</strong>",
+      "3": "Increases the DMG dealt by Hexerei characters' <strong><tooltip ns=char_Nicole_gen baseKey18=burst>Arcane Projections</tooltip></strong> by 300% of Nicole's ATK."
+    }
+  },
+  "constellation1": {
+    "name": "\"Do Not Be Afraid, Child Who Is Loved\"",
+    "description": {
+      "0": "When the current active character of your own in the party hits an opponent, an additional special \"Arcane Projection: Unity\" will be summoned to perform a Coordinated Attack against the opponent, dealing AoE Elemental DMG of the character's corresponding Elemental Type at 600% of their ATK. This DMG will be considered as having been dealt by the corresponding character.",
+      "1": "This effect can trigger once every 6s."
+    }
+  },
+  "constellation2": {
+    "name": "\"I Will Guide You and Show You the Path You Should Tread\"",
+    "description": {
+      "0": "Enhances the effects of the Elemental Skill <strong><tooltip ns=char_Nicole_gen baseKey18=skill>Revelation: Uncreated Light</tooltip></strong>: <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Grace of Kenosis</strong></tooltip> increases ATK by an additional 300 (which does not count toward this effect's ATK Bonus limit), while <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Guidance of Theosis</strong></tooltip> decreases nearby opponents' Elemental RES based on the corresponding character's Elemental Type by 25%. This effect does not stack for the same Element.",
+      "1": "Additionally, when Nicole unleashes her Elemental Skill <strong>Revelation: Uncreated Light</strong>, nearby active party members will also gain a Shield of Blazing Light."
+    }
+  },
+  "constellation3": {
+    "name": "\"A Lamp by Your Side, A Light to Shine the Way\"",
+    "description": {
+      "0": "Increases the Level of <strong><tooltip ns=char_Nicole_gen baseKey18=skill>Revelation: Uncreated Light</tooltip></strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "\"Whether Left or Right, No Matter Which Way You Turn\"",
+    "description": {
+      "0": "When nearby party members have their <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Grace of Kenosis</strong></tooltip> upgraded to <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Guidance of Theosis</strong></tooltip>, Nicole also bestows upon them the Pathfinder's Blessing effect for 20s. Each character can gain this effect once every 16s.",
+      "1": "The Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, and Elemental Burst DMG of characters with Pathfinder's Blessing is increased by 70% of Nicole's ATK. This effect will be removed once it has taken effect 8 times or when its duration is over.",
+      "2": "When multiple opponents are hit at once, instances of Pathfinder's Blessing are consumed equal to the number of opponents hit. Each character's Pathfinder's Blessing is counted independently."
+    }
+  },
+  "constellation5": {
+    "name": "\"You Will Hear My Voice Beside You\"",
+    "description": {
+      "0": "Increases the Level of <strong><tooltip ns=char_Nicole_gen baseKey18=burst>Revelation: Ladder of Divine Ascent</tooltip></strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "\"This Is the Path, Walk It Without Delay\"",
+    "description": {
+      "0": "When Nicole's <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Grace of Kenosis</strong></tooltip> is upgraded to <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Guidance of Theosis</strong></tooltip>, all nearby party members' <strong>Grace of Kenosis</strong> will also be upgraded to <strong>Guidance of Theosis</strong>. Once upgraded, <strong>Guidance of Theosis</strong> will no longer revert to <strong>Grace of Kenosis</strong>.",
+      "1": "Additionally, DMG dealt by characters with <strong>Guidance of Theosis</strong> will ignore 40% of opponents' DEF."
+    }
+  }
+}

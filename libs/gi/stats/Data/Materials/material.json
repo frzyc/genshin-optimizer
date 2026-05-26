@@ -254,6 +254,9 @@
   "JointExhibitionPopularity": {
     "type": "MATERIAL_NONE"
   },
+  "PalsSynergy": {
+    "type": "MATERIAL_NONE"
+  },
   "Primogem": {
     "type": "MATERIAL_ADSORBATE"
   },
@@ -1119,10 +1122,10 @@
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "Lauma": {
-    "type": "MATERIAL_AVATAR"
+    "type": "MATERIAL_GCG_CARD_FACE"
   },
   "Flins": {
-    "type": "MATERIAL_AVATAR"
+    "type": "MATERIAL_GCG_CARD_FACE"
   },
   "Aino": {
     "type": "MATERIAL_GCG_CARD_FACE"
@@ -1148,7 +1151,16 @@
   "Varka": {
     "type": "MATERIAL_AVATAR"
   },
+  "Lohen": {
+    "type": "MATERIAL_AVATAR"
+  },
   "Linnea": {
+    "type": "MATERIAL_AVATAR"
+  },
+  "Nicole": {
+    "type": "MATERIAL_AVATAR"
+  },
+  "Prune": {
     "type": "MATERIAL_AVATAR"
   },
   "KachinasStellaFortuna": {
@@ -1232,7 +1244,16 @@
   "VarkasStellaFortuna": {
     "type": "MATERIAL_AVATAR_TALENT_MATERIAL"
   },
+  "LohensStellaFortuna": {
+    "type": "MATERIAL_AVATAR_TALENT_MATERIAL"
+  },
   "LinneasStellaFortuna": {
+    "type": "MATERIAL_AVATAR_TALENT_MATERIAL"
+  },
+  "NicolesStellaFortuna": {
+    "type": "MATERIAL_AVATAR_TALENT_MATERIAL"
+  },
+  "PrunesStellaFortuna": {
     "type": "MATERIAL_AVATAR_TALENT_MATERIAL"
   },
   "Apple": {
@@ -1821,6 +1842,15 @@
     "type": "MATERIAL_QUEST"
   },
   "FischlDictionaryDieNeuauflageDerPrinzessin": {
+    "type": "MATERIAL_QUEST"
+  },
+  "TheOriginsOfTheExperiment": {
+    "type": "MATERIAL_QUEST"
+  },
+  "NotesOnTheExperimentalSubjects": {
+    "type": "MATERIAL_QUEST"
+  },
+  "ScribbledNotes": {
     "type": "MATERIAL_QUEST"
   },
   "WyattsRedKey": {
@@ -8085,7 +8115,7 @@
     "type": "MATERIAL_FOOD"
   },
   "RouletteSpecial": {
-    "type": "MATERIAL_FOOD"
+    "type": "MATERIAL_GCG_CARD_FACE"
   },
   "DeliciousRouletteSpecial": {
     "type": "MATERIAL_FOOD"
@@ -8317,6 +8347,33 @@
   },
   "SugarSculptureLinnea": {
     "type": "MATERIAL_NOTICE_ADD_HP"
+  },
+  "SuspiciousStuffedTofuWithMincedMeat": {
+    "type": "MATERIAL_FOOD"
+  },
+  "StuffedTofuWithMincedMeat": {
+    "type": "MATERIAL_FOOD"
+  },
+  "DeliciousStuffedTofuWithMincedMeat": {
+    "type": "MATERIAL_FOOD"
+  },
+  "SuspiciousMintBubblegum": {
+    "type": "MATERIAL_FOOD"
+  },
+  "MintBubblegum": {
+    "type": "MATERIAL_FOOD"
+  },
+  "DeliciousMintBubblegum": {
+    "type": "MATERIAL_FOOD"
+  },
+  "SpinningSpecial": {
+    "type": "MATERIAL_FOOD"
+  },
+  "GildedChest": {
+    "type": "MATERIAL_FOOD"
+  },
+  "BoredomBustingBubblegum": {
+    "type": "MATERIAL_FOOD"
   },
   "RecipeItem": {
     "type": "MATERIAL_CONSUME"
@@ -9117,6 +9174,12 @@
     "type": "MATERIAL_CONSUME"
   },
   "RecipeMillhavensMorningPlate": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "RecipeStuffedTofuWithMincedMeat": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "RecipeMintBubblegum": {
     "type": "MATERIAL_CONSUME"
   },
   "CraftedItems": {
@@ -9942,6 +10005,15 @@
     "type": "MATERIAL_AVATAR_MATERIAL"
   },
   "PlumeOfTheFallenWatcher": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "CounterfeitResin": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "TwistedWitheredBranch": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "ProfanedSprout": {
     "type": "MATERIAL_AVATAR_MATERIAL"
   },
   "TileOfDecarabiansTower": {
@@ -13172,9 +13244,6 @@
   "EasybreezeHolidayResortMap": {
     "type": "MATERIAL_QUEST"
   },
-  "ScribbledNotes": {
-    "type": "MATERIAL_QUEST"
-  },
   "BeautifullyWrittenNotes": {
     "type": "MATERIAL_QUEST"
   },
@@ -13733,6 +13802,9 @@
   "LohensWorkReport": {
     "type": "MATERIAL_QUEST"
   },
+  "LohensFriendshipFee": {
+    "type": "MATERIAL_QUEST"
+  },
   "ArcadiaTheEntombedCapital": {
     "type": "MATERIAL_QUEST"
   },
@@ -13745,16 +13817,37 @@
   "VerasMelancholyFinalVolumeVersionI": {
     "type": "MATERIAL_QUEST"
   },
-  "TheDreamOfRhonabwy": {
+  "TheDreamOfRhonabouillet": {
     "type": "MATERIAL_QUEST"
   },
   "TheSongOfAyKhanoum": {
     "type": "MATERIAL_QUEST"
   },
-  "TheCanonOfLoveDivineInspirationAndVirtue": {
+  "RevelationsOfDivineLove": {
     "type": "MATERIAL_QUEST"
   },
   "Note": {
+    "type": "MATERIAL_QUEST"
+  },
+  "PhotoWithTheLittleWitchesAndTheirImaginaryFriends": {
+    "type": "MATERIAL_QUEST"
+  },
+  "AnomalousTreeMarrowI": {
+    "type": "MATERIAL_QUEST"
+  },
+  "AnomalousTreeMarrowII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "AnomalousTreeMarrowIII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "AnomalousTreeMarrow": {
+    "type": "MATERIAL_QUEST"
+  },
+  "DangoMilkInfusedWithMagic": {
+    "type": "MATERIAL_QUEST"
+  },
+  "PrimalConstructComponent": {
     "type": "MATERIAL_QUEST"
   },
   "AncientMondstadtRoyalSeal": {
@@ -15797,6 +15890,18 @@
   "TravelNotesHomecoming": {
     "type": "MATERIAL_NAMECARD"
   },
+  "NicoleHeavenlyStairway": {
+    "type": "MATERIAL_NAMECARD"
+  },
+  "LohenBenevolence": {
+    "type": "MATERIAL_NAMECARD"
+  },
+  "PruneJudgment": {
+    "type": "MATERIAL_NAMECARD"
+  },
+  "TravelNotesGiftOfSplendor": {
+    "type": "MATERIAL_NAMECARD"
+  },
   "EchoDandelionKnight": {
     "type": "MATERIAL_AVATAR_TRACE"
   },
@@ -15852,6 +15957,12 @@
     "type": "MATERIAL_AVATAR_TRACE"
   },
   "EchoPillarOfFortitude": {
+    "type": "MATERIAL_AVATAR_TRACE"
+  },
+  "EchoEonsAdrift": {
+    "type": "MATERIAL_AVATAR_TRACE"
+  },
+  "EchoHelmOfTheRadiantRose": {
     "type": "MATERIAL_AVATAR_TRACE"
   },
   "FaintGlow": {
@@ -16787,6 +16898,30 @@
   "MeditativeReading": {
     "type": "MATERIAL_PHOTOGRAPH_POSE"
   },
+  "PatrolBreak": {
+    "type": "MATERIAL_PHOTOGRAPH_POSE"
+  },
+  "MasterpieceComplete": {
+    "type": "MATERIAL_PHOTOGRAPH_POSE"
+  },
+  "ReadyToSprint": {
+    "type": "MATERIAL_PHOTOGRAPH_POSE"
+  },
+  "InterludeRest": {
+    "type": "MATERIAL_PHOTOGRAPH_POSE"
+  },
+  "HarnessTheBlaze": {
+    "type": "MATERIAL_PHOTOGRAPH_POSE"
+  },
+  "PerfectRating": {
+    "type": "MATERIAL_PHOTOGRAPH_POSE"
+  },
+  "RhythmMoment": {
+    "type": "MATERIAL_PHOTOGRAPH_POSE"
+  },
+  "ShareWithYou": {
+    "type": "MATERIAL_PHOTOGRAPH_POSE"
+  },
   "FantasticalMarvel": {
     "type": "MATERIAL_MUSIC_GAME_BOOK_THEME"
   },
@@ -16851,6 +16986,12 @@
     "type": "MATERIAL_MUSIC_GAME_BOOK_THEME"
   },
   "MysteriousWhiteStar": {
+    "type": "MATERIAL_MUSIC_GAME_BOOK_THEME"
+  },
+  "EclipsingFlame": {
+    "type": "MATERIAL_MUSIC_GAME_BOOK_THEME"
+  },
+  "DemonSlayingGale": {
     "type": "MATERIAL_MUSIC_GAME_BOOK_THEME"
   },
   "VigorousYapping": {
@@ -16962,6 +17103,9 @@
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "ConsecratedFangedBeast": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "ExperimentalFieldGenerator": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "UndividedHeart": {
@@ -17372,6 +17516,15 @@
   "WitheredReedsEclipseTheSun": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
+  "PartTheVeilOfSnow": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "OLipsWeaveMeSongsAndPsalms": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "GravityField": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
   "MagicGuide": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
@@ -17717,6 +17870,9 @@
   "Blubberbeast": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
+  "GladiatorsFinale": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
   "LiyueHarborWharf": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
@@ -17937,6 +18093,15 @@
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "ElementalTransfigurationLavaBlessing": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "Netochka": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "ElementalTransfigurationRimegrassBlessing": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "ElementalTransfigurationStormgaleBlessing": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "ElementalResonanceWovenIce": {
@@ -18194,6 +18359,9 @@
   "CleaningTime": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
+  "TheOtherSideOfTheFrostmoon": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
   "Origin": {
     "type": "MATERIAL_GCG_CARD_BACK"
   },
@@ -18408,6 +18576,9 @@
     "type": "MATERIAL_WEAPON_SKIN"
   },
   "PhantasmalGiftStarOmen": {
+    "type": "MATERIAL_WEAPON_SKIN"
+  },
+  "SuperAwesomeMagicKey": {
     "type": "MATERIAL_WEAPON_SKIN"
   },
   "UnbreakableDurandarte": {
@@ -22629,6 +22800,9 @@
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "AllFangsAndSnarls": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "MiniatureStonecraft": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   }
 }
