@@ -4,7 +4,11 @@ import type {
   WeaponKey,
   WeaponTypeKey,
 } from '@genshin-optimizer/gi/consts'
-import { charKeyToLocCharKey } from '@genshin-optimizer/gi/consts'
+import {
+  charKeyToLocCharKey,
+  defaultWeaponAscension,
+  defaultWeaponLevel,
+} from '@genshin-optimizer/gi/consts'
 import type { IGOOD, IWeapon } from '@genshin-optimizer/gi/good'
 import { parseWeapon } from '@genshin-optimizer/gi/good'
 import { allStats } from '@genshin-optimizer/gi/stats'
@@ -295,8 +299,8 @@ export const defaultInitialWeapon = (
 export const initialWeapon = (key: WeaponKey): ICachedWeapon => ({
   id: '',
   key,
-  level: 1,
-  ascension: 0,
+  level: defaultWeaponLevel,
+  ascension: defaultWeaponAscension,
   refinement: 1,
   location: '',
   lock: false,

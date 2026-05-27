@@ -1,5 +1,13 @@
 import { createTestDBStorage } from '@genshin-optimizer/common/database'
-import { allCharacterKeys, talentLimits } from '@genshin-optimizer/gi/consts'
+import {
+  allCharacterKeys,
+  defaultCharacterAscension,
+  defaultCharacterLevel,
+  talentLimits,
+  weaponMaxAscension,
+  weaponMaxLevel,
+} from '@genshin-optimizer/gi/consts'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import { ArtCharDatabase } from '../ArtCharDatabase'
 
 describe('CharacterDataManager', () => {
@@ -26,5 +34,17 @@ describe('CharacterDataManager', () => {
     expect(result?.talent.auto).toBe(maxTalent)
     expect(result?.talent.skill).toBe(maxTalent)
     expect(result?.talent.burst).toBe(maxTalent)
+  })
+
+  it('getWithInitWeapon should create starter weapon clamped by rarity max', () => {
+    const char = chars.getWithInitWeapon('Amber')
+    expect(char.level).toBe(defaultCharacterLevel)
+    expect(char.ascension).toBe(defaultCharacterAscension)
+
+    const weapon = database.weapons.get(char.equippedWeapon)
+    expect(weapon).toBeDefined()
+    const rarity = allStats.weapon.data[weapon!.key].rarity
+    expect(weapon!.level).toBe(weaponMaxLevel[rarity])
+    expect(weapon!.ascension).toBe(weaponMaxAscension[rarity])
   })
 })
