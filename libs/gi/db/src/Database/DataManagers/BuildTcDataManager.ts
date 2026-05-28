@@ -136,16 +136,18 @@ const buildTcWeaponSchema = z.object({
     1
   ) as z.ZodType<RefinementKey>,
 })
-const buildTcWeaponSchemaWithTransform = buildTcWeaponSchema.transform((data) => {
-  const rarity = allStats.weapon.data[data.key]?.rarity
-  if (!rarity) throw new Error('Invalid weapon key')
-  const { level, ascension } = validateWeaponLevelAsc(
-    data.level,
-    data.ascension,
-    rarity
-  )
-  return { ...data, level, ascension }
-})
+const buildTcWeaponSchemaWithTransform = buildTcWeaponSchema.transform(
+  (data) => {
+    const rarity = allStats.weapon.data[data.key]?.rarity
+    if (!rarity) throw new Error('Invalid weapon key')
+    const { level, ascension } = validateWeaponLevelAsc(
+      data.level,
+      data.ascension,
+      rarity
+    )
+    return { ...data, level, ascension }
+  }
+)
 
 const defaultMaxSubstats = () =>
   objKeyMap(
