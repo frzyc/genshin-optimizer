@@ -26,9 +26,16 @@ import {
   allRefinementKeys,
   allSubstatKeys,
   allWeaponKeys,
+  defaultCharacterAscension,
+  defaultCharacterLevel,
+  defaultTalentLevel,
+  defaultWeaponAscension,
+  defaultWeaponLevel,
   substatTypeKeys,
+  validateWeaponLevelAsc,
 } from '@genshin-optimizer/gi/consts'
 import type { IGOOD } from '@genshin-optimizer/gi/good'
+import { allStats } from '@genshin-optimizer/gi/stats'
 import { z } from 'zod'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
@@ -96,39 +103,51 @@ const buildTcArtifactSchema = z.object({
 })
 
 const talentSchema = z.object({
-  auto: zodClampedNumber(1, 15, 1),
-  skill: zodClampedNumber(1, 15, 1),
-  burst: zodClampedNumber(1, 15, 1),
+  auto: zodClampedNumber(1, 15, defaultTalentLevel),
+  skill: zodClampedNumber(1, 15, defaultTalentLevel),
+  burst: zodClampedNumber(1, 15, defaultTalentLevel),
 })
 
 const buildTcCharacterSchema = z
   .object({
-    level: zodClampedNumber(1, 90, 1),
+    level: zodClampedNumber(1, 90, defaultCharacterLevel),
     ascension: zodNumericLiteralWithDefault(
       allAscensionKeys,
-      0
+      defaultCharacterAscension
     ) as z.ZodType<AscensionKey>,
     constellation: zodClampedNumber(0, 6, 0),
     talent: zodObject(talentSchema.shape).catch({
-      auto: 1,
-      skill: 1,
-      burst: 1,
+      auto: defaultTalentLevel,
+      skill: defaultTalentLevel,
+      burst: defaultTalentLevel,
     }),
   })
   .optional()
 
 const buildTcWeaponSchema = z.object({
   key: zodEnum(allWeaponKeys),
-  level: zodClampedNumber(1, 90, 1),
+  level: zodClampedNumber(1, 90, defaultWeaponLevel),
   ascension: zodNumericLiteralWithDefault(
     allAscensionKeys,
-    0
+    defaultWeaponAscension
   ) as z.ZodType<AscensionKey>,
   refinement: zodNumericLiteralWithDefault(
     allRefinementKeys,
     1
   ) as z.ZodType<RefinementKey>,
 })
+const buildTcWeaponSchemaWithTransform = buildTcWeaponSchema.transform(
+  (data) => {
+    const rarity = allStats.weapon.data[data.key]?.rarity
+    if (!rarity) throw new Error('Invalid weapon key')
+    const { level, ascension } = validateWeaponLevelAsc(
+      data.level,
+      data.ascension,
+      rarity
+    )
+    return { ...data, level, ascension }
+  }
+)
 
 const defaultMaxSubstats = () =>
   objKeyMap(
@@ -145,7 +164,7 @@ const buildTcSchema = z.object({
   name: zodString('Build(TC) Name'),
   description: zodString(),
   character: buildTcCharacterSchema,
-  weapon: buildTcWeaponSchema,
+  weapon: buildTcWeaponSchemaWithTransform,
   artifact: zodObject(buildTcArtifactSchema.shape).catch({
     slots: objKeyMap(allArtifactSlotKeys, defaultSlot),
     substats: {
@@ -242,8 +261,8 @@ export function initCharTC(weaponKey: WeaponKey): BuildTc {
     description: '',
     weapon: {
       key: weaponKey,
-      level: 1,
-      ascension: 0,
+      level: defaultWeaponLevel,
+      ascension: defaultWeaponAscension,
       refinement: 1,
     },
     artifact: {

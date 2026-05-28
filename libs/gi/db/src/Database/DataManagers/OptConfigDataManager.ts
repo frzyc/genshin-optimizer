@@ -10,6 +10,7 @@ import {
   allArtifactSetKeys,
   allLocationCharacterKeys,
   artSlotMainKeys,
+  defaultOptArtifactLevel,
 } from '@genshin-optimizer/gi/consts'
 import { z } from 'zod'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
@@ -108,8 +109,8 @@ const optConfigSchema = z.object({
   ),
   plotBase: z.array(z.string()).optional().catch(undefined),
   compareBuild: zodBoolean(true),
-  levelLow: zodClampedNumber(0, 20, 0),
-  levelHigh: zodClampedNumber(0, 20, 20),
+  levelLow: zodClampedNumber(0, 20, defaultOptArtifactLevel),
+  levelHigh: zodClampedNumber(0, 20, defaultOptArtifactLevel),
   useTeammateBuild: zodBoolean(),
   generatedBuildListId: z.string().optional().catch(undefined),
   upOptLevelLow: zodClampedNumber(0, 20, 0),

@@ -1,6 +1,7 @@
 import {
   zodBoolean,
   zodBoundedNumber,
+  zodClampedNumber,
   zodEnum,
   zodEnumWithDefault,
 } from '@genshin-optimizer/common/database'
@@ -11,7 +12,6 @@ import {
   allLocationCharacterKeys,
   allWeaponKeys,
   validateWeaponLevelAsc,
-  weaponMaxLevel,
 } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import { z } from 'zod'
@@ -19,8 +19,8 @@ import { z } from 'zod'
 const weaponBaseSchema = z
   .object({
     key: zodEnum(allWeaponKeys),
-    level: zodBoundedNumber(1, 90, 1),
-    ascension: zodBoundedNumber(0, 6, 0) as z.ZodType<AscensionKey>,
+    level: zodClampedNumber(1, 90, 1),
+    ascension: zodClampedNumber(0, 6, 0) as z.ZodType<AscensionKey>,
     refinement: zodBoundedNumber(1, 5, 1) as z.ZodType<RefinementKey>,
     location: zodEnumWithDefault(
       [...allLocationCharacterKeys, ''] as const,
@@ -30,27 +30,10 @@ const weaponBaseSchema = z
   })
   .passthrough()
 
-export const weaponSchema = z
-  .preprocess(
-    (obj) => ({
-      ...(typeof obj === 'object' && obj !== null ? obj : {}),
-      _rawLevel: (obj as { level?: unknown })?.level,
-    }),
-    weaponBaseSchema
-  )
+export const weaponSchema = weaponBaseSchema
   .refine((data) => !!allStats.weapon.data[data.key], {
     message: 'Invalid weapon key',
   })
-  .refine(
-    (data) => {
-      const weaponData = allStats.weapon.data[data.key]
-      if (!weaponData) return false
-      const rawLevel = (data as { _rawLevel?: unknown })._rawLevel
-      if (typeof rawLevel !== 'number') return true
-      return rawLevel <= weaponMaxLevel[weaponData.rarity]
-    },
-    { message: 'Level exceeds max for weapon rarity' }
-  )
   .refine(
     (data) => {
       if (!data.location) return true
@@ -63,9 +46,12 @@ export const weaponSchema = z
     { message: 'Weapon type does not match character' }
   )
   .transform((data) => {
+    const rarity = allStats.weapon.data[data.key]?.rarity
+    if (!rarity) throw new Error('Invalid weapon key')
     const { level, ascension } = validateWeaponLevelAsc(
       data.level,
-      data.ascension
+      data.ascension,
+      rarity
     )
 
     return {

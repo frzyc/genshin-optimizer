@@ -311,8 +311,11 @@ describe('Database', () => {
   test('should merge scanner with dups for weapons', () => {
     const a1 = initialWeapon('Akuoumaru')
     const a2old = initialWeapon('BlackTassel')
+    a2old.level = 1
+    a2old.ascension = 0
     const a2new = initialWeapon('BlackTassel')
     a2new.level = 20
+    a2new.ascension = 0
     const a3 = initialWeapon('CalamityQueller') // in db but not in import
     const a4 = initialWeapon('Deathmatch') // in import but not in db
 
