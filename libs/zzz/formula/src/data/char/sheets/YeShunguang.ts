@@ -1,4 +1,3 @@
-import { cmpGE } from '@genshin-optimizer/pando/engine'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
@@ -7,12 +6,14 @@ import {
   allNumConditionals,
   enemyDebuff,
   own,
-  ownBuff,
   register,
   registerBuff,
-  teamBuff,
 } from '../../util'
-import { entriesForChar, registerAllDmgDazeAndAnom } from '../util'
+import {
+  dmgDazeAndAnomOverride,
+  entriesForChar,
+  registerAllDmgDazeAndAnom,
+} from '../util'
 
 const key: CharacterKey = 'YeShunguang'
 const data_gen = allStats.char[key]
@@ -20,10 +21,11 @@ const dm = mappedStats.char[key]
 
 const { char } = own
 
-// TODO: Add conditionals
 const { boolConditional } = allBoolConditionals(key)
 const { listConditional } = allListConditionals(key, ['val1', 'val2'])
 const { numConditional } = allNumConditionals(key, true, 0, 2)
+
+const enlightenedUnstunMult = enemyDebuff.common.stun_.add(100)
 
 const sheet = register(
   key,
@@ -31,19 +33,28 @@ const sheet = register(
   entriesForChar(data_gen),
 
   // Formulas
-  ...registerAllDmgDazeAndAnom(key, dm),
+  ...registerAllDmgDazeAndAnom(
+    key,
+    dm,
+    dmgDazeAndAnomOverride(
+      dm,
+      'chain',
+      'UltimateChasingStorms',
+      0,
+      { attribute: 'physical', damageType1: 'ult', skillType1: 'chainSkill' },
+      'atk',
+      undefined,
+      enlightenedUnstunMult
+    )
+  ),
 
   // Buffs
   registerBuff(
-    'm6_dmg_',
-    ownBuff.combat.common_dmg_.add(
-      cmpGE(char.mindscape, 6, boolConditional.ifOn(1))
-    )
-  ),
-  registerBuff(
-    'team_dmg_',
-    teamBuff.combat.common_dmg_.add(listConditional.map({ val1: 1, val2: 2 }))
-  ),
-  registerBuff('enemy_defRed_', enemyDebuff.common.defRed_.add(numConditional))
+    'enlightened_unstun_mult',
+    enlightenedUnstunMult,
+    undefined,
+    undefined,
+    false
+  )
 )
 export default sheet
