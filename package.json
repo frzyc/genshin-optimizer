@@ -4,6 +4,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "preinstall": "node tools/scripts/check-node.mjs",
     "frontend": "nx serve frontend",
     "somnia": "nx serve somnia",
     "build-all": "nx run-many -t build",
