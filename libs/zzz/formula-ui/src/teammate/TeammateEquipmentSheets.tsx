@@ -20,12 +20,14 @@ import {
   hasMainUnitDocuments,
 } from './buffAppliesToMainUnit'
 
+/** Whether a teammate wengine sheet has buffs that apply to the main unit. */
 export function teammateWengineHasMainUnitBuffs(key: WengineKey): boolean {
   const wengineSheet = wengineUiSheets[key]
   if (!wengineSheet) return false
   return hasMainUnitDocuments(wengineSheet.documents)
 }
 
+/** Whether an equipped disc set piece count exposes main-unit team buffs. */
 export function teammateDiscHasMainUnitBuffs(
   setKey: DiscSetKey,
   count: number
@@ -38,6 +40,7 @@ export function teammateDiscHasMainUnitBuffs(
   )
 }
 
+/** Renders a teammate wengine card with main-unit buff toggles only. */
 export function TeammateWengineSheetDisplay({
   wengine,
 }: {
@@ -68,6 +71,7 @@ export function TeammateWengineSheetDisplay({
   )
 }
 
+/** Renders teammate disc set buffs (2pc / 4pc) that apply to the main unit. */
 export function TeammateDiscSheetDisplay({
   setKey,
   fade2 = false,

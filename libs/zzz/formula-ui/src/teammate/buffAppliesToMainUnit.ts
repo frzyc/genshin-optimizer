@@ -15,6 +15,7 @@ type EffectType =
   | 'ownBuff'
   | 'other'
 
+/** Stable key for matching display buff tags to stat formula tags. */
 function tagPartsKey(tag: Tag) {
   return [
     tag.sheet,
@@ -27,6 +28,7 @@ function tagPartsKey(tag: Tag) {
   ].join(':')
 }
 
+/** Maps sheet buff display tags to effect types using `formulaData`. */
 function buildDisplayBuffEffectMap() {
   const statEntries = formulaData.filter(
     ({ tag }: { tag: Tag }) =>
@@ -54,6 +56,7 @@ function buildDisplayBuffEffectMap() {
   return displayToEffect
 }
 
+/** Returns the highest-priority effect type present in `candidates`. */
 function pickEffect(candidates: EffectType[], priority: EffectType[]) {
   for (const et of priority) {
     if (candidates.includes(et)) return et
@@ -61,18 +64,21 @@ function pickEffect(candidates: EffectType[], priority: EffectType[]) {
   return undefined
 }
 
+/** Key for looking up a display buff in the effect-type map. */
 function displayBuffKey(tag: Pick<Tag, 'sheet' | 'name'>) {
   return `${tag.sheet}:${tag.name}`
 }
 
 const displayBuffEffectMap = buildDisplayBuffEffectMap()
 
+/** Whether a buff tag affects the main unit (team / not-own / enemy debuff). */
 export function buffAppliesToMainUnit(tag: Tag | undefined | null): boolean {
   if (!tag?.sheet || !tag.name) return false
   const effect = displayBuffEffectMap.get(displayBuffKey(tag))
   return !!effect && MAIN_UNIT_EFFECT_TYPES.has(effect)
 }
 
+/** Narrows a sheet field to one backed by a formula tag reference. */
 function isTagField(field: Field): field is TagField {
   return 'fieldRef' in field
 }
@@ -88,6 +94,7 @@ export function isMindscapeGatedBuff(
   return parseInt(match[1], 10) > mindscape
 }
 
+/** Keeps sheet fields whose buffs apply to the main unit, respecting mindscape gates. */
 export function filterFieldsForMainUnit(
   fields: Field[],
   mindscape?: number
@@ -104,6 +111,7 @@ export function filterFieldsForMainUnit(
   })
 }
 
+/** Filters sheet documents to main-unit buff fields and conditionals. */
 export function filterDocumentsForMainUnit(
   documents: Document[],
   options?: { mindscape?: number }
@@ -137,6 +145,7 @@ export function filterDocumentsForMainUnit(
   return filtered
 }
 
+/** Filters teammate character sheet documents for the optimize-page UI. */
 export function filterTeammateDocuments(
   documents: Document[],
   mindscape: number
@@ -144,6 +153,7 @@ export function filterTeammateDocuments(
   return filterDocumentsForMainUnit(documents, { mindscape })
 }
 
+/** Whether any document contains at least one main-unit buff field. */
 export function hasMainUnitDocuments(documents: Document[]): boolean {
   return filterDocumentsForMainUnit(documents).length > 0
 }

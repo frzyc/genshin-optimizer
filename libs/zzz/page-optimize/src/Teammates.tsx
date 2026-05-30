@@ -60,6 +60,7 @@ const TEAMMATE_SHEET_KEYS = [
   'm6',
 ] as const
 
+/** Teammate picker and buff cards on the ZZZ optimize page. */
 export function TeammatesSection() {
   const { database } = useDatabaseContext()
   const { key: mainCharacterKey } = useCharacterContext()!
@@ -162,6 +163,7 @@ export function TeammatesSection() {
   )
 }
 
+/** Kit, wengine, and disc buff UI for one teammate slot. */
 function TeammateBuffs({
   teammateKey,
   mainCharacterKey,
@@ -217,6 +219,7 @@ function TeammateBuffs({
   )
 }
 
+/** Collects filtered kit documents from a teammate character sheet. */
 function collectTeammateDocuments(
   sheet: (typeof charSheets)[CharacterKey],
   mindscape: number
@@ -230,6 +233,7 @@ function collectTeammateDocuments(
   )
 }
 
+/** Scopes team-frame conditionals and setters to a single teammate `src`. */
 function TeammateConditionalProvider({
   teammateKey,
   children,
@@ -269,6 +273,7 @@ function TeammateConditionalProvider({
   )
 }
 
+/** Teammate wengine and disc equipment buff cards. */
 function TeammateEquippedConditionals({
   sets,
   wengine,
@@ -302,6 +307,7 @@ function TeammateEquippedConditionals({
   )
 }
 
+/** Icon tile layout for a teammate portrait row. */
 function TeammateIconCard({ children }: { children?: React.ReactNode }) {
   return (
     <CardThemed

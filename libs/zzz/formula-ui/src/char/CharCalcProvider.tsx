@@ -149,6 +149,7 @@ function ZzzSheetUiProviders({
   )
 }
 
+/** Tag map entries for the main unit with equipped wengine and discs. */
 function useCharacterAndEquipment(
   character: ICachedCharacter | undefined,
   wengineId: string | undefined,
@@ -177,6 +178,7 @@ function useCharacterAndEquipment(
   )
 }
 
+/** Full teammate build entries (character, wengine, discs) for the calculator. */
 function useTeammateMemberEntries(
   teammateKey: CharacterKey | undefined,
   mainCharacterKey: CharacterKey
@@ -209,6 +211,7 @@ function useTeammateMemberEntries(
   ])
 }
 
+/** Tag map entries for one member plus their equipped wengine and discs. */
 function memberAndEquipmentEntries(
   character: ICachedCharacter,
   wengineTagEntries: TagMapNodeEntries,
