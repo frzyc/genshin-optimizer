@@ -76,32 +76,47 @@ const sheet = register(
 
   // Buffs
   registerBuff(
-    'special_ether_abloom',
-    teamBuff.dmg.anom_mv_mult_.ether.add(abloom.ifOn(percent(5.6))),
+    'special_ether_anom_mv_mult_',
+    teamBuff.combat.anom_mv_mult_.ether.addWithDmgType(
+      'abloom',
+      abloom.ifOn(percent(5.6))
+    ),
     undefined,
     true
   ),
   registerBuff(
-    'special_electric_abloom',
-    teamBuff.dmg.anom_mv_mult_.electric.add(abloom.ifOn(percent(2.8))),
+    'special_electric_anom_mv_mult_',
+    teamBuff.combat.anom_mv_mult_.electric.addWithDmgType(
+      'abloom',
+      abloom.ifOn(percent(2.8))
+    ),
     undefined,
     true
   ),
   registerBuff(
-    'special_fire_abloom',
-    teamBuff.dmg.anom_mv_mult_.fire.add(abloom.ifOn(percent(7))),
+    'special_fire_anom_mv_mult_',
+    teamBuff.combat.anom_mv_mult_.fire.addWithDmgType(
+      'abloom',
+      abloom.ifOn(percent(7))
+    ),
     undefined,
     true
   ),
   registerBuff(
-    'special_physical_abloom',
-    teamBuff.dmg.anom_mv_mult_.physical.add(abloom.ifOn(percent(0.5))),
+    'special_physical_anom_mv_mult_',
+    teamBuff.combat.anom_mv_mult_.physical.addWithDmgType(
+      'abloom',
+      abloom.ifOn(percent(0.5))
+    ),
     undefined,
     true
   ),
   registerBuff(
-    'special_ice_abloom',
-    teamBuff.dmg.anom_mv_mult_.ice.add(abloom.ifOn(percent(0.7))),
+    'special_ice_anom_mv_mult_',
+    teamBuff.combat.anom_mv_mult_.ice.addWithDmgType(
+      'abloom',
+      abloom.ifOn(percent(0.7))
+    ),
     undefined,
     true
   ),

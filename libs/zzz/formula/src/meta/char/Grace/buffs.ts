@@ -1,63 +1,68 @@
 // WARNING: Generated file, do not modify
 export const buffs = {
-  special_ether_abloom: {
+  special_ether_anom_mv_mult_: {
     sheet: 'Grace',
-    name: 'special_ether_abloom',
+    name: 'special_ether_anom_mv_mult_',
     tag: {
       et: 'display',
-      qt: 'dmg',
+      qt: 'combat',
       q: 'anom_mv_mult_',
       sheet: 'Grace',
       attribute: 'ether',
-      name: 'special_ether_abloom',
+      damageType1: 'abloom',
+      name: 'special_ether_anom_mv_mult_',
     },
   },
-  special_electric_abloom: {
+  special_electric_anom_mv_mult_: {
     sheet: 'Grace',
-    name: 'special_electric_abloom',
+    name: 'special_electric_anom_mv_mult_',
     tag: {
       et: 'display',
-      qt: 'dmg',
+      qt: 'combat',
       q: 'anom_mv_mult_',
       sheet: 'Grace',
       attribute: 'electric',
-      name: 'special_electric_abloom',
+      damageType1: 'abloom',
+      name: 'special_electric_anom_mv_mult_',
     },
   },
-  special_fire_abloom: {
+  special_fire_anom_mv_mult_: {
     sheet: 'Grace',
-    name: 'special_fire_abloom',
+    name: 'special_fire_anom_mv_mult_',
     tag: {
       et: 'display',
-      qt: 'dmg',
+      qt: 'combat',
       q: 'anom_mv_mult_',
       sheet: 'Grace',
       attribute: 'fire',
-      name: 'special_fire_abloom',
+      damageType1: 'abloom',
+      name: 'special_fire_anom_mv_mult_',
     },
   },
-  special_physical_abloom: {
+  special_physical_anom_mv_mult_: {
     sheet: 'Grace',
-    name: 'special_physical_abloom',
+    name: 'special_physical_anom_mv_mult_',
     tag: {
       et: 'display',
-      qt: 'dmg',
+      qt: 'combat',
       q: 'anom_mv_mult_',
       sheet: 'Grace',
       attribute: 'physical',
-      name: 'special_physical_abloom',
+      damageType1: 'abloom',
+      name: 'special_physical_anom_mv_mult_',
     },
   },
-  special_ice_abloom: {
+  special_ice_anom_mv_mult_: {
     sheet: 'Grace',
-    name: 'special_ice_abloom',
+    name: 'special_ice_anom_mv_mult_',
     tag: {
       et: 'display',
-      qt: 'dmg',
+      qt: 'combat',
       q: 'anom_mv_mult_',
       sheet: 'Grace',
       attribute: 'ice',
-      name: 'special_ice_abloom',
+      damageType1: 'abloom',
+      name: 'special_ice_anom_mv_mult_',
     },
   },
   core_special_electric_anomBuildup_: {

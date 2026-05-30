@@ -1,63 +1,68 @@
 // WARNING: Generated file, do not modify
 export const buffs = {
-  exSpecial_ether_abloom: {
+  exSpecial_ether_anom_mv_mult_: {
     sheet: 'Burnice',
-    name: 'exSpecial_ether_abloom',
+    name: 'exSpecial_ether_anom_mv_mult_',
     tag: {
       et: 'display',
-      qt: 'dmg',
+      qt: 'combat',
       q: 'anom_mv_mult_',
       sheet: 'Burnice',
       attribute: 'ether',
-      name: 'exSpecial_ether_abloom',
+      damageType1: 'abloom',
+      name: 'exSpecial_ether_anom_mv_mult_',
     },
   },
-  exSpecial_electric_abloom: {
+  exSpecial_electric_anom_mv_mult_: {
     sheet: 'Burnice',
-    name: 'exSpecial_electric_abloom',
+    name: 'exSpecial_electric_anom_mv_mult_',
     tag: {
       et: 'display',
-      qt: 'dmg',
+      qt: 'combat',
       q: 'anom_mv_mult_',
       sheet: 'Burnice',
       attribute: 'electric',
-      name: 'exSpecial_electric_abloom',
+      damageType1: 'abloom',
+      name: 'exSpecial_electric_anom_mv_mult_',
     },
   },
-  exSpecial_fire_abloom: {
+  exSpecial_fire_anom_mv_mult_: {
     sheet: 'Burnice',
-    name: 'exSpecial_fire_abloom',
+    name: 'exSpecial_fire_anom_mv_mult_',
     tag: {
       et: 'display',
-      qt: 'dmg',
+      qt: 'combat',
       q: 'anom_mv_mult_',
       sheet: 'Burnice',
       attribute: 'fire',
-      name: 'exSpecial_fire_abloom',
+      damageType1: 'abloom',
+      name: 'exSpecial_fire_anom_mv_mult_',
     },
   },
-  exSpecial_physical_abloom: {
+  exSpecial_physical_anom_mv_mult_: {
     sheet: 'Burnice',
-    name: 'exSpecial_physical_abloom',
+    name: 'exSpecial_physical_anom_mv_mult_',
     tag: {
       et: 'display',
-      qt: 'dmg',
+      qt: 'combat',
       q: 'anom_mv_mult_',
       sheet: 'Burnice',
       attribute: 'physical',
-      name: 'exSpecial_physical_abloom',
+      damageType1: 'abloom',
+      name: 'exSpecial_physical_anom_mv_mult_',
     },
   },
-  exSpecial_ice_abloom: {
+  exSpecial_ice_anom_mv_mult_: {
     sheet: 'Burnice',
-    name: 'exSpecial_ice_abloom',
+    name: 'exSpecial_ice_anom_mv_mult_',
     tag: {
       et: 'display',
-      qt: 'dmg',
+      qt: 'combat',
       q: 'anom_mv_mult_',
       sheet: 'Burnice',
       attribute: 'ice',
-      name: 'exSpecial_ice_abloom',
+      damageType1: 'abloom',
+      name: 'exSpecial_ice_anom_mv_mult_',
     },
   },
   core_afterburn_dmg_: {
@@ -182,7 +187,7 @@ export const buffs = {
     name: 'm6_fire_anom_mv_mult_',
     tag: {
       et: 'display',
-      qt: 'dmg',
+      qt: 'combat',
       q: 'anom_mv_mult_',
       sheet: 'Burnice',
       attribute: 'fire',

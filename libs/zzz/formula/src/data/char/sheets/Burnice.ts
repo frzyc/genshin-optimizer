@@ -205,32 +205,47 @@ const sheet = register(
 
   // Buffs
   registerBuff(
-    'exSpecial_ether_abloom',
-    teamBuff.dmg.anom_mv_mult_.ether.add(abloom.ifOn(percent(4.8))),
+    'exSpecial_ether_anom_mv_mult_',
+    teamBuff.combat.anom_mv_mult_.ether.addWithDmgType(
+      'abloom',
+      abloom.ifOn(percent(4.8))
+    ),
     undefined,
     true
   ),
   registerBuff(
-    'exSpecial_electric_abloom',
-    teamBuff.dmg.anom_mv_mult_.electric.add(abloom.ifOn(percent(2.4))),
+    'exSpecial_electric_anom_mv_mult_',
+    teamBuff.combat.anom_mv_mult_.electric.addWithDmgType(
+      'abloom',
+      abloom.ifOn(percent(2.4))
+    ),
     undefined,
     true
   ),
   registerBuff(
-    'exSpecial_fire_abloom',
-    teamBuff.dmg.anom_mv_mult_.fire.add(abloom.ifOn(percent(6))),
+    'exSpecial_fire_anom_mv_mult_',
+    teamBuff.combat.anom_mv_mult_.fire.addWithDmgType(
+      'abloom',
+      abloom.ifOn(percent(6))
+    ),
     undefined,
     true
   ),
   registerBuff(
-    'exSpecial_physical_abloom',
-    teamBuff.dmg.anom_mv_mult_.physical.add(abloom.ifOn(percent(0.4))),
+    'exSpecial_physical_anom_mv_mult_',
+    teamBuff.combat.anom_mv_mult_.physical.addWithDmgType(
+      'abloom',
+      abloom.ifOn(percent(0.4))
+    ),
     undefined,
     true
   ),
   registerBuff(
-    'exSpecial_ice_abloom',
-    teamBuff.dmg.anom_mv_mult_.ice.add(abloom.ifOn(percent(0.6))),
+    'exSpecial_ice_anom_mv_mult_',
+    teamBuff.combat.anom_mv_mult_.ice.addWithDmgType(
+      'abloom',
+      abloom.ifOn(percent(0.6))
+    ),
     undefined,
     true
   ),
@@ -319,7 +334,7 @@ const sheet = register(
   registerBuff('m6_fire_resIgn_', m6_fire_resIgn_, undefined, undefined, false),
   registerBuff(
     'm6_fire_anom_mv_mult_',
-    ownBuff.dmg.anom_mv_mult_.fire.add(
+    ownBuff.combat.anom_mv_mult_.fire.add(
       cmpGE(
         char.mindscape,
         6,

@@ -243,7 +243,7 @@ const sheet = register(
   registerBuff('core_drill_dmg_', core_drill_dmg_, undefined, false, false),
   registerBuff(
     'ability_electric_anom_mv_mult_',
-    ownBuff.dmg.anom_mv_mult_.electric.add(
+    ownBuff.combat.anom_mv_mult_.electric.add(
       cmpGE(
         sum(
           team.common.count.electric,

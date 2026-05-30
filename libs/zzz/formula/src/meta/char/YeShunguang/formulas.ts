@@ -1504,4 +1504,17 @@ export const formulas = {
       name: 'AssistFollowUpEnlightenedMindUnification_0_anomBuildup',
     },
   },
+  m6_dmg: {
+    sheet: 'YeShunguang',
+    name: 'm6_dmg',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'standardDmg',
+      sheet: 'YeShunguang',
+      attribute: 'physical',
+      damageType1: 'elemental',
+      name: 'm6_dmg',
+    },
+  },
 } as const

@@ -443,7 +443,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
       prod(
         percent(anomalyMultipliers[data_gen.attribute]),
         own.final.atk,
-        cmpEq(own.dmg.anom_mv_mult_, 0, percent(1), own.dmg.anom_mv_mult_)
+        cmpEq(own.final.anom_mv_mult_, 0, percent(1), own.final.anom_mv_mult_)
       )
     ),
     ...customAnomalyDmg(
@@ -483,9 +483,9 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
       prod(
         percent(anomalyMultipliers[data_gen.attribute]),
         own.final.atk,
-        cmpEq(own.dmg.anom_mv_mult_, 0, percent(1), own.dmg.anom_mv_mult_)
+        cmpEq(own.final.anom_mv_mult_, 0, percent(1), own.final.anom_mv_mult_)
       ),
-      { cond: cmpEq(own.dmg.anom_mv_mult_, 0, '', 'infer') }
+      { cond: cmpEq(own.final.anom_mv_mult_, 0, '', 'infer') }
     ),
     ...customAnomalyBuildup(
       'anomalyBuildupInst',
