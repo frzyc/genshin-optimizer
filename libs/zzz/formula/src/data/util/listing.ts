@@ -45,6 +45,7 @@ export const stats = [
   'flat_dmg',
   'anom_flat_dmg',
   'addl_disorder_',
+  'veilVulnerabilityCap_',
 ] as const
 
 export const flatAndPercentStats = [

@@ -1,11 +1,9 @@
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { YeShunguang } from '@genshin-optimizer/zzz/formula'
-import { st, trans } from '../../util'
+import { st } from '../../util'
 import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 
 const key: CharacterKey = 'YeShunguang'
-const [, ch] = trans('char', key)
-const cond = YeShunguang.conditionals
 const buff = YeShunguang.buffs
 const formula = YeShunguang.formulas
 
@@ -16,6 +14,7 @@ const sheet = createBaseSheet(key, {
       fields: [
         fieldForBuff(buff.core_crit_),
         fieldForBuff(buff.core_common_dmg_),
+        fieldForBuff(buff.core_veilVulnerabilityCap_),
       ],
     },
   ],
@@ -35,6 +34,12 @@ const sheet = createBaseSheet(key, {
         fieldForBuff(buff.m2_exSpecial_defIgn_),
         fieldForBuff(buff.m2_ult_defIgn_),
       ],
+    },
+  ],
+  m4: [
+    {
+      type: 'fields',
+      fields: [fieldForBuff(buff.core_veilVulnerabilityCap_)],
     },
   ],
   m6: [

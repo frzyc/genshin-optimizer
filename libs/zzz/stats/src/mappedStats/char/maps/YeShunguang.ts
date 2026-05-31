@@ -87,7 +87,7 @@ const dm = {
     crit_: data_gen.coreParams[4],
     common_dmg_: data_gen.coreParams[5],
     duration: data_gen.coreParams[6][0],
-    veilVulnerabilityCap: data_gen.coreParams[7][0],
+    veilVulnerabilityCap_: data_gen.coreParams[7][0],
   },
   ability: {
     qingmingGain: data_gen.abilityParams[0],
@@ -108,7 +108,7 @@ const dm = {
   m4: {
     decibels: data_gen.mindscapeParams[3][0],
     cooldown: data_gen.mindscapeParams[3][1],
-    vulnerabilityBonusCap: data_gen.mindscapeParams[3][2],
+    vulnerabilityBonusCap_: data_gen.mindscapeParams[3][2],
   },
   m6: {
     lanternWishStart: data_gen.mindscapeParams[5][0],

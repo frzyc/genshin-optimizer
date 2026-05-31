@@ -119,6 +119,7 @@ const stats: Record<Stat, Desc> = {
   anom_flat_dmg: agg,
   addl_disorder_: agg,
   anom_mv_mult_: agg,
+  veilVulnerabilityCap_: agg,
 } as const
 const finalStats = objFilterKeys(stats, [
   ...flatAndPercentStats,

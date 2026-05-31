@@ -1,14 +1,14 @@
 // WARNING: Generated file, do not modify
 export const buffs = {
-  enlightened_unstun_mult: {
+  core_veilVulnerabilityCap_: {
     sheet: 'YeShunguang',
-    name: 'enlightened_unstun_mult',
+    name: 'core_veilVulnerabilityCap_',
     tag: {
       et: 'display',
-      qt: 'common',
-      q: 'stun_',
+      qt: 'combat',
+      q: 'veilVulnerabilityCap_',
       sheet: 'YeShunguang',
-      name: 'enlightened_unstun_mult',
+      name: 'core_veilVulnerabilityCap_',
     },
   },
   core_crit_: {

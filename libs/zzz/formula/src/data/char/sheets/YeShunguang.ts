@@ -3,7 +3,6 @@ import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
   customDmg,
-  enemyDebuff,
   own,
   ownBuff,
   percent,
@@ -24,7 +23,16 @@ const baseTag = getBaseTag(data_gen)
 
 const { char } = own
 
-const enlightenedUnstunMult = enemyDebuff.common.stun_.add(100)
+const core_veilVulnerabilityCap_ = ownBuff.combat.veilVulnerabilityCap_.add(
+  percent(
+    cmpGE(
+      char.mindscape,
+      4,
+      dm.m4.vulnerabilityBonusCap_,
+      dm.core.veilVulnerabilityCap_
+    )
+  )
+)
 const m2_exSpecial_defIgn_ = ownBuff.combat.defIgn_.addWithDmgType(
   'exSpecial',
   cmpGE(char.mindscape, 2, percent(dm.m2.defIgn_))
@@ -45,13 +53,125 @@ const sheet = register(
     dm,
     dmgDazeAndAnomOverride(
       dm,
-      'chain',
-      'UltimateChasingStorms',
+      'basic',
+      'BasicAttackEnlightenedMindSplittingCurrents',
       0,
-      { ...baseTag, damageType1: 'ult', skillType1: 'chainSkill' },
+      { ...baseTag, damageType1: 'basic', skillType1: 'basicSkill' },
       'atk',
       undefined,
-      enlightenedUnstunMult
+      core_veilVulnerabilityCap_
+    ),
+    dmgDazeAndAnomOverride(
+      dm,
+      'basic',
+      'BasicAttackEnlightenedMindSplittingCurrents',
+      1,
+      { ...baseTag, damageType1: 'basic', skillType1: 'basicSkill' },
+      'atk',
+      undefined,
+      core_veilVulnerabilityCap_
+    ),
+    dmgDazeAndAnomOverride(
+      dm,
+      'basic',
+      'BasicAttackEnlightenedMindSplittingCurrents',
+      2,
+      { ...baseTag, damageType1: 'basic', skillType1: 'basicSkill' },
+      'atk',
+      undefined,
+      core_veilVulnerabilityCap_
+    ),
+    dmgDazeAndAnomOverride(
+      dm,
+      'basic',
+      'BasicAttackEnlightenedMindSkywardAscent',
+      0,
+      { ...baseTag, damageType1: 'basic', skillType1: 'basicSkill' },
+      'atk',
+      undefined,
+      core_veilVulnerabilityCap_
+    ),
+    dmgDazeAndAnomOverride(
+      dm,
+      'basic',
+      'BasicAttackEnlightenedMindSunderlightMaximum',
+      0,
+      { ...baseTag, damageType1: 'basic', skillType1: 'basicSkill' },
+      'atk',
+      undefined,
+      core_veilVulnerabilityCap_
+    ),
+    dmgDazeAndAnomOverride(
+      dm,
+      'basic',
+      'BasicAttackEnlightenedMindSunderlight',
+      0,
+      { ...baseTag, damageType1: 'basic', skillType1: 'basicSkill' },
+      'atk',
+      undefined,
+      core_veilVulnerabilityCap_
+    ),
+    dmgDazeAndAnomOverride(
+      dm,
+      'basic',
+      'BasicAttackEnlightenedMindSunderlight',
+      1,
+      { ...baseTag, damageType1: 'basic', skillType1: 'basicSkill' },
+      'atk',
+      undefined,
+      core_veilVulnerabilityCap_
+    ),
+    dmgDazeAndAnomOverride(
+      dm,
+      'basic',
+      'BasicAttackEnlightenedMindSunderlightAnnihilation',
+      0,
+      { ...baseTag, damageType1: 'basic', skillType1: 'basicSkill' },
+      'atk',
+      undefined,
+      core_veilVulnerabilityCap_
+    ),
+    dmgDazeAndAnomOverride(
+      dm,
+      'basic',
+      'BasicAttackEnlightenedMindSunderlightAnnihilation',
+      1,
+      { ...baseTag, damageType1: 'basic', skillType1: 'basicSkill' },
+      'atk',
+      undefined,
+      core_veilVulnerabilityCap_
+    ),
+
+    dmgDazeAndAnomOverride(
+      dm,
+      'assist',
+      'QuickAssistEnlightenedMindTacticalSupport',
+      0,
+      { ...baseTag, damageType1: 'quickAssist', skillType1: 'assistSkill' },
+      'atk',
+      undefined,
+      core_veilVulnerabilityCap_
+    ),
+    dmgDazeAndAnomOverride(
+      dm,
+      'assist',
+      'AssistFollowUpEnlightenedMindUnification',
+      0,
+      { ...baseTag, damageType1: 'assistFollowUp', skillType1: 'assistSkill' },
+      'atk',
+      undefined,
+      core_veilVulnerabilityCap_
+    ),
+
+    dmgDazeAndAnomOverride(
+      dm,
+      'special',
+      'SpecialAttackEnlightenedMindCleanExit',
+      0,
+      { ...baseTag, damageType1: 'special', skillType1: 'specialSkill' },
+      'atk',
+      undefined,
+      core_veilVulnerabilityCap_
     ),
     dmgDazeAndAnomOverride(
       dm,
@@ -61,7 +181,39 @@ const sheet = register(
       { ...baseTag, damageType1: 'exSpecial', skillType1: 'specialSkill' },
       'atk',
       undefined,
+      core_veilVulnerabilityCap_,
       ...m2_exSpecial_defIgn_
+    ),
+    dmgDazeAndAnomOverride(
+      dm,
+      'special',
+      'EXSpecialAttackEnlightenedMindReturnToDust',
+      0,
+      { ...baseTag, damageType1: 'exSpecial', skillType1: 'specialSkill' },
+      'atk',
+      undefined,
+      core_veilVulnerabilityCap_
+    ),
+
+    dmgDazeAndAnomOverride(
+      dm,
+      'chain',
+      'UltimateChasingStorms',
+      0,
+      { ...baseTag, damageType1: 'ult', skillType1: 'chainSkill' },
+      'atk',
+      undefined,
+      core_veilVulnerabilityCap_
+    ),
+    dmgDazeAndAnomOverride(
+      dm,
+      'chain',
+      'ChainAttackEnlightenedMindLureThunder',
+      0,
+      { ...baseTag, damageType1: 'chain', skillType1: 'chainSkill' },
+      'atk',
+      undefined,
+      core_veilVulnerabilityCap_
     ),
     dmgDazeAndAnomOverride(
       dm,
@@ -71,6 +223,7 @@ const sheet = register(
       { ...baseTag, damageType1: 'ult', skillType1: 'chainSkill' },
       'atk',
       undefined,
+      core_veilVulnerabilityCap_,
       ...m2_ult_defIgn_
     )
   ),
@@ -83,8 +236,8 @@ const sheet = register(
 
   // Buffs
   registerBuff(
-    'enlightened_unstun_mult',
-    enlightenedUnstunMult,
+    'core_veilVulnerabilityCap_',
+    core_veilVulnerabilityCap_,
     undefined,
     undefined,
     false
