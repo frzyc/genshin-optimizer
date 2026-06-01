@@ -20,6 +20,7 @@ import {
 } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { CalcResult } from '@genshin-optimizer/pando/engine'
 import { constant } from '@genshin-optimizer/pando/engine'
+import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allDiscSetKeys, allWengineKeys } from '@genshin-optimizer/zzz/consts'
 import type {
   DiscIds,
@@ -28,7 +29,12 @@ import type {
   TeamConditional,
 } from '@genshin-optimizer/zzz/db'
 import { getTeamFrame0, teamCharacterKeys } from '@genshin-optimizer/zzz/db'
-import { useDiscs, useWengine } from '@genshin-optimizer/zzz/db-ui'
+import {
+  useCharacter,
+  useDiscs,
+  useWengine,
+} from '@genshin-optimizer/zzz/db-ui'
+import type { TagMapNodeEntries } from '@genshin-optimizer/zzz/formula'
 import {
   charTagMapNodeEntries,
   conditionalEntries,
@@ -50,6 +56,8 @@ import { useMemo } from 'react'
 import { FullTagDisplay, TagDisplay } from '../components'
 import { formulaText } from '../formulaText'
 
+const EMPTY_ENTRIES: TagMapNodeEntries = []
+
 export function CharCalcProvider({
   character,
   team,
@@ -64,60 +72,23 @@ export function CharCalcProvider({
   children: ReactNode
 }) {
   const member0 = useCharacterAndEquipment(character, wengineId, discIds)
+  const teammate1Key = team.teammates[1]?.characterKey
+  const teammate2Key = team.teammates[2]?.characterKey
+  const teammate1Entries = useTeammateMemberEntries(teammate1Key, character.key)
+  const teammate2Entries = useTeammateMemberEntries(teammate2Key, character.key)
 
-  const calc = useMemo(() => {
-    const frames = team.frames.length > 0 ? team.frames : [getTeamFrame0(team)]
-    return zzzCalculatorWithEntries([
-      ...teamData(teamCharacterKeys(team)),
-      ...member0,
-      enemy.common.lvl.add(team.enemyLvl),
-      enemy.common.def.add(team.enemyDef),
-      enemy.common.stun_.add(team.enemyStunMultiplier / 100),
-      enemy.common.unstun_.add(1),
-      ...frames.flatMap((frame, i) => {
-        const preset = presets[i] ?? 'preset0'
-        return [
-          ...withPreset(preset, ownBuff.common.critMode.add(frame.critMode)),
-          ...frame.conditionals.flatMap(
-            ({ sheet, src, dst, condKey, condValue }) =>
-              withPreset(
-                preset,
-                conditionalEntries(sheet, src, dst)(condKey, condValue)
-              )
-          ),
-          ...frame.bonusStats
-            .filter(({ disabled }) => !disabled)
-            .flatMap(({ tag, value }) =>
-              withPreset(preset, {
-                // since bonusStats are applied to own*, needs {src:key, dst:never}
-                tag: { ...tag, src: character.key, sheet: 'agg', et: 'own' },
-                value: constant(toDecimal(value, tag.q ?? '')),
-              })
-            ),
-          ...frame.enemyStats.flatMap(({ tag, value }) =>
-            withPreset(preset, {
-              tag: { ...tag, qt: 'common', et: 'enemy', sheet: 'agg' },
-              value: constant(toDecimal(value, tag.q ?? '')),
-            })
-          ),
-        ]
-      }),
-      // Non-main teammates only; main counts come from charTagMapNodeEntries in member0.
-      ...team.teammates
-        .filter((t) => t.characterKey !== character.key)
-        .flatMap(({ characterKey: charKey }) => [
-          ownBuff.common.count
-            .withSpecialty(allStats.char[charKey].specialty)
-            .add(1),
-          ownBuff.common.count
-            .withFaction(allStats.char[charKey].faction)
-            .add(1),
-          ownBuff.common.count
-            .withTag({ attribute: allStats.char[charKey].attribute })
-            .add(1),
-        ]),
-    ])
-  }, [member0, team, character.key])
+  const calc = useMemo(
+    () =>
+      zzzCalculatorWithEntries(
+        buildTeamCalculatorEntries({
+          character,
+          team,
+          member0,
+          fullTeammateEntries: [...teammate1Entries, ...teammate2Entries],
+        })
+      ),
+    [member0, teammate1Entries, teammate2Entries, team, character.key]
+  )
   // New map per calc so formula tooltips do not reuse stale nodes after gear/opt changes.
   const formulaTextCache = useMemo(() => calc && new Map(), [calc])
 
@@ -128,6 +99,73 @@ export function CharCalcProvider({
       </CalcContext.Provider>
     </ZzzSheetUiProviders>
   )
+}
+
+function buildTeamCalculatorEntries({
+  character,
+  team,
+  member0,
+  fullTeammateEntries = EMPTY_ENTRIES,
+}: {
+  character: ICachedCharacter
+  team: Team
+  member0: TagMapNodeEntries
+  fullTeammateEntries?: TagMapNodeEntries
+}) {
+  const frames = team.frames.length > 0 ? team.frames : [getTeamFrame0(team)]
+  return [
+    ...teamData(teamCharacterKeys(team)),
+    ...member0,
+    ...fullTeammateEntries,
+    enemy.common.lvl.add(team.enemyLvl),
+    enemy.common.def.add(team.enemyDef),
+    enemy.common.stun_.add(team.enemyStunMultiplier / 100),
+    enemy.common.unstun_.add(1),
+    ...frames.flatMap((frame, i) => {
+      const preset = presets[i] ?? 'preset0'
+      return [
+        ...withPreset(preset, ownBuff.common.critMode.add(frame.critMode)),
+        ...frame.conditionals.flatMap(
+          ({ sheet, src, dst, condKey, condValue }) =>
+            withPreset(
+              preset,
+              conditionalEntries(sheet, src, dst)(condKey, condValue)
+            )
+        ),
+        ...frame.bonusStats
+          .filter(({ disabled }) => !disabled)
+          .flatMap(({ tag, value }) =>
+            withPreset(preset, {
+              // since bonusStats are applied to own*, needs {src:key, dst:never}
+              tag: { ...tag, src: character.key, sheet: 'agg', et: 'own' },
+              value: constant(toDecimal(value, tag.q ?? '')),
+            })
+          ),
+        ...frame.enemyStats.flatMap(({ tag, value }) =>
+          withPreset(preset, {
+            tag: { ...tag, qt: 'common', et: 'enemy', sheet: 'agg' },
+            value: constant(toDecimal(value, tag.q ?? '')),
+          })
+        ),
+      ]
+    }),
+    ...teammateCountEntries(team, character.key),
+  ]
+}
+
+function teammateCountEntries(team: Team, mainCharacterKey: CharacterKey) {
+  // Non-main teammates only; main counts come from charTagMapNodeEntries in member0.
+  return team.teammates
+    .filter((t) => t.characterKey !== mainCharacterKey)
+    .flatMap(({ characterKey: charKey }) => [
+      ownBuff.common.count
+        .withSpecialty(allStats.char[charKey].specialty)
+        .add(1),
+      ownBuff.common.count.withFaction(allStats.char[charKey].faction).add(1),
+      ownBuff.common.count
+        .withTag({ attribute: allStats.char[charKey].attribute })
+        .add(1),
+    ])
 }
 
 function ZzzSheetUiProviders({
@@ -170,14 +208,59 @@ function useCharacterAndEquipment(
   return useMemo(
     () =>
       character
-        ? withMember(
-            character.key,
-            ...charTagMapNodeEntries(character),
-            ...wengineTagEntries,
-            ...discTagEntries
+        ? memberAndEquipmentEntries(
+            character,
+            wengineTagEntries,
+            discTagEntries
           )
-        : [],
+        : EMPTY_ENTRIES,
     [character, wengineTagEntries, discTagEntries]
+  )
+}
+
+// Teammate char + wengine + disc entries for team-buff formulas (src = teammate).
+function useTeammateMemberEntries(
+  teammateKey: CharacterKey | undefined,
+  mainCharacterKey: CharacterKey
+) {
+  const character = useCharacter(teammateKey)
+  const wengine = useWengine(character?.equippedWengine)
+  const discs = useDiscs(character?.equippedDiscs)
+  const wengineTagEntries = useMemo(
+    () => wengineTagMapNodeEntries(wengine),
+    [wengine]
+  )
+  const discTagEntries = useMemo(
+    () => discsToTagMapNodeEntries(Object.values(discs).filter(notEmpty)),
+    [discs]
+  )
+  return useMemo(() => {
+    if (!character || !teammateKey || teammateKey === mainCharacterKey)
+      return EMPTY_ENTRIES
+    return memberAndEquipmentEntries(
+      character,
+      wengineTagEntries,
+      discTagEntries
+    )
+  }, [
+    character,
+    teammateKey,
+    mainCharacterKey,
+    wengineTagEntries,
+    discTagEntries,
+  ])
+}
+
+function memberAndEquipmentEntries(
+  character: ICachedCharacter,
+  wengineTagEntries: TagMapNodeEntries,
+  discTagEntries: TagMapNodeEntries
+): TagMapNodeEntries {
+  return withMember(
+    character.key,
+    ...charTagMapNodeEntries(character),
+    ...wengineTagEntries,
+    ...discTagEntries
   )
 }
 
