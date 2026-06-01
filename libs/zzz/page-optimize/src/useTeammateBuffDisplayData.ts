@@ -1,4 +1,5 @@
 import type { Read } from '@genshin-optimizer/game-opt/engine'
+import type { Tag } from '@genshin-optimizer/zzz/formula'
 import type { Document, Field } from '@genshin-optimizer/game-opt/sheet-ui'
 import { isTagField } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { CharacterKey, DiscSetKey } from '@genshin-optimizer/zzz/consts'
@@ -59,12 +60,12 @@ export function useTeammateBuffDisplayData({
     }
     return used
   }, [calc, teamBuffReads])
-  const teamBuffNames = useMemo(
+  const teamBuffListingKeys = useMemo(
     () =>
       new Set(
         teamBuffReads
-          .map(({ tag }) => tag.name)
-          .filter((name): name is string => !!name)
+          .map(({ tag }) => teamBuffListingKey(tag))
+          .filter((key): key is string => !!key)
       ),
     [teamBuffReads]
   )
@@ -72,11 +73,11 @@ export function useTeammateBuffDisplayData({
     (documents: Document[]) =>
       filterDocumentsForTeamBuffs(
         documents,
-        teamBuffNames,
+        teamBuffListingKeys,
         usedConditionalKeys,
         mindscape
       ),
-    [teamBuffNames, usedConditionalKeys, mindscape]
+    [teamBuffListingKeys, usedConditionalKeys, mindscape]
   )
   const kitDocuments = useMemo(() => {
     // Character kit docs can be huge; keep only teammate->main relevant rows.
@@ -122,9 +123,10 @@ export function useTeammateBuffDisplayData({
         pieces.flatMap(({ documents }) => documents)
       ),
     ])
-    return teamBuffReads.filter(
-      (read) => read.tag.name && !covered.has(read.tag.name)
-    )
+    return teamBuffReads.filter((read) => {
+      const key = teamBuffListingKey(read.tag)
+      return key && !covered.has(key)
+    })
   }, [teamBuffReads, kitDocuments, wengineDocuments, discDisplays])
 
   return {
@@ -150,6 +152,12 @@ function isEnemyDebuffListingRead(read: Read): boolean {
   return read.tag.qt === 'common' && !!q && ENEMY_DEBUFF_QS.has(q)
 }
 
+function teamBuffListingKey(tag: Tag): string | null {
+  const { sheet, name } = tag
+  if (!sheet || !name) return null
+  return `${sheet}:${name}`
+}
+
 function listTeammateTeamBuffReads(
   calc: ReturnType<typeof useZzzCalcContext>,
   teammateKey: CharacterKey,
@@ -169,8 +177,8 @@ function listTeammateTeamBuffReads(
     // Global anomaly team buffs (e.g. Frostbite) use AnomalySection on this page.
     if (read.tag.sheet === 'anomaly') return false
     if (isMindscapeGatedBuff(read.tag.name, mindscape)) return false
-    const key = `${read.tag.sheet}:${read.tag.name}`
-    if (seen.has(key)) return false
+    const key = teamBuffListingKey(read.tag)
+    if (!key || seen.has(key)) return false
     seen.add(key)
     return true
   })
@@ -178,7 +186,7 @@ function listTeammateTeamBuffReads(
 
 function filterDocumentsForTeamBuffs(
   documents: Document[],
-  teamBuffNames: ReadonlySet<string>,
+  teamBuffListingKeys: ReadonlySet<string>,
   usedConditionalKeys: ReadonlySet<string>,
   mindscape: number
 ): Document[] {
@@ -188,7 +196,7 @@ function filterDocumentsForTeamBuffs(
       case 'fields': {
         const fields = filterTeamBuffFields(
           document.fields,
-          teamBuffNames,
+          teamBuffListingKeys,
           mindscape
         )
         if (fields.length) filtered.push({ ...document, fields })
@@ -197,7 +205,7 @@ function filterDocumentsForTeamBuffs(
       case 'conditional': {
         const fields = filterTeamBuffFields(
           document.conditional.fields ?? [],
-          teamBuffNames,
+          teamBuffListingKeys,
           mindscape
         )
         const condSheet = document.conditional.metadata.sheet
@@ -229,32 +237,36 @@ function filterDocumentsForTeamBuffs(
 
 function filterTeamBuffFields(
   fields: Field[],
-  teamBuffNames: ReadonlySet<string>,
+  teamBuffListingKeys: ReadonlySet<string>,
   mindscape: number
 ): Field[] {
-  return fields.filter(
-    (field) =>
-      isTagField(field) &&
-      !!field.fieldRef.name &&
-      teamBuffNames.has(field.fieldRef.name) &&
+  return fields.filter((field) => {
+    if (!isTagField(field)) return false
+    const key = teamBuffListingKey(field.fieldRef)
+    return (
+      !!key &&
+      teamBuffListingKeys.has(key) &&
       !isMindscapeGatedBuff(field.fieldRef.name, mindscape)
-  )
+    )
+  })
 }
 
 function buffNamesInDocuments(documents: Document[]): Set<string> {
-  const names = new Set<string>()
+  const keys = new Set<string>()
   for (const document of documents) {
     if (document.type === 'fields') {
       for (const field of document.fields) {
-        if (isTagField(field) && field.fieldRef.name)
-          names.add(field.fieldRef.name)
+        if (!isTagField(field)) continue
+        const key = teamBuffListingKey(field.fieldRef)
+        if (key) keys.add(key)
       }
     } else if (document.type === 'conditional') {
       for (const field of document.conditional.fields ?? []) {
-        if (isTagField(field) && field.fieldRef.name)
-          names.add(field.fieldRef.name)
+        if (!isTagField(field)) continue
+        const key = teamBuffListingKey(field.fieldRef)
+        if (key) keys.add(key)
       }
     }
   }
-  return names
+  return keys
 }

@@ -260,6 +260,7 @@ function TeammateConditionalProvider({
 }) {
   const parentSetConditional = useContext(SetConditionalContext)
   const parentConditionals = useContext(ConditionalValuesContext)
+  const parentSrcDstDisplay = useContext(SrcDstDisplayContext)
   const setConditional = useCallback<SetConditionalFunc>(
     (sheet, condKey, _src, dst, condValue) =>
       parentSetConditional?.(sheet, condKey, teammateKey, dst, condValue),
@@ -272,11 +273,12 @@ function TeammateConditionalProvider({
   const srcDstDisplay = useMemo(
     () => ({
       srcDisplay: {
+        ...parentSrcDstDisplay.srcDisplay,
         [teammateKey]: <CharacterName characterKey={teammateKey} />,
       },
-      dstDisplay: {},
+      dstDisplay: parentSrcDstDisplay.dstDisplay,
     }),
-    [teammateKey]
+    [parentSrcDstDisplay, teammateKey]
   )
 
   return (
