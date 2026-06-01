@@ -240,6 +240,7 @@ function TeammateBuffsContent({
                 key={`${read.tag.sheet}:${read.tag.name}:${index}`}
                 field={tagToTagField(read.tag)}
                 calcRead={read}
+                showZero={false}
               />
             ))}
           </FieldDisplayList>

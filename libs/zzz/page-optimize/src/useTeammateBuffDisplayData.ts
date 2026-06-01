@@ -166,6 +166,8 @@ function listTeammateTeamBuffReads(
   ]
   return reads.filter((read) => {
     if (read.tag.src !== teammateKey) return false
+    // Global anomaly team buffs (e.g. Frostbite) use AnomalySection on this page.
+    if (read.tag.sheet === 'anomaly') return false
     if (isMindscapeGatedBuff(read.tag.name, mindscape)) return false
     const key = `${read.tag.sheet}:${read.tag.name}`
     if (seen.has(key)) return false
