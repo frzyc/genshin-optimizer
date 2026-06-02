@@ -37,36 +37,16 @@ export function useTeammateBuffDisplayData({
   const calc = useZzzCalcContext()
   const teamBuffReads = useMemo(
     // Team-buff UI discovery is driven by formula listings.
-    // Only buffs registered into team listing (plus enemy-debuff exceptions)
-    // are candidates for teammate display.
     () => listTeammateTeamBuffReads(calc, teammateKey, mindscape),
     [calc, teammateKey, mindscape]
   )
-  const usedConditionalKeys = useMemo(() => {
-    // Keep conditionals that are actual gates for displayed buffs, even if
-    // their own document has no direct team-buff field.
-    const used = new Set<string>()
-    if (!calc) return used
-    for (const read of teamBuffReads) {
-      const conds = calc.compute(read).meta.conds as any
-      for (const dst of Object.values(conds ?? {})) {
-        for (const src of Object.values(dst ?? {})) {
-          for (const [sheet, names] of Object.entries(src ?? {})) {
-            for (const name of Object.keys((names as any) ?? {}))
-              used.add(`${sheet}:${name}`)
-          }
-        }
-      }
-    }
-    return used
-  }, [calc, teamBuffReads])
+  const usedConditionalKeys = useMemo(
+    // Keep conditionals that gate displayed buffs, even without a direct field row.
+    () => (calc ? conditionalKeysFromReads(calc, teamBuffReads) : new Set()),
+    [calc, teamBuffReads]
+  )
   const teamBuffListingKeys = useMemo(
-    () =>
-      new Set(
-        teamBuffReads
-          .map(({ tag }) => teamBuffListingKey(tag))
-          .filter((key): key is string => !!key)
-      ),
+    () => listingKeysFromTags(teamBuffReads.map(({ tag }) => tag)),
     [teamBuffReads]
   )
   const filterTeamBuffDocuments = useCallback(
@@ -80,43 +60,29 @@ export function useTeammateBuffDisplayData({
     [teamBuffListingKeys, usedConditionalKeys, mindscape]
   )
   const kitDocuments = useMemo(() => {
-    // Character kit docs can be huge; keep only teammate->main relevant rows.
+    // Character kit docs can be huge; keep only teammate→main relevant rows.
     const charSheet = charSheets[teammateKey]
     const charDocuments = charSheet
       ? Object.values(charSheet).flatMap((section) => section?.documents ?? [])
       : []
     return filterTeamBuffDocuments(charDocuments)
   }, [teammateKey, filterTeamBuffDocuments])
-  const wengineDocuments = useMemo(() => {
-    if (!wengine) return []
-    return filterTeamBuffDocuments(
-      wengineUiSheets[wengine.key]?.documents ?? []
-    )
-  }, [wengine, filterTeamBuffDocuments])
-  const discDisplays = useMemo(() => {
-    // Disc set UI is split by 2pc/4pc. Include only equipped pieces that
-    // still contain relevant team-buff fields after filtering.
-    const displays: DiscDisplay[] = []
-    for (const [setKey, count] of Object.entries(sets)) {
-      const uiSheet = discUiSheets[setKey as DiscSetKey]
-      if (!uiSheet) continue
-      const pieces: DiscDisplay['pieces'] = []
-      if (count >= 2) {
-        const documents = filterTeamBuffDocuments(uiSheet['2']?.documents ?? [])
-        if (documents.length) pieces.push({ piece: '2', documents })
-      }
-      if (count >= 4) {
-        const documents = filterTeamBuffDocuments(uiSheet['4']?.documents ?? [])
-        if (documents.length) pieces.push({ piece: '4', documents })
-      }
-      if (pieces.length) displays.push({ setKey: setKey as DiscSetKey, pieces })
-    }
-    return displays
-  }, [sets, filterTeamBuffDocuments])
+  const wengineDocuments = useMemo(
+    () =>
+      wengine
+        ? filterTeamBuffDocuments(
+            wengineUiSheets[wengine.key]?.documents ?? []
+          )
+        : [],
+    [wengine, filterTeamBuffDocuments]
+  )
+  const discDisplays = useMemo(
+    () => discDisplaysFromSets(sets, filterTeamBuffDocuments),
+    [sets, filterTeamBuffDocuments]
+  )
   const listingOnlyReads = useMemo(() => {
-    // Fallback: if a buff exists in listing but has no matching sheet field,
-    // still show it as a generic tag row.
-    const covered = buffNamesInDocuments([
+    // Fallback: buff in listing but not covered by any filtered sheet document.
+    const covered = buffListingKeysInDocuments([
       ...kitDocuments,
       ...wengineDocuments,
       ...discDisplays.flatMap(({ pieces }) =>
@@ -141,10 +107,8 @@ function isMindscapeGatedBuff(
   buffName: string | null | undefined,
   mindscape: number
 ): boolean {
-  if (!buffName) return false
-  const match = buffName.match(/^m(\d)_/)
-  if (!match) return false
-  return parseInt(match[1], 10) > mindscape
+  const match = buffName?.match(/^m(\d)_/)
+  return !!match && parseInt(match[1], 10) > mindscape
 }
 
 function isEnemyDebuffListingRead(read: Read): boolean {
@@ -153,9 +117,54 @@ function isEnemyDebuffListingRead(read: Read): boolean {
 }
 
 function teamBuffListingKey(tag: Tag): string | null {
+  // Match listing reads and sheet fields by sheet + register name.
   const { sheet, name } = tag
-  if (!sheet || !name) return null
-  return `${sheet}:${name}`
+  return sheet && name ? `${sheet}:${name}` : null
+}
+
+function listingKeysFromTags(tags: readonly Tag[]): Set<string> {
+  return new Set(
+    tags
+      .map(teamBuffListingKey)
+      .filter((key): key is string => !!key)
+  )
+}
+
+function fieldsFromDocument(document: Document): Field[] {
+  return document.type === 'fields'
+    ? document.fields
+    : document.type === 'conditional'
+      ? (document.conditional.fields ?? [])
+      : []
+}
+
+function buffListingKeysInDocuments(documents: Document[]): Set<string> {
+  return listingKeysFromTags(
+    documents
+      .flatMap(fieldsFromDocument)
+      .filter(isTagField)
+      .map((field) => field.fieldRef)
+  )
+}
+
+function conditionalKeysFromReads(
+  calc: NonNullable<ReturnType<typeof useZzzCalcContext>>,
+  reads: Read[]
+): Set<string> {
+  return new Set(
+    reads.flatMap((read) => {
+      const conds = calc.compute(read).meta.conds as
+        | Record<string, Record<string, Record<string, Record<string, unknown>>>>
+        | undefined
+      return Object.values(conds ?? {}).flatMap((dst) =>
+        Object.values(dst ?? {}).flatMap((src) =>
+          Object.entries(src ?? {}).flatMap(([sheet, names]) =>
+            Object.keys(names ?? {}).map((name) => `${sheet}:${name}`)
+          )
+        )
+      )
+    })
+  )
 }
 
 function listTeammateTeamBuffReads(
@@ -163,20 +172,29 @@ function listTeammateTeamBuffReads(
   teammateKey: CharacterKey,
   mindscape: number
 ): Read[] {
-  // Team-buff UI discovery is driven by formula listings. A buff must be
-  // registered into `teamBuff.listing.buffs` (or be a whitelisted enemy debuff)
-  // to show up on the teammate card.
+  // A buff must be on `teamBuff.listing.buffs` (or whitelisted enemy debuff on
+  // ownBuff.listing) and belong to this teammate's src to show on the card.
   if (!calc) return []
-  const seen = new Set<string>()
+
   const reads = [
     ...calc.listFormulas(teamBuff.listing.buffs),
     ...calc.listFormulas(ownBuff.listing.buffs).filter(isEnemyDebuffListingRead),
   ]
+
+  return uniqReadsByListingKey(
+    reads.filter(
+      (read) =>
+        read.tag.src === teammateKey &&
+        // Global anomaly team buffs (e.g. Frostbite) use AnomalySection on this page.
+        read.tag.sheet !== 'anomaly' &&
+        !isMindscapeGatedBuff(read.tag.name, mindscape)
+    )
+  )
+}
+
+function uniqReadsByListingKey(reads: Read[]): Read[] {
+  const seen = new Set<string>()
   return reads.filter((read) => {
-    if (read.tag.src !== teammateKey) return false
-    // Global anomaly team buffs (e.g. Frostbite) use AnomalySection on this page.
-    if (read.tag.sheet === 'anomaly') return false
-    if (isMindscapeGatedBuff(read.tag.name, mindscape)) return false
     const key = teamBuffListingKey(read.tag)
     if (!key || seen.has(key)) return false
     seen.add(key)
@@ -190,8 +208,7 @@ function filterDocumentsForTeamBuffs(
   usedConditionalKeys: ReadonlySet<string>,
   mindscape: number
 ): Document[] {
-  const filtered: Document[] = []
-  for (const document of documents) {
+  return documents.flatMap((document) => {
     switch (document.type) {
       case 'fields': {
         const fields = filterTeamBuffFields(
@@ -199,40 +216,38 @@ function filterDocumentsForTeamBuffs(
           teamBuffListingKeys,
           mindscape
         )
-        if (fields.length) filtered.push({ ...document, fields })
-        break
+        return fields.length ? [{ ...document, fields }] : []
       }
       case 'conditional': {
         const fields = filterTeamBuffFields(
-          document.conditional.fields ?? [],
+          fieldsFromDocument(document),
           teamBuffListingKeys,
           mindscape
         )
-        const condSheet = document.conditional.metadata.sheet
-        const condKey = document.conditional.metadata.name
-        const shouldKeepEmptyConditional =
+        const { sheet: condSheet, name: condKey } = document.conditional.metadata
+        const gatesListedBuff =
           !!condSheet &&
           !!condKey &&
           usedConditionalKeys.has(`${condSheet}:${condKey}`)
 
         // Keep conditional UI if it has relevant fields, or if it gates any
         // displayed team buff (e.g. Weeping Cradle "attack" enables stacks).
-        if (fields.length || shouldKeepEmptyConditional) {
-          filtered.push({
-            ...document,
-            conditional: {
-              ...document.conditional,
-              fields: fields.length ? fields : undefined,
-            },
-          })
-        }
-        break
+        return fields.length || gatesListedBuff
+          ? [
+              {
+                ...document,
+                conditional: {
+                  ...document.conditional,
+                  fields: fields.length ? fields : undefined,
+                },
+              },
+            ]
+          : []
       }
-      case 'text':
-        break
+      default:
+        return []
     }
-  }
-  return filtered
+  })
 }
 
 function filterTeamBuffFields(
@@ -240,33 +255,45 @@ function filterTeamBuffFields(
   teamBuffListingKeys: ReadonlySet<string>,
   mindscape: number
 ): Field[] {
-  return fields.filter((field) => {
-    if (!isTagField(field)) return false
-    const key = teamBuffListingKey(field.fieldRef)
-    return (
-      !!key &&
-      teamBuffListingKeys.has(key) &&
-      !isMindscapeGatedBuff(field.fieldRef.name, mindscape)
-    )
-  })
+  return fields.filter(
+    (field) =>
+      isTagField(field) &&
+      isListedTeamBuffField(field.fieldRef, teamBuffListingKeys, mindscape)
+  )
 }
 
-function buffNamesInDocuments(documents: Document[]): Set<string> {
-  const keys = new Set<string>()
-  for (const document of documents) {
-    if (document.type === 'fields') {
-      for (const field of document.fields) {
-        if (!isTagField(field)) continue
-        const key = teamBuffListingKey(field.fieldRef)
-        if (key) keys.add(key)
-      }
-    } else if (document.type === 'conditional') {
-      for (const field of document.conditional.fields ?? []) {
-        if (!isTagField(field)) continue
-        const key = teamBuffListingKey(field.fieldRef)
-        if (key) keys.add(key)
-      }
-    }
-  }
-  return keys
+function isListedTeamBuffField(
+  fieldRef: Tag,
+  teamBuffListingKeys: ReadonlySet<string>,
+  mindscape: number
+): boolean {
+  const key = teamBuffListingKey(fieldRef)
+  return (
+    !!key &&
+    teamBuffListingKeys.has(key) &&
+    !isMindscapeGatedBuff(fieldRef.name, mindscape)
+  )
+}
+
+function discDisplaysFromSets(
+  sets: Partial<Record<DiscSetKey, number>>,
+  filterTeamBuffDocuments: (documents: Document[]) => Document[]
+): DiscDisplay[] {
+  // Disc UI is split by 2pc/4pc; include only pieces with relevant team-buff rows.
+  return Object.entries(sets).flatMap(([setKey, count]) => {
+    if (!count) return []
+    const uiSheet = discUiSheets[setKey as DiscSetKey]
+    if (!uiSheet) return []
+
+    const pieces = (['2', '4'] as const).flatMap((piece) => {
+      const minPieces = piece === '2' ? 2 : 4
+      if (count < minPieces) return []
+      const documents = filterTeamBuffDocuments(uiSheet[piece]?.documents ?? [])
+      return documents.length ? [{ piece, documents }] : []
+    })
+
+    return pieces.length
+      ? [{ setKey: setKey as DiscSetKey, pieces }]
+      : []
+  })
 }

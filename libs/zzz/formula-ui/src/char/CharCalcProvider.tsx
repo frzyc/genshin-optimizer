@@ -27,6 +27,7 @@ import type {
   ICachedCharacter,
   Team,
   TeamConditional,
+  OptFrame,
 } from '@genshin-optimizer/zzz/db'
 import { getTeamFrame0, teamCharacterKeys } from '@genshin-optimizer/zzz/db'
 import {
@@ -72,10 +73,7 @@ export function CharCalcProvider({
   children: ReactNode
 }) {
   const member0 = useCharacterAndEquipment(character, wengineId, discIds)
-  const teammate1Key = team.teammates[1]?.characterKey
-  const teammate2Key = team.teammates[2]?.characterKey
-  const teammate1Entries = useTeammateMemberEntries(teammate1Key, character.key)
-  const teammate2Entries = useTeammateMemberEntries(teammate2Key, character.key)
+  const fullTeammateEntries = useFullTeammateMemberEntries(team, character.key)
 
   const calc = useMemo(
     () =>
@@ -84,10 +82,10 @@ export function CharCalcProvider({
           character,
           team,
           member0,
-          fullTeammateEntries: [...teammate1Entries, ...teammate2Entries],
+          fullTeammateEntries,
         })
       ),
-    [member0, teammate1Entries, teammate2Entries, team, character.key]
+    [member0, fullTeammateEntries, team, character.key]
   )
   // New map per calc so formula tooltips do not reuse stale nodes after gear/opt changes.
   const formulaTextCache = useMemo(() => calc && new Map(), [calc])
@@ -116,56 +114,86 @@ function buildTeamCalculatorEntries({
   return [
     ...teamData(teamCharacterKeys(team)),
     ...member0,
+    // Teammate char + wengine + disc entries (src = teammate) for team-buff formulas.
     ...fullTeammateEntries,
+    ...enemyStatEntries(team),
+    ...frames.flatMap((frame, index) =>
+      presetFrameEntries(frame, presets[index] ?? 'preset0', character.key)
+    ),
+    ...teammateCountEntries(team, character.key),
+  ]
+}
+
+function enemyStatEntries(team: Team): TagMapNodeEntries {
+  return [
     enemy.common.lvl.add(team.enemyLvl),
     enemy.common.def.add(team.enemyDef),
     enemy.common.stun_.add(team.enemyStunMultiplier / 100),
     enemy.common.unstun_.add(1),
-    ...frames.flatMap((frame, i) => {
-      const preset = presets[i] ?? 'preset0'
-      return [
-        ...withPreset(preset, ownBuff.common.critMode.add(frame.critMode)),
-        ...frame.conditionals.flatMap(
-          ({ sheet, src, dst, condKey, condValue }) =>
-            withPreset(
-              preset,
-              conditionalEntries(sheet, src, dst)(condKey, condValue)
-            )
-        ),
-        ...frame.bonusStats
-          .filter(({ disabled }) => !disabled)
-          .flatMap(({ tag, value }) =>
-            withPreset(preset, {
-              // since bonusStats are applied to own*, needs {src:key, dst:never}
-              tag: { ...tag, src: character.key, sheet: 'agg', et: 'own' },
-              value: constant(toDecimal(value, tag.q ?? '')),
-            })
-          ),
-        ...frame.enemyStats.flatMap(({ tag, value }) =>
-          withPreset(preset, {
-            tag: { ...tag, qt: 'common', et: 'enemy', sheet: 'agg' },
-            value: constant(toDecimal(value, tag.q ?? '')),
-          })
-        ),
-      ]
-    }),
-    ...teammateCountEntries(team, character.key),
+  ]
+}
+
+function presetFrameEntries(
+  frame: OptFrame,
+  preset: (typeof presets)[number],
+  characterKey: CharacterKey
+): TagMapNodeEntries {
+  return [
+    ...withPreset(preset, ownBuff.common.critMode.add(frame.critMode)),
+    ...frame.conditionals.flatMap(({ sheet, src, dst, condKey, condValue }) =>
+      withPreset(
+        preset,
+        conditionalEntries(sheet, src, dst)(condKey, condValue)
+      )
+    ),
+    ...frame.bonusStats
+      .filter(({ disabled }) => !disabled)
+      .flatMap(({ tag, value }) =>
+        withPreset(preset, {
+          // bonusStats apply to own*; needs { src: key, dst: never }.
+          tag: { ...tag, src: characterKey, sheet: 'agg', et: 'own' },
+          value: constant(toDecimal(value, tag.q ?? '')),
+        })
+      ),
+    ...frame.enemyStats.flatMap(({ tag, value }) =>
+      withPreset(preset, {
+        tag: { ...tag, qt: 'common', et: 'enemy', sheet: 'agg' },
+        value: constant(toDecimal(value, tag.q ?? '')),
+      })
+    ),
   ]
 }
 
 function teammateCountEntries(team: Team, mainCharacterKey: CharacterKey) {
   // Non-main teammates only; main counts come from charTagMapNodeEntries in member0.
   return team.teammates
-    .filter((t) => t.characterKey !== mainCharacterKey)
-    .flatMap(({ characterKey: charKey }) => [
-      ownBuff.common.count
-        .withSpecialty(allStats.char[charKey].specialty)
-        .add(1),
-      ownBuff.common.count.withFaction(allStats.char[charKey].faction).add(1),
-      ownBuff.common.count
-        .withTag({ attribute: allStats.char[charKey].attribute })
-        .add(1),
-    ])
+    .filter(({ characterKey }) => characterKey !== mainCharacterKey)
+    .flatMap(({ characterKey }) => teammateCountEntriesForChar(characterKey))
+}
+
+function teammateCountEntriesForChar(charKey: CharacterKey) {
+  const { specialty, faction, attribute } = allStats.char[charKey]
+  return [
+    ownBuff.common.count.withSpecialty(specialty).add(1),
+    ownBuff.common.count.withFaction(faction).add(1),
+    ownBuff.common.count.withTag({ attribute }).add(1),
+  ]
+}
+
+function useFullTeammateMemberEntries(team: Team, mainCharacterKey: CharacterKey) {
+  // Optimize page teammate slots are indexed 1 and 2 in team.teammates.
+  const slot1Entries = useTeammateMemberEntries(
+    team.teammates[1]?.characterKey,
+    mainCharacterKey
+  )
+  const slot2Entries = useTeammateMemberEntries(
+    team.teammates[2]?.characterKey,
+    mainCharacterKey
+  )
+  return useMemo(
+    () => [...slot1Entries, ...slot2Entries],
+    [slot1Entries, slot2Entries]
+  )
 }
 
 function ZzzSheetUiProviders({
@@ -195,15 +223,9 @@ function useCharacterAndEquipment(
   wengineId: string | undefined,
   discIds: DiscIds
 ) {
-  const wengine = useWengine(wengineId)
-  const discs = useDiscs(discIds)
-  const wengineTagEntries = useMemo(
-    () => wengineTagMapNodeEntries(wengine),
-    [wengine]
-  )
-  const discTagEntries = useMemo(
-    () => discsToTagMapNodeEntries(Object.values(discs).filter(notEmpty)),
-    [discs]
+  const { wengineTagEntries, discTagEntries } = useEquipmentTagEntries(
+    wengineId,
+    discIds
   )
   return useMemo(
     () =>
@@ -218,21 +240,15 @@ function useCharacterAndEquipment(
   )
 }
 
-// Teammate char + wengine + disc entries for team-buff formulas (src = teammate).
 function useTeammateMemberEntries(
   teammateKey: CharacterKey | undefined,
   mainCharacterKey: CharacterKey
 ) {
+  // Load teammate build so team-buff formulas can resolve with src = teammateKey.
   const character = useCharacter(teammateKey)
-  const wengine = useWengine(character?.equippedWengine)
-  const discs = useDiscs(character?.equippedDiscs)
-  const wengineTagEntries = useMemo(
-    () => wengineTagMapNodeEntries(wengine),
-    [wengine]
-  )
-  const discTagEntries = useMemo(
-    () => discsToTagMapNodeEntries(Object.values(discs).filter(notEmpty)),
-    [discs]
+  const { wengineTagEntries, discTagEntries } = useEquipmentTagEntries(
+    character?.equippedWengine,
+    character?.equippedDiscs ?? {}
   )
   return useMemo(() => {
     if (!character || !teammateKey || teammateKey === mainCharacterKey)
@@ -249,6 +265,20 @@ function useTeammateMemberEntries(
     wengineTagEntries,
     discTagEntries,
   ])
+}
+
+function useEquipmentTagEntries(wengineId: string | undefined, discIds: DiscIds) {
+  const wengine = useWengine(wengineId)
+  const discs = useDiscs(discIds)
+  const wengineTagEntries = useMemo(
+    () => wengineTagMapNodeEntries(wengine),
+    [wengine]
+  )
+  const discTagEntries = useMemo(
+    () => discsToTagMapNodeEntries(Object.values(discs).filter(notEmpty)),
+    [discs]
+  )
+  return { wengineTagEntries, discTagEntries }
 }
 
 function memberAndEquipmentEntries(

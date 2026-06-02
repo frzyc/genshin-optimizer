@@ -5,6 +5,7 @@ import { discDefIcon, wengineAsset } from '@genshin-optimizer/zzz/assets'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
 import type { ICachedWengine } from '@genshin-optimizer/zzz/db'
 import { DiscSetName, WengineName, ZCard } from '@genshin-optimizer/zzz/ui'
+import type { TypographyProps } from '@mui/material'
 import {
   Box,
   CardContent,
@@ -14,6 +15,17 @@ import {
   Typography,
 } from '@mui/material'
 import { discUiSheets } from '../disc/sheets'
+
+type DiscPieceSection = {
+  piece: '2' | '4'
+  documents: Document[]
+}
+
+type DocumentStackProps = {
+  documents: Document[]
+  typoVariant?: TypographyProps['variant']
+  collapse?: boolean
+}
 
 /** Renders pre-filtered teammate wengine team-buff documents. */
 export function TeammateWengineSheetDisplay({
@@ -31,22 +43,11 @@ export function TeammateWengineSheetDisplay({
         title={<WengineName wKey={wengine.key} />}
         avatar={<ImgIcon src={wengineAsset(wengine.key, 'icon')} size={2} />}
       />
-      <Stack spacing={1} sx={{ px: 1, pb: 1 }}>
-        {documents.map((document, index) => (
-          <DocumentDisplay
-            key={index}
-            document={document}
-            typoVariant="body2"
-          />
-        ))}
-      </Stack>
+      <Box sx={{ px: 1, pb: 1 }}>
+        <FilteredDocumentStack documents={documents} typoVariant="body2" />
+      </Box>
     </ZCard>
   )
-}
-
-type DiscPieceSection = {
-  piece: '2' | '4'
-  documents: Document[]
 }
 
 /** Renders pre-filtered teammate disc set team-buff documents (2pc / 4pc). */
@@ -67,30 +68,45 @@ export function TeammateDiscSheetDisplay({
         avatar={<ImgIcon src={discDefIcon(setKey)} size={2} />}
       />
       <Stack divider={<Divider />}>
-        {pieces.map(({ piece, documents }) => {
+        {pieces.flatMap(({ piece, documents }) => {
           const uiSheetElement = discSheet[piece] as UISheetElement | undefined
-          if (!uiSheetElement || !documents.length) return null
-          return (
+          if (!uiSheetElement || !documents.length) return []
+          return [
             <Box key={piece}>
               <CardContent>
                 <Typography variant="subtitle1">
                   {uiSheetElement.title}
                 </Typography>
-                <Stack spacing={1}>
-                  {documents.map((document, index) => (
-                    <DocumentDisplay
-                      key={index}
-                      document={document}
-                      typoVariant="body2"
-                      collapse={piece !== '2'}
-                    />
-                  ))}
-                </Stack>
+                <FilteredDocumentStack
+                  documents={documents}
+                  typoVariant="body2"
+                  collapse={piece !== '2'}
+                />
               </CardContent>
-            </Box>
-          )
+            </Box>,
+          ]
         })}
       </Stack>
     </ZCard>
+  )
+}
+
+function FilteredDocumentStack({
+  documents,
+  typoVariant,
+  collapse,
+}: DocumentStackProps) {
+  // Documents are pre-filtered to teammate team buffs before rendering.
+  return (
+    <Stack spacing={1}>
+      {documents.map((document, index) => (
+        <DocumentDisplay
+          key={index}
+          document={document}
+          typoVariant={typoVariant}
+          collapse={collapse}
+        />
+      ))}
+    </Stack>
   )
 }
