@@ -20,6 +20,26 @@ export type DmgTag = Partial<
   Pick<Tag, 'damageType1' | 'damageType2' | 'attribute' | 'skillType'>
 >
 
+function isTeamBuffListing(
+  entry: TagMapNodeEntry,
+  team: boolean | undefined
+): boolean {
+  // `team` here is about *UI listing placement*, not calc targeting.
+  // If omitted, we infer the right listing from the entry's `et` so sheets
+  // don't have to repeat `team: true` for every `teamBuff.*` registration.
+  if (team === true) return true
+  if (team === false) return false
+  switch (entry.tag.et) {
+    case 'teamBuff':
+    case 'notOwnBuff':
+    case 'enemy':
+    case 'enemyDeBuff':
+      return true
+    default:
+      return false
+  }
+}
+
 export function register(
   sheet: Sheet,
   ...data: (TagMapNodeEntry | TagMapNodeEntries)[]
@@ -41,7 +61,7 @@ export function register(
  * @param name Unqiue name of buff
  * @param entries Buff/Buffs to register
  * @param cond Hide this buff behind this check
- * @param team Add to team formula listings if true
+ * @param team Add to team buff listings if true, own buff listings if false, or infer from entry `et` if omitted
  * @param includeOriginalEntry Set to false for buffs that are applied as additional entries into specific moves, so this buff won't get added to the character's stats
  * @returns Listing components to register the buff + the buff itself so it can be passed to `register`.
  */
@@ -49,7 +69,7 @@ export function registerBuff(
   name: string,
   entries: TagMapNodeEntry | TagMapNodeEntry[],
   cond: string | StrNode = 'infer',
-  team = false,
+  team?: boolean,
   includeOriginalEntry = true
 ): TagMapNodeEntries {
   if (!Array.isArray(entries)) entries = [entries]
@@ -58,7 +78,8 @@ export function registerBuff(
     // `namedReader` is also used as a `Tag` inside `listingItem`.
     const { sheet: _sheet, ...tag } = entry.tag
     const namedReader = reader.withTag({ ...tag, et: 'display', name }) // register name:<name>
-    const listing = (team ? teamBuff : ownBuff).listing.buffs
+    const listing = (isTeamBuffListing(entry, team) ? teamBuff : ownBuff)
+      .listing.buffs
     return [
       // Add this buff to listing listing
       listing.add(listingItem(namedReader, cond)),
@@ -77,21 +98,22 @@ export function registerBuff(
  * @param name Unqiue name of buff
  * @param entry Buff to register
  * @param cond Hide this buff behind this check
- * @param team Add to team formula listings if true
+ * @param team Add to team buff listings if true, own buff listings if false, or infer from entry `et` if omitted
  * @returns Listing components to register the buff + the buff itself so it can be passed to `register`.
  */
 export function registerBuffFormula(
   name: string,
   entry: TagMapNodeEntry,
   cond: string | StrNode = 'infer',
-  team = false
+  team?: boolean
 ): TagMapNodeEntries {
   // Remove unused tags. We cannot use `sheet:null` here because
   // `namedReader` is also used as a `Tag` inside `listingItem`.
   const { sheet: _sheet, ...tag } = entry.tag
   const namedReader = reader.withTag({ ...tag, et: 'display', name }) // register name:<name>
-  const buffListing = (team ? teamBuff : ownBuff).listing.buffs
-  const formulaListing = (team ? teamBuff : ownBuff).listing.formulas
+  const teamListing = isTeamBuffListing(entry, team)
+  const buffListing = (teamListing ? teamBuff : ownBuff).listing.buffs
+  const formulaListing = (teamListing ? teamBuff : ownBuff).listing.formulas
   return [
     // Add this buff to listing listing
     buffListing.add(listingItem(namedReader, cond)),
