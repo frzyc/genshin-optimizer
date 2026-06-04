@@ -1,6 +1,6 @@
 import type { Database } from '@genshin-optimizer/common/database'
-import type { GenderKey } from '@genshin-optimizer/gi/consts'
-import { allGenderKeys } from '@genshin-optimizer/gi/consts'
+import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
+import { allCharacterKeys, allGenderKeys } from '@genshin-optimizer/gi/consts'
 import type { IGOOD } from '@genshin-optimizer/gi/good'
 import { z } from 'zod'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
@@ -16,6 +16,12 @@ const createDbMetaSchema = (defaultName: string) =>
     gender: z
       .enum(allGenderKeys as unknown as [GenderKey, ...GenderKey[]])
       .catch('F'),
+    optCharKey: z
+      .enum(allCharacterKeys as unknown as [CharacterKey, ...CharacterKey[]])
+      .optional()
+      .catch(undefined),
+    optTeamCharId: z.string().optional().catch(undefined),
+    optTeamId: z.string().optional().catch(undefined),
   })
 
 // Type derived from schema

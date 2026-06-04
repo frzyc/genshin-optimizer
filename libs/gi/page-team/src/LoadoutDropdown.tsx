@@ -26,13 +26,23 @@ export function LoadoutDropdown({
   onChangeTeamCharId,
   dropdownBtnProps = {},
   label = false,
+  i18nNs = 'loadout',
 }: {
   teamCharId: string
   onChangeTeamCharId: (teamCharId: string) => void
   dropdownBtnProps?: Omit<DropdownButtonProps, 'children' | 'title'>
   label?: boolean
+  /** Use `playstyle` on the optimize context bar (user-facing copy). */
+  i18nNs?: 'loadout' | 'playstyle'
 }) {
-  const { t } = useTranslation('loadout')
+  const { t } = useTranslation(i18nNs)
+  const createModalKey =
+    i18nNs === 'playstyle' ? 'createModal' : 'loDropdown.createModal'
+  const createKey = i18nNs === 'playstyle' ? 'create' : 'loDropdown.create'
+  const labelKey = i18nNs === 'playstyle' ? 'dropdownLabel' : 'loDropdown.label'
+  const buildsKey = i18nNs === 'playstyle' ? undefined : 'loDropdown.builds'
+  const tcsKey = i18nNs === 'playstyle' ? undefined : 'loDropdown.tcs'
+  const multiKey = i18nNs === 'playstyle' ? undefined : 'loDropdown.multi'
   const database = useDatabase()
   const { key: characterKey, name } = database.teamChars.get(teamCharId)!
   const { gender } = useDBMeta()
@@ -64,7 +74,7 @@ export function LoadoutDropdown({
         <CardThemed>
           <CardHeader
             title={
-              <Trans t={t} i18nKey={'loDropdown.createModal.title'}>
+              <Trans t={t} i18nKey={`${createModalKey}.title`}>
                 Create a new Loadout For{' '}
                 <CharacterName characterKey={characterKey} gender={gender} />
               </Trans>
@@ -76,14 +86,14 @@ export function LoadoutDropdown({
           >
             <TextField
               fullWidth
-              label={t('loDropdown.createModal.label')}
-              placeholder={t('loDropdown.createModal.placeholder')}
+              label={t(`${createModalKey}.label`)}
+              placeholder={t(`${createModalKey}.placeholder`)}
               value={newName}
               onChange={(e) => setNewName(e.target.value)}
             />
             <TextField
               fullWidth
-              label={t('loDropdown.createModal.desc')}
+              label={t(`${createModalKey}.desc`)}
               value={newDesc}
               onChange={(e) => setNewDesc(e.target.value)}
               multiline
@@ -91,7 +101,7 @@ export function LoadoutDropdown({
             />
             <Box sx={{ display: 'flex', gap: 2 }}>
               <Button color="error" fullWidth onClick={onHide}>
-                {t('loDropdown.createModal.cancel')}
+                {t(`${createModalKey}.cancel`)}
               </Button>
               <Button
                 color="success"
@@ -99,7 +109,7 @@ export function LoadoutDropdown({
                 onClick={newLoadout}
                 disabled={!newName}
               >
-                {t('loDropdown.createModal.confirm')}
+                {t(`${createModalKey}.confirm`)}
               </Button>
             </Box>
           </CardContent>
@@ -120,7 +130,7 @@ export function LoadoutDropdown({
           >
             {label ? (
               <span>
-                {t('loDropdown.label')}
+                {t(labelKey)}
                 <strong>{name}</strong>
               </span>
             ) : (
@@ -130,7 +140,7 @@ export function LoadoutDropdown({
         }
         {...dropdownBtnProps}
       >
-        <MenuItem onClick={() => onShow()}>{t('loDropdown.create')}</MenuItem>
+        <MenuItem onClick={() => onShow()}>{t(createKey)}</MenuItem>
         {teamCharIds.map((tcId) => {
           const { name, buildIds, buildTcIds, customMultiTargets } =
             database.teamChars.get(tcId)!
@@ -142,20 +152,26 @@ export function LoadoutDropdown({
               sx={{ display: 'flex', gap: 1 }}
             >
               <span>{name}</span>
-              <SqBadge
-                color={buildIds.length ? 'primary' : 'secondary'}
-                sx={{ marginLeft: 'auto' }}
-              >
-                {t('loDropdown.builds', { count: buildIds.length })}
-              </SqBadge>
-              <SqBadge color={buildTcIds.length ? 'primary' : 'secondary'}>
-                {t('loDropdown.tcs', { count: buildTcIds.length })}
-              </SqBadge>
-              <SqBadge
-                color={customMultiTargets.length ? 'success' : 'secondary'}
-              >
-                {t('loDropdown.multi', { count: customMultiTargets.length })}
-              </SqBadge>
+              {buildsKey && (
+                <SqBadge
+                  color={buildIds.length ? 'primary' : 'secondary'}
+                  sx={{ marginLeft: 'auto' }}
+                >
+                  {t(buildsKey, { count: buildIds.length })}
+                </SqBadge>
+              )}
+              {tcsKey && (
+                <SqBadge color={buildTcIds.length ? 'primary' : 'secondary'}>
+                  {t(tcsKey, { count: buildTcIds.length })}
+                </SqBadge>
+              )}
+              {multiKey && (
+                <SqBadge
+                  color={customMultiTargets.length ? 'success' : 'secondary'}
+                >
+                  {t(multiKey, { count: customMultiTargets.length })}
+                </SqBadge>
+              )}
             </MenuItem>
           )
         })}

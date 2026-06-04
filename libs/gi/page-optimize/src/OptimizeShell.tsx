@@ -1,8 +1,6 @@
-import { CardThemed, useTitle } from '@genshin-optimizer/common/ui'
-import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common/util'
+import { useTitle } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-import { allCharacterKeys } from '@genshin-optimizer/gi/consts'
-import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
+import { allCharacterKeys, charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
 import type { GeneratedBuild } from '@genshin-optimizer/gi/db'
 import type { CharacterContextObj } from '@genshin-optimizer/gi/db-ui'
 import {
@@ -16,10 +14,7 @@ import {
   useTeam,
   useTeamChar,
 } from '@genshin-optimizer/gi/db-ui'
-import { getCharEle } from '@genshin-optimizer/gi/stats'
 import {
-  ensureOptimizeContext,
-  getOptimizeCanonicalPath,
   type ChartData,
   DataContext,
   FormulaDataWrapper,
@@ -28,8 +23,16 @@ import {
   OptTargetWrapper,
   SillyContext,
   type dataContextObj,
+  ensureOptimizeContext,
+  getExperimentTabPath,
+  isTeamCharTabSegment,
   useTeamDataNoContext,
 } from '@genshin-optimizer/gi/ui'
+import {
+  BuildTcContext,
+  type BuildTcContexObj,
+  type SetBuildTcAction,
+} from '@genshin-optimizer/gi/page-team/experiment-ui'
 import { Box, Skeleton } from '@mui/material'
 import {
   Suspense,
@@ -48,66 +51,28 @@ import {
   useParams,
   useLocation,
 } from 'react-router-dom'
-import type { BuildTcContexObj, SetBuildTcAction } from './BuildTcContext'
-import { BuildTcContext } from './BuildTcContext'
-import Content from './CharacterDisplay/Content'
-import TeamCharacterSelector from './TeamCharacterSelector'
-import TeamSetting from './TeamSetting'
-import { isTeamCharTabSegment } from './loadoutTabPath'
-
-export default function PageTeam() {
-  const database = useDatabase()
-  const navigate = useNavigate()
-  const { teamId } = useParams<{ teamId?: string }>()
-  const team = useTeam(teamId ?? '')
-
-  // An edit is triggered whenever a team gets opened even if no edits are done
-  useEffect(() => {
-    if (!teamId) return
-    if (!database.teams.get(teamId)) return
-    database.teams.set(teamId, { lastEdit: Date.now() })
-  }, [teamId, database.teams])
-
-  useEffect(() => {
-    if (!teamId || team) return
-    const meta = database.dbMeta.get()
-    const characterKey =
-      meta.optCharKey ?? database.chars.keys[0] ?? undefined
-    if (!characterKey) {
-      navigate('/experiment', { replace: true })
-      return
-    }
-    const ctx = ensureOptimizeContext(database, {
-      characterKey,
-      teamCharId: meta.optTeamCharId,
-      teamId: meta.optTeamId,
-    })
-    navigate(getOptimizeCanonicalPath(ctx), { replace: true })
-  }, [teamId, team, database, navigate])
-
-  if (!teamId || !team) {
-    return (
-      <Skeleton variant="rectangular" width="100%" height={1000} />
-    )
-  }
-
-  return (
-    <Box display="flex" flexDirection="column" gap={1}>
-      <Suspense
-        fallback={<Skeleton variant="rectangular" width="100%" height={1000} />}
-      >
-        {teamId && <Page teamId={teamId} />}
-      </Suspense>
-    </Box>
-  )
-}
+import OptimizeContent from './OptimizeContent'
 
 const fallback = <Skeleton variant="rectangular" width="100%" height={1000} />
-// Stored per teamCharId
 const chartDataAll: Record<string, ChartData> = {}
 const graphBuildAll: Record<string, GeneratedBuild[]> = {}
 
-function Page({ teamId }: { teamId: string }) {
+export function OptimizeShell() {
+  const { teamId = '' } = useParams<{ teamId: string }>()
+  const team = useTeam(teamId)
+
+  if (!teamId || !team) {
+    return fallback
+  }
+
+  return (
+    <Suspense fallback={fallback}>
+      <OptimizePage teamId={teamId} />
+    </Suspense>
+  )
+}
+
+function OptimizePage({ teamId }: { teamId: string }) {
   const database = useDatabase()
   const navigate = useNavigate()
   const location = useLocation()
@@ -120,17 +85,18 @@ function Page({ teamId }: { teamId: string }) {
 
   const {
     params: { characterKey: characterKeyFromMatch },
-  } = useMatch({ path: '/teams/:teamId/:characterKey', end: false }) ?? {
+  } = useMatch({ path: '/experiment/:teamId/:characterKey', end: false }) ?? {
     params: {},
   }
   const {
     params: { tab: tabFromMatch },
-  } = useMatch({ path: '/teams/:teamId/:characterKey/:tab', end: true }) ?? {
+  } = useMatch({ path: '/experiment/:teamId/:characterKey/:tab', end: true }) ?? {
     params: {},
   }
 
   const segmentCharKey = pathSegments[2]
   const segmentTab = pathSegments[3]
+
   const characterKeyRaw = ((): CharacterKey | undefined => {
     const fromMatch = characterKeyFromMatch as CharacterKey | undefined
     if (fromMatch && allCharacterKeys.includes(fromMatch)) return fromMatch
@@ -146,16 +112,9 @@ function Page({ teamId }: { teamId: string }) {
   const tab = ((): string | undefined => {
     if (tabFromMatch && isTeamCharTabSegment(tabFromMatch)) return tabFromMatch
     if (segmentTab && isTeamCharTabSegment(segmentTab)) return segmentTab
-    if (
-      characterKeyRaw &&
-      location.pathname.endsWith(`/${characterKeyRaw}/optimize`)
-    ) {
-      return 'optimize'
-    }
     return undefined
   })()
 
-  // validate characterKey
   const loadoutDatum = useMemo(() => {
     if (!characterKeyRaw) return undefined
     return loadoutData.find(
@@ -168,20 +127,16 @@ function Page({ teamId }: { teamId: string }) {
   useEffect(() => {
     window.scrollTo({ top: 0 })
   }, [])
+
   useEffect(() => {
     if (loadoutDatum || !characterKeyRaw) return
-    if (tab === 'optimize') {
-      ensureOptimizeContext(database, {
-        characterKey: characterKeyRaw,
-        teamId,
-        teamCharId: database.dbMeta.get().optTeamCharId,
-      })
-      return
-    }
-    navigate(`/teams/${teamId}`, { replace: true })
-  }, [loadoutDatum, characterKeyRaw, tab, teamId, database, navigate])
+    ensureOptimizeContext(database, {
+      characterKey: characterKeyRaw,
+      teamId,
+      teamCharId: database.dbMeta.get().optTeamCharId,
+    })
+  }, [loadoutDatum, characterKeyRaw, teamId, database])
 
-  // Recover from malformed URLs like /teams/:teamId/talent (missing characterKey).
   useEffect(() => {
     if (characterKeyRaw || !segmentTab || !isTeamCharTabSegment(segmentTab)) {
       return
@@ -193,29 +148,21 @@ function Page({ teamId }: { teamId: string }) {
       : undefined
     const ck = meta.optCharKey ?? slotCharKey
     if (!ck) {
-      navigate(`/teams/${teamId}`, { replace: true })
+      navigate('/experiment', { replace: true })
       return
     }
-    navigate(`/teams/${teamId}/${ck}/${segmentTab}`, { replace: true })
-  }, [
-    characterKeyRaw,
-    segmentTab,
-    teamId,
-    database,
-    navigate,
-    loadoutData,
-  ])
+    navigate(getExperimentTabPath(teamId, ck, segmentTab), { replace: true })
+  }, [characterKeyRaw, segmentTab, teamId, database, navigate, loadoutData])
 
   const teamCharId = loadoutDatum?.teamCharId
   const characterKey = database.teamChars.get(teamCharId)?.key
-
   const teamChar = useTeamChar(teamCharId ?? '')
 
   const { t } = useTranslation([
     'sillyWisher_charNames',
     'charNames_gen',
     'page_character',
-    'page_team',
+    'ui',
   ])
 
   useTitle(
@@ -226,28 +173,18 @@ function Page({ teamId }: { teamId: string }) {
               silly ? 'sillyWisher_charNames' : 'charNames_gen'
             }:${charKeyToLocGenderedCharKey(characterKey, gender)}`
           )
-        : t('page_team:teamSettings.tab.team')
-      const tabName = tab
-        ? t(`page_character:tabs.${tab}`)
-        : characterKey
-          ? t('page_character:tabs.setting')
-          : tab
+        : t('ui:tabs.optimize')
+      const tabName = tab ? t(`page_character:tabs.${tab}`) : undefined
       return tabName
-        ? `${team.name} - ${charName} - ${tabName}`
-        : `${team.name} - ${charName}`
-    }, [t, team.name, silly, characterKey, gender, tab])
+        ? `${t('ui:tabs.optimize')} — ${charName} — ${tabName}`
+        : `${t('ui:tabs.optimize')} — ${charName}`
+    }, [t, silly, characterKey, gender, tab])
   )
 
   const teamCharacterContextValue: TeamCharacterContextObj | undefined =
     useMemo(() => {
       if (!teamCharId || !teamChar || !loadoutDatum) return undefined
-      return {
-        teamId,
-        team,
-        teamCharId,
-        teamChar,
-        loadoutDatum,
-      }
+      return { teamId, team, teamCharId, teamChar, loadoutDatum }
     }, [teamId, team, teamCharId, teamChar, loadoutDatum])
 
   const teamData = useTeamDataNoContext(teamId, teamCharId ?? '')
@@ -256,65 +193,25 @@ function Page({ teamId }: { teamId: string }) {
 
   const dataContextValue: dataContextObj | undefined = useMemo(() => {
     if (!teamData || !charUIData) return undefined
-    return {
-      data: charUIData,
-      teamData,
-      compareData: undefined,
-    }
+    return { data: charUIData, teamData, compareData: undefined }
   }, [charUIData, teamData])
 
-  const characterContent =
-    teamCharacterContextValue ? (
-      dataContextValue ? (
-        <TeamCharacterContext.Provider value={teamCharacterContextValue}>
-          <DataContext.Provider value={dataContextValue}>
-            <Box
-              sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: 1,
-                p: 1,
-              }}
-            >
-              <InnerContent tab={tab} />
-            </Box>
-          </DataContext.Provider>
-        </TeamCharacterContext.Provider>
-      ) : (
-        fallback
-      )
-    ) : (
-      <TeamSetting teamId={teamId} teamData={teamData} />
-    )
+  if (!teamCharacterContextValue || !dataContextValue) {
+    return fallback
+  }
 
   return (
-    <Box sx={{ display: 'flex', gap: 1, flexDirection: 'column' }}>
-      <CardThemed>
-        <TeamCharacterSelector
-          teamId={teamId}
-          characterKey={characterKey}
-          tab={tab}
-        />
-        <Box
-          sx={(theme) => {
-            const elementKey = characterKey && getCharEle(characterKey)
-            if (!elementKey) return {}
-            const hex = theme.palette[elementKey].main as string
-            const color = hexToColor(hex)
-            if (!color) return {}
-            const rgba = colorToRgbaString(color, 0.1)
-            return {
-              background: `linear-gradient(to bottom, ${rgba} 0%, rgba(0,0,0,0)) 25%`,
-            }
-          }}
-        >
-          {characterContent}
-        </Box>
-      </CardThemed>
+    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1, p: 1 }}>
+      <TeamCharacterContext.Provider value={teamCharacterContextValue}>
+        <DataContext.Provider value={dataContextValue}>
+          <OptimizeInnerContent tab={tab} />
+        </DataContext.Provider>
+      </TeamCharacterContext.Provider>
     </Box>
   )
 }
-function InnerContent({ tab }: { tab?: string }) {
+
+function OptimizeInnerContent({ tab }: { tab?: string }) {
   const database = useDatabase()
   const {
     teamCharId,
@@ -323,10 +220,7 @@ function InnerContent({ tab }: { tab?: string }) {
   } = useContext(TeamCharacterContext)
   const character = useCharacter(characterKey as CharacterKey)
   const CharacterContextValue: CharacterContextObj | undefined = useMemo(
-    () =>
-      character && {
-        character,
-      },
+    () => character && { character },
     [character]
   )
 
@@ -339,10 +233,10 @@ function InnerContent({ tab }: { tab?: string }) {
   useEffect(() => {
     setChartDataState(chartDataAll[teamCharId])
     setGraphBuildState(graphBuildAll[teamCharId])
-  }, [teamCharId, setChartDataState, setGraphBuildState])
+  }, [teamCharId])
 
-  const graphContextValue: GraphContextObj | undefined = useMemo(() => {
-    return {
+  const graphContextValue: GraphContextObj | undefined = useMemo(
+    () => ({
       chartData,
       setChartData: (data) => {
         if (data) chartDataAll[teamCharId] = data
@@ -353,14 +247,10 @@ function InnerContent({ tab }: { tab?: string }) {
         if (data) graphBuildAll[teamCharId] = data
         setGraphBuildState(data)
       },
-    }
-  }, [
-    teamCharId,
-    chartData,
-    graphBuilds,
-    setChartDataState,
-    setGraphBuildState,
-  ])
+    }),
+    [teamCharId, chartData, graphBuilds]
+  )
+
   const buildTc = useBuildTc(loadoutDatum.buildTcId)!
   const setBuildTc = useCallback(
     (data: SetBuildTcAction) => {
@@ -376,7 +266,9 @@ function InnerContent({ tab }: { tab?: string }) {
       }) as BuildTcContexObj,
     [buildTc, loadoutDatum.buildType, setBuildTc]
   )
+
   if (!CharacterContextValue) return fallback
+
   return (
     <CharacterContext.Provider value={CharacterContextValue}>
       <BuildTcContext.Provider value={buildTCContextObj}>
@@ -389,7 +281,7 @@ function InnerContent({ tab }: { tab?: string }) {
                     path="*"
                     index
                     element={
-                      <Content
+                      <OptimizeContent
                         key={`${characterKey}${loadoutDatum.teamCharId}${loadoutDatum.buildType === 'tc' ? loadoutDatum.buildTcId : loadoutDatum.buildId}`}
                         tab={tab}
                       />

@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig.lib.json",
+  "compilerOptions": {
+    "outDir": "../../../dist/out-tsc"
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
+}

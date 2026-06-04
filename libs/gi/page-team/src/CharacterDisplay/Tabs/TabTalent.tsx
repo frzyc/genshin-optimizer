@@ -40,6 +40,7 @@ import {
 import type { ReactNode } from 'react'
 import { useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useOptimizeCalcBar } from '../OptimizeChrome/OptimizeCalcBarContext'
 import { BuildTcContext } from '../../BuildTcContext'
 
 const talentSpacing = {
@@ -80,6 +81,7 @@ export default function CharacterTalentPane() {
 
   const theme = useTheme()
   const grlg = useMediaQuery(theme.breakpoints.up('lg'))
+  const calcBar = useOptimizeCalcBar()
   const constellationCards = useMemo(
     () =>
       range(1, maxConstellationCount).map((i) => (
@@ -109,21 +111,23 @@ export default function CharacterTalentPane() {
 
   return (
     <>
-      <CardThemed bgt="light">
-        <CardContent>
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'flex-end',
-              gap: 1,
-              flexWrap: 'wrap',
-            }}
-          >
-            <HitModeToggle size="small" />
-            <ReactionToggle size="small" />
-          </Box>
-        </CardContent>
-      </CardThemed>
+      {!calcBar && (
+        <CardThemed bgt="light">
+          <CardContent>
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'flex-end',
+                gap: 1,
+                flexWrap: 'wrap',
+              }}
+            >
+              <HitModeToggle size="small" />
+              <ReactionToggle size="small" />
+            </Box>
+          </CardContent>
+        </CardThemed>
+      )}
 
       <ReactionDisplay />
       <Grid container spacing={1}>

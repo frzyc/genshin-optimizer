@@ -39,6 +39,7 @@ import useCompareData from '../../../useCompareData'
 import BonusStatsModal from '../../BonusStatsModal'
 import CompareBtn from '../../CompareBtn'
 import { CustomMultiTargetModal } from '../../CustomMultiTarget/CustomMultiTargetModal'
+import { useOptimizeCalcBar } from '../../OptimizeChrome/OptimizeCalcBarContext'
 import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTargetSelector'
 import StatFilterCard from '../TabOptimize/Components/StatFilterCard'
 import { ArtifactMainStatAndSetEditor } from './ArtifactMainStatAndSetEditor'
@@ -49,6 +50,7 @@ import ScalesWith from './ScalesWith'
 import { WeaponEditorCard } from './WeaponEditorCard'
 export default function TabTheorycraft() {
   const { t } = useTranslation('page_character')
+  const calcBar = useOptimizeCalcBar()
   const database = useDatabase()
   const { gender } = useDBMeta()
   const {
@@ -263,8 +265,8 @@ export default function TabTheorycraft() {
         <Box sx={{ display: 'flex', gap: 1, p: 1, flexWrap: 'wrap' }}>
           <KQMSButton action={kqms} disabled={solving} />
           <GcsimButton disabled={solving} />
-          <HitModeToggle size="small" />
-          <ReactionToggle size="small" />
+          {!calcBar && <HitModeToggle size="small" />}
+          {!calcBar && <ReactionToggle size="small" />}
           <CompareBtn buttonGroupProps={{ sx: { marginLeft: 'auto' } }} />
         </Box>
       </CardThemed>

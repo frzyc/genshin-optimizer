@@ -12,6 +12,7 @@ import GroupsIcon from '@mui/icons-material/Groups'
 import MenuIcon from '@mui/icons-material/Menu'
 import PeopleIcon from '@mui/icons-material/People'
 import ScannerIcon from '@mui/icons-material/Scanner'
+import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import SettingsIcon from '@mui/icons-material/Settings'
 import {
   AppBar,
@@ -33,7 +34,7 @@ import {
 import type { ReactElement, ReactNode } from 'react'
 import { Suspense, useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Link as RouterLink, useMatch } from 'react-router-dom'
+import { Link as RouterLink, useMatch, useLocation } from 'react-router-dom'
 import go_icon from './go_icon.png'
 import silly_icon from './silly_icon.png'
 type ITab = {
@@ -76,6 +77,12 @@ const teams: ITab = {
   to: '/teams',
   value: 'teams',
   textSuffix: <TeamChip key="charAdd" />,
+}
+const optimize: ITab = {
+  i18Key: 'tabs.optimize',
+  icon: <TrendingUpIcon />,
+  to: '/experiment',
+  value: 'optimize',
 }
 const tools: ITab = {
   i18Key: 'tabs.tools',
@@ -137,6 +144,7 @@ const maincontent = [
   artifacts,
   weapons,
   characters,
+  optimize,
   teams,
   archive,
   tools,
@@ -147,12 +155,16 @@ const maincontent = [
 function HeaderContent({ anchor }: { anchor: string }) {
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('md'))
+  const location = useLocation()
 
   const {
-    params: { currentTab },
+    params: { currentTab: currentTabRaw },
   } = useMatch({ path: '/:currentTab', end: false }) ?? {
     params: { currentTab: '' },
   }
+  const currentTab = location.pathname.startsWith('/experiment')
+    ? 'optimize'
+    : (currentTabRaw ?? '')
   if (isMobile)
     return <MobileHeader anchor={anchor} currentTab={currentTab ?? ''} />
   return <DesktopHeader anchor={anchor} currentTab={currentTab ?? ''} />
@@ -256,6 +268,7 @@ const mobileContent = [
   artifacts,
   weapons,
   characters,
+  optimize,
   teams,
   archive,
   tools,

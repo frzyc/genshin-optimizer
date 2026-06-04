@@ -1,9 +1,6 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
   BootstrapTooltip,
-  CardThemed,
-  ModalWrapper,
-  TextFieldLazy,
 } from '@genshin-optimizer/common/ui'
 import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
@@ -11,16 +8,11 @@ import { useDBMeta, useDatabase, useTeam } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle } from '@genshin-optimizer/gi/stats'
 import { CharIconSide, CharacterName, TeamIcon } from '@genshin-optimizer/gi/ui'
 import BorderColorIcon from '@mui/icons-material/BorderColor'
-import CloseIcon from '@mui/icons-material/Close'
 import GroupsIcon from '@mui/icons-material/Groups'
 import PersonIcon from '@mui/icons-material/Person'
 import {
   Box,
   Button,
-  CardContent,
-  CardHeader,
-  Divider,
-  IconButton,
   Tab,
   Tabs,
   Typography,
@@ -28,6 +20,7 @@ import {
 } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
+import { TeamEditorModal } from './TeamEditorModal'
 export default function TeamCharacterSelector({
   teamId,
   characterKey,
@@ -220,58 +213,5 @@ export default function TeamCharacterSelector({
         })}
       </Tabs>
     </Box>
-  )
-}
-function TeamEditorModal({
-  teamId,
-  show,
-  onClose,
-}: {
-  teamId: string
-  show: boolean
-  onClose: () => void
-}) {
-  const { t } = useTranslation('page_team')
-  const database = useDatabase()
-  const team = useTeam(teamId)!
-  const handleName = (teamName: string): void => {
-    database.teams.set(teamId, { name: teamName })
-  }
-  const handleDesc = (teamDesc: string): void => {
-    database.teams.set(teamId, { description: teamDesc })
-  }
-  return (
-    <ModalWrapper open={show} onClose={onClose}>
-      <CardThemed>
-        <CardHeader
-          title={t('team.editNameDesc')}
-          avatar={<TeamIcon />}
-          titleTypographyProps={{ variant: 'h6' }}
-          action={
-            <IconButton onClick={onClose}>
-              <CloseIcon />
-            </IconButton>
-          }
-        />
-        <Divider />
-        <CardContent>
-          <Box display="flex" flexDirection="column" gap={2} sx={{ mt: 2 }}>
-            <TextFieldLazy
-              label={t('team.name')}
-              value={team.name}
-              onChange={(teamName) => handleName(teamName)}
-              autoFocus
-            />
-            <TextFieldLazy
-              label={t('team.desc')}
-              value={team.description}
-              onChange={(teamDesc) => handleDesc(teamDesc)}
-              multiline
-              minRows={4}
-            />
-          </Box>
-        </CardContent>
-      </CardThemed>
-    </ModalWrapper>
   )
 }

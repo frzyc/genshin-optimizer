@@ -1,0 +1,21 @@
+{
+  "contextBar": {
+    "team": "Team",
+    "teamBuffs": "Team buffs",
+    "target": "Target",
+    "build": "Build",
+    "selectTarget": "Select target"
+  },
+  "teamRow": {
+    "onField": "On-field",
+    "addTeammate": "Add teammate",
+    "switchTeam": "Select team",
+    "editTeam": "Edit team",
+    "settings": "Team settings",
+    "settingsTitle": "Team settings"
+  },
+  "targetHero": {
+    "title": "Optimization target",
+    "unset": "Select an Optimization target"
+  }
+}

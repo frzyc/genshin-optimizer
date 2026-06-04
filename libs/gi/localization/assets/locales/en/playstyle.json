@@ -1,0 +1,13 @@
+{
+  "label": "Playstyle",
+  "create": "Create playstyle",
+  "createModal": {
+    "title": "Create a new playstyle for <2/>",
+    "label": "Playstyle name",
+    "placeholder": "Playstyle name",
+    "desc": "Description",
+    "cancel": "Cancel",
+    "confirm": "Confirm"
+  },
+  "dropdownLabel": "Playstyle: "
+}

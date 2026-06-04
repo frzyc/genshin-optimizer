@@ -11,6 +11,7 @@ import {
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Box, Grid, Stack } from '@mui/material'
 import { useContext, useMemo } from 'react'
+import { useOptimizeCalcBar } from '../../OptimizeChrome/OptimizeCalcBarContext'
 import CharacterProfileCard from '../../../CharProfileCard'
 import useCompareData from '../../../useCompareData'
 import BonusStatsModal from '../../BonusStatsModal'
@@ -20,6 +21,7 @@ import EquipmentSection from './EquipmentSection'
 
 export default function TabOverview() {
   const [scrollRef, onScroll] = useScrollRef()
+  const calcBar = useOptimizeCalcBar()
 
   const data = useContext(DataContext)
   const compareData = useCompareData()
@@ -64,8 +66,8 @@ export default function TabOverview() {
                   flexWrap: 'wrap',
                 }}
               >
-                <HitModeToggle size="small" />
-                <ReactionToggle size="small" />
+                {!calcBar && <HitModeToggle size="small" />}
+                {!calcBar && <ReactionToggle size="small" />}
                 <CompareBtn buttonGroupProps={{ sx: { marginLeft: 'auto' } }} />
               </Box>
               <DataContext.Provider value={dataContextObj}>

@@ -49,6 +49,7 @@ const PageCharacters = lazy(
 )
 const PageTeams = lazy(() => import('@genshin-optimizer/gi/page-teams'))
 const PageTeam = lazy(() => import('@genshin-optimizer/gi/page-team'))
+const PageOptimize = lazy(() => import('@genshin-optimizer/gi/page-optimize'))
 
 function App() {
   const dbIndex = parseInt(localStorage.getItem('dbIndex') || '1')
@@ -156,6 +157,7 @@ function Content() {
               <Route path="/artifacts" element={<PageArtifacts />} />
               <Route path="/weapons" element={<PageWeapons />} />
               <Route path="/characters/*" element={<PageCharacters />} />
+              <Route path="/experiment/*" element={<PageOptimize />} />
               <Route path="/teams/*">
                 <Route index element={<PageTeams />} />
                 <Route path=":teamId/*" element={<PageTeam />} />
