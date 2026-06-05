@@ -201,7 +201,7 @@ function OptimizePage({ teamId }: { teamId: string }) {
   }
 
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1, p: 1 }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
       <TeamCharacterContext.Provider value={teamCharacterContextValue}>
         <DataContext.Provider value={dataContextValue}>
           <OptimizeInnerContent tab={tab} />

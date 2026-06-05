@@ -1,8 +1,8 @@
 import { useDataManagerKeys } from '@genshin-optimizer/common/database-ui'
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { BootstrapTooltip, CardThemed } from '@genshin-optimizer/common/ui'
+import { BootstrapTooltip } from '@genshin-optimizer/common/ui'
 import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common/util'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
@@ -17,6 +17,7 @@ import {
   DataContext,
   type OptimizeFlowKind,
   SillyContext,
+  TeamIcon,
   ensureOptimizeContext,
   getFlowCharTabPath,
   iconAsset,
@@ -24,21 +25,15 @@ import {
 import AddIcon from '@mui/icons-material/Add'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import SettingsIcon from '@mui/icons-material/Settings'
-import {
-  Box,
-  Button,
-  CardContent,
-  IconButton,
-  Typography,
-  useTheme,
-} from '@mui/material'
+import { Box, Button, IconButton, Typography, useTheme } from '@mui/material'
 import { Suspense, useContext, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { TeamSettingsModal } from '../../TeamSettingsModal'
 import { TeamBuffsPanel } from './TeamBuffsPanel'
+import { teamSlotGradientSx } from './optimizeChromeTheme'
 
-const TEAMMATE_SIZE = 52
+const TEAMMATE_SIZE = 76
 
 export function CompactTeamRow({
   teamBuffsOpen,
@@ -71,6 +66,23 @@ export function CompactTeamRow({
         return editB - editA
       }),
     [teamKeys, database.teams]
+  )
+
+  const elementArray: Array<ElementKey | undefined> = useMemo(
+    () =>
+      loadoutData.map((loadoutDatum) => {
+        if (!loadoutDatum?.teamCharId) return undefined
+        const teamChar = database.teamChars.get(loadoutDatum.teamCharId)
+        if (!teamChar) return undefined
+        return getCharEle(teamChar.key)
+      }),
+    [loadoutData, database.teamChars]
+  )
+
+  const activeSlotIndex = loadoutData.findIndex(
+    (loadoutDatum) =>
+      loadoutDatum?.teamCharId &&
+      database.teamChars.get(loadoutDatum.teamCharId)?.key === characterKey
   )
 
   const onTeamSwitch = (newTeamId: string) => {
@@ -115,6 +127,10 @@ export function CompactTeamRow({
     setCharSelectIndex(undefined)
   }
 
+  const teamBuffHighlight = teamBuffsOpen
+    ? colorToRgbaString(hexToColor(theme.palette.primary.main)!, 0.12)
+    : undefined
+
   return (
     <>
       <TeamSettingsModal
@@ -133,108 +149,111 @@ export function CompactTeamRow({
           loadoutData={loadoutData}
         />
       </Suspense>
-      <CardThemed bgt="light">
-        <CardContent
+      <Box sx={teamSlotGradientSx(elementArray, activeSlotIndex)}>
+        <Box
           sx={{
             display: 'flex',
-            flexDirection: 'column',
-            gap: 1.5,
-            py: 1.5,
-            '&:last-child': { pb: 1.5 },
+            flexWrap: 'wrap',
+            gap: 1,
+            alignItems: 'stretch',
+            minHeight: TEAMMATE_SIZE + 12,
+            px: 1,
+            py: 0.5,
           }}
         >
           <Box
             sx={{
               display: 'flex',
-              flexWrap: 'wrap',
-              gap: 1,
-              alignItems: 'center',
+              alignItems: 'stretch',
+              flex: '1 1 200px',
+              minWidth: 0,
+              alignSelf: 'center',
             }}
           >
-            <Box
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 0.5,
-                flex: '0 0 auto',
-              }}
-            >
-              <BootstrapTooltip title={t('contextBar.teamBuffs')}>
-                <Button
-                  variant="outlined"
-                  color="inherit"
-                  onClick={onToggleTeamBuffs}
-                  endIcon={
-                    <ExpandMoreIcon
-                      sx={{
-                        transform: teamBuffsOpen ? 'rotate(180deg)' : undefined,
-                        transition: 'transform 0.2s ease',
-                      }}
-                    />
-                  }
-                  sx={{
-                    textTransform: 'none',
-                    fontWeight: 700,
-                    maxWidth: '100%',
-                    borderColor: teamBuffsOpen ? 'primary.main' : 'divider',
-                    bgcolor: teamBuffsOpen
-                      ? colorToRgbaString(
-                          hexToColor(theme.palette.primary.main)!,
-                          0.08
-                        )
-                      : undefined,
-                  }}
-                >
-                  <Typography noWrap component="span" variant="subtitle1">
-                    {teamName}
-                  </Typography>
-                </Button>
-              </BootstrapTooltip>
-              <BootstrapTooltip title={t('teamRow.settings')}>
-                <IconButton
-                  onClick={onShowSettings}
-                  aria-label={t('teamRow.settings')}
-                  size="small"
-                  sx={{
-                    border: (t) => `1px solid ${t.palette.divider}`,
-                    borderRadius: 1,
-                  }}
-                >
-                  <SettingsIcon fontSize="small" />
-                </IconButton>
-              </BootstrapTooltip>
-            </Box>
-            <Box
-              sx={{
-                display: 'flex',
-                gap: 0.75,
-                alignItems: 'center',
-                flex: '0 0 auto',
-                ml: 'auto',
-              }}
-            >
-              {loadoutData.map((loadoutDatum, ind) => (
-                <TeammateSlot
-                  key={loadoutDatum?.teamCharId ?? `empty-${ind}`}
-                  index={ind}
-                  loadoutDatum={loadoutDatum}
-                  loadoutData={loadoutData}
-                  activeCharacterKey={characterKey}
-                  onAdd={() => setCharSelectIndex(ind)}
-                  gender={gender}
-                  isOnField={ind === 0}
-                />
-              ))}
-            </Box>
+            <BootstrapTooltip title={t('contextBar.teamBuffs')}>
+              <Button
+                variant="outlined"
+                color="neutral200"
+                onClick={onToggleTeamBuffs}
+                startIcon={<TeamIcon />}
+                endIcon={
+                  <ExpandMoreIcon
+                    sx={{
+                      transform: teamBuffsOpen ? 'rotate(180deg)' : undefined,
+                      transition: 'transform 0.2s ease',
+                    }}
+                  />
+                }
+                sx={{
+                  flex: 1,
+                  minWidth: 0,
+                  borderRadius: 0,
+                  border: 'none',
+                  textTransform: 'none',
+                  bgcolor: teamBuffHighlight,
+                  '&:hover': {
+                    bgcolor: teamBuffHighlight ?? 'rgba(255,255,255,0.08)',
+                    border: 'none',
+                  },
+                }}
+              >
+                <Typography noWrap component="span" variant="h6">
+                  {teamName}
+                </Typography>
+              </Button>
+            </BootstrapTooltip>
+            <BootstrapTooltip title={t('teamRow.settings')}>
+              <IconButton
+                onClick={onShowSettings}
+                aria-label={t('teamRow.settings')}
+                sx={{
+                  borderRadius: 0,
+                  border: 'none',
+                  borderLeft: '1px solid rgba(255,255,255,0.25)',
+                  px: 1.25,
+                  '&:hover': {
+                    bgcolor: 'rgba(255,255,255,0.08)',
+                    border: 'none',
+                    borderLeft: '1px solid rgba(255,255,255,0.25)',
+                  },
+                }}
+              >
+                <SettingsIcon />
+              </IconButton>
+            </BootstrapTooltip>
           </Box>
+          <Box
+            sx={{
+              display: 'flex',
+              gap: 1,
+              alignItems: 'stretch',
+              flex: '0 0 auto',
+              ml: { sm: 'auto' },
+            }}
+          >
+            {loadoutData.map((loadoutDatum, ind) => (
+              <TeammateSlot
+                key={loadoutDatum?.teamCharId ?? `empty-${ind}`}
+                index={ind}
+                loadoutDatum={loadoutDatum}
+                loadoutData={loadoutData}
+                activeCharacterKey={characterKey}
+                onAdd={() => setCharSelectIndex(ind)}
+                gender={gender}
+                isOnField={ind === 0}
+              />
+            ))}
+          </Box>
+        </Box>
+        <Box sx={{ px: 1, pb: teamBuffsOpen ? 1 : 0 }}>
           <TeamBuffsPanel
             teamId={teamId}
             team={team}
             open={teamBuffsOpen}
             dataContextValue={dataContextValue}
           />
-        </CardContent>
-      </CardThemed>
+        </Box>
+      </Box>
     </>
   )
 }
@@ -267,22 +286,27 @@ function TeammateSlot({
   if (empty) {
     return (
       <BootstrapTooltip title={t('teamRow.addTeammate')}>
-        <span>
+        <Box component="span" sx={{ display: 'flex', alignSelf: 'stretch' }}>
           <IconButton
             onClick={onAdd}
             disabled={disabled}
             aria-label={t('teamRow.addTeammate')}
             sx={{
               width: TEAMMATE_SIZE,
-              height: TEAMMATE_SIZE,
+              height: '100%',
+              minHeight: TEAMMATE_SIZE,
               borderRadius: 1.5,
               border: (t) => `2px dashed ${t.palette.divider}`,
-              bgcolor: 'action.hover',
+              bgcolor: 'rgba(0,0,0,0.2)',
+              alignSelf: 'stretch',
+              '&:hover': {
+                bgcolor: 'rgba(255,255,255,0.08)',
+              },
             }}
           >
             <AddIcon />
           </IconButton>
-        </span>
+        </Box>
       </BootstrapTooltip>
     )
   }
@@ -308,63 +332,69 @@ function TeammateSlot({
 
   return (
     <BootstrapTooltip title={tooltip}>
-      <IconButton
-        onClick={onAdd}
-        aria-label={t('teamRow.addTeammate')}
-        sx={{
-          width: TEAMMATE_SIZE,
-          height: TEAMMATE_SIZE,
-          p: 0,
-          borderRadius: 1.5,
-          overflow: 'hidden',
-          border: `2px solid ${borderColor}`,
-          boxShadow: isOnField
-            ? `0 0 0 2px ${theme.palette.success.main}`
-            : isActive
-              ? `0 0 0 2px ${theme.palette.info.main}`
-              : undefined,
-          opacity: disabled ? 0.5 : 1,
-          position: 'relative',
-          '&:hover': {
-            filter: 'brightness(1.08)',
-          },
-        }}
-      >
-        <Box
-          className={`grad-${rarity}star`}
+      <Box component="span" sx={{ display: 'flex', alignSelf: 'stretch' }}>
+        <IconButton
+          onClick={onAdd}
+          aria-label={t('teamRow.addTeammate')}
           sx={{
-            width: '100%',
+            width: TEAMMATE_SIZE,
             height: '100%',
-            display: 'flex',
-            alignItems: 'flex-end',
-            justifyContent: 'center',
+            minHeight: TEAMMATE_SIZE,
+            p: 0,
+            borderRadius: 1.5,
+            overflow: 'hidden',
+            alignSelf: 'stretch',
+            border: `2px solid ${borderColor}`,
+            boxShadow: isOnField
+              ? `0 0 0 2px ${theme.palette.success.main}, 0 2px 8px rgba(0,0,0,0.35)`
+              : isActive
+                ? `0 0 0 2px ${theme.palette.info.main}, 0 2px 8px rgba(0,0,0,0.25)`
+                : '0 2px 6px rgba(0,0,0,0.2)',
+            opacity: disabled ? 0.5 : 1,
+            position: 'relative',
+            transition: 'filter 0.15s ease, transform 0.15s ease',
+            '&:hover': {
+              filter: 'brightness(1.1)',
+              transform: 'translateY(-1px)',
+            },
           }}
         >
           <Box
-            component="img"
-            src={iconAsset(characterKey, gender, silly)}
-            alt=""
-            draggable={false}
+            className={`grad-${rarity}star`}
             sx={{
-              width: '92%',
-              height: '92%',
-              objectFit: 'contain',
-              objectPosition: 'bottom center',
+              width: '100%',
+              height: '100%',
+              display: 'flex',
+              alignItems: 'flex-end',
+              justifyContent: 'center',
             }}
-          />
-        </Box>
-        <Box
-          sx={{
-            position: 'absolute',
-            bottom: 2,
-            right: 2,
-            lineHeight: 0,
-            filter: 'drop-shadow(0 0 2px rgba(0,0,0,0.8))',
-          }}
-        >
-          <ElementIcon ele={element} iconProps={{ fontSize: 'small' }} />
-        </Box>
-      </IconButton>
+          >
+            <Box
+              component="img"
+              src={iconAsset(characterKey, gender, silly)}
+              alt=""
+              draggable={false}
+              sx={{
+                width: '92%',
+                height: '92%',
+                objectFit: 'contain',
+                objectPosition: 'bottom center',
+              }}
+            />
+          </Box>
+          <Box
+            sx={{
+              position: 'absolute',
+              bottom: 2,
+              right: 2,
+              lineHeight: 0,
+              filter: 'drop-shadow(0 0 2px rgba(0,0,0,0.8))',
+            }}
+          >
+            <ElementIcon ele={element} iconProps={{ fontSize: 'small' }} />
+          </Box>
+        </IconButton>
+      </Box>
     </BootstrapTooltip>
   )
 }

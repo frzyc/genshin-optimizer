@@ -1,9 +1,12 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { CardThemed } from '@genshin-optimizer/common/ui'
+import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common/util'
 import { TeamCharacterContext } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle } from '@genshin-optimizer/gi/stats'
 import type { OptimizeFlowKind } from '@genshin-optimizer/gi/ui'
 import { Box, Skeleton } from '@mui/material'
 import { Suspense, useCallback, useContext } from 'react'
+import { CharacterBannerCard } from '../CharacterBannerCard'
 import { LoadoutSubTabs } from '../LoadoutSubTabs'
 import CharacterOptimizePanel from '../Tabs/TabOptimize/CharacterOptimizePanel'
 import TabOverview from '../Tabs/TabOverview'
@@ -40,39 +43,67 @@ export default function OptimizeChrome({
 
   return (
     <OptimizeCalcBarProvider>
-      <Box display="flex" flexDirection="column" gap={1}>
-        <OptimizeContextBar flow={flow} />
-        <CompactTeamRow
-          flow={flow}
-          teamBuffsOpen={teamBuffsOpen}
-          onToggleTeamBuffs={toggleTeamBuffs}
-        />
-        <OptimizeCalcBar showTarget={!isTCBuild} />
-        <LoadoutSubTabs
-          flow={flow}
-          tab={tab}
-          elementKey={elementKey}
-          isTCBuild={isTCBuild}
-          compact
-        />
-        <Suspense
-          fallback={
-            <Skeleton variant="rectangular" width="100%" height={500} />
-          }
-        >
-          {isTCBuild ? (
-            <TabTheorycraft />
-          ) : tab === 'optimize' ? (
-            <CharacterOptimizePanel />
-          ) : tab === 'talent' ? (
-            <TabTalent />
-          ) : tab === 'upopt' ? (
-            <TabUpopt />
-          ) : (
-            <TabOverview />
-          )}
-        </Suspense>
-      </Box>
+      <CardThemed>
+        <Box display="flex" flexDirection="column">
+          <OptimizeContextBar flow={flow} />
+          <CompactTeamRow
+            flow={flow}
+            teamBuffsOpen={teamBuffsOpen}
+            onToggleTeamBuffs={toggleTeamBuffs}
+          />
+          <Box
+            sx={(theme) => {
+              const hex = theme.palette[elementKey].main as string
+              const color = hexToColor(hex)
+              if (!color)
+                return {
+                  p: 1,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 1,
+                }
+              const rgba = colorToRgbaString(color, 0.1)
+              return {
+                p: 1,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 1,
+                background: `linear-gradient(to bottom, ${rgba} 0%, rgba(0,0,0,0)) 25%`,
+              }
+            }}
+          >
+            <CharacterBannerCard
+              characterKey={characterKey}
+              elementKey={elementKey}
+            >
+              <OptimizeCalcBar embedded showTarget={!isTCBuild} />
+              <LoadoutSubTabs
+                flow={flow}
+                tab={tab}
+                elementKey={elementKey}
+                isTCBuild={isTCBuild}
+              />
+            </CharacterBannerCard>
+            <Suspense
+              fallback={
+                <Skeleton variant="rectangular" width="100%" height={500} />
+              }
+            >
+              {isTCBuild ? (
+                <TabTheorycraft />
+              ) : tab === 'optimize' ? (
+                <CharacterOptimizePanel />
+              ) : tab === 'talent' ? (
+                <TabTalent />
+              ) : tab === 'upopt' ? (
+                <TabUpopt />
+              ) : (
+                <TabOverview />
+              )}
+            </Suspense>
+          </Box>
+        </Box>
+      </CardThemed>
     </OptimizeCalcBarProvider>
   )
 }

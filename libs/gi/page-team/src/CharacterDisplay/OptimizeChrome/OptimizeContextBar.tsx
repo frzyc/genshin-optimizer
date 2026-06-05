@@ -1,5 +1,4 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { CardThemed } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import {
@@ -7,28 +6,40 @@ import {
   useDBMeta,
   useDatabase,
 } from '@genshin-optimizer/gi/db-ui'
+import { getCharEle } from '@genshin-optimizer/gi/stats'
 import {
   CharIconSide,
   CharacterName,
   CharacterSingleSelectionModal,
+  type OptimizeFlowKind,
   ensureOptimizeContext,
   getExperimentCanonicalPath,
   getTeamCharTabPath,
-  type OptimizeFlowKind,
 } from '@genshin-optimizer/gi/ui'
-import { Button, CardContent } from '@mui/material'
+import CheckroomIcon from '@mui/icons-material/Checkroom'
+import PersonIcon from '@mui/icons-material/Person'
+import { Box, Button, Typography } from '@mui/material'
 import { Suspense, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import BuildDropdown from '../../BuildDropdown'
 import { LoadoutDropdown } from '../../LoadoutDropdown'
+import {
+  chromeJoinedButtonSx,
+  elementHeaderGradientSx,
+} from './optimizeChromeTheme'
 
-export function OptimizeContextBar({ flow = 'experiment' }: { flow?: OptimizeFlowKind }) {
+const SEGMENT_COUNT = 3
+
+export function OptimizeContextBar({
+  flow = 'experiment',
+}: { flow?: OptimizeFlowKind }) {
   const navigate = useNavigate()
   const database = useDatabase()
   const { gender } = useDBMeta()
   const { teamId, teamCharId, teamChar, loadoutDatum } =
     useContext(TeamCharacterContext)
   const characterKey = teamChar.key
+  const elementKey = getCharEle(characterKey)
 
   const [showChar, onShowChar, onHideChar] = useBoolState()
 
@@ -53,6 +64,12 @@ export function OptimizeContextBar({ flow = 'experiment' }: { flow?: OptimizeFlo
     })
   }
 
+  const segmentProps = (index: number) => ({
+    variant: 'outlined' as const,
+    color: elementKey,
+    sx: chromeJoinedButtonSx(index, SEGMENT_COUNT),
+  })
+
   return (
     <>
       <Suspense fallback={false}>
@@ -62,23 +79,16 @@ export function OptimizeContextBar({ flow = 'experiment' }: { flow?: OptimizeFlo
           onSelect={onCharacterSelect}
         />
       </Suspense>
-      <CardThemed bgt="light">
-        <CardContent
-          sx={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: 1,
-            alignItems: 'center',
-            '& .MuiButton-root': { minWidth: 0 },
-          }}
-        >
+      <Box sx={elementHeaderGradientSx(elementKey)}>
+        <Box sx={{ display: 'flex', width: '100%' }}>
           <Button
+            {...segmentProps(0)}
             startIcon={<CharIconSide characterKey={characterKey} />}
             onClick={onShowChar}
-            color="info"
-            sx={{ flex: '1 1 140px' }}
           >
-            <CharacterName characterKey={characterKey} gender={gender} />
+            <Typography variant="h6" noWrap component="span">
+              <CharacterName characterKey={characterKey} gender={gender} />
+            </Typography>
           </Button>
 
           <LoadoutDropdown
@@ -86,16 +96,24 @@ export function OptimizeContextBar({ flow = 'experiment' }: { flow?: OptimizeFlo
             onChangeTeamCharId={onPlaystyleChange}
             i18nNs="playstyle"
             label
-            dropdownBtnProps={{ sx: { flex: '1 1 140px' } }}
+            dropdownBtnProps={{
+              ...segmentProps(1),
+              startIcon: <PersonIcon />,
+              fullWidth: true,
+            }}
           />
 
           <BuildDropdown
             teamId={teamId}
             loadoutDatum={loadoutDatum}
-            dropdownBtnProps={{ sx: { flex: '1 1 120px' } }}
+            dropdownBtnProps={{
+              ...segmentProps(2),
+              startIcon: <CheckroomIcon />,
+              fullWidth: true,
+            }}
           />
-        </CardContent>
-      </CardThemed>
+        </Box>
+      </Box>
     </>
   )
 }
