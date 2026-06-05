@@ -12,8 +12,8 @@ import GroupsIcon from '@mui/icons-material/Groups'
 import MenuIcon from '@mui/icons-material/Menu'
 import PeopleIcon from '@mui/icons-material/People'
 import ScannerIcon from '@mui/icons-material/Scanner'
-import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import SettingsIcon from '@mui/icons-material/Settings'
+import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import {
   AppBar,
   Avatar,
@@ -34,7 +34,7 @@ import {
 import type { ReactElement, ReactNode } from 'react'
 import { Suspense, useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Link as RouterLink, useMatch, useLocation } from 'react-router-dom'
+import { Link as RouterLink, useLocation, useMatch } from 'react-router-dom'
 import go_icon from './go_icon.png'
 import silly_icon from './silly_icon.png'
 type ITab = {

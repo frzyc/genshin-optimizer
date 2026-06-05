@@ -1,10 +1,6 @@
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 
-export const TEAM_CHAR_TAB_SEGMENTS = [
-  'talent',
-  'optimize',
-  'upopt',
-] as const
+export const TEAM_CHAR_TAB_SEGMENTS = ['talent', 'optimize', 'upopt'] as const
 
 export type TeamCharTabSegment = (typeof TEAM_CHAR_TAB_SEGMENTS)[number]
 
@@ -12,8 +8,7 @@ export function isTeamCharTabSegment(
   segment: string | undefined
 ): segment is TeamCharTabSegment {
   return (
-    !!segment &&
-    (TEAM_CHAR_TAB_SEGMENTS as readonly string[]).includes(segment)
+    !!segment && (TEAM_CHAR_TAB_SEGMENTS as readonly string[]).includes(segment)
   )
 }
 

@@ -11,12 +11,12 @@ import {
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Box, Grid, Stack } from '@mui/material'
 import { useContext, useMemo } from 'react'
-import { useOptimizeCalcBar } from '../../OptimizeChrome/OptimizeCalcBarContext'
 import CharacterProfileCard from '../../../CharProfileCard'
 import useCompareData from '../../../useCompareData'
 import BonusStatsModal from '../../BonusStatsModal'
 import CompareBtn from '../../CompareBtn'
 import { CustomMultiTargetModal } from '../../CustomMultiTarget/CustomMultiTargetModal'
+import { useOptimizeCalcBar } from '../../OptimizeChrome/OptimizeCalcBarContext'
 import EquipmentSection from './EquipmentSection'
 
 export default function TabOverview() {

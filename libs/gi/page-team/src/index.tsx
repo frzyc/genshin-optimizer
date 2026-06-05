@@ -18,8 +18,6 @@ import {
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle } from '@genshin-optimizer/gi/stats'
 import {
-  ensureOptimizeContext,
-  getOptimizeCanonicalPath,
   type ChartData,
   DataContext,
   FormulaDataWrapper,
@@ -28,6 +26,8 @@ import {
   OptTargetWrapper,
   SillyContext,
   type dataContextObj,
+  ensureOptimizeContext,
+  getOptimizeCanonicalPath,
   useTeamDataNoContext,
 } from '@genshin-optimizer/gi/ui'
 import { Box, Skeleton } from '@mui/material'
@@ -43,10 +43,10 @@ import { useTranslation } from 'react-i18next'
 import {
   Route,
   Routes,
+  useLocation,
   useMatch,
   useNavigate,
   useParams,
-  useLocation,
 } from 'react-router-dom'
 import type { BuildTcContexObj, SetBuildTcAction } from './BuildTcContext'
 import { BuildTcContext } from './BuildTcContext'
@@ -71,8 +71,7 @@ export default function PageTeam() {
   useEffect(() => {
     if (!teamId || team) return
     const meta = database.dbMeta.get()
-    const characterKey =
-      meta.optCharKey ?? database.chars.keys[0] ?? undefined
+    const characterKey = meta.optCharKey ?? database.chars.keys[0] ?? undefined
     if (!characterKey) {
       navigate('/experiment', { replace: true })
       return
@@ -86,9 +85,7 @@ export default function PageTeam() {
   }, [teamId, team, database, navigate])
 
   if (!teamId || !team) {
-    return (
-      <Skeleton variant="rectangular" width="100%" height={1000} />
-    )
+    return <Skeleton variant="rectangular" width="100%" height={1000} />
   }
 
   return (
@@ -197,14 +194,7 @@ function Page({ teamId }: { teamId: string }) {
       return
     }
     navigate(`/teams/${teamId}/${ck}/${segmentTab}`, { replace: true })
-  }, [
-    characterKeyRaw,
-    segmentTab,
-    teamId,
-    database,
-    navigate,
-    loadoutData,
-  ])
+  }, [characterKeyRaw, segmentTab, teamId, database, navigate, loadoutData])
 
   const teamCharId = loadoutDatum?.teamCharId
   const characterKey = database.teamChars.get(teamCharId)?.key
@@ -263,29 +253,28 @@ function Page({ teamId }: { teamId: string }) {
     }
   }, [charUIData, teamData])
 
-  const characterContent =
-    teamCharacterContextValue ? (
-      dataContextValue ? (
-        <TeamCharacterContext.Provider value={teamCharacterContextValue}>
-          <DataContext.Provider value={dataContextValue}>
-            <Box
-              sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: 1,
-                p: 1,
-              }}
-            >
-              <InnerContent tab={tab} />
-            </Box>
-          </DataContext.Provider>
-        </TeamCharacterContext.Provider>
-      ) : (
-        fallback
-      )
+  const characterContent = teamCharacterContextValue ? (
+    dataContextValue ? (
+      <TeamCharacterContext.Provider value={teamCharacterContextValue}>
+        <DataContext.Provider value={dataContextValue}>
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 1,
+              p: 1,
+            }}
+          >
+            <InnerContent tab={tab} />
+          </Box>
+        </DataContext.Provider>
+      </TeamCharacterContext.Provider>
     ) : (
-      <TeamSetting teamId={teamId} teamData={teamData} />
+      fallback
     )
+  ) : (
+    <TeamSetting teamId={teamId} teamData={teamData} />
+  )
 
   return (
     <Box sx={{ display: 'flex', gap: 1, flexDirection: 'column' }}>

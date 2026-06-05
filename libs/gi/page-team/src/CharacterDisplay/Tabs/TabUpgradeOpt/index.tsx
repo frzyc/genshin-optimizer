@@ -72,8 +72,8 @@ import {
   useState,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import { useOptimizeCalcBar } from '../../OptimizeChrome/OptimizeCalcBarContext'
 import { CustomMultiTargetButton } from '../../CustomMultiTarget/CustomMultiTargetButton'
+import { useOptimizeCalcBar } from '../../OptimizeChrome/OptimizeCalcBarContext'
 import ArtifactSetConfig from '../TabOptimize/Components/ArtifactSetConfig'
 import BonusStatsCard from '../TabOptimize/Components/BonusStatsCard'
 import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard'

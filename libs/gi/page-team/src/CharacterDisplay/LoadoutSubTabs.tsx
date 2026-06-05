@@ -3,8 +3,8 @@ import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common/util'
 import type { ElementKey } from '@genshin-optimizer/gi/consts'
 import { TeamCharacterContext } from '@genshin-optimizer/gi/db-ui'
 import {
-  getFlowCharTabPath,
   type OptimizeFlowKind,
+  getFlowCharTabPath,
 } from '@genshin-optimizer/gi/ui'
 import FactCheckIcon from '@mui/icons-material/FactCheck'
 import PersonIcon from '@mui/icons-material/Person'

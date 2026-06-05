@@ -1,4 +1,5 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { SqBadge } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import {
@@ -20,9 +21,10 @@ import CheckroomIcon from '@mui/icons-material/Checkroom'
 import PersonIcon from '@mui/icons-material/Person'
 import { Box, Button, Typography } from '@mui/material'
 import { Suspense, useContext } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
-import BuildDropdown from '../../BuildDropdown'
-import { LoadoutDropdown } from '../../LoadoutDropdown'
+import { BuildsEditorModal } from '../BuildsEditorModal'
+import { LoadoutEditorModal } from '../LoadoutEditorModal'
 import {
   chromeJoinedButtonSx,
   elementHeaderGradientSx,
@@ -40,8 +42,13 @@ export function OptimizeContextBar({
     useContext(TeamCharacterContext)
   const characterKey = teamChar.key
   const elementKey = getCharEle(characterKey)
+  const { t } = useTranslation(['playstyle', 'build'])
+  const { buildType } = loadoutDatum
+  const activeBuildName = database.teams.getActiveBuildName(loadoutDatum)
 
   const [showChar, onShowChar, onHideChar] = useBoolState()
+  const [showPlaystyle, onShowPlaystyle, onHidePlaystyle] = useBoolState()
+  const [showBuild, onShowBuild, onHideBuild] = useBoolState()
 
   const onCharacterSelect = (ck: CharacterKey) => {
     const ctx = ensureOptimizeContext(database, { characterKey: ck })
@@ -79,6 +86,13 @@ export function OptimizeContextBar({
           onSelect={onCharacterSelect}
         />
       </Suspense>
+      <LoadoutEditorModal
+        open={showPlaystyle}
+        onClose={onHidePlaystyle}
+        i18nNs="playstyle"
+        onChangeTeamCharId={onPlaystyleChange}
+      />
+      <BuildsEditorModal open={showBuild} onClose={onHideBuild} />
       <Box sx={elementHeaderGradientSx(elementKey)}>
         <Box sx={{ display: 'flex', width: '100%' }}>
           <Button
@@ -91,27 +105,44 @@ export function OptimizeContextBar({
             </Typography>
           </Button>
 
-          <LoadoutDropdown
-            teamCharId={teamCharId}
-            onChangeTeamCharId={onPlaystyleChange}
-            i18nNs="playstyle"
-            label
-            dropdownBtnProps={{
-              ...segmentProps(1),
-              startIcon: <PersonIcon />,
-              fullWidth: true,
-            }}
-          />
+          <Button
+            {...segmentProps(1)}
+            startIcon={<PersonIcon />}
+            fullWidth
+            onClick={onShowPlaystyle}
+          >
+            <Typography variant="h6" noWrap component="span">
+              {t('playstyle:dropdownLabel')}
+              <strong>{teamChar.name}</strong>
+            </Typography>
+          </Button>
 
-          <BuildDropdown
-            teamId={teamId}
-            loadoutDatum={loadoutDatum}
-            dropdownBtnProps={{
-              ...segmentProps(2),
-              startIcon: <CheckroomIcon />,
-              fullWidth: true,
-            }}
-          />
+          <Button
+            {...segmentProps(2)}
+            startIcon={<CheckroomIcon />}
+            fullWidth
+            onClick={onShowBuild}
+          >
+            <Box
+              component="span"
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 1,
+                minWidth: 0,
+                overflow: 'hidden',
+              }}
+            >
+              <Typography variant="h6" noWrap component="span">
+                {activeBuildName}
+              </Typography>
+              {buildType === 'tc' && (
+                <SqBadge color="success">
+                  {t('build:buildDropdown.tcBadge')}
+                </SqBadge>
+              )}
+            </Box>
+          </Button>
         </Box>
       </Box>
     </>

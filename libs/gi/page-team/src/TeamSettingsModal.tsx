@@ -103,7 +103,8 @@ export function TeamSettingsModal({
                           height: '100%',
                           borderRadius: 1,
                           outline: selected
-                            ? (theme) => `2px solid ${theme.palette.primary.main}`
+                            ? (theme) =>
+                                `2px solid ${theme.palette.primary.main}`
                             : undefined,
                           outlineOffset: 2,
                           transition: 'outline-color 0.15s ease',

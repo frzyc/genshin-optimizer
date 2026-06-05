@@ -1,6 +1,9 @@
 import { useTitle } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-import { allCharacterKeys, charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
+import {
+  allCharacterKeys,
+  charKeyToLocGenderedCharKey,
+} from '@genshin-optimizer/gi/consts'
 import type { GeneratedBuild } from '@genshin-optimizer/gi/db'
 import type { CharacterContextObj } from '@genshin-optimizer/gi/db-ui'
 import {
@@ -15,6 +18,11 @@ import {
   useTeamChar,
 } from '@genshin-optimizer/gi/db-ui'
 import {
+  type BuildTcContexObj,
+  BuildTcContext,
+  type SetBuildTcAction,
+} from '@genshin-optimizer/gi/page-team/experiment-ui'
+import {
   type ChartData,
   DataContext,
   FormulaDataWrapper,
@@ -28,11 +36,6 @@ import {
   isTeamCharTabSegment,
   useTeamDataNoContext,
 } from '@genshin-optimizer/gi/ui'
-import {
-  BuildTcContext,
-  type BuildTcContexObj,
-  type SetBuildTcAction,
-} from '@genshin-optimizer/gi/page-team/experiment-ui'
 import { Box, Skeleton } from '@mui/material'
 import {
   Suspense,
@@ -46,10 +49,10 @@ import { useTranslation } from 'react-i18next'
 import {
   Route,
   Routes,
+  useLocation,
   useMatch,
   useNavigate,
   useParams,
-  useLocation,
 } from 'react-router-dom'
 import OptimizeContent from './OptimizeContent'
 
@@ -90,7 +93,10 @@ function OptimizePage({ teamId }: { teamId: string }) {
   }
   const {
     params: { tab: tabFromMatch },
-  } = useMatch({ path: '/experiment/:teamId/:characterKey/:tab', end: true }) ?? {
+  } = useMatch({
+    path: '/experiment/:teamId/:characterKey/:tab',
+    end: true,
+  }) ?? {
     params: {},
   }
 

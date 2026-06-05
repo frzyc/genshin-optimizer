@@ -1,7 +1,5 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import {
-  BootstrapTooltip,
-} from '@genshin-optimizer/common/ui'
+import { BootstrapTooltip } from '@genshin-optimizer/common/ui'
 import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase, useTeam } from '@genshin-optimizer/gi/db-ui'
@@ -10,14 +8,7 @@ import { CharIconSide, CharacterName, TeamIcon } from '@genshin-optimizer/gi/ui'
 import BorderColorIcon from '@mui/icons-material/BorderColor'
 import GroupsIcon from '@mui/icons-material/Groups'
 import PersonIcon from '@mui/icons-material/Person'
-import {
-  Box,
-  Button,
-  Tab,
-  Tabs,
-  Typography,
-  useTheme,
-} from '@mui/material'
+import { Box, Button, Tab, Tabs, Typography, useTheme } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { TeamEditorModal } from './TeamEditorModal'

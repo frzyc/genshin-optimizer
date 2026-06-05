@@ -1,5 +1,6 @@
 {
   "label": "Playstyle",
+  "edit": "Edit playstyle",
   "create": "Create playstyle",
   "createModal": {
     "title": "Create a new playstyle for <2/>",

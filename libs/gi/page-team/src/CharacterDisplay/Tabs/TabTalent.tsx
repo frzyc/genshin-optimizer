@@ -40,8 +40,8 @@ import {
 import type { ReactNode } from 'react'
 import { useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useOptimizeCalcBar } from '../OptimizeChrome/OptimizeCalcBarContext'
 import { BuildTcContext } from '../../BuildTcContext'
+import { useOptimizeCalcBar } from '../OptimizeChrome/OptimizeCalcBarContext'
 
 const talentSpacing = {
   xs: 12,

@@ -1,9 +1,9 @@
-import { Skeleton } from '@mui/material'
-import { Suspense } from 'react'
 import {
   FormulaModal,
   OptimizeChrome,
 } from '@genshin-optimizer/gi/page-team/experiment-ui'
+import { Skeleton } from '@mui/material'
+import { Suspense } from 'react'
 
 export default function OptimizeContent({ tab }: { tab?: string }) {
   const activeTab = tab ?? 'overview'

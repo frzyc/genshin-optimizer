@@ -28,8 +28,7 @@ export function openOptimizeFlow(
     return
   }
 
-  const resolvedTeamId =
-    teamId ?? meta.optTeamId
+  const resolvedTeamId = teamId ?? meta.optTeamId
   const validTeamId =
     resolvedTeamId && database.teams.get(resolvedTeamId)
       ? resolvedTeamId

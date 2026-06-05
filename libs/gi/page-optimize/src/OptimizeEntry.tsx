@@ -24,8 +24,7 @@ export function OptimizeEntry() {
   const charCount = database.chars.keys.length
   useEffect(() => {
     const ck =
-      optCharKey ??
-      (charCount === 1 ? database.chars.keys[0] : undefined)
+      optCharKey ?? (charCount === 1 ? database.chars.keys[0] : undefined)
     if (ck) {
       openOptimizeFlow(database, navigate, { characterKey: ck })
       return
