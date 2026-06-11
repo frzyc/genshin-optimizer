@@ -1,0 +1,21 @@
+{
+  "name": "Frostfall Sickle",
+  "desc": {
+    "0": "Clutching a wavering ideal.",
+    "1": "Running and shouting across the barren red earth, then falling into sleep, only to wake up grown.",
+    "2": "Choosing chains of one's own making.",
+    "3": "Living on as a blade, scraping by. Investigating, interrogating, hunting... endless, numb, cold.",
+    "4": "Waiting for the promised judgment.",
+    "5": "Plucking a rotting new bud and stepping into winter, until at last welcoming life's final hope... death, warm and peaceful."
+  },
+  "desc2": "Equip to increase Anomaly Agents' combat capabilities",
+  "desc3": "Carry out judgment until the end comes.",
+  "phase": "Terminating Verdict",
+  "phaseDescs": [
+    "When an <ct color=#98EFF0>Ice attribute</ct> equipper uses a <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, their <ct color=#98EFF0>Ice DMG</ct> is increased by <ct color=#2BAD00>20%</ct> for 40s, stacking up to 2 times, once per use of a skill. Repeated triggers refresh the duration. At 2 stacks, the equipper's <ct color=#FFFFFF>Abloom</ct> DMG dealt is increased by an additional <ct color=#2BAD00>35%</ct>.",
+    "When an <ct color=#98EFF0>Ice attribute</ct> equipper uses a <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, their <ct color=#98EFF0>Ice DMG</ct> is increased by <ct color=#2BAD00>23%</ct> for 40s, stacking up to 2 times, once per use of a skill. Repeated triggers refresh the duration. At 2 stacks, the equipper's <ct color=#FFFFFF>Abloom</ct> DMG dealt is increased by an additional <ct color=#2BAD00>38.5%</ct>.",
+    "When an <ct color=#98EFF0>Ice attribute</ct> equipper uses a <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, their <ct color=#98EFF0>Ice DMG</ct> is increased by <ct color=#2BAD00>26%</ct> for 40s, stacking up to 2 times, once per use of a skill. Repeated triggers refresh the duration. At 2 stacks, the equipper's <ct color=#FFFFFF>Abloom</ct> DMG dealt is increased by an additional <ct color=#2BAD00>42%</ct>.",
+    "When an <ct color=#98EFF0>Ice attribute</ct> equipper uses a <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, their <ct color=#98EFF0>Ice DMG</ct> is increased by <ct color=#2BAD00>29%</ct> for 40s, stacking up to 2 times, once per use of a skill. Repeated triggers refresh the duration. At 2 stacks, the equipper's <ct color=#FFFFFF>Abloom</ct> DMG dealt is increased by an additional <ct color=#2BAD00>45.5%</ct>.",
+    "When an <ct color=#98EFF0>Ice attribute</ct> equipper uses a <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>, their <ct color=#98EFF0>Ice DMG</ct> is increased by <ct color=#2BAD00>32%</ct> for 40s, stacking up to 2 times, once per use of a skill. Repeated triggers refresh the duration. At 2 stacks, the equipper's <ct color=#FFFFFF>Abloom</ct> DMG dealt is increased by an additional <ct color=#2BAD00>50%</ct>."
+  ]
+}

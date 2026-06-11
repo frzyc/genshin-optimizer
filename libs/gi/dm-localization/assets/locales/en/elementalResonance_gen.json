@@ -25,7 +25,7 @@
   },
   "EnduringRock": {
     "name": "Enduring Rock",
-    "desc": "Increases shield strength by 15%. Additionally, characters protected by a shield will have the following special characteristics: DMG dealt increased by 15%, dealing DMG to enemies will decrease their Geo RES by 20% for 15s."
+    "desc": "Increases shield strength by 15%. Additionally, when characters protected by a shield, or when Moondrifts formed by Lunar-Crystallize reactions are nearby, the following special characteristics will take effect: DMG dealt increased by 15%, dealing DMG to enemies will decrease their Geo RES by 20% for 15s."
   },
   "SprawlingGreenery": {
     "name": "Sprawling Greenery",
@@ -59,6 +59,12 @@
           ]
         }
       }
+    }
+  },
+  "Hexerei": {
+    "name": "Hexerei: Secret Rite",
+    "desc": {
+      "0": "The Hexerei characters in your party have been further enhanced."
     }
   }
 }

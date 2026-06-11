@@ -110,6 +110,20 @@
       "0": "Stellt {F#der}{M#dem} Reisenden beim Auslösen von <pyro>Pyro-Reaktionen</pyro> an Gegnern durch die aktuelle Figur im Zustand <strong>„Flammende Schwelle“</strong> oder <strong>„Versengende Schwelle“</strong> 5 Punkte Elementarenergie wieder her, 12 s Abklingzeit. Stellt {F#der}{M#dem} Reisenden außerdem beim Auslösen des „Nachtseelenaufbruchs“ durch ein Truppenmitglied in der Nähe 4 Punkte Elementarenergie wieder her."
     }
   },
+  "lockedPassive": {
+    "name": "Sternfeuer aus der Fremde",
+    "description": {
+      "0": "Verleiht {F#der}{M#dem} Reisenden Kraft aus der Vergangenheit und für jedes Element, mit dem {F#sie}{M#er} im Einklang gestanden hat, zusätzliche <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>Verstärkungseffekte</strong></tooltip>.",
+      "1": "<br/>",
+      "2": "Verleiht {F#der}{M#dem} Reisenden zudem, wenn ein Truppenmitglied in der Nähe „Nachtseelenaufbruch“ auslöst, 1 Stapelung „Klinge des heiligen Feuers“, max. 2-fach stapelbar. Verbraucht, wenn 2 Stapelungen „Klinge des heiligen Feuers“ vorhanden sind und {F#die}{M#der} Reisende einen heftigen Schlag ausführt, alle Stapelungen und wandelt den heftigen Schlag in den besonderen <strong>heftigen Schlag – Inferno</strong> um.",
+      "3": "<br/>",
+      "4": "<strong>Heftiger Schlag – Inferno</strong>",
+      "5": "Verursacht erhöhten, mit Nachtseelen versehenen <pyro>Pyro-Schaden</pyro> in jeder Angriffsphase des heftigen Schlags. Die SCH-Erhöhung beträgt 200 % des ANG {F#der}{M#des} Reisenden.",
+      "6": [
+        " Der <strong>heftige Schlag – Inferno</strong> kann nur einmal alle 15 s ausgeführt werden."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Fließendes Licht des Sternenfeuers",
     "description": {

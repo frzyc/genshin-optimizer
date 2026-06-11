@@ -25,7 +25,7 @@
   },
   "EnduringRock": {
     "name": "Sağlam Kaya",
-    "desc": "Kalkan gücünü %15 artırır. Kalkanla korunan karakterler buna ek olarak şu özellikleri kazanır: Verilen Hasar %15 artar, 15 saniyeliğine Hasar alan düşmanların Toprak Direnci %20 azalır."
+    "desc": "Kalkan gücünü %15 artırır. Karakterler kalkanla korunuyorsa veya yakında Ay Kristalleşmesi tepkimeleriyle oluşan Ay Akıntıları varsa buna ek olarak şu özellikler etkinleşir: Verilen Hasar %15 artar, 15 saniyeliğine Hasar alan düşmanların Toprak Direnci %20 azalır."
   },
   "SprawlingGreenery": {
     "name": "Büyüyen Yeşillikler",
@@ -59,6 +59,12 @@
           ]
         }
       }
+    }
+  },
+  "Hexerei": {
+    "name": "Cadılık: Saklı Ayin",
+    "desc": {
+      "0": "Grubundaki Cadılık karakterleri daha da geliştirildi."
     }
   }
 }

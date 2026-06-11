@@ -1,45 +1,34 @@
-import { validateArr } from '@genshin-optimizer/common/util'
-import type {
-  LocationCharacterKey,
-  RarityKey,
-  WeaponTypeKey,
-} from '@genshin-optimizer/gi/consts'
+import { zodFilteredArray } from '@genshin-optimizer/common/database'
 import {
   allLocationCharacterKeys,
   allRarityKeys,
   allWeaponTypeKeys,
 } from '@genshin-optimizer/gi/consts'
+import { z } from 'zod'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataEntry } from '../DataEntry'
 
 export const weaponSortKeys = ['level', 'rarity', 'name'] as const
 export type WeaponSortKey = (typeof weaponSortKeys)[number]
-export interface IDisplayWeapon {
-  editWeaponId: string
-  sortType: WeaponSortKey
-  ascending: boolean
-  rarity: RarityKey[]
-  weaponType: WeaponTypeKey[]
-  locked: Array<'locked' | 'unlocked'>
-  showInventory: boolean
-  showEquipped: boolean
-  locations: LocationCharacterKey[]
-}
 
-const initialOption = (): Omit<IDisplayWeapon, 'ascending' | 'sortType'> => ({
-  editWeaponId: '',
-  rarity: [...allRarityKeys],
-  weaponType: [...allWeaponTypeKeys],
-  locked: ['locked', 'unlocked'],
-  showEquipped: true,
-  showInventory: true,
-  locations: [],
+const lockedValues = ['locked', 'unlocked'] as const
+
+const displayWeaponSchema = z.object({
+  editWeaponId: z.string().catch(''),
+  sortType: z.enum(weaponSortKeys).catch('level'),
+  ascending: z.boolean().catch(false),
+  rarity: zodFilteredArray(allRarityKeys, [...allRarityKeys]),
+  weaponType: zodFilteredArray(allWeaponTypeKeys, [...allWeaponTypeKeys]),
+  locked: zodFilteredArray(lockedValues, [...lockedValues]),
+  showEquipped: z.boolean().catch(true),
+  showInventory: z.boolean().catch(true),
+  locations: zodFilteredArray(allLocationCharacterKeys, []),
 })
+export type IDisplayWeapon = z.infer<typeof displayWeaponSchema>
 
-const initialState = (): IDisplayWeapon => ({
-  ...initialOption(),
-  sortType: weaponSortKeys[0],
-  ascending: false,
+const resetSchema = displayWeaponSchema.omit({
+  sortType: true,
+  ascending: true,
 })
 
 export class DisplayWeaponEntry extends DataEntry<
@@ -49,48 +38,16 @@ export class DisplayWeaponEntry extends DataEntry<
   IDisplayWeapon
 > {
   constructor(database: ArtCharDatabase) {
-    super(database, 'display_weapon', initialState, 'display_weapon')
-  }
-  override validate(obj: any): IDisplayWeapon | undefined {
-    if (typeof obj !== 'object') return undefined
-    let {
-      sortType,
-      ascending,
-      rarity,
-      weaponType,
-      locked,
-      showEquipped,
-      showInventory,
-      locations,
-    } = obj
-    const { editWeaponId } = obj
-    if (typeof editWeaponId !== 'string') return editWeaponId
-    if (
-      typeof sortType !== 'string' ||
-      !weaponSortKeys.includes(sortType as any)
+    super(
+      database,
+      'display_weapon',
+      () => displayWeaponSchema.parse({}),
+      'display_weapon'
     )
-      sortType = weaponSortKeys[0]
-    if (typeof ascending !== 'boolean') ascending = false
-    if (!Array.isArray(rarity)) rarity = [...allRarityKeys]
-    else rarity = rarity.filter((r) => allRarityKeys.includes(r))
-    if (!Array.isArray(weaponType)) weaponType = [...allWeaponTypeKeys]
-    else weaponType = weaponType.filter((r) => allWeaponTypeKeys.includes(r))
-    if (typeof showEquipped !== 'boolean') showEquipped = true
-    if (typeof showInventory !== 'boolean') showInventory = true
-    locked = validateArr(locked, ['locked', 'unlocked'])
-    locations = validateArr(locations, allLocationCharacterKeys, [])
-    const data: IDisplayWeapon = {
-      editWeaponId,
-      sortType,
-      ascending,
-      rarity,
-      weaponType,
-      locked,
-      showEquipped,
-      showInventory,
-      locations,
-    }
-    return data
+  }
+  override validate(obj: unknown): IDisplayWeapon | undefined {
+    const result = displayWeaponSchema.safeParse(obj)
+    return result.success ? result.data : undefined
   }
   override set(
     value:
@@ -99,7 +56,7 @@ export class DisplayWeaponEntry extends DataEntry<
       | { action: 'reset' }
   ): boolean {
     if ('action' in value) {
-      if (value.action === 'reset') return super.set(initialOption())
+      if (value.action === 'reset') return super.set(resetSchema.parse({}))
       return false
     } else return super.set(value)
   }

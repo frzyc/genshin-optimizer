@@ -12,6 +12,18 @@ export const buffs = {
       name: 'core_dash_crit_',
     },
   },
+  core_ult_crit_: {
+    sheet: 'Harumasa',
+    name: 'core_ult_crit_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'crit_',
+      sheet: 'Harumasa',
+      damageType1: 'ult',
+      name: 'core_ult_crit_',
+    },
+  },
   core_dash_crit_dmg_: {
     sheet: 'Harumasa',
     name: 'core_dash_crit_dmg_',
@@ -22,6 +34,18 @@ export const buffs = {
       sheet: 'Harumasa',
       damageType1: 'dash',
       name: 'core_dash_crit_dmg_',
+    },
+  },
+  core_ult_crit_dmg_: {
+    sheet: 'Harumasa',
+    name: 'core_ult_crit_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'crit_dmg_',
+      sheet: 'Harumasa',
+      damageType1: 'ult',
+      name: 'core_ult_crit_dmg_',
     },
   },
   ability_common_dmg_: {

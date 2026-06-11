@@ -48,7 +48,7 @@
         " Quando gli avversari all'interno dell'Isotoma solare subiscono dei DAN, l'Isotoma solare genera Boccioli effimeri che infliggono <geo>DAN da Geo ad area</geo>. I DAN inflitti variano in base alla DIF di Albedo.",
         " I Boccioli effimeri possono essere generati una volta ogni 2 s.",
         " Quando un personaggio si trova nella posizione dell'Isotoma solare, l'Isotoma solare accumula potere di Geo per formare una piattaforma cristallizzata che solleva il personaggio fino a una certa altezza. Può esistere solo una piattaforma cristallizzata alla volta.",
-        " L'Isotoma solare è considerato un <geo>costrutto di Geo</geo>. Può esistere solo un'Isotoma solare creata da Albedo stesso alla volta. "
+        " L'Isotoma solare è considerata un <geo>costrutto di Geo</geo>. Può esistere solo un'Isotoma solare creata da Albedo stesso alla volta. "
       ],
       "4": "<br/>",
       "5": "<strong>Tieni premuto</strong> per decidere la posizione dell'abilità.",
@@ -78,7 +78,7 @@
     "name": "Rito della discendenza: Ondata tettonica",
     "description": {
       "0": "Sotto il comando di Albedo, i cristalli di Geo si ergono ed esplodono, infliggendo <geo>DAN da Geo ad area</geo> davanti a lui.",
-      "1": "Se un'Isotoma solare creato da Albedo è sul campo, 7 Boccioli fatali verranno generati nel campo dell'Isotoma solare, sbocciando violentemente con uno scoppio e infliggendo <geo>DAN da Geo ad area</geo>.",
+      "1": "Se un'Isotoma solare creata da Albedo è sul campo, 7 Boccioli fatali verranno generati nel campo dell'Isotoma solare, sbocciando violentemente con uno scoppio e infliggendo <geo>DAN da Geo ad area</geo>.",
       "2": "<br/>",
       "3": "I DAN da Ondata tettonica e i DAN da Bocciolo fatale non genereranno Boccioli effimeri.",
       "4": "<br/>",
@@ -106,7 +106,11 @@
   "passive1": {
     "name": "Potenza della calcite",
     "description": {
-      "0": "I Boccioli effimeri generati da <strong>Abiogenesi: Isotoma solare</strong> infliggono un 25% di DAN extra agli avversari i cui PS sono inferiori a un 50%."
+      "0": "I Boccioli effimeri generati dall'abilità elementale <strong>Abiogenesi: Isotoma solare</strong> infliggono un 25% di DAN aggiuntivi agli avversari i cui PS sono inferiori a un 50%."
+    },
+    "upgradedDescription": {
+      "0": "I Boccioli effimeri generati dall'abilità elementale <strong>Abiogenesi: Isotoma solare</strong> infliggono un 25% di DAN aggiuntivi agli avversari i cui PS sono inferiori a un 50%.",
+      "1": "Inoltre, se in campo è presente un'Isotoma argentea creata da Albedo, i DAN inflitti aumentano anche di un 240% della DIF di Albedo."
     }
   },
   "passive2": {
@@ -121,20 +125,46 @@
       "0": "Quando Albedo crea materiali d'ascensione delle armi, ha un 10% di probabilità di ricevere il doppio del prodotto."
     }
   },
+  "lockedPassive": {
+    "name": "Rito della Vigilia della strega: Libro della luce accecante",
+    "description": {
+      "0": "Dopo aver completato <strong>Compiti della strega: Oltre la lezione</strong>, Albedo acquisisce l'attributo <strong>Hexerei</strong>. Quando il gruppo include almeno 2 personaggi con attributo Hexerei, questi ultimi ottengono l'effetto di potenziamento <strong>Hexerei: Rito segreto</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei: Rito segreto</strong>",
+      "3": [
+        " Quando Albedo infligge DAN da abilità elementale a un avversario entro 20 s dall'uso della suddetta abilità, si genera un'<strong>Isotoma argenteo</strong> della durata di 10 s vicino all'avversario. Quando non sono presenti in campo Isotome solari create da Albedo, e finché Albedo non viene sconfitto, le Isotome argentee generano Boccioli effimeri proprio come le Isotome solari. Possono coesistere in campo fino a due Isotome argentee create da Albedo.",
+        " Dopo aver creato un'Isotoma solare, i DAN da attacco normale, attacco caricato, attacco in picchiata, abilità elementale e Tripudio elementale dei membri vicini del gruppo aumentano di un 4% per ogni 1.000 punti di DIF di Albedo per 20 s, fino a un 12% di aumento massimo.",
+        " Dopo aver creato un'Isotoma argentea, i DAN da attacco normale, attacco caricato, attacco in picchiata, abilità elementale e Tripudio elementale dei membri vicini del gruppo dotati di attributo Hexerei aumentano di un 10% per ogni 1.000 punti di DIF di Albedo per 20 s, fino a un 30% di aumento massimo."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Fiore dell'Eden",
     "description": {
-      "0": "I Boccioli effimeri generati da <strong>Abiogenesi: Isotoma solare</strong> rigenerano l'energia di Albedo di 1,2."
+      "0": "I Boccioli effimeri generati dall'abilità elementale di Albedo <strong>Abiogenesi: Isotoma solare</strong> rigenerano di 1,2 la sua energia."
+    },
+    "upgradedDescription": {
+      "0": "I Boccioli effimeri generati dall'abilità elementale di Albedo <strong>Abiogenesi: Isotoma solare</strong> rigenerano di 1,2 la sua energia.",
+      "1": "Inoltre, l'utilizzo della suddetta abilità elementale aumenta la DIF di Albedo di un 50% per i 20 s successivi."
     }
   },
   "constellation2": {
     "name": "Eone Fanerozoico",
     "description": {
-      "0": "I Boccioli effimeri generati da <strong>Abiogenesi: Isotoma solare</strong> forniscono ad Albedo Giudizio fatale per 30 s:",
+      "0": "I Boccioli effimeri generati dall'abilità elementale <strong>Abiogenesi: Isotoma solare</strong> forniscono ad Albedo Giudizio fatale per 30 s:",
       "1": [
-        " rilasciare <strong>Rito della discendenza: Ondata tettonica</strong> consuma tutti gli accumuli di Giudizio fatale. Ciascun accumulo consumato aumenta i DAN inflitti dai Boccioli fatali e da Rito della discendenza: Ondata tettonica di una quantità pari a un 30% della DIF di Albedo;",
+        " rilasciare <strong>Rito della discendenza: Ondata tettonica</strong> consuma tutti gli accumuli di Giudizio fatale. Ciascun accumulo consumato aumenta i DAN inflitti dai Boccioli fatali e dal rilascio di Rito della discendenza: Ondata tettonica di una quantità pari a un 30% della DIF di Albedo;",
         " cumulabile fino a 4 volte."
       ]
+    },
+    "upgradedDescription": {
+      "0": "I Boccioli effimeri generati dall'abilità elementale <strong>Abiogenesi: Isotoma solare</strong> forniscono ad Albedo Giudizio fatale per 30 s:",
+      "1": [
+        " rilasciare <strong>Rito della discendenza: Ondata tettonica</strong> consuma tutti gli accumuli di Giudizio fatale. Ciascun accumulo consumato aumenta i DAN inflitti dai Boccioli fatali e dal rilascio di Rito della discendenza: Ondata tettonica di una quantità pari a un 30% della DIF di Albedo;",
+        " cumulabile fino a 4 volte."
+      ],
+      "2": "<br/>",
+      "3": "Inoltre, quando Albedo non è in campo e Giudizio fatale raggiunge i 4 accumuli, questi ultimi vengono consumati tutti per generare 3 Boccioli fatali vicino al tuo personaggio, che sbocciano violentemente e infliggono <geo>DAN da Geo ad area</geo> pari a un 300% della DIF di Albedo. Tali DAN sono considerati DAN da Tripudio elementale. Inoltre, se il talento passivo <tooltip ns=char_Albedo_gen baseKey18=passive2><strong>Saggezza degli Homunculi</strong></tooltip> è stato sbloccato, la maestria elementale dei membri del gruppo vicini aumenta di 125 per 10 s."
     }
   },
   "constellation3": {
@@ -147,7 +177,11 @@
   "constellation4": {
     "name": "Discesa divina",
     "description": {
-      "0": "Aumenta di un 30% i DAN da attacco in picchiata dei membri attivi del gruppo all'interno del campo dell'Isotoma solare."
+      "0": "I DAN da attacco in picchiata dei membri attivi del gruppo all'interno del campo dell'Isotoma solare aumentano di un 30%."
+    },
+    "upgradedDescription": {
+      "0": "I DAN da attacco in picchiata dei membri attivi del gruppo all'interno del campo dell'Isotoma solare aumentano di un 30%.",
+      "1": "Inoltre, quando un membro attivo del gruppo vicino salta in prossimità di un'Isotoma argentea, questa viene distrutta aumentando notevolmente l'altezza del salto, e per i 3 s successivi i DAN da attacco in picchiata all'impatto col terreno del personaggio aumentano di un ulteriore 30%. Questo effetto viene rimosso 0,1 s dopo che l'impatto col terreno dell'attacco in picchiata del personaggio ha inflitto DAN."
     }
   },
   "constellation5": {
@@ -160,7 +194,11 @@
   "constellation6": {
     "name": "Polvere purificatrice",
     "description": {
-      "0": "Aumenta di un 17% i DAN dei membri attivi del gruppo all'interno del campo dell'Isotoma solare protetti da uno scudo creato da una reazione di Cristallizzazione."
+      "0": "I DAN dei membri attivi del gruppo attuali aumentano di un 17% nel campo dell'Isotoma solare quando sono protetti da uno scudo creato tramite Cristallizzazione o quando nel campo dell'Isotoma solare sono presenti delle Gabbie lunari."
+    },
+    "upgradedDescription": {
+      "0": "I DAN dei membri attivi del gruppo attuali aumentano di un 17% nel campo dell'Isotoma solare quando sono protetti da uno scudo creato tramite Cristallizzazione o quando nel campo dell'Isotoma solare sono presenti delle Gabbie lunari.",
+      "1": "Inoltre, quando viene utilizzato il Tripudio elementale <strong>Rito della discendenza: Ondata tettonica</strong>, tutte le Isotome argentee in campo vengono distrutte. Per ogni Isotoma argentea distrutta in questo modo, nell'attuale iterazione del Tripudio elementale si considerano consumati 4 accumuli di Giudizio fatale del livello costellazione {LINK#TE382}<strong>Eone Fanerozoico</strong></tooltip>. Questo aumenta i DAN inflitti da Bocciolo fatale di un 250% della DIF di Albedo per i 20 s successivi."
     }
   }
 }

@@ -1,0 +1,29 @@
+{
+  "setName": "Serenata das Estrelas e da Lua",
+  "setEffects": {
+    "2": "Aumenta a Proficiência Elemental em 80.",
+    "4": "Quando o portador não é o personagem ativo, aumenta o Dano causado por Reações Lunares em 20%. Quando o nível de Presságio Lunar da equipe for pelo menos Reluzir Cheio, aumenta o Dano causado por Reações Lunares em mais 40%. Esses efeitos serão removidos 3s após o portador entrar em campo."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Oferenda ao Luar: Sonho Ornamentado",
+      "desc": "Um ornamento floral entalhado com grande esmero pelos artesãos antigos para as estátuas divinas das luas celestiais, com o intuito de realçar a beleza e magnificência dessas deusas."
+    },
+    "plume": {
+      "name": "Oferenda ao Luar: Luz de Despedida",
+      "desc": "Uma pena de caligrafia utilizada pelos sacerdotes antigos para escrever as liturgias das luas. Eram uma grande fonte de inspiração."
+    },
+    "sands": {
+      "name": "Oferenda ao Luar: Hora Final",
+      "desc": "Um relógio de areia utilizado pelos sábios antigos para perguntar para as luas celestiais pela verdade, e que registraram o momento final."
+    },
+    "goblet": {
+      "name": "Oferenda ao Luar: Libação",
+      "desc": "Um cálice de vinho utilizado pelos devotos antigos para realizar oferendas para as luas, e que foi perdido no último banquete da celebração desse ritual."
+    },
+    "circlet": {
+      "name": "Oferenda ao Luar: Coroa Prateada",
+      "desc": "Uma coroa de prata que era utilizada pelos poetas antigos para oferecer poemas para as luas, e que liam as últimas palavras de seus versos."
+    }
+  }
+}

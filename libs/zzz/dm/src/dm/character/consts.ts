@@ -41,6 +41,7 @@ export const characterIdMap = {
   '1311': 'AstraYao',
   '1321': 'Evelyn',
   '1331': 'Vivian',
+  '1341': 'Zhao',
   '1351': 'Pulchra',
   '1361': 'Trigger',
   '1371': 'Yixuan',
@@ -49,9 +50,18 @@ export const characterIdMap = {
   '1401': 'Alice',
   '1411': 'Yuzuha',
   '1421': 'PanYinhu',
+  '1431': 'YeShunguang',
   '1441': 'Manato',
   '1451': 'Lucia',
   '1461': 'Seed',
+  '1471': 'Banyue',
+  '1481': 'Dialyn',
+  '1491': 'Sunna',
+  '1501': 'Aria',
+  '1511': 'NangongYu',
+  '1521': 'Cissia',
+  '1531': 'StarlightBilly',
+  '1541': 'Promeia',
 } as const
 
 export const attributeMap: Record<number, AttributeKey> = {
@@ -82,6 +92,8 @@ export const factionMap: Record<number, FactionKey> = {
   9: 'Mockingbird',
   10: 'YunkuiSummit',
   11: 'SpookShack',
+  12: 'KrampusComplianceAuthority',
+  13: 'AngelsOfDelusion',
 }
 
 export const characterRarityMap: Record<number, CharacterRarityKey> = {
@@ -91,6 +103,7 @@ export const characterRarityMap: Record<number, CharacterRarityKey> = {
 
 export const coreStatMap: Record<string, StatKey> = {
   'Base ATK': 'atk',
+  ATK: 'atk',
   Impact: 'impact',
   'CRIT Rate': 'crit_',
   'CRIT DMG': 'crit_dmg_',

@@ -60,7 +60,7 @@
     "name": "Airborne Disease Prevention",
     "description": {
       "0": "It's time for the real bash bros to step up! Ifa calls Cacucu in as backup.",
-      "1": "After using this skill, Ifa gains 80 Nightsoul points and enters the <strong>Nightsoul's Blessing</strong> state. In the Nightsoul's Blessing state, Ifa will hover with Cacucu's help. When he uses Normal Attacks in this state, he will use different kinds of <strong>Supporting Fire</strong> depending on whether you Tap or Hold, firing Tonicshots that are capable of healing all party members.",
+      "1": "After using this skill, Ifa gains 80 Nightsoul points and enters the <tooltip ns=tooltips_gen baseKey18=11130003 values=[]><strong>Nightsoul's Blessing</strong></tooltip> state. In the Nightsoul's Blessing state, Ifa will hover with Cacucu's help. When he uses Normal Attacks in this state, he will use different kinds of <tooltip ns=tooltips_gen baseKey18=11130001 values=[]><strong>Supporting Fire</strong></tooltip> depending on whether you Tap or Hold, firing Tonicshots that are capable of healing all party members.",
       "2": "<br/>",
       "3": "Additionally, Holding the Elemental Skill <strong>Airborne Disease Prevention</strong> while Ifa is in Nightsoul's Blessing will cause him to use a Nightsoul-aligned Plunging Attack. Letting go of the skill button will interrupt this Plunging Attack to maintain his hover. If Ifa lands due to this Plunging Attack, his Nightsoul's Blessing state will end."
     },
@@ -105,7 +105,7 @@
     "name": "Compound Sedation Field",
     "description": {
       "0": "Fires a Therapeutic Sedative at a (temporarily aggressive) opponent. The sedative will explode on impact, creating a restraining wind current that pulls nearby objects and opponents in while dealing Nightsoul-aligned <anemo>AoE Anemo DMG</anemo>.",
-      "1": "When the Therapeutic Sedative hits an opponent affected by <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, it will apply a <strong>Sedation Mark</strong> to them."
+      "1": "When the Therapeutic Sedative hits an opponent affected by <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, it will apply a <tooltip ns=tooltips_gen baseKey18=11130004 values=[]><strong>Sedation Mark</strong></tooltip> to them."
     },
     "skillParams": {
       "0": "Skill DMG",
@@ -147,7 +147,7 @@
   "passive1": {
     "name": "Field Medic's Vision",
     "description": {
-      "0": "When Ifa is in the Nightsoul's Blessing state, every 1 Nightsoul point out of the total in his entire party will grant him 1 <strong>Rescue Essentials</strong> point. Rescue Essentials will increase the Swirl, Electro-Charged, and Lunar-Charged DMG dealt by nearby party members."
+      "0": "When Ifa is in the Nightsoul's Blessing state, every 1 Nightsoul point out of the total in his entire party will grant him 1 <tooltip ns=tooltips_gen baseKey18=11130002 values=[\"150\",\"0.015\"]><strong>Rescue Essentials</strong></tooltip> point. Rescue Essentials will increase the Swirl, Electro-Charged, and Lunar-Charged DMG dealt by nearby party members."
     }
   },
   "passive2": {
@@ -172,42 +172,42 @@
   "constellation1": {
     "name": "Vitiferous Elixir's Concoction",
     "description": {
-      "0": "When <strong>Supporting Fire</strong> hits an opponent, it will restore 6 Energy for Ifa. One such Energy restoration can be triggered once every 8s."
+      "0": "When <tooltip ns=tooltips_gen baseKey18=11130001 values=[]><strong>Supporting Fire</strong></tooltip> hits an opponent, it will restore 6 Energy for Ifa. One such Energy restoration can be triggered once every 8s."
     }
   },
   "constellation2": {
     "name": "Guiding Spirit of Ballistic Prayer",
     "description": {
-      "0": "When Ifa is in the Nightsoul's Blessing state, every Nightsoul point the party has above a total of 60 will grant Ifa 4 additional <strong>Rescue Essentials</strong> points.",
+      "0": "When Ifa is in the Nightsoul's Blessing state, every Nightsoul point the party has above a total of 60 will grant Ifa 4 additional <tooltip ns=tooltips_gen baseKey18=11130002 values=[\"150\",\"0.015\"]><strong>Rescue Essentials</strong></tooltip> points.",
       "1": "Additionally, Ifa's Rescue Essentials limit is increased by 50.",
-      "2": "You must first unlock the Ascension Talent <strong>Field Medic's Vision</strong>."
+      "2": "You must first unlock the Ascension Talent <tooltip ns=char_Ifa_gen baseKey18=passive1><strong>Field Medic's Vision</strong></tooltip>."
     }
   },
   "constellation3": {
     "name": "Rebuttal in Negotiations With the Night",
     "description": {
-      "0": "Increases the Level of <strong>Airborne Disease Prevention</strong> by 3.",
+      "0": "Increases the Level of <strong><tooltip ns=char_Ifa_gen baseKey18=skill>Airborne Disease Prevention</tooltip></strong> by 3.",
       "1": "Maximum upgrade level is 15."
     }
   },
   "constellation4": {
     "name": "Decayed Vessel's Permutation",
     "description": {
-      "0": "The restraining wind current created by the Elemental Burst <strong>Compound Sedation Field</strong> has its duration extended to 3s.",
+      "0": "The restraining wind current created by the Elemental Burst <strong><tooltip ns=char_Ifa_gen baseKey18=burst>Compound Sedation Field</tooltip></strong> has its duration extended to 3s.",
       "1": "Additionally, Ifa gains 100 Elemental Mastery for 15s after using his Elemental Burst <strong>Compound Sedation Field</strong>."
     }
   },
   "constellation5": {
     "name": "Vow of Universal Coexistence",
     "description": {
-      "0": "Increases the Level of <strong>Compound Sedation Field</strong> by 3.",
+      "0": "Increases the Level of <strong><tooltip ns=char_Ifa_gen baseKey18=burst>Compound Sedation Field</tooltip></strong> by 3.",
       "1": "Maximum upgrade level is 15."
     }
   },
   "constellation6": {
     "name": "Oath on a Feathered Knot",
     "description": {
-      "0": "When Ifa uses the Hold version of his <strong>Supporting Fire</strong>, there is a 50% chance that he will fire an additional Tonicshot that deals 120% of Ifa's ATK as Anemo DMG. This DMG is considered Normal Attack DMG.",
+      "0": "When Ifa uses the Hold version of his <tooltip ns=tooltips_gen baseKey18=11130001 values=[]><strong>Supporting Fire</strong></tooltip>, there is a 50% chance that he will fire an additional Tonicshot that deals 120% of Ifa's ATK as Anemo DMG. This DMG is considered Normal Attack DMG.",
       "1": "Additionally, when he is not in combat, Ifa will consume 20% less Nightsoul points and Phlogiston in his Nightsoul's Blessing state."
     }
   }

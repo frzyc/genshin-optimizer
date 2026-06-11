@@ -121,6 +121,20 @@
       "0": "Verkürzt die bei Erkundungen innerhalb des Einflussbereichs von Mondstadt verbrauchte Zeit um 25 %."
     }
   },
+  "lockedPassive": {
+    "name": "Geschenk der Hexennacht – Phantomkonzert",
+    "description": {
+      "0": "Wandelt Fischl nach dem Abschluss von <strong>Aufgabe der Hexe – Vom Unerwarteten</strong> in eine <strong>Hexerei</strong>-Figur um. Verleiht, wenn sich in der Truppe mindestens 2 Hexerei-Figuren befinden, den Effekt <strong>Hexerei – Geheimes Ritual</strong>, der Hexerei-Figuren verstärkt.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei – Geheimes Ritual</strong>",
+      "3": "O, Ozvaldo Hrafnavins, Nachtrabenprinz, Zeuge des Untergangs unzähliger Welten, singe die siebenteilige Nocturne für die Prinzessin, denn dies ist der Moment der tiefsten Sünde, in dem die Seelen, die am Ende von Ursache und Wirkung versammelt sind, das Schicksal auslöschen.",
+      "4": "Verleiht den Figuren in der Truppe außerdem zusätzliche Verstärkungseffekte, wenn Oz sich auf dem Feld befindet:",
+      "5": [
+        " Erhöht den ANG von Fischl und anderen aktuellen Figuren in der Truppe in der Nähe 10 s lang um 22,5 %, nachdem ein Truppenmitglied in der Nähe die Reaktion „Überladen“ ausgelöst hat.",
+        " Erhöht die Elementarkunde von Fischl und anderen aktuellen Figuren in der Truppe in der Nähe 10 s lang um 90 Punkte, nachdem ein Truppenmitglied in der Nähe die Reaktion „Unter Strom“ oder „Mond unter Strom“ ausgelöst hat."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Blick aus der Finsternis",
     "description": {
@@ -158,6 +172,10 @@
     "name": "Vogel der ewigen Nacht",
     "description": {
       "0": "Verlängert die Dauer des Vorhandenseins von Oz um 2 s, greift gemeinsam mit der aktuellen eigenen Figur an und verursacht <electro>Elektro-Schaden</electro> in Höhe von 30 % von Fischls ANG."
+    },
+    "upgradedDescription": {
+      "0": "Verlängert die Dauer des Vorhandenseins von Oz um 2 s. Oz greift gemeinsam mit der aktuellen eigenen Figur an und verursacht <electro>Elektro-Schaden</electro> in Höhe von 30 % von Fischls ANG.",
+      "1": "Erhöht, nachdem Oz einen abgestimmten Angriff ausgeführt hat, den Erhöhungs-Effekt für ANG und Elementarkunde von <strong>Geschenk der Hexennacht – Phantomkonzert</strong> um 100 %, hält 10 s."
     }
   }
 }

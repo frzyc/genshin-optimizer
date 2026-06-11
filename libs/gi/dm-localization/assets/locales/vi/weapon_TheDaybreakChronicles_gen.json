@@ -1,0 +1,29 @@
+{
+  "name": "Biên Niên Sử Bình Minh",
+  "description": {
+    "0": "Tất cả thơ ca về chiến tranh đều cưỡi gió mà đến, đọng lại thành những thanh âm nhẹ nhàng trên sợi dây. Sức mạnh hội tụ trong đó cứ như ánh sáng bình minh xé toạc đêm tối vô biên."
+  },
+  "passiveName": "Bài Ca Vang Vọng Xa Xưa",
+  "passiveDescription": {
+    "0": {
+      "0": "Người trang bị nhận được \"Ngọn Gió Nổi\": 3s sau khi thoát chiến đấu, sát thương gây ra bởi Tấn Công Thường, Kỹ Năng Nguyên Tố và Kỹ Năng Nộ tăng <cryo>60%</cryo>. Trong trạng thái chiến đấu, hiệu ứng tăng sát thương nêu trên giảm <cryo>10%</cryo> mỗi giây cho đến khi giảm về 0%. Khi Tấn Công Thường, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ của người trang bị đánh trúng kẻ địch, hiệu quả tăng sát thương của loại sát thương tương ứng tăng <cryo>10%</cryo> cho đến khi đạt <cryo>60%</cryo>, mỗi loại tấn công nêu trên mỗi 0.1s tối đa kích hoạt hiệu quả này một lần. Người trang bị không ra trận vẫn có thể kích hoạt hiệu quả nêu trên.",
+      "1": "Ngoài ra, khi đội có hiệu ứng \"Hexerei - Nghi Thức Bí Mật\", thì khi Tấn Công Thường, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ của người trang bị đánh trúng kẻ địch, sẽ đổi thành khiến hiệu quả tăng sát thương của tất cả loại sát thương tăng <cryo>20%</cryo>."
+    },
+    "1": {
+      "0": "Người trang bị nhận được \"Ngọn Gió Nổi\": 3s sau khi thoát chiến đấu, sát thương gây ra bởi Tấn Công Thường, Kỹ Năng Nguyên Tố và Kỹ Năng Nộ tăng <cryo>75%</cryo>. Trong trạng thái chiến đấu, hiệu ứng tăng sát thương nêu trên giảm <cryo>12.5%</cryo> mỗi giây cho đến khi giảm về 0%. Khi Tấn Công Thường, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ của người trang bị đánh trúng kẻ địch, hiệu quả tăng sát thương của loại sát thương tương ứng tăng <cryo>12.5%</cryo> cho đến khi đạt <cryo>75%</cryo>, mỗi loại tấn công nêu trên mỗi 0.1s tối đa kích hoạt hiệu quả này một lần. Người trang bị không ra trận vẫn có thể kích hoạt hiệu quả nêu trên.",
+      "1": "Ngoài ra, khi đội có hiệu ứng \"Hexerei - Nghi Thức Bí Mật\", thì khi Tấn Công Thường, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ của người trang bị đánh trúng kẻ địch, sẽ đổi thành khiến hiệu quả tăng sát thương của tất cả loại sát thương tăng <cryo>25%</cryo>."
+    },
+    "2": {
+      "0": "Người trang bị nhận được \"Ngọn Gió Nổi\": 3s sau khi thoát chiến đấu, sát thương gây ra bởi Tấn Công Thường, Kỹ Năng Nguyên Tố và Kỹ Năng Nộ tăng <cryo>90%</cryo>. Trong trạng thái chiến đấu, hiệu ứng tăng sát thương nêu trên giảm <cryo>15%</cryo> mỗi giây cho đến khi giảm về 0%. Khi Tấn Công Thường, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ của người trang bị đánh trúng kẻ địch, hiệu quả tăng sát thương của loại sát thương tương ứng tăng <cryo>15%</cryo> cho đến khi đạt <cryo>90%</cryo>, mỗi loại tấn công nêu trên mỗi 0.1s tối đa kích hoạt hiệu quả này một lần. Người trang bị không ra trận vẫn có thể kích hoạt hiệu quả nêu trên.",
+      "1": "Ngoài ra, khi đội có hiệu ứng \"Hexerei - Nghi Thức Bí Mật\", thì khi Tấn Công Thường, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ của người trang bị đánh trúng kẻ địch, sẽ đổi thành khiến hiệu quả tăng sát thương của tất cả loại sát thương tăng <cryo>30%</cryo>."
+    },
+    "3": {
+      "0": "Người trang bị nhận được \"Ngọn Gió Nổi\": 3s sau khi thoát chiến đấu, sát thương gây ra bởi Tấn Công Thường, Kỹ Năng Nguyên Tố và Kỹ Năng Nộ tăng <cryo>105%</cryo>. Trong trạng thái chiến đấu, hiệu ứng tăng sát thương nêu trên giảm <cryo>17.5%</cryo> mỗi giây cho đến khi giảm về 0%. Khi Tấn Công Thường, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ của người trang bị đánh trúng kẻ địch, hiệu quả tăng sát thương của loại sát thương tương ứng tăng <cryo>17.5%</cryo> cho đến khi đạt <cryo>105%</cryo>, mỗi loại tấn công nêu trên mỗi 0.1s tối đa kích hoạt hiệu quả này một lần. Người trang bị không ra trận vẫn có thể kích hoạt hiệu quả nêu trên.",
+      "1": "Ngoài ra, khi đội có hiệu ứng \"Hexerei - Nghi Thức Bí Mật\", thì khi Tấn Công Thường, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ của người trang bị đánh trúng kẻ địch, sẽ đổi thành khiến hiệu quả tăng sát thương của tất cả loại sát thương tăng <cryo>35%</cryo>."
+    },
+    "4": {
+      "0": "Người trang bị nhận được \"Ngọn Gió Nổi\": 3s sau khi thoát chiến đấu, sát thương gây ra bởi Tấn Công Thường, Kỹ Năng Nguyên Tố và Kỹ Năng Nộ tăng <cryo>120%</cryo>. Trong trạng thái chiến đấu, hiệu ứng tăng sát thương nêu trên giảm <cryo>20%</cryo> mỗi giây cho đến khi giảm về 0%. Khi Tấn Công Thường, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ của người trang bị đánh trúng kẻ địch, hiệu quả tăng sát thương của loại sát thương tương ứng tăng <cryo>20%</cryo> cho đến khi đạt <cryo>120%</cryo>, mỗi loại tấn công nêu trên mỗi 0.1s tối đa kích hoạt hiệu quả này một lần. Người trang bị không ra trận vẫn có thể kích hoạt hiệu quả nêu trên.",
+      "1": "Ngoài ra, khi đội có hiệu ứng \"Hexerei - Nghi Thức Bí Mật\", thì khi Tấn Công Thường, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ của người trang bị đánh trúng kẻ địch, sẽ đổi thành khiến hiệu quả tăng sát thương của tất cả loại sát thương tăng <cryo>40%</cryo>."
+    }
+  }
+}

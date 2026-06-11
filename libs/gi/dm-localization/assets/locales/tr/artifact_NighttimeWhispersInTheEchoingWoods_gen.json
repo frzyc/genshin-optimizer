@@ -2,7 +2,7 @@
   "setName": "Yankılı Ormanda Gece Fısıltısı",
   "setEffects": {
     "2": "+%18 Saldırı.",
-    "4": "Bir Element Becerisi kullandıktan sonra 10 saniyeliğine %20 Toprak Hasarı Bonusu kazanılır. Kristalleşme tepkimesinden gelen bir kalkan mevcutsa bu etki %150 artar. Bu ek artış, kalkan etkisini kaybettikten 1sn sonra kaybolur."
+    "4": "Bir Element Becerisi kullandıktan sonra 10 saniyeliğine %20 Toprak Hasarı Bonusu kazanılır. Kristalleşme tepkimesinden gelen bir kalkan mevcutsa veya yakında Ay Kristalleşmesi tepkimeleriyle oluşan Ay Akıntıları varsa bu etki %150 artar. Bu ek artış, koşullar ortadan kalktıktan 1sn sonra kaybolur."
   },
   "pieces": {
     "flower": {

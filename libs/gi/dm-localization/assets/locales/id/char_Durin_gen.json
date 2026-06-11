@@ -1,0 +1,188 @@
+{
+  "name": "Durin",
+  "title": "\"The Undying Fire\"",
+  "description": "Naga yang lahir dari pena milik \"M\" akhirnya tiba di dunia manusia. Dan \"kisah\"-nya masih terus berlanjut.",
+  "constellationName": "Draco Rubedo",
+  "auto": {
+    "name": "Radiant Wingslash",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Melancarkan maksimum hingga 4 serangan pedang beruntun."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk melakukan satu kali tebasan ke arah depan."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah di bawahnya, menyerang musuh di jalurnya dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Charged Attack",
+      "5": "Konsumsi Stamina Charged Attack",
+      "6": "DMG Selama Plunging",
+      "7": "DMG Plunging Attack Rendah/Tinggi",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Binary Form: Convergence and Division",
+    "description": {
+      "0": "Memurnikan substansi jiwa dan harapan untuk melakukan <tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>Essential Transmutation</strong></tooltip>. Selama durasi ini, Elemental Skill Durin <strong>Binary Form: Convergence and Division</strong> akan berubah menjadi Elemental Skill khusus <strong>Transmutation: Confirmation of Purity</strong>, sedangkan Normal Attack <strong>Radiant Wingslash</strong> akan berubah menjadi Elemental Skill khusus <strong>Transmutation: Denial of Darkness</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Transmutation: Confirmation of Purity</strong>",
+      "3": "Mengakibatkan satu kali <pyro>Pyro DMG Area</pyro> terhadap musuh di sekitar, menghapus efek Essential Transmutation, dan memasuki status <strong>Confirmation of Purity</strong> selama 30 detik.",
+      "4": "<br/>",
+      "5": "<strong>Transmutation: Denial of Darkness</strong>",
+      "6": "Mengakibatkan 3 kali <pyro>Pyro DMG</pyro> secara berturut-turut terhadap musuh di depan, menghapus efek Essential Transmutation dan memasuki status <strong>Denial of Darkness</strong> selama 30 detik.",
+      "7": "<br/>",
+      "8": "Saat Durin dalam kondisi bertempur dan memasuki status <strong>Confirmation of Purity</strong> atau <strong>Denial of Darkness</strong>, sejumlah Energy-nya akan dipulihkan. Pemulihan Energy dengan cara ini dapat terpicu sekali setiap 6 detik."
+    },
+    "skillParams": {
+      "0": "DMG Transmutation: Confirmation of Purity",
+      "1": "DMG Transmutation: Denial of Darkness",
+      "2": "Pemulihan Energy",
+      "3": "Cooldown",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Principle of Purity: As the Light Shifts",
+    "description": {
+      "0": "Melepaskan kekuatan \"hewan buas\" dengan cara yang berbeda-beda. Durin bisa melancarkan Elemental Burst yang berbeda sesuai dengan status <tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>Essential Transmutation</strong></tooltip> yang dimiliki.",
+      "1": "<br/>",
+      "2": "<strong>Principle of Purity: As the Light Shifts</strong>",
+      "3": "Jika sedang berada dalam status <strong>Confirmation of Purity</strong>, Durin akan melancarkan Elemental Burst <strong>Principle of Purity: As the Light Shifts</strong> untuk mengakibatkan 3 kali <pyro>Pyro DMG Area</pyro> terhadap musuh di depan dan akan menampakkan kekuatan dirinya dalam wujud <strong>Dragon of White Flame</strong>. Dragon of White Flame akan mengikuti Karakter aktif dan menyerang musuh-musuh di sekitar secara berkala, mengakibatkan <pyro>Pyro DMG Area</pyro>. DMG ini dianggap sebagai DMG Elemental Burst.",
+      "4": "<br/>",
+      "5": "<strong>Principle of Darkness: As the Stars Smolder</strong>",
+      "6": "Jika sedang berada dalam status <strong>Denial of Darkness</strong>, Elemental Burst Durin akan dikonversi menjadi <strong>Principle of Darkness: As the Stars Smolder</strong>, mengakibatkan 3 kali <pyro>Pyro DMG Area</pyro> terhadap musuh di depan, dan akan menampakkan kekuatan dirinya dalam wujud <strong>Dragon of Dark Decay</strong>. Dragon of Dark Decay akan mengikuti Karakter aktif dan menyerang satu musuh di sekitar secara berkala, mengakibatkan <pyro>Pyro DMG</pyro>. DMG ini dianggap sebagai DMG Elemental Burst.",
+      "7": "<br/>",
+      "8": "Jika Durin sedang tidak berada dalam status spesial dari Essential Transmutation, maka Elemental Burst yang dilancarkan adalah <strong>Principle of Purity: As the Light Shifts</strong>."
+    },
+    "skillParams": {
+      "0": "DMG Principle of Purity: As the Light Shifts",
+      "1": "DMG Principle of Darkness: As the Stars Smolder",
+      "2": "DMG Dragon of White Flame",
+      "3": "DMG Dragon of Dark Decay",
+      "4": "Durasi Dragon of White Flame",
+      "5": "Durasi Dragon of Dark Decay",
+      "6": "Cooldown",
+      "7": "Konsumsi Energy",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Light Manifest of the Divine Calculus",
+    "description": {
+      "0": "Durin akan menghasilkan efek penguatan yang berbeda berdasarkan bentuk kekuatan yang diwujudkan saat ia melancarkan Elemental Burst-nya. Jika kekuatan Durin berwujud:",
+      "1": "<br/>",
+      "2": "<strong>Dragon of White Flame</strong>",
+      "3": "Setelah Karakter party di sekitar memicu reaksi Burning, Overloaded, Pyro Swirl, atau Pyro Crystallize, atau saat mengakibatkan <pyro>Pyro DMG</pyro> atau <dendro>Dendro DMG</dendro> terhadap musuh yang berada dalam status Burning, maka <pyro>Pyro RES</pyro> musuh ini dan RES elemen yang terlibat di dalam reaksinya akan berkurang 20% selama 6 detik.",
+      "4": "<br/>",
+      "5": "<strong>Dragon of Dark Decay</strong>",
+      "6": "DMG reaksi Vaporize yang dipicu Durin meningkat 40%, dan DMG reaksi Melt yang dipicu Durin meningkat 40%."
+    }
+  },
+  "passive2": {
+    "name": "Chaos Formed Like the Night",
+    "description": {
+      "0": "Setelah melancarkan Elemental Burst, Durin akan mendapatkan efek Primordial Fusion of Forms selama 20 detik: Selama durasi ini, Durin akan mendapatkan 10 lapis Primordial Fusion. Saat serangan berjeda dari <strong>Dragon of White Flame</strong> dan <strong>Dragon of Dark Decay</strong> mengakibatkan DMG, satu lapis Primordial Fusion akan dikonsumsi untuk meningkatkan DMG-nya. Setiap 100 ATK akan mengakibatkan DMG tambahan sebesar 3% dari DMG awalnya. DMG tambahan yang bisa diakibatkan dengan cara ini adalah maksimum 75% dari DMG awalnya. Setiap kali serangan <strong>Dragon of White Flame</strong> dan <strong>Dragon of Dark Decay</strong> mengenai beberapa musuh sekaligus, tetap hanya satu lapis Primordial Fusion yang akan dikonsumsi.",
+      "1": "Jumlah lapisan Primordial Fusion akan diperbarui saat Durin melancarkan Elemental Burst lagi."
+    }
+  },
+  "passive3": {
+    "name": "Echoes of the Surging Earth",
+    "description": {
+      "0": "Ketika dikirim untuk melakukan ekspedisi di Mondstadt selama 20 jam, hadiah yang didapatkan akan bertambah 25%."
+    }
+  },
+  "lockedPassive": {
+    "name": "Witch's Eve Rite: Ode to Ascension",
+    "description": {
+      "0": "Setelah menyelesaikan <strong>PR Penyihir: Tentang Dunia Ini</strong>, Durin akan berubah menjadi Karakter <strong>Hexerei</strong>. Saat ada setidaknya 2 Karakter Hexerei di dalam party, akan mendapatkan efek <strong>Hexerei: Secret Rite</strong> yang memperkuat Karakter Hexerei.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei: Secret Rite</strong>",
+      "3": "Meningkatkan seluruh efek Talenta Ascension <tooltip ns=char_Durin_gen baseKey18=passive1><strong>Light Manifest of the Divine Calculus</strong></tooltip> (kecuali durasinya) sebesar 75%."
+    }
+  },
+  "constellation1": {
+    "name": "Adamah's Redemption",
+    "description": {
+      "0": "Setelah melancarkan Elemental Burst, akan menghasilkan efek yang berbeda berdasarkan wujud Elemental Burst yang dilancarkan Durin:",
+      "1": [
+        "<strong>Principle of Purity: As the Light Shifts</strong>: Seluruh Karakter party di sekitar mendapatkan 20 lapis <strong>Cycle of Enlightenment</strong> selama 20 detik. Saat Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, atau Elemental Burst Karakter aktif yang memiliki Cycle of Enlightenment mengakibatkan DMG, 1 lapis Cycle of Enlightenment akan terkonsumsi untuk meningkatkan DMG sebesar 60% ATK Durin. Lapisan Cycle of Enlightenment yang dimiliki oleh setiap Karakter di dalam party dihitung terpisah.",
+        "<strong>Principle of Darkness: As the Stars Smolder</strong>: Durin mendapatkan 20 lapis <strong>Cycle of Enlightenment</strong> selama 20 detik. Saat Elemental Burst Durin mengakibatkan DMG, 2 lapis Cycle of Enlightenment akan terkonsumsi untuk meningkatkan DMG sebesar 150% ATK Durin."
+      ],
+      "2": "<br/>",
+      "3": "Saat melancarkan Elemental Burst, jumlah lapisan <strong>Cycle of Enlightenment</strong> akan direset."
+    }
+  },
+  "constellation2": {
+    "name": "Unground Visions",
+    "description": {
+      "0": "Dalam kurun waktu 20 detik setelah Durin melancarkan Elemental Burst, dan setelah Karakter dalam party di sekitar mengakibatkan reaksi Vaporize, Melt, Burning, Overloaded, Pyro Swirl, atau Pyro Crystallize, atau saat mengakibatkan <pyro>Pyro DMG</pyro> atau <dendro>Dendro DMG</dendro> terhadap musuh yang berada dalam status Burning, maka <pyro>Pyro DMG</pyro> dan Elemental DMG yang elemennya terlibat dalam Reaksi Elemental di atas akan meningkat 50% untuk seluruh anggota party di sekitar. Berlangsung selama 6 detik."
+    }
+  },
+  "constellation3": {
+    "name": "Flame Mirror's Revelation",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Burst <strong><tooltip ns=char_Durin_gen baseKey18=burst>Principle of Purity: As the Light Shifts</tooltip></strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Emanare's Source",
+    "description": {
+      "0": "DMG Elemental Burst Durin meningkat 40%. Selain itu, saat efek mengonsumsi Cycle of Enlightenment dari Konstelasi <strong><tooltip ns=char_Durin_gen baseKey18=constellation1>Adamah's Redemption</tooltip></strong> terpicu, ada 30% kemungkinan untuk tidak mengonsumsi <strong>Cycle of Enlightenment</strong> tersebut."
+    }
+  },
+  "constellation5": {
+    "name": "Scouring Flame's Sundering",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Skill <strong><tooltip ns=char_Durin_gen baseKey18=skill>Binary Form: Convergence and Division</tooltip></strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Dual Birth",
+    "description": {
+      "0": "DMG Elemental Burst Durin akan mengabaikan 30% DEF musuh.",
+      "1": "Selain itu, Elemental Burst Durin <strong>Principle of Purity: As the Light Shifts</strong> dan <strong>Principle of Darkness: As the Stars Smolder</strong> akan ditingkatkan:",
+      "2": [
+        "Setelah Elemental Burst <strong>Principle of Purity: As the Light Shifts</strong> dan <strong>Dragon of White Flame</strong> mengenai musuh, DEF musuh ini berkurang 30% selama 6 detik.",
+        "DMG Elemental Burst <strong>Principle of Darkness: As the Stars Smolder</strong> dan <strong>Dragon of Dark Decay</strong> akan mengabaikan 40% DEF musuh lagi."
+      ]
+    }
+  }
+}

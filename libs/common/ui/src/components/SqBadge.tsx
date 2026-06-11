@@ -1,4 +1,3 @@
-'use client'
 import type { Palette, PaletteColor } from '@mui/material'
 import { styled } from '@mui/material'
 import type { HTMLAttributes } from 'react'

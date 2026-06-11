@@ -1,0 +1,183 @@
+{
+  "name": "Linnea",
+  "title": "Gelehrsamkeit und Wunderreise",
+  "description": "Beraterin der Zweigstelle der Abenteurergilde in Nod-Krai und Naturforscherin.",
+  "constellationName": "Alcyon",
+  "auto": {
+    "name": "Erfassungsprotokoll",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 3 Pfeilschüsse hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Führt einen <strong>gezielten Schuss</strong> mit höherem Schaden und höherer Genauigkeit aus.",
+        "2": "Konzentriert die Steinkristalle während des Zielens an der Pfeilspitze, die voll aufgeladen <geo>Geo-Schaden</geo> verursacht."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schießt in der Luft einen Pfeilregen ab, trifft schnell auf dem Boden auf und verursacht dort Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "Gezielte Schüsse",
+      "4": "Voll aufgeladene gezielte Schüsse",
+      "5": "SCH beim Fallen",
+      "6": "SCH beim Fallen aus niedriger/großer Höhe",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Gegenmaßnahme – Lumis Kampfschrei!",
+    "description": {
+      "0": "Abenteuer mit Lumi! Abhängig von der Art, wie du drückst, führt Lumi unterschiedliche Angriffe aus.",
+      "1": "<br/>",
+      "2": "<strong>Drücken</strong>",
+      "3": "Lumi greift im <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Super-Modus</tooltip></strong> an und fügt Gegnern in der Nähe fortlaufend <geo>Geo-Flächenschaden</geo> zu. Lumi fügt, wenn ein Mondkäfig in der Nähe ist, Gegnern in der Nähe zusätzlich <geo>Geo-Flächenschaden</geo> zu, der als Schaden durch die Reaktion Mond-Kristallisation gewertet wird.",
+      "4": "<br/>",
+      "5": "<strong>Wiederholtes Drücken</strong>",
+      "6": "Jetzt zeigen wir ihnen, was wir wirklich draufhaben! Durch wiederholtes Drücken der Elementarfähigkeit oder des Standardangriffs nach dem Anwenden der Elementarfähigkeit füttert Linnea Lumi mit funkelnden Edelsteinen. Die sattgefressene Lumi greift dann im <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Ultra-Modus</tooltip></strong> an, fügt Gegnern in der Nähe einmalig besonders starken <geo>Geo-Flächenschaden</geo> zu, der als Mond-Kristallisations-SCH gewertet wird, und wechselt dann in den <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Standard-Modus</tooltip></strong>.",
+      "7": "Erhöht bei wiederholtem Drücken der Elementarfähigkeit Linneas Unterbrechungs-WDS.",
+      "8": "<br/>",
+      "9": "<i>„Jetzt bist du dran, Lumi!“</i>"
+    },
+    "skillParams": {
+      "0": "SCH durch Lumis Hammerschlag",
+      "1": "SCH durch Lumis Krafthammer",
+      "2": "SCH durch Lumis tonnenschweren Hammer",
+      "3": "Lumis Dauer",
+      "4": "Abklingzeit",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Notiz – Überlebensratgeber für ausweglose Lagen",
+    "description": {
+      "0": "Selbst ein Experte unter den Abenteurern braucht mal eine Pause! Linnea ruft Lumi herbei, um im <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Super-Modus</tooltip></strong> anzugreifen, stellt allen Truppenmitgliedern in der Nähe LP wieder her und stellt anschließend eine Zeit lang fortlaufend die LP der aktiven Figuren in der Nähe wieder her. Die Menge der wiederhergestellten LP ist abhängig von Linneas VTD.",
+      "1": "Wenn Lumi beim Anwenden der Spezialfähigkeit bereits im Einsatz ist, wird stattdessen Lumis Dauer zurückgesetzt, ohne ihren Angriffsmodus zu ändern.",
+      "2": "<br/>",
+      "3": "<i>„Für professionelle Abenteurer gilt: Wichtiger als noch nie dagewesene Entdeckungen ist es, aus einer ausweglosen Situation unversehrt herauszukommen!“</i>"
+    },
+    "skillParams": {
+      "0": "Erste Heilung",
+      "1": "Fortlaufende Heilung",
+      "2": "Dauer der Heilung",
+      "3": "Abklingzeit",
+      "4": "Elementarenergie",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Notizen der Feldbeobachtung",
+    "description": {
+      "0": "Verringert, wenn Lumi sich auf dem Feld befindet, den <geo>Geo-WDS</geo> von Gegnern in Lumis Nähe um 15 %.",
+      "1": "<br/>",
+      "2": "<strong>Mondomen – Reifer Glanz</strong>: Verstärkt Linneas Elementarfähigkeit <strong><tooltip ns=char_Linnea_gen baseKey18=skill>Gegenmaßnahme – Lumis Kampfschrei!</tooltip></strong> und Spezialfähigkeit <strong><tooltip ns=char_Linnea_gen baseKey18=burst>Notiz – Überlebensratgeber für ausweglose Lagen</tooltip></strong>. Verringert, nachdem Lumi auf das Schlachtfeld gerufen wurde, den <geo>Geo-WDS</geo> von Gegnern in Lumis Nähe zusätzlich um 15 %."
+    }
+  },
+  "passive2": {
+    "name": "Umfassendes Naturkundearchiv",
+    "description": {
+      "0": "Linnea erhöht basierend auf 5 % ihrer VTD die Elementarkunde bestimmter Figuren in der Truppe abhängig von der aktuellen Figur auf dem Feld. Wenn es sich bei der aktuellen Figur um folgende handelt:",
+      "1": [
+        " Mondomen-Figur: Erhöht die Elementarkunde dieser Figur.",
+        " Keine Mondomen-Figur: Erhöht Linneas eigene Elementarkunde."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Mondomen-Segen – Lebensraum-Erkundung",
+    "description": {
+      "0": "Wenn eine Figur in der Truppe die Reaktion „Hydro-Kristallisation“ auslöst, wird diese in die Reaktion „Mond-Kristallisation“ umgewandelt, wobei der durch Figuren in der Truppe verursachte Basis-SCH der Reaktion „Mond-Kristallisation“ auf der Grundlage von Linneas VTD erhöht wird: Für je 100 Punkte VTD wird der Basis-SCH der Reaktion „Mond-Kristallisation“ um 0,7 % erhöht. Auf diese Weise kann der Schaden um bis zu 14 % erhöht werden.",
+      "1": "<br/>",
+      "2": "Erhöht zudem die Stufe vom <strong>Mondomen</strong> der Truppe um 1, wenn sich Linnea in der Truppe befindet."
+    }
+  },
+  "passive": {
+    "name": "Abenteuerexpertin",
+    "description": {
+      "0": "Verringert, wenn Linnea sich nicht im Kampf befindet, die für einen <strong>gezielten Schuss</strong> benötigte Aufladezeit enorm und verschießt zudem einen speziellen <strong>superduperpraktischen Pfeil</strong>, der abhängig vom Ziel unterschiedliche Effekte hervorruft. Art des Ziels:",
+      "1": [
+        " Bestimmtes Tier: Der <strong>superduperpraktische Pfeil</strong> wird zu einem speziellen „Netz“, das die essenzielle Form eines Tierchens festhalten und diese als Medium nutzen kann, um die Form des Tierchens nachzubilden. Die wöchentliche Anzahl benutzbarer „Netze“ ist begrenzt.",
+        " Erzadern mit zum Schmieden geeignetem Erz: Linnea setzt Lumi ein, um das vom <strong>superduperpraktischen Pfeil</strong> als Ziel markierte Erz zu zerstören und die verstreuten Erze einzusammeln. Wenn Lumi sich nicht auf dem Feld befindet, wird sie kurz herbeigerufen, um Linnea beim Erhalt von Erz zu helfen."
+      ],
+      "2": "<br/>",
+      "3": "Verringert in diesem Fall den Schaden, den der <strong>superduperpraktische Pfeil</strong> den Gegnern zufügt, auf 20 % des ursprünglichen Schadens. Außerdem muss sich Linnea nach dem Abschießen einer bestimmten Anzahl <strong>superduperpraktischer Pfeile</strong> innerhalb kurzer Zeit kurz ausruhen, bevor sie erneut Pfeile abschießen kann."
+    }
+  },
+  "constellation1": {
+    "name": "Unvollständige Klassifizierung",
+    "description": {
+      "0": "Verleiht Linnea, wenn die Elementarfähigkeit <strong><tooltip ns=char_Linnea_gen baseKey18=skill>Gegenmaßnahme – Lumis Kampfschrei!</tooltip></strong> angewendet oder „Harmonie der Mondkäfige“ ausgelöst wird, 6 Stapelungen des Effekts <strong>Chroniken der Durchsicht</strong>. Dieser Effekt hält 10 s an und ist bis zu 18-fach stapelbar. Verbraucht, wenn Truppenmitglieder in der Nähe Schaden durch die Reaktion Mond-Kristallisation verursachen, 1 Stapelung „Chroniken der Durchsicht“ und erhöht den verursachten Schaden um 75 % von Linneas VTD.",
+      "1": "Außerdem kann Linnea, wenn Lumi im <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Ultra-Modus</tooltip></strong> den <strong>tonnenschweren Hammer</strong> einsetzt, bis zu 5 Stapelungen „Chroniken der Durchsicht“ verbrauchen, wobei der verursachte Schaden für jede Stapelung um 150 % von Linneas VTD erhöht wird."
+    }
+  },
+  "constellation2": {
+    "name": "Verkündung von Freude und Leid",
+    "description": {
+      "0": "Erhöht innerhalb von 8 s nach dem Auslösen von „Harmonie der Mondkäfige“ den kritischen Schaden aller Figuren in der Truppe, deren Elementartyp <hydro>Hydro</hydro> oder <geo>Geo</geo> ist, um 40 %. Erhöht zudem, wenn Lumi im <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Ultra-Modus</tooltip></strong> den <strong>tonnenschweren Hammer</strong> anwendet, dessen kritischen Schaden zusätzlich um 150 %.",
+      "1": "<br/>",
+      "2": "<strong>Mondomen – Reifer Glanz</strong>: Löst, wenn Lumi im <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Super-Modus</tooltip></strong> den <strong>Krafthammer</strong> anwendet oder im Ultra-Modus den <strong>tonnenschweren Hammer</strong> anwendet, einmal „Harmonie der Mondkäfige“ aus. Diese „Harmonie der Mondkäfige“ wird so gewertet, als ob alle Figuren in der Truppe, deren Elementartyp <hydro>Hydro</hydro> oder <geo>Geo</geo> ist, ihr Element in der Reaktion angewendet haben."
+    }
+  },
+  "constellation3": {
+    "name": "Seite lebhafter Aufzeichnungen",
+    "description": {
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong><tooltip ns=char_Linnea_gen baseKey18=skill>Gegenmaßnahme – Lumis Kampfschrei!</tooltip></strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Instinkt einer Expertin",
+    "description": {
+      "0": "Erhöht innerhalb von 5 s nach dem Auslösen von „Harmonie der Mondkäfige“ die VTD von Linnea und deiner eigenen aktuellen Figur in der Truppe jeweils um 25 %. Wenn Linnea die aktuelle Figur ist, kann die obengenannte VTD-Erhöhung gestapelt werden."
+    }
+  },
+  "constellation5": {
+    "name": "Abschiedsgeschenk aus dem Zauberreich",
+    "description": {
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong><tooltip ns=char_Linnea_gen baseKey18=burst>Notiz – Überlebensratgeber für ausweglose Lagen</tooltip></strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Traum des goldenen Jagdhundes",
+    "description": {
+      "0": "Verstärkt den Effekt des Sternbilds <strong>Unvollständige Klassifizierung</strong>: Verleiht Linnea, wenn die Elementarfähigkeit <strong><tooltip ns=char_Linnea_gen baseKey18=skill>Gegenmaßnahme – Lumis Kampfschrei!</tooltip></strong> angewendet oder „Harmonie der Mondkäfige“ ausgelöst wird, direkt die maximale Anzahl an Stapelungen des Effekts <strong>Chroniken der Durchsicht</strong>. Verbraucht, wenn <strong>Chroniken der Durchsicht</strong> verbraucht wird, die doppelte Anzahl an Stapelungen und erhöht den Schadensbonus auf 150 % des ursprünglichen Werts.",
+      "1": "<br/>",
+      "2": "<strong>Mondomen – Reifer Glanz</strong>: <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Steigert</strong></tooltip> den durch Truppenmitglieder in der Nähe mit der Reaktion Mond-Kristallisation verursachten Schaden um 25 %."
+    }
+  }
+}

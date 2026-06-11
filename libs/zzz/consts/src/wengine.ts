@@ -2,6 +2,7 @@ export const allWengineRarityKeys = ['S', 'A', 'B'] as const
 export type WengineRarityKey = (typeof allWengineRarityKeys)[number]
 
 export const allWengineKeys = [
+  'AngelInTheShell',
   'BashfulDemon',
   'BellicoseBlaze',
   'BigCylinder',
@@ -9,7 +10,9 @@ export const allWengineKeys = [
   'BoxCutter',
   'BunnyBand',
   'CannonRotor',
+  'CauldronOfClarity',
   'CinderCobalt',
+  'CloudcleaveRadiance',
   'CordisGermina',
   'DeepSeaVisitor',
   'DemaraBatteryMarkII',
@@ -19,10 +22,12 @@ export const allWengineKeys = [
   'ElegantVanity',
   'FlamemakerShaker',
   'FlightOfFancy',
+  'FrostfallSickle',
   'FusionCompiler',
   'GildedBlossom',
   'GrillOWisp',
   'HailstormShrine',
+  'HalfSugarBunny',
   'HeartstringNocturne',
   'HellfireGears',
   'Housekeeper',
@@ -40,6 +45,7 @@ export const allWengineKeys = [
   'MarcatoDesire',
   'Metanukimorphosis',
   'MyriadEclipse',
+  'NeonFantasies',
   'OriginalTransmorpher',
   'PeacekeeperSpecialized',
   'PracticedPerfection',
@@ -55,6 +61,7 @@ export const allWengineKeys = [
   'RiotSuppressorMarkVI',
   'RoaringFurnace',
   'RoaringRide',
+  'SerpentineSeeker',
   'SeveredInnocence',
   'SharpenedStinger',
   'SixShooter',
@@ -63,12 +70,15 @@ export const allWengineKeys = [
   'SpringEmbrace',
   'StarlightEngine',
   'StarlightEngineReplica',
+  'StarlightRiderFaceplate',
   'SteamOven',
   'SteelCushion',
   'StreetSuperstar',
   'TheBrimstone',
   'TheRestrained',
+  'TheSimmeringPot',
   'TheVault',
+  'Thoughtbop',
   'Timeweaver',
   'TremorTrigramVessel',
   'TusksOfFury',
@@ -78,6 +88,8 @@ export const allWengineKeys = [
   'VortexRevolver',
   'WeepingCradle',
   'WeepingGemini',
+  'WrathfulVajra',
+  'YesterdayCalls',
   'ZanshinHerbCase',
 ] as const
 
@@ -97,6 +109,7 @@ export const allWengineSubStatKeys = [
   'anomProf',
   'impact_',
   'enerRegen_',
+  'anomMas_',
 ] as const
 export type WengineSubStatKey = (typeof allWengineSubStatKeys)[number]
 

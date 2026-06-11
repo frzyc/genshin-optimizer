@@ -111,6 +111,22 @@
       "1": "Hiệu quả này mỗi 5s chỉ được dùng 1 lần."
     }
   },
+  "lockedPassive": {
+    "name": "Cuồng Phong Dị Bang",
+    "description": {
+      "0": "Đúc kết sức mạnh mới từ những chuyến hành trình đã qua. Khi cộng hưởng với mỗi loại nguyên tố, sẽ nhận được <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>hiệu quả cường hóa</strong></tooltip> thêm.",
+      "1": "<br/>",
+      "2": "Ngoài ra, khi đòn tấn công nguyên tố <pyro>Hỏa</pyro>, <hydro>Thủy</hydro>, <cryo>Băng</cryo> hoặc <electro>Lôi</electro> của nhân vật trong đội ở gần đánh trúng kẻ địch, Nhà Lữ Hành sẽ nhận được 1 tầng \"Lưỡi Đao Gió Sớm\" mang nguyên tố tương ứng, mỗi loại nguyên tố tối đa được cộng dồn 1 tầng Lưỡi Đao Gió Sớm. Khi có ít nhất 2 tầng Lưỡi Đao Gió Sớm và thực hiện Trọng Kích, sẽ tiêu hao toàn bộ Lưỡi Đao Gió Sớm và chuyển sang thực hiện <strong>Trọng Kích - Phong Lốc</strong> đặc biệt.",
+      "3": "<br/>",
+      "4": "<strong>Trọng Kích - Phong Lốc</strong>",
+      "5": [
+        "Mỗi đòn Trọng Kích sẽ gây <anemo>Sát Thương Nguyên Tố Phong</anemo> cao hơn, sát thương tăng thêm tương đương 60% Tấn Công của Nhà Lữ Hành.",
+        "Mỗi khi tiêu hao Lưỡi Đao Gió Sớm của một loại nguyên tố, sẽ thổi lên một luồng Kiếm Gió tương ứng với loại nguyên tố đó, gây sát thương nguyên tố tương ứng bằng 50% Tấn Công của Nhà Lữ Hành. Sát thương này được xem là sát thương Trọng Kích.",
+        "Mỗi 15s tối đa được thực hiện một lần <strong>Trọng Kích - Phong Lốc</strong>.",
+        "Trong lúc thực hiện <strong>Trọng Kích - Phong Lốc</strong>, sẽ không thể nhận Lưỡi Đao Gió Sớm."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Gió Giận Dữ",
     "description": {

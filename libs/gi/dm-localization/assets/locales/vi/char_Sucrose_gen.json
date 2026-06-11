@@ -113,6 +113,18 @@
       "0": "Khi ghép nguyên liệu bồi dưỡng nhân vật và vũ khí, có 10% tỷ lệ nhận x2 thành phẩm."
     }
   },
+  "lockedPassive": {
+    "name": "Đêm Lễ Ma Nữ - Vòng Lặp Bảy Lần",
+    "description": {
+      "0": "Sau khi hoàn thành <strong>Bài Tập Của Ma Nữ - Về Hoa Tiên Cảnh</strong>, Sucrose sẽ trở thành nhân vật <strong>Hexerei</strong>. Khi đội hình có ít nhất 2 nhân vật Hexerei, sẽ nhận được hiệu quả <strong>Hexerei - Nghi Thức Bí Mật</strong>, giúp nhân vật Hexerei nhận được cường hóa.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei - Nghi Thức Bí Mật</strong>",
+      "3": [
+        "Trong 15s sau khi triệu hồi Phong Linh Cỡ Nhỏ, nhân vật trong đội ở gần tăng 5.71428% sát thương Tấn Công Thường, Trọng Kích, Tấn Công Khi Đáp, Kỹ Năng Nguyên Tố và Kỹ Năng Nộ.",
+        "Trong 20s sau khi triệu hồi Phong Linh Cỡ Lớn, nhân vật Hexerei trong đội ở gần tăng 7.14285% sát thương Tấn Công Thường, Trọng Kích, Tấn Công Khi Đáp, Kỹ Năng Nguyên Tố và Kỹ Năng Nộ."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Vùng Chân Không",
     "description": {
@@ -150,6 +162,9 @@
     "name": "Thuyết Hỗn Loạn",
     "description": {
       "0": "Nếu <strong>Cấm-Gió Thần Sáng Tạo-75 Loại 2</strong> xảy ra chuyển hóa nguyên tố thì tất cả đội sẽ nhận 20% buff sát thương nguyên tố tương ứng trong khoảng thời gian kĩ năng duy trì."
+    },
+    "upgradedDescription": {
+      "0": "Nếu <strong>Cấm-Gió Thần Sáng Tạo-75 Loại 2</strong> xảy ra chuyển hóa nguyên tố, tất cả nhân vật trong đội sẽ nhận 20% buff Sát Thương Nguyên Tố tương ứng trong thời gian kỹ năng duy trì, các nhân vật Hexerei trong đội ở gần sẽ nhận thêm 8.57142% buff Sát Thương Nguyên Tố tương ứng."
     }
   }
 }

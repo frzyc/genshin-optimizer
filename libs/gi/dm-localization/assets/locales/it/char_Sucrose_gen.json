@@ -41,9 +41,9 @@
   "skill": {
     "name": "Creazione Anemoipostasi astabile n. 6308",
     "description": {
-      "0": "Crea un piccolo Spirito dei venti che attira gli avversari e gli oggetti verso la sua posizione, scaglia via gli avversari nella sua area d'effetto e infligge <anemo>DAN da Anemo</anemo>.",
+      "0": "Crea un Piccolo Spirito dei venti che attira gli avversari e gli oggetti verso la sua posizione, scaglia via gli avversari nella sua area d'effetto e infligge <anemo>DAN da Anemo</anemo>.",
       "1": "<br/>",
-      "2": "<i>È un po' imbarazzante ma, nonostante le forme di vita elementali nate attraverso questa procedura si dissipino molto rapidamente, sono incredibilmente utili all'avventura. Persino gli esperimenti falliti possono avere applicazioni pratiche.</i>"
+      "2": "<i>È un po' imbarazzante ma, nonostante le forme di vita elementali nate attraverso questa procedura si dissipino molto rapidamente, sono incredibilmente utili nelle avventure. Persino gli esperimenti falliti possono avere applicazioni pratiche.</i>"
     },
     "skillParams": {
       "0": "DAN da abilità",
@@ -113,6 +113,18 @@
       "0": "Quando Sucrose crea materiali per il potenziamento di armi e personaggi, ha un 10% di probabilità di ottenere il doppio del prodotto."
     }
   },
+  "lockedPassive": {
+    "name": "Rito della Vigilia della strega: Trasmutazione in sette parti",
+    "description": {
+      "0": "Dopo aver completato <strong>Compiti della strega: Sui fiori meravigliosi</strong>, Sucrose acquisisce l'attributo <strong>Hexerei</strong>. Quando il gruppo include almeno 2 personaggi con attributo Hexerei, questi ultimi ottengono l'effetto di potenziamento <strong>Hexerei: Rito segreto</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei: Rito segreto</strong>",
+      "3": [
+        " Dopo che Sucrose ha creato un Piccolo Spirito dei venti, potenzia di un 5,71428% per 15 s i DAN da attacco normale, attacco caricato, attacco in picchiata, abilità elementale e Tripudio elementale dei membri del gruppo vicini.",
+        " Dopo che Sucrose ha creato un Grande Spirito dei venti, potenzia di un 7,14285% per 20 s i DAN da attacco normale, attacco caricato, attacco in picchiata, abilità elementale e Tripudio elementale dei membri del gruppo vicini dotati di attributo Hexerei."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Ammasso di vuoto gravitazionale",
     "description": {
@@ -150,6 +162,9 @@
     "name": "Entropia caotica",
     "description": {
       "0": "Se <strong>Creazione proibita: Isomero 75 Tipo II</strong> innesca un assorbimento elementale, tutti i membri del gruppo ottengono un 20% di bonus DAN dell'elemento assorbito per la sua durata."
+    },
+    "upgradedDescription": {
+      "0": "Se <strong>Creazione proibita: Isomero 75 Tipo II</strong> innesca un assorbimento elementale, tutti i membri del gruppo ottengono un 20% di bonus DAN dell'elemento assorbito mentre l'abilità è attiva, e i membri vicini del gruppo dotati di attributo Hexerei ottengono un bonus DAN elementali aggiuntivo di un 8,57142% per l'elemento assorbito corrispondente nel corso della sua durata."
     }
   }
 }

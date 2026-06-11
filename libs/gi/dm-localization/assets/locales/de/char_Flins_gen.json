@@ -49,7 +49,7 @@
       ],
       "2": "<br/>",
       "3": "<strong>Speersturm des Nordens</strong>",
-      "4": "Flins beschwört einen Speersturm vor sich, der <electro>Elektro-Flächenschaden</electro> verursacht, und ersetzt innerhalb der nächsten 6 s seine Spezialfähigkeit <strong>Antikes Ritual – Nächtlicher Gast</strong> durch die besondere Spezialfähigkeit <strong>Donnersymphonie</strong>.",
+      "4": "Flins beschwört einen Speersturm vor sich, der <electro>Elektro-Flächenschaden</electro> verursacht, und ersetzt innerhalb der nächsten 6 s seine Spezialfähigkeit <strong>Antikes Ritual – Nächtlicher Gast</strong> durch die besondere Spezialfähigkeit <tooltip ns=tooltips_gen baseKey18=11200001 values=[]><strong>Donnersymphonie</strong></tooltip>.",
       "5": "Die Abklingzeit von <strong>Speersturm des Nordens</strong> beträgt 6 s und ist unabhängig von anderen Effekten."
     },
     "skillParams": {
@@ -148,7 +148,7 @@
   "constellation3": {
     "name": "Fremder in der Nacht",
     "description": {
-      "0": "Erhöht die Stufe der Spezialfähigkeit <strong>Antikes Ritual – Nächtlicher Gast</strong> um 3.",
+      "0": "Erhöht die Stufe der Spezialfähigkeit <tooltip ns=char_Flins_gen baseKey18=burst><strong>Antikes Ritual – Nächtlicher Gast</strong></tooltip> um 3.",
       "1": "Höchststufe 15."
     }
   },
@@ -156,20 +156,20 @@
     "name": "Nacht auf kahlem Berge",
     "description": {
       "0": "Erhöht Flins’ ANG um 20 %.",
-      "1": "Verstärkt zudem das Aufstiegstalent <strong>Flüstern der Flammen</strong>: Erhöht Flins’ Elementarkunde um 10 % seines ANG. Auf diese Weise kann Flins’ Elementarkunde um maximal 220 Punkte erhöht werden."
+      "1": "Verstärkt zudem das Aufstiegstalent <tooltip ns=char_Flins_gen baseKey18=passive2><strong>Flüstern der Flammen</strong></tooltip>: Erhöht Flins’ Elementarkunde um 10 % seines ANG. Auf diese Weise kann Flins’ Elementarkunde um maximal 220 Punkte erhöht werden."
     }
   },
   "constellation5": {
     "name": "Abgeschiedene Schatten",
     "description": {
-      "0": "Erhöht die Stufe der Elementarfähigkeit <strong>Antikes Gesetz – Geheimnis des verlassenen Lichts</strong> um 3.",
+      "0": "Erhöht die Stufe der Elementarfähigkeit <tooltip ns=char_Flins_gen baseKey18=skill><strong>Antikes Gesetz – Geheimnis des verlassenen Lichts</strong></tooltip> um 3.",
       "1": "Höchststufe 15."
     }
   },
   "constellation6": {
     "name": "Gesang und Tanz der Verstorbenen",
     "description": {
-      "0": "<strong>Steigert</strong> den Gegnern durch Flins’ Reaktion „Mond unter Strom“ zugefügten Schaden um 35 %.",
+      "0": "<tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Steigert</strong></tooltip> den Gegnern durch Flins’ Reaktion „Mond unter Strom“ zugefügten Schaden um 35 %.",
       "1": "<strong>Mondomen – Reifer Glanz</strong>: <strong>Steigert</strong> den von allen Truppenmitgliedern in der Nähe durch die Reaktion „Mond unter Strom“ verursachten Schaden um 10 %."
     }
   }

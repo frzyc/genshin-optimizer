@@ -187,6 +187,16 @@
       "1": "Not stackable with Passive Talents that provide the exact same effects."
     }
   },
+  "lockedPassive": {
+    "name": "Witch's Eve Rite: Surge of Lightning",
+    "description": {
+      "0": "After completing <strong>Witch's Homework: Of the Little Wolf Pack</strong>, Razor will become a <strong>Hexerei</strong> character. When the party includes at least 2 Hexerei characters, you will gain the <strong>Hexerei: Secret Rite</strong> effect, which enhances Hexerei characters.",
+      "1": "Additionally, Razor's Elemental Burst <strong>Lightning Fang</strong> is enhanced: <strong>The Wolf Within</strong>'s DMG dealt is increased by 70% of Razor's ATK.",
+      "2": "<br/>",
+      "3": "<strong>Hexerei: Secret Rite</strong>",
+      "4": "While the Wolf Within summoned by Razor's Elemental Burst <strong>Lightning Fang</strong> is active, if the Electro Sigils from Razor's Elemental Skill <strong>Claw and Thunder</strong> overflow, the Wolf Within will call down a lightning strike on nearby enemies, dealing AoE Electro DMG equal to 150% of Razor's ATK and restoring 7 Energy to Razor. This effect can be triggered once every 1s."
+    }
+  },
   "constellation1": {
     "name": "Wolf's Instinct",
     "description": {
@@ -224,6 +234,12 @@
     "description": {
       "0": "Every 10s, Razor's sword charges up, causing the next Normal Attack to release lightning that deals 100% of Razor's ATK as <electro>Electro DMG</electro>.",
       "1": "When Razor is not using <strong>Lightning Fang</strong>, a lightning strike on an opponent will grant Razor an Electro Sigil for <strong>Claw and Thunder</strong>."
+    },
+    "upgradedDescription": {
+      "0": "Every 10s, Razor's sword charges up, causing the next Normal Attack to release lightning that deals 100% of Razor's ATK as <electro>Electro DMG</electro>.",
+      "1": "When Razor is not using <strong>Lightning Fang</strong>, lightning strikes on an opponent will grant 3 Electro Sigils for his Elemental Skill <strong>Claw and Thunder</strong>.",
+      "2": "Additionally, when Razor gains Electro Sigils through his Elemental Skill <strong>Claw and Thunder</strong>, he will gain 3 Sigils instead.",
+      "3": "For 15s after consuming Electro Sigils, Razor's CRIT Rate is increased by 10% and CRIT DMG by 50%."
     }
   }
 }

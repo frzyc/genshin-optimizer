@@ -13,11 +13,34 @@
       "charged": {
         "0": "<strong>Attacco caricato</strong>",
         "1": "Effettua un <strong>attacco mirato</strong> ancora più preciso con DAN aumentati.",
-        "2": "Mentre mira, sulla punta della freccia convergeranno dei venti favorevoli. Una freccia di vento caricata al massimo infligge <anemo>DAN da Anemo</anemo>."
+        "2": "Mentre mira, sulla punta della freccia convergono dei venti favorevoli. Una freccia di vento caricata al massimo infligge <anemo>DAN da Anemo</anemo>."
       },
       "plunging": {
         "0": "<strong>Attacco in picchiata</strong>",
         "1": "Scocca una pioggia di frecce a mezz'aria prima di cadere e colpire il suolo, infliggendo DAN ad area all'impatto."
+      }
+    },
+    "upgradedFields": {
+      "normal": {
+        "0": "<strong>Attacco normale</strong>",
+        "1": "Effettua fino a 6 tiri consecutivi con un arco."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Effettua un <strong>attacco mirato</strong> ancora più preciso con DAN aumentati.",
+        "2": "Mentre mira, sulla punta della freccia convergono dei venti favorevoli. Una freccia di vento caricata al massimo infligge <anemo>DAN da Anemo</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Scocca una pioggia di frecce a mezz'aria prima di cadere e colpire il suolo, infliggendo DAN ad area all'impatto."
+      },
+      "hexerei": {
+        "0": "<strong>Hexerei: Rito segreto</strong>",
+        "1": "Mentre è attivo In mezzo alla tempesta creato dal Tripudio elementale <strong>Ode all'Archon di Anemo</strong>, Venti ottiene i seguenti effetti positivi aggiuntivi:",
+        "2": [
+          " gli attacchi normali di Venti vengono convertiti in <strong>Frecce Spezzavento</strong> perforanti che infliggono ancora più <anemo>DAN da Anemo</anemo> agli avversari lungo il percorso;",
+          " quando gli attacchi normali di Venti colpiscono gli avversari, la durata e il TdR di In mezzo alla tempesta aumentano rispettivamente di 1 s e di 0,5 s. Quest'effetto può attivarsi una volta ogni 0,1 s e fino a 2 volte dopo ciascun uso del Tripudio elementale <strong>Ode all'Archon di Anemo</strong>."
+        ]
       }
     },
     "skillParams": {
@@ -31,7 +54,7 @@
       "7": "ATT mirato a piena carica",
       "8": "DAN da ATT in picchiata",
       "9": "DAN da ATT in picchiata basso/alto",
-      "10": "",
+      "10": "DAN da Freccia Spezzavento",
       "11": "",
       "12": "",
       "13": "",
@@ -124,10 +147,23 @@
       "1": "Non è cumulabile con talenti passivi che conferiscono gli stessi effetti."
     }
   },
+  "lockedPassive": {
+    "name": "Rito della Vigilia della strega: Elogio del Vento temporale",
+    "description": {
+      "0": "Dopo aver completato <strong>Compiti della strega: Sul risveglio del vento</strong>, Venti acquisisce l'attributo <strong>Hexerei</strong>. Quando il gruppo include almeno 2 personaggi con attributo Hexerei, questi ultimi ottengono l'effetto di potenziamento <strong>Hexerei: Rito segreto</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei: Rito segreto</strong>",
+      "3": "Mentre è attivo In mezzo alla tempesta creato dal Tripudio elementale <strong>Ode all'Archon di Anemo</strong>, dopo che il personaggio attivo vicino ha innescato una reazione di Turbinio, i DAN del suddetto personaggio aumentano di un 50% e In mezzo alla tempesta di Venti infligge un 135% dei suoi DAN originali. L'effetto dura 4 s."
+    }
+  },
   "constellation1": {
     "name": "Venti divisi",
     "description": {
       "0": "Scocca 2 frecce aggiuntive per ogni <strong>attacco mirato</strong>, ognuna delle quali infligge un 33% dei DAN della freccia originale."
+    },
+    "upgradedDescription": {
+      "0": "Scocca 2 frecce aggiuntive per ogni <strong>attacco mirato</strong>, ognuna delle quali infligge un 33% dei DAN della freccia originale.",
+      "1": "Inoltre, per ogni <strong>Freccia Spezzavento</strong> scoccata, vengono scagliate 2 frecce aggiuntive che inseguono gli avversari, ciascuna delle quali infligge un 20% dei DAN della freccia originale. Quest'effetto può attivarsi una volta ogni 0,25 s."
     }
   },
   "constellation2": {
@@ -135,6 +171,13 @@
     "description": {
       "0": "<strong>Sonetto celeste</strong> riduce la <anemo>RES ad Anemo</anemo> e la RES fisica degli avversari di un 12% per 10 s.",
       "1": "La <anemo>RES ad Anemo</anemo> e la RES fisica degli avversari scaraventati in aria da <strong>Sonetto celeste</strong> si riducono di un ulteriore 12%."
+    },
+    "upgradedDescription": {
+      "0": "<strong>Sonetto celeste</strong> riduce la <anemo>RES ad Anemo</anemo> e la RES fisica degli avversari di un 24% per 10 s.",
+      "1": "Inoltre, dopo aver scatenato il Tripudio elementale <strong>Ode all'Archon di Anemo</strong>, Venti ottiene l'effetto <strong>Ovunque soffi la brezza</strong>, e il TdR della sua abilità elementale <strong>Sonetto celeste</strong> viene azzerato. Dopo che una <strong>Freccia Spezzavento</strong> ha colpito un avversario, c'è un 25% di probabilità che Venti ottenga l'effetto <strong>Ovunque soffi la brezza</strong>.",
+      "2": "<br/>",
+      "3": "<strong>Ovunque soffi la brezza</strong>",
+      "4": "Quando viene attivata l'abilità elementale <strong>Sonetto celeste</strong>, viene inflitto un 300% della quantità di DAN originale. Quest'effetto dura 15 s e viene rimosso dopo l'attivazione dell'abilità elementale <strong>Sonetto celeste</strong>."
     }
   },
   "constellation3": {
@@ -148,6 +191,9 @@
     "name": "Uragano della libertà",
     "description": {
       "0": "Quando Venti raccoglie una particella o sfera elementale, riceve un <anemo>bonus DAN da Anemo</anemo> di un 25% per 10 s."
+    },
+    "upgradedDescription": {
+      "0": "Dopo aver usato l'abilità elementale <strong>Sonetto celeste</strong> o il Tripudio elementale <strong>Ode all'Archon di Anemo</strong>, Venti e i membri attivi del suo gruppo ottengono un 25% di <anemo>bonus DAN da Anemo</anemo> per 10 s."
     }
   },
   "constellation5": {
@@ -162,6 +208,11 @@
     "description": {
       "0": "La <anemo>RES ad Anemo</anemo> degli avversari che subiscono DAN da <strong>Ode all'Archon di Anemo</strong> si riduce di un 20%.",
       "1": "Se si è verificato un assorbimento elementale, anche la loro RES all'elemento corrispondente si riduce di un 20%."
+    },
+    "upgradedDescription": {
+      "0": "La <anemo>RES ad Anemo</anemo> degli avversari che subiscono DAN da <strong>Ode all'Archon di Anemo</strong> si riduce di un 20%.",
+      "1": "Se si è verificato un assorbimento elementale, anche la loro RES all'elemento corrispondente si riduce di un 20%.",
+      "2": "Inoltre, i DAN inflitti da Venti ai suddetti avversari ottengono un 100% di bonus DAN da CRIT."
     }
   }
 }

@@ -1,5 +1,6 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { objKeyValMap, objMap } from '@genshin-optimizer/common/util'
+import { imgAssets } from '@genshin-optimizer/gi/assets'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
   allElementKeys,
@@ -23,13 +24,12 @@ import {
   inferInfoMut,
   infoMut,
   input,
-  lessThan,
   percent,
   sum,
   tally,
   target,
 } from '@genshin-optimizer/gi/wr'
-import { DarkMode } from '@mui/icons-material'
+import { Box } from '@mui/material'
 import type { ReactNode } from 'react'
 import type { CharacterSheet } from './Characters/CharacterSheet'
 import ElementCycle from './ElementCycle'
@@ -43,7 +43,7 @@ const trm = (strKey: string) => (
   <Translate ns="elementalResonance" key18={strKey} />
 )
 
-type IResonance = {
+export type IResonance = {
   name: ReactNode
   desc: ReactNode
   icon: ReactNode
@@ -327,7 +327,7 @@ const enduringRock: IResonance = {
         title: tr('EnduringRock.name'),
         icon: <GeoIcon />,
       },
-      name: st('protectedByShield'),
+      name: trm('EnduringRock.baseCond'),
       states: {
         on: {
           fields: [
@@ -460,59 +460,128 @@ const sprawlingGreenery: IResonance = {
   ],
 }
 
-const [moonsignBuffDisp, moonsignBuff] = activeCharBuff(
-  input.charKey,
-  greaterEq(
-    teamSize,
-    4,
-    greaterEq(
-      tally.moonsign,
-      2,
-      lessThan(tally.moonsign, 4, tally.maxMoonsignBuff)
-    )
+export function getMoonsignSheet(uiData: UIData | undefined): IResonance {
+  return {
+    name: tr('Moonsign.name'),
+    desc: tr('Moonsign.desc'),
+    icon: (
+      <Box
+        component="img"
+        src={imgAssets.resonance.moonsign}
+        width="2em"
+        height="auto"
+      />
+    ),
+    canShow: (data) => data.get(tally.moonsign).value >= 1,
+    sections: [
+      {
+        teamBuff: true,
+        header: {
+          title: tr('Moonsign.nascentGleam.name'),
+          icon: (
+            <Box
+              component="img"
+              src={imgAssets.resonance.moonsign}
+              width="2em"
+              height="auto"
+            />
+          ),
+        },
+        fields: [
+          {
+            text: tr('Moonsign.nascentGleam.desc'),
+          },
+        ],
+      },
+      {
+        teamBuff: true,
+        canShow: greaterEq(tally.moonsign, 2, 1),
+        header: {
+          title: tr('Moonsign.ascendantGleam.name'),
+          description: tr('Moonsign.ascendantGleam.desc'),
+          icon: (
+            <Box display="flex">
+              <Box
+                component="img"
+                src={imgAssets.resonance.moonsign}
+                width="2em"
+                height="auto"
+              />
+              <Box
+                component="img"
+                src={imgAssets.resonance.moonsign}
+                width="2em"
+                height="auto"
+              />
+            </Box>
+          ),
+        },
+        // We handle the moonsign conditionals per-character in TeamComponents.tsx,
+        // using MoonsignConditionalSection below, this just shows the buff
+        // Grabbed using UIData funkiness
+        fields: uiData
+          ? allLunarReactionKeys.map((lr) => ({
+              node: infoMut(
+                percent(uiData.getDisplay()['moonsign']![`${lr}_dmg_`].value),
+                {
+                  path: `${lr}_dmg_`,
+                  isTeamBuff: true,
+                }
+              ),
+            }))
+          : [],
+      },
+    ],
+  }
+}
+
+export const hexereiSheet: IResonance = {
+  name: tr('Hexerei.name'),
+  desc: tr('Hexerei.desc'),
+  icon: (
+    <>
+      <Box
+        component="img"
+        src={imgAssets.resonance.hexerei}
+        width="2em"
+        height="auto"
+      />
+      <Box
+        component="img"
+        src={imgAssets.resonance.hexerei}
+        width="2em"
+        height="auto"
+      />
+    </>
   ),
-  { isTeamBuff: true }
-)
-const moonsign: IResonance = {
-  name: tr('Moonsign.name'),
-  desc: tr('Moonsign.desc'),
-  icon: <DarkMode sx={{ transform: 'scaleX(-1)' }} />,
-  canShow: (data) =>
-    data.get(teamSize).value >= 4 && data.get(tally.moonsign).value >= 1,
+  canShow: (data) => data.get(tally.hexerei).value >= 2,
   sections: [
     {
       teamBuff: true,
       header: {
-        title: tr('Moonsign.nascentGleam.name'),
-        icon: <DarkMode sx={{ transform: 'scaleX(-1)' }} />,
+        title: tr('Hexerei.name'),
+        icon: (
+          <>
+            <Box
+              component="img"
+              src={imgAssets.resonance.hexerei}
+              width="2em"
+              height="auto"
+            />
+            <Box
+              component="img"
+              src={imgAssets.resonance.hexerei}
+              width="2em"
+              height="auto"
+            />
+          </>
+        ),
       },
       fields: [
         {
-          text: tr('Moonsign.nascentGleam.desc'),
+          text: tr('Hexerei.desc'),
         },
       ],
-    },
-    {
-      teamBuff: true,
-      canShow: greaterEq(tally.moonsign, 2, 1),
-      header: {
-        title: tr('Moonsign.ascendantGleam.name'),
-        description: tr('Moonsign.ascendantGleam.desc'),
-        icon: (
-          <span>
-            <DarkMode sx={{ transform: 'scaleX(-1)' }} />
-            <DarkMode sx={{ transform: 'scaleX(-1)' }} />
-          </span>
-        ),
-      },
-      // We handle the moonsign conditionals per-character in TeamComponents.tsx,
-      // using MoonsignConditionalSection below
-      fields: allLunarReactionKeys.map((lr) => ({
-        node: infoMut(
-          { ...moonsignBuffDisp },
-          { path: `${lr}_dmg_`, isTeamBuff: true }
-        ),
-      })),
     },
   ],
 }
@@ -527,17 +596,27 @@ export function MoonsignConditionalSection(
     'moonsignAfterSkillBurst'
   )
   return {
-    canShow: greaterEq(teamSize, 4, greaterEq(tally.moonsign, 2, 1)),
+    canShow: greaterEq(tally.moonsign, 2, 1),
     path: condMoonsignAfterSkillBurstPath,
     value: condMoonsignAfterSkillBurst,
     header: {
       title: tr('Moonsign.ascendantGleam.name'),
       description: tr('Moonsign.ascendantGleam.desc'),
       icon: (
-        <span>
-          <DarkMode sx={{ transform: 'scaleX(-1)' }} />
-          <DarkMode sx={{ transform: 'scaleX(-1)' }} />
-        </span>
+        <Box display="flex">
+          <Box
+            component="img"
+            src={imgAssets.resonance.moonsign}
+            width="2em"
+            height="auto"
+          />
+          <Box
+            component="img"
+            src={imgAssets.resonance.moonsign}
+            width="2em"
+            height="auto"
+          />
+        </Box>
       ),
     },
     teamBuff: true,
@@ -545,12 +624,14 @@ export function MoonsignConditionalSection(
     states: {
       on: {
         fields: [
-          ...allLunarReactionKeys.map((lr) => ({
-            node: infoMut(sheet.data.display!['moonsign']![`${lr}_dmg_`], {
-              isTeamBuff: true,
-              path: `${lr}_dmg_`,
-            }),
-          })),
+          ...allLunarReactionKeys.flatMap((lr) => [
+            {
+              node: sheet.data.display!['moonsign']![`${lr}_dmg_`],
+            },
+            {
+              node: sheet.data.display!['moonsign']![`${lr}_dmg_Inactive`],
+            },
+          ]),
           {
             text: stg('duration'),
             value: 20,
@@ -571,7 +652,6 @@ export const resonanceSheets: IResonance[] = [
   impetuousWinds,
   enduringRock,
   sprawlingGreenery,
-  moonsign,
 ]
 
 export const resonanceData = inferInfoMut({
@@ -589,10 +669,6 @@ export const resonanceData = inferInfoMut({
         pivot: true,
       }),
       all_dmg_: erNodeDMG_,
-      ...objKeyValMap(allLunarReactionKeys, (lr) => [
-        `${lr}_dmg_`,
-        { ...moonsignBuff },
-      ]),
     },
     total: {
       // TODO: this crit rate is on-hit. Might put it in a `hit.critRate_` namespace later.

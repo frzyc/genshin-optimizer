@@ -1,0 +1,24 @@
+{
+  "name": "Regenakkorde der Regenbogenschlange",
+  "description": {
+    "0": "Eine rituelle Waffe des „Meisters des Nachtwinds“, über die Jahrhunderte weitergegeben. Der düstere Bogen ist stets von einer unauslöschlichen Kälte umhüllt."
+  },
+  "passiveName": "Sternenflüstern jenseits des heiligen Throns",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den ANG des Trägers, wenn dieser sich inaktiv in der Truppe befindet, nach dem Treffen eines Gegners 8 s lang um <cryo>28 %</cryo>."
+    },
+    "1": {
+      "0": "Erhöht den ANG des Trägers, wenn dieser sich inaktiv in der Truppe befindet, nach dem Treffen eines Gegners 8 s lang um <cryo>35 %</cryo>."
+    },
+    "2": {
+      "0": "Erhöht den ANG des Trägers, wenn dieser sich inaktiv in der Truppe befindet, nach dem Treffen eines Gegners 8 s lang um <cryo>42 %</cryo>."
+    },
+    "3": {
+      "0": "Erhöht den ANG des Trägers, wenn dieser sich inaktiv in der Truppe befindet, nach dem Treffen eines Gegners 8 s lang um <cryo>49 %</cryo>."
+    },
+    "4": {
+      "0": "Erhöht den ANG des Trägers, wenn dieser sich inaktiv in der Truppe befindet, nach dem Treffen eines Gegners 8 s lang <cryo>56 %</cryo>."
+    }
+  }
+}

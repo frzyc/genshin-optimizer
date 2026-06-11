@@ -1,0 +1,188 @@
+{
+  "name": "Durin",
+  "title": "\"Fiamma perpetua\"",
+  "description": "Il drago nato dalla penna di \"M\", giunto nel mondo degli umani. La sua \"storia\" continua a svilupparsi.",
+  "constellationName": "Draco Rubedo",
+  "auto": {
+    "name": "Colpo d'ala splendente",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attacco normale</strong>",
+        "1": "Sferra fino a 4 colpi di spada consecutivi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per eseguire un fendente in avanti."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da ATT caricato",
+      "5": "Costo vigore ATT caricato",
+      "6": "DAN da ATT in picchiata",
+      "7": "DAN da ATT in picchiata basso/alto",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Forma binaria: Convergenza e divisione",
+    "description": {
+      "0": "Purifica la sostanza dell'anima ed esprime la volontà di sottoporsi alla <tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>Trasmutazione essenziale</strong></tooltip>. Mentre è trasmutato, l'abilità elementale <strong>Forma binaria: Convergenza e divisione</strong> e l'attacco normale <strong>Colpo d'ala splendente</strong> di Durin vengono sostituiti rispettivamente con le abilità elementali speciali <strong>Trasmutazione: Conferma della purezza</strong> e <strong>Trasmutazione: Negazione delle tenebre</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Trasmutazione: Conferma della purezza</strong>",
+      "3": "Infligge 1 iterazione di <pyro>DAN da Pyro ad area</pyro> agli avversari vicini, inverte la Trasmutazione essenziale ed entra nello stato di <strong>Conferma della purezza</strong> per 30 s.",
+      "4": "<br/>",
+      "5": "<strong>Trasmutazione: Negazione delle tenebre</strong>",
+      "6": "Infligge 3 iterazioni consecutive di <pyro>DAN da Pyro</pyro> agli avversari davanti a sé, inverte la Trasmutazione essenziale ed entra nello stato di <strong>Negazione delle tenebre</strong> per 30 s.",
+      "7": "<br/>",
+      "8": "Quando Durin entra nello stato di <strong>Conferma della purezza</strong> o di <strong>Negazione delle tenebre</strong> mentre è in combattimento, la sua energia elementale si ripristina di una certa quantità. Tale ripristino può verificarsi una volta ogni 6 s."
+    },
+    "skillParams": {
+      "0": "DAN da Trasmutazione: Conferma della purezza",
+      "1": "DAN da Trasmutazione: Negazione delle tenebre",
+      "2": "RIGEN energia",
+      "3": "TdR",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Principio della purezza: Trasmutazione luminosa",
+    "description": {
+      "0": "Scatena il potere della \"Bestia\" in diversi modi. Durin può usare diversi Tripudi elementali in base al suo stato di <tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>Trasmutazione essenziale</strong></tooltip>.",
+      "1": "<br/>",
+      "2": "<strong>Principio della purezza: Trasmutazione luminosa</strong>",
+      "3": "Quando Durin è nello stato di <strong>Conferma della purezza</strong>, usa il Tripudio elementale <strong>Principio della purezza: Trasmutazione luminosa</strong>, infliggendo 3 iterazioni di <pyro>DAN da Pyro ad area</pyro> agli avversari davanti a sé e manifestando il suo potere nella forma di <strong>Drago della Fiamma bianca</strong>. Quest'ultimo segue il personaggio attivo e attacca i nemici vicini a intervalli regolari, infliggendo <pyro>DAN da Pyro ad area</pyro>. Tali DAN sono considerati DAN da Tripudio elementale.",
+      "4": "<br/>",
+      "5": "<strong>Principio dell'oscurità: Stelle quiescenti</strong>",
+      "6": "Quando Durin è nello stato di <strong>Negazione delle tenebre</strong>, usa il Tripudio elementale <strong>Principio dell'oscurità: Stelle quiescenti</strong>, infliggendo 3 iterazioni di <pyro>DAN da Pyro ad area</pyro> agli avversari davanti a sé e manifestando il suo potere nella forma di <strong>Drago del Deterioramento oscuro</strong>. Quest'ultimo segue il personaggio attivo e attacca periodicamente un nemico vicino, infliggendo <pyro>DAN da Pyro</pyro>. Tali DAN sono considerati DAN da Tripudio elementale.",
+      "7": "<br/>",
+      "8": "Quando Durin non è in uno stato speciale causato da Trasmutazione essenziale, usa il Tripudio elementale <strong>Principio della purezza: Trasmutazione luminosa</strong>."
+    },
+    "skillParams": {
+      "0": "DAN da Principio della purezza: Trasmutazione luminosa",
+      "1": "DAN da Principio dell'oscurità: Stelle quiescenti",
+      "2": "DAN da Drago della Fiamma bianca",
+      "3": "DAN da Drago del Deterioramento oscuro",
+      "4": "Durata Drago della Fiamma bianca",
+      "5": "Durata Drago del Deterioramento oscuro",
+      "6": "TdR",
+      "7": "Costo energia",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Luce manifesta del calcolo divino",
+    "description": {
+      "0": "Durin innesca effetti positivi diversi in base alla forma manifestata dai suoi poteri quando sprigiona il Tripudio elementale.",
+      "1": "<br/>",
+      "2": "<strong>Drago della Fiamma bianca</strong>",
+      "3": "Dopo che i personaggi del gruppo vicini hanno innescato reazioni di Ustione, Sovraccarico, Turbinio di Pyro o Cristallizzazione di Pyro su un avversario, o hanno inflitto <pyro>DAN da Pyro</pyro> o <dendro>da Dendro</dendro> a un avversario sotto l'effetto di Ustione, quest'ultimo subisce una riduzione delle <pyro>RES a Pyro</pyro> e all'elemento corrispondente coinvolto nella reazione di un 20% per 6 s.",
+      "4": "<br/>",
+      "5": "<strong>Drago del Deterioramento oscuro</strong>",
+      "6": "I DAN da Vaporizzazione e da Fusione di Durin aumentano di un 40%."
+    }
+  },
+  "passive2": {
+    "name": "Caos simile alla notte",
+    "description": {
+      "0": "Dopo aver usato il suo Tripudio elementale, Durin ottiene l'effetto Fusione primordiale delle forme per 20 s, che gli conferisce 10 accumuli di Fusione primordiale. Quando un attacco periodico di <strong>Drago della Fiamma bianca</strong> o <strong>Drago del Deterioramento oscuro</strong> infligge DAN, viene consumato 1 accumulo di Fusione primordiale per aumentare i DAN inflitti di un 3% dei DAN originali per ogni 100 di ATT. È possibile infliggere in questo modo fino a un 75% di DAN aggiuntivi. Quando un singolo attacco di <strong>Drago della Fiamma bianca</strong> o <strong>Drago del Deterioramento oscuro</strong> colpisce più avversari, viene consumato solo 1 accumulo di Fusione primordiale.",
+      "1": "Gli accumuli di Fusione primordiale vengono ripristinati usando nuovamente il Tripudio elementale."
+    }
+  },
+  "passive3": {
+    "name": "Echi di una terra crescente",
+    "description": {
+      "0": "Ottiene un 25% in più di ricompense quando intraprende una spedizione a Mondstadt per 20 ore."
+    }
+  },
+  "lockedPassive": {
+    "name": "Rito della Vigilia della strega: Ode all'ascensione",
+    "description": {
+      "0": "Dopo aver completato <strong>Compiti della strega: Su questo mondo</strong>, Durin acquisisce l'attributo <strong>Hexerei</strong>. Quando il gruppo include almeno 2 personaggi con attributo Hexerei, questi ultimi ottengono l'effetto di potenziamento <strong>Hexerei: Rito segreto</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei: Rito segreto</strong>",
+      "3": "Aumenta tutti gli effetti del talento d'ascensione <tooltip ns=char_Durin_gen baseKey18=passive1><strong>Luce manifesta del calcolo divino</strong></tooltip> (tranne la durata) di un 75%."
+    }
+  },
+  "constellation1": {
+    "name": "Redenzione dell'Adamah",
+    "description": {
+      "0": "Dopo aver utilizzato il suo Tripudio elementale, gli effetti di Durin cambiano in base alla forma del Tripudio.",
+      "1": [
+        "<strong> Principio della purezza: Trasmutazione luminosa</strong>: tutti gli altri membri del gruppo vicini ottengono 20 accumuli di <strong>Ciclo dell'illuminazione</strong> della durata di 20 s. Quando infliggono DAN da attacco normale, attacco caricato, attacco in picchiata, abilità elementale o Tripudio elementale, i personaggi attivi vicini consumano 1 accumulo di Ciclo dell'illuminazione per aumentare i DAN inflitti di un 60% dell'ATT di Durin. Il numero di accumuli di Ciclo dell'illuminazione è indipendente per ciascun personaggio nel gruppo.",
+        " <strong>Principio dell'oscurità: Stelle quiescenti</strong>: Durin ottiene 20 accumuli di <strong>Ciclo dell'illuminazione</strong> per 20 s. Quando Durin infligge DAN da Tripudio elementale, vengono consumati 2 accumuli di Ciclo dell'illuminazione per aumentare i DAN inflitti di un 150% dell'ATT di Durin."
+      ],
+      "2": "<br/>",
+      "3": "Quando viene utilizzato un Tripudio elementale, gli accumuli di <strong>Ciclo dell'illuminazione</strong> vengono ripristinati."
+    }
+  },
+  "constellation2": {
+    "name": "Visioni senza fondo",
+    "description": {
+      "0": "Per 20 s dopo l'uso del Tripudio elementale di Durin, dopo che i personaggi del gruppo vicini hanno innescato reazioni di Vaporizzazione, Fusione, Ustione, Sovraccarico, Turbinio di Pyro o Cristallizzazione di Pyro, o hanno inflitto <pyro>DAN da Pyro</pyro> o <dendro>da Dendro</dendro> a un avversario sotto l'effetto di Ustione, tutti i membri del gruppo vicini ottengono per 6 s un aumento dei <pyro>DAN da Pyro</pyro> e dei DAN dell'elemento corrispondente coinvolto nella reazione pari a un 50%."
+    }
+  },
+  "constellation3": {
+    "name": "Rivelazione dello Specchio di fiamma",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong><tooltip ns=char_Durin_gen baseKey18=burst>Principio della purezza: Trasmutazione luminosa</tooltip></strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Fonte dell'emanare",
+    "description": {
+      "0": "I DAN da Tripudio elementale di Durin aumentano di un 40%. Inoltre, quando gli effetti che consumano accumuli di <strong>Ciclo dell'illuminazione</strong> vengono attivati come parte del livello costellazione <strong><tooltip ns=char_Durin_gen baseKey18=constellation1>Redenzione dell'Adamah</tooltip></strong>, c'è un 30% di probabilità che i suddetti accumuli non vengano consumati."
+    }
+  },
+  "constellation5": {
+    "name": "Scissione della Fiamma abrasiva",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong><tooltip ns=char_Durin_gen baseKey18=skill>Forma binaria: Convergenza e divisione</tooltip></strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Nascita duale",
+    "description": {
+      "0": "I DAN da Tripudio elementale di Durin ignorano un 30% della DIF avversaria.",
+      "1": "Inoltre, i Tripudi elementali di Durin, <strong>Principio della purezza: Trasmutazione luminosa</strong> e <strong>Principio dell'oscurità: Stelle quiescenti</strong>, ricevono un potenziamento:",
+      "2": [
+        " dopo che <strong>Principio della purezza: Trasmutazione luminosa</strong> e <strong>Drago della Fiamma bianca</strong> hanno colpito un avversario, la DIF di quest'ultimo diminuisce di un 30% per 6 s;",
+        " i DAN inflitti da <strong>Principio dell'oscurità: Stelle quiescenti</strong> e da <strong>Drago del Deterioramento oscuro</strong> ignorano un ulteriore 40% della DIF degli avversari."
+      ]
+    }
+  }
+}

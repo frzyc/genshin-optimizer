@@ -25,7 +25,7 @@
   },
   "EnduringRock": {
     "name": "Roccia infrangibile",
-    "desc": "Aumenta l'efficacia dello scudo di un 15%. Inoltre, i personaggi protetti da uno scudo otterranno i seguenti effetti speciali: i DAN inflitti aumentano di un 15%, e infliggere DAN ai nemici ridurrà la loro RES a Geo di un 20% per 15 s."
+    "desc": "Aumenta di un 15% l'efficacia dello scudo. Inoltre, quando i personaggi sono protetti da uno scudo o sono presenti nelle vicinanze delle Gabbie lunari create dalla reazione di Cristallizzazione lunare, si attivano i seguenti effetti speciali: i DAN inflitti aumentano di un 15%, e infliggere DAN ai nemici riduce la loro RES a Geo di un 20% per 15 s."
   },
   "SprawlingGreenery": {
     "name": "Vegetazione proliferante",
@@ -60,6 +60,12 @@
           ]
         }
       }
+    }
+  },
+  "Hexerei": {
+    "name": "Hexerei: Rito segreto",
+    "desc": {
+      "0": "I personaggi nel tuo gruppo con attributo Hexerei vengono ulteriormente potenziati."
     }
   }
 }

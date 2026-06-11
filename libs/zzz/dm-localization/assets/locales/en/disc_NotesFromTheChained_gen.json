@@ -1,0 +1,10 @@
+{
+  "name": "Notes From the Chained",
+  "desc2": "<ct color=#98EFF0>Ice DMG</ct> +10%.",
+  "desc4": "When the equipper triggers <ct color=#FFFFFF>Abloom</ct>, their Anomaly Proficiency increases by 48 for 30s; repeated triggers reset the duration. When the equipper triggers a <ct color=#FFFFFF>Freeze</ct> effect, their All-Attribute Anomaly DMG and <ct color=#FFFFFF>Disorder</ct> DMG increase by 16% for 30s; repeated triggers reset the duration.",
+  "story": {
+    "0": "A mysterious track posted on Inter-Knot by an anonymous creator, inspired by the hallucinations of a lost Hollow wanderer. The melody cuts off abruptly halfway through, yet its hauntingly precise evocation of the despair and disorientation of deep Hollow exploration made it a brief sensation.",
+    "1": "It is said that an investigator, once lost, abandoned rescue efforts and instead followed the melody as his guide, wandering within the Hollow. The agony brought on by Corruption nearly blinded him, yet the tune continued to echo in his ears. In the end, he miraculously found a way out.",
+    "2": "Later, this investigator who returned from the abyss became a well-known composer and finished writing the second half of the melody."
+  }
+}

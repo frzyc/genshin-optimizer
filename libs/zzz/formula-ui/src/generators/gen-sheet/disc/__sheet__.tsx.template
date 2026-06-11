@@ -1,7 +1,7 @@
 import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
 import { discDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
-import { <% sheet %> } from '@genshin-optimizer/zzz/formula'
+import { <%= sheet %> } from '@genshin-optimizer/zzz/formula'
 import { trans } from '../../util'
 import { Set2Display, Set4Display } from '../components'
 
@@ -14,12 +14,12 @@ const icon = discDefIcon(key)
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const cond = <% sheet %>.conditionals
+const cond = <%= sheet %>.conditionals
 // TODO: Cleanup
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const buff = <% sheet %>.buffs
+const buff = <%= sheet %>.buffs
 
 const sheet: UISheet<'2' | '4'> = {
   2: {

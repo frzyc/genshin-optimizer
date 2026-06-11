@@ -20,7 +20,7 @@ export function WeaponNameTooltip({ weaponKey, addlText, children }: Data) {
           <ImgIcon
             src={imgAssets.weaponTypes[getWeaponStat(weaponKey).weaponType]}
             size={1.5}
-          />{' '}
+          />
           <WeaponName weaponKey={weaponKey} />
         </Typography>
         {addlText}

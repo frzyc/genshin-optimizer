@@ -108,6 +108,10 @@
     "name": "Tebeşirin Gücü",
     "description": {
       "0": "<strong>Yaratılış: Güneş Çiçeği</strong> ile oluşturulan Fani Çiçekler, Canı %50'nin altında olan düşmanlara %25 daha fazla Hasar verir."
+    },
+    "upgradedDescription": {
+      "0": "<strong>Yaratılış: Güneş Çiçeği</strong> Element Becerisinin oluşturduğu Fani Çiçekler, Canı %50'nin altında olan düşmanlara %25 daha fazla Hasar verir.",
+      "1": "Ek olarak, alanda Albedo tarafından oluşturulan bir Gümüş Çiçeği varsa, verilen Hasar Albedo'nun Savunmasının %240'ı kadar artar."
     }
   },
   "passive2": {
@@ -122,10 +126,27 @@
       "0": "Albedo, Silah Yükseltme Malzemesi üretirken elde ettiği ürünü %10 ihtimalle iki katına çıkarır."
     }
   },
+  "lockedPassive": {
+    "name": "Cadının Gece Ayini: Kör Edici Işık Kitabı",
+    "description": {
+      "0": "<strong>Cadının Ödevi: Soruların Ötesinde</strong> tamamlandıktan sonra Albedo bir <strong>Cadılık</strong> karakteri olur. Grupta en az 2 Cadılık karakteri olduğunda, Cadılık karakterlerini geliştiren <strong>Cadılık: Saklı Ayin</strong> etkisi kazanırsın.",
+      "1": "<br/>",
+      "2": "<strong>Cadılık: Saklı Ayin</strong>",
+      "3": [
+        "Albedo, Element Becerisini kullandıktan sonraki 20sn içinde Element Becerisiyle bir düşmanı vurduğunda, düşmanların yakınında 10sn süren bir <strong>Gümüş Çiçeği</strong> oluşur. Savaş alanında Albedo'nun oluşturduğu Güneş Çiçekleri yoksa ve Albedo henüz yere serilmediyse Gümüş Çiçeği, tıpkı Güneş Çiçekleri gibi Fani Çiçekler oluşturmaya başlar. Savaş alanında Albedo tarafından oluşturulmuş en fazla iki Gümüş Çiçeği bulunabilir.",
+        "Bir Güneş Çiçeği oluşturduktan sonra yakındaki grup üyelerinin Normal Saldırı, Yüklü Saldırı, Havadan Saldırı, Element Becerisi ve Element Patlaması Hasarı, Albedo'nun sahip olduğu her 1.000 Savunma için %4 artar. Bu etki 20sn sürer. Bu şekilde elde edilebilecek maksimum artış %12'dir.",
+        "Bir Gümüş Çiçeği oluşturduktan sonra, yakındaki grup üyesi Cadılık karakterlerinin 20sn boyunca Normal Saldırı, Yüklü Saldırı, Havadan Saldırı, Element Becerisi ve Element Patlaması Hasarı, Albedo'nun sahip olduğu her 1.000 Savunma için %10 artar. Bu şekilde elde edilebilecek maksimum artış %30'dur."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Masumiyet Çiçeği",
     "description": {
       "0": "<strong>Yaratılış: Güneş Çiçeği</strong> becerisinin oluşturduğu Fani Çiçekler, Albedo için 1,2 Enerji yeniler."
+    },
+    "upgradedDescription": {
+      "0": "Albedo'nun <strong>Yaratılış: Güneş Çiçeği</strong> Element Becerisi ile oluşturulan Fani Çiçekler, Albedo'ya 1,2 Enerji yeniler.",
+      "1": "Ayrıca Albedo'nun <strong>Yaratılış: Güneş Çiçeği</strong> Element Becerisini kullanmak, sonraki 20sn boyunca Savunmasını %50 artırır."
     }
   },
   "constellation2": {
@@ -136,6 +157,15 @@
         "<strong>Varoluş Ayini: Tektonik Dalga</strong> becerisini kullanmak Ölümcül Hesaplaşma etkisinin tüm kademelerini tüketir. Tüketilen her bir Ölümcül Hesaplaşma kademesi, Ölümcül Çiçeklerin verdiği Hasarı ve Varoluş Ayini: Tektonik Dalga Patlama Hasarını Albedo'nun Savunmasının %30'u kadar artırır.",
         "Bu etki 4 kademeye kadar birikebilir."
       ]
+    },
+    "upgradedDescription": {
+      "0": "<strong>Yaratılış: Güneş Çiçeği</strong> Element Becerisinin oluşturduğu Fani Çiçekler, 30sn boyunca Albedo'ya Ölümcül Hesaplaşma verir:",
+      "1": [
+        "<strong>Varoluş Ayini: Tektonik Dalga</strong> Element Patlamasını kullanmak tüm Ölümcül Hesaplaşma kademelerini tüketir. Tüketilen her Ölümcül Hesaplaşma kademesi, Ölümcül Çiçeklerin verdiği Hasarı ve Varoluş Ayini: Tektonik Dalganın patlama Hasarını Albedo'nun Savunmasının %30'u kadar artırır.",
+        "Bu etki 4 kademeye kadar birikebilir."
+      ],
+      "2": "<br/>",
+      "3": "Ayrıca Albedo savaş alanında değilken ve Ölümcül Hesaplaşma kademesi sayısı 4'e ulaştığında tüm Ölümcül Hesaplaşma kademeleri tüketilir. Bu, aktif karakterinin yakınında 3 Ölümcül Çiçek oluşturur ve bu çiçekler şiddetle açarak Albedo'nun Savunmasının %300'ü kadar <geo>Toprak Alan Hasarı</geo> verir. Bu Hasar, Element Patlaması Hasarı sayılır. <tooltip ns=char_Albedo_gen baseKey18=passive2><strong>Şişedeki Bilgelik</strong></tooltip> Pasif Yeteneğinin de kilidi açılmışsa 10sn boyunca yakındaki grup üyelerinin Element Ustalığı 125 artar."
     }
   },
   "constellation3": {
@@ -149,6 +179,10 @@
     "name": "Kutsallığın Çöküşü",
     "description": {
       "0": "Güneş Çiçeği alanının içinde bulunan aktif grup üyelerinin Havadan Saldırı Hasarı %30 artar."
+    },
+    "upgradedDescription": {
+      "0": "Güneş Çiçeği alanı içindeki aktif grup üyelerinin Havadan Saldırı Hasarı %30 artar.",
+      "1": "Ayrıca yakındaki aktif bir grup üyesi bir Gümüş Çiçeğinin yakınında sıçradığında Gümüş Çiçeği yok olur, sıçramanın yüksekliği büyük ölçüde artar ve sonraki 3sn boyunca bu karakter %30 daha fazla Havadan Saldırı yere vuruş Hasarı verebilir. Bu etki, Havadan Saldırı yere vuruş Hasarı verildikten 0,1 saniye sonra kaldırılır."
     }
   },
   "constellation5": {
@@ -161,7 +195,11 @@
   "constellation6": {
     "name": "Arınma Tozu",
     "description": {
-      "0": "Güneş Çiçeği alanının içinde bulunan aktif grup üyeleri, Kristalleşme tepkimesi ile oluşmuş bir kalkanla korunuyorlarsa verdikleri Hasar %17 artar."
+      "0": "Güneş Çiçeği alanının içinde bulunan aktif grup üyeleri, Kristalleşme ile oluşturulan bir Kalkanla korunuyorsa veya Güneş Çiçeği alanında Ay Akıntıları mevcutsa o grup üyelerinin Hasarı %17 artar."
+    },
+    "upgradedDescription": {
+      "0": "Güneş Çiçeği alanının içinde bulunan aktif grup üyeleri, Kristalleşme ile oluşturulan bir Kalkanla korunuyorsa veya Güneş Çiçeği alanında Ay Akıntıları mevcutsa o grup üyelerinin Hasarı %17 artar.",
+      "1": "Ayrıca <strong>Varoluş Ayini: Tektonik Dalga</strong> Element Patlaması kullanıldığında savaş alanındaki tüm Gümüş Çiçekleri yok olur ve bu şekilde bir Gümüş Çiçeği yok olduğunda mevcut Element Patlaması, {LINK#TE382}<strong>Ebedi Başlangıç</strong></tooltip> Takımyıldızından 4 Ölümcül Hesaplaşma kademesi kaldırmış sayılır. Bu, Ölümcül Çiçeğin sonraki 20 saniye boyunca verdiği Hasarı Albedo'nun Savunmasının %250'si kadar artırır."
     }
   }
 }

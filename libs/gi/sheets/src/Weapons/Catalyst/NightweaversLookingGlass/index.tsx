@@ -135,6 +135,7 @@ const sheet: IWeaponSheet = {
         'on',
         equal(condAfterLunarBloom, 'on', 1)
       ),
+      teamBuff: true,
       fields: [
         {
           node: both_bloom_dmg_,

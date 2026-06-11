@@ -1,0 +1,168 @@
+{
+  "name": "Jahoda",
+  "title": "Bóng Hình Đan Gió",
+  "description": "Nhân viên toàn năng và rất đáng tin cậy (tự nhận) của Hội Đồng Bí Mật.",
+  "constellationName": "Cung Môi Quả",
+  "auto": {
+    "name": "Tùy Cơ Mà Bắn",
+    "fields": {
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 3 lần bắn tên liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiến hành <strong>ngắm bắn</strong> chuẩn hơn, có sát thương cao hơn.",
+        "2": "Khi ngắm bắn, gió sẽ tích tụ trên mũi tên. Mũi tên đầy gió sẽ gây <anemo>Sát Thương Nguyên Tố Phong</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Bắn mưa tên xuống mặt đất, đồng thời lao nhanh xuống đất, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Ngắm Bắn",
+      "4": "Tụ Lực Ngắm Bắn",
+      "5": "Sát Thương Khi Đáp",
+      "6": "Sát Thương Khi Đáp Từ Độ Cao Thấp/Cao",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Kỳ Sách - Cách Phân Chia Của Cải",
+    "description": {
+      "0": "Jahoda đột kích về phía địch, khi tiếp xúc với kẻ địch sẽ vào trạng thái \"Ảo Ảnh Truy Kích\". Khi trong trạng thái này, Jahoda sẽ liên tục di chuyển nhanh: Nếu kẻ địch ở gần đang bị gán ấn Nguyên Tố <pyro>Hỏa</pyro>, <hydro>Thủy</hydro>, <electro>Lôi</electro> hoặc <cryo>Băng</cryo>, Jahoda sẽ âm thầm đem <tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>Bình Kho Báu Khò Khè</strong></tooltip> mà mình mang theo chuyển hóa thành thuộc tính nguyên tố tương ứng và liên tục nạp dần. Khi kết thúc thời gian duy trì hoặc thi triển lần nữa, Jahoda sẽ xóa sạch <strong>Bình Kho Báu Khò Khè</strong> và gây một lần <anemo>Sát Thương Nguyên Tố Phong</anemo> cho kẻ địch ở gần. Khi <strong>Bình Kho Báu Khò Khè</strong> được nạp đầy, Jahoda cũng sẽ xóa sạch <strong>Bình Kho Báu Khò Khè</strong>, thoát trạng thái Ảo Ảnh Truy Kích và gây một lần <anemo>Sát Thương Nguyên Tố Phong</anemo> cao hơn cho kẻ địch ở gần.",
+      "1": "Nếu Jahoda đột kích không trúng kẻ địch, Jahoda sẽ ném ra một quả Bom Khói tại chỗ và gây một lần <anemo>Sát Thương Nguyên Tố Phong</anemo> cho kẻ địch xung quanh.",
+      "2": "<br/>",
+      "3": "<strong>Nguyệt Triệu - Rực Sáng</strong>: Khi <strong>Bình Kho Báu Khò Khè</strong> được nạp đầy, Jahoda sẽ không lập tức xóa sạch <strong>Bình Kho Báu Khò Khè</strong>, mà trong một khoảng thời gian sau đó sẽ liên tục tiêu hao nguyên tố trong bình và phóng <strong>Bóng Mèo Mềm Mại</strong> lên kẻ địch ở gần theo chu kỳ, gây sát thương nguyên tố tương ứng với <strong>Bình Kho Báu Khò Khè</strong>. Khi <strong>Bóng Mèo Mềm Mại</strong> đánh trúng kẻ địch, Jahoda sẽ hồi phục 2 điểm Năng Lượng Nguyên Tố. Hiệu quả này mỗi 3.5s tối đa kích hoạt một lần.",
+      "4": "<br/>",
+      "5": "<i>Trên đời có rất nhiều cách phân chia của cải, nhưng đối với thợ săn kho báu và Đạo Bảo Đoàn của Nod-Krai, sẽ chỉ có một cách phân chia hiệu quả nhất.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Bom Khói",
+      "1": "Sát Thương Bình Kho Báu Chưa Đầy",
+      "2": "Sát Thương Bình Kho Báu Đã Đầy",
+      "3": "Thời Gian Duy Trì Bình Kho Báu",
+      "4": "Sát Thương Bóng Mèo",
+      "5": "CD",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Bí Khí - Bảy Đạo Cụ Thợ Săn",
+    "description": {
+      "0": "Đành phải dùng hết bảo bối cất giữ ở đây thôi! Jahoda lấy ra hai <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>Thiết Bị Điều Phối Giúp Việc Dạng Mèo</strong></tooltip>, và gây một lần <anemo>Sát Thương Nguyên Tố Phong</anemo> lên kẻ địch ở gần.",
+      "1": "<br/>",
+      "2": "<i>\"Cái gọi là điều phối giúp việc, đơn giản là {F#cô}{M#cậu} móc Mora ra giúp đỡ, còn chúng tôi phụ trách điều phối. Sao? Cũng hợp lý chứ?\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Sát Thương Thiết Bị Điều Phối Giúp Việc Dạng Mèo",
+      "2": "Thiết Bị Điều Phối Giúp Việc Dạng Mèo Duy Trì",
+      "3": "Thiết Bị Điều Phối Giúp Việc Dạng Mèo Trị Liệu",
+      "4": "Trị Liệu Thêm Cho Nhân Vật HP Thấp Nhất",
+      "5": "CD",
+      "6": "Năng Lượng Nguyên Tố",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Diệu Kế Đòi Thù Lao",
+    "description": {
+      "0": "Khi trong đội có ít nhất 1 nhân vật Nguyên Tố <pyro>Hỏa</pyro>, <hydro>Thủy</hydro>, <electro>Lôi</electro> hoặc <cryo>Băng</cryo>, dựa trên số lượng nhân vật của từng loại nguyên tố tương ứng, <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>Thiết Bị Điều Phối Giúp Việc Dạng Mèo</strong></tooltip> từ Kỹ Năng Nộ <strong>Bí Khí - Bảy Đạo Cụ Thợ Săn</strong> sẽ nhận được cường hóa.",
+      "1": "Jahoda sẽ âm thầm ghi lại loại nguyên tố kể trên của nhân vật trong đội. Trong số các nhân vật này, nếu loại nguyên tố có nhiều nhân vật nhất là:",
+      "2": [
+        "<pyro>Nguyên Tố Hỏa</pyro>: <strong>Thiết Bị Điều Phối Giúp Việc Dạng Mèo</strong> sẽ gây ra 130% sát thương gốc.",
+        "<hydro>Nguyên Tố Thủy</hydro>: <strong>Thiết Bị Điều Phối Giúp Việc Dạng Mèo</strong> sẽ tạo ra 120% lượng trị liệu gốc.",
+        "<electro>Nguyên Tố Lôi</electro>: Số lượng <strong>Thiết Bị Điều Phối Giúp Việc Dạng Mèo</strong> sẽ tăng thêm 1.",
+        "<cryo>Nguyên Tố Băng</cryo>: Giãn cách tấn công của <strong>Thiết Bị Điều Phối Giúp Việc Dạng Mèo</strong> giảm 10%."
+      ],
+      "3": "<br/>",
+      "4": "Nếu số lượng nhân vật của các loại nguyên tố kể trên là tương đồng, sẽ căn cứ vào thứ tự <pyro>Hỏa</pyro>, <hydro>Thủy</hydro>, <electro>Lôi</electro>, <cryo>Băng</cryo> để tiến hành ghi nhận. Ban đầu tối đa chỉ được kích hoạt hiệu quả tương ứng của một loại nguyên tố."
+    }
+  },
+  "passive2": {
+    "name": "Phần Thưởng Của Quả Mọng",
+    "description": {
+      "0": "Khi <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>Thiết Bị Điều Phối Giúp Việc Dạng Mèo</strong></tooltip> từ Kỹ Năng Nộ <strong>Bí Khí - Bảy Đạo Cụ Thợ Săn</strong> kích hoạt chữa trị cho nhân vật ra trận hiện tại trong đội bản thân, nếu HP của nhân vật nhận trị liệu trên 70%, nhân vật đó sẽ tăng 100 Tinh Thông Nguyên Tố trong 6s."
+    }
+  },
+  "passive3": {
+    "name": "Chúc Phúc Nguyệt Triệu - Lướt Trên Nóc Nhà",
+    "description": {
+      "0": "Khi Jahoda trong đội, <strong>Nguyệt Triệu</strong> của đội sẽ tăng 1 cấp."
+    }
+  },
+  "passive": {
+    "name": "Mưu Trí Trong Ngõ Tối",
+    "description": {
+      "0": "Khi làm nhiệm vụ Phái Đi Thám Hiểm ở Nod-Krai, thời gian tiêu hao rút ngắn 25%."
+    }
+  },
+  "constellation1": {
+    "name": "Thêm Một Bình Nữa Này!",
+    "description": {
+      "0": "Trong Kỹ Năng Nguyên Tố <strong>Kỳ Sách - Cách Phân Chia Của Cải</strong>, khi <tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>Bình Kho Báu Khò Khè</strong></tooltip> phóng <strong>Bóng Mèo Mềm Mại</strong> trúng kẻ địch, sẽ có 50% xác suất nảy lên một lần, gây Sát Thương Nguyên Tố tương ứng cho kẻ địch ở gần."
+    }
+  },
+  "constellation2": {
+    "name": "Kẻ Tinh Ranh Ứng Biến",
+    "description": {
+      "0": "<strong>Nguyệt Triệu - Rực Sáng</strong>: Trong Thiên Phú Đột Phá <tooltip ns=char_Jahoda_gen baseKey18=passive1><strong>Diệu Kế Đòi Thù Lao</strong></tooltip>, ngoài Loại Nguyên Tố có số lượng nhân vật nhiều nhất, Jahoda còn có thể âm thầm ghi lại Loại Nguyên Tố có số lượng nhân vật nhiều nhất trong số các nguyên tố còn lại, và kích hoạt hiệu quả tương ứng của tối đa hai Loại Nguyên Tố. Hiệu quả này cần mở khóa thiên phú \"Diệu Kế Đòi Thù Lao\"."
+    }
+  },
+  "constellation3": {
+    "name": "Đánh Cược Không Lối Thoát",
+    "description": {
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Jahoda_gen baseKey18=burst>Bí Khí - Bảy Đạo Cụ Thợ Săn</tooltip></strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Dâu Dại Mọc Trên Cát",
+    "description": {
+      "0": "Khi <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>Thiết Bị Điều Phối Giúp Việc Dạng Mèo</strong></tooltip> từ Kỹ Năng Nộ <strong>Bí Khí - Bảy Đạo Cụ Thợ Săn</strong> xảy ra chuyển hóa nguyên tố, Jahoda sẽ hồi phục 4 điểm Năng Lượng Nguyên Tố."
+    }
+  },
+  "constellation5": {
+    "name": "Kho Báu Vĩ Đại Nhất",
+    "description": {
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Jahoda_gen baseKey18=skill>Kỳ Sách - Cách Phân Chia Của Cải</tooltip></strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Vận May Nhỏ Bé Nhất",
+    "description": {
+      "0": "<strong>Nguyệt Triệu - Rực Sáng</strong>: Trong vòng 20s sau khi <tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>Bình Kho Báu Khò Khè</strong></tooltip> từ Kỹ Năng Nguyên Tố <strong>Kỳ Sách - Cách Phân Chia Của Cải</strong> được nạp đầy, các nhân vật Nguyệt Triệu trong đội ở gần sẽ tăng 5% Tỷ Lệ Bạo Kích và 40% Sát Thương Bạo Kích."
+    }
+  }
+}

@@ -1,3 +1,3 @@
 {
-  "cond": "After Electro-Charged, Lunar-Charged or Bloom is triggered"
+  "cond": "After <electrocharged>Electro-Charged</electrocharged>, <lunarcharged>Lunar-Charged</lunarcharged>, <bloom>Bloom</bloom>, <lunarbloom>Lunar-Bloom</lunarbloom>, <geo>Crystallize</geo> or <lunarcrystallize>Lunar-Crystallize</lunarcrystallize> is triggered"
 }

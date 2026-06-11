@@ -121,6 +121,20 @@
       "0": "Mondstadt içinde keşfe gönderildiğinde harcanan zaman %25 azalır."
     }
   },
+  "lockedPassive": {
+    "name": "Cadının Gece Ayini: Hayali Noktürn",
+    "description": {
+      "0": "<strong>Cadının Ödevi: Umulmayan Şey</strong> tamamlandıktan sonra Fischl bir <strong>Cadılık</strong> karakteri olur. Grupta en az 2 Cadılık karakteri olduğunda, Cadılık karakterlerini güçlendiren <strong>Cadılık: Saklı Ayin</strong> etkisi kazanırsın.",
+      "1": "<br/>",
+      "2": "<strong>Cadılık: Saklı Ayin</strong>",
+      "3": "Kulak ver ey sayısız dünyanın çöküşüne tanıklık etmiş Prens Nachtraben, Ozvaldo Hrafnavins! Şimdi hükümdarın için yedi sesli besteyi oku; zira en büyük günahın işlendiği bu an, nedenselliğin sonunda toplanan ruhların kaderin karanlığını yerle bir ettiği andır.",
+      "4": "Ayrıca Oz savaş alanındayken grup üyeleri ek güçlendirme etkileri kazanır:",
+      "5": [
+        "Yakındaki bir grup üyesi Yüksek Voltaj tepkimesi tetiklediğinde Fischl ve yakındaki diğer aktif grup üyelerinin 10sn boyunca Saldırısı %22,5 artar.",
+        "Yakındaki bir grup üyesi Elektrik Yüklü veya Ay Yüklü tepkimesi tetiklediğinde Fischl ve yakındaki diğer aktif grup üyelerinin 10sn boyunca Element Ustalığı 90 artar."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Gizemli Kuzgunun Gözü",
     "description": {
@@ -158,6 +172,10 @@
     "name": "Ebedi Gece Kuzgunu",
     "description": {
       "0": "Oz'un savaş alanında bulunduğu süreyi 2sn uzatır. Buna ek olarak Oz savaş alanındayken aktif karakter ile ortak saldırarak Fischl'ın Saldırısının %30'u kadar <electro>Elektrik Hasarı</electro> verir."
+    },
+    "upgradedDescription": {
+      "0": "Oz'un savaş alanında bulunduğu süreyi 2sn uzatır. Buna ek olarak Oz savaş alanındayken aktif karakterinle birlikte ortak saldırılar yaparak Fischl'ın Saldırısının %30'u kadar <electro>Elektrik Hasarı</electro> verir.",
+      "1": "Oz bir ortak saldırı gerçekleştirdikten sonra 10 saniye boyunca <strong>Cadının Gece Ayini: Hayali Noktürn</strong> becerisinin Saldırı ve Element Ustalığı artırma etkisi %100 daha artar."
     }
   }
 }

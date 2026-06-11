@@ -144,14 +144,33 @@
       "0": "Lorsque vous fabriquez un matériau d'élévation d'arme, il y a 25 % de chances qu'une partie des matières premières vous soit rendue."
     }
   },
+  "lockedPassive": {
+    "name": "Veillée de la sorcière : Genèse des signes stellaires",
+    "description": {
+      "0": "Après avoir terminé le <strong>devoir de la sorcière « De perspicacité inconnue »</strong>, Mona devient un personnage <strong>héxère</strong>. Si l'équipe contient au moins 2 personnages héxères, elle bénéficie de l'effet <strong>Hexerei : Rituel secret</strong> qui améliore les personnages héxères.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei : Rituel secret</strong>",
+      "3": "Lorsqu'une attaque normale ou chargée de Mona touche un ennemi, elle obtient un cumul de lueur astrale de Mercure pendant 8 s, cet effet pouvant être obtenu une fois toutes les 0,1 s de cette manière et pouvant se cumuler 3 fois maximum. Lorsqu'un autre personnage de votre équipe déclenche une réaction d'Évaporation sur un ennemi, tous les cumuls de lueur astrale de Mercure sont consommés pour augmenter les DGT de cette réaction de 5 % par cumul consommé.",
+      "4": "De plus, lorsqu'une attaque normale ou chargée de Mona touche un ennemi, le <strong>présage</strong> de ce dernier est prolongé de 2 s. Cet effet peut être déclenché une fois toutes les 0,5 s, un <strong>présage</strong> pouvant être prolongé d'un maximum de 8 s de cette manière."
+    }
+  },
   "constellation1": {
     "name": "Prophétie immersive",
     "description": {
       "0": "Les effets des <hydro>réactions liées à l'élément Hydro</hydro> sont renforcés pendant 8 s lorsqu'une attaque de vos personnages dans l'équipe touche un ennemi marqué par un présage :",
       "1": [
-        " Les DGT d'Électrocution, de Sélénocution, d'Évaporation, de Dispersion Hydro augmentent de 15 %.",
+        " Les DGT d'Électrocution, de Sélénocution, d'Évaporation, de Dispersion Hydro et de Sélénocristallisation augmentent de 15 %.",
         " La durée de Gel augmente de 15 %."
       ]
+    },
+    "upgradedDescription": {
+      "0": "Les effets des <hydro>réactions liées à l'élément Hydro</hydro> sont renforcés pendant 8 s lorsqu'une attaque de vos personnages dans l'équipe touche un ennemi marqué par un présage :",
+      "1": [
+        " Les DGT d'Électrocution, de Sélénocution, d'Évaporation, de Dispersion Hydro et de Sélénocristallisation augmentent de 15 %.",
+        " La durée de Gel augmente de 15 %."
+      ],
+      "2": "<br/>",
+      "3": "De plus, lorsqu'un personnage de l'équipe n'étant pas déployé déclenche cet effet, l'augmentation des DGT passe à 160 % de son effet d'origine."
     }
   },
   "constellation2": {
@@ -159,6 +178,11 @@
     "description": {
       "0": "Les attaques normales ont 20 % de chances d'être suivies par une attaque chargée.",
       "1": "Cet effet peut être déclenché une fois toutes les 5 s."
+    },
+    "upgradedDescription": {
+      "0": "Les attaques normales ont 20 % de chances d'être suivies par une attaque chargée. De plus, pendant 5 s après que Mona utilise son déchaînement élémentaire <strong>Voie divine</strong>, la prochaine attaque normale qui touche un ennemi déclenche automatiquement une attaque chargée.",
+      "1": "Une telle attaque chargée automatique peut être déclenchée une fois toutes les 5 s.",
+      "2": "Lorsqu'une attaque chargée de Mona touche un ennemi, la maîtrise élémentaire de tous les personnages de l'équipe à proximité augmente de 80 pts pendant 12 s."
     }
   },
   "constellation3": {
@@ -172,6 +196,10 @@
     "name": "Prophétie de la fin",
     "description": {
       "0": "Augmente le taux CRIT de 15 % lorsque vos personnages dans l'équipe attaquent un ennemi marqué par un présage."
+    },
+    "upgradedDescription": {
+      "0": "Augmente le taux CRIT de 15 % lorsque vos personnages dans l'équipe attaquent un ennemi marqué par un présage.",
+      "1": "Lorsqu'un personnage héxère de l'équipe attaque un ennemi marqué par un présage, ses DGT CRIT augmentent de 15 %."
     }
   },
   "constellation5": {
@@ -186,6 +214,10 @@
     "description": {
       "0": "Dans l'état <strong>Vicissitude</strong>, Mona obtient un bonus de 60 % de DGT pour sa prochaine attaque chargée à chaque seconde passée à se déplacer.",
       "1": "Cet effet peut être cumulé 3 fois maximum (bonus de 180 %) et dure 8 s."
+    },
+    "upgradedDescription": {
+      "0": "Lorsque Mona est sur le champ de bataille, si elle est dans l'état <strong>Vicissitude</strong> ou si un ou plusieurs ennemis marqués par un présage sont à proximité, elle obtient un bonus de 60 % de DGT pour sa prochaine attaque chargée à chaque seconde, cet effet pouvant être cumulé 3 fois maximum (bonus de 180 %) et durant 8 s.",
+      "1": "De plus, les DGT infligés par les attaques chargées de Mona aux ennemis marqués par un présage augmentent à une valeur équivalant à 200 % des DGT d'origine."
     }
   }
 }

@@ -3,6 +3,7 @@ import type { WeaponSheet } from '../WeaponSheet'
 import Absolution from './Absolution'
 import AmenomaKageuchi from './AmenomaKageuchi'
 import AquilaFavonia from './AquilaFavonia'
+import AthameArtis from './AthameArtis'
 import Azurelight from './Azurelight'
 import BlackcliffLongsword from './BlackcliffLongsword'
 import CalamityOfEshu from './CalamityOfEshu'
@@ -23,6 +24,7 @@ import IronSting from './IronSting'
 import KagotsurubeIsshin from './KagotsurubeIsshin'
 import KeyOfKhajNisut from './KeyOfKhajNisut'
 import LightOfFoliarIncision from './LightOfFoliarIncision'
+import LightbearingMoonshard from './LightbearingMoonshard'
 import LionsRoar from './LionsRoar'
 import MistsplitterReforged from './MistsplitterReforged'
 import MoonweaversDawn from './MoonweaversDawn'
@@ -54,6 +56,7 @@ const sword: Record<WeaponSwordKey, WeaponSheet> = {
   Absolution,
   AmenomaKageuchi,
   AquilaFavonia,
+  AthameArtis,
   Azurelight,
   BlackcliffLongsword,
   CalamityOfEshu,
@@ -73,6 +76,7 @@ const sword: Record<WeaponSwordKey, WeaponSheet> = {
   IronSting,
   KagotsurubeIsshin,
   KeyOfKhajNisut,
+  LightbearingMoonshard,
   LightOfFoliarIncision,
   LionsRoar,
   MistsplitterReforged,

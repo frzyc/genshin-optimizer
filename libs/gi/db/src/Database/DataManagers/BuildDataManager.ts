@@ -1,19 +1,28 @@
+import { zodString, zodTypedRecord } from '@genshin-optimizer/common/database'
 import { objKeyMap } from '@genshin-optimizer/common/util'
-import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
 import type { IGOOD } from '@genshin-optimizer/gi/good'
+import { z } from 'zod'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
 import type { IGO, ImportResult } from '../exim'
 import { defaultInitialWeaponKey, initialWeapon } from './WeaponDataManager'
-export interface Build {
-  name: string
-  description: string
-  id: string
 
-  weaponId?: string
-  artifactIds: Record<ArtifactSlotKey, string | undefined>
-}
+const artifactIdsSchema = zodTypedRecord(
+  allArtifactSlotKeys,
+  z.union([z.string(), z.undefined()])
+)
+
+const buildSchema = z.object({
+  name: z.string().catch('Build Name'),
+  description: zodString(),
+  id: z.string().catch(''),
+  weaponId: z.string().optional(),
+  artifactIds: artifactIdsSchema.catch(
+    objKeyMap(allArtifactSlotKeys, () => undefined)
+  ),
+})
+export type Build = z.infer<typeof buildSchema>
 
 export class BuildDataManager extends DataManager<
   string,
@@ -29,42 +38,42 @@ export class BuildDataManager extends DataManager<
         this.database.storage.remove(key)
   }
   override validate(obj: unknown): Build | undefined {
-    let { name, description, weaponId, artifactIds } = obj as Build
-    const { id } = obj as Build
-    if (typeof name !== 'string') name = 'Build Name'
-    if (typeof description !== 'string') description = ''
+    const result = buildSchema.safeParse(obj)
+    if (!result.success) return undefined
+
+    const { name, description, id, artifactIds } = result.data
+    let { weaponId } = result.data
+
     if (weaponId && !this.database.weapons.get(weaponId)) weaponId = undefined
 
     // force the build to have a valid weapon
     if (!weaponId) {
-      // something is broken, so we get a dullblade as default
       const defWeaponKey = defaultInitialWeaponKey('sword')
-
-      weaponId = this.database.weapons.keys.find((weaponId) => {
-        const { key, location } = this.database.weapons.get(weaponId)!
+      weaponId = this.database.weapons.keys.find((wId) => {
+        const { key, location } = this.database.weapons.get(wId)!
         return !location && key === defWeaponKey
       })
       if (!weaponId)
         weaponId = this.database.weapons.new(initialWeapon(defWeaponKey))
     }
 
-    if (typeof artifactIds !== 'object')
-      artifactIds = objKeyMap(allArtifactSlotKeys, () => undefined)
-    else
-      artifactIds = objKeyMap(allArtifactSlotKeys, (sk) => {
-        const id = artifactIds[sk]
-        if (!id) return undefined
-        const art = this.database.arts.get(id)
-        if (!art) return undefined
-        if (art.slotKey !== sk) return undefined
-        return id
-      })
+    const validatedArtifactIds = objKeyMap(
+      allArtifactSlotKeys,
+      (sk): string | undefined => {
+        const artId = artifactIds[sk]
+        if (!artId) return undefined
+        const art = this.database.arts.get(artId)
+        if (!art || art.slotKey !== sk) return undefined
+        return artId
+      }
+    )
+
     return {
       name,
       description,
-      weaponId,
-      artifactIds,
       id,
+      weaponId,
+      artifactIds: validatedArtifactIds,
     }
   }
 

@@ -14,6 +14,7 @@ import type {
   CharacterKey,
   DiscSetKey,
   DiscSlotKey,
+  DiscSubStatKey,
 } from '@genshin-optimizer/zzz/consts'
 import {
   allDiscSetKeys,
@@ -156,7 +157,10 @@ function discCandidate(disc: ICachedDisc): Candidate<string> {
     [mainStatKey]: getDiscMainStatVal(rarity, mainStatKey, level),
     ...Object.fromEntries(
       substats
-        .filter(({ key, upgrades }) => key && upgrades)
+        .filter(
+          (sub): sub is typeof sub & { key: DiscSubStatKey } =>
+            !!sub.key && !!sub.upgrades
+        )
         .map(({ key, upgrades }) => [
           key,
           getDiscSubStatBaseVal(key, rarity) * upgrades,

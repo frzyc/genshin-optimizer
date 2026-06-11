@@ -161,6 +161,12 @@ export class Read extends BaseRead<Tag> {
   get ult(): Read[] {
     return [super.with('damageType1', 'ult'), super.with('damageType2', 'ult')]
   }
+  get entrySkill(): Read[] {
+    return [
+      super.with('damageType1', 'entrySkill'),
+      super.with('damageType2', 'entrySkill'),
+    ]
+  }
   get quickAssist(): Read[] {
     return [
       super.with('damageType1', 'quickAssist'),
@@ -213,6 +219,12 @@ export class Read extends BaseRead<Tag> {
     return [
       super.with('damageType1', 'sheer'),
       super.with('damageType2', 'sheer'),
+    ]
+  }
+  get abloom(): Read[] {
+    return [
+      super.with('damageType1', 'abloom'),
+      super.with('damageType2', 'abloom'),
     ]
   }
 

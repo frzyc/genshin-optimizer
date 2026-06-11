@@ -20,6 +20,29 @@
         "1": "Havadayken yaylım ok atışı yapar ve dalışa geçerek yere vurur. Yere vurduğunda Alan Hasarı verir."
       }
     },
+    "upgradedFields": {
+      "normal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 6 ok atar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Daha isabetli ve daha yüksek Hasar veren bir <strong>Hedefli Atış</strong> yapar.",
+        "2": "Nişan alırken okun ucunda uğurlu rüzgarlar toplanır. Tam yüklü bu rüzgar oku <anemo>Rüzgar Hasarı</anemo> verir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken yaylım ok atışı yapar ve dalışa geçerek yere vurur. Yere vurduğunda Alan Hasarı verir."
+      },
+      "hexerei": {
+        "0": "<strong>Cadılık: Saklı Ayin</strong>",
+        "1": "<strong>Rüzgarın Büyük Kasidesi</strong> Element Patlaması ile oluşturulan Fırtına Gözü etkinken Venti ek güçlendirme etkileri kazanır:",
+        "2": [
+          "Venti'nin Normal Saldırıları, düşmanları delen ve yoluna çıkan düşmanlara daha da fazla <anemo>Rüzgar Hasarı</anemo> veren <strong>Rüzgaryaran Oklara</strong> dönüşür.",
+          "Venti'nin Normal Saldırıları düşmanlara isabet ettiğinde Fırtına Gözünün süresi 1sn, Bekleme Süresi ise 0,5sn artar. Bu etki 0,1 saniyede bir tetiklenebilir ve <strong>Rüzgarın Büyük Kasidesi</strong> Element Patlaması her kullanıldıktan sonra en fazla 2 defa tetiklenebilir."
+        ]
+      }
+    },
     "skillParams": {
       "0": "1 Vuruş Hasarı",
       "1": "2 Vuruş Hasarı",
@@ -31,7 +54,7 @@
       "7": "Tam Yüklü Hedefli Atış",
       "8": "Havadan Saldırı Hasarı",
       "9": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
-      "10": "",
+      "10": "Rüzgaryaran Ok Hasarı",
       "11": "",
       "12": "",
       "13": "",
@@ -124,10 +147,23 @@
       "1": "Aynı etkiyi veren Pasif Yeteneklerle birikmez."
     }
   },
+  "lockedPassive": {
+    "name": "Cadının Gece Ayini: Zaman Rüzgarına Methiye",
+    "description": {
+      "0": "<strong>Cadının Ödevi: Rüzgarın Uyanışı</strong> tamamlandıktan sonra Venti bir <strong>Cadılık</strong> karakteri olur. Grupta en az 2 Cadılık karakteri olduğunda, Cadılık karakterlerini güçlendiren <strong>Cadılık: Saklı Ayin</strong> etkisi kazanırsın.",
+      "1": "<br/>",
+      "2": "<strong>Cadılık: Saklı Ayin</strong>",
+      "3": "<strong>Rüzgarın Büyük Kasidesi</strong> Element Patlaması tarafından oluşturulan Fırtına Gözü etkinken, yakındaki aktif bir karakter Girdap tepkimesi tetiklediğinde 4sn boyunca o karakterin Hasarı %50 artar ve Fırtına Gözü, orijinal Hasarının %135'i kadar Hasar verir."
+    }
+  },
   "constellation1": {
     "name": "Yaran Boralar",
     "description": {
       "0": "<strong>Hedefli Atış</strong> sırasında fazladan 2 ok atılır. Her bir ok, asıl okun %33'ü kadar Hasar verir."
+    },
+    "upgradedDescription": {
+      "0": "<strong>Hedefli Atış</strong> başına fazladan 2 ok atılır, her biri orijinal okun Hasarının %33'ü kadar Hasar verir.",
+      "1": "Ayrıca, her <strong>Rüzgaryaran Ok</strong> başına düşmanları takip eden fazladan 2 ok atılır, her biri orijinal okun Hasarının %20'si kadar Hasar verir. Bu etki 0,25 saniyede bir tetiklenebilir."
     }
   },
   "constellation2": {
@@ -135,6 +171,13 @@
     "description": {
       "0": "<strong>Göklerin Sonesi</strong> 10 saniyeliğine düşmanların <anemo>Rüzgar Direncini</anemo> ve Fiziksel Direncini %12 azaltır.",
       "1": "<strong>Göklerin Sonesi</strong> ile fırlatılan düşmanlar havadayken <anemo>Rüzgar Dirençleri</anemo> ve Fiziksel Dirençleri ek %12 azalır."
+    },
+    "upgradedDescription": {
+      "0": "<strong>Göklerin Sonesi</strong> 10sn boyunca düşmanların <anemo>Rüzgar Direncini</anemo> ve Fiziksel Direncini %24 azaltır.",
+      "1": "Ayrıca Venti <strong>Rüzgarın Büyük Kasidesi</strong> Element Patlamasını kullandıktan sonra <strong>Rüzgar Nereye Eserse</strong> etkisi kazanır ve <strong>Göklerin Sonesi</strong> Element Becerisinin bekleme süresi sıfırlanır. Bunun dışında <strong>Rüzgaryaran Ok</strong> bir düşmana isabet ettiğinde de Venti %25 olasılıkla <strong>Rüzgar Nereye Eserse</strong> etkisi kazanabilir.",
+      "2": "<br/>",
+      "3": "<strong>Rüzgar Nereye Eserse</strong>",
+      "4": "<strong>Göklerin Sonesi</strong> Element Becerisine basıldığında orijinal Hasarın %300'ü kadar Hasar verilir. Bu etki 15sn sürer ve Venti <strong>Göklerin Sonesi</strong> Element Becerisini kullanmak için bastığında kaldırılır."
     }
   },
   "constellation3": {
@@ -148,6 +191,9 @@
     "name": "Özgürlük Kasırgası",
     "description": {
       "0": "Venti, bir Element Küresi veya Parçacığı aldığında 10 saniyeliğine %25 <anemo>Rüzgar Hasarı Bonusu</anemo> kazanır."
+    },
+    "upgradedDescription": {
+      "0": "<strong>Göklerin Sonesi</strong> Element Becerisi veya <strong>Rüzgarın Büyük Kasidesi</strong> Element Patlamasını kullandıktan sonra 10 saniyeliğine Venti ve aktif grup üyeleri %25 <anemo>Rüzgar Hasarı Bonusu</anemo> kazanır."
     }
   },
   "constellation5": {
@@ -162,6 +208,11 @@
     "description": {
       "0": "<strong>Rüzgarın Büyük Kasidesi</strong> becerisinden Hasar alan hedeflerin <anemo>Rüzgar Direnci</anemo> %20 azalır.",
       "1": "Bir Element Emilimi gerçekleştiyse söz konusu Elemente olan dirençleri de %20 azalır."
+    },
+    "upgradedDescription": {
+      "0": "<strong>Rüzgarın Büyük Kasidesi</strong> becerisinden Hasar alan hedeflerin <anemo>Rüzgar Direnci</anemo> %20 azalır.",
+      "1": "Bir Element Emilimi gerçekleştiyse söz konusu Elemente olan dirençleri de %20 azalır.",
+      "2": "Ayrıca, Venti'nin bu düşmanlara verdiği Hasar %100 Kritik Hasar Bonusu kazanır."
     }
   }
 }

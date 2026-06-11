@@ -1,4 +1,4 @@
-import { CardThemed, NextImage } from '@genshin-optimizer/common/ui'
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import {
   DocumentDisplay,
   type UISheetElement,
@@ -24,7 +24,7 @@ export function LightConeSheetDisplay({ lcKey }: { lcKey: LightConeKey }) {
       <CardContent>
         <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
           <Box
-            component={NextImage ? NextImage : 'img'}
+            component="img"
             alt="Light Cone Cover Image"
             src={lightConeAsset(lcKey, 'cover')}
             sx={{

@@ -25,7 +25,7 @@
   },
   "EnduringRock": {
     "name": "Beständiges Gestein",
-    "desc": "Erhöht die Schildeffizienz um 15 % und verleiht Figuren im Schutz von Schilden folgende Merkmale: Erhöht den verursachten Schaden um 15 % und verringert den Geo-WDS von Gegnern, denen die Figuren Schaden zufügen, um 20 %. Hält 15 s."
+    "desc": "Erhöht die Schildeffizienz um 15 % und verleiht Figuren im Schutz von Schilden oder wenn sich in der Nähe durch Mond-Kristallisation erzeugte Mondkäfige befinden folgende Merkmale: Erhöht den verursachten Schaden um 15 % und verringert den Geo-WDS von Gegnern, denen die Figuren Schaden zufügen, um 20 %. Hält 15 s."
   },
   "SprawlingGreenery": {
     "name": "Überwucherndes Gras",
@@ -59,6 +59,12 @@
           ]
         }
       }
+    }
+  },
+  "Hexerei": {
+    "name": "Hexerei – Geheimes Ritual",
+    "desc": {
+      "0": "Die Hexerei-Figur(en) in der aktuellen Truppe wurden weiter verstärkt."
     }
   }
 }

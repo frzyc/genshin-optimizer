@@ -144,14 +144,33 @@
       "0": "Al fabricar materiales de ascensión de arma, hay una probabilidad del 25% de recuperar los materiales usados."
     }
   },
+  "lockedPassive": {
+    "name": "Rito de la noche de brujas: Fundamentos astrológicos",
+    "description": {
+      "0": "Tras completar la misión <strong>«Lecciones del Aquelarre: De una percepción sin poner a prueba»</strong>, Mona se convertirá en un personaje <strong>taumatúrgico</strong>. Cuando en el equipo haya al menos 2 personajes taumatúrgicos, estos obtendrán el efecto de <strong>taumaturgia: rito secreto</strong>, el cual les otorgará ciertos fortalecimientos.",
+      "1": "<br/>",
+      "2": "<strong>Taumaturgia: rito secreto</strong>",
+      "3": "Cuando Mona golpee a un enemigo con un Ataque Normal o Cargado, obtendrá 1 carga de “resplandor astroacuático”. Este efecto dura 8 s y puede acumularse hasta 3 veces. Solo puede obtenerse una acumulación de resplandor astroacuático cada 0.1 s de esta manera. Cuando tus personajes del equipo (a excepción de Mona) causen una reacción de Vaporización contra un enemigo, se consumirán todas las cargas de resplandor astroacuático y el daño de esa reacción de Vaporización aumentará en un 5% por cada carga consumida.",
+      "4": "Además, cuando Mona golpee a un enemigo con un Ataque Normal o Cargado, también prolongará en 2 s la duración del <strong>presagio</strong> en dicho enemigo. Este efecto solo puede activarse una vez cada 0.5 s, y el <strong>presagio</strong> del enemigo solo se puede prolongar un máximo de 8 s de esta manera."
+    }
+  },
   "constellation1": {
     "name": "Profecía de sumersión",
     "description": {
-      "0": "Cuando tus personajes del equipo atacan a un enemigo afectado por un presagio, los efectos de las <hydro>Reacciones Elementales Hydro</hydro> se potencian durante 8 s:",
+      "0": "Cuando tus personajes del equipo golpean a un enemigo afectado por un presagio, los efectos de las <hydro>Reacciones Elementales Hydro</hydro> se potencian durante 8 s:",
       "1": [
-        "Aumenta en un 15% el daño de las reacciones de Electrocargado, Electrocargado Lunar, Vaporización y Torbellino Hydro.",
+        "Aumenta en un 15% el daño de las reacciones de Electrocargado, Electrocargado Lunar, Vaporización, Torbellino Hydro y Cristalización Lunar.",
         "Aumenta en un 15% la duración de la reacción de Congelado."
       ]
+    },
+    "upgradedDescription": {
+      "0": "Cuando tus personajes del equipo golpean a un enemigo afectado por un presagio, los efectos de las <hydro>Reacciones Elementales Hydro</hydro> se potencian durante 8 s:",
+      "1": [
+        "Aumenta en un 15% el daño de las reacciones de Electrocargado, Electrocargado Lunar, Vaporización, Torbellino Hydro y Cristalización Lunar.",
+        "Aumenta en un 15% la duración de la reacción de Congelado."
+      ],
+      "2": "<br/>",
+      "3": "Además, cuando un personaje que está en el equipo pero no en uso activa los efectos anteriores, el aumento de daño se incrementa hasta un 160% de la cantidad original."
     }
   },
   "constellation2": {
@@ -159,6 +178,11 @@
     "description": {
       "0": "Al golpear con un Ataque Normal, hay un 20% de probabilidad de que vaya seguido automáticamente por un Ataque Cargado.",
       "1": "Este efecto solo puede ocurrir una vez cada 5 s."
+    },
+    "upgradedDescription": {
+      "0": "Al golpear a un enemigo con un Ataque Normal, hay un 20% de probabilidad de que vaya seguido automáticamente por un Ataque Cargado. Además, durante los 5 s posteriores a que Mona use su Habilidad Definitiva, <strong>Órbita divina</strong>, la próxima vez que golpee a un enemigo con su Ataque Normal, realizará automáticamente un Ataque Cargado de manera garantizada.",
+      "1": "El efecto de Ataque Cargado automático mencionado anteriormente solo puede ocurrir una vez cada 5 s.",
+      "2": "Cuando Mona golpee a un enemigo con su Ataque Cargado, la Maestría Elemental de todos los personajes cercanos aumenta en 80 pts. durante 12 s."
     }
   },
   "constellation3": {
@@ -172,6 +196,10 @@
     "name": "Profecía del fin",
     "description": {
       "0": "Cuando cualquier miembro del equipo ataca a un enemigo afectado por un presagio, la Prob. CRIT de ese personaje aumenta en un 15%."
+    },
+    "upgradedDescription": {
+      "0": "Cuando cualquier miembro del equipo ataca a un enemigo afectado por un presagio, la Prob. CRIT de ese personaje aumenta en un 15%.",
+      "1": "Cuando cualquier personaje taumatúrgico del equipo ataca a un enemigo afectado por un presagio, el Daño CRIT de ese personaje aumenta en un 15%."
     }
   },
   "constellation5": {
@@ -186,6 +214,10 @@
     "description": {
       "0": "Al entrar en <strong>Torrente ilusorio</strong>, Mona obtiene un aumento del 60% de daño en su próximo Ataque Cargado por cada segundo que se mueve.",
       "1": "El máximo bono de daño que se puede alcanzar es del 180%. Este efecto solo puede durar un máximo de 8 s."
+    },
+    "upgradedDescription": {
+      "0": "Mientras esté en uso, cuando esté en el estado de <strong>Torrente ilusorio</strong> o cuando en las cercanías haya algún enemigo afectado por un presagio, el daño del próximo Ataque Cargado de Mona aumentará en un 60% por segundo. El máximo bono de daño que se puede alcanzar de esta manera es del 180%. Este efecto solo puede durar un máximo de 8 s.",
+      "1": "Además, el Ataque Cargado de Mona inflige un 200% del daño original a los enemigos afectados por un presagio."
     }
   }
 }

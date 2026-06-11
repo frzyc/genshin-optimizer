@@ -145,14 +145,33 @@
       "0": "Gibt beim Zusammensetzen von Material zum Aufstieg von Waffen mit einer Wahrscheinlichkeit von 25 % einen Teil der Materialien zurück."
     }
   },
+  "lockedPassive": {
+    "name": "Geschenk der Hexennacht – Ursprung der himmlischen Schritte",
+    "description": {
+      "0": "Wandelt Mona nach dem Abschluss von <strong>Aufgabe der Hexe – Von unerprobter Einsicht</strong> in eine <strong>Hexerei</strong>-Figur um. Verleiht, wenn sich in der Truppe mindestens 2 Hexerei-Figuren befinden, den Effekt <strong>Hexerei – Geheimes Ritual</strong>, der Hexerei-Figuren verstärkt.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei – Geheimes Ritual</strong>",
+      "3": "Verleiht Mona, wenn sie einen Gegner mit ihrem Standardangriff oder heftigen Schlag trifft, 1 Stapelung „Merkurs himmlischer Glanz“. Dieser Effekt hält 8 s, 3-fach stapelbar. Auf diese Weise kann sie alle 0,1 s max. 1 Stapelung „Merkurs himmlischer Glanz“ erhalten. Verbraucht, wenn andere eigene Truppenmitglieder die Reaktion Verdampfen auf Gegner anwenden, alle Stapelungen „Merkurs himmlischer Glanz“. Erhöht den durch die Reaktion Verdampfen zugefügten Schaden für jede Stapelung um 5 %.",
+      "4": "Verlängert, wenn Mona Gegner mit ihrem Standardangriff oder heftigen Schlag trifft, den Zustand <strong>Omen</strong> des Gegners um 2 s. 0,5 s Abklingzeit. Der Zustand <strong>Omen</strong> eines Gegners kann auf diese Weise um bis zu 8 s verlängert werden."
+    }
+  },
   "constellation1": {
     "name": "Prophezeiung des Untergangs",
     "description": {
       "0": "Verstärkt den Effekt von <hydro>Hydro-Reaktionen</hydro>, nachdem eine eigene Figur in der Truppe Gegner im Zustand Omen getroffen hat, 8 s lang:",
       "1": [
-        " Erhöht den mit der Reaktion „Unter Strom“ verursachten Schaden um 15 %, den mit der Reaktion „Mond unter Strom“ verursachten Schaden um 15 %, den mit der Reaktion „Verdampfen“ verursachten Schaden um 15 % und den mit der Reaktion „Hydro-Verwirbelung“ verursachten Schaden um 15 %.",
+        " Erhöht den mit der Reaktion „Unter Strom“ verursachten Schaden um 15 %, den mit der Reaktion „Mond unter Strom“ verursachten Schaden um 15 %, den mit der Reaktion „Verdampfen“ verursachten Schaden um 15 %, den mit der Reaktion „Hydro-Verwirbelung“ verursachten Schaden um 15 % und den mit der Reaktion „Mond-Kristallisation“ verursachten Schaden um 15 %.",
         " Verlängert die Wirkungsdauer von „Gefroren“ um 15 %."
       ]
+    },
+    "upgradedDescription": {
+      "0": "Verstärkt den Effekt von <hydro>Hydro-Reaktionen</hydro>, nachdem eine eigene Figur in der Truppe Gegner im Zustand Omen getroffen hat, 8 s lang:",
+      "1": [
+        " Erhöht den mit den Reaktionen „Unter Strom“, „Mond unter Strom“, „Verdampfen“, „Hydro-Verwirbelung“ und „Mond-Kristallisation“ verursachten Schaden um 15 %.",
+        " Verlängert die Wirkungsdauer von „Gefroren“ um 15 %."
+      ],
+      "2": "<br/>",
+      "3": "Erhöht zudem, wenn das den obigen Effekt auslösende Truppenmitglied inaktiv ist, den SCH-Bonus auf 160 % des ursprünglichen Werts."
     }
   },
   "constellation2": {
@@ -160,6 +179,12 @@
     "description": {
       "0": "Löst bei Treffern mit Standardangriffen mit einer Wahrscheinlichkeit von 20 % automatisch einen heftigen Schlag aus.",
       "1": "5 s Abklingzeit."
+    },
+    "upgradedDescription": {
+      "0": "Wendet bei Treffern mit Standardangriffen mit einer Wahrscheinlichkeit von 20 % automatisch einen heftigen Schlag an.",
+      "1": "Lässt Mona innerhalb von 5 s nach der Anwendung ihrer Spezialfähigkeit <strong>Vorbestimmte Laufbahn</strong>, wenn sie das nächste Mal einen Standardangriff ausführt, garantiert einen heftigen Schlag anwenden.",
+      "2": "Der oben genannte heftige Schlag hat eine Abklingzeit von 5 s.",
+      "3": "Erhöht zudem beim Treffen von Gegnern mit einem heftigen Schlag von Mona die Elementarkunde aller Figuren in der Nähe um 80 Punkte, hält 12 s."
     }
   },
   "constellation3": {
@@ -173,6 +198,10 @@
     "name": "Prophezeiung der Ausrottung",
     "description": {
       "0": "Erhöht die KT bei Angriffen aller Truppenmitglieder auf Gegner im Zustand Omen um 15 %."
+    },
+    "upgradedDescription": {
+      "0": "Erhöht die KT bei Angriffen aller Truppenmitglieder auf Gegner im Zustand Omen um 15 %.",
+      "1": "Erhöht den kritischen Schaden aller Hexerei-Figuren in der Truppe, die Gegner im Zustand Omen angreifen, um 15 %."
     }
   },
   "constellation5": {
@@ -187,6 +216,10 @@
     "description": {
       "0": "Erhöht den Schaden des nächsten heftigen Schlags für jede Sekunde, die sich Mona im Zustand <strong>Irreführende Strömung</strong> bewegt, um 60 %.",
       "1": "Auf diese Weise kann der Schaden heftiger Schläge um bis zu 180 % erhöht werden und hält bis zu 8 s lang."
+    },
+    "upgradedDescription": {
+      "0": "Erhöht, wenn Mona aktiv ist, den Schaden des nächsten heftigen Schlags für jede Sekunde, die Mona sich im Zustand <strong>Irreführende Strömung</strong> oder ein Gegner in der Nähe sich im Zustand Omen befindet, um 60 %. Auf diese Weise kann der Schaden heftiger Schläge um bis zu 180 % erhöht werden und hält bis zu 8 s lang.",
+      "1": "Erhöht zudem den Schaden, den Mona Gegnern im Zustand Omen mit heftigen Schlägen zufügt, auf 200 % des ursprünglichen Schadens."
     }
   }
 }

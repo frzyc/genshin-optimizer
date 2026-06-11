@@ -1,4 +1,3 @@
-'use client'
 import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
 import { notEmpty } from '@genshin-optimizer/common/util'
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'

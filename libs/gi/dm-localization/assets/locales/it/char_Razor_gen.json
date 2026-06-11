@@ -133,6 +133,16 @@
       "1": "Non è cumulabile con talenti passivi che conferiscono gli stessi effetti."
     }
   },
+  "lockedPassive": {
+    "name": "Rito della Vigilia della strega: Ondata di fulmini",
+    "description": {
+      "0": "Dopo aver completato <strong>Compiti della strega: Sul branco dei lupetti</strong>, Razor acquisisce l'attributo <strong>Hexerei</strong>. Quando il gruppo include almeno 2 personaggi con attributo Hexerei, questi ultimi ottengono l'effetto di potenziamento <strong>Hexerei: Rito segreto</strong>.",
+      "1": "Inoltre, il Tripudio elementale <strong>Zanna fulminante</strong> di Razor viene potenziato. I DAN inflitti dal <strong>Lupo interiore</strong> aumentano di un 70% dell'ATT di Razor.",
+      "2": "<br/>",
+      "3": "<strong>Hexerei: Rito segreto</strong>",
+      "4": "Quando il Lupo interiore evocato dal Tripudio elementale <strong>Zanna fulminante</strong> di Razor è attivo, se i Sigilli di Electro ottenuti dall'abilità elementale <strong>Artiglio tonante</strong> superano il limite, il Lupo interiore scaglia un fulmine sui nemici vicini, infliggendo DAN da Electro ad area pari a un 150% dell'ATT di Razor e ripristinandogli 7 di energia. Quest'effetto può attivarsi una volta ogni 1 s."
+    }
+  },
   "constellation1": {
     "name": "Istinto del lupo",
     "description": {
@@ -168,8 +178,14 @@
   "constellation6": {
     "name": "Lupus fulguris",
     "description": {
-      "0": "Ogni 10 s la spada di Razor si carica, e l'attacco normale successivo rilascia un fulmine che infligge <electro>DAN da Electro</electro> pari a un 100% dell'ATT di Razor.",
+      "0": "Ogni 10 s la spada di Razor si carica, e l'attacco normale successivo sprigiona un fulmine che infligge <electro>DAN da Electro</electro> pari a un 100% dell'ATT di Razor.",
       "1": "Quando Razor non sta utilizzando <strong>Zanna fulminante</strong>, un fulmine che colpisce un avversario fornisce a Razor un Sigillo di Electro per <strong>Artiglio tonante</strong>."
+    },
+    "upgradedDescription": {
+      "0": "Ogni 10 s la spada di Razor si carica, e l'attacco normale successivo sprigiona un fulmine che infligge <electro>DAN da Electro</electro> pari a un 100% dell'ATT di Razor.",
+      "1": "Quando Razor non sta utilizzando <strong>Zanna fulminante</strong>, i fulmini che colpiscono l'avversario conferiscono 3 Sigilli di Electro per la sua abilità elementale <strong>Artiglio tonante</strong>.",
+      "2": "Inoltre, quando Razor riceve Sigilli di Electro tramite la sua abilità elementale <strong>Artiglio tonante</strong>, ottiene 3 Sigilli.",
+      "3": "Per 15 s dopo aver consumato i Sigilli di Electro, il tasso di CRIT e i DAN da CRIT di Razor aumentano rispettivamente di un 10% e di un 50%."
     }
   }
 }

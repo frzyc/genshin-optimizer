@@ -25,7 +25,7 @@
   },
   "EnduringRock": {
     "name": "Enduring Rock",
-    "desc": "Meningkatkan 15% kekuatan Perisai. Selain itu, karakter yang sedang dilindungi Perisai akan mendapatkan efek berikut: Meningkatkan 15% DMG; Saat karakter mengakibatkan DMG terhadap musuh, mengurangi 20% Geo RES musuh selama 15 detik."
+    "desc": "Meningkatkan 15% kekuatan Perisai. Selain itu, saat Karakter yang sedang dilindungi Perisai atau saat ada Moondrift yang dihasilkan oleh reaksi Lunar-Crystallize di sekitar, akan mendapatkan efek berikut: Meningkatkan 15% DMG; Saat Karakter mengakibatkan DMG terhadap musuh, mengurangi 20% Geo RES musuh selama 15 detik."
   },
   "SprawlingGreenery": {
     "name": "Sprawling Greenery",
@@ -57,6 +57,12 @@
           "6": "<anemo>Anemo</anemo>, <dendro>Dendro</dendro>: DMG reaksi ini +2,25% untuk setiap 100 poin Elemental Mastery."
         }
       }
+    }
+  },
+  "Hexerei": {
+    "name": "Hexerei: Secret Rite",
+    "desc": {
+      "0": "Karakter Hexerei dalam party saat ini sudah diperkuat."
     }
   }
 }

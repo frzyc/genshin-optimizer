@@ -189,6 +189,7 @@ function OptimizationTargetEditorItem({
         size="small"
         inputProps={{ sx: { textAlign: 'right' } }}
         InputProps={{
+          sx: { flex: 1, fontSize: '0.9rem' },
           endAdornment: (
             <InputAdornment position="end" sx={{ ml: 0 }}>
               {isPercent ? '%' : undefined}{' '}
@@ -197,7 +198,7 @@ function OptimizationTargetEditorItem({
                 onClick={() => delTarget(path, index)}
                 edge="end"
               >
-                <DeleteForever fontSize="small" />
+                <DeleteForever sx={{ fontSize: '1.25rem' }} />
               </IconButton>
             </InputAdornment>
           ),

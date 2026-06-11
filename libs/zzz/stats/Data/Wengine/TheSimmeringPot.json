@@ -1,0 +1,14 @@
+{
+  "rarity": "A",
+  "type": "stun",
+  "atk_base": 40,
+  "second_statkey": "impact_",
+  "second_statvalue": 0.06,
+  "phase": [
+    { "params": [0.072, 0.072, 30] },
+    { "params": [0.082, 0.082, 30] },
+    { "params": [0.092, 0.092, 30] },
+    { "params": [0.102, 0.102, 30] },
+    { "params": [0.115, 0.115, 30] }
+  ]
+}

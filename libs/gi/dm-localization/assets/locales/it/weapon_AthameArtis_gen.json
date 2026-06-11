@@ -1,0 +1,29 @@
+{
+  "name": "Athame Artis",
+  "description": {
+    "0": "Nella storia della piccola strega, questa preziosa spada fu donata al coraggioso eroe dal Re del Giorno. Tuttavia, in seguito fu la strega a usarla per sconfiggere l'eroe."
+  },
+  "passiveName": "Splendor Solis del Re del Giorno",
+  "passiveDescription": {
+    "0": {
+      "0": "I DAN da CRIT del Tripudio elementale aumentano di un <cryo>16%</cryo>. Quando il Tripudio elementale colpisce un avversario, si ottiene l'effetto Lama delle ore diurne, che aumenta l'ATT del personaggio che equipaggia l'arma di un <cryo>20%</cryo> e l'ATT degli altri membri attivi del gruppo di un <cryo>16%</cryo>. L'effetto dura 3 s.",
+      "1": "Inoltre, se il gruppo possiede gli effetti di Hexerei: Rito segreto, gli effetti di Lama delle ore diurne aumentano di un 75% aggiuntivo. Quest'effetto può attivarsi anche se il personaggio che equipaggia l'arma non è in campo."
+    },
+    "1": {
+      "0": "I DAN da CRIT del Tripudio elementale aumentano di un <cryo>20%</cryo>. Quando il Tripudio elementale colpisce un avversario, si ottiene l'effetto Lama delle ore diurne, che aumenta l'ATT del personaggio che equipaggia l'arma di un <cryo>25%</cryo> e l'ATT degli altri membri attivi del gruppo di un <cryo>20%</cryo>. L'effetto dura 3 s.",
+      "1": "Inoltre, se il gruppo possiede gli effetti di Hexerei: Rito segreto, gli effetti di Lama delle ore diurne aumentano di un 75% aggiuntivo. Quest'effetto può attivarsi anche se il personaggio che equipaggia l'arma non è in campo."
+    },
+    "2": {
+      "0": "I DAN da CRIT del Tripudio elementale aumentano di un <cryo>24%</cryo>. Quando il Tripudio elementale colpisce un avversario, si ottiene l'effetto Lama delle ore diurne, che aumenta l'ATT del personaggio che equipaggia l'arma di un <cryo>30%</cryo> e l'ATT degli altri membri attivi del gruppo di un <cryo>24%</cryo>. L'effetto dura 3 s.",
+      "1": "Inoltre, se il gruppo possiede gli effetti di Hexerei: Rito segreto, gli effetti di Lama delle ore diurne aumentano di un 75% aggiuntivo. Quest'effetto può attivarsi anche se il personaggio che equipaggia l'arma non è in campo."
+    },
+    "3": {
+      "0": "I DAN da CRIT del Tripudio elementale aumentano di un <cryo>28%</cryo>. Quando il Tripudio elementale colpisce un avversario, si ottiene l'effetto Lama delle ore diurne, che aumenta l'ATT del personaggio che equipaggia l'arma di un <cryo>35%</cryo> e l'ATT degli altri membri attivi del gruppo vicini di un <cryo>28%</cryo>. L'effetto dura 3 s.",
+      "1": "Inoltre, se il gruppo possiede gli effetti di Hexerei: Rito segreto, gli effetti di Lama delle ore diurne aumentano di un 75% aggiuntivo. Quest'effetto può attivarsi anche se il personaggio che equipaggia l'arma non è in campo."
+    },
+    "4": {
+      "0": "I DAN da CRIT del Tripudio elementale aumentano di un <cryo>32%</cryo>. Quando il Tripudio elementale colpisce un avversario, si ottiene l'effetto Lama delle ore diurne, che aumenta l'ATT del personaggio che equipaggia l'arma di un <cryo>40%</cryo> e l'ATT degli altri membri attivi del gruppo vicini di un <cryo>32%</cryo>. L'effetto dura 3 s.",
+      "1": "Inoltre, se il gruppo possiede gli effetti di Hexerei: Rito segreto, gli effetti di Lama delle ore diurne aumentano di un 75% aggiuntivo. Quest'effetto può attivarsi anche se il personaggio che equipaggia l'arma non è in campo."
+    }
+  }
+}

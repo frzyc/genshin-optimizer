@@ -1,0 +1,24 @@
+{
+  "name": "Rama del Juramento Escarchado",
+  "description": {
+    "0": "Un arco largo forjado con una antigua madera blanca que, en un pasado remoto, perteneció al rey de los Jack Frost de las tierras del norte."
+  },
+  "passiveName": "Saludo del amanecer",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta la DEF en un <cryo>16%</cryo>. Cuando el portador de esta arma golpee a un enemigo con su Habilidad Elemental o con la reacción de Cristalización Lunar, obtendrá durante 6 s el efecto de “gracia del hada de escarcha”, el cual aumenta en un <cryo>40%</cryo> el Daño Geo y el daño de Cristalización Lunar que inflige. Si hay un pilar lunar cerca del portador mientras este efecto está activo, los demás personajes cercanos del equipo obtendrán el efecto de “travesura del hada de escarcha”, el cual aumenta en un <cryo>20%</cryo> el Daño Geo y el daño de Cristalización Lunar. Este efecto se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "1": {
+      "0": "Aumenta la DEF en un <cryo>20%</cryo>. Cuando el portador de esta arma golpee a un enemigo con su Habilidad Elemental o con la reacción de Cristalización Lunar, obtendrá durante 6 s el efecto de “gracia del hada de escarcha”, el cual aumenta en un <cryo>50%</cryo> el Daño Geo y el daño de Cristalización Lunar que inflige. Si hay un pilar lunar cerca del portador mientras este efecto está activo, los demás personajes cercanos del equipo obtendrán el efecto de “travesura del hada de escarcha”, el cual aumenta en un <cryo>25%</cryo> el Daño Geo y el daño de Cristalización Lunar. Este efecto se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "2": {
+      "0": "Aumenta la DEF en un <cryo>24%</cryo>. Cuando el portador de esta arma golpee a un enemigo con su Habilidad Elemental o con la reacción de Cristalización Lunar, obtendrá durante 6 s el efecto de “gracia del hada de escarcha”, el cual aumenta en un <cryo>60%</cryo> el Daño Geo y el daño de Cristalización Lunar que inflige. Si hay un pilar lunar cerca del portador mientras este efecto está activo, los demás personajes cercanos del equipo obtendrán el efecto de “travesura del hada de escarcha”, el cual aumenta en un <cryo>30%</cryo> el Daño Geo y el daño de Cristalización Lunar. Este efecto se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "3": {
+      "0": "Aumenta la DEF en un <cryo>28%</cryo>. Cuando el portador de esta arma golpee a un enemigo con su Habilidad Elemental o con la reacción de Cristalización Lunar, obtendrá durante 6 s el efecto de “gracia del hada de escarcha”, el cual aumenta en un <cryo>70%</cryo> el Daño Geo y el daño de Cristalización Lunar que inflige. Si hay un pilar lunar cerca del portador mientras este efecto está activo, los demás personajes cercanos del equipo obtendrán el efecto de “travesura del hada de escarcha”, el cual aumenta en un <cryo>35%</cryo> el Daño Geo y el daño de Cristalización Lunar. Este efecto se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "4": {
+      "0": "Aumenta la DEF en un <cryo>32%</cryo>. Cuando el portador de esta arma golpee a un enemigo con su Habilidad Elemental o con la reacción de Cristalización Lunar, obtendrá durante 6 s el efecto de “gracia del hada de escarcha”, el cual aumenta en un <cryo>80%</cryo> el Daño Geo y el daño de Cristalización Lunar que inflige. Si hay un pilar lunar cerca del portador mientras este efecto está activo, los demás personajes cercanos del equipo obtendrán el efecto de “travesura del hada de escarcha”, el cual aumenta en un <cryo>40%</cryo> el Daño Geo y el daño de Cristalización Lunar. Este efecto se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    }
+  }
+}

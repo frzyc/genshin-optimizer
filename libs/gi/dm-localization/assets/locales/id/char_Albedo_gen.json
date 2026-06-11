@@ -109,6 +109,10 @@
     "name": "Calcite Might",
     "description": {
       "0": "Transient Blossom yang muncul karena <strong>Abiogenesis: Solar Isotoma</strong> mengakibatkan 25% DMG lebih besar kepada musuh dengan HP kurang dari 50%."
+    },
+    "upgradedDescription": {
+      "0": "DMG yang diakibatkan Transient Blossom dari Elemental Skill <strong>Abiogenesis: Solar Isotoma</strong> meningkat 25% terhadap musuh dengan HP di bawah 50%.",
+      "1": "Selain itu, jika ada Silver Isotoma yang diciptakan oleh Albedo sendiri di medan pertempuran, DMG yang diakibatkan kali ini meningkat setara dengan 240% DEF Albedo."
     }
   },
   "passive2": {
@@ -123,10 +127,27 @@
       "0": "Saat membuat Material Ascension Senjata, memiliki 10% kemungkinan untuk mendapatkan hasil 2 kali lipat."
     }
   },
+  "lockedPassive": {
+    "name": "Witch's Eve Rite: Book of Blinding Light",
+    "description": {
+      "0": "Setelah menyelesaikan <strong>PR Penyihir: Tentang Persoalan di Luar Persoalan</strong>, Albedo akan berubah menjadi Karakter <strong>Hexerei</strong>. Saat ada setidaknya 2 Karakter Hexerei di dalam party, akan mendapatkan efek <strong>Hexerei: Secret Rite</strong> yang memperkuat Karakter Hexerei.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei: Secret Rite</strong>",
+      "3": [
+        "Jika Elemental Skill Albedo mengakibatkan DMG terhadap musuh dalam kurun waktu 20 detik setelah dilancarkan, maka akan muncul <strong>Silver Isotoma</strong> di sekitar musuh yang bertahan selama 10 detik. Saat tidak ada Solar Isotoma yang dihasilkan oleh Albedo sendiri dan Albedo tidak gugur, satu Silver Isotoma akan mendapatkan efek yang sama dengan Solar Isotoma dan dapat menghasilkan Transient Blossom. Albedo bisa menciptakan maksimum 2 Silver Isotoma dalam waktu bersamaan.",
+        "Setelah menghasilkan Solar Isotoma, DMG Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, dan Elemental Burst Karakter sekitar di dalam party akan meningkat selama 20 detik berdasarkan DEF Albedo: Untuk setiap 1.000 poin DEF, DMG meningkat 4%. Peningkatan DMG yang bisa diperoleh dengan cara ini adalah maksimum 12%.",
+        "Setelah menciptakan Silver Isotoma, DMG Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, dan Elemental Burst milik Karakter Hexerei di sekitar dalam party akan meningkat selama 20 detik berdasarkan DEF Albedo: Untuk setiap 1.000 poin DEF, DMG meningkat 10%. Peningkatan DMG yang bisa diperoleh dengan cara ini adalah maksimum 30%."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Flower of Eden",
     "description": {
       "0": "Transient Blossom yang muncul dari skill <strong>Abiogenesis: Solar Isotoma</strong> akan memulihkan 1,2 Energy Albedo."
+    },
+    "upgradedDescription": {
+      "0": "Saat Transient Blossom dari Elemental Skill <strong>Abiogenesis: Solar Isotoma</strong> Albedo mekar, memulihkan 1,2 poin Energy untuk Albedo sendiri.",
+      "1": "Selain itu, saat Albedo melancarkan Elemental Skill <strong>Abiogenesis: Solar Isotoma </strong>, DEF Albedo meningkat 50% selama 20 detik."
     }
   },
   "constellation2": {
@@ -138,6 +159,16 @@
         "Setiap lapis Fatal Reckoning akan meningkatkan DMG sebesar 30% DEF Albedo."
       ],
       "2": "Efek ini dapat ditumpuk hingga 4 kali."
+    },
+    "upgradedDescription": {
+      "0": "Saat Transient Blossom dari Elemental Skill <strong>Abiogenesis: Solar Isotoma</strong> mekar, akan memberikan efek Fatal Reckoning kepada Albedo selama 30 detik:",
+      "1": [
+        "Saat melancarkan Elemental Burst <strong>Rite of Progeniture: Tectonic Tide</strong>, semua efek Fatal Reckoning akan dikonsumsi untuk meningkatkan DMG ledakan Rite of Progeniture: Tectonic Tide dan Transient Blossom berdasarkan jumlah lapisan yang dihapus.",
+        "Setiap lapis Fatal Reckoning akan meningkatkan DMG-nya sebesar 30% DEF Albedo.",
+        "Efek ini dapat ditumpuk hingga 4 kali."
+      ],
+      "2": "<br/>",
+      "3": "Selain itu, saat Albedo ada di dalam party namun tidak berada di medan pertempuran, saat Fatal Reckoning ditumpuk hingga 4 lapis, semua efek Fatal Reckoning akan langsung terkonsumsi dan menciptakan 3 buah Fatal Blossom di sekitar Karakter aktif yang akan mekar dan mengakibatkan <geo>Geo DMG Area</geo> sebesar 300% DEF Albedo, DMG ini dianggap sebagai DMG Elemental Burst. Setelah membuka Talenta Pasif <tooltip ns=char_Albedo_gen baseKey18=passive2><strong>Homuncular Nature</strong></tooltip>, juga akan memicu efek Talenta Pasif ini dan membuat Elemental Mastery Karakter sekitar di dalam party meningkat 125 poin selama 10 detik."
     }
   },
   "constellation3": {
@@ -151,6 +182,10 @@
     "name": "Descent of Divinity",
     "description": {
       "0": "Solar Isotoma meningkatkan 30% DMG Plunging Attack untuk Karakter yang berada di dalam area Solar Isotoma."
+    },
+    "upgradedDescription": {
+      "0": "DMG Plunging Attack Karakter aktif di dalam party yang berada di dalam area Solar Isotoma meningkat 30%.",
+      "1": "Selain itu, saat ada Karakter aktif di sekitar yang melompat di dekat Silver Isotoma, maka Silver Isotoma tersebut akan hancur dan meningkatkan ketinggian lompatan Karakter secara signifikan. Selama 3 detik berikutnya, DMG terjangan di tanah milik Plunging Attack Karakter ini meningkat 30%. Efek ini akan hilang 0,1 detik setelah Plunging Attack Karakter mengakibatkan DMG terjangan di tanah."
     }
   },
   "constellation5": {
@@ -163,7 +198,12 @@
   "constellation6": {
     "name": "Dust of Purification",
     "description": {
-      "0": "Solar Isotoma akan meningkatkan 17% DMG Karakter aktif yang berada dalam lingkup areanya dan dilindungi oleh Perisai yang terbuat dari Crystallize."
+      "0": "Solar Isotoma akan meningkatkan 17% DMG Karakter aktif yang berada dalam lingkup areanya dan dilindungi oleh Perisai yang tercipta dari reaksi Crystallize, atau saat ada Moondrift dalam lingkup area Solar Isotoma."
+    },
+    "upgradedDescription": {
+      "0": "Karakter aktif dalam party yang berada dalam area Solar Isotoma akan mendapatkan peningkatan DMG sebesar 17% saat terlindungi oleh Perisai yang tercipta dari reaksi Crystallize, atau saat ada Moondrift di dalam lingkup area Solar Isotoma.",
+      "1": "<br/>",
+      "2": "Selain itu, melancarkan Elemental Burst <strong>Rite of Progeniture: Tectonic Tide</strong> akan langsung menghancurkan semua Silver Isotoma yang ada di medan pertempuran. Saat menghancurkan Silver Isotoma dengan cara ini, Elemental Burst yang dilancarkan kali ini akan terhitung seperti telah mengonsumsi 4 lapis Fatal Reckoning dari Konstelasi {LINK#TE382}<strong>Opening of Phanerozoic</strong></tooltip>. Efek ini akan meningkatkan DMG Fatal Blossom sebesar 250% dari DEF Albedo selama 20 detik."
     }
   }
 }

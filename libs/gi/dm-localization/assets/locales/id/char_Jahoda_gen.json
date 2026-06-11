@@ -1,0 +1,169 @@
+{
+  "name": "Jahoda",
+  "title": "Windthreading Shadow",
+  "description": "Karyawan Curatorium of Secrets yang sangat andal dan (mengaku) serba bisa!",
+  "constellationName": "Fragum",
+  "auto": {
+    "name": "Strike While the Arrow's Hot",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 3 tembakan panah berturut-turut menggunakan busur."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Melancarkan sebuah <strong>Serangan Membidik</strong> yang lebih akurat untuk mengakibatkan DMG yang lebih besar.",
+        "2": "Saat membidik, angin kuat akan berkumpul di ujung anak panah. Panah dengan angin kuat yang terkumpul penuh akan mengakibatkan <anemo>Anemo DMG</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Melancarkan hujan panah dari udara, menerjang tanah dengan kecepatan tinggi, menyerang musuh di jalur terjangan, dan mengakibatkan DMG Area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Membidik",
+      "4": "DMG Membidik Penuh",
+      "5": "DMG Selama Plunging",
+      "6": "DMG Plunging Attack Rendah/Tinggi",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Savvy Strategy: Splitting the Spoils",
+    "description": {
+      "0": "Jahoda menerjang ke arah musuh, dan memasuki status Shadow Pursuit saat menyentuh musuh. Dalam status ini, Jahoda akan terus bergerak cepat. Jika musuh di sekitar sedang terpengaruh oleh <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro>, atau <cryo>Cryo</cryo>, maka Jahoda akan diam-diam mengonversi <tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>Purr-loined Treasure Flask</strong></tooltip> yang dibawanya menjadi jenis elemen yang sesuai dan akan terus mengisinya. Saat durasi skill ini berakhir atau saat dilancarkan sekali lagi, Jahoda akan mengosongkan <strong>Purr-loined Treasure Flask</strong> ini dan mengakibatkan satu kali <anemo>Anemo DMG</anemo> terhadap musuh-musuh di sekitar. Saat <strong>Purr-loined Treasure Flask</strong> sudah penuh, Jahoda juga akan langsung mengosongkannya, keluar dari status Shadow Pursuit, dan mengakibatkan satu kali <anemo>Anemo DMG</anemo> yang lebih kuat terhadap musuh di sekitar.",
+      "1": "Jika terjangannya tidak mengenai musuh, Jahoda akan melemparkan sebuah bom asap di posisi berdirinya dan mengakibatkan satu kali <anemo>Anemo DMG</anemo> terhadap musuh di sekitar.",
+      "2": "<br/>",
+      "3": "<strong>Moonsign: Ascendant Gleam</strong>: Saat <strong>Purr-loined Treasure Flask</strong> penuh, Jahoda tidak akan langsung mengosongkannya, melainkan akan terus mengonsumsi elemen yang terkumpul dalam botol selama beberapa waktu, dan secara berkala menembakkan <strong>Fluffy Meowball</strong> terhadap musuh di sekitar, mengakibatkan DMG dengan jenis elemen yang tersimpan di <strong>Purr-loined Treasure Flask</strong>. <strong>Fluffy Meowball</strong> yang mengenai musuh akan memulihkan 2 poin Energy Jahoda. Efek ini hanya dapat terpicu sekali setiap 3,5 detik.",
+      "4": "<br/>",
+      "5": "<i>Sebenarnya di dunia ini ada banyak cara untuk membagi-bagi kekayaan, tapi bagi para pemburu dan penimbun harta karun di Nod-Krai, hanya ada satu cara yang sudah terbukti efektif.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Bom Asap",
+      "1": "DMG Treasure Flask Tidak Penuh",
+      "2": "DMG Treasure Flask Penuh",
+      "3": "Durasi Treasure Flask",
+      "4": "DMG Meowball",
+      "5": "Cooldown",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Hidden Aces: Seven Tools of the Hunter",
+    "description": {
+      "0": "Saatnya mengeluarkan senjata pamungkas! Jahoda mengeluarkan dua buah <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>Purrsonal Coordinated Assistance Robot</strong></tooltip> dan mengakibatkan satu kali <anemo>Anemo DMG</anemo> terhadap musuh di sekitar.",
+      "1": "<br/>",
+      "2": "<i>\"Saling bantu dan koordinasi? Itu maksudnya kamu 'bantu' kasih Mora, lalu kami yang urus 'koordinasi'-nya. Masuk akal banget, kan?\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Purrsonal Coordinated Assistance Robot",
+      "2": "Durasi Purrsonal Coordinated Assistance Robot",
+      "3": "Pemulihan HP Purrsonal Coordinated Assistance Robot",
+      "4": "Pemulihan HP Tambahan untuk Karakter HP Terendah",
+      "5": "Cooldown",
+      "6": "Konsumsi Energy",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Plan to Get Paid",
+    "description": {
+      "0": "Saat terdapat setidaknya 1 Karakter dengan jenis elemen <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro>, atau <cryo>Cryo</cryo> dalam party, <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>Purrsonal Coordinated Assistance Robots</strong></tooltip> dari Elemental Burst <strong>Hidden Aces: Seven Tools of the Hunter</strong> akan diperkuat berdasarkan jumlah Karakter dengan jenis elemen yang sesuai dalam party.",
+      "1": "<br/>",
+      "2": "Jahoda akan diam-diam mencatat Karakter party dengan jenis elemen yang disebutkan di atas. Di antara Karakter tersebut, jika jumlah Karakter terbanyak adalah:",
+      "3": [
+        "<pyro>Pyro</pyro>: DMG <strong>Purrsonal Coordinated Assistance Robots</strong> meningkat menjadi 130% DMG awalnya.",
+        "<hydro>Hydro</hydro>: Pemulihan HP <strong>Purrsonal Coordinated Assistance Robots</strong> menjadi 120% jumlah awalnya.",
+        "<electro>Electro</electro>: Jumlah <strong>Purrsonal Coordinated Assistance Robots</strong> bertambah satu.",
+        "<cryo>Cryo</cryo>: Jeda antar serangan <strong>Purrsonal Coordinated Assistance Robots</strong> berkurang 10%."
+      ],
+      "4": "<br/>",
+      "5": "Jika jumlah Karakter dengan jenis elemen di atas berjumlah sama, maka prioritas buff yang didapat akan mengikuti sesuai urutan berikut: <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro>, kemudian <cryo>Cryo</cryo>. Pada awalnya, paling banyak hanya efek dari satu jenis elemen yang dapat aktif."
+    }
+  },
+  "passive2": {
+    "name": "Sweet Berry Bounty",
+    "description": {
+      "0": "Saat <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>Purrsonal Coordinated Assistance Robot</strong></tooltip> dari Elemental Burst <strong>Hidden Aces: Seven Tools of the Hunter</strong> memicu pemulihan HP terhadap Karakter aktif di dalam party dan jika HP Karakter yang dipulihkan lebih tinggi dari 70%, maka Elemental Mastery Karakter ini meningkat 100 poin selama 6 detik."
+    }
+  },
+  "passive3": {
+    "name": "Moonsign Benediction: Rooftop Dash",
+    "description": {
+      "0": "Saat Jahoda berada di dalam party, <strong>Moonsign</strong> party meningkat 1 level."
+    }
+  },
+  "passive": {
+    "name": "Backstreet Guile",
+    "description": {
+      "0": "Ketika dikirim untuk melakukan ekspedisi di Nod-Krai, waktu yang dibutuhkan berkurang 25%."
+    }
+  },
+  "constellation1": {
+    "name": "One More Flask!",
+    "description": {
+      "0": "Saat <strong>Fluffy Meowball</strong> yang ditembakkan oleh <tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>Purr-loined Treasure Flask</strong></tooltip> dari Elemental Skill <strong>Savvy Strategy: Splitting the Spoils</strong> mengenai musuh, ada 50% kemungkinan untuk memantul satu kali dan mengakibatkan Elemental DMG dengan jenis elemen yang sesuai kepada musuh di sekitarnya."
+    }
+  },
+  "constellation2": {
+    "name": "Rogue's Quick Thinking",
+    "description": {
+      "0": "<strong>Moonsign: Ascendant Gleam</strong>: Dalam Talenta Ascension <tooltip ns=char_Jahoda_gen baseKey18=passive1><strong>\"Plan to Get Paid\"</strong></tooltip>, selain jumlah Karakter dengan jenis elemen terbanyak, Jahoda juga bisa mencatat Karakter dengan jenis elemen terbanyak kedua secara diam-diam. Sehingga maksimum dua efek jenis elemen bisa aktif di saat yang bersamaan. Harus membuka Talenta Ascension \"Plan to Get Paid\" terlebih dahulu."
+    }
+  },
+  "constellation3": {
+    "name": "Desperate Gamble",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Burst <strong><tooltip ns=char_Jahoda_gen baseKey18=burst>Hidden Aces: Seven Tools of the Hunter</tooltip></strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Wild Berry Amid the Dust",
+    "description": {
+      "0": "Saat <tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>Purrsonal Coordinated Assistance Robot</strong></tooltip> dari Elemental Burst <strong>Hidden Aces: Seven Tools of the Hunter</strong> mengalami konversi elemen, akan memulihkan 4 poin Energy Jahoda."
+    }
+  },
+  "constellation5": {
+    "name": "The Greatest Treasure",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Skill <strong><tooltip ns=char_Jahoda_gen baseKey18=skill>Savvy Strategy: Splitting the Spoils</tooltip></strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "The Littlest Luck",
+    "description": {
+      "0": "<strong>Moonsign: Ascendant Gleam</strong>: Setelah <strong><tooltip ns=tooltips_gen baseKey18=11240001 values=[]>Purr-loined Treasure Flask</tooltip></strong> dari Elemental Skill <strong>Savvy Strategy: Splitting the Spoils</strong> terisi penuh, Karakter Moonsign sekitar di dalam party mendapatkan peningkatan CRIT Rate sebesar 5% dan peningkatan CRIT DMG sebesar 40% selama 20 detik."
+    }
+  }
+}

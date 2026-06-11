@@ -1,0 +1,29 @@
+{
+  "name": "Chroniken der Morgendämmerung",
+  "description": {
+    "0": "Alle Lieder vom Widerstand werden mit dem Wind weitergetragen und fielen wie sanfte Klänge auf die Saiten. Die hierin konzentrierte Kraft ist wie das Licht der Morgendämmerung, das die Finsternis der Nacht durchbricht."
+  },
+  "passiveName": "Lied des ewigen Lobgesangs",
+  "passiveDescription": {
+    "0": {
+      "0": "Verleiht dem Träger „Aufsteigende Morgenbrise“: Erhöht den durch Standardangriffe, Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden um <cryo>60 %</cryo>, sobald der Träger den Kampf für 3 s verlassen hat. Verringert den oben genannten SCH-Bonus im Kampf jede Sekunde um <cryo>10 %</cryo>, bis auf 0 %. Erhöht, wenn der Träger Gegner mit Standardangriffen, Elementarfähigkeiten oder Spezialfähigkeiten trifft, den SCH-Bonus für die entsprechende Art um <cryo>10 %</cryo>, bis auf max. <cryo>60 %</cryo>. 0,1 s Abklingzeit für jede obige Angriffsart. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist.",
+      "1": "Wenn der Effekt „Hexerei – Geheimes Ritual“ in der Truppe vorhanden ist: Erhöht stattdessen, wenn der Träger Gegner mit Standardangriffen, Elementarfähigkeiten oder Spezialfähigkeiten trifft, den SCH-Bonus für alle Arten um <cryo>20 %</cryo>."
+    },
+    "1": {
+      "0": "Verleiht dem Träger „Aufsteigende Morgenbrise“: Erhöht den durch Standardangriffe, Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden um <cryo>75 %</cryo>, sobald der Träger den Kampf für 3 s verlassen hat. Verringert den oben genannten SCH-Bonus im Kampf jede Sekunde um <cryo>12,5 %</cryo>, bis auf 0 %. Erhöht, wenn der Träger Gegner mit Standardangriffen, Elementarfähigkeiten oder Spezialfähigkeiten trifft, den SCH-Bonus für die entsprechende Art um <cryo>12,5 %</cryo>, bis auf max. <cryo>75 %</cryo>. 0,1 s Abklingzeit für jede obige Angriffsart. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist.",
+      "1": "Wenn der Effekt „Hexerei – Geheimes Ritual“ in der Truppe vorhanden ist: Erhöht stattdessen, wenn der Träger Gegner mit Standardangriffen, Elementarfähigkeiten oder Spezialfähigkeiten trifft, den SCH-Bonus für alle Arten um <cryo>25 %</cryo>."
+    },
+    "2": {
+      "0": "Verleiht dem Träger „Aufsteigende Morgenbrise“: Erhöht den durch Standardangriffe, Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden um <cryo>90 %</cryo>, sobald der Träger den Kampf für 3 s verlassen hat. Verringert den oben genannten SCH-Bonus im Kampf jede Sekunde um <cryo>15 %</cryo>, bis auf 0 %. Erhöht, wenn der Träger Gegner mit Standardangriffen, Elementarfähigkeiten oder Spezialfähigkeiten trifft, den SCH-Bonus für die entsprechende Art um <cryo>15 %</cryo>, bis auf max. <cryo>90 %</cryo>. 0,1 s Abklingzeit für jede obige Angriffsart. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist.",
+      "1": "Wenn der Effekt „Hexerei – Geheimes Ritual“ in der Truppe vorhanden ist: Erhöht stattdessen, wenn der Träger Gegner mit Standardangriffen, Elementarfähigkeiten oder Spezialfähigkeiten trifft, den SCH-Bonus für alle Arten um <cryo>30 %</cryo>."
+    },
+    "3": {
+      "0": "Verleiht dem Träger „Aufsteigende Morgenbrise“: Erhöht den durch Standardangriffe, Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden um <cryo>105 %</cryo>, sobald der Träger den Kampf für 3 s verlassen hat. Verringert den oben genannten SCH-Bonus im Kampf jede Sekunde um <cryo>17,5 %</cryo>, bis auf 0 %. Erhöht, wenn der Träger Gegner mit Standardangriffen, Elementarfähigkeiten oder Spezialfähigkeiten trifft, den SCH-Bonus für die entsprechende Art um <cryo>17,5 %</cryo>, bis auf max. <cryo>105 %</cryo>. 0,1 s Abklingzeit für jede obige Angriffsart. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist.",
+      "1": "Wenn der Effekt „Hexerei – Geheimes Ritual“ in der Truppe vorhanden ist: Erhöht stattdessen, wenn der Träger Gegner mit Standardangriffen, Elementarfähigkeiten oder Spezialfähigkeiten trifft, den SCH-Bonus für alle Arten um <cryo>35 %</cryo>."
+    },
+    "4": {
+      "0": "Verleiht dem Träger „Aufsteigende Morgenbrise“: Erhöht den durch Standardangriffe, Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden um <cryo>120 %</cryo>, sobald der Träger den Kampf für 3 s verlassen hat. Verringert den oben genannten SCH-Bonus im Kampf jede Sekunde um <cryo>20 %</cryo>, bis auf 0 %. Erhöht, wenn der Träger Gegner mit Standardangriffen, Elementarfähigkeiten oder Spezialfähigkeiten trifft, den SCH-Bonus für die entsprechende Art um <cryo>20 %</cryo>, bis auf max. <cryo>120 %</cryo>. 0,1 s Abklingzeit für jede obige Angriffsart. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist.",
+      "1": "Wenn der Effekt „Hexerei – Geheimes Ritual“ in der Truppe vorhanden ist: Erhöht stattdessen, wenn der Träger Gegner mit Standardangriffen, Elementarfähigkeiten oder Spezialfähigkeiten trifft, den SCH-Bonus für alle Arten um <cryo>40 %</cryo>."
+    }
+  }
+}

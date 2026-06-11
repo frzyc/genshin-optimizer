@@ -2,7 +2,7 @@
   "setName": "Nächtliches Geflüster in den widerhallenden Wäldern",
   "setEffects": {
     "2": "Erhöht den ANG um 18 %.",
-    "4": "Erhöht den Geo-SCH-Bonus 10 s lang um 20 %, nachdem eine Elementarfähigkeit eingesetzt wurde. Erhöht diesen Effekt zusätzlich um 150 %, wenn die Figur von einem Kristallschild, der durch die Reaktion „Kristallisation“ entsteht, geschützt wird. Diese weitere Verstärkung wird 1 s nach dem Verlieren des Schildes entfernt."
+    "4": "Erhöht den Geo-SCH-Bonus 10 s lang um 20 %, nachdem eine Elementarfähigkeit eingesetzt wurde. Erhöht diesen Effekt zusätzlich um 150 %, wenn die Figur von einem Kristallschild, der durch die Reaktion „Kristallisation“ entsteht, geschützt wird, oder sich in der Nähe ein durch die Reaktion „Mond-Kristallisation“ hervorgerufener Mondkäfig befindet – diese weitere Verstärkung wird 1 s nach der Nichterfüllung dieser Bedingungen entfernt."
   },
   "pieces": {
     "flower": {

@@ -121,6 +121,20 @@
       "0": "Reduce en un 25% el tiempo necesario para completar una expedición en Mondstadt."
     }
   },
+  "lockedPassive": {
+    "name": "Rito de la noche de brujas: Nocturno fantasmagórico",
+    "description": {
+      "0": "Tras completar la misión <strong>«Lecciones del Aquelarre: De lo inesperado»</strong>, Fischl se convertirá en un personaje <strong>taumatúrgico</strong>. Cuando en el equipo haya al menos 2 personajes taumatúrgicos, estos obtendrán el efecto de <strong>taumaturgia: rito secreto</strong>, el cual les otorgará ciertos fortalecimientos.",
+      "1": "<br/>",
+      "2": "<strong>Taumaturgia: rito secreto</strong>",
+      "3": "Oh, Ozvaldo Hrafnavines, Príncipe Cuervo de la Noche, testigo de innumerables mundos sumidos en la destrucción, entona para tu Princesa el septeto de la noche eterna, ¡pues ha llegado el momento en el que las almas congregadas en el fin de la causalidad obliterarán el oscuro pecado del destino!",
+      "4": "Cuando Oz está activo, los personajes del equipo obtendrán los siguientes fortalecimientos adicionales:",
+      "5": [
+        "Después de que un personaje cercano del equipo cause una reacción de Sobrecarga, el ATQ de Fischl y de los demás personajes en uso cercanos del equipo aumentará en un 22.5% durante 10 s.",
+        "Después de que un personaje cercano del equipo cause una reacción de Electrocargado o Electrocargado Lunar, la Maestría Elemental de Fischl y de los demás personajes en uso cercanos del equipo aumentará en 90 pts. durante 10 s."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Ojo de cuervo penetrante",
     "description": {
@@ -158,6 +172,10 @@
     "name": "Ave de la Noche Eterna",
     "description": {
       "0": "Aumenta la duración de la invocación de Oz en 2 s. Mientras Oz esté presente, atacará junto a tu personaje en uso e infligirá un 30% del ATQ de Fischl como <electro>Daño Electro</electro>."
+    },
+    "upgradedDescription": {
+      "0": "Aumenta la duración de la invocación de Oz en 2 s. Mientras Oz esté presente, atacará junto a tu personaje en uso e infligirá un 30% del ATQ de Fischl como <electro>Daño Electro</electro>.",
+      "1": "Después de que Oz realice un ataque coordinado, el efecto de aumento de ATQ y Maestría Elemental otorgado por <strong>Rito de la noche de brujas: Nocturno fantasmagórico</strong> incrementa en un 100% durante 10 s."
     }
   }
 }

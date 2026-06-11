@@ -2,7 +2,7 @@ import { DropdownButton, ImgIcon } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import { commonDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { SkillKey } from '@genshin-optimizer/zzz/consts'
-import { skillLimits } from '@genshin-optimizer/zzz/consts'
+import { skillByLevel } from '@genshin-optimizer/zzz/consts'
 import {
   useCharacterContext,
   useDatabaseContext,
@@ -17,8 +17,8 @@ export function SkillDropdown({ skillKey }: { skillKey: SkillKey }) {
   const character = useCharacterContext()
   const {
     [skillKey]: level = 0,
-    promotion = 0,
     key: characterKey,
+    level: charLevel = 1,
   } = character ?? {}
   const setSkill = useCallback(
     (val: number) =>
@@ -37,7 +37,7 @@ export function SkillDropdown({ skillKey }: { skillKey: SkillKey }) {
         <ImgIcon src={commonDefIcon(skillKey)} size={1.75} sideMargin />
       }
     >
-      {range(1, skillLimits[promotion]).map((i) => (
+      {range(1, skillByLevel(charLevel)).map((i) => (
         <MenuItem
           key={i}
           selected={level === i}

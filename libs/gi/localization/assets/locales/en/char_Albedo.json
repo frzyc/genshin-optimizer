@@ -3,5 +3,12 @@
   "blossomDmg_": "Transient Blossom DMG Bonus",
   "isotomaOnField": "Solar Isotoma on field",
   "enerPerBlossom": "Energy regenerated per Transient Blossom",
-  "c2Stacks": "Fatal Reckoning stacks consumed"
+  "c2Stacks": "Fatal Reckoning stacks consumed",
+  "transBlossom_dmgInc": "Transient Blossom Addl. DMG Increase",
+  "a1LockCond": "Silver Isotoma on the field",
+  "createSolar": "After creating a Solar Isotoma",
+  "createSilver": "After generating a Silver Isotoma",
+  "c4JumpCond": "After nearby active party member jumps near a Silve Isotoma",
+  "fatalBlossom_dmgInc": "Fatal Blossom Addl. DMG Increase",
+  "c6Cond": "After using Elemental Burst and destroying a Silver Isotoma"
 }

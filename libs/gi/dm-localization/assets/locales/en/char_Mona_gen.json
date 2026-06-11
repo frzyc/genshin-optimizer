@@ -199,17 +199,33 @@
       "0": "When Mona crafts Weapon Ascension Materials, she has a 25% chance to refund a portion of the crafting materials used."
     }
   },
+  "lockedPassive": {
+    "name": "Witch's Eve Rite: Genesis of Starsigns",
+    "description": {
+      "0": "After completing <strong>Witch's Homework: Of Untested Insight</strong>, Mona will become a <strong>Hexerei</strong> character. When the party includes at least 2 Hexerei characters, you will gain the <strong>Hexerei: Secret Rite</strong> effect, which enhances Hexerei characters.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei: Secret Rite</strong>",
+      "3": "When Mona's Normal Attacks or Charged Attacks hit an opponent, she gains 1 stack of <strong>Astral Glow of Mercury</strong>, for 8s. Max 3 stacks. This effect can grant at most one stack every 0.1s. When other party members trigger a Vaporize reaction on an enemy, all Astral Glow of Mercury stacks are consumed. Each stack consumed increases the damage of that Vaporize reaction by 5%.",
+      "4": "Additionally, when Mona's Normal Attacks or Charged Attacks hit an opponent, the enemy's <strong>Omen</strong> duration is extended by 2s. This effect can trigger at most once every 0.5s, and can extend the Omen by up to 8s through this method."
+    }
+  },
   "constellation1": {
     "name": "Prophecy of Submersion",
     "description": {
       "0": "When any of your own party members hits an opponent affected by an Omen, the effects of <hydro>Hydro-related Elemental Reactions</hydro> are enhanced for 8s:",
       "1": [
-        " Electro-Charged DMG increases by 15%.",
-        " Lunar-Charged DMG increases by 15%.",
-        " Vaporize DMG increases by 15%.",
-        " Hydro Swirl DMG increases by 15%.",
+        " Electro-Charged DMG increases by 15%, Lunar-Charged DMG increases by 15%, Vaporize DMG increases by 15%, Hydro Swirl DMG increases by 15%, Lunar-Crystallize DMG increases by 15%.",
         " Frozen duration is extended by 15%."
       ]
+    },
+    "upgradedDescription": {
+      "0": "When any of your own party members hits an opponent affected by an Omen, the effects of <hydro>Hydro-related Elemental Reactions</hydro> are enhanced for 8s:",
+      "1": [
+        " Electro-Charged DMG increases by 15%, Lunar-Charged DMG increases by 15%, Vaporize DMG increases by 15%, Hydro Swirl DMG increases by 15%, Lunar-Crystallize DMG increases by 15%.",
+        " Frozen duration is extended by 15%."
+      ],
+      "2": "<br/>",
+      "3": "Additionally, when your off-field party members trigger the above effect, the DMG Bonus to the above Hydro-related Elemental Reactions is enhanced to 160% of its original effect."
     }
   },
   "constellation2": {
@@ -217,6 +233,11 @@
     "description": {
       "0": "When a Normal Attack hits, there is a 20% chance that it will be automatically followed by a Charged Attack.",
       "1": "This effect can only occur once every 5s."
+    },
+    "upgradedDescription": {
+      "0": "When a Normal Attack hits, there is a 20% chance that it will be automatically followed by a Charged Attack. Additionally, within 5s after Mona unleashes her Elemental Burst <strong>Stellaris Phantasm</strong>, her next Normal Attack that hits an enemy will automatically trigger a Charged Attack.",
+      "1": "The aforementioned Charged Attack effect can only occur once every 5s.",
+      "2": "When Mona's Charged Attack hits an opponent, all nearby party members will have their Elemental Mastery increased by 80 for 12s."
     }
   },
   "constellation3": {
@@ -230,6 +251,10 @@
     "name": "Prophecy of Oblivion",
     "description": {
       "0": "When any party member attacks an opponent affected by an Omen, their CRIT Rate is increased by 15%."
+    },
+    "upgradedDescription": {
+      "0": "When any party member attacks an opponent affected by an Omen, their CRIT Rate is increased by 15%.",
+      "1": "When any Hexerei party member attacks an opponent affected by an Omen, their CRIT DMG is increased by 15%."
     }
   },
   "constellation5": {
@@ -244,6 +269,10 @@
     "description": {
       "0": "Upon entering <strong>Illusory Torrent</strong>, Mona gains a 60% increase to the DMG of her next Charged Attack per second of movement.",
       "1": "A maximum DMG Bonus of 180% can be achieved in this manner. The effect lasts for no more than 8s."
+    },
+    "upgradedDescription": {
+      "0": "While Mona is the active character, while she is in the <strong>Illusory Torrent</strong> state or there are opponents affected by an Omen nearby, she gains a 60% increase to the DMG of her next Charged Attack per second. A maximum DMG Bonus of 180% can be achieved in this manner. The effect lasts for no more than 8s.",
+      "1": "Additionally, the DMG Mona's Charged Attacks deal to opponents affected by an Omen will be increased to 200% of the original DMG."
     }
   }
 }

@@ -293,15 +293,13 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
     eleMas: sum(a4_eleMas, c4_eleMas),
   },
   teamBuff: {
-    tally: {
-      moonsign: constant(1),
-    },
     premod: {
       lunarcharged_baseDmg_: a0_base_lc_dmg_,
       electro_enemyRes_: c2_electro_enemyRes_,
       lunarcharged_specialDmg_: c6_team_lunarcharged_specialDmg_,
     },
   },
+  isMoonsign: constant(1),
 })
 
 const sheet: TalentSheet = {

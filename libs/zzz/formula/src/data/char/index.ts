@@ -3,12 +3,16 @@ import { type TagMapNodeEntries } from '../util'
 import Alice from './sheets/Alice'
 import Anby from './sheets/Anby'
 import Anton from './sheets/Anton'
+import Aria from './sheets/Aria'
 import AstraYao from './sheets/AstraYao'
+import Banyue from './sheets/Banyue'
 import Ben from './sheets/Ben'
 import Billy from './sheets/Billy'
 import Burnice from './sheets/Burnice'
 import Caesar from './sheets/Caesar'
+import Cissia from './sheets/Cissia'
 import Corin from './sheets/Corin'
+import Dialyn from './sheets/Dialyn'
 import Ellen from './sheets/Ellen'
 import Evelyn from './sheets/Evelyn'
 import Grace from './sheets/Grace'
@@ -23,11 +27,13 @@ import Lucy from './sheets/Lucy'
 import Lycaon from './sheets/Lycaon'
 import Manato from './sheets/Manato'
 import Miyabi from './sheets/Miyabi'
+import NangongYu from './sheets/NangongYu'
 import Nekomata from './sheets/Nekomata'
 import Nicole from './sheets/Nicole'
 import OrphieMagus from './sheets/OrphieMagus'
 import PanYinhu from './sheets/PanYinhu'
 import Piper from './sheets/Piper'
+import Promeia from './sheets/Promeia'
 import Pulchra from './sheets/Pulchra'
 import Qingyi from './sheets/Qingyi'
 import Rina from './sheets/Rina'
@@ -36,24 +42,32 @@ import Seth from './sheets/Seth'
 import Soldier0Anby from './sheets/Soldier0Anby'
 import Soldier11 from './sheets/Soldier11'
 import Soukaku from './sheets/Soukaku'
+import StarlightBilly from './sheets/StarlightBilly'
+import Sunna from './sheets/Sunna'
 import Trigger from './sheets/Trigger'
 import Vivian from './sheets/Vivian'
 import Yanagi from './sheets/Yanagi'
+import YeShunguang from './sheets/YeShunguang'
 import Yidhari from './sheets/Yidhari'
 import Yixuan from './sheets/Yixuan'
 import Yuzuha from './sheets/Yuzuha'
+import Zhao from './sheets/Zhao'
 import ZhuYuan from './sheets/ZhuYuan'
 
 const data: TagMapNodeEntries[] = [
   Alice,
   Anby,
   Anton,
+  Aria,
   AstraYao,
+  Banyue,
   Ben,
   Billy,
   Burnice,
   Caesar,
+  Cissia,
   Corin,
+  Dialyn,
   Ellen,
   Evelyn,
   Grace,
@@ -68,11 +82,13 @@ const data: TagMapNodeEntries[] = [
   Lycaon,
   Manato,
   Miyabi,
+  NangongYu,
   Nekomata,
   Nicole,
   OrphieMagus,
   PanYinhu,
   Piper,
+  Promeia,
   Pulchra,
   Qingyi,
   Rina,
@@ -81,12 +97,16 @@ const data: TagMapNodeEntries[] = [
   Soldier0Anby,
   Soldier11,
   Soukaku,
+  StarlightBilly,
+  Sunna,
   Trigger,
   Vivian,
   Yanagi,
+  YeShunguang,
   Yidhari,
   Yixuan,
   Yuzuha,
+  Zhao,
   ZhuYuan,
 ]
 export default data.flat()

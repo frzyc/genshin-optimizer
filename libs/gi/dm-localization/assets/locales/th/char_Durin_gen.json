@@ -1,0 +1,187 @@
+{
+  "name": "Durin",
+  "title": "\"เพลิงที่ไม่มีวันดับ\"",
+  "description": "มังกรที่ถือกำเนิด จากปลายปากกาของแม่มด M ในที่สุด ก็ได้มาถึงโลกของมนุษย์ และ \"เรื่องราว\" ของเขาก็ยังคงดำเนินต่อไป",
+  "constellationName": "Draco Rubedo",
+  "auto": {
+    "name": "Radiant Wingslash",
+    "fields": {
+      "normal": {
+        "0": "<strong>โจมตีปกติ</strong>",
+        "1": "โจมตีด้วยดาบต่อเนื่องมากสุด 4 ครั้ง"
+      },
+      "charged": {
+        "0": "<strong>ชาร์จโจมตี</strong>",
+        "1": "ใช้พลังกายส่วนหนึ่ง เพื่อฟาดโจมตีไปข้างหน้าหนึ่งครั้ง"
+      },
+      "plunging": {
+        "0": "<strong>โจมตีพุ่งลงจากอากาศ</strong>",
+        "1": "กระโจนจากกลางอากาศลงมายังพื้นดิน เพื่อโจมตีศัตรูที่อยู่ในเส้นทางการโจมตี โดยจะสร้างความเสียหายวงกว้างเมื่อลงถึงพื้น"
+      }
+    },
+    "skillParams": {
+      "0": "ความเสียหายขั้น 1",
+      "1": "ความเสียหายขั้น 2",
+      "2": "ความเสียหายขั้น 3",
+      "3": "ความเสียหายขั้น 4",
+      "4": "ความเสียหายชาร์จโจมตี",
+      "5": "ชาร์จโจมตีใช้พลังกาย",
+      "6": "ความเสียหายพุ่งลง",
+      "7": "ความเสียหายพุ่งถึงพื้นจากที่ต่ำ/สูง",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Binary Form: Convergence and Division",
+    "description": {
+      "0": "ชำระล้างสสารแห่งวิญญาณ และความปรารถนาให้บริสุทธิ์ เพื่อทำการ<tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>แปรแก่นสสาร</strong></tooltip> ในระหว่างนี้ สกิลธาตุ <strong>Binary Form: Convergence and Division</strong> ของ Durin จะเปลี่ยนเป็นสกิลธาตุพิเศษ <strong>Transmutation: Confirmation of Purity</strong> และการโจมตีปกติ <strong>Radiant Wingslash</strong> จะเปลี่ยนเป็นสกิลธาตุพิเศษ <strong>Transmutation: Denial of Darkness</strong>",
+      "1": "<br/>",
+      "2": "<strong>Transmutation: Confirmation of Purity</strong>",
+      "3": "สร้าง<pyro>ความเสียหายไฟวงกว้าง</pyro> แก่ศัตรูที่อยู่ในบริเวณใกล้เคียงหนึ่งครั้ง ยกเลิกการแปรแก่นสสาร และเข้าสู่สถานะ <strong>Confirmation of Purity</strong> เป็นเวลา 30 วินาที",
+      "4": "<br/>",
+      "5": "<strong>Transmutation: Denial of Darkness</strong>",
+      "6": "สร้าง<pyro>ความเสียหายไฟ</pyro>แก่ศัตรูที่อยู่ด้านหน้าติดต่อกัน 3 ครั้ง ยกเลิกการแปรแก่นสสาร และเข้าสู่สถานะ <strong>Denial of Darkness</strong> เป็นเวลา 30 วินาที",
+      "7": "<br/>",
+      "8": "ขณะอยู่ในสถานะต่อสู้ เมื่อ Durin เข้าสู่สถานะ <strong>Confirmation of Purity</strong> หรือ <strong>Denial of Darkness</strong> จะฟื้นฟูพลังงานธาตุจำนวนหนึ่งให้กับ Durin โดยสามารถฟื้นฟูพลังงานธาตุด้วยวิธีนี้ได้มากสุดหนึ่งครั้ง ในทุก 6 วินาที"
+    },
+    "skillParams": {
+      "0": "ความเสียหาย Transmutation: Confirmation of Purity",
+      "1": "ความเสียหาย Transmutation: Denial of Darkness",
+      "2": "ฟื้นฟูพลังงานธาตุ",
+      "3": "คูลดาวน์",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Principle of Purity: As the Light Shifts",
+    "description": {
+      "0": "ปลดปล่อยพลังของ \"อสูร\" ด้วยวิธีที่แตกต่างกัน โดยขึ้นอยู่กับสถานะ<tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>แปรแก่นสสาร</strong></tooltip>ของ Durin ทำให้ Durin สามารถปล่อยท่าไม้ตายที่แตกต่างกันได้",
+      "1": "<br/>",
+      "2": "<strong>Principle of Purity: As the Light Shifts</strong>",
+      "3": "หาก Durin อยู่ในสถานะ <strong>Confirmation of Purity</strong> จะใช้ท่าไม้ตาย <strong>Principle of Purity: As the Light Shifts</strong> สร้าง<pyro>ความเสียหายไฟวงกว้าง</pyro>แก่ศัตรูที่อยู่ด้านหน้า 3 ครั้ง และแปลงพลังของตนเองให้อยู่ในรูป <strong>\"มังกรเพลิงสีขาว\"</strong> ซึ่งจะติดตามตัวละครที่เข้าร่วมการต่อสู้ในขณะนั้น และโจมตีศัตรูรอบข้างเป็นระยะ สร้าง<pyro>ความเสียหายไฟวงกว้าง</pyro> โดยความเสียหายนี้จะถูกมองว่าเป็นความเสียหายจากท่าไม้ตาย",
+      "4": "<br/>",
+      "5": "<strong>Principle of Darkness: As the Stars Smolder</strong>",
+      "6": "หาก Durin อยู่ในสถานะ <strong>Denial of Darkness</strong> จะเปลี่ยนไปใช้ท่าไม้ตาย <strong>Principle of Darkness: As the Stars Smolder</strong> สร้าง<pyro>ความเสียหายไฟวงกว้าง</pyro>แก่ศัตรูที่อยู่ด้านหน้า 3 ครั้ง และแปลงพลังของตนให้อยู่ในรูป <strong>\"มังกรกาฬกัดกร่อน\"</strong> ซึ่งจะติดตามตัวละครที่เข้าร่วมการต่อสู้ในขณะนั้น และโจมตีศัตรูรอบข้าง 1 ตัวเป็นระยะ สร้าง<pyro>ความเสียหายไฟ</pyro> โดยความเสียหายนี้จะถูกมองว่าเป็นความเสียหายจากท่าไม้ตาย",
+      "7": "<br/>",
+      "8": "ทั้งนี้ หาก Durin ไม่ได้อยู่ในสถานะพิเศษแปรแก่นสสาร จะใช้ท่าไม้ตาย <strong>Principle of Purity: As the Light Shifts</strong>"
+    },
+    "skillParams": {
+      "0": "ความเสียหาย Principle of Purity: As the Light Shifts",
+      "1": "ความเสียหาย Principle of Darkness: As the Stars Smolder",
+      "2": "ความเสียหายมังกรเพลิงสีขาว",
+      "3": "ความเสียหายมังกรกาฬกัดกร่อน",
+      "4": "ระยะเวลาของมังกรเพลิงสีขาว",
+      "5": "ระยะเวลาของมังกรกาฬกัดกร่อน",
+      "6": "คูลดาวน์",
+      "7": "พลังงานธาตุ",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Light Manifest of the Divine Calculus",
+    "description": {
+      "0": "จะเกิดเอฟเฟกต์เสริมพลังที่แตกต่างกัน ตามรูปแบบพลังที่ปรากฏขึ้นจาก การใช้ท่าไม้ตายของ Durin หากพลังของ Durin อยู่ในรูปของ:",
+      "1": "<br/>",
+      "2": "<strong>มังกรเพลิงสีขาว</strong>",
+      "3": "หลังจากตัวละครในทีมที่อยู่ใกล้เคียงทำให้เกิดปฏิกิริยาติดไฟ, โอเวอร์โหลด, กระจายธาตุไฟ, ตกผลึกธาตุไฟแก่ศัตรู หรือสร้าง<pyro>ความเสียหายไฟ</pyro>หรือ<dendro>ความเสียหายไม้</dendro> แก่ศัตรูที่อยู่ในสถานะติดไฟ <pyro>ความต้านทานไฟ</pyro>และความต้านทานธาตุที่เกี่ยวข้องกับปฏิกิริยาดังกล่าว ของศัตรูตัวนั้นจะลดลง 20% เป็นเวลา 6 วินาที",
+      "4": "<br/>",
+      "5": "<strong>มังกรกาฬกัดกร่อน</strong>",
+      "6": "ความเสียหายจากปฏิกิริยาระเหยของ Durin เพิ่มขึ้น 40% และความเสียหายจากปฏิกิริยาละลายของเขาเพิ่มขึ้น 40%"
+    }
+  },
+  "passive2": {
+    "name": "Chaos Formed Like the Night",
+    "description": {
+      "0": "ภายใน 20 วินาทีหลังจากใช้ท่าไม้ตาย Durin จะได้รับเอฟเฟกต์ Primordial Fusion of Forms: ในช่วงเวลาต่อเนื่อง Durin จะได้รับ Primordial Fusion 10 ชั้น เมื่อ<strong>มังกรเพลิงสีขาว</strong> หรือ<strong>มังกรกาฬกัดกร่อน</strong>ที่โจมตีเป็นระยะสร้างความเสียหาย จะใช้ Primordial Fusion 1 ชั้น เพื่อเพิ่มความเสียหายที่สร้าง โดยพลังโจมตีทุก 100 หน่วย จะสร้างความเสียหายเพิ่มเติมเท่ากับ 3% ของความเสียหายเดิม โดยจะสร้างความเสียหายเพิ่มเติมด้วยวิธีนี้ได้สูงสุด 75% ของความเสียหายเดิม เมื่อ<strong>มังกรเพลิงสีขาว</strong> หรือ<strong>มังกรกาฬกัดกร่อน</strong> โจมตีถูกศัตรูหลายตัวพร้อมกันหนึ่งครั้ง จะใช้ Primordial Fusion เพียง 1 ชั้น",
+      "1": "เมื่อปล่อยท่าไม้ตายอีกครั้ง จะรีเฟรชจำนวนชั้นของ Primordial Fusion"
+    }
+  },
+  "passive3": {
+    "name": "Echoes of the Surging Earth",
+    "description": {
+      "0": "เมื่อทำคำขอการออกสำรวจของ Mondstadt ที่ใช้เวลา 20 ชั่วโมง รางวัลที่ได้รับจะเพิ่มขึ้น 25%"
+    }
+  },
+  "lockedPassive": {
+    "name": "Witch's Eve Rite: Ode to Ascension",
+    "description": {
+      "0": "หลังจากสำเร็จ<strong>แบบฝึกหัดของแม่มด: ปริศนาของโลกนี้</strong> Durin จะกลายเป็นตัวละคร<strong>มนตรา</strong> เมื่อจัดทีมโดยมีตัวละครมนตราอย่างน้อย 2 ตัว จะได้รับเอฟเฟกต์ <strong>Hexerei: Secret Rite</strong> ซึ่งจะเสริมพลังให้กับตัวละครมนตรา",
+      "1": "<br/>",
+      "2": "<strong>Hexerei: Secret Rite</strong>",
+      "3": "เอฟเฟกต์ทั้งหมดในพรสวรรค์เพิ่มเติม <tooltip ns=char_Durin_gen baseKey18=passive1><strong>Light Manifest of the Divine Calculus</strong></tooltip> (ยกเว้นช่วงระยะเวลาต่อเนื่อง) จะเพิ่มขึ้น 75%"
+    }
+  },
+  "constellation1": {
+    "name": "Adamah's Redemption",
+    "description": {
+      "0": "หลังจากใช้ท่าไม้ตาย จะสร้างเอฟเฟกต์ที่แตกต่างกัน ตามท่าไม้ตายที่ Durin ใช้:",
+      "1": [
+        "<strong>Principle of Purity: As the Light Shifts</strong>: ตัวละครอื่นทั้งหมดในทีมที่อยู่ใกล้เคียงจะได้รับ <strong>Cycle of Enlightenment</strong> 20 ชั้น เป็นเวลา 20 วินาที เมื่อตัวละครที่เข้าร่วมการต่อสู้ในขณะนั้นที่มี Cycle of Enlightenment สร้างความเสียหายจากการโจมตีปกติ, ชาร์จโจมตี, โจมตีพุ่งลงจากอากาศ, สกิลธาตุ หรือท่าไม้ตาย จะใช้ Cycle of Enlightenment หนึ่งชั้น เพื่อเพิ่มความเสียหายที่สร้าง เท่ากับ 60% ของพลังโจมตีของ Durin โดยจำนวนครั้งการเกิดเอฟเฟกต์ของตัวละครในทีมที่มี Cycle of Enlightenment จะคิดแยกกัน",
+        "<strong>Principle of Darkness: As the Stars Smolder</strong>: Durin จะได้รับ <strong>Cycle of Enlightenment</strong> 20 ชั้น เป็นเวลา 20 วินาที เมื่อ Durin สร้างความเสียหายจากท่าไม้ตาย จะใช้ Cycle of Enlightenment 2 ชั้น เพื่อเพิ่มความเสียหายที่สร้าง เท่ากับ 150% ของพลังโจมตีของ Durin"
+      ],
+      "2": "เมื่อใช้ท่าไม้ตาย จำนวนชั้นของ <strong>Cycle of Enlightenment</strong> จะถูกรีเซ็ต"
+    }
+  },
+  "constellation2": {
+    "name": "Unground Visions",
+    "description": {
+      "0": "ภายใน 20 วินาทีหลังจาก Durin ใช้ท่าไม้ตาย หลังจากตัวละครในทีมที่อยู่ใกล้เคียงทำให้เกิดปฏิกิริยาระเหย, ละลาย, ติดไฟ, โอเวอร์โหลด, กระจายธาตุไฟ หรือตกผลึกธาตุไฟแก่ศัตรู หรือสร้าง<pyro>ความเสียหายไฟ</pyro>หรือ<dendro>ความเสียหายไม้</dendro> แก่ศัตรูที่อยู่ในสถานะติดไฟ <pyro>ความเสียหายไฟ</pyro> และความเสียหายธาตุที่เกี่ยวข้องกับปฏิกิริยาดังกล่าว ที่ตัวละครในทีมที่อยู่ใกล้เคียงสร้างขึ้น จะเพิ่มขึ้น 50% เป็นเวลา 6 วินาที"
+    }
+  },
+  "constellation3": {
+    "name": "Flame Mirror's Revelation",
+    "description": {
+      "0": "เพิ่มเลเวลสกิลของท่าไม้ตาย <strong><tooltip ns=char_Durin_gen baseKey18=burst>Principle of Purity: As the Light Shifts</tooltip></strong> ขึ้น 3 ระดับ",
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
+    }
+  },
+  "constellation4": {
+    "name": "Emanare's Source",
+    "description": {
+      "0": "ความเสียหายจากท่าไม้ตายของ Durin เพิ่มขึ้น 40% นอกจากนี้ เมื่อทำให้เกิดเอฟเฟกต์ที่ใช้ <strong>Cycle of Enlightenment</strong> ในกลุ่มดาว <strong><tooltip ns=char_Durin_gen baseKey18=constellation1>Adamah's Redemption</tooltip></strong> มีโอกาส 30% ที่จะไม่ใช้ Cycle of Enlightenment"
+    }
+  },
+  "constellation5": {
+    "name": "Scouring Flame's Sundering",
+    "description": {
+      "0": "เพิ่มเลเวลสกิลของสกิลธาตุ <strong><tooltip ns=char_Durin_gen baseKey18=skill>Binary Form: Convergence and Division</tooltip></strong> ขึ้น 3 ระดับ",
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
+    }
+  },
+  "constellation6": {
+    "name": "Dual Birth",
+    "description": {
+      "0": "ความเสียหายจากท่าไม้ตายของ Durin จะไม่สนใจพลังป้องกัน 30% ของศัตรู",
+      "1": "นอกจากนี้ ท่าไม้ตายของ Durin <strong>Principle of Purity: As the Light Shifts</strong> และ <strong>Principle of Darkness: As the Stars Smolder</strong> จะได้รับการเสริมพลัง:",
+      "2": [
+        "เมื่อท่าไม้ตาย <strong>Principle of Purity: As the Light Shifts</strong> และ <strong>\"มังกรเพลิงสีขาว\"</strong> โจมตีถูกศัตรู พลังป้องกันของศัตรูดังกล่าวจะลดลง 30% เป็นเวลา 6 วินาที;",
+        "ความเสียหายจากท่าไม้ตาย <strong>Principle of Darkness: As the Stars Smolder</strong> และ <strong>\"มังกรกาฬกัดกร่อน\"</strong> จะไม่สนใจพลังป้องกันของศัตรูเพิ่มอีก 40% ของพลังป้องกันของศัตรู"
+      ]
+    }
+  }
+}

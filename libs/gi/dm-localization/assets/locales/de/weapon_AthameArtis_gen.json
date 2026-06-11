@@ -1,0 +1,29 @@
+{
+  "name": "Athame Artis",
+  "description": {
+    "0": "In der Geschichte der kleinen Hexe wurde das Schwert ursprünglich vom Tageskönig an den Tapferen überreicht. Später jedoch setzte die kleine Hexe es ein, um den Tapferen zu besiegen."
+  },
+  "passiveName": "Sengender Glanz des Tageskönigs",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den durch die Spezialfähigkeiten verursachten kritischen Schaden um <cryo>16 %</cryo>. Gewährt beim Treffen von Gegnern mit der Spezialfähigkeit den Effekt „Klinge des Tageslichts“: Erhöht den ANG um <cryo>20 %</cryo> sowie den ANG der aktuellen Figuren auf dem Feld in der Nähe in der Truppe (ausgenommen des Trägers) um <cryo>16 %</cryo>, hält 3 s lang.",
+      "1": "Erhöht den Effekt von „Klinge des Tageslichts“ zusätzlich um 75 %, wenn die Truppe den Effekt „Hexerei – Geheimes Ritual“ besitzt. Der obige Effekt kann auch ausgelöst werden, wenn der Träger inaktiv in der Truppe ist."
+    },
+    "1": {
+      "0": "Erhöht den durch die Spezialfähigkeiten verursachten kritischen Schaden um <cryo>20 %</cryo>. Gewährt beim Treffen von Gegnern mit der Spezialfähigkeit den Effekt „Klinge des Tageslichts“: Erhöht den ANG um <cryo>25 %</cryo> sowie den ANG der aktuellen Figuren auf dem Feld in der Nähe in der Truppe (ausgenommen des Trägers) um <cryo>20 %</cryo>, hält 3 s lang.",
+      "1": "Erhöht den Effekt von „Klinge des Tageslichts“ zusätzlich um 75 %, wenn die Truppe den Effekt „Hexerei – Geheimes Ritual“ besitzt. Der obige Effekt kann auch ausgelöst werden, wenn der Träger inaktiv in der Truppe ist."
+    },
+    "2": {
+      "0": "Erhöht den durch die Spezialfähigkeiten verursachten kritischen Schaden um <cryo>24 %</cryo>. Gewährt beim Treffen von Gegnern mit der Spezialfähigkeit den Effekt „Klinge des Tageslichts“: Erhöht den ANG um <cryo>30 %</cryo> sowie den ANG der aktuellen Figuren auf dem Feld in der Nähe in der Truppe (ausgenommen des Trägers) um <cryo>24 %</cryo>, hält 3 s lang.",
+      "1": "Erhöht den Effekt von „Klinge des Tageslichts“ zusätzlich um 75 %, wenn die Truppe den Effekt „Hexerei – Geheimes Ritual“ besitzt. Der obige Effekt kann auch ausgelöst werden, wenn der Träger inaktiv in der Truppe ist."
+    },
+    "3": {
+      "0": "Erhöht den durch die Spezialfähigkeiten verursachten kritischen Schaden um <cryo>28 %</cryo>. Gewährt beim Treffen von Gegnern mit der Spezialfähigkeit den Effekt „Klinge des Tageslichts“: Erhöht den ANG um <cryo>35 %</cryo> sowie den ANG der aktuellen Figuren auf dem Feld in der Nähe in der Truppe (ausgenommen des Trägers) um <cryo>28 %</cryo>, hält 3 s lang.",
+      "1": "Erhöht den Effekt von „Klinge des Tageslichts“ zusätzlich um 75 %, wenn die Truppe den Effekt „Hexerei – Geheimes Ritual“ besitzt. Der obige Effekt kann auch ausgelöst werden, wenn der Träger inaktiv in der Truppe ist."
+    },
+    "4": {
+      "0": "Erhöht den durch die Spezialfähigkeiten verursachten kritischen Schaden um <cryo>32 %</cryo>. Gewährt beim Treffen von Gegnern mit der Spezialfähigkeit den Effekt „Klinge des Tageslichts“: Erhöht den ANG um <cryo>40 %</cryo> sowie den ANG der aktuellen Figuren auf dem Feld in der Nähe in der Truppe (ausgenommen des Trägers) um <cryo>32 %</cryo>, hält 3 s lang.",
+      "1": "Erhöht den Effekt von „Klinge des Tageslichts“ zusätzlich um 75 %, wenn die Truppe den Effekt „Hexerei – Geheimes Ritual“ besitzt. Der obige Effekt kann auch ausgelöst werden, wenn der Träger inaktiv in der Truppe ist."
+    }
+  }
+}

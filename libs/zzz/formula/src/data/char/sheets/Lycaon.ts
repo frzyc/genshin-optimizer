@@ -30,9 +30,20 @@ const { char } = own
 const { exSpecial_assistFollowUp_hit, stunned_enemy_hit } =
   allBoolConditionals(key)
 const { charged_hits } = allNumConditionals(key, true, 0, dm.m6.stacks)
+const { durationLeft } = allNumConditionals(
+  key,
+  true,
+  0,
+  dm.core.encirclePreyDuration
+)
 
-const core_dazeInc_ = ownBuff.combat.dazeInc_.add(
+const core_basic_dazeInc_ = ownBuff.combat.dazeInc_.addWithDmgType(
+  'basic',
   percent(subscript(char.core, dm.core.dazeInc_))
+)
+const core_assistFollowUp_dazeInc_ = ownBuff.combat.dazeInc_.addWithDmgType(
+  'assistFollowUp',
+  prod(durationLeft, percent(dm.core.durationRemaining_dazeInc_))
 )
 const m1_dazeInc_ = ownBuff.combat.dazeInc_.add(
   cmpGE(char.mindscape, 1, percent(dm.m1.dazeInc_))
@@ -113,7 +124,7 @@ const sheet = register(
       { ...baseTag, damageType1: 'basic' },
       'atk',
       undefined,
-      core_dazeInc_
+      ...core_basic_dazeInc_
     ),
     dmgDazeAndAnomOverride(
       dm,
@@ -123,7 +134,7 @@ const sheet = register(
       { ...baseTag, damageType1: 'basic' },
       'atk',
       undefined,
-      core_dazeInc_
+      ...core_basic_dazeInc_
     ),
     dmgDazeAndAnomOverride(
       dm,
@@ -133,7 +144,7 @@ const sheet = register(
       { ...baseTag, damageType1: 'basic' },
       'atk',
       undefined,
-      core_dazeInc_
+      ...core_basic_dazeInc_
     ),
     dmgDazeAndAnomOverride(
       dm,
@@ -143,7 +154,7 @@ const sheet = register(
       { ...baseTag, damageType1: 'basic' },
       'atk',
       undefined,
-      core_dazeInc_
+      ...core_basic_dazeInc_
     ),
     dmgDazeAndAnomOverride(
       dm,
@@ -153,7 +164,7 @@ const sheet = register(
       { ...baseTag, damageType1: 'basic' },
       'atk',
       undefined,
-      core_dazeInc_
+      ...core_basic_dazeInc_
     ),
     dmgDazeAndAnomOverride(
       dm,
@@ -163,7 +174,7 @@ const sheet = register(
       { ...baseTag, damageType1: 'basic' },
       'atk',
       undefined,
-      core_dazeInc_
+      ...core_basic_dazeInc_
     ),
     dmgDazeAndAnomOverride(
       dm,
@@ -184,6 +195,16 @@ const sheet = register(
       'atk',
       undefined,
       m1_fullCharge_dazeInc_
+    ),
+    dmgDazeAndAnomOverride(
+      dm,
+      'assist',
+      'AssistFollowUpVengefulCounterattackGlacialWaltz',
+      0,
+      { ...baseTag, damageType1: 'assistFollowUp' },
+      'atk',
+      undefined,
+      ...core_assistFollowUp_dazeInc_
     )
   ),
 
@@ -193,11 +214,62 @@ const sheet = register(
   ),
 
   // Buffs
-  registerBuff('core_dazeInc_', core_dazeInc_, undefined, undefined, false),
+  registerBuff(
+    'core_basic_dazeInc_',
+    core_basic_dazeInc_,
+    undefined,
+    undefined,
+    false
+  ),
+  registerBuff(
+    'core_dodgeCounter_dazeInc_',
+    ownBuff.combat.dazeInc_.addWithDmgType(
+      'dodgeCounter',
+      percent(subscript(char.core, dm.core.dazeInc_))
+    )
+  ),
+  registerBuff(
+    'core_dash_dazeInc_',
+    ownBuff.combat.dazeInc_.addWithDmgType(
+      'dash',
+      percent(subscript(char.core, dm.core.dazeInc_))
+    )
+  ),
+  registerBuff(
+    'core_assistFollowUp_dazeInc_',
+    core_assistFollowUp_dazeInc_,
+    undefined,
+    undefined,
+    false
+  ),
   registerBuff(
     'core_ice_resRed_',
     enemyDebuff.common.resRed_.ice.add(
       exSpecial_assistFollowUp_hit.ifOn(percent(dm.core.ice_resRed_))
+    )
+  ),
+  registerBuff(
+    'core_ether_resRed_',
+    enemyDebuff.common.resRed_.ether.add(
+      exSpecial_assistFollowUp_hit.ifOn(percent(dm.core.other_resRed_))
+    )
+  ),
+  registerBuff(
+    'core_electric_resRed_',
+    enemyDebuff.common.resRed_.electric.add(
+      exSpecial_assistFollowUp_hit.ifOn(percent(dm.core.other_resRed_))
+    )
+  ),
+  registerBuff(
+    'core_fire_resRed_',
+    enemyDebuff.common.resRed_.fire.add(
+      exSpecial_assistFollowUp_hit.ifOn(percent(dm.core.other_resRed_))
+    )
+  ),
+  registerBuff(
+    'core_physical_resRed_',
+    enemyDebuff.common.resRed_.physical.add(
+      exSpecial_assistFollowUp_hit.ifOn(percent(dm.core.other_resRed_))
     )
   ),
   registerBuff(
@@ -206,7 +278,8 @@ const sheet = register(
       cmpGE(
         sum(
           team.common.count.ice,
-          team.common.count.withFaction('VictoriaHousekeepingCo')
+          team.common.count.withFaction('VictoriaHousekeepingCo'),
+          team.common.count.withSpecialty('anomaly')
         ),
         3,
         stunned_enemy_hit.ifOn(percent(dm.ability.stun_))

@@ -1,0 +1,174 @@
+{
+  "name": "Varka",
+  "title": "Ritter des Nordwinds",
+  "description": "Der Großmeister des Ordo Favonius, der Ritter des Nordwinds, der Mondstadt beschützt.",
+  "constellationName": "Lupus Majoris",
+  "auto": {
+    "name": "Favonius-Schwertkunst – Tanz des Lichts",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Ahmt den Kampftanz der Ritter aus alten Zeiten nach und führt mit seinen zwei Großschwertern bis zu 5 Angriffe hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer, stürmt nach vorne und führt anschließend einen Doppelhieb mit besonders großer Wucht aus."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH Phase 5",
+      "5": "SCH heftiger Schläge",
+      "6": "Ausdauerverbrauch heftiger Schläge",
+      "7": "SCH beim Fallen",
+      "8": "SCH beim Fallen aus niedriger/großer Höhe",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Abflauender Sturm",
+    "description": {
+      "0": "Zeigt mit absoluter Kraft die wahre Essenz der Favonius-Schwertkunst. Erzeugt je nachdem, ob gedrückt oder gedrückt gehalten wird, unterschiedliche Effekte.",
+      "1": "<br/>",
+      "2": "<strong>Drücken</strong>",
+      "3": "Springt nach vorne in die Luft und führt dabei einen Hieb aus, der <anemo>Anemo-Flächenschaden</anemo> verursacht, und wechselt in den Modus <tooltip ns=tooltips_gen baseKey18=11280001 values=[]><strong>Ansturm der Winde</strong></tooltip>.",
+      "4": "Erhöht, wenn Varka sich im Modus <strong>Ansturm der Winde</strong> befindet, den durch seine Standardangriffe und heftigen Schläge verursachten Schaden. In diesem Modus kann er keine Angriffe aus dem Fall ausführen. Bei Standardangriffen und heftigen Schlägen verursachen seine beiden Großschwerter je nach Elementartyp der Figuren in der Truppe entsprechenden Elementar-Schaden, der nicht von anderen Elementen überdeckt werden kann.",
+      "5": "Ersetzt zudem, wenn sich während der Wirkungsdauer des Modus <strong>Ansturm der Winde</strong> eine <pyro>Pyro</pyro>-, <hydro>Hydro</hydro>-, <electro>Elektro</electro>- oder <cryo>Kryo</cryo>-Figur in der Truppe befindet, Varkas Elementarfähigkeit <strong>Abflauender Sturm</strong> durch die besondere Elementarfähigkeit <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Aufkommen der vier Winde</strong></tooltip>, die entsprechenden Elementar-Schaden und <anemo>Anemo-SCH</anemo> verursacht. Darüber hinaus kann Varka die Anwendungsmöglichkeiten der besonderen Elementarfähigkeit <strong>Aufkommen der vier Winde</strong> verbrauchen, um den besonders heftigen Schlag <strong>Azurbiss</strong> auszuführen, der keine Ausdauer verbraucht und entsprechenden Elementar-Schaden sowie <anemo>Anemo-SCH</anemo> verursacht.",
+      "6": "<br/>",
+      "7": "<strong>Gedrückt halten</strong>",
+      "8": "Lädt auf und springt nach vorne in die Luft. Je länger die Aufladezeit, desto größer die Sprungweite."
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Abklingzeit fürs Drücken",
+      "2": "Abklingzeit fürs Gedrückthalten",
+      "3": "Ansturm der Winde – Dauer",
+      "4": "Ansturm der Winde – SCH Phase 1",
+      "5": "Ansturm der Winde – SCH Phase 2",
+      "6": "Ansturm der Winde – SCH Phase 3",
+      "7": "Ansturm der Winde – SCH Phase 4",
+      "8": "Ansturm der Winde – SCH Phase 5",
+      "9": "Ansturm der Winde – SCH heftiger Schläge",
+      "10": "SCH durch „Aufkommen der vier Winde“",
+      "11": "SCH durch Azurbiss",
+      "12": "Abklingzeit von „Aufkommen der vier Winde“",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ich bin der Nordwind",
+    "description": {
+      "0": "Führt im Namen des stärksten Ritters des Nordwinds einen mächtigen Doppelhieb nach vorne aus und verursacht zweimal <anemo>Anemo-SCH</anemo>.",
+      "1": "Wandelt, wenn sich in der Truppe eine <pyro>Pyro</pyro>-, <hydro>Hydro</hydro>-, <electro>Elektro</electro>- oder <cryo>Kryo</cryo>-Figur befindet, den ersten Hieb gemäß der oben genannten Elemente-Priorität in Schaden des entsprechenden Elementartyps um."
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH Phase 1",
+      "1": "Fähigkeits-SCH Phase 2",
+      "2": "Abklingzeit",
+      "3": "Elementarenergie",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Marsch des Morgenwinds",
+    "description": {
+      "0": "Verleiht Varka, wenn sich eine <pyro>Pyro</pyro>-, <hydro>Hydro</hydro>-, <electro>Elektro</electro>- oder <cryo>Kryo</cryo>-Figur in der Truppe befindet, gemäß der oben genannten Elemente-Priorität und basierend auf seinem ANG, für je 1.000 Pkt. ANG einen SCH-Bonus des entsprechenden Elements (von den oben genannten Elementartypen kann höchstens ein Elementartyp auf diese Weise einen SCH-Bonus erhalten) sowie einen <anemo>Anemo-SCH-Bonus</anemo> von 10 %. Auf diese Weise können je max. 25 % SCH-Bonus erhalten werden.",
+      "1": "<br/>",
+      "2": "Verursacht zudem, wenn sich in der Truppe mindestens 2 <anemo>Anemo</anemo>-Figuren oder mindestens 2 <pyro>Pyro</pyro>-, <hydro>Hydro</hydro>-, <electro>Elektro</electro>- oder <cryo>Kryo</cryo>-Figuren desselben Elementartyps befinden, und Varka im Modus <tooltip ns=tooltips_gen baseKey18=11280001 values=[]><strong>Ansturm der Winde</strong></tooltip> einen Standardangriff, heftigen Schlag, den besonderen heftigen Schlag <strong>Azurbiss</strong> oder die besondere Elementarfähigkeit <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Aufkommen der vier Winde</strong></tooltip> anwendet, 140 % von deren ursprünglichem Schaden. Erhöht, wenn sich in der Truppe gleichzeitig mindestens 2 <anemo>Anemo</anemo>-Figuren und mindestens 2 <pyro>Pyro</pyro>-, <hydro>Hydro</hydro>-, <electro>Elektro</electro>- oder <cryo>Kryo</cryo>-Figuren desselben Elementartyps befinden, den oben genannten Effekt auf 220 %."
+    }
+  },
+  "passive2": {
+    "name": "Vorhut des Windbanners",
+    "description": {
+      "0": "Verleiht Varka, wenn Truppenmitglieder in der Nähe Verwirbelung auslösen, eine Stapelung <strong>Schwur des blauen Reißzahns</strong> und erhöht dadurch von Varka mit Standardangriffen, heftigen Schlägen, dem besonderen heftigen Schlag <strong>Azurbiss</strong> und der besonderen Elementarfähigkeit <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Aufkommen der vier Winde</strong></tooltip> verursachten Schaden um 7,5 %. Dieser Effekt hält 8 s an, ist bis zu 4-fach stapelbar. Jede Figur kann Varka höchstens einmal pro Sekunde eine Stapelung <strong>Schwur des blauen Reißzahns</strong> verleihen."
+    }
+  },
+  "passive3": {
+    "name": "Siegeshymne des heimkehrenden Windes",
+    "description": {
+      "0": "Verkürzt für jede Figur aus Mondstadt in der Truppe die Abklingzeit der durch Gedrückthalten auszulösenden Elementarfähigkeit <strong>Abflauender Sturm</strong> um 5 %.",
+      "1": "Dieser Effekt gilt nicht in Sphären, Gebietssäuberungen oder im Gewundenen Abgrund."
+    }
+  },
+  "lockedPassive": {
+    "name": "Geschenk der Hexennacht – Morgenlicht der Wiederkehr",
+    "description": {
+      "0": "Wandelt Varka nach dem Abschluss von <strong>Aufgabe der Hexe – Frage ohne Titel</strong> in eine <strong>Hexerei</strong>-Figur um. Verleiht, wenn sich in der Truppe mindestens 2 Hexerei-Figuren befinden, den Effekt <strong>Hexerei – Geheimes Ritual</strong>, der Hexerei-Figuren verstärkt.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei – Geheimes Ritual</strong>",
+      "3": "Verstärkt die besondere Elementarfähigkeit <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Aufkommen der vier Winde</strong></tooltip>: Verkürzt, wenn Varka im Modus <tooltip ns=tooltips_gen baseKey18=11280001 values=[]><strong>Ansturm der Winde</strong></tooltip> Gegner mit Standardangriffen trifft, die Abklingzeit von <strong>Aufkommen der vier Winde</strong> nun um 1 s."
+    }
+  },
+  "constellation1": {
+    "name": "„Komm, Freund, lass uns im Mondlicht einen Walzer tanzen“",
+    "description": {
+      "0": "Verleiht Varka, wenn er in den Modus <tooltip ns=tooltips_gen baseKey18=11280001 values=[]><strong>Ansturm der Winde</strong></tooltip> wechselt, eine zusätzliche Anwendungsmöglichkeit der besonderen Elementarfähigkeit <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Aufkommen der vier Winde</strong></tooltip>.",
+      "1": "Verleiht Varka nach dem Wechsel in den Modus <strong>Ansturm der Winde</strong> zudem den Effekt <strong>Edler Tropfen im Lied</strong>: Verbraucht diesen Effekt beim Anwenden der besonderen Elementarfähigkeit <strong>Aufkommen der vier Winde</strong> oder des besonderen heftigen Schlags <strong>Azurbiss</strong> und lässt <strong>Aufkommen der vier Winde</strong> oder <strong>Azurbiss</strong> 200 % des ursprünglichen Schadens verursachen."
+    }
+  },
+  "constellation2": {
+    "name": "„Wenn der Morgen anbricht, machen wir uns auf den Weg“",
+    "description": {
+      "0": "Führt, wenn Varka seine besondere Elementarfähigkeit <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Aufkommen der vier Winde</strong></tooltip> oder den besonderen heftigen Schlag <strong>Azurbiss</strong> ausführt, einen zusätzlichen Angriff aus, der <anemo>Anemo-Flächenschaden</anemo> in Höhe von 800 % des ANG verursacht."
+    }
+  },
+  "constellation3": {
+    "name": "„Freund, trinke nicht mehr den bitteren Wein, der Tränen fließen lässt“",
+    "description": {
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong><tooltip ns=char_Varka_gen baseKey18=skill>Abflauender Sturm</tooltip></strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "„Denn niemand kann uns die Freiheit nehmen zu singen“",
+    "description": {
+      "0": "Verleiht allen Truppenmitgliedern in der Nähe, wenn Varka eine Verwirbelung auslöst, basierend auf dem Elementartyp der Reaktion, 10 s lang jeweils einen <anemo>Anemo-SCH-Bonus</anemo> und einen SCH-Bonus des entsprechenden Elements von 20 %."
+    }
+  },
+  "constellation5": {
+    "name": "„Füllt die Becher mit edlem Wein, Tyrannen kommen und gehen“",
+    "description": {
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong><tooltip ns=char_Varka_gen baseKey18=burst>Ich bin der Nordwind</tooltip></strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "„Mein geliebtes Mondstadt, so standhaft wie eh und je“",
+    "description": {
+      "0": "Verstärkt den Modus <tooltip ns=tooltips_gen baseKey18=11280001 values=[]><strong>Ansturm der Winde</strong></tooltip>:",
+      "1": [
+        " Ermöglicht Varka kurz nach der Ausführung der besonderen Elementarfähigkeit <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Aufkommen der vier Winde</strong></tooltip> durch Drücken der Elementarfähigkeit oder Gedrückthalten des Standardangriffs zusätzlich 1-mal den besonderen heftigen Schlag <strong>Azurbiss</strong> auszuführen, ohne die Anwendungsmöglichkeit von Aufkommen der vier Winde zu verbrauchen.",
+        " Ermöglicht Varka kurz nach der Ausführung des besonderen heftigen Schlags <strong>Azurbiss</strong> durch Drücken der Elementarfähigkeit zusätzlich 1-mal <strong>Aufkommen der vier Winde</strong> auszuführen, ohne die Anwendungsmöglichkeit von Aufkommen der vier Winde zu verbrauchen."
+      ],
+      "2": "Wird auf die oben beschriebenen Weisen ein zusätzlicher besonderer heftiger Schlag Azurbiss ausgeführt oder eine zusätzliche besondere Elementarfähigkeit Aufkommen der vier Winde eingesetzt, können die oben genannten Effekte nicht ausgelöst werden.",
+      "3": "<br/>",
+      "4": "Verstärkt zudem den Effekt <strong>Schwur des blauen Reißzahns</strong> des Aufstiegstalents <strong><tooltip ns=char_Varka_gen baseKey18=passive2>Vorhut des Windbanners</tooltip></strong>: Erhöht Varkas KSCH pro Stapelung <strong>Schwur des blauen Reißzahns</strong> um 20 %."
+    }
+  }
+}

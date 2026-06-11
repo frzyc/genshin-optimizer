@@ -1,11 +1,13 @@
 import {
   BootstrapTooltip,
   CardThemed,
-  NextImage,
   StarsDisplay,
 } from '@genshin-optimizer/common/ui'
 import { lightConeAsset } from '@genshin-optimizer/sr/assets'
-import type { LocationKey } from '@genshin-optimizer/sr/consts'
+import {
+  type LocationKey,
+  ascensionMaxLevel,
+} from '@genshin-optimizer/sr/consts'
 import type { Calculator } from '@genshin-optimizer/sr/formula'
 import {
   lightConeTagMapNodeEntries,
@@ -15,7 +17,6 @@ import {
 import type { ILightCone } from '@genshin-optimizer/sr/srod'
 import { getLightConeStat } from '@genshin-optimizer/sr/stats'
 import { PathIcon } from '@genshin-optimizer/sr/svgicons'
-import { ascensionMaxLevel } from '@genshin-optimizer/sr/util'
 import { DeleteForever, Edit, Lock, LockOpen } from '@mui/icons-material'
 import {
   Box,
@@ -126,7 +127,7 @@ export function LightConeCard({
           </Box>
           <Box sx={{ height: '100%', position: 'absolute', right: 0, top: 0 }}>
             <Box
-              component={NextImage ? NextImage : 'img'}
+              component="img"
               alt="Light Cone Image"
               src={lightConeAsset(key, 'icon')}
               sx={{

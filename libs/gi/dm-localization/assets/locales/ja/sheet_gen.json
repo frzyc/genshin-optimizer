@@ -83,5 +83,9 @@
   },
   "unlockPassive1": "突破段階「1」で解放",
   "unlockPassive2": "突破段階「4」で解放",
-  "unlockPassive3": "固有天賦"
+  "unlockPassive3": "固有天賦",
+  "unlockLockedPassive": "前提任務クリア後に開放",
+  "witchPassive": "魔女の課題",
+  "moonsign": "月兆",
+  "hexerei": "魔導"
 }

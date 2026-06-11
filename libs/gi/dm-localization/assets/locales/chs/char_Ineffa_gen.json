@@ -41,7 +41,7 @@
   "skill": {
     "name": "涤净模式·稳态载频",
     "description": {
-      "0": "伊涅芙启动高阶清扫模块，对周围的敌人造成一次<electro>雷元素范围伤害</electro>，展开光流屏障护盾，并召唤出多用途智能辅助单元<strong>「薇尔琪塔」</strong>。",
+      "0": "伊涅芙启动高阶清扫模块，对周围的敌人造成一次<electro>雷元素范围伤害</electro>，展开光流屏障护盾，并召唤出多用途智能辅助单元<tooltip ns=tooltips_gen baseKey18=11160001 values=[]><strong>「薇尔琪塔」</strong></tooltip>。",
       "1": "光流屏障护盾的伤害吸收量受益于伊涅芙的攻击力，对<electro>雷元素伤害</electro>有250%的吸收效果。"
     },
     "skillParams": {
@@ -66,7 +66,7 @@
   "burst": {
     "name": "至高律令·全域扫灭",
     "description": {
-      "0": "借助多用途智能辅助单元<strong>「薇尔琪塔」</strong>，使用火箭飞拳清扫敌人！伊涅芙发射出薇尔琪塔，造成<electro>雷元素范围伤害</electro>，并使薇尔琪塔停留在场上。",
+      "0": "借助多用途智能辅助单元<tooltip ns=tooltips_gen baseKey18=11160001 values=[]><strong>「薇尔琪塔」</strong></tooltip>，使用火箭飞拳清扫敌人！伊涅芙发射出薇尔琪塔，造成<electro>雷元素范围伤害</electro>，并使薇尔琪塔停留在场上。",
       "1": "<br/>",
       "2": "若场上存在伊涅芙自己召唤的薇尔琪塔，则改为在目标位置重新召唤薇尔琪塔，并重置其持续时间。"
     },
@@ -92,13 +92,13 @@
   "passive1": {
     "name": "频率超限回路",
     "description": {
-      "0": "若<strong>「薇尔琪塔」</strong>附近存在月感电反应产生的雷暴云，薇尔琪塔进行放电攻击时，将额外进行一次攻击，造成相当于伊涅芙攻击力65%的<electro>雷元素范围伤害</electro>，该伤害视为月感电反应造成的伤害。"
+      "0": "若<tooltip ns=tooltips_gen baseKey18=11160001 values=[]><strong>「薇尔琪塔」</strong></tooltip>附近存在月感电反应产生的雷暴云，薇尔琪塔进行放电攻击时，将额外进行一次攻击，造成相当于伊涅芙攻击力65%的<electro>雷元素范围伤害</electro>，该伤害视为月感电反应造成的伤害。"
     }
   },
   "passive2": {
     "name": "全相重构协议",
     "description": {
-      "0": "施放元素爆发<strong>至高律令·全域扫灭</strong>时，将为队伍中自己的所有角色赋予「参数重构」效果：基于伊涅芙攻击力的6%，提升伊涅芙与队伍中自己当前场上角色的元素精通，持续20秒。"
+      "0": "施放元素爆发<strong><tooltip ns=char_Ineffa_gen baseKey18=burst>至高律令·全域扫灭</tooltip></strong>时，将为队伍中自己的所有角色赋予「参数重构」效果：基于伊涅芙攻击力的6%，提升伊涅芙与队伍中自己当前场上角色的元素精通，持续20秒。"
     }
   },
   "passive3": {
@@ -126,14 +126,14 @@
   "constellation2": {
     "name": "辅助清理模块",
     "description": {
-      "0": "元素爆发<strong>至高律令·全域扫灭</strong>命中敌人后，将为其中一名敌人施加「惩戒敕谕」状态：短暂间隔后，或该敌人被击败时，将对其周围的敌人造成相当于伊涅芙攻击力300%的<electro>雷元素范围伤害</electro>，该伤害视为月感电反应造成的伤害。",
+      "0": "元素爆发<strong><tooltip ns=char_Ineffa_gen baseKey18=burst>至高律令·全域扫灭</tooltip></strong>命中敌人后，将为其中一名敌人施加「惩戒敕谕」状态：短暂间隔后，或该敌人被击败时，将对其周围的敌人造成相当于伊涅芙攻击力300%的<electro>雷元素范围伤害</electro>，该伤害视为月感电反应造成的伤害。",
       "1": "此外，施放元素爆发<strong>至高律令·全域扫灭</strong>时，也会为附近的当前场上角色赋予光流屏障护盾。"
     }
   },
   "constellation3": {
     "name": "高阶情感固件",
     "description": {
-      "0": "元素战技<strong>涤净模式·稳态载频</strong>的技能等级提高3级。",
+      "0": "元素战技<strong><tooltip ns=char_Ineffa_gen baseKey18=skill>涤净模式·稳态载频</tooltip></strong>的技能等级提高3级。",
       "1": "至多提升至15级。"
     }
   },
@@ -146,7 +146,7 @@
   "constellation5": {
     "name": "超越镜影之梦",
     "description": {
-      "0": "元素爆发<strong>至高律令·全域扫灭</strong>的技能等级提高3级。",
+      "0": "元素爆发<strong><tooltip ns=char_Ineffa_gen baseKey18=burst>至高律令·全域扫灭</tooltip></strong>的技能等级提高3级。",
       "1": "至多提升至15级。"
     }
   },

@@ -140,6 +140,22 @@ charBaseUiSheet.push(
       fieldRef: {
         et: 'own',
         qt: 'formula',
+        q: 'anomalyDmg',
+        attribute: attr,
+        damageType1: 'anomaly',
+        damageType2: 'abloom',
+        name: 'abloomDmgInst',
+      },
+      title: (
+        <ColorText color={attr}>{elementalData[attr]} Abloom Damage</ColorText>
+      ),
+    })
+  ),
+  ...allAttributeKeys.map(
+    (attr): TagField => ({
+      fieldRef: {
+        et: 'own',
+        qt: 'formula',
         q: 'anomBuildup',
         attribute: attr,
         name: 'anomalyBuildupInst',

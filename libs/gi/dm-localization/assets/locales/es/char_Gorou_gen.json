@@ -147,8 +147,8 @@
   "constellation2": {
     "name": "Tranquilidad de sabueso: Firme como la roca",
     "description": {
-      "0": "Cuando un personaje en uso cercano obtiene un fragmento creado con Cristalización mientras <strong>gloria del general</strong> está activa, la duración de sus efectos se prolonga en 1 s.",
-      "1": "Esto solo puede ocurrir una vez cada 0.1 s y solo se puede prolongar un máximo de 3 s de esta manera."
+      "0": "Cuando un personaje en uso cercano recoge un fragmento creado con Cristalización o cuando causa una reacción de Cristalización Lunar mientras <strong>gloria del general</strong> está activa, la duración de sus efectos se prolonga en 1 s.",
+      "1": "Esto solo puede ocurrir una vez cada 0.1 s y solo se puede prolongar un máximo de 3 s de esta manera."
     }
   },
   "constellation3": {

@@ -97,7 +97,7 @@ const dm = {
   },
   constellation2: {
     stackGain: skillParam_gen.constellation2[0],
-    newMaxStacks: skillParam_gen.constellation2[1],
+    durationInc: skillParam_gen.constellation2[1],
     newEleMas: skillParam_gen.constellation2[2],
   },
   constellation4: {
@@ -300,12 +300,16 @@ const dmgFormulas = {
     ),
   },
   constellation6: {
-    dmg: lunarDmg(
-      sum(percent(dm.constellation6.dmg2), c1_ppLunarbloom_addlMv),
-      'eleMas',
-      'lunarbloom',
-      undefined,
-      a1VeilStacks_pp_mult_
+    dmg: greaterEq(
+      input.constellation,
+      6,
+      lunarDmg(
+        sum(percent(dm.constellation6.dmg2), c1_ppLunarbloom_addlMv),
+        'eleMas',
+        'lunarbloom',
+        undefined,
+        a1VeilStacks_pp_mult_
+      )
     ),
   },
 }
@@ -326,10 +330,8 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       lunarbloom_baseDmg_: a0_lunarbloom_baseDmg_,
       dendro_enemyRes_: c4ShadowDance_dendro_enemyRes_,
     },
-    tally: {
-      moonsign: constant(1),
-    },
   },
+  isMoonsign: constant(1),
 })
 
 const sheet: TalentSheet = {
@@ -504,7 +506,10 @@ const sheet: TalentSheet = {
               },
               {
                 text: stg('duration'),
-                value: dm.passive1.veilDuration,
+                value: (data) =>
+                  data.get(input.constellation).value >= 2
+                    ? `${dm.passive1.veilDuration}s + ${dm.constellation2.durationInc}s = ${dm.passive1.veilDuration + dm.constellation2.durationInc}`
+                    : dm.passive1.veilDuration,
                 unit: 's',
               },
             ],

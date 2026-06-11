@@ -1,4 +1,3 @@
-'use client'
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { ImgIcon } from '@genshin-optimizer/common/ui'
 import { specialityDefIcon } from '@genshin-optimizer/zzz/assets'
@@ -27,7 +26,12 @@ import {
 import { Suspense, useCallback, useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ZCard } from '../Components'
-import { DiscCardObj, DiscEditor, DiscSwapModal } from '../Disc'
+import {
+  DiscCardObj,
+  DiscEditor,
+  DiscEditorSnackbarProvider,
+  DiscSwapModal,
+} from '../Disc'
 import { WengineCardObj, WengineEditor, WengineSwapModal } from '../Wengine'
 
 const columns = {
@@ -65,90 +69,92 @@ export function EquippedGrid({
   const disc = useDisc(discIdToEdit)
 
   return (
-    <Box>
-      <Stack spacing={2}>
-        <Suspense fallback={false}>
-          {editWengineId && (
-            <WengineEditor
-              wengineId={editWengineId}
-              footer
-              onClose={() => setEditorWengineId('')}
-              extraButtons={
-                <LargeWeaponSwapButton
-                  wengineId={wengine?.id || ''}
-                  wengineTypeKey={characterType}
-                  onChangeId={setWengine}
-                />
-              }
-            />
-          )}
-        </Suspense>
-        <Suspense fallback={false}>
-          {disc && (
-            <DiscEditor
-              disc={disc}
-              show={!!discIdToEdit}
-              onShow={() => setDiscIdToEdit(discIdToEdit)}
-              onClose={() => setDiscIdToEdit(undefined)}
-              cancelEdit={() => setDiscIdToEdit(undefined)}
-            />
-          )}
-        </Suspense>
-        <Box>
-          {wengine?.id ? (
-            <WengineCardObj
-              wengine={wengine}
-              onEdit={() => onEditWengine(wengine.id)}
-              extraButtons={
-                <WengineSwapButton
-                  wengineId={wengine.id}
-                  wengineTypeKey={characterType}
-                  onChangeId={setWengine}
-                />
-              }
-            />
-          ) : (
-            <WeaponSwapCard
-              wengineId=""
-              wengineTypeKey={characterType}
-              onChangeId={setWengine}
-            />
-          )}
-        </Box>
-        <Box>
-          <Grid item columns={columns} container spacing={1}>
-            {!!discs &&
-              Object.entries(discs).map(([slotKey, disc]) => (
-                <Grid item xs={1} key={disc?.id || slotKey}>
-                  {disc?.id ? (
-                    <DiscCardObj
-                      disc={disc}
-                      extraButtons={
-                        <DiscSwapButtonButton
-                          disc={disc}
-                          slotKey={slotKey}
-                          onChangeId={(id) => setDisc(slotKey, id)}
-                        />
-                      }
-                      onEdit={() => onEditDisc(disc.id)}
-                      onLockToggle={() =>
-                        database.discs.set(disc.id, ({ lock }) => ({
-                          lock: !lock,
-                        }))
-                      }
-                    />
-                  ) : (
-                    <DiscSwapCard
-                      slotKey={slotKey}
-                      onChangeId={(id) => setDisc(slotKey, id)}
-                    />
-                  )}
-                </Grid>
-              ))}
-          </Grid>
-        </Box>
-      </Stack>
-    </Box>
+    <DiscEditorSnackbarProvider>
+      <Box>
+        <Stack spacing={2}>
+          <Suspense fallback={false}>
+            {editWengineId && (
+              <WengineEditor
+                wengineId={editWengineId}
+                footer
+                onClose={() => setEditorWengineId('')}
+                extraButtons={
+                  <LargeWeaponSwapButton
+                    wengineId={wengine?.id || ''}
+                    wengineTypeKey={characterType}
+                    onChangeId={setWengine}
+                  />
+                }
+              />
+            )}
+          </Suspense>
+          <Suspense fallback={false}>
+            {disc && (
+              <DiscEditor
+                disc={disc}
+                show={!!discIdToEdit}
+                onShow={() => setDiscIdToEdit(discIdToEdit)}
+                onClose={() => setDiscIdToEdit(undefined)}
+                cancelEdit={() => setDiscIdToEdit(undefined)}
+              />
+            )}
+          </Suspense>
+          <Box>
+            {wengine?.id ? (
+              <WengineCardObj
+                wengine={wengine}
+                onEdit={() => onEditWengine(wengine.id)}
+                extraButtons={
+                  <WengineSwapButton
+                    wengineId={wengine.id}
+                    wengineTypeKey={characterType}
+                    onChangeId={setWengine}
+                  />
+                }
+              />
+            ) : (
+              <WeaponSwapCard
+                wengineId=""
+                wengineTypeKey={characterType}
+                onChangeId={setWengine}
+              />
+            )}
+          </Box>
+          <Box>
+            <Grid item columns={columns} container spacing={1}>
+              {!!discs &&
+                Object.entries(discs).map(([slotKey, disc]) => (
+                  <Grid item xs={1} key={disc?.id || slotKey}>
+                    {disc?.id ? (
+                      <DiscCardObj
+                        disc={disc}
+                        extraButtons={
+                          <DiscSwapButtonButton
+                            disc={disc}
+                            slotKey={slotKey}
+                            onChangeId={(id) => setDisc(slotKey, id)}
+                          />
+                        }
+                        onEdit={() => onEditDisc(disc.id)}
+                        onLockToggle={() =>
+                          database.discs.set(disc.id, ({ lock }) => ({
+                            lock: !lock,
+                          }))
+                        }
+                      />
+                    ) : (
+                      <DiscSwapCard
+                        slotKey={slotKey}
+                        onChangeId={(id) => setDisc(slotKey, id)}
+                      />
+                    )}
+                  </Grid>
+                ))}
+            </Grid>
+          </Box>
+        </Stack>
+      </Box>
+    </DiscEditorSnackbarProvider>
   )
 }
 

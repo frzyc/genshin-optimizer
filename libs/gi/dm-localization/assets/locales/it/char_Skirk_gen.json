@@ -44,7 +44,7 @@
       "0": "Riproduce lo stile di combattimento dell'Abominevole. Gli effetti ottenuti variano in base alla diversa pressione dell'abilità.",
       "1": "<br/>",
       "2": "<strong>Pressione</strong>",
-      "3": "Skirk ottiene 45 punti <strong>Astuzia del serpente</strong> e passa alla modalità <strong>Lampo eptafasico</strong>.",
+      "3": "Skirk ottiene 45 punti <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>Astuzia del serpente</strong></tooltip> e passa alla modalità <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Lampo eptafasico</strong></tooltip>.",
       "4": "<br/>",
       "5": "<strong>Pressione prolungata</strong>",
       "6": "Skirk ottiene 45 punti Astuzia del serpente e si muove costantemente ad alta velocità. Quando è in questo stato, la sua resistenza all'interruzione aumenta.",
@@ -72,14 +72,14 @@
   "burst": {
     "name": "Caos: Rovina",
     "description": {
-      "0": "Il Tripudio elementale di Skirk non consuma energia elementale, bensì <strong>Astuzia del serpente</strong>.",
+      "0": "Il Tripudio elementale di Skirk non consuma energia elementale, bensì <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>Astuzia del serpente</strong></tooltip>.",
       "1": "Quando Skirk ha almeno 50 punti Astuzia del serpente, può consumarli tutti per scatenare il suo Tripudio elementale, dilaniando lo spazio davanti a lei con dei rapidi fendenti consecutivi che infliggono <cryo>DAN da Cryo ad area</cryo>. Al tempo stesso, quando il Tripudio elementale viene scatenato, i DAN inflitti da una singola iterazione di quest'ultimo aumentano per ogni punto Astuzia del serpente superiore ai suddetti 50. A questo scopo, possono essere considerati fino a 12 punti.",
       "2": "<br/>",
-      "3": "Quando Skirk è nella modalità <strong>Lampo eptafasico</strong>, Caos: Rovina viene sostituito da Caos: Estinzione.",
+      "3": "Quando Skirk è nella modalità <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Lampo eptafasico</strong></tooltip>, Caos: Rovina viene sostituito da Caos: Estinzione.",
       "4": "<br/>",
       "5": "<strong>Caos: Estinzione</strong>",
       "6": "Un Tripudio elementale speciale che può essere usato senza consumare Astuzia del serpente.",
-      "7": "Dopo il suo utilizzo, Skirk ottiene l'effetto Avvizzimento totale, che rimane attivo fino al termine di Lampo eptafasico. Dopo aver sbloccato il talento d'ascensione <strong>Oltre ogni logica</strong>, Skirk può anche assorbire i Varchi nel Vuoto vicini.",
+      "7": "Dopo il suo utilizzo, Skirk ottiene l'effetto Avvizzimento totale, che rimane attivo fino al termine di Lampo eptafasico. Dopo aver sbloccato il talento d'ascensione <tooltip ns=tooltips_gen baseKey18=11130007 values=[]><strong>Oltre ogni logica</strong></tooltip>, Skirk può anche assorbire i Varchi nel Vuoto vicini.",
       "8": "Mentre Avvizzimento totale è attivo, ogni 0,1 s, gli attacchi normali di Skirk che colpiscono gli avversari infliggono DAN aumentati. Se Skirk assorbe dei Varchi nel Vuoto mentre usa <strong>Caos: Estinzione</strong>, i DAN da attacco normale aumentano ulteriormente in base al numero di Varchi assorbiti.",
       "9": "L'effetto si annulla dopo averlo innescato 10 volte."
     },
@@ -109,12 +109,12 @@
       "1": "<br/>",
       "2": "Per assorbire i Varchi nel Vuoto vicini, Skirk può usare i seguenti metodi:",
       "3": [
-        " colpire un avversario con un attacco caricato nella sua modalità <strong>Lampo eptafasico</strong>;",
+        " colpire un avversario con un attacco caricato nella sua modalità <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Lampo eptafasico</strong></tooltip>;",
         " usare il suo Tripudio elementale speciale <strong>Caos: Estinzione</strong> mentre è in modalità Lampo eptafasico;",
         " tenere premuta la sua abilità elementale <strong>Caos: Distorsione</strong> per muoversi velocemente."
       ],
       "4": "<br/>",
-      "5": "Ogni Varco assorbito le conferisce 8 punti <strong>Astuzia del serpente</strong>."
+      "5": "Ogni Varco assorbito le conferisce 8 punti <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>Astuzia del serpente</strong></tooltip>."
     }
   },
   "passive2": {
@@ -122,7 +122,7 @@
     "description": {
       "0": "Quando gli attacchi di <hydro>Hydro</hydro> dei membri del gruppo di <hydro>Hydro</hydro> vicini colpiscono gli avversari, o quando i membri del gruppo di <cryo>Cryo</cryo> vicini, a parte Skirk, colpiscono gli avversari con attacchi di <cryo>Cryo</cryo>, Skirk ottiene l'effetto Traversata della Morte per 20 s, cumulabile fino a 3 volte. La durata di ciascun accumulo è calcolata in modo indipendente.",
       "1": "In questo modo, ciascun personaggio può conferire a Skirk solo 1 accumulo di Traversata della Morte.",
-      "2": "Ogni accumulo di Traversata della Morte aumenta i DAN da attacco normale inflitti da Skirk nella modalità <strong>Lampo eptafasico</strong> di un 110%/120%/170% dei DAN originali, nonché i DAN inflitti utilizzando il suo Tripudio elementale <strong>Caos: Rovina</strong> di un 105%/115%/160% dei DAN originali."
+      "2": "Ogni accumulo di Traversata della Morte aumenta i DAN da attacco normale inflitti da Skirk nella modalità <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Lampo eptafasico</strong></tooltip> di un 110%/120%/170% dei DAN originali, nonché i DAN inflitti utilizzando il suo Tripudio elementale <strong>Caos: Rovina</strong> di un 105%/115%/160% dei DAN originali."
     }
   },
   "passive3": {
@@ -134,43 +134,43 @@
   "constellation1": {
     "name": "Caduta senza fine",
     "description": {
-      "0": "Aumenta gli effetti del talento d'ascensione <strong>Oltre ogni logica</strong>. Ogni Varco nel Vuoto assorbito evoca una lama di cristallo che attacca gli avversari vicini, infliggendo <cryo>DAN da Cryo</cryo> pari a un 500% dell'ATT di Skirk. Tali DAN sono considerati DAN da attacco caricato.",
+      "0": "Aumenta gli effetti del talento d'ascensione <tooltip ns=tooltips_gen baseKey18=11130007 values=[]><strong>Oltre ogni logica</strong></tooltip>. Ogni Varco nel Vuoto assorbito evoca una lama di cristallo che attacca gli avversari vicini, infliggendo <cryo>DAN da Cryo</cryo> pari a un 500% dell'ATT di Skirk. Tali DAN sono considerati DAN da attacco caricato.",
       "1": "Richiede il talento d'ascensione Oltre ogni logica."
     }
   },
   "constellation2": {
     "name": "Discesa nell'Abisso",
     "description": {
-      "0": "Dopo aver scatenato la sua abilità elementale <strong>Caos: Distorsione</strong>, Skirk ottiene 10 punti <strong>Astuzia del serpente</strong> aggiuntivi.",
+      "0": "Dopo aver scatenato la sua abilità elementale <strong>Caos: Distorsione</strong>, Skirk ottiene 10 punti <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>Astuzia del serpente</strong></tooltip> aggiuntivi.",
       "1": "Quando il Tripudio elementale <strong>Caos: Rovina</strong> viene scatenato, i DAN inflitti da una singola iterazione di quest'ultimo aumentano considerando fino a 10 punti Astuzia del serpente in più.",
-      "2": "Inoltre, per i 12,5 s successivi all'utilizzo del Tripudio elementale speciale di Skirk, <strong>Caos: Estinzione</strong>, mentre è nella modalità <strong>Lampo eptafasico</strong>, il suo ATT aumenta di un 70%. L'effetto si annulla quando la modalità Lampo eptafasico termina."
+      "2": "Inoltre, per i 12,5 s successivi all'utilizzo del Tripudio elementale speciale di Skirk, <strong>Caos: Estinzione</strong>, mentre è nella modalità <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Lampo eptafasico</strong></tooltip>, il suo ATT aumenta di un 70%. L'effetto si annulla quando la modalità Lampo eptafasico termina."
     }
   },
   "constellation3": {
     "name": "Peccato fortuito",
     "description": {
-      "0": "Aumenta di 3 il livello di <strong>Caos: Rovina</strong>.",
+      "0": "Aumenta di 3 il livello di <tooltip ns=char_Skirk_gen baseKey18=burst><strong>Caos: Rovina</strong></tooltip>.",
       "1": "Il livello di potenziamento massimo è 15."
     }
   },
   "constellation4": {
     "name": "Flusso frammentato",
     "description": {
-      "0": "Aumenta gli effetti del talento d'ascensione <strong>Ritorno all'oblio</strong>. Ogni accumulo di Traversata della Morte aumenta anche l'ATT di Skirk di un 10%/20%/40%.",
+      "0": "Aumenta gli effetti del talento d'ascensione <tooltip ns=tooltips_gen baseKey18=11130008 values=[]><strong>Ritorno all'oblio</strong></tooltip>. Ogni accumulo di Traversata della Morte aumenta anche l'ATT di Skirk di un 10%/20%/40%.",
       "1": "Richiede il talento d'ascensione Ritorno all'oblio."
     }
   },
   "constellation5": {
     "name": "Fine dei desideri",
     "description": {
-      "0": "Aumenta di 3 il livello di <strong>Caos: Distorsione</strong>.",
+      "0": "Aumenta di 3 il livello di <tooltip ns=char_Skirk_gen baseKey18=skill><strong>Caos: Distorsione</strong></tooltip>.",
       "1": "Il livello di potenziamento massimo è 15."
     }
   },
   "constellation6": {
     "name": "Verso l'origine",
     "description": {
-      "0": "Ogni Varco nel Vuoto che Skirk assorbe tramite gli effetti del suo talento d'ascensione <strong>Oltre ogni logica</strong> le conferisce 1 accumulo di Caos: Troncamento, per un massimo di 3. Skirk può consumare questi accumuli per sferrare degli attacchi coordinati e diminuire i DAN subiti quando è nella modalità <strong>Lampo eptafasico</strong>. La durata di ogni accumulo è di 15 s, e ciascuna viene calcolata in modo indipendente.",
+      "0": "Ogni Varco nel Vuoto che Skirk assorbe tramite gli effetti del suo talento d'ascensione <tooltip ns=tooltips_gen baseKey18=11130007 values=[]><strong>Oltre ogni logica</strong></tooltip> le conferisce 1 accumulo di Caos: Troncamento, per un massimo di 3. Skirk può consumare questi accumuli per sferrare degli attacchi coordinati e diminuire i DAN subiti quando è nella modalità <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>Lampo eptafasico</strong></tooltip>. La durata di ogni accumulo è di 15 s, e ciascuna viene calcolata in modo indipendente.",
       "1": "Richiede il talento d'ascensione Oltre ogni logica.",
       "2": "<br/>",
       "3": "<strong>Caos: Troncamento</strong>",

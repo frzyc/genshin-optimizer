@@ -25,7 +25,7 @@
   },
   "EnduringRock": {
     "name": "Roca resistente",
-    "desc": "La Protección de Escudo aumenta en un 15%. Cuando un personaje está protegido por un escudo, inflige un 15% más de daño. Al causar daño contra un enemigo, la RES Geo de dicho enemigo se reduce en un 20% durante 15 s."
+    "desc": "La Protección de Escudo aumenta en un 15%. Cuando un personaje está protegido por un escudo o cuando en las cercanías hay algún pilar lunar creado con la reacción de Cristalización Lunar, el daño que inflige dicho personaje aumenta en un 15%. Al infligir daño contra un enemigo, la RES Geo de dicho enemigo se reduce en un 20% durante 15 s."
   },
   "SprawlingGreenery": {
     "name": "Planta trepadora",
@@ -59,6 +59,12 @@
           ]
         }
       }
+    }
+  },
+  "Hexerei": {
+    "name": "Taumaturgia: rito secreto",
+    "desc": {
+      "0": "Los personajes taumatúrgicos del equipo actual se han fortalecido aún más."
     }
   }
 }

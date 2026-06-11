@@ -1,3 +1,4 @@
+export * from './CharStatsDisplay'
 export * from './components'
 export * from './consts'
 export * from './sheets'

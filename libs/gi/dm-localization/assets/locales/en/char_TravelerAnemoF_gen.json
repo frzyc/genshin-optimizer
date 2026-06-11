@@ -165,6 +165,22 @@
       "1": "This effect can only occur once every 5s."
     }
   },
+  "lockedPassive": {
+    "name": "Foreign Windwrath",
+    "description": {
+      "0": "Draw new strength from journeys past. For every element you have resonated with, you gain additional <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>buffs</strong></tooltip>.",
+      "1": "<br/>",
+      "2": "Additionally, when <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo>, or <electro>Electro</electro> attacks from nearby party members hit opponents, Traveler will receive 1 stack of Blade of the Dawn Breeze. Each Elemental Type can grant 1 Blade of the Dawn Breeze stack. After obtaining at least 2 stacks of Blade of the Dawn Breeze, performing a Charged Attack will consume all stacks of Blade of the Dawn Breeze and transform into the special <strong>Charged Attack: Whirlwind</strong>.",
+      "3": "<br/>",
+      "4": "<strong>Charged Attack: Whirlwind</strong>",
+      "5": [
+        " Each Charged Attack hit deals increased <anemo>Anemo DMG</anemo>. Increase in DMG is equal to 60% of Traveler's ATK.",
+        " Every time a Blade of the Dawn Breeze of a certain elemental type is consumed, a Blade Wind matching this elemental type will also be summoned, dealing elemental DMG equal to 50% of Traveler's ATK. This DMG is considered Charged Attack DMG.",
+        " <strong>Charged Attack: Whirlwind</strong> can be triggered up to once every 15s.",
+        " For the duration of <strong>Charged Attack: Whirlwind</strong>, no Blade of the Dawn Breeze will be obtained."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Raging Vortex",
     "description": {

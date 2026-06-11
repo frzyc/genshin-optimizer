@@ -88,7 +88,7 @@
   "burst": {
     "name": "Havoc: Obliteration",
     "description": {
-      "0": "Melancarkan serangan yang berbeda-beda sesuai dengan mode bertarung yang sedang digunakan Targtalia:",
+      "0": "Melancarkan serangan yang berbeda-beda sesuai dengan mode bertarung yang sedang digunakan Tartaglia:",
       "1": "<br/>",
       "2": "<strong>Mode Jarak Jauh: Flash of Havoc</strong>",
       "3": "Menembakkan panah sihir yang mengandung elemen Hydro dengan cepat, mengakibatkan <hydro>Hydro DMG area</hydro> dan menyebabkan efek Riptide.",

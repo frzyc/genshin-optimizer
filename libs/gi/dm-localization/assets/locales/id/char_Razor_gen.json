@@ -132,6 +132,16 @@
       "1": "Efek ini tidak dapat ditumpuk dengan Talenta Pasif lain dengan efek yang sama persis."
     }
   },
+  "lockedPassive": {
+    "name": "Witch's Eve Rite: Surge of Lightning",
+    "description": {
+      "0": "Setelah menyelesaikan <strong>PR Penyihir: Tentang Kerumunan Serigala Kecil</strong>, Razor akan menjadi Karakter <strong>Hexerei</strong>. Saat ada setidaknya 2 Karakter Hexerei di dalam party, akan mendapatkan efek <strong>Hexerei: Secret Rite</strong> yang memperkuat Karakter Hexerei.",
+      "1": "Selain itu, Elemental Burst Razor <strong>Lightning Fang</strong> akan diperkuat: DMG <strong>Wolf Within</strong> meningkat sebesar 70% ATK Razor.",
+      "2": "<br/>",
+      "3": "<strong>Hexerei: Secret Rite</strong>",
+      "4": "Selama Wolf Within dari Elemental Burst <strong>Lightning Fang</strong> aktif, jika Electro Sigil yang dikumpulkan oleh Elemental Skill <strong>Claw and Thunder</strong> milik Razor berlebih, maka Wolf Within akan menjatuhkan serangan petir di sekitar musuh, mengakibatkan Electro DMG Area sebesar 150% ATK Razor, dan akan memulihkan 7 poin Energy Razor. Efek ini dapat terpicu sekali setiap 1 detik."
+    }
+  },
   "constellation1": {
     "name": "Wolf's Instinct",
     "description": {
@@ -169,6 +179,12 @@
     "description": {
       "0": "Setiap 10 detik, pedang Razor mengumpulkan kekuatan secara otomatis, membuat Normal Attack berikutnya melepaskan serangan listrik, mengakibatkan 100% dari ATK Razor sebagai <electro>Electro DMG</electro>.",
       "1": "Saat Razor tidak menggunakan <strong>Lightning Fang</strong>, sambaran petir pada musuh akan memberikan Razor sebuah Electro Sigil untuk <strong>Claw and Thunder</strong>."
+    },
+    "upgradedDescription": {
+      "0": "Setiap 10 detik, pedang Razor mengumpulkan kekuatan secara otomatis, membuat Normal Attack berikutnya melepaskan sambaran petir yang mengakibatkan 100% ATK Razor sebagai <electro>Electro DMG</electro>.",
+      "1": "Saat Razor tidak berada dalam status <strong>Lightning Fang</strong>, menyambar musuh dengan petir ini akan memberikan 3 Electro Sigil dari Elemental Skill <strong>Claw and Thunder</strong> kepada Razor.",
+      "2": "Selain itu, saat Razor mendapatkan Electro Sigil melalui Elemental Skill <strong>Claw and Thunder</strong>, Razor akan langsung mendapatkan 3 buah Electro Sigil.",
+      "3": "CRIT Rate Razor meningkat 10% dan CRIT DMG Razor meningkat 50% selama 15 detik setelah mengonsumsi Electro Sigil."
     }
   }
 }

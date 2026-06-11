@@ -1,5 +1,5 @@
-import type { AscensionKey } from './character'
-import type { RarityKey } from './common'
+import { clamp } from '@genshin-optimizer/common/util'
+import { type AscensionKey, type RarityKey, validateLevelAsc } from './common'
 
 export const allWeaponTypeKeys = [
   'sword',
@@ -14,6 +14,7 @@ export const allWeaponSwordKeys = [
   'Absolution',
   'AmenomaKageuchi',
   'AquilaFavonia',
+  'AthameArtis',
   'Azurelight',
   'BlackcliffLongsword',
   'CalamityOfEshu',
@@ -33,6 +34,7 @@ export const allWeaponSwordKeys = [
   'IronSting',
   'KagotsurubeIsshin',
   'KeyOfKhajNisut',
+  'LightbearingMoonshard',
   'LightOfFoliarIncision',
   'LionsRoar',
   'MistsplitterReforged',
@@ -78,6 +80,7 @@ export const allWeaponClaymoreKeys = [
   'FlameForgedInsight',
   'ForestRegalia',
   'FruitfulHook',
+  'GestOfTheMightyWolf',
   'KatsuragikiriNagamasa',
   'LithicBlade',
   'LuxuriousSeaLord',
@@ -167,6 +170,7 @@ export const allWeaponBowKeys = [
   'FadingTwilight',
   'FavoniusWarbow',
   'FlowerWreathedFeathers',
+  'GoldenFrostboundOath',
   'Hamayumi',
   'HuntersBow',
   'HuntersPath',
@@ -178,6 +182,7 @@ export const allWeaponBowKeys = [
   'PolarStar',
   'Predator',
   'PrototypeCrescent',
+  'RainbowSerpentsRainBow',
   'RangeGauge',
   'RavenBow',
   'RecurveBow',
@@ -193,6 +198,7 @@ export const allWeaponBowKeys = [
   'Slingshot',
   'SnareHook',
   'SongOfStillness',
+  'TheDaybreakChronicles',
   'TheFirstGreatMagic',
   'TheStringless',
   'TheViridescentHunt',
@@ -202,6 +208,7 @@ export const allWeaponBowKeys = [
 export type WeaponBowKey = (typeof allWeaponBowKeys)[number]
 
 export const allWeaponCatalystKeys = [
+  'AngelosHeptades',
   'ApprenticesNotes',
   'AshGravenDrinkingHorn',
   'AThousandFloatingDreams',
@@ -228,6 +235,7 @@ export const allWeaponCatalystKeys = [
   'MappaMare',
   'MemoryOfDust',
   'NightweaversLookingGlass',
+  'NocturnesCurtainCall',
   'OathswornEye',
   'OtherworldlyStory',
   'PocketGrimoire',
@@ -299,3 +307,15 @@ export const allWeaponSubstatKeys = [
   'physical_dmg_',
 ] as const
 export type WeaponSubstatKey = (typeof allWeaponSubstatKeys)[number]
+
+export function validateWeaponLevelAsc(
+  level: number,
+  ascension: AscensionKey,
+  rarity: RarityKey
+): { level: number; ascension: AscensionKey } {
+  const maxLvl = weaponMaxLevel[rarity]
+  const maxAsc = weaponMaxAscension[rarity]
+  const clampedLevel = clamp(level, 1, maxLvl)
+  const clampedAscension = clamp(ascension, 0, maxAsc) as AscensionKey
+  return validateLevelAsc(clampedLevel, clampedAscension, maxLvl)
+}

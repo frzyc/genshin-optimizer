@@ -1,0 +1,286 @@
+{
+  "name": "Cissia",
+  "fullName": "Cissia",
+  "basic": {
+    "BasicAttackTongueFlick": {
+      "name": "Basic Attack: Tongue Flick",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Launch up to four attacks forward, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "When the 4th hit lands, gain 2 points of <ct color=#FFFFFF>Venom</ct>. Hitting a Stunned enemy grants an additional 1 point of <ct color=#FFFFFF>Venom</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    },
+    "BasicAttackSerpentsKiss": {
+      "name": "Basic Attack: Serpent's Kiss",
+      "desc": {
+        "0": "With <ct color=#FFFFFF>Serpentine Shadow</ct>, hold <IconNormal /> to launch:",
+        "1": "Cissia leaps into the air and locks onto a target, then slams down, dealing <ct color=#2EB6FF>Electric DMG</ct> to enemies in the area.",
+        "2": "While locking on, continue to hold <IconNormal /> and drag the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} to extend the lock-on duration and freely control the landing position.",
+        "3": "For every 6 points of <ct color=#FFFFFF>Venom</ct> gained, gain 1 stack of <ct color=#FFFFFF>Serpentine Shadow</ct>, stacking up to 3 times.",
+        "4": "Upon entering the battlefield, gain 1 stack of <ct color=#FFFFFF>Serpentine Shadow</ct>.",
+        "5": "Using this skill consumes 1 stack of <ct color=#FFFFFF>Serpentine Shadow</ct>.",
+        "6": "Upon hitting an enemy, all <ct color=#FFFFFF>Venom</ct> is consumed to trigger <ct color=#FFFFFF>Corrode Bone</ct>.",
+        "7": "Upon activating this skill, a <ct color=#FFFFFF>Quick Assist</ct> is triggered.",
+        "8": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "CorrodeBone": {
+      "name": "Corrode Bone",
+      "desc": {
+        "0": "Deal <ct color=#2EB6FF>Electric DMG</ct> to nearby enemies.",
+        "1": "Each trigger increases CRIT Rate by 6% for 15s, stacking up to 3 times. Repeated triggers refresh the duration."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeSlither": {
+      "name": "Dodge: Slither",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackBiteMark": {
+      "name": "Dash Attack: Bite Mark",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Dash forward with a swift slash, dealing <ct color=#2EB6FF>Electric DMG</ct>."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterBiteBack": {
+      "name": "Dodge Counter: Bite Back",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Leap forward and perform a sweeping attack upon landing, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackBaredFangs": {
+      "name": "Special Attack: Bared Fangs",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Launches a long-range snake bite forward, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackVenomousBite": {
+      "name": "EX Special Attack: Venomous Bite",
+      "desc": {
+        "0": "With enough energy, press or hold <IconSpecialReady /> to activate:",
+        "1": "Unleash multiple long-range snake bites forward, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Grants 5 Energy when the move is used.",
+        "3": "When activating by holding, consumes additional Energy. For every 20 additional Energy consumed, unleash 1 extra strike that deals <ct color=#2EB6FF>Electric DMG</ct>, up to a maximum of 60 additional Energy.",
+        "4": "After activation, gain 3 <ct color=#FFFFFF>Venom</ct>. For every additional 20 Energy consumed while holding, gain 1 more <ct color=#FFFFFF>Venom</ct>.",
+        "5": "After using this skill, it can be immediately followed up with the 4th hit of <ct color=#FFFFFF>Basic Attack: Tongue Flick</ct>.",
+        "6": "A <ct color=#FFFFFF>Quick Assist</ct> is triggered when this skill hits an enemy.",
+        "7": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "Additional Strike ",
+        "Energy Cost "
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackGangOperation": {
+      "name": "Chain Attack: Gang Operation",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Launch multiple attacks ahead, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "After using this skill, gain 3 <ct color=#FFFFFF>Venom</ct>.",
+        "3": "A <ct color=#FFFFFF>Quick Assist</ct> is triggered when this skill hits an enemy.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateOphidiophobia": {
+      "name": "Ultimate: Ophidiophobia",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Deliver a thunderbolt attack in front, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "After using this skill, obtain 3 <ct color=#FFFFFF>Venom</ct>.",
+        "3": "After using this skill, activate <ct color=#FFFFFF>Ether Veil: Cold-Blooded</ct>, lasting 30s. All squad members' CRIT DMG increases by 5% for the duration.",
+        "4": "Re-activating <ct color=#FFFFFF>Ether Veil: Cold-Blooded</ct> a second time will first deactivate the active <ct color=#FFFFFF>Ether Veil: Cold-Blooded</ct>.",
+        "5": "A <ct color=#FFFFFF>Quick Assist</ct> is triggered when this skill hits an enemy.",
+        "6": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistAlarmSystem": {
+      "name": "Quick Assist: Alarm System",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Leaps forward and performs a sweeping attack upon landing, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "During this skill, you can quickly chain into <ct color=#FFFFFF>Special Attack: Bared Fangs</ct>, <ct color=#FFFFFF>EX Special Attack: Venomous Bite</ct>, and <ct color=#FFFFFF>Basic Attack: Serpent's Kiss</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistExtraPrisonRations": {
+      "name": "Defensive Assist: Extra Prison Rations",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpPartnersInCrime": {
+      "name": "Assist Follow-Up: Partners in Crime",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Unleash a series of attacks, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Fatal Concoction",
+    "desc": [
+      {
+        "0": "Upon entering the battlefield, gain 3 <ct color=#FFFFFF>Venom</ct>. In Investigation Zone mode, this effect can trigger once every 180s.",
+        "1": "While possessing <ct color=#FFFFFF>Venom</ct>, consume 1 <ct color=#FFFFFF>Venom</ct> every 5s while in combat to trigger <ct color=#FFFFFF>Corrode Bone</ct>, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "With <ct color=#FFFFFF>Venom</ct>, all squad memebrs' <ct color=#2EB6FF>Electric DMG</ct> ignores <ct color=#2BAD00>3%</ct> of enemy DEF. If initial Energy Regen is higher than 1.4, for every additional 0.12 above that threshold, an additional <ct color=#2BAD00>0.52%</ct> of the enemy's DEF is ignored, up to a maximum of <ct color=#2BAD00>12.88%</ct> of enemy DEF. This effect lasts until 30s after <ct color=#FFFFFF>Venom</ct> is depleted.",
+        "3": "<ct color=#FFFFFF>Corrode Bone</ct> deals additional <ct color=#2EB6FF>Electric DMG</ct> equal to <ct color=#2BAD00>227%</ct> of ATK.",
+        "4": "When there are 1/2 <ct color=#2EB6FF>Electric</ct> characters in the squad, the Daze dealt by <ct color=#FFFFFF>Corrode Bone</ct> increases by 40%/60%.",
+        "5": "When gaining <ct color=#FFFFFF>Venom</ct>, every 1 excess point of <ct color=#FFFFFF>Venom</ct> triggers <ct color=#FFFFFF>Corrode Bone</ct> once."
+      },
+      {
+        "0": "Upon entering the battlefield, gain 3 <ct color=#FFFFFF>Venom</ct>. In Investigation Zone mode, this effect can trigger once every 180s.",
+        "1": "While possessing <ct color=#FFFFFF>Venom</ct>, consume 1 <ct color=#FFFFFF>Venom</ct> every 5s while in combat to trigger <ct color=#FFFFFF>Corrode Bone</ct>, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "With <ct color=#FFFFFF>Venom</ct>, all squad memebrs' <ct color=#2EB6FF>Electric DMG</ct> ignores <ct color=#2BAD00>3.5%</ct> of enemy DEF. If initial Energy Regen is higher than 1.4, for every additional 0.12 above that threshold, an additional <ct color=#2BAD00>0.6%</ct> of the enemy's DEF is ignored, up to a maximum of <ct color=#2BAD00>14.9%</ct> of enemy DEF. This effect lasts until 30s after <ct color=#FFFFFF>Venom</ct> is depleted.",
+        "3": "<ct color=#FFFFFF>Corrode Bone</ct> deals additional <ct color=#2EB6FF>Electric DMG</ct> equal to <ct color=#2BAD00>245%</ct> of ATK.",
+        "4": "When there are 1/2 <ct color=#2EB6FF>Electric</ct> characters in the squad, the Daze dealt by <ct color=#FFFFFF>Corrode Bone</ct> increases by 40%/60%.",
+        "5": "When gaining <ct color=#FFFFFF>Venom</ct>, every 1 excess point of <ct color=#FFFFFF>Venom</ct> triggers <ct color=#FFFFFF>Corrode Bone</ct> once."
+      },
+      {
+        "0": "Upon entering the battlefield, gain 3 <ct color=#FFFFFF>Venom</ct>. In Investigation Zone mode, this effect can trigger once every 180s.",
+        "1": "While possessing <ct color=#FFFFFF>Venom</ct>, consume 1 <ct color=#FFFFFF>Venom</ct> every 5s while in combat to trigger <ct color=#FFFFFF>Corrode Bone</ct>, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "With <ct color=#FFFFFF>Venom</ct>, all squad memebrs' <ct color=#2EB6FF>Electric DMG</ct> ignores <ct color=#2BAD00>4%</ct> of enemy DEF. If initial Energy Regen is higher than 1.4, for every additional 0.12 above that threshold, an additional <ct color=#2BAD00>0.68%</ct> of the enemy's DEF is ignored, up to a maximum of <ct color=#2BAD00>16.92%</ct> of enemy DEF. This effect lasts until 30s after <ct color=#FFFFFF>Venom</ct> is depleted.",
+        "3": "<ct color=#FFFFFF>Corrode Bone</ct> deals additional <ct color=#2EB6FF>Electric DMG</ct> equal to <ct color=#2BAD00>263%</ct> of ATK.",
+        "4": "When there are 1/2 <ct color=#2EB6FF>Electric</ct> characters in the squad, the Daze dealt by <ct color=#FFFFFF>Corrode Bone</ct> increases by 40%/60%.",
+        "5": "When gaining <ct color=#FFFFFF>Venom</ct>, every 1 excess point of <ct color=#FFFFFF>Venom</ct> triggers <ct color=#FFFFFF>Corrode Bone</ct> once."
+      },
+      {
+        "0": "Upon entering the battlefield, gain 3 <ct color=#FFFFFF>Venom</ct>. In Investigation Zone mode, this effect can trigger once every 180s.",
+        "1": "While possessing <ct color=#FFFFFF>Venom</ct>, consume 1 <ct color=#FFFFFF>Venom</ct> every 5s while in combat to trigger <ct color=#FFFFFF>Corrode Bone</ct>, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "With <ct color=#FFFFFF>Venom</ct>, all squad memebrs' <ct color=#2EB6FF>Electric DMG</ct> ignores <ct color=#2BAD00>4.5%</ct> of enemy DEF. If initial Energy Regen is higher than 1.4, for every additional 0.12 above that threshold, an additional <ct color=#2BAD00>0.76%</ct> of the enemy's DEF is ignored, up to a maximum of <ct color=#2BAD00>18.94%</ct> of enemy DEF. This effect lasts until 30s after <ct color=#FFFFFF>Venom</ct> is depleted.",
+        "3": "<ct color=#FFFFFF>Corrode Bone</ct> deals additional <ct color=#2EB6FF>Electric DMG</ct> equal to <ct color=#2BAD00>281%</ct> of ATK.",
+        "4": "When there are 1/2 <ct color=#2EB6FF>Electric</ct> characters in the squad, the Daze dealt by <ct color=#FFFFFF>Corrode Bone</ct> increases by 40%/60%.",
+        "5": "When gaining <ct color=#FFFFFF>Venom</ct>, every 1 excess point of <ct color=#FFFFFF>Venom</ct> triggers <ct color=#FFFFFF>Corrode Bone</ct> once."
+      },
+      {
+        "0": "Upon entering the battlefield, gain 3 <ct color=#FFFFFF>Venom</ct>. In Investigation Zone mode, this effect can trigger once every 180s.",
+        "1": "While possessing <ct color=#FFFFFF>Venom</ct>, consume 1 <ct color=#FFFFFF>Venom</ct> every 5s while in combat to trigger <ct color=#FFFFFF>Corrode Bone</ct>, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "With <ct color=#FFFFFF>Venom</ct>, all squad memebrs' <ct color=#2EB6FF>Electric DMG</ct> ignores <ct color=#2BAD00>5%</ct> of enemy DEF. If initial Energy Regen is higher than 1.4, for every additional 0.12 above that threshold, an additional <ct color=#2BAD00>0.84%</ct> of the enemy's DEF is ignored, up to a maximum of <ct color=#2BAD00>20.96%</ct> of enemy DEF. This effect lasts until 30s after <ct color=#FFFFFF>Venom</ct> is depleted.",
+        "3": "<ct color=#FFFFFF>Corrode Bone</ct> deals additional <ct color=#2EB6FF>Electric DMG</ct> equal to <ct color=#2BAD00>299%</ct> of ATK.",
+        "4": "When there are 1/2 <ct color=#2EB6FF>Electric</ct> characters in the squad, the Daze dealt by <ct color=#FFFFFF>Corrode Bone</ct> increases by 40%/60%.",
+        "5": "When gaining <ct color=#FFFFFF>Venom</ct>, every 1 excess point of <ct color=#FFFFFF>Venom</ct> triggers <ct color=#FFFFFF>Corrode Bone</ct> once."
+      },
+      {
+        "0": "Upon entering the battlefield, gain 3 <ct color=#FFFFFF>Venom</ct>. In Investigation Zone mode, this effect can trigger once every 180s.",
+        "1": "While possessing <ct color=#FFFFFF>Venom</ct>, consume 1 <ct color=#FFFFFF>Venom</ct> every 5s while in combat to trigger <ct color=#FFFFFF>Corrode Bone</ct>, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "With <ct color=#FFFFFF>Venom</ct>, all squad memebrs' <ct color=#2EB6FF>Electric DMG</ct> ignores <ct color=#2BAD00>5.5%</ct> of enemy DEF. If initial Energy Regen is higher than 1.4, for every additional 0.12 above that threshold, an additional <ct color=#2BAD00>0.92%</ct> of the enemy's DEF is ignored, up to a maximum of <ct color=#2BAD00>22.98%</ct> of enemy DEF. This effect lasts until 30s after <ct color=#FFFFFF>Venom</ct> is depleted.",
+        "3": "<ct color=#FFFFFF>Corrode Bone</ct> deals additional <ct color=#2EB6FF>Electric DMG</ct> equal to <ct color=#2BAD00>317%</ct> of ATK.",
+        "4": "When there are 1/2 <ct color=#2EB6FF>Electric</ct> characters in the squad, the Daze dealt by <ct color=#FFFFFF>Corrode Bone</ct> increases by 40%/60%.",
+        "5": "When gaining <ct color=#FFFFFF>Venom</ct>, every 1 excess point of <ct color=#FFFFFF>Venom</ct> triggers <ct color=#FFFFFF>Corrode Bone</ct> once."
+      },
+      {
+        "0": "Upon entering the battlefield, gain 3 <ct color=#FFFFFF>Venom</ct>. In Investigation Zone mode, this effect can trigger once every 180s.",
+        "1": "While possessing <ct color=#FFFFFF>Venom</ct>, consume 1 <ct color=#FFFFFF>Venom</ct> every 5s while in combat to trigger <ct color=#FFFFFF>Corrode Bone</ct>, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "With <ct color=#FFFFFF>Venom</ct>, all squad memebrs' <ct color=#2EB6FF>Electric DMG</ct> ignores <ct color=#2BAD00>6%</ct> of enemy DEF. If initial Energy Regen is higher than 1.4, for every additional 0.12 above that threshold, an additional <ct color=#2BAD00>1%</ct> of the enemy's DEF is ignored, up to a maximum of <ct color=#2BAD00>25%</ct> of enemy DEF. This effect lasts until 30s after <ct color=#FFFFFF>Venom</ct> is depleted.",
+        "3": "<ct color=#FFFFFF>Corrode Bone</ct> deals additional <ct color=#2EB6FF>Electric DMG</ct> equal to <ct color=#2BAD00>335%</ct> of ATK.",
+        "4": "When there are 1/2 <ct color=#2EB6FF>Electric</ct> characters in the squad, the Daze dealt by <ct color=#FFFFFF>Corrode Bone</ct> increases by 40%/60%.",
+        "5": "When gaining <ct color=#FFFFFF>Venom</ct>, every 1 excess point of <ct color=#FFFFFF>Venom</ct> triggers <ct color=#FFFFFF>Corrode Bone</ct> once."
+      }
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Festering Venom",
+    "desc": {
+      "0": "When another character in your squad is a <ct color=#FFFFFF>Stun</ct> character or shares the same attribute:",
+      "1": "While possessing <ct color=#FFFFFF>Venom</ct>, increases all squad members' CRIT DMG by 40%, with Cissia gaining an additional 10%. The effect lasts until 30s after <ct color=#FFFFFF>Venom</ct> is depleted."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Traveler and Prey",
+      "desc": "The <ct color=#FFFFFF>Venom</ct> gained upon entering the battlefield increases to 6. The DEF ignore from the <ct color=#FFFFFF>Core Passive</ct> increases to 140% of its original value, and all squad members ignore 5% of the target's <ct color=#2EB6FF>Electric RES</ct>. <ct color=#FFFFFF>Corrode Bone</ct> DMG ignores 10% of the target's <ct color=#2EB6FF>Electric RES</ct>.",
+      "flavor": {
+        "0": "Scents, footsteps, the way someone's eyes shift... those are the \"clues\" that let me sort hunters from prey. I vanish before I'm hunted. I lower my head before I hunt. That's how I stay alive.",
+        "1": "\"Home\"? That's just something out of a storybook. The endless wild is my hunting cabin."
+      }
+    },
+    "2": {
+      "name": "Hunger and Hard Truths",
+      "desc": "After a <ct color=#FFFFFF>Chain Attack: Gang Operation</ct> or <ct color=#FFFFFF>Ultimate: Ophidiophobia</ct> hits a Stunned enemy, gain an additional 3 <ct color=#FFFFFF>Venom</ct>. <ct color=#FFFFFF>Basic Attack: Serpent's Kiss</ct> deals 35% increased DMG.",
+      "flavor": "If I can eat my fill there, it's a good place. If someone gives me food, they're a good person. That's the easiest and most dependable rule in the world. And also, omelet with rice is divine. Even that last leftover bit on the spoon."
+    },
+    "3": {
+      "name": "Chains and a Warm Nest",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": "Justice? Order? That kind of righteous, aboveboard stuff makes me shaky. What I know are the rules of the shadows — betrayal, lies, bowing low if it keeps me breathing. I don't mind being used as a tool, as long as the pay is a full meal and a warm corner to curl up in."
+    },
+    "4": {
+      "name": "A Rogue's Resolve",
+      "desc": "When using an <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, gain 1 stack of <ct color=#FFFFFF>Decidedness</ct>, stacking up to 3 times. When using <ct color=#FFFFFF>Basic Attack: Serpent's Kiss</ct>, consume all <ct color=#FFFFFF>Decidedness</ct>. Each stack consumed triggers 1 special instance of <ct color=#FFFFFF>Corrode Bone</ct> that does not consume <ct color=#FFFFFF>Venom</ct>. This <ct color=#FFFFFF>Corrode Bone</ct> does not cause Daze.",
+      "flavor": "The collar around my neck is cold. The handcuffs are heavy. They remind me of the sins I can't wash away. But compared to those invisible rules and icy stares, this kind of restraint with a clear price tag actually puts me at ease... at least I know what it costs. And once I'm back in that little den with a couch and snacks, even the cold metal seems warm."
+    },
+    "5": {
+      "name": "False Evidence and Fangs",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": "Memories scorched by blinding light, crimes spelled out in black and white... those \"marks\" were once all that defined me. But things are different now. I've learned to read, and I've learned to recognize the smell of a lie. When that familiar scent of a scheme creeps in again, I won't just walk into the cage like an idiot. This time, I'll be the one leaving \"marks\" — with my teeth, and I won't hold back."
+    },
+    "6": {
+      "name": "Home and Sixth Street",
+      "desc": "Each time <ct color=#FFFFFF>Corrode Bone</ct> is triggered, gain 1 stack of <ct color=#FFFFFF>Bone-Deep Corrosion</ct>. When attacks from any squad member, other than <ct color=#FFFFFF>Corrode Bone</ct>, hit an enemy, consume 1 stack of <ct color=#FFFFFF>Bone-Deep Corrosion</ct> to trigger 1 special <ct color=#FFFFFF>Corrode Bone</ct>. This instance of <ct color=#FFFFFF>Corrode Bone</ct> cannot inflict Daze, and at most 1 stack of <ct color=#FFFFFF>Bone-Deep Corrosion</ct> can be consumed every 3s.",
+      "flavor": {
+        "0": "Once there's something I want to hold onto more than just \"staying alive,\" I really do turn stupid. If fate ever decides I have to die, that big, soft couch of yours better not have anyone else lying on it.",
+        "1": "",
+        "2": "\"Don't you dare forget me... or I'll bite you to death.\""
+      }
+    }
+  },
+  "potential": {}
+}

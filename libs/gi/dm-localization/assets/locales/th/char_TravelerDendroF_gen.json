@@ -110,6 +110,20 @@
       "0": "ความชำนาญธาตุแต่ละหน่วยของตัวนักเดินทางเอง จะทำให้ <strong>Razorgrass Blade</strong> สร้างความเสียหายเพิ่มขึ้น 0.15% และ <strong>Surgent Manifestation</strong> สร้างความเสียหายเพิ่มขึ้น 0.1%"
     }
   },
+  "lockedPassive": {
+    "name": "Foreign Verdalume",
+    "description": {
+      "0": "ดูดซับพลังใหม่จากการเดินทางที่ผ่านมา เมื่อทำการสั่นพ้องกับธาตุแต่ละชนิด จะได้รับ<tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>เอฟเฟกต์เสริมพลัง</strong></tooltip>เพิ่มเติม",
+      "1": "<br/>",
+      "2": "นอกจากนี้ เมื่อ Dendro Core (รวมถึง Bountiful Core และ Seeds of Deceit) เกิดขึ้นในบริเวณใกล้เคียงในสนาม หรือเมื่อทีมได้รับหยาดพฤกษา นักเดินทางจะได้รับ Blade of Verdant Viridis 1 ชั้น โดยนักเดินทางสามารถรับ Blade of Verdant Viridis ด้วยสองวิธีข้างต้นได้สูงสุด 1 ชั้นในทุก 4 วินาที และซ้อนทับได้มากสุด 3 ชั้น เมื่อมี Blade of Verdant Viridis 3 ชั้น และทำการชาร์จโจมตี จะใช้ Blade of Verdant Viridis ทั้งหมด เพื่อเปลี่ยนเป็น<strong>ชาร์จโจมตี: Verdessence</strong>",
+      "3": "<br/>",
+      "4": "<strong>ชาร์จโจมตี: Verdessence</strong>",
+      "5": [
+        "การชาร์จโจมตีแต่ละครั้ง จะสร้าง<dendro>ความเสียหายไม้</dendro>ที่สูงขึ้น โดยความเสียหายเพิ่มขึ้นเท่ากับ 80% ของพลังโจมตีของนักเดินทาง และจะสร้าง <strong>Vinecore</strong> 2 อันที่ตำแหน่งเดิม และจะระเบิดหลังจากผ่านไป 4/8 วินาทีตามลำดับ สร้าง<dendro>ความเสียหายไม้</dendro>เท่ากับ 120% ของพลังโจมตีของนักเดินทาง ซึ่งความเสียหายนี้จะนับเป็นความเสียหายชาร์จโจมตี;",
+        "สามารถทำการ<strong>ชาร์จโจมตี: Verdessence</strong> ได้มากสุด 1 ครั้งในทุก 15 วินาที"
+      ]
+    }
+  },
   "constellation1": {
     "name": "Symbiotic Creeper",
     "description": {

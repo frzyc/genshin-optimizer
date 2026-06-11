@@ -128,6 +128,16 @@
       "1": "Não acumulável com Talentos Passivos que concedem exatamente os mesmos efeitos."
     }
   },
+  "lockedPassive": {
+    "name": "Presente da Noite da Bruxa: Torrente Elétrica",
+    "description": {
+      "0": "Depois de completar <strong>Tarefa da Bruxa: Dos Pequenos Lobos</strong>, Razor se torna um personagem <strong>Mágico</strong>. Quando possuir pelo menos 2 personagens Mágicos na equipe, obtém o efeito <strong>Mágico: Ritual Secreto</strong>, fortalecendo os personagens Mágicos.",
+      "1": "Além disso, o Supremo <strong>Dente de Relâmpago</strong> de Razor é fortalecido: aumenta o Dano causado de <strong>Lobo do Trovão</strong> em 70% do ATQ de Razor.",
+      "2": "<br/>",
+      "3": "<strong>Mágico: Ritual Secreto</strong>",
+      "4": "Durante a invocação do Lobo do Trovão do Supremo <strong>Dente de Relâmpago</strong>, se os Selos Electro da Habilidade Elemental de Razor <strong>Garra e Trovão</strong> sobre-acumularem, o Lobo do Trovão causará ataques de raios elétricos contra os inimigos próximos equivalente a 150% do ATQ de Razor como Dano Electro em AdE, e regenera 7 de Energia Elemental para Razor. Esse efeito pode ser desencadeado uma vez por segundo."
+    }
+  },
   "constellation1": {
     "name": "Natureza do Lobo",
     "description": {
@@ -165,6 +175,12 @@
     "description": {
       "0": "A cada 10s, a espada de Razor recarrega, fazendo com que o próximo Ataque Normal libere um relâmpago que causa 100% de <electro>Dano Electro</electro> do ATQ de Razor.",
       "1": "Quando Razor não estiver usando o <strong>Dente de Relâmpago</strong>, um golpe de relâmpago contra o inimigo concederá um Selo Electro a Razor pela <strong>Garra e Trovão</strong>."
+    },
+    "upgradedDescription": {
+      "0": "A cada 10 segundos, o Espadão de Razor será recarregado automaticamente, fazendo com que o próximo Ataque Normal invoque um relâmpago que causa 100% do seu ATQ como <electro>Dano Electro</electro>.",
+      "1": "Quando Razor não estiver sob o efeito de <strong>Dente de Relâmpago</strong>, se o relâmpago atingir um inimigo, Razor ganhará 3 Selos Electro de <strong>Garra e Trovão</strong>.",
+      "2": "Além disso, quando Razor acumular Selo Electro através de sua Habilidade Elemental <strong>Garra e Trovão</strong>, fornecerá 3 Selos Electro para ele.",
+      "3": "Por 15s após consumir Selo Electro, a Taxa CRIT de Razor aumenta 10% e o Dano CRIT em 50%."
     }
   }
 }

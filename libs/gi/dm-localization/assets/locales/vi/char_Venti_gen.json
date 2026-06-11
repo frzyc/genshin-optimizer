@@ -20,6 +20,29 @@
         "1": "Bắn mưa tên liên tiếp xuống mặt đất, gây sát thương phạm vi khi chạm đất."
       }
     },
+    "upgradedFields": {
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 6 lần bắn tên liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiến hành <strong>ngắm bắn</strong> chuẩn hơn, có sát thương cao hơn.",
+        "2": "Khi ngắm bắn, gió sẽ tích tụ trên mũi tên. Mũi tên đầy gió sẽ gây <anemo>Sát Thương Nguyên Tố Phong</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Bắn mưa tên liên tiếp từ trên không và xung kích xuống mặt đất, gây sát thương phạm vi khi chạm đất."
+      },
+      "hexerei": {
+        "0": "<strong>Hexerei - Nghi Thức Bí Mật</strong>",
+        "1": "Trong thời gian tồn tại Mắt Bão tạo ra từ Kỹ Năng Nộ <strong>Bài Thơ Thần Gió</strong>, Venti sẽ nhận được hiệu ứng cường hóa thêm:",
+        "2": [
+          "Tấn Công Thường của Venti sẽ chuyển sang bắn <strong>Mũi Tên Bão</strong> có thể xuyên thấu kẻ địch, gây <anemo>Sát Thương Nguyên Tố Phong</anemo> cao hơn lên kẻ địch trên đường đi.",
+          "Khi Venti Tấn Công Thường trúng kẻ địch, sẽ kéo dài thời gian duy trì Mắt Bão thêm 1s, thời gian chờ tăng thêm 0.5s. Hiệu quả này mỗi 0.1s tối đa kích hoạt một lần, và tối đa kích hoạt 2 lần sau mỗi lần thi triển Kỹ Năng Nộ <strong>Bài Thơ Thần Gió</strong>."
+        ]
+      }
+    },
     "skillParams": {
       "0": "Sát Thương Lần 1",
       "1": "Sát Thương Lần 2",
@@ -31,7 +54,7 @@
       "7": "Tụ Lực Ngắm Bắn",
       "8": "Sát Thương Khi Đáp",
       "9": "ST Khi Rơi Từ Độ Cao Thấp/Cao",
-      "10": "",
+      "10": "Sát Thương Mũi Tên Bão",
       "11": "",
       "12": "",
       "13": "",
@@ -124,10 +147,23 @@
       "1": "Đối với buff Thiên Phú cố định có hiệu quả hoàn toàn giống sẽ không thể cộng dồn."
     }
   },
+  "lockedPassive": {
+    "name": "Đêm Lễ Ma Nữ - Như Gió Ca Tụng",
+    "description": {
+      "0": "Sau khi hoàn thành <strong>Bài Tập Của Ma Nữ - Về Chuyện Nổi Gió</strong>, Venti sẽ trở thành nhân vật <strong>Hexerei</strong>. Khi đội hình có ít nhất 2 nhân vật Hexerei, sẽ nhận được hiệu quả <strong>Hexerei - Nghi Thức Bí Mật</strong>, giúp nhân vật Hexerei nhận được cường hóa.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei - Nghi Thức Bí Mật</strong>",
+      "3": "Trong thời gian tồn tại Mắt Bão tạo ra từ Kỹ Năng Nộ <strong>Bài Thơ Thần Gió</strong>, trong 4s sau khi nhân vật trong trận hiện tại ở gần kích hoạt phản ứng Khuếch Tán, nhân vật này tăng 50% sát thương gây ra, đồng thời khiến Mắt Bão của bản thân Venti gây ra 135% sát thương gốc."
+    }
+  },
   "constellation1": {
     "name": "Mũi Tên Gió",
     "description": {
       "0": "<strong>Ngắm bắn</strong> sẽ phóng thêm 2 mũi tên, lần lượt gây sát thương bằng 33% sát thương gốc."
+    },
+    "upgradedDescription": {
+      "0": "<strong>Ngắm Bắn</strong> sẽ phóng thêm hai mũi tên phân tách, lần lượt gây ra 33% sát thương gốc.",
+      "1": "Ngoài ra, <strong>Mũi Tên Bão</strong> cũng sẽ phóng thêm hai mũi tên có khả năng truy đuổi kẻ địch, lần lượt gây ra 20% sát thương gốc. Hiệu quả này mỗi 0.25s tối đa kích hoạt một lần."
     }
   },
   "constellation2": {
@@ -135,6 +171,13 @@
     "description": {
       "0": "<strong>Bài Ca Trời Cao</strong> sẽ khiến <anemo>kháng Nguyên Tố Phong</anemo> và kháng vật lý của địch giảm 12%, kéo dài 10s.",
       "1": "Địch bị <strong>Bài Ca Trời Cao</strong> đánh bay trước khi rơi xuống đất, <anemo>kháng Nguyên Tố Phong</anemo> và kháng vật lý giảm thêm 12%."
+    },
+    "upgradedDescription": {
+      "0": "<strong>Bài Ca Trời Cao</strong> sẽ giảm 24% <anemo>Kháng Nguyên Tố Phong</anemo> và Kháng Vật Lý của kẻ địch trong 10s.",
+      "1": "Ngoài ra, sau khi thi triển Kỹ Năng Nộ <strong>Bài Thơ Thần Gió</strong>, Venti sẽ nhận hiệu quả <strong>Thời Khắc Nổi Gió</strong> và làm mới thời gian chờ Kỹ Năng Nguyên Tố <strong>Bài Ca Trời Cao</strong>. Sau khi <strong>Mũi Tên Bão</strong> đánh trúng kẻ địch, cũng sẽ có 25% xác suất khiến Venti nhận hiệu quả <strong>Thời Khắc Nổi Gió</strong>.",
+      "2": "<br/>",
+      "3": "<strong>Thời Khắc Nổi Gió</strong>",
+      "4": "Khi nhấn thi triển Kỹ Năng Nguyên Tố <strong>Bài Ca Trời Cao</strong>, sẽ gây 300% sát thương gốc. Hiệu quả này duy trì 15s, và sẽ xóa sau khi Venti nhấn thi triển Kỹ Năng Nguyên Tố <strong>Bài Ca Trời Cao</strong>."
     }
   },
   "constellation3": {
@@ -148,6 +191,9 @@
     "name": "Cơn Gió Tự Do",
     "description": {
       "0": "Sau khi Venti nhận Nguyên Tố Tinh Cầu hoặc Nguyên Tố Hạt Nhân, sẽ nhận được 25% <anemo>Buff Sát Thương Nguyên Tố Phong</anemo>, kéo dài 10s."
+    },
+    "upgradedDescription": {
+      "0": "Sau khi Venti thi triển Kỹ Năng Nguyên Tố <strong>Bài Ca Trời Cao</strong> hoặc Kỹ Năng Nộ <strong>Bài Thơ Thần Gió</strong>, Venti và các nhân vật khác ra trận trong đội hiện tại của bản thân sẽ nhận 25% <anemo>buff Sát Thương Nguyên Tố Phong</anemo> trong 10s."
     }
   },
   "constellation5": {
@@ -162,6 +208,11 @@
     "description": {
       "0": "Kẻ địch bị <strong>Bài Thơ Thần Gió</strong> sát thương, <anemo>kháng Nguyên Tố Phong</anemo> giảm 20%.",
       "1": "Nếu chuyển hoá nguyên tố xảy ra, sẽ giảm 20% kháng nguyên tố đã chuyển."
+    },
+    "upgradedDescription": {
+      "0": "Kẻ địch chịu sát thương từ <strong>Bài Thơ Thần Gió</strong> sẽ giảm 20% <anemo>Kháng Nguyên Tố Phong</anemo>.",
+      "1": "Nếu xảy ra chuyển hoá nguyên tố, cũng sẽ giảm 20% kháng nguyên tố đã chuyển hóa.",
+      "2": "Ngoài ra, sát thương Venti gây ra cho những kẻ địch này sẽ nhận buff 100% Sát Thương Bạo Kích."
     }
   }
 }

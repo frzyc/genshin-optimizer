@@ -83,5 +83,9 @@
   },
   "unlockPassive1": "Terbuka saat Tahap Ascension Karakter 1",
   "unlockPassive2": "Terbuka saat Tahap Ascension Karakter 4",
-  "unlockPassive3": "Talenta Pasif"
+  "unlockPassive3": "Talenta Pasif",
+  "unlockLockedPassive": "Terbuka setelah menyelesaikan quest prasyarat.",
+  "witchPassive": "PR Penyihir",
+  "moonsign": "Moonsign",
+  "hexerei": "Arcane"
 }

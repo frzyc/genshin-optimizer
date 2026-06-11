@@ -146,6 +146,7 @@ export const ownTag = {
     faction: iso,
     promotion: iso,
     mindscape: iso,
+    potential: iso,
     basic: agg,
     dodge: agg,
     special: agg,

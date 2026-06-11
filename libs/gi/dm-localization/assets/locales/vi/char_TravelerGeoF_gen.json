@@ -105,6 +105,21 @@
       "0": "Chiêu cuối tấn công thường gây sụp đổ, gây <geo>sát thương Nguyên Tố Nham</geo> bằng 60% lực tấn công cho địch xung quanh."
     }
   },
+  "lockedPassive": {
+    "name": "Nham Thạch Dị Bang",
+    "description": {
+      "0": "Đúc kết sức mạnh mới từ những chuyến hành trình đã qua. Mỗi khi cộng hưởng với một loại nguyên tố, sẽ nhận được <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>hiệu quả cường hóa</strong></tooltip> thêm.",
+      "1": "<br/>",
+      "2": "Ngoài ra, khi nhân vật trong đội ở gần được bảo vệ bởi khiên, khi khiên bị thay thế vì bất kỳ lý do gì, hoặc khi tạo ra <geo>tạo vật Nguyên Tố Nham</geo>, Nhà Lữ Hành sẽ nhận được 1 tầng \"Lưỡi Đao Cổ Nham\", tối đa cộng dồn 3 tầng. Mỗi 1s, Nhà Lữ Hành tối đa được nhận 1 tầng Lưỡi Đao Cổ Nham theo cách này. Khi có 3 tầng Lưỡi Đao Cổ Nham và thực hiện Trọng Kích, sẽ tiêu hao toàn bộ Lưỡi Đao Cổ Nham và chuyển sang thực hiện <strong>Trọng Kích - Giáng Nham</strong> đặc biệt.",
+      "3": "<br/>",
+      "4": "<strong>Trọng Kích - Giáng Nham</strong>",
+      "5": [
+        "Mỗi đòn Trọng Kích sẽ gây <geo>Sát Thương Nguyên Tố Nham</geo> cao hơn, sát thương tăng thêm tương đương 120% Tấn Công của Nhà Lữ Hành.",
+        "Trong 15s sau khi đánh trúng kẻ địch, nhân vật trong đội ở gần sẽ tăng thêm 20% Hiệu Quả Khiên.",
+        "Mỗi 15s tối đa được thực hiện một lần <strong>Trọng Kích - Giáng Nham</strong>."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Đá Xanh Cao Ngất",
     "description": {

@@ -42,7 +42,7 @@
     "name": "Prophylaxe aus der Luft",
     "description": {
       "0": "Zeit für die echten Kampfbrüder! Ifa fordert Cacucus Unterstützung an.",
-      "1": "Nach dem Auslösen erhält Ifa 80 Nachtseelenpunkte und tritt in den Zustand <strong>Nachtseelensegen</strong> ein. Ifa schwebt in diesem Zustand dank Cacucus Unterstützung. Wenn Ifa während des Schwebens einen Standardangriff ausführt, verwendet er je nachdem, ob gedrückt oder gedrückt gehalten wird, unterschiedliche Arten von <strong>„Unterstützungsfeuer“</strong> und schießt dabei Elixierkugeln ab, die allen Truppenmitgliedern LP wiederherstellen können.",
+      "1": "Nach dem Auslösen erhält Ifa 80 Nachtseelenpunkte und tritt in den Zustand <tooltip ns=tooltips_gen baseKey18=11130003 values=[]><strong>Nachtseelensegen</strong></tooltip> ein. Ifa schwebt in diesem Zustand dank Cacucus Unterstützung. Wenn Ifa während des Schwebens einen Standardangriff ausführt, verwendet er je nachdem, ob gedrückt oder gedrückt gehalten wird, unterschiedliche Arten von <tooltip ns=tooltips_gen baseKey18=11130001 values=[]><strong>„Unterstützungsfeuer“</strong></tooltip> und schießt dabei Elixierkugeln ab, die allen Truppenmitgliedern LP wiederherstellen können.",
       "2": "<br/>",
       "3": "Führt, wenn sich Ifa im Zustand Nachtseelensegen befindet und seine Elementarfähigkeit <strong>Prophylaxe aus der Luft</strong> durch Gedrückthalten einsetzt, einen mit Nachtseelen versehenen Angriff aus dem Fall aus. Wird die Fähigkeit losgelassen, so wird der Angriff aus dem Fall unterbrochen und der Schwebezustand wird aufrechterhalten. Beim Aufkommen des Angriffs aus dem Fall endet Ifas Nachtseelensegen."
     },
@@ -69,7 +69,7 @@
     "name": "Sammelsedierungsfeld",
     "description": {
       "0": "Schießt ein therapeutisches Sedativum auf Gegner, die sich noch immer nicht beruhigt haben. Beim Treffen des Gegners explodiert das Sedativum und erzeugt ein bändigendes Windfeld, das Gegner und Objekte in der Nähe anzieht und dabei mit Nachtseelen versehenen <anemo>Anemo-Flächenschaden</anemo> verursacht.",
-      "1": "Fügt, wenn die vom therapeutischen Sedativum getroffenen Gegner von <hydro>Hydro</hydro>-, <pyro>Pyro</pyro>-, <cryo>Kryo</cryo>- oder <electro>Elektro</electro>-Kraft betroffen sind, diesen Gegnern den Effekt <strong>„Sedierungsmarker“</strong> zu."
+      "1": "Fügt, wenn die vom therapeutischen Sedativum getroffenen Gegner von <hydro>Hydro</hydro>-, <pyro>Pyro</pyro>-, <cryo>Kryo</cryo>- oder <electro>Elektro</electro>-Kraft betroffen sind, diesen Gegnern den Effekt <tooltip ns=tooltips_gen baseKey18=11130004 values=[]><strong>„Sedierungsmarker“</strong></tooltip> zu."
     },
     "skillParams": {
       "0": "Fähigkeits-SCH",
@@ -93,7 +93,7 @@
   "passive1": {
     "name": "Sichtfeld des Feldarztes",
     "description": {
-      "0": "Verleiht Ifa im Zustand Nachtseelensegen für jeden Nachtseelenpunkt aller Truppenmitglieder 1 Punkt <strong>„Rettungsprinzipien“</strong>. Rettungsprinzipien erhöhen den von Truppenmitgliedern in der Nähe mit den Reaktionen „Verwirbelung“, „Unter Strom“ und „Mond unter Strom“ verursachten Schaden."
+      "0": "Verleiht Ifa im Zustand Nachtseelensegen für jeden Nachtseelenpunkt aller Truppenmitglieder 1 Punkt <tooltip ns=tooltips_gen baseKey18=11130002 values=[\"150\",\"0.015\"]><strong>„Rettungsprinzipien“</strong></tooltip>. Rettungsprinzipien erhöhen den von Truppenmitgliedern in der Nähe mit den Reaktionen „Verwirbelung“, „Unter Strom“ und „Mond unter Strom“ verursachten Schaden."
     }
   },
   "passive2": {
@@ -118,42 +118,42 @@
   "constellation1": {
     "name": "Arzneimittelherstellung aus Rankengewächsen",
     "description": {
-      "0": "Stellt Ifa beim Treffen von Gegnern mit <strong>„Unterstützungsfeuer“</strong> 6 Punkte Elementarenergie wieder her, 8 s Abklingzeit."
+      "0": "Stellt Ifa beim Treffen von Gegnern mit <tooltip ns=tooltips_gen baseKey18=11130001 values=[]><strong>„Unterstützungsfeuer“</strong></tooltip> 6 Punkte Elementarenergie wieder her, 8 s Abklingzeit."
     }
   },
   "constellation2": {
     "name": "Gebet an den Geist der Ballistik",
     "description": {
-      "0": "Verleiht Ifa im Zustand Nachtseelensegen für jeden Nachtseelenpunkt aller Truppenmitglieder insgesamt über 60 Punkten 4 Punkte <strong>„Rettungsprinzipien“</strong>.",
+      "0": "Verleiht Ifa im Zustand Nachtseelensegen für jeden Nachtseelenpunkt aller Truppenmitglieder insgesamt über 60 Punkten 4 Punkte <tooltip ns=tooltips_gen baseKey18=11130002 values=[\"150\",\"0.015\"]><strong>„Rettungsprinzipien“</strong></tooltip>.",
       "1": "Erhöht außerdem das Limit für Ifas „Rettungsprinzipien“ um 50 Punkte.",
-      "2": "Das Aufstiegstalent <strong>„Sichtfeld des Feldarztes“</strong> muss zuerst freigeschaltet werden."
+      "2": "Das Aufstiegstalent <tooltip ns=char_Ifa_gen baseKey18=passive1><strong>„Sichtfeld des Feldarztes“</strong></tooltip> muss zuerst freigeschaltet werden."
     }
   },
   "constellation3": {
     "name": "Widerlegung in den Verhandlungen mit der Nacht",
     "description": {
-      "0": "Erhöht die Stufe der Elementarfähigkeit <strong>Prophylaxe aus der Luft</strong> um 3.",
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong><tooltip ns=char_Ifa_gen baseKey18=skill>Prophylaxe aus der Luft</tooltip></strong> um 3.",
       "1": "Höchststufe 15."
     }
   },
   "constellation4": {
     "name": "Austausch des verfallenen Wirts",
     "description": {
-      "0": "Verlängert die Dauer des durch die Spezialfähigkeit <strong>Sammelsedierungsfeld</strong> erzeugten bändigenden Windfelds auf 3 s.",
+      "0": "Verlängert die Dauer des durch die Spezialfähigkeit <strong><tooltip ns=char_Ifa_gen baseKey18=burst>Sammelsedierungsfeld</tooltip></strong> erzeugten bändigenden Windfelds auf 3 s.",
       "1": "Erhöht außerdem nach dem Anwenden der Spezialfähigkeit <strong>Sammelsedierungsfeld</strong> Ifas Elementarkunde 15 s lang um 100 Punkte."
     }
   },
   "constellation5": {
     "name": "Schwur des Zusammenlebens",
     "description": {
-      "0": "Erhöht die Stufe der Spezialfähigkeit <strong>Sammelsedierungsfeld</strong> um 3.",
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong><tooltip ns=char_Ifa_gen baseKey18=burst>Sammelsedierungsfeld</tooltip></strong> um 3.",
       "1": "Höchststufe 15."
     }
   },
   "constellation6": {
     "name": "Versprechen des gefiederten Knotens",
     "description": {
-      "0": "Schießt beim Gedrückthalten von <strong>„Unterstützungsfeuer“</strong> mit einer Wahrscheinlichkeit von 50 % eine zusätzliche Elixierkugel ab, die Anemo-Schaden in Höhe von 120 % des ANG von Ifa verursacht. Hierdurch verursachter Schaden gilt als Schaden des Standardangriffs.",
+      "0": "Schießt beim Gedrückthalten von <tooltip ns=tooltips_gen baseKey18=11130001 values=[]><strong>„Unterstützungsfeuer“</strong></tooltip> mit einer Wahrscheinlichkeit von 50 % eine zusätzliche Elixierkugel ab, die Anemo-Schaden in Höhe von 120 % des ANG von Ifa verursacht. Hierdurch verursachter Schaden gilt als Schaden des Standardangriffs.",
       "1": "Verringert Ifas Verbrauch an Nachtseelenpunkten und Phlogiston außerhalb des Kampfs im Zustand Nachtseelensegen um 20 %."
     }
   }

@@ -108,6 +108,10 @@
     "name": "Menace calcaire",
     "description": {
       "0": "Les germes éphémères générés par <strong>Genèse : Aura solaire</strong> infligent 25 % de DGT supplémentaires aux ennemis dont les PV sont inférieurs à 50 %."
+    },
+    "upgradedDescription": {
+      "0": "Les DGT infligés par les germes éphémères générés par la compétence élémentaire <strong>Genèse : Aura solaire</strong> aux ennemis dont les PV sont inférieurs à 50 % augmentent de 25 %.",
+      "1": "De plus, les DGT infligés augmentent d'une valeur équivalant à 240 % de la DÉF d'Albedo si une aura argentée créée par Albedo est actuellement sur le terrain."
     }
   },
   "passive2": {
@@ -122,10 +126,27 @@
       "0": "10 % de chances d'obtenir le double de produits lors de la synthèse de matériaux d'élévation d'arme."
     }
   },
+  "lockedPassive": {
+    "name": "Veillée de la sorcière : Livre de lumière aveuglante",
+    "description": {
+      "0": "Après avoir terminé le <strong>devoir de la sorcière « D'au-delà des questions »</strong>, Albedo devient un personnage <strong>héxère</strong>. Si l'équipe contient au moins 2 personnages héxères, elle bénéficie de l'effet <strong>Hexerei : Rituel secret</strong> qui améliore les personnages héxères.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei : Rituel secret</strong>",
+      "3": [
+        " Lorsque Albedo touche un ennemi avec une compétence élémentaire moins de 20 s après l'utilisation d'une compétence élémentaire, il génère des <strong>auras argentées</strong> pendant 10 s à proximité de l'ennemi. En l'absence d'aura solaire créée par Albedo sur le terrain, et tant qu'Albedo n'a pas été éliminé, les auras argentées, tout comme les auras solaires, génèrent également une germe éphémère. Un maximum de 2 auras argentées générées par Albedo peut exister simultanément sur le terrain.",
+        " Créer une aura solaire augmente les DGT infligés par les attaques normales, les attaques chargées, les attaques plongeantes, les compétences élémentaires et les déchaînements élémentaires des personnages de l'équipe à proximité de 4 % par tranche de 1 000 pts de DÉF d'Albedo pendant 20 s, les DGT pouvant être augmentés d'un maximum de 12 % de cette manière.",
+        " Générer une aura argentée augmente les DGT infligés par les attaques normales, les attaques chargées, les attaques plongeantes, les compétences élémentaires et les déchaînements élémentaires des personnages héxères de l'équipe à proximité de 10 % par tranche de 1 000 pts de DÉF d'Albedo pendant 20 s, les DGT pouvant être augmentés d'un maximum de 30 % de cette manière."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Fleur d'Éden",
     "description": {
       "0": "Albedo récupère 1,2 pt d'énergie élémentaire lorsqu'un germe éphémère généré par <strong>Genèse : Aura solaire</strong> éclot."
+    },
+    "upgradedDescription": {
+      "0": "Albedo récupère 1,2 pt d'énergie élémentaire lorsqu'un germe éphémère généré par sa compétence élémentaire <strong>Genèse : Aura solaire</strong> éclot.",
+      "1": "De plus, la DÉF d'Albedo augmente de 50 % pendant 20 s lorsqu'il a utilisé sa compétence élémentaire <strong>Genèse : Aura solaire</strong>."
     }
   },
   "constellation2": {
@@ -137,6 +158,16 @@
         " Chaque cumul de jugement fatal confère un bonus de DGT équivalant à 30 % de la DÉF d'Albedo.",
         " Cet effet peut être cumulé 4 fois maximum."
       ]
+    },
+    "upgradedDescription": {
+      "0": "La compétence élémentaire <strong>Genèse : Aura solaire</strong> confère pendant 30 s l'effet Jugement fatal à Albedo lorsque des germes éphémères sont générés :",
+      "1": [
+        " Tous les cumuls de jugement fatal sont consommés lors du lancement du déchaînement élémentaire <strong>Transformation : Reflux Géo</strong>, conférant aux germes fatals et aux DGT explosifs de cette aptitude un bonus de DGT proportionnel au nombre de cumuls.",
+        " Chaque cumul de jugement fatal confère un bonus de DGT équivalant à 30 % de la DÉF d'Albedo.",
+        " Cet effet peut être cumulé 4 fois maximum."
+      ],
+      "2": "<br/>",
+      "3": "De plus, lorsque Albedo n'est pas déployé et que les cumuls de jugement fatal atteignent 4, tous les cumuls de jugement fatal sont consommés pour générer 3 germes fatals à proximité de votre personnage déployé. Ces germes explosent violemment et infligent des <geo>DGT Géo de zone</geo> d'une valeur équivalant à 300 % de la DÉF d'Albedo, ces DGT étant considérés comme des DGT de déchaînement élémentaire. Après avoir débloqué l'aptitude passive <tooltip ns=char_Albedo_gen baseKey18=passive2><strong>Sagesse en bouteille</strong></tooltip>, l'effet de ce talent se déclenche également, augmentant la maîtrise élémentaire des personnages de l'équipe à proximité de 125 pts pendant 10 s."
     }
   },
   "constellation3": {
@@ -150,6 +181,10 @@
     "name": "Chute divine",
     "description": {
       "0": "Les personnages déployés se trouvant dans la zone de l'aura solaire infligent 30 % de DGT d'attaque plongeante supplémentaires."
+    },
+    "upgradedDescription": {
+      "0": "Les personnages déployés se trouvant dans la zone de l'aura solaire infligent 30 % de DGT d'attaque plongeante supplémentaires.",
+      "1": "De plus, lorsqu'un personnage déployé de l'équipe à proximité saute près d'une aura argentée, cette dernière se détruit pour améliorer considérablement la hauteur du saut et augmenter les DGT infligés par les attaques plongeantes (lorsqu'elles touchent le sol) du personnage de 30 % pendant 3 s, cet effet prenant fin 0,1 s après avoir infligé des DGT d'attaque plongeante (en touchant le sol)."
     }
   },
   "constellation5": {
@@ -162,7 +197,11 @@
   "constellation6": {
     "name": "Pureté de la terre",
     "description": {
-      "0": "Les personnages déployés se trouvant dans la zone de l'aura solaire infligent 17 % de DGT supplémentaires lorsqu'ils sont sous la protection d'un bouclier généré par une réaction de Cristallisation."
+      "0": "Les personnages déployés se trouvant dans la zone de l'aura solaire infligent 17 % de DGT supplémentaires lorsqu'ils sont sous la protection d'un bouclier généré par une réaction de Cristallisation ou si un voile lunaire est présent dans la zone de l'aura solaire."
+    },
+    "upgradedDescription": {
+      "0": "Les personnages déployés se trouvant dans la zone de l'aura solaire infligent 17 % de DGT supplémentaires lorsqu'ils sont sous la protection d'un bouclier généré par une réaction de Cristallisation ou si un voile lunaire est présent dans la zone de l'aura solaire.",
+      "1": "De plus, utiliser le déchaînement élémentaire <strong>Transformation : Reflux Géo</strong> détruit également toutes les auras argentées du terrain, ce qui permet à cette instance du déchaînement élémentaire de consommer 4 cumuls de jugement fatal de la constellation {LINK#TE382}<strong>Éon de l'avènement</strong></tooltip> afin d'augmenter les DGT infligés par les germes fatals d'une valeur équivalant à 250 % de la DÉF d'Albedo pendant 20 s."
     }
   }
 }

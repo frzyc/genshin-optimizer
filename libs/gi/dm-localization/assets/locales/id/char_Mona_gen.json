@@ -146,14 +146,33 @@
       "0": "Mona memiliki 25% kemungkinan untuk mendapatkan kembali material yang digunakan saat membuat Material Ascension Senjata."
     }
   },
+  "lockedPassive": {
+    "name": "Witch's Eve Rite: Genesis of Starsigns",
+    "description": {
+      "0": "Setelah menyelesaikan <strong>PR Penyihir: Tentang Kebijaksanaan Tak Teruji</strong>, Mona akan berubah menjadi Karakter <strong>Hexerei</strong>. Saat ada setidaknya 2 Karakter Hexerei di dalam party, akan mendapatkan efek <strong>Hexerei: Secret Rite</strong> yang memperkuat Karakter Hexerei.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei: Secret Rite</strong>",
+      "3": "Saat Normal Attack atau Charged Attack Mona mengenai musuh, ia akan mendapatkan 1 lapis Astral Glow of Mercury. Efek ini bertahan selama 8 detik dan dapat ditumpuk sampai 3 lapis. Mona bisa mendapatkan maksimum satu lapis Astral Glow of Mercury setiap 0,1 detik dengan cara ini. Saat Karakter lain di dalam party sendiri memicu reaksi Vaporize terhadap musuh, semua lapisan Astral Glow of Mercury yang dimiliki akan terkonsumsi. Setiap lapis yang terkonsumsi akan mengakibatkan DMG Vaporize kali ini meningkat 5%.",
+      "4": "Selain itu, saat Normal Attack atau Charged Attack Mona mengenai musuh, durasi <strong>Omen</strong> pada musuh akan diperpanjang selama 2 detik. Efek ini dapat terpicu sekali setiap 0,5 detik, dan perpanjangan durasi <strong>Omen</strong> maksimum melalui cara ini adalah 8 detik."
+    }
+  },
   "constellation1": {
     "name": "Prophecy of Submersion",
     "description": {
-      "0": "Efek <hydro>Reaksi Elemental yang berhubungan dengan elemen Hydro</hydro> akan ditingkatkan selama 8 detik setelah serangan Karakter dalam party sendiri mengenai musuh yang berada dalam status Omen:",
+      "0": "Setelah serangan Karakter sendiri di dalam party mengenai musuh yang berada dalam status Omen, efek dari <hydro>reaksi terkait Hydro</hydro> diperkuat selama 8 detik:",
       "1": [
-        "DMG Electro Charged meningkat 15%. ·DMG Lunar-Charged meningkat 15%. DMG Vaporize meningkat 15%. DMG Hydro Swirl meningkat 15%.",
-        "Durasi musuh yang terkena Frozen meningkat 15%."
+        "DMG Electro Charged meningkat 15%. ·DMG Lunar-Charged meningkat 15%. DMG Vaporize meningkat 15%. DMG Hydro Swirl meningkat 15%. DMG reaksi Lunar-Crystallize meningkat 15%.",
+        "Durasi Frozen diperpanjang 15%."
       ]
+    },
+    "upgradedDescription": {
+      "0": "Setelah serangan Karakter sendiri di dalam party mengenai musuh yang berada dalam status Omen, efek dari <hydro>reaksi terkait Hydro</hydro> diperkuat selama 8 detik:",
+      "1": [
+        "DMG Electro-Charged meningkat 15%, DMG Lunar-Charged meningkat 15%, DMG Vaporize meningkat 15%, DMG Hydro Swirl meningkat 15%. DMG reaksi Lunar-Crystallize meningkat 15%.",
+        "Durasi Frozen diperpanjang 15%."
+      ],
+      "2": "<br/>",
+      "3": "Selain itu, saat Karakter yang memicu efek di atas ada di dalam party namun tidak berada dalam medan pertempuran, efek peningkatan DMG yang disebutkan akan meningkat menjadi 160% dari efek awalnya."
     }
   },
   "constellation2": {
@@ -161,6 +180,11 @@
     "description": {
       "0": "Saat Normal Attack mengenai musuh, memiliki 20% persentase untuk melancarkan Charged Attack.",
       "1": "Dapat terpicu setiap 5 detik."
+    },
+    "upgradedDescription": {
+      "0": "Saat Normal Attack mengenai musuh, ada 20% kemungkinan untuk melancarkan Charged Attack. Selain itu, dalam kurun waktu 5 detik setelah Mona melancarkan Elemental Burst <strong>Stellaris Phantasm</strong>, Normal Attack Mona berikutnya yang mengenai musuh akan otomatis melancarkan satu kali Charged Attack.",
+      "1": "Efek Charged Attack otomatis di atas hanya dapat terpicu sekali setiap 5 detik.",
+      "2": "Saat Charged Attack Mona mengenai musuh, Elemental Mastery seluruh Karakter dalam party di sekitar meningkat sebesar 80 poin selama 12 detik."
     }
   },
   "constellation3": {
@@ -174,6 +198,10 @@
     "name": "Prophecy of Oblivion",
     "description": {
       "0": "Saat anggota party menyerang musuh yang terkena efek Omen, CRIT Rate akan meningkat 15%."
+    },
+    "upgradedDescription": {
+      "0": "Saat anggota party menyerang musuh yang terkena efek Omen, CRIT Rate meningkat 15%.",
+      "1": "Saat Karakter Hexerei dalam party menyerang musuh dalam status Omen, CRIT DMG-nya meningkat 15%."
     }
   },
   "constellation5": {
@@ -188,6 +216,10 @@
     "description": {
       "0": "Saat dalam kondisi <strong>Illusory Torrent</strong> setiap 1 detik gerakan, Charged Attack Mona meningkat 60%,",
       "1": "Bonus DMG maksimum yang bisa didapatkan dengan cara ini adalah 180%, efek ini berlangsung selama 8 detik."
+    },
+    "upgradedDescription": {
+      "0": "Saat Mona memasuki kondisi <strong>Illusory Torrent</strong> atau saat ada musuh di sekitar yang berada dalam status Omen dan Mona adalah Karakter aktif, maka DMG Charged Attack Mona selanjutnya meningkat 60% setiap detik. Bonus DMG maksimum yang bisa didapatkan dengan cara ini adalah 180% dan efek ini berlangsung selama 8 detik.",
+      "1": "Selain itu, Charged Attack Mona terhadap musuh dalam status Omen mengakibatkan 200% dari DMG awalnya."
     }
   }
 }

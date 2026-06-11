@@ -375,13 +375,11 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       lunarbloom_dmg_: c2Ascendant_lunarbloom_dmg_,
       lunarbloom_specialDmg_: c6Ascendant_lunarbloom_specialDmg_,
     },
-    tally: {
-      moonsign: constant(1),
-    },
     nonStacking: {
       bloomcd: bloomRelatedCdNonstackWrite,
     },
   },
+  isMoonsign: constant(1),
 })
 
 const sheet: TalentSheet = {

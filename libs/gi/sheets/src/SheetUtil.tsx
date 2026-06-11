@@ -5,20 +5,17 @@ import type {
   WeaponKey,
 } from '@genshin-optimizer/gi/consts'
 import { Translate } from '@genshin-optimizer/gi/i18n'
-import type {
-  Info,
-  NonStackBuff,
-  NumNode,
-  ReadNode,
-  StrNode,
-} from '@genshin-optimizer/gi/wr'
+import type { Info, NumNode, ReadNode, StrNode } from '@genshin-optimizer/gi/wr'
 import {
   customStringRead,
   equal,
+  greaterEq,
   infoMut,
   input,
+  sum,
   unequal,
 } from '@genshin-optimizer/gi/wr'
+import type { NonStackBuff } from '@genshin-optimizer/gi/wr-types'
 import type { ReactNode } from 'react'
 
 export const st = (
@@ -32,7 +29,7 @@ export const stg = (strKey: string) => (
 export const condReadNode = (path: string[]) =>
   customStringRead(['conditional', ...path])
 export function cond(
-  key: CharacterKey | WeaponKey | ArtifactSetKey,
+  key: CharacterKey | WeaponKey | ArtifactSetKey | 'Traveler',
   subKey: string
 ): [path: string[], node: ReadNode<string>] {
   const path = [key, subKey]
@@ -54,6 +51,7 @@ type CharTransKey =
   | 'TravelerDendro'
   | 'TravelerHydro'
   | 'TravelerPyro'
+  | 'Traveler'
 export function trans(typeKey: 'char', key: CharTransKey): Translated
 export function trans(typeKey: 'weapon', key: WeaponKey): Translated
 export function trans(typeKey: 'artifact', key: ArtifactSetKey): Translated
@@ -88,6 +86,8 @@ export function activeCharBuff(
   ]
 }
 
+// First node is the actual buff node
+// Second node is inactive display node
 export function nonStackBuff(
   buffName: NonStackBuff,
   path: string,
@@ -100,5 +100,10 @@ export function nonStackBuff(
       isTeamBuff: true,
       strikethrough: true,
     }),
-  ]
+  ] as const
+}
+
+// Returns `v` if any of `nodes` evaluates to 1
+export function any(v: NumNode | number, ...nodes: NumNode[]) {
+  return greaterEq(sum(...nodes), 1, v)
 }

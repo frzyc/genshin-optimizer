@@ -1,0 +1,188 @@
+{
+  "name": "Durin",
+  "title": "„Unauslöschliches Feuer“",
+  "description": "Ein Drache, geboren aus der Feder der Hexe M, der schließlich in der Welt der Menschen gelandet ist. Und so setzt sich seine „Geschichte“ fort.",
+  "constellationName": "Draco Rubedo",
+  "auto": {
+    "name": "Flammenflügel-Hieb",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 4 Schwerthiebe hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer und führt einen Hieb nach vorne aus."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH heftiger Schläge",
+      "5": "Ausdauerverbrauch heftiger Schläge",
+      "6": "SCH beim Fallen",
+      "7": "SCH beim Fallen aus niedriger/großer Höhe",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Zweifach – Spannung und Schmelzung",
+    "description": {
+      "0": "Reinigt Seele und Wünsche und unterzieht sie einer <tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>Essenzumwandlung</strong></tooltip>. Ersetzt währenddessen Durins Elementarfähigkeit <strong>Zweifach – Spannung und Schmelzung</strong> durch die besondere Elementarfähigkeit <strong>Umwandlung – Bestätigung der Helligkeit</strong> und den Standardangriff <strong>Flammenflügel-Hieb</strong> durch die besondere Elementarfähigkeit <strong>Umwandlung – Leugnung der Dunkelheit</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Umwandlung – Bestätigung der Helligkeit</strong>",
+      "3": "Fügt Gegnern in der Nähe einmal <pyro>Pyro-Flächenschaden</pyro> zu, beendet die Essenzumwandlung und tritt in den Zustand <strong>Bestätigung der Helligkeit</strong> ein, hält 30 s.",
+      "4": "<br/>",
+      "5": "<strong>Umwandlung – Leugnung der Dunkelheit</strong>",
+      "6": "Fügt den Gegnern vor sich dreimal hintereinander <pyro>Pyro-Schaden</pyro> zu, beendet die Essenzumwandlung und tritt in den Zustand <strong>Leugnung der Dunkelheit</strong> ein, hält 30 s.",
+      "7": "<br/>",
+      "8": "Stellt Durin im Kampf, wenn dieser in den Zustand <strong>Bestätigung der Helligkeit</strong> oder <strong>Leugnung der Dunkelheit</strong> eintritt, eine bestimmte Menge Elementarenergie wieder her, 6 s Abklingzeit."
+    },
+    "skillParams": {
+      "0": "SCH durch „Umwandlung – Bestätigung der Helligkeit“",
+      "1": "SCH durch „Umwandlung – Leugnung der Dunkelheit“",
+      "2": "Elementarenergie-Wiederherstellung",
+      "3": "Abklingzeit",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Prinzip der Helligkeit – Fluss des Lichts",
+    "description": {
+      "0": "Setzt auf unterschiedliche Art und Weise die Kraft der „Bestie“ frei. Abhängig vom Zustand seiner <tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>Essenzumwandlung</strong></tooltip> kann Durin unterschiedliche Spezialfähigkeiten anwenden.",
+      "1": "<br/>",
+      "2": "<strong>Prinzip der Helligkeit – Fluss des Lichts</strong>",
+      "3": "Wendet, wenn Durin sich im Zustand <strong>Bestätigung der Helligkeit</strong> befindet, die Spezialfähigkeit <strong>Prinzip der Helligkeit – Fluss des Lichts</strong> an, die Gegnern vorne dreimal <pyro>Pyro-Flächenschaden</pyro> zufügt und die eigene Kraft als <strong>Drache der weißen Flammen</strong> manifestiert. Der „Drache der weißen Flammen“ folgt der aktuellen Figur, greift Gegner in der Umgebung in bestimmten Abständen an und verursacht <pyro>Pyro-Flächenschaden</pyro>. Hierdurch verursachter Schaden gilt als Spezialfähigkeits-SCH.",
+      "4": "<br/>",
+      "5": "<strong>Prinzip der Dunkelheit – Sternen-Schwelbrand</strong>",
+      "6": "Wendet, wenn Durin sich im Zustand <strong>Leugnung der Dunkelheit</strong> befindet, die Spezialfähigkeit <strong>Prinzip der Dunkelheit – Sternen-Schwelbrand</strong> an, die Gegnern vorne dreimal <pyro>Pyro-Flächenschaden</pyro> zufügt und die eigene Kraft als <strong>Drache des dunklen Verfalls</strong> manifestiert. Der „Drache des dunklen Verfalls“ folgt der aktuellen Figur, greift einen Gegner in der Umgebung in bestimmten Abständen an und verursacht <pyro>Pyro-SCH</pyro>. Hierdurch verursachter Schaden gilt als Spezialfähigkeits-SCH.",
+      "7": "<br/>",
+      "8": "Wendet, wenn Durin sich nicht im besonderen Zustand Essenzumwandlung befindet, die Spezialfähigkeit <strong>Prinzip der Helligkeit – Fluss des Lichts</strong> an."
+    },
+    "skillParams": {
+      "0": "SCH durch „Prinzip der Helligkeit – Fluss des Lichts“",
+      "1": "SCH durch „Prinzip der Dunkelheit – Sternen-Schwelbrand“",
+      "2": "SCH durch „Drache der weißen Flammen“",
+      "3": "SCH durch „Drache des dunklen Verfalls“",
+      "4": "Dauer von „Drache der weißen Flammen“",
+      "5": "Dauer von „Drache des dunklen Verfalls“",
+      "6": "Abklingzeit",
+      "7": "Elementarenergie",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Erscheinen des Lichtgeistes",
+    "description": {
+      "0": "Generiert, abhängig von der manifestierten Form der Kraft von Durins Spezialfähigkeit, unterschiedliche Verstärkungseffekte:",
+      "1": "<br/>",
+      "2": "<strong>Drache der weißen Flammen</strong>",
+      "3": "Verringert, nachdem Truppenmitglieder in der Nähe die Reaktionen „In Flammen“, „Überladen“, „Pyro-Verwirbelung“ oder „Pyro-Kristallisation“ an Gegnern ausgelöst haben, oder wenn sie Gegnern in Flammen <pyro>Pyro-Schaden</pyro> oder <dendro>Dendro-Schaden</dendro> zufügen, den <pyro>Pyro-WDS</pyro> der Gegner und ihren WDS gegen das andere Element der jeweiligen Reaktion um 20 %, hält 6 s.",
+      "4": "<br/>",
+      "5": "<strong>Drache des dunklen Verfalls</strong>",
+      "6": "Erhöht den Schaden der durch Durin ausgelösten Reaktionen „Verdampfen“ und „Schmelzen“ um 40 %."
+    }
+  },
+  "passive2": {
+    "name": "Chaos wie die Nacht",
+    "description": {
+      "0": "Gewährt Durin innerhalb von 20 s nach Anwenden seiner Spezialfähigkeit den Effekt „Schmelzende Urform“: Durin erhält während der Wirkungsdauer 10 Stapelungen der „Urform“. Wenn der <strong>Drache der weißen Flammen</strong> oder der <strong>Drache des dunklen Verfalls</strong> mit ihren periodischen Angriffen Schaden verursacht, wird eine Stapelung der „Urform“ verbraucht, um den verursachten Schaden zu erhöhen: Für je 100 Punkte ANG wird zusätzlich Schaden in Höhe von 3 % des ursprünglichen Schadens verursacht, maximal zusätzlich 75 % des ursprünglichen Schadens. Wenn ein Angriff des <strong>Drachen der weißen Flammen</strong> oder des <strong>Drachen des dunklen Verfalls</strong> gleichzeitig mehrere Gegner trifft, wird nur eine Stapelung der „Urform“ verbraucht.",
+      "1": "Beim erneuten Anwenden der Spezialfähigkeit werden die Stapelungen der „Urform“ zurückgesetzt."
+    }
+  },
+  "passive3": {
+    "name": "Echo der Erde",
+    "description": {
+      "0": "Bringt bei 20-stündigen Erkundungsentsendungen in Mondstadt 25 % mehr Belohnungen."
+    }
+  },
+  "lockedPassive": {
+    "name": "Geschenk der Hexennacht – Hymne der Erhabenheit",
+    "description": {
+      "0": "Wandelt Durin nach dem Abschluss von <strong>Aufgabe der Hexe – Von dieser Welt</strong> in eine <strong>Hexerei</strong>-Figur um. Verleiht, wenn sich in der Truppe mindestens 2 Hexerei-Figuren befinden, den Effekt <strong>Hexerei – Geheimes Ritual</strong>, der Hexerei-Figuren verstärkt.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei – Geheimes Ritual</strong>",
+      "3": "Verstärkt alle Effekte des Aufstiegstalents <tooltip ns=char_Durin_gen baseKey18=passive1><strong>Erscheinen des Lichtgeistes</strong></tooltip> außer der Wirkungsdauer um 75 %."
+    }
+  },
+  "constellation1": {
+    "name": "Rebellion der roten Erde",
+    "description": {
+      "0": "Verleiht nach dem Anwenden der Spezialfähigkeit, abhängig von der angewendeten Art, einen unterschiedlichen Effekt:",
+      "1": [
+        " <strong>Prinzip der Helligkeit – Fluss des Lichts</strong>: Verleiht allen anderen Truppenmitgliedern in der Nähe 20 Stapelungen <strong>„Erleuchtungswandel“</strong>, hält 20 s. Verbraucht, wenn die aktuelle Figur über „Erleuchtungswandel“ verfügt und mit Standardangriffen, heftigen Schlägen, Angriffen aus dem Fall, Elementarfähigkeiten oder Spezialfähigkeiten Schaden verursacht, 1 Stapelung „Erleuchtungswandel“ und erhöht den verursachten Schaden um 60 % von Durins ANG. Die Zählungen der Auslösungen für jedes Truppenmitglied mit „Erleuchtungswandel“ werden unabhängig voneinander berechnet.",
+        " <strong>Prinzip der Dunkelheit – Sternen-Schwelbrand</strong>: Verleiht Durin 20 Stapelungen <strong>„Erleuchtungswandel“</strong>, hält 20 s. Verbraucht, wenn Durin mit seiner Spezialfähigkeit Schaden verursacht, 2 Stapelungen „Erleuchtungswandel“ und erhöht den Schaden um 150 % von Durins ANG."
+      ],
+      "2": "<br/>",
+      "3": "Aktualisiert die Anzahl von <strong>„Erleuchtungswandel“</strong> beim Anwenden der Spezialfähigkeit."
+    }
+  },
+  "constellation2": {
+    "name": "Grenzenlose Gedanken",
+    "description": {
+      "0": "Erhöht, innerhalb von 20 s nach dem Auslösen einer Spezialfähigkeit durch Durin, nachdem Truppenmitglieder in der Nähe die Reaktion „Verdampfen“, „Schmelzen“, „In Flammen“, „Überladen“, „Pyro-Verwirbelung“ oder „Pyro-Kristallisation“ gegen einen Gegner ausgelöst haben, oder wenn sie Gegnern in Flammen <pyro>Pyro-Schaden</pyro> oder <dendro>Dendro-Schaden</dendro> zufügen, den durch Truppenmitglieder in der Nähe verursachten <pyro>Pyro-Schaden</pyro> sowie den der Reaktion entsprechenden Elementar-Schaden um 50 %, hält 6 s."
+    }
+  },
+  "constellation3": {
+    "name": "Abbild des Flammenspiegels",
+    "description": {
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong><tooltip ns=char_Durin_gen baseKey18=burst>Prinzip der Helligkeit – Fluss des Lichts</tooltip></strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Überflutete Ebene",
+    "description": {
+      "0": "Erhöht den von Durin verursachten Spezialfähigkeits-SCH um 40 %. Verbraucht zudem mit einer Wahrscheinlichkeit von 30 % keine Stapelungen von <strong>„Erleuchtungswandel“</strong>, wenn der Effekt des Sternbilds <strong><tooltip ns=char_Durin_gen baseKey18=constellation1>Rebellion der roten Erde</tooltip></strong> ausgelöst wird, welcher ursprünglich „Erleuchtungswandel“ verbraucht."
+    }
+  },
+  "constellation5": {
+    "name": "Bruch der bitteren Flamme",
+    "description": {
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong><tooltip ns=char_Durin_gen baseKey18=skill>Zweifach – Spannung und Schmelzung</tooltip></strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Doppelgeburt",
+    "description": {
+      "0": "Ignoriert bei Schaden durch Spezialfähigkeiten von Durin 30 % der VTD des Gegners.",
+      "1": "Verstärkt zudem die Spezialfähigkeiten <strong>Prinzip der Helligkeit – Fluss des Lichts</strong> und <strong>Prinzip der Dunkelheit – Sternen-Schwelbrand</strong> von Durin:",
+      "2": [
+        " Verringert, wenn ein Gegner von der Spezialfähigkeit <strong>Prinzip der Helligkeit – Fluss des Lichts</strong> und <strong>Drache der weißen Flammen</strong> getroffen wird, dessen VTD um 30 %, hält 6 s.",
+        " Ignoriert bei durch die Spezialfähigkeit <strong>Prinzip der Dunkelheit – Sternen-Schwelbrand</strong> und <strong>Drache des dunklen Verfalls</strong> verursachtem Schaden zusätzlich 40 % der VTD des Gegners."
+      ]
+    }
+  }
+}

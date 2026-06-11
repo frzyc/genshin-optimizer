@@ -121,6 +121,20 @@
       "0": "Khi làm nhiệm vụ Phái Đi Thám Hiểm ở Mondstadt, thời gian tiêu hao rút ngắn 25%."
     }
   },
+  "lockedPassive": {
+    "name": "Đêm Lễ Ma Nữ - Huyền Ảo Đêm Sâu",
+    "description": {
+      "0": "Sau khi hoàn thành <strong>Bài Tập Của Ma Nữ - Về Điều Bất Ngờ</strong>, Fischl sẽ trở thành nhân vật <strong>Hexerei</strong>. Khi đội hình có ít nhất 2 nhân vật Hexerei, sẽ nhận được hiệu quả <strong>Hexerei - Nghi Thức Bí Mật</strong>, giúp nhân vật Hexerei nhận được cường hóa.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei - Nghi Thức Bí Mật</strong>",
+      "3": "Hỡi Hoàng Tử Quạ Đêm Ozvaldo Hrafnavins, người đã chứng kiến vô số thế giới chìm vào hủy diệt, hãy cất lên khúc thất tấu u ám dâng lên công chúa, đây chính là thời khắc những linh hồn hội tụ ở cuối nhân quả phải tiêu diệt tội lỗi của vận mệnh hắc ám...",
+      "4": "Ngoài ra, khi Oz trong trận, nhân vật trong đội sẽ nhận hiệu quả cường hóa thêm:",
+      "5": [
+        "Sau khi nhân vật trong đội ở gần kích hoạt phản ứng Quá Tải, Fischl và nhân vật khác ra trận trong đội gần đó sẽ tăng 22.5% Tấn Công trong 10s.",
+        "Sau khi nhân vật trong đội ở gần kích hoạt phản ứng Điện Cảm hoặc Nguyệt-Điện Cảm, Fischl và nhân vật khác ra trận trong đội gần đó sẽ tăng 90 điểm Tinh Thông Nguyên Tố trong 10s."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Mắt Quạ Huyền Bí",
     "description": {
@@ -158,6 +172,10 @@
     "name": "Quạ Bóng Đêm",
     "description": {
       "0": "Thời gian Oz tồn tại kéo dài thêm 2s. Ngoài ra, Oz kết hợp với nhân vật của bản thân trong trận hiện tại cùng tấn công, gây <electro>Sát Thương Nguyên Tố Lôi</electro> bằng 30% tấn công của Fischl."
+    },
+    "upgradedDescription": {
+      "0": "Thời gian Oz tồn tại kéo dài thêm 2s. Ngoài ra, Oz sẽ hợp sức cùng nhân vật của bản thân ra trận hiện tại để tiến hành tấn công, gây <electro>Sát Thương Nguyên Tố Lôi</electro> tương đương 30% Tấn Công của Fischl.",
+      "1": "Sau khi Oz thực hiện đòn tấn công phối hợp, hiệu quả tăng Tấn Công và Tinh Thông Nguyên Tố từ <strong>Đêm Lễ Ma Nữ - Huyền Ảo Đêm Sâu</strong> sẽ tăng 100% trong 10s."
     }
   }
 }

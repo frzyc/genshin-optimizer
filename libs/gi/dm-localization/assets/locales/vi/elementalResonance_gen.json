@@ -25,7 +25,7 @@
   },
   "EnduringRock": {
     "name": "Nham Kiên Định",
-    "desc": "Hiệu quả khiên tăng 15%. Ngoài ra, khi nhân vật có khiên bảo hộ, sẽ có đặc tính sau: Sát thương gây ra tăng 15%; khi nhân vật gây sát thương cho địch, sẽ khiến kháng nguyên tố Nham của địch giảm 20%, duy trì 15s."
+    "desc": "Hiệu quả khiên tăng 15%. Ngoài ra, khi nhân vật có khiên bảo hộ, hoặc xung quanh có Trăng Trôi sinh ra từ phản ứng Nguyệt-Kết Tinh, thì sẽ có đặc tính sau: Sát thương gây ra tăng 15%. Khi nhân vật gây sát thương cho địch, sẽ khiến kháng nguyên tố Nham của địch giảm 20%, duy trì 15s."
   },
   "SprawlingGreenery": {
     "name": "Thảo Sinh Sôi",
@@ -59,6 +59,12 @@
           ]
         }
       }
+    }
+  },
+  "Hexerei": {
+    "name": "Hexerei - Nghi Thức Bí Mật",
+    "desc": {
+      "0": "Nhân Vật Hexerei trong đội hiện tại đã được cường hóa."
     }
   }
 }

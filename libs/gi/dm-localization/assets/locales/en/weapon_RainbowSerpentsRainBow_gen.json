@@ -1,0 +1,24 @@
+{
+  "name": "Rainbow Serpent's Rain Bow",
+  "description": {
+    "0": "An ancient ceremonial weapon passed down by the Masters of the Night-Wind. This dark bow is forever wreathed in an unshakable chill."
+  },
+  "passiveName": "Astral Whispers Beyond the Sacred Throne",
+  "passiveDescription": {
+    "0": {
+      "0": "ATK is increased by <cryo>28%</cryo> for 8s after the equipping character's attacks hit an opponent while the equipping character is off-field."
+    },
+    "1": {
+      "0": "ATK is increased by <cryo>35%</cryo> for 8s after the equipping character's attacks hit an opponent while the equipping character is off-field."
+    },
+    "2": {
+      "0": "ATK is increased by <cryo>42%</cryo> for 8s after the equipping character's attacks hit an opponent while the equipping character is off-field."
+    },
+    "3": {
+      "0": "ATK is increased by <cryo>49%</cryo> for 8s after the equipping character's attacks hit an opponent while the equipping character is off-field."
+    },
+    "4": {
+      "0": "ATK is increased by <cryo>56%</cryo> for 8s after the equipping character's attacks hit an opponent while the equipping character is off-field."
+    }
+  }
+}

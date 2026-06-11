@@ -113,6 +113,18 @@
       "0": "Al crear materiales para personaje y armas, hay una probabilidad del 10% de recibir el doble."
     }
   },
+  "lockedPassive": {
+    "name": "Rito de la noche de brujas: Transmutación séptuple",
+    "description": {
+      "0": "Tras completar la misión <strong>«Lecciones del Aquelarre: De flores maravillosas»</strong>, Sacarosa se convertirá en un personaje <strong>taumatúrgico</strong>. Cuando en el equipo haya al menos 2 personajes taumatúrgicos, estos obtendrán el efecto de <strong>taumaturgia: rito secreto</strong>, el cual les otorgará ciertos fortalecimientos.",
+      "1": "<br/>",
+      "2": "<strong>Taumaturgia: rito secreto</strong>",
+      "3": [
+        "Tras invocar un espíritu del viento pequeño, el daño de los Ataques Normales, Cargados y Descendentes y de la Habilidad Elemental y Definitiva de los personajes cercanos del equipo aumenta en un 5.71428% durante 15 s.",
+        "Tras invocar un gran espíritu del viento, el daño de los Ataques Normales, Cargados y Descendentes y de la Habilidad Elemental y Definitiva de los personajes taumatúrgicos cercanos del equipo aumenta en un 7.14285% durante 20 s."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Cúmulo de campo de vacío",
     "description": {
@@ -150,6 +162,9 @@
     "name": "Entropía caótica",
     "description": {
       "0": "Si <strong>Creación prohibida del espíritu del viento: Isomorfo 75 tipo II</strong> desencadena un cambio elemental, todos los miembros del equipo obtienen un 20% de Bono de Daño Elemental del elemento al que se cambió mientras dure la habilidad."
+    },
+    "upgradedDescription": {
+      "0": "Si <strong>Creación prohibida del espíritu del viento: Isomorfo 75 tipo II</strong> desencadena un cambio elemental, todos los miembros del equipo obtendrán un 20% de bono de daño del elemento al que se cambió mientras dure la habilidad, y además, los personajes taumatúrgicos cercanos del equipo obtendrán un 8.57142% adicional de bono de daño de dicho elemento."
     }
   }
 }

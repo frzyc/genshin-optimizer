@@ -42,13 +42,13 @@
   "skill": {
     "name": "Runo - Karsikko Yên Giấc",
     "description": {
-      "0": "Thầm ngân nga bài cầu nguyện cổ xưa, triển khai <strong>Thánh Vực Rừng Sương</strong>, đồng thời dựa vào Nhấn và Nhấn Giữ để sản sinh hiệu quả khác nhau.",
+      "0": "Thầm ngân nga bài cầu nguyện cổ xưa, triển khai <tooltip ns=tooltips_gen baseKey18=11190001 values=[]><strong>Thánh Vực Rừng Sương</strong></tooltip>, đồng thời dựa vào Nhấn và Nhấn Giữ để sản sinh hiệu quả khác nhau.",
       "1": "<br/>",
       "2": "<strong>Nhấn</strong>",
       "3": "Hát vang Bài Ca Đi Săn, gây <dendro>Sát Thương Phạm Vi Nguyên Tố Thảo</dendro>.",
       "4": "<br/>",
       "5": "<strong>Nhấn Giữ</strong>",
-      "6": "Khi có ít nhất 1 <strong>Sương Xanh</strong> sẽ có thể thi triển. Lauma sẽ tiêu hao tất cả Sương Xanh để ngân nga Bài Ca An Giấc, gây một lần <dendro>Sát Thương Phạm Vi Nguyên Tố Thảo</dendro> và một lần <dendro>Sát Thương Phạm Vi Nguyên Tố Thảo</dendro> được tính là sát thương phản ứng Nguyệt-Sum Suê. Dựa vào số Sương Xanh tiêu hao, mỗi giọt Sương Xanh sẽ khiến Lauma nhận được một tầng <strong>\"Nguyệt Vịnh\"</strong>. Mỗi lần Nhấn Giữ thi triển Kỹ Năng Nguyên Tố, tối đa tiêu hao 3 Sương Xanh theo cách này.",
+      "6": "Khi có ít nhất 1 <tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>Sương Xanh</strong></tooltip> sẽ có thể thi triển. Lauma sẽ tiêu hao tất cả Sương Xanh để ngân nga Bài Ca An Giấc, gây một lần <dendro>Sát Thương Phạm Vi Nguyên Tố Thảo</dendro> và một lần <dendro>Sát Thương Phạm Vi Nguyên Tố Thảo</dendro> được tính là sát thương phản ứng Nguyệt-Sum Suê. Dựa vào số Sương Xanh tiêu hao, mỗi giọt Sương Xanh sẽ khiến Lauma nhận được một tầng <tooltip ns=tooltips_gen baseKey18=11190002 values=[]><strong>\"Nguyệt Vịnh\"</strong></tooltip>. Mỗi lần Nhấn Giữ thi triển Kỹ Năng Nguyên Tố, tối đa tiêu hao 3 Sương Xanh theo cách này.",
       "7": "<br/>",
       "8": "Ngoài ra, khi Kỹ Năng Nguyên Tố hoặc Thánh Vực Rừng Sương của Lauma đánh trúng kẻ địch, sẽ khiến kẻ địch đó giảm Kháng Nguyên Tố <dendro>Thảo</dendro> và <hydro>Thủy</hydro> trong 10s."
     },
@@ -74,8 +74,8 @@
   "burst": {
     "name": "Runo - Vạn Tâm Vì Ánh Trăng",
     "description": {
-      "0": "Để nguyện vọng của chúng sinh trở thành ánh trăng soi sáng mặt đất. Lauma nhẩm niệm thánh ca của cực bắc và nhận 18 tầng <strong>Thánh Ca Sắc Xanh</strong>.",
-      "1": "Ngoài ra, nếu Lauma thi triển Kỹ Năng Nộ khi đang có <strong>Nguyệt Vịnh</strong>, hoặc nhận được Nguyệt Vịnh trong 15s sau khi thi triển Kỹ Năng Nộ, Lauma sẽ tiêu hao tất cả Nguyệt Vịnh và dựa theo số tầng tiêu hao, mỗi tầng sẽ khiến Lauma nhận được 6 tầng Thánh Ca Sắc Xanh. Mỗi lần thi triển Kỹ Năng Nộ và trong 15s sau khi thi triển Kỹ Năng Nộ, hiệu quả này tối đa kích hoạt một lần.",
+      "0": "Để nguyện vọng của chúng sinh trở thành ánh trăng soi sáng mặt đất. Lauma nhẩm niệm thánh ca của cực bắc và nhận 18 tầng <tooltip ns=tooltips_gen baseKey18=11190003 values=[]><strong>Thánh Ca Sắc Xanh</strong></tooltip>.",
+      "1": "Ngoài ra, nếu Lauma thi triển Kỹ Năng Nộ khi đang có <tooltip ns=tooltips_gen baseKey18=11190002 values=[]><strong>Nguyệt Vịnh</strong></tooltip>, hoặc nhận được Nguyệt Vịnh trong 15s sau khi thi triển Kỹ Năng Nộ, Lauma sẽ tiêu hao tất cả Nguyệt Vịnh và dựa theo số tầng tiêu hao, mỗi tầng sẽ khiến Lauma nhận được 6 tầng Thánh Ca Sắc Xanh. Mỗi lần thi triển Kỹ Năng Nộ và trong 15s sau khi thi triển Kỹ Năng Nộ, hiệu quả này tối đa kích hoạt một lần.",
       "2": "<br/>",
       "3": "<strong>Thánh Ca Sắc Xanh</strong>",
       "4": "Nhân vật trong đội gần đó khi gây sát thương phản ứng Sum Suê, Nở Rộ, Bung Tỏa, Nguyệt-Sum Suê sẽ tiêu hao một tầng Thánh Ca Sắc Xanh để tăng sát thương gây ra, mức tăng căn cứ vào Tinh Thông Nguyên Tố của Lauma. Khi sát thương kể trên đồng thời đánh trúng nhiều kẻ địch, sẽ căn cứ vào số lượng kẻ địch trúng đòn để tiêu hao số tầng Thánh Ca Sắc Xanh.",
@@ -103,7 +103,7 @@
   "passive1": {
     "name": "Ánh Sáng Dâng Cho Đêm Sương",
     "description": {
-      "0": "Trong 20s sau khi Lauma thi triển Kỹ Năng Nguyên Tố <strong>Runo - Karsikko Yên Giấc</strong>, sẽ căn cứ vào <strong>Nguyệt Triệu</strong> của đội để sinh ra hiệu quả cường hóa khác nhau, hiệu quả cường hóa của cấp Nguyệt Triệu khác nhau sẽ không thể cộng dồn.",
+      "0": "Trong 20s sau khi Lauma thi triển Kỹ Năng Nguyên Tố <strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo - Karsikko Yên Giấc</tooltip></strong>, sẽ căn cứ vào <strong>Nguyệt Triệu</strong> của đội để sinh ra hiệu quả cường hóa khác nhau, hiệu quả cường hóa của cấp Nguyệt Triệu khác nhau sẽ không thể cộng dồn.",
       "1": "<br/>",
       "2": "<strong>Nguyệt Triệu - Hé Sáng</strong>",
       "3": "Sát thương phản ứng Sum Suê, Nở Rộ, Bung Tỏa do tất cả nhân vật trong đội gần đó kích hoạt có thể gây Bạo Kích, Tỷ Lệ Bạo Kích cố định là 15%, Sát Thương Bạo Kích cố định là 100%. Tỷ Lệ Bạo Kích do hiệu quả này cung cấp có thể cộng dồn với Tỷ Lệ Bạo Kích từ hiệu quả tương đồng gây Bạo Kích phản ứng nguyên tố tương ứng.",
@@ -140,7 +140,7 @@
   "constellation1": {
     "name": "\"Hỡi Đôi Môi, Hãy Dệt Và Ngân Nga Khúc Hát\"",
     "description": {
-      "0": "Sau khi Lauma thi triển Kỹ Năng Nguyên Tố <strong>Runo - Karsikko Yên Giấc</strong> hoặc Kỹ Năng Nộ <strong>Runo - Vạn Tâm Vì Ánh Trăng</strong>, sẽ nhận được \"Sợi Chỉ Sự Sống\" trong 20s.",
+      "0": "Sau khi Lauma thi triển Kỹ Năng Nguyên Tố <strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo - Karsikko Yên Giấc</tooltip></strong> hoặc Kỹ Năng Nộ <strong><tooltip ns=char_Lauma_gen baseKey18=burst>Runo - Vạn Tâm Vì Ánh Trăng</tooltip></strong>, sẽ nhận được \"Sợi Chỉ Sự Sống\" trong 20s.",
       "1": "Trong thời gian duy trì, khi nhân vật trong đội ở gần kích hoạt phản ứng Nguyệt-Sum Suê, sẽ hồi phục HP cho nhân vật trong trận ở gần, lượng hồi phục tương đương 500% Tinh Thông Nguyên Tố của Lauma. Hiệu quả này mỗi 1.9s tối đa kích hoạt một lần.",
       "2": "Ngoài ra, dạng Linh Sứ của Lauma giảm 40% Thể Lực tiêu hao, thời gian duy trì tối đa kéo dài thêm 5s."
     }
@@ -148,9 +148,9 @@
   "constellation2": {
     "name": "\"Đan Thành Lời Răn Và Câu Chuyện Cực Bắc\"",
     "description": {
-      "0": "Kỹ Năng Nộ <strong>Runo - Vạn Tâm Vì Ánh Trăng</strong> được cường hóa:",
+      "0": "Kỹ Năng Nộ <strong><tooltip ns=char_Lauma_gen baseKey18=burst>Runo - Vạn Tâm Vì Ánh Trăng</tooltip></strong> được cường hóa:",
       "1": [
-        "Hiệu quả <strong>\"Thánh Ca Sắc Xanh\"</strong> được tăng cường: Tất cả nhân vật trong đội gần đó tăng thêm sát thương phản ứng Sum Suê, Nở Rộ, Bung Tỏa gây ra, mức tăng tương đương 500% Tinh Thông Nguyên Tố của Lauma. Tất cả nhân vật trong đội gần đó tăng thêm sát thương phản ứng Nguyệt-Sum Suê, mức tăng tương đương 400% Tinh Thông Nguyên Tố của Lauma."
+        "Hiệu quả <tooltip ns=tooltips_gen baseKey18=11190003 values=[]><strong>\"Thánh Ca Sắc Xanh\"</strong></tooltip> được tăng cường: Tất cả nhân vật trong đội gần đó tăng thêm sát thương phản ứng Sum Suê, Nở Rộ, Bung Tỏa gây ra, mức tăng tương đương 500% Tinh Thông Nguyên Tố của Lauma. Tất cả nhân vật trong đội gần đó tăng thêm sát thương phản ứng Nguyệt-Sum Suê, mức tăng tương đương 400% Tinh Thông Nguyên Tố của Lauma."
       ],
       "2": "<br/>",
       "3": "<strong>Nguyệt Triệu - Rực Sáng</strong>: Tất cả nhân vật trong đội gần đó tăng 40% sát thương phản ứng Nguyệt-Sum Suê gây ra."
@@ -159,32 +159,32 @@
   "constellation3": {
     "name": "\"Đừng Đi Theo Sự Xảo Quyệt Của Hồ Ly\"",
     "description": {
-      "0": "Cấp kỹ năng <strong>Runo - Vạn Tâm Vì Ánh Trăng</strong> +3.",
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Lauma_gen baseKey18=burst>Runo - Vạn Tâm Vì Ánh Trăng</tooltip></strong> +3.",
       "1": "Tăng tối đa đến cấp 15."
     }
   },
   "constellation4": {
     "name": "\"Chớ Tham Lam Uy Quyền Của Gấu Lớn\"",
     "description": {
-      "0": "<strong>Thánh Vực Rừng Sương</strong> của Kỹ Năng Nguyên Tố <strong>Runo - Karsikko Yên Giấc</strong> khi đánh trúng kẻ địch, sẽ hồi cho Lauma sẽ 4 điểm Năng Lượng Nguyên Tố. Hiệu quả này mỗi 5s tối đa kích hoạt một lần."
+      "0": "<tooltip ns=tooltips_gen baseKey18=11190001 values=[]><strong>Thánh Vực Rừng Sương</strong></tooltip> của Kỹ Năng Nguyên Tố <strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo - Karsikko Yên Giấc</tooltip></strong> khi đánh trúng kẻ địch, sẽ hồi cho Lauma sẽ 4 điểm Năng Lượng Nguyên Tố. Hiệu quả này mỗi 5s tối đa kích hoạt một lần."
     }
   },
   "constellation5": {
     "name": "\"Nếu Có Thể Chứng Kiến Sự Thật\"",
     "description": {
-      "0": "Cấp kỹ năng <strong>Runo - Karsikko Yên Giấc</strong> +3.",
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo - Karsikko Yên Giấc</tooltip></strong> +3.",
       "1": "Tăng tối đa đến cấp 15."
     }
   },
   "constellation6": {
     "name": "\"Nguyện Dâng Máu Lệ Tặng Ánh Trăng\"",
     "description": {
-      "0": "Khi <strong>Thánh Vực Rừng Sương</strong> tấn công kẻ địch, sẽ gây thêm một lần <dendro>Sát Thương Phạm Vi Nguyên Tố Thảo</dendro> được tính là sát thương phản ứng Nguyệt-Sum Suê. Sát thương này dựa trên 185% Tinh Thông Nguyên Tố của Lauma, sẽ không tiêu hao <strong>Thánh Ca Sắc Xanh</strong>, mà khiến Lauma nhận 2 tầng Thánh Ca Sắc Xanh, đồng thời làm mới thời gian duy trì Thánh Ca Sắc Xanh nhận được bằng cách này.",
-      "1": "Trong thời gian duy trì một lần Thánh Vực Rừng Sương, hiệu quả này tối đa kích hoạt 8 lần. Khi thi triển Kỹ Năng Nguyên Tố <strong>Runo - Karsikko Yên Giấc</strong> sẽ xóa Thánh Ca Sắc Xanh nhận được bằng cách này.",
+      "0": "Khi <tooltip ns=tooltips_gen baseKey18=11190001 values=[]><strong>Thánh Vực Rừng Sương</strong></tooltip> tấn công kẻ địch, sẽ gây thêm một lần <dendro>Sát Thương Phạm Vi Nguyên Tố Thảo</dendro> được tính là sát thương phản ứng Nguyệt-Sum Suê. Sát thương này dựa trên 185% Tinh Thông Nguyên Tố của Lauma, sẽ không tiêu hao <tooltip ns=tooltips_gen baseKey18=11190003 values=[]><strong>Thánh Ca Sắc Xanh</strong></tooltip>, mà khiến Lauma nhận 2 tầng Thánh Ca Sắc Xanh, đồng thời làm mới thời gian duy trì Thánh Ca Sắc Xanh nhận được bằng cách này.",
+      "1": "Trong thời gian duy trì một lần Thánh Vực Rừng Sương, hiệu quả này tối đa kích hoạt 8 lần. Khi thi triển Kỹ Năng Nguyên Tố <strong><tooltip ns=char_Lauma_gen baseKey18=skill>Runo - Karsikko Yên Giấc</tooltip></strong> sẽ xóa Thánh Ca Sắc Xanh nhận được bằng cách này.",
       "2": "<br/>",
       "3": "Ngoài ra, nếu Lauma thực hiện Tấn Công Thường khi đang có Thánh Ca Sắc Xanh, thì sẽ tiêu hao một tầng Thánh Ca Sắc Xanh, chuyển hóa để gây <dendro>Sát Thương Nguyên Tố Thảo</dendro> tương đương 150% Tinh Thông Nguyên Tố của Lauma, sát thương này được tính là sát thương phản ứng Nguyệt-Sum Suê.",
       "4": "<br/>",
-      "5": "<strong>Nguyệt Triệu - Rực Sáng</strong>: Sát thương phản ứng Nguyệt-Sum Suê của tất cả nhân vật trong đội gần đó gây ra sẽ <strong>Thăng Tiến</strong> 25%."
+      "5": "<strong>Nguyệt Triệu - Rực Sáng</strong>: Sát thương phản ứng Nguyệt-Sum Suê của tất cả nhân vật trong đội gần đó gây ra sẽ <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Thăng Tiến</strong></tooltip> 25%."
     }
   }
 }

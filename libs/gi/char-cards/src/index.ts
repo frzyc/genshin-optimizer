@@ -11,6 +11,7 @@ import Barbara from './Character_Barbara_Card.jpg'
 import Beidou from './Character_Beidou_Card.jpg'
 import Bennett from './Character_Bennett_Card.jpg'
 import Candace from './Character_Candace_Card.jpg'
+import Varka from './Character_Card_Varka.webp'
 import Charlotte from './Character_Charlotte_Card.jpg'
 import Chasca from './Character_Chasca_Card.jpg'
 import Chevreuse from './Character_Chevreuse_Card.jpg'
@@ -19,12 +20,14 @@ import Chongyun from './Character_Chongyun_Card.jpg'
 import Citlali from './Character_Citlali_Card.jpg'
 import Clorinde from './Character_Clorinde_Card.jpg'
 import Collei from './Character_Collei_Card.jpg'
+import Columbina from './Character_Columbina_Card.webp'
 import Cyno from './Character_Cyno_Card.jpg'
 import Dahlia from './Character_Dahlia_Card.jpg'
 import Dehya from './Character_Dehya_Card.jpg'
 import Diluc from './Character_Diluc_Card.jpg'
 import Diona from './Character_Diona_Card.png'
 import Dori from './Character_Dori_Card.jpg'
+import Durin from './Character_Durin_Card.webp'
 import Emilie from './Character_Emilie_Card.jpg'
 import Escoffier from './Character_Escoffier_Card.jpg'
 import Eula from './Character_Eula_Card.png'
@@ -39,7 +42,9 @@ import Gorou from './Character_Gorou_Card.png'
 import HuTao from './Character_Hu_Tao_Card.png'
 import Iansan from './Character_Iansan_Card.jpg'
 import Ifa from './Character_Ifa_Card.jpg'
+import Illuga from './Character_Illuga_Card.webp'
 import Ineffa from './Character_Ineffa_Card.png'
+import Jahoda from './Character_Jahoda_Card.webp'
 import Jean from './Character_Jean_Card.jpg'
 import Kachina from './Character_Kachina_Card.jpg'
 import Kaeya from './Character_Kaeya_Card.jpg'
@@ -56,6 +61,7 @@ import KukiShinobu from './Character_Kuki_Shinobu_Card.jpg'
 import LanYan from './Character_LanYan_Card.jpg'
 import Lauma from './Character_Lauma_Card.webp'
 import Layla from './Character_Layla_Card.jpeg'
+import Linnea from './Character_Linnea_Card.webp'
 import Lisa from './Character_Lisa_Card.jpg'
 import Lynette from './Character_Lynette_Card.jpg'
 import Lyney from './Character_Lyney_Card.jpg'
@@ -67,10 +73,12 @@ import Nahida from './Character_Nahida_Card.jpeg'
 import Navia from './Character_Navia_Card.jpg'
 import Nefer from './Character_Nefer_Card.webp'
 import Neuvillette from './Character_Neuvillette_Card.jpg'
+import Nicole from './Character_Nicole_Card.png'
 import Nilou from './Character_Nilou_Card.jpg'
 import Ningguang from './Character_Ningguang_Card.jpg'
 import Noelle from './Character_Noelle_Card.jpg'
 import Ororon from './Character_Ororon_Card.jpg'
+import Prune from './Character_Prune_Card.png'
 import Qiqi from './Character_Qiqi_Card.jpg'
 import RaidenShogun from './Character_Raiden_Shogun_Card.png'
 import Razor from './Character_Razor_Card.jpg'
@@ -105,6 +113,7 @@ import Yoimiya from './Character_Yoimiya_Card.png'
 import YumemizukiMizuki from './Character_YumemizukiMizuki_Card.jpg'
 import YunJin from './Character_Yun_Jin_Card.jpg'
 import Zhongli from './Character_Zhongli_Card.png'
+import Zibai from './Character_Zibai_Card.webp'
 import TravelerF from './Traveler_Female_Card.jpg'
 import TravelerM from './Traveler_Male_Card.jpg'
 
@@ -129,12 +138,14 @@ const charCards = {
   Citlali,
   Clorinde,
   Collei,
+  Columbina,
   Cyno,
   Dahlia,
   Dehya,
   Diluc,
   Diona,
   Dori,
+  Durin,
   Emilie,
   Escoffier,
   Eula,
@@ -149,7 +160,9 @@ const charCards = {
   HuTao,
   Iansan,
   Ifa,
+  Illuga,
   Ineffa,
+  Jahoda,
   Jean,
   Kachina,
   KaedeharaKazuha,
@@ -166,6 +179,7 @@ const charCards = {
   LanYan,
   Lauma,
   Layla,
+  Linnea,
   Lisa,
   Lyney,
   Lynette,
@@ -177,10 +191,12 @@ const charCards = {
   Navia,
   Nefer,
   Neuvillette,
+  Nicole,
   Nilou,
   Ningguang,
   Noelle,
   Ororon,
+  Prune,
   Qiqi,
   RaidenShogun,
   Razor,
@@ -200,6 +216,7 @@ const charCards = {
   TravelerF,
   TravelerM,
   Varesa,
+  Varka,
   Venti,
   Wanderer,
   Wriothesley,
@@ -217,6 +234,7 @@ const charCards = {
   YumemizukiMizuki,
   YunJin,
   Zhongli,
+  Zibai,
 } as const
 
 export function charCard(charKey: CharacterKey, gender: GenderKey) {

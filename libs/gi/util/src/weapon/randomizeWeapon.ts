@@ -3,10 +3,13 @@ import {
   getRandomElementFromArray,
   getRandomIntInclusive,
 } from '@genshin-optimizer/common/util'
-import type { RefinementKey } from '@genshin-optimizer/gi/consts'
-import { allWeaponKeys } from '@genshin-optimizer/gi/consts'
-import type { IWeapon } from '@genshin-optimizer/gi/good'
-import { validateWeaponLevelAsc } from './level'
+import {
+  type RefinementKey,
+  allWeaponKeys,
+  validateWeaponLevelAsc,
+} from '@genshin-optimizer/gi/consts'
+import type { IWeapon } from '@genshin-optimizer/gi/schema'
+import { allStats } from '@genshin-optimizer/gi/stats'
 
 const weaponKeys = allWeaponKeys.filter(
   (k) =>
@@ -26,7 +29,11 @@ const weaponKeys = allWeaponKeys.filter(
 export function randomizeWeapon(base: Partial<IWeapon> = {}): IWeapon {
   const key = base.key ?? getRandomElementFromArray(weaponKeys)
   const level = base.level ?? getRandomIntInclusive(1, 90)
-  const { ascension } = validateWeaponLevelAsc(level, base.ascension ?? 0)
+  const { ascension } = validateWeaponLevelAsc(
+    level,
+    base.ascension ?? 0,
+    allStats.weapon.data[key].rarity
+  )
   const refinement =
     base.refinement ?? (getRandomIntInclusive(1, 5) as RefinementKey)
   const lock = base.lock ?? getRandBool()

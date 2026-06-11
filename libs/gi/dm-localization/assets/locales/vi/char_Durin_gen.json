@@ -1,0 +1,188 @@
+{
+  "name": "Durin",
+  "title": "\"Ngọn Lửa Bất Diệt\"",
+  "description": "Chú rồng được sinh ra dưới ngòi bút của Ma Nữ M, cuối cùng đã đến với thế giới loài người. Và \"câu chuyện\" của cậu ấy vẫn còn đang tiếp diễn.",
+  "constellationName": "Cung Xích Long",
+  "auto": {
+    "name": "Chém Cánh Rực Rỡ",
+    "fields": {
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 4 lần đánh liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định để thi triển một lần chém về phía trước."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Trọng Kích",
+      "5": "Thể lực Trọng Kích tiêu hao",
+      "6": "Sát Thương Khi Đáp",
+      "7": "Sát Thương Khi Đáp Từ Độ Cao Thấp/Cao",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Nhị Nguyên - Hội Tụ Và Phân Chia",
+    "description": {
+      "0": "Tinh lọc chất liệu của linh hồn và ước nguyện để tiến hành <tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>Chuyển Hóa Tinh Chất</strong></tooltip>. Trong thời gian này, Kỹ Năng Nguyên Tố <strong>Nhị Nguyên - Hội Tụ Và Phân Chia</strong> của Durin sẽ được thay thế bằng Kỹ Năng Nguyên Tố đặc biệt <strong>Chuyển Hóa - Xác Nhận Hóa Trắng</strong>, Tấn Công Thường <strong>Chém Cánh Rực Rỡ</strong> sẽ được thay thế bằng Kỹ Năng Nguyên Tố đặc biệt <strong>Chuyển Hóa - Phủ Nhận Độ Đen</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Chuyển Hóa - Xác Nhận Hóa Trắng</strong>",
+      "3": "Gây một lần <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro> lên kẻ địch ở gần, xóa bỏ Chuyển Hóa Tinh Chất và tiến vào trạng thái <strong>Xác Nhận Hóa Trắng</strong> trong 30s.",
+      "4": "<br/>",
+      "5": "<strong>Chuyển Hóa - Phủ Nhận Độ Đen</strong>",
+      "6": "Liên tục gây ba lần <pyro>Sát Thương Nguyên Tố Hỏa</pyro> lên kẻ địch phía trước, xóa bỏ Chuyển Hóa Tinh Chất và tiến vào trạng thái <strong>Phủ Nhận Độ Đen</strong> trong 30s.",
+      "7": "<br/>",
+      "8": "Khi trong trạng thái chiến đấu, khi Durin tiến vào trạng thái <strong>Xác Nhận Hóa Trắng</strong> hoặc <strong>Phủ Nhận Độ Đen</strong>, Durin sẽ hồi phục một lượng Năng Lượng Nguyên Tố nhất định, mỗi 6s tối đa hồi phục một lần Năng Lượng Nguyên Tố theo cách này."
+    },
+    "skillParams": {
+      "0": "Sát thương Chuyển Hóa - Xác Nhận Hóa Trắng",
+      "1": "Sát thương Chuyển Hóa - Phủ Nhận Độ Đen",
+      "2": "Hồi Phục Năng Lượng Nguyên Tố",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Thuật Hóa Trắng - Ánh Sáng Uyển Chuyển",
+    "description": {
+      "0": "Giải phóng sức mạnh của \"Thú\" dưới cách thức khác nhau. Căn cứ vào trạng thái <tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>Chuyển Hóa Tinh Chất</strong></tooltip> của Durin để thi triển Kỹ Năng Nộ khác nhau.",
+      "1": "<br/>",
+      "2": "<strong>Thuật Hóa Trắng - Ánh Sáng Uyển Chuyển</strong>",
+      "3": "Nếu Durin trong trạng thái <strong>Xác Nhận Hóa Trắng</strong>, sẽ thi triển Kỹ Năng Nộ <strong>Thuật Hóa Trắng - Ánh Sáng Uyển Chuyển</strong>, gây ba lần <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro> lên kẻ địch phía trước, và phô diễn sức mạnh của bản thân dưới hình thái <strong>Rồng Lửa Trắng</strong>. Rồng Lửa Trắng sẽ đi theo nhân vật trong trận hiện tại, tấn công kẻ địch xung quanh theo chu kỳ, gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro>. Sát thương này được xem là sát thương Kỹ Năng Nộ.",
+      "4": "<br/>",
+      "5": "<strong>Thuật Độ Đen - Âm Ỉ Sao Trời</strong>",
+      "6": "Nếu Durin trong trạng thái <strong>Phủ Nhận Độ Đen</strong>, sẽ chuyển sang thi triển Kỹ Năng Nộ <strong>Thuật Độ Đen - Âm Ỉ Sao Trời</strong>, gây ba lần <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro> lên kẻ địch phía trước, và phô diễn sức mạnh của bản thân dưới hình thái <strong>Rồng Ăn Mòn</strong>. Rồng Ăn Mòn sẽ đi theo nhân vật trong trận hiện tại, tấn công một kẻ địch ở gần theo chu kỳ, gây <pyro>Sát Thương Nguyên Tố Hỏa</pyro>. Sát thương này được xem là sát thương Kỹ Năng Nộ.",
+      "7": "<br/>",
+      "8": "Ngoài ra, nếu Durin không trong trạng thái đặc biệt của Chuyển Hóa Tinh Chất, thì sẽ thi triển Kỹ Năng Nộ <strong>Thuật Hóa Trắng - Ánh Sáng Uyển Chuyển</strong>."
+    },
+    "skillParams": {
+      "0": "Sát Thương Thuật Hóa Trắng - Ánh Sáng Uyển Chuyển",
+      "1": "Sát Thương Thuật Độ Đen - Âm Ỉ Sao Trời",
+      "2": "Sát Thương Rồng Lửa Trắng",
+      "3": "Sát Thương Rồng Ăn Mòn",
+      "4": "Thời Gian Duy Trì Rồng Lửa Trắng",
+      "5": "Thời Gian Duy Trì Rồng Ăn Mòn",
+      "6": "CD",
+      "7": "Năng Lượng Nguyên Tố",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Ánh Sáng Hiện Diện Theo Thần Số",
+    "description": {
+      "0": "Dựa theo hình thái sức mạnh phô diễn khi Durin thi triển Kỹ Năng Nộ, sẽ sinh ra các hiệu quả cường hóa khác nhau. Nếu sức mạnh của Durin là:",
+      "1": "<br/>",
+      "2": "<strong>Rồng Lửa Trắng</strong>",
+      "3": "Sau khi nhân vật trong đội ở gần kích hoạt phản ứng Thiêu Đốt, Quá Tải, Khuếch Tán Nguyên Tố Hỏa, Kết Tinh Nguyên Tố Hỏa lên kẻ địch, hoặc khi gây Sát Thương Nguyên Tố <pyro>Hỏa</pyro> hoặc <dendro>Thảo</dendro> lên kẻ địch trong trạng thái Thiêu Đốt, kẻ địch này sẽ giảm 20% <pyro>Kháng Nguyên Tố Hỏa</pyro> và kháng nguyên tố tương ứng tham gia vào phản ứng, duy trì 6s.",
+      "4": "<br/>",
+      "5": "<strong>Rồng Ăn Mòn</strong>",
+      "6": "Durin tăng 40% sát thương phản ứng Bốc Hơi, tăng 40% sát thương phản ứng Tan Chảy."
+    }
+  },
+  "passive2": {
+    "name": "Hỗn Độn Như Đêm Đen Tạo Ra",
+    "description": {
+      "0": "Trong vòng 20s sau khi thi triển Kỹ Năng Nộ, Durin sẽ nhận hiệu quả Dung Luyện Khởi Nguồn: Trong thời gian duy trì, Durin sẽ nhận 10 tầng \"Hiện Tượng Khởi Nguồn\", khi đòn tấn công theo chu kỳ <strong>Rồng Lửa Trắng</strong> và <strong>Rồng Ăn Mòn</strong> gây ra sát thương, sẽ tiêu hao 1 tầng Hiện Tượng Khởi Nguồn để tăng sát thương gây ra, mỗi 100 điểm Tấn Công sẽ gây thêm 3% sát thương gốc, tối đa gây thêm 75% sát thương gốc theo cách này. Khi <strong>Rồng Lửa Trắng</strong> và <strong>Rồng Ăn Mòn</strong> đánh trúng nhiều kẻ địch cùng lúc, sẽ chỉ tiêu hao 1 tầng Hiện Tượng Khởi Nguồn.",
+      "1": "Khi thi triển Kỹ Năng Nộ lần nữa, số tầng Hiện Tượng Khởi Nguồn sẽ được làm mới."
+    }
+  },
+  "passive3": {
+    "name": "Âm Vang Từ Lòng Đất",
+    "description": {
+      "0": "Khi làm nhiệm vụ Phái Đi Thám Hiểm có thời gian là 20 giờ ở Mondstadt, phần thưởng nhận được tăng 25%."
+    }
+  },
+  "lockedPassive": {
+    "name": "Đêm Lễ Ma Nữ - Khúc Ca Thăng Hoa",
+    "description": {
+      "0": "Sau khi hoàn thành <strong>Bài Tập Của Ma Nữ - Về Thế Giới Này</strong>, Durin sẽ trở thành nhân vật <strong>Hexerei</strong>. Khi đội hình có ít nhất 2 nhân vật Hexerei, sẽ nhận được hiệu quả <strong>Hexerei - Nghi Thức Bí Mật</strong>, giúp nhân vật Hexerei nhận được cường hóa.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei - Nghi Thức Bí Mật</strong>",
+      "3": "Tất cả hiệu quả trong Thiên Phú Đột Phá <tooltip ns=char_Durin_gen baseKey18=passive1><strong>Ánh Sáng Hiện Diện Theo Thần Số</strong></tooltip> sẽ tăng 75% (ngoại trừ thời gian duy trì)."
+    }
+  },
+  "constellation1": {
+    "name": "Đất Đỏ Nghịch Chuyển",
+    "description": {
+      "0": "Sau khi thi triển Kỹ Năng Nộ, sẽ dựa trên Kỹ Năng Nộ mà Durin thi triển để tạo ra các hiệu quả khác nhau:",
+      "1": [
+        "<strong>Thuật Hóa Trắng - Ánh Sáng Uyển Chuyển</strong>: Tất cả nhân vật khác trong đội ở gần nhận 20 tầng <strong>Vòng Tròn Khai Sáng</strong> trong 20s. Khi nhân vật trong trận hiện tại mang Vòng Tròn Khai Sáng gây sát thương từ đòn Tấn Công Thường, Trọng Kích, Tấn Công Khi Đáp, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ, sẽ tiêu hao 1 tầng Vòng Tròn Khai Sáng để tăng sát thương gây ra, mức tăng tương đương 60% Tấn Công của Durin. Số tầng hiệu lực của nhân vật mang Vòng Tròn Khai Sáng trong đội sẽ được tính riêng.",
+        "<strong>Thuật Độ Đen - Âm Ỉ Sao Trời</strong>: Durin nhận 20 tầng <strong>Vòng Tròn Khai Sáng</strong> trong 20s. Khi Durin gây sát thương Kỹ Năng Nộ, sẽ tiêu hao 2 tầng Vòng Tròn Khai Sáng để tăng sát thương gây ra, mức tăng tương đương 150% Tấn Công của Durin."
+      ],
+      "2": "<br/>",
+      "3": "Khi thi triển Kỹ Năng Nộ, số tầng <strong>Vòng Tròn Khai Sáng</strong> sẽ được làm mới."
+    }
+  },
+  "constellation2": {
+    "name": "Tầm Nhìn Vô Tận",
+    "description": {
+      "0": "Trong 20s sau khi Durin thi triển Kỹ Năng Nộ, sau khi nhân vật trong đội ở gần kích hoạt phản ứng Bốc Hơi, Tan Chảy, Thiêu Đốt, Quá Tải, Khuếch Tán Nguyên Tố Hỏa hoặc Kết Tinh Nguyên Tố Hỏa lên kẻ địch, hoặc khi gây Sát Thương Nguyên Tố <pyro>Hỏa</pyro> hoặc <dendro>Thảo</dendro> lên kẻ địch đang trong trạng thái Thiêu Đốt, nhân vật trong đội ở gần sẽ tăng 50% <pyro>Sát Thương Nguyên Tố Hỏa</pyro> và Sát Thương Nguyên Tố tương ứng tham gia vào phản ứng, duy trì 6s."
+    }
+  },
+  "constellation3": {
+    "name": "Gương Lửa Hiển Hiện",
+    "description": {
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Durin_gen baseKey18=burst>Thuật Hóa Trắng - Ánh Sáng Uyển Chuyển</tooltip></strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Cội Nguồn Dâng Trào",
+    "description": {
+      "0": "Durin tăng 40% sát thương Kỹ Năng Nộ. Ngoài ra, khi kích hoạt hiệu quả tiêu hao <strong>Vòng Tròn Khai Sáng</strong> trong Cung Mệnh <strong><tooltip ns=char_Durin_gen baseKey18=constellation1>Đất Đỏ Nghịch Chuyển</tooltip></strong>, có 30% xác suất không tiêu hao Vòng Tròn Khai Sáng."
+    }
+  },
+  "constellation5": {
+    "name": "Vết Nứt Rực Lửa",
+    "description": {
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Durin_gen baseKey18=skill>Nhị Nguyên - Hội Tụ Và Phân Chia</tooltip></strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Song Trùng Tái Sinh",
+    "description": {
+      "0": "Sát thương Kỹ Năng Nộ của Durin sẽ bỏ qua 30% Phòng Ngự của địch.",
+      "1": "Ngoài ra, Kỹ Năng Nộ <strong>Thuật Hóa Trắng - Ánh Sáng Uyển Chuyển</strong> và <strong>Thuật Độ Đen - Âm Ỉ Sao Trời</strong> của Durin sẽ được cường hóa:",
+      "2": [
+        "Khi Kỹ Năng Nộ <strong>Thuật Hóa Trắng - Ánh Sáng Uyển Chuyển</strong> và <strong>Rồng Lửa Trắng</strong> đánh trúng kẻ địch, kẻ địch này sẽ giảm 30% Phòng Ngự trong 6s.",
+        "Sát thương từ Kỹ Năng Nộ <strong>Thuật Độ Đen - Âm Ỉ Sao Trời</strong> và <strong>Rồng Ăn Mòn</strong> sẽ bỏ qua thêm 40% Phòng Ngự của địch."
+      ]
+    }
+  }
+}

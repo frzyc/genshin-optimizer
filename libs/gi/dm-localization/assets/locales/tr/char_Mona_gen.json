@@ -144,17 +144,33 @@
       "0": "Mona, Silah Yükseltme Malzemesi üretirken kullanılan malzemelerin bir kısmını %25 ihtimalle iade eder."
     }
   },
+  "lockedPassive": {
+    "name": "Cadının Gece Ayini: Burçların Doğuşu",
+    "description": {
+      "0": "<strong>Cadının Ödevi: Sınanmamış Sezgi</strong> tamamlandıktan sonra Mona bir <strong>Cadılık</strong> karakteri olur. Grupta en az 2 Cadılık karakteri olduğunda, Cadılık karakterlerini geliştiren <strong>Cadılık: Saklı Ayin</strong> etkisi kazanırsın.",
+      "1": "<br/>",
+      "2": "<strong>Cadılık: Saklı Ayin</strong>",
+      "3": "Mona'nın Normal veya Yüklü Saldırıları bir düşmana isabet ettiğinde Mona 8 saniyeliğine 1 <strong>Merkürün Kozmik Parıltısı</strong> kademesi kazanır. En fazla 3 kademeye kadar birikebilir. Bu etki en fazla her 0,1 saniyede bir kademe kazandırabilir. Diğer grup üyeleri bir düşman üzerinde Buharlaşma tepkimesi tetiklediğinde tüm Merkürün Kozmik Parıltısı kademeleri tüketilir. Tüketilen her kademe bu Buharlaşma tepkimesinin Hasarını %5 artırır.",
+      "4": "Ayrıca, Mona'nın Normal veya Yüklü Saldırıları bir düşmana isabet ettiğinde düşmanın <strong>Alamet</strong> süresi 2sn uzar. Bu etki en fazla 0,5 saniyede bir defa tetiklenebilir ve bu yöntemle Alamet süresi en fazla 8sn uzatılabilir."
+    }
+  },
   "constellation1": {
     "name": "Batışın Kehaneti",
     "description": {
-      "0": "Kendi grup üyelerinden biri Alamet etkisi altındayken <hydro>Su içeren Element Tepkimelerinin</hydro> etkileri 8 saniyeliğine artar:",
+      "0": "Kendi grup üyelerinden biri, Alamet etkisindeki bir düşmana vurduğunda 8 saniyeliğine <hydro>Su ile ilgili Element Tepkimelerin</hydro> etkileri güçlenir:",
       "1": [
-        "Elektrik Yüklü Hasarı %15 artar.",
-        "Ay Yüklü Hasarı %15 artar.",
-        "Buharlaşma Hasarı %15 artar.",
-        "Su Girdabı Hasarı %15 artar.",
+        "Elektrik Yüklü Hasarı %15 artar, Ay Yüklü Hasarı %15 artar, Buharlaşma Hasarı %15 artar, Su Girdabı Hasarı %15 artar, Ay Kristalleşmesi Hasarı %15 artar.",
         "Donma süresi %15 uzar."
       ]
+    },
+    "upgradedDescription": {
+      "0": "Kendi grup üyelerinden biri, Alamet etkisindeki bir düşmana vurduğunda 8 saniyeliğine <hydro>Su ile ilgili Element Tepkimelerin</hydro> etkileri güçlenir:",
+      "1": [
+        "Elektrik Yüklü Hasarı %15 artar, Ay Yüklü Hasarı %15 artar, Buharlaşma Hasarı %15 artar, Su Girdabı Hasarı %15 artar, Ay Kristalleşmesi Hasarı %15 artar.",
+        "Donma süresi %15 uzar."
+      ],
+      "2": "<br/>",
+      "3": "Ayrıca savaş alanında olmayan grup üyelerin yukarıdaki etkiyi tetiklerse, yukarıdaki Su ile ilgili Element Tepkimelerinin Hasar Bonusu, orijinal etkisinin %160'ına yükseltilir."
     }
   },
   "constellation2": {
@@ -162,6 +178,11 @@
     "description": {
       "0": "Bir Normal Saldırıdan sonra %20 ihtimalle Yüklü Saldırı yapar.",
       "1": "Bu etki 5 saniyede bir uygulanabilir."
+    },
+    "upgradedDescription": {
+      "0": "Bir Normal Saldırı isabet ettikten sonra %20 ihtimalle otomatik olarak bunu takip eden bir Yüklü Saldırı yapılır. Ayrıca Mona <strong>Kaderin Yıldızı</strong> Element Patlamasını kullandıktan sonraki 5sn içinde, Mona'nın düşmana isabet eden sıradaki Normal Saldırısı otomatik olarak bir Yüklü Saldırı tetikler.",
+      "1": "Yukarıdaki Yüklü Saldırı etkisi 5 saniyede bir uygulanabilir.",
+      "2": "Mona'nın Yüklü Saldırısı bir düşmana isabet ettiğinde, 12 saniyeliğine yakındaki tüm grup üyelerinin Element Ustalığı 80 artar."
     }
   },
   "constellation3": {
@@ -175,6 +196,10 @@
     "name": "Yok Oluş Kehaneti",
     "description": {
       "0": "Herhangi bir grup üyesi, Alamet etkisindeki bir düşmana saldırdığında Kritik Oranı %15 artar."
+    },
+    "upgradedDescription": {
+      "0": "Herhangi bir grup üyesi, Alamet etkisindeki bir düşmana saldırdığında Kritik Oranı %15 artar.",
+      "1": "Gruptaki herhangi bir Cadılık karakteri Alamet etkisindeki bir düşmana saldırdığında Kritik Hasarı %15 artar."
     }
   },
   "constellation5": {
@@ -189,6 +214,10 @@
     "description": {
       "0": "Mona, <strong>Hayali Akıntı</strong> etkisindeyken hareket ettiği saniye başına bir sonraki Yüklü Saldırı Hasarı %60 artar.",
       "1": "Bu şekilde maksimum %180 Hasar Bonusu kazanılabilir. Etki 8 saniye sürer."
+    },
+    "upgradedDescription": {
+      "0": "Mona aktif karakterken <strong>Hayali Akıntı</strong> durumuna girdiğinde veya yakınlarda Alamet etkisindeki düşmanlar olduğunda, her saniye başına bir sonraki Yüklü Saldırı Hasarı %60 artar. Bu şekilde maksimum %180 Hasar Bonusu kazanılabilir. Etki en fazla 8 saniye sürer.",
+      "1": "Ayrıca Mona'nın Alamet etkisindeki düşmanlara yaptığı Yüklü Saldırılar, orijinal Hasarın %200'ü kadar Hasar verir."
     }
   }
 }

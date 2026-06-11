@@ -1,0 +1,29 @@
+{
+  "setName": "Ngày Nổi Gió",
+  "setEffects": {
+    "2": "Tấn công tăng 18%.",
+    "4": "Sau khi Tấn Công Thường, Trọng Kích, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ đánh trúng kẻ địch, sẽ nhận hiệu quả \"Thương Mến Của Gió Và Bài Ca Chăn Cừu\" trong 6s: Tấn Công tăng 25%. Nếu người trang bị đã hoàn thành Bài Tập Của Ma Nữ, \"Thương Mến Của Gió Và Bài Ca Chăn Cừu\" sẽ được nâng cấp thành \"Quyết Tâm Của Gió Và Bài Ca Chăn Cừu\", tăng thêm 20% Tỷ Lệ Bạo Kích cho người trang bị vượt qua thử thách. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Lời Răn Của Hoa Gió",
+      "desc": "Hoa pha lê xanh không bao giờ tàn úa. Nghe nói trong quá khứ xa xôi từng thuộc về một thiếu nữ lưu vong có khả năng triệu gọi ngàn cơn gió và muôn hoa."
+    },
+    "plume": {
+      "name": "Lời Thề Nguyện Ánh Sáng",
+      "desc": "Chiếc lông màu xanh biếc tinh khiết như ánh bình minh. Nghe nói trong quá khứ xa xôi từng thuộc về một thị vệ từ bỏ danh tính nào đó."
+    },
+    "sands": {
+      "name": "Khoảnh Khắc Của Mùa Xuân",
+      "desc": "Đồng hồ cát chứa đầy cát mịn xanh biếc. Không hiểu vì sao, dù có lật ngược thế nào thì những hạt cát bên trong cũng không hề chuyển động."
+    },
+    "goblet": {
+      "name": "Lời Tiệc Rượu Chưa Nói",
+      "desc": "Ly rượu màu xanh có kiểu dáng cổ xưa. Nghe nói trong quá khứ xa xôi từng thuộc về một nhà thơ vô danh nào đó."
+    },
+    "circlet": {
+      "name": "Khúc Tình Ca Đau Thương",
+      "desc": "Món trang sức quý phái, điểm xuyết bởi ngọc lục bảo và thủy tinh xanh. Nghe nói trong quá khứ xa xôi từng là tín vật mà Chúa Tể Bão Tố ban tặng cho người được sủng ái."
+    }
+  }
+}

@@ -1,0 +1,143 @@
+// WARNING: Generated file, do not modify
+export const buffs = {
+  core_hpSheerForce: {
+    sheet: 'Banyue',
+    name: 'core_hpSheerForce',
+    tag: {
+      et: 'display',
+      qt: 'initial',
+      q: 'sheerForce',
+      sheet: 'Banyue',
+      name: 'core_hpSheerForce',
+    },
+  },
+  core_sheerForce: {
+    sheet: 'Banyue',
+    name: 'core_sheerForce',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'sheerForce',
+      sheet: 'Banyue',
+      name: 'core_sheerForce',
+    },
+  },
+  core_fire_dmg_: {
+    sheet: 'Banyue',
+    name: 'core_fire_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'dmg_',
+      sheet: 'Banyue',
+      attribute: 'fire',
+      name: 'core_fire_dmg_',
+    },
+  },
+  core_crit_dmg_: {
+    sheet: 'Banyue',
+    name: 'core_crit_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'crit_dmg_',
+      sheet: 'Banyue',
+      name: 'core_crit_dmg_',
+    },
+  },
+  ability_fire_dmg_: {
+    sheet: 'Banyue',
+    name: 'ability_fire_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'dmg_',
+      sheet: 'Banyue',
+      attribute: 'fire',
+      name: 'ability_fire_dmg_',
+    },
+  },
+  m1_fire_resRed_: {
+    sheet: 'Banyue',
+    name: 'm1_fire_resRed_',
+    tag: {
+      et: 'display',
+      qt: 'common',
+      q: 'resRed_',
+      sheet: 'Banyue',
+      attribute: 'fire',
+      name: 'm1_fire_resRed_',
+    },
+  },
+  m1_basic_sheer_dmg_: {
+    sheet: 'Banyue',
+    name: 'm1_basic_sheer_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'sheer_dmg_',
+      sheet: 'Banyue',
+      damageType1: 'basic',
+      name: 'm1_basic_sheer_dmg_',
+    },
+  },
+  m1_exSpecial_sheer_dmg_: {
+    sheet: 'Banyue',
+    name: 'm1_exSpecial_sheer_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'sheer_dmg_',
+      sheet: 'Banyue',
+      damageType1: 'exSpecial',
+      name: 'm1_exSpecial_sheer_dmg_',
+    },
+  },
+  m2_crit_dmg_: {
+    sheet: 'Banyue',
+    name: 'm2_crit_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'crit_dmg_',
+      sheet: 'Banyue',
+      name: 'm2_crit_dmg_',
+    },
+  },
+  m2_fire_dmg_: {
+    sheet: 'Banyue',
+    name: 'm2_fire_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'dmg_',
+      sheet: 'Banyue',
+      attribute: 'fire',
+      name: 'm2_fire_dmg_',
+    },
+  },
+  m4_exSpecial_dmg_: {
+    sheet: 'Banyue',
+    name: 'm4_exSpecial_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'dmg_',
+      sheet: 'Banyue',
+      damageType1: 'exSpecial',
+      name: 'm4_exSpecial_dmg_',
+    },
+  },
+  m4_basic_dmg_: {
+    sheet: 'Banyue',
+    name: 'm4_basic_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'dmg_',
+      sheet: 'Banyue',
+      damageType1: 'basic',
+      name: 'm4_basic_dmg_',
+    },
+  },
+} as const

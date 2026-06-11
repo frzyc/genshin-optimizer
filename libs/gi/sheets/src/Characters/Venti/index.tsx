@@ -1,7 +1,9 @@
 import { ColorText } from '@genshin-optimizer/common/ui'
 import { absorbableEle } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
+import type { NumNode } from '@genshin-optimizer/gi/wr'
 import {
+  compareEq,
   constant,
   equal,
   greaterEq,
@@ -9,10 +11,12 @@ import {
   input,
   lookup,
   naught,
+  one,
   percent,
   prod,
   subscript,
   sum,
+  tally,
   target,
   unequal,
 } from '@genshin-optimizer/gi/wr'
@@ -27,12 +31,17 @@ import {
   plungingDmgNodes,
 } from '../dataUtil'
 
+import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 
 const key: CharacterKey = 'Venti'
 const elementKey: ElementKey = 'anemo'
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key)
+
+const [condLockHomeworkPath, condLockHomework] = cond(key, 'lockHomework')
+const lockHomework_hexerei = equal(condLockHomework, 'on', 1)
+
+const ct = charTemplates(key, lockHomework_hexerei)
 
 let a = 0,
   s = 0,
@@ -47,6 +56,7 @@ const dm = {
       skillParam_gen.auto[a++], // 5
       skillParam_gen.auto[a++], // 6
     ],
+    windsunder_mult_: skillParam_gen.auto[11],
   },
   charged: {
     aimed: skillParam_gen.auto[a++], // Aimed
@@ -79,12 +89,21 @@ const dm = {
   passive3: {
     stam_: 0.2,
   },
+  lockedPassive: {
+    dmg_: skillParam_gen.lockedPassive![0][0],
+    burst_mult_: skillParam_gen.lockedPassive![1][0],
+    duration: skillParam_gen.lockedPassive![2][0],
+  },
   constellation1: {
     dmgRatio: 0.33,
+    windsunder_mult_: skillParam_gen.constellation1[0],
   },
   constellation2: {
     res_: -0.12,
     duration: 10,
+    resetChance: skillParam_gen.constellation2[0],
+    skill_mult_: skillParam_gen.constellation2[1],
+    extraSkillDuration: skillParam_gen.constellation2[2],
   },
   constellation4: {
     anemo_dmg_: 0.25,
@@ -93,6 +112,7 @@ const dm = {
   constellation6: {
     res_: -0.2,
     duration: 10, // From KQM
+    critDMG_: skillParam_gen.constellation6[0],
   },
 } as const
 
@@ -112,7 +132,12 @@ const c2Hit_anemo_enemyRes_ = greaterEq(
   lookup(
     condC2,
     {
-      hit: constant(dm.constellation2.res_),
+      hit: compareEq(
+        condLockHomework,
+        'on',
+        dm.constellation2.res_ * 2,
+        dm.constellation2.res_
+      ),
       launched: prod(dm.constellation2.res_, 2),
     },
     naught
@@ -124,7 +149,11 @@ const [condC4Path, condC4] = cond(key, 'c4')
 const c4_anemo_dmg_ = greaterEq(
   input.constellation,
   4,
-  equal(condC4, 'pickup', dm.constellation4.anemo_dmg_)
+  unequal(
+    condLockHomework,
+    'on',
+    equal(condC4, 'pickup', dm.constellation4.anemo_dmg_)
+  )
 )
 
 const [condC6Path, condC6] = cond(key, 'c6')
@@ -148,10 +177,100 @@ const c6_ele_enemyRes_arr = Object.fromEntries(
   ])
 )
 
+const [condLockBurstSwirlPath, condLockBurstSwirl] = cond(key, 'lockBurstSwirl')
+const lockBurstSwirl_all_dmg_disp = greaterEq(
+  tally.hexerei,
+  2,
+  equal(
+    condLockHomework,
+    'on',
+    equal(condLockBurstSwirl, 'on', dm.lockedPassive.dmg_)
+  )
+)
+const lockBurstSwirl_all_dmg_ = equal(
+  input.activeCharKey,
+  target.charKey,
+  lockBurstSwirl_all_dmg_disp
+)
+const lockBurstSwirl_burst_mult_ = sum(
+  one,
+  greaterEq(
+    tally.hexerei,
+    2,
+    equal(
+      condLockHomework,
+      'on',
+      equal(condLockBurstSwirl, 'on', percent(dm.lockedPassive.burst_mult_ - 1))
+    )
+  )
+)
+
+const [condLockC4SkillBurstPath, condLockC4SkillBurst] = cond(
+  key,
+  'lockC4SkillBurst'
+)
+const lockC4SkillBurst_anemo_dmg_self = greaterEq(
+  input.constellation,
+  4,
+  equal(
+    condLockHomework,
+    'on',
+    equal(condLockC4SkillBurst, 'on', dm.constellation4.anemo_dmg_)
+  )
+)
+const lockC4SkillBurst_anemo_dmg_activeDisp = greaterEq(
+  input.constellation,
+  4,
+  equal(
+    condLockHomework,
+    'on',
+    equal(condLockC4SkillBurst, 'on', dm.constellation4.anemo_dmg_)
+  )
+)
+const lockC4SkillBurst_anemo_dmg_active = equal(
+  input.activeCharKey,
+  target.charKey,
+  unequal(target.charKey, key, lockC4SkillBurst_anemo_dmg_activeDisp)
+)
+
+const lockC6_critDMG_ = greaterEq(
+  input.constellation,
+  6,
+  equal(
+    condLockHomework,
+    'on',
+    equal(condC6, 'takeDmg', dm.constellation6.critDMG_)
+  )
+)
+
 const dmgFormulas = {
-  normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
-  ),
+  normal: {
+    ...Object.fromEntries(
+      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    ),
+    ...Object.fromEntries(
+      dm.normal.hitArr.map((arr, i) => [
+        `hex${i}`,
+        greaterEq(
+          tally.hexerei,
+          2,
+          equal(
+            condLockHomework,
+            'on',
+            dmgNode(
+              'atk',
+              arr,
+              'normal',
+              { hit: { ele: constant('anemo') } },
+              subscript(input.total.autoIndex, dm.normal.windsunder_mult_, {
+                unit: '%',
+              })
+            )
+          )
+        ),
+      ])
+    ),
+  },
   charged: {
     aimed: dmgNode('atk', dm.charged.aimed, 'charged'),
     fully: dmgNode('atk', dm.charged.fully, 'charged', {
@@ -164,13 +283,25 @@ const dmgFormulas = {
     hold: dmgNode('atk', dm.skill.holdDmg, 'skill'),
   },
   burst: {
-    base: dmgNode('atk', dm.burst.baseDmg, 'burst'),
+    base: dmgNode(
+      'atk',
+      dm.burst.baseDmg,
+      'burst',
+      undefined,
+      lockBurstSwirl_burst_mult_
+    ),
     absorb: unequal(
       condBurstAbsorption,
       undefined,
-      dmgNode('atk', dm.burst.absorbDmg, 'burst', {
-        hit: { ele: condBurstAbsorption },
-      })
+      dmgNode(
+        'atk',
+        dm.burst.absorbDmg,
+        'burst',
+        {
+          hit: { ele: condBurstAbsorption },
+        },
+        lockBurstSwirl_burst_mult_
+      )
     ),
   },
   constellation1: {
@@ -199,6 +330,47 @@ const dmgFormulas = {
         { hit: { ele: constant(elementKey) } }
       )
     ),
+    ...objKeyMap(
+      dm.normal.hitArr.map((_arr, i) => `hex${i}` as const),
+      (_k, i) =>
+        greaterEq(
+          tally.hexerei,
+          2,
+          equal(
+            condLockHomework,
+            'on',
+            dmgNode(
+              'atk',
+              dm.normal.hitArr[i],
+              'normal',
+              { hit: { ele: constant('anemo') } },
+              prod(
+                subscript(input.total.autoIndex, dm.normal.windsunder_mult_, {
+                  unit: '%',
+                }),
+                percent(dm.constellation1.windsunder_mult_)
+              )
+            )
+          )
+        )
+    ),
+  } as Record<'aimed' | 'fully' | `hex${number}`, NumNode>,
+  constellation2: {
+    dmg: greaterEq(
+      input.constellation,
+      2,
+      equal(
+        condLockHomework,
+        'on',
+        dmgNode(
+          'atk',
+          dm.skill.pressDmg,
+          'skill',
+          undefined,
+          percent(dm.constellation2.skill_mult_)
+        )
+      )
+    ),
   },
 }
 
@@ -206,22 +378,31 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
   premod: {
     burstBoost: nodeC3,
     skillBoost: nodeC5,
-    anemo_dmg_: c4_anemo_dmg_,
+    anemo_dmg_: sum(c4_anemo_dmg_, lockC4SkillBurst_anemo_dmg_self),
     staminaGlidingDec_: p3_staminaGlidingDec_,
+    critDMG_: lockC6_critDMG_,
   },
   teamBuff: {
     premod: {
       anemo_enemyRes_: sum(c2Hit_anemo_enemyRes_, c6_anemo_enemyRes_),
       physical_enemyRes_: c2Hit_phys_enemyRes__,
       ...c6_ele_enemyRes_arr,
+      all_dmg_: lockBurstSwirl_all_dmg_,
+      anemo_dmg_: lockC4SkillBurst_anemo_dmg_active,
     },
   },
+  isHexerei: lockHomework_hexerei,
 })
 
 const sheet: TalentSheet = {
   auto: ct.talentTem('auto', [
     {
+      canShow: unequal(condLockHomework, 'on', 1),
       text: ct.chg('auto.fields.normal'),
+    },
+    {
+      canShow: lockHomework_hexerei,
+      text: ct.chg('auto.upgradedFields.normal'),
     },
     {
       fields: dm.normal.hitArr.map((_, i) => ({
@@ -232,7 +413,12 @@ const sheet: TalentSheet = {
       })),
     },
     {
+      canShow: unequal(condLockHomework, 'on', 1),
       text: ct.chg('auto.fields.charged'),
+    },
+    {
+      canShow: lockHomework_hexerei,
+      text: ct.chg('auto.upgradedFields.charged'),
     },
     {
       fields: [
@@ -253,17 +439,30 @@ const sheet: TalentSheet = {
         {
           node: infoMut(dmgFormulas.constellation1.aimed, {
             name: ct.ch('addAimed'),
+            multi: 2,
           }),
         },
         {
           node: infoMut(dmgFormulas.constellation1.fully, {
             name: ct.ch('addFullAimed'),
+            multi: 2,
           }),
         },
+        ...dm.normal.hitArr.map((_, i) => ({
+          node: infoMut(dmgFormulas.constellation1[`hex${i}`], {
+            name: ct.chg(`auto.skillParams.${i}`),
+            multi: i === 0 || i === 3 ? 2 * 2 : 2,
+          }),
+        })),
       ],
     }),
     {
+      canShow: unequal(condLockHomework, 'on', 1),
       text: ct.chg('auto.fields.plunging'),
+    },
+    {
+      canShow: lockHomework_hexerei,
+      text: ct.chg('auto.upgradedFields.plunging'),
     },
     {
       fields: [
@@ -283,6 +482,18 @@ const sheet: TalentSheet = {
           }),
         },
       ],
+    },
+    {
+      canShow: lockHomework_hexerei,
+      text: ct.chg('auto.upgradedFields.hexerei'),
+    },
+    {
+      fields: dm.normal.hitArr.map((_, i) => ({
+        node: infoMut(dmgFormulas.normal[`hex${i}`], {
+          name: ct.chg(`auto.skillParams.${i}`),
+          multi: i === 0 || i === 3 ? 2 : undefined,
+        }),
+      })),
     },
   ]),
 
@@ -337,6 +548,11 @@ const sheet: TalentSheet = {
             {
               node: c2Hit_phys_enemyRes__,
             },
+            {
+              text: stg('duration'),
+              value: dm.constellation2.duration,
+              unit: 's',
+            },
           ],
         },
         launched: {
@@ -353,6 +569,13 @@ const sheet: TalentSheet = {
           ],
         },
       },
+    }),
+    ct.headerTem('constellation2', {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.constellation2.dmg, { name: st('dmg') }),
+        },
+      ],
     }),
   ]),
 
@@ -426,6 +649,9 @@ const sheet: TalentSheet = {
             {
               node: infoMut(c6_anemo_enemyRes_, { path: 'anemo_enemyRes_' }),
             },
+            {
+              node: lockC6_critDMG_,
+            },
           ],
         },
       },
@@ -471,6 +697,53 @@ const sheet: TalentSheet = {
   passive3: ct.talentTem('passive3', [
     { fields: [{ node: p3_staminaGlidingDec_ }] },
   ]),
+  lockedPassive: ct.talentTem('lockedPassive', [
+    ct.condTem('lockedPassive', {
+      path: condLockHomeworkPath,
+      value: condLockHomework,
+      teamBuff: true,
+      name: st('hexerei.homeworkDone'),
+      states: {
+        on: {
+          fields: [
+            {
+              text: st('hexerei.becomeHexerei', {
+                val: `$t(charNames_gen:${key})`,
+              }),
+            },
+            {
+              text: st('hexerei.talentEnhance'),
+            },
+          ],
+        },
+      },
+    }),
+    ct.condTem('lockedPassive', {
+      path: condLockBurstSwirlPath,
+      value: condLockBurstSwirl,
+      teamBuff: true,
+      canShow: greaterEq(tally.hexerei, 2, lockHomework_hexerei),
+      name: ct.ch('lockCond'),
+      states: {
+        on: {
+          fields: [
+            {
+              node: infoMut(lockBurstSwirl_all_dmg_disp, {
+                path: 'all_dmg_',
+                isTeamBuff: true,
+              }),
+            },
+            {
+              node: infoMut(lockBurstSwirl_burst_mult_, {
+                name: ct.ch('stormeye_mult_'),
+                pivot: true,
+              }),
+            },
+          ],
+        },
+      },
+    }),
+  ]),
   constellation1: ct.talentTem('constellation1'),
   constellation2: ct.talentTem('constellation2'),
   constellation3: ct.talentTem('constellation3', [
@@ -481,11 +754,36 @@ const sheet: TalentSheet = {
       value: condC4,
       path: condC4Path,
       name: st('getElementalOrbParticle'),
+      canShow: unequal(condLockHomework, 'on', 1),
       states: {
         pickup: {
           fields: [
             {
-              node: c4_anemo_dmg_,
+              node: infoMut(c4_anemo_dmg_, { path: 'anemo_dmg_' }),
+            },
+          ],
+        },
+      },
+    }),
+    ct.condTem('constellation4', {
+      value: condLockC4SkillBurst,
+      path: condLockC4SkillBurstPath,
+      teamBuff: true,
+      canShow: lockHomework_hexerei,
+      name: st('afterUse.skillOrBurst'),
+      states: {
+        on: {
+          fields: [
+            {
+              node: infoMut(lockC4SkillBurst_anemo_dmg_self, {
+                path: 'anemo_dmg_',
+              }),
+            },
+            {
+              node: infoMut(lockC4SkillBurst_anemo_dmg_activeDisp, {
+                path: 'anemo_dmg_',
+                isTeamBuff: true,
+              }),
             },
           ],
         },

@@ -1,14 +1,14 @@
-import {
-  getUnitStr,
-  shouldShowDevComponents,
-  valueString,
-} from '@genshin-optimizer/common/util'
+import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
 import type { Read } from '@genshin-optimizer/game-opt/engine'
 import { DebugReadContext } from '@genshin-optimizer/game-opt/formula-ui'
-import { FormulaHelpIcon } from '@genshin-optimizer/game-opt/sheet-ui'
+import {
+  FieldDisplayList,
+  TagFieldDisplay,
+} from '@genshin-optimizer/game-opt/sheet-ui'
 import type { StatKey } from '@genshin-optimizer/zzz/consts'
 import { applyDamageTypeToTag } from '@genshin-optimizer/zzz/db'
-import { useCharOpt, useCharacterContext } from '@genshin-optimizer/zzz/db-ui'
+import { getTeamFrame0 } from '@genshin-optimizer/zzz/db'
+import { useCharacterContext, useTeam } from '@genshin-optimizer/zzz/db-ui'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { own } from '@genshin-optimizer/zzz/formula'
 import {
@@ -17,91 +17,74 @@ import {
   getHighlightRGBA,
   isHighlight,
 } from '@genshin-optimizer/zzz/ui'
-import { Box, CardContent } from '@mui/material'
+import { ListItem } from '@mui/material'
 import { useContext, useMemo } from 'react'
-import { TagDisplay } from '../components'
 import { useZzzCalcContext } from '../hooks'
+import { tagToTagField } from '../util'
+
 export function CharStatsDisplay() {
   const calc = useZzzCalcContext()
   return (
     <ZCard>
-      <CardContent>
+      <FieldDisplayList sx={{ m: 0 }} bgt="normal">
         {calc?.listFormulas(own.listing.formulas).map((read, index) => (
-          <StatLine key={index} read={read} />
+          <CharStatRow key={index} read={read} />
         ))}
-      </CardContent>
+      </FieldDisplayList>
     </ZCard>
   )
 }
-/**
- * @deprecated need to be merged with TagFieldDisplay in `libs\game-opt\sheet-ui\src\components\FieldDisplay.tsx`, but need game-opt `formulaText`
- */
-function StatLine({ read }: { read: Read<Tag> }) {
-  const calc = useZzzCalcContext()
+
+function CharStatRow({ read }: { read: Read<Tag> }) {
   const { setRead } = useContext(DebugReadContext)
-
   const character = useCharacterContext()
-  const charOpt = useCharOpt(character?.key)
+  const team = useTeam(character?.key)
+  const optTarget = team ? getTeamFrame0(team).tag : undefined
 
-  const emphasize =
-    (read.tag.sheet === charOpt?.target?.sheet &&
-      read.tag.name === charOpt?.target?.name) ||
-    charOpt?.target?.q === read.tag.q
-  const tag = useMemo(() => {
+  const mergedTag = useMemo(() => {
     if (
-      read.tag.sheet === charOpt?.target?.sheet &&
-      read.tag.name === charOpt?.target?.name
+      read.tag.sheet === optTarget?.sheet &&
+      read.tag.name === optTarget?.name
     )
       return applyDamageTypeToTag(
         read.tag,
-        charOpt?.target?.damageType1,
-        charOpt?.target?.damageType2
+        optTarget?.damageType1,
+        optTarget?.damageType2
       )
     return read.tag
   }, [
     read.tag,
-    charOpt?.target?.sheet,
-    charOpt?.target?.name,
-    charOpt?.target?.damageType1,
-    charOpt?.target?.damageType2,
+    optTarget?.sheet,
+    optTarget?.name,
+    optTarget?.damageType1,
+    optTarget?.damageType2,
   ])
-  const newRead = useMemo(
-    () => ({
-      ...read,
-      tag,
-    }),
-    [tag, read]
-  )
-  const computed = calc?.compute(newRead)
-  const name = tag.name || tag.q
+
+  const calcRead = useMemo(() => read.withTag(mergedTag), [mergedTag, read])
 
   const { statHighlight, setStatHighlight } = useContext(StatHighlightContext)
-  const tagQStatKqy = tag.name
+  const tagQStatKey = mergedTag.name
     ? ''
-    : tag.attribute
-      ? `${tag.attribute}_${tag.q}`
-      : tag.q === 'cappedCrit_'
+    : mergedTag.attribute
+      ? `${mergedTag.attribute}_${mergedTag.q}`
+      : mergedTag.q === 'cappedCrit_'
         ? 'crit_'
-        : tag.q === 'anom_cappedCrit_'
+        : mergedTag.q === 'anom_cappedCrit_'
           ? 'anom_crit_'
-          : tag.q
-  const isHL = tagQStatKqy
-    ? isHighlight(statHighlight, tagQStatKqy as StatKey)
+          : mergedTag.q
+  const isHL = tagQStatKey
+    ? isHighlight(statHighlight, tagQStatKey as StatKey)
     : false
 
-  if (!computed) return null
-  const valDisplay = valueString(computed.val, getUnitStr(name ?? ''))
   return (
-    <Box
-      onMouseEnter={() => tagQStatKqy && setStatHighlight(tagQStatKqy)}
+    <TagFieldDisplay
+      field={tagToTagField(mergedTag)}
+      calcRead={calcRead}
+      showZero
+      component={ListItem}
+      onMouseEnter={() => tagQStatKey && setStatHighlight(tagQStatKey)}
       onMouseLeave={() => setStatHighlight('')}
-      sx={{
-        display: 'flex',
-        gap: 1,
-        alignItems: 'center',
-        p: 0.5,
-        borderRadius: 0.5,
-        backgroundColor: emphasize ? 'rgba(0,200,0,0.2)' : undefined,
+      rowSx={{
         position: 'relative',
         '::after': {
           content: '""',
@@ -110,23 +93,14 @@ function StatLine({ read }: { read: Read<Tag> }) {
           left: 0,
           width: '100%',
           height: '100%',
-          borderRadius: 0.5,
           backgroundColor: getHighlightRGBA(isHL),
           transition: 'background-color 0.3s ease-in-out',
           pointerEvents: 'none',
         },
       }}
-    >
-      <Box sx={{ flexGrow: 1 }}>
-        <TagDisplay tag={tag} />
-      </Box>
-      {valDisplay}
-      <FormulaHelpIcon
-        tag={tag}
-        onClick={() => {
-          shouldShowDevComponents && setRead(newRead)
-        }}
-      />
-    </Box>
+      onClickFormula={
+        shouldShowDevComponents ? () => setRead(calcRead) : () => {}
+      }
+    />
   )
 }

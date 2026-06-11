@@ -20,6 +20,29 @@
         "1": "Dispara uma chuva de flechas em pleno ar antes de atingir o chão, infligindo Dano em uma AdE durante o impacto."
       }
     },
+    "upgradedFields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza até 6 disparos consecutivos com o arco."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Realiza um <strong>Disparo com Mira</strong> mais preciso com Dano aumentado.",
+        "2": "Enquanto estiver mirando, ventos favoráveis irão se acumular na ponta da flecha. Uma flecha completamente carregada com o vento irá infligir <anemo>Dano Anemo</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Dispara uma chuva de flechas em pleno ar antes de atingir o chão, infligindo Dano em uma AdE durante o impacto."
+      },
+      "hexerei": {
+        "0": "<strong>Mágico: Ritual Secreto</strong>",
+        "1": "Enquanto o Olho da Tempestade criado pelo Supremo <strong>Grande Ode do Vento</strong> estiver ativo, Venti ganhará bônus adicionais:",
+        "2": [
+          " Quando a <strong>Flecha Furacão</strong> do Ataque Normal convertido de Venti atingir um inimigo, causará mais <anemo>Dano Anemo</anemo> contra os inimigos que atingir no caminho.",
+          " Quando o Ataque Normal de Venti atingir um inimigo, prolongará a duração do Olho da Tempestade em 1s, e prolongará a recarga em 0.5s. Esse efeito pode ser desencadeado uma vez a cada 0.1s, podendo ser desencadeado até 2 vezes por Supremo <strong>Grande Ode do Vento</strong> lançado."
+        ]
+      }
+    },
     "skillParams": {
       "0": "Dano do 1° Golpe",
       "1": "Dano do 2° Golpe",
@@ -31,7 +54,7 @@
       "7": "Disparo com Mira com Energização Completa",
       "8": "Dano Durante a Queda",
       "9": "Dano de Queda de Baixa/Alta Altitude",
-      "10": "",
+      "10": "Dano da Flecha Furacão",
       "11": "",
       "12": "",
       "13": "",
@@ -124,10 +147,23 @@
       "1": "Não acumulável com Talentos Passivos que concedem exatamente os mesmos efeitos."
     }
   },
+  "lockedPassive": {
+    "name": "Presente da Noite da Bruxa: Ode ao Vento",
+    "description": {
+      "0": "Depois de completar <strong>Tarefa da Bruxa: No Despertar do Vento</strong>, Venti se tornará um personagem <strong>Mágico</strong>. Quando a equipe possuir pelo menos 2 personagens Mágicos, obterá o efeito <strong>Mágico: Ritual Secreto</strong>, fortalecendo os personagens Mágicos.",
+      "1": "<br/>",
+      "2": "<strong>Mágico: Ritual Secreto</strong>",
+      "3": "Enquanto o Olho da Tempestade criado pelo Supremo <strong>Grande Ode do Vento</strong> existir, e nos 4s após o personagem ativo causar Redemoinho, aumentará o Dano desse personagem em 50% e o Dano do Olho da Tempestade de Venti em 135% de seu valor original."
+    }
+  },
   "constellation1": {
     "name": "Vento Dividido",
     "description": {
       "0": "Dispara 2 flechas adicionais por cada <strong>Disparo com Mira</strong>, cada flecha causa 33% do Dano original da flecha."
+    },
+    "upgradedDescription": {
+      "0": "O <strong>Disparo com Mira </strong> dispara duas flechas adicionais, cada uma causando 33% de Dano original.",
+      "1": "Além disso, <strong>Flecha Furacão</strong> também dispara duas flechas perseguidoras, cada uma causando 20% do Dano original. Esse efeito pode ser desencadeado uma vez a cada 0.25s."
     }
   },
   "constellation2": {
@@ -135,6 +171,13 @@
     "description": {
       "0": "<strong>Sonata Celestial</strong> diminui a <anemo>RES Anemo</anemo> e RES Física do inimigo em 12% por 10s.",
       "1": "Os inimigos lançados pela <strong>Sonata Celestial</strong> sofrem uma penalidade adicional de <anemo>RES Anemo</anemo> de 12% e RES física quando estiverem no ar."
+    },
+    "upgradedDescription": {
+      "0": "<strong>Sonata Celestial</strong> reduz a <anemo>RES Anemo</anemo> e RES Física do inimigo em 24% por 10s.",
+      "1": "Além disso, depois de lançar o Supremo <strong>Grande Ode do Vento</strong>, Venti obtém o efeito <strong>Ascensão Zéfira</strong>, e redefine a recarga da Habilidade Elemental <strong>Sonata Celestial</strong>. Depois da <strong>Flecha Furacão</strong> atingir um inimigo, Venti possui 25% de chance de obter o efeito <strong>Ascensão Zéfira</strong>.",
+      "2": "<br/>",
+      "3": "<strong>Ascensão Zéfira</strong>",
+      "4": "Ao pressionar para lançar a Habilidade Elemental <strong>Sonata Celestial</strong>, causa 300% do Dano original. Esse efeito dura 15s, e será removido quando Venti pressionar a Habilidade Elemental <strong>Sonata Celestial</strong>."
     }
   },
   "constellation3": {
@@ -148,6 +191,9 @@
     "name": "Furacão da Liberdade",
     "description": {
       "0": "Quando Venti obtém um Orbe ou uma Partícula Elemental, ele recebe 25% de <anemo>Dano Anemo Bônus</anemo> por 10s."
+    },
+    "upgradedDescription": {
+      "0": "Depois que Venti lançar a Habilidade Elemental <strong>Sonata Celestial</strong> ou o Supremo <strong>Grande Ode do Vento</strong>, Venti e os demais personagens ativos da equipe obtêm 25% de <anemo>Bônus de Dano Anemo</anemo> por 10s."
     }
   },
   "constellation5": {
@@ -162,6 +208,11 @@
     "description": {
       "0": "Alvos que levarem Dano da <strong>Grande Ode do Vento</strong> terão sua <anemo>RES Anemo</anemo> reduzida em 20%.",
       "1": "Se uma Absorção Elemental ocorrer, então sua RES ao Elemento correspondente também é reduzida em 20%."
+    },
+    "upgradedDescription": {
+      "0": "Alvos que levarem Dano da <strong>Grande Ode do Vento</strong> terão sua <anemo>RES Anemo</anemo> reduzida em 20%.",
+      "1": "Se uma Absorção Elemental ocorrer, então sua RES ao Elemento correspondente também é reduzida em 20%.",
+      "2": "Além disso, o Dano que Venti causar contra esses inimigos obtém 100% de bônus de Dano CRIT."
     }
   }
 }

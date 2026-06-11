@@ -39,6 +39,20 @@ export const formulas = {
       name: 'disorderDmgInst_ice',
     },
   },
+  abloomDmgInst: {
+    sheet: 'Yidhari',
+    name: 'abloomDmgInst',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'Yidhari',
+      attribute: 'ice',
+      damageType1: 'anomaly',
+      damageType2: 'abloom',
+      name: 'abloomDmgInst',
+    },
+  },
   anomalyBuildupInst: {
     sheet: 'Yidhari',
     name: 'anomalyBuildupInst',
@@ -1069,6 +1083,17 @@ export const formulas = {
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
       name: 'AssistFollowUpGlacialOnslaught_0_anomBuildup',
+    },
+  },
+  m6_heal: {
+    sheet: 'Yidhari',
+    name: 'm6_heal',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'heal',
+      sheet: 'Yidhari',
+      name: 'm6_heal',
     },
   },
 } as const

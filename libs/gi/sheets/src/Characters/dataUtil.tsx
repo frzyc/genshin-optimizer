@@ -1,8 +1,4 @@
-import {
-  objKeyMap,
-  objKeyValMap,
-  verifyObjKeys,
-} from '@genshin-optimizer/common/util'
+import { objKeyMap, verifyObjKeys } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   ElementKey,
@@ -18,10 +14,16 @@ import type { CharacterGrowCurveKey } from '@genshin-optimizer/gi/dm'
 import { allStats, getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import type { Data, DisplaySub, NumNode } from '@genshin-optimizer/gi/wr'
 import {
+  active,
+  compareEq,
   constant,
   data,
   equal,
+  equalStr,
   greaterEq,
+  inactive1,
+  inactive2,
+  inactive3,
   inferInfoMut,
   infoMut,
   infusionNode,
@@ -29,6 +31,7 @@ import {
   lookup,
   mergeData,
   min,
+  naught,
   one,
   percent,
   prod,
@@ -37,8 +40,10 @@ import {
   subscript,
   sum,
   tally,
+  unequal,
 } from '@genshin-optimizer/gi/wr'
-import { cond } from '../SheetUtil'
+import { cond, nonStackBuff } from '../SheetUtil'
+import { charTemplates } from './charTemplates'
 
 const commonBasic = objKeyMap(
   ['hp', 'atk', 'def', 'eleMas', 'enerRech_', 'critRate_', 'critDMG_', 'heal_'],
@@ -236,12 +241,18 @@ export function plungingDmgNodes(
 /** Note: `additional` applies only to this formula */
 export function shieldNode(
   base: MainStatKey | SubstatKey,
-  percent: NumNode | number,
-  flat: NumNode | number,
+  percentVal: NumNode | number,
+  flatVal: NumNode | number,
   additional?: Data
 ): NumNode {
   return customShieldNode(
-    sum(prod(percent, input.total[base]), flat),
+    sum(
+      prod(
+        typeof percentVal === 'number' ? percent(percentVal) : percentVal,
+        input.total[base]
+      ),
+      flatVal
+    ),
     additional
   )
 }
@@ -320,7 +331,7 @@ export function healNodeTalent(
 export function dataObjForCharacterSheet(
   key: CharacterKey,
   display: { [key: string]: DisplaySub },
-  additional: Data = {}
+  ...additional: Data[]
 ): Data {
   function curve(base: number, lvlCurve: CharacterGrowCurveKey): NumNode {
     return prod(
@@ -332,15 +343,15 @@ export function dataObjForCharacterSheet(
     key,
     'moonsignAfterSkillBurst'
   )
-  function moonsignBuff(value: NumNode): NumNode {
-    const teamSize = sum(...allElementKeys.map((ele) => tally[ele]))
-    return greaterEq(
-      teamSize,
-      4,
+  function moonsignBuff(path: string, value: NumNode) {
+    return nonStackBuff(
+      'moonsignascend',
+      path,
       greaterEq(
         tally.moonsign,
         2,
-        equal(condMoonsignAfterSkillBurst, 'on', min(value, percent(0.36)))
+        equal(condMoonsignAfterSkillBurst, 'on', min(value, percent(0.36))),
+        { path, isTeamBuff: true }
       )
     )
   }
@@ -354,46 +365,65 @@ export function dataObjForCharacterSheet(
     weaponType: constant(weaponType),
     premod: {},
     display,
-    teamBuff: { tally: { maxEleMas: input.premod.eleMas } },
+    teamBuff: { tally: { maxEleMas: input.premod.eleMas }, nonStacking: {} },
+  }
+  const moonsignData: Data = {
+    teamBuff: {
+      premod: {},
+    },
   }
   if (element) {
     data.charEle = constant(element)
     data.teamBuff!.tally![element] = constant(1)
     data.display!['basic'][`${element}_dmg_`] = input.total[`${element}_dmg_`]
     data.display!['reaction'] = reactions[element]
-    if (region !== 'nodKrai') {
-      let moonsign: NumNode
+    data.display!['nicole'] = projections
+
+    // Moonsign buff handling for non-moonsign chars
+    if (additional[0]?.isMoonsign === undefined) {
+      let moonsignBase: NumNode
+      const moonsignTallyWrite = equalStr(
+        condMoonsignAfterSkillBurst,
+        'on',
+        input.charKey
+      )
       switch (element) {
         case 'pyro':
         case 'electro':
         case 'cryo':
-          moonsign = moonsignBuff(
-            prod(input.total.atk, 1 / 100, percent(0.009))
-          )
+          moonsignBase = prod(input.total.atk, 1 / 100, percent(0.009))
           break
         case 'hydro':
-          moonsign = moonsignBuff(
-            prod(input.total.hp, 1 / 1000, percent(0.006))
-          )
+          moonsignBase = prod(input.total.hp, 1 / 1000, percent(0.006))
           break
         case 'geo':
-          moonsign = moonsignBuff(prod(input.total.def, 1 / 100, percent(0.01)))
+          moonsignBase = prod(input.total.def, 1 / 100, percent(0.01))
           break
         case 'anemo':
         case 'dendro':
-          moonsign = moonsignBuff(
-            prod(input.total.eleMas, 1 / 100, percent(0.0225))
-          )
+          moonsignBase = prod(input.total.eleMas, 1 / 100, percent(0.0225))
           break
       }
-      data.teamBuff!.tally!.maxMoonsignBuff = moonsign
-      data.display!['moonsign'] = objKeyValMap(allLunarReactionKeys, (lr) => [
-        `${lr}_dmg_`,
-        { ...moonsign },
-      ])
+      data.teamBuff!.nonStacking!.moonsignascend = moonsignTallyWrite
+      data.display!['moonsign'] = Object.fromEntries(
+        allLunarReactionKeys.flatMap((lr) => {
+          const key = `${lr}_dmg_` as const
+          const moonsign = moonsignBuff(`${lr}_dmg_`, moonsignBase)
+          moonsignData.teamBuff!.premod![key] = moonsign[0]
+          return [
+            [key, moonsign[0]],
+            [`${key}Inactive`, moonsign[1]],
+          ]
+        })
+      )
     }
   }
+
+  // Tally handling for faction stuff
+  data.teamBuff!.tally!.hexerei = additional[0]?.isHexerei
+  data.teamBuff!.tally!.moonsign = additional[0]?.isMoonsign
   if (region) data.teamBuff!.tally![region] = constant(1)
+
   if (weaponType !== 'catalyst')
     data.display!['basic']!['physical_dmg_'] = input.total.physical_dmg_
 
@@ -431,5 +461,98 @@ export function dataObjForCharacterSheet(
     }
   }
 
-  return mergeData([data, inferInfoMut(additional)])
+  return mergeData([
+    data,
+    moonsignData,
+    ...additional.map((d) => inferInfoMut(d)),
+  ])
+}
+
+// Handling for Nicole's projection attacks
+function findNicoleData(
+  cb: (data: typeof input) => NumNode,
+  defaultV: number | NumNode
+) {
+  return lookup(
+    compareEq(
+      active.charKey,
+      'Nicole',
+      'active',
+      compareEq(
+        inactive1.charKey,
+        'Nicole',
+        'inactive1',
+        compareEq(
+          inactive2.charKey,
+          'Nicole',
+          'inactive2',
+          equalStr(inactive3.charKey, 'Nicole', 'inactive3')
+        )
+      )
+    ),
+    {
+      active: cb(active),
+      inactive1: cb(inactive1),
+      inactive2: cb(inactive2),
+      inactive3: cb(inactive3),
+    },
+    defaultV
+  )
+}
+const nicoleBurst = findNicoleData((data) => data.total.burstIndex, -1)
+const nicoleConstellation = findNicoleData((data) => data.constellation, naught)
+const nicoleAtk = findNicoleData((data) => data.total.atk, naught)
+const nicoleHex = findNicoleData((data) => data.isHexerei, 0)
+const nicoleBurstScaling = allStats.char.skillParam.Nicole.burst[1]
+const nicoleC1Scaling = allStats.char.skillParam.Nicole.constellation1[0]
+const nicoleLockAddlScaling =
+  allStats.char.skillParam.Nicole.lockedPassive![0][0]
+const nicoleCt = charTemplates('Nicole')
+const nicoleLockProjectionAddl = infoMut(
+  equal(
+    input.isHexerei,
+    1,
+    greaterEq(
+      tally.hexerei,
+      2,
+      equal(nicoleHex, 1, prod(percent(nicoleLockAddlScaling), nicoleAtk))
+    )
+  ),
+  { name: nicoleCt.ch('projection_dmgInc') }
+)
+
+export const projections = {
+  burstArcaneProjectionDmg: infoMut(
+    unequal(
+      nicoleBurst,
+      -1,
+      customDmgNode(
+        prod(
+          subscript(nicoleBurst, nicoleBurstScaling, { unit: '%' }),
+          input.total.atk
+        ),
+        'elemental',
+        {
+          hit: { ele: input.charEle },
+          premod: { all_dmgInc: nicoleLockProjectionAddl },
+        }
+      )
+    ),
+    { name: nicoleCt.chg('burst.skillParams.1') }
+  ),
+  c1ArcaneProjectionUnityDmg: infoMut(
+    greaterEq(
+      nicoleConstellation,
+      1,
+      customDmgNode(
+        prod(percent(nicoleC1Scaling), input.total.atk),
+        'elemental',
+        {
+          hit: { ele: input.charEle },
+          premod: { all_dmgInc: nicoleLockProjectionAddl },
+        }
+      )
+    ),
+    { name: nicoleCt.ch('arcaneProjectionDmg') }
+  ),
 }

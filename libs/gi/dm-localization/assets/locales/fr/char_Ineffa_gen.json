@@ -41,7 +41,7 @@
   "skill": {
     "name": "Mode purificateur : Fréquence porteuse",
     "description": {
-      "0": "Ineffa active son module de nettoyage avancé, infligeant une fois des <electro>DGT Électro de zone</electro> aux ennemis à proximité, déployant sa barrière de protection à flux optique et invoquant son unité d'assistance intelligente polyvalente, <strong>Birgitta</strong>.",
+      "0": "Ineffa active son module de nettoyage avancé, infligeant une fois des <electro>DGT Électro de zone</electro> aux ennemis à proximité, déployant sa barrière de protection à flux optique et invoquant son unité d'assistance intelligente polyvalente, <tooltip ns=tooltips_gen baseKey18=11160001 values=[]><strong>Birgitta</strong></tooltip>.",
       "1": "L'absorption de DGT de la barrière de protection à flux optique est basée sur l'ATQ d'Ineffa et cette dernière absorbe les <electro>DGT Électro</electro> 250 % plus efficacement."
     },
     "skillParams": {
@@ -66,7 +66,7 @@
   "burst": {
     "name": "Commande suprême : Exterminateur cyclonique",
     "description": {
-      "0": "<strong>Birgitta</strong>, l'unité d'assistance intelligente polyvalente, utilise un poing-fusée pour éradiquer rapidement les ennemis ! Ineffa éjecte Birgitta, infligeant des <electro>DGT Électro de zone</electro> et lui permettant de rester sur le terrain.",
+      "0": "<tooltip ns=tooltips_gen baseKey18=11160001 values=[]><strong>Birgitta</strong></tooltip>, l'unité d'assistance intelligente polyvalente, utilise un poing-fusée pour éradiquer rapidement les ennemis ! Ineffa éjecte Birgitta, infligeant des <electro>DGT Électro de zone</electro> et lui permettant de rester sur le terrain.",
       "1": "<br/>",
       "2": "Si Birgitta est déjà sur le terrain, ayant été invoquée par Ineffa, elle est à la place invoquée à nouveau à l'emplacement cible et sa durée est réinitialisée."
     },
@@ -92,13 +92,13 @@
   "passive1": {
     "name": "Circuit de surcadençage",
     "description": {
-      "0": "Si des nuages orageux créés par une réaction de Sélénocution sont à proximité de <strong>Birgitta</strong> lorsqu'elle déclenche une décharge électrique, elle lance une attaque supplémentaire infligeant des <electro>DGT Électro de zone</electro> d'une valeur équivalant à 65 % de l'ATQ d'Ineffa, ces DGT étant considérés comme des DGT de réaction de Sélénocution."
+      "0": "Si des nuages orageux créés par une réaction de Sélénocution sont à proximité de <tooltip ns=tooltips_gen baseKey18=11160001 values=[]><strong>Birgitta</strong></tooltip> lorsqu'elle déclenche une décharge électrique, elle lance une attaque supplémentaire infligeant des <electro>DGT Électro de zone</electro> d'une valeur équivalant à 65 % de l'ATQ d'Ineffa, ces DGT étant considérés comme des DGT de réaction de Sélénocution."
     }
   },
   "passive2": {
     "name": "Protocole de permutation panoramique",
     "description": {
-      "0": "Utiliser le déchaînement élémentaire <strong>Commande suprême : Exterminateur cyclonique</strong> accorde l'effet Refactorisation des paramètres à tous vos personnages de l'équipe : augmente la maîtrise élémentaire de votre personnage déployé et d'Ineffa d'une valeur équivalant à 6 % de l'ATQ d'Ineffa pendant 20 s."
+      "0": "Utiliser le déchaînement élémentaire <strong><tooltip ns=char_Ineffa_gen baseKey18=burst>Commande suprême : Exterminateur cyclonique</tooltip></strong> accorde l'effet Refactorisation des paramètres à tous vos personnages de l'équipe : augmente la maîtrise élémentaire de votre personnage déployé et d'Ineffa d'une valeur équivalant à 6 % de l'ATQ d'Ineffa pendant 20 s."
     }
   },
   "passive3": {
@@ -126,14 +126,14 @@
   "constellation2": {
     "name": "Module nettoyeur de soutien",
     "description": {
-      "0": "Lorsque le déchaînement élémentaire <strong>Commande suprême : Exterminateur cyclonique</strong> a touché des ennemis, l'effet Édit punitif est appliqué à l'un d'eux : les ennemis proches subissent des <electro>DGT Électro de zone</electro> d'une valeur équivalant à 300 % de l'ATQ d'Ineffa après une courte période ou lorsque l'ennemi affecté est éliminé, ces DGT étant considérés comme des DGT de réaction de Sélénocution.",
+      "0": "Lorsque le déchaînement élémentaire <strong><tooltip ns=char_Ineffa_gen baseKey18=burst>Commande suprême : Exterminateur cyclonique</tooltip></strong> a touché des ennemis, l'effet Édit punitif est appliqué à l'un d'eux : les ennemis proches subissent des <electro>DGT Électro de zone</electro> d'une valeur équivalant à 300 % de l'ATQ d'Ineffa après une courte période ou lorsque l'ennemi affecté est éliminé, ces DGT étant considérés comme des DGT de réaction de Sélénocution.",
       "1": "De plus, utiliser le déchaînement élémentaire <strong>Commande suprême : Exterminateur cyclonique</strong> accorde des barrières de protection à flux optique aux membres de l'équipe déployés à proximité."
     }
   },
   "constellation3": {
     "name": "Émulateur avancé d'émotions",
     "description": {
-      "0": "Niveau d'aptitude <strong>Mode purificateur : Fréquence porteuse</strong> +3.",
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Ineffa_gen baseKey18=skill>Mode purificateur : Fréquence porteuse</tooltip></strong> +3.",
       "1": "Niveau max : 15"
     }
   },
@@ -146,7 +146,7 @@
   "constellation5": {
     "name": "Transcendance du rêve du miroir",
     "description": {
-      "0": "Niveau d'aptitude <strong>Commande suprême : Exterminateur cyclonique</strong> +3.",
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Ineffa_gen baseKey18=burst>Commande suprême : Exterminateur cyclonique</tooltip></strong> +3.",
       "1": "Niveau max : 15"
     }
   },

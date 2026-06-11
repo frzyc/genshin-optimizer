@@ -97,7 +97,7 @@
     "description": {
       "0": "Aino mendapatkan efek penguatan yang berbeda berdasarkan <strong>Moonsign</strong> milik party:",
       "1": "<br/>",
-      "2": "<strong>Moonsign: Ascendant Gleam</strong>: Elemental Burst <strong>Precision Hydronic Cooler</strong> akan mendapatkan penguatan: <strong>Cool Your Jets Ducky</strong> akan menembakkan Water Ball dengan jeda waktu lebih singkat dan mengakibatkan <hydro>Hydro DMG Area</hydro> dengan radius yang lebih luas."
+      "2": "<strong>Moonsign: Ascendant Gleam</strong>: Elemental Burst <strong><tooltip ns=char_Aino_gen baseKey18=burst>Precision Hydronic Cooler</tooltip></strong> akan mendapatkan penguatan: <strong>Cool Your Jets Ducky</strong> akan menembakkan Water Ball dengan jeda waktu lebih singkat dan mengakibatkan <hydro>Hydro DMG Area</hydro> dengan radius yang lebih luas."
     }
   },
   "passive2": {
@@ -122,7 +122,7 @@
   "constellation1": {
     "name": "The Theory of Ash–Field Equilibrium",
     "description": {
-      "0": "Setelah Aino melancarkan Elemental Skill <strong>Musecatcher</strong> atau Elemental Burst <strong>Precision Hydronic Cooler</strong>, Elemental Mastery Aino dan Karakter aktif lainnya di sekitar meningkat 80 poin selama 15 detik.",
+      "0": "Setelah Aino melancarkan Elemental Skill <strong><tooltip ns=char_Aino_gen baseKey18=skill>Musecatcher</tooltip></strong> atau Elemental Burst <strong><tooltip ns=char_Aino_gen baseKey18=burst>Precision Hydronic Cooler</tooltip></strong>, Elemental Mastery Aino dan Karakter aktif lainnya di sekitar meningkat 80 poin selama 15 detik.",
       "1": "<br/>",
       "2": "Efek peningkatan Elemental Mastery dari Konstelasi ini tidak dapat ditumpuk."
     }
@@ -130,33 +130,33 @@
   "constellation2": {
     "name": "The Principle of Transference in Gear Differentials",
     "description": {
-      "0": "Selama durasi <strong>Focused Hydronic Cooling Zone</strong> dari Elemental Burst <strong>Precision Hydronic Cooler</strong> aktif, jika Aino ada di dalam party namun sedang tidak berada di medan pertempuran, saat serangan Karakter aktif party sendiri mengenai musuh, <strong>Cool Your Jets Ducky</strong> akan menembakkan satu Water Ball tambahan terhadap musuh ini, mengakibatkan <hydro>Hydro DMG Area</hydro> sebesar 25% ATK Aino dan 100% Elemental Mastery Aino. Efek ini dapat terpicu sekali setiap 5 detik, dan dianggap sebagai DMG Elemental Burst."
+      "0": "Selama durasi <strong><tooltip ns=char_Aino_gen baseKey18=burst>Focused Hydronic Cooling Zone</tooltip></strong> dari Elemental Burst <strong>Precision Hydronic Cooler</strong> aktif, jika Aino ada di dalam party namun sedang tidak berada di medan pertempuran, saat serangan Karakter aktif party sendiri mengenai musuh, <strong>Cool Your Jets Ducky</strong> akan menembakkan satu Water Ball tambahan terhadap musuh ini, mengakibatkan <hydro>Hydro DMG Area</hydro> sebesar 25% ATK Aino dan 100% Elemental Mastery Aino. Efek ini dapat terpicu sekali setiap 5 detik, dan dianggap sebagai DMG Elemental Burst."
     }
   },
   "constellation3": {
     "name": "Cake and the Art of Mechanism Repair",
     "description": {
-      "0": "Meningkatkan 3 level Elemental Burst <strong>Precision Hydronic Cooler</strong>.",
+      "0": "Meningkatkan 3 level Elemental Burst <strong><tooltip ns=char_Aino_gen baseKey18=burst>Precision Hydronic Cooler</tooltip></strong>.",
       "1": "Maksimum: Lv. 15."
     }
   },
   "constellation4": {
     "name": "Butter and Cats and the Law of Energy Supply",
     "description": {
-      "0": "Saat Elemental Skill <strong>Musecatcher</strong> mengenai musuh, akan memulihkan 10 poin Energy Aino. Pemulihan Energy dengan cara ini dapat terpicu sekali setiap 10 detik."
+      "0": "Saat Elemental Skill <strong><tooltip ns=char_Aino_gen baseKey18=skill>Musecatcher</tooltip></strong> mengenai musuh, akan memulihkan 10 poin Energy Aino. Pemulihan Energy dengan cara ini dapat terpicu sekali setiap 10 detik."
     }
   },
   "constellation5": {
     "name": "Perpetual Turbine of Metal and Light",
     "description": {
-      "0": "Meningkatkan 3 level Elemental Skill <strong>Musecatcher</strong>.",
+      "0": "Meningkatkan 3 level Elemental Skill <strong><tooltip ns=char_Aino_gen baseKey18=skill>Musecatcher</tooltip></strong>.",
       "1": "Maksimum: Lv. 15."
     }
   },
   "constellation6": {
     "name": "The Burden of Creative Genius",
     "description": {
-      "0": "Setelah melancarkan Elemental Burst <strong>Precision Hydronic Cooler</strong>, DMG reaksi Electro-Charged, Bloom, Lunar-Charged, dan Lunar-Bloom yang dipicu Karakter aktif di sekitar meningkat 15% selama 15 detik.",
+      "0": "Setelah melancarkan Elemental Burst <strong><tooltip ns=char_Aino_gen baseKey18=burst>Precision Hydronic Cooler</tooltip></strong>, DMG reaksi Electro-Charged, Bloom, Lunar-Charged, Lunar-Bloom, Lunar-Crystallize yang dipicu Karakter aktif di sekitar meningkat 15% selama 15 detik.",
       "1": "<strong>Moonsign: Ascendant Gleam</strong>: Peningkatan DMG reaksi dari efek di atas meningkat 20% lagi."
     }
   }

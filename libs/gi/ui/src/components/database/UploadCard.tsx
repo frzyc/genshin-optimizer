@@ -1,4 +1,3 @@
-'use client'
 import { SandboxStorage } from '@genshin-optimizer/common/database'
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { CardThemed } from '@genshin-optimizer/common/ui'

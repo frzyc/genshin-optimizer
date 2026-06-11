@@ -1,0 +1,320 @@
+{
+  "id": "1521",
+  "rarity": "S",
+  "attribute": "electric",
+  "specialty": "attack",
+  "faction": "CriminalInvestigationSpecialResponseTeam",
+  "stats": {
+    "atk_base": 135,
+    "atk_growth": 8.2578,
+    "def_base": 49,
+    "def_growth": 6.6203,
+    "hp_base": 617,
+    "hp_growth": 83.7238,
+    "anomMas": 94,
+    "anomProf": 93,
+    "impact": 93,
+    "enerRegen": 1.2
+  },
+  "promotionStats": [
+    { "hp": 0, "atk": 0, "def": 0 },
+    { "hp": 423, "atk": 48, "def": 33 },
+    { "hp": 847, "atk": 96, "def": 67 },
+    { "hp": 1270, "atk": 145, "def": 100 },
+    { "hp": 1694, "atk": 193, "def": 134 },
+    { "hp": 2117, "atk": 241, "def": 167 }
+  ],
+  "coreStats": [
+    { "atk": 0, "enerRegen": 0.12 },
+    { "atk": 25, "enerRegen": 0.12 },
+    { "atk": 25, "enerRegen": 0.24 },
+    { "atk": 50, "enerRegen": 0.24 },
+    { "atk": 50, "enerRegen": 0.36 },
+    { "atk": 75, "enerRegen": 0.36 }
+  ],
+  "skillParams": {
+    "basic": {
+      "BasicAttackTongueFlick": [
+        {
+          "DamagePercentage": 0.777,
+          "DamagePercentageGrowth": 0.071,
+          "StunRatio": 0.603,
+          "StunRatioGrowth": 0.028,
+          "SpRecovery": 235.2,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1798.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 65.3
+        },
+        {
+          "DamagePercentage": 1.387,
+          "DamagePercentageGrowth": 0.127,
+          "StunRatio": 0.984,
+          "StunRatioGrowth": 0.045,
+          "SpRecovery": 376.8,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 2879.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 104.66
+        },
+        {
+          "DamagePercentage": 1.351,
+          "DamagePercentageGrowth": 0.123,
+          "StunRatio": 0.874,
+          "StunRatioGrowth": 0.04,
+          "SpRecovery": 327.5,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 2502.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 90.96
+        },
+        {
+          "DamagePercentage": 2.502,
+          "DamagePercentageGrowth": 0.228,
+          "StunRatio": 1.591,
+          "StunRatioGrowth": 0.073,
+          "SpRecovery": 674.4,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 5153.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 187.32
+        }
+      ],
+      "BasicAttackSerpentsKiss": [
+        {
+          "DamagePercentage": 5.042,
+          "DamagePercentageGrowth": 0.459,
+          "StunRatio": 1.797,
+          "StunRatioGrowth": 0.082,
+          "SpRecovery": 499.7,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 3594.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 130.63
+        }
+      ],
+      "CorrodeBone": [
+        {
+          "DamagePercentage": 1.268,
+          "DamagePercentageGrowth": 0.116,
+          "StunRatio": 1.551,
+          "StunRatioGrowth": 0.071,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
+      ]
+    },
+    "dodge": {
+      "DodgeSlither": [],
+      "DashAttackBiteMark": [
+        {
+          "DamagePercentage": 1.473,
+          "DamagePercentageGrowth": 0.134,
+          "StunRatio": 0.624,
+          "StunRatioGrowth": 0.029,
+          "SpRecovery": 204,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1559.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 56.65
+        }
+      ],
+      "DodgeCounterBiteBack": [
+        {
+          "DamagePercentage": 3.245,
+          "DamagePercentageGrowth": 0.295,
+          "StunRatio": 2.366,
+          "StunRatioGrowth": 0.108,
+          "SpRecovery": 414.2,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 3165.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 115.03
+        }
+      ]
+    },
+    "special": {
+      "SpecialAttackBaredFangs": [
+        {
+          "DamagePercentage": 0.52,
+          "DamagePercentageGrowth": 0.048,
+          "StunRatio": 0.44,
+          "StunRatioGrowth": 0.02,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1100,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 39.98
+        }
+      ],
+      "EXSpecialAttackVenomousBite": [
+        {
+          "DamagePercentage": 2.004,
+          "DamagePercentageGrowth": 0.183,
+          "StunRatio": 1.083,
+          "StunRatioGrowth": 0.05,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 5775,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 163.75
+        },
+        {
+          "DamagePercentage": 0.668,
+          "DamagePercentageGrowth": 0.061,
+          "StunRatio": 0.361,
+          "StunRatioGrowth": 0.017,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1925,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 54.59
+        }
+      ]
+    },
+    "chain": {
+      "ChainAttackGangOperation": [
+        {
+          "DamagePercentage": 7.378,
+          "DamagePercentageGrowth": 0.671,
+          "StunRatio": 2.586,
+          "StunRatioGrowth": 0.118,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 24752.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 434.53
+        }
+      ],
+      "UltimateOphidiophobia": [
+        {
+          "DamagePercentage": 18.11,
+          "DamagePercentageGrowth": 1.647,
+          "StunRatio": 1.211,
+          "StunRatioGrowth": 0.056,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 110.03
+        }
+      ]
+    },
+    "assist": {
+      "QuickAssistAlarmSystem": [
+        {
+          "DamagePercentage": 0.748,
+          "DamagePercentageGrowth": 0.068,
+          "StunRatio": 0.633,
+          "StunRatioGrowth": 0.029,
+          "SpRecovery": 207.1,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1584,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 57.51
+        }
+      ],
+      "DefensiveAssistExtraPrisonRations": [
+        {
+          "DamagePercentage": 0,
+          "DamagePercentageGrowth": 0,
+          "StunRatio": 2.713,
+          "StunRatioGrowth": 0.124,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 0,
+          "DamagePercentageGrowth": 0,
+          "StunRatio": 3.428,
+          "StunRatioGrowth": 0.156,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 0,
+          "DamagePercentageGrowth": 0,
+          "StunRatio": 1.668,
+          "StunRatioGrowth": 0.076,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
+      ],
+      "AssistFollowUpPartnersInCrime": [
+        {
+          "DamagePercentage": 5.206,
+          "DamagePercentageGrowth": 0.474,
+          "StunRatio": 3.872,
+          "StunRatioGrowth": 0.176,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 12344.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 376.17
+        }
+      ]
+    }
+  },
+  "calcedParams": {
+    "basic": {
+      "BasicAttackTongueFlick": [],
+      "BasicAttackSerpentsKiss": [],
+      "CorrodeBone": []
+    },
+    "dodge": {
+      "DodgeSlither": [],
+      "DashAttackBiteMark": [],
+      "DodgeCounterBiteBack": []
+    },
+    "special": {
+      "SpecialAttackBaredFangs": [],
+      "EXSpecialAttackVenomousBite": []
+    },
+    "chain": { "ChainAttackGangOperation": [], "UltimateOphidiophobia": [] },
+    "assist": {
+      "QuickAssistAlarmSystem": [],
+      "DefensiveAssistExtraPrisonRations": [],
+      "AssistFollowUpPartnersInCrime": []
+    }
+  },
+  "coreParams": [
+    [3, 3, 3, 3, 3, 3, 3],
+    [180, 180, 180, 180, 180, 180, 180],
+    [1, 1, 1, 1, 1, 1, 1],
+    [5, 5, 5, 5, 5, 5, 5],
+    [0.03, 0.035, 0.04, 0.045, 0.05, 0.055, 0.06],
+    [1.4, 1.4, 1.4, 1.4, 1.4, 1.4, 1.4],
+    [0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12],
+    [0.0052, 0.006, 0.0068, 0.0076, 0.0084, 0.0092, 0.01],
+    [0.1288, 0.149, 0.1692, 0.1894, 0.2096, 0.2298, 0.25],
+    [30, 30, 30, 30, 30, 30, 30],
+    [2.27, 2.45, 2.63, 2.81, 2.99, 3.17, 3.35],
+    [1, 1, 1, 1, 1, 1, 1],
+    [2, 2, 2, 2, 2, 2, 2],
+    [0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4],
+    [0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6],
+    [1, 1, 1, 1, 1, 1, 1]
+  ],
+  "abilityParams": [0.4, 0.1, 30],
+  "mindscapeParams": [
+    [6, 1.4, 0.05, 0.1],
+    [3, 0.35],
+    [2],
+    [1, 3, 1],
+    [2],
+    [1, 1, 1, 1, 3]
+  ],
+  "potentialParams": []
+}

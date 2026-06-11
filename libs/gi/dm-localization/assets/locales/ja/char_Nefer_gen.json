@@ -12,8 +12,8 @@
       },
       "charged": {
         "0": "<strong>重撃</strong>",
-        "1": "蛇突状態に入り、スタミナを消費する代わりに最大2.5秒間高速移動する。重撃ボタンを離した時や継続時間終了時、あるいはスタミナが尽きた時、ネフェルは蛇突状態を解除する。その際、追加でスタミナを消費し、敵に<dendro>草元素ダメージ</dendro>を与える。<strong>「影の舞」</strong>状態にある時、スタミナの追加消費量が減少する。",
-        "2": "また、ネフェルが蛇突状態にある時、元素スキル<strong>盤術・千夜一舞</strong>を発動したり、ダッシュを行ったりしても、蛇突状態は解除されない。"
+        "1": "蛇突状態に入り、スタミナを消費する代わりに最大2.5秒間高速移動する。重撃ボタンを離した時や継続時間終了時、あるいはスタミナが尽きた時、ネフェルは蛇突状態を解除する。その際、追加でスタミナを消費し、敵に<dendro>草元素ダメージ</dendro>を与える。<tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>「影の舞」</strong></tooltip>状態にある時、スタミナの追加消費量が減少する。",
+        "2": "また、ネフェルが蛇突状態にある時、元素スキル<strong><tooltip ns=char_Nefer_gen baseKey18=skill>盤術・千夜一舞</tooltip></strong>を発動したり、ダッシュを行ったりしても、蛇突状態は解除されない。"
       },
       "plunging": {
         "0": "<strong>落下攻撃</strong>",
@@ -42,8 +42,8 @@
   "skill": {
     "name": "盤術・千夜一舞",
     "description": {
-      "0": "月の色を映す薄絹のように、または寒夜の砂海のように凛とした傾国の舞。ネフェルは一定距離前方に突進して<dendro>草元素範囲ダメージ</dendro>を与え、<strong>「影の舞」</strong>状態に入る。",
-      "1": "「影の舞」状態の時、<strong>草露</strong>を1滴以上所持する場合、ネフェルの重撃はスタミナを消費しない特殊な重撃<strong>「幻の戯」</strong>に変わる。また、「影の舞」状態中、ネフェルの中断耐性がアップする。",
+      "0": "月の色を映す薄絹のように、または寒夜の砂海のように凛とした傾国の舞。ネフェルは一定距離前方に突進して<dendro>草元素範囲ダメージ</dendro>を与え、<tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>「影の舞」</strong></tooltip>状態に入る。",
+      "1": "「影の舞」状態の時、<tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>草露</strong></tooltip>を1滴以上所持する場合、ネフェルの重撃はスタミナを消費しない特殊な重撃<tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>「幻の戯」</strong></tooltip>に変わる。また、「影の舞」状態中、ネフェルの中断耐性がアップする。",
       "2": "<br/>",
       "3": "初期使用可能回数2回。",
       "4": "<br/>",
@@ -71,7 +71,7 @@
   "burst": {
     "name": "聖約・真眼の幻戯",
     "description": {
-      "0": "トートの真眼を以て、偽物の謎に「解」を捧げ、前方の敵に<dendro>草元素範囲ダメージ</dendro>を与える。発動時、ネフェルはすべての<strong>「偽りの帳」</strong>を消費し、この時発動する元素爆発のダメージをアップする。",
+      "0": "トートの真眼を以て、偽物の謎に「解」を捧げ、前方の敵に<dendro>草元素範囲ダメージ</dendro>を与える。発動時、ネフェルはすべての<tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>「偽りの帳」</strong></tooltip>を消費し、この時発動する元素爆発のダメージをアップする。",
       "1": "<br/>",
       "2": "<i>熱砂の歌い手たちが唄う古い詩篇に登場するトキの王の贈り物は、祝福というより、むしろ呪いに近い。</i>"
     },
@@ -99,14 +99,14 @@
     "description": {
       "0": "ネフェルはチームの<strong>月兆</strong>に応じて、強化効果を獲得する。",
       "1": "<br/>",
-      "2": "<strong>月兆・満照</strong>：元素スキル<strong>盤術・千夜一舞</strong>を発動する時、フィールド上の草原核を「虚言の核」に変える。さらに、付近にいるチーム内キャラクターが次の15秒間、月開花反応を起こすと、本来生成する草原核と豊穣の核が虚言の核に取って代わる。虚言の核は超開花反応や烈開花反応を起こすことができず、迸ることもできない。",
-      "3": "ネフェルは重撃または<strong>幻の戯</strong>を発動することで、周囲の一定範囲内にある虚言の核を吸収できる。虚言の核を1つ吸収するたびに、ネフェルは<strong>「偽りの帳」</strong>効果を1層獲得する。3層まで重ねられた時、または3層の継続時間がリセットされた時、ネフェルの元素熟知+100、継続時間8秒。"
+      "2": "<strong>月兆・満照</strong>：元素スキル<strong><tooltip ns=char_Nefer_gen baseKey18=skill>盤術・千夜一舞</tooltip></strong>を発動する時、フィールド上の草原核を「虚言の核」に変える。さらに、付近にいるチーム内キャラクターが次の15秒間、月開花反応を起こすと、本来生成する草原核と豊穣の核が虚言の核に取って代わる。虚言の核は超開花反応や烈開花反応を起こすことができず、迸ることもできない。",
+      "3": "ネフェルは重撃または<tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>幻の戯</strong></tooltip>を発動することで、周囲の一定範囲内にある虚言の核を吸収できる。虚言の核を1つ吸収するたびに、ネフェルは<tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>「偽りの帳」</strong></tooltip>効果を1層獲得する。3層まで重ねられた時、または3層の継続時間がリセットされた時、ネフェルの元素熟知+100、継続時間8秒。"
     }
   },
   "passive2": {
     "name": "砂塵の娘",
     "description": {
-      "0": "ネフェルが<strong>「影の舞」</strong>状態にある時、チーム内キャラクターが月開花反応を起こした後の5秒間、ネフェルの<strong>蛇突状態</strong>はチームに追加で草露を提供する。この効果はネフェルの元素熟知が500を超えている時、500を超えた分の数値100につき10%アップし、最大50%まで。"
+      "0": "ネフェルが<tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>「影の舞」</strong></tooltip>状態にある時、チーム内キャラクターが月開花反応を起こした後の5秒間、ネフェルの<strong><tooltip ns=char_Nefer_gen baseKey18=normal>蛇突状態</tooltip></strong>はチームに追加で<tooltip ns=tooltips_gen baseKey18=11190008 values=[]><strong>草露</strong></tooltip>を提供する。ネフェルの元素熟知が500を超えている時、500を超えた分の数値100につき草露の効果+10%。この方法でアップできる草露の効果は最大50%まで。"
     }
   },
   "passive3": {
@@ -120,51 +120,50 @@
   "passive": {
     "name": "金の密謀",
     "description": {
-      "0": "ナド・クライで20時間かかる探索任務を完了した時、獲得する報酬+25%。",
-      "1": "また「秘聞の館」のオーナーであるネフェルは、各方面の情報を入手する独自ルートを持っているらしい。その情報を求める勢力が、ナシャタウンにいくつか存在しているようだ…"
+      "0": "ナド・クライで20時間かかる探索任務を完了した時、獲得する報酬+25%。"
     }
   },
   "constellation1": {
     "name": "策謀は成否の源",
     "description": {
-      "0": "ネフェルの<strong>幻の戯</strong>による月開花反応ダメージの基礎ダメージが、ネフェルの元素熟知の60%分アップする。この効果は、<strong>「偽りの帳」</strong>の強化効果と合わせて計算される。"
+      "0": "ネフェルの<tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>幻の戯</strong></tooltip>による月開花反応ダメージの基礎ダメージが、ネフェルの元素熟知の60%分アップする。この効果は、<tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>「偽りの帳」</strong></tooltip>の強化効果と合わせて計算される。"
     }
   },
   "constellation2": {
     "name": "洞察は計略の礎",
     "description": {
-      "0": "固有天賦<strong>「月下の賭け」</strong>の効果を強化する。<strong>「偽りの帳」</strong>の継続時間+5秒。さらに重ね掛け可能な上限が5層になり、<strong>幻の戯</strong>による与ダメージが最大で元の140%分まで上がる。ネフェルは元素スキル<strong>盤術・千夜一舞</strong>を発動した時、直ちに「偽りの帳」を2層獲得する。「偽りの帳」が5層まで重ねられた時、または5層の継続時間がリセットされた時、ネフェルの元素熟知は+200となる。継続時間8秒。",
+      "0": "固有天賦<tooltip ns=char_Nefer_gen baseKey18=passive1><strong>「月下の賭け」</strong></tooltip>の効果を強化する。<tooltip ns=tooltips_gen baseKey18=11220003 values=[]><strong>「偽りの帳」</strong></tooltip>の継続時間+5秒。さらに重ね掛け可能な上限が5層になり、<tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>幻の戯</strong></tooltip>による与ダメージが最大で元の140%分まで上がる。ネフェルは元素スキル<strong><tooltip ns=char_Nefer_gen baseKey18=skill>盤術・千夜一舞</tooltip></strong>を発動した時、直ちに「偽りの帳」を2層獲得する。「偽りの帳」が5層まで重ねられた時、または5層の継続時間がリセットされた時、ネフェルの元素熟知は+200となる。継続時間8秒。",
       "1": "固有天賦「月下の賭け」を解放する必要がある。"
     }
   },
   "constellation3": {
     "name": "虚実を覆う偽り",
     "description": {
-      "0": "元素スキル<strong>盤術・千夜一舞</strong>のスキルLv.+3。",
+      "0": "元素スキル<strong><tooltip ns=char_Nefer_gen baseKey18=skill>盤術・千夜一舞</tooltip></strong>のスキルLv.+3。",
       "1": "最大Lv.15まで。"
     }
   },
   "constellation4": {
     "name": "藪に堕ちる幻惑",
     "description": {
-      "0": "ネフェルがフィールド上にいる、かつ<strong>「影の舞」</strong>状態にある時、草露の獲得速度+25%。",
+      "0": "ネフェルがフィールド上にいる、かつ<tooltip ns=tooltips_gen baseKey18=11220001 values=[]><strong>「影の舞」</strong></tooltip>状態にある時、草露の獲得速度+25%。",
       "1": "また、ネフェルが「影の舞」状態にある時、周囲の敵の<dendro>草元素耐性</dendro>-20%。この効果はネフェルが「影の舞」状態でなくなった時、あるいは敵から一定距離離れた4.5秒後に解除される。"
     }
   },
   "constellation5": {
     "name": "勝機は刹那にあり",
     "description": {
-      "0": "元素爆発<strong>聖約・真眼の幻戯</strong>のスキルLv.+3。",
+      "0": "元素爆発<strong><tooltip ns=char_Nefer_gen baseKey18=burst>聖約・真眼の幻戯</tooltip></strong>のスキルLv.+3。",
       "1": "最大Lv.15まで。"
     }
   },
   "constellation6": {
     "name": "必勝は逆転にあり",
     "description": {
-      "0": "ネフェルが<strong>幻の戯</strong>を発動した時、自身の2段目のダメージが、ネフェルの元素熟知の85%に相当する<dendro>草元素範囲ダメージ</dendro>に変わる。また、幻の戯の攻撃終了時、ネフェルの元素熟知の120%に相当する<dendro>草元素範囲ダメージ</dendro>を追加で1回与える。これらのダメージはすべて、幻の戯による月開花反応ダメージと見なされる。",
+      "0": "ネフェルが<tooltip ns=tooltips_gen baseKey18=11220002 values=[]><strong>幻の戯</strong></tooltip>を発動した時、自身の2段目のダメージが、ネフェルの元素熟知の85%に相当する<dendro>草元素範囲ダメージ</dendro>に変わる。また、幻の戯の攻撃終了時、ネフェルの元素熟知の120%に相当する<dendro>草元素範囲ダメージ</dendro>を追加で1回与える。これらのダメージはすべて、幻の戯による月開花反応ダメージと見なされる。",
       "1": "<br/>",
       "2": "<strong>月兆・満照</strong>",
-      "3": "ネフェルによる月開花反応ダメージが15%<strong>向上</strong>する。"
+      "3": "ネフェルによる月開花反応ダメージが15%<tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>向上</strong></tooltip>する。"
     }
   }
 }

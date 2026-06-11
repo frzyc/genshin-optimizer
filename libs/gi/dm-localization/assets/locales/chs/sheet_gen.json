@@ -83,5 +83,9 @@
   },
   "unlockPassive1": "角色突破等级1解锁",
   "unlockPassive2": "角色突破等级4解锁",
-  "unlockPassive3": "固有天赋"
+  "unlockPassive3": "固有天赋",
+  "unlockLockedPassive": "完成前置任务后解锁",
+  "witchPassive": "魔女的课业",
+  "moonsign": "月兆",
+  "hexerei": "魔导"
 }

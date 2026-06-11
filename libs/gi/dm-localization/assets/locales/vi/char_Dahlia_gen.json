@@ -113,13 +113,13 @@
   "passive1": {
     "name": "Sự Dịu Dàng Của Gió",
     "description": {
-      "0": "Nhân vật nhận hiệu quả \"Tây Phong Thân Quyến\" từ Kỹ Năng Nộ <strong>Thánh Ca Thuần Khiết</strong> khi kích hoạt phản ứng Đóng Băng lên kẻ địch sẽ cung cấp 2 tầng Chúc Tụng cho Dahlia. Hiệu quả này trong 8s tối đa kích hoạt một lần."
+      "0": "Nhân vật nhận hiệu quả \"Tây Phong Thân Quyến\" từ Kỹ Năng Nộ <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Thánh Ca Thuần Khiết</tooltip></strong> khi kích hoạt phản ứng Đóng Băng lên kẻ địch sẽ cung cấp 2 tầng Chúc Tụng cho Dahlia. Hiệu quả này trong 8s tối đa kích hoạt một lần."
     }
   },
   "passive2": {
     "name": "Hạnh Phúc Của Nguyện Cầu",
     "description": {
-      "0": "Khi nhân vật ra trận hiện tại trong đội bản thân nhận hiệu quả \"Tây Phong Thân Quyến\" từ Kỹ Năng Nộ <strong>Thánh Ca Thuần Khiết</strong> sẽ được gia tăng Tốc Độ Tấn Công, mức tăng dựa trên Giới Hạn HP của Dahlia: Mỗi 1000 điểm Giới Hạn HP sẽ tăng 0.5% Tốc Độ Tấn Công, tối đa tăng 20% Tốc Độ Tấn Công theo cách thức này."
+      "0": "Khi nhân vật ra trận hiện tại trong đội bản thân nhận hiệu quả \"Tây Phong Thân Quyến\" từ Kỹ Năng Nộ <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Thánh Ca Thuần Khiết</tooltip></strong> sẽ được gia tăng Tốc Độ Tấn Công, mức tăng dựa trên Giới Hạn HP của Dahlia: Mỗi 1000 điểm Giới Hạn HP sẽ tăng 0.5% Tốc Độ Tấn Công, tối đa tăng 20% Tốc Độ Tấn Công theo cách thức này."
     }
   },
   "passive3": {
@@ -132,39 +132,39 @@
   "constellation1": {
     "name": "Dẫn Dắt Hoàn Hảo",
     "description": {
-      "0": "Mỗi khi Dahlia nhận một tầng hiệu quả \"Chúc Tụng\" của Kỹ Năng Nộ <strong>Thánh Ca Thuần Khiết</strong>, sẽ được hồi phục 2.5 điểm Năng Lượng Nguyên Tố."
+      "0": "Mỗi khi Dahlia nhận một tầng hiệu quả \"Chúc Tụng\" của Kỹ Năng Nộ <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Thánh Ca Thuần Khiết</tooltip></strong>, sẽ được hồi phục 2.5 điểm Năng Lượng Nguyên Tố."
     }
   },
   "constellation2": {
     "name": "Mặc Khải Thương Xót",
     "description": {
-      "0": "Sau khi Dahlia tiêu hao hiệu quả \"Chúc Tụng\" của Kỹ Năng Nộ <strong>Thánh Ca Thuần Khiết</strong> để triệu hồi Khiên Thánh, nhân vật được Khiên Thánh bảo vệ sẽ tăng 25% Hiệu Quả Khiên trong 12s."
+      "0": "Sau khi Dahlia tiêu hao hiệu quả \"Chúc Tụng\" của Kỹ Năng Nộ <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Thánh Ca Thuần Khiết</tooltip></strong> để triệu hồi Khiên Thánh, nhân vật được Khiên Thánh bảo vệ sẽ tăng 25% Hiệu Quả Khiên trong 12s."
     }
   },
   "constellation3": {
     "name": "Tín Ngưỡng Hoa Gió",
     "description": {
-      "0": "Cấp kỹ năng <strong>Thánh Ca Thuần Khiết</strong> +3.",
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Thánh Ca Thuần Khiết</tooltip></strong> +3.",
       "1": "Tăng tối đa đến cấp 15."
     }
   },
   "constellation4": {
     "name": "Hội Tụ Ước Nguyện",
     "description": {
-      "0": "Thời gian duy trì hiệu quả Tây Phong Thân Quyến từ Kỹ Năng Nộ <strong>Thánh Ca Thuần Khiết</strong> tăng thêm 3s."
+      "0": "Thời gian duy trì hiệu quả Tây Phong Thân Quyến từ Kỹ Năng Nộ <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Thánh Ca Thuần Khiết</tooltip></strong> tăng thêm 3s."
     }
   },
   "constellation5": {
     "name": "Nền Tảng Tinh Tế",
     "description": {
-      "0": "Cấp kỹ năng <strong>Nghi Thức Rửa Tội</strong> +3.",
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Dahlia_gen baseKey18=skill>Nghi Thức Rửa Tội</tooltip></strong> +3.",
       "1": "Tăng tối đa đến cấp 15."
     }
   },
   "constellation6": {
     "name": "Hạnh Phúc Đồng Hành",
     "description": {
-      "0": "Nhân vật trong trận hiện tại nhận hiệu quả Tây Phong Thân Quyến từ Kỹ Năng Nộ <strong>Thánh Ca Thuần Khiết</strong> sẽ tăng 10% Tốc Độ Tấn Công.",
+      "0": "Nhân vật trong trận hiện tại nhận hiệu quả Tây Phong Thân Quyến từ Kỹ Năng Nộ <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Thánh Ca Thuần Khiết</tooltip></strong> sẽ tăng 10% Tốc Độ Tấn Công.",
       "1": "Ngoài ra, khi nhân vật trong trận hiện tại mang hiệu quả Tây Phong Thân Quyến bị hạ gục, sẽ lập tức:",
       "2": [
         "Hồi sinh nhân vật này.",

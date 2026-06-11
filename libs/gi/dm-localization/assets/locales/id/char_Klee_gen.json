@@ -101,6 +101,13 @@
     "description": {
       "0": "Saat <strong>Jumpy Dumpty</strong> atau Normal Attack Klee mengakibatkan DMG, Klee memiliki 50% kemungkinan untuk mendapatkan Explosive Spark.",
       "1": "Explosive Spark akan terkonsumsi saat Klee melancarkan Charged Attack dan membuatnya tidak mengonsumsi Stamina serta mengakibatkan 50% DMG lebih besar."
+    },
+    "upgradedDescription": {
+      "0": "Saat Elemental Skill <strong>Jumpy Dumpty</strong> atau Normal Attack Klee mengakibatkan DMG, Klee memiliki 50% kemungkinan untuk mendapatkan Explosive Spark. Saat melancarkan Elemental Skill <strong>Jumpy Dumpty</strong> dan Elemental Burst <strong>Sparks 'n' Splash</strong>, Klee akan mendapatkan 1 Explosive Spark. Klee bisa memiliki maksimum 3 Explosive Spark.",
+      "1": "Saat Klee memiliki Explosive Spark dan melancarkan Charged Attack, maka ia akan mengonsumsi satu Explosive Spark untuk melancarkan Charged Attack khusus Boom-Boom Strike yang tidak mengonsumsi Stamina dan mengakibatkan 50% DMG lebih besar.",
+      "2": "<br/>",
+      "3": "<strong>Hexerei: Secret Rite</strong>",
+      "4": "Selama durasi Elemental Burst <strong>Sparks 'n' Splash</strong>, tahap kombo Normal Attack Klee tidak akan diulang. Saat Klee memiliki Explosive Spark dan melancarkan Normal Attack, Normal Attack tahap 3 akan mengonsumsi 1 buah Explosive Spark untuk menyerang musuh satu kali lagi dengan serangan yang setara dengan Boom-Boom Strike."
     }
   },
   "passive2": {
@@ -115,16 +122,32 @@
       "0": "Memperlihatkan lokasi <strong>produk khas Mondstadt</strong> di sekitar pada peta kecil."
     }
   },
+  "lockedPassive": {
+    "name": "Witch's Eve Rite: Sparkborne Magic",
+    "description": {
+      "0": "Setelah menyelesaikan <strong>PR Penyihir: Tentang Daun Kembang Api</strong>, Klee akan berubah menjadi Karakter <strong>Hexerei</strong>. Saat ada setidaknya 2 Karakter Hexerei di dalam party, akan mendapatkan efek <strong>Hexerei: Secret Rite</strong> yang memperkuat Karakter Hexerei.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei: Secret Rite</strong>",
+      "3": "Saat Normal Attack, Elemental Skill, atau Elemental Burst Klee mengakibatkan DMG, ia akan mendapatkan 1 Boom Badge yang bertahan 20 detik. Setiap jenis serangan di atas bisa memberikan maksimum 1 Boom Badge kepada Klee. Boom Badge yang diperoleh dari jenis serangan yang berbeda akan dihitung secara terpisah. Saat Klee memiliki 1/2/3 Boom Badge, Charged Attack khusus Boom-Boom Strike miliknya akan mengakibatkan DMG sebesar 115%/130%/150% DMG awal."
+    }
+  },
   "constellation1": {
     "name": "Chained Reaction",
     "description": {
       "0": "Saat melancarkan serangan atau skill, Klee memiliki kemungkinan untuk menimbulkan percikan api yang mengakibatkan DMG sebesar 120% dari DMG <strong>Sparks 'n' Splash</strong> pada musuh."
+    },
+    "upgradedDescription": {
+      "0": "Saat melancarkan serangan atau skill, Klee memiliki kemungkinan untuk menimbulkan percikan api yang mengakibatkan DMG sebesar 120% dari DMG <strong>Sparks 'n' Splash</strong> pada musuh.",
+      "1": "ATK Klee meningkat 60% selama 12 detik setelah memicu efek di atas."
     }
   },
   "constellation2": {
     "name": "Explosive Frags",
     "description": {
       "0": "DEF musuh berkurang 23% selama 10 detik saat terkena ranjau dari <strong>Jumpy Dumpty</strong>."
+    },
+    "upgradedDescription": {
+      "0": "Saat Elemental Skill Klee mengenai musuh, DEF musuh akan berkurang 23% selama 10 detik."
     }
   },
   "constellation3": {
@@ -138,6 +161,9 @@
     "name": "Sparkly Explosion",
     "description": {
       "0": "Jika Klee meninggalkan medan pertempuran saat <strong>Sparks 'n' Splash</strong> sedang berlangsung, kepergian Klee akan memicu ledakan yang mengakibatkan <pyro>Pyro DMG Area</pyro> sebesar 555% ATK."
+    },
+    "upgradedDescription": {
+      "0": "Jika Klee keluar dari medan pertempuran selama durasi <strong>Sparks 'n' Splash</strong> atau jika durasi <strong>Sparks 'n' Splash</strong> berakhir, akan muncul sebuah ledakan yang mengakibatkan <pyro>Pyro DMG Area</pyro> sebesar 555% ATK. Jika efek di atas terpicu saat Klee ada di medan pertempuran, maka DMG-nya meningkat 100%."
     }
   },
   "constellation5": {
@@ -152,6 +178,13 @@
     "description": {
       "0": "Saat <strong>Sparks 'n' Splash</strong> aktif, Klee akan memulihkan 3 Energy setiap 3 detik untuk semua anggota party (tidak termasuk Klee sendiri).",
       "1": "Setelah melancarkan <strong>Sparks 'n' Splash</strong>, seluruh anggota party mendapatkan 10% <pyro>Pyro DMG Bonus</pyro> selama 25 detik."
+    },
+    "upgradedDescription": {
+      "0": "Saat <strong>Sparks 'n' Splash</strong> aktif, Klee akan memulihkan 3 Energy setiap 3 detik untuk semua anggota party (kecuali Klee sendiri).",
+      "1": "Setelah melancarkan <strong>Sparks 'n' Splash</strong>, seluruh Karakter lain mendapatkan 10% <pyro>Pyro DMG Bonus</pyro> dan Klee mendapatkan 50% <pyro>Pyro DMG Bonus</pyro> selama 25 detik.",
+      "2": "<br/>",
+      "3": "<strong>Hexerei: Secret Rite</strong>",
+      "4": "Saat efek yang mengonsumsi <strong>Explosive Spark</strong> terpicu, ada 50% kemungkinan untuk tidak mengonsumsi <strong>Explosive Spark</strong>. Selain itu, saat Klee melancarkan Normal Attack dalam status <strong>Sparks 'n' Splash</strong>, Normal Attack tahap 1 dan 2 memiliki 40% kemungkinan untuk mengonsumsi Explosive Spark dan mengakibatkan serangan tambahan dengan DMG setara Boom-Boom Strike."
     }
   }
 }

@@ -145,14 +145,33 @@
       "0": "Khi ghép nguyên liệu đột phá vũ khí, có tỷ lệ 25% hoàn trả một phần nguyên liệu ghép."
     }
   },
+  "lockedPassive": {
+    "name": "Đêm Lễ Ma Nữ - Nguồn Gốc Sao Trời",
+    "description": {
+      "0": "Sau khi hoàn thành <strong>Bài Tập Của Ma Nữ - Điều Chưa Kiểm Chứng</strong>, Mona sẽ trở thành nhân vật <strong>Hexerei</strong>. Khi đội hình có ít nhất 2 nhân vật Hexerei, sẽ nhận được hiệu quả <strong>Hexerei - Nghi Thức Bí Mật</strong>, giúp nhân vật Hexerei nhận được cường hóa.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei - Nghi Thức Bí Mật</strong>",
+      "3": "Khi Mona Tấn Công Thường hoặc Trọng Kích trúng kẻ địch, sẽ nhận 1 tầng \"Ánh Sáng Sao Thủy\" trong 8s, tối đa cộng dồn 3 tầng, mỗi 0.1s tối đa nhận 1 tầng Ánh Sáng Sao Thủy theo cách này. Khi nhân vật khác trong đội bản thân kích hoạt phản ứng Bốc Hơi lên kẻ địch, sẽ tiêu hao toàn bộ Ánh Sáng Sao Thủy, mỗi tầng tiêu hao sẽ tăng 5% sát thương phản ứng Bốc Hơi lần này.",
+      "4": "Ngoài ra, khi Mona Tấn Công Thường hoặc Trọng Kích trúng kẻ địch, sẽ còn khiến trạng thái <strong>Tinh Dị</strong> của kẻ địch kéo dài thêm 2s. Hiệu quả này mỗi 0.5s tối đa kích hoạt một lần, và nhiều nhất kéo dài trạng thái <strong>Tinh Dị</strong> của kẻ địch thêm 8s theo cách này."
+    }
+  },
   "constellation1": {
     "name": "Tiên Tri Chìm Đắm",
     "description": {
       "0": "Trong vòng 8s sau khi nhân vật của bản thân trong đội tấn công địch ở trạng thái Tinh Dị, sẽ tăng hiệu quả <hydro>phản ứng với Nguyên Tố Thủy</hydro>:",
       "1": [
-        "Tăng 15% sát thương phản ứng Điện Cảm gây ra, tăng 15% sát thương phản ứng Nguyệt-Điện Cảm gây ra, tăng 15% sát thương phản ứng Bốc Hơi gây ra, tăng 15% sát thương phản ứng Khuếch Tán Nguyên Tố Thủy gây ra.",
+        "Tăng 15% sát thương phản ứng Điện Cảm, tăng 15% sát thương phản ứng Nguyệt-Điện Cảm, tăng 15% sát thương phản ứng Bốc Hơi, tăng 15% sát thương phản ứng Khuếch Tán Nguyên Tố Thủy, tăng 15% sát thương phản ứng Nguyệt-Kết Tinh.",
         "Thời gian duy trì phản ứng Đóng Băng kéo dài 15%."
       ]
+    },
+    "upgradedDescription": {
+      "0": "Trong vòng 8s sau khi nhân vật trong đội bản thân đánh trúng kẻ địch ở trạng thái Tinh Dị, sẽ tăng hiệu quả <hydro>phản ứng với Nguyên Tố Thủy</hydro>:",
+      "1": [
+        "Tăng 15% sát thương phản ứng Điện Cảm, tăng 15% sát thương phản ứng Nguyệt-Điện Cảm, tăng 15% sát thương phản ứng Bốc Hơi, tăng 15% sát thương phản ứng Khuếch Tán Nguyên Tố Thủy, tăng 15% sát thương phản ứng Nguyệt-Kết Tinh.",
+        "Thời gian duy trì phản ứng Đóng Băng kéo dài 15%."
+      ],
+      "2": "<br/>",
+      "3": "Ngoài ra, khi nhân vật dự bị trong đội kích hoạt hiệu quả nêu trên, hiệu ứng tăng sát thương sẽ còn tăng đến 160% so với ban đầu."
     }
   },
   "constellation2": {
@@ -160,6 +179,11 @@
     "description": {
       "0": "Khi tấn công thường đánh trúng có 20% tỷ lệ tự động thi triển trọng kích 1 lần.",
       "1": "Hiệu quả này mỗi 5s chỉ kích hoạt 1 lần."
+    },
+    "upgradedDescription": {
+      "0": "Khi Tấn Công Thường đánh trúng mục tiêu, có 20% xác suất tự động thi triển một lần Trọng Kích. Ngoài ra, trong 5s sau khi Mona thi triển Kỹ Năng Nộ <strong>Quỹ Đạo Tinh Mệnh</strong>, khi lần Tấn Công Thường tiếp theo đánh trúng sẽ chắc chắn tự động thi triển một lần Trọng Kích.",
+      "1": "Hiệu quả tự động thi triển Trọng Kích nêu trên mỗi 5s chỉ được kích hoạt một lần.",
+      "2": "Khi Trọng Kích của Mona đánh trúng kẻ địch, sẽ còn tăng 80 điểm Tinh Thông Nguyên Tố cho tất cả nhân vật trong đội ở gần trong 12s."
     }
   },
   "constellation3": {
@@ -173,6 +197,10 @@
     "name": "Tiên Tri Diệt Chủng",
     "description": {
       "0": "Khi tất cả nhân vật trong đội tấn công địch ở trạng thái Tinh Dị, tỷ lệ bạo kích tăng 15%."
+    },
+    "upgradedDescription": {
+      "0": "Tất cả nhân vật trong đội khi tấn công kẻ địch trong trạng thái Tinh Dị, Tỷ Lệ Bạo Kích tăng 15%.",
+      "1": "Tất cả nhân vật Hexerei trong đội khi tấn công kẻ địch trong trạng thái Tinh Dị, Sát Thương Bạo Kích tăng 15%."
     }
   },
   "constellation5": {
@@ -187,6 +215,10 @@
     "description": {
       "0": "Sau khi vào trạng thái <strong>Dòng Chảy Ảo</strong>, mỗi 1s di chuyển, sát thương trọng kích ở lần sau của Mona tăng 60%,",
       "1": "Tối đa có thể nhận buff sát thương trọng kích 180%, hiệu quả kéo dài 8s."
+    },
+    "upgradedDescription": {
+      "0": "Khi Mona trong trận, nếu ở trạng thái <strong>Dòng Chảy Ảo</strong> hoặc xung quanh có kẻ địch trong trạng thái Tinh Dị, mỗi 1s, sát thương Trọng Kích lần sau của Mona sẽ tăng 60%, tối đa nhận 180% buff sát thương Trọng Kích theo cách này. Hiệu quả này tối đa duy trì 8s.",
+      "1": "Ngoài ra, đối với kẻ địch trong trạng thái Tinh Dị, Trọng Kích của Mona sẽ gây ra 200% sát thương gốc."
     }
   }
 }

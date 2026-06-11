@@ -105,6 +105,21 @@
       "0": "Le dernier coup d'attaque normale provoque un effondrement, qui inflige une quantité de <geo>DGT Géo</geo> équivalant à 60 % de l'ATQ aux ennemis dans la zone."
     }
   },
+  "lockedPassive": {
+    "name": "Adamantin d'ailleurs",
+    "description": {
+      "0": "Permet {M#au voyageur}{F#à la voyageuse} de puiser une force nouvelle dans ses périples passés, lui accordant un <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>effet de renforcement</strong></tooltip> supplémentaire pour chaque élément avec lequel {M#il est entré}{F#elle est entrée} en résonance.",
+      "1": "<br/>",
+      "2": "De plus, lorsqu'un personnage de l'équipe à proximité commence à bénéficier de la protection d'un bouclier, qu'un de leurs boucliers est remplacé pour quelque raison que ce soit ou qu'une <geo>construction Géo</geo> est générée, {M#le voyageur}{F#la voyageuse} obtient 1 lame de pierre archaïque, une lame pouvant être obtenue une fois toutes les secondes de cette manière jusqu'à 3 lames. Avec au moins 3 lames de pierre archaïque, effectuer une attaque chargée consomme toutes les lames pour déclencher une <strong>attaque chargée « Éboulement »</strong> spéciale.",
+      "3": "<br/>",
+      "4": "<strong>Attaque chargée « Éboulement »</strong>",
+      "5": [
+        " Chaque coup de l'attaque chargée inflige des <geo>DGT Géo</geo> qui sont augmentés d'une valeur équivalant à 120 % de l'ATQ {M#du voyageur}{F#de la voyageuse}.",
+        " Après avoir touché un ennemi, les personnages de l'équipe à proximité voient la force du bouclier augmenter de 20 % pendant 15 s.",
+        " Une <strong>attaque chargée « Éboulement »</strong> peut être déclenchée une fois toutes les 15 s."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Mur de roche incassable",
     "description": {

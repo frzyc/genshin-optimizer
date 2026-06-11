@@ -1,0 +1,163 @@
+{
+  "name": "Prune",
+  "title": "Précieux rêves d'enfance",
+  "description": "Une minuscule chasseuse de sorcières, venue de Nod-Krai avec pour unique dessein de débusquer une sorcière qui, à l'en croire, a commis tous les péchés imaginables : y compris s'en prendre aux petits enfants !",
+  "constellationName": "Turris Venefica",
+  "auto": {
+    "name": "Badaboum ! Marteau d'exorcisme",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Brandit le marteau-serment de chasse des fléaux et enchaîne jusqu'à 3 attaques qui infligent des <anemo>DGT Anémo</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance et effectue un coup de marteau ascendant pour infliger des <anemo>DGT Anémo</anemo> après un court délai."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs en concentrant ses pouvoirs élémentaires, infligeant des DGT aux ennemis en chemin et des <anemo>DGT Anémo de zone</anemo> à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT attaque chargée",
+      "4": "Coût d'endurance attaque chargée",
+      "5": "DGT durant la chute",
+      "6": "DGT chute basse/élevée",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Ding ding ding ! Carillon de chasse aux sorcières",
+    "description": {
+      "0": "Libère la puissance du vent pour vaincre la sorcière maléfique et sauver Descartes ! Prune frappe sa cloche de l'ensorceleuse avec son marteau-serment de chasse des fléaux, infligeant des <anemo>DGT Anémo</anemo>.",
+      "1": "Si Prune déclenche une réaction de Dispersion sur un ennemi grâce à cette attaque, <strong>Ding ding ding ! Carillon de chasse aux sorcières</strong> est converti en <strong>Bang bang ! Arrivée de la rétribution de sorcière</strong> pendant 6 s.",
+      "2": "<br/>",
+      "3": "<strong>Bang bang ! Arrivée de la rétribution de sorcière</strong>",
+      "4": "Le <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>marteau-serment de chasse des fléaux</strong></tooltip> subit une conversion de l'élément impliqué dans la réaction de Dispersion. Utiliser un appui simple permet à Prune de bondir et de propulser son marteau vers l'avant d'un coup de pied, infligeant des DGT de l'élément correspondant aux ennemis devant elle."
+    },
+    "skillParams": {
+      "0": "DGT de Ding ding ding ! Carillon de chasse aux sorcières",
+      "1": "DGT de Bang bang ! Arrivée de la rétribution de sorcière",
+      "2": "Temps de recharge",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Le glas sonne ! La chasse est ouverte",
+    "description": {
+      "0": "Prune agite doucement sa cloche de l'ensorceleuse, infligeant des <anemo>DGT Anémo</anemo> aux ennemis proches avant que la cloche ne passe en mode Chasse-traque.",
+      "1": "<br/>",
+      "2": "<strong>Cloche de l'ensorceleuse : Chasse-traque</strong>",
+      "3": "Dans ce mode, la cloche de l'ensorceleuse suit le personnage déployé, attaquant les ennemis à proximité de façon intermittente en leur infligeant des <anemo>DGT Anémo de zone</anemo>, ces DGT étant considérés comme des DGT de déchaînement élémentaire."
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT cloche de l'ensorceleuse",
+      "2": "Durée du mode Chasse-traque",
+      "3": "Temps de recharge",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Verdict et peine",
+    "description": {
+      "0": "Lorsque la cloche de l'ensorceleuse du mode Chasse-traque inflige des DGT à un ennemi pendant le déchaînement élémentaire <strong><tooltip ns=char_Prune_gen baseKey18=burst>Le glas sonne ! La chasse est ouverte</tooltip></strong>, déclencher par la même occasion une réaction de Dispersion sur l'ennemi invoque un <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>marteau-serment de chasse des fléaux</strong></tooltip> dont l'élément est converti selon la réaction élémentaire, infligeant des DGT élémentaires d'une valeur équivalant à 150 % de l'ATQ de Prune. Ces dégâts sont considérés comme des DGT de déchaînement élémentaire."
+    }
+  },
+  "passive2": {
+    "name": "Synchronicité des cloches",
+    "description": {
+      "0": "Lorsque Prune a touché un ennemi avec un <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>marteau-serment de chasse des fléaux</strong></tooltip> dont l'élément a été converti, les autres personnages de l'équipe à proximité obtiennent l'effet Ralliement du glas pendant 5 s : chaque pt d'ATQ de Prune au-dessus de 2 000 pts lors de l'obtention de l'effet Ralliement du glas augmente les DGT infligés par les attaques normales, les attaques chargées, les attaques plongeantes, les compétences élémentaires et les déchaînements élémentaires de 0,025 %, jusqu'à un maximum de 50 %."
+    }
+  },
+  "passive3": {
+    "name": "Modification bing, bang, boum !",
+    "description": {
+      "0": "10 % de chances de synthétiser un matériau d'aptitude aléatoire supplémentaire (même rareté et région que le matériau obtenu)."
+    }
+  },
+  "lockedPassive": {
+    "name": "Veillée de la sorcière : Vœu de recherche de sorcières",
+    "description": {
+      "0": "Après avoir terminé le <strong>devoir de la sorcière « Sujet de réfutation »</strong>, Prune devient un personnage <strong>héxère</strong>. Si l'équipe contient au moins 2 personnages héxères, elle bénéficie de l'effet <strong>Hexerei : Rituel secret</strong> qui améliore les personnages héxères.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei : Rituel secret</strong>",
+      "3": "Lorsqu'un personnage héxère de l'équipe affecté par l'effet Ralliement du glas a déclenché une réaction élémentaire sur un ennemi, l'ATQ de Prune augmente de 60 % pendant 5 s. Si la réaction élémentaire déclenchée est une Dispersion, l'ATQ du personnage concerné augmente également de 30 % pendant 5 s."
+    }
+  },
+  "constellation1": {
+    "name": "Avec la promesse de chercher le salut, le voyage commence",
+    "description": {
+      "0": "Après avoir touché un ennemi avec un <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>marteau-serment de chasse des fléaux</strong></tooltip> dont l'élément est converti, Prune récupère 2 pts d'énergie élémentaire, cet effet pouvant être déclenché une fois toutes les 1,8 s."
+    }
+  },
+  "constellation2": {
+    "name": "Bons pour nettoyer les bagages négligés sont les pouvoirs élémentaires",
+    "description": {
+      "0": "Pendant son déchaînement élémentaire <strong><tooltip ns=char_Prune_gen baseKey18=burst>Le glas sonne ! La chasse est ouverte</tooltip></strong>, Prune obtient également l'effet Chasse à la sorcière lorsque sa cloche de l'ensorceleuse est en mode Chasse-traque : augmente l'ATQ de Prune de 10 %, et de 5 % supplémentaires lorsque sa cloche de l'ensorceleuse ou son <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>marteau-serment de chasse des fléaux</strong></tooltip> dont l'élément est converti touche un ennemi. L'ATQ peut être augmentée d'un maximum de 40 % de cette manière.",
+      "1": "L'instance originale de l'effet ci-dessus sera annulée si « Le glas sonne ! La chasse est ouverte » est utilisé à nouveau pendant cette période."
+    }
+  },
+  "constellation3": {
+    "name": "La caravane quitte le col de montagne, le paysage change à nouveau",
+    "description": {
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Prune_gen baseKey18=burst>Le glas sonne ! La chasse est ouverte</tooltip></strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "En suivant le vent en arrière, son ombre se divise encore en deux",
+    "description": {
+      "0": "Après avoir touché un ennemi avec un <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>marteau-serment de chasse des fléaux</strong></tooltip> dont l'élément est converti, le marteau rebondit pour atterrir sur un ennemi proche, infligeant des DGT de l'élément correspondant d'une valeur équivalent à 80 % de l'ATQ."
+    }
+  },
+  "constellation5": {
+    "name": "Cent défaites ne posent pas problème, demain est un jour nouveau",
+    "description": {
+      "0": "Niveau d'aptitude <strong><tooltip ns=char_Prune_gen baseKey18=skill>Ding ding ding ! Carillon de chasse aux sorcières</tooltip></strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Et voilà l'histoire ! À partager avec vos amis !",
+    "description": {
+      "0": "La durée du mode Chasse-traque de la cloche de l'ensorceleuse augmente de 4 s pendant le déchaînement élémentaire <strong><tooltip ns=char_Prune_gen baseKey18=burst>Le glas sonne ! La chasse est ouverte</tooltip></strong>.",
+      "1": "De plus, lorsqu'un personnage de l'équipe avec l'effet Ralliement du glas a déclenché une réaction élémentaire sur un ennemi, l'ATQ de Prune et de l'autre personnage déployé avec l'effet Ralliement du glas augmente de 350 pts pendant 5 s."
+    }
+  }
+}

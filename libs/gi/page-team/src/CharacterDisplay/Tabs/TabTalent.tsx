@@ -2,7 +2,6 @@ import {
   CardThemed,
   ConditionalWrapper,
   DropdownButton,
-  NextImage,
 } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import { maxConstellationCount } from '@genshin-optimizer/gi/consts'
@@ -51,6 +50,8 @@ const talentSpacing = {
 
 export default function CharacterTalentPane() {
   const { t } = useTranslation('sheet_gen')
+  // Load tooltip translations
+  useTranslation('tooltips_gen')
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)
@@ -72,6 +73,7 @@ export default function CharacterTalentPane() {
     ['passive1', t('unlockPassive1'), 1],
     ['passive2', t('unlockPassive2'), 4],
     ['passive3', t('unlockPassive3'), 0],
+    ['lockedPassive', t('unlockLockedPassive'), 0],
   ]
   const ascension = data.get(input.asc).value
   const constellation = data.get(input.constellation).value
@@ -203,11 +205,13 @@ export default function CharacterTalentPane() {
 function ReactionDisplay() {
   const { data } = useContext(DataContext)
   const reaction = data.getDisplay()['reaction'] as Record<string, CalcResult>
+  // Add Nicole projections here, idk where else
+  const nicole = data.getDisplay()['nicole'] as Record<string, CalcResult>
   return (
     <CardThemed bgt="light">
       <CardContent>
         <Grid container spacing={1}>
-          {Object.entries(reaction)
+          {[...Object.entries(reaction), ...Object.entries(nicole)]
             .filter(([_, node]) => !node.isEmpty)
             .map(([key, node]) => {
               return (
@@ -281,7 +285,13 @@ function SkillDisplayCard({
   // Hide header if the header matches the current talent
   const hideHeader = (section: DocumentSection): boolean => {
     const headerAction = section.header?.action
-    if (headerAction && typeof headerAction !== 'string') {
+    if (
+      headerAction &&
+      typeof headerAction !== 'string' &&
+      typeof headerAction !== 'number' &&
+      typeof headerAction !== 'boolean' &&
+      'props' in headerAction
+    ) {
       const key: string = headerAction.props.children.props.key18
       return key.includes(talentKey)
     }
@@ -299,7 +309,7 @@ function SkillDisplayCard({
           <Grid container sx={{ flexWrap: 'nowrap' }}>
             <Grid item>
               <Box
-                component={NextImage ? NextImage : 'img'}
+                component="img"
                 src={talentSheet?.img}
                 sx={{ width: 60, height: 'auto' }}
               />

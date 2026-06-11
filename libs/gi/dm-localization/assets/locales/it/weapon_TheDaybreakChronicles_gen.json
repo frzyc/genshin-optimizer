@@ -1,0 +1,29 @@
+{
+  "name": "Cronache dell'alba",
+  "description": {
+    "0": "Come dolci melodie, i canti della resistenza giungono trasportati dal vento per posarsi su queste corde. L'unione del loro potere è sufficiente a squarciare l'oscurità sconfinata con la luce dell'aurora nascente."
+  },
+  "passiveName": "Ode atemporale",
+  "passiveDescription": {
+    "0": {
+      "0": "Il personaggio che equipaggia l'arma ottiene Brezza dell'alba. Dopo aver trascorso 3 s fuori da un combattimento, i DAN da attacco normale, abilità elementale e Tripudio elementale aumentano di un <cryo>60%</cryo>. Durante un combattimento, il suddetto bonus DAN diminuisce di un <cryo>10%</cryo> al secondo fino ad azzerarsi. Quando gli attacchi normali, le abilità elementali o i Tripudi elementali del personaggio che equipaggia l'arma colpiscono un avversario, il bonus DAN corrispondente a quel tipo di DAN aumenta di un <cryo>10%</cryo> fino a raggiungere il <cryo>60%</cryo>. Quest'effetto può attivarsi una volta ogni 0,1 s per ogni tipo di attacco sopracitato, anche se il personaggio che equipaggia l'arma non è in campo.",
+      "1": "Se il gruppo possiede gli effetti di Hexerei: Rito segreto, quando gli attacchi normali, le abilità elementali o i Tripudi elementali del personaggio che equipaggia l'arma colpiscono un avversario, il bonus DAN di tutti questi tipi di DAN aumenta invece di un <cryo>20%</cryo>."
+    },
+    "1": {
+      "0": "Il personaggio che equipaggia l'arma ottiene Brezza dell'alba. Dopo aver trascorso 3 s fuori da un combattimento, i DAN da attacco normale, abilità elementale e Tripudio elementale aumentano di un <cryo>75%</cryo>. Durante un combattimento, il suddetto bonus DAN diminuisce di un <cryo>12,5%</cryo> al secondo fino ad azzerarsi. Quando gli attacchi normali, le abilità elementali o i Tripudi elementali del personaggio che equipaggia l'arma colpiscono un avversario, il bonus DAN corrispondente a quel tipo di DAN aumenta di un <cryo>12,5%</cryo> fino a raggiungere il <cryo>75%</cryo>. Quest'effetto può attivarsi una volta ogni 0,1 s per ogni tipo di attacco sopracitato, anche se il personaggio che equipaggia l'arma non è in campo.",
+      "1": "Se il gruppo possiede gli effetti di Hexerei: Rito segreto, quando gli attacchi normali, le abilità elementali o i Tripudi elementali del personaggio che equipaggia l'arma colpiscono un avversario, il bonus DAN di tutti questi tipi di DAN aumenta invece di un <cryo>25%</cryo>."
+    },
+    "2": {
+      "0": "Il personaggio che equipaggia l'arma ottiene Brezza dell'alba. Dopo aver trascorso 3 s fuori da un combattimento, i DAN da attacco normale, abilità elementale e Tripudio elementale aumentano di un <cryo>90%</cryo>. Durante un combattimento, il suddetto bonus DAN diminuisce di un <cryo>15%</cryo> al secondo fino ad azzerarsi. Quando gli attacchi normali, le abilità elementali o i Tripudi elementali del personaggio che equipaggia l'arma colpiscono un avversario, il bonus DAN corrispondente a quel tipo di DAN aumenta di un <cryo>15%</cryo> fino a raggiungere il <cryo>90%</cryo>. Quest'effetto può attivarsi una volta ogni 0,1 s per ogni tipo di attacco sopracitato, anche se il personaggio che equipaggia l'arma non è in campo.",
+      "1": "Se il gruppo possiede gli effetti di Hexerei: Rito segreto, quando gli attacchi normali, le abilità elementali o i Tripudi elementali del personaggio che equipaggia l'arma colpiscono un avversario, il bonus DAN di tutti questi tipi di DAN aumenta invece di un <cryo>30%</cryo>."
+    },
+    "3": {
+      "0": "Il personaggio che equipaggia l'arma ottiene Brezza dell'alba. Dopo aver trascorso 3 s fuori da un combattimento, i DAN da attacco normale, abilità elementale e Tripudio elementale aumentano di un <cryo>105%</cryo>. Durante un combattimento, il suddetto bonus DAN diminuisce di un <cryo>17,5%</cryo> al secondo fino ad azzerarsi. Quando gli attacchi normali, le abilità elementali o i Tripudi elementali del personaggio che equipaggia l'arma colpiscono un avversario, il bonus DAN corrispondente a quel tipo di DAN aumenta di un <cryo>17,5%</cryo> fino a raggiungere il <cryo>105%</cryo>. Quest'effetto può attivarsi una volta ogni 0,1 s per ogni tipo di attacco sopracitato, anche se il personaggio che equipaggia l'arma non è in campo.",
+      "1": "Se il gruppo possiede gli effetti di Hexerei: Rito segreto, quando gli attacchi normali, le abilità elementali o i Tripudi elementali del personaggio che equipaggia l'arma colpiscono un avversario, il bonus DAN di tutti questi tipi di DAN aumenta invece di un <cryo>35%</cryo>."
+    },
+    "4": {
+      "0": "Il personaggio che equipaggia l'arma ottiene Brezza dell'alba. Dopo aver trascorso 3 s fuori da un combattimento, i DAN da attacco normale, abilità elementale e Tripudio elementale aumentano di un <cryo>120%</cryo>. Durante un combattimento, il suddetto bonus DAN diminuisce di un <cryo>20%</cryo> al secondo fino ad azzerarsi. Quando gli attacchi normali, le abilità elementali o i Tripudi elementali del personaggio che equipaggia l'arma colpiscono un avversario, il bonus DAN corrispondente a quel tipo di DAN aumenta di un <cryo>20%</cryo> fino a raggiungere il <cryo>120%</cryo>. Quest'effetto può attivarsi una volta ogni 0,1 s per ogni tipo di attacco sopracitato, anche se il personaggio che equipaggia l'arma non è in campo.",
+      "1": "Se il gruppo possiede gli effetti di Hexerei: Rito segreto, quando gli attacchi normali, le abilità elementali o i Tripudi elementali del personaggio che equipaggia l'arma colpiscono un avversario, il bonus DAN di tutti questi tipi di DAN aumenta invece di un <cryo>40%</cryo>."
+    }
+  }
+}

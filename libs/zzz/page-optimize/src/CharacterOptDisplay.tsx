@@ -2,12 +2,13 @@ import { CardThemed, useScrollRef } from '@genshin-optimizer/common/ui'
 import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
 import { DebugListingsDisplay } from '@genshin-optimizer/game-opt/formula-ui'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
+import { getMainCharacterOptConfigId } from '@genshin-optimizer/zzz/db'
 import {
   OptConfigProvider,
-  useCharOpt,
   useCharacterContext,
   useDiscSets,
   useDiscs,
+  useTeam,
   useWengine,
 } from '@genshin-optimizer/zzz/db-ui'
 import { own } from '@genshin-optimizer/zzz/formula'
@@ -15,6 +16,7 @@ import {
   CharStatsDisplay,
   CharacterEditor,
   DiscSheetDisplay,
+  OptTargetTagRowSxProvider,
   WengineSheetDisplay,
 } from '@genshin-optimizer/zzz/formula-ui'
 import { CharacterCard, StatHighlightContext } from '@genshin-optimizer/zzz/ui'
@@ -66,15 +68,17 @@ export function CharacterOptDisplay() {
 
   return (
     <StatHighlightContext.Provider value={statHLContextObj}>
-      <SectionNumContext.Provider value={sections.length}>
-        <Stack gap={1}>
-          {sections.map(([key, content], i) => (
-            <Section key={key} title={key} index={i} zIndex={100}>
-              {content}
-            </Section>
-          ))}
-        </Stack>
-      </SectionNumContext.Provider>
+      <OptTargetTagRowSxProvider>
+        <SectionNumContext.Provider value={sections.length}>
+          <Stack gap={1}>
+            {sections.map(([key, content], i) => (
+              <Section key={key} title={key} index={i} zIndex={100}>
+                {content}
+              </Section>
+            ))}
+          </Stack>
+        </SectionNumContext.Provider>
+      </OptTargetTagRowSxProvider>
     </StatHighlightContext.Provider>
   )
 }
@@ -260,7 +264,8 @@ function OptimizeSection() {
 }
 function BuildsSection() {
   const { key: characterKey } = useCharacterContext()!
-  const { optConfigId } = useCharOpt(characterKey)!
+  const team = useTeam(characterKey)!
+  const optConfigId = getMainCharacterOptConfigId(team)
   if (!optConfigId) return null
   return (
     <OptConfigProvider optConfigId={optConfigId}>

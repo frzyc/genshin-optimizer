@@ -54,6 +54,7 @@ type AvatarPromoteExcelConfigData = {
   // ],
   requiredPlayerLevel: number // 15
 }
+
 const ascensionSrc = JSON.parse(
   readDMJSON('ExcelBinOutput/AvatarPromoteExcelConfigData.json')
 ) as AvatarPromoteExcelConfigData[]

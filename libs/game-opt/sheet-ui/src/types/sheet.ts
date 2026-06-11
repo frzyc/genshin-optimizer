@@ -1,9 +1,8 @@
-import type { StaticImageData } from 'next/image'
 import type { ReactNode } from 'react'
 import type { Document } from './document'
 
 export type UISheetElement = {
-  img?: string | StaticImageData
+  img?: string
   title: ReactNode
   subtitle?: ReactNode
   documents: Document[]

@@ -101,6 +101,13 @@
     "description": {
       "0": "Erschafft beim Verursachen von Schaden mit <strong>Bimm-Bamm-Bombe</strong> oder Standardangriffen mit einer Wahrscheinlichkeit von 50 % einen explosiven Funken.",
       "1": "Verbraucht beim nächsten heftigen Schlag den Funken statt Ausdauer und erhöht den damit verursachten Schaden um 50 %."
+    },
+    "upgradedDescription": {
+      "0": "Verleiht Klee, wenn sie mit ihrer Elementarfähigkeit <strong>Bimm-Bamm-Bombe</strong> und ihrem Standardangriff Schaden verursacht, mit einer Wahrscheinlichkeit von 50 % einen explosiven Funken. Verleiht ihr auch beim Anwenden ihrer Elementarfähigkeit <strong>Bimm-Bamm-Bombe</strong> und der Spezialfähigkeit <strong>Funkelfunken</strong> einen explosiven Funken. Klee kann über max. 3 explosive Funken verfügen.",
+      "1": "Verbraucht, wenn Klee über explosive Funken verfügt und einen heftigen Schlag ausführt, einen explosiven Funken und wendet den besonderen heftigen Schlag „Rumms-Explosion“ an, der keine Ausdauer verbraucht, und erhöht den dadurch verursachten Schaden um 50 %.",
+      "2": "<br/>",
+      "3": "<strong>Hexerei – Geheimes Ritual</strong>",
+      "4": "Setzt innerhalb der Dauer der Spezialfähigkeit <strong>Funkelfunken</strong> die Angriffsphase von Klees Standardangriff nicht zurück. Verbraucht einen explosiven Funken für die 3. Phase des Standardangriffs, wenn Klee über einen explosiven Funken verfügt und Standardangriffe ausführt, und greift Gegner damit zusätzlich mit einem Angriff gleichbedeutend einer „Rumms-Explosion“ an."
     }
   },
   "passive2": {
@@ -115,16 +122,32 @@
       "0": "Zeigt alle <strong>Besonderheiten Mondstadts</strong> in der Nähe auf der Minikarte an."
     }
   },
+  "lockedPassive": {
+    "name": "Geschenk der Hexennacht – Funkenmagie",
+    "description": {
+      "0": "Wandelt Klee nach dem Abschluss von <strong>Aufgabe der Hexe – Von funkelnden Blättern</strong> in eine <strong>Hexerei</strong>-Figur um. Verleiht, wenn sich in der Truppe mindestens 2 Hexerei-Figuren befinden, den Effekt <strong>Hexerei – Geheimes Ritual</strong>, der Hexerei-Figuren verstärkt.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei – Geheimes Ritual</strong>",
+      "3": "Verleiht, wenn Klee mit ihrem Standardangriff, ihrer Elementarfähigkeit oder Spezialfähigkeit Schaden verursacht, 20 s lang ein „Funkelabzeichen“. Auf diese Weise kann Klee max. 1 „Funkelabzeichen“ pro Angriffsart erhalten. Auf unterschiedliche Arten erhaltene „Funkelabzeichen“ existieren unabhängig voneinander. Erhöht, wenn Klee 1/2/3 „Funkelabzeichen“ besitzt, den Schaden durch den besonderen heftigen Schlag „Rumms-Explosion“ auf 115 %/130 %/150 %."
+    }
+  },
   "constellation1": {
     "name": "Kettenreaktion",
     "description": {
       "0": "Erschafft beim Angriff und beim Einsetzen von Fähigkeiten mit gewisser Wahrscheinlichkeit Funken, die Gegner angreifen und Schaden in Höhe von 120 % des Schadens von <strong>Funkelfunken</strong> verursachen."
+    },
+    "upgradedDescription": {
+      "0": "Erschafft beim Angriff und beim Einsetzen von Fähigkeiten mit gewisser Wahrscheinlichkeit Funken, die Gegner angreifen und Schaden in Höhe von 120 % des Schadens von <strong>Funkelfunken</strong> verursachen.",
+      "1": "Erhöht innerhalb von 12 s nach dem Auslösen von obigem Effekt Klees ANG um 60 %."
     }
   },
   "constellation2": {
     "name": "Splitterbombe",
     "description": {
       "0": "Die Sprengfallen von <strong>Bimm-Bamm-Bombe</strong> verringern die VTD von Gegnern 10 s lang um 23 %."
+    },
+    "upgradedDescription": {
+      "0": "Verringert, wenn Klee Gegner mit ihrer Elementarfähigkeit trifft, deren VTD um 23 %, hält 10 s."
     }
   },
   "constellation3": {
@@ -138,6 +161,9 @@
     "name": "Manuelle Explosion",
     "description": {
       "0": "Löst beim Auswechseln der Figur während der Wirkungsdauer von <strong>Funkelfunken</strong> eine Explosion aus, die <pyro>Pyro-Flächenschaden</pyro> in Höhe von 555 % ANG verursacht."
+    },
+    "upgradedDescription": {
+      "0": "Löst, wenn Klee während der Wirkungsdauer von <strong>Funkelfunken</strong> ausgewechselt oder die Wirkungsdauer von <strong>Funkelfunken</strong> beendet wird, eine Explosion aus und verursacht <pyro>Pyro-Flächenschaden</pyro> in Höhe von 555 % ihres ANG. Erhöht, wenn sie beim Anwenden von obigem Effekt aktiv auf dem Feld ist, den Schaden stattdessen um 100 %."
     }
   },
   "constellation5": {
@@ -152,6 +178,15 @@
     "description": {
       "0": "Klee stellt allen Truppenmitgliedern (außer sich selbst) während der Wirkungsdauer von <strong>Funkelfunken</strong> alle 3 s 3 Punkte Elementarenergie wieder her.",
       "1": "Erhöht den <pyro>Pyro-Schaden</pyro> aller Truppenmitglieder nach Anwenden von <strong>Funkelfunken</strong> 25 s lang um 10 %."
+    },
+    "upgradedDescription": {
+      "0": "Stellt, wenn Klee sich im Zustand <strong>Funkelfunken</strong> befindet, allen Truppenmitgliedern (außer Klee selbst) alle 3 s lang 3 Punkte Elementarenergie wieder her.",
+      "1": "Erhöht nach dem Anwenden von <strong>Funkelfunken</strong> 25 s lang den <pyro>Pyro-Schaden</pyro> aller anderen Figuren um 10 % sowie Klees <pyro>Pyro-Schaden</pyro> um 50 %.",
+      "2": "<br/>",
+      "3": "<strong>Hexerei – Geheimes Ritual</strong>",
+      "4": [
+        " Verbraucht bei der Anwendung eines <strong>explosiven Funken</strong> mit einer Wahrscheinlichkeit von 50 % keinen <strong>explosiven Funken</strong>. Verbraucht, wenn Klee im Zustand <strong>Funkelfunken</strong> einen Standardangriff ausführt, bei 1. und 2. Angriffsphase mit einer Wahrscheinlichkeit von 40 % einen Funkelfunken und greift Gegner mit einem Angriff gleichbedeutend einer „Rumms-Explosion“ an."
+      ]
     }
   }
 }

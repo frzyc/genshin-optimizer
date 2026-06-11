@@ -2,6 +2,7 @@ import { crawlObject, layeredAssignment } from '@genshin-optimizer/common/util'
 import {
   cmpEq,
   cmpGE,
+  cmpNE,
   constant,
   max,
   prod,
@@ -61,7 +62,7 @@ export function getBaseTag(data_gen: CharacterDatum): DmgTag {
  * @param extra Buffs that should only apply to this damage instance
  * @returns Array of TagMapNodeEntries representing the damage instance, daze and anomaly buildup
  */
-function dmgDazeAndAnom(
+export function dmgDazeAndAnom(
   skillParam: SkillParam,
   name: string,
   dmgTag: DmgTag,
@@ -71,6 +72,7 @@ function dmgDazeAndAnom(
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries[] {
   if (!dmgTag.attribute) dmgTag.attribute = 'physical'
+  if (!dmgTag.skillType) dmgTag.skillType = `${abilityScalingType}Skill`
   const dmgMulti = sum(
     percent(skillParam.DamagePercentage),
     prod(
@@ -83,6 +85,7 @@ function dmgDazeAndAnom(
     dmgMulti,
     cmpEq(own.dmg.mv_mult_, 0, percent(1), own.dmg.mv_mult_)
   )
+  const dmg = arg.cond ? cmpNE(arg.cond, '', dmgBase) : dmgBase
   const dazeBase = sum(
     percent(skillParam.StunRatio),
     prod(
@@ -90,19 +93,16 @@ function dmgDazeAndAnom(
       percent(skillParam.StunRatioGrowth)
     )
   )
+  const daze = arg.cond ? cmpNE(arg.cond, '', dazeBase) : dazeBase
+  const anomBase = constant(skillParam.AttributeInfliction / 100)
+  const anom = arg.cond ? cmpNE(arg.cond, '', anomBase) : anomBase
   return [
     stat === 'sheerForce'
-      ? customSheerDmg(`${name}_dmg`, dmgTag, dmgBase, arg, ...extra)
-      : customDmg(`${name}_dmg`, dmgTag, dmgBase, arg, ...extra),
-    customDaze(`${name}_daze`, dmgTag, dazeBase, arg, ...extra),
+      ? customSheerDmg(`${name}_dmg`, dmgTag, dmg, arg, ...extra)
+      : customDmg(`${name}_dmg`, dmgTag, dmg, arg, ...extra),
+    customDaze(`${name}_daze`, dmgTag, daze, arg, ...extra),
     // TODO: No clue if this is right
-    customAnomalyBuildup(
-      `${name}_anomBuildup`,
-      dmgTag,
-      constant(skillParam.AttributeInfliction / 100),
-      arg,
-      ...extra
-    ),
+    customAnomalyBuildup(`${name}_anomBuildup`, dmgTag, anom, arg, ...extra),
   ]
 }
 
@@ -127,10 +127,11 @@ export function dmgDazeAndAnomMerge(
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries[] {
   if (!dmgTag.attribute) dmgTag.attribute = 'physical'
+  if (!dmgTag.skillType) dmgTag.skillType = `${abilityScalingType}Skill`
   const dmgMulti = sum(
     ...skillParam.map((sp) => percent(sp.DamagePercentage)),
     prod(
-      own.char[abilityScalingType],
+      sum(own.char[abilityScalingType], -1),
       sum(...skillParam.map((sp) => percent(sp.DamagePercentageGrowth)))
     )
   )
@@ -142,7 +143,7 @@ export function dmgDazeAndAnomMerge(
   const dazeBase = sum(
     ...skillParam.map((sp) => percent(sp.StunRatio)),
     prod(
-      own.char[abilityScalingType],
+      sum(own.char[abilityScalingType], -1),
       sum(...skillParam.map((sp) => percent(sp.StunRatioGrowth)))
     )
   )
@@ -263,6 +264,12 @@ function inferDamageType(key: CharacterKey, abilityName: string): DamageType {
   )
   if (!damageType) {
     if (key === 'AstraYao' && abilityName === 'Chord') return 'exSpecial'
+    if (key === 'Banyue' && abilityName === 'DodgeImmovableMountain')
+      return 'dodgeCounter'
+    if (key === 'Cissia' && abilityName === 'CorrodeBone') return 'basic'
+    if (key === 'Harumasa' && abilityName === 'ChasingThunder') return 'dash'
+    if (key === 'Harumasa' && abilityName === 'ZanshinScatteredBlossoms')
+      return 'ult'
     if (key === 'Lucy' && abilityName === 'GuardBoarsToArms') return 'basic'
     if (key === 'Lucy' && abilityName === 'GuardBoarsSpinningSwing')
       return 'basic'
@@ -372,7 +379,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     },
     {} as Partial<Record<CoreStatKey, number[]>>
   )
-  const miyabiCheck = data_gen.id === '1091'
+  const isMiyabi = data_gen.id === '1091'
 
   return [
     ownBuff.char.attribute.add(data_gen.attribute),
@@ -398,7 +405,9 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     ),
     // Core skill stat boost
     ...Object.entries(coreStats).map(([stat, values]) =>
-      ownBuff.base[stat].add(subscript(core, values))
+      stat === 'hp_' || stat === 'atk_'
+        ? ownBuff.initial[stat].add(subscript(core, values))
+        : ownBuff.base[stat].add(subscript(core, values))
     ),
     // Mindscape skill level boost
     ...allSkillKeys.map((sk) =>
@@ -438,32 +447,45 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
       )
     ),
     ...customAnomalyDmg(
-      `disorderDmgInst_${miyabiCheck ? 'frost' : data_gen.attribute}`,
+      `disorderDmgInst_${isMiyabi ? 'frost' : data_gen.attribute}`,
       {
-        attribute: miyabiCheck ? 'ice' : data_gen.attribute,
+        attribute: data_gen.attribute,
         damageType1: 'disorder',
       },
       prod(
         sum(
-          percent(miyabiCheck ? 6 : 4.5),
+          percent(isMiyabi ? 6 : 4.5),
           own.final.addl_disorder_,
           prod(
             max(
               0,
               sum(
-                constant(miyabiCheck ? 20 : 10),
+                constant(isMiyabi ? 20 : 10),
                 prod(constant(-1), anomTimePassed)
               )
             ),
             percent(
-              disorderTimeMultipliers[
-                miyabiCheck ? 'frost' : data_gen.attribute
-              ]
+              disorderTimeMultipliers[isMiyabi ? 'frost' : data_gen.attribute]
             )
           )
         ),
         own.final.atk
       )
+    ),
+    // Abloom DMG
+    ...customAnomalyDmg(
+      'abloomDmgInst',
+      {
+        attribute: data_gen.attribute,
+        damageType1: 'anomaly',
+        damageType2: 'abloom',
+      },
+      prod(
+        percent(anomalyMultipliers[data_gen.attribute]),
+        own.final.atk,
+        cmpEq(own.dmg.anom_mv_mult_, 0, percent(1), own.dmg.anom_mv_mult_)
+      ),
+      { cond: cmpEq(own.dmg.anom_mv_mult_, 0, '', 'infer') }
     ),
     ...customAnomalyBuildup(
       'anomalyBuildupInst',

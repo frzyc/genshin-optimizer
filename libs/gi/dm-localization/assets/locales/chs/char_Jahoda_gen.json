@@ -1,0 +1,168 @@
+{
+  "name": "雅珂达",
+  "title": "系风攘影",
+  "description": "十分可靠，无所不能（自称）的「秘闻馆」员工。",
+  "constellationName": "莓果座",
+  "auto": {
+    "name": "见机行矢",
+    "fields": {
+      "normal": {
+        "0": "<strong>普通攻击</strong>",
+        "1": "进行至多三段的连续弓箭射击。"
+      },
+      "charged": {
+        "0": "<strong>重击</strong>",
+        "1": "进行伤害更高、更为精准的<strong>瞄准射击</strong>。",
+        "2": "瞄准时，强风会在箭矢上持续积聚。聚满了强风之力的箭矢会造成<anemo>风元素伤害</anemo>。"
+      },
+      "plunging": {
+        "0": "<strong>下落攻击</strong>",
+        "1": "从空中射出箭雨，并迅速下坠冲击地面，攻击下落路径上的敌人，在落地时造成范围伤害。"
+      }
+    },
+    "skillParams": {
+      "0": "一段伤害",
+      "1": "二段伤害",
+      "2": "三段伤害",
+      "3": "瞄准射击",
+      "4": "满蓄力瞄准射击",
+      "5": "下坠期间伤害",
+      "6": "低空/高空坠地冲击伤害",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "奇策·财富分配方案",
+    "description": {
+      "0": "雅珂达向敌人突进，并在触及敌人时进入「掠影追袭」状态。处于该状态下时，雅珂达将持续快速移动；若附近的敌人处于<pyro>火元素</pyro>、<hydro>水元素</hydro>、<electro>雷元素</electro>或<cryo>冰元素</cryo>附着下，雅珂达还会偷偷将随身携带的<tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>呼噜噜秘藏瓶</strong></tooltip>转换成对应的元素属性，并持续进行装填。持续时间结束或再次施放时，雅珂达将会清空<strong>呼噜噜秘藏瓶</strong>，并对附近的敌人造成一次<anemo>风元素伤害</anemo>；<strong>呼噜噜秘藏瓶</strong>装满时，雅珂达也会清空<strong>呼噜噜秘藏瓶</strong>，退出掠影追袭状态，并对附近的敌人造成一次伤害更高的<anemo>风元素伤害</anemo>。",
+      "1": "如果雅珂达的突进没有触及敌人，雅珂达会在原地投掷下一枚烟雾弹，对身边的敌人造成一次<anemo>风元素伤害</anemo>。",
+      "2": "<br/>",
+      "3": "<strong>月兆·满辉</strong>：<strong>呼噜噜秘藏瓶</strong>装满时，雅珂达不会立刻清空<strong>呼噜噜秘藏瓶</strong>，而是会在接下来的一段时间内，持续消耗瓶中装填的元素，并间歇性向附近的敌人发射<strong>软绒绒猫猫球</strong>，造成<strong>呼噜噜秘藏瓶</strong>对应元素类型的伤害。<strong>软绒绒猫猫球</strong>命中敌人时，还会为雅珂达恢复2点元素能量，该效果每3.5秒至多触发一次。",
+      "4": "<br/>",
+      "5": "<i>世上分配财富的方式很多，但对挪德卡莱的宝藏猎人与盗宝团而言，效率最高的分配方式从来都只有一种。</i>"
+    },
+    "skillParams": {
+      "0": "烟雾弹伤害",
+      "1": "秘藏瓶未装满伤害",
+      "2": "秘藏瓶装满伤害",
+      "3": "秘藏瓶持续时间",
+      "4": "猫猫球伤害",
+      "5": "冷却时间",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "秘器·猎人的七道具",
+    "description": {
+      "0": "压箱底的秘藏只能在这里用掉啦！雅珂达取出两枚<tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>猫型家用互助协调器</strong></tooltip>，并对附近的敌人造成一次<anemo>风元素伤害</anemo>。",
+      "1": "<br/>",
+      "2": "<i>「所谓互助协调嘛，就是你掏出摩拉互助，我们负责协调。怎么样，很合理吧？」</i>"
+    },
+    "skillParams": {
+      "0": "技能伤害",
+      "1": "猫型家用互助协调器伤害",
+      "2": "猫型家用互助协调器持续时间",
+      "3": "猫型家用互助协调器治疗量",
+      "4": "最低生命值角色额外治疗量",
+      "5": "冷却时间",
+      "6": "元素能量",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "索酬的巧计",
+    "description": {
+      "0": "当队伍中存在至少1名元素类型为<pyro>火元素</pyro>、<hydro>水元素</hydro>、<electro>雷元素</electro>或<cryo>冰元素</cryo>的角色时，将依据对应元素类型的角色数量，使元素爆发<strong>秘器·猎人的七道具</strong>中的<tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>猫型家用互助协调器</strong></tooltip>获得强化。",
+      "1": "雅珂达会偷偷记录队伍中上述元素类型的角色。在这些角色中，若角色数量最多的元素类型为：",
+      "2": [
+        "<pyro>火元素</pyro>：<strong>猫型家用互助协调器</strong>造成原本130%的伤害；",
+        "<hydro>水元素</hydro>：<strong>猫型家用互助协调器</strong>造成原本120%的治疗量；",
+        "<electro>雷元素</electro>：<strong>猫型家用互助协调器</strong>的数量增加一个；",
+        "<cryo>冰元素</cryo>：<strong>猫型家用互助协调器</strong>的攻击间隔减少10%。"
+      ],
+      "3": "<br/>",
+      "4": "若上述元素类型的角色数量相同，则按照<pyro>火元素</pyro>、<hydro>水元素</hydro>、<electro>雷元素</electro>、<cryo>冰元素</cryo>的顺序进行记录。初始至多只有一种元素类型对应的效果生效。"
+    }
+  },
+  "passive2": {
+    "name": "蜜莓的嘉赏",
+    "description": {
+      "0": "元素爆发<strong>秘器·猎人的七道具</strong>中的<tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>猫型家用互助协调器</strong></tooltip>对队伍中自己的当前场上角色触发治疗时，若受到治疗的角色生命值高于70%，则该角色的元素精通提升100点，持续6秒。"
+    }
+  },
+  "passive3": {
+    "name": "月兆祝赐·檐上趱行",
+    "description": {
+      "0": "雅珂达在队伍中时，队伍的<strong>月兆</strong>将会上升一级。"
+    }
+  },
+  "passive": {
+    "name": "暗巷的黠慧",
+    "description": {
+      "0": "在挪德卡莱执行探索派遣任务时，消耗的时间缩短25%。"
+    }
+  },
+  "constellation1": {
+    "name": "再来一瓶！",
+    "description": {
+      "0": "元素战技<strong>奇策·财富分配方案</strong>中，<tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>呼噜噜秘藏瓶</strong></tooltip>发射的<strong>软绒绒猫猫球</strong>命中敌人时，有50%的概率进行一次弹跳，对附近的敌人造成对应元素伤害。"
+    }
+  },
+  "constellation2": {
+    "name": "律贼的临机应变",
+    "description": {
+      "0": "<strong>月兆·满辉</strong>：突破天赋<tooltip ns=char_Jahoda_gen baseKey18=passive1><strong>「索酬的巧计」</strong></tooltip>中，除角色数量最多的元素类型外，雅珂达还可以偷偷记录剩余元素类型中角色数量最多的元素类型，并使至多两种元素类型对应的效果生效。该效果需要解锁突破天赋「索酬的巧计」。"
+    }
+  },
+  "constellation3": {
+    "name": "无所依归的豪赌",
+    "description": {
+      "0": "元素爆发<strong><tooltip ns=char_Jahoda_gen baseKey18=burst>秘器·猎人的七道具</tooltip></strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
+    }
+  },
+  "constellation4": {
+    "name": "尘沙之上的野莓",
+    "description": {
+      "0": "元素爆发<strong>秘器·猎人的七道具</strong>中的<tooltip ns=tooltips_gen baseKey18=11240002 values=[]><strong>猫型家用互助协调器</strong></tooltip>发生元素转化时，将会为雅珂达回复4点元素能量。"
+    }
+  },
+  "constellation5": {
+    "name": "最伟大的财宝",
+    "description": {
+      "0": "元素战技<strong><tooltip ns=char_Jahoda_gen baseKey18=skill>奇策·财富分配方案</tooltip></strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
+    }
+  },
+  "constellation6": {
+    "name": "最渺小的幸运",
+    "description": {
+      "0": "<strong>月兆·满辉</strong>：元素战技<strong>奇策·财富分配方案</strong>中的<tooltip ns=tooltips_gen baseKey18=11240001 values=[]><strong>呼噜噜秘藏瓶</strong></tooltip>装满后的20秒内，队伍中附近的月兆角色的暴击率提升5%，暴击伤害提升40%。"
+    }
+  }
+}

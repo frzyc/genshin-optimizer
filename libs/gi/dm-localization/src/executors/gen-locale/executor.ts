@@ -32,6 +32,7 @@ import {
   hakushinArtis,
   hakushinChars,
   hakushinWeapons,
+  hyperLinkNameExcelConifgData,
   languageMap,
   materialExcelConfigData,
   proudSkillExcelConfigData,
@@ -70,7 +71,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
       descTextMapHash
     )
     // layeredAssignment(mapHashData, [...keys, "descriptionDetail"], avatarDetailTextMapHash)
-    // Don't override constellation name if manually specified. For Zhongli
+    // Don't override constellation name if manually specified. For Zhongli and Columbina
     !mapHashData.char[characterIdMap[charid]]?.['constellationName'] &&
       layeredAssignment(
         mapHashData,
@@ -86,6 +87,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
         skills: [normal, skill, sprint],
         talents,
         inherentProudSkillOpens: [passive1, passive2, passive3, , passive],
+        lockedProudSkillOpens: [lockedPassive],
       } = depot
       layeredAssignment(
         mapHashData,
@@ -96,6 +98,14 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
         mapHashData,
         [...keys, 'auto', 'fields'],
         [avatarSkillExcelConfigData[normal].descTextMapHash, 'autoFields']
+      )
+      layeredAssignment(
+        mapHashData,
+        [...keys, 'auto', 'upgradedFields'],
+        [
+          avatarSkillExcelConfigData[normal].upgradedDescTextMapHash,
+          'autoFields',
+        ]
       )
       layeredAssignment(
         mapHashData,
@@ -124,6 +134,11 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
       )
       layeredAssignment(
         mapHashData,
+        [...keys, 'skill', 'upgradedDescription'],
+        [avatarSkillExcelConfigData[skill].upgradedDescTextMapHash, 'paragraph']
+      )
+      layeredAssignment(
+        mapHashData,
         [...keys, 'skill', 'skillParams'],
         proudSkillExcelConfigData[
           avatarSkillExcelConfigData[skill].proudSkillGroupId
@@ -146,6 +161,11 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
         mapHashData,
         [...keys, 'burst', 'description'],
         [avatarSkillExcelConfigData[burst].descTextMapHash, 'paragraph']
+      )
+      layeredAssignment(
+        mapHashData,
+        [...keys, 'burst', 'upgradedDescription'],
+        [avatarSkillExcelConfigData[burst].upgradedDescTextMapHash, 'paragraph']
       )
       layeredAssignment(
         mapHashData,
@@ -192,6 +212,16 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
             'paragraph',
           ]
         )
+      passive1.proudSkillGroupId &&
+        layeredAssignment(
+          mapHashData,
+          [...keys, 'passive1', 'upgradedDescription'],
+          [
+            proudSkillExcelConfigData[passive1.proudSkillGroupId][0]
+              .upgradedDescTextMapHash,
+            'paragraph',
+          ]
+        )
 
       passive2.proudSkillGroupId &&
         layeredAssignment(
@@ -207,6 +237,16 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
           [
             proudSkillExcelConfigData[passive2.proudSkillGroupId][0]
               .descTextMapHash,
+            'paragraph',
+          ]
+        )
+      passive2.proudSkillGroupId &&
+        layeredAssignment(
+          mapHashData,
+          [...keys, 'passive2', 'upgradedDescription'],
+          [
+            proudSkillExcelConfigData[passive2.proudSkillGroupId][0]
+              .upgradedDescTextMapHash,
             'paragraph',
           ]
         )
@@ -228,7 +268,6 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
           ]
         )
       }
-      //seems to be only used by SangonomiyaKokomi
       if (passive?.proudSkillGroupId) {
         layeredAssignment(
           mapHashData,
@@ -246,6 +285,23 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
           ]
         )
       }
+      if (lockedPassive?.proudSkillGroupId) {
+        layeredAssignment(
+          mapHashData,
+          [...keys, 'lockedPassive', 'name'],
+          proudSkillExcelConfigData[lockedPassive.proudSkillGroupId][0]
+            .nameTextMapHash
+        )
+        layeredAssignment(
+          mapHashData,
+          [...keys, 'lockedPassive', 'description'],
+          [
+            proudSkillExcelConfigData[lockedPassive.proudSkillGroupId][0]
+              .descTextMapHash,
+            'paragraph',
+          ]
+        )
+      }
 
       talents.forEach((skId, i) => {
         layeredAssignment(
@@ -257,6 +313,14 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
           mapHashData,
           [...keys, `constellation${i + 1}`, 'description'],
           [avatarTalentExcelConfigData[skId].descTextMapHash, 'paragraph']
+        )
+        layeredAssignment(
+          mapHashData,
+          [...keys, `constellation${i + 1}`, 'upgradedDescription'],
+          [
+            avatarTalentExcelConfigData[skId].upgradedDescTextMapHash,
+            'paragraph',
+          ]
         )
       })
     }
@@ -361,7 +425,6 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
   })
 
   //generate the MapHashes for localization for materials
-
   Object.entries(materialExcelConfigData).forEach(([_id, material]) => {
     const { nameTextMapHash } = material
     const key = nameToKey(TextMapEN[nameTextMapHash])
@@ -370,6 +433,18 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
       name: nameTextMapHash,
     }
   })
+
+  //generate the MapHashes for localization for tooltips
+  Object.values(hyperLinkNameExcelConifgData).forEach(
+    ({ id, nameTextMapHash, descTextMapHash }) => {
+      // Non-character kits, from IT buffs, skip them
+      if (id < 10000000) return
+      mapHashData.tooltips[id] = {
+        name: nameTextMapHash,
+        description: [descTextMapHash, 'paragraph'],
+      }
+    }
+  )
 
   // Override
   mapHashDataOverride()
@@ -407,7 +482,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
         if (
           processing === 'autoFields' &&
           lang === 'ru' &&
-          rawString.split('\\n\\n').length === 2
+          rawString?.split('\\n\\n').length === 2
         ) {
           const ind = rawString.indexOf('n<color=#FFD780FF>') + 1
           rawString = rawString.slice(0, ind) + '\\n' + rawString.slice(ind)
@@ -416,11 +491,18 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
         if (processing === 'skillParamEncoding' && lang !== 'en') return
         const string = parsingFunctions[processing](
           lang as Language,
-          preprocess(rawString),
+          preprocess(rawString, `${keys[0]}_${keys[1]}_gen`),
           keys
         )
         if (string === undefined)
           throw `Invalid string in ${keys}, for lang:${lang} (${stringID}:${processing})`
+        // Skip empty upgraded descriptions
+        if (
+          (keys[keys.length - 1] === 'upgradedDescription' ||
+            keys[keys.length - 1] === 'upgradedFields') &&
+          Object.keys(string).length === 0
+        )
+          return
         layeredAssignment(languageData, [lang, ...keys], string)
       }
     )
@@ -487,6 +569,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
           'weaponKey',
           'elementalResonance',
           'material',
+          'tooltips',
           'charNames',
           'weaponNames',
           'artifactNames',
@@ -509,7 +592,10 @@ function getLocalizationForHakushinChar(key: NonTravelerCharacterKey) {
   const data = getHakushinCharData(key)
 
   function parseString(type: string, str: string) {
-    return parsingFunctions[type]('en', preprocess(str), ['char', key])
+    return parsingFunctions[type]('en', preprocess(str, `char_${key}_gen`), [
+      'char',
+      key,
+    ])
   }
   function getSkillParams(strs: string[]) {
     return Object.fromEntries(
@@ -639,20 +725,23 @@ function getLocalizationForHakushinWep(key: WeaponKey) {
 
   const localization = {
     name: data.Name,
-    description: parsingFunctions['paragraph']('en', preprocess(data.Desc), [
-      'weapon',
-      key,
-    ]),
+    description: parsingFunctions['paragraph'](
+      'en',
+      preprocess(data.Desc, `weapon_${key}_gen`),
+      ['weapon', key]
+    ),
     passiveName: data.Refinement[1].Name,
     passiveDescription: objKeyValMap(
       Object.values(data.Refinement),
-      (info, index) => [
-        index,
-        parsingFunctions['paragraph']('en', preprocess(info.Desc), [
-          'weapon',
-          key,
-        ]),
-      ]
+      (info, index) =>
+        [
+          index,
+          parsingFunctions['paragraph'](
+            'en',
+            preprocess(info.Desc, `weapon_${key}_gen`),
+            ['weapon', key]
+          ),
+        ] as [any, any]
     ),
   }
   return localization

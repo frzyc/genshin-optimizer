@@ -1,0 +1,187 @@
+{
+  "name": "Durin",
+  "title": "\"As Chamas Eternas\"",
+  "description": "Um dragão que nasceu da caneta de M, e que chegou ao mundo humano. Sua história continua a se revelar.",
+  "constellationName": "Draco Rubedo",
+  "auto": {
+    "name": "Golpe da Asa Radiante",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza até 4 golpes rápidos."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina para desferir um golpe em frente."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano de Ataque Carregado",
+      "5": "Consumo de Stamina de Ataque Carregado",
+      "6": "Dano Durante a Queda",
+      "7": "Dano de Queda de Baixa/Alta Altitude",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Forma Binária: Convergência e Divisão",
+    "description": {
+      "0": "Purifica a substância das almas e dos desejos para realizar a <tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>Transmutação Essencial</strong></tooltip>. Nesse período, a Habilidade Elemental <strong>Forma Binária: Convergência e Divisão</strong> de Durin será substituída pela Habilidade Elemental especial <strong>Conversão: Confirmação da Pureza</strong>, seu Ataque Normal <strong>Golpe da Asa Radiante</strong> será substituído pela sua Habilidade Elemental especial <strong>Conversão: Negação da Escuridão</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Conversão: Confirmação da Pureza</strong>",
+      "3": "Causa uma instância de <pyro>Dano Pyro em AdE</pyro> contra os inimigos próximos, remove a Transmutação Essencial e entra no estado <strong>Confirmação da Pureza</strong> por 30s.",
+      "4": "<br/>",
+      "5": "<strong>Conversão: Negação da Escuridão</strong>",
+      "6": "Causa 3 instâncias consecutivas de <pyro>Dano Pyro</pyro> contra os inimigos à frente, remove Transmutação Essencial e entra no estado <strong>Negação da Escuridão</strong> por 30s.",
+      "7": "<br/>",
+      "8": "Quando Durin estiver em batalha e entrar em <strong>Confirmação da Pureza</strong> ou <strong>Negação da Escuridão</strong>, regenera uma certa quantidade de Energia Elemental. É possível regenerar Energia Elemental uma vez a cada 6s dessa forma."
+    },
+    "skillParams": {
+      "0": "Dano de Conversão: Confirmação da Pureza",
+      "1": "Dano de Conversão: Negação da Escuridão",
+      "2": "Regeneração de Energia Elemental",
+      "3": "Tempo de Recarga",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Princípio da Pureza: Transformação da Luz",
+    "description": {
+      "0": "Usa formas diferentes para liberar o poder de uma besta. Durin lança seu Supremo de formas diferentes de acordo com o estado de <tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>Transmutação Essencial</strong></tooltip>.",
+      "1": "<br/>",
+      "2": "<strong>Princípio da Pureza: Transformação da Luz</strong>",
+      "3": "Se Durin estiver no estado <strong>Confirmação da Pureza</strong>, lançará o Supremo <strong>Princípio da Pureza: Transformação da Luz</strong>, causando 3 instâncias de <pyro>Dano Pyro em AdE</pyro> contra o inimigo em frente, e revelando o poder da forma <strong>Dragão da Chama Branca</strong>. Dragão da Chama Branca acompanha o personagem ativo, e periodicamente ataca os inimigos próximos, causando <pyro>Dano Pyro em AdE</pyro>. Esse Dano é considerado Dano de Supremo.",
+      "4": "<br/>",
+      "5": "<strong>Princípio da Escuridão: Como as Estrelas Ardem</strong>",
+      "6": "Se Durin estiver no estado <strong>Negação da Escuridão</strong>, seu Supremo será convertido para <strong>Princípio da Escuridão: Como as Estrelas Ardem</strong>, causando três instâncias de <pyro>Dano Pyro em AdE</pyro>, e revelando a forma <strong>Dragão da Chama Escura</strong>. O Dragão da Chama Escura acompanha o personagem ativo, e periodicamente realiza um ataque contra um inimigo próximo, causando <pyro>Dano Pyro</pyro>. Esse Dano é considerado Dano de Supremo.",
+      "7": "Além disso, se Durin não estiver no Estado Especial de Transmutação Essencial, lançará o Supremo <strong>Princípio da Pureza: Transformação da Luz</strong>."
+    },
+    "skillParams": {
+      "0": "Dano de Princípio da Pureza: Transformação da Luz",
+      "1": "Dano de Princípio da Escuridão: Como as Estrelas Ardem",
+      "2": "Dano de Dragão da Chama Branca",
+      "3": "Dano de Dragão da Chama Escura",
+      "4": "Duração de Dragão da Chama Branca",
+      "5": "Duração de Dragão da Chama Escura",
+      "6": "Recarga",
+      "7": "Energia Elemental",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Luz Manifesta do Cálculo Divino",
+    "description": {
+      "0": "Gera efeitos de fortalecimento diferentes de acordo com o estado revelado do poder pelo lançamento do Supremo de Durin. Se o poder revelado de Durin for:",
+      "1": "<br/>",
+      "2": "<strong>Dragão da Chama Branca</strong>",
+      "3": "Depois que os personagens próximos na equipe desencadearem Queimaduras, Sobrecarga, Redemoinho Pyro, Reação de Cristalização Pyro contra inimigos, ou causarem <pyro>Dano Pyro</pyro> ou <dendro>Dano Dendro</dendro> contra inimigos sob efeito de Queimaduras, a <pyro>RES Pyro</pyro> desse inimigo e a RES do Elemento correspondente participante da reação são reduzidas em 20% por 6 segundos.",
+      "4": "<br/>",
+      "5": "<strong>Dragão da Chama Escura</strong>",
+      "6": "O Dano causado por reações de Vaporização desencadeadas por Durin aumenta em 40%, e o Dano causado por reações de Fusão aumenta em 40%."
+    }
+  },
+  "passive2": {
+    "name": "Caos Formado como a Noite",
+    "description": {
+      "0": "Durante 20 segundos após o uso do Supremo, Durin receberá o Efeito \"Fusão Primordial\": durante esse período, Durin obterá 10 Acúmulos de \"Essência\". Quando o <strong>Dragão da Chama Branca</strong> e o <strong>Dragão da Chama Escura</strong> causarem Dano com seus ataques periódicos, será consumido 1 Acúmulo de \"Essência\", aumentando o Dano causado. A cada 100 pontos de ATQ, será causado Dano adicional equivalente a 3% do Dano original, podendo alcançar no máximo 75% de Dano adicional por esse meio. Caso o <strong>Dragão da Chama Branca</strong> e o <strong>Dragão da Chama Escura</strong> atinjam múltiplos inimigos ao mesmo tempo, apenas 1 Acúmulo de \"Essência\" será consumido.",
+      "1": "Ao usar o Supremo novamente, o número de Acúmulos de \"Essência\" será reiniciado."
+    }
+  },
+  "passive3": {
+    "name": "Ecos da Terra Surgente",
+    "description": {
+      "0": "Ganha 25% de recompensas a mais quando enviada numa Expedição em Mondstadt por 20 horas."
+    }
+  },
+  "lockedPassive": {
+    "name": "Presente da Noite da Bruxa: Ode à Sublimação",
+    "description": {
+      "0": "Depois de completar <strong>Tarefa da Bruxa: Deste Mundo</strong>, Durin se tornará um personagem <strong>Mágico</strong>. Quando a equipe possuir pelo menos 2 personagens Mágicos, obtém o efeito <strong>Mágico: Ritual Secreto</strong>, fortalecendo os personagens Mágicos.",
+      "1": "<br/>",
+      "2": "<strong>Mágico: Ritual Secreto</strong>",
+      "3": "O Talento de Ascensão <tooltip ns=char_Durin_gen baseKey18=passive1><strong>Luz Manifesta do Cálculo Divino</strong></tooltip> tem todos os seus efeitos fortalecidos em 75%, exceto sua duração."
+    }
+  },
+  "constellation1": {
+    "name": "Redenção de Adamah",
+    "description": {
+      "0": "Após usar o Supremo, efeitos diferentes serão aplicados com base no Supremo usado por Durin:",
+      "1": [
+        "<strong>Princípio da Pureza: Transformação da Luz</strong>: todos os outros Personagens próximos da equipe recebem 20 Acúmulos de <strong>\"Ciclo do Esclarecimento\"</strong>, com duração de 20 segundos. Quando o Personagem em campo com \"Ciclo do Esclarecimento\" causar Dano com Ataque Normal, Ataque Carregado, Ataque Imersivo, Habilidade Elemental ou Supremo, 1 Acúmulo de \"Ciclo do Esclarecimento\" será consumido para aumentar o Dano causado. O Valor do aumento é equivalente a 60% do ATQ de Durin. O número de ativações do \"Ciclo do Esclarecimento\" é calculado separadamente para cada Personagem da equipe.",
+        "<strong>Princípio da Escuridão: Como as Estrelas Ardem</strong>: Durin recebe 20 Acúmulos de <strong>Ciclo do Esclarecimento</strong>, com duração de 20 segundos. Ao causar Dano de Supremo, Durin consumirá 2 Acúmulos de \"Ciclo do Esclarecimento\", aumentando o Dano causado. O Valor do aumento é equivalente a 150% do ATQ de Durin."
+      ],
+      "2": "<br/>",
+      "3": "Ao usar o Supremo, o número de Acúmulos de <strong>\"Ciclo do Esclarecimento\"</strong> será redefinido."
+    }
+  },
+  "constellation2": {
+    "name": "Visões Infundadas",
+    "description": {
+      "0": "Nos 20s após Durin lançar seu Supremo, quando os personagens próximos da equipe causarem Vaporização, Fusão, Queimaduras, Sobrecarga, Redemoinho Pyro ou Reação de Cristalização Pyro contra inimigos, ou causarem <pyro>Dano Pyro</pyro> ou <dendro>Dano Dendro</dendro> contra inimigos afetados por Queimaduras, o <pyro>Dano Pyro</pyro> e o Dano do Elemento correspondente participante da reação causados pelos personagens próximos da equipe aumentam em 50% por 6s."
+    }
+  },
+  "constellation3": {
+    "name": "Revelação do Espelho Flamejante",
+    "description": {
+      "0": "Aumenta o nível do Supremo <strong><tooltip ns=char_Durin_gen baseKey18=burst>Princípio da Pureza: Transformação da Luz</tooltip></strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Fonte de Emanare",
+    "description": {
+      "0": "O Dano do Supremo de Durin aumenta em 40%. Além disso, quando ativar efeitos que consomem <strong>Ciclo do Esclarecimento</strong> da Constelação <strong><tooltip ns=char_Durin_gen baseKey18=constellation1>Redenção de Adamah</tooltip></strong>, possui 30% de chance de não consumir Ciclo do Esclarecimento."
+    }
+  },
+  "constellation5": {
+    "name": "Rachadura da Chama Furiosa",
+    "description": {
+      "0": "Aumenta o nível da Habilidade Elemental <strong><tooltip ns=char_Durin_gen baseKey18=skill>Forma Binária: Convergência e Divisão</tooltip></strong> em 3 níveis. ",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Nascimento Dual",
+    "description": {
+      "0": "O Supremo de Durin ignorará 30% da DEF dos inimigos ao causar Dano.",
+      "1": "Além disso, os Supremos <strong>Princípio da Pureza: Transformação da Luz</strong> e <strong>Princípio da Escuridão: Como as Estrelas Ardem</strong> serão fortalecidos da seguinte forma:",
+      "2": [
+        " O Supremo <strong>Princípio da Pureza: Transformação da Luz</strong> e o <strong>Dragão da Chama Branca</strong> reduzirão a DEF do inimigo em 30% após o impacto por 6s;",
+        " O Supremo <strong>Princípio da Escuridão: Como as Estrelas Ardem</strong> e o <strong>Dragão da Chama Escura</strong> ignorarão 40% adicionais da DEF do inimigo ao causar Dano."
+      ]
+    }
+  }
+}

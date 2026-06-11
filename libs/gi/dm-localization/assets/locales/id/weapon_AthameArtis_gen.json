@@ -1,0 +1,29 @@
+{
+  "name": "Athame Artis",
+  "description": {
+    "0": "Dalam kisah penyihir kecil, pedang ini awalnya diberikan oleh sang Raja Siang kepada sang pemberani, hingga akhirnya si penyihir kecil menggunakannya sendiri untuk mengalahkan sang pemberani."
+  },
+  "passiveName": "Day King's Splendor Solis",
+  "passiveDescription": {
+    "0": {
+      "0": "CRIT DMG Elemental Burst +<cryo>16%</cryo>. Saat Elemental Burst mengenai musuh, akan mendapatkan efek Blade of the Daylight Hours: ATK +<cryo>20%</cryo> dan ATK Karakter aktif sekitar di dalam party selain Karakter yang mengenakan +<cryo>16%</cryo> selama 3 detik.",
+      "1": "Selain itu, saat party memiliki efek Hexerei: Secret Rite, maka efek Blade of the Daylight Hours meningkat sebesar 75% lagi. Efek di atas tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "1": {
+      "0": "CRIT DMG Elemental Burst +<cryo>20%</cryo>. Saat Elemental Burst mengenai musuh, akan mendapatkan efek Blade of the Daylight Hours: ATK +<cryo>25%</cryo> dan ATK Karakter aktif sekitar di dalam party selain Karakter yang mengenakan +<cryo>20%</cryo> selama 3 detik.",
+      "1": "Selain itu, saat party memiliki efek Hexerei: Secret Rite, maka efek Blade of the Daylight Hours meningkat sebesar 75% lagi. Efek di atas tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "2": {
+      "0": "CRIT DMG Elemental Burst +<cryo>24%</cryo>. Saat Elemental Burst mengenai musuh, akan mendapatkan efek Blade of the Daylight Hours: ATK +<cryo>30%</cryo> dan ATK Karakter aktif sekitar di dalam party selain Karakter yang mengenakan +<cryo>24%</cryo> selama 3 detik.",
+      "1": "Selain itu, saat party memiliki efek Hexerei: Secret Rite, maka efek Blade of the Daylight Hours meningkat sebesar 75% lagi. Efek di atas tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "3": {
+      "0": "CRIT DMG Elemental Burst +<cryo>28%</cryo>. Saat Elemental Burst mengenai musuh, akan mendapatkan efek Blade of the Daylight Hours: ATK +<cryo>35%</cryo> dan ATK Karakter aktif sekitar di dalam party selain Karakter yang mengenakan +<cryo>28%</cryo> selama 3 detik.",
+      "1": "Selain itu, saat party memiliki efek Hexerei: Secret Rite, maka efek Blade of the Daylight Hours meningkat sebesar 75% lagi. Efek di atas tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "4": {
+      "0": "CRIT DMG Elemental Burst +<cryo>32%</cryo>. Saat Elemental Burst mengenai musuh, akan mendapatkan efek Blade of the Daylight Hours: ATK +<cryo>40%</cryo> dan ATK Karakter aktif sekitar di dalam party selain Karakter yang mengenakan +<cryo>32%</cryo> selama 3 detik.",
+      "1": "Selain itu, saat party memiliki efek Hexerei: Secret Rite, maka efek Blade of the Daylight Hours meningkat sebesar 75% lagi. Efek di atas tetap dapat terpicu meskipun Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran."
+    }
+  }
+}

@@ -6,11 +6,13 @@ import Akuoumaru from './Akuoumaru'
 import AlleyHunter from './AlleyHunter'
 import AmenomaKageuchi from './AmenomaKageuchi'
 import AmosBow from './AmosBow'
+import AngelosHeptades from './AngelosHeptades'
 import ApprenticesNotes from './ApprenticesNotes'
 import AquaSimulacra from './AquaSimulacra'
 import AquilaFavonia from './AquilaFavonia'
 import AshGravenDrinkingHorn from './AshGravenDrinkingHorn'
 import AstralVulturesCrimsonPlumage from './AstralVulturesCrimsonPlumage'
+import AthameArtis from './AthameArtis'
 import Azurelight from './Azurelight'
 import BalladOfTheBoundlessBlue from './BalladOfTheBoundlessBlue'
 import BalladOfTheFjords from './BalladOfTheFjords'
@@ -76,6 +78,8 @@ import FreedomSworn from './FreedomSworn'
 import Frostbearer from './Frostbearer'
 import FruitOfFulfillment from './FruitOfFulfillment'
 import FruitfulHook from './FruitfulHook'
+import GestOfTheMightyWolf from './GestOfTheMightyWolf'
+import GoldenFrostboundOath from './GoldenFrostboundOath'
 import HakushinRing from './HakushinRing'
 import Halberd from './Halberd'
 import Hamayumi from './Hamayumi'
@@ -94,6 +98,7 @@ import KeyOfKhajNisut from './KeyOfKhajNisut'
 import KingsSquire from './KingsSquire'
 import KitainCrossSpear from './KitainCrossSpear'
 import LightOfFoliarIncision from './LightOfFoliarIncision'
+import LightbearingMoonshard from './LightbearingMoonshard'
 import LionsRoar from './LionsRoar'
 import LithicBlade from './LithicBlade'
 import LithicSpear from './LithicSpear'
@@ -115,6 +120,7 @@ import MoonweaversDawn from './MoonweaversDawn'
 import MountainBracingBolt from './MountainBracingBolt'
 import MouunsMoon from './MouunsMoon'
 import NightweaversLookingGlass from './NightweaversLookingGlass'
+import NocturnesCurtainCall from './NocturnesCurtainCall'
 import OathswornEye from './OathswornEye'
 import OldMercsPal from './OldMercsPal'
 import OtherworldlyStory from './OtherworldlyStory'
@@ -133,6 +139,7 @@ import PrototypeCrescent from './PrototypeCrescent'
 import PrototypeRancour from './PrototypeRancour'
 import PrototypeStarglitter from './PrototypeStarglitter'
 import QuantumCatalyst from './QuantumCatalyst'
+import RainbowSerpentsRainBow from './RainbowSerpentsRainBow'
 import Rainslasher from './Rainslasher'
 import RangeGauge from './RangeGauge'
 import RavenBow from './RavenBow'
@@ -192,6 +199,7 @@ import TheAlleyFlash from './TheAlleyFlash'
 import TheBell from './TheBell'
 import TheBlackSword from './TheBlackSword'
 import TheCatch from './TheCatch'
+import TheDaybreakChronicles from './TheDaybreakChronicles'
 import TheDockhandsAssistant from './TheDockhandsAssistant'
 import TheFirstGreatMagic from './TheFirstGreatMagic'
 import TheFlute from './TheFlute'
@@ -229,6 +237,7 @@ const data: TagMapNodeEntries[] = [
   Absolution,
   AmenomaKageuchi,
   AquilaFavonia,
+  AthameArtis,
   Azurelight,
   BlackcliffLongsword,
   CalamityOfEshu,
@@ -248,6 +257,7 @@ const data: TagMapNodeEntries[] = [
   IronSting,
   KagotsurubeIsshin,
   KeyOfKhajNisut,
+  LightbearingMoonshard,
   LightOfFoliarIncision,
   LionsRoar,
   MistsplitterReforged,
@@ -289,6 +299,7 @@ const data: TagMapNodeEntries[] = [
   FlameForgedInsight,
   ForestRegalia,
   FruitfulHook,
+  GestOfTheMightyWolf,
   KatsuragikiriNagamasa,
   LithicBlade,
   LuxuriousSeaLord,
@@ -370,6 +381,7 @@ const data: TagMapNodeEntries[] = [
   FadingTwilight,
   FavoniusWarbow,
   FlowerWreathedFeathers,
+  GoldenFrostboundOath,
   Hamayumi,
   HuntersBow,
   HuntersPath,
@@ -381,6 +393,7 @@ const data: TagMapNodeEntries[] = [
   PolarStar,
   Predator,
   PrototypeCrescent,
+  RainbowSerpentsRainBow,
   RangeGauge,
   RavenBow,
   RecurveBow,
@@ -396,11 +409,13 @@ const data: TagMapNodeEntries[] = [
   Slingshot,
   SnareHook,
   SongOfStillness,
+  TheDaybreakChronicles,
   TheFirstGreatMagic,
   TheStringless,
   TheViridescentHunt,
   ThunderingPulse,
   WindblumeOde,
+  AngelosHeptades,
   ApprenticesNotes,
   AshGravenDrinkingHorn,
   AThousandFloatingDreams,
@@ -427,6 +442,7 @@ const data: TagMapNodeEntries[] = [
   MappaMare,
   MemoryOfDust,
   NightweaversLookingGlass,
+  NocturnesCurtainCall,
   OathswornEye,
   OtherworldlyStory,
   PocketGrimoire,

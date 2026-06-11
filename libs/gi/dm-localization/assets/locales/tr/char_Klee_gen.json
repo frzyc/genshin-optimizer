@@ -101,6 +101,13 @@
     "description": {
       "0": "<strong>Zıpzıp Bodur</strong> ve Normal Saldırılar Hasar verdiğinde Klee, %50 ihtimalle Patlayıcı Kıvılcım elde eder.",
       "1": "Patlayıcı Kıvılcım sonraki Yüklü Saldırıda harcanır. Bu saldırı Dayanıklılık harcamaz ve %50 daha fazla Hasar verir."
+    },
+    "upgradedDescription": {
+      "0": "Klee'nin <strong>Zıpzıp Bodur</strong> Element Becerisi ve Normal Saldırıları Hasar verdiğinde %50 ihtimalle bir Patlayıcı Kıvılcım kazanır. <strong>Zıpzıp Bodur</strong> Element Becerisi veya <strong>Kıvılcımlar ve Patlama</strong> Element Patlamasını kullandığında da 1 Patlayıcı Kıvılcım kazanır. Klee en fazla 3 Patlayıcı Kıvılcıma sahip olabilir.",
+      "1": "Patlayıcı Kıvılcıma sahipken Klee'nin Yüklü Saldırısı 1 Kıvılcım harcayarak dayanıklılık gerektirmeyen özel bir Yüklü Saldırı olan Güm Güm Vuruşu yapar ve verdiği Hasar %50 artar.",
+      "2": "<br/>",
+      "3": "<strong>Cadılık: Saklı Ayin</strong>",
+      "4": "Klee'nin <strong>Kıvılcımlar ve Patlama</strong> Element Patlaması sırasında Normal Saldırı sekansı sıfırlanmaz. Klee Normal Saldırı yaparken bir Patlayıcı Kıvılcıma sahipse, sekanstaki üçüncü saldırı 1 Kıvılcım harcayarak Güm Güm Vuruşuna eşdeğer ek bir saldırı yapar."
     }
   },
   "passive2": {
@@ -115,16 +122,32 @@
       "0": "Yakınlardaki <strong>Mondstadt'a özgü kaynakların</strong> yerini mini haritada gösterir."
     }
   },
+  "lockedPassive": {
+    "name": "Cadının Gece Ayini: Kıvılcım Büyüsü",
+    "description": {
+      "0": "<strong>Cadının Ödevi: Kıvılcım Saçan Yapraklar</strong> tamamlandıktan sonra Klee bir <strong>Cadılık</strong> karakteri olur. Grupta en az 2 Cadılık karakteri olduğunda, Cadılık karakterlerini güçlendiren <strong>Cadılık: Saklı Ayin</strong> etkisi kazanırsın.",
+      "1": "<br/>",
+      "2": "<strong>Cadılık: Saklı Ayin</strong>",
+      "3": "Klee Normal Saldırı, Element Becerisi veya Element Patlaması ile Hasar verdiğinde 20 saniye süren 1 Patlama Rozeti kazanır. Her saldırı türü bu şekilde en fazla 1 Patlama Rozeti kazandırır ve her rozetin kendi bağımsız süresi vardır. Klee 1/2/3 Patlama Rozetine sahip olduğunda, özel Yüklü Saldırısı Güm Güm Vuruşu, orijinal Hasarının %115/%130/%150'si kadar Hasar verir."
+    }
+  },
   "constellation1": {
     "name": "Zincirleme Tepkimeler",
     "description": {
       "0": "Saldırılar ve Beceriler bir ihtimalle düşmanları kıvılcım yağmuruna tutar, <strong>Kıvılcımlar ve Patlama</strong> becerisinin %120'sine denk Hasar verir."
+    },
+    "upgradedDescription": {
+      "0": "Saldırılar ve Beceriler bir ihtimalle düşmanları kıvılcım yağmuruna tutarak <strong>Kıvılcımlar ve Patlama</strong> Element Patlamasının %120'si kadar Hasar verir.",
+      "1": "Yukarıdaki etki tetiklendikten sonra 12 saniyeliğine Klee'nin Saldırısı %60 artar."
     }
   },
   "constellation2": {
     "name": "Patlayıcı Parçalar",
     "description": {
       "0": "<strong>Zıpzıp Bodur</strong> mayınlarının vurduğu düşmanların 10 saniyeliğine Savunması %23 azalır."
+    },
+    "upgradedDescription": {
+      "0": "Klee'nin Element Becerisi bir düşmanı vurduğunda o düşmanın 10 saniyeliğine Savunması %23 azalır."
     }
   },
   "constellation3": {
@@ -138,6 +161,9 @@
     "name": "Kıvılcımlı Patlama",
     "description": {
       "0": "Klee, <strong>Kıvılcımlar ve Patlama</strong> süresince savaş alanından ayrıldığında bir patlama meydana gelir. Bu patlama Klee'nin Saldırısının %555'ine denk <pyro>Ateş Alan Hasarı</pyro> verir."
+    },
+    "upgradedDescription": {
+      "0": "<strong>Kıvılcımlar ve Patlama</strong> etkinken Klee savaş alanından ayrıldığında veya Kıvılcımlar ve Patlamanın süresi sona erdiğinde bir patlama tetiklenir ve Klee'nin Saldırısının %555'i kadar <pyro>Ateş Alan Hasarı</pyro> verir. Patlama sırasında Klee savaş alanındaysa verdiği Hasar %100 artar."
     }
   },
   "constellation5": {
@@ -152,6 +178,15 @@
     "description": {
       "0": "Klee, <strong>Kıvılcımlar ve Patlama</strong> etkisi altındayken 3 saniyede bir (Klee hariç) tüm grup üyeleri için 3 Enerji yeniler.",
       "1": "<strong>Kıvılcımlar ve Patlama</strong> kullanıldığında tüm grup üyeleri 25 saniyeliğine %10 <pyro>Ateş Hasarı Bonusu</pyro> kazanır."
+    },
+    "upgradedDescription": {
+      "0": "Klee, <strong>Kıvılcımlar ve Patlama</strong> etkisi altındayken 3 saniyede bir (Klee hariç) tüm grup üyeleri için 3 Enerji yeniler.",
+      "1": "<strong>Kıvılcımlar ve Patlama</strong> kullanıldıktan sonraki 25sn boyunca diğer grup üyeleri %10 <pyro>Ateş Hasarı Bonusu</pyro> kazanır, Klee ise %50 <pyro>Ateş Hasarı Bonusu</pyro> kazanır.",
+      "2": "<br/>",
+      "3": "<strong>Cadılık: Saklı Ayin</strong>",
+      "4": [
+        "Klee <strong>Patlayıcı Kıvılcım</strong> kullandığında %50 ihtimalle tüketilmez. Ayrıca <strong>Kıvılcımlar ve Patlama</strong> etkinken, Klee'nin Normal Saldırısıyla yaptığı ilk ve ikinci vuruşlarda %40 ihtimalle Patlayıcı Kıvılcım tüketerek düşmanlarına Güm Güm Vuruşuna eşdeğer miktarda Hasar verir."
+      ]
     }
   }
 }

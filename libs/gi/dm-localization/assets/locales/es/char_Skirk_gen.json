@@ -44,7 +44,7 @@
       "0": "Imita el estilo de combate del Caballero Protervo y produce diferentes efectos dependiendo de si se pulsa una vez o se mantiene pulsado.",
       "1": "<br/>",
       "2": "<strong>Pulsar una vez</strong>",
-      "3": "Skirk obtiene 45 pts. de <strong>astucia serpentina</strong> y cambia al modo <strong>distorsión heptafásica</strong>.",
+      "3": "Skirk obtiene 45 pts. de <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>astucia serpentina</strong></tooltip> y cambia al modo <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>distorsión heptafásica</strong></tooltip>.",
       "4": "<br/>",
       "5": "<strong>Mantener pulsado</strong>",
       "6": "Skirk obtiene 45 pts. de astucia serpentina y se mueve continuamente a gran velocidad. En este estado, su RES a interrupción aumenta.",
@@ -72,14 +72,14 @@
   "burst": {
     "name": "Caos: Aniquilación",
     "description": {
-      "0": "La Habilidad Definitiva de Skirk no funciona con Energía Elemental, sino con <strong>astucia serpentina</strong>.",
+      "0": "La Habilidad Definitiva de Skirk no funciona con Energía Elemental, sino con <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>astucia serpentina</strong></tooltip>.",
       "1": "Cuando Skirk tiene al menos 50 pts. de astucia serpentina, puede consumirlos todos para usar su Habilidad Definitiva, la cual desgarra el espacio frente a ella y ejecuta cortes consecutivos a gran velocidad que infligen <cryo>Daño Cryo en el AdE</cryo>. Además, el daño de la Habilidad Definitiva de Skirk aumenta por cada punto de astucia serpentina que tenga por encima de 50 pts. en el momento de usar dicha habilidad. Para este efecto, solo se contabilizará hasta un máximo de 12 pts. de astucia serpentina.",
       "2": "<br/>",
-      "3": "Cuando Skirk está en modo <strong>distorsión heptafásica</strong>, su Habilidad Definitiva, “Caos: Aniquilación”, es reemplazada por “Caos: Exterminio”.",
+      "3": "Cuando Skirk está en modo <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>distorsión heptafásica</strong></tooltip>, su Habilidad Definitiva, “Caos: Aniquilación”, es reemplazada por “Caos: Exterminio”.",
       "4": "<br/>",
       "5": "<strong>Caos: Exterminio</strong>",
       "6": "Esta Habilidad Definitiva especial puede utilizarse sin consumir astucia serpentina.",
-      "7": "Tras usarla, Skirk obtiene el efecto de “marchitamiento total”, el cual durará hasta que salga del modo distorsión heptafásica. Tras desbloquear el talento de ascensión <strong>La razón más allá de la razón</strong>, Skirk también podrá absorber las fisuras del vacío que haya en un área cercana.",
+      "7": "Tras usarla, Skirk obtiene el efecto de “marchitamiento total”, el cual durará hasta que salga del modo distorsión heptafásica. Tras desbloquear el talento de ascensión <tooltip ns=tooltips_gen baseKey18=11130007 values=[]><strong>La razón más allá de la razón</strong></tooltip>, Skirk también podrá absorber las fisuras del vacío que haya en un área cercana.",
       "8": "Mientras el efecto de marchitamiento total esté activo, cada 0.1 s, cuando Skirk golpee a un enemigo con un Ataque Normal, este infligirá más daño. Si Skirk absorbe alguna fisura del vacío al usar <strong>Caos: Exterminio</strong>, el daño de dicho Ataque Normal aumentará aún más en función del número de fisuras absorbidas.",
       "9": "Este efecto se cancelará cuando se haya activado 10 veces."
     },
@@ -109,12 +109,12 @@
       "1": "<br/>",
       "2": "Skirk puede absorber las fisuras del vacío que haya en un área cercana de las siguientes maneras:",
       "3": [
-        "Cuando golpea a un enemigo con su Ataque Cargado mientras está en modo <strong>distorsión heptafásica</strong>.",
+        "Cuando golpea a un enemigo con su Ataque Cargado mientras está en modo <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>distorsión heptafásica</strong></tooltip>.",
         "Cuando usa la Habilidad Definitiva especial, <strong>Caos: Exterminio</strong>, del modo distorsión heptafásica.",
         "Al mantener pulsada la Habilidad Elemental, <strong>Caos: Distorsión</strong>, para moverse a gran velocidad."
       ],
       "4": "<br/>",
-      "5": "Por cada fisura del vacío que absorba, Skirk obtendrá 8 pts. de <strong>astucia serpentina</strong>."
+      "5": "Por cada fisura del vacío que absorba, Skirk obtendrá 8 pts. de <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>astucia serpentina</strong></tooltip>."
     }
   },
   "passive2": {
@@ -122,7 +122,7 @@
     "description": {
       "0": "Cuando un personaje cercano del equipo de tipo elemental <hydro>Hydro</hydro> golpee a un enemigo con un ataque <hydro>Hydro</hydro>, o cuando un personaje cercano del equipo de tipo elemental <cryo>Cryo</cryo> (a excepción de Skirk) golpee a un enemigo con un ataque <cryo>Cryo</cryo>, Skirk obtiene una carga del efecto “vado de la muerte” durante 20 s. Este efecto puede acumularse hasta 3 veces, y cada acumulación tiene su propia duración individual.",
       "1": "Cada personaje puede otorgar, como máximo, 1 carga de vado de la muerte a Skirk de esta forma.",
-      "2": "Por cada carga de vado de la muerte que tenga Skirk, los Ataques Normales que ejecute mientras está en modo <strong>distorsión heptafásica</strong> infligirán un 110/120/170% del daño original, y su Habilidad Definitiva, <strong>Caos: Aniquilación</strong>, infligirá un 105/115/160% del daño original."
+      "2": "Por cada carga de vado de la muerte que tenga Skirk, los Ataques Normales que ejecute mientras está en modo <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>distorsión heptafásica</strong></tooltip> infligirán un 110/120/170% del daño original, y su Habilidad Definitiva, <strong>Caos: Aniquilación</strong>, infligirá un 105/115/160% del daño original."
     }
   },
   "passive3": {
@@ -134,43 +134,43 @@
   "constellation1": {
     "name": "Caída sin fin",
     "description": {
-      "0": "Fortalece el efecto del talento de ascensión <strong>La razón más allá de la razón</strong>, de manera que, por cada fisura del vacío que absorba, invoca un filo cristalino que ataca a los enemigos cercanos y les inflige <cryo>Daño Cryo</cryo> en una cantidad equivalente al 500% del ATQ de Skirk. Este daño se considera daño de Ataque Cargado.",
+      "0": "Fortalece el efecto del talento de ascensión <tooltip ns=tooltips_gen baseKey18=11130007 values=[]><strong>La razón más allá de la razón</strong></tooltip>, de manera que, por cada fisura del vacío que absorba, invoca un filo cristalino que ataca a los enemigos cercanos y les inflige <cryo>Daño Cryo</cryo> en una cantidad equivalente al 500% del ATQ de Skirk. Este daño se considera daño de Ataque Cargado.",
       "1": "Es necesario desbloquear el talento de ascensión “La razón más allá de la razón”."
     }
   },
   "constellation2": {
     "name": "Descenso hacia el Abismo",
     "description": {
-      "0": "Después de usar su Habilidad Elemental, <strong>Caos: Distorsión</strong>, Skirk obtiene 10 pts. adicionales de <strong>astucia serpentina</strong>.",
+      "0": "Después de usar su Habilidad Elemental, <strong>Caos: Distorsión</strong>, Skirk obtiene 10 pts. adicionales de <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>astucia serpentina</strong></tooltip>.",
       "1": "Al usar su Habilidad Definitiva, <strong>Caos: Aniquilación</strong>, se tienen en cuenta hasta 10 pts. más de astucia serpentina, lo que aumenta el daño infligido con dicha habilidad.",
-      "2": "Además, cuando Skirk usa la Habilidad Definitiva especial <strong>Caos: Exterminio</strong> mientras está en modo <strong>distorsión heptafásica</strong>, su ATQ aumenta en un 70% durante 12.5 s. Este efecto se anula cuando Skirk sale del modo distorsión heptafásica."
+      "2": "Además, cuando Skirk usa la Habilidad Definitiva especial <strong>Caos: Exterminio</strong> mientras está en modo <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>distorsión heptafásica</strong></tooltip>, su ATQ aumenta en un 70% durante 12.5 s. Este efecto se anula cuando Skirk sale del modo distorsión heptafásica."
     }
   },
   "constellation3": {
     "name": "Serendipia pecaminosa",
     "description": {
-      "0": "Aumenta el nivel de habilidad de <strong>Caos: Aniquilación</strong> +3.",
+      "0": "Aumenta el nivel de habilidad de <tooltip ns=char_Skirk_gen baseKey18=burst><strong>Caos: Aniquilación</strong></tooltip> +3.",
       "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation4": {
     "name": "Flujo de la obstrucción",
     "description": {
-      "0": "Fortalece el efecto del talento de ascensión <strong>Retorno al olvido</strong>, de manera que cada acumulación de vado de la muerte también aumenta el ATQ de Skirk en un 10/20/40%.",
+      "0": "Fortalece el efecto del talento de ascensión <tooltip ns=tooltips_gen baseKey18=11130008 values=[]><strong>Retorno al olvido</strong></tooltip>, de manera que cada acumulación de vado de la muerte también aumenta el ATQ de Skirk en un 10/20/40%.",
       "1": "Es necesario desbloquear el talento de ascensión “Retorno al olvido”."
     }
   },
   "constellation5": {
     "name": "Fin del deseo",
     "description": {
-      "0": "Aumenta el nivel de habilidad de <strong>Caos: Distorsión</strong> +3.",
+      "0": "Aumenta el nivel de habilidad de <tooltip ns=char_Skirk_gen baseKey18=skill><strong>Caos: Distorsión</strong></tooltip> +3.",
       "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation6": {
     "name": "Hacia el origen",
     "description": {
-      "0": "Cada vez que Skirk absorba una fisura del vacío por medio del efecto del talento de ascensión <strong>La razón más allá de la razón</strong>, obtendrá una acumulación de “caos: corte”. Skirk puede consumir este efecto para ejecutar ataques coordinados y reducir el daño que recibe en el modo <strong>distorsión heptafásica</strong>. Este efecto dura 15 s, puede acumularse hasta 3 veces y cada acumulación tiene su propia duración individual.",
+      "0": "Cada vez que Skirk absorba una fisura del vacío por medio del efecto del talento de ascensión <tooltip ns=tooltips_gen baseKey18=11130007 values=[]><strong>La razón más allá de la razón</strong></tooltip>, obtendrá una acumulación de “caos: corte”. Skirk puede consumir este efecto para ejecutar ataques coordinados y reducir el daño que recibe en el modo <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>distorsión heptafásica</strong></tooltip>. Este efecto dura 15 s, puede acumularse hasta 3 veces y cada acumulación tiene su propia duración individual.",
       "1": "Es necesario desbloquear el talento de ascensión “La razón más allá de la razón”.",
       "2": "<br/>",
       "3": "<strong>Caos: corte</strong>",

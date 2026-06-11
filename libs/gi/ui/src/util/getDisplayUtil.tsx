@@ -1,6 +1,10 @@
 import { ColorText, ImgIcon } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
-import { artifactDefIcon, weaponAsset } from '@genshin-optimizer/gi/assets'
+import {
+  artifactDefIcon,
+  imgAssets,
+  weaponAsset,
+} from '@genshin-optimizer/gi/assets'
 import type {
   ArtifactSetKey,
   CharacterKey,
@@ -14,6 +18,7 @@ import { input } from '@genshin-optimizer/gi/wr'
 import BarChartIcon from '@mui/icons-material/BarChart'
 import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize'
 import GroupsIcon from '@mui/icons-material/Groups'
+import { Box } from '@mui/material'
 import type { ReactNode } from 'react'
 import { ArtifactSetName, WeaponName } from '../components'
 const errHeader = {
@@ -55,8 +60,28 @@ export function getDisplayHeader(
     return { title: 'Received Team Buffs', icon: <GroupsIcon /> }
   else if (sectionKey === 'reaction')
     return { title: 'Transformative Reactions' }
+  else if (sectionKey === 'nicole')
+    return { title: "Nicole's Astral Projections" }
   else if (sectionKey === 'moonsign')
-    return { title: 'Moonsign: Ascendant Gleam', icon: 'todo' }
+    return {
+      title: 'Moonsign: Ascendant Gleam',
+      icon: (
+        <Box display="flex">
+          <Box
+            component="img"
+            src={imgAssets.resonance.moonsign}
+            width="2em"
+            height="auto"
+          />
+          <Box
+            component="img"
+            src={imgAssets.resonance.moonsign}
+            width="2em"
+            height="auto"
+          />
+        </Box>
+      ),
+    }
   else if (sectionKey.includes(':')) {
     const [namespace, key] = sectionKey.split(':')
     if (namespace === 'artifact') {
@@ -116,7 +141,8 @@ export function getDisplaySections(data: UIData): DisplaySections {
       k !== 'reaction' &&
       !k.startsWith('weapon') &&
       !k.startsWith('artifact') &&
-      k !== 'custom'
+      k !== 'custom' &&
+      k !== 'moonsign'
   )
   return [
     ...basic,

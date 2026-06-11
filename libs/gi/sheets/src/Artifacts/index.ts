@@ -4,16 +4,20 @@ import type { UIData } from '@genshin-optimizer/gi/uidata'
 import { input, mergeData } from '@genshin-optimizer/gi/wr'
 import type { ArtifactSheet } from './ArtifactSheet'
 
+import ADayCarvedFromRisingWinds from './ADayCarvedFromRisingWinds'
 import Adventurer from './Adventurer'
 import ArchaicPetra from './ArchaicPetra'
+import AubadeOfMorningstarAndMoon from './AubadeOfMorningstarAndMoon'
 import Berserker from './Berserker'
 import BlizzardStrayer from './BlizzardStrayer'
 import BloodstainedChivalry from './BloodstainedChivalry'
 import BraveHeart from './BraveHeart'
+import CelestialGift from './CelestialGift'
 import CrimsonWitchOfFlames from './CrimsonWitchOfFlames'
 import DeepwoodMemories from './DeepwoodMemories'
 import DefendersWill from './DefendersWill'
 import DesertPavilionChronicle from './DesertPavilionChronicle'
+import DisenchantmentInDeepShadow from './DisenchantmentInDeepShadow'
 import EchoesOfAnOffering from './EchoesOfAnOffering'
 import EmblemOfSeveredFate from './EmblemOfSeveredFate'
 import FinaleOfTheDeepGalleries from './FinaleOfTheDeepGalleries'
@@ -63,16 +67,20 @@ import VourukashasGlow from './VourukashasGlow'
 import WanderersTroupe from './WanderersTroupe'
 
 export const artifactSheets: Record<ArtifactSetKey, ArtifactSheet> = {
+  ADayCarvedFromRisingWinds,
   Adventurer,
   ArchaicPetra,
+  AubadeOfMorningstarAndMoon,
   Berserker,
   BlizzardStrayer,
   BloodstainedChivalry,
   BraveHeart,
+  CelestialGift,
   CrimsonWitchOfFlames,
   DeepwoodMemories,
   DefendersWill,
   DesertPavilionChronicle,
+  DisenchantmentInDeepShadow,
   EchoesOfAnOffering,
   EmblemOfSeveredFate,
   FinaleOfTheDeepGalleries,
