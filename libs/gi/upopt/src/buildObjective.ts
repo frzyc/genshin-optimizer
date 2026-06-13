@@ -1,6 +1,9 @@
 import { objMap } from '@genshin-optimizer/common/util'
 import type { ArtifactSlotKey, SubstatKey } from '@genshin-optimizer/gi/consts'
-import { allArtifactSlotKeys, allSubstatKeys } from '@genshin-optimizer/gi/consts'
+import {
+  allArtifactSlotKeys,
+  allSubstatKeys,
+} from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import type { ArtifactBuildData, DynStat } from '@genshin-optimizer/gi/solver'
 import { getMainStatValue } from '@genshin-optimizer/gi/util'
@@ -41,9 +44,9 @@ export function makeSlotObjectives(
   const evalFn = precompute(evalOpt, {}, (f) => f.path[1], 5)
 
   /**
- * Track substats whose derivatives are always zero so they can be skipped
- * during exact evaluation.
- */
+   * Track substats whose derivatives are always zero so they can be skipped
+   * during exact evaluation.
+   */
   const zeroDeriv = allSubstatKeys.filter((sub) =>
     nodes.every((n) => zero_deriv(n, (f) => f.path[1], sub))
   )

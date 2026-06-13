@@ -1,12 +1,12 @@
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import { evalMarkovNode } from './markov-tree/evaluation'
 
-import { makeSlotObjectives } from './buildObjective'
-import { deduplicate } from './deduplicate'
-import type { Build, MarkovNode } from './upOpt.types'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import type { OptNode } from '@genshin-optimizer/gi/wr'
-import { levelUpArtifact, expandNode } from './upOpt'
+import { makeSlotObjectives } from './buildObjective'
+import { deduplicate } from './deduplicate'
+import { expandNode, levelUpArtifact } from './upOpt'
+import type { Build, MarkovNode } from './upOpt.types'
 
 /**
  * Artifact upgrade distribution math summary.
@@ -102,9 +102,7 @@ type ArtifactState = UpOptArtifact & {
 export class UpOptCalculator {
   private readonly equippedBuild: Build
   private readonly objectives: ReturnType<typeof makeSlotObjectives>['objectives']
-  private readonly updateEquippedArtifact: (
-    art: ICachedArtifact
-  ) => void
+  private readonly updateEquippedArtifact: (art: ICachedArtifact) => void
 
   thresholds: number[]
   artifacts: ArtifactState[] = []
@@ -209,7 +207,6 @@ export class UpOptCalculator {
     art.result = this.toExactResult(art)
   }
 
-
   private expandFrontier(art: ArtifactState) {
     art.nodes = deduplicate(
       this.objectives[art.slotKey],
@@ -281,7 +278,9 @@ export class UpOptCalculator {
   }
 }
 
-function expandWeightedNodes(nodes: WeightedMarkovNode[]): WeightedMarkovNode[] {
+function expandWeightedNodes(
+  nodes: WeightedMarkovNode[]
+): WeightedMarkovNode[] {
   return nodes.flatMap(({ p, n }) =>
     expandNode(n).map(({ p: p2, n: expanded }) => ({
       p: p * p2,
@@ -298,7 +297,13 @@ function compareArtifacts(a: UpOptArtifact, b: UpOptArtifact) {
   if (scoreArtifact(a) > 1e-5 || scoreArtifact(b) > 1e-5)
     return scoreArtifact(b) - scoreArtifact(a)
 
-  const meanA = a.result!.distr.gmm.reduce((pv, { phi, mu }) => pv + phi * mu, 0)
-  const meanB = b.result!.distr.gmm.reduce((pv, { phi, mu }) => pv + phi * mu, 0)
+  const meanA = a.result!.distr.gmm.reduce(
+    (pv, { phi, mu }) => pv + phi * mu,
+    0
+  )
+  const meanB = b.result!.distr.gmm.reduce(
+    (pv, { phi, mu }) => pv + phi * mu,
+    0
+  )
   return meanB - meanA
 }

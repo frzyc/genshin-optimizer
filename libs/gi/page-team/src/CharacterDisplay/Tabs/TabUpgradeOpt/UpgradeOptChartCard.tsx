@@ -19,6 +19,11 @@ import {
   DataContext,
   EquipBuildModal,
 } from '@genshin-optimizer/gi/ui'
+import {
+  ResultType,
+  type UpOptCalculator,
+  erf,
+} from '@genshin-optimizer/gi/upopt'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import { Box, Button, Divider, Grid, Tooltip, Typography } from '@mui/material'
@@ -35,7 +40,6 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
-import { erf, ResultType, type UpOptCalculator } from '@genshin-optimizer/gi/upopt'
 
 type Props = {
   setArtifactIdToEdit: (id: string | undefined) => void

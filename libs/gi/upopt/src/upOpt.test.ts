@@ -1,5 +1,8 @@
 import type { ArtifactSlotKey, SubstatKey } from '@genshin-optimizer/gi/consts'
-import { allArtifactSlotKeys, allSubstatKeys } from '@genshin-optimizer/gi/consts'
+import {
+  allArtifactSlotKeys,
+  allSubstatKeys,
+} from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { dynRead, prod, sum } from '@genshin-optimizer/gi/wr'
 
@@ -16,8 +19,8 @@ import { makeObjective } from './markov-tree/makeObjective'
 import type { GaussianNode, Objective } from './markov-tree/markov.types'
 import { crawlSubstats } from './substatProbs'
 import { expandNode, levelUpArtifact } from './upOpt'
-import { ResultType, UpOptCalculator } from './upOptCalculator'
 import type { MarkovNode, SubstatLevelNode } from './upOpt.types'
+import { ResultType, UpOptCalculator } from './upOptCalculator'
 
 /**
  * Checks whether the expanded nodes' evaluations match the base Gaussian node's evaluation.

@@ -1,7 +1,7 @@
 import type {
   ArtifactRarity,
   ArtifactSlotKey,
-  SubstatKey
+  SubstatKey,
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import type { DynStat } from '@genshin-optimizer/gi/solver'
