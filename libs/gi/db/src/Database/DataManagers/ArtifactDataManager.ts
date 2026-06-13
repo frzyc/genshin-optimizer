@@ -125,6 +125,8 @@ export class ArtifactDataManager extends DataManager<
       mainStatKey,
       substats,
       totalRolls,
+      astralMark,
+      elixirCrafted,
       location,
       lock,
       unactivatedSubstats,
@@ -138,19 +140,17 @@ export class ArtifactDataManager extends DataManager<
       substats: substats.map((substat) => ({
         key: substat.key,
         value: substat.value,
-        ...(substat.initialValue !== undefined && {
-          initialValue: substat.initialValue,
-        }),
+        initialValue: substat.initialValue,
       })),
-      ...(totalRolls !== undefined && { totalRolls }),
+      totalRolls,
+      astralMark,
+      elixirCrafted,
       location,
       lock,
       unactivatedSubstats: unactivatedSubstats?.map((substat) => ({
         key: substat.key,
         value: substat.value,
-        ...(substat.initialValue !== undefined && {
-          initialValue: substat.initialValue,
-        }),
+        initialValue: substat.initialValue,
       })),
     }
   }
@@ -344,7 +344,17 @@ export function cachedArtifact(
   flex: IArtifact,
   id: string
 ): { artifact: ICachedArtifact; errors: string[] } {
-  const { location, lock, setKey, slotKey, rarity, mainStatKey } = flex
+  const {
+    location,
+    lock,
+    setKey,
+    slotKey,
+    rarity,
+    mainStatKey,
+    totalRolls,
+    astralMark,
+    elixirCrafted,
+  } = flex
   const level = Math.round(
     Math.min(Math.max(0, flex.level), rarity >= 3 ? rarity * 4 : 4)
   )
@@ -374,7 +384,9 @@ export function cachedArtifact(
     rarity,
     level,
     substats,
-    totalRolls: flex.totalRolls,
+    totalRolls,
+    astralMark,
+    elixirCrafted,
     mainStatVal,
     unactivatedSubstats,
   }
@@ -486,19 +498,18 @@ export function cachedArtifact(
     unactivatedSubstats = []
   }
 
-  const totalRolls = substats.reduce(
+  const artifactRolls = substats.reduce(
     (accu, { rolls }) => accu + rolls.length,
     0
   )
-  validated.totalRolls ??= totalRolls
 
-  if (totalRolls > upperBound)
+  if (artifactRolls > upperBound)
     errors.push(
-      `${rarity}-star artifact (level ${level}) should have no more than ${upperBound} rolls. It currently has ${totalRolls} rolls.`
+      `${rarity}-star artifact (level ${level}) should have no more than ${upperBound} rolls. It currently has ${artifactRolls} rolls.`
     )
-  else if (totalRolls < lowerBound)
+  else if (artifactRolls < lowerBound)
     errors.push(
-      `${rarity}-star artifact (level ${level}) should have at least ${lowerBound} rolls. It currently has ${totalRolls} rolls.`
+      `${rarity}-star artifact (level ${level}) should have at least ${lowerBound} rolls. It currently has ${artifactRolls} rolls.`
     )
 
   if (substats.some((substat) => !substat.key)) {
@@ -565,6 +576,9 @@ export function validateArtifact(
     slotKey,
     substats,
     unactivatedSubstats,
+    totalRolls,
+    astralMark,
+    elixirCrafted,
     location,
     lock,
   } = parsed
@@ -612,14 +626,16 @@ export function validateArtifact(
 
   return {
     setKey,
-      rarity,
-      level,
-      slotKey,
-      mainStatKey,
-      substats: parsedSubstats,
-      totalRolls: parsed.totalRolls,
-      location,
-      lock,
-      unactivatedSubstats: finalUnactivated,
-    }
+    rarity,
+    level,
+    slotKey,
+    mainStatKey,
+    substats: parsedSubstats,
+    totalRolls,
+    astralMark,
+    elixirCrafted,
+    location,
+    lock,
+    unactivatedSubstats: finalUnactivated,
   }
+}
