@@ -124,6 +124,7 @@ export class ArtifactDataManager extends DataManager<
       slotKey,
       mainStatKey,
       substats,
+      totalRolls,
       location,
       lock,
       unactivatedSubstats,
@@ -137,12 +138,19 @@ export class ArtifactDataManager extends DataManager<
       substats: substats.map((substat) => ({
         key: substat.key,
         value: substat.value,
+        ...(substat.initialValue !== undefined && {
+          initialValue: substat.initialValue,
+        }),
       })),
+      ...(totalRolls !== undefined && { totalRolls }),
       location,
       lock,
       unactivatedSubstats: unactivatedSubstats?.map((substat) => ({
         key: substat.key,
         value: substat.value,
+        ...(substat.initialValue !== undefined && {
+          initialValue: substat.initialValue,
+        }),
       })),
     }
   }
@@ -366,6 +374,7 @@ export function cachedArtifact(
     rarity,
     level,
     substats,
+    totalRolls: flex.totalRolls,
     mainStatVal,
     unactivatedSubstats,
   }
@@ -481,6 +490,7 @@ export function cachedArtifact(
     (accu, { rolls }) => accu + rolls.length,
     0
   )
+  validated.totalRolls ??= totalRolls
 
   if (totalRolls > upperBound)
     errors.push(
@@ -602,13 +612,14 @@ export function validateArtifact(
 
   return {
     setKey,
-    rarity,
-    level,
-    slotKey,
-    mainStatKey,
-    substats: parsedSubstats,
-    location,
-    lock,
-    unactivatedSubstats: finalUnactivated,
+      rarity,
+      level,
+      slotKey,
+      mainStatKey,
+      substats: parsedSubstats,
+      totalRolls: parsed.totalRolls,
+      location,
+      lock,
+      unactivatedSubstats: finalUnactivated,
+    }
   }
-}

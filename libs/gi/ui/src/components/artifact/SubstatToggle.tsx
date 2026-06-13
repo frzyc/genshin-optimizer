@@ -5,6 +5,7 @@ import type { SubstatKey } from '@genshin-optimizer/gi/consts'
 import { allSubstatKeys } from '@genshin-optimizer/gi/consts'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import { Box, ToggleButton } from '@mui/material'
+import type { ReactNode } from 'react'
 import { ArtifactStatWithUnit } from './ArtifactStatKeyDisplay'
 
 const rvfilterHandler = handleMultiSelect([...allSubstatKeys])
@@ -13,9 +14,11 @@ const keys2 = allSubstatKeys.slice(6)
 export function SubstatToggle({
   selectedKeys,
   onChange,
+  renderLabel,
 }: {
   selectedKeys: SubstatKey[]
   onChange: (keys: SubstatKey[]) => void
+  renderLabel?: (key: SubstatKey) => ReactNode
 }) {
   const selKeys1 = selectedKeys.filter((k) => keys1.includes(k))
   const selKeys2 = selectedKeys.filter((k) => keys2.includes(k))
@@ -32,7 +35,7 @@ export function SubstatToggle({
           >
             <Box display="flex" gap={1} alignItems="center">
               <StatIcon statKey={key} iconProps={iconInlineProps} />
-              <ArtifactStatWithUnit statKey={key} />
+              {renderLabel ? renderLabel(key) : <ArtifactStatWithUnit statKey={key} />}
             </Box>
           </ToggleButton>
         ))}
@@ -48,7 +51,7 @@ export function SubstatToggle({
           >
             <Box display="flex" gap={1} alignItems="center">
               <StatIcon statKey={key} iconProps={iconInlineProps} />
-              <ArtifactStatWithUnit statKey={key} />
+              {renderLabel ? renderLabel(key) : <ArtifactStatWithUnit statKey={key} />}
             </Box>
           </ToggleButton>
         ))}

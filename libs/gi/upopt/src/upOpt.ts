@@ -14,7 +14,11 @@ import {
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import type { IArtifact } from '@genshin-optimizer/gi/good'
 import type { DynStat } from '@genshin-optimizer/gi/solver'
-import { getMainStatValue, getRollsRemaining } from '@genshin-optimizer/gi/util'
+import {
+  getMainStatValue,
+  getRollsRemaining,
+  getSubstatValue,
+} from '@genshin-optimizer/gi/util'
 
 import { allMainStatProbs } from './consts'
 import { expandRollsLevel } from './expandRolls'
@@ -126,8 +130,6 @@ export function freshArtifact(
 /**
  * Artifact reshaping / rerolling using Dust of Enlightenment. We select two affixes and reroll from
  * Level 0 (or 4) and guarantee that at least `mintotal` rolls go into those affixes.
- *
- * TODO: Check that initial value is handled correctly
  */
 export function dustReshape(
   art: IArtifact,
@@ -137,14 +139,20 @@ export function dustReshape(
 ): weightedNode[] {
   const base = toStats(currentBuild, art)
   const { rarity } = art
-  const rollsLeft = getRollsRemaining(0, art.rarity)
+  if (
+    art.substats.some(
+      ({ key, initialValue }) => key !== '' && initialValue === undefined
+    )
+  )
+    return []
   const subkeys = art.substats.flatMap(({ key, initialValue }) => {
     if (key === '') return []
-    if (initialValue === undefined)
-      throw new Error('initialValue must be defined for reshaping')
-    base[key] = (base[key] ?? 0) + initialValue
+    base[key] = (base[key] ?? 0) + toInternalStatValue(key, initialValue)
     return [{ key, baseRolls: 0 }]
   })
+  const totalRolls =
+    art.totalRolls ?? subkeys.length + getRollsRemaining(0, art.rarity)
+  const rollsLeft = Math.max(0, totalRolls - subkeys.length)
   return [
     {
       p: 1,
@@ -205,9 +213,12 @@ function artToStats(art: ICachedArtifact, mainStatMax = true) {
       mainStatMax ? artMaxLevel[art.rarity] : art.level
     )
   } else {
-    stats[art.mainStatKey] = art.mainStatVal
+    stats[art.mainStatKey] = toInternalStatValue(art.mainStatKey, art.mainStatVal)
   }
-  art.substats.forEach(({ key, value }) => (stats[key] = value))
+  art.substats.forEach(({ key, value }) => {
+    if (!key) return
+    stats[key] = toInternalStatValue(key, value)
+  })
   stats[art.setKey] = 1
   return stats
 }
@@ -247,7 +258,7 @@ function getSubkeys(art: ICachedArtifact) {
   const subkeys = art.substats.map(({ key }) => key).filter((key) => key !== '') // Filter out empty substats
   const stats = art.substats.reduce((acc, { key, value }) => {
     if (key === '') return acc
-    acc[key] = value
+    acc[key] = toInternalStatValue(key, value)
     return acc
   }, {} as DynStat)
   return { subkeys, stats }
@@ -255,3 +266,10 @@ function getSubkeys(art: ICachedArtifact) {
 
 type Build = Record<ArtifactSlotKey, ICachedArtifact | undefined>
 type weightedNode = { p: number; n: SubstatLevelNode }
+
+function toInternalStatValue(
+  key: SubstatKey | MainStatKey,
+  value: number
+) {
+  return key.endsWith('_') ? value / 100 : value
+}

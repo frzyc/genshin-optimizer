@@ -1,5 +1,6 @@
 import type { SubstatKey } from '@genshin-optimizer/gi/consts'
 import { allSubstatKeys } from '@genshin-optimizer/gi/consts'
+import { getMainStatValue, getSubstatValue } from '@genshin-optimizer/gi/util'
 import { dynRead, prod, sum } from '@genshin-optimizer/gi/wr'
 
 import { substatWeights } from './consts'
@@ -14,7 +15,7 @@ import { evalMarkovNode, evaluateGaussian } from './markov-tree/evaluation'
 import { makeObjective } from './markov-tree/makeObjective'
 import type { GaussianNode, Objective } from './markov-tree/markov.types'
 import { crawlSubstats } from './substatProbs'
-import { expandNode } from './upOpt'
+import { dustReshape, expandNode } from './upOpt'
 import type { MarkovNode, SubstatLevelNode } from './upOpt.types'
 
 /**
@@ -434,6 +435,180 @@ describe('upOpt components', () => {
 describe('upOpt makeSubstatNode(s)', () => {
   test('levelArtifact', () => {})
   test('fresh/domain/strongbox', () => {})
-  test('reshape/dust', () => {})
+  test('reshape/dust', () => {
+    const [reshaped] = dustReshape(
+      {
+        setKey: 'GladiatorsFinale',
+        slotKey: 'flower',
+        level: 20,
+        rarity: 5,
+        mainStatKey: 'hp',
+        location: '',
+        lock: false,
+        totalRolls: 9,
+        substats: [
+          { key: 'atk_', value: 46.6, initialValue: 5.8 },
+          { key: 'critRate_', value: 31.1, initialValue: 3.9 },
+          { key: 'critDMG_', value: 62.2, initialValue: 7.8 },
+          { key: 'enerRech_', value: 25.9, initialValue: 6.5 },
+        ],
+      },
+      {
+        flower: undefined,
+        plume: undefined,
+        sands: undefined,
+        goblet: undefined,
+        circlet: undefined,
+      },
+      ['atk_', 'critRate_'],
+      2
+    )
+    expect(reshaped.p).toBe(1)
+    expect(reshaped.n.rollsLeft).toBe(5)
+    expect(reshaped.n.base['atk_']).toBeCloseTo(
+      getSubstatValue('atk_', 5, 'min') / 100
+    )
+    expect(reshaped.n.base['critRate_']).toBeCloseTo(
+      getSubstatValue('critRate_', 5, 'min') / 100
+    )
+    expect(reshaped.n.base['critDMG_']).toBeCloseTo(7.8 / 100)
+    expect(reshaped.n.base['enerRech_']).toBeCloseTo(
+      6.5 / 100
+    )
+  })
+  test('reshape/dust keeps one fewer upgrade roll for 3-liners', () => {
+    const [reshaped] = dustReshape(
+      {
+        setKey: 'GladiatorsFinale',
+        slotKey: 'flower',
+        level: 20,
+        rarity: 5,
+        mainStatKey: 'hp',
+        location: '',
+        lock: false,
+        totalRolls: 8,
+        substats: [
+          { key: 'atk_', value: 46.6, initialValue: 5.8 },
+          { key: 'critRate_', value: 31.1, initialValue: 3.9 },
+          { key: 'critDMG_', value: 62.2, initialValue: 7.8 },
+          { key: 'enerRech_', value: 25.9, initialValue: 6.5 },
+        ],
+      },
+      {
+        flower: undefined,
+        plume: undefined,
+        sands: undefined,
+        goblet: undefined,
+        circlet: undefined,
+      },
+      ['atk_', 'critRate_'],
+      2
+    )
+    expect(reshaped.n.rollsLeft).toBe(4)
+  })
+  test('reshape/dust ignores artifacts with missing initial rolls', () => {
+    expect(
+      dustReshape(
+        {
+          setKey: 'GladiatorsFinale',
+          slotKey: 'flower',
+          level: 20,
+          rarity: 5,
+          mainStatKey: 'hp',
+          location: '',
+          lock: false,
+          totalRolls: 9,
+          substats: [
+            { key: 'atk_', value: 46.6, initialValue: 5.8 },
+            { key: 'critRate_', value: 31.1 },
+            { key: 'critDMG_', value: 62.2, initialValue: 7.8 },
+            { key: 'enerRech_', value: 25.9, initialValue: 6.5 },
+          ],
+        },
+        {
+          flower: undefined,
+          plume: undefined,
+          sands: undefined,
+          goblet: undefined,
+          circlet: undefined,
+        },
+        ['atk_', 'critRate_'],
+        2
+      )
+    ).toEqual([])
+  })
+  test('reshape/dust normalizes equipped percent stats', () => {
+    const [reshaped] = dustReshape(
+      {
+        setKey: 'GladiatorsFinale',
+        slotKey: 'flower',
+        level: 20,
+        rarity: 5,
+        mainStatKey: 'hp',
+        location: '',
+        lock: false,
+        substats: [
+          { key: 'atk_', value: 46.6, initialValue: 5.8 },
+          { key: 'critRate_', value: 31.1, initialValue: 3.9 },
+          { key: 'critDMG_', value: 62.2, initialValue: 7.8 },
+          { key: 'enerRech_', value: 25.9, initialValue: 6.5 },
+        ],
+      },
+      {
+        flower: undefined,
+        plume: undefined,
+        sands: {
+          id: 'equipped-sands',
+          setKey: 'GladiatorsFinale',
+          slotKey: 'sands',
+          level: 20,
+          rarity: 5,
+          mainStatKey: 'atk_',
+          mainStatVal: 46.6,
+          location: '',
+          lock: false,
+          substats: [
+            {
+              key: 'def_',
+              value: 5.8,
+              accurateValue: 5.8,
+              efficiency: 0,
+              rolls: [],
+            },
+            {
+              key: '',
+              value: 0,
+              accurateValue: 0,
+              efficiency: 0,
+              rolls: [],
+            },
+            {
+              key: '',
+              value: 0,
+              accurateValue: 0,
+              efficiency: 0,
+              rolls: [],
+            },
+            {
+              key: '',
+              value: 0,
+              accurateValue: 0,
+              efficiency: 0,
+              rolls: [],
+            },
+          ],
+          unactivatedSubstats: undefined,
+        } as any,
+        goblet: undefined,
+        circlet: undefined,
+      },
+      ['atk_', 'critRate_'],
+      2
+    )
+    expect(reshaped.n.base['atk_']).toBeCloseTo(
+      getMainStatValue('atk_', 5, 20) + getSubstatValue('atk_', 5, 'min') / 100
+    )
+    expect(reshaped.n.base['def_']).toBeCloseTo(5.8 / 100)
+  })
   test('define/elixir', () => {})
 })

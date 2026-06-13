@@ -1,6 +1,6 @@
 import { AdResponsive } from '@genshin-optimizer/common/ad'
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
-import { CardThemed } from '@genshin-optimizer/common/ui'
+import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
 import {
   bulkCatTotal,
   clamp,
@@ -49,14 +49,18 @@ import { artifactFilterConfigs } from '@genshin-optimizer/gi/util'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { dynamicData, mergeData, optimize } from '@genshin-optimizer/gi/wr'
 import AddIcon from '@mui/icons-material/Add'
+import InfoIcon from '@mui/icons-material/Info'
 import {
   Alert,
   Box,
   ButtonGroup,
   CardContent,
+  Checkbox,
+  FormControlLabel,
   Grid,
   Pagination,
   Skeleton,
+  Tooltip,
   Typography,
 } from '@mui/material'
 import type { ButtonProps } from '@mui/material/Button'
@@ -81,7 +85,7 @@ import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTa
 import StatFilterCard from '../TabOptimize/Components/StatFilterCard'
 import { LevelFilter } from './LevelFilter'
 import UpgradeOptChartCard from './UpgradeOptChartCard'
-import { UpOptCalculator } from './upOpt'
+import { UpOptCalculator, canReshapeArtifact } from './upOpt'
 
 // artifact button gets its own type so multiple translations can be used
 type AddArtifactButtonProps = Omit<ButtonProps, 'onClick'> & {
@@ -123,7 +127,13 @@ export default function TabUpopt() {
   const noArtifact = useMemo(() => !database.arts.values.length, [database])
 
   const optConfig = useOptConfig(optConfigId)!
-  const { optimizationTarget, upOptLevelLow, upOptLevelHigh } = optConfig
+  const {
+    optimizationTarget,
+    upOptLevelLow,
+    upOptLevelHigh,
+    upOptReshape,
+    upOptReshapeRolls,
+  } = optConfig
   const teamData = useTeamData()
   const { target: data } = teamData?.[characterKey as CharacterKey] ?? {}
 
@@ -148,32 +158,36 @@ export default function TabUpopt() {
       artExclusion,
       upOptLevelLow,
       upOptLevelHigh,
+      upOptReshape,
       useExcludedArts,
     } = optConfig
     const filterFunc = filterFunction(filterOption, artifactFilterConfigs())
 
     return (
       artsDirty &&
-      database.arts.values
-        .filter((art) => {
-          if (!useExcludedArts && artExclusion.includes(art.id)) return false
-          if (art.level < upOptLevelLow) return false
-          if (art.level > upOptLevelHigh) return false
-          const mainStats = mainStatKeys[art.slotKey]
-          if (mainStats?.length && !mainStats.includes(art.mainStatKey))
-            return false
+        database.arts.values
+          .filter((art) => {
+            const reshapeCandidate = upOptReshape && canReshapeArtifact(art)
+            if (!useExcludedArts && artExclusion.includes(art.id)) return false
+            if (!reshapeCandidate) {
+              if (art.level < upOptLevelLow) return false
+              if (art.level > upOptLevelHigh) return false
+            }
+            const mainStats = mainStatKeys[art.slotKey]
+            if (mainStats?.length && !mainStats.includes(art.mainStatKey))
+              return false
 
-          const locKey = charKeyToLocCharKey(characterKey)
-          if (
-            art.location &&
-            art.location !== locKey &&
-            excludedLocations.includes(art.location)
-          )
-            return false
+            const locKey = charKeyToLocCharKey(characterKey)
+            if (
+              art.location &&
+              art.location !== locKey &&
+              excludedLocations.includes(art.location)
+            )
+              return false
 
-          return true
+            return true
         })
-        .filter(filterFunc)
+          .filter(filterFunc)
     )
   }, [optConfig, artsDirty, database, characterKey, filterOption])
   const filteredArtIdMap = useMemo(
@@ -182,6 +196,10 @@ export default function TabUpopt() {
         filteredArts.map(({ id }) => id),
         (_) => true
       ),
+    [filteredArts]
+  )
+  const reshapeCandidateCount = useMemo(
+    () => filteredArts.filter((art) => canReshapeArtifact(art)).length,
     [filteredArts]
   )
 
@@ -196,8 +214,12 @@ export default function TabUpopt() {
     return bulkCatTotal(catKeys, (ctMap) =>
       database.arts.entries.forEach(([id, art]) => {
         const { level, setKey, slotKey } = art
-        const { upOptLevelLow, upOptLevelHigh } = optConfig
-        if (level >= upOptLevelLow && level <= upOptLevelHigh) {
+        const { upOptLevelLow, upOptLevelHigh, upOptReshape } = optConfig
+        const reshapeCandidate = upOptReshape && canReshapeArtifact(art)
+        if (
+          reshapeCandidate ||
+          (level >= upOptLevelLow && level <= upOptLevelHigh)
+        ) {
           ctMap['levelTotal']['in'].total++
           if (filteredArtIdMap[id]) ctMap['levelTotal']['in'].current++
         }
@@ -220,6 +242,8 @@ export default function TabUpopt() {
       mainStatKeys,
       upOptLevelLow,
       upOptLevelHigh,
+      upOptReshape,
+      upOptReshapeRolls,
       artSetExclusion,
     } = optConfig
 
@@ -319,7 +343,9 @@ export default function TabUpopt() {
           mainStatKeys[art.slotKey]?.includes(art.mainStatKey)
       )
       .filter(
-        (art) => upOptLevelLow <= art.level && art.level <= upOptLevelHigh
+        (art) =>
+          (upOptReshape && canReshapeArtifact(art)) ||
+          (upOptLevelLow <= art.level && art.level <= upOptLevelHigh)
       )
     if (!artifactsToConsider.length) return
     const nodes = optimize(
@@ -332,7 +358,10 @@ export default function TabUpopt() {
       nodes,
       [-Infinity, ...valueFilter.map((x) => x.minimum)],
       equippedArts,
-      artifactsToConsider
+      artifactsToConsider,
+      true,
+      upOptReshape,
+      upOptReshapeRolls as 2 | 3 | 4
     )
     /**
      * WARNING:
@@ -503,6 +532,71 @@ export default function TabUpopt() {
                       disabled={false}
                       filteredArtIdMap={filteredArtIdMap}
                     />
+                  </CardThemed>
+                  <CardThemed bgt="light">
+                    <CardContent>
+                      <Stack spacing={1}>
+                        <Box display="flex" alignItems="center">
+                          <FormControlLabel
+                            control={
+                              <Checkbox
+                                checked={upOptReshape}
+                                onChange={(_, upOptReshape) =>
+                                  database.optConfigs.set(optConfigId, {
+                                    upOptReshape,
+                                  })
+                                }
+                              />
+                            }
+                            label="Reshape"
+                          />
+                          <SqBadge
+                            color="info"
+                            sx={{ mr: 2 }}
+                          >
+                            {reshapeCandidateCount}
+                          </SqBadge>
+                          <Tooltip
+                            arrow
+                            title="Evaluate level 20 artifacts as reshape candidates. Each eligible artifact is scored once per substat pair, for 6 total combinations."
+                          >
+                            <InfoIcon
+                              fontSize="small"
+                              color="action"
+                              sx={{ mb: 0.5 }}
+                            />
+                          </Tooltip>
+                        </Box>
+                        <Box>
+                          <Typography variant="body2" color="text.secondary">
+                            {t('upOptReshape.rolls')}
+                          </Typography>
+                          <ButtonGroup
+                            size="small"
+                            color="secondary"
+                            sx={{ mt: 0.5 }}
+                          >
+                            {[2, 3, 4].map((rolls) => (
+                              <Button
+                                key={rolls}
+                                variant={
+                                  upOptReshapeRolls === rolls
+                                    ? 'contained'
+                                    : 'outlined'
+                                }
+                                onClick={() =>
+                                  database.optConfigs.set(optConfigId, {
+                                    upOptReshapeRolls: rolls,
+                                  })
+                                }
+                              >
+                                {t('upOptReshape.rollOption', { count: rolls })}
+                              </Button>
+                            ))}
+                          </ButtonGroup>
+                        </Box>
+                      </Stack>
+                    </CardContent>
                   </CardThemed>
                 </Grid>
                 {/* 3 */}

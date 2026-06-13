@@ -115,6 +115,8 @@ const optConfigSchema = z.object({
   generatedBuildListId: z.string().optional().catch(undefined),
   upOptLevelLow: zodClampedNumber(0, 20, 0),
   upOptLevelHigh: zodClampedNumber(0, 20, 19),
+  upOptReshape: zodBoolean(),
+  upOptReshapeRolls: zodClampedNumber(2, 4, 2),
 })
 export type OptConfig = z.infer<typeof optConfigSchema>
 
@@ -144,6 +146,7 @@ export class OptConfigDataManager extends DataManager<
       levelHigh,
       upOptLevelLow,
       upOptLevelHigh,
+      upOptReshapeRolls,
     } = data
 
     // Business logic: filter artExclusion to only IDs that exist in database
@@ -196,6 +199,7 @@ export class OptConfigDataManager extends DataManager<
       levelHigh,
       upOptLevelLow,
       upOptLevelHigh,
+      upOptReshapeRolls,
     }
   }
   new(data: Partial<OptConfig> = {}) {

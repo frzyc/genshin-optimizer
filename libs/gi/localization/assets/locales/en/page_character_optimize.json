@@ -30,12 +30,20 @@
   "upOptInfo": "The Artifact Upgrader identifies artifacts with high potential to boost the Optimization Target's value, guiding you to artifacts worth leveling up.<br/>As it only swaps one artifact at a time, for the best overall build across all artifacts, use the main artifact optimizer.",
   "upOptEmptyBuild": "You're using a partially empty build. Since the Artifact Upgrader only swaps artifacts individually, completing a set is unlikely. It's recommended to begin with a base build, preferably generated from the main Optimizer.",
   "upOptShowingNum": "Showing {{count}} out of {{value}} Artifacts",
+  "upOptReshape": {
+    "title": "Include Artifact Reshaping",
+    "rolls": "Number of rolls into the guaranteed substats:",
+    "rollOption": "{{count}} rolls"
+  },
   "upOptChart": {
     "est": " (est.)",
     "prob": "Prob. upgrade{{est}}: ",
     "average": "Average increase{{est}}: ",
     "equipped": "Equipped",
     "current": "Current on Build",
+    "levelUp": "Level Up",
+    "reshape": "Reshape",
+    "reshapeStats": "Guaranteed: {{count}} rolls into {{stats}}",
     "incLabel": "Relative Increase to Target",
     "probLabel": "Probability",
     "const": " Constrained",

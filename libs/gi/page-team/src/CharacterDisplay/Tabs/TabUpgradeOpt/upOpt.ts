@@ -8,6 +8,13 @@ import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import type { MainStatKey, SubstatKey } from '@genshin-optimizer/gi/dm'
 import type { ArtifactBuildData, DynStat } from '@genshin-optimizer/gi/solver'
 import {
+  deduplicate,
+  dustReshape,
+  evalMarkovNode,
+  expandNode,
+  makeObjective,
+} from '@genshin-optimizer/gi/upopt'
+import {
   getMainStatValue,
   getRollsRemaining,
   getSubstatValue,
@@ -85,13 +92,23 @@ export enum ResultType {
   Exact,
 }
 export type UpOptBuild = Record<ArtifactSlotKey, ArtifactBuildData>
+export type UpOptAction =
+  | { type: 'upgrade' }
+  | {
+      type: 'reshape'
+      affixes: [SubstatKey, SubstatKey]
+      mintotal: 2 | 3 | 4
+    }
 export type UpOptArtifact = {
   id: string
+  artifactId: string
   rollsLeft: number
   mainStat: MainStatKey
   subs: SubstatKey[]
   values: DynStat
   slotKey: ArtifactSlotKey
+  sourceArt: ICachedArtifact
+  action: UpOptAction
 
   result?: UpOptResult
 }
@@ -139,6 +156,45 @@ function toDecimal(key: SubstatKey | MainStatKey | '', value: number) {
   return key.endsWith('_') ? value / 100 : value
 }
 
+function getReshapeSubstatKeys(art: ICachedArtifact): SubstatKey[] {
+  return art.substats
+    .map(({ key }) => key)
+    .filter((key): key is SubstatKey => key !== '')
+}
+
+export function canReshapeArtifact(art: ICachedArtifact): boolean {
+  if (art.rarity !== 5 || art.level !== 20) return false
+  if (art.unactivatedSubstats?.some(({ key }) => key !== '')) return false
+  if (
+    art.substats.some(
+      ({ key, initialValue }) => key !== '' && initialValue === undefined
+    )
+  )
+    return false
+  return getReshapeSubstatKeys(art).length === 4
+}
+
+function getReshapeAffixPairs(art: ICachedArtifact): [SubstatKey, SubstatKey][] {
+  if (!canReshapeArtifact(art)) return []
+  const substatKeys = getReshapeSubstatKeys(art)
+  const out: [SubstatKey, SubstatKey][] = []
+  for (let i = 0; i < substatKeys.length; i++) {
+    for (let j = i + 1; j < substatKeys.length; j++) {
+      out.push([substatKeys[i], substatKeys[j]])
+    }
+  }
+  return out
+}
+
+function canReshapeArtifactWithAffixes(
+  art: ICachedArtifact,
+  reshapeAffixes: [SubstatKey, SubstatKey]
+): boolean {
+  if (!canReshapeArtifact(art)) return false
+  const substatKeys = getReshapeSubstatKeys(art)
+  return reshapeAffixes.every((key) => substatKeys.includes(key))
+}
+
 export class UpOptCalculator {
   /**
    * Calculator class to track artifacts and their evaluation status. Method overview:
@@ -150,6 +206,10 @@ export class UpOptCalculator {
   nodes: OptNode[]
   thresholds: number[]
   calc4th: boolean
+  equippedBuild: Record<ArtifactSlotKey, ICachedArtifact | undefined>
+  reshapeEnabled: boolean
+  reshapeMintotal: 2 | 3 | 4
+  markovObjective: ReturnType<typeof makeObjective>
 
   skippableDerivatives: boolean[]
   eval: (
@@ -172,7 +232,9 @@ export class UpOptCalculator {
     thresholds: number[],
     equippedBuild: Record<ArtifactSlotKey, ICachedArtifact | undefined>,
     artifacts: ICachedArtifact[],
-    calc4th = true
+    calc4th = true,
+    reshapeEnabled = false,
+    reshapeMintotal: 2 | 3 | 4 = 2
   ) {
     this.baseBuild = objMap(equippedBuild, (art) =>
       art ? this.toArtifact(art) : { id: '', values: {} }
@@ -180,6 +242,9 @@ export class UpOptCalculator {
     this.nodes = nodes
     this.thresholds = thresholds
     this.calc4th = calc4th
+    this.equippedBuild = equippedBuild
+    this.reshapeEnabled = reshapeEnabled
+    this.reshapeMintotal = reshapeMintotal
 
     const toEval: OptNode[] = []
     nodes.forEach((n) => {
@@ -194,6 +259,7 @@ export class UpOptCalculator {
     thresholds[0] = evalFn(
       Object.values(this.baseBuild) as ArtifactBuildData[] & { length: 5 }
     )[0] // dmg threshold is current objective value
+    this.markovObjective = makeObjective(nodes, thresholds)
 
     this.skippableDerivatives = allSubstatKeys.map((sub) =>
       nodes.every((n) => zero_deriv(n, (f) => f.path[1], sub))
@@ -220,16 +286,35 @@ export class UpOptCalculator {
 
   /** Adds an artifact to be tracked by UpOptCalc. It is initially un-evaluated. */
   _addArtifact(art: ICachedArtifact) {
-    this.artifacts.push(this.toUpOptArtifact(art))
+    if (this.reshapeEnabled && canReshapeArtifact(art)) {
+      getReshapeAffixPairs(art).forEach((affixes) => {
+        this.artifacts.push(
+          this.toUpOptArtifact(art, {
+            type: 'reshape',
+            affixes,
+            mintotal: this.reshapeMintotal,
+          })
+        )
+      })
+      return
+    }
+    this.artifacts.push(this.toUpOptArtifact(art, { type: 'upgrade' }))
   }
-  toUpOptArtifact(art: ICachedArtifact): UpOptArtifact {
+  toUpOptArtifact(art: ICachedArtifact, action: UpOptAction): UpOptArtifact {
     const maxLevel = artMaxLevel[art.rarity]
     const mainStatVal = getMainStatValue(art.mainStatKey, art.rarity, maxLevel) // 5* only
+    const id =
+      action.type === 'reshape'
+        ? `${art.id}|reshape:${action.affixes.join(',')}`
+        : art.id
     const out: UpOptArtifact = {
-      id: art.id,
+      id,
+      artifactId: art.id,
       rollsLeft: getRollsRemaining(art.level, art.rarity),
       slotKey: art.slotKey,
       mainStat: art.mainStatKey,
+      sourceArt: art,
+      action,
       subs: art.substats
         .map(({ key }) => key)
         .filter((v) => v !== '') as SubstatKey[],
@@ -257,7 +342,13 @@ export class UpOptCalculator {
     return out
   }
   reCalc(ix: number, art: ICachedArtifact) {
-    this.artifacts[ix] = this.toUpOptArtifact(art)
+    const prevAction = this.artifacts[ix].action
+    const nextAction =
+      prevAction.type === 'reshape' &&
+      canReshapeArtifactWithAffixes(art, prevAction.affixes)
+        ? prevAction
+        : { type: 'upgrade' as const }
+    this.artifacts[ix] = this.toUpOptArtifact(art, nextAction)
     this.calcFast(ix, this.calc4th)
   }
   /** Calcs all artifacts using Fast method */
@@ -343,14 +434,80 @@ export class UpOptCalculator {
     }
   }
 
+  _toResultMarkov(
+    distr: {
+      prob: number
+      evaluation: {
+        prob: number
+        constr_prob: number
+        upAvg: number
+        f_mu: number[]
+        f_cov: number[][]
+      }
+    }[]
+  ): UpOptResult {
+    let ptot = 0
+    let upAvgtot = 0
+    const gmm = distr.map(({ prob, evaluation }) => {
+      const { f_mu, f_cov, constr_prob, upAvg } = evaluation
+      const p = evaluation.prob
+      ptot += prob * p
+      upAvgtot += prob * p * upAvg
+      return {
+        phi: prob,
+        cp: constr_prob,
+        mu: f_mu[0],
+        sig2: f_cov[0][0],
+      }
+    })
+    const lowers = gmm.map(({ mu, sig2 }) => mu - 4 * Math.sqrt(sig2))
+    const uppers = gmm.map(({ mu, sig2 }) => mu + 4 * Math.sqrt(sig2))
+    return {
+      p: ptot,
+      upAvg: ptot < 1e-6 ? 0 : upAvgtot / ptot,
+      distr: {
+        gmm,
+        lower: Math.min(...lowers, this.thresholds[0]),
+        upper: Math.max(...uppers, this.thresholds[0]),
+      },
+      evalMode: ResultType.Slow,
+    }
+  }
+
   /**
    * Evaluates artifact using Fast method.
    * Selection details based on artifacts[ix]
    */
   calcFast(ix: number, calc4th = true) {
+    if (this.artifacts[ix].action.type === 'reshape') {
+      this._calcReshape(ix)
+      return
+    }
     if (this.artifacts[ix].subs.length === 4) calc4th = false
     if (calc4th) this._calcFast4th(ix)
     else this._calcFast(ix)
+  }
+
+  _calcReshape(ix: number) {
+    const { affixes, mintotal } = this.artifacts[ix].action.type === 'reshape'
+      ? this.artifacts[ix].action
+      : { affixes: undefined, mintotal: 2 as const }
+    if (!affixes) return
+    const weighted = deduplicate(
+      this.markovObjective,
+      dustReshape(
+        this.artifacts[ix].sourceArt,
+        this.equippedBuild,
+        affixes,
+        mintotal
+      )
+    )
+    this.artifacts[ix].result = this._toResultMarkov(
+      weighted.map(({ p, n }) => ({
+        prob: p,
+        evaluation: evalMarkovNode(this.markovObjective, n).evaluation,
+      }))
+    )
   }
 
   /**
@@ -469,6 +626,7 @@ export class UpOptCalculator {
       this.artifacts[ix].result?.evalMode === ResultType.Exact
     )
       return
+    if (this.artifacts[ix].action.type === 'reshape') return
     if (this.artifacts[ix].subs.length === 4) calc4th = false
     if (calc4th) this._calcSlow4th(ix)
     else this._calcSlow(ix)
@@ -585,9 +743,47 @@ export class UpOptCalculator {
    */
   calcExact(ix: number, calc4th = true) {
     if (this.artifacts[ix].result?.evalMode === ResultType.Exact) return
+    if (this.artifacts[ix].action.type === 'reshape') {
+      this._calcExactReshape(ix)
+      return
+    }
     if (this.artifacts[ix].subs.length === 4) calc4th = false
     if (calc4th) this._calcExact4th(ix)
     else this._calcExact(ix)
+  }
+
+  _calcExactReshape(ix: number) {
+    const { affixes, mintotal } = this.artifacts[ix].action.type === 'reshape'
+      ? this.artifacts[ix].action
+      : { affixes: undefined, mintotal: 2 as const }
+    if (!affixes) return
+    let weighted = deduplicate(
+      this.markovObjective,
+      dustReshape(
+        this.artifacts[ix].sourceArt,
+        this.equippedBuild,
+        affixes,
+        mintotal
+      )
+    )
+    while (weighted.some(({ n }) => n.type !== 'values')) {
+      weighted = deduplicate(
+        this.markovObjective,
+        weighted.flatMap(({ p, n }) =>
+          expandNode(n).map(({ p: p2, n: expanded }) => ({
+            p: p * p2,
+            n: expanded,
+          }))
+        )
+      )
+    }
+
+    this.artifacts[ix].result = this._toResultExact(
+      weighted.map(({ p, n }) => ({
+        prob: p,
+        val: evalMarkovNode(this.markovObjective, n).evaluation.f_mu,
+      }))
+    )
   }
 
   /**
