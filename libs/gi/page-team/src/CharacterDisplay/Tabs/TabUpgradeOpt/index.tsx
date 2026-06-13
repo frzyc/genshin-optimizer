@@ -199,8 +199,14 @@ export default function TabUpopt() {
     [filteredArts]
   )
   const reshapeCandidateCount = useMemo(
-    () => filteredArts.filter((art) => canReshapeArtifact(art)).length,
-    [filteredArts]
+    () =>
+      database.arts.values.filter(
+        (art) =>
+          canReshapeArtifact(art) &&
+          (!optConfig.mainStatKeys[art.slotKey]?.length ||
+            optConfig.mainStatKeys[art.slotKey]?.includes(art.mainStatKey))
+      ).length,
+    [artsDirty, database, optConfig.mainStatKeys]
   )
 
   const { artSetKeys = [], slotKeys = [] } = filterOption
