@@ -1,3 +1,5 @@
 export * from './upOpt'
+export * from './upOptCalculator'
 export { evalMarkovNode } from './markov-tree/evaluation'
 export * from './markov-tree/makeObjective'
+export { erf } from './markov-tree/mathUtil'

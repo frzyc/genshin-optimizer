@@ -1,5 +1,6 @@
-import type { SubstatKey } from '@genshin-optimizer/gi/consts'
-import { allSubstatKeys } from '@genshin-optimizer/gi/consts'
+import type { ArtifactSlotKey, SubstatKey } from '@genshin-optimizer/gi/consts'
+import { allArtifactSlotKeys, allSubstatKeys } from '@genshin-optimizer/gi/consts'
+import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { dynRead, prod, sum } from '@genshin-optimizer/gi/wr'
 
 import { substatWeights } from './consts'
@@ -14,7 +15,8 @@ import { evalMarkovNode, evaluateGaussian } from './markov-tree/evaluation'
 import { makeObjective } from './markov-tree/makeObjective'
 import type { GaussianNode, Objective } from './markov-tree/markov.types'
 import { crawlSubstats } from './substatProbs'
-import { expandNode } from './upOpt'
+import { expandNode, levelUpArtifact } from './upOpt'
+import { ResultType, UpOptCalculator } from './upOptCalculator'
 import type { MarkovNode, SubstatLevelNode } from './upOpt.types'
 
 /**
@@ -432,8 +434,69 @@ describe('upOpt components', () => {
 })
 
 describe('upOpt makeSubstatNode(s)', () => {
-  test('levelArtifact', () => {})
+  test('levelArtifact', () => {
+    const build = Object.fromEntries(
+      allArtifactSlotKeys.map((slot) => [slot, undefined])
+    ) as Record<ArtifactSlotKey, ICachedArtifact | undefined>
+    const art = {
+      id: 'test-level-artifact',
+      slotKey: 'flower',
+      rarity: 5,
+      level: 0,
+      mainStatKey: 'hp',
+      setKey: 'GladiatorsFinale',
+      mainStatVal: 717,
+      substats: [
+        { key: 'atk_' as const, value: 5.8, accurateValue: 5.8 },
+        { key: 'critRate_' as const, value: 3.9, accurateValue: 3.9 },
+        { key: 'critDMG_' as const, value: 7.8, accurateValue: 7.8 },
+        { key: '' as const, value: 0, accurateValue: 0 },
+      ],
+    } as ICachedArtifact
+
+    const leveled = levelUpArtifact(art, build)
+    expect(leveled).toHaveLength(6)
+    expect(leveled.reduce((sum, { p }) => sum + p, 0)).toBeCloseTo(1)
+
+    const obj = makeObjective([dynRead('atk_')], [-Infinity])
+    leveled.forEach(({ n }) => {
+      checkExpandedEvalCorrectness(obj, expandNode(n), n.subDistr)
+    })
+  })
   test('fresh/domain/strongbox', () => {})
   test('reshape/dust', () => {})
   test('define/elixir', () => {})
+})
+
+describe('upOptCalculator', () => {
+  test('UpOptCalculator adapter', () => {
+    const build = Object.fromEntries(
+      allArtifactSlotKeys.map((slot) => [slot, undefined])
+    ) as Record<ArtifactSlotKey, ICachedArtifact | undefined>
+    const art = {
+      id: 'test-art',
+      slotKey: 'flower',
+      rarity: 5,
+      level: 0,
+      mainStatKey: 'hp',
+      setKey: 'GladiatorsFinale',
+      mainStatVal: 717,
+      substats: [
+        { key: 'atk_' as const, value: 5.8, accurateValue: 5.8 },
+        { key: 'critRate_' as const, value: 3.9, accurateValue: 3.9 },
+        { key: 'critDMG_' as const, value: 7.8, accurateValue: 7.8 },
+        { key: '' as const, value: 0, accurateValue: 0 },
+      ],
+    } as ICachedArtifact
+
+    const calc = new UpOptCalculator([dynRead('atk_')], [-Infinity], build, [
+      art,
+    ])
+    expect(calc.artifacts).toHaveLength(1)
+    expect(calc.artifacts[0].result?.evalMode).toBe(ResultType.Slow)
+
+    calc.calcExact(0)
+    expect(calc.artifacts[0].result?.evalMode).toBe(ResultType.Exact)
+    expect(calc.artifacts[0].result?.p).toBeGreaterThan(0)
+  })
 })

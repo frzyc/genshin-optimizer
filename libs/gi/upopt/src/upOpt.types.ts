@@ -1,10 +1,16 @@
-import type { ArtifactRarity, SubstatKey } from '@genshin-optimizer/gi/consts'
+import type {
+  ArtifactRarity,
+  ArtifactSlotKey,
+  SubstatKey
+} from '@genshin-optimizer/gi/consts'
+import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import type { DynStat } from '@genshin-optimizer/gi/solver'
 import type {
   EvaluatedGaussian,
   GaussianNode,
 } from './markov-tree/markov.types'
 
+export type Build = Record<ArtifactSlotKey, ICachedArtifact | undefined>
 export type MarkovNode = SubstatLevelNode | RollsLevelNode | ValuesLevelNode
 export type EvaluatedMarkovNode =
   | EvaluatedSubstatNode

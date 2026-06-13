@@ -35,9 +35,7 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
-import { erf } from './mathUtil'
-import type { UpOptCalculator } from './upOpt'
-import { ResultType } from './upOpt'
+import { erf, ResultType, type UpOptCalculator } from '@genshin-optimizer/gi/upopt'
 
 type Props = {
   setArtifactIdToEdit: (id: string | undefined) => void

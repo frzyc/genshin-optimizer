@@ -20,7 +20,7 @@ import { allMainStatProbs } from './consts'
 import { expandRollsLevel } from './expandRolls'
 import { expandSubstatLevel, makeSubstatNode } from './expandSubstat'
 import { crawlSubstats } from './substatProbs'
-import type { MarkovNode, SubstatLevelNode } from './upOpt.types'
+import type { Build, MarkovNode, SubstatLevelNode } from './upOpt.types'
 
 export function expandNode(node: MarkovNode): { p: number; n: MarkovNode }[] {
   if (node.type === 'substat') return expandSubstatLevel(node)
@@ -52,9 +52,10 @@ export function levelUpArtifact(
 
   // Unactivated substats - Insert and remove a remaining roll.
   if (art.unactivatedSubstats) {
-    art.unactivatedSubstats.forEach(({ key, value }) => {
+    art.unactivatedSubstats.forEach(({ key, accurateValue, value }) => {
       if (key === '') return
-      info.base[key] = (info.base[key] ?? 0) + value
+      info.base[key] =
+        (info.base[key] ?? 0) + toDecimal(key, accurateValue ?? value)
       info.subkeys.push({ key, baseRolls: 0 })
       info.rollsLeft -= 1
     })
@@ -198,16 +199,14 @@ export function elixirDefinition(
 
 function artToStats(art: ICachedArtifact, mainStatMax = true) {
   const stats = {} as DynStat
-  if (mainStatMax) {
-    stats[art.mainStatKey] = getMainStatValue(
-      art.mainStatKey,
-      art.rarity,
-      mainStatMax ? artMaxLevel[art.rarity] : art.level
-    )
-  } else {
-    stats[art.mainStatKey] = art.mainStatVal
-  }
-  art.substats.forEach(({ key, value }) => (stats[key] = value))
+  stats[art.mainStatKey] = getMainStatValue(
+    art.mainStatKey,
+    art.rarity,
+    mainStatMax ? artMaxLevel[art.rarity] : art.level
+  )
+  art.substats.forEach(
+    ({ key, accurateValue }) => (stats[key] = toDecimal(key, accurateValue))
+  )
   stats[art.setKey] = 1
   return stats
 }
@@ -245,13 +244,16 @@ function toStats(
 
 function getSubkeys(art: ICachedArtifact) {
   const subkeys = art.substats.map(({ key }) => key).filter((key) => key !== '') // Filter out empty substats
-  const stats = art.substats.reduce((acc, { key, value }) => {
+  const stats = art.substats.reduce((acc, { key, accurateValue }) => {
     if (key === '') return acc
-    acc[key] = value
+    acc[key] = toDecimal(key, accurateValue)
     return acc
   }, {} as DynStat)
   return { subkeys, stats }
 }
 
-type Build = Record<ArtifactSlotKey, ICachedArtifact | undefined>
+function toDecimal(key: SubstatKey | MainStatKey | '', value: number) {
+  return key.endsWith('_') ? value / 100 : value
+}
+
 type weightedNode = { p: number; n: SubstatLevelNode }
