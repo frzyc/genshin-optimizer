@@ -404,7 +404,6 @@ export default function TabUpopt() {
           indexes: [],
           numPages: 0,
           currentPageIndex: 0,
-          toShow: 0,
           minObj0: 0,
           maxObj0: 0,
         }

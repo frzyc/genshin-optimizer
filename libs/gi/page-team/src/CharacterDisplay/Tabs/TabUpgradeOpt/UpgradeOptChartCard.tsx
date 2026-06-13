@@ -41,7 +41,6 @@ import { ResultType } from './upOpt'
 
 type Props = {
   setArtifactIdToEdit: (id: string | undefined) => void
-  showTrue?: boolean
   objMin: number
   objMax: number
   thresholds: number[]
