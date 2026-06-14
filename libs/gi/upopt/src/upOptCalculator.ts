@@ -102,7 +102,9 @@ type ArtifactState = UpOptArtifact & {
 
 export class UpOptCalculator {
   private readonly equippedBuild: Build
-  private readonly objectives: ReturnType<typeof makeSlotObjectives>['objectives']
+  private readonly objectives: ReturnType<
+    typeof makeSlotObjectives
+  >['objectives']
   private readonly updateEquippedArtifact: (art: ICachedArtifact) => void
 
   thresholds: number[]
@@ -205,7 +207,10 @@ export class UpOptCalculator {
    */
   calcExact(ix: number) {
     const art = this.artifacts[ix]
-    let nodes = levelUpArtifact(art.sourceArt, this.equippedBuild)
+    let nodes: WeightedMarkovNode[] = levelUpArtifact(
+      art.sourceArt,
+      this.equippedBuild
+    )
     nodes = expandWeightedNodes(nodes)
     nodes = expandWeightedNodes(nodes)
     art.result = this.toExactResult({ ...art, nodes })

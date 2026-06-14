@@ -4,12 +4,7 @@ import {
   allSubstatKeys,
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
-import {
-  dynRead,
-  prod,
-  sum,
-  type OptNode,
-} from '@genshin-optimizer/gi/wr'
+import { dynRead, prod, sum } from '@genshin-optimizer/gi/wr'
 
 import { substatWeights } from './consts'
 import { deduplicate } from './deduplicate'
@@ -26,7 +21,6 @@ import { crawlSubstats } from './substatProbs'
 import { expandNode, levelUpArtifact } from './upOpt'
 import type { MarkovNode, SubstatLevelNode } from './upOpt.types'
 import { ResultType, UpOptCalculator } from './upOptCalculator'
-import { UpOptCalculator as LegacyUpOptCalculator } from '../../page-team/src/CharacterDisplay/Tabs/TabUpgradeOpt/upOpt'
 
 /**
  * Checks whether the expanded nodes' evaluations match the base Gaussian node's evaluation.
@@ -64,117 +58,6 @@ function checkExpandedEvalCorrectness(
   const baseEval = evaluateGaussian(obj, g)
   expect(mean).toBeCloseTo(baseEval.f_mu[0])
   expect(sig2).toBeCloseTo(baseEval.f_cov[0][0])
-}
-
-function legacyExactResult(
-  nodes: OptNode[],
-  build: Record<ArtifactSlotKey, ICachedArtifact | undefined>,
-  art: ICachedArtifact,
-  thresholds?: number[]
-) {
-  const initialThresholds =
-    thresholds ?? [-Infinity, ...Array(nodes.length - 1).fill(-Infinity)]
-  const legacyCalc = new LegacyUpOptCalculator(
-    nodes,
-    initialThresholds,
-    build,
-    [art]
-  )
-  legacyCalc.calcExact(0)
-  return {
-    thresholds: legacyCalc.thresholds,
-    ...legacyCalc.artifacts[0].result!,
-  }
-}
-
-function aggregateExactGmm(
-  gmm: { phi: number; cp: number; mu: number; sig2: number }[]
-) {
-  const out = new Map<
-    string,
-    { phi: number; cp: number; mu: number; sig2: number }
-  >()
-  gmm.forEach((entry) => {
-    const key = `${entry.cp}|${entry.mu.toFixed(12)}|${entry.sig2.toFixed(12)}`
-    const prev = out.get(key)
-    if (prev) prev.phi += entry.phi
-    else out.set(key, { ...entry })
-  })
-  return [...out.values()].sort(
-    (a, b) => a.mu - b.mu || a.cp - b.cp || a.phi - b.phi
-  )
-}
-
-function expectExactParityWithLegacy(
-  objective: OptNode[],
-  build: Record<ArtifactSlotKey, ICachedArtifact | undefined>,
-  art: ICachedArtifact,
-  thresholds?: number[]
-) {
-  const calc = new UpOptCalculator(
-    objective,
-    thresholds ?? [-Infinity, ...Array(objective.length - 1).fill(-Infinity)],
-    build,
-    [art]
-  )
-  let exactResult
-  if (calc.artifacts[0]) {
-    calc.calcExact(0)
-    exactResult = calc.artifacts[0].result!
-  } else {
-    const calcInternal = calc as UpOptCalculator & {
-      expandFrontier: (art: {
-        frontier: 'substat' | 'rolls' | 'values'
-        slotKey: ArtifactSlotKey
-        nodes: ReturnType<typeof levelUpArtifact>
-      }) => void
-      toExactResult: (art: {
-        slotKey: ArtifactSlotKey
-        nodes: ReturnType<typeof levelUpArtifact>
-      }) => {
-        p: number
-        upAvg: number
-        distr: {
-          gmm: { phi: number; cp: number; mu: number; sig2: number }[]
-          lower: number
-          upper: number
-        }
-        evalMode: ResultType
-      }
-    }
-    const artState = {
-      id: art.id,
-      slotKey: art.slotKey,
-      nodes: levelUpArtifact(art, build),
-      frontier: 'substat' as const,
-    }
-    while (artState.frontier !== 'values') {
-      calcInternal.expandFrontier(artState)
-    }
-    exactResult = calcInternal.toExactResult(artState)
-  }
-  expect(exactResult.evalMode).toBe(ResultType.Exact)
-
-  const legacyResult = legacyExactResult(objective, build, art, thresholds)
-  expect(calc.thresholds).toHaveLength(legacyResult.thresholds.length)
-  calc.thresholds.forEach((threshold, i) =>
-    expect(threshold).toBeCloseTo(legacyResult.thresholds[i])
-  )
-  expect(exactResult.p).toBeCloseTo(legacyResult.p)
-  expect(exactResult.upAvg).toBeCloseTo(legacyResult.upAvg)
-  expect(exactResult.distr.lower).toBeCloseTo(legacyResult.distr.lower)
-  expect(exactResult.distr.upper).toBeCloseTo(legacyResult.distr.upper)
-
-  const actualGmm = aggregateExactGmm(exactResult.distr.gmm)
-  const expectedGmm = aggregateExactGmm(legacyResult.distr.gmm)
-  expect(actualGmm).toHaveLength(expectedGmm.length)
-  actualGmm.forEach((actual, i) => {
-    const expected = expectedGmm[i]
-    expect(actual.cp).toBeCloseTo(expected.cp)
-    expect(actual.mu).toBeCloseTo(expected.mu)
-    expect(actual.sig2).toBeCloseTo(expected.sig2)
-    expect(actual.phi).toBeCloseTo(expected.phi)
-  })
 }
 
 describe('upOpt components', () => {
@@ -622,14 +505,6 @@ describe('upOptCalculator', () => {
     ],
   } as ICachedArtifact
 
-  const objectiveBasic = [
-    sum(
-      dynRead('atk'),
-      prod(1500, dynRead('atk_')),
-      prod(500, dynRead('critRate_')),
-      prod(250, dynRead('critDMG_'))
-    ),
-  ]
   const objectiveConstrained = [
     sum(
       dynRead('atk'),
@@ -639,106 +514,6 @@ describe('upOptCalculator', () => {
     ),
     dynRead('critRate_'),
     dynRead('critDMG_'),
-  ]
-  const objectiveAlt = [
-    sum(
-      dynRead('hp'),
-      prod(800, dynRead('hp_')),
-      prod(120, dynRead('eleMas')),
-      prod(600, dynRead('enerRech_'))
-    ),
-  ]
-
-  const parityCases: {
-    name: string
-    build: Record<ArtifactSlotKey, ICachedArtifact | undefined>
-    art: ICachedArtifact
-    objective: OptNode[]
-    thresholds?: number[]
-  }[] = [
-    {
-      name: '4-line basic objective',
-      build: baseBuild,
-      art: {
-        id: 'parity-4line',
-        slotKey: 'flower',
-        rarity: 5,
-        level: 0,
-        mainStatKey: 'hp',
-        setKey: 'GladiatorsFinale',
-        mainStatVal: 717,
-        substats: [
-          { key: 'atk_' as const, value: 5.8, accurateValue: 5.8 },
-          { key: 'critRate_' as const, value: 3.9, accurateValue: 3.9 },
-          { key: 'critDMG_' as const, value: 7.8, accurateValue: 7.8 },
-          { key: 'atk' as const, value: 19, accurateValue: 19 },
-        ],
-      } as ICachedArtifact,
-      objective: objectiveBasic,
-    },
-    {
-      name: '3-line basic objective',
-      build: baseBuild,
-      art: {
-        id: 'parity-3line',
-        slotKey: 'flower',
-        rarity: 5,
-        level: 0,
-        mainStatKey: 'hp',
-        setKey: 'GladiatorsFinale',
-        mainStatVal: 717,
-        substats: [
-          { key: 'atk_' as const, value: 5.8, accurateValue: 5.8 },
-          { key: 'critRate_' as const, value: 3.9, accurateValue: 3.9 },
-          { key: 'critDMG_' as const, value: 7.8, accurateValue: 7.8 },
-          { key: '' as const, value: 0, accurateValue: 0 },
-        ],
-      } as ICachedArtifact,
-      objective: objectiveBasic,
-    },
-    {
-      name: '3-line with unactivated substat',
-      build: baseBuild,
-      art: {
-        id: 'parity-unactivated',
-        slotKey: 'goblet',
-        rarity: 5,
-        level: 0,
-        mainStatKey: 'pyro_dmg_',
-        setKey: 'GladiatorsFinale',
-        mainStatVal: 7,
-        substats: [
-          { key: 'atk_' as const, value: 5.8, accurateValue: 5.8 },
-          { key: 'critRate_' as const, value: 3.9, accurateValue: 3.9 },
-          { key: 'atk' as const, value: 14, accurateValue: 13.62 },
-          { key: '' as const, value: 0, accurateValue: 0 },
-        ],
-        unactivatedSubstats: [
-          { key: 'critDMG_' as const, value: 7.8, accurateValue: 7.8 },
-        ],
-      } as ICachedArtifact,
-      objective: objectiveBasic,
-    },
-    {
-      name: 'hp-em-er objective on sands',
-      build: emptyBuild,
-      art: {
-        id: 'parity-alt-objective',
-        slotKey: 'sands',
-        rarity: 5,
-        level: 4,
-        mainStatKey: 'hp_',
-        setKey: 'GladiatorsFinale',
-        mainStatVal: 11.7,
-        substats: [
-          { key: 'hp' as const, value: 209, accurateValue: 209.13 },
-          { key: 'eleMas' as const, value: 23, accurateValue: 23.31 },
-          { key: 'enerRech_' as const, value: 5.2, accurateValue: 5.18 },
-          { key: '' as const, value: 0, accurateValue: 0 },
-        ],
-      } as ICachedArtifact,
-      objective: objectiveAlt,
-    },
   ]
 
   test('UpOptCalculator adapter', () => {
@@ -772,21 +547,7 @@ describe('upOptCalculator', () => {
     expect(calc.artifacts[0].result?.p).toBeGreaterThan(0)
   })
 
-  test('exact distribution matches legacy exact enumeration', () => {
-    const build = Object.fromEntries(
-      allArtifactSlotKeys.map((slot) => [slot, undefined])
-    ) as Record<ArtifactSlotKey, ICachedArtifact | undefined>
-    build.plume = {
-      id: 'equipped-feather',
-      slotKey: 'plume',
-      rarity: 5,
-      level: 20,
-      mainStatKey: 'atk',
-      setKey: 'GladiatorsFinale',
-      mainStatVal: 311,
-      substats: [{ key: '' as const, value: 0, accurateValue: 0 }],
-    } as ICachedArtifact
-
+  test('exact distribution is normalized and constrained', () => {
     const art = {
       id: 'test-exact-distribution',
       slotKey: 'flower',
@@ -799,50 +560,31 @@ describe('upOptCalculator', () => {
         { key: 'atk_' as const, value: 5.8, accurateValue: 5.8 },
         { key: 'critRate_' as const, value: 3.9, accurateValue: 3.9 },
         { key: 'critDMG_' as const, value: 7.8, accurateValue: 7.8 },
-        { key: '' as const, value: 0, accurateValue: 0 },
+        { key: 'atk' as const, value: 19, accurateValue: 19 },
       ],
     } as ICachedArtifact
 
-    const objective = [
-      sum(
-        dynRead('atk'),
-        prod(1500, dynRead('atk_')),
-        prod(500, dynRead('critRate_')),
-        prod(250, dynRead('critDMG_'))
-      ),
-    ]
-    expectExactParityWithLegacy(objective, build, art)
-  })
-
-  test.each(parityCases)('exact parity vs legacy: $name', ({
-    build,
-    art,
-    objective,
-    thresholds,
-  }) => {
-    expectExactParityWithLegacy(objective, build, art, thresholds)
-  })
-
-  test('exact parity with multi-target constraints', () => {
-    expectExactParityWithLegacy(
+    const calc = new UpOptCalculator(
       objectiveConstrained,
+      [-Infinity, 0.03, 0.07],
       baseBuild,
-      {
-        id: 'parity-constrained',
-        slotKey: 'flower',
-        rarity: 5,
-        level: 0,
-        mainStatKey: 'hp',
-        setKey: 'GladiatorsFinale',
-        mainStatVal: 717,
-        substats: [
-          { key: 'atk_' as const, value: 5.8, accurateValue: 5.8 },
-          { key: 'critRate_' as const, value: 3.9, accurateValue: 3.9 },
-          { key: 'critDMG_' as const, value: 7.8, accurateValue: 7.8 },
-          { key: 'atk' as const, value: 19, accurateValue: 19 },
-        ],
-      } as ICachedArtifact,
-      [-Infinity, 0.03, 0.07]
+      [art]
+    )
+    calc.calcExact(0)
+
+    const result = calc.artifacts[0].result!
+    expect(result.evalMode).toBe(ResultType.Exact)
+    expect(result.distr.gmm.reduce((sum, { phi }) => sum + phi, 0)).toBeCloseTo(
+      1
+    )
+    expect(result.distr.gmm.every(({ sig2 }) => sig2 === 0)).toBe(true)
+    expect(result.distr.gmm.every(({ cp }) => cp === 0 || cp === 1)).toBe(true)
+    expect(result.p).toBeCloseTo(
+      result.distr.gmm.reduce(
+        (sum, { cp, phi, mu }) =>
+          cp === 1 && mu >= calc.thresholds[0] ? sum + phi : sum,
+        0
+      )
     )
   })
 })

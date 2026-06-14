@@ -68,9 +68,7 @@ export function makeSlotObjectives(
         const out = evalFn(
           Object.values(build) as ArtifactBuildData[] & { length: 5 }
         )
-        const f = nodes.map(
-          (_, i) => out[i * (1 + allSubstatKeys.length)]
-        )
+        const f = nodes.map((_, i) => out[i * (1 + allSubstatKeys.length)])
         return [
           f,
           nodes.map((_, i) => {
