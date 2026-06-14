@@ -578,17 +578,17 @@ export default function TabUpopt() {
                           </Typography>
                           <ButtonGroup
                             size="small"
-                            color="secondary"
                             sx={{ mt: 0.5 }}
                           >
                             {[2, 3, 4].map((rolls) => (
                               <Button
                                 key={rolls}
-                                variant={
+                                color={
                                   upOptReshapeRolls === rolls
-                                    ? 'contained'
-                                    : 'outlined'
+                                    ? 'success'
+                                    : 'secondary'
                                 }
+                                variant="contained"
                                 onClick={() =>
                                   database.optConfigs.set(optConfigId, {
                                     upOptReshapeRolls: rolls,
