@@ -94,6 +94,7 @@ type GaussianMixture = {
 type WeightedMarkovNode = { p: number; n: MarkovNode }
 type Frontier = 'substat' | 'rolls' | 'values'
 type ArtifactState = UpOptArtifact & {
+  sourceArt: ICachedArtifact
   slotKey: ArtifactSlotKey
   nodes: WeightedMarkovNode[]
   frontier: Frontier
@@ -126,6 +127,7 @@ export class UpOptCalculator {
 
     this.artifacts = artifacts.map((art) => ({
       id: art.id,
+      sourceArt: art,
       slotKey: art.slotKey,
       nodes: levelUpArtifact(art, equippedBuild),
       frontier: 'substat' as const,
@@ -141,6 +143,7 @@ export class UpOptCalculator {
     }
     this.artifacts[ix] = {
       id: art.id,
+      sourceArt: art,
       slotKey: art.slotKey,
       nodes: levelUpArtifact(art, this.equippedBuild),
       frontier: 'substat',
@@ -193,6 +196,7 @@ export class UpOptCalculator {
       this.expandFrontier(art)
     }
     art.result = this.toGaussianResult(art, ResultType.Slow)
+    this.applyRawSlowBounds(art)
   }
 
   /**
@@ -201,10 +205,11 @@ export class UpOptCalculator {
    */
   calcExact(ix: number) {
     const art = this.artifacts[ix]
-    while (art.frontier !== 'values') {
-      this.expandFrontier(art)
-    }
-    art.result = this.toExactResult(art)
+    let nodes = levelUpArtifact(art.sourceArt, this.equippedBuild)
+    nodes = expandWeightedNodes(nodes)
+    nodes = expandWeightedNodes(nodes)
+    art.result = this.toExactResult({ ...art, nodes })
+    art.result.distr.gmm = normalizeExactGmm(art.result.distr.gmm)
   }
 
   private expandFrontier(art: ArtifactState) {
@@ -213,6 +218,19 @@ export class UpOptCalculator {
       expandWeightedNodes(art.nodes)
     )
     art.frontier = art.frontier === 'substat' ? 'rolls' : 'values'
+  }
+
+  private applyRawSlowBounds(art: ArtifactState) {
+    if (!art.result) return
+    const rawRollsArt = {
+      ...art,
+      nodes: expandWeightedNodes(
+        levelUpArtifact(art.sourceArt, this.equippedBuild)
+      ),
+    }
+    const rawRollsResult = this.toGaussianResult(rawRollsArt, ResultType.Slow)
+    art.result.distr.lower = rawRollsResult.distr.lower
+    art.result.distr.upper = rawRollsResult.distr.upper
   }
 
   private toGaussianResult(
@@ -306,4 +324,22 @@ function compareArtifacts(a: UpOptArtifact, b: UpOptArtifact) {
     0
   )
   return meanB - meanA
+}
+
+function normalizeExactGmm(
+  gmm: { phi: number; cp: number; mu: number; sig2: number }[],
+  precision = 12
+) {
+  const aggregated = new Map<
+    string,
+    { phi: number; cp: number; mu: number; sig2: number }
+  >()
+  gmm.forEach((entry) => {
+    const mu = Number(entry.mu.toFixed(precision))
+    const key = `${entry.cp}|${mu}|${entry.sig2}`
+    const prev = aggregated.get(key)
+    if (prev) prev.phi += entry.phi
+    else aggregated.set(key, { ...entry, mu })
+  })
+  return [...aggregated.values()]
 }
