@@ -216,7 +216,9 @@ const dmgFormulas = {
       physPressureAddl
     ),
     level4Dmg: dmgNode('atk', dm.skill.level4Dmg, 'skill', physPressureAddl),
-    thornDmg: dmgNode('atk', dm.skill.thornDmg, 'skill'),
+    thornDmg: dmgNode('atk', dm.skill.thornDmg, 'skill', {
+      hit: { reaction: constant('') },
+    }),
   },
   burst: {
     dmg: dmgNode('atk', dm.burst.skillDmg, 'burst'),
