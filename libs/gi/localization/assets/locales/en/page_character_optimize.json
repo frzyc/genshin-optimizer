@@ -31,6 +31,8 @@
   "upOptEmptyBuild": "You're using a partially empty build. Since the Artifact Upgrader only swaps artifacts individually, completing a set is unlikely. It's recommended to begin with a base build, preferably generated from the main Optimizer.",
   "upOptShowingNum": "Showing {{count}} out of {{value}} Artifacts",
   "upOptReshape": {
+    "label": "Reshape",
+    "tooltip": "Evaluate level 20 artifacts as reshape candidates. Each eligible artifact is scored once per substat pair, for 6 total combinations.",
     "rolls": "Number of rolls into the guaranteed substats:",
     "rollOption": "{{count}} rolls"
   },

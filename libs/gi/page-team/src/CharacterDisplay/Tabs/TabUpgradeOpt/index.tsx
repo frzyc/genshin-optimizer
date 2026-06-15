@@ -553,7 +553,7 @@ export default function TabUpopt() {
                                 }
                               />
                             }
-                            label="Reshape"
+                            label={t('upOptReshape.label')}
                           />
                           <SqBadge
                             color="info"
@@ -563,7 +563,7 @@ export default function TabUpopt() {
                           </SqBadge>
                           <Tooltip
                             arrow
-                            title="Evaluate level 20 artifacts as reshape candidates. Each eligible artifact is scored once per substat pair, for 6 total combinations."
+                            title={t('upOptReshape.tooltip')}
                           >
                             <InfoIcon
                               fontSize="small"
