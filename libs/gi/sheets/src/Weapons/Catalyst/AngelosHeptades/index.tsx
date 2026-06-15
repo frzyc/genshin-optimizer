@@ -39,11 +39,12 @@ const dmg_node = min(
   ),
   subscript(input.weapon.refinement, maxDmg_arr, { unit: '%' })
 )
-const [shield_dmg_, shield_dmg_inactive] = nonStackBuff(
+const [shield_dmg_disp, shield_dmg_inactive] = nonStackBuff(
   'angelos',
   'all_dmg_',
   dmg_node
 )
+const shield_dmg_ = equal(input.activeCharKey, target.charKey, shield_dmg_disp)
 const [offFieldHex_dmg_disp, offFieldHex_dmg_inactive] = nonStackBuff(
   'angelos',
   'all_dmg_',
@@ -101,7 +102,10 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: shield_dmg_,
+              node: infoMut(shield_dmg_disp, {
+                path: 'dmg_',
+                isTeamBuff: true,
+              }),
             },
             {
               node: shield_dmg_inactive,

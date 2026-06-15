@@ -51,12 +51,12 @@ const burstHit_teamAtk_ = equal(
 const hexerei_selfAtk_ = greaterEq(
   tally.hexerei,
   2,
-  equal(input.isHexerei, 1, prod(percent(0.75), burstHit_selfAtk_))
+  greaterEq(tally.hexerei, 2, prod(percent(0.75), burstHit_selfAtk_))
 )
 const hexerei_teamAtk_disp = greaterEq(
   tally.hexerei,
   2,
-  equal(input.isHexerei, 1, prod(percent(0.75), burstHit_teamAtk_disp))
+  greaterEq(tally.hexerei, 2, prod(percent(0.75), burstHit_selfAtk_))
 )
 const hexerei_teamAtk_ = equal(
   input.activeCharKey,
@@ -121,11 +121,7 @@ const sheet: IWeaponSheet = {
     {
       header: headerTemplate(key, stg('hexerei')),
       teamBuff: true,
-      canShow: greaterEq(
-        tally.hexerei,
-        2,
-        equal(input.isHexerei, 1, equal(condBurstHit, 'on', 1))
-      ),
+      canShow: greaterEq(tally.hexerei, 2, equal(condBurstHit, 'on', 1)),
       fields: [
         {
           node: infoMut(hexerei_selfAtk_, { path: 'atk_' }),
