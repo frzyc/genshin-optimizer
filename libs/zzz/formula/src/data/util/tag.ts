@@ -102,6 +102,7 @@ const stats: Record<Stat, Desc> = {
   anomMas: agg,
   anomMas_: agg,
   anomBuildup_: agg,
+  anomBuildupResIgn_: agg,
   anom_crit_: agg,
   anom_crit_dmg_: agg,
   anom_base_: agg,

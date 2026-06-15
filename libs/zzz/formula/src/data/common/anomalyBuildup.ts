@@ -11,7 +11,11 @@ const data: TagMapNodeEntries = [
   ),
   // Enemy Anomaly Buildup RES Multiplier
   ownBuff.formula.enemyAnomBuildupRes_mult_.add(
-    sum(percent(1), prod(-1, enemy.common.anomBuildupRes_))
+    sum(
+      percent(1),
+      prod(-1, enemy.common.anomBuildupRes_),
+      own.final.anomBuildupResIgn_
+    )
   ),
 
   // Anomaly Buildup Formula

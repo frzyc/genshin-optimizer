@@ -27,6 +27,7 @@ export const stats = [
   'anomMas',
   'anomMas_',
   'anomBuildup_',
+  'anomBuildupResIgn_',
   'anom_crit_',
   'anom_crit_dmg_',
   'anom_base_',

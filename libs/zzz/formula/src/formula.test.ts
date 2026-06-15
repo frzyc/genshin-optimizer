@@ -74,7 +74,6 @@ describe('character test', () => {
             assist: 0,
             chain: 0,
             core,
-            potential: 0,
           })
         ),
       ]
@@ -116,7 +115,6 @@ describe('wengine test', () => {
             assist: 0,
             chain: 0,
             core: 0,
-            potential: 0,
           }),
           ...wengineTagMapNodeEntries({
             key: wengKey,
@@ -156,7 +154,6 @@ describe('char+wengine test', () => {
           assist: 0,
           chain: 0,
           core: 0,
-          potential: 0,
         }),
         ...wengineTagMapNodeEntries({
           key: 'SteamOven',
@@ -186,7 +183,6 @@ describe('char+wengine test', () => {
           assist: 0,
           chain: 0,
           core: 6,
-          potential: 0,
         }),
         ...wengineTagMapNodeEntries({
           key: 'VortexRevolver',
@@ -229,7 +225,6 @@ describe('char+wengine test', () => {
             assist: 0,
             chain: 0,
             core: 6,
-            potential: 0,
           }),
           ...wengineTagMapNodeEntries({
             key: 'VortexRevolver',
@@ -297,7 +292,6 @@ describe('char+wengine test', () => {
           assist: 0,
           chain: 0,
           core: 6,
-          potential: 0,
         }),
         ...wengineTagMapNodeEntries({
           key: 'VortexRevolver',
@@ -358,7 +352,6 @@ describe('disc2p test', () => {
           assist: 0,
           chain: 0,
           core: 0,
-          potential: 0,
         }),
         ...discTagMapNodeEntries({ atk: 100 }, { BranchBladeSong: 2 })
       ),
@@ -392,7 +385,6 @@ describe('team', () => {
           assist: 0,
           chain: 0,
           core: 0,
-          potential: 0,
         })
       ),
       ...withMember(
@@ -409,7 +401,6 @@ describe('team', () => {
           assist: 0,
           chain: 0,
           core: 0,
-          potential: 0,
         })
       ),
     ]

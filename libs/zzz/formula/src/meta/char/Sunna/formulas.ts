@@ -874,4 +874,15 @@ export const formulas = {
       name: 'AssistFollowUpJumpTraining_0_anomBuildup',
     },
   },
+  ult_heal: {
+    sheet: 'Sunna',
+    name: 'ult_heal',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'heal',
+      sheet: 'Sunna',
+      name: 'ult_heal',
+    },
+  },
 } as const

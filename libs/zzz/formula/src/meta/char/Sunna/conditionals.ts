@@ -1,18 +1,20 @@
 // WARNING: Generated file, do not modify
 export const conditionals = {
-  boolConditional: { sheet: 'Sunna', name: 'boolConditional', type: 'bool' },
-  listConditional: {
+  angelicChordination: {
     sheet: 'Sunna',
-    name: 'listConditional',
-    type: 'list',
-    list: ['val1', 'val2'],
+    name: 'angelicChordination',
+    type: 'bool',
   },
-  numConditional: {
+  catsGaze: {
     sheet: 'Sunna',
-    name: 'numConditional',
+    name: 'catsGaze',
     type: 'num',
     int_only: true,
     min: 0,
-    max: 2,
+    max: 3,
   },
+  etherVeil: { sheet: 'Sunna', name: 'etherVeil', type: 'bool' },
+  focusedCreation: { sheet: 'Sunna', name: 'focusedCreation', type: 'bool' },
+  inAnyEtherVeil: { sheet: 'Sunna', name: 'inAnyEtherVeil', type: 'bool' },
+  ultUsed: { sheet: 'Sunna', name: 'ultUsed', type: 'bool' },
 } as const
