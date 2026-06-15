@@ -154,6 +154,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   13514: 'SymphonistOfScents',
   13515: 'FracturedHalo',
   13516: 'BloodsoakedRuins',
+  13517: 'DisasterAndRemorse',
 
   //catalyst
   14101: 'ApprenticesNotes',

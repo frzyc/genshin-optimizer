@@ -123,6 +123,7 @@ export const allWeaponPolearmKeys = [
   'CrimsonMoonsSemblance',
   'Deathmatch',
   'DialoguesOfTheDesertSages',
+  'DisasterAndRemorse',
   'DragonsBane',
   'DragonspineSpear',
   'EngulfingLightning',
