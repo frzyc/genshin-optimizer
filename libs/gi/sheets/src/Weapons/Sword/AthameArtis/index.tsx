@@ -51,12 +51,12 @@ const burstHit_teamAtk_ = equal(
 const hexerei_selfAtk_ = greaterEq(
   tally.hexerei,
   2,
-  greaterEq(tally.hexerei, 2, prod(percent(0.75), burstHit_selfAtk_))
+  prod(percent(0.75), burstHit_selfAtk_)
 )
 const hexerei_teamAtk_disp = greaterEq(
   tally.hexerei,
   2,
-  greaterEq(tally.hexerei, 2, prod(percent(0.75), burstHit_teamAtk_disp))
+  prod(percent(0.75), burstHit_teamAtk_disp)
 )
 const hexerei_teamAtk_ = equal(
   input.activeCharKey,
