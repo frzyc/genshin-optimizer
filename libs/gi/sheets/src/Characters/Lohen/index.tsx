@@ -359,7 +359,7 @@ const sheet: TalentSheet = {
   skill: ct.talentTem('skill', [
     {
       fields: [
-        ...dm.normal.hitArr.map((_, i) => ({
+        ...dm.skill.hitArr.map((_, i) => ({
           node: infoMut(dmgFormulas.skill[i as 1 | 2 | 3 | 4 | 5], {
             name: ct.chg(`skill.skillParams.${i}`),
             multi: i === 2 ? 3 : undefined,
