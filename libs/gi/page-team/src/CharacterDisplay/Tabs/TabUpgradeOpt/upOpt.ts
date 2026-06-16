@@ -296,7 +296,6 @@ export class UpOptCalculator {
           })
         )
       })
-      return
     }
     this.artifacts.push(this.toUpOptArtifact(art, { type: 'upgrade' }))
   }
