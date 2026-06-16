@@ -109,10 +109,22 @@ type Message =
   | OverwriteMessage
   | UpdateMessage
   | UnactivatedSubstatMessage
+function activeSubstatCount(artifact: IArtifact): number {
+  return artifact.substats.filter(({ key }) => key).length
+}
+function upgradeRollCount(level: number): number {
+  return Math.floor(level / 4)
+}
 function artifactReducer(
   state: IArtifact | undefined,
   action: Message
 ): IArtifact | undefined {
+  const prev = state && {
+    activeSubstatCount: activeSubstatCount(state),
+    startingRolls:
+      (state.totalRolls ?? activeSubstatCount(state)) -
+      upgradeRollCount(state.level),
+  }
   const handle = () => {
     switch (action.type) {
       case 'reset':
@@ -231,6 +243,17 @@ function artifactReducer(
   }
   const art = handle()
   if (!art) return art
+  if (prev && action.type !== 'overwrite') {
+    const activeDelta =
+      action.type === 'substat' || action.type === 'update'
+        ? activeSubstatCount(art) - prev.activeSubstatCount
+        : 0
+    art.totalRolls = clamp(
+      prev.startingRolls + activeDelta + upgradeRollCount(art.level),
+      0,
+      9
+    )
+  }
   return validateArtifact(art, true)
 }
 
