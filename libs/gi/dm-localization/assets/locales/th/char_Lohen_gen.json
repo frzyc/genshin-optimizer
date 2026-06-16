@@ -1,0 +1,173 @@
+{
+  "name": "Lohen",
+  "title": "ศรคมพยศ",
+  "description": "รองหัวหน้าหน่วยระยะไกลของกองอัศวินแห่ง Favonius อัศวินผู้ลงมือโดยไม่ยึดติดกับรูปแบบ และหลงใหลในยุทธวิธีที่ไม่เป็นไปตามแบบแผน",
+  "constellationName": "Lepus Miles",
+  "auto": {
+    "name": "Spear of Favonius — Broken Oath",
+    "fields": {
+      "normal": {
+        "0": "<strong>โจมตีปกติ</strong>",
+        "1": "โจมตีต่อเนื่องมากสุด 5 ครั้ง"
+      },
+      "charged": {
+        "0": "<strong>ชาร์จโจมตี</strong>",
+        "1": "ใช้พลังกายส่วนหนึ่ง ทำการพุ่งไปข้างหน้าเพื่อโจมตี"
+      },
+      "plunging": {
+        "0": "<strong>โจมตีพุ่งลงจากอากาศ</strong>",
+        "1": "กระโจนจากกลางอากาศลงมายังพื้นดิน เพื่อโจมตีศัตรูที่อยู่ในเส้นทางการโจมตี โดยจะสร้างความเสียหายวงกว้างเมื่อลงถึงพื้น"
+      }
+    },
+    "skillParams": {
+      "0": "ความเสียหายขั้น 1",
+      "1": "ความเสียหายขั้น 2",
+      "2": "ความเสียหายขั้น 3",
+      "3": "ความเสียหายขั้น 4",
+      "4": "ความเสียหายขั้น 5",
+      "5": "ความเสียหายชาร์จโจมตี",
+      "6": "ชาร์จโจมตีใช้พลังกาย",
+      "7": "ความเสียหายพุ่งลง",
+      "8": "ความเสียหายพุ่งถึงพื้นจากที่ต่ำ/สูง",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Unforeseen Strike",
+    "description": {
+      "0": "ค้นหาช่องโหว่ของศัตรู แล้วเปลี่ยนเข้าสู่สถานะ <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Masterstroke</strong></tooltip> ภายใต้สถานะนี้:",
+      "1": [
+        "Lohen สามารถสะสม <tooltip ns=tooltips_gen baseKey18=11290003 values=[]><strong>ความสำราญ</strong></tooltip>ด้วยตัวเอง เพื่อปล่อยสกิลธาตุพิเศษ <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Etched Into Bone and Soul</strong></tooltip>;",
+        "ตัวละครอื่นในทีมที่อยู่ใกล้เคียงสามารถสะสม <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>จิตชิงชัย</strong></tooltip> ให้กับ Lohen เพื่อเพิ่มความเสียหายของ <strong>Etched Into Bone and Soul</strong> ได้"
+      ],
+      "2": "หลังจากปล่อย <strong>Etched Into Bone and Soul</strong> มากสุด 3 ครั้งขณะอยู่ในสถานะ <strong>Masterstroke</strong> จะไม่สามารถรับ <strong>ความสำราญ</strong> ได้อีก",
+      "3": "<br/>",
+      "4": "<i>\"วิถีอัศวินเหรอ? ฮ่า นั่นน่ะเป็นเหยื่อล่อชั้นดีเลยล่ะ เวลาที่ศัตรูยังเพ้อฝันว่า จะตัดสินแพ้ชนะกันอย่างยุติธรรม คงนึกไม่ถึงหรอกว่ามี 'เซอร์ไพรส์' แบบไหนรอพวกเขาอยู่\"</i>"
+    },
+    "skillParams": {
+      "0": "ความเสียหายขั้น 1",
+      "1": "ความเสียหายขั้น 2",
+      "2": "ความเสียหายขั้น 3",
+      "3": "ความเสียหายขั้น 4",
+      "4": "ความเสียหายขั้น 5",
+      "5": "ความเสียหายชาร์จโจมตี",
+      "6": "ชาร์จโจมตีใช้พลังกาย",
+      "7": "ความเสียหายพุ่งลง",
+      "8": "ความเสียหายพุ่งถึงพื้นจากที่ต่ำ/สูง",
+      "9": "ระยะเวลาของ Masterstroke",
+      "10": "ความเสียหาย Etched Into Bone and Soul",
+      "11": "ความเสียหายดั้งเดิมที่เพิ่มขึ้นต่อจิตชิงชัย 1 หน่วย",
+      "12": "คูลดาวน์",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Manifest Judgment",
+    "description": {
+      "0": "ฟาดโจมตีไปข้างหน้าอย่างรวดเร็วและต่อเนื่อง ใช้ <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>จิตชิงชัย</strong></tooltip> ทั้งหมด สร้าง<cryo>ความเสียหายน้ำแข็ง</cryo> และเพิ่มความเสียหายในครั้งนี้ตาม<strong>จิตชิงชัย</strong>ที่ใช้ไป หาก Lohen อยู่ในสถานะ <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Masterstroke</strong></tooltip> ในขณะที่ปล่อย จะขยายระยะเวลาต่อเนื่องของสถานะ <strong>Masterstroke</strong> ออกไปอีก 1.65 วินาที",
+      "1": "<br/>",
+      "2": "<i>\"ยอมแพ้เร็วจัง? ฉันยังสนุกไม่หนำใจเลย\"</i>"
+    },
+    "skillParams": {
+      "0": "ความเสียหายสกิล",
+      "1": "ความเสียหายดั้งเดิมที่เพิ่มขึ้นต่อจิตชิงชัย 1 หน่วย",
+      "2": "คูลดาวน์",
+      "3": "พลังงานธาตุ",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Moratorium on Questioning",
+    "description": {
+      "0": "ขณะอยู่ในสถานะ <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Masterstroke</strong></tooltip> เมื่อตัวละครอื่นในทีมที่อยู่ใกล้เคียงสะสม<tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>จิตชิงชัย</strong></tooltip>ให้กับ Lohen ด้วยการสร้างความเสียหาย หากความเสียหายในครั้งนี้ไม่ต่ำกว่า 3,000% ของพลังโจมตีพื้นฐานของ Lohen จะสะสม<strong>จิตชิงชัย</strong>ให้กับ Lohen เพิ่มเติมอีก 60 หน่วย"
+    }
+  },
+  "passive2": {
+    "name": "Flippant Masterpiece",
+    "description": {
+      "0": "ภายใต้สถานะ <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Masterstroke</strong></tooltip> ภายใน 8 วินาที หลังจากตัวละครอื่นในทีมที่อยู่ใกล้เคียงทำให้เกิด<cryo>ปฏิกิริยาที่เกี่ยวข้องกับธาตุน้ำแข็ง</cryo> กับศัตรู พลังโจมตีของตัวละครดังกล่าวจะเพิ่มขึ้น 15% และพลังโจมตีของ Lohen จะเพิ่มขึ้น 15%"
+    }
+  },
+  "passive3": {
+    "name": "When the Mood Strikes",
+    "description": {
+      "0": "หลังจากปล่อยสกิลธาตุ <strong>Unforeseen Strike</strong> แล้ว Lohen จะได้รับเอฟเฟกต์ \"High Spirits\" เป็นเวลา 9 วินาที: ในช่วงเวลาต่อเนื่อง เลเวลสกิลของสกิลธาตุ <strong>Unforeseen Strike</strong> จะเพิ่มขึ้น 1 ระดับ",
+      "1": "เมื่อใช้สกิลธาตุ หากในบรรดาการโจมตีปกติ สกิลธาตุ หรือท่าไม้ตายของตัวละครอื่นในทีม มีเลเวลสกิลใดสกิลหนึ่งไม่ต่ำกว่าเลเวลของสกิลธาตุของ Lohen ระยะเวลาของเอฟเฟกต์ \"High Spirits\" ในครั้งนี้จะเพิ่มขึ้นอีก 6 วินาที",
+      "2": "ทุก 18 วินาที จะได้รับเอฟเฟกต์ \"High Spirits\" มากสุดหนึ่งครั้ง"
+    }
+  },
+  "lockedPassive": {
+    "name": "Witch's Eve Rite: Unhealing Thorn",
+    "description": {
+      "0": "หลังจากสำเร็จ <strong>แบบฝึกหัดของแม่มด: ปริศนาแห่งอริศัตรู</strong> Lohen จะกลายเป็นตัวละคร<strong>มนตรา</strong> เมื่อจัดทีมที่มีตัวละครมนตราอย่างน้อย 2 ตัว จะได้รับเอฟเฟกต์ <strong>Hexerei: Secret Rite</strong> ซึ่งจะเสริมพลังให้กับตัวละครมนตรา",
+      "1": "<br/>",
+      "2": "<strong>Hexerei: Secret Rite</strong>",
+      "3": "เมื่อสกิลธาตุพิเศษ <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Etched Into Bone and Soul</strong></tooltip> โจมตีโดนศัตรูหรือเมื่อปล่อยท่าไม้ตาย <strong>Manifest Judgment</strong> หากมี<tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>จิตชิงชัย</strong></tooltip>อย่างน้อย 50% ของขีดจำกัดสูงสุด การโจมตีปกติและชาร์จโจมตีของ Lohen จะสร้างความเสียหายเพิ่มขึ้น 40% เป็นเวลา 6 วินาที"
+    }
+  },
+  "constellation1": {
+    "name": "O Breezes, That So Oft Bear Sorrowful Lament",
+    "description": {
+      "0": "ขีดจำกัด<tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>จิตชิงชัย</strong></tooltip>ของ Lohen เพิ่มขึ้นเป็น 300% ของค่าเดิม",
+      "1": "นอกจากนี้ เมื่ออยู่ในสถานะ <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Masterstroke</strong></tooltip> <strong>จิตชิงชัย</strong>ที่ตัวละครอื่นในทีมที่อยู่ใกล้เคียงสะสมให้กับ Lohen จากการสร้างความเสียหาย จะเพิ่มขึ้นเป็น 500% ของค่าเดิม"
+    }
+  },
+  "constellation2": {
+    "name": "In Flight, I Strike Whatever Flies",
+    "description": {
+      "0": "เมื่ออยู่ในสถานะ <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Masterstroke</strong></tooltip> ภายใน 4 วินาที หลังจากสกิลธาตุพิเศษ <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Etched Into Bone and Soul</strong></tooltip> หรือปล่อยท่าไม้ตาย <strong>Manifest Judgment</strong> โจมตีโดนศัตรูแล้ว Lohen จะได้รับเอฟเฟกต์ \"Evilsbane Blade\": เมื่อการโจมตีปกติ หรือชาร์จโจมตีครั้งต่อไปของ Lohen ภายใต้สถานะ Masterstroke โดนศัตรู จะทำการโจมตีเพิ่มเติมอีกหนึ่งครั้ง สร้าง<cryo>ความเสียหายน้ำแข็งวงกว้าง</cryo>เท่ากับ 500% ของพลังโจมตีของ Lohen และทำให้ความชำนาญธาตุของตัวละครอื่นในทีมที่อยู่ใกล้เคียงเพิ่มขึ้น 200 หน่วย เป็นเวลา 8 วินาที และจะได้รับเอฟเฟกต์ \"Evilsbane Blade\" มากสุดหนึ่งครั้ง ในทุก 4 วินาที"
+    }
+  },
+  "constellation3": {
+    "name": "Only the Spear That Wounds Can Heal",
+    "description": {
+      "0": "เพิ่มเลเวลสกิลของสกิลธาตุ <strong><tooltip ns=char_Lohen_gen baseKey18=skill>Unforeseen Strike</tooltip></strong> ขึ้น 3 ระดับ",
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
+    }
+  },
+  "constellation4": {
+    "name": "Radiant Love, Laughing Death",
+    "description": {
+      "0": "เมื่อ Lohen ใช้ท่าไม้ตาย <strong>Manifest Judgment</strong> ขณะอยู่ในสถานะ <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Masterstroke</strong></tooltip> จะสะสม<tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>จิตชิงชัย</strong></tooltip> ของ Lohen จนถึงขีดจำกัดสูงสุด และทำให้ท่าไม้ตายในครั้งนี้ได้รับเอฟเฟกต์เพิ่มความเสียหายสูงสุด",
+      "1": "<br/>",
+      "2": "นอกจากนี้ เมื่อ Lohen เปลี่ยนไปอยู่ในสถานะ <strong>Masterstroke</strong> หากพลังงานธาตุ:",
+      "3": [
+        "ยังไม่เต็ม: ฟื้นฟูพลังงานธาตุ 15 หน่วย ให้แก่ Lohen;",
+        "เต็มแล้ว: ภายใน 15 วินาทีหลังจากนั้น เมื่อปล่อยท่าไม้ตาย <strong>Manifest Judgment</strong> จะฟื้นฟูพลังงานธาตุ 15 หน่วยให้แก่ Lohen"
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Never Ask, Nor Trouble You to Know",
+    "description": {
+      "0": "เพิ่มเลเวลสกิลของท่าไม้ตาย <strong><tooltip ns=char_Lohen_gen baseKey18=burst>Manifest Judgment</tooltip></strong> ขึ้น 3 ระดับ",
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
+    }
+  },
+  "constellation6": {
+    "name": "To Drown, to Sink, Unconscious — Supreme Joy",
+    "description": {
+      "0": "การปล่อยสกิลธาตุพิเศษ <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Etched Into Bone and Soul</strong></tooltip> โจมตีโดนศัตรูหรือปล่อยท่าไม้ตาย <strong>Manifest Judgment</strong> ขณะอยู่ในสถานะ <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Masterstroke</strong></tooltip> จะไม่ใช้<tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>จิตชิงชัย</strong></tooltip> และจะฟื้นฟู<tooltip ns=tooltips_gen baseKey18=11290003 values=[]><strong>ความสำราญ</strong></tooltip> ของ Lohen จนเต็ม และเมื่อปล่อยสกิลธาตุพิเศษ <strong>Etched Into Bone and Soul</strong> ครั้งถัดไปโดนศัตรู จะขยายระยะเวลาของสถานะ <strong>Masterstroke</strong> ในครั้งนี้ออกไป 1.25 วินาที เอฟเฟกต์นี้จะเกิดขึ้นได้มากสุดหนึ่งครั้ง ในทุก 7 วินาที",
+      "1": "นอกจากนี้ ความแรงคริของความเสียหายทั้งหมดข้างต้นจะเพิ่มขึ้น 175% และในช่วงเวลาของ <strong>Masterstroke</strong> ครั้งนี้ จำนวนครั้งสูงสุดที่ Lohen สามารถปล่อย <strong>Etched Into Bone and Soul</strong> ได้จะเพิ่มขึ้น 2 ครั้ง"
+    }
+  }
+}

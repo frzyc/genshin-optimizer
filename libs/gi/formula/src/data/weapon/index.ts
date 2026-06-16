@@ -43,6 +43,7 @@ import DawningFrost from './DawningFrost'
 import Deathmatch from './Deathmatch'
 import DebateClub from './DebateClub'
 import DialoguesOfTheDesertSages from './DialoguesOfTheDesertSages'
+import DisasterAndRemorse from './DisasterAndRemorse'
 import DodocoTales from './DodocoTales'
 import DragonsBane from './DragonsBane'
 import DragonspineSpear from './DragonspineSpear'
@@ -338,6 +339,7 @@ const data: TagMapNodeEntries[] = [
   CrimsonMoonsSemblance,
   Deathmatch,
   DialoguesOfTheDesertSages,
+  DisasterAndRemorse,
   DragonsBane,
   DragonspineSpear,
   EngulfingLightning,

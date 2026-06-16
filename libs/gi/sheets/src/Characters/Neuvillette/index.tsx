@@ -2,6 +2,7 @@ import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
+  constant,
   greaterEq,
   infoMut,
   input,
@@ -151,7 +152,9 @@ const dmgFormulas = {
   plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     skillDmg: dmgNode('hp', dm.skill.skillDmg, 'skill'),
-    thornDmg: dmgNode('atk', dm.skill.thornDmg, 'skill'),
+    thornDmg: dmgNode('atk', dm.skill.thornDmg, 'skill', {
+      hit: { reaction: constant('') },
+    }),
   },
   burst: {
     skillDmg: dmgNode('hp', dm.burst.skillDmg, 'burst'),

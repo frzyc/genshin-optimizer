@@ -62,6 +62,7 @@ import Lauma from './Lauma'
 import Layla from './Layla'
 import Linnea from './Linnea'
 import Lisa from './Lisa'
+import Lohen from './Lohen'
 import Lynette from './Lynette'
 import Lyney from './Lyney'
 import Mavuika from './Mavuika'
@@ -185,6 +186,7 @@ const data: TagMapNodeEntries[] = [
   Layla,
   Linnea,
   Lisa,
+  Lohen,
   Lynette,
   Lyney,
   Mavuika,

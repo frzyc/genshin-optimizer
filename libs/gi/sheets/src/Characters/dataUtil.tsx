@@ -1,4 +1,8 @@
-import { objKeyMap, verifyObjKeys } from '@genshin-optimizer/common/util'
+import {
+  deepClone,
+  objKeyMap,
+  verifyObjKeys,
+} from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   ElementKey,
@@ -222,17 +226,24 @@ export function plungingDmgNodes(
   overrideTalentType?: 'skill' | 'burst' | 'auto'
 ): Record<PlungingDmgKey, NumNode> {
   const nodes = Object.fromEntries(
-    Object.entries(lvlMultipliers).map(([key, multi]) => [
-      key,
-      dmgNode(
-        base,
-        multi,
-        key === 'dmg' ? 'plunging_collision' : 'plunging_impact',
-        additional,
-        specialMultiplier,
-        overrideTalentType
-      ),
-    ])
+    Object.entries(lvlMultipliers).map(([key, multi]) => {
+      const addl = deepClone(additional)
+      if (key === 'dmg') {
+        if (!addl.hit) addl.hit = {}
+        if (!addl.hit.reaction) addl.hit.reaction = constant('')
+      }
+      return [
+        key,
+        dmgNode(
+          base,
+          multi,
+          key === 'dmg' ? 'plunging_collision' : 'plunging_impact',
+          addl,
+          specialMultiplier,
+          overrideTalentType
+        ),
+      ]
+    })
   )
   verifyObjKeys(nodes, allPlungingDmgKeys)
   return nodes
@@ -533,7 +544,7 @@ export const projections = {
         ),
         'elemental',
         {
-          hit: { ele: input.charEle },
+          hit: { ele: input.charEle, reaction: constant('') },
           premod: { all_dmgInc: nicoleLockProjectionAddl },
         }
       )
@@ -548,7 +559,7 @@ export const projections = {
         prod(percent(nicoleC1Scaling), input.total.atk),
         'elemental',
         {
-          hit: { ele: input.charEle },
+          hit: { ele: input.charEle, reaction: constant('') },
           premod: { all_dmgInc: nicoleLockProjectionAddl },
         }
       )

@@ -1,0 +1,173 @@
+{
+  "name": "Lohen",
+  "title": "El Lancero Punzante",
+  "description": "Subcapitán de la Compañía de Ofensiva a Distancia de los Caballeros de Favonius, un caballero conocido por su enfoque poco ortodoxo y su predilección por las tácticas poco convencionales.",
+  "constellationName": "Lepus Miles",
+  "auto": {
+    "name": "Rompejuramentos",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 5 ataques rápidos."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante para arremeter hacia delante."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de 5.º golpe",
+      "5": "Daño de ATQ Cargado",
+      "6": "Coste de Aguante de ATQ Cargado",
+      "7": "Daño de Caída",
+      "8": "Daño de impacto de caída baja/alta",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Estacazo súbito",
+    "description": {
+      "0": "Busca el punto débil del enemigo y cambia al estado de <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>maestro estratega</strong></tooltip>. En este estado:",
+      "1": [
+        "Lohen puede acumular <tooltip ns=tooltips_gen baseKey18=11290003 values=[]><strong>exultación</strong></tooltip> activamente para usar la Habilidad Elemental especial <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Grabado hasta la médula</strong></tooltip>.",
+        "Los demás personajes cercanos del equipo pueden otorgar <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>ansia de victoria</strong></tooltip> a Lohen para aumentar el daño de <strong>Grabado hasta la médula</strong>."
+      ],
+      "2": "Tras usar <strong>Grabado hasta la médula</strong> hasta un máximo de 3 veces en el estado de <strong>maestro estratega</strong>, Lohen no podrá obtener <strong>exultación</strong>.",
+      "3": "<br/>",
+      "4": "<i>“¿La caballerosidad? Ja, ese es sin duda alguna el cebo perfecto. Cuando el enemigo aún espera un duelo justo, ni se imagina qué clase de ‘sorpresa’ le espera”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de 5.º golpe",
+      "5": "Daño de ATQ Cargado",
+      "6": "Coste de Aguante de ATQ Cargado",
+      "7": "Daño de Caída",
+      "8": "Daño de impacto de caída baja/alta",
+      "9": "Duración de maestro estratega",
+      "10": "Daño de Grabado hasta la médula",
+      "11": "Aumento de daño original",
+      "12": "TdE",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Sentencia consumada",
+    "description": {
+      "0": "Ejecuta unos rápidos tajos consecutivos hacia delante y consume todos los pts. de <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>ansia de victoria</strong></tooltip> para infligir <cryo>Daño Cryo</cryo>. El daño infligido será mayor cuanta más <strong>ansia de victoria</strong> se consuma. Si Lohen se encuentra en el estado de <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>maestro estratega</strong></tooltip> al usar esta habilidad, la duración de dicho estado se prolonga 1.65 s.",
+      "1": "<br/>",
+      "2": "<i>“¿Ya te quieres rendir? Pero si solo acabo de empezar...”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Aumento de daño original",
+      "2": "TdE",
+      "3": "Energía Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Cuestionamiento prohibido",
+    "description": {
+      "0": "Cuando los demás personajes cercanos del equipo otorgan <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>ansia de victoria</strong></tooltip> a Lohen al infligir daño mientras él está en estado de <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>maestro estratega</strong></tooltip>, si el daño infligido es igual o superior al 3000% del ATQ Base de Lohen, este obtendrá 60 pts. adicionales de <strong>ansia de victoria</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Broma maestra",
+    "description": {
+      "0": "Mientras Lohen se encuentre en estado de <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>maestro estratega</strong></tooltip>, después de que otro personaje cercano del equipo cause una <cryo>Reacción Elemental Cryo</cryo> contra un enemigo, tanto el ATQ de dicho personaje como el de Lohen aumentarán en un 15% durante 8 s."
+    }
+  },
+  "passive3": {
+    "name": "Interés efímero",
+    "description": {
+      "0": "Tras usar la Habilidad Elemental, <strong>Estacazo súbito</strong>, Lohen también obtendrá el efecto de “vehemencia” durante 9 s. Mientras este efecto esté activo, el nivel de la Habilidad Elemental, <strong>Estacazo súbito</strong>, aumentará en 1.",
+      "1": "Cuando Lohen use su Habilidad Elemental, si el nivel de habilidad del Ataque Normal, la Habilidad Elemental o la Habilidad Definitiva de algún personaje del equipo (a excepción de Lohen) es igual o superior al de su Habilidad Elemental, la duración del efecto de vehemencia activo se prolongará 6 s más.",
+      "2": "El efecto de vehemencia solo se puede obtener una vez cada 18 s."
+    }
+  },
+  "lockedPassive": {
+    "name": "Rito de la noche de brujas: Punzamiento incurable",
+    "description": {
+      "0": "Tras completar la misión <strong>«Lecciones del Aquelarre: De diversos enemigos»</strong>, Lohen se convertirá en un personaje <strong>taumatúrgico</strong>. Cuando en el equipo haya al menos 2 personajes taumatúrgicos, estos obtendrán el efecto de <strong>taumaturgia: rito secreto</strong>, el cual les otorgará ciertos fortalecimientos.",
+      "1": "<br/>",
+      "2": "<strong>Taumaturgia: rito secreto</strong>",
+      "3": "Al golpear a un enemigo con la Habilidad Elemental especial <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Grabado hasta la médula</strong></tooltip> o al usar la Habilidad Definitiva, <strong>Sentencia consumada</strong>, si el <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>ansia de victoria</strong></tooltip> de Lohen está al menos al 50% de su límite máximo, el daño infligido por sus Ataques Normales y Cargados aumentará en un 40% durante 6 s."
+    }
+  },
+  "constellation1": {
+    "name": "Oh, brisas que portan tristes lamentos",
+    "description": {
+      "0": "El límite máximo de <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>ansia de victoria</strong></tooltip> de Lohen aumenta a un 300% del original.",
+      "1": "Además, la cantidad de <strong>ansia de victoria</strong> que los demás personajes cercanos del equipo otorgan a Lohen al infligir daño mientras él está en estado de <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>maestro estratega</strong></tooltip> aumenta a un 500% de la cantidad original."
+    }
+  },
+  "constellation2": {
+    "name": "Todo lo que vuela es un blanco",
+    "description": {
+      "0": "Mientras Lohen está en estado de <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>maestro estratega</strong></tooltip>, tras golpear a un enemigo con su Habilidad Elemental especial <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Grabado hasta la médula</strong></tooltip>, o tras usar su Habilidad Definitiva, <strong>Sentencia consumada</strong>, obtendrá durante 4 s el efecto de “filo rompemaldad”, de manera que, mientras esté en estado de maestro estratega, la próxima vez que Lohen golpee a un enemigo con un Ataque Normal o Cargado, realizará un ataque adicional que inflige una cantidad de <cryo>Daño Cryo en el AdE</cryo> equivalente al 500% de su ATQ, y que aumenta la Maestría Elemental de los demás personajes cercanos del equipo en 200 pts. durante 8 s. El efecto de filo rompemaldad solo se puede obtener una vez cada 4 s."
+    }
+  },
+  "constellation3": {
+    "name": "Solo la lanza que abrió la herida puede cerrarla",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_Lohen_gen baseKey18=skill>Estacazo súbito</tooltip></strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Fulgente amor, risueña muerte",
+    "description": {
+      "0": "Cuando Lohen use su Habilidad Definitiva, <strong>Sentencia consumada</strong>, mientras esté en estado de <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>maestro estratega</strong></tooltip>, obtendrá la cantidad máxima de <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>ansia de victoria</strong></tooltip>, lo que otorgará el mayor aumento de daño posible a dicha habilidad.",
+      "1": "<br/>",
+      "2": "Además, cuando Lohen entra en estado de <strong>maestro estratega</strong>, si su Energía Elemental:",
+      "3": [
+        "No está al máximo: Lohen recupera 15 pts. de Energía Elemental.",
+        "Está al máximo: Lohen recupera 15 pts. de Energía Elemental si usa su Habilidad Definitiva, <strong>Sentencia consumada</strong>, durante los próximos 15 s."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Nunca te preguntarás, ni te molestarás en saber",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_Lohen_gen baseKey18=burst>Sentencia consumada</tooltip></strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Ahogarse y hundirse hasta morir, ¡suprema felicidad!",
+    "description": {
+      "0": "Al golpear a un enemigo con la Habilidad Elemental especial <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Grabado hasta la médula</strong></tooltip> o al usar la Habilidad Definitiva <strong>Sentencia consumada</strong> en el estado de <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>maestro estratega</strong></tooltip>, Lohen no consumirá <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>ansia de victoria</strong></tooltip>, recuperará la cantidad máxima de <tooltip ns=tooltips_gen baseKey18=11290003 values=[]><strong>exultación</strong></tooltip> y, la próxima vez que golpee a un enemigo con su Habilidad Elemental especial <strong>Grabado hasta la médula</strong>, la duración del estado de <strong>maestro estratega</strong> se prolongará 1.25 s. Este efecto solo se puede activar una vez cada 7 s.",
+      "1": "Además, aumentará en un 175% el Daño CRIT de todos los daños anteriormente mencionados, y la cantidad máxima de veces que Lohen puede usar <strong>Grabado hasta la médula</strong> durante este estado de <strong>maestro estratega</strong> aumentará en 2."
+    }
+  }
+}

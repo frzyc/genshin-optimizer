@@ -275,7 +275,7 @@ const dmgFormulas = {
       },
       hit: {
         ele: constant(getCharEle(key)),
-        reaction: constant('none'),
+        reaction: constant(''),
       },
     }),
   },
