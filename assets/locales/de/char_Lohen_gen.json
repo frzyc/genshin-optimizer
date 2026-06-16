@@ -1,0 +1,173 @@
+{
+  "name": "Lohen",
+  "title": "Angespitzte Pfeilspitze",
+  "description": "Stellvertretender Truppenführer der Fernkampftruppe des Ordo Favonius, ein Ritter, der unkonventionell vorgeht und eine Vorliebe für ungewöhnliche Taktiken hat.",
+  "constellationName": "Lepus Miles",
+  "auto": {
+    "name": "Favonius-Speerkunst – Eidbruch",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 5 Angriffe hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer und führt einen Angriff nach vorne aus."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH Phase 5",
+      "5": "SCH heftiger Schläge",
+      "6": "Ausdauerverbrauch heftiger Schläge",
+      "7": "SCH beim Fallen",
+      "8": "SCH beim Fallen aus niedriger/großer Höhe",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Unerwarteter Schachzug",
+    "description": {
+      "0": "Sucht nach der Schwachstelle des Gegners und wechselt in den Zustand <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Geniestreich</strong></tooltip>. In diesem Zustand ist Folgendes möglich:",
+      "1": [
+        " Lohen kann aktiv <tooltip ns=tooltips_gen baseKey18=11290003 values=[]><strong>Freude</strong></tooltip> sammeln, um die besondere Elementarfähigkeit <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Bis ins Mark</strong></tooltip> anzuwenden.",
+        " Andere Truppenmitglieder in der Nähe können <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Siegeswille</strong></tooltip> für Lohen sammeln, um den Schaden von <strong>Bis ins Mark</strong> zu erhöhen."
+      ],
+      "2": "Nach max. dreimaliger Anwendung von <strong>Bis ins Mark</strong> im Zustand <strong>Geniestreich</strong> kann keine <strong>Freude</strong> mehr erhalten werden.",
+      "3": "<br/>",
+      "4": "<i>„Rittertum? Ha, das ist in der Tat ein hervorragender Köder. Solange der Gegner noch davon träumt, in einem fairen Kampf zu siegen, ahnt er nicht, welche ‚Überraschung‘ auf ihn wartet.“</i>"
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH Phase 5",
+      "5": "SCH heftiger Schläge",
+      "6": "Ausdauerverbrauch heftiger Schläge",
+      "7": "SCH beim Fallen",
+      "8": "SCH beim Fallen aus niedriger/großer Höhe",
+      "9": "Dauer von Geniestreich",
+      "10": "SCH durch „Bis ins Mark“",
+      "11": "Erhöhung des ursprünglichen SCH pro Punkt Siegeswille",
+      "12": "Abklingzeit",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Verhängte Strafe",
+    "description": {
+      "0": "Führt schnell hintereinander mehrere Hiebe nach vorne aus, verbraucht sämtlichen <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Siegeswillen</strong></tooltip> und verursacht <cryo>Kryo-Schaden</cryo>. Erhöht den Schaden dieses Angriffs abhängig vom verbrauchten <strong>Siegeswillen</strong>. Verlängert, wenn Lohen sich beim Anwenden im Zustand <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Geniestreich</strong></tooltip> befindet, dessen Dauer um 1,65 s.",
+      "1": "<br/>",
+      "2": "<i>„Schon alles verraten? Schade, ich dachte, wir hätten gerade erst angefangen!“</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Erhöhung des ursprünglichen SCH pro Punkt Siegeswille",
+      "2": "Abklingzeit",
+      "3": "Elementarenergie",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Zurechtweisung des Verbotenen",
+    "description": {
+      "0": "Sammelt, wenn im Zustand <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Geniestreich</strong></tooltip> andere Truppenmitglieder in der Nähe durch verursachten Schaden <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Siegeswille</strong></tooltip> für Lohen sammeln und der verursachte Schaden nicht unter 3.000 % von Lohens Basis-ANG liegt, zusätzlich 60 Punkte <strong>Siegeswille</strong> für Lohen an."
+    }
+  },
+  "passive2": {
+    "name": "Meisterwerk des Schauspiels",
+    "description": {
+      "0": "Erhöht im Zustand <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Geniestreich</strong></tooltip>, wenn ein anderes Truppenmitglied in der Nähe bei Gegnern <cryo>Kryo-Reaktionen</cryo> auslöst, den ANG dieser Figur sowie Lohens ANG 8 s lang um 15 %."
+    }
+  },
+  "passive3": {
+    "name": "Flüchtiges Interesse",
+    "description": {
+      "0": "Verleiht Lohen nach dem Anwenden der Elementarfähigkeit <strong>Unerwarteter Schachzug</strong> 9 s lang den Effekt „Gute Laune“: Erhöht während der Wirkungsdauer die Fähigkeitsstufe von <strong>Unerwarteter Schachzug</strong> um 1.",
+      "1": "Verlängert, wenn beim Anwenden der Elementarfähigkeit die Fähigkeitsstufe eines Standardangriffs, einer Elementarfähigkeit oder Spezialfähigkeit eines anderen Truppenmitglieds nicht niedriger als die von Lohens Elementarfähigkeit ist, die Wirkungsdauer von dieser „Guten Laune“ zusätzlich um 6 s.",
+      "2": "„Gute Laune“ kann nur einmal alle 18 s erhalten werden."
+    }
+  },
+  "lockedPassive": {
+    "name": "Geschenk der Hexennacht – Unheilbarer Stich",
+    "description": {
+      "0": "Wandelt Lohen nach dem Abschluss von <strong>Aufgabe der Hexe – Von verschiedenen Gegnern</strong> in eine <strong>Hexerei</strong>-Figur um. Verleiht, wenn sich in der Truppe mindestens 2 Hexerei-Figuren befinden, den Effekt <strong>Hexerei – Geheimes Ritual</strong>, der Hexerei-Figuren verstärkt.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei – Geheimes Ritual</strong>",
+      "3": "Erhöht, wenn Gegner mit der besonderen Elementarfähigkeit <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Bis ins Mark</strong></tooltip> getroffen werden oder die Spezialfähigkeit <strong>Verhängte Strafe</strong> angewendet wird und <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Siegeswille</strong></tooltip> bei mindestens 50 % des Höchstwerts liegt, den durch Lohens Standardangriffe und heftige Schläge verursachten Schaden 6 s lang um 40 %."
+    }
+  },
+  "constellation1": {
+    "name": "Winde der Vergangenheit, erfüllt von Trauergesängen",
+    "description": {
+      "0": "Erhöht die Obergrenze von Lohens <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Siegeswillen</strong></tooltip> auf 300 % des ursprünglichen Werts.",
+      "1": "Erhöht im Zustand <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Geniestreich</strong></tooltip> zudem den <strong>Siegeswillen</strong>, den andere Truppenmitglieder in der Nähe durch verursachten Schaden für Lohen ansammeln, auf 500 % des ursprünglichen Werts."
+    }
+  },
+  "constellation2": {
+    "name": "Alles, was fliegt, ist eine Zielscheibe",
+    "description": {
+      "0": "Verleiht Lohen, nachdem er im Zustand <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Geniestreich</strong></tooltip> einen Gegner mit der besonderen Elementarfähigkeit <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Bis ins Mark</strong></tooltip> getroffen oder die Spezialfähigkeit <strong>Verhängte Strafe</strong> angewendet hat, 4 s lang den Effekt „Klinge der Gerechten“: Führt, wenn Lohen im Status „Geniestreich“ das nächste Mal einen Gegner mit einem Standardangriff oder einem heftigen Schlag trifft, einen zusätzlichen Angriff aus, der <cryo>Kryo-Flächenschaden</cryo> in Höhe von 500 % von Lohens ANG verursacht. Erhöht zudem 8 s lang die Elementarkunde anderer Truppenmitglieder in der Nähe um 200 Punkte. 4 s Abklingzeit auf den Erhalt des Effekts „Klinge der Gerechten“."
+    }
+  },
+  "constellation3": {
+    "name": "Nur die Klinge kann diese Wunde heilen",
+    "description": {
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong><tooltip ns=char_Lohen_gen baseKey18=skill>Unerwarteter Schachzug</tooltip></strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Liebe leuchtet wie Licht, und vergeht wie ein fröhliches Lied",
+    "description": {
+      "0": "Erhöht, wenn Lohen im Zustand <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Geniestreich</strong></tooltip> seine Spezialfähigkeit <strong>Verhängte Strafe</strong> anwendet, seinen <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Siegeswillen</strong></tooltip> auf den Höchstwert, und verleiht dieser Spezialfähigkeit somit einen maximalen Schadensbonus.",
+      "1": "<br/>",
+      "2": "Wenn Lohen außerdem in den Zustand <strong>Geniestreich</strong> wechselt und seine Elementarenergie:",
+      "3": [
+        " nicht voll ist: Stellt Lohen 15 Punkte Elementarenergie wieder her.",
+        " voll ist: Stellt Lohen in den nächsten 15 s nach dem Anwenden der Spezialfähigkeit <strong>Verhängte Strafe</strong> 15 Punkte Elementarenergie wieder her."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Uneinsehbar, unbestreitbar",
+    "description": {
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong><tooltip ns=char_Lohen_gen baseKey18=burst>Verhängte Strafe</tooltip></strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Körper vergehen, Seelen verschwinden – nur die Freude bleibt",
+    "description": {
+      "0": "Verbraucht beim Treffen von Gegnern mit der besonderen Elementarfähigkeit <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Bis ins Mark</strong></tooltip> oder beim Anwenden der Spezialfähigkeit <strong>Verhängte Strafe</strong> im Zustand <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Geniestreich</strong></tooltip> keinen <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Siegeswillen</strong></tooltip> und regeneriert des Weiteren Lohens <tooltip ns=tooltips_gen baseKey18=11290003 values=[]><strong>Freude</strong></tooltip> auf den Höchstwert. Verlängert zudem beim nächsten Treffen eines Gegners mit der besonderen Elementarfähigkeit <strong>Bis ins Mark</strong> die Dauer des aktuellen Zustands <strong>Geniestreich</strong> um 1,25 s, 7 s Abklingzeit.",
+      "1": "Erhöht zudem den kritischen Schaden aller oben genannten Schadensarten um 175 % sowie die maximale Anwendungsanzahl von <strong>Bis ins Mark</strong> während <strong>Geniestreich</strong> um 2."
+    }
+  }
+}

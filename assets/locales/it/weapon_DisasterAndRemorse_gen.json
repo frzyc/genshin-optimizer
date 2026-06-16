@@ -1,0 +1,44 @@
+{
+  "name": "Disastro e rimorso",
+  "description": {
+    "0": "Una lancia forgiata in Pietrabianca e Argento astrale. La sua punta affilata è costantemente avvolta da un gelo pungente."
+  },
+  "passiveName": "Colpo doloroso",
+  "passiveDescription": {
+    "0": {
+      "0": "Dopo aver usato un'abilità elementale, il personaggio che equipaggia l'arma ottiene Sentiero del conflitto per 17 s, e gli effetti Imperdonabile e Irreparabile per 3 s ciascuno. Quest'effetto può attivarsi una volta ogni 18 s.",
+      "1": "Imperdonabile: aumenta di un <cryo>40%</cryo> i DAN da attacco normale e caricato del personaggio.",
+      "2": "Irreparabile: aumenta di un <cryo>40%</cryo> i DAN da abilità elementale e Tripudio elementale del personaggio.",
+      "3": "Mentre Sentiero del conflitto è attivo, quando il personaggio che equipaggia l'arma colpisce un avversario con attacchi normali o caricati, la durata di Irreparabile aumenta di 1 s. Quando il personaggio colpisce un avversario con l'abilità elementale o il Tripudio elementale, la durata di Imperdonabile aumenta di 1 s. Ciascuno dei suddetti effetti può essere attivato una volta ogni 0,1 s. Quando Sentiero del conflitto termina o il personaggio che equipaggia l'arma lascia il campo, sia Imperdonabile che Irreparabile vengono rimossi.",
+      "4": "Se Hexerei: Rito segreto è attivo, i suddetti aumenti dei DAN vengono incrementati di un 75%."
+    },
+    "1": {
+      "0": "Dopo aver usato un'abilità elementale, il personaggio che equipaggia l'arma ottiene Sentiero del conflitto per 17 s, e gli effetti Imperdonabile e Irreparabile per 3 s ciascuno. Quest'effetto può attivarsi una volta ogni 18 s.",
+      "1": "Imperdonabile: aumenta di un <cryo>50%</cryo> i DAN da attacco normale e caricato del personaggio.",
+      "2": "Irreparabile: aumenta di un <cryo>50%</cryo> i DAN da abilità elementale e Tripudio elementale del personaggio.",
+      "3": "Mentre Sentiero del conflitto è attivo, quando il personaggio che equipaggia l'arma colpisce un avversario con attacchi normali o caricati, la durata di Irreparabile aumenta di 1 s. Quando il personaggio colpisce un avversario con l'abilità elementale o il Tripudio elementale, la durata di Imperdonabile aumenta di 1 s. Ciascuno dei suddetti effetti può essere attivato una volta ogni 0,1 s. Quando Sentiero del conflitto termina o il personaggio che equipaggia l'arma lascia il campo, sia Imperdonabile che Irreparabile vengono rimossi.",
+      "4": "Se Hexerei: Rito segreto è attivo, i suddetti aumenti dei DAN vengono incrementati di un 75%."
+    },
+    "2": {
+      "0": "Dopo aver usato un'abilità elementale, il personaggio che equipaggia l'arma ottiene Sentiero del conflitto per 17 s, e gli effetti Imperdonabile e Irreparabile per 3 s ciascuno. Quest'effetto può attivarsi una volta ogni 18 s.",
+      "1": "Imperdonabile: aumenta di un <cryo>60%</cryo> i DAN da attacco normale e caricato del personaggio.",
+      "2": "Irreparabile: aumenta di un <cryo>60%</cryo> i DAN da abilità elementale e Tripudio elementale del personaggio.",
+      "3": "Mentre Sentiero del conflitto è attivo, quando il personaggio che equipaggia l'arma colpisce un avversario con attacchi normali o caricati, la durata di Irreparabile aumenta di 1 s. Quando il personaggio colpisce un avversario con l'abilità elementale o il Tripudio elementale, la durata di Imperdonabile aumenta di 1 s. Ciascuno dei suddetti effetti può essere attivato una volta ogni 0,1 s. Quando Sentiero del conflitto termina o il personaggio che equipaggia l'arma lascia il campo, sia Imperdonabile che Irreparabile vengono rimossi.",
+      "4": "Se Hexerei: Rito segreto è attivo, i suddetti aumenti dei DAN vengono incrementati di un 75%."
+    },
+    "3": {
+      "0": "Dopo aver usato un'abilità elementale, il personaggio che equipaggia l'arma ottiene Sentiero del conflitto per 17 s, e gli effetti Imperdonabile e Irreparabile per 3 s ciascuno. Quest'effetto può attivarsi una volta ogni 18 s.",
+      "1": "Imperdonabile: aumenta di un <cryo>70%</cryo> i DAN da attacco normale e caricato del personaggio.",
+      "2": "Irreparabile: aumenta di un <cryo>70%</cryo> i DAN da abilità elementale e Tripudio elementale del personaggio.",
+      "3": "Mentre Sentiero del conflitto è attivo, quando il personaggio che equipaggia l'arma colpisce un avversario con attacchi normali o caricati, la durata di Irreparabile aumenta di 1 s. Quando il personaggio colpisce un avversario con l'abilità elementale o il Tripudio elementale, la durata di Imperdonabile aumenta di 1 s. Ciascuno dei suddetti effetti può essere attivato una volta ogni 0,1 s. Quando Sentiero del conflitto termina o il personaggio che equipaggia l'arma lascia il campo, sia Imperdonabile che Irreparabile vengono rimossi.",
+      "4": "Se Hexerei: Rito segreto è attivo, i suddetti aumenti dei DAN vengono incrementati di un 75%."
+    },
+    "4": {
+      "0": "Dopo aver usato un'abilità elementale, il personaggio che equipaggia l'arma ottiene Sentiero del conflitto per 17 s, e gli effetti Imperdonabile e Irreparabile per 3 s ciascuno. Quest'effetto può attivarsi una volta ogni 18 s.",
+      "1": "Imperdonabile: aumenta di un <cryo>80%</cryo> i DAN da attacco normale e caricato del personaggio.",
+      "2": "Irreparabile: aumenta di un <cryo>80%</cryo> i DAN da abilità elementale e Tripudio elementale del personaggio.",
+      "3": "Mentre Sentiero del conflitto è attivo, quando il personaggio che equipaggia l'arma colpisce un avversario con attacchi normali o caricati, la durata di Irreparabile aumenta di 1 s. Quando il personaggio colpisce un avversario con l'abilità elementale o il Tripudio elementale, la durata di Imperdonabile aumenta di 1 s. Ciascuno dei suddetti effetti può essere attivato una volta ogni 0,1 s. Quando Sentiero del conflitto termina o il personaggio che equipaggia l'arma lascia il campo, sia Imperdonabile che Irreparabile vengono rimossi.",
+      "4": "Se Hexerei: Rito segreto è attivo, i suddetti aumenti dei DAN vengono incrementati di un 75%."
+    }
+  }
+}

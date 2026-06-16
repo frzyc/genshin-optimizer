@@ -1,0 +1,44 @@
+{
+  "name": "Felaket ve Pişmanlık",
+  "description": {
+    "0": "Beyaz Taş ve Gümüş Yıldızdan dövülen bir mızrak. Sivri ucu her daim kemiği delebilen bir soğukla çevrilidir."
+  },
+  "passiveName": "Hazin Son",
+  "passiveDescription": {
+    "0": {
+      "0": "Kuşanan karakter bir Element Becerisi kullandıktan sonra 17 saniyeliğine \"Çatışma Yolu\" etkisini ve 3 saniyeliğine \"Affedilemez\" ve \"Onarılamaz\" etkilerini kazanır. Bu etki 18 saniyede bir tetiklenebilir.",
+      "1": "Affedilemez: Kuşanan karakterin Normal Saldırı ve Yüklü Saldırı Hasarı <cryo>%40</cryo> artar.",
+      "2": "Onarılamaz: Kuşanan karakterin Element Becerisi ve Element Patlaması Hasarı <cryo>%40</cryo> artar.",
+      "3": "Çatışma Yolu etkinken, kuşanan karakterin Normal Saldırısı ve Yüklü Saldırısı bir düşmana isabet ettiğinde Onarılamaz etkisinin süresi 1sn uzar. Kuşanan karakterin Element Becerisi ve Element Patlaması bir düşmana isabet ettiğinde Affedilemez etkisinin süresi 1sn uzar. Yukarıdaki etkilerin her biri 0,1 saniyede bir tetiklenebilir. Çatışma Yolu sona erdiğinde veya kuşanan karakter alandan ayrıldığında, hem Affedilemez hem de Onarılamaz kaldırılır.",
+      "4": "Cadılık: Saklı Ayin: Yukarıdaki Hasar güçlendirmeleri %75 artar."
+    },
+    "1": {
+      "0": "Kuşanan karakter bir Element Becerisi kullandıktan sonra 17 saniyeliğine \"Çatışma Yolu\" etkisini ve 3 saniyeliğine \"Affedilemez\" ve \"Onarılamaz\" etkilerini kazanır. Bu etki 18 saniyede bir tetiklenebilir.",
+      "1": "Affedilemez: Kuşanan karakterin Normal Saldırı ve Yüklü Saldırı Hasarı <cryo>%50</cryo> artar.",
+      "2": "Onarılamaz: Kuşanan karakterin Element Becerisi ve Element Patlaması Hasarı <cryo>%50</cryo> artar.",
+      "3": "Çatışma Yolu etkinken, kuşanan karakterin Normal Saldırısı ve Yüklü Saldırısı bir düşmana isabet ettiğinde Onarılamaz etkisinin süresi 1sn uzar. Kuşanan karakterin Element Becerisi veya Element Patlaması bir düşmana isabet ettiğinde Affedilemez etkisinin süresi 1sn uzar. Yukarıdaki etkilerin her biri 0,1 saniyede bir tetiklenebilir. Çatışma Yolu sona erdiğinde veya kuşanan karakter alandan ayrıldığında, hem Affedilemez hem de Onarılamaz kaldırılır.",
+      "4": "Cadılık: Saklı Ayin: Yukarıdaki Hasar güçlendirmeleri %75 artar."
+    },
+    "2": {
+      "0": "Kuşanan karakter bir Element Becerisi kullandıktan sonra 17 saniyeliğine \"Çatışma Yolu\" etkisini ve 3 saniyeliğine \"Affedilemez\" ve \"Onarılamaz\" etkilerini kazanır. Bu etki 18 saniyede bir tetiklenebilir.",
+      "1": "Affedilemez: Kuşanan karakterin Normal Saldırı ve Yüklü Saldırı Hasarı <cryo>%60</cryo> artar.",
+      "2": "Onarılamaz: Kuşanan karakterin Element Becerisi ve Element Patlaması Hasarı <cryo>%60</cryo> artar.",
+      "3": "Çatışma Yolu etkinken, kuşanan karakterin Normal Saldırısı ve Yüklü Saldırısı bir düşmana isabet ettiğinde Onarılamaz etkisinin süresi 1sn uzar. Kuşanan karakterin Element Becerisi ve Element Patlaması bir düşmana isabet ettiğinde Affedilemez etkisinin süresi 1sn uzar. Yukarıdaki etkilerin her biri 0,1 saniyede bir tetiklenebilir. Çatışma Yolu sona erdiğinde veya kuşanan karakter alandan ayrıldığında, hem Affedilemez hem de Onarılamaz kaldırılır.",
+      "4": "Cadılık: Saklı Ayin: Yukarıdaki Hasar güçlendirmeleri %75 artar."
+    },
+    "3": {
+      "0": "Kuşanan karakter bir Element Becerisi kullandıktan sonra 17 saniyeliğine \"Çatışma Yolu\" etkisini ve 3 saniyeliğine \"Affedilemez\" ve \"Onarılamaz\" etkilerini kazanır. Bu etki 18 saniyede bir tetiklenebilir.",
+      "1": "Affedilemez: Kuşanan karakterin Normal Saldırı ve Yüklü Saldırı Hasarı <cryo>%70</cryo> artar.",
+      "2": "Onarılamaz: Kuşanan karakterin Element Becerisi ve Element Patlaması Hasarı <cryo>%70</cryo> artar.",
+      "3": "Çatışma Yolu etkinken, kuşanan karakterin Normal Saldırısı ve Yüklü Saldırısı bir düşmana isabet ettiğinde Onarılamaz etkisinin süresi 1sn uzar. Kuşanan karakterin Element Becerisi ve Element Patlaması bir düşmana isabet ettiğinde Affedilemez etkisinin süresi 1sn uzar. Yukarıdaki etkilerin her biri 0,1 saniyede bir tetiklenebilir. Çatışma Yolu sona erdiğinde veya kuşanan karakter alandan ayrıldığında, hem Affedilemez hem de Onarılamaz kaldırılır.",
+      "4": "Cadılık: Saklı Ayin: Yukarıdaki Hasar güçlendirmeleri %75 artar."
+    },
+    "4": {
+      "0": "Kuşanan karakter bir Element Becerisi kullandıktan sonra 17 saniyeliğine \"Çatışma Yolu\" etkisini ve 3 saniyeliğine \"Affedilemez\" ve \"Onarılamaz\" etkilerini kazanır. Bu etki 18 saniyede bir tetiklenebilir.",
+      "1": "Affedilemez: Kuşanan karakterin Normal Saldırı ve Yüklü Saldırı Hasarı <cryo>%80</cryo> artar.",
+      "2": "Onarılamaz: Kuşanan karakterin Element Becerisi ve Element Patlaması Hasarı <cryo>%80</cryo> artar.",
+      "3": "Çatışma Yolu etkinken, kuşanan karakterin Normal Saldırısı ve Yüklü Saldırısı bir düşmana isabet ettiğinde Onarılamaz etkisinin süresi 1sn uzar. Kuşanan karakterin Element Becerisi ve Element Patlaması bir düşmana isabet ettiğinde Affedilemez etkisinin süresi 1sn uzar. Yukarıdaki etkilerin her biri 0,1 saniyede bir tetiklenebilir. Çatışma Yolu sona erdiğinde veya kuşanan karakter alandan ayrıldığında, hem Affedilemez hem de Onarılamaz kaldırılır.",
+      "4": "Cadılık: Saklı Ayin: Yukarıdaki Hasar güçlendirmeleri %75 artar."
+    }
+  }
+}
