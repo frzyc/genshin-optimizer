@@ -119,12 +119,19 @@ function artifactReducer(
         return undefined
       case 'substat': {
         const { index, substat } = action
+        const substatWithInitialValue =
+          substat.key &&
+          substat.initialValue === undefined &&
+          state!.substats[index].key === substat.key &&
+          state!.substats[index].initialValue !== undefined
+            ? { ...substat, initialValue: state!.substats[index].initialValue }
+            : substat
         const oldIndex = substat.key
           ? state!.substats.findIndex((current) => current.key === substat.key)
           : -1
 
         if (oldIndex === -1 || oldIndex === index)
-          state!.substats[index] = substat
+          state!.substats[index] = substatWithInitialValue
         // Already in used, swap the items instead
         else
           [state!.substats[index], state!.substats[oldIndex]] = [
