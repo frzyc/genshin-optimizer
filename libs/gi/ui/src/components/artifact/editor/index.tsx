@@ -166,9 +166,19 @@ function artifactReducer(
           : -1
         const oldUnactivatedIndex =
           unactivatedIndex !== -1 ? unactivatedIndex + 3 : -1
+        const newUnactivatedSubstat =
+          substat.key &&
+          substat.initialValue === undefined &&
+          state.unactivatedSubstats[0].key === substat.key &&
+          state.unactivatedSubstats[0].initialValue !== undefined
+            ? {
+                ...substat,
+                initialValue: state.unactivatedSubstats[0].initialValue,
+              }
+            : substat
         const activeSubstat = state.substats[3].key
           ? state.substats[3]
-          : substat
+          : newUnactivatedSubstat
 
         // Allow swapping of substats between unactivated and activated
         if (index === 3) {
