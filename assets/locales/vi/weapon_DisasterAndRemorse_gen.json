@@ -1,0 +1,44 @@
+{
+  "name": "Tai Họa Và Hối Hận",
+  "description": {
+    "0": "Cây thương dài được đúc từ đá trắng và sao bạc, trên mũi nhọn sắc bén luôn phảng phất hàn ý lạnh thấu xương."
+  },
+  "passiveName": "Một Đòn Tai Họa",
+  "passiveDescription": {
+    "0": {
+      "0": "Sau khi người trang bị thi triển Kỹ Năng Nguyên Tố, sẽ nhận hiệu quả \"Con Đường Phân Tranh\" trong 17s, đồng thời nhận hiệu quả \"Không Tha Thứ\" và \"Không Chữa Lành\" lần lượt duy trì trong 3s, mỗi 18s tối đa kích hoạt một lần.",
+      "1": "Không Tha Thứ: Sát thương Tấn Công Thường và Trọng Kích của người trang bị tăng <cryo>40%</cryo>.",
+      "2": "Không Chữa Lành: Sát thương Kỹ Năng Nguyên Tố và Kỹ Năng Nộ của người trang bị tăng <cryo>40%</cryo>.",
+      "3": "Trong thời gian duy trì Con Đường Phân Tranh, khi Tấn Công Thường và Trọng Kích của người trang bị đánh trúng kẻ địch, Không Chữa Lành sẽ kéo dài 1s; Khi Kỹ Năng Nguyên Tố và Kỹ Năng Nộ của người trang bị đánh trúng kẻ địch, Không Tha Thứ sẽ kéo dài 1s. Hiệu quả nêu trên lần lượt mỗi 0.1s tối đa kích hoạt một lần. Khi kết thúc Con Đường Phân Tranh hoặc người trang bị rời trận, sẽ xóa Không Tha Thứ và Không Chữa Lành.",
+      "4": "Hexerei - Nghi Thức Bí Mật: Tất cả hiệu quả tăng sát thương kể trên sẽ tăng 75%."
+    },
+    "1": {
+      "0": "Sau khi người trang bị thi triển Kỹ Năng Nguyên Tố, sẽ nhận hiệu quả \"Con Đường Phân Tranh\" trong 17s, đồng thời nhận hiệu quả \"Không Tha Thứ\" và \"Không Chữa Lành\" lần lượt duy trì trong 3s, mỗi 18s tối đa kích hoạt một lần.",
+      "1": "Không Tha Thứ: Sát thương Tấn Công Thường và Trọng Kích của người trang bị tăng <cryo>50%</cryo>.",
+      "2": "Không Chữa Lành: Sát thương Kỹ Năng Nguyên Tố và Kỹ Năng Nộ của người trang bị tăng <cryo>50%</cryo>.",
+      "3": "Trong thời gian duy trì Con Đường Phân Tranh, khi Tấn Công Thường và Trọng Kích của người trang bị đánh trúng kẻ địch, Không Chữa Lành sẽ kéo dài 1s; Khi Kỹ Năng Nguyên Tố và Kỹ Năng Nộ của người trang bị đánh trúng kẻ địch, Không Tha Thứ sẽ kéo dài 1s. Hiệu quả nêu trên lần lượt mỗi 0.1s tối đa kích hoạt một lần. Khi kết thúc Con Đường Phân Tranh hoặc người trang bị rời trận, sẽ xóa Không Tha Thứ và Không Chữa Lành.",
+      "4": "Hexerei - Nghi Thức Bí Mật: Tất cả hiệu quả tăng sát thương kể trên sẽ tăng 75%."
+    },
+    "2": {
+      "0": "Sau khi người trang bị thi triển Kỹ Năng Nguyên Tố, sẽ nhận hiệu quả \"Con Đường Phân Tranh\" trong 17s, đồng thời nhận hiệu quả \"Không Tha Thứ\" và \"Không Chữa Lành\" lần lượt duy trì trong 3s, mỗi 18s tối đa kích hoạt một lần.",
+      "1": "Không Tha Thứ: Sát thương Tấn Công Thường và Trọng Kích của người trang bị tăng <cryo>60%</cryo>.",
+      "2": "Không Chữa Lành: Sát thương Kỹ Năng Nguyên Tố và Kỹ Năng Nộ của người trang bị tăng <cryo>60%</cryo>.",
+      "3": "Trong thời gian duy trì Con Đường Phân Tranh, khi Tấn Công Thường và Trọng Kích của người trang bị đánh trúng kẻ địch, Không Chữa Lành sẽ kéo dài 1s; Khi Kỹ Năng Nguyên Tố và Kỹ Năng Nộ của người trang bị đánh trúng kẻ địch, Không Tha Thứ sẽ kéo dài 1s. Hiệu quả nêu trên lần lượt mỗi 0.1s tối đa kích hoạt một lần. Khi kết thúc Con Đường Phân Tranh hoặc người trang bị rời trận, sẽ xóa Không Tha Thứ và Không Chữa Lành.",
+      "4": "Hexerei - Nghi Thức Bí Mật: Tất cả hiệu quả tăng sát thương kể trên sẽ tăng 75%."
+    },
+    "3": {
+      "0": "Sau khi người trang bị thi triển Kỹ Năng Nguyên Tố, sẽ nhận hiệu quả \"Con Đường Phân Tranh\" trong 17s, đồng thời nhận hiệu quả \"Không Tha Thứ\" và \"Không Chữa Lành\" lần lượt duy trì trong 3s, mỗi 18s tối đa kích hoạt một lần.",
+      "1": "Không Tha Thứ: Sát thương Tấn Công Thường và Trọng Kích của người trang bị tăng <cryo>70%</cryo>.",
+      "2": "Không Chữa Lành: Sát thương Kỹ Năng Nguyên Tố và Kỹ Năng Nộ của người trang bị tăng <cryo>70%</cryo>.",
+      "3": "Trong thời gian duy trì Con Đường Phân Tranh, khi Tấn Công Thường và Trọng Kích của người trang bị đánh trúng kẻ địch, Không Chữa Lành sẽ kéo dài 1s; Khi Kỹ Năng Nguyên Tố và Kỹ Năng Nộ của người trang bị đánh trúng kẻ địch, Không Tha Thứ sẽ kéo dài 1s. Hiệu quả nêu trên lần lượt mỗi 0.1s tối đa kích hoạt một lần. Khi kết thúc Con Đường Phân Tranh hoặc người trang bị rời trận, sẽ xóa Không Tha Thứ và Không Chữa Lành.",
+      "4": "Hexerei - Nghi Thức Bí Mật: Tất cả hiệu quả tăng sát thương kể trên sẽ tăng 75%."
+    },
+    "4": {
+      "0": "Sau khi người trang bị thi triển Kỹ Năng Nguyên Tố, sẽ nhận hiệu quả \"Con Đường Phân Tranh\" trong 17s, đồng thời nhận hiệu quả \"Không Tha Thứ\" và \"Không Chữa Lành\" lần lượt duy trì trong 3s, mỗi 18s tối đa kích hoạt một lần.",
+      "1": "Không Tha Thứ: Sát thương Tấn Công Thường và Trọng Kích của người trang bị tăng <cryo>80%</cryo>.",
+      "2": "Không Chữa Lành: Sát thương Kỹ Năng Nguyên Tố và Kỹ Năng Nộ của người trang bị tăng <cryo>80%</cryo>.",
+      "3": "Trong thời gian duy trì Con Đường Phân Tranh, khi Tấn Công Thường và Trọng Kích của người trang bị đánh trúng kẻ địch, Không Chữa Lành sẽ kéo dài 1s; Khi Kỹ Năng Nguyên Tố và Kỹ Năng Nộ của người trang bị đánh trúng kẻ địch, Không Tha Thứ sẽ kéo dài 1s. Hiệu quả nêu trên lần lượt mỗi 0.1s tối đa kích hoạt một lần. Khi kết thúc Con Đường Phân Tranh hoặc người trang bị rời trận, sẽ xóa Không Tha Thứ và Không Chữa Lành.",
+      "4": "Hexerei - Nghi Thức Bí Mật: Tất cả hiệu quả tăng sát thương kể trên sẽ tăng 75%."
+    }
+  }
+}

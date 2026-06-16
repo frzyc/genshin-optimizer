@@ -1,0 +1,173 @@
+{
+  "name": "Lohen",
+  "title": "Mũi Nhọn Sắc Bén",
+  "description": "Đội phó Tiểu Đội Tầm Xa của Đội Kỵ Sĩ Tây Phong, một kỵ sĩ hành sự không theo khuôn phép, yêu thích các chiến thuật không theo lẽ thường.",
+  "constellationName": "Cung Giảo Thố",
+  "auto": {
+    "name": "Phá Thệ",
+    "fields": {
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 5 lần đánh liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định để thực hiện đột kích về phía trước."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát thương lần 1",
+      "1": "Sát thương lần 2",
+      "2": "Sát thương lần 3",
+      "3": "Sát thương lần 4",
+      "4": "Sát thương lần 5",
+      "5": "Sát thương Trọng Kích",
+      "6": "Thể lực Trọng Kích tiêu hao",
+      "7": "Sát thương khi đáp",
+      "8": "Sát thương khi đáp từ độ cao thấp/cao",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Kỳ Binh Quỷ Xuất",
+    "description": {
+      "0": "Tìm kiếm sơ hở của kẻ địch, chuyển sang trạng thái <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Kỳ Mưu</strong></tooltip>. Trong trạng thái này:",
+      "1": [
+        "Lohen có thể chủ động tích lũy <tooltip ns=tooltips_gen baseKey18=11290003 values=[]><strong>Niềm Vui</strong></tooltip> để thi triển Kỹ Năng Nguyên Tố đặc biệt <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Khắc Cốt Ghi Tâm</strong></tooltip>.",
+        "Nhân vật khác trong đội ở gần có thể tích lũy <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Nỗ Lực Chiến Thắng</strong></tooltip> cho Lohen để giúp tăng sát thương của <strong>Khắc Cốt Ghi Tâm</strong>."
+      ],
+      "2": "Trong trạng thái <strong>Kỳ Mưu</strong> tối đa thi triển 3 lần <strong>Khắc Cốt Ghi Tâm</strong>, sau đó sẽ không được nhận <strong>Niềm Vui</strong> nữa.",
+      "3": "<br/>",
+      "4": "<i>\"Đạo kỵ sĩ? Hah, đó quả là một mồi nhử tuyệt vời. Khi kẻ địch còn đang ảo tưởng về khoảnh khắc phân định thắng bại đường đường chính chính, thì tuyệt đối sẽ không nghĩ đến một 'sự bất ngờ' ra sao vẫn đang chờ đợi phía trước.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát thương lần 1",
+      "1": "Sát thương lần 2",
+      "2": "Sát thương lần 3",
+      "3": "Sát thương lần 4",
+      "4": "Sát thương lần 5",
+      "5": "Sát thương Trọng Kích",
+      "6": "Thể lực Trọng Kích tiêu hao",
+      "7": "Sát thương khi đáp",
+      "8": "Sát thương khi đáp từ độ cao thấp/cao",
+      "9": "Thời gian duy trì Kỳ Mưu",
+      "10": "Sát thương Khắc Cốt Ghi Tâm",
+      "11": "Mỗi điểm Nỗ Lực Chiến Thắng tăng sát thương gốc",
+      "12": "CD",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Hình Phạt Toại Nguyện",
+    "description": {
+      "0": "Chém nhanh liên tục về phía trước, tiêu hao toàn bộ <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Nỗ Lực Chiến Thắng</strong></tooltip>, gây <cryo>Sát Thương Nguyên Tố Băng</cryo> và tăng sát thương lần này dựa trên <strong>Nỗ Lực Chiến Thắng</strong> đã tiêu hao. Khi thi triển, nếu Lohen đang trong trạng thái <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Kỳ Mưu</strong></tooltip>, thì thời gian duy trì <strong>Kỳ Mưu</strong> lần này sẽ kéo dài 1.65s.",
+      "1": "<br/>",
+      "2": "<i>\"Mới thế đã nhượng bộ rồi sao? Đây còn chưa thỏa mãn nữa...\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát thương kỹ năng",
+      "1": "Mỗi điểm Nỗ Lực Chiến Thắng tăng sát thương gốc",
+      "2": "CD",
+      "3": "Năng Lượng Nguyên Tố",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Lời Răn Cấm Hỏi",
+    "description": {
+      "0": "Trong trạng thái <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Kỳ Mưu</strong></tooltip>, khi nhân vật khác trong đội ở gần tích lũy <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Nỗ Lực Chiến Thắng</strong></tooltip> cho Lohen bằng cách gây sát thương, nếu sát thương lần này không thấp hơn 3000% Tấn Công cơ bản của Lohen, thì sẽ tích lũy thêm 60 điểm <strong>Nỗ Lực Chiến Thắng</strong> cho Lohen."
+    }
+  },
+  "passive2": {
+    "name": "Kiệt Tác Bông Đùa",
+    "description": {
+      "0": "Trong trạng thái <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Kỳ Mưu</strong></tooltip>, sau khi nhân vật khác trong đội ở gần kích hoạt <cryo>phản ứng Nguyên Tố Băng</cryo> lên kẻ địch, nhân vật này và Lohen sẽ tăng 15% Tấn Công trong 8s."
+    }
+  },
+  "passive3": {
+    "name": "Hết Hứng Thì Về",
+    "description": {
+      "0": "Sau khi thi triển Kỹ Năng Nguyên Tố <strong>Kỳ Binh Quỷ Xuất</strong>, Lohen sẽ còn nhận được hiệu quả \"Nhân Lúc Đang Vui\" trong 9s: Trong thời gian duy trì, Kỹ Năng Nguyên Tố <strong>Kỳ Binh Quỷ Xuất</strong> sẽ tăng 1 cấp.",
+      "1": "Khi thi triển Kỹ Năng Nguyên Tố, nếu Tấn Công Thường, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ bất kỳ của nhân vật khác trong đội có cấp kỹ năng không thấp hơn cấp Kỹ Năng Nguyên Tố của Lohen, thì thời gian duy trì hiệu quả Nhân Lúc Đang Vui lần này sẽ kéo dài thêm 6s.",
+      "2": "Mỗi 18s tối đa nhận một lần hiệu quả Nhân Lúc Đang Vui."
+    }
+  },
+  "lockedPassive": {
+    "name": "Đêm Lễ Ma Nữ - Gai Nhọn Khó Lành",
+    "description": {
+      "0": "Sau khi hoàn thành <strong>Bài Tập Của Ma Nữ - Về Chuyện Kẻ Thù</strong>, Lohen sẽ trở thành nhân vật <strong>Hexerei</strong>. Khi đội hình có ít nhất 2 nhân vật Hexerei, sẽ nhận được hiệu quả <strong>Hexerei - Nghi Thức Bí Mật</strong>, giúp nhân vật Hexerei nhận được cường hóa.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei - Nghi Thức Bí Mật</strong>",
+      "3": "Khi Kỹ Năng Nguyên Tố đặc biệt <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Khắc Cốt Ghi Tâm</strong></tooltip> đánh trúng kẻ địch hoặc thi triển Kỹ Năng Nộ <strong>Hình Phạt Toại Nguyện</strong>, nếu sở hữu ít nhất 50% giới hạn <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Nỗ Lực Chiến Thắng</strong></tooltip>, thì sát thương Tấn Công Thường và Trọng Kích của Lohen sẽ tăng 40% trong 6s."
+    }
+  },
+  "constellation1": {
+    "name": "Làn Gió Nhẹ Khi Xưa, Mang Theo Đầy Bi Ca",
+    "description": {
+      "0": "Giới hạn <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Nỗ Lực Chiến Thắng</strong></tooltip> của Lohen tăng đến 300% mức gốc.",
+      "1": "Ngoài ra, khi trong trạng thái <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Kỳ Mưu</strong></tooltip>, lượng <strong>Nỗ Lực Chiến Thắng</strong> tích lũy cho Lohen khi nhân vật khác trong đội ở gần gây sát thương sẽ tăng đến 500% mức gốc."
+    }
+  },
+  "constellation2": {
+    "name": "Phàm Là Kẻ Bay Cao, Đều Sẽ Bị Nhắm Đến",
+    "description": {
+      "0": "Khi trong trạng thái <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Kỳ Mưu</strong></tooltip>, sau khi Kỹ Năng Nguyên Tố đặc biệt <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Khắc Cốt Ghi Tâm</strong></tooltip> đánh trúng kẻ địch hoặc thi triển Kỹ Năng Nộ <strong>Hình Phạt Toại Nguyện</strong>, Lohen sẽ nhận hiệu quả \"Lưỡi Đao Diệt Ác\" trong 4s: Trong trạng thái Kỳ Mưu, lần sau Lohen Tấn Công Thường hoặc Trọng Kích trúng kẻ địch, sẽ thực hiện một đòn tấn công thêm, gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo> tương đương 500% Tấn Công của Lohen, đồng thời khiến nhân vật khác trong đội ở gần tăng 200 điểm Tinh Thông Nguyên Tố trong 8s. Mỗi 4s tối đa nhận một lần Lưỡi Đao Diệt Ác."
+    }
+  },
+  "constellation3": {
+    "name": "Chỉ Lưỡi Đao Sắc Bén, Mới Có Thể Chữa Lành",
+    "description": {
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Lohen_gen baseKey18=skill>Kỳ Binh Quỷ Xuất</tooltip></strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Tình Yêu Như Ánh Sáng, Tan Biến Như Khúc Hát",
+    "description": {
+      "0": "Khi Lohen thi triển Kỹ Năng Nộ <strong>Hình Phạt Toại Nguyện</strong> trong trạng thái <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Kỳ Mưu</strong></tooltip>, Lohen sẽ tích lũy <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Nỗ Lực Chiến Thắng</strong></tooltip> đến tối đa, từ đó khiến Kỹ Năng Nộ lần này nhận được hiệu quả tăng sát thương cao nhất.",
+      "1": "<br/>",
+      "2": "Ngoài ra, khi Lohen chuyển sang trạng thái <strong>Kỳ Mưu</strong>, nếu Năng Lượng Nguyên Tố:",
+      "3": [
+        "Chưa đầy: Hồi phục 15 điểm Năng Lượng Nguyên Tố cho Lohen.",
+        "Đã đầy: Trong vòng 15s tiếp theo, sau khi thi triển Kỹ Năng Nộ <strong>Hình Phạt Toại Nguyện</strong> sẽ hồi phục 15 điểm Năng Lượng Nguyên Tố cho Lohen."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Chẳng Thể Nào Nhìn Thấu, Cũng Chẳng Thể Chất Vấn",
+    "description": {
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Lohen_gen baseKey18=burst>Hình Phạt Toại Nguyện</tooltip></strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Thân Lạc Hồn Tiêu Tan, Chỉ Còn Lại Niềm Vui",
+    "description": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố đặc biệt <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Khắc Cốt Ghi Tâm</strong></tooltip> đánh trúng kẻ địch, hoặc trong trạng thái <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Kỳ Mưu</strong></tooltip> thi triển Kỹ Năng Nộ <strong>Hình Phạt Toại Nguyện</strong>, sẽ không tiêu hao <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Nỗ Lực Chiến Thắng</strong></tooltip>, đồng thời Lohen sẽ khôi phục <tooltip ns=tooltips_gen baseKey18=11290003 values=[]><strong>Niềm Vui</strong></tooltip> đến mức giới hạn, và khi thi triển Kỹ Năng Nguyên Tố đặc biệt <strong>Khắc Cốt Ghi Tâm</strong> lần kế tiếp trúng kẻ địch, sẽ khiến thời gian duy trì <strong>Kỳ Mưu</strong> lần này kéo dài 1.25s. Hiệu quả này mỗi 7s tối đa kích hoạt một lần.",
+      "1": "Ngoài ra, tất cả sát thương kể trên sẽ tăng 175% Sát Thương Bạo Kích, và trong thời gian <strong>Kỳ Mưu</strong> lần này, giới hạn số lần thi triển <strong>Khắc Cốt Ghi Tâm</strong> của Lohen sẽ tăng 2 lần."
+    }
+  }
+}
