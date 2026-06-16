@@ -57,11 +57,11 @@ const nbins = 50
 
 export default function UpgradeOptChartCard(props: Props) {
   const database = useDatabase()
+  const { data } = useContext(DataContext)
   const upOptArt = props.upOptCalc.artifacts[props.ix]
   if (!upOptArt) return null
   const artifactId = upOptArt.artifactId
   const upArt = database.arts.get(artifactId)
-  const { data } = useContext(DataContext)
   const currentlyEquippedArtId =
     upArt?.slotKey && data.get(input.art[upArt.slotKey].id).value
   const isEquipped = artifactId === currentlyEquippedArtId
@@ -72,7 +72,9 @@ export default function UpgradeOptChartCard(props: Props) {
           <ArtifactCard
             artifactId={artifactId}
             onEdit={() => props.setArtifactIdToEdit(artifactId)}
-            extraButtons={<EquipButton newArtId={artifactId} disabled={isEquipped} />}
+            extraButtons={
+              <EquipButton newArtId={artifactId} disabled={isEquipped} />
+            }
           />
         </Grid>
         <Grid item xs={12} sm={7} md={8} lg={9} xl={9}>
@@ -155,7 +157,8 @@ function UpgradeOptChartCardGraph({
   const { t } = useTranslation('page_character_optimize')
   const { t: tk } = useTranslation('statKey_gen')
   const formatReshapeLabel = useCallback(
-    (key: string) => `${tk(key)}${['atk_', 'def_', 'hp_'].includes(key) ? '%' : ''}`,
+    (key: string) =>
+      `${tk(key)}${['atk_', 'def_', 'hp_'].includes(key) ? '%' : ''}`,
     [tk]
   )
   const upArt = upOptCalc.artifacts[ix]
@@ -245,7 +248,9 @@ function UpgradeOptChartCardGraph({
   const isCurrentlyEquipped = currentlyEquippedArtId === upArt.artifactId
   const reshapeLabel =
     upArt.action.type === 'reshape'
-      ? upArt.action.affixes.map((affix) => formatReshapeLabel(affix)).join(' / ')
+      ? upArt.action.affixes
+          .map((affix) => formatReshapeLabel(affix))
+          .join(' / ')
       : ''
   const reshapeRolls =
     upArt.action.type === 'reshape' ? upArt.action.mintotal : undefined
@@ -294,12 +299,12 @@ function UpgradeOptChartCardGraph({
         </Box>
       </Box>
       <Divider />
-        <ResponsiveContainer
-          width="100%"
-          height="100%"
-          maxHeight={300}
-          key={upArt.id}
-        >
+      <ResponsiveContainer
+        width="100%"
+        height="100%"
+        maxHeight={300}
+        key={upArt.id}
+      >
         <ComposedChart
           data={chartData}
           margin={{ top: 5, right: 30, left: 20, bottom: 20 }}

@@ -138,6 +138,7 @@ export class OptConfigDataManager extends DataManager<
     if (!result.success) return undefined
 
     const { ...data } = result.data
+    const { upOptReshapeRolls } = data
     let {
       artExclusion,
       excludedLocations,
@@ -146,7 +147,6 @@ export class OptConfigDataManager extends DataManager<
       levelHigh,
       upOptLevelLow,
       upOptLevelHigh,
-      upOptReshapeRolls,
     } = data
 
     // Business logic: filter artExclusion to only IDs that exist in database

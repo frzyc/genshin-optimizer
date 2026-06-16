@@ -174,7 +174,9 @@ export function canReshapeArtifact(art: ICachedArtifact): boolean {
   return getReshapeSubstatKeys(art).length === 4
 }
 
-function getReshapeAffixPairs(art: ICachedArtifact): [SubstatKey, SubstatKey][] {
+function getReshapeAffixPairs(
+  art: ICachedArtifact
+): [SubstatKey, SubstatKey][] {
   if (!canReshapeArtifact(art)) return []
   const substatKeys = getReshapeSubstatKeys(art)
   const out: [SubstatKey, SubstatKey][] = []
@@ -440,8 +442,8 @@ export class UpOptCalculator {
         prob: number
         constr_prob: number
         upAvg: number
-        f_mu: number[]
-        f_cov: number[][]
+        f_mu: readonly number[]
+        f_cov: readonly (readonly number[])[]
       }
     }[]
   ): UpOptResult {
@@ -488,9 +490,10 @@ export class UpOptCalculator {
   }
 
   _calcReshape(ix: number) {
-    const { affixes, mintotal } = this.artifacts[ix].action.type === 'reshape'
-      ? this.artifacts[ix].action
-      : { affixes: undefined, mintotal: 2 as const }
+    const { affixes, mintotal } =
+      this.artifacts[ix].action.type === 'reshape'
+        ? this.artifacts[ix].action
+        : { affixes: undefined, mintotal: 2 as const }
     if (!affixes) return
     const weighted = deduplicate(
       this.markovObjective,
@@ -714,7 +717,9 @@ export class UpOptCalculator {
    * Exact results have no variance, so we can directly check each upgrade branch
    *   to compute the exact probability and upgrade value.
    */
-  _toResultExact(distr: { prob: number; val: number[] }[]): UpOptResult {
+  _toResultExact(
+    distr: { prob: number; val: readonly number[] }[]
+  ): UpOptResult {
     let ptot = 0
     let upAvgtot = 0
     const gmm = distr.map(({ prob, val }) => {
@@ -752,9 +757,10 @@ export class UpOptCalculator {
   }
 
   _calcExactReshape(ix: number) {
-    const { affixes, mintotal } = this.artifacts[ix].action.type === 'reshape'
-      ? this.artifacts[ix].action
-      : { affixes: undefined, mintotal: 2 as const }
+    const { affixes, mintotal } =
+      this.artifacts[ix].action.type === 'reshape'
+        ? this.artifacts[ix].action
+        : { affixes: undefined, mintotal: 2 as const }
     if (!affixes) return
     let weighted = deduplicate(
       this.markovObjective,

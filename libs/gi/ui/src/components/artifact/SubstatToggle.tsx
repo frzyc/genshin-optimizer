@@ -35,7 +35,11 @@ export function SubstatToggle({
           >
             <Box display="flex" gap={1} alignItems="center">
               <StatIcon statKey={key} iconProps={iconInlineProps} />
-              {renderLabel ? renderLabel(key) : <ArtifactStatWithUnit statKey={key} />}
+              {renderLabel ? (
+                renderLabel(key)
+              ) : (
+                <ArtifactStatWithUnit statKey={key} />
+              )}
             </Box>
           </ToggleButton>
         ))}
@@ -51,7 +55,11 @@ export function SubstatToggle({
           >
             <Box display="flex" gap={1} alignItems="center">
               <StatIcon statKey={key} iconProps={iconInlineProps} />
-              {renderLabel ? renderLabel(key) : <ArtifactStatWithUnit statKey={key} />}
+              {renderLabel ? (
+                renderLabel(key)
+              ) : (
+                <ArtifactStatWithUnit statKey={key} />
+              )}
             </Box>
           </ToggleButton>
         ))}

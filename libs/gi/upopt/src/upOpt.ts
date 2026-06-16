@@ -14,11 +14,7 @@ import {
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import type { IArtifact } from '@genshin-optimizer/gi/good'
 import type { DynStat } from '@genshin-optimizer/gi/solver'
-import {
-  getMainStatValue,
-  getRollsRemaining,
-  getSubstatValue,
-} from '@genshin-optimizer/gi/util'
+import { getMainStatValue, getRollsRemaining } from '@genshin-optimizer/gi/util'
 
 import { allMainStatProbs } from './consts'
 import { expandRollsLevel } from './expandRolls'
@@ -147,6 +143,7 @@ export function dustReshape(
     return []
   const subkeys = art.substats.flatMap(({ key, initialValue }) => {
     if (key === '') return []
+    if (initialValue === undefined) return []
     base[key] = (base[key] ?? 0) + toInternalStatValue(key, initialValue)
     return [{ key, baseRolls: 0 }]
   })
@@ -213,7 +210,10 @@ function artToStats(art: ICachedArtifact, mainStatMax = true) {
       mainStatMax ? artMaxLevel[art.rarity] : art.level
     )
   } else {
-    stats[art.mainStatKey] = toInternalStatValue(art.mainStatKey, art.mainStatVal)
+    stats[art.mainStatKey] = toInternalStatValue(
+      art.mainStatKey,
+      art.mainStatVal
+    )
   }
   art.substats.forEach(({ key, value }) => {
     if (!key) return
@@ -267,9 +267,6 @@ function getSubkeys(art: ICachedArtifact) {
 type Build = Record<ArtifactSlotKey, ICachedArtifact | undefined>
 type weightedNode = { p: number; n: SubstatLevelNode }
 
-function toInternalStatValue(
-  key: SubstatKey | MainStatKey,
-  value: number
-) {
+function toInternalStatValue(key: SubstatKey | MainStatKey, value: number) {
   return key.endsWith('_') ? value / 100 : value
 }

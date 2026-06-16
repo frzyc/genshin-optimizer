@@ -1,6 +1,6 @@
 import type { SubstatKey } from '@genshin-optimizer/gi/consts'
 import { allSubstatKeys } from '@genshin-optimizer/gi/consts'
-import { getMainStatValue, getSubstatValue } from '@genshin-optimizer/gi/util'
+import { getMainStatValue } from '@genshin-optimizer/gi/util'
 import { dynRead, prod, sum } from '@genshin-optimizer/gi/wr'
 
 import { substatWeights } from './consts'
@@ -465,16 +465,10 @@ describe('upOpt makeSubstatNode(s)', () => {
     )
     expect(reshaped.p).toBe(1)
     expect(reshaped.n.rollsLeft).toBe(5)
-    expect(reshaped.n.base['atk_']).toBeCloseTo(
-      getSubstatValue('atk_', 5, 'min') / 100
-    )
-    expect(reshaped.n.base['critRate_']).toBeCloseTo(
-      getSubstatValue('critRate_', 5, 'min') / 100
-    )
+    expect(reshaped.n.base['atk_']).toBeCloseTo(5.8 / 100)
+    expect(reshaped.n.base['critRate_']).toBeCloseTo(3.9 / 100)
     expect(reshaped.n.base['critDMG_']).toBeCloseTo(7.8 / 100)
-    expect(reshaped.n.base['enerRech_']).toBeCloseTo(
-      6.5 / 100
-    )
+    expect(reshaped.n.base['enerRech_']).toBeCloseTo(6.5 / 100)
   })
   test('reshape/dust keeps one fewer upgrade roll for 3-liners', () => {
     const [reshaped] = dustReshape(
@@ -606,7 +600,7 @@ describe('upOpt makeSubstatNode(s)', () => {
       2
     )
     expect(reshaped.n.base['atk_']).toBeCloseTo(
-      getMainStatValue('atk_', 5, 20) + getSubstatValue('atk_', 5, 'min') / 100
+      getMainStatValue('atk_', 5, 20) + 5.8 / 100
     )
     expect(reshaped.n.base['def_']).toBeCloseTo(5.8 / 100)
   })

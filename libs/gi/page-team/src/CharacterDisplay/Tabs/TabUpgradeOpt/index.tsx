@@ -165,29 +165,29 @@ export default function TabUpopt() {
 
     return (
       artsDirty &&
-        database.arts.values
-          .filter((art) => {
-            const reshapeCandidate = upOptReshape && canReshapeArtifact(art)
-            if (!useExcludedArts && artExclusion.includes(art.id)) return false
-            if (!reshapeCandidate) {
-              if (art.level < upOptLevelLow) return false
-              if (art.level > upOptLevelHigh) return false
-            }
-            const mainStats = mainStatKeys[art.slotKey]
-            if (mainStats?.length && !mainStats.includes(art.mainStatKey))
-              return false
+      database.arts.values
+        .filter((art) => {
+          const reshapeCandidate = upOptReshape && canReshapeArtifact(art)
+          if (!useExcludedArts && artExclusion.includes(art.id)) return false
+          if (!reshapeCandidate) {
+            if (art.level < upOptLevelLow) return false
+            if (art.level > upOptLevelHigh) return false
+          }
+          const mainStats = mainStatKeys[art.slotKey]
+          if (mainStats?.length && !mainStats.includes(art.mainStatKey))
+            return false
 
-            const locKey = charKeyToLocCharKey(characterKey)
-            if (
-              art.location &&
-              art.location !== locKey &&
-              excludedLocations.includes(art.location)
-            )
-              return false
+          const locKey = charKeyToLocCharKey(characterKey)
+          if (
+            art.location &&
+            art.location !== locKey &&
+            excludedLocations.includes(art.location)
+          )
+            return false
 
-            return true
+          return true
         })
-          .filter(filterFunc)
+        .filter(filterFunc)
     )
   }, [optConfig, artsDirty, database, characterKey, filterOption])
   const filteredArtIdMap = useMemo(
@@ -198,16 +198,15 @@ export default function TabUpopt() {
       ),
     [filteredArts]
   )
-  const reshapeCandidateCount = useMemo(
-    () =>
-      database.arts.values.filter(
-        (art) =>
-          canReshapeArtifact(art) &&
-          (!optConfig.mainStatKeys[art.slotKey]?.length ||
-            optConfig.mainStatKeys[art.slotKey]?.includes(art.mainStatKey))
-      ).length,
-    [artsDirty, database, optConfig.mainStatKeys]
-  )
+  const reshapeCandidateCount = useMemo(() => {
+    void artsDirty
+    return database.arts.values.filter(
+      (art) =>
+        canReshapeArtifact(art) &&
+        (!optConfig.mainStatKeys[art.slotKey]?.length ||
+          optConfig.mainStatKeys[art.slotKey]?.includes(art.mainStatKey))
+    ).length
+  }, [artsDirty, database, optConfig.mainStatKeys])
 
   const { artSetKeys = [], slotKeys = [] } = filterOption
 
@@ -555,16 +554,10 @@ export default function TabUpopt() {
                             }
                             label={t('upOptReshape.label')}
                           />
-                          <SqBadge
-                            color="info"
-                            sx={{ mr: 2 }}
-                          >
+                          <SqBadge color="info" sx={{ mr: 2 }}>
                             {reshapeCandidateCount}
                           </SqBadge>
-                          <Tooltip
-                            arrow
-                            title={t('upOptReshape.tooltip')}
-                          >
+                          <Tooltip arrow title={t('upOptReshape.tooltip')}>
                             <InfoIcon
                               fontSize="small"
                               color="action"
@@ -576,10 +569,7 @@ export default function TabUpopt() {
                           <Typography variant="body2" color="text.secondary">
                             {t('upOptReshape.rolls')}
                           </Typography>
-                          <ButtonGroup
-                            size="small"
-                            sx={{ mt: 0.5 }}
-                          >
+                          <ButtonGroup size="small" sx={{ mt: 0.5 }}>
                             {[2, 3, 4].map((rolls) => (
                               <Button
                                 key={rolls}
