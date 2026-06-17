@@ -78,6 +78,8 @@ type Data = {
   effFilter?: Set<SubstatKey>
   extraButtons?: JSX.Element
   excluded?: boolean
+  hideSubstatValues?: boolean
+  hideLocation?: boolean
 }
 const allSubstatFilter = new Set(allSubstatKeys)
 
@@ -98,6 +100,8 @@ export function ArtifactCardObj({
   effFilter = allSubstatFilter,
   extraButtons,
   excluded = false,
+  hideSubstatValues = false,
+  hideLocation = false,
 }: {
   artifact: ICachedArtifact
 } & Data) {
@@ -343,6 +347,7 @@ export function ArtifactCardObj({
                     stat={stat}
                     effFilter={effFilter}
                     rarity={rarity}
+                    hideValue={hideSubstatValues}
                   />
                 )
             )}
@@ -355,6 +360,7 @@ export function ArtifactCardObj({
                     effFilter={effFilter}
                     rarity={rarity}
                     isActiveStat={false}
+                    hideValue={hideSubstatValues}
                   />
                 )
             )}
@@ -439,14 +445,15 @@ export function ArtifactCardObj({
           }}
         >
           <Box sx={{ flexGrow: 1 }}>
-            {setLocation ? (
-              <LocationAutocomplete
-                location={location}
-                setLocation={setLocation}
-              />
-            ) : (
-              <LocationName location={location} />
-            )}
+            {!hideLocation &&
+              (setLocation ? (
+                <LocationAutocomplete
+                  location={location}
+                  setLocation={setLocation}
+                />
+              ) : (
+                <LocationName location={location} />
+              ))}
           </Box>
           <Box
             display="flex"
@@ -495,11 +502,13 @@ function SubstatDisplay({
   effFilter,
   rarity,
   isActiveStat = true,
+  hideValue = false,
 }: {
   stat: ICachedSubstat
   effFilter: Set<SubstatKey>
   rarity: ArtifactRarity
   isActiveStat?: boolean
+  hideValue?: boolean
 }) {
   const { t: tk } = useTranslation(['statKey_gen', 'ui'])
   const numRolls = stat.rolls?.length ?? 0
@@ -543,30 +552,40 @@ function SubstatDisplay({
     isActiveStat: boolean,
     rollColor: string
   ) => {
+    if (hideValue) return undefined
     if (numRolls && isActiveStat) return `${rollColor}.main`
     if (!isActiveStat) return 'secondary'
     return 'error.main'
   }
+  const statLabelSuffix = hideValue && stat.key.endsWith('_') ? '%' : ''
   return (
     <Box display="flex" gap={1} alignContent="center">
       <Typography
         sx={{ flexGrow: 1 }}
-        color={getSubstatColor(numRolls, isActiveStat, rollColor)}
+        color={
+          hideValue
+            ? 'roll1.main'
+            : getSubstatColor(numRolls, isActiveStat, rollColor)
+        }
         component="span"
       >
         <StatIcon statKey={stat.key} iconProps={iconInlineProps} />{' '}
         {tk(`statKey_gen:${stat.key}`)}
-        {`+${artDisplayValue(stat.value, getUnitStr(stat.key))}${unit}`}
+        {statLabelSuffix}
+        {!hideValue &&
+          `+${artDisplayValue(stat.value, getUnitStr(stat.key))}${unit}`}
         <Typography sx={{ ml: 0.5 }} component="span">
           {!isActiveStat && tk(`ui:${'notActive'}`)}
         </Typography>
       </Typography>
-      {progresses}
-      <Typography
-        sx={{ opacity: effOpacity, minWidth: 40, textAlign: 'right' }}
-      >
-        {(efficiency * 100).toFixed()}%
-      </Typography>
+      {!hideValue && progresses}
+      {!hideValue && (
+        <Typography
+          sx={{ opacity: effOpacity, minWidth: 40, textAlign: 'right' }}
+        >
+          {(efficiency * 100).toFixed()}%
+        </Typography>
+      )}
     </Box>
   )
 }

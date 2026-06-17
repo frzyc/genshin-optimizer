@@ -10,10 +10,16 @@ import {
   objPathValue,
   range,
 } from '@genshin-optimizer/common/util'
-import type { ArtifactSetKey, CharacterKey } from '@genshin-optimizer/gi/consts'
+import type {
+  ArtifactSetKey,
+  ArtifactSlotKey,
+  CharacterKey,
+} from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSetKeys,
   allArtifactSlotKeys,
+  allSubstatKeys,
+  artSlotMainKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
 import type { ArtSetExclusionKey } from '@genshin-optimizer/gi/db'
@@ -25,10 +31,12 @@ import {
   useLoadoutArtifacts,
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
+import type { SubstatKey } from '@genshin-optimizer/gi/dm'
 import {
   type FilterOption,
   initialFilterOption,
 } from '@genshin-optimizer/gi/schema'
+import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import type { dataContextObj } from '@genshin-optimizer/gi/ui'
 import {
   AddArtInfo,
@@ -45,7 +53,10 @@ import {
   useTeamData,
 } from '@genshin-optimizer/gi/ui'
 import { uiDataForTeam } from '@genshin-optimizer/gi/uidata'
-import { artifactFilterConfigs } from '@genshin-optimizer/gi/util'
+import {
+  artifactFilterConfigs,
+  setKeysByRarities,
+} from '@genshin-optimizer/gi/util'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { dynamicData, mergeData, optimize } from '@genshin-optimizer/gi/wr'
 import AddIcon from '@mui/icons-material/Add'
@@ -85,7 +96,11 @@ import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTa
 import StatFilterCard from '../TabOptimize/Components/StatFilterCard'
 import { LevelFilter } from './LevelFilter'
 import UpgradeOptChartCard from './UpgradeOptChartCard'
-import { UpOptCalculator, canReshapeArtifact } from './upOpt'
+import {
+  UpOptCalculator,
+  type UpOptDefinition,
+  canReshapeArtifact,
+} from './upOpt'
 
 // artifact button gets its own type so multiple translations can be used
 type AddArtifactButtonProps = Omit<ButtonProps, 'onClick'> & {
@@ -101,12 +116,25 @@ function AddArtifactButton({ onClick }: AddArtifactButtonProps) {
   )
 }
 
+function substatPairs(keys: readonly SubstatKey[]): [SubstatKey, SubstatKey][] {
+  const out: [SubstatKey, SubstatKey][] = []
+  for (let i = 0; i < keys.length; i++) {
+    for (let j = i + 1; j < keys.length; j++) out.push([keys[i], keys[j]])
+  }
+  return out
+}
+
 const filterOptionReducer = (
   state: Partial<FilterOption>,
   action: Partial<FilterOption>
 ) => ({ ...state, ...action })
 export default function TabUpopt() {
   const { t } = useTranslation('page_character_optimize')
+  const { t: tk } = useTranslation('statKey_gen')
+  const substatLabel = useCallback(
+    (key: SubstatKey) => `${tk(key)}${key.endsWith('_') ? '%' : ''}`,
+    [tk]
+  )
   const {
     teamId,
     teamCharId,
@@ -133,6 +161,8 @@ export default function TabUpopt() {
     upOptLevelHigh,
     upOptReshape,
     upOptReshapeRolls,
+    upOptDefine,
+    upOptDefineSubstats,
   } = optConfig
   const teamData = useTeamData()
   const { target: data } = teamData?.[characterKey as CharacterKey] ?? {}
@@ -249,6 +279,8 @@ export default function TabUpopt() {
       upOptLevelHigh,
       upOptReshape,
       upOptReshapeRolls,
+      upOptDefine,
+      upOptDefineSubstats,
       artSetExclusion,
     } = optConfig
 
@@ -291,9 +323,12 @@ export default function TabUpopt() {
       allArtifactSlotKeys,
       (slotKey) => equippedArts[slotKey]?.setKey
     )
-    function respectSexExclusion(art: ICachedArtifact) {
+    function respectSetExclusion(
+      setKey: ArtifactSetKey,
+      slotKey: ArtifactSlotKey
+    ) {
       const newSK = { ...curEquipSetKeys }
-      newSK[art.slotKey] = art.setKey
+      newSK[slotKey] = setKey
       const skc: Partial<Record<ArtifactSetKey, number>> = {}
       allArtifactSlotKeys.forEach((slotKey) => {
         const setKey = newSK[slotKey]
@@ -336,6 +371,9 @@ export default function TabUpopt() {
           throw Error('error in respectSex: nRainbow > 5')
       }
     }
+    function respectSexExclusion(art: ICachedArtifact) {
+      return respectSetExclusion(art.setKey, art.slotKey)
+    }
     const artifactsToConsider = filteredArts
       // retrieve the artifacts again, just incase there is an update that is not captured by UpgradeOptChartCard
       .map((art) => database.arts.get(art.id))
@@ -352,7 +390,36 @@ export default function TabUpopt() {
           (upOptReshape && canReshapeArtifact(art)) ||
           (upOptLevelLow <= art.level && art.level <= upOptLevelHigh)
       )
-    if (!artifactsToConsider.length) return
+    const definitionInfos: UpOptDefinition[] =
+      upOptDefine && upOptDefineSubstats.length >= 2
+        ? setKeysByRarities[5]
+            .filter((setKey) => !setKey.startsWith('Prayers'))
+            .filter((setKey) => {
+              const exclusions = artSetExclusion[setKey as ArtSetExclusionKey]
+              return !(exclusions?.includes(2) && exclusions?.includes(4))
+            })
+            .flatMap((setKey) =>
+              allArtifactSlotKeys.flatMap((slotKey) =>
+                (mainStatKeys[slotKey]?.length
+                  ? mainStatKeys[slotKey]
+                  : artSlotMainKeys[slotKey]
+                ).flatMap((mainStatKey) => {
+                  if (!respectSetExclusion(setKey, slotKey)) return []
+                  return substatPairs(
+                    upOptDefineSubstats.filter(
+                      (key) => key !== (mainStatKey as string)
+                    ) as SubstatKey[]
+                  ).map((affixes) => ({
+                    setKey,
+                    slotKey,
+                    mainStatKey,
+                    affixes,
+                  }))
+                })
+              )
+            )
+        : []
+    if (!artifactsToConsider.length && !definitionInfos.length) return
     const nodes = optimize(
       [optimizationTargetNode, ...valueFilter.map((x) => x.value)],
       workerData,
@@ -364,6 +431,7 @@ export default function TabUpopt() {
       [-Infinity, ...valueFilter.map((x) => x.minimum)],
       equippedArts,
       artifactsToConsider,
+      definitionInfos,
       true,
       upOptReshape,
       upOptReshapeRolls as 2 | 3 | 4
@@ -589,6 +657,69 @@ export default function TabUpopt() {
                               </Button>
                             ))}
                           </ButtonGroup>
+                        </Box>
+                      </Stack>
+                    </CardContent>
+                  </CardThemed>
+                  <CardThemed bgt="light">
+                    <CardContent>
+                      <Stack spacing={1}>
+                        <Box display="flex" alignItems="center">
+                          <FormControlLabel
+                            control={
+                              <Checkbox
+                                checked={upOptDefine}
+                                onChange={(_, upOptDefine) =>
+                                  database.optConfigs.set(optConfigId, {
+                                    upOptDefine,
+                                  })
+                                }
+                              />
+                            }
+                            label={t('upOptDefine.label')}
+                          />
+                          <Tooltip arrow title={t('upOptDefine.tooltip')}>
+                            <InfoIcon
+                              fontSize="small"
+                              color="action"
+                              sx={{ mb: 0.5 }}
+                            />
+                          </Tooltip>
+                        </Box>
+                        <Box>
+                          <Typography variant="body2" color="text.secondary">
+                            {t('upOptDefine.substats')}
+                            <SqBadge color="info" sx={{ ml: 1 }}>
+                              {upOptDefineSubstats.length}
+                            </SqBadge>
+                          </Typography>
+                          <Grid container spacing={0.5} sx={{ mt: 0.5 }}>
+                            {allSubstatKeys.map((key) => {
+                              const selected = upOptDefineSubstats.includes(key)
+                              return (
+                                <Grid item key={key}>
+                                  <Button
+                                    size="small"
+                                    color={selected ? 'success' : 'secondary'}
+                                    variant="contained"
+                                    startIcon={<StatIcon statKey={key} />}
+                                    onClick={() => {
+                                      const next = selected
+                                        ? upOptDefineSubstats.filter(
+                                            (k) => k !== key
+                                          )
+                                        : [...upOptDefineSubstats, key]
+                                      database.optConfigs.set(optConfigId, {
+                                        upOptDefineSubstats: next,
+                                      })
+                                    }}
+                                  >
+                                    {substatLabel(key)}
+                                  </Button>
+                                </Grid>
+                              )
+                            })}
+                          </Grid>
                         </Box>
                       </Stack>
                     </CardContent>

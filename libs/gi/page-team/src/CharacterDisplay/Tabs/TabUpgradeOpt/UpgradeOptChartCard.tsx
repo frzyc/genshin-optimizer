@@ -15,6 +15,7 @@ import {
 } from '@genshin-optimizer/gi/db-ui'
 import {
   ArtifactCard,
+  ArtifactCardObj,
   ArtifactCardPico,
   DataContext,
   EquipBuildModal,
@@ -61,7 +62,10 @@ export default function UpgradeOptChartCard(props: Props) {
   const upOptArt = props.upOptCalc.artifacts[props.ix]
   if (!upOptArt) return null
   const artifactId = upOptArt.artifactId
-  const upArt = database.arts.get(artifactId)
+  const upArt =
+    upOptArt.action.type === 'define'
+      ? undefined
+      : database.arts.get(artifactId)
   const currentlyEquippedArtId =
     upArt?.slotKey && data.get(input.art[upArt.slotKey].id).value
   const isEquipped = artifactId === currentlyEquippedArtId
@@ -69,13 +73,21 @@ export default function UpgradeOptChartCard(props: Props) {
     <Box>
       <Grid container spacing={1}>
         <Grid item xs={12} sm={5} md={4} lg={3} xl={3}>
-          <ArtifactCard
-            artifactId={artifactId}
-            onEdit={() => props.setArtifactIdToEdit(artifactId)}
-            extraButtons={
-              <EquipButton newArtId={artifactId} disabled={isEquipped} />
-            }
-          />
+          {upOptArt.action.type === 'define' ? (
+            <ArtifactCardObj
+              artifact={upOptArt.displayArt}
+              hideLocation
+              hideSubstatValues
+            />
+          ) : (
+            <ArtifactCard
+              artifactId={artifactId}
+              onEdit={() => props.setArtifactIdToEdit(artifactId)}
+              extraButtons={
+                <EquipButton newArtId={artifactId} disabled={isEquipped} />
+              }
+            />
+          )}
         </Grid>
         <Grid item xs={12} sm={7} md={8} lg={9} xl={9}>
           <UpgradeOptChartCardGraph {...props} />
@@ -157,8 +169,7 @@ function UpgradeOptChartCardGraph({
   const { t } = useTranslation('page_character_optimize')
   const { t: tk } = useTranslation('statKey_gen')
   const formatReshapeLabel = useCallback(
-    (key: string) =>
-      `${tk(key)}${['atk_', 'def_', 'hp_'].includes(key) ? '%' : ''}`,
+    (key: string) => `${tk(key)}${key.endsWith('_') ? '%' : ''}`,
     [tk]
   )
   const upArt = upOptCalc.artifacts[ix]
@@ -166,11 +177,11 @@ function UpgradeOptChartCardGraph({
   const equippedArt = useArtifact(upArt.artifactId)
 
   useEffect(() => {
-    if (equippedArt) {
+    if (equippedArt && upArt.action.type !== 'define') {
       upOptCalc.reCalc(ix, equippedArt)
       forceUpdate()
     }
-  }, [equippedArt, upOptCalc, ix, forceUpdate])
+  }, [equippedArt, upArt.action.type, upOptCalc, ix, forceUpdate])
 
   const constrained = thresholds.length > 1
 
@@ -243,23 +254,25 @@ function UpgradeOptChartCardGraph({
     </span>
   )
   const { data } = useContext(DataContext)
+  const comparisonSlotKey =
+    upArt.action.type === 'define' ? upArt.slotKey : equippedArt?.slotKey
   const currentlyEquippedArtId =
-    equippedArt?.slotKey && data.get(input.art[equippedArt.slotKey].id).value
+    comparisonSlotKey && data.get(input.art[comparisonSlotKey].id).value
   const isCurrentlyEquipped = currentlyEquippedArtId === upArt.artifactId
-  const reshapeLabel =
-    upArt.action.type === 'reshape'
+  const guaranteedStatsLabel =
+    upArt.action.type === 'reshape' || upArt.action.type === 'define'
       ? upArt.action.affixes
           .map((affix) => formatReshapeLabel(affix))
           .join(' / ')
       : ''
-  const reshapeRolls =
-    upArt.action.type === 'reshape' ? upArt.action.mintotal : undefined
+  const guaranteedRolls =
+    upArt.action.type === 'reshape' ? upArt.action.mintotal : 2
   return (
     <CardThemed bgt="light" sx={{ height: '100%' }}>
       <Box sx={{ display: 'flex', flexDirection: 'row' }}>
         <Box sx={{ height: 50, width: 50 }}>
-          {!!equippedArt?.slotKey && (
-            <EquippedArtifact slotKey={equippedArt.slotKey} />
+          {!!comparisonSlotKey && (
+            <EquippedArtifact slotKey={comparisonSlotKey} />
           )}
         </Box>
         <Box
@@ -286,8 +299,19 @@ function UpgradeOptChartCardGraph({
                 <SqBadge color="secondary">{t('upOptChart.reshape')}</SqBadge>
                 <Typography variant="body2">
                   {t('upOptChart.reshapeStats', {
-                    stats: reshapeLabel,
-                    count: reshapeRolls,
+                    stats: guaranteedStatsLabel,
+                    count: guaranteedRolls,
+                  })}
+                </Typography>
+              </>
+            )}
+            {upArt.action.type === 'define' && (
+              <>
+                <SqBadge color="secondary">{t('upOptChart.define')}</SqBadge>
+                <Typography variant="body2">
+                  {t('upOptChart.defineStats', {
+                    stats: guaranteedStatsLabel,
+                    count: guaranteedRolls,
                   })}
                 </Typography>
               </>

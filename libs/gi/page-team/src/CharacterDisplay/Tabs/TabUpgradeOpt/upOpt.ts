@@ -1,6 +1,7 @@
 import { cartesian, objMap, range } from '@genshin-optimizer/common/util'
 import type {
   ArtifactRarity,
+  ArtifactSetKey,
   ArtifactSlotKey,
 } from '@genshin-optimizer/gi/consts'
 import { allSubstatKeys, artMaxLevel } from '@genshin-optimizer/gi/consts'
@@ -10,6 +11,7 @@ import type { ArtifactBuildData, DynStat } from '@genshin-optimizer/gi/solver'
 import {
   deduplicate,
   dustReshape,
+  elixirDefinition,
   evalMarkovNode,
   expandNode,
   makeObjective,
@@ -99,6 +101,17 @@ export type UpOptAction =
       affixes: [SubstatKey, SubstatKey]
       mintotal: 2 | 3 | 4
     }
+  | {
+      type: 'define'
+      setKey: ArtifactSetKey
+      affixes: [SubstatKey, SubstatKey]
+    }
+export type UpOptDefinition = {
+  setKey: ArtifactSetKey
+  slotKey: ArtifactSlotKey
+  mainStatKey: MainStatKey
+  affixes: [SubstatKey, SubstatKey]
+}
 export type UpOptArtifact = {
   id: string
   artifactId: string
@@ -107,7 +120,8 @@ export type UpOptArtifact = {
   subs: SubstatKey[]
   values: DynStat
   slotKey: ArtifactSlotKey
-  sourceArt: ICachedArtifact
+  sourceArt?: ICachedArtifact
+  displayArt: ICachedArtifact
   action: UpOptAction
 
   result?: UpOptResult
@@ -197,6 +211,45 @@ function canReshapeArtifactWithAffixes(
   return reshapeAffixes.every((key) => substatKeys.includes(key))
 }
 
+function makeDefinitionArtifact(info: UpOptDefinition): ICachedArtifact {
+  const { setKey, slotKey, mainStatKey, affixes } = info
+  const id = `define:${setKey}:${slotKey}:${mainStatKey}:${affixes.join(',')}`
+  const avgInitialRoll = (key: SubstatKey) => getSubstatValue(key, 5) * 0.85
+  const substats = [
+    ...affixes.map((key) => {
+      const value = avgInitialRoll(key)
+      return {
+        key,
+        value,
+        accurateValue: value,
+        efficiency: value / getSubstatValue(key, 5),
+        rolls: [],
+      }
+    }),
+    ...range(0, 1).map(() => ({
+      key: '' as const,
+      value: 0,
+      accurateValue: 0,
+      efficiency: 0,
+      rolls: [],
+    })),
+  ]
+  return {
+    id,
+    setKey,
+    slotKey,
+    mainStatKey,
+    rarity: 5,
+    level: 0,
+    lock: false,
+    location: '',
+    substats,
+    mainStatVal: 0,
+    unactivatedSubstats: undefined,
+    elixirCrafted: true,
+  }
+}
+
 export class UpOptCalculator {
   /**
    * Calculator class to track artifacts and their evaluation status. Method overview:
@@ -234,6 +287,7 @@ export class UpOptCalculator {
     thresholds: number[],
     equippedBuild: Record<ArtifactSlotKey, ICachedArtifact | undefined>,
     artifacts: ICachedArtifact[],
+    definitions: UpOptDefinition[] = [],
     calc4th = true,
     reshapeEnabled = false,
     reshapeMintotal: 2 | 3 | 4 = 2
@@ -281,6 +335,7 @@ export class UpOptCalculator {
     }
 
     artifacts.forEach((art) => this._addArtifact(art))
+    definitions.forEach((definition) => this._addDefinition(definition))
 
     // Do all fast calc
     this.initCalc()
@@ -301,6 +356,9 @@ export class UpOptCalculator {
     }
     this.artifacts.push(this.toUpOptArtifact(art, { type: 'upgrade' }))
   }
+  _addDefinition(definition: UpOptDefinition) {
+    this.artifacts.push(this.toUpOptDefinition(definition))
+  }
   toUpOptArtifact(art: ICachedArtifact, action: UpOptAction): UpOptArtifact {
     const maxLevel = artMaxLevel[art.rarity]
     const mainStatVal = getMainStatValue(art.mainStatKey, art.rarity, maxLevel) // 5* only
@@ -315,6 +373,7 @@ export class UpOptCalculator {
       slotKey: art.slotKey,
       mainStat: art.mainStatKey,
       sourceArt: art,
+      displayArt: art,
       action,
       subs: art.substats
         .map(({ key }) => key)
@@ -341,6 +400,28 @@ export class UpOptCalculator {
       })
     }
     return out
+  }
+  toUpOptDefinition(definition: UpOptDefinition): UpOptArtifact {
+    const displayArt = makeDefinitionArtifact(definition)
+    const mainStatVal = getMainStatValue(definition.mainStatKey, 5, 20)
+    return {
+      id: displayArt.id,
+      artifactId: displayArt.id,
+      rollsLeft: getRollsRemaining(0, 5),
+      slotKey: definition.slotKey,
+      mainStat: definition.mainStatKey,
+      displayArt,
+      action: {
+        type: 'define',
+        setKey: definition.setKey,
+        affixes: definition.affixes,
+      },
+      subs: definition.affixes,
+      values: {
+        [definition.setKey]: 1,
+        [definition.mainStatKey]: mainStatVal,
+      },
+    }
   }
   reCalc(ix: number, art: ICachedArtifact) {
     const prevAction = this.artifacts[ix].action
@@ -484,6 +565,10 @@ export class UpOptCalculator {
       this._calcReshape(ix)
       return
     }
+    if (this.artifacts[ix].action.type === 'define') {
+      this._calcDefinition(ix)
+      return
+    }
     if (this.artifacts[ix].subs.length === 4) calc4th = false
     if (calc4th) this._calcFast4th(ix)
     else this._calcFast(ix)
@@ -498,10 +583,33 @@ export class UpOptCalculator {
     const weighted = deduplicate(
       this.markovObjective,
       dustReshape(
-        this.artifacts[ix].sourceArt,
+        this.artifacts[ix].sourceArt!,
         this.equippedBuild,
         affixes,
         mintotal
+      )
+    )
+    this.artifacts[ix].result = this._toResultMarkov(
+      weighted.map(({ p, n }) => ({
+        prob: p,
+        evaluation: evalMarkovNode(this.markovObjective, n).evaluation,
+      }))
+    )
+  }
+
+  _calcDefinition(ix: number) {
+    const action = this.artifacts[ix].action
+    if (action.type !== 'define') return
+    const weighted = deduplicate(
+      this.markovObjective,
+      elixirDefinition(
+        {
+          setKey: action.setKey,
+          slotKey: this.artifacts[ix].slotKey,
+          mainStatKey: this.artifacts[ix].mainStat,
+          affixes: action.affixes,
+        },
+        this.equippedBuild
       )
     )
     this.artifacts[ix].result = this._toResultMarkov(
@@ -628,7 +736,11 @@ export class UpOptCalculator {
       this.artifacts[ix].result?.evalMode === ResultType.Exact
     )
       return
-    if (this.artifacts[ix].action.type === 'reshape') return
+    if (
+      this.artifacts[ix].action.type === 'reshape' ||
+      this.artifacts[ix].action.type === 'define'
+    )
+      return
     if (this.artifacts[ix].subs.length === 4) calc4th = false
     if (calc4th) this._calcSlow4th(ix)
     else this._calcSlow(ix)
@@ -732,11 +844,17 @@ export class UpOptCalculator {
       return { phi: prob, cp: consOK ? 1 : 0, mu: val[0], sig2: 0 }
     })
 
-    const vals = gmm.map(({ mu }) => mu)
+    const { lower, upper } = gmm.reduce(
+      (bounds, { mu }) => ({
+        lower: Math.min(bounds.lower, mu),
+        upper: Math.max(bounds.upper, mu),
+      }),
+      { lower: Infinity, upper: -Infinity }
+    )
     return {
       p: ptot,
       upAvg: ptot < 1e-6 ? 0 : upAvgtot / ptot,
-      distr: { gmm, lower: Math.min(...vals), upper: Math.max(...vals) },
+      distr: { gmm, lower, upper },
       evalMode: ResultType.Exact,
     }
   }
@@ -749,6 +867,10 @@ export class UpOptCalculator {
     if (this.artifacts[ix].result?.evalMode === ResultType.Exact) return
     if (this.artifacts[ix].action.type === 'reshape') {
       this._calcExactReshape(ix)
+      return
+    }
+    if (this.artifacts[ix].action.type === 'define') {
+      this._calcExactDefinition(ix)
       return
     }
     if (this.artifacts[ix].subs.length === 4) calc4th = false
@@ -765,10 +887,45 @@ export class UpOptCalculator {
     let weighted = deduplicate(
       this.markovObjective,
       dustReshape(
-        this.artifacts[ix].sourceArt,
+        this.artifacts[ix].sourceArt!,
         this.equippedBuild,
         affixes,
         mintotal
+      )
+    )
+    while (weighted.some(({ n }) => n.type !== 'values')) {
+      weighted = deduplicate(
+        this.markovObjective,
+        weighted.flatMap(({ p, n }) =>
+          expandNode(n).map(({ p: p2, n: expanded }) => ({
+            p: p * p2,
+            n: expanded,
+          }))
+        )
+      )
+    }
+
+    this.artifacts[ix].result = this._toResultExact(
+      weighted.map(({ p, n }) => ({
+        prob: p,
+        val: evalMarkovNode(this.markovObjective, n).evaluation.f_mu,
+      }))
+    )
+  }
+
+  _calcExactDefinition(ix: number) {
+    const action = this.artifacts[ix].action
+    if (action.type !== 'define') return
+    let weighted = deduplicate(
+      this.markovObjective,
+      elixirDefinition(
+        {
+          setKey: action.setKey,
+          slotKey: this.artifacts[ix].slotKey,
+          mainStatKey: this.artifacts[ix].mainStat,
+          affixes: action.affixes,
+        },
+        this.equippedBuild
       )
     )
     while (weighted.some(({ n }) => n.type !== 'values')) {

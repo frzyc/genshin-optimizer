@@ -15,7 +15,7 @@ import { evalMarkovNode, evaluateGaussian } from './markov-tree/evaluation'
 import { makeObjective } from './markov-tree/makeObjective'
 import type { GaussianNode, Objective } from './markov-tree/markov.types'
 import { crawlSubstats } from './substatProbs'
-import { dustReshape, expandNode } from './upOpt'
+import { dustReshape, elixirDefinition, expandNode } from './upOpt'
 import type { MarkovNode, SubstatLevelNode } from './upOpt.types'
 
 /**
@@ -604,5 +604,41 @@ describe('upOpt makeSubstatNode(s)', () => {
     )
     expect(reshaped.n.base['def_']).toBeCloseTo(5.8 / 100)
   })
-  test('define/elixir', () => {})
+  test('define/elixir', () => {
+    const affixes = Object.freeze(['atk_', 'critRate_'] as SubstatKey[])
+    const defined = elixirDefinition(
+      {
+        setKey: 'GladiatorsFinale',
+        slotKey: 'flower',
+        mainStatKey: 'hp',
+        affixes,
+      },
+      {
+        flower: undefined,
+        plume: undefined,
+        sands: undefined,
+        goblet: undefined,
+        circlet: undefined,
+      }
+    )
+    expect(defined.reduce((sum, { p }) => sum + p, 0)).toBeCloseTo(1)
+    expect(
+      defined
+        .filter(({ n }) => n.rollsLeft === 5)
+        .reduce((sum, { p }) => sum + p, 0)
+    ).toBeCloseTo(0.34)
+    expect(
+      defined
+        .filter(({ n }) => n.rollsLeft === 4)
+        .reduce((sum, { p }) => sum + p, 0)
+    ).toBeCloseTo(0.66)
+    expect(
+      defined.every(
+        ({ n }) =>
+          n.reshape?.mintotal === 2 &&
+          n.reshape.affixes.includes('atk_') &&
+          n.reshape.affixes.includes('critRate_')
+      )
+    ).toBe(true)
+  })
 })

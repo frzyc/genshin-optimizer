@@ -36,6 +36,11 @@
     "rolls": "Number of rolls into the guaranteed substats:",
     "rollOption": "{{count}} rolls"
   },
+  "upOptDefine": {
+    "label": "Define",
+    "tooltip": "Evaluate Sanctifying Elixir artifact definitions using the currently allowed artifact sets and main stats.",
+    "substats": "Guaranteed substat pool:"
+  },
   "upOptChart": {
     "est": " (est.)",
     "prob": "Prob. upgrade{{est}}: ",
@@ -44,6 +49,8 @@
     "current": "Current on Build",
     "reshape": "Reshape",
     "reshapeStats": "Guaranteed: {{count}} rolls into {{stats}}",
+    "define": "Define",
+    "defineStats": "Guaranteed: {{count}} rolls into {{stats}}",
     "incLabel": "Relative Increase to Target",
     "probLabel": "Probability",
     "const": " Constrained",
