@@ -38,7 +38,7 @@
   },
   "upOptDefine": {
     "label": "Define",
-    "tooltip": "Evaluate Sanctifying Elixir artifact definitions using the currently allowed artifact sets and main stats.",
+    "tooltip": "Evaluate Sanctifying Elixir artifact definitions using the currently allowed artifact sets, main stats, and selected guaranteed substats.",
     "substats": "Guaranteed substat pool:"
   },
   "upOptChart": {

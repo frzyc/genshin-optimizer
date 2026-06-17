@@ -1,4 +1,3 @@
-import { AdResponsive } from '@genshin-optimizer/common/ad'
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
 import {
@@ -44,7 +43,6 @@ import {
   ArtifactSetMultiAutocomplete,
   ArtifactSlotToggle,
   DataContext,
-  GOAdWrapper,
   HitModeToggle,
   NoArtWarning,
   ReactionToggle,
@@ -605,6 +603,22 @@ export default function TabUpopt() {
                       filteredArtIdMap={filteredArtIdMap}
                     />
                   </CardThemed>
+                </Grid>
+                {/* 3 */}
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  lg={5}
+                  display="flex"
+                  flexDirection="column"
+                  gap={1}
+                >
+                  <ArtifactSetConfig disabled={false} />
+                  <AddArtifactButton
+                    onClick={() => setArtifactIdToEdit('new')}
+                  />
+                  <StatFilterCard disabled={false} />
                   <CardThemed bgt="light">
                     <CardContent>
                       <Stack spacing={1}>
@@ -724,27 +738,6 @@ export default function TabUpopt() {
                       </Stack>
                     </CardContent>
                   </CardThemed>
-                </Grid>
-                {/* 3 */}
-                <Grid
-                  item
-                  xs={12}
-                  sm={6}
-                  lg={5}
-                  display="flex"
-                  flexDirection="column"
-                  gap={1}
-                >
-                  <ArtifactSetConfig disabled={false} />
-                  <AddArtifactButton
-                    onClick={() => setArtifactIdToEdit('new')}
-                  />
-                  <StatFilterCard disabled={false} />
-                  <AdResponsive
-                    bgt="light"
-                    dataAdSlot="3955015620"
-                    Ad={GOAdWrapper}
-                  />
                 </Grid>
               </Grid>
             </Box>
