@@ -22,7 +22,6 @@ import {
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
 import type { ArtSetExclusionKey } from '@genshin-optimizer/gi/db'
-import { type ICachedArtifact } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
   useDBMeta,
@@ -366,18 +365,15 @@ export default function TabUpopt() {
         case 5:
           return !artSetExclusion['rainbow'].includes(4)
         default:
-          throw Error('error in respectSex: nRainbow > 5')
+          throw Error('error in respectSetExclusion: nRainbow > 5')
       }
-    }
-    function respectSexExclusion(art: ICachedArtifact) {
-      return respectSetExclusion(art.setKey, art.slotKey)
     }
     const artifactsToConsider = filteredArts
       // retrieve the artifacts again, just incase there is an update that is not captured by UpgradeOptChartCard
       .map((art) => database.arts.get(art.id))
       .filter(notEmpty)
       .filter((art) => art.rarity === 5)
-      .filter(respectSexExclusion)
+      .filter((art) => respectSetExclusion(art.setKey, art.slotKey))
       .filter(
         (art) =>
           !mainStatKeys[art.slotKey]?.length ||

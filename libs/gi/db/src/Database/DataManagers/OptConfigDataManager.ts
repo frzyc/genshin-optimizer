@@ -119,10 +119,7 @@ const optConfigSchema = z.object({
   upOptReshape: zodBoolean(),
   upOptReshapeRolls: zodClampedNumber(2, 4, 2),
   upOptDefine: zodBoolean(),
-  upOptDefineSubstats: zodFilteredArray(allSubstatKeys, [
-    'critRate_',
-    'critDMG_',
-  ]),
+  upOptDefineSubstats: zodFilteredArray(allSubstatKeys, []),
 })
 export type OptConfig = z.infer<typeof optConfigSchema>
 
