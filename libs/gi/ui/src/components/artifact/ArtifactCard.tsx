@@ -80,6 +80,7 @@ type Data = {
   excluded?: boolean
   hideSubstatValues?: boolean
   hideLocation?: boolean
+  buildsBadgeLabel?: ReactNode
 }
 const allSubstatFilter = new Set(allSubstatKeys)
 
@@ -102,6 +103,7 @@ export function ArtifactCardObj({
   excluded = false,
   hideSubstatValues = false,
   hideLocation = false,
+  buildsBadgeLabel,
 }: {
   artifact: ICachedArtifact
 } & Data) {
@@ -364,28 +366,30 @@ export function ArtifactCardObj({
                   />
                 )
             )}
-            <Typography
-              variant="caption"
-              sx={{ display: 'flex', gap: 1, alignItems: 'center' }}
-            >
-              <ColorText color="secondary" sx={{ flexGrow: 1 }}>
-                {t('artifact:editor.curSubEff')}
-              </ColorText>
-              <PercentBadge
-                value={currentEfficiency}
-                max={9}
-                valid={artifactValid}
-              />
-              {currentEfficiency !== currentEfficiency_ && <span>/</span>}
-              {currentEfficiency !== currentEfficiency_ && (
+            {!hideSubstatValues && (
+              <Typography
+                variant="caption"
+                sx={{ display: 'flex', gap: 1, alignItems: 'center' }}
+              >
+                <ColorText color="secondary" sx={{ flexGrow: 1 }}>
+                  {t('artifact:editor.curSubEff')}
+                </ColorText>
                 <PercentBadge
-                  value={currentEfficiency_}
+                  value={currentEfficiency}
                   max={9}
                   valid={artifactValid}
                 />
-              )}
-            </Typography>
-            {currentEfficiency !== maxEfficiency && (
+                {currentEfficiency !== currentEfficiency_ && <span>/</span>}
+                {currentEfficiency !== currentEfficiency_ && (
+                  <PercentBadge
+                    value={currentEfficiency_}
+                    max={9}
+                    valid={artifactValid}
+                  />
+                )}
+              </Typography>
+            )}
+            {!hideSubstatValues && currentEfficiency !== maxEfficiency && (
               <Typography variant="caption" sx={{ display: 'flex', gap: 1 }}>
                 <ColorText color="secondary" sx={{ flexGrow: 1 }}>
                   {t('artifact:editor.maxSubEff')}
@@ -430,7 +434,9 @@ export function ArtifactCardObj({
                 color={builds.length ? 'success' : 'secondary'}
                 onClick={builds.length ? onShowUsage : undefined}
               >
-                {t('builds', { count: builds.length })}
+                {!builds.length && buildsBadgeLabel
+                  ? buildsBadgeLabel
+                  : t('builds', { count: builds.length })}
               </SqBadge>
             </Typography>
           </CardContent>

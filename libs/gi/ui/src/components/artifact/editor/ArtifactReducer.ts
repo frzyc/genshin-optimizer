@@ -93,6 +93,7 @@ export function artifactReducer(
         const newUnactivatedSubstat =
           substat.key &&
           substat.initialValue === undefined &&
+          state.unactivatedSubstats.length > 0 &&
           state.unactivatedSubstats[0].key === substat.key &&
           state.unactivatedSubstats[0].initialValue !== undefined
             ? {

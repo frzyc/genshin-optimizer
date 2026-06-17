@@ -927,7 +927,7 @@ export class UpOptCalculator {
         upAvgtot += prob * (val[0] - this.thresholds[0])
         return { phi: prob, cp: 1, mu: val[0], sig2: 0 }
       }
-      const consOK = val.slice(1).every((vi, i) => vi >= this.thresholds[i])
+      const consOK = val.slice(1).every((vi, i) => vi >= this.thresholds[i + 1])
       return { phi: prob, cp: consOK ? 1 : 0, mu: val[0], sig2: 0 }
     })
 

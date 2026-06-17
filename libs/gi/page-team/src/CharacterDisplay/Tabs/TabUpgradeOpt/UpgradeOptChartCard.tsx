@@ -96,6 +96,7 @@ function artifactCalcSignature(art: ICachedArtifact | undefined) {
 }
 
 export default function UpgradeOptChartCard(props: Props) {
+  const { t } = useTranslation('page_character_optimize')
   const database = useDatabase()
   const { data } = useContext(DataContext)
   const upOptArt = props.upOptCalc.artifacts[props.ix]
@@ -117,6 +118,7 @@ export default function UpgradeOptChartCard(props: Props) {
               artifact={upOptArt.displayArt}
               hideLocation
               hideSubstatValues
+              buildsBadgeLabel={t('upOptChart.define')}
             />
           ) : (
             <ArtifactCard

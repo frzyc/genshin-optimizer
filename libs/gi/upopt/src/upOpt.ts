@@ -54,7 +54,7 @@ export function levelUpArtifact(
   if (art.unactivatedSubstats) {
     art.unactivatedSubstats.forEach(({ key, value }) => {
       if (key === '') return
-      info.base[key] = (info.base[key] ?? 0) + value
+      info.base[key] = (info.base[key] ?? 0) + toInternalStatValue(key, value)
       info.subkeys.push({ key, baseRolls: 0 })
       info.rollsLeft -= 1
     })
