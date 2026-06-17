@@ -6,7 +6,7 @@ export const conditionals = {
     type: 'num',
     int_only: true,
     min: 0,
-    max: 20,
+    max: 30,
   },
   frostbite: { sheet: 'anomaly', name: 'frostbite', type: 'bool' },
 } as const

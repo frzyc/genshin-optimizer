@@ -1,0 +1,17 @@
+{
+  "name": "Boisterous Echoes",
+  "desc": {
+    "0": "A specially made toy that has recently become wildly popular at Aurelia Academy. Strike it, and it rings out with a sharp clang; flick it, and it answers with a lively thunk-thud. A closer look at the little drum reveals rough scratches, strange doodles, and even... wait, are those bite marks?! \"Thunk! Thud! Thunk! Thud! All units, move out——!!!\"",
+    "1": "—A familiar shout often echoing through the academy hallways between classes."
+  },
+  "desc2": "Equip to increase Anomaly Agents' combat capabilities",
+  "desc3": "Pick it up and play another thunk-thud concerto!",
+  "phase": "Resounding Drum",
+  "phaseDescs": [
+    "When the equipper triggers the <ct color=#FFFFFF>Vortex</ct> effect, they gain <ct color=#2BAD00>2</ct> Energy. This effect can trigger once every 10s. When attacking enemies afflicted with an Attribute Anomaly, the equipper deals <ct color=#2BAD00>11.5%</ct> increased DMG.",
+    "When the equipper triggers the <ct color=#FFFFFF>Vortex</ct> effect, they gain <ct color=#2BAD00>2.3</ct> Energy. This effect can trigger once every 10s. When attacking enemies afflicted with an Attribute Anomaly, the equipper deals <ct color=#2BAD00>13.2%</ct> increased DMG.",
+    "When the equipper triggers the <ct color=#FFFFFF>Vortex</ct> effect, they gain <ct color=#2BAD00>2.6</ct> Energy. This effect can trigger once every 10s. When attacking enemies afflicted with an Attribute Anomaly, the equipper deals <ct color=#2BAD00>15%</ct> increased DMG.",
+    "When the equipper triggers the <ct color=#FFFFFF>Vortex</ct> effect, they gain <ct color=#2BAD00>2.9</ct> Energy. This effect can trigger once every 10s. When attacking enemies afflicted with an Attribute Anomaly, the equipper deals <ct color=#2BAD00>16.7%</ct> increased DMG.",
+    "When the equipper triggers the <ct color=#FFFFFF>Vortex</ct> effect, they gain <ct color=#2BAD00>3.2</ct> Energy. This effect can trigger once every 10s. When attacking enemies afflicted with an Attribute Anomaly, the equipper deals <ct color=#2BAD00>18.4%</ct> increased DMG."
+  ]
+}

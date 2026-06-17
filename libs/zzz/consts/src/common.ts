@@ -79,6 +79,7 @@ export const allAttributeKeys = [
   'ice',
   'physical',
   'ether',
+  'wind',
 ] as const
 export type AttributeKey = (typeof allAttributeKeys)[number]
 
@@ -88,6 +89,7 @@ export const allAttributeDamageKeys = [
   'ice_dmg_',
   'physical_dmg_',
   'ether_dmg_',
+  'wind_dmg_',
 ] as const
 export type AttributeDamageKey = (typeof allAttributeDamageKeys)[number]
 
@@ -199,6 +201,7 @@ export const elementalData: Record<AttributeKey, string> = {
   ice: 'Ice',
   physical: 'Physical',
   ether: 'Ether',
+  wind: 'Wind',
 } as const
 
 Object.entries(elementalData).forEach(([e, name]) => {

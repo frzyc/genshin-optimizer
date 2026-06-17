@@ -10,7 +10,7 @@ import {
 } from '../util'
 
 const { frostbite } = allBoolConditionals('anomaly')
-export const { anomTimePassed } = allNumConditionals('anomaly', true, 0, 20)
+export const { anomTimePassed } = allNumConditionals('anomaly', true, 0, 30)
 
 export default register(
   'anomaly',

@@ -277,6 +277,10 @@ function inferDamageType(key: CharacterKey, abilityName: string): DamageType {
     if (key === 'Yanagi' && abilityName === 'StanceKagen') return 'basic'
     if (key === 'Yidhari' && abilityName === 'FrostsCrushingWeight')
       return 'basic'
+    if (key === 'Velina' && abilityName === 'SweepingCyclone')
+      return 'exSpecial'
+    if (key === 'Velina' && abilityName === 'CondensedCyclone')
+      return 'exSpecial'
     throw new Error(
       `Failed to infer damage type for key:${key} abilityName:${abilityName}. Please add an overide in zzz/formula/src/data/char/util.ts::inferDamageType`
     )
@@ -345,6 +349,7 @@ const anomalyMultipliers: Record<AttributeKey, number> = {
   ether: 0.625,
   ice: 5,
   physical: 7.13,
+  wind: 12.5,
 }
 const disorderTimeMultipliers: Record<AttributeKey | 'frost', number> = {
   fire: 1, // 2 * 0.5
@@ -353,6 +358,16 @@ const disorderTimeMultipliers: Record<AttributeKey | 'frost', number> = {
   ice: 0.075,
   physical: 0.075,
   frost: 0.75,
+  wind: 0, // Only for Polarity Disorder
+}
+const vortexMultipliers: Record<AttributeKey | 'frost', number> = {
+  fire: 9,
+  electric: 6.5,
+  ether: 6.5,
+  ice: 13,
+  physical: 8,
+  frost: 0,
+  wind: 0,
 }
 
 /**
@@ -446,6 +461,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
         cmpEq(own.dmg.anom_mv_mult_, 0, percent(1), own.dmg.anom_mv_mult_)
       )
     ),
+    // Disorder DMG
     ...customAnomalyDmg(
       `disorderDmgInst_${isMiyabi ? 'frost' : data_gen.attribute}`,
       {
@@ -472,6 +488,29 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
         own.final.atk
       )
     ),
+    // Vortex DMG
+    // ...(data_gen.attribute !== 'wind'
+    //   ? customAnomalyDmg(
+    //       `vortexDmgInst_${isMiyabi ? 'frost' : data_gen.attribute}`,
+    //       { attribute: data_gen.attribute, damageType1: 'vortex' },
+    //       prod(
+    //         sum(
+    //           percent(
+    //             vortexMultipliers[isMiyabi ? 'frost' : data_gen.attribute]
+    //           ),
+    //           prod(
+    //             percent(
+    //               disorderTimeMultipliers[
+    //                 isMiyabi ? 'frost' : data_gen.attribute
+    //               ]
+    //             ),
+    //             max(0, sum(constant(30), prod(constant(-1), anomTimePassed)))
+    //           )
+    //         ),
+    //         own.final.atk
+    //       )
+    //     )
+    //   : []),
     // Abloom DMG
     ...customAnomalyDmg(
       'abloomDmgInst',

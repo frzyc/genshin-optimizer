@@ -81,6 +81,7 @@ export const damageTypes = [
   'elemental',
   'sheer',
   'abloom',
+  'vortex',
 ] as const
 
 export const skillTypes = [
