@@ -64,6 +64,7 @@ import {
   ButtonGroup,
   CardContent,
   Checkbox,
+  CircularProgress,
   FormControlLabel,
   Grid,
   Pagination,
@@ -75,6 +76,7 @@ import type { ButtonProps } from '@mui/material/Button'
 import Button from '@mui/material/Button'
 import { Stack } from '@mui/system'
 import {
+  type ChangeEvent,
   Suspense,
   useCallback,
   useContext,
@@ -470,10 +472,13 @@ export default function TabUpopt() {
 
   // Paging logic
   const [pageIdex, setpageIdex] = useState(0)
+  const [isPageCalcPending, setIsPageCalcPending] = useState(false)
+  const [, forcePageUpdate] = useForceUpdate()
 
   useEffect(() => {
     // reset paging on new upOptCalc
     setpageIdex(0)
+    setIsPageCalcPending(false)
   }, [upOptCalc])
 
   const artifactsToDisplayPerPage = 5
@@ -520,14 +525,31 @@ export default function TabUpopt() {
       }
     }, [pageIdex, upOptCalc])
   const setPage = useCallback(
-    (e, value) => {
+    (_e: ChangeEvent<unknown>, value: number) => {
       if (!upOptCalc) return
-      const end = value * artifactsToDisplayPerPage
-      upOptCalc.calcSlowToIndex(end)
+      setIsPageCalcPending(true)
       setpageIdex(value - 1)
     },
     [upOptCalc]
   )
+
+  useEffect(() => {
+    if (!upOptCalc || !isPageCalcPending) return undefined
+    let cancelled = false
+    const timeout = setTimeout(() => {
+      if (cancelled) return
+      const end = (currentPageIndex + 1) * artifactsToDisplayPerPage
+      upOptCalc.calcSlowToIndex(end)
+      if (cancelled) return
+      setIsPageCalcPending(false)
+      forcePageUpdate()
+    }, 0)
+
+    return () => {
+      cancelled = true
+      clearTimeout(timeout)
+    }
+  }, [currentPageIndex, forcePageUpdate, isPageCalcPending, upOptCalc])
 
   const dataContext: dataContextObj | undefined = useMemo(() => {
     return data && teamData && { data, teamData }
@@ -545,10 +567,13 @@ export default function TabUpopt() {
             />
           </Grid>
           <Grid item>
-            <ShowingArt
-              numShowing={indexes.length}
-              total={upOptCalc?.artifacts.length ?? 0}
-            />
+            <Box display="flex" alignItems="center" gap={1}>
+              {isPageCalcPending && <CircularProgress size={18} />}
+              <ShowingArt
+                numShowing={indexes.length}
+                total={upOptCalc?.artifacts.length ?? 0}
+              />
+            </Box>
           </Grid>
         </Grid>
       </CardContent>

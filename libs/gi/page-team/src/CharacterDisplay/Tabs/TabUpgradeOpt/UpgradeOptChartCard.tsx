@@ -8,6 +8,7 @@ import {
   type ArtifactSlotKey,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
+import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
   useArtifact,
@@ -22,8 +23,16 @@ import {
 } from '@genshin-optimizer/gi/ui'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
-import { Box, Button, Divider, Grid, Tooltip, Typography } from '@mui/material'
-import { useCallback, useContext, useEffect, useMemo } from 'react'
+import {
+  Box,
+  Button,
+  CircularProgress,
+  Divider,
+  Grid,
+  Tooltip,
+  Typography,
+} from '@mui/material'
+import { useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
   Area,
@@ -55,6 +64,36 @@ type ChartData = {
 }
 
 const nbins = 50
+
+function artifactCalcSignature(art: ICachedArtifact | undefined) {
+  if (!art) return ''
+  return JSON.stringify({
+    id: art.id,
+    setKey: art.setKey,
+    slotKey: art.slotKey,
+    rarity: art.rarity,
+    level: art.level,
+    mainStatKey: art.mainStatKey,
+    mainStatVal: art.mainStatVal,
+    totalRolls: art.totalRolls,
+    substats: art.substats.map(
+      ({ key, value, accurateValue, initialValue }) => ({
+        key,
+        value,
+        accurateValue,
+        initialValue,
+      })
+    ),
+    unactivatedSubstats: art.unactivatedSubstats?.map(
+      ({ key, value, accurateValue, initialValue }) => ({
+        key,
+        value,
+        accurateValue,
+        initialValue,
+      })
+    ),
+  })
+}
 
 export default function UpgradeOptChartCard(props: Props) {
   const database = useDatabase()
@@ -175,18 +214,39 @@ function UpgradeOptChartCardGraph({
   const upArt = upOptCalc.artifacts[ix]
   const [, forceUpdate] = useForceUpdate()
   const equippedArt = useArtifact(upArt.artifactId)
+  const equippedArtCalcSignature = useMemo(
+    () => artifactCalcSignature(equippedArt),
+    [equippedArt]
+  )
+  const upArtCalcSignature = useMemo(
+    () => artifactCalcSignature(upArt.sourceArt),
+    [upArt.sourceArt]
+  )
 
   useEffect(() => {
-    if (equippedArt && upArt.action.type !== 'define') {
+    if (
+      equippedArt &&
+      upArt.action.type !== 'define' &&
+      equippedArtCalcSignature !== upArtCalcSignature
+    ) {
       upOptCalc.reCalc(ix, equippedArt)
       forceUpdate()
     }
-  }, [equippedArt, upArt.action.type, upOptCalc, ix, forceUpdate])
+  }, [
+    equippedArt,
+    equippedArtCalcSignature,
+    upArt.action.type,
+    upArtCalcSignature,
+    upOptCalc,
+    ix,
+    forceUpdate,
+  ])
 
   const constrained = thresholds.length > 1
   const thr0 = thresholds[0]
   const perc = useCallback((x: number) => (100 * (x - thr0)) / thr0, [thr0])
   const result = upArt.result!
+  const [isExactPending, setIsExactPending] = useState(false)
   const { dataHist, ymax, xpercent } = useMemo(() => {
     const step = (objMax - objMin) / nbins
     if (result.evalMode === ResultType.Exact) {
@@ -281,12 +341,18 @@ function UpgradeOptChartCardGraph({
   const isExact = result.evalMode === ResultType.Exact
 
   useEffect(() => {
+    setIsExactPending(false)
     if (isExact) return undefined
     if (upArt.action.type === 'define') {
       let cancelled = false
+      setIsExactPending(true)
       upOptCalc
         .calcExactDefinitionAsync(ix, () => cancelled)
-        .then((updated) => updated && !cancelled && forceUpdate())
+        .then((updated) => {
+          if (cancelled) return
+          setIsExactPending(false)
+          if (updated) forceUpdate()
+        })
       return () => {
         cancelled = true
       }
@@ -365,6 +431,7 @@ function UpgradeOptChartCardGraph({
             )}
             {upArt.action.type === 'define' && (
               <>
+                {isExactPending && <CircularProgress size={18} />}
                 <SqBadge color="secondary">{t('upOptChart.define')}</SqBadge>
                 <Typography variant="body2">
                   {t('upOptChart.defineStats', {

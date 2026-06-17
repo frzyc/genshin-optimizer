@@ -153,8 +153,40 @@ type GaussianNode = {
 type WeightedGaussianNode = { p: number; n: { subDistr: GaussianNode } }
 type WeightedMarkovNode = { p: number; n: Parameters<typeof expandNode>[0] }
 
+function statKey(stats: DynStat) {
+  return Object.keys(stats)
+    .sort()
+    .map((key) => `${key}:${stats[key]}`)
+    .join('|')
+}
+
+function deduplicateValueNodes(nodes: WeightedMarkovNode[]) {
+  const merged = new Map<string, WeightedMarkovNode>()
+  nodes.forEach((node) => {
+    const key = statKey(node.n.subDistr.base)
+    const existing = merged.get(key)
+    if (existing) existing.p += node.p
+    else merged.set(key, node)
+  })
+  return [...merged.values()]
+}
+
+function deduplicateExactDefinitionNodes(
+  obj: ReturnType<typeof makeObjective>,
+  nodes: WeightedMarkovNode[]
+) {
+  return nodes.every(({ n }) => n.type === 'values')
+    ? deduplicateValueNodes(nodes)
+    : (deduplicate(obj, nodes) as WeightedMarkovNode[])
+}
+
 function yieldToUi() {
   return new Promise<void>((resolve) => setTimeout(resolve, 0))
+}
+
+const uiYieldBudgetMs = 12
+function shouldYieldToUi(lastYield: number) {
+  return Date.now() - lastYield >= uiYieldBudgetMs
 }
 
 // TODO: put this into a `constants` files somewhere.
@@ -305,6 +337,7 @@ export class UpOptCalculator {
   reshapeEnabled: boolean
   reshapeMintotal: 2 | 3 | 4
   markovObjective: ReturnType<typeof makeObjective>
+  evalMarkovValues: (stats: DynStat) => number[]
 
   skippableDerivatives: boolean[]
   eval: (
@@ -356,6 +389,16 @@ export class UpOptCalculator {
       Object.values(this.baseBuild) as ArtifactBuildData[] & { length: 5 }
     )[0] // dmg threshold is current objective value
     this.markovObjective = makeObjective(nodes, thresholds)
+    const markovValueFn = precompute(
+      optimize(nodes, {}, ({ path: [p] }) => p !== 'dyn'),
+      {},
+      (f) => f.path[1],
+      1
+    )
+    this.evalMarkovValues = (stats: DynStat) =>
+      markovValueFn([{ id: '', values: stats }] as ArtifactBuildData[] & {
+        length: 1
+      })
 
     this.skippableDerivatives = allSubstatKeys.map((sub) =>
       nodes.every((n) => zero_deriv(n, (f) => f.path[1], sub))
@@ -938,7 +981,7 @@ export class UpOptCalculator {
       )
     )
     while (weighted.some(({ n }) => n.type !== 'values')) {
-      weighted = deduplicate(
+      weighted = deduplicateExactDefinitionNodes(
         this.markovObjective,
         weighted.flatMap(({ p, n }) =>
           expandNode(n).map(({ p: p2, n: expanded }) => ({
@@ -952,7 +995,7 @@ export class UpOptCalculator {
     this.artifacts[ix].result = this._toResultExact(
       weighted.map(({ p, n }) => ({
         prob: p,
-        val: evalMarkovNode(this.markovObjective, n).evaluation.f_mu,
+        val: this.evalMarkovValues(n.subDistr.base),
       }))
     )
   }
@@ -973,7 +1016,7 @@ export class UpOptCalculator {
       )
     )
     while (weighted.some(({ n }) => n.type !== 'values')) {
-      weighted = deduplicate(
+      weighted = deduplicateExactDefinitionNodes(
         this.markovObjective,
         weighted.flatMap(({ p, n }) =>
           expandNode(n).map(({ p: p2, n: expanded }) => ({
@@ -987,7 +1030,7 @@ export class UpOptCalculator {
     this.artifacts[ix].result = this._toResultExact(
       weighted.map(({ p, n }) => ({
         prob: p,
-        val: evalMarkovNode(this.markovObjective, n).evaluation.f_mu,
+        val: this.evalMarkovValues(n.subDistr.base),
       }))
     )
   }
@@ -1002,6 +1045,7 @@ export class UpOptCalculator {
 
     await yieldToUi()
     if (shouldCancel()) return false
+    let lastYield = Date.now()
 
     let weighted = deduplicate(
       this.markovObjective,
@@ -1024,17 +1068,18 @@ export class UpOptCalculator {
         expandNode(n).forEach(({ p: p2, n: expandedNode }) =>
           expanded.push({ p: p * p2, n: expandedNode })
         )
-        if (i % 50 === 49) {
+        if (shouldYieldToUi(lastYield)) {
           if (shouldCancel()) return false
           await yieldToUi()
+          lastYield = Date.now()
         }
       }
       if (shouldCancel()) return false
-      weighted = deduplicate(
-        this.markovObjective,
-        expanded
-      ) as WeightedMarkovNode[]
-      await yieldToUi()
+      weighted = deduplicateExactDefinitionNodes(this.markovObjective, expanded)
+      if (shouldYieldToUi(lastYield)) {
+        await yieldToUi()
+        lastYield = Date.now()
+      }
     }
 
     const result = await this._toResultExactWeightedAsync(
@@ -1055,25 +1100,40 @@ export class UpOptCalculator {
     let lower = Infinity
     let upper = -Infinity
     const gmm: GaussianMixture['gmm'] = []
+    let lastYield = Date.now()
 
     for (let i = 0; i < weighted.length; i++) {
       if (shouldCancel()) return undefined
       const { p: prob, n } = weighted[i]
-      const val = evalMarkovNode(this.markovObjective, n).evaluation.f_mu
+      const val = this.evalMarkovValues(n.subDistr.base)
       const mu = val[0]
       lower = Math.min(lower, mu)
       upper = Math.max(upper, mu)
-      if (val.every((vi, j) => vi >= this.thresholds[j])) {
+      let pass = true
+      for (let j = 0; j < this.thresholds.length; j++) {
+        if (val[j] < this.thresholds[j]) {
+          pass = false
+          break
+        }
+      }
+      if (pass) {
         ptot += prob
         upAvgtot += prob * (mu - this.thresholds[0])
         gmm.push({ phi: prob, cp: 1, mu, sig2: 0 })
       } else {
-        const consOK = val
-          .slice(1)
-          .every((vi, j) => vi >= this.thresholds[j + 1])
+        let consOK = true
+        for (let j = 1; j < this.thresholds.length; j++) {
+          if (val[j] < this.thresholds[j]) {
+            consOK = false
+            break
+          }
+        }
         gmm.push({ phi: prob, cp: consOK ? 1 : 0, mu, sig2: 0 })
       }
-      if (i % 250 === 249) await yieldToUi()
+      if (shouldYieldToUi(lastYield)) {
+        await yieldToUi()
+        lastYield = Date.now()
+      }
     }
 
     return {
