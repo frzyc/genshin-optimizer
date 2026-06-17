@@ -368,6 +368,29 @@ export default function TabUpopt() {
           throw Error('error in respectSetExclusion: nRainbow > 5')
       }
     }
+    const definitionSetKeysBySlot = objKeyMap(
+      allArtifactSlotKeys,
+      (slotKey) => {
+        const otherSetCounts: Partial<Record<ArtifactSetKey, number>> = {}
+        allArtifactSlotKeys.forEach((otherSlotKey) => {
+          if (otherSlotKey === slotKey) return
+          const setKey = curEquipSetKeys[otherSlotKey]
+          if (!setKey) return
+          otherSetCounts[setKey] = (otherSetCounts[setKey] ?? 0) + 1
+        })
+        const allowedSetKeys = setKeysByRarities[5]
+          .filter((setKey) => !artSetKeys.length || artSetKeys.includes(setKey))
+          .filter((setKey) => {
+            const exclusions = artSetExclusion[setKey as ArtSetExclusionKey]
+            return !(exclusions?.includes(2) && exclusions?.includes(4))
+          })
+          .filter((setKey) => respectSetExclusion(setKey, slotKey))
+        const relevantSetKeys = allowedSetKeys.filter(
+          (setKey) => !!otherSetCounts[setKey]
+        )
+        return relevantSetKeys
+      }
+    )
     const artifactsToConsider = filteredArts
       // retrieve the artifacts again, just incase there is an update that is not captured by UpgradeOptChartCard
       .map((art) => database.arts.get(art.id))
@@ -384,34 +407,28 @@ export default function TabUpopt() {
           (upOptReshape && canReshapeArtifact(art)) ||
           (upOptLevelLow <= art.level && art.level <= upOptLevelHigh)
       )
+    const definitionSlotKeys = slotKeys.length ? slotKeys : allArtifactSlotKeys
     const definitionInfos: UpOptDefinition[] =
       upOptDefine && upOptDefineSubstats.length >= 2
-        ? setKeysByRarities[5]
-            .filter((setKey) => !setKey.startsWith('Prayers'))
-            .filter((setKey) => {
-              const exclusions = artSetExclusion[setKey as ArtSetExclusionKey]
-              return !(exclusions?.includes(2) && exclusions?.includes(4))
-            })
-            .flatMap((setKey) =>
-              allArtifactSlotKeys.flatMap((slotKey) =>
-                (mainStatKeys[slotKey]?.length
-                  ? mainStatKeys[slotKey]
-                  : artSlotMainKeys[slotKey]
-                ).flatMap((mainStatKey) => {
-                  if (!respectSetExclusion(setKey, slotKey)) return []
-                  return substatPairs(
-                    upOptDefineSubstats.filter(
-                      (key) => key !== (mainStatKey as string)
-                    ) as SubstatKey[]
-                  ).map((affixes) => ({
-                    setKey,
-                    slotKey,
-                    mainStatKey,
-                    affixes,
-                  }))
-                })
-              )
+        ? definitionSlotKeys.flatMap((slotKey) =>
+            definitionSetKeysBySlot[slotKey].flatMap((setKey) =>
+              (mainStatKeys[slotKey]?.length
+                ? mainStatKeys[slotKey]
+                : artSlotMainKeys[slotKey]
+              ).flatMap((mainStatKey) => {
+                return substatPairs(
+                  upOptDefineSubstats.filter(
+                    (key) => key !== (mainStatKey as string)
+                  ) as SubstatKey[]
+                ).map((affixes) => ({
+                  setKey,
+                  slotKey,
+                  mainStatKey,
+                  affixes,
+                }))
+              })
             )
+          )
         : []
     if (!artifactsToConsider.length && !definitionInfos.length) return
     const nodes = optimize(
@@ -447,6 +464,8 @@ export default function TabUpopt() {
     characterKey,
     filteredArts,
     equippedArts,
+    slotKeys,
+    artSetKeys,
   ])
 
   // Paging logic
