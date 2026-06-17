@@ -144,6 +144,18 @@ type GaussianMixture = {
   lower: number
   upper: number
 }
+type GaussianNode = {
+  base: DynStat
+  subs: SubstatKey[]
+  mu: number[]
+  cov: number[][]
+}
+type WeightedGaussianNode = { p: number; n: { subDistr: GaussianNode } }
+type WeightedMarkovNode = { p: number; n: Parameters<typeof expandNode>[0] }
+
+function yieldToUi() {
+  return new Promise<void>((resolve) => setTimeout(resolve, 0))
+}
 
 // TODO: put this into a `constants` files somewhere.
 /* substat roll weights */
@@ -168,6 +180,34 @@ function scale(key: SubstatKey, rarity: ArtifactRarity = 5) {
 /* Fixes silliness with percents and being multiplied by 100. */
 function toDecimal(key: SubstatKey | MainStatKey | '', value: number) {
   return key.endsWith('_') ? value / 100 : value
+}
+
+function aggregateGaussianNodes(nodes: WeightedGaussianNode[]): GaussianNode {
+  const totalP = nodes.reduce((sum, { p }) => sum + p, 0)
+  const base = nodes[0]?.n.subDistr.base ?? {}
+  const subs = allSubstatKeys.filter((key) =>
+    nodes.some(({ n }) => n.subDistr.subs.includes(key))
+  )
+  const mu = subs.map((key) =>
+    nodes.reduce((sum, { p, n }) => {
+      const ix = n.subDistr.subs.indexOf(key)
+      return sum + (totalP ? p / totalP : 0) * (ix < 0 ? 0 : n.subDistr.mu[ix])
+    }, 0)
+  )
+  const cov = subs.map((keyA, i) =>
+    subs.map((keyB, j) =>
+      nodes.reduce((sum, { p, n }) => {
+        const weight = totalP ? p / totalP : 0
+        const ixA = n.subDistr.subs.indexOf(keyA)
+        const ixB = n.subDistr.subs.indexOf(keyB)
+        const muA = ixA < 0 ? 0 : n.subDistr.mu[ixA]
+        const muB = ixB < 0 ? 0 : n.subDistr.mu[ixB]
+        const covAB = ixA < 0 || ixB < 0 ? 0 : (n.subDistr.cov[ixA]?.[ixB] ?? 0)
+        return sum + weight * (covAB + (muA - mu[i]) * (muB - mu[j]))
+      }, 0)
+    )
+  )
+  return { base, subs, mu, cov }
 }
 
 function getReshapeSubstatKeys(art: ICachedArtifact): SubstatKey[] {
@@ -612,12 +652,16 @@ export class UpOptCalculator {
         this.equippedBuild
       )
     )
-    this.artifacts[ix].result = this._toResultMarkov(
-      weighted.map(({ p, n }) => ({
-        prob: p,
-        evaluation: evalMarkovNode(this.markovObjective, n).evaluation,
-      }))
-    )
+    const subDistr = aggregateGaussianNodes(weighted)
+    this.artifacts[ix].result = this._toResultMarkov([
+      {
+        prob: 1,
+        evaluation: evalMarkovNode(this.markovObjective, {
+          type: 'values',
+          subDistr,
+        }).evaluation,
+      },
+    ])
   }
 
   /**
@@ -946,6 +990,98 @@ export class UpOptCalculator {
         val: evalMarkovNode(this.markovObjective, n).evaluation.f_mu,
       }))
     )
+  }
+
+  async calcExactDefinitionAsync(
+    ix: number,
+    shouldCancel: () => boolean = () => false
+  ) {
+    if (this.artifacts[ix].result?.evalMode === ResultType.Exact) return true
+    const action = this.artifacts[ix].action
+    if (action.type !== 'define') return false
+
+    await yieldToUi()
+    if (shouldCancel()) return false
+
+    let weighted = deduplicate(
+      this.markovObjective,
+      elixirDefinition(
+        {
+          setKey: action.setKey,
+          slotKey: this.artifacts[ix].slotKey,
+          mainStatKey: this.artifacts[ix].mainStat,
+          affixes: action.affixes,
+        },
+        this.equippedBuild
+      )
+    ) as WeightedMarkovNode[]
+
+    while (weighted.some(({ n }) => n.type !== 'values')) {
+      if (shouldCancel()) return false
+      const expanded: WeightedMarkovNode[] = []
+      for (let i = 0; i < weighted.length; i++) {
+        const { p, n } = weighted[i]
+        expandNode(n).forEach(({ p: p2, n: expandedNode }) =>
+          expanded.push({ p: p * p2, n: expandedNode })
+        )
+        if (i % 50 === 49) {
+          if (shouldCancel()) return false
+          await yieldToUi()
+        }
+      }
+      if (shouldCancel()) return false
+      weighted = deduplicate(
+        this.markovObjective,
+        expanded
+      ) as WeightedMarkovNode[]
+      await yieldToUi()
+    }
+
+    const result = await this._toResultExactWeightedAsync(
+      weighted,
+      shouldCancel
+    )
+    if (!result || shouldCancel()) return false
+    this.artifacts[ix].result = result
+    return true
+  }
+
+  async _toResultExactWeightedAsync(
+    weighted: WeightedMarkovNode[],
+    shouldCancel: () => boolean
+  ): Promise<UpOptResult | undefined> {
+    let ptot = 0
+    let upAvgtot = 0
+    let lower = Infinity
+    let upper = -Infinity
+    const gmm: GaussianMixture['gmm'] = []
+
+    for (let i = 0; i < weighted.length; i++) {
+      if (shouldCancel()) return undefined
+      const { p: prob, n } = weighted[i]
+      const val = evalMarkovNode(this.markovObjective, n).evaluation.f_mu
+      const mu = val[0]
+      lower = Math.min(lower, mu)
+      upper = Math.max(upper, mu)
+      if (val.every((vi, j) => vi >= this.thresholds[j])) {
+        ptot += prob
+        upAvgtot += prob * (mu - this.thresholds[0])
+        gmm.push({ phi: prob, cp: 1, mu, sig2: 0 })
+      } else {
+        const consOK = val
+          .slice(1)
+          .every((vi, j) => vi >= this.thresholds[j + 1])
+        gmm.push({ phi: prob, cp: consOK ? 1 : 0, mu, sig2: 0 })
+      }
+      if (i % 250 === 249) await yieldToUi()
+    }
+
+    return {
+      p: ptot,
+      upAvg: ptot < 1e-6 ? 0 : upAvgtot / ptot,
+      distr: { gmm, lower, upper },
+      evalMode: ResultType.Exact,
+    }
   }
 
   /**

@@ -184,59 +184,117 @@ function UpgradeOptChartCardGraph({
   }, [equippedArt, upArt.action.type, upOptCalc, ix, forceUpdate])
 
   const constrained = thresholds.length > 1
-
-  // Returns P(a < DMG < b)
-  const integral = (a: number, b: number) =>
-    upArt.result!.distr.gmm.reduce((pv, { phi, mu, sig2 }) => {
-      const sig = Math.sqrt(sig2)
-      if (sig < 1e-3) return a <= mu && mu < b ? phi + pv : pv
-      const P = erf((mu - a) / sig) - erf((mu - b) / sig)
-      return pv + (phi * P) / 2
-    }, 0)
-  const integralCons = (a: number, b: number) =>
-    upArt.result!.distr.gmm.reduce((pv, { cp, phi, mu, sig2 }) => {
-      const sig = Math.sqrt(sig2)
-      if (sig < 1e-3) return a <= mu && mu < b ? cp * phi + pv : pv
-      const P = erf((mu - a) / sig) - erf((mu - b) / sig)
-      return pv + (cp * phi * P) / 2
-    }, 0)
   const thr0 = thresholds[0]
   const perc = useCallback((x: number) => (100 * (x - thr0)) / thr0, [thr0])
+  const result = upArt.result!
+  const { dataHist, ymax, xpercent } = useMemo(() => {
+    const step = (objMax - objMin) / nbins
+    if (result.evalMode === ResultType.Exact) {
+      const estBins = Array.from({ length: nbins }, () => 0)
+      const estConsBins = Array.from({ length: nbins }, () => 0)
+      result.distr.gmm.forEach(({ cp, phi, mu }) => {
+        if (mu < objMin || mu > objMax) return
+        const ix = mu === objMax ? nbins - 1 : Math.floor((mu - objMin) / step)
+        if (!Number.isFinite(ix) || ix < 0 || ix >= nbins) return
+        estBins[ix] += phi
+        estConsBins[ix] += cp * phi
+      })
 
-  const step = (objMax - objMin) / nbins
-  const dataHist: ChartData[] = linspace(objMin, objMax, nbins, false).flatMap(
-    (v) => {
-      return [
+      const dataHist: ChartData[] = linspace(
+        objMin,
+        objMax,
+        nbins,
+        false
+      ).flatMap((v, i) => [
         {
           x: perc(v),
-          est: integral(v, v + step),
-          estCons: integralCons(v, v + step),
+          est: estBins[i],
+          estCons: estConsBins[i],
         },
         {
           x: perc(v + step),
-          est: integral(v, v + step),
-          estCons: integralCons(v, v + step),
+          est: estBins[i],
+          estCons: estConsBins[i],
+        },
+      ])
+      dataHist.unshift({ x: perc(objMin), est: 0, estCons: 0 })
+      dataHist.push({ x: perc(objMax), est: 0, estCons: 0 })
+
+      return {
+        dataHist,
+        ymax: dataHist.reduce((max, { est }) => Math.max(max, est), 0) || 1,
+        xpercent: (thr0 - objMin) / (objMax - objMin),
+      }
+    }
+
+    // Returns P(a < DMG < b)
+    const integral = (a: number, b: number) =>
+      result.distr.gmm.reduce((pv, { phi, mu, sig2 }) => {
+        const sig = Math.sqrt(sig2)
+        if (sig < 1e-3) return a <= mu && mu < b ? phi + pv : pv
+        const P = erf((mu - a) / sig) - erf((mu - b) / sig)
+        return pv + (phi * P) / 2
+      }, 0)
+    const integralCons = (a: number, b: number) =>
+      result.distr.gmm.reduce((pv, { cp, phi, mu, sig2 }) => {
+        const sig = Math.sqrt(sig2)
+        if (sig < 1e-3) return a <= mu && mu < b ? cp * phi + pv : pv
+        const P = erf((mu - a) / sig) - erf((mu - b) / sig)
+        return pv + (cp * phi * P) / 2
+      }, 0)
+
+    const dataHist: ChartData[] = linspace(
+      objMin,
+      objMax,
+      nbins,
+      false
+    ).flatMap((v) => {
+      const est = integral(v, v + step)
+      const estCons = integralCons(v, v + step)
+      return [
+        {
+          x: perc(v),
+          est,
+          estCons,
+        },
+        {
+          x: perc(v + step),
+          est,
+          estCons,
         },
       ]
-    }
-  )
-  dataHist.unshift({ x: perc(objMin), est: 0, estCons: 0 })
-  dataHist.push({ x: perc(objMax), est: 0, estCons: 0 })
+    })
+    dataHist.unshift({ x: perc(objMin), est: 0, estCons: 0 })
+    dataHist.push({ x: perc(objMax), est: 0, estCons: 0 })
 
-  const ymax = dataHist.reduce((max, { est }) => Math.max(max, est!), 0) || 1
-  const xpercent = (thr0 - objMin) / (objMax - objMin)
+    return {
+      dataHist,
+      ymax: dataHist.reduce((max, { est }) => Math.max(max, est), 0) || 1,
+      xpercent: (thr0 - objMin) / (objMax - objMin),
+    }
+  }, [objMax, objMin, perc, result, thr0])
 
   // if trueP/E have been calculated, otherwise use upgradeOpt's estimate
-  const reportP = upArt.result!.p
-  const reportD = upArt.result!.upAvg
+  const reportP = result.p
+  const reportD = result.upAvg
   const chartData = dataHist
-  const isExact = upArt.result!.evalMode === ResultType.Exact
+  const isExact = result.evalMode === ResultType.Exact
 
   useEffect(() => {
-    if (isExact) return
+    if (isExact) return undefined
+    if (upArt.action.type === 'define') {
+      let cancelled = false
+      upOptCalc
+        .calcExactDefinitionAsync(ix, () => cancelled)
+        .then((updated) => updated && !cancelled && forceUpdate())
+      return () => {
+        cancelled = true
+      }
+    }
     upOptCalc.calcExact(ix)
     forceUpdate()
-  }, [upOptCalc, isExact, ix, forceUpdate])
+    return undefined
+  }, [upOptCalc, upArt.action.type, upArt.id, isExact, ix, forceUpdate])
 
   const probUpgradeText = (
     <span>
@@ -377,11 +435,17 @@ function UpgradeOptChartCardGraph({
             </linearGradient>
           </defs>
 
-          <Line dataKey="dne" stroke="red" name={t('upOptChart.currentLine')} />
+          <Line
+            dataKey="dne"
+            stroke="red"
+            name={t('upOptChart.currentLine')}
+            isAnimationActive={false}
+          />
           <Line
             dataKey="dne"
             stroke="rgba(0,200,0)"
             name={t('upOptChart.averageLine')}
+            isAnimationActive={false}
           />
           {constrained && (
             <Area
@@ -394,6 +458,9 @@ function UpgradeOptChartCardGraph({
               tooltipType="none"
               opacity={0.5}
               activeDot={false}
+              isAnimationActive={isExact}
+              animationDuration={500}
+              animationEasing="ease-out"
             />
           )}
           <Area
@@ -411,6 +478,9 @@ function UpgradeOptChartCardGraph({
                 : t('upOptChart.estimatedDist')
             }
             activeDot={false}
+            isAnimationActive={isExact}
+            animationDuration={500}
+            animationEasing="ease-out"
           />
           <ReferenceLine
             x={perc(thr0)}
