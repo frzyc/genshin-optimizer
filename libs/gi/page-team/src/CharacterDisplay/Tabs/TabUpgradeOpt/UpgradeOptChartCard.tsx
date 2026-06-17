@@ -268,7 +268,7 @@ function UpgradeOptChartCardGraph({
   const guaranteedRolls =
     upArt.action.type === 'reshape' ? upArt.action.mintotal : 2
   return (
-    <CardThemed bgt="light" sx={{ height: '100%' }}>
+    <CardThemed bgt="light" sx={{ height: '100%', minHeight: 360 }}>
       <Box sx={{ display: 'flex', flexDirection: 'row' }}>
         <Box sx={{ height: 50, width: 50 }}>
           {!!comparisonSlotKey && (
@@ -323,12 +323,7 @@ function UpgradeOptChartCardGraph({
         </Box>
       </Box>
       <Divider />
-      <ResponsiveContainer
-        width="100%"
-        height="100%"
-        maxHeight={300}
-        key={upArt.id}
-      >
+      <ResponsiveContainer width="100%" height={300} key={upArt.id}>
         <ComposedChart
           data={chartData}
           margin={{ top: 5, right: 30, left: 20, bottom: 20 }}
