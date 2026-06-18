@@ -1,36 +1,26 @@
 // WARNING: Generated file, do not modify
 export const buffs = {
-  cond_dmg_: {
+  passive_crit_: {
     sheet: 'SolExuvia',
-    name: 'cond_dmg_',
+    name: 'passive_crit_',
     tag: {
       et: 'display',
       qt: 'combat',
-      q: 'common_dmg_',
+      q: 'crit_',
       sheet: 'SolExuvia',
-      name: 'cond_dmg_',
+      name: 'passive_crit_',
     },
   },
-  team_dmg_: {
+  cond_ether_resIgn_: {
     sheet: 'SolExuvia',
-    name: 'team_dmg_',
+    name: 'cond_ether_resIgn_',
     tag: {
       et: 'display',
       qt: 'combat',
-      q: 'common_dmg_',
+      q: 'resIgn_',
       sheet: 'SolExuvia',
-      name: 'team_dmg_',
-    },
-  },
-  enemy_defIgn_: {
-    sheet: 'SolExuvia',
-    name: 'enemy_defIgn_',
-    tag: {
-      et: 'display',
-      qt: 'common',
-      q: 'dmgRed_',
-      sheet: 'SolExuvia',
-      name: 'enemy_defIgn_',
+      attribute: 'ether',
+      name: 'cond_ether_resIgn_',
     },
   },
 } as const

@@ -141,6 +141,7 @@ export const ownTag = {
   combat: stats,
   final: finalStats,
   char: {
+    key: iso,
     lvl: iso,
     attribute: iso,
     specialty: iso,
