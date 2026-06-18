@@ -1,22 +1,8 @@
 // WARNING: Generated file, do not modify
 export const conditionals = {
-  boolConditional: {
+  enemyAnomaly: {
     sheet: 'BoisterousEchoes',
-    name: 'boolConditional',
+    name: 'enemyAnomaly',
     type: 'bool',
-  },
-  listConditional: {
-    sheet: 'BoisterousEchoes',
-    name: 'listConditional',
-    type: 'list',
-    list: ['val1', 'val2'],
-  },
-  numConditional: {
-    sheet: 'BoisterousEchoes',
-    name: 'numConditional',
-    type: 'num',
-    int_only: true,
-    min: 0,
-    max: 2,
   },
 } as const
