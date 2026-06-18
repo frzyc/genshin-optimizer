@@ -1,19 +1,8 @@
 // WARNING: Generated file, do not modify
 export const conditionals = {
-  boolConditional: {
+  windExSpecialUsed: {
     sheet: 'JoyauDore',
-    name: 'boolConditional',
-    type: 'bool',
-  },
-  listConditional: {
-    sheet: 'JoyauDore',
-    name: 'listConditional',
-    type: 'list',
-    list: ['val1', 'val2'],
-  },
-  numConditional: {
-    sheet: 'JoyauDore',
-    name: 'numConditional',
+    name: 'windExSpecialUsed',
     type: 'num',
     int_only: true,
     min: 0,

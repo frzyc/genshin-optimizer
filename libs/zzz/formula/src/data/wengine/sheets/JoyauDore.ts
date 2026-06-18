@@ -1,11 +1,8 @@
-import { subscript } from '@genshin-optimizer/pando/engine'
+import { cmpEq, cmpGE, prod, subscript } from '@genshin-optimizer/pando/engine'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import { mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
-  allBoolConditionals,
-  allListConditionals,
   allNumConditionals,
-  enemyDebuff,
   own,
   ownBuff,
   percent,
@@ -23,39 +20,73 @@ const key: WengineKey = 'JoyauDore'
 const dm = mappedStats.wengine[key]
 const { phase } = own.wengine
 
-// TODO: Add conditionals
-const { boolConditional } = allBoolConditionals(key)
-const { listConditional } = allListConditionals(key, ['val1', 'val2'])
-const { numConditional } = allNumConditionals(key, true, 0, 2)
+const { windExSpecialUsed } = allNumConditionals(key, true, 0, dm.stacks)
 
 const sheet = registerWengine(
   key,
   // Handles base stats and passive buffs
   entriesForWengine(key),
 
-  // TODO: Add formulas/buffs
+  // Passive buffs
+  registerBuff(
+    'passive_anomProf',
+    ownBuff.combat.anomProf.add(
+      cmpSpecialtyAndEquipped(key, subscript(phase, dm.anomProf))
+    ),
+    showSpecialtyAndEquipped(key)
+  ),
   // Conditional buffs
   registerBuff(
-    'cond_dmg_',
-    ownBuff.combat.common_dmg_.add(
+    'cond_vortex_buff_',
+    ownBuff.combat.buff_.addWithDmgType(
+      'vortex',
       cmpSpecialtyAndEquipped(
         key,
-        boolConditional.ifOn(percent(subscript(phase, dm.cond_dmg_)))
+        cmpEq(
+          own.char.attribute,
+          'wind',
+          prod(
+            windExSpecialUsed,
+            percent(subscript(phase, dm.vortex_windswept_dmg_))
+          )
+        )
       )
     ),
     showSpecialtyAndEquipped(key)
   ),
   registerBuff(
-    'team_dmg_',
-    teamBuff.combat.common_dmg_.add(
-      cmpSpecialtyAndEquipped(key, listConditional.map({ val1: 1, val2: 2 }))
+    'cond_windswept_buff_',
+    ownBuff.combat.buff_.wind.addWithDmgType(
+      'anomaly',
+      cmpSpecialtyAndEquipped(
+        key,
+        cmpEq(
+          own.char.attribute,
+          'wind',
+          prod(
+            windExSpecialUsed,
+            percent(subscript(phase, dm.vortex_windswept_dmg_))
+          )
+        )
+      )
     ),
     showSpecialtyAndEquipped(key)
   ),
   registerBuff(
-    'enemy_defIgn_',
-    enemyDebuff.common.dmgRed_.add(
-      cmpSpecialtyAndEquipped(key, numConditional)
+    'cond_anomProf',
+    teamBuff.combat.anomProf.add(
+      cmpSpecialtyAndEquipped(
+        key,
+        cmpEq(
+          own.char.attribute,
+          'wind',
+          cmpGE(
+            windExSpecialUsed,
+            dm.stackThreshold,
+            subscript(phase, dm.teamAnomProf)
+          )
+        )
+      )
     ),
     showSpecialtyAndEquipped(key)
   )
