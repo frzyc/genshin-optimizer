@@ -1,22 +1,12 @@
 // WARNING: Generated file, do not modify
 export const conditionals = {
-  boolConditional: {
+  fireExSpecialUsed: {
     sheet: 'ChiefSidekick',
-    name: 'boolConditional',
-    type: 'bool',
-  },
-  listConditional: {
-    sheet: 'ChiefSidekick',
-    name: 'listConditional',
-    type: 'list',
-    list: ['val1', 'val2'],
-  },
-  numConditional: {
-    sheet: 'ChiefSidekick',
-    name: 'numConditional',
+    name: 'fireExSpecialUsed',
     type: 'num',
     int_only: true,
     min: 0,
     max: 2,
   },
+  offField: { sheet: 'ChiefSidekick', name: 'offField', type: 'bool' },
 } as const
