@@ -9,4 +9,5 @@ export const conditionals = {
     max: 30,
   },
   frostbite: { sheet: 'anomaly', name: 'frostbite', type: 'bool' },
+  windswept: { sheet: 'anomaly', name: 'windswept', type: 'bool' },
 } as const

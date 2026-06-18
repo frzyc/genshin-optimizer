@@ -118,6 +118,7 @@ const stats: Record<Stat, Desc> = {
   flat_dmg: agg,
   anom_flat_dmg: agg,
   addl_disorder_: agg,
+  direct_dmg_: agg,
 } as const
 const finalStats = objFilterKeys(stats, [
   ...flatAndPercentStats,
@@ -175,6 +176,7 @@ export const ownTag = {
     sheer_mult_: fixed,
     anomaly_crit_mult_: fixed,
     anom_base_mult_: fixed,
+    direct_dmg_mult_: fixed,
   },
   formula: {
     base: agg,

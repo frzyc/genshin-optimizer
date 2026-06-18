@@ -25,6 +25,7 @@ const data: TagMapNodeEntries = [
     ownBuff.dmg.res_mult_,
     ownBuff.dmg.dmg_taken_mult_,
     ownBuff.dmg.stunned_mult_,
+    ownBuff.dmg.direct_dmg_mult_,
   ].map((buff) => ownBuff.dmg.shared.add(buff)),
 
   // DMG Bonus Multiplier
@@ -99,5 +100,7 @@ const data: TagMapNodeEntries = [
       ),
     })
   ),
+  // Direct DMG Multiplier
+  ownBuff.dmg.direct_dmg_mult_.add(sum(percent(1), own.final.direct_dmg_)),
 ]
 export default data

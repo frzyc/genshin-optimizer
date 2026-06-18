@@ -154,6 +154,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   dazeRes_: 'Enemy Daze RES',
   dazeRed_: 'Enemy Daze Taken Reduction',
   dmgInc_: 'Enemy DMG Taken Increase',
+  direct_dmg_: 'Direct DMG Bonus',
 
   initial_hp: 'Initial HP',
   initial_def: 'Initial DEF',
@@ -193,6 +194,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   mv_mult_: 'DMG Multiplier Increase',
   buff_mult_: 'Buff Multiplier',
   anom_base_mult_: 'Anomaly Base DMG Multiplier',
+  direct_dmg_mult_: 'Direct DMG Multiplier',
 }
 
 export const elementalData: Record<AttributeKey, string> = {
