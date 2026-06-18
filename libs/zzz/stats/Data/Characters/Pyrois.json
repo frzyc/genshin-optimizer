@@ -3,6 +3,7 @@
   "rarity": "S",
   "attribute": "ether",
   "specialty": "attack",
+  "faction": "Phaethon",
   "stats": {
     "atk_base": 133,
     "atk_growth": 8.1195,

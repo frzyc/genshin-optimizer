@@ -470,16 +470,18 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
       },
       prod(
         sum(
-          percent(isMiyabi ? 6 : 4.5),
+          percent(isMiyabi ? 6 : data_gen.attribute === 'wind' ? 1 : 4.5),
           own.final.addl_disorder_,
           prod(
-            max(
-              0,
-              sum(
-                constant(isMiyabi ? 20 : 10),
-                prod(constant(-1), anomTimePassed)
-              )
-            ),
+            data_gen.attribute === 'wind'
+              ? percent(1)
+              : max(
+                  0,
+                  sum(
+                    constant(isMiyabi ? 20 : 10),
+                    prod(constant(-1), anomTimePassed)
+                  )
+                ),
             percent(
               disorderTimeMultipliers[isMiyabi ? 'frost' : data_gen.attribute]
             )
@@ -489,28 +491,29 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
       )
     ),
     // Vortex DMG
-    // ...(data_gen.attribute !== 'wind'
-    //   ? customAnomalyDmg(
-    //       `vortexDmgInst_${isMiyabi ? 'frost' : data_gen.attribute}`,
-    //       { attribute: data_gen.attribute, damageType1: 'vortex' },
-    //       prod(
-    //         sum(
-    //           percent(
-    //             vortexMultipliers[isMiyabi ? 'frost' : data_gen.attribute]
-    //           ),
-    //           prod(
-    //             percent(
-    //               disorderTimeMultipliers[
-    //                 isMiyabi ? 'frost' : data_gen.attribute
-    //               ]
-    //             ),
-    //             max(0, sum(constant(30), prod(constant(-1), anomTimePassed)))
-    //           )
-    //         ),
-    //         own.final.atk
-    //       )
-    //     )
-    //   : []),
+    ...(data_gen.attribute !== 'wind'
+      ? customAnomalyDmg(
+          `vortexDmgInst_${isMiyabi ? 'frost' : data_gen.attribute}`,
+          { attribute: data_gen.attribute, damageType1: 'vortex' },
+          prod(
+            sum(
+              percent(
+                vortexMultipliers[isMiyabi ? 'frost' : data_gen.attribute]
+              ),
+              own.final.addl_disorder_,
+              prod(
+                percent(
+                  disorderTimeMultipliers[
+                    isMiyabi ? 'frost' : data_gen.attribute
+                  ]
+                ),
+                max(0, sum(constant(30), prod(constant(-1), anomTimePassed)))
+              )
+            ),
+            own.final.atk
+          )
+        )
+      : []),
     // Abloom DMG
     ...customAnomalyDmg(
       'abloomDmgInst',

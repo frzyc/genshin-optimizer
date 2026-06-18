@@ -38,6 +38,19 @@ export const formulas = {
       name: 'disorderDmgInst_ether',
     },
   },
+  vortexDmgInst_ether: {
+    sheet: 'Pyrois',
+    name: 'vortexDmgInst_ether',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'Pyrois',
+      attribute: 'ether',
+      damageType1: 'vortex',
+      name: 'vortexDmgInst_ether',
+    },
+  },
   abloomDmgInst: {
     sheet: 'Pyrois',
     name: 'abloomDmgInst',

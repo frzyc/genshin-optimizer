@@ -98,7 +98,8 @@ export const factionMap: Record<number, FactionKey> = {
   11: 'SpookShack',
   12: 'KrampusComplianceAuthority',
   13: 'AngelsOfDelusion',
-  14: 'RoscaeliferExternalStrategyDepartment',
+  15: 'Phaethon',
+  16: 'RoscaeliferExternalStrategyDepartment',
 }
 
 export const characterRarityMap: Record<number, CharacterRarityKey> = {

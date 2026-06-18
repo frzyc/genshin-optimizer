@@ -38,6 +38,19 @@ export const formulas = {
       name: 'disorderDmgInst_electric',
     },
   },
+  vortexDmgInst_electric: {
+    sheet: 'Grace',
+    name: 'vortexDmgInst_electric',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'Grace',
+      attribute: 'electric',
+      damageType1: 'vortex',
+      name: 'vortexDmgInst_electric',
+    },
+  },
   abloomDmgInst: {
     sheet: 'Grace',
     name: 'abloomDmgInst',

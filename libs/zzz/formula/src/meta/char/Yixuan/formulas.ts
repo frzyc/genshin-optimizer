@@ -39,6 +39,19 @@ export const formulas = {
       name: 'disorderDmgInst_ether',
     },
   },
+  vortexDmgInst_ether: {
+    sheet: 'Yixuan',
+    name: 'vortexDmgInst_ether',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'Yixuan',
+      attribute: 'ether',
+      damageType1: 'vortex',
+      name: 'vortexDmgInst_ether',
+    },
+  },
   abloomDmgInst: {
     sheet: 'Yixuan',
     name: 'abloomDmgInst',

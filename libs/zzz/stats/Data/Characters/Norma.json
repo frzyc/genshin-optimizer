@@ -3,6 +3,7 @@
   "rarity": "S",
   "attribute": "fire",
   "specialty": "stun",
+  "faction": "RoscaeliferExternalStrategyDepartment",
   "stats": {
     "atk_base": 110,
     "atk_growth": 6.4646,

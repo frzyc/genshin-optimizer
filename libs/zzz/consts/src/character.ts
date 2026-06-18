@@ -88,6 +88,7 @@ export const allFactionKeys = [
   'KrampusComplianceAuthority',
   'AngelsOfDelusion',
   'RoscaeliferExternalStrategyDepartment',
+  'Phaethon',
 ] as const
 export type FactionKey = (typeof allFactionKeys)[number]
 

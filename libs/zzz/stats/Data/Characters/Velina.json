@@ -3,6 +3,7 @@
   "rarity": "S",
   "attribute": "wind",
   "specialty": "anomaly",
+  "faction": "RoscaeliferExternalStrategyDepartment",
   "stats": {
     "atk_base": 126,
     "atk_growth": 7.586,

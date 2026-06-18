@@ -25919,6 +25919,7 @@
       "rarity": "S",
       "attribute": "ether",
       "specialty": "attack",
+      "faction": "Phaethon",
       "stats": {
         "atk_base": 133,
         "atk_growth": 8.1195,
@@ -26472,6 +26473,7 @@
       "rarity": "S",
       "attribute": "wind",
       "specialty": "anomaly",
+      "faction": "RoscaeliferExternalStrategyDepartment",
       "stats": {
         "atk_base": 126,
         "atk_growth": 7.586,
@@ -27085,6 +27087,7 @@
       "rarity": "S",
       "attribute": "fire",
       "specialty": "stun",
+      "faction": "RoscaeliferExternalStrategyDepartment",
       "stats": {
         "atk_base": 110,
         "atk_growth": 6.4646,
