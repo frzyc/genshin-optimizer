@@ -12,37 +12,26 @@ export const buffs = {
       name: 'set2',
     },
   },
-  set4_dmg_: {
+  set4_crit_dmg_: {
     sheet: 'TheSkyAblaze',
-    name: 'set4_dmg_',
+    name: 'set4_crit_dmg_',
     tag: {
       et: 'display',
       qt: 'combat',
-      q: 'common_dmg_',
+      q: 'crit_dmg_',
       sheet: 'TheSkyAblaze',
-      name: 'set4_dmg_',
+      name: 'set4_crit_dmg_',
     },
   },
-  team_dmg_: {
+  set4_atk_: {
     sheet: 'TheSkyAblaze',
-    name: 'team_dmg_',
+    name: 'set4_atk_',
     tag: {
       et: 'display',
       qt: 'combat',
-      q: 'common_dmg_',
+      q: 'atk_',
       sheet: 'TheSkyAblaze',
-      name: 'team_dmg_',
-    },
-  },
-  enemy_defIgn_: {
-    sheet: 'TheSkyAblaze',
-    name: 'enemy_defIgn_',
-    tag: {
-      et: 'display',
-      qt: 'common',
-      q: 'dmgRed_',
-      sheet: 'TheSkyAblaze',
-      name: 'enemy_defIgn_',
+      name: 'set4_atk_',
     },
   },
 } as const

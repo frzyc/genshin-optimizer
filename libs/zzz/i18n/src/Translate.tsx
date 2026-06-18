@@ -13,6 +13,7 @@ const textComponents = {
   ice: <ColorText color="ice" />,
   electric: <ColorText color="electric" />,
   frost: <ColorText color="frost" />,
+  wind: <ColorText color="wind" />,
   physical: <ColorText color="physical" />,
   ether: <ColorText color="ether" />,
   ct: <ColorText />,
@@ -38,6 +39,7 @@ const badgeComponents = {
   frost: <SqBadge color="frost" />,
   physical: <SqBadge color="physical" />,
   ether: <SqBadge color="ether" />,
+  wind: <SqBadge color="wind" />,
   ct: <ColorText />,
 }
 

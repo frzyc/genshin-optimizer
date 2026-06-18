@@ -2,23 +2,14 @@ import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
 import { discDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
 import { TheSkyAblaze } from '@genshin-optimizer/zzz/formula'
-import { trans } from '../../util'
+import { fieldForBuff } from '../../char/sheetUtil'
+import { st, trans } from '../../util'
 import { Set2Display, Set4Display } from '../components'
 
 const key: DiscSetKey = 'TheSkyAblaze'
 const [chg, _ch] = trans('disc', key)
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 const icon = discDefIcon(key)
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const cond = TheSkyAblaze.conditionals
-// TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const buff = TheSkyAblaze.buffs
 
 const sheet: UISheet<'2' | '4'> = {
@@ -39,6 +30,21 @@ const sheet: UISheet<'2' | '4'> = {
       {
         type: 'text',
         text: chg('desc4'),
+      },
+      {
+        type: 'fields',
+        fields: [fieldForBuff(buff.set4_crit_dmg_)],
+      },
+      {
+        type: 'conditional',
+        conditional: {
+          label: st('uponLaunch.2', {
+            val1: '$t(skills.exSpecial)',
+            val2: '$t(skills.ult)',
+          }),
+          metadata: cond.exSpecialUltUsed,
+          fields: [fieldForBuff(buff.set4_atk_)],
+        },
       },
     ],
   },

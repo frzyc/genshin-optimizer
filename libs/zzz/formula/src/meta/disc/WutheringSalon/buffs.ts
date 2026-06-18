@@ -12,37 +12,26 @@ export const buffs = {
       name: 'set2',
     },
   },
-  set4_dmg_: {
+  set4_anomProf: {
     sheet: 'WutheringSalon',
-    name: 'set4_dmg_',
+    name: 'set4_anomProf',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'anomProf',
+      sheet: 'WutheringSalon',
+      name: 'set4_anomProf',
+    },
+  },
+  set4_common_dmg_: {
+    sheet: 'WutheringSalon',
+    name: 'set4_common_dmg_',
     tag: {
       et: 'display',
       qt: 'combat',
       q: 'common_dmg_',
       sheet: 'WutheringSalon',
-      name: 'set4_dmg_',
-    },
-  },
-  team_dmg_: {
-    sheet: 'WutheringSalon',
-    name: 'team_dmg_',
-    tag: {
-      et: 'display',
-      qt: 'combat',
-      q: 'common_dmg_',
-      sheet: 'WutheringSalon',
-      name: 'team_dmg_',
-    },
-  },
-  enemy_defIgn_: {
-    sheet: 'WutheringSalon',
-    name: 'enemy_defIgn_',
-    tag: {
-      et: 'display',
-      qt: 'common',
-      q: 'dmgRed_',
-      sheet: 'WutheringSalon',
-      name: 'enemy_defIgn_',
+      name: 'set4_common_dmg_',
     },
   },
 } as const
