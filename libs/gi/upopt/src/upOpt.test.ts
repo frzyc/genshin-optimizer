@@ -1,6 +1,7 @@
 import type { SubstatKey } from '@genshin-optimizer/gi/consts'
 import { allSubstatKeys } from '@genshin-optimizer/gi/consts'
-import { getMainStatValue } from '@genshin-optimizer/gi/util'
+import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
+import { getMainStatValue, getSubstatValue } from '@genshin-optimizer/gi/util'
 import { dynRead, prod, sum } from '@genshin-optimizer/gi/wr'
 
 import { substatWeights } from './consts'
@@ -15,8 +16,17 @@ import { evalMarkovNode, evaluateGaussian } from './markov-tree/evaluation'
 import { makeObjective } from './markov-tree/makeObjective'
 import type { GaussianNode, Objective } from './markov-tree/markov.types'
 import { crawlSubstats } from './substatProbs'
-import { dustReshape, expandNode } from './upOpt'
+import { lvl0 } from './testArtifacts.json'
+import { dustReshape, expandNode, expandNodes, levelUpArtifact } from './upOpt'
 import type { MarkovNode, SubstatLevelNode } from './upOpt.types'
+
+const emptyBuild = {
+  flower: undefined,
+  plume: undefined,
+  sands: undefined,
+  goblet: undefined,
+  circlet: undefined,
+}
 
 /**
  * Checks whether the expanded nodes' evaluations match the base Gaussian node's evaluation.
@@ -433,7 +443,42 @@ describe('upOpt components', () => {
 })
 
 describe('upOpt makeSubstatNode(s)', () => {
-  test('levelArtifact', () => {})
+  const nodeAtk = sum(dynRead('atk'), prod(1000, dynRead('atk_')))
+  const nodeHp = sum(dynRead('hp'), prod(1000, dynRead('hp_')))
+  const nodeCR = sum(dynRead('critRate_'))
+  test('levelArtifact', () => {
+    const obj = makeObjective([nodeAtk], [0])
+    const obj2 = makeObjective([nodeHp], [0])
+    const obj3 = makeObjective([nodeCR], [0])
+
+    const substatLevel = levelUpArtifact(lvl0 as ICachedArtifact, emptyBuild)
+    const rollsLevel = expandNodes(substatLevel)
+    const valuesLevel = expandNodes(rollsLevel)
+    const g = substatLevel[0].n.subDistr
+
+    checkExpandedEvalCorrectness(obj, rollsLevel, g)
+    checkExpandedEvalCorrectness(obj, valuesLevel, g)
+    checkExpandedEvalCorrectness(obj2, rollsLevel, g)
+    checkExpandedEvalCorrectness(obj2, valuesLevel, g)
+    checkExpandedEvalCorrectness(obj3, rollsLevel, g)
+    checkExpandedEvalCorrectness(obj3, valuesLevel, g)
+
+    // TODO: work out atk f_mu by hand.
+    const ev = evaluateGaussian(obj, g)
+    const vatk = getSubstatValue('atk', 5, "max", false)
+    const vatk_ = getSubstatValue('atk_', 5, "max", false)
+    expect(ev.f_mu[0]).toBeCloseTo(1.85 * vatk + 1.85 * vatk_ * 1000)
+
+    // hp = 4780, no hp rolls.
+    const ev2 = evaluateGaussian(obj2, g)
+    expect(ev2.f_mu[0]).toBeCloseTo(getMainStatValue('hp', 5, 20))
+    expect(ev2.f_cov[0][0]).toBeCloseTo(0)
+
+    // crit rate = [1 (base) + 0.85 (avg roll) * 1 (4 rolls * 1/4 chance each)] * .03889 (base crit rate)
+    const ev3 = evaluateGaussian(obj3, g)
+    const vcrit = getSubstatValue('critRate_', 5, "max", false)
+    expect(ev3.f_mu[0]).toBeCloseTo((1 + 1 * 0.85) * vcrit, 5)
+  })
   test('fresh/domain/strongbox', () => {})
   test('reshape/dust', () => {
     const [reshaped] = dustReshape(

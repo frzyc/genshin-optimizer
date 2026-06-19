@@ -1,3 +1,4 @@
+import { toDecimal } from '@genshin-optimizer/common/util'
 import type {
   ArtifactRarity,
   ArtifactSetKey,
@@ -28,6 +29,14 @@ export function expandNode(node: MarkovNode): { p: number; n: MarkovNode }[] {
   return [{ p: 1, n: node }]
 }
 
+export function expandNodes(
+  nodes: { p: number; n: MarkovNode }[]
+): { p: number; n: MarkovNode }[] {
+  return nodes.flatMap(({ p, n }) =>
+    expandNode(n).map(({ p: p2, n: n2 }) => ({ p: p * p2, n: n2 }))
+  )
+}
+
 /**
  * Simulates leveling up an existing artifact to its max level.
  */
@@ -52,9 +61,9 @@ export function levelUpArtifact(
 
   // Unactivated substats - Insert and remove a remaining roll.
   if (art.unactivatedSubstats) {
-    art.unactivatedSubstats.forEach(({ key, value }) => {
+    art.unactivatedSubstats.forEach(({ key, accurateValue }) => {
       if (key === '') return
-      info.base[key] = (info.base[key] ?? 0) + value
+      info.base[key] = (info.base[key] ?? 0) + accurateValue
       info.subkeys.push({ key, baseRolls: 0 })
       info.rollsLeft -= 1
     })
@@ -144,7 +153,7 @@ export function dustReshape(
   const subkeys = art.substats.flatMap(({ key, initialValue }) => {
     if (key === '') return []
     if (initialValue === undefined) return []
-    base[key] = (base[key] ?? 0) + toInternalStatValue(key, initialValue)
+    base[key] = (base[key] ?? 0) + toDecimal(initialValue, key)
     return [{ key, baseRolls: 0 }]
   })
   const totalRolls =
@@ -210,14 +219,11 @@ function artToStats(art: ICachedArtifact, mainStatMax = true) {
       mainStatMax ? artMaxLevel[art.rarity] : art.level
     )
   } else {
-    stats[art.mainStatKey] = toInternalStatValue(
-      art.mainStatKey,
-      art.mainStatVal
-    )
+    stats[art.mainStatKey] = toDecimal(art.mainStatVal, art.mainStatKey)
   }
-  art.substats.forEach(({ key, value }) => {
+  art.substats.forEach(({ key, accurateValue }) => {
     if (!key) return
-    stats[key] = toInternalStatValue(key, value)
+    stats[key] = toDecimal(accurateValue, key)
   })
   stats[art.setKey] = 1
   return stats
@@ -256,9 +262,9 @@ function toStats(
 
 function getSubkeys(art: ICachedArtifact) {
   const subkeys = art.substats.map(({ key }) => key).filter((key) => key !== '') // Filter out empty substats
-  const stats = art.substats.reduce((acc, { key, value }) => {
+  const stats = art.substats.reduce((acc, { key, accurateValue }) => {
     if (key === '') return acc
-    acc[key] = toInternalStatValue(key, value)
+    acc[key] = toDecimal(accurateValue, key)
     return acc
   }, {} as DynStat)
   return { subkeys, stats }
@@ -266,7 +272,3 @@ function getSubkeys(art: ICachedArtifact) {
 
 type Build = Record<ArtifactSlotKey, ICachedArtifact | undefined>
 type weightedNode = { p: number; n: SubstatLevelNode }
-
-function toInternalStatValue(key: SubstatKey | MainStatKey, value: number) {
-  return key.endsWith('_') ? value / 100 : value
-}
