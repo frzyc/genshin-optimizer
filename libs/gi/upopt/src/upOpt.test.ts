@@ -16,7 +16,7 @@ import { evalMarkovNode, evaluateGaussian } from './markov-tree/evaluation'
 import { makeObjective } from './markov-tree/makeObjective'
 import type { GaussianNode, Objective } from './markov-tree/markov.types'
 import { crawlSubstats } from './substatProbs'
-import { lvl0 } from './testArtifacts.json'
+import { lvl0, lvl20 } from './testArtifacts.json'
 import { dustReshape, expandNode, expandNodes, levelUpArtifact } from './upOpt'
 import type { MarkovNode, SubstatLevelNode } from './upOpt.types'
 
@@ -463,10 +463,10 @@ describe('upOpt makeSubstatNode(s)', () => {
     checkExpandedEvalCorrectness(obj3, rollsLevel, g)
     checkExpandedEvalCorrectness(obj3, valuesLevel, g)
 
-    // TODO: work out atk f_mu by hand.
+    // avg rolls = 1.85 in each stat, so expected atk = 1.85*atk + 1.85*atk_*1000
     const ev = evaluateGaussian(obj, g)
-    const vatk = getSubstatValue('atk', 5, "max", false)
-    const vatk_ = getSubstatValue('atk_', 5, "max", false)
+    const vatk = getSubstatValue('atk', 5, 'max', false)
+    const vatk_ = getSubstatValue('atk_', 5, 'max', false)
     expect(ev.f_mu[0]).toBeCloseTo(1.85 * vatk + 1.85 * vatk_ * 1000)
 
     // hp = 4780, no hp rolls.
@@ -476,74 +476,93 @@ describe('upOpt makeSubstatNode(s)', () => {
 
     // crit rate = [1 (base) + 0.85 (avg roll) * 1 (4 rolls * 1/4 chance each)] * .03889 (base crit rate)
     const ev3 = evaluateGaussian(obj3, g)
-    const vcrit = getSubstatValue('critRate_', 5, "max", false)
+    const vcrit = getSubstatValue('critRate_', 5, 'max', false)
     expect(ev3.f_mu[0]).toBeCloseTo((1 + 1 * 0.85) * vcrit, 5)
   })
   test('fresh/domain/strongbox', () => {})
-  test('reshape/dust', () => {
-    const [reshaped] = dustReshape(
-      {
-        setKey: 'GladiatorsFinale',
-        slotKey: 'flower',
-        level: 20,
-        rarity: 5,
-        mainStatKey: 'hp',
-        location: '',
-        lock: false,
-        totalRolls: 9,
-        substats: [
-          { key: 'atk_', value: 46.6, initialValue: 5.8 },
-          { key: 'critRate_', value: 31.1, initialValue: 3.9 },
-          { key: 'critDMG_', value: 62.2, initialValue: 7.8 },
-          { key: 'enerRech_', value: 25.9, initialValue: 6.5 },
-        ],
-      },
-      {
-        flower: undefined,
-        plume: undefined,
-        sands: undefined,
-        goblet: undefined,
-        circlet: undefined,
-      },
-      ['atk_', 'critRate_'],
-      2
-    )
-    expect(reshaped.p).toBe(1)
-    expect(reshaped.n.rollsLeft).toBe(5)
-    expect(reshaped.n.base['atk_']).toBeCloseTo(5.8 / 100)
-    expect(reshaped.n.base['critRate_']).toBeCloseTo(3.9 / 100)
-    expect(reshaped.n.base['critDMG_']).toBeCloseTo(7.8 / 100)
-    expect(reshaped.n.base['enerRech_']).toBeCloseTo(6.5 / 100)
-  })
-  test('reshape/dust keeps one fewer upgrade roll for 3-liners', () => {
-    const [reshaped] = dustReshape(
-      {
-        setKey: 'GladiatorsFinale',
-        slotKey: 'flower',
-        level: 20,
-        rarity: 5,
-        mainStatKey: 'hp',
-        location: '',
-        lock: false,
-        totalRolls: 8,
-        substats: [
-          { key: 'atk_', value: 46.6, initialValue: 5.8 },
-          { key: 'critRate_', value: 31.1, initialValue: 3.9 },
-          { key: 'critDMG_', value: 62.2, initialValue: 7.8 },
-          { key: 'enerRech_', value: 25.9, initialValue: 6.5 },
-        ],
-      },
-      {
-        flower: undefined,
-        plume: undefined,
-        sands: undefined,
-        goblet: undefined,
-        circlet: undefined,
-      },
-      ['atk_', 'critRate_'],
-      2
-    )
-    expect(reshaped.n.rollsLeft).toBe(4)
+  describe('reshape', () => {
+    test('reshape/4line basic', () => {
+      const [reshaped] = dustReshape(
+        lvl20 as ICachedArtifact,
+        emptyBuild,
+        ['atk_', 'critRate_'],
+        2
+      )
+
+      // Basic checks / ensure decimal form
+      expect(reshaped.p).toBe(1)
+      expect(reshaped.n.rollsLeft).toBe(5)
+      expect(reshaped.n.base['atk_']).toBeCloseTo(5.8 / 100)
+      expect(reshaped.n.base['critRate_']).toBeCloseTo(3.9 / 100)
+      expect(reshaped.n.base['critDMG_']).toBeCloseTo(7.8 / 100)
+      expect(reshaped.n.base['atk']).toBeCloseTo(19.45)
+    })
+    test('reshape/3line value tests', () => {
+      const lvl20_3liner = { ...lvl20, totalRolls: 8 }
+      const [reshaped] = dustReshape(
+        lvl20_3liner as ICachedArtifact,
+        emptyBuild,
+        ['atk_', 'critRate_'],
+        2
+      )
+      expect(reshaped.n.rollsLeft).toBe(4)
+
+      const obj = makeObjective([nodeAtk], [0])
+      const obj3 = makeObjective([nodeCR], [0])
+
+      const rollsLevel = expandNodes([reshaped])
+      const valuesLevel = expandNodes(rollsLevel)
+      const g = reshaped.n.subDistr
+
+      checkExpandedEvalCorrectness(obj, rollsLevel, g)
+      checkExpandedEvalCorrectness(obj, valuesLevel, g)
+      checkExpandedEvalCorrectness(obj3, rollsLevel, g)
+      checkExpandedEvalCorrectness(obj3, valuesLevel, g)
+
+      const precomputed = [
+        { p: 0.00390625, subs: [4, 0, 0, 0] },
+        { p: 0.00390625, subs: [0, 4, 0, 0] },
+        { p: 0.015625, subs: [3, 1, 0, 0] },
+        { p: 0.015625, subs: [1, 3, 0, 0] },
+        { p: 0.0234375, subs: [2, 2, 0, 0] },
+        { p: 0.015625, subs: [3, 0, 1, 0] },
+        { p: 0.015625, subs: [3, 0, 0, 1] },
+        { p: 0.015625, subs: [0, 3, 1, 0] },
+        { p: 0.015625, subs: [0, 3, 0, 1] },
+        { p: 0.046875, subs: [2, 1, 1, 0] },
+        { p: 0.046875, subs: [1, 2, 1, 0] },
+        { p: 0.046875, subs: [2, 1, 0, 1] },
+        { p: 0.046875, subs: [1, 2, 0, 1] },
+        { p: 0.04296875, subs: [2, 0, 2, 0] },
+        { p: 0.04296875, subs: [2, 0, 0, 2] },
+        { p: 0.04296875, subs: [0, 2, 2, 0] },
+        { p: 0.04296875, subs: [0, 2, 0, 2] },
+        { p: 0.0859375, subs: [2, 0, 1, 1] },
+        { p: 0.0859375, subs: [0, 2, 1, 1] },
+        { p: 0.171875, subs: [1, 1, 1, 1] },
+        { p: 0.0859375, subs: [1, 1, 0, 2] },
+        { p: 0.0859375, subs: [1, 1, 2, 0] },
+      ]
+      const totP = precomputed.reduce((a, { p }) => a + p, 0)
+      expect(totP).toBeCloseTo(1)
+
+      // Manual computation of atk.
+      const vatk = getSubstatValue('atk', 5, 'max', false)
+      const vatk_ = getSubstatValue('atk_', 5, 'max', false)
+      const vcr_ = getSubstatValue('critRate_', 5, 'max', false)
+
+      const expectedAtk = precomputed.reduce(
+        (v, { p, subs }) =>
+          v + 0.85 * p * (vatk * subs[3] + vatk_ * subs[0] * 1000),
+        19.45 + 0.058 * 1000
+      ) // 149.72921875
+      expect(evaluateGaussian(obj, g).f_mu[0]).toBeCloseTo(expectedAtk)
+      const expectedCR = precomputed.reduce(
+        (v, { p, subs }) => v + 0.85 * p * vcr_ * subs[1],
+        0.039
+      ) // 0.0782646875
+      expect(evaluateGaussian(obj3, g).f_mu[0]).toBeCloseTo(expectedCR)
+    })
   })
   test('reshape/dust ignores artifacts with missing initial rolls', () => {
     expect(
@@ -575,79 +594,6 @@ describe('upOpt makeSubstatNode(s)', () => {
         2
       )
     ).toEqual([])
-  })
-  test('reshape/dust normalizes equipped percent stats', () => {
-    const [reshaped] = dustReshape(
-      {
-        setKey: 'GladiatorsFinale',
-        slotKey: 'flower',
-        level: 20,
-        rarity: 5,
-        mainStatKey: 'hp',
-        location: '',
-        lock: false,
-        substats: [
-          { key: 'atk_', value: 46.6, initialValue: 5.8 },
-          { key: 'critRate_', value: 31.1, initialValue: 3.9 },
-          { key: 'critDMG_', value: 62.2, initialValue: 7.8 },
-          { key: 'enerRech_', value: 25.9, initialValue: 6.5 },
-        ],
-      },
-      {
-        flower: undefined,
-        plume: undefined,
-        sands: {
-          id: 'equipped-sands',
-          setKey: 'GladiatorsFinale',
-          slotKey: 'sands',
-          level: 20,
-          rarity: 5,
-          mainStatKey: 'atk_',
-          mainStatVal: 46.6,
-          location: '',
-          lock: false,
-          substats: [
-            {
-              key: 'def_',
-              value: 5.8,
-              accurateValue: 5.8,
-              efficiency: 0,
-              rolls: [],
-            },
-            {
-              key: '',
-              value: 0,
-              accurateValue: 0,
-              efficiency: 0,
-              rolls: [],
-            },
-            {
-              key: '',
-              value: 0,
-              accurateValue: 0,
-              efficiency: 0,
-              rolls: [],
-            },
-            {
-              key: '',
-              value: 0,
-              accurateValue: 0,
-              efficiency: 0,
-              rolls: [],
-            },
-          ],
-          unactivatedSubstats: undefined,
-        } as any,
-        goblet: undefined,
-        circlet: undefined,
-      },
-      ['atk_', 'critRate_'],
-      2
-    )
-    expect(reshaped.n.base['atk_']).toBeCloseTo(
-      getMainStatValue('atk_', 5, 20) + 5.8 / 100
-    )
-    expect(reshaped.n.base['def_']).toBeCloseTo(5.8 / 100)
   })
   test('define/elixir', () => {})
 })

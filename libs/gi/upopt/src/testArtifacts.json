@@ -9,10 +9,10 @@
     "lock": false,
     "totalRolls": 9,
     "substats": [
-      { "key": "atk_", "value": 5.8, "initialValue": 5.8 },
-      { "key": "critRate_", "value": 23.3, "initialValue": 3.9 },
-      { "key": "critDMG_", "value": 7.8, "initialValue": 7.8 },
-      { "key": "atk", "value": 19, "initialValue": 19 }
+      { "key": "atk_", "accurateValue": 5.83, "initialValue": 5.8 },
+      { "key": "critRate_", "accurateValue": 23.3, "initialValue": 3.9 },
+      { "key": "critDMG_", "accurateValue": 7.8, "initialValue": 7.8 },
+      { "key": "atk", "accurateValue": 19.45, "initialValue": 19.45 }
     ]
   },
   "lvl0": {
