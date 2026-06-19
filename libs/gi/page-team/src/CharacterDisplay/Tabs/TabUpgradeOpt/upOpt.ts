@@ -333,10 +333,10 @@ export class UpOptCalculator {
       },
     }
     if (art.unactivatedSubstats) {
-      art.unactivatedSubstats.forEach(({ key, value }) => {
+      art.unactivatedSubstats.forEach(({ key, accurateValue }) => {
         if (key === '') return
         out.subs.push(key)
-        out.values[key] = toDecimal(key, value)
+        out.values[key] = toDecimal(key, accurateValue)
         out.rollsLeft -= 1
       })
     }
