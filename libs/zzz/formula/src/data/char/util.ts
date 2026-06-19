@@ -13,6 +13,7 @@ import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import {
   type AttributeKey,
   type SkillKey,
+  allAttributeKeys,
   allSkillKeys,
 } from '@genshin-optimizer/zzz/consts'
 import {
@@ -396,6 +397,26 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
   )
   const isMiyabi = data_gen.id === '1091'
 
+  const vortex = (attribute: AttributeKey | 'frost') =>
+    customAnomalyDmg(
+      `vortexDmgInst_${attribute}`,
+      {
+        attribute: attribute === 'frost' ? 'ice' : attribute,
+        damageType1: 'vortex',
+      },
+      prod(
+        sum(
+          percent(vortexMultipliers[attribute]),
+          own.final.addl_disorder_,
+          prod(
+            percent(disorderTimeMultipliers[attribute]),
+            max(0, sum(constant(30), prod(constant(-1), anomTimePassed)))
+          )
+        ),
+        own.final.atk
+      )
+    )
+
   return [
     ownBuff.char.attribute.add(data_gen.attribute),
     ownBuff.char.specialty.add(data_gen.specialty),
@@ -491,29 +512,12 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
       )
     ),
     // Vortex DMG
-    ...(data_gen.attribute !== 'wind'
-      ? customAnomalyDmg(
-          `vortexDmgInst_${isMiyabi ? 'frost' : data_gen.attribute}`,
-          { attribute: data_gen.attribute, damageType1: 'vortex' },
-          prod(
-            sum(
-              percent(
-                vortexMultipliers[isMiyabi ? 'frost' : data_gen.attribute]
-              ),
-              own.final.addl_disorder_,
-              prod(
-                percent(
-                  disorderTimeMultipliers[
-                    isMiyabi ? 'frost' : data_gen.attribute
-                  ]
-                ),
-                max(0, sum(constant(30), prod(constant(-1), anomTimePassed)))
-              )
-            ),
-            own.final.atk
-          )
-        )
-      : []),
+    ...(data_gen.attribute === 'wind'
+      ? [
+          ...allAttributeKeys.filter((attr) => attr !== 'wind'),
+          'frost' as const,
+        ].flatMap(vortex)
+      : vortex(isMiyabi ? 'frost' : data_gen.attribute)),
     // Abloom DMG
     ...customAnomalyDmg(
       'abloomDmgInst',
