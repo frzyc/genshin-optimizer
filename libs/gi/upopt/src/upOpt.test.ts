@@ -446,38 +446,55 @@ describe('upOpt makeSubstatNode(s)', () => {
   const nodeAtk = sum(dynRead('atk'), prod(1000, dynRead('atk_')))
   const nodeHp = sum(dynRead('hp'), prod(1000, dynRead('hp_')))
   const nodeCR = sum(dynRead('critRate_'))
-  test('levelArtifact', () => {
-    const obj = makeObjective([nodeAtk], [0])
-    const obj2 = makeObjective([nodeHp], [0])
-    const obj3 = makeObjective([nodeCR], [0])
+  describe('levelArtifact', () => {
+    test('levelup unactivated', () => {
+      const obj = makeObjective([nodeAtk], [0])
+      const obj2 = makeObjective([nodeHp], [0])
+      const obj3 = makeObjective([nodeCR], [0])
 
-    const substatLevel = levelUpArtifact(lvl0 as ICachedArtifact, emptyBuild)
-    const rollsLevel = expandNodes(substatLevel)
-    const valuesLevel = expandNodes(rollsLevel)
-    const g = substatLevel[0].n.subDistr
+      const substatLevel = levelUpArtifact(lvl0 as ICachedArtifact, emptyBuild)
+      const rollsLevel = expandNodes(substatLevel)
+      const valuesLevel = expandNodes(rollsLevel)
+      const g = substatLevel[0].n.subDistr
 
-    checkExpandedEvalCorrectness(obj, rollsLevel, g)
-    checkExpandedEvalCorrectness(obj, valuesLevel, g)
-    checkExpandedEvalCorrectness(obj2, rollsLevel, g)
-    checkExpandedEvalCorrectness(obj2, valuesLevel, g)
-    checkExpandedEvalCorrectness(obj3, rollsLevel, g)
-    checkExpandedEvalCorrectness(obj3, valuesLevel, g)
+      checkExpandedEvalCorrectness(obj, rollsLevel, g)
+      checkExpandedEvalCorrectness(obj, valuesLevel, g)
+      checkExpandedEvalCorrectness(obj2, rollsLevel, g)
+      checkExpandedEvalCorrectness(obj2, valuesLevel, g)
+      checkExpandedEvalCorrectness(obj3, rollsLevel, g)
+      checkExpandedEvalCorrectness(obj3, valuesLevel, g)
 
-    // avg rolls = 1.85 in each stat, so expected atk = 1.85*atk + 1.85*atk_*1000
-    const ev = evaluateGaussian(obj, g)
-    const vatk = getSubstatValue('atk', 5, 'max', false)
-    const vatk_ = getSubstatValue('atk_', 5, 'max', false)
-    expect(ev.f_mu[0]).toBeCloseTo(1.85 * vatk + 1.85 * vatk_ * 1000)
+      // avg rolls = 1.85 in each stat, so expected atk = 1.85*atk + 1.85*atk_*1000
+      const ev = evaluateGaussian(obj, g)
+      const vatk = getSubstatValue('atk', 5, 'max', false)
+      const vatk_ = getSubstatValue('atk_', 5, 'max', false)
+      expect(ev.f_mu[0]).toBeCloseTo(1.85 * vatk + 1.85 * vatk_ * 1000)
 
-    // hp = 4780, no hp rolls.
-    const ev2 = evaluateGaussian(obj2, g)
-    expect(ev2.f_mu[0]).toBeCloseTo(getMainStatValue('hp', 5, 20))
-    expect(ev2.f_cov[0][0]).toBeCloseTo(0)
+      // hp = 4780, no hp rolls.
+      const ev2 = evaluateGaussian(obj2, g)
+      expect(ev2.f_mu[0]).toBeCloseTo(getMainStatValue('hp', 5, 20))
+      expect(ev2.f_cov[0][0]).toBeCloseTo(0)
 
-    // crit rate = [1 (base) + 0.85 (avg roll) * 1 (4 rolls * 1/4 chance each)] * .03889 (base crit rate)
-    const ev3 = evaluateGaussian(obj3, g)
-    const vcrit = getSubstatValue('critRate_', 5, 'max', false)
-    expect(ev3.f_mu[0]).toBeCloseTo((1 + 1 * 0.85) * vcrit, 5)
+      // crit rate = [1 (base) + 0.85 (avg roll) * 1 (4 rolls * 1/4 chance each)] * .03889 (base crit rate)
+      const ev3 = evaluateGaussian(obj3, g)
+      const vcrit = getSubstatValue('critRate_', 5, 'max', false)
+      expect(ev3.f_mu[0]).toBeCloseTo((1 + 1 * 0.85) * vcrit, 5)
+    })
+    test('levelup 3line no unactivated', () => {
+      const lvl0_3line = structuredClone(lvl0) as ICachedArtifact
+      lvl0_3line.unactivatedSubstats = []
+      // atk%, critRate%, critDMG% populated, check 4th substat choices.
+
+      const substatLevel = levelUpArtifact(lvl0_3line, emptyBuild)
+      const validKeys = ['hp_', 'atk', 'def', 'def_', 'eleMas', 'enerRech_']
+      expect(validKeys.length).toEqual(substatLevel.length)
+
+      validKeys.forEach((k) => {
+        expect(
+          substatLevel.some(({ n }) => n.subkeys.some((s) => s.key === k))
+        ).toBeTruthy()
+      })
+    })
   })
   test('fresh/domain/strongbox', () => {})
   describe('reshape', () => {

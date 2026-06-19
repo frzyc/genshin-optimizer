@@ -60,7 +60,8 @@ export function levelUpArtifact(
   if (subkeys.length === 4) return [{ p: 1, n: makeSubstatNode(info) }]
 
   // Unactivated substats - Insert and remove a remaining roll.
-  if (art.unactivatedSubstats) {
+  const anyUnactivated = art.unactivatedSubstats?.some(({ key }) => key !== '')
+  if (art.unactivatedSubstats && anyUnactivated) {
     art.unactivatedSubstats.forEach(({ key, accurateValue }) => {
       if (key === '') return
       info.base[key] = (info.base[key] ?? 0) + accurateValue
