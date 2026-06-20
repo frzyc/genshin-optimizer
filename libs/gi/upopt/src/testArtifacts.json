@@ -85,5 +85,76 @@
         "accurateValue": 0
       }
     ]
+  },
+    "lvl0_2": {
+    "id": "lvl0_2",
+    "setKey": "GladiatorsFinale",
+    "location": "",
+    "slotKey": "flower",
+    "lock": false,
+    "mainStatKey": "hp",
+    "rarity": 5,
+    "level": 0,
+    "substats": [
+      {
+        "key": "atk",
+        "value": 19,
+        "rolls": [19.45],
+        "efficiency": 1,
+        "accurateValue": 19.45
+      },
+      {
+        "key": "critRate_",
+        "value": 3.9,
+        "rolls": [3.8899999999999997],
+        "efficiency": 1,
+        "accurateValue": 3.8899999999999997
+      },
+      {
+        "key": "critDMG_",
+        "value": 7.8,
+        "rolls": [7.7700000000000005],
+        "efficiency": 1,
+        "accurateValue": 7.7700000000000005
+      },
+      {
+        "key": "",
+        "value": 0,
+        "rolls": [],
+        "efficiency": 0,
+        "accurateValue": 0
+      }
+    ],
+    "mainStatVal": 717,
+    "unactivatedSubstats": [
+      {
+        "key": "atk_",
+        "value": 5.8,
+        "rolls": [5.83],
+        "efficiency": 1,
+        "accurateValue": 5.83
+      },
+      {
+        "key": "",
+        "value": 0,
+        "rolls": [],
+        "efficiency": 0,
+        "accurateValue": 0
+      },
+      {
+        "key": "",
+        "value": 0,
+        "rolls": [],
+        "efficiency": 0,
+        "accurateValue": 0
+      },
+      {
+        "key": "",
+        "value": 0,
+        "rolls": [],
+        "efficiency": 0,
+        "accurateValue": 0
+      }
+    ]
   }
 }
