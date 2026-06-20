@@ -15,6 +15,7 @@ import {
   dustReshape,
   elixirDefinition,
   evalMarkovNode,
+  expandNode,
   expandNodes,
   levelUpArtifact,
   makeObjective,
@@ -80,11 +81,22 @@ export function canReshape(art: ICachedArtifact) {
   return true
 }
 
+/** Yield control back to the browser so it can paint between work chunks. */
+function yieldToUi() {
+  return new Promise<void>((resolve) => setTimeout(resolve, 0))
+}
+const uiYieldBudgetMs = 12
+function shouldYieldToUi(lastYield: number) {
+  return Date.now() - lastYield >= uiYieldBudgetMs
+}
+
 export class UpOptCalculatorV2 {
   build: Build
   obj: Objective
   candidates: EvaluatedMarkovTree[] = []
   fixedIx = 0
+  /** Serializes exact-calc work so candidates are refined one at a time. */
+  private exactQueue: Promise<unknown> = Promise.resolve()
 
   constructor(
     nodes: OptNode[],
@@ -250,10 +262,24 @@ export class UpOptCalculatorV2 {
     }
   }
 
-  calcExact(ix: number) {
-    return
-    if (ix >= this.fixedIx) this.calcSlowToIndex(ix + 1)
-    this.expandRollsLevel(ix)
+  /**
+   * Background (cooperative) version of the exact calc. Expands the candidate's
+   * tree down to value level and evaluates it, yielding to the UI periodically
+   * so the main thread stays responsive. `shouldCancel` lets the caller abort
+   * in-flight work (e.g. when paging away). Returns false if cancelled.
+   *
+   * Calls are serialized through `exactQueue` so candidates are refined one at a
+   * time (sequentially) rather than all starting at once.
+   */
+  calcExactAsync(ix: number, shouldCancel: () => boolean = () => false) {
+    const run = this.exactQueue.then(() => {
+      if (shouldCancel()) return false
+      if (ix >= this.fixedIx) this.calcSlowToIndex(ix + 1)
+      return this.expandRollsLevelAsync(ix, shouldCancel)
+    })
+    // Keep the chain alive even if a run rejects, so later calls still proceed.
+    this.exactQueue = run.catch(() => {})
+    return run
   }
 
   expandRollsLevel(ix: number) {
@@ -265,6 +291,50 @@ export class UpOptCalculatorV2 {
       ...newEval,
       evalMode: 'values',
     }
+  }
+
+  async expandRollsLevelAsync(ix: number, shouldCancel: () => boolean) {
+    if (this.candidates[ix].evalMode !== 'rolls') return true
+    let lastYield = Date.now()
+
+    console.log('entered')
+
+    // Chunked expansion: rolls-level tree -> value-level tree.
+    const expanded: MarkovTree = []
+    const tree = this.candidates[ix].tree
+    for (let i = 0; i < tree.length; i++) {
+      const { p, n } = tree[i]
+      for (const { p: p2, n: n2 } of expandNode(n))
+        expanded.push({ p: p * p2, n: n2 })
+      if (shouldYieldToUi(lastYield)) {
+        if (shouldCancel()) return false
+        await yieldToUi()
+        lastYield = Date.now()
+      }
+    }
+    if (shouldCancel()) return false
+
+    // Chunked evaluation (mirrors evaluateNodes, but yielding).
+    const deduped = deduplicate(this.obj, expanded)
+    const evaluated: { p: number; n: EvaluatedMarkovNode }[] = []
+    for (let i = 0; i < deduped.length; i++) {
+      const { p, n } = deduped[i]
+      evaluated.push({ p, n: evalMarkovNode(this.obj, n) })
+      if (shouldYieldToUi(lastYield)) {
+        if (shouldCancel()) return false
+        await yieldToUi()
+        lastYield = Date.now()
+      }
+    }
+    if (shouldCancel()) return false
+
+    this.candidates[ix] = {
+      ...this.candidates[ix],
+      tree: evaluated,
+      result: accumulateEvaluations(evaluated),
+      evalMode: 'values',
+    }
+    return true
   }
 
   reCalc(ix: number, art: ICachedArtifact) {

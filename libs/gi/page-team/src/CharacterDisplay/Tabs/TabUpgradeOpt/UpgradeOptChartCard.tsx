@@ -24,8 +24,16 @@ import {
 import { getSubstatValue } from '@genshin-optimizer/gi/util'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
-import { Box, Button, Divider, Grid, Tooltip, Typography } from '@mui/material'
-import { useCallback, useContext, useEffect, useMemo } from 'react'
+import {
+  Box,
+  Button,
+  CircularProgress,
+  Divider,
+  Grid,
+  Tooltip,
+  Typography,
+} from '@mui/material'
+import { useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
   Area,
@@ -220,10 +228,9 @@ function UpgradeOptChartCardGraph({
   }, [equippedArt, upOptCalc, ix, forceUpdate])
 
   const constrained = thresholds.length > 1
-
   const thr0 = thresholds[0]
   const perc = useCallback((x: number) => (100 * (x - thr0)) / thr0, [thr0])
-
+  const [isExactPending, setIsExactPending] = useState(false)
   const step = (objMax - objMin) / nbins
   const chartDataGMM = upArt.tree.map(({ p, n }) => ({
     p,
@@ -278,8 +285,18 @@ function UpgradeOptChartCardGraph({
 
   useEffect(() => {
     if (isExact) return
-    upOptCalc.calcExact(ix)
-    forceUpdate()
+    setIsExactPending(true)
+    let cancelled = false
+    upOptCalc
+      .calcExactAsync(ix, () => cancelled)
+      .then((updated) => {
+        if (cancelled) return
+        setIsExactPending(false)
+        if (updated) forceUpdate()
+      })
+    return () => {
+      cancelled = true
+    }
   }, [upOptCalc, isExact, ix, forceUpdate])
 
   const probUpgradeText = (
@@ -356,6 +373,7 @@ function UpgradeOptChartCardGraph({
             )}
             {upArt.info.type === 'definition' && (
               <>
+                {isExactPending && <CircularProgress size={18} />}
                 <SqBadge color="secondary">{t('upOptChart.define')}</SqBadge>
                 <Typography variant="body2">
                   {t('upOptChart.defineStats', { stats: defineLabel })}
