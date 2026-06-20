@@ -36,6 +36,11 @@
     "rolls": "Number of rolls into the guaranteed substats:",
     "rollOption": "{{count}} rolls"
   },
+  "upOptDefine": {
+    "label": "Define",
+    "tooltip": "Evaluate hypothetical artifacts created by defining (sanctifying elixirs). Candidates are generated for the selected sets, slots, main stats, and every pair of the selected substats below.",
+    "substats": "Substats to consider for defining:"
+  },
   "upOptChart": {
     "est": " (est.)",
     "prob": "Prob. upgrade{{est}}: ",
@@ -44,6 +49,8 @@
     "current": "Current on Build",
     "reshape": "Reshape",
     "reshapeStats": "Guaranteed: {{count}} rolls into {{stats}}",
+    "define": "Define",
+    "defineStats": "Guaranteed substats: {{stats}}",
     "incLabel": "Relative Increase to Target",
     "probLabel": "Probability",
     "const": " Constrained",

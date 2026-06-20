@@ -3,11 +3,12 @@ import {
   useForceUpdate,
 } from '@genshin-optimizer/common/react-util'
 import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
-import { linspace, objMap } from '@genshin-optimizer/common/util'
+import { linspace, objMap, range } from '@genshin-optimizer/common/util'
 import {
   type ArtifactSlotKey,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
+import { cachedArtifact } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
   useArtifact,
@@ -15,10 +16,12 @@ import {
 } from '@genshin-optimizer/gi/db-ui'
 import {
   ArtifactCard,
+  ArtifactCardObj,
   ArtifactCardPico,
   DataContext,
   EquipBuildModal,
 } from '@genshin-optimizer/gi/ui'
+import { getSubstatValue } from '@genshin-optimizer/gi/util'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import { Box, Button, Divider, Grid, Tooltip, Typography } from '@mui/material'
@@ -35,7 +38,39 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
-import { type UpOptCalculatorV2, integralOfGMM } from './upOpt'
+import { type UpOptCalculatorV2, type UpOptInfo, integralOfGMM } from './upOpt'
+
+type DefineInfo = Extract<UpOptInfo, { type: 'definition' }>
+
+/**
+ * Build a synthetic artifact for displaying a define (sanctifying elixir)
+ * candidate, which has no backing DB artifact. Only set/slot/main/affixes are
+ * meaningful, so it's rendered with `hideSubstatValues`/`hideLocation`.
+ */
+function defineDisplayArtifact(info: DefineInfo) {
+  return cachedArtifact(
+    {
+      setKey: info.setKey,
+      slotKey: info.slotKey,
+      level: 0,
+      rarity: 5,
+      mainStatKey: info.mainStatKey,
+      location: '',
+      lock: false,
+      // `cachedArtifact` requires exactly 4 substats. The affixes get a non-zero
+      // value so the card renders them (it filters out value===0); the actual
+      // value is hidden via `hideSubstatValues`. The remaining slots are empty.
+      substats: [
+        ...info.affixes.map((key) => ({ key, value: getSubstatValue(key, 5) })),
+        ...range(info.affixes.length, 3).map(() => ({
+          key: '' as const,
+          value: 0,
+        })),
+      ],
+    },
+    `define-${info.setKey}-${info.slotKey}-${info.mainStatKey}-${info.affixes.join('-')}`
+  ).artifact
+}
 
 type Props = {
   setArtifactIdToEdit: (id: string | undefined) => void
@@ -54,26 +89,37 @@ type ChartData = {
 const nbins = 50
 
 export default function UpgradeOptChartCard(props: Props) {
+  const { t } = useTranslation('page_character_optimize')
   const database = useDatabase()
   const { data } = useContext(DataContext)
   const upOptArt = props.upOptCalc.candidates[props.ix]
   if (!upOptArt) return null
-  const artifactId = upOptArt.info.artifactId
-  const upArt = database.arts.get(artifactId)
+  const info = upOptArt.info
+  const artifactId = info.type === 'definition' ? undefined : info.artifactId
+  const upArt = artifactId ? database.arts.get(artifactId) : undefined
   const currentlyEquippedArtId =
     upArt?.slotKey && data.get(input.art[upArt.slotKey].id).value
-  const isEquipped = artifactId === currentlyEquippedArtId
+  const isEquipped = !!artifactId && artifactId === currentlyEquippedArtId
   return (
     <Box>
       <Grid container spacing={1}>
         <Grid item xs={12} sm={5} md={4} lg={3} xl={3}>
-          <ArtifactCard
-            artifactId={artifactId}
-            onEdit={() => props.setArtifactIdToEdit(artifactId)}
-            extraButtons={
-              <EquipButton newArtId={artifactId} disabled={isEquipped} />
-            }
-          />
+          {info.type === 'definition' ? (
+            <ArtifactCardObj
+              artifact={defineDisplayArtifact(info)}
+              hideLocation
+              hideSubstatValues
+              buildsBadgeLabel={t('upOptChart.define')}
+            />
+          ) : (
+            <ArtifactCard
+              artifactId={artifactId!}
+              onEdit={() => props.setArtifactIdToEdit(artifactId)}
+              extraButtons={
+                <EquipButton newArtId={artifactId!} disabled={isEquipped} />
+              }
+            />
+          )}
         </Grid>
         <Grid item xs={12} sm={7} md={8} lg={9} xl={9}>
           <UpgradeOptChartCardGraph {...props} />
@@ -160,8 +206,10 @@ function UpgradeOptChartCardGraph({
     [tk]
   )
   const upArt = upOptCalc.candidates[ix]
+  const infoArtifactId =
+    upArt.info.type === 'definition' ? undefined : upArt.info.artifactId
   const [, forceUpdate] = useForceUpdate()
-  const equippedArt = useArtifact(upArt.info.artifactId)
+  const equippedArt = useArtifact(infoArtifactId)
 
   useEffect(() => {
     if (equippedArt) {
@@ -225,21 +273,30 @@ function UpgradeOptChartCardGraph({
     </span>
   )
   const { data } = useContext(DataContext)
+  // Define candidates have no backing artifact, so compare against whatever is
+  // currently equipped in the candidate's target slot.
+  const comparisonSlotKey: ArtifactSlotKey | undefined =
+    upArt.info.type === 'definition' ? upArt.info.slotKey : equippedArt?.slotKey
   const currentlyEquippedArtId =
-    equippedArt?.slotKey && data.get(input.art[equippedArt.slotKey].id).value
-  const isCurrentlyEquipped = currentlyEquippedArtId === upArt.info.artifactId
+    comparisonSlotKey && data.get(input.art[comparisonSlotKey].id).value
+  const isCurrentlyEquipped =
+    !!infoArtifactId && currentlyEquippedArtId === infoArtifactId
   const reshapeLabel =
     upArt.info.type === 'reshape'
       ? upArt.info.affixes.map((affix) => formatReshapeLabel(affix)).join(' / ')
       : ''
   const reshapeRolls =
     upArt.info.type === 'reshape' ? upArt.info.mintotal : undefined
+  const defineLabel =
+    upArt.info.type === 'definition'
+      ? upArt.info.affixes.map((affix) => formatReshapeLabel(affix)).join(' / ')
+      : ''
   return (
     <CardThemed bgt="light" sx={{ height: '100%' }}>
       <Box sx={{ display: 'flex', flexDirection: 'row' }}>
         <Box sx={{ height: 50, width: 50 }}>
-          {!!equippedArt?.slotKey && (
-            <EquippedArtifact slotKey={equippedArt.slotKey} />
+          {!!comparisonSlotKey && (
+            <EquippedArtifact slotKey={comparisonSlotKey} />
           )}
         </Box>
         <Box
@@ -269,6 +326,14 @@ function UpgradeOptChartCardGraph({
                     stats: reshapeLabel,
                     count: reshapeRolls,
                   })}
+                </Typography>
+              </>
+            )}
+            {upArt.info.type === 'definition' && (
+              <>
+                <SqBadge color="secondary">{t('upOptChart.define')}</SqBadge>
+                <Typography variant="body2">
+                  {t('upOptChart.defineStats', { stats: defineLabel })}
                 </Typography>
               </>
             )}

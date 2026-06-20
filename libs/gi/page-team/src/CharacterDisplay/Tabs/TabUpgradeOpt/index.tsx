@@ -10,10 +10,17 @@ import {
   objPathValue,
   range,
 } from '@genshin-optimizer/common/util'
-import type { ArtifactSetKey, CharacterKey } from '@genshin-optimizer/gi/consts'
+import type {
+  ArtifactSetKey,
+  CharacterKey,
+  MainStatKey,
+  SubstatKey,
+} from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSetKeys,
   allArtifactSlotKeys,
+  allSubstatKeys,
+  artSlotMainKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
 import type { ArtSetExclusionKey } from '@genshin-optimizer/gi/db'
@@ -29,6 +36,7 @@ import {
   type FilterOption,
   initialFilterOption,
 } from '@genshin-optimizer/gi/schema'
+import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import type { dataContextObj } from '@genshin-optimizer/gi/ui'
 import {
   AddArtInfo,
@@ -107,6 +115,9 @@ const filterOptionReducer = (
 ) => ({ ...state, ...action })
 export default function TabUpopt() {
   const { t } = useTranslation('page_character_optimize')
+  const { t: tk } = useTranslation('statKey_gen')
+  const substatLabel = (key: SubstatKey) =>
+    `${tk(key)}${key.endsWith('_') ? '%' : ''}`
   const {
     teamId,
     teamCharId,
@@ -133,6 +144,8 @@ export default function TabUpopt() {
     upOptLevelHigh,
     upOptReshape,
     upOptReshapeRolls,
+    upOptDefine,
+    upOptDefineSubstats,
   } = optConfig
   const teamData = useTeamData()
   const { target: data } = teamData?.[characterKey as CharacterKey] ?? {}
@@ -253,6 +266,8 @@ export default function TabUpopt() {
       upOptLevelHigh,
       upOptReshape,
       upOptReshapeRolls,
+      upOptDefine,
+      upOptDefineSubstats,
       artSetExclusion,
     } = optConfig
 
@@ -358,7 +373,28 @@ export default function TabUpopt() {
           (upOptReshape && canReshape(art)) ||
           (upOptLevelLow <= art.level && art.level <= upOptLevelHigh)
       )
-    if (!artifactsToConsider.length) return
+    // Defining (sanctifying elixirs): generate synthetic artifact candidates.
+    // mainStats include the fixed flower/plume mains plus the user's selected
+    // sands/goblet/circlet mains, so `tryDefine`'s per-slot main filter isn't empty.
+    const defineConfig = {
+      enabled: upOptDefine && upOptDefineSubstats.length >= 2,
+      setKeys: (artSetKeys.length
+        ? artSetKeys
+        : [...allArtifactSetKeys]) as ArtifactSetKey[],
+      slotKeys: slotKeys.length ? slotKeys : [...allArtifactSlotKeys],
+      mainStats: [
+        ...new Set<MainStatKey>([
+          ...artSlotMainKeys.flower,
+          ...artSlotMainKeys.plume,
+          ...mainStatKeys.sands,
+          ...mainStatKeys.goblet,
+          ...mainStatKeys.circlet,
+        ]),
+      ],
+      substats: upOptDefineSubstats,
+    }
+
+    if (!artifactsToConsider.length && !defineConfig.enabled) return
     const nodes = optimize(
       [optimizationTargetNode, ...valueFilter.map((x) => x.value)],
       workerData,
@@ -371,7 +407,7 @@ export default function TabUpopt() {
       equippedArts,
       artifactsToConsider,
       { enabled: upOptReshape, minTotal: upOptReshapeRolls as 2 | 3 | 4 },
-      { enabled: false, setKeys: [], slotKeys: [], mainStats: [], substats: [] }
+      defineConfig
     )
     /**
      * WARNING:
@@ -536,6 +572,22 @@ export default function TabUpopt() {
                       filteredArtIdMap={filteredArtIdMap}
                     />
                   </CardThemed>
+                </Grid>
+                {/* 3 */}
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  lg={5}
+                  display="flex"
+                  flexDirection="column"
+                  gap={1}
+                >
+                  <ArtifactSetConfig disabled={false} />
+                  <AddArtifactButton
+                    onClick={() => setArtifactIdToEdit('new')}
+                  />
+                  <StatFilterCard disabled={false} />
                   <CardThemed bgt="light">
                     <CardContent>
                       <Stack spacing={1}>
@@ -592,22 +644,69 @@ export default function TabUpopt() {
                       </Stack>
                     </CardContent>
                   </CardThemed>
-                </Grid>
-                {/* 3 */}
-                <Grid
-                  item
-                  xs={12}
-                  sm={6}
-                  lg={5}
-                  display="flex"
-                  flexDirection="column"
-                  gap={1}
-                >
-                  <ArtifactSetConfig disabled={false} />
-                  <AddArtifactButton
-                    onClick={() => setArtifactIdToEdit('new')}
-                  />
-                  <StatFilterCard disabled={false} />
+                  <CardThemed bgt="light">
+                    <CardContent>
+                      <Stack spacing={1}>
+                        <Box display="flex" alignItems="center">
+                          <FormControlLabel
+                            control={
+                              <Checkbox
+                                checked={upOptDefine}
+                                onChange={(_, upOptDefine) =>
+                                  database.optConfigs.set(optConfigId, {
+                                    upOptDefine,
+                                  })
+                                }
+                              />
+                            }
+                            label={t('upOptDefine.label')}
+                          />
+                          <Tooltip arrow title={t('upOptDefine.tooltip')}>
+                            <InfoIcon
+                              fontSize="small"
+                              color="action"
+                              sx={{ mb: 0.5 }}
+                            />
+                          </Tooltip>
+                        </Box>
+                        <Box>
+                          <Typography variant="body2" color="text.secondary">
+                            {t('upOptDefine.substats')}
+                            <SqBadge color="info" sx={{ ml: 1 }}>
+                              {upOptDefineSubstats.length}
+                            </SqBadge>
+                          </Typography>
+                          <Grid container spacing={0.5} sx={{ mt: 0.5 }}>
+                            {allSubstatKeys.map((key) => {
+                              const selected = upOptDefineSubstats.includes(key)
+                              return (
+                                <Grid item key={key}>
+                                  <Button
+                                    size="small"
+                                    color={selected ? 'success' : 'secondary'}
+                                    variant="contained"
+                                    startIcon={<StatIcon statKey={key} />}
+                                    onClick={() => {
+                                      const next = selected
+                                        ? upOptDefineSubstats.filter(
+                                            (k) => k !== key
+                                          )
+                                        : [...upOptDefineSubstats, key]
+                                      database.optConfigs.set(optConfigId, {
+                                        upOptDefineSubstats: next,
+                                      })
+                                    }}
+                                  >
+                                    {substatLabel(key)}
+                                  </Button>
+                                </Grid>
+                              )
+                            })}
+                          </Grid>
+                        </Box>
+                      </Stack>
+                    </CardContent>
+                  </CardThemed>
                   <AdResponsive
                     bgt="light"
                     dataAdSlot="3955015620"
@@ -688,7 +787,7 @@ export default function TabUpopt() {
                   (i) =>
                     upOptCalc.candidates[i] && (
                       <UpgradeOptChartCard
-                        key={`${i}+${upOptCalc.candidates[i].info.artifactId}`}
+                        key={`${i}+${upOptCalc.candidates[i].id}`}
                         upOptCalc={upOptCalc}
                         ix={i}
                         setArtifactIdToEdit={setArtifactIdToEdit}
