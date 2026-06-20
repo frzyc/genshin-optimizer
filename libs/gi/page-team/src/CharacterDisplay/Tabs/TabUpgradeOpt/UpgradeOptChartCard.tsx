@@ -38,7 +38,8 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
-import { type UpOptCalculatorV2, type UpOptInfo, integralOfGMM } from './upOpt'
+import { erf } from './mathUtil'
+import { type UpOptCalculatorV2, type UpOptInfo } from './upOpt'
 
 type DefineInfo = Extract<UpOptInfo, { type: 'definition' }>
 
@@ -224,9 +225,33 @@ function UpgradeOptChartCardGraph({
   const perc = useCallback((x: number) => (100 * (x - thr0)) / thr0, [thr0])
 
   const step = (objMax - objMin) / nbins
+  const chartDataGMM = upArt.tree.map(({ p, n }) => ({
+    p,
+    cp: n.evaluation.constr_prob,
+    mu: n.evaluation.f_mu[0],
+    cov: n.evaluation.f_cov[0][0],
+  }))
+  function integrals(a: number, b: number) {
+    let est = 0,
+      estCons = 0
+    chartDataGMM.forEach(({ p, cp, mu, cov }) => {
+      const sig = Math.sqrt(cov)
+      if (sig < 1e-3) {
+        if (mu >= a && mu <= b) {
+          est += p
+          estCons += cp * p
+        }
+        return
+      }
+      const P = erf((mu - a) / sig) - erf((mu - b) / sig)
+      est += (p * P) / 2
+      estCons += (cp * p * P) / 2
+    }, 0)
+    return { est, estCons }
+  }
   const dataHist: ChartData[] = linspace(objMin, objMax, nbins, false).flatMap(
     (v) => {
-      const estimatedIntegral = integralOfGMM(v, v + step, upArt)
+      const estimatedIntegral = integrals(v, v + step)
       return [
         {
           x: perc(v),

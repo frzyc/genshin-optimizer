@@ -24,8 +24,8 @@ import type {
   MarkovNode,
   Objective,
 } from '@genshin-optimizer/gi/upopt'
-import { type OptNode, precompute } from '@genshin-optimizer/gi/wr'
-import { erf } from './mathUtil'
+import { type OptNode, optimize, precompute } from '@genshin-optimizer/gi/wr'
+import { removeSetKeys } from './formulaUtils'
 
 type Build = Record<ArtifactSlotKey, ICachedArtifact | undefined>
 type MarkovTree = { p: number; n: MarkovNode }[]
@@ -95,6 +95,9 @@ export class UpOptCalculatorV2 {
     defineConfig: DefineConfig
   ) {
     this.build = build
+    // Remove setKey thresholds that are always active/inactive, then optimize the formula tree.
+    nodes = removeSetKeys(nodes, build)
+    nodes = optimize(nodes, {})
 
     // Populate threshold[0] with current value. It's a bit convoluted :/
     const buildAsList = Object.values(build).filter((v) => v !== undefined)
@@ -115,9 +118,8 @@ export class UpOptCalculatorV2 {
 
     this.candidates.sort(this.compare)
     this.calcSlowToIndex(5)
-
-    this.calcExact(0)
     console.log('V2', this.candidates)
+    console.log('obj', this.obj)
   }
 
   tryLevelUp(art: ICachedArtifact) {
@@ -169,6 +171,7 @@ export class UpOptCalculatorV2 {
 
   tryDefine({ setKeys, slotKeys, mainStats, substats }: DefineConfig) {
     setKeys.forEach((setKey) => {
+      if (!this.obj.allReadKeys.includes(setKey)) return
       slotKeys.forEach((slotKey) => {
         artSlotMainKeys[slotKey]
           .filter((mainStat) => mainStats.includes(mainStat))
@@ -248,6 +251,7 @@ export class UpOptCalculatorV2 {
   }
 
   calcExact(ix: number) {
+    return
     if (ix >= this.fixedIx) this.calcSlowToIndex(ix + 1)
     this.expandRollsLevel(ix)
   }
@@ -301,40 +305,4 @@ function accumulateEvaluations(
     { p: 0, upAvgAcc: 0, lower: Infinity, upper: -Infinity }
   )
   return { p, upAvg: p < 1e-6 ? 0 : upAvgAcc / p, lower, upper }
-}
-
-export function integralOfGMM(
-  a: number,
-  b: number,
-  { tree }: EvaluatedMarkovTree
-) {
-  const { int, intCons } = tree.reduce(
-    (
-      { int, intCons },
-      {
-        p,
-        n: {
-          evaluation: {
-            constr_prob,
-            f_mu: [mu],
-            f_cov: [[cov]],
-          },
-        },
-      }
-    ) => {
-      const sig = Math.sqrt(cov)
-      if (sig < 1e-3) {
-        if (a <= mu && mu < b)
-          return { int: p + int, intCons: constr_prob * p + intCons }
-        return { int, intCons }
-      }
-      const P = erf((mu - a) / sig) - erf((mu - b) / sig)
-      return {
-        int: int + (p * P) / 2,
-        intCons: intCons + (constr_prob * p * P) / 2,
-      }
-    },
-    { int: 0, intCons: 0 }
-  )
-  return { est: int, estCons: intCons }
 }
