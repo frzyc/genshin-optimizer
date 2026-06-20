@@ -86,6 +86,7 @@ import StatFilterCard from '../TabOptimize/Components/StatFilterCard'
 import { LevelFilter } from './LevelFilter'
 import UpgradeOptChartCard from './UpgradeOptChartCard'
 import { UpOptCalculator, canReshapeArtifact } from './upOpt'
+import { UpOptCalculatorV2 } from './upOptv2'
 
 // artifact button gets its own type so multiple translations can be used
 type AddArtifactButtonProps = Omit<ButtonProps, 'onClick'> & {
@@ -359,7 +360,7 @@ export default function TabUpopt() {
       ({ path: [p] }) => p !== 'dyn'
     )
 
-    return new UpOptCalculator(
+    new UpOptCalculator(
       nodes,
       [-Infinity, ...valueFilter.map((x) => x.minimum)],
       equippedArts,
@@ -367,6 +368,13 @@ export default function TabUpopt() {
       true,
       upOptReshape,
       upOptReshapeRolls as 2 | 3 | 4
+    )
+    return new UpOptCalculatorV2(
+      nodes,
+      [-Infinity, ...valueFilter.map((x) => x.minimum)],
+      equippedArts,
+      artifactsToConsider,
+      { enabled: upOptReshape, minTotal: upOptReshapeRolls as 2 | 3 | 4 }
     )
     /**
      * WARNING:
@@ -408,38 +416,32 @@ export default function TabUpopt() {
         }
 
       const numPages = Math.ceil(
-        upOptCalc.artifacts.length / artifactsToDisplayPerPage
+        upOptCalc.candidates.length / artifactsToDisplayPerPage
       )
 
       const currentPageIndex = clamp(pageIdex, 0, numPages - 1)
-      const toShow = upOptCalc.artifacts.slice(
+      const toShow = upOptCalc.candidates.slice(
         currentPageIndex * artifactsToDisplayPerPage,
         (currentPageIndex + 1) * artifactsToDisplayPerPage
       )
-      const thr = upOptCalc.thresholds[0]
+      const thr = upOptCalc.obj.threshold[0]
 
       return {
         indexes: range(
           currentPageIndex * artifactsToDisplayPerPage,
           Math.min(
             (currentPageIndex + 1) * artifactsToDisplayPerPage - 1,
-            upOptCalc.artifacts.length - 1
+            upOptCalc.candidates.length - 1
           )
         ),
         numPages,
         currentPageIndex,
-        minObj0: toShow.reduce(
-          (a, b) => Math.min(b.result!.distr.lower, a),
-          thr
-        ),
-        maxObj0: toShow.reduce(
-          (a, b) => Math.max(b.result!.distr.upper, a),
-          thr
-        ),
+        minObj0: toShow.reduce((a, b) => Math.min(b.result.lower, a), thr),
+        maxObj0: toShow.reduce((a, b) => Math.max(b.result.upper, a), thr),
       }
     }, [pageIdex, upOptCalc])
   const setPage = useCallback(
-    (e, value) => {
+    (e: React.ChangeEvent<unknown>, value: number) => {
       if (!upOptCalc) return
       const end = value * artifactsToDisplayPerPage
       upOptCalc.calcSlowToIndex(end)
@@ -466,7 +468,7 @@ export default function TabUpopt() {
           <Grid item>
             <ShowingArt
               numShowing={indexes.length}
-              total={upOptCalc?.artifacts.length ?? 0}
+              total={upOptCalc?.candidates.length ?? 0}
             />
           </Grid>
         </Grid>
@@ -673,7 +675,7 @@ export default function TabUpopt() {
                 allowUpload
               />
             </Suspense>
-            {!upOptCalc?.artifacts.length && (
+            {!upOptCalc?.candidates.length && (
               <Alert severity="warning">{t('upOptNoResults')}</Alert>
             )}
             <Suspense
@@ -687,13 +689,13 @@ export default function TabUpopt() {
               {!!upOptCalc &&
                 indexes.map(
                   (i) =>
-                    upOptCalc.artifacts[i] && (
+                    upOptCalc.candidates[i] && (
                       <UpgradeOptChartCard
-                        key={`${i}+${upOptCalc.artifacts[i].id}`}
+                        key={`${i}+${upOptCalc.candidates[i].info.artifactId}`}
                         upOptCalc={upOptCalc}
                         ix={i}
                         setArtifactIdToEdit={setArtifactIdToEdit}
-                        thresholds={upOptCalc.thresholds ?? []}
+                        thresholds={upOptCalc.obj.threshold ?? []}
                         objMax={maxObj0}
                         objMin={minObj0}
                       />

@@ -35,9 +35,7 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
-import { erf } from './mathUtil'
-import type { UpOptCalculator } from './upOpt'
-import { ResultType } from './upOpt'
+import { type UpOptCalculatorV2, integralOfGMM } from './upOptv2'
 
 type Props = {
   setArtifactIdToEdit: (id: string | undefined) => void
@@ -45,7 +43,7 @@ type Props = {
   objMax: number
   thresholds: number[]
   ix: number
-  upOptCalc: UpOptCalculator
+  upOptCalc: UpOptCalculatorV2
 }
 type ChartData = {
   x: number
@@ -58,9 +56,9 @@ const nbins = 50
 export default function UpgradeOptChartCard(props: Props) {
   const database = useDatabase()
   const { data } = useContext(DataContext)
-  const upOptArt = props.upOptCalc.artifacts[props.ix]
+  const upOptArt = props.upOptCalc.candidates[props.ix]
   if (!upOptArt) return null
-  const artifactId = upOptArt.artifactId
+  const artifactId = upOptArt.info.artifactId
   const upArt = database.arts.get(artifactId)
   const currentlyEquippedArtId =
     upArt?.slotKey && data.get(input.art[upArt.slotKey].id).value
@@ -161,9 +159,9 @@ function UpgradeOptChartCardGraph({
       `${tk(key)}${['atk_', 'def_', 'hp_'].includes(key) ? '%' : ''}`,
     [tk]
   )
-  const upArt = upOptCalc.artifacts[ix]
+  const upArt = upOptCalc.candidates[ix]
   const [, forceUpdate] = useForceUpdate()
-  const equippedArt = useArtifact(upArt.artifactId)
+  const equippedArt = useArtifact(upArt.info.artifactId)
 
   useEffect(() => {
     if (equippedArt) {
@@ -174,37 +172,21 @@ function UpgradeOptChartCardGraph({
 
   const constrained = thresholds.length > 1
 
-  // Returns P(a < DMG < b)
-  const integral = (a: number, b: number) =>
-    upArt.result!.distr.gmm.reduce((pv, { phi, mu, sig2 }) => {
-      const sig = Math.sqrt(sig2)
-      if (sig < 1e-3) return a <= mu && mu < b ? phi + pv : pv
-      const P = erf((mu - a) / sig) - erf((mu - b) / sig)
-      return pv + (phi * P) / 2
-    }, 0)
-  const integralCons = (a: number, b: number) =>
-    upArt.result!.distr.gmm.reduce((pv, { cp, phi, mu, sig2 }) => {
-      const sig = Math.sqrt(sig2)
-      if (sig < 1e-3) return a <= mu && mu < b ? cp * phi + pv : pv
-      const P = erf((mu - a) / sig) - erf((mu - b) / sig)
-      return pv + (cp * phi * P) / 2
-    }, 0)
   const thr0 = thresholds[0]
   const perc = useCallback((x: number) => (100 * (x - thr0)) / thr0, [thr0])
 
   const step = (objMax - objMin) / nbins
   const dataHist: ChartData[] = linspace(objMin, objMax, nbins, false).flatMap(
     (v) => {
+      const estimatedIntegral = integralOfGMM(v, v + step, upArt)
       return [
         {
           x: perc(v),
-          est: integral(v, v + step),
-          estCons: integralCons(v, v + step),
+          ...estimatedIntegral,
         },
         {
           x: perc(v + step),
-          est: integral(v, v + step),
-          estCons: integralCons(v, v + step),
+          ...estimatedIntegral,
         },
       ]
     }
@@ -219,7 +201,7 @@ function UpgradeOptChartCardGraph({
   const reportP = upArt.result!.p
   const reportD = upArt.result!.upAvg
   const chartData = dataHist
-  const isExact = upArt.result!.evalMode === ResultType.Exact
+  const isExact = upArt.evalMode === 'values'
 
   useEffect(() => {
     if (isExact) return
@@ -245,15 +227,13 @@ function UpgradeOptChartCardGraph({
   const { data } = useContext(DataContext)
   const currentlyEquippedArtId =
     equippedArt?.slotKey && data.get(input.art[equippedArt.slotKey].id).value
-  const isCurrentlyEquipped = currentlyEquippedArtId === upArt.artifactId
+  const isCurrentlyEquipped = currentlyEquippedArtId === upArt.info.artifactId
   const reshapeLabel =
-    upArt.action.type === 'reshape'
-      ? upArt.action.affixes
-          .map((affix) => formatReshapeLabel(affix))
-          .join(' / ')
+    upArt.info.type === 'reshape'
+      ? upArt.info.affixes.map((affix) => formatReshapeLabel(affix)).join(' / ')
       : ''
   const reshapeRolls =
-    upArt.action.type === 'reshape' ? upArt.action.mintotal : undefined
+    upArt.info.type === 'reshape' ? upArt.info.mintotal : undefined
   return (
     <CardThemed bgt="light" sx={{ height: '100%' }}>
       <Box sx={{ display: 'flex', flexDirection: 'row' }}>
@@ -281,7 +261,7 @@ function UpgradeOptChartCardGraph({
             )}
           </Box>
           <Box display="flex" alignItems="center" gap={1}>
-            {upArt.action.type === 'reshape' && (
+            {upArt.info.type === 'reshape' && (
               <>
                 <SqBadge color="secondary">{t('upOptChart.reshape')}</SqBadge>
                 <Typography variant="body2">
