@@ -1,11 +1,19 @@
 import { range } from '@genshin-optimizer/common/util'
-import type { ArtifactSlotKey, SubstatKey } from '@genshin-optimizer/gi/consts'
+import {
+  type ArtifactSetKey,
+  type ArtifactSlotKey,
+  type MainStatKey,
+  type SubstatKey,
+  allSubstatKeys,
+  artSlotMainKeys,
+} from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import type { ArtifactBuildData } from '@genshin-optimizer/gi/solver'
 import { compactArtifacts } from '@genshin-optimizer/gi/solver-tc'
 import {
   deduplicate,
   dustReshape,
+  elixirDefinition,
   evalMarkovNode,
   expandNodes,
   levelUpArtifact,
@@ -33,6 +41,13 @@ type ReshapeConfig = {
   enabled: boolean
   minTotal: 2 | 3 | 4
 }
+type DefineConfig = {
+  enabled: boolean
+  setKeys: ArtifactSetKey[]
+  slotKeys: ArtifactSlotKey[]
+  mainStats: MainStatKey[]
+  substats: SubstatKey[]
+}
 
 type LevelUpInfo = {
   artifactId: string
@@ -44,7 +59,14 @@ type ReshapeInfo = {
   affixes: SubstatKey[]
   mintotal: number
 }
-export type UpOptInfo = LevelUpInfo | ReshapeInfo
+type DefineInfo = {
+  type: 'definition'
+  setKey: ArtifactSetKey
+  slotKey: ArtifactSlotKey
+  mainStatKey: MainStatKey
+  affixes: SubstatKey[]
+}
+export type UpOptInfo = LevelUpInfo | ReshapeInfo | DefineInfo
 
 function canLevelUp(art: ICachedArtifact) {
   // Restricted to 5* artifacts for now.
@@ -58,25 +80,6 @@ export function canReshape(art: ICachedArtifact) {
   return true
 }
 
-function setupReshape(art: ICachedArtifact, build: Build, minTotal: number) {
-  const substatKeys = art.substats
-    .map(({ key }) => key)
-    .filter((key) => key !== '')
-
-  const ixPairs = range(0, substatKeys.length - 1).flatMap((i) =>
-    range(i + 1, substatKeys.length - 1).map((j) => [i, j] as const)
-  )
-  return ixPairs.map(([i, j]) => ({
-    reshape: dustReshape(
-      art,
-      build,
-      [substatKeys[i], substatKeys[j]],
-      minTotal
-    ),
-    affixes: [substatKeys[i], substatKeys[j]],
-  }))
-}
-
 export class UpOptCalculatorV2 {
   build: Build
   obj: Objective
@@ -88,7 +91,8 @@ export class UpOptCalculatorV2 {
     thresholds: number[],
     build: Build,
     artifacts: ICachedArtifact[],
-    reshapeConfig: ReshapeConfig
+    reshapeConfig: ReshapeConfig,
+    defineConfig: DefineConfig
   ) {
     this.build = build
 
@@ -107,6 +111,7 @@ export class UpOptCalculatorV2 {
       this.tryLevelUp(art)
       if (reshapeConfig.enabled) this.tryReshape(art, reshapeConfig.minTotal)
     })
+    if (defineConfig.enabled) this.tryDefine(defineConfig)
 
     this.candidates.sort(this.compare)
     this.calcSlowToIndex(5)
@@ -118,30 +123,86 @@ export class UpOptCalculatorV2 {
   tryLevelUp(art: ICachedArtifact) {
     if (!canLevelUp(art)) return
     const info: LevelUpInfo = { artifactId: art.id, type: 'levelUp' }
-    this.candidates.push({
+    this.candidates.push(this.fromLevelUpInfo(info, art))
+  }
+
+  fromLevelUpInfo(info: LevelUpInfo, art: ICachedArtifact) {
+    return {
       ...this.evaluateNodes(levelUpArtifact(art, this.build)),
       info,
-      evalMode: 'substat',
+      evalMode: 'substat' as const,
       id: `${this.candidates.length}`,
-    })
+    }
   }
 
   tryReshape(art: ICachedArtifact, mintotal: number) {
     if (!canReshape(art)) return
-    setupReshape(art, this.build, mintotal).forEach(({ reshape, affixes }) => {
+    const substatKeys = art.substats
+      .map(({ key }) => key)
+      .filter((key) => key !== '')
+
+    const ixPairs = range(0, substatKeys.length - 1).flatMap((i) =>
+      range(i + 1, substatKeys.length - 1).map((j) => [i, j] as const)
+    )
+    ixPairs.forEach(([i, j]) => {
+      const affixes = [substatKeys[i], substatKeys[j]]
       const info: ReshapeInfo = {
         artifactId: art.id,
         type: 'reshape',
         affixes,
         mintotal,
       }
-      this.candidates.push({
-        ...this.evaluateNodes(reshape),
-        info,
-        evalMode: 'substat',
-        id: `${this.candidates.length}`,
+      this.candidates.push(this.fromReshapeInfo(info, art))
+    })
+  }
+
+  fromReshapeInfo(info: ReshapeInfo, art: ICachedArtifact) {
+    return {
+      ...this.evaluateNodes(
+        dustReshape(art, this.build, info.affixes, info.mintotal)
+      ),
+      info,
+      evalMode: 'substat' as const,
+      id: `${this.candidates.length}`,
+    }
+  }
+
+  tryDefine({ setKeys, slotKeys, mainStats, substats }: DefineConfig) {
+    setKeys.forEach((setKey) => {
+      slotKeys.forEach((slotKey) => {
+        artSlotMainKeys[slotKey]
+          .filter((mainStat) => mainStats.includes(mainStat))
+          .forEach((mainStatKey) => {
+            const subOptions = allSubstatKeys
+              .filter((substat) => substat !== mainStatKey)
+              .filter((substat) => substats.includes(substat))
+            for (let i = 0; i < subOptions.length; i++) {
+              for (let j = i + 1; j < subOptions.length; j++) {
+                const affixes = [subOptions[i], subOptions[j]]
+                const info: DefineInfo = {
+                  type: 'definition',
+                  setKey,
+                  slotKey,
+                  mainStatKey,
+                  affixes,
+                }
+                this.candidates.push(this.fromDefineInfo(info))
+              }
+            }
+          })
       })
     })
+  }
+
+  fromDefineInfo(info: DefineInfo) {
+    return {
+      ...this.evaluateNodes(
+        elixirDefinition({ ...info, prob_4line: 1 / 3 }, this.build)
+      ),
+      info,
+      evalMode: 'substat' as const,
+      id: `${this.candidates.length}`,
+    }
   }
 
   evaluateNodes(nodes: MarkovTree) {
@@ -190,6 +251,7 @@ export class UpOptCalculatorV2 {
     if (ix >= this.fixedIx) this.calcSlowToIndex(ix + 1)
     this.expandRollsLevel(ix)
   }
+
   expandRollsLevel(ix: number) {
     if (this.candidates[ix].evalMode !== 'rolls') return
     const newTree = expandNodes(this.candidates[ix].tree)
@@ -202,22 +264,10 @@ export class UpOptCalculatorV2 {
   }
 
   reCalc(ix: number, art: ICachedArtifact) {
-    if (this.candidates[ix].info.type === 'levelUp') {
-      this.candidates[ix] = {
-        ...this.evaluateNodes(levelUpArtifact(art, this.build)),
-        info: this.candidates[ix].info,
-        evalMode: 'substat',
-        id: this.candidates[ix].id,
-      }
-    } else if (this.candidates[ix].info.type === 'reshape') {
-      const { affixes, mintotal } = this.candidates[ix].info
-      this.candidates[ix] = {
-        ...this.evaluateNodes(dustReshape(art, this.build, affixes, mintotal)),
-        info: this.candidates[ix].info,
-        evalMode: 'substat',
-        id: this.candidates[ix].id,
-      }
-    }
+    if (this.candidates[ix].info.type === 'levelUp')
+      this.candidates[ix] = this.fromLevelUpInfo(this.candidates[ix].info, art)
+    else if (this.candidates[ix].info.type === 'reshape')
+      this.candidates[ix] = this.fromReshapeInfo(this.candidates[ix].info, art)
     this.expandSubstatLevel(ix)
   }
 

@@ -370,7 +370,8 @@ export default function TabUpopt() {
       [-Infinity, ...valueFilter.map((x) => x.minimum)],
       equippedArts,
       artifactsToConsider,
-      { enabled: upOptReshape, minTotal: upOptReshapeRolls as 2 | 3 | 4 }
+      { enabled: upOptReshape, minTotal: upOptReshapeRolls as 2 | 3 | 4 },
+      { enabled: false, setKeys: [], slotKeys: [], mainStats: [], substats: [] }
     )
     /**
      * WARNING:

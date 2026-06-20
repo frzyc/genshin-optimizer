@@ -496,7 +496,7 @@ describe('upOpt makeSubstatNode(s)', () => {
 
       // crit rate = [1 (base) + 0.85 (avg roll) * 1 (4 rolls * 1/4 chance each)] * .03889 (base crit rate)
       const ev3 = evaluateGaussian(obj3, g)
-      expect(ev3.f_mu[0]).toBeCloseTo((1 + 1 * 0.85) * vcr_, 5)
+      expect(ev3.f_mu[0]).toBeCloseTo(1.85 * vcr_, 5)
     })
     test('levelup 3line guess 4th', () => {
       const lvl0_3line = structuredClone(lvl0) as ICachedArtifact
