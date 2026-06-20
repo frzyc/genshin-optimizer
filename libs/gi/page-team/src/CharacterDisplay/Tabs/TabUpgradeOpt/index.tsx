@@ -173,6 +173,8 @@ export default function TabUpopt() {
             if (art.level < upOptLevelLow) return false
             if (art.level > upOptLevelHigh) return false
           }
+          if (art.slotKey === 'flower' || art.slotKey === 'plume') return true
+
           const mainStats = mainStatKeys[art.slotKey]
           if (mainStats?.length && !mainStats.includes(art.mainStatKey))
             return false
@@ -203,7 +205,9 @@ export default function TabUpopt() {
     return database.arts.values.filter(
       (art) =>
         canReshape(art) &&
-        (!optConfig.mainStatKeys[art.slotKey]?.length ||
+        (art.slotKey === 'flower' ||
+          art.slotKey === 'plume' ||
+          !optConfig.mainStatKeys[art.slotKey]?.length ||
           optConfig.mainStatKeys[art.slotKey]?.includes(art.mainStatKey))
     ).length
   }, [artsDirty, database, optConfig.mainStatKeys])
@@ -344,6 +348,8 @@ export default function TabUpopt() {
       .filter(respectSexExclusion)
       .filter(
         (art) =>
+          art.slotKey === 'flower' ||
+          art.slotKey === 'plume' ||
           !mainStatKeys[art.slotKey]?.length ||
           mainStatKeys[art.slotKey]?.includes(art.mainStatKey)
       )
