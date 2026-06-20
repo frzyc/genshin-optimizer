@@ -35,7 +35,7 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
-import { type UpOptCalculatorV2, integralOfGMM } from './upOptv2'
+import { type UpOptCalculatorV2, integralOfGMM } from './upOpt'
 
 type Props = {
   setArtifactIdToEdit: (id: string | undefined) => void

@@ -51,7 +51,7 @@ function canLevelUp(art: ICachedArtifact) {
   return art.level < 20 && art.rarity === 5
 }
 
-function canReshape(art: ICachedArtifact) {
+export function canReshape(art: ICachedArtifact) {
   if (art.rarity !== 5 || art.level !== 20) return false
   if (art.substats.some(({ initialValue }) => initialValue === undefined))
     return false

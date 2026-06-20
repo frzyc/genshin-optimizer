@@ -85,8 +85,7 @@ import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTa
 import StatFilterCard from '../TabOptimize/Components/StatFilterCard'
 import { LevelFilter } from './LevelFilter'
 import UpgradeOptChartCard from './UpgradeOptChartCard'
-import { UpOptCalculator, canReshapeArtifact } from './upOpt'
-import { UpOptCalculatorV2 } from './upOptv2'
+import { UpOptCalculatorV2, canReshape } from './upOpt'
 
 // artifact button gets its own type so multiple translations can be used
 type AddArtifactButtonProps = Omit<ButtonProps, 'onClick'> & {
@@ -168,7 +167,7 @@ export default function TabUpopt() {
       artsDirty &&
       database.arts.values
         .filter((art) => {
-          const reshapeCandidate = upOptReshape && canReshapeArtifact(art)
+          const reshapeCandidate = upOptReshape && canReshape(art)
           if (!useExcludedArts && artExclusion.includes(art.id)) return false
           if (!reshapeCandidate) {
             if (art.level < upOptLevelLow) return false
@@ -203,7 +202,7 @@ export default function TabUpopt() {
     void artsDirty
     return database.arts.values.filter(
       (art) =>
-        canReshapeArtifact(art) &&
+        canReshape(art) &&
         (!optConfig.mainStatKeys[art.slotKey]?.length ||
           optConfig.mainStatKeys[art.slotKey]?.includes(art.mainStatKey))
     ).length
@@ -221,7 +220,7 @@ export default function TabUpopt() {
       database.arts.entries.forEach(([id, art]) => {
         const { level, setKey, slotKey } = art
         const { upOptLevelLow, upOptLevelHigh, upOptReshape } = optConfig
-        const reshapeCandidate = upOptReshape && canReshapeArtifact(art)
+        const reshapeCandidate = upOptReshape && canReshape(art)
         if (
           reshapeCandidate ||
           (level >= upOptLevelLow && level <= upOptLevelHigh)
@@ -350,7 +349,7 @@ export default function TabUpopt() {
       )
       .filter(
         (art) =>
-          (upOptReshape && canReshapeArtifact(art)) ||
+          (upOptReshape && canReshape(art)) ||
           (upOptLevelLow <= art.level && art.level <= upOptLevelHigh)
       )
     if (!artifactsToConsider.length) return
@@ -360,15 +359,6 @@ export default function TabUpopt() {
       ({ path: [p] }) => p !== 'dyn'
     )
 
-    new UpOptCalculator(
-      nodes,
-      [-Infinity, ...valueFilter.map((x) => x.minimum)],
-      equippedArts,
-      artifactsToConsider,
-      true,
-      upOptReshape,
-      upOptReshapeRolls as 2 | 3 | 4
-    )
     return new UpOptCalculatorV2(
       nodes,
       [-Infinity, ...valueFilter.map((x) => x.minimum)],
