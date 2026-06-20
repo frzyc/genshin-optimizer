@@ -202,7 +202,23 @@ export class UpOptCalculatorV2 {
   }
 
   reCalc(ix: number, art: ICachedArtifact) {
-    // I don't know what this is supposed to do
+    if (this.candidates[ix].info.type === 'levelUp') {
+      this.candidates[ix] = {
+        ...this.evaluateNodes(levelUpArtifact(art, this.build)),
+        info: this.candidates[ix].info,
+        evalMode: 'substat',
+        id: this.candidates[ix].id,
+      }
+    } else if (this.candidates[ix].info.type === 'reshape') {
+      const { affixes, mintotal } = this.candidates[ix].info
+      this.candidates[ix] = {
+        ...this.evaluateNodes(dustReshape(art, this.build, affixes, mintotal)),
+        info: this.candidates[ix].info,
+        evalMode: 'substat',
+        id: this.candidates[ix].id,
+      }
+    }
+    this.expandSubstatLevel(ix)
   }
 
   compare(a: EvaluatedMarkovTree, b: EvaluatedMarkovTree) {
