@@ -17,7 +17,13 @@ import { makeObjective } from './markov-tree/makeObjective'
 import type { GaussianNode, Objective } from './markov-tree/markov.types'
 import { crawlSubstats } from './substatProbs'
 import { lvl0, lvl20 } from './testArtifacts.json'
-import { dustReshape, expandNode, expandNodes, levelUpArtifact } from './upOpt'
+import {
+  dustReshape,
+  elixirDefinition,
+  expandNode,
+  expandNodes,
+  levelUpArtifact,
+} from './upOpt'
 import type { MarkovNode, SubstatLevelNode } from './upOpt.types'
 
 const emptyBuild = {
@@ -446,12 +452,27 @@ describe('upOpt makeSubstatNode(s)', () => {
   const nodeAtk = sum(dynRead('atk'), prod(1000, dynRead('atk_')))
   const nodeHp = sum(dynRead('hp'), prod(1000, dynRead('hp_')))
   const nodeCR = sum(dynRead('critRate_'))
+
+  const obj = makeObjective([nodeAtk], [0])
+  const obj2 = makeObjective([nodeHp], [0])
+  const obj3 = makeObjective([nodeCR], [0])
+
+  const vatk = getSubstatValue('atk', 5, 'max', false)
+  const vatk_ = getSubstatValue('atk_', 5, 'max', false)
+  const vcr_ = getSubstatValue('critRate_', 5, 'max', false)
+
+  // Given `n` total rolls, return E[rolls] for the guaranteed 2.
+  // E[rolls] for the 3rd & 4th = n/2 - E[guaranteed]
+  const reshapeStats = {
+    2: 1,
+    3: 17 / 16,
+    4: 19 / 16,
+    5: 87 / 64,
+    6: 25 / 16,
+  }
+
   describe('levelArtifact', () => {
     test('levelup unactivated', () => {
-      const obj = makeObjective([nodeAtk], [0])
-      const obj2 = makeObjective([nodeHp], [0])
-      const obj3 = makeObjective([nodeCR], [0])
-
       const substatLevel = levelUpArtifact(lvl0 as ICachedArtifact, emptyBuild)
       const rollsLevel = expandNodes(substatLevel)
       const valuesLevel = expandNodes(rollsLevel)
@@ -466,8 +487,6 @@ describe('upOpt makeSubstatNode(s)', () => {
 
       // avg rolls = 1.85 in each stat, so expected atk = 1.85*atk + 1.85*atk_*1000
       const ev = evaluateGaussian(obj, g)
-      const vatk = getSubstatValue('atk', 5, 'max', false)
-      const vatk_ = getSubstatValue('atk_', 5, 'max', false)
       expect(ev.f_mu[0]).toBeCloseTo(1.85 * vatk + 1.85 * vatk_ * 1000)
 
       // hp = 4780, no hp rolls.
@@ -477,10 +496,9 @@ describe('upOpt makeSubstatNode(s)', () => {
 
       // crit rate = [1 (base) + 0.85 (avg roll) * 1 (4 rolls * 1/4 chance each)] * .03889 (base crit rate)
       const ev3 = evaluateGaussian(obj3, g)
-      const vcrit = getSubstatValue('critRate_', 5, 'max', false)
-      expect(ev3.f_mu[0]).toBeCloseTo((1 + 1 * 0.85) * vcrit, 5)
+      expect(ev3.f_mu[0]).toBeCloseTo((1 + 1 * 0.85) * vcr_, 5)
     })
-    test('levelup 3line no unactivated', () => {
+    test('levelup 3line guess 4th', () => {
       const lvl0_3line = structuredClone(lvl0) as ICachedArtifact
       lvl0_3line.unactivatedSubstats = []
       // atk%, critRate%, critDMG% populated, check 4th substat choices.
@@ -523,9 +541,8 @@ describe('upOpt makeSubstatNode(s)', () => {
         2
       )
       expect(reshaped.n.rollsLeft).toBe(4)
-
-      const obj = makeObjective([nodeAtk], [0])
-      const obj3 = makeObjective([nodeCR], [0])
+      const Eon = reshapeStats[4]
+      const Eoff = 4 / 2 - Eon
 
       const rollsLevel = expandNodes([reshaped])
       const valuesLevel = expandNodes(rollsLevel)
@@ -536,48 +553,11 @@ describe('upOpt makeSubstatNode(s)', () => {
       checkExpandedEvalCorrectness(obj3, rollsLevel, g)
       checkExpandedEvalCorrectness(obj3, valuesLevel, g)
 
-      const precomputed = [
-        { p: 0.00390625, subs: [4, 0, 0, 0] },
-        { p: 0.00390625, subs: [0, 4, 0, 0] },
-        { p: 0.015625, subs: [3, 1, 0, 0] },
-        { p: 0.015625, subs: [1, 3, 0, 0] },
-        { p: 0.0234375, subs: [2, 2, 0, 0] },
-        { p: 0.015625, subs: [3, 0, 1, 0] },
-        { p: 0.015625, subs: [3, 0, 0, 1] },
-        { p: 0.015625, subs: [0, 3, 1, 0] },
-        { p: 0.015625, subs: [0, 3, 0, 1] },
-        { p: 0.046875, subs: [2, 1, 1, 0] },
-        { p: 0.046875, subs: [1, 2, 1, 0] },
-        { p: 0.046875, subs: [2, 1, 0, 1] },
-        { p: 0.046875, subs: [1, 2, 0, 1] },
-        { p: 0.04296875, subs: [2, 0, 2, 0] },
-        { p: 0.04296875, subs: [2, 0, 0, 2] },
-        { p: 0.04296875, subs: [0, 2, 2, 0] },
-        { p: 0.04296875, subs: [0, 2, 0, 2] },
-        { p: 0.0859375, subs: [2, 0, 1, 1] },
-        { p: 0.0859375, subs: [0, 2, 1, 1] },
-        { p: 0.171875, subs: [1, 1, 1, 1] },
-        { p: 0.0859375, subs: [1, 1, 0, 2] },
-        { p: 0.0859375, subs: [1, 1, 2, 0] },
-      ]
-      const totP = precomputed.reduce((a, { p }) => a + p, 0)
-      expect(totP).toBeCloseTo(1)
-
-      // Manual computation of atk.
-      const vatk = getSubstatValue('atk', 5, 'max', false)
-      const vatk_ = getSubstatValue('atk_', 5, 'max', false)
-      const vcr_ = getSubstatValue('critRate_', 5, 'max', false)
-
-      const expectedAtk = precomputed.reduce(
-        (v, { p, subs }) =>
-          v + 0.85 * p * (vatk * subs[3] + vatk_ * subs[0] * 1000),
-        19.45 + 0.058 * 1000
-      ) // 149.72921875
+      const expectedAtk =
+        19.45 + 0.058 * 1000 + 0.85 * Eon * vatk_ * 1000 + 0.85 * Eoff * vatk // 149.72921875
       expect(evaluateGaussian(obj, g).f_mu[0]).toBeCloseTo(expectedAtk)
-      const expectedCR = precomputed.reduce(
-        (v, { p, subs }) => v + 0.85 * p * vcr_ * subs[1],
-        0.039
-      ) // 0.0782646875
+
+      const expectedCR = 0.039 + 0.85 * vcr_ * Eon // 0.0782646875
       expect(evaluateGaussian(obj3, g).f_mu[0]).toBeCloseTo(expectedCR)
     })
   })
@@ -612,5 +592,73 @@ describe('upOpt makeSubstatNode(s)', () => {
       )
     ).toEqual([])
   })
-  test('define/elixir', () => {})
+  describe('define', () => {
+    const p4 = 1 / 3
+    const defined = elixirDefinition(
+      {
+        setKey: 'GladiatorsFinale',
+        slotKey: 'flower',
+        mainStatKey: 'hp',
+        affixes: ['atk', 'atk_'],
+        prob_4line: p4,
+      },
+      emptyBuild
+    )
+    const defined2 = elixirDefinition(
+      {
+        setKey: 'GladiatorsFinale',
+        slotKey: 'flower',
+        mainStatKey: 'hp',
+        affixes: ['atk_', 'def'],
+        prob_4line: p4,
+      },
+      emptyBuild
+    )
+    test('basic functionality', () => {
+      expect(defined.reduce((ptot, { p }) => ptot + p, 0)).toBeCloseTo(1, 8)
+      expect(
+        defined.reduce(
+          (ptot, { p, n }) => (n.rollsLeft === 5 ? ptot + p : ptot),
+          0
+        )
+      ).toBeCloseTo(p4, 8)
+      expect(
+        defined.reduce(
+          (ptot, { p, n }) => (n.rollsLeft === 4 ? ptot + p : ptot),
+          0
+        )
+      ).toBeCloseTo(1 - p4, 8)
+    })
+    test('defined value tests (both on guarantee)', () => {
+      const Eon3 = reshapeStats[4] + 1
+      const Eon4 = reshapeStats[5] + 1
+
+      const expectedAtk =
+        0.85 * (Eon3 * vatk_ * 1000 + Eon3 * vatk) * (1 - p4) +
+        0.85 * (Eon4 * vatk_ * 1000 + Eon4 * vatk) * p4
+      const atk = defined.reduce(
+        (atk, { p, n }) => atk + evaluateGaussian(obj, n.subDistr).f_mu[0] * p,
+        0
+      )
+      expect(atk).toBeCloseTo(expectedAtk, 8)
+    })
+    test('defined value tests (1 on, 1 off)', () => {
+      // Prob. atk appears as 3rd or 4th substat after hp + [atk%, def]
+      const prob_atk = 143 / 350 // 6/28 + 16/28 * 6/24 + 6/28 * 6/25
+
+      const Eon3 = reshapeStats[4] + 1
+      const Eoff3 = (4 / 2 - reshapeStats[4] + 1) * prob_atk
+      const Eon4 = reshapeStats[5] + 1
+      const Eoff4 = (5 / 2 - reshapeStats[5] + 1) * prob_atk
+
+      const expectedAtk =
+        0.85 * (Eon3 * vatk_ * 1000 + Eoff3 * vatk) * (1 - p4) +
+        0.85 * (Eon4 * vatk_ * 1000 + Eoff4 * vatk) * p4
+      const atk = defined2.reduce(
+        (atk, { p, n }) => atk + evaluateGaussian(obj, n.subDistr).f_mu[0] * p,
+        0
+      )
+      expect(atk).toBeCloseTo(expectedAtk, 8)
+    })
+  })
 })

@@ -176,9 +176,7 @@ export function dustReshape(
 
 /**
  * Artifact definition using Sanctifying Elixir. Two affixes are guaranteed w/ two
- * reshape-style roll guarantees.
- *
- * TODO: Can defined arts have 3-line starts? Currently assumes 4-line only.
+ * reshape-style roll guarantees. Defined artifacts can start as either 3-line or 4-line.
  */
 export function elixirDefinition(
   info: {
@@ -186,6 +184,7 @@ export function elixirDefinition(
     slotKey: ArtifactSlotKey
     mainStatKey: MainStatKey
     affixes: SubstatKey[]
+    prob_4line: number
   },
   currentBuild: Build
 ): weightedNode[] {
@@ -196,18 +195,25 @@ export function elixirDefinition(
   const subsToConsider = allSubstatKeys.filter(
     (s) => !info.affixes.includes(s) && s !== info.mainStatKey
   )
-  return crawlSubstats(info.affixes, subsToConsider).map(({ p, subs }) => {
-    const nodeInfo = {
+  return crawlSubstats(info.affixes, subsToConsider).flatMap(({ p, subs }) => {
+    const nodeInfo_4line = {
       base,
       rarity,
       subkeys: subs.map((key) => ({ key, baseRolls: 1 })),
       rollsLeft,
-      reshape: { affixes: info.affixes, mintotal: 2 },
+      reshape: { affixes: [...info.affixes], mintotal: 2 },
     }
-    return {
-      p,
-      n: makeSubstatNode(nodeInfo),
-    }
+    const nodeInfo_3line = { ...nodeInfo_4line, rollsLeft: rollsLeft - 1 }
+    return [
+      {
+        p: p * info.prob_4line,
+        n: makeSubstatNode(nodeInfo_4line),
+      },
+      {
+        p: p * (1 - info.prob_4line),
+        n: makeSubstatNode(nodeInfo_3line),
+      },
+    ]
   })
 }
 
