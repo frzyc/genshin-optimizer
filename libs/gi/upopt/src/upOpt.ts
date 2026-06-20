@@ -64,7 +64,7 @@ export function levelUpArtifact(
   if (art.unactivatedSubstats && anyUnactivated) {
     art.unactivatedSubstats.forEach(({ key, accurateValue }) => {
       if (key === '') return
-      info.base[key] = (info.base[key] ?? 0) + accurateValue
+      info.base[key] = (info.base[key] ?? 0) + toDecimal(accurateValue, key)
       info.subkeys.push({ key, baseRolls: 0 })
       info.rollsLeft -= 1
     })

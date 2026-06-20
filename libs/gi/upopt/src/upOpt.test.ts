@@ -16,7 +16,7 @@ import { evalMarkovNode, evaluateGaussian } from './markov-tree/evaluation'
 import { makeObjective } from './markov-tree/makeObjective'
 import type { GaussianNode, Objective } from './markov-tree/markov.types'
 import { crawlSubstats } from './substatProbs'
-import { lvl0, lvl20 } from './testArtifacts.json'
+import { lvl0, lvl0_2, lvl20 } from './testArtifacts.json'
 import {
   dustReshape,
   elixirDefinition,
@@ -472,8 +472,37 @@ describe('upOpt makeSubstatNode(s)', () => {
   }
 
   describe('levelArtifact', () => {
-    test('levelup unactivated', () => {
+    test('levelup (flat) unactivated', () => {
       const substatLevel = levelUpArtifact(lvl0 as ICachedArtifact, emptyBuild)
+      const rollsLevel = expandNodes(substatLevel)
+      const valuesLevel = expandNodes(rollsLevel)
+      const g = substatLevel[0].n.subDistr
+
+      checkExpandedEvalCorrectness(obj, rollsLevel, g)
+      checkExpandedEvalCorrectness(obj, valuesLevel, g)
+      checkExpandedEvalCorrectness(obj2, rollsLevel, g)
+      checkExpandedEvalCorrectness(obj2, valuesLevel, g)
+      checkExpandedEvalCorrectness(obj3, rollsLevel, g)
+      checkExpandedEvalCorrectness(obj3, valuesLevel, g)
+
+      // avg rolls = 1.85 in each stat, so expected atk = 1.85*atk + 1.85*atk_*1000
+      const ev = evaluateGaussian(obj, g)
+      expect(ev.f_mu[0]).toBeCloseTo(1.85 * vatk + 1.85 * vatk_ * 1000)
+
+      // hp = 4780, no hp rolls.
+      const ev2 = evaluateGaussian(obj2, g)
+      expect(ev2.f_mu[0]).toBeCloseTo(getMainStatValue('hp', 5, 20))
+      expect(ev2.f_cov[0][0]).toBeCloseTo(0)
+
+      // crit rate = [1 (base) + 0.85 (avg roll) * 1 (4 rolls * 1/4 chance each)] * .03889 (base crit rate)
+      const ev3 = evaluateGaussian(obj3, g)
+      expect(ev3.f_mu[0]).toBeCloseTo(1.85 * vcr_, 5)
+    })
+    test('levelup (decimal) unactivated', () => {
+      const substatLevel = levelUpArtifact(
+        lvl0_2 as ICachedArtifact,
+        emptyBuild
+      )
       const rollsLevel = expandNodes(substatLevel)
       const valuesLevel = expandNodes(rollsLevel)
       const g = substatLevel[0].n.subDistr
