@@ -660,5 +660,19 @@ describe('upOpt makeSubstatNode(s)', () => {
       )
       expect(atk).toBeCloseTo(expectedAtk, 8)
     })
+    test('defined with no set key', () => {
+      const def = elixirDefinition(
+        {
+          setKey: '',
+          slotKey: 'flower',
+          mainStatKey: 'hp',
+          affixes: ['atk', 'atk_'],
+          prob_4line: p4,
+        },
+        emptyBuild
+      )
+      expect(def[0].n.base).toEqual({ hp: 4780 })
+      expect(def.reduce((ptot, { p }) => ptot + p, 0)).toBeCloseTo(1, 8)
+    })
   })
 })

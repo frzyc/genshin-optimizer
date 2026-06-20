@@ -180,7 +180,7 @@ export function dustReshape(
  */
 export function elixirDefinition(
   info: {
-    setKey: ArtifactSetKey
+    setKey: ArtifactSetKey | ''
     slotKey: ArtifactSlotKey
     mainStatKey: MainStatKey
     affixes: SubstatKey[]
@@ -247,7 +247,7 @@ function toStats(
     slotKey: ArtifactSlotKey
     mainStatKey: MainStatKey
     rarity: ArtifactRarity
-    setKey: ArtifactSetKey
+    setKey: ArtifactSetKey | ''
   }
 ) {
   const baseStats = allArtifactSlotKeys.reduce((acc, slot) => {
@@ -260,7 +260,7 @@ function toStats(
     })
     return acc
   }, {} as DynStat)
-  baseStats[setKey] = (baseStats[setKey] ?? 0) + 1
+  if (setKey !== '') baseStats[setKey] = (baseStats[setKey] ?? 0) + 1
   baseStats[mainStatKey] =
     (baseStats[mainStatKey] ?? 0) +
     getMainStatValue(mainStatKey, rarity, artMaxLevel[rarity])
