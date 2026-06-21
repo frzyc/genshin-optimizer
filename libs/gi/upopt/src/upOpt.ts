@@ -145,15 +145,10 @@ export function dustReshape(
 ): weightedNode[] {
   const base = toStats(currentBuild, art)
   const { rarity } = art
-  if (
-    art.substats.some(
-      ({ key, initialValue }) => key !== '' && initialValue === undefined
-    )
-  )
-    throw new Error('Cannot reshape artifacts with `initialValue` undefined.')
   const subkeys = art.substats.flatMap(({ key, initialValue }) => {
     if (key === '') return []
-    if (initialValue === undefined) return []
+    if (initialValue === undefined)
+      throw new Error('Cannot reshape artifacts with `initialValue` undefined.')
     base[key] = (base[key] ?? 0) + toDecimal(initialValue, key)
     return [{ key, baseRolls: 0 }]
   })
