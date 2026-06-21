@@ -150,7 +150,7 @@ export function dustReshape(
       ({ key, initialValue }) => key !== '' && initialValue === undefined
     )
   )
-    return []
+    throw new Error('Cannot reshape artifacts with `initialValue` undefined.')
   const subkeys = art.substats.flatMap(({ key, initialValue }) => {
     if (key === '') return []
     if (initialValue === undefined) return []
