@@ -14,7 +14,6 @@ import type {
   ArtifactSetKey,
   CharacterKey,
   MainStatKey,
-  SubstatKey,
 } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSetKeys,
@@ -116,8 +115,9 @@ const filterOptionReducer = (
 export default function TabUpopt() {
   const { t } = useTranslation('page_character_optimize')
   const { t: tk } = useTranslation('statKey_gen')
-  const substatLabel = (key: SubstatKey) =>
-    `${tk(key)}${key.endsWith('_') ? '%' : ''}`
+  const substatLabel = (key: string) =>
+    `${tk(key)}${['atk_', 'def_', 'hp_'].includes(key) ? '%' : ''}`
+
   const {
     teamId,
     teamCharId,

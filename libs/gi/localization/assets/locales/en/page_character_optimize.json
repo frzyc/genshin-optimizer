@@ -50,7 +50,7 @@
     "reshape": "Reshape",
     "reshapeStats": "Guaranteed: {{count}} rolls into {{stats}}",
     "define": "Define",
-    "defineStats": "Guaranteed substats: {{stats}}",
+    "defineStats": "Guaranteed: 2 rolls into {{stats}}",
     "incLabel": "Relative Increase to Target",
     "probLabel": "Probability",
     "const": " Constrained",
