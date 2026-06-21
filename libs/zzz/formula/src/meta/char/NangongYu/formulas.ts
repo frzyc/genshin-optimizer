@@ -38,6 +38,19 @@ export const formulas = {
       name: 'disorderDmgInst_ether',
     },
   },
+  vortexDmgInst_ether: {
+    sheet: 'NangongYu',
+    name: 'vortexDmgInst_ether',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'NangongYu',
+      attribute: 'ether',
+      damageType1: 'vortex',
+      name: 'vortexDmgInst_ether',
+    },
+  },
   abloomDmgInst: {
     sheet: 'NangongYu',
     name: 'abloomDmgInst',

@@ -38,6 +38,19 @@ export const formulas = {
       name: 'disorderDmgInst_frost',
     },
   },
+  vortexDmgInst_frost: {
+    sheet: 'Miyabi',
+    name: 'vortexDmgInst_frost',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'Miyabi',
+      attribute: 'ice',
+      damageType1: 'vortex',
+      name: 'vortexDmgInst_frost',
+    },
+  },
   abloomDmgInst: {
     sheet: 'Miyabi',
     name: 'abloomDmgInst',

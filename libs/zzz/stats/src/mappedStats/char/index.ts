@@ -29,11 +29,13 @@ import Miyabi from './maps/Miyabi'
 import NangongYu from './maps/NangongYu'
 import Nekomata from './maps/Nekomata'
 import Nicole from './maps/Nicole'
+import Norma from './maps/Norma'
 import OrphieMagus from './maps/OrphieMagus'
 import PanYinhu from './maps/PanYinhu'
 import Piper from './maps/Piper'
 import Promeia from './maps/Promeia'
 import Pulchra from './maps/Pulchra'
+import Pyrois from './maps/Pyrois'
 import Qingyi from './maps/Qingyi'
 import Rina from './maps/Rina'
 import Seed from './maps/Seed'
@@ -44,6 +46,7 @@ import Soukaku from './maps/Soukaku'
 import StarlightBilly from './maps/StarlightBilly'
 import Sunna from './maps/Sunna'
 import Trigger from './maps/Trigger'
+import Velina from './maps/Velina'
 import Vivian from './maps/Vivian'
 import Yanagi from './maps/Yanagi'
 import YeShunguang from './maps/YeShunguang'
@@ -84,11 +87,13 @@ const maps = {
   NangongYu,
   Nekomata,
   Nicole,
+  Norma,
   OrphieMagus,
   PanYinhu,
   Piper,
   Promeia,
   Pulchra,
+  Pyrois,
   Qingyi,
   Rina,
   Seed,
@@ -99,6 +104,7 @@ const maps = {
   StarlightBilly,
   Sunna,
   Trigger,
+  Velina,
   Vivian,
   Yanagi,
   YeShunguang,

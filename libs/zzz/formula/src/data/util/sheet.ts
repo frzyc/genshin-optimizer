@@ -332,6 +332,7 @@ export function getStatFromStatKey(
     case 'ice_dmg_':
     case 'physical_dmg_':
     case 'ether_dmg_':
+    case 'wind_dmg_':
       // substring will fetch 'physical' from 'physical_dmg_', for example
       return buff.dmg_[statKey.substring(0, statKey.indexOf('_')) as Attribute]
     case 'dmg_':

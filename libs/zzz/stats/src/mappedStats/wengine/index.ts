@@ -4,10 +4,12 @@ import BashfulDemon from './maps/BashfulDemon'
 import BellicoseBlaze from './maps/BellicoseBlaze'
 import BigCylinder from './maps/BigCylinder'
 import BlazingLaurel from './maps/BlazingLaurel'
+import BoisterousEchoes from './maps/BoisterousEchoes'
 import BoxCutter from './maps/BoxCutter'
 import BunnyBand from './maps/BunnyBand'
 import CannonRotor from './maps/CannonRotor'
 import CauldronOfClarity from './maps/CauldronOfClarity'
+import ChiefSidekick from './maps/ChiefSidekick'
 import CinderCobalt from './maps/CinderCobalt'
 import CloudcleaveRadiance from './maps/CloudcleaveRadiance'
 import CordisGermina from './maps/CordisGermina'
@@ -31,6 +33,7 @@ import Housekeeper from './maps/Housekeeper'
 import IceJadeTeapot from './maps/IceJadeTeapot'
 import IdentityBase from './maps/IdentityBase'
 import IdentityInflection from './maps/IdentityInflection'
+import JoyauDore from './maps/JoyauDore'
 import KaboomTheCannon from './maps/KaboomTheCannon'
 import KrakensCradle from './maps/KrakensCradle'
 import LunarDecrescent from './maps/LunarDecrescent'
@@ -63,6 +66,7 @@ import SeveredInnocence from './maps/SeveredInnocence'
 import SharpenedStinger from './maps/SharpenedStinger'
 import SixShooter from './maps/SixShooter'
 import SliceOfTime from './maps/SliceOfTime'
+import SolExuvia from './maps/SolExuvia'
 import SpectralGaze from './maps/SpectralGaze'
 import SpringEmbrace from './maps/SpringEmbrace'
 import StarlightEngine from './maps/StarlightEngine'
@@ -95,10 +99,12 @@ const maps = {
   BellicoseBlaze,
   BigCylinder,
   BlazingLaurel,
+  BoisterousEchoes,
   BoxCutter,
   BunnyBand,
   CannonRotor,
   CauldronOfClarity,
+  ChiefSidekick,
   CinderCobalt,
   CloudcleaveRadiance,
   CordisGermina,
@@ -122,6 +128,7 @@ const maps = {
   IceJadeTeapot,
   IdentityBase,
   IdentityInflection,
+  JoyauDore,
   KaboomTheCannon,
   KrakensCradle,
   LunarDecrescent,
@@ -154,6 +161,7 @@ const maps = {
   SharpenedStinger,
   SixShooter,
   SliceOfTime,
+  SolExuvia,
   SpectralGaze,
   SpringEmbrace,
   StarlightEngine,
