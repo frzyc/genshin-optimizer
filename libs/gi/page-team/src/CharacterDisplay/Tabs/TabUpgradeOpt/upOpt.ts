@@ -184,8 +184,14 @@ export class UpOptCalculatorV2 {
   }
 
   tryDefine({ setKeys, slotKeys, mainStats, substats }: DefineConfig) {
+    setKeys = setKeys.filter((setKey) => this.obj.allReadKeys.includes(setKey))
+    if (!setKeys.length) {
+      console.warn(
+        'No useful set keys available for definition; picking Glad as default'
+      )
+      setKeys = ['GladiatorsFinale'] // Default to something so user sees some results
+    }
     setKeys.forEach((setKey) => {
-      if (!this.obj.allReadKeys.includes(setKey)) return
       slotKeys.forEach((slotKey) => {
         artSlotMainKeys[slotKey]
           .filter((mainStat) => mainStats.includes(mainStat))
@@ -338,19 +344,27 @@ export class UpOptCalculatorV2 {
     if (shouldCancel()) return false
 
     this.candidates[ix] = {
-      ...this.candidates[ix],
+      id: this.candidates[ix].id,
       tree: evaluated,
       result: accumulateEvaluations(evaluated),
       evalMode: 'values',
+      info: this.candidates[ix].info,
     }
     return true
   }
 
   reCalc(ix: number, art: ICachedArtifact) {
+    const prevId = this.candidates[ix].id
     if (this.candidates[ix].info.type === 'levelUp')
       this.candidates[ix] = this.fromLevelUpInfo(this.candidates[ix].info, art)
     else if (this.candidates[ix].info.type === 'reshape')
       this.candidates[ix] = this.fromReshapeInfo(this.candidates[ix].info, art)
+    else
+      console.warn('Unexpected candidate info type; skipping recalc', {
+        info: this.candidates[ix].info,
+      })
+
+    this.candidates[ix].id = prevId
     this.expandSubstatLevel(ix)
   }
 

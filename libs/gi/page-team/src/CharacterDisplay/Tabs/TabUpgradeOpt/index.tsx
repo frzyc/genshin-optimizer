@@ -373,24 +373,20 @@ export default function TabUpopt() {
           (upOptReshape && canReshape(art)) ||
           (upOptLevelLow <= art.level && art.level <= upOptLevelHigh)
       )
-    // Defining (sanctifying elixirs): generate synthetic artifact candidates.
-    // mainStats include the fixed flower/plume mains plus the user's selected
-    // sands/goblet/circlet mains, so `tryDefine`'s per-slot main filter isn't empty.
+
+    const mainStatsForDefine = allArtifactSlotKeys.flatMap((slotKey) => {
+      if (slotKey === 'flower' || slotKey === 'plume')
+        return artSlotMainKeys[slotKey]
+      const selected = mainStatKeys[slotKey]
+      return selected.length ? selected : artSlotMainKeys[slotKey]
+    })
     const defineConfig = {
       enabled: upOptDefine && upOptDefineSubstats.length >= 2,
       setKeys: (artSetKeys.length
         ? artSetKeys
         : [...allArtifactSetKeys]) as ArtifactSetKey[],
       slotKeys: slotKeys.length ? slotKeys : [...allArtifactSlotKeys],
-      mainStats: [
-        ...new Set<MainStatKey>([
-          ...artSlotMainKeys.flower,
-          ...artSlotMainKeys.plume,
-          ...mainStatKeys.sands,
-          ...mainStatKeys.goblet,
-          ...mainStatKeys.circlet,
-        ]),
-      ],
+      mainStats: [...new Set<MainStatKey>(mainStatsForDefine)],
       substats: upOptDefineSubstats,
     }
 
