@@ -88,11 +88,6 @@ type Props = {
   ix: number
   upOptCalc: UpOptCalculatorV2
 }
-type ChartData = {
-  x: number
-  est: number
-  estCons: number
-}
 
 const nbins = 50
 

@@ -425,6 +425,8 @@ export default function TabUpopt() {
     activeCharKey,
     characterKey,
     filteredArts,
+    artSetKeys,
+    slotKeys,
     equippedArts,
   ])
 
