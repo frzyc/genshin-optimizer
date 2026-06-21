@@ -591,7 +591,7 @@ describe('upOpt makeSubstatNode(s)', () => {
     })
   })
   test('reshape/dust ignores artifacts with missing initial rolls', () => {
-    expect(
+    const reshapeNoInitialThrow = () =>
       dustReshape(
         {
           setKey: 'GladiatorsFinale',
@@ -619,7 +619,7 @@ describe('upOpt makeSubstatNode(s)', () => {
         ['atk_', 'critRate_'],
         2
       )
-    ).toEqual([])
+    expect(reshapeNoInitialThrow).toThrow()
   })
   describe('define', () => {
     const p4 = 1 / 3
