@@ -1,4 +1,4 @@
-import { range } from '@genshin-optimizer/common/util'
+import { linspace, range } from '@genshin-optimizer/common/util'
 import {
   type ArtifactSetKey,
   type ArtifactSlotKey,
@@ -27,6 +27,7 @@ import type {
 } from '@genshin-optimizer/gi/upopt'
 import { type OptNode, optimize, precompute } from '@genshin-optimizer/gi/wr'
 import { removeSetKeys } from './formulaUtils'
+import { erf } from './mathUtil'
 
 type Build = Record<ArtifactSlotKey, ICachedArtifact | undefined>
 type MarkovTree = { p: number; n: MarkovNode }[]
@@ -36,6 +37,7 @@ type EvaluatedMarkovTree = {
   info: UpOptInfo
   evalMode: MarkovNode['type']
   id: string
+  chartData?: { x: number; est: number; estCons: number }[]
 }
 
 type ReshapeConfig = {
@@ -95,6 +97,7 @@ export class UpOptCalculatorV2 {
   obj: Objective
   candidates: EvaluatedMarkovTree[] = []
   fixedIx = 0
+
   /** Serializes exact-calc work so candidates are refined one at a time. */
   private exactQueue: Promise<unknown> = Promise.resolve()
 
@@ -128,10 +131,9 @@ export class UpOptCalculatorV2 {
     })
     if (defineConfig.enabled) this.tryDefine(defineConfig)
 
-    this.candidates.sort(this.compare)
+    this.candidates = this.candidates.filter((c) => c.result.p > 1e-3)
+    this.candidates.sort(compare)
     this.calcSlowToIndex(5)
-    console.log('V2', this.candidates)
-    console.log('obj', this.obj)
   }
 
   tryLevelUp(art: ICachedArtifact) {
@@ -242,7 +244,7 @@ export class UpOptCalculatorV2 {
       for (; i < end; i++) this.expandSubstatLevel(this.fixedIx + i)
 
       const arr = this.candidates.slice(this.fixedIx)
-      arr.sort(this.compare)
+      arr.sort(compare)
       this.candidates = [...fixedList, ...arr]
       for (i = 0; i < end; i++) {
         if (arr[i].evalMode === 'substat') break
@@ -271,11 +273,19 @@ export class UpOptCalculatorV2 {
    * Calls are serialized through `exactQueue` so candidates are refined one at a
    * time (sequentially) rather than all starting at once.
    */
-  calcExactAsync(ix: number, shouldCancel: () => boolean = () => false) {
+  calcExactAsync(
+    ix: number,
+    histInfo: { left: number; right: number; bins: number },
+    shouldCancel: () => boolean = () => false
+  ) {
     const run = this.exactQueue.then(() => {
       if (shouldCancel()) return false
       if (ix >= this.fixedIx) this.calcSlowToIndex(ix + 1)
-      return this.expandRollsLevelAsync(ix, shouldCancel)
+      return this.expandRollsLevelAsync(ix, shouldCancel).then((success) => {
+        if (!success) return false
+        this.histogram(ix, histInfo)
+        return true
+      })
     })
     // Keep the chain alive even if a run rejects, so later calls still proceed.
     this.exactQueue = run.catch(() => {})
@@ -297,8 +307,6 @@ export class UpOptCalculatorV2 {
     if (this.candidates[ix].evalMode !== 'rolls') return true
     let lastYield = Date.now()
 
-    console.log('entered')
-
     // Chunked expansion: rolls-level tree -> value-level tree.
     const expanded: MarkovTree = []
     const tree = this.candidates[ix].tree
@@ -315,7 +323,8 @@ export class UpOptCalculatorV2 {
     if (shouldCancel()) return false
 
     // Chunked evaluation (mirrors evaluateNodes, but yielding).
-    const deduped = deduplicate(this.obj, expanded)
+    // const deduped = deduplicate(this.obj, expanded)
+    const deduped = expanded // TODO: make dedup work w/ async yield so it doesn't hang UI
     const evaluated: { p: number; n: EvaluatedMarkovNode }[] = []
     for (let i = 0; i < deduped.length; i++) {
       const { p, n } = deduped[i]
@@ -345,21 +354,71 @@ export class UpOptCalculatorV2 {
     this.expandSubstatLevel(ix)
   }
 
-  compare(a: EvaluatedMarkovTree, b: EvaluatedMarkovTree) {
-    const scoreA = a.result.p * a.result.upAvg
-    const scoreB = b.result.p * b.result.upAvg
-    if (scoreA > 1e-5 || scoreB > 1e-5) return scoreB - scoreA
+  histogram(
+    ix: number,
+    { left, right, bins }: { left: number; right: number; bins: number }
+  ) {
+    const art = this.candidates[ix]
+    if (art.chartData) {
+      return art.chartData
+    }
+    const artGMM = art.tree.map(({ p, n }) => ({
+      p,
+      cp: n.evaluation.constr_prob,
+      mu: n.evaluation.f_mu[0],
+      sig: Math.sqrt(n.evaluation.f_cov[0][0]),
+    }))
 
-    const meanA = a.tree.reduce(
-      (acc, { p, n }) => acc + p * n.evaluation.f_mu[0],
-      0
-    )
-    const meanB = b.tree.reduce(
-      (acc, { p, n }) => acc + p * n.evaluation.f_mu[0],
-      0
-    )
-    return meanB - meanA
+    const thr0 = this.obj.threshold[0]
+    function perc(x: number) {
+      return (100 * (x - thr0)) / thr0
+    }
+    function integrals(a: number, b: number) {
+      let est = 0,
+        estCons = 0
+      artGMM.forEach(({ p, cp, mu, sig }) => {
+        if (sig < 1e-3) {
+          if (mu >= a && mu <= b) {
+            est += p
+            estCons += cp * p
+          }
+          return
+        }
+        const P = erf((mu - a) / sig) - erf((mu - b) / sig)
+        est += (p * P) / 2
+        estCons += (cp * p * P) / 2
+      }, 0)
+      return { est, estCons }
+    }
+    const step = (right - left) / bins
+    const hist = linspace(left, right, bins, false).flatMap((v) => {
+      const { est, estCons } = integrals(v, v + step)
+      return [
+        { x: perc(v), est, estCons },
+        { x: perc(v + step), est, estCons },
+      ]
+    })
+    hist.unshift({ x: perc(left), est: 0, estCons: 0 })
+    hist.push({ x: perc(right), est: 0, estCons: 0 })
+    this.candidates[ix].chartData = hist
+    return hist
   }
+}
+
+function compare(a: EvaluatedMarkovTree, b: EvaluatedMarkovTree) {
+  const scoreA = a.result.p * a.result.upAvg
+  const scoreB = b.result.p * b.result.upAvg
+  if (scoreA > 1e-5 || scoreB > 1e-5) return scoreB - scoreA
+
+  const meanA = a.tree.reduce(
+    (acc, { p, n }) => acc + p * n.evaluation.f_mu[0],
+    0
+  )
+  const meanB = b.tree.reduce(
+    (acc, { p, n }) => acc + p * n.evaluation.f_mu[0],
+    0
+  )
+  return meanB - meanA
 }
 
 function accumulateEvaluations(

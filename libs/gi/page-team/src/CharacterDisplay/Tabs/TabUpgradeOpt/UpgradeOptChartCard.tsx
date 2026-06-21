@@ -3,7 +3,7 @@ import {
   useForceUpdate,
 } from '@genshin-optimizer/common/react-util'
 import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
-import { linspace, objMap, range } from '@genshin-optimizer/common/util'
+import { objMap, range } from '@genshin-optimizer/common/util'
 import {
   type ArtifactSlotKey,
   charKeyToLocCharKey,
@@ -46,7 +46,6 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
-import { erf } from './mathUtil'
 import { type UpOptCalculatorV2, type UpOptInfo } from './upOpt'
 
 type DefineInfo = Extract<UpOptInfo, { type: 'definition' }>
@@ -231,48 +230,11 @@ function UpgradeOptChartCardGraph({
   const thr0 = thresholds[0]
   const perc = useCallback((x: number) => (100 * (x - thr0)) / thr0, [thr0])
   const [isExactPending, setIsExactPending] = useState(false)
-  const step = (objMax - objMin) / nbins
-  const chartDataGMM = upArt.tree.map(({ p, n }) => ({
-    p,
-    cp: n.evaluation.constr_prob,
-    mu: n.evaluation.f_mu[0],
-    cov: n.evaluation.f_cov[0][0],
-  }))
-  function integrals(a: number, b: number) {
-    let est = 0,
-      estCons = 0
-    chartDataGMM.forEach(({ p, cp, mu, cov }) => {
-      const sig = Math.sqrt(cov)
-      if (sig < 1e-3) {
-        if (mu >= a && mu <= b) {
-          est += p
-          estCons += cp * p
-        }
-        return
-      }
-      const P = erf((mu - a) / sig) - erf((mu - b) / sig)
-      est += (p * P) / 2
-      estCons += (cp * p * P) / 2
-    }, 0)
-    return { est, estCons }
-  }
-  const dataHist: ChartData[] = linspace(objMin, objMax, nbins, false).flatMap(
-    (v) => {
-      const estimatedIntegral = integrals(v, v + step)
-      return [
-        {
-          x: perc(v),
-          ...estimatedIntegral,
-        },
-        {
-          x: perc(v + step),
-          ...estimatedIntegral,
-        },
-      ]
-    }
-  )
-  dataHist.unshift({ x: perc(objMin), est: 0, estCons: 0 })
-  dataHist.push({ x: perc(objMax), est: 0, estCons: 0 })
+  const dataHist = upOptCalc.histogram(ix, {
+    left: objMin,
+    right: objMax,
+    bins: nbins,
+  })
 
   const ymax = dataHist.reduce((max, { est }) => Math.max(max, est!), 0) || 1
   const xpercent = (thr0 - objMin) / (objMax - objMin)
@@ -288,7 +250,15 @@ function UpgradeOptChartCardGraph({
     setIsExactPending(true)
     let cancelled = false
     upOptCalc
-      .calcExactAsync(ix, () => cancelled)
+      .calcExactAsync(
+        ix,
+        {
+          left: objMin,
+          right: objMax,
+          bins: nbins,
+        },
+        () => cancelled
+      )
       .then((updated) => {
         if (cancelled) return
         setIsExactPending(false)
@@ -297,7 +267,7 @@ function UpgradeOptChartCardGraph({
     return () => {
       cancelled = true
     }
-  }, [upOptCalc, isExact, ix, forceUpdate])
+  }, [upOptCalc, isExact, ix, forceUpdate, objMin, objMax])
 
   const probUpgradeText = (
     <span>
@@ -360,6 +330,7 @@ function UpgradeOptChartCardGraph({
             )}
           </Box>
           <Box display="flex" alignItems="center" gap={1}>
+            {isExactPending && <CircularProgress size={18} />}
             {upArt.info.type === 'reshape' && (
               <>
                 <SqBadge color="secondary">{t('upOptChart.reshape')}</SqBadge>
@@ -373,7 +344,6 @@ function UpgradeOptChartCardGraph({
             )}
             {upArt.info.type === 'definition' && (
               <>
-                {isExactPending && <CircularProgress size={18} />}
                 <SqBadge color="secondary">{t('upOptChart.define')}</SqBadge>
                 <Typography variant="body2">
                   {t('upOptChart.defineStats', { stats: defineLabel })}
