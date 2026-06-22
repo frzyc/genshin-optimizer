@@ -11,6 +11,7 @@ import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import type { ArtifactBuildData } from '@genshin-optimizer/gi/solver'
 import { compactArtifacts } from '@genshin-optimizer/gi/solver-tc'
 import {
+  accumulateEvaluation,
   deduplicate,
   dustReshape,
   elixirDefinition,
@@ -174,9 +175,7 @@ export class UpOptCalculatorV2 {
 
   fromReshapeInfo(info: ReshapeInfo, art: ICachedArtifact) {
     return {
-      ...this.evaluateNodes(
-        dustReshape(art, this.build, info.affixes, info.mintotal)
-      ),
+      ...this.evaluateNodes(dustReshape({ art, ...info }, this.build)),
       info,
       evalMode: 'substat' as const,
       id: `${this.candidates.length}`,
@@ -234,7 +233,7 @@ export class UpOptCalculatorV2 {
       p,
       n: evalMarkovNode(this.obj, n),
     }))
-    return { tree: evaluated, result: accumulateEvaluations(evaluated) }
+    return { tree: evaluated, result: accumulateEvaluation(evaluated) }
   }
 
   calcSlowToIndex(ix: number, lookahead = 5) {
@@ -346,7 +345,7 @@ export class UpOptCalculatorV2 {
     this.candidates[ix] = {
       id: this.candidates[ix].id,
       tree: evaluated,
-      result: accumulateEvaluations(evaluated),
+      result: accumulateEvaluation(evaluated),
       evalMode: 'values',
       info: this.candidates[ix].info,
     }
@@ -433,19 +432,4 @@ function compare(a: EvaluatedMarkovTree, b: EvaluatedMarkovTree) {
     0
   )
   return meanB - meanA
-}
-
-function accumulateEvaluations(
-  evaluated: { p: number; n: EvaluatedMarkovNode }[]
-) {
-  const { p, upAvgAcc, lower, upper } = evaluated.reduce(
-    (acc, { p, n: { evaluation } }) => ({
-      p: acc.p + p * evaluation.prob,
-      upAvgAcc: acc.upAvgAcc + p * evaluation.prob * evaluation.upAvg,
-      lower: Math.min(acc.lower, evaluation.lower),
-      upper: Math.max(acc.upper, evaluation.upper),
-    }),
-    { p: 0, upAvgAcc: 0, lower: Infinity, upper: -Infinity }
-  )
-  return { p, upAvg: p < 1e-6 ? 0 : upAvgAcc / p, lower, upper }
 }

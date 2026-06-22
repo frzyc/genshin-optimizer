@@ -21,7 +21,11 @@ import { allMainStatProbs } from './consts'
 import { expandRollsLevel } from './expandRolls'
 import { expandSubstatLevel, makeSubstatNode } from './expandSubstat'
 import { crawlSubstats } from './substatProbs'
-import type { MarkovNode, SubstatLevelNode } from './upOpt.types'
+import type {
+  EvaluatedMarkovNode,
+  MarkovNode,
+  SubstatLevelNode,
+} from './upOpt.types'
 
 export function expandNode(node: MarkovNode): { p: number; n: MarkovNode }[] {
   if (node.type === 'substat') return expandSubstatLevel(node)
@@ -35,6 +39,21 @@ export function expandNodes(
   return nodes.flatMap(({ p, n }) =>
     expandNode(n).map(({ p: p2, n: n2 }) => ({ p: p * p2, n: n2 }))
   )
+}
+
+export function accumulateEvaluation(
+  evaluated: { p: number; n: EvaluatedMarkovNode }[]
+) {
+  const { p, upAvgAcc, lower, upper } = evaluated.reduce(
+    (acc, { p, n: { evaluation } }) => ({
+      p: acc.p + p * evaluation.prob,
+      upAvgAcc: acc.upAvgAcc + p * evaluation.prob * evaluation.upAvg,
+      lower: Math.min(acc.lower, evaluation.lower),
+      upper: Math.max(acc.upper, evaluation.upper),
+    }),
+    { p: 0, upAvgAcc: 0, lower: Infinity, upper: -Infinity }
+  )
+  return { p, upAvg: p < 1e-6 ? 0 : upAvgAcc / p, lower, upper }
 }
 
 /**
@@ -138,11 +157,10 @@ export function freshArtifact(
  * Level 0 (or 4) and guarantee that at least `mintotal` rolls go into those affixes.
  */
 export function dustReshape(
-  art: IArtifact,
-  currentBuild: Build,
-  affixes: SubstatKey[],
-  mintotal: number
+  info: { art: IArtifact; affixes: SubstatKey[]; mintotal: number },
+  currentBuild: Build
 ): weightedNode[] {
+  const { art, affixes, mintotal } = info
   const base = toStats(currentBuild, art)
   const { rarity } = art
   const subkeys = art.substats.flatMap(({ key, initialValue }) => {
