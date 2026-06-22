@@ -220,7 +220,7 @@ export class UpOptCalculatorV2 {
   fromDefineInfo(info: DefineInfo) {
     return {
       ...this.evaluateNodes(
-        elixirDefinition({ ...info, prob_4line: 1 / 3 }, this.build)
+        elixirDefinition({ ...info, prob_4line: 0.34 }, this.build)
       ),
       info,
       evalMode: 'substat' as const,

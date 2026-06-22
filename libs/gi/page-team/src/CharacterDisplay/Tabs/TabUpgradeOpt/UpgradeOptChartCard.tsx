@@ -299,7 +299,7 @@ function UpgradeOptChartCardGraph({
       ? upArt.info.affixes.map((affix) => formatReshapeLabel(affix)).join(' / ')
       : ''
   return (
-    <CardThemed bgt="light" sx={{ height: '100%' }}>
+    <CardThemed bgt="light" sx={{ height: '100%', minHeight: 350 }}>
       <Box sx={{ display: 'flex', flexDirection: 'row' }}>
         <Box sx={{ height: 50, width: 50 }}>
           {!!comparisonSlotKey && (

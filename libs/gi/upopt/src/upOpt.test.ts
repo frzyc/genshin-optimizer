@@ -622,7 +622,7 @@ describe('upOpt makeSubstatNode(s)', () => {
     expect(reshapeNoInitialThrow).toThrow()
   })
   describe('define', () => {
-    const p4 = 1 / 3
+    const p4 = 0.34
     const defined = elixirDefinition(
       {
         setKey: 'GladiatorsFinale',
