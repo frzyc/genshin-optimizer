@@ -709,7 +709,7 @@ describe('upOpt makeSubstatNode(s)', () => {
         {
           setKey: 'GladiatorsFinale',
           slotKey: 'flower',
-          mainStatKey: 'hp',
+          mainStatKey: 'atk_',
           affixes: ['atk', 'hp_'],
           prob_4line: 1,
         },

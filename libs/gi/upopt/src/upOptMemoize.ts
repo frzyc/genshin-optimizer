@@ -9,6 +9,7 @@ import {
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { substatWeights } from './consts'
 import { deduplicate } from './deduplicate'
+import { evalMarkovNode } from './markov-tree/evaluation'
 import type { Objective } from './markov-tree/markov.types'
 import { elixirDefinition } from './upOpt'
 import type { SubstatLevelNode } from './upOpt.types'
@@ -55,8 +56,28 @@ export function elixirDefinitionMemoize(
     throw new Error('Cache hit for elixirDefinitionMemoize not implemented yet')
   }
 
-  const nodes = deduplicate(obj, elixirDefinition(info, currentBuild))
+  const substatNodes = elixirDefinition(info, currentBuild)
+
+  // 1. Strip away any keys that are not in the objective's allReadKeys.
+  // 2. Remove mainStat from base.
+  substatNodes.forEach(({ n }) => {
+    // n.base[mainStatKey] -= getMainStatValue(mainStatKey, 5, 20)
+    n.base = Object.fromEntries(
+      Object.entries(n.base).filter(
+        ([k, v]) => obj.allReadKeys.includes(k) //&& v !== 0
+      )
+    )
+  })
+  const nodes = deduplicate(obj, substatNodes).map(({ p, n }) => ({
+    p,
+    n: evalMarkovNode(obj, n),
+  }))
   console.log('nodes', nodes)
+  console.log(nodes[0].n.base)
+  console.log(nodes[0].n.subkeys)
+  // console.log(nodes[1].n.base)
+  // console.log(nodes[1].n.subkeys)
+  // console.log(nodes[1].n.reshape)
 }
 
 type Build = Record<ArtifactSlotKey, ICachedArtifact | undefined>
