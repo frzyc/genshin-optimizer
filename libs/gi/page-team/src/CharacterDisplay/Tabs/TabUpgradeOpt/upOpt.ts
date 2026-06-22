@@ -131,7 +131,7 @@ export class UpOptCalculatorV2 {
     })
     if (defineConfig.enabled) this.tryDefine(defineConfig)
 
-    this.candidates = this.candidates.filter((c) => c.result.p > 1e-3)
+    this.candidates = this.candidates.filter((c) => c.result.p > 1e-6)
     this.candidates.sort(compare)
     this.calcSlowToIndex(5)
   }
