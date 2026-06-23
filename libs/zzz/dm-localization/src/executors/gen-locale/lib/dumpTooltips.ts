@@ -10,7 +10,7 @@ export function dumpTooltips(fileDir: string) {
         key,
         {
           name: tooltip.name,
-          desc: processText(tooltip.desc),
+          desc: processText(tooltip.desc, true),
         },
       ])
     )

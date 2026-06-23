@@ -51,11 +51,11 @@
   },
   "1000016": {
     "name": "Sweeping Cyclone",
-    "desc": "When Velina uses <ct color=#FFFFFF>EX Special Attack: Wind Shear - Eye of the Storm</ct> or triggers <ct color=#FFFFFF>Vortex</ct> while consuming 2 points of <tooltip ns=tooltips_gen baseKey18=1000014>Windbite</tooltip>, she summons a <ct color=#FFFFFF>Sweeping Cyclone</ct> to continuously deal <ct color=#A6C5FD>Wind DMG</ct> that is capable of triggering the <tooltip ns=tooltips_gen baseKey18=1000017>Chromatic Tint</tooltip> effect. When <ct color=#FFFFFF>Sweeping Cyclone</ct> attacks hit enemies, the enemy's <ct color=#A6C5FD>Wind Anomaly Buildup RES</ct> and the corresponding <ct color=#FFFFFF>Attribute Anomaly Buildup RES</ct> from <ct color=#FFFFFF>Chromatic Tint</ct> are reduced. When <ct color=#FFFFFF>Sweeping Cyclone</ct> dissipates, it triggers an explosion. If the explosion hits an enemy suffering a <ct color=#A6C5FD>Wind Anomaly</ct>, it deals one instance of <ct color=#FFFFFF>Abloom</ct> DMG."
+    "desc": "When Velina uses <ct color=#FFFFFF>EX Special Attack: Wind Shear - Eye of the Storm</ct> or triggers <ct color=#FFFFFF>Vortex</ct> while consuming 2 points of Windbite, she summons a <ct color=#FFFFFF>Sweeping Cyclone</ct> to continuously deal <ct color=#A6C5FD>Wind DMG</ct> that is capable of triggering the Chromatic Tint effect. When <ct color=#FFFFFF>Sweeping Cyclone</ct> attacks hit enemies, the enemy's <ct color=#A6C5FD>Wind Anomaly Buildup RES</ct> and the corresponding <ct color=#FFFFFF>Attribute Anomaly Buildup RES</ct> from <ct color=#FFFFFF>Chromatic Tint</ct> are reduced. When <ct color=#FFFFFF>Sweeping Cyclone</ct> dissipates, it triggers an explosion. If the explosion hits an enemy suffering a <ct color=#A6C5FD>Wind Anomaly</ct>, it deals one instance of <ct color=#FFFFFF>Abloom</ct> DMG."
   },
   "1000017": {
     "name": "Chromatic Tint",
-    "desc": "When <tooltip ns=tooltips_gen baseKey18=1000016>Sweeping Cyclone</tooltip> hits an enemy afflicted with <ct color=#FFFFFF>Contamination</ct> for the first time, it triggers the <ct color=#FFFFFF>Chromatic Tint</ct> effect, converting into a <ct color=#FFFFFF>Sweeping Cyclone</ct> of the corresponding attribute and dealing the corresponding attribute's DMG."
+    "desc": "When Sweeping Cyclone hits an enemy afflicted with <ct color=#FFFFFF>Contamination</ct> for the first time, it triggers the <ct color=#FFFFFF>Chromatic Tint</ct> effect, converting into a <ct color=#FFFFFF>Sweeping Cyclone</ct> of the corresponding attribute and dealing the corresponding attribute's DMG."
   },
   "1000018": {
     "name": "Solar Prominence",
@@ -70,7 +70,7 @@
   },
   "1000020": {
     "name": "Sunflare",
-    "desc": "Pyrois enters the Sunflare state when using Ultimate: Triumphant Return. While Sunflare is active, Energy Generation Rate and DMG dealt increase, and triggering a Perfect Block with an EX Special Attack restores additional <tooltip ns=tooltips_gen baseKey18=1000018>Solar Prominence</tooltip>."
+    "desc": "Pyrois enters the Sunflare state when using Ultimate: Triumphant Return. While Sunflare is active, Energy Generation Rate and DMG dealt increase, and triggering a Perfect Block with an EX Special Attack restores additional Solar Prominence."
   },
   "1000021": {
     "name": "Totalize",
