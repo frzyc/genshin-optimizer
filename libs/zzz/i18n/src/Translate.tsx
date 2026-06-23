@@ -1,4 +1,5 @@
 import {
+  BootstrapTooltip,
   ColorText,
   ImgIcon,
   SqBadge,
@@ -6,7 +7,39 @@ import {
 } from '@genshin-optimizer/common/ui'
 import '@genshin-optimizer/zzz/theme' // import to validate typing for color variants
 import { commonDefIcon } from '@genshin-optimizer/zzz/assets'
-import type { ReactNode } from 'react'
+import { Divider, Typography } from '@mui/material'
+import type { ReactElement, ReactNode } from 'react'
+
+function LinkedTooltip({
+  ns = '',
+  baseKey18 = '',
+  color,
+  children,
+}: {
+  ns?: string
+  baseKey18?: string
+  color?: string
+  children?: ReactElement
+}) {
+  const tooltipContent = (
+    <>
+      <Typography variant="h5">
+        <Translate ns={ns} key18={`${baseKey18}.name`} />
+      </Typography>
+      <Divider />
+      <Typography variant="body1">
+        <Translate ns={ns} key18={`${baseKey18}.desc`} />
+      </Typography>
+    </>
+  )
+  return (
+    <BootstrapTooltip title={tooltipContent}>
+      <ColorText sx={{ textDecoration: 'underline' }} color={color}>
+        {children}
+      </ColorText>
+    </BootstrapTooltip>
+  )
+}
 
 const textComponents = {
   fire: <ColorText color="fire" />,
@@ -17,6 +50,7 @@ const textComponents = {
   physical: <ColorText color="physical" />,
   ether: <ColorText color="ether" />,
   ct: <ColorText />,
+  tooltip: <LinkedTooltip />,
   IconNormal: <ImgIcon src={commonDefIcon('basicFlat')} size={1.5} />,
   IconEvade: <ImgIcon src={commonDefIcon('dodgeFlat')} size={1.5} />,
   IconSpecial: <ImgIcon src={commonDefIcon('specialFlat')} size={1.5} />,
