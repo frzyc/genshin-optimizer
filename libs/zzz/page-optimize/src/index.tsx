@@ -56,6 +56,8 @@ export default function PageOptimize() {
   )
 
   const { t } = useTranslation(['charNames_gen', 'page_character'])
+  // Load tooltip translations
+  useTranslation('tooltips_gen')
   const character = useCharacter(characterKey)
   if (characterKey && !character) database.chars.getOrCreate(characterKey)
   const team = useTeam(characterKey)

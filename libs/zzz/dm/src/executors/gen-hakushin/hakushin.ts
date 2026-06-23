@@ -74,9 +74,10 @@ const categories = [
 ] as const
 type Category = (typeof categories)[number]
 export async function getDataFromHakushin() {
-  await Promise.all(
-    categories.map((category) => getAndDumpCategoryData(category))
-  )
+  await Promise.all([
+    ...categories.map((category) => getAndDumpCategoryData(category)),
+    getAndDumpNounData(),
+  ])
 }
 async function getAndDumpCategoryData(category: Category) {
   const indexData = (await fetchJsonFromUrl(
@@ -93,4 +94,10 @@ async function getAndDumpCategoryData(category: Category) {
       await dumpHakushinData(`${category}/${id}.json`, itemData)
     })
   )
+}
+async function getAndDumpNounData() {
+  const nounData = (await fetchJsonFromUrl(
+    URL_BASE + VERSION + '/en/noun.json'
+  )) as object
+  await dumpHakushinData('noun.json', nounData)
 }
