@@ -149,6 +149,54 @@ export function migrateStorage(storage: DBStorage) {
     migrateData('QingYi', 'Qingyi')
   })
 
+  function migrateCharOpt() {
+    const keys = storage.keys
+    for (const key of keys) {
+      if (key.startsWith('zzz_charOpt_')) {
+        const charKey = key.slice('zzz_charOpt_'.length)
+        const oldTeam = storage.get(`zzz_team_${charKey}`)
+        const charOpt = storage.get(key)
+        const charMeta = storage.get(`zzz_charMeta_${charKey}`)
+
+        const {
+          critMode,
+          bonusStats,
+          conditionals,
+          enemyStats,
+          optConfigId,
+          teammates: oldTeammates,
+          ...rest
+        } = charOpt
+        const frame = {
+          multiplier: 1,
+          critMode,
+          bonusStats,
+          conditionals,
+          enemyStats,
+        }
+        const teammates = [
+          { characterKey: charKey, optConfigId },
+          ...oldTeammates.map((ck: any) => ({
+            characterKey: ck,
+          })),
+        ]
+
+        const team = {
+          teammates,
+          frames: [frame],
+          ...rest,
+        }
+
+        storage.set(`zzz_team_${charKey}`, team)
+        storage.set(`zzz_charMeta_${charKey}`, {
+          description: `${charMeta?.description ?? ''}\n\n${JSON.stringify(oldTeam)}`,
+        })
+        storage.remove(key)
+      }
+    }
+  }
+  migrateCharOpt()
+
   storage.setDBVersion(currentDBVersion)
   if (version > currentDBVersion)
     throw new Error(`Database version ${version} is not supported`)
