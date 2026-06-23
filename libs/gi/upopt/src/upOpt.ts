@@ -214,15 +214,11 @@ export function elixirDefinition(
 
 function artToStats(art: ICachedArtifact, mainStatMax = true) {
   const stats = {} as DynStat
-  if (mainStatMax) {
-    stats[art.mainStatKey] = getMainStatValue(
-      art.mainStatKey,
-      art.rarity,
-      mainStatMax ? artMaxLevel[art.rarity] : art.level
-    )
-  } else {
-    stats[art.mainStatKey] = toDecimal(art.mainStatVal, art.mainStatKey)
-  }
+  stats[art.mainStatKey] = getMainStatValue(
+    art.mainStatKey,
+    art.rarity,
+    mainStatMax ? artMaxLevel[art.rarity] : art.level
+  )
   art.substats.forEach(({ key, accurateValue }) => {
     if (!key) return
     stats[key] = toDecimal(accurateValue, key)
