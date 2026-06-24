@@ -226,7 +226,7 @@ export function migrateStorage(storage: DBStorage) {
           }
           const teammates = [
             { characterKey: charKey, optConfigId },
-            ...oldTeammates.map((ck: any) => ({
+            ...(oldTeammates ?? []).map((ck: any) => ({
               characterKey: ck,
             })),
           ]
