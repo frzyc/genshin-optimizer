@@ -11221,7 +11221,6 @@
       ],
       "skillParams": {
         "basic": {
-          "Passion": [],
           "BasicAttackDancingBlades": [
             {
               "DamagePercentage": 0.361,
@@ -11290,6 +11289,7 @@
               "AttributeInfliction": 226.62
             }
           ],
+          "Passion": [],
           "BasicAttackSalchowJump": [
             {
               "DamagePercentage": 3.008,

@@ -156,7 +156,7 @@ export function TagFieldDisplay({
   if (!showZero && !calcValue && !compareCalcValue) return null
 
   let fieldVal = false as ReactNode
-  const unit = getUnitStr(fieldRead.tag['name'] || fieldRead.tag['q'] || '')
+  const unit = getUnitStr(fieldRead.tag['q'] || fieldRead.tag['name'] || '')
 
   const diff = calcValue - compareCalcValue
   const pctDiff =
