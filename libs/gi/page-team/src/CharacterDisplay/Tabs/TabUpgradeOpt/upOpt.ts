@@ -132,7 +132,7 @@ export class UpOptCalculatorV2 {
     })
     if (defineConfig.enabled) this.tryDefine(defineConfig)
 
-    this.candidates = this.candidates.filter((c) => c.result.p > 1e-3)
+    this.candidates = this.candidates.filter((c) => c.result.p > 1e-6)
     this.candidates.sort(compare)
     this.calcSlowToIndex(5)
   }
@@ -219,7 +219,7 @@ export class UpOptCalculatorV2 {
   fromDefineInfo(info: DefineInfo) {
     return {
       ...this.evaluateNodes(
-        elixirDefinition({ ...info, prob_4line: 1 / 3 }, this.build)
+        elixirDefinition({ ...info, prob_4line: 0.34 }, this.build)
       ),
       info,
       evalMode: 'substat' as const,
