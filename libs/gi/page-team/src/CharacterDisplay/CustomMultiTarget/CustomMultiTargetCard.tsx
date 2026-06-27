@@ -67,11 +67,13 @@ export default function CustomMultiTargetCard({
     setTargetProp(target)
   }, [onHide, setTargetProp, target])
 
+  const [selectedTarget, setSelectedTarget] = useState(-1)
   const addTarget = useCallback(
     (t: string[], multi?: number) => {
       const target_ = { ...target }
       target_.targets = [...target_.targets, initCustomTarget(t, multi)]
       setTarget(target_)
+      setSelectedTarget(target_.targets.length - 1)
     },
     [target, setTarget]
   )
@@ -99,7 +101,6 @@ export default function CustomMultiTargetCard({
     [target, setTarget, t]
   )
 
-  const [selectedTarget, setSelectedTarget] = useState(-1)
   const setTargetIndex = useCallback(
     (oldInd: number) => (newRank?: number) => {
       if (newRank === undefined || newRank === 0) return
