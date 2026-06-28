@@ -2,7 +2,7 @@ import { useDataManagerKeys } from '@genshin-optimizer/common/database-ui'
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { BootstrapTooltip } from '@genshin-optimizer/common/ui'
 import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common/util'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
@@ -13,7 +13,6 @@ import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import { ElementIcon } from '@genshin-optimizer/gi/svgicons'
 import {
   CharacterName,
-  CharacterSingleSelectionModal,
   DataContext,
   type OptimizeFlowKind,
   SillyContext,
@@ -26,12 +25,11 @@ import AddIcon from '@mui/icons-material/Add'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import SettingsIcon from '@mui/icons-material/Settings'
 import { Box, Button, IconButton, Typography, useTheme } from '@mui/material'
-import { Suspense, useContext, useMemo, useState } from 'react'
+import { useContext, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { TeamSettingsModal } from '../../TeamSettingsModal'
 import { TeamBuffsPanel } from './TeamBuffsPanel'
-import { teamSlotGradientSx } from './optimizeChromeTheme'
 
 const TEAMMATE_SIZE = 76
 
@@ -68,23 +66,6 @@ export function CompactTeamRow({
     [teamKeys, database.teams]
   )
 
-  const elementArray: Array<ElementKey | undefined> = useMemo(
-    () =>
-      loadoutData.map((loadoutDatum) => {
-        if (!loadoutDatum?.teamCharId) return undefined
-        const teamChar = database.teamChars.get(loadoutDatum.teamCharId)
-        if (!teamChar) return undefined
-        return getCharEle(teamChar.key)
-      }),
-    [loadoutData, database.teamChars]
-  )
-
-  const activeSlotIndex = loadoutData.findIndex(
-    (loadoutDatum) =>
-      loadoutDatum?.teamCharId &&
-      database.teamChars.get(loadoutDatum.teamCharId)?.key === characterKey
-  )
-
   const onTeamSwitch = (newTeamId: string) => {
     if (newTeamId === teamId) return
     ensureOptimizeContext(database, {
@@ -93,38 +74,6 @@ export function CompactTeamRow({
       teamId: newTeamId,
     })
     navigate(getFlowCharTabPath(flow, newTeamId, characterKey, 'optimize'))
-  }
-  const onSingleSelect = (cKey: CharacterKey) => {
-    if (charSelectIndex === undefined) return
-    database.chars.getWithInitWeapon(cKey)
-    const existingIndex = loadoutData.findIndex(
-      (ld) =>
-        ld?.teamCharId && database.teamChars.get(ld.teamCharId)?.key === cKey
-    )
-    if (existingIndex < 0) {
-      let newTeamCharId = database.teamChars.keys.find(
-        (k) => database.teamChars.get(k)!.key === cKey
-      )
-      if (!newTeamCharId) newTeamCharId = database.teamChars.new(cKey)
-      database.teams.set(teamId, (team) => {
-        team.loadoutData[charSelectIndex] = {
-          teamCharId: newTeamCharId,
-        } as LoadoutDatum
-      })
-    } else if (existingIndex !== charSelectIndex) {
-      const existingLoadoutDatum = loadoutData[existingIndex]
-      const destinationLoadoutDatum = loadoutData[charSelectIndex]
-      database.teams.set(teamId, (team) => {
-        team.loadoutData[charSelectIndex] = existingLoadoutDatum
-        if (
-          team.loadoutData[existingIndex]?.teamCharId ===
-          existingLoadoutDatum?.teamCharId
-        ) {
-          team.loadoutData[existingIndex] = destinationLoadoutDatum
-        }
-      })
-    }
-    setCharSelectIndex(undefined)
   }
 
   const teamBuffHighlight = teamBuffsOpen
@@ -140,16 +89,7 @@ export function CompactTeamRow({
         onClose={onHideSettings}
         onTeamSwitch={onTeamSwitch}
       />
-      <Suspense fallback={false}>
-        <CharacterSingleSelectionModal
-          show={charSelectIndex !== undefined}
-          onHide={() => setCharSelectIndex(undefined)}
-          onSelect={onSingleSelect}
-          selectedIndex={charSelectIndex}
-          loadoutData={loadoutData}
-        />
-      </Suspense>
-      <Box sx={teamSlotGradientSx(elementArray, activeSlotIndex)}>
+      <Box>
         <Box
           sx={{
             display: 'flex',
@@ -251,6 +191,8 @@ export function CompactTeamRow({
             team={team}
             open={teamBuffsOpen}
             dataContextValue={dataContextValue}
+            charSelectIndex={charSelectIndex}
+            onCharSelectIndex={setCharSelectIndex}
           />
         </Box>
       </Box>
