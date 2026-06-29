@@ -27,8 +27,8 @@ function resolveFormulaMetaKey(
 
   const sheetFormulas = result[sheet] ?? {}
   const existing = sheetFormulas[abilityName]
-  const hasCompositeSibling = Object.keys(sheetFormulas).some(
-    (k) => k.startsWith(`${abilityName}:`)
+  const hasCompositeSibling = Object.keys(sheetFormulas).some((k) =>
+    k.startsWith(`${abilityName}:`)
   )
   if (hasCompositeSibling || (existing && existing.tag.q !== q)) {
     if (existing && existing.tag.q !== q) {
@@ -71,7 +71,12 @@ export default async function runExecutor(
       const sheet = tag.sheet!
       const abilityName = value.tag['name']!
       const q = value.tag['q']!
-      const metaKey = resolveFormulaMetaKey(sheet, abilityName, q, result)
+      const metaKey = resolveFormulaMetaKey(
+        sheet,
+        abilityName,
+        q,
+        result as Record<string, Record<string, { tag: Tag; name: string }>>
+      )
       return {
         sheet,
         name: metaKey,

@@ -89,9 +89,9 @@ export const formulas = {
       name: 'dazeInst',
     },
   },
-  BasicAttackSweepingEdge_0_dmg: {
+  'BasicAttackSweepingEdge_0:standardDmg': {
     sheet: 'Promeia',
-    name: 'BasicAttackSweepingEdge_0_dmg',
+    name: 'BasicAttackSweepingEdge_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -100,12 +100,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSweepingEdge_0_dmg',
+      name: 'BasicAttackSweepingEdge_0',
     },
   },
-  BasicAttackSweepingEdge_0_daze: {
+  'BasicAttackSweepingEdge_0:dazeBuildup': {
     sheet: 'Promeia',
-    name: 'BasicAttackSweepingEdge_0_daze',
+    name: 'BasicAttackSweepingEdge_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -114,12 +114,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSweepingEdge_0_daze',
+      name: 'BasicAttackSweepingEdge_0',
     },
   },
-  BasicAttackSweepingEdge_0_anomBuildup: {
+  'BasicAttackSweepingEdge_0:anomBuildup': {
     sheet: 'Promeia',
-    name: 'BasicAttackSweepingEdge_0_anomBuildup',
+    name: 'BasicAttackSweepingEdge_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -128,12 +128,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSweepingEdge_0_anomBuildup',
+      name: 'BasicAttackSweepingEdge_0',
     },
   },
-  BasicAttackSweepingEdge_1_dmg: {
+  'BasicAttackSweepingEdge_1:standardDmg': {
     sheet: 'Promeia',
-    name: 'BasicAttackSweepingEdge_1_dmg',
+    name: 'BasicAttackSweepingEdge_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -142,12 +142,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSweepingEdge_1_dmg',
+      name: 'BasicAttackSweepingEdge_1',
     },
   },
-  BasicAttackSweepingEdge_1_daze: {
+  'BasicAttackSweepingEdge_1:dazeBuildup': {
     sheet: 'Promeia',
-    name: 'BasicAttackSweepingEdge_1_daze',
+    name: 'BasicAttackSweepingEdge_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -156,12 +156,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSweepingEdge_1_daze',
+      name: 'BasicAttackSweepingEdge_1',
     },
   },
-  BasicAttackSweepingEdge_1_anomBuildup: {
+  'BasicAttackSweepingEdge_1:anomBuildup': {
     sheet: 'Promeia',
-    name: 'BasicAttackSweepingEdge_1_anomBuildup',
+    name: 'BasicAttackSweepingEdge_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -170,12 +170,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSweepingEdge_1_anomBuildup',
+      name: 'BasicAttackSweepingEdge_1',
     },
   },
-  BasicAttackSweepingEdge_2_dmg: {
+  'BasicAttackSweepingEdge_2:standardDmg': {
     sheet: 'Promeia',
-    name: 'BasicAttackSweepingEdge_2_dmg',
+    name: 'BasicAttackSweepingEdge_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -184,12 +184,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSweepingEdge_2_dmg',
+      name: 'BasicAttackSweepingEdge_2',
     },
   },
-  BasicAttackSweepingEdge_2_daze: {
+  'BasicAttackSweepingEdge_2:dazeBuildup': {
     sheet: 'Promeia',
-    name: 'BasicAttackSweepingEdge_2_daze',
+    name: 'BasicAttackSweepingEdge_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -198,12 +198,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSweepingEdge_2_daze',
+      name: 'BasicAttackSweepingEdge_2',
     },
   },
-  BasicAttackSweepingEdge_2_anomBuildup: {
+  'BasicAttackSweepingEdge_2:anomBuildup': {
     sheet: 'Promeia',
-    name: 'BasicAttackSweepingEdge_2_anomBuildup',
+    name: 'BasicAttackSweepingEdge_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -212,12 +212,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSweepingEdge_2_anomBuildup',
+      name: 'BasicAttackSweepingEdge_2',
     },
   },
-  BasicAttackSweepingEdge_3_dmg: {
+  'BasicAttackSweepingEdge_3:standardDmg': {
     sheet: 'Promeia',
-    name: 'BasicAttackSweepingEdge_3_dmg',
+    name: 'BasicAttackSweepingEdge_3:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -226,12 +226,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSweepingEdge_3_dmg',
+      name: 'BasicAttackSweepingEdge_3',
     },
   },
-  BasicAttackSweepingEdge_3_daze: {
+  'BasicAttackSweepingEdge_3:dazeBuildup': {
     sheet: 'Promeia',
-    name: 'BasicAttackSweepingEdge_3_daze',
+    name: 'BasicAttackSweepingEdge_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -240,12 +240,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSweepingEdge_3_daze',
+      name: 'BasicAttackSweepingEdge_3',
     },
   },
-  BasicAttackSweepingEdge_3_anomBuildup: {
+  'BasicAttackSweepingEdge_3:anomBuildup': {
     sheet: 'Promeia',
-    name: 'BasicAttackSweepingEdge_3_anomBuildup',
+    name: 'BasicAttackSweepingEdge_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -254,12 +254,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSweepingEdge_3_anomBuildup',
+      name: 'BasicAttackSweepingEdge_3',
     },
   },
-  BasicAttackSweepingEdge_4_dmg: {
+  'BasicAttackSweepingEdge_4:standardDmg': {
     sheet: 'Promeia',
-    name: 'BasicAttackSweepingEdge_4_dmg',
+    name: 'BasicAttackSweepingEdge_4:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -268,12 +268,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSweepingEdge_4_dmg',
+      name: 'BasicAttackSweepingEdge_4',
     },
   },
-  BasicAttackSweepingEdge_4_daze: {
+  'BasicAttackSweepingEdge_4:dazeBuildup': {
     sheet: 'Promeia',
-    name: 'BasicAttackSweepingEdge_4_daze',
+    name: 'BasicAttackSweepingEdge_4:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -282,12 +282,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSweepingEdge_4_daze',
+      name: 'BasicAttackSweepingEdge_4',
     },
   },
-  BasicAttackSweepingEdge_4_anomBuildup: {
+  'BasicAttackSweepingEdge_4:anomBuildup': {
     sheet: 'Promeia',
-    name: 'BasicAttackSweepingEdge_4_anomBuildup',
+    name: 'BasicAttackSweepingEdge_4:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -296,12 +296,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSweepingEdge_4_anomBuildup',
+      name: 'BasicAttackSweepingEdge_4',
     },
   },
-  BasicAttackSweepingEdge_5_dmg: {
+  'BasicAttackSweepingEdge_5:standardDmg': {
     sheet: 'Promeia',
-    name: 'BasicAttackSweepingEdge_5_dmg',
+    name: 'BasicAttackSweepingEdge_5:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -310,12 +310,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSweepingEdge_5_dmg',
+      name: 'BasicAttackSweepingEdge_5',
     },
   },
-  BasicAttackSweepingEdge_5_daze: {
+  'BasicAttackSweepingEdge_5:dazeBuildup': {
     sheet: 'Promeia',
-    name: 'BasicAttackSweepingEdge_5_daze',
+    name: 'BasicAttackSweepingEdge_5:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -324,12 +324,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSweepingEdge_5_daze',
+      name: 'BasicAttackSweepingEdge_5',
     },
   },
-  BasicAttackSweepingEdge_5_anomBuildup: {
+  'BasicAttackSweepingEdge_5:anomBuildup': {
     sheet: 'Promeia',
-    name: 'BasicAttackSweepingEdge_5_anomBuildup',
+    name: 'BasicAttackSweepingEdge_5:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -338,12 +338,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSweepingEdge_5_anomBuildup',
+      name: 'BasicAttackSweepingEdge_5',
     },
   },
-  BasicAttackWhirlingBlade_0_dmg: {
+  'BasicAttackWhirlingBlade_0:standardDmg': {
     sheet: 'Promeia',
-    name: 'BasicAttackWhirlingBlade_0_dmg',
+    name: 'BasicAttackWhirlingBlade_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -352,12 +352,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackWhirlingBlade_0_dmg',
+      name: 'BasicAttackWhirlingBlade_0',
     },
   },
-  BasicAttackWhirlingBlade_0_daze: {
+  'BasicAttackWhirlingBlade_0:dazeBuildup': {
     sheet: 'Promeia',
-    name: 'BasicAttackWhirlingBlade_0_daze',
+    name: 'BasicAttackWhirlingBlade_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -366,12 +366,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackWhirlingBlade_0_daze',
+      name: 'BasicAttackWhirlingBlade_0',
     },
   },
-  BasicAttackWhirlingBlade_0_anomBuildup: {
+  'BasicAttackWhirlingBlade_0:anomBuildup': {
     sheet: 'Promeia',
-    name: 'BasicAttackWhirlingBlade_0_anomBuildup',
+    name: 'BasicAttackWhirlingBlade_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -380,12 +380,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackWhirlingBlade_0_anomBuildup',
+      name: 'BasicAttackWhirlingBlade_0',
     },
   },
-  DashAttackGrimReap_0_dmg: {
+  'DashAttackGrimReap_0:standardDmg': {
     sheet: 'Promeia',
-    name: 'DashAttackGrimReap_0_dmg',
+    name: 'DashAttackGrimReap_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -394,12 +394,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackGrimReap_0_dmg',
+      name: 'DashAttackGrimReap_0',
     },
   },
-  DashAttackGrimReap_0_daze: {
+  'DashAttackGrimReap_0:dazeBuildup': {
     sheet: 'Promeia',
-    name: 'DashAttackGrimReap_0_daze',
+    name: 'DashAttackGrimReap_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -408,12 +408,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackGrimReap_0_daze',
+      name: 'DashAttackGrimReap_0',
     },
   },
-  DashAttackGrimReap_0_anomBuildup: {
+  'DashAttackGrimReap_0:anomBuildup': {
     sheet: 'Promeia',
-    name: 'DashAttackGrimReap_0_anomBuildup',
+    name: 'DashAttackGrimReap_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -422,12 +422,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackGrimReap_0_anomBuildup',
+      name: 'DashAttackGrimReap_0',
     },
   },
-  DodgeCounterSoaringBat_0_dmg: {
+  'DodgeCounterSoaringBat_0:standardDmg': {
     sheet: 'Promeia',
-    name: 'DodgeCounterSoaringBat_0_dmg',
+    name: 'DodgeCounterSoaringBat_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -436,12 +436,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterSoaringBat_0_dmg',
+      name: 'DodgeCounterSoaringBat_0',
     },
   },
-  DodgeCounterSoaringBat_0_daze: {
+  'DodgeCounterSoaringBat_0:dazeBuildup': {
     sheet: 'Promeia',
-    name: 'DodgeCounterSoaringBat_0_daze',
+    name: 'DodgeCounterSoaringBat_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -450,12 +450,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterSoaringBat_0_daze',
+      name: 'DodgeCounterSoaringBat_0',
     },
   },
-  DodgeCounterSoaringBat_0_anomBuildup: {
+  'DodgeCounterSoaringBat_0:anomBuildup': {
     sheet: 'Promeia',
-    name: 'DodgeCounterSoaringBat_0_anomBuildup',
+    name: 'DodgeCounterSoaringBat_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -464,12 +464,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterSoaringBat_0_anomBuildup',
+      name: 'DodgeCounterSoaringBat_0',
     },
   },
-  SpecialAttackExecutionColdFlash_0_dmg: {
+  'SpecialAttackExecutionColdFlash_0:standardDmg': {
     sheet: 'Promeia',
-    name: 'SpecialAttackExecutionColdFlash_0_dmg',
+    name: 'SpecialAttackExecutionColdFlash_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -478,12 +478,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackExecutionColdFlash_0_dmg',
+      name: 'SpecialAttackExecutionColdFlash_0',
     },
   },
-  SpecialAttackExecutionColdFlash_0_daze: {
+  'SpecialAttackExecutionColdFlash_0:dazeBuildup': {
     sheet: 'Promeia',
-    name: 'SpecialAttackExecutionColdFlash_0_daze',
+    name: 'SpecialAttackExecutionColdFlash_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -492,12 +492,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackExecutionColdFlash_0_daze',
+      name: 'SpecialAttackExecutionColdFlash_0',
     },
   },
-  SpecialAttackExecutionColdFlash_0_anomBuildup: {
+  'SpecialAttackExecutionColdFlash_0:anomBuildup': {
     sheet: 'Promeia',
-    name: 'SpecialAttackExecutionColdFlash_0_anomBuildup',
+    name: 'SpecialAttackExecutionColdFlash_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -506,12 +506,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackExecutionColdFlash_0_anomBuildup',
+      name: 'SpecialAttackExecutionColdFlash_0',
     },
   },
-  EXSpecialAttackExecutionGlacialDeath_0_dmg: {
+  'EXSpecialAttackExecutionGlacialDeath_0:standardDmg': {
     sheet: 'Promeia',
-    name: 'EXSpecialAttackExecutionGlacialDeath_0_dmg',
+    name: 'EXSpecialAttackExecutionGlacialDeath_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -520,12 +520,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackExecutionGlacialDeath_0_dmg',
+      name: 'EXSpecialAttackExecutionGlacialDeath_0',
     },
   },
-  EXSpecialAttackExecutionGlacialDeath_0_daze: {
+  'EXSpecialAttackExecutionGlacialDeath_0:dazeBuildup': {
     sheet: 'Promeia',
-    name: 'EXSpecialAttackExecutionGlacialDeath_0_daze',
+    name: 'EXSpecialAttackExecutionGlacialDeath_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -534,12 +534,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackExecutionGlacialDeath_0_daze',
+      name: 'EXSpecialAttackExecutionGlacialDeath_0',
     },
   },
-  EXSpecialAttackExecutionGlacialDeath_0_anomBuildup: {
+  'EXSpecialAttackExecutionGlacialDeath_0:anomBuildup': {
     sheet: 'Promeia',
-    name: 'EXSpecialAttackExecutionGlacialDeath_0_anomBuildup',
+    name: 'EXSpecialAttackExecutionGlacialDeath_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -548,12 +548,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackExecutionGlacialDeath_0_anomBuildup',
+      name: 'EXSpecialAttackExecutionGlacialDeath_0',
     },
   },
-  SpecialAttackExecutionDescendingFrost_0_dmg: {
+  'SpecialAttackExecutionDescendingFrost_0:standardDmg': {
     sheet: 'Promeia',
-    name: 'SpecialAttackExecutionDescendingFrost_0_dmg',
+    name: 'SpecialAttackExecutionDescendingFrost_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -562,12 +562,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackExecutionDescendingFrost_0_dmg',
+      name: 'SpecialAttackExecutionDescendingFrost_0',
     },
   },
-  SpecialAttackExecutionDescendingFrost_0_daze: {
+  'SpecialAttackExecutionDescendingFrost_0:dazeBuildup': {
     sheet: 'Promeia',
-    name: 'SpecialAttackExecutionDescendingFrost_0_daze',
+    name: 'SpecialAttackExecutionDescendingFrost_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -576,12 +576,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackExecutionDescendingFrost_0_daze',
+      name: 'SpecialAttackExecutionDescendingFrost_0',
     },
   },
-  SpecialAttackExecutionDescendingFrost_0_anomBuildup: {
+  'SpecialAttackExecutionDescendingFrost_0:anomBuildup': {
     sheet: 'Promeia',
-    name: 'SpecialAttackExecutionDescendingFrost_0_anomBuildup',
+    name: 'SpecialAttackExecutionDescendingFrost_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -590,12 +590,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackExecutionDescendingFrost_0_anomBuildup',
+      name: 'SpecialAttackExecutionDescendingFrost_0',
     },
   },
-  SpecialAttackExecutionLayeredFrost_0_dmg: {
+  'SpecialAttackExecutionLayeredFrost_0:standardDmg': {
     sheet: 'Promeia',
-    name: 'SpecialAttackExecutionLayeredFrost_0_dmg',
+    name: 'SpecialAttackExecutionLayeredFrost_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -604,12 +604,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackExecutionLayeredFrost_0_dmg',
+      name: 'SpecialAttackExecutionLayeredFrost_0',
     },
   },
-  SpecialAttackExecutionLayeredFrost_0_daze: {
+  'SpecialAttackExecutionLayeredFrost_0:dazeBuildup': {
     sheet: 'Promeia',
-    name: 'SpecialAttackExecutionLayeredFrost_0_daze',
+    name: 'SpecialAttackExecutionLayeredFrost_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -618,12 +618,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackExecutionLayeredFrost_0_daze',
+      name: 'SpecialAttackExecutionLayeredFrost_0',
     },
   },
-  SpecialAttackExecutionLayeredFrost_0_anomBuildup: {
+  'SpecialAttackExecutionLayeredFrost_0:anomBuildup': {
     sheet: 'Promeia',
-    name: 'SpecialAttackExecutionLayeredFrost_0_anomBuildup',
+    name: 'SpecialAttackExecutionLayeredFrost_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -632,12 +632,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackExecutionLayeredFrost_0_anomBuildup',
+      name: 'SpecialAttackExecutionLayeredFrost_0',
     },
   },
-  SpecialAttackExecutionLayeredFrost_1_dmg: {
+  'SpecialAttackExecutionLayeredFrost_1:standardDmg': {
     sheet: 'Promeia',
-    name: 'SpecialAttackExecutionLayeredFrost_1_dmg',
+    name: 'SpecialAttackExecutionLayeredFrost_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -646,12 +646,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackExecutionLayeredFrost_1_dmg',
+      name: 'SpecialAttackExecutionLayeredFrost_1',
     },
   },
-  SpecialAttackExecutionLayeredFrost_1_daze: {
+  'SpecialAttackExecutionLayeredFrost_1:dazeBuildup': {
     sheet: 'Promeia',
-    name: 'SpecialAttackExecutionLayeredFrost_1_daze',
+    name: 'SpecialAttackExecutionLayeredFrost_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -660,12 +660,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackExecutionLayeredFrost_1_daze',
+      name: 'SpecialAttackExecutionLayeredFrost_1',
     },
   },
-  SpecialAttackExecutionLayeredFrost_1_anomBuildup: {
+  'SpecialAttackExecutionLayeredFrost_1:anomBuildup': {
     sheet: 'Promeia',
-    name: 'SpecialAttackExecutionLayeredFrost_1_anomBuildup',
+    name: 'SpecialAttackExecutionLayeredFrost_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -674,12 +674,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackExecutionLayeredFrost_1_anomBuildup',
+      name: 'SpecialAttackExecutionLayeredFrost_1',
     },
   },
-  EXSpecialAttackExecutionMercilessJudgment_0_dmg: {
+  'EXSpecialAttackExecutionMercilessJudgment_0:standardDmg': {
     sheet: 'Promeia',
-    name: 'EXSpecialAttackExecutionMercilessJudgment_0_dmg',
+    name: 'EXSpecialAttackExecutionMercilessJudgment_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -688,12 +688,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackExecutionMercilessJudgment_0_dmg',
+      name: 'EXSpecialAttackExecutionMercilessJudgment_0',
     },
   },
-  EXSpecialAttackExecutionMercilessJudgment_0_daze: {
+  'EXSpecialAttackExecutionMercilessJudgment_0:dazeBuildup': {
     sheet: 'Promeia',
-    name: 'EXSpecialAttackExecutionMercilessJudgment_0_daze',
+    name: 'EXSpecialAttackExecutionMercilessJudgment_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -702,12 +702,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackExecutionMercilessJudgment_0_daze',
+      name: 'EXSpecialAttackExecutionMercilessJudgment_0',
     },
   },
-  EXSpecialAttackExecutionMercilessJudgment_0_anomBuildup: {
+  'EXSpecialAttackExecutionMercilessJudgment_0:anomBuildup': {
     sheet: 'Promeia',
-    name: 'EXSpecialAttackExecutionMercilessJudgment_0_anomBuildup',
+    name: 'EXSpecialAttackExecutionMercilessJudgment_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -716,12 +716,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackExecutionMercilessJudgment_0_anomBuildup',
+      name: 'EXSpecialAttackExecutionMercilessJudgment_0',
     },
   },
-  ChainAttackHangingJudgment_0_dmg: {
+  'ChainAttackHangingJudgment_0:standardDmg': {
     sheet: 'Promeia',
-    name: 'ChainAttackHangingJudgment_0_dmg',
+    name: 'ChainAttackHangingJudgment_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -730,12 +730,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackHangingJudgment_0_dmg',
+      name: 'ChainAttackHangingJudgment_0',
     },
   },
-  ChainAttackHangingJudgment_0_daze: {
+  'ChainAttackHangingJudgment_0:dazeBuildup': {
     sheet: 'Promeia',
-    name: 'ChainAttackHangingJudgment_0_daze',
+    name: 'ChainAttackHangingJudgment_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -744,12 +744,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackHangingJudgment_0_daze',
+      name: 'ChainAttackHangingJudgment_0',
     },
   },
-  ChainAttackHangingJudgment_0_anomBuildup: {
+  'ChainAttackHangingJudgment_0:anomBuildup': {
     sheet: 'Promeia',
-    name: 'ChainAttackHangingJudgment_0_anomBuildup',
+    name: 'ChainAttackHangingJudgment_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -758,12 +758,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackHangingJudgment_0_anomBuildup',
+      name: 'ChainAttackHangingJudgment_0',
     },
   },
-  UltimateGlaciatingImpalement_0_dmg: {
+  'UltimateGlaciatingImpalement_0:standardDmg': {
     sheet: 'Promeia',
-    name: 'UltimateGlaciatingImpalement_0_dmg',
+    name: 'UltimateGlaciatingImpalement_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -772,12 +772,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateGlaciatingImpalement_0_dmg',
+      name: 'UltimateGlaciatingImpalement_0',
     },
   },
-  UltimateGlaciatingImpalement_0_daze: {
+  'UltimateGlaciatingImpalement_0:dazeBuildup': {
     sheet: 'Promeia',
-    name: 'UltimateGlaciatingImpalement_0_daze',
+    name: 'UltimateGlaciatingImpalement_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -786,12 +786,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateGlaciatingImpalement_0_daze',
+      name: 'UltimateGlaciatingImpalement_0',
     },
   },
-  UltimateGlaciatingImpalement_0_anomBuildup: {
+  'UltimateGlaciatingImpalement_0:anomBuildup': {
     sheet: 'Promeia',
-    name: 'UltimateGlaciatingImpalement_0_anomBuildup',
+    name: 'UltimateGlaciatingImpalement_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -800,12 +800,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateGlaciatingImpalement_0_anomBuildup',
+      name: 'UltimateGlaciatingImpalement_0',
     },
   },
-  QuickAssistAmbushingStrike_0_dmg: {
+  'QuickAssistAmbushingStrike_0:standardDmg': {
     sheet: 'Promeia',
-    name: 'QuickAssistAmbushingStrike_0_dmg',
+    name: 'QuickAssistAmbushingStrike_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -814,12 +814,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistAmbushingStrike_0_dmg',
+      name: 'QuickAssistAmbushingStrike_0',
     },
   },
-  QuickAssistAmbushingStrike_0_daze: {
+  'QuickAssistAmbushingStrike_0:dazeBuildup': {
     sheet: 'Promeia',
-    name: 'QuickAssistAmbushingStrike_0_daze',
+    name: 'QuickAssistAmbushingStrike_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -828,12 +828,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistAmbushingStrike_0_daze',
+      name: 'QuickAssistAmbushingStrike_0',
     },
   },
-  QuickAssistAmbushingStrike_0_anomBuildup: {
+  'QuickAssistAmbushingStrike_0:anomBuildup': {
     sheet: 'Promeia',
-    name: 'QuickAssistAmbushingStrike_0_anomBuildup',
+    name: 'QuickAssistAmbushingStrike_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -842,12 +842,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistAmbushingStrike_0_anomBuildup',
+      name: 'QuickAssistAmbushingStrike_0',
     },
   },
-  DefensiveAssistInjunction_0_dmg: {
+  'DefensiveAssistInjunction_0:standardDmg': {
     sheet: 'Promeia',
-    name: 'DefensiveAssistInjunction_0_dmg',
+    name: 'DefensiveAssistInjunction_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -856,12 +856,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistInjunction_0_dmg',
+      name: 'DefensiveAssistInjunction_0',
     },
   },
-  DefensiveAssistInjunction_0_daze: {
+  'DefensiveAssistInjunction_0:dazeBuildup': {
     sheet: 'Promeia',
-    name: 'DefensiveAssistInjunction_0_daze',
+    name: 'DefensiveAssistInjunction_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -870,12 +870,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistInjunction_0_daze',
+      name: 'DefensiveAssistInjunction_0',
     },
   },
-  DefensiveAssistInjunction_0_anomBuildup: {
+  'DefensiveAssistInjunction_0:anomBuildup': {
     sheet: 'Promeia',
-    name: 'DefensiveAssistInjunction_0_anomBuildup',
+    name: 'DefensiveAssistInjunction_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -884,12 +884,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistInjunction_0_anomBuildup',
+      name: 'DefensiveAssistInjunction_0',
     },
   },
-  DefensiveAssistInjunction_1_dmg: {
+  'DefensiveAssistInjunction_1:standardDmg': {
     sheet: 'Promeia',
-    name: 'DefensiveAssistInjunction_1_dmg',
+    name: 'DefensiveAssistInjunction_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -898,12 +898,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistInjunction_1_dmg',
+      name: 'DefensiveAssistInjunction_1',
     },
   },
-  DefensiveAssistInjunction_1_daze: {
+  'DefensiveAssistInjunction_1:dazeBuildup': {
     sheet: 'Promeia',
-    name: 'DefensiveAssistInjunction_1_daze',
+    name: 'DefensiveAssistInjunction_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -912,12 +912,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistInjunction_1_daze',
+      name: 'DefensiveAssistInjunction_1',
     },
   },
-  DefensiveAssistInjunction_1_anomBuildup: {
+  'DefensiveAssistInjunction_1:anomBuildup': {
     sheet: 'Promeia',
-    name: 'DefensiveAssistInjunction_1_anomBuildup',
+    name: 'DefensiveAssistInjunction_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -926,12 +926,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistInjunction_1_anomBuildup',
+      name: 'DefensiveAssistInjunction_1',
     },
   },
-  DefensiveAssistInjunction_2_dmg: {
+  'DefensiveAssistInjunction_2:standardDmg': {
     sheet: 'Promeia',
-    name: 'DefensiveAssistInjunction_2_dmg',
+    name: 'DefensiveAssistInjunction_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -940,12 +940,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistInjunction_2_dmg',
+      name: 'DefensiveAssistInjunction_2',
     },
   },
-  DefensiveAssistInjunction_2_daze: {
+  'DefensiveAssistInjunction_2:dazeBuildup': {
     sheet: 'Promeia',
-    name: 'DefensiveAssistInjunction_2_daze',
+    name: 'DefensiveAssistInjunction_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -954,12 +954,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistInjunction_2_daze',
+      name: 'DefensiveAssistInjunction_2',
     },
   },
-  DefensiveAssistInjunction_2_anomBuildup: {
+  'DefensiveAssistInjunction_2:anomBuildup': {
     sheet: 'Promeia',
-    name: 'DefensiveAssistInjunction_2_anomBuildup',
+    name: 'DefensiveAssistInjunction_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -968,12 +968,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistInjunction_2_anomBuildup',
+      name: 'DefensiveAssistInjunction_2',
     },
   },
-  AssistFollowUpInterceptingStrike_0_dmg: {
+  'AssistFollowUpInterceptingStrike_0:standardDmg': {
     sheet: 'Promeia',
-    name: 'AssistFollowUpInterceptingStrike_0_dmg',
+    name: 'AssistFollowUpInterceptingStrike_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -982,12 +982,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpInterceptingStrike_0_dmg',
+      name: 'AssistFollowUpInterceptingStrike_0',
     },
   },
-  AssistFollowUpInterceptingStrike_0_daze: {
+  'AssistFollowUpInterceptingStrike_0:dazeBuildup': {
     sheet: 'Promeia',
-    name: 'AssistFollowUpInterceptingStrike_0_daze',
+    name: 'AssistFollowUpInterceptingStrike_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -996,12 +996,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpInterceptingStrike_0_daze',
+      name: 'AssistFollowUpInterceptingStrike_0',
     },
   },
-  AssistFollowUpInterceptingStrike_0_anomBuildup: {
+  'AssistFollowUpInterceptingStrike_0:anomBuildup': {
     sheet: 'Promeia',
-    name: 'AssistFollowUpInterceptingStrike_0_anomBuildup',
+    name: 'AssistFollowUpInterceptingStrike_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1010,7 +1010,7 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpInterceptingStrike_0_anomBuildup',
+      name: 'AssistFollowUpInterceptingStrike_0',
     },
   },
 } as const

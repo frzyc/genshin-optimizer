@@ -89,9 +89,9 @@ export const formulas = {
       name: 'dazeInst',
     },
   },
-  BasicAttackHappyToBeOfService_0_dmg: {
+  'BasicAttackHappyToBeOfService_0:standardDmg': {
     sheet: 'Dialyn',
-    name: 'BasicAttackHappyToBeOfService_0_dmg',
+    name: 'BasicAttackHappyToBeOfService_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -100,12 +100,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackHappyToBeOfService_0_dmg',
+      name: 'BasicAttackHappyToBeOfService_0',
     },
   },
-  BasicAttackHappyToBeOfService_0_daze: {
+  'BasicAttackHappyToBeOfService_0:dazeBuildup': {
     sheet: 'Dialyn',
-    name: 'BasicAttackHappyToBeOfService_0_daze',
+    name: 'BasicAttackHappyToBeOfService_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -114,12 +114,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackHappyToBeOfService_0_daze',
+      name: 'BasicAttackHappyToBeOfService_0',
     },
   },
-  BasicAttackHappyToBeOfService_0_anomBuildup: {
+  'BasicAttackHappyToBeOfService_0:anomBuildup': {
     sheet: 'Dialyn',
-    name: 'BasicAttackHappyToBeOfService_0_anomBuildup',
+    name: 'BasicAttackHappyToBeOfService_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -128,12 +128,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackHappyToBeOfService_0_anomBuildup',
+      name: 'BasicAttackHappyToBeOfService_0',
     },
   },
-  BasicAttackHappyToBeOfService_1_dmg: {
+  'BasicAttackHappyToBeOfService_1:standardDmg': {
     sheet: 'Dialyn',
-    name: 'BasicAttackHappyToBeOfService_1_dmg',
+    name: 'BasicAttackHappyToBeOfService_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -142,12 +142,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackHappyToBeOfService_1_dmg',
+      name: 'BasicAttackHappyToBeOfService_1',
     },
   },
-  BasicAttackHappyToBeOfService_1_daze: {
+  'BasicAttackHappyToBeOfService_1:dazeBuildup': {
     sheet: 'Dialyn',
-    name: 'BasicAttackHappyToBeOfService_1_daze',
+    name: 'BasicAttackHappyToBeOfService_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -156,12 +156,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackHappyToBeOfService_1_daze',
+      name: 'BasicAttackHappyToBeOfService_1',
     },
   },
-  BasicAttackHappyToBeOfService_1_anomBuildup: {
+  'BasicAttackHappyToBeOfService_1:anomBuildup': {
     sheet: 'Dialyn',
-    name: 'BasicAttackHappyToBeOfService_1_anomBuildup',
+    name: 'BasicAttackHappyToBeOfService_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -170,12 +170,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackHappyToBeOfService_1_anomBuildup',
+      name: 'BasicAttackHappyToBeOfService_1',
     },
   },
-  BasicAttackHappyToBeOfService_2_dmg: {
+  'BasicAttackHappyToBeOfService_2:standardDmg': {
     sheet: 'Dialyn',
-    name: 'BasicAttackHappyToBeOfService_2_dmg',
+    name: 'BasicAttackHappyToBeOfService_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -184,12 +184,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackHappyToBeOfService_2_dmg',
+      name: 'BasicAttackHappyToBeOfService_2',
     },
   },
-  BasicAttackHappyToBeOfService_2_daze: {
+  'BasicAttackHappyToBeOfService_2:dazeBuildup': {
     sheet: 'Dialyn',
-    name: 'BasicAttackHappyToBeOfService_2_daze',
+    name: 'BasicAttackHappyToBeOfService_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -198,12 +198,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackHappyToBeOfService_2_daze',
+      name: 'BasicAttackHappyToBeOfService_2',
     },
   },
-  BasicAttackHappyToBeOfService_2_anomBuildup: {
+  'BasicAttackHappyToBeOfService_2:anomBuildup': {
     sheet: 'Dialyn',
-    name: 'BasicAttackHappyToBeOfService_2_anomBuildup',
+    name: 'BasicAttackHappyToBeOfService_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -212,12 +212,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackHappyToBeOfService_2_anomBuildup',
+      name: 'BasicAttackHappyToBeOfService_2',
     },
   },
-  BasicAttackHappyToBeOfService_3_dmg: {
+  'BasicAttackHappyToBeOfService_3:standardDmg': {
     sheet: 'Dialyn',
-    name: 'BasicAttackHappyToBeOfService_3_dmg',
+    name: 'BasicAttackHappyToBeOfService_3:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -226,12 +226,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackHappyToBeOfService_3_dmg',
+      name: 'BasicAttackHappyToBeOfService_3',
     },
   },
-  BasicAttackHappyToBeOfService_3_daze: {
+  'BasicAttackHappyToBeOfService_3:dazeBuildup': {
     sheet: 'Dialyn',
-    name: 'BasicAttackHappyToBeOfService_3_daze',
+    name: 'BasicAttackHappyToBeOfService_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -240,12 +240,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackHappyToBeOfService_3_daze',
+      name: 'BasicAttackHappyToBeOfService_3',
     },
   },
-  BasicAttackHappyToBeOfService_3_anomBuildup: {
+  'BasicAttackHappyToBeOfService_3:anomBuildup': {
     sheet: 'Dialyn',
-    name: 'BasicAttackHappyToBeOfService_3_anomBuildup',
+    name: 'BasicAttackHappyToBeOfService_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -254,12 +254,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackHappyToBeOfService_3_anomBuildup',
+      name: 'BasicAttackHappyToBeOfService_3',
     },
   },
-  BasicAttackRockPaperScissors_0_dmg: {
+  'BasicAttackRockPaperScissors_0:standardDmg': {
     sheet: 'Dialyn',
-    name: 'BasicAttackRockPaperScissors_0_dmg',
+    name: 'BasicAttackRockPaperScissors_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -268,12 +268,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackRockPaperScissors_0_dmg',
+      name: 'BasicAttackRockPaperScissors_0',
     },
   },
-  BasicAttackRockPaperScissors_0_daze: {
+  'BasicAttackRockPaperScissors_0:dazeBuildup': {
     sheet: 'Dialyn',
-    name: 'BasicAttackRockPaperScissors_0_daze',
+    name: 'BasicAttackRockPaperScissors_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -282,12 +282,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackRockPaperScissors_0_daze',
+      name: 'BasicAttackRockPaperScissors_0',
     },
   },
-  BasicAttackRockPaperScissors_0_anomBuildup: {
+  'BasicAttackRockPaperScissors_0:anomBuildup': {
     sheet: 'Dialyn',
-    name: 'BasicAttackRockPaperScissors_0_anomBuildup',
+    name: 'BasicAttackRockPaperScissors_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -296,12 +296,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackRockPaperScissors_0_anomBuildup',
+      name: 'BasicAttackRockPaperScissors_0',
     },
   },
-  BasicAttackRockPaperScissors_1_dmg: {
+  'BasicAttackRockPaperScissors_1:standardDmg': {
     sheet: 'Dialyn',
-    name: 'BasicAttackRockPaperScissors_1_dmg',
+    name: 'BasicAttackRockPaperScissors_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -310,12 +310,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackRockPaperScissors_1_dmg',
+      name: 'BasicAttackRockPaperScissors_1',
     },
   },
-  BasicAttackRockPaperScissors_1_daze: {
+  'BasicAttackRockPaperScissors_1:dazeBuildup': {
     sheet: 'Dialyn',
-    name: 'BasicAttackRockPaperScissors_1_daze',
+    name: 'BasicAttackRockPaperScissors_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -324,12 +324,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackRockPaperScissors_1_daze',
+      name: 'BasicAttackRockPaperScissors_1',
     },
   },
-  BasicAttackRockPaperScissors_1_anomBuildup: {
+  'BasicAttackRockPaperScissors_1:anomBuildup': {
     sheet: 'Dialyn',
-    name: 'BasicAttackRockPaperScissors_1_anomBuildup',
+    name: 'BasicAttackRockPaperScissors_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -338,12 +338,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackRockPaperScissors_1_anomBuildup',
+      name: 'BasicAttackRockPaperScissors_1',
     },
   },
-  BasicAttackRockPaperScissors_2_dmg: {
+  'BasicAttackRockPaperScissors_2:standardDmg': {
     sheet: 'Dialyn',
-    name: 'BasicAttackRockPaperScissors_2_dmg',
+    name: 'BasicAttackRockPaperScissors_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -352,12 +352,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackRockPaperScissors_2_dmg',
+      name: 'BasicAttackRockPaperScissors_2',
     },
   },
-  BasicAttackRockPaperScissors_2_daze: {
+  'BasicAttackRockPaperScissors_2:dazeBuildup': {
     sheet: 'Dialyn',
-    name: 'BasicAttackRockPaperScissors_2_daze',
+    name: 'BasicAttackRockPaperScissors_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -366,12 +366,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackRockPaperScissors_2_daze',
+      name: 'BasicAttackRockPaperScissors_2',
     },
   },
-  BasicAttackRockPaperScissors_2_anomBuildup: {
+  'BasicAttackRockPaperScissors_2:anomBuildup': {
     sheet: 'Dialyn',
-    name: 'BasicAttackRockPaperScissors_2_anomBuildup',
+    name: 'BasicAttackRockPaperScissors_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -380,12 +380,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackRockPaperScissors_2_anomBuildup',
+      name: 'BasicAttackRockPaperScissors_2',
     },
   },
-  BasicAttackRockPaperScissors_3_dmg: {
+  'BasicAttackRockPaperScissors_3:standardDmg': {
     sheet: 'Dialyn',
-    name: 'BasicAttackRockPaperScissors_3_dmg',
+    name: 'BasicAttackRockPaperScissors_3:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -394,12 +394,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackRockPaperScissors_3_dmg',
+      name: 'BasicAttackRockPaperScissors_3',
     },
   },
-  BasicAttackRockPaperScissors_3_daze: {
+  'BasicAttackRockPaperScissors_3:dazeBuildup': {
     sheet: 'Dialyn',
-    name: 'BasicAttackRockPaperScissors_3_daze',
+    name: 'BasicAttackRockPaperScissors_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -408,12 +408,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackRockPaperScissors_3_daze',
+      name: 'BasicAttackRockPaperScissors_3',
     },
   },
-  BasicAttackRockPaperScissors_3_anomBuildup: {
+  'BasicAttackRockPaperScissors_3:anomBuildup': {
     sheet: 'Dialyn',
-    name: 'BasicAttackRockPaperScissors_3_anomBuildup',
+    name: 'BasicAttackRockPaperScissors_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -422,12 +422,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackRockPaperScissors_3_anomBuildup',
+      name: 'BasicAttackRockPaperScissors_3',
     },
   },
-  DashAttackSuddenCall_0_dmg: {
+  'DashAttackSuddenCall_0:standardDmg': {
     sheet: 'Dialyn',
-    name: 'DashAttackSuddenCall_0_dmg',
+    name: 'DashAttackSuddenCall_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -436,12 +436,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackSuddenCall_0_dmg',
+      name: 'DashAttackSuddenCall_0',
     },
   },
-  DashAttackSuddenCall_0_daze: {
+  'DashAttackSuddenCall_0:dazeBuildup': {
     sheet: 'Dialyn',
-    name: 'DashAttackSuddenCall_0_daze',
+    name: 'DashAttackSuddenCall_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -450,12 +450,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackSuddenCall_0_daze',
+      name: 'DashAttackSuddenCall_0',
     },
   },
-  DashAttackSuddenCall_0_anomBuildup: {
+  'DashAttackSuddenCall_0:anomBuildup': {
     sheet: 'Dialyn',
-    name: 'DashAttackSuddenCall_0_anomBuildup',
+    name: 'DashAttackSuddenCall_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -464,12 +464,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackSuddenCall_0_anomBuildup',
+      name: 'DashAttackSuddenCall_0',
     },
   },
-  DodgeCounterNumberUnavailable_0_dmg: {
+  'DodgeCounterNumberUnavailable_0:standardDmg': {
     sheet: 'Dialyn',
-    name: 'DodgeCounterNumberUnavailable_0_dmg',
+    name: 'DodgeCounterNumberUnavailable_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -478,12 +478,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterNumberUnavailable_0_dmg',
+      name: 'DodgeCounterNumberUnavailable_0',
     },
   },
-  DodgeCounterNumberUnavailable_0_daze: {
+  'DodgeCounterNumberUnavailable_0:dazeBuildup': {
     sheet: 'Dialyn',
-    name: 'DodgeCounterNumberUnavailable_0_daze',
+    name: 'DodgeCounterNumberUnavailable_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -492,12 +492,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterNumberUnavailable_0_daze',
+      name: 'DodgeCounterNumberUnavailable_0',
     },
   },
-  DodgeCounterNumberUnavailable_0_anomBuildup: {
+  'DodgeCounterNumberUnavailable_0:anomBuildup': {
     sheet: 'Dialyn',
-    name: 'DodgeCounterNumberUnavailable_0_anomBuildup',
+    name: 'DodgeCounterNumberUnavailable_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -506,12 +506,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterNumberUnavailable_0_anomBuildup',
+      name: 'DodgeCounterNumberUnavailable_0',
     },
   },
-  EXSpecialAttackGetLost_0_dmg: {
+  'EXSpecialAttackGetLost_0:standardDmg': {
     sheet: 'Dialyn',
-    name: 'EXSpecialAttackGetLost_0_dmg',
+    name: 'EXSpecialAttackGetLost_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -520,12 +520,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackGetLost_0_dmg',
+      name: 'EXSpecialAttackGetLost_0',
     },
   },
-  EXSpecialAttackGetLost_0_daze: {
+  'EXSpecialAttackGetLost_0:dazeBuildup': {
     sheet: 'Dialyn',
-    name: 'EXSpecialAttackGetLost_0_daze',
+    name: 'EXSpecialAttackGetLost_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -534,12 +534,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackGetLost_0_daze',
+      name: 'EXSpecialAttackGetLost_0',
     },
   },
-  EXSpecialAttackGetLost_0_anomBuildup: {
+  'EXSpecialAttackGetLost_0:anomBuildup': {
     sheet: 'Dialyn',
-    name: 'EXSpecialAttackGetLost_0_anomBuildup',
+    name: 'EXSpecialAttackGetLost_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -548,12 +548,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackGetLost_0_anomBuildup',
+      name: 'EXSpecialAttackGetLost_0',
     },
   },
-  SpecialAttackWelcomeGesture_0_dmg: {
+  'SpecialAttackWelcomeGesture_0:standardDmg': {
     sheet: 'Dialyn',
-    name: 'SpecialAttackWelcomeGesture_0_dmg',
+    name: 'SpecialAttackWelcomeGesture_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -562,12 +562,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackWelcomeGesture_0_dmg',
+      name: 'SpecialAttackWelcomeGesture_0',
     },
   },
-  SpecialAttackWelcomeGesture_0_daze: {
+  'SpecialAttackWelcomeGesture_0:dazeBuildup': {
     sheet: 'Dialyn',
-    name: 'SpecialAttackWelcomeGesture_0_daze',
+    name: 'SpecialAttackWelcomeGesture_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -576,12 +576,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackWelcomeGesture_0_daze',
+      name: 'SpecialAttackWelcomeGesture_0',
     },
   },
-  SpecialAttackWelcomeGesture_0_anomBuildup: {
+  'SpecialAttackWelcomeGesture_0:anomBuildup': {
     sheet: 'Dialyn',
-    name: 'SpecialAttackWelcomeGesture_0_anomBuildup',
+    name: 'SpecialAttackWelcomeGesture_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -590,12 +590,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackWelcomeGesture_0_anomBuildup',
+      name: 'SpecialAttackWelcomeGesture_0',
     },
   },
-  EXSpecialAttackRock_0_dmg: {
+  'EXSpecialAttackRock_0:standardDmg': {
     sheet: 'Dialyn',
-    name: 'EXSpecialAttackRock_0_dmg',
+    name: 'EXSpecialAttackRock_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -604,12 +604,12 @@ export const formulas = {
       damageType1: 'exSpecial',
       attribute: 'physical',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackRock_0_dmg',
+      name: 'EXSpecialAttackRock_0',
     },
   },
-  EXSpecialAttackRock_0_daze: {
+  'EXSpecialAttackRock_0:dazeBuildup': {
     sheet: 'Dialyn',
-    name: 'EXSpecialAttackRock_0_daze',
+    name: 'EXSpecialAttackRock_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -618,12 +618,12 @@ export const formulas = {
       damageType1: 'exSpecial',
       attribute: 'physical',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackRock_0_daze',
+      name: 'EXSpecialAttackRock_0',
     },
   },
-  EXSpecialAttackRock_0_anomBuildup: {
+  'EXSpecialAttackRock_0:anomBuildup': {
     sheet: 'Dialyn',
-    name: 'EXSpecialAttackRock_0_anomBuildup',
+    name: 'EXSpecialAttackRock_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -632,12 +632,12 @@ export const formulas = {
       damageType1: 'exSpecial',
       attribute: 'physical',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackRock_0_anomBuildup',
+      name: 'EXSpecialAttackRock_0',
     },
   },
-  EXSpecialAttackScissors_0_dmg: {
+  'EXSpecialAttackScissors_0:standardDmg': {
     sheet: 'Dialyn',
-    name: 'EXSpecialAttackScissors_0_dmg',
+    name: 'EXSpecialAttackScissors_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -646,12 +646,12 @@ export const formulas = {
       damageType1: 'exSpecial',
       attribute: 'physical',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackScissors_0_dmg',
+      name: 'EXSpecialAttackScissors_0',
     },
   },
-  EXSpecialAttackScissors_0_daze: {
+  'EXSpecialAttackScissors_0:dazeBuildup': {
     sheet: 'Dialyn',
-    name: 'EXSpecialAttackScissors_0_daze',
+    name: 'EXSpecialAttackScissors_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -660,12 +660,12 @@ export const formulas = {
       damageType1: 'exSpecial',
       attribute: 'physical',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackScissors_0_daze',
+      name: 'EXSpecialAttackScissors_0',
     },
   },
-  EXSpecialAttackScissors_0_anomBuildup: {
+  'EXSpecialAttackScissors_0:anomBuildup': {
     sheet: 'Dialyn',
-    name: 'EXSpecialAttackScissors_0_anomBuildup',
+    name: 'EXSpecialAttackScissors_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -674,12 +674,12 @@ export const formulas = {
       damageType1: 'exSpecial',
       attribute: 'physical',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackScissors_0_anomBuildup',
+      name: 'EXSpecialAttackScissors_0',
     },
   },
-  EXSpecialAttackPaper_0_dmg: {
+  'EXSpecialAttackPaper_0:standardDmg': {
     sheet: 'Dialyn',
-    name: 'EXSpecialAttackPaper_0_dmg',
+    name: 'EXSpecialAttackPaper_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -688,12 +688,12 @@ export const formulas = {
       damageType1: 'exSpecial',
       attribute: 'physical',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackPaper_0_dmg',
+      name: 'EXSpecialAttackPaper_0',
     },
   },
-  EXSpecialAttackPaper_0_daze: {
+  'EXSpecialAttackPaper_0:dazeBuildup': {
     sheet: 'Dialyn',
-    name: 'EXSpecialAttackPaper_0_daze',
+    name: 'EXSpecialAttackPaper_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -702,12 +702,12 @@ export const formulas = {
       damageType1: 'exSpecial',
       attribute: 'physical',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackPaper_0_daze',
+      name: 'EXSpecialAttackPaper_0',
     },
   },
-  EXSpecialAttackPaper_0_anomBuildup: {
+  'EXSpecialAttackPaper_0:anomBuildup': {
     sheet: 'Dialyn',
-    name: 'EXSpecialAttackPaper_0_anomBuildup',
+    name: 'EXSpecialAttackPaper_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -716,12 +716,12 @@ export const formulas = {
       damageType1: 'exSpecial',
       attribute: 'physical',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackPaper_0_anomBuildup',
+      name: 'EXSpecialAttackPaper_0',
     },
   },
-  ChainAttackWelcomeMat_0_dmg: {
+  'ChainAttackWelcomeMat_0:standardDmg': {
     sheet: 'Dialyn',
-    name: 'ChainAttackWelcomeMat_0_dmg',
+    name: 'ChainAttackWelcomeMat_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -730,12 +730,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackWelcomeMat_0_dmg',
+      name: 'ChainAttackWelcomeMat_0',
     },
   },
-  ChainAttackWelcomeMat_0_daze: {
+  'ChainAttackWelcomeMat_0:dazeBuildup': {
     sheet: 'Dialyn',
-    name: 'ChainAttackWelcomeMat_0_daze',
+    name: 'ChainAttackWelcomeMat_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -744,12 +744,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackWelcomeMat_0_daze',
+      name: 'ChainAttackWelcomeMat_0',
     },
   },
-  ChainAttackWelcomeMat_0_anomBuildup: {
+  'ChainAttackWelcomeMat_0:anomBuildup': {
     sheet: 'Dialyn',
-    name: 'ChainAttackWelcomeMat_0_anomBuildup',
+    name: 'ChainAttackWelcomeMat_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -758,12 +758,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackWelcomeMat_0_anomBuildup',
+      name: 'ChainAttackWelcomeMat_0',
     },
   },
-  UltimateServiceStoppedForNumberDialed_0_dmg: {
+  'UltimateServiceStoppedForNumberDialed_0:standardDmg': {
     sheet: 'Dialyn',
-    name: 'UltimateServiceStoppedForNumberDialed_0_dmg',
+    name: 'UltimateServiceStoppedForNumberDialed_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -772,12 +772,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateServiceStoppedForNumberDialed_0_dmg',
+      name: 'UltimateServiceStoppedForNumberDialed_0',
     },
   },
-  UltimateServiceStoppedForNumberDialed_0_daze: {
+  'UltimateServiceStoppedForNumberDialed_0:dazeBuildup': {
     sheet: 'Dialyn',
-    name: 'UltimateServiceStoppedForNumberDialed_0_daze',
+    name: 'UltimateServiceStoppedForNumberDialed_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -786,12 +786,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateServiceStoppedForNumberDialed_0_daze',
+      name: 'UltimateServiceStoppedForNumberDialed_0',
     },
   },
-  UltimateServiceStoppedForNumberDialed_0_anomBuildup: {
+  'UltimateServiceStoppedForNumberDialed_0:anomBuildup': {
     sheet: 'Dialyn',
-    name: 'UltimateServiceStoppedForNumberDialed_0_anomBuildup',
+    name: 'UltimateServiceStoppedForNumberDialed_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -800,12 +800,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateServiceStoppedForNumberDialed_0_anomBuildup',
+      name: 'UltimateServiceStoppedForNumberDialed_0',
     },
   },
-  QuickAssistForwardCall_0_dmg: {
+  'QuickAssistForwardCall_0:standardDmg': {
     sheet: 'Dialyn',
-    name: 'QuickAssistForwardCall_0_dmg',
+    name: 'QuickAssistForwardCall_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -814,12 +814,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistForwardCall_0_dmg',
+      name: 'QuickAssistForwardCall_0',
     },
   },
-  QuickAssistForwardCall_0_daze: {
+  'QuickAssistForwardCall_0:dazeBuildup': {
     sheet: 'Dialyn',
-    name: 'QuickAssistForwardCall_0_daze',
+    name: 'QuickAssistForwardCall_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -828,12 +828,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistForwardCall_0_daze',
+      name: 'QuickAssistForwardCall_0',
     },
   },
-  QuickAssistForwardCall_0_anomBuildup: {
+  'QuickAssistForwardCall_0:anomBuildup': {
     sheet: 'Dialyn',
-    name: 'QuickAssistForwardCall_0_anomBuildup',
+    name: 'QuickAssistForwardCall_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -842,12 +842,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistForwardCall_0_anomBuildup',
+      name: 'QuickAssistForwardCall_0',
     },
   },
-  DefensiveAssistDeclineCall_0_dmg: {
+  'DefensiveAssistDeclineCall_0:standardDmg': {
     sheet: 'Dialyn',
-    name: 'DefensiveAssistDeclineCall_0_dmg',
+    name: 'DefensiveAssistDeclineCall_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -856,12 +856,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistDeclineCall_0_dmg',
+      name: 'DefensiveAssistDeclineCall_0',
     },
   },
-  DefensiveAssistDeclineCall_0_daze: {
+  'DefensiveAssistDeclineCall_0:dazeBuildup': {
     sheet: 'Dialyn',
-    name: 'DefensiveAssistDeclineCall_0_daze',
+    name: 'DefensiveAssistDeclineCall_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -870,12 +870,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistDeclineCall_0_daze',
+      name: 'DefensiveAssistDeclineCall_0',
     },
   },
-  DefensiveAssistDeclineCall_0_anomBuildup: {
+  'DefensiveAssistDeclineCall_0:anomBuildup': {
     sheet: 'Dialyn',
-    name: 'DefensiveAssistDeclineCall_0_anomBuildup',
+    name: 'DefensiveAssistDeclineCall_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -884,12 +884,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistDeclineCall_0_anomBuildup',
+      name: 'DefensiveAssistDeclineCall_0',
     },
   },
-  DefensiveAssistDeclineCall_1_dmg: {
+  'DefensiveAssistDeclineCall_1:standardDmg': {
     sheet: 'Dialyn',
-    name: 'DefensiveAssistDeclineCall_1_dmg',
+    name: 'DefensiveAssistDeclineCall_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -898,12 +898,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistDeclineCall_1_dmg',
+      name: 'DefensiveAssistDeclineCall_1',
     },
   },
-  DefensiveAssistDeclineCall_1_daze: {
+  'DefensiveAssistDeclineCall_1:dazeBuildup': {
     sheet: 'Dialyn',
-    name: 'DefensiveAssistDeclineCall_1_daze',
+    name: 'DefensiveAssistDeclineCall_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -912,12 +912,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistDeclineCall_1_daze',
+      name: 'DefensiveAssistDeclineCall_1',
     },
   },
-  DefensiveAssistDeclineCall_1_anomBuildup: {
+  'DefensiveAssistDeclineCall_1:anomBuildup': {
     sheet: 'Dialyn',
-    name: 'DefensiveAssistDeclineCall_1_anomBuildup',
+    name: 'DefensiveAssistDeclineCall_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -926,12 +926,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistDeclineCall_1_anomBuildup',
+      name: 'DefensiveAssistDeclineCall_1',
     },
   },
-  DefensiveAssistDeclineCall_2_dmg: {
+  'DefensiveAssistDeclineCall_2:standardDmg': {
     sheet: 'Dialyn',
-    name: 'DefensiveAssistDeclineCall_2_dmg',
+    name: 'DefensiveAssistDeclineCall_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -940,12 +940,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistDeclineCall_2_dmg',
+      name: 'DefensiveAssistDeclineCall_2',
     },
   },
-  DefensiveAssistDeclineCall_2_daze: {
+  'DefensiveAssistDeclineCall_2:dazeBuildup': {
     sheet: 'Dialyn',
-    name: 'DefensiveAssistDeclineCall_2_daze',
+    name: 'DefensiveAssistDeclineCall_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -954,12 +954,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistDeclineCall_2_daze',
+      name: 'DefensiveAssistDeclineCall_2',
     },
   },
-  DefensiveAssistDeclineCall_2_anomBuildup: {
+  'DefensiveAssistDeclineCall_2:anomBuildup': {
     sheet: 'Dialyn',
-    name: 'DefensiveAssistDeclineCall_2_anomBuildup',
+    name: 'DefensiveAssistDeclineCall_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -968,12 +968,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistDeclineCall_2_anomBuildup',
+      name: 'DefensiveAssistDeclineCall_2',
     },
   },
-  AssistFollowUpBacktoBackCalls_0_dmg: {
+  'AssistFollowUpBacktoBackCalls_0:standardDmg': {
     sheet: 'Dialyn',
-    name: 'AssistFollowUpBacktoBackCalls_0_dmg',
+    name: 'AssistFollowUpBacktoBackCalls_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -982,12 +982,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpBacktoBackCalls_0_dmg',
+      name: 'AssistFollowUpBacktoBackCalls_0',
     },
   },
-  AssistFollowUpBacktoBackCalls_0_daze: {
+  'AssistFollowUpBacktoBackCalls_0:dazeBuildup': {
     sheet: 'Dialyn',
-    name: 'AssistFollowUpBacktoBackCalls_0_daze',
+    name: 'AssistFollowUpBacktoBackCalls_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -996,12 +996,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpBacktoBackCalls_0_daze',
+      name: 'AssistFollowUpBacktoBackCalls_0',
     },
   },
-  AssistFollowUpBacktoBackCalls_0_anomBuildup: {
+  'AssistFollowUpBacktoBackCalls_0:anomBuildup': {
     sheet: 'Dialyn',
-    name: 'AssistFollowUpBacktoBackCalls_0_anomBuildup',
+    name: 'AssistFollowUpBacktoBackCalls_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1010,7 +1010,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpBacktoBackCalls_0_anomBuildup',
+      name: 'AssistFollowUpBacktoBackCalls_0',
     },
   },
   m6_dmg: {

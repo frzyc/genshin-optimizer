@@ -99,11 +99,11 @@ export function dmgDazeAndAnom(
   const anom = arg.cond ? cmpNE(arg.cond, '', anomBase) : anomBase
   return [
     stat === 'sheerForce'
-      ? customSheerDmg(`${name}_dmg`, dmgTag, dmg, arg, ...extra)
-      : customDmg(`${name}_dmg`, dmgTag, dmg, arg, ...extra),
-    customDaze(`${name}_daze`, dmgTag, daze, arg, ...extra),
+      ? customSheerDmg(name, dmgTag, dmg, arg, ...extra)
+      : customDmg(name, dmgTag, dmg, arg, ...extra),
+    customDaze(name, dmgTag, daze, arg, ...extra),
     // TODO: No clue if this is right
-    customAnomalyBuildup(`${name}_anomBuildup`, dmgTag, anom, arg, ...extra),
+    customAnomalyBuildup(name, dmgTag, anom, arg, ...extra),
   ]
 }
 
@@ -150,104 +150,10 @@ export function dmgDazeAndAnomMerge(
   )
   return [
     stat === 'sheerForce'
-      ? customSheerDmg(`${name}_dmg`, dmgTag, dmgBase, arg, ...extra)
-      : customDmg(`${name}_dmg`, dmgTag, dmgBase, arg, ...extra),
-    customDaze(`${name}_daze`, dmgTag, dazeBase, arg, ...extra),
-    // TODO: No clue if this is right
-    customAnomalyBuildup(
-      `${name}_anomBuildup`,
-      dmgTag,
-      constant(
-        skillParam.reduce((acc, sp) => acc + sp.AttributeInfliction, 0) / 100
-      ),
-      arg,
-      ...extra
-    ),
-  ]
-}
-
-/**
- * Like {@link dmgDazeAndAnom} but registers all three dimensions under the same `name`
- * (dimension is `q`: standardDmg / dazeBuildup / anomBuildup).
- */
-export function dmgDazeAndAnomBundled(
-  skillParam: SkillParam,
-  name: string,
-  dmgTag: DmgTag,
-  stat: Stat,
-  abilityScalingType: AbilityScalingType,
-  arg: FormulaArg = {},
-  ...extra: TagMapNodeEntries
-): TagMapNodeEntries[] {
-  if (!dmgTag.attribute) dmgTag.attribute = 'physical'
-  if (!dmgTag.skillType) dmgTag.skillType = `${abilityScalingType}Skill`
-  const dmgMulti = sum(
-    percent(skillParam.DamagePercentage),
-    prod(
-      sum(own.char[abilityScalingType], -1),
-      percent(skillParam.DamagePercentageGrowth)
-    )
-  )
-  const dmgBase = prod(
-    own.final[stat],
-    dmgMulti,
-    cmpEq(own.dmg.mv_mult_, 0, percent(1), own.dmg.mv_mult_)
-  )
-  const dmg = arg.cond ? cmpNE(arg.cond, '', dmgBase) : dmgBase
-  const dazeBase = sum(
-    percent(skillParam.StunRatio),
-    prod(
-      sum(own.char[abilityScalingType], -1),
-      percent(skillParam.StunRatioGrowth)
-    )
-  )
-  const daze = arg.cond ? cmpNE(arg.cond, '', dazeBase) : dazeBase
-  const anomBase = constant(skillParam.AttributeInfliction / 100)
-  const anom = arg.cond ? cmpNE(arg.cond, '', anomBase) : anomBase
-  return [
-    stat === 'sheerForce'
-      ? customSheerDmg(name, dmgTag, dmg, arg, ...extra)
-      : customDmg(name, dmgTag, dmg, arg, ...extra),
-    customDaze(name, dmgTag, daze, arg, ...extra),
-    customAnomalyBuildup(name, dmgTag, anom, arg, ...extra),
-  ]
-}
-
-export function dmgDazeAndAnomMergeBundled(
-  skillParam: SkillParam[],
-  name: string,
-  dmgTag: DmgTag,
-  stat: Stat,
-  abilityScalingType: AbilityScalingType,
-  arg: FormulaArg = {},
-  ...extra: TagMapNodeEntries
-): TagMapNodeEntries[] {
-  if (!dmgTag.attribute) dmgTag.attribute = 'physical'
-  if (!dmgTag.skillType) dmgTag.skillType = `${abilityScalingType}Skill`
-  const dmgMulti = sum(
-    ...skillParam.map((sp) => percent(sp.DamagePercentage)),
-    prod(
-      sum(own.char[abilityScalingType], -1),
-      sum(...skillParam.map((sp) => percent(sp.DamagePercentageGrowth)))
-    )
-  )
-  const dmgBase = prod(
-    own.final[stat],
-    dmgMulti,
-    cmpEq(own.dmg.mv_mult_, 0, percent(1), own.dmg.mv_mult_)
-  )
-  const dazeBase = sum(
-    ...skillParam.map((sp) => percent(sp.StunRatio)),
-    prod(
-      sum(own.char[abilityScalingType], -1),
-      sum(...skillParam.map((sp) => percent(sp.StunRatioGrowth)))
-    )
-  )
-  return [
-    stat === 'sheerForce'
       ? customSheerDmg(name, dmgTag, dmgBase, arg, ...extra)
       : customDmg(name, dmgTag, dmgBase, arg, ...extra),
     customDaze(name, dmgTag, dazeBase, arg, ...extra),
+    // TODO: No clue if this is right
     customAnomalyBuildup(
       name,
       dmgTag,
@@ -303,37 +209,6 @@ export function dmgDazeAndAnomOverride<
   }
 }
 
-export function dmgDazeAndAnomOverrideBundled<
-  Stats extends MappedStats,
-  SkillName extends SkillKey,
-  AbilityName extends keyof Stats[SkillName],
->(
-  mappedStats: Stats,
-  skillType: SkillName,
-  name: AbilityName,
-  hitNumber: number,
-  dmgTag: DmgTag,
-  stat: Stat,
-  arg: FormulaArg = {},
-  ...extra: TagMapNodeEntries
-) {
-  return {
-    [skillType]: {
-      [name]: {
-        [hitNumber]: dmgDazeAndAnomBundled(
-          mappedStats[skillType][name][hitNumber],
-          `${name as string}_${hitNumber}`,
-          dmgTag,
-          stat,
-          skillType,
-          arg,
-          ...extra
-        ),
-      },
-    },
-  }
-}
-
 /**
  * Registers all damage, daze and anomaly buildup instances for a character.
  * If you need to override the element, damage type, add some extra buffs, etc., pass in dmgDazeAndAnomOverride to 3rd+ param.
@@ -366,48 +241,6 @@ export function registerAllDmgDazeAndAnom(
             (param, index) =>
               flatOverrides[sKey]?.[abilityName]?.[index] ??
               dmgDazeAndAnom(
-                param,
-                `${abilityName}_${index}`,
-                {
-                  attribute: allStats.char[key].attribute,
-                  damageType1: inferDamageType(key, abilityName),
-                  skillType: `${sKey}Skill`,
-                },
-                allStats.char[key].specialty === 'rupture'
-                  ? 'sheerForce'
-                  : 'atk',
-                sKey
-              )
-          )
-        )
-      )
-  )
-}
-
-/** {@link registerAllDmgDazeAndAnom} with shared `name` per ability (dimension = `q`). */
-export function registerAllDmgDazeAndAnomBundled(
-  key: CharacterKey,
-  mappedStats: MappedStats,
-  ...overrides: SkillOverides[]
-): TagMapNodeEntries[] {
-  const flatOverrides = overrides.reduce((combined, current) => {
-    crawlObject(
-      current,
-      undefined,
-      (o) => Array.isArray(o),
-      (o, keys) => (combined = layeredAssignment(combined, keys, o))
-    )
-    return combined
-  }, {})
-  return (
-    Object.entries(mappedStats)
-      .filter(([sk]) => allSkillKeys.includes(sk))
-      .flatMap(([sKey, skill]) =>
-        Object.entries(skill).flatMap(([abilityName, params]) =>
-          params.flatMap(
-            (param, index) =>
-              flatOverrides[sKey]?.[abilityName]?.[index] ??
-              dmgDazeAndAnomBundled(
                 param,
                 `${abilityName}_${index}`,
                 {

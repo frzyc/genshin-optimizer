@@ -21,11 +21,11 @@ import {
   teamBuff,
 } from '../../util'
 import {
-  dmgDazeAndAnomMergeBundled,
-  dmgDazeAndAnomOverrideBundled,
+  dmgDazeAndAnomMerge,
+  dmgDazeAndAnomOverride,
   entriesForChar,
   getBaseTag,
-  registerAllDmgDazeAndAnomBundled,
+  registerAllDmgDazeAndAnom,
 } from '../util'
 
 const key: CharacterKey = 'Miyabi'
@@ -79,7 +79,7 @@ const sheet = register(
   entriesForChar(data_gen),
 
   // Formulas
-  ...registerAllDmgDazeAndAnomBundled(
+  ...registerAllDmgDazeAndAnom(
     key,
     dm,
     {
@@ -87,7 +87,7 @@ const sheet = register(
         ChainAttackSpringsCall: {
           '0': [
             // Chain needs to be merged
-            ...dmgDazeAndAnomMergeBundled(
+            ...dmgDazeAndAnomMerge(
               [
                 dm.chain.ChainAttackSpringsCall[0],
                 dm.chain.ChainAttackSpringsCall[1],
@@ -105,7 +105,7 @@ const sheet = register(
       },
     },
     // Basic Kazahana hits 1-2 are physical
-    dmgDazeAndAnomOverrideBundled(
+    dmgDazeAndAnomOverride(
       dm,
       'basic',
       'BasicAttackKazahana',
@@ -115,7 +115,7 @@ const sheet = register(
       undefined,
       m2_dmg_
     ),
-    dmgDazeAndAnomOverrideBundled(
+    dmgDazeAndAnomOverride(
       dm,
       'basic',
       'BasicAttackKazahana',
@@ -125,7 +125,7 @@ const sheet = register(
       undefined,
       m2_dmg_
     ),
-    dmgDazeAndAnomOverrideBundled(
+    dmgDazeAndAnomOverride(
       dm,
       'basic',
       'BasicAttackKazahana',
@@ -135,7 +135,7 @@ const sheet = register(
       undefined,
       m2_dmg_
     ),
-    dmgDazeAndAnomOverrideBundled(
+    dmgDazeAndAnomOverride(
       dm,
       'basic',
       'BasicAttackKazahana',
@@ -145,7 +145,7 @@ const sheet = register(
       undefined,
       m2_dmg_
     ),
-    dmgDazeAndAnomOverrideBundled(
+    dmgDazeAndAnomOverride(
       dm,
       'basic',
       'BasicAttackKazahana',
@@ -156,7 +156,7 @@ const sheet = register(
       m2_dmg_
     ),
     // Dash Attack is physical
-    dmgDazeAndAnomOverrideBundled(
+    dmgDazeAndAnomOverride(
       dm,
       'dodge',
       'DashAttackFuyubachi',
@@ -165,7 +165,7 @@ const sheet = register(
       'atk'
     ),
     // Per-hit buffs
-    dmgDazeAndAnomOverrideBundled(
+    dmgDazeAndAnomOverride(
       dm,
       'basic',
       'BasicAttackShimotsuki',
@@ -178,7 +178,7 @@ const sheet = register(
       m1_defIgn_,
       m6_dmg_
     ),
-    dmgDazeAndAnomOverrideBundled(
+    dmgDazeAndAnomOverride(
       dm,
       'basic',
       'BasicAttackShimotsuki',
@@ -191,7 +191,7 @@ const sheet = register(
       m1_defIgn_,
       m6_dmg_
     ),
-    dmgDazeAndAnomOverrideBundled(
+    dmgDazeAndAnomOverride(
       dm,
       'basic',
       'BasicAttackShimotsuki',

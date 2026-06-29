@@ -43,7 +43,7 @@ export function OptSelector({
   }, [target])
 
   const groupedFields = useMemo(() => {
-    if (!calc || characterKey !== 'Miyabi') return undefined
+    if (!calc) return undefined
     return groupFormulas(
       calc.listFormulas(own.listing.formulas),
       characterKey,

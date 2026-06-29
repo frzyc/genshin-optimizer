@@ -90,9 +90,9 @@ export const formulas = {
       name: 'dazeInst',
     },
   },
-  BasicAttackCrushingStrike_0_dmg: {
+  'BasicAttackCrushingStrike_0:sheerDmg': {
     sheet: 'Yidhari',
-    name: 'BasicAttackCrushingStrike_0_dmg',
+    name: 'BasicAttackCrushingStrike_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -101,12 +101,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCrushingStrike_0_dmg',
+      name: 'BasicAttackCrushingStrike_0',
     },
   },
-  BasicAttackCrushingStrike_0_daze: {
+  'BasicAttackCrushingStrike_0:dazeBuildup': {
     sheet: 'Yidhari',
-    name: 'BasicAttackCrushingStrike_0_daze',
+    name: 'BasicAttackCrushingStrike_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -115,12 +115,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCrushingStrike_0_daze',
+      name: 'BasicAttackCrushingStrike_0',
     },
   },
-  BasicAttackCrushingStrike_0_anomBuildup: {
+  'BasicAttackCrushingStrike_0:anomBuildup': {
     sheet: 'Yidhari',
-    name: 'BasicAttackCrushingStrike_0_anomBuildup',
+    name: 'BasicAttackCrushingStrike_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -129,12 +129,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCrushingStrike_0_anomBuildup',
+      name: 'BasicAttackCrushingStrike_0',
     },
   },
-  BasicAttackCrushingStrike_1_dmg: {
+  'BasicAttackCrushingStrike_1:sheerDmg': {
     sheet: 'Yidhari',
-    name: 'BasicAttackCrushingStrike_1_dmg',
+    name: 'BasicAttackCrushingStrike_1:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -143,12 +143,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCrushingStrike_1_dmg',
+      name: 'BasicAttackCrushingStrike_1',
     },
   },
-  BasicAttackCrushingStrike_1_daze: {
+  'BasicAttackCrushingStrike_1:dazeBuildup': {
     sheet: 'Yidhari',
-    name: 'BasicAttackCrushingStrike_1_daze',
+    name: 'BasicAttackCrushingStrike_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -157,12 +157,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCrushingStrike_1_daze',
+      name: 'BasicAttackCrushingStrike_1',
     },
   },
-  BasicAttackCrushingStrike_1_anomBuildup: {
+  'BasicAttackCrushingStrike_1:anomBuildup': {
     sheet: 'Yidhari',
-    name: 'BasicAttackCrushingStrike_1_anomBuildup',
+    name: 'BasicAttackCrushingStrike_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -171,12 +171,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCrushingStrike_1_anomBuildup',
+      name: 'BasicAttackCrushingStrike_1',
     },
   },
-  BasicAttackCrushingStrike_2_dmg: {
+  'BasicAttackCrushingStrike_2:sheerDmg': {
     sheet: 'Yidhari',
-    name: 'BasicAttackCrushingStrike_2_dmg',
+    name: 'BasicAttackCrushingStrike_2:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -185,12 +185,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCrushingStrike_2_dmg',
+      name: 'BasicAttackCrushingStrike_2',
     },
   },
-  BasicAttackCrushingStrike_2_daze: {
+  'BasicAttackCrushingStrike_2:dazeBuildup': {
     sheet: 'Yidhari',
-    name: 'BasicAttackCrushingStrike_2_daze',
+    name: 'BasicAttackCrushingStrike_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -199,12 +199,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCrushingStrike_2_daze',
+      name: 'BasicAttackCrushingStrike_2',
     },
   },
-  BasicAttackCrushingStrike_2_anomBuildup: {
+  'BasicAttackCrushingStrike_2:anomBuildup': {
     sheet: 'Yidhari',
-    name: 'BasicAttackCrushingStrike_2_anomBuildup',
+    name: 'BasicAttackCrushingStrike_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -213,12 +213,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCrushingStrike_2_anomBuildup',
+      name: 'BasicAttackCrushingStrike_2',
     },
   },
-  BasicAttackCrushingStrike_3_dmg: {
+  'BasicAttackCrushingStrike_3:sheerDmg': {
     sheet: 'Yidhari',
-    name: 'BasicAttackCrushingStrike_3_dmg',
+    name: 'BasicAttackCrushingStrike_3:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -227,12 +227,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCrushingStrike_3_dmg',
+      name: 'BasicAttackCrushingStrike_3',
     },
   },
-  BasicAttackCrushingStrike_3_daze: {
+  'BasicAttackCrushingStrike_3:dazeBuildup': {
     sheet: 'Yidhari',
-    name: 'BasicAttackCrushingStrike_3_daze',
+    name: 'BasicAttackCrushingStrike_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -241,12 +241,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCrushingStrike_3_daze',
+      name: 'BasicAttackCrushingStrike_3',
     },
   },
-  BasicAttackCrushingStrike_3_anomBuildup: {
+  'BasicAttackCrushingStrike_3:anomBuildup': {
     sheet: 'Yidhari',
-    name: 'BasicAttackCrushingStrike_3_anomBuildup',
+    name: 'BasicAttackCrushingStrike_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -255,12 +255,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCrushingStrike_3_anomBuildup',
+      name: 'BasicAttackCrushingStrike_3',
     },
   },
-  BasicAttackFrostbiteEmbrace_0_dmg: {
+  'BasicAttackFrostbiteEmbrace_0:sheerDmg': {
     sheet: 'Yidhari',
-    name: 'BasicAttackFrostbiteEmbrace_0_dmg',
+    name: 'BasicAttackFrostbiteEmbrace_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -269,12 +269,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackFrostbiteEmbrace_0_dmg',
+      name: 'BasicAttackFrostbiteEmbrace_0',
     },
   },
-  BasicAttackFrostbiteEmbrace_0_daze: {
+  'BasicAttackFrostbiteEmbrace_0:dazeBuildup': {
     sheet: 'Yidhari',
-    name: 'BasicAttackFrostbiteEmbrace_0_daze',
+    name: 'BasicAttackFrostbiteEmbrace_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -283,12 +283,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackFrostbiteEmbrace_0_daze',
+      name: 'BasicAttackFrostbiteEmbrace_0',
     },
   },
-  BasicAttackFrostbiteEmbrace_0_anomBuildup: {
+  'BasicAttackFrostbiteEmbrace_0:anomBuildup': {
     sheet: 'Yidhari',
-    name: 'BasicAttackFrostbiteEmbrace_0_anomBuildup',
+    name: 'BasicAttackFrostbiteEmbrace_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -297,12 +297,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackFrostbiteEmbrace_0_anomBuildup',
+      name: 'BasicAttackFrostbiteEmbrace_0',
     },
   },
-  BasicAttackFrostbiteEmbrace_1_dmg: {
+  'BasicAttackFrostbiteEmbrace_1:sheerDmg': {
     sheet: 'Yidhari',
-    name: 'BasicAttackFrostbiteEmbrace_1_dmg',
+    name: 'BasicAttackFrostbiteEmbrace_1:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -311,12 +311,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackFrostbiteEmbrace_1_dmg',
+      name: 'BasicAttackFrostbiteEmbrace_1',
     },
   },
-  BasicAttackFrostbiteEmbrace_1_daze: {
+  'BasicAttackFrostbiteEmbrace_1:dazeBuildup': {
     sheet: 'Yidhari',
-    name: 'BasicAttackFrostbiteEmbrace_1_daze',
+    name: 'BasicAttackFrostbiteEmbrace_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -325,12 +325,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackFrostbiteEmbrace_1_daze',
+      name: 'BasicAttackFrostbiteEmbrace_1',
     },
   },
-  BasicAttackFrostbiteEmbrace_1_anomBuildup: {
+  'BasicAttackFrostbiteEmbrace_1:anomBuildup': {
     sheet: 'Yidhari',
-    name: 'BasicAttackFrostbiteEmbrace_1_anomBuildup',
+    name: 'BasicAttackFrostbiteEmbrace_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -339,12 +339,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackFrostbiteEmbrace_1_anomBuildup',
+      name: 'BasicAttackFrostbiteEmbrace_1',
     },
   },
-  BasicAttackFrostbiteEmbrace_2_dmg: {
+  'BasicAttackFrostbiteEmbrace_2:sheerDmg': {
     sheet: 'Yidhari',
-    name: 'BasicAttackFrostbiteEmbrace_2_dmg',
+    name: 'BasicAttackFrostbiteEmbrace_2:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -353,12 +353,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackFrostbiteEmbrace_2_dmg',
+      name: 'BasicAttackFrostbiteEmbrace_2',
     },
   },
-  BasicAttackFrostbiteEmbrace_2_daze: {
+  'BasicAttackFrostbiteEmbrace_2:dazeBuildup': {
     sheet: 'Yidhari',
-    name: 'BasicAttackFrostbiteEmbrace_2_daze',
+    name: 'BasicAttackFrostbiteEmbrace_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -367,12 +367,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackFrostbiteEmbrace_2_daze',
+      name: 'BasicAttackFrostbiteEmbrace_2',
     },
   },
-  BasicAttackFrostbiteEmbrace_2_anomBuildup: {
+  'BasicAttackFrostbiteEmbrace_2:anomBuildup': {
     sheet: 'Yidhari',
-    name: 'BasicAttackFrostbiteEmbrace_2_anomBuildup',
+    name: 'BasicAttackFrostbiteEmbrace_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -381,12 +381,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackFrostbiteEmbrace_2_anomBuildup',
+      name: 'BasicAttackFrostbiteEmbrace_2',
     },
   },
-  BasicAttackFrostbiteEmbrace_3_dmg: {
+  'BasicAttackFrostbiteEmbrace_3:sheerDmg': {
     sheet: 'Yidhari',
-    name: 'BasicAttackFrostbiteEmbrace_3_dmg',
+    name: 'BasicAttackFrostbiteEmbrace_3:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -395,12 +395,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackFrostbiteEmbrace_3_dmg',
+      name: 'BasicAttackFrostbiteEmbrace_3',
     },
   },
-  BasicAttackFrostbiteEmbrace_3_daze: {
+  'BasicAttackFrostbiteEmbrace_3:dazeBuildup': {
     sheet: 'Yidhari',
-    name: 'BasicAttackFrostbiteEmbrace_3_daze',
+    name: 'BasicAttackFrostbiteEmbrace_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -409,12 +409,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackFrostbiteEmbrace_3_daze',
+      name: 'BasicAttackFrostbiteEmbrace_3',
     },
   },
-  BasicAttackFrostbiteEmbrace_3_anomBuildup: {
+  'BasicAttackFrostbiteEmbrace_3:anomBuildup': {
     sheet: 'Yidhari',
-    name: 'BasicAttackFrostbiteEmbrace_3_anomBuildup',
+    name: 'BasicAttackFrostbiteEmbrace_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -423,12 +423,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackFrostbiteEmbrace_3_anomBuildup',
+      name: 'BasicAttackFrostbiteEmbrace_3',
     },
   },
-  FrostsCrushingWeight_0_dmg: {
+  'FrostsCrushingWeight_0:sheerDmg': {
     sheet: 'Yidhari',
-    name: 'FrostsCrushingWeight_0_dmg',
+    name: 'FrostsCrushingWeight_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -437,12 +437,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'FrostsCrushingWeight_0_dmg',
+      name: 'FrostsCrushingWeight_0',
     },
   },
-  FrostsCrushingWeight_0_daze: {
+  'FrostsCrushingWeight_0:dazeBuildup': {
     sheet: 'Yidhari',
-    name: 'FrostsCrushingWeight_0_daze',
+    name: 'FrostsCrushingWeight_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -451,12 +451,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'FrostsCrushingWeight_0_daze',
+      name: 'FrostsCrushingWeight_0',
     },
   },
-  FrostsCrushingWeight_0_anomBuildup: {
+  'FrostsCrushingWeight_0:anomBuildup': {
     sheet: 'Yidhari',
-    name: 'FrostsCrushingWeight_0_anomBuildup',
+    name: 'FrostsCrushingWeight_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -465,12 +465,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'FrostsCrushingWeight_0_anomBuildup',
+      name: 'FrostsCrushingWeight_0',
     },
   },
-  DashAttackFrostbloomImpact_0_dmg: {
+  'DashAttackFrostbloomImpact_0:sheerDmg': {
     sheet: 'Yidhari',
-    name: 'DashAttackFrostbloomImpact_0_dmg',
+    name: 'DashAttackFrostbloomImpact_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -479,12 +479,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackFrostbloomImpact_0_dmg',
+      name: 'DashAttackFrostbloomImpact_0',
     },
   },
-  DashAttackFrostbloomImpact_0_daze: {
+  'DashAttackFrostbloomImpact_0:dazeBuildup': {
     sheet: 'Yidhari',
-    name: 'DashAttackFrostbloomImpact_0_daze',
+    name: 'DashAttackFrostbloomImpact_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -493,12 +493,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackFrostbloomImpact_0_daze',
+      name: 'DashAttackFrostbloomImpact_0',
     },
   },
-  DashAttackFrostbloomImpact_0_anomBuildup: {
+  'DashAttackFrostbloomImpact_0:anomBuildup': {
     sheet: 'Yidhari',
-    name: 'DashAttackFrostbloomImpact_0_anomBuildup',
+    name: 'DashAttackFrostbloomImpact_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -507,12 +507,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackFrostbloomImpact_0_anomBuildup',
+      name: 'DashAttackFrostbloomImpact_0',
     },
   },
-  DodgeCounterIcehaulReverb_0_dmg: {
+  'DodgeCounterIcehaulReverb_0:sheerDmg': {
     sheet: 'Yidhari',
-    name: 'DodgeCounterIcehaulReverb_0_dmg',
+    name: 'DodgeCounterIcehaulReverb_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -521,12 +521,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterIcehaulReverb_0_dmg',
+      name: 'DodgeCounterIcehaulReverb_0',
     },
   },
-  DodgeCounterIcehaulReverb_0_daze: {
+  'DodgeCounterIcehaulReverb_0:dazeBuildup': {
     sheet: 'Yidhari',
-    name: 'DodgeCounterIcehaulReverb_0_daze',
+    name: 'DodgeCounterIcehaulReverb_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -535,12 +535,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterIcehaulReverb_0_daze',
+      name: 'DodgeCounterIcehaulReverb_0',
     },
   },
-  DodgeCounterIcehaulReverb_0_anomBuildup: {
+  'DodgeCounterIcehaulReverb_0:anomBuildup': {
     sheet: 'Yidhari',
-    name: 'DodgeCounterIcehaulReverb_0_anomBuildup',
+    name: 'DodgeCounterIcehaulReverb_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -549,12 +549,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterIcehaulReverb_0_anomBuildup',
+      name: 'DodgeCounterIcehaulReverb_0',
     },
   },
-  SpecialAttackCeaseThoughts_0_dmg: {
+  'SpecialAttackCeaseThoughts_0:sheerDmg': {
     sheet: 'Yidhari',
-    name: 'SpecialAttackCeaseThoughts_0_dmg',
+    name: 'SpecialAttackCeaseThoughts_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -563,12 +563,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackCeaseThoughts_0_dmg',
+      name: 'SpecialAttackCeaseThoughts_0',
     },
   },
-  SpecialAttackCeaseThoughts_0_daze: {
+  'SpecialAttackCeaseThoughts_0:dazeBuildup': {
     sheet: 'Yidhari',
-    name: 'SpecialAttackCeaseThoughts_0_daze',
+    name: 'SpecialAttackCeaseThoughts_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -577,12 +577,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackCeaseThoughts_0_daze',
+      name: 'SpecialAttackCeaseThoughts_0',
     },
   },
-  SpecialAttackCeaseThoughts_0_anomBuildup: {
+  'SpecialAttackCeaseThoughts_0:anomBuildup': {
     sheet: 'Yidhari',
-    name: 'SpecialAttackCeaseThoughts_0_anomBuildup',
+    name: 'SpecialAttackCeaseThoughts_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -591,12 +591,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackCeaseThoughts_0_anomBuildup',
+      name: 'SpecialAttackCeaseThoughts_0',
     },
   },
-  EXSpecialAttackFrostCoil_0_dmg: {
+  'EXSpecialAttackFrostCoil_0:sheerDmg': {
     sheet: 'Yidhari',
-    name: 'EXSpecialAttackFrostCoil_0_dmg',
+    name: 'EXSpecialAttackFrostCoil_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -605,12 +605,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackFrostCoil_0_dmg',
+      name: 'EXSpecialAttackFrostCoil_0',
     },
   },
-  EXSpecialAttackFrostCoil_0_daze: {
+  'EXSpecialAttackFrostCoil_0:dazeBuildup': {
     sheet: 'Yidhari',
-    name: 'EXSpecialAttackFrostCoil_0_daze',
+    name: 'EXSpecialAttackFrostCoil_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -619,12 +619,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackFrostCoil_0_daze',
+      name: 'EXSpecialAttackFrostCoil_0',
     },
   },
-  EXSpecialAttackFrostCoil_0_anomBuildup: {
+  'EXSpecialAttackFrostCoil_0:anomBuildup': {
     sheet: 'Yidhari',
-    name: 'EXSpecialAttackFrostCoil_0_anomBuildup',
+    name: 'EXSpecialAttackFrostCoil_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -633,12 +633,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackFrostCoil_0_anomBuildup',
+      name: 'EXSpecialAttackFrostCoil_0',
     },
   },
-  SpecialAttackSurgingColdCrushingPursuit_0_dmg: {
+  'SpecialAttackSurgingColdCrushingPursuit_0:sheerDmg': {
     sheet: 'Yidhari',
-    name: 'SpecialAttackSurgingColdCrushingPursuit_0_dmg',
+    name: 'SpecialAttackSurgingColdCrushingPursuit_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -647,12 +647,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackSurgingColdCrushingPursuit_0_dmg',
+      name: 'SpecialAttackSurgingColdCrushingPursuit_0',
     },
   },
-  SpecialAttackSurgingColdCrushingPursuit_0_daze: {
+  'SpecialAttackSurgingColdCrushingPursuit_0:dazeBuildup': {
     sheet: 'Yidhari',
-    name: 'SpecialAttackSurgingColdCrushingPursuit_0_daze',
+    name: 'SpecialAttackSurgingColdCrushingPursuit_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -661,12 +661,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackSurgingColdCrushingPursuit_0_daze',
+      name: 'SpecialAttackSurgingColdCrushingPursuit_0',
     },
   },
-  SpecialAttackSurgingColdCrushingPursuit_0_anomBuildup: {
+  'SpecialAttackSurgingColdCrushingPursuit_0:anomBuildup': {
     sheet: 'Yidhari',
-    name: 'SpecialAttackSurgingColdCrushingPursuit_0_anomBuildup',
+    name: 'SpecialAttackSurgingColdCrushingPursuit_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -675,12 +675,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackSurgingColdCrushingPursuit_0_anomBuildup',
+      name: 'SpecialAttackSurgingColdCrushingPursuit_0',
     },
   },
-  EXSpecialAttackGlacialCrush_0_dmg: {
+  'EXSpecialAttackGlacialCrush_0:sheerDmg': {
     sheet: 'Yidhari',
-    name: 'EXSpecialAttackGlacialCrush_0_dmg',
+    name: 'EXSpecialAttackGlacialCrush_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -689,12 +689,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackGlacialCrush_0_dmg',
+      name: 'EXSpecialAttackGlacialCrush_0',
     },
   },
-  EXSpecialAttackGlacialCrush_0_daze: {
+  'EXSpecialAttackGlacialCrush_0:dazeBuildup': {
     sheet: 'Yidhari',
-    name: 'EXSpecialAttackGlacialCrush_0_daze',
+    name: 'EXSpecialAttackGlacialCrush_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -703,12 +703,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackGlacialCrush_0_daze',
+      name: 'EXSpecialAttackGlacialCrush_0',
     },
   },
-  EXSpecialAttackGlacialCrush_0_anomBuildup: {
+  'EXSpecialAttackGlacialCrush_0:anomBuildup': {
     sheet: 'Yidhari',
-    name: 'EXSpecialAttackGlacialCrush_0_anomBuildup',
+    name: 'EXSpecialAttackGlacialCrush_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -717,12 +717,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackGlacialCrush_0_anomBuildup',
+      name: 'EXSpecialAttackGlacialCrush_0',
     },
   },
-  EXSpecialAttackGlacialCrush_1_dmg: {
+  'EXSpecialAttackGlacialCrush_1:sheerDmg': {
     sheet: 'Yidhari',
-    name: 'EXSpecialAttackGlacialCrush_1_dmg',
+    name: 'EXSpecialAttackGlacialCrush_1:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -731,12 +731,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackGlacialCrush_1_dmg',
+      name: 'EXSpecialAttackGlacialCrush_1',
     },
   },
-  EXSpecialAttackGlacialCrush_1_daze: {
+  'EXSpecialAttackGlacialCrush_1:dazeBuildup': {
     sheet: 'Yidhari',
-    name: 'EXSpecialAttackGlacialCrush_1_daze',
+    name: 'EXSpecialAttackGlacialCrush_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -745,12 +745,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackGlacialCrush_1_daze',
+      name: 'EXSpecialAttackGlacialCrush_1',
     },
   },
-  EXSpecialAttackGlacialCrush_1_anomBuildup: {
+  'EXSpecialAttackGlacialCrush_1:anomBuildup': {
     sheet: 'Yidhari',
-    name: 'EXSpecialAttackGlacialCrush_1_anomBuildup',
+    name: 'EXSpecialAttackGlacialCrush_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -759,12 +759,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackGlacialCrush_1_anomBuildup',
+      name: 'EXSpecialAttackGlacialCrush_1',
     },
   },
-  ChainAttackFrostboundOath_0_dmg: {
+  'ChainAttackFrostboundOath_0:sheerDmg': {
     sheet: 'Yidhari',
-    name: 'ChainAttackFrostboundOath_0_dmg',
+    name: 'ChainAttackFrostboundOath_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -773,12 +773,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackFrostboundOath_0_dmg',
+      name: 'ChainAttackFrostboundOath_0',
     },
   },
-  ChainAttackFrostboundOath_0_daze: {
+  'ChainAttackFrostboundOath_0:dazeBuildup': {
     sheet: 'Yidhari',
-    name: 'ChainAttackFrostboundOath_0_daze',
+    name: 'ChainAttackFrostboundOath_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -787,12 +787,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackFrostboundOath_0_daze',
+      name: 'ChainAttackFrostboundOath_0',
     },
   },
-  ChainAttackFrostboundOath_0_anomBuildup: {
+  'ChainAttackFrostboundOath_0:anomBuildup': {
     sheet: 'Yidhari',
-    name: 'ChainAttackFrostboundOath_0_anomBuildup',
+    name: 'ChainAttackFrostboundOath_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -801,12 +801,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackFrostboundOath_0_anomBuildup',
+      name: 'ChainAttackFrostboundOath_0',
     },
   },
-  ChainAttackFrostboundOath_1_dmg: {
+  'ChainAttackFrostboundOath_1:sheerDmg': {
     sheet: 'Yidhari',
-    name: 'ChainAttackFrostboundOath_1_dmg',
+    name: 'ChainAttackFrostboundOath_1:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -815,12 +815,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackFrostboundOath_1_dmg',
+      name: 'ChainAttackFrostboundOath_1',
     },
   },
-  ChainAttackFrostboundOath_1_daze: {
+  'ChainAttackFrostboundOath_1:dazeBuildup': {
     sheet: 'Yidhari',
-    name: 'ChainAttackFrostboundOath_1_daze',
+    name: 'ChainAttackFrostboundOath_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -829,12 +829,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackFrostboundOath_1_daze',
+      name: 'ChainAttackFrostboundOath_1',
     },
   },
-  ChainAttackFrostboundOath_1_anomBuildup: {
+  'ChainAttackFrostboundOath_1:anomBuildup': {
     sheet: 'Yidhari',
-    name: 'ChainAttackFrostboundOath_1_anomBuildup',
+    name: 'ChainAttackFrostboundOath_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -843,12 +843,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackFrostboundOath_1_anomBuildup',
+      name: 'ChainAttackFrostboundOath_1',
     },
   },
-  UltimateFinalActCrossingTheRiverOfRegret_0_dmg: {
+  'UltimateFinalActCrossingTheRiverOfRegret_0:sheerDmg': {
     sheet: 'Yidhari',
-    name: 'UltimateFinalActCrossingTheRiverOfRegret_0_dmg',
+    name: 'UltimateFinalActCrossingTheRiverOfRegret_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -857,12 +857,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateFinalActCrossingTheRiverOfRegret_0_dmg',
+      name: 'UltimateFinalActCrossingTheRiverOfRegret_0',
     },
   },
-  UltimateFinalActCrossingTheRiverOfRegret_0_daze: {
+  'UltimateFinalActCrossingTheRiverOfRegret_0:dazeBuildup': {
     sheet: 'Yidhari',
-    name: 'UltimateFinalActCrossingTheRiverOfRegret_0_daze',
+    name: 'UltimateFinalActCrossingTheRiverOfRegret_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -871,12 +871,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateFinalActCrossingTheRiverOfRegret_0_daze',
+      name: 'UltimateFinalActCrossingTheRiverOfRegret_0',
     },
   },
-  UltimateFinalActCrossingTheRiverOfRegret_0_anomBuildup: {
+  'UltimateFinalActCrossingTheRiverOfRegret_0:anomBuildup': {
     sheet: 'Yidhari',
-    name: 'UltimateFinalActCrossingTheRiverOfRegret_0_anomBuildup',
+    name: 'UltimateFinalActCrossingTheRiverOfRegret_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -885,12 +885,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateFinalActCrossingTheRiverOfRegret_0_anomBuildup',
+      name: 'UltimateFinalActCrossingTheRiverOfRegret_0',
     },
   },
-  QuickAssistFrostshockReinforcement_0_dmg: {
+  'QuickAssistFrostshockReinforcement_0:sheerDmg': {
     sheet: 'Yidhari',
-    name: 'QuickAssistFrostshockReinforcement_0_dmg',
+    name: 'QuickAssistFrostshockReinforcement_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -899,12 +899,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistFrostshockReinforcement_0_dmg',
+      name: 'QuickAssistFrostshockReinforcement_0',
     },
   },
-  QuickAssistFrostshockReinforcement_0_daze: {
+  'QuickAssistFrostshockReinforcement_0:dazeBuildup': {
     sheet: 'Yidhari',
-    name: 'QuickAssistFrostshockReinforcement_0_daze',
+    name: 'QuickAssistFrostshockReinforcement_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -913,12 +913,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistFrostshockReinforcement_0_daze',
+      name: 'QuickAssistFrostshockReinforcement_0',
     },
   },
-  QuickAssistFrostshockReinforcement_0_anomBuildup: {
+  'QuickAssistFrostshockReinforcement_0:anomBuildup': {
     sheet: 'Yidhari',
-    name: 'QuickAssistFrostshockReinforcement_0_anomBuildup',
+    name: 'QuickAssistFrostshockReinforcement_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -927,12 +927,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistFrostshockReinforcement_0_anomBuildup',
+      name: 'QuickAssistFrostshockReinforcement_0',
     },
   },
-  DefensiveAssistFlashquakeRejection_0_dmg: {
+  'DefensiveAssistFlashquakeRejection_0:sheerDmg': {
     sheet: 'Yidhari',
-    name: 'DefensiveAssistFlashquakeRejection_0_dmg',
+    name: 'DefensiveAssistFlashquakeRejection_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -941,12 +941,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistFlashquakeRejection_0_dmg',
+      name: 'DefensiveAssistFlashquakeRejection_0',
     },
   },
-  DefensiveAssistFlashquakeRejection_0_daze: {
+  'DefensiveAssistFlashquakeRejection_0:dazeBuildup': {
     sheet: 'Yidhari',
-    name: 'DefensiveAssistFlashquakeRejection_0_daze',
+    name: 'DefensiveAssistFlashquakeRejection_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -955,12 +955,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistFlashquakeRejection_0_daze',
+      name: 'DefensiveAssistFlashquakeRejection_0',
     },
   },
-  DefensiveAssistFlashquakeRejection_0_anomBuildup: {
+  'DefensiveAssistFlashquakeRejection_0:anomBuildup': {
     sheet: 'Yidhari',
-    name: 'DefensiveAssistFlashquakeRejection_0_anomBuildup',
+    name: 'DefensiveAssistFlashquakeRejection_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -969,12 +969,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistFlashquakeRejection_0_anomBuildup',
+      name: 'DefensiveAssistFlashquakeRejection_0',
     },
   },
-  DefensiveAssistFlashquakeRejection_1_dmg: {
+  'DefensiveAssistFlashquakeRejection_1:sheerDmg': {
     sheet: 'Yidhari',
-    name: 'DefensiveAssistFlashquakeRejection_1_dmg',
+    name: 'DefensiveAssistFlashquakeRejection_1:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -983,12 +983,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistFlashquakeRejection_1_dmg',
+      name: 'DefensiveAssistFlashquakeRejection_1',
     },
   },
-  DefensiveAssistFlashquakeRejection_1_daze: {
+  'DefensiveAssistFlashquakeRejection_1:dazeBuildup': {
     sheet: 'Yidhari',
-    name: 'DefensiveAssistFlashquakeRejection_1_daze',
+    name: 'DefensiveAssistFlashquakeRejection_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -997,12 +997,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistFlashquakeRejection_1_daze',
+      name: 'DefensiveAssistFlashquakeRejection_1',
     },
   },
-  DefensiveAssistFlashquakeRejection_1_anomBuildup: {
+  'DefensiveAssistFlashquakeRejection_1:anomBuildup': {
     sheet: 'Yidhari',
-    name: 'DefensiveAssistFlashquakeRejection_1_anomBuildup',
+    name: 'DefensiveAssistFlashquakeRejection_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1011,12 +1011,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistFlashquakeRejection_1_anomBuildup',
+      name: 'DefensiveAssistFlashquakeRejection_1',
     },
   },
-  DefensiveAssistFlashquakeRejection_2_dmg: {
+  'DefensiveAssistFlashquakeRejection_2:sheerDmg': {
     sheet: 'Yidhari',
-    name: 'DefensiveAssistFlashquakeRejection_2_dmg',
+    name: 'DefensiveAssistFlashquakeRejection_2:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1025,12 +1025,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistFlashquakeRejection_2_dmg',
+      name: 'DefensiveAssistFlashquakeRejection_2',
     },
   },
-  DefensiveAssistFlashquakeRejection_2_daze: {
+  'DefensiveAssistFlashquakeRejection_2:dazeBuildup': {
     sheet: 'Yidhari',
-    name: 'DefensiveAssistFlashquakeRejection_2_daze',
+    name: 'DefensiveAssistFlashquakeRejection_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1039,12 +1039,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistFlashquakeRejection_2_daze',
+      name: 'DefensiveAssistFlashquakeRejection_2',
     },
   },
-  DefensiveAssistFlashquakeRejection_2_anomBuildup: {
+  'DefensiveAssistFlashquakeRejection_2:anomBuildup': {
     sheet: 'Yidhari',
-    name: 'DefensiveAssistFlashquakeRejection_2_anomBuildup',
+    name: 'DefensiveAssistFlashquakeRejection_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1053,12 +1053,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistFlashquakeRejection_2_anomBuildup',
+      name: 'DefensiveAssistFlashquakeRejection_2',
     },
   },
-  AssistFollowUpGlacialOnslaught_0_dmg: {
+  'AssistFollowUpGlacialOnslaught_0:sheerDmg': {
     sheet: 'Yidhari',
-    name: 'AssistFollowUpGlacialOnslaught_0_dmg',
+    name: 'AssistFollowUpGlacialOnslaught_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1067,12 +1067,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpGlacialOnslaught_0_dmg',
+      name: 'AssistFollowUpGlacialOnslaught_0',
     },
   },
-  AssistFollowUpGlacialOnslaught_0_daze: {
+  'AssistFollowUpGlacialOnslaught_0:dazeBuildup': {
     sheet: 'Yidhari',
-    name: 'AssistFollowUpGlacialOnslaught_0_daze',
+    name: 'AssistFollowUpGlacialOnslaught_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1081,12 +1081,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpGlacialOnslaught_0_daze',
+      name: 'AssistFollowUpGlacialOnslaught_0',
     },
   },
-  AssistFollowUpGlacialOnslaught_0_anomBuildup: {
+  'AssistFollowUpGlacialOnslaught_0:anomBuildup': {
     sheet: 'Yidhari',
-    name: 'AssistFollowUpGlacialOnslaught_0_anomBuildup',
+    name: 'AssistFollowUpGlacialOnslaught_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1095,7 +1095,7 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpGlacialOnslaught_0_anomBuildup',
+      name: 'AssistFollowUpGlacialOnslaught_0',
     },
   },
   m6_heal: {

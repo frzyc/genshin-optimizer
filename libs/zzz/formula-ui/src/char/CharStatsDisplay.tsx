@@ -32,11 +32,9 @@ export function CharStatsDisplay() {
   const character = useCharacterContext()
   const calc = useZzzCalcContext()
   const fields = useMemo(() => {
-    if (!calc) return []
+    if (!calc || !character?.key) return []
     const reads = calc.listFormulas(own.listing.formulas)
-    if (character?.key === 'Miyabi')
-      return groupFormulas(reads, character.key, character.key)
-    return reads.map((read) => tagToTagField(read.tag))
+    return groupFormulas(reads, character.key, character.key)
   }, [calc, character?.key])
 
   return (
@@ -138,9 +136,7 @@ function CharStatRow({ read, tag: tagIn }: { read?: Read<Tag>; tag?: Tag }) {
         },
       }}
       onClickFormula={
-        shouldShowDevComponents && calcRead
-          ? () => setRead(calcRead)
-          : () => {}
+        shouldShowDevComponents && calcRead ? () => setRead(calcRead) : () => {}
       }
     />
   )

@@ -89,9 +89,9 @@ export const formulas = {
       name: 'dazeInst',
     },
   },
-  BasicAttackUnyieldingStrikes_0_dmg: {
+  'BasicAttackUnyieldingStrikes_0:standardDmg': {
     sheet: 'PanYinhu',
-    name: 'BasicAttackUnyieldingStrikes_0_dmg',
+    name: 'BasicAttackUnyieldingStrikes_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -100,12 +100,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackUnyieldingStrikes_0_dmg',
+      name: 'BasicAttackUnyieldingStrikes_0',
     },
   },
-  BasicAttackUnyieldingStrikes_0_daze: {
+  'BasicAttackUnyieldingStrikes_0:dazeBuildup': {
     sheet: 'PanYinhu',
-    name: 'BasicAttackUnyieldingStrikes_0_daze',
+    name: 'BasicAttackUnyieldingStrikes_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -114,12 +114,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackUnyieldingStrikes_0_daze',
+      name: 'BasicAttackUnyieldingStrikes_0',
     },
   },
-  BasicAttackUnyieldingStrikes_0_anomBuildup: {
+  'BasicAttackUnyieldingStrikes_0:anomBuildup': {
     sheet: 'PanYinhu',
-    name: 'BasicAttackUnyieldingStrikes_0_anomBuildup',
+    name: 'BasicAttackUnyieldingStrikes_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -128,12 +128,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackUnyieldingStrikes_0_anomBuildup',
+      name: 'BasicAttackUnyieldingStrikes_0',
     },
   },
-  BasicAttackUnyieldingStrikes_1_dmg: {
+  'BasicAttackUnyieldingStrikes_1:standardDmg': {
     sheet: 'PanYinhu',
-    name: 'BasicAttackUnyieldingStrikes_1_dmg',
+    name: 'BasicAttackUnyieldingStrikes_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -142,12 +142,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackUnyieldingStrikes_1_dmg',
+      name: 'BasicAttackUnyieldingStrikes_1',
     },
   },
-  BasicAttackUnyieldingStrikes_1_daze: {
+  'BasicAttackUnyieldingStrikes_1:dazeBuildup': {
     sheet: 'PanYinhu',
-    name: 'BasicAttackUnyieldingStrikes_1_daze',
+    name: 'BasicAttackUnyieldingStrikes_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -156,12 +156,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackUnyieldingStrikes_1_daze',
+      name: 'BasicAttackUnyieldingStrikes_1',
     },
   },
-  BasicAttackUnyieldingStrikes_1_anomBuildup: {
+  'BasicAttackUnyieldingStrikes_1:anomBuildup': {
     sheet: 'PanYinhu',
-    name: 'BasicAttackUnyieldingStrikes_1_anomBuildup',
+    name: 'BasicAttackUnyieldingStrikes_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -170,12 +170,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackUnyieldingStrikes_1_anomBuildup',
+      name: 'BasicAttackUnyieldingStrikes_1',
     },
   },
-  BasicAttackUnyieldingStrikes_2_dmg: {
+  'BasicAttackUnyieldingStrikes_2:standardDmg': {
     sheet: 'PanYinhu',
-    name: 'BasicAttackUnyieldingStrikes_2_dmg',
+    name: 'BasicAttackUnyieldingStrikes_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -184,12 +184,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackUnyieldingStrikes_2_dmg',
+      name: 'BasicAttackUnyieldingStrikes_2',
     },
   },
-  BasicAttackUnyieldingStrikes_2_daze: {
+  'BasicAttackUnyieldingStrikes_2:dazeBuildup': {
     sheet: 'PanYinhu',
-    name: 'BasicAttackUnyieldingStrikes_2_daze',
+    name: 'BasicAttackUnyieldingStrikes_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -198,12 +198,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackUnyieldingStrikes_2_daze',
+      name: 'BasicAttackUnyieldingStrikes_2',
     },
   },
-  BasicAttackUnyieldingStrikes_2_anomBuildup: {
+  'BasicAttackUnyieldingStrikes_2:anomBuildup': {
     sheet: 'PanYinhu',
-    name: 'BasicAttackUnyieldingStrikes_2_anomBuildup',
+    name: 'BasicAttackUnyieldingStrikes_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -212,12 +212,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackUnyieldingStrikes_2_anomBuildup',
+      name: 'BasicAttackUnyieldingStrikes_2',
     },
   },
-  BasicAttackUnyieldingStrikes_3_dmg: {
+  'BasicAttackUnyieldingStrikes_3:standardDmg': {
     sheet: 'PanYinhu',
-    name: 'BasicAttackUnyieldingStrikes_3_dmg',
+    name: 'BasicAttackUnyieldingStrikes_3:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -226,12 +226,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackUnyieldingStrikes_3_dmg',
+      name: 'BasicAttackUnyieldingStrikes_3',
     },
   },
-  BasicAttackUnyieldingStrikes_3_daze: {
+  'BasicAttackUnyieldingStrikes_3:dazeBuildup': {
     sheet: 'PanYinhu',
-    name: 'BasicAttackUnyieldingStrikes_3_daze',
+    name: 'BasicAttackUnyieldingStrikes_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -240,12 +240,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackUnyieldingStrikes_3_daze',
+      name: 'BasicAttackUnyieldingStrikes_3',
     },
   },
-  BasicAttackUnyieldingStrikes_3_anomBuildup: {
+  'BasicAttackUnyieldingStrikes_3:anomBuildup': {
     sheet: 'PanYinhu',
-    name: 'BasicAttackUnyieldingStrikes_3_anomBuildup',
+    name: 'BasicAttackUnyieldingStrikes_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -254,12 +254,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackUnyieldingStrikes_3_anomBuildup',
+      name: 'BasicAttackUnyieldingStrikes_3',
     },
   },
-  DashAttackSizzlingOilSupreme_0_dmg: {
+  'DashAttackSizzlingOilSupreme_0:standardDmg': {
     sheet: 'PanYinhu',
-    name: 'DashAttackSizzlingOilSupreme_0_dmg',
+    name: 'DashAttackSizzlingOilSupreme_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -268,12 +268,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackSizzlingOilSupreme_0_dmg',
+      name: 'DashAttackSizzlingOilSupreme_0',
     },
   },
-  DashAttackSizzlingOilSupreme_0_daze: {
+  'DashAttackSizzlingOilSupreme_0:dazeBuildup': {
     sheet: 'PanYinhu',
-    name: 'DashAttackSizzlingOilSupreme_0_daze',
+    name: 'DashAttackSizzlingOilSupreme_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -282,12 +282,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackSizzlingOilSupreme_0_daze',
+      name: 'DashAttackSizzlingOilSupreme_0',
     },
   },
-  DashAttackSizzlingOilSupreme_0_anomBuildup: {
+  'DashAttackSizzlingOilSupreme_0:anomBuildup': {
     sheet: 'PanYinhu',
-    name: 'DashAttackSizzlingOilSupreme_0_anomBuildup',
+    name: 'DashAttackSizzlingOilSupreme_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -296,12 +296,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackSizzlingOilSupreme_0_anomBuildup',
+      name: 'DashAttackSizzlingOilSupreme_0',
     },
   },
-  DodgeCounterMovingMountainsAndSeas_0_dmg: {
+  'DodgeCounterMovingMountainsAndSeas_0:standardDmg': {
     sheet: 'PanYinhu',
-    name: 'DodgeCounterMovingMountainsAndSeas_0_dmg',
+    name: 'DodgeCounterMovingMountainsAndSeas_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -310,12 +310,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterMovingMountainsAndSeas_0_dmg',
+      name: 'DodgeCounterMovingMountainsAndSeas_0',
     },
   },
-  DodgeCounterMovingMountainsAndSeas_0_daze: {
+  'DodgeCounterMovingMountainsAndSeas_0:dazeBuildup': {
     sheet: 'PanYinhu',
-    name: 'DodgeCounterMovingMountainsAndSeas_0_daze',
+    name: 'DodgeCounterMovingMountainsAndSeas_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -324,12 +324,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterMovingMountainsAndSeas_0_daze',
+      name: 'DodgeCounterMovingMountainsAndSeas_0',
     },
   },
-  DodgeCounterMovingMountainsAndSeas_0_anomBuildup: {
+  'DodgeCounterMovingMountainsAndSeas_0:anomBuildup': {
     sheet: 'PanYinhu',
-    name: 'DodgeCounterMovingMountainsAndSeas_0_anomBuildup',
+    name: 'DodgeCounterMovingMountainsAndSeas_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -338,12 +338,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterMovingMountainsAndSeas_0_anomBuildup',
+      name: 'DodgeCounterMovingMountainsAndSeas_0',
     },
   },
-  SpecialAttackSonicPressurePointStrike_0_dmg: {
+  'SpecialAttackSonicPressurePointStrike_0:standardDmg': {
     sheet: 'PanYinhu',
-    name: 'SpecialAttackSonicPressurePointStrike_0_dmg',
+    name: 'SpecialAttackSonicPressurePointStrike_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -352,12 +352,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackSonicPressurePointStrike_0_dmg',
+      name: 'SpecialAttackSonicPressurePointStrike_0',
     },
   },
-  SpecialAttackSonicPressurePointStrike_0_daze: {
+  'SpecialAttackSonicPressurePointStrike_0:dazeBuildup': {
     sheet: 'PanYinhu',
-    name: 'SpecialAttackSonicPressurePointStrike_0_daze',
+    name: 'SpecialAttackSonicPressurePointStrike_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -366,12 +366,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackSonicPressurePointStrike_0_daze',
+      name: 'SpecialAttackSonicPressurePointStrike_0',
     },
   },
-  SpecialAttackSonicPressurePointStrike_0_anomBuildup: {
+  'SpecialAttackSonicPressurePointStrike_0:anomBuildup': {
     sheet: 'PanYinhu',
-    name: 'SpecialAttackSonicPressurePointStrike_0_anomBuildup',
+    name: 'SpecialAttackSonicPressurePointStrike_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -380,12 +380,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackSonicPressurePointStrike_0_anomBuildup',
+      name: 'SpecialAttackSonicPressurePointStrike_0',
     },
   },
-  SpecialAttackTouchOfDeath_0_dmg: {
+  'SpecialAttackTouchOfDeath_0:standardDmg': {
     sheet: 'PanYinhu',
-    name: 'SpecialAttackTouchOfDeath_0_dmg',
+    name: 'SpecialAttackTouchOfDeath_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -394,12 +394,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackTouchOfDeath_0_dmg',
+      name: 'SpecialAttackTouchOfDeath_0',
     },
   },
-  SpecialAttackTouchOfDeath_0_daze: {
+  'SpecialAttackTouchOfDeath_0:dazeBuildup': {
     sheet: 'PanYinhu',
-    name: 'SpecialAttackTouchOfDeath_0_daze',
+    name: 'SpecialAttackTouchOfDeath_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -408,12 +408,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackTouchOfDeath_0_daze',
+      name: 'SpecialAttackTouchOfDeath_0',
     },
   },
-  SpecialAttackTouchOfDeath_0_anomBuildup: {
+  'SpecialAttackTouchOfDeath_0:anomBuildup': {
     sheet: 'PanYinhu',
-    name: 'SpecialAttackTouchOfDeath_0_anomBuildup',
+    name: 'SpecialAttackTouchOfDeath_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -422,12 +422,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackTouchOfDeath_0_anomBuildup',
+      name: 'SpecialAttackTouchOfDeath_0',
     },
   },
-  SpecialAttackTouchOfDeath_1_dmg: {
+  'SpecialAttackTouchOfDeath_1:standardDmg': {
     sheet: 'PanYinhu',
-    name: 'SpecialAttackTouchOfDeath_1_dmg',
+    name: 'SpecialAttackTouchOfDeath_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -436,12 +436,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackTouchOfDeath_1_dmg',
+      name: 'SpecialAttackTouchOfDeath_1',
     },
   },
-  SpecialAttackTouchOfDeath_1_daze: {
+  'SpecialAttackTouchOfDeath_1:dazeBuildup': {
     sheet: 'PanYinhu',
-    name: 'SpecialAttackTouchOfDeath_1_daze',
+    name: 'SpecialAttackTouchOfDeath_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -450,12 +450,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackTouchOfDeath_1_daze',
+      name: 'SpecialAttackTouchOfDeath_1',
     },
   },
-  SpecialAttackTouchOfDeath_1_anomBuildup: {
+  'SpecialAttackTouchOfDeath_1:anomBuildup': {
     sheet: 'PanYinhu',
-    name: 'SpecialAttackTouchOfDeath_1_anomBuildup',
+    name: 'SpecialAttackTouchOfDeath_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -464,12 +464,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackTouchOfDeath_1_anomBuildup',
+      name: 'SpecialAttackTouchOfDeath_1',
     },
   },
-  SpecialAttackTouchOfDeath_2_dmg: {
+  'SpecialAttackTouchOfDeath_2:standardDmg': {
     sheet: 'PanYinhu',
-    name: 'SpecialAttackTouchOfDeath_2_dmg',
+    name: 'SpecialAttackTouchOfDeath_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -478,12 +478,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackTouchOfDeath_2_dmg',
+      name: 'SpecialAttackTouchOfDeath_2',
     },
   },
-  SpecialAttackTouchOfDeath_2_daze: {
+  'SpecialAttackTouchOfDeath_2:dazeBuildup': {
     sheet: 'PanYinhu',
-    name: 'SpecialAttackTouchOfDeath_2_daze',
+    name: 'SpecialAttackTouchOfDeath_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -492,12 +492,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackTouchOfDeath_2_daze',
+      name: 'SpecialAttackTouchOfDeath_2',
     },
   },
-  SpecialAttackTouchOfDeath_2_anomBuildup: {
+  'SpecialAttackTouchOfDeath_2:anomBuildup': {
     sheet: 'PanYinhu',
-    name: 'SpecialAttackTouchOfDeath_2_anomBuildup',
+    name: 'SpecialAttackTouchOfDeath_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -506,12 +506,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackTouchOfDeath_2_anomBuildup',
+      name: 'SpecialAttackTouchOfDeath_2',
     },
   },
-  EXSpecialAttackMountainousPulseStrike_0_dmg: {
+  'EXSpecialAttackMountainousPulseStrike_0:standardDmg': {
     sheet: 'PanYinhu',
-    name: 'EXSpecialAttackMountainousPulseStrike_0_dmg',
+    name: 'EXSpecialAttackMountainousPulseStrike_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -520,12 +520,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackMountainousPulseStrike_0_dmg',
+      name: 'EXSpecialAttackMountainousPulseStrike_0',
     },
   },
-  EXSpecialAttackMountainousPulseStrike_0_daze: {
+  'EXSpecialAttackMountainousPulseStrike_0:dazeBuildup': {
     sheet: 'PanYinhu',
-    name: 'EXSpecialAttackMountainousPulseStrike_0_daze',
+    name: 'EXSpecialAttackMountainousPulseStrike_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -534,12 +534,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackMountainousPulseStrike_0_daze',
+      name: 'EXSpecialAttackMountainousPulseStrike_0',
     },
   },
-  EXSpecialAttackMountainousPulseStrike_0_anomBuildup: {
+  'EXSpecialAttackMountainousPulseStrike_0:anomBuildup': {
     sheet: 'PanYinhu',
-    name: 'EXSpecialAttackMountainousPulseStrike_0_anomBuildup',
+    name: 'EXSpecialAttackMountainousPulseStrike_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -548,12 +548,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackMountainousPulseStrike_0_anomBuildup',
+      name: 'EXSpecialAttackMountainousPulseStrike_0',
     },
   },
-  ChainAttackAnointedWithWokSteam_0_dmg: {
+  'ChainAttackAnointedWithWokSteam_0:standardDmg': {
     sheet: 'PanYinhu',
-    name: 'ChainAttackAnointedWithWokSteam_0_dmg',
+    name: 'ChainAttackAnointedWithWokSteam_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -562,12 +562,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackAnointedWithWokSteam_0_dmg',
+      name: 'ChainAttackAnointedWithWokSteam_0',
     },
   },
-  ChainAttackAnointedWithWokSteam_0_daze: {
+  'ChainAttackAnointedWithWokSteam_0:dazeBuildup': {
     sheet: 'PanYinhu',
-    name: 'ChainAttackAnointedWithWokSteam_0_daze',
+    name: 'ChainAttackAnointedWithWokSteam_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -576,12 +576,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackAnointedWithWokSteam_0_daze',
+      name: 'ChainAttackAnointedWithWokSteam_0',
     },
   },
-  ChainAttackAnointedWithWokSteam_0_anomBuildup: {
+  'ChainAttackAnointedWithWokSteam_0:anomBuildup': {
     sheet: 'PanYinhu',
-    name: 'ChainAttackAnointedWithWokSteam_0_anomBuildup',
+    name: 'ChainAttackAnointedWithWokSteam_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -590,12 +590,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackAnointedWithWokSteam_0_anomBuildup',
+      name: 'ChainAttackAnointedWithWokSteam_0',
     },
   },
-  UltimateAFeastFitForAnEmperor_0_dmg: {
+  'UltimateAFeastFitForAnEmperor_0:standardDmg': {
     sheet: 'PanYinhu',
-    name: 'UltimateAFeastFitForAnEmperor_0_dmg',
+    name: 'UltimateAFeastFitForAnEmperor_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -604,12 +604,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateAFeastFitForAnEmperor_0_dmg',
+      name: 'UltimateAFeastFitForAnEmperor_0',
     },
   },
-  UltimateAFeastFitForAnEmperor_0_daze: {
+  'UltimateAFeastFitForAnEmperor_0:dazeBuildup': {
     sheet: 'PanYinhu',
-    name: 'UltimateAFeastFitForAnEmperor_0_daze',
+    name: 'UltimateAFeastFitForAnEmperor_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -618,12 +618,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateAFeastFitForAnEmperor_0_daze',
+      name: 'UltimateAFeastFitForAnEmperor_0',
     },
   },
-  UltimateAFeastFitForAnEmperor_0_anomBuildup: {
+  'UltimateAFeastFitForAnEmperor_0:anomBuildup': {
     sheet: 'PanYinhu',
-    name: 'UltimateAFeastFitForAnEmperor_0_anomBuildup',
+    name: 'UltimateAFeastFitForAnEmperor_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -632,12 +632,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateAFeastFitForAnEmperor_0_anomBuildup',
+      name: 'UltimateAFeastFitForAnEmperor_0',
     },
   },
-  QuickAssistLiftYourGazeToGoodFortune_0_dmg: {
+  'QuickAssistLiftYourGazeToGoodFortune_0:standardDmg': {
     sheet: 'PanYinhu',
-    name: 'QuickAssistLiftYourGazeToGoodFortune_0_dmg',
+    name: 'QuickAssistLiftYourGazeToGoodFortune_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -646,12 +646,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistLiftYourGazeToGoodFortune_0_dmg',
+      name: 'QuickAssistLiftYourGazeToGoodFortune_0',
     },
   },
-  QuickAssistLiftYourGazeToGoodFortune_0_daze: {
+  'QuickAssistLiftYourGazeToGoodFortune_0:dazeBuildup': {
     sheet: 'PanYinhu',
-    name: 'QuickAssistLiftYourGazeToGoodFortune_0_daze',
+    name: 'QuickAssistLiftYourGazeToGoodFortune_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -660,12 +660,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistLiftYourGazeToGoodFortune_0_daze',
+      name: 'QuickAssistLiftYourGazeToGoodFortune_0',
     },
   },
-  QuickAssistLiftYourGazeToGoodFortune_0_anomBuildup: {
+  'QuickAssistLiftYourGazeToGoodFortune_0:anomBuildup': {
     sheet: 'PanYinhu',
-    name: 'QuickAssistLiftYourGazeToGoodFortune_0_anomBuildup',
+    name: 'QuickAssistLiftYourGazeToGoodFortune_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -674,12 +674,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistLiftYourGazeToGoodFortune_0_anomBuildup',
+      name: 'QuickAssistLiftYourGazeToGoodFortune_0',
     },
   },
-  DefensiveAssistIntimidatingPresence_0_dmg: {
+  'DefensiveAssistIntimidatingPresence_0:standardDmg': {
     sheet: 'PanYinhu',
-    name: 'DefensiveAssistIntimidatingPresence_0_dmg',
+    name: 'DefensiveAssistIntimidatingPresence_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -688,12 +688,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIntimidatingPresence_0_dmg',
+      name: 'DefensiveAssistIntimidatingPresence_0',
     },
   },
-  DefensiveAssistIntimidatingPresence_0_daze: {
+  'DefensiveAssistIntimidatingPresence_0:dazeBuildup': {
     sheet: 'PanYinhu',
-    name: 'DefensiveAssistIntimidatingPresence_0_daze',
+    name: 'DefensiveAssistIntimidatingPresence_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -702,12 +702,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIntimidatingPresence_0_daze',
+      name: 'DefensiveAssistIntimidatingPresence_0',
     },
   },
-  DefensiveAssistIntimidatingPresence_0_anomBuildup: {
+  'DefensiveAssistIntimidatingPresence_0:anomBuildup': {
     sheet: 'PanYinhu',
-    name: 'DefensiveAssistIntimidatingPresence_0_anomBuildup',
+    name: 'DefensiveAssistIntimidatingPresence_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -716,12 +716,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIntimidatingPresence_0_anomBuildup',
+      name: 'DefensiveAssistIntimidatingPresence_0',
     },
   },
-  DefensiveAssistIntimidatingPresence_1_dmg: {
+  'DefensiveAssistIntimidatingPresence_1:standardDmg': {
     sheet: 'PanYinhu',
-    name: 'DefensiveAssistIntimidatingPresence_1_dmg',
+    name: 'DefensiveAssistIntimidatingPresence_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -730,12 +730,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIntimidatingPresence_1_dmg',
+      name: 'DefensiveAssistIntimidatingPresence_1',
     },
   },
-  DefensiveAssistIntimidatingPresence_1_daze: {
+  'DefensiveAssistIntimidatingPresence_1:dazeBuildup': {
     sheet: 'PanYinhu',
-    name: 'DefensiveAssistIntimidatingPresence_1_daze',
+    name: 'DefensiveAssistIntimidatingPresence_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -744,12 +744,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIntimidatingPresence_1_daze',
+      name: 'DefensiveAssistIntimidatingPresence_1',
     },
   },
-  DefensiveAssistIntimidatingPresence_1_anomBuildup: {
+  'DefensiveAssistIntimidatingPresence_1:anomBuildup': {
     sheet: 'PanYinhu',
-    name: 'DefensiveAssistIntimidatingPresence_1_anomBuildup',
+    name: 'DefensiveAssistIntimidatingPresence_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -758,12 +758,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIntimidatingPresence_1_anomBuildup',
+      name: 'DefensiveAssistIntimidatingPresence_1',
     },
   },
-  DefensiveAssistIntimidatingPresence_2_dmg: {
+  'DefensiveAssistIntimidatingPresence_2:standardDmg': {
     sheet: 'PanYinhu',
-    name: 'DefensiveAssistIntimidatingPresence_2_dmg',
+    name: 'DefensiveAssistIntimidatingPresence_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -772,12 +772,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIntimidatingPresence_2_dmg',
+      name: 'DefensiveAssistIntimidatingPresence_2',
     },
   },
-  DefensiveAssistIntimidatingPresence_2_daze: {
+  'DefensiveAssistIntimidatingPresence_2:dazeBuildup': {
     sheet: 'PanYinhu',
-    name: 'DefensiveAssistIntimidatingPresence_2_daze',
+    name: 'DefensiveAssistIntimidatingPresence_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -786,12 +786,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIntimidatingPresence_2_daze',
+      name: 'DefensiveAssistIntimidatingPresence_2',
     },
   },
-  DefensiveAssistIntimidatingPresence_2_anomBuildup: {
+  'DefensiveAssistIntimidatingPresence_2:anomBuildup': {
     sheet: 'PanYinhu',
-    name: 'DefensiveAssistIntimidatingPresence_2_anomBuildup',
+    name: 'DefensiveAssistIntimidatingPresence_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -800,12 +800,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIntimidatingPresence_2_anomBuildup',
+      name: 'DefensiveAssistIntimidatingPresence_2',
     },
   },
-  AssistFollowUpRideTheMomentum_0_dmg: {
+  'AssistFollowUpRideTheMomentum_0:standardDmg': {
     sheet: 'PanYinhu',
-    name: 'AssistFollowUpRideTheMomentum_0_dmg',
+    name: 'AssistFollowUpRideTheMomentum_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -814,12 +814,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpRideTheMomentum_0_dmg',
+      name: 'AssistFollowUpRideTheMomentum_0',
     },
   },
-  AssistFollowUpRideTheMomentum_0_daze: {
+  'AssistFollowUpRideTheMomentum_0:dazeBuildup': {
     sheet: 'PanYinhu',
-    name: 'AssistFollowUpRideTheMomentum_0_daze',
+    name: 'AssistFollowUpRideTheMomentum_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -828,12 +828,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpRideTheMomentum_0_daze',
+      name: 'AssistFollowUpRideTheMomentum_0',
     },
   },
-  AssistFollowUpRideTheMomentum_0_anomBuildup: {
+  'AssistFollowUpRideTheMomentum_0:anomBuildup': {
     sheet: 'PanYinhu',
-    name: 'AssistFollowUpRideTheMomentum_0_anomBuildup',
+    name: 'AssistFollowUpRideTheMomentum_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -842,7 +842,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpRideTheMomentum_0_anomBuildup',
+      name: 'AssistFollowUpRideTheMomentum_0',
     },
   },
   ultimate_heal: {

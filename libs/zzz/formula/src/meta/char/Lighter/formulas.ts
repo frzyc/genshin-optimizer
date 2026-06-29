@@ -89,9 +89,9 @@ export const formulas = {
       name: 'dazeInst',
     },
   },
-  BasicAttackLFormThunderingFist_0_dmg: {
+  'BasicAttackLFormThunderingFist_0:standardDmg': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_0_dmg',
+    name: 'BasicAttackLFormThunderingFist_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -100,12 +100,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_0_dmg',
+      name: 'BasicAttackLFormThunderingFist_0',
     },
   },
-  BasicAttackLFormThunderingFist_0_daze: {
+  'BasicAttackLFormThunderingFist_0:dazeBuildup': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_0_daze',
+    name: 'BasicAttackLFormThunderingFist_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -114,12 +114,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_0_daze',
+      name: 'BasicAttackLFormThunderingFist_0',
     },
   },
-  BasicAttackLFormThunderingFist_0_anomBuildup: {
+  'BasicAttackLFormThunderingFist_0:anomBuildup': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_0_anomBuildup',
+    name: 'BasicAttackLFormThunderingFist_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -128,12 +128,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_0_anomBuildup',
+      name: 'BasicAttackLFormThunderingFist_0',
     },
   },
-  BasicAttackLFormThunderingFist_1_dmg: {
+  'BasicAttackLFormThunderingFist_1:standardDmg': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_1_dmg',
+    name: 'BasicAttackLFormThunderingFist_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -142,12 +142,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_1_dmg',
+      name: 'BasicAttackLFormThunderingFist_1',
     },
   },
-  BasicAttackLFormThunderingFist_1_daze: {
+  'BasicAttackLFormThunderingFist_1:dazeBuildup': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_1_daze',
+    name: 'BasicAttackLFormThunderingFist_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -156,12 +156,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_1_daze',
+      name: 'BasicAttackLFormThunderingFist_1',
     },
   },
-  BasicAttackLFormThunderingFist_1_anomBuildup: {
+  'BasicAttackLFormThunderingFist_1:anomBuildup': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_1_anomBuildup',
+    name: 'BasicAttackLFormThunderingFist_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -170,12 +170,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_1_anomBuildup',
+      name: 'BasicAttackLFormThunderingFist_1',
     },
   },
-  BasicAttackLFormThunderingFist_2_dmg: {
+  'BasicAttackLFormThunderingFist_2:standardDmg': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_2_dmg',
+    name: 'BasicAttackLFormThunderingFist_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -184,12 +184,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_2_dmg',
+      name: 'BasicAttackLFormThunderingFist_2',
     },
   },
-  BasicAttackLFormThunderingFist_2_daze: {
+  'BasicAttackLFormThunderingFist_2:dazeBuildup': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_2_daze',
+    name: 'BasicAttackLFormThunderingFist_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -198,12 +198,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_2_daze',
+      name: 'BasicAttackLFormThunderingFist_2',
     },
   },
-  BasicAttackLFormThunderingFist_2_anomBuildup: {
+  'BasicAttackLFormThunderingFist_2:anomBuildup': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_2_anomBuildup',
+    name: 'BasicAttackLFormThunderingFist_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -212,12 +212,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_2_anomBuildup',
+      name: 'BasicAttackLFormThunderingFist_2',
     },
   },
-  BasicAttackLFormThunderingFist_3_dmg: {
+  'BasicAttackLFormThunderingFist_3:standardDmg': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_3_dmg',
+    name: 'BasicAttackLFormThunderingFist_3:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -226,12 +226,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_3_dmg',
+      name: 'BasicAttackLFormThunderingFist_3',
     },
   },
-  BasicAttackLFormThunderingFist_3_daze: {
+  'BasicAttackLFormThunderingFist_3:dazeBuildup': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_3_daze',
+    name: 'BasicAttackLFormThunderingFist_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -240,12 +240,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_3_daze',
+      name: 'BasicAttackLFormThunderingFist_3',
     },
   },
-  BasicAttackLFormThunderingFist_3_anomBuildup: {
+  'BasicAttackLFormThunderingFist_3:anomBuildup': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_3_anomBuildup',
+    name: 'BasicAttackLFormThunderingFist_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -254,12 +254,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_3_anomBuildup',
+      name: 'BasicAttackLFormThunderingFist_3',
     },
   },
-  BasicAttackLFormThunderingFist_4_dmg: {
+  'BasicAttackLFormThunderingFist_4:standardDmg': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_4_dmg',
+    name: 'BasicAttackLFormThunderingFist_4:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -268,12 +268,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_4_dmg',
+      name: 'BasicAttackLFormThunderingFist_4',
     },
   },
-  BasicAttackLFormThunderingFist_4_daze: {
+  'BasicAttackLFormThunderingFist_4:dazeBuildup': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_4_daze',
+    name: 'BasicAttackLFormThunderingFist_4:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -282,12 +282,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_4_daze',
+      name: 'BasicAttackLFormThunderingFist_4',
     },
   },
-  BasicAttackLFormThunderingFist_4_anomBuildup: {
+  'BasicAttackLFormThunderingFist_4:anomBuildup': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_4_anomBuildup',
+    name: 'BasicAttackLFormThunderingFist_4:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -296,12 +296,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_4_anomBuildup',
+      name: 'BasicAttackLFormThunderingFist_4',
     },
   },
-  BasicAttackLFormThunderingFist_5_dmg: {
+  'BasicAttackLFormThunderingFist_5:standardDmg': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_5_dmg',
+    name: 'BasicAttackLFormThunderingFist_5:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -310,12 +310,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_5_dmg',
+      name: 'BasicAttackLFormThunderingFist_5',
     },
   },
-  BasicAttackLFormThunderingFist_5_daze: {
+  'BasicAttackLFormThunderingFist_5:dazeBuildup': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_5_daze',
+    name: 'BasicAttackLFormThunderingFist_5:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -324,12 +324,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_5_daze',
+      name: 'BasicAttackLFormThunderingFist_5',
     },
   },
-  BasicAttackLFormThunderingFist_5_anomBuildup: {
+  'BasicAttackLFormThunderingFist_5:anomBuildup': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_5_anomBuildup',
+    name: 'BasicAttackLFormThunderingFist_5:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -338,12 +338,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_5_anomBuildup',
+      name: 'BasicAttackLFormThunderingFist_5',
     },
   },
-  BasicAttackLFormThunderingFist_6_dmg: {
+  'BasicAttackLFormThunderingFist_6:standardDmg': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_6_dmg',
+    name: 'BasicAttackLFormThunderingFist_6:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -352,12 +352,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_6_dmg',
+      name: 'BasicAttackLFormThunderingFist_6',
     },
   },
-  BasicAttackLFormThunderingFist_6_daze: {
+  'BasicAttackLFormThunderingFist_6:dazeBuildup': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_6_daze',
+    name: 'BasicAttackLFormThunderingFist_6:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -366,12 +366,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_6_daze',
+      name: 'BasicAttackLFormThunderingFist_6',
     },
   },
-  BasicAttackLFormThunderingFist_6_anomBuildup: {
+  'BasicAttackLFormThunderingFist_6:anomBuildup': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_6_anomBuildup',
+    name: 'BasicAttackLFormThunderingFist_6:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -380,12 +380,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_6_anomBuildup',
+      name: 'BasicAttackLFormThunderingFist_6',
     },
   },
-  BasicAttackLFormThunderingFist_7_dmg: {
+  'BasicAttackLFormThunderingFist_7:standardDmg': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_7_dmg',
+    name: 'BasicAttackLFormThunderingFist_7:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -394,12 +394,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_7_dmg',
+      name: 'BasicAttackLFormThunderingFist_7',
     },
   },
-  BasicAttackLFormThunderingFist_7_daze: {
+  'BasicAttackLFormThunderingFist_7:dazeBuildup': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_7_daze',
+    name: 'BasicAttackLFormThunderingFist_7:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -408,12 +408,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_7_daze',
+      name: 'BasicAttackLFormThunderingFist_7',
     },
   },
-  BasicAttackLFormThunderingFist_7_anomBuildup: {
+  'BasicAttackLFormThunderingFist_7:anomBuildup': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_7_anomBuildup',
+    name: 'BasicAttackLFormThunderingFist_7:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -422,12 +422,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_7_anomBuildup',
+      name: 'BasicAttackLFormThunderingFist_7',
     },
   },
-  BasicAttackLFormThunderingFist_8_dmg: {
+  'BasicAttackLFormThunderingFist_8:standardDmg': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_8_dmg',
+    name: 'BasicAttackLFormThunderingFist_8:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -436,12 +436,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_8_dmg',
+      name: 'BasicAttackLFormThunderingFist_8',
     },
   },
-  BasicAttackLFormThunderingFist_8_daze: {
+  'BasicAttackLFormThunderingFist_8:dazeBuildup': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_8_daze',
+    name: 'BasicAttackLFormThunderingFist_8:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -450,12 +450,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_8_daze',
+      name: 'BasicAttackLFormThunderingFist_8',
     },
   },
-  BasicAttackLFormThunderingFist_8_anomBuildup: {
+  'BasicAttackLFormThunderingFist_8:anomBuildup': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_8_anomBuildup',
+    name: 'BasicAttackLFormThunderingFist_8:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -464,12 +464,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_8_anomBuildup',
+      name: 'BasicAttackLFormThunderingFist_8',
     },
   },
-  BasicAttackLFormThunderingFist_9_dmg: {
+  'BasicAttackLFormThunderingFist_9:standardDmg': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_9_dmg',
+    name: 'BasicAttackLFormThunderingFist_9:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -478,12 +478,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_9_dmg',
+      name: 'BasicAttackLFormThunderingFist_9',
     },
   },
-  BasicAttackLFormThunderingFist_9_daze: {
+  'BasicAttackLFormThunderingFist_9:dazeBuildup': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_9_daze',
+    name: 'BasicAttackLFormThunderingFist_9:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -492,12 +492,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_9_daze',
+      name: 'BasicAttackLFormThunderingFist_9',
     },
   },
-  BasicAttackLFormThunderingFist_9_anomBuildup: {
+  'BasicAttackLFormThunderingFist_9:anomBuildup': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_9_anomBuildup',
+    name: 'BasicAttackLFormThunderingFist_9:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -506,12 +506,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_9_anomBuildup',
+      name: 'BasicAttackLFormThunderingFist_9',
     },
   },
-  BasicAttackLFormThunderingFist_10_dmg: {
+  'BasicAttackLFormThunderingFist_10:standardDmg': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_10_dmg',
+    name: 'BasicAttackLFormThunderingFist_10:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -520,12 +520,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_10_dmg',
+      name: 'BasicAttackLFormThunderingFist_10',
     },
   },
-  BasicAttackLFormThunderingFist_10_daze: {
+  'BasicAttackLFormThunderingFist_10:dazeBuildup': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_10_daze',
+    name: 'BasicAttackLFormThunderingFist_10:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -534,12 +534,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_10_daze',
+      name: 'BasicAttackLFormThunderingFist_10',
     },
   },
-  BasicAttackLFormThunderingFist_10_anomBuildup: {
+  'BasicAttackLFormThunderingFist_10:anomBuildup': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_10_anomBuildup',
+    name: 'BasicAttackLFormThunderingFist_10:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -548,12 +548,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_10_anomBuildup',
+      name: 'BasicAttackLFormThunderingFist_10',
     },
   },
-  BasicAttackLFormThunderingFist_11_dmg: {
+  'BasicAttackLFormThunderingFist_11:standardDmg': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_11_dmg',
+    name: 'BasicAttackLFormThunderingFist_11:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -562,12 +562,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_11_dmg',
+      name: 'BasicAttackLFormThunderingFist_11',
     },
   },
-  BasicAttackLFormThunderingFist_11_daze: {
+  'BasicAttackLFormThunderingFist_11:dazeBuildup': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_11_daze',
+    name: 'BasicAttackLFormThunderingFist_11:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -576,12 +576,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_11_daze',
+      name: 'BasicAttackLFormThunderingFist_11',
     },
   },
-  BasicAttackLFormThunderingFist_11_anomBuildup: {
+  'BasicAttackLFormThunderingFist_11:anomBuildup': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_11_anomBuildup',
+    name: 'BasicAttackLFormThunderingFist_11:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -590,12 +590,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_11_anomBuildup',
+      name: 'BasicAttackLFormThunderingFist_11',
     },
   },
-  BasicAttackLFormThunderingFist_12_dmg: {
+  'BasicAttackLFormThunderingFist_12:standardDmg': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_12_dmg',
+    name: 'BasicAttackLFormThunderingFist_12:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -604,12 +604,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_12_dmg',
+      name: 'BasicAttackLFormThunderingFist_12',
     },
   },
-  BasicAttackLFormThunderingFist_12_daze: {
+  'BasicAttackLFormThunderingFist_12:dazeBuildup': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_12_daze',
+    name: 'BasicAttackLFormThunderingFist_12:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -618,12 +618,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_12_daze',
+      name: 'BasicAttackLFormThunderingFist_12',
     },
   },
-  BasicAttackLFormThunderingFist_12_anomBuildup: {
+  'BasicAttackLFormThunderingFist_12:anomBuildup': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_12_anomBuildup',
+    name: 'BasicAttackLFormThunderingFist_12:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -632,12 +632,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_12_anomBuildup',
+      name: 'BasicAttackLFormThunderingFist_12',
     },
   },
-  BasicAttackLFormThunderingFist_13_dmg: {
+  'BasicAttackLFormThunderingFist_13:standardDmg': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_13_dmg',
+    name: 'BasicAttackLFormThunderingFist_13:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -646,12 +646,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_13_dmg',
+      name: 'BasicAttackLFormThunderingFist_13',
     },
   },
-  BasicAttackLFormThunderingFist_13_daze: {
+  'BasicAttackLFormThunderingFist_13:dazeBuildup': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_13_daze',
+    name: 'BasicAttackLFormThunderingFist_13:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -660,12 +660,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_13_daze',
+      name: 'BasicAttackLFormThunderingFist_13',
     },
   },
-  BasicAttackLFormThunderingFist_13_anomBuildup: {
+  'BasicAttackLFormThunderingFist_13:anomBuildup': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_13_anomBuildup',
+    name: 'BasicAttackLFormThunderingFist_13:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -674,12 +674,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_13_anomBuildup',
+      name: 'BasicAttackLFormThunderingFist_13',
     },
   },
-  BasicAttackLFormThunderingFist_14_dmg: {
+  'BasicAttackLFormThunderingFist_14:standardDmg': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_14_dmg',
+    name: 'BasicAttackLFormThunderingFist_14:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -688,12 +688,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_14_dmg',
+      name: 'BasicAttackLFormThunderingFist_14',
     },
   },
-  BasicAttackLFormThunderingFist_14_daze: {
+  'BasicAttackLFormThunderingFist_14:dazeBuildup': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_14_daze',
+    name: 'BasicAttackLFormThunderingFist_14:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -702,12 +702,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_14_daze',
+      name: 'BasicAttackLFormThunderingFist_14',
     },
   },
-  BasicAttackLFormThunderingFist_14_anomBuildup: {
+  'BasicAttackLFormThunderingFist_14:anomBuildup': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_14_anomBuildup',
+    name: 'BasicAttackLFormThunderingFist_14:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -716,12 +716,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_14_anomBuildup',
+      name: 'BasicAttackLFormThunderingFist_14',
     },
   },
-  BasicAttackLFormThunderingFist_15_dmg: {
+  'BasicAttackLFormThunderingFist_15:standardDmg': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_15_dmg',
+    name: 'BasicAttackLFormThunderingFist_15:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -730,12 +730,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_15_dmg',
+      name: 'BasicAttackLFormThunderingFist_15',
     },
   },
-  BasicAttackLFormThunderingFist_15_daze: {
+  'BasicAttackLFormThunderingFist_15:dazeBuildup': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_15_daze',
+    name: 'BasicAttackLFormThunderingFist_15:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -744,12 +744,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_15_daze',
+      name: 'BasicAttackLFormThunderingFist_15',
     },
   },
-  BasicAttackLFormThunderingFist_15_anomBuildup: {
+  'BasicAttackLFormThunderingFist_15:anomBuildup': {
     sheet: 'Lighter',
-    name: 'BasicAttackLFormThunderingFist_15_anomBuildup',
+    name: 'BasicAttackLFormThunderingFist_15:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -758,12 +758,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackLFormThunderingFist_15_anomBuildup',
+      name: 'BasicAttackLFormThunderingFist_15',
     },
   },
-  DashAttackChargingSlam_0_dmg: {
+  'DashAttackChargingSlam_0:standardDmg': {
     sheet: 'Lighter',
-    name: 'DashAttackChargingSlam_0_dmg',
+    name: 'DashAttackChargingSlam_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -772,12 +772,12 @@ export const formulas = {
       damageType1: 'dash',
       attribute: 'physical',
       skillType: 'dodgeSkill',
-      name: 'DashAttackChargingSlam_0_dmg',
+      name: 'DashAttackChargingSlam_0',
     },
   },
-  DashAttackChargingSlam_0_daze: {
+  'DashAttackChargingSlam_0:dazeBuildup': {
     sheet: 'Lighter',
-    name: 'DashAttackChargingSlam_0_daze',
+    name: 'DashAttackChargingSlam_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -786,12 +786,12 @@ export const formulas = {
       damageType1: 'dash',
       attribute: 'physical',
       skillType: 'dodgeSkill',
-      name: 'DashAttackChargingSlam_0_daze',
+      name: 'DashAttackChargingSlam_0',
     },
   },
-  DashAttackChargingSlam_0_anomBuildup: {
+  'DashAttackChargingSlam_0:anomBuildup': {
     sheet: 'Lighter',
-    name: 'DashAttackChargingSlam_0_anomBuildup',
+    name: 'DashAttackChargingSlam_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -800,12 +800,12 @@ export const formulas = {
       damageType1: 'dash',
       attribute: 'physical',
       skillType: 'dodgeSkill',
-      name: 'DashAttackChargingSlam_0_anomBuildup',
+      name: 'DashAttackChargingSlam_0',
     },
   },
-  DodgeCounterBlazingFlash_0_dmg: {
+  'DodgeCounterBlazingFlash_0:standardDmg': {
     sheet: 'Lighter',
-    name: 'DodgeCounterBlazingFlash_0_dmg',
+    name: 'DodgeCounterBlazingFlash_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -814,12 +814,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterBlazingFlash_0_dmg',
+      name: 'DodgeCounterBlazingFlash_0',
     },
   },
-  DodgeCounterBlazingFlash_0_daze: {
+  'DodgeCounterBlazingFlash_0:dazeBuildup': {
     sheet: 'Lighter',
-    name: 'DodgeCounterBlazingFlash_0_daze',
+    name: 'DodgeCounterBlazingFlash_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -828,12 +828,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterBlazingFlash_0_daze',
+      name: 'DodgeCounterBlazingFlash_0',
     },
   },
-  DodgeCounterBlazingFlash_0_anomBuildup: {
+  'DodgeCounterBlazingFlash_0:anomBuildup': {
     sheet: 'Lighter',
-    name: 'DodgeCounterBlazingFlash_0_anomBuildup',
+    name: 'DodgeCounterBlazingFlash_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -842,12 +842,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterBlazingFlash_0_anomBuildup',
+      name: 'DodgeCounterBlazingFlash_0',
     },
   },
-  SpecialAttackVFormSunriseUppercut_0_dmg: {
+  'SpecialAttackVFormSunriseUppercut_0:standardDmg': {
     sheet: 'Lighter',
-    name: 'SpecialAttackVFormSunriseUppercut_0_dmg',
+    name: 'SpecialAttackVFormSunriseUppercut_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -856,12 +856,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackVFormSunriseUppercut_0_dmg',
+      name: 'SpecialAttackVFormSunriseUppercut_0',
     },
   },
-  SpecialAttackVFormSunriseUppercut_0_daze: {
+  'SpecialAttackVFormSunriseUppercut_0:dazeBuildup': {
     sheet: 'Lighter',
-    name: 'SpecialAttackVFormSunriseUppercut_0_daze',
+    name: 'SpecialAttackVFormSunriseUppercut_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -870,12 +870,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackVFormSunriseUppercut_0_daze',
+      name: 'SpecialAttackVFormSunriseUppercut_0',
     },
   },
-  SpecialAttackVFormSunriseUppercut_0_anomBuildup: {
+  'SpecialAttackVFormSunriseUppercut_0:anomBuildup': {
     sheet: 'Lighter',
-    name: 'SpecialAttackVFormSunriseUppercut_0_anomBuildup',
+    name: 'SpecialAttackVFormSunriseUppercut_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -884,12 +884,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackVFormSunriseUppercut_0_anomBuildup',
+      name: 'SpecialAttackVFormSunriseUppercut_0',
     },
   },
-  EXSpecialAttackVFormSunriseUppercutFullDistance_0_dmg: {
+  'EXSpecialAttackVFormSunriseUppercutFullDistance_0:standardDmg': {
     sheet: 'Lighter',
-    name: 'EXSpecialAttackVFormSunriseUppercutFullDistance_0_dmg',
+    name: 'EXSpecialAttackVFormSunriseUppercutFullDistance_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -898,12 +898,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackVFormSunriseUppercutFullDistance_0_dmg',
+      name: 'EXSpecialAttackVFormSunriseUppercutFullDistance_0',
     },
   },
-  EXSpecialAttackVFormSunriseUppercutFullDistance_0_daze: {
+  'EXSpecialAttackVFormSunriseUppercutFullDistance_0:dazeBuildup': {
     sheet: 'Lighter',
-    name: 'EXSpecialAttackVFormSunriseUppercutFullDistance_0_daze',
+    name: 'EXSpecialAttackVFormSunriseUppercutFullDistance_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -912,12 +912,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackVFormSunriseUppercutFullDistance_0_daze',
+      name: 'EXSpecialAttackVFormSunriseUppercutFullDistance_0',
     },
   },
-  EXSpecialAttackVFormSunriseUppercutFullDistance_0_anomBuildup: {
+  'EXSpecialAttackVFormSunriseUppercutFullDistance_0:anomBuildup': {
     sheet: 'Lighter',
-    name: 'EXSpecialAttackVFormSunriseUppercutFullDistance_0_anomBuildup',
+    name: 'EXSpecialAttackVFormSunriseUppercutFullDistance_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -926,12 +926,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackVFormSunriseUppercutFullDistance_0_anomBuildup',
+      name: 'EXSpecialAttackVFormSunriseUppercutFullDistance_0',
     },
   },
-  EXSpecialAttackVFormSunriseUppercutFullDistance_1_dmg: {
+  'EXSpecialAttackVFormSunriseUppercutFullDistance_1:standardDmg': {
     sheet: 'Lighter',
-    name: 'EXSpecialAttackVFormSunriseUppercutFullDistance_1_dmg',
+    name: 'EXSpecialAttackVFormSunriseUppercutFullDistance_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -940,12 +940,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackVFormSunriseUppercutFullDistance_1_dmg',
+      name: 'EXSpecialAttackVFormSunriseUppercutFullDistance_1',
     },
   },
-  EXSpecialAttackVFormSunriseUppercutFullDistance_1_daze: {
+  'EXSpecialAttackVFormSunriseUppercutFullDistance_1:dazeBuildup': {
     sheet: 'Lighter',
-    name: 'EXSpecialAttackVFormSunriseUppercutFullDistance_1_daze',
+    name: 'EXSpecialAttackVFormSunriseUppercutFullDistance_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -954,12 +954,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackVFormSunriseUppercutFullDistance_1_daze',
+      name: 'EXSpecialAttackVFormSunriseUppercutFullDistance_1',
     },
   },
-  EXSpecialAttackVFormSunriseUppercutFullDistance_1_anomBuildup: {
+  'EXSpecialAttackVFormSunriseUppercutFullDistance_1:anomBuildup': {
     sheet: 'Lighter',
-    name: 'EXSpecialAttackVFormSunriseUppercutFullDistance_1_anomBuildup',
+    name: 'EXSpecialAttackVFormSunriseUppercutFullDistance_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -968,12 +968,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackVFormSunriseUppercutFullDistance_1_anomBuildup',
+      name: 'EXSpecialAttackVFormSunriseUppercutFullDistance_1',
     },
   },
-  ChainAttackVFormScorchingSun_0_dmg: {
+  'ChainAttackVFormScorchingSun_0:standardDmg': {
     sheet: 'Lighter',
-    name: 'ChainAttackVFormScorchingSun_0_dmg',
+    name: 'ChainAttackVFormScorchingSun_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -982,12 +982,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackVFormScorchingSun_0_dmg',
+      name: 'ChainAttackVFormScorchingSun_0',
     },
   },
-  ChainAttackVFormScorchingSun_0_daze: {
+  'ChainAttackVFormScorchingSun_0:dazeBuildup': {
     sheet: 'Lighter',
-    name: 'ChainAttackVFormScorchingSun_0_daze',
+    name: 'ChainAttackVFormScorchingSun_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -996,12 +996,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackVFormScorchingSun_0_daze',
+      name: 'ChainAttackVFormScorchingSun_0',
     },
   },
-  ChainAttackVFormScorchingSun_0_anomBuildup: {
+  'ChainAttackVFormScorchingSun_0:anomBuildup': {
     sheet: 'Lighter',
-    name: 'ChainAttackVFormScorchingSun_0_anomBuildup',
+    name: 'ChainAttackVFormScorchingSun_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1010,12 +1010,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackVFormScorchingSun_0_anomBuildup',
+      name: 'ChainAttackVFormScorchingSun_0',
     },
   },
-  UltimateWFormCrownedInferno_0_dmg: {
+  'UltimateWFormCrownedInferno_0:standardDmg': {
     sheet: 'Lighter',
-    name: 'UltimateWFormCrownedInferno_0_dmg',
+    name: 'UltimateWFormCrownedInferno_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1024,12 +1024,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateWFormCrownedInferno_0_dmg',
+      name: 'UltimateWFormCrownedInferno_0',
     },
   },
-  UltimateWFormCrownedInferno_0_daze: {
+  'UltimateWFormCrownedInferno_0:dazeBuildup': {
     sheet: 'Lighter',
-    name: 'UltimateWFormCrownedInferno_0_daze',
+    name: 'UltimateWFormCrownedInferno_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1038,12 +1038,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateWFormCrownedInferno_0_daze',
+      name: 'UltimateWFormCrownedInferno_0',
     },
   },
-  UltimateWFormCrownedInferno_0_anomBuildup: {
+  'UltimateWFormCrownedInferno_0:anomBuildup': {
     sheet: 'Lighter',
-    name: 'UltimateWFormCrownedInferno_0_anomBuildup',
+    name: 'UltimateWFormCrownedInferno_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1052,12 +1052,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateWFormCrownedInferno_0_anomBuildup',
+      name: 'UltimateWFormCrownedInferno_0',
     },
   },
-  QuickAssistBlazingFlashGuard_0_dmg: {
+  'QuickAssistBlazingFlashGuard_0:standardDmg': {
     sheet: 'Lighter',
-    name: 'QuickAssistBlazingFlashGuard_0_dmg',
+    name: 'QuickAssistBlazingFlashGuard_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1066,12 +1066,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistBlazingFlashGuard_0_dmg',
+      name: 'QuickAssistBlazingFlashGuard_0',
     },
   },
-  QuickAssistBlazingFlashGuard_0_daze: {
+  'QuickAssistBlazingFlashGuard_0:dazeBuildup': {
     sheet: 'Lighter',
-    name: 'QuickAssistBlazingFlashGuard_0_daze',
+    name: 'QuickAssistBlazingFlashGuard_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1080,12 +1080,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistBlazingFlashGuard_0_daze',
+      name: 'QuickAssistBlazingFlashGuard_0',
     },
   },
-  QuickAssistBlazingFlashGuard_0_anomBuildup: {
+  'QuickAssistBlazingFlashGuard_0:anomBuildup': {
     sheet: 'Lighter',
-    name: 'QuickAssistBlazingFlashGuard_0_anomBuildup',
+    name: 'QuickAssistBlazingFlashGuard_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1094,12 +1094,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistBlazingFlashGuard_0_anomBuildup',
+      name: 'QuickAssistBlazingFlashGuard_0',
     },
   },
-  DefensiveAssistSwiftBreak_0_dmg: {
+  'DefensiveAssistSwiftBreak_0:standardDmg': {
     sheet: 'Lighter',
-    name: 'DefensiveAssistSwiftBreak_0_dmg',
+    name: 'DefensiveAssistSwiftBreak_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1108,12 +1108,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistSwiftBreak_0_dmg',
+      name: 'DefensiveAssistSwiftBreak_0',
     },
   },
-  DefensiveAssistSwiftBreak_0_daze: {
+  'DefensiveAssistSwiftBreak_0:dazeBuildup': {
     sheet: 'Lighter',
-    name: 'DefensiveAssistSwiftBreak_0_daze',
+    name: 'DefensiveAssistSwiftBreak_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1122,12 +1122,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistSwiftBreak_0_daze',
+      name: 'DefensiveAssistSwiftBreak_0',
     },
   },
-  DefensiveAssistSwiftBreak_0_anomBuildup: {
+  'DefensiveAssistSwiftBreak_0:anomBuildup': {
     sheet: 'Lighter',
-    name: 'DefensiveAssistSwiftBreak_0_anomBuildup',
+    name: 'DefensiveAssistSwiftBreak_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1136,12 +1136,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistSwiftBreak_0_anomBuildup',
+      name: 'DefensiveAssistSwiftBreak_0',
     },
   },
-  DefensiveAssistSwiftBreak_1_dmg: {
+  'DefensiveAssistSwiftBreak_1:standardDmg': {
     sheet: 'Lighter',
-    name: 'DefensiveAssistSwiftBreak_1_dmg',
+    name: 'DefensiveAssistSwiftBreak_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1150,12 +1150,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistSwiftBreak_1_dmg',
+      name: 'DefensiveAssistSwiftBreak_1',
     },
   },
-  DefensiveAssistSwiftBreak_1_daze: {
+  'DefensiveAssistSwiftBreak_1:dazeBuildup': {
     sheet: 'Lighter',
-    name: 'DefensiveAssistSwiftBreak_1_daze',
+    name: 'DefensiveAssistSwiftBreak_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1164,12 +1164,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistSwiftBreak_1_daze',
+      name: 'DefensiveAssistSwiftBreak_1',
     },
   },
-  DefensiveAssistSwiftBreak_1_anomBuildup: {
+  'DefensiveAssistSwiftBreak_1:anomBuildup': {
     sheet: 'Lighter',
-    name: 'DefensiveAssistSwiftBreak_1_anomBuildup',
+    name: 'DefensiveAssistSwiftBreak_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1178,12 +1178,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistSwiftBreak_1_anomBuildup',
+      name: 'DefensiveAssistSwiftBreak_1',
     },
   },
-  DefensiveAssistSwiftBreak_2_dmg: {
+  'DefensiveAssistSwiftBreak_2:standardDmg': {
     sheet: 'Lighter',
-    name: 'DefensiveAssistSwiftBreak_2_dmg',
+    name: 'DefensiveAssistSwiftBreak_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1192,12 +1192,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistSwiftBreak_2_dmg',
+      name: 'DefensiveAssistSwiftBreak_2',
     },
   },
-  DefensiveAssistSwiftBreak_2_daze: {
+  'DefensiveAssistSwiftBreak_2:dazeBuildup': {
     sheet: 'Lighter',
-    name: 'DefensiveAssistSwiftBreak_2_daze',
+    name: 'DefensiveAssistSwiftBreak_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1206,12 +1206,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistSwiftBreak_2_daze',
+      name: 'DefensiveAssistSwiftBreak_2',
     },
   },
-  DefensiveAssistSwiftBreak_2_anomBuildup: {
+  'DefensiveAssistSwiftBreak_2:anomBuildup': {
     sheet: 'Lighter',
-    name: 'DefensiveAssistSwiftBreak_2_anomBuildup',
+    name: 'DefensiveAssistSwiftBreak_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1220,12 +1220,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistSwiftBreak_2_anomBuildup',
+      name: 'DefensiveAssistSwiftBreak_2',
     },
   },
-  AssistFollowUpChargingSlamStab_0_dmg: {
+  'AssistFollowUpChargingSlamStab_0:standardDmg': {
     sheet: 'Lighter',
-    name: 'AssistFollowUpChargingSlamStab_0_dmg',
+    name: 'AssistFollowUpChargingSlamStab_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1234,12 +1234,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpChargingSlamStab_0_dmg',
+      name: 'AssistFollowUpChargingSlamStab_0',
     },
   },
-  AssistFollowUpChargingSlamStab_0_daze: {
+  'AssistFollowUpChargingSlamStab_0:dazeBuildup': {
     sheet: 'Lighter',
-    name: 'AssistFollowUpChargingSlamStab_0_daze',
+    name: 'AssistFollowUpChargingSlamStab_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1248,12 +1248,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpChargingSlamStab_0_daze',
+      name: 'AssistFollowUpChargingSlamStab_0',
     },
   },
-  AssistFollowUpChargingSlamStab_0_anomBuildup: {
+  'AssistFollowUpChargingSlamStab_0:anomBuildup': {
     sheet: 'Lighter',
-    name: 'AssistFollowUpChargingSlamStab_0_anomBuildup',
+    name: 'AssistFollowUpChargingSlamStab_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1262,7 +1262,7 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpChargingSlamStab_0_anomBuildup',
+      name: 'AssistFollowUpChargingSlamStab_0',
     },
   },
   m6_blazing_impact_dmg: {

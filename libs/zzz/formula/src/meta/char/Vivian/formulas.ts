@@ -89,9 +89,9 @@ export const formulas = {
       name: 'dazeInst',
     },
   },
-  BasicAttackFeatheredStrike_0_dmg: {
+  'BasicAttackFeatheredStrike_0:standardDmg': {
     sheet: 'Vivian',
-    name: 'BasicAttackFeatheredStrike_0_dmg',
+    name: 'BasicAttackFeatheredStrike_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -100,12 +100,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackFeatheredStrike_0_dmg',
+      name: 'BasicAttackFeatheredStrike_0',
     },
   },
-  BasicAttackFeatheredStrike_0_daze: {
+  'BasicAttackFeatheredStrike_0:dazeBuildup': {
     sheet: 'Vivian',
-    name: 'BasicAttackFeatheredStrike_0_daze',
+    name: 'BasicAttackFeatheredStrike_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -114,12 +114,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackFeatheredStrike_0_daze',
+      name: 'BasicAttackFeatheredStrike_0',
     },
   },
-  BasicAttackFeatheredStrike_0_anomBuildup: {
+  'BasicAttackFeatheredStrike_0:anomBuildup': {
     sheet: 'Vivian',
-    name: 'BasicAttackFeatheredStrike_0_anomBuildup',
+    name: 'BasicAttackFeatheredStrike_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -128,12 +128,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackFeatheredStrike_0_anomBuildup',
+      name: 'BasicAttackFeatheredStrike_0',
     },
   },
-  BasicAttackFeatheredStrike_1_dmg: {
+  'BasicAttackFeatheredStrike_1:standardDmg': {
     sheet: 'Vivian',
-    name: 'BasicAttackFeatheredStrike_1_dmg',
+    name: 'BasicAttackFeatheredStrike_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -142,12 +142,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackFeatheredStrike_1_dmg',
+      name: 'BasicAttackFeatheredStrike_1',
     },
   },
-  BasicAttackFeatheredStrike_1_daze: {
+  'BasicAttackFeatheredStrike_1:dazeBuildup': {
     sheet: 'Vivian',
-    name: 'BasicAttackFeatheredStrike_1_daze',
+    name: 'BasicAttackFeatheredStrike_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -156,12 +156,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackFeatheredStrike_1_daze',
+      name: 'BasicAttackFeatheredStrike_1',
     },
   },
-  BasicAttackFeatheredStrike_1_anomBuildup: {
+  'BasicAttackFeatheredStrike_1:anomBuildup': {
     sheet: 'Vivian',
-    name: 'BasicAttackFeatheredStrike_1_anomBuildup',
+    name: 'BasicAttackFeatheredStrike_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -170,12 +170,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackFeatheredStrike_1_anomBuildup',
+      name: 'BasicAttackFeatheredStrike_1',
     },
   },
-  BasicAttackFeatheredStrike_2_dmg: {
+  'BasicAttackFeatheredStrike_2:standardDmg': {
     sheet: 'Vivian',
-    name: 'BasicAttackFeatheredStrike_2_dmg',
+    name: 'BasicAttackFeatheredStrike_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -184,12 +184,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackFeatheredStrike_2_dmg',
+      name: 'BasicAttackFeatheredStrike_2',
     },
   },
-  BasicAttackFeatheredStrike_2_daze: {
+  'BasicAttackFeatheredStrike_2:dazeBuildup': {
     sheet: 'Vivian',
-    name: 'BasicAttackFeatheredStrike_2_daze',
+    name: 'BasicAttackFeatheredStrike_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -198,12 +198,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackFeatheredStrike_2_daze',
+      name: 'BasicAttackFeatheredStrike_2',
     },
   },
-  BasicAttackFeatheredStrike_2_anomBuildup: {
+  'BasicAttackFeatheredStrike_2:anomBuildup': {
     sheet: 'Vivian',
-    name: 'BasicAttackFeatheredStrike_2_anomBuildup',
+    name: 'BasicAttackFeatheredStrike_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -212,12 +212,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackFeatheredStrike_2_anomBuildup',
+      name: 'BasicAttackFeatheredStrike_2',
     },
   },
-  BasicAttackFeatheredStrike_3_dmg: {
+  'BasicAttackFeatheredStrike_3:standardDmg': {
     sheet: 'Vivian',
-    name: 'BasicAttackFeatheredStrike_3_dmg',
+    name: 'BasicAttackFeatheredStrike_3:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -226,12 +226,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackFeatheredStrike_3_dmg',
+      name: 'BasicAttackFeatheredStrike_3',
     },
   },
-  BasicAttackFeatheredStrike_3_daze: {
+  'BasicAttackFeatheredStrike_3:dazeBuildup': {
     sheet: 'Vivian',
-    name: 'BasicAttackFeatheredStrike_3_daze',
+    name: 'BasicAttackFeatheredStrike_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -240,12 +240,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackFeatheredStrike_3_daze',
+      name: 'BasicAttackFeatheredStrike_3',
     },
   },
-  BasicAttackFeatheredStrike_3_anomBuildup: {
+  'BasicAttackFeatheredStrike_3:anomBuildup': {
     sheet: 'Vivian',
-    name: 'BasicAttackFeatheredStrike_3_anomBuildup',
+    name: 'BasicAttackFeatheredStrike_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -254,12 +254,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackFeatheredStrike_3_anomBuildup',
+      name: 'BasicAttackFeatheredStrike_3',
     },
   },
-  BasicAttackNoblewomanWaltz_0_dmg: {
+  'BasicAttackNoblewomanWaltz_0:standardDmg': {
     sheet: 'Vivian',
-    name: 'BasicAttackNoblewomanWaltz_0_dmg',
+    name: 'BasicAttackNoblewomanWaltz_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -268,12 +268,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackNoblewomanWaltz_0_dmg',
+      name: 'BasicAttackNoblewomanWaltz_0',
     },
   },
-  BasicAttackNoblewomanWaltz_0_daze: {
+  'BasicAttackNoblewomanWaltz_0:dazeBuildup': {
     sheet: 'Vivian',
-    name: 'BasicAttackNoblewomanWaltz_0_daze',
+    name: 'BasicAttackNoblewomanWaltz_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -282,12 +282,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackNoblewomanWaltz_0_daze',
+      name: 'BasicAttackNoblewomanWaltz_0',
     },
   },
-  BasicAttackNoblewomanWaltz_0_anomBuildup: {
+  'BasicAttackNoblewomanWaltz_0:anomBuildup': {
     sheet: 'Vivian',
-    name: 'BasicAttackNoblewomanWaltz_0_anomBuildup',
+    name: 'BasicAttackNoblewomanWaltz_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -296,12 +296,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackNoblewomanWaltz_0_anomBuildup',
+      name: 'BasicAttackNoblewomanWaltz_0',
     },
   },
-  BasicAttackFlutteringFrockSuspension_0_dmg: {
+  'BasicAttackFlutteringFrockSuspension_0:standardDmg': {
     sheet: 'Vivian',
-    name: 'BasicAttackFlutteringFrockSuspension_0_dmg',
+    name: 'BasicAttackFlutteringFrockSuspension_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -310,12 +310,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackFlutteringFrockSuspension_0_dmg',
+      name: 'BasicAttackFlutteringFrockSuspension_0',
     },
   },
-  BasicAttackFlutteringFrockSuspension_0_daze: {
+  'BasicAttackFlutteringFrockSuspension_0:dazeBuildup': {
     sheet: 'Vivian',
-    name: 'BasicAttackFlutteringFrockSuspension_0_daze',
+    name: 'BasicAttackFlutteringFrockSuspension_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -324,12 +324,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackFlutteringFrockSuspension_0_daze',
+      name: 'BasicAttackFlutteringFrockSuspension_0',
     },
   },
-  BasicAttackFlutteringFrockSuspension_0_anomBuildup: {
+  'BasicAttackFlutteringFrockSuspension_0:anomBuildup': {
     sheet: 'Vivian',
-    name: 'BasicAttackFlutteringFrockSuspension_0_anomBuildup',
+    name: 'BasicAttackFlutteringFrockSuspension_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -338,12 +338,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackFlutteringFrockSuspension_0_anomBuildup',
+      name: 'BasicAttackFlutteringFrockSuspension_0',
     },
   },
-  BasicAttackFeatherbloom_0_dmg: {
+  'BasicAttackFeatherbloom_0:standardDmg': {
     sheet: 'Vivian',
-    name: 'BasicAttackFeatherbloom_0_dmg',
+    name: 'BasicAttackFeatherbloom_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -352,12 +352,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackFeatherbloom_0_dmg',
+      name: 'BasicAttackFeatherbloom_0',
     },
   },
-  BasicAttackFeatherbloom_0_daze: {
+  'BasicAttackFeatherbloom_0:dazeBuildup': {
     sheet: 'Vivian',
-    name: 'BasicAttackFeatherbloom_0_daze',
+    name: 'BasicAttackFeatherbloom_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -366,12 +366,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackFeatherbloom_0_daze',
+      name: 'BasicAttackFeatherbloom_0',
     },
   },
-  BasicAttackFeatherbloom_0_anomBuildup: {
+  'BasicAttackFeatherbloom_0:anomBuildup': {
     sheet: 'Vivian',
-    name: 'BasicAttackFeatherbloom_0_anomBuildup',
+    name: 'BasicAttackFeatherbloom_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -380,12 +380,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackFeatherbloom_0_anomBuildup',
+      name: 'BasicAttackFeatherbloom_0',
     },
   },
-  DashAttackSilverThornedMelody_0_dmg: {
+  'DashAttackSilverThornedMelody_0:standardDmg': {
     sheet: 'Vivian',
-    name: 'DashAttackSilverThornedMelody_0_dmg',
+    name: 'DashAttackSilverThornedMelody_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -394,12 +394,12 @@ export const formulas = {
       damageType1: 'dash',
       attribute: 'physical',
       skillType: 'dodgeSkill',
-      name: 'DashAttackSilverThornedMelody_0_dmg',
+      name: 'DashAttackSilverThornedMelody_0',
     },
   },
-  DashAttackSilverThornedMelody_0_daze: {
+  'DashAttackSilverThornedMelody_0:dazeBuildup': {
     sheet: 'Vivian',
-    name: 'DashAttackSilverThornedMelody_0_daze',
+    name: 'DashAttackSilverThornedMelody_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -408,12 +408,12 @@ export const formulas = {
       damageType1: 'dash',
       attribute: 'physical',
       skillType: 'dodgeSkill',
-      name: 'DashAttackSilverThornedMelody_0_daze',
+      name: 'DashAttackSilverThornedMelody_0',
     },
   },
-  DashAttackSilverThornedMelody_0_anomBuildup: {
+  'DashAttackSilverThornedMelody_0:anomBuildup': {
     sheet: 'Vivian',
-    name: 'DashAttackSilverThornedMelody_0_anomBuildup',
+    name: 'DashAttackSilverThornedMelody_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -422,12 +422,12 @@ export const formulas = {
       damageType1: 'dash',
       attribute: 'physical',
       skillType: 'dodgeSkill',
-      name: 'DashAttackSilverThornedMelody_0_anomBuildup',
+      name: 'DashAttackSilverThornedMelody_0',
     },
   },
-  DodgeCounterWingbladeReverb_0_dmg: {
+  'DodgeCounterWingbladeReverb_0:standardDmg': {
     sheet: 'Vivian',
-    name: 'DodgeCounterWingbladeReverb_0_dmg',
+    name: 'DodgeCounterWingbladeReverb_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -436,12 +436,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterWingbladeReverb_0_dmg',
+      name: 'DodgeCounterWingbladeReverb_0',
     },
   },
-  DodgeCounterWingbladeReverb_0_daze: {
+  'DodgeCounterWingbladeReverb_0:dazeBuildup': {
     sheet: 'Vivian',
-    name: 'DodgeCounterWingbladeReverb_0_daze',
+    name: 'DodgeCounterWingbladeReverb_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -450,12 +450,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterWingbladeReverb_0_daze',
+      name: 'DodgeCounterWingbladeReverb_0',
     },
   },
-  DodgeCounterWingbladeReverb_0_anomBuildup: {
+  'DodgeCounterWingbladeReverb_0:anomBuildup': {
     sheet: 'Vivian',
-    name: 'DodgeCounterWingbladeReverb_0_anomBuildup',
+    name: 'DodgeCounterWingbladeReverb_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -464,12 +464,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterWingbladeReverb_0_anomBuildup',
+      name: 'DodgeCounterWingbladeReverb_0',
     },
   },
-  SpecialAttackSongOfSilverWings_0_dmg: {
+  'SpecialAttackSongOfSilverWings_0:standardDmg': {
     sheet: 'Vivian',
-    name: 'SpecialAttackSongOfSilverWings_0_dmg',
+    name: 'SpecialAttackSongOfSilverWings_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -478,12 +478,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackSongOfSilverWings_0_dmg',
+      name: 'SpecialAttackSongOfSilverWings_0',
     },
   },
-  SpecialAttackSongOfSilverWings_0_daze: {
+  'SpecialAttackSongOfSilverWings_0:dazeBuildup': {
     sheet: 'Vivian',
-    name: 'SpecialAttackSongOfSilverWings_0_daze',
+    name: 'SpecialAttackSongOfSilverWings_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -492,12 +492,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackSongOfSilverWings_0_daze',
+      name: 'SpecialAttackSongOfSilverWings_0',
     },
   },
-  SpecialAttackSongOfSilverWings_0_anomBuildup: {
+  'SpecialAttackSongOfSilverWings_0:anomBuildup': {
     sheet: 'Vivian',
-    name: 'SpecialAttackSongOfSilverWings_0_anomBuildup',
+    name: 'SpecialAttackSongOfSilverWings_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -506,12 +506,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackSongOfSilverWings_0_anomBuildup',
+      name: 'SpecialAttackSongOfSilverWings_0',
     },
   },
-  EXSpecialAttackVioletRequiem_0_dmg: {
+  'EXSpecialAttackVioletRequiem_0:standardDmg': {
     sheet: 'Vivian',
-    name: 'EXSpecialAttackVioletRequiem_0_dmg',
+    name: 'EXSpecialAttackVioletRequiem_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -520,12 +520,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackVioletRequiem_0_dmg',
+      name: 'EXSpecialAttackVioletRequiem_0',
     },
   },
-  EXSpecialAttackVioletRequiem_0_daze: {
+  'EXSpecialAttackVioletRequiem_0:dazeBuildup': {
     sheet: 'Vivian',
-    name: 'EXSpecialAttackVioletRequiem_0_daze',
+    name: 'EXSpecialAttackVioletRequiem_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -534,12 +534,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackVioletRequiem_0_daze',
+      name: 'EXSpecialAttackVioletRequiem_0',
     },
   },
-  EXSpecialAttackVioletRequiem_0_anomBuildup: {
+  'EXSpecialAttackVioletRequiem_0:anomBuildup': {
     sheet: 'Vivian',
-    name: 'EXSpecialAttackVioletRequiem_0_anomBuildup',
+    name: 'EXSpecialAttackVioletRequiem_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -548,12 +548,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackVioletRequiem_0_anomBuildup',
+      name: 'EXSpecialAttackVioletRequiem_0',
     },
   },
-  ChainAttackChorusOfCelestialWings_0_dmg: {
+  'ChainAttackChorusOfCelestialWings_0:standardDmg': {
     sheet: 'Vivian',
-    name: 'ChainAttackChorusOfCelestialWings_0_dmg',
+    name: 'ChainAttackChorusOfCelestialWings_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -562,12 +562,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackChorusOfCelestialWings_0_dmg',
+      name: 'ChainAttackChorusOfCelestialWings_0',
     },
   },
-  ChainAttackChorusOfCelestialWings_0_daze: {
+  'ChainAttackChorusOfCelestialWings_0:dazeBuildup': {
     sheet: 'Vivian',
-    name: 'ChainAttackChorusOfCelestialWings_0_daze',
+    name: 'ChainAttackChorusOfCelestialWings_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -576,12 +576,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackChorusOfCelestialWings_0_daze',
+      name: 'ChainAttackChorusOfCelestialWings_0',
     },
   },
-  ChainAttackChorusOfCelestialWings_0_anomBuildup: {
+  'ChainAttackChorusOfCelestialWings_0:anomBuildup': {
     sheet: 'Vivian',
-    name: 'ChainAttackChorusOfCelestialWings_0_anomBuildup',
+    name: 'ChainAttackChorusOfCelestialWings_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -590,12 +590,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackChorusOfCelestialWings_0_anomBuildup',
+      name: 'ChainAttackChorusOfCelestialWings_0',
     },
   },
-  UltimateSoaringBirdsSong_0_dmg: {
+  'UltimateSoaringBirdsSong_0:standardDmg': {
     sheet: 'Vivian',
-    name: 'UltimateSoaringBirdsSong_0_dmg',
+    name: 'UltimateSoaringBirdsSong_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -604,12 +604,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateSoaringBirdsSong_0_dmg',
+      name: 'UltimateSoaringBirdsSong_0',
     },
   },
-  UltimateSoaringBirdsSong_0_daze: {
+  'UltimateSoaringBirdsSong_0:dazeBuildup': {
     sheet: 'Vivian',
-    name: 'UltimateSoaringBirdsSong_0_daze',
+    name: 'UltimateSoaringBirdsSong_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -618,12 +618,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateSoaringBirdsSong_0_daze',
+      name: 'UltimateSoaringBirdsSong_0',
     },
   },
-  UltimateSoaringBirdsSong_0_anomBuildup: {
+  'UltimateSoaringBirdsSong_0:anomBuildup': {
     sheet: 'Vivian',
-    name: 'UltimateSoaringBirdsSong_0_anomBuildup',
+    name: 'UltimateSoaringBirdsSong_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -632,12 +632,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateSoaringBirdsSong_0_anomBuildup',
+      name: 'UltimateSoaringBirdsSong_0',
     },
   },
-  QuickAssistFrostwingGuard_0_dmg: {
+  'QuickAssistFrostwingGuard_0:standardDmg': {
     sheet: 'Vivian',
-    name: 'QuickAssistFrostwingGuard_0_dmg',
+    name: 'QuickAssistFrostwingGuard_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -646,12 +646,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistFrostwingGuard_0_dmg',
+      name: 'QuickAssistFrostwingGuard_0',
     },
   },
-  QuickAssistFrostwingGuard_0_daze: {
+  'QuickAssistFrostwingGuard_0:dazeBuildup': {
     sheet: 'Vivian',
-    name: 'QuickAssistFrostwingGuard_0_daze',
+    name: 'QuickAssistFrostwingGuard_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -660,12 +660,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistFrostwingGuard_0_daze',
+      name: 'QuickAssistFrostwingGuard_0',
     },
   },
-  QuickAssistFrostwingGuard_0_anomBuildup: {
+  'QuickAssistFrostwingGuard_0:anomBuildup': {
     sheet: 'Vivian',
-    name: 'QuickAssistFrostwingGuard_0_anomBuildup',
+    name: 'QuickAssistFrostwingGuard_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -674,12 +674,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistFrostwingGuard_0_anomBuildup',
+      name: 'QuickAssistFrostwingGuard_0',
     },
   },
-  DefensiveAssistSilverUmbrellaFormation_0_dmg: {
+  'DefensiveAssistSilverUmbrellaFormation_0:standardDmg': {
     sheet: 'Vivian',
-    name: 'DefensiveAssistSilverUmbrellaFormation_0_dmg',
+    name: 'DefensiveAssistSilverUmbrellaFormation_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -688,12 +688,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistSilverUmbrellaFormation_0_dmg',
+      name: 'DefensiveAssistSilverUmbrellaFormation_0',
     },
   },
-  DefensiveAssistSilverUmbrellaFormation_0_daze: {
+  'DefensiveAssistSilverUmbrellaFormation_0:dazeBuildup': {
     sheet: 'Vivian',
-    name: 'DefensiveAssistSilverUmbrellaFormation_0_daze',
+    name: 'DefensiveAssistSilverUmbrellaFormation_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -702,12 +702,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistSilverUmbrellaFormation_0_daze',
+      name: 'DefensiveAssistSilverUmbrellaFormation_0',
     },
   },
-  DefensiveAssistSilverUmbrellaFormation_0_anomBuildup: {
+  'DefensiveAssistSilverUmbrellaFormation_0:anomBuildup': {
     sheet: 'Vivian',
-    name: 'DefensiveAssistSilverUmbrellaFormation_0_anomBuildup',
+    name: 'DefensiveAssistSilverUmbrellaFormation_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -716,12 +716,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistSilverUmbrellaFormation_0_anomBuildup',
+      name: 'DefensiveAssistSilverUmbrellaFormation_0',
     },
   },
-  DefensiveAssistSilverUmbrellaFormation_1_dmg: {
+  'DefensiveAssistSilverUmbrellaFormation_1:standardDmg': {
     sheet: 'Vivian',
-    name: 'DefensiveAssistSilverUmbrellaFormation_1_dmg',
+    name: 'DefensiveAssistSilverUmbrellaFormation_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -730,12 +730,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistSilverUmbrellaFormation_1_dmg',
+      name: 'DefensiveAssistSilverUmbrellaFormation_1',
     },
   },
-  DefensiveAssistSilverUmbrellaFormation_1_daze: {
+  'DefensiveAssistSilverUmbrellaFormation_1:dazeBuildup': {
     sheet: 'Vivian',
-    name: 'DefensiveAssistSilverUmbrellaFormation_1_daze',
+    name: 'DefensiveAssistSilverUmbrellaFormation_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -744,12 +744,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistSilverUmbrellaFormation_1_daze',
+      name: 'DefensiveAssistSilverUmbrellaFormation_1',
     },
   },
-  DefensiveAssistSilverUmbrellaFormation_1_anomBuildup: {
+  'DefensiveAssistSilverUmbrellaFormation_1:anomBuildup': {
     sheet: 'Vivian',
-    name: 'DefensiveAssistSilverUmbrellaFormation_1_anomBuildup',
+    name: 'DefensiveAssistSilverUmbrellaFormation_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -758,12 +758,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistSilverUmbrellaFormation_1_anomBuildup',
+      name: 'DefensiveAssistSilverUmbrellaFormation_1',
     },
   },
-  DefensiveAssistSilverUmbrellaFormation_2_dmg: {
+  'DefensiveAssistSilverUmbrellaFormation_2:standardDmg': {
     sheet: 'Vivian',
-    name: 'DefensiveAssistSilverUmbrellaFormation_2_dmg',
+    name: 'DefensiveAssistSilverUmbrellaFormation_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -772,12 +772,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistSilverUmbrellaFormation_2_dmg',
+      name: 'DefensiveAssistSilverUmbrellaFormation_2',
     },
   },
-  DefensiveAssistSilverUmbrellaFormation_2_daze: {
+  'DefensiveAssistSilverUmbrellaFormation_2:dazeBuildup': {
     sheet: 'Vivian',
-    name: 'DefensiveAssistSilverUmbrellaFormation_2_daze',
+    name: 'DefensiveAssistSilverUmbrellaFormation_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -786,12 +786,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistSilverUmbrellaFormation_2_daze',
+      name: 'DefensiveAssistSilverUmbrellaFormation_2',
     },
   },
-  DefensiveAssistSilverUmbrellaFormation_2_anomBuildup: {
+  'DefensiveAssistSilverUmbrellaFormation_2:anomBuildup': {
     sheet: 'Vivian',
-    name: 'DefensiveAssistSilverUmbrellaFormation_2_anomBuildup',
+    name: 'DefensiveAssistSilverUmbrellaFormation_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -800,12 +800,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistSilverUmbrellaFormation_2_anomBuildup',
+      name: 'DefensiveAssistSilverUmbrellaFormation_2',
     },
   },
-  AssistFollowUpFeatherbladeExecution_0_dmg: {
+  'AssistFollowUpFeatherbladeExecution_0:standardDmg': {
     sheet: 'Vivian',
-    name: 'AssistFollowUpFeatherbladeExecution_0_dmg',
+    name: 'AssistFollowUpFeatherbladeExecution_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -814,12 +814,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpFeatherbladeExecution_0_dmg',
+      name: 'AssistFollowUpFeatherbladeExecution_0',
     },
   },
-  AssistFollowUpFeatherbladeExecution_0_daze: {
+  'AssistFollowUpFeatherbladeExecution_0:dazeBuildup': {
     sheet: 'Vivian',
-    name: 'AssistFollowUpFeatherbladeExecution_0_daze',
+    name: 'AssistFollowUpFeatherbladeExecution_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -828,12 +828,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpFeatherbladeExecution_0_daze',
+      name: 'AssistFollowUpFeatherbladeExecution_0',
     },
   },
-  AssistFollowUpFeatherbladeExecution_0_anomBuildup: {
+  'AssistFollowUpFeatherbladeExecution_0:anomBuildup': {
     sheet: 'Vivian',
-    name: 'AssistFollowUpFeatherbladeExecution_0_anomBuildup',
+    name: 'AssistFollowUpFeatherbladeExecution_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -842,7 +842,7 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpFeatherbladeExecution_0_anomBuildup',
+      name: 'AssistFollowUpFeatherbladeExecution_0',
     },
   },
   core_prophecy_dmg: {
