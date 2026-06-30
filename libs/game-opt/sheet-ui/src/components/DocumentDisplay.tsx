@@ -5,12 +5,7 @@ import { CalcContext, TagContext } from '@genshin-optimizer/game-opt/formula-ui'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import type { SxProps, Theme, TypographyOwnProps } from '@mui/material'
 import { Box, Collapse, Typography } from '@mui/material'
-import {
-  createContext,
-  useContext,
-  useState,
-  type ReactNode,
-} from 'react'
+import { type ReactNode, createContext, useContext, useState } from 'react'
 import type { Document, FieldsDocument, TextDocument } from '../types'
 import { ConditionalsDisplay } from './ConditionalDisplay'
 import { FieldsDisplay } from './FieldDisplay'
@@ -71,17 +66,11 @@ export function DocumentContent({
           typoVariant={typoVariant}
         />
       ) : (
-        <TextSectionDisplay
-          textDocument={document}
-          typoVariant={typoVariant}
-        />
+        <TextSectionDisplay textDocument={document} typoVariant={typoVariant} />
       )
     case 'conditional':
       return (
-        <ConditionalsDisplay
-          conditional={document.conditional}
-          bgt={bgt}
-        />
+        <ConditionalsDisplay conditional={document.conditional} bgt={bgt} />
       )
     default:
       return null
