@@ -10,7 +10,10 @@ import {
   Yidhari,
   Yixuan,
 } from '@genshin-optimizer/zzz/formula'
-import { CharMechanicsGroupedDisplay, TagDisplay } from '@genshin-optimizer/zzz/formula-ui'
+import {
+  CharMechanicsGroupedDisplay,
+  TagDisplay,
+} from '@genshin-optimizer/zzz/formula-ui'
 import { Box } from '@mui/material'
 
 export function CharSheetSection() {

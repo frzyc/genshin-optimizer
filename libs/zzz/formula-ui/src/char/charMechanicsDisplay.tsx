@@ -1,16 +1,29 @@
+import { ImgIcon } from '@genshin-optimizer/common/ui'
+import type { IFormulaData } from '@genshin-optimizer/game-opt/engine'
 import type { Document } from '@genshin-optimizer/game-opt/sheet-ui'
-import { DocumentDisplay } from '@genshin-optimizer/game-opt/sheet-ui'
+import {
+  DocumentContent,
+  DocumentDisplay,
+  DocumentGroupProvider,
+} from '@genshin-optimizer/game-opt/sheet-ui'
+import { commonDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { CharacterKey, SkillKey } from '@genshin-optimizer/zzz/consts'
 import { allSkillKeys } from '@genshin-optimizer/zzz/consts'
-import type { IFormulaData } from '@genshin-optimizer/game-opt/engine'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { formulas } from '@genshin-optimizer/zzz/formula'
 import { mappedStats } from '@genshin-optimizer/zzz/stats'
-import { Box, Stack } from '@mui/material'
-import { useMemo } from 'react'
-import { formulaMatchesAbility } from '../bundledFormulaFields'
-import { OptTalentSheetSectionHeader } from '../optPanelSections'
-import { OptTargetSkillSectionHeader } from '../optTargetDisplay'
+import { ZCard } from '@genshin-optimizer/zzz/ui'
+import { Box, Stack, Typography } from '@mui/material'
+import { type ReactNode, useMemo } from 'react'
+import {
+  formulaMatchesAbility,
+  skillSectionFlatIconKey,
+} from '../bundledFormulaFields'
+import {
+  talentSheetElementIcon,
+  talentSheetElementLabel,
+} from '../optPanelSections'
+import { st } from '../util'
 import { allTalentSheetElementKey } from './consts'
 import {
   DISPLAY_SECTION_ORDER,
@@ -97,6 +110,99 @@ const nonSkillSheetKeys = allTalentSheetElementKey.filter(
     !allSkillKeys.includes(k as SkillKey)
 )
 
+const mechanicsAbilityCardSx = {
+  mb: 1,
+  overflow: 'hidden',
+} as const
+
+const mechanicsSectionCardSx = {
+  overflow: 'hidden',
+} as const
+
+function CharMechanicsSectionHeader({
+  iconSrc,
+  children,
+}: {
+  iconSrc?: string
+  children: ReactNode
+}) {
+  return (
+    <Box
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: 1,
+        px: 2,
+        py: 1.25,
+        borderBottom: (theme) =>
+          `1px solid ${theme.palette.contentLight.light}`,
+      }}
+    >
+      {iconSrc && <ImgIcon src={iconSrc} size={1.5} />}
+      <Typography
+        variant="h6"
+        component="div"
+        sx={{ fontSize: '1.1rem', fontWeight: 700, lineHeight: 1.3 }}
+      >
+        {children}
+      </Typography>
+    </Box>
+  )
+}
+
+function AbilityMechanicsCard({ documents }: { documents: Document[] }) {
+  if (!documents.length) return null
+  const hasConditional = documents.some((doc) => doc.type === 'conditional')
+  if (hasConditional) {
+    return (
+      <Stack spacing={1} sx={{ mb: 1 }}>
+        {documents.map((document, i) => (
+          <ZCard key={i} bgt="normal" sx={mechanicsAbilityCardSx}>
+            <DocumentDisplay
+              document={document}
+              typoVariant="body2"
+              collapse={document.type === 'text'}
+            />
+          </ZCard>
+        ))}
+      </Stack>
+    )
+  }
+  return (
+    <DocumentGroupProvider>
+      <ZCard bgt="normal" sx={mechanicsAbilityCardSx}>
+        {documents.map((document, i) => (
+          <DocumentContent
+            key={i}
+            document={document}
+            typoVariant="body2"
+            collapse={document.type === 'text'}
+          />
+        ))}
+      </ZCard>
+    </DocumentGroupProvider>
+  )
+}
+
+function CharMechanicsSectionCard({
+  iconSrc,
+  title,
+  children,
+}: {
+  iconSrc?: string
+  title: ReactNode
+  children: ReactNode
+}) {
+  return (
+    <ZCard bgt="light" sx={mechanicsSectionCardSx}>
+      <CharMechanicsSectionHeader iconSrc={iconSrc}>
+        {title}
+      </CharMechanicsSectionHeader>
+      <Box sx={{ px: 1.5, py: 1.5 }}>{children}</Box>
+    </ZCard>
+  )
+}
+
 export function CharMechanicsGroupedDisplay({
   charKey,
 }: {
@@ -108,37 +214,50 @@ export function CharMechanicsGroupedDisplay({
   )
 
   return (
-    <Stack spacing={1.5}>
+    <Stack spacing={2} sx={{ px: 2, pb: 1 }}>
       {skillSections.map(({ section, abilities }) => (
-        <Box key={section}>
-          <OptTargetSkillSectionHeader skill={section} />
+        <CharMechanicsSectionCard
+          key={section}
+          iconSrc={commonDefIcon(
+            skillSectionFlatIconKey(section) as Parameters<
+              typeof commonDefIcon
+            >[0]
+          )}
+          title={st(`skills.${section}`)}
+        >
           {abilities.map(({ skill, ability, documents }) => (
-            <Box key={`${skill}_${ability}`}>
-              {documents.map((document, i) => (
-                <DocumentDisplay
-                  key={`${skill}_${ability}_${i}`}
-                  document={document}
-                  collapse
-                />
-              ))}
-            </Box>
+            <AbilityMechanicsCard
+              key={`${skill}_${ability}`}
+              documents={documents}
+            />
           ))}
-        </Box>
+        </CharMechanicsSectionCard>
       ))}
       {nonSkillSheetKeys.map((sheetKey) => {
         const element = charSheets[charKey][sheetKey]
         if (!element?.documents.length) return null
         return (
-          <Box key={sheetKey}>
-            <OptTalentSheetSectionHeader sheetKey={sheetKey} />
-            {element.documents.map((document, i) => (
-              <DocumentDisplay
-                key={`${sheetKey}_${i}`}
-                document={document}
-                collapse
-              />
-            ))}
-          </Box>
+          <CharMechanicsSectionCard
+            key={sheetKey}
+            iconSrc={talentSheetElementIcon(sheetKey)}
+            title={talentSheetElementLabel(sheetKey)}
+          >
+            <Stack spacing={1}>
+              {element.documents.map((document, i) => (
+                <ZCard
+                  key={`${sheetKey}_${i}`}
+                  bgt="normal"
+                  sx={mechanicsAbilityCardSx}
+                >
+                  <DocumentDisplay
+                    document={document}
+                    typoVariant="body2"
+                    collapse={document.type === 'text'}
+                  />
+                </ZCard>
+              ))}
+            </Stack>
+          </CharMechanicsSectionCard>
         )
       })}
     </Stack>

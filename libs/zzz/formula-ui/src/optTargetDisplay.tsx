@@ -2,7 +2,10 @@ import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import { commonDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { CharacterKey, SkillKey } from '@genshin-optimizer/zzz/consts'
 import type { FormulaDimension } from '@genshin-optimizer/zzz/formula'
-import { parseLegacyFormulaName, type Tag } from '@genshin-optimizer/zzz/formula'
+import {
+  type Tag,
+  parseLegacyFormulaName,
+} from '@genshin-optimizer/zzz/formula'
 import { Box, ListSubheader, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
 import { skillFromTag, skillSectionFlatIconKey } from './bundledFormulaFields'
@@ -17,9 +20,9 @@ export const FORMULA_DIMENSION_LABEL: Record<FormulaDimension, string> = {
   anomBuildup: 'Anom',
 }
 
-export function parseAbilityFromTag(tag: Tag):
-  | { skill: SkillKey; abilityKey: string; hitIndex?: string }
-  | undefined {
+export function parseAbilityFromTag(
+  tag: Tag
+): { skill: SkillKey; abilityKey: string; hitIndex?: string } | undefined {
   const skill = skillFromTag(tag)
   if (!skill || !tag.name) return undefined
 
@@ -40,8 +43,10 @@ export function isAbilityFormulaTag(tag: Tag): boolean {
 }
 
 function optTargetFormulaTitle(tag: Tag): ReactNode {
-  return tagFieldMap.subset(tag)[0]?.title ?? (
-    <TagDisplay tag={tag} preventRecursion />
+  return (
+    tagFieldMap.subset(tag)[0]?.title ?? (
+      <TagDisplay tag={tag} preventRecursion />
+    )
   )
 }
 
@@ -64,9 +69,7 @@ export function OptTargetFormulaLabel({
   const icon = (
     <ImgIcon
       src={commonDefIcon(
-        skillSectionFlatIconKey(section) as Parameters<
-          typeof commonDefIcon
-        >[0]
+        skillSectionFlatIconKey(section) as Parameters<typeof commonDefIcon>[0]
       )}
       size={inline ? 1.1 : 1.25}
     />
@@ -130,9 +133,7 @@ export function OptTargetSelectedLabel({
   inline?: boolean
 }) {
   if (isAbilityFormulaTag(tag)) {
-    return (
-      <AbilityOptTargetLabel charKey={charKey} tag={tag} inline={inline} />
-    )
+    return <AbilityOptTargetLabel charKey={charKey} tag={tag} inline={inline} />
   }
   if (getFormulaDisplaySection(charKey, tag)) {
     return <OptTargetFormulaLabel charKey={charKey} tag={tag} inline={inline} />
@@ -245,9 +246,7 @@ export function OptTargetSkillSectionHeader({ skill }: { skill: string }) {
     >
       <ImgIcon
         src={commonDefIcon(
-          skillSectionFlatIconKey(skill) as Parameters<
-            typeof commonDefIcon
-          >[0]
+          skillSectionFlatIconKey(skill) as Parameters<typeof commonDefIcon>[0]
         )}
         size={1.25}
       />

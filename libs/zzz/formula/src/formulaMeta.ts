@@ -23,17 +23,13 @@ export function formulaMetaKey(abilityName: string, q: string): string {
   return abilityName
 }
 
-export function parseLegacyFormulaName(name: string):
-  | { baseName: string; formulaDimension: FormulaDimension }
-  | undefined {
+export function parseLegacyFormulaName(
+  name: string
+): { baseName: string; formulaDimension: FormulaDimension } | undefined {
   const match = name.match(/^(.*)_(dmg|daze|anomBuildup)$/)
   if (!match) return undefined
   const [, baseName, suffix] = match
   const formulaDimension =
-    suffix === 'dmg'
-      ? 'dmg'
-      : suffix === 'daze'
-        ? 'daze'
-        : 'anomBuildup'
+    suffix === 'dmg' ? 'dmg' : suffix === 'daze' ? 'daze' : 'anomBuildup'
   return { baseName, formulaDimension }
 }

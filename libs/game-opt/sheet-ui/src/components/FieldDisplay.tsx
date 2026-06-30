@@ -134,10 +134,7 @@ export function MultiTagFieldDisplay({
     return { label, fieldRef, fieldRead, valueCalcRes }
   })
 
-  if (
-    !showZero &&
-    computed.every(({ valueCalcRes }) => !valueCalcRes.val)
-  )
+  if (!showZero && computed.every(({ valueCalcRes }) => !valueCalcRes.val))
     return null
 
   const contextRowSx = computed

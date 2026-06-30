@@ -3,15 +3,54 @@ import { CardThemed } from '@genshin-optimizer/common/ui'
 import { evalIfFunc } from '@genshin-optimizer/common/util'
 import { CalcContext, TagContext } from '@genshin-optimizer/game-opt/formula-ui'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
-import type { TypographyOwnProps } from '@mui/material'
+import type { SxProps, Theme, TypographyOwnProps } from '@mui/material'
 import { Box, Collapse, Typography } from '@mui/material'
-import { useContext, useState } from 'react'
+import {
+  createContext,
+  useContext,
+  useState,
+  type ReactNode,
+} from 'react'
 import type { Document, FieldsDocument, TextDocument } from '../types'
 import { ConditionalsDisplay } from './ConditionalDisplay'
 import { FieldsDisplay } from './FieldDisplay'
 import { HeaderDisplay } from './HeaderDisplay'
 
-export function DocumentDisplay({
+const DocumentGroupContext = createContext(false)
+
+function useInDocumentGroup() {
+  return useContext(DocumentGroupContext)
+}
+
+/** Enables grouped document layout inside a caller-provided card surface. */
+export function DocumentGroupProvider({ children }: { children: ReactNode }) {
+  return (
+    <DocumentGroupContext.Provider value={true}>
+      {children}
+    </DocumentGroupContext.Provider>
+  )
+}
+
+/** Card wrapper for multiple {@link DocumentContent} siblings sharing one surface. */
+export function DocumentGroup({
+  children,
+  bgt = 'normal',
+  sx,
+}: {
+  children: ReactNode
+  bgt?: CardBackgroundColor
+  sx?: SxProps<Theme>
+}) {
+  return (
+    <DocumentGroupProvider>
+      <CardThemed bgt={bgt} sx={sx}>
+        {children}
+      </CardThemed>
+    </DocumentGroupProvider>
+  )
+}
+
+export function DocumentContent({
   document,
   bgt = 'normal',
   collapse = false,
@@ -24,7 +63,7 @@ export function DocumentDisplay({
 }) {
   switch (document.type) {
     case 'fields':
-      return <FieldsSectionDisplay fieldsDocument={document} bgt={bgt} />
+      return <FieldsSectionContent fieldsDocument={document} bgt={bgt} />
     case 'text':
       return collapse ? (
         <TextSectionDisplayCollapse
@@ -32,15 +71,15 @@ export function DocumentDisplay({
           typoVariant={typoVariant}
         />
       ) : (
-        <TextSectionDisplay textDocument={document} typoVariant={typoVariant} />
+        <TextSectionDisplay
+          textDocument={document}
+          typoVariant={typoVariant}
+        />
       )
     case 'conditional':
       return (
         <ConditionalsDisplay
           conditional={document.conditional}
-          // hideDesc={hideDesc}
-          // hideHeader={hideHeader}
-          // disabled={disabled}
           bgt={bgt}
         />
       )
@@ -49,7 +88,32 @@ export function DocumentDisplay({
   }
 }
 
-function FieldsSectionDisplay({
+export function DocumentDisplay({
+  document,
+  bgt = 'normal',
+  collapse = false,
+  typoVariant = 'body1',
+}: {
+  document: Document
+  bgt?: CardBackgroundColor
+  collapse?: boolean
+  typoVariant?: TypographyOwnProps['variant']
+}) {
+  const content = (
+    <DocumentContent
+      document={document}
+      bgt={bgt}
+      collapse={collapse}
+      typoVariant={typoVariant}
+    />
+  )
+  if (document.type === 'fields') {
+    return <CardThemed bgt={bgt}>{content}</CardThemed>
+  }
+  return content
+}
+
+function FieldsSectionContent({
   fieldsDocument,
   bgt = 'normal',
 }: {
@@ -57,7 +121,7 @@ function FieldsSectionDisplay({
   bgt?: CardBackgroundColor
 }) {
   return (
-    <CardThemed bgt={bgt}>
+    <>
       {fieldsDocument.header && (
         <HeaderDisplay
           header={fieldsDocument.header}
@@ -65,7 +129,7 @@ function FieldsSectionDisplay({
         />
       )}
       <FieldsDisplay bgt={bgt} fields={fieldsDocument.fields} />
-    </CardThemed>
+    </>
   )
 }
 
@@ -78,14 +142,34 @@ function TextSectionDisplay({
 }) {
   const calculator = useContext(CalcContext)
   const tag = useContext(TagContext)
+  const grouped = useInDocumentGroup()
   if (!calculator) return null
+  const body = evalIfFunc(textDocument.text, calculator.withTag(tag))
   return (
-    <Typography variant={typoVariant}>
-      {textDocument.header && <HeaderDisplay header={textDocument.header} />}
-      {evalIfFunc(textDocument.text, calculator.withTag(tag))}
-    </Typography>
+    <>
+      {textDocument.header && (
+        <HeaderDisplay
+          header={textDocument.header}
+          hideDivider={!body}
+          compact={grouped}
+        />
+      )}
+      {body && (
+        <Typography
+          variant={typoVariant}
+          sx={{
+            px: 2,
+            pb: grouped ? 1 : 2,
+            pt: textDocument.header ? 0 : 2,
+          }}
+        >
+          {body}
+        </Typography>
+      )}
+    </>
   )
 }
+
 function TextSectionDisplayCollapse({
   textDocument,
   typoVariant,
