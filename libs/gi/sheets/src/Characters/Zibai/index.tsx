@@ -176,12 +176,7 @@ const c2Moonfall_stride_dmgInc = infoMut(
         equal(
           condA1Moonfall,
           'on',
-          prod(
-            percent(
-              dm.constellation2.stride_dmgInc
-            ),
-            input.total.def
-          )
+          prod(percent(dm.constellation2.stride_dmgInc), input.total.def)
         )
       )
     )
