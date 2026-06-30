@@ -1,5 +1,5 @@
-import { DropdownButton, NumberInputLazy } from '@genshin-optimizer/common/ui'
-import { clamp } from '@genshin-optimizer/common/util'
+import { DropdownButton, NumberInputLazy } from '@genshin-optimizer/common-ui'
+import { clamp } from '@genshin-optimizer/common-util'
 import {
   type MilestoneKey,
   ambiguousLevel,
@@ -10,7 +10,7 @@ import {
   milestoneLevelsLow,
   milestoneMaxLevel,
   milestoneMaxLevelLow,
-} from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-consts'
 import { Box, Button, InputAdornment, MenuItem } from '@mui/material'
 import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'

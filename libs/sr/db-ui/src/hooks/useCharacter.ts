@@ -1,5 +1,5 @@
-import { useDataManagerBase } from '@genshin-optimizer/common/database-ui'
-import type { CharacterKey } from '@genshin-optimizer/sr/consts'
+import { useDataManagerBase } from '@genshin-optimizer/common-database-ui'
+import type { CharacterKey } from '@genshin-optimizer/sr-consts'
 import { useDatabaseContext } from '../context'
 
 export function useCharacter(characterKey: CharacterKey | '' | undefined) {

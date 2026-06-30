@@ -4,25 +4,25 @@ import {
   SolidToggleButtonGroup,
   SqBadge,
   theme,
-} from '@genshin-optimizer/common/ui'
+} from '@genshin-optimizer/common-ui'
 import {
   bulkCatTotal,
   catTotal,
   handleMultiSelect,
-} from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-util'
 import {
   allLocationCharacterKeys,
   allRarityKeys,
   allWeaponTypeKeys,
-} from '@genshin-optimizer/gi/consts'
-import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { getWeaponStat } from '@genshin-optimizer/gi/stats'
+} from '@genshin-optimizer/gi-consts'
+import type { ICachedWeapon } from '@genshin-optimizer/gi-db'
+import { useDatabase } from '@genshin-optimizer/gi-db-ui'
+import { getWeaponStat } from '@genshin-optimizer/gi-stats'
 import {
   LocationFilterMultiAutocomplete,
   WeaponRarityToggle,
   WeaponToggle,
-} from '@genshin-optimizer/gi/ui'
+} from '@genshin-optimizer/gi-ui'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import LockIcon from '@mui/icons-material/Lock'

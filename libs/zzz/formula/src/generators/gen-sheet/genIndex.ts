@@ -1,11 +1,11 @@
 import { mkdirSync, writeFileSync } from 'fs'
 import { dirname } from 'path'
-import { formatText } from '@genshin-optimizer/common/pipeline'
+import { formatText } from '@genshin-optimizer/common-pipeline'
 import {
   allCharacterKeys,
   allDiscSetKeys,
   allWengineKeys,
-} from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-consts'
 import type { Tree } from '@nx/devkit'
 import { workspaceRoot } from '@nx/devkit'
 import { commonSheets } from '../../data/util'

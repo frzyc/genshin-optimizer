@@ -1,12 +1,12 @@
-import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
-import { ColorText, SqBadge } from '@genshin-optimizer/common/ui'
-import { evalIfFunc, getUnitStr } from '@genshin-optimizer/common/util'
-import type { Calculator as GameOptCalculator } from '@genshin-optimizer/game-opt/engine'
-import type { StatKey } from '@genshin-optimizer/zzz/consts'
-import { elementalData, statKeyTextMap } from '@genshin-optimizer/zzz/consts'
-import { Read, type Tag } from '@genshin-optimizer/zzz/formula'
-import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
-import { AttributeName, StatDisplay } from '@genshin-optimizer/zzz/ui'
+import { iconInlineProps } from '@genshin-optimizer/common-svgicons'
+import { ColorText, SqBadge } from '@genshin-optimizer/common-ui'
+import { evalIfFunc, getUnitStr } from '@genshin-optimizer/common-util'
+import type { Calculator as GameOptCalculator } from '@genshin-optimizer/game-opt-engine'
+import type { StatKey } from '@genshin-optimizer/zzz-consts'
+import { elementalData, statKeyTextMap } from '@genshin-optimizer/zzz-consts'
+import { Read, type Tag } from '@genshin-optimizer/zzz-formula'
+import { StatIcon } from '@genshin-optimizer/zzz-svgicons'
+import { AttributeName, StatDisplay } from '@genshin-optimizer/zzz-ui'
 import {
   condMap,
   damageTypeKeysMap,

@@ -1,4 +1,4 @@
-import { DropdownButton } from '@genshin-optimizer/common/ui'
+import { DropdownButton } from '@genshin-optimizer/common-ui'
 import { languageCodeList } from '@genshin-optimizer/gi/i18n'
 import { MenuItem } from '@mui/material'
 import { Trans, useTranslation } from 'react-i18next'

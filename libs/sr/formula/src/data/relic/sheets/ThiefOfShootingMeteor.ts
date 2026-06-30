@@ -1,5 +1,5 @@
-import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
-import { allStats } from '@genshin-optimizer/sr/stats'
+import type { RelicSetKey } from '@genshin-optimizer/sr-consts'
+import { allStats } from '@genshin-optimizer/sr-stats'
 import { entriesForRelic, registerRelic } from '../util'
 
 const key: RelicSetKey = 'ThiefOfShootingMeteor'

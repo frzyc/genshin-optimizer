@@ -2,7 +2,7 @@ import type {
   ArtifactSetKey,
   CharacterSheetKey,
   WeaponKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import { Translate } from '@genshin-optimizer/gi/i18n'
 
 import type { ReactNode } from 'react'

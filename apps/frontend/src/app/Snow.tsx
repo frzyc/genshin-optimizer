@@ -1,5 +1,5 @@
-import { range } from '@genshin-optimizer/common/util'
-import { SnowContext } from '@genshin-optimizer/gi/ui'
+import { range } from '@genshin-optimizer/common-util'
+import { SnowContext } from '@genshin-optimizer/gi-ui'
 import { useContext } from 'react'
 
 export default function Snow() {

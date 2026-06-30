@@ -4,17 +4,17 @@ import {
   objKeyMap,
   objMap,
   range,
-} from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-util'
 import {
   type ArtifactSetKey,
   type ArtifactSlotKey,
   allArtifactSlotKeys,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import type {
   ArtSetExclusion,
   ArtSetExclusionKey,
-} from '@genshin-optimizer/gi/db'
-import type { ConstantNode, OptNode } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-db'
+import type { ConstantNode, OptNode } from '@genshin-optimizer/gi-wr'
 import {
   allOperations,
   constant,
@@ -26,7 +26,7 @@ import {
   min,
   sum,
   threshold,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 
 type MicropassOperation =
   | 'reaffine'

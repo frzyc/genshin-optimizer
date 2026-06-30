@@ -1,11 +1,11 @@
-import type { Preset, SrcCondInfo } from '@genshin-optimizer/game-opt/engine'
+import type { Preset, SrcCondInfo } from '@genshin-optimizer/game-opt-engine'
 import type {
   ArtifactSetKey,
   MainStatKey,
   SubstatKey,
-} from '@genshin-optimizer/gi/consts'
-import type { ICharacter, IWeapon } from '@genshin-optimizer/gi/good'
-import { cmpEq, cmpNE } from '@genshin-optimizer/pando/engine'
+} from '@genshin-optimizer/gi-consts'
+import type { ICharacter, IWeapon } from '@genshin-optimizer/gi-good'
+import { cmpEq, cmpNE } from '@genshin-optimizer/pando-engine'
 import type { Member, Sheet, TagMapNodeEntries } from './data/util'
 import {
   conditionalEntries,

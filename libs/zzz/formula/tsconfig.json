@@ -1,18 +1,31 @@
 {
   "extends": "../../../tsconfig.base.json",
-  "compilerOptions": {
-    "module": "commonjs",
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "exactOptionalPropertyTypes": false
-  },
   "files": [],
-  "include": [],
   "references": [
+    {
+      "path": "../zood"
+    },
+    {
+      "path": "../../common/pipeline"
+    },
+    {
+      "path": "../stats"
+    },
+    {
+      "path": "../consts"
+    },
+    {
+      "path": "../../pando/engine"
+    },
+    {
+      "path": "../../game-opt/formula"
+    },
+    {
+      "path": "../../game-opt/engine"
+    },
+    {
+      "path": "../../common/util"
+    },
     {
       "path": "./tsconfig.lib.json"
     },

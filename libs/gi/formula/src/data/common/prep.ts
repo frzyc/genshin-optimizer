@@ -1,11 +1,11 @@
-import { tagVal } from '@genshin-optimizer/game-opt/engine'
+import { tagVal } from '@genshin-optimizer/game-opt-engine'
 import {
   cmpEq,
   dynTag,
   lookup,
   prod,
   sum,
-} from '@genshin-optimizer/pando/engine'
+} from '@genshin-optimizer/pando-engine'
 import type { TagMapNodeEntries } from '../util'
 import { enemy, own, ownBuff, percent } from '../util'
 

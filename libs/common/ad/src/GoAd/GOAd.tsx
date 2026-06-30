@@ -1,4 +1,4 @@
-import { useRefSize } from '@genshin-optimizer/common/ui'
+import { useRefSize } from '@genshin-optimizer/common-ui'
 import { Link, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import type { ReactNode } from 'react'

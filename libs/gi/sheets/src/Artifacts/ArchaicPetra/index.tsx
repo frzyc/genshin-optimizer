@@ -1,8 +1,8 @@
-import { ColorText } from '@genshin-optimizer/common/ui'
-import { objMap } from '@genshin-optimizer/common/util'
-import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
-import { absorbableEle } from '@genshin-optimizer/gi/consts'
-import type { Data } from '@genshin-optimizer/gi/wr'
+import { ColorText } from '@genshin-optimizer/common-ui'
+import { objMap } from '@genshin-optimizer/common-util'
+import type { ArtifactSetKey } from '@genshin-optimizer/gi-consts'
+import { absorbableEle } from '@genshin-optimizer/gi-consts'
+import type { Data } from '@genshin-optimizer/gi-wr'
 import {
   equal,
   greaterEq,
@@ -10,7 +10,7 @@ import {
   input,
   percent,
   sum,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 import { cond, nonStackBuff, stg, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { SetEffectSheet } from '../IArtifactSheet'

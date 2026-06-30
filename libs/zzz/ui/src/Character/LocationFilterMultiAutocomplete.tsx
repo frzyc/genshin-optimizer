@@ -1,10 +1,10 @@
-import type { GeneralAutocompleteOption } from '@genshin-optimizer/common/ui'
-import { GeneralAutocompleteMulti } from '@genshin-optimizer/common/ui'
+import type { GeneralAutocompleteOption } from '@genshin-optimizer/common-ui'
+import { GeneralAutocompleteMulti } from '@genshin-optimizer/common-ui'
 import {
   type LocationKey,
   allLocationKeys,
-} from '@genshin-optimizer/zzz/consts'
-import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
+} from '@genshin-optimizer/zzz-consts'
+import { useDatabaseContext } from '@genshin-optimizer/zzz-db-ui'
 import { Box, Chip, Skeleton } from '@mui/material'
 import { Suspense, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'

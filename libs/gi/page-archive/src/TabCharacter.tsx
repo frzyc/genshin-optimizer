@@ -1,27 +1,27 @@
-import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
-import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { ColorText, ImgIcon, useInfScroll } from '@genshin-optimizer/common/ui'
-import type { SortConfigs } from '@genshin-optimizer/common/util'
-import { handleMultiSelect, sortFunction } from '@genshin-optimizer/common/util'
-import { imgAssets } from '@genshin-optimizer/gi/assets'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+import { useDataEntryBase } from '@genshin-optimizer/common-database-ui'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
+import { ColorText, ImgIcon, useInfScroll } from '@genshin-optimizer/common-ui'
+import type { SortConfigs } from '@genshin-optimizer/common-util'
+import { handleMultiSelect, sortFunction } from '@genshin-optimizer/common-util'
+import { imgAssets } from '@genshin-optimizer/gi-assets'
+import type { CharacterKey } from '@genshin-optimizer/gi-consts'
 import {
   allCharacterKeys,
   allWeaponTypeKeys,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import type {
   ArchiveCharacterOption,
   ICachedCharacter,
-} from '@genshin-optimizer/gi/db'
-import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { i18n } from '@genshin-optimizer/gi/i18n'
-import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
-import { ElementIcon } from '@genshin-optimizer/gi/svgicons'
+} from '@genshin-optimizer/gi-db'
+import { useDBMeta, useDatabase } from '@genshin-optimizer/gi-db-ui'
+import { getCharEle, getCharStat } from '@genshin-optimizer/gi-stats'
+import { ElementIcon } from '@genshin-optimizer/gi-svgicons'
 import {
   CharacterName,
   SillyContext,
   iconAsset,
-} from '@genshin-optimizer/gi/ui'
+} from '@genshin-optimizer/gi-ui'
+import { i18n } from '@genshin-optimizer/gi/i18n'
 import SearchIcon from '@mui/icons-material/Search'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import type { Palette } from '@mui/material'

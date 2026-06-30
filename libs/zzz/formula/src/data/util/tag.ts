@@ -1,4 +1,4 @@
-import { objFilterKeys } from '@genshin-optimizer/common/util'
+import { objFilterKeys } from '@genshin-optimizer/common-util'
 import {
   type Desc as BaseDesc,
   createAllBoolConditionals,
@@ -7,9 +7,9 @@ import {
   createConditionalEntries,
   createConvert,
   tag,
-} from '@genshin-optimizer/game-opt/engine'
-import type { NumNode } from '@genshin-optimizer/pando/engine'
-import { constant } from '@genshin-optimizer/pando/engine'
+} from '@genshin-optimizer/game-opt-engine'
+import type { NumNode } from '@genshin-optimizer/pando-engine'
+import { constant } from '@genshin-optimizer/pando-engine'
 import type { Sheet, Stat } from './listing'
 import { flatAndPercentStats, nonFlatAndPercentStats } from './listing'
 import type { Read, Tag } from './read'

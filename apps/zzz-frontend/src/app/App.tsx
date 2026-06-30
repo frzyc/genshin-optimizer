@@ -2,14 +2,14 @@ import {
   AdBanner,
   AdBlockContextWrapper,
   AdRailSticky,
-} from '@genshin-optimizer/common/ad'
-import { ScrollTop, useRefSize } from '@genshin-optimizer/common/ui'
-import { isDev } from '@genshin-optimizer/common/util'
-import { setDebugMode } from '@genshin-optimizer/pando/engine'
-import { DatabaseProvider } from '@genshin-optimizer/zzz/db-ui'
+} from '@genshin-optimizer/common-ad'
+import { ScrollTop, useRefSize } from '@genshin-optimizer/common-ui'
+import { isDev } from '@genshin-optimizer/common-util'
+import { setDebugMode } from '@genshin-optimizer/pando-engine'
+import { DatabaseProvider } from '@genshin-optimizer/zzz-db-ui'
 import '@genshin-optimizer/zzz/i18n' // import to load translations
-import PageHome from '@genshin-optimizer/zzz/page-home'
-import { theme } from '@genshin-optimizer/zzz/theme'
+import PageHome from '@genshin-optimizer/zzz-page-home'
+import { theme } from '@genshin-optimizer/zzz-theme'
 import {
   Box,
   Container,
@@ -21,7 +21,7 @@ import {
 import { Suspense, lazy } from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import '../styles.scss'
-import { ZOAdWrapper } from '@genshin-optimizer/zzz/ui'
+import { ZOAdWrapper } from '@genshin-optimizer/zzz-ui'
 import Footer from './Footer'
 import Header from './Header'
 const PageDiscs = lazy(() => import('@genshin-optimizer/zzz/page-discs'))

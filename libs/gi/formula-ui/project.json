@@ -1,8 +1,0 @@
-{
-  "name": "gi-formula-ui",
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/gi/formula-ui/src",
-  "projectType": "library",
-  "tags": [],
-  "targets": {}
-}

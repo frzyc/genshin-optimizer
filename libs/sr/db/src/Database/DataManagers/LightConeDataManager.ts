@@ -1,9 +1,9 @@
-import type { CharacterKey } from '@genshin-optimizer/sr/consts'
+import type { CharacterKey } from '@genshin-optimizer/sr-consts'
 import type {
   ILightCone,
   ISrObjectDescription,
-} from '@genshin-optimizer/sr/srod'
-import { parseLightCone } from '@genshin-optimizer/sr/srod'
+} from '@genshin-optimizer/sr-srod'
+import { parseLightCone } from '@genshin-optimizer/sr-srod'
 import type {
   ICachedCharacter,
   ICachedLightCone,

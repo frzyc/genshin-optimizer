@@ -2,17 +2,17 @@ import {
   crawlObject,
   objKeyMap,
   objKeyValMap,
-} from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-util'
 import {
   allArtifactSetKeys,
   allArtifactSlotKeys,
   allLunarReactionKeys,
   allRegionKeys,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import {
   crittableTransformativeReactions,
   transformativeReactionLevelMultipliers,
-} from '@genshin-optimizer/gi/keymap'
+} from '@genshin-optimizer/gi-keymap'
 import {
   allAdditive,
   allAmplifying,
@@ -24,7 +24,7 @@ import {
   allNonstackBuffs,
   allTalents,
   allTransformative,
-} from '@genshin-optimizer/gi/wr-types'
+} from '@genshin-optimizer/gi-wr-types'
 import { info } from './info'
 import { deepNodeClone } from './internal'
 import type { Data, Info, NodeData, NumNode, ReadNode, StrNode } from './type'

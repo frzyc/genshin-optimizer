@@ -1,16 +1,16 @@
-import { clamp, getUnitStr, valueString } from '@genshin-optimizer/common/util'
-import { AssetData, CommonAssetData } from '@genshin-optimizer/gi/assets-data'
+import { clamp, getUnitStr, valueString } from '@genshin-optimizer/common-util'
+import { AssetData, CommonAssetData } from '@genshin-optimizer/gi-assets-data'
 import {
   type CharacterSheetKey,
   type LocationGenderedCharacterKey,
   sheetKeyToCharKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import { i18nInstance } from '@genshin-optimizer/gi/i18n-node'
 import {
   getCharEle,
   getCharParam,
   getCharStat,
-} from '@genshin-optimizer/gi/stats'
+} from '@genshin-optimizer/gi-stats'
 import type { AnyComponentBuilder, MessageReaction } from 'discord.js'
 import {
   ActionRowBuilder,

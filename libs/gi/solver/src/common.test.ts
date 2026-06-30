@@ -1,18 +1,18 @@
-import { cartesian, objKeyMap } from '@genshin-optimizer/common/util'
+import { cartesian, objKeyMap } from '@genshin-optimizer/common-util'
 import {
   type ArtifactSetKey,
   type ArtifactSlotKey,
   allArtifactSlotKeys,
-} from '@genshin-optimizer/gi/consts'
-import type { ArtSetExclusion } from '@genshin-optimizer/gi/db'
-import type { OptNode } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-consts'
+import type { ArtSetExclusion } from '@genshin-optimizer/gi-db'
+import type { OptNode } from '@genshin-optimizer/gi-wr'
 import {
   dynRead,
   precompute,
   prod,
   sum,
   threshold,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 import type { ArtifactBuildData, ArtifactsBySlot } from './common'
 import { artSetPerm, exclusionToAllowed, pruneAll } from './common'
 

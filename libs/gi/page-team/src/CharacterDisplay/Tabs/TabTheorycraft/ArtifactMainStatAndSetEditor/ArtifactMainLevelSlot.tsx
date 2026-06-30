@@ -1,27 +1,27 @@
-import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import { iconInlineProps } from '@genshin-optimizer/common-svgicons'
 import {
   CardThemed,
   DropdownButton,
   NumberInputLazy,
-} from '@genshin-optimizer/common/ui'
-import { getUnitStr } from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-ui'
+import { getUnitStr } from '@genshin-optimizer/common-util'
 import type {
   ArtifactRarity,
   ArtifactSlotKey,
-} from '@genshin-optimizer/gi/consts'
-import { artMaxLevel, artSlotMainKeys } from '@genshin-optimizer/gi/consts'
-import type { BuildTcArtifactSlot } from '@genshin-optimizer/gi/db'
-import { KeyMap } from '@genshin-optimizer/gi/keymap'
-import { SlotIcon, StatIcon } from '@genshin-optimizer/gi/svgicons'
+} from '@genshin-optimizer/gi-consts'
+import { artMaxLevel, artSlotMainKeys } from '@genshin-optimizer/gi-consts'
+import type { BuildTcArtifactSlot } from '@genshin-optimizer/gi-db'
+import { KeyMap } from '@genshin-optimizer/gi-keymap'
+import { SlotIcon, StatIcon } from '@genshin-optimizer/gi-svgicons'
 import {
   StatColoredWithUnit,
   StatWithUnit,
   artifactLevelVariant,
-} from '@genshin-optimizer/gi/ui'
+} from '@genshin-optimizer/gi-ui'
 import {
   artDisplayValue,
   getMainStatDisplayValue,
-} from '@genshin-optimizer/gi/util'
+} from '@genshin-optimizer/gi-util'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import { Box, MenuItem } from '@mui/material'
 import InputAdornment from '@mui/material/InputAdornment'

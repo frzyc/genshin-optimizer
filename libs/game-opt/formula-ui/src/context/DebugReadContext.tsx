@@ -1,4 +1,4 @@
-import type { BaseRead } from '@genshin-optimizer/pando/engine'
+import type { BaseRead } from '@genshin-optimizer/pando-engine'
 import { createContext } from 'react'
 
 export type DebugReadContextObj = {

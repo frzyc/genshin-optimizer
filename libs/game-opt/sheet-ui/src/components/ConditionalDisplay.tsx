@@ -1,17 +1,17 @@
-import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
+import type { CardBackgroundColor } from '@genshin-optimizer/common-ui'
 import {
   CardThemed,
   DropdownButton,
   NumberInputLazy,
   SqBadge,
   usePrev,
-} from '@genshin-optimizer/common/ui'
-import { evalIfFunc } from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-ui'
+import { evalIfFunc } from '@genshin-optimizer/common-util'
 import type {
   IListConditionalData,
   INumConditionalData,
-} from '@genshin-optimizer/game-opt/engine'
-import { CalcContext, TagContext } from '@genshin-optimizer/game-opt/formula-ui'
+} from '@genshin-optimizer/game-opt-engine'
+import { CalcContext, TagContext } from '@genshin-optimizer/game-opt-formula-ui'
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'

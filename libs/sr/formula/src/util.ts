@@ -1,6 +1,6 @@
-import type { Preset } from '@genshin-optimizer/game-opt/engine'
-import type { NumNode, OP } from '@genshin-optimizer/pando/engine'
-import { cmpEq, cmpNE, custom } from '@genshin-optimizer/pando/engine'
+import type { Preset } from '@genshin-optimizer/game-opt-engine'
+import type { NumNode, OP } from '@genshin-optimizer/pando-engine'
+import { cmpEq, cmpNE, custom } from '@genshin-optimizer/pando-engine'
 import type {
   AscensionKey,
   LightConeKey,
@@ -8,12 +8,12 @@ import type {
   RelicSetKey,
   RelicSubStatKey,
   SuperimposeKey,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 import {
   allBonusAbilityKeys,
   allStatBoostKeys,
-} from '@genshin-optimizer/sr/consts'
-import type { ICharacter } from '@genshin-optimizer/sr/srod'
+} from '@genshin-optimizer/sr-consts'
+import type { ICharacter } from '@genshin-optimizer/sr-srod'
 import type { Member, TagMapNodeEntries } from './data/util'
 import {
   convert,

@@ -1,22 +1,22 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { CardThemed, ModalWrapper, SqBadge } from '@genshin-optimizer/common/ui'
-import { handleMultiSelect } from '@genshin-optimizer/common/util'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
+import { CardThemed, ModalWrapper, SqBadge } from '@genshin-optimizer/common-ui'
+import { handleMultiSelect } from '@genshin-optimizer/common-util'
 import type {
   RelicCavernSetKey,
   RelicMainStatKey,
   RelicPlanarSetKey,
   RelicSlotKey,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 import {
   allRelicSlotKeys,
   relicSlotToMainStatKeys,
-} from '@genshin-optimizer/sr/consts'
-import type { ICachedRelic } from '@genshin-optimizer/sr/db'
+} from '@genshin-optimizer/sr-consts'
+import type { ICachedRelic } from '@genshin-optimizer/sr-db'
 import {
   OptConfigContext,
   useDatabaseContext,
-} from '@genshin-optimizer/sr/db-ui'
-import { StatDisplay } from '@genshin-optimizer/sr/ui'
+} from '@genshin-optimizer/sr-db-ui'
+import { StatDisplay } from '@genshin-optimizer/sr-ui'
 import CloseIcon from '@mui/icons-material/Close'
 import {
   Button,

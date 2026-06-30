@@ -1,4 +1,4 @@
-import { SnowContext } from '@genshin-optimizer/gi/ui'
+import { SnowContext } from '@genshin-optimizer/gi-ui'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
 import { Button } from '@mui/material'

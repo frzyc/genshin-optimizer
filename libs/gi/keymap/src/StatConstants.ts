@@ -1,7 +1,7 @@
 import type {
   ElementWithPhyKey,
   TransformativeReactionKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 
 export const hitTypes = {
   hit: 'DMG',

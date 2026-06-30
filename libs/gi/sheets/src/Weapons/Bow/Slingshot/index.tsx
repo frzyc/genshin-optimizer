@@ -1,12 +1,12 @@
-import { objKeyMap } from '@genshin-optimizer/common/util'
-import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { objKeyMap } from '@genshin-optimizer/common-util'
+import type { WeaponKey } from '@genshin-optimizer/gi-consts'
 import {
   input,
   lookup,
   naught,
   percent,
   subscript,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 import { cond, st, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { WeaponSheet, headerTemplate } from '../../WeaponSheet'

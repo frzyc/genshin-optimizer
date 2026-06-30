@@ -1,5 +1,5 @@
-import { DropdownButton } from '@genshin-optimizer/common/ui'
-import { range } from '@genshin-optimizer/common/util'
+import { DropdownButton } from '@genshin-optimizer/common-ui'
+import { range } from '@genshin-optimizer/common-util'
 import { MenuItem } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 

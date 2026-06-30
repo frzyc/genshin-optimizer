@@ -1,23 +1,23 @@
-import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
+import { useDataEntryBase } from '@genshin-optimizer/common-database-ui'
 import {
   BootstrapTooltip,
   CardThemed,
   SolidToggleButtonGroup,
   theme,
-} from '@genshin-optimizer/common/ui'
-import { bulkCatTotal, handleMultiSelect } from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-ui'
+import { bulkCatTotal, handleMultiSelect } from '@genshin-optimizer/common-util'
 import {
   allLocationKeys,
   allSpecialityKeys,
   allWengineRarityKeys,
-} from '@genshin-optimizer/zzz/consts'
-import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
-import { getWengineStat } from '@genshin-optimizer/zzz/stats'
+} from '@genshin-optimizer/zzz-consts'
+import { useDatabaseContext } from '@genshin-optimizer/zzz-db-ui'
+import { getWengineStat } from '@genshin-optimizer/zzz-stats'
 import {
   LocationFilterMultiAutocomplete,
   WengineRarityToggle,
   WengineToggle,
-} from '@genshin-optimizer/zzz/ui'
+} from '@genshin-optimizer/zzz-ui'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenIcon from '@mui/icons-material/LockOpen'

@@ -1,5 +1,5 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
-import { ZCard } from '@genshin-optimizer/zzz/ui'
+import { CardThemed } from '@genshin-optimizer/common-ui'
+import { ZCard } from '@genshin-optimizer/zzz-ui'
 import GroupsIcon from '@mui/icons-material/Groups'
 import {
   Box,

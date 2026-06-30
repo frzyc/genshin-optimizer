@@ -1,16 +1,42 @@
 {
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "allowJs": false,
-    "esModuleInterop": false,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "jsxImportSource": "@emotion/react",
-    "exactOptionalPropertyTypes": false
-  },
   "files": [],
-  "include": [],
   "references": [
+    {
+      "path": "../../common/ad"
+    },
+    {
+      "path": "../db"
+    },
+    {
+      "path": "../../common/database-ui"
+    },
+    {
+      "path": "../ui"
+    },
+    {
+      "path": "../svgicons"
+    },
+    {
+      "path": "../stats"
+    },
+    {
+      "path": "../db-ui"
+    },
+    {
+      "path": "../consts"
+    },
+    {
+      "path": "../assets"
+    },
+    {
+      "path": "../../common/util"
+    },
+    {
+      "path": "../../common/ui"
+    },
+    {
+      "path": "../../common/svgicons"
+    },
     {
       "path": "./tsconfig.lib.json"
     }

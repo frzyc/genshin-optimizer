@@ -1,16 +1,16 @@
-import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
+import { shouldShowDevComponents } from '@genshin-optimizer/common-util'
 import type {
   CalcMeta as CalcMetaBase,
   Read as ReadBase,
-} from '@genshin-optimizer/game-opt/engine'
-import { Calculator as Base } from '@genshin-optimizer/game-opt/engine'
-import { createFilterDebug } from '@genshin-optimizer/game-opt/formula'
-import { DebugCalculator } from '@genshin-optimizer/pando/engine'
+} from '@genshin-optimizer/game-opt-engine'
+import { Calculator as Base } from '@genshin-optimizer/game-opt-engine'
+import { createFilterDebug } from '@genshin-optimizer/game-opt-formula'
+import { DebugCalculator } from '@genshin-optimizer/pando-engine'
 import {
   allAttributeKeys,
   allDiscSetKeys,
   allWengineKeys,
-} from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-consts'
 import type { Read, Tag } from './data/util'
 import { enemyTag, ownTag, tagStr } from './data/util'
 

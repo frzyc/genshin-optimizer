@@ -1,15 +1,15 @@
-import type { TriggerString } from '@genshin-optimizer/common/database'
-import { deepClone, objKeyMap } from '@genshin-optimizer/common/util'
-import type { CharacterKey, RelicSlotKey } from '@genshin-optimizer/sr/consts'
+import type { TriggerString } from '@genshin-optimizer/common-database'
+import { deepClone, objKeyMap } from '@genshin-optimizer/common-util'
+import type { CharacterKey, RelicSlotKey } from '@genshin-optimizer/sr-consts'
 import {
   allRelicSlotKeys,
   allTrailblazerKeys,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 import type {
   ICharacter,
   ISrObjectDescription,
-} from '@genshin-optimizer/sr/srod'
-import { parseCharacter } from '@genshin-optimizer/sr/srod'
+} from '@genshin-optimizer/sr-srod'
+import { parseCharacter } from '@genshin-optimizer/sr-srod'
 import type { ICachedCharacter, ISroDatabase } from '../../Interfaces'
 import { SroSource } from '../../Interfaces'
 import { DataManager } from '../DataManager'

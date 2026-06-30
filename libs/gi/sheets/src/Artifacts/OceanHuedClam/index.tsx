@@ -1,12 +1,12 @@
-import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
-import type { Data } from '@genshin-optimizer/gi/wr'
+import type { ArtifactSetKey } from '@genshin-optimizer/gi-consts'
+import type { Data } from '@genshin-optimizer/gi-wr'
 import {
   greaterEq,
   infoMut,
   input,
   percent,
   prod,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 import { trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { SetEffectSheet } from '../IArtifactSheet'

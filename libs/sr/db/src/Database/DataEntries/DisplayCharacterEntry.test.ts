@@ -1,9 +1,9 @@
-import { createTestDBStorage } from '@genshin-optimizer/common/database'
+import { createTestDBStorage } from '@genshin-optimizer/common-database'
 import {
   allElementalTypeKeys,
   allPathKeys,
   allRarityKeys,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 import { SroDatabase } from '../Database'
 
 describe('DisplayCharacterEntry.validate', () => {

@@ -1,24 +1,24 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
 import {
   CardThemed,
   ModalWrapper,
   NumberInputLazy,
   useScrollRef,
-} from '@genshin-optimizer/common/ui'
-import { DebugListingsDisplay } from '@genshin-optimizer/game-opt/formula-ui'
-import { type CharacterKey } from '@genshin-optimizer/sr/consts'
-import type { Frame } from '@genshin-optimizer/sr/db'
+} from '@genshin-optimizer/common-ui'
+import { DebugListingsDisplay } from '@genshin-optimizer/game-opt-formula-ui'
+import { type CharacterKey } from '@genshin-optimizer/sr-consts'
+import type { Frame } from '@genshin-optimizer/sr-db'
 import {
   useCharacterContext,
   useDatabaseContext,
-} from '@genshin-optimizer/sr/db-ui'
-import { own } from '@genshin-optimizer/sr/formula'
-import { OptimizationTargetSelector } from '@genshin-optimizer/sr/formula-ui'
+} from '@genshin-optimizer/sr-db-ui'
+import { own } from '@genshin-optimizer/sr-formula'
+import { OptimizationTargetSelector } from '@genshin-optimizer/sr-formula-ui'
 import {
   CharacterCard,
   CharacterEditor,
   EquipRow,
-} from '@genshin-optimizer/sr/ui'
+} from '@genshin-optimizer/sr-ui'
 import { Delete } from '@mui/icons-material'
 import {
   Box,

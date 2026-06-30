@@ -3,8 +3,8 @@ import {
   CardThemed,
   ModalWrapper,
   TextFieldLazy,
-} from '@genshin-optimizer/common/ui'
-import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
+} from '@genshin-optimizer/common-ui'
+import { useDatabaseContext } from '@genshin-optimizer/sr-db-ui'
 import BorderColorIcon from '@mui/icons-material/BorderColor'
 import CloseIcon from '@mui/icons-material/Close'
 import GroupsIcon from '@mui/icons-material/Groups'

@@ -1,17 +1,17 @@
-import { DropdownButton } from '@genshin-optimizer/common/ui'
-import type { TargetTag } from '@genshin-optimizer/zzz/db'
+import { DropdownButton } from '@genshin-optimizer/common-ui'
+import type { TargetTag } from '@genshin-optimizer/zzz-db'
 import {
   type ICachedCharacter,
   type Team,
   getTeamFrame0,
   targetTag,
-} from '@genshin-optimizer/zzz/db'
-import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
-import { own } from '@genshin-optimizer/zzz/formula'
+} from '@genshin-optimizer/zzz-db'
+import { useDatabaseContext } from '@genshin-optimizer/zzz-db-ui'
+import { own } from '@genshin-optimizer/zzz-formula'
 import {
   FullTagDisplay,
   useZzzCalcContext,
-} from '@genshin-optimizer/zzz/formula-ui'
+} from '@genshin-optimizer/zzz-formula-ui'
 import { Box, ListItemText, MenuItem } from '@mui/material'
 import { useMemo } from 'react'
 

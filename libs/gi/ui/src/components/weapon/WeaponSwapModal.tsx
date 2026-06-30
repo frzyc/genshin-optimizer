@@ -1,5 +1,5 @@
-import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
-import { useMediaQueryUp } from '@genshin-optimizer/common/react-util'
+import { useDataManagerValues } from '@genshin-optimizer/common-database-ui'
+import { useMediaQueryUp } from '@genshin-optimizer/common-react-util'
 import {
   CardThemed,
   ImgIcon,
@@ -7,21 +7,21 @@ import {
   ShowingAndSortOptionSelect,
   SolidToggleButtonGroup,
   useInfScroll,
-} from '@genshin-optimizer/common/ui'
+} from '@genshin-optimizer/common-ui'
 import {
   filterFunction,
   handleMultiSelect,
   sortFunction,
-} from '@genshin-optimizer/common/util'
-import { imgAssets } from '@genshin-optimizer/gi/assets'
+} from '@genshin-optimizer/common-util'
+import { imgAssets } from '@genshin-optimizer/gi-assets'
 import type {
   RarityKey,
   WeaponKey,
   WeaponTypeKey,
-} from '@genshin-optimizer/gi/consts'
-import { allRarityKeys } from '@genshin-optimizer/gi/consts'
-import { initialWeapon } from '@genshin-optimizer/gi/db'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+} from '@genshin-optimizer/gi-consts'
+import { allRarityKeys } from '@genshin-optimizer/gi-consts'
+import { initialWeapon } from '@genshin-optimizer/gi-db'
+import { useDatabase } from '@genshin-optimizer/gi-db-ui'
 import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'

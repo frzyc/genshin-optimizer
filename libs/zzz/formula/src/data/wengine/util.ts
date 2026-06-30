@@ -1,14 +1,14 @@
-import { registerEquipment } from '@genshin-optimizer/game-opt/formula'
-import type { NumNode } from '@genshin-optimizer/pando/engine'
+import { registerEquipment } from '@genshin-optimizer/game-opt-formula'
+import type { NumNode } from '@genshin-optimizer/pando-engine'
 import {
   cmpEq,
   cmpGE,
   prod,
   subscript,
   sum,
-} from '@genshin-optimizer/pando/engine'
-import type { WengineKey } from '@genshin-optimizer/zzz/consts'
-import { allStats, getWengineStat } from '@genshin-optimizer/zzz/stats'
+} from '@genshin-optimizer/pando-engine'
+import type { WengineKey } from '@genshin-optimizer/zzz-consts'
+import { allStats, getWengineStat } from '@genshin-optimizer/zzz-stats'
 import type { Tag, TagMapNodeEntries, TagMapNodeEntry } from '../util'
 import { own, ownBuff } from '../util'
 

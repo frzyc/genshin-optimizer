@@ -1,5 +1,5 @@
-import type { WengineKey } from '@genshin-optimizer/zzz/consts'
-import { own } from '@genshin-optimizer/zzz/formula'
+import type { WengineKey } from '@genshin-optimizer/zzz-consts'
+import { own } from '@genshin-optimizer/zzz-formula'
 import type { ReactNode } from 'react'
 import { useZzzCalcContext } from '../../hooks'
 

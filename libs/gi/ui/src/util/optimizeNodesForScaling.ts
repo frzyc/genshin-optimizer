@@ -1,12 +1,12 @@
-import { objPathValue } from '@genshin-optimizer/common/util'
-import type { MainSubStatKey } from '@genshin-optimizer/gi/consts'
+import { objPathValue } from '@genshin-optimizer/common-util'
+import type { MainSubStatKey } from '@genshin-optimizer/gi-consts'
 import {
   type CharacterKey,
   allMainSubStatKeys,
-} from '@genshin-optimizer/gi/consts'
-import type { OptConfig } from '@genshin-optimizer/gi/db'
-import type { NumNode } from '@genshin-optimizer/gi/wr'
-import { dynamicData, mergeData, optimize } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-consts'
+import type { OptConfig } from '@genshin-optimizer/gi-db'
+import type { NumNode } from '@genshin-optimizer/gi-wr'
+import { dynamicData, mergeData, optimize } from '@genshin-optimizer/gi-wr'
 import type { TeamData } from '../type'
 import { statFilterToNumNode } from './statFilterToNumNode'
 export function optimizeNodesForScaling(

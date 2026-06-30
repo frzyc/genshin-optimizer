@@ -1,8 +1,8 @@
 import type {
   ArtifactSlotKey,
   CharacterKey,
-} from '@genshin-optimizer/gi/consts'
-import { useDBMeta } from '@genshin-optimizer/gi/db-ui'
+} from '@genshin-optimizer/gi-consts'
+import { useDBMeta } from '@genshin-optimizer/gi-db-ui'
 import { Alert, Typography } from '@mui/material'
 import { Trans, useTranslation } from 'react-i18next'
 import { ArtifactSlotName } from '../artifact'

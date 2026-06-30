@@ -1,6 +1,6 @@
 // use client due to hydration difference between client rendering and server in translation
-import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
+import { iconInlineProps } from '@genshin-optimizer/common-svgicons'
 import {
   BootstrapTooltip,
   CardThemed,
@@ -11,29 +11,29 @@ import {
   ModalWrapper,
   SqBadge,
   StarsDisplay,
-} from '@genshin-optimizer/common/ui'
-import { clamp, clamp01, getUnitStr } from '@genshin-optimizer/common/util'
-import { artifactAsset } from '@genshin-optimizer/gi/assets'
+} from '@genshin-optimizer/common-ui'
+import { clamp, clamp01, getUnitStr } from '@genshin-optimizer/common-util'
+import { artifactAsset } from '@genshin-optimizer/gi-assets'
 import type {
   ArtifactRarity,
   CharacterKey,
   LocationKey,
   SubstatKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import {
   allElementWithPhyKeys,
   allSubstatKeys,
-} from '@genshin-optimizer/gi/consts'
-import type { ICachedArtifact, ICachedSubstat } from '@genshin-optimizer/gi/db'
-import { useArtifact, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { SlotIcon, StatIcon } from '@genshin-optimizer/gi/svgicons'
+} from '@genshin-optimizer/gi-consts'
+import type { ICachedArtifact, ICachedSubstat } from '@genshin-optimizer/gi-db'
+import { useArtifact, useDatabase } from '@genshin-optimizer/gi-db-ui'
+import { SlotIcon, StatIcon } from '@genshin-optimizer/gi-svgicons'
 import {
   artDisplayValue,
   getArtifactEfficiency,
   getMainStatDisplayStr,
   getSubstatValue,
   getSubstatValuesPercent,
-} from '@genshin-optimizer/gi/util'
+} from '@genshin-optimizer/gi-util'
 import { Lock, LockOpen } from '@mui/icons-material'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import EditIcon from '@mui/icons-material/Edit'

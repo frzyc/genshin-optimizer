@@ -1,10 +1,10 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
-import { discMaxLevel } from '@genshin-optimizer/zzz/consts'
+import { CardThemed } from '@genshin-optimizer/common-ui'
+import { discMaxLevel } from '@genshin-optimizer/zzz-consts'
 import {
   OptConfigContext,
   useDatabaseContext,
-} from '@genshin-optimizer/zzz/db-ui'
-import { DiscLevelSlider } from '@genshin-optimizer/zzz/ui'
+} from '@genshin-optimizer/zzz-db-ui'
+import { DiscLevelSlider } from '@genshin-optimizer/zzz-ui'
 import { CardContent, Divider, Typography } from '@mui/material'
 import { memo, useContext } from 'react'
 

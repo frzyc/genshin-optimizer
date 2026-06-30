@@ -1,14 +1,14 @@
-import { useDataManagerKeys } from '@genshin-optimizer/common/database-ui'
+import { useDataManagerKeys } from '@genshin-optimizer/common-database-ui'
 import type {
   GeneralAutocompleteMultiProps,
   GeneralAutocompleteOption,
-} from '@genshin-optimizer/common/ui'
-import { GeneralAutocompleteMulti } from '@genshin-optimizer/common/ui'
-import { bulkCatTotal, notEmpty } from '@genshin-optimizer/common/util'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
-import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { getCharEle } from '@genshin-optimizer/gi/stats'
+} from '@genshin-optimizer/common-ui'
+import { GeneralAutocompleteMulti } from '@genshin-optimizer/common-ui'
+import { bulkCatTotal, notEmpty } from '@genshin-optimizer/common-util'
+import type { CharacterKey } from '@genshin-optimizer/gi-consts'
+import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi-consts'
+import { useDBMeta, useDatabase } from '@genshin-optimizer/gi-db-ui'
+import { getCharEle } from '@genshin-optimizer/gi-stats'
 import { Chip, Skeleton } from '@mui/material'
 import { Suspense, useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'

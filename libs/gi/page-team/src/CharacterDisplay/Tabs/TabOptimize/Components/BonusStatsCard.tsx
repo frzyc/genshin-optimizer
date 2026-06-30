@@ -1,13 +1,13 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { CardThemed } from '@genshin-optimizer/common/ui'
-import { TeamCharacterContext } from '@genshin-optimizer/gi/db-ui'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
+import { CardThemed } from '@genshin-optimizer/common-ui'
+import { TeamCharacterContext } from '@genshin-optimizer/gi-db-ui'
 import {
   DataContext,
   FieldDisplayList,
   NodeFieldDisplay,
-} from '@genshin-optimizer/gi/ui'
-import type { NumNode } from '@genshin-optimizer/gi/wr'
-import { uiInput as input } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-ui'
+import type { NumNode } from '@genshin-optimizer/gi-wr'
+import { uiInput as input } from '@genshin-optimizer/gi-wr'
 import BarChartIcon from '@mui/icons-material/BarChart'
 import { Button, CardHeader, Divider } from '@mui/material'
 import { useContext } from 'react'

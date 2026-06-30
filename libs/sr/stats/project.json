@@ -1,5 +1,5 @@
 {
-  "name": "sr-stats",
+  "name": "@genshin-optimizer/sr-stats",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/sr/stats/src",
   "projectType": "library",

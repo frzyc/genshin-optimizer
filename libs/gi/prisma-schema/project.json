@@ -1,5 +1,5 @@
 {
-  "name": "gi-prisma-schema",
+  "name": "@genshin-optimizer/gi-prisma-schema",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/gi/prisma-schema/src",
   "projectType": "library",

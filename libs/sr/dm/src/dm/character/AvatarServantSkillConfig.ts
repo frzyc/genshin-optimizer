@@ -1,4 +1,4 @@
-import { dumpFile } from '@genshin-optimizer/common/pipeline'
+import { dumpFile } from '@genshin-optimizer/common-pipeline'
 import { parse } from 'json-bigint'
 import { PROJROOT_PATH } from '../../consts'
 import { readDMJSON } from '../../util'

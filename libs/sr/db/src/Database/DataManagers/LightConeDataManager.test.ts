@@ -1,8 +1,8 @@
-import { createTestDBStorage } from '@genshin-optimizer/common/database'
+import { createTestDBStorage } from '@genshin-optimizer/common-database'
 import {
   allLightConeKeys,
   lightConeMaxLevel,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 import { SroDatabase } from '../Database'
 
 describe('LightConeDataManager.validate', () => {

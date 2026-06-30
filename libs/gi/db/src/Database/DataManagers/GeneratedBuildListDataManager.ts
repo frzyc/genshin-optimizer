@@ -1,8 +1,8 @@
-import { objKeyMap } from '@genshin-optimizer/common/util'
+import { objKeyMap } from '@genshin-optimizer/common-util'
 import {
   type ArtifactSlotKey,
   allArtifactSlotKeys,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
 

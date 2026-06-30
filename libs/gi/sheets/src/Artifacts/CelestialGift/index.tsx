@@ -1,9 +1,9 @@
-import { objKeyValMap, objMap } from '@genshin-optimizer/common/util'
+import { objKeyValMap, objMap } from '@genshin-optimizer/common-util'
 import {
   type ArtifactSetKey,
   allElementKeys,
-} from '@genshin-optimizer/gi/consts'
-import type { Data } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-consts'
+import type { Data } from '@genshin-optimizer/gi-wr'
 import {
   active,
   equal,
@@ -16,7 +16,7 @@ import {
   percent,
   sum,
   tally,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 import { cond, nonStackBuff, st, stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { SetEffectSheet } from '../IArtifactSheet'

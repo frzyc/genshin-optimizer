@@ -1,0 +1,369 @@
+{
+  "extends": "./tsconfig.base.json",
+  "files": [],
+  "references": [
+    {
+      "path": "./libs/gi/silly-wisher-names"
+    },
+    {
+      "path": "./libs/common/localization"
+    },
+    {
+      "path": "./libs/game-opt/formula-ui"
+    },
+    {
+      "path": "./libs/zzz/dm-localization"
+    },
+    {
+      "path": "./libs/zzz/page-characters"
+    },
+    {
+      "path": "./libs/common/database-ui"
+    },
+    {
+      "path": "./libs/gi/dm-localization"
+    },
+    {
+      "path": "./libs/gi/page-characters"
+    },
+    {
+      "path": "./libs/sr/dm-localization"
+    },
+    {
+      "path": "./libs/sr/page-characters"
+    },
+    {
+      "path": "./libs/sr/page-lightcones"
+    },
+    {
+      "path": "./libs/common/react-util"
+    },
+    {
+      "path": "./libs/game-opt/sheet-ui"
+    },
+    {
+      "path": "./libs/gi/page-artifacts"
+    },
+    {
+      "path": "./libs/zzz/page-optimize"
+    },
+    {
+      "path": "./libs/zzz/page-settings"
+    },
+    {
+      "path": "./libs/zzz/page-wengines"
+    },
+    {
+      "path": "./libs/game-opt/formula"
+    },
+    {
+      "path": "./libs/gi/page-settings"
+    },
+    {
+      "path": "./libs/gi/prisma-schema"
+    },
+    {
+      "path": "./libs/sr/page-optimize"
+    },
+    {
+      "path": "./libs/sr/page-settings"
+    },
+    {
+      "path": "./libs/zzz/disc-scanner"
+    },
+    {
+      "path": "./libs/zzz/localization"
+    },
+    {
+      "path": "./libs/common/database"
+    },
+    {
+      "path": "./libs/common/img-util"
+    },
+    {
+      "path": "./libs/common/pipeline"
+    },
+    {
+      "path": "./libs/common/svgicons"
+    },
+    {
+      "path": "./libs/game-opt/engine"
+    },
+    {
+      "path": "./libs/game-opt/solver"
+    },
+    {
+      "path": "./libs/gi/localization"
+    },
+    {
+      "path": "./libs/gi/page-archive"
+    },
+    {
+      "path": "./libs/gi/page-scanner"
+    },
+    {
+      "path": "./libs/gi/page-weapons"
+    },
+    {
+      "path": "./libs/gi/silly-wisher"
+    },
+    {
+      "path": "./libs/sr/localization"
+    },
+    {
+      "path": "./libs/zzz/assets-data"
+    },
+    {
+      "path": "./libs/gi/art-scanner"
+    },
+    {
+      "path": "./libs/gi/assets-data"
+    },
+    {
+      "path": "./libs/sr/assets-data"
+    },
+    {
+      "path": "./libs/sr/page-relics"
+    },
+    {
+      "path": "./libs/zzz/formula-ui"
+    },
+    {
+      "path": "./libs/zzz/page-discs"
+    },
+    {
+      "path": "./libs/common/plugin"
+    },
+    {
+      "path": "./libs/gi/char-cards"
+    },
+    {
+      "path": "./libs/gi/formula-ui"
+    },
+    {
+      "path": "./libs/gi/page-teams"
+    },
+    {
+      "path": "./libs/gi/page-tools"
+    },
+    {
+      "path": "./libs/sr/formula-ui"
+    },
+    {
+      "path": "./libs/sr/page-teams"
+    },
+    {
+      "path": "./libs/zzz/i18n-node"
+    },
+    {
+      "path": "./libs/zzz/page-home"
+    },
+    {
+      "path": "./apps/frontend-e2e"
+    },
+    {
+      "path": "./libs/gi/i18n-node"
+    },
+    {
+      "path": "./libs/gi/page-home"
+    },
+    {
+      "path": "./libs/gi/page-team"
+    },
+    {
+      "path": "./libs/gi/solver-tc"
+    },
+    {
+      "path": "./libs/pando/engine"
+    },
+    {
+      "path": "./libs/sr/i18n-node"
+    },
+    {
+      "path": "./libs/sr/page-team"
+    },
+    {
+      "path": "./apps/zzz-frontend"
+    },
+    {
+      "path": "./libs/zzz/svgicons"
+    },
+    {
+      "path": "./libs/common/util"
+    },
+    {
+      "path": "./libs/gi/page-doc"
+    },
+    {
+      "path": "./libs/gi/svgicons"
+    },
+    {
+      "path": "./apps/sr-frontend"
+    },
+    {
+      "path": "./libs/sr/svgicons"
+    },
+    {
+      "path": "./libs/gi/wr-types"
+    },
+    {
+      "path": "./libs/zzz/formula"
+    },
+    {
+      "path": "./libs/gi/formula"
+    },
+    {
+      "path": "./apps/somnia-e2e"
+    },
+    {
+      "path": "./libs/sr/formula"
+    },
+    {
+      "path": "./libs/zzz/assets"
+    },
+    {
+      "path": "./libs/zzz/consts"
+    },
+    {
+      "path": "./libs/zzz/schema"
+    },
+    {
+      "path": "./libs/zzz/solver"
+    },
+    {
+      "path": "./libs/common/ad"
+    },
+    {
+      "path": "./libs/common/ui"
+    },
+    {
+      "path": "./libs/gi/assets"
+    },
+    {
+      "path": "./libs/gi/consts"
+    },
+    {
+      "path": "./libs/gi/keymap"
+    },
+    {
+      "path": "./libs/gi/schema"
+    },
+    {
+      "path": "./libs/gi/sheets"
+    },
+    {
+      "path": "./libs/gi/solver"
+    },
+    {
+      "path": "./libs/gi/uidata"
+    },
+    {
+      "path": "./libs/sr/assets"
+    },
+    {
+      "path": "./libs/sr/consts"
+    },
+    {
+      "path": "./libs/sr/schema"
+    },
+    {
+      "path": "./libs/sr/solver"
+    },
+    {
+      "path": "./libs/zzz/db-ui"
+    },
+    {
+      "path": "./libs/zzz/stats"
+    },
+    {
+      "path": "./libs/zzz/theme"
+    },
+    {
+      "path": "./apps/frontend"
+    },
+    {
+      "path": "./libs/gi/db-ui"
+    },
+    {
+      "path": "./libs/gi/stats"
+    },
+    {
+      "path": "./libs/gi/theme"
+    },
+    {
+      "path": "./libs/gi/upopt"
+    },
+    {
+      "path": "./libs/sr/db-ui"
+    },
+    {
+      "path": "./libs/sr/stats"
+    },
+    {
+      "path": "./libs/sr/theme"
+    },
+    {
+      "path": "./libs/zzz/i18n"
+    },
+    {
+      "path": "./libs/zzz/util"
+    },
+    {
+      "path": "./libs/zzz/zood"
+    },
+    {
+      "path": "./libs/gi/good"
+    },
+    {
+      "path": "./libs/gi/i18n"
+    },
+    {
+      "path": "./libs/gi/mats"
+    },
+    {
+      "path": "./libs/gi/util"
+    },
+    {
+      "path": "./libs/sr/i18n"
+    },
+    {
+      "path": "./libs/sr/srod"
+    },
+    {
+      "path": "./libs/sr/util"
+    },
+    {
+      "path": "./apps/somnia"
+    },
+    {
+      "path": "./libs/zzz/db"
+    },
+    {
+      "path": "./libs/zzz/dm"
+    },
+    {
+      "path": "./libs/zzz/ui"
+    },
+    {
+      "path": "./libs/gi/db"
+    },
+    {
+      "path": "./libs/gi/dm"
+    },
+    {
+      "path": "./libs/gi/ui"
+    },
+    {
+      "path": "./libs/gi/wr"
+    },
+    {
+      "path": "./libs/sr/db"
+    },
+    {
+      "path": "./libs/sr/dm"
+    },
+    {
+      "path": "./libs/sr/ui"
+    }
+  ]
+}

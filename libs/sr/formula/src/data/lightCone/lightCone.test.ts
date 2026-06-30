@@ -1,9 +1,9 @@
-import { prettify } from '@genshin-optimizer/common/util'
+import { prettify } from '@genshin-optimizer/common-util'
 import {
   compileTagMapValues,
   setDebugMode,
-} from '@genshin-optimizer/pando/engine'
-import type { CharacterKey, LightConeKey } from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/pando-engine'
+import type { CharacterKey, LightConeKey } from '@genshin-optimizer/sr-consts'
 import { data, keys, values } from '..'
 import { Calculator } from '../../calculator'
 import '../../index'

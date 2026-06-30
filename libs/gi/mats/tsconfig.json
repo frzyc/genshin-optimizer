@@ -1,11 +1,19 @@
 {
   "extends": "../../../tsconfig.base.json",
-  "compilerOptions": {
-    "esModuleInterop": true
-  },
   "files": [],
-  "include": [],
   "references": [
+    {
+      "path": "../dm"
+    },
+    {
+      "path": "../consts"
+    },
+    {
+      "path": "../../common/util"
+    },
+    {
+      "path": "../../common/pipeline"
+    },
     {
       "path": "./tsconfig.lib.json"
     },

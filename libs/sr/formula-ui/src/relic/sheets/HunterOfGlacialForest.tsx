@@ -1,14 +1,14 @@
-import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
-import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
-import { relicAsset } from '@genshin-optimizer/sr/assets'
-import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
-import { buffs, conditionals } from '@genshin-optimizer/sr/formula'
+import { ImgIcon, SqBadge } from '@genshin-optimizer/common-ui'
+import type { UISheet } from '@genshin-optimizer/game-opt-sheet-ui'
+import { relicAsset } from '@genshin-optimizer/sr-assets'
+import type { RelicSetKey } from '@genshin-optimizer/sr-consts'
+import { buffs, conditionals } from '@genshin-optimizer/sr-formula'
 import {
   getRelicInterpolateObject,
   mappedStats,
-} from '@genshin-optimizer/sr/stats'
-import { StatDisplay } from '@genshin-optimizer/sr/ui'
-import { getDefaultRelicSlot } from '@genshin-optimizer/sr/util'
+} from '@genshin-optimizer/sr-stats'
+import { StatDisplay } from '@genshin-optimizer/sr-ui'
+import { getDefaultRelicSlot } from '@genshin-optimizer/sr-util'
 import { trans } from '../../util'
 
 const key: RelicSetKey = 'HunterOfGlacialForest'

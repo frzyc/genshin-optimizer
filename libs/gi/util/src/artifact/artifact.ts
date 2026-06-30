@@ -1,25 +1,25 @@
-import type { Unit } from '@genshin-optimizer/common/util'
+import type { Unit } from '@genshin-optimizer/common-util'
 import {
   clampPercent,
   getUnitStr,
   objKeyMap,
   toPercent,
-} from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-util'
 import type {
   ArtifactRarity,
   ArtifactSetKey,
   MainStatKey,
   SubstatKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import {
   allArtifactRarityKeys,
   allArtifactSetKeys,
   allSubstatKeys,
   artMaxLevel,
   artSubstatRollData,
-} from '@genshin-optimizer/gi/consts'
-import type { IArtifact } from '@genshin-optimizer/gi/schema'
-import { allStats, getArtSetStat } from '@genshin-optimizer/gi/stats'
+} from '@genshin-optimizer/gi-consts'
+import type { IArtifact } from '@genshin-optimizer/gi-schema'
+import { allStats, getArtSetStat } from '@genshin-optimizer/gi-stats'
 import { getArtifactMeta } from './artifactMeta'
 
 export function artDisplayValue(value: number, unit: Unit): string {

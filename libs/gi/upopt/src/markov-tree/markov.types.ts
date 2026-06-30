@@ -1,5 +1,5 @@
-import type { SubstatKey } from '@genshin-optimizer/gi/consts'
-import type { DynStat } from '@genshin-optimizer/gi/solver'
+import type { SubstatKey } from '@genshin-optimizer/gi-consts'
+import type { DynStat } from '@genshin-optimizer/gi-solver'
 
 export type GaussianNode = {
   base: DynStat

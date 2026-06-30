@@ -3738,6 +3738,820 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@genshin-optimizer/common-ad@workspace:libs/common/ad":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/common-ad@workspace:libs/common/ad"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/common-database-ui@workspace:libs/common/database-ui":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/common-database-ui@workspace:libs/common/database-ui"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/common-database@workspace:libs/common/database":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/common-database@workspace:libs/common/database"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/common-img-util@workspace:libs/common/img-util":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/common-img-util@workspace:libs/common/img-util"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/common-localization@workspace:libs/common/localization":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/common-localization@workspace:libs/common/localization"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/common-pipeline@workspace:libs/common/pipeline":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/common-pipeline@workspace:libs/common/pipeline"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/common-plugin@workspace:libs/common/plugin":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/common-plugin@workspace:libs/common/plugin"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/common-react-util@workspace:libs/common/react-util":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/common-react-util@workspace:libs/common/react-util"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/common-svgicons@workspace:libs/common/svgicons":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/common-svgicons@workspace:libs/common/svgicons"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/common-ui@workspace:libs/common/ui":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/common-ui@workspace:libs/common/ui"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/common-util@workspace:*, @genshin-optimizer/common-util@workspace:libs/common/util":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/common-util@workspace:libs/common/util"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/game-opt-engine@workspace:libs/game-opt/engine":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/game-opt-engine@workspace:libs/game-opt/engine"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/game-opt-formula-ui@workspace:libs/game-opt/formula-ui":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/game-opt-formula-ui@workspace:libs/game-opt/formula-ui"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/game-opt-formula@workspace:libs/game-opt/formula":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/game-opt-formula@workspace:libs/game-opt/formula"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/game-opt-sheet-ui@workspace:libs/game-opt/sheet-ui":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/game-opt-sheet-ui@workspace:libs/game-opt/sheet-ui"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/game-opt-solver@workspace:libs/game-opt/solver":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/game-opt-solver@workspace:libs/game-opt/solver"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/genshin-optimizer@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/genshin-optimizer@workspace:."
+  dependencies:
+    "@babel/core": ^7.14.5
+    "@babel/preset-react": ^7.18.6
+    "@biomejs/biome": ^1.9.4
+    "@emotion/babel-plugin": 11.11.0
+    "@emotion/react": 11.11.4
+    "@emotion/styled": 11.11.5
+    "@fontsource/inter": ^5.2.5
+    "@fontsource/roboto": ^5.0.13
+    "@mui/icons-material": ^5.14.12
+    "@mui/lab": ^5.0.0-alpha.170
+    "@mui/material": ^5.16.6
+    "@mui/system": ^5.16.6
+    "@mui/types": ^7.2.14
+    "@nx/cypress": 20.5.0
+    "@nx/devkit": 20.5.0
+    "@nx/esbuild": 20.5.0
+    "@nx/eslint": 20.5.0
+    "@nx/eslint-plugin": 20.5.0
+    "@nx/jest": 20.5.0
+    "@nx/js": 20.5.0
+    "@nx/node": 20.5.0
+    "@nx/plugin": 20.5.0
+    "@nx/react": 20.5.0
+    "@nx/vite": 20.5.0
+    "@nx/web": 20.5.0
+    "@nx/webpack": 20.5.0
+    "@nx/workspace": 20.5.0
+    "@pmmmwh/react-refresh-webpack-plugin": ^0.5.10
+    "@svgr/webpack": 8.0.1
+    "@swc-node/register": 1.9.2
+    "@swc/cli": 0.3.12
+    "@swc/core": 1.5.25
+    "@swc/helpers": 0.5.11
+    "@testing-library/dom": 10.4.0
+    "@testing-library/react": 16.1.0
+    "@types/jest": 29.5.14
+    "@types/json-bigint": ^1.0.4
+    "@types/node": ^18.16.9
+    "@types/react": 18.3.1
+    "@types/react-dom": 18.3.0
+    "@types/xxhashjs": ^0.2.4
+    "@typescript-eslint/eslint-plugin": 7.16.0
+    "@typescript-eslint/parser": 7.16.0
+    "@vitejs/plugin-react": 4.2.0
+    "@vitest/coverage-c8": ^0.32.0
+    "@vitest/coverage-v8": ^1.0.4
+    "@vitest/ui": ^1.3.1
+    babel-jest: 29.7.0
+    core-js: ^3.28.0
+    create-nx-workspace: ^23.0.1
+    cypress: 13.13.0
+    discord.js: ^14.16.1
+    esbuild: 0.19.2
+    eslint: 8.57.0
+    eslint-plugin-cypress: ^3.5.0
+    eslint-plugin-import: 2.31.0
+    eslint-plugin-jsx-a11y: 6.10.1
+    eslint-plugin-react: 7.35.0
+    eslint-plugin-react-hooks: 5.0.0
+    eslint-plugin-unused-imports: ^4.1.4
+    gh-pages: ^5.0.0
+    i18next: ^23.6.0
+    i18next-browser-languagedetector: ^7.0.1
+    i18next-fs-backend: ^2.3.1
+    i18next-http-backend: ^2.1.1
+    jest: 29.7.0
+    jest-environment-jsdom: 29.7.0
+    jest-environment-node: ^29.7.0
+    jiti: 2.4.2
+    jsdom: 22.1.0
+    json-bigint: ^1.0.0
+    jsonc-eslint-parser: ^2.1.0
+    nx: 20.5.0
+    prettier: ^3.5.3
+    react: 18.3.1
+    react-dom: 18.3.1
+    react-ga4: ^2.1.0
+    react-i18next: ^13.3.1
+    react-markdown: ^8.0.5
+    react-refresh: ^0.10.0
+    react-router-dom: 6.11.2
+    recharts: ^2.4.3
+    regenerator-runtime: 0.13.11
+    remark-gfm: ^3.0.1
+    swc-loader: 0.1.15
+    tesseract.js: ^5.0.2
+    ts-jest: 29.1.0
+    ts-node: 10.9.1
+    tslib: ^2.5.0
+    typescript: 5.7.3
+    url-loader: ^4.1.1
+    vite: 6.0.0
+    vite-plugin-dts: 4.5.3
+    vite-plugin-eslint: ^1.8.1
+    vite-plugin-static-copy: ^1.0.1
+    vite-tsconfig-paths: 4.2.0
+    vitest: ^1.3.1
+    webpack-cli: ^5.1.4
+    xxhashjs: ^0.2.2
+    yaml: ^2.3.4
+    zod: ^4.2.1
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-art-scanner@workspace:libs/gi/art-scanner":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-art-scanner@workspace:libs/gi/art-scanner"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-assets-data@workspace:libs/gi/assets-data":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-assets-data@workspace:libs/gi/assets-data"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-assets@workspace:libs/gi/assets":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-assets@workspace:libs/gi/assets"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-char-cards@workspace:libs/gi/char-cards":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-char-cards@workspace:libs/gi/char-cards"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-consts@workspace:libs/gi/consts":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-consts@workspace:libs/gi/consts"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-db-ui@workspace:libs/gi/db-ui":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-db-ui@workspace:libs/gi/db-ui"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-db@workspace:libs/gi/db":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-db@workspace:libs/gi/db"
+  dependencies:
+    "@genshin-optimizer/common-util": "workspace:*"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-dm-localization@workspace:libs/gi/dm-localization":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-dm-localization@workspace:libs/gi/dm-localization"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-dm@workspace:libs/gi/dm":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-dm@workspace:libs/gi/dm"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-formula-ui@workspace:libs/gi/formula-ui":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-formula-ui@workspace:libs/gi/formula-ui"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-formula@workspace:libs/gi/formula":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-formula@workspace:libs/gi/formula"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-good@workspace:libs/gi/good":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-good@workspace:libs/gi/good"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-i18n-node@workspace:libs/gi/i18n-node":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-i18n-node@workspace:libs/gi/i18n-node"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-i18n@workspace:libs/gi/i18n":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-i18n@workspace:libs/gi/i18n"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-keymap@workspace:libs/gi/keymap":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-keymap@workspace:libs/gi/keymap"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-localization@workspace:libs/gi/localization":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-localization@workspace:libs/gi/localization"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-mats@workspace:libs/gi/mats":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-mats@workspace:libs/gi/mats"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-page-archive@workspace:libs/gi/page-archive":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-page-archive@workspace:libs/gi/page-archive"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-page-artifacts@workspace:libs/gi/page-artifacts":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-page-artifacts@workspace:libs/gi/page-artifacts"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-page-characters@workspace:libs/gi/page-characters":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-page-characters@workspace:libs/gi/page-characters"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-page-doc@workspace:libs/gi/page-doc":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-page-doc@workspace:libs/gi/page-doc"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-page-home@workspace:libs/gi/page-home":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-page-home@workspace:libs/gi/page-home"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-page-scanner@workspace:libs/gi/page-scanner":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-page-scanner@workspace:libs/gi/page-scanner"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-page-settings@workspace:libs/gi/page-settings":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-page-settings@workspace:libs/gi/page-settings"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-page-team@workspace:libs/gi/page-team":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-page-team@workspace:libs/gi/page-team"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-page-teams@workspace:libs/gi/page-teams":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-page-teams@workspace:libs/gi/page-teams"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-page-tools@workspace:libs/gi/page-tools":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-page-tools@workspace:libs/gi/page-tools"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-page-weapons@workspace:libs/gi/page-weapons":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-page-weapons@workspace:libs/gi/page-weapons"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-prisma-schema@workspace:libs/gi/prisma-schema":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-prisma-schema@workspace:libs/gi/prisma-schema"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-schema@workspace:libs/gi/schema":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-schema@workspace:libs/gi/schema"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-sheets@workspace:libs/gi/sheets":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-sheets@workspace:libs/gi/sheets"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-silly-wisher-names@workspace:libs/gi/silly-wisher-names":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-silly-wisher-names@workspace:libs/gi/silly-wisher-names"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-silly-wisher@workspace:libs/gi/silly-wisher":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-silly-wisher@workspace:libs/gi/silly-wisher"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-solver-tc@workspace:libs/gi/solver-tc":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-solver-tc@workspace:libs/gi/solver-tc"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-solver@workspace:libs/gi/solver":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-solver@workspace:libs/gi/solver"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-stats@workspace:libs/gi/stats":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-stats@workspace:libs/gi/stats"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-svgicons@workspace:libs/gi/svgicons":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-svgicons@workspace:libs/gi/svgicons"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-theme@workspace:libs/gi/theme":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-theme@workspace:libs/gi/theme"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-ui@workspace:libs/gi/ui":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-ui@workspace:libs/gi/ui"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-uidata@workspace:libs/gi/uidata":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-uidata@workspace:libs/gi/uidata"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-upopt@workspace:libs/gi/upopt":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-upopt@workspace:libs/gi/upopt"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-util@workspace:libs/gi/util":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-util@workspace:libs/gi/util"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-wr-types@workspace:libs/gi/wr-types":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-wr-types@workspace:libs/gi/wr-types"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/gi-wr@workspace:libs/gi/wr":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/gi-wr@workspace:libs/gi/wr"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/pando-engine@workspace:libs/pando/engine":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/pando-engine@workspace:libs/pando/engine"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/somnia@workspace:apps/somnia":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/somnia@workspace:apps/somnia"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/sr-assets-data@workspace:libs/sr/assets-data":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/sr-assets-data@workspace:libs/sr/assets-data"
+  dependencies:
+    "@nx/devkit": 20.5.0
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/sr-assets@workspace:libs/sr/assets":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/sr-assets@workspace:libs/sr/assets"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/sr-consts@workspace:libs/sr/consts":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/sr-consts@workspace:libs/sr/consts"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/sr-db-ui@workspace:libs/sr/db-ui":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/sr-db-ui@workspace:libs/sr/db-ui"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/sr-db@workspace:libs/sr/db":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/sr-db@workspace:libs/sr/db"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/sr-dm-localization@workspace:libs/sr/dm-localization":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/sr-dm-localization@workspace:libs/sr/dm-localization"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/sr-dm@workspace:libs/sr/dm":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/sr-dm@workspace:libs/sr/dm"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/sr-formula-ui@workspace:libs/sr/formula-ui":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/sr-formula-ui@workspace:libs/sr/formula-ui"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/sr-formula@workspace:libs/sr/formula":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/sr-formula@workspace:libs/sr/formula"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/sr-i18n-node@workspace:libs/sr/i18n-node":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/sr-i18n-node@workspace:libs/sr/i18n-node"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/sr-i18n@workspace:libs/sr/i18n":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/sr-i18n@workspace:libs/sr/i18n"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/sr-localization@workspace:libs/sr/localization":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/sr-localization@workspace:libs/sr/localization"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/sr-page-characters@workspace:libs/sr/page-characters":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/sr-page-characters@workspace:libs/sr/page-characters"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/sr-page-lightcones@workspace:libs/sr/page-lightcones":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/sr-page-lightcones@workspace:libs/sr/page-lightcones"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/sr-page-optimize@workspace:libs/sr/page-optimize":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/sr-page-optimize@workspace:libs/sr/page-optimize"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/sr-page-relics@workspace:libs/sr/page-relics":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/sr-page-relics@workspace:libs/sr/page-relics"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/sr-page-settings@workspace:libs/sr/page-settings":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/sr-page-settings@workspace:libs/sr/page-settings"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/sr-page-team@workspace:libs/sr/page-team":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/sr-page-team@workspace:libs/sr/page-team"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/sr-page-teams@workspace:libs/sr/page-teams":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/sr-page-teams@workspace:libs/sr/page-teams"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/sr-schema@workspace:libs/sr/schema":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/sr-schema@workspace:libs/sr/schema"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/sr-solver@workspace:libs/sr/solver":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/sr-solver@workspace:libs/sr/solver"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/sr-srod@workspace:libs/sr/srod":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/sr-srod@workspace:libs/sr/srod"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/sr-stats@workspace:libs/sr/stats":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/sr-stats@workspace:libs/sr/stats"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/sr-svgicons@workspace:libs/sr/svgicons":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/sr-svgicons@workspace:libs/sr/svgicons"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/sr-theme@workspace:libs/sr/theme":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/sr-theme@workspace:libs/sr/theme"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/sr-ui@workspace:libs/sr/ui":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/sr-ui@workspace:libs/sr/ui"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/sr-util@workspace:libs/sr/util":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/sr-util@workspace:libs/sr/util"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/zenless-optimizer@workspace:apps/zzz-frontend":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/zenless-optimizer@workspace:apps/zzz-frontend"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/zzz-assets-data@workspace:libs/zzz/assets-data":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/zzz-assets-data@workspace:libs/zzz/assets-data"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/zzz-assets@workspace:libs/zzz/assets":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/zzz-assets@workspace:libs/zzz/assets"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/zzz-consts@workspace:libs/zzz/consts":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/zzz-consts@workspace:libs/zzz/consts"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/zzz-db-ui@workspace:libs/zzz/db-ui":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/zzz-db-ui@workspace:libs/zzz/db-ui"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/zzz-db@workspace:libs/zzz/db":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/zzz-db@workspace:libs/zzz/db"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/zzz-disc-scanner@workspace:libs/zzz/disc-scanner":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/zzz-disc-scanner@workspace:libs/zzz/disc-scanner"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/zzz-dm-localization@workspace:libs/zzz/dm-localization":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/zzz-dm-localization@workspace:libs/zzz/dm-localization"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/zzz-dm@workspace:libs/zzz/dm":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/zzz-dm@workspace:libs/zzz/dm"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/zzz-formula-ui@workspace:libs/zzz/formula-ui":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/zzz-formula-ui@workspace:libs/zzz/formula-ui"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/zzz-formula@workspace:libs/zzz/formula":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/zzz-formula@workspace:libs/zzz/formula"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/zzz-i18n-node@workspace:libs/zzz/i18n-node":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/zzz-i18n-node@workspace:libs/zzz/i18n-node"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/zzz-i18n@workspace:libs/zzz/i18n":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/zzz-i18n@workspace:libs/zzz/i18n"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/zzz-localization@workspace:libs/zzz/localization":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/zzz-localization@workspace:libs/zzz/localization"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/zzz-page-characters@workspace:libs/zzz/page-characters":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/zzz-page-characters@workspace:libs/zzz/page-characters"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/zzz-page-discs@workspace:libs/zzz/page-discs":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/zzz-page-discs@workspace:libs/zzz/page-discs"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/zzz-page-home@workspace:libs/zzz/page-home":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/zzz-page-home@workspace:libs/zzz/page-home"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/zzz-page-optimize@workspace:libs/zzz/page-optimize":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/zzz-page-optimize@workspace:libs/zzz/page-optimize"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/zzz-page-settings@workspace:libs/zzz/page-settings":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/zzz-page-settings@workspace:libs/zzz/page-settings"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/zzz-page-wengines@workspace:libs/zzz/page-wengines":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/zzz-page-wengines@workspace:libs/zzz/page-wengines"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/zzz-schema@workspace:libs/zzz/schema":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/zzz-schema@workspace:libs/zzz/schema"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/zzz-solver@workspace:libs/zzz/solver":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/zzz-solver@workspace:libs/zzz/solver"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/zzz-stats@workspace:libs/zzz/stats":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/zzz-stats@workspace:libs/zzz/stats"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/zzz-svgicons@workspace:libs/zzz/svgicons":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/zzz-svgicons@workspace:libs/zzz/svgicons"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/zzz-theme@workspace:libs/zzz/theme":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/zzz-theme@workspace:libs/zzz/theme"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/zzz-ui@workspace:libs/zzz/ui":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/zzz-ui@workspace:libs/zzz/ui"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/zzz-util@workspace:libs/zzz/util":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/zzz-util@workspace:libs/zzz/util"
+  languageName: unknown
+  linkType: soft
+
+"@genshin-optimizer/zzz-zood@workspace:libs/zzz/zood":
+  version: 0.0.0-use.local
+  resolution: "@genshin-optimizer/zzz-zood@workspace:libs/zzz/zood"
+  languageName: unknown
+  linkType: soft
+
 "@humanwhocodes/config-array@npm:^0.11.14":
   version: 0.11.14
   resolution: "@humanwhocodes/config-array@npm:0.11.14"
@@ -8903,6 +9717,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"axios@npm:1.16.0":
+  version: 1.16.0
+  resolution: "axios@npm:1.16.0"
+  dependencies:
+    follow-redirects: ^1.16.0
+    form-data: ^4.0.5
+    proxy-from-env: ^2.1.0
+  checksum: 93e810968167fea59750d28f458e6860973a573c14bd60fe57ee07b5241f4c16991b149ae9ce65d79765081e3004743c9e158c438edba75af6f4612197e6834b
+  languageName: node
+  linkType: hard
+
 "axios@npm:^1.7.4":
   version: 1.8.2
   resolution: "axios@npm:1.8.2"
@@ -9254,7 +10079,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bl@npm:^4.0.3":
+"bl@npm:^4.0.3, bl@npm:^4.1.0":
   version: 4.1.0
   resolution: "bl@npm:4.1.0"
   dependencies:
@@ -10363,6 +11188,25 @@ __metadata:
   bin:
     create-jest: bin/create-jest.js
   checksum: 1427d49458adcd88547ef6fa39041e1fe9033a661293aa8d2c3aa1b4967cb5bf4f0c00436c7a61816558f28ba2ba81a94d5c962e8022ea9a883978fc8e1f2945
+  languageName: node
+  linkType: hard
+
+"create-nx-workspace@npm:^23.0.1":
+  version: 23.0.1
+  resolution: "create-nx-workspace@npm:23.0.1"
+  dependencies:
+    axios: 1.16.0
+    chalk: ^4.1.0
+    enquirer: ~2.3.6
+    flat: ^5.0.2
+    open: ^8.4.0
+    ora: ^5.3.0
+    tmp: ~0.2.7
+    tslib: ^2.3.0
+    yargs: ^17.6.2
+  bin:
+    create-nx-workspace: ./dist/bin/index.js
+  checksum: d758823a390f3a53840fd42e91218e527af55cbc3aa0a81730dd6c471ca55f7e44236faaef6a11e71b7179b81fd089703c5af3ce257759b9e5349099bdda9f08
   languageName: node
   linkType: hard
 
@@ -13009,6 +13853,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"follow-redirects@npm:^1.16.0":
+  version: 1.16.0
+  resolution: "follow-redirects@npm:1.16.0"
+  peerDependenciesMeta:
+    debug:
+      optional: true
+  checksum: e90dce4607b1f6b8b9883287f912585573c19088209ad82341d550a795b4ba514522b73b1b340cf618279df27975cd46504d09149be60291ba6767384c1fd8f8
+  languageName: node
+  linkType: hard
+
 "for-each@npm:^0.3.3":
   version: 0.3.3
   resolution: "for-each@npm:0.3.3"
@@ -13089,6 +13943,19 @@ __metadata:
     combined-stream: ^1.0.8
     mime-types: ^2.1.12
   checksum: 01135bf8675f9d5c61ff18e2e2932f719ca4de964e3be90ef4c36aacfc7b9cb2fceb5eca0b7e0190e3383fe51c5b37f4cb80b62ca06a99aaabfcfd6ac7c9328c
+  languageName: node
+  linkType: hard
+
+"form-data@npm:^4.0.5":
+  version: 4.0.6
+  resolution: "form-data@npm:4.0.6"
+  dependencies:
+    asynckit: ^0.4.0
+    combined-stream: ^1.0.8
+    es-set-tostringtag: ^2.1.0
+    hasown: ^2.0.4
+    mime-types: ^2.1.35
+  checksum: e51b9e97678c250c872cd4ec3e5eaa8fa43bee4b1acf8274c337308aebc6aebb0553091ce0810612826601ffafed9dace12504a63c6ef16c57fffcd7dcfec457
   languageName: node
   linkType: hard
 
@@ -13312,113 +14179,6 @@ __metadata:
   checksum: 788b6bfe52f1dd8e263cda800c26ac0ca2ff6de0b6eee2fe0d9e3abf15e149b651bd27bf5226be10e6e3edb5c4e5d5985a5a1a98137e7a892f75eff76467ad2d
   languageName: node
   linkType: hard
-
-"genshin-optimizer@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "genshin-optimizer@workspace:."
-  dependencies:
-    "@babel/core": ^7.14.5
-    "@babel/preset-react": ^7.18.6
-    "@biomejs/biome": ^1.9.4
-    "@emotion/babel-plugin": 11.11.0
-    "@emotion/react": 11.11.4
-    "@emotion/styled": 11.11.5
-    "@fontsource/inter": ^5.2.5
-    "@fontsource/roboto": ^5.0.13
-    "@mui/icons-material": ^5.14.12
-    "@mui/lab": ^5.0.0-alpha.170
-    "@mui/material": ^5.16.6
-    "@mui/system": ^5.16.6
-    "@mui/types": ^7.2.14
-    "@nx/cypress": 20.5.0
-    "@nx/devkit": 20.5.0
-    "@nx/esbuild": 20.5.0
-    "@nx/eslint": 20.5.0
-    "@nx/eslint-plugin": 20.5.0
-    "@nx/jest": 20.5.0
-    "@nx/js": 20.5.0
-    "@nx/node": 20.5.0
-    "@nx/plugin": 20.5.0
-    "@nx/react": 20.5.0
-    "@nx/vite": 20.5.0
-    "@nx/web": 20.5.0
-    "@nx/webpack": 20.5.0
-    "@nx/workspace": 20.5.0
-    "@pmmmwh/react-refresh-webpack-plugin": ^0.5.10
-    "@svgr/webpack": 8.0.1
-    "@swc-node/register": 1.9.2
-    "@swc/cli": 0.3.12
-    "@swc/core": 1.5.25
-    "@swc/helpers": 0.5.11
-    "@testing-library/dom": 10.4.0
-    "@testing-library/react": 16.1.0
-    "@types/jest": 29.5.14
-    "@types/json-bigint": ^1.0.4
-    "@types/node": ^18.16.9
-    "@types/react": 18.3.1
-    "@types/react-dom": 18.3.0
-    "@types/xxhashjs": ^0.2.4
-    "@typescript-eslint/eslint-plugin": 7.16.0
-    "@typescript-eslint/parser": 7.16.0
-    "@vitejs/plugin-react": 4.2.0
-    "@vitest/coverage-c8": ^0.32.0
-    "@vitest/coverage-v8": ^1.0.4
-    "@vitest/ui": ^1.3.1
-    babel-jest: 29.7.0
-    core-js: ^3.28.0
-    cypress: 13.13.0
-    discord.js: ^14.16.1
-    esbuild: 0.19.2
-    eslint: 8.57.0
-    eslint-plugin-cypress: ^3.5.0
-    eslint-plugin-import: 2.31.0
-    eslint-plugin-jsx-a11y: 6.10.1
-    eslint-plugin-react: 7.35.0
-    eslint-plugin-react-hooks: 5.0.0
-    eslint-plugin-unused-imports: ^4.1.4
-    gh-pages: ^5.0.0
-    i18next: ^23.6.0
-    i18next-browser-languagedetector: ^7.0.1
-    i18next-fs-backend: ^2.3.1
-    i18next-http-backend: ^2.1.1
-    jest: 29.7.0
-    jest-environment-jsdom: 29.7.0
-    jest-environment-node: ^29.7.0
-    jiti: 2.4.2
-    jsdom: 22.1.0
-    json-bigint: ^1.0.0
-    jsonc-eslint-parser: ^2.1.0
-    nx: 20.5.0
-    prettier: ^3.5.3
-    react: 18.3.1
-    react-dom: 18.3.1
-    react-ga4: ^2.1.0
-    react-i18next: ^13.3.1
-    react-markdown: ^8.0.5
-    react-refresh: ^0.10.0
-    react-router-dom: 6.11.2
-    recharts: ^2.4.3
-    regenerator-runtime: 0.13.11
-    remark-gfm: ^3.0.1
-    swc-loader: 0.1.15
-    tesseract.js: ^5.0.2
-    ts-jest: 29.1.0
-    ts-node: 10.9.1
-    tslib: ^2.5.0
-    typescript: 5.7.3
-    url-loader: ^4.1.1
-    vite: 6.0.0
-    vite-plugin-dts: 4.5.3
-    vite-plugin-eslint: ^1.8.1
-    vite-plugin-static-copy: ^1.0.1
-    vite-tsconfig-paths: 4.2.0
-    vitest: ^1.3.1
-    webpack-cli: ^5.1.4
-    xxhashjs: ^0.2.2
-    yaml: ^2.3.4
-    zod: ^4.2.1
-  languageName: unknown
-  linkType: soft
 
 "gensync@npm:^1.0.0-beta.2":
   version: 1.0.0-beta.2
@@ -13961,6 +14721,15 @@ __metadata:
   dependencies:
     function-bind: ^1.1.2
   checksum: e8516f776a15149ca6c6ed2ae3110c417a00b62260e222590e54aa367cbcd6ed99122020b37b7fbdf05748df57b265e70095d7bf35a47660587619b15ffb93db
+  languageName: node
+  linkType: hard
+
+"hasown@npm:^2.0.4":
+  version: 2.0.4
+  resolution: "hasown@npm:2.0.4"
+  dependencies:
+    function-bind: ^1.1.2
+  checksum: 4bd8f916b629e06324853593ffbdd45e200022952a85ad0c967f3bd4c2e4c7e1f9a9766fbe6186f60bd394e0afc73e719730caa1da15cd9bd832b7cdf53fd26c
   languageName: node
   linkType: hard
 
@@ -16742,7 +17511,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"log-symbols@npm:^4.0.0":
+"log-symbols@npm:^4.0.0, log-symbols@npm:^4.1.0":
   version: 4.1.0
   resolution: "log-symbols@npm:4.1.0"
   dependencies:
@@ -17630,7 +18399,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mime-types@npm:^2.1.12, mime-types@npm:^2.1.18, mime-types@npm:^2.1.27, mime-types@npm:^2.1.31, mime-types@npm:~2.1.17, mime-types@npm:~2.1.19, mime-types@npm:~2.1.24, mime-types@npm:~2.1.34":
+"mime-types@npm:^2.1.12, mime-types@npm:^2.1.18, mime-types@npm:^2.1.27, mime-types@npm:^2.1.31, mime-types@npm:^2.1.35, mime-types@npm:~2.1.17, mime-types@npm:~2.1.19, mime-types@npm:~2.1.24, mime-types@npm:~2.1.34":
   version: 2.1.35
   resolution: "mime-types@npm:2.1.35"
   dependencies:
@@ -18594,6 +19363,23 @@ __metadata:
     strip-ansi: ^6.0.0
     wcwidth: ^1.0.1
   checksum: 60ec956843def482e2a9a78e98b6bfb19129cbf683fa4e4daca41423f9a098332a8a33b4ca335151b1e6836ff746e3b96e09441f3aea72151e4060990966daad
+  languageName: node
+  linkType: hard
+
+"ora@npm:^5.3.0":
+  version: 5.4.1
+  resolution: "ora@npm:5.4.1"
+  dependencies:
+    bl: ^4.1.0
+    chalk: ^4.1.0
+    cli-cursor: ^3.1.0
+    cli-spinners: ^2.5.0
+    is-interactive: ^1.0.0
+    is-unicode-supported: ^0.1.0
+    log-symbols: ^4.1.0
+    strip-ansi: ^6.0.0
+    wcwidth: ^1.0.1
+  checksum: 28d476ee6c1049d68368c0dc922e7225e3b5600c3ede88fade8052837f9ed342625fdaa84a6209302587c8ddd9b664f71f0759833cbdb3a4cf81344057e63c63
   languageName: node
   linkType: hard
 
@@ -19605,6 +20391,13 @@ __metadata:
   version: 1.1.0
   resolution: "proxy-from-env@npm:1.1.0"
   checksum: ed7fcc2ba0a33404958e34d95d18638249a68c430e30fcb6c478497d72739ba64ce9810a24f53a7d921d0c065e5b78e3822759800698167256b04659366ca4d4
+  languageName: node
+  linkType: hard
+
+"proxy-from-env@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "proxy-from-env@npm:2.1.0"
+  checksum: b106ad790f26d47ba4791af3fe8cba5c8d35d85020119c82c05b413eb11b3ab97d2393ecaed51bca97c2788fa256408283dfeb4d970b2ebcae6702310f064e7e
   languageName: node
   linkType: hard
 
@@ -22397,6 +23190,13 @@ __metadata:
   version: 0.2.3
   resolution: "tmp@npm:0.2.3"
   checksum: 73b5c96b6e52da7e104d9d44afb5d106bb1e16d9fa7d00dbeb9e6522e61b571fbdb165c756c62164be9a3bbe192b9b268c236d370a2a0955c7689cd2ae377b95
+  languageName: node
+  linkType: hard
+
+"tmp@npm:~0.2.7":
+  version: 0.2.7
+  resolution: "tmp@npm:0.2.7"
+  checksum: 45dec2fc288ad368eeff7268cb6d5d33452c6d35f4f7d9b1b5e023409a141dab57a3c08b5f505daf3af6d69667a5f544fc1a5b6a27c6f9396a5a1b4002912f1c
   languageName: node
   linkType: hard
 

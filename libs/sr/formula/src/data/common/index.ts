@@ -1,4 +1,4 @@
-import { max, min, prod } from '@genshin-optimizer/pando/engine'
+import { max, min, prod } from '@genshin-optimizer/pando-engine'
 import type { TagMapNodeEntries } from '../util'
 import { own, ownBuff, percent, reader } from '../util'
 import dmg from './dmg'

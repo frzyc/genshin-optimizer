@@ -1,0 +1,118 @@
+
+> nx run @genshin-optimizer/common-ui:"tsc:typecheck"
+
+> tsc --build --emitDeclarationOnly
+
+src/components/BootstrapTooltip.tsx(6,31): error TS2375: Type '{ popper: string | undefined; }' is not assignable to type 'Partial<TooltipClasses>' with 'exactOptionalPropertyTypes: true'. Consider adding 'undefined' to the types of the target's properties.
+  Types of property 'popper' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/components/GeneralAutocomplete.tsx(83,12): error TS2375: Type '{ label: string | undefined; InputProps: { startAdornment: Element | undefined; ref: Ref<any>; className: string; endAdornment: ReactNode; }; inputProps: { ...; }; ... 291 more ...; hiddenLabel?: boolean; } | { ...; } | { ...; }' is not assignable to type 'IntrinsicAttributes & { css?: Interpolation<Theme>; } & { variant?: "outlined" | "filled" | "standard"; } & Omit<OutlinedTextFieldProps | FilledTextFieldProps | StandardTextFieldProps, "variant">' with 'exactOptionalPropertyTypes: true'. Consider adding 'undefined' to the types of the target's properties.
+  Type '{ label: string | undefined; InputProps: { startAdornment: Element | undefined; ref: Ref<any>; className: string; endAdornment: ReactNode; }; inputProps: { autoComplete: string; ... 293 more ...; ref: Ref<...>; }; ... 291 more ...; hiddenLabel?: boolean; }' is not assignable to type 'Omit<OutlinedTextFieldProps | FilledTextFieldProps | StandardTextFieldProps, "variant">' with 'exactOptionalPropertyTypes: true'. Consider adding 'undefined' to the types of the target's properties.
+    Types of property 'size' are incompatible.
+      Type 'OverridableStringUnion<"small" | "medium", TextFieldPropsSizeOverrides> | undefined' is not assignable to type 'OverridableStringUnion<"small" | "medium", TextFieldPropsSizeOverrides>'.
+        Type 'undefined' is not assignable to type 'OverridableStringUnion<"small" | "medium", TextFieldPropsSizeOverrides>'.
+src/components/GeneralAutocomplete.tsx(106,12): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(props: { href: string; } & MenuItemOwnProps & Omit<ButtonBaseOwnProps, "classes"> & CommonProps & Omit<Omit<DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>, "ref"> & { ...; }, "className" | ... 20 more ... | "disableGutters">): Element', gave the following error.
+    Type '{ children: (false | Element)[]; defaultChecked?: boolean | undefined; defaultValue?: string | number | readonly string[] | undefined; suppressContentEditableWarning?: boolean | undefined; ... 261 more ...; key: string; }' is not assignable to type 'IntrinsicAttributes & { css?: Interpolation<Theme>; } & { href: string; } & MenuItemOwnProps & Omit<ButtonBaseOwnProps, "classes"> & CommonProps & Omit<...>' with 'exactOptionalPropertyTypes: true'. Consider adding 'undefined' to the types of the target's properties.
+      Property 'value' does not exist on type 'IntrinsicAttributes & { css?: Interpolation<Theme>; } & { href: string; } & MenuItemOwnProps & Omit<ButtonBaseOwnProps, "classes"> & CommonProps & Omit<...>'.
+  Overload 2 of 3, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & MenuItemOwnProps & Omit<ButtonBaseOwnProps, "classes"> & CommonProps & Omit<...>): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: (false | Element)[]; defaultChecked?: boolean | undefined; defaultValue?: string | number | readonly string[] | undefined; suppressContentEditableWarning?: boolean | undefined; ... 261 more ...; key: string; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 3 of 3, '(props: DefaultComponentProps<ExtendButtonBaseTypeMap<MenuItemTypeMap<{}, "li">>>): Element | null', gave the following error.
+    Type '{ children: (false | Element)[]; defaultChecked?: boolean | undefined; defaultValue?: string | number | readonly string[] | undefined; suppressContentEditableWarning?: boolean | undefined; ... 261 more ...; key: string; }' is not assignable to type 'MenuItemOwnProps' with 'exactOptionalPropertyTypes: true'. Consider adding 'undefined' to the types of the target's properties.
+      Types of property 'autoFocus' are incompatible.
+        Type 'boolean | undefined' is not assignable to type 'boolean'.
+          Type 'undefined' is not assignable to type 'boolean'.
+src/components/GeneralAutocomplete.tsx(115,18): error TS2375: Type '{ children: (ReactNode | Element)[]; color: keyof Palette | undefined; sx: { display: "flex"; gap: number; }; }' is not assignable to type 'ColorTextProps' with 'exactOptionalPropertyTypes: true'. Consider adding 'undefined' to the types of the target's properties.
+  Types of property 'color' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/components/GeneralAutocomplete.tsx(188,10): error TS2375: Type '{ label: string | undefined; inputProps: { autoComplete: string; accept?: string | undefined; alt?: string | undefined; capture?: boolean | "user" | "environment" | undefined; checked?: boolean | undefined; ... 289 more ...; ref: Ref<...>; }; ... 6 more ...; InputProps: { ...; }; }' is not assignable to type 'Omit<OutlinedTextFieldProps | FilledTextFieldProps | StandardTextFieldProps, "variant">' with 'exactOptionalPropertyTypes: true'. Consider adding 'undefined' to the types of the target's properties.
+  Types of property 'size' are incompatible.
+    Type '"small" | undefined' is not assignable to type 'OverridableStringUnion<"small" | "medium", TextFieldPropsSizeOverrides>'.
+      Type 'undefined' is not assignable to type 'OverridableStringUnion<"small" | "medium", TextFieldPropsSizeOverrides>'.
+src/components/GeneralAutocomplete.tsx(199,10): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(props: { href: string; } & MenuItemOwnProps & Omit<ButtonBaseOwnProps, "classes"> & CommonProps & Omit<Omit<DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>, "ref"> & { ...; }, "className" | ... 20 more ... | "disableGutters">): Element', gave the following error.
+    Type '{ children: (false | Element)[]; key: T; defaultChecked?: boolean | undefined; defaultValue?: string | number | readonly string[] | undefined; suppressContentEditableWarning?: boolean | undefined; ... 259 more ...; value: T; }' is not assignable to type 'IntrinsicAttributes & { css?: Interpolation<Theme>; } & { href: string; } & MenuItemOwnProps & Omit<ButtonBaseOwnProps, "classes"> & CommonProps & Omit<...>' with 'exactOptionalPropertyTypes: true'. Consider adding 'undefined' to the types of the target's properties.
+      Property 'value' does not exist on type 'IntrinsicAttributes & { css?: Interpolation<Theme>; } & { href: string; } & MenuItemOwnProps & Omit<ButtonBaseOwnProps, "classes"> & CommonProps & Omit<...>'.
+  Overload 2 of 3, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & MenuItemOwnProps & Omit<ButtonBaseOwnProps, "classes"> & CommonProps & Omit<...>): Element | null', gave the following error.
+    Property 'component' is missing in type '{ children: (false | Element)[]; key: T; defaultChecked?: boolean | undefined; defaultValue?: string | number | readonly string[] | undefined; suppressContentEditableWarning?: boolean | undefined; ... 259 more ...; value: T; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 3 of 3, '(props: DefaultComponentProps<ExtendButtonBaseTypeMap<MenuItemTypeMap<{}, "li">>>): Element | null', gave the following error.
+    Type '{ children: (false | Element)[]; key: T; defaultChecked?: boolean | undefined; defaultValue?: string | number | readonly string[] | undefined; suppressContentEditableWarning?: boolean | undefined; ... 259 more ...; value: T; }' is not assignable to type 'MenuItemOwnProps' with 'exactOptionalPropertyTypes: true'. Consider adding 'undefined' to the types of the target's properties.
+      Types of property 'autoFocus' are incompatible.
+        Type 'boolean | undefined' is not assignable to type 'boolean'.
+          Type 'undefined' is not assignable to type 'boolean'.
+src/components/GeneralAutocomplete.tsx(203,16): error TS2375: Type '{ children: (ReactNode | Element)[]; color: keyof Palette | undefined; sx: { display: "flex"; gap: number; }; }' is not assignable to type 'ColorTextProps' with 'exactOptionalPropertyTypes: true'. Consider adding 'undefined' to the types of the target's properties.
+  Types of property 'color' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/components/GeneralAutocomplete.tsx(218,12): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & ChipOwnProps & CommonProps & Omit<any, "className" | ... 15 more ... | "skipFocusWhenDisabled">): Element | null', gave the following error.
+    Type '{ key: string; icon: Element | undefined; label: string | Element; color: keyof ChipPropsColorOverrides; className: string; disabled: boolean; ... 272 more ...; component?: ElementType<...>; }' is not assignable to type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+      Property 'component' is optional in type '{ key: string; icon: Element | undefined; label: string | Element; color: keyof ChipPropsColorOverrides; className: string; disabled: boolean; ... 272 more ...; component?: ElementType<...>; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<ChipTypeMap<{}, "div">>): Element | null', gave the following error.
+    Type '{ key: string; icon: Element | undefined; label: string | Element; color: keyof ChipPropsColorOverrides; className: string; disabled: boolean; ... 272 more ...; component?: ElementType<...>; }' is not assignable to type 'ChipOwnProps' with 'exactOptionalPropertyTypes: true'. Consider adding 'undefined' to the types of the target's properties.
+      Types of property 'icon' are incompatible.
+        Type 'Element | undefined' is not assignable to type 'ReactElement<any, string | JSXElementConstructor<any>>'.
+          Type 'undefined' is not assignable to type 'ReactElement<any, string | JSXElementConstructor<any>>'.
+src/components/ModalWrapper.tsx(28,6): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & ModalOwnProps & CommonProps & Omit<any, "className" | ... 24 more ... | "onTransitionExited">): Element | null', gave the following error.
+    Type '{ children: Element; BackdropComponent?: ElementType<BackdropProps, keyof IntrinsicElements>; BackdropProps?: Partial<BackdropProps>; ... 285 more ...; component?: ElementType<...>; }' is not assignable to type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+      Property 'component' is optional in type '{ children: Element; BackdropComponent?: ElementType<BackdropProps, keyof IntrinsicElements>; BackdropProps?: Partial<BackdropProps>; ... 285 more ...; component?: ElementType<...>; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<ModalTypeMap<"div", {}>>): Element | null', gave the following error.
+    Type '{ children: Element; BackdropComponent?: ElementType<BackdropProps, keyof IntrinsicElements>; BackdropProps?: Partial<BackdropProps>; ... 285 more ...; component?: ElementType<...>; }' is not assignable to type 'CommonProps' with 'exactOptionalPropertyTypes: true'. Consider adding 'undefined' to the types of the target's properties.
+      Types of property 'style' are incompatible.
+        Type 'CSSProperties | undefined' is not assignable to type 'CSSProperties'.
+          Type 'undefined' is not assignable to type 'Properties<string | number, string & {}>'.
+src/components/StarDisplay.tsx(14,6): error TS2375: Type '{ children: Element[]; color: string | undefined; }' is not assignable to type 'ColorTextProps' with 'exactOptionalPropertyTypes: true'. Consider adding 'undefined' to the types of the target's properties.
+  Types of property 'color' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/components/StarDisplay.tsx(16,10): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & SvgIconOwnProps & CommonProps & Omit<any, "className" | ... 10 more ... | "titleAccess">): Element | null', gave the following error.
+    Property 'component' is missing in type '{ key: number; fontSize: "inherit" | undefined; sx: { verticalAlign: string; } | undefined; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<SvgIconTypeMap<{}, "svg">>): Element | null', gave the following error.
+    Type '{ key: number; fontSize: "inherit" | undefined; sx: { verticalAlign: string; } | undefined; }' is not assignable to type 'SvgIconOwnProps' with 'exactOptionalPropertyTypes: true'. Consider adding 'undefined' to the types of the target's properties.
+      Types of property 'fontSize' are incompatible.
+        Type '"inherit" | undefined' is not assignable to type 'OverridableStringUnion<"small" | "inherit" | "large" | "medium", SvgIconPropsSizeOverrides>'.
+          Type 'undefined' is not assignable to type 'OverridableStringUnion<"small" | "inherit" | "large" | "medium", SvgIconPropsSizeOverrides>'.
+src/components/StatInput.tsx(45,10): error TS2375: Type '{ sx: { px: number; }; inputProps: { sx: { textAlign: string; }; }; float: boolean; placeholder: string | undefined; value: number; onChange: (newValue: number | undefined) => void; disabled: boolean; endAdornment: string | undefined; }' is not assignable to type 'Omit<InputProps, "onChange">' with 'exactOptionalPropertyTypes: true'. Consider adding 'undefined' to the types of the target's properties.
+  Types of property 'placeholder' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/components/TranslateBase.tsx(1,33): error TS2307: Cannot find module '@emotion/react/types/jsx-namespace' or its corresponding type declarations.
+src/components/TranslateBase.tsx(31,8): error TS2375: Type '{ children: ReactNode; i18nKey: string; t: TFunction<string, undefined>; components: Record<string, EmotionJSX.Element> | undefined; values: Record<string, string | number> | undefined; }' is not assignable to type '{ children?: TransChild | readonly TransChild[]; components?: readonly ReactElement<any, string | JSXElementConstructor<any>>[] | { ...; }; ... 10 more ...; t?: TFunction<...>; }' with 'exactOptionalPropertyTypes: true'. Consider adding 'undefined' to the types of the target's properties.
+  Types of property 'components' are incompatible.
+    Type 'Record<string, EmotionJSX.Element> | undefined' is not assignable to type 'readonly ReactElement<any, string | JSXElementConstructor<any>>[] | { readonly [tagName: string]: ReactElement<any, string | JSXElementConstructor<any>>; }'.
+      Type 'undefined' is not assignable to type 'readonly ReactElement<any, string | JSXElementConstructor<any>>[] | { readonly [tagName: string]: ReactElement<any, string | JSXElementConstructor<any>>; }'.
+src/components/TranslateBase.tsx(37,8): error TS2375: Type '{ key18: string; obj: $SpecialObject; t: TFunction<string, undefined>; values: Record<string, string | number> | undefined; components: Record<string, EmotionJSX.Element> | undefined; }' is not assignable to type '{ key18: string; obj: any; li?: boolean; t: TFunction<string, undefined>; values?: any; components?: Record<string, EmotionJSX.Element>; }' with 'exactOptionalPropertyTypes: true'. Consider adding 'undefined' to the types of the target's properties.
+  Types of property 'components' are incompatible.
+    Type 'Record<string, EmotionJSX.Element> | undefined' is not assignable to type 'Record<string, EmotionJSX.Element>'.
+      Type 'undefined' is not assignable to type 'Record<string, EmotionJSX.Element>'.
+src/components/TranslateBase.tsx(69,8): error TS2375: Type '{ i18nKey: string; components: Record<string, EmotionJSX.Element> | undefined; parent: ({ children }: { children?: Element; }) => Element; t: TFunction<string, undefined>; values: any; }' is not assignable to type '{ children?: TransChild | readonly TransChild[]; components?: readonly ReactElement<any, string | JSXElementConstructor<any>>[] | { ...; }; ... 10 more ...; t?: TFunction<...>; }' with 'exactOptionalPropertyTypes: true'. Consider adding 'undefined' to the types of the target's properties.
+  Types of property 'components' are incompatible.
+    Type 'Record<string, EmotionJSX.Element> | undefined' is not assignable to type 'readonly ReactElement<any, string | JSXElementConstructor<any>>[] | { readonly [tagName: string]: ReactElement<any, string | JSXElementConstructor<any>>; }'.
+      Type 'undefined' is not assignable to type 'readonly ReactElement<any, string | JSXElementConstructor<any>>[] | { readonly [tagName: string]: ReactElement<any, string | JSXElementConstructor<any>>; }'.
+src/components/TranslateBase.tsx(81,12): error TS2375: Type '{ key18: string; obj: { [n: number]: any; length: number; toString(): string; toLocaleString(): string; toLocaleString(locales: string | string[], options?: (NumberFormatOptions & DateTimeFormatOptions) | undefined): string; ... 31 more ...; at(index: number): any; }; li: true; t: TFunction<...>; values: any; compon...' is not assignable to type '{ key18: string; obj: any; li?: boolean; t: TFunction<string, undefined>; values?: any; components?: Record<string, EmotionJSX.Element>; }' with 'exactOptionalPropertyTypes: true'. Consider adding 'undefined' to the types of the target's properties.
+  Types of property 'components' are incompatible.
+    Type 'Record<string, EmotionJSX.Element> | undefined' is not assignable to type 'Record<string, EmotionJSX.Element>'.
+      Type 'undefined' is not assignable to type 'Record<string, EmotionJSX.Element>'.
+src/components/TranslateBase.tsx(97,10): error TS2375: Type '{ key: any; key18: string; obj: object | null; t: TFunction<string, undefined>; values: any; components: Record<string, EmotionJSX.Element> | undefined; }' is not assignable to type '{ key18: string; obj: any; li?: boolean; t: TFunction<string, undefined>; values?: any; components?: Record<string, EmotionJSX.Element>; }' with 'exactOptionalPropertyTypes: true'. Consider adding 'undefined' to the types of the target's properties.
+  Types of property 'components' are incompatible.
+    Type 'Record<string, EmotionJSX.Element> | undefined' is not assignable to type 'Record<string, EmotionJSX.Element>'.
+      Type 'undefined' is not assignable to type 'Record<string, EmotionJSX.Element>'.
+src/components/TranslateBase.tsx(108,10): error TS2375: Type '{ key: any; i18nKey: `${string}.${string}`; components: Record<string, EmotionJSX.Element> | undefined; parent: ({ children }: { children?: Element; }) => Element; t: TFunction<string, undefined>; values: any; }' is not assignable to type '{ children?: TransChild | readonly TransChild[]; components?: readonly ReactElement<any, string | JSXElementConstructor<any>>[] | { ...; }; ... 10 more ...; t?: TFunction<...>; }' with 'exactOptionalPropertyTypes: true'. Consider adding 'undefined' to the types of the target's properties.
+  Types of property 'components' are incompatible.
+    Type 'Record<string, EmotionJSX.Element> | undefined' is not assignable to type 'readonly ReactElement<any, string | JSXElementConstructor<any>>[] | { readonly [tagName: string]: ReactElement<any, string | JSXElementConstructor<any>>; }'.
+      Type 'undefined' is not assignable to type 'readonly ReactElement<any, string | JSXElementConstructor<any>>[] | { readonly [tagName: string]: ReactElement<any, string | JSXElementConstructor<any>>; }'.
+
+
+
+ NX   Running target tsc:typecheck for project @genshin-optimizer/common-ui failed
+
+Failed tasks:
+
+- @genshin-optimizer/common-ui:tsc:typecheck
+
+Hint: run the command with --verbose for more details.
+

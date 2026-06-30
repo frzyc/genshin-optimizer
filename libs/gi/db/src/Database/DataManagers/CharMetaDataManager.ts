@@ -1,9 +1,9 @@
-import { deepFreeze } from '@genshin-optimizer/common/util'
+import { deepFreeze } from '@genshin-optimizer/common-util'
 import type {
   CharacterKey,
   LocationCharacterKey,
-} from '@genshin-optimizer/gi/consts'
-import { allTravelerKeys } from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
+import { allTravelerKeys } from '@genshin-optimizer/gi-consts'
 import { z } from 'zod'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'

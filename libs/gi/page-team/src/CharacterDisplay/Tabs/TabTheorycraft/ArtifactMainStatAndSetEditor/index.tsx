@@ -1,5 +1,5 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
-import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
+import { CardThemed } from '@genshin-optimizer/common-ui'
+import { allArtifactSlotKeys } from '@genshin-optimizer/gi-consts'
 import { Skeleton, Stack } from '@mui/material'
 import { Suspense } from 'react'
 import { ArtifactMainLevelSlot } from './ArtifactMainLevelSlot'

@@ -1,10 +1,10 @@
-import { ImgIcon } from '@genshin-optimizer/common/ui'
+import { ImgIcon } from '@genshin-optimizer/common-ui'
 import {
   characterAsset,
   characterKeyToGenderedKey,
-} from '@genshin-optimizer/sr/assets'
-import type { CharacterKey } from '@genshin-optimizer/sr/consts'
-import { useTeam } from '@genshin-optimizer/sr/db-ui'
+} from '@genshin-optimizer/sr-assets'
+import type { CharacterKey } from '@genshin-optimizer/sr-consts'
+import { useTeam } from '@genshin-optimizer/sr-db-ui'
 import PersonIcon from '@mui/icons-material/Person'
 import { Tab, Tabs, Typography, useMediaQuery, useTheme } from '@mui/material'
 import { useTranslation } from 'react-i18next'

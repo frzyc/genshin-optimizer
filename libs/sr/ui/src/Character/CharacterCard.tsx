@@ -2,23 +2,23 @@ import {
   CardThemed,
   ColorText,
   StarsDisplay,
-} from '@genshin-optimizer/common/ui'
-import { getUnitStr, toPercent } from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-ui'
+import { getUnitStr, toPercent } from '@genshin-optimizer/common-util'
 import {
   characterAsset,
   characterKeyToGenderedKey,
-} from '@genshin-optimizer/sr/assets'
-import { type CharacterKey, getLevelString } from '@genshin-optimizer/sr/consts'
-import type { ICachedCharacter } from '@genshin-optimizer/sr/db'
-import type { Calculator } from '@genshin-optimizer/sr/formula'
+} from '@genshin-optimizer/sr-assets'
+import { type CharacterKey, getLevelString } from '@genshin-optimizer/sr-consts'
+import type { ICachedCharacter } from '@genshin-optimizer/sr-db'
+import type { Calculator } from '@genshin-optimizer/sr-formula'
 import {
   charTagMapNodeEntries,
   own,
   srCalculatorWithEntries,
-} from '@genshin-optimizer/sr/formula'
-import { getCharStat } from '@genshin-optimizer/sr/stats'
-import { ElementIcon, PathIcon } from '@genshin-optimizer/sr/svgicons'
-import { statToFixed } from '@genshin-optimizer/sr/util'
+} from '@genshin-optimizer/sr-formula'
+import { getCharStat } from '@genshin-optimizer/sr-stats'
+import { ElementIcon, PathIcon } from '@genshin-optimizer/sr-svgicons'
+import { statToFixed } from '@genshin-optimizer/sr-util'
 import {
   Box,
   CardActionArea,

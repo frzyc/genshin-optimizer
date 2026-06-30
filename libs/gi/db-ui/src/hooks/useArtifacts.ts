@@ -1,6 +1,6 @@
-import { objKeyMap } from '@genshin-optimizer/common/util'
-import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
-import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
+import { objKeyMap } from '@genshin-optimizer/common-util'
+import type { ArtifactSlotKey } from '@genshin-optimizer/gi-consts'
+import { allArtifactSlotKeys } from '@genshin-optimizer/gi-consts'
 import { useMemo } from 'react'
 import { useArtifact } from './useArtifact'
 

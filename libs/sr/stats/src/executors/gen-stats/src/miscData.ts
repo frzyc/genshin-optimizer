@@ -1,4 +1,4 @@
-import { avatarBreakDamage } from '@genshin-optimizer/sr/dm'
+import { avatarBreakDamage } from '@genshin-optimizer/sr-dm'
 
 export type MiscData = {
   breakLevelMulti: number[]

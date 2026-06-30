@@ -1,16 +1,16 @@
-import { BootstrapTooltip, CardThemed } from '@genshin-optimizer/common/ui'
-import { hexToColor } from '@genshin-optimizer/common/util'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
-import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
-import type { CharacterContextObj } from '@genshin-optimizer/gi/db-ui'
+import { BootstrapTooltip, CardThemed } from '@genshin-optimizer/common-ui'
+import { hexToColor } from '@genshin-optimizer/common-util'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi-consts'
+import type { ICachedArtifact } from '@genshin-optimizer/gi-db'
+import type { CharacterContextObj } from '@genshin-optimizer/gi-db-ui'
 import {
   CharacterContext,
   useCharacter,
   useDatabase,
   useTeam,
   useTeamChar,
-} from '@genshin-optimizer/gi/db-ui'
-import { getCharEle } from '@genshin-optimizer/gi/stats'
+} from '@genshin-optimizer/gi-db-ui'
+import { getCharEle } from '@genshin-optimizer/gi-stats'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import InfoIcon from '@mui/icons-material/Info'
 import PersonIcon from '@mui/icons-material/Person'

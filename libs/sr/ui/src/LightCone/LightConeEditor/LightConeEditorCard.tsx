@@ -1,4 +1,4 @@
-import { CardThemed, DropdownButton } from '@genshin-optimizer/common/ui'
+import { CardThemed, DropdownButton } from '@genshin-optimizer/common-ui'
 import {
   type AscensionKey,
   type LightConeKey,
@@ -6,8 +6,8 @@ import {
   allSuperimposeKeys,
   ascensionMaxLevel,
   milestoneLevels,
-} from '@genshin-optimizer/sr/consts'
-import type { ILightCone } from '@genshin-optimizer/sr/srod'
+} from '@genshin-optimizer/sr-consts'
+import type { ILightCone } from '@genshin-optimizer/sr-srod'
 import CloseIcon from '@mui/icons-material/Close'
 import {
   CardContent,

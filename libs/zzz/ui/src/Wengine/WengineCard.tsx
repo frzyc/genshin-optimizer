@@ -1,21 +1,21 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
 import {
   BootstrapTooltip,
   CardThemed,
   ConditionalWrapper,
   ImgIcon,
-} from '@genshin-optimizer/common/ui'
-import type { WenginePhaseKey } from '@genshin-optimizer/zzz/assets'
+} from '@genshin-optimizer/common-ui'
+import type { WenginePhaseKey } from '@genshin-optimizer/zzz-assets'
 import {
   specialityDefIcon,
   wengineAsset,
   wenginePhaseIcon,
-} from '@genshin-optimizer/zzz/assets'
-import type { PhaseKey } from '@genshin-optimizer/zzz/consts'
-import { type LocationKey, rarityColor } from '@genshin-optimizer/zzz/consts'
-import { useDatabaseContext, useWengine } from '@genshin-optimizer/zzz/db-ui'
-import { getWengineStat, getWengineStats } from '@genshin-optimizer/zzz/stats'
-import type { IWengine } from '@genshin-optimizer/zzz/zood'
+} from '@genshin-optimizer/zzz-assets'
+import type { PhaseKey } from '@genshin-optimizer/zzz-consts'
+import { type LocationKey, rarityColor } from '@genshin-optimizer/zzz-consts'
+import { useDatabaseContext, useWengine } from '@genshin-optimizer/zzz-db-ui'
+import { getWengineStat, getWengineStats } from '@genshin-optimizer/zzz-stats'
+import type { IWengine } from '@genshin-optimizer/zzz-zood'
 import { Edit } from '@mui/icons-material'
 import {
   Box,

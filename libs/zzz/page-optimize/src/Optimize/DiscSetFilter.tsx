@@ -1,17 +1,17 @@
-import { SqBadge } from '@genshin-optimizer/common/ui'
+import { SqBadge } from '@genshin-optimizer/common-ui'
 import {
   objKeyMap,
   stableArr,
   toggleInArr,
-} from '@genshin-optimizer/common/util'
-import type { DiscSetKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
-import { allDiscSetKeys, allDiscSlotKeys } from '@genshin-optimizer/zzz/consts'
-import type { ICachedDisc, TeamConditional } from '@genshin-optimizer/zzz/db'
-import { useCharacterContext, useTeam } from '@genshin-optimizer/zzz/db-ui'
+} from '@genshin-optimizer/common-util'
+import type { DiscSetKey, DiscSlotKey } from '@genshin-optimizer/zzz-consts'
+import { allDiscSetKeys, allDiscSlotKeys } from '@genshin-optimizer/zzz-consts'
+import type { ICachedDisc, TeamConditional } from '@genshin-optimizer/zzz-db'
+import { useCharacterContext, useTeam } from '@genshin-optimizer/zzz-db-ui'
 import {
   CharCalcMockCountProvider,
   DiscSheetDisplay,
-} from '@genshin-optimizer/zzz/formula-ui'
+} from '@genshin-optimizer/zzz-formula-ui'
 import { Box, Button, ButtonGroup, Grid, Typography } from '@mui/material'
 import { useMemo } from 'react'
 

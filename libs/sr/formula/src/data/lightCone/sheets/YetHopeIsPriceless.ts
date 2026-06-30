@@ -5,9 +5,9 @@ import {
   prod,
   subscript,
   sum,
-} from '@genshin-optimizer/pando/engine'
-import type { LightConeKey } from '@genshin-optimizer/sr/consts'
-import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
+} from '@genshin-optimizer/pando-engine'
+import type { LightConeKey } from '@genshin-optimizer/sr-consts'
+import { allStats, mappedStats } from '@genshin-optimizer/sr-stats'
 import { floor } from '../../../util'
 import {
   allBoolConditionals,

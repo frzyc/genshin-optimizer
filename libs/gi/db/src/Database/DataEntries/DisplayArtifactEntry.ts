@@ -2,13 +2,13 @@ import {
   zodEnumWithDefault,
   zodFilteredArray,
   zodObjectSchema,
-} from '@genshin-optimizer/common/database'
-import { allSubstatKeys } from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/common-database'
+import { allSubstatKeys } from '@genshin-optimizer/gi-consts'
 import {
   artifactSortKeys,
   filterOptionSchema,
   initialFilterOption,
-} from '@genshin-optimizer/gi/schema'
+} from '@genshin-optimizer/gi-schema'
 import { z } from 'zod'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataEntry } from '../DataEntry'

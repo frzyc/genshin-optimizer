@@ -1,10 +1,10 @@
 import { writeFileSync } from 'fs'
-import { formatText } from '@genshin-optimizer/common/pipeline'
+import { formatText } from '@genshin-optimizer/common-pipeline'
 import {
   allCharacterKeys,
   allLightConeKeys,
   allRelicSetKeys,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 import type { Tree } from '@nx/devkit'
 import { workspaceRoot } from '@nx/devkit'
 

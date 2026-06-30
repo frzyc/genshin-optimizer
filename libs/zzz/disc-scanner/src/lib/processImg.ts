@@ -10,12 +10,12 @@ import {
   lighterColor,
   thresholdFilter,
   urlToImageData,
-} from '@genshin-optimizer/common/img-util'
-import type { Color } from '@genshin-optimizer/common/img-util'
-import { clamp, levenshteinDistance } from '@genshin-optimizer/common/util'
-import type { DiscSlotKey } from '@genshin-optimizer/zzz/consts'
-import { discSlotToMainStatKeys } from '@genshin-optimizer/zzz/consts'
-import type { IDisc } from '@genshin-optimizer/zzz/zood'
+} from '@genshin-optimizer/common-img-util'
+import type { Color } from '@genshin-optimizer/common-img-util'
+import { clamp, levenshteinDistance } from '@genshin-optimizer/common-util'
+import type { DiscSlotKey } from '@genshin-optimizer/zzz-consts'
+import { discSlotToMainStatKeys } from '@genshin-optimizer/zzz-consts'
+import type { IDisc } from '@genshin-optimizer/zzz-zood'
 import type { ReactNode } from 'react'
 import { cardFillColor, greyBorderColor } from './consts'
 import { statMapEngMap } from './enStringMap'

@@ -6,9 +6,9 @@ import type {
 } from 'discord.js'
 import { ChannelType, EmbedBuilder, SlashCommandBuilder } from 'discord.js'
 
-import { nameToKey } from '@genshin-optimizer/common/util'
-import { isCharacterKey } from '@genshin-optimizer/gi/consts'
-import { getCharEle } from '@genshin-optimizer/gi/stats'
+import { nameToKey } from '@genshin-optimizer/common-util'
+import { isCharacterKey } from '@genshin-optimizer/gi-consts'
+import { getCharEle } from '@genshin-optimizer/gi-stats'
 import { elementColors } from '../assets/assets'
 
 export const slashcommand = new SlashCommandBuilder()

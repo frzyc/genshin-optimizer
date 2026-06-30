@@ -1,8 +1,8 @@
 import {
   zodBoolean,
   zodEnumWithDefault,
-} from '@genshin-optimizer/common/database'
-import { HOUR_MS } from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-database'
+import { HOUR_MS } from '@genshin-optimizer/common-util'
 import { z } from 'zod'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataEntry } from '../DataEntry'

@@ -1,21 +1,21 @@
 import {
   useDataEntryBase,
   useDataManagerValues,
-} from '@genshin-optimizer/common/database-ui'
+} from '@genshin-optimizer/common-database-ui'
 import {
   useBoolState,
   useMediaQueryUp,
-} from '@genshin-optimizer/common/react-util'
+} from '@genshin-optimizer/common-react-util'
 import {
   CardThemed,
   ShowingAndSortOptionSelect,
   useInfScroll,
-} from '@genshin-optimizer/common/ui'
-import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
-import type { WengineKey } from '@genshin-optimizer/zzz/consts'
-import type { WengineSortKey } from '@genshin-optimizer/zzz/db'
-import { initialWengine } from '@genshin-optimizer/zzz/db'
-import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
+} from '@genshin-optimizer/common-ui'
+import { filterFunction, sortFunction } from '@genshin-optimizer/common-util'
+import type { WengineKey } from '@genshin-optimizer/zzz-consts'
+import type { WengineSortKey } from '@genshin-optimizer/zzz-db'
+import { initialWengine } from '@genshin-optimizer/zzz-db'
+import { useDatabaseContext } from '@genshin-optimizer/zzz-db-ui'
 import {
   WengineCard,
   WengineEditor,
@@ -23,7 +23,7 @@ import {
   wengineFilterConfigs,
   wengineSortConfigs,
   wengineSortMap,
-} from '@genshin-optimizer/zzz/ui'
+} from '@genshin-optimizer/zzz-ui'
 import {
   Box,
   Button,

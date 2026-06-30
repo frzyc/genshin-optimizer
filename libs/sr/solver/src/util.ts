@@ -2,11 +2,11 @@ import type {
   RelicMainStatKey,
   RelicSetKey,
   RelicSubStatKey,
-} from '@genshin-optimizer/sr/consts'
-import type { IBuildTc, ICachedRelic } from '@genshin-optimizer/sr/db'
-import type { TagMapNodeEntries } from '@genshin-optimizer/sr/formula'
-import { relicTagMapNodeEntries } from '@genshin-optimizer/sr/formula'
-import { getRelicMainStatVal } from '@genshin-optimizer/sr/util'
+} from '@genshin-optimizer/sr-consts'
+import type { IBuildTc, ICachedRelic } from '@genshin-optimizer/sr-db'
+import type { TagMapNodeEntries } from '@genshin-optimizer/sr-formula'
+import { relicTagMapNodeEntries } from '@genshin-optimizer/sr-formula'
+import { getRelicMainStatVal } from '@genshin-optimizer/sr-util'
 export function relicsTagMapNodes(relics: ICachedRelic[]): TagMapNodeEntries {
   const sets: Partial<Record<RelicSetKey, number>> = {},
     stats: Partial<Record<RelicMainStatKey | RelicSubStatKey, number>> = {}

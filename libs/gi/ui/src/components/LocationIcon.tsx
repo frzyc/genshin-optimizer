@@ -1,6 +1,6 @@
-import { BootstrapTooltip } from '@genshin-optimizer/common/ui'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-import { useDBMeta } from '@genshin-optimizer/gi/db-ui'
+import { BootstrapTooltip } from '@genshin-optimizer/common-ui'
+import type { CharacterKey } from '@genshin-optimizer/gi-consts'
+import { useDBMeta } from '@genshin-optimizer/gi-db-ui'
 import { Box, Typography } from '@mui/material'
 import { CharIconSide, CharacterName } from './character'
 

@@ -1,20 +1,20 @@
-import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
-import { CardThemed, ConditionalWrapper } from '@genshin-optimizer/common/ui'
+import type { CardBackgroundColor } from '@genshin-optimizer/common-ui'
+import { CardThemed, ConditionalWrapper } from '@genshin-optimizer/common-ui'
 import {
   characterAsset,
   characterKeyToGenderedKey,
   lightConeAsset,
-} from '@genshin-optimizer/sr/assets'
-import type { ICachedLightCone } from '@genshin-optimizer/sr/db'
-import { useLightCone } from '@genshin-optimizer/sr/db-ui'
-import type { Calculator } from '@genshin-optimizer/sr/formula'
+} from '@genshin-optimizer/sr-assets'
+import type { ICachedLightCone } from '@genshin-optimizer/sr-db'
+import { useLightCone } from '@genshin-optimizer/sr-db-ui'
+import type { Calculator } from '@genshin-optimizer/sr-formula'
 import {
   lightConeTagMapNodeEntries,
   own,
   srCalculatorWithEntries,
-} from '@genshin-optimizer/sr/formula'
-import { getLightConeStat } from '@genshin-optimizer/sr/stats'
-import { LightConeIcon, StatIcon } from '@genshin-optimizer/sr/svgicons'
+} from '@genshin-optimizer/sr-formula'
+import { getLightConeStat } from '@genshin-optimizer/sr-stats'
+import { LightConeIcon, StatIcon } from '@genshin-optimizer/sr-svgicons'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import {
   Box,

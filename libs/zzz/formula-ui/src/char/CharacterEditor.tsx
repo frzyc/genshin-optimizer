@@ -1,12 +1,12 @@
-import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
-import { type CharacterKey, allSkillKeys } from '@genshin-optimizer/zzz/consts'
+import { CardThemed, ModalWrapper } from '@genshin-optimizer/common-ui'
+import { type CharacterKey, allSkillKeys } from '@genshin-optimizer/zzz-consts'
 import {
   CharacterContext,
   useCharacter,
   useCharacterContext,
   useDatabaseContext,
-} from '@genshin-optimizer/zzz/db-ui'
-import { getCharStat } from '@genshin-optimizer/zzz/stats'
+} from '@genshin-optimizer/zzz-db-ui'
+import { getCharStat } from '@genshin-optimizer/zzz-stats'
 import {
   CharacterCard,
   CharacterCompactMindscapeSelector,
@@ -15,7 +15,7 @@ import {
   LevelSelect,
   PotentialSelect,
   SkillDropdown,
-} from '@genshin-optimizer/zzz/ui'
+} from '@genshin-optimizer/zzz-ui'
 import CloseIcon from '@mui/icons-material/Close'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import {

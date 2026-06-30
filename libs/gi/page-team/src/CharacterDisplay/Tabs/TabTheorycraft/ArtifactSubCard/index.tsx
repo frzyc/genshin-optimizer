@@ -3,17 +3,17 @@ import {
   CardThemed,
   ColorText,
   DropdownButton,
-} from '@genshin-optimizer/common/ui'
+} from '@genshin-optimizer/common-ui'
 import type {
   ArtifactRarity,
   SubstatTypeKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import {
   artSubstatRollData,
   substatTypeKeys,
-} from '@genshin-optimizer/gi/consts'
-import { ArtifactRarityDropdown } from '@genshin-optimizer/gi/ui'
-import { getSubstatValue } from '@genshin-optimizer/gi/util'
+} from '@genshin-optimizer/gi-consts'
+import { ArtifactRarityDropdown } from '@genshin-optimizer/gi-ui'
+import { getSubstatValue } from '@genshin-optimizer/gi-util'
 import { Box, MenuItem, Stack, Typography } from '@mui/material'
 import { useCallback, useContext } from 'react'
 import { Trans, useTranslation } from 'react-i18next'

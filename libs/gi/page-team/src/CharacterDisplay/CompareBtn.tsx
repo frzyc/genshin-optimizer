@@ -1,5 +1,5 @@
-import { DropdownButton, SqBadge } from '@genshin-optimizer/common/ui'
-import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { DropdownButton, SqBadge } from '@genshin-optimizer/common-ui'
+import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi-db-ui'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
 import type { ButtonGroupProps } from '@mui/material'

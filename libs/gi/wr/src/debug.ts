@@ -1,4 +1,4 @@
-import { assertUnreachable } from '@genshin-optimizer/common/util'
+import { assertUnreachable } from '@genshin-optimizer/common-util'
 import type { NumNode, StrNode } from './type'
 
 export function formulaString(formula: NumNode | StrNode): string {

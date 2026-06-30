@@ -1,4 +1,4 @@
-import type { AttributeKey } from '@genshin-optimizer/zzz/consts'
+import type { AttributeKey } from '@genshin-optimizer/zzz-consts'
 import type { SvgIconProps } from '@mui/material'
 import {
   ElectricIcon,

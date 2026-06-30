@@ -1,11 +1,11 @@
-import { verifyObjKeys } from '@genshin-optimizer/common/util'
-import type { LightConeKey } from '@genshin-optimizer/sr/consts'
-import { allLightConeKeys } from '@genshin-optimizer/sr/consts'
+import { verifyObjKeys } from '@genshin-optimizer/common-util'
+import type { LightConeKey } from '@genshin-optimizer/sr-consts'
+import { allLightConeKeys } from '@genshin-optimizer/sr-consts'
 import {
   equipmentConfig,
   equipmentSkillConfig,
   lightConeIdMap,
-} from '@genshin-optimizer/sr/dm'
+} from '@genshin-optimizer/sr-dm'
 
 type LightConeData = {
   name: string

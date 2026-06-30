@@ -3,7 +3,7 @@ import {
   zodBoundedNumber,
   zodEnum,
   zodEnumWithDefault,
-} from '@genshin-optimizer/common/database'
+} from '@genshin-optimizer/common-database'
 import {
   type MilestoneKey,
   type PhaseKey,
@@ -11,7 +11,7 @@ import {
   allWengineKeys,
   validateLevelMilestone,
   wengineMaxLevel,
-} from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-consts'
 import { z } from 'zod'
 
 export const wengineBaseSchema = z.object({

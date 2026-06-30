@@ -1,13 +1,13 @@
-import { objKeyMap, range } from '@genshin-optimizer/common/util'
-import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
+import { objKeyMap, range } from '@genshin-optimizer/common-util'
+import type { WeaponKey } from '@genshin-optimizer/gi-consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import {
   input,
   lookup,
   naught,
   prod,
   subscript,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { WeaponSheet, headerTemplate } from '../../WeaponSheet'

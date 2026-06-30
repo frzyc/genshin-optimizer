@@ -1,6 +1,6 @@
-import { objKeyMap } from '@genshin-optimizer/common/util'
-import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allTravelerKeys } from '@genshin-optimizer/gi/consts'
+import { objKeyMap } from '@genshin-optimizer/common-util'
+import type { WeaponKey } from '@genshin-optimizer/gi-consts'
+import { allTravelerKeys } from '@genshin-optimizer/gi-consts'
 import {
   constant,
   equal,
@@ -10,7 +10,7 @@ import {
   naught,
   percent,
   prod,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 import { customDmgNode } from '../../../Characters/dataUtil'
 import { st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'

@@ -2,16 +2,16 @@ import {
   BootstrapTooltip,
   type CardBackgroundColor,
   ColorText,
-} from '@genshin-optimizer/common/ui'
-import { getUnitStr, valueString } from '@genshin-optimizer/common/util'
-import type { CalcMeta, Read, Tag } from '@genshin-optimizer/game-opt/engine'
+} from '@genshin-optimizer/common-ui'
+import { getUnitStr, valueString } from '@genshin-optimizer/common-util'
+import type { CalcMeta, Read, Tag } from '@genshin-optimizer/game-opt-engine'
 import {
   CalcContext,
   DebugReadContext,
   TagContext,
-} from '@genshin-optimizer/game-opt/formula-ui'
-import type { CalcResult } from '@genshin-optimizer/pando/engine'
-import { read } from '@genshin-optimizer/pando/engine'
+} from '@genshin-optimizer/game-opt-formula-ui'
+import type { CalcResult } from '@genshin-optimizer/pando-engine'
+import { read } from '@genshin-optimizer/pando-engine'
 import HelpIcon from '@mui/icons-material/Help'
 import type { ListProps, PaletteColor, SxProps, Theme } from '@mui/material'
 import {

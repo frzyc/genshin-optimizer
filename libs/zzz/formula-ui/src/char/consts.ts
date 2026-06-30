@@ -1,5 +1,5 @@
-import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
-import { allSkillKeys } from '@genshin-optimizer/zzz/consts'
+import type { UISheet } from '@genshin-optimizer/game-opt-sheet-ui'
+import { allSkillKeys } from '@genshin-optimizer/zzz-consts'
 
 export const allTalentSheetElementKey = [
   ...allSkillKeys,

@@ -1,13 +1,13 @@
-import type { GeneralAutocompleteOption } from '@genshin-optimizer/common/ui'
-import { GeneralAutocompleteMulti } from '@genshin-optimizer/common/ui'
-import type { LocationCharacterKey } from '@genshin-optimizer/gi/consts'
+import type { GeneralAutocompleteOption } from '@genshin-optimizer/common-ui'
+import { GeneralAutocompleteMulti } from '@genshin-optimizer/common-ui'
+import type { LocationCharacterKey } from '@genshin-optimizer/gi-consts'
 import {
   allLocationCharacterKeys,
   allTravelerKeys,
   charKeyToLocGenderedCharKey,
-} from '@genshin-optimizer/gi/consts'
-import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { getCharEle } from '@genshin-optimizer/gi/stats'
+} from '@genshin-optimizer/gi-consts'
+import { useDBMeta, useDatabase } from '@genshin-optimizer/gi-db-ui'
+import { getCharEle } from '@genshin-optimizer/gi-stats'
 import { Chip, Skeleton } from '@mui/material'
 import { Suspense, useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'

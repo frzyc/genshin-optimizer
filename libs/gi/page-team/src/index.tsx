@@ -1,9 +1,9 @@
-import { CardThemed, useTitle } from '@genshin-optimizer/common/ui'
-import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common/util'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
-import type { GeneratedBuild } from '@genshin-optimizer/gi/db'
-import type { CharacterContextObj } from '@genshin-optimizer/gi/db-ui'
+import { CardThemed, useTitle } from '@genshin-optimizer/common-ui'
+import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common-util'
+import type { CharacterKey } from '@genshin-optimizer/gi-consts'
+import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi-consts'
+import type { GeneratedBuild } from '@genshin-optimizer/gi-db'
+import type { CharacterContextObj } from '@genshin-optimizer/gi-db-ui'
 import {
   CharacterContext,
   TeamCharacterContext,
@@ -14,8 +14,8 @@ import {
   useDatabase,
   useTeam,
   useTeamChar,
-} from '@genshin-optimizer/gi/db-ui'
-import { getCharEle } from '@genshin-optimizer/gi/stats'
+} from '@genshin-optimizer/gi-db-ui'
+import { getCharEle } from '@genshin-optimizer/gi-stats'
 import {
   type ChartData,
   DataContext,
@@ -26,7 +26,7 @@ import {
   SillyContext,
   type dataContextObj,
   useTeamDataNoContext,
-} from '@genshin-optimizer/gi/ui'
+} from '@genshin-optimizer/gi-ui'
 import { Box, Skeleton } from '@mui/material'
 import {
   Suspense,

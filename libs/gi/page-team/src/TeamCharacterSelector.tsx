@@ -1,15 +1,15 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
 import {
   BootstrapTooltip,
   CardThemed,
   ModalWrapper,
   TextFieldLazy,
-} from '@genshin-optimizer/common/ui'
-import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common/util'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
-import { useDBMeta, useDatabase, useTeam } from '@genshin-optimizer/gi/db-ui'
-import { getCharEle } from '@genshin-optimizer/gi/stats'
-import { CharIconSide, CharacterName, TeamIcon } from '@genshin-optimizer/gi/ui'
+} from '@genshin-optimizer/common-ui'
+import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common-util'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi-consts'
+import { useDBMeta, useDatabase, useTeam } from '@genshin-optimizer/gi-db-ui'
+import { getCharEle } from '@genshin-optimizer/gi-stats'
+import { CharIconSide, CharacterName, TeamIcon } from '@genshin-optimizer/gi-ui'
 import BorderColorIcon from '@mui/icons-material/BorderColor'
 import CloseIcon from '@mui/icons-material/Close'
 import GroupsIcon from '@mui/icons-material/Groups'

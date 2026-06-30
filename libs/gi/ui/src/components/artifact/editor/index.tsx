@@ -1,39 +1,39 @@
-import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
+import { useDataManagerValues } from '@genshin-optimizer/common-database-ui'
 import {
   CardThemed,
   DropdownButton,
   ImgIcon,
   ModalWrapper,
-} from '@genshin-optimizer/common/ui'
+} from '@genshin-optimizer/common-ui'
 import {
   clamp,
   deepClone,
   shouldShowDevComponents,
-} from '@genshin-optimizer/common/util'
-import type { Processed } from '@genshin-optimizer/gi/art-scanner'
-import { ScanningQueue } from '@genshin-optimizer/gi/art-scanner'
-import { artifactAsset } from '@genshin-optimizer/gi/assets'
+} from '@genshin-optimizer/common-util'
+import type { Processed } from '@genshin-optimizer/gi-art-scanner'
+import { ScanningQueue } from '@genshin-optimizer/gi-art-scanner'
+import { artifactAsset } from '@genshin-optimizer/gi-assets'
 import type {
   ArtifactRarity,
   ArtifactSetKey,
   ArtifactSlotKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import {
   allElementWithPhyKeys,
   allSubstatKeys,
   artSlotMainKeys,
-} from '@genshin-optimizer/gi/consts'
-import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
-import { cachedArtifact, validateArtifact } from '@genshin-optimizer/gi/db'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import type { IArtifact, ISubstat } from '@genshin-optimizer/gi/good'
-import { getArtSetStat } from '@genshin-optimizer/gi/stats'
-import { StatIcon } from '@genshin-optimizer/gi/svgicons'
+} from '@genshin-optimizer/gi-consts'
+import type { ICachedArtifact } from '@genshin-optimizer/gi-db'
+import { cachedArtifact, validateArtifact } from '@genshin-optimizer/gi-db'
+import { useDatabase } from '@genshin-optimizer/gi-db-ui'
+import type { IArtifact, ISubstat } from '@genshin-optimizer/gi-good'
+import { getArtSetStat } from '@genshin-optimizer/gi-stats'
+import { StatIcon } from '@genshin-optimizer/gi-svgicons'
 import {
   getArtifactEfficiency,
   getMainStatDisplayStr,
   randomizeArtifact,
-} from '@genshin-optimizer/gi/util'
+} from '@genshin-optimizer/gi-util'
 import {
   Add,
   ChevronRight,

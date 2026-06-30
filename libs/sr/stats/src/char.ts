@@ -1,5 +1,5 @@
-import type { CharacterKey, StatBoostKey } from '@genshin-optimizer/sr/consts'
-import type { Rank } from '@genshin-optimizer/sr/dm'
+import type { CharacterKey, StatBoostKey } from '@genshin-optimizer/sr-consts'
+import type { Rank } from '@genshin-optimizer/sr-dm'
 import { allStats } from './allStats'
 
 export function getCharStat(ck: CharacterKey) {

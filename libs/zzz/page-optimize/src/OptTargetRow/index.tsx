@@ -1,12 +1,12 @@
-import { DropdownButton } from '@genshin-optimizer/common/ui'
-import type { ICachedCharacter, Team } from '@genshin-optimizer/zzz/db'
-import { getTeamFrame0 } from '@genshin-optimizer/zzz/db'
+import { DropdownButton } from '@genshin-optimizer/common-ui'
+import type { ICachedCharacter, Team } from '@genshin-optimizer/zzz-db'
+import { getTeamFrame0 } from '@genshin-optimizer/zzz-db'
 import {
   useCharacterContext,
   useDatabaseContext,
   useTeam,
-} from '@genshin-optimizer/zzz/db-ui'
-import { qtMap } from '@genshin-optimizer/zzz/formula-ui'
+} from '@genshin-optimizer/zzz-db-ui'
+import { qtMap } from '@genshin-optimizer/zzz-formula-ui'
 import { Box, MenuItem } from '@mui/material'
 import { useCallback } from 'react'
 import { AfterShockToggleButton } from '../AfterShockToggleButton'

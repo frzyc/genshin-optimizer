@@ -1,5 +1,5 @@
-import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allElementKeys } from '@genshin-optimizer/gi/consts'
+import type { WeaponKey } from '@genshin-optimizer/gi-consts'
+import { allElementKeys } from '@genshin-optimizer/gi-consts'
 import {
   compareEq,
   equal,
@@ -12,7 +12,7 @@ import {
   tally,
   threshold,
   unequal,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 import { st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { WeaponSheet, headerTemplate } from '../../WeaponSheet'

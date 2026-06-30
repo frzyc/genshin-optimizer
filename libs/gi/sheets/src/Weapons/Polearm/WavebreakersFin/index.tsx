@@ -1,5 +1,5 @@
-import { range } from '@genshin-optimizer/common/util'
-import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { range } from '@genshin-optimizer/common-util'
+import type { WeaponKey } from '@genshin-optimizer/gi-consts'
 import {
   input,
   lookup,
@@ -7,7 +7,7 @@ import {
   naught,
   prod,
   subscript,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 import { cond, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { WeaponSheet, headerTemplate } from '../../WeaponSheet'

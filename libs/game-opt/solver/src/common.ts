@@ -1,4 +1,4 @@
-import type { Candidate as BaseCnd } from '@genshin-optimizer/pando/engine'
+import type { Candidate as BaseCnd } from '@genshin-optimizer/pando-engine'
 
 export const splitThreshold = 2_000_000 // split if there are more possible builds than this
 

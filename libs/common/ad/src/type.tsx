@@ -1,4 +1,4 @@
-import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
+import type { CardBackgroundColor } from '@genshin-optimizer/common-ui'
 import type { BoxProps } from '@mui/material'
 import type { FunctionComponent, ReactNode } from 'react'
 

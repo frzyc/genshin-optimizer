@@ -1,6 +1,6 @@
-import type { CharOpt, ICachedCharacter } from '@genshin-optimizer/sr/db'
-import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
-import { OptimizationTargetSelector } from '@genshin-optimizer/sr/formula-ui'
+import type { CharOpt, ICachedCharacter } from '@genshin-optimizer/sr-db'
+import { useDatabaseContext } from '@genshin-optimizer/sr-db-ui'
+import { OptimizationTargetSelector } from '@genshin-optimizer/sr-formula-ui'
 
 export function OptSelector({
   character: { key: characterKey },

@@ -1,9 +1,9 @@
-import { isPercentStat } from '@genshin-optimizer/common/util'
+import { isPercentStat } from '@genshin-optimizer/common-util'
 import type {
   SpecialityKey,
   WengineKey,
   WengineRarityKey,
-} from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-consts'
 import { readHakushinJSON } from '../../util'
 import {
   WengineIdMap,

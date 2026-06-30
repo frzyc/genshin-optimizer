@@ -1,4 +1,4 @@
-import type { WeaponClaymoreKey } from '@genshin-optimizer/gi/consts'
+import type { WeaponClaymoreKey } from '@genshin-optimizer/gi-consts'
 import type { WeaponSheet } from '../WeaponSheet'
 
 import AThousandBlazingSuns from './AThousandBlazingSuns'

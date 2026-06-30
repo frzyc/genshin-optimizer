@@ -1,13 +1,13 @@
-import { prettify } from '@genshin-optimizer/common/util'
+import { prettify } from '@genshin-optimizer/common-util'
 import type {
   IBaseConditionalData,
   IConditionalData,
   IFormulaData,
   Tag,
   TagMapNodeEntries,
-} from '@genshin-optimizer/game-opt/engine'
-import type { AnyNode, ReRead } from '@genshin-optimizer/pando/engine'
-import { traverse } from '@genshin-optimizer/pando/engine'
+} from '@genshin-optimizer/game-opt-engine'
+import type { AnyNode, ReRead } from '@genshin-optimizer/pando-engine'
+import { traverse } from '@genshin-optimizer/pando-engine'
 
 type Conditionals = Record<string, Record<string, IConditionalData>>
 type Formulas<T> = Record<string, Record<string, IFormulaData<T>>>

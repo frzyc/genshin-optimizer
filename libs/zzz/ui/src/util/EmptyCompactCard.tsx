@@ -1,4 +1,4 @@
-import { ConditionalWrapper } from '@genshin-optimizer/common/ui'
+import { ConditionalWrapper } from '@genshin-optimizer/common-ui'
 import { Box, CardActionArea, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
 import { useCallback } from 'react'

@@ -1,6 +1,6 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
+import { CardThemed } from '@genshin-optimizer/common-ui'
 import '@genshin-optimizer/gi/i18n'
-import { theme } from '@genshin-optimizer/gi/theme'
+import { theme } from '@genshin-optimizer/gi-theme'
 import { DynamicFeed, Refresh } from '@mui/icons-material'
 import {
   Box,

@@ -1,5 +1,5 @@
-import type { UIData } from '@genshin-optimizer/gi/uidata'
-import type { NumNode } from '@genshin-optimizer/gi/wr'
+import type { UIData } from '@genshin-optimizer/gi-uidata'
+import type { NumNode } from '@genshin-optimizer/gi-wr'
 import type { ReactNode } from 'react'
 
 export interface IBasicFieldDisplay {

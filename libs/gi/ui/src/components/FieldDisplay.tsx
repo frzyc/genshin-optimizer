@@ -2,15 +2,15 @@ import {
   BootstrapTooltip,
   type CardBackgroundColor,
   ColorText,
-} from '@genshin-optimizer/common/ui'
-import { evalIfFunc, valueString } from '@genshin-optimizer/common/util'
-import type { AmpReactionKey } from '@genshin-optimizer/gi/consts'
-import { allAmpReactionKeys } from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/common-ui'
+import { evalIfFunc, valueString } from '@genshin-optimizer/common-util'
+import type { AmpReactionKey } from '@genshin-optimizer/gi-consts'
+import { allAmpReactionKeys } from '@genshin-optimizer/gi-consts'
 import type {
   IBasicFieldDisplay,
   IFieldDisplay,
-} from '@genshin-optimizer/gi/sheets'
-import type { CalcResult } from '@genshin-optimizer/gi/uidata'
+} from '@genshin-optimizer/gi-sheets'
+import type { CalcResult } from '@genshin-optimizer/gi-uidata'
 import GroupsIcon from '@mui/icons-material/Groups'
 import HelpIcon from '@mui/icons-material/Help'
 import type { ListProps, PaletteColor } from '@mui/material'

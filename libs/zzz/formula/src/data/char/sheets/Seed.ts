@@ -1,13 +1,13 @@
-import type { NumNode } from '@genshin-optimizer/pando/engine'
+import type { NumNode } from '@genshin-optimizer/pando-engine'
 import {
   cmpEq,
   cmpGE,
   prod,
   subscript,
   sum,
-} from '@genshin-optimizer/pando/engine'
-import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
+} from '@genshin-optimizer/pando-engine'
+import { type CharacterKey } from '@genshin-optimizer/zzz-consts'
+import { allStats, mappedStats } from '@genshin-optimizer/zzz-stats'
 import {
   allBoolConditionals,
   allNumConditionals,

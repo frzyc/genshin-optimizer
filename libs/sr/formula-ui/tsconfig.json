@@ -1,15 +1,36 @@
 {
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "allowJs": false,
-    "esModuleInterop": false,
-    "exactOptionalPropertyTypes": false,
-    "strict": true,
-    "jsxImportSource": "@emotion/react"
-  },
   "files": [],
-  "include": [],
   "references": [
+    {
+      "path": "../../common/pipeline"
+    },
+    {
+      "path": "../../pando/engine"
+    },
+    {
+      "path": "../../game-opt/engine"
+    },
+    {
+      "path": "../stats"
+    },
+    {
+      "path": "../assets"
+    },
+    {
+      "path": "../../common/util"
+    },
+    {
+      "path": "../../common/ui"
+    },
+    {
+      "path": "../formula"
+    },
+    {
+      "path": "../consts"
+    },
+    {
+      "path": "../../game-opt/sheet-ui"
+    },
     {
       "path": "./tsconfig.lib.json"
     }

@@ -1,20 +1,20 @@
-import { CardThemed, CustomNumberInput } from '@genshin-optimizer/common/ui'
-import { isDev, objMap, toPercent } from '@genshin-optimizer/common/util'
-import { artSubstatRollData } from '@genshin-optimizer/gi/consts'
-import type { BuildTc } from '@genshin-optimizer/gi/db'
+import { CardThemed, CustomNumberInput } from '@genshin-optimizer/common-ui'
+import { isDev, objMap, toPercent } from '@genshin-optimizer/common-util'
+import { artSubstatRollData } from '@genshin-optimizer/gi-consts'
+import type { BuildTc } from '@genshin-optimizer/gi-db'
 import {
   TeamCharacterContext,
   useDBMeta,
   useDatabase,
   useOptConfig,
-} from '@genshin-optimizer/gi/db-ui'
-import type { TCWorkerResult } from '@genshin-optimizer/gi/solver-tc'
+} from '@genshin-optimizer/gi-db-ui'
+import type { TCWorkerResult } from '@genshin-optimizer/gi-solver-tc'
 import {
   TCWorker,
   getMinSubAndOtherRolls,
-} from '@genshin-optimizer/gi/solver-tc'
-import { getCharStat } from '@genshin-optimizer/gi/stats'
-import type { dataContextObj } from '@genshin-optimizer/gi/ui'
+} from '@genshin-optimizer/gi-solver-tc'
+import { getCharStat } from '@genshin-optimizer/gi-stats'
+import type { dataContextObj } from '@genshin-optimizer/gi-ui'
 import {
   BuildAlert,
   DataContext,
@@ -26,8 +26,8 @@ import {
   getTeamDataCalc,
   initialBuildStatus,
   optimizeNodesForScaling,
-} from '@genshin-optimizer/gi/ui'
-import { getSubstatValue } from '@genshin-optimizer/gi/util'
+} from '@genshin-optimizer/gi-ui'
+import { getSubstatValue } from '@genshin-optimizer/gi-util'
 import CalculateIcon from '@mui/icons-material/Calculate'
 import CloseIcon from '@mui/icons-material/Close'
 import { Alert, Box, Button, Grid, Skeleton, Stack } from '@mui/material'

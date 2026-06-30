@@ -1,7 +1,7 @@
-import type { ArtifactSetKey, SetNum } from '@genshin-optimizer/gi/consts'
-import { allArtifactSetKeys } from '@genshin-optimizer/gi/consts'
-import type { UIData } from '@genshin-optimizer/gi/uidata'
-import { input, mergeData } from '@genshin-optimizer/gi/wr'
+import type { ArtifactSetKey, SetNum } from '@genshin-optimizer/gi-consts'
+import { allArtifactSetKeys } from '@genshin-optimizer/gi-consts'
+import type { UIData } from '@genshin-optimizer/gi-uidata'
+import { input, mergeData } from '@genshin-optimizer/gi-wr'
 import type { ArtifactSheet } from './ArtifactSheet'
 
 import ADayCarvedFromRisingWinds from './ADayCarvedFromRisingWinds'

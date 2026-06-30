@@ -5,7 +5,7 @@ import {
   artifactSchema,
   characterSchema,
   weaponSchema,
-} from '@genshin-optimizer/gi/schema'
+} from '@genshin-optimizer/gi-schema'
 import { z } from 'zod'
 
 const goodVersionSchema = z.union([z.literal(1), z.literal(2), z.literal(3)])

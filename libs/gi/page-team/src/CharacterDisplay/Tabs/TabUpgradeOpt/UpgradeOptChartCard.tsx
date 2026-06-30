@@ -1,25 +1,25 @@
 import {
   useBoolState,
   useForceUpdate,
-} from '@genshin-optimizer/common/react-util'
-import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
-import { linspace, objMap } from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-react-util'
+import { CardThemed, SqBadge } from '@genshin-optimizer/common-ui'
+import { linspace, objMap } from '@genshin-optimizer/common-util'
 import {
   type ArtifactSlotKey,
   charKeyToLocCharKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import {
   TeamCharacterContext,
   useArtifact,
   useDatabase,
-} from '@genshin-optimizer/gi/db-ui'
+} from '@genshin-optimizer/gi-db-ui'
 import {
   ArtifactCard,
   ArtifactCardPico,
   DataContext,
   EquipBuildModal,
-} from '@genshin-optimizer/gi/ui'
-import { uiInput as input } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-ui'
+import { uiInput as input } from '@genshin-optimizer/gi-wr'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import { Box, Button, Divider, Grid, Tooltip, Typography } from '@mui/material'
 import { useCallback, useContext, useEffect, useMemo } from 'react'

@@ -1,4 +1,4 @@
-import type { CharacterKey } from '@genshin-optimizer/sr/consts'
+import type { CharacterKey } from '@genshin-optimizer/sr-consts'
 import { allStats } from '../../../allStats'
 import { scalingParams } from '../util'
 

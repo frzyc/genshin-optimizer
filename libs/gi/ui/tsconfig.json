@@ -1,16 +1,84 @@
 {
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "allowJs": false,
-    "esModuleInterop": false,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "jsxImportSource": "@emotion/react",
-    "exactOptionalPropertyTypes": false
-  },
   "files": [],
-  "include": [],
   "references": [
+    {
+      "path": "../solver-tc"
+    },
+    {
+      "path": "../../common/database"
+    },
+    {
+      "path": "../char-cards"
+    },
+    {
+      "path": "../silly-wisher"
+    },
+    {
+      "path": "../art-scanner"
+    },
+    {
+      "path": "../good"
+    },
+    {
+      "path": "../../common/img-util"
+    },
+    {
+      "path": "../../common/database-ui"
+    },
+    {
+      "path": "../schema"
+    },
+    {
+      "path": "../util"
+    },
+    {
+      "path": "../assets"
+    },
+    {
+      "path": "../wr-types"
+    },
+    {
+      "path": "../../common/react-util"
+    },
+    {
+      "path": "../wr"
+    },
+    {
+      "path": "../stats"
+    },
+    {
+      "path": "../../common/ad"
+    },
+    {
+      "path": "../uidata"
+    },
+    {
+      "path": "../keymap"
+    },
+    {
+      "path": "../db-ui"
+    },
+    {
+      "path": "../db"
+    },
+    {
+      "path": "../sheets"
+    },
+    {
+      "path": "../../common/util"
+    },
+    {
+      "path": "../svgicons"
+    },
+    {
+      "path": "../consts"
+    },
+    {
+      "path": "../../common/ui"
+    },
+    {
+      "path": "../../common/svgicons"
+    },
     {
       "path": "./tsconfig.lib.json"
     },

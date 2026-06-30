@@ -1,4 +1,4 @@
-import type { LightConeKey } from '@genshin-optimizer/sr/consts'
+import type { LightConeKey } from '@genshin-optimizer/sr-consts'
 import { Translate } from '@genshin-optimizer/sr/i18n'
 
 export function LightConeName({ lcKey }: { lcKey: LightConeKey }) {

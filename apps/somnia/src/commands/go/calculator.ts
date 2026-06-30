@@ -4,9 +4,9 @@ import {
   type RefinementKey,
   type WeaponKey,
   sheetKeyToCharKey,
-} from '@genshin-optimizer/gi/consts'
-import type { StatKey } from '@genshin-optimizer/gi/dm'
-import type { TagMapNodeEntries } from '@genshin-optimizer/gi/formula'
+} from '@genshin-optimizer/gi-consts'
+import type { StatKey } from '@genshin-optimizer/gi-dm'
+import type { TagMapNodeEntries } from '@genshin-optimizer/gi-formula'
 import {
   charData,
   convert,
@@ -16,7 +16,7 @@ import {
   teamData,
   weaponData,
   withMember,
-} from '@genshin-optimizer/gi/formula'
+} from '@genshin-optimizer/gi-formula'
 
 export function getFixed(key: StatKey) {
   return key.endsWith('_') ? 1 : 0

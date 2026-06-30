@@ -1,4 +1,4 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
+import { CardThemed } from '@genshin-optimizer/common-ui'
 import YouTubeIcon from '@mui/icons-material/YouTube'
 import {
   Box,

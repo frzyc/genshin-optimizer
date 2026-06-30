@@ -1,13 +1,13 @@
-import { CardThemed, DropdownButton } from '@genshin-optimizer/common/ui'
+import { CardThemed, DropdownButton } from '@genshin-optimizer/common-ui'
 import {
   DAY_MS,
   MINUTE_MS,
   SECOND_MS,
   timeString,
-} from '@genshin-optimizer/common/util'
-import type { TimeZoneKey } from '@genshin-optimizer/gi/db'
-import { timeZones } from '@genshin-optimizer/gi/db'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+} from '@genshin-optimizer/common-util'
+import type { TimeZoneKey } from '@genshin-optimizer/gi-db'
+import { timeZones } from '@genshin-optimizer/gi-db'
+import { useDatabase } from '@genshin-optimizer/gi-db-ui'
 import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled'
 import { CardContent, Divider, Grid, MenuItem, Typography } from '@mui/material'
 import { useCallback, useEffect, useState } from 'react'

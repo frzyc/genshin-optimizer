@@ -1,4 +1,4 @@
-import type { ZzzDatabase } from '@genshin-optimizer/zzz/db'
+import type { ZzzDatabase } from '@genshin-optimizer/zzz-db'
 import { createContext, useContext } from 'react'
 
 export type DatabaseContextObj = {

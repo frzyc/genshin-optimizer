@@ -1,5 +1,5 @@
 {
-  "name": "zzz-localization",
+  "name": "@genshin-optimizer/zzz-localization",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/zzz/localization/src",
   "projectType": "library",

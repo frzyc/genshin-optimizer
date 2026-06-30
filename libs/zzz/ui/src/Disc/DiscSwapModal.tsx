@@ -1,22 +1,22 @@
-import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
-import { useMediaQueryUp } from '@genshin-optimizer/common/react-util'
+import { useDataManagerValues } from '@genshin-optimizer/common-database-ui'
+import { useMediaQueryUp } from '@genshin-optimizer/common-react-util'
 import {
   CardThemed,
   ModalWrapper,
   ShowingAndSortOptionSelect,
   useInfScroll,
-} from '@genshin-optimizer/common/ui'
-import { filterFunction } from '@genshin-optimizer/common/util'
-import type { DiscSlotKey } from '@genshin-optimizer/zzz/consts'
-import { allDiscSlotKeys } from '@genshin-optimizer/zzz/consts'
-import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
-import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
-import type { DiscFilterOption } from '@genshin-optimizer/zzz/util'
+} from '@genshin-optimizer/common-ui'
+import { filterFunction } from '@genshin-optimizer/common-util'
+import type { DiscSlotKey } from '@genshin-optimizer/zzz-consts'
+import { allDiscSlotKeys } from '@genshin-optimizer/zzz-consts'
+import type { ICachedDisc } from '@genshin-optimizer/zzz-db'
+import { useDatabaseContext } from '@genshin-optimizer/zzz-db-ui'
+import type { DiscFilterOption } from '@genshin-optimizer/zzz-util'
 import {
   discFilterConfigs,
   initialDiscFilterOption,
-} from '@genshin-optimizer/zzz/util'
-import type { IDisc } from '@genshin-optimizer/zzz/zood'
+} from '@genshin-optimizer/zzz-util'
+import type { IDisc } from '@genshin-optimizer/zzz-zood'
 import CloseIcon from '@mui/icons-material/Close'
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle'
 import {

@@ -1,5 +1,5 @@
-import type { TargetTag } from '@genshin-optimizer/zzz/db'
-import type { Tag } from '@genshin-optimizer/zzz/formula'
+import type { TargetTag } from '@genshin-optimizer/zzz-db'
+import type { Tag } from '@genshin-optimizer/zzz-formula'
 
 export function isOptTargetTag(
   tag: Tag,

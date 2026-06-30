@@ -1,5 +1,5 @@
-import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
-import type { Data } from '@genshin-optimizer/gi/wr'
+import type { ArtifactSetKey } from '@genshin-optimizer/gi-consts'
+import type { Data } from '@genshin-optimizer/gi-wr'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { SetEffectSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'

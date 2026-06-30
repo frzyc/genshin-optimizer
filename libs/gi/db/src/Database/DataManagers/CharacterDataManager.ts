@@ -1,11 +1,11 @@
-import type { TriggerString } from '@genshin-optimizer/common/database'
-import { deepClone, objKeyMap } from '@genshin-optimizer/common/util'
+import type { TriggerString } from '@genshin-optimizer/common-database'
+import { deepClone, objKeyMap } from '@genshin-optimizer/common-util'
 import type {
   ArtifactSlotKey,
   CharacterKey,
   LocationCharacterKey,
   TravelerKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import {
   allArtifactSlotKeys,
   allTravelerKeys,
@@ -13,9 +13,9 @@ import {
   defaultCharacterAscension,
   defaultCharacterLevel,
   defaultTalentLevel,
-} from '@genshin-optimizer/gi/consts'
-import type { ICharacter, IGOOD } from '@genshin-optimizer/gi/good'
-import { parseCharacter } from '@genshin-optimizer/gi/good'
+} from '@genshin-optimizer/gi-consts'
+import type { ICharacter, IGOOD } from '@genshin-optimizer/gi-good'
+import { parseCharacter } from '@genshin-optimizer/gi-good'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 
 export interface ICachedCharacter extends ICharacter {

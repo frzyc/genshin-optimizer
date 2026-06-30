@@ -1,17 +1,17 @@
-import { objKeyMap } from '@genshin-optimizer/common/util'
+import { objKeyMap } from '@genshin-optimizer/common-util'
 import {
   type CharacterKey,
   type CharacterSheetKey,
   allElementKeys,
-} from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
-import type { Data, DisplaySub } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
+import type { Data, DisplaySub } from '@genshin-optimizer/gi-wr'
 import {
   equal,
   inferInfoMut,
   infoMut,
   mergeData,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 import { cond, stg, trans } from '../../SheetUtil'
 import type { IDocumentHeader } from '../../sheet'
 import { CharacterSheet } from '../CharacterSheet'

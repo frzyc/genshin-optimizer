@@ -5,16 +5,16 @@ import {
   objMap,
   objPathValue,
   toDecimal,
-} from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-util'
 import type {
   ArtifactSetKey,
   MainStatKey,
   SubstatKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import {
   allElementWithPhyKeys,
   allTravelerKeys,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import type {
   ArtCharDatabase,
   ICachedArtifact,
@@ -22,10 +22,10 @@ import type {
   ICachedWeapon,
   Team,
   TeamCharacter,
-} from '@genshin-optimizer/gi/db'
-import type { ICharacter } from '@genshin-optimizer/gi/good'
-import type { EleEnemyResKey } from '@genshin-optimizer/gi/keymap'
-import { getMainStatValue } from '@genshin-optimizer/gi/util'
+} from '@genshin-optimizer/gi-db'
+import type { ICharacter } from '@genshin-optimizer/gi-good'
+import type { EleEnemyResKey } from '@genshin-optimizer/gi-keymap'
+import { getMainStatValue } from '@genshin-optimizer/gi-util'
 import { input } from './formula'
 import type { Data, Info, NumNode, ReadNode, StrNode } from './type'
 import { constant, data, infoMut, none, percent, prod, sum } from './utils'

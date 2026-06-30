@@ -1,4 +1,4 @@
-import { useDataManagerBase } from '@genshin-optimizer/common/database-ui'
+import { useDataManagerBase } from '@genshin-optimizer/common-database-ui'
 import { useDatabaseContext } from '../context'
 
 export function useWengine(wengineId: string | undefined = '') {

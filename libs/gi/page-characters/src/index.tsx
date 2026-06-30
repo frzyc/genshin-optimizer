@@ -2,33 +2,33 @@ import {
   useDataEntryBase,
   useDataManagerKeys,
   useDataManagerValues,
-} from '@genshin-optimizer/common/database-ui'
-import { useMediaQueryUp } from '@genshin-optimizer/common/react-util'
+} from '@genshin-optimizer/common-database-ui'
+import { useMediaQueryUp } from '@genshin-optimizer/common-react-util'
 import {
   CardThemed,
   ShowingAndSortOptionSelect,
   useInfScroll,
   useIsMount,
-} from '@genshin-optimizer/common/ui'
+} from '@genshin-optimizer/common-ui'
 import {
   catTotal,
   filterFunction,
   sortFunction,
-} from '@genshin-optimizer/common/util'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/common-util'
+import type { CharacterKey } from '@genshin-optimizer/gi-consts'
 import {
   allCharacterRarityKeys,
   allElementKeys,
   allWeaponTypeKeys,
   isCharacterKey,
-} from '@genshin-optimizer/gi/consts'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+} from '@genshin-optimizer/gi-consts'
+import { useDatabase } from '@genshin-optimizer/gi-db-ui'
 import {
   getCharEle,
   getCharStat,
   getWeaponStat,
-} from '@genshin-optimizer/gi/stats'
-import type { CharacterSortKey } from '@genshin-optimizer/gi/ui'
+} from '@genshin-optimizer/gi-stats'
+import type { CharacterSortKey } from '@genshin-optimizer/gi-ui'
 import {
   CharacterCard,
   CharacterEditor,
@@ -41,7 +41,7 @@ import {
   characterSortConfigs,
   characterSortMap,
   useCharSelectionCallback,
-} from '@genshin-optimizer/gi/ui'
+} from '@genshin-optimizer/gi-ui'
 import AddIcon from '@mui/icons-material/Add'
 import {
   Box,

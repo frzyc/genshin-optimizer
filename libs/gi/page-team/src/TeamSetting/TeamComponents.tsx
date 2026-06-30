@@ -1,11 +1,11 @@
-import { CardThemed, ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
-import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common/util'
-import { artifactAsset } from '@genshin-optimizer/gi/assets'
-import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
+import { CardThemed, ImgIcon, SqBadge } from '@genshin-optimizer/common-ui'
+import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common-util'
+import { artifactAsset } from '@genshin-optimizer/gi-assets'
+import type { LoadoutDatum } from '@genshin-optimizer/gi-db'
 import type {
   CharacterContextObj,
   TeamCharacterContextObj,
-} from '@genshin-optimizer/gi/db-ui'
+} from '@genshin-optimizer/gi-db-ui'
 import {
   CharacterContext,
   TeamCharacterContext,
@@ -14,15 +14,15 @@ import {
   useDatabase,
   useTeam,
   useTeamChar,
-} from '@genshin-optimizer/gi/db-ui'
-import type { CharacterSheet } from '@genshin-optimizer/gi/sheets'
+} from '@genshin-optimizer/gi-db-ui'
+import type { CharacterSheet } from '@genshin-optimizer/gi-sheets'
 import {
   MoonsignConditionalSection,
   dataSetEffects,
   getArtSheet,
-} from '@genshin-optimizer/gi/sheets'
-import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
-import type { dataContextObj } from '@genshin-optimizer/gi/ui'
+} from '@genshin-optimizer/gi-sheets'
+import { getCharEle, getCharStat } from '@genshin-optimizer/gi-stats'
+import type { dataContextObj } from '@genshin-optimizer/gi-ui'
 import {
   ArtifactSetName,
   CharacterCardEquipmentRow,
@@ -33,8 +33,8 @@ import {
   FieldDisplayList,
   NodeFieldDisplay,
   WeaponFullCardObj,
-} from '@genshin-optimizer/gi/ui'
-import { input } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-ui'
+import { input } from '@genshin-optimizer/gi-wr'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import {
   Accordion,

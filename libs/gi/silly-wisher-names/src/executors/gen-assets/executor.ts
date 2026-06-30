@@ -1,5 +1,5 @@
 import { existsSync, mkdirSync, writeFileSync } from 'fs'
-import { langKeys } from '@genshin-optimizer/common/pipeline'
+import { langKeys } from '@genshin-optimizer/common-pipeline'
 import { PROJROOT_PATH, languageMap } from '../../../Translated/util'
 import type { GenAssetsExecutorSchema } from './schema'
 

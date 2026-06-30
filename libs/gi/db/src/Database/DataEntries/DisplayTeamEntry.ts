@@ -3,8 +3,8 @@ import {
   zodEnumWithDefault,
   zodFilteredArray,
   zodString,
-} from '@genshin-optimizer/common/database'
-import { allCharacterKeys } from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/common-database'
+import { allCharacterKeys } from '@genshin-optimizer/gi-consts'
 import { z } from 'zod'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataEntry } from '../DataEntry'

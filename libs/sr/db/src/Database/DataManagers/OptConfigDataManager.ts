@@ -2,14 +2,14 @@ import {
   zodBoolean,
   zodFilteredArray,
   zodNumericLiteralWithDefault,
-} from '@genshin-optimizer/common/database'
-import { deepFreeze } from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-database'
+import { deepFreeze } from '@genshin-optimizer/common-util'
 import type {
   PathKey,
   RelicCavernSetKey,
   RelicMainStatKey,
   RelicPlanarSetKey,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 import {
   allPathKeys,
   allRelicCavernSetKeys,
@@ -17,8 +17,8 @@ import {
   lightConeMaxLevel,
   relicMaxLevel,
   relicSlotToMainStatKeys,
-} from '@genshin-optimizer/sr/consts'
-import type { Tag } from '@genshin-optimizer/sr/formula'
+} from '@genshin-optimizer/sr-consts'
+import type { Tag } from '@genshin-optimizer/sr-formula'
 import { z } from 'zod'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'

@@ -8,14 +8,14 @@ import type {
   TagMapEntry,
   TagOverride,
   TagValRead,
-} from '@genshin-optimizer/pando/engine'
+} from '@genshin-optimizer/pando-engine'
 import {
   TypedRead,
   tag as baseTag,
   tagVal as baseTagVal,
   constant,
   reread,
-} from '@genshin-optimizer/pando/engine'
+} from '@genshin-optimizer/pando-engine'
 import type { IBaseConditionalData } from './IConditionalData'
 import type { EntryType, Preset } from './listing'
 

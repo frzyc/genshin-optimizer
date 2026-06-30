@@ -1,7 +1,7 @@
-import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
-import type { CharacterKey } from '@genshin-optimizer/sr/consts'
-import { buffs, conditionals, formulas } from '@genshin-optimizer/sr/formula'
-import { mappedStats } from '@genshin-optimizer/sr/stats'
+import type { UISheet } from '@genshin-optimizer/game-opt-sheet-ui'
+import type { CharacterKey } from '@genshin-optimizer/sr-consts'
+import { buffs, conditionals, formulas } from '@genshin-optimizer/sr-formula'
+import { mappedStats } from '@genshin-optimizer/sr-stats'
 import { trans } from '../../util'
 import { type TalentSheetElementKey } from '../consts'
 import {

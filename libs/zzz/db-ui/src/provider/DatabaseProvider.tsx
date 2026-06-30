@@ -1,8 +1,8 @@
 import {
   DBLocalStorage,
   SandboxStorage,
-} from '@genshin-optimizer/common/database'
-import { ZzzDatabase } from '@genshin-optimizer/zzz/db'
+} from '@genshin-optimizer/common-database'
+import { ZzzDatabase } from '@genshin-optimizer/zzz-db'
 import type { ReactNode } from 'react'
 import { useCallback, useMemo, useState } from 'react'
 import { DatabaseContext, type DatabaseContextObj } from '../context'

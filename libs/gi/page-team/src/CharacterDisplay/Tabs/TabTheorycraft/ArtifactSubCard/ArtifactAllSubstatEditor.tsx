@@ -2,11 +2,11 @@ import {
   CardThemed,
   NumberInputLazy,
   usePrev,
-} from '@genshin-optimizer/common/ui'
-import { clamp, objMap } from '@genshin-optimizer/common/util'
-import { artSubstatRollData } from '@genshin-optimizer/gi/consts'
-import type { BuildTc } from '@genshin-optimizer/gi/db'
-import { getSubstatValue } from '@genshin-optimizer/gi/util'
+} from '@genshin-optimizer/common-ui'
+import { clamp, objMap } from '@genshin-optimizer/common-util'
+import { artSubstatRollData } from '@genshin-optimizer/gi-consts'
+import type { BuildTc } from '@genshin-optimizer/gi-db'
+import { getSubstatValue } from '@genshin-optimizer/gi-util'
 import { Box, Slider } from '@mui/material'
 import { useContext, useDeferredValue, useState } from 'react'
 import { useTranslation } from 'react-i18next'

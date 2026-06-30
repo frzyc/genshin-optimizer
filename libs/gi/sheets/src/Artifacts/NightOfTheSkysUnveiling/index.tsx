@@ -1,9 +1,9 @@
-import { objKeyValMap, objMap } from '@genshin-optimizer/common/util'
+import { objKeyValMap, objMap } from '@genshin-optimizer/common-util'
 import {
   type ArtifactSetKey,
   allLunarReactionKeys,
-} from '@genshin-optimizer/gi/consts'
-import type { Data } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-consts'
+import type { Data } from '@genshin-optimizer/gi-wr'
 import {
   equal,
   equalStr,
@@ -12,7 +12,7 @@ import {
   input,
   percent,
   threshold,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 import { cond, nonStackBuff, st, stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { SetEffectSheet } from '../IArtifactSheet'

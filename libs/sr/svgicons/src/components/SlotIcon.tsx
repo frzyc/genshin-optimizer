@@ -1,4 +1,4 @@
-import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
+import type { RelicSlotKey } from '@genshin-optimizer/sr-consts'
 import type { SvgIconProps } from '@mui/material'
 import {
   BodyIcon,

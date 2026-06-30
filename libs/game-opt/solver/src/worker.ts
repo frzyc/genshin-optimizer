@@ -1,5 +1,5 @@
-import type { NumTagFree } from '@genshin-optimizer/pando/engine'
-import { executionStr } from '@genshin-optimizer/pando/engine'
+import type { NumTagFree } from '@genshin-optimizer/pando-engine'
+import { executionStr } from '@genshin-optimizer/pando-engine'
 import type { BuildResult, Candidate, Progress, Work } from './common'
 import { splitThreshold } from './common'
 import { splitSubwork } from './split'

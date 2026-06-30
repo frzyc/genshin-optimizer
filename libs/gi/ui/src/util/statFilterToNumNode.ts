@@ -1,6 +1,6 @@
-import { objPathValue } from '@genshin-optimizer/common/util'
-import type { OptConfig } from '@genshin-optimizer/gi/db'
-import type { Data, NumNode } from '@genshin-optimizer/gi/wr'
+import { objPathValue } from '@genshin-optimizer/common-util'
+import type { OptConfig } from '@genshin-optimizer/gi-db'
+import type { Data, NumNode } from '@genshin-optimizer/gi-wr'
 import { resolveInfo } from '../util'
 // Put in gi/ui due to dependency on `resolveInfo`
 export function statFilterToNumNode(

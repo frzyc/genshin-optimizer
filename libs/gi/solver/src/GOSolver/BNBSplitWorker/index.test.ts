@@ -9,7 +9,7 @@ import {
   res,
   sum,
   threshold,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 import type { ArtifactsBySlot, DynStat } from '../../common'
 import type { Linear } from './linearUB'
 import { linearUB as linearUpperBound } from './linearUB'

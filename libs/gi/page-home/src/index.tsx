@@ -1,6 +1,6 @@
-import { AdResponsive } from '@genshin-optimizer/common/ad'
-import { CardThemed } from '@genshin-optimizer/common/ui'
-import { GOAdWrapper } from '@genshin-optimizer/gi/ui'
+import { AdResponsive } from '@genshin-optimizer/common-ad'
+import { CardThemed } from '@genshin-optimizer/common-ui'
+import { GOAdWrapper } from '@genshin-optimizer/gi-ui'
 import DescriptionIcon from '@mui/icons-material/Description'
 import {
   Box,

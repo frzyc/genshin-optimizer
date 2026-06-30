@@ -1,9 +1,9 @@
-import { zodFilteredArray } from '@genshin-optimizer/common/database'
+import { zodFilteredArray } from '@genshin-optimizer/common-database'
 import {
   allLocationCharacterKeys,
   allRarityKeys,
   allWeaponTypeKeys,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import { z } from 'zod'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataEntry } from '../DataEntry'

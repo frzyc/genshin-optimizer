@@ -7,8 +7,8 @@ import {
   zodObject,
   zodString,
   zodTypedRecordWith,
-} from '@genshin-optimizer/common/database'
-import { clamp, objKeyMap } from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-database'
+import { clamp, objKeyMap } from '@genshin-optimizer/common-util'
 import type {
   AscensionKey,
   CharacterKey,
@@ -17,7 +17,7 @@ import type {
   RelicSetKey,
   RelicSlotKey,
   SuperimposeKey,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 import {
   allAscensionKeys,
   allCharacterKeys,
@@ -30,7 +30,7 @@ import {
   relicMaxLevel,
   relicSubstatTypeKeys,
   validateLevelAsc,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 import { z } from 'zod'
 import type { ICachedLightCone, ICachedRelic } from '../../Interfaces'
 import { DataManager } from '../DataManager'

@@ -1,5 +1,5 @@
-import { dumpFile } from '@genshin-optimizer/common/pipeline'
-import { tooltipJSONData } from '@genshin-optimizer/zzz/dm'
+import { dumpFile } from '@genshin-optimizer/common-pipeline'
+import { tooltipJSONData } from '@genshin-optimizer/zzz-dm'
 import { processText } from './util'
 
 export function dumpTooltips(fileDir: string) {

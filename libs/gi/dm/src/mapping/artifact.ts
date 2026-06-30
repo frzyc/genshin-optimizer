@@ -1,4 +1,4 @@
-import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
+import type { ArtifactSetKey } from '@genshin-optimizer/gi-consts'
 
 export const artifactIdMap: Record<string | number, ArtifactSetKey> = {
   10001: 'ResolutionOfSojourner',

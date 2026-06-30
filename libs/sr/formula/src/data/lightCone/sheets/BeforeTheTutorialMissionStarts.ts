@@ -1,5 +1,5 @@
-import type { LightConeKey } from '@genshin-optimizer/sr/consts'
-import { allStats } from '@genshin-optimizer/sr/stats'
+import type { LightConeKey } from '@genshin-optimizer/sr-consts'
+import { allStats } from '@genshin-optimizer/sr-stats'
 import { entriesForLightCone, registerLightCone } from '../util'
 
 const key: LightConeKey = 'BeforeTheTutorialMissionStarts'

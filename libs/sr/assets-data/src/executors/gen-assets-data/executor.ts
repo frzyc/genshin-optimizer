@@ -1,4 +1,4 @@
-import { dumpFile } from '@genshin-optimizer/common/pipeline'
+import { dumpFile } from '@genshin-optimizer/common-pipeline'
 import type {
   CharacterGenderedKey,
   LightConeKey,
@@ -6,8 +6,8 @@ import type {
   RelicCavernSlotKey,
   RelicPlanarSetKey,
   RelicPlanarSlotKey,
-} from '@genshin-optimizer/sr/consts'
-import type { RelicSlotDMKey } from '@genshin-optimizer/sr/dm'
+} from '@genshin-optimizer/sr-consts'
+import type { RelicSlotDMKey } from '@genshin-optimizer/sr-dm'
 import {
   DmAttackTypeMap,
   avatarConfig,
@@ -20,7 +20,7 @@ import {
   relicDataInfo,
   relicSetIdMap,
   relicSlotMap,
-} from '@genshin-optimizer/sr/dm'
+} from '@genshin-optimizer/sr-dm'
 import type { PromiseExecutor } from '@nx/devkit'
 import { workspaceRoot } from '@nx/devkit'
 import type { GenAssetsDataExecutorSchema } from './schema'

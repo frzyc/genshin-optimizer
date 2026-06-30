@@ -3,11 +3,11 @@ import {
   zodBoolean,
   zodBoundedNumber,
   zodEnumWithDefault,
-} from '@genshin-optimizer/common/database'
+} from '@genshin-optimizer/common-database'
 import type {
   DiscRarityKey,
   DiscSubStatKey,
-} from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-consts'
 import {
   allDiscMainStatKeys,
   allDiscRarityKeys,
@@ -19,7 +19,7 @@ import {
   discSlotToMainStatKeys,
   discSubstatRollData,
   statKeyTextMap,
-} from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-consts'
 import { z } from 'zod'
 
 export const substatSchema = z.object({

@@ -1,20 +1,20 @@
 import {
   useDataEntryBase,
   useDataManagerValues,
-} from '@genshin-optimizer/common/database-ui'
+} from '@genshin-optimizer/common-database-ui'
 import {
   useBoolState,
   useMediaQueryUp,
-} from '@genshin-optimizer/common/react-util'
+} from '@genshin-optimizer/common-react-util'
 import {
   CardThemed,
   ShowingAndSortOptionSelect,
   useInfScroll,
-} from '@genshin-optimizer/common/ui'
-import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
-import { type WeaponKey } from '@genshin-optimizer/gi/consts'
-import { initialWeapon } from '@genshin-optimizer/gi/db'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+} from '@genshin-optimizer/common-ui'
+import { filterFunction, sortFunction } from '@genshin-optimizer/common-util'
+import { type WeaponKey } from '@genshin-optimizer/gi-consts'
+import { initialWeapon } from '@genshin-optimizer/gi-db'
+import { useDatabase } from '@genshin-optimizer/gi-db-ui'
 import {
   WeaponCard,
   WeaponEditor,
@@ -22,7 +22,7 @@ import {
   weaponFilterConfigs,
   weaponSortConfigs,
   weaponSortMap,
-} from '@genshin-optimizer/gi/ui'
+} from '@genshin-optimizer/gi-ui'
 import AddIcon from '@mui/icons-material/Add'
 import {
   Box,

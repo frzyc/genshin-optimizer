@@ -4,8 +4,8 @@ import {
   range,
   transposeArray,
   verifyObjKeys,
-} from '@genshin-optimizer/common/util'
-import type { CharacterKey, TrailblazerKey } from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/common-util'
+import type { CharacterKey, TrailblazerKey } from '@genshin-optimizer/sr-consts'
 import {
   type AbilityKey,
   type ElementalTypeKey,
@@ -14,7 +14,7 @@ import {
   type StatKey,
   allCharacterKeys,
   allTrailblazerGenderedKeys,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 import type {
   Anchor,
   AvatarSkillTreeConfig,
@@ -22,7 +22,7 @@ import type {
   Rank,
   ServantSkillTreeType,
   SkillTreeType,
-} from '@genshin-optimizer/sr/dm'
+} from '@genshin-optimizer/sr-dm'
 import {
   DmAttackTypeMap,
   allAvatarSkillTreeTypes,
@@ -39,7 +39,7 @@ import {
   avatarSkillTreeConfig,
   characterIdMap,
   statKeyMap,
-} from '@genshin-optimizer/sr/dm'
+} from '@genshin-optimizer/sr-dm'
 
 type Promotion = {
   atk: Scaling

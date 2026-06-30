@@ -2,18 +2,18 @@ import {
   BootstrapTooltip,
   ColorText,
   ConditionalWrapper,
-} from '@genshin-optimizer/common/ui'
-import { clamp, getUnitStr } from '@genshin-optimizer/common/util'
-import { artifactAsset, imgAssets } from '@genshin-optimizer/gi/assets'
-import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
-import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
-import type { ICachedSubstat } from '@genshin-optimizer/gi/db'
-import { useArtifact, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { StatIcon } from '@genshin-optimizer/gi/svgicons'
+} from '@genshin-optimizer/common-ui'
+import { clamp, getUnitStr } from '@genshin-optimizer/common-util'
+import { artifactAsset, imgAssets } from '@genshin-optimizer/gi-assets'
+import type { ArtifactSlotKey } from '@genshin-optimizer/gi-consts'
+import { allElementWithPhyKeys } from '@genshin-optimizer/gi-consts'
+import type { ICachedSubstat } from '@genshin-optimizer/gi-db'
+import { useArtifact, useDatabase } from '@genshin-optimizer/gi-db-ui'
+import { StatIcon } from '@genshin-optimizer/gi-svgicons'
 import {
   artDisplayValue,
   getMainStatDisplayStr,
-} from '@genshin-optimizer/gi/util'
+} from '@genshin-optimizer/gi-util'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import {
   Box,

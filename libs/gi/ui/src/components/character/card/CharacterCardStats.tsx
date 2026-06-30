@@ -1,5 +1,5 @@
-import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
-import { input } from '@genshin-optimizer/gi/wr'
+import type { CardBackgroundColor } from '@genshin-optimizer/common-ui'
+import { input } from '@genshin-optimizer/gi-wr'
 import { ListItem, Typography } from '@mui/material'
 import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'

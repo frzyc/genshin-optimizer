@@ -1,9 +1,0 @@
-{
-  "name": "sr-solver",
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/sr/solver/src",
-  "projectType": "library",
-  "tags": [],
-  "// targets": "to see all targets run: nx show project sr-solver --web",
-  "targets": {}
-}

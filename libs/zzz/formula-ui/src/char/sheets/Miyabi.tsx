@@ -1,5 +1,5 @@
-import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { Miyabi } from '@genshin-optimizer/zzz/formula'
+import type { CharacterKey } from '@genshin-optimizer/zzz-consts'
+import { Miyabi } from '@genshin-optimizer/zzz-formula'
 import { st, trans } from '../../util'
 import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 

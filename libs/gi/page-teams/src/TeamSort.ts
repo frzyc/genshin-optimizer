@@ -2,13 +2,13 @@ import {
   type FilterConfigs,
   type SortConfigs,
   notEmpty,
-} from '@genshin-optimizer/common/util'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/common-util'
+import type { CharacterKey } from '@genshin-optimizer/gi-consts'
 import type {
   ArtCharDatabase,
   Team,
   TeamSortKey,
-} from '@genshin-optimizer/gi/db'
+} from '@genshin-optimizer/gi-db'
 
 export function teamSortConfigs(): SortConfigs<TeamSortKey, Team> {
   return {

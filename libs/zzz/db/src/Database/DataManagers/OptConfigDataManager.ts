@@ -2,12 +2,12 @@ import {
   zodBoolean,
   zodFilteredArray,
   zodNumericLiteralWithDefault,
-} from '@genshin-optimizer/common/database'
+} from '@genshin-optimizer/common-database'
 import {
   removeUndefinedFields,
   validateValue,
-} from '@genshin-optimizer/common/util'
-import type { AttributeKey, SpecialityKey } from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/common-util'
+import type { AttributeKey, SpecialityKey } from '@genshin-optimizer/zzz-consts'
 import {
   type DiscMainStatKey,
   type DiscSetKey,
@@ -17,8 +17,8 @@ import {
   discMaxLevel,
   discSlotToMainStatKeys,
   wengineMaxLevel,
-} from '@genshin-optimizer/zzz/consts'
-import type { Tag } from '@genshin-optimizer/zzz/formula'
+} from '@genshin-optimizer/zzz-consts'
+import type { Tag } from '@genshin-optimizer/zzz-formula'
 import { z } from 'zod'
 import type { ZzzDatabase } from '../..'
 import { DataManager } from '../DataManager'

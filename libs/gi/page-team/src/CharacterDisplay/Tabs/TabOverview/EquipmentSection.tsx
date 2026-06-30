@@ -1,24 +1,24 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
-import { objKeyMap } from '@genshin-optimizer/common/util'
+import { CardThemed } from '@genshin-optimizer/common-ui'
+import { objKeyMap } from '@genshin-optimizer/common-util'
 import {
   allArtifactSlotKeys,
   charKeyToLocCharKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import {
   CharacterContext,
   TeamCharacterContext,
   useDatabase,
-} from '@genshin-optimizer/gi/db-ui'
-import { dataSetEffects } from '@genshin-optimizer/gi/sheets'
-import { getCharStat } from '@genshin-optimizer/gi/stats'
+} from '@genshin-optimizer/gi-db-ui'
+import { dataSetEffects } from '@genshin-optimizer/gi-sheets'
+import { getCharStat } from '@genshin-optimizer/gi-stats'
 import {
   BuildEditContext,
   DataContext,
   DocumentDisplay,
   EquippedGrid,
   SetEffectDisplay,
-} from '@genshin-optimizer/gi/ui'
-import { uiInput as input } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-ui'
+import { uiInput as input } from '@genshin-optimizer/gi-wr'
 import {
   Box,
   Button,

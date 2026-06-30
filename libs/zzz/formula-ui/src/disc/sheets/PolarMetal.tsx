@@ -1,7 +1,7 @@
-import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
-import { discDefIcon } from '@genshin-optimizer/zzz/assets'
-import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
-import { PolarMetal } from '@genshin-optimizer/zzz/formula'
+import type { UISheet } from '@genshin-optimizer/game-opt-sheet-ui'
+import { discDefIcon } from '@genshin-optimizer/zzz-assets'
+import type { DiscSetKey } from '@genshin-optimizer/zzz-consts'
+import { PolarMetal } from '@genshin-optimizer/zzz-formula'
 import { trans } from '../../util'
 import { Set2Display, Set4Display } from '../components'
 

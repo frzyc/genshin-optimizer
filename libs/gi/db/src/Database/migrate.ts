@@ -1,18 +1,18 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { DBStorage } from '@genshin-optimizer/common/database'
-import { notEmpty } from '@genshin-optimizer/common/util'
+import type { DBStorage } from '@genshin-optimizer/common-database'
+import { notEmpty } from '@genshin-optimizer/common-util'
 import type {
   CharacterKey,
   ElementKey,
   HitModeKey,
   LocationCharacterKey,
   TravelerKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import {
   allLocationCharacterKeys,
   travelerElements,
-} from '@genshin-optimizer/gi/consts'
-import type { ICharacter, IGOOD } from '@genshin-optimizer/gi/good'
+} from '@genshin-optimizer/gi-consts'
+import type { ICharacter, IGOOD } from '@genshin-optimizer/gi-good'
 import type { CustomMultiTarget } from './DataManagers'
 import type { LoadoutDatum, Team, TeamCharacter } from './DataManagers'
 import type { IGO } from './exim'

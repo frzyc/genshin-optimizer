@@ -2,7 +2,7 @@ import {
   CharacterContext,
   useDBMeta,
   useDatabase,
-} from '@genshin-optimizer/gi/db-ui'
+} from '@genshin-optimizer/gi-db-ui'
 import FemaleIcon from '@mui/icons-material/Female'
 import MaleIcon from '@mui/icons-material/Male'
 import { Button } from '@mui/material'

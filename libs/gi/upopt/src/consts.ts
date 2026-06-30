@@ -1,6 +1,6 @@
 // Weight data from genshin-impact wiki:
 
-import type { MainStatKey } from '@genshin-optimizer/gi/consts'
+import type { MainStatKey } from '@genshin-optimizer/gi-consts'
 
 // https://genshin-impact.fandom.com/wiki/Artifact/Distribution
 export const substatWeights = {

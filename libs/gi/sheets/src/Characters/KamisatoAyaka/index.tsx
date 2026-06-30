@@ -1,6 +1,6 @@
-import { ColorText } from '@genshin-optimizer/common/ui'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
+import { ColorText } from '@genshin-optimizer/common-ui'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi-consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import {
   equal,
   equalStr,
@@ -9,7 +9,7 @@ import {
   input,
   percent,
   sum,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
 import type { TalentSheet } from '../ICharacterSheet.d'

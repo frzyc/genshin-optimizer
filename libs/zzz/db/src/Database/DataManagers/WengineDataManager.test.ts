@@ -1,5 +1,5 @@
-import { createTestDBStorage } from '@genshin-optimizer/common/database'
-import { allWengineKeys } from '@genshin-optimizer/zzz/consts'
+import { createTestDBStorage } from '@genshin-optimizer/common-database'
+import { allWengineKeys } from '@genshin-optimizer/zzz-consts'
 import { ZzzDatabase } from '../Database'
 
 describe('WengineDataManager', () => {

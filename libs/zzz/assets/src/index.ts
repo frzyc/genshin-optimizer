@@ -1,4 +1,4 @@
-import type { AssetDataType } from '@genshin-optimizer/zzz/assets-data'
+import type { AssetDataType } from '@genshin-optimizer/zzz-assets-data'
 import type {
   CharacterKey,
   DiscSetKey,
@@ -6,7 +6,7 @@ import type {
   Raritykey,
   SpecialityKey,
   WengineKey,
-} from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-consts'
 import commonImages from './common'
 import faction from './common/faction'
 import mindscape from './common/mindscape'

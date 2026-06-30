@@ -16,7 +16,7 @@ import type {
   CharacterGenderedKey,
   LightConeKey,
   RelicSetKey,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 import { charBank } from './databank/char'
 import { lightconeBank } from './databank/lightcone'
 import { relicBank } from './databank/relics'

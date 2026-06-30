@@ -1,9 +1,17 @@
 {
-  "extends": "./tsconfig.json",
+  "extends": "../../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "../../../dist/out-tsc",
+    "outDir": "./out-tsc/lib",
     "declaration": true,
     "types": ["node"]
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts"],
+  "references": [
+    {
+      "path": "../keymap/tsconfig.lib.json"
+    },
+    {
+      "path": "../consts/tsconfig.lib.json"
+    }
+  ]
 }

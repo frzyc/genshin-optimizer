@@ -1,4 +1,4 @@
-import { DBLocalStorage } from '@genshin-optimizer/common/database'
+import { DBLocalStorage } from '@genshin-optimizer/common-database'
 import { ArtCharDatabase } from '../ArtCharDatabase'
 import { initCharTC } from './BuildTcDataManager'
 import type { LoadoutDatum } from './TeamDataManager'

@@ -1,10 +1,10 @@
-import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
-import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
-import { DocumentDisplay } from '@genshin-optimizer/game-opt/sheet-ui'
-import { relicAsset } from '@genshin-optimizer/sr/assets'
-import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
-import { RelicSetName } from '@genshin-optimizer/sr/ui'
-import { getDefaultRelicSlot, isCavernRelic } from '@genshin-optimizer/sr/util'
+import { CardThemed, SqBadge } from '@genshin-optimizer/common-ui'
+import type { UISheetElement } from '@genshin-optimizer/game-opt-sheet-ui'
+import { DocumentDisplay } from '@genshin-optimizer/game-opt-sheet-ui'
+import { relicAsset } from '@genshin-optimizer/sr-assets'
+import type { RelicSetKey } from '@genshin-optimizer/sr-consts'
+import { RelicSetName } from '@genshin-optimizer/sr-ui'
+import { getDefaultRelicSlot, isCavernRelic } from '@genshin-optimizer/sr-util'
 import {
   Box,
   CardContent,

@@ -1,25 +1,25 @@
-import { AnvilIcon } from '@genshin-optimizer/common/svgicons'
-import { CardThemed, ImgIcon } from '@genshin-optimizer/common/ui'
-import { objKeyMap } from '@genshin-optimizer/common/util'
-import { imgAssets } from '@genshin-optimizer/gi/assets'
+import { AnvilIcon } from '@genshin-optimizer/common-svgicons'
+import { CardThemed, ImgIcon } from '@genshin-optimizer/common-ui'
+import { objKeyMap } from '@genshin-optimizer/common-util'
+import { imgAssets } from '@genshin-optimizer/gi-assets'
 import {
   allArtifactSlotKeys,
   allElementKeys,
   allWeaponTypeKeys,
-} from '@genshin-optimizer/gi/consts'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { getCharEle, getWeaponStat } from '@genshin-optimizer/gi/stats'
+} from '@genshin-optimizer/gi-consts'
+import { useDatabase } from '@genshin-optimizer/gi-db-ui'
+import { getCharEle, getWeaponStat } from '@genshin-optimizer/gi-stats'
 import {
   ElementIcon,
   FlowerIcon,
   SlotIcon,
-} from '@genshin-optimizer/gi/svgicons'
+} from '@genshin-optimizer/gi-svgicons'
 import {
   BuildIcon,
   LoadoutIcon,
   TeamCardCompact,
   TeamIcon,
-} from '@genshin-optimizer/gi/ui'
+} from '@genshin-optimizer/gi-ui'
 import { BusinessCenter, People } from '@mui/icons-material'
 
 import {

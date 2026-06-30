@@ -1,7 +1,7 @@
-import { registerEquipment } from '@genshin-optimizer/game-opt/formula'
-import { cmpGE } from '@genshin-optimizer/pando/engine'
-import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
-import { disc2pEffect } from '@genshin-optimizer/zzz/consts'
+import { registerEquipment } from '@genshin-optimizer/game-opt-formula'
+import { cmpGE } from '@genshin-optimizer/pando-engine'
+import type { DiscSetKey } from '@genshin-optimizer/zzz-consts'
+import { disc2pEffect } from '@genshin-optimizer/zzz-consts'
 import type { Tag, TagMapNodeEntries, TagMapNodeEntry } from '../util'
 import { getStatFromStatKey, own, ownBuff, registerBuff } from '../util'
 

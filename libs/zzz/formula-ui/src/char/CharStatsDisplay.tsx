@@ -1,22 +1,22 @@
-import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
-import type { Read } from '@genshin-optimizer/game-opt/engine'
-import { DebugReadContext } from '@genshin-optimizer/game-opt/formula-ui'
+import { shouldShowDevComponents } from '@genshin-optimizer/common-util'
+import type { Read } from '@genshin-optimizer/game-opt-engine'
+import { DebugReadContext } from '@genshin-optimizer/game-opt-formula-ui'
 import {
   FieldDisplayList,
   TagFieldDisplay,
-} from '@genshin-optimizer/game-opt/sheet-ui'
-import type { StatKey } from '@genshin-optimizer/zzz/consts'
-import { applyDamageTypeToTag } from '@genshin-optimizer/zzz/db'
-import { getTeamFrame0 } from '@genshin-optimizer/zzz/db'
-import { useCharacterContext, useTeam } from '@genshin-optimizer/zzz/db-ui'
-import type { Tag } from '@genshin-optimizer/zzz/formula'
-import { own } from '@genshin-optimizer/zzz/formula'
+} from '@genshin-optimizer/game-opt-sheet-ui'
+import type { StatKey } from '@genshin-optimizer/zzz-consts'
+import { applyDamageTypeToTag } from '@genshin-optimizer/zzz-db'
+import { getTeamFrame0 } from '@genshin-optimizer/zzz-db'
+import { useCharacterContext, useTeam } from '@genshin-optimizer/zzz-db-ui'
+import type { Tag } from '@genshin-optimizer/zzz-formula'
+import { own } from '@genshin-optimizer/zzz-formula'
 import {
   StatHighlightContext,
   ZCard,
   getHighlightRGBA,
   isHighlight,
-} from '@genshin-optimizer/zzz/ui'
+} from '@genshin-optimizer/zzz-ui'
 import { ListItem } from '@mui/material'
 import { useContext, useMemo } from 'react'
 import { useZzzCalcContext } from '../hooks'

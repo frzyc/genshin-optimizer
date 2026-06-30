@@ -1,20 +1,20 @@
 import {
   zodBoolean,
   zodEnumWithDefault,
-} from '@genshin-optimizer/common/database'
+} from '@genshin-optimizer/common-database'
 import {
   notEmpty,
   removeUndefinedFields,
   shallowCompareObj,
   validateValue,
-} from '@genshin-optimizer/common/util'
-import { correctConditionalValue } from '@genshin-optimizer/game-opt/engine'
+} from '@genshin-optimizer/common-util'
+import { correctConditionalValue } from '@genshin-optimizer/game-opt-engine'
 import {
   type AttributeKey,
   type CharacterKey,
   allAttributeKeys,
   allCharacterKeys,
-} from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-consts'
 import type {
   DamageType,
   Dst,
@@ -23,12 +23,12 @@ import type {
   Tag,
   enemy,
   own,
-} from '@genshin-optimizer/zzz/formula'
+} from '@genshin-optimizer/zzz-formula'
 import {
   formulas,
   getConditional,
   isMember,
-} from '@genshin-optimizer/zzz/formula'
+} from '@genshin-optimizer/zzz-formula'
 import { z } from 'zod'
 import type { ZzzDatabase } from '../..'
 import { DataManager } from '../DataManager'

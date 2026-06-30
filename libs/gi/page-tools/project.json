@@ -1,8 +1,0 @@
-{
-  "name": "gi-page-tools",
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/gi/page-tools/src",
-  "projectType": "library",
-  "tags": [],
-  "targets": {}
-}

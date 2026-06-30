@@ -1,7 +1,7 @@
 {
-  "extends": "./tsconfig.json",
+  "extends": "../../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "../../../dist/out-tsc",
+    "outDir": "./out-tsc/lib",
     "types": [
       "node",
       "@nx/react/typings/cssmodule.d.ts",
@@ -19,5 +19,22 @@
     "**/*.spec.jsx",
     "**/*.test.jsx"
   ],
-  "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"]
+  "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"],
+  "references": [
+    {
+      "path": "../consts/tsconfig.lib.json"
+    },
+    {
+      "path": "../dm/tsconfig.lib.json"
+    },
+    {
+      "path": "../assets-data/tsconfig.lib.json"
+    },
+    {
+      "path": "../../common/util/tsconfig.lib.json"
+    },
+    {
+      "path": "../../common/pipeline/tsconfig.lib.json"
+    }
+  ]
 }

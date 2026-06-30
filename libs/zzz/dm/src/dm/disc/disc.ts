@@ -1,4 +1,4 @@
-import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
+import type { DiscSetKey } from '@genshin-optimizer/zzz-consts'
 import { readHakushinJSON } from '../../util'
 import { DiscIdMap } from './consts'
 

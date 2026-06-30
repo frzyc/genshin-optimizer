@@ -1,8 +1,8 @@
-import { AssetData } from '@genshin-optimizer/sr/assets-data'
+import { AssetData } from '@genshin-optimizer/sr-assets-data'
 import type {
   AbilityKey,
   CharacterGenderedKey,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 import {
   ActionRowBuilder,
   EmbedBuilder,

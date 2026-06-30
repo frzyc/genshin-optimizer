@@ -1,8 +1,0 @@
-{
-  "name": "gi-page-archive",
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/gi/page-archive/src",
-  "projectType": "library",
-  "tags": [],
-  "targets": {}
-}

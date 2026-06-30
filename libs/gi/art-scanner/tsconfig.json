@@ -1,15 +1,27 @@
 {
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "allowJs": false,
-    "esModuleInterop": false,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "jsxImportSource": "@emotion/react"
-  },
   "files": [],
-  "include": [],
   "references": [
+    {
+      "path": "../util"
+    },
+    {
+      "path": "../stats"
+    },
+    {
+      "path": "../good"
+    },
+    {
+      "path": "../../common/util"
+    },
+    {
+      "path": "../../common/ui"
+    },
+    {
+      "path": "../consts"
+    },
+    {
+      "path": "../../common/img-util"
+    },
     {
       "path": "./tsconfig.lib.json"
     }

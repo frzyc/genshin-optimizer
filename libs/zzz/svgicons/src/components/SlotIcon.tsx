@@ -1,4 +1,4 @@
-import type { DiscSlotKey } from '@genshin-optimizer/zzz/consts'
+import type { DiscSlotKey } from '@genshin-optimizer/zzz-consts'
 import type { SvgIconProps } from '@mui/material'
 import {
   Slot1Icon,

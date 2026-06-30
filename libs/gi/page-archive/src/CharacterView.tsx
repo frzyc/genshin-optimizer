@@ -1,16 +1,16 @@
-import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
-import { range } from '@genshin-optimizer/common/util'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-import { maxConstellationCount } from '@genshin-optimizer/gi/consts'
-import type { ICachedCharacter } from '@genshin-optimizer/gi/db'
-import { useDBMeta } from '@genshin-optimizer/gi/db-ui'
-import type { TalentSheetElementKey } from '@genshin-optimizer/gi/sheets'
-import { getCharSheet } from '@genshin-optimizer/gi/sheets'
+import { CardThemed, ModalWrapper } from '@genshin-optimizer/common-ui'
+import { range } from '@genshin-optimizer/common-util'
+import type { CharacterKey } from '@genshin-optimizer/gi-consts'
+import { maxConstellationCount } from '@genshin-optimizer/gi-consts'
+import type { ICachedCharacter } from '@genshin-optimizer/gi-db'
+import { useDBMeta } from '@genshin-optimizer/gi-db-ui'
+import type { TalentSheetElementKey } from '@genshin-optimizer/gi-sheets'
+import { getCharSheet } from '@genshin-optimizer/gi-sheets'
 import {
   CharIconSide,
   CharacterName,
   DocumentDisplay,
-} from '@genshin-optimizer/gi/ui'
+} from '@genshin-optimizer/gi-ui'
 import CloseIcon from '@mui/icons-material/Close'
 import {
   Box,

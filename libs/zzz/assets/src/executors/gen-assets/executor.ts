@@ -1,9 +1,9 @@
 import * as fs from 'fs'
 import * as path from 'path'
-import { generateIndexFromObj } from '@genshin-optimizer/common/pipeline'
-import { crawlObject, layeredAssignment } from '@genshin-optimizer/common/util'
-import { AssetData } from '@genshin-optimizer/zzz/assets-data'
-import { DM2D_PATH } from '@genshin-optimizer/zzz/dm'
+import { generateIndexFromObj } from '@genshin-optimizer/common-pipeline'
+import { crawlObject, layeredAssignment } from '@genshin-optimizer/common-util'
+import { AssetData } from '@genshin-optimizer/zzz-assets-data'
+import { DM2D_PATH } from '@genshin-optimizer/zzz-dm'
 import { workspaceRoot } from '@nx/devkit'
 import type { GenAssetsExecutorSchema } from './schema'
 

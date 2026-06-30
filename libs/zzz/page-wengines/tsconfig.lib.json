@@ -1,7 +1,7 @@
 {
-  "extends": "./tsconfig.json",
+  "extends": "../../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "../../../dist/out-tsc",
+    "outDir": "./out-tsc/lib",
     "types": [
       "node",
       "object-overrides",
@@ -20,5 +20,25 @@
     "src/**/*.spec.jsx",
     "src/**/*.test.jsx"
   ],
-  "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"]
+  "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"],
+  "references": [
+    {
+      "path": "../../common/react-util/tsconfig.lib.json"
+    },
+    {
+      "path": "../stats/tsconfig.lib.json"
+    },
+    {
+      "path": "../consts/tsconfig.lib.json"
+    },
+    {
+      "path": "../../common/util/tsconfig.lib.json"
+    },
+    {
+      "path": "../../common/ui/tsconfig.lib.json"
+    },
+    {
+      "path": "../../common/database-ui/tsconfig.lib.json"
+    }
+  ]
 }

@@ -1,9 +1,10 @@
 {
   "extends": "../../../tsconfig.base.json",
-  "compilerOptions": {},
   "files": [],
-  "include": [],
   "references": [
+    {
+      "path": "../../common/pipeline"
+    },
     {
       "path": "./tsconfig.lib.json"
     }

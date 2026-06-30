@@ -1,13 +1,13 @@
-import { tag } from '@genshin-optimizer/game-opt/engine'
+import { tag } from '@genshin-optimizer/game-opt-engine'
 import type {
   ArtifactSetKey,
   ElementKey,
   ElementWithPhyKey,
   MoveKey,
-} from '@genshin-optimizer/gi/consts'
-import type { StatKey } from '@genshin-optimizer/gi/dm'
-import type { NumNode, StrNode } from '@genshin-optimizer/pando/engine'
-import { prod } from '@genshin-optimizer/pando/engine'
+} from '@genshin-optimizer/gi-consts'
+import type { StatKey } from '@genshin-optimizer/gi-dm'
+import type { NumNode, StrNode } from '@genshin-optimizer/pando-engine'
+import { prod } from '@genshin-optimizer/pando-engine'
 import type { Sheet, Stat } from './listing'
 import type { Read } from './read'
 import { reader } from './read'

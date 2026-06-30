@@ -1,5 +1,5 @@
-import { useDataManagerBase } from '@genshin-optimizer/common/database-ui'
-import type { OptConfig } from '@genshin-optimizer/zzz/db'
+import { useDataManagerBase } from '@genshin-optimizer/common-database-ui'
+import type { OptConfig } from '@genshin-optimizer/zzz-db'
 import { createContext, useMemo } from 'react'
 import { useDatabaseContext } from './DatabaseContext'
 

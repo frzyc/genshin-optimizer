@@ -1,11 +1,11 @@
-import type { DataManagerCallback } from '@genshin-optimizer/common/database'
-import { deepClone, notEmpty } from '@genshin-optimizer/common/util'
+import type { DataManagerCallback } from '@genshin-optimizer/common-database'
+import { deepClone, notEmpty } from '@genshin-optimizer/common-util'
 import type {
   ArtifactSetKey,
   HitModeKey,
   WeaponKey,
   WeaponTypeKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import {
   type AdditiveReactionKey,
   type AmpReactionKey,
@@ -16,10 +16,10 @@ import {
   allCharacterKeys,
   allHitModeKeys,
   allInfusionAuraElementKeys,
-} from '@genshin-optimizer/gi/consts'
-import type { IGOOD } from '@genshin-optimizer/gi/good'
-import { getCharStat } from '@genshin-optimizer/gi/stats'
-import type { InputPremodKey } from '@genshin-optimizer/gi/wr-types'
+} from '@genshin-optimizer/gi-consts'
+import type { IGOOD } from '@genshin-optimizer/gi-good'
+import { getCharStat } from '@genshin-optimizer/gi-stats'
+import type { InputPremodKey } from '@genshin-optimizer/gi-wr-types'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
 import type { IGO, ImportResult } from '../exim'

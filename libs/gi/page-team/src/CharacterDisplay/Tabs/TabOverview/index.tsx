@@ -1,5 +1,5 @@
-import { CardThemed, useScrollRef } from '@genshin-optimizer/common/ui'
-import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
+import { CardThemed, useScrollRef } from '@genshin-optimizer/common-ui'
+import { allArtifactSlotKeys } from '@genshin-optimizer/gi-consts'
 import {
   ArtifactCardNano,
   DataContext,
@@ -7,8 +7,8 @@ import {
   ReactionToggle,
   StatDisplayComponent,
   WeaponCardNano,
-} from '@genshin-optimizer/gi/ui'
-import { uiInput as input } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-ui'
+import { uiInput as input } from '@genshin-optimizer/gi-wr'
 import { Box, Grid, Stack } from '@mui/material'
 import { useContext, useMemo } from 'react'
 import CharacterProfileCard from '../../../CharProfileCard'

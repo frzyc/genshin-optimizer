@@ -1,5 +1,5 @@
-import { DiscordIcon } from '@genshin-optimizer/common/svgicons'
-import { ZCard } from '@genshin-optimizer/zzz/ui'
+import { DiscordIcon } from '@genshin-optimizer/common-svgicons'
+import { ZCard } from '@genshin-optimizer/zzz-ui'
 import { GitHub, InsertLink } from '@mui/icons-material'
 import {
   Button,

@@ -2,17 +2,17 @@ import {
   ConditionalWrapper,
   SqBadge,
   StarsDisplay,
-} from '@genshin-optimizer/common/ui'
-import { characterAsset } from '@genshin-optimizer/gi/assets'
+} from '@genshin-optimizer/common-ui'
+import { characterAsset } from '@genshin-optimizer/gi-assets'
 import type {
   AscensionKey,
   CharacterKey,
   ElementKey,
-} from '@genshin-optimizer/gi/consts'
-import { getCharMaxLevel } from '@genshin-optimizer/gi/consts'
-import { useDBMeta } from '@genshin-optimizer/gi/db-ui'
-import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
-import { input } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-consts'
+import { getCharMaxLevel } from '@genshin-optimizer/gi-consts'
+import { useDBMeta } from '@genshin-optimizer/gi-db-ui'
+import { getCharEle, getCharStat } from '@genshin-optimizer/gi-stats'
+import { input } from '@genshin-optimizer/gi-wr'
 import { Box, CardActionArea, Chip, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
 import { useCallback, useContext } from 'react'

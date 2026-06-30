@@ -1,6 +1,6 @@
-import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { Banyue } from '@genshin-optimizer/zzz/formula'
-import { mappedStats } from '@genshin-optimizer/zzz/stats'
+import type { CharacterKey } from '@genshin-optimizer/zzz-consts'
+import { Banyue } from '@genshin-optimizer/zzz-formula'
+import { mappedStats } from '@genshin-optimizer/zzz-stats'
 import { st, trans } from '../../util'
 import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 

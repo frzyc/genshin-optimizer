@@ -1,18 +1,18 @@
-import type { DropdownButtonProps } from '@genshin-optimizer/common/ui'
+import type { DropdownButtonProps } from '@genshin-optimizer/common-ui'
 import {
   CardThemed,
   ConditionalWrapper,
   DropdownButton,
-} from '@genshin-optimizer/common/ui'
-import { range } from '@genshin-optimizer/common/util'
-import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
-import { DocumentDisplay } from '@genshin-optimizer/game-opt/sheet-ui'
-import { maxEidolonCount, talentLimits } from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/common-ui'
+import { range } from '@genshin-optimizer/common-util'
+import type { UISheetElement } from '@genshin-optimizer/game-opt-sheet-ui'
+import { DocumentDisplay } from '@genshin-optimizer/game-opt-sheet-ui'
+import { maxEidolonCount, talentLimits } from '@genshin-optimizer/sr-consts'
 import {
   useCharacterContext,
   useDatabaseContext,
-} from '@genshin-optimizer/sr/db-ui'
-import { own } from '@genshin-optimizer/sr/formula'
+} from '@genshin-optimizer/sr-db-ui'
+import { own } from '@genshin-optimizer/sr-formula'
 import {
   type TalentSheetElementKey,
   allTalentSheetElementEidolonKey,
@@ -27,8 +27,8 @@ import {
   isTalentSheetElementEidolonKey,
   isTalentSheetElementStatBoostKey,
   uiSheets,
-} from '@genshin-optimizer/sr/formula-ui'
-import { useSrCalcContext } from '@genshin-optimizer/sr/ui'
+} from '@genshin-optimizer/sr-formula-ui'
+import { useSrCalcContext } from '@genshin-optimizer/sr-ui'
 import {
   Box,
   CardActionArea,

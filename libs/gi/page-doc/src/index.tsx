@@ -1,13 +1,13 @@
-import { CardThemed, CodeBlock, SqBadge } from '@genshin-optimizer/common/ui'
+import { CardThemed, CodeBlock, SqBadge } from '@genshin-optimizer/common-ui'
 import {
   allArtifactSetKeys,
   allLocationCharacterKeys,
   allWeaponKeys,
   charKeyToLocGenderedCharKey,
-} from '@genshin-optimizer/gi/consts'
-import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { allStats } from '@genshin-optimizer/gi/stats'
-import { statPercent } from '@genshin-optimizer/gi/ui'
+} from '@genshin-optimizer/gi-consts'
+import { useDBMeta, useDatabase } from '@genshin-optimizer/gi-db-ui'
+import { allStats } from '@genshin-optimizer/gi-stats'
+import { statPercent } from '@genshin-optimizer/gi-ui'
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt'
 import {
   Box,

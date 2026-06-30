@@ -1,38 +1,38 @@
 import {
   useDataEntryBase,
   useDataManagerKeys,
-} from '@genshin-optimizer/common/database-ui'
-import { useMediaQueryUp } from '@genshin-optimizer/common/react-util'
+} from '@genshin-optimizer/common-database-ui'
+import { useMediaQueryUp } from '@genshin-optimizer/common-react-util'
 import {
   CardThemed,
   ShowingAndSortOptionSelect,
   useInfScroll,
-} from '@genshin-optimizer/common/ui'
+} from '@genshin-optimizer/common-ui'
 import {
   catTotal,
   filterFunction,
   sortFunction,
-} from '@genshin-optimizer/common/util'
-import { TagContext } from '@genshin-optimizer/game-opt/formula-ui'
-import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/common-util'
+import { TagContext } from '@genshin-optimizer/game-opt-formula-ui'
+import type { CharacterKey } from '@genshin-optimizer/zzz-consts'
 import {
   allAttributeKeys,
   allCharacterKeys,
   allCharacterRarityKeys,
   allSpecialityKeys,
-} from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-consts'
 import {
   useCharacter,
   useDatabaseContext,
   useTeam,
-} from '@genshin-optimizer/zzz/db-ui'
-import type { Tag } from '@genshin-optimizer/zzz/formula'
+} from '@genshin-optimizer/zzz-db-ui'
+import type { Tag } from '@genshin-optimizer/zzz-formula'
 import {
   CharCalcProvider,
   CharacterEditor,
-} from '@genshin-optimizer/zzz/formula-ui'
-import { getCharStat } from '@genshin-optimizer/zzz/stats'
-import type { CharacterSortKey } from '@genshin-optimizer/zzz/ui'
+} from '@genshin-optimizer/zzz-formula-ui'
+import { getCharStat } from '@genshin-optimizer/zzz-stats'
+import type { CharacterSortKey } from '@genshin-optimizer/zzz-ui'
 import {
   CharSpecialtyToggle,
   CharacterCard,
@@ -43,7 +43,7 @@ import {
   characterFilterConfigs,
   characterSortConfigs,
   characterSortMap,
-} from '@genshin-optimizer/zzz/ui'
+} from '@genshin-optimizer/zzz-ui'
 import AddIcon from '@mui/icons-material/Add'
 import {
   Box,

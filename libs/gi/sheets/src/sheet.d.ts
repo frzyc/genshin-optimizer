@@ -2,9 +2,9 @@ import type {
   ArtifactSetKey,
   CharacterKey,
   WeaponKey,
-} from '@genshin-optimizer/gi/consts'
-import type { UIData } from '@genshin-optimizer/gi/uidata'
-import type { NumNode, ReadNode } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-consts'
+import type { UIData } from '@genshin-optimizer/gi-uidata'
+import type { NumNode, ReadNode } from '@genshin-optimizer/gi-wr'
 import type { ReactNode } from 'react'
 import type { IFieldDisplay } from './fieldDisplay'
 

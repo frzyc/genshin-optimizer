@@ -1,5 +1,5 @@
 // WARNING: Generated file, do not modify
-import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
+import type { CharacterKey } from '@genshin-optimizer/zzz-consts'
 import type { CharUISheet } from '../consts'
 import Alice from './Alice'
 import Anby from './Anby'

@@ -1,12 +1,12 @@
-import { SandboxStorage } from '@genshin-optimizer/common/database'
-import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
-import { CardThemed } from '@genshin-optimizer/common/ui'
+import { SandboxStorage } from '@genshin-optimizer/common-database'
+import { iconInlineProps } from '@genshin-optimizer/common-svgicons'
+import { CardThemed } from '@genshin-optimizer/common-ui'
 import type {
   ImportResult,
   ImportResultCounter,
-} from '@genshin-optimizer/sr/db'
-import { SroDatabase } from '@genshin-optimizer/sr/db'
-import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
+} from '@genshin-optimizer/sr-db'
+import { SroDatabase } from '@genshin-optimizer/sr-db'
+import { useDatabaseContext } from '@genshin-optimizer/sr-db-ui'
 import { CheckBox, CheckBoxOutlineBlank, FileOpen } from '@mui/icons-material'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import TextSnippetIcon from '@mui/icons-material/TextSnippet'

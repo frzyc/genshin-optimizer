@@ -1,4 +1,4 @@
-import { range } from '@genshin-optimizer/common/util'
+import { range } from '@genshin-optimizer/common-util'
 
 // Quadronomial coefficients (See https://oeis.org/A008287)
 // step 1: a basic lookup-table with a few steps of Pascal's triangle

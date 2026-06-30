@@ -1,12 +1,12 @@
-import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
-import { objKeyValMap, objMap } from '@genshin-optimizer/common/util'
-import { imgAssets } from '@genshin-optimizer/gi/assets'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+import { iconInlineProps } from '@genshin-optimizer/common-svgicons'
+import { objKeyValMap, objMap } from '@genshin-optimizer/common-util'
+import { imgAssets } from '@genshin-optimizer/gi-assets'
+import type { CharacterKey } from '@genshin-optimizer/gi-consts'
 import {
   allElementKeys,
   allElementWithPhyKeys,
   allLunarReactionKeys,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import { Translate } from '@genshin-optimizer/gi/i18n'
 import {
   AnemoIcon,
@@ -16,8 +16,8 @@ import {
   GeoIcon,
   HydroIcon,
   PyroIcon,
-} from '@genshin-optimizer/gi/svgicons'
-import type { UIData } from '@genshin-optimizer/gi/uidata'
+} from '@genshin-optimizer/gi-svgicons'
+import type { UIData } from '@genshin-optimizer/gi-uidata'
 import {
   equal,
   greaterEq,
@@ -28,7 +28,7 @@ import {
   sum,
   tally,
   target,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 import { Box } from '@mui/material'
 import type { ReactNode } from 'react'
 import type { CharacterSheet } from './Characters/CharacterSheet'

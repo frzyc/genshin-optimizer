@@ -1,4 +1,4 @@
-import { clamp } from '@genshin-optimizer/common/util'
+import { clamp } from '@genshin-optimizer/common-util'
 import { Box } from '@mui/material'
 
 export function SmolProgress({ color = 'red', value = 50 }) {

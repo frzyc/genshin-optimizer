@@ -1,8 +1,8 @@
-import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
-import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
-import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
-import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
-import { DiscCardObj } from '@genshin-optimizer/zzz/ui'
+import { useDataManagerValues } from '@genshin-optimizer/common-database-ui'
+import { CardThemed, ModalWrapper } from '@genshin-optimizer/common-ui'
+import type { ICachedDisc } from '@genshin-optimizer/zzz-db'
+import { useDatabaseContext } from '@genshin-optimizer/zzz-db-ui'
+import { DiscCardObj } from '@genshin-optimizer/zzz-ui'
 import CloseIcon from '@mui/icons-material/Close'
 import DifferenceIcon from '@mui/icons-material/Difference'
 import {

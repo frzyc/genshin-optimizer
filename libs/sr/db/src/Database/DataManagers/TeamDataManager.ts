@@ -2,26 +2,26 @@ import {
   zodBoolean,
   zodEnumWithDefault,
   zodString,
-} from '@genshin-optimizer/common/database'
+} from '@genshin-optimizer/common-database'
 import {
   notEmpty,
   objKeyMap,
   pruneOrPadArray,
   range,
   shallowCompareObj,
-} from '@genshin-optimizer/common/util'
-import { correctConditionalValue } from '@genshin-optimizer/game-opt/engine'
+} from '@genshin-optimizer/common-util'
+import { correctConditionalValue } from '@genshin-optimizer/game-opt-engine'
 import {
   allCharacterKeys,
   allRelicSlotKeys,
-} from '@genshin-optimizer/sr/consts'
-import type { Dst, Src } from '@genshin-optimizer/sr/formula'
+} from '@genshin-optimizer/sr-consts'
+import type { Dst, Src } from '@genshin-optimizer/sr-formula'
 import {
   type Sheet,
   type Tag,
   getConditional,
   isMember,
-} from '@genshin-optimizer/sr/formula'
+} from '@genshin-optimizer/sr-formula'
 import { z } from 'zod'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'

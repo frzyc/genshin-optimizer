@@ -1,36 +1,36 @@
-import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
-import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { ColorText, ImgIcon, useInfScroll } from '@genshin-optimizer/common/ui'
-import type { SortConfigs } from '@genshin-optimizer/common/util'
+import { useDataEntryBase } from '@genshin-optimizer/common-database-ui'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
+import { ColorText, ImgIcon, useInfScroll } from '@genshin-optimizer/common-ui'
+import type { SortConfigs } from '@genshin-optimizer/common-util'
 import {
   catTotal,
   handleMultiSelect,
   sortFunction,
-} from '@genshin-optimizer/common/util'
-import { imgAssets, weaponAsset } from '@genshin-optimizer/gi/assets'
-import type { WeaponKey, WeaponSubstatKey } from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/common-util'
+import { imgAssets, weaponAsset } from '@genshin-optimizer/gi-assets'
+import type { WeaponKey, WeaponSubstatKey } from '@genshin-optimizer/gi-consts'
 import {
   allWeaponKeys,
   allWeaponSubstatKeys,
   allWeaponTypeKeys,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import type {
   ArchiveWeaponOption,
   ICachedWeapon,
-} from '@genshin-optimizer/gi/db'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { i18n } from '@genshin-optimizer/gi/i18n'
-import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
-import { getWeaponStat } from '@genshin-optimizer/gi/stats'
+} from '@genshin-optimizer/gi-db'
+import { useDatabase } from '@genshin-optimizer/gi-db-ui'
+import { getWeaponSheet } from '@genshin-optimizer/gi-sheets'
+import { getWeaponStat } from '@genshin-optimizer/gi-stats'
 import {
   GetCalcDisplay,
   SubstatMultiAutocomplete,
   WeaponName,
   resolveInfo,
-} from '@genshin-optimizer/gi/ui'
-import type { CalcResult } from '@genshin-optimizer/gi/uidata'
-import { computeUIData } from '@genshin-optimizer/gi/uidata'
-import { dataObjForWeapon, input } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-ui'
+import type { CalcResult } from '@genshin-optimizer/gi-uidata'
+import { computeUIData } from '@genshin-optimizer/gi-uidata'
+import { dataObjForWeapon, input } from '@genshin-optimizer/gi-wr'
+import { i18n } from '@genshin-optimizer/gi/i18n'
 import SearchIcon from '@mui/icons-material/Search'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import type { Palette } from '@mui/material'

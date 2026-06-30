@@ -2,15 +2,15 @@ import {
   crawlObject,
   layeredAssignment,
   verifyObjKeys,
-} from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-util'
 import {
   TrailblazerPathMap,
   allElementalTypeKeys,
   allTrailblazerGenderedKeys,
   allTrailblazerKeys,
-} from '@genshin-optimizer/sr/consts'
-import type { LanguageKey } from '@genshin-optimizer/sr/dm'
-import { allLanguageKeys, languageMap } from '@genshin-optimizer/sr/dm'
+} from '@genshin-optimizer/sr-consts'
+import type { LanguageKey } from '@genshin-optimizer/sr-dm'
+import { allLanguageKeys, languageMap } from '@genshin-optimizer/sr-dm'
 import { HashData, type LanguageData } from './hashData'
 
 export const interpolationTags = {

@@ -1,8 +1,8 @@
-import { notEmpty } from '@genshin-optimizer/common/util'
-import type { Calculator, Preset } from '@genshin-optimizer/game-opt/engine'
-import { CalcContext } from '@genshin-optimizer/game-opt/formula-ui'
-import { constant } from '@genshin-optimizer/pando/engine'
-import type { TeammateDatum } from '@genshin-optimizer/sr/db'
+import { notEmpty } from '@genshin-optimizer/common-util'
+import type { Calculator, Preset } from '@genshin-optimizer/game-opt-engine'
+import { CalcContext } from '@genshin-optimizer/game-opt-formula-ui'
+import { constant } from '@genshin-optimizer/pando-engine'
+import type { TeammateDatum } from '@genshin-optimizer/sr-db'
 import {
   useBuild,
   useBuildTc,
@@ -10,8 +10,8 @@ import {
   useLightCone,
   useRelics,
   useTeam,
-} from '@genshin-optimizer/sr/db-ui'
-import type { Member } from '@genshin-optimizer/sr/formula'
+} from '@genshin-optimizer/sr-db-ui'
+import type { Member } from '@genshin-optimizer/sr-formula'
 import {
   charTagMapNodeEntries,
   conditionalEntries,
@@ -22,12 +22,12 @@ import {
   teamData,
   withMember,
   withPreset,
-} from '@genshin-optimizer/sr/formula'
+} from '@genshin-optimizer/sr-formula'
 import {
   relicTcTagMapNodes,
   relicsTagMapNodes,
-} from '@genshin-optimizer/sr/solver'
-import type { ILightCone } from '@genshin-optimizer/sr/srod'
+} from '@genshin-optimizer/sr-solver'
+import type { ILightCone } from '@genshin-optimizer/sr-srod'
 import type { ReactNode } from 'react'
 import { useMemo } from 'react'
 

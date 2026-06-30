@@ -1,7 +1,7 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
-import { TagFieldDisplay } from '@genshin-optimizer/game-opt/sheet-ui'
-import { own } from '@genshin-optimizer/sr/formula'
-import { useSrCalcContext } from '@genshin-optimizer/sr/ui'
+import { CardThemed } from '@genshin-optimizer/common-ui'
+import { TagFieldDisplay } from '@genshin-optimizer/game-opt-sheet-ui'
+import { own } from '@genshin-optimizer/sr-formula'
+import { useSrCalcContext } from '@genshin-optimizer/sr-ui'
 import { Box, CardContent } from '@mui/material'
 import { tagToTagField } from '../util'
 

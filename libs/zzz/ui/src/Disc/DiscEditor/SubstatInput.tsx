@@ -2,17 +2,17 @@ import {
   CardThemed,
   ColorText,
   DropdownButton,
-} from '@genshin-optimizer/common/ui'
-import { getUnitStr, range, valueString } from '@genshin-optimizer/common/util'
-import type { DiscRarityKey } from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/common-ui'
+import { getUnitStr, range, valueString } from '@genshin-optimizer/common-util'
+import type { DiscRarityKey } from '@genshin-optimizer/zzz-consts'
 import {
   allDiscSubStatKeys,
   discSubstatRollData,
   getDiscSubStatBaseVal,
-} from '@genshin-optimizer/zzz/consts'
-import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
-import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
-import type { ISubstat } from '@genshin-optimizer/zzz/zood'
+} from '@genshin-optimizer/zzz-consts'
+import type { ICachedDisc } from '@genshin-optimizer/zzz-db'
+import { StatIcon } from '@genshin-optimizer/zzz-svgicons'
+import type { ISubstat } from '@genshin-optimizer/zzz-zood'
 import type { SliderProps } from '@mui/material'
 import {
   ListItemIcon,

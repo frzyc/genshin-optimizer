@@ -2,11 +2,11 @@ import {
   characterAsset,
   commonDefImages,
   discDefIcon,
-} from '@genshin-optimizer/zzz/assets'
-import type { CharacterKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
-import { allDiscSlotKeys, rarityColor } from '@genshin-optimizer/zzz/consts'
-import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
-import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
+} from '@genshin-optimizer/zzz-assets'
+import type { CharacterKey, DiscSlotKey } from '@genshin-optimizer/zzz-consts'
+import { allDiscSlotKeys, rarityColor } from '@genshin-optimizer/zzz-consts'
+import type { ICachedDisc } from '@genshin-optimizer/zzz-db'
+import { useDatabaseContext } from '@genshin-optimizer/zzz-db-ui'
 import { Box, Typography } from '@mui/material'
 import type { Theme } from '@mui/system'
 import { useMemo } from 'react'

@@ -1,5 +1,5 @@
 {
-  "name": "sr-dm",
+  "name": "@genshin-optimizer/sr-dm",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/sr/dm/src",
   "projectType": "library",

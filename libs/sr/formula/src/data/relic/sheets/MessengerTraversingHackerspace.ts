@@ -1,6 +1,6 @@
-import { cmpGE } from '@genshin-optimizer/pando/engine'
-import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
-import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
+import { cmpGE } from '@genshin-optimizer/pando-engine'
+import type { RelicSetKey } from '@genshin-optimizer/sr-consts'
+import { allStats, mappedStats } from '@genshin-optimizer/sr-stats'
 import { allBoolConditionals, own, registerBuff, teamBuff } from '../../util'
 import { entriesForRelic, registerRelic } from '../util'
 

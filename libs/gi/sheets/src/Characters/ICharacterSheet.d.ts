@@ -1,4 +1,4 @@
-import type { CharacterSkillKey } from '@genshin-optimizer/gi/consts'
+import type { CharacterSkillKey } from '@genshin-optimizer/gi-consts'
 import type { DocumentSection } from '../sheet'
 export interface TalentSheetElement {
   name: ReactNode //talentName

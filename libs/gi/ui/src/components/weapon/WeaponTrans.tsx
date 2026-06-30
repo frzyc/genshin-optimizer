@@ -1,6 +1,6 @@
-import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import type { WeaponKey } from '@genshin-optimizer/gi-consts'
 import { Translate } from '@genshin-optimizer/gi/i18n'
-import { weaponHasRefinement } from '@genshin-optimizer/gi/stats'
+import { weaponHasRefinement } from '@genshin-optimizer/gi-stats'
 
 function sheet(weaponKey: WeaponKey) {
   return weaponKey === 'QuantumCatalyst'

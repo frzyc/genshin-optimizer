@@ -1,12 +1,12 @@
-import { DropdownButton, ImgIcon } from '@genshin-optimizer/common/ui'
-import { range } from '@genshin-optimizer/common/util'
-import { commonDefIcon } from '@genshin-optimizer/zzz/assets'
-import type { SkillKey } from '@genshin-optimizer/zzz/consts'
-import { skillByLevel } from '@genshin-optimizer/zzz/consts'
+import { DropdownButton, ImgIcon } from '@genshin-optimizer/common-ui'
+import { range } from '@genshin-optimizer/common-util'
+import { commonDefIcon } from '@genshin-optimizer/zzz-assets'
+import type { SkillKey } from '@genshin-optimizer/zzz-consts'
+import { skillByLevel } from '@genshin-optimizer/zzz-consts'
 import {
   useCharacterContext,
   useDatabaseContext,
-} from '@genshin-optimizer/zzz/db-ui'
+} from '@genshin-optimizer/zzz-db-ui'
 import { MenuItem } from '@mui/material'
 import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'

@@ -1,4 +1,4 @@
-import type { ICharacter, ILightCone, IRelic } from '@genshin-optimizer/sr/srod'
+import type { ICharacter, ILightCone, IRelic } from '@genshin-optimizer/sr-srod'
 
 function newCounter<T>(): ImportResultCounter<T> {
   return {

@@ -1,13 +1,13 @@
-import { prettify } from '@genshin-optimizer/common/util'
+import { prettify } from '@genshin-optimizer/common-util'
 import {
   compileTagMapValues,
   setDebugMode,
-} from '@genshin-optimizer/pando/engine'
+} from '@genshin-optimizer/pando-engine'
 import type {
   RelicMainStatKey,
   RelicSetKey,
   RelicSubStatKey,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 import { data, keys, values } from '..'
 import { conditionals } from '../..'
 import { Calculator } from '../../calculator'

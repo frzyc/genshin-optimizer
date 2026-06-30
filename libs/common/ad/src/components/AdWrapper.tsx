@@ -1,5 +1,5 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
-import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
+import type { CardBackgroundColor } from '@genshin-optimizer/common-ui'
 import type { BoxProps } from '@mui/material'
 import type { FunctionComponent, MouseEventHandler } from 'react'
 import { useContext } from 'react'

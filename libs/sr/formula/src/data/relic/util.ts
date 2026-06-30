@@ -1,7 +1,7 @@
-import { registerEquipment } from '@genshin-optimizer/game-opt/formula'
-import { cmpGE } from '@genshin-optimizer/pando/engine'
-import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
-import type { RelicSetDatum } from '@genshin-optimizer/sr/stats'
+import { registerEquipment } from '@genshin-optimizer/game-opt-formula'
+import { cmpGE } from '@genshin-optimizer/pando-engine'
+import type { RelicSetKey } from '@genshin-optimizer/sr-consts'
+import type { RelicSetDatum } from '@genshin-optimizer/sr-stats'
 import type { Tag, TagMapNodeEntries, TagMapNodeEntry } from '../util'
 import { getStatFromStatKey, own, ownBuff, registerBuff } from '../util'
 

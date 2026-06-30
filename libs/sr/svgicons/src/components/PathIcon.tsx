@@ -1,4 +1,4 @@
-import type { PathKey } from '@genshin-optimizer/sr/consts'
+import type { PathKey } from '@genshin-optimizer/sr-consts'
 import type { SvgIconProps } from '@mui/material'
 import {
   AbundanceIcon,

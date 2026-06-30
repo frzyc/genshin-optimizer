@@ -1,6 +1,6 @@
-import { dumpFile } from '@genshin-optimizer/common/pipeline'
-import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
-import { discsDetailedJSONData } from '@genshin-optimizer/zzz/dm'
+import { dumpFile } from '@genshin-optimizer/common-pipeline'
+import type { DiscSetKey } from '@genshin-optimizer/zzz-consts'
+import { discsDetailedJSONData } from '@genshin-optimizer/zzz-dm'
 import { processText } from './util'
 export function dumpDiscs(fileDir: string) {
   const discNames = {} as Record<DiscSetKey, string>

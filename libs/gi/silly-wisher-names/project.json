@@ -1,5 +1,5 @@
 {
-  "name": "gi-silly-wisher-names",
+  "name": "@genshin-optimizer/gi-silly-wisher-names",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/gi/silly-wisher-names/src",
   "projectType": "library",

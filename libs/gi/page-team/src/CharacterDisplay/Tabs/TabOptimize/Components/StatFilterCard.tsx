@@ -1,10 +1,10 @@
-import { CardThemed, InfoTooltip } from '@genshin-optimizer/common/ui'
-import type { StatFilters } from '@genshin-optimizer/gi/db'
+import { CardThemed, InfoTooltip } from '@genshin-optimizer/common-ui'
+import type { StatFilters } from '@genshin-optimizer/gi-db'
 import {
   TeamCharacterContext,
   useDatabase,
   useOptConfig,
-} from '@genshin-optimizer/gi/db-ui'
+} from '@genshin-optimizer/gi-db-ui'
 import { Box, CardContent, Divider, Typography } from '@mui/material'
 import { useCallback, useContext } from 'react'
 import { useTranslation } from 'react-i18next'

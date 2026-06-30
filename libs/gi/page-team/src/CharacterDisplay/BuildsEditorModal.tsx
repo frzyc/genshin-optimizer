@@ -1,13 +1,13 @@
-import { AdResponsive } from '@genshin-optimizer/common/ad'
-import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
-import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { getCharStat } from '@genshin-optimizer/gi/stats'
+import { AdResponsive } from '@genshin-optimizer/common-ad'
+import { CardThemed, ModalWrapper } from '@genshin-optimizer/common-ui'
+import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi-db-ui'
+import { getCharStat } from '@genshin-optimizer/gi-stats'
 import {
   BuildInfoAlert,
   EquippedBuildInfoAlert,
   GOAdWrapper,
   TCBuildInfoAlert,
-} from '@genshin-optimizer/gi/ui'
+} from '@genshin-optimizer/gi-ui'
 import AddIcon from '@mui/icons-material/Add'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import CloseIcon from '@mui/icons-material/Close'

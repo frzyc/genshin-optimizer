@@ -1,4 +1,4 @@
-import { compileTagMapValues } from '@genshin-optimizer/pando/engine'
+import { compileTagMapValues } from '@genshin-optimizer/pando-engine'
 import { Calculator } from './calculator'
 import { entries, keys, values } from './data'
 import type { Member, Sheet, TagMapNodeEntries } from './data/util'
@@ -18,7 +18,7 @@ import {
   allArtifactSetKeys,
   allCharacterKeys,
   allWeaponKeys,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 
 describe('calculator', () => {
   describe('correctness', () => {

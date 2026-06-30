@@ -1,4 +1,4 @@
-import { cmpGE } from '@genshin-optimizer/pando/engine'
+import { cmpGE } from '@genshin-optimizer/pando-engine'
 import { allBoolConditionals, register, team, teamBuff } from '../util'
 import { enemyFrozen, hasShield } from './conds'
 

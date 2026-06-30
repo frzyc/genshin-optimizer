@@ -1,11 +1,11 @@
-import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
-import { CardThemed } from '@genshin-optimizer/common/ui'
-import { evalIfFunc } from '@genshin-optimizer/common/util'
-import { TeamCharacterContext } from '@genshin-optimizer/gi/db-ui'
+import type { CardBackgroundColor } from '@genshin-optimizer/common-ui'
+import { CardThemed } from '@genshin-optimizer/common-ui'
+import { evalIfFunc } from '@genshin-optimizer/common-util'
+import { TeamCharacterContext } from '@genshin-optimizer/gi-db-ui'
 import type {
   DocumentConditional,
   DocumentSection,
-} from '@genshin-optimizer/gi/sheets'
+} from '@genshin-optimizer/gi-sheets'
 import { CardContent } from '@mui/material'
 import { useContext } from 'react'
 import { DataContext } from '../../context'

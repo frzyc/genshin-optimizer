@@ -4,7 +4,7 @@ import {
   zodClampedNumber,
   zodEnum,
   zodEnumWithDefault,
-} from '@genshin-optimizer/common/database'
+} from '@genshin-optimizer/common-database'
 import {
   type AscensionKey,
   type SuperimposeKey,
@@ -12,7 +12,7 @@ import {
   allLocationKeys,
   lightConeMaxLevel,
   validateLevelAsc,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 import { z } from 'zod'
 
 const lightConeBaseSchema = z

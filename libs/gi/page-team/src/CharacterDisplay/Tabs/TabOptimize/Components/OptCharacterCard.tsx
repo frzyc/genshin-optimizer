@@ -1,11 +1,11 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+import { CardThemed } from '@genshin-optimizer/common-ui'
+import type { CharacterKey } from '@genshin-optimizer/gi-consts'
 import {
   CharacterCardEquipmentRow,
   CharacterCardHeader,
   CharacterCardHeaderContent,
   CharacterCardStats,
-} from '@genshin-optimizer/gi/ui'
+} from '@genshin-optimizer/gi-ui'
 import { Box, Skeleton } from '@mui/material'
 import { Suspense, memo } from 'react'
 

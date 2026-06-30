@@ -2,9 +2,9 @@ import {
   getUnitStr,
   statKeyToFixed,
   toPercent,
-} from '@genshin-optimizer/common/util'
-import type { WengineSubStatKey } from '@genshin-optimizer/zzz/consts'
-import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
+} from '@genshin-optimizer/common-util'
+import type { WengineSubStatKey } from '@genshin-optimizer/zzz-consts'
+import { StatIcon } from '@genshin-optimizer/zzz-svgicons'
 import { Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import { StatDisplay } from '../Character'

@@ -1,6 +1,6 @@
 // WARNING: Generated file, do not modify
-import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
-import type { WengineKey } from '@genshin-optimizer/zzz/consts'
+import type { UISheetElement } from '@genshin-optimizer/game-opt-sheet-ui'
+import type { WengineKey } from '@genshin-optimizer/zzz-consts'
 
 import AngelInTheShell from './AngelInTheShell'
 import BashfulDemon from './BashfulDemon'

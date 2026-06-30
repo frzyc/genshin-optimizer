@@ -1,4 +1,4 @@
-import { CardHeaderCustom } from '@genshin-optimizer/common/ui'
+import { CardHeaderCustom } from '@genshin-optimizer/common-ui'
 import { Divider } from '@mui/material'
 import type { Document, Header } from '../types'
 

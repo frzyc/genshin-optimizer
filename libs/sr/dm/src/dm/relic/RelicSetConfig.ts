@@ -1,9 +1,9 @@
-import { dumpFile } from '@genshin-optimizer/common/pipeline'
+import { dumpFile } from '@genshin-optimizer/common-pipeline'
 import {
   nameToKey,
   objFilterKeys,
   objKeyValMap,
-} from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-util'
 import { parse } from 'json-bigint'
 import { TextMapEN } from '../../TextMapUtil'
 import { PROJROOT_PATH } from '../../consts'

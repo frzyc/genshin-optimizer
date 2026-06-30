@@ -3,12 +3,12 @@ import {
   SolidToggleButtonGroup,
   StarsDisplay,
   theme,
-} from '@genshin-optimizer/common/ui'
+} from '@genshin-optimizer/common-ui'
 import {
   bulkCatTotal,
   handleMultiSelect,
   objKeyMap,
-} from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-util'
 import {
   allArtifactRarityKeys,
   allArtifactSetKeys,
@@ -16,9 +16,9 @@ import {
   allLocationCharacterKeys,
   allMainStatKeys,
   allSubstatKeys,
-} from '@genshin-optimizer/gi/consts'
-import { useDatabase, useDisplayArtifact } from '@genshin-optimizer/gi/db-ui'
-import type { FilterOption } from '@genshin-optimizer/gi/schema'
+} from '@genshin-optimizer/gi-consts'
+import { useDatabase, useDisplayArtifact } from '@genshin-optimizer/gi-db-ui'
+import type { FilterOption } from '@genshin-optimizer/gi-schema'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenIcon from '@mui/icons-material/LockOpen'

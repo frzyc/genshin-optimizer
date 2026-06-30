@@ -1,4 +1,4 @@
-import type { SroDatabase } from '@genshin-optimizer/sr/db'
+import type { SroDatabase } from '@genshin-optimizer/sr-db'
 import { createContext, useContext } from 'react'
 
 export type DatabaseContextObj = {

@@ -1,10 +1,21 @@
 {
-  "extends": "./tsconfig.json",
+  "extends": "../../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "../../../dist/out-tsc",
+    "outDir": "./out-tsc/lib",
     "declaration": true,
     "types": ["node", "object-overrides"]
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["src/**/*.spec.ts", "src/**/*.test.ts"]
+  "exclude": ["src/**/*.spec.ts", "src/**/*.test.ts"],
+  "references": [
+    {
+      "path": "../dm/tsconfig.lib.json"
+    },
+    {
+      "path": "../consts/tsconfig.lib.json"
+    },
+    {
+      "path": "../../common/pipeline/tsconfig.lib.json"
+    }
+  ]
 }

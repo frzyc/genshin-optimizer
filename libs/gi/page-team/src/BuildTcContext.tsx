@@ -1,4 +1,4 @@
-import type { BuildTc } from '@genshin-optimizer/gi/db'
+import type { BuildTc } from '@genshin-optimizer/gi-db'
 import { createContext } from 'react'
 export type SetBuildTcAction =
   | Partial<BuildTc>

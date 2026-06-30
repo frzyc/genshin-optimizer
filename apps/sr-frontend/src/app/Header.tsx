@@ -1,13 +1,13 @@
-import { useDataManagerKeys } from '@genshin-optimizer/common/database-ui'
-import { Tally } from '@genshin-optimizer/common/ui'
-import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
-import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
+import { useDataManagerKeys } from '@genshin-optimizer/common-database-ui'
+import { Tally } from '@genshin-optimizer/common-ui'
+import { shouldShowDevComponents } from '@genshin-optimizer/common-util'
+import { useDatabaseContext } from '@genshin-optimizer/sr-db-ui'
 import {
   CharacterIcon,
   LightConeIcon,
   RelicIcon,
   TeamsIcon,
-} from '@genshin-optimizer/sr/svgicons'
+} from '@genshin-optimizer/sr-svgicons'
 import { Settings } from '@mui/icons-material'
 import CalculateIcon from '@mui/icons-material/Calculate'
 import MenuIcon from '@mui/icons-material/Menu'

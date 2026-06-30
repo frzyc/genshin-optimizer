@@ -5,7 +5,7 @@ import {
   allFactionKeys,
   allSpecialityKeys,
   allWengineKeys,
-} from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-consts'
 
 export const stats = [
   'hp',

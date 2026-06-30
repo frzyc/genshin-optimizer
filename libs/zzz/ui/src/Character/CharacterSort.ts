@@ -1,4 +1,4 @@
-import type { FilterConfigs, SortConfigs } from '@genshin-optimizer/common/util'
+import type { FilterConfigs, SortConfigs } from '@genshin-optimizer/common-util'
 import {
   type AttributeKey,
   type CharacterKey,
@@ -7,10 +7,10 @@ import {
   allAttributeKeys,
   allCharacterRarityKeys,
   allSpecialityKeys,
-} from '@genshin-optimizer/zzz/consts'
-import type { ZzzDatabase } from '@genshin-optimizer/zzz/db'
+} from '@genshin-optimizer/zzz-consts'
+import type { ZzzDatabase } from '@genshin-optimizer/zzz-db'
 import { i18n } from '@genshin-optimizer/zzz/i18n'
-import { getCharStat } from '@genshin-optimizer/zzz/stats'
+import { getCharStat } from '@genshin-optimizer/zzz-stats'
 export const characterSortKeys = ['new', 'level', 'rarity', 'name'] as const
 export type CharacterSortKey = (typeof characterSortKeys)[number]
 

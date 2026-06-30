@@ -1,19 +1,19 @@
-import { isIn, objKeyMap, objKeyValMap } from '@genshin-optimizer/common/util'
+import { isIn, objKeyMap, objKeyValMap } from '@genshin-optimizer/common-util'
 import type {
   LunarReactionKey,
   MainStatKey,
   SubstatKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import {
   absorbableEle,
   allLunarReactionKeys,
-} from '@genshin-optimizer/gi/consts'
-import type { CrittableTransformativeReactionsKey } from '@genshin-optimizer/gi/keymap'
+} from '@genshin-optimizer/gi-consts'
+import type { CrittableTransformativeReactionsKey } from '@genshin-optimizer/gi-keymap'
 import {
   crystallizeLevelMultipliers,
   transformativeReactionLevelMultipliers,
   transformativeReactions,
-} from '@genshin-optimizer/gi/keymap'
+} from '@genshin-optimizer/gi-keymap'
 import { infusionNode, input } from './formula'
 import { info } from './info'
 import type { Data, NumNode } from './type'

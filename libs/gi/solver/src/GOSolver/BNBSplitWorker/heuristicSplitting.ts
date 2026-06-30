@@ -1,6 +1,6 @@
-import { cartesian, objKeyMap } from '@genshin-optimizer/common/util'
-import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
-import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
+import { cartesian, objKeyMap } from '@genshin-optimizer/common-util'
+import type { ArtifactSetKey } from '@genshin-optimizer/gi-consts'
+import { allArtifactSlotKeys } from '@genshin-optimizer/gi-consts'
 import {
   type ArtifactBuildData,
   type ArtifactsBySlot,

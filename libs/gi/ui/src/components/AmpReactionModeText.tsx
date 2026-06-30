@@ -1,7 +1,7 @@
-import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
-import { ColorText, SqBadge } from '@genshin-optimizer/common/ui'
-import type { AmpReactionKey } from '@genshin-optimizer/gi/consts'
-import { ElementIcon } from '@genshin-optimizer/gi/svgicons'
+import { iconInlineProps } from '@genshin-optimizer/common-svgicons'
+import { ColorText, SqBadge } from '@genshin-optimizer/common-ui'
+import type { AmpReactionKey } from '@genshin-optimizer/gi-consts'
+import { ElementIcon } from '@genshin-optimizer/gi-svgicons'
 import { Box } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 

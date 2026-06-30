@@ -1,8 +1,8 @@
-import { SandboxStorage } from '@genshin-optimizer/common/database'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-import type { BuildTc, LoadoutDatum } from '@genshin-optimizer/gi/db'
-import { ArtCharDatabase } from '@genshin-optimizer/gi/db'
-import { optimizeTcUsingNodes } from '@genshin-optimizer/gi/solver-tc'
+import { SandboxStorage } from '@genshin-optimizer/common-database'
+import type { CharacterKey } from '@genshin-optimizer/gi-consts'
+import type { BuildTc, LoadoutDatum } from '@genshin-optimizer/gi-db'
+import { ArtCharDatabase } from '@genshin-optimizer/gi-db'
+import { optimizeTcUsingNodes } from '@genshin-optimizer/gi-solver-tc'
 import {
   getBuildTcArtifactData,
   getBuildTcWeaponData,

@@ -1,13 +1,13 @@
-import { useDataManagerBase } from '@genshin-optimizer/common/database-ui'
-import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
-import { valueString } from '@genshin-optimizer/common/util'
-import type { GeneratedBuild } from '@genshin-optimizer/sr/db'
+import { useDataManagerBase } from '@genshin-optimizer/common-database-ui'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
+import { CardThemed, ModalWrapper } from '@genshin-optimizer/common-ui'
+import { valueString } from '@genshin-optimizer/common-util'
+import type { GeneratedBuild } from '@genshin-optimizer/sr-db'
 import {
   OptConfigContext,
   useDatabaseContext,
-} from '@genshin-optimizer/sr/db-ui'
-import { EquipRow } from '@genshin-optimizer/sr/ui'
+} from '@genshin-optimizer/sr-db-ui'
+import { EquipRow } from '@genshin-optimizer/sr-ui'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import CloseIcon from '@mui/icons-material/Close'
 import {

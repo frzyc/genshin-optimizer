@@ -1,6 +1,6 @@
-import type { Language } from '@genshin-optimizer/common/pipeline'
-import type { ColorTag } from '@genshin-optimizer/gi/dm'
-import { proudSkillExcelConfigData, tagColor } from '@genshin-optimizer/gi/dm'
+import type { Language } from '@genshin-optimizer/common-pipeline'
+import type { ColorTag } from '@genshin-optimizer/gi-dm'
+import { proudSkillExcelConfigData, tagColor } from '@genshin-optimizer/gi-dm'
 import { replaceLinkWithTooltip } from './tooltips'
 
 export function preprocess(string: string, namespace: string): string {

@@ -3,33 +3,33 @@ import {
   DropdownButton,
   TextFieldLazy,
   usePrev,
-} from '@genshin-optimizer/common/ui'
-import { objPathValue } from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-ui'
+import { objPathValue } from '@genshin-optimizer/common-util'
 import type {
   AdditiveReactionKey,
   AmpReactionKey,
   AmplifyingReactionKey,
   ElementKey,
   InfusionAuraElementKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import {
   allAmpReactionKeys,
   allMultiOptHitModeKeys,
   allowedAdditiveReactions,
   allowedAmpReactions,
-} from '@genshin-optimizer/gi/consts'
-import type { CustomTarget } from '@genshin-optimizer/gi/db'
-import { CharacterContext } from '@genshin-optimizer/gi/db-ui'
-import { isCharMelee } from '@genshin-optimizer/gi/stats'
+} from '@genshin-optimizer/gi-consts'
+import type { CustomTarget } from '@genshin-optimizer/gi-db'
+import { CharacterContext } from '@genshin-optimizer/gi-db-ui'
+import { isCharMelee } from '@genshin-optimizer/gi-stats'
 import {
   AdditiveReactionModeText,
   AmpReactionModeText,
   DataContext,
   StatEditorList,
   infusionVals,
-} from '@genshin-optimizer/gi/ui'
-import type { CalcResult } from '@genshin-optimizer/gi/uidata'
-import { allInputPremodKeys } from '@genshin-optimizer/gi/wr-types'
+} from '@genshin-optimizer/gi-ui'
+import type { CalcResult } from '@genshin-optimizer/gi-uidata'
+import { allInputPremodKeys } from '@genshin-optimizer/gi-wr-types'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'

@@ -1,8 +1,8 @@
-import type { SolidToggleButtonGroupProps } from '@genshin-optimizer/common/ui'
-import { SolidToggleButtonGroup } from '@genshin-optimizer/common/ui'
-import { handleMultiSelect } from '@genshin-optimizer/common/util'
-import type { DiscSlotKey } from '@genshin-optimizer/zzz/consts'
-import { allDiscSlotKeys } from '@genshin-optimizer/zzz/consts'
+import type { SolidToggleButtonGroupProps } from '@genshin-optimizer/common-ui'
+import { SolidToggleButtonGroup } from '@genshin-optimizer/common-ui'
+import { handleMultiSelect } from '@genshin-optimizer/common-util'
+import type { DiscSlotKey } from '@genshin-optimizer/zzz-consts'
+import { allDiscSlotKeys } from '@genshin-optimizer/zzz-consts'
 import { Chip, ToggleButton } from '@mui/material'
 import type { ReactNode } from 'react'
 

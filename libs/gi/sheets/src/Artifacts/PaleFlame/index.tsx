@@ -1,6 +1,6 @@
-import { range } from '@genshin-optimizer/common/util'
-import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
-import type { Data, Info } from '@genshin-optimizer/gi/wr'
+import { range } from '@genshin-optimizer/common-util'
+import type { ArtifactSetKey } from '@genshin-optimizer/gi-consts'
+import type { Data, Info } from '@genshin-optimizer/gi-wr'
 import {
   equal,
   greaterEq,
@@ -9,7 +9,7 @@ import {
   naught,
   percent,
   sum,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { SetEffectSheet } from '../IArtifactSheet'

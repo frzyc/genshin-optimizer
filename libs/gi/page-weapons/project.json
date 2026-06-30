@@ -1,8 +1,0 @@
-{
-  "name": "gi-page-weapons",
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/gi/page-weapons/src",
-  "projectType": "library",
-  "tags": [],
-  "targets": {}
-}

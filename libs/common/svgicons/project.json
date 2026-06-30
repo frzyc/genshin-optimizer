@@ -1,9 +1,0 @@
-{
-  "name": "common-svgicons",
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/common/svgicons/src",
-  "projectType": "library",
-  "tags": [],
-  "// targets": "to see all targets run: nx show project common-svgicons --web",
-  "targets": {}
-}

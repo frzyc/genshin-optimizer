@@ -1,8 +1,0 @@
-{
-  "name": "gi-page-scanner",
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/gi/page-scanner/src",
-  "projectType": "library",
-  "tags": [],
-  "targets": {}
-}

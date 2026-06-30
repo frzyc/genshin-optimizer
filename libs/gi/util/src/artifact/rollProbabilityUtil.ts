@@ -1,7 +1,7 @@
-import { crawlObject, layeredAssignment } from '@genshin-optimizer/common/util'
-import type { MainStatKey, SubstatKey } from '@genshin-optimizer/gi/consts'
-import type { IArtifact, ISubstat } from '@genshin-optimizer/gi/schema'
-import { allStats } from '@genshin-optimizer/gi/stats'
+import { crawlObject, layeredAssignment } from '@genshin-optimizer/common-util'
+import type { MainStatKey, SubstatKey } from '@genshin-optimizer/gi-consts'
+import type { IArtifact, ISubstat } from '@genshin-optimizer/gi-schema'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { getRollsRemaining, getSubstatValue } from './artifact'
 
 // We separate rolls into "filler rolls" that occurs when there are less than 4 substats,

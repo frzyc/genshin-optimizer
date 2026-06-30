@@ -1,7 +1,7 @@
-import { objKeyMap, objKeyValMap, range } from '@genshin-optimizer/common/util'
-import { type CharacterKey, absorbableEle } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
-import type { Data } from '@genshin-optimizer/gi/wr'
+import { objKeyMap, objKeyValMap, range } from '@genshin-optimizer/common-util'
+import { type CharacterKey, absorbableEle } from '@genshin-optimizer/gi-consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
+import type { Data } from '@genshin-optimizer/gi-wr'
 import {
   constant,
   equal,
@@ -19,7 +19,7 @@ import {
   tally,
   threshold,
   unequal,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 import { cond, condReadNode, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
 import type { TalentSheet } from '../ICharacterSheet'

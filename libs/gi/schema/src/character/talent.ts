@@ -1,5 +1,5 @@
-import { clamp } from '@genshin-optimizer/common/util'
-import { type AscensionKey, talentLimits } from '@genshin-optimizer/gi/consts'
+import { clamp } from '@genshin-optimizer/common-util'
+import { type AscensionKey, talentLimits } from '@genshin-optimizer/gi-consts'
 
 export function validateTalent(
   ascension: AscensionKey,

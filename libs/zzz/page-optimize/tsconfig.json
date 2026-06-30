@@ -1,17 +1,48 @@
 {
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "allowJs": false,
-    "esModuleInterop": false,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "jsxImportSource": "@emotion/react",
-    "exactOptionalPropertyTypes": false,
-    "noPropertyAccessFromIndexSignature": false
-  },
   "files": [],
-  "include": [],
   "references": [
+    {
+      "path": "../../pando/engine"
+    },
+    {
+      "path": "../assets"
+    },
+    {
+      "path": "../../game-opt/solver"
+    },
+    {
+      "path": "../zood"
+    },
+    {
+      "path": "../stats"
+    },
+    {
+      "path": "../../common/react-util"
+    },
+    {
+      "path": "../../game-opt/formula-ui"
+    },
+    {
+      "path": "../consts"
+    },
+    {
+      "path": "../../common/util"
+    },
+    {
+      "path": "../../common/ui"
+    },
+    {
+      "path": "../../common/database-ui"
+    },
+    {
+      "path": "../formula"
+    },
+    {
+      "path": "../../game-opt/sheet-ui"
+    },
+    {
+      "path": "../formula-ui"
+    },
     {
       "path": "./tsconfig.lib.json"
     }

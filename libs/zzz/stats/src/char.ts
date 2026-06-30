@@ -6,7 +6,7 @@ import type {
   FactionKey,
   SkillKey,
   SpecialityKey,
-} from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-consts'
 import { allStats } from './allStats'
 
 export type CharacterDatum = {

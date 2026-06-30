@@ -1,11 +1,11 @@
-import { objMap } from '@genshin-optimizer/common/util'
+import { objMap } from '@genshin-optimizer/common-util'
 import type {
   SpecialityKey,
   WengineKey,
   WengineRarityKey,
   WengineSubStatKey,
-} from '@genshin-optimizer/zzz/consts'
-import { wengineDetailedJSONData } from '@genshin-optimizer/zzz/dm'
+} from '@genshin-optimizer/zzz-consts'
+import { wengineDetailedJSONData } from '@genshin-optimizer/zzz-dm'
 import { extractParamsFromString } from './util'
 
 export type WengineDatum = {

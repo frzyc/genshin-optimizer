@@ -2,11 +2,11 @@ import type {
   ElementWithPhyKey,
   LunarReactionKey,
   TransformativeReactionKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import {
   allElementWithPhyKeys,
   allLunarReactionKeys,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 
 import elementalData from './ElementalData'
 import type {

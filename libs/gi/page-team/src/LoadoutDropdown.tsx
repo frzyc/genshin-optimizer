@@ -1,13 +1,13 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
-import type { DropdownButtonProps } from '@genshin-optimizer/common/ui'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
+import type { DropdownButtonProps } from '@genshin-optimizer/common-ui'
 import {
   CardThemed,
   DropdownButton,
   ModalWrapper,
   SqBadge,
-} from '@genshin-optimizer/common/ui'
-import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { CharacterName } from '@genshin-optimizer/gi/ui'
+} from '@genshin-optimizer/common-ui'
+import { useDBMeta, useDatabase } from '@genshin-optimizer/gi-db-ui'
+import { CharacterName } from '@genshin-optimizer/gi-ui'
 import PersonIcon from '@mui/icons-material/Person'
 import {
   Box,

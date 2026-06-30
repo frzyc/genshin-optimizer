@@ -1,9 +1,9 @@
-import { AdResponsive } from '@genshin-optimizer/common/ad'
-import { useBoolState } from '@genshin-optimizer/common/react-util'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
-import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import type { TeamData, dataContextObj } from '@genshin-optimizer/gi/ui'
+import { AdResponsive } from '@genshin-optimizer/common-ad'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
+import type { CharacterKey } from '@genshin-optimizer/gi-consts'
+import type { LoadoutDatum } from '@genshin-optimizer/gi-db'
+import { useDBMeta, useDatabase } from '@genshin-optimizer/gi-db-ui'
+import type { TeamData, dataContextObj } from '@genshin-optimizer/gi-ui'
 import {
   CharIconSide,
   CharacterMultiSelectionModal,
@@ -13,7 +13,7 @@ import {
   GOAdWrapper,
   TeamDelModal,
   TeamInfoAlert,
-} from '@genshin-optimizer/gi/ui'
+} from '@genshin-optimizer/gi-ui'
 import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'

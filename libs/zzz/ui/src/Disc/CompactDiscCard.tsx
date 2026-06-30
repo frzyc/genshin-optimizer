@@ -3,22 +3,22 @@ import {
   ColorText,
   ConditionalWrapper,
   ImgIcon,
-} from '@genshin-optimizer/common/ui'
+} from '@genshin-optimizer/common-ui'
 import {
   getUnitStr,
   statKeyToFixed,
   toPercent,
-} from '@genshin-optimizer/common/util'
-import { characterAsset, discDefIcon } from '@genshin-optimizer/zzz/assets'
-import type { DiscRarityKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/common-util'
+import { characterAsset, discDefIcon } from '@genshin-optimizer/zzz-assets'
+import type { DiscRarityKey, DiscSlotKey } from '@genshin-optimizer/zzz-consts'
 import {
   getDiscMainStatVal,
   getDiscSubStatBaseVal,
   rarityColor,
-} from '@genshin-optimizer/zzz/consts'
-import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
-import { SlotIcon, StatIcon } from '@genshin-optimizer/zzz/svgicons'
-import type { ISubstat } from '@genshin-optimizer/zzz/zood'
+} from '@genshin-optimizer/zzz-consts'
+import type { ICachedDisc } from '@genshin-optimizer/zzz-db'
+import { SlotIcon, StatIcon } from '@genshin-optimizer/zzz-svgicons'
+import type { ISubstat } from '@genshin-optimizer/zzz-zood'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import { Box, CardActionArea, Skeleton, Typography } from '@mui/material'
 import type { Theme } from '@mui/system'

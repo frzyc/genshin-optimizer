@@ -1,11 +1,11 @@
-import { objKeyMap } from '@genshin-optimizer/common/util'
-import { artMaxLevel } from '@genshin-optimizer/gi/consts'
-import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
+import { objKeyMap } from '@genshin-optimizer/common-util'
+import { artMaxLevel } from '@genshin-optimizer/gi-consts'
+import type { ICachedArtifact } from '@genshin-optimizer/gi-db'
 import type {
   ArtifactBuildData,
   ArtifactsBySlot,
-} from '@genshin-optimizer/gi/solver'
-import { getMainStatValue } from '@genshin-optimizer/gi/util'
+} from '@genshin-optimizer/gi-solver'
+import { getMainStatValue } from '@genshin-optimizer/gi-util'
 
 export function compactArtifacts(
   arts: ICachedArtifact[],

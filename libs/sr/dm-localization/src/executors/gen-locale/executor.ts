@@ -1,4 +1,4 @@
-import { dumpFile } from '@genshin-optimizer/common/pipeline'
+import { dumpFile } from '@genshin-optimizer/common-pipeline'
 import type { PromiseExecutor } from '@nx/devkit'
 import { StringData } from './lib/stringData'
 import type { GenLocaleExecutorSchema } from './schema'

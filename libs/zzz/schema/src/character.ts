@@ -1,12 +1,12 @@
-import { zodBoundedNumber, zodEnum } from '@genshin-optimizer/common/database'
-import { clamp } from '@genshin-optimizer/common/util'
+import { zodBoundedNumber, zodEnum } from '@genshin-optimizer/common-database'
+import { clamp } from '@genshin-optimizer/common-util'
 import {
   type MilestoneKey,
   allCharacterKeys,
   coreByLevel,
   skillByLevel,
   validateLevelMilestone,
-} from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-consts'
 import { z } from 'zod'
 
 export const characterSchema = z

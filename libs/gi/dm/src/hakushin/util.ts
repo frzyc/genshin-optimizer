@@ -2,7 +2,7 @@ import type {
   ArtifactSetKey,
   NonTravelerCharacterKey,
   WeaponKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import { artifactIdMap, characterIdMap, weaponIdMap } from '../mapping'
 import { readHakushinJSON } from '../util'
 import type { HakushinArtifact } from './artifact'

@@ -1,34 +1,34 @@
-import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
-import type { DropdownButtonProps } from '@genshin-optimizer/common/ui'
+import { iconInlineProps } from '@genshin-optimizer/common-svgicons'
+import type { DropdownButtonProps } from '@genshin-optimizer/common-ui'
 import {
   DropdownButton,
   SolidToggleButtonGroup,
   SqBadge,
-} from '@genshin-optimizer/common/ui'
+} from '@genshin-optimizer/common-ui'
 import type {
   AdditiveReactionKey,
   AmpReactionKey,
   ElementKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import {
   allAmpReactionKeys,
   allHitModeKeys,
   allowedAdditiveReactions,
   allowedAmpReactions,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import {
   CharacterContext,
   TeamCharacterContext,
   useDatabase,
-} from '@genshin-optimizer/gi/db-ui'
-import { isCharMelee } from '@genshin-optimizer/gi/stats'
+} from '@genshin-optimizer/gi-db-ui'
+import { isCharMelee } from '@genshin-optimizer/gi-stats'
 import {
   CryoIcon,
   ElectroIcon,
   HydroIcon,
   PyroIcon,
-} from '@genshin-optimizer/gi/svgicons'
-import { infusionNode, uiInput as input } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-svgicons'
+import { infusionNode, uiInput as input } from '@genshin-optimizer/gi-wr'
 import type { ToggleButtonGroupProps } from '@mui/material'
 import { MenuItem, ToggleButton } from '@mui/material'
 import { useContext } from 'react'

@@ -3,19 +3,19 @@ import {
   ImgIcon,
   ModalWrapper,
   StarsDisplay,
-} from '@genshin-optimizer/common/ui'
-import { catTotal } from '@genshin-optimizer/common/util'
-import { imgAssets, weaponAsset } from '@genshin-optimizer/gi/assets'
-import type { WeaponKey, WeaponTypeKey } from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/common-ui'
+import { catTotal } from '@genshin-optimizer/common-util'
+import { imgAssets, weaponAsset } from '@genshin-optimizer/gi-assets'
+import type { WeaponKey, WeaponTypeKey } from '@genshin-optimizer/gi-consts'
 import {
   allRarityKeys,
   allWeaponKeys,
   allWeaponTypeKeys,
-} from '@genshin-optimizer/gi/consts'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import type { WeaponSheet } from '@genshin-optimizer/gi/sheets'
-import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
-import { getWeaponStat } from '@genshin-optimizer/gi/stats'
+} from '@genshin-optimizer/gi-consts'
+import { useDatabase } from '@genshin-optimizer/gi-db-ui'
+import type { WeaponSheet } from '@genshin-optimizer/gi-sheets'
+import { getWeaponSheet } from '@genshin-optimizer/gi-sheets'
+import { getWeaponStat } from '@genshin-optimizer/gi-stats'
 import CloseIcon from '@mui/icons-material/Close'
 import {
   Box,

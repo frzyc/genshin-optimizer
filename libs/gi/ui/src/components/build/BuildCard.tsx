@@ -1,4 +1,4 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
+import { CardThemed } from '@genshin-optimizer/common-ui'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'

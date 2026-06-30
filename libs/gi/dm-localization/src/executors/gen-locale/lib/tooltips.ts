@@ -2,7 +2,7 @@ import {
   avatarSkillDepotExcelConfigData,
   hyperLinkNameExcelConifgData,
   proudSkillExcelConfigData,
-} from '@genshin-optimizer/gi/dm'
+} from '@genshin-optimizer/gi-dm'
 
 export function replaceLinkWithTooltip(string: string, namespace: string) {
   return (_match: string, type: string, id: string) => {

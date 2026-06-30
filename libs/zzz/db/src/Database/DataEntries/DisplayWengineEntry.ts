@@ -3,12 +3,12 @@ import {
   zodEnumWithDefault,
   zodFilteredArray,
   zodString,
-} from '@genshin-optimizer/common/database'
+} from '@genshin-optimizer/common-database'
 import {
   allLocationKeys,
   allSpecialityKeys,
   allWengineRarityKeys,
-} from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-consts'
 import { z } from 'zod'
 import { DataEntry } from '../DataEntry'
 import type { ZzzDatabase } from '../Database'

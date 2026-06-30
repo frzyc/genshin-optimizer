@@ -1,4 +1,4 @@
-import type { ICachedCharacter } from '@genshin-optimizer/gi/db'
+import type { ICachedCharacter } from '@genshin-optimizer/gi-db'
 import { createContext } from 'react'
 export type CharacterContextObj = {
   character: ICachedCharacter

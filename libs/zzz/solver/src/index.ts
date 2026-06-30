@@ -1,6 +1,6 @@
-import { toDecimal } from '@genshin-optimizer/common/util'
-import type { Preset } from '@genshin-optimizer/game-opt/engine'
-import type { Candidate, Progress } from '@genshin-optimizer/game-opt/solver'
+import { toDecimal } from '@genshin-optimizer/common-util'
+import type { Preset } from '@genshin-optimizer/game-opt-engine'
+import type { Candidate, Progress } from '@genshin-optimizer/game-opt-solver'
 
 import {
   constant,
@@ -9,26 +9,26 @@ import {
   prod,
   read,
   sum,
-} from '@genshin-optimizer/pando/engine'
+} from '@genshin-optimizer/pando-engine'
 import type {
   CharacterKey,
   DiscSetKey,
   DiscSlotKey,
   DiscSubStatKey,
-} from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-consts'
 import {
   allDiscSetKeys,
   allWengineKeys,
   getDiscMainStatVal,
   getDiscSubStatBaseVal,
-} from '@genshin-optimizer/zzz/consts'
-import type { StatFilter } from '@genshin-optimizer/zzz/db'
+} from '@genshin-optimizer/zzz-consts'
+import type { StatFilter } from '@genshin-optimizer/zzz-db'
 import {
   type ICachedDisc,
   type ICachedWengine,
   StatFilterTagToTag,
-} from '@genshin-optimizer/zzz/db'
-import { type Calculator, Read, type Tag } from '@genshin-optimizer/zzz/formula'
+} from '@genshin-optimizer/zzz-db'
+import { type Calculator, Read, type Tag } from '@genshin-optimizer/zzz-formula'
 
 const EPSILON = 1e-7
 

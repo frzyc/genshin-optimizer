@@ -4,11 +4,11 @@ import type {
   ElementWithPhyKey,
   TransformativeReactionKey,
   WeaponKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import type {
   AdditiveReactionsKey,
   AmplifyingReactionsKey,
-} from '@genshin-optimizer/gi/keymap'
+} from '@genshin-optimizer/gi-keymap'
 import type { input, uiInput } from './formula'
 
 export type NumNode =

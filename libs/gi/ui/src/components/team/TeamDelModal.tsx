@@ -3,10 +3,10 @@ import {
   CardThemed,
   ColorText,
   ModalWrapper,
-} from '@genshin-optimizer/common/ui'
-import { notEmpty, toggleArr } from '@genshin-optimizer/common/util'
-import type { Team } from '@genshin-optimizer/gi/db'
-import { useDatabase, useTeam, useTeamChar } from '@genshin-optimizer/gi/db-ui'
+} from '@genshin-optimizer/common-ui'
+import { notEmpty, toggleArr } from '@genshin-optimizer/common-util'
+import type { Team } from '@genshin-optimizer/gi-db'
+import { useDatabase, useTeam, useTeamChar } from '@genshin-optimizer/gi-db-ui'
 import CloseIcon from '@mui/icons-material/Close'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import InfoIcon from '@mui/icons-material/Info'

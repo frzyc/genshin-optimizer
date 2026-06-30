@@ -1,5 +1,5 @@
-import { cmpGE, prod } from '@genshin-optimizer/pando/engine'
-import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
+import { cmpGE, prod } from '@genshin-optimizer/pando-engine'
+import type { DiscSetKey } from '@genshin-optimizer/zzz-consts'
 import {
   allBoolConditionals,
   own,

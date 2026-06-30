@@ -1,12 +1,12 @@
-import type { Tag as BaseTag } from '@genshin-optimizer/game-opt/engine'
+import type { Tag as BaseTag } from '@genshin-optimizer/game-opt-engine'
 import {
   Read as BaseRead,
   reader as baseReader,
   entryTypes,
   presets,
   setReader,
-} from '@genshin-optimizer/game-opt/engine'
-import type { AnyNode } from '@genshin-optimizer/pando/engine'
+} from '@genshin-optimizer/game-opt-engine'
+import type { AnyNode } from '@genshin-optimizer/pando-engine'
 import type {
   DamageType,
   Dst,

@@ -1,4 +1,4 @@
-import { useDataManagerBase } from '@genshin-optimizer/common/database-ui'
+import { useDataManagerBase } from '@genshin-optimizer/common-database-ui'
 import { useDatabase } from './useDatabase'
 export function useBuild(buildId: string) {
   const database = useDatabase()

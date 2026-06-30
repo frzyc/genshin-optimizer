@@ -1,4 +1,4 @@
-import { createTestDBStorage } from '@genshin-optimizer/common/database'
+import { createTestDBStorage } from '@genshin-optimizer/common-database'
 import { ArtCharDatabase } from './ArtCharDatabase'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires

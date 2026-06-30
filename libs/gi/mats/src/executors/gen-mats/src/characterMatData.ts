@@ -1,11 +1,11 @@
-import { layeredAssignment, nameToKey } from '@genshin-optimizer/common/util'
-import type { AscensionKey, CharacterKey } from '@genshin-optimizer/gi/consts'
+import { layeredAssignment, nameToKey } from '@genshin-optimizer/common-util'
+import type { AscensionKey, CharacterKey } from '@genshin-optimizer/gi-consts'
 import type {
   AscensionRecord,
   AvatarSkillDepotExcelConfigData,
   CharacterId,
   ProudSkillExcelConfigData,
-} from '@genshin-optimizer/gi/dm'
+} from '@genshin-optimizer/gi-dm'
 import {
   TextMapEN,
   ascensionData,
@@ -15,7 +15,7 @@ import {
   characterIdMap,
   materialExcelConfigData,
   proudSkillExcelConfigData,
-} from '@genshin-optimizer/gi/dm'
+} from '@genshin-optimizer/gi-dm'
 import type { UpgradeCost } from '.'
 import * as somniaData from './Somnia/data.json'
 

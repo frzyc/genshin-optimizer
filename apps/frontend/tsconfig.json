@@ -1,18 +1,42 @@
 {
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "esModuleInterop": false,
-    "module": "ESNext",
-    "noPropertyAccessFromIndexSignature": false,
-    "noImplicitAny": false,
-    "exactOptionalPropertyTypes": false,
-    "allowSyntheticDefaultImports": true,
-    "jsxImportSource": "@emotion/react",
-    "types": ["vite/client", "vitest"]
-  },
   "files": [],
-  "include": [],
   "references": [
+    {
+      "path": "../../libs/gi/svgicons"
+    },
+    {
+      "path": "../../libs/common/svgicons"
+    },
+    {
+      "path": "../../libs/common/database-ui"
+    },
+    {
+      "path": "../../libs/common/util"
+    },
+    {
+      "path": "../../libs/common/react-util"
+    },
+    {
+      "path": "../../libs/common/ad"
+    },
+    {
+      "path": "../../libs/gi/ui"
+    },
+    {
+      "path": "../../libs/gi/theme"
+    },
+    {
+      "path": "../../libs/gi/db-ui"
+    },
+    {
+      "path": "../../libs/gi/db"
+    },
+    {
+      "path": "../../libs/common/ui"
+    },
+    {
+      "path": "../../libs/common/database"
+    },
     {
       "path": "./tsconfig.app.json"
     },

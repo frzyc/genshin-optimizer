@@ -1,13 +1,13 @@
-import type { AdDims, AdProps } from '@genshin-optimizer/common/ad'
+import type { AdDims, AdProps } from '@genshin-optimizer/common-ad'
 import {
   getGOAd,
   getGODrakeAd,
   getZOBannerAd,
   getZORectAd,
-} from '@genshin-optimizer/common/ad'
-import { CardThemed } from '@genshin-optimizer/common/ui'
-import { getRandomElementFromArray } from '@genshin-optimizer/common/util'
-import { notEmpty } from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-ad'
+import { CardThemed } from '@genshin-optimizer/common-ui'
+import { getRandomElementFromArray } from '@genshin-optimizer/common-util'
+import { notEmpty } from '@genshin-optimizer/common-util'
 import { useMemo } from 'react'
 import type { FunctionComponent, ReactNode } from 'react'
 /**

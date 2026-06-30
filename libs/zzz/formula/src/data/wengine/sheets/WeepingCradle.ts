@@ -1,6 +1,6 @@
-import { prod, subscript, sum } from '@genshin-optimizer/pando/engine'
-import type { WengineKey } from '@genshin-optimizer/zzz/consts'
-import { mappedStats } from '@genshin-optimizer/zzz/stats'
+import { prod, subscript, sum } from '@genshin-optimizer/pando-engine'
+import type { WengineKey } from '@genshin-optimizer/zzz-consts'
+import { mappedStats } from '@genshin-optimizer/zzz-stats'
 import {
   allBoolConditionals,
   allNumConditionals,

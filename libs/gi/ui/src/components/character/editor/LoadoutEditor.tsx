@@ -1,17 +1,17 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
 import {
   CardThemed,
   ModalWrapper,
   TextFieldLazy,
-} from '@genshin-optimizer/common/ui'
-import { crawlObject, getUnitStr } from '@genshin-optimizer/common/util'
-import type { LoadoutDatum, TeamCharacter } from '@genshin-optimizer/gi/db'
+} from '@genshin-optimizer/common-ui'
+import { crawlObject, getUnitStr } from '@genshin-optimizer/common-util'
+import type { LoadoutDatum, TeamCharacter } from '@genshin-optimizer/gi-db'
 import {
   useDatabase,
   useOptConfig,
   useTeamChar,
-} from '@genshin-optimizer/gi/db-ui'
-import { KeyMap } from '@genshin-optimizer/gi/keymap'
+} from '@genshin-optimizer/gi-db-ui'
+import { KeyMap } from '@genshin-optimizer/gi-keymap'
 import AddIcon from '@mui/icons-material/Add'
 import BarChartIcon from '@mui/icons-material/BarChart'
 import CheckroomIcon from '@mui/icons-material/Checkroom'

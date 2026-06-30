@@ -1,8 +1,8 @@
-import { clamp } from '@genshin-optimizer/common/util'
-import type { IArtifact } from '@genshin-optimizer/gi/good'
+import { clamp } from '@genshin-optimizer/common-util'
+import type { IArtifact } from '@genshin-optimizer/gi-good'
 import type { ReactNode } from 'react'
 
-import type { Color } from '@genshin-optimizer/common/img-util'
+import type { Color } from '@genshin-optimizer/common-img-util'
 import {
   bandPass,
   crop,
@@ -17,7 +17,7 @@ import {
   lighterColor,
   preprocessImage,
   urlToImageData,
-} from '@genshin-optimizer/common/img-util'
+} from '@genshin-optimizer/common-img-util'
 import {
   blueTitleDarkerColor,
   blueTitleLighterColor,

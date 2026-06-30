@@ -1,5 +1,5 @@
-import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { ZhuYuan } from '@genshin-optimizer/zzz/formula'
+import type { CharacterKey } from '@genshin-optimizer/zzz-consts'
+import { ZhuYuan } from '@genshin-optimizer/zzz-formula'
 import { st, trans } from '../../util'
 import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 

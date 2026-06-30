@@ -2,20 +2,20 @@ import {
   CardThemed,
   ColorText,
   InfoTooltipInline,
-} from '@genshin-optimizer/common/ui'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-import type { Team } from '@genshin-optimizer/gi/db'
-import type { TeamCharacterContextObj } from '@genshin-optimizer/gi/db-ui'
-import { TeamCharacterContext, useTeam } from '@genshin-optimizer/gi/db-ui'
-import type { IResonance } from '@genshin-optimizer/gi/sheets'
+} from '@genshin-optimizer/common-ui'
+import type { CharacterKey } from '@genshin-optimizer/gi-consts'
+import type { Team } from '@genshin-optimizer/gi-db'
+import type { TeamCharacterContextObj } from '@genshin-optimizer/gi-db-ui'
+import { TeamCharacterContext, useTeam } from '@genshin-optimizer/gi-db-ui'
+import type { IResonance } from '@genshin-optimizer/gi-sheets'
 import {
   getMoonsignSheet,
   hexereiSheet,
   resonanceSheets,
-} from '@genshin-optimizer/gi/sheets'
-import type { dataContextObj } from '@genshin-optimizer/gi/ui'
-import { DataContext, DocumentDisplay } from '@genshin-optimizer/gi/ui'
-import { input, tally } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-sheets'
+import type { dataContextObj } from '@genshin-optimizer/gi-ui'
+import { DataContext, DocumentDisplay } from '@genshin-optimizer/gi-ui'
+import { input, tally } from '@genshin-optimizer/gi-wr'
 import {
   CardContent,
   CardHeader,

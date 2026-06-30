@@ -3,9 +3,9 @@ import type {
   CharacterKey,
   CharacterSheetKey,
   WeaponKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import { Translate } from '@genshin-optimizer/gi/i18n'
-import type { Info, NumNode, ReadNode, StrNode } from '@genshin-optimizer/gi/wr'
+import type { Info, NumNode, ReadNode, StrNode } from '@genshin-optimizer/gi-wr'
 import {
   customStringRead,
   equal,
@@ -14,8 +14,8 @@ import {
   input,
   sum,
   unequal,
-} from '@genshin-optimizer/gi/wr'
-import type { NonStackBuff } from '@genshin-optimizer/gi/wr-types'
+} from '@genshin-optimizer/gi-wr'
+import type { NonStackBuff } from '@genshin-optimizer/gi-wr-types'
 import type { ReactNode } from 'react'
 
 export const st = (

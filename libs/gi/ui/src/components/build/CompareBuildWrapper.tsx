@@ -1,10 +1,10 @@
-import { objMap } from '@genshin-optimizer/common/util'
-import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
+import { objMap } from '@genshin-optimizer/common-util'
+import type { ArtifactSlotKey } from '@genshin-optimizer/gi-consts'
 import {
   CharacterContext,
   TeamCharacterContext,
   useDatabase,
-} from '@genshin-optimizer/gi/db-ui'
+} from '@genshin-optimizer/gi-db-ui'
 import { useContext } from 'react'
 import { EquipBuildModal } from '.'
 import { BuildEditContext } from '../../context/BuildEditContext'

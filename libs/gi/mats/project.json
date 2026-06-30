@@ -1,5 +1,5 @@
 {
-  "name": "gi-mats",
+  "name": "@genshin-optimizer/gi-mats",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/gi/mats/src",
   "projectType": "library",

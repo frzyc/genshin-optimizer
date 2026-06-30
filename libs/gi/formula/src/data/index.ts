@@ -1,8 +1,8 @@
-import { usedNames, usedQ } from '@genshin-optimizer/game-opt/engine'
+import { usedNames, usedQ } from '@genshin-optimizer/game-opt-engine'
 import {
   compileTagMapKeys,
   compileTagMapValues,
-} from '@genshin-optimizer/pando/engine'
+} from '@genshin-optimizer/pando-engine'
 import artifact from './artifact'
 import character from './char'
 import common from './common'

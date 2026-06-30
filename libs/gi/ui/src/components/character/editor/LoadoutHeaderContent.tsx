@@ -1,5 +1,5 @@
-import { BootstrapTooltip } from '@genshin-optimizer/common/ui'
-import { useDatabase, useOptConfig } from '@genshin-optimizer/gi/db-ui'
+import { BootstrapTooltip } from '@genshin-optimizer/common-ui'
+import { useDatabase, useOptConfig } from '@genshin-optimizer/gi-db-ui'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize'
 import InfoIcon from '@mui/icons-material/Info'

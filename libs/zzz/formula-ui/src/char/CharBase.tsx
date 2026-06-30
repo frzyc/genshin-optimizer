@@ -1,14 +1,14 @@
-import { ColorText } from '@genshin-optimizer/common/ui'
-import type { TagField } from '@genshin-optimizer/game-opt/sheet-ui'
+import { ColorText } from '@genshin-optimizer/common-ui'
+import type { TagField } from '@genshin-optimizer/game-opt-sheet-ui'
 import {
   allAttributeDamageKeys,
   allAttributeKeys,
   elementalData,
-} from '@genshin-optimizer/zzz/consts'
-import { specificDmgTypeKeys } from '@genshin-optimizer/zzz/db'
-import type { Attribute, Tag } from '@genshin-optimizer/zzz/formula'
-import { own } from '@genshin-optimizer/zzz/formula'
-import { StatDisplay } from '@genshin-optimizer/zzz/ui'
+} from '@genshin-optimizer/zzz-consts'
+import { specificDmgTypeKeys } from '@genshin-optimizer/zzz-db'
+import type { Attribute, Tag } from '@genshin-optimizer/zzz-formula'
+import { own } from '@genshin-optimizer/zzz-formula'
+import { StatDisplay } from '@genshin-optimizer/zzz-ui'
 import { damageTypeKeysMap } from './util'
 export const charBaseUiSheet: TagField[] = (
   [

@@ -1,4 +1,4 @@
-import { LightConeEditor, LightConeInventory } from '@genshin-optimizer/sr/ui'
+import { LightConeEditor, LightConeInventory } from '@genshin-optimizer/sr-ui'
 import { Box } from '@mui/material'
 
 import { useState } from 'react'

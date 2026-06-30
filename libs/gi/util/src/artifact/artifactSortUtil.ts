@@ -1,11 +1,11 @@
-import type { FilterConfigs, SortConfigs } from '@genshin-optimizer/common/util'
-import type { SubstatKey } from '@genshin-optimizer/gi/consts'
-import { allSubstatKeys } from '@genshin-optimizer/gi/consts'
+import type { FilterConfigs, SortConfigs } from '@genshin-optimizer/common-util'
+import type { SubstatKey } from '@genshin-optimizer/gi-consts'
+import { allSubstatKeys } from '@genshin-optimizer/gi-consts'
 import type {
   ArtifactSortKey,
   FilterOption,
   IArtifact,
-} from '@genshin-optimizer/gi/schema'
+} from '@genshin-optimizer/gi-schema'
 import { getArtifactEfficiency } from './artifact'
 
 export function artifactSortConfigs(

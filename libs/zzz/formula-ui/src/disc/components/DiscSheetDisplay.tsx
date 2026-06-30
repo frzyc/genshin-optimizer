@@ -1,9 +1,9 @@
-import { ImgIcon } from '@genshin-optimizer/common/ui'
-import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
-import { DocumentDisplay } from '@genshin-optimizer/game-opt/sheet-ui'
-import { discDefIcon } from '@genshin-optimizer/zzz/assets'
-import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
-import { DiscSetName, ZCard } from '@genshin-optimizer/zzz/ui'
+import { ImgIcon } from '@genshin-optimizer/common-ui'
+import type { UISheetElement } from '@genshin-optimizer/game-opt-sheet-ui'
+import { DocumentDisplay } from '@genshin-optimizer/game-opt-sheet-ui'
+import { discDefIcon } from '@genshin-optimizer/zzz-assets'
+import type { DiscSetKey } from '@genshin-optimizer/zzz-consts'
+import { DiscSetName, ZCard } from '@genshin-optimizer/zzz-ui'
 import {
   Box,
   CardContent,

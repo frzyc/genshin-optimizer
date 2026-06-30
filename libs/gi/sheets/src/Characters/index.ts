@@ -3,8 +3,8 @@ import type {
   CharacterSheetKey,
   GenderKey,
   TravelerKey,
-} from '@genshin-optimizer/gi/consts'
-import { allTravelerKeys } from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
+import { allTravelerKeys } from '@genshin-optimizer/gi-consts'
 import type { CharacterSheet } from './CharacterSheet'
 
 import Aino from './Aino'

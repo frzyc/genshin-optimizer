@@ -5,11 +5,11 @@ import type {
   MoveKey,
   RegionKey,
   WeaponTypeKey,
-} from '@genshin-optimizer/gi/consts'
-import { locCharKeyToCharKey } from '@genshin-optimizer/gi/consts'
-import type { CharacterDataGen } from '@genshin-optimizer/gi/stats'
-import type { NumNode } from '@genshin-optimizer/pando/engine'
-import { prod, subscript, sum } from '@genshin-optimizer/pando/engine'
+} from '@genshin-optimizer/gi-consts'
+import { locCharKeyToCharKey } from '@genshin-optimizer/gi-consts'
+import type { CharacterDataGen } from '@genshin-optimizer/gi-stats'
+import type { NumNode } from '@genshin-optimizer/pando-engine'
+import { prod, subscript, sum } from '@genshin-optimizer/pando-engine'
 import type { FormulaArg, Stat, TagMapNodeEntries } from '../util'
 import {
   allStatics,

@@ -2,14 +2,14 @@ import type {
   Document,
   TextDocument,
   UISheetElement,
-} from '@genshin-optimizer/game-opt/sheet-ui'
-import { characterAsset, imgAssets } from '@genshin-optimizer/gi/assets'
+} from '@genshin-optimizer/game-opt-sheet-ui'
+import { characterAsset, imgAssets } from '@genshin-optimizer/gi-assets'
 import type {
   CharacterKey,
   CharacterSheetKey,
-} from '@genshin-optimizer/gi/consts'
-import { travelerFKeys, travelerMKeys } from '@genshin-optimizer/gi/consts'
-import { getCharStat } from '@genshin-optimizer/gi/stats'
+} from '@genshin-optimizer/gi-consts'
+import { travelerFKeys, travelerMKeys } from '@genshin-optimizer/gi-consts'
+import { getCharStat } from '@genshin-optimizer/gi-stats'
 import type { ReactNode } from 'react'
 import { trans } from '../util'
 import type { TalentSheetElementKey } from './consts'

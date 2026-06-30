@@ -1,6 +1,6 @@
-import { ColorText } from '@genshin-optimizer/common/ui'
-import { absorbableEle } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
+import { ColorText } from '@genshin-optimizer/common-ui'
+import { absorbableEle } from '@genshin-optimizer/gi-consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import {
   constant,
   equal,
@@ -14,7 +14,7 @@ import {
   sum,
   target,
   unequal,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 import { cond, condReadNode, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
 import type { TalentSheet } from '../ICharacterSheet.d'
@@ -26,7 +26,7 @@ import {
   plungingDmgNodes,
 } from '../dataUtil'
 
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi-consts'
 
 const key: CharacterKey = 'KaedeharaKazuha'
 const elementKey: ElementKey = 'anemo'

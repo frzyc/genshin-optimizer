@@ -2,21 +2,21 @@ import {
   BootstrapTooltip,
   CardThemed,
   StarsDisplay,
-} from '@genshin-optimizer/common/ui'
-import { lightConeAsset } from '@genshin-optimizer/sr/assets'
+} from '@genshin-optimizer/common-ui'
+import { lightConeAsset } from '@genshin-optimizer/sr-assets'
 import {
   type LocationKey,
   ascensionMaxLevel,
-} from '@genshin-optimizer/sr/consts'
-import type { Calculator } from '@genshin-optimizer/sr/formula'
+} from '@genshin-optimizer/sr-consts'
+import type { Calculator } from '@genshin-optimizer/sr-formula'
 import {
   lightConeTagMapNodeEntries,
   own,
   srCalculatorWithEntries,
-} from '@genshin-optimizer/sr/formula'
-import type { ILightCone } from '@genshin-optimizer/sr/srod'
-import { getLightConeStat } from '@genshin-optimizer/sr/stats'
-import { PathIcon } from '@genshin-optimizer/sr/svgicons'
+} from '@genshin-optimizer/sr-formula'
+import type { ILightCone } from '@genshin-optimizer/sr-srod'
+import { getLightConeStat } from '@genshin-optimizer/sr-stats'
+import { PathIcon } from '@genshin-optimizer/sr-svgicons'
 import { DeleteForever, Edit, Lock, LockOpen } from '@mui/icons-material'
 import {
   Box,

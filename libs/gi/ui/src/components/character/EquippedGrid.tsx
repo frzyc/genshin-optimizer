@@ -1,13 +1,13 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
-import { CardThemed, ImgIcon } from '@genshin-optimizer/common/ui'
-import { imgAssets } from '@genshin-optimizer/gi/assets'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
+import { iconInlineProps } from '@genshin-optimizer/common-svgicons'
+import { CardThemed, ImgIcon } from '@genshin-optimizer/common-ui'
+import { imgAssets } from '@genshin-optimizer/gi-assets'
 import type {
   ArtifactSlotKey,
   WeaponTypeKey,
-} from '@genshin-optimizer/gi/consts'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
+} from '@genshin-optimizer/gi-consts'
+import { useDatabase } from '@genshin-optimizer/gi-db-ui'
+import { SlotIcon } from '@genshin-optimizer/gi-svgicons'
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz'
 import {
   Box,

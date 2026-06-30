@@ -1,6 +1,6 @@
-import { objKeyMap } from '@genshin-optimizer/common/util'
-import { allRelicSlotKeys } from '@genshin-optimizer/sr/consts'
-import type { RelicIds } from '@genshin-optimizer/sr/db'
+import { objKeyMap } from '@genshin-optimizer/common-util'
+import { allRelicSlotKeys } from '@genshin-optimizer/sr-consts'
+import type { RelicIds } from '@genshin-optimizer/sr-db'
 import { useMemo } from 'react'
 import { useRelic } from './useRelic'
 

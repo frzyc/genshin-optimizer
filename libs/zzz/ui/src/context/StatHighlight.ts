@@ -1,4 +1,4 @@
-import type { StatKey } from '@genshin-optimizer/zzz/consts'
+import type { StatKey } from '@genshin-optimizer/zzz-consts'
 import { createContext } from 'react'
 
 export const StatHighlightContext = createContext({

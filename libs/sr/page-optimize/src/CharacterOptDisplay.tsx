@@ -1,14 +1,14 @@
-import { CardThemed, useScrollRef } from '@genshin-optimizer/common/ui'
-import { DebugListingsDisplay } from '@genshin-optimizer/game-opt/formula-ui'
-import { type CharacterKey } from '@genshin-optimizer/sr/consts'
-import { useCharacterContext } from '@genshin-optimizer/sr/db-ui'
-import { own } from '@genshin-optimizer/sr/formula'
-import { CharStatsDisplay } from '@genshin-optimizer/sr/formula-ui'
+import { CardThemed, useScrollRef } from '@genshin-optimizer/common-ui'
+import { DebugListingsDisplay } from '@genshin-optimizer/game-opt-formula-ui'
+import { type CharacterKey } from '@genshin-optimizer/sr-consts'
+import { useCharacterContext } from '@genshin-optimizer/sr-db-ui'
+import { own } from '@genshin-optimizer/sr-formula'
+import { CharStatsDisplay } from '@genshin-optimizer/sr-formula-ui'
 import {
   CharacterCard,
   CharacterEditor,
   EquipRow,
-} from '@genshin-optimizer/sr/ui'
+} from '@genshin-optimizer/sr-ui'
 import {
   Box,
   Button,

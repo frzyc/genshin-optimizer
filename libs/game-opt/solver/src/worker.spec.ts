@@ -1,4 +1,4 @@
-import { prod, read, sum } from '@genshin-optimizer/pando/engine'
+import { prod, read, sum } from '@genshin-optimizer/pando-engine'
 import type { Progress } from './common'
 import { buildCount } from './common'
 import { Worker } from './worker'

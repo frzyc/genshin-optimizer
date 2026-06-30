@@ -1,4 +1,4 @@
-import { createTestDBStorage } from '@genshin-optimizer/common/database'
+import { createTestDBStorage } from '@genshin-optimizer/common-database'
 import { currentDBVersion, zzzSource } from '../Interfaces'
 import { ZzzDatabase } from './Database'
 

@@ -1,11 +1,11 @@
-import { getUnitStr } from '@genshin-optimizer/common/util'
-import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
-import { allArtifactSetKeys } from '@genshin-optimizer/gi/consts'
+import { getUnitStr } from '@genshin-optimizer/common-util'
+import type { ArtifactSetKey } from '@genshin-optimizer/gi-consts'
+import { allArtifactSetKeys } from '@genshin-optimizer/gi-consts'
 import { Translate } from '@genshin-optimizer/gi/i18n'
-import { KeyMap } from '@genshin-optimizer/gi/keymap'
-import { StatIcon } from '@genshin-optimizer/gi/svgicons'
-import type { Info, InfoExtra } from '@genshin-optimizer/gi/wr'
-import { infoManager } from '@genshin-optimizer/gi/wr'
+import { KeyMap } from '@genshin-optimizer/gi-keymap'
+import { StatIcon } from '@genshin-optimizer/gi-svgicons'
+import type { Info, InfoExtra } from '@genshin-optimizer/gi-wr'
+import { infoManager } from '@genshin-optimizer/gi-wr'
 
 export function resolveInfo(info: Info): Info & InfoExtra {
   // Make sure not to override any `Info` (those should be calculated

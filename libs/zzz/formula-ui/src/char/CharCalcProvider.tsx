@@ -1,34 +1,34 @@
-import { notEmpty, objKeyMap, toDecimal } from '@genshin-optimizer/common/util'
+import { notEmpty, objKeyMap, toDecimal } from '@genshin-optimizer/common-util'
 import type {
   CalcMeta,
   Calculator,
   Tag,
-} from '@genshin-optimizer/game-opt/engine'
-import { presets } from '@genshin-optimizer/game-opt/engine'
-import { CalcContext } from '@genshin-optimizer/game-opt/formula-ui'
-import type { FormulaText } from '@genshin-optimizer/game-opt/sheet-ui'
+} from '@genshin-optimizer/game-opt-engine'
+import { presets } from '@genshin-optimizer/game-opt-engine'
+import { CalcContext } from '@genshin-optimizer/game-opt-formula-ui'
+import type { FormulaText } from '@genshin-optimizer/game-opt-sheet-ui'
 import type {
   FormulaTextFunc,
   FullTagDisplayComponent,
   TagDisplayComponent,
-} from '@genshin-optimizer/game-opt/sheet-ui'
+} from '@genshin-optimizer/game-opt-sheet-ui'
 import {
   FormulaTextCacheContext,
   FormulaTextContext,
   FullTagDisplayContext,
   TagDisplayContext,
-} from '@genshin-optimizer/game-opt/sheet-ui'
-import type { CalcResult } from '@genshin-optimizer/pando/engine'
-import { constant } from '@genshin-optimizer/pando/engine'
-import { allDiscSetKeys, allWengineKeys } from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/game-opt-sheet-ui'
+import type { CalcResult } from '@genshin-optimizer/pando-engine'
+import { constant } from '@genshin-optimizer/pando-engine'
+import { allDiscSetKeys, allWengineKeys } from '@genshin-optimizer/zzz-consts'
 import type {
   DiscIds,
   ICachedCharacter,
   Team,
   TeamConditional,
-} from '@genshin-optimizer/zzz/db'
-import { getTeamFrame0, teamCharacterKeys } from '@genshin-optimizer/zzz/db'
-import { useDiscs, useWengine } from '@genshin-optimizer/zzz/db-ui'
+} from '@genshin-optimizer/zzz-db'
+import { getTeamFrame0, teamCharacterKeys } from '@genshin-optimizer/zzz-db'
+import { useDiscs, useWengine } from '@genshin-optimizer/zzz-db-ui'
 import {
   charTagMapNodeEntries,
   conditionalEntries,
@@ -43,8 +43,8 @@ import {
   withMember,
   withPreset,
   zzzCalculatorWithEntries,
-} from '@genshin-optimizer/zzz/formula'
-import { allStats } from '@genshin-optimizer/zzz/stats'
+} from '@genshin-optimizer/zzz-formula'
+import { allStats } from '@genshin-optimizer/zzz-stats'
 import type { ReactNode } from 'react'
 import { useMemo } from 'react'
 import { FullTagDisplay, TagDisplay } from '../components'

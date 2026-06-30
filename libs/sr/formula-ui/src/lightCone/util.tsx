@@ -1,6 +1,6 @@
-import type { LightConeKey } from '@genshin-optimizer/sr/consts'
-import { own } from '@genshin-optimizer/sr/formula'
-import { useSrCalcContext } from '@genshin-optimizer/sr/ui'
+import type { LightConeKey } from '@genshin-optimizer/sr-consts'
+import { own } from '@genshin-optimizer/sr-formula'
+import { useSrCalcContext } from '@genshin-optimizer/sr-ui'
 import type { ReactNode } from 'react'
 
 export function SuperImposeWrapper({

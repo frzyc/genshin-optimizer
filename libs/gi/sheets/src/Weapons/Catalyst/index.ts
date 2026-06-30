@@ -1,4 +1,4 @@
-import type { WeaponCatalystKey } from '@genshin-optimizer/gi/consts'
+import type { WeaponCatalystKey } from '@genshin-optimizer/gi-consts'
 import type { WeaponSheet } from '../WeaponSheet'
 import AThousandFloatingDreams from './AThousandFloatingDreams'
 import AngelosHeptades from './AngelosHeptades'

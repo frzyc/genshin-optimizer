@@ -1,6 +1,6 @@
-import { cmpGE, min, prod, subscript } from '@genshin-optimizer/pando/engine'
-import type { LightConeKey } from '@genshin-optimizer/sr/consts'
-import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
+import { cmpGE, min, prod, subscript } from '@genshin-optimizer/pando-engine'
+import type { LightConeKey } from '@genshin-optimizer/sr-consts'
+import { allStats, mappedStats } from '@genshin-optimizer/sr-stats'
 import { own, ownBuff, registerBuff } from '../../util'
 import { entriesForLightCone, registerLightCone } from '../util'
 

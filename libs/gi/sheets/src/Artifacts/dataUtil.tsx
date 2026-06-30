@@ -1,10 +1,10 @@
-import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
+import type { ArtifactSetKey } from '@genshin-optimizer/gi-consts'
 import {
   type Data,
   type DisplaySub,
   inferInfoMut,
   mergeData,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 
 export function dataObjForArtifactSheet(
   key: ArtifactSetKey,

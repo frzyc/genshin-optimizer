@@ -1,12 +1,12 @@
-import { allArtifactSetKeys } from '@genshin-optimizer/gi/consts'
-import type { ICharacter, IWeapon } from '@genshin-optimizer/gi/good'
+import { allArtifactSetKeys } from '@genshin-optimizer/gi-consts'
+import type { ICharacter, IWeapon } from '@genshin-optimizer/gi-good'
 import {
   compile,
   compileTagMapValues,
   detach,
   setDebugMode,
   simplify,
-} from '@genshin-optimizer/pando/engine'
+} from '@genshin-optimizer/pando-engine'
 import { entries, keys, values } from './data'
 import type { Tag, TagMapNodeEntries } from './data/util'
 import { enemyDebuff, own, ownBuff, team, userBuff } from './data/util'

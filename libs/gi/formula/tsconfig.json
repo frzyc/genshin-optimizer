@@ -1,14 +1,34 @@
 {
   "extends": "../../../tsconfig.base.json",
-  "compilerOptions": {
-    "esModuleInterop": true,
-    "downlevelIteration": true,
-    "allowSyntheticDefaultImports": true,
-    "exactOptionalPropertyTypes": false
-  },
   "files": [],
-  "include": [],
   "references": [
+    {
+      "path": "../../common/util"
+    },
+    {
+      "path": "../../common/pipeline"
+    },
+    {
+      "path": "../good"
+    },
+    {
+      "path": "../dm"
+    },
+    {
+      "path": "../stats"
+    },
+    {
+      "path": "../../pando/engine"
+    },
+    {
+      "path": "../consts"
+    },
+    {
+      "path": "../../game-opt/formula"
+    },
+    {
+      "path": "../../game-opt/engine"
+    },
     {
       "path": "./tsconfig.lib.json"
     },

@@ -1,14 +1,14 @@
-import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
-import { characterAsset, imgAssets } from '@genshin-optimizer/gi/assets'
+import { ImgIcon, SqBadge } from '@genshin-optimizer/common-ui'
+import { characterAsset, imgAssets } from '@genshin-optimizer/gi-assets'
 import {
   type CharacterKey,
   type CharacterSheetKey,
   travelerFKeys,
   travelerMKeys,
-} from '@genshin-optimizer/gi/consts'
-import { allStats, getCharStat } from '@genshin-optimizer/gi/stats'
-import type { NumNode } from '@genshin-optimizer/gi/wr'
-import { greaterEq, input, unequal } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-consts'
+import { allStats, getCharStat } from '@genshin-optimizer/gi-stats'
+import type { NumNode } from '@genshin-optimizer/gi-wr'
+import { greaterEq, input, unequal } from '@genshin-optimizer/gi-wr'
 import type { ReactNode } from 'react'
 import { st, trans } from '../SheetUtil'
 import type {

@@ -2,11 +2,11 @@ import {
   CardThemed,
   ModalWrapper,
   TextFieldLazy,
-} from '@genshin-optimizer/common/ui'
-import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
-import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { getCharEle } from '@genshin-optimizer/gi/stats'
-import { LoadoutIcon, LoadoutInfoAlert } from '@genshin-optimizer/gi/ui'
+} from '@genshin-optimizer/common-ui'
+import type { LoadoutDatum } from '@genshin-optimizer/gi-db'
+import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi-db-ui'
+import { getCharEle } from '@genshin-optimizer/gi-stats'
+import { LoadoutIcon, LoadoutInfoAlert } from '@genshin-optimizer/gi-ui'
 import CloseIcon from '@mui/icons-material/Close'
 import { CardContent, CardHeader, Divider, IconButton } from '@mui/material'
 import { useContext } from 'react'

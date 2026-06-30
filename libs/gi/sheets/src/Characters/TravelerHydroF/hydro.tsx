@@ -1,10 +1,10 @@
-import { objKeyMap } from '@genshin-optimizer/common/util'
+import { objKeyMap } from '@genshin-optimizer/common-util'
 import type {
   CharacterKey,
   CharacterSheetKey,
-} from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
-import type { DisplaySub } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
+import type { DisplaySub } from '@genshin-optimizer/gi-wr'
 import {
   constant,
   equal,
@@ -19,7 +19,7 @@ import {
   percent,
   prod,
   subscript,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import type { TalentSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'

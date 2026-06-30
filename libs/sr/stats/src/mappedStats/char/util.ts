@@ -1,4 +1,4 @@
-import { objMap } from '@genshin-optimizer/common/util'
+import { objMap } from '@genshin-optimizer/common-util'
 import type { CharacterDatum } from '../..'
 
 /**

@@ -1,5 +1,5 @@
-import { CustomNumberInput } from '@genshin-optimizer/common/ui'
-import { clamp } from '@genshin-optimizer/common/util'
+import { CustomNumberInput } from '@genshin-optimizer/common-ui'
+import { clamp } from '@genshin-optimizer/common-util'
 import { Box, Divider, Slider } from '@mui/material'
 import { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'

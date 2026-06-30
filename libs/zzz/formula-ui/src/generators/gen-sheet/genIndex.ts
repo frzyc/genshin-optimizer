@@ -1,10 +1,10 @@
 import { writeFileSync } from 'fs'
-import { formatText } from '@genshin-optimizer/common/pipeline'
+import { formatText } from '@genshin-optimizer/common-pipeline'
 import {
   allCharacterKeys,
   allDiscSetKeys,
   allWengineKeys,
-} from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-consts'
 import type { Tree } from '@nx/devkit'
 import { workspaceRoot } from '@nx/devkit'
 
@@ -26,7 +26,7 @@ export default async function genIndex(tree: Tree, sheet_type: string) {
 async function writeCharIndex(path: string) {
   const index = `
 // WARNING: Generated file, do not modify
-import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
+import type { CharacterKey } from '@genshin-optimizer/zzz-consts'
 import type { CharUISheet } from '../consts'
 ${allCharacterKeys
   .map((charKey) => `import ${charKey} from './${charKey}'`)
@@ -43,8 +43,8 @@ export const charSheets: Record<CharacterKey, CharUISheet> = {
 async function writeDiscIndex(path: string) {
   const index = `
 // WARNING: Generated file, do not modify
-import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
-import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
+import type { UISheet } from '@genshin-optimizer/game-opt-sheet-ui'
+import type { DiscSetKey } from '@genshin-optimizer/zzz-consts'
 ${allDiscSetKeys
   .map((setKey) => `import ${setKey} from './${setKey}'`)
   .join('\n')}
@@ -60,8 +60,8 @@ export const discUiSheets: Record<DiscSetKey, UISheet<'2' | '4'>> = {
 async function writeWengineIndex(path: string) {
   const index = `
 // WARNING: Generated file, do not modify
-import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
-import type { WengineKey } from '@genshin-optimizer/zzz/consts'
+import type { UISheetElement } from '@genshin-optimizer/game-opt-sheet-ui'
+import type { WengineKey } from '@genshin-optimizer/zzz-consts'
 
 ${allWengineKeys.map((wkey) => `import ${wkey} from './${wkey}'`).join('\n')}
 

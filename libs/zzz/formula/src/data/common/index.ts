@@ -1,4 +1,4 @@
-import { cmpEq, max, min, prod, sum } from '@genshin-optimizer/pando/engine'
+import { cmpEq, max, min, prod, sum } from '@genshin-optimizer/pando-engine'
 import type { TagMapNodeEntries } from '../util'
 import {
   flatAndPercentStats,

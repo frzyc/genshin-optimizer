@@ -1,10 +1,10 @@
-import { objKeyValMap, objMap } from '@genshin-optimizer/common/util'
+import { objKeyValMap, objMap } from '@genshin-optimizer/common-util'
 import type {
   ArtifactSetKey,
   ArtifactSlotKey,
-} from '@genshin-optimizer/gi/consts'
-import { allArtifactSetKeys } from '@genshin-optimizer/gi/consts'
-import { type OptNode, optimize } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-consts'
+import { allArtifactSetKeys } from '@genshin-optimizer/gi-consts'
+import { type OptNode, optimize } from '@genshin-optimizer/gi-wr'
 import type {
   ArtifactBuildData,
   ArtifactsBySlot,

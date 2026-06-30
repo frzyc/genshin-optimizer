@@ -1,37 +1,37 @@
-import { useRefSize, useTitle } from '@genshin-optimizer/common/ui'
+import { useRefSize, useTitle } from '@genshin-optimizer/common-ui'
 import {
   moveToFront,
   notEmpty,
   objKeyMap,
-} from '@genshin-optimizer/common/util'
-import type { Preset } from '@genshin-optimizer/game-opt/engine'
-import type { DebugReadContextObj } from '@genshin-optimizer/game-opt/formula-ui'
+} from '@genshin-optimizer/common-util'
+import type { Preset } from '@genshin-optimizer/game-opt-engine'
+import type { DebugReadContextObj } from '@genshin-optimizer/game-opt-formula-ui'
 import {
   DebugReadContext,
   DebugReadModal,
   TagContext,
-} from '@genshin-optimizer/game-opt/formula-ui'
-import type { SetConditionalFunc } from '@genshin-optimizer/game-opt/sheet-ui'
+} from '@genshin-optimizer/game-opt-formula-ui'
+import type { SetConditionalFunc } from '@genshin-optimizer/game-opt-sheet-ui'
 import {
   ConditionalValuesContext,
   SetConditionalContext,
   SrcDstDisplayContext,
-} from '@genshin-optimizer/game-opt/sheet-ui'
-import type { BaseRead } from '@genshin-optimizer/pando/engine'
-import { characterKeyToGenderedKey } from '@genshin-optimizer/sr/assets'
+} from '@genshin-optimizer/game-opt-sheet-ui'
+import type { BaseRead } from '@genshin-optimizer/pando-engine'
+import { characterKeyToGenderedKey } from '@genshin-optimizer/sr-assets'
 import {
   CharacterContext,
   useCharacter,
   useDatabaseContext,
   useTeam,
-} from '@genshin-optimizer/sr/db-ui'
+} from '@genshin-optimizer/sr-db-ui'
 import {
   type Tag,
   getConditional,
   isMember,
   isSheet,
-} from '@genshin-optimizer/sr/formula'
-import { CharacterName } from '@genshin-optimizer/sr/ui'
+} from '@genshin-optimizer/sr-formula'
+import { CharacterName } from '@genshin-optimizer/sr-ui'
 import { Box, Skeleton } from '@mui/material'
 import { Suspense, useCallback, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'

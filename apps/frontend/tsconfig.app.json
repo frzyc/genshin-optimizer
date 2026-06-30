@@ -24,5 +24,43 @@
     "vitest.config.ts",
     "vitest.config.mts"
   ],
-  "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"]
+  "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"],
+  "references": [
+    {
+      "path": "../../libs/gi/svgicons/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/common/svgicons/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/common/database-ui/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/common/util/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/common/react-util/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/common/ad/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/gi/ui/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/gi/theme/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/gi/db-ui/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/gi/db/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/common/ui/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/common/database/tsconfig.lib.json"
+    }
+  ]
 }

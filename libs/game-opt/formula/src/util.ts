@@ -3,8 +3,8 @@ import type {
   Tag,
   TagMapNodeEntries,
   TagMapNodeEntry,
-} from '@genshin-optimizer/game-opt/engine'
-import { tag } from '@genshin-optimizer/game-opt/engine'
+} from '@genshin-optimizer/game-opt-engine'
+import { tag } from '@genshin-optimizer/game-opt-engine'
 
 export function registerEquipment<Tag_ extends Tag>(
   specificSheet: Sheet<Tag_>,

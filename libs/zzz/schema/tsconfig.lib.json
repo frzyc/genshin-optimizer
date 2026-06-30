@@ -1,7 +1,7 @@
 {
-  "extends": "./tsconfig.json",
+  "extends": "../../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "../../../dist/out-tsc",
+    "outDir": "./out-tsc/lib",
     "declaration": true,
     "types": ["node"]
   },
@@ -19,5 +19,16 @@
     "src/**/*.spec.js",
     "src/**/*.test.jsx",
     "src/**/*.spec.jsx"
+  ],
+  "references": [
+    {
+      "path": "../consts/tsconfig.lib.json"
+    },
+    {
+      "path": "../../common/util/tsconfig.lib.json"
+    },
+    {
+      "path": "../../common/database/tsconfig.lib.json"
+    }
   ]
 }

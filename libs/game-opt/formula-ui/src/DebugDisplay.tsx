@@ -2,9 +2,9 @@ import {
   CardThemed,
   CodeBlock,
   ModalWrapper,
-} from '@genshin-optimizer/common/ui'
-import { prettify } from '@genshin-optimizer/common/util'
-import type { Read } from '@genshin-optimizer/game-opt/engine'
+} from '@genshin-optimizer/common-ui'
+import { prettify } from '@genshin-optimizer/common-util'
+import type { Read } from '@genshin-optimizer/game-opt-engine'
 import CloseIcon from '@mui/icons-material/Close'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import {

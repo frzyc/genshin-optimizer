@@ -1,23 +1,23 @@
-import { ImgIcon, SqBadge, StarsDisplay } from '@genshin-optimizer/common/ui'
-import { range } from '@genshin-optimizer/common/util'
-import { imgAssets } from '@genshin-optimizer/gi/assets'
-import { charCard } from '@genshin-optimizer/gi/char-cards'
-import type { AscensionKey } from '@genshin-optimizer/gi/consts'
-import { getCharLevelString } from '@genshin-optimizer/gi/consts'
+import { ImgIcon, SqBadge, StarsDisplay } from '@genshin-optimizer/common-ui'
+import { range } from '@genshin-optimizer/common-util'
+import { imgAssets } from '@genshin-optimizer/gi-assets'
+import { charCard } from '@genshin-optimizer/gi-char-cards'
+import type { AscensionKey } from '@genshin-optimizer/gi-consts'
+import { getCharLevelString } from '@genshin-optimizer/gi-consts'
 import {
   CharacterContext,
   useCharMeta,
   useDBMeta,
   useDatabase,
-} from '@genshin-optimizer/gi/db-ui'
+} from '@genshin-optimizer/gi-db-ui'
 import {
   type TalentSheetElementKey,
   getCharSheet,
-} from '@genshin-optimizer/gi/sheets'
-import { splash } from '@genshin-optimizer/gi/silly-wisher'
-import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
-import { ElementIcon } from '@genshin-optimizer/gi/svgicons'
-import { uiInput as input } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-sheets'
+import { splash } from '@genshin-optimizer/gi-silly-wisher'
+import { getCharEle, getCharStat } from '@genshin-optimizer/gi-stats'
+import { ElementIcon } from '@genshin-optimizer/gi-svgicons'
+import { uiInput as input } from '@genshin-optimizer/gi-wr'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import {

@@ -1,7 +1,7 @@
 import type {
   DiscMainStatKey,
   DiscSubStatKey,
-} from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-consts'
 import { useEffect, useRef, useState } from 'react'
 
 export const discLevelVariant = (level: number) =>

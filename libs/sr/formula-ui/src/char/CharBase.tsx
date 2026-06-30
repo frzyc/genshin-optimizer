@@ -1,12 +1,12 @@
-import type { TagField } from '@genshin-optimizer/game-opt/sheet-ui'
-import type { ElementalTypeKey } from '@genshin-optimizer/sr/consts'
+import type { TagField } from '@genshin-optimizer/game-opt-sheet-ui'
+import type { ElementalTypeKey } from '@genshin-optimizer/sr-consts'
 import {
   allElementalDmgMainStatKeys,
   allStatKeys,
-} from '@genshin-optimizer/sr/consts'
-import type { Tag } from '@genshin-optimizer/sr/formula'
-import { own } from '@genshin-optimizer/sr/formula'
-import { StatDisplay } from '@genshin-optimizer/sr/ui'
+} from '@genshin-optimizer/sr-consts'
+import type { Tag } from '@genshin-optimizer/sr-formula'
+import { own } from '@genshin-optimizer/sr-formula'
+import { StatDisplay } from '@genshin-optimizer/sr-ui'
 export const charBaseUiSheet: TagField[] = allStatKeys
   .filter((k) => k !== 'baseSpd')
   .map((statKey) => {

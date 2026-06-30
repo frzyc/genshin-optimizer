@@ -1,11 +1,11 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
-import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
-import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
+import type { ICachedDisc } from '@genshin-optimizer/zzz-db'
+import { useDatabaseContext } from '@genshin-optimizer/zzz-db-ui'
 import {
   DiscEditor,
   DiscEditorSnackbarProvider,
   DiscInventory,
-} from '@genshin-optimizer/zzz/ui'
+} from '@genshin-optimizer/zzz-ui'
 import { Box } from '@mui/material'
 
 import { Suspense, useCallback, useState } from 'react'

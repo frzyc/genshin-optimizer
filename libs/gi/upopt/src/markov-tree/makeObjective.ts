@@ -1,12 +1,12 @@
-import { allSubstatKeys } from '@genshin-optimizer/gi/consts'
-import type { ArtifactBuildData, DynStat } from '@genshin-optimizer/gi/solver'
+import { allSubstatKeys } from '@genshin-optimizer/gi-consts'
+import type { ArtifactBuildData, DynStat } from '@genshin-optimizer/gi-solver'
 import {
   type OptNode,
   ddx,
   optimize,
   precompute,
   zero_deriv,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 
 import type { Objective } from './markov.types'
 

@@ -1,8 +1,8 @@
-import { NumberInputLazy } from '@genshin-optimizer/common/ui'
-import { objPathValue } from '@genshin-optimizer/common/util'
-import type { StatFilterSetting, StatFilters } from '@genshin-optimizer/gi/db'
-import { DataContext, resolveInfo } from '@genshin-optimizer/gi/ui'
-import type { CalcResult } from '@genshin-optimizer/gi/uidata'
+import { NumberInputLazy } from '@genshin-optimizer/common-ui'
+import { objPathValue } from '@genshin-optimizer/common-util'
+import type { StatFilterSetting, StatFilters } from '@genshin-optimizer/gi-db'
+import { DataContext, resolveInfo } from '@genshin-optimizer/gi-ui'
+import type { CalcResult } from '@genshin-optimizer/gi-uidata'
 import {
   CheckBox,
   CheckBoxOutlineBlank,

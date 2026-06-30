@@ -1,10 +1,10 @@
-import { tag } from '@genshin-optimizer/game-opt/engine'
+import { tag } from '@genshin-optimizer/game-opt-engine'
 import {
   type NumNode,
   type StrNode,
   prod,
-} from '@genshin-optimizer/pando/engine'
-import type { StatKey } from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/pando-engine'
+import type { StatKey } from '@genshin-optimizer/sr-consts'
 import type { Read, Tag } from '.'
 import {
   type TagMapNodeEntries,

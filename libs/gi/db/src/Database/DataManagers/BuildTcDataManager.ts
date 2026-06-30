@@ -7,8 +7,8 @@ import {
   zodObject,
   zodString,
   zodTypedRecordWith,
-} from '@genshin-optimizer/common/database'
-import { objKeyMap } from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-database'
+import { objKeyMap } from '@genshin-optimizer/common-util'
 import type {
   ArtifactRarity,
   ArtifactSetKey,
@@ -16,7 +16,7 @@ import type {
   AscensionKey,
   RefinementKey,
   WeaponKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import {
   allArtifactRarityKeys,
   allArtifactSetKeys,
@@ -33,9 +33,9 @@ import {
   defaultWeaponLevel,
   substatTypeKeys,
   validateWeaponLevelAsc,
-} from '@genshin-optimizer/gi/consts'
-import type { IGOOD } from '@genshin-optimizer/gi/good'
-import { allStats } from '@genshin-optimizer/gi/stats'
+} from '@genshin-optimizer/gi-consts'
+import type { IGOOD } from '@genshin-optimizer/gi-good'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { z } from 'zod'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'

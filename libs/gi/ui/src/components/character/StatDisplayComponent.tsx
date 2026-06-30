@@ -1,12 +1,12 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
 import {
   CardHeaderCustom,
   CardThemed,
   SqBadge,
-} from '@genshin-optimizer/common/ui'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import type { CalcResult } from '@genshin-optimizer/gi/uidata'
-import type { DisplaySub } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/common-ui'
+import { useDatabase } from '@genshin-optimizer/gi-db-ui'
+import type { CalcResult } from '@genshin-optimizer/gi-uidata'
+import type { DisplaySub } from '@genshin-optimizer/gi-wr'
 import type { MasonryProps } from '@mui/lab'
 import { Masonry } from '@mui/lab'
 import { Box, Button, Divider, ListItem } from '@mui/material'

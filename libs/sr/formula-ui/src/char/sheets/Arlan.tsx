@@ -1,8 +1,8 @@
-import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
-import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
-import { characterAsset } from '@genshin-optimizer/sr/assets'
-import type { CharacterKey } from '@genshin-optimizer/sr/consts'
-import { conditionals } from '@genshin-optimizer/sr/formula'
+import { ImgIcon, SqBadge } from '@genshin-optimizer/common-ui'
+import type { UISheet } from '@genshin-optimizer/game-opt-sheet-ui'
+import { characterAsset } from '@genshin-optimizer/sr-assets'
+import type { CharacterKey } from '@genshin-optimizer/sr-consts'
+import { conditionals } from '@genshin-optimizer/sr-formula'
 import { trans } from '../../util'
 import type { TalentSheetElementKey } from '../consts'
 /**

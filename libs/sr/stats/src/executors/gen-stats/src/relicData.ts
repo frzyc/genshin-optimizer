@@ -1,4 +1,4 @@
-import { objMap, verifyObjKeys } from '@genshin-optimizer/common/util'
+import { objMap, verifyObjKeys } from '@genshin-optimizer/common-util'
 import {
   type RelicMainStatKey,
   type RelicRarityKey,
@@ -8,14 +8,14 @@ import {
   allRelicRarityKeys,
   allRelicSetKeys,
   allRelicSubStatKeys,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 import {
   relicMainAffixConfig,
   relicSetIdMap,
   relicSetSkillConfig_bySet,
   relicSubAffixConfig,
   statKeyMap,
-} from '@genshin-optimizer/sr/dm'
+} from '@genshin-optimizer/sr-dm'
 
 type SubStat = {
   base: number //BaseValue

@@ -2,8 +2,8 @@ import {
   zodBoolean,
   zodEnumWithDefault,
   zodFilteredArray,
-} from '@genshin-optimizer/common/database'
-import { allPathKeys, allRarityKeys } from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/common-database'
+import { allPathKeys, allRarityKeys } from '@genshin-optimizer/sr-consts'
 import { z } from 'zod'
 import { DataEntry } from '../DataEntry'
 import type { SroDatabase } from '../Database'

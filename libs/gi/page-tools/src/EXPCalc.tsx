@@ -6,9 +6,9 @@ import {
   ImgFullwidth,
   ImgIcon,
   TextButton,
-} from '@genshin-optimizer/common/ui'
-import { clamp, objMap } from '@genshin-optimizer/common/util'
-import { imgAssets } from '@genshin-optimizer/gi/assets'
+} from '@genshin-optimizer/common-ui'
+import { clamp, objMap } from '@genshin-optimizer/common-util'
+import { imgAssets } from '@genshin-optimizer/gi-assets'
 import CheckIcon from '@mui/icons-material/Check'
 import {
   Alert,

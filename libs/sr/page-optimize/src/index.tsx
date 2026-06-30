@@ -1,34 +1,34 @@
-import { useTitle } from '@genshin-optimizer/common/ui'
-import { objKeyMap } from '@genshin-optimizer/common/util'
-import type { DebugReadContextObj } from '@genshin-optimizer/game-opt/formula-ui'
+import { useTitle } from '@genshin-optimizer/common-ui'
+import { objKeyMap } from '@genshin-optimizer/common-util'
+import type { DebugReadContextObj } from '@genshin-optimizer/game-opt-formula-ui'
 import {
   DebugReadContext,
   DebugReadModal,
   TagContext,
-} from '@genshin-optimizer/game-opt/formula-ui'
-import type { SetConditionalFunc } from '@genshin-optimizer/game-opt/sheet-ui'
+} from '@genshin-optimizer/game-opt-formula-ui'
+import type { SetConditionalFunc } from '@genshin-optimizer/game-opt-sheet-ui'
 import {
   ConditionalValuesContext,
   SetConditionalContext,
   SrcDstDisplayContext,
-} from '@genshin-optimizer/game-opt/sheet-ui'
-import type { BaseRead } from '@genshin-optimizer/pando/engine'
-import { characterKeyToGenderedKey } from '@genshin-optimizer/sr/assets'
-import type { CharacterKey } from '@genshin-optimizer/sr/consts'
-import { allCharacterKeys } from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/game-opt-sheet-ui'
+import type { BaseRead } from '@genshin-optimizer/pando-engine'
+import { characterKeyToGenderedKey } from '@genshin-optimizer/sr-assets'
+import type { CharacterKey } from '@genshin-optimizer/sr-consts'
+import { allCharacterKeys } from '@genshin-optimizer/sr-consts'
 import {
   CharacterContext,
   useCharOpt,
   useCharacter,
   useDatabaseContext,
-} from '@genshin-optimizer/sr/db-ui'
+} from '@genshin-optimizer/sr-db-ui'
 import {
   type Tag,
   getConditional,
   isMember,
   isSheet,
-} from '@genshin-optimizer/sr/formula'
-import { CharacterAutocomplete, CharacterName } from '@genshin-optimizer/sr/ui'
+} from '@genshin-optimizer/sr-formula'
+import { CharacterAutocomplete, CharacterName } from '@genshin-optimizer/sr-ui'
 import { Box } from '@mui/material'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'

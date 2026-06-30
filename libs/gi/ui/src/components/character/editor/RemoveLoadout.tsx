@@ -1,5 +1,5 @@
-import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { CardThemed, ModalWrapper } from '@genshin-optimizer/common-ui'
+import { useDatabase } from '@genshin-optimizer/gi-db-ui'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import CloseIcon from '@mui/icons-material/Close'
 import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize'

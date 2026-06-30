@@ -1,11 +1,11 @@
-import type { SpecificDmgTypeKey } from '@genshin-optimizer/zzz/db'
-import { specificDmgTypeKeys } from '@genshin-optimizer/zzz/db'
-import { getTeamFrame0 } from '@genshin-optimizer/zzz/db'
+import type { SpecificDmgTypeKey } from '@genshin-optimizer/zzz-db'
+import { specificDmgTypeKeys } from '@genshin-optimizer/zzz-db'
+import { getTeamFrame0 } from '@genshin-optimizer/zzz-db'
 import {
   useCharacterContext,
   useDatabaseContext,
   useTeam,
-} from '@genshin-optimizer/zzz/db-ui'
+} from '@genshin-optimizer/zzz-db-ui'
 import { useCallback } from 'react'
 import { DmgTypeDropdown } from '../DmgTypeDropdown'
 

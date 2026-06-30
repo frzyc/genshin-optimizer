@@ -1,12 +1,12 @@
-import { SqBadge } from '@genshin-optimizer/common/ui'
-import { objPathValue } from '@genshin-optimizer/common/util'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { SqBadge } from '@genshin-optimizer/common-ui'
+import { objPathValue } from '@genshin-optimizer/common-util'
+import { useDatabase } from '@genshin-optimizer/gi-db-ui'
 import {
   DataContext,
   getDisplayHeader,
   resolveInfo,
-} from '@genshin-optimizer/gi/ui'
-import type { CalcResult } from '@genshin-optimizer/gi/uidata'
+} from '@genshin-optimizer/gi-ui'
+import type { CalcResult } from '@genshin-optimizer/gi-uidata'
 import { Box, Divider, Stack, useMediaQuery, useTheme } from '@mui/material'
 import { useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'

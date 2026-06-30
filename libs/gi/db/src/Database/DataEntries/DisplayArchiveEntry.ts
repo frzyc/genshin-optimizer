@@ -2,14 +2,14 @@ import {
   zodEnumWithDefault,
   zodFilteredArray,
   zodObject,
-} from '@genshin-optimizer/common/database'
+} from '@genshin-optimizer/common-database'
 import {
   allArtifactRarityKeys,
   allCharacterRarityKeys,
   allRarityKeys,
   allWeaponSubstatKeys,
   allWeaponTypeKeys,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import { z } from 'zod'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataEntry } from '../DataEntry'

@@ -1,4 +1,4 @@
-import type { GeneratedBuild } from '@genshin-optimizer/gi/db'
+import type { GeneratedBuild } from '@genshin-optimizer/gi-db'
 
 export default class EnhancedPoint {
   public x: number

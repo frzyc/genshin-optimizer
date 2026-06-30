@@ -1,18 +1,18 @@
-import { useDataManagerBase } from '@genshin-optimizer/common/database-ui'
-import { CardThemed } from '@genshin-optimizer/common/ui'
-import { valueString } from '@genshin-optimizer/common/util'
-import type { GeneratedBuild } from '@genshin-optimizer/zzz/db'
+import { useDataManagerBase } from '@genshin-optimizer/common-database-ui'
+import { CardThemed } from '@genshin-optimizer/common-ui'
+import { valueString } from '@genshin-optimizer/common-util'
+import type { GeneratedBuild } from '@genshin-optimizer/zzz-db'
 import {
   OptConfigContext,
   useCharacterContext,
   useDatabaseContext,
   useTeam,
-} from '@genshin-optimizer/zzz/db-ui'
+} from '@genshin-optimizer/zzz-db-ui'
 import {
   CharCalcProvider,
   CharStatsDisplay,
-} from '@genshin-optimizer/zzz/formula-ui'
-import { EquipGrid } from '@genshin-optimizer/zzz/ui'
+} from '@genshin-optimizer/zzz-formula-ui'
+import { EquipGrid } from '@genshin-optimizer/zzz-ui'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import {
   Box,

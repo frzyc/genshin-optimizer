@@ -1,25 +1,24 @@
 {
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "target": "ESNext",
-    "useDefineForClassFields": true,
-    "noPropertyAccessFromIndexSignature": false,
-    "lib": ["ESNext", "DOM"],
-    "moduleResolution": "Node",
-    "module": "ESNext",
-    "isolatedModules": true,
-    "esModuleInterop": true,
-    "noEmit": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "allowSyntheticDefaultImports": true,
-    "skipLibCheck": true,
-    "exactOptionalPropertyTypes": false,
-    "types": ["vite/client", "vitest"]
-  },
   "files": [],
-  "include": [],
   "references": [
+    {
+      "path": "../../libs/common/svgicons"
+    },
+    {
+      "path": "../../libs/common/database-ui"
+    },
+    {
+      "path": "../../libs/pando/engine"
+    },
+    {
+      "path": "../../libs/common/util"
+    },
+    {
+      "path": "../../libs/common/ui"
+    },
+    {
+      "path": "../../libs/common/ad"
+    },
     {
       "path": "./tsconfig.app.json"
     },

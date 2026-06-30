@@ -1,4 +1,4 @@
-import type { Attribute, DamageType, Tag } from '@genshin-optimizer/zzz/formula'
+import type { Attribute, DamageType, Tag } from '@genshin-optimizer/zzz-formula'
 
 export function getVariant(tag: Tag) {
   const { attribute } = tag

@@ -1,12 +1,12 @@
-import { CardThemed, ConditionalWrapper } from '@genshin-optimizer/common/ui'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-import type { CharacterContextObj } from '@genshin-optimizer/gi/db-ui'
+import { CardThemed, ConditionalWrapper } from '@genshin-optimizer/common-ui'
+import type { CharacterKey } from '@genshin-optimizer/gi-consts'
+import type { CharacterContextObj } from '@genshin-optimizer/gi-db-ui'
 import {
   CharacterContext,
   useCharMeta,
   useCharacter,
   useDatabase,
-} from '@genshin-optimizer/gi/db-ui'
+} from '@genshin-optimizer/gi-db-ui'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import {

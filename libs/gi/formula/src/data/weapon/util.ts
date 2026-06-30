@@ -1,6 +1,6 @@
-import { type WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
-import { prod, subscript } from '@genshin-optimizer/pando/engine'
+import { type WeaponKey } from '@genshin-optimizer/gi-consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
+import { prod, subscript } from '@genshin-optimizer/pando-engine'
 import type { TagMapNodeEntries } from '../util'
 import { allStatics, own, ownBuff, readStat } from '../util'
 

@@ -1,4 +1,4 @@
-import type { MainSubStatKey } from '@genshin-optimizer/gi/consts'
+import type { MainSubStatKey } from '@genshin-optimizer/gi-consts'
 import { createContext } from 'react'
 export type OptTargetContextObj = {
   target: string[] | undefined

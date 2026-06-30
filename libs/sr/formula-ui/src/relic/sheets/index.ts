@@ -1,5 +1,5 @@
-import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
-import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
+import type { UISheet } from '@genshin-optimizer/game-opt-sheet-ui'
+import type { RelicSetKey } from '@genshin-optimizer/sr-consts'
 import BandOfSizzlingThunder from './BandOfSizzlingThunder'
 import BelobogOfTheArchitects from './BelobogOfTheArchitects'
 import BoneCollectionsSereneDemesne from './BoneCollectionsSereneDemesne'

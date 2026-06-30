@@ -1,4 +1,4 @@
-import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
+import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi-consts'
 import Aino from './Character_Aino_Card.webp'
 import Albedo from './Character_Albedo_Card.png'
 import Alhaitham from './Character_Alhaitham_Card.jpg'

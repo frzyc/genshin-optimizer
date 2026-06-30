@@ -1,35 +1,35 @@
-import { notEmpty, objMap } from '@genshin-optimizer/common/util'
-import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
+import { notEmpty, objMap } from '@genshin-optimizer/common-util'
+import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi-consts'
 import type {
   ArtCharDatabase,
   ICachedArtifact,
   ICachedCharacter,
   ICachedWeapon,
-} from '@genshin-optimizer/gi/db'
-import { defaultInitialWeapon } from '@genshin-optimizer/gi/db'
+} from '@genshin-optimizer/gi-db'
+import { defaultInitialWeapon } from '@genshin-optimizer/gi-db'
 import {
   useCharacter,
   useDBMeta,
   useDatabase,
-} from '@genshin-optimizer/gi/db-ui'
-import type { CharacterSheet, WeaponSheet } from '@genshin-optimizer/gi/sheets'
+} from '@genshin-optimizer/gi-db-ui'
+import type { CharacterSheet, WeaponSheet } from '@genshin-optimizer/gi-sheets'
 import {
   allArtifactData,
   displayDataMap,
   getCharSheet,
   getWeaponSheet,
   resonanceData,
-} from '@genshin-optimizer/gi/sheets'
-import { getCharStat } from '@genshin-optimizer/gi/stats'
-import { uiDataForTeam } from '@genshin-optimizer/gi/uidata'
-import type { Data } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-sheets'
+import { getCharStat } from '@genshin-optimizer/gi-stats'
+import { uiDataForTeam } from '@genshin-optimizer/gi-uidata'
+import type { Data } from '@genshin-optimizer/gi-wr'
 import {
   common,
   dataObjForArtifact,
   dataObjForCharacter,
   dataObjForWeapon,
   mergeData,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 import { useMemo } from 'react'
 import type { TeamData } from '../type/TeamData'
 

@@ -1,6 +1,6 @@
-import { imageDataToCanvas } from '@genshin-optimizer/common/img-util'
-import { BorrowManager } from '@genshin-optimizer/common/util'
-import type { OcrTextLine } from '@genshin-optimizer/zzz/disc-scanner'
+import { imageDataToCanvas } from '@genshin-optimizer/common-img-util'
+import { BorrowManager } from '@genshin-optimizer/common-util'
+import type { OcrTextLine } from '@genshin-optimizer/zzz-disc-scanner'
 import type { Line, RecognizeResult, Scheduler, Word } from 'tesseract.js'
 import { createScheduler, createWorker } from 'tesseract.js'
 

@@ -1,38 +1,38 @@
-import { useForceUpdate } from '@genshin-optimizer/common/react-util'
-import { notEmpty, objMap } from '@genshin-optimizer/common/util'
-import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
-import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
+import { useForceUpdate } from '@genshin-optimizer/common-react-util'
+import { notEmpty, objMap } from '@genshin-optimizer/common-util'
+import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi-consts'
+import type { LoadoutDatum } from '@genshin-optimizer/gi-db'
 import {
   type ArtCharDatabase,
   type ICachedArtifact,
   type ICachedCharacter,
   type ICachedWeapon,
-} from '@genshin-optimizer/gi/db'
+} from '@genshin-optimizer/gi-db'
 import {
   TeamCharacterContext,
   useDBMeta,
   useDatabase,
   useTeam,
-} from '@genshin-optimizer/gi/db-ui'
-import type { ICharacter } from '@genshin-optimizer/gi/good'
-import type { CharacterSheet, WeaponSheet } from '@genshin-optimizer/gi/sheets'
+} from '@genshin-optimizer/gi-db-ui'
+import type { ICharacter } from '@genshin-optimizer/gi-good'
+import type { CharacterSheet, WeaponSheet } from '@genshin-optimizer/gi-sheets'
 import {
   allArtifactData,
   displayDataMap,
   getCharSheet,
   getWeaponSheet,
   resonanceData,
-} from '@genshin-optimizer/gi/sheets'
-import { getCharStat } from '@genshin-optimizer/gi/stats'
-import { uiDataForTeam } from '@genshin-optimizer/gi/uidata'
-import type { CharInfo, Data } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-sheets'
+import { getCharStat } from '@genshin-optimizer/gi-stats'
+import { uiDataForTeam } from '@genshin-optimizer/gi-uidata'
+import type { CharInfo, Data } from '@genshin-optimizer/gi-wr'
 import {
   common,
   dataObjForArtifact,
   dataObjForCharacterNew,
   dataObjForWeapon,
   mergeData,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 import { useContext, useDeferredValue, useEffect, useMemo } from 'react'
 import type { TeamData } from '../type/TeamData'
 import { getBuildTcArtifactData } from '../util/getBuildTcData'

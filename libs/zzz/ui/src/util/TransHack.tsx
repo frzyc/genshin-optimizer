@@ -1,4 +1,4 @@
-import { ColorText } from '@genshin-optimizer/common/ui'
+import { ColorText } from '@genshin-optimizer/common-ui'
 import { useMemo } from 'react'
 import { Trans } from 'react-i18next'
 

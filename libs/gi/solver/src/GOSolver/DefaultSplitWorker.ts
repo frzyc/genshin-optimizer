@@ -1,5 +1,5 @@
-import { assertUnreachable } from '@genshin-optimizer/common/util'
-import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
+import { assertUnreachable } from '@genshin-optimizer/common-util'
+import { allArtifactSlotKeys } from '@genshin-optimizer/gi-consts'
 import type { ArtifactsBySlot, RequestFilter } from '../common'
 import { countBuilds, filterArts } from '../common'
 import type { Interim, Setup } from '../type'

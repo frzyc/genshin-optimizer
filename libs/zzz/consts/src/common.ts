@@ -1,4 +1,4 @@
-import { objKeyMap } from '@genshin-optimizer/common/util'
+import { objKeyMap } from '@genshin-optimizer/common-util'
 import { allDiscMainStatKeys, allDiscSubStatKeys } from './disc'
 
 export const otherStatKeys = [

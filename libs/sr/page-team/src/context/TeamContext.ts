@@ -1,4 +1,4 @@
-import type { Team } from '@genshin-optimizer/sr/db'
+import type { Team } from '@genshin-optimizer/sr-db'
 import { createContext, useContext } from 'react'
 
 export type TeamContextObj = {

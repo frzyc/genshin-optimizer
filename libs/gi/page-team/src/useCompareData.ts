@@ -1,18 +1,18 @@
-import { useForceUpdate } from '@genshin-optimizer/common/react-util'
-import { charKeyToLocCharKey } from '@genshin-optimizer/gi/consts'
-import type { ICachedArtifact, ICachedWeapon } from '@genshin-optimizer/gi/db'
+import { useForceUpdate } from '@genshin-optimizer/common-react-util'
+import { charKeyToLocCharKey } from '@genshin-optimizer/gi-consts'
+import type { ICachedArtifact, ICachedWeapon } from '@genshin-optimizer/gi-db'
 import {
   TeamCharacterContext,
   useDBMeta,
   useDatabase,
-} from '@genshin-optimizer/gi/db-ui'
-import type { ICharacter } from '@genshin-optimizer/gi/good'
+} from '@genshin-optimizer/gi-db-ui'
+import type { ICharacter } from '@genshin-optimizer/gi-good'
 import {
   getBuildTcArtifactData,
   getTeamDataCalc,
-} from '@genshin-optimizer/gi/ui'
-import type { UIData } from '@genshin-optimizer/gi/uidata'
-import type { Data } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-ui'
+import type { UIData } from '@genshin-optimizer/gi-uidata'
+import type { Data } from '@genshin-optimizer/gi-wr'
 import { useContext, useDeferredValue, useEffect, useMemo } from 'react'
 
 /**

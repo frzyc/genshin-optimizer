@@ -1,7 +1,7 @@
-import { objKeyMap, range } from '@genshin-optimizer/common/util'
-import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
-import { allElementKeys } from '@genshin-optimizer/gi/consts'
-import type { Data } from '@genshin-optimizer/gi/wr'
+import { objKeyMap, range } from '@genshin-optimizer/common-util'
+import type { ArtifactSetKey } from '@genshin-optimizer/gi-consts'
+import { allElementKeys } from '@genshin-optimizer/gi-consts'
+import type { Data } from '@genshin-optimizer/gi-wr'
 import {
   compareEq,
   constant,
@@ -15,7 +15,7 @@ import {
   tally,
   unequal,
   zero,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { SetEffectSheet } from '../IArtifactSheet'

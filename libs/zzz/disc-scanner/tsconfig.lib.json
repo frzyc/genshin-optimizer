@@ -1,7 +1,7 @@
 {
-  "extends": "./tsconfig.json",
+  "extends": "../../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "../../../dist/out-tsc",
+    "outDir": "./out-tsc/lib",
     "types": [
       "node",
 
@@ -20,5 +20,19 @@
     "src/**/*.spec.jsx",
     "src/**/*.test.jsx"
   ],
-  "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"]
+  "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"],
+  "references": [
+    {
+      "path": "../zood/tsconfig.lib.json"
+    },
+    {
+      "path": "../consts/tsconfig.lib.json"
+    },
+    {
+      "path": "../../common/util/tsconfig.lib.json"
+    },
+    {
+      "path": "../../common/img-util/tsconfig.lib.json"
+    }
+  ]
 }

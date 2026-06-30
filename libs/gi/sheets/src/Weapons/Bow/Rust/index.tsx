@@ -1,5 +1,5 @@
-import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { constant, input, subscript } from '@genshin-optimizer/gi/wr'
+import type { WeaponKey } from '@genshin-optimizer/gi-consts'
+import { constant, input, subscript } from '@genshin-optimizer/gi-wr'
 import { st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { WeaponSheet, headerTemplate } from '../../WeaponSheet'

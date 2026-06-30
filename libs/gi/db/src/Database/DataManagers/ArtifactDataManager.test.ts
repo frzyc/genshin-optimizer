@@ -1,6 +1,6 @@
-import { createTestDBStorage } from '@genshin-optimizer/common/database'
-import { allArtifactSetKeys, artMaxLevel } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
+import { createTestDBStorage } from '@genshin-optimizer/common-database'
+import { allArtifactSetKeys, artMaxLevel } from '@genshin-optimizer/gi-consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { ArtCharDatabase } from '../ArtCharDatabase'
 
 describe('ArtifactDataManager', () => {

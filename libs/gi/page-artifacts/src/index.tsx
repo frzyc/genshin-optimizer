@@ -1,31 +1,31 @@
-import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
+import { useDataManagerValues } from '@genshin-optimizer/common-database-ui'
 import {
   useBoolState,
   useMediaQueryUp,
-} from '@genshin-optimizer/common/react-util'
+} from '@genshin-optimizer/common-react-util'
 import {
   CardThemed,
   ShowingAndSortOptionSelect,
   useInfScroll,
-} from '@genshin-optimizer/common/ui'
-import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
-import type { SubstatKey } from '@genshin-optimizer/gi/consts'
-import { useDatabase, useDisplayArtifact } from '@genshin-optimizer/gi/db-ui'
+} from '@genshin-optimizer/common-ui'
+import { filterFunction, sortFunction } from '@genshin-optimizer/common-util'
+import type { SubstatKey } from '@genshin-optimizer/gi-consts'
+import { useDatabase, useDisplayArtifact } from '@genshin-optimizer/gi-db-ui'
 import {
   type ArtifactSortKey,
   artifactSortKeys,
-} from '@genshin-optimizer/gi/schema'
+} from '@genshin-optimizer/gi-schema'
 import {
   AddArtInfo,
   ArtifactCard,
   ArtifactEditor,
   InfoComponent,
-} from '@genshin-optimizer/gi/ui'
+} from '@genshin-optimizer/gi-ui'
 import {
   artifactFilterConfigs,
   artifactSortConfigs,
   artifactSortMap,
-} from '@genshin-optimizer/gi/util'
+} from '@genshin-optimizer/gi-util'
 import AddIcon from '@mui/icons-material/Add'
 import DifferenceIcon from '@mui/icons-material/Difference'
 import { Box, Button, CardContent, Grid, Skeleton } from '@mui/material'

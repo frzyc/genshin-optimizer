@@ -2,7 +2,7 @@ import type {
   ArtifactSetKey,
   LocationGenderedCharacterKey,
   WeaponKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import { MediumTextMapOffset } from '../common'
 import char from './Characters'
 import sheet from './sheet'

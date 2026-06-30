@@ -1,6 +1,6 @@
-import { ColorText } from '@genshin-optimizer/common/ui'
-import { objKeyMap, objKeyValMap } from '@genshin-optimizer/common/util'
-import { type WeaponKey, allElementKeys } from '@genshin-optimizer/gi/consts'
+import { ColorText } from '@genshin-optimizer/common-ui'
+import { objKeyMap, objKeyValMap } from '@genshin-optimizer/common-util'
+import { type WeaponKey, allElementKeys } from '@genshin-optimizer/gi-consts'
 import {
   equal,
   equalStr,
@@ -10,7 +10,7 @@ import {
   target,
   unequal,
   unequalStr,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 import { cond, nonStackBuff, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { WeaponSheet, headerTemplate } from '../../WeaponSheet'

@@ -1,6 +1,6 @@
-import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
-import { discDefIcon } from '@genshin-optimizer/zzz/assets'
-import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
+import type { UISheet } from '@genshin-optimizer/game-opt-sheet-ui'
+import { discDefIcon } from '@genshin-optimizer/zzz-assets'
+import type { DiscSetKey } from '@genshin-optimizer/zzz-consts'
 import { trans } from '../../util'
 import { Set2Display, Set4Display } from '../components'
 

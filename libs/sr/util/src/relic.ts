@@ -5,12 +5,12 @@ import {
   roundStat,
   statKeyToFixed,
   toPercent,
-} from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-util'
 import type {
   RelicCavernSetKey,
   RelicSetKey,
   RelicSlotKey,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 import {
   type RelicMainStatKey,
   type RelicRarityKey,
@@ -26,9 +26,9 @@ import {
   relicMaxLevel,
   relicSlotToMainStatKeys,
   relicSubstatRollData,
-} from '@genshin-optimizer/sr/consts'
-import type { IRelic, ISubstat } from '@genshin-optimizer/sr/srod'
-import { allStats } from '@genshin-optimizer/sr/stats'
+} from '@genshin-optimizer/sr-consts'
+import type { IRelic, ISubstat } from '@genshin-optimizer/sr-srod'
+import { allStats } from '@genshin-optimizer/sr-stats'
 
 export function getRelicMainStatVal(
   rarity: RelicRarityKey,

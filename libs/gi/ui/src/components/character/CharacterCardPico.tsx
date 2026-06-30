@@ -1,19 +1,19 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
 import {
   BootstrapTooltip,
   CardThemed,
   ConditionalWrapper,
   SqBadge,
-} from '@genshin-optimizer/common/ui'
-import { imgAssets } from '@genshin-optimizer/gi/assets'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-import { getCharLevelString } from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/common-ui'
+import { imgAssets } from '@genshin-optimizer/gi-assets'
+import type { CharacterKey } from '@genshin-optimizer/gi-consts'
+import { getCharLevelString } from '@genshin-optimizer/gi-consts'
 import {
   useCharMeta,
   useCharacter,
   useDBMeta,
-} from '@genshin-optimizer/gi/db-ui'
-import { getCharStat } from '@genshin-optimizer/gi/stats'
+} from '@genshin-optimizer/gi-db-ui'
+import { getCharStat } from '@genshin-optimizer/gi-stats'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import { Box, CardActionArea, Typography } from '@mui/material'

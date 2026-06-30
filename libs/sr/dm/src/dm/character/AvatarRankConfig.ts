@@ -1,5 +1,5 @@
-import { dumpFile } from '@genshin-optimizer/common/pipeline'
-import { objKeyValMap } from '@genshin-optimizer/common/util'
+import { dumpFile } from '@genshin-optimizer/common-pipeline'
+import { objKeyValMap } from '@genshin-optimizer/common-util'
 import { parse } from 'json-bigint'
 import { PROJROOT_PATH } from '../../consts'
 import { readDMJSON } from '../../util'

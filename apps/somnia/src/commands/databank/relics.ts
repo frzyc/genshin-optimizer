@@ -1,5 +1,5 @@
-import { AssetData } from '@genshin-optimizer/sr/assets-data'
-import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
+import { AssetData } from '@genshin-optimizer/sr-assets-data'
+import type { RelicSetKey } from '@genshin-optimizer/sr-consts'
 import { EmbedBuilder } from 'discord.js'
 import { hsrURL } from '../../lib/util'
 import { clean } from '../archive'

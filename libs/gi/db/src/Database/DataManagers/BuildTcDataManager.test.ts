@@ -1,4 +1,4 @@
-import { createTestDBStorage } from '@genshin-optimizer/common/database'
+import { createTestDBStorage } from '@genshin-optimizer/common-database'
 import {
   defaultCharacterAscension,
   defaultCharacterLevel,
@@ -7,8 +7,8 @@ import {
   defaultWeaponLevel,
   weaponMaxAscension,
   weaponMaxLevel,
-} from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
+} from '@genshin-optimizer/gi-consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { ArtCharDatabase } from '../ArtCharDatabase'
 import { initCharTC } from './BuildTcDataManager'
 

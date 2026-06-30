@@ -1,4 +1,4 @@
-import type { NumNode } from '@genshin-optimizer/pando/engine'
+import type { NumNode } from '@genshin-optimizer/pando-engine'
 import {
   cmpEq,
   cmpGE,
@@ -6,15 +6,15 @@ import {
   prod,
   subscript,
   sum,
-} from '@genshin-optimizer/pando/engine'
+} from '@genshin-optimizer/pando-engine'
 import {
   type AbilityKey,
   type StatBoostKey,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 import {
   type CharacterDatum,
   type SkillTreeNodeBonusStat,
-} from '@genshin-optimizer/sr/stats'
+} from '@genshin-optimizer/sr-stats'
 import type { DmgTag, FormulaArg, Stat } from '../util'
 import {
   type TagMapNodeEntries,

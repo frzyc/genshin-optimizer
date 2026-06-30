@@ -1,11 +1,16 @@
 {
   "extends": "../../../tsconfig.base.json",
-  "compilerOptions": {
-    "esModuleInterop": true
-  },
   "files": [],
-  "include": [],
   "references": [
+    {
+      "path": "../zood"
+    },
+    {
+      "path": "../../common/util"
+    },
+    {
+      "path": "../consts"
+    },
     {
       "path": "./tsconfig.lib.json"
     },

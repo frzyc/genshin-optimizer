@@ -3,13 +3,13 @@ import {
   InfoTooltip,
   ModalWrapper,
   usePrev,
-} from '@genshin-optimizer/common/ui'
-import { deepClone } from '@genshin-optimizer/common/util'
-import type { CustomMultiTarget } from '@genshin-optimizer/gi/db'
-import { initCustomMultiTarget } from '@genshin-optimizer/gi/db'
-import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { DataContext } from '@genshin-optimizer/gi/ui'
-import { UIData } from '@genshin-optimizer/gi/uidata'
+} from '@genshin-optimizer/common-ui'
+import { deepClone } from '@genshin-optimizer/common-util'
+import type { CustomMultiTarget } from '@genshin-optimizer/gi-db'
+import { initCustomMultiTarget } from '@genshin-optimizer/gi-db'
+import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi-db-ui'
+import { DataContext } from '@genshin-optimizer/gi-ui'
+import { UIData } from '@genshin-optimizer/gi-uidata'
 import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
 import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize'

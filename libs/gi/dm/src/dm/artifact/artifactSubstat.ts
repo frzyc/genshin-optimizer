@@ -1,4 +1,4 @@
-import { layeredAssignment } from '@genshin-optimizer/common/util'
+import { layeredAssignment } from '@genshin-optimizer/common-util'
 import type { DSubstatKey, SubstatKey } from '../../mapping'
 import { SubStatPropTypeMap } from '../../mapping'
 import { readDMJSON } from '../../util'

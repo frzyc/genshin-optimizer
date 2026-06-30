@@ -1,11 +1,11 @@
-import { range, verifyObjKeys } from '@genshin-optimizer/common/util'
-import type { StatKey } from '@genshin-optimizer/sr/consts'
+import { range, verifyObjKeys } from '@genshin-optimizer/common-util'
+import type { StatKey } from '@genshin-optimizer/sr-consts'
 import {
   type LightConeKey,
   type PathKey,
   type RarityKey,
   allLightConeKeys,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 import {
   avatarBaseTypeMap,
   equipmentConfig,
@@ -14,7 +14,7 @@ import {
   lightConeIdMap,
   lightConeRarityMap,
   statKeyMap,
-} from '@genshin-optimizer/sr/dm'
+} from '@genshin-optimizer/sr-dm'
 
 type Promotion = {
   atk: Scaling

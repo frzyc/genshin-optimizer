@@ -1,4 +1,4 @@
-import { RelicEditor, RelicInventory } from '@genshin-optimizer/sr/ui'
+import { RelicEditor, RelicInventory } from '@genshin-optimizer/sr-ui'
 import { Box } from '@mui/material'
 
 import { useState } from 'react'

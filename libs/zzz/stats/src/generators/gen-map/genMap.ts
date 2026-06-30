@@ -1,8 +1,8 @@
 import { existsSync, writeFileSync } from 'fs'
 import * as path from 'path'
-import { formatText } from '@genshin-optimizer/common/pipeline'
-import { objMap } from '@genshin-optimizer/common/util'
-import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
+import { formatText } from '@genshin-optimizer/common-pipeline'
+import { objMap } from '@genshin-optimizer/common-util'
+import type { CharacterKey } from '@genshin-optimizer/zzz-consts'
 import type { Tree } from '@nx/devkit'
 import { generateFiles } from '@nx/devkit'
 import { allStats } from '../../allStats'
@@ -37,7 +37,7 @@ export default async function genMap(
 // Generate char maps differently so we can have a definitely typed object
 async function generateCharMap(file_location: string, charKey: CharacterKey) {
   const file = `
-import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
+import type { CharacterKey } from '@genshin-optimizer/zzz-consts'
 import { getCharStat } from '../../../char'
 
 const key: CharacterKey = '${charKey}'

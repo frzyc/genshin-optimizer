@@ -2,20 +2,20 @@ import {
   BootstrapTooltip,
   CardThemed,
   SqBadge,
-} from '@genshin-optimizer/common/ui'
-import { objKeyMap, objMap, valueString } from '@genshin-optimizer/common/util'
-import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
-import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
-import type { GeneratedBuild, ICachedArtifact } from '@genshin-optimizer/gi/db'
-import { CharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import type { Unit } from '@genshin-optimizer/gi/keymap'
+} from '@genshin-optimizer/common-ui'
+import { objKeyMap, objMap, valueString } from '@genshin-optimizer/common-util'
+import type { ArtifactSlotKey } from '@genshin-optimizer/gi-consts'
+import { allArtifactSlotKeys } from '@genshin-optimizer/gi-consts'
+import type { GeneratedBuild, ICachedArtifact } from '@genshin-optimizer/gi-db'
+import { CharacterContext, useDatabase } from '@genshin-optimizer/gi-db-ui'
+import type { Unit } from '@genshin-optimizer/gi-keymap'
 import {
   ArtifactCardPico,
   ArtifactSetBadges,
   DataContext,
   WeaponCardPico,
-} from '@genshin-optimizer/gi/ui'
-import { input } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-ui'
+import { input } from '@genshin-optimizer/gi-wr'
 import CloseIcon from '@mui/icons-material/Close'
 import {
   Box,

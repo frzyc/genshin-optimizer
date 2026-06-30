@@ -3,25 +3,25 @@ import {
   ColorText,
   DropdownButton,
   NumberInputLazy,
-} from '@genshin-optimizer/common/ui'
-import { type UnArray, isPercentStat } from '@genshin-optimizer/common/util'
-import type { AttributeKey } from '@genshin-optimizer/zzz/consts'
-import { allAttributeKeys } from '@genshin-optimizer/zzz/consts'
-import type { StatFilterTag } from '@genshin-optimizer/zzz/db'
-import { statFilterStatQtKeys } from '@genshin-optimizer/zzz/db'
+} from '@genshin-optimizer/common-ui'
+import { type UnArray, isPercentStat } from '@genshin-optimizer/common-util'
+import type { AttributeKey } from '@genshin-optimizer/zzz-consts'
+import { allAttributeKeys } from '@genshin-optimizer/zzz-consts'
+import type { StatFilterTag } from '@genshin-optimizer/zzz-db'
+import { statFilterStatQtKeys } from '@genshin-optimizer/zzz-db'
 import {
   type StatFilterStatKey,
   type StatFilters,
   newStatFilterTag,
   statFilterStatKeys,
-} from '@genshin-optimizer/zzz/db'
+} from '@genshin-optimizer/zzz-db'
 import {
   OptConfigContext,
   useDatabaseContext,
-} from '@genshin-optimizer/zzz/db-ui'
-import type { Tag } from '@genshin-optimizer/zzz/formula'
-import { TagDisplay, qtMap } from '@genshin-optimizer/zzz/formula-ui'
-import { AttributeName, StatDisplay } from '@genshin-optimizer/zzz/ui'
+} from '@genshin-optimizer/zzz-db-ui'
+import type { Tag } from '@genshin-optimizer/zzz-formula'
+import { TagDisplay, qtMap } from '@genshin-optimizer/zzz-formula-ui'
+import { AttributeName, StatDisplay } from '@genshin-optimizer/zzz-ui'
 import {
   CheckBox,
   CheckBoxOutlineBlank,

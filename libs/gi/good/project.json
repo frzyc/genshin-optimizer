@@ -1,5 +1,5 @@
 {
-  "name": "gi-good",
+  "name": "@genshin-optimizer/gi-good",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/gi/good/src",
   "projectType": "library",

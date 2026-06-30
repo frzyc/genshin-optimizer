@@ -1,8 +1,0 @@
-{
-  "name": "gi-page-settings",
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/gi/page-settings/src",
-  "projectType": "library",
-  "tags": [],
-  "targets": {}
-}

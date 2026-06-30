@@ -1,29 +1,29 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
 import {
   CardThemed,
   ImgIcon,
   ModalWrapper,
   SqBadge,
   TextFieldLazy,
-} from '@genshin-optimizer/common/ui'
-import { getUnitStr } from '@genshin-optimizer/common/util'
-import { artifactAsset } from '@genshin-optimizer/gi/assets'
-import { getCharLevelString } from '@genshin-optimizer/gi/consts'
-import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
+} from '@genshin-optimizer/common-ui'
+import { getUnitStr } from '@genshin-optimizer/common-util'
+import { artifactAsset } from '@genshin-optimizer/gi-assets'
+import { getCharLevelString } from '@genshin-optimizer/gi-consts'
+import type { ICachedWeapon } from '@genshin-optimizer/gi-db'
 import {
   TeamCharacterContext,
   useBuildTc,
   useDatabase,
-} from '@genshin-optimizer/gi/db-ui'
-import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
-import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
+} from '@genshin-optimizer/gi-db-ui'
+import { getWeaponSheet } from '@genshin-optimizer/gi-sheets'
+import { SlotIcon } from '@genshin-optimizer/gi-svgicons'
 import {
   ArtifactSetName,
   BuildCard,
   StatWithUnit,
   WeaponCardNanoObj,
-} from '@genshin-optimizer/gi/ui'
-import { artDisplayValue } from '@genshin-optimizer/gi/util'
+} from '@genshin-optimizer/gi-ui'
+import { artDisplayValue } from '@genshin-optimizer/gi-util'
 import CloseIcon from '@mui/icons-material/Close'
 import {
   Box,

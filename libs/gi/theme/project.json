@@ -1,8 +1,0 @@
-{
-  "name": "gi-theme",
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/gi/theme/src",
-  "projectType": "library",
-  "tags": [],
-  "targets": {}
-}

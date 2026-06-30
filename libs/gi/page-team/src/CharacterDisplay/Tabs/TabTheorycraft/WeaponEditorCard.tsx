@@ -1,10 +1,10 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { CardThemed } from '@genshin-optimizer/common/ui'
-import { weaponAsset } from '@genshin-optimizer/gi/assets'
-import type { WeaponTypeKey } from '@genshin-optimizer/gi/consts'
-import type { BuildTc, ICachedWeapon } from '@genshin-optimizer/gi/db'
-import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
-import { getWeaponStat, weaponHasRefinement } from '@genshin-optimizer/gi/stats'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
+import { CardThemed } from '@genshin-optimizer/common-ui'
+import { weaponAsset } from '@genshin-optimizer/gi-assets'
+import type { WeaponTypeKey } from '@genshin-optimizer/gi-consts'
+import type { BuildTc, ICachedWeapon } from '@genshin-optimizer/gi-db'
+import { getWeaponSheet } from '@genshin-optimizer/gi-sheets'
+import { getWeaponStat, weaponHasRefinement } from '@genshin-optimizer/gi-stats'
 import {
   DataContext,
   DocumentDisplay,
@@ -14,9 +14,9 @@ import {
   WeaponLevelSelect,
   WeaponName,
   WeaponSelectionModal,
-} from '@genshin-optimizer/gi/ui'
-import { computeUIData } from '@genshin-optimizer/gi/uidata'
-import { dataObjForWeapon, uiInput as input } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-ui'
+import { computeUIData } from '@genshin-optimizer/gi-uidata'
+import { dataObjForWeapon, uiInput as input } from '@genshin-optimizer/gi-wr'
 import {
   Box,
   Button,

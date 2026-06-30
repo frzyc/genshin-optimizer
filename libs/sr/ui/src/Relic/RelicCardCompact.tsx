@@ -1,32 +1,32 @@
-import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
-import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
+import { iconInlineProps } from '@genshin-optimizer/common-svgicons'
+import type { CardBackgroundColor } from '@genshin-optimizer/common-ui'
 import {
   CardThemed,
   ConditionalWrapper,
   SqBadge,
-} from '@genshin-optimizer/common/ui'
-import { getUnitStr, toPercent } from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-ui'
+import { getUnitStr, toPercent } from '@genshin-optimizer/common-util'
 import {
   characterAsset,
   characterKeyToGenderedKey,
   relicAsset,
-} from '@genshin-optimizer/sr/assets'
+} from '@genshin-optimizer/sr-assets'
 import type {
   RelicSetKey,
   RelicSlotKey,
   RelicSubStatKey,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 import type {
   IBuildTc,
   ICachedRelic,
   ICachedSubstat,
-} from '@genshin-optimizer/sr/db'
-import { useRelic } from '@genshin-optimizer/sr/db-ui'
-import { SlotIcon, StatIcon } from '@genshin-optimizer/sr/svgicons'
+} from '@genshin-optimizer/sr-db'
+import { useRelic } from '@genshin-optimizer/sr-db-ui'
+import { SlotIcon, StatIcon } from '@genshin-optimizer/sr-svgicons'
 import {
   getRelicMainStatDisplayVal,
   statToFixed,
-} from '@genshin-optimizer/sr/util'
+} from '@genshin-optimizer/sr-util'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import { Box, CardActionArea, Chip, Typography } from '@mui/material'
 import type { ReactNode } from 'react'

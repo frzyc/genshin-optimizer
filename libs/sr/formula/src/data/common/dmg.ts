@@ -1,4 +1,4 @@
-import { lookup, prod, sum, sumfrac } from '@genshin-optimizer/pando/engine'
+import { lookup, prod, sum, sumfrac } from '@genshin-optimizer/pando-engine'
 import type { TagMapNodeEntries } from '../util'
 import { enemy, enemyDebuff, own, ownBuff, percent } from '../util'
 

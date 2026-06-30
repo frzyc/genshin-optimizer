@@ -2,21 +2,21 @@ import {
   CardThemed,
   ConditionalWrapper,
   DropdownButton,
-} from '@genshin-optimizer/common/ui'
-import { range } from '@genshin-optimizer/common/util'
-import { maxConstellationCount } from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/common-ui'
+import { range } from '@genshin-optimizer/common-util'
+import { maxConstellationCount } from '@genshin-optimizer/gi-consts'
 import {
   CharacterContext,
   TeamCharacterContext,
   useDBMeta,
   useDatabase,
-} from '@genshin-optimizer/gi/db-ui'
-import { isTalentKey } from '@genshin-optimizer/gi/good'
+} from '@genshin-optimizer/gi-db-ui'
+import { isTalentKey } from '@genshin-optimizer/gi-good'
 import {
   type DocumentSection,
   type TalentSheetElementKey,
   getCharSheet,
-} from '@genshin-optimizer/gi/sheets'
+} from '@genshin-optimizer/gi-sheets'
 import {
   DataContext,
   DocumentDisplay,
@@ -24,9 +24,9 @@ import {
   NodeFieldDisplay,
   ReactionToggle,
   TalentDropdown,
-} from '@genshin-optimizer/gi/ui'
-import type { CalcResult } from '@genshin-optimizer/gi/uidata'
-import { uiInput as input } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-ui'
+import type { CalcResult } from '@genshin-optimizer/gi-uidata'
+import { uiInput as input } from '@genshin-optimizer/gi-wr'
 import {
   Box,
   CardActionArea,

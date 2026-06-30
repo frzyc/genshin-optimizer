@@ -1,5 +1,5 @@
-import { dumpFile } from '@genshin-optimizer/common/pipeline'
-import { layeredAssignment } from '@genshin-optimizer/common/util'
+import { dumpFile } from '@genshin-optimizer/common-pipeline'
+import { layeredAssignment } from '@genshin-optimizer/common-util'
 import type {
   ArtifactSetKey,
   ArtifactSlotKey,
@@ -7,12 +7,12 @@ import type {
   NonTravelerCharacterKey,
   TravelerKey,
   WeaponKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import type {
   AvatarSkillDepotExcelConfigData,
   CharacterId,
   WeaponId,
-} from '@genshin-optimizer/gi/dm'
+} from '@genshin-optimizer/gi-dm'
 import {
   artifactIdMap,
   artifactSlotMap,
@@ -35,7 +35,7 @@ import {
   rewardExcelConfigData,
   weaponExcelConfigData,
   weaponIdMap,
-} from '@genshin-optimizer/gi/dm'
+} from '@genshin-optimizer/gi-dm'
 import type { PromiseExecutor } from '@nx/devkit'
 import { workspaceRoot } from '@nx/devkit'
 import type { GenAssetsDataExecutorSchema } from './schema'

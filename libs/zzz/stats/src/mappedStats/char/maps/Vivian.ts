@@ -1,4 +1,4 @@
-import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
+import type { CharacterKey } from '@genshin-optimizer/zzz-consts'
 import { getCharStat } from '../../../char'
 
 const key: CharacterKey = 'Vivian'

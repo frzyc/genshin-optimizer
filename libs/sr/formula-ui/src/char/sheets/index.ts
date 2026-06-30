@@ -1,5 +1,5 @@
-import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
-import type { CharacterKey } from '@genshin-optimizer/sr/consts'
+import type { UISheet } from '@genshin-optimizer/game-opt-sheet-ui'
+import type { CharacterKey } from '@genshin-optimizer/sr-consts'
 import type { TalentSheetElementKey } from '../consts'
 import Acheron from './Acheron'
 import Aglaea from './Aglaea'

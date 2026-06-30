@@ -4,9 +4,9 @@ import {
   getUnitStr,
   layeredAssignment,
   objPathValue,
-} from '@genshin-optimizer/common/util'
-import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
-import { KeyMap } from '@genshin-optimizer/gi/keymap'
+} from '@genshin-optimizer/common-util'
+import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi-consts'
+import { KeyMap } from '@genshin-optimizer/gi-keymap'
 import type {
   ComputeNode,
   Data,
@@ -21,7 +21,7 @@ import type {
   SubscriptNode,
   ThresholdNode,
   UIInput,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 import {
   allOperations,
   constant,
@@ -30,7 +30,7 @@ import {
   mergeData,
   resetData,
   uiInput,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 import type { ReactNode } from 'react'
 
 /**

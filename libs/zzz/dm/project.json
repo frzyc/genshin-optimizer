@@ -1,5 +1,5 @@
 {
-  "name": "zzz-dm",
+  "name": "@genshin-optimizer/zzz-dm",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/zzz/dm/src",
   "projectType": "library",

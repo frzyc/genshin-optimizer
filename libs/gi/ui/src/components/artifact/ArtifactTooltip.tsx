@@ -1,14 +1,14 @@
-import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import { iconInlineProps } from '@genshin-optimizer/common-svgicons'
 import {
   BootstrapTooltip,
   SqBadge,
   StarsDisplay,
-} from '@genshin-optimizer/common/ui'
-import { clamp } from '@genshin-optimizer/common/util'
-import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
-import { KeyMap } from '@genshin-optimizer/gi/keymap'
-import { SlotIcon, StatIcon } from '@genshin-optimizer/gi/svgicons'
-import { getMainStatDisplayStr } from '@genshin-optimizer/gi/util'
+} from '@genshin-optimizer/common-ui'
+import { clamp } from '@genshin-optimizer/common-util'
+import type { ICachedArtifact } from '@genshin-optimizer/gi-db'
+import { KeyMap } from '@genshin-optimizer/gi-keymap'
+import { SlotIcon, StatIcon } from '@genshin-optimizer/gi-svgicons'
+import { getMainStatDisplayStr } from '@genshin-optimizer/gi-util'
 import { Box, Skeleton, Typography } from '@mui/material'
 import { Suspense } from 'react'
 import { useTranslation } from 'react-i18next'

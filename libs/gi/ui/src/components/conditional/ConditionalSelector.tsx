@@ -1,17 +1,17 @@
-import { DropdownButton, SqBadge } from '@genshin-optimizer/common/ui'
+import { DropdownButton, SqBadge } from '@genshin-optimizer/common-ui'
 import {
   deepClone,
   deletePropPath,
   evalIfFunc,
   layeredAssignment,
-} from '@genshin-optimizer/common/util'
-import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
+} from '@genshin-optimizer/common-util'
+import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi-db-ui'
 import { Translate } from '@genshin-optimizer/gi/i18n'
 import type {
   DocumentConditional,
   IDocumentConditionalExclusive,
   IDocumentConditionalMultiple,
-} from '@genshin-optimizer/gi/sheets'
+} from '@genshin-optimizer/gi-sheets'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
 import type { ButtonProps, Palette } from '@mui/material'

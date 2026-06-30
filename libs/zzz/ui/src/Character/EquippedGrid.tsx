@@ -1,17 +1,17 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { ImgIcon } from '@genshin-optimizer/common/ui'
-import { specialityDefIcon } from '@genshin-optimizer/zzz/assets'
-import type { DiscSlotKey, SpecialityKey } from '@genshin-optimizer/zzz/consts'
-import { allSpecialityKeys } from '@genshin-optimizer/zzz/consts'
-import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
+import { ImgIcon } from '@genshin-optimizer/common-ui'
+import { specialityDefIcon } from '@genshin-optimizer/zzz-assets'
+import type { DiscSlotKey, SpecialityKey } from '@genshin-optimizer/zzz-consts'
+import { allSpecialityKeys } from '@genshin-optimizer/zzz-consts'
+import type { ICachedDisc } from '@genshin-optimizer/zzz-db'
 import {
   CharacterContext,
   useDatabaseContext,
   useDisc,
   useDiscs,
   useWengine,
-} from '@genshin-optimizer/zzz/db-ui'
-import { getCharStat } from '@genshin-optimizer/zzz/stats'
+} from '@genshin-optimizer/zzz-db-ui'
+import { getCharStat } from '@genshin-optimizer/zzz-stats'
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz'
 import {
   Box,

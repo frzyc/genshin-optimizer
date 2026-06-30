@@ -1,9 +1,9 @@
-import { objKeyValMap } from '@genshin-optimizer/common/util'
+import { objKeyValMap } from '@genshin-optimizer/common-util'
 import {
   type WeaponKey,
   allLunarReactionKeys,
-} from '@genshin-optimizer/gi/consts'
-import { equal, infoMut, input, subscript, sum } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-consts'
+import { equal, infoMut, input, subscript, sum } from '@genshin-optimizer/gi-wr'
 import { cond, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { WeaponSheet, headerTemplate } from '../../WeaponSheet'

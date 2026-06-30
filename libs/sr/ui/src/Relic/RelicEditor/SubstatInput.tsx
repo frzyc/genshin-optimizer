@@ -5,25 +5,25 @@ import {
   DropdownButton,
   SqBadge,
   TextButton,
-} from '@genshin-optimizer/common/ui'
+} from '@genshin-optimizer/common-ui'
 import {
   clamp,
   getUnitStr,
   roundStat,
   toPercent,
-} from '@genshin-optimizer/common/util'
-import type { RelicSubStatKey } from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/common-util'
+import type { RelicSubStatKey } from '@genshin-optimizer/sr-consts'
 import {
   allRelicSubStatKeys,
   relicSubstatRollData,
-} from '@genshin-optimizer/sr/consts'
-import type { ICachedRelic } from '@genshin-optimizer/sr/db'
-import type { ISubstat } from '@genshin-optimizer/sr/srod'
-import { StatIcon } from '@genshin-optimizer/sr/svgicons'
+} from '@genshin-optimizer/sr-consts'
+import type { ICachedRelic } from '@genshin-optimizer/sr-db'
+import type { ISubstat } from '@genshin-optimizer/sr-srod'
+import { StatIcon } from '@genshin-optimizer/sr-svgicons'
 import {
   getSubstatSummedRolls,
   getSubstatValuesPercent,
-} from '@genshin-optimizer/sr/util'
+} from '@genshin-optimizer/sr-util'
 import {
   Box,
   ButtonGroup,

@@ -1,9 +1,9 @@
-import { ImgIcon } from '@genshin-optimizer/common/ui'
+import { ImgIcon } from '@genshin-optimizer/common-ui'
 import {
   characterAsset,
   characterKeyToGenderedKey,
-} from '@genshin-optimizer/sr/assets'
-import type { LocationKey } from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-assets'
+import type { LocationKey } from '@genshin-optimizer/sr-consts'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import type { TypographyProps } from '@mui/material'
 import { Box, Typography } from '@mui/material'

@@ -1,19 +1,19 @@
 import {
   DBLocalStorage,
   SandboxStorage,
-} from '@genshin-optimizer/common/database'
-import { ScrollTop, useRefSize, useTitle } from '@genshin-optimizer/common/ui'
-import { ArtCharDatabase } from '@genshin-optimizer/gi/db'
-import { DatabaseContext } from '@genshin-optimizer/gi/db-ui'
+} from '@genshin-optimizer/common-database'
+import { ScrollTop, useRefSize, useTitle } from '@genshin-optimizer/common-ui'
+import { ArtCharDatabase } from '@genshin-optimizer/gi-db'
+import { DatabaseContext } from '@genshin-optimizer/gi-db-ui'
 import '@genshin-optimizer/gi/i18n' // import to load translations
-import { theme } from '@genshin-optimizer/gi/theme'
+import { theme } from '@genshin-optimizer/gi-theme'
 import {
   GOAdWrapper,
   SillyContext,
   SnowContext,
   useSilly,
   useSnow,
-} from '@genshin-optimizer/gi/ui'
+} from '@genshin-optimizer/gi-ui'
 import {
   Box,
   Container,
@@ -30,7 +30,7 @@ import {
   AdBanner,
   AdBlockContextWrapper,
   AdRailSticky,
-} from '@genshin-optimizer/common/ad'
+} from '@genshin-optimizer/common-ad'
 import ErrorBoundary from './ErrorBoundary'
 import Footer from './Footer'
 import Header from './Header'

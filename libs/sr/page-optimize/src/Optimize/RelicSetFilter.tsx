@@ -1,22 +1,22 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
 import {
   CardThemed,
   DropdownButton,
   ImgIcon,
   ModalWrapper,
-} from '@genshin-optimizer/common/ui'
-import { toggleInArr } from '@genshin-optimizer/common/util'
-import { relicAsset } from '@genshin-optimizer/sr/assets'
+} from '@genshin-optimizer/common-ui'
+import { toggleInArr } from '@genshin-optimizer/common-util'
+import { relicAsset } from '@genshin-optimizer/sr-assets'
 import type {
   RelicCavernSetKey,
   RelicPlanarSetKey,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 import {
   allRelicCavernSetKeys,
   allRelicPlanarSetKeys,
-} from '@genshin-optimizer/sr/consts'
-import { RelicSetName } from '@genshin-optimizer/sr/ui'
-import { getDefaultRelicSlot } from '@genshin-optimizer/sr/util'
+} from '@genshin-optimizer/sr-consts'
+import { RelicSetName } from '@genshin-optimizer/sr-ui'
+import { getDefaultRelicSlot } from '@genshin-optimizer/sr-util'
 import CloseIcon from '@mui/icons-material/Close'
 import {
   Box,

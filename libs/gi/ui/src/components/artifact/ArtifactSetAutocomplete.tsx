@@ -1,15 +1,15 @@
-import type { GeneralAutocompleteProps } from '@genshin-optimizer/common/ui'
+import type { GeneralAutocompleteProps } from '@genshin-optimizer/common-ui'
 import {
   GeneralAutocomplete,
   ImgIcon,
   StarsDisplay,
-} from '@genshin-optimizer/common/ui'
-import { artifactDefIcon } from '@genshin-optimizer/gi/assets'
+} from '@genshin-optimizer/common-ui'
+import { artifactDefIcon } from '@genshin-optimizer/gi-assets'
 import type {
   ArtifactRarity,
   ArtifactSetKey,
-} from '@genshin-optimizer/gi/consts'
-import { setKeysByRarities } from '@genshin-optimizer/gi/util'
+} from '@genshin-optimizer/gi-consts'
+import { setKeysByRarities } from '@genshin-optimizer/gi-util'
 import type { AutocompleteRenderGroupParams } from '@mui/material'
 import { Box, List, ListSubheader } from '@mui/material'
 import { useCallback, useMemo } from 'react'

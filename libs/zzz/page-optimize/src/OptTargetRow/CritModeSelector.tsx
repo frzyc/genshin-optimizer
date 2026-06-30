@@ -1,12 +1,12 @@
-import { DropdownButton } from '@genshin-optimizer/common/ui'
-import type { critModeKey } from '@genshin-optimizer/zzz/db'
-import { critModeKeys } from '@genshin-optimizer/zzz/db'
-import { getTeamFrame0 } from '@genshin-optimizer/zzz/db'
+import { DropdownButton } from '@genshin-optimizer/common-ui'
+import type { critModeKey } from '@genshin-optimizer/zzz-db'
+import { critModeKeys } from '@genshin-optimizer/zzz-db'
+import { getTeamFrame0 } from '@genshin-optimizer/zzz-db'
 import {
   useCharacterContext,
   useDatabaseContext,
   useTeam,
-} from '@genshin-optimizer/zzz/db-ui'
+} from '@genshin-optimizer/zzz-db-ui'
 import { Box, MenuItem } from '@mui/material'
 
 // TODO: translation

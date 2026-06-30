@@ -1,13 +1,13 @@
-import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
-import { SqBadge } from '@genshin-optimizer/common/ui'
-import { notEmpty } from '@genshin-optimizer/common/util'
+import { iconInlineProps } from '@genshin-optimizer/common-svgicons'
+import { SqBadge } from '@genshin-optimizer/common-ui'
+import { notEmpty } from '@genshin-optimizer/common-util'
 import type {
   ArtifactSetKey,
   ArtifactSlotKey,
-} from '@genshin-optimizer/gi/consts'
-import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
-import { getArtSheet } from '@genshin-optimizer/gi/sheets'
-import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
+} from '@genshin-optimizer/gi-consts'
+import type { ICachedArtifact } from '@genshin-optimizer/gi-db'
+import { getArtSheet } from '@genshin-optimizer/gi-sheets'
+import { SlotIcon } from '@genshin-optimizer/gi-svgicons'
 import { Box, Typography } from '@mui/material'
 import { useMemo } from 'react'
 import { ArtifactSetTooltip } from './ArtifactSetTooltip'

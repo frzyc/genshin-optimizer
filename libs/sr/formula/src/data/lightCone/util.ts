@@ -1,13 +1,13 @@
-import { registerEquipment } from '@genshin-optimizer/game-opt/formula'
+import { registerEquipment } from '@genshin-optimizer/game-opt-formula'
 import {
   cmpEq,
   cmpGE,
   prod,
   subscript,
   sum,
-} from '@genshin-optimizer/pando/engine'
-import type { LightConeKey } from '@genshin-optimizer/sr/consts'
-import type { LightConeDatum } from '@genshin-optimizer/sr/stats'
+} from '@genshin-optimizer/pando-engine'
+import type { LightConeKey } from '@genshin-optimizer/sr-consts'
+import type { LightConeDatum } from '@genshin-optimizer/sr-stats'
 import type { Tag, TagMapNodeEntries, TagMapNodeEntry } from '../util'
 import { getStatFromStatKey, own, ownBuff, registerBuff } from '../util'
 

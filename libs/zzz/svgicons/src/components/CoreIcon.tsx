@@ -1,4 +1,4 @@
-import type { CoreKey } from '@genshin-optimizer/zzz/consts'
+import type { CoreKey } from '@genshin-optimizer/zzz-consts'
 import type { SvgIconProps } from '@mui/material'
 import {
   ACoreIcon,

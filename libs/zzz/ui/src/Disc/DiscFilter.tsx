@@ -1,9 +1,9 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
+import { CardThemed } from '@genshin-optimizer/common-ui'
 import {
   useDatabaseContext,
   useDisplayDisc,
-} from '@genshin-optimizer/zzz/db-ui'
-import type { DiscFilterOption } from '@genshin-optimizer/zzz/util'
+} from '@genshin-optimizer/zzz-db-ui'
+import type { DiscFilterOption } from '@genshin-optimizer/zzz-util'
 import ReplayIcon from '@mui/icons-material/Replay'
 import { Button, CardContent, Grid, Skeleton, Typography } from '@mui/material'
 import { t } from 'i18next'

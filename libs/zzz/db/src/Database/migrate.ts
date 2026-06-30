@@ -5,9 +5,9 @@
 // 3. Update `currentDBVersion`
 // 4. Test on import, and also on version update
 
-import type { DBStorage } from '@genshin-optimizer/common/database'
-import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import type { ICharacter, IWengine } from '@genshin-optimizer/zzz/zood'
+import type { DBStorage } from '@genshin-optimizer/common-database'
+import type { CharacterKey } from '@genshin-optimizer/zzz-consts'
+import type { ICharacter, IWengine } from '@genshin-optimizer/zzz-zood'
 import type {
   ICharMeta,
   IZZZDatabase,

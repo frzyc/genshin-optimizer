@@ -4,7 +4,7 @@ import {
   zodClampedNumber,
   zodEnum,
   zodEnumWithDefault,
-} from '@genshin-optimizer/common/database'
+} from '@genshin-optimizer/common-database'
 import {
   type AscensionKey,
   type RefinementKey,
@@ -12,8 +12,8 @@ import {
   allLocationCharacterKeys,
   allWeaponKeys,
   validateWeaponLevelAsc,
-} from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
+} from '@genshin-optimizer/gi-consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { z } from 'zod'
 
 const weaponBaseSchema = z

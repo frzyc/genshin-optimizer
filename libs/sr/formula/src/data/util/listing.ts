@@ -4,7 +4,7 @@ import {
   allLightConeKeys,
   allPathKeys,
   allRelicSetKeys,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 
 const stats = [
   'hp',

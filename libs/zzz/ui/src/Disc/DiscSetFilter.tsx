@@ -1,14 +1,14 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
 import {
   CardThemed,
   DropdownButton,
   ImgIcon,
   ModalWrapper,
-} from '@genshin-optimizer/common/ui'
-import { toggleInArr } from '@genshin-optimizer/common/util'
-import { discDefIcon } from '@genshin-optimizer/zzz/assets'
-import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
-import { allDiscSetKeys } from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/common-ui'
+import { toggleInArr } from '@genshin-optimizer/common-util'
+import { discDefIcon } from '@genshin-optimizer/zzz-assets'
+import type { DiscSetKey } from '@genshin-optimizer/zzz-consts'
+import { allDiscSetKeys } from '@genshin-optimizer/zzz-consts'
 import CloseIcon from '@mui/icons-material/Close'
 import {
   Box,

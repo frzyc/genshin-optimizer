@@ -1,4 +1,4 @@
-import { optimize } from '@genshin-optimizer/gi/wr'
+import { optimize } from '@genshin-optimizer/gi-wr'
 import { pruneAll, pruneExclusion } from '../common'
 import { WorkerCoordinator } from '../coordinator'
 import type {

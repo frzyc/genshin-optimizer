@@ -2,12 +2,12 @@ import type {
   AnyNode,
   ReRead,
   TagMapEntries,
-} from '@genshin-optimizer/pando/engine'
+} from '@genshin-optimizer/pando-engine'
 import {
   TagMapSubset,
   compileTagMapValues,
   constant,
-} from '@genshin-optimizer/pando/engine'
+} from '@genshin-optimizer/pando-engine'
 import { Calculator } from './calculator'
 import { keys, values } from './data'
 import type { Tag } from './data/util'

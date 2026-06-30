@@ -1,8 +1,8 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
-import { artifactAsset, imgAssets } from '@genshin-optimizer/gi/assets'
-import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
-import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
-import { StatIcon } from '@genshin-optimizer/gi/svgicons'
+import { CardThemed } from '@genshin-optimizer/common-ui'
+import { artifactAsset, imgAssets } from '@genshin-optimizer/gi-assets'
+import type { ArtifactSlotKey } from '@genshin-optimizer/gi-consts'
+import type { ICachedArtifact } from '@genshin-optimizer/gi-db'
+import { StatIcon } from '@genshin-optimizer/gi-svgicons'
 import { Box, Typography } from '@mui/material'
 import { ArtifactTooltip } from './ArtifactTooltip'
 

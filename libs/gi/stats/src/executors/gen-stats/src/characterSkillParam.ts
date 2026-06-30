@@ -1,16 +1,16 @@
 import {
   layeredAssignment,
   transposeArray,
-} from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-util'
 import type {
   CharacterSkillKey,
   NonTravelerCharacterKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import type {
   AvatarSkillDepotExcelConfigData,
   CharacterId,
   ProudSkillExcelConfigData,
-} from '@genshin-optimizer/gi/dm'
+} from '@genshin-optimizer/gi-dm'
 import {
   TextMapEN,
   avatarExcelConfigData,
@@ -21,7 +21,7 @@ import {
   getHakushinCharData,
   hakushinChars,
   proudSkillExcelConfigData,
-} from '@genshin-optimizer/gi/dm'
+} from '@genshin-optimizer/gi-dm'
 import * as somniaData from './Somnia/skillParam.json'
 
 type CharacterSkillParams = {

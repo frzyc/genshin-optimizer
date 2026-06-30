@@ -1,18 +1,18 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
 import {
   CardThemed,
   ModalWrapper,
   TextFieldLazy,
-} from '@genshin-optimizer/common/ui'
-import { charKeyToLocCharKey } from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/common-ui'
+import { charKeyToLocCharKey } from '@genshin-optimizer/gi-consts'
 import {
   CharacterContext,
   TeamCharacterContext,
   useBuild,
   useDatabase,
   useEquippedInTeam,
-} from '@genshin-optimizer/gi/db-ui'
-import { getCharStat } from '@genshin-optimizer/gi/stats'
+} from '@genshin-optimizer/gi-db-ui'
+import { getCharStat } from '@genshin-optimizer/gi-stats'
 import {
   ArtifactCardNano,
   BuildCard,
@@ -21,7 +21,7 @@ import {
   EquippedGrid,
   TeammateEquippedAlert,
   WeaponCardNano,
-} from '@genshin-optimizer/gi/ui'
+} from '@genshin-optimizer/gi-ui'
 import CloseIcon from '@mui/icons-material/Close'
 import {
   Box,

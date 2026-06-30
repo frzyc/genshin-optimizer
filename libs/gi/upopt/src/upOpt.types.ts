@@ -1,5 +1,5 @@
-import type { ArtifactRarity, SubstatKey } from '@genshin-optimizer/gi/consts'
-import type { DynStat } from '@genshin-optimizer/gi/solver'
+import type { ArtifactRarity, SubstatKey } from '@genshin-optimizer/gi-consts'
+import type { DynStat } from '@genshin-optimizer/gi-solver'
 import type {
   EvaluatedGaussian,
   GaussianNode,

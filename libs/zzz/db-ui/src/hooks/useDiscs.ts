@@ -1,6 +1,6 @@
-import { objKeyMap } from '@genshin-optimizer/common/util'
-import type { DiscSlotKey } from '@genshin-optimizer/zzz/consts'
-import { allDiscSlotKeys } from '@genshin-optimizer/zzz/consts'
+import { objKeyMap } from '@genshin-optimizer/common-util'
+import type { DiscSlotKey } from '@genshin-optimizer/zzz-consts'
+import { allDiscSlotKeys } from '@genshin-optimizer/zzz-consts'
 import { useMemo } from 'react'
 import { useDisc } from './useDisc'
 

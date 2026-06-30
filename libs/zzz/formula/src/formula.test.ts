@@ -3,14 +3,14 @@ import {
   compileTagMapValues,
   read,
   setDebugMode,
-} from '@genshin-optimizer/pando/engine'
-import type { MilestoneKey, WengineKey } from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/pando-engine'
+import type { MilestoneKey, WengineKey } from '@genshin-optimizer/zzz-consts'
 import {
   type CharacterKey,
   allCharacterKeys,
   allDiscSetKeys,
   allWengineKeys,
-} from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-consts'
 import {
   charTagMapNodeEntries,
   conditionals,

@@ -1,8 +1,0 @@
-{
-  "name": "gi-uidata",
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/gi/uidata/src",
-  "projectType": "library",
-  "tags": [],
-  "targets": {}
-}

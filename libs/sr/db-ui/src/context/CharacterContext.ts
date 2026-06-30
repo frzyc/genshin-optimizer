@@ -1,4 +1,4 @@
-import type { ICachedCharacter } from '@genshin-optimizer/sr/db'
+import type { ICachedCharacter } from '@genshin-optimizer/sr-db'
 import { createContext, useContext } from 'react'
 
 export const CharacterContext = createContext(

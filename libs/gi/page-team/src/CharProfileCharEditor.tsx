@@ -3,14 +3,14 @@ import {
   CardThemed,
   ImgIcon,
   ModalWrapper,
-} from '@genshin-optimizer/common/ui'
-import { allTravelerKeys } from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/common-ui'
+import { allTravelerKeys } from '@genshin-optimizer/gi-consts'
 import {
   CharacterContext,
   useDBMeta,
   useDatabase,
-} from '@genshin-optimizer/gi/db-ui'
-import { getCharSheet } from '@genshin-optimizer/gi/sheets'
+} from '@genshin-optimizer/gi-db-ui'
+import { getCharSheet } from '@genshin-optimizer/gi-sheets'
 import {
   CharacterCompactConstSelector,
   CharacterConstellationName,
@@ -20,7 +20,7 @@ import {
   CloseIcon,
   TalentDropdown,
   UnCheckIcon,
-} from '@genshin-optimizer/gi/ui'
+} from '@genshin-optimizer/gi-ui'
 import {
   Box,
   Button,

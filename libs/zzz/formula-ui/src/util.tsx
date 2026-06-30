@@ -1,10 +1,10 @@
-import type { TagField } from '@genshin-optimizer/game-opt/sheet-ui'
+import type { TagField } from '@genshin-optimizer/game-opt-sheet-ui'
 import type {
   CharacterKey,
   DiscSetKey,
   WengineKey,
-} from '@genshin-optimizer/zzz/consts'
-import type { Tag } from '@genshin-optimizer/zzz/formula'
+} from '@genshin-optimizer/zzz-consts'
+import type { Tag } from '@genshin-optimizer/zzz-formula'
 import { Translate } from '@genshin-optimizer/zzz/i18n'
 import type { ReactNode } from 'react'
 import { TagDisplay } from './components'

@@ -1,7 +1,7 @@
-import { ColorText } from '@genshin-optimizer/common/ui'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
-import type { NumNode } from '@genshin-optimizer/gi/wr'
+import { ColorText } from '@genshin-optimizer/common-ui'
+import type { CharacterKey } from '@genshin-optimizer/gi-consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
+import type { NumNode } from '@genshin-optimizer/gi-wr'
 import {
   constant,
   equal,
@@ -12,7 +12,7 @@ import {
   input,
   percent,
   prod,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
 import type { TalentSheet } from '../ICharacterSheet'

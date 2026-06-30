@@ -1,12 +1,12 @@
-import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
-import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { useDataManagerValues } from '@genshin-optimizer/common-database-ui'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
 import {
   CardThemed,
   ModalWrapper,
   NumberInputLazy,
   SqBadge,
-} from '@genshin-optimizer/common/ui'
-import { getUnitStr } from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-ui'
+import { getUnitStr } from '@genshin-optimizer/common-util'
 import type {
   RelicMainStatKey,
   RelicRarityKey,
@@ -14,29 +14,29 @@ import type {
   RelicSlotKey,
   RelicSubStatKey,
   RelicSubstatTypeKey,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 import {
   isCavernRelicSetKey,
   isPlanarRelicSetKey,
   relicMaxLevel,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 import type {
   BuildTCLightCone,
   BuildTcRelicSlot,
   IBuildTc,
-} from '@genshin-optimizer/sr/db'
+} from '@genshin-optimizer/sr-db'
 import {
   type ICachedLightCone,
   type TeammateDatum,
   initCharTC,
-} from '@genshin-optimizer/sr/db'
+} from '@genshin-optimizer/sr-db'
 import {
   useBuild,
   useBuildTc,
   useCharacterContext,
   useDatabaseContext,
-} from '@genshin-optimizer/sr/db-ui'
-import { SlotIcon } from '@genshin-optimizer/sr/svgicons'
+} from '@genshin-optimizer/sr-db-ui'
+import { SlotIcon } from '@genshin-optimizer/sr-svgicons'
 import {
   EquipRow,
   LightConeCardCompactEmpty,
@@ -50,7 +50,7 @@ import {
   RelicSetName,
   RelicSubCard,
   StatDisplay,
-} from '@genshin-optimizer/sr/ui'
+} from '@genshin-optimizer/sr-ui'
 import CloseIcon from '@mui/icons-material/Close'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import {

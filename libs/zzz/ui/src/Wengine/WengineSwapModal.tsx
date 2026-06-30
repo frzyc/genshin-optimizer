@@ -1,5 +1,5 @@
-import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
-import { useMediaQueryUp } from '@genshin-optimizer/common/react-util'
+import { useDataManagerValues } from '@genshin-optimizer/common-database-ui'
+import { useMediaQueryUp } from '@genshin-optimizer/common-react-util'
 import {
   CardThemed,
   ImgIcon,
@@ -7,21 +7,21 @@ import {
   ShowingAndSortOptionSelect,
   SolidToggleButtonGroup,
   useInfScroll,
-} from '@genshin-optimizer/common/ui'
+} from '@genshin-optimizer/common-ui'
 import {
   filterFunction,
   handleMultiSelect,
   sortFunction,
-} from '@genshin-optimizer/common/util'
-import { specialityDefIcon } from '@genshin-optimizer/zzz/assets'
+} from '@genshin-optimizer/common-util'
+import { specialityDefIcon } from '@genshin-optimizer/zzz-assets'
 import type {
   Raritykey,
   SpecialityKey,
   WengineKey,
-} from '@genshin-optimizer/zzz/consts'
-import { allRaritykeys, allSpecialityKeys } from '@genshin-optimizer/zzz/consts'
-import { initialWengine } from '@genshin-optimizer/zzz/db'
-import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
+} from '@genshin-optimizer/zzz-consts'
+import { allRaritykeys, allSpecialityKeys } from '@genshin-optimizer/zzz-consts'
+import { initialWengine } from '@genshin-optimizer/zzz-db'
+import { useDatabaseContext } from '@genshin-optimizer/zzz-db-ui'
 import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle'

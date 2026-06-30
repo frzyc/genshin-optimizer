@@ -1,5 +1,5 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
-import { DatabaseCard } from '@genshin-optimizer/gi/ui'
+import { CardThemed } from '@genshin-optimizer/common-ui'
+import { DatabaseCard } from '@genshin-optimizer/gi-ui'
 import { CardContent, Divider, Typography } from '@mui/material'
 import ReactGA from 'react-ga4'
 import { Trans, useTranslation } from 'react-i18next'

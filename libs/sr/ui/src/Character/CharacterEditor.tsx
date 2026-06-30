@@ -3,17 +3,17 @@ import {
   DropdownButton,
   ImgIcon,
   ModalWrapper,
-} from '@genshin-optimizer/common/ui'
-import { getUnitStr, toPercent } from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-ui'
+import { getUnitStr, toPercent } from '@genshin-optimizer/common-util'
 import {
   characterAsset,
   characterKeyToGenderedKey,
-} from '@genshin-optimizer/sr/assets'
-import type { AscensionKey, CharacterKey } from '@genshin-optimizer/sr/consts'
-import { allEidolonKeys } from '@genshin-optimizer/sr/consts'
-import { useCharacter, useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
-import { getCharStatBoostStat } from '@genshin-optimizer/sr/stats'
-import { StatIcon } from '@genshin-optimizer/sr/svgicons'
+} from '@genshin-optimizer/sr-assets'
+import type { AscensionKey, CharacterKey } from '@genshin-optimizer/sr-consts'
+import { allEidolonKeys } from '@genshin-optimizer/sr-consts'
+import { useCharacter, useDatabaseContext } from '@genshin-optimizer/sr-db-ui'
+import { getCharStatBoostStat } from '@genshin-optimizer/sr-stats'
+import { StatIcon } from '@genshin-optimizer/sr-svgicons'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
 import {

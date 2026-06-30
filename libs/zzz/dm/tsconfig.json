@@ -1,11 +1,16 @@
 {
   "extends": "../../../tsconfig.base.json",
-  "compilerOptions": {
-    "exactOptionalPropertyTypes": false
-  },
   "files": [],
-  "include": [],
   "references": [
+    {
+      "path": "../../common/pipeline"
+    },
+    {
+      "path": "../consts"
+    },
+    {
+      "path": "../../common/util"
+    },
     {
       "path": "./tsconfig.lib.json"
     }

@@ -1,10 +1,10 @@
 import { writeFileSync } from 'fs'
 import * as path from 'path'
-import { formatText } from '@genshin-optimizer/common/pipeline'
+import { formatText } from '@genshin-optimizer/common-pipeline'
 import {
   extractCondMetadata,
   extractFormulaMetadata,
-} from '@genshin-optimizer/game-opt/formula'
+} from '@genshin-optimizer/game-opt-formula'
 import { workspaceRoot } from '@nx/devkit'
 import { data } from '../../data'
 import type { Tag } from '../../data/util'

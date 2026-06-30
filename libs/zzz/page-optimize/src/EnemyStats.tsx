@@ -3,29 +3,29 @@ import {
   ColorText,
   DropdownButton,
   NumberInputLazy,
-} from '@genshin-optimizer/common/ui'
-import { isIn } from '@genshin-optimizer/common/util'
-import type { Document } from '@genshin-optimizer/game-opt/sheet-ui'
-import { DocumentDisplay } from '@genshin-optimizer/game-opt/sheet-ui'
-import { allAttributeKeys } from '@genshin-optimizer/zzz/consts'
-import type { EnemyStatKey, EnemyStatsTag } from '@genshin-optimizer/zzz/db'
+} from '@genshin-optimizer/common-ui'
+import { isIn } from '@genshin-optimizer/common-util'
+import type { Document } from '@genshin-optimizer/game-opt-sheet-ui'
+import { DocumentDisplay } from '@genshin-optimizer/game-opt-sheet-ui'
+import { allAttributeKeys } from '@genshin-optimizer/zzz-consts'
+import type { EnemyStatKey, EnemyStatsTag } from '@genshin-optimizer/zzz-db'
 import {
   enemyStatKeys,
   getTeamFrame0,
   newEnemyStatTag,
-} from '@genshin-optimizer/zzz/db'
+} from '@genshin-optimizer/zzz-db'
 import {
   useCharacterContext,
   useDatabaseContext,
   useTeam,
-} from '@genshin-optimizer/zzz/db-ui'
+} from '@genshin-optimizer/zzz-db-ui'
 import {
   type Attribute,
   type Tag,
   enemyMeta,
-} from '@genshin-optimizer/zzz/formula'
-import { TagDisplay } from '@genshin-optimizer/zzz/formula-ui'
-import { AttributeName } from '@genshin-optimizer/zzz/ui'
+} from '@genshin-optimizer/zzz-formula'
+import { TagDisplay } from '@genshin-optimizer/zzz-formula-ui'
+import { AttributeName } from '@genshin-optimizer/zzz-ui'
 import { DeleteForever } from '@mui/icons-material'
 import {
   Box,

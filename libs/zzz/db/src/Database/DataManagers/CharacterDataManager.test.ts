@@ -1,9 +1,9 @@
-import { createTestDBStorage } from '@genshin-optimizer/common/database'
+import { createTestDBStorage } from '@genshin-optimizer/common-database'
 import {
   allCharacterKeys,
   coreByLevel,
   skillByLevel,
-} from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-consts'
 import { ZzzDatabase } from '../Database'
 
 describe('CharacterDataManager', () => {

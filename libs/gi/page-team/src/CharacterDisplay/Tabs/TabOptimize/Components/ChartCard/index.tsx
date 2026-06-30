@@ -1,30 +1,30 @@
-import { ReadOnlyTextArea } from '@genshin-optimizer/common/react-util'
+import { ReadOnlyTextArea } from '@genshin-optimizer/common-react-util'
 import {
   BootstrapTooltip,
   CardThemed,
   InfoTooltip,
   usePrev,
-} from '@genshin-optimizer/common/ui'
+} from '@genshin-optimizer/common-ui'
 import {
   notEmpty,
   objKeyMap,
   objPathValue,
   valueString,
-} from '@genshin-optimizer/common/util'
-import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
-import type { GeneratedBuild } from '@genshin-optimizer/gi/db'
+} from '@genshin-optimizer/common-util'
+import { allArtifactSlotKeys } from '@genshin-optimizer/gi-consts'
+import type { GeneratedBuild } from '@genshin-optimizer/gi-db'
 import {
   TeamCharacterContext,
   useGeneratedBuildList,
   useOptConfig,
-} from '@genshin-optimizer/gi/db-ui'
+} from '@genshin-optimizer/gi-db-ui'
 import {
   DataContext,
   GraphContext,
   resolveInfo,
-} from '@genshin-optimizer/gi/ui'
-import type { Info, InfoExtra, NumNode } from '@genshin-optimizer/gi/wr'
-import { input } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-ui'
+import type { Info, InfoExtra, NumNode } from '@genshin-optimizer/gi-wr'
+import { input } from '@genshin-optimizer/gi-wr'
 import {
   CheckBox,
   CheckBoxOutlineBlank,

@@ -1,5 +1,5 @@
-import type { DiscSetKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
-import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
+import type { DiscSetKey, DiscSlotKey } from '@genshin-optimizer/zzz-consts'
+import type { ICachedDisc } from '@genshin-optimizer/zzz-db'
 import { useMemo } from 'react'
 export function useDiscSets(
   discs: Record<DiscSlotKey, ICachedDisc | undefined>

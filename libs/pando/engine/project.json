@@ -1,15 +1,9 @@
 {
-  "name": "pando_engine",
+  "name": "@genshin-optimizer/pando_engine",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/pando/engine/src",
   "projectType": "library",
   "targets": {
-    "build": {},
-    "build-ts": {
-      "options": {
-        "updateBuildableProjectDepsInPackageJson": true
-      }
-    },
     "publish": {
       "executor": "nx:run-commands",
       "options": {

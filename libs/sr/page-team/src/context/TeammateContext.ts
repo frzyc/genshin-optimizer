@@ -1,4 +1,4 @@
-import type { TeammateDatum } from '@genshin-optimizer/sr/db'
+import type { TeammateDatum } from '@genshin-optimizer/sr-db'
 import { createContext, useContext } from 'react'
 
 export const TeammateContext = createContext({

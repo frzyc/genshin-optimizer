@@ -1,8 +1,34 @@
 {
   "extends": "../../tsconfig.base.json",
   "files": [],
-  "include": [],
   "references": [
+    {
+      "path": "../../libs/gi/formula"
+    },
+    {
+      "path": "../../libs/gi/dm"
+    },
+    {
+      "path": "../../libs/sr/stats"
+    },
+    {
+      "path": "../../libs/sr/assets-data"
+    },
+    {
+      "path": "../../libs/sr/consts"
+    },
+    {
+      "path": "../../libs/common/util"
+    },
+    {
+      "path": "../../libs/gi/stats"
+    },
+    {
+      "path": "../../libs/gi/assets-data"
+    },
+    {
+      "path": "../../libs/gi/consts"
+    },
     {
       "path": "./tsconfig.app.json"
     },

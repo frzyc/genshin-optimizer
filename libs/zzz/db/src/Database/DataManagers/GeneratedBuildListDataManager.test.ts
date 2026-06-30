@@ -1,6 +1,6 @@
-import { createTestDBStorage } from '@genshin-optimizer/common/database'
-import { objKeyMap } from '@genshin-optimizer/common/util'
-import { allDiscSlotKeys } from '@genshin-optimizer/zzz/consts'
+import { createTestDBStorage } from '@genshin-optimizer/common-database'
+import { objKeyMap } from '@genshin-optimizer/common-util'
+import { allDiscSlotKeys } from '@genshin-optimizer/zzz-consts'
 import { ZzzDatabase } from '../Database'
 
 describe('GeneratedBuildListDataManager', () => {

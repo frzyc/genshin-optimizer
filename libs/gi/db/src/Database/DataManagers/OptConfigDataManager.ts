@@ -3,15 +3,15 @@ import {
   zodClampedNumber,
   zodFilteredArray,
   zodNumericLiteralWithDefault,
-} from '@genshin-optimizer/common/database'
-import { clamp, deepClone, deepFreeze } from '@genshin-optimizer/common/util'
-import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/common-database'
+import { clamp, deepClone, deepFreeze } from '@genshin-optimizer/common-util'
+import type { ArtifactSetKey } from '@genshin-optimizer/gi-consts'
 import {
   allArtifactSetKeys,
   allLocationCharacterKeys,
   artSlotMainKeys,
   defaultOptArtifactLevel,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import { z } from 'zod'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'

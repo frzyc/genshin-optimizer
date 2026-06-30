@@ -1,4 +1,4 @@
-import type { DebugMeta } from '@genshin-optimizer/pando/engine'
+import type { DebugMeta } from '@genshin-optimizer/pando-engine'
 
 export function createFilterDebug(equipmentKeys: string[]) {
   const sheets = new Set(equipmentKeys)

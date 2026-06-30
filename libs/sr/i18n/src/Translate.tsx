@@ -1,4 +1,4 @@
-import { ColorText, SqBadge, TranslateBase } from '@genshin-optimizer/common/ui'
+import { ColorText, SqBadge, TranslateBase } from '@genshin-optimizer/common-ui'
 import '@genshin-optimizer/sr/theme' // import to validate typing for color variants
 import type { ReactNode } from 'react'
 

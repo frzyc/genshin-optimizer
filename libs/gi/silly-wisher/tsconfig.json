@@ -1,12 +1,9 @@
 {
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "esModuleInterop": false,
-    "types": ["vite/client"]
-  },
   "files": [],
-  "include": [],
   "references": [
+    {
+      "path": "../consts"
+    },
     {
       "path": "./tsconfig.lib.json"
     }

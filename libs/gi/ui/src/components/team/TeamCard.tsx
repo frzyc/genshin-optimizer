@@ -1,27 +1,27 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
 import {
   BootstrapTooltip,
   CardThemed,
   ColorText,
-} from '@genshin-optimizer/common/ui'
-import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-ui'
+import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common-util'
 import {
   artifactAsset,
   characterAsset,
   imgAssets,
   weaponAsset,
-} from '@genshin-optimizer/gi/assets'
-import type { ArtifactSetKey, CharacterKey } from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-assets'
+import type { ArtifactSetKey, CharacterKey } from '@genshin-optimizer/gi-consts'
 import {
   getCharLevelString,
   getLevelString as getWeaponLevelString,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import type {
   ArtifactData,
   ICachedArtifact,
   ICachedWeapon,
-} from '@genshin-optimizer/gi/db'
-import type { CharacterContextObj } from '@genshin-optimizer/gi/db-ui'
+} from '@genshin-optimizer/gi-db'
+import type { CharacterContextObj } from '@genshin-optimizer/gi-db-ui'
 import {
   CharacterContext,
   useCharacter,
@@ -29,13 +29,13 @@ import {
   useDatabase,
   useTeam,
   useTeamChar,
-} from '@genshin-optimizer/gi/db-ui'
+} from '@genshin-optimizer/gi-db-ui'
 import {
   getCharEle,
   getCharStat,
   weaponHasRefinement,
-} from '@genshin-optimizer/gi/stats'
-import { ElementIcon, SlotIcon, StatIcon } from '@genshin-optimizer/gi/svgicons'
+} from '@genshin-optimizer/gi-stats'
+import { ElementIcon, SlotIcon, StatIcon } from '@genshin-optimizer/gi-svgicons'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import InfoIcon from '@mui/icons-material/Info'

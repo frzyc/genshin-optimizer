@@ -1,14 +1,14 @@
-import { tag } from '@genshin-optimizer/game-opt/engine'
+import { tag } from '@genshin-optimizer/game-opt-engine'
 import type {
   ElementWithPhyKey,
   TransformativeReactionKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import {
   allElementKeys,
   allElementWithPhyKeys,
   allTransformativeReactionKeys,
-} from '@genshin-optimizer/gi/consts'
-import type { NumNode, StrNode } from '@genshin-optimizer/pando/engine'
+} from '@genshin-optimizer/gi-consts'
+import type { NumNode, StrNode } from '@genshin-optimizer/pando-engine'
 import {
   cmpEq,
   lookup,
@@ -16,7 +16,7 @@ import {
   subscript,
   sum,
   sumfrac,
-} from '@genshin-optimizer/pando/engine'
+} from '@genshin-optimizer/pando-engine'
 import type { TagMapNodeEntries } from '../util'
 import { own, ownBuff, percent } from '../util'
 

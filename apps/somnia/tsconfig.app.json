@@ -6,5 +6,34 @@
     "types": ["node", "object-overrides"]
   },
   "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"],
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts"],
+  "references": [
+    {
+      "path": "../../libs/gi/formula/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/gi/dm/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/sr/stats/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/sr/assets-data/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/sr/consts/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/common/util/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/gi/stats/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/gi/assets-data/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/gi/consts/tsconfig.lib.json"
+    }
+  ]
 }

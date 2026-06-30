@@ -1,5 +1,5 @@
-import type { CalcMeta, Tag } from '@genshin-optimizer/game-opt/engine'
-import type { CalcResult } from '@genshin-optimizer/pando/engine'
+import type { CalcMeta, Tag } from '@genshin-optimizer/game-opt-engine'
+import type { CalcResult } from '@genshin-optimizer/pando-engine'
 import { createContext } from 'react'
 import type { FormulaText } from '../types'
 

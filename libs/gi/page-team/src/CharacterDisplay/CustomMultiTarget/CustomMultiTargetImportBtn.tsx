@@ -1,8 +1,8 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
-import type { CustomMultiTarget } from '@genshin-optimizer/gi/db'
-import { validateCustomMultiTarget } from '@genshin-optimizer/gi/db'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
+import { CardThemed, ModalWrapper } from '@genshin-optimizer/common-ui'
+import type { CustomMultiTarget } from '@genshin-optimizer/gi-db'
+import { validateCustomMultiTarget } from '@genshin-optimizer/gi-db'
+import { useDatabase } from '@genshin-optimizer/gi-db-ui'
 import UploadIcon from '@mui/icons-material/Upload'
 import type { ButtonProps } from '@mui/material'
 import {

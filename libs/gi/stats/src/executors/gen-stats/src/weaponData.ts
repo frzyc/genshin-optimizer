@@ -1,9 +1,9 @@
-import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import type { WeaponKey } from '@genshin-optimizer/gi-consts'
 import type {
   StatKey,
   WeaponGrowCurveKey,
   WeaponTypeKey,
-} from '@genshin-optimizer/gi/dm'
+} from '@genshin-optimizer/gi-dm'
 import {
   equipAffixExcelConfigData,
   getHakushinWepData,
@@ -13,7 +13,7 @@ import {
   weaponIdMap,
   weaponMap,
   weaponPromoteExcelConfigData,
-} from '@genshin-optimizer/gi/dm'
+} from '@genshin-optimizer/gi-dm'
 import * as quantumCatalystData from './QuantumCatalyst/data.json'
 
 type WeaponProp = {

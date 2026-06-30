@@ -4,12 +4,12 @@ import {
   zodEnum,
   zodEnumWithDefault,
   zodNumericLiteral,
-} from '@genshin-optimizer/common/database'
-import { clamp, pruneOrPadArray } from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-database'
+import { clamp, pruneOrPadArray } from '@genshin-optimizer/common-util'
 import type {
   RelicRarityKey,
   RelicSubStatKey,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 import {
   allLocationKeys,
   allRelicMainStatKeys,
@@ -17,7 +17,7 @@ import {
   allRelicSetKeys,
   allRelicSlotKeys,
   allRelicSubStatKeys,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 import { z } from 'zod'
 
 const substatSchema = z.object({

@@ -2,11 +2,11 @@ import {
   allElementKeys,
   allElementWithPhyKeys,
   allLunarReactionKeys,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import {
   allEleEnemyResKeys,
   crittableTransformativeReactions,
-} from '@genshin-optimizer/gi/keymap'
+} from '@genshin-optimizer/gi-keymap'
 
 export const allElements = allElementWithPhyKeys
 export const allTalents = ['auto', 'skill', 'burst'] as const

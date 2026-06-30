@@ -1,20 +1,20 @@
-import { ColorText, ImgIcon } from '@genshin-optimizer/common/ui'
-import { range } from '@genshin-optimizer/common/util'
+import { ColorText, ImgIcon } from '@genshin-optimizer/common-ui'
+import { range } from '@genshin-optimizer/common-util'
 import {
   artifactDefIcon,
   imgAssets,
   weaponAsset,
-} from '@genshin-optimizer/gi/assets'
+} from '@genshin-optimizer/gi-assets'
 import type {
   ArtifactSetKey,
   CharacterKey,
   WeaponKey,
-} from '@genshin-optimizer/gi/consts'
-import type { ArtCharDatabase } from '@genshin-optimizer/gi/db'
-import { getCharSheet } from '@genshin-optimizer/gi/sheets'
-import type { CalcResult, UIData } from '@genshin-optimizer/gi/uidata'
-import type { DisplaySub } from '@genshin-optimizer/gi/wr'
-import { input } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-consts'
+import type { ArtCharDatabase } from '@genshin-optimizer/gi-db'
+import { getCharSheet } from '@genshin-optimizer/gi-sheets'
+import type { CalcResult, UIData } from '@genshin-optimizer/gi-uidata'
+import type { DisplaySub } from '@genshin-optimizer/gi-wr'
+import { input } from '@genshin-optimizer/gi-wr'
 import BarChartIcon from '@mui/icons-material/BarChart'
 import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize'
 import GroupsIcon from '@mui/icons-material/Groups'

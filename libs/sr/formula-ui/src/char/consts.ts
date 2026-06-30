@@ -2,7 +2,7 @@ import type {
   BonusAbilityKey,
   EidolonKey,
   StatBoostKey,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 
 export const allTalentSheetElementStatBoostKey = [
   'statBoost1',

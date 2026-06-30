@@ -1,4 +1,4 @@
-import { allCharacterKeys, allWengineKeys } from '@genshin-optimizer/zzz/consts'
+import { allCharacterKeys, allWengineKeys } from '@genshin-optimizer/zzz-consts'
 import { type Tree } from '@nx/devkit'
 import genIndex from './genIndex'
 import genMap from './genMap'

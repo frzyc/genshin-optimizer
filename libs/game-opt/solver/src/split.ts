@@ -1,5 +1,5 @@
-import type { Monotonicity, Range } from '@genshin-optimizer/pando/engine'
-import { prune } from '@genshin-optimizer/pando/engine'
+import type { Monotonicity, Range } from '@genshin-optimizer/pando-engine'
+import { prune } from '@genshin-optimizer/pando-engine'
 import { type Candidate, buildCount, splitThreshold } from './common'
 import type { Subwork, Worker } from './worker'
 

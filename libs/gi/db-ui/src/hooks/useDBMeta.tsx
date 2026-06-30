@@ -1,4 +1,4 @@
-import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
+import { useDataEntryBase } from '@genshin-optimizer/common-database-ui'
 import { useDatabase } from './useDatabase'
 
 export function useDBMeta() {

@@ -3,21 +3,21 @@ import {
   CardThemed,
   ModalWrapper,
   SqBadge,
-} from '@genshin-optimizer/common/ui'
-import { toggleInArr } from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-ui'
+import { toggleInArr } from '@genshin-optimizer/common-util'
 import {
   type LoadoutDataExportSetting,
   type LoadoutDatum,
   type LoadoutExportSetting,
   defLoadoutExportSetting,
-} from '@genshin-optimizer/gi/db'
+} from '@genshin-optimizer/gi-db'
 import {
   useDatabase,
   useOptConfig,
   useTeam,
   useTeamChar,
-} from '@genshin-optimizer/gi/db-ui'
-import type { dataContextObj } from '@genshin-optimizer/gi/ui'
+} from '@genshin-optimizer/gi-db-ui'
+import type { dataContextObj } from '@genshin-optimizer/gi-ui'
 import {
   BuildIcon,
   CharIconSide,
@@ -27,7 +27,7 @@ import {
   OptimizationIcon,
   OptimizationTargetDisplay,
   useCharData,
-} from '@genshin-optimizer/gi/ui'
+} from '@genshin-optimizer/gi-ui'
 import CloseIcon from '@mui/icons-material/Close'
 import InfoIcon from '@mui/icons-material/Info'
 import {

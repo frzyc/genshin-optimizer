@@ -1,10 +1,10 @@
-import { zodString, zodTypedRecord } from '@genshin-optimizer/common/database'
-import { objKeyMap } from '@genshin-optimizer/common/util'
-import type { CharacterKey } from '@genshin-optimizer/sr/consts'
+import { zodString, zodTypedRecord } from '@genshin-optimizer/common-database'
+import { objKeyMap } from '@genshin-optimizer/common-util'
+import type { CharacterKey } from '@genshin-optimizer/sr-consts'
 import {
   allCharacterKeys,
   allRelicSlotKeys,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 import { z } from 'zod'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'

@@ -1,6 +1,6 @@
-import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
-import { wengineAsset } from '@genshin-optimizer/zzz/assets'
-import type { WengineKey } from '@genshin-optimizer/zzz/consts'
+import type { UISheetElement } from '@genshin-optimizer/game-opt-sheet-ui'
+import { wengineAsset } from '@genshin-optimizer/zzz-assets'
+import type { WengineKey } from '@genshin-optimizer/zzz-consts'
 import { trans } from '../../util'
 import { PhaseWrapper } from '../components'
 

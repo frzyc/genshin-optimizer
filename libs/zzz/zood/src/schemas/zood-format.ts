@@ -2,7 +2,7 @@ import {
   characterSchema,
   discSchema,
   wengineBaseSchema,
-} from '@genshin-optimizer/zzz/schema'
+} from '@genshin-optimizer/zzz-schema'
 import { z } from 'zod'
 
 const zoodMetadataSchema = z.object({

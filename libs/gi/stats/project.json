@@ -1,5 +1,5 @@
 {
-  "name": "gi-stats",
+  "name": "@genshin-optimizer/gi-stats",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/gi/stats/src",
   "projectType": "library",

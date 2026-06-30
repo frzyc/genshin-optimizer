@@ -1,12 +1,24 @@
 {
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "esModuleInterop": false,
-    "exactOptionalPropertyTypes": false,
-    "types": ["vite/client"]
-  },
   "files": [],
-  "include": [],
-  "references": [{ "path": "./tsconfig.lib.json" }],
+  "references": [
+    {
+      "path": "../consts"
+    },
+    {
+      "path": "../dm"
+    },
+    {
+      "path": "../assets-data"
+    },
+    {
+      "path": "../../common/util"
+    },
+    {
+      "path": "../../common/pipeline"
+    },
+    {
+      "path": "./tsconfig.lib.json"
+    }
+  ],
   "extends": "../../../tsconfig.base.json"
 }

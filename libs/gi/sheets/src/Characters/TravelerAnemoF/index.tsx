@@ -1,7 +1,7 @@
 import type {
   CharacterKey,
   CharacterSheetKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import { travelerSheet } from '../Traveler'
 import anemo from './anemo'
 

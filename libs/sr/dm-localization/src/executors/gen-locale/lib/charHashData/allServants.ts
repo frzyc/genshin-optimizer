@@ -1,11 +1,11 @@
-import { verifyObjKeys } from '@genshin-optimizer/common/util'
-import type { ServantKey } from '@genshin-optimizer/sr/consts'
-import { allServantKeys } from '@genshin-optimizer/sr/consts'
+import { verifyObjKeys } from '@genshin-optimizer/common-util'
+import type { ServantKey } from '@genshin-optimizer/sr-consts'
+import { allServantKeys } from '@genshin-optimizer/sr-consts'
 import {
   avatarServantConfig,
   avatarServantSkillConfig,
   servantIdMap,
-} from '@genshin-optimizer/sr/dm'
+} from '@genshin-optimizer/sr-dm'
 
 type ServantData = {
   name: string

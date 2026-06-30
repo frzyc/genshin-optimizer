@@ -1,15 +1,15 @@
 import {
   zodEnumWithDefault,
   zodString,
-} from '@genshin-optimizer/common/database'
+} from '@genshin-optimizer/common-database'
 import {
   allAdditiveReactions,
   allAmpReactionKeys,
   allInfusionAuraElementKeys,
   allMultiOptHitModeKeys,
-} from '@genshin-optimizer/gi/consts'
-import type { InputPremodKey } from '@genshin-optimizer/gi/wr-types'
-import { allInputPremodKeys } from '@genshin-optimizer/gi/wr-types'
+} from '@genshin-optimizer/gi-consts'
+import type { InputPremodKey } from '@genshin-optimizer/gi-wr-types'
+import { allInputPremodKeys } from '@genshin-optimizer/gi-wr-types'
 import { z } from 'zod'
 
 export const MAX_NAME_LENGTH = 200

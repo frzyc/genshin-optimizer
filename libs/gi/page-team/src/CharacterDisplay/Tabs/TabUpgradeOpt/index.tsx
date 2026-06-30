@@ -1,6 +1,6 @@
-import { AdResponsive } from '@genshin-optimizer/common/ad'
-import { useForceUpdate } from '@genshin-optimizer/common/react-util'
-import { CardThemed } from '@genshin-optimizer/common/ui'
+import { AdResponsive } from '@genshin-optimizer/common-ad'
+import { useForceUpdate } from '@genshin-optimizer/common-react-util'
+import { CardThemed } from '@genshin-optimizer/common-ui'
 import {
   bulkCatTotal,
   clamp,
@@ -9,27 +9,27 @@ import {
   objKeyMap,
   objPathValue,
   range,
-} from '@genshin-optimizer/common/util'
-import type { ArtifactSetKey, CharacterKey } from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/common-util'
+import type { ArtifactSetKey, CharacterKey } from '@genshin-optimizer/gi-consts'
 import {
   allArtifactSetKeys,
   allArtifactSlotKeys,
   charKeyToLocCharKey,
-} from '@genshin-optimizer/gi/consts'
-import type { ArtSetExclusionKey } from '@genshin-optimizer/gi/db'
-import { type ICachedArtifact } from '@genshin-optimizer/gi/db'
+} from '@genshin-optimizer/gi-consts'
+import type { ArtSetExclusionKey } from '@genshin-optimizer/gi-db'
+import { type ICachedArtifact } from '@genshin-optimizer/gi-db'
 import {
   TeamCharacterContext,
   useDBMeta,
   useDatabase,
   useLoadoutArtifacts,
   useOptConfig,
-} from '@genshin-optimizer/gi/db-ui'
+} from '@genshin-optimizer/gi-db-ui'
 import {
   type FilterOption,
   initialFilterOption,
-} from '@genshin-optimizer/gi/schema'
-import type { dataContextObj } from '@genshin-optimizer/gi/ui'
+} from '@genshin-optimizer/gi-schema'
+import type { dataContextObj } from '@genshin-optimizer/gi-ui'
 import {
   AddArtInfo,
   ArtifactEditor,
@@ -43,11 +43,11 @@ import {
   getTeamData,
   resolveInfo,
   useTeamData,
-} from '@genshin-optimizer/gi/ui'
-import { uiDataForTeam } from '@genshin-optimizer/gi/uidata'
-import { artifactFilterConfigs } from '@genshin-optimizer/gi/util'
-import type { NumNode } from '@genshin-optimizer/gi/wr'
-import { dynamicData, mergeData, optimize } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-ui'
+import { uiDataForTeam } from '@genshin-optimizer/gi-uidata'
+import { artifactFilterConfigs } from '@genshin-optimizer/gi-util'
+import type { NumNode } from '@genshin-optimizer/gi-wr'
+import { dynamicData, mergeData, optimize } from '@genshin-optimizer/gi-wr'
 import AddIcon from '@mui/icons-material/Add'
 import {
   Alert,

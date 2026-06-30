@@ -1,6 +1,6 @@
-import type { FilterConfigs, SortConfigs } from '@genshin-optimizer/common/util'
-import type { ILightCone } from '@genshin-optimizer/sr/srod'
-import { allStats } from '@genshin-optimizer/sr/stats'
+import type { FilterConfigs, SortConfigs } from '@genshin-optimizer/common-util'
+import type { ILightCone } from '@genshin-optimizer/sr-srod'
+import { allStats } from '@genshin-optimizer/sr-stats'
 
 export const lightConeSortKeys = ['level', 'name', 'rarity'] as const
 export type LightConeSortKey = (typeof lightConeSortKeys)[number]

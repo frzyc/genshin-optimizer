@@ -5,7 +5,7 @@ import {
   prod,
   setDebugMode,
   sum,
-} from '@genshin-optimizer/pando/engine'
+} from '@genshin-optimizer/pando-engine'
 import {
   type AscensionKey,
   type CharacterKey,
@@ -13,7 +13,7 @@ import {
   allCharacterKeys,
   allLightConeKeys,
   allRelicSetKeys,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 import {
   charTagMapNodeEntries,
   lightConeTagMapNodeEntries,

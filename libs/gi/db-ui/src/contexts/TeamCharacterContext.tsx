@@ -2,7 +2,7 @@ import type {
   LoadoutDatum,
   Team,
   TeamCharacter,
-} from '@genshin-optimizer/gi/db'
+} from '@genshin-optimizer/gi-db'
 import { createContext } from 'react'
 export type TeamCharacterContextObj = {
   teamId: string

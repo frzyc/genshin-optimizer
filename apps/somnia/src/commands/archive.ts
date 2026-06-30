@@ -22,7 +22,7 @@ import {
   allArtifactSetKeys,
   allCharacterSheetKeys,
   allWeaponKeys,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import { i18nInstance } from '@genshin-optimizer/gi/i18n-node'
 import permissions from '../lib/permissions'
 import { artifactArchive } from './archive/artifact'

@@ -1,4 +1,4 @@
-import type { LightConeKey } from '@genshin-optimizer/sr/consts'
+import type { LightConeKey } from '@genshin-optimizer/sr-consts'
 import { allStats } from '../../../allStats'
 
 const key: LightConeKey = 'CollapsingSky'

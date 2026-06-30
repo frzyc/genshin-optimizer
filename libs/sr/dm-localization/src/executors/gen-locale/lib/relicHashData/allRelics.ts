@@ -1,14 +1,14 @@
-import { verifyObjKeys } from '@genshin-optimizer/common/util'
-import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
+import { verifyObjKeys } from '@genshin-optimizer/common-util'
+import type { RelicSetKey } from '@genshin-optimizer/sr-consts'
 import {
   type RelicSetCountKey,
   allRelicSetKeys,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 import {
   relicSetConfig,
   relicSetIdMap,
   relicSetSkillConfig,
-} from '@genshin-optimizer/sr/dm'
+} from '@genshin-optimizer/sr-dm'
 import { convertToHash } from '../util'
 
 type RelicData = {

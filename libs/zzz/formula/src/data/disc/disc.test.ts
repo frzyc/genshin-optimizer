@@ -1,13 +1,13 @@
-import { prettify } from '@genshin-optimizer/common/util'
+import { prettify } from '@genshin-optimizer/common-util'
 import {
   compileTagMapValues,
   setDebugMode,
-} from '@genshin-optimizer/pando/engine'
+} from '@genshin-optimizer/pando-engine'
 import type {
   DiscMainStatKey,
   DiscSetKey,
   DiscSubStatKey,
-} from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-consts'
 import { data, keys, values } from '..'
 import {
   charTagMapNodeEntries,

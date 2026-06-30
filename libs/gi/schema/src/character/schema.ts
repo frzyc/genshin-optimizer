@@ -3,15 +3,15 @@ import {
   zodClampedNumber,
   zodEnum,
   zodObject,
-} from '@genshin-optimizer/common/database'
-import { clamp } from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-database'
+import { clamp } from '@genshin-optimizer/common-util'
 import {
   type AscensionKey,
   type CharacterKey,
   allCharacterKeys,
   talentLimits,
   validateCharLevelAsc,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import { z } from 'zod'
 
 export interface ICharacterTalent {

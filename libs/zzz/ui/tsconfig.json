@@ -1,16 +1,48 @@
 {
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "allowJs": false,
-    "esModuleInterop": false,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "exactOptionalPropertyTypes": false,
-    "jsxImportSource": "@emotion/react"
-  },
   "files": [],
-  "include": [],
   "references": [
+    {
+      "path": "../../game-opt/sheet-ui"
+    },
+    {
+      "path": "../../common/database"
+    },
+    {
+      "path": "../util"
+    },
+    {
+      "path": "../../common/img-util"
+    },
+    {
+      "path": "../zood"
+    },
+    {
+      "path": "../../common/ad"
+    },
+    {
+      "path": "../../common/svgicons"
+    },
+    {
+      "path": "../../common/react-util"
+    },
+    {
+      "path": "../../common/database-ui"
+    },
+    {
+      "path": "../../common/util"
+    },
+    {
+      "path": "../stats"
+    },
+    {
+      "path": "../../common/ui"
+    },
+    {
+      "path": "../consts"
+    },
+    {
+      "path": "../assets"
+    },
     {
       "path": "./tsconfig.lib.json"
     }

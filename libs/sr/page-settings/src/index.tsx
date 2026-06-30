@@ -1,5 +1,5 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
-import { DatabaseCard } from '@genshin-optimizer/sr/ui'
+import { CardThemed } from '@genshin-optimizer/common-ui'
+import { DatabaseCard } from '@genshin-optimizer/sr-ui'
 import { CardContent } from '@mui/material'
 
 export default function PageSettings() {

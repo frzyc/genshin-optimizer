@@ -1,12 +1,25 @@
 {
   "extends": "../../../tsconfig.base.json",
-  "compilerOptions": {
-    "module": "ES2022",
-    "exactOptionalPropertyTypes": false
-  },
   "files": [],
-  "include": [],
   "references": [
+    {
+      "path": "../formula"
+    },
+    {
+      "path": "../consts"
+    },
+    {
+      "path": "../../pando/engine"
+    },
+    {
+      "path": "../../game-opt/solver"
+    },
+    {
+      "path": "../../game-opt/engine"
+    },
+    {
+      "path": "../../common/util"
+    },
     {
       "path": "./tsconfig.lib.json"
     },

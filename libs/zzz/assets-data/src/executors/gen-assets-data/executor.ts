@@ -1,15 +1,15 @@
-import { dumpFile } from '@genshin-optimizer/common/pipeline'
-import { objMap } from '@genshin-optimizer/common/util'
+import { dumpFile } from '@genshin-optimizer/common-pipeline'
+import { objMap } from '@genshin-optimizer/common-util'
 import type {
   CharacterKey,
   DiscSetKey,
   WengineKey,
-} from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-consts'
 import {
   charactersDetailedJSONData,
   discsDetailedJSONData,
   wengineDetailedJSONData,
-} from '@genshin-optimizer/zzz/dm'
+} from '@genshin-optimizer/zzz-dm'
 import type { PromiseExecutor } from '@nx/devkit'
 import { workspaceRoot } from '@nx/devkit'
 import type { GenAssetsDataExecutorSchema } from './schema'

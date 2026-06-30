@@ -1,12 +1,12 @@
-import { getUnitStr, range, valueString } from '@genshin-optimizer/common/util'
-import { AssetData } from '@genshin-optimizer/gi/assets-data'
+import { getUnitStr, range, valueString } from '@genshin-optimizer/common-util'
+import { AssetData } from '@genshin-optimizer/gi-assets-data'
 import {
   type WeaponKey,
   weaponMaxAscension,
   weaponMaxLevel,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import { i18nInstance } from '@genshin-optimizer/gi/i18n-node'
-import { allStats, getWeaponStat } from '@genshin-optimizer/gi/stats'
+import { allStats, getWeaponStat } from '@genshin-optimizer/gi-stats'
 import {
   ActionRowBuilder,
   EmbedBuilder,

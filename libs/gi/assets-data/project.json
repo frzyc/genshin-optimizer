@@ -1,5 +1,5 @@
 {
-  "name": "gi-assets-data",
+  "name": "@genshin-optimizer/gi-assets-data",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/gi/assets-data/src",
   "projectType": "library",

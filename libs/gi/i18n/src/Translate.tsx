@@ -3,7 +3,7 @@ import {
   ColorText,
   SqBadge,
   TranslateBase,
-} from '@genshin-optimizer/common/ui'
+} from '@genshin-optimizer/common-ui'
 import '@genshin-optimizer/gi/theme' // import to validate typing for color variants
 import { Divider, Typography } from '@mui/material'
 import type { ReactElement, ReactNode } from 'react'

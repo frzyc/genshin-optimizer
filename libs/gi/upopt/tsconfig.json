@@ -1,20 +1,28 @@
 {
   "extends": "../../../tsconfig.base.json",
-  "compilerOptions": {
-    "module": "ES2022",
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "exactOptionalPropertyTypes": false,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true
-  },
   "files": [],
-  "include": [],
   "references": [
+    {
+      "path": "../good"
+    },
+    {
+      "path": "../db"
+    },
+    {
+      "path": "../wr"
+    },
+    {
+      "path": "../util"
+    },
+    {
+      "path": "../../common/util"
+    },
+    {
+      "path": "../solver"
+    },
+    {
+      "path": "../consts"
+    },
     {
       "path": "./tsconfig.lib.json"
     },

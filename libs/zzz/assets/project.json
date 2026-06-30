@@ -1,5 +1,5 @@
 {
-  "name": "zzz-assets",
+  "name": "@genshin-optimizer/zzz-assets",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/zzz/assets/src",
   "projectType": "library",

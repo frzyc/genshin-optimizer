@@ -2,14 +2,14 @@ import {
   getRandomElementFromArray,
   getRandomIntInclusive,
   getUnitStr,
-} from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-util'
 import type {
   ArtifactRarity,
   ArtifactSlotKey,
   MainStatKey,
   RarityKey,
   SubstatKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import {
   allArtifactRarityKeys,
   allArtifactSetKeys,
@@ -17,9 +17,9 @@ import {
   artMaxLevel,
   artSlotMainKeys,
   artSubstatRollData,
-} from '@genshin-optimizer/gi/consts'
-import type { IArtifact, ISubstat } from '@genshin-optimizer/gi/schema'
-import { allStats } from '@genshin-optimizer/gi/stats'
+} from '@genshin-optimizer/gi-consts'
+import type { IArtifact, ISubstat } from '@genshin-optimizer/gi-schema'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { artDisplayValue, getSubstatValuesPercent } from './artifact'
 
 // do not randomize Prayers since they don't have all slots

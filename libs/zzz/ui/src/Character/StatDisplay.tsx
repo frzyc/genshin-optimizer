@@ -1,7 +1,7 @@
-import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
-import { getUnitStr } from '@genshin-optimizer/common/util'
-import { type StatKey, statKeyTextMap } from '@genshin-optimizer/zzz/consts'
-import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
+import { iconInlineProps } from '@genshin-optimizer/common-svgicons'
+import { getUnitStr } from '@genshin-optimizer/common-util'
+import { type StatKey, statKeyTextMap } from '@genshin-optimizer/zzz-consts'
+import { StatIcon } from '@genshin-optimizer/zzz-svgicons'
 
 export function StatDisplay({
   statKey,

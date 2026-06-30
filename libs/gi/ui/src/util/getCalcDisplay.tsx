@@ -1,18 +1,18 @@
-import { ColorText } from '@genshin-optimizer/common/ui'
-import { valueString } from '@genshin-optimizer/common/util'
+import { ColorText } from '@genshin-optimizer/common-ui'
+import { valueString } from '@genshin-optimizer/common-util'
 import type {
   ArtifactSetKey,
   CharacterSheetKey,
   WeaponKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import {
   allArtifactSetKeys,
   allCharacterSheetKeys,
   allWeaponKeys,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import { Translate } from '@genshin-optimizer/gi/i18n'
-import type { CalcResult } from '@genshin-optimizer/gi/uidata'
-import type { Info, InfoExtra, KeyMapPrefix } from '@genshin-optimizer/gi/wr'
+import type { CalcResult } from '@genshin-optimizer/gi-uidata'
+import type { Info, InfoExtra, KeyMapPrefix } from '@genshin-optimizer/gi-wr'
 import { type ReactNode, useContext } from 'react'
 import { SillyContext } from '../context'
 import { resolveInfo } from './resolveInfo'

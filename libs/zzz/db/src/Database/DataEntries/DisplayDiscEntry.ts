@@ -4,7 +4,7 @@ import {
   zodEnumWithDefault,
   zodFilteredArray,
   zodObjectSchema,
-} from '@genshin-optimizer/common/database'
+} from '@genshin-optimizer/common-database'
 import {
   allDiscMainStatKeys,
   allDiscRarityKeys,
@@ -12,7 +12,7 @@ import {
   allDiscSlotKeys,
   allDiscSubStatKeys,
   allLocationKeys,
-} from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-consts'
 import { z } from 'zod'
 import { DataEntry } from '../DataEntry'
 import type { ZzzDatabase } from '../Database'

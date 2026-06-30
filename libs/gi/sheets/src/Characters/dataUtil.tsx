@@ -2,21 +2,21 @@ import {
   deepClone,
   objKeyMap,
   verifyObjKeys,
-} from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-util'
 import type {
   CharacterKey,
   ElementKey,
   MainStatKey,
   SubstatKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import {
   allElementKeys,
   allLunarReactionKeys,
   allMainStatKeys,
-} from '@genshin-optimizer/gi/consts'
-import type { CharacterGrowCurveKey } from '@genshin-optimizer/gi/dm'
-import { allStats, getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
-import type { Data, DisplaySub, NumNode } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-consts'
+import type { CharacterGrowCurveKey } from '@genshin-optimizer/gi-dm'
+import { allStats, getCharEle, getCharStat } from '@genshin-optimizer/gi-stats'
+import type { Data, DisplaySub, NumNode } from '@genshin-optimizer/gi-wr'
 import {
   active,
   compareEq,
@@ -45,7 +45,7 @@ import {
   sum,
   tally,
   unequal,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 import { cond, nonStackBuff } from '../SheetUtil'
 import { charTemplates } from './charTemplates'
 

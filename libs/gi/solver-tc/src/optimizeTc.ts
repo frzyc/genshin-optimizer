@@ -1,13 +1,13 @@
-import { objMap } from '@genshin-optimizer/common/util'
-import type { SubstatKey } from '@genshin-optimizer/gi/consts'
+import { objMap } from '@genshin-optimizer/common-util'
+import type { SubstatKey } from '@genshin-optimizer/gi-consts'
 import {
   allSubstatKeys,
   artSubstatRollData,
-} from '@genshin-optimizer/gi/consts'
-import type { BuildTc } from '@genshin-optimizer/gi/db'
-import { getSubstatValue } from '@genshin-optimizer/gi/util'
-import type { NumNode, OptNode } from '@genshin-optimizer/gi/wr'
-import { precompute } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-consts'
+import type { BuildTc } from '@genshin-optimizer/gi-db'
+import { getSubstatValue } from '@genshin-optimizer/gi-util'
+import type { NumNode, OptNode } from '@genshin-optimizer/gi-wr'
+import { precompute } from '@genshin-optimizer/gi-wr'
 
 export type TCWorkerResult = TotalResult | CountResult | FinalizeResult
 

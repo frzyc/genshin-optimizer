@@ -4,8 +4,8 @@ import {
   zodClampedNumber,
   zodEnumWithDefault,
   zodNumericLiteralWithDefault,
-} from '@genshin-optimizer/common/database'
-import type { ArtifactRarity } from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/common-database'
+import type { ArtifactRarity } from '@genshin-optimizer/gi-consts'
 import {
   allArtifactRarityKeys,
   allArtifactSetKeys,
@@ -13,7 +13,7 @@ import {
   allLocationCharacterKeys,
   allMainStatKeys,
   allSubstatKeys,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import { z } from 'zod'
 
 export const substatSchema = z.object({

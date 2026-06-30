@@ -1,8 +1,8 @@
-import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
-import { wengineAsset } from '@genshin-optimizer/zzz/assets'
-import type { WengineKey } from '@genshin-optimizer/zzz/consts'
-import { MyriadEclipse } from '@genshin-optimizer/zzz/formula'
-import { mappedStats } from '@genshin-optimizer/zzz/stats'
+import type { UISheetElement } from '@genshin-optimizer/game-opt-sheet-ui'
+import { wengineAsset } from '@genshin-optimizer/zzz-assets'
+import type { WengineKey } from '@genshin-optimizer/zzz-consts'
+import { MyriadEclipse } from '@genshin-optimizer/zzz-formula'
+import { mappedStats } from '@genshin-optimizer/zzz-stats'
 import { tagToTagField, trans } from '../../util'
 import { PhaseWrapper } from '../components'
 

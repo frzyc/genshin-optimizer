@@ -1,5 +1,5 @@
-import { createTestDBStorage } from '@genshin-optimizer/common/database'
-import { allRelicSetKeys, relicMaxLevel } from '@genshin-optimizer/sr/consts'
+import { createTestDBStorage } from '@genshin-optimizer/common-database'
+import { allRelicSetKeys, relicMaxLevel } from '@genshin-optimizer/sr-consts'
 import { SroDatabase } from '../Database'
 
 describe('RelicDataManager.validate', () => {

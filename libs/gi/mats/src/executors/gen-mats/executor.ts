@@ -1,4 +1,4 @@
-import { dumpFile } from '@genshin-optimizer/common/pipeline'
+import { dumpFile } from '@genshin-optimizer/common-pipeline'
 import { workspaceRoot } from '@nx/devkit'
 import type { GenMatsExecutorSchema } from './schema'
 import characterMatData from './src/characterMatData'

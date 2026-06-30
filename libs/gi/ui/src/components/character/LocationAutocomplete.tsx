@@ -1,19 +1,19 @@
-import { useDataManagerKeys } from '@genshin-optimizer/common/database-ui'
-import type { GeneralAutocompleteOption } from '@genshin-optimizer/common/ui'
-import { GeneralAutocomplete } from '@genshin-optimizer/common/ui'
+import { useDataManagerKeys } from '@genshin-optimizer/common-database-ui'
+import type { GeneralAutocompleteOption } from '@genshin-optimizer/common-ui'
+import { GeneralAutocomplete } from '@genshin-optimizer/common-ui'
 import type {
   CharacterKey,
   LocationCharacterKey,
   LocationKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import {
   allLocationCharacterKeys,
   allTravelerKeys,
   charKeyToLocCharKey,
   charKeyToLocGenderedCharKey,
-} from '@genshin-optimizer/gi/consts'
-import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import type { Variant } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-consts'
+import { useDBMeta, useDatabase } from '@genshin-optimizer/gi-db-ui'
+import type { Variant } from '@genshin-optimizer/gi-wr'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import type { AutocompleteProps } from '@mui/material'
 import { Box, Skeleton } from '@mui/material'

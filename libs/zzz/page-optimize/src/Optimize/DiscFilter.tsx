@@ -1,21 +1,21 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { CardThemed, ModalWrapper, SqBadge } from '@genshin-optimizer/common/ui'
-import { handleMultiSelect } from '@genshin-optimizer/common/util'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
+import { CardThemed, ModalWrapper, SqBadge } from '@genshin-optimizer/common-ui'
+import { handleMultiSelect } from '@genshin-optimizer/common-util'
 import type {
   DiscMainStatKey,
   DiscSetKey,
   DiscSlotKey,
-} from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-consts'
 import {
   allDiscSlotKeys,
   discSlotToMainStatKeys,
-} from '@genshin-optimizer/zzz/consts'
-import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
+} from '@genshin-optimizer/zzz-consts'
+import type { ICachedDisc } from '@genshin-optimizer/zzz-db'
 import {
   OptConfigContext,
   useDatabaseContext,
-} from '@genshin-optimizer/zzz/db-ui'
-import { StatDisplay } from '@genshin-optimizer/zzz/ui'
+} from '@genshin-optimizer/zzz-db-ui'
+import { StatDisplay } from '@genshin-optimizer/zzz-ui'
 import CloseIcon from '@mui/icons-material/Close'
 import {
   Button,

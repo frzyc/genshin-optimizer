@@ -1,11 +1,11 @@
-import { dumpFile } from '@genshin-optimizer/common/pipeline'
-import { nameToKey } from '@genshin-optimizer/common/util'
-import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import type { CharacterData } from '@genshin-optimizer/zzz/dm'
+import { dumpFile } from '@genshin-optimizer/common-pipeline'
+import { nameToKey } from '@genshin-optimizer/common-util'
+import type { CharacterKey } from '@genshin-optimizer/zzz-consts'
+import type { CharacterData } from '@genshin-optimizer/zzz-dm'
 import {
   charactersDetailedJSONData,
   filterUnbuffedKits,
-} from '@genshin-optimizer/zzz/dm'
+} from '@genshin-optimizer/zzz-dm'
 import { processText } from './util'
 
 export function dumpChars(fileDir: string) {

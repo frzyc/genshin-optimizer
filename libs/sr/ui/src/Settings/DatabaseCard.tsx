@@ -1,15 +1,15 @@
 import {
   useDataEntryBase,
   useDataManagerKeys,
-} from '@genshin-optimizer/common/database-ui'
-import { useBoolState } from '@genshin-optimizer/common/react-util'
+} from '@genshin-optimizer/common-database-ui'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
 import {
   CardThemed,
   ModalWrapper,
   TextFieldLazy,
-} from '@genshin-optimizer/common/ui'
-import { range } from '@genshin-optimizer/common/util'
-import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
+} from '@genshin-optimizer/common-ui'
+import { range } from '@genshin-optimizer/common-util'
+import { useDatabaseContext } from '@genshin-optimizer/sr-db-ui'
 import { Delete, Download, ImportExport, Upload } from '@mui/icons-material'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
 import {

@@ -1,26 +1,26 @@
-import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
+import { useDataManagerValues } from '@genshin-optimizer/common-database-ui'
 import {
   CardThemed,
   DropdownButton,
   ModalWrapper,
   usePrev,
-} from '@genshin-optimizer/common/ui'
-import { clamp, deepClone } from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-ui'
+import { clamp, deepClone } from '@genshin-optimizer/common-util'
 import type {
   RelicRarityKey,
   RelicSetKey,
   RelicSlotKey,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 import {
   allRelicSlotKeys,
   relicSlotToMainStatKeys,
-} from '@genshin-optimizer/sr/consts'
-import type { ICachedRelic } from '@genshin-optimizer/sr/db'
-import { cachedRelic } from '@genshin-optimizer/sr/db'
-import { useDatabaseContext, useRelic } from '@genshin-optimizer/sr/db-ui'
-import type { IRelic, ISubstat } from '@genshin-optimizer/sr/srod'
-import { SlotIcon } from '@genshin-optimizer/sr/svgicons'
-import { getRelicMainStatDisplayVal } from '@genshin-optimizer/sr/util'
+} from '@genshin-optimizer/sr-consts'
+import type { ICachedRelic } from '@genshin-optimizer/sr-db'
+import { cachedRelic } from '@genshin-optimizer/sr-db'
+import { useDatabaseContext, useRelic } from '@genshin-optimizer/sr-db-ui'
+import type { IRelic, ISubstat } from '@genshin-optimizer/sr-srod'
+import { SlotIcon } from '@genshin-optimizer/sr-svgicons'
+import { getRelicMainStatDisplayVal } from '@genshin-optimizer/sr-util'
 import AddIcon from '@mui/icons-material/Add'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 import CloseIcon from '@mui/icons-material/Close'

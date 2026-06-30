@@ -1,7 +1,7 @@
-import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
-import { getUnitStr } from '@genshin-optimizer/common/util'
-import type { StatKey } from '@genshin-optimizer/sr/consts'
-import { StatIcon } from '@genshin-optimizer/sr/svgicons'
+import { iconInlineProps } from '@genshin-optimizer/common-svgicons'
+import { getUnitStr } from '@genshin-optimizer/common-util'
+import type { StatKey } from '@genshin-optimizer/sr-consts'
+import { StatIcon } from '@genshin-optimizer/sr-svgicons'
 import { Box } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 

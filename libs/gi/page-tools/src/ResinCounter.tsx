@@ -1,9 +1,9 @@
-import { CardThemed, ImgIcon } from '@genshin-optimizer/common/ui'
-import { timeString } from '@genshin-optimizer/common/util'
-import { imgAssets } from '@genshin-optimizer/gi/assets'
-import { RESIN_RECH_MS } from '@genshin-optimizer/gi/consts'
-import { RESIN_MAX } from '@genshin-optimizer/gi/db'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { CardThemed, ImgIcon } from '@genshin-optimizer/common-ui'
+import { timeString } from '@genshin-optimizer/common-util'
+import { imgAssets } from '@genshin-optimizer/gi-assets'
+import { RESIN_RECH_MS } from '@genshin-optimizer/gi-consts'
+import { RESIN_MAX } from '@genshin-optimizer/gi-db'
+import { useDatabase } from '@genshin-optimizer/gi-db-ui'
 import {
   Button,
   ButtonGroup,

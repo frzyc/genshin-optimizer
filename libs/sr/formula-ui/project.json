@@ -1,8 +1,0 @@
-{
-  "name": "sr-formula-ui",
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/sr/formula-ui/src",
-  "projectType": "library",
-  "tags": [],
-  "targets": {}
-}

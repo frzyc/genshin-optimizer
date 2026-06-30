@@ -1,9 +1,9 @@
-import { objKeyMap, range } from '@genshin-optimizer/common/util'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-import { KeyMap } from '@genshin-optimizer/gi/keymap'
-import { allStats } from '@genshin-optimizer/gi/stats'
-import { StatIcon } from '@genshin-optimizer/gi/svgicons'
-import type { Data } from '@genshin-optimizer/gi/wr'
+import { objKeyMap, range } from '@genshin-optimizer/common-util'
+import type { CharacterKey } from '@genshin-optimizer/gi-consts'
+import { KeyMap } from '@genshin-optimizer/gi-keymap'
+import { allStats } from '@genshin-optimizer/gi-stats'
+import { StatIcon } from '@genshin-optimizer/gi-svgicons'
+import type { Data } from '@genshin-optimizer/gi-wr'
 import {
   compareEq,
   constant,
@@ -16,7 +16,7 @@ import {
   one,
   percent,
   prod,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
 import type { TalentSheet } from '../ICharacterSheet'

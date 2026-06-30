@@ -1,4 +1,4 @@
-import type { OcrTextLine } from '@genshin-optimizer/zzz/disc-scanner'
+import type { OcrTextLine } from '@genshin-optimizer/zzz-disc-scanner'
 import { Box, Stack, Typography } from '@mui/material'
 
 export function ScanImagePreview({

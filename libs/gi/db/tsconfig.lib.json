@@ -1,10 +1,39 @@
 {
-  "extends": "./tsconfig.json",
+  "extends": "../../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "../../../dist/out-tsc",
+    "outDir": "./out-tsc/lib",
     "declaration": true,
     "types": ["node", "object-overrides"]
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["vite.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+  "exclude": ["vite.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"],
+  "references": [
+    {
+      "path": "../keymap/tsconfig.lib.json"
+    },
+    {
+      "path": "../wr-types/tsconfig.lib.json"
+    },
+    {
+      "path": "../stats/tsconfig.lib.json"
+    },
+    {
+      "path": "../util/tsconfig.lib.json"
+    },
+    {
+      "path": "../../common/util/tsconfig.lib.json"
+    },
+    {
+      "path": "../schema/tsconfig.lib.json"
+    },
+    {
+      "path": "../good/tsconfig.lib.json"
+    },
+    {
+      "path": "../consts/tsconfig.lib.json"
+    },
+    {
+      "path": "../../common/database/tsconfig.lib.json"
+    }
+  ]
 }

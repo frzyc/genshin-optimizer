@@ -1,7 +1,7 @@
-import { type RelicSetKey, isRelicSetKey } from '@genshin-optimizer/sr/consts'
-import { useCharOpt, useCharacterContext } from '@genshin-optimizer/sr/db-ui'
-import { RelicSheetDisplay } from '@genshin-optimizer/sr/formula-ui'
-import { RelicSetAutocomplete } from '@genshin-optimizer/sr/ui'
+import { type RelicSetKey, isRelicSetKey } from '@genshin-optimizer/sr-consts'
+import { useCharOpt, useCharacterContext } from '@genshin-optimizer/sr-db-ui'
+import { RelicSheetDisplay } from '@genshin-optimizer/sr-formula-ui'
+import { RelicSetAutocomplete } from '@genshin-optimizer/sr-ui'
 import { Box, Grid, Stack } from '@mui/material'
 import { useMemo, useState } from 'react'
 

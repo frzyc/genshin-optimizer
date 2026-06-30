@@ -1,12 +1,12 @@
 import {
   getRandomElementFromArray,
   getRandomIntInclusive,
-} from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-util'
 import {
   allCharacterKeys,
   validateCharLevelAsc,
-} from '@genshin-optimizer/gi/consts'
-import { type ICharacter, validateTalent } from '@genshin-optimizer/gi/schema'
+} from '@genshin-optimizer/gi-consts'
+import { type ICharacter, validateTalent } from '@genshin-optimizer/gi-schema'
 
 export function randomizeCharacter(base: Partial<ICharacter> = {}): ICharacter {
   const key =

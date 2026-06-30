@@ -1,24 +1,24 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
 import {
   BootstrapTooltip,
   CardThemed,
   ColorText,
   ConditionalWrapper,
-} from '@genshin-optimizer/common/ui'
+} from '@genshin-optimizer/common-ui'
 import {
   getUnitStr,
   statKeyToFixed,
   toPercent,
-} from '@genshin-optimizer/common/util'
-import { discDefIcon } from '@genshin-optimizer/zzz/assets'
-import type { DiscRarityKey, LocationKey } from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/common-util'
+import { discDefIcon } from '@genshin-optimizer/zzz-assets'
+import type { DiscRarityKey, LocationKey } from '@genshin-optimizer/zzz-consts'
 import {
   getDiscMainStatVal,
   getDiscSubStatBaseVal,
   rarityColor,
-} from '@genshin-optimizer/zzz/consts'
-import { useDatabaseContext, useDisc } from '@genshin-optimizer/zzz/db-ui'
-import type { IDisc, ISubstat } from '@genshin-optimizer/zzz/zood'
+} from '@genshin-optimizer/zzz-consts'
+import { useDatabaseContext, useDisc } from '@genshin-optimizer/zzz-db-ui'
+import type { IDisc, ISubstat } from '@genshin-optimizer/zzz-zood'
 import { Edit } from '@mui/icons-material'
 import {
   Box,

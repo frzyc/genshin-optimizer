@@ -1,7 +1,7 @@
-import type { CharacterKey } from '@genshin-optimizer/sr/consts'
-import type { TeammateDatum } from '@genshin-optimizer/sr/db'
-import { useDatabaseContext, useTeam } from '@genshin-optimizer/sr/db-ui'
-import { CharacterAutocomplete } from '@genshin-optimizer/sr/ui'
+import type { CharacterKey } from '@genshin-optimizer/sr-consts'
+import type { TeammateDatum } from '@genshin-optimizer/sr-db'
+import { useDatabaseContext, useTeam } from '@genshin-optimizer/sr-db-ui'
+import { CharacterAutocomplete } from '@genshin-optimizer/sr-ui'
 import { Box } from '@mui/material'
 import { memo } from 'react'
 

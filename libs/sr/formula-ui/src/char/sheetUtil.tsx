@@ -1,21 +1,21 @@
-import { getUnitStr, objKeyMap } from '@genshin-optimizer/common/util'
+import { getUnitStr, objKeyMap } from '@genshin-optimizer/common-util'
 import type {
   Document,
   UISheetElement,
-} from '@genshin-optimizer/game-opt/sheet-ui'
-import { characterAsset } from '@genshin-optimizer/sr/assets'
+} from '@genshin-optimizer/game-opt-sheet-ui'
+import { characterAsset } from '@genshin-optimizer/sr-assets'
 import {
   type CharacterGenderedKey,
   type StatKey,
   characterGenderedKeyToCharacterKey,
-} from '@genshin-optimizer/sr/consts'
-import { buffs, own } from '@genshin-optimizer/sr/formula'
+} from '@genshin-optimizer/sr-consts'
+import { buffs, own } from '@genshin-optimizer/sr-formula'
 import { Translate } from '@genshin-optimizer/sr/i18n'
 import {
   getCharInterpolateObject,
   getCharStat,
-} from '@genshin-optimizer/sr/stats'
-import { StatDisplay } from '@genshin-optimizer/sr/ui'
+} from '@genshin-optimizer/sr-stats'
+import { StatDisplay } from '@genshin-optimizer/sr-ui'
 import { trans } from '../util'
 import { EidolonSubtitle } from './EidolonSubtitle'
 import { SkillSubtitle } from './SkillSubtitle'

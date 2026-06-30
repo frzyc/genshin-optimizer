@@ -1,7 +1,7 @@
 import type {
   LocationCharacterKey,
   LocationGenderedCharacterKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import { MediumTextMapOffset, type Translatable } from '../common'
 
 type CharData = Record<

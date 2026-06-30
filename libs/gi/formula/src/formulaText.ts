@@ -1,4 +1,4 @@
-import type { CalcResult } from '@genshin-optimizer/pando/engine'
+import type { CalcResult } from '@genshin-optimizer/pando-engine'
 import type { CalcMeta } from './calculator'
 
 type Output = CalcMeta

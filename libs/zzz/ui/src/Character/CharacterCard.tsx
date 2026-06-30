@@ -1,19 +1,19 @@
-import { ConditionalWrapper, ImgIcon } from '@genshin-optimizer/common/ui'
+import { ConditionalWrapper, ImgIcon } from '@genshin-optimizer/common-ui'
 import {
   commonDefIcon,
   rarityDefIcon,
   specialityDefIcon,
-} from '@genshin-optimizer/zzz/assets'
+} from '@genshin-optimizer/zzz-assets'
 import {
   type CharacterKey,
   type MilestoneKey,
   allSkillKeys,
   milestoneMaxLevel,
-} from '@genshin-optimizer/zzz/consts'
-import { useCharacter } from '@genshin-optimizer/zzz/db-ui'
-import type { CharacterDatum } from '@genshin-optimizer/zzz/stats'
-import { getCharStat } from '@genshin-optimizer/zzz/stats'
-import { ElementIcon } from '@genshin-optimizer/zzz/svgicons'
+} from '@genshin-optimizer/zzz-consts'
+import { useCharacter } from '@genshin-optimizer/zzz-db-ui'
+import type { CharacterDatum } from '@genshin-optimizer/zzz-stats'
+import { getCharStat } from '@genshin-optimizer/zzz-stats'
+import { ElementIcon } from '@genshin-optimizer/zzz-svgicons'
 import { Badge, CardActionArea, Typography } from '@mui/material'
 import type { Variant } from '@mui/material/styles/createTypography'
 import { Box } from '@mui/system'

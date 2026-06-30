@@ -1,5 +1,5 @@
-import { createTestDBStorage } from '@genshin-optimizer/common/database'
-import { allAttributeKeys } from '@genshin-optimizer/zzz/consts'
+import { createTestDBStorage } from '@genshin-optimizer/common-database'
+import { allAttributeKeys } from '@genshin-optimizer/zzz-consts'
 import { ZzzDatabase } from '../Database'
 
 describe('OptConfigDataManager', () => {

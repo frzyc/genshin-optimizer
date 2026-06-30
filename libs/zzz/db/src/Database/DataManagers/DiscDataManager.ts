@@ -1,5 +1,5 @@
-import type { IDisc } from '@genshin-optimizer/zzz/zood'
-import { validateDisc } from '@genshin-optimizer/zzz/zood'
+import type { IDisc } from '@genshin-optimizer/zzz-zood'
+import { validateDisc } from '@genshin-optimizer/zzz-zood'
 import type {
   ICachedDisc,
   IZZZDatabase,
@@ -279,4 +279,4 @@ export class DiscDataManager extends DataManager<
 export {
   validateDisc,
   validateDiscWithErrors as validateDiscBasedOnRarity,
-} from '@genshin-optimizer/zzz/zood'
+} from '@genshin-optimizer/zzz-zood'

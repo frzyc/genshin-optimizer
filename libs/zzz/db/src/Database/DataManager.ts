@@ -1,4 +1,4 @@
-import { DataManagerBase } from '@genshin-optimizer/common/database'
+import { DataManagerBase } from '@genshin-optimizer/common-database'
 import type { IZZZDatabase, IZenlessObjectDescription, ZzzDatabase } from '..'
 import type { ImportResult } from './exim'
 export class DataManager<

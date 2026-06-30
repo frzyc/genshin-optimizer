@@ -5,14 +5,14 @@ import {
   range,
   transposeArray,
   verifyObjKeys,
-} from '@genshin-optimizer/common/util'
-import { type CharacterKey, allSkillKeys } from '@genshin-optimizer/zzz/consts'
-import type { CharacterData } from '@genshin-optimizer/zzz/dm'
+} from '@genshin-optimizer/common-util'
+import { type CharacterKey, allSkillKeys } from '@genshin-optimizer/zzz-consts'
+import type { CharacterData } from '@genshin-optimizer/zzz-dm'
 import {
   charactersDetailedJSONData,
   filterUnbuffedKits,
   hakushinSkillMap,
-} from '@genshin-optimizer/zzz/dm'
+} from '@genshin-optimizer/zzz-dm'
 import { type CharacterDatum } from '../../../char'
 import { extractParamsFromString } from './util'
 

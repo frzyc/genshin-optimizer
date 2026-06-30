@@ -1,18 +1,18 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
-import { objPathValue } from '@genshin-optimizer/common/util'
+import { CardThemed } from '@genshin-optimizer/common-ui'
+import { objPathValue } from '@genshin-optimizer/common-util'
 import type {
   AdditiveReactionKey,
   AmpReactionKey,
   InfusionAuraElementKey,
-} from '@genshin-optimizer/gi/consts'
-import { allAmpReactionKeys } from '@genshin-optimizer/gi/consts'
-import type { CustomTarget } from '@genshin-optimizer/gi/db'
+} from '@genshin-optimizer/gi-consts'
+import { allAmpReactionKeys } from '@genshin-optimizer/gi-consts'
+import type { CustomTarget } from '@genshin-optimizer/gi-db'
 import {
   AdditiveReactionModeText,
   AmpReactionModeText,
   DataContext,
-} from '@genshin-optimizer/gi/ui'
-import type { CalcResult } from '@genshin-optimizer/gi/uidata'
+} from '@genshin-optimizer/gi-ui'
+import type { CalcResult } from '@genshin-optimizer/gi-uidata'
 import BarChartIcon from '@mui/icons-material/BarChart'
 import CommentIcon from '@mui/icons-material/Comment'
 import {

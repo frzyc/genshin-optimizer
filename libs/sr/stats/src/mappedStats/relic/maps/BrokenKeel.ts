@@ -1,4 +1,4 @@
-import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
+import type { RelicSetKey } from '@genshin-optimizer/sr-consts'
 import { allStats } from '../../../allStats'
 
 const key: RelicSetKey = 'BrokenKeel'

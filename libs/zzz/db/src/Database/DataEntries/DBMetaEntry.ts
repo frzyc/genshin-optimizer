@@ -1,8 +1,8 @@
-import type { Database } from '@genshin-optimizer/common/database'
+import type { Database } from '@genshin-optimizer/common-database'
 import {
   type CharacterKey,
   allCharacterKeys,
-} from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-consts'
 import { z } from 'zod'
 import type { IZZZDatabase, IZenlessObjectDescription } from '../../Interfaces'
 import { DataEntry } from '../DataEntry'

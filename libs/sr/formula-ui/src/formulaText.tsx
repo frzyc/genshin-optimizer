@@ -3,11 +3,11 @@ import {
   getUnitStr,
   objFilter,
   valueString,
-} from '@genshin-optimizer/common/util'
-import type { CalcMeta } from '@genshin-optimizer/game-opt/engine'
-import type { FormulaText } from '@genshin-optimizer/game-opt/sheet-ui'
-import type { CalcResult } from '@genshin-optimizer/pando/engine'
-import type { Tag } from '@genshin-optimizer/sr/formula'
+} from '@genshin-optimizer/common-util'
+import type { CalcMeta } from '@genshin-optimizer/game-opt-engine'
+import type { FormulaText } from '@genshin-optimizer/game-opt-sheet-ui'
+import type { CalcResult } from '@genshin-optimizer/pando-engine'
+import type { Tag } from '@genshin-optimizer/sr-formula'
 import { Fragment, type ReactNode } from 'react'
 import { TagDisplay } from './components'
 import { getTagLabel } from './util'

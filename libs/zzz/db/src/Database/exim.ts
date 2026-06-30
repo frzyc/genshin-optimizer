@@ -1,4 +1,4 @@
-import type { ICharacter, IDisc } from '@genshin-optimizer/zzz/zood'
+import type { ICharacter, IDisc } from '@genshin-optimizer/zzz-zood'
 
 function newCounter<T>(): ImportResultCounter<T> {
   return {

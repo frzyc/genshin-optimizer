@@ -1,5 +1,5 @@
 {
-  "name": "sr-assets-data",
+  "name": "@genshin-optimizer/sr-assets-data",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/sr/assets-data/src",
   "projectType": "library",

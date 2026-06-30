@@ -5,7 +5,7 @@ import type {
   SkillKey,
   SpecialityKey,
   StatKey,
-} from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-consts'
 
 // Copied from libs\zzz\dm\src\dm\character\characterIdMap.json
 export const characterIdMap = {

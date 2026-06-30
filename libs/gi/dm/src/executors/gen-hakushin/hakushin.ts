@@ -1,7 +1,7 @@
 import {
   dumpPrettyFile,
   fetchJsonFromUrl,
-} from '@genshin-optimizer/common/pipeline'
+} from '@genshin-optimizer/common-pipeline'
 import { PROJROOT_PATH } from '../../consts'
 import { DEBUG } from './debug'
 const URL_BASE = 'https://api.hakush.in/gi/'

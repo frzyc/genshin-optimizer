@@ -1,9 +1,9 @@
-import { objMap, toDecimal } from '@genshin-optimizer/common/util'
-import type { MainStatKey, SubstatKey } from '@genshin-optimizer/gi/consts'
-import type { BuildTc, ICachedWeapon } from '@genshin-optimizer/gi/db'
-import { getMainStatValue } from '@genshin-optimizer/gi/util'
-import type { Data } from '@genshin-optimizer/gi/wr'
-import { constant, percent } from '@genshin-optimizer/gi/wr'
+import { objMap, toDecimal } from '@genshin-optimizer/common-util'
+import type { MainStatKey, SubstatKey } from '@genshin-optimizer/gi-consts'
+import type { BuildTc, ICachedWeapon } from '@genshin-optimizer/gi-db'
+import { getMainStatValue } from '@genshin-optimizer/gi-util'
+import type { Data } from '@genshin-optimizer/gi-wr'
+import { constant, percent } from '@genshin-optimizer/gi-wr'
 
 export function getBuildTcArtifactData(buildTc: BuildTc): Data {
   const {

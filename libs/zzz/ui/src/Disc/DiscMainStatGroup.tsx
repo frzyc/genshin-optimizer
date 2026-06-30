@@ -1,14 +1,14 @@
-import type { DropdownButtonProps } from '@genshin-optimizer/common/ui'
-import { BootstrapTooltip, CardThemed } from '@genshin-optimizer/common/ui'
+import type { DropdownButtonProps } from '@genshin-optimizer/common-ui'
+import { BootstrapTooltip, CardThemed } from '@genshin-optimizer/common-ui'
 import type {
   DiscMainStatKey,
   DiscSlotKey,
-} from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-consts'
 import {
   discSlotToMainStatKeys,
   statKeyTextMap,
-} from '@genshin-optimizer/zzz/consts'
-import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
+} from '@genshin-optimizer/zzz-consts'
+import { StatIcon } from '@genshin-optimizer/zzz-svgicons'
 import { Button, ButtonGroup } from '@mui/material'
 import type { ReactNode } from 'react'
 import { StatDisplay } from '../Character'

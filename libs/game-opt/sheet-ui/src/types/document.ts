@@ -1,4 +1,4 @@
-import type { Calculator } from '@genshin-optimizer/pando/engine'
+import type { Calculator } from '@genshin-optimizer/pando-engine'
 import type { ReactNode } from 'react'
 import type { Conditional } from './conditional'
 import type { Field } from './field'

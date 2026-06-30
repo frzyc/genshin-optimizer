@@ -2,14 +2,14 @@ import {
   getRandBool,
   getRandomElementFromArray,
   getRandomIntInclusive,
-} from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-util'
 import {
   type RefinementKey,
   allWeaponKeys,
   validateWeaponLevelAsc,
-} from '@genshin-optimizer/gi/consts'
-import type { IWeapon } from '@genshin-optimizer/gi/schema'
-import { allStats } from '@genshin-optimizer/gi/stats'
+} from '@genshin-optimizer/gi-consts'
+import type { IWeapon } from '@genshin-optimizer/gi-schema'
+import { allStats } from '@genshin-optimizer/gi-stats'
 
 const weaponKeys = allWeaponKeys.filter(
   (k) =>

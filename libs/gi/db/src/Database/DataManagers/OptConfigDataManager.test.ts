@@ -1,5 +1,5 @@
-import { createTestDBStorage } from '@genshin-optimizer/common/database'
-import { defaultOptArtifactLevel } from '@genshin-optimizer/gi/consts'
+import { createTestDBStorage } from '@genshin-optimizer/common-database'
+import { defaultOptArtifactLevel } from '@genshin-optimizer/gi-consts'
 import { ArtCharDatabase } from '../ArtCharDatabase'
 
 describe('OptConfigDataManager', () => {

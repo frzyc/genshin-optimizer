@@ -1,6 +1,6 @@
-import { AdResponsive } from '@genshin-optimizer/common/ad'
-import { CardThemed } from '@genshin-optimizer/common/ui'
-import { ZCard, ZOAdWrapper } from '@genshin-optimizer/zzz/ui'
+import { AdResponsive } from '@genshin-optimizer/common-ad'
+import { CardThemed } from '@genshin-optimizer/common-ui'
+import { ZCard, ZOAdWrapper } from '@genshin-optimizer/zzz-ui'
 import DescriptionIcon from '@mui/icons-material/Description'
 import {
   Box,

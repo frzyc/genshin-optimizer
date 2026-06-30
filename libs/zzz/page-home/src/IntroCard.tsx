@@ -1,4 +1,4 @@
-import { ZCard } from '@genshin-optimizer/zzz/ui'
+import { ZCard } from '@genshin-optimizer/zzz-ui'
 import { CardContent, Link, Typography } from '@mui/material'
 import { Trans, useTranslation } from 'react-i18next'
 export function IntroCard() {

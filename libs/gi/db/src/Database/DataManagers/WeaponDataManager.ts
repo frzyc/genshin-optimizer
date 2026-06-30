@@ -3,15 +3,15 @@ import type {
   LocationCharacterKey,
   WeaponKey,
   WeaponTypeKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import {
   charKeyToLocCharKey,
   defaultWeaponAscension,
   defaultWeaponLevel,
-} from '@genshin-optimizer/gi/consts'
-import type { IGOOD, IWeapon } from '@genshin-optimizer/gi/good'
-import { parseWeapon } from '@genshin-optimizer/gi/good'
-import { allStats } from '@genshin-optimizer/gi/stats'
+} from '@genshin-optimizer/gi-consts'
+import type { IGOOD, IWeapon } from '@genshin-optimizer/gi-good'
+import { parseWeapon } from '@genshin-optimizer/gi-good'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import type { ICachedCharacter } from './CharacterDataManager'
 

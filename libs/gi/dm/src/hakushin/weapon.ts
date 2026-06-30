@@ -1,4 +1,4 @@
-import type { RarityKey } from '@genshin-optimizer/gi/consts'
+import type { RarityKey } from '@genshin-optimizer/gi-consts'
 import type { WeaponGrowCurveKey } from '../dm'
 import type { DWeaponTypeKey, PropTypeKey } from '../mapping'
 

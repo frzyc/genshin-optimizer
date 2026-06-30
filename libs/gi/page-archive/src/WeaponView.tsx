@@ -2,11 +2,11 @@ import {
   CardThemed,
   ModalWrapper,
   StarsDisplay,
-} from '@genshin-optimizer/common/ui'
-import { weaponAsset } from '@genshin-optimizer/gi/assets'
-import { getLevelString as getWeaponLevelString } from '@genshin-optimizer/gi/consts'
-import type { IWeapon } from '@genshin-optimizer/gi/good'
-import { getWeaponStat } from '@genshin-optimizer/gi/stats'
+} from '@genshin-optimizer/common-ui'
+import { weaponAsset } from '@genshin-optimizer/gi-assets'
+import { getLevelString as getWeaponLevelString } from '@genshin-optimizer/gi-consts'
+import type { IWeapon } from '@genshin-optimizer/gi-good'
+import { getWeaponStat } from '@genshin-optimizer/gi-stats'
 import {
   FieldDisplayList,
   NodeFieldDisplay,
@@ -14,9 +14,9 @@ import {
   WeaponName,
   WeaponPassiveDesc,
   WeaponPassiveName,
-} from '@genshin-optimizer/gi/ui'
-import type { UIData } from '@genshin-optimizer/gi/uidata'
-import { uiInput as input } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-ui'
+import type { UIData } from '@genshin-optimizer/gi-uidata'
+import { uiInput as input } from '@genshin-optimizer/gi-wr'
 import CloseIcon from '@mui/icons-material/Close'
 import {
   Box,

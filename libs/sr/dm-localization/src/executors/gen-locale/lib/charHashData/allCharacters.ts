@@ -1,14 +1,14 @@
-import { verifyObjKeys } from '@genshin-optimizer/common/util'
+import { verifyObjKeys } from '@genshin-optimizer/common-util'
 import type {
   AbilityKey,
   CharacterGenderedKey,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 import {
   allAbilityKeys,
   allCharacterGenderedKeys,
   allTrailblazerGenderedKeys,
-} from '@genshin-optimizer/sr/consts'
-import type { AvatarSkillTreeConfig, Rank } from '@genshin-optimizer/sr/dm'
+} from '@genshin-optimizer/sr-consts'
+import type { AvatarSkillTreeConfig, Rank } from '@genshin-optimizer/sr-dm'
 import {
   DmAttackTypeMap,
   avatarConfig,
@@ -16,7 +16,7 @@ import {
   avatarSkillConfig,
   avatarSkillTreeConfig,
   characterIdMap,
-} from '@genshin-optimizer/sr/dm'
+} from '@genshin-optimizer/sr-dm'
 import { convertToHash } from '../util'
 
 type CharData = {

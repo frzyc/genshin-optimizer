@@ -1,6 +1,6 @@
-import { DropdownButton } from '@genshin-optimizer/common/ui'
-import type { DamageType } from '@genshin-optimizer/zzz/formula'
-import { damageTypeKeysMap } from '@genshin-optimizer/zzz/formula-ui'
+import { DropdownButton } from '@genshin-optimizer/common-ui'
+import type { DamageType } from '@genshin-optimizer/zzz-formula'
+import { damageTypeKeysMap } from '@genshin-optimizer/zzz-formula-ui'
 import { Box, MenuItem } from '@mui/material'
 
 export function DmgTypeDropdown<T extends DamageType>({

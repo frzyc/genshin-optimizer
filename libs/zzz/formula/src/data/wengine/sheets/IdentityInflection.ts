@@ -1,4 +1,4 @@
-import type { WengineKey } from '@genshin-optimizer/zzz/consts'
+import type { WengineKey } from '@genshin-optimizer/zzz-consts'
 import { entriesForWengine, registerWengine } from '../util'
 
 const key: WengineKey = 'IdentityInflection'

@@ -1,0 +1,1 @@
+{"version":3,"file":"SqBadge.d.ts","sourceRoot":"","sources":["../../../../src/components/SqBadge.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,OAAO,EAAgB,MAAM,eAAe,CAAA;AAE1D,OAAO,KAAK,EAAE,cAAc,EAAE,MAAM,OAAO,CAAA;AAE3C,UAAU,cAAe,SAAQ,cAAc,CAAC,eAAe,CAAC;IAC9D,KAAK,CAAC,EAAE,MAAM,OAAO,CAAA;CACtB;AAED,eAAO,MAAM,OAAO,sUAajB,CAAA"}

@@ -1,14 +1,14 @@
-import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
-import { useMediaQueryUp } from '@genshin-optimizer/common/react-util'
-import { CardThemed, useInfScroll } from '@genshin-optimizer/common/ui'
-import { sortFunction } from '@genshin-optimizer/common/util'
-import { allPathKeys, allRarityKeys } from '@genshin-optimizer/sr/consts'
-import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
+import { useDataManagerValues } from '@genshin-optimizer/common-database-ui'
+import { useMediaQueryUp } from '@genshin-optimizer/common-react-util'
+import { CardThemed, useInfScroll } from '@genshin-optimizer/common-ui'
+import { sortFunction } from '@genshin-optimizer/common-util'
+import { allPathKeys, allRarityKeys } from '@genshin-optimizer/sr-consts'
+import { useDatabaseContext } from '@genshin-optimizer/sr-db-ui'
 import {
   lightConeSortConfigs,
   lightConeSortKeys,
   lightConeSortMap,
-} from '@genshin-optimizer/sr/util'
+} from '@genshin-optimizer/sr-util'
 import AddIcon from '@mui/icons-material/Add'
 import {
   Box,

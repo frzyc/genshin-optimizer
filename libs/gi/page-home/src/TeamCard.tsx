@@ -1,4 +1,4 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
+import { CardThemed } from '@genshin-optimizer/common-ui'
 import {
   Box,
   CardContent,

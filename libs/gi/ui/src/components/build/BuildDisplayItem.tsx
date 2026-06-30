@@ -1,24 +1,24 @@
 import {
   useBoolState,
   useForceUpdate,
-} from '@genshin-optimizer/common/react-util'
+} from '@genshin-optimizer/common-react-util'
 import {
   BootstrapTooltip,
   CardThemed,
   ModalWrapper,
   SqBadge,
-} from '@genshin-optimizer/common/ui'
-import { notEmpty, objKeyMap, toggleArr } from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-ui'
+import { notEmpty, objKeyMap, toggleArr } from '@genshin-optimizer/common-util'
 import type {
   ArtifactSlotKey,
   LocationCharacterKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import {
   allArtifactSlotKeys,
   charKeyToLocCharKey,
-} from '@genshin-optimizer/gi/consts'
-import type { ArtSetExclusionKey } from '@genshin-optimizer/gi/db'
-import { allArtifactSetExclusionKeys } from '@genshin-optimizer/gi/db'
+} from '@genshin-optimizer/gi-consts'
+import type { ArtSetExclusionKey } from '@genshin-optimizer/gi-db'
+import { allArtifactSetExclusionKeys } from '@genshin-optimizer/gi-db'
 import {
   CharacterContext,
   TeamCharacterContext,
@@ -27,8 +27,8 @@ import {
   useDatabase,
   useEquippedInTeam,
   useOptConfig,
-} from '@genshin-optimizer/gi/db-ui'
-import { uiInput as input } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-db-ui'
+import { uiInput as input } from '@genshin-optimizer/gi-wr'
 import { Checkroom, ChevronRight } from '@mui/icons-material'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'

@@ -1,15 +1,15 @@
-import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
-import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { CardThemed, ModalWrapper, SqBadge } from '@genshin-optimizer/common/ui'
-import { objKeyMap } from '@genshin-optimizer/common/util'
-import { allPathKeys } from '@genshin-optimizer/sr/consts'
+import { useDataManagerValues } from '@genshin-optimizer/common-database-ui'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
+import { CardThemed, ModalWrapper, SqBadge } from '@genshin-optimizer/common-ui'
+import { objKeyMap } from '@genshin-optimizer/common-util'
+import { allPathKeys } from '@genshin-optimizer/sr-consts'
 import {
   OptConfigContext,
   useCharacterContext,
   useDatabaseContext,
-} from '@genshin-optimizer/sr/db-ui'
-import { getLightConeStat } from '@genshin-optimizer/sr/stats'
-import { LightConeToggle } from '@genshin-optimizer/sr/ui'
+} from '@genshin-optimizer/sr-db-ui'
+import { getLightConeStat } from '@genshin-optimizer/sr-stats'
+import { LightConeToggle } from '@genshin-optimizer/sr-ui'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
 import CloseIcon from '@mui/icons-material/Close'

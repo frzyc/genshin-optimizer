@@ -1,13 +1,13 @@
-import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
-import { notEmpty } from '@genshin-optimizer/common/util'
-import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
+import { CardThemed, ModalWrapper } from '@genshin-optimizer/common-ui'
+import { notEmpty } from '@genshin-optimizer/common-util'
+import type { ArtifactSlotKey } from '@genshin-optimizer/gi-consts'
 import {
   CharacterContext,
   TeamCharacterContext,
   useDatabase,
   useWeapon,
-} from '@genshin-optimizer/gi/db-ui'
-import { getCharStat } from '@genshin-optimizer/gi/stats'
+} from '@genshin-optimizer/gi-db-ui'
+import { getCharStat } from '@genshin-optimizer/gi-stats'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import CloseIcon from '@mui/icons-material/Close'
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown'

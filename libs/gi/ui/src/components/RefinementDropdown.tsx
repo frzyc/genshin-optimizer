@@ -1,6 +1,6 @@
-import { DropdownButton } from '@genshin-optimizer/common/ui'
-import type { RefinementKey } from '@genshin-optimizer/gi/consts'
-import { allRefinementKeys } from '@genshin-optimizer/gi/consts'
+import { DropdownButton } from '@genshin-optimizer/common-ui'
+import type { RefinementKey } from '@genshin-optimizer/gi-consts'
+import { allRefinementKeys } from '@genshin-optimizer/gi-consts'
 import { MenuItem } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 

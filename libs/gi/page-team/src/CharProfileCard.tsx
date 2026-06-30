@@ -1,16 +1,16 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { CardThemed } from '@genshin-optimizer/common/ui'
-import { range } from '@genshin-optimizer/common/util'
-import { CharacterContext, useDBMeta } from '@genshin-optimizer/gi/db-ui'
-import type { TalentSheetElementKey } from '@genshin-optimizer/gi/sheets'
-import { getCharSheet } from '@genshin-optimizer/gi/sheets'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
+import { CardThemed } from '@genshin-optimizer/common-ui'
+import { range } from '@genshin-optimizer/common-util'
+import { CharacterContext, useDBMeta } from '@genshin-optimizer/gi-db-ui'
+import type { TalentSheetElementKey } from '@genshin-optimizer/gi-sheets'
+import { getCharSheet } from '@genshin-optimizer/gi-sheets'
 import {
   CharacterCompactTalent,
   CharacterConstellationName,
   CharacterCoverArea,
   DataContext,
-} from '@genshin-optimizer/gi/ui'
-import { input } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-ui'
+import { input } from '@genshin-optimizer/gi-wr'
 import DriveFileRenameOutlineIcon from '@mui/icons-material/DriveFileRenameOutline'
 import { Box, Button, Grid, Typography } from '@mui/material'
 import { useContext } from 'react'

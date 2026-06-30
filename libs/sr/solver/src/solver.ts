@@ -1,6 +1,6 @@
-import type { Preset } from '@genshin-optimizer/game-opt/engine'
-import type { Candidate, Progress } from '@genshin-optimizer/game-opt/solver'
-import { Solver } from '@genshin-optimizer/game-opt/solver'
+import type { Preset } from '@genshin-optimizer/game-opt-engine'
+import type { Candidate, Progress } from '@genshin-optimizer/game-opt-solver'
+import { Solver } from '@genshin-optimizer/game-opt-solver'
 import {
   constant,
   detach,
@@ -8,22 +8,22 @@ import {
   prod,
   read,
   sum,
-} from '@genshin-optimizer/pando/engine'
+} from '@genshin-optimizer/pando-engine'
 import type {
   CharacterKey,
   RelicCavernSetKey,
   RelicPlanarSetKey,
   RelicSlotKey,
-} from '@genshin-optimizer/sr/consts'
-import { allLightConeKeys, allRelicSetKeys } from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
+import { allLightConeKeys, allRelicSetKeys } from '@genshin-optimizer/sr-consts'
 import type {
   ICachedLightCone,
   ICachedRelic,
   StatFilter,
   Team,
-} from '@genshin-optimizer/sr/db'
-import { type Calculator, Read, type Tag } from '@genshin-optimizer/sr/formula'
-import { getRelicMainStatVal } from '@genshin-optimizer/sr/util'
+} from '@genshin-optimizer/sr-db'
+import { type Calculator, Read, type Tag } from '@genshin-optimizer/sr-formula'
+import { getRelicMainStatVal } from '@genshin-optimizer/sr-util'
 
 export function optimize(
   characterKey: CharacterKey,

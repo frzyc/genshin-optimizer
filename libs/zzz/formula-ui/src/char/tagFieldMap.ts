@@ -2,9 +2,9 @@ import {
   type ConditionalDocument,
   type TagField,
   isTagField,
-} from '@genshin-optimizer/game-opt/sheet-ui'
-import type { Tag } from '@genshin-optimizer/zzz/formula'
-import { createTagMap } from '@genshin-optimizer/zzz/formula'
+} from '@genshin-optimizer/game-opt-sheet-ui'
+import type { Tag } from '@genshin-optimizer/zzz-formula'
+import { createTagMap } from '@genshin-optimizer/zzz-formula'
 import { discUiSheets } from '../disc'
 import { wengineUiSheets } from '../wengine'
 import { charBaseUiSheet } from './CharBase'

@@ -1,5 +1,5 @@
-import type { ElementalTypeKey } from '@genshin-optimizer/sr/consts'
-import { allElementalTypeKeys } from '@genshin-optimizer/sr/consts'
+import type { ElementalTypeKey } from '@genshin-optimizer/sr-consts'
+import { allElementalTypeKeys } from '@genshin-optimizer/sr-consts'
 import type { SvgIconProps } from '@mui/material'
 import {
   AtkIcon,

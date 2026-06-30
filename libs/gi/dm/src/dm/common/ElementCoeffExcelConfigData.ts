@@ -1,4 +1,4 @@
-import { dumpFile } from '@genshin-optimizer/common/pipeline'
+import { dumpFile } from '@genshin-optimizer/common-pipeline'
 import { readDMJSON } from '../../util'
 
 type ElementCoeffExcelConfigData = {

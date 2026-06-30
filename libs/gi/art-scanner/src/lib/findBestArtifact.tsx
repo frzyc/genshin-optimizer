@@ -1,5 +1,5 @@
-import { ColorText } from '@genshin-optimizer/common/ui'
-import { getUnitStr, objKeyMap } from '@genshin-optimizer/common/util'
+import { ColorText } from '@genshin-optimizer/common-ui'
+import { getUnitStr, objKeyMap } from '@genshin-optimizer/common-util'
 import type {
   ArtifactRarity,
   ArtifactSetKey,
@@ -7,21 +7,21 @@ import type {
   LocationKey,
   MainStatKey,
   SubstatKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import {
   allArtifactRarityKeys,
   allArtifactSlotKeys,
   artSlotMainKeys,
-} from '@genshin-optimizer/gi/consts'
-import type { IArtifact, ISubstat } from '@genshin-optimizer/gi/good'
-import { Translate } from '@genshin-optimizer/gi/i18n'
-import { allStats } from '@genshin-optimizer/gi/stats'
+} from '@genshin-optimizer/gi-consts'
+import type { IArtifact, ISubstat } from '@genshin-optimizer/gi-good'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import {
   artDisplayValue,
   getMainStatDisplayValue,
   getMainStatDisplayValues,
   getSubstatRolls,
-} from '@genshin-optimizer/gi/util'
+} from '@genshin-optimizer/gi-util'
+import { Translate } from '@genshin-optimizer/gi/i18n'
 import type { ReactNode } from 'react'
 import { statMap } from './enStringMap'
 

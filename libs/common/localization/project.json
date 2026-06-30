@@ -1,5 +1,5 @@
 {
-  "name": "common-localization",
+  "name": "@genshin-optimizer/common-localization",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/common/localization/src",
   "projectType": "library",

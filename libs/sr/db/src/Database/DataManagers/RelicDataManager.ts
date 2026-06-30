@@ -2,17 +2,17 @@ import type {
   RelicMainStatKey,
   RelicRarityKey,
   RelicSubStatKey,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 import {
   relicMaxLevel,
   relicSlotToMainStatKeys,
-} from '@genshin-optimizer/sr/consts'
-import type { IRelic, ISrObjectDescription } from '@genshin-optimizer/sr/srod'
-import { parseRelic, parseSubstats } from '@genshin-optimizer/sr/srod'
+} from '@genshin-optimizer/sr-consts'
+import type { IRelic, ISrObjectDescription } from '@genshin-optimizer/sr-srod'
+import { parseRelic, parseSubstats } from '@genshin-optimizer/sr-srod'
 import {
   getRelicMainStatVal,
   getSubstatRange,
-} from '@genshin-optimizer/sr/util'
+} from '@genshin-optimizer/sr-util'
 import type {
   ICachedRelic,
   ICachedSubstat,

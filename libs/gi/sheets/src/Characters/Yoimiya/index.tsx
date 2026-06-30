@@ -1,7 +1,7 @@
-import { range } from '@genshin-optimizer/common/util'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
-import type { UIData } from '@genshin-optimizer/gi/uidata'
+import { range } from '@genshin-optimizer/common-util'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi-consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
+import type { UIData } from '@genshin-optimizer/gi-uidata'
 import {
   compareEq,
   constant,
@@ -16,7 +16,7 @@ import {
   subscript,
   sum,
   unequal,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 import { cond, st, stg } from '../../SheetUtil'
 import type { INodeFieldDisplay } from '../../fieldDisplay'
 import { CharacterSheet } from '../CharacterSheet'

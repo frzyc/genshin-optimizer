@@ -3,19 +3,19 @@ import {
   CardThemed,
   ColorText,
   StarsDisplay,
-} from '@genshin-optimizer/common/ui'
-import { getUnitStr, toPercent } from '@genshin-optimizer/common/util'
-import { relicAsset } from '@genshin-optimizer/sr/assets'
+} from '@genshin-optimizer/common-ui'
+import { getUnitStr, toPercent } from '@genshin-optimizer/common-util'
+import { relicAsset } from '@genshin-optimizer/sr-assets'
 import {
   type LocationKey,
   allElementalDamageKeys,
-} from '@genshin-optimizer/sr/consts'
-import type { IRelic, ISubstat } from '@genshin-optimizer/sr/srod'
-import { SlotIcon, StatIcon } from '@genshin-optimizer/sr/svgicons'
+} from '@genshin-optimizer/sr-consts'
+import type { IRelic, ISubstat } from '@genshin-optimizer/sr-srod'
+import { SlotIcon, StatIcon } from '@genshin-optimizer/sr-svgicons'
 import {
   getRelicMainStatDisplayVal,
   statToFixed,
-} from '@genshin-optimizer/sr/util'
+} from '@genshin-optimizer/sr-util'
 import {
   DeleteForever,
   Edit,

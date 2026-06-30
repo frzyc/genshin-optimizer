@@ -1,7 +1,7 @@
-import { range } from '@genshin-optimizer/common/util'
-import { AssetData } from '@genshin-optimizer/sr/assets-data'
-import type { LightConeKey } from '@genshin-optimizer/sr/consts'
-import { allStats } from '@genshin-optimizer/sr/stats'
+import { range } from '@genshin-optimizer/common-util'
+import { AssetData } from '@genshin-optimizer/sr-assets-data'
+import type { LightConeKey } from '@genshin-optimizer/sr-consts'
+import { allStats } from '@genshin-optimizer/sr-stats'
 import {
   ActionRowBuilder,
   EmbedBuilder,

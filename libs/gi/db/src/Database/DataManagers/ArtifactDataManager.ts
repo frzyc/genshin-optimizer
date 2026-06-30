@@ -1,24 +1,24 @@
-import { clamp } from '@genshin-optimizer/common/util'
+import { clamp } from '@genshin-optimizer/common-util'
 import type {
   ArtifactRarity,
   MainStatKey,
   SubstatKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import {
   artMaxLevel,
   artSlotMainKeys,
   artSubstatRollData,
   charKeyToLocCharKey,
-} from '@genshin-optimizer/gi/consts'
-import type { IArtifact, IGOOD, ISubstat } from '@genshin-optimizer/gi/good'
-import { parseArtifact, substatSchema } from '@genshin-optimizer/gi/good'
-import { allStats } from '@genshin-optimizer/gi/stats'
+} from '@genshin-optimizer/gi-consts'
+import type { IArtifact, IGOOD, ISubstat } from '@genshin-optimizer/gi-good'
+import { parseArtifact, substatSchema } from '@genshin-optimizer/gi-good'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import {
   getMainStatDisplayValue,
   getSubstatRange,
   getSubstatRolls,
   getSubstatValue,
-} from '@genshin-optimizer/gi/util'
+} from '@genshin-optimizer/gi-util'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
 import type { IGO, ImportResult } from '../exim'

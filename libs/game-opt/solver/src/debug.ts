@@ -1,11 +1,11 @@
-import type { AnyTagFree } from '@genshin-optimizer/pando/engine'
-import { DebugCalculator, mapBottomUp } from '@genshin-optimizer/pando/engine'
+import type { AnyTagFree } from '@genshin-optimizer/pando-engine'
+import { DebugCalculator, mapBottomUp } from '@genshin-optimizer/pando-engine'
 import {
   Calculator,
   compileTagMapKeys,
   compileTagMapValues,
   constant,
-} from '@genshin-optimizer/pando/engine'
+} from '@genshin-optimizer/pando-engine'
 import type { Candidate } from './common'
 
 export function debugMeta(

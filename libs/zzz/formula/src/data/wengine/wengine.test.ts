@@ -1,14 +1,14 @@
-import { prettify } from '@genshin-optimizer/common/util'
+import { prettify } from '@genshin-optimizer/common-util'
 import {
   compileTagMapValues,
   setDebugMode,
-} from '@genshin-optimizer/pando/engine'
+} from '@genshin-optimizer/pando-engine'
 import type {
   CharacterKey,
   SpecialityKey,
   WengineKey,
-} from '@genshin-optimizer/zzz/consts'
-import { getWengineStat } from '@genshin-optimizer/zzz/stats'
+} from '@genshin-optimizer/zzz-consts'
+import { getWengineStat } from '@genshin-optimizer/zzz-stats'
 import { data, keys, values } from '..'
 import {
   charTagMapNodeEntries,

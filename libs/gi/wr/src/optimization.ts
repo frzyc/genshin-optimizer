@@ -1,4 +1,4 @@
-import { assertUnreachable, objPathValue } from '@genshin-optimizer/common/util'
+import { assertUnreachable, objPathValue } from '@genshin-optimizer/common-util'
 import { customMapFormula, forEachNodes, mapFormulas } from './internal'
 import type {
   AnyNode,

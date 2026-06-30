@@ -1,6 +1,6 @@
 // WARNING: Generated file, do not modify
-import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
-import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
+import type { UISheet } from '@genshin-optimizer/game-opt-sheet-ui'
+import type { DiscSetKey } from '@genshin-optimizer/zzz-consts'
 import AstralVoice from './AstralVoice'
 import BranchBladeSong from './BranchBladeSong'
 import BunnyInWonderland from './BunnyInWonderland'

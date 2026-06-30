@@ -1,8 +1,0 @@
-{
-  "name": "gi-db-ui",
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/gi/db-ui/src",
-  "projectType": "library",
-  "tags": [],
-  "targets": {}
-}

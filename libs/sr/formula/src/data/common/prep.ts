@@ -6,8 +6,8 @@ import {
   subscript,
   sum,
   tagVal,
-} from '@genshin-optimizer/pando/engine'
-import { allStats } from '@genshin-optimizer/sr/stats'
+} from '@genshin-optimizer/pando-engine'
+import { allStats } from '@genshin-optimizer/sr-stats'
 import type { ElementalType, TagMapNodeEntries } from '../util'
 import { own, ownBuff, percent, semiOwn } from '../util'
 

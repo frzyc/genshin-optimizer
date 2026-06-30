@@ -1,4 +1,4 @@
-import { notEmpty } from '@genshin-optimizer/common/util'
+import { notEmpty } from '@genshin-optimizer/common-util'
 import { useContext, useMemo } from 'react'
 import { TeamCharacterContext } from '../contexts'
 import { useDatabase } from './useDatabase'

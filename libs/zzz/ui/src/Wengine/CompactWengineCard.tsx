@@ -1,15 +1,15 @@
-import { CardThemed, ConditionalWrapper } from '@genshin-optimizer/common/ui'
+import { CardThemed, ConditionalWrapper } from '@genshin-optimizer/common-ui'
 import {
   getUnitStr,
   range,
   statKeyToFixed,
   toPercent,
-} from '@genshin-optimizer/common/util'
-import { wengineAsset, wenginePhaseIcon } from '@genshin-optimizer/zzz/assets'
-import { rarityColor } from '@genshin-optimizer/zzz/consts'
-import { useWengine } from '@genshin-optimizer/zzz/db-ui'
-import { getWengineStat, getWengineStats } from '@genshin-optimizer/zzz/stats'
-import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
+} from '@genshin-optimizer/common-util'
+import { wengineAsset, wenginePhaseIcon } from '@genshin-optimizer/zzz-assets'
+import { rarityColor } from '@genshin-optimizer/zzz-consts'
+import { useWengine } from '@genshin-optimizer/zzz-db-ui'
+import { getWengineStat, getWengineStats } from '@genshin-optimizer/zzz-stats'
+import { StatIcon } from '@genshin-optimizer/zzz-svgicons'
 import { Box, CardActionArea, Skeleton, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
 import { Suspense, useCallback, useContext } from 'react'

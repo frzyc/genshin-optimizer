@@ -1,4 +1,4 @@
-import { crawlObject, layeredAssignment } from '@genshin-optimizer/common/util'
+import { crawlObject, layeredAssignment } from '@genshin-optimizer/common-util'
 import {
   cmpEq,
   cmpGE,
@@ -8,19 +8,19 @@ import {
   prod,
   subscript,
   sum,
-} from '@genshin-optimizer/pando/engine'
-import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/pando-engine'
+import type { CharacterKey } from '@genshin-optimizer/zzz-consts'
 import {
   type AttributeKey,
   type SkillKey,
   allAttributeKeys,
   allSkillKeys,
-} from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-consts'
 import {
   type CharacterDatum,
   type SkillParam,
   allStats,
-} from '@genshin-optimizer/zzz/stats'
+} from '@genshin-optimizer/zzz-stats'
 import { anomTimePassed } from '../common/anomaly'
 import type { DamageType, DmgTag, FormulaArg, Stat } from '../util'
 import {

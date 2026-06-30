@@ -1,17 +1,17 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
-import { type ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
+import { CardThemed } from '@genshin-optimizer/common-ui'
+import { type ArtifactSlotKey } from '@genshin-optimizer/gi-consts'
 import {
   CharacterContext,
   TeamCharacterContext,
   useDatabase,
-} from '@genshin-optimizer/gi/db-ui'
-import { getCharStat } from '@genshin-optimizer/gi/stats'
+} from '@genshin-optimizer/gi-db-ui'
+import { getCharStat } from '@genshin-optimizer/gi-stats'
 import {
   ArtifactCardNano,
   BuildCard,
   CharIconSide,
   WeaponCardNano,
-} from '@genshin-optimizer/gi/ui'
+} from '@genshin-optimizer/gi-ui'
 import { Grid } from '@mui/material'
 import { useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'

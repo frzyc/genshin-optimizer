@@ -1,5 +1,5 @@
-import type { Preset } from '@genshin-optimizer/game-opt/engine'
-import { cmpEq, cmpNE } from '@genshin-optimizer/pando/engine'
+import type { Preset } from '@genshin-optimizer/game-opt-engine'
+import { cmpEq, cmpNE } from '@genshin-optimizer/pando-engine'
 import {
   type CharacterKey,
   type DiscMainStatKey,
@@ -10,8 +10,8 @@ import {
   type WengineKey,
   getDiscMainStatVal,
   getDiscSubStatBaseVal,
-} from '@genshin-optimizer/zzz/consts'
-import type { IDisc } from '@genshin-optimizer/zzz/zood'
+} from '@genshin-optimizer/zzz-consts'
+import type { IDisc } from '@genshin-optimizer/zzz-zood'
 import type { Member, TagMapNodeEntries } from './data/util'
 import {
   convert,

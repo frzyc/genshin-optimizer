@@ -1,6 +1,6 @@
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
-import type { Data } from '@genshin-optimizer/gi/wr'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi-consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
+import type { Data } from '@genshin-optimizer/gi-wr'
 import {
   constant,
   equal,
@@ -12,7 +12,7 @@ import {
   naught,
   percent,
   prod,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
 import type { TalentSheet } from '../ICharacterSheet.d'

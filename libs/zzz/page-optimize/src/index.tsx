@@ -1,42 +1,42 @@
-import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
-import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { ImgIcon, useTitle } from '@genshin-optimizer/common/ui'
-import { objKeyMap, stableArr } from '@genshin-optimizer/common/util'
-import type { DebugReadContextObj } from '@genshin-optimizer/game-opt/formula-ui'
+import { useDataEntryBase } from '@genshin-optimizer/common-database-ui'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
+import { ImgIcon, useTitle } from '@genshin-optimizer/common-ui'
+import { objKeyMap, stableArr } from '@genshin-optimizer/common-util'
+import type { DebugReadContextObj } from '@genshin-optimizer/game-opt-formula-ui'
 import {
   DebugReadContext,
   DebugReadModal,
   TagContext,
-} from '@genshin-optimizer/game-opt/formula-ui'
-import type { SetConditionalFunc } from '@genshin-optimizer/game-opt/sheet-ui'
+} from '@genshin-optimizer/game-opt-formula-ui'
+import type { SetConditionalFunc } from '@genshin-optimizer/game-opt-sheet-ui'
 import {
   ConditionalValuesContext,
   SetConditionalContext,
   SrcDstDisplayContext,
-} from '@genshin-optimizer/game-opt/sheet-ui'
-import type { BaseRead } from '@genshin-optimizer/pando/engine'
-import { characterAsset } from '@genshin-optimizer/zzz/assets'
-import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { allCharacterKeys } from '@genshin-optimizer/zzz/consts'
-import type { TeamConditional } from '@genshin-optimizer/zzz/db'
+} from '@genshin-optimizer/game-opt-sheet-ui'
+import type { BaseRead } from '@genshin-optimizer/pando-engine'
+import { characterAsset } from '@genshin-optimizer/zzz-assets'
+import type { CharacterKey } from '@genshin-optimizer/zzz-consts'
+import { allCharacterKeys } from '@genshin-optimizer/zzz-consts'
+import type { TeamConditional } from '@genshin-optimizer/zzz-db'
 import {
   CharacterContext,
   useCharacter,
   useDatabaseContext,
   useTeam,
-} from '@genshin-optimizer/zzz/db-ui'
+} from '@genshin-optimizer/zzz-db-ui'
 import {
   type Tag,
   getConditional,
   isMember,
   isSheet,
-} from '@genshin-optimizer/zzz/formula'
-import { CharCalcProvider } from '@genshin-optimizer/zzz/formula-ui'
-import { getCharStat } from '@genshin-optimizer/zzz/stats'
+} from '@genshin-optimizer/zzz-formula'
+import { CharCalcProvider } from '@genshin-optimizer/zzz-formula-ui'
+import { getCharStat } from '@genshin-optimizer/zzz-stats'
 import {
   CharacterName,
   CharacterSingleSelectionModal,
-} from '@genshin-optimizer/zzz/ui'
+} from '@genshin-optimizer/zzz-ui'
 import { Box, Button } from '@mui/material'
 import { Suspense, useCallback, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'

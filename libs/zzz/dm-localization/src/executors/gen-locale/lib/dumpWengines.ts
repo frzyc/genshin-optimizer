@@ -1,6 +1,6 @@
-import { dumpFile } from '@genshin-optimizer/common/pipeline'
-import type { WengineKey } from '@genshin-optimizer/zzz/consts'
-import { wengineDetailedJSONData } from '@genshin-optimizer/zzz/dm'
+import { dumpFile } from '@genshin-optimizer/common-pipeline'
+import type { WengineKey } from '@genshin-optimizer/zzz-consts'
+import { wengineDetailedJSONData } from '@genshin-optimizer/zzz-dm'
 import { processText } from './util'
 export function dumpWengines(fileDir: string) {
   const wengineNames = {} as Record<WengineKey, string>

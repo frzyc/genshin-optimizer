@@ -1,10 +1,10 @@
-import { verifyObjKeys } from '@genshin-optimizer/common/util'
+import { verifyObjKeys } from '@genshin-optimizer/common-util'
 import {
   allCharacterGenderedKeys,
   allLightConeKeys,
   allRelicSetKeys,
   allServantKeys,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 import {
   allCharHashData,
   allServantHashData,

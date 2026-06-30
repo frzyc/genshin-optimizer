@@ -1,7 +1,7 @@
 import type {
   DataManagerBase,
   Database,
-} from '@genshin-optimizer/common/database'
+} from '@genshin-optimizer/common-database'
 import { useCallback, useSyncExternalStore } from 'react'
 
 export function useDataManagerEntries<

@@ -1,9 +1,9 @@
-import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
-import { StatIcon } from '@genshin-optimizer/gi/svgicons'
+import { iconInlineProps } from '@genshin-optimizer/common-svgicons'
+import { StatIcon } from '@genshin-optimizer/gi-svgicons'
 import {
   ArtifactStatWithUnit,
   OptTargetContext,
-} from '@genshin-optimizer/gi/ui'
+} from '@genshin-optimizer/gi-ui'
 import { Alert } from '@mui/material'
 import { useContext } from 'react'
 import { Trans, useTranslation } from 'react-i18next'

@@ -1,30 +1,30 @@
-import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
+import { useDataManagerValues } from '@genshin-optimizer/common-database-ui'
 import {
   useBoolState,
   useMediaQueryUp,
-} from '@genshin-optimizer/common/react-util'
+} from '@genshin-optimizer/common-react-util'
 import {
   CardThemed,
   InfoTooltip,
   ModalWrapper,
   SqBadge,
   useInfScroll,
-} from '@genshin-optimizer/common/ui'
-import { filterFunction } from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-ui'
+import { filterFunction } from '@genshin-optimizer/common-util'
 import {
   TeamCharacterContext,
   useDatabase,
   useOptConfig,
-} from '@genshin-optimizer/gi/db-ui'
-import { initialFilterOption } from '@genshin-optimizer/gi/schema'
+} from '@genshin-optimizer/gi-db-ui'
+import { initialFilterOption } from '@genshin-optimizer/gi-schema'
 import {
   ArtifactCard,
   ArtifactCardNano,
   ArtifactFilterDisplay,
   ExcludeIcon,
   OptimizationIcon,
-} from '@genshin-optimizer/gi/ui'
-import { artifactFilterConfigs } from '@genshin-optimizer/gi/util'
+} from '@genshin-optimizer/gi-ui'
+import { artifactFilterConfigs } from '@genshin-optimizer/gi-util'
 import AddIcon from '@mui/icons-material/Add'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'

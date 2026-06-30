@@ -1,4 +1,4 @@
-import { parseFloatBetter } from '@genshin-optimizer/common/util'
+import { parseFloatBetter } from '@genshin-optimizer/common-util'
 
 export function extractParamsFromString(str: string) {
   return [

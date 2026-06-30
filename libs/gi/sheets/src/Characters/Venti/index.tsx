@@ -1,7 +1,7 @@
-import { ColorText } from '@genshin-optimizer/common/ui'
-import { absorbableEle } from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
-import type { NumNode } from '@genshin-optimizer/gi/wr'
+import { ColorText } from '@genshin-optimizer/common-ui'
+import { absorbableEle } from '@genshin-optimizer/gi-consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
+import type { NumNode } from '@genshin-optimizer/gi-wr'
 import {
   compareEq,
   constant,
@@ -19,7 +19,7 @@ import {
   tally,
   target,
   unequal,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
 import type { TalentSheet } from '../ICharacterSheet.d'
@@ -31,8 +31,8 @@ import {
   plungingDmgNodes,
 } from '../dataUtil'
 
-import { objKeyMap } from '@genshin-optimizer/common/util'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
+import { objKeyMap } from '@genshin-optimizer/common-util'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi-consts'
 
 const key: CharacterKey = 'Venti'
 const elementKey: ElementKey = 'anemo'

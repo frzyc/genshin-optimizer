@@ -2,13 +2,13 @@ import {
   BootstrapTooltip,
   SolidToggleButtonGroup,
   theme,
-} from '@genshin-optimizer/common/ui'
+} from '@genshin-optimizer/common-ui'
 import {
   bulkCatTotal,
   handleMultiSelect,
   objKeyMap,
-} from '@genshin-optimizer/common/util'
-import type { DiscSlotKey } from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/common-util'
+import type { DiscSlotKey } from '@genshin-optimizer/zzz-consts'
 import {
   allDiscMainStatKeys,
   allDiscRarityKeys,
@@ -16,9 +16,9 @@ import {
   allDiscSlotKeys,
   allDiscSubStatKeys,
   allLocationKeys,
-} from '@genshin-optimizer/zzz/consts'
-import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
-import { type DiscFilterOption } from '@genshin-optimizer/zzz/util'
+} from '@genshin-optimizer/zzz-consts'
+import { useDatabaseContext } from '@genshin-optimizer/zzz-db-ui'
+import { type DiscFilterOption } from '@genshin-optimizer/zzz-util'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenIcon from '@mui/icons-material/LockOpen'

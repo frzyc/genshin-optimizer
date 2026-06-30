@@ -1,4 +1,4 @@
-import type { FilterConfigs } from '@genshin-optimizer/common/util'
+import type { FilterConfigs } from '@genshin-optimizer/common-util'
 import type {
   DiscMainStatKey,
   DiscRarityKey,
@@ -6,12 +6,12 @@ import type {
   DiscSlotKey,
   DiscSubStatKey,
   LocationKey,
-} from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-consts'
 import {
   allDiscRarityKeys,
   allDiscSlotKeys,
-} from '@genshin-optimizer/zzz/consts'
-import type { IDisc } from '@genshin-optimizer/zzz/zood'
+} from '@genshin-optimizer/zzz-consts'
+import type { IDisc } from '@genshin-optimizer/zzz-zood'
 
 export type DiscFilterOption = {
   discSetKeys: DiscSetKey[]

@@ -1,24 +1,24 @@
-import { CardThemed, ImgIcon } from '@genshin-optimizer/common/ui'
-import { range } from '@genshin-optimizer/common/util'
+import { CardThemed, ImgIcon } from '@genshin-optimizer/common-ui'
+import { range } from '@genshin-optimizer/common-util'
 import {
   characterAsset,
   factionDefIcon,
   specialityDefIcon,
-} from '@genshin-optimizer/zzz/assets'
+} from '@genshin-optimizer/zzz-assets'
 
-import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
+import type { CharacterKey } from '@genshin-optimizer/zzz-consts'
 import {
   useCharacterContext,
   useDatabaseContext,
   useTeam,
-} from '@genshin-optimizer/zzz/db-ui'
-import { allStats, getCharStat } from '@genshin-optimizer/zzz/stats'
-import { ElementIcon } from '@genshin-optimizer/zzz/svgicons'
+} from '@genshin-optimizer/zzz-db-ui'
+import { allStats, getCharStat } from '@genshin-optimizer/zzz-stats'
+import { ElementIcon } from '@genshin-optimizer/zzz-svgicons'
 import {
   CharacterName,
   CharacterSingleSelectionModal,
   ZCard,
-} from '@genshin-optimizer/zzz/ui'
+} from '@genshin-optimizer/zzz-ui'
 import { Button, Grid, Stack } from '@mui/material'
 import { Box } from '@mui/system'
 import { Suspense, useCallback, useState } from 'react'

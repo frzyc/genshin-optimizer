@@ -1,9 +1,9 @@
-import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
-import { ColorText } from '@genshin-optimizer/common/ui'
-import { getUnitStr } from '@genshin-optimizer/common/util'
-import type { StatKey } from '@genshin-optimizer/gi/keymap'
-import { KeyMap } from '@genshin-optimizer/gi/keymap'
-import { StatIcon } from '@genshin-optimizer/gi/svgicons'
+import { iconInlineProps } from '@genshin-optimizer/common-svgicons'
+import { ColorText } from '@genshin-optimizer/common-ui'
+import { getUnitStr } from '@genshin-optimizer/common-util'
+import type { StatKey } from '@genshin-optimizer/gi-keymap'
+import { KeyMap } from '@genshin-optimizer/gi-keymap'
+import { StatIcon } from '@genshin-optimizer/gi-svgicons'
 import { Box } from '@mui/material'
 
 export function StatWithUnit({

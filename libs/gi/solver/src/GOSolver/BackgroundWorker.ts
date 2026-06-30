@@ -1,4 +1,4 @@
-import { assertUnreachable } from '@genshin-optimizer/common/util'
+import { assertUnreachable } from '@genshin-optimizer/common-util'
 import type { RequestFilter } from '../common'
 import {
   artSetPerm,

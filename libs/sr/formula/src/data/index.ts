@@ -1,8 +1,8 @@
-import { usedNames, usedQ } from '@genshin-optimizer/game-opt/engine'
+import { usedNames, usedQ } from '@genshin-optimizer/game-opt-engine'
 import {
   compileTagMapKeys,
   compileTagMapValues,
-} from '@genshin-optimizer/pando/engine'
+} from '@genshin-optimizer/pando-engine'
 import { type TagMapNodeEntries, fixedTags, queryTypes } from './util'
 
 import charData from './char'

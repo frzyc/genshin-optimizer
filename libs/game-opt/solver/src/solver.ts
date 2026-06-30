@@ -1,5 +1,5 @@
-import type { Candidate, NumTagFree } from '@genshin-optimizer/pando/engine'
-import { prune } from '@genshin-optimizer/pando/engine'
+import type { Candidate, NumTagFree } from '@genshin-optimizer/pando-engine'
+import { prune } from '@genshin-optimizer/pando-engine'
 import type { BuildResult, Progress, Work } from './common'
 import { buildCount } from './common'
 import type { Command, ErrMsg, Response } from './workerHandle'

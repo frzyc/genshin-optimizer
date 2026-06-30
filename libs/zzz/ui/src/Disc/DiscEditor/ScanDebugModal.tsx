@@ -1,5 +1,5 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
+import { CardThemed, ModalWrapper } from '@genshin-optimizer/common-ui'
 import { Box, Button, CardContent, Stack, Typography } from '@mui/material'
 
 export function ScanDebugModal({ imgs }: { imgs: Record<string, string> }) {

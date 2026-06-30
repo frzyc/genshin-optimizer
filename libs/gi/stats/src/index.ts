@@ -5,8 +5,8 @@ import type {
   ElementKey,
   NonTravelerCharacterKey,
   WeaponKey,
-} from '@genshin-optimizer/gi/consts'
-import { charKeyToLocCharKey } from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
+import { charKeyToLocCharKey } from '@genshin-optimizer/gi-consts'
 import * as allStat_gen from './allStat_gen.json'
 import type { AllStats, CharacterDataGen } from './executors/gen-stats/executor'
 

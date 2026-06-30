@@ -1,4 +1,4 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
 import type { ButtonProps } from '@mui/material'
 import { Button } from '@mui/material'
 import { useCallback } from 'react'

@@ -1,10 +1,10 @@
-import { objKeyMap, objKeyValMap } from '@genshin-optimizer/common/util'
+import { objKeyMap, objKeyValMap } from '@genshin-optimizer/common-util'
 import {
   type ArtifactSetKey,
   allElementKeys,
-} from '@genshin-optimizer/gi/consts'
-import type { UIData } from '@genshin-optimizer/gi/uidata'
-import type { Data } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-consts'
+import type { UIData } from '@genshin-optimizer/gi-uidata'
+import type { Data } from '@genshin-optimizer/gi-wr'
 import {
   equal,
   equalStr,
@@ -14,7 +14,7 @@ import {
   input,
   percent,
   sum,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 import { condReadNode, nonStackBuff, st, stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { SetEffectSheet } from '../IArtifactSheet'

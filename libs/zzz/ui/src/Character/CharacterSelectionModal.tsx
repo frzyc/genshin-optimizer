@@ -1,36 +1,36 @@
-import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
+import { useDataEntryBase } from '@genshin-optimizer/common-database-ui'
 import {
   CardThemed,
   ImgIcon,
   ModalWrapper,
   SortByButton,
   SqBadge,
-} from '@genshin-optimizer/common/ui'
+} from '@genshin-optimizer/common-ui'
 import {
   catTotal,
   filterFunction,
   sortFunction,
-} from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-util'
 import {
   characterAsset,
   factionDefIcon,
   rarityDefIcon,
   specialityDefIcon,
-} from '@genshin-optimizer/zzz/assets'
+} from '@genshin-optimizer/zzz-assets'
 import type {
   AttributeKey,
   CharacterKey,
   SpecialityKey,
-} from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-consts'
 import {
   allAttributeKeys,
   allCharacterKeys,
   allSpecialityKeys,
   milestoneMaxLevel,
-} from '@genshin-optimizer/zzz/consts'
-import { useCharacter, useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
-import { getCharStat } from '@genshin-optimizer/zzz/stats'
-import { ElementIcon } from '@genshin-optimizer/zzz/svgicons'
+} from '@genshin-optimizer/zzz-consts'
+import { useCharacter, useDatabaseContext } from '@genshin-optimizer/zzz-db-ui'
+import { getCharStat } from '@genshin-optimizer/zzz-stats'
+import { ElementIcon } from '@genshin-optimizer/zzz-svgicons'
 import { Block } from '@mui/icons-material'
 import CloseIcon from '@mui/icons-material/Close'
 import {

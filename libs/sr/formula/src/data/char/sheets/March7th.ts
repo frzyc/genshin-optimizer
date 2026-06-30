@@ -1,6 +1,6 @@
-import { cmpGE, prod, sum } from '@genshin-optimizer/pando/engine'
-import { type CharacterKey } from '@genshin-optimizer/sr/consts'
-import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
+import { cmpGE, prod, sum } from '@genshin-optimizer/pando-engine'
+import { type CharacterKey } from '@genshin-optimizer/sr-consts'
+import { allStats, mappedStats } from '@genshin-optimizer/sr-stats'
 import {
   customDmg,
   customHeal,

@@ -1,15 +1,15 @@
-import { ImgIcon } from '@genshin-optimizer/common/ui'
+import { ImgIcon } from '@genshin-optimizer/common-ui'
 import {
   getUnitStr,
   statKeyToFixed,
   toPercent,
-} from '@genshin-optimizer/common/util'
-import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
-import { DocumentDisplay } from '@genshin-optimizer/game-opt/sheet-ui'
-import { wengineAsset } from '@genshin-optimizer/zzz/assets'
-import { getWengineStat, getWengineStats } from '@genshin-optimizer/zzz/stats'
-import { StatDisplay, WengineName, ZCard } from '@genshin-optimizer/zzz/ui'
-import type { IWengine } from '@genshin-optimizer/zzz/zood'
+} from '@genshin-optimizer/common-util'
+import type { UISheetElement } from '@genshin-optimizer/game-opt-sheet-ui'
+import { DocumentDisplay } from '@genshin-optimizer/game-opt-sheet-ui'
+import { wengineAsset } from '@genshin-optimizer/zzz-assets'
+import { getWengineStat, getWengineStats } from '@genshin-optimizer/zzz-stats'
+import { StatDisplay, WengineName, ZCard } from '@genshin-optimizer/zzz-ui'
+import type { IWengine } from '@genshin-optimizer/zzz-zood'
 import { Box, CardContent, CardHeader, Stack, Typography } from '@mui/material'
 import { wengineUiSheets } from '../sheets'
 

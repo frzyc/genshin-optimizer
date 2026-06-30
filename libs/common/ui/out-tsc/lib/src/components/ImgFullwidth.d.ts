@@ -1,0 +1,2 @@
+export declare const ImgFullwidth: import("@emotion/styled").StyledComponent<import("@mui/system").MUIStyledCommonProps<import("@mui/material").Theme>, import("react").DetailedHTMLProps<import("react").ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>, {}>;
+//# sourceMappingURL=ImgFullwidth.d.ts.map

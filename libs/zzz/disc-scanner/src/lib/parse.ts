@@ -1,5 +1,5 @@
-import { levenshteinDistance } from '@genshin-optimizer/common/util'
-import type { DiscRarityKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
+import { levenshteinDistance } from '@genshin-optimizer/common-util'
+import type { DiscRarityKey, DiscSlotKey } from '@genshin-optimizer/zzz-consts'
 import {
   type DiscSetKey,
   allDiscMainStatKeys,
@@ -7,8 +7,8 @@ import {
   allDiscSubStatKeys,
   discMaxLevel,
   discSlotToMainStatKeys,
-} from '@genshin-optimizer/zzz/consts'
-import type { ISubstat } from '@genshin-optimizer/zzz/zood'
+} from '@genshin-optimizer/zzz-consts'
+import type { ISubstat } from '@genshin-optimizer/zzz-zood'
 import { misreadCharactersInSubstatMap } from './consts'
 import { statMapEngMap } from './enStringMap'
 

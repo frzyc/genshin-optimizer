@@ -1,20 +1,20 @@
-import { notEmpty } from '@genshin-optimizer/common/util'
-import type { Calculator } from '@genshin-optimizer/game-opt/engine'
-import { CalcContext } from '@genshin-optimizer/game-opt/formula-ui'
+import { notEmpty } from '@genshin-optimizer/common-util'
+import type { Calculator } from '@genshin-optimizer/game-opt-engine'
+import { CalcContext } from '@genshin-optimizer/game-opt-formula-ui'
 import type {
   FormulaTextFunc,
   FullTagDisplayComponent,
   TagDisplayComponent,
-} from '@genshin-optimizer/game-opt/sheet-ui'
+} from '@genshin-optimizer/game-opt-sheet-ui'
 import {
   FormulaTextCacheContext,
   FormulaTextContext,
   FullTagDisplayContext,
   TagDisplayContext,
-} from '@genshin-optimizer/game-opt/sheet-ui'
-import { constant } from '@genshin-optimizer/pando/engine'
-import type { CharOpt, ICachedCharacter } from '@genshin-optimizer/sr/db'
-import { useLightCone, useRelics } from '@genshin-optimizer/sr/db-ui'
+} from '@genshin-optimizer/game-opt-sheet-ui'
+import { constant } from '@genshin-optimizer/pando-engine'
+import type { CharOpt, ICachedCharacter } from '@genshin-optimizer/sr-db'
+import { useLightCone, useRelics } from '@genshin-optimizer/sr-db-ui'
 import {
   charTagMapNodeEntries,
   conditionalEntries,
@@ -25,9 +25,9 @@ import {
   teamData,
   withMember,
   withPreset,
-} from '@genshin-optimizer/sr/formula'
-import { TagDisplay, formulaText } from '@genshin-optimizer/sr/formula-ui'
-import { relicsTagMapNodes } from '@genshin-optimizer/sr/solver'
+} from '@genshin-optimizer/sr-formula'
+import { TagDisplay, formulaText } from '@genshin-optimizer/sr-formula-ui'
+import { relicsTagMapNodes } from '@genshin-optimizer/sr-solver'
 import type { ReactNode } from 'react'
 import { useMemo } from 'react'
 

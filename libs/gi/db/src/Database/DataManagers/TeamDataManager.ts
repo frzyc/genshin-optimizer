@@ -3,19 +3,19 @@ import {
   objKeyMap,
   objMap,
   range,
-} from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-util'
 import type {
   ArtifactSetKey,
   ArtifactSlotKey,
   MainStatKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import {
   allArtifactSlotKeys,
   allElementWithPhyKeys,
   charKeyToLocCharKey,
-} from '@genshin-optimizer/gi/consts'
-import type { IGOOD } from '@genshin-optimizer/gi/good'
-import type { EleEnemyResKey } from '@genshin-optimizer/gi/keymap'
+} from '@genshin-optimizer/gi-consts'
+import type { IGOOD } from '@genshin-optimizer/gi-good'
+import type { EleEnemyResKey } from '@genshin-optimizer/gi-keymap'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
 import type { IGO, ImportResult } from '../exim'

@@ -1,11 +1,11 @@
-import type { Tag as BaseTag } from '@genshin-optimizer/game-opt/engine'
+import type { Tag as BaseTag } from '@genshin-optimizer/game-opt-engine'
 import {
   Read as BaseRead,
   reader as baseReader,
   entryTypes,
   presets,
   setReader,
-} from '@genshin-optimizer/game-opt/engine'
+} from '@genshin-optimizer/game-opt-engine'
 import {
   allAmplifyingReactionKeys,
   allCatalyzeReactionKeys,
@@ -13,7 +13,7 @@ import {
   allMoveKeys,
   allRegionKeys,
   allTransformativeReactionKeys,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import type { Dst, Sheet, Src } from './listing'
 import { members, sheets } from './listing'
 

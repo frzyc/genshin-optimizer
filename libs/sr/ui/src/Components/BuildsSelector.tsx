@@ -1,6 +1,6 @@
-import { DropdownButton } from '@genshin-optimizer/common/ui'
-import { maxBuildsToShowList } from '@genshin-optimizer/sr/db'
-import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
+import { DropdownButton } from '@genshin-optimizer/common-ui'
+import { maxBuildsToShowList } from '@genshin-optimizer/sr-db'
+import { useDatabaseContext } from '@genshin-optimizer/sr-db-ui'
 import { MenuItem, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 

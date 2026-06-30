@@ -1,10 +1,10 @@
-import { dumpFile } from '@genshin-optimizer/common/pipeline'
+import { dumpFile } from '@genshin-optimizer/common-pipeline'
 import {
   artifactMainstatData,
   artifactSubstatData,
   artifactSubstatRollCorrection,
   artifactSubstatRollData,
-} from '@genshin-optimizer/gi/dm'
+} from '@genshin-optimizer/gi-dm'
 import { workspaceRoot } from '@nx/devkit'
 import type { GenStatsExecutorSchema } from './schema'
 import artifactData from './src/artifactData'

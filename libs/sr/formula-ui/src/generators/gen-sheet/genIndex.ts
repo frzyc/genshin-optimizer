@@ -1,10 +1,10 @@
 import { writeFileSync } from 'fs'
-import { formatText } from '@genshin-optimizer/common/pipeline'
+import { formatText } from '@genshin-optimizer/common-pipeline'
 import {
   allCharacterKeys,
   allLightConeKeys,
   allRelicSetKeys,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 import type { Tree } from '@nx/devkit'
 import { workspaceRoot } from '@nx/devkit'
 
@@ -25,8 +25,8 @@ export default async function genIndex(tree: Tree, sheet_type: string) {
 
 async function writeCharIndex(path: string) {
   const index = `
-import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
-import type { CharacterKey } from '@genshin-optimizer/sr/consts'
+import type { UISheet } from '@genshin-optimizer/game-opt-sheet-ui'
+import type { CharacterKey } from '@genshin-optimizer/sr-consts'
 import type { TalentSheetElementKey } from '../consts'
 ${allCharacterKeys
   .map((charKey) => `import ${charKey} from './${charKey}'`)
@@ -45,8 +45,8 @@ export const uiSheets: Record<
 
 async function writeRelicIndex(path: string) {
   const index = `
-import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
-import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
+import type { UISheet } from '@genshin-optimizer/game-opt-sheet-ui'
+import type { RelicSetKey } from '@genshin-optimizer/sr-consts'
 ${allRelicSetKeys
   .map((setKey) => `import ${setKey} from './${setKey}'`)
   .join('\n')}
@@ -61,8 +61,8 @@ export const relicUiSheets: Record<RelicSetKey, UISheet<'2' | '4'>> = {
 
 async function writeLightConeIndex(path: string) {
   const index = `
-import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
-import type { LightConeKey } from '@genshin-optimizer/sr/consts'
+import type { UISheetElement } from '@genshin-optimizer/game-opt-sheet-ui'
+import type { LightConeKey } from '@genshin-optimizer/sr-consts'
 
 ${allLightConeKeys
   .map((lightConeKey) => `import ${lightConeKey} from './${lightConeKey}'`)

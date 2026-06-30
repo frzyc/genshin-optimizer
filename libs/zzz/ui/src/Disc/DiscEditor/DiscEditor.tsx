@@ -1,22 +1,22 @@
-import { CardThemed, ModalWrapper, usePrev } from '@genshin-optimizer/common/ui'
+import { CardThemed, ModalWrapper, usePrev } from '@genshin-optimizer/common-ui'
 import {
   getUnitStr,
   range,
   statKeyToFixed,
   toPercent,
-} from '@genshin-optimizer/common/util'
-import type { DiscSetKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/common-util'
+import type { DiscSetKey, DiscSlotKey } from '@genshin-optimizer/zzz-consts'
 import {
   allDiscSlotKeys,
   discMaxLevel,
   getDiscMainStatVal,
-} from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-consts'
 import {
   type ICachedDisc,
   validateDiscBasedOnRarity,
-} from '@genshin-optimizer/zzz/db'
-import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
-import type { IDisc, ISubstat } from '@genshin-optimizer/zzz/zood'
+} from '@genshin-optimizer/zzz-db'
+import { useDatabaseContext } from '@genshin-optimizer/zzz-db-ui'
+import type { IDisc, ISubstat } from '@genshin-optimizer/zzz-zood'
 import AddIcon from '@mui/icons-material/Add'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 import CloseIcon from '@mui/icons-material/Close'

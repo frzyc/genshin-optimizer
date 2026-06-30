@@ -1,17 +1,17 @@
-import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import { iconInlineProps } from '@genshin-optimizer/common-svgicons'
 import {
   CardThemed,
   DropdownButton,
   ImgIcon,
-} from '@genshin-optimizer/common/ui'
-import { artifactDefIcon } from '@genshin-optimizer/gi/assets'
-import type { ArtifactSetKey, SetNum } from '@genshin-optimizer/gi/consts'
-import { getArtSheet } from '@genshin-optimizer/gi/sheets'
+} from '@genshin-optimizer/common-ui'
+import { artifactDefIcon } from '@genshin-optimizer/gi-assets'
+import type { ArtifactSetKey, SetNum } from '@genshin-optimizer/gi-consts'
+import { getArtSheet } from '@genshin-optimizer/gi-sheets'
 import {
   ArtifactSetName,
   ArtifactSetTooltip,
   SetEffectDisplay,
-} from '@genshin-optimizer/gi/ui'
+} from '@genshin-optimizer/gi-ui'
 import ClearIcon from '@mui/icons-material/Clear'
 import InfoIcon from '@mui/icons-material/Info'
 import { Box, Button, ButtonGroup, MenuItem, Stack } from '@mui/material'

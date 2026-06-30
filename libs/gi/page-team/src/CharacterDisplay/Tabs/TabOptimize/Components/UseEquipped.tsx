@@ -1,32 +1,32 @@
 import {
   useDataManagerEntries,
   useDataManagerKeys,
-} from '@genshin-optimizer/common/database-ui'
-import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
-import { CardThemed, ModalWrapper, SqBadge } from '@genshin-optimizer/common/ui'
-import { bulkCatTotal, filterFunction } from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-database-ui'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
+import { iconInlineProps } from '@genshin-optimizer/common-svgicons'
+import { CardThemed, ModalWrapper, SqBadge } from '@genshin-optimizer/common-ui'
+import { bulkCatTotal, filterFunction } from '@genshin-optimizer/common-util'
 import type {
   CharacterKey,
   LocationCharacterKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import {
   allArtifactSlotKeys,
   allCharacterRarityKeys,
   allElementKeys,
   allWeaponTypeKeys,
   charKeyToLocCharKey,
-} from '@genshin-optimizer/gi/consts'
-import type { ICachedCharacter } from '@genshin-optimizer/gi/db'
+} from '@genshin-optimizer/gi-consts'
+import type { ICachedCharacter } from '@genshin-optimizer/gi-db'
 import {
   CharacterContext,
   TeamCharacterContext,
   useCharacter,
   useDatabase,
   useOptConfig,
-} from '@genshin-optimizer/gi/db-ui'
-import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
-import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
+} from '@genshin-optimizer/gi-db-ui'
+import { getCharEle, getCharStat } from '@genshin-optimizer/gi-stats'
+import { SlotIcon } from '@genshin-optimizer/gi-svgicons'
 import {
   CharacterCard,
   CharacterCardPico,
@@ -35,7 +35,7 @@ import {
   SillyContext,
   WeaponToggle,
   characterFilterConfigs,
-} from '@genshin-optimizer/gi/ui'
+} from '@genshin-optimizer/gi-ui'
 import CloseIcon from '@mui/icons-material/Close'
 import SettingsIcon from '@mui/icons-material/Settings'
 import ShowChartIcon from '@mui/icons-material/ShowChart'

@@ -1,26 +1,26 @@
-import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
-import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { CardThemed, ModalWrapper, SqBadge } from '@genshin-optimizer/common/ui'
-import { objKeyMap, stableArr } from '@genshin-optimizer/common/util'
-import type { WengineKey } from '@genshin-optimizer/zzz/consts'
+import { useDataManagerValues } from '@genshin-optimizer/common-database-ui'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
+import { CardThemed, ModalWrapper, SqBadge } from '@genshin-optimizer/common-ui'
+import { objKeyMap, stableArr } from '@genshin-optimizer/common-util'
+import type { WengineKey } from '@genshin-optimizer/zzz-consts'
 import {
   allSpecialityKeys,
   allWengineKeys,
-} from '@genshin-optimizer/zzz/consts'
-import type { ICachedWengine, TeamConditional } from '@genshin-optimizer/zzz/db'
+} from '@genshin-optimizer/zzz-consts'
+import type { ICachedWengine, TeamConditional } from '@genshin-optimizer/zzz-db'
 import {
   OptConfigContext,
   useCharacterContext,
   useDatabaseContext,
   useTeam,
-} from '@genshin-optimizer/zzz/db-ui'
+} from '@genshin-optimizer/zzz-db-ui'
 import {
   CharCalcMockCountProvider,
   WengineSheetDisplay,
-} from '@genshin-optimizer/zzz/formula-ui'
-import { getWengineStat } from '@genshin-optimizer/zzz/stats'
-import { WengineToggle } from '@genshin-optimizer/zzz/ui'
-import type { IWengine } from '@genshin-optimizer/zzz/zood'
+} from '@genshin-optimizer/zzz-formula-ui'
+import { getWengineStat } from '@genshin-optimizer/zzz-stats'
+import { WengineToggle } from '@genshin-optimizer/zzz-ui'
+import type { IWengine } from '@genshin-optimizer/zzz-zood'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
 import CloseIcon from '@mui/icons-material/Close'

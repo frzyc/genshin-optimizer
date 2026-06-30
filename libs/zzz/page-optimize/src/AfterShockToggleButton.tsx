@@ -1,4 +1,4 @@
-import { damageTypeKeysMap } from '@genshin-optimizer/zzz/formula-ui'
+import { damageTypeKeysMap } from '@genshin-optimizer/zzz-formula-ui'
 import { Button } from '@mui/material'
 
 export function AfterShockToggleButton({

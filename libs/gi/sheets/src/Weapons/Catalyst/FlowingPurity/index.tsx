@@ -1,5 +1,5 @@
-import { objKeyMap } from '@genshin-optimizer/common/util'
-import { type WeaponKey, allElementKeys } from '@genshin-optimizer/gi/consts'
+import { objKeyMap } from '@genshin-optimizer/common-util'
+import { type WeaponKey, allElementKeys } from '@genshin-optimizer/gi-consts'
 import {
   equal,
   infoMut,
@@ -9,7 +9,7 @@ import {
   prod,
   subscript,
   sum,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 import { cond, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { WeaponSheet, headerTemplate } from '../../WeaponSheet'

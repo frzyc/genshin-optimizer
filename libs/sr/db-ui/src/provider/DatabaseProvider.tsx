@@ -1,8 +1,8 @@
 import {
   DBLocalStorage,
   SandboxStorage,
-} from '@genshin-optimizer/common/database'
-import { SroDatabase } from '@genshin-optimizer/sr/db'
+} from '@genshin-optimizer/common-database'
+import { SroDatabase } from '@genshin-optimizer/sr-db'
 import type { ReactNode } from 'react'
 import { useCallback, useMemo, useState } from 'react'
 import { DatabaseContext, type DatabaseContextObj } from '../context'

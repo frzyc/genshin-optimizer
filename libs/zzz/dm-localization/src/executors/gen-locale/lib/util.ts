@@ -1,4 +1,4 @@
-import { tooltipJSONData } from '@genshin-optimizer/zzz/dm'
+import { tooltipJSONData } from '@genshin-optimizer/zzz-dm'
 
 export function processText(text: string, inTooltip = false) {
   const processedText = text

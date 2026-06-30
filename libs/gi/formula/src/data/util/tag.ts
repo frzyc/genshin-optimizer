@@ -6,10 +6,10 @@ import {
   createConditionalEntries,
   createConvert,
   tag,
-} from '@genshin-optimizer/game-opt/engine'
-import type { StatKey } from '@genshin-optimizer/gi/dm'
-import type { NumNode } from '@genshin-optimizer/pando/engine'
-import { constant } from '@genshin-optimizer/pando/engine'
+} from '@genshin-optimizer/game-opt-engine'
+import type { StatKey } from '@genshin-optimizer/gi-dm'
+import type { NumNode } from '@genshin-optimizer/pando-engine'
+import { constant } from '@genshin-optimizer/pando-engine'
 import type { Sheet, Stat } from './listing'
 import type { Read, Tag } from './read'
 import { reader } from './read'

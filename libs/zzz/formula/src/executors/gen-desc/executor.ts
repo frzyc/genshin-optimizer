@@ -1,14 +1,14 @@
 import * as path from 'path'
-import { formatText } from '@genshin-optimizer/common/pipeline'
+import { formatText } from '@genshin-optimizer/common-pipeline'
 import {
   extractCondMetadata,
   extractFormulaMetadata,
-} from '@genshin-optimizer/game-opt/formula'
+} from '@genshin-optimizer/game-opt-formula'
 import {
   allCharacterKeys,
   allDiscSetKeys,
   allWengineKeys,
-} from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-consts'
 import { workspaceRoot } from '@nx/devkit'
 import { writeFile } from 'fs/promises'
 import { data } from '../../data'

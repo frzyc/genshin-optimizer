@@ -1,28 +1,28 @@
-import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
-import { CardThemed } from '@genshin-optimizer/common/ui'
-import { objKeyMap } from '@genshin-optimizer/common/util'
-import type { BuildResult, Progress } from '@genshin-optimizer/game-opt/solver'
-import { Solver, buildCount } from '@genshin-optimizer/game-opt/solver'
+import { useDataManagerValues } from '@genshin-optimizer/common-database-ui'
+import { CardThemed } from '@genshin-optimizer/common-ui'
+import { objKeyMap } from '@genshin-optimizer/common-util'
+import type { BuildResult, Progress } from '@genshin-optimizer/game-opt-solver'
+import { Solver, buildCount } from '@genshin-optimizer/game-opt-solver'
 import {
   type DiscSlotKey,
   allDiscSlotKeys,
-} from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-consts'
 import {
   type ICachedDisc,
   getTeamFrame0,
   targetTag,
-} from '@genshin-optimizer/zzz/db'
+} from '@genshin-optimizer/zzz-db'
 import {
   OptConfigContext,
   OptConfigProvider,
   useCharacterContext,
   useDatabaseContext,
   useTeam,
-} from '@genshin-optimizer/zzz/db-ui'
-import { useZzzCalcContext } from '@genshin-optimizer/zzz/formula-ui'
-import { createSolverConfig } from '@genshin-optimizer/zzz/solver'
-import { getCharStat, getWengineStat } from '@genshin-optimizer/zzz/stats'
-import { BuildsSelector, WorkerSelector } from '@genshin-optimizer/zzz/ui'
+} from '@genshin-optimizer/zzz-db-ui'
+import { useZzzCalcContext } from '@genshin-optimizer/zzz-formula-ui'
+import { createSolverConfig } from '@genshin-optimizer/zzz-solver'
+import { getCharStat, getWengineStat } from '@genshin-optimizer/zzz-stats'
+import { BuildsSelector, WorkerSelector } from '@genshin-optimizer/zzz-ui'
 import CloseIcon from '@mui/icons-material/Close'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import {

@@ -1,10 +1,10 @@
-import { ColorText } from '@genshin-optimizer/common/ui'
+import { ColorText } from '@genshin-optimizer/common-ui'
 import type {
   CharacterKey,
   CharacterSheetKey,
-} from '@genshin-optimizer/gi/consts'
-import { allStats } from '@genshin-optimizer/gi/stats'
-import type { DisplaySub } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
+import type { DisplaySub } from '@genshin-optimizer/gi-wr'
 import {
   constant,
   equal,
@@ -18,7 +18,7 @@ import {
   prod,
   sum,
   target,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import type { TalentSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'

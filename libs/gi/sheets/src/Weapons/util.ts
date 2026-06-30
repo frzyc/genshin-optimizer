@@ -1,6 +1,6 @@
-import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allStats, getWeaponStat } from '@genshin-optimizer/gi/stats'
-import type { Data, DisplaySub } from '@genshin-optimizer/gi/wr'
+import type { WeaponKey } from '@genshin-optimizer/gi-consts'
+import { allStats, getWeaponStat } from '@genshin-optimizer/gi-stats'
+import type { Data, DisplaySub } from '@genshin-optimizer/gi-wr'
 import {
   constant,
   inferInfoMut,
@@ -10,7 +10,7 @@ import {
   prod,
   subscript,
   sum,
-} from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-wr'
 
 export function dataObjForWeaponSheet(
   key: WeaponKey,

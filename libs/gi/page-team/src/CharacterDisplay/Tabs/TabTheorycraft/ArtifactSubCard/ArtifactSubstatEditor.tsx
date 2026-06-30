@@ -3,12 +3,12 @@ import {
   CardThemed,
   ColorText,
   NumberInputLazy,
-} from '@genshin-optimizer/common/ui'
-import { clamp, getUnitStr } from '@genshin-optimizer/common/util'
-import { type SubstatKey, artMaxLevel } from '@genshin-optimizer/gi/consts'
-import { KeyMap } from '@genshin-optimizer/gi/keymap'
-import { StatIcon } from '@genshin-optimizer/gi/svgicons'
-import { artDisplayValue, getSubstatValue } from '@genshin-optimizer/gi/util'
+} from '@genshin-optimizer/common-ui'
+import { clamp, getUnitStr } from '@genshin-optimizer/common-util'
+import { type SubstatKey, artMaxLevel } from '@genshin-optimizer/gi-consts'
+import { KeyMap } from '@genshin-optimizer/gi-keymap'
+import { StatIcon } from '@genshin-optimizer/gi-svgicons'
+import { artDisplayValue, getSubstatValue } from '@genshin-optimizer/gi-util'
 import InfoIcon from '@mui/icons-material/Info'
 import { Box, Slider, Stack, Typography } from '@mui/material'
 import InputAdornment from '@mui/material/InputAdornment'

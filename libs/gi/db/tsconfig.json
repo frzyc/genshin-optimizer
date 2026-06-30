@@ -1,20 +1,34 @@
 {
   "extends": "../../../tsconfig.base.json",
-  "compilerOptions": {
-    "module": "commonjs",
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "exactOptionalPropertyTypes": false,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true
-  },
   "files": [],
-  "include": [],
   "references": [
+    {
+      "path": "../keymap"
+    },
+    {
+      "path": "../wr-types"
+    },
+    {
+      "path": "../stats"
+    },
+    {
+      "path": "../util"
+    },
+    {
+      "path": "../../common/util"
+    },
+    {
+      "path": "../schema"
+    },
+    {
+      "path": "../good"
+    },
+    {
+      "path": "../consts"
+    },
+    {
+      "path": "../../common/database"
+    },
     {
       "path": "./tsconfig.lib.json"
     },

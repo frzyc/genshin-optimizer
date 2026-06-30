@@ -1,53 +1,53 @@
-import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
-import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import { useDataManagerValues } from '@genshin-optimizer/common-database-ui'
+import { iconInlineProps } from '@genshin-optimizer/common-svgicons'
 import {
   CardThemed,
   ColorText,
   InfoTooltipInline,
   ModalWrapper,
   SqBadge,
-} from '@genshin-optimizer/common/ui'
+} from '@genshin-optimizer/common-ui'
 import {
   bulkCatTotal,
   deepClone,
   isIn,
   objKeyMap,
-} from '@genshin-optimizer/common/util'
-import { artifactDefIcon } from '@genshin-optimizer/gi/assets'
+} from '@genshin-optimizer/common-util'
+import { artifactDefIcon } from '@genshin-optimizer/gi-assets'
 import type {
   ArtifactSetKey,
   ArtifactSlotKey,
   SetNum,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import {
   allArtifactSetKeys,
   allArtifactSlotKeys,
-} from '@genshin-optimizer/gi/consts'
-import type { ArtSetExclusionKey } from '@genshin-optimizer/gi/db'
+} from '@genshin-optimizer/gi-consts'
+import type { ArtSetExclusionKey } from '@genshin-optimizer/gi-db'
 import {
   allArtifactSetExclusionKeys,
   handleArtSetExclusion,
-} from '@genshin-optimizer/gi/db'
+} from '@genshin-optimizer/gi-db'
 import {
   TeamCharacterContext,
   useDatabase,
   useOptConfig,
-} from '@genshin-optimizer/gi/db-ui'
+} from '@genshin-optimizer/gi-db-ui'
 import { Translate } from '@genshin-optimizer/gi/i18n'
-import { getArtSheet } from '@genshin-optimizer/gi/sheets'
-import { getArtSetStat } from '@genshin-optimizer/gi/stats'
-import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
-import type { dataContextObj } from '@genshin-optimizer/gi/ui'
+import { getArtSheet } from '@genshin-optimizer/gi-sheets'
+import { getArtSetStat } from '@genshin-optimizer/gi-stats'
+import { SlotIcon } from '@genshin-optimizer/gi-svgicons'
+import type { dataContextObj } from '@genshin-optimizer/gi-ui'
 import {
   ArtifactSetName,
   DataContext,
   SetEffectDisplay,
   SetInclusionButton,
-} from '@genshin-optimizer/gi/ui'
-import { UIData } from '@genshin-optimizer/gi/uidata'
-import { setKeysByRarities } from '@genshin-optimizer/gi/util'
-import { constant } from '@genshin-optimizer/gi/wr'
-import { allNonstackBuffs } from '@genshin-optimizer/gi/wr-types'
+} from '@genshin-optimizer/gi-ui'
+import { UIData } from '@genshin-optimizer/gi-uidata'
+import { setKeysByRarities } from '@genshin-optimizer/gi-util'
+import { constant } from '@genshin-optimizer/gi-wr'
+import { allNonstackBuffs } from '@genshin-optimizer/gi-wr-types'
 import { CheckBox, CheckBoxOutlineBlank, Replay } from '@mui/icons-material'
 import BlockIcon from '@mui/icons-material/Block'
 import CloseIcon from '@mui/icons-material/Close'

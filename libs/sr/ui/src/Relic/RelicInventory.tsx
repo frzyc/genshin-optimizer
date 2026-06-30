@@ -1,7 +1,7 @@
-import { useDataManagerKeys } from '@genshin-optimizer/common/database-ui'
-import { useMediaQueryUp } from '@genshin-optimizer/common/react-util'
-import { CardThemed, useInfScroll } from '@genshin-optimizer/common/ui'
-import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
+import { useDataManagerKeys } from '@genshin-optimizer/common-database-ui'
+import { useMediaQueryUp } from '@genshin-optimizer/common-react-util'
+import { CardThemed, useInfScroll } from '@genshin-optimizer/common-ui'
+import { useDatabaseContext } from '@genshin-optimizer/sr-db-ui'
 import AddIcon from '@mui/icons-material/Add'
 import {
   Box,

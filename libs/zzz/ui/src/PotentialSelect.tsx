@@ -1,5 +1,5 @@
-import { DropdownButton } from '@genshin-optimizer/common/ui'
-import { potentialLimits } from '@genshin-optimizer/zzz/consts'
+import { DropdownButton } from '@genshin-optimizer/common-ui'
+import { potentialLimits } from '@genshin-optimizer/zzz-consts'
 import { MenuItem } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 

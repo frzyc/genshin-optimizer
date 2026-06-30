@@ -1,12 +1,12 @@
-import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
-import { useMediaQueryUp } from '@genshin-optimizer/common/react-util'
-import { CardThemed, useInfScroll } from '@genshin-optimizer/common/ui'
-import { filterFunction } from '@genshin-optimizer/common/util'
+import { useDataManagerValues } from '@genshin-optimizer/common-database-ui'
+import { useMediaQueryUp } from '@genshin-optimizer/common-react-util'
+import { CardThemed, useInfScroll } from '@genshin-optimizer/common-ui'
+import { filterFunction } from '@genshin-optimizer/common-util'
 import {
   useDatabaseContext,
   useDisplayDisc,
-} from '@genshin-optimizer/zzz/db-ui'
-import { discFilterConfigs } from '@genshin-optimizer/zzz/util'
+} from '@genshin-optimizer/zzz-db-ui'
+import { discFilterConfigs } from '@genshin-optimizer/zzz-util'
 import AddIcon from '@mui/icons-material/Add'
 import DifferenceIcon from '@mui/icons-material/Difference'
 import {

@@ -1,40 +1,40 @@
 import {
   useDataEntryBase,
   useDataManagerValues,
-} from '@genshin-optimizer/common/database-ui'
-import { useBoolState } from '@genshin-optimizer/common/react-util'
+} from '@genshin-optimizer/common-database-ui'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
 import {
   CardThemed,
   ModalWrapper,
   SortByButton,
   SqBadge,
   StarsDisplay,
-} from '@genshin-optimizer/common/ui'
+} from '@genshin-optimizer/common-ui'
 import {
   catTotal,
   filterFunction,
   sortFunction,
-} from '@genshin-optimizer/common/util'
-import { characterAsset } from '@genshin-optimizer/gi/assets'
+} from '@genshin-optimizer/common-util'
+import { characterAsset } from '@genshin-optimizer/gi-assets'
 import type {
   CharacterKey,
   ElementKey,
   WeaponTypeKey,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import {
   allCharacterKeys,
   allElementKeys,
   allWeaponTypeKeys,
-} from '@genshin-optimizer/gi/consts'
-import { getCharMaxLevel } from '@genshin-optimizer/gi/consts'
-import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
+} from '@genshin-optimizer/gi-consts'
+import { getCharMaxLevel } from '@genshin-optimizer/gi-consts'
+import type { LoadoutDatum } from '@genshin-optimizer/gi-db'
 import {
   useCharMeta,
   useCharacter,
   useDBMeta,
   useDatabase,
-} from '@genshin-optimizer/gi/db-ui'
-import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
+} from '@genshin-optimizer/gi-db-ui'
+import { getCharEle, getCharStat } from '@genshin-optimizer/gi-stats'
 import CloseIcon from '@mui/icons-material/Close'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'

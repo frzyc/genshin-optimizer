@@ -3,8 +3,8 @@ import {
   zodBoundedNumber,
   zodClampedNumber,
   zodEnum,
-} from '@genshin-optimizer/common/database'
-import { clamp } from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-database'
+import { clamp } from '@genshin-optimizer/common-util'
 import {
   type AscensionKey,
   abilityLimits,
@@ -13,7 +13,7 @@ import {
   allStatBoostKeys,
   basicAbilityLimits,
   validateLevelAsc,
-} from '@genshin-optimizer/sr/consts'
+} from '@genshin-optimizer/sr-consts'
 import { z } from 'zod'
 
 const bonusAbilitiesSchema = zodBooleanRecord(allBonusAbilityKeys)

@@ -3,8 +3,8 @@ import {
   PatreonIcon,
   PaypalIcon,
   TwitchIcon,
-} from '@genshin-optimizer/common/svgicons'
-import { CardThemed } from '@genshin-optimizer/common/ui'
+} from '@genshin-optimizer/common-svgicons'
+import { CardThemed } from '@genshin-optimizer/common-ui'
 import {
   Article,
   Description,

@@ -1,4 +1,4 @@
-import { dumpFile, dumpPrettyFile } from '@genshin-optimizer/common/pipeline'
+import { dumpFile, dumpPrettyFile } from '@genshin-optimizer/common-pipeline'
 import { workspaceRoot } from '@nx/devkit'
 import type { GenStatsExecutorSchema } from './schema'
 import { getCharactersData } from './src/characterData'

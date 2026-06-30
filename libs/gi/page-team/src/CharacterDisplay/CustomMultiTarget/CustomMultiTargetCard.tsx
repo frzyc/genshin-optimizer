@@ -1,17 +1,17 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
 import {
   CardThemed,
   InfoTooltip,
   ModalWrapper,
   TextFieldLazy,
   usePrev,
-} from '@genshin-optimizer/common/ui'
-import { arrayMove, clamp, deepClone } from '@genshin-optimizer/common/util'
-import type { CustomTarget } from '@genshin-optimizer/gi/db'
+} from '@genshin-optimizer/common-ui'
+import { arrayMove, clamp, deepClone } from '@genshin-optimizer/common-util'
+import type { CustomTarget } from '@genshin-optimizer/gi-db'
 import {
   type CustomMultiTarget,
   initCustomTarget,
-} from '@genshin-optimizer/gi/db'
+} from '@genshin-optimizer/gi-db'
 import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'

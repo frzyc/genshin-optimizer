@@ -1,5 +1,5 @@
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+import type { CharacterKey } from '@genshin-optimizer/gi-consts'
+import { useDatabase } from '@genshin-optimizer/gi-db-ui'
 import { useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 

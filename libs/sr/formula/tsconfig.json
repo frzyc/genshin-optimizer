@@ -1,12 +1,31 @@
 {
   "extends": "../../../tsconfig.base.json",
-  "compilerOptions": {
-    "esModuleInterop": true,
-    "exactOptionalPropertyTypes": false
-  },
   "files": [],
-  "include": [],
   "references": [
+    {
+      "path": "../srod"
+    },
+    {
+      "path": "../../common/pipeline"
+    },
+    {
+      "path": "../../common/util"
+    },
+    {
+      "path": "../stats"
+    },
+    {
+      "path": "../consts"
+    },
+    {
+      "path": "../../pando/engine"
+    },
+    {
+      "path": "../../game-opt/formula"
+    },
+    {
+      "path": "../../game-opt/engine"
+    },
     {
       "path": "./tsconfig.lib.json"
     },

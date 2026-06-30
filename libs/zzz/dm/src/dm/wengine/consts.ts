@@ -1,7 +1,7 @@
 import type {
   SpecialityKey,
   WengineRarityKey,
-} from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-consts'
 
 // libs\zzz\dm\src\dm\wengine\wengineIdMap.json
 export const WengineIdMap = {

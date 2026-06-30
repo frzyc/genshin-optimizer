@@ -1,7 +1,7 @@
-import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
-import type { Document } from '@genshin-optimizer/game-opt/sheet-ui'
-import { DocumentDisplay } from '@genshin-optimizer/game-opt/sheet-ui'
-import { useCharacterContext } from '@genshin-optimizer/zzz/db-ui'
+import { shouldShowDevComponents } from '@genshin-optimizer/common-util'
+import type { Document } from '@genshin-optimizer/game-opt-sheet-ui'
+import { DocumentDisplay } from '@genshin-optimizer/game-opt-sheet-ui'
+import { useCharacterContext } from '@genshin-optimizer/zzz-db-ui'
 import {
   Banyue,
   Manato,
@@ -9,8 +9,8 @@ import {
   StarlightBilly,
   Yidhari,
   Yixuan,
-} from '@genshin-optimizer/zzz/formula'
-import { TagDisplay, charSheets } from '@genshin-optimizer/zzz/formula-ui'
+} from '@genshin-optimizer/zzz-formula'
+import { TagDisplay, charSheets } from '@genshin-optimizer/zzz-formula-ui'
 import { Box } from '@mui/material'
 
 export function CharSheetSection() {

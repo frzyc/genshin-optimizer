@@ -1,6 +1,6 @@
-import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
-import { CardThemed } from '@genshin-optimizer/common/ui'
-import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
+import type { CardBackgroundColor } from '@genshin-optimizer/common-ui'
+import { CardThemed } from '@genshin-optimizer/common-ui'
+import type { RelicSlotKey } from '@genshin-optimizer/sr-consts'
 import { CardContent, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 

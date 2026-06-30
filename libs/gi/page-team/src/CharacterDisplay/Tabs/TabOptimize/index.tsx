@@ -1,12 +1,12 @@
-import { AdResponsive } from '@genshin-optimizer/common/ad'
+import { AdResponsive } from '@genshin-optimizer/common-ad'
 import {
   useDataManagerEntries,
   useDataManagerValues,
-} from '@genshin-optimizer/common/database-ui'
+} from '@genshin-optimizer/common-database-ui'
 import {
   useBoolState,
   useMediaQueryUp,
-} from '@genshin-optimizer/common/react-util'
+} from '@genshin-optimizer/common-react-util'
 import {
   BootstrapTooltip,
   CardThemed,
@@ -16,21 +16,21 @@ import {
   SqBadge,
   useConstObj,
   usePrev,
-} from '@genshin-optimizer/common/ui'
+} from '@genshin-optimizer/common-ui'
 import {
   bulkCatTotal,
   notEmpty,
   objKeyMap,
   objPathValue,
   range,
-} from '@genshin-optimizer/common/util'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/common-util'
+import type { CharacterKey } from '@genshin-optimizer/gi-consts'
 import {
   allArtifactSlotKeys,
   charKeyToLocCharKey,
-} from '@genshin-optimizer/gi/consts'
-import type { GeneratedBuild } from '@genshin-optimizer/gi/db'
-import { maxBuildsToShowList } from '@genshin-optimizer/gi/db'
+} from '@genshin-optimizer/gi-consts'
+import type { GeneratedBuild } from '@genshin-optimizer/gi-db'
+import { maxBuildsToShowList } from '@genshin-optimizer/gi-db'
 import {
   TeamCharacterContext,
   useArtifacts,
@@ -40,11 +40,11 @@ import {
   useOptConfig,
   useTeammateArtifactIds,
   useWeapon,
-} from '@genshin-optimizer/gi/db-ui'
-import type { OptProblemInput } from '@genshin-optimizer/gi/solver'
-import { GOSolver, mergeBuilds, mergePlot } from '@genshin-optimizer/gi/solver'
-import { compactArtifacts } from '@genshin-optimizer/gi/solver-tc'
-import { getCharStat } from '@genshin-optimizer/gi/stats'
+} from '@genshin-optimizer/gi-db-ui'
+import type { OptProblemInput } from '@genshin-optimizer/gi-solver'
+import { GOSolver, mergeBuilds, mergePlot } from '@genshin-optimizer/gi-solver'
+import { compactArtifacts } from '@genshin-optimizer/gi-solver-tc'
+import { getCharStat } from '@genshin-optimizer/gi-stats'
 import {
   ArtifactLevelSlider,
   BuildDisplayItem,
@@ -61,11 +61,11 @@ import {
   useGlobalError,
   useNumWorkers,
   useTeamData,
-} from '@genshin-optimizer/gi/ui'
-import type { UIData } from '@genshin-optimizer/gi/uidata'
-import { uiDataForTeam } from '@genshin-optimizer/gi/uidata'
-import type { NumNode } from '@genshin-optimizer/gi/wr'
-import { dynamicData, mergeData, optimize } from '@genshin-optimizer/gi/wr'
+} from '@genshin-optimizer/gi-ui'
+import type { UIData } from '@genshin-optimizer/gi-uidata'
+import { uiDataForTeam } from '@genshin-optimizer/gi-uidata'
+import type { NumNode } from '@genshin-optimizer/gi-wr'
+import { dynamicData, mergeData, optimize } from '@genshin-optimizer/gi-wr'
 import {
   CheckBox,
   CheckBoxOutlineBlank,

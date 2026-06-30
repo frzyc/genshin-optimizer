@@ -1,5 +1,5 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
+import { useBoolState } from '@genshin-optimizer/common-react-util'
+import { CardThemed, ModalWrapper } from '@genshin-optimizer/common-ui'
 import InfoIcon from '@mui/icons-material/Info'
 import {
   Alert,

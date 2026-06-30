@@ -1,27 +1,27 @@
-import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
+import { useDataManagerValues } from '@genshin-optimizer/common-database-ui'
 import {
   useBoolState,
   useMediaQueryUp,
-} from '@genshin-optimizer/common/react-util'
+} from '@genshin-optimizer/common-react-util'
 import {
   CardThemed,
   ImgIcon,
   ModalWrapper,
   ShowingAndSortOptionSelect,
   useInfScroll,
-} from '@genshin-optimizer/common/ui'
-import { filterFunction } from '@genshin-optimizer/common/util'
-import { imgAssets } from '@genshin-optimizer/gi/assets'
+} from '@genshin-optimizer/common-ui'
+import { filterFunction } from '@genshin-optimizer/common-util'
+import { imgAssets } from '@genshin-optimizer/gi-assets'
 import {
   type ArtifactSlotKey,
   allArtifactSlotKeys,
-} from '@genshin-optimizer/gi/consts'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
+} from '@genshin-optimizer/gi-consts'
+import { useDatabase } from '@genshin-optimizer/gi-db-ui'
 import {
   type FilterOption,
   initialFilterOption,
-} from '@genshin-optimizer/gi/schema'
-import { artifactFilterConfigs } from '@genshin-optimizer/gi/util'
+} from '@genshin-optimizer/gi-schema'
+import { artifactFilterConfigs } from '@genshin-optimizer/gi-util'
 import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle'

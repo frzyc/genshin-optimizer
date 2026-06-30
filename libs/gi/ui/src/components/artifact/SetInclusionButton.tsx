@@ -1,10 +1,10 @@
-import type { ArtSetExclusionKey } from '@genshin-optimizer/gi/db'
-import { handleArtSetExclusion } from '@genshin-optimizer/gi/db'
+import type { ArtSetExclusionKey } from '@genshin-optimizer/gi-db'
+import { handleArtSetExclusion } from '@genshin-optimizer/gi-db'
 import {
   TeamCharacterContext,
   useDatabase,
   useOptConfig,
-} from '@genshin-optimizer/gi/db-ui'
+} from '@genshin-optimizer/gi-db-ui'
 import { CheckBox, CheckBoxOutlineBlank } from '@mui/icons-material'
 import BlockIcon from '@mui/icons-material/Block'
 import ShowChartIcon from '@mui/icons-material/ShowChart'

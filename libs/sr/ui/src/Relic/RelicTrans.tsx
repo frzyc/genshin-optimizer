@@ -1,5 +1,5 @@
 // use client due to hydration difference between client rendering and server in translation
-import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
+import type { RelicSetKey } from '@genshin-optimizer/sr-consts'
 import { Translate } from '@genshin-optimizer/sr/i18n'
 
 export function RelicSetName({ setKey }: { setKey: RelicSetKey }) {

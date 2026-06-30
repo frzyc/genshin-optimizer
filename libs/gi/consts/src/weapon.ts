@@ -1,4 +1,4 @@
-import { clamp } from '@genshin-optimizer/common/util'
+import { clamp } from '@genshin-optimizer/common-util'
 import { type AscensionKey, type RarityKey, validateLevelAsc } from './common'
 
 export const allWeaponTypeKeys = [

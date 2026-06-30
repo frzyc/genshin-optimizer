@@ -1,13 +1,13 @@
-import { ImgIcon } from '@genshin-optimizer/common/ui'
+import { ImgIcon } from '@genshin-optimizer/common-ui'
 import {
   commonDefIcon,
   rarityDefIcon,
   specialityDefIcon,
-} from '@genshin-optimizer/zzz/assets'
-import { type CharacterKey, allSkillKeys } from '@genshin-optimizer/zzz/consts'
-import { useCharacter } from '@genshin-optimizer/zzz/db-ui'
-import { getCharStat } from '@genshin-optimizer/zzz/stats'
-import { ElementIcon } from '@genshin-optimizer/zzz/svgicons'
+} from '@genshin-optimizer/zzz-assets'
+import { type CharacterKey, allSkillKeys } from '@genshin-optimizer/zzz-consts'
+import { useCharacter } from '@genshin-optimizer/zzz-db-ui'
+import { getCharStat } from '@genshin-optimizer/zzz-stats'
+import { ElementIcon } from '@genshin-optimizer/zzz-svgicons'
 import { Box, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import { CharacterName } from '../CharacterTrans'

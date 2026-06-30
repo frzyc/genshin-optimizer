@@ -1,5 +1,5 @@
-import { SqBadge } from '@genshin-optimizer/common/ui'
-import { ZCard } from '@genshin-optimizer/zzz/ui'
+import { SqBadge } from '@genshin-optimizer/common-ui'
+import { ZCard } from '@genshin-optimizer/zzz-ui'
 import {
   CardContent,
   List,

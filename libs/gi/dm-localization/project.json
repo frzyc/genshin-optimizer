@@ -1,5 +1,5 @@
 {
-  "name": "gi-dm-localization",
+  "name": "@genshin-optimizer/gi-dm-localization",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/gi/dm-localization/src",
   "projectType": "application",

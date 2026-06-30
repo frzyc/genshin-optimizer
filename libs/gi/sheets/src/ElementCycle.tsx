@@ -1,5 +1,5 @@
-import { allElementKeys } from '@genshin-optimizer/gi/consts'
-import { ElementIcon } from '@genshin-optimizer/gi/svgicons'
+import { allElementKeys } from '@genshin-optimizer/gi-consts'
+import { ElementIcon } from '@genshin-optimizer/gi-svgicons'
 import type { SvgIconProps } from '@mui/material'
 import { useEffect, useState } from 'react'
 

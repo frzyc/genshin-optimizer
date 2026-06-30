@@ -1,9 +1,16 @@
 {
   "extends": "../../../tsconfig.base.json",
-  "compilerOptions": {},
   "files": [],
-  "include": [],
   "references": [
+    {
+      "path": "../consts"
+    },
+    {
+      "path": "../../common/util"
+    },
+    {
+      "path": "../../common/pipeline"
+    },
     {
       "path": "./tsconfig.lib.json"
     }

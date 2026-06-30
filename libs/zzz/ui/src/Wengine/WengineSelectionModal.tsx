@@ -1,25 +1,25 @@
-import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
+import { useDataEntryBase } from '@genshin-optimizer/common-database-ui'
 import {
   CardThemed,
   ImgIcon,
   ModalWrapper,
   usePrev,
-} from '@genshin-optimizer/common/ui'
-import { catTotal } from '@genshin-optimizer/common/util'
+} from '@genshin-optimizer/common-ui'
+import { catTotal } from '@genshin-optimizer/common-util'
 import {
   rarityDefIcon,
   specialityDefIcon,
   wengineAsset,
-} from '@genshin-optimizer/zzz/assets'
-import type { SpecialityKey, WengineKey } from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-assets'
+import type { SpecialityKey, WengineKey } from '@genshin-optimizer/zzz-consts'
 import {
   allRaritykeys,
   allSpecialityKeys,
   allWengineKeys,
   allWengineRarityKeys,
-} from '@genshin-optimizer/zzz/consts'
-import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
-import { getWengineStat } from '@genshin-optimizer/zzz/stats'
+} from '@genshin-optimizer/zzz-consts'
+import { useDatabaseContext } from '@genshin-optimizer/zzz-db-ui'
+import { getWengineStat } from '@genshin-optimizer/zzz-stats'
 import CloseIcon from '@mui/icons-material/Close'
 import {
   Box,

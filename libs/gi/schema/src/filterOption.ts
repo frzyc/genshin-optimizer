@@ -1,4 +1,4 @@
-import { zodFilteredArray } from '@genshin-optimizer/common/database'
+import { zodFilteredArray } from '@genshin-optimizer/common-database'
 import {
   allArtifactRarityKeys,
   allArtifactSetKeys,
@@ -6,7 +6,7 @@ import {
   allLocationCharacterKeys,
   allMainStatKeys,
   allSubstatKeys,
-} from '@genshin-optimizer/gi/consts'
+} from '@genshin-optimizer/gi-consts'
 import { z } from 'zod'
 
 export const artifactSortKeys = [

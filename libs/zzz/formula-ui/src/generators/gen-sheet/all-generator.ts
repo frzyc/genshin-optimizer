@@ -2,7 +2,7 @@ import {
   allCharacterKeys,
   allDiscSetKeys,
   allWengineKeys,
-} from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/zzz-consts'
 import type { Tree } from '@nx/devkit'
 import genIndex from './genIndex'
 import genSheet from './genSheet'

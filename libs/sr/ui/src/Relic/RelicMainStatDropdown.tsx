@@ -1,11 +1,11 @@
-import type { DropdownButtonProps } from '@genshin-optimizer/common/ui'
-import { CardThemed, DropdownButton } from '@genshin-optimizer/common/ui'
+import type { DropdownButtonProps } from '@genshin-optimizer/common-ui'
+import { CardThemed, DropdownButton } from '@genshin-optimizer/common-ui'
 import type {
   RelicMainStatKey,
   RelicSlotKey,
-} from '@genshin-optimizer/sr/consts'
-import { relicSlotToMainStatKeys } from '@genshin-optimizer/sr/consts'
-import { StatIcon } from '@genshin-optimizer/sr/svgicons'
+} from '@genshin-optimizer/sr-consts'
+import { relicSlotToMainStatKeys } from '@genshin-optimizer/sr-consts'
+import { StatIcon } from '@genshin-optimizer/sr-svgicons'
 import { Box, ListItemIcon, MenuItem } from '@mui/material'
 import type { ReactNode } from 'react'
 import { StatDisplay } from '../Character'

@@ -1,33 +1,33 @@
-import { useDataManagerBase } from '@genshin-optimizer/common/database-ui'
+import { useDataManagerBase } from '@genshin-optimizer/common-database-ui'
 import {
   CardThemed,
   ColorText,
   DropdownButton,
   NumberInputLazy,
   TextFieldLazy,
-} from '@genshin-optimizer/common/ui'
-import { stableArr } from '@genshin-optimizer/common/util'
-import type { StatKey } from '@genshin-optimizer/zzz/consts'
-import { allAttributeKeys } from '@genshin-optimizer/zzz/consts'
+} from '@genshin-optimizer/common-ui'
+import { stableArr } from '@genshin-optimizer/common-util'
+import type { StatKey } from '@genshin-optimizer/zzz-consts'
+import { allAttributeKeys } from '@genshin-optimizer/zzz-consts'
 import type {
   BonusStatKey,
   BonusStatTag,
   TeamBonusStat,
-} from '@genshin-optimizer/zzz/db'
+} from '@genshin-optimizer/zzz-db'
 import {
   bonusStatDamageTypes,
   bonusStatDmgTypeIncStats,
   bonusStatQtKeys,
-} from '@genshin-optimizer/zzz/db'
-import { bonusStatKeys, newBonusStatTag } from '@genshin-optimizer/zzz/db'
+} from '@genshin-optimizer/zzz-db'
+import { bonusStatKeys, newBonusStatTag } from '@genshin-optimizer/zzz-db'
 import {
   useCharacterContext,
   useDatabaseContext,
   useTeam,
-} from '@genshin-optimizer/zzz/db-ui'
-import type { Attribute, Tag } from '@genshin-optimizer/zzz/formula'
-import { TagDisplay, qtMap } from '@genshin-optimizer/zzz/formula-ui'
-import { AttributeName, StatDisplay } from '@genshin-optimizer/zzz/ui'
+} from '@genshin-optimizer/zzz-db-ui'
+import type { Attribute, Tag } from '@genshin-optimizer/zzz-formula'
+import { TagDisplay, qtMap } from '@genshin-optimizer/zzz-formula-ui'
+import { AttributeName, StatDisplay } from '@genshin-optimizer/zzz-ui'
 import {
   CheckBox,
   CheckBoxOutlineBlank,
