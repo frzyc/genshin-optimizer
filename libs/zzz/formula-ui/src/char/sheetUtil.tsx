@@ -9,7 +9,11 @@ import { commonDefIcon, mindscapeDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { CharacterKey, SkillKey } from '@genshin-optimizer/zzz/consts'
 import { allSkillKeys } from '@genshin-optimizer/zzz/consts'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
-import { formulas, own, parseLegacyFormulaName } from '@genshin-optimizer/zzz/formula'
+import {
+  formulas,
+  own,
+  parseLegacyFormulaName,
+} from '@genshin-optimizer/zzz/formula'
 import { getCharStat, mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
   formulaMatchesAbility,
@@ -18,12 +22,13 @@ import {
 import { TagDisplay } from '../components'
 import { st, trans } from '../util'
 import type { CharUISheet } from './consts'
+import {
+  type CharSheetLayoutOpts,
+  buildCharFormulaSectionIndex,
+  setCharFormulaSectionIndex,
+} from './displaySection'
 
-type AddlDocumentsPerSkillAbility = Partial<
-  Record<SkillKey, Partial<Record<string, Document[]>>>
->
-type AddlDocuments = {
-  perSkillAbility?: AddlDocumentsPerSkillAbility
+type AddlDocuments = CharSheetLayoutOpts & {
   core?: Document[]
   ability?: Document[]
   potential?: Document[]
@@ -41,6 +46,11 @@ export function createBaseSheet(
   addlDocuments: AddlDocuments = {}
 ): CharUISheet {
   const hasPotential = getCharStat(key).potentialParams.length > 0
+
+  setCharFormulaSectionIndex(
+    key,
+    buildCharFormulaSectionIndex(key, addlDocuments)
+  )
 
   return {
     ...createSkillsSheets(key, addlDocuments?.perSkillAbility),
@@ -71,7 +81,7 @@ export function fieldForBuff(buff: IFormulaData<Tag>) {
 
 function createSkillsSheets(
   charKey: CharacterKey,
-  addlDocumentsPerSkillAbility?: AddlDocumentsPerSkillAbility
+  addlDocumentsPerSkillAbility?: CharSheetLayoutOpts['perSkillAbility']
 ) {
   const dm = mappedStats.char[charKey]
   const form = formulas[charKey] as Record<string, IFormulaData<Tag>>
@@ -134,8 +144,7 @@ export function abilityFormulaNameToTranslated(
   const baseName = legacy?.baseName ?? (tag.name ?? '').split(':')[0]
   const [ability, hitNumber] = baseName.split('_')
   const type = formulaDimensionLabel(tag)
-  if (!type || !hitNumber)
-    return baseName || tag.name || tag.q || ''
+  if (!type || !hitNumber) return baseName || tag.name || tag.q || ''
   return st(type, {
     val: `$t(char_${charKey}_gen:${skill}.${ability}.params.${hitNumber.replace(/\D/g, '')})`,
   })

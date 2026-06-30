@@ -1,15 +1,13 @@
-import { DropdownButton } from '@genshin-optimizer/common/ui'
+import { getTeamFrame0 } from '@genshin-optimizer/zzz/db'
+import {
+  useCharacterContext,
+  useDatabaseContext,
+  useTeam,
+} from '@genshin-optimizer/zzz/db-ui'
 import type { FormulaDimension } from '@genshin-optimizer/zzz/formula'
 import { formulaDimensions } from '@genshin-optimizer/zzz/formula'
-import { getTeamFrame0 } from '@genshin-optimizer/zzz/db'
-import { useCharacterContext, useDatabaseContext, useTeam } from '@genshin-optimizer/zzz/db-ui'
-import { MenuItem } from '@mui/material'
-
-const DIMENSION_LABEL: Record<FormulaDimension, string> = {
-  dmg: 'DMG',
-  daze: 'Daze',
-  anomBuildup: 'Anom',
-}
+import { FORMULA_DIMENSION_LABEL } from '@genshin-optimizer/zzz/formula-ui'
+import { ToggleButton, ToggleButtonGroup } from '@mui/material'
 
 export function DimensionSelector() {
   const { database } = useDatabaseContext()
@@ -23,27 +21,29 @@ export function DimensionSelector() {
   const sheet = target.sheet ?? character.key
 
   return (
-    <DropdownButton title={DIMENSION_LABEL[formulaDimension]}>
+    <ToggleButtonGroup
+      exclusive
+      size="small"
+      value={formulaDimension}
+      onChange={(_, dim: FormulaDimension | null) => {
+        if (!dim || dim === formulaDimension) return
+        database.teams.setFrame0(character.key, {
+          tag: {
+            sheet,
+            name,
+            formulaDimension: dim,
+            damageType1: target.damageType1,
+            damageType2: target.damageType2,
+          },
+        })
+      }}
+      sx={{ flexShrink: 0 }}
+    >
       {formulaDimensions.map((dim) => (
-        <MenuItem
-          key={dim}
-          selected={dim === formulaDimension}
-          disabled={dim === formulaDimension}
-          onClick={() =>
-            database.teams.setFrame0(character.key, {
-              tag: {
-                sheet,
-                name,
-                formulaDimension: dim,
-                damageType1: target.damageType1,
-                damageType2: target.damageType2,
-              },
-            })
-          }
-        >
-          {DIMENSION_LABEL[dim]}
-        </MenuItem>
+        <ToggleButton key={dim} value={dim}>
+          {FORMULA_DIMENSION_LABEL[dim]}
+        </ToggleButton>
       ))}
-    </DropdownButton>
+    </ToggleButtonGroup>
   )
 }

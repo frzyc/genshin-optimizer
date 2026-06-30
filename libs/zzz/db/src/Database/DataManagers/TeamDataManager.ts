@@ -69,11 +69,17 @@ export const targetQ = [
   'atk',
   'def',
   'impact',
+  'sheerForce',
+  'cappedCrit_',
+  'crit_dmg_',
+  'pen_',
+  'pen',
   'enerRegen',
   'anomProf',
   'anomMas',
+  'dmg_',
 ] as const
-export const targetQt = ['initial', 'final'] as const
+export const targetQt = ['initial', 'final', 'common'] as const
 
 export const bonusStatQtKeys = ['combat', 'base', 'initial'] as const
 export const bonusStatKeys: Array<keyof typeof own.final> = [
@@ -156,6 +162,7 @@ export type TargetTag = {
   damageType2?: 'aftershock' | 'abloom'
   q?: (typeof targetQ)[number]
   qt?: (typeof targetQt)[number]
+  attribute?: AttributeKey
 }
 
 const targetTagSchema = z
@@ -167,6 +174,7 @@ const targetTagSchema = z
     damageType2: z.literal('aftershock').or(z.literal('abloom')).optional(),
     q: z.enum(targetQ).optional(),
     qt: z.enum(targetQt).optional(),
+    attribute: z.string().optional(),
   })
   .optional() as z.ZodType<TargetTag | undefined>
 
@@ -405,8 +413,7 @@ export class TeamDataManager extends DataManager<
             damageType2 = rawTarget.damageType2
         }
         const formulaDimension =
-          normalized.formulaDimension ??
-          dimensionFromFormulaTag(formula.tag.q)
+          normalized.formulaDimension ?? dimensionFromFormulaTag(formula.tag.q)
         return removeUndefinedFields({
           sheet: sheet ?? formula.sheet,
           name: abilityName,
@@ -418,9 +425,20 @@ export class TeamDataManager extends DataManager<
       return undefined
     }
 
-    const { q, qt } = rawTarget
+    const { q, qt, attribute } = rawTarget
     if (q && qt && targetQ.includes(q) && targetQt.includes(qt)) {
-      return { q, qt }
+      let validAttribute: AttributeKey | undefined
+      if (attribute) {
+        validAttribute = validateValue(attribute, allAttributeKeys) as
+          | AttributeKey
+          | undefined
+        if (!validAttribute) return undefined
+      }
+      return removeUndefinedFields({
+        q,
+        qt,
+        attribute: validAttribute,
+      }) as TargetTag
     }
     return undefined
   }
@@ -823,7 +841,8 @@ function getFormula(target: TargetTag) {
   const normalized = normalizeFormulaTarget(target)
   const name = normalized.name
   if (!name) return
-  const sheet = normalized.sheet ?? resolveFormulaSheet(name, normalized.formulaDimension)
+  const sheet =
+    normalized.sheet ?? resolveFormulaSheet(name, normalized.formulaDimension)
   if (!sheet) return
   const { formulaDimension } = normalized
   const sheetFormulas = (formulas as any)[sheet] as
@@ -848,8 +867,7 @@ function getFormula(target: TargetTag) {
           ? '_daze'
           : '_dmg'
     return (
-      sheetFormulas[compositeKey] ??
-      sheetFormulas[`${name}${legacySuffix}`]
+      sheetFormulas[compositeKey] ?? sheetFormulas[`${name}${legacySuffix}`]
     )
   }
 
@@ -857,15 +875,17 @@ function getFormula(target: TargetTag) {
 }
 
 export function targetTag(target: TargetTag): Tag {
-  const { damageType1, damageType2 } = target
+  const { damageType1, damageType2, attribute } = target
   const formula = getFormula(target)
   if (formula)
     return applyDamageTypeToTag(formula.tag, damageType1, damageType2)
+  const qt = target.qt ?? 'final'
   return {
     et: 'own',
     q: target.q ?? 'atk',
-    qt: target.qt ?? 'final',
-    sheet: 'agg',
+    qt,
+    sheet: qt === 'common' ? 'iso' : 'agg',
+    ...(attribute ? { attribute } : {}),
   }
 }
 

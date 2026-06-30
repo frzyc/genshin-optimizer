@@ -10,7 +10,7 @@ import {
   Yidhari,
   Yixuan,
 } from '@genshin-optimizer/zzz/formula'
-import { TagDisplay, charSheets } from '@genshin-optimizer/zzz/formula-ui'
+import { CharMechanicsGroupedDisplay, TagDisplay } from '@genshin-optimizer/zzz/formula-ui'
 import { Box } from '@mui/material'
 
 export function CharSheetSection() {
@@ -23,16 +23,9 @@ export function CharSheetSection() {
       {characterKey === 'Yidhari' && <MinimalYidhariSheet />}
       {characterKey === 'Banyue' && <MinimalBanyueSheet />}
       {characterKey === 'StarlightBilly' && <MinimalStarlightBillySheet />}
-      {shouldShowDevComponents &&
-        Object.values(charSheets[characterKey]).flatMap((sheet, index1) =>
-          sheet.documents.map((doc, index2) => (
-            <DocumentDisplay
-              key={`${index1}_${index2}`}
-              document={doc}
-              collapse
-            />
-          ))
-        )}
+      {shouldShowDevComponents && (
+        <CharMechanicsGroupedDisplay charKey={characterKey} />
+      )}
     </Box>
   )
 }

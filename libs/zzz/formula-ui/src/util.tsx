@@ -43,9 +43,7 @@ export function tagToTagField(
   opts?: { preventRecursion?: boolean }
 ): TagField {
   return {
-    title: (
-      <TagDisplay tag={tag} preventRecursion={opts?.preventRecursion} />
-    ),
+    title: <TagDisplay tag={tag} preventRecursion={opts?.preventRecursion} />,
     fieldRef: tag,
   }
 }

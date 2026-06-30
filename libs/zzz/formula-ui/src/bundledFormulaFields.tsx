@@ -1,7 +1,15 @@
 import { ColorText } from '@genshin-optimizer/common/ui'
 import type { Read } from '@genshin-optimizer/game-opt/engine'
 import type { IFormulaData } from '@genshin-optimizer/game-opt/engine'
-import type { Field, MultiTagField, TagField } from '@genshin-optimizer/game-opt/sheet-ui'
+import type {
+  Field,
+  MultiTagField,
+  TagField,
+} from '@genshin-optimizer/game-opt/sheet-ui'
+import {
+  isMultiTagField,
+  isTagField,
+} from '@genshin-optimizer/game-opt/sheet-ui'
 import type { CharacterKey, SkillKey } from '@genshin-optimizer/zzz/consts'
 import type { Sheet, Tag } from '@genshin-optimizer/zzz/formula'
 import { abilityFormulaNameToTranslated } from './char/sheetUtil'
@@ -15,7 +23,9 @@ export const Q_LABELS: Record<(typeof ABILITY_QS)[number], string> = {
   anomBuildup: 'Anom',
 }
 
-function isAbilityQ(q: string | null | undefined): q is (typeof ABILITY_QS)[number] {
+function isAbilityQ(
+  q: string | null | undefined
+): q is (typeof ABILITY_QS)[number] {
   return !!q && (ABILITY_QS as readonly string[]).includes(q)
 }
 
@@ -23,7 +33,7 @@ function groupKey(tag: Tag) {
   return `${tag.sheet ?? ''}:${tag.name ?? ''}`
 }
 
-function skillFromTag(tag: Tag): SkillKey | undefined {
+export function skillFromTag(tag: Tag): SkillKey | undefined {
   const skillType = tag.skillType
   if (!skillType?.endsWith('Skill')) return undefined
   return skillType.slice(0, -'Skill'.length) as SkillKey
@@ -56,7 +66,10 @@ type GroupFieldsOpts = {
 /**
  * Groups tags that share `name` with dmg/daze/anom `q` into one {@link MultiTagField}.
  */
-export function groupFieldsByTag(tags: Tag[], opts: GroupFieldsOpts = {}): Field[] {
+export function groupFieldsByTag(
+  tags: Tag[],
+  opts: GroupFieldsOpts = {}
+): Field[] {
   const { sheet, charKey, skill } = opts
   const withSheet = (tag: Tag): Tag =>
     sheet && !tag.sheet ? { ...tag, sheet } : tag
@@ -119,6 +132,31 @@ export function groupFieldsByTag(tags: Tag[], opts: GroupFieldsOpts = {}): Field
   }
 
   return fields
+}
+
+/** Primary formula tag for grouping / labels (dmg leg of a bundled row). */
+export function primaryTagFromField(field: Field): Tag | undefined {
+  if (isMultiTagField(field)) {
+    return (
+      field.fieldRefs.find((r) => r.ref.q === 'standardDmg')?.ref ??
+      field.fieldRefs[0]?.ref
+    )
+  }
+  if (isTagField(field)) return field.fieldRef
+  return undefined
+}
+
+/** Flat skill icon key for section headers (`exSpecial` → `specialFlat`, etc.). */
+export function skillSectionFlatIconKey(skill: string): string {
+  switch (skill) {
+    case 'exSpecial':
+      return 'specialFlat'
+    case 'ult':
+    case 'aftershock':
+      return 'chainFlat'
+    default:
+      return `${skill}Flat`
+  }
 }
 
 export function groupFormulas(

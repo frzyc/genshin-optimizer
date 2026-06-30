@@ -27,6 +27,8 @@
   },
   "skills": {
     "basic": "Basic Attack",
+    "dodge": "Dodge",
+    "assist": "Assist",
     "special": "Special Attack",
     "exSpecial": "EX Special Attack",
     "chain": "Chain Attack",

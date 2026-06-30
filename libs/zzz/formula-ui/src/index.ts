@@ -8,7 +8,9 @@ export {
   isMultiTagField,
   isTagField,
 } from '@genshin-optimizer/game-opt/sheet-ui'
+export * from './optTargetDisplay'
 export * from './optTarget'
+export * from './optPanelSections'
 export * from './OptTargetTagRowSxProvider'
 export * from './hooks'
 export * from './wengine'

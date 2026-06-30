@@ -23,25 +23,67 @@ import {
   isHighlight,
 } from '@genshin-optimizer/zzz/ui'
 import { ListItem } from '@mui/material'
-import { useContext, useMemo } from 'react'
+import { Fragment, useContext, useMemo } from 'react'
 import { groupFormulas } from '../groupFormulas'
 import { useZzzCalcContext } from '../hooks'
+import { OptPanelSectionHeader } from '../optPanelSections'
+import {
+  filterNonStatFields,
+  listStatReadsFromFormulas,
+  statReadTagKey,
+} from '../optTarget'
+import { OptTargetSkillSectionHeader } from '../optTargetDisplay'
 import { tagToTagField } from '../util'
+import {
+  groupFieldsByDisplaySection,
+  orderedDisplaySections,
+} from './displaySection'
 
 export function CharStatsDisplay() {
   const character = useCharacterContext()
   const calc = useZzzCalcContext()
-  const fields = useMemo(() => {
-    if (!calc || !character?.key) return []
+  const { statReads, mechSections, otherFields } = useMemo(() => {
+    if (!calc || !character?.key)
+      return {
+        statReads: [] as Read<Tag>[],
+        mechSections: [],
+        otherFields: [] as Field[],
+      }
     const reads = calc.listFormulas(own.listing.formulas)
-    return groupFormulas(reads, character.key, character.key)
+    const fields = groupFormulas(reads, character.key, character.key)
+    const { bySection, other } = groupFieldsByDisplaySection(
+      character.key,
+      fields
+    )
+    return {
+      statReads: listStatReadsFromFormulas(reads),
+      mechSections: orderedDisplaySections(bySection),
+      otherFields: filterNonStatFields(other),
+    }
   }, [calc, character?.key])
 
   return (
     <ZCard>
       <FieldDisplayList sx={{ m: 0 }} bgt="normal">
-        {fields.map((field, index) => (
-          <FormulaFieldRow key={index} field={field} />
+        <OptPanelSectionHeader>Stats</OptPanelSectionHeader>
+        {statReads.map((read) => (
+          <CharStatRow key={statReadTagKey(read.tag)} read={read} />
+        ))}
+        {otherFields.length > 0 && (
+          <>
+            <OptPanelSectionHeader>Other</OptPanelSectionHeader>
+            {otherFields.map((field, index) => (
+              <FormulaFieldRow key={`other_${index}`} field={field} />
+            ))}
+          </>
+        )}
+        {mechSections.map(({ section, fields }) => (
+          <Fragment key={section}>
+            <OptTargetSkillSectionHeader skill={section} />
+            {fields.map((field, index) => (
+              <FormulaFieldRow key={`${section}_${index}`} field={field} />
+            ))}
+          </Fragment>
         ))}
       </FieldDisplayList>
     </ZCard>

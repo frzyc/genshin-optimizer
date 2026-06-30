@@ -1,4 +1,6 @@
 import { DropdownButton } from '@genshin-optimizer/common/ui'
+import type { Field } from '@genshin-optimizer/game-opt/sheet-ui'
+import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import type { TargetTag } from '@genshin-optimizer/zzz/db'
 import {
   type ICachedCharacter,
@@ -7,25 +9,144 @@ import {
   targetTag,
 } from '@genshin-optimizer/zzz/db'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
-import { own } from '@genshin-optimizer/zzz/formula'
+import { formulaDimensionByQ, own } from '@genshin-optimizer/zzz/formula'
+import type { FormulaDimension } from '@genshin-optimizer/zzz/formula'
 import {
+  AbilityOptTargetLabel,
   FullTagDisplay,
+  OptPanelSectionHeader,
+  OptTargetFormulaLabel,
+  OptTargetSelectedLabel,
+  OptTargetSkillSectionHeader,
+  filterNonStatFields,
+  getFormulaDisplaySection,
+  groupFieldsByDisplaySection,
   groupFormulas,
+  isAbilityFormulaTag,
   isMultiTagField,
   isTagField,
+  listStatReadsFromFormulas,
+  orderedDisplaySections,
+  primaryTagFromField,
+  statReadTagKey,
+  statReadToTargetTag,
   useZzzCalcContext,
 } from '@genshin-optimizer/zzz/formula-ui'
 import { Box, ListItemText, MenuItem } from '@mui/material'
 import { useMemo } from 'react'
 
-const statTargets = [
-  own.final.atk,
-  own.final.hp,
-  own.final.def,
-  own.final.enerRegen,
-  own.final.anomProf,
-  own.final.anomMas,
-] as const
+function setAbilityTarget(
+  database: ReturnType<typeof useDatabaseContext>['database'],
+  characterKey: CharacterKey,
+  sheet: string,
+  name: string,
+  formulaDimension: FormulaDimension,
+  damageType1?: TargetTag['damageType1'],
+  damageType2?: TargetTag['damageType2']
+) {
+  database.teams.setFrame0(characterKey, {
+    tag: {
+      sheet,
+      name,
+      formulaDimension,
+      damageType1,
+      damageType2,
+    },
+  })
+}
+
+function OptTargetFieldMenuItem({
+  field,
+  fieldKey,
+  characterKey,
+  target,
+  database,
+}: {
+  field: Field
+  fieldKey: string
+  characterKey: CharacterKey
+  target: ReturnType<typeof getTeamFrame0>['tag']
+  database: ReturnType<typeof useDatabaseContext>['database']
+}) {
+  if (isMultiTagField(field)) {
+    const ref = primaryTagFromField(field)
+    if (!ref?.name) return null
+    const sheet = ref.sheet ?? characterKey
+    const formulaDimension: FormulaDimension =
+      target?.name === ref.name && target.formulaDimension
+        ? target.formulaDimension
+        : 'dmg'
+    return (
+      <MenuItem
+        key={fieldKey}
+        onClick={() =>
+          setAbilityTarget(
+            database,
+            characterKey,
+            sheet,
+            ref.name!,
+            formulaDimension
+          )
+        }
+      >
+        <ListItemText>
+          <AbilityOptTargetLabel charKey={characterKey} tag={ref} />
+        </ListItemText>
+      </MenuItem>
+    )
+  }
+
+  if (!isTagField(field)) return null
+  const { fieldRef } = field
+  const { name } = fieldRef
+  if (!name) return null
+
+  if (isAbilityFormulaTag(fieldRef)) {
+    const formulaDimension =
+      target?.name === name && target.formulaDimension
+        ? target.formulaDimension
+        : (formulaDimensionByQ[
+            fieldRef.q as keyof typeof formulaDimensionByQ
+          ] ?? 'dmg')
+    return (
+      <MenuItem
+        key={fieldKey}
+        onClick={() =>
+          setAbilityTarget(
+            database,
+            characterKey,
+            fieldRef.sheet ?? characterKey,
+            name,
+            formulaDimension
+          )
+        }
+      >
+        <ListItemText>
+          <AbilityOptTargetLabel charKey={characterKey} tag={fieldRef} />
+        </ListItemText>
+      </MenuItem>
+    )
+  }
+
+  return (
+    <MenuItem
+      key={fieldKey}
+      onClick={() =>
+        database.teams.setFrame0(characterKey, {
+          tag: { sheet: characterKey, name },
+        })
+      }
+    >
+      <ListItemText>
+        {getFormulaDisplaySection(characterKey, fieldRef) ? (
+          <OptTargetFormulaLabel charKey={characterKey} tag={fieldRef} />
+        ) : (
+          <FullTagDisplay tag={fieldRef} />
+        )}
+      </ListItemText>
+    </MenuItem>
+  )
+}
 
 export function OptSelector({
   character: { key: characterKey },
@@ -42,124 +163,105 @@ export function OptSelector({
     return targetTag(target)
   }, [target])
 
-  const groupedFields = useMemo(() => {
-    if (!calc) return undefined
-    return groupFormulas(
-      calc.listFormulas(own.listing.formulas),
+  const { statReads, skillSections, otherFields } = useMemo(() => {
+    if (!calc)
+      return {
+        statReads: [],
+        skillSections: [],
+        otherFields: [] as Field[],
+      }
+    const reads = calc.listFormulas(own.listing.formulas)
+    const fields = groupFormulas(reads, characterKey, characterKey)
+    const { bySection, other } = groupFieldsByDisplaySection(
       characterKey,
-      characterKey
+      fields
     )
+    return {
+      statReads: listStatReadsFromFormulas(reads),
+      skillSections: orderedDisplaySections(bySection),
+      otherFields: filterNonStatFields(other),
+    }
   }, [calc, characterKey])
+
+  const selectedTitle = tag ? (
+    <OptTargetSelectedLabel charKey={characterKey} tag={tag} inline />
+  ) : null
 
   return (
     <DropdownButton
       color={tag ? 'success' : 'warning'}
       title={
         tag ? (
-          <Box sx={{ display: 'flex', gap: 1 }}>
-            <strong>Optimization Target: </strong>
-            {<FullTagDisplay tag={tag} />}
+          <Box
+            sx={{
+              display: 'flex',
+              gap: 0.75,
+              alignItems: 'center',
+              minWidth: 0,
+              overflow: 'hidden',
+              textWrap: 'nowrap',
+            }}
+          >
+            <strong>Target:</strong>
+            {selectedTitle}
           </Box>
         ) : (
           'Select an Optimization Target'
         )
       }
       variant={tag ? 'outlined' : undefined}
-      sx={{ height: '100%', flexGrow: 1 }}
+      sx={{
+        height: '100%',
+        minWidth: 0,
+        maxWidth: '100%',
+        width: '100%',
+        justifyContent: 'flex-start',
+      }}
     >
-      {groupedFields
-        ? groupedFields.map((field, i) => {
-            if (isMultiTagField(field)) {
-              const dmgRef = field.fieldRefs.find(
-                (r) => r.ref.q === 'standardDmg'
-              )?.ref
-              if (!dmgRef?.name) return null
-              return (
-                <MenuItem
-                  key={`${i}_${characterKey}_${dmgRef.name}`}
-                  onClick={() =>
-                    database.teams.setFrame0(characterKey, {
-                      tag: {
-                        sheet: characterKey,
-                        name: dmgRef.name ?? undefined,
-                        formulaDimension: 'dmg',
-                      },
-                    })
-                  }
-                >
-                  <ListItemText>
-                    <Box sx={{ display: 'flex', gap: 1 }}>{field.title}</Box>
-                  </ListItemText>
-                </MenuItem>
-              )
-            }
-            if (!isTagField(field)) return null
-            const { fieldRef } = field
-            const { name } = fieldRef
-            if (!name) return null
-            return (
-              <MenuItem
-                key={`${i}_${characterKey}_${name}_${fieldRef.q}`}
-                onClick={() =>
-                  database.teams.setFrame0(characterKey, {
-                    tag: { sheet: characterKey, name },
-                  })
-                }
-              >
-                <ListItemText>
-                  <Box sx={{ display: 'flex', gap: 1 }}>
-                    <FullTagDisplay tag={fieldRef} />
-                  </Box>
-                </ListItemText>
-              </MenuItem>
-            )
-          })
-        : calc?.listFormulas(own.listing.formulas).map(({ tag }, i) => {
-            const { name } = tag
-            if (!name) return
-            return (
-              <MenuItem
-                key={`${i}_${characterKey}_${tag.name}`}
-                onClick={() =>
-                  database.teams.setFrame0(characterKey, {
-                    tag: {
-                      sheet: characterKey,
-                      name,
-                    },
-                  })
-                }
-              >
-                <ListItemText>
-                  <Box sx={{ display: 'flex', gap: 1 }}>
-                    <FullTagDisplay tag={tag} />
-                  </Box>
-                </ListItemText>
-              </MenuItem>
-            )
-          })}
-      {statTargets.map(({ tag }, i) => {
-        const { q, qt } = tag
-        if (!q || !qt) return
-        return (
-          <MenuItem
-            key={`${i}_${q}_${qt}`}
-            onClick={() =>
-              database.teams.setFrame0(characterKey, {
-                tag: {
-                  q: q as TargetTag['q'],
-                  qt: qt as 'final',
-                },
-              })
-            }
-          >
-            <ListItemText>
-              <Box sx={{ display: 'flex', gap: 1 }}>
-                <FullTagDisplay tag={tag} />
-              </Box>
-            </ListItemText>
-          </MenuItem>
-        )
-      })}
+      <OptPanelSectionHeader>Stats</OptPanelSectionHeader>
+      {statReads.map((read) => (
+        <MenuItem
+          key={`stat_${statReadTagKey(read.tag)}`}
+          onClick={() =>
+            database.teams.setFrame0(characterKey, {
+              tag: statReadToTargetTag(read),
+            })
+          }
+        >
+          <ListItemText>
+            <FullTagDisplay tag={read.tag} />
+          </ListItemText>
+        </MenuItem>
+      ))}
+      {otherFields.length > 0 && (
+        <OptPanelSectionHeader>Other</OptPanelSectionHeader>
+      )}
+      {otherFields.map((field, i) => (
+        <OptTargetFieldMenuItem
+          key={`other_${i}`}
+          field={field}
+          fieldKey={`other_${i}`}
+          characterKey={characterKey}
+          target={target}
+          database={database}
+        />
+      ))}
+      {skillSections.flatMap(({ section, fields }) => [
+        <OptTargetSkillSectionHeader
+          key={`header_${section}`}
+          skill={section}
+        />,
+        ...fields.map((field, i) => (
+          <OptTargetFieldMenuItem
+            key={`${section}_${i}`}
+            field={field}
+            fieldKey={`${section}_${i}`}
+            characterKey={characterKey}
+            target={target}
+            database={database}
+          />
+        )),
+      ])}
     </DropdownButton>
   )
 }
