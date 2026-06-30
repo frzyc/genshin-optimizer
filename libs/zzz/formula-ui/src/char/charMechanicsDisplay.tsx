@@ -214,7 +214,7 @@ export function CharMechanicsGroupedDisplay({
   )
 
   return (
-    <Stack spacing={2} sx={{ px: 2, pb: 1 }}>
+    <Stack spacing={2} sx={{ pb: 1 }}>
       {skillSections.map(({ section, abilities }) => (
         <CharMechanicsSectionCard
           key={section}
