@@ -1,4 +1,4 @@
-import { objKeyMap, toDecimal } from '@genshin-optimizer/common/util'
+import { toDecimal } from '@genshin-optimizer/common/util'
 import type { Preset } from '@genshin-optimizer/game-opt/engine'
 import type {
   Candidate,
