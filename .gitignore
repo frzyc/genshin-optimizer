@@ -5,6 +5,7 @@ dist
 tmp
 out-tsc
 test-output
+tsconfig.tsbuildinfo
 
 # dependencies
 node_modules

@@ -4,6 +4,7 @@
     "sourceMap": true,
     "composite": true,
     "declaration": true,
+    "incremental": true,
     "moduleResolution": "bundler",
     "declarationMap": true,
     "isolatedModules": true,
@@ -27,7 +28,7 @@
     "exactOptionalPropertyTypes": false,
     "strictNullChecks": true,
     "jsx": "react-jsx",
-    "jsxImportSource": "@emotion/react"
-    // "typeRoots": ["./node_modules/@types", "./node_modules", "./types"]
+    "jsxImportSource": "@emotion/react",
+    "typeRoots": ["./node_modules/@types", "./types"]
   }
 }

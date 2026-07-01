@@ -60,9 +60,6 @@
       "path": "./libs/gi/page-settings"
     },
     {
-      "path": "./libs/gi/prisma-schema"
-    },
-    {
       "path": "./libs/sr/page-optimize"
     },
     {
