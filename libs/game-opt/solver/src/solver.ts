@@ -13,6 +13,11 @@ export interface SolverConfig<ID> {
   topN: number
   numWorkers: number
   setProgress: (_: Progress) => void
+  /** When set, queue these work units on a shared worker pool. */
+  initialWorks?: Work[]
+  initialSkipped?: number
+  /** Candidate pool passed to workers; defaults to `candidates`. */
+  workerCandidates?: Candidate<ID>[][]
 }
 
 type WorkerInfo<ID> = { builds: BuildResult<ID>[] }
@@ -43,10 +48,21 @@ export class Solver<ID extends string | number> {
         })
     )
 
-    const pruned = prune(cfg.nodes, cfg.candidates, 'q', cfg.minimum, topN)
+    const pruned = cfg.initialWorks
+      ? {
+          nodes: cfg.nodes,
+          minimum: cfg.minimum,
+          candidates: cfg.workerCandidates ?? cfg.candidates,
+        }
+      : prune(cfg.nodes, cfg.candidates, 'q', cfg.minimum, topN)
     const { nodes, minimum, candidates } = pruned
-    progress.remaining = buildCount(candidates)
-    progress.skipped = buildCount(cfg.candidates) - progress.remaining
+    if (cfg.initialWorks) {
+      progress.remaining = cfg.initialWorks.reduce((s, w) => s + w.count, 0)
+      progress.skipped = cfg.initialSkipped ?? 0
+    } else {
+      progress.remaining = buildCount(candidates)
+      progress.skipped = buildCount(cfg.candidates) - progress.remaining
+    }
     if (progress.remaining > Number.MAX_SAFE_INTEGER)
       // We use `remaining` to detect completion. Its accurate
       // bookkeeping is essential to ensure this actually halts.
@@ -55,8 +71,17 @@ export class Solver<ID extends string | number> {
     this.topN = topN
     this.optThreshold = minimum[0]
     this.info = new Map(workers.map((w) => [w, { builds: [] }]))
-    const ids = candidates.map((cnds) => cnds.map((c) => c.id))
-    this.state = { ty: 'work', works: [{ ids, count: progress.remaining }] }
+    this.state = cfg.initialWorks
+      ? { ty: 'work', works: [...cfg.initialWorks] }
+      : {
+          ty: 'work',
+          works: [
+            {
+              ids: candidates.map((cnds) => cnds.map((c) => c.id)),
+              count: progress.remaining,
+            },
+          ],
+        }
     this.report = () => setProgress({ ...progress })
     this.results = new Promise((res, rej) => {
       this.finalize = (result) => (this.report(), res(result))

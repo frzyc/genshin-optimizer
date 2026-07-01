@@ -1,6 +1,19 @@
-import { toDecimal } from '@genshin-optimizer/common/util'
+import { objKeyMap, toDecimal } from '@genshin-optimizer/common/util'
 import type { Preset } from '@genshin-optimizer/game-opt/engine'
-import type { Candidate, Progress } from '@genshin-optimizer/game-opt/solver'
+import type {
+  Candidate,
+  Progress,
+  Solver,
+  SolverConfig,
+  Work,
+} from '@genshin-optimizer/game-opt/solver'
+import {
+  Solver as SolverCtor,
+  buildCount,
+  prepareBatchedSolverConfig,
+  unionCandidates,
+  workFromCandidates,
+} from '@genshin-optimizer/game-opt/solver'
 
 import {
   constant,
@@ -10,6 +23,7 @@ import {
   read,
   sum,
 } from '@genshin-optimizer/pando/engine'
+import type { NumTagFree } from '@genshin-optimizer/pando/engine'
 import type {
   CharacterKey,
   DiscSetKey,
@@ -18,6 +32,7 @@ import type {
 } from '@genshin-optimizer/zzz/consts'
 import {
   allDiscSetKeys,
+  allDiscSlotKeys,
   allWengineKeys,
   getDiscMainStatVal,
   getDiscSubStatBaseVal,
@@ -29,24 +44,56 @@ import {
   StatFilterTagToTag,
 } from '@genshin-optimizer/zzz/db'
 import { type Calculator, Read, type Tag } from '@genshin-optimizer/zzz/formula'
+import {
+  count42BuildPermutations,
+  filterDiscsFor42Assignment,
+  iterate42Assignments,
+  pruneDiscsFor42Inventory,
+} from './efficientSets'
+
+export {
+  count42BuildPermutations,
+  countDistinctSlotsBySet,
+  isEfficient42Composition,
+  MIN_DISTINCT_SLOTS_FOR_2P_SET,
+  MIN_DISTINCT_SLOTS_FOR_4P_SET,
+  pruneDiscsFor42Inventory,
+} from './efficientSets'
 
 const EPSILON = 1e-7
 
 type Frames = Array<{ tag: Tag; multiplier: number }>
 
-export function createSolverConfig(
-  characterKey: CharacterKey,
-  calc: Calculator,
-  frames: Frames,
-  statFilters: Array<Omit<StatFilter, 'disabled'>>,
-  setFilter2: DiscSetKey[],
-  setFilter4: DiscSetKey[],
-  wengines: ICachedWengine[],
-  discsBySlot: Record<DiscSlotKey, ICachedDisc[]>,
-  numWorkers: number,
-  numOfBuilds: number,
+type CreateSolverConfigArgs = {
+  characterKey: CharacterKey
+  calc: Calculator
+  frames: Frames
+  statFilters: Array<Omit<StatFilter, 'disabled'>>
+  setFilter2: DiscSetKey[]
+  setFilter4: DiscSetKey[]
+  wengines: ICachedWengine[]
+  discsBySlot: Record<DiscSlotKey, ICachedDisc[]>
+  numWorkers: number
+  numOfBuilds: number
   setProgress: (progress: Progress) => void
-) {
+}
+
+type DetachedSolverBase = {
+  nodes: NumTagFree[]
+  minimum: number[]
+}
+
+function buildDetachedSolverBase({
+  characterKey,
+  calc,
+  frames,
+  statFilters,
+  setFilter2,
+  setFilter4,
+}: Omit<
+  CreateSolverConfigArgs,
+  'wengines' | 'discsBySlot' | 'numWorkers' | 'numOfBuilds' | 'setProgress'
+>): DetachedSolverBase {
   const discSetKeys = new Set(allDiscSetKeys)
   const wengineKeys = new Set(allWengineKeys)
   const undetachedNodes = [
@@ -125,15 +172,6 @@ export function createSolverConfig(
 
   return {
     nodes,
-    candidates: [
-      wengines.map(wengineCandidate),
-      discsBySlot['1'].map(discCandidate),
-      discsBySlot['2'].map(discCandidate),
-      discsBySlot['3'].map(discCandidate),
-      discsBySlot['4'].map(discCandidate),
-      discsBySlot['5'].map(discCandidate),
-      discsBySlot['6'].map(discCandidate),
-    ],
     minimum: [
       -Infinity, // opt-target itself is also used as a min constraint
       // Invert max constraints for pruning
@@ -144,10 +182,166 @@ export function createSolverConfig(
       2, // setFilter2
       4, // setFilter4
     ],
+  }
+}
+
+function slotCandidates(
+  wengines: ICachedWengine[],
+  discsBySlot: Record<DiscSlotKey, ICachedDisc[]>
+): Candidate<string>[][] {
+  return [
+    wengines.map(wengineCandidate),
+    ...allDiscSlotKeys.map((slot) => discsBySlot[slot].map(discCandidate)),
+  ]
+}
+
+function discCandidatesBySlot(
+  discsBySlot: Record<DiscSlotKey, ICachedDisc[]>
+): Record<DiscSlotKey, Candidate<string>[]> {
+  return objKeyMap(allDiscSlotKeys, (slot) =>
+    discsBySlot[slot].map(discCandidate)
+  )
+}
+
+function candidatesForAssignment(
+  wengineCandidates: Candidate<string>[],
+  discCandsBySlot: Record<DiscSlotKey, Candidate<string>[]>,
+  filtered: Record<DiscSlotKey, ICachedDisc[]>
+): Candidate<string>[][] {
+  const idsBySlot = objKeyMap(
+    allDiscSlotKeys,
+    (slot) => new Set(filtered[slot].map((d) => d.id))
+  )
+  return [
+    wengineCandidates,
+    ...allDiscSlotKeys.map((slot) =>
+      discCandsBySlot[slot].filter((c) => idsBySlot[slot].has(c.id as string))
+    ),
+  ]
+}
+
+function solverConfigFromBase(
+  base: DetachedSolverBase,
+  candidates: Candidate<string>[][],
+  {
+    numWorkers,
+    numOfBuilds,
+    setProgress,
+  }: Pick<CreateSolverConfigArgs, 'numWorkers' | 'numOfBuilds' | 'setProgress'>
+): SolverConfig<string> {
+  return {
+    ...base,
+    candidates,
     numWorkers,
     topN: numOfBuilds,
     setProgress,
   }
+}
+
+export function createSolverConfig(
+  args: CreateSolverConfigArgs
+): SolverConfig<string> {
+  const base = buildDetachedSolverBase(args)
+  return solverConfigFromBase(
+    base,
+    slotCandidates(args.wengines, args.discsBySlot),
+    {
+      numWorkers: args.numWorkers,
+      numOfBuilds: args.numOfBuilds,
+      setProgress: args.setProgress,
+    }
+  )
+}
+
+function build42BatchSolverConfig(
+  args: CreateSolverConfigArgs & {
+    setFilter2: DiscSetKey[]
+    setFilter4: DiscSetKey[]
+  }
+): SolverConfig<string> | null {
+  const {
+    discsBySlot,
+    setFilter2,
+    setFilter4,
+    wengines,
+    numWorkers,
+    numOfBuilds: topN,
+    setProgress,
+    ...baseArgs
+  } = args
+  const base = buildDetachedSolverBase({ ...baseArgs, setFilter2, setFilter4 })
+  const wengineCandidates = wengines.map(wengineCandidate)
+  const pruned = pruneDiscsFor42Inventory(discsBySlot)
+  const discCandsBySlot = discCandidatesBySlot(pruned)
+
+  // Candidate[][][]  =  slices[]  ->  slots[]  ->  candidates[]
+  // Slices are 4:2 shapes
+  // Slots: 0:Wengine, 1-6: Discs
+  // Candidates: Wengine + Discs for each slot
+  const slices: Candidate<string>[][][] = []
+  const works: Work[] = []
+
+  for (const { group4, setA, setB } of iterate42Assignments(
+    pruned,
+    setFilter2,
+    setFilter4
+  )) {
+    const filtered = filterDiscsFor42Assignment(pruned, group4, setA, setB)
+    if (!filtered) continue
+    const candidates = candidatesForAssignment(
+      wengineCandidates,
+      discCandsBySlot,
+      filtered
+    )
+    const work = workFromCandidates(candidates)
+    if (!work) continue
+    slices.push(candidates)
+    works.push(work)
+  }
+
+  return prepareBatchedSolverConfig(
+    {
+      nodes: base.nodes,
+      minimum: base.minimum,
+      topN,
+      numWorkers,
+      setProgress,
+    },
+    works,
+    unionCandidates(slices)
+  )
+}
+
+// Orchestrator layer for rainbow / 4:2 batching
+export function createOptimizeSolver(
+  args: CreateSolverConfigArgs & { allowRainbow: boolean }
+): Solver<string> | null {
+  if (args.allowRainbow) {
+    const cfg = createSolverConfig(args)
+    if (!buildCount(cfg.candidates)) return null
+    return new SolverCtor(cfg)
+  }
+
+  const cfg = build42BatchSolverConfig(args)
+  return cfg ? new SolverCtor(cfg) : null
+}
+
+export function countBuildPermutations(
+  discsBySlot: Record<DiscSlotKey, ICachedDisc[]>,
+  wengineCount: number,
+  allowRainbow: boolean,
+  setFilter2: DiscSetKey[],
+  setFilter4: DiscSetKey[]
+): number {
+  if (allowRainbow) {
+    return buildCount(Object.values(discsBySlot)) * wengineCount
+  }
+  return count42BuildPermutations(
+    discsBySlot,
+    setFilter2,
+    setFilter4,
+    wengineCount
+  )
 }
 
 function discCandidate(disc: ICachedDisc): Candidate<string> {

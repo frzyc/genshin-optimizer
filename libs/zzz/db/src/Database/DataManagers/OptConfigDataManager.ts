@@ -95,6 +95,7 @@ const optConfigSchema = z.object({
   ]) as z.ZodType<DiscMainStatKey[]>,
   setFilter2: zodFilteredArray(allDiscSetKeys, []) as z.ZodType<DiscSetKey[]>,
   setFilter4: zodFilteredArray(allDiscSetKeys, []) as z.ZodType<DiscSetKey[]>,
+  allowRainbow: zodBoolean(),
   useEquipped: zodBoolean(),
 
   optWengine: zodBoolean(),

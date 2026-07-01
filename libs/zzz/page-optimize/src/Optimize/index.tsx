@@ -2,7 +2,7 @@ import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { BuildResult, Progress } from '@genshin-optimizer/game-opt/solver'
-import { Solver, buildCount } from '@genshin-optimizer/game-opt/solver'
+import type { Solver } from '@genshin-optimizer/game-opt/solver'
 import {
   type DiscSlotKey,
   allDiscSlotKeys,
@@ -20,7 +20,10 @@ import {
   useTeam,
 } from '@genshin-optimizer/zzz/db-ui'
 import { useZzzCalcContext } from '@genshin-optimizer/zzz/formula-ui'
-import { createSolverConfig } from '@genshin-optimizer/zzz/solver'
+import {
+  countBuildPermutations,
+  createOptimizeSolver,
+} from '@genshin-optimizer/zzz/solver'
 import { getCharStat, getWengineStat } from '@genshin-optimizer/zzz/stats'
 import { BuildsSelector, WorkerSelector } from '@genshin-optimizer/zzz/ui'
 import CloseIcon from '@mui/icons-material/Close'
@@ -33,7 +36,6 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
-import type { MouseEvent } from 'react'
 import {
   useCallback,
   useContext,
@@ -157,8 +159,21 @@ function OptimizeWrapper() {
   ])
 
   const totalPermutations = useMemo(
-    () => buildCount(Object.values(discsBySlot)) * filteredWengines.length,
-    [filteredWengines.length, discsBySlot]
+    () =>
+      countBuildPermutations(
+        discsBySlot,
+        filteredWengines.length,
+        optConfig.allowRainbow,
+        optConfig.setFilter2,
+        optConfig.setFilter4
+      ),
+    [
+      discsBySlot,
+      filteredWengines.length,
+      optConfig.allowRainbow,
+      optConfig.setFilter2,
+      optConfig.setFilter4,
+    ]
   )
 
   const [optimizing, setOptimizing] = useState(false)
@@ -168,79 +183,76 @@ function OptimizeWrapper() {
   //terminate worker when component unmounts
   useEffect(() => () => cancelToken.current(), [])
 
-  const onOptimize = useCallback(
-    async (event: MouseEvent) => {
-      if (!calc || !target) return
-      const cancelled = new Promise<void>((r) => (cancelToken.current = r))
-      setProgress(undefined)
-      setOptimizing(true)
+  const currentSolver = useRef<Solver<string> | null>(null)
 
-      // Filter out disabled
-      const statFilters = (optConfig.statFilters ?? []).filter(
-        (s) => !s.disabled
-      )
-      const config = createSolverConfig(
+  const onOptimize = useCallback(async () => {
+    if (!calc || !target) return
+    const cancelled = new Promise<void>((r) => (cancelToken.current = r))
+    setProgress(undefined)
+    setOptimizing(true)
+    await new Promise<void>((resolve) => {
+      requestAnimationFrame(() => setTimeout(resolve, 0))
+    })
+
+    // Filter out disabled
+    const statFilters = (optConfig.statFilters ?? []).filter((s) => !s.disabled)
+
+    cancelled.then(() => currentSolver.current?.terminate('user cancelled'))
+    let results: BuildResult<string>[]
+    try {
+      const optimizer = createOptimizeSolver({
         characterKey,
         calc,
-        [
+        frames: [
           {
             tag: targetTag(target),
             multiplier: 1,
           },
         ],
         statFilters,
-        optConfig.setFilter2,
-        optConfig.setFilter4,
-        filteredWengines,
+        setFilter2: optConfig.setFilter2,
+        setFilter4: optConfig.setFilter4,
+        allowRainbow: optConfig.allowRainbow,
+        wengines: filteredWengines,
         discsBySlot,
         numWorkers,
-        optConfig.maxBuildsToShow,
-        setProgress
-      )
-
-      if (event.altKey) {
-        console.log(config)
-        setOptimizing(false)
-        return
-      }
-
-      const optimizer = new Solver(config)
-
-      cancelled.then(() => optimizer.terminate('user cancelled'))
-      let results: BuildResult<string>[]
-      try {
-        results = await optimizer.results
-      } catch {
-        return
-      } finally {
-        cancelToken.current = () => {}
-        setOptimizing(false)
-      }
-      // Save results to optConfig
-      database.optConfigs.newOrSetGeneratedBuildList(optConfigId, {
-        builds: results.map(({ ids, value }) => ({
-          wengineId: ids[0],
-          discIds: objKeyMap(allDiscSlotKeys, (_slot, index) => ids[index + 1]),
-          value,
-        })),
-        buildDate: Date.now(),
+        numOfBuilds: optConfig.maxBuildsToShow,
+        setProgress,
       })
-    },
-    [
-      calc,
-      target,
-      optConfig.statFilters,
-      optConfig.setFilter2,
-      optConfig.setFilter4,
-      optConfig.maxBuildsToShow,
-      characterKey,
-      filteredWengines,
-      discsBySlot,
-      numWorkers,
-      database.optConfigs,
-      optConfigId,
-    ]
-  )
+      if (!optimizer) return
+      currentSolver.current = optimizer
+      results = await optimizer.results
+    } catch {
+      return
+    } finally {
+      currentSolver.current = null
+      cancelToken.current = () => {}
+      setOptimizing(false)
+    }
+    // Save results to optConfig
+    database.optConfigs.newOrSetGeneratedBuildList(optConfigId, {
+      builds: results.map(({ ids, value }) => ({
+        wengineId: ids[0],
+        discIds: objKeyMap(allDiscSlotKeys, (_slot, index) => ids[index + 1]),
+        value,
+      })),
+      buildDate: Date.now(),
+    })
+  }, [
+    calc,
+    target,
+    optConfig.statFilters,
+    optConfig.setFilter2,
+    optConfig.setFilter4,
+    optConfig.allowRainbow,
+    optConfig.maxBuildsToShow,
+    characterKey,
+    filteredWengines,
+    discsBySlot,
+    numWorkers,
+    database.optConfigs,
+    optConfigId,
+  ])
 
   const onCancel = useCallback(() => {
     cancelToken.current()
