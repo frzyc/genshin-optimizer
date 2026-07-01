@@ -168,12 +168,7 @@ function OptimizeWrapper() {
     return createOptimizeConfig({
       characterKey,
       calc,
-      frames: [
-        {
-          tag: targetTag(target),
-          multiplier: 1,
-        },
-      ],
+      frames: [{ tag: targetTag(target), multiplier: 1 }],
       statFilters: (optConfig.statFilters ?? []).filter((s) => !s.disabled),
       setFilter2: optConfig.setFilter2,
       setFilter4: optConfig.setFilter4,

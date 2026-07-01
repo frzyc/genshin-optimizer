@@ -3,17 +3,9 @@ import type { Preset } from '@genshin-optimizer/game-opt/engine'
 import type {
   Candidate,
   Progress,
-  Solver,
   SolverConfig,
-  Work,
 } from '@genshin-optimizer/game-opt/solver'
-import {
-  Solver as SolverCtor,
-  buildCount,
-  prepareBatchedSolverConfig,
-  unionCandidates,
-  workFromCandidates,
-} from '@genshin-optimizer/game-opt/solver'
+import { buildCount } from '@genshin-optimizer/game-opt/solver'
 
 import {
   constant,
@@ -44,27 +36,13 @@ import {
   StatFilterTagToTag,
 } from '@genshin-optimizer/zzz/db'
 import { type Calculator, Read, type Tag } from '@genshin-optimizer/zzz/formula'
-import {
-  count42BuildPermutations,
-  filterDiscsFor42Assignment,
-  iterate42Assignments,
-  pruneDiscsFor42Inventory,
-} from './efficientSets'
-
-export {
-  count42BuildPermutations,
-  countDistinctSlotsBySet,
-  isEfficient42Composition,
-  MIN_DISTINCT_SLOTS_FOR_2P_SET,
-  MIN_DISTINCT_SLOTS_FOR_4P_SET,
-  pruneDiscsFor42Inventory,
-} from './efficientSets'
+import { rainbowFilter } from './filters'
 
 const EPSILON = 1e-7
 
 type Frames = Array<{ tag: Tag; multiplier: number }>
 
-type CreateSolverConfigArgs = {
+export type CreateSolverConfigArgs = {
   characterKey: CharacterKey
   calc: Calculator
   frames: Frames
@@ -195,31 +173,6 @@ function slotCandidates(
   ]
 }
 
-function discCandidatesBySlot(
-  discsBySlot: Record<DiscSlotKey, ICachedDisc[]>
-): Record<DiscSlotKey, Candidate<string>[]> {
-  return objKeyMap(allDiscSlotKeys, (slot) =>
-    discsBySlot[slot].map(discCandidate)
-  )
-}
-
-function candidatesForAssignment(
-  wengineCandidates: Candidate<string>[],
-  discCandsBySlot: Record<DiscSlotKey, Candidate<string>[]>,
-  filtered: Record<DiscSlotKey, ICachedDisc[]>
-): Candidate<string>[][] {
-  const idsBySlot = objKeyMap(
-    allDiscSlotKeys,
-    (slot) => new Set(filtered[slot].map((d) => d.id))
-  )
-  return [
-    wengineCandidates,
-    ...allDiscSlotKeys.map((slot) =>
-      discCandsBySlot[slot].filter((c) => idsBySlot[slot].has(c.id as string))
-    ),
-  ]
-}
-
 function solverConfigFromBase(
   base: DetachedSolverBase,
   candidates: Candidate<string>[][],
@@ -253,95 +206,17 @@ export function createSolverConfig(
   )
 }
 
-function build42BatchSolverConfig(
-  args: CreateSolverConfigArgs & {
-    setFilter2: DiscSetKey[]
-    setFilter4: DiscSetKey[]
-  }
-): SolverConfig<string> | null {
-  const {
-    discsBySlot,
-    setFilter2,
-    setFilter4,
-    wengines,
-    numWorkers,
-    numOfBuilds: topN,
-    setProgress,
-    ...baseArgs
-  } = args
-  const base = buildDetachedSolverBase({ ...baseArgs, setFilter2, setFilter4 })
-  const wengineCandidates = wengines.map(wengineCandidate)
-  const pruned = pruneDiscsFor42Inventory(discsBySlot)
-  const discCandsBySlot = discCandidatesBySlot(pruned)
-
-  // Candidate[][][]  =  slices[]  ->  slots[]  ->  candidates[]
-  // Slices are 4:2 shapes
-  // Slots: 0:Wengine, 1-6: Discs
-  // Candidates: Wengine + Discs for each slot
-  const slices: Candidate<string>[][][] = []
-  const works: Work[] = []
-
-  for (const { group4, setA, setB } of iterate42Assignments(
-    pruned,
-    setFilter2,
-    setFilter4
-  )) {
-    const filtered = filterDiscsFor42Assignment(pruned, group4, setA, setB)
-    if (!filtered) continue
-    const candidates = candidatesForAssignment(
-      wengineCandidates,
-      discCandsBySlot,
-      filtered
-    )
-    const work = workFromCandidates(candidates)
-    if (!work) continue
-    slices.push(candidates)
-    works.push(work)
-  }
-
-  return prepareBatchedSolverConfig(
-    {
-      nodes: base.nodes,
-      minimum: base.minimum,
-      topN,
-      numWorkers,
-      setProgress,
-    },
-    works,
-    unionCandidates(slices)
-  )
-}
-
 // Orchestrator layer for rainbow / 4:2 batching
 export function createOptimizeConfig(
   args: CreateSolverConfigArgs & { allowRainbow: boolean }
 ): SolverConfig<string> | null {
-  if (args.allowRainbow) {
-    const cfg = createSolverConfig(args)
-    if (!buildCount(cfg.candidates)) return null
-    return cfg
+  const cfg = createSolverConfig(args)
+  if (!buildCount(cfg.candidates)) return null
+  if (!args.allowRainbow) {
+    cfg.filter = rainbowFilter(args)
+    if (!cfg.filter?.length) return null // no valid group
   }
-
-  const cfg = build42BatchSolverConfig(args)
-  return cfg ? cfg : null
-}
-
-export function countBuildPermutations(
-  discsBySlot: Record<DiscSlotKey, ICachedDisc[]>,
-  wengineCount: number,
-  allowRainbow: boolean,
-  setFilter2: DiscSetKey[],
-  setFilter4: DiscSetKey[]
-): number {
-  if (allowRainbow) {
-    return buildCount(Object.values(discsBySlot)) * wengineCount
-  }
-  return count42BuildPermutations(
-    discsBySlot,
-    setFilter2,
-    setFilter4,
-    wengineCount
-  )
+  return cfg
 }
 
 function discCandidate(disc: ICachedDisc): Candidate<string> {

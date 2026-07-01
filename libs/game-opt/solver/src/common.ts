@@ -14,7 +14,7 @@ export interface Progress {
   failed: number // # of (computed) builds that fail some constraints
   skipped: number // # of builds not computed e.g. via pruning
   remaining: number // # of uncomputed and unskipped builds
-  total: number // total # of builds
+  total: number // # of total builds
 }
 
 export function buildCount<V>(candidates: V[][]): number {
