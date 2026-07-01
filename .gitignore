@@ -3,7 +3,7 @@
 # compiled output
 dist
 tmp
-/out-tsc
+out-tsc
 test-output
 
 # dependencies

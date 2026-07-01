@@ -3,6 +3,7 @@
   "compilerOptions": {
     "sourceMap": true,
     "composite": true,
+    "declaration": true,
     "moduleResolution": "bundler",
     "declarationMap": true,
     "isolatedModules": true,

@@ -1,1 +1,0 @@
-{"version":3,"file":"ModalWrapper.d.ts","sourceRoot":"","sources":["../../../../src/components/ModalWrapper.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,cAAc,EAAE,UAAU,EAAE,MAAM,eAAe,CAAA;AAkB/D,KAAK,iBAAiB,GAAG,UAAU,GAAG;IACpC,cAAc,CAAC,EAAE,cAAc,CAAA;CAChC,CAAA;AACD,wBAAgB,YAAY,CAAC,EAC3B,QAAQ,EACR,cAAc,EACd,GAAG,KAAK,EACT,EAAE,iBAAiB,oDAanB"}
