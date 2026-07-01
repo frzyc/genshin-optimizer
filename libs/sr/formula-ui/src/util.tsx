@@ -7,7 +7,7 @@ import type {
   TrailblazerGenderedKey,
 } from '@genshin-optimizer/sr-consts'
 import type { Tag } from '@genshin-optimizer/sr-formula'
-import { Translate } from '@genshin-optimizer/sr/i18n'
+import { Translate } from '@genshin-optimizer/sr-i18n'
 import type { ReactNode } from 'react'
 import { TagDisplay } from './components'
 export const st = (

@@ -5,6 +5,9 @@
       "path": "../assets"
     },
     {
+      "path": "../theme"
+    },
+    {
       "path": "../../common/ui"
     },
     {

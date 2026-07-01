@@ -1,5 +1,5 @@
 import type { WengineKey } from '@genshin-optimizer/zzz-consts'
-import { Translate } from '@genshin-optimizer/zzz/i18n'
+import { Translate } from '@genshin-optimizer/zzz-i18n'
 
 export function WengineName({ wKey }: { wKey: WengineKey }) {
   return <Translate ns="wengineNames_gen" key18={wKey} />

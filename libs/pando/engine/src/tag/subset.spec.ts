@@ -61,7 +61,7 @@ function compileTagMapEntries<V>(entries: TagMapEntries<V>): {
   const tags = new Map<string, Set<string>>()
   for (const { tag } of entries) {
     for (const [cat, val] of Object.entries(tag)) {
-      if (val === null) continue
+      if (val === null || val === undefined) continue
       if (!tags.has(cat)) tags.set(cat, new Set())
       tags.get(cat)!.add(val)
     }

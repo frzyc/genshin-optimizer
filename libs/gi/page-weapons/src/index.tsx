@@ -13,6 +13,7 @@ import {
 } from '@genshin-optimizer/common-ui'
 import { filterFunction, sortFunction } from '@genshin-optimizer/common-util'
 import { type WeaponKey } from '@genshin-optimizer/gi-consts'
+import type { WeaponSortKey } from '@genshin-optimizer/gi-db'
 import { initialWeapon } from '@genshin-optimizer/gi-db'
 import { useDatabase } from '@genshin-optimizer/gi-db-ui'
 import {
@@ -179,9 +180,11 @@ export default function PageWeapon() {
   const sortByButtonProps = {
     sortKeys: [...sortKeys],
     value: sortType,
-    onChange: (sortType) => database.displayWeapon.set({ sortType }),
+    onChange: (sortType: WeaponSortKey) =>
+      database.displayWeapon.set({ sortType }),
     ascending: ascending,
-    onChangeAsc: (ascending) => database.displayWeapon.set({ ascending }),
+    onChangeAsc: (ascending: boolean) =>
+      database.displayWeapon.set({ ascending }),
   }
 
   return (

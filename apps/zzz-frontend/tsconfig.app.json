@@ -2,6 +2,11 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
+    "typeRoots": [
+      "../../node_modules/@types",
+      "../../node_modules/",
+      "../../types"
+    ],
     "types": [
       "node",
       "object-overrides",
@@ -24,13 +29,34 @@
     "vitest.config.ts",
     "vitest.config.mts"
   ],
-  "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"],
+  "include": [
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "./package.json"
+  ],
   "references": [
     {
       "path": "../../libs/common/svgicons/tsconfig.lib.json"
     },
     {
       "path": "../../libs/common/database-ui/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/zzz/ui/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/zzz/theme/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/zzz/page-home/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/zzz/i18n/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/zzz/db-ui/tsconfig.lib.json"
     },
     {
       "path": "../../libs/pando/engine/tsconfig.lib.json"

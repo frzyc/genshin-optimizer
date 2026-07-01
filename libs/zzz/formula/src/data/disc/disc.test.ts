@@ -53,6 +53,7 @@ function testCharacterData(
         assist: 0,
         chain: 0,
         core: 6,
+        potential: 0,
       }),
       ...discTagMapNodeEntries(discStats, {
         [setKey]: 4,

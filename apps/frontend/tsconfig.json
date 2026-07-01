@@ -26,6 +26,9 @@
       "path": "../../libs/gi/theme"
     },
     {
+      "path": "../../libs/gi/i18n"
+    },
+    {
       "path": "../../libs/gi/db-ui"
     },
     {

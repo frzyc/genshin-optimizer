@@ -1,7 +1,7 @@
 import type { AscensionKey } from '@genshin-optimizer/sr-consts'
 import type { Calculator } from '@genshin-optimizer/sr-formula'
 import { own } from '@genshin-optimizer/sr-formula'
-import { Translate } from '@genshin-optimizer/sr/i18n'
+import { Translate } from '@genshin-optimizer/sr-i18n'
 import type {
   TalentSheetElementBonusAbilityKey,
   TalentSheetElementStatBoostKey,

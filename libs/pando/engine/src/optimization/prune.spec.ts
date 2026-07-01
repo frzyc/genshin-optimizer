@@ -138,7 +138,7 @@ describe('state', () => {
       { id: 3, c0: 4, c1: 1, c2: 4 },
       { id: 4, c0: 2, c2: 4 },
     ],
-  ]
+  ] as any
   const state = new State(nodes, [], candidates, 'q')
 
   test('comp ranges', () => {

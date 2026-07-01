@@ -6,7 +6,7 @@ import {
   layeredAssignment,
 } from '@genshin-optimizer/common-util'
 import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi-db-ui'
-import { Translate } from '@genshin-optimizer/gi/i18n'
+import { Translate } from '@genshin-optimizer/gi-i18n'
 import type {
   DocumentConditional,
   IDocumentConditionalExclusive,

@@ -5,6 +5,9 @@
       "path": "../zood"
     },
     {
+      "path": "../i18n"
+    },
+    {
       "path": "../../common/pipeline"
     },
     {

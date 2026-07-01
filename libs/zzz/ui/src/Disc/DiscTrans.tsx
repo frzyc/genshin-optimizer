@@ -1,5 +1,5 @@
 import { type DiscSetKey } from '@genshin-optimizer/zzz-consts'
-import { Translate } from '@genshin-optimizer/zzz/i18n'
+import { Translate } from '@genshin-optimizer/zzz-i18n'
 export function DiscSetName({ setKey }: { setKey: DiscSetKey }) {
   return <Translate ns="discNames_gen" key18={setKey} />
 }

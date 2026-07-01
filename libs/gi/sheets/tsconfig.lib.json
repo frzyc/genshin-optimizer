@@ -2,6 +2,11 @@
   "extends": "../../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "./out-tsc/lib",
+    "typeRoots": [
+      "../../../node_modules/@types",
+      "../../../node_modules/",
+      "../../../types"
+    ],
     "types": [
       "node",
       "object-overrides",
@@ -30,6 +35,9 @@
   "references": [
     {
       "path": "../wr-types/tsconfig.lib.json"
+    },
+    {
+      "path": "../i18n/tsconfig.lib.json"
     },
     {
       "path": "../../common/svgicons/tsconfig.lib.json"

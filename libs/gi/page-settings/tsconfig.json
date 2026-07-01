@@ -8,6 +8,9 @@
       "path": "../../common/svgicons"
     },
     {
+      "path": "../i18n"
+    },
+    {
       "path": "../../common/ui"
     },
     {

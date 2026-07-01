@@ -5,7 +5,7 @@
     "declaration": true,
     "types": ["node", "object-overrides"]
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "src/**/*.json"],
   "exclude": ["src/**/*.spec.ts", "src/**/*.test.ts"],
   "references": [
     {

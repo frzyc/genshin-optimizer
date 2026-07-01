@@ -1,18 +1,8 @@
-import * as path from 'path'
-/// <reference types='vitest' />
-import { defineConfig } from 'vite'
-import dts from 'vite-plugin-dts'
+import { defineConfig } from 'vitest/config'
 
-export default defineConfig(() => ({
+export default defineConfig({
   root: __dirname,
   cacheDir: '../../../node_modules/.vite/libs/common/pipeline',
-
-  plugins: [
-    dts({
-      entryRoot: 'src',
-      tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
-    }),
-  ],
 
   // Uncomment this if you are using workers.
   // worker: {
@@ -30,4 +20,4 @@ export default defineConfig(() => ({
       provider: 'v8' as const,
     },
   },
-}))
+})

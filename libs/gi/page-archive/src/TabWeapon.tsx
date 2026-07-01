@@ -19,6 +19,7 @@ import type {
   ICachedWeapon,
 } from '@genshin-optimizer/gi-db'
 import { useDatabase } from '@genshin-optimizer/gi-db-ui'
+import { i18n } from '@genshin-optimizer/gi-i18n'
 import { getWeaponSheet } from '@genshin-optimizer/gi-sheets'
 import { getWeaponStat } from '@genshin-optimizer/gi-stats'
 import {
@@ -30,7 +31,6 @@ import {
 import type { CalcResult } from '@genshin-optimizer/gi-uidata'
 import { computeUIData } from '@genshin-optimizer/gi-uidata'
 import { dataObjForWeapon, input } from '@genshin-optimizer/gi-wr'
-import { i18n } from '@genshin-optimizer/gi/i18n'
 import SearchIcon from '@mui/icons-material/Search'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import type { Palette } from '@mui/material'

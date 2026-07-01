@@ -20,7 +20,7 @@ export const languageCodeList = [
   'th',
   'tr',
   'vi',
-]
+] as const
 
 /**
  * @see: https://www.i18next.com/translation-function/essentials

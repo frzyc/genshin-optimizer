@@ -1,10 +1,8 @@
-import { defineConfig } from 'vite'
-
+import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
   root: __dirname,
   cacheDir: '../../../node_modules/.vite/libs/test',
-
 
   // Uncomment this if you are using workers.
   // worker: {

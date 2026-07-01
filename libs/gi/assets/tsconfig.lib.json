@@ -2,6 +2,11 @@
   "extends": "../../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "./out-tsc/lib",
+    "typeRoots": [
+      "../../../node_modules/@types",
+      "../../../node_modules/",
+      "../../../types"
+    ],
     "types": ["node", "object-overrides"]
   },
   "files": [
@@ -18,7 +23,7 @@
     "**/*.spec.jsx",
     "**/*.test.jsx"
   ],
-  "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
   "references": [
     {
       "path": "../consts/tsconfig.lib.json"

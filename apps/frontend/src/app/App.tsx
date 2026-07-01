@@ -5,7 +5,7 @@ import {
 import { ScrollTop, useRefSize, useTitle } from '@genshin-optimizer/common-ui'
 import { ArtCharDatabase } from '@genshin-optimizer/gi-db'
 import { DatabaseContext } from '@genshin-optimizer/gi-db-ui'
-import '@genshin-optimizer/gi/i18n' // import to load translations
+import '@genshin-optimizer/gi-i18n' // import to load translations
 import { theme } from '@genshin-optimizer/gi-theme'
 import {
   GOAdWrapper,
@@ -36,19 +36,19 @@ import Footer from './Footer'
 import Header from './Header'
 import Snow from './Snow'
 
-const PageHome = lazy(() => import('@genshin-optimizer/gi/page-home'))
-const PageArtifacts = lazy(() => import('@genshin-optimizer/gi/page-artifacts'))
-const PageTools = lazy(() => import('@genshin-optimizer/gi/page-tools'))
-const PageSettings = lazy(() => import('@genshin-optimizer/gi/page-settings'))
-const PageWeapons = lazy(() => import('@genshin-optimizer/gi/page-weapons'))
-const PageArchive = lazy(() => import('@genshin-optimizer/gi/page-archive'))
-const PageDocumentation = lazy(() => import('@genshin-optimizer/gi/page-doc'))
-const PageScanner = lazy(() => import('@genshin-optimizer/gi/page-scanner'))
+const PageHome = lazy(() => import('@genshin-optimizer/gi-page-home'))
+const PageArtifacts = lazy(() => import('@genshin-optimizer/gi-page-artifacts'))
+const PageTools = lazy(() => import('@genshin-optimizer/gi-page-tools'))
+const PageSettings = lazy(() => import('@genshin-optimizer/gi-page-settings'))
+const PageWeapons = lazy(() => import('@genshin-optimizer/gi-page-weapons'))
+const PageArchive = lazy(() => import('@genshin-optimizer/gi-page-archive'))
+const PageDocumentation = lazy(() => import('@genshin-optimizer/gi-page-doc'))
+const PageScanner = lazy(() => import('@genshin-optimizer/gi-page-scanner'))
 const PageCharacters = lazy(
-  () => import('@genshin-optimizer/gi/page-characters')
+  () => import('@genshin-optimizer/gi-page-characters')
 )
-const PageTeams = lazy(() => import('@genshin-optimizer/gi/page-teams'))
-const PageTeam = lazy(() => import('@genshin-optimizer/gi/page-team'))
+const PageTeams = lazy(() => import('@genshin-optimizer/gi-page-teams'))
+const PageTeam = lazy(() => import('@genshin-optimizer/gi-page-team'))
 
 function App() {
   const dbIndex = parseInt(localStorage.getItem('dbIndex') || '1')

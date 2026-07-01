@@ -11,6 +11,9 @@
       "path": "../../game-opt/engine"
     },
     {
+      "path": "../ui"
+    },
+    {
       "path": "../stats"
     },
     {
@@ -18,6 +21,9 @@
     },
     {
       "path": "../../common/util"
+    },
+    {
+      "path": "../i18n"
     },
     {
       "path": "../../common/ui"

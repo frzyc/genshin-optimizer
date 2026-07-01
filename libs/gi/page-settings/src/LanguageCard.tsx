@@ -1,5 +1,6 @@
+import type { Language } from '@genshin-optimizer/common-pipeline'
 import { DropdownButton } from '@genshin-optimizer/common-ui'
-import { languageCodeList } from '@genshin-optimizer/gi/i18n'
+import { languageCodeList } from '@genshin-optimizer/gi-i18n'
 import { MenuItem } from '@mui/material'
 import { Trans, useTranslation } from 'react-i18next'
 
@@ -22,7 +23,7 @@ const nativeLanguages = {
 }
 export default function LanguageCard() {
   const { t, i18n } = useTranslation(['ui', 'settings'])
-  const onSetLanguage = (lang) => () => i18n.changeLanguage(lang)
+  const onSetLanguage = (lang: Language) => () => i18n.changeLanguage(lang)
   const currentLang = i18n.languages[0]
   return (
     <DropdownButton

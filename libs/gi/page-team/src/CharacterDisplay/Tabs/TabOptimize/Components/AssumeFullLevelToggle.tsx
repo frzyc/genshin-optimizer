@@ -7,6 +7,10 @@ export default function AssumeFullLevelToggle({
   mainStatAssumptionLevel = 0,
   setmainStatAssumptionLevel,
   disabled,
+}: {
+  mainStatAssumptionLevel?: number
+  setmainStatAssumptionLevel: (lvl: number) => void
+  disabled?: boolean
 }) {
   const { t } = useTranslation('page_character_optimize')
   return (

@@ -5,6 +5,15 @@
       "path": "../../libs/common/database-ui"
     },
     {
+      "path": "../../libs/sr/theme"
+    },
+    {
+      "path": "../../libs/sr/i18n"
+    },
+    {
+      "path": "../../libs/sr/db-ui"
+    },
+    {
       "path": "../../libs/pando/engine"
     },
     {

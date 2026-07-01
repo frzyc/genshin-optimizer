@@ -66,11 +66,15 @@ export default function CustomTooltip({
       [database.arts, selectedPoint]
     ) ?? objKeyMap(allArtifactSlotKeys, () => undefined)
   const clickAwayHandler = useCallback(
-    (e) => {
+    (e: MouseEvent | TouchEvent) => {
       if (
         !(
-          e.target.id.includes('customShape') ||
-          e.target.id.includes('chartContainer')
+          (e?.currentTarget as HTMLElement | null)?.id.includes(
+            'customShape'
+          ) ||
+          (e?.currentTarget as HTMLElement | null)?.id.includes(
+            'chartContainer'
+          )
         )
       ) {
         setSelectedPoint(undefined)

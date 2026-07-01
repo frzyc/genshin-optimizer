@@ -2,6 +2,7 @@
   "extends": "../../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "./out-tsc/lib",
+    "typeRoots": ["../../../node_modules/@types", "../../../node_modules/"],
     "types": [
       "node",
 
@@ -22,6 +23,9 @@
   ],
   "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"],
   "references": [
+    {
+      "path": "../i18n/tsconfig.lib.json"
+    },
     {
       "path": "../../game-opt/formula-ui/tsconfig.lib.json"
     },

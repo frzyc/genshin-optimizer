@@ -10,7 +10,7 @@ import {
   allCharacterSheetKeys,
   allWeaponKeys,
 } from '@genshin-optimizer/gi-consts'
-import { Translate } from '@genshin-optimizer/gi/i18n'
+import { Translate } from '@genshin-optimizer/gi-i18n'
 import type { CalcResult } from '@genshin-optimizer/gi-uidata'
 import type { Info, InfoExtra, KeyMapPrefix } from '@genshin-optimizer/gi-wr'
 import { type ReactNode, useContext } from 'react'

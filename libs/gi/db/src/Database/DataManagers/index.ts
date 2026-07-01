@@ -15,7 +15,10 @@ import {
   initCustomTarget,
   validateCustomMultiTarget,
 } from './CustomMultiTarget'
-import type { GeneratedBuild } from './GeneratedBuildListDataManager'
+import type {
+  GeneratedBuild,
+  GeneratedBuildList,
+} from './GeneratedBuildListDataManager'
 import type {
   ArtSetExclusion,
   ArtSetExclusionKey,
@@ -71,6 +74,7 @@ export type {
   CustomMultiTarget,
   CustomTarget,
   GeneratedBuild,
+  GeneratedBuildList,
   ICachedArtifact,
   ICachedCharacter,
   ICachedSubstat,

@@ -1,7 +1,7 @@
-import process = require('process')
 import type { ChatInputCommandInteraction } from 'discord.js'
 import { EmbedBuilder, SlashCommandBuilder } from 'discord.js'
 import { readFile, stat } from 'fs/promises'
+import * as process from 'process'
 
 export const slashcommand = new SlashCommandBuilder()
   .setName('debug')
@@ -10,7 +10,7 @@ export const slashcommand = new SlashCommandBuilder()
 async function read(path: string) {
   try {
     const data = await readFile(path)
-    return Buffer.from(data).toString().trim()
+    return data.toString().trim()
   } catch {
     return ''
   }

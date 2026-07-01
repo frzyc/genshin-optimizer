@@ -2,7 +2,11 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
-    "module": "commonjs",
+    "typeRoots": [
+      "../../node_modules/@types",
+      "../../node_modules/",
+      "../../types"
+    ],
     "types": ["node", "object-overrides"]
   },
   "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"],
@@ -31,6 +35,9 @@
     },
     {
       "path": "../../libs/gi/assets-data/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/gi/i18n-node/tsconfig.lib.json"
     },
     {
       "path": "../../libs/gi/consts/tsconfig.lib.json"

@@ -76,13 +76,13 @@ export function optimizeTcUsingNodes(
     optimization: { distributedSubstats, maxSubstats },
   } = charTC
 
-  const scalesWith = new Set<string>()
+  const scalesWith = new Set<SubstatKey>()
   const compute = precompute(
     nodes,
     {},
     (f) => {
       const val = f.path[1]
-      scalesWith.add(val)
+      scalesWith.add(val as SubstatKey)
       return val
     },
     1
@@ -121,7 +121,7 @@ export function optimizeTcUsingNodes(
     resultType: 'total',
     total: countPerms(
       distributedSubstats,
-      [...scalesWithSub, 'other'].map((k) =>
+      [...scalesWithSub, 'other' as const].map((k) =>
         k === 'other' ? distributedSubstats : maxSubsAssignable[k]
       )
     ),
@@ -129,9 +129,9 @@ export function optimizeTcUsingNodes(
   let tested = 0
   let failed = 0
   let skipped = 0
-  const permute = (toAssign: number, [x, ...xs]: string[]) => {
+  const permute = (toAssign: number, [x, ...xs]: (SubstatKey | 'other')[]) => {
     if (xs.length === 0) {
-      if (toAssign > maxSubsAssignable[x]) return
+      if (x !== 'other' && toAssign > maxSubsAssignable[x]) return
       tested++
       if (!(tested % 100_000))
         callback({
@@ -173,7 +173,11 @@ export function optimizeTcUsingNodes(
       maxBuffer = structuredClone(buffer)
       maxBufferRolls = structuredClone(bufferRolls)
     }
-    for (let i = 0; i <= Math.min(maxSubsAssignable[x], toAssign); i++) {
+    for (
+      let i = 0;
+      i <= Math.min(x === 'other' ? Infinity : maxSubsAssignable[x], toAssign);
+      i++
+    ) {
       // TODO: Making sure that i + \sum { maxSubstats[xs] } >= distributedSubstats in each recursion will reduce unnecessary recursion considerably for large problems. It will also tighten the possibilities for the leaf recursion, so you don't need so many checkings.
       // https://github.com/frzyc/genshin-optimizer/pull/781#discussion_r1138083742
       buffer[x] = substatValue(x, i)

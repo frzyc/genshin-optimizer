@@ -2,9 +2,15 @@
   "extends": "../../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "./out-tsc/lib",
+    "typeRoots": [
+      "../../../node_modules/@types",
+      "../../../node_modules/",
+      "../../../types"
+    ],
     "types": [
       "node",
       "object-overrides",
+      "mp3",
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"
     ]
@@ -22,6 +28,9 @@
   ],
   "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"],
   "references": [
+    {
+      "path": "../db-ui/tsconfig.lib.json"
+    },
     {
       "path": "../../game-opt/sheet-ui/tsconfig.lib.json"
     },
@@ -45,6 +54,12 @@
     },
     {
       "path": "../../common/react-util/tsconfig.lib.json"
+    },
+    {
+      "path": "../i18n/tsconfig.lib.json"
+    },
+    {
+      "path": "../db/tsconfig.lib.json"
     },
     {
       "path": "../../common/database-ui/tsconfig.lib.json"

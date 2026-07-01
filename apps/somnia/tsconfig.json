@@ -27,6 +27,9 @@
       "path": "../../libs/gi/assets-data"
     },
     {
+      "path": "../../libs/gi/i18n-node"
+    },
+    {
       "path": "../../libs/gi/consts"
     },
     {

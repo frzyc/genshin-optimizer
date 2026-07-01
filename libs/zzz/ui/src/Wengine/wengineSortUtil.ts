@@ -1,6 +1,6 @@
 import type { FilterConfigs, SortConfigs } from '@genshin-optimizer/common-util'
 import type { WengineSortKey } from '@genshin-optimizer/zzz-db'
-import { i18n } from '@genshin-optimizer/zzz/i18n'
+import { i18n } from '@genshin-optimizer/zzz-i18n'
 import { getWengineStat } from '@genshin-optimizer/zzz-stats'
 import type { IWengine } from '@genshin-optimizer/zzz-zood'
 

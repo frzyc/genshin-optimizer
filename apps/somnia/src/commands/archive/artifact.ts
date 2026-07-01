@@ -1,6 +1,6 @@
 import { AssetData } from '@genshin-optimizer/gi-assets-data'
 import type { ArtifactSetKey } from '@genshin-optimizer/gi-consts'
-import { i18nInstance } from '@genshin-optimizer/gi/i18n-node'
+import { i18nInstance } from '@genshin-optimizer/gi-i18n-node'
 import { getArtSetStat } from '@genshin-optimizer/gi-stats'
 import { EmbedBuilder } from 'discord.js'
 import { rarityColors } from '../../assets/assets'

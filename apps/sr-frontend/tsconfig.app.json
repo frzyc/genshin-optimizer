@@ -2,6 +2,11 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
+    "typeRoots": [
+      "../../node_modules/@types",
+      "../../node_modules/",
+      "../../types"
+    ],
     "types": [
       "node",
       "object-overrides",
@@ -28,6 +33,15 @@
   "references": [
     {
       "path": "../../libs/common/database-ui/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/sr/theme/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/sr/i18n/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/sr/db-ui/tsconfig.lib.json"
     },
     {
       "path": "../../libs/pando/engine/tsconfig.lib.json"

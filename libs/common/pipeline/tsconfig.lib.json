@@ -2,6 +2,7 @@
   "extends": "../../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "./out-tsc/lib",
+    "typeRoots": ["../../../node_modules/@types", "../../../node_modules/"],
     "types": ["node", "vite/client"]
   },
   "include": ["src/**/*.ts"],

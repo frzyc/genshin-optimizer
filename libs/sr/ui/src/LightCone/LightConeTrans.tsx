@@ -1,5 +1,5 @@
 import type { LightConeKey } from '@genshin-optimizer/sr-consts'
-import { Translate } from '@genshin-optimizer/sr/i18n'
+import { Translate } from '@genshin-optimizer/sr-i18n'
 
 export function LightConeName({ lcKey }: { lcKey: LightConeKey }) {
   return <Translate ns="lightConeNames_gen" key18={lcKey} />

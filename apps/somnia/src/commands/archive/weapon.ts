@@ -5,7 +5,7 @@ import {
   weaponMaxAscension,
   weaponMaxLevel,
 } from '@genshin-optimizer/gi-consts'
-import { i18nInstance } from '@genshin-optimizer/gi/i18n-node'
+import { i18nInstance } from '@genshin-optimizer/gi-i18n-node'
 import { allStats, getWeaponStat } from '@genshin-optimizer/gi-stats'
 import {
   ActionRowBuilder,

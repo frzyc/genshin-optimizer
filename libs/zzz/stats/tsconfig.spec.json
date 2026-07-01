@@ -2,12 +2,13 @@
   "extends": "../../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "./out-tsc/lib",
-    "types": ["jest", "node"]
+    "types": ["jest", "node", "object-overrides"]
   },
   "include": [
     "jest.config.ts",
     "src/**/*.test.ts",
     "src/**/*.spec.ts",
     "src/**/*.d.ts"
-  ]
+  ],
+  "references": [{ "path": "./tsconfig.lib.json" }]
 }

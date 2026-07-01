@@ -10,7 +10,7 @@ import {
   characterGenderedKeyToCharacterKey,
 } from '@genshin-optimizer/sr-consts'
 import { buffs, own } from '@genshin-optimizer/sr-formula'
-import { Translate } from '@genshin-optimizer/sr/i18n'
+import { Translate } from '@genshin-optimizer/sr-i18n'
 import {
   getCharInterpolateObject,
   getCharStat,

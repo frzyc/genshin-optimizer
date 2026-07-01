@@ -2,6 +2,11 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
+    "typeRoots": [
+      "../../node_modules/@types",
+      "../../node_modules/",
+      "../../types"
+    ],
     "types": [
       "vitest/globals",
       "vitest/importMeta",
@@ -9,7 +14,8 @@
       "node",
       "vitest",
       "@nx/react/typings/cssmodule.d.ts",
-      "@nx/react/typings/image.d.ts"
+      "@nx/react/typings/image.d.ts",
+      "object-overrides"
     ]
   },
   "include": [
@@ -26,5 +32,6 @@
     "src/**/*.test.jsx",
     "src/**/*.spec.jsx",
     "src/**/*.d.ts"
-  ]
+  ],
+  "references": [{ "path": "./tsconfig.app.json" }]
 }

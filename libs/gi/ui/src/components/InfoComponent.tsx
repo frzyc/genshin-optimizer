@@ -1,7 +1,7 @@
 import { useBoolState } from '@genshin-optimizer/common-react-util'
 import { CardThemed, ModalWrapper } from '@genshin-optimizer/common-ui'
 import { getRandomElementFromArray } from '@genshin-optimizer/common-util'
-import { Translate } from '@genshin-optimizer/gi/i18n'
+import { Translate } from '@genshin-optimizer/gi-i18n'
 import CloseIcon from '@mui/icons-material/Close'
 import HelpIcon from '@mui/icons-material/Help'
 import {

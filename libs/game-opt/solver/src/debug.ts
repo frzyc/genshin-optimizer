@@ -35,7 +35,7 @@ export function debugMeta(
       build.flatMap((c) =>
         Object.entries(c).map(([cat, v]) => ({
           tag: { [dynTagCat]: cat },
-          value: constant(v),
+          value: constant(v!),
         }))
       )
     )

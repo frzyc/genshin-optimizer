@@ -1,11 +1,10 @@
 import { nxCopyAssetsPlugin } from '@nx/vite/plugins/nx-copy-assets.plugin'
-import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vitest/config'
 
-export default defineConfig(() => ({
+export default defineConfig({
   root: __dirname,
   cacheDir: '../../../node_modules/.vite/libs/gi/wr',
-  plugins: [nxViteTsPaths(), nxCopyAssetsPlugin(['*.md'])],
+  plugins: [nxCopyAssetsPlugin(['*.md'])],
   // Uncomment this if you are using workers.
   // worker: {
   //  plugins: [ nxViteTsPaths() ],
@@ -21,4 +20,4 @@ export default defineConfig(() => ({
       provider: 'v8' as const,
     },
   },
-}))
+})

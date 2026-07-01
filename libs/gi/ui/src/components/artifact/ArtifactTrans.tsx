@@ -3,7 +3,7 @@ import type {
   ArtifactSetKey,
   ArtifactSlotKey,
 } from '@genshin-optimizer/gi-consts'
-import { Translate } from '@genshin-optimizer/gi/i18n'
+import { Translate } from '@genshin-optimizer/gi-i18n'
 
 export function ArtifactSetSlotName({
   setKey,

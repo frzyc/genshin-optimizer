@@ -1,5 +1,6 @@
 import { createTestDBStorage } from '@genshin-optimizer/common-database'
 import { allDiscSetKeys } from '@genshin-optimizer/zzz-consts'
+import type { IDisc } from '@genshin-optimizer/zzz-zood'
 import { ZzzDatabase } from '../Database'
 import { validateDiscBasedOnRarity } from './DiscDataManager'
 
@@ -31,7 +32,7 @@ describe('DiscDataManager', () => {
 
 describe('validateDiscBasedOnRarity (business logic)', () => {
   it('should validate disc with correct substats', () => {
-    const valid = {
+    const valid: IDisc = {
       setKey: allDiscSetKeys[0],
       rarity: 'S' as const,
       level: 12,
@@ -53,7 +54,7 @@ describe('validateDiscBasedOnRarity (business logic)', () => {
   })
 
   it('should return error if substat matches mainstat', () => {
-    const invalid = {
+    const invalid: IDisc = {
       setKey: allDiscSetKeys[0],
       rarity: 'S' as const,
       level: 12,
@@ -73,7 +74,7 @@ describe('validateDiscBasedOnRarity (business logic)', () => {
   })
 
   it('should return error if too few substats for level', () => {
-    const invalid = {
+    const invalid: IDisc = {
       setKey: allDiscSetKeys[0],
       rarity: 'S' as const,
       level: 12,
@@ -91,7 +92,7 @@ describe('validateDiscBasedOnRarity (business logic)', () => {
   })
 
   it('should return error if upgrades exceed limit', () => {
-    const invalid = {
+    const invalid: IDisc = {
       setKey: allDiscSetKeys[0],
       rarity: 'S' as const,
       level: 0,

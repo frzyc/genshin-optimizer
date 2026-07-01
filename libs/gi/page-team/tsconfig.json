@@ -17,6 +17,9 @@
       "path": "../schema"
     },
     {
+      "path": "../i18n"
+    },
+    {
       "path": "../../common/svgicons"
     },
     {

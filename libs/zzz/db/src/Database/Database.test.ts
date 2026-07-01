@@ -1,12 +1,13 @@
 import { createTestDBStorage } from '@genshin-optimizer/common-database'
-import { currentDBVersion, zzzSource } from '../Interfaces'
+import { zzzSource } from '../Interfaces'
 import { ZzzDatabase } from './Database'
+import { currentDBVersion } from './migrate'
 
 const testDatabaseJson = {
   format: 'ZOD',
   dbVersion: currentDBVersion,
   source: zzzSource,
-  version: 1,
+  version: 1 as const,
   characters: [{ key: 'Anby', level: 1, ascension: 0, core: 0, skill: {} }],
   discs: [],
   wengines: [],
@@ -36,13 +37,13 @@ const testDatabaseJson = {
 
 function normalizeForComparison(data: Record<string, unknown>) {
   const clone = structuredClone(data)
-  if (clone.dbMeta && typeof clone.dbMeta === 'object') {
-    delete (clone.dbMeta as Record<string, unknown>).lastEdit
+  if (clone['dbMeta'] && typeof clone['dbMeta'] === 'object') {
+    delete (clone['dbMeta'] as Record<string, unknown>)['lastEdit']
   }
-  if (Array.isArray(clone.generatedBuildList)) {
-    for (const build of clone.generatedBuildList) {
+  if (Array.isArray(clone['generatedBuildList'])) {
+    for (const build of clone['generatedBuildList']) {
       if (build && typeof build === 'object') {
-        delete (build as Record<string, unknown>).buildDate
+        delete (build as Record<string, unknown>)['buildDate']
       }
     }
   }

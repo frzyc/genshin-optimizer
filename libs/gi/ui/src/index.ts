@@ -1,4 +1,4 @@
-import '@genshin-optimizer/gi/theme'
+import '@genshin-optimizer/gi-theme'
 import './App.scss'
 export * from './components'
 export * from './consts'

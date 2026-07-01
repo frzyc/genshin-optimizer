@@ -5,7 +5,7 @@ import {
   SqBadge,
   TranslateBase,
 } from '@genshin-optimizer/common-ui'
-import '@genshin-optimizer/zzz/theme' // import to validate typing for color variants
+import '@genshin-optimizer/zzz-theme' // import to validate typing for color variants
 import { commonDefIcon } from '@genshin-optimizer/zzz-assets'
 import { Divider, Typography } from '@mui/material'
 import type { ReactElement, ReactNode } from 'react'

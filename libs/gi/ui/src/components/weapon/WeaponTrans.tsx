@@ -1,5 +1,5 @@
 import type { WeaponKey } from '@genshin-optimizer/gi-consts'
-import { Translate } from '@genshin-optimizer/gi/i18n'
+import { Translate } from '@genshin-optimizer/gi-i18n'
 import { weaponHasRefinement } from '@genshin-optimizer/gi-stats'
 
 function sheet(weaponKey: WeaponKey) {

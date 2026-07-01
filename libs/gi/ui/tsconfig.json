@@ -5,6 +5,9 @@
       "path": "../solver-tc"
     },
     {
+      "path": "../theme"
+    },
+    {
       "path": "../../common/database"
     },
     {
@@ -36,6 +39,9 @@
     },
     {
       "path": "../wr-types"
+    },
+    {
+      "path": "../i18n"
     },
     {
       "path": "../../common/react-util"

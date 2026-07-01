@@ -23,6 +23,9 @@
       "path": "../stats"
     },
     {
+      "path": "../i18n"
+    },
+    {
       "path": "../assets"
     },
     {

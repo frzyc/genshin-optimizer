@@ -1,12 +1,10 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vitest/config'
 
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 
-export default defineConfig(() => ({
+export default defineConfig({
   root: __dirname,
   cacheDir: '../../../node_modules/.vite/libs/gi/ui',
-
-  plugins: [nxViteTsPaths()],
 
   // Uncomment this if you are using workers.
   worker: {
@@ -24,4 +22,4 @@ export default defineConfig(() => ({
       provider: 'v8',
     },
   },
-}))
+})

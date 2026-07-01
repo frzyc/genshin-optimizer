@@ -3,7 +3,7 @@ import type {
   CharacterSheetKey,
   WeaponKey,
 } from '@genshin-optimizer/gi-consts'
-import { Translate } from '@genshin-optimizer/gi/i18n'
+import { Translate } from '@genshin-optimizer/gi-i18n'
 
 import type { ReactNode } from 'react'
 export const st = (

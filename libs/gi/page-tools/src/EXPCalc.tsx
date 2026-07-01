@@ -363,8 +363,17 @@ export default function EXPCalc() {
     </CardThemed>
   )
 }
-function BookDisplay(props) {
-  const { bookKey, value = 0, setValue, required = 0 } = props
+function BookDisplay({
+  bookKey,
+  value = 0,
+  setValue,
+  required = 0,
+}: {
+  bookKey: keyof typeof booksData
+  value?: number
+  setValue: (val: number) => void
+  required?: number
+}) {
   return (
     <CardThemed bgt="light">
       <CardContent sx={{ py: 1 }}>
@@ -406,7 +415,13 @@ function BookDisplay(props) {
   )
 }
 
-function calculateBooks(c20000, c5000, c1000, required, goUnder) {
+function calculateBooks(
+  c20000: number,
+  c5000: number,
+  c1000: number,
+  required: number,
+  goUnder: boolean
+) {
   let current = goUnder
     ? Math.floor(required / 1000)
     : Math.ceil(required / 1000)

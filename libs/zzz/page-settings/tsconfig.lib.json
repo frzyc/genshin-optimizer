@@ -2,9 +2,15 @@
   "extends": "../../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "./out-tsc/lib",
+    "typeRoots": [
+      "../../../node_modules/@types",
+      "../../../node_modules/",
+      "../../../types"
+    ],
     "types": [
       "node",
-
+      "object-overrides",
+      "mp3",
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"
     ]

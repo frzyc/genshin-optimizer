@@ -1,6 +1,6 @@
 import { BootstrapTooltip, SqBadge } from '@genshin-optimizer/common-ui'
 import type { ArtifactSetKey } from '@genshin-optimizer/gi-consts'
-import { Translate } from '@genshin-optimizer/gi/i18n'
+import { Translate } from '@genshin-optimizer/gi-i18n'
 import { getArtSheet } from '@genshin-optimizer/gi-sheets'
 import { Box, Skeleton, Stack, Typography } from '@mui/material'
 import { Suspense } from 'react'

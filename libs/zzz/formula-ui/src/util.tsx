@@ -5,7 +5,7 @@ import type {
   WengineKey,
 } from '@genshin-optimizer/zzz-consts'
 import type { Tag } from '@genshin-optimizer/zzz-formula'
-import { Translate } from '@genshin-optimizer/zzz/i18n'
+import { Translate } from '@genshin-optimizer/zzz-i18n'
 import type { ReactNode } from 'react'
 import { TagDisplay } from './components'
 export const st = (

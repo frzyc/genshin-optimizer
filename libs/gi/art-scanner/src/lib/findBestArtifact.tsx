@@ -14,6 +14,7 @@ import {
   artSlotMainKeys,
 } from '@genshin-optimizer/gi-consts'
 import type { IArtifact, ISubstat } from '@genshin-optimizer/gi-good'
+import { Translate } from '@genshin-optimizer/gi-i18n'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import {
   artDisplayValue,
@@ -21,7 +22,6 @@ import {
   getMainStatDisplayValues,
   getSubstatRolls,
 } from '@genshin-optimizer/gi-util'
-import { Translate } from '@genshin-optimizer/gi/i18n'
 import type { ReactNode } from 'react'
 import { statMap } from './enStringMap'
 

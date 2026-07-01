@@ -2,9 +2,14 @@
   "extends": "../../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "./out-tsc/lib",
+    "typeRoots": [
+      "../../../node_modules/@types",
+      "../../../node_modules/",
+      "../../../types"
+    ],
     "types": [
       "node",
-
+      "object-overrides",
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"
     ]
@@ -32,6 +37,9 @@
       "path": "../../game-opt/engine/tsconfig.lib.json"
     },
     {
+      "path": "../ui/tsconfig.lib.json"
+    },
+    {
       "path": "../stats/tsconfig.lib.json"
     },
     {
@@ -39,6 +47,9 @@
     },
     {
       "path": "../../common/util/tsconfig.lib.json"
+    },
+    {
+      "path": "../i18n/tsconfig.lib.json"
     },
     {
       "path": "../../common/ui/tsconfig.lib.json"

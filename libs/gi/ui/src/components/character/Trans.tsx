@@ -4,7 +4,7 @@ import {
   type LocationGenderedCharacterKey,
   charKeyToLocGenderedCharKey,
 } from '@genshin-optimizer/gi-consts'
-import { Translate } from '@genshin-optimizer/gi/i18n'
+import { Translate } from '@genshin-optimizer/gi-i18n'
 import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { SillyContext } from '../../context'

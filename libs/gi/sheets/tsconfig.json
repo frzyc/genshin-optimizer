@@ -5,6 +5,9 @@
       "path": "../wr-types"
     },
     {
+      "path": "../i18n"
+    },
+    {
       "path": "../../common/svgicons"
     },
     {

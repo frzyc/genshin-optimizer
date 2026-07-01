@@ -26,17 +26,16 @@ function FooterContent() {
           Build:
           <a
             href={
-              process.env.NX_URL_GITHUB_GO_CURRENT_VERSION ||
-              `${process.env.NX_URL_GITHUB_GO}/releases`
+              process.env['NX_URL_GITHUB_GO_CURRENT_VERSION'] ||
+              `${process.env['NX_URL_GITHUB_GO']}/releases`
             }
             target="_blank"
             rel="noreferrer"
             style={{ color: 'inherit' }}
           >
-            {process.env.NX_URL_GITHUB_GO_CURRENT_VERSION?.replace(
-              /.*commit\//,
-              ''
-            ).substring(0, 7)}
+            {process.env['NX_URL_GITHUB_GO_CURRENT_VERSION']
+              ?.replace(/.*commit\//, '')
+              .substring(0, 7)}
           </a>
         </Typography>
       </Box>

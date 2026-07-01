@@ -1,3 +1,12 @@
 {
-  "name": "@genshin-optimizer/sr-page-relics"
+  "name": "@genshin-optimizer/sr-page-relics",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "@genshin-optimizer/source": "./src/index.tsx",
+      "types": "./src/index.tsx",
+      "import": "./src/index.tsx",
+      "default": "./src/index.tsx"
+    }
+  }
 }

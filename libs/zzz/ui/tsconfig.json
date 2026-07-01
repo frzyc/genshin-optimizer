@@ -2,6 +2,9 @@
   "files": [],
   "references": [
     {
+      "path": "../db-ui"
+    },
+    {
       "path": "../../game-opt/sheet-ui"
     },
     {
@@ -24,6 +27,12 @@
     },
     {
       "path": "../../common/react-util"
+    },
+    {
+      "path": "../i18n"
+    },
+    {
+      "path": "../db"
     },
     {
       "path": "../../common/database-ui"

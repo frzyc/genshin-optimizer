@@ -2,7 +2,7 @@ import { ScrollTop } from '@genshin-optimizer/common-ui'
 import { isDev } from '@genshin-optimizer/common-util'
 import { setDebugMode } from '@genshin-optimizer/pando-engine'
 import { DatabaseProvider } from '@genshin-optimizer/sr-db-ui'
-import '@genshin-optimizer/sr/i18n' // import to load translations
+import '@genshin-optimizer/sr-i18n' // import to load translations
 import { theme } from '@genshin-optimizer/sr-theme'
 import {
   Box,
@@ -18,18 +18,18 @@ import Footer from './Footer'
 import Header from './Header'
 import PageHome from './PageHome'
 
-const PageRelics = lazy(() => import('@genshin-optimizer/sr/page-relics'))
+const PageRelics = lazy(() => import('@genshin-optimizer/sr-page-relics'))
 const PageLightCones = lazy(
-  () => import('@genshin-optimizer/sr/page-lightcones')
+  () => import('@genshin-optimizer/sr-page-lightcones')
 )
 const PageCharacters = lazy(
-  () => import('@genshin-optimizer/sr/page-characters')
+  () => import('@genshin-optimizer/sr-page-characters')
 )
-const PageTeams = lazy(() => import('@genshin-optimizer/sr/page-teams'))
-const PageTeam = lazy(() => import('@genshin-optimizer/sr/page-team'))
-const PageSettings = lazy(() => import('@genshin-optimizer/sr/page-settings'))
+const PageTeams = lazy(() => import('@genshin-optimizer/sr-page-teams'))
+const PageTeam = lazy(() => import('@genshin-optimizer/sr-page-team'))
+const PageSettings = lazy(() => import('@genshin-optimizer/sr-page-settings'))
 
-const PageOptimize = lazy(() => import('@genshin-optimizer/sr/page-optimize'))
+const PageOptimize = lazy(() => import('@genshin-optimizer/sr-page-optimize'))
 
 // Enable debug mode for Pando calcs
 setDebugMode(isDev)

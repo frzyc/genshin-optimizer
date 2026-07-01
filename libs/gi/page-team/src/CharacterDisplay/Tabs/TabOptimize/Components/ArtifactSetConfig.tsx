@@ -33,7 +33,7 @@ import {
   useDatabase,
   useOptConfig,
 } from '@genshin-optimizer/gi-db-ui'
-import { Translate } from '@genshin-optimizer/gi/i18n'
+import { Translate } from '@genshin-optimizer/gi-i18n'
 import { getArtSheet } from '@genshin-optimizer/gi-sheets'
 import { getArtSetStat } from '@genshin-optimizer/gi-stats'
 import { SlotIcon } from '@genshin-optimizer/gi-svgicons'

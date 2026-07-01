@@ -5,7 +5,7 @@ import {
   type LocationGenderedCharacterKey,
   sheetKeyToCharKey,
 } from '@genshin-optimizer/gi-consts'
-import { i18nInstance } from '@genshin-optimizer/gi/i18n-node'
+import { i18nInstance } from '@genshin-optimizer/gi-i18n-node'
 import {
   getCharEle,
   getCharParam,

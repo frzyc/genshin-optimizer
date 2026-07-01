@@ -38,6 +38,7 @@ const specialityMap: Record<SpecialityKey, CharacterKey> = {
   anomaly: 'Piper',
   support: 'Nicole',
   defense: 'Ben',
+  rupture: 'Yixuan',
 }
 
 function testCharacterData(wengineKey: WengineKey) {
@@ -58,6 +59,7 @@ function testCharacterData(wengineKey: WengineKey) {
         assist: 0,
         chain: 0,
         core: 0,
+        potential: 0,
       }),
       ...wengineTagMapNodeEntries({
         key: wengineKey,

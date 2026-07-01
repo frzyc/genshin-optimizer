@@ -14,6 +14,7 @@ import type {
   ICachedCharacter,
 } from '@genshin-optimizer/gi-db'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi-db-ui'
+import { i18n } from '@genshin-optimizer/gi-i18n'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi-stats'
 import { ElementIcon } from '@genshin-optimizer/gi-svgicons'
 import {
@@ -21,7 +22,6 @@ import {
   SillyContext,
   iconAsset,
 } from '@genshin-optimizer/gi-ui'
-import { i18n } from '@genshin-optimizer/gi/i18n'
 import SearchIcon from '@mui/icons-material/Search'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import type { Palette } from '@mui/material'

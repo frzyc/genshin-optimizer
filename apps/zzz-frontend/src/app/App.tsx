@@ -7,7 +7,7 @@ import { ScrollTop, useRefSize } from '@genshin-optimizer/common-ui'
 import { isDev } from '@genshin-optimizer/common-util'
 import { setDebugMode } from '@genshin-optimizer/pando-engine'
 import { DatabaseProvider } from '@genshin-optimizer/zzz-db-ui'
-import '@genshin-optimizer/zzz/i18n' // import to load translations
+import '@genshin-optimizer/zzz-i18n' // import to load translations
 import PageHome from '@genshin-optimizer/zzz-page-home'
 import { theme } from '@genshin-optimizer/zzz-theme'
 import {
@@ -24,13 +24,13 @@ import '../styles.scss'
 import { ZOAdWrapper } from '@genshin-optimizer/zzz-ui'
 import Footer from './Footer'
 import Header from './Header'
-const PageDiscs = lazy(() => import('@genshin-optimizer/zzz/page-discs'))
-const PageOptimize = lazy(() => import('@genshin-optimizer/zzz/page-optimize'))
+const PageDiscs = lazy(() => import('@genshin-optimizer/zzz-page-discs'))
+const PageOptimize = lazy(() => import('@genshin-optimizer/zzz-page-optimize'))
 const PageCharacters = lazy(
-  () => import('@genshin-optimizer/zzz/page-characters')
+  () => import('@genshin-optimizer/zzz-page-characters')
 )
-const PageWengines = lazy(() => import('@genshin-optimizer/zzz/page-wengines'))
-const PageSettings = lazy(() => import('@genshin-optimizer/zzz/page-settings'))
+const PageWengines = lazy(() => import('@genshin-optimizer/zzz-page-wengines'))
+const PageSettings = lazy(() => import('@genshin-optimizer/zzz-page-settings'))
 
 // Enable debug mode for Pando calcs
 setDebugMode(isDev)
