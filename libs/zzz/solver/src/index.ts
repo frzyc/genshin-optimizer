@@ -162,18 +162,18 @@ function buildDetachedSolverBase({
     // filter2: if not empty, at least one >= 2
     setFilter2.length
       ? max(...setFilter2.map((q) => read({ q }, 'sum')))
-      : constant(Infinity),
+      : constant(Number.POSITIVE_INFINITY),
     // filter4: if not empty, at least one >= 4
     setFilter4.length
       ? max(...setFilter4.map((q) => read({ q }, 'sum')))
-      : constant(Infinity)
+      : constant(Number.POSITIVE_INFINITY)
     // other calcs (graph, etc)
   )
 
   return {
     nodes,
     minimum: [
-      -Infinity, // opt-target itself is also used as a min constraint
+      Number.NEGATIVE_INFINITY, // opt-target itself is also used as a min constraint
       // Invert max constraints for pruning
       ...statFilters.map(({ value, isMax, tag }) => {
         const decimalVal = toDecimal(value, tag.q ?? '')
@@ -313,17 +313,17 @@ function build42BatchSolverConfig(
 }
 
 // Orchestrator layer for rainbow / 4:2 batching
-export function createOptimizeSolver(
+export function createOptimizeConfig(
   args: CreateSolverConfigArgs & { allowRainbow: boolean }
-): Solver<string> | null {
+): SolverConfig<string> | null {
   if (args.allowRainbow) {
     const cfg = createSolverConfig(args)
     if (!buildCount(cfg.candidates)) return null
-    return new SolverCtor(cfg)
+    return cfg
   }
 
   const cfg = build42BatchSolverConfig(args)
-  return cfg ? new SolverCtor(cfg) : null
+  return cfg ? cfg : null
 }
 
 export function countBuildPermutations(

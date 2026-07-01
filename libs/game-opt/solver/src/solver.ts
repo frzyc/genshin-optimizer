@@ -30,7 +30,13 @@ export class Solver<ID extends string | number> {
 
   info = new Map<Worker, WorkerInfo<ID>>()
   state: IdleWorkers | ExcessWorks
-  progress: Progress = { computed: 0, failed: 0, skipped: 0, remaining: 0 }
+  progress: Progress = {
+    computed: 0,
+    failed: 0,
+    skipped: 0,
+    remaining: 0,
+    total: 0,
+  }
 
   results: Promise<BuildResult<ID>[]>
   nextReport = Date.now()
@@ -63,6 +69,7 @@ export class Solver<ID extends string | number> {
       progress.remaining = buildCount(candidates)
       progress.skipped = buildCount(cfg.candidates) - progress.remaining
     }
+    progress.total = progress.remaining + progress.skipped
     if (progress.remaining > Number.MAX_SAFE_INTEGER)
       // We use `remaining` to detect completion. Its accurate
       // bookkeeping is essential to ensure this actually halts.
@@ -155,7 +162,8 @@ export class Solver<ID extends string | number> {
 
           const bestBuilds = [...this.info.values()].flatMap((i) => i.builds)
           bestBuilds.sort((a, b) => b.value - a.value)
-          const threshold = bestBuilds[this.topN]?.value ?? -Infinity
+          const threshold =
+            bestBuilds[this.topN]?.value ?? Number.NEGATIVE_INFINITY
           if (threshold > this.optThreshold) {
             this.optThreshold = threshold
             this.info.forEach((_, w) => postMsg(w, { ty: 'config', threshold }))

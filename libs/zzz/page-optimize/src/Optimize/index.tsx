@@ -2,7 +2,7 @@ import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { BuildResult, Progress } from '@genshin-optimizer/game-opt/solver'
-import type { Solver } from '@genshin-optimizer/game-opt/solver'
+import { Solver } from '@genshin-optimizer/game-opt/solver'
 import {
   type DiscSlotKey,
   allDiscSlotKeys,
@@ -20,10 +20,7 @@ import {
   useTeam,
 } from '@genshin-optimizer/zzz/db-ui'
 import { useZzzCalcContext } from '@genshin-optimizer/zzz/formula-ui'
-import {
-  countBuildPermutations,
-  createOptimizeSolver,
-} from '@genshin-optimizer/zzz/solver'
+import { createOptimizeConfig } from '@genshin-optimizer/zzz/solver'
 import { getCharStat, getWengineStat } from '@genshin-optimizer/zzz/stats'
 import { BuildsSelector, WorkerSelector } from '@genshin-optimizer/zzz/ui'
 import CloseIcon from '@mui/icons-material/Close'
@@ -158,24 +155,6 @@ function OptimizeWrapper() {
     optConfig.useEquippedWengine,
   ])
 
-  const totalPermutations = useMemo(
-    () =>
-      countBuildPermutations(
-        discsBySlot,
-        filteredWengines.length,
-        optConfig.allowRainbow,
-        optConfig.setFilter2,
-        optConfig.setFilter4
-      ),
-    [
-      discsBySlot,
-      filteredWengines.length,
-      optConfig.allowRainbow,
-      optConfig.setFilter2,
-      optConfig.setFilter4,
-    ]
-  )
-
   const [optimizing, setOptimizing] = useState(false)
 
   // Provides a function to cancel the work
@@ -184,9 +163,43 @@ function OptimizeWrapper() {
   useEffect(() => () => cancelToken.current(), [])
 
   const currentSolver = useRef<Solver<string> | null>(null)
+  const cfg = useMemo(() => {
+    if (!calc || !target) return
+    return createOptimizeConfig({
+      characterKey,
+      calc,
+      frames: [
+        {
+          tag: targetTag(target),
+          multiplier: 1,
+        },
+      ],
+      statFilters: (optConfig.statFilters ?? []).filter((s) => !s.disabled),
+      setFilter2: optConfig.setFilter2,
+      setFilter4: optConfig.setFilter4,
+      allowRainbow: optConfig.allowRainbow,
+      wengines: filteredWengines,
+      discsBySlot,
+      numWorkers,
+      numOfBuilds: optConfig.maxBuildsToShow,
+      setProgress,
+    })
+  }, [
+    calc,
+    target,
+    optConfig.statFilters,
+    optConfig.setFilter2,
+    optConfig.setFilter4,
+    optConfig.allowRainbow,
+    optConfig.maxBuildsToShow,
+    characterKey,
+    filteredWengines,
+    discsBySlot,
+    numWorkers,
+    setProgress,
+  ])
 
   const onOptimize = useCallback(async () => {
-    if (!calc || !target) return
     const cancelled = new Promise<void>((r) => (cancelToken.current = r))
     setProgress(undefined)
     setOptimizing(true)
@@ -194,32 +207,11 @@ function OptimizeWrapper() {
       requestAnimationFrame(() => setTimeout(resolve, 0))
     })
 
-    // Filter out disabled
-    const statFilters = (optConfig.statFilters ?? []).filter((s) => !s.disabled)
-
     cancelled.then(() => currentSolver.current?.terminate('user cancelled'))
     let results: BuildResult<string>[]
     try {
-      const optimizer = createOptimizeSolver({
-        characterKey,
-        calc,
-        frames: [
-          {
-            tag: targetTag(target),
-            multiplier: 1,
-          },
-        ],
-        statFilters,
-        setFilter2: optConfig.setFilter2,
-        setFilter4: optConfig.setFilter4,
-        allowRainbow: optConfig.allowRainbow,
-        wengines: filteredWengines,
-        discsBySlot,
-        numWorkers,
-        numOfBuilds: optConfig.maxBuildsToShow,
-        setProgress,
-      })
-      if (!optimizer) return
+      if (!cfg) return
+      const optimizer = new Solver(cfg)
       currentSolver.current = optimizer
       results = await optimizer.results
     } catch {
@@ -238,21 +230,7 @@ function OptimizeWrapper() {
       })),
       buildDate: Date.now(),
     })
-  }, [
-    calc,
-    target,
-    optConfig.statFilters,
-    optConfig.setFilter2,
-    optConfig.setFilter4,
-    optConfig.allowRainbow,
-    optConfig.maxBuildsToShow,
-    characterKey,
-    filteredWengines,
-    discsBySlot,
-    numWorkers,
-    database.optConfigs,
-    optConfigId,
-  ])
+  }, [cfg, setProgress, database.optConfigs, optConfigId])
 
   const onCancel = useCallback(() => {
     cancelToken.current()
@@ -276,9 +254,7 @@ function OptimizeWrapper() {
             <DiscFilter discsBySlot={discsBySlot} />
           </Box>
 
-          {progress && (
-            <ProgressIndicator progress={progress} total={totalPermutations} />
-          )}
+          {progress && <ProgressIndicator progress={progress} />}
           <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 1 }}>
             <BuildsSelector
               maxBuildsToShow={optConfig.maxBuildsToShow}
@@ -289,7 +265,7 @@ function OptimizeWrapper() {
               setNumWorkers={setNumWorkers}
             />
             <Button
-              disabled={!totalPermutations || !target}
+              disabled={!cfg}
               onClick={optimizing ? onCancel : onOptimize}
               color={optimizing ? 'error' : 'primary'}
               startIcon={optimizing ? <CloseIcon /> : <TrendingUpIcon />}
@@ -311,12 +287,12 @@ function Monospace({ value }: { value: number }): JSX.Element {
     </Box>
   )
 }
-function ProgressIndicator(props: { progress: Progress; total: number }) {
+function ProgressIndicator(props: { progress: Progress }) {
   const { t } = useTranslation('optimize')
-  const { computed, remaining, skipped } = props.progress
+  const { computed, remaining, skipped, total } = props.progress
   const unskipped = computed + remaining
 
-  const unskippedRatio = Math.log1p(unskipped) / Math.log1p(props.total)
+  const unskippedRatio = Math.log1p(unskipped) / Math.log1p(total)
   const remRatio = (remaining / unskipped) * unskippedRatio
   return (
     <Box>
@@ -326,7 +302,7 @@ function ProgressIndicator(props: { progress: Progress; total: number }) {
       </Typography>
       <Typography>
         {t('computed + skipped')}: <Monospace value={computed + skipped} /> /{' '}
-        <Monospace value={props.total} />
+        <Monospace value={total} />
       </Typography>
       <LinearProgress // ideally, it should be | <computed> | <remaining> | <skipped> |
         variant="determinate"
