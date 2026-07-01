@@ -204,7 +204,7 @@ function MultiFormulaFieldRow({ field }: { field: MultiTagField }) {
       showZero
       component={ListItem}
       onClickFormula={
-        shouldShowDevComponents ? (fieldRead) => setRead(fieldRead) : undefined
+        shouldShowDevComponents ? (fieldRead) => setRead(fieldRead) : () => {}
       }
     />
   )

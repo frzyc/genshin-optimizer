@@ -164,7 +164,9 @@ export function getFormulaDisplaySection(
   charKey: CharacterKey,
   tag: Tag
 ): DisplaySection | undefined {
-  return charSectionIndices.get(charKey)?.get(formulaTagKey(tag))
+  return charSectionIndices
+    .get(charKey)
+    ?.get(formulaTagKey(withCharSheet(tag, charKey)))
 }
 
 export function groupFieldsByDisplaySection(

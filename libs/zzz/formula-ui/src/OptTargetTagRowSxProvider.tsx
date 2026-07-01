@@ -5,7 +5,7 @@ import { useCharacterContext, useTeam } from '@genshin-optimizer/zzz/db-ui'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import type { ReactNode } from 'react'
 import { useCallback, useMemo } from 'react'
-import { optTargetRowSx } from './optTarget'
+import { isOptTargetTag, optTargetRowSx } from './optTarget'
 
 export function OptTargetTagRowSxProvider({
   children,
@@ -21,17 +21,11 @@ export function OptTargetTagRowSxProvider({
   )
 
   const getTagRowSx = useCallback(
-    (tag: Tag) => {
-      if (
-        resolvedOptTag &&
-        tag.sheet === resolvedOptTag.sheet &&
-        tag.name === resolvedOptTag.name &&
-        tag.q === resolvedOptTag.q
-      )
-        return optTargetRowSx
-      return undefined
-    },
-    [resolvedOptTag]
+    (tag: Tag) =>
+      isOptTargetTag(tag, optTarget, resolvedOptTag)
+        ? optTargetRowSx
+        : undefined,
+    [optTarget, resolvedOptTag]
   )
 
   return (

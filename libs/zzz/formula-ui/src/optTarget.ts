@@ -63,7 +63,9 @@ export function isOptTargetTag(
   return (
     tag.sheet === resolved.sheet &&
     tag.name === resolved.name &&
-    tag.q === resolved.q
+    tag.q === resolved.q &&
+    tag.qt === resolved.qt &&
+    (tag.attribute ?? undefined) === (resolved.attribute ?? undefined)
   )
 }
 

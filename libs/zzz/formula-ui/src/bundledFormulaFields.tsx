@@ -16,17 +16,50 @@ import { abilityFormulaNameToTranslated } from './char/sheetUtil'
 import { getVariant } from './char/util'
 import { tagToTagField } from './util'
 
+export const ABILITY_DMG_QS = ['standardDmg', 'sheerDmg'] as const
+export type AbilityDmgQ = (typeof ABILITY_DMG_QS)[number]
+
 export const ABILITY_QS = ['standardDmg', 'dazeBuildup', 'anomBuildup'] as const
-export const Q_LABELS: Record<(typeof ABILITY_QS)[number], string> = {
+export const Q_LABELS: Record<
+  AbilityDmgQ | (typeof ABILITY_QS)[number],
+  string
+> = {
   standardDmg: 'DMG',
+  sheerDmg: 'DMG',
   dazeBuildup: 'Daze',
   anomBuildup: 'Anom',
 }
 
-function isAbilityQ(
+const BUNDLEABLE_ABILITY_QS = [
+  ...ABILITY_DMG_QS,
+  'dazeBuildup',
+  'anomBuildup',
+] as const
+
+function isBundleableAbilityQ(
   q: string | null | undefined
-): q is (typeof ABILITY_QS)[number] {
-  return !!q && (ABILITY_QS as readonly string[]).includes(q)
+): q is (typeof BUNDLEABLE_ABILITY_QS)[number] {
+  return !!q && (BUNDLEABLE_ABILITY_QS as readonly string[]).includes(q)
+}
+
+function resolveBundleDmgQ(byQ: Map<string, Tag>): AbilityDmgQ | undefined {
+  if (byQ.has('standardDmg')) return 'standardDmg'
+  if (byQ.has('sheerDmg')) return 'sheerDmg'
+  return undefined
+}
+
+function isCompleteAbilityBundle(byQ: Map<string, Tag>): boolean {
+  const dmgQ = resolveBundleDmgQ(byQ)
+  return !!dmgQ && byQ.has('dazeBuildup') && byQ.has('anomBuildup')
+}
+
+function bundleFieldRefs(byQ: Map<string, Tag>) {
+  const dmgQ = resolveBundleDmgQ(byQ)!
+  return [
+    { label: Q_LABELS[dmgQ], ref: byQ.get(dmgQ)! },
+    { label: Q_LABELS.dazeBuildup, ref: byQ.get('dazeBuildup')! },
+    { label: Q_LABELS.anomBuildup, ref: byQ.get('anomBuildup')! },
+  ]
 }
 
 function groupKey(tag: Tag) {
@@ -93,7 +126,7 @@ export function groupFieldsByTag(
   for (const rawTag of tags) {
     const tag = withSheet(rawTag)
     const { name, q } = tag
-    if (!name || !isAbilityQ(q)) {
+    if (!name || !isBundleableAbilityQ(q)) {
       fields.push(singleFormulaField(tag, charKey, skill))
       continue
     }
@@ -105,25 +138,24 @@ export function groupFieldsByTag(
     const group = tags
       .map(withSheet)
       .filter(
-        (t) => t.name === name && t.sheet === tag.sheet && isAbilityQ(t.q)
+        (t) =>
+          t.name === name && t.sheet === tag.sheet && isBundleableAbilityQ(t.q)
       )
     const byQ = new Map<string, Tag>()
     for (const t of group) {
       const rq = t.q
-      if (isAbilityQ(rq)) byQ.set(rq, t)
+      if (isBundleableAbilityQ(rq)) byQ.set(rq, t)
     }
 
-    if (ABILITY_QS.every((aq) => byQ.has(aq))) {
-      const dmgTag = byQ.get('standardDmg')!
+    if (isCompleteAbilityBundle(byQ)) {
+      const dmgQ = resolveBundleDmgQ(byQ)!
+      const dmgTag = byQ.get(dmgQ)!
       const titleField = tagToTagField(dmgTag, { preventRecursion: true })
       const multiField: MultiTagField = {
         title: bundledTitle(dmgTag),
         icon: titleField.icon,
         subtitle: titleField.subtitle,
-        fieldRefs: ABILITY_QS.map((aq) => ({
-          label: Q_LABELS[aq],
-          ref: byQ.get(aq)!,
-        })),
+        fieldRefs: bundleFieldRefs(byQ),
       }
       fields.push(multiField)
     } else {
@@ -138,8 +170,9 @@ export function groupFieldsByTag(
 export function primaryTagFromField(field: Field): Tag | undefined {
   if (isMultiTagField(field)) {
     return (
-      field.fieldRefs.find((r) => r.ref.q === 'standardDmg')?.ref ??
-      field.fieldRefs[0]?.ref
+      field.fieldRefs.find(
+        (r) => r.ref['q'] === 'standardDmg' || r.ref['q'] === 'sheerDmg'
+      )?.ref ?? field.fieldRefs[0]?.ref
     )
   }
   if (isTagField(field)) return field.fieldRef

@@ -3,7 +3,6 @@ import type { IFormulaData } from '@genshin-optimizer/game-opt/engine'
 import type { Document } from '@genshin-optimizer/game-opt/sheet-ui'
 import {
   DocumentContent,
-  DocumentDisplay,
   DocumentGroupProvider,
 } from '@genshin-optimizer/game-opt/sheet-ui'
 import { commonDefIcon } from '@genshin-optimizer/zzz/assets'
@@ -24,7 +23,10 @@ import {
   talentSheetElementLabel,
 } from '../optPanelSections'
 import { st } from '../util'
-import { allTalentSheetElementKey } from './consts'
+import {
+  allMindscapeSheetElementKeys,
+  allTalentSheetElementKey,
+} from './consts'
 import {
   DISPLAY_SECTION_ORDER,
   type DisplaySection,
@@ -38,6 +40,23 @@ export type SkillAbilityDocuments = {
   documents: Document[]
 }
 
+/** Group flat sheet docs by titled text sections (ability, core, mindscape, …). */
+export function groupDocumentsByHeader(documents: Document[]): Document[][] {
+  const groups: Document[][] = []
+  let current: Document[] = []
+
+  for (const doc of documents) {
+    if (doc.type === 'text' && doc.header && current.length > 0) {
+      groups.push(current)
+      current = [doc]
+    } else {
+      current.push(doc)
+    }
+  }
+  if (current.length) groups.push(current)
+  return groups
+}
+
 /** Split a skill tab's flat `documents` array into per-ability chunks. */
 export function iterSkillAbilityDocuments(
   charKey: CharacterKey
@@ -48,22 +67,13 @@ export function iterSkillAbilityDocuments(
   for (const skill of allSkillKeys) {
     const allDocs = charSheets[charKey][skill]?.documents ?? []
     const abilities = Object.keys(dm[skill])
-    let idx = 0
-
-    for (const ability of abilities) {
-      const documents: Document[] = []
-      if (idx < allDocs.length && allDocs[idx].type === 'text') {
-        documents.push(allDocs[idx++])
-      }
-      if (idx < allDocs.length && allDocs[idx].type === 'fields') {
-        documents.push(allDocs[idx++])
-      }
-      while (idx < allDocs.length) {
-        const doc = allDocs[idx]
-        if (doc.type === 'text' && doc.header) break
-        documents.push(allDocs[idx++])
-      }
-      result.push({ skill, ability, documents })
+    const groups = groupDocumentsByHeader(allDocs)
+    for (let i = 0; i < groups.length; i++) {
+      result.push({
+        skill,
+        ability: abilities[i] ?? `unknown_${i}`,
+        documents: groups[i],
+      })
     }
   }
 
@@ -106,11 +116,19 @@ function groupSkillMechanicsByDisplaySection(charKey: CharacterKey) {
 }
 
 const nonSkillSheetKeys = allTalentSheetElementKey.filter(
-  (k): k is Exclude<(typeof allTalentSheetElementKey)[number], SkillKey> =>
-    !allSkillKeys.includes(k as SkillKey)
+  (
+    k
+  ): k is Exclude<
+    (typeof allTalentSheetElementKey)[number],
+    SkillKey | (typeof allMindscapeSheetElementKeys)[number]
+  > =>
+    !allSkillKeys.includes(k as SkillKey) &&
+    !allMindscapeSheetElementKeys.includes(
+      k as (typeof allMindscapeSheetElementKeys)[number]
+    )
 )
 
-const mechanicsAbilityCardSx = {
+const talentSheetDocumentsSx = {
   mb: 1,
   overflow: 'hidden',
 } as const
@@ -150,27 +168,11 @@ function CharMechanicsSectionHeader({
   )
 }
 
-function AbilityMechanicsCard({ documents }: { documents: Document[] }) {
+function TalentSheetDocuments({ documents }: { documents: Document[] }) {
   if (!documents.length) return null
-  const hasConditional = documents.some((doc) => doc.type === 'conditional')
-  if (hasConditional) {
-    return (
-      <Stack spacing={1} sx={{ mb: 1 }}>
-        {documents.map((document, i) => (
-          <ZCard key={i} bgt="normal" sx={mechanicsAbilityCardSx}>
-            <DocumentDisplay
-              document={document}
-              typoVariant="body2"
-              collapse={document.type === 'text'}
-            />
-          </ZCard>
-        ))}
-      </Stack>
-    )
-  }
   return (
     <DocumentGroupProvider>
-      <ZCard bgt="normal" sx={mechanicsAbilityCardSx}>
+      <ZCard bgt="normal" sx={talentSheetDocumentsSx}>
         {documents.map((document, i) => (
           <DocumentContent
             key={i}
@@ -182,6 +184,15 @@ function AbilityMechanicsCard({ documents }: { documents: Document[] }) {
       </ZCard>
     </DocumentGroupProvider>
   )
+}
+
+function groupedTalentSheetDocuments(
+  documents: Document[],
+  keyPrefix: string
+): ReactNode {
+  return groupDocumentsByHeader(documents).map((group, i) => (
+    <TalentSheetDocuments key={`${keyPrefix}_${i}`} documents={group} />
+  ))
 }
 
 function CharMechanicsSectionCard({
@@ -225,12 +236,9 @@ export function CharMechanicsGroupedDisplay({
           )}
           title={st(`skills.${section}`)}
         >
-          {abilities.map(({ skill, ability, documents }) => (
-            <AbilityMechanicsCard
-              key={`${skill}_${ability}`}
-              documents={documents}
-            />
-          ))}
+          {abilities.flatMap(({ skill, ability, documents }) =>
+            groupedTalentSheetDocuments(documents, `${skill}_${ability}`)
+          )}
         </CharMechanicsSectionCard>
       ))}
       {nonSkillSheetKeys.map((sheetKey) => {
@@ -242,24 +250,21 @@ export function CharMechanicsGroupedDisplay({
             iconSrc={talentSheetElementIcon(sheetKey)}
             title={talentSheetElementLabel(sheetKey)}
           >
-            <Stack spacing={1}>
-              {element.documents.map((document, i) => (
-                <ZCard
-                  key={`${sheetKey}_${i}`}
-                  bgt="normal"
-                  sx={mechanicsAbilityCardSx}
-                >
-                  <DocumentDisplay
-                    document={document}
-                    typoVariant="body2"
-                    collapse={document.type === 'text'}
-                  />
-                </ZCard>
-              ))}
-            </Stack>
+            {groupedTalentSheetDocuments(element.documents, sheetKey)}
           </CharMechanicsSectionCard>
         )
       })}
+      {allMindscapeSheetElementKeys.some(
+        (sheetKey) => charSheets[charKey][sheetKey]?.documents.length
+      ) && (
+        <CharMechanicsSectionCard key="mindscapes" title={st('mindscapes')}>
+          {allMindscapeSheetElementKeys.flatMap((sheetKey) => {
+            const element = charSheets[charKey][sheetKey]
+            if (!element?.documents.length) return []
+            return groupedTalentSheetDocuments(element.documents, sheetKey)
+          })}
+        </CharMechanicsSectionCard>
+      )}
     </Stack>
   )
 }

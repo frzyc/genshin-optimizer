@@ -1,6 +1,8 @@
 import {
   type ConditionalDocument,
+  type Field,
   type TagField,
+  isMultiTagField,
   isTagField,
 } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
@@ -9,20 +11,33 @@ import { discUiSheets } from '../disc'
 import { wengineUiSheets } from '../wengine'
 import { charBaseUiSheet } from './CharBase'
 import { charSheets } from './sheets'
-// import { uiSheets } from './sheets'
 
 const tagValue: Array<{ tag: Tag; value: TagField }> = []
+
+function addFieldToTagMap(field: Field) {
+  if (isTagField(field)) {
+    tagValue.push({ tag: field.fieldRef, value: field })
+    return
+  }
+  if (isMultiTagField(field)) {
+    for (const { ref } of field.fieldRefs) {
+      tagValue.push({
+        tag: ref,
+        value: {
+          title: field.title,
+          fieldRef: ref,
+          subtitle: field.subtitle,
+          icon: field.icon,
+        },
+      })
+    }
+  }
+}
 
 Object.values(charSheets).forEach((sheet) =>
   Object.values(sheet).forEach((section) =>
     section.documents.forEach(
-      (doc) =>
-        doc.type === 'fields' &&
-        doc.fields.forEach(
-          (field) =>
-            isTagField(field) &&
-            tagValue.push({ tag: field.fieldRef, value: field })
-        )
+      (doc) => doc.type === 'fields' && doc.fields.forEach(addFieldToTagMap)
     )
   )
 )

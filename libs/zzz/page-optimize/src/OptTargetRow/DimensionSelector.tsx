@@ -5,7 +5,12 @@ import {
   useTeam,
 } from '@genshin-optimizer/zzz/db-ui'
 import type { FormulaDimension } from '@genshin-optimizer/zzz/formula'
-import { formulaDimensions } from '@genshin-optimizer/zzz/formula'
+import {
+  formulaDimensionByQ,
+  formulaDimensions,
+  formulas,
+  resolveFormulaQ,
+} from '@genshin-optimizer/zzz/formula'
 import { FORMULA_DIMENSION_LABEL } from '@genshin-optimizer/zzz/formula-ui'
 import { ToggleButton, ToggleButtonGroup } from '@mui/material'
 
@@ -15,10 +20,11 @@ export function DimensionSelector() {
   const team = useTeam(character.key)!
   const { tag: target } = getTeamFrame0(team)
 
-  if (!target?.name || target.formulaDimension === undefined) return null
+  if (!target?.name || !target.formulaQ) return null
 
-  const { formulaDimension = 'dmg', name } = target
+  const { name, formulaQ } = target
   const sheet = target.sheet ?? character.key
+  const formulaDimension = formulaDimensionByQ[formulaQ]
 
   return (
     <ToggleButtonGroup
@@ -27,11 +33,16 @@ export function DimensionSelector() {
       value={formulaDimension}
       onChange={(_, dim: FormulaDimension | null) => {
         if (!dim || dim === formulaDimension) return
+        const sheetFormulas = (
+          formulas as Record<string, Record<string, unknown>>
+        )[sheet]
+        const nextFormulaQ = resolveFormulaQ(sheetFormulas, name, dim)
+        if (!nextFormulaQ) return
         database.teams.setFrame0(character.key, {
           tag: {
             sheet,
             name,
-            formulaDimension: dim,
+            formulaQ: nextFormulaQ,
             damageType1: target.damageType1,
             damageType2: target.damageType2,
           },

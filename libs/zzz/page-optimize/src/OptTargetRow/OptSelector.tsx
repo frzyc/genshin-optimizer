@@ -10,7 +10,7 @@ import {
 } from '@genshin-optimizer/zzz/db'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import { formulaDimensionByQ, own } from '@genshin-optimizer/zzz/formula'
-import type { FormulaDimension } from '@genshin-optimizer/zzz/formula'
+import type { FormulaQ } from '@genshin-optimizer/zzz/formula'
 import {
   AbilityOptTargetLabel,
   FullTagDisplay,
@@ -40,7 +40,7 @@ function setAbilityTarget(
   characterKey: CharacterKey,
   sheet: string,
   name: string,
-  formulaDimension: FormulaDimension,
+  formulaQ: FormulaQ,
   damageType1?: TargetTag['damageType1'],
   damageType2?: TargetTag['damageType2']
 ) {
@@ -48,11 +48,23 @@ function setAbilityTarget(
     tag: {
       sheet,
       name,
-      formulaDimension,
+      formulaQ,
       damageType1,
       damageType2,
     },
   })
+}
+
+function formulaQForField(
+  field: Field,
+  target: ReturnType<typeof getTeamFrame0>['tag']
+): FormulaQ | undefined {
+  const ref = primaryTagFromField(field)
+  if (!ref?.name) return undefined
+  if (target?.name === ref.name && target.formulaQ) return target.formulaQ
+  const q = ref.q
+  if (q && q in formulaDimensionByQ) return q as FormulaQ
+  return 'standardDmg'
 }
 
 function OptTargetFieldMenuItem({
@@ -72,21 +84,13 @@ function OptTargetFieldMenuItem({
     const ref = primaryTagFromField(field)
     if (!ref?.name) return null
     const sheet = ref.sheet ?? characterKey
-    const formulaDimension: FormulaDimension =
-      target?.name === ref.name && target.formulaDimension
-        ? target.formulaDimension
-        : 'dmg'
+    const formulaQ = formulaQForField(field, target)
+    if (!formulaQ) return null
     return (
       <MenuItem
         key={fieldKey}
         onClick={() =>
-          setAbilityTarget(
-            database,
-            characterKey,
-            sheet,
-            ref.name!,
-            formulaDimension
-          )
+          setAbilityTarget(database, characterKey, sheet, ref.name!, formulaQ)
         }
       >
         <ListItemText>
@@ -102,12 +106,12 @@ function OptTargetFieldMenuItem({
   if (!name) return null
 
   if (isAbilityFormulaTag(fieldRef)) {
-    const formulaDimension =
-      target?.name === name && target.formulaDimension
-        ? target.formulaDimension
-        : (formulaDimensionByQ[
-            fieldRef.q as keyof typeof formulaDimensionByQ
-          ] ?? 'dmg')
+    const formulaQ =
+      target?.name === name && target.formulaQ
+        ? target.formulaQ
+        : fieldRef.q && fieldRef.q in formulaDimensionByQ
+          ? (fieldRef.q as FormulaQ)
+          : 'standardDmg'
     return (
       <MenuItem
         key={fieldKey}
@@ -117,7 +121,7 @@ function OptTargetFieldMenuItem({
             characterKey,
             fieldRef.sheet ?? characterKey,
             name,
-            formulaDimension
+            formulaQ
           )
         }
       >
