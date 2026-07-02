@@ -9,26 +9,18 @@ import { commonDefIcon, mindscapeDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { CharacterKey, SkillKey } from '@genshin-optimizer/zzz/consts'
 import { allSkillKeys } from '@genshin-optimizer/zzz/consts'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
-import {
-  formulas,
-  own,
-  parseLegacyFormulaName,
-} from '@genshin-optimizer/zzz/formula'
+import { formulas, own } from '@genshin-optimizer/zzz/formula'
 import { getCharStat, mappedStats } from '@genshin-optimizer/zzz/stats'
-import {
-  formulaMatchesAbility,
-  groupFormulaMetaToFields,
-} from '../bundledFormulaFields'
-import { TagDisplay } from '../components'
-import { st, trans } from '../util'
+import { TagFieldTitle } from '../TagFieldTitle'
+import { groupFormulaMetaToFields } from '../bundledFormulaFields'
+import { formulaMatchesAbility } from '../formulaFieldUtil'
+import { trans } from '../util'
 import type { CharUISheet } from './consts'
-import {
-  type CharSheetLayoutOpts,
-  buildCharFormulaSectionIndex,
-  setCharFormulaSectionIndex,
-} from './displaySection'
 
-type AddlDocuments = CharSheetLayoutOpts & {
+type AddlDocuments = {
+  perSkillAbility?: Partial<
+    Record<SkillKey, Partial<Record<string, Document[]>>>
+  >
   core?: Document[]
   ability?: Document[]
   potential?: Document[]
@@ -46,11 +38,6 @@ export function createBaseSheet(
   addlDocuments: AddlDocuments = {}
 ): CharUISheet {
   const hasPotential = getCharStat(key).potentialParams.length > 0
-
-  setCharFormulaSectionIndex(
-    key,
-    buildCharFormulaSectionIndex(key, addlDocuments)
-  )
 
   return {
     ...createSkillsSheets(key, addlDocuments?.perSkillAbility),
@@ -74,14 +61,14 @@ export function createBaseSheet(
 // Creates proper field with automatic title for a given buff
 export function fieldForBuff(buff: IFormulaData<Tag>) {
   return {
-    title: <TagDisplay tag={buff.tag} preventRecursion />,
+    title: <TagFieldTitle tag={buff.tag} preventRecursion />,
     fieldRef: buff.tag,
   }
 }
 
 function createSkillsSheets(
   charKey: CharacterKey,
-  addlDocumentsPerSkillAbility?: CharSheetLayoutOpts['perSkillAbility']
+  addlDocumentsPerSkillAbility?: AddlDocuments['perSkillAbility']
 ) {
   const dm = mappedStats.char[charKey]
   const form = formulas[charKey] as Record<string, IFormulaData<Tag>>
@@ -114,40 +101,6 @@ function createSkillsSheets(
       ]),
     })
   )
-}
-
-function formulaDimensionLabel(tag: Tag): string | undefined {
-  const legacy = tag.name ? parseLegacyFormulaName(tag.name) : undefined
-  if (legacy) {
-    return legacy.formulaDimension === 'anomBuildup'
-      ? 'anomBuildup'
-      : legacy.formulaDimension === 'daze'
-        ? 'daze'
-        : 'dmg'
-  }
-  const [, , suffix] = (tag.name ?? '').split('_')
-  if (suffix === 'dmg' || suffix === 'daze' || suffix === 'anomBuildup')
-    return suffix
-  if (tag.q === 'standardDmg' || tag.q === 'sheerDmg') return 'dmg'
-  if (tag.q === 'dazeBuildup') return 'daze'
-  if (tag.q === 'anomBuildup') return 'anomBuildup'
-  return undefined
-}
-
-/** Translated hit label for a skill formula (legacy suffixed or bundled `name` + `q`). */
-export function abilityFormulaNameToTranslated(
-  charKey: CharacterKey,
-  skill: SkillKey,
-  tag: Tag
-) {
-  const legacy = tag.name ? parseLegacyFormulaName(tag.name) : undefined
-  const baseName = legacy?.baseName ?? (tag.name ?? '').split(':')[0]
-  const [ability, hitNumber] = baseName.split('_')
-  const type = formulaDimensionLabel(tag)
-  if (!type || !hitNumber) return baseName || tag.name || tag.q || ''
-  return st(type, {
-    val: `$t(char_${charKey}_gen:${skill}.${ability}.params.${hitNumber.replace(/\D/g, '')})`,
-  })
 }
 
 function createCoreAndAbilitySheet(

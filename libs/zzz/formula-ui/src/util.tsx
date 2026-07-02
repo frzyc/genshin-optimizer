@@ -7,14 +7,15 @@ import type {
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { Translate } from '@genshin-optimizer/zzz/i18n'
 import type { ReactNode } from 'react'
-import { TagDisplay } from './components'
-export const st = (
-  strKey: string,
-  values?: Record<string, string | number>
-) => <Translate ns="sheet" key18={strKey} values={values} />
-export const stg = (strKey: string) => (
-  <Translate ns="characters_gen" key18={strKey} />
-)
+import { TagFieldTitle } from './TagFieldTitle'
+
+export function st(strKey: string, values?: Record<string, string | number>) {
+  return <Translate ns="sheet" key18={strKey} values={values} />
+}
+
+export function stg(strKey: string) {
+  return <Translate ns="characters_gen" key18={strKey} />
+}
 
 type Translated = [
   trg: (i18key: string, values?: Record<string, string | number>) => ReactNode,
@@ -38,23 +39,23 @@ export function trans(
   ]
 }
 
-export function tagToTagField(
-  tag: Tag,
-  opts?: { preventRecursion?: boolean }
-): TagField {
-  return {
-    title: <TagDisplay tag={tag} preventRecursion={opts?.preventRecursion} />,
-    fieldRef: tag,
-  }
-}
-
 export function getTagLabel(tag: Tag | undefined | null): string {
   if (!tag) return ''
   const { et, q, qt, name } = tag
   if (et === 'own' && qt === 'formula' && q !== 'base') {
     return name ?? q ?? ''
   }
-  // TODO: Determine when we should return qt + q vs just q
-  // e.g. for qt: 'base', q: 'atk' we would want both
   return q ?? ''
+}
+
+export function tagToTagField(
+  tag: Tag,
+  opts?: { preventRecursion?: boolean }
+): TagField {
+  return {
+    title: (
+      <TagFieldTitle tag={tag} preventRecursion={opts?.preventRecursion} />
+    ),
+    fieldRef: tag,
+  }
 }

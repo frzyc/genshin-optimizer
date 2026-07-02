@@ -4,14 +4,14 @@ import {
   useDatabaseContext,
   useTeam,
 } from '@genshin-optimizer/zzz/db-ui'
-import type { FormulaDimension } from '@genshin-optimizer/zzz/formula'
+import { formulas, isAbilityDim } from '@genshin-optimizer/zzz/formula'
 import {
-  formulaDimensionByQ,
+  type FormulaDimension,
+  dimensionByAbilityDim,
+  formulaDimensionLabel,
   formulaDimensions,
-  formulas,
-  resolveFormulaQ,
-} from '@genshin-optimizer/zzz/formula'
-import { FORMULA_DIMENSION_LABEL } from '@genshin-optimizer/zzz/formula-ui'
+  resolveAbilityDim,
+} from '@genshin-optimizer/zzz/formula-ui'
 import { ToggleButton, ToggleButtonGroup } from '@mui/material'
 
 export function DimensionSelector() {
@@ -20,11 +20,11 @@ export function DimensionSelector() {
   const team = useTeam(character.key)!
   const { tag: target } = getTeamFrame0(team)
 
-  if (!target?.name || !target.formulaQ) return null
+  if (!target?.name || !target.q || !isAbilityDim(target.q)) return null
 
-  const { name, formulaQ } = target
+  const { name, q } = target
   const sheet = target.sheet ?? character.key
-  const formulaDimension = formulaDimensionByQ[formulaQ]
+  const formulaDimension = dimensionByAbilityDim[q]
 
   return (
     <ToggleButtonGroup
@@ -33,16 +33,14 @@ export function DimensionSelector() {
       value={formulaDimension}
       onChange={(_, dim: FormulaDimension | null) => {
         if (!dim || dim === formulaDimension) return
-        const sheetFormulas = (
-          formulas as Record<string, Record<string, unknown>>
-        )[sheet]
-        const nextFormulaQ = resolveFormulaQ(sheetFormulas, name, dim)
-        if (!nextFormulaQ) return
+        const sheetFormulas = formulas[sheet as keyof typeof formulas]
+        const nextAbilityDim = resolveAbilityDim(sheetFormulas, name, dim)
+        if (!nextAbilityDim) return
         database.teams.setFrame0(character.key, {
           tag: {
             sheet,
             name,
-            formulaQ: nextFormulaQ,
+            q: nextAbilityDim,
             damageType1: target.damageType1,
             damageType2: target.damageType2,
           },
@@ -52,7 +50,7 @@ export function DimensionSelector() {
     >
       {formulaDimensions.map((dim) => (
         <ToggleButton key={dim} value={dim}>
-          {FORMULA_DIMENSION_LABEL[dim]}
+          {formulaDimensionLabel(dim)}
         </ToggleButton>
       ))}
     </ToggleButtonGroup>

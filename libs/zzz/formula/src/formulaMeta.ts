@@ -1,62 +1,80 @@
-export const formulaDimensions = ['dmg', 'daze', 'anomBuildup'] as const
-export type FormulaDimension = (typeof formulaDimensions)[number]
+import type { Tag } from './data/util'
 
-export const formulaQs = [
+export const abilityDims = [
   'standardDmg',
   'sheerDmg',
   'dazeBuildup',
   'anomBuildup',
 ] as const
-export type FormulaQ = (typeof formulaQs)[number]
+export type AbilityDim = (typeof abilityDims)[number]
 
-export const dmgFormulaQs = ['standardDmg', 'sheerDmg'] as const
+export const dmgAbilityDims = ['standardDmg', 'sheerDmg'] as const
+export type DmgAbilityDim = (typeof dmgAbilityDims)[number]
 
-export const qByFormulaDimension = {
-  dmg: 'standardDmg',
-  daze: 'dazeBuildup',
-  anomBuildup: 'anomBuildup',
-} as const satisfies Record<FormulaDimension, string>
-
-export const formulaDimensionByQ = {
-  standardDmg: 'dmg',
-  sheerDmg: 'dmg',
-  dazeBuildup: 'daze',
-  anomBuildup: 'anomBuildup',
-} as const satisfies Record<FormulaQ, FormulaDimension>
-
-export function formulaQsForDimension(
-  dim: FormulaDimension
-): readonly FormulaQ[] {
-  if (dim === 'dmg') return dmgFormulaQs
-  return [qByFormulaDimension[dim]]
+export function isAbilityDim(q: string | null | undefined): q is AbilityDim {
+  return !!q && (abilityDims as readonly string[]).includes(q)
 }
 
-/** Pick the formula leg `q` for a dimension on an ability (e.g. standard vs sheer DMG). */
-export function resolveFormulaQ(
-  sheetFormulas: Record<string, unknown> | undefined,
-  baseName: string,
-  dim: FormulaDimension
-): FormulaQ | undefined {
-  if (!sheetFormulas) return undefined
-  for (const q of formulaQsForDimension(dim)) {
-    if (sheetFormulas[formulaMetaKey(baseName, q)]) return q
-  }
-  return undefined
+export function isDmgAbilityDim(
+  q: string | null | undefined
+): q is DmgAbilityDim {
+  return q === 'standardDmg' || q === 'sheerDmg'
 }
 
-/** Meta map key for a formula listing (`Ability_0:standardDmg`). */
-export function formulaMetaKey(abilityName: string, q: string): string {
-  if (q in formulaDimensionByQ) return `${abilityName}:${q}`
+/** Base ability hit name without `:standardDmg` meta suffix. */
+export function abilityBaseName(name: string | null | undefined): string {
+  if (!name) return ''
+  return name.split(':')[0]
+}
+
+/** Meta map key for a formula listing (`Ability_0:standardDmg` when ambiguous). */
+export function formulaMetaKey(
+  abilityName: string,
+  q: string,
+  ambiguous = false
+): string {
+  if (ambiguous && isAbilityDim(q)) return `${abilityName}:${q}`
   return abilityName
 }
 
-export function parseLegacyFormulaName(
-  name: string
-): { baseName: string; formulaDimension: FormulaDimension } | undefined {
-  const match = name.match(/^(.*)_(dmg|daze|anomBuildup)$/)
-  if (!match) return undefined
-  const [, baseName, suffix] = match
-  const formulaDimension =
-    suffix === 'dmg' ? 'dmg' : suffix === 'daze' ? 'daze' : 'anomBuildup'
-  return { baseName, formulaDimension }
+/** Unique key while extracting formulas before per-sheet disambiguation. */
+export function provisionalFormulaMetaKey(
+  abilityName: string,
+  q: string
+): string {
+  return `${abilityName}\0${q}`
+}
+
+/** Assign bare or colon keys from ability-dim sibling counts per `tag.name`. */
+export function normalizeSheetFormulaKeys<
+  T extends { name: string; tag?: Tag },
+>(sheetFormulas: Record<string, T>): Record<string, T> {
+  const abilityDimCount = new Map<string, number>()
+  for (const entry of Object.values(sheetFormulas)) {
+    const name = entry.tag?.name
+    const q = entry.tag?.q
+    if (name && isAbilityDim(q)) {
+      abilityDimCount.set(name, (abilityDimCount.get(name) ?? 0) + 1)
+    }
+  }
+
+  const out: Record<string, T> = {}
+  for (const entry of Object.values(sheetFormulas)) {
+    const name = entry.tag?.name ?? entry.name
+    const q = entry.tag?.q ?? ''
+    const ambiguous = (abilityDimCount.get(name) ?? 0) > 1
+    const key = formulaMetaKey(name, q, ambiguous)
+    out[key] = { ...entry, name: key }
+  }
+  return out
+}
+
+/** Resolve a bundled ability listing by persisted `tag.name` + ability dim. */
+export function bundledFormulaInSheet<T extends { tag?: Tag }>(
+  sheetFormulas: Record<string, T> | undefined,
+  hitName: string,
+  q: AbilityDim
+): T | undefined {
+  if (!sheetFormulas) return undefined
+  return sheetFormulas[`${hitName}:${q}`] ?? sheetFormulas[hitName]
 }

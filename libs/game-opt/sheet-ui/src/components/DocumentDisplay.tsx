@@ -134,17 +134,19 @@ function TextSectionDisplay({
   const grouped = useInDocumentGroup()
   if (!calculator) return null
   const body = evalIfFunc(textDocument.text, calculator.withTag(tag))
+  const hasBody = body !== null && body !== undefined && body !== false
   return (
     <>
       {textDocument.header && (
         <HeaderDisplay
           header={textDocument.header}
-          hideDivider={!body}
+          hideDivider={!hasBody}
           compact={grouped}
         />
       )}
-      {body && (
+      {hasBody && (
         <Typography
+          component="div"
           variant={typoVariant}
           sx={{
             px: 2,

@@ -13,37 +13,11 @@ import { workspaceRoot } from '@nx/devkit'
 import { writeFile } from 'fs/promises'
 import { data } from '../../data'
 import { type Tag, commonSheets } from '../../data/util'
+import {
+  normalizeSheetFormulaKeys,
+  provisionalFormulaMetaKey,
+} from '../../formulaMeta'
 import type { GenDescExecutorSchema } from './schema'
-
-const legacyNameSuffix = /_(dmg|daze|anomBuildup)$/
-
-function resolveFormulaMetaKey(
-  sheet: string,
-  abilityName: string,
-  q: string,
-  result: Record<string, Record<string, { tag: Tag; name: string }>>
-): string {
-  if (legacyNameSuffix.test(abilityName)) return abilityName
-
-  const sheetFormulas = result[sheet] ?? {}
-  const existing = sheetFormulas[abilityName]
-  const hasCompositeSibling = Object.keys(sheetFormulas).some((k) =>
-    k.startsWith(`${abilityName}:`)
-  )
-  if (hasCompositeSibling || (existing && existing.tag.q !== q)) {
-    if (existing && existing.tag.q !== q) {
-      const existingQ = existing.tag.q as string
-      const compositeExisting = `${abilityName}:${existingQ}`
-      sheetFormulas[compositeExisting] = {
-        ...existing,
-        name: compositeExisting,
-      }
-      delete sheetFormulas[abilityName]
-    }
-    return `${abilityName}:${q}`
-  }
-  return abilityName
-}
 
 export default async function runExecutor(
   options: GenDescExecutorSchema
@@ -54,37 +28,41 @@ export default async function runExecutor(
     sheet: sheet!,
     name: q!,
   }))
-  const formulas = extractFormulaMetadata(data, (tag: Tag, value, result) => {
-    if (
-      // sheet-specific
-      tag.sheet !== 'agg' &&
-      tag.sheet !== 'disc' &&
-      tag.sheet !== 'wengine' &&
-      // formula listing
-      tag.qt === 'listing' &&
-      tag.q === 'formulas' &&
-      // pattern from `registerFormula`
-      value.op === 'tag' &&
-      'name' in value.tag &&
-      'q' in value.tag
-    ) {
-      const sheet = tag.sheet!
-      const abilityName = value.tag['name']!
-      const q = value.tag['q']!
-      const metaKey = resolveFormulaMetaKey(
-        sheet,
-        abilityName,
-        q,
-        result as Record<string, Record<string, { tag: Tag; name: string }>>
-      )
-      return {
-        sheet,
-        name: metaKey,
-        tag: { ...tag, ...value.tag, name: abilityName },
+  const rawFormulas = extractFormulaMetadata(
+    data,
+    (tag: Tag, value, result) => {
+      if (
+        // sheet-specific
+        tag.sheet !== 'agg' &&
+        tag.sheet !== 'disc' &&
+        tag.sheet !== 'wengine' &&
+        // formula listing
+        tag.qt === 'listing' &&
+        tag.q === 'formulas' &&
+        // pattern from `registerFormula`
+        value.op === 'tag' &&
+        'name' in value.tag &&
+        'q' in value.tag
+      ) {
+        const sheet = tag.sheet!
+        const abilityName = value.tag['name']!
+        const q = value.tag['q']!
+        const metaKey = provisionalFormulaMetaKey(abilityName, q)
+        return {
+          sheet,
+          name: metaKey,
+          tag: { ...tag, ...value.tag, name: abilityName },
+        }
       }
+      return undefined
     }
-    return undefined
-  })
+  )
+  const formulas = Object.fromEntries(
+    Object.entries(rawFormulas).map(([sheet, sheetFormulas]) => [
+      sheet,
+      normalizeSheetFormulaKeys(sheetFormulas),
+    ])
+  )
   const buffs = extractFormulaMetadata<Tag, Tag>(
     data,
     (tag: Tag, value, result) => {

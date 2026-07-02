@@ -1,23 +1,16 @@
 import { ImgIcon } from '@genshin-optimizer/common/ui'
-import type { IFormulaData } from '@genshin-optimizer/game-opt/engine'
 import type { Document } from '@genshin-optimizer/game-opt/sheet-ui'
 import {
   DocumentContent,
   DocumentGroupProvider,
 } from '@genshin-optimizer/game-opt/sheet-ui'
 import { commonDefIcon } from '@genshin-optimizer/zzz/assets'
-import type { CharacterKey, SkillKey } from '@genshin-optimizer/zzz/consts'
+import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allSkillKeys } from '@genshin-optimizer/zzz/consts'
-import type { Tag } from '@genshin-optimizer/zzz/formula'
-import { formulas } from '@genshin-optimizer/zzz/formula'
-import { mappedStats } from '@genshin-optimizer/zzz/stats'
 import { ZCard } from '@genshin-optimizer/zzz/ui'
 import { Box, Stack, Typography } from '@mui/material'
 import { type ReactNode, useMemo } from 'react'
-import {
-  formulaMatchesAbility,
-  skillSectionFlatIconKey,
-} from '../bundledFormulaFields'
+import { skillSectionFlatIconKey } from '../bundledFormulaFields'
 import {
   talentSheetElementIcon,
   talentSheetElementLabel,
@@ -27,102 +20,18 @@ import {
   allMindscapeSheetElementKeys,
   allTalentSheetElementKey,
 } from './consts'
-import {
-  DISPLAY_SECTION_ORDER,
-  type DisplaySection,
-  resolveAbilityDisplaySection,
-} from './displaySection'
+import { groupDocumentsByHeader } from './documentGrouping'
 import { charSheets } from './sheets'
-
-export type SkillAbilityDocuments = {
-  skill: SkillKey
-  ability: string
-  documents: Document[]
-}
-
-/** Group flat sheet docs by titled text sections (ability, core, mindscape, …). */
-export function groupDocumentsByHeader(documents: Document[]): Document[][] {
-  const groups: Document[][] = []
-  let current: Document[] = []
-
-  for (const doc of documents) {
-    if (doc.type === 'text' && doc.header && current.length > 0) {
-      groups.push(current)
-      current = [doc]
-    } else {
-      current.push(doc)
-    }
-  }
-  if (current.length) groups.push(current)
-  return groups
-}
-
-/** Split a skill tab's flat `documents` array into per-ability chunks. */
-export function iterSkillAbilityDocuments(
-  charKey: CharacterKey
-): SkillAbilityDocuments[] {
-  const dm = mappedStats.char[charKey]
-  const result: SkillAbilityDocuments[] = []
-
-  for (const skill of allSkillKeys) {
-    const allDocs = charSheets[charKey][skill]?.documents ?? []
-    const abilities = Object.keys(dm[skill])
-    const groups = groupDocumentsByHeader(allDocs)
-    for (let i = 0; i < groups.length; i++) {
-      result.push({
-        skill,
-        ability: abilities[i] ?? `unknown_${i}`,
-        documents: groups[i],
-      })
-    }
-  }
-
-  return result
-}
-
-function groupSkillMechanicsByDisplaySection(charKey: CharacterKey) {
-  const form = formulas[charKey] as Record<string, IFormulaData<Tag>>
-  const bySection = new Map<DisplaySection, SkillAbilityDocuments[]>()
-
-  for (const entry of iterSkillAbilityDocuments(charKey)) {
-    const { skill, ability } = entry
-    const matched = Object.values(form).filter((f) =>
-      formulaMatchesAbility(f, ability)
-    )
-    const section = resolveAbilityDisplaySection(skill, ability, matched)
-    const list = bySection.get(section) ?? []
-    list.push(entry)
-    bySection.set(section, list)
-  }
-
-  const sections: Array<{
-    section: DisplaySection
-    abilities: SkillAbilityDocuments[]
-  }> = []
-  const seen = new Set<string>()
-
-  for (const section of DISPLAY_SECTION_ORDER) {
-    const abilities = bySection.get(section)
-    if (!abilities?.length) continue
-    seen.add(section)
-    sections.push({ section, abilities })
-  }
-  for (const [section, abilities] of bySection) {
-    if (seen.has(section) || !abilities.length) continue
-    sections.push({ section, abilities })
-  }
-
-  return sections
-}
 
 const nonSkillSheetKeys = allTalentSheetElementKey.filter(
   (
     k
   ): k is Exclude<
     (typeof allTalentSheetElementKey)[number],
-    SkillKey | (typeof allMindscapeSheetElementKeys)[number]
+    | (typeof allSkillKeys)[number]
+    | (typeof allMindscapeSheetElementKeys)[number]
   > =>
-    !allSkillKeys.includes(k as SkillKey) &&
+    !allSkillKeys.includes(k as (typeof allSkillKeys)[number]) &&
     !allMindscapeSheetElementKeys.includes(
       k as (typeof allMindscapeSheetElementKeys)[number]
     )
@@ -220,25 +129,29 @@ export function CharMechanicsGroupedDisplay({
   charKey: CharacterKey
 }) {
   const skillSections = useMemo(
-    () => groupSkillMechanicsByDisplaySection(charKey),
+    () =>
+      allSkillKeys
+        .map((skill) => ({
+          skill,
+          documents: charSheets[charKey][skill]?.documents ?? [],
+        }))
+        .filter(({ documents }) => documents.length > 0),
     [charKey]
   )
 
   return (
     <Stack spacing={2} sx={{ pb: 1 }}>
-      {skillSections.map(({ section, abilities }) => (
+      {skillSections.map(({ skill, documents }) => (
         <CharMechanicsSectionCard
-          key={section}
+          key={skill}
           iconSrc={commonDefIcon(
-            skillSectionFlatIconKey(section) as Parameters<
+            skillSectionFlatIconKey(skill) as Parameters<
               typeof commonDefIcon
             >[0]
           )}
-          title={st(`skills.${section}`)}
+          title={st(`skills.${skill}`)}
         >
-          {abilities.flatMap(({ skill, ability, documents }) =>
-            groupedTalentSheetDocuments(documents, `${skill}_${ability}`)
-          )}
+          {groupedTalentSheetDocuments(documents, skill)}
         </CharMechanicsSectionCard>
       ))}
       {nonSkillSheetKeys.map((sheetKey) => {

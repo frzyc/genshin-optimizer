@@ -6,64 +6,36 @@ import type {
   MultiTagField,
   TagField,
 } from '@genshin-optimizer/game-opt/sheet-ui'
-import {
-  isMultiTagField,
-  isTagField,
-} from '@genshin-optimizer/game-opt/sheet-ui'
 import type { CharacterKey, SkillKey } from '@genshin-optimizer/zzz/consts'
+import type { TargetTag } from '@genshin-optimizer/zzz/db'
+import {
+  type AbilityDim,
+  type DmgAbilityDim,
+  isAbilityDim,
+} from '@genshin-optimizer/zzz/formula'
 import type { Sheet, Tag } from '@genshin-optimizer/zzz/formula'
-import { abilityFormulaNameToTranslated } from './char/sheetUtil'
+import { partitionBundlableTags } from './bundledFormulaGrouping'
+import { abilityFormulaNameToTranslated } from './char/abilityFormulaLabels'
 import { getVariant } from './char/util'
+import { ABILITY_DIM_LABEL } from './formulaDimensionUi'
+import { primaryTagFromField } from './formulaFieldUtil'
 import { tagToTagField } from './util'
 
-export const ABILITY_DMG_QS = ['standardDmg', 'sheerDmg'] as const
-export type AbilityDmgQ = (typeof ABILITY_DMG_QS)[number]
-
-export const ABILITY_QS = ['standardDmg', 'dazeBuildup', 'anomBuildup'] as const
-export const Q_LABELS: Record<
-  AbilityDmgQ | (typeof ABILITY_QS)[number],
-  string
-> = {
-  standardDmg: 'DMG',
-  sheerDmg: 'DMG',
-  dazeBuildup: 'Daze',
-  anomBuildup: 'Anom',
-}
-
-const BUNDLEABLE_ABILITY_QS = [
-  ...ABILITY_DMG_QS,
-  'dazeBuildup',
-  'anomBuildup',
-] as const
-
-function isBundleableAbilityQ(
-  q: string | null | undefined
-): q is (typeof BUNDLEABLE_ABILITY_QS)[number] {
-  return !!q && (BUNDLEABLE_ABILITY_QS as readonly string[]).includes(q)
-}
-
-function resolveBundleDmgQ(byQ: Map<string, Tag>): AbilityDmgQ | undefined {
-  if (byQ.has('standardDmg')) return 'standardDmg'
-  if (byQ.has('sheerDmg')) return 'sheerDmg'
-  return undefined
-}
-
-function isCompleteAbilityBundle(byQ: Map<string, Tag>): boolean {
-  const dmgQ = resolveBundleDmgQ(byQ)
-  return !!dmgQ && byQ.has('dazeBuildup') && byQ.has('anomBuildup')
-}
+export { primaryTagFromField } from './formulaFieldUtil'
 
 function bundleFieldRefs(byQ: Map<string, Tag>) {
   const dmgQ = resolveBundleDmgQ(byQ)!
   return [
-    { label: Q_LABELS[dmgQ], ref: byQ.get(dmgQ)! },
-    { label: Q_LABELS.dazeBuildup, ref: byQ.get('dazeBuildup')! },
-    { label: Q_LABELS.anomBuildup, ref: byQ.get('anomBuildup')! },
+    { label: ABILITY_DIM_LABEL[dmgQ], ref: byQ.get(dmgQ)! },
+    { label: ABILITY_DIM_LABEL.dazeBuildup, ref: byQ.get('dazeBuildup')! },
+    { label: ABILITY_DIM_LABEL.anomBuildup, ref: byQ.get('anomBuildup')! },
   ]
 }
 
-function groupKey(tag: Tag) {
-  return `${tag.sheet ?? ''}:${tag.name ?? ''}`
+function resolveBundleDmgQ(byQ: Map<string, Tag>): DmgAbilityDim | undefined {
+  if (byQ.has('standardDmg')) return 'standardDmg'
+  if (byQ.has('sheerDmg')) return 'sheerDmg'
+  return undefined
 }
 
 export function skillFromTag(tag: Tag): SkillKey | undefined {
@@ -104,92 +76,44 @@ export function groupFieldsByTag(
   opts: GroupFieldsOpts = {}
 ): Field[] {
   const { sheet, charKey, skill } = opts
-  const withSheet = (tag: Tag): Tag =>
-    sheet && !tag.sheet ? { ...tag, sheet } : tag
 
   const bundledTitle = (tag: Tag) => {
-    const merged = withSheet(tag)
-    const resolvedSkill = skill ?? skillFromTag(merged)
+    const resolvedSkill = skill ?? skillFromTag(tag)
     if (charKey && resolvedSkill) {
       return (
-        <ColorText color={getVariant(merged)}>
-          {abilityFormulaNameToTranslated(charKey, resolvedSkill, merged)}
+        <ColorText color={getVariant(tag)}>
+          {abilityFormulaNameToTranslated(charKey, resolvedSkill, tag)}
         </ColorText>
       )
     }
-    return tagToTagField(merged, { preventRecursion: true }).title
+    return tagToTagField(tag, { preventRecursion: true }).title
   }
 
-  const seenGroups = new Set<string>()
   const fields: Field[] = []
 
-  for (const rawTag of tags) {
-    const tag = withSheet(rawTag)
-    const { name, q } = tag
-    if (!name || !isBundleableAbilityQ(q)) {
-      fields.push(singleFormulaField(tag, charKey, skill))
+  for (const part of partitionBundlableTags(tags, sheet)) {
+    if (part.kind === 'single') {
+      fields.push(singleFormulaField(part.tag, charKey, skill))
       continue
     }
 
-    const key = groupKey(tag)
-    if (seenGroups.has(key)) continue
-    seenGroups.add(key)
-
-    const group = tags
-      .map(withSheet)
-      .filter(
-        (t) =>
-          t.name === name && t.sheet === tag.sheet && isBundleableAbilityQ(t.q)
-      )
-    const byQ = new Map<string, Tag>()
-    for (const t of group) {
-      const rq = t.q
-      if (isBundleableAbilityQ(rq)) byQ.set(rq, t)
+    const dmgTag = part.byQ.get(part.dmgQ)!
+    const titleField = tagToTagField(dmgTag, { preventRecursion: true })
+    const multiField: MultiTagField = {
+      title: bundledTitle(dmgTag),
+      icon: titleField.icon,
+      subtitle: titleField.subtitle,
+      fieldRefs: bundleFieldRefs(part.byQ),
     }
-
-    if (isCompleteAbilityBundle(byQ)) {
-      const dmgQ = resolveBundleDmgQ(byQ)!
-      const dmgTag = byQ.get(dmgQ)!
-      const titleField = tagToTagField(dmgTag, { preventRecursion: true })
-      const multiField: MultiTagField = {
-        title: bundledTitle(dmgTag),
-        icon: titleField.icon,
-        subtitle: titleField.subtitle,
-        fieldRefs: bundleFieldRefs(byQ),
-      }
-      fields.push(multiField)
-    } else {
-      for (const t of group) fields.push(singleFormulaField(t, charKey, skill))
-    }
+    fields.push(multiField)
   }
 
   return fields
 }
 
-/** Primary formula tag for grouping / labels (dmg leg of a bundled row). */
-export function primaryTagFromField(field: Field): Tag | undefined {
-  if (isMultiTagField(field)) {
-    return (
-      field.fieldRefs.find(
-        (r) => r.ref['q'] === 'standardDmg' || r.ref['q'] === 'sheerDmg'
-      )?.ref ?? field.fieldRefs[0]?.ref
-    )
-  }
-  if (isTagField(field)) return field.fieldRef
-  return undefined
-}
-
-/** Flat skill icon key for section headers (`exSpecial` → `specialFlat`, etc.). */
+/** Flat skill icon key for talent-tab section headers. */
 export function skillSectionFlatIconKey(skill: string): string {
-  switch (skill) {
-    case 'exSpecial':
-      return 'specialFlat'
-    case 'ult':
-    case 'aftershock':
-      return 'chainFlat'
-    default:
-      return `${skill}Flat`
-  }
+  return `${skill}Flat`
 }
 
 export function groupFormulas(
@@ -203,14 +127,6 @@ export function groupFormulas(
   )
 }
 
-export function formulaMatchesAbility(
-  formula: IFormulaData<Tag>,
-  ability: string
-): boolean {
-  const base = (formula.tag.name ?? formula.name.split(':')[0]).split('_')[0]
-  return base === ability
-}
-
 /** Skill sheet / mechanics fields from formula meta (e.g. bundled Miyabi). */
 export function groupFormulaMetaToFields(
   formulas: IFormulaData<Tag>[],
@@ -222,4 +138,21 @@ export function groupFormulaMetaToFields(
     sheet: (f.tag.sheet ?? f.sheet ?? charKey) as Sheet,
   }))
   return groupFieldsByTag(tags, { sheet: charKey, charKey, skill })
+}
+
+/** Resolve bundled ability dim for an opt-target field row. */
+export function abilityDimFromField(
+  field: Field,
+  currentTarget?: TargetTag
+): AbilityDim | undefined {
+  const ref = primaryTagFromField(field)
+  if (!ref?.name) return undefined
+  if (
+    currentTarget?.name === ref.name &&
+    currentTarget.q &&
+    isAbilityDim(currentTarget.q)
+  )
+    return currentTarget.q
+  if (isAbilityDim(ref.q)) return ref.q
+  return undefined
 }

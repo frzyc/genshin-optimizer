@@ -5,11 +5,7 @@ import {
 } from '@genshin-optimizer/common/ui'
 import { getUnitStr, valueString } from '@genshin-optimizer/common/util'
 import type { CalcMeta, Read, Tag } from '@genshin-optimizer/game-opt/engine'
-import {
-  CalcContext,
-  DebugReadContext,
-  TagContext,
-} from '@genshin-optimizer/game-opt/formula-ui'
+import { CalcContext, TagContext } from '@genshin-optimizer/game-opt/formula-ui'
 import type { CalcResult } from '@genshin-optimizer/pando/engine'
 import { read } from '@genshin-optimizer/pando/engine'
 import HelpIcon from '@mui/icons-material/Help'
@@ -24,7 +20,7 @@ import {
   styled,
 } from '@mui/material'
 import type { ReactNode } from 'react'
-import React, { useCallback, useContext, useMemo } from 'react'
+import React, { useContext, useMemo } from 'react'
 import {
   FormulaTextCacheContext,
   FormulaTextContext,
@@ -123,7 +119,6 @@ export function MultiTagFieldDisplay({
   const calc = useContext(CalcContext)
   const contextTag = useContext(TagContext)
   const getTagRowSx = useContext(TagRowSxContext)
-  const { setRead } = useContext(DebugReadContext)
   const { icon, title, subtitle, fieldRefs } = field
 
   if (!calc) return null
@@ -190,10 +185,9 @@ export function MultiTagFieldDisplay({
           if (!showZero && !calcValue) return null
           const tag = fieldRead.tag
           const unit = getUnitStr(tag['name'] || tag['q'] || '')
-          const defaultHelpClick = () => setRead(fieldRead)
           const onClick = onClickFormula
             ? () => onClickFormula(fieldRead as Read)
-            : defaultHelpClick
+            : undefined
           return (
             <Box
               key={`${tag.sheet}_${tag.name}_${tag.q}`}
@@ -251,18 +245,13 @@ export function TagFieldDisplay({
   const calc = useContext(CalcContext)
   const contextTag = useContext(TagContext)
   const getTagRowSx = useContext(TagRowSxContext)
-  const { setRead } = useContext(DebugReadContext)
   const contextRowSx = getTagRowSx?.(field.fieldRef)
   const fieldRead = useMemo(
     () => calcReadOverride ?? read(field.fieldRef),
     [calcReadOverride, field.fieldRef]
   )
 
-  const defaultHelpClick = useCallback(
-    () => setRead(fieldRead),
-    [fieldRead, setRead]
-  )
-  const onClick = onClickFormula ?? defaultHelpClick
+  const onClick = onClickFormula
   // const compareCalc: null | Calculator = null //TODO: compare calcs
   if (!calc) return null
   // if (!calc && !compareCalc) return null

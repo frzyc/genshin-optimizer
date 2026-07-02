@@ -1,52 +1,40 @@
 import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import { commonDefIcon } from '@genshin-optimizer/zzz/assets'
-import type { CharacterKey, SkillKey } from '@genshin-optimizer/zzz/consts'
-import type { FormulaDimension } from '@genshin-optimizer/zzz/formula'
-import {
-  type Tag,
-  parseLegacyFormulaName,
-} from '@genshin-optimizer/zzz/formula'
+import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
+import { isSkillKey } from '@genshin-optimizer/zzz/consts'
+import { isAbilityDim } from '@genshin-optimizer/zzz/formula'
+import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { Box, ListSubheader, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
-import { skillFromTag, skillSectionFlatIconKey } from './bundledFormulaFields'
-import { getFormulaDisplaySection } from './char/displaySection'
-import { tagFieldMap } from './char/tagFieldMap'
+import { isAbilityFormulaTag, parseAbilityFromTag } from './abilityTag'
+import { skillSectionFlatIconKey } from './bundledFormulaFields'
+import type { TalentSheetElementKey } from './char/consts'
+import { getFieldCategory } from './char/fieldCategory'
+import { tagFieldSubset } from './char/tagFieldMap'
 import { FullTagDisplay, TagDisplay } from './components'
+import type { FormulaDimension } from './formulaDimensionUi'
+import { ABILITY_DIM_LABEL, formulaDimensionLabel } from './formulaDimensionUi'
+import {
+  OptTalentSheetSectionHeader,
+  talentSheetElementIcon,
+  talentSheetElementLabel,
+} from './optPanelSections'
 import { st, trans } from './util'
 
-export const FORMULA_DIMENSION_LABEL: Record<FormulaDimension, string> = {
-  dmg: 'DMG',
-  daze: 'Daze',
-  anomBuildup: 'Anom',
-}
-
-export function parseAbilityFromTag(
-  tag: Tag
-): { skill: SkillKey; abilityKey: string; hitIndex?: string } | undefined {
-  const skill = skillFromTag(tag)
-  if (!skill || !tag.name) return undefined
-
-  const legacy = parseLegacyFormulaName(tag.name)
-  const baseName = legacy?.baseName ?? tag.name.split(':')[0]
-  const underscoreIdx = baseName.lastIndexOf('_')
-  if (underscoreIdx === -1) return { skill, abilityKey: baseName }
-
-  const abilityKey = baseName.slice(0, underscoreIdx)
-  const hitIndex = baseName.slice(underscoreIdx + 1)
-  if (!/^\d+$/.test(hitIndex)) return { skill, abilityKey: baseName }
-
-  return { skill, abilityKey, hitIndex }
-}
-
-export function isAbilityFormulaTag(tag: Tag): boolean {
-  return !!parseAbilityFromTag(tag)
-}
+export {
+  abilityDimLabel,
+  ABILITY_DIM_LABEL,
+  abilityDimsForDimension,
+  dimensionByAbilityDim,
+  formulaDimensionLabel,
+  formulaDimensions,
+  resolveAbilityDim,
+} from './formulaDimensionUi'
+export type { FormulaDimension } from './formulaDimensionUi'
 
 function optTargetFormulaTitle(tag: Tag): ReactNode {
   return (
-    tagFieldMap.subset(tag)[0]?.title ?? (
-      <TagDisplay tag={tag} preventRecursion />
-    )
+    tagFieldSubset(tag)[0]?.title ?? <TagDisplay tag={tag} preventRecursion />
   )
 }
 
@@ -60,20 +48,22 @@ export function OptTargetFormulaLabel({
   tag: Tag
   inline?: boolean
 }) {
-  const section = getFormulaDisplaySection(charKey, tag)
+  const category = getFieldCategory(charKey, tag)
   const formulaTitle = optTargetFormulaTitle(tag)
 
-  if (!section) return <FullTagDisplay tag={tag} />
+  if (!category) return <FullTagDisplay tag={tag} />
 
-  const sectionName = st(`skills.${section}`)
-  const icon = (
-    <ImgIcon
-      src={commonDefIcon(
-        skillSectionFlatIconKey(section) as Parameters<typeof commonDefIcon>[0]
-      )}
-      size={inline ? 1.1 : 1.25}
-    />
-  )
+  const sectionName = isSkillKey(category)
+    ? st(`skills.${category}`)
+    : talentSheetElementLabel(category)
+  const iconSrc = isSkillKey(category)
+    ? commonDefIcon(
+        skillSectionFlatIconKey(category) as Parameters<typeof commonDefIcon>[0]
+      )
+    : talentSheetElementIcon(category)
+  const icon = iconSrc ? (
+    <ImgIcon src={iconSrc} size={inline ? 1.1 : 1.25} />
+  ) : null
 
   if (inline) {
     return (
@@ -135,7 +125,7 @@ export function OptTargetSelectedLabel({
   if (isAbilityFormulaTag(tag)) {
     return <AbilityOptTargetLabel charKey={charKey} tag={tag} inline={inline} />
   }
-  if (getFormulaDisplaySection(charKey, tag)) {
+  if (getFieldCategory(charKey, tag)) {
     return <OptTargetFormulaLabel charKey={charKey} tag={tag} inline={inline} />
   }
   return <FullTagDisplay tag={tag} />
@@ -166,6 +156,9 @@ export function AbilityOptTargetLabel({
     hitIndex !== undefined
       ? chg(`${skill}.${abilityKey}.params.${hitIndex.replace(/\D/g, '')}`)
       : null
+  const dimensionBadgeLabel =
+    (tag.q && isAbilityDim(tag.q) ? ABILITY_DIM_LABEL[tag.q] : undefined) ??
+    (formulaDimension ? formulaDimensionLabel(formulaDimension) : undefined)
 
   if (inline) {
     return (
@@ -197,8 +190,8 @@ export function AbilityOptTargetLabel({
             )}
           </Typography>
         </Typography>
-        {showDimension && formulaDimension && (
-          <SqBadge>{FORMULA_DIMENSION_LABEL[formulaDimension]}</SqBadge>
+        {showDimension && dimensionBadgeLabel && (
+          <SqBadge>{dimensionBadgeLabel}</SqBadge>
         )}
       </Box>
     )
@@ -226,8 +219,8 @@ export function AbilityOptTargetLabel({
           )}
         </Typography>
       </Box>
-      {showDimension && formulaDimension && (
-        <SqBadge>{FORMULA_DIMENSION_LABEL[formulaDimension]}</SqBadge>
+      {showDimension && dimensionBadgeLabel && (
+        <SqBadge>{dimensionBadgeLabel}</SqBadge>
       )}
     </Box>
   )
@@ -253,4 +246,15 @@ export function OptTargetSkillSectionHeader({ skill }: { skill: string }) {
       {st(`skills.${skill}`)}
     </ListSubheader>
   )
+}
+
+export function OptTargetCategorySectionHeader({
+  category,
+}: {
+  category: TalentSheetElementKey
+}) {
+  if (isSkillKey(category)) {
+    return <OptTargetSkillSectionHeader skill={category} />
+  }
+  return <OptTalentSheetSectionHeader sheetKey={category} />
 }

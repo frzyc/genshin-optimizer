@@ -25,12 +25,10 @@ import type {
   own,
 } from '@genshin-optimizer/zzz/formula'
 import {
-  type FormulaQ,
-  formulaDimensionByQ,
-  formulaMetaKey,
-  formulaQs,
+  bundledFormulaInSheet,
   formulas,
   getConditional,
+  isAbilityDim,
   isMember,
 } from '@genshin-optimizer/zzz/formula'
 import { z } from 'zod'
@@ -150,15 +148,12 @@ export const bonusStatDamageTypes: BonusStatDamageType[] = [
   'vortex',
 ] as const
 
-export type { FormulaQ } from '@genshin-optimizer/zzz/formula'
-
 export type TargetTag = {
   sheet?: string
   name?: string
-  formulaQ?: FormulaQ
   damageType1?: SpecificDmgTypeKey
   damageType2?: 'aftershock' | 'abloom'
-  q?: (typeof targetQ)[number]
+  q?: string
   qt?: (typeof targetQt)[number]
   attribute?: AttributeKey
 }
@@ -167,10 +162,9 @@ const targetTagSchema = z
   .object({
     sheet: z.string().optional(),
     name: z.string().optional(),
-    formulaQ: z.enum(formulaQs).optional(),
     damageType1: z.string().optional(),
     damageType2: z.literal('aftershock').or(z.literal('abloom')).optional(),
-    q: z.enum(targetQ).optional(),
+    q: z.string().optional(),
     qt: z.enum(targetQt).optional(),
     attribute: z.string().optional(),
   })
@@ -405,11 +399,11 @@ export class TeamDataManager extends DataManager<
           )
             damageType2 = rawTarget.damageType2
         }
-        const formulaQ = formulaQFromTag(formula.tag.q) ?? rawTarget.formulaQ
+        const q = rawTarget.q ?? formula.tag.q ?? undefined
         return removeUndefinedFields({
           sheet: sheet ?? formula.sheet,
           name: abilityName,
-          formulaQ,
+          q,
           damageType1,
           damageType2,
         }) as TargetTag
@@ -418,7 +412,12 @@ export class TeamDataManager extends DataManager<
     }
 
     const { q, qt, attribute } = rawTarget
-    if (q && qt && targetQ.includes(q) && targetQt.includes(qt)) {
+    if (
+      q &&
+      qt &&
+      (targetQ as readonly string[]).includes(q) &&
+      targetQt.includes(qt)
+    ) {
       let validAttribute: AttributeKey | undefined
       if (q === 'dmg_' && attribute) {
         validAttribute = validateValue(attribute, allAttributeKeys) as
@@ -774,17 +773,12 @@ export function applyDamageTypeToTag(
   }
 }
 
-function formulaQFromTag(q: string | null | undefined): FormulaQ | undefined {
-  if (!q || !(q in formulaDimensionByQ)) return undefined
-  return q as FormulaQ
-}
-
 function resolveFormulaSheet(target: {
   name?: string
   sheet?: string
-  formulaQ?: FormulaQ
+  q?: string
 }): Sheet | undefined {
-  const { name, formulaQ, sheet } = target
+  const { name, q, sheet } = target
   if (!name) return undefined
 
   const matches = (charSheet: string) => {
@@ -792,7 +786,19 @@ function resolveFormulaSheet(target: {
       charSheet
     ]
     if (!sheetFormulas) return false
-    if (formulaQ) return !!sheetFormulas[formulaMetaKey(name, formulaQ)]
+    if (q) {
+      if (isAbilityDim(q))
+        return !!bundledFormulaInSheet(
+          sheetFormulas as Record<string, { tag?: Tag }>,
+          name,
+          q
+        )
+      return Object.values(sheetFormulas).some(
+        (entry) =>
+          (entry as { tag?: Tag }).tag?.name === name &&
+          (entry as { tag?: Tag }).tag?.q === q
+      )
+    }
     return !!sheetFormulas[name]
   }
 
@@ -810,7 +816,7 @@ function resolveFormulaSheet(target: {
 }
 
 function getFormula(target: TargetTag) {
-  const { name, formulaQ, sheet: sheetHint } = target
+  const { name, q, sheet: sheetHint } = target
   if (!name) return
   const sheet = sheetHint ?? resolveFormulaSheet(target)
   if (!sheet) return
@@ -826,7 +832,13 @@ function getFormula(target: TargetTag) {
     | undefined
   if (!sheetFormulas) return
 
-  if (formulaQ) return sheetFormulas[formulaMetaKey(name, formulaQ)]
+  if (q) {
+    if (isAbilityDim(q)) return bundledFormulaInSheet(sheetFormulas, name, q)
+    const byTagQ = Object.values(sheetFormulas).find(
+      (entry) => entry.tag?.name === name && entry.tag?.q === q
+    )
+    if (byTagQ) return byTagQ
+  }
 
   return sheetFormulas[name]
 }

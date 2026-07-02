@@ -7,13 +7,8 @@ import { elementalData, statKeyTextMap } from '@genshin-optimizer/zzz/consts'
 import { Read, type Tag } from '@genshin-optimizer/zzz/formula'
 import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
 import { AttributeName, StatDisplay } from '@genshin-optimizer/zzz/ui'
-import {
-  condMap,
-  damageTypeKeysMap,
-  getDmgType,
-  getVariant,
-  tagFieldMap,
-} from '../char'
+import { getCondMap, tagFieldSubset } from '../char/tagFieldMap'
+import { damageTypeKeysMap, getDmgType, getVariant } from '../char/util'
 import { useZzzCalcContext } from '../hooks'
 import { getTagLabel } from '../util'
 import { qtMap } from './qtMap'
@@ -75,11 +70,11 @@ function TagStrDisplay({
   preventRecursion,
 }: { tag: Tag; showPercent?: boolean; preventRecursion?: boolean }) {
   const calc = useZzzCalcContext()
-  const title = tagFieldMap.subset(tag)[0]?.title
+  const title = tagFieldSubset(tag)[0]?.title
   if (title && !preventRecursion) return title
   // Conditional label handling
   if (tag.qt === 'cond' && tag.q && tag.sheet && calc) {
-    const cond = condMap.get(`${tag.sheet}:${tag.q}`)
+    const cond = getCondMap().get(`${tag.sheet}:${tag.q}`)
     if (cond)
       return evalIfFunc(
         cond.label,

@@ -24,7 +24,7 @@ import {
 } from '@genshin-optimizer/zzz/ui'
 import { ListItem } from '@mui/material'
 import { Fragment, useContext, useMemo } from 'react'
-import { groupFormulas } from '../groupFormulas'
+import { groupFormulas } from '../bundledFormulaFields'
 import { useZzzCalcContext } from '../hooks'
 import { OptPanelSectionHeader } from '../optPanelSections'
 import {
@@ -32,12 +32,9 @@ import {
   listStatReadsFromFormulas,
   statReadTagKey,
 } from '../optTarget'
-import { OptTargetSkillSectionHeader } from '../optTargetDisplay'
+import { OptTargetCategorySectionHeader } from '../optTargetDisplay'
 import { tagToTagField } from '../util'
-import {
-  groupFieldsByDisplaySection,
-  orderedDisplaySections,
-} from './displaySection'
+import { groupFieldsByCategory, orderedFieldCategories } from './fieldCategory'
 
 export function CharStatsDisplay() {
   const character = useCharacterContext()
@@ -51,13 +48,10 @@ export function CharStatsDisplay() {
       }
     const reads = calc.listFormulas(own.listing.formulas)
     const fields = groupFormulas(reads, character.key, character.key)
-    const { bySection, other } = groupFieldsByDisplaySection(
-      character.key,
-      fields
-    )
+    const { byCategory, other } = groupFieldsByCategory(character.key, fields)
     return {
       statReads: listStatReadsFromFormulas(reads),
-      mechSections: orderedDisplaySections(bySection),
+      mechSections: orderedFieldCategories(byCategory),
       otherFields: filterNonStatFields(other),
     }
   }, [calc, character?.key])
@@ -77,11 +71,11 @@ export function CharStatsDisplay() {
             ))}
           </>
         )}
-        {mechSections.map(({ section, fields }) => (
-          <Fragment key={section}>
-            <OptTargetSkillSectionHeader skill={section} />
+        {mechSections.map(({ category, fields }) => (
+          <Fragment key={category}>
+            <OptTargetCategorySectionHeader category={category} />
             {fields.map((field, index) => (
-              <FormulaFieldRow key={`${section}_${index}`} field={field} />
+              <FormulaFieldRow key={`${category}_${index}`} field={field} />
             ))}
           </Fragment>
         ))}
