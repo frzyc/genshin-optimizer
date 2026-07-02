@@ -12,6 +12,6 @@ export {
 export * from './optTargetDisplay'
 export * from './optTarget'
 export * from './optPanelSections'
-export * from './OptTargetTagRowSxProvider'
 export * from './hooks'
+export * from './OptTargetTagRowSxProvider'
 export * from './wengine'

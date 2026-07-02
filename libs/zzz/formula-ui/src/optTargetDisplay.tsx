@@ -14,7 +14,7 @@ import { FullTagDisplay, TagDisplay } from './components'
 import type { FormulaDimension } from './formulaDimensionUi'
 import { ABILITY_DIM_LABEL, formulaDimensionLabel } from './formulaDimensionUi'
 import {
-  OptTalentSheetSectionHeader,
+  OptCollapsibleSectionHeader,
   skillSectionFlatIconKey,
   talentSheetElementIcon,
   talentSheetElementLabel,
@@ -253,8 +253,41 @@ export function OptTargetCategorySectionHeader({
 }: {
   category: TalentSheetElementKey
 }) {
-  if (isSkillKey(category)) {
-    return <OptTargetSkillSectionHeader skill={category} />
-  }
-  return <OptTalentSheetSectionHeader sheetKey={category} />
+  const headerContent = isSkillKey(category) ? (
+    <OptTargetSkillSectionHeaderContent skill={category} />
+  ) : (
+    <OptTalentSheetSectionHeaderContent sheetKey={category} />
+  )
+
+  return (
+    <OptCollapsibleSectionHeader sectionKey={category}>
+      {headerContent}
+    </OptCollapsibleSectionHeader>
+  )
+}
+
+function OptTargetSkillSectionHeaderContent({ skill }: { skill: string }) {
+  return (
+    <>
+      <ImgIcon
+        src={commonDefIcon(
+          skillSectionFlatIconKey(skill) as Parameters<typeof commonDefIcon>[0]
+        )}
+        size={1.25}
+      />
+      {st(`skills.${skill}`)}
+    </>
+  )
+}
+
+function OptTalentSheetSectionHeaderContent({
+  sheetKey,
+}: { sheetKey: string }) {
+  const icon = talentSheetElementIcon(sheetKey)
+  return (
+    <>
+      {icon && <ImgIcon src={icon} size={1.25} />}
+      {talentSheetElementLabel(sheetKey)}
+    </>
+  )
 }

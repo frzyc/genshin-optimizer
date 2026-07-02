@@ -23,7 +23,11 @@ import {
 } from '@genshin-optimizer/zzz/ui'
 import { ListItem } from '@mui/material'
 import { Fragment, useContext, useMemo } from 'react'
-import { useGroupedOptFormulaFields, useZzzCalcContext } from '../hooks'
+import {
+  useGroupedOptFormulaFields,
+  useOptCategoryCollapse,
+  useZzzCalcContext,
+} from '../hooks'
 import { OptPanelSectionHeader } from '../optPanelSections'
 import { statReadTagKey } from '../optTarget'
 import { OptTargetCategorySectionHeader } from '../optTargetDisplay'
@@ -32,30 +36,34 @@ import { tagToTagField } from '../util'
 export function CharStatsDisplay() {
   const character = useCharacterContext()
   const calc = useZzzCalcContext()
+  const collapse = useOptCategoryCollapse()
   const { statReads, categorySections, otherFields } =
     useGroupedOptFormulaFields(character?.key, calc)
 
   return (
     <ZCard>
       <FieldDisplayList sx={{ m: 0 }} bgt="normal">
-        <OptPanelSectionHeader>Stats</OptPanelSectionHeader>
-        {statReads.map((read) => (
-          <CharStatRow key={statReadTagKey(read.tag)} read={read} />
-        ))}
+        <OptPanelSectionHeader section="stats">Stats</OptPanelSectionHeader>
+        {!(collapse?.isCollapsed('stats') ?? false) &&
+          statReads.map((read) => (
+            <CharStatRow key={statReadTagKey(read.tag)} read={read} />
+          ))}
         {otherFields.length > 0 && (
           <>
-            <OptPanelSectionHeader>Other</OptPanelSectionHeader>
-            {otherFields.map((field, index) => (
-              <FormulaFieldRow key={`other_${index}`} field={field} />
-            ))}
+            <OptPanelSectionHeader section="other">Other</OptPanelSectionHeader>
+            {!(collapse?.isCollapsed('other') ?? false) &&
+              otherFields.map((field, index) => (
+                <FormulaFieldRow key={`other_${index}`} field={field} />
+              ))}
           </>
         )}
         {categorySections.map(({ category, fields }) => (
           <Fragment key={category}>
             <OptTargetCategorySectionHeader category={category} />
-            {fields.map((field, index) => (
-              <FormulaFieldRow key={`${category}_${index}`} field={field} />
-            ))}
+            {!(collapse?.isCollapsed(category) ?? false) &&
+              fields.map((field, index) => (
+                <FormulaFieldRow key={`${category}_${index}`} field={field} />
+              ))}
           </Fragment>
         ))}
       </FieldDisplayList>
