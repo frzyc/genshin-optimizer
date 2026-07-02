@@ -63,6 +63,7 @@ import Lauma from './Character_Lauma_Card.webp'
 import Layla from './Character_Layla_Card.jpeg'
 import Linnea from './Character_Linnea_Card.webp'
 import Lisa from './Character_Lisa_Card.jpg'
+import Lohen from './Character_Lohen_Card.png'
 import Lynette from './Character_Lynette_Card.jpg'
 import Lyney from './Character_Lyney_Card.jpg'
 import Mavuika from './Character_Mavuika_Card.jpg'
@@ -181,6 +182,7 @@ const charCards = {
   Layla,
   Linnea,
   Lisa,
+  Lohen,
   Lyney,
   Lynette,
   Mavuika,

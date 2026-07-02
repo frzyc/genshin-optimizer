@@ -141,7 +141,7 @@
           "StunRatioGrowth": 0.097,
           "SpRecovery": 407.9,
           "SpRecoveryGrowth": 0,
-          "FeverRecovery": 3118.5,
+          "FeverRecovery": 5118.5,
           "FeverRecoveryGrowth": 0,
           "AttributeInfliction": 113.3
         }
@@ -269,7 +269,7 @@
           "StunRatioGrowth": 0.052,
           "SpRecovery": 407.9,
           "SpRecoveryGrowth": 0,
-          "FeverRecovery": 3118.5,
+          "FeverRecovery": 5118.5,
           "FeverRecoveryGrowth": 0,
           "AttributeInfliction": 113.3
         }

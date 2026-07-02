@@ -174,14 +174,18 @@ const c2StackArr = range(
   (dm.constellation2.maxAtk_ - dm.constellation2.atk_) /
     dm.constellation2.moreAtk_
 )
-const c2StackAtk_ = sum(
-  percent(dm.constellation2.atk_),
-  prod(
-    percent(dm.constellation2.moreAtk_),
-    lookup(
-      condC2Stack,
-      objKeyMap(c2StackArr, (s) => constant(s)),
-      naught
+const c2StackAtk_ = greaterEq(
+  input.constellation,
+  2,
+  sum(
+    percent(dm.constellation2.atk_),
+    prod(
+      percent(dm.constellation2.moreAtk_),
+      lookup(
+        condC2Stack,
+        objKeyMap(c2StackArr, (s) => constant(s)),
+        naught
+      )
     )
   )
 )

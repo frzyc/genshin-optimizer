@@ -38,7 +38,7 @@ export const critModeKeys = ['avg', 'crit', 'nonCrit'] as const
 
 export type SpecificDmgTypeKey = Exclude<
   DamageType,
-  'anomaly' | 'disorder' | 'aftershock' | 'elemental'
+  'anomaly' | 'disorder' | 'aftershock' | 'elemental' | 'vortex'
 >
 export const specificDmgTypeKeys: SpecificDmgTypeKey[] = [
   'basic',
@@ -137,6 +137,7 @@ export const bonusStatDamageTypes: BonusStatDamageType[] = [
   'anomaly',
   'disorder',
   'abloom',
+  'vortex',
 ] as const
 
 export type TargetTag = {

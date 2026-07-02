@@ -11,4 +11,15 @@ export const buffs = {
       name: 'frostbite_crit_dmg_',
     },
   },
+  windswept_direct_dmg_: {
+    sheet: 'anomaly',
+    name: 'windswept_direct_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'direct_dmg_',
+      sheet: 'anomaly',
+      name: 'windswept_direct_dmg_',
+    },
+  },
 } as const
