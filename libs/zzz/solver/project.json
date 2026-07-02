@@ -5,5 +5,13 @@
   "projectType": "library",
   "tags": [],
   "// targets": "to see all targets run: nx show project zzz-solver --web",
-  "targets": {}
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/zzz/solver/jest.config.ts"
+      }
+    }
+  }
 }
