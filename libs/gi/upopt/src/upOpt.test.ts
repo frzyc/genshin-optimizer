@@ -15,6 +15,7 @@ import {
 import { evalMarkovNode, evaluateGaussian } from './markov-tree/evaluation'
 import { makeObjective } from './markov-tree/makeObjective'
 import type { GaussianNode, Objective } from './markov-tree/markov.types'
+import { rollCountMuVar } from './markov-tree/mathUtil'
 import { crawlSubstats } from './substatProbs'
 import { lvl0, lvl0_2, lvl20 } from './testArtifacts.json'
 import {
@@ -25,7 +26,6 @@ import {
   levelUpArtifact,
 } from './upOpt'
 import type { MarkovNode, SubstatLevelNode } from './upOpt.types'
-import { elixirDefinitionMemoize } from './upOptMemoize'
 
 const emptyBuild = {
   flower: undefined,
@@ -718,5 +718,15 @@ describe('upOpt makeSubstatNode(s)', () => {
         {}
       )
     })
+  })
+})
+
+describe('gen', () => {
+  test('doathing', () => {
+    // const umm = dothing()
+    // writeFileSync('out.json', JSON.stringify(umm))
+
+    // console.log(rollCountMuVar(5, {n: 0, min: 0}))
+    console.log(rollCountMuVar(5, {n: 2, min: 2}))
   })
 })

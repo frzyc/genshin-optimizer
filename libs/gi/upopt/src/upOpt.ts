@@ -16,7 +16,6 @@ import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import type { IArtifact } from '@genshin-optimizer/gi/good'
 import type { DynStat } from '@genshin-optimizer/gi/solver'
 import { getMainStatValue, getRollsRemaining } from '@genshin-optimizer/gi/util'
-
 import { allMainStatProbs } from './consts'
 import { expandRollsLevel } from './expandRolls'
 import { expandSubstatLevel, makeSubstatNode } from './expandSubstat'
