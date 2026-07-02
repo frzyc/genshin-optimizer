@@ -18,6 +18,11 @@ export function talentSheetElementIcon(key: string): string | undefined {
   return undefined
 }
 
+/** Flat skill icon asset key for talent-tab section headers. */
+export function skillSectionFlatIconKey(skill: string): string {
+  return `${skill}Flat`
+}
+
 export function OptTalentSheetSectionHeader({
   sheetKey,
 }: {

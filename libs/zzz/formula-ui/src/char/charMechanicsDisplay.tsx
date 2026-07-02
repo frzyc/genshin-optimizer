@@ -10,8 +10,8 @@ import { allSkillKeys } from '@genshin-optimizer/zzz/consts'
 import { ZCard } from '@genshin-optimizer/zzz/ui'
 import { Box, Stack, Typography } from '@mui/material'
 import { type ReactNode, useMemo } from 'react'
-import { skillSectionFlatIconKey } from '../bundledFormulaFields'
 import {
+  skillSectionFlatIconKey,
   talentSheetElementIcon,
   talentSheetElementLabel,
 } from '../optPanelSections'

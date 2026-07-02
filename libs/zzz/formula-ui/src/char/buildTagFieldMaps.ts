@@ -36,10 +36,7 @@ export function buildTagFieldMaps() {
     }
   }
 
-  function addCond(
-    strKey: string,
-    cond: ConditionalDocument['conditional']
-  ) {
+  function addCond(strKey: string, cond: ConditionalDocument['conditional']) {
     if (condMap.get(strKey)) throw new Error(`Duplicate conditional ${strKey}`)
     condMap.set(strKey, cond)
   }

@@ -32,7 +32,9 @@ export function sortBundlableTags(tags: Tag[]): Tag[] {
   return [...tags].sort(compareBundlableTags)
 }
 
-function resolveBundleDmgQ(byQ: Map<string, Tag>): DmgAbilityDim | undefined {
+export function resolveBundleDmgQ(
+  byQ: Map<string, Tag>
+): DmgAbilityDim | undefined {
   if (byQ.has('standardDmg')) return 'standardDmg'
   if (byQ.has('sheerDmg')) return 'sheerDmg'
   return undefined

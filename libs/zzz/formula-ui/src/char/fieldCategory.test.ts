@@ -11,7 +11,9 @@ describe('buildFieldCategoryIndex', () => {
     const index = buildFieldCategoryIndex('Anby')
     expect(index.size).toBeGreaterThan(0)
     expect(
-      index.get(formulaTagKey({ sheet: 'Anby', name: 'BasicAttackTurboVolt_0' }))
+      index.get(
+        formulaTagKey({ sheet: 'Anby', name: 'BasicAttackTurboVolt_0' })
+      )
     ).toBe('basic')
   })
 

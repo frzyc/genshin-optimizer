@@ -8,13 +8,12 @@ import type {
 } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { CharacterKey, SkillKey } from '@genshin-optimizer/zzz/consts'
 import type { TargetTag } from '@genshin-optimizer/zzz/db'
-import {
-  type AbilityDim,
-  type DmgAbilityDim,
-  isAbilityDim,
-} from '@genshin-optimizer/zzz/formula'
+import { type AbilityDim, isAbilityDim } from '@genshin-optimizer/zzz/formula'
 import type { Sheet, Tag } from '@genshin-optimizer/zzz/formula'
-import { partitionBundlableTags } from './bundledFormulaGrouping'
+import {
+  partitionBundlableTags,
+  resolveBundleDmgQ,
+} from './bundledFormulaGrouping'
 import { abilityFormulaNameToTranslated } from './char/abilityFormulaLabels'
 import { getVariant } from './char/util'
 import { ABILITY_DIM_LABEL } from './formulaDimensionUi'
@@ -30,12 +29,6 @@ function bundleFieldRefs(byQ: Map<string, Tag>) {
     { label: ABILITY_DIM_LABEL.dazeBuildup, ref: byQ.get('dazeBuildup')! },
     { label: ABILITY_DIM_LABEL.anomBuildup, ref: byQ.get('anomBuildup')! },
   ]
-}
-
-function resolveBundleDmgQ(byQ: Map<string, Tag>): DmgAbilityDim | undefined {
-  if (byQ.has('standardDmg')) return 'standardDmg'
-  if (byQ.has('sheerDmg')) return 'sheerDmg'
-  return undefined
 }
 
 export function skillFromTag(tag: Tag): SkillKey | undefined {
@@ -109,11 +102,6 @@ export function groupFieldsByTag(
   }
 
   return fields
-}
-
-/** Flat skill icon key for talent-tab section headers. */
-export function skillSectionFlatIconKey(skill: string): string {
-  return `${skill}Flat`
 }
 
 export function groupFormulas(

@@ -7,7 +7,6 @@ import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { Box, ListSubheader, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
 import { isAbilityFormulaTag, parseAbilityFromTag } from './abilityTag'
-import { skillSectionFlatIconKey } from './bundledFormulaFields'
 import type { TalentSheetElementKey } from './char/consts'
 import { getFieldCategory } from './char/fieldCategory'
 import { tagFieldSubset } from './char/tagFieldMap'
@@ -16,6 +15,7 @@ import type { FormulaDimension } from './formulaDimensionUi'
 import { ABILITY_DIM_LABEL, formulaDimensionLabel } from './formulaDimensionUi'
 import {
   OptTalentSheetSectionHeader,
+  skillSectionFlatIconKey,
   talentSheetElementIcon,
   talentSheetElementLabel,
 } from './optPanelSections'

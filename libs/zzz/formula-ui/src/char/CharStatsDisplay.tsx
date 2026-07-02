@@ -15,7 +15,6 @@ import { applyDamageTypeToTag, targetTag } from '@genshin-optimizer/zzz/db'
 import { getTeamFrame0 } from '@genshin-optimizer/zzz/db'
 import { useCharacterContext, useTeam } from '@genshin-optimizer/zzz/db-ui'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
-import { own } from '@genshin-optimizer/zzz/formula'
 import {
   StatHighlightContext,
   ZCard,
@@ -24,37 +23,17 @@ import {
 } from '@genshin-optimizer/zzz/ui'
 import { ListItem } from '@mui/material'
 import { Fragment, useContext, useMemo } from 'react'
-import { groupFormulas } from '../bundledFormulaFields'
-import { useZzzCalcContext } from '../hooks'
+import { useGroupedOptFormulaFields, useZzzCalcContext } from '../hooks'
 import { OptPanelSectionHeader } from '../optPanelSections'
-import {
-  filterNonStatFields,
-  listStatReadsFromFormulas,
-  statReadTagKey,
-} from '../optTarget'
+import { statReadTagKey } from '../optTarget'
 import { OptTargetCategorySectionHeader } from '../optTargetDisplay'
 import { tagToTagField } from '../util'
-import { groupFieldsByCategory, orderedFieldCategories } from './fieldCategory'
 
 export function CharStatsDisplay() {
   const character = useCharacterContext()
   const calc = useZzzCalcContext()
-  const { statReads, mechSections, otherFields } = useMemo(() => {
-    if (!calc || !character?.key)
-      return {
-        statReads: [] as Read<Tag>[],
-        mechSections: [],
-        otherFields: [] as Field[],
-      }
-    const reads = calc.listFormulas(own.listing.formulas)
-    const fields = groupFormulas(reads, character.key, character.key)
-    const { byCategory, other } = groupFieldsByCategory(character.key, fields)
-    return {
-      statReads: listStatReadsFromFormulas(reads),
-      mechSections: orderedFieldCategories(byCategory),
-      otherFields: filterNonStatFields(other),
-    }
-  }, [calc, character?.key])
+  const { statReads, categorySections, otherFields } =
+    useGroupedOptFormulaFields(character?.key, calc)
 
   return (
     <ZCard>
@@ -71,7 +50,7 @@ export function CharStatsDisplay() {
             ))}
           </>
         )}
-        {mechSections.map(({ category, fields }) => (
+        {categorySections.map(({ category, fields }) => (
           <Fragment key={category}>
             <OptTargetCategorySectionHeader category={category} />
             {fields.map((field, index) => (

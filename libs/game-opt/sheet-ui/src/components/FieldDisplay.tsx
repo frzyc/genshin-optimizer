@@ -19,8 +19,8 @@ import {
   Typography,
   styled,
 } from '@mui/material'
-import type { ReactNode } from 'react'
-import React, { useContext, useMemo } from 'react'
+import type { ElementType, ReactNode } from 'react'
+import { useContext, useMemo } from 'react'
 import {
   FormulaTextCacheContext,
   FormulaTextContext,
@@ -51,7 +51,7 @@ function FieldDisplay({
   component = ListItem,
 }: {
   field: Field
-  component?: React.ElementType
+  component?: ElementType
 }) {
   if ('fieldValue' in field)
     return <TextFieldDisplay field={field} component={component} />
@@ -69,7 +69,7 @@ export function TextFieldDisplay({
   component,
 }: {
   field: TextField
-  component?: React.ElementType
+  component?: ElementType
 }) {
   const { title, subtitle, variant, toFixed, fieldValue, unit } = field
   const titleEle = <span>{title}</span>
@@ -109,7 +109,7 @@ export function MultiTagFieldDisplay({
   onMouseLeave,
 }: {
   field: MultiTagField
-  component?: React.ElementType
+  component?: ElementType
   showZero?: boolean
   rowSx?: SxProps<Theme>
   onClickFormula?: (read: Read) => void
@@ -190,7 +190,7 @@ export function MultiTagFieldDisplay({
             : undefined
           return (
             <Box
-              key={`${tag.sheet}_${tag.name}_${tag.q}`}
+              key={`${tag['sheet']}_${tag['name']}_${tag['q']}`}
               component="span"
               sx={{
                 display: 'inline-flex',
@@ -229,7 +229,7 @@ export function TagFieldDisplay({
   onMouseLeave,
 }: {
   field: TagField
-  component?: React.ElementType
+  component?: ElementType
   emphasize?: boolean
 
   // Show field, even if the value is zero

@@ -28,9 +28,9 @@ export default async function runExecutor(
     sheet: sheet!,
     name: q!,
   }))
-  const rawFormulas = extractFormulaMetadata(
+  const rawFormulas = extractFormulaMetadata<Tag, Tag>(
     data,
-    (tag: Tag, value, result) => {
+    (tag: Tag, value, _result) => {
       if (
         // sheet-specific
         tag.sheet !== 'agg' &&

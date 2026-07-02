@@ -1,24 +1,17 @@
 import { DropdownButton } from '@genshin-optimizer/common/ui'
-import type { Field } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { ICachedCharacter, Team } from '@genshin-optimizer/zzz/db'
 import { getTeamFrame0, targetTag } from '@genshin-optimizer/zzz/db'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
-import { own } from '@genshin-optimizer/zzz/formula'
 import {
   FullTagDisplay,
   OptPanelSectionHeader,
   OptTargetCategorySectionHeader,
   OptTargetSelectedLabel,
-  filterNonStatFields,
-  groupFieldsByCategory,
-  groupFormulas,
-  listStatReadsFromFormulas,
-  orderedFieldCategories,
   statReadTagKey,
   statReadToTargetTag,
+  useGroupedOptFormulaFields,
   useZzzCalcContext,
 } from '@genshin-optimizer/zzz/formula-ui'
-import type { TalentSheetElementKey } from '@genshin-optimizer/zzz/formula-ui'
 import { Box, ListItemText, MenuItem } from '@mui/material'
 import { useMemo } from 'react'
 import { OptTargetFieldMenuItem } from './OptTargetFieldMenuItem'
@@ -38,26 +31,8 @@ export function OptSelector({
     return targetTag(target)
   }, [target])
 
-  const { statReads, skillSections, otherFields } = useMemo(() => {
-    if (!calc) {
-      return {
-        statReads: [],
-        skillSections: [] as Array<{
-          category: TalentSheetElementKey
-          fields: Field[]
-        }>,
-        otherFields: [] as Field[],
-      }
-    }
-    const reads = calc.listFormulas(own.listing.formulas)
-    const fields = groupFormulas(reads, characterKey, characterKey)
-    const { byCategory, other } = groupFieldsByCategory(characterKey, fields)
-    return {
-      statReads: listStatReadsFromFormulas(reads),
-      skillSections: orderedFieldCategories(byCategory),
-      otherFields: filterNonStatFields(other),
-    }
-  }, [calc, characterKey])
+  const { statReads, categorySections, otherFields } =
+    useGroupedOptFormulaFields(characterKey, calc)
 
   const selectedTitle = tag ? (
     <OptTargetSelectedLabel charKey={characterKey} tag={tag} inline />
@@ -122,7 +97,7 @@ export function OptSelector({
           database={database}
         />
       ))}
-      {skillSections.flatMap(({ category, fields }) => [
+      {categorySections.flatMap(({ category, fields }) => [
         <OptTargetCategorySectionHeader
           key={`header_${category}`}
           category={category}
