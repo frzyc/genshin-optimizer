@@ -203,18 +203,23 @@ function OptimizeWrapper() {
     })
 
     cancelled.then(() => currentSolver.current?.terminate('user cancelled'))
+    let optimizer: Solver<string> | undefined
     let results: BuildResult<string>[]
     try {
       if (!cfg) return
-      const optimizer = new Solver(cfg)
-      currentSolver.current = optimizer
+      currentSolver.current = optimizer = new Solver(cfg)
       results = await optimizer.results
+      // a newer run replaced us, let it own the state
+      if (currentSolver.current !== optimizer) return
     } catch {
       return
     } finally {
-      currentSolver.current = null
-      cancelToken.current = () => {}
-      setOptimizing(false)
+      // skip cleanup if a newer run replaced us
+      if (currentSolver.current === optimizer) {
+        currentSolver.current = null
+        cancelToken.current = () => {}
+        setOptimizing(false)
+      }
     }
     // Save results to optConfig
     database.optConfigs.newOrSetGeneratedBuildList(optConfigId, {
@@ -230,7 +235,8 @@ function OptimizeWrapper() {
   const onCancel = useCallback(() => {
     cancelToken.current()
     setOptimizing(false)
-  }, [cancelToken])
+    setProgress(undefined)
+  }, [cancelToken, setProgress])
 
   return (
     <CardThemed>
