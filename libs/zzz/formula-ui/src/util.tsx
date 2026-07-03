@@ -22,6 +22,16 @@ type Translated = [
   tr: (i18key: string, values?: Record<string, string | number>) => ReactNode,
 ]
 
+const formulaBaseQs = new Set([
+  'standardDmgBase',
+  'sheerDmgBase',
+  'anomalyDmgBase',
+  'shieldBase',
+  'dazeBuildupBase',
+  'anomBuildupBase',
+  'healBase',
+])
+
 export function trans(typeKey: 'char', key: CharacterKey): Translated
 export function trans(typeKey: 'wengine', key: WengineKey): Translated
 export function trans(typeKey: 'disc', key: DiscSetKey): Translated
@@ -42,6 +52,8 @@ export function trans(
 export function getTagLabel(tag: Tag | undefined | null): string {
   if (!tag) return ''
   const { et, q, qt, name } = tag
+  if (et === 'own' && qt === 'formula' && q && formulaBaseQs.has(q))
+    return 'base'
   if (et === 'own' && qt === 'formula' && q !== 'base') {
     return name ?? q ?? ''
   }

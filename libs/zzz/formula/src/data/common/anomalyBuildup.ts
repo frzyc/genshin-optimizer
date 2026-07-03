@@ -17,7 +17,7 @@ const data: TagMapNodeEntries = [
   // Anomaly Buildup Formula
   ownBuff.formula.anomBuildup.add(
     prod(
-      own.formula.base,
+      own.formula.anomBuildupBase,
       own.formula.anomMas_mult_,
       own.formula.anomBuildup_mult_,
       own.formula.enemyAnomBuildupRes_mult_
