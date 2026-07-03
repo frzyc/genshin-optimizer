@@ -106,6 +106,12 @@
         "libs/gi/page-settings/src/index.tsx"
       ],
       "@genshin-optimizer/gi/page-team": ["libs/gi/page-team/src/index.tsx"],
+      "@genshin-optimizer/gi/page-optimize": [
+        "libs/gi/page-optimize/src/index.tsx"
+      ],
+      "@genshin-optimizer/gi/page-team/experiment-ui": [
+        "libs/gi/page-team/src/experimentUi.ts"
+      ],
       "@genshin-optimizer/gi/page-teams": ["libs/gi/page-teams/src/index.tsx"],
       "@genshin-optimizer/gi/page-tools": ["libs/gi/page-tools/src/index.tsx"],
       "@genshin-optimizer/gi/page-weapons": [

@@ -1,0 +1,8 @@
+{
+  "name": "gi-page-optimize",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/gi/page-optimize/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {}
+}

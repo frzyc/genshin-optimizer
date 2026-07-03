@@ -73,6 +73,7 @@ import {
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { CustomMultiTargetButton } from '../../CustomMultiTarget/CustomMultiTargetButton'
+import { useOptimizeCalcBar } from '../../OptimizeChrome/OptimizeCalcBarContext'
 import ArtifactSetConfig from '../TabOptimize/Components/ArtifactSetConfig'
 import BonusStatsCard from '../TabOptimize/Components/BonusStatsCard'
 import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard'
@@ -103,6 +104,7 @@ const filterOptionReducer = (
 ) => ({ ...state, ...action })
 export default function TabUpopt() {
   const { t } = useTranslation('page_character_optimize')
+  const calcBar = useOptimizeCalcBar()
   const {
     teamId,
     teamCharId,
@@ -562,19 +564,21 @@ export default function TabUpopt() {
                 </Trans>
               </Alert>
             )}
-            <CardThemed bgt="light">
-              <CardContent>
-                <Grid container spacing={1}>
-                  <Grid item></Grid>
-                  <Grid item>
-                    <HitModeToggle size="small" />
+            {!calcBar && (
+              <CardThemed bgt="light">
+                <CardContent>
+                  <Grid container spacing={1}>
+                    <Grid item></Grid>
+                    <Grid item>
+                      <HitModeToggle size="small" />
+                    </Grid>
+                    <Grid item>
+                      <ReactionToggle size="small" />
+                    </Grid>
                   </Grid>
-                  <Grid item>
-                    <ReactionToggle size="small" />
-                  </Grid>
-                </Grid>
-              </CardContent>
-            </CardThemed>
+                </CardContent>
+              </CardThemed>
+            )}
             {pagination}
             {noArtifact && <AddArtInfo />}
             <Suspense fallback={false}>

@@ -18,13 +18,21 @@ import { DetailStatButton } from './DetailStatButton'
 export function LoadoutEditorModal({
   open,
   onClose,
+  i18nNs = 'loadout',
+  onChangeTeamCharId: onChangeTeamCharIdProp,
 }: {
   open: boolean
   onClose: () => void
+  /** Use `playstyle` on the optimize context bar (user-facing copy). */
+  i18nNs?: 'loadout' | 'playstyle'
+  /** Called after the active team slot playstyle is updated (e.g. persist `optTeamCharId`). */
+  onChangeTeamCharId?: (teamCharId: string) => void
 }) {
   const { teamId, teamChar, teamCharId } = useContext(TeamCharacterContext)
   const database = useDatabase()
-  const { t } = useTranslation('page_team')
+  const { t } = useTranslation(
+    i18nNs === 'playstyle' ? 'playstyle' : 'page_team'
+  )
 
   const handleName = (loadoutName: string): void => {
     database.teamChars.set(teamCharId, { name: loadoutName })
@@ -44,6 +52,7 @@ export function LoadoutEditorModal({
     database.teams.set(teamId, (team) => {
       team.loadoutData[index] = { teamCharId: newTeamCharId } as LoadoutDatum
     })
+    onChangeTeamCharIdProp?.(newTeamCharId)
   }
   const elementKey = getCharEle(teamChar.key)
 
@@ -51,7 +60,7 @@ export function LoadoutEditorModal({
     <ModalWrapper open={open} onClose={onClose}>
       <CardThemed>
         <CardHeader
-          title={t('loadout.edit')}
+          title={i18nNs === 'playstyle' ? t('edit') : t('loadout.edit')}
           avatar={<LoadoutIcon />}
           titleTypographyProps={{ variant: 'h6' }}
           action={
@@ -80,6 +89,7 @@ export function LoadoutEditorModal({
           <LoadoutDropdown
             teamCharId={teamCharId}
             onChangeTeamCharId={onChangeTeamCharId}
+            i18nNs={i18nNs}
             dropdownBtnProps={{
               fullWidth: true,
               sx: { flexGrow: 1, backgroundColor: 'contentLight.main' },
