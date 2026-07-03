@@ -8,10 +8,12 @@ import type { ZzzDatabase } from '../Database'
 
 const initCharMeta: ICharMeta = deepFreeze({
   description: '',
+  collapsedOptCategories: [],
 })
 
 const charMetaSchema = z.object({
   description: zodString(''),
+  collapsedOptCategories: z.array(z.string()).catch([]),
 })
 
 export class CharMetaDataManager extends DataManager<

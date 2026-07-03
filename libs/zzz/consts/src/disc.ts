@@ -27,9 +27,11 @@ export const allDiscSetKeys = [
   'ShockstarDisco',
   'SoulRock',
   'SwingJazz',
+  'TheSkyAblaze',
   'ThunderMetal',
   'WhiteWaterBallad',
   'WoodpeckerElectro',
+  'WutheringSalon',
   'YunkuiTales',
 ] as const
 export type DiscSetKey = (typeof allDiscSetKeys)[number]
@@ -57,6 +59,7 @@ export const allElementalDmgMainStatKeys = [
   'ice_dmg_',
   'physical_dmg_',
   'ether_dmg_',
+  'wind_dmg_',
 ] as const
 export const allDiscMainStatKeys = [
   'hp',
@@ -151,6 +154,7 @@ const mainData = {
   ice_dmg_: m123,
   physical_dmg_: m123,
   ether_dmg_: m123,
+  wind_dmg_: m123,
   anomMas_: m123,
   enerRegen_: { B: 0.2, A: 0.4, S: 0.6 },
   impact_: { B: 0.06, A: 0.12, S: 0.18 },
@@ -203,6 +207,8 @@ export const disc2pEffect: Record<
   WhiteWaterBallad: { physical_dmg_: 0.1 },
   WoodpeckerElectro: { crit_: 0.08 },
   YunkuiTales: { hp_: 0.1 },
+  WutheringSalon: { wind_dmg_: 0.1 },
+  TheSkyAblaze: { ether_dmg_: 0.1 },
 }
 
 // Copied from libs\zzz\dm\src\dm\disc\discNames.json, mainly used for scanner.
@@ -233,4 +239,6 @@ export const discSetNames: Record<DiscSetKey, string> = {
   ShiningAria: 'Shining Aria',
   BunnyInWonderland: 'Bunny in Wonderland',
   NotesFromTheChained: 'Notes From the Chained',
+  WutheringSalon: 'Wuthering Salon',
+  TheSkyAblaze: 'The Sky Ablaze',
 }

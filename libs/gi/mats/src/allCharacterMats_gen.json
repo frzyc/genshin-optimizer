@@ -72536,6 +72536,627 @@
       }
     }
   },
+  "Lohen": {
+    "talents": {
+      "normal": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfResistance",
+              "amount": 3
+            },
+            {
+              "item": "FirmArrowhead",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToResistance",
+              "amount": 2
+            },
+            {
+              "item": "SharpArrowhead",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToResistance",
+              "amount": 4
+            },
+            {
+              "item": "SharpArrowhead",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToResistance",
+              "amount": 6
+            },
+            {
+              "item": "SharpArrowhead",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToResistance",
+              "amount": 9
+            },
+            {
+              "item": "SharpArrowhead",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfResistance",
+              "amount": 4
+            },
+            {
+              "item": "WeatheredArrowhead",
+              "amount": 4
+            },
+            {
+              "item": "AscendedSampleKnight",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfResistance",
+              "amount": 6
+            },
+            {
+              "item": "WeatheredArrowhead",
+              "amount": 6
+            },
+            {
+              "item": "AscendedSampleKnight",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfResistance",
+              "amount": 12
+            },
+            {
+              "item": "WeatheredArrowhead",
+              "amount": 9
+            },
+            {
+              "item": "AscendedSampleKnight",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfResistance",
+              "amount": 16
+            },
+            {
+              "item": "WeatheredArrowhead",
+              "amount": 12
+            },
+            {
+              "item": "AscendedSampleKnight",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "skill": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfResistance",
+              "amount": 3
+            },
+            {
+              "item": "FirmArrowhead",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToResistance",
+              "amount": 2
+            },
+            {
+              "item": "SharpArrowhead",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToResistance",
+              "amount": 4
+            },
+            {
+              "item": "SharpArrowhead",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToResistance",
+              "amount": 6
+            },
+            {
+              "item": "SharpArrowhead",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToResistance",
+              "amount": 9
+            },
+            {
+              "item": "SharpArrowhead",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfResistance",
+              "amount": 4
+            },
+            {
+              "item": "WeatheredArrowhead",
+              "amount": 4
+            },
+            {
+              "item": "AscendedSampleKnight",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfResistance",
+              "amount": 6
+            },
+            {
+              "item": "WeatheredArrowhead",
+              "amount": 6
+            },
+            {
+              "item": "AscendedSampleKnight",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfResistance",
+              "amount": 12
+            },
+            {
+              "item": "WeatheredArrowhead",
+              "amount": 9
+            },
+            {
+              "item": "AscendedSampleKnight",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfResistance",
+              "amount": 16
+            },
+            {
+              "item": "WeatheredArrowhead",
+              "amount": 12
+            },
+            {
+              "item": "AscendedSampleKnight",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "burst": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfResistance",
+              "amount": 3
+            },
+            {
+              "item": "FirmArrowhead",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToResistance",
+              "amount": 2
+            },
+            {
+              "item": "SharpArrowhead",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToResistance",
+              "amount": 4
+            },
+            {
+              "item": "SharpArrowhead",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToResistance",
+              "amount": 6
+            },
+            {
+              "item": "SharpArrowhead",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToResistance",
+              "amount": 9
+            },
+            {
+              "item": "SharpArrowhead",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfResistance",
+              "amount": 4
+            },
+            {
+              "item": "WeatheredArrowhead",
+              "amount": 4
+            },
+            {
+              "item": "AscendedSampleKnight",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfResistance",
+              "amount": 6
+            },
+            {
+              "item": "WeatheredArrowhead",
+              "amount": 6
+            },
+            {
+              "item": "AscendedSampleKnight",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfResistance",
+              "amount": 12
+            },
+            {
+              "item": "WeatheredArrowhead",
+              "amount": 9
+            },
+            {
+              "item": "AscendedSampleKnight",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfResistance",
+              "amount": 16
+            },
+            {
+              "item": "WeatheredArrowhead",
+              "amount": 12
+            },
+            {
+              "item": "AscendedSampleKnight",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      }
+    },
+    "ascension": {
+      "0": {
+        "cost": 0,
+        "items": []
+      },
+      "1": {
+        "cost": 20000,
+        "items": [
+          {
+            "item": "ShivadaJadeSliver",
+            "amount": 1
+          },
+          {
+            "item": "EtherwingMoth",
+            "amount": 3
+          },
+          {
+            "item": "FirmArrowhead",
+            "amount": 3
+          }
+        ]
+      },
+      "2": {
+        "cost": 40000,
+        "items": [
+          {
+            "item": "ShivadaJadeFragment",
+            "amount": 3
+          },
+          {
+            "item": "PrismaticSeveredTail",
+            "amount": 2
+          },
+          {
+            "item": "EtherwingMoth",
+            "amount": 10
+          },
+          {
+            "item": "FirmArrowhead",
+            "amount": 15
+          }
+        ]
+      },
+      "3": {
+        "cost": 60000,
+        "items": [
+          {
+            "item": "ShivadaJadeFragment",
+            "amount": 6
+          },
+          {
+            "item": "PrismaticSeveredTail",
+            "amount": 4
+          },
+          {
+            "item": "EtherwingMoth",
+            "amount": 20
+          },
+          {
+            "item": "SharpArrowhead",
+            "amount": 12
+          }
+        ]
+      },
+      "4": {
+        "cost": 80000,
+        "items": [
+          {
+            "item": "ShivadaJadeChunk",
+            "amount": 3
+          },
+          {
+            "item": "PrismaticSeveredTail",
+            "amount": 8
+          },
+          {
+            "item": "EtherwingMoth",
+            "amount": 30
+          },
+          {
+            "item": "SharpArrowhead",
+            "amount": 18
+          }
+        ]
+      },
+      "5": {
+        "cost": 100000,
+        "items": [
+          {
+            "item": "ShivadaJadeChunk",
+            "amount": 6
+          },
+          {
+            "item": "PrismaticSeveredTail",
+            "amount": 12
+          },
+          {
+            "item": "EtherwingMoth",
+            "amount": 45
+          },
+          {
+            "item": "WeatheredArrowhead",
+            "amount": 12
+          }
+        ]
+      },
+      "6": {
+        "cost": 120000,
+        "items": [
+          {
+            "item": "ShivadaJadeGemstone",
+            "amount": 6
+          },
+          {
+            "item": "PrismaticSeveredTail",
+            "amount": 20
+          },
+          {
+            "item": "EtherwingMoth",
+            "amount": 60
+          },
+          {
+            "item": "WeatheredArrowhead",
+            "amount": 24
+          }
+        ]
+      }
+    }
+  },
   "Linnea": {
     "talents": {
       "normal": {

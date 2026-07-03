@@ -200,7 +200,9 @@ export default function hydro(
       dewdropDmg: dmgNode('atk', dm.skill.dewdropDmg, 'skill', {
         premod: { skill_dmgInc: suffusion_dewdrop_dmgInc },
       }),
-      thornDmg: dmgNode('atk', dm.skill.thornDmg, 'skill'),
+      thornDmg: dmgNode('atk', dm.skill.thornDmg, 'skill', {
+        hit: { reaction: constant('') },
+      }),
       suffusion_hpCost,
       suffusion_dewdrop_dmgInc,
     },

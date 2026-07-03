@@ -160,7 +160,9 @@ const dmgFormulas = {
   },
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
-    thornDmg: dmgNode('atk', dm.charged.thornDmg, 'normal'),
+    thornDmg: dmgNode('atk', dm.charged.thornDmg, 'normal', {
+      hit: { reaction: constant('') },
+    }),
   },
   plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {

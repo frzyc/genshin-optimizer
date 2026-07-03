@@ -16,5 +16,7 @@
   "build_other": "{{count}} Builds",
   "worker_one": "{{count}} Worker",
   "worker_other": "{{count}} Workers",
-  "removeTeammate": "Remove Teammate"
+  "removeTeammate": "Remove Teammate",
+  "allowRainbow": "Allow rainbow builds",
+  "allowRainbowDesc": "When off, only efficient 4:2 layouts are considered, which greatly reduces search space and is recommended for large builds. Works with Disc Set Config filters below."
 }

@@ -1,0 +1,44 @@
+{
+  "name": "Desastre e Remorso",
+  "description": {
+    "0": "Uma lança forjada com Pedra Branca e Estrelas de Prata. Sua ponta afiada é constantemente envolta por um frio que penetra os ossos."
+  },
+  "passiveName": "Ruínas e Culpa",
+  "passiveDescription": {
+    "0": {
+      "0": "Depois que o portador lança uma Habilidade Elemental, ele obtém \"Caminho da Disputa\" por 17s, além de \"Imperdoável\" e \"Incurável\" por 3s cada. Esse efeito pode ser ativado uma vez a cada 18s.",
+      "1": "Imperdoável: Aumenta o Dano de Ataque Normal e Ataque Carregado do portador em <cryo>40%</cryo>.",
+      "2": "Incurável: Aumenta o Dano da Habilidade Elemental e do Supremo do portador em <cryo>40%</cryo>.",
+      "3": "Enquanto Caminho da Disputa estiver ativo, quando o portador atingir um oponente com um Ataque Normal ou Ataque Carregado, a duração de Incurável aumentará em 1s. Quando o portador atingir um oponente com sua Habilidade Elemental ou Supremo, a duração de Imperdoável aumentará em 1s. Cada um dos efeitos acima pode ser ativado uma vez a cada 0.1s. Quando Caminho da Disputa terminar, ou o portador sair de campo, Imperdoável e Incurável serão removidos.",
+      "4": "Mágico: Ritual Secreto: Os Bônus de Dano acima aumentam em 75%."
+    },
+    "1": {
+      "0": "Depois que o portador lança uma Habilidade Elemental, ele obtém \"Caminho da Disputa\" por 17s, além de \"Imperdoável\" e \"Incurável\" por 3s cada. Esse efeito pode ser ativado uma vez a cada 18s.",
+      "1": "Imperdoável: Aumenta o Dano de Ataque Normal e Ataque Carregado do portador em <cryo>50%</cryo>.",
+      "2": "Incurável: Aumenta o Dano da Habilidade Elemental e do Supremo do portador em <cryo>50%</cryo>.",
+      "3": "Enquanto Caminho da Disputa estiver ativo, quando o portador atingir um oponente com um Ataque Normal ou Ataque Carregado, a duração de Incurável aumentará em 1s. Quando o portador atingir um oponente com sua Habilidade Elemental ou Supremo, a duração de Imperdoável aumentará em 1s. Cada um dos efeitos acima pode ser ativado uma vez a cada 0.1s. Quando Caminho da Disputa terminar, ou o portador sair de campo, Imperdoável e Incurável serão removidos.",
+      "4": "Mágico: Ritual Secreto: Os Bônus de Dano acima aumentam em 75%."
+    },
+    "2": {
+      "0": "Depois que o portador lança uma Habilidade Elemental, ele obtém \"Caminho da Disputa\" por 17s, além de \"Imperdoável\" e \"Incurável\" por 3s cada. Esse efeito pode ser ativado uma vez a cada 18s.",
+      "1": "Imperdoável: Aumenta o Dano de Ataque Normal e Ataque Carregado do portador em <cryo>60%</cryo>.",
+      "2": "Incurável: Aumenta o Dano da Habilidade Elemental e do Supremo do portador em <cryo>60%</cryo>.",
+      "3": "Enquanto Caminho da Disputa estiver ativo, quando o portador atingir um oponente com um Ataque Normal ou Ataque Carregado, a duração de Incurável aumentará em 1s. Quando o portador atingir um oponente com sua Habilidade Elemental ou Supremo, a duração de Imperdoável aumentará em 1s. Cada um dos efeitos acima pode ser ativado uma vez a cada 0.1s. Quando Caminho da Disputa terminar, ou o portador sair de campo, Imperdoável e Incurável serão removidos.",
+      "4": "Mágico: Ritual Secreto: Os Bônus de Dano acima aumentam em 75%."
+    },
+    "3": {
+      "0": "Depois que o portador lança uma Habilidade Elemental, ele obtém \"Caminho da Disputa\" por 17s, além de \"Imperdoável\" e \"Incurável\" por 3s cada. Esse efeito pode ser ativado uma vez a cada 18s.",
+      "1": "Imperdoável: Aumenta o Dano de Ataque Normal e Ataque Carregado do portador em <cryo>70%</cryo>.",
+      "2": "Incurável: Aumenta o Dano da Habilidade Elemental e do Supremo do portador em <cryo>70%</cryo>.",
+      "3": "Enquanto Caminho da Disputa estiver ativo, quando o portador atingir um oponente com um Ataque Normal ou Ataque Carregado, a duração de Incurável aumentará em 1s. Quando o portador atingir um oponente com sua Habilidade Elemental ou Supremo, a duração de Imperdoável aumentará em 1s. Cada um dos efeitos acima pode ser ativado uma vez a cada 0.1s. Quando Caminho da Disputa terminar, ou o portador sair de campo, Imperdoável e Incurável serão removidos.",
+      "4": "Mágico: Ritual Secreto: Os Bônus de Dano acima aumentam em 75%."
+    },
+    "4": {
+      "0": "Depois que o portador lança uma Habilidade Elemental, ele obtém \"Caminho da Disputa\" por 17s, além de \"Imperdoável\" e \"Incurável\" por 3s cada. Esse efeito pode ser ativado uma vez a cada 18s.",
+      "1": "Imperdoável: Aumenta o Dano de Ataque Normal e Ataque Carregado do portador em <cryo>80%</cryo>.",
+      "2": "Incurável: Aumenta o Dano da Habilidade Elemental e do Supremo do portador em <cryo>80%</cryo>.",
+      "3": "Enquanto Caminho da Disputa estiver ativo, quando o portador atingir um oponente com um Ataque Normal ou Ataque Carregado, a duração de Incurável aumentará em 1s. Quando o portador atingir um oponente com sua Habilidade Elemental ou Supremo, a duração de Imperdoável aumentará em 1s. Cada um dos efeitos acima pode ser ativado uma vez a cada 0.1s. Quando Caminho da Disputa terminar, ou o portador sair de campo, Imperdoável e Incurável serão removidos.",
+      "4": "Mágico: Ritual Secreto: Os Bônus de Dano acima aumentam em 75%."
+    }
+  }
+}

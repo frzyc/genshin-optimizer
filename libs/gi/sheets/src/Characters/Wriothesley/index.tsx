@@ -2,6 +2,7 @@ import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
+  constant,
   greaterEq,
   infoMut,
   input,
@@ -181,7 +182,9 @@ const dmgFormulas = {
   },
   burst: {
     skillDmg: dmgNode('atk', dm.burst.skillDmg, 'burst'),
-    bladeDmg: dmgNode('atk', dm.burst.bladeDmg, 'burst'),
+    bladeDmg: dmgNode('atk', dm.burst.bladeDmg, 'burst', {
+      hit: { reaction: constant('') },
+    }),
   },
   passive1: {
     heal: healNode(

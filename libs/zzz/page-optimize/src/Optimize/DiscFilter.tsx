@@ -16,6 +16,8 @@ import {
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
 import { StatDisplay } from '@genshin-optimizer/zzz/ui'
+import CheckBoxIcon from '@mui/icons-material/CheckBox'
+import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
 import CloseIcon from '@mui/icons-material/Close'
 import {
   Button,
@@ -29,6 +31,7 @@ import {
 } from '@mui/material'
 import { Box } from '@mui/system'
 import { Suspense, useCallback, useContext } from 'react'
+import { useTranslation } from 'react-i18next'
 import { DiscLevelFilter } from './DiscLevelFilter'
 import { DiscSetFilter } from './DiscSetFilter'
 
@@ -91,6 +94,7 @@ function DiscFilterModal({
   onClose: () => void
   disabled?: boolean
 }) {
+  const { t } = useTranslation('page_optimize')
   const { database } = useDatabaseContext()
   const { optConfigId, optConfig } = useContext(OptConfigContext)
   return (
@@ -112,6 +116,14 @@ function DiscFilterModal({
               <MainStatSelector discsBySlot={discsBySlot} disabled={disabled} />
               <Button
                 disabled={disabled}
+                fullWidth
+                startIcon={
+                  optConfig.useEquipped ? (
+                    <CheckBoxIcon />
+                  ) : (
+                    <CheckBoxOutlineBlankIcon />
+                  )
+                }
                 onClick={() =>
                   database.optConfigs.set(optConfigId, {
                     useEquipped: !optConfig.useEquipped,
@@ -121,6 +133,28 @@ function DiscFilterModal({
               >
                 Use equipped Discs
               </Button>
+              <Button
+                disabled={disabled}
+                fullWidth
+                startIcon={
+                  optConfig.allowRainbow ? (
+                    <CheckBoxIcon />
+                  ) : (
+                    <CheckBoxOutlineBlankIcon />
+                  )
+                }
+                onClick={() =>
+                  database.optConfigs.set(optConfigId, {
+                    allowRainbow: !optConfig.allowRainbow,
+                  })
+                }
+                color={optConfig.allowRainbow ? 'success' : 'secondary'}
+              >
+                {t('allowRainbow')}
+              </Button>
+              <Typography variant="body2" color="text.secondary">
+                {t('allowRainbowDesc')}
+              </Typography>
               <SetFilter discBySlot={discsBySlot} disabled={disabled} />
             </Stack>
           </Suspense>

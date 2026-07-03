@@ -38,6 +38,19 @@ export const formulas = {
       name: 'disorderDmgInst_electric',
     },
   },
+  vortexDmgInst_electric: {
+    sheet: 'Cissia',
+    name: 'vortexDmgInst_electric',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'Cissia',
+      attribute: 'electric',
+      damageType1: 'vortex',
+      name: 'vortexDmgInst_electric',
+    },
+  },
   abloomDmgInst: {
     sheet: 'Cissia',
     name: 'abloomDmgInst',
@@ -76,9 +89,9 @@ export const formulas = {
       name: 'dazeInst',
     },
   },
-  BasicAttackTongueFlick_0_dmg: {
+  'BasicAttackTongueFlick_0:standardDmg': {
     sheet: 'Cissia',
-    name: 'BasicAttackTongueFlick_0_dmg',
+    name: 'BasicAttackTongueFlick_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -87,12 +100,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackTongueFlick_0_dmg',
+      name: 'BasicAttackTongueFlick_0',
     },
   },
-  BasicAttackTongueFlick_0_daze: {
+  'BasicAttackTongueFlick_0:dazeBuildup': {
     sheet: 'Cissia',
-    name: 'BasicAttackTongueFlick_0_daze',
+    name: 'BasicAttackTongueFlick_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -101,12 +114,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackTongueFlick_0_daze',
+      name: 'BasicAttackTongueFlick_0',
     },
   },
-  BasicAttackTongueFlick_0_anomBuildup: {
+  'BasicAttackTongueFlick_0:anomBuildup': {
     sheet: 'Cissia',
-    name: 'BasicAttackTongueFlick_0_anomBuildup',
+    name: 'BasicAttackTongueFlick_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -115,12 +128,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackTongueFlick_0_anomBuildup',
+      name: 'BasicAttackTongueFlick_0',
     },
   },
-  BasicAttackTongueFlick_1_dmg: {
+  'BasicAttackTongueFlick_1:standardDmg': {
     sheet: 'Cissia',
-    name: 'BasicAttackTongueFlick_1_dmg',
+    name: 'BasicAttackTongueFlick_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -129,12 +142,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackTongueFlick_1_dmg',
+      name: 'BasicAttackTongueFlick_1',
     },
   },
-  BasicAttackTongueFlick_1_daze: {
+  'BasicAttackTongueFlick_1:dazeBuildup': {
     sheet: 'Cissia',
-    name: 'BasicAttackTongueFlick_1_daze',
+    name: 'BasicAttackTongueFlick_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -143,12 +156,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackTongueFlick_1_daze',
+      name: 'BasicAttackTongueFlick_1',
     },
   },
-  BasicAttackTongueFlick_1_anomBuildup: {
+  'BasicAttackTongueFlick_1:anomBuildup': {
     sheet: 'Cissia',
-    name: 'BasicAttackTongueFlick_1_anomBuildup',
+    name: 'BasicAttackTongueFlick_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -157,12 +170,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackTongueFlick_1_anomBuildup',
+      name: 'BasicAttackTongueFlick_1',
     },
   },
-  BasicAttackTongueFlick_2_dmg: {
+  'BasicAttackTongueFlick_2:standardDmg': {
     sheet: 'Cissia',
-    name: 'BasicAttackTongueFlick_2_dmg',
+    name: 'BasicAttackTongueFlick_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -171,12 +184,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackTongueFlick_2_dmg',
+      name: 'BasicAttackTongueFlick_2',
     },
   },
-  BasicAttackTongueFlick_2_daze: {
+  'BasicAttackTongueFlick_2:dazeBuildup': {
     sheet: 'Cissia',
-    name: 'BasicAttackTongueFlick_2_daze',
+    name: 'BasicAttackTongueFlick_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -185,12 +198,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackTongueFlick_2_daze',
+      name: 'BasicAttackTongueFlick_2',
     },
   },
-  BasicAttackTongueFlick_2_anomBuildup: {
+  'BasicAttackTongueFlick_2:anomBuildup': {
     sheet: 'Cissia',
-    name: 'BasicAttackTongueFlick_2_anomBuildup',
+    name: 'BasicAttackTongueFlick_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -199,12 +212,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackTongueFlick_2_anomBuildup',
+      name: 'BasicAttackTongueFlick_2',
     },
   },
-  BasicAttackTongueFlick_3_dmg: {
+  'BasicAttackTongueFlick_3:standardDmg': {
     sheet: 'Cissia',
-    name: 'BasicAttackTongueFlick_3_dmg',
+    name: 'BasicAttackTongueFlick_3:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -213,12 +226,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackTongueFlick_3_dmg',
+      name: 'BasicAttackTongueFlick_3',
     },
   },
-  BasicAttackTongueFlick_3_daze: {
+  'BasicAttackTongueFlick_3:dazeBuildup': {
     sheet: 'Cissia',
-    name: 'BasicAttackTongueFlick_3_daze',
+    name: 'BasicAttackTongueFlick_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -227,12 +240,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackTongueFlick_3_daze',
+      name: 'BasicAttackTongueFlick_3',
     },
   },
-  BasicAttackTongueFlick_3_anomBuildup: {
+  'BasicAttackTongueFlick_3:anomBuildup': {
     sheet: 'Cissia',
-    name: 'BasicAttackTongueFlick_3_anomBuildup',
+    name: 'BasicAttackTongueFlick_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -241,12 +254,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackTongueFlick_3_anomBuildup',
+      name: 'BasicAttackTongueFlick_3',
     },
   },
-  BasicAttackSerpentsKiss_0_dmg: {
+  'BasicAttackSerpentsKiss_0:standardDmg': {
     sheet: 'Cissia',
-    name: 'BasicAttackSerpentsKiss_0_dmg',
+    name: 'BasicAttackSerpentsKiss_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -255,12 +268,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSerpentsKiss_0_dmg',
+      name: 'BasicAttackSerpentsKiss_0',
     },
   },
-  BasicAttackSerpentsKiss_0_daze: {
+  'BasicAttackSerpentsKiss_0:dazeBuildup': {
     sheet: 'Cissia',
-    name: 'BasicAttackSerpentsKiss_0_daze',
+    name: 'BasicAttackSerpentsKiss_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -269,12 +282,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSerpentsKiss_0_daze',
+      name: 'BasicAttackSerpentsKiss_0',
     },
   },
-  BasicAttackSerpentsKiss_0_anomBuildup: {
+  'BasicAttackSerpentsKiss_0:anomBuildup': {
     sheet: 'Cissia',
-    name: 'BasicAttackSerpentsKiss_0_anomBuildup',
+    name: 'BasicAttackSerpentsKiss_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -283,12 +296,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSerpentsKiss_0_anomBuildup',
+      name: 'BasicAttackSerpentsKiss_0',
     },
   },
-  CorrodeBone_0_dmg: {
+  'CorrodeBone_0:standardDmg': {
     sheet: 'Cissia',
-    name: 'CorrodeBone_0_dmg',
+    name: 'CorrodeBone_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -297,12 +310,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'CorrodeBone_0_dmg',
+      name: 'CorrodeBone_0',
     },
   },
-  CorrodeBone_0_daze: {
+  'CorrodeBone_0:dazeBuildup': {
     sheet: 'Cissia',
-    name: 'CorrodeBone_0_daze',
+    name: 'CorrodeBone_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -311,12 +324,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'CorrodeBone_0_daze',
+      name: 'CorrodeBone_0',
     },
   },
-  CorrodeBone_0_anomBuildup: {
+  'CorrodeBone_0:anomBuildup': {
     sheet: 'Cissia',
-    name: 'CorrodeBone_0_anomBuildup',
+    name: 'CorrodeBone_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -325,12 +338,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'CorrodeBone_0_anomBuildup',
+      name: 'CorrodeBone_0',
     },
   },
-  DashAttackBiteMark_0_dmg: {
+  'DashAttackBiteMark_0:standardDmg': {
     sheet: 'Cissia',
-    name: 'DashAttackBiteMark_0_dmg',
+    name: 'DashAttackBiteMark_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -339,12 +352,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackBiteMark_0_dmg',
+      name: 'DashAttackBiteMark_0',
     },
   },
-  DashAttackBiteMark_0_daze: {
+  'DashAttackBiteMark_0:dazeBuildup': {
     sheet: 'Cissia',
-    name: 'DashAttackBiteMark_0_daze',
+    name: 'DashAttackBiteMark_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -353,12 +366,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackBiteMark_0_daze',
+      name: 'DashAttackBiteMark_0',
     },
   },
-  DashAttackBiteMark_0_anomBuildup: {
+  'DashAttackBiteMark_0:anomBuildup': {
     sheet: 'Cissia',
-    name: 'DashAttackBiteMark_0_anomBuildup',
+    name: 'DashAttackBiteMark_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -367,12 +380,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackBiteMark_0_anomBuildup',
+      name: 'DashAttackBiteMark_0',
     },
   },
-  DodgeCounterBiteBack_0_dmg: {
+  'DodgeCounterBiteBack_0:standardDmg': {
     sheet: 'Cissia',
-    name: 'DodgeCounterBiteBack_0_dmg',
+    name: 'DodgeCounterBiteBack_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -381,12 +394,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterBiteBack_0_dmg',
+      name: 'DodgeCounterBiteBack_0',
     },
   },
-  DodgeCounterBiteBack_0_daze: {
+  'DodgeCounterBiteBack_0:dazeBuildup': {
     sheet: 'Cissia',
-    name: 'DodgeCounterBiteBack_0_daze',
+    name: 'DodgeCounterBiteBack_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -395,12 +408,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterBiteBack_0_daze',
+      name: 'DodgeCounterBiteBack_0',
     },
   },
-  DodgeCounterBiteBack_0_anomBuildup: {
+  'DodgeCounterBiteBack_0:anomBuildup': {
     sheet: 'Cissia',
-    name: 'DodgeCounterBiteBack_0_anomBuildup',
+    name: 'DodgeCounterBiteBack_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -409,12 +422,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterBiteBack_0_anomBuildup',
+      name: 'DodgeCounterBiteBack_0',
     },
   },
-  SpecialAttackBaredFangs_0_dmg: {
+  'SpecialAttackBaredFangs_0:standardDmg': {
     sheet: 'Cissia',
-    name: 'SpecialAttackBaredFangs_0_dmg',
+    name: 'SpecialAttackBaredFangs_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -423,12 +436,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackBaredFangs_0_dmg',
+      name: 'SpecialAttackBaredFangs_0',
     },
   },
-  SpecialAttackBaredFangs_0_daze: {
+  'SpecialAttackBaredFangs_0:dazeBuildup': {
     sheet: 'Cissia',
-    name: 'SpecialAttackBaredFangs_0_daze',
+    name: 'SpecialAttackBaredFangs_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -437,12 +450,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackBaredFangs_0_daze',
+      name: 'SpecialAttackBaredFangs_0',
     },
   },
-  SpecialAttackBaredFangs_0_anomBuildup: {
+  'SpecialAttackBaredFangs_0:anomBuildup': {
     sheet: 'Cissia',
-    name: 'SpecialAttackBaredFangs_0_anomBuildup',
+    name: 'SpecialAttackBaredFangs_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -451,12 +464,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackBaredFangs_0_anomBuildup',
+      name: 'SpecialAttackBaredFangs_0',
     },
   },
-  EXSpecialAttackVenomousBite_0_dmg: {
+  'EXSpecialAttackVenomousBite_0:standardDmg': {
     sheet: 'Cissia',
-    name: 'EXSpecialAttackVenomousBite_0_dmg',
+    name: 'EXSpecialAttackVenomousBite_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -465,12 +478,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackVenomousBite_0_dmg',
+      name: 'EXSpecialAttackVenomousBite_0',
     },
   },
-  EXSpecialAttackVenomousBite_0_daze: {
+  'EXSpecialAttackVenomousBite_0:dazeBuildup': {
     sheet: 'Cissia',
-    name: 'EXSpecialAttackVenomousBite_0_daze',
+    name: 'EXSpecialAttackVenomousBite_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -479,12 +492,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackVenomousBite_0_daze',
+      name: 'EXSpecialAttackVenomousBite_0',
     },
   },
-  EXSpecialAttackVenomousBite_0_anomBuildup: {
+  'EXSpecialAttackVenomousBite_0:anomBuildup': {
     sheet: 'Cissia',
-    name: 'EXSpecialAttackVenomousBite_0_anomBuildup',
+    name: 'EXSpecialAttackVenomousBite_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -493,12 +506,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackVenomousBite_0_anomBuildup',
+      name: 'EXSpecialAttackVenomousBite_0',
     },
   },
-  EXSpecialAttackVenomousBite_1_dmg: {
+  'EXSpecialAttackVenomousBite_1:standardDmg': {
     sheet: 'Cissia',
-    name: 'EXSpecialAttackVenomousBite_1_dmg',
+    name: 'EXSpecialAttackVenomousBite_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -507,12 +520,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackVenomousBite_1_dmg',
+      name: 'EXSpecialAttackVenomousBite_1',
     },
   },
-  EXSpecialAttackVenomousBite_1_daze: {
+  'EXSpecialAttackVenomousBite_1:dazeBuildup': {
     sheet: 'Cissia',
-    name: 'EXSpecialAttackVenomousBite_1_daze',
+    name: 'EXSpecialAttackVenomousBite_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -521,12 +534,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackVenomousBite_1_daze',
+      name: 'EXSpecialAttackVenomousBite_1',
     },
   },
-  EXSpecialAttackVenomousBite_1_anomBuildup: {
+  'EXSpecialAttackVenomousBite_1:anomBuildup': {
     sheet: 'Cissia',
-    name: 'EXSpecialAttackVenomousBite_1_anomBuildup',
+    name: 'EXSpecialAttackVenomousBite_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -535,12 +548,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackVenomousBite_1_anomBuildup',
+      name: 'EXSpecialAttackVenomousBite_1',
     },
   },
-  ChainAttackGangOperation_0_dmg: {
+  'ChainAttackGangOperation_0:standardDmg': {
     sheet: 'Cissia',
-    name: 'ChainAttackGangOperation_0_dmg',
+    name: 'ChainAttackGangOperation_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -549,12 +562,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackGangOperation_0_dmg',
+      name: 'ChainAttackGangOperation_0',
     },
   },
-  ChainAttackGangOperation_0_daze: {
+  'ChainAttackGangOperation_0:dazeBuildup': {
     sheet: 'Cissia',
-    name: 'ChainAttackGangOperation_0_daze',
+    name: 'ChainAttackGangOperation_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -563,12 +576,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackGangOperation_0_daze',
+      name: 'ChainAttackGangOperation_0',
     },
   },
-  ChainAttackGangOperation_0_anomBuildup: {
+  'ChainAttackGangOperation_0:anomBuildup': {
     sheet: 'Cissia',
-    name: 'ChainAttackGangOperation_0_anomBuildup',
+    name: 'ChainAttackGangOperation_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -577,12 +590,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackGangOperation_0_anomBuildup',
+      name: 'ChainAttackGangOperation_0',
     },
   },
-  UltimateOphidiophobia_0_dmg: {
+  'UltimateOphidiophobia_0:standardDmg': {
     sheet: 'Cissia',
-    name: 'UltimateOphidiophobia_0_dmg',
+    name: 'UltimateOphidiophobia_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -591,12 +604,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateOphidiophobia_0_dmg',
+      name: 'UltimateOphidiophobia_0',
     },
   },
-  UltimateOphidiophobia_0_daze: {
+  'UltimateOphidiophobia_0:dazeBuildup': {
     sheet: 'Cissia',
-    name: 'UltimateOphidiophobia_0_daze',
+    name: 'UltimateOphidiophobia_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -605,12 +618,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateOphidiophobia_0_daze',
+      name: 'UltimateOphidiophobia_0',
     },
   },
-  UltimateOphidiophobia_0_anomBuildup: {
+  'UltimateOphidiophobia_0:anomBuildup': {
     sheet: 'Cissia',
-    name: 'UltimateOphidiophobia_0_anomBuildup',
+    name: 'UltimateOphidiophobia_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -619,12 +632,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateOphidiophobia_0_anomBuildup',
+      name: 'UltimateOphidiophobia_0',
     },
   },
-  QuickAssistAlarmSystem_0_dmg: {
+  'QuickAssistAlarmSystem_0:standardDmg': {
     sheet: 'Cissia',
-    name: 'QuickAssistAlarmSystem_0_dmg',
+    name: 'QuickAssistAlarmSystem_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -633,12 +646,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistAlarmSystem_0_dmg',
+      name: 'QuickAssistAlarmSystem_0',
     },
   },
-  QuickAssistAlarmSystem_0_daze: {
+  'QuickAssistAlarmSystem_0:dazeBuildup': {
     sheet: 'Cissia',
-    name: 'QuickAssistAlarmSystem_0_daze',
+    name: 'QuickAssistAlarmSystem_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -647,12 +660,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistAlarmSystem_0_daze',
+      name: 'QuickAssistAlarmSystem_0',
     },
   },
-  QuickAssistAlarmSystem_0_anomBuildup: {
+  'QuickAssistAlarmSystem_0:anomBuildup': {
     sheet: 'Cissia',
-    name: 'QuickAssistAlarmSystem_0_anomBuildup',
+    name: 'QuickAssistAlarmSystem_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -661,12 +674,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistAlarmSystem_0_anomBuildup',
+      name: 'QuickAssistAlarmSystem_0',
     },
   },
-  DefensiveAssistExtraPrisonRations_0_dmg: {
+  'DefensiveAssistExtraPrisonRations_0:standardDmg': {
     sheet: 'Cissia',
-    name: 'DefensiveAssistExtraPrisonRations_0_dmg',
+    name: 'DefensiveAssistExtraPrisonRations_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -675,12 +688,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistExtraPrisonRations_0_dmg',
+      name: 'DefensiveAssistExtraPrisonRations_0',
     },
   },
-  DefensiveAssistExtraPrisonRations_0_daze: {
+  'DefensiveAssistExtraPrisonRations_0:dazeBuildup': {
     sheet: 'Cissia',
-    name: 'DefensiveAssistExtraPrisonRations_0_daze',
+    name: 'DefensiveAssistExtraPrisonRations_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -689,12 +702,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistExtraPrisonRations_0_daze',
+      name: 'DefensiveAssistExtraPrisonRations_0',
     },
   },
-  DefensiveAssistExtraPrisonRations_0_anomBuildup: {
+  'DefensiveAssistExtraPrisonRations_0:anomBuildup': {
     sheet: 'Cissia',
-    name: 'DefensiveAssistExtraPrisonRations_0_anomBuildup',
+    name: 'DefensiveAssistExtraPrisonRations_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -703,12 +716,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistExtraPrisonRations_0_anomBuildup',
+      name: 'DefensiveAssistExtraPrisonRations_0',
     },
   },
-  DefensiveAssistExtraPrisonRations_1_dmg: {
+  'DefensiveAssistExtraPrisonRations_1:standardDmg': {
     sheet: 'Cissia',
-    name: 'DefensiveAssistExtraPrisonRations_1_dmg',
+    name: 'DefensiveAssistExtraPrisonRations_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -717,12 +730,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistExtraPrisonRations_1_dmg',
+      name: 'DefensiveAssistExtraPrisonRations_1',
     },
   },
-  DefensiveAssistExtraPrisonRations_1_daze: {
+  'DefensiveAssistExtraPrisonRations_1:dazeBuildup': {
     sheet: 'Cissia',
-    name: 'DefensiveAssistExtraPrisonRations_1_daze',
+    name: 'DefensiveAssistExtraPrisonRations_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -731,12 +744,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistExtraPrisonRations_1_daze',
+      name: 'DefensiveAssistExtraPrisonRations_1',
     },
   },
-  DefensiveAssistExtraPrisonRations_1_anomBuildup: {
+  'DefensiveAssistExtraPrisonRations_1:anomBuildup': {
     sheet: 'Cissia',
-    name: 'DefensiveAssistExtraPrisonRations_1_anomBuildup',
+    name: 'DefensiveAssistExtraPrisonRations_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -745,12 +758,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistExtraPrisonRations_1_anomBuildup',
+      name: 'DefensiveAssistExtraPrisonRations_1',
     },
   },
-  DefensiveAssistExtraPrisonRations_2_dmg: {
+  'DefensiveAssistExtraPrisonRations_2:standardDmg': {
     sheet: 'Cissia',
-    name: 'DefensiveAssistExtraPrisonRations_2_dmg',
+    name: 'DefensiveAssistExtraPrisonRations_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -759,12 +772,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistExtraPrisonRations_2_dmg',
+      name: 'DefensiveAssistExtraPrisonRations_2',
     },
   },
-  DefensiveAssistExtraPrisonRations_2_daze: {
+  'DefensiveAssistExtraPrisonRations_2:dazeBuildup': {
     sheet: 'Cissia',
-    name: 'DefensiveAssistExtraPrisonRations_2_daze',
+    name: 'DefensiveAssistExtraPrisonRations_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -773,12 +786,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistExtraPrisonRations_2_daze',
+      name: 'DefensiveAssistExtraPrisonRations_2',
     },
   },
-  DefensiveAssistExtraPrisonRations_2_anomBuildup: {
+  'DefensiveAssistExtraPrisonRations_2:anomBuildup': {
     sheet: 'Cissia',
-    name: 'DefensiveAssistExtraPrisonRations_2_anomBuildup',
+    name: 'DefensiveAssistExtraPrisonRations_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -787,12 +800,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistExtraPrisonRations_2_anomBuildup',
+      name: 'DefensiveAssistExtraPrisonRations_2',
     },
   },
-  AssistFollowUpPartnersInCrime_0_dmg: {
+  'AssistFollowUpPartnersInCrime_0:standardDmg': {
     sheet: 'Cissia',
-    name: 'AssistFollowUpPartnersInCrime_0_dmg',
+    name: 'AssistFollowUpPartnersInCrime_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -801,12 +814,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpPartnersInCrime_0_dmg',
+      name: 'AssistFollowUpPartnersInCrime_0',
     },
   },
-  AssistFollowUpPartnersInCrime_0_daze: {
+  'AssistFollowUpPartnersInCrime_0:dazeBuildup': {
     sheet: 'Cissia',
-    name: 'AssistFollowUpPartnersInCrime_0_daze',
+    name: 'AssistFollowUpPartnersInCrime_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -815,12 +828,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpPartnersInCrime_0_daze',
+      name: 'AssistFollowUpPartnersInCrime_0',
     },
   },
-  AssistFollowUpPartnersInCrime_0_anomBuildup: {
+  'AssistFollowUpPartnersInCrime_0:anomBuildup': {
     sheet: 'Cissia',
-    name: 'AssistFollowUpPartnersInCrime_0_anomBuildup',
+    name: 'AssistFollowUpPartnersInCrime_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -829,7 +842,7 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpPartnersInCrime_0_anomBuildup',
+      name: 'AssistFollowUpPartnersInCrime_0',
     },
   },
 } as const

@@ -10,6 +10,7 @@ import CrescentPike from './CrescentPike'
 import CrimsonMoonsSemblance from './CrimsonMoonsSemblance'
 import Deathmatch from './Deathmatch'
 import DialoguesOfTheDesertSages from './DialoguesOfTheDesertSages'
+import DisasterAndRemorse from './DisasterAndRemorse'
 import DragonsBane from './DragonsBane'
 import DragonspineSpear from './DragonspineSpear'
 import EngulfingLightning from './EngulfingLightning'
@@ -51,6 +52,7 @@ const polearm: Record<WeaponPoleArmKey, WeaponSheet> = {
   CrimsonMoonsSemblance,
   Deathmatch,
   DialoguesOfTheDesertSages,
+  DisasterAndRemorse,
   DragonsBane,
   DragonspineSpear,
   EngulfingLightning,

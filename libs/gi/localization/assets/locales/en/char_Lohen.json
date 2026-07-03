@@ -1,0 +1,10 @@
+{
+  "willConsumed": "<strong>Will to Win</strong> consumed",
+  "a4Cond": "After a nearby party member triggers a <cryo>Cryo Reaction</cryo> while in <strong>Masterstroke</strong> mode",
+  "a0Cond": "Under the High Spirits effect",
+  "lockBuffCond": "<strong>Will to Win</strong> at 50% or more after unleashing special Elemental Skill or Elemental Burst",
+  "c1Text": "<strong>Will to Win</strong> limit increase",
+  "c2Cond": "Evilsbane Blade triggered",
+  "etch_critDMG_": "Etched Into Bone and Soul CRIT DMG",
+  "c6Cond": "<strong>Masterstroke</strong> mode active while unleashing Elemental Burst"
+}

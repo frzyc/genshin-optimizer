@@ -11,6 +11,7 @@ import { Box, MenuItem } from '@mui/material'
 import { useCallback } from 'react'
 import { AfterShockToggleButton } from '../AfterShockToggleButton'
 import { CritModeSelector } from './CritModeSelector'
+import { DimensionSelector } from './DimensionSelector'
 import { OptSelector } from './OptSelector'
 import { SpecificDmgTypeSelector } from './SpecificDmgTypeSelector'
 export function OptTargetRow({
@@ -29,6 +30,7 @@ export function OptTargetRow({
       }}
     >
       <OptSelector character={character} team={team} />
+      <DimensionSelector />
       <StatQtDropDown />
       <SpecificDmgTypeSelector />
       <AfterShockToggle />

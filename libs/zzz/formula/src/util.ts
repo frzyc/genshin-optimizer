@@ -50,6 +50,7 @@ type TempICharacter = {
 }
 export function charTagMapNodeEntries(data: TempICharacter): TagMapNodeEntries {
   const {
+    key,
     lvl,
     promotion,
     basic,
@@ -67,6 +68,7 @@ export function charTagMapNodeEntries(data: TempICharacter): TagMapNodeEntries {
     char.reread(sheet),
     iso.reread(sheet),
 
+    key.add(data.key),
     lvl.add(data.level),
     basic.add(data.basic),
     dodge.add(data.dodge),

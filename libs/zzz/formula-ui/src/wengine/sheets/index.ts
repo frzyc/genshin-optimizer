@@ -7,10 +7,12 @@ import BashfulDemon from './BashfulDemon'
 import BellicoseBlaze from './BellicoseBlaze'
 import BigCylinder from './BigCylinder'
 import BlazingLaurel from './BlazingLaurel'
+import BoisterousEchoes from './BoisterousEchoes'
 import BoxCutter from './BoxCutter'
 import BunnyBand from './BunnyBand'
 import CannonRotor from './CannonRotor'
 import CauldronOfClarity from './CauldronOfClarity'
+import ChiefSidekick from './ChiefSidekick'
 import CinderCobalt from './CinderCobalt'
 import CloudcleaveRadiance from './CloudcleaveRadiance'
 import CordisGermina from './CordisGermina'
@@ -34,6 +36,7 @@ import Housekeeper from './Housekeeper'
 import IceJadeTeapot from './IceJadeTeapot'
 import IdentityBase from './IdentityBase'
 import IdentityInflection from './IdentityInflection'
+import JoyauDore from './JoyauDore'
 import KaboomTheCannon from './KaboomTheCannon'
 import KrakensCradle from './KrakensCradle'
 import LunarDecrescent from './LunarDecrescent'
@@ -66,6 +69,7 @@ import SeveredInnocence from './SeveredInnocence'
 import SharpenedStinger from './SharpenedStinger'
 import SixShooter from './SixShooter'
 import SliceOfTime from './SliceOfTime'
+import SolExuvia from './SolExuvia'
 import SpectralGaze from './SpectralGaze'
 import SpringEmbrace from './SpringEmbrace'
 import StarlightEngine from './StarlightEngine'
@@ -98,10 +102,12 @@ export const wengineUiSheets: Record<WengineKey, UISheetElement> = {
   BellicoseBlaze,
   BigCylinder,
   BlazingLaurel,
+  BoisterousEchoes,
   BoxCutter,
   BunnyBand,
   CannonRotor,
   CauldronOfClarity,
+  ChiefSidekick,
   CinderCobalt,
   CloudcleaveRadiance,
   CordisGermina,
@@ -125,6 +131,7 @@ export const wengineUiSheets: Record<WengineKey, UISheetElement> = {
   IceJadeTeapot,
   IdentityBase,
   IdentityInflection,
+  JoyauDore,
   KaboomTheCannon,
   KrakensCradle,
   LunarDecrescent,
@@ -157,6 +164,7 @@ export const wengineUiSheets: Record<WengineKey, UISheetElement> = {
   SharpenedStinger,
   SixShooter,
   SliceOfTime,
+  SolExuvia,
   SpectralGaze,
   SpringEmbrace,
   StarlightEngine,

@@ -183,6 +183,7 @@ export const characterIdMap: Record<
   10000126: 'Zibai',
   10000127: 'Illuga',
   10000128: 'Varka',
+  10000129: 'Lohen',
   10000130: 'Linnea',
   10000131: 'Nicole',
   10000132: 'Prune',

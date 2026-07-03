@@ -1563,6 +1563,20 @@ export const formulas = {
       },
     },
   },
+  Lohen: {
+    normal1: {
+      sheet: 'Lohen',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Lohen',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   Lynette: {
     normal1: {
       sheet: 'Lynette',

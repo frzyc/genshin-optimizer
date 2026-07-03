@@ -1,0 +1,173 @@
+{
+  "name": "Lohen",
+  "title": "Keskin Ok Ucu",
+  "description": "Favonius Şövalyeleri Atış Bölüğü Yüzbaşı Vekili. Alışılmadık yaklaşımı ve sıra dışı taktiklere olan düşkünlüğüyle bilinen bir şövalye.",
+  "constellationName": "Kurnaz Tavşan",
+  "auto": {
+    "name": "Bozulan Yemin",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 5 saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcar ve ileri doğru atılarak bir vuruş yapar."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "5 Vuruş Hasarı",
+      "5": "Yüklü Saldırı Hasarı",
+      "6": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "7": "Havadan Saldırı Hasarı",
+      "8": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Öngörülmez Darbe",
+    "description": {
+      "0": "Lohen, düşmanın zayıf noktasını ararken <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Usta Vuruş</strong></tooltip> moduna geçer. Bu moddayken:",
+      "1": [
+        "Lohen aktif olarak <tooltip ns=tooltips_gen baseKey18=11290003 values=[]><strong>Haz</strong></tooltip> kademeleri biriktirebilir ve bu kademeleri harcayarak <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>İliğe ve Ruha Kazınmış</strong></tooltip> özel Element Becerisini kullanabilir.",
+        "Yakındaki grup üyeleri Lohen için <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Kazanma Arzusu</strong></tooltip> biriktirerek <strong>İliğe ve Ruha Kazınmış</strong> özel Element Becerisinin verdiği Hasarı artırabilir."
+      ],
+      "2": "Lohen <strong>Usta Vuruş</strong> modundayken <strong>İliğe ve Ruha Kazınmış</strong> becerisini en fazla 3 defa kullanabilir, sonrasında artık <strong>Haz</strong> biriktiremez.",
+      "3": "<br/>",
+      "4": "<i>\"Şövalyelik ruhu mu? Haha, tuzak kurmak için daha iyi bir yem mi var? Onurlu bir zafer hayali kuran bir düşmanın aklına onu bekleyen 'hoş sürprizden' şüphelenmek gelmez.\"</i>"
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "5 Vuruş Hasarı",
+      "5": "Yüklü Saldırı Hasarı",
+      "6": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "7": "Havadan Saldırı Hasarı",
+      "8": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "9": "Usta Vuruş",
+      "10": "İliğe ve Ruha Kazınmış Hasarı",
+      "11": "Kazanma Arzusu Kaynaklı Hasar Artışı",
+      "12": "BS",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Yargının Tecellisi",
+    "description": {
+      "0": "Tüm <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Kazanma Arzusunu</strong></tooltip> tüketip ileri doğru seri ve hızlı vuruşlar yaparak <cryo>Buz Hasarı</cryo> verir. Bu Hasar, tüketilen <strong>Kazanma Arzusu</strong> miktarına göre artar. Eğer Lohen bunu gerçekleştirirken <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Usta Vuruş</strong></tooltip> modundaysa <strong>Usta Vuruş</strong> süresi 1,65sn uzar.",
+      "1": "<br/>",
+      "2": "<i>\"Hemen pes mi ediyorsun? Tüh, ben daha yeni başlıyordum...\"</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Kazanma Arzusu Kaynaklı Hasar Artışı",
+      "2": "BS",
+      "3": "Enerji Maliyeti",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Sorgulama Yasağı",
+    "description": {
+      "0": "Lohen <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Usta Vuruş</strong></tooltip> modundayken yakındaki grup üyeleri Hasar vererek <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Kazanma Arzusu</strong></tooltip> biriktirdiğinde, verilen Hasar Lohen'in Temel Saldırısının %3.000'inden düşük değilse fazladan 60 <strong>Kazanma Arzusu</strong> birikir."
+    }
+  },
+  "passive2": {
+    "name": "Laubali Şaheser",
+    "description": {
+      "0": "<tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Usta Vuruş</strong></tooltip> modundayken, yakındaki başka bir grup üyesi bir <cryo>Buz Tepkimesi</cryo> tetikledikten sonra 8 saniyeliğine o karakterin Saldırısı ve Lohen'in Saldırısı %15 artar."
+    }
+  },
+  "passive3": {
+    "name": "Keyfime Göre",
+    "description": {
+      "0": "Lohen, <strong>Öngörülmez Darbe</strong> Element Becerisini kullandıktan sonra 9 saniyeliğine \"Yüksek Moral\" etkisi kazanır: <strong>Öngörülmez Darbe</strong> Becerisinin seviyesi 1 artar.",
+      "1": "Bir Element Becerisi kullanırken eğer grubun diğer üyelerinden herhangi birinin Normal Saldırı, Element Becerisi veya Element Patlaması seviyesi, Lohen'in Element Becerisi seviyesinden düşük değilse mevcut Yüksek Moral etkisinin süresi 6 saniye uzar.",
+      "2": "Yüksek Moral etkisi 18 saniyede bir kazanılabilir."
+    }
+  },
+  "lockedPassive": {
+    "name": "Cadının Gece Ayini: Şifa Bulmaz Diken",
+    "description": {
+      "0": "<strong>Cadının Ödevi: Farklı Düşmanlara İlişkin</strong> tamamlandıktan sonra Lohen bir <strong>Cadılık</strong> karakteri olur. Grupta en az 2 Cadılık karakteri olduğunda, Cadılık karakterlerini güçlendiren <strong>Cadılık: Saklı Ayin</strong> etkisi kazanırsın.",
+      "1": "<br/>",
+      "2": "<strong>Cadılık: Saklı Ayin</strong>",
+      "3": "<tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>İliğe ve Ruha Kazınmış</strong></tooltip> özel Element Becerisi bir düşmana isabet ettiğinde ya da <strong>Yargının Tecellisi</strong> Element Patlaması kullanıldığında Lohen'in <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Kazanma Arzusu</strong></tooltip> değeri maksimum sınırının %50'si veya daha fazlasına ulaşmışsa 6 saniyeliğine Normal Saldırı Hasarı ve Yüklü Saldırı Hasarı %40 artar."
+    }
+  },
+  "constellation1": {
+    "name": "Hüzünlü Şarkılar Taşıyan Rüzgarlar",
+    "description": {
+      "0": "Lohen'in maksimum <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Kazanma Arzusu</strong></tooltip> sınırı orijinal değerinin %300'üne yükselir.",
+      "1": "Ayrıca Lohen <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Usta Vuruş</strong></tooltip> modundayken yakındaki diğer grup üyeleri Hasar verdiğinde, Lohen için %500 oranında <strong>Kazanma Arzusu</strong> biriktirirler."
+    }
+  },
+  "constellation2": {
+    "name": "Vururum Her Havada Uçanı",
+    "description": {
+      "0": "<tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Usta Vuruş</strong></tooltip> modundayken <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>İliğe ve Ruha Kazınmış</strong></tooltip> özel Element Becerisi bir düşmana isabet ettiğinde ya da <strong>Yargının Tecellisi</strong> Element Patlaması kullanıldığında Lohen 4 saniyeliğine \"Şer Kovan Kılıç\" etkisi kazanır: Lohen, Usta Vuruş modundayken düşmana Normal veya Yüklü Saldırı ile vurduğu bir sonraki seferde Saldırısının %500'ü kadar <cryo>Buz Alan Hasarı</cryo> veren ek bir saldırı gerçekleştirir ve 8 saniyeliğine yakındaki diğer grup üyelerinin Element Ustalığını 200 artırır. Şer Kovan Kılıç etkisi her 4 saniyede bir tetiklenebilir."
+    }
+  },
+  "constellation3": {
+    "name": "Yaralayan Mızrak İyileştirebilir Ancak",
+    "description": {
+      "0": "<strong><tooltip ns=char_Lohen_gen baseKey18=skill>Öngörülmez Darbe</tooltip></strong> seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Parlak Sevgi, Kahkahadan Ölüm",
+    "description": {
+      "0": "<tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Usta Vuruş</strong></tooltip> modundayken Lohen <strong>Yargının Tecellisi</strong> Element Patlamasını kullandığında <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Kazanma Arzusu</strong></tooltip> değeri maksimum miktara ulaşır ve bu seferki Element Patlaması maksimum Hasar artışı kazandırır.",
+      "1": "<br/>",
+      "2": "Buna ek olarak Lohen, <strong>Usta Vuruş</strong> moduna geçtiğinde sahip olduğu Element Enerjisi miktarına bağlı olarak aşağıdaki etkiler meydana gelir:",
+      "3": [
+        "Element Enerjisi dolu değilken Lohen, 15 Element Enerjisi yeniler.",
+        "Element Enerjisi doluyken Lohen 15 saniye içinde <strong>Yargının Tecellisi</strong> Element Patlamasını kullanırsa 15 Element Enerjisi yeniler."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Ne Sor Ne Öğren",
+    "description": {
+      "0": "<strong><tooltip ns=char_Lohen_gen baseKey18=burst>Yargının Tecellisi</tooltip></strong> seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Boğulmak, Batmak ve Kendinden Geçmek, İşte Budur En Yüce Haz!",
+    "description": {
+      "0": "Özel Element Becerisi <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>İliğe ve Ruha Kazınmış</strong></tooltip> kullanıldığında ve bir düşmana isabet ettiğinde veya <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Usta Vuruş</strong></tooltip> modu etkinken <strong>Yargının Tecellisi</strong> Element Patlamasını kullanmak <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Kazanma Arzusu</strong></tooltip> tüketmez. Bunun yerine Lohen'in <tooltip ns=tooltips_gen baseKey18=11290003 values=[]><strong>Haz</strong></tooltip> puanı tamamen dolar ve bir sonraki <strong>İliğe ve Ruha Kazınmış</strong> özel Element Becerisi bir düşmana isabet ederse <strong>Usta Vuruş</strong> süresi 1,25sn uzar. Bu etki 7 saniyede bir tetiklenebilir.",
+      "1": "Ayrıca, yukarıda bahsi geçen tüm Hasarlar için Kritik Hasar %175 artar, Lohen'in bu <strong>Usta Vuruş</strong> sırasında kullanabileceği <strong>İliğe ve Ruha Kazınmış</strong> sayısı ise 2 artar."
+    }
+  }
+}

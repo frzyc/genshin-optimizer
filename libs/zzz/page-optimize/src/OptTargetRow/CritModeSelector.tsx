@@ -25,6 +25,7 @@ export function CritModeSelector() {
       title={
         <Box sx={{ textWrap: 'nowrap' }}>Hit mode: {modeMap[critMode]}</Box>
       }
+      sx={{ px: 1.5, flexShrink: 0 }}
     >
       {critModeKeys.map((k) => (
         <MenuItem

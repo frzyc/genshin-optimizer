@@ -29,7 +29,13 @@ export class Worker {
   subworks: Subwork[] = []
   builds: BuildResult[] = []
 
-  progress: Progress = { computed: 0, failed: 0, skipped: 0, remaining: 0 }
+  progress: Progress = {
+    computed: 0,
+    failed: 0,
+    skipped: 0,
+    remaining: 0,
+    total: 0,
+  }
 
   constructor(cfg: WorkerConfig) {
     this.nodes = cfg.nodes

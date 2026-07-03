@@ -3,14 +3,24 @@ interface ImgIconProps {
   size?: number
   sideMargin?: boolean
 }
+
+const blockedForwardProps = [
+  'as',
+  'classes',
+  'ownerState',
+  'sideMargin',
+  'size',
+  'sx',
+  'theme',
+] as readonly PropertyKey[]
+
 /**
  * An `img` wrapper that automates margin to make sure that the icon is always `1em` tall, no matter what `size` it is.
  */
 export const ImgIcon = styled('img', {
   name: 'ImgIcon',
   slot: 'Root',
-  shouldForwardProp: (pn) =>
-    !['size', 'sideMargin'].includes(pn as 'size' | 'sideMargin'),
+  shouldForwardProp: (prop) => !blockedForwardProps.includes(prop),
 })<ImgIconProps>(({ size = 1, sideMargin = false }) => ({
   display: 'inline-block',
   width: `${size}em`,

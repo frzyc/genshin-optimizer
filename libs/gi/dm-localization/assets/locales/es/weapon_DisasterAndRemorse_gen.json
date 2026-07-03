@@ -1,0 +1,44 @@
+{
+  "name": "Desastre y Arrepentimiento",
+  "description": {
+    "0": "Una lanza forjada con roca blanca y argento estelar. Su afilada punta está envuelta por un perpetuo frío punzante."
+  },
+  "passiveName": "Golpe de la calamidad",
+  "passiveDescription": {
+    "0": {
+      "0": "Tras usar su Habilidad Elemental, el portador de esta arma obtiene durante 17 s el efecto de “senda de la discordia”, además de los efectos de “imperdonable” e “incurable” durante 3 s. Esto solo puede ocurrir una vez cada 18 s.",
+      "1": "Imperdonable: aumenta en un <cryo>40%</cryo> el daño de los Ataques Normales y Cargados del portador.",
+      "2": "Incurable: aumenta en un <cryo>40%</cryo> el daño de la Habilidad Elemental y Definitiva del portador.",
+      "3": "Cuando el portador de esta arma golpea a un enemigo con un Ataque Normal o Cargado mientras el efecto de senda de la discordia está activo, la duración del efecto de incurable se prolonga 1 s. Cuando golpea a un enemigo con su Habilidad Elemental o Definitiva, la duración del efecto de imperdonable se prolonga 1 s. Cada uno de estos efectos solo se puede activar una vez cada 0.1 s. Cuando termine senda de la discordia o cuando el portador de esta arma se retire de combate, los efectos de imperdonable e incurable se anularán.",
+      "4": "Taumaturgia: rito secreto: los aumentos de daño anteriormente mencionados se incrementan en un 75%."
+    },
+    "1": {
+      "0": "Tras usar su Habilidad Elemental, el portador de esta arma obtiene durante 17 s el efecto de “senda de la discordia”, además de los efectos de “imperdonable” e “incurable” durante 3 s. Esto solo puede ocurrir una vez cada 18 s.",
+      "1": "Imperdonable: aumenta en un <cryo>50%</cryo> el daño de los Ataques Normales y Cargados del portador.",
+      "2": "Incurable: aumenta en un <cryo>50%</cryo> el daño de la Habilidad Elemental y Definitiva del portador.",
+      "3": "Cuando el portador de esta arma golpea a un enemigo con un Ataque Normal o Cargado mientras el efecto de senda de la discordia está activo, la duración del efecto de incurable se prolonga 1 s. Cuando golpea a un enemigo con su Habilidad Elemental o Definitiva, la duración del efecto de imperdonable se prolonga 1 s. Cada uno de estos efectos solo se puede activar una vez cada 0.1 s. Cuando termine senda de la discordia o cuando el portador de esta arma se retire de combate, los efectos de imperdonable e incurable se anularán.",
+      "4": "Taumaturgia: rito secreto: los aumentos de daño anteriormente mencionados se incrementan en un 75%."
+    },
+    "2": {
+      "0": "Tras usar su Habilidad Elemental, el portador de esta arma obtiene durante 17 s el efecto de “senda de la discordia”, además de los efectos de “imperdonable” e “incurable” durante 3 s. Esto solo puede ocurrir una vez cada 18 s.",
+      "1": "Imperdonable: aumenta en un <cryo>60%</cryo> el daño de los Ataques Normales y Cargados del portador.",
+      "2": "Incurable: aumenta en un <cryo>60%</cryo> el daño de la Habilidad Elemental y Definitiva del portador.",
+      "3": "Cuando el portador de esta arma golpea a un enemigo con un Ataque Normal o Cargado mientras el efecto de senda de la discordia está activo, la duración del efecto de incurable se prolonga 1 s. Cuando golpea a un enemigo con su Habilidad Elemental o Definitiva, la duración del efecto de imperdonable se prolonga 1 s. Cada uno de estos efectos solo se puede activar una vez cada 0.1 s. Cuando termine senda de la discordia o cuando el portador de esta arma se retire de combate, los efectos de imperdonable e incurable se anularán.",
+      "4": "Taumaturgia: rito secreto: los aumentos de daño anteriormente mencionados se incrementan en un 75%."
+    },
+    "3": {
+      "0": "Tras usar su Habilidad Elemental, el portador de esta arma obtiene durante 17 s el efecto de “senda de la discordia”, además de los efectos de “imperdonable” e “incurable” durante 3 s. Esto solo puede ocurrir una vez cada 18 s.",
+      "1": "Imperdonable: aumenta en un <cryo>70%</cryo> el daño de los Ataques Normales y Cargados del portador.",
+      "2": "Incurable: aumenta en un <cryo>70%</cryo> el daño de la Habilidad Elemental y Definitiva del portador.",
+      "3": "Cuando el portador de esta arma golpea a un enemigo con un Ataque Normal o Cargado mientras el efecto de senda de la discordia está activo, la duración del efecto de incurable se prolonga 1 s. Cuando golpea a un enemigo con su Habilidad Elemental o Definitiva, la duración del efecto de imperdonable se prolonga 1 s. Cada uno de estos efectos solo se puede activar una vez cada 0.1 s. Cuando termine senda de la discordia o cuando el portador de esta arma se retire de combate, los efectos de imperdonable e incurable se anularán.",
+      "4": "Taumaturgia: rito secreto: los aumentos de daño anteriormente mencionados se incrementan en un 75%."
+    },
+    "4": {
+      "0": "Tras usar su Habilidad Elemental, el portador de esta arma obtiene durante 17 s el efecto de “senda de la discordia”, además de los efectos de “imperdonable” e “incurable” durante 3 s. Esto solo puede ocurrir una vez cada 18 s.",
+      "1": "Imperdonable: aumenta en un <cryo>80%</cryo> el daño de los Ataques Normales y Cargados del portador.",
+      "2": "Incurable: aumenta en un <cryo>80%</cryo> el daño de la Habilidad Elemental y Definitiva del portador.",
+      "3": "Cuando el portador de esta arma golpea a un enemigo con un Ataque Normal o Cargado mientras el efecto de senda de la discordia está activo, la duración del efecto de incurable se prolonga 1 s. Cuando golpea a un enemigo con su Habilidad Elemental o Definitiva, la duración del efecto de imperdonable se prolonga 1 s. Cada uno de estos efectos solo se puede activar una vez cada 0.1 s. Cuando termine senda de la discordia o cuando el portador de esta arma se retire de combate, los efectos de imperdonable e incurable se anularán.",
+      "4": "Taumaturgia: rito secreto: los aumentos de daño anteriormente mencionados se incrementan en un 75%."
+    }
+  }
+}

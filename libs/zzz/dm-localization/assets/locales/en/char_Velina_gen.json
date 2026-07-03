@@ -1,0 +1,306 @@
+{
+  "name": "Velina",
+  "fullName": "Velina Airgid",
+  "basic": {
+    "BasicAttackDancingFans": {
+      "name": "Basic Attack: Dancing Fans",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Launches up to five attacks against enemies ahead, dealing <ct color=#A6C5FD>Wind DMG</ct>.",
+        "2": "During the 5th attack, Velina's Anti-Interrupt Level increases, and DMG taken is reduced by 40%."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "5th-Hit "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeWindwardSweep": {
+      "name": "Dodge: Windward Sweep",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackGaleStep": {
+      "name": "Dash Attack: Gale Step",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Delivers a quick attack forward, dealing <ct color=#A6C5FD>Wind DMG</ct>."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterCloudrend": {
+      "name": "Dodge Counter: Cloudrend",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Launches a series of attacks on the target, dealing <ct color=#A6C5FD>Wind DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackWindShearPurgingSurge": {
+      "name": "Special Attack: Wind Shear - Purging Surge",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Unleashes a sweeping gust forward, dealing <ct color=#A6C5FD>Wind DMG</ct>."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackWindShearPurifyingRise": {
+      "name": "EX Special Attack: Wind Shear - Purifying Rise",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Dodges backward, then unleashes a massive wind blast to attack enemies, dealing <ct color=#A6C5FD>Wind DMG</ct>.",
+        "2": "During the backward dodge, a dodge effect is active. Successfully dodging an enemy attack triggers <ct color=#FFFFFF>Vital View</ct>.",
+        "3": "After using this skill, press <IconNormal /> to chain into the 5th hit of the <ct color=#FFFFFF>Basic Attack</ct>.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "Energy Cost "
+      ]
+    },
+    "EXSpecialAttackWindShearTripleDeathblow": {
+      "name": "EX Special Attack: Wind Shear - Triple Deathblow",
+      "desc": {
+        "0": "With enough energy and after using <ct color=#FFFFFF>EX Special Attack: Wind Shear - Purifying Rise</ct>, press or hold <IconSpecialReady /> to activate:",
+        "1": "Continuously swings the fan, dealing <ct color=#A6C5FD>Wind DMG</ct>.",
+        "2": "After using this skill, press <IconNormal /> to chain into the 5th hit of the <ct color=#FFFFFF>Basic Attack</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "Energy Cost "
+      ]
+    },
+    "EXSpecialAttackWindShearEyeOfTheStorm": {
+      "name": "EX Special Attack: Wind Shear - Eye of the Storm",
+      "desc": {
+        "0": "With 90 or more <tooltip ns=tooltips_gen baseKey18=1000008>Windbloom</tooltip>, hold <IconSpecial /> or <IconNormal /> to activate:",
+        "1": "Velina channels a whirlwind and summons a <tooltip ns=tooltips_gen baseKey18=1000016>Sweeping Cyclone</tooltip> to continuously attack enemies and triggers the previous character's <ct color=#FFFFFF>Quick Assist</ct>.",
+        "2": "<ct color=#FFFFFF>Sweeping Cyclone</ct> lasts for 5s and deals <ct color=#A6C5FD>Wind DMG</ct> to nearby enemies once every 0.5s."
+      },
+      "params": [
+        " ",
+        "Windbloom Cost "
+      ]
+    },
+    "SweepingCyclone": {
+      "name": "Sweeping Cyclone",
+      "desc": "",
+      "params": [
+        "Sweeping Cyclone Wind Attribute Single-Hit ",
+        "Sweeping Cyclone Attribute-Converted Single-Hit "
+      ]
+    },
+    "CondensedCyclone": {
+      "name": "Condensed Cyclone",
+      "desc": "",
+      "params": [
+        " "
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackThousandfoldSpiral": {
+      "name": "Chain Attack: Thousandfold Spiral",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Transforms into a hurricane to unleash multiple attacks against enemies, followed by a Finishing Move, dealing massive <ct color=#A6C5FD>Wind DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateHeedTheTempest": {
+      "name": "Ultimate: Heed the Tempest",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Unleashes multiple attacks against enemies ahead, dealing massive <ct color=#A6C5FD>Wind DMG</ct>.",
+        "2": "After using this skill, the previous character's <ct color=#FFFFFF>Quick Assist</ct> is triggered.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistEmergencyProtocol": {
+      "name": "Quick Assist: Emergency Protocol",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Unleashes consecutive attacks against the target, dealing <ct color=#A6C5FD>Wind DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistJudiciousIntervention": {
+      "name": "Defensive Assist: Judicious Intervention",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpNegotiationTechniques": {
+      "name": "Assist Follow-Up: Negotiation Techniques",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Unleashes a series of attacks, dealing <ct color=#A6C5FD>Wind DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Breeze in Bloom",
+    "desc": [
+      {
+        "0": "When Velina's initial Energy Regen exceeds 1.2, every additional 0.01 increases DMG dealt by 0.21%, up to a maximum increase of 35%, and increases Anomaly Mastery by 0.5, up to a maximum increase of 84.",
+        "1": "When Velina enters the battlefield, she gains 45 <tooltip ns=tooltips_gen baseKey18=1000008>Windbloom</tooltip>. In Investigation Zone mode, this effect can trigger once every 180s. Using <ct color=#FFFFFF>EX Special Attack: Wind Shear - Purifying Rise</ct> or <ct color=#FFFFFF>EX Special Attack: Wind Shear - Triple Deathblow</ct> grants 45 <ct color=#FFFFFF>Windbloom</ct>, up to a maximum of 135 <ct color=#FFFFFF>Windbloom</ct>. ",
+        "2": "When Velina triggers <ct color=#FFFFFF>Vortex</ct>, she gains 1 point of <tooltip ns=tooltips_gen baseKey18=1000014>Windbite</tooltip> and summons a <tooltip ns=tooltips_gen baseKey18=1000015>Condensed Cyclone</tooltip>, dealing <ct color=#A6C5FD>Wind DMG</ct>. This effect can trigger once every 3s. When Velina has 2 points of <ct color=#FFFFFF>Windbite</ct>, the next time she triggers <ct color=#FFFFFF>Vortex</ct>, 2 points of <ct color=#FFFFFF>Windbite</ct> are consumed to increase that <ct color=#FFFFFF>Vortex</ct>'s DMG Multiplier by <ct color=#2BAD00>90%</ct>. In addition, a <tooltip ns=tooltips_gen baseKey18=1000016>Sweeping Cyclone</tooltip> is summoned instead of a <ct color=#FFFFFF>Condensed Cyclone</ct>, which does not grant <ct color=#FFFFFF>Windbite</ct>.",
+        "3": "When Velina's summoned <ct color=#FFFFFF>Sweeping Cyclone</ct> hits an enemy suffering <ct color=#FFFFFF>Contamination</ct> for the first time, it triggers <tooltip ns=tooltips_gen baseKey18=1000017>Chromatic Tint</tooltip>, converting it into a <ct color=#FFFFFF>Sweeping Cyclone</ct> of the corresponding attribute, dealing the corresponding attribute's DMG. When <ct color=#FFFFFF>Sweeping Cyclone</ct> hits an enemy, the enemy's <ct color=#A6C5FD>Wind Anomaly Buildup RES</ct> is reduced by 7% for 35s. Repeated triggers reset the duration. If a <ct color=#FFFFFF>Sweeping Cyclone</ct> enhanced by <ct color=#FFFFFF>Chromatic Tint</ct> hits an enemy, the enemy's corresponding <ct color=#FFFFFF>Attribute Anomaly Buildup RES</ct> is also reduced by 7% for 35s. Repeated triggers reset the duration.",
+        "4": "When an enemy affected by <ct color=#FFFFFF>Sweeping Cyclone</ct> is defeated, the duration of that <ct color=#FFFFFF>Sweeping Cyclone</ct> is extended by 5s. This effect can only trigger once for the same <ct color=#FFFFFF>Sweeping Cyclone</ct>, and only one <ct color=#FFFFFF>Sweeping Cyclone</ct> can exist at a time.",
+        "5": "<ct color=#FFFFFF>Condensed Cyclone</ct> and <ct color=#FFFFFF>Sweeping Cyclone</ct> trigger an explosion when they dissipate. If this explosion hits an enemy suffering a <ct color=#A6C5FD>Wind Anomaly</ct>, it triggers one instance of <ct color=#FFFFFF>Abloom</ct> DMG against the target: resolves an additional instance of Attribute Anomaly DMG, dealing a fixed <ct color=#2BAD00>85%</ct> and <ct color=#2BAD00>135%</ct> multiplier <ct color=#A6C5FD>Wind Anomaly DMG</ct> respectively."
+      },
+      {
+        "0": "When Velina's initial Energy Regen exceeds 1.2, every additional 0.01 increases DMG dealt by 0.21%, up to a maximum increase of 35%, and increases Anomaly Mastery by 0.5, up to a maximum increase of 84.",
+        "1": "When Velina enters the battlefield, she gains 45 <tooltip ns=tooltips_gen baseKey18=1000008>Windbloom</tooltip>. In Investigation Zone mode, this effect can trigger once every 180s. Using <ct color=#FFFFFF>EX Special Attack: Wind Shear - Purifying Rise</ct> or <ct color=#FFFFFF>EX Special Attack: Wind Shear - Triple Deathblow</ct> grants 45 <ct color=#FFFFFF>Windbloom</ct>, up to a maximum of 135 <ct color=#FFFFFF>Windbloom</ct>. ",
+        "2": "When Velina triggers <ct color=#FFFFFF>Vortex</ct>, she gains 1 point of <tooltip ns=tooltips_gen baseKey18=1000014>Windbite</tooltip> and summons a <tooltip ns=tooltips_gen baseKey18=1000015>Condensed Cyclone</tooltip>, dealing <ct color=#A6C5FD>Wind DMG</ct>. This effect can trigger once every 3s. When Velina has 2 points of <ct color=#FFFFFF>Windbite</ct>, the next time she triggers <ct color=#FFFFFF>Vortex</ct>, 2 points of <ct color=#FFFFFF>Windbite</ct> are consumed to increase that <ct color=#FFFFFF>Vortex</ct>'s DMG Multiplier by <ct color=#2BAD00>100%</ct>. In addition, a <tooltip ns=tooltips_gen baseKey18=1000016>Sweeping Cyclone</tooltip> is summoned instead of a <ct color=#FFFFFF>Condensed Cyclone</ct>, which does not grant <ct color=#FFFFFF>Windbite</ct>.",
+        "3": "When Velina's summoned <ct color=#FFFFFF>Sweeping Cyclone</ct> hits an enemy suffering <ct color=#FFFFFF>Contamination</ct> for the first time, it triggers <tooltip ns=tooltips_gen baseKey18=1000017>Chromatic Tint</tooltip>, converting it into a <ct color=#FFFFFF>Sweeping Cyclone</ct> of the corresponding attribute, dealing the corresponding attribute's DMG. When <ct color=#FFFFFF>Sweeping Cyclone</ct> hits an enemy, the enemy's <ct color=#A6C5FD>Wind Anomaly Buildup RES</ct> is reduced by 7% for 35s. Repeated triggers reset the duration. If a <ct color=#FFFFFF>Sweeping Cyclone</ct> enhanced by <ct color=#FFFFFF>Chromatic Tint</ct> hits an enemy, the enemy's corresponding <ct color=#FFFFFF>Attribute Anomaly Buildup RES</ct> is also reduced by 7% for 35s. Repeated triggers reset the duration.",
+        "4": "When an enemy affected by <ct color=#FFFFFF>Sweeping Cyclone</ct> is defeated, the duration of that <ct color=#FFFFFF>Sweeping Cyclone</ct> is extended by 5s. This effect can only trigger once for the same <ct color=#FFFFFF>Sweeping Cyclone</ct>, and only one <ct color=#FFFFFF>Sweeping Cyclone</ct> can exist at a time.",
+        "5": "<ct color=#FFFFFF>Condensed Cyclone</ct> and <ct color=#FFFFFF>Sweeping Cyclone</ct> trigger an explosion when they dissipate. If this explosion hits an enemy suffering a <ct color=#A6C5FD>Wind Anomaly</ct>, it triggers one instance of <ct color=#FFFFFF>Abloom</ct> DMG against the target: resolves an additional instance of Attribute Anomaly DMG, dealing a fixed <ct color=#2BAD00>95%</ct> and <ct color=#2BAD00>155%</ct> multiplier <ct color=#A6C5FD>Wind Anomaly DMG</ct> respectively."
+      },
+      {
+        "0": "When Velina's initial Energy Regen exceeds 1.2, every additional 0.01 increases DMG dealt by 0.21%, up to a maximum increase of 35%, and increases Anomaly Mastery by 0.5, up to a maximum increase of 84.",
+        "1": "When Velina enters the battlefield, she gains 45 <tooltip ns=tooltips_gen baseKey18=1000008>Windbloom</tooltip>. In Investigation Zone mode, this effect can trigger once every 180s. Using <ct color=#FFFFFF>EX Special Attack: Wind Shear - Purifying Rise</ct> or <ct color=#FFFFFF>EX Special Attack: Wind Shear - Triple Deathblow</ct> grants 45 <ct color=#FFFFFF>Windbloom</ct>, up to a maximum of 135 <ct color=#FFFFFF>Windbloom</ct>. ",
+        "2": "When Velina triggers <ct color=#FFFFFF>Vortex</ct>, she gains 1 point of <tooltip ns=tooltips_gen baseKey18=1000014>Windbite</tooltip> and summons a <tooltip ns=tooltips_gen baseKey18=1000015>Condensed Cyclone</tooltip>, dealing <ct color=#A6C5FD>Wind DMG</ct>. This effect can trigger once every 3s. When Velina has 2 points of <ct color=#FFFFFF>Windbite</ct>, the next time she triggers <ct color=#FFFFFF>Vortex</ct>, 2 points of <ct color=#FFFFFF>Windbite</ct> are consumed to increase that <ct color=#FFFFFF>Vortex</ct>'s DMG Multiplier by <ct color=#2BAD00>110%</ct>. In addition, a <tooltip ns=tooltips_gen baseKey18=1000016>Sweeping Cyclone</tooltip> is summoned instead of a <ct color=#FFFFFF>Condensed Cyclone</ct>, which does not grant <ct color=#FFFFFF>Windbite</ct>.",
+        "3": "When Velina's summoned <ct color=#FFFFFF>Sweeping Cyclone</ct> hits an enemy suffering <ct color=#FFFFFF>Contamination</ct> for the first time, it triggers <tooltip ns=tooltips_gen baseKey18=1000017>Chromatic Tint</tooltip>, converting it into a <ct color=#FFFFFF>Sweeping Cyclone</ct> of the corresponding attribute, dealing the corresponding attribute's DMG. When <ct color=#FFFFFF>Sweeping Cyclone</ct> hits an enemy, the enemy's <ct color=#A6C5FD>Wind Anomaly Buildup RES</ct> is reduced by 7% for 35s. Repeated triggers reset the duration. If a <ct color=#FFFFFF>Sweeping Cyclone</ct> enhanced by <ct color=#FFFFFF>Chromatic Tint</ct> hits an enemy, the enemy's corresponding <ct color=#FFFFFF>Attribute Anomaly Buildup RES</ct> is also reduced by 7% for 35s. Repeated triggers reset the duration.",
+        "4": "When an enemy affected by <ct color=#FFFFFF>Sweeping Cyclone</ct> is defeated, the duration of that <ct color=#FFFFFF>Sweeping Cyclone</ct> is extended by 5s. This effect can only trigger once for the same <ct color=#FFFFFF>Sweeping Cyclone</ct>, and only one <ct color=#FFFFFF>Sweeping Cyclone</ct> can exist at a time.",
+        "5": "<ct color=#FFFFFF>Condensed Cyclone</ct> and <ct color=#FFFFFF>Sweeping Cyclone</ct> trigger an explosion when they dissipate. If this explosion hits an enemy suffering a <ct color=#A6C5FD>Wind Anomaly</ct>, it triggers one instance of <ct color=#FFFFFF>Abloom</ct> DMG against the target: resolves an additional instance of Attribute Anomaly DMG, dealing a fixed <ct color=#2BAD00>105%</ct> and <ct color=#2BAD00>175%</ct> multiplier <ct color=#A6C5FD>Wind Anomaly DMG</ct> respectively."
+      },
+      {
+        "0": "When Velina's initial Energy Regen exceeds 1.2, every additional 0.01 increases DMG dealt by 0.21%, up to a maximum increase of 35%, and increases Anomaly Mastery by 0.5, up to a maximum increase of 84.",
+        "1": "When Velina enters the battlefield, she gains 45 <tooltip ns=tooltips_gen baseKey18=1000008>Windbloom</tooltip>. In Investigation Zone mode, this effect can trigger once every 180s. Using <ct color=#FFFFFF>EX Special Attack: Wind Shear - Purifying Rise</ct> or <ct color=#FFFFFF>EX Special Attack: Wind Shear - Triple Deathblow</ct> grants 45 <ct color=#FFFFFF>Windbloom</ct>, up to a maximum of 135 <ct color=#FFFFFF>Windbloom</ct>. ",
+        "2": "When Velina triggers <ct color=#FFFFFF>Vortex</ct>, she gains 1 point of <tooltip ns=tooltips_gen baseKey18=1000014>Windbite</tooltip> and summons a <tooltip ns=tooltips_gen baseKey18=1000015>Condensed Cyclone</tooltip>, dealing <ct color=#A6C5FD>Wind DMG</ct>. This effect can trigger once every 3s. When Velina has 2 points of <ct color=#FFFFFF>Windbite</ct>, the next time she triggers <ct color=#FFFFFF>Vortex</ct>, 2 points of <ct color=#FFFFFF>Windbite</ct> are consumed to increase that <ct color=#FFFFFF>Vortex</ct>'s DMG Multiplier by <ct color=#2BAD00>120%</ct>. In addition, a <tooltip ns=tooltips_gen baseKey18=1000016>Sweeping Cyclone</tooltip> is summoned instead of a <ct color=#FFFFFF>Condensed Cyclone</ct>, which does not grant <ct color=#FFFFFF>Windbite</ct>.",
+        "3": "When Velina's summoned <ct color=#FFFFFF>Sweeping Cyclone</ct> hits an enemy suffering <ct color=#FFFFFF>Contamination</ct> for the first time, it triggers <tooltip ns=tooltips_gen baseKey18=1000017>Chromatic Tint</tooltip>, converting it into a <ct color=#FFFFFF>Sweeping Cyclone</ct> of the corresponding attribute, dealing the corresponding attribute's DMG. When <ct color=#FFFFFF>Sweeping Cyclone</ct> hits an enemy, the enemy's <ct color=#A6C5FD>Wind Anomaly Buildup RES</ct> is reduced by 7% for 35s. Repeated triggers reset the duration. If a <ct color=#FFFFFF>Sweeping Cyclone</ct> enhanced by <ct color=#FFFFFF>Chromatic Tint</ct> hits an enemy, the enemy's corresponding <ct color=#FFFFFF>Attribute Anomaly Buildup RES</ct> is also reduced by 7% for 35s. Repeated triggers reset the duration.",
+        "4": "When an enemy affected by <ct color=#FFFFFF>Sweeping Cyclone</ct> is defeated, the duration of that <ct color=#FFFFFF>Sweeping Cyclone</ct> is extended by 5s. This effect can only trigger once for the same <ct color=#FFFFFF>Sweeping Cyclone</ct>, and only one <ct color=#FFFFFF>Sweeping Cyclone</ct> can exist at a time.",
+        "5": "<ct color=#FFFFFF>Condensed Cyclone</ct> and <ct color=#FFFFFF>Sweeping Cyclone</ct> trigger an explosion when they dissipate. If this explosion hits an enemy suffering a <ct color=#A6C5FD>Wind Anomaly</ct>, it triggers one instance of <ct color=#FFFFFF>Abloom</ct> DMG against the target: resolves an additional instance of Attribute Anomaly DMG, dealing a fixed <ct color=#2BAD00>115%</ct> and <ct color=#2BAD00>195%</ct> multiplier <ct color=#A6C5FD>Wind Anomaly DMG</ct> respectively."
+      },
+      {
+        "0": "When Velina's initial Energy Regen exceeds 1.2, every additional 0.01 increases DMG dealt by 0.21%, up to a maximum increase of 35%, and increases Anomaly Mastery by 0.5, up to a maximum increase of 84.",
+        "1": "When Velina enters the battlefield, she gains 45 <tooltip ns=tooltips_gen baseKey18=1000008>Windbloom</tooltip>. In Investigation Zone mode, this effect can trigger once every 180s. Using <ct color=#FFFFFF>EX Special Attack: Wind Shear - Purifying Rise</ct> or <ct color=#FFFFFF>EX Special Attack: Wind Shear - Triple Deathblow</ct> grants 45 <ct color=#FFFFFF>Windbloom</ct>, up to a maximum of 135 <ct color=#FFFFFF>Windbloom</ct>. ",
+        "2": "When Velina triggers <ct color=#FFFFFF>Vortex</ct>, she gains 1 point of <tooltip ns=tooltips_gen baseKey18=1000014>Windbite</tooltip> and summons a <tooltip ns=tooltips_gen baseKey18=1000015>Condensed Cyclone</tooltip>, dealing <ct color=#A6C5FD>Wind DMG</ct>. This effect can trigger once every 3s. When Velina has 2 points of <ct color=#FFFFFF>Windbite</ct>, the next time she triggers <ct color=#FFFFFF>Vortex</ct>, 2 points of <ct color=#FFFFFF>Windbite</ct> are consumed to increase that <ct color=#FFFFFF>Vortex</ct>'s DMG Multiplier by <ct color=#2BAD00>130%</ct>. In addition, a <tooltip ns=tooltips_gen baseKey18=1000016>Sweeping Cyclone</tooltip> is summoned instead of a <ct color=#FFFFFF>Condensed Cyclone</ct>, which does not grant <ct color=#FFFFFF>Windbite</ct>.",
+        "3": "When Velina's summoned <ct color=#FFFFFF>Sweeping Cyclone</ct> hits an enemy suffering <ct color=#FFFFFF>Contamination</ct> for the first time, it triggers <tooltip ns=tooltips_gen baseKey18=1000017>Chromatic Tint</tooltip>, converting it into a <ct color=#FFFFFF>Sweeping Cyclone</ct> of the corresponding attribute, dealing the corresponding attribute's DMG. When <ct color=#FFFFFF>Sweeping Cyclone</ct> hits an enemy, the enemy's <ct color=#A6C5FD>Wind Anomaly Buildup RES</ct> is reduced by 7% for 35s. Repeated triggers reset the duration. If a <ct color=#FFFFFF>Sweeping Cyclone</ct> enhanced by <ct color=#FFFFFF>Chromatic Tint</ct> hits an enemy, the enemy's corresponding <ct color=#FFFFFF>Attribute Anomaly Buildup RES</ct> is also reduced by 7% for 35s. Repeated triggers reset the duration.",
+        "4": "When an enemy affected by <ct color=#FFFFFF>Sweeping Cyclone</ct> is defeated, the duration of that <ct color=#FFFFFF>Sweeping Cyclone</ct> is extended by 5s. This effect can only trigger once for the same <ct color=#FFFFFF>Sweeping Cyclone</ct>, and only one <ct color=#FFFFFF>Sweeping Cyclone</ct> can exist at a time.",
+        "5": "<ct color=#FFFFFF>Condensed Cyclone</ct> and <ct color=#FFFFFF>Sweeping Cyclone</ct> trigger an explosion when they dissipate. If this explosion hits an enemy suffering a <ct color=#A6C5FD>Wind Anomaly</ct>, it triggers one instance of <ct color=#FFFFFF>Abloom</ct> DMG against the target: resolves an additional instance of Attribute Anomaly DMG, dealing a fixed <ct color=#2BAD00>125%</ct> and <ct color=#2BAD00>215%</ct> multiplier <ct color=#A6C5FD>Wind Anomaly DMG</ct> respectively."
+      },
+      {
+        "0": "When Velina's initial Energy Regen exceeds 1.2, every additional 0.01 increases DMG dealt by 0.21%, up to a maximum increase of 35%, and increases Anomaly Mastery by 0.5, up to a maximum increase of 84.",
+        "1": "When Velina enters the battlefield, she gains 45 <tooltip ns=tooltips_gen baseKey18=1000008>Windbloom</tooltip>. In Investigation Zone mode, this effect can trigger once every 180s. Using <ct color=#FFFFFF>EX Special Attack: Wind Shear - Purifying Rise</ct> or <ct color=#FFFFFF>EX Special Attack: Wind Shear - Triple Deathblow</ct> grants 45 <ct color=#FFFFFF>Windbloom</ct>, up to a maximum of 135 <ct color=#FFFFFF>Windbloom</ct>. ",
+        "2": "When Velina triggers <ct color=#FFFFFF>Vortex</ct>, she gains 1 point of <tooltip ns=tooltips_gen baseKey18=1000014>Windbite</tooltip> and summons a <tooltip ns=tooltips_gen baseKey18=1000015>Condensed Cyclone</tooltip>, dealing <ct color=#A6C5FD>Wind DMG</ct>. This effect can trigger once every 3s. When Velina has 2 points of <ct color=#FFFFFF>Windbite</ct>, the next time she triggers <ct color=#FFFFFF>Vortex</ct>, 2 points of <ct color=#FFFFFF>Windbite</ct> are consumed to increase that <ct color=#FFFFFF>Vortex</ct>'s DMG Multiplier by <ct color=#2BAD00>140%</ct>. In addition, a <tooltip ns=tooltips_gen baseKey18=1000016>Sweeping Cyclone</tooltip> is summoned instead of a <ct color=#FFFFFF>Condensed Cyclone</ct>, which does not grant <ct color=#FFFFFF>Windbite</ct>.",
+        "3": "When Velina's summoned <ct color=#FFFFFF>Sweeping Cyclone</ct> hits an enemy suffering <ct color=#FFFFFF>Contamination</ct> for the first time, it triggers <tooltip ns=tooltips_gen baseKey18=1000017>Chromatic Tint</tooltip>, converting it into a <ct color=#FFFFFF>Sweeping Cyclone</ct> of the corresponding attribute, dealing the corresponding attribute's DMG. When <ct color=#FFFFFF>Sweeping Cyclone</ct> hits an enemy, the enemy's <ct color=#A6C5FD>Wind Anomaly Buildup RES</ct> is reduced by 7% for 35s. Repeated triggers reset the duration. If a <ct color=#FFFFFF>Sweeping Cyclone</ct> enhanced by <ct color=#FFFFFF>Chromatic Tint</ct> hits an enemy, the enemy's corresponding <ct color=#FFFFFF>Attribute Anomaly Buildup RES</ct> is also reduced by 7% for 35s. Repeated triggers reset the duration.",
+        "4": "When an enemy affected by <ct color=#FFFFFF>Sweeping Cyclone</ct> is defeated, the duration of that <ct color=#FFFFFF>Sweeping Cyclone</ct> is extended by 5s. This effect can only trigger once for the same <ct color=#FFFFFF>Sweeping Cyclone</ct>, and only one <ct color=#FFFFFF>Sweeping Cyclone</ct> can exist at a time.",
+        "5": "<ct color=#FFFFFF>Condensed Cyclone</ct> and <ct color=#FFFFFF>Sweeping Cyclone</ct> trigger an explosion when they dissipate. If this explosion hits an enemy suffering a <ct color=#A6C5FD>Wind Anomaly</ct>, it triggers one instance of <ct color=#FFFFFF>Abloom</ct> DMG against the target: resolves an additional instance of Attribute Anomaly DMG, dealing a fixed <ct color=#2BAD00>135%</ct> and <ct color=#2BAD00>235%</ct> multiplier <ct color=#A6C5FD>Wind Anomaly DMG</ct> respectively."
+      },
+      {
+        "0": "When Velina's initial Energy Regen exceeds 1.2, every additional 0.01 increases DMG dealt by 0.21%, up to a maximum increase of 35%, and increases Anomaly Mastery by 0.5, up to a maximum increase of 84.",
+        "1": "When Velina enters the battlefield, she gains 45 <tooltip ns=tooltips_gen baseKey18=1000008>Windbloom</tooltip>. In Investigation Zone mode, this effect can trigger once every 180s. Using <ct color=#FFFFFF>EX Special Attack: Wind Shear - Purifying Rise</ct> or <ct color=#FFFFFF>EX Special Attack: Wind Shear - Triple Deathblow</ct> grants 45 <ct color=#FFFFFF>Windbloom</ct>, up to a maximum of 135 <ct color=#FFFFFF>Windbloom</ct>. ",
+        "2": "When Velina triggers <ct color=#FFFFFF>Vortex</ct>, she gains 1 point of <tooltip ns=tooltips_gen baseKey18=1000014>Windbite</tooltip> and summons a <tooltip ns=tooltips_gen baseKey18=1000015>Condensed Cyclone</tooltip>, dealing <ct color=#A6C5FD>Wind DMG</ct>. This effect can trigger once every 3s. When Velina has 2 points of <ct color=#FFFFFF>Windbite</ct>, the next time she triggers <ct color=#FFFFFF>Vortex</ct>, 2 points of <ct color=#FFFFFF>Windbite</ct> are consumed to increase that <ct color=#FFFFFF>Vortex</ct>'s DMG Multiplier by <ct color=#2BAD00>150%</ct>. In addition, a <tooltip ns=tooltips_gen baseKey18=1000016>Sweeping Cyclone</tooltip> is summoned instead of a <ct color=#FFFFFF>Condensed Cyclone</ct>, which does not grant <ct color=#FFFFFF>Windbite</ct>.",
+        "3": "When Velina's summoned <ct color=#FFFFFF>Sweeping Cyclone</ct> hits an enemy suffering <ct color=#FFFFFF>Contamination</ct> for the first time, it triggers <tooltip ns=tooltips_gen baseKey18=1000017>Chromatic Tint</tooltip>, converting it into a <ct color=#FFFFFF>Sweeping Cyclone</ct> of the corresponding attribute, dealing the corresponding attribute's DMG. When <ct color=#FFFFFF>Sweeping Cyclone</ct> hits an enemy, the enemy's <ct color=#A6C5FD>Wind Anomaly Buildup RES</ct> is reduced by 7% for 35s. Repeated triggers reset the duration. If a <ct color=#FFFFFF>Sweeping Cyclone</ct> enhanced by <ct color=#FFFFFF>Chromatic Tint</ct> hits an enemy, the enemy's corresponding <ct color=#FFFFFF>Attribute Anomaly Buildup RES</ct> is also reduced by 7% for 35s. Repeated triggers reset the duration.",
+        "4": "When an enemy affected by <ct color=#FFFFFF>Sweeping Cyclone</ct> is defeated, the duration of that <ct color=#FFFFFF>Sweeping Cyclone</ct> is extended by 5s. This effect can only trigger once for the same <ct color=#FFFFFF>Sweeping Cyclone</ct>, and only one <ct color=#FFFFFF>Sweeping Cyclone</ct> can exist at a time.",
+        "5": "<ct color=#FFFFFF>Condensed Cyclone</ct> and <ct color=#FFFFFF>Sweeping Cyclone</ct> trigger an explosion when they dissipate. If this explosion hits an enemy suffering a <ct color=#A6C5FD>Wind Anomaly</ct>, it triggers one instance of <ct color=#FFFFFF>Abloom</ct> DMG against the target: resolves an additional instance of Attribute Anomaly DMG, dealing a fixed <ct color=#2BAD00>145%</ct> and <ct color=#2BAD00>255%</ct> multiplier <ct color=#A6C5FD>Wind Anomaly DMG</ct> respectively."
+      }
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Tea Party Etiquette",
+    "desc": {
+      "0": "When another character in your squad is an <ct color=#FFFFFF>Anomaly</ct> character or shares the same attribute:",
+      "1": "Velina's <ct color=#A6C5FD>Windswept</ct> and <ct color=#FFFFFF>Vortex</ct> DMG increases by 10%. When the heavy attack from an <ct color=#FFFFFF>Ultimate</ct> hits an enemy suffering a <ct color=#A6C5FD>Wind Attribute Anomaly</ct>, it triggers an instance of <ct color=#FFFFFF>Abloom</ct> DMG against the target: resolves one additional instance of Attribute Anomaly DMG, fixed at <ct color=#A6C5FD>680%</ct> of <ct color=#A6C5FD>Wind Attribute Anomaly DMG</ct>.",
+      "2": "For <ct color=#FFFFFF>Core Passive: Breeze in Bloom</ct>, the <ct color=#FFFFFF>Attribute Anomaly Buildup RES</ct> reduction from <tooltip ns=tooltips_gen baseKey18=1000016>Sweeping Cyclone</tooltip> is further increased by 7%, while Daze inflicted increases by 30%, and accumulated Attribute Anomaly Buildup increases by 15%."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Orderly Elegance",
+      "desc": "<ct color=#FFFFFF>Sweeping Cyclone</ct> from <ct color=#FFFFFF>Additional Ability: Tea Party Etiquette</ct> deals an additional 20% Daze. When Velina triggers <ct color=#FFFFFF>Vortex</ct>, she ignores 20% of the target's <ct color=#FFFFFF>All-Attribute RES</ct>. When squad members deal <ct color=#A6C5FD>Windswept</ct> DMG, 20% of the target's <ct color=#A6C5FD>Wind RES</ct> is ignored.",
+      "flavor": {
+        "0": "Every word and gesture is placed precisely where it belongs.",
+        "1": "Before the other party even realizes it, they willingly accept the boundaries, rhythm, and outcome she has arranged—",
+        "2": "\"Elegance is simply the most natural expression of order in motion.\""
+      }
+    },
+    "2": {
+      "name": "Saturation Project",
+      "desc": "When Velina triggers <ct color=#A6C5FD>Windswept</ct>, she can also gain 1 point of <ct color=#FFFFFF>Windbite</ct>. This effect can trigger once every 5s. After <ct color=#FFFFFF>Sweeping Cyclone</ct> triggers the <ct color=#FFFFFF>Chromatic Tint</ct> effect, it can accumulate the corresponding attribute's Anomaly Buildup. The buildup accumulated by this attack is excluded from Anomaly DMG calculations. The DMG increase effects of Velina's <ct color=#A6C5FD>Windswept</ct> and <ct color=#FFFFFF>Vortex</ct> from <ct color=#FFFFFF>Additional Ability: Tea Party Etiquette</ct> are further increased by 15%.",
+      "flavor": {
+        "0": "She anticipates every possibility, accounts for every variable, and makes backup plans for things going wrong.",
+        "1": "She never relies on chance. Every ending is calculated.",
+        "2": "Even if the situation veers off course for a moment, it only leads onto another path she has already prepared for.",
+        "3": "\"Sigh, so it's come to this... Good thing I'm not entirely unprepared.\""
+      }
+    },
+    "3": {
+      "name": "Conquest by Etiquette",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "No need to force submission through strength, nor rely on emotion or intimidation.",
+        "1": "A graceful response and a carefully measured compromise are enough...",
+        "2": "Before anyone realizes it, the situation has already been steered toward destined conquest.",
+        "3": "\"Is etiquette simply violence in disguise?\"",
+        "4": "\"Or is etiquette the more refined form of violence?\""
+      }
+    },
+    "4": {
+      "name": "Tea Party Tribunal",
+      "desc": "When Velina uses an <ct color=#FFFFFF>EX Special Attack</ct>, her ATK increases by 15% for 40s. Repeated triggers reset the duration.",
+      "flavor": {
+        "0": "In the midst of laughter and conversation, the scales have already tipped.",
+        "1": "The tea has yet to go cold, yet the verdict is already sold.",
+        "2": "\"If something's bothering me, I'll simply deal with it and move on. And if someone's bothering me, heh...\""
+      }
+    },
+    "5": {
+      "name": "Death Witch",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "\"Her footsteps herald judgment!\"",
+        "1": "\"Her invitation is your funeral!\"",
+        "2": "The silver-haired witch sits calmly beneath the theater of the Bangboo Kingdom, listening to the tiny performers hurl accusations at her with absolute conviction. She gently waves her ornate fan, smiling without a word."
+      }
+    },
+    "6": {
+      "name": "Chief Angel",
+      "desc": "When Velina consumes 2 points of <ct color=#FFFFFF>Windbite</ct> to increase the DMG Multiplier of <ct color=#FFFFFF>Vortex</ct>, she gains 1 point of <ct color=#FFFFFF>Windbite</ct>. This effect can trigger once every 6s. When Velina hits an enemy suffering a <ct color=#A6C5FD>Wind Attribute Anomaly</ct>, the <ct color=#A6C5FD>Wind Attribute Anomaly Buildup</ct> she inflicts increases by 20%. When Velina inflicts <ct color=#A6C5FD>Windswept</ct> on an enemy already affected by <ct color=#A6C5FD>Windswept</ct>, the new <ct color=#A6C5FD>Windswept</ct>'s DMG increases based on the remaining duration of the previous. Each remaining second increases the DMG by 2.5%, up to a maximum increase of 40%.",
+      "flavor": "\"There is no need to ask an angel's name. She hides within rumors, behind reprimands, and within the fearful letters requesting aid you deliver with shaking hands.\""
+    }
+  },
+  "potential": {}
+}

@@ -536,6 +536,10 @@
       "icon": "UI_EquipIcon_Pole_TummaLyhty",
       "awakenIcon": "UI_EquipIcon_Pole_TummaLyhty_Awaken"
     },
+    "DisasterAndRemorse": {
+      "icon": "UI_EquipIcon_Pole_Carbine",
+      "awakenIcon": "UI_EquipIcon_Pole_Carbine_Awaken"
+    },
     "ApprenticesNotes": {
       "icon": "UI_EquipIcon_Catalyst_Apprentice",
       "awakenIcon": "UI_EquipIcon_Catalyst_Apprentice_Awaken"
@@ -3270,6 +3274,24 @@
       "constellation4": "UI_Talent_S_Varka_03",
       "constellation5": "UI_Talent_U_Varka_02",
       "constellation6": "UI_Talent_S_Varka_04"
+    },
+    "Lohen": {
+      "icon": "UI_AvatarIcon_Lohen",
+      "iconSide": "UI_AvatarIcon_Side_Lohen",
+      "banner": "UI_NameCardPic_Lohen_P",
+      "bar": "UI_NameCardPic_Lohen_Alpha",
+      "skill": "Skill_S_Lohen_01",
+      "burst": "Skill_E_Lohen_01_HD",
+      "passive1": "UI_Talent_S_Lohen_05",
+      "passive2": "UI_Talent_S_Lohen_06",
+      "passive3": "UI_Talent_S_Lohen_08",
+      "lockedPassive": "UI_Talent_S_Lohen_07",
+      "constellation1": "UI_Talent_S_Lohen_01",
+      "constellation2": "UI_Talent_S_Lohen_02",
+      "constellation3": "UI_Talent_U_Lohen_01",
+      "constellation4": "UI_Talent_S_Lohen_03",
+      "constellation5": "UI_Talent_U_Lohen_02",
+      "constellation6": "UI_Talent_S_Lohen_04"
     },
     "Linnea": {
       "icon": "UI_AvatarIcon_Linnea",

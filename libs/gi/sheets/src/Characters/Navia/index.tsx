@@ -235,7 +235,9 @@ const dmgFormulas = {
         unit: '%',
       })
     ),
-    bladeDmg: dmgNode('atk', dm.skill.bladeDmg, 'skill'),
+    bladeDmg: dmgNode('atk', dm.skill.bladeDmg, 'skill', {
+      hit: { reaction: constant('') },
+    }),
   },
   burst: {
     skillDmg: dmgNode('atk', dm.burst.skillDmg, 'burst'),

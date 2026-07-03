@@ -8,7 +8,8 @@ import {
   ModalWrapper,
   TextFieldLazy,
 } from '@genshin-optimizer/common/ui'
-import { range } from '@genshin-optimizer/common/util'
+import { range, shouldShowDevComponents } from '@genshin-optimizer/common/util'
+import { addDevData } from '@genshin-optimizer/zzz/db'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import { Delete, Download, ImportExport, Upload } from '@mui/icons-material'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
@@ -99,6 +100,17 @@ function DataCard({ index }: { index: number }) {
     database.swapStorage(mainDB)
     setDatabase(index, database)
   }, [index, setDatabase, mainDB, current, database])
+
+  const onAddDevData = useCallback(() => {
+    if (
+      !window.confirm(
+        `Add ${1000} S-rank discs (Lv.15) and all S-rank wengines (max level) to "${name}"?`
+      )
+    )
+      return
+    const { discsAdded, wenginesAdded } = addDevData(database)
+    alert(`Added ${discsAdded} discs and ${wenginesAdded} wengines.`)
+  }, [database, name])
 
   return (
     <CardThemed
@@ -203,6 +215,13 @@ function DataCard({ index }: { index: number }) {
                   {t('DatabaseCard.button.delete')}
                 </Button>
               </Grid>
+              {shouldShowDevComponents && (
+                <Grid item xs={2}>
+                  <Button fullWidth color="warning" onClick={onAddDevData}>
+                    Add Dev Data
+                  </Button>
+                </Grid>
+              )}
             </Grid>
             {!!lastEdit && (
               <Typography noWrap align="center" style={{ paddingTop: '1.5em' }}>

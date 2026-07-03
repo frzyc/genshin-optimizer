@@ -25,8 +25,10 @@ import type {
   own,
 } from '@genshin-optimizer/zzz/formula'
 import {
+  bundledFormulaInSheet,
   formulas,
   getConditional,
+  isAbilityDim,
   isMember,
 } from '@genshin-optimizer/zzz/formula'
 import { z } from 'zod'
@@ -38,7 +40,7 @@ export const critModeKeys = ['avg', 'crit', 'nonCrit'] as const
 
 export type SpecificDmgTypeKey = Exclude<
   DamageType,
-  'anomaly' | 'disorder' | 'aftershock' | 'elemental'
+  'anomaly' | 'disorder' | 'aftershock' | 'elemental' | 'vortex'
 >
 export const specificDmgTypeKeys: SpecificDmgTypeKey[] = [
   'basic',
@@ -63,11 +65,17 @@ export const targetQ = [
   'atk',
   'def',
   'impact',
+  'sheerForce',
+  'cappedCrit_',
+  'crit_dmg_',
+  'pen_',
+  'pen',
   'enerRegen',
   'anomProf',
   'anomMas',
+  'dmg_',
 ] as const
-export const targetQt = ['initial', 'final'] as const
+export const targetQt = ['initial', 'final', 'common'] as const
 
 export const bonusStatQtKeys = ['combat', 'base', 'initial'] as const
 export const bonusStatKeys: Array<keyof typeof own.final> = [
@@ -137,6 +145,7 @@ export const bonusStatDamageTypes: BonusStatDamageType[] = [
   'anomaly',
   'disorder',
   'abloom',
+  'vortex',
 ] as const
 
 export type TargetTag = {
@@ -144,8 +153,9 @@ export type TargetTag = {
   name?: string
   damageType1?: SpecificDmgTypeKey
   damageType2?: 'aftershock' | 'abloom'
-  q?: (typeof targetQ)[number]
+  q?: string
   qt?: (typeof targetQt)[number]
+  attribute?: AttributeKey
 }
 
 const targetTagSchema = z
@@ -154,8 +164,9 @@ const targetTagSchema = z
     name: z.string().optional(),
     damageType1: z.string().optional(),
     damageType2: z.literal('aftershock').or(z.literal('abloom')).optional(),
-    q: z.enum(targetQ).optional(),
+    q: z.string().optional(),
     qt: z.enum(targetQt).optional(),
+    attribute: z.string().optional(),
   })
   .optional() as z.ZodType<TargetTag | undefined>
 
@@ -366,13 +377,16 @@ export class TeamDataManager extends DataManager<
     if (!rawTarget) return undefined
 
     if (rawTarget.name) {
-      const formula = getFormula(rawTarget)
+      const sheet = rawTarget.sheet ?? resolveFormulaSheet(rawTarget)
+      const formula = getFormula({ ...rawTarget, sheet })
       if (formula) {
+        const abilityName = formula.tag.name
+        if (!abilityName) return undefined
         let damageType1: SpecificDmgTypeKey | undefined
         let damageType2: 'aftershock' | 'abloom' | undefined
         if (
-          formula.name === 'standardDmgInst' ||
-          formula.name === 'sheerDmgInst'
+          abilityName === 'standardDmgInst' ||
+          abilityName === 'sheerDmgInst'
         ) {
           if (
             rawTarget.damageType1 &&
@@ -385,9 +399,11 @@ export class TeamDataManager extends DataManager<
           )
             damageType2 = rawTarget.damageType2
         }
+        const q = rawTarget.q ?? formula.tag.q ?? undefined
         return removeUndefinedFields({
-          sheet: formula.sheet,
-          name: formula.name,
+          sheet: sheet ?? formula.sheet,
+          name: abilityName,
+          q,
           damageType1,
           damageType2,
         }) as TargetTag
@@ -395,9 +411,25 @@ export class TeamDataManager extends DataManager<
       return undefined
     }
 
-    const { q, qt } = rawTarget
-    if (q && qt && targetQ.includes(q) && targetQt.includes(qt)) {
-      return { q, qt }
+    const { q, qt, attribute } = rawTarget
+    if (
+      q &&
+      qt &&
+      (targetQ as readonly string[]).includes(q) &&
+      targetQt.includes(qt)
+    ) {
+      let validAttribute: AttributeKey | undefined
+      if (q === 'dmg_' && attribute) {
+        validAttribute = validateValue(attribute, allAttributeKeys) as
+          | AttributeKey
+          | undefined
+        if (!validAttribute) return undefined
+      }
+      return removeUndefinedFields({
+        q,
+        qt,
+        attribute: validAttribute,
+      }) as TargetTag
     }
     return undefined
   }
@@ -741,27 +773,89 @@ export function applyDamageTypeToTag(
   }
 }
 
-function getFormula({ sheet, name }: TargetTag) {
-  if (!sheet || !name) return
-  return (formulas as any)[sheet]?.[name] as
-    | {
-        sheet: Sheet
-        name: string
-        tag: Tag
-      }
+function resolveFormulaSheet(target: {
+  name?: string
+  sheet?: string
+  q?: string
+}): Sheet | undefined {
+  const { name, q, sheet } = target
+  if (!name) return undefined
+
+  const matches = (charSheet: string) => {
+    const sheetFormulas = (formulas as Record<string, Record<string, unknown>>)[
+      charSheet
+    ]
+    if (!sheetFormulas) return false
+    if (q) {
+      if (isAbilityDim(q))
+        return !!bundledFormulaInSheet(
+          sheetFormulas as Record<string, { tag?: Tag }>,
+          name,
+          q
+        )
+      return Object.values(sheetFormulas).some(
+        (entry) =>
+          (entry as { tag?: Tag }).tag?.name === name &&
+          (entry as { tag?: Tag }).tag?.q === q
+      )
+    }
+    return !!sheetFormulas[name]
+  }
+
+  if (
+    sheet &&
+    allCharacterKeys.includes(sheet as CharacterKey) &&
+    matches(sheet)
+  )
+    return sheet as Sheet
+
+  for (const charSheet of allCharacterKeys) {
+    if (matches(charSheet)) return charSheet as Sheet
+  }
+  return undefined
+}
+
+function getFormula(target: TargetTag) {
+  const { name, q, sheet: sheetHint } = target
+  if (!name) return
+  const sheet = sheetHint ?? resolveFormulaSheet(target)
+  if (!sheet) return
+  const sheetFormulas = (formulas as any)[sheet] as
+    | Record<
+        string,
+        {
+          sheet: Sheet
+          name: string
+          tag: Tag
+        }
+      >
     | undefined
+  if (!sheetFormulas) return
+
+  if (q) {
+    if (isAbilityDim(q)) return bundledFormulaInSheet(sheetFormulas, name, q)
+    const byTagQ = Object.values(sheetFormulas).find(
+      (entry) => entry.tag?.name === name && entry.tag?.q === q
+    )
+    if (byTagQ) return byTagQ
+    return undefined
+  }
+
+  return sheetFormulas[name]
 }
 
 export function targetTag(target: TargetTag): Tag {
-  const { damageType1, damageType2 } = target
+  const { damageType1, damageType2, attribute } = target
   const formula = getFormula(target)
   if (formula)
     return applyDamageTypeToTag(formula.tag, damageType1, damageType2)
+  const qt = target.qt ?? 'final'
   return {
     et: 'own',
     q: target.q ?? 'atk',
-    qt: target.qt ?? 'final',
-    sheet: 'agg',
+    qt,
+    sheet: qt === 'common' ? 'iso' : 'agg',
+    ...(attribute ? { attribute } : {}),
   }
 }
 

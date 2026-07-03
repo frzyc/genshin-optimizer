@@ -9,6 +9,13 @@ export type TagField = {
   multi?: number // for multi-hits, displayed before a number, e.g. 3x100
 }
 
+export type MultiTagField = {
+  title: ReactNode
+  fieldRefs: Array<{ label?: ReactNode; ref: Tag }>
+  subtitle?: ReactNode
+  icon?: ReactNode
+}
+
 export type TextField = {
   variant?: string
   title: ReactNode
@@ -19,8 +26,12 @@ export type TextField = {
   unit?: string
 }
 
-export type Field = TagField | TextField
+export type Field = TagField | TextField | MultiTagField
 
 export function isTagField(field: Field): field is TagField {
   return 'fieldRef' in field
+}
+
+export function isMultiTagField(field: Field): field is MultiTagField {
+  return 'fieldRefs' in field
 }

@@ -13,6 +13,7 @@ declare module '@mui/material/styles' {
     frost: Palette['primary']
     physical: Palette['primary']
     ether: Palette['primary']
+    wind: Palette['primary']
     rankS: Palette['primary']
     rankA: Palette['primary']
     rankB: Palette['primary']
@@ -28,6 +29,7 @@ declare module '@mui/material/styles' {
     frost?: PaletteOptions['primary']
     physical?: PaletteOptions['primary']
     ether?: PaletteOptions['primary']
+    wind?: PaletteOptions['primary']
     rankS?: PaletteOptions['primary']
     rankA?: PaletteOptions['primary']
     rankB?: PaletteOptions['primary']
@@ -42,6 +44,7 @@ declare module '@mui/material/Button' {
     frost: true
     physical: true
     ether: true
+    wind: true
   }
 }
 
@@ -53,6 +56,7 @@ declare module '@mui/material/Chip' {
     frost: true
     physical: true
     ether: true
+    wind: true
   }
 }
 
@@ -64,6 +68,7 @@ declare module '@mui/material/InputBase' {
     frost: true
     physical: true
     ether: true
+    wind: true
   }
 }
 
@@ -75,6 +80,7 @@ declare module '@mui/material/SvgIcon' {
     frost: true
     physical: true
     ether: true
+    wind: true
   }
 }
 
@@ -123,6 +129,10 @@ export const theme = createTheme({
     ether: commonTheme.palette.augmentColor({
       color: { main: '#FE427E', light: '#FF0068', contrastText: '#fff' },
       name: 'ether',
+    }),
+    wind: commonTheme.palette.augmentColor({
+      color: { main: '#74a4ff', contrastText: '#fff' },
+      name: 'wind',
     }),
     rankS: commonTheme.palette.augmentColor({
       color: { main: '#FF9100', contrastText: '#fff' },

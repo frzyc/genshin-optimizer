@@ -38,6 +38,19 @@ export const formulas = {
       name: 'disorderDmgInst_physical',
     },
   },
+  vortexDmgInst_physical: {
+    sheet: 'YeShunguang',
+    name: 'vortexDmgInst_physical',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'YeShunguang',
+      attribute: 'physical',
+      damageType1: 'vortex',
+      name: 'vortexDmgInst_physical',
+    },
+  },
   abloomDmgInst: {
     sheet: 'YeShunguang',
     name: 'abloomDmgInst',
@@ -76,9 +89,9 @@ export const formulas = {
       name: 'dazeInst',
     },
   },
-  BasicAttackSwiftedge_0_dmg: {
+  'BasicAttackSwiftedge_0:standardDmg': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackSwiftedge_0_dmg',
+    name: 'BasicAttackSwiftedge_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -87,12 +100,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSwiftedge_0_dmg',
+      name: 'BasicAttackSwiftedge_0',
     },
   },
-  BasicAttackSwiftedge_0_daze: {
+  'BasicAttackSwiftedge_0:dazeBuildup': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackSwiftedge_0_daze',
+    name: 'BasicAttackSwiftedge_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -101,12 +114,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSwiftedge_0_daze',
+      name: 'BasicAttackSwiftedge_0',
     },
   },
-  BasicAttackSwiftedge_0_anomBuildup: {
+  'BasicAttackSwiftedge_0:anomBuildup': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackSwiftedge_0_anomBuildup',
+    name: 'BasicAttackSwiftedge_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -115,12 +128,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSwiftedge_0_anomBuildup',
+      name: 'BasicAttackSwiftedge_0',
     },
   },
-  BasicAttackSwiftedge_1_dmg: {
+  'BasicAttackSwiftedge_1:standardDmg': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackSwiftedge_1_dmg',
+    name: 'BasicAttackSwiftedge_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -129,12 +142,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSwiftedge_1_dmg',
+      name: 'BasicAttackSwiftedge_1',
     },
   },
-  BasicAttackSwiftedge_1_daze: {
+  'BasicAttackSwiftedge_1:dazeBuildup': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackSwiftedge_1_daze',
+    name: 'BasicAttackSwiftedge_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -143,12 +156,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSwiftedge_1_daze',
+      name: 'BasicAttackSwiftedge_1',
     },
   },
-  BasicAttackSwiftedge_1_anomBuildup: {
+  'BasicAttackSwiftedge_1:anomBuildup': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackSwiftedge_1_anomBuildup',
+    name: 'BasicAttackSwiftedge_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -157,12 +170,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSwiftedge_1_anomBuildup',
+      name: 'BasicAttackSwiftedge_1',
     },
   },
-  BasicAttackSwiftedge_2_dmg: {
+  'BasicAttackSwiftedge_2:standardDmg': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackSwiftedge_2_dmg',
+    name: 'BasicAttackSwiftedge_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -171,12 +184,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSwiftedge_2_dmg',
+      name: 'BasicAttackSwiftedge_2',
     },
   },
-  BasicAttackSwiftedge_2_daze: {
+  'BasicAttackSwiftedge_2:dazeBuildup': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackSwiftedge_2_daze',
+    name: 'BasicAttackSwiftedge_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -185,12 +198,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSwiftedge_2_daze',
+      name: 'BasicAttackSwiftedge_2',
     },
   },
-  BasicAttackSwiftedge_2_anomBuildup: {
+  'BasicAttackSwiftedge_2:anomBuildup': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackSwiftedge_2_anomBuildup',
+    name: 'BasicAttackSwiftedge_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -199,12 +212,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSwiftedge_2_anomBuildup',
+      name: 'BasicAttackSwiftedge_2',
     },
   },
-  BasicAttackSwiftedge_3_dmg: {
+  'BasicAttackSwiftedge_3:standardDmg': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackSwiftedge_3_dmg',
+    name: 'BasicAttackSwiftedge_3:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -213,12 +226,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSwiftedge_3_dmg',
+      name: 'BasicAttackSwiftedge_3',
     },
   },
-  BasicAttackSwiftedge_3_daze: {
+  'BasicAttackSwiftedge_3:dazeBuildup': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackSwiftedge_3_daze',
+    name: 'BasicAttackSwiftedge_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -227,12 +240,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSwiftedge_3_daze',
+      name: 'BasicAttackSwiftedge_3',
     },
   },
-  BasicAttackSwiftedge_3_anomBuildup: {
+  'BasicAttackSwiftedge_3:anomBuildup': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackSwiftedge_3_anomBuildup',
+    name: 'BasicAttackSwiftedge_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -241,12 +254,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSwiftedge_3_anomBuildup',
+      name: 'BasicAttackSwiftedge_3',
     },
   },
-  BasicAttackCloudstreamSwordWill_0_dmg: {
+  'BasicAttackCloudstreamSwordWill_0:standardDmg': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackCloudstreamSwordWill_0_dmg',
+    name: 'BasicAttackCloudstreamSwordWill_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -255,12 +268,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCloudstreamSwordWill_0_dmg',
+      name: 'BasicAttackCloudstreamSwordWill_0',
     },
   },
-  BasicAttackCloudstreamSwordWill_0_daze: {
+  'BasicAttackCloudstreamSwordWill_0:dazeBuildup': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackCloudstreamSwordWill_0_daze',
+    name: 'BasicAttackCloudstreamSwordWill_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -269,12 +282,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCloudstreamSwordWill_0_daze',
+      name: 'BasicAttackCloudstreamSwordWill_0',
     },
   },
-  BasicAttackCloudstreamSwordWill_0_anomBuildup: {
+  'BasicAttackCloudstreamSwordWill_0:anomBuildup': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackCloudstreamSwordWill_0_anomBuildup',
+    name: 'BasicAttackCloudstreamSwordWill_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -283,12 +296,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCloudstreamSwordWill_0_anomBuildup',
+      name: 'BasicAttackCloudstreamSwordWill_0',
     },
   },
-  BasicAttackEnlightenedMindSplittingCurrents_0_dmg: {
+  'BasicAttackEnlightenedMindSplittingCurrents_0:standardDmg': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackEnlightenedMindSplittingCurrents_0_dmg',
+    name: 'BasicAttackEnlightenedMindSplittingCurrents_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -297,12 +310,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnlightenedMindSplittingCurrents_0_dmg',
+      name: 'BasicAttackEnlightenedMindSplittingCurrents_0',
     },
   },
-  BasicAttackEnlightenedMindSplittingCurrents_0_daze: {
+  'BasicAttackEnlightenedMindSplittingCurrents_0:dazeBuildup': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackEnlightenedMindSplittingCurrents_0_daze',
+    name: 'BasicAttackEnlightenedMindSplittingCurrents_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -311,12 +324,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnlightenedMindSplittingCurrents_0_daze',
+      name: 'BasicAttackEnlightenedMindSplittingCurrents_0',
     },
   },
-  BasicAttackEnlightenedMindSplittingCurrents_0_anomBuildup: {
+  'BasicAttackEnlightenedMindSplittingCurrents_0:anomBuildup': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackEnlightenedMindSplittingCurrents_0_anomBuildup',
+    name: 'BasicAttackEnlightenedMindSplittingCurrents_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -325,12 +338,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnlightenedMindSplittingCurrents_0_anomBuildup',
+      name: 'BasicAttackEnlightenedMindSplittingCurrents_0',
     },
   },
-  BasicAttackEnlightenedMindSplittingCurrents_1_dmg: {
+  'BasicAttackEnlightenedMindSplittingCurrents_1:standardDmg': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackEnlightenedMindSplittingCurrents_1_dmg',
+    name: 'BasicAttackEnlightenedMindSplittingCurrents_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -339,12 +352,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnlightenedMindSplittingCurrents_1_dmg',
+      name: 'BasicAttackEnlightenedMindSplittingCurrents_1',
     },
   },
-  BasicAttackEnlightenedMindSplittingCurrents_1_daze: {
+  'BasicAttackEnlightenedMindSplittingCurrents_1:dazeBuildup': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackEnlightenedMindSplittingCurrents_1_daze',
+    name: 'BasicAttackEnlightenedMindSplittingCurrents_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -353,12 +366,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnlightenedMindSplittingCurrents_1_daze',
+      name: 'BasicAttackEnlightenedMindSplittingCurrents_1',
     },
   },
-  BasicAttackEnlightenedMindSplittingCurrents_1_anomBuildup: {
+  'BasicAttackEnlightenedMindSplittingCurrents_1:anomBuildup': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackEnlightenedMindSplittingCurrents_1_anomBuildup',
+    name: 'BasicAttackEnlightenedMindSplittingCurrents_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -367,12 +380,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnlightenedMindSplittingCurrents_1_anomBuildup',
+      name: 'BasicAttackEnlightenedMindSplittingCurrents_1',
     },
   },
-  BasicAttackEnlightenedMindSplittingCurrents_2_dmg: {
+  'BasicAttackEnlightenedMindSplittingCurrents_2:standardDmg': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackEnlightenedMindSplittingCurrents_2_dmg',
+    name: 'BasicAttackEnlightenedMindSplittingCurrents_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -381,12 +394,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnlightenedMindSplittingCurrents_2_dmg',
+      name: 'BasicAttackEnlightenedMindSplittingCurrents_2',
     },
   },
-  BasicAttackEnlightenedMindSplittingCurrents_2_daze: {
+  'BasicAttackEnlightenedMindSplittingCurrents_2:dazeBuildup': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackEnlightenedMindSplittingCurrents_2_daze',
+    name: 'BasicAttackEnlightenedMindSplittingCurrents_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -395,12 +408,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnlightenedMindSplittingCurrents_2_daze',
+      name: 'BasicAttackEnlightenedMindSplittingCurrents_2',
     },
   },
-  BasicAttackEnlightenedMindSplittingCurrents_2_anomBuildup: {
+  'BasicAttackEnlightenedMindSplittingCurrents_2:anomBuildup': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackEnlightenedMindSplittingCurrents_2_anomBuildup',
+    name: 'BasicAttackEnlightenedMindSplittingCurrents_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -409,12 +422,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnlightenedMindSplittingCurrents_2_anomBuildup',
+      name: 'BasicAttackEnlightenedMindSplittingCurrents_2',
     },
   },
-  BasicAttackEnlightenedMindSkywardAscent_0_dmg: {
+  'BasicAttackEnlightenedMindSkywardAscent_0:standardDmg': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackEnlightenedMindSkywardAscent_0_dmg',
+    name: 'BasicAttackEnlightenedMindSkywardAscent_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -423,12 +436,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnlightenedMindSkywardAscent_0_dmg',
+      name: 'BasicAttackEnlightenedMindSkywardAscent_0',
     },
   },
-  BasicAttackEnlightenedMindSkywardAscent_0_daze: {
+  'BasicAttackEnlightenedMindSkywardAscent_0:dazeBuildup': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackEnlightenedMindSkywardAscent_0_daze',
+    name: 'BasicAttackEnlightenedMindSkywardAscent_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -437,12 +450,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnlightenedMindSkywardAscent_0_daze',
+      name: 'BasicAttackEnlightenedMindSkywardAscent_0',
     },
   },
-  BasicAttackEnlightenedMindSkywardAscent_0_anomBuildup: {
+  'BasicAttackEnlightenedMindSkywardAscent_0:anomBuildup': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackEnlightenedMindSkywardAscent_0_anomBuildup',
+    name: 'BasicAttackEnlightenedMindSkywardAscent_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -451,12 +464,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnlightenedMindSkywardAscent_0_anomBuildup',
+      name: 'BasicAttackEnlightenedMindSkywardAscent_0',
     },
   },
-  BasicAttackEnlightenedMindSunderlightMaximum_0_dmg: {
+  'BasicAttackEnlightenedMindSunderlightMaximum_0:standardDmg': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackEnlightenedMindSunderlightMaximum_0_dmg',
+    name: 'BasicAttackEnlightenedMindSunderlightMaximum_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -465,12 +478,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnlightenedMindSunderlightMaximum_0_dmg',
+      name: 'BasicAttackEnlightenedMindSunderlightMaximum_0',
     },
   },
-  BasicAttackEnlightenedMindSunderlightMaximum_0_daze: {
+  'BasicAttackEnlightenedMindSunderlightMaximum_0:dazeBuildup': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackEnlightenedMindSunderlightMaximum_0_daze',
+    name: 'BasicAttackEnlightenedMindSunderlightMaximum_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -479,12 +492,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnlightenedMindSunderlightMaximum_0_daze',
+      name: 'BasicAttackEnlightenedMindSunderlightMaximum_0',
     },
   },
-  BasicAttackEnlightenedMindSunderlightMaximum_0_anomBuildup: {
+  'BasicAttackEnlightenedMindSunderlightMaximum_0:anomBuildup': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackEnlightenedMindSunderlightMaximum_0_anomBuildup',
+    name: 'BasicAttackEnlightenedMindSunderlightMaximum_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -493,12 +506,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnlightenedMindSunderlightMaximum_0_anomBuildup',
+      name: 'BasicAttackEnlightenedMindSunderlightMaximum_0',
     },
   },
-  BasicAttackEnlightenedMindSunderlight_0_dmg: {
+  'BasicAttackEnlightenedMindSunderlight_0:standardDmg': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackEnlightenedMindSunderlight_0_dmg',
+    name: 'BasicAttackEnlightenedMindSunderlight_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -507,12 +520,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnlightenedMindSunderlight_0_dmg',
+      name: 'BasicAttackEnlightenedMindSunderlight_0',
     },
   },
-  BasicAttackEnlightenedMindSunderlight_0_daze: {
+  'BasicAttackEnlightenedMindSunderlight_0:dazeBuildup': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackEnlightenedMindSunderlight_0_daze',
+    name: 'BasicAttackEnlightenedMindSunderlight_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -521,12 +534,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnlightenedMindSunderlight_0_daze',
+      name: 'BasicAttackEnlightenedMindSunderlight_0',
     },
   },
-  BasicAttackEnlightenedMindSunderlight_0_anomBuildup: {
+  'BasicAttackEnlightenedMindSunderlight_0:anomBuildup': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackEnlightenedMindSunderlight_0_anomBuildup',
+    name: 'BasicAttackEnlightenedMindSunderlight_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -535,12 +548,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnlightenedMindSunderlight_0_anomBuildup',
+      name: 'BasicAttackEnlightenedMindSunderlight_0',
     },
   },
-  BasicAttackEnlightenedMindSunderlight_1_dmg: {
+  'BasicAttackEnlightenedMindSunderlight_1:standardDmg': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackEnlightenedMindSunderlight_1_dmg',
+    name: 'BasicAttackEnlightenedMindSunderlight_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -549,12 +562,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnlightenedMindSunderlight_1_dmg',
+      name: 'BasicAttackEnlightenedMindSunderlight_1',
     },
   },
-  BasicAttackEnlightenedMindSunderlight_1_daze: {
+  'BasicAttackEnlightenedMindSunderlight_1:dazeBuildup': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackEnlightenedMindSunderlight_1_daze',
+    name: 'BasicAttackEnlightenedMindSunderlight_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -563,12 +576,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnlightenedMindSunderlight_1_daze',
+      name: 'BasicAttackEnlightenedMindSunderlight_1',
     },
   },
-  BasicAttackEnlightenedMindSunderlight_1_anomBuildup: {
+  'BasicAttackEnlightenedMindSunderlight_1:anomBuildup': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackEnlightenedMindSunderlight_1_anomBuildup',
+    name: 'BasicAttackEnlightenedMindSunderlight_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -577,12 +590,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnlightenedMindSunderlight_1_anomBuildup',
+      name: 'BasicAttackEnlightenedMindSunderlight_1',
     },
   },
-  BasicAttackEnlightenedMindSunderlightAnnihilation_0_dmg: {
+  'BasicAttackEnlightenedMindSunderlightAnnihilation_0:standardDmg': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackEnlightenedMindSunderlightAnnihilation_0_dmg',
+    name: 'BasicAttackEnlightenedMindSunderlightAnnihilation_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -591,12 +604,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnlightenedMindSunderlightAnnihilation_0_dmg',
+      name: 'BasicAttackEnlightenedMindSunderlightAnnihilation_0',
     },
   },
-  BasicAttackEnlightenedMindSunderlightAnnihilation_0_daze: {
+  'BasicAttackEnlightenedMindSunderlightAnnihilation_0:dazeBuildup': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackEnlightenedMindSunderlightAnnihilation_0_daze',
+    name: 'BasicAttackEnlightenedMindSunderlightAnnihilation_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -605,12 +618,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnlightenedMindSunderlightAnnihilation_0_daze',
+      name: 'BasicAttackEnlightenedMindSunderlightAnnihilation_0',
     },
   },
-  BasicAttackEnlightenedMindSunderlightAnnihilation_0_anomBuildup: {
+  'BasicAttackEnlightenedMindSunderlightAnnihilation_0:anomBuildup': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackEnlightenedMindSunderlightAnnihilation_0_anomBuildup',
+    name: 'BasicAttackEnlightenedMindSunderlightAnnihilation_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -619,12 +632,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnlightenedMindSunderlightAnnihilation_0_anomBuildup',
+      name: 'BasicAttackEnlightenedMindSunderlightAnnihilation_0',
     },
   },
-  BasicAttackEnlightenedMindSunderlightAnnihilation_1_dmg: {
+  'BasicAttackEnlightenedMindSunderlightAnnihilation_1:standardDmg': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackEnlightenedMindSunderlightAnnihilation_1_dmg',
+    name: 'BasicAttackEnlightenedMindSunderlightAnnihilation_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -633,12 +646,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnlightenedMindSunderlightAnnihilation_1_dmg',
+      name: 'BasicAttackEnlightenedMindSunderlightAnnihilation_1',
     },
   },
-  BasicAttackEnlightenedMindSunderlightAnnihilation_1_daze: {
+  'BasicAttackEnlightenedMindSunderlightAnnihilation_1:dazeBuildup': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackEnlightenedMindSunderlightAnnihilation_1_daze',
+    name: 'BasicAttackEnlightenedMindSunderlightAnnihilation_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -647,12 +660,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnlightenedMindSunderlightAnnihilation_1_daze',
+      name: 'BasicAttackEnlightenedMindSunderlightAnnihilation_1',
     },
   },
-  BasicAttackEnlightenedMindSunderlightAnnihilation_1_anomBuildup: {
+  'BasicAttackEnlightenedMindSunderlightAnnihilation_1:anomBuildup': {
     sheet: 'YeShunguang',
-    name: 'BasicAttackEnlightenedMindSunderlightAnnihilation_1_anomBuildup',
+    name: 'BasicAttackEnlightenedMindSunderlightAnnihilation_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -661,12 +674,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnlightenedMindSunderlightAnnihilation_1_anomBuildup',
+      name: 'BasicAttackEnlightenedMindSunderlightAnnihilation_1',
     },
   },
-  DashAttackPhantasmDash_0_dmg: {
+  'DashAttackPhantasmDash_0:standardDmg': {
     sheet: 'YeShunguang',
-    name: 'DashAttackPhantasmDash_0_dmg',
+    name: 'DashAttackPhantasmDash_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -675,12 +688,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackPhantasmDash_0_dmg',
+      name: 'DashAttackPhantasmDash_0',
     },
   },
-  DashAttackPhantasmDash_0_daze: {
+  'DashAttackPhantasmDash_0:dazeBuildup': {
     sheet: 'YeShunguang',
-    name: 'DashAttackPhantasmDash_0_daze',
+    name: 'DashAttackPhantasmDash_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -689,12 +702,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackPhantasmDash_0_daze',
+      name: 'DashAttackPhantasmDash_0',
     },
   },
-  DashAttackPhantasmDash_0_anomBuildup: {
+  'DashAttackPhantasmDash_0:anomBuildup': {
     sheet: 'YeShunguang',
-    name: 'DashAttackPhantasmDash_0_anomBuildup',
+    name: 'DashAttackPhantasmDash_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -703,12 +716,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackPhantasmDash_0_anomBuildup',
+      name: 'DashAttackPhantasmDash_0',
     },
   },
-  DodgeCounterSwallowStrike_0_dmg: {
+  'DodgeCounterSwallowStrike_0:standardDmg': {
     sheet: 'YeShunguang',
-    name: 'DodgeCounterSwallowStrike_0_dmg',
+    name: 'DodgeCounterSwallowStrike_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -717,12 +730,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterSwallowStrike_0_dmg',
+      name: 'DodgeCounterSwallowStrike_0',
     },
   },
-  DodgeCounterSwallowStrike_0_daze: {
+  'DodgeCounterSwallowStrike_0:dazeBuildup': {
     sheet: 'YeShunguang',
-    name: 'DodgeCounterSwallowStrike_0_daze',
+    name: 'DodgeCounterSwallowStrike_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -731,12 +744,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterSwallowStrike_0_daze',
+      name: 'DodgeCounterSwallowStrike_0',
     },
   },
-  DodgeCounterSwallowStrike_0_anomBuildup: {
+  'DodgeCounterSwallowStrike_0:anomBuildup': {
     sheet: 'YeShunguang',
-    name: 'DodgeCounterSwallowStrike_0_anomBuildup',
+    name: 'DodgeCounterSwallowStrike_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -745,12 +758,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterSwallowStrike_0_anomBuildup',
+      name: 'DodgeCounterSwallowStrike_0',
     },
   },
-  SpecialAttackGuidingTides_0_dmg: {
+  'SpecialAttackGuidingTides_0:standardDmg': {
     sheet: 'YeShunguang',
-    name: 'SpecialAttackGuidingTides_0_dmg',
+    name: 'SpecialAttackGuidingTides_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -759,12 +772,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackGuidingTides_0_dmg',
+      name: 'SpecialAttackGuidingTides_0',
     },
   },
-  SpecialAttackGuidingTides_0_daze: {
+  'SpecialAttackGuidingTides_0:dazeBuildup': {
     sheet: 'YeShunguang',
-    name: 'SpecialAttackGuidingTides_0_daze',
+    name: 'SpecialAttackGuidingTides_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -773,12 +786,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackGuidingTides_0_daze',
+      name: 'SpecialAttackGuidingTides_0',
     },
   },
-  SpecialAttackGuidingTides_0_anomBuildup: {
+  'SpecialAttackGuidingTides_0:anomBuildup': {
     sheet: 'YeShunguang',
-    name: 'SpecialAttackGuidingTides_0_anomBuildup',
+    name: 'SpecialAttackGuidingTides_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -787,12 +800,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackGuidingTides_0_anomBuildup',
+      name: 'SpecialAttackGuidingTides_0',
     },
   },
-  SpecialAttackGuidingTides_1_dmg: {
+  'SpecialAttackGuidingTides_1:standardDmg': {
     sheet: 'YeShunguang',
-    name: 'SpecialAttackGuidingTides_1_dmg',
+    name: 'SpecialAttackGuidingTides_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -801,12 +814,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackGuidingTides_1_dmg',
+      name: 'SpecialAttackGuidingTides_1',
     },
   },
-  SpecialAttackGuidingTides_1_daze: {
+  'SpecialAttackGuidingTides_1:dazeBuildup': {
     sheet: 'YeShunguang',
-    name: 'SpecialAttackGuidingTides_1_daze',
+    name: 'SpecialAttackGuidingTides_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -815,12 +828,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackGuidingTides_1_daze',
+      name: 'SpecialAttackGuidingTides_1',
     },
   },
-  SpecialAttackGuidingTides_1_anomBuildup: {
+  'SpecialAttackGuidingTides_1:anomBuildup': {
     sheet: 'YeShunguang',
-    name: 'SpecialAttackGuidingTides_1_anomBuildup',
+    name: 'SpecialAttackGuidingTides_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -829,12 +842,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackGuidingTides_1_anomBuildup',
+      name: 'SpecialAttackGuidingTides_1',
     },
   },
-  EXSpecialAttackGaleSuppression_0_dmg: {
+  'EXSpecialAttackGaleSuppression_0:standardDmg': {
     sheet: 'YeShunguang',
-    name: 'EXSpecialAttackGaleSuppression_0_dmg',
+    name: 'EXSpecialAttackGaleSuppression_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -843,12 +856,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackGaleSuppression_0_dmg',
+      name: 'EXSpecialAttackGaleSuppression_0',
     },
   },
-  EXSpecialAttackGaleSuppression_0_daze: {
+  'EXSpecialAttackGaleSuppression_0:dazeBuildup': {
     sheet: 'YeShunguang',
-    name: 'EXSpecialAttackGaleSuppression_0_daze',
+    name: 'EXSpecialAttackGaleSuppression_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -857,12 +870,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackGaleSuppression_0_daze',
+      name: 'EXSpecialAttackGaleSuppression_0',
     },
   },
-  EXSpecialAttackGaleSuppression_0_anomBuildup: {
+  'EXSpecialAttackGaleSuppression_0:anomBuildup': {
     sheet: 'YeShunguang',
-    name: 'EXSpecialAttackGaleSuppression_0_anomBuildup',
+    name: 'EXSpecialAttackGaleSuppression_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -871,12 +884,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackGaleSuppression_0_anomBuildup',
+      name: 'EXSpecialAttackGaleSuppression_0',
     },
   },
-  SpecialAttackEnlightenedMindCleanExit_0_dmg: {
+  'SpecialAttackEnlightenedMindCleanExit_0:standardDmg': {
     sheet: 'YeShunguang',
-    name: 'SpecialAttackEnlightenedMindCleanExit_0_dmg',
+    name: 'SpecialAttackEnlightenedMindCleanExit_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -885,12 +898,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackEnlightenedMindCleanExit_0_dmg',
+      name: 'SpecialAttackEnlightenedMindCleanExit_0',
     },
   },
-  SpecialAttackEnlightenedMindCleanExit_0_daze: {
+  'SpecialAttackEnlightenedMindCleanExit_0:dazeBuildup': {
     sheet: 'YeShunguang',
-    name: 'SpecialAttackEnlightenedMindCleanExit_0_daze',
+    name: 'SpecialAttackEnlightenedMindCleanExit_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -899,12 +912,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackEnlightenedMindCleanExit_0_daze',
+      name: 'SpecialAttackEnlightenedMindCleanExit_0',
     },
   },
-  SpecialAttackEnlightenedMindCleanExit_0_anomBuildup: {
+  'SpecialAttackEnlightenedMindCleanExit_0:anomBuildup': {
     sheet: 'YeShunguang',
-    name: 'SpecialAttackEnlightenedMindCleanExit_0_anomBuildup',
+    name: 'SpecialAttackEnlightenedMindCleanExit_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -913,12 +926,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackEnlightenedMindCleanExit_0_anomBuildup',
+      name: 'SpecialAttackEnlightenedMindCleanExit_0',
     },
   },
-  EXSpecialAttackEnlightenedMindSoaringLight_0_dmg: {
+  'EXSpecialAttackEnlightenedMindSoaringLight_0:standardDmg': {
     sheet: 'YeShunguang',
-    name: 'EXSpecialAttackEnlightenedMindSoaringLight_0_dmg',
+    name: 'EXSpecialAttackEnlightenedMindSoaringLight_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -927,12 +940,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackEnlightenedMindSoaringLight_0_dmg',
+      name: 'EXSpecialAttackEnlightenedMindSoaringLight_0',
     },
   },
-  EXSpecialAttackEnlightenedMindSoaringLight_0_daze: {
+  'EXSpecialAttackEnlightenedMindSoaringLight_0:dazeBuildup': {
     sheet: 'YeShunguang',
-    name: 'EXSpecialAttackEnlightenedMindSoaringLight_0_daze',
+    name: 'EXSpecialAttackEnlightenedMindSoaringLight_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -941,12 +954,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackEnlightenedMindSoaringLight_0_daze',
+      name: 'EXSpecialAttackEnlightenedMindSoaringLight_0',
     },
   },
-  EXSpecialAttackEnlightenedMindSoaringLight_0_anomBuildup: {
+  'EXSpecialAttackEnlightenedMindSoaringLight_0:anomBuildup': {
     sheet: 'YeShunguang',
-    name: 'EXSpecialAttackEnlightenedMindSoaringLight_0_anomBuildup',
+    name: 'EXSpecialAttackEnlightenedMindSoaringLight_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -955,12 +968,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackEnlightenedMindSoaringLight_0_anomBuildup',
+      name: 'EXSpecialAttackEnlightenedMindSoaringLight_0',
     },
   },
-  EXSpecialAttackEnlightenedMindReturnToDust_0_dmg: {
+  'EXSpecialAttackEnlightenedMindReturnToDust_0:standardDmg': {
     sheet: 'YeShunguang',
-    name: 'EXSpecialAttackEnlightenedMindReturnToDust_0_dmg',
+    name: 'EXSpecialAttackEnlightenedMindReturnToDust_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -969,12 +982,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackEnlightenedMindReturnToDust_0_dmg',
+      name: 'EXSpecialAttackEnlightenedMindReturnToDust_0',
     },
   },
-  EXSpecialAttackEnlightenedMindReturnToDust_0_daze: {
+  'EXSpecialAttackEnlightenedMindReturnToDust_0:dazeBuildup': {
     sheet: 'YeShunguang',
-    name: 'EXSpecialAttackEnlightenedMindReturnToDust_0_daze',
+    name: 'EXSpecialAttackEnlightenedMindReturnToDust_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -983,12 +996,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackEnlightenedMindReturnToDust_0_daze',
+      name: 'EXSpecialAttackEnlightenedMindReturnToDust_0',
     },
   },
-  EXSpecialAttackEnlightenedMindReturnToDust_0_anomBuildup: {
+  'EXSpecialAttackEnlightenedMindReturnToDust_0:anomBuildup': {
     sheet: 'YeShunguang',
-    name: 'EXSpecialAttackEnlightenedMindReturnToDust_0_anomBuildup',
+    name: 'EXSpecialAttackEnlightenedMindReturnToDust_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -997,12 +1010,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackEnlightenedMindReturnToDust_0_anomBuildup',
+      name: 'EXSpecialAttackEnlightenedMindReturnToDust_0',
     },
   },
-  ChainAttackSmiteTheWicked_0_dmg: {
+  'ChainAttackSmiteTheWicked_0:standardDmg': {
     sheet: 'YeShunguang',
-    name: 'ChainAttackSmiteTheWicked_0_dmg',
+    name: 'ChainAttackSmiteTheWicked_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1011,12 +1024,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackSmiteTheWicked_0_dmg',
+      name: 'ChainAttackSmiteTheWicked_0',
     },
   },
-  ChainAttackSmiteTheWicked_0_daze: {
+  'ChainAttackSmiteTheWicked_0:dazeBuildup': {
     sheet: 'YeShunguang',
-    name: 'ChainAttackSmiteTheWicked_0_daze',
+    name: 'ChainAttackSmiteTheWicked_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1025,12 +1038,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackSmiteTheWicked_0_daze',
+      name: 'ChainAttackSmiteTheWicked_0',
     },
   },
-  ChainAttackSmiteTheWicked_0_anomBuildup: {
+  'ChainAttackSmiteTheWicked_0:anomBuildup': {
     sheet: 'YeShunguang',
-    name: 'ChainAttackSmiteTheWicked_0_anomBuildup',
+    name: 'ChainAttackSmiteTheWicked_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1039,12 +1052,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackSmiteTheWicked_0_anomBuildup',
+      name: 'ChainAttackSmiteTheWicked_0',
     },
   },
-  UltimateChasingStorms_0_dmg: {
+  'UltimateChasingStorms_0:standardDmg': {
     sheet: 'YeShunguang',
-    name: 'UltimateChasingStorms_0_dmg',
+    name: 'UltimateChasingStorms_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1053,12 +1066,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateChasingStorms_0_dmg',
+      name: 'UltimateChasingStorms_0',
     },
   },
-  UltimateChasingStorms_0_daze: {
+  'UltimateChasingStorms_0:dazeBuildup': {
     sheet: 'YeShunguang',
-    name: 'UltimateChasingStorms_0_daze',
+    name: 'UltimateChasingStorms_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1067,12 +1080,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateChasingStorms_0_daze',
+      name: 'UltimateChasingStorms_0',
     },
   },
-  UltimateChasingStorms_0_anomBuildup: {
+  'UltimateChasingStorms_0:anomBuildup': {
     sheet: 'YeShunguang',
-    name: 'UltimateChasingStorms_0_anomBuildup',
+    name: 'UltimateChasingStorms_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1081,12 +1094,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateChasingStorms_0_anomBuildup',
+      name: 'UltimateChasingStorms_0',
     },
   },
-  ChainAttackEnlightenedMindLureThunder_0_dmg: {
+  'ChainAttackEnlightenedMindLureThunder_0:standardDmg': {
     sheet: 'YeShunguang',
-    name: 'ChainAttackEnlightenedMindLureThunder_0_dmg',
+    name: 'ChainAttackEnlightenedMindLureThunder_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1095,12 +1108,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackEnlightenedMindLureThunder_0_dmg',
+      name: 'ChainAttackEnlightenedMindLureThunder_0',
     },
   },
-  ChainAttackEnlightenedMindLureThunder_0_daze: {
+  'ChainAttackEnlightenedMindLureThunder_0:dazeBuildup': {
     sheet: 'YeShunguang',
-    name: 'ChainAttackEnlightenedMindLureThunder_0_daze',
+    name: 'ChainAttackEnlightenedMindLureThunder_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1109,12 +1122,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackEnlightenedMindLureThunder_0_daze',
+      name: 'ChainAttackEnlightenedMindLureThunder_0',
     },
   },
-  ChainAttackEnlightenedMindLureThunder_0_anomBuildup: {
+  'ChainAttackEnlightenedMindLureThunder_0:anomBuildup': {
     sheet: 'YeShunguang',
-    name: 'ChainAttackEnlightenedMindLureThunder_0_anomBuildup',
+    name: 'ChainAttackEnlightenedMindLureThunder_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1123,12 +1136,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackEnlightenedMindLureThunder_0_anomBuildup',
+      name: 'ChainAttackEnlightenedMindLureThunder_0',
     },
   },
-  UltimateCleavingHeavens_0_dmg: {
+  'UltimateCleavingHeavens_0:standardDmg': {
     sheet: 'YeShunguang',
-    name: 'UltimateCleavingHeavens_0_dmg',
+    name: 'UltimateCleavingHeavens_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1137,12 +1150,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateCleavingHeavens_0_dmg',
+      name: 'UltimateCleavingHeavens_0',
     },
   },
-  UltimateCleavingHeavens_0_daze: {
+  'UltimateCleavingHeavens_0:dazeBuildup': {
     sheet: 'YeShunguang',
-    name: 'UltimateCleavingHeavens_0_daze',
+    name: 'UltimateCleavingHeavens_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1151,12 +1164,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateCleavingHeavens_0_daze',
+      name: 'UltimateCleavingHeavens_0',
     },
   },
-  UltimateCleavingHeavens_0_anomBuildup: {
+  'UltimateCleavingHeavens_0:anomBuildup': {
     sheet: 'YeShunguang',
-    name: 'UltimateCleavingHeavens_0_anomBuildup',
+    name: 'UltimateCleavingHeavens_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1165,12 +1178,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateCleavingHeavens_0_anomBuildup',
+      name: 'UltimateCleavingHeavens_0',
     },
   },
-  EntrySkillIlluminatingDarkness_0_dmg: {
+  'EntrySkillIlluminatingDarkness_0:standardDmg': {
     sheet: 'YeShunguang',
-    name: 'EntrySkillIlluminatingDarkness_0_dmg',
+    name: 'EntrySkillIlluminatingDarkness_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1179,12 +1192,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'entrySkill',
       skillType: 'assistSkill',
-      name: 'EntrySkillIlluminatingDarkness_0_dmg',
+      name: 'EntrySkillIlluminatingDarkness_0',
     },
   },
-  EntrySkillIlluminatingDarkness_0_daze: {
+  'EntrySkillIlluminatingDarkness_0:dazeBuildup': {
     sheet: 'YeShunguang',
-    name: 'EntrySkillIlluminatingDarkness_0_daze',
+    name: 'EntrySkillIlluminatingDarkness_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1193,12 +1206,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'entrySkill',
       skillType: 'assistSkill',
-      name: 'EntrySkillIlluminatingDarkness_0_daze',
+      name: 'EntrySkillIlluminatingDarkness_0',
     },
   },
-  EntrySkillIlluminatingDarkness_0_anomBuildup: {
+  'EntrySkillIlluminatingDarkness_0:anomBuildup': {
     sheet: 'YeShunguang',
-    name: 'EntrySkillIlluminatingDarkness_0_anomBuildup',
+    name: 'EntrySkillIlluminatingDarkness_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1207,12 +1220,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'entrySkill',
       skillType: 'assistSkill',
-      name: 'EntrySkillIlluminatingDarkness_0_anomBuildup',
+      name: 'EntrySkillIlluminatingDarkness_0',
     },
   },
-  QuickAssistSupportGuard_0_dmg: {
+  'QuickAssistSupportGuard_0:standardDmg': {
     sheet: 'YeShunguang',
-    name: 'QuickAssistSupportGuard_0_dmg',
+    name: 'QuickAssistSupportGuard_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1221,12 +1234,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistSupportGuard_0_dmg',
+      name: 'QuickAssistSupportGuard_0',
     },
   },
-  QuickAssistSupportGuard_0_daze: {
+  'QuickAssistSupportGuard_0:dazeBuildup': {
     sheet: 'YeShunguang',
-    name: 'QuickAssistSupportGuard_0_daze',
+    name: 'QuickAssistSupportGuard_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1235,12 +1248,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistSupportGuard_0_daze',
+      name: 'QuickAssistSupportGuard_0',
     },
   },
-  QuickAssistSupportGuard_0_anomBuildup: {
+  'QuickAssistSupportGuard_0:anomBuildup': {
     sheet: 'YeShunguang',
-    name: 'QuickAssistSupportGuard_0_anomBuildup',
+    name: 'QuickAssistSupportGuard_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1249,12 +1262,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistSupportGuard_0_anomBuildup',
+      name: 'QuickAssistSupportGuard_0',
     },
   },
-  AssistFollowUpCeaseHostility_0_dmg: {
+  'AssistFollowUpCeaseHostility_0:standardDmg': {
     sheet: 'YeShunguang',
-    name: 'AssistFollowUpCeaseHostility_0_dmg',
+    name: 'AssistFollowUpCeaseHostility_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1263,12 +1276,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpCeaseHostility_0_dmg',
+      name: 'AssistFollowUpCeaseHostility_0',
     },
   },
-  AssistFollowUpCeaseHostility_0_daze: {
+  'AssistFollowUpCeaseHostility_0:dazeBuildup': {
     sheet: 'YeShunguang',
-    name: 'AssistFollowUpCeaseHostility_0_daze',
+    name: 'AssistFollowUpCeaseHostility_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1277,12 +1290,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpCeaseHostility_0_daze',
+      name: 'AssistFollowUpCeaseHostility_0',
     },
   },
-  AssistFollowUpCeaseHostility_0_anomBuildup: {
+  'AssistFollowUpCeaseHostility_0:anomBuildup': {
     sheet: 'YeShunguang',
-    name: 'AssistFollowUpCeaseHostility_0_anomBuildup',
+    name: 'AssistFollowUpCeaseHostility_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1291,12 +1304,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpCeaseHostility_0_anomBuildup',
+      name: 'AssistFollowUpCeaseHostility_0',
     },
   },
-  DefensiveAssistWhenIReturn_0_dmg: {
+  'DefensiveAssistWhenIReturn_0:standardDmg': {
     sheet: 'YeShunguang',
-    name: 'DefensiveAssistWhenIReturn_0_dmg',
+    name: 'DefensiveAssistWhenIReturn_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1305,12 +1318,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistWhenIReturn_0_dmg',
+      name: 'DefensiveAssistWhenIReturn_0',
     },
   },
-  DefensiveAssistWhenIReturn_0_daze: {
+  'DefensiveAssistWhenIReturn_0:dazeBuildup': {
     sheet: 'YeShunguang',
-    name: 'DefensiveAssistWhenIReturn_0_daze',
+    name: 'DefensiveAssistWhenIReturn_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1319,12 +1332,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistWhenIReturn_0_daze',
+      name: 'DefensiveAssistWhenIReturn_0',
     },
   },
-  DefensiveAssistWhenIReturn_0_anomBuildup: {
+  'DefensiveAssistWhenIReturn_0:anomBuildup': {
     sheet: 'YeShunguang',
-    name: 'DefensiveAssistWhenIReturn_0_anomBuildup',
+    name: 'DefensiveAssistWhenIReturn_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1333,12 +1346,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistWhenIReturn_0_anomBuildup',
+      name: 'DefensiveAssistWhenIReturn_0',
     },
   },
-  DefensiveAssistWhenIReturn_1_dmg: {
+  'DefensiveAssistWhenIReturn_1:standardDmg': {
     sheet: 'YeShunguang',
-    name: 'DefensiveAssistWhenIReturn_1_dmg',
+    name: 'DefensiveAssistWhenIReturn_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1347,12 +1360,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistWhenIReturn_1_dmg',
+      name: 'DefensiveAssistWhenIReturn_1',
     },
   },
-  DefensiveAssistWhenIReturn_1_daze: {
+  'DefensiveAssistWhenIReturn_1:dazeBuildup': {
     sheet: 'YeShunguang',
-    name: 'DefensiveAssistWhenIReturn_1_daze',
+    name: 'DefensiveAssistWhenIReturn_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1361,12 +1374,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistWhenIReturn_1_daze',
+      name: 'DefensiveAssistWhenIReturn_1',
     },
   },
-  DefensiveAssistWhenIReturn_1_anomBuildup: {
+  'DefensiveAssistWhenIReturn_1:anomBuildup': {
     sheet: 'YeShunguang',
-    name: 'DefensiveAssistWhenIReturn_1_anomBuildup',
+    name: 'DefensiveAssistWhenIReturn_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1375,12 +1388,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistWhenIReturn_1_anomBuildup',
+      name: 'DefensiveAssistWhenIReturn_1',
     },
   },
-  DefensiveAssistWhenIReturn_2_dmg: {
+  'DefensiveAssistWhenIReturn_2:standardDmg': {
     sheet: 'YeShunguang',
-    name: 'DefensiveAssistWhenIReturn_2_dmg',
+    name: 'DefensiveAssistWhenIReturn_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1389,12 +1402,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistWhenIReturn_2_dmg',
+      name: 'DefensiveAssistWhenIReturn_2',
     },
   },
-  DefensiveAssistWhenIReturn_2_daze: {
+  'DefensiveAssistWhenIReturn_2:dazeBuildup': {
     sheet: 'YeShunguang',
-    name: 'DefensiveAssistWhenIReturn_2_daze',
+    name: 'DefensiveAssistWhenIReturn_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1403,12 +1416,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistWhenIReturn_2_daze',
+      name: 'DefensiveAssistWhenIReturn_2',
     },
   },
-  DefensiveAssistWhenIReturn_2_anomBuildup: {
+  'DefensiveAssistWhenIReturn_2:anomBuildup': {
     sheet: 'YeShunguang',
-    name: 'DefensiveAssistWhenIReturn_2_anomBuildup',
+    name: 'DefensiveAssistWhenIReturn_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1417,12 +1430,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistWhenIReturn_2_anomBuildup',
+      name: 'DefensiveAssistWhenIReturn_2',
     },
   },
-  QuickAssistEnlightenedMindTacticalSupport_0_dmg: {
+  'QuickAssistEnlightenedMindTacticalSupport_0:standardDmg': {
     sheet: 'YeShunguang',
-    name: 'QuickAssistEnlightenedMindTacticalSupport_0_dmg',
+    name: 'QuickAssistEnlightenedMindTacticalSupport_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1431,12 +1444,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistEnlightenedMindTacticalSupport_0_dmg',
+      name: 'QuickAssistEnlightenedMindTacticalSupport_0',
     },
   },
-  QuickAssistEnlightenedMindTacticalSupport_0_daze: {
+  'QuickAssistEnlightenedMindTacticalSupport_0:dazeBuildup': {
     sheet: 'YeShunguang',
-    name: 'QuickAssistEnlightenedMindTacticalSupport_0_daze',
+    name: 'QuickAssistEnlightenedMindTacticalSupport_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1445,12 +1458,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistEnlightenedMindTacticalSupport_0_daze',
+      name: 'QuickAssistEnlightenedMindTacticalSupport_0',
     },
   },
-  QuickAssistEnlightenedMindTacticalSupport_0_anomBuildup: {
+  'QuickAssistEnlightenedMindTacticalSupport_0:anomBuildup': {
     sheet: 'YeShunguang',
-    name: 'QuickAssistEnlightenedMindTacticalSupport_0_anomBuildup',
+    name: 'QuickAssistEnlightenedMindTacticalSupport_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1459,12 +1472,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistEnlightenedMindTacticalSupport_0_anomBuildup',
+      name: 'QuickAssistEnlightenedMindTacticalSupport_0',
     },
   },
-  AssistFollowUpEnlightenedMindUnification_0_dmg: {
+  'AssistFollowUpEnlightenedMindUnification_0:standardDmg': {
     sheet: 'YeShunguang',
-    name: 'AssistFollowUpEnlightenedMindUnification_0_dmg',
+    name: 'AssistFollowUpEnlightenedMindUnification_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1473,12 +1486,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpEnlightenedMindUnification_0_dmg',
+      name: 'AssistFollowUpEnlightenedMindUnification_0',
     },
   },
-  AssistFollowUpEnlightenedMindUnification_0_daze: {
+  'AssistFollowUpEnlightenedMindUnification_0:dazeBuildup': {
     sheet: 'YeShunguang',
-    name: 'AssistFollowUpEnlightenedMindUnification_0_daze',
+    name: 'AssistFollowUpEnlightenedMindUnification_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1487,12 +1500,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpEnlightenedMindUnification_0_daze',
+      name: 'AssistFollowUpEnlightenedMindUnification_0',
     },
   },
-  AssistFollowUpEnlightenedMindUnification_0_anomBuildup: {
+  'AssistFollowUpEnlightenedMindUnification_0:anomBuildup': {
     sheet: 'YeShunguang',
-    name: 'AssistFollowUpEnlightenedMindUnification_0_anomBuildup',
+    name: 'AssistFollowUpEnlightenedMindUnification_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1501,7 +1514,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpEnlightenedMindUnification_0_anomBuildup',
+      name: 'AssistFollowUpEnlightenedMindUnification_0',
     },
   },
 } as const

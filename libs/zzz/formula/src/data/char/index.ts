@@ -30,11 +30,13 @@ import Miyabi from './sheets/Miyabi'
 import NangongYu from './sheets/NangongYu'
 import Nekomata from './sheets/Nekomata'
 import Nicole from './sheets/Nicole'
+import Norma from './sheets/Norma'
 import OrphieMagus from './sheets/OrphieMagus'
 import PanYinhu from './sheets/PanYinhu'
 import Piper from './sheets/Piper'
 import Promeia from './sheets/Promeia'
 import Pulchra from './sheets/Pulchra'
+import Pyrois from './sheets/Pyrois'
 import Qingyi from './sheets/Qingyi'
 import Rina from './sheets/Rina'
 import Seed from './sheets/Seed'
@@ -45,6 +47,7 @@ import Soukaku from './sheets/Soukaku'
 import StarlightBilly from './sheets/StarlightBilly'
 import Sunna from './sheets/Sunna'
 import Trigger from './sheets/Trigger'
+import Velina from './sheets/Velina'
 import Vivian from './sheets/Vivian'
 import Yanagi from './sheets/Yanagi'
 import YeShunguang from './sheets/YeShunguang'
@@ -85,11 +88,13 @@ const data: TagMapNodeEntries[] = [
   NangongYu,
   Nekomata,
   Nicole,
+  Norma,
   OrphieMagus,
   PanYinhu,
   Piper,
   Promeia,
   Pulchra,
+  Pyrois,
   Qingyi,
   Rina,
   Seed,
@@ -100,6 +105,7 @@ const data: TagMapNodeEntries[] = [
   StarlightBilly,
   Sunna,
   Trigger,
+  Velina,
   Vivian,
   Yanagi,
   YeShunguang,

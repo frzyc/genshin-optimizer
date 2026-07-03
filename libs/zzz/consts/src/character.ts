@@ -30,11 +30,13 @@ export const allCharacterKeys = [
   'NangongYu',
   'Nekomata',
   'Nicole',
+  'Norma',
   'OrphieMagus',
   'PanYinhu',
   'Piper',
   'Promeia',
   'Pulchra',
+  'Pyrois',
   'Qingyi',
   'Rina',
   'Seed',
@@ -45,6 +47,7 @@ export const allCharacterKeys = [
   'StarlightBilly',
   'Sunna',
   'Trigger',
+  'Velina',
   'Vivian',
   'Yanagi',
   'YeShunguang',
@@ -84,6 +87,8 @@ export const allFactionKeys = [
   'SpookShack',
   'KrampusComplianceAuthority',
   'AngelsOfDelusion',
+  'RoscaeliferExternalStrategyDepartment',
+  'Phaethon',
 ] as const
 export type FactionKey = (typeof allFactionKeys)[number]
 

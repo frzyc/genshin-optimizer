@@ -1,0 +1,173 @@
+{
+  "name": "Lohen",
+  "title": "Sharpened Arrowhead",
+  "description": "Wakil Kapten Pasukan Jarak Jauh Knights of Favonius, seorang knight yang bertindak tanpa terikat aturan dan menyukai taktik yang tidak biasa.",
+  "constellationName": "Lepus Miles",
+  "auto": {
+    "name": "Spear of Favonius — Broken Oath",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 5 serangan berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk menusuk ke arah depan."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah di bawahnya, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Charged Attack",
+      "6": "Konsumsi Stamina Charged Attack",
+      "7": "DMG Selama Plunging",
+      "8": "DMG Plunging Attack Rendah/Tinggi",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Unforeseen Strike",
+    "description": {
+      "0": "Mencari kelemahan musuh, dan berganti ke mode <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Masterstroke</strong></tooltip>. Saat dalam mode ini:",
+      "1": [
+        "Lohen bisa secara aktif mengakumulasi <tooltip ns=tooltips_gen baseKey18=11290003 values=[]><strong>Joy</strong></tooltip>, untuk melancarkan Elemental Skill khusus <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Etched Into Bone and Soul</strong></tooltip>.",
+        "Anggota party lain di sekitar bisa mengakumulasi <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Will to Win</strong></tooltip> untuk Lohen, untuk meningkatkan DMG <strong>Etched Into Bone and Soul</strong>."
+      ],
+      "2": "Lohen dapat melancarkan <strong>Etched Into Bone and Soul</strong> hingga 3 kali dalam mode <strong>Masterstroke</strong>. Setelah itu, Lohen tidak bisa lagi mendapatkan <strong>Joy</strong>.",
+      "3": "<br/>",
+      "4": "<i>\"Kesatriaan? Hah, memangnya ada cara yang lebih baik untuk pasang jebakan? Waktu musuh memimpikan kemenangan yang terhormat, mereka pasti gagal mencurigai 'kejutan menyenangkan' yang menanti mereka.\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Charged Attack",
+      "6": "Konsumsi Stamina Charged Attack",
+      "7": "DMG Selama Plunging",
+      "8": "DMG Plunging Attack Rendah/Tinggi",
+      "9": "Durasi Masterstroke",
+      "10": "DMG Etched Into Bone and Soul",
+      "11": "Peningkatan DMG Awal untuk Setiap Poin Will to Win",
+      "12": "Cooldown",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Manifest Judgment",
+    "description": {
+      "0": "Melancarkan tebasan beruntun yang cepat ke arah depan, mengonsumsi seluruh <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Will to Win</strong></tooltip>untuk mengakibatkan <cryo>Cryo DMG</cryo>. DMG ini akan ditingkatkan berdasarkan jumlah <strong>Will to Win</strong> yang dikonsumsi. Jika Lohen sedang berada dalam mode <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Masterstroke</strong></tooltip> saat melancarkan Talenta ini, maka durasi mode <strong>Masterstroke</strong> kali ini akan diperpanjang 1,65 detik.",
+      "1": "<br/>",
+      "2": "<i>\"Sudah menyerah? Sayang sekali, aku baru saja mulai ....\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Peningkatan DMG Awal untuk Setiap Poin Will to Win",
+      "2": "Cooldown",
+      "3": "Konsumsi Energy",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Moratorium on Questioning",
+    "description": {
+      "0": "Dalam mode <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Masterstroke</strong> </tooltip>, saat anggota party lain di sekitar mengakumulasi <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Will to Win</strong></tooltip> untuk Lohen dengan cara mengakibatkan DMG, jika DMG yang diakibatkan kali ini tidak lebih rendah dari 3.000% Base ATK Lohen, maka akan mengakumulasi 60 poin <strong>Will to Win</strong> tambahan untuk Lohen."
+    }
+  },
+  "passive2": {
+    "name": "Flippant Masterpiece",
+    "description": {
+      "0": "Saat dalam mode <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Masterstroke</strong></tooltip>, selama 8 detik setelah anggota party lain di sekitar memicu <cryo>reaksi terkait Cryo</cryo> terhadap musuh, ATK Karakter tersebut meningkat 15% dan ATK Lohen meningkat 15%."
+    }
+  },
+  "passive3": {
+    "name": "When the Mood Strikes",
+    "description": {
+      "0": "Setelah melancarkan Elemental Skill <strong>Unforeseen Strike</strong>, Lohen akan mendapatkan efek High Spirits selama 9 detik. High Spirits: Selama durasinya, level Elemental Skill <strong>Unforeseen Strike</strong> meningkat 1 level.",
+      "1": "Saat melancarkan Elemental Skill, jika level skill Normal Attack, Elemental Skill, atau Elemental Burst milik Karakter lain dalam party tidak lebih rendah dari level Elemental Skill Lohen, maka durasi efek High Spirits kali ini diperpanjang 6 detik lagi.",
+      "2": "Efek High Spirits bisa diperoleh sekali setiap 18 detik."
+    }
+  },
+  "lockedPassive": {
+    "name": "Witch's Eve Rite: Unhealing Thorn",
+    "description": {
+      "0": "Setelah menyelesaikan <strong>PR Penyihir: Tentang Beragam Musuh</strong>, Lohen akan berubah menjadi Karakter <strong>Hexerei</strong>. Saat ada setidaknya 2 Karakter Hexerei di dalam party, akan mendapatkan efek <strong>Hexerei: Secret Rite</strong> yang memperkuat Karakter Hexerei.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei: Secret Rite</strong>",
+      "3": "Saat Elemental Skill Khusus <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Etched Into Bone and Soul</strong></tooltip> mengenai musuh atau saat Lohen melancarkan Elemental Burst <strong>Manifest Judgment</strong>, jika <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Will to Win</strong></tooltip> yang dimiliki minimal sebesar 50% dari batas maksimumnya, maka DMG yang diakibatkan Normal Attack atau Charged Attack Lohen meningkat 40% selama 6 detik."
+    }
+  },
+  "constellation1": {
+    "name": "Yesterday's Breeze, Laden With Sorrowful Song",
+    "description": {
+      "0": "Batas maksimum <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Will to Win</strong></tooltip> Lohen meningkat menjadi 300% dari batas awalnya.",
+      "1": "Selain itu, saat Lohen berada dalam mode <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Masterstroke</strong></tooltip>, <strong>Will to Win</strong> yang diakumulasi anggota party lain di sekitar dengan cara mengakibatkan DMG akan bertambah menjadi 500% dari nilai awalnya."
+    }
+  },
+  "constellation2": {
+    "name": "In Flight, I Strike Whatever Flies",
+    "description": {
+      "0": "Saat berada dalam mode <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Masterstroke</strong></tooltip>, selama 4 detik setelah Elemental Skill Khusus <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Etched Into Bone and Soul</strong></tooltip> mengenai musuh atau melancarkan Elemental Burst <strong>Manifest Judgment</strong>, Lohen akan mendapatkan efek Evilsbane Blade: Saat Lohen berada dalam mode Masterstroke dan Normal Attack atau Charged Attack Lohen berikutnya mengenai musuh, maka ia akan mengakibatkan satu kali lagi serangan tambahan yang mengakibatkan <cryo>Cryo DMG Area</cryo> sebesar 500% ATK Lohen dan meningkatkan 200 poin Elemental Mastery anggota party lain di sekitar selama 8 detik. Efek Evilsbane Blade dapat terpicu sekali setiap 4 detik."
+    }
+  },
+  "constellation3": {
+    "name": "Only a Sharp Blade Can Heal This Hurt",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Skill <strong><tooltip ns=char_Lohen_gen baseKey18=skill>Unforeseen Strike</tooltip></strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Radiant Love, Laughing Death",
+    "description": {
+      "0": "Saat Lohen melancarkan Elemental Burst <strong>Manifest Judgment</strong> dalam mode <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Masterstroke</strong></tooltip>, ia akan langsung mengakumulasi <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Will to Win</strong></tooltip> maksimum, lalu membuat Elemental Burst kali ini mendapatkan efek peningkatan DMG tertinggi.",
+      "1": "<br/>",
+      "2": "Selain itu, saat Lohen berganti ke mode <strong>Masterstroke</strong>, jika Energy-nya:",
+      "3": [
+        "Belum terisi penuh: Akan memulihkan 15 poin Energy Lohen.",
+        "Sudah terisi penuh: Melancarkan Elemental Burst <strong>Manifest Judgment</strong> dalam kurun waktu 15 detik akan memulihkan 15 poin Energy Lohen."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Never Ask, Nor Trouble You to Know",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Burst <strong><tooltip ns=char_Lohen_gen baseKey18=burst>Manifest Judgment</tooltip></strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "To Drown, to Sink, Unconscious — Supreme Joy",
+    "description": {
+      "0": "Saat Elemental Skill Khusus <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Etched Into Bone and Soul</strong></tooltip> mengenai musuh atau saat melancarkan Elemental Burst <strong>Manifest Judgment</strong> dalam mode <strong><tooltip ns=tooltips_gen baseKey18=11290001 values=[]>Masterstroke</tooltip></strong>, Lohen tidak akan mengonsumsi <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Will to Win</strong></tooltip> lagi dan akan memulihkan <tooltip ns=tooltips_gen baseKey18=11290003 values=[]><strong>Joy</strong></tooltip> Lohen hingga batas maksimum. Dan saat Elemental Skill Khusus <strong>Etched Into Bone and Soul</strong> berikutnya mengenai musuh, durasi <strong>Masterstroke</strong> kali ini diperpanjang 1,25 detik. Efek ini dapat terpicu sekali setiap 7 detik.",
+      "1": "Selain itu, CRIT DMG dari seluruh DMG yang disebutkan di atas akan meningkat 175%, dan selama durasi <strong>Masterstroke</strong> kali ini, jumlah maksimum <strong>Etched Into Bone and Soul</strong> yang bisa dilancarkan Lohen bertambah 2 kali."
+    }
+  }
+}

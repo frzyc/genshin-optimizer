@@ -1,0 +1,173 @@
+{
+  "name": "Lohen",
+  "title": "Ponta de Flecha Afiada",
+  "description": "Vice-Capitão da Companhia de Longo Alcance dos Cavaleiros de Favonius, um cavaleiro conhecido por sua abordagem pouco ortodoxa e seu gosto por táticas incomuns.",
+  "constellationName": "Lepus Miles",
+  "auto": {
+    "name": "Juramento Quebrado",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza até 5 ataques rápidos."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina para desferir um ataque em frente."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano do 5° Golpe",
+      "5": "Dano de Ataque Carregado",
+      "6": "Consumo de Stamina de Ataque Carregado",
+      "7": "Dano Durante a Queda",
+      "8": "Dano de Queda de Baixa/Alta Altitude",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Ataque Surpresa",
+    "description": {
+      "0": "Procurando por fraquezas, Lohen troca para o modo <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Golpe de Mestre</strong></tooltip>. Enquanto estiver nesse estado:",
+      "1": [
+        " Lohen acumulará ativamente <tooltip ns=tooltips_gen baseKey18=11290003 values=[]><strong>Alegria</strong></tooltip>, e lançará sua Habilidade Elemental Especial <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Entalhado em Alma e Osso</strong></tooltip>.",
+        " Os outros personagens próximos da equipe acumularão <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Luta pela Vitória</strong></tooltip> para Lohen, aumentando o Dano de <strong>Entalhado em Alma e Osso</strong>."
+      ],
+      "2": "Depois de lançar <strong>Entalhado em Alma e Osso</strong> até 3 vezes durante o estado <strong>Golpe de Mestre</strong>, não será mais possível acumular <strong>Alegria</strong>.",
+      "3": "<br/>",
+      "4": "<i>\"Cavalheirismo? Haha, essa é a melhor forma de fazer a isca cair na armadilha. Quando um inimigo sonha com uma vitória honorável, sempre cairá na surpresa agradável que o aguarda.\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano do 5° Golpe",
+      "5": "Dano de Ataque Carregado",
+      "6": "Consumo de Stamina de Ataque Carregado",
+      "7": "Dano Durante a Queda",
+      "8": "Dano de Queda de Baixa/Alta Altitude",
+      "9": "Duração de Golpe de Mestre",
+      "10": "Dano de Entalhado em Alma e Osso",
+      "11": "Aumento de Dano Original por Ponto de Luta pela Vitória",
+      "12": "Tempo de Recarga",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Julgamento Manifestado",
+    "description": {
+      "0": "Desfere um corte rápido em frente, consumindo tudo de <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Luta pela Vitória</strong></tooltip>, causando <cryo>Dano Cryo</cryo> e aumentando o Dano causado de acordo com a quantidade de <strong>Luta pela Vitória</strong> consumida. Ao lançar, se Lohen estiver no estado <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Golpe de Mestre</strong></tooltip>, a duração do estado <strong>Golpe de Mestre</strong> será estendida em 1.65s.",
+      "1": "<br/>",
+      "2": "<i>\"Já terminou de falar? Eu sequer consegui me animar.\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Aumento de Dano Original por Ponto de Luta pela Vitória",
+      "2": "Tempo de Recarga",
+      "3": "Energia Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Questionamento Proibido",
+    "description": {
+      "0": "Quando está no estado <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Golpe de Mestre</strong></tooltip>, quando o Dano causado pelos outros personagens próximos acumular <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Luta pela Vitória</strong></tooltip> para Lohen, se esse Dano não for menor que 3000% do ATQ Básico de Lohen, acumula 60 pontos adicionais de <strong>Luta pela Vitória</strong> para Lohen."
+    }
+  },
+  "passive2": {
+    "name": "Brincadeira Primorosa",
+    "description": {
+      "0": "Quando está no estado <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Golpe de Mestre</strong></tooltip>, nos 8s após os outros membros da equipe desencadearem uma <cryo>reação Cryo</cryo> no inimigo, aumenta o ATQ desse personagem em 15% e o ATQ de Lohen em 15%."
+    }
+  },
+  "passive3": {
+    "name": "Interesse Efêmero",
+    "description": {
+      "0": "Depois de lançar a Habilidade Elemental <strong>Ataque Surpresa</strong>, Lohen obtém o efeito Animado por 9s: nessa duração, aumenta o nível de sua Habilidade Elemental <strong>Ataque Surpresa</strong> em 1.",
+      "1": "Ao lançar a Habilidade Elemental, se os níveis dos Ataques Normais, Habilidades Elementais ou Supremos dos outros personagens da equipe não forem menores que o nível da Habilidade Elemental de Lohen, a duração desse Animado é estendida em 6s adicionais.",
+      "2": "É possível desencadear Animado uma vez a cada 18s."
+    }
+  },
+  "lockedPassive": {
+    "name": "Presente da Noite da Bruxa: Perfuração Incurável",
+    "description": {
+      "0": "Depois de completar <strong>Tarefa da Bruxa: Pergunta sobre Inimigos</strong>, Lohen se tornará um personagem <strong>Mágico</strong>. Quando a equipe possuir pelo menos 2 personagens Mágicos, obtém o efeito <strong>Mágico: Ritual Secreto</strong>, fortalecendo esses personagens.",
+      "1": "<br/>",
+      "2": "<strong>Mágico: Ritual Secreto</strong>",
+      "3": "Quando a Habilidade Elemental especial <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Entalhado em Alma e Osso</strong></tooltip> atingir um inimigo, ou lançar seu Supremo <strong>Julgamento Manifestado</strong>, se <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Luta pela Vitória</strong></tooltip> estiver pelo menos acima de 50% do seu limite máximo, aumenta o Dano do Ataque Normal e Carregado de Lohen em 40% por 6s."
+    }
+  },
+  "constellation1": {
+    "name": "Brisa Funesta do Passado",
+    "description": {
+      "0": "Aumenta o limite máximo de <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Luta pela Vitória</strong></tooltip> de Lohen em 300%.",
+      "1": "Além disso, quando está no estado <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Golpe de Mestre</strong></tooltip>, aumenta o acúmulo de <strong>Luta pela Vitória</strong> para Lohen através do Dano causado por outros personagens próximos em 500% a mais do que o original."
+    }
+  },
+  "constellation2": {
+    "name": "Aquilo que Voa Vira Alvo",
+    "description": {
+      "0": "Quando está no estado <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Golpe de Mestre</strong></tooltip>, nos 4s após Habilidade Elemental especial <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Entalhado em Alma e Osso</strong></tooltip> acertar um oponente ou o lançar o Supremo <strong>Julgamento Manifestado</strong> for desencadeado, Lohen obtém o efeito Lâmina Destruidora de Demônios: quando estiver no estado Golpe de Mestre, o próximo Ataque Normal ou Carregado de Lohen que atingir o inimigo fará um ataque perseguidor adicional causando 500% do ATQ de Lohen como <cryo>Dano Cryo em AdE</cryo>, e aumenta a Proficiência Elemental dos outros membros próximos da equipe em 200 por 8s. É possível desencadear o efeito Lâmina Destruidora de Demônios uma vez a cada 4s."
+    }
+  },
+  "constellation3": {
+    "name": "Apenas a Lâmina Pode Curar Esta Ferida",
+    "description": {
+      "0": "Aumenta o nível da Habilidade Elemental <strong><tooltip ns=char_Lohen_gen baseKey18=skill>Ataque Surpresa</tooltip></strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Amor Brilhante Passa como uma Canção",
+    "description": {
+      "0": "Quando Lohen está no estado <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Golpe de Mestre</strong></tooltip> e lançar o Supremo <strong>Julgamento Manifestado</strong>, Lohen acumula o máximo de <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Luta pela Vitória</strong></tooltip>., fazendo com que o efeito de aumento de Dano do Supremo seja o maior possível.",
+      "1": "<br/>",
+      "2": "Além disso, quando Lohen troca para o estado <strong>Golpe de Mestre</strong>, se sua Energia Elemental:",
+      "3": [
+        " Não estiver cheia: regenera 15 de Energia Elemental para Lohen.",
+        " Se já estiver cheia: regenera 15 de Energia Elemental para Lohen nos 15s após lançar o Supremo <strong>Julgamento Manifestado</strong>."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Inescrutável e Inquestionável",
+    "description": {
+      "0": "Aumenta o nível do Supremo <strong><tooltip ns=char_Lohen_gen baseKey18=burst>Julgamento Manifestado</tooltip></strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Corpo Desfeito, Alma Dissipada, Alegria Sobrada",
+    "description": {
+      "0": "Quando a Habilidade Elemental especial <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Entalhado em Alma e Osso</strong></tooltip> atingir um inimigo ou lançar o Supremo <strong>Julgamento Manifestado</strong> no estado <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Golpe de Mestre</strong></tooltip> não consumirá <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Luta pela Vitória</strong></tooltip>, mas fará Lohen acumular o máximo de <tooltip ns=tooltips_gen baseKey18=11290003 values=[]><strong>Alegria</strong></tooltip>. Quando estiver no máximo, quando ele lançar a Habilidade Elemental especial <strong>Entalhado em Alma e Osso</strong> novamente e caso acerte um oponente, prolonga a duração do estado <strong>Golpe de Mestre</strong> em 1.25s. Esse efeito pode ser desencadeado uma vez a cada 7s.",
+      "1": "Além disso, aumenta o Dano CRIT de todos os Danos acima em 175%, e o número de vezes que Lohen pode desencadear <strong>Entalhado em Alma e Osso</strong> durante essa instância de <strong>Golpe de Mestre</strong> é aumentado em 2."
+    }
+  }
+}

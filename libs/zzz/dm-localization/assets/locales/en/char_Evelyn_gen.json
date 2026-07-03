@@ -228,7 +228,7 @@
   "mindscapes": {
     "1": {
       "name": "Dreamweave",
-      "desc": "Upon entering the battlefield, Evelyn immediately gains 1,500 Decibels. Enemies affected by <ct color=#FFFFFF>Binding Seal</ct> will be <ct color=#FFFFFF>Bound</ct>. When Evelyn attacks <ct color=#FFFFFF>Bound</ct> enemies, she ignores 12% of their DEF. When Evelyn uses <ct color=#FFFFFF>Special Attack: Binding Sunder - First Form</ct> or <ct color=#FFFFFF>EX Special Attack: Binding Sunder - Final Form</ct>, the <ct color=#FFFFFF>Bound</ct> effect spreads to all enemies hit by the skill. This spread <ct color=#FFFFFF>Bound</ct> effect lasts for 10s.",
+      "desc": "Upon entering the battlefield, Evelyn immediately gains 1,500 Decibels. This effect can trigger once every 180s in Investigation Zone Mode. Enemies affected by <ct color=#FFFFFF>Binding Seal</ct> will be <ct color=#FFFFFF>Bound</ct>. When Evelyn attacks <ct color=#FFFFFF>Bound</ct> enemies, she ignores 12% of their DEF. When Evelyn uses <ct color=#FFFFFF>Special Attack: Binding Sunder - First Form</ct> or <ct color=#FFFFFF>EX Special Attack: Binding Sunder - Final Form</ct>, the <ct color=#FFFFFF>Bound</ct> effect spreads to all enemies hit by the skill. This spread <ct color=#FFFFFF>Bound</ct> effect lasts for 10s.",
       "flavor": {
         "0": "The distant, blurred light seemed to be a dream she had crafted, an unreachable future. It wasn't about atonement, but a yearning for freedom.",
         "1": "\"You want it too, don't you? A real life.\" An anonymous former coworker once asked Evelyn."
