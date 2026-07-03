@@ -1,7 +1,11 @@
 import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { ImgIcon, useTitle } from '@genshin-optimizer/common/ui'
-import { objKeyMap, stableArr } from '@genshin-optimizer/common/util'
+import {
+  objKeyMap,
+  shouldShowDevComponents,
+  stableArr,
+} from '@genshin-optimizer/common/util'
 import type { DebugReadContextObj } from '@genshin-optimizer/game-opt/formula-ui'
 import {
   DebugReadContext,
@@ -19,6 +23,7 @@ import { characterAsset } from '@genshin-optimizer/zzz/assets'
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allCharacterKeys } from '@genshin-optimizer/zzz/consts'
 import type { TeamConditional } from '@genshin-optimizer/zzz/db'
+import type { ICachedCharacter, Team } from '@genshin-optimizer/zzz/db'
 import {
   CharacterContext,
   useCharacter,
@@ -43,6 +48,30 @@ import { useTranslation } from 'react-i18next'
 import { CharacterOptDisplay } from './CharacterOptDisplay'
 import { OptTargetRow } from './OptTargetRow'
 import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
+
+function OptimizePageContent({
+  character,
+  team,
+}: {
+  character: ICachedCharacter
+  team: Team
+}) {
+  return (
+    <Box
+      sx={{
+        display: 'flex',
+        gap: 1,
+        flexDirection: 'column',
+        mt: 1,
+      }}
+    >
+      <OptTargetRow character={character} team={team} />
+      <TeamHeaderHeightContext.Provider value={74}>
+        <CharacterOptDisplay key={character.key} />
+      </TeamHeaderHeightContext.Provider>
+    </Box>
+  )
+}
 
 export default function PageOptimize() {
   const { database } = useDatabaseContext()
@@ -115,6 +144,11 @@ export default function PageOptimize() {
     [characterKey]
   )
 
+  const conditionals = useMemo(
+    () => [...(team?.frames[0]?.conditionals ?? stableArr<TeamConditional>())],
+    [team?.frames]
+  )
+
   const [debugRead, setDebugRead] = useState<BaseRead>()
   const debugObj = useMemo<DebugReadContextObj>(
     () => ({
@@ -165,28 +199,19 @@ export default function PageOptimize() {
               discIds={character.equippedDiscs}
             >
               <SrcDstDisplayContext.Provider value={srcDstDisplayContextValue}>
-                <ConditionalValuesContext.Provider
-                  value={
-                    team.frames[0]?.conditionals ?? stableArr<TeamConditional>()
-                  }
-                >
+                <ConditionalValuesContext.Provider value={conditionals}>
                   <SetConditionalContext.Provider value={setConditional}>
-                    <DebugReadContext.Provider value={debugObj}>
-                      <DebugReadModal />
-                      <Box
-                        sx={{
-                          display: 'flex',
-                          gap: 1,
-                          flexDirection: 'column',
-                          mt: 1,
-                        }}
-                      >
-                        <OptTargetRow character={character} team={team} />
-                        <TeamHeaderHeightContext.Provider value={74}>
-                          <CharacterOptDisplay key={character.key} />
-                        </TeamHeaderHeightContext.Provider>
-                      </Box>
-                    </DebugReadContext.Provider>
+                    {shouldShowDevComponents ? (
+                      <DebugReadContext.Provider value={debugObj}>
+                        <DebugReadModal />
+                        <OptimizePageContent
+                          character={character}
+                          team={team}
+                        />
+                      </DebugReadContext.Provider>
+                    ) : (
+                      <OptimizePageContent character={character} team={team} />
+                    )}
                   </SetConditionalContext.Provider>
                 </ConditionalValuesContext.Provider>
               </SrcDstDisplayContext.Provider>

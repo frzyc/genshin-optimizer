@@ -20,7 +20,7 @@ import {
   styled,
 } from '@mui/material'
 import type { ElementType, ReactNode } from 'react'
-import { useContext, useMemo } from 'react'
+import { useCallback, useContext, useMemo, useState } from 'react'
 import {
   FormulaTextCacheContext,
   FormulaTextContext,
@@ -140,13 +140,23 @@ export function MultiTagFieldDisplay({
   const getTagRowSx = useContext(TagRowSxContext)
   const { icon, title, subtitle, fieldRefs } = field
 
-  if (!calc) return null
+  const taggedCalc = useMemo(
+    () => (calc ? calc.withTag(contextTag) : undefined),
+    [calc, contextTag]
+  )
+  const computed = useMemo(
+    () =>
+      taggedCalc
+        ? fieldRefs.map(({ label, ref: fieldRef }) => {
+            const fieldRead = read(fieldRef)
+            const valueCalcRes = taggedCalc.compute(fieldRead)
+            return { label, fieldRef, fieldRead, valueCalcRes }
+          })
+        : [],
+    [fieldRefs, taggedCalc]
+  )
 
-  const computed = fieldRefs.map(({ label, ref: fieldRef }) => {
-    const fieldRead = read(fieldRef)
-    const valueCalcRes = calc.withTag(contextTag).compute(fieldRead)
-    return { label, fieldRef, fieldRead, valueCalcRes }
-  })
+  if (!calc) return null
 
   if (!showZero && computed.every(({ valueCalcRes }) => !valueCalcRes.val))
     return null
@@ -270,12 +280,15 @@ export function TagFieldDisplay({
     [calcReadOverride, field.fieldRef]
   )
 
+  const valueCalcRes = useMemo(
+    () => calc?.withTag(contextTag).compute(fieldRead),
+    [calc, contextTag, fieldRead]
+  )
+
   const onClick = onClickFormula
   // const compareCalc: null | Calculator = null //TODO: compare calcs
-  if (!calc) return null
+  if (!calc || !valueCalcRes) return null
   // if (!calc && !compareCalc) return null
-
-  const valueCalcRes = calc.withTag(contextTag).compute(fieldRead)
   // const compareValueCalcRes: CalcResult<number, CalcMeta> | null = null
 
   // const { setFormulaData } = useContext(FormulaDataContext)
@@ -397,35 +410,45 @@ function FormulaHelpIcon({
   const FullTagDisplay = useContext(FullTagDisplayContext)
   const formulaText = useContext(FormulaTextContext)
   const formulaTextCache = useContext(FormulaTextCacheContext)
+  const [tooltipOpen, setTooltipOpen] = useState(false)
+  const onOpen = useCallback(() => setTooltipOpen(true), [])
+  const onClose = useCallback(() => setTooltipOpen(false), [])
   const tag = computed.meta.tag
   const name = tag?.['name'] || tag?.['q'] || ''
   const valDisplay = valueString(computed.val, getUnitStr(name))
   const fText = useMemo(
-    () => formulaText(computed as any, formulaTextCache),
-    [computed, formulaText, formulaTextCache]
+    () =>
+      tooltipOpen ? formulaText(computed as any, formulaTextCache) : undefined,
+    [tooltipOpen, computed, formulaText, formulaTextCache]
   )
   if (!tag) return null
   return (
     <BootstrapTooltip
+      onOpen={onOpen}
+      onClose={onClose}
       title={
-        <Typography component="div">
-          <Box sx={{ display: 'flex', gap: 1 }}>
-            <FullTagDisplay tag={tag} />
-            <span>{valDisplay}</span>
-          </Box>
-          <Divider />
-          <Box>{fText?.formula}</Box>
+        tooltipOpen ? (
+          <Typography component="div">
+            <Box sx={{ display: 'flex', gap: 1 }}>
+              <FullTagDisplay tag={tag} />
+              <span>{valDisplay}</span>
+            </Box>
+            <Divider />
+            <Box>{fText?.formula}</Box>
 
-          <Stack spacing={1} sx={{ pl: 1, pt: 1 }}>
-            {fText?.deps.map((dep, i) => (
-              <Box key={i}>
-                <Box>{dep.name}</Box>
-                <Divider />
-                <Box> {dep.formula}</Box>
-              </Box>
-            ))}
-          </Stack>
-        </Typography>
+            <Stack spacing={1} sx={{ pl: 1, pt: 1 }}>
+              {fText?.deps.map((dep, i) => (
+                <Box key={i}>
+                  <Box>{dep.name}</Box>
+                  <Divider />
+                  <Box> {dep.formula}</Box>
+                </Box>
+              ))}
+            </Stack>
+          </Typography>
+        ) : (
+          ''
+        )
       }
     >
       <HelpIcon onClick={onClick} fontSize="inherit" sx={{ cursor: 'help' }} />

@@ -12,6 +12,21 @@ function listingTagKey(tag: Tag): string {
   return `${tag.sheet ?? ''}:${tag.name ?? ''}:${tag.q ?? ''}:${tag.qt ?? ''}:${tag.attribute ?? ''}`
 }
 
+/** Key for looking up a listing `Read` from `calc.listFormulas(own.listing.formulas)`. */
+export function listingReadKey(tag: Tag): string {
+  return listingTagKey(tag)
+}
+
+export function buildListingReadMap(
+  reads: Read<Tag>[]
+): Map<string, Read<Tag>> {
+  const map = new Map<string, Read<Tag>>()
+  for (const read of reads) {
+    map.set(listingTagKey(read.tag), read)
+  }
+  return map
+}
+
 function readWithMergedTag(read: BaseRead | Read<Tag>, tag: Tag): Read<Tag> {
   if (typeof (read as Read<Tag>).withTag === 'function') {
     return (read as Read<Tag>).withTag(tag)
@@ -23,9 +38,14 @@ function readWithMergedTag(read: BaseRead | Read<Tag>, tag: Tag): Read<Tag> {
 export function formulaReadForTag(
   calc: Calculator | null | undefined,
   tag: Tag,
-  listingRead?: BaseRead | Read<Tag>
+  listingRead?: BaseRead | Read<Tag>,
+  readByListingKey?: Map<string, Read<Tag>>
 ): Read<Tag> {
   if (listingRead) return readWithMergedTag(listingRead, tag)
+  if (readByListingKey) {
+    const match = readByListingKey.get(listingTagKey(tag))
+    if (match) return match.withTag(tag)
+  }
   if (calc) {
     const key = listingTagKey(tag)
     const match = calc

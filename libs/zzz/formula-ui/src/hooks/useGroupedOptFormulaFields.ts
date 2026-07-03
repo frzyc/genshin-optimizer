@@ -10,7 +10,11 @@ import {
   groupFieldsByCategory,
   orderedFieldCategories,
 } from '../char/fieldCategory'
-import { filterNonStatFields, listStatReadsFromFormulas } from '../optTarget'
+import {
+  buildListingReadMap,
+  filterNonStatFields,
+  listStatReadsFromFormulas,
+} from '../optTarget'
 
 export function useGroupedOptFormulaFields(
   charKey: CharacterKey | undefined,
@@ -20,6 +24,7 @@ export function useGroupedOptFormulaFields(
     if (!calc || !charKey) {
       return {
         statReads: [] as Read<Tag>[],
+        readByListingKey: new Map<string, Read<Tag>>(),
         categorySections: [] as Array<{
           category: TalentSheetElementKey
           fields: Field[]
@@ -28,10 +33,12 @@ export function useGroupedOptFormulaFields(
       }
     }
     const reads = calc.listFormulas(own.listing.formulas)
+    const readByListingKey = buildListingReadMap(reads)
     const fields = groupFormulas(reads, charKey, charKey)
     const { byCategory, other } = groupFieldsByCategory(charKey, fields)
     return {
       statReads: listStatReadsFromFormulas(reads),
+      readByListingKey,
       categorySections: orderedFieldCategories(byCategory),
       otherFields: filterNonStatFields(other),
     }

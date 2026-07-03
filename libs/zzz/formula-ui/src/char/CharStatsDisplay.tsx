@@ -10,6 +10,7 @@ import {
   isMultiTagField,
   isTagField,
 } from '@genshin-optimizer/game-opt/sheet-ui'
+import type { BaseRead } from '@genshin-optimizer/pando/engine'
 import type { StatKey } from '@genshin-optimizer/zzz/consts'
 import { applyDamageTypeToTag, targetTag } from '@genshin-optimizer/zzz/db'
 import { getTeamFrame0 } from '@genshin-optimizer/zzz/db'
@@ -22,14 +23,14 @@ import {
   isHighlight,
 } from '@genshin-optimizer/zzz/ui'
 import { ListItem } from '@mui/material'
-import { Fragment, useContext, useMemo } from 'react'
+import { Fragment, memo, useCallback, useContext, useMemo } from 'react'
 import {
   useGroupedOptFormulaFields,
   useOptCategoryCollapse,
   useZzzCalcContext,
 } from '../hooks'
 import { OptPanelSectionHeader } from '../optPanelSections'
-import { formulaReadForTag, statReadTagKey } from '../optTarget'
+import { formulaReadForTag, listingReadKey, statReadTagKey } from '../optTarget'
 import { OptTargetCategorySectionHeader } from '../optTargetDisplay'
 import { tagToTagField } from '../util'
 
@@ -37,7 +38,8 @@ export function CharStatsDisplay() {
   const character = useCharacterContext()
   const calc = useZzzCalcContext()
   const collapse = useOptCategoryCollapse()
-  const { statReads, categorySections, otherFields } =
+  const { optTarget, resolvedOptTag } = useOptTargetTags()
+  const { statReads, readByListingKey, categorySections, otherFields } =
     useGroupedOptFormulaFields(character?.key, calc)
 
   return (
@@ -46,14 +48,26 @@ export function CharStatsDisplay() {
         <OptPanelSectionHeader section="stats">Stats</OptPanelSectionHeader>
         {!(collapse?.isCollapsed('stats') ?? false) &&
           statReads.map((read) => (
-            <CharStatRow key={statReadTagKey(read.tag)} read={read} />
+            <CharStatRow
+              key={statReadTagKey(read.tag)}
+              read={read}
+              readByListingKey={readByListingKey}
+              optTarget={optTarget}
+              resolvedOptTag={resolvedOptTag}
+            />
           ))}
         {otherFields.length > 0 && (
           <>
             <OptPanelSectionHeader section="other">Other</OptPanelSectionHeader>
             {!(collapse?.isCollapsed('other') ?? false) &&
               otherFields.map((field, index) => (
-                <FormulaFieldRow key={`other_${index}`} field={field} />
+                <FormulaFieldRow
+                  key={`other_${index}`}
+                  field={field}
+                  readByListingKey={readByListingKey}
+                  optTarget={optTarget}
+                  resolvedOptTag={resolvedOptTag}
+                />
               ))}
           </>
         )}
@@ -62,7 +76,13 @@ export function CharStatsDisplay() {
             <OptTargetCategorySectionHeader category={category} />
             {!(collapse?.isCollapsed(category) ?? false) &&
               fields.map((field, index) => (
-                <FormulaFieldRow key={`${category}_${index}`} field={field} />
+                <FormulaFieldRow
+                  key={`${category}_${index}`}
+                  field={field}
+                  readByListingKey={readByListingKey}
+                  optTarget={optTarget}
+                  resolvedOptTag={resolvedOptTag}
+                />
               ))}
           </Fragment>
         ))}
@@ -71,9 +91,35 @@ export function CharStatsDisplay() {
   )
 }
 
-function FormulaFieldRow({ field }: { field: Field }) {
-  if (isMultiTagField(field)) return <MultiFormulaFieldRow field={field} />
-  if (isTagField(field)) return <CharStatRow tag={field.fieldRef} />
+function FormulaFieldRow({
+  field,
+  readByListingKey,
+  optTarget,
+  resolvedOptTag,
+}: {
+  field: Field
+  readByListingKey: Map<string, Read<Tag>>
+  optTarget: ReturnType<typeof getTeamFrame0>['tag']
+  resolvedOptTag: Tag | undefined
+}) {
+  if (isMultiTagField(field))
+    return (
+      <MultiFormulaFieldRow
+        field={field}
+        optTarget={optTarget}
+        resolvedOptTag={resolvedOptTag}
+      />
+    )
+  if (isTagField(field))
+    return (
+      <CharStatRow
+        tag={field.fieldRef}
+        listingRead={readByListingKey.get(listingReadKey(field.fieldRef))}
+        readByListingKey={readByListingKey}
+        optTarget={optTarget}
+        resolvedOptTag={resolvedOptTag}
+      />
+    )
   return null
 }
 
@@ -107,10 +153,23 @@ function mergeTagForOpt(
   return tag
 }
 
-function CharStatRow({ read, tag: tagIn }: { read?: Read<Tag>; tag?: Tag }) {
+const CharStatRow = memo(function CharStatRow({
+  read,
+  tag: tagIn,
+  listingRead,
+  readByListingKey,
+  optTarget,
+  resolvedOptTag,
+}: {
+  read?: Read<Tag>
+  tag?: Tag
+  listingRead?: Read<Tag>
+  readByListingKey?: Map<string, Read<Tag>>
+  optTarget: ReturnType<typeof getTeamFrame0>['tag']
+  resolvedOptTag: Tag | undefined
+}) {
   const { setRead } = useContext(DebugReadContext)
   const calc = useZzzCalcContext()
-  const { optTarget, resolvedOptTag } = useOptTargetTags()
   const baseTag = tagIn ?? read!.tag
 
   const mergedTag = useMemo(
@@ -119,9 +178,12 @@ function CharStatRow({ read, tag: tagIn }: { read?: Read<Tag>; tag?: Tag }) {
   )
 
   const calcRead = useMemo(
-    () => formulaReadForTag(calc, mergedTag, read),
-    [calc, mergedTag, read]
+    () =>
+      formulaReadForTag(calc, mergedTag, read ?? listingRead, readByListingKey),
+    [calc, mergedTag, read, listingRead, readByListingKey]
   )
+
+  const field = useMemo(() => tagToTagField(mergedTag), [mergedTag])
 
   const { statHighlight, setStatHighlight } = useContext(StatHighlightContext)
   const tagQStatKey = mergedTag.name
@@ -137,38 +199,60 @@ function CharStatRow({ read, tag: tagIn }: { read?: Read<Tag>; tag?: Tag }) {
     ? isHighlight(statHighlight, tagQStatKey as StatKey)
     : false
 
+  const onMouseEnter = useCallback(() => {
+    if (tagQStatKey) setStatHighlight(tagQStatKey)
+  }, [tagQStatKey, setStatHighlight])
+  const onMouseLeave = useCallback(() => {
+    setStatHighlight('')
+  }, [setStatHighlight])
+
+  const rowSx = useMemo(
+    () => ({
+      position: 'relative' as const,
+      '::after': {
+        content: '""',
+        position: 'absolute' as const,
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        backgroundColor: getHighlightRGBA(isHL),
+        transition: 'background-color 0.3s ease-in-out',
+        pointerEvents: 'none' as const,
+      },
+    }),
+    [isHL]
+  )
+
+  const onClickFormula = useMemo(
+    () => (shouldShowDevComponents ? () => setRead(calcRead) : undefined),
+    [setRead, calcRead]
+  )
+
   return (
     <TagFieldDisplay
-      field={tagToTagField(mergedTag)}
+      field={field}
       calcRead={calcRead}
       showZero
       component={ListItem}
-      onMouseEnter={() => tagQStatKey && setStatHighlight(tagQStatKey)}
-      onMouseLeave={() => setStatHighlight('')}
-      rowSx={{
-        position: 'relative',
-        '::after': {
-          content: '""',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          backgroundColor: getHighlightRGBA(isHL),
-          transition: 'background-color 0.3s ease-in-out',
-          pointerEvents: 'none',
-        },
-      }}
-      onClickFormula={
-        shouldShowDevComponents ? () => setRead(calcRead) : undefined
-      }
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      rowSx={rowSx}
+      onClickFormula={onClickFormula}
     />
   )
-}
+})
 
-function MultiFormulaFieldRow({ field }: { field: MultiTagField }) {
+const MultiFormulaFieldRow = memo(function MultiFormulaFieldRow({
+  field,
+  optTarget,
+  resolvedOptTag,
+}: {
+  field: MultiTagField
+  optTarget: ReturnType<typeof getTeamFrame0>['tag']
+  resolvedOptTag: Tag | undefined
+}) {
   const { setRead } = useContext(DebugReadContext)
-  const { optTarget, resolvedOptTag } = useOptTargetTags()
 
   const mergedField = useMemo(() => {
     return {
@@ -180,14 +264,20 @@ function MultiFormulaFieldRow({ field }: { field: MultiTagField }) {
     }
   }, [field, resolvedOptTag, optTarget])
 
+  const onClickFormula = useMemo(
+    () =>
+      shouldShowDevComponents
+        ? (fieldRead: BaseRead) => setRead(fieldRead)
+        : undefined,
+    [setRead]
+  )
+
   return (
     <MultiTagFieldDisplay
       field={mergedField}
       showZero
       component={ListItem}
-      onClickFormula={
-        shouldShowDevComponents ? (fieldRead) => setRead(fieldRead) : undefined
-      }
+      onClickFormula={onClickFormula}
     />
   )
-}
+})

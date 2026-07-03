@@ -14,15 +14,19 @@ import {
 } from '@genshin-optimizer/zzz/formula-ui'
 import { EquipGrid } from '@genshin-optimizer/zzz/ui'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
+import ExpandLessIcon from '@mui/icons-material/ExpandLess'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import {
   Box,
   Button,
   CardContent,
+  Collapse,
   Grid,
+  IconButton,
   Stack,
   Typography,
 } from '@mui/material'
-import { memo, useCallback, useContext } from 'react'
+import { memo, useCallback, useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 function useGeneratedBuildList(listId: string) {
@@ -92,44 +96,62 @@ function GeneratedBuildDisplay({
 }) {
   const character = useCharacterContext()!
   const team = useTeam(character.key)!
+  const [expanded, setExpanded] = useState(false)
+  const toggleExpanded = useCallback(() => setExpanded((v) => !v), [])
   return (
-    <CharCalcProvider
-      character={character}
-      team={team}
-      discIds={build.discIds}
-      wengineId={build.wengineId}
-    >
-      <CardThemed>
-        <CardContent>
-          <Stack spacing={1}>
-            <Box
-              sx={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                gap: 1,
-              }}
-            >
+    <CardThemed>
+      <CardContent>
+        <Stack spacing={1}>
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              gap: 1,
+              alignItems: 'center',
+            }}
+          >
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+              <IconButton
+                size="small"
+                aria-label={expanded ? 'Collapse build' : 'Expand build'}
+                onClick={toggleExpanded}
+              >
+                {expanded ? (
+                  <ExpandLessIcon fontSize="small" />
+                ) : (
+                  <ExpandMoreIcon fontSize="small" />
+                )}
+              </IconButton>
               <Typography>
                 Build {index + 1}: {valueString(build.value)}
               </Typography>
-              <EquipBtn build={build} />
             </Box>
-            <Box>
-              <Grid container spacing={1}>
-                <Grid item xs={6} md={4} lg={3} xl={3}>
-                  <CharStatsDisplay />
+            <EquipBtn build={build} />
+          </Box>
+          <Collapse in={expanded} unmountOnExit>
+            <CharCalcProvider
+              character={character}
+              team={team}
+              discIds={build.discIds}
+              wengineId={build.wengineId}
+            >
+              <Box>
+                <Grid container spacing={1}>
+                  <Grid item xs={6} md={4} lg={3} xl={3}>
+                    <CharStatsDisplay />
+                  </Grid>
+                  <Grid item xs={6} md={8} lg={9} xl={9}>
+                    <EquipGrid
+                      discIds={build.discIds}
+                      wengineId={build.wengineId}
+                    />
+                  </Grid>
                 </Grid>
-                <Grid item xs={6} md={8} lg={9} xl={9}>
-                  <EquipGrid
-                    discIds={build.discIds}
-                    wengineId={build.wengineId}
-                  />
-                </Grid>
-              </Grid>
-            </Box>
-          </Stack>
-        </CardContent>
-      </CardThemed>
-    </CharCalcProvider>
+              </Box>
+            </CharCalcProvider>
+          </Collapse>
+        </Stack>
+      </CardContent>
+    </CardThemed>
   )
 }
