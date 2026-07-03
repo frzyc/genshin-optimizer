@@ -1,8 +1,10 @@
+import type { TargetTag } from '@genshin-optimizer/zzz/db'
 import {
   type AbilityDim,
   type Tag,
   bundledFormulaInSheet,
   dmgAbilityDims,
+  isAbilityDim,
 } from '@genshin-optimizer/zzz/formula'
 
 export const formulaDimensions = ['dmg', 'daze', 'anomBuildup'] as const
@@ -58,4 +60,15 @@ export function abilityDimLabel(q: AbilityDim): string {
 
 export function formulaDimensionLabel(dim: FormulaDimension): string {
   return FORMULA_DIMENSION_LABEL[dim]
+}
+
+/** Short value prefix for generated build rows (e.g. DMG, Daze, ATK). */
+export function optTargetShortValueLabel(
+  target: TargetTag | undefined
+): string {
+  if (!target) return ''
+  const q = target.q
+  if (q && isAbilityDim(q)) return ABILITY_DIM_LABEL[q]
+  if (q) return q.endsWith('_') ? q.slice(0, -1).toUpperCase() : q.toUpperCase()
+  return target.name ?? ''
 }

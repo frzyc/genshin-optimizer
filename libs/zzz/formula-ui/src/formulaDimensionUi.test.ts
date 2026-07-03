@@ -4,6 +4,7 @@ import {
   ABILITY_DIM_LABEL,
   dimensionByAbilityDim,
   formulaDimensionLabel,
+  optTargetShortValueLabel,
   resolveAbilityDim,
 } from './formulaDimensionUi'
 
@@ -35,5 +36,26 @@ describe('formulaDimensionLabel', () => {
   it('uses longer anomaly label for dimension toggles', () => {
     expect(formulaDimensionLabel('anomBuildup')).toBe('Anomaly Buildup')
     expect(ABILITY_DIM_LABEL.anomBuildup).toBe('Anom')
+  })
+})
+
+describe('optTargetShortValueLabel', () => {
+  it('uses ability dim labels for formula targets', () => {
+    expect(
+      optTargetShortValueLabel({
+        sheet: 'Yixuan',
+        name: 'BasicAttackCirrusStrike_0',
+        q: 'standardDmg',
+      })
+    ).toBe('DMG')
+  })
+
+  it('uses stat keys for stat targets', () => {
+    expect(
+      optTargetShortValueLabel({
+        q: 'crit_',
+        qt: 'final',
+      })
+    ).toBe('CRIT')
   })
 })

@@ -1,7 +1,12 @@
 import { useDataManagerBase } from '@genshin-optimizer/common/database-ui'
 import { CardThemed } from '@genshin-optimizer/common/ui'
-import { valueString } from '@genshin-optimizer/common/util'
+import type { Calculator } from '@genshin-optimizer/game-opt/engine'
+import {
+  CompareCalcContext,
+  CompareValueDisplay,
+} from '@genshin-optimizer/game-opt/sheet-ui'
 import type { GeneratedBuild } from '@genshin-optimizer/zzz/db'
+import { getTeamFrame0 } from '@genshin-optimizer/zzz/db'
 import {
   OptConfigContext,
   useCharacterContext,
@@ -11,6 +16,9 @@ import {
 import {
   CharCalcProvider,
   CharStatsDisplay,
+  optTargetShortValueLabel,
+  useEquippedOptTargetValue,
+  useZzzCalcContext,
 } from '@genshin-optimizer/zzz/formula-ui'
 import { EquipGrid } from '@genshin-optimizer/zzz/ui'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
@@ -26,7 +34,7 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
-import { memo, useCallback, useContext, useState } from 'react'
+import { memo, useCallback, useContext, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 function useGeneratedBuildList(listId: string) {
@@ -42,6 +50,11 @@ const GeneratedBuildsDisplay = memo(function GeneratedBuildsDisplay() {
   const generatedBuildList = useGeneratedBuildList(
     optConfig.generatedBuildListId ?? ''
   )
+  const character = useCharacterContext()!
+  const team = useTeam(character.key)!
+  const baseValue = useEquippedOptTargetValue()
+  const { tag: target } = getTeamFrame0(team)
+  const valueLabel = useMemo(() => optTargetShortValueLabel(target), [target])
   return (
     <Stack spacing={1}>
       {generatedBuildList?.builds.map((build, i) => (
@@ -51,6 +64,8 @@ const GeneratedBuildsDisplay = memo(function GeneratedBuildsDisplay() {
           )}`}
           build={build}
           index={i}
+          baseValue={baseValue}
+          valueLabel={valueLabel}
         />
       ))}
     </Stack>
@@ -87,15 +102,41 @@ function EquipBtn({
   )
 }
 
+function BuildValueCompare({
+  value,
+  baseValue,
+  label,
+}: {
+  value: number
+  baseValue: number | undefined
+  label: string
+}) {
+  return (
+    <>
+      {label && `${label} `}
+      <CompareValueDisplay
+        calcValue={value}
+        compareCalcValue={baseValue}
+        unit=""
+      />
+    </>
+  )
+}
+
 function GeneratedBuildDisplay({
   build,
   index,
+  baseValue,
+  valueLabel,
 }: {
   build: GeneratedBuild
   index: number
+  baseValue: number | undefined
+  valueLabel: string
 }) {
   const character = useCharacterContext()!
   const team = useTeam(character.key)!
+  const baseCalc = useZzzCalcContext()
   const [expanded, setExpanded] = useState(false)
   const toggleExpanded = useCallback(() => setExpanded((v) => !v), [])
   return (
@@ -122,8 +163,13 @@ function GeneratedBuildDisplay({
                   <ExpandMoreIcon fontSize="small" />
                 )}
               </IconButton>
-              <Typography>
-                Build {index + 1}: {valueString(build.value)}
+              <Typography component="span">
+                Build {index + 1}:{' '}
+                <BuildValueCompare
+                  value={build.value}
+                  baseValue={baseValue}
+                  label={valueLabel}
+                />
               </Typography>
             </Box>
             <EquipBtn build={build} />
@@ -135,19 +181,21 @@ function GeneratedBuildDisplay({
               discIds={build.discIds}
               wengineId={build.wengineId}
             >
-              <Box>
-                <Grid container spacing={1}>
-                  <Grid item xs={6} md={4} lg={3} xl={3}>
-                    <CharStatsDisplay />
+              <CompareCalcContext.Provider value={baseCalc as Calculator}>
+                <Box>
+                  <Grid container spacing={1}>
+                    <Grid item xs={6} md={4} lg={3} xl={3}>
+                      <CharStatsDisplay />
+                    </Grid>
+                    <Grid item xs={6} md={8} lg={9} xl={9}>
+                      <EquipGrid
+                        discIds={build.discIds}
+                        wengineId={build.wengineId}
+                      />
+                    </Grid>
                   </Grid>
-                  <Grid item xs={6} md={8} lg={9} xl={9}>
-                    <EquipGrid
-                      discIds={build.discIds}
-                      wengineId={build.wengineId}
-                    />
-                  </Grid>
-                </Grid>
-              </Box>
+                </Box>
+              </CompareCalcContext.Provider>
             </CharCalcProvider>
           </Collapse>
         </Stack>
