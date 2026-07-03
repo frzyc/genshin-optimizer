@@ -2,6 +2,7 @@ import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { evalIfFunc } from '@genshin-optimizer/common/util'
 import { CalcContext, TagContext } from '@genshin-optimizer/game-opt/formula-ui'
+import type { BaseRead } from '@genshin-optimizer/pando/engine'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import type { SxProps, Theme, TypographyOwnProps } from '@mui/material'
 import { Box, Collapse, Typography } from '@mui/material'
@@ -50,15 +51,23 @@ export function DocumentContent({
   bgt = 'normal',
   collapse = false,
   typoVariant = 'body1',
+  onClickFormula,
 }: {
   document: Document
   bgt?: CardBackgroundColor
   collapse?: boolean
   typoVariant?: TypographyOwnProps['variant']
+  onClickFormula?: (read: BaseRead) => void
 }) {
   switch (document.type) {
     case 'fields':
-      return <FieldsSectionContent fieldsDocument={document} bgt={bgt} />
+      return (
+        <FieldsSectionContent
+          fieldsDocument={document}
+          bgt={bgt}
+          onClickFormula={onClickFormula}
+        />
+      )
     case 'text':
       return collapse ? (
         <TextSectionDisplayCollapse
@@ -70,7 +79,11 @@ export function DocumentContent({
       )
     case 'conditional':
       return (
-        <ConditionalsDisplay conditional={document.conditional} bgt={bgt} />
+        <ConditionalsDisplay
+          conditional={document.conditional}
+          bgt={bgt}
+          onClickFormula={onClickFormula}
+        />
       )
     default:
       return null
@@ -82,11 +95,13 @@ export function DocumentDisplay({
   bgt = 'normal',
   collapse = false,
   typoVariant = 'body1',
+  onClickFormula,
 }: {
   document: Document
   bgt?: CardBackgroundColor
   collapse?: boolean
   typoVariant?: TypographyOwnProps['variant']
+  onClickFormula?: (read: BaseRead) => void
 }) {
   const content = (
     <DocumentContent
@@ -94,6 +109,7 @@ export function DocumentDisplay({
       bgt={bgt}
       collapse={collapse}
       typoVariant={typoVariant}
+      onClickFormula={onClickFormula}
     />
   )
   if (document.type === 'fields') {
@@ -105,9 +121,11 @@ export function DocumentDisplay({
 function FieldsSectionContent({
   fieldsDocument,
   bgt = 'normal',
+  onClickFormula,
 }: {
   fieldsDocument: FieldsDocument
   bgt?: CardBackgroundColor
+  onClickFormula?: (read: BaseRead) => void
 }) {
   return (
     <>
@@ -117,7 +135,11 @@ function FieldsSectionContent({
           hideDivider={fieldsDocument.fields.length === 0}
         />
       )}
-      <FieldsDisplay bgt={bgt} fields={fieldsDocument.fields} />
+      <FieldsDisplay
+        bgt={bgt}
+        fields={fieldsDocument.fields}
+        onClickFormula={onClickFormula}
+      />
     </>
   )
 }

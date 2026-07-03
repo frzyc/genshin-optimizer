@@ -5,20 +5,32 @@ import { skillFromTag } from './bundledFormulaFields'
 
 export { abilityBaseName }
 
+/** Split `AbilityName_0` into ability key + numeric hit index. */
+export function parseAbilityHitFromName(baseName: string): {
+  abilityKey: string
+  hitIndex?: string
+} {
+  const underscoreIdx = baseName.lastIndexOf('_')
+  if (underscoreIdx === -1) return { abilityKey: baseName }
+
+  const hitIndex = baseName.slice(underscoreIdx + 1)
+  if (!/^\d+$/.test(hitIndex)) return { abilityKey: baseName }
+
+  return {
+    abilityKey: baseName.slice(0, underscoreIdx),
+    hitIndex,
+  }
+}
+
 export function parseAbilityFromTag(
   tag: Tag
 ): { skill: SkillKey; abilityKey: string; hitIndex?: string } | undefined {
   const skill = skillFromTag(tag)
   if (!skill || !tag.name) return undefined
 
-  const baseName = abilityBaseName(tag.name)
-  const underscoreIdx = baseName.lastIndexOf('_')
-  if (underscoreIdx === -1) return { skill, abilityKey: baseName }
-
-  const abilityKey = baseName.slice(0, underscoreIdx)
-  const hitIndex = baseName.slice(underscoreIdx + 1)
-  if (!/^\d+$/.test(hitIndex)) return { skill, abilityKey: baseName }
-
+  const { abilityKey, hitIndex } = parseAbilityHitFromName(
+    abilityBaseName(tag.name)
+  )
   return { skill, abilityKey, hitIndex }
 }
 

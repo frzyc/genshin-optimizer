@@ -1,11 +1,15 @@
 import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
+import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
+import { DebugReadContext } from '@genshin-optimizer/game-opt/formula-ui'
 import { commonDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { isSkillKey } from '@genshin-optimizer/zzz/consts'
 import { isAbilityDim } from '@genshin-optimizer/zzz/formula'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
+import HelpIcon from '@mui/icons-material/Help'
 import { Box, ListSubheader, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
+import { useContext, useMemo } from 'react'
 import { isAbilityFormulaTag, parseAbilityFromTag } from './abilityTag'
 import type { TalentSheetElementKey } from './char/consts'
 import { getFieldCategory } from './char/fieldCategory'
@@ -13,12 +17,14 @@ import { tagFieldSubset } from './char/tagFieldMap'
 import { FullTagDisplay, TagDisplay } from './components'
 import type { FormulaDimension } from './formulaDimensionUi'
 import { ABILITY_DIM_LABEL, formulaDimensionLabel } from './formulaDimensionUi'
+import { useZzzCalcContext } from './hooks'
 import {
   OptCollapsibleSectionHeader,
   skillSectionFlatIconKey,
   talentSheetElementIcon,
   talentSheetElementLabel,
 } from './optPanelSections'
+import { formulaReadForTag } from './optTarget'
 import { st, trans } from './util'
 
 export {
@@ -289,5 +295,26 @@ function OptTalentSheetSectionHeaderContent({
       {icon && <ImgIcon src={icon} size={1.25} />}
       {talentSheetElementLabel(sheetKey)}
     </>
+  )
+}
+
+/** Dev help icon: opens `DebugReadModal` for the current optimization target. */
+export function OptTargetDebugHelp({ tag }: { tag: Tag }) {
+  const calc = useZzzCalcContext()
+  const { setRead } = useContext(DebugReadContext)
+  const calcRead = useMemo(() => formulaReadForTag(calc, tag), [calc, tag])
+
+  if (!shouldShowDevComponents) return null
+
+  return (
+    <HelpIcon
+      fontSize="small"
+      aria-label="Debug optimization target formula"
+      onClick={(e) => {
+        e.stopPropagation()
+        setRead(calcRead)
+      }}
+      sx={{ flexShrink: 0, cursor: 'pointer' }}
+    />
   )
 }

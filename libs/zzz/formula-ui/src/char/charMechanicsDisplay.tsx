@@ -10,6 +10,7 @@ import { allSkillKeys } from '@genshin-optimizer/zzz/consts'
 import { ZCard } from '@genshin-optimizer/zzz/ui'
 import { Box, Stack, Typography } from '@mui/material'
 import { type ReactNode, useMemo } from 'react'
+import { useDebugFormulaClick } from '../hooks'
 import {
   skillSectionFlatIconKey,
   talentSheetElementIcon,
@@ -20,7 +21,6 @@ import {
   allMindscapeSheetElementKeys,
   allTalentSheetElementKey,
 } from './consts'
-import { groupDocumentsByHeader } from './documentGrouping'
 import { charSheets } from './sheets'
 
 const nonSkillSheetKeys = allTalentSheetElementKey.filter(
@@ -78,6 +78,7 @@ function CharMechanicsSectionHeader({
 }
 
 function TalentSheetDocuments({ documents }: { documents: Document[] }) {
+  const onClickFormula = useDebugFormulaClick()
   if (!documents.length) return null
   return (
     <DocumentGroupProvider>
@@ -88,20 +89,12 @@ function TalentSheetDocuments({ documents }: { documents: Document[] }) {
             document={document}
             typoVariant="body2"
             collapse={document.type === 'text'}
+            onClickFormula={onClickFormula}
           />
         ))}
       </ZCard>
     </DocumentGroupProvider>
   )
-}
-
-function groupedTalentSheetDocuments(
-  documents: Document[],
-  keyPrefix: string
-): ReactNode {
-  return groupDocumentsByHeader(documents).map((group, i) => (
-    <TalentSheetDocuments key={`${keyPrefix}_${i}`} documents={group} />
-  ))
 }
 
 function CharMechanicsSectionCard({
@@ -151,7 +144,7 @@ export function CharMechanicsGroupedDisplay({
           )}
           title={st(`skills.${skill}`)}
         >
-          {groupedTalentSheetDocuments(documents, skill)}
+          <TalentSheetDocuments documents={documents} />
         </CharMechanicsSectionCard>
       ))}
       {nonSkillSheetKeys.map((sheetKey) => {
@@ -163,7 +156,7 @@ export function CharMechanicsGroupedDisplay({
             iconSrc={talentSheetElementIcon(sheetKey)}
             title={talentSheetElementLabel(sheetKey)}
           >
-            {groupedTalentSheetDocuments(element.documents, sheetKey)}
+            <TalentSheetDocuments documents={element.documents} />
           </CharMechanicsSectionCard>
         )
       })}
@@ -174,7 +167,12 @@ export function CharMechanicsGroupedDisplay({
           {allMindscapeSheetElementKeys.flatMap((sheetKey) => {
             const element = charSheets[charKey][sheetKey]
             if (!element?.documents.length) return []
-            return groupedTalentSheetDocuments(element.documents, sheetKey)
+            return (
+              <TalentSheetDocuments
+                key={sheetKey}
+                documents={element.documents}
+              />
+            )
           })}
         </CharMechanicsSectionCard>
       )}

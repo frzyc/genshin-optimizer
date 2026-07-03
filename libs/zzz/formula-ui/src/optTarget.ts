@@ -1,9 +1,40 @@
 import type { Read } from '@genshin-optimizer/game-opt/engine'
 import type { Field } from '@genshin-optimizer/game-opt/sheet-ui'
+import type { BaseRead } from '@genshin-optimizer/pando/engine'
+import { read as tagRead } from '@genshin-optimizer/pando/engine'
 import type { AttributeKey } from '@genshin-optimizer/zzz/consts'
 import { type TargetTag, targetTag } from '@genshin-optimizer/zzz/db'
-import type { Tag } from '@genshin-optimizer/zzz/formula'
+import type { Calculator, Tag } from '@genshin-optimizer/zzz/formula'
+import { own } from '@genshin-optimizer/zzz/formula'
 import { primaryTagFromField } from './bundledFormulaFields'
+
+function listingTagKey(tag: Tag): string {
+  return `${tag.sheet ?? ''}:${tag.name ?? ''}:${tag.q ?? ''}:${tag.qt ?? ''}:${tag.attribute ?? ''}`
+}
+
+function readWithMergedTag(read: BaseRead | Read<Tag>, tag: Tag): Read<Tag> {
+  if (typeof (read as Read<Tag>).withTag === 'function') {
+    return (read as Read<Tag>).withTag(tag)
+  }
+  return { ...read, tag: { ...read.tag, ...tag } } as Read<Tag>
+}
+
+/** Resolve a listing `Read` for debug / compute (prefers `own.listing.formulas`). */
+export function formulaReadForTag(
+  calc: Calculator | null | undefined,
+  tag: Tag,
+  listingRead?: BaseRead | Read<Tag>
+): Read<Tag> {
+  if (listingRead) return readWithMergedTag(listingRead, tag)
+  if (calc) {
+    const key = listingTagKey(tag)
+    const match = calc
+      .listFormulas(own.listing.formulas)
+      .find((read) => listingTagKey(read.tag) === key)
+    if (match) return match.withTag(tag)
+  }
+  return tagRead(tag) as Read<Tag>
+}
 
 /** Named formula instances (`standardDmgInst`, etc.) use `qt: 'formula'`. */
 export function isListingStatTag(tag: Tag): boolean {
@@ -52,7 +83,7 @@ export function isOptTargetTag(
   resolvedTag?: Tag
 ): boolean {
   if (!target) return false
-  if (target.q && target.qt) {
+  if (!target.name && target.q && target.qt) {
     return (
       target.q === tag.q &&
       target.qt === tag.qt &&

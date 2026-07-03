@@ -37,15 +37,26 @@ export function buildTagFieldMaps() {
   }
 
   function addCond(strKey: string, cond: ConditionalDocument['conditional']) {
-    if (condMap.get(strKey)) throw new Error(`Duplicate conditional ${strKey}`)
+    const existing = condMap.get(strKey)
+    if (existing) {
+      if (existing.metadata !== cond.metadata) {
+        throw new Error(`Duplicate conditional ${strKey}`)
+      }
+      return
+    }
     condMap.set(strKey, cond)
   }
 
   Object.values(charSheets).forEach((sheet) =>
     Object.values(sheet).forEach((section) =>
-      section.documents.forEach(
-        (doc) => doc.type === 'fields' && doc.fields.forEach(addFieldToTagMap)
-      )
+      section.documents.forEach((doc) => {
+        if (doc.type === 'fields') doc.fields.forEach(addFieldToTagMap)
+        if (doc.type === 'conditional')
+          addCond(
+            `${doc.conditional.metadata.sheet}:${doc.conditional.metadata.name}`,
+            doc.conditional
+          )
+      })
     )
   )
   charBaseUiSheet.forEach((field) => {

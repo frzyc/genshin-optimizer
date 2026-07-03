@@ -60,4 +60,19 @@ describe('partitionBundlableTags', () => {
     ]
     expect(partTagKeys(partitionBundlableTags(tags))).toEqual(['HitA_0:bundle'])
   })
+
+  it('keeps dual dmg dims as separate rows instead of bundling', () => {
+    const tags = [
+      anbyTag('HitA_0', 'anomBuildup'),
+      anbyTag('HitA_0', 'dazeBuildup'),
+      anbyTag('HitA_0', 'standardDmg'),
+      anbyTag('HitA_0', 'sheerDmg'),
+    ]
+    expect(partTagKeys(partitionBundlableTags(tags))).toEqual([
+      'HitA_0:standardDmg',
+      'HitA_0:sheerDmg',
+      'HitA_0:dazeBuildup',
+      'HitA_0:anomBuildup',
+    ])
+  })
 })

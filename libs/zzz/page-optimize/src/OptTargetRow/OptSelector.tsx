@@ -6,6 +6,7 @@ import {
   FullTagDisplay,
   OptPanelSectionHeader,
   OptTargetCategorySectionHeader,
+  OptTargetDebugHelp,
   OptTargetSelectedLabel,
   statReadTagKey,
   statReadToTargetTag,
@@ -57,6 +58,7 @@ export function OptSelector({
           >
             <strong>Target:</strong>
             {selectedTitle}
+            <OptTargetDebugHelp tag={tag} />
           </Box>
         ) : (
           'Select an Optimization Target'

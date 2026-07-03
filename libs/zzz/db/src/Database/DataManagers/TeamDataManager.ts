@@ -838,6 +838,7 @@ function getFormula(target: TargetTag) {
       (entry) => entry.tag?.name === name && entry.tag?.q === q
     )
     if (byTagQ) return byTagQ
+    return undefined
   }
 
   return sheetFormulas[name]

@@ -76,5 +76,9 @@ export function bundledFormulaInSheet<T extends { tag?: Tag }>(
   q: AbilityDim
 ): T | undefined {
   if (!sheetFormulas) return undefined
-  return sheetFormulas[`${hitName}:${q}`] ?? sheetFormulas[hitName]
+  const colonKey = `${hitName}:${q}`
+  if (sheetFormulas[colonKey]) return sheetFormulas[colonKey]
+  const bare = sheetFormulas[hitName]
+  if (bare?.tag?.q === q) return bare
+  return undefined
 }

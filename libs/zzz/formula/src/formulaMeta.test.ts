@@ -53,6 +53,17 @@ describe('formulaMetaKey', () => {
       bundledFormulaInSheet(formulas.Yixuan, tag.name!, tag.q! as AbilityDim)
     ).toBe(entry)
   })
+
+  it('does not return a bare singleton for a different ability dim', () => {
+    const sheetFormulas = {
+      BasicAttack_0: {
+        tag: { name: 'BasicAttack_0', q: 'standardDmg' },
+      },
+    }
+    expect(
+      bundledFormulaInSheet(sheetFormulas, 'BasicAttack_0', 'sheerDmg')
+    ).toBeUndefined()
+  })
 })
 
 describe('abilityBaseName', () => {

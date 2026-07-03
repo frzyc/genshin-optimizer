@@ -41,6 +41,7 @@ export function resolveBundleDmgQ(
 }
 
 function isCompleteAbilityBundle(byQ: Map<string, Tag>): boolean {
+  if (byQ.has('standardDmg') && byQ.has('sheerDmg')) return false
   const dmgQ = resolveBundleDmgQ(byQ)
   return !!dmgQ && byQ.has('dazeBuildup') && byQ.has('anomBuildup')
 }

@@ -6,7 +6,7 @@ import {
 import { getUnitStr, valueString } from '@genshin-optimizer/common/util'
 import type { CalcMeta, Read, Tag } from '@genshin-optimizer/game-opt/engine'
 import { CalcContext, TagContext } from '@genshin-optimizer/game-opt/formula-ui'
-import type { CalcResult } from '@genshin-optimizer/pando/engine'
+import type { BaseRead, CalcResult } from '@genshin-optimizer/pando/engine'
 import { read } from '@genshin-optimizer/pando/engine'
 import HelpIcon from '@mui/icons-material/Help'
 import type { ListProps, PaletteColor, SxProps, Theme } from '@mui/material'
@@ -33,14 +33,16 @@ import { isMultiTagField } from '../types'
 export function FieldsDisplay({
   fields,
   bgt = 'normal',
+  onClickFormula,
 }: {
   fields: Field[]
   bgt?: CardBackgroundColor
+  onClickFormula?: (read: BaseRead) => void
 }) {
   return (
     <FieldDisplayList sx={{ m: 0 }} bgt={bgt}>
       {fields.map((field, i) => (
-        <FieldDisplay key={i} field={field} />
+        <FieldDisplay key={i} field={field} onClickFormula={onClickFormula} />
       ))}
     </FieldDisplayList>
   )
@@ -49,17 +51,34 @@ export function FieldsDisplay({
 function FieldDisplay({
   field,
   component = ListItem,
+  onClickFormula,
 }: {
   field: Field
   component?: ElementType
+  onClickFormula?: (read: BaseRead) => void
 }) {
   if ('fieldValue' in field)
     return <TextFieldDisplay field={field} component={component} />
   if (isMultiTagField(field)) {
-    return <MultiTagFieldDisplay field={field} component={component} />
+    return (
+      <MultiTagFieldDisplay
+        field={field}
+        component={component}
+        onClickFormula={onClickFormula}
+      />
+    )
   }
   if ('fieldRef' in field) {
-    return <TagFieldDisplay field={field} component={component} />
+    const fieldRead = read(field.fieldRef)
+    return (
+      <TagFieldDisplay
+        field={field}
+        component={component}
+        onClickFormula={
+          onClickFormula ? () => onClickFormula(fieldRead) : undefined
+        }
+      />
+    )
   }
   return null
 }
@@ -112,7 +131,7 @@ export function MultiTagFieldDisplay({
   component?: ElementType
   showZero?: boolean
   rowSx?: SxProps<Theme>
-  onClickFormula?: (read: Read) => void
+  onClickFormula?: (read: BaseRead) => void
   onMouseEnter?: () => void
   onMouseLeave?: () => void
 }) {
@@ -186,7 +205,7 @@ export function MultiTagFieldDisplay({
           const tag = fieldRead.tag
           const unit = getUnitStr(tag['name'] || tag['q'] || '')
           const onClick = onClickFormula
-            ? () => onClickFormula(fieldRead as Read)
+            ? () => onClickFormula(fieldRead)
             : undefined
           return (
             <Box

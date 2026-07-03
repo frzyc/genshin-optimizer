@@ -13,6 +13,7 @@ import {
 import {
   CharMechanicsGroupedDisplay,
   TagDisplay,
+  useDebugFormulaClick,
 } from '@genshin-optimizer/zzz/formula-ui'
 import { Box } from '@mui/material'
 
@@ -48,14 +49,22 @@ const yixuanDocs: Document[] = [
     ],
   },
 ]
-function MinimalYixuanSheet() {
+function MinimalSheetDocs({ docs }: { docs: Document[] }) {
+  const onClickFormula = useDebugFormulaClick()
   return (
     <>
-      {yixuanDocs.map((doc, index) => (
-        <DocumentDisplay key={index} document={doc} />
+      {docs.map((doc, index) => (
+        <DocumentDisplay
+          key={index}
+          document={doc}
+          onClickFormula={onClickFormula}
+        />
       ))}
     </>
   )
+}
+function MinimalYixuanSheet() {
+  return <MinimalSheetDocs docs={yixuanDocs} />
 }
 
 const s0AnbyDocs: Document[] = [
@@ -82,13 +91,7 @@ const s0AnbyDocs: Document[] = [
   },
 ]
 function MinimalS0AnbySheet() {
-  return (
-    <>
-      {s0AnbyDocs.map((doc, index) => (
-        <DocumentDisplay key={index} document={doc} />
-      ))}
-    </>
-  )
+  return <MinimalSheetDocs docs={s0AnbyDocs} />
 }
 
 const manatoDocs: Document[] = [
@@ -107,13 +110,7 @@ const manatoDocs: Document[] = [
   },
 ]
 function MinimalManatoSheet() {
-  return (
-    <>
-      {manatoDocs.map((doc, index) => (
-        <DocumentDisplay key={index} document={doc} />
-      ))}
-    </>
-  )
+  return <MinimalSheetDocs docs={manatoDocs} />
 }
 
 const yidhariDocs: Document[] = [
@@ -132,13 +129,7 @@ const yidhariDocs: Document[] = [
   },
 ]
 function MinimalYidhariSheet() {
-  return (
-    <>
-      {yidhariDocs.map((doc, index) => (
-        <DocumentDisplay key={index} document={doc} />
-      ))}
-    </>
-  )
+  return <MinimalSheetDocs docs={yidhariDocs} />
 }
 
 const banyueDocs: Document[] = [
@@ -157,13 +148,7 @@ const banyueDocs: Document[] = [
   },
 ]
 function MinimalBanyueSheet() {
-  return (
-    <>
-      {banyueDocs.map((doc, index) => (
-        <DocumentDisplay key={index} document={doc} />
-      ))}
-    </>
-  )
+  return <MinimalSheetDocs docs={banyueDocs} />
 }
 
 const starlightBillyDocs: Document[] = [
@@ -182,11 +167,5 @@ const starlightBillyDocs: Document[] = [
   },
 ]
 function MinimalStarlightBillySheet() {
-  return (
-    <>
-      {starlightBillyDocs.map((doc, index) => (
-        <DocumentDisplay key={index} document={doc} />
-      ))}
-    </>
-  )
+  return <MinimalSheetDocs docs={starlightBillyDocs} />
 }

@@ -29,7 +29,7 @@ import {
   useZzzCalcContext,
 } from '../hooks'
 import { OptPanelSectionHeader } from '../optPanelSections'
-import { statReadTagKey } from '../optTarget'
+import { formulaReadForTag, statReadTagKey } from '../optTarget'
 import { OptTargetCategorySectionHeader } from '../optTargetDisplay'
 import { tagToTagField } from '../util'
 
@@ -109,6 +109,7 @@ function mergeTagForOpt(
 
 function CharStatRow({ read, tag: tagIn }: { read?: Read<Tag>; tag?: Tag }) {
   const { setRead } = useContext(DebugReadContext)
+  const calc = useZzzCalcContext()
   const { optTarget, resolvedOptTag } = useOptTargetTags()
   const baseTag = tagIn ?? read!.tag
 
@@ -118,8 +119,8 @@ function CharStatRow({ read, tag: tagIn }: { read?: Read<Tag>; tag?: Tag }) {
   )
 
   const calcRead = useMemo(
-    () => (read ? read.withTag(mergedTag) : undefined),
-    [mergedTag, read]
+    () => formulaReadForTag(calc, mergedTag, read),
+    [calc, mergedTag, read]
   )
 
   const { statHighlight, setStatHighlight } = useContext(StatHighlightContext)
@@ -159,7 +160,7 @@ function CharStatRow({ read, tag: tagIn }: { read?: Read<Tag>; tag?: Tag }) {
         },
       }}
       onClickFormula={
-        shouldShowDevComponents && calcRead ? () => setRead(calcRead) : () => {}
+        shouldShowDevComponents ? () => setRead(calcRead) : undefined
       }
     />
   )
@@ -185,7 +186,7 @@ function MultiFormulaFieldRow({ field }: { field: MultiTagField }) {
       showZero
       component={ListItem}
       onClickFormula={
-        shouldShowDevComponents ? (fieldRead) => setRead(fieldRead) : () => {}
+        shouldShowDevComponents ? (fieldRead) => setRead(fieldRead) : undefined
       }
     />
   )
