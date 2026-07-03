@@ -52,7 +52,7 @@ export function OptTargetFieldMenuItem({
     const ref = primaryTagFromField(field)
     if (!ref?.name) return null
     const sheet = ref.sheet ?? characterKey
-    const q = abilityDimFromField(field, target ?? undefined)
+    const q = abilityDimFromField(field, target ?? undefined, characterKey)
     if (!q) return null
     return (
       <MenuItem
@@ -74,8 +74,12 @@ export function OptTargetFieldMenuItem({
   if (!name) return null
 
   if (isAbilityFormulaTag(fieldRef)) {
+    const sheet = fieldRef.sheet ?? characterKey
     const q =
-      target?.name === name && target.q && isAbilityDim(target.q)
+      target?.name === name &&
+      (target.sheet ?? characterKey) === sheet &&
+      target.q &&
+      isAbilityDim(target.q)
         ? target.q
         : isAbilityDim(fieldRef.q)
           ? fieldRef.q

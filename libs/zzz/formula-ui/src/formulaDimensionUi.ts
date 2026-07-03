@@ -37,7 +37,7 @@ export function resolveAbilityDim(
   return undefined
 }
 
-/** Display labels for bundled ability dims (and dimension toggles). */
+/** Short labels on bundled stat rows (DMG / Daze / Anom). */
 export const ABILITY_DIM_LABEL: Record<AbilityDim, string> = {
   standardDmg: 'DMG',
   sheerDmg: 'DMG',
@@ -45,11 +45,17 @@ export const ABILITY_DIM_LABEL: Record<AbilityDim, string> = {
   anomBuildup: 'Anom',
 }
 
+/** Dimension toggle labels in the optimize opt-target row. */
+const FORMULA_DIMENSION_LABEL: Record<FormulaDimension, string> = {
+  dmg: 'DMG',
+  daze: 'Daze',
+  anomBuildup: 'Anomaly Buildup',
+}
+
 export function abilityDimLabel(q: AbilityDim): string {
   return ABILITY_DIM_LABEL[q]
 }
 
-/** UI bucket label — same as the canonical ability dim for that dimension. */
 export function formulaDimensionLabel(dim: FormulaDimension): string {
-  return ABILITY_DIM_LABEL[abilityDimsForDimension(dim)[0]]
+  return FORMULA_DIMENSION_LABEL[dim]
 }

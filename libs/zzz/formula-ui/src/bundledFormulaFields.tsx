@@ -126,12 +126,14 @@ export function groupFormulaMetaToFields(
 /** Resolve bundled ability dim for an opt-target field row. */
 export function abilityDimFromField(
   field: Field,
-  currentTarget?: TargetTag
+  currentTarget?: TargetTag,
+  sheetFallback?: string
 ): AbilityDim | undefined {
   const ref = primaryTagFromField(field)
   if (!ref?.name) return undefined
   if (
     currentTarget?.name === ref.name &&
+    (currentTarget.sheet ?? sheetFallback) === (ref.sheet ?? sheetFallback) &&
     currentTarget.q &&
     isAbilityDim(currentTarget.q)
   )

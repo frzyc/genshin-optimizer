@@ -35,10 +35,9 @@ export function abilityFormulaNameToTranslated(
   skill: SkillKey,
   tag: Tag
 ) {
-  const baseName = abilityBaseName(tag.name)
   return (
     abilityFormulaLabel(charKey, tag, skill) ??
-    baseName ??
+    (tag.name ? abilityBaseName(tag.name) : undefined) ??
     tag.name ??
     tag.q ??
     ''

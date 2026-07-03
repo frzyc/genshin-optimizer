@@ -1,6 +1,11 @@
 import { abilityDims, formulas } from '@genshin-optimizer/zzz/formula'
 import { describe, expect, it } from 'vitest'
-import { dimensionByAbilityDim, resolveAbilityDim } from './formulaDimensionUi'
+import {
+  ABILITY_DIM_LABEL,
+  dimensionByAbilityDim,
+  formulaDimensionLabel,
+  resolveAbilityDim,
+} from './formulaDimensionUi'
 
 describe('resolveAbilityDim', () => {
   const sheetFormulas = formulas.Yixuan
@@ -23,5 +28,12 @@ describe('dimensionByAbilityDim', () => {
     for (const q of abilityDims) {
       expect(dimensionByAbilityDim[q]).toBeDefined()
     }
+  })
+})
+
+describe('formulaDimensionLabel', () => {
+  it('uses longer anomaly label for dimension toggles', () => {
+    expect(formulaDimensionLabel('anomBuildup')).toBe('Anomaly Buildup')
+    expect(ABILITY_DIM_LABEL.anomBuildup).toBe('Anom')
   })
 })
