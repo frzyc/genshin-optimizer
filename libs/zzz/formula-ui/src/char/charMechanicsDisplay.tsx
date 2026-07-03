@@ -77,6 +77,23 @@ function CharMechanicsSectionHeader({
   )
 }
 
+function documentStartsSection(doc: Document): boolean {
+  return (doc.type === 'text' || doc.type === 'fields') && doc.header != null
+}
+
+/** Split flat sheet documents into subsections */
+function groupDocumentsBySection(documents: Document[]): Document[][] {
+  const groups: Document[][] = []
+  for (const doc of documents) {
+    if (documentStartsSection(doc) || groups.length === 0) {
+      groups.push([doc])
+    } else {
+      groups[groups.length - 1].push(doc)
+    }
+  }
+  return groups.filter((group) => group.length > 0)
+}
+
 function TalentSheetDocuments({ documents }: { documents: Document[] }) {
   const onClickFormula = useDebugFormulaClick()
   if (!documents.length) return null
@@ -94,6 +111,21 @@ function TalentSheetDocuments({ documents }: { documents: Document[] }) {
         ))}
       </ZCard>
     </DocumentGroupProvider>
+  )
+}
+
+function GroupedTalentSheetDocuments({ documents }: { documents: Document[] }) {
+  const groups = useMemo(() => groupDocumentsBySection(documents), [documents])
+  if (!groups.length) return null
+  if (groups.length === 1) {
+    return <TalentSheetDocuments documents={groups[0]} />
+  }
+  return (
+    <Stack spacing={1.5}>
+      {groups.map((group, i) => (
+        <TalentSheetDocuments key={i} documents={group} />
+      ))}
+    </Stack>
   )
 }
 
@@ -144,7 +176,7 @@ export function CharMechanicsGroupedDisplay({
           )}
           title={st(`skills.${skill}`)}
         >
-          <TalentSheetDocuments documents={documents} />
+          <GroupedTalentSheetDocuments documents={documents} />
         </CharMechanicsSectionCard>
       ))}
       {nonSkillSheetKeys.map((sheetKey) => {
@@ -156,7 +188,7 @@ export function CharMechanicsGroupedDisplay({
             iconSrc={talentSheetElementIcon(sheetKey)}
             title={talentSheetElementLabel(sheetKey)}
           >
-            <TalentSheetDocuments documents={element.documents} />
+            <GroupedTalentSheetDocuments documents={element.documents} />
           </CharMechanicsSectionCard>
         )
       })}
@@ -164,16 +196,20 @@ export function CharMechanicsGroupedDisplay({
         (sheetKey) => charSheets[charKey][sheetKey]?.documents.length
       ) && (
         <CharMechanicsSectionCard key="mindscapes" title={st('mindscapes')}>
-          {allMindscapeSheetElementKeys.flatMap((sheetKey) => {
-            const element = charSheets[charKey][sheetKey]
-            if (!element?.documents.length) return []
-            return (
-              <TalentSheetDocuments
-                key={sheetKey}
-                documents={element.documents}
-              />
-            )
-          })}
+          <Stack spacing={1.5}>
+            {allMindscapeSheetElementKeys.flatMap((sheetKey) => {
+              const element = charSheets[charKey][sheetKey]
+              if (!element?.documents.length) return []
+              return groupDocumentsBySection(element.documents).map(
+                (group, i) => (
+                  <TalentSheetDocuments
+                    key={`${sheetKey}_${i}`}
+                    documents={group}
+                  />
+                )
+              )
+            })}
+          </Stack>
         </CharMechanicsSectionCard>
       )}
     </Stack>
