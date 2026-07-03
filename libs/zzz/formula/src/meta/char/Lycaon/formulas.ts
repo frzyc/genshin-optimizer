@@ -89,9 +89,9 @@ export const formulas = {
       name: 'dazeInst',
     },
   },
-  BasicAttackMoonHunter_0_dmg: {
+  'BasicAttackMoonHunter_0:standardDmg': {
     sheet: 'Lycaon',
-    name: 'BasicAttackMoonHunter_0_dmg',
+    name: 'BasicAttackMoonHunter_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -100,12 +100,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackMoonHunter_0_dmg',
+      name: 'BasicAttackMoonHunter_0',
     },
   },
-  BasicAttackMoonHunter_0_daze: {
+  'BasicAttackMoonHunter_0:dazeBuildup': {
     sheet: 'Lycaon',
-    name: 'BasicAttackMoonHunter_0_daze',
+    name: 'BasicAttackMoonHunter_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -114,12 +114,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackMoonHunter_0_daze',
+      name: 'BasicAttackMoonHunter_0',
     },
   },
-  BasicAttackMoonHunter_0_anomBuildup: {
+  'BasicAttackMoonHunter_0:anomBuildup': {
     sheet: 'Lycaon',
-    name: 'BasicAttackMoonHunter_0_anomBuildup',
+    name: 'BasicAttackMoonHunter_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -128,12 +128,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackMoonHunter_0_anomBuildup',
+      name: 'BasicAttackMoonHunter_0',
     },
   },
-  BasicAttackMoonHunter_1_dmg: {
+  'BasicAttackMoonHunter_1:standardDmg': {
     sheet: 'Lycaon',
-    name: 'BasicAttackMoonHunter_1_dmg',
+    name: 'BasicAttackMoonHunter_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -142,12 +142,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackMoonHunter_1_dmg',
+      name: 'BasicAttackMoonHunter_1',
     },
   },
-  BasicAttackMoonHunter_1_daze: {
+  'BasicAttackMoonHunter_1:dazeBuildup': {
     sheet: 'Lycaon',
-    name: 'BasicAttackMoonHunter_1_daze',
+    name: 'BasicAttackMoonHunter_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -156,12 +156,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackMoonHunter_1_daze',
+      name: 'BasicAttackMoonHunter_1',
     },
   },
-  BasicAttackMoonHunter_1_anomBuildup: {
+  'BasicAttackMoonHunter_1:anomBuildup': {
     sheet: 'Lycaon',
-    name: 'BasicAttackMoonHunter_1_anomBuildup',
+    name: 'BasicAttackMoonHunter_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -170,12 +170,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackMoonHunter_1_anomBuildup',
+      name: 'BasicAttackMoonHunter_1',
     },
   },
-  BasicAttackMoonHunter_2_dmg: {
+  'BasicAttackMoonHunter_2:standardDmg': {
     sheet: 'Lycaon',
-    name: 'BasicAttackMoonHunter_2_dmg',
+    name: 'BasicAttackMoonHunter_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -184,12 +184,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackMoonHunter_2_dmg',
+      name: 'BasicAttackMoonHunter_2',
     },
   },
-  BasicAttackMoonHunter_2_daze: {
+  'BasicAttackMoonHunter_2:dazeBuildup': {
     sheet: 'Lycaon',
-    name: 'BasicAttackMoonHunter_2_daze',
+    name: 'BasicAttackMoonHunter_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -198,12 +198,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackMoonHunter_2_daze',
+      name: 'BasicAttackMoonHunter_2',
     },
   },
-  BasicAttackMoonHunter_2_anomBuildup: {
+  'BasicAttackMoonHunter_2:anomBuildup': {
     sheet: 'Lycaon',
-    name: 'BasicAttackMoonHunter_2_anomBuildup',
+    name: 'BasicAttackMoonHunter_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -212,12 +212,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackMoonHunter_2_anomBuildup',
+      name: 'BasicAttackMoonHunter_2',
     },
   },
-  BasicAttackMoonHunter_3_dmg: {
+  'BasicAttackMoonHunter_3:standardDmg': {
     sheet: 'Lycaon',
-    name: 'BasicAttackMoonHunter_3_dmg',
+    name: 'BasicAttackMoonHunter_3:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -226,12 +226,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackMoonHunter_3_dmg',
+      name: 'BasicAttackMoonHunter_3',
     },
   },
-  BasicAttackMoonHunter_3_daze: {
+  'BasicAttackMoonHunter_3:dazeBuildup': {
     sheet: 'Lycaon',
-    name: 'BasicAttackMoonHunter_3_daze',
+    name: 'BasicAttackMoonHunter_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -240,12 +240,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackMoonHunter_3_daze',
+      name: 'BasicAttackMoonHunter_3',
     },
   },
-  BasicAttackMoonHunter_3_anomBuildup: {
+  'BasicAttackMoonHunter_3:anomBuildup': {
     sheet: 'Lycaon',
-    name: 'BasicAttackMoonHunter_3_anomBuildup',
+    name: 'BasicAttackMoonHunter_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -254,12 +254,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackMoonHunter_3_anomBuildup',
+      name: 'BasicAttackMoonHunter_3',
     },
   },
-  BasicAttackMoonHunter_4_dmg: {
+  'BasicAttackMoonHunter_4:standardDmg': {
     sheet: 'Lycaon',
-    name: 'BasicAttackMoonHunter_4_dmg',
+    name: 'BasicAttackMoonHunter_4:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -268,12 +268,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackMoonHunter_4_dmg',
+      name: 'BasicAttackMoonHunter_4',
     },
   },
-  BasicAttackMoonHunter_4_daze: {
+  'BasicAttackMoonHunter_4:dazeBuildup': {
     sheet: 'Lycaon',
-    name: 'BasicAttackMoonHunter_4_daze',
+    name: 'BasicAttackMoonHunter_4:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -282,12 +282,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackMoonHunter_4_daze',
+      name: 'BasicAttackMoonHunter_4',
     },
   },
-  BasicAttackMoonHunter_4_anomBuildup: {
+  'BasicAttackMoonHunter_4:anomBuildup': {
     sheet: 'Lycaon',
-    name: 'BasicAttackMoonHunter_4_anomBuildup',
+    name: 'BasicAttackMoonHunter_4:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -296,12 +296,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackMoonHunter_4_anomBuildup',
+      name: 'BasicAttackMoonHunter_4',
     },
   },
-  BasicAttackMoonHunter_5_dmg: {
+  'BasicAttackMoonHunter_5:standardDmg': {
     sheet: 'Lycaon',
-    name: 'BasicAttackMoonHunter_5_dmg',
+    name: 'BasicAttackMoonHunter_5:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -310,12 +310,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackMoonHunter_5_dmg',
+      name: 'BasicAttackMoonHunter_5',
     },
   },
-  BasicAttackMoonHunter_5_daze: {
+  'BasicAttackMoonHunter_5:dazeBuildup': {
     sheet: 'Lycaon',
-    name: 'BasicAttackMoonHunter_5_daze',
+    name: 'BasicAttackMoonHunter_5:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -324,12 +324,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackMoonHunter_5_daze',
+      name: 'BasicAttackMoonHunter_5',
     },
   },
-  BasicAttackMoonHunter_5_anomBuildup: {
+  'BasicAttackMoonHunter_5:anomBuildup': {
     sheet: 'Lycaon',
-    name: 'BasicAttackMoonHunter_5_anomBuildup',
+    name: 'BasicAttackMoonHunter_5:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -338,12 +338,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackMoonHunter_5_anomBuildup',
+      name: 'BasicAttackMoonHunter_5',
     },
   },
-  BasicAttackMoonHunter_6_dmg: {
+  'BasicAttackMoonHunter_6:standardDmg': {
     sheet: 'Lycaon',
-    name: 'BasicAttackMoonHunter_6_dmg',
+    name: 'BasicAttackMoonHunter_6:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -352,12 +352,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackMoonHunter_6_dmg',
+      name: 'BasicAttackMoonHunter_6',
     },
   },
-  BasicAttackMoonHunter_6_daze: {
+  'BasicAttackMoonHunter_6:dazeBuildup': {
     sheet: 'Lycaon',
-    name: 'BasicAttackMoonHunter_6_daze',
+    name: 'BasicAttackMoonHunter_6:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -366,12 +366,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackMoonHunter_6_daze',
+      name: 'BasicAttackMoonHunter_6',
     },
   },
-  BasicAttackMoonHunter_6_anomBuildup: {
+  'BasicAttackMoonHunter_6:anomBuildup': {
     sheet: 'Lycaon',
-    name: 'BasicAttackMoonHunter_6_anomBuildup',
+    name: 'BasicAttackMoonHunter_6:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -380,12 +380,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackMoonHunter_6_anomBuildup',
+      name: 'BasicAttackMoonHunter_6',
     },
   },
-  BasicAttackMoonHunter_7_dmg: {
+  'BasicAttackMoonHunter_7:standardDmg': {
     sheet: 'Lycaon',
-    name: 'BasicAttackMoonHunter_7_dmg',
+    name: 'BasicAttackMoonHunter_7:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -394,12 +394,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackMoonHunter_7_dmg',
+      name: 'BasicAttackMoonHunter_7',
     },
   },
-  BasicAttackMoonHunter_7_daze: {
+  'BasicAttackMoonHunter_7:dazeBuildup': {
     sheet: 'Lycaon',
-    name: 'BasicAttackMoonHunter_7_daze',
+    name: 'BasicAttackMoonHunter_7:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -408,12 +408,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackMoonHunter_7_daze',
+      name: 'BasicAttackMoonHunter_7',
     },
   },
-  BasicAttackMoonHunter_7_anomBuildup: {
+  'BasicAttackMoonHunter_7:anomBuildup': {
     sheet: 'Lycaon',
-    name: 'BasicAttackMoonHunter_7_anomBuildup',
+    name: 'BasicAttackMoonHunter_7:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -422,12 +422,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackMoonHunter_7_anomBuildup',
+      name: 'BasicAttackMoonHunter_7',
     },
   },
-  BasicAttackMoonHunter_8_dmg: {
+  'BasicAttackMoonHunter_8:standardDmg': {
     sheet: 'Lycaon',
-    name: 'BasicAttackMoonHunter_8_dmg',
+    name: 'BasicAttackMoonHunter_8:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -436,12 +436,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackMoonHunter_8_dmg',
+      name: 'BasicAttackMoonHunter_8',
     },
   },
-  BasicAttackMoonHunter_8_daze: {
+  'BasicAttackMoonHunter_8:dazeBuildup': {
     sheet: 'Lycaon',
-    name: 'BasicAttackMoonHunter_8_daze',
+    name: 'BasicAttackMoonHunter_8:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -450,12 +450,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackMoonHunter_8_daze',
+      name: 'BasicAttackMoonHunter_8',
     },
   },
-  BasicAttackMoonHunter_8_anomBuildup: {
+  'BasicAttackMoonHunter_8:anomBuildup': {
     sheet: 'Lycaon',
-    name: 'BasicAttackMoonHunter_8_anomBuildup',
+    name: 'BasicAttackMoonHunter_8:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -464,12 +464,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackMoonHunter_8_anomBuildup',
+      name: 'BasicAttackMoonHunter_8',
     },
   },
-  BasicAttackMoonHunter_9_dmg: {
+  'BasicAttackMoonHunter_9:standardDmg': {
     sheet: 'Lycaon',
-    name: 'BasicAttackMoonHunter_9_dmg',
+    name: 'BasicAttackMoonHunter_9:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -478,12 +478,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackMoonHunter_9_dmg',
+      name: 'BasicAttackMoonHunter_9',
     },
   },
-  BasicAttackMoonHunter_9_daze: {
+  'BasicAttackMoonHunter_9:dazeBuildup': {
     sheet: 'Lycaon',
-    name: 'BasicAttackMoonHunter_9_daze',
+    name: 'BasicAttackMoonHunter_9:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -492,12 +492,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackMoonHunter_9_daze',
+      name: 'BasicAttackMoonHunter_9',
     },
   },
-  BasicAttackMoonHunter_9_anomBuildup: {
+  'BasicAttackMoonHunter_9:anomBuildup': {
     sheet: 'Lycaon',
-    name: 'BasicAttackMoonHunter_9_anomBuildup',
+    name: 'BasicAttackMoonHunter_9:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -506,12 +506,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackMoonHunter_9_anomBuildup',
+      name: 'BasicAttackMoonHunter_9',
     },
   },
-  BasicAttackMoonHunter_10_dmg: {
+  'BasicAttackMoonHunter_10:standardDmg': {
     sheet: 'Lycaon',
-    name: 'BasicAttackMoonHunter_10_dmg',
+    name: 'BasicAttackMoonHunter_10:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -520,12 +520,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackMoonHunter_10_dmg',
+      name: 'BasicAttackMoonHunter_10',
     },
   },
-  BasicAttackMoonHunter_10_daze: {
+  'BasicAttackMoonHunter_10:dazeBuildup': {
     sheet: 'Lycaon',
-    name: 'BasicAttackMoonHunter_10_daze',
+    name: 'BasicAttackMoonHunter_10:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -534,12 +534,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackMoonHunter_10_daze',
+      name: 'BasicAttackMoonHunter_10',
     },
   },
-  BasicAttackMoonHunter_10_anomBuildup: {
+  'BasicAttackMoonHunter_10:anomBuildup': {
     sheet: 'Lycaon',
-    name: 'BasicAttackMoonHunter_10_anomBuildup',
+    name: 'BasicAttackMoonHunter_10:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -548,12 +548,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackMoonHunter_10_anomBuildup',
+      name: 'BasicAttackMoonHunter_10',
     },
   },
-  DashAttackKeepItClean_0_dmg: {
+  'DashAttackKeepItClean_0:standardDmg': {
     sheet: 'Lycaon',
-    name: 'DashAttackKeepItClean_0_dmg',
+    name: 'DashAttackKeepItClean_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -562,12 +562,12 @@ export const formulas = {
       damageType1: 'dash',
       attribute: 'physical',
       skillType: 'dodgeSkill',
-      name: 'DashAttackKeepItClean_0_dmg',
+      name: 'DashAttackKeepItClean_0',
     },
   },
-  DashAttackKeepItClean_0_daze: {
+  'DashAttackKeepItClean_0:dazeBuildup': {
     sheet: 'Lycaon',
-    name: 'DashAttackKeepItClean_0_daze',
+    name: 'DashAttackKeepItClean_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -576,12 +576,12 @@ export const formulas = {
       damageType1: 'dash',
       attribute: 'physical',
       skillType: 'dodgeSkill',
-      name: 'DashAttackKeepItClean_0_daze',
+      name: 'DashAttackKeepItClean_0',
     },
   },
-  DashAttackKeepItClean_0_anomBuildup: {
+  'DashAttackKeepItClean_0:anomBuildup': {
     sheet: 'Lycaon',
-    name: 'DashAttackKeepItClean_0_anomBuildup',
+    name: 'DashAttackKeepItClean_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -590,12 +590,12 @@ export const formulas = {
       damageType1: 'dash',
       attribute: 'physical',
       skillType: 'dodgeSkill',
-      name: 'DashAttackKeepItClean_0_anomBuildup',
+      name: 'DashAttackKeepItClean_0',
     },
   },
-  DodgeCounterEtiquetteManual_0_dmg: {
+  'DodgeCounterEtiquetteManual_0:standardDmg': {
     sheet: 'Lycaon',
-    name: 'DodgeCounterEtiquetteManual_0_dmg',
+    name: 'DodgeCounterEtiquetteManual_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -604,12 +604,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterEtiquetteManual_0_dmg',
+      name: 'DodgeCounterEtiquetteManual_0',
     },
   },
-  DodgeCounterEtiquetteManual_0_daze: {
+  'DodgeCounterEtiquetteManual_0:dazeBuildup': {
     sheet: 'Lycaon',
-    name: 'DodgeCounterEtiquetteManual_0_daze',
+    name: 'DodgeCounterEtiquetteManual_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -618,12 +618,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterEtiquetteManual_0_daze',
+      name: 'DodgeCounterEtiquetteManual_0',
     },
   },
-  DodgeCounterEtiquetteManual_0_anomBuildup: {
+  'DodgeCounterEtiquetteManual_0:anomBuildup': {
     sheet: 'Lycaon',
-    name: 'DodgeCounterEtiquetteManual_0_anomBuildup',
+    name: 'DodgeCounterEtiquetteManual_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -632,12 +632,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterEtiquetteManual_0_anomBuildup',
+      name: 'DodgeCounterEtiquetteManual_0',
     },
   },
-  SpecialAttackTimeToHunt_0_dmg: {
+  'SpecialAttackTimeToHunt_0:standardDmg': {
     sheet: 'Lycaon',
-    name: 'SpecialAttackTimeToHunt_0_dmg',
+    name: 'SpecialAttackTimeToHunt_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -646,12 +646,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackTimeToHunt_0_dmg',
+      name: 'SpecialAttackTimeToHunt_0',
     },
   },
-  SpecialAttackTimeToHunt_0_daze: {
+  'SpecialAttackTimeToHunt_0:dazeBuildup': {
     sheet: 'Lycaon',
-    name: 'SpecialAttackTimeToHunt_0_daze',
+    name: 'SpecialAttackTimeToHunt_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -660,12 +660,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackTimeToHunt_0_daze',
+      name: 'SpecialAttackTimeToHunt_0',
     },
   },
-  SpecialAttackTimeToHunt_0_anomBuildup: {
+  'SpecialAttackTimeToHunt_0:anomBuildup': {
     sheet: 'Lycaon',
-    name: 'SpecialAttackTimeToHunt_0_anomBuildup',
+    name: 'SpecialAttackTimeToHunt_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -674,12 +674,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackTimeToHunt_0_anomBuildup',
+      name: 'SpecialAttackTimeToHunt_0',
     },
   },
-  SpecialAttackTimeToHunt_1_dmg: {
+  'SpecialAttackTimeToHunt_1:standardDmg': {
     sheet: 'Lycaon',
-    name: 'SpecialAttackTimeToHunt_1_dmg',
+    name: 'SpecialAttackTimeToHunt_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -688,12 +688,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackTimeToHunt_1_dmg',
+      name: 'SpecialAttackTimeToHunt_1',
     },
   },
-  SpecialAttackTimeToHunt_1_daze: {
+  'SpecialAttackTimeToHunt_1:dazeBuildup': {
     sheet: 'Lycaon',
-    name: 'SpecialAttackTimeToHunt_1_daze',
+    name: 'SpecialAttackTimeToHunt_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -702,12 +702,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackTimeToHunt_1_daze',
+      name: 'SpecialAttackTimeToHunt_1',
     },
   },
-  SpecialAttackTimeToHunt_1_anomBuildup: {
+  'SpecialAttackTimeToHunt_1:anomBuildup': {
     sheet: 'Lycaon',
-    name: 'SpecialAttackTimeToHunt_1_anomBuildup',
+    name: 'SpecialAttackTimeToHunt_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -716,12 +716,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackTimeToHunt_1_anomBuildup',
+      name: 'SpecialAttackTimeToHunt_1',
     },
   },
-  SpecialAttackTimeToHunt_2_dmg: {
+  'SpecialAttackTimeToHunt_2:standardDmg': {
     sheet: 'Lycaon',
-    name: 'SpecialAttackTimeToHunt_2_dmg',
+    name: 'SpecialAttackTimeToHunt_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -730,12 +730,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackTimeToHunt_2_dmg',
+      name: 'SpecialAttackTimeToHunt_2',
     },
   },
-  SpecialAttackTimeToHunt_2_daze: {
+  'SpecialAttackTimeToHunt_2:dazeBuildup': {
     sheet: 'Lycaon',
-    name: 'SpecialAttackTimeToHunt_2_daze',
+    name: 'SpecialAttackTimeToHunt_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -744,12 +744,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackTimeToHunt_2_daze',
+      name: 'SpecialAttackTimeToHunt_2',
     },
   },
-  SpecialAttackTimeToHunt_2_anomBuildup: {
+  'SpecialAttackTimeToHunt_2:anomBuildup': {
     sheet: 'Lycaon',
-    name: 'SpecialAttackTimeToHunt_2_anomBuildup',
+    name: 'SpecialAttackTimeToHunt_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -758,12 +758,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackTimeToHunt_2_anomBuildup',
+      name: 'SpecialAttackTimeToHunt_2',
     },
   },
-  EXSpecialAttackThrillOfTheHunt_0_dmg: {
+  'EXSpecialAttackThrillOfTheHunt_0:standardDmg': {
     sheet: 'Lycaon',
-    name: 'EXSpecialAttackThrillOfTheHunt_0_dmg',
+    name: 'EXSpecialAttackThrillOfTheHunt_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -772,12 +772,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackThrillOfTheHunt_0_dmg',
+      name: 'EXSpecialAttackThrillOfTheHunt_0',
     },
   },
-  EXSpecialAttackThrillOfTheHunt_0_daze: {
+  'EXSpecialAttackThrillOfTheHunt_0:dazeBuildup': {
     sheet: 'Lycaon',
-    name: 'EXSpecialAttackThrillOfTheHunt_0_daze',
+    name: 'EXSpecialAttackThrillOfTheHunt_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -786,12 +786,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackThrillOfTheHunt_0_daze',
+      name: 'EXSpecialAttackThrillOfTheHunt_0',
     },
   },
-  EXSpecialAttackThrillOfTheHunt_0_anomBuildup: {
+  'EXSpecialAttackThrillOfTheHunt_0:anomBuildup': {
     sheet: 'Lycaon',
-    name: 'EXSpecialAttackThrillOfTheHunt_0_anomBuildup',
+    name: 'EXSpecialAttackThrillOfTheHunt_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -800,12 +800,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackThrillOfTheHunt_0_anomBuildup',
+      name: 'EXSpecialAttackThrillOfTheHunt_0',
     },
   },
-  EXSpecialAttackThrillOfTheHunt_1_dmg: {
+  'EXSpecialAttackThrillOfTheHunt_1:standardDmg': {
     sheet: 'Lycaon',
-    name: 'EXSpecialAttackThrillOfTheHunt_1_dmg',
+    name: 'EXSpecialAttackThrillOfTheHunt_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -814,12 +814,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackThrillOfTheHunt_1_dmg',
+      name: 'EXSpecialAttackThrillOfTheHunt_1',
     },
   },
-  EXSpecialAttackThrillOfTheHunt_1_daze: {
+  'EXSpecialAttackThrillOfTheHunt_1:dazeBuildup': {
     sheet: 'Lycaon',
-    name: 'EXSpecialAttackThrillOfTheHunt_1_daze',
+    name: 'EXSpecialAttackThrillOfTheHunt_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -828,12 +828,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackThrillOfTheHunt_1_daze',
+      name: 'EXSpecialAttackThrillOfTheHunt_1',
     },
   },
-  EXSpecialAttackThrillOfTheHunt_1_anomBuildup: {
+  'EXSpecialAttackThrillOfTheHunt_1:anomBuildup': {
     sheet: 'Lycaon',
-    name: 'EXSpecialAttackThrillOfTheHunt_1_anomBuildup',
+    name: 'EXSpecialAttackThrillOfTheHunt_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -842,12 +842,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackThrillOfTheHunt_1_anomBuildup',
+      name: 'EXSpecialAttackThrillOfTheHunt_1',
     },
   },
-  EXSpecialAttackThrillOfTheHunt_2_dmg: {
+  'EXSpecialAttackThrillOfTheHunt_2:standardDmg': {
     sheet: 'Lycaon',
-    name: 'EXSpecialAttackThrillOfTheHunt_2_dmg',
+    name: 'EXSpecialAttackThrillOfTheHunt_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -856,12 +856,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackThrillOfTheHunt_2_dmg',
+      name: 'EXSpecialAttackThrillOfTheHunt_2',
     },
   },
-  EXSpecialAttackThrillOfTheHunt_2_daze: {
+  'EXSpecialAttackThrillOfTheHunt_2:dazeBuildup': {
     sheet: 'Lycaon',
-    name: 'EXSpecialAttackThrillOfTheHunt_2_daze',
+    name: 'EXSpecialAttackThrillOfTheHunt_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -870,12 +870,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackThrillOfTheHunt_2_daze',
+      name: 'EXSpecialAttackThrillOfTheHunt_2',
     },
   },
-  EXSpecialAttackThrillOfTheHunt_2_anomBuildup: {
+  'EXSpecialAttackThrillOfTheHunt_2:anomBuildup': {
     sheet: 'Lycaon',
-    name: 'EXSpecialAttackThrillOfTheHunt_2_anomBuildup',
+    name: 'EXSpecialAttackThrillOfTheHunt_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -884,12 +884,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackThrillOfTheHunt_2_anomBuildup',
+      name: 'EXSpecialAttackThrillOfTheHunt_2',
     },
   },
-  ChainAttackAsYouWish_0_dmg: {
+  'ChainAttackAsYouWish_0:standardDmg': {
     sheet: 'Lycaon',
-    name: 'ChainAttackAsYouWish_0_dmg',
+    name: 'ChainAttackAsYouWish_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -898,12 +898,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackAsYouWish_0_dmg',
+      name: 'ChainAttackAsYouWish_0',
     },
   },
-  ChainAttackAsYouWish_0_daze: {
+  'ChainAttackAsYouWish_0:dazeBuildup': {
     sheet: 'Lycaon',
-    name: 'ChainAttackAsYouWish_0_daze',
+    name: 'ChainAttackAsYouWish_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -912,12 +912,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackAsYouWish_0_daze',
+      name: 'ChainAttackAsYouWish_0',
     },
   },
-  ChainAttackAsYouWish_0_anomBuildup: {
+  'ChainAttackAsYouWish_0:anomBuildup': {
     sheet: 'Lycaon',
-    name: 'ChainAttackAsYouWish_0_anomBuildup',
+    name: 'ChainAttackAsYouWish_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -926,12 +926,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackAsYouWish_0_anomBuildup',
+      name: 'ChainAttackAsYouWish_0',
     },
   },
-  UltimateMissionComplete_0_dmg: {
+  'UltimateMissionComplete_0:standardDmg': {
     sheet: 'Lycaon',
-    name: 'UltimateMissionComplete_0_dmg',
+    name: 'UltimateMissionComplete_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -940,12 +940,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateMissionComplete_0_dmg',
+      name: 'UltimateMissionComplete_0',
     },
   },
-  UltimateMissionComplete_0_daze: {
+  'UltimateMissionComplete_0:dazeBuildup': {
     sheet: 'Lycaon',
-    name: 'UltimateMissionComplete_0_daze',
+    name: 'UltimateMissionComplete_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -954,12 +954,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateMissionComplete_0_daze',
+      name: 'UltimateMissionComplete_0',
     },
   },
-  UltimateMissionComplete_0_anomBuildup: {
+  'UltimateMissionComplete_0:anomBuildup': {
     sheet: 'Lycaon',
-    name: 'UltimateMissionComplete_0_anomBuildup',
+    name: 'UltimateMissionComplete_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -968,12 +968,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateMissionComplete_0_anomBuildup',
+      name: 'UltimateMissionComplete_0',
     },
   },
-  QuickAssistWolfPack_0_dmg: {
+  'QuickAssistWolfPack_0:standardDmg': {
     sheet: 'Lycaon',
-    name: 'QuickAssistWolfPack_0_dmg',
+    name: 'QuickAssistWolfPack_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -982,12 +982,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistWolfPack_0_dmg',
+      name: 'QuickAssistWolfPack_0',
     },
   },
-  QuickAssistWolfPack_0_daze: {
+  'QuickAssistWolfPack_0:dazeBuildup': {
     sheet: 'Lycaon',
-    name: 'QuickAssistWolfPack_0_daze',
+    name: 'QuickAssistWolfPack_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -996,12 +996,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistWolfPack_0_daze',
+      name: 'QuickAssistWolfPack_0',
     },
   },
-  QuickAssistWolfPack_0_anomBuildup: {
+  'QuickAssistWolfPack_0:anomBuildup': {
     sheet: 'Lycaon',
-    name: 'QuickAssistWolfPack_0_anomBuildup',
+    name: 'QuickAssistWolfPack_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1010,12 +1010,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistWolfPack_0_anomBuildup',
+      name: 'QuickAssistWolfPack_0',
     },
   },
-  DefensiveAssistDisruptedHunt_0_dmg: {
+  'DefensiveAssistDisruptedHunt_0:standardDmg': {
     sheet: 'Lycaon',
-    name: 'DefensiveAssistDisruptedHunt_0_dmg',
+    name: 'DefensiveAssistDisruptedHunt_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1024,12 +1024,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistDisruptedHunt_0_dmg',
+      name: 'DefensiveAssistDisruptedHunt_0',
     },
   },
-  DefensiveAssistDisruptedHunt_0_daze: {
+  'DefensiveAssistDisruptedHunt_0:dazeBuildup': {
     sheet: 'Lycaon',
-    name: 'DefensiveAssistDisruptedHunt_0_daze',
+    name: 'DefensiveAssistDisruptedHunt_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1038,12 +1038,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistDisruptedHunt_0_daze',
+      name: 'DefensiveAssistDisruptedHunt_0',
     },
   },
-  DefensiveAssistDisruptedHunt_0_anomBuildup: {
+  'DefensiveAssistDisruptedHunt_0:anomBuildup': {
     sheet: 'Lycaon',
-    name: 'DefensiveAssistDisruptedHunt_0_anomBuildup',
+    name: 'DefensiveAssistDisruptedHunt_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1052,12 +1052,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistDisruptedHunt_0_anomBuildup',
+      name: 'DefensiveAssistDisruptedHunt_0',
     },
   },
-  DefensiveAssistDisruptedHunt_1_dmg: {
+  'DefensiveAssistDisruptedHunt_1:standardDmg': {
     sheet: 'Lycaon',
-    name: 'DefensiveAssistDisruptedHunt_1_dmg',
+    name: 'DefensiveAssistDisruptedHunt_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1066,12 +1066,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistDisruptedHunt_1_dmg',
+      name: 'DefensiveAssistDisruptedHunt_1',
     },
   },
-  DefensiveAssistDisruptedHunt_1_daze: {
+  'DefensiveAssistDisruptedHunt_1:dazeBuildup': {
     sheet: 'Lycaon',
-    name: 'DefensiveAssistDisruptedHunt_1_daze',
+    name: 'DefensiveAssistDisruptedHunt_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1080,12 +1080,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistDisruptedHunt_1_daze',
+      name: 'DefensiveAssistDisruptedHunt_1',
     },
   },
-  DefensiveAssistDisruptedHunt_1_anomBuildup: {
+  'DefensiveAssistDisruptedHunt_1:anomBuildup': {
     sheet: 'Lycaon',
-    name: 'DefensiveAssistDisruptedHunt_1_anomBuildup',
+    name: 'DefensiveAssistDisruptedHunt_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1094,12 +1094,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistDisruptedHunt_1_anomBuildup',
+      name: 'DefensiveAssistDisruptedHunt_1',
     },
   },
-  DefensiveAssistDisruptedHunt_2_dmg: {
+  'DefensiveAssistDisruptedHunt_2:standardDmg': {
     sheet: 'Lycaon',
-    name: 'DefensiveAssistDisruptedHunt_2_dmg',
+    name: 'DefensiveAssistDisruptedHunt_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1108,12 +1108,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistDisruptedHunt_2_dmg',
+      name: 'DefensiveAssistDisruptedHunt_2',
     },
   },
-  DefensiveAssistDisruptedHunt_2_daze: {
+  'DefensiveAssistDisruptedHunt_2:dazeBuildup': {
     sheet: 'Lycaon',
-    name: 'DefensiveAssistDisruptedHunt_2_daze',
+    name: 'DefensiveAssistDisruptedHunt_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1122,12 +1122,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistDisruptedHunt_2_daze',
+      name: 'DefensiveAssistDisruptedHunt_2',
     },
   },
-  DefensiveAssistDisruptedHunt_2_anomBuildup: {
+  'DefensiveAssistDisruptedHunt_2:anomBuildup': {
     sheet: 'Lycaon',
-    name: 'DefensiveAssistDisruptedHunt_2_anomBuildup',
+    name: 'DefensiveAssistDisruptedHunt_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1136,12 +1136,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistDisruptedHunt_2_anomBuildup',
+      name: 'DefensiveAssistDisruptedHunt_2',
     },
   },
-  AssistFollowUpVengefulCounterattack_0_dmg: {
+  'AssistFollowUpVengefulCounterattack_0:standardDmg': {
     sheet: 'Lycaon',
-    name: 'AssistFollowUpVengefulCounterattack_0_dmg',
+    name: 'AssistFollowUpVengefulCounterattack_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1150,12 +1150,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpVengefulCounterattack_0_dmg',
+      name: 'AssistFollowUpVengefulCounterattack_0',
     },
   },
-  AssistFollowUpVengefulCounterattack_0_daze: {
+  'AssistFollowUpVengefulCounterattack_0:dazeBuildup': {
     sheet: 'Lycaon',
-    name: 'AssistFollowUpVengefulCounterattack_0_daze',
+    name: 'AssistFollowUpVengefulCounterattack_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1164,12 +1164,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpVengefulCounterattack_0_daze',
+      name: 'AssistFollowUpVengefulCounterattack_0',
     },
   },
-  AssistFollowUpVengefulCounterattack_0_anomBuildup: {
+  'AssistFollowUpVengefulCounterattack_0:anomBuildup': {
     sheet: 'Lycaon',
-    name: 'AssistFollowUpVengefulCounterattack_0_anomBuildup',
+    name: 'AssistFollowUpVengefulCounterattack_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1178,12 +1178,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpVengefulCounterattack_0_anomBuildup',
+      name: 'AssistFollowUpVengefulCounterattack_0',
     },
   },
-  AssistFollowUpVengefulCounterattackGlacialWaltz_0_dmg: {
+  'AssistFollowUpVengefulCounterattackGlacialWaltz_0:standardDmg': {
     sheet: 'Lycaon',
-    name: 'AssistFollowUpVengefulCounterattackGlacialWaltz_0_dmg',
+    name: 'AssistFollowUpVengefulCounterattackGlacialWaltz_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1192,12 +1192,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpVengefulCounterattackGlacialWaltz_0_dmg',
+      name: 'AssistFollowUpVengefulCounterattackGlacialWaltz_0',
     },
   },
-  AssistFollowUpVengefulCounterattackGlacialWaltz_0_daze: {
+  'AssistFollowUpVengefulCounterattackGlacialWaltz_0:dazeBuildup': {
     sheet: 'Lycaon',
-    name: 'AssistFollowUpVengefulCounterattackGlacialWaltz_0_daze',
+    name: 'AssistFollowUpVengefulCounterattackGlacialWaltz_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1206,12 +1206,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpVengefulCounterattackGlacialWaltz_0_daze',
+      name: 'AssistFollowUpVengefulCounterattackGlacialWaltz_0',
     },
   },
-  AssistFollowUpVengefulCounterattackGlacialWaltz_0_anomBuildup: {
+  'AssistFollowUpVengefulCounterattackGlacialWaltz_0:anomBuildup': {
     sheet: 'Lycaon',
-    name: 'AssistFollowUpVengefulCounterattackGlacialWaltz_0_anomBuildup',
+    name: 'AssistFollowUpVengefulCounterattackGlacialWaltz_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1220,7 +1220,7 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpVengefulCounterattackGlacialWaltz_0_anomBuildup',
+      name: 'AssistFollowUpVengefulCounterattackGlacialWaltz_0',
     },
   },
   m4_shield: {

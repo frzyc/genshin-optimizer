@@ -25,8 +25,11 @@
   "dealsDamage": {
     "1": "Deals <strong>{{val1}}</strong> DMG"
   },
+  "mindscapes": "Mindscapes",
   "skills": {
     "basic": "Basic Attack",
+    "dodge": "Dodge",
+    "assist": "Assist",
     "special": "Special Attack",
     "exSpecial": "EX Special Attack",
     "chain": "Chain Attack",

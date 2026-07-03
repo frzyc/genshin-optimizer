@@ -89,9 +89,9 @@ export const formulas = {
       name: 'dazeInst',
     },
   },
-  BasicAttackWipeout_0_dmg: {
+  'BasicAttackWipeout_0:standardDmg': {
     sheet: 'Corin',
-    name: 'BasicAttackWipeout_0_dmg',
+    name: 'BasicAttackWipeout_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -100,12 +100,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackWipeout_0_dmg',
+      name: 'BasicAttackWipeout_0',
     },
   },
-  BasicAttackWipeout_0_daze: {
+  'BasicAttackWipeout_0:dazeBuildup': {
     sheet: 'Corin',
-    name: 'BasicAttackWipeout_0_daze',
+    name: 'BasicAttackWipeout_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -114,12 +114,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackWipeout_0_daze',
+      name: 'BasicAttackWipeout_0',
     },
   },
-  BasicAttackWipeout_0_anomBuildup: {
+  'BasicAttackWipeout_0:anomBuildup': {
     sheet: 'Corin',
-    name: 'BasicAttackWipeout_0_anomBuildup',
+    name: 'BasicAttackWipeout_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -128,12 +128,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackWipeout_0_anomBuildup',
+      name: 'BasicAttackWipeout_0',
     },
   },
-  BasicAttackWipeout_1_dmg: {
+  'BasicAttackWipeout_1:standardDmg': {
     sheet: 'Corin',
-    name: 'BasicAttackWipeout_1_dmg',
+    name: 'BasicAttackWipeout_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -142,12 +142,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackWipeout_1_dmg',
+      name: 'BasicAttackWipeout_1',
     },
   },
-  BasicAttackWipeout_1_daze: {
+  'BasicAttackWipeout_1:dazeBuildup': {
     sheet: 'Corin',
-    name: 'BasicAttackWipeout_1_daze',
+    name: 'BasicAttackWipeout_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -156,12 +156,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackWipeout_1_daze',
+      name: 'BasicAttackWipeout_1',
     },
   },
-  BasicAttackWipeout_1_anomBuildup: {
+  'BasicAttackWipeout_1:anomBuildup': {
     sheet: 'Corin',
-    name: 'BasicAttackWipeout_1_anomBuildup',
+    name: 'BasicAttackWipeout_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -170,12 +170,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackWipeout_1_anomBuildup',
+      name: 'BasicAttackWipeout_1',
     },
   },
-  BasicAttackWipeout_2_dmg: {
+  'BasicAttackWipeout_2:standardDmg': {
     sheet: 'Corin',
-    name: 'BasicAttackWipeout_2_dmg',
+    name: 'BasicAttackWipeout_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -184,12 +184,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackWipeout_2_dmg',
+      name: 'BasicAttackWipeout_2',
     },
   },
-  BasicAttackWipeout_2_daze: {
+  'BasicAttackWipeout_2:dazeBuildup': {
     sheet: 'Corin',
-    name: 'BasicAttackWipeout_2_daze',
+    name: 'BasicAttackWipeout_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -198,12 +198,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackWipeout_2_daze',
+      name: 'BasicAttackWipeout_2',
     },
   },
-  BasicAttackWipeout_2_anomBuildup: {
+  'BasicAttackWipeout_2:anomBuildup': {
     sheet: 'Corin',
-    name: 'BasicAttackWipeout_2_anomBuildup',
+    name: 'BasicAttackWipeout_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -212,12 +212,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackWipeout_2_anomBuildup',
+      name: 'BasicAttackWipeout_2',
     },
   },
-  BasicAttackWipeout_3_dmg: {
+  'BasicAttackWipeout_3:standardDmg': {
     sheet: 'Corin',
-    name: 'BasicAttackWipeout_3_dmg',
+    name: 'BasicAttackWipeout_3:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -226,12 +226,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackWipeout_3_dmg',
+      name: 'BasicAttackWipeout_3',
     },
   },
-  BasicAttackWipeout_3_daze: {
+  'BasicAttackWipeout_3:dazeBuildup': {
     sheet: 'Corin',
-    name: 'BasicAttackWipeout_3_daze',
+    name: 'BasicAttackWipeout_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -240,12 +240,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackWipeout_3_daze',
+      name: 'BasicAttackWipeout_3',
     },
   },
-  BasicAttackWipeout_3_anomBuildup: {
+  'BasicAttackWipeout_3:anomBuildup': {
     sheet: 'Corin',
-    name: 'BasicAttackWipeout_3_anomBuildup',
+    name: 'BasicAttackWipeout_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -254,12 +254,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackWipeout_3_anomBuildup',
+      name: 'BasicAttackWipeout_3',
     },
   },
-  BasicAttackWipeout_4_dmg: {
+  'BasicAttackWipeout_4:standardDmg': {
     sheet: 'Corin',
-    name: 'BasicAttackWipeout_4_dmg',
+    name: 'BasicAttackWipeout_4:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -268,12 +268,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackWipeout_4_dmg',
+      name: 'BasicAttackWipeout_4',
     },
   },
-  BasicAttackWipeout_4_daze: {
+  'BasicAttackWipeout_4:dazeBuildup': {
     sheet: 'Corin',
-    name: 'BasicAttackWipeout_4_daze',
+    name: 'BasicAttackWipeout_4:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -282,12 +282,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackWipeout_4_daze',
+      name: 'BasicAttackWipeout_4',
     },
   },
-  BasicAttackWipeout_4_anomBuildup: {
+  'BasicAttackWipeout_4:anomBuildup': {
     sheet: 'Corin',
-    name: 'BasicAttackWipeout_4_anomBuildup',
+    name: 'BasicAttackWipeout_4:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -296,12 +296,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackWipeout_4_anomBuildup',
+      name: 'BasicAttackWipeout_4',
     },
   },
-  DashAttackOopsyDaisy_0_dmg: {
+  'DashAttackOopsyDaisy_0:standardDmg': {
     sheet: 'Corin',
-    name: 'DashAttackOopsyDaisy_0_dmg',
+    name: 'DashAttackOopsyDaisy_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -310,12 +310,12 @@ export const formulas = {
       damageType1: 'dash',
       attribute: 'physical',
       skillType: 'dodgeSkill',
-      name: 'DashAttackOopsyDaisy_0_dmg',
+      name: 'DashAttackOopsyDaisy_0',
     },
   },
-  DashAttackOopsyDaisy_0_daze: {
+  'DashAttackOopsyDaisy_0:dazeBuildup': {
     sheet: 'Corin',
-    name: 'DashAttackOopsyDaisy_0_daze',
+    name: 'DashAttackOopsyDaisy_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -324,12 +324,12 @@ export const formulas = {
       damageType1: 'dash',
       attribute: 'physical',
       skillType: 'dodgeSkill',
-      name: 'DashAttackOopsyDaisy_0_daze',
+      name: 'DashAttackOopsyDaisy_0',
     },
   },
-  DashAttackOopsyDaisy_0_anomBuildup: {
+  'DashAttackOopsyDaisy_0:anomBuildup': {
     sheet: 'Corin',
-    name: 'DashAttackOopsyDaisy_0_anomBuildup',
+    name: 'DashAttackOopsyDaisy_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -338,12 +338,12 @@ export const formulas = {
       damageType1: 'dash',
       attribute: 'physical',
       skillType: 'dodgeSkill',
-      name: 'DashAttackOopsyDaisy_0_anomBuildup',
+      name: 'DashAttackOopsyDaisy_0',
     },
   },
-  DodgeCounterNope_0_dmg: {
+  'DodgeCounterNope_0:standardDmg': {
     sheet: 'Corin',
-    name: 'DodgeCounterNope_0_dmg',
+    name: 'DodgeCounterNope_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -352,12 +352,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterNope_0_dmg',
+      name: 'DodgeCounterNope_0',
     },
   },
-  DodgeCounterNope_0_daze: {
+  'DodgeCounterNope_0:dazeBuildup': {
     sheet: 'Corin',
-    name: 'DodgeCounterNope_0_daze',
+    name: 'DodgeCounterNope_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -366,12 +366,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterNope_0_daze',
+      name: 'DodgeCounterNope_0',
     },
   },
-  DodgeCounterNope_0_anomBuildup: {
+  'DodgeCounterNope_0:anomBuildup': {
     sheet: 'Corin',
-    name: 'DodgeCounterNope_0_anomBuildup',
+    name: 'DodgeCounterNope_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -380,12 +380,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterNope_0_anomBuildup',
+      name: 'DodgeCounterNope_0',
     },
   },
-  DodgeCounterNope_1_dmg: {
+  'DodgeCounterNope_1:standardDmg': {
     sheet: 'Corin',
-    name: 'DodgeCounterNope_1_dmg',
+    name: 'DodgeCounterNope_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -394,12 +394,12 @@ export const formulas = {
       damageType1: 'dodgeCounter',
       attribute: 'physical',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterNope_1_dmg',
+      name: 'DodgeCounterNope_1',
     },
   },
-  DodgeCounterNope_1_daze: {
+  'DodgeCounterNope_1:dazeBuildup': {
     sheet: 'Corin',
-    name: 'DodgeCounterNope_1_daze',
+    name: 'DodgeCounterNope_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -408,12 +408,12 @@ export const formulas = {
       damageType1: 'dodgeCounter',
       attribute: 'physical',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterNope_1_daze',
+      name: 'DodgeCounterNope_1',
     },
   },
-  DodgeCounterNope_1_anomBuildup: {
+  'DodgeCounterNope_1:anomBuildup': {
     sheet: 'Corin',
-    name: 'DodgeCounterNope_1_anomBuildup',
+    name: 'DodgeCounterNope_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -422,12 +422,12 @@ export const formulas = {
       damageType1: 'dodgeCounter',
       attribute: 'physical',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterNope_1_anomBuildup',
+      name: 'DodgeCounterNope_1',
     },
   },
-  SpecialAttackCleanSweep_0_dmg: {
+  'SpecialAttackCleanSweep_0:standardDmg': {
     sheet: 'Corin',
-    name: 'SpecialAttackCleanSweep_0_dmg',
+    name: 'SpecialAttackCleanSweep_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -436,12 +436,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackCleanSweep_0_dmg',
+      name: 'SpecialAttackCleanSweep_0',
     },
   },
-  SpecialAttackCleanSweep_0_daze: {
+  'SpecialAttackCleanSweep_0:dazeBuildup': {
     sheet: 'Corin',
-    name: 'SpecialAttackCleanSweep_0_daze',
+    name: 'SpecialAttackCleanSweep_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -450,12 +450,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackCleanSweep_0_daze',
+      name: 'SpecialAttackCleanSweep_0',
     },
   },
-  SpecialAttackCleanSweep_0_anomBuildup: {
+  'SpecialAttackCleanSweep_0:anomBuildup': {
     sheet: 'Corin',
-    name: 'SpecialAttackCleanSweep_0_anomBuildup',
+    name: 'SpecialAttackCleanSweep_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -464,12 +464,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackCleanSweep_0_anomBuildup',
+      name: 'SpecialAttackCleanSweep_0',
     },
   },
-  SpecialAttackCleanSweep_1_dmg: {
+  'SpecialAttackCleanSweep_1:standardDmg': {
     sheet: 'Corin',
-    name: 'SpecialAttackCleanSweep_1_dmg',
+    name: 'SpecialAttackCleanSweep_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -478,12 +478,12 @@ export const formulas = {
       damageType1: 'special',
       attribute: 'physical',
       skillType: 'specialSkill',
-      name: 'SpecialAttackCleanSweep_1_dmg',
+      name: 'SpecialAttackCleanSweep_1',
     },
   },
-  SpecialAttackCleanSweep_1_daze: {
+  'SpecialAttackCleanSweep_1:dazeBuildup': {
     sheet: 'Corin',
-    name: 'SpecialAttackCleanSweep_1_daze',
+    name: 'SpecialAttackCleanSweep_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -492,12 +492,12 @@ export const formulas = {
       damageType1: 'special',
       attribute: 'physical',
       skillType: 'specialSkill',
-      name: 'SpecialAttackCleanSweep_1_daze',
+      name: 'SpecialAttackCleanSweep_1',
     },
   },
-  SpecialAttackCleanSweep_1_anomBuildup: {
+  'SpecialAttackCleanSweep_1:anomBuildup': {
     sheet: 'Corin',
-    name: 'SpecialAttackCleanSweep_1_anomBuildup',
+    name: 'SpecialAttackCleanSweep_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -506,12 +506,12 @@ export const formulas = {
       damageType1: 'special',
       attribute: 'physical',
       skillType: 'specialSkill',
-      name: 'SpecialAttackCleanSweep_1_anomBuildup',
+      name: 'SpecialAttackCleanSweep_1',
     },
   },
-  SpecialAttackCleanSweep_2_dmg: {
+  'SpecialAttackCleanSweep_2:standardDmg': {
     sheet: 'Corin',
-    name: 'SpecialAttackCleanSweep_2_dmg',
+    name: 'SpecialAttackCleanSweep_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -520,12 +520,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackCleanSweep_2_dmg',
+      name: 'SpecialAttackCleanSweep_2',
     },
   },
-  SpecialAttackCleanSweep_2_daze: {
+  'SpecialAttackCleanSweep_2:dazeBuildup': {
     sheet: 'Corin',
-    name: 'SpecialAttackCleanSweep_2_daze',
+    name: 'SpecialAttackCleanSweep_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -534,12 +534,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackCleanSweep_2_daze',
+      name: 'SpecialAttackCleanSweep_2',
     },
   },
-  SpecialAttackCleanSweep_2_anomBuildup: {
+  'SpecialAttackCleanSweep_2:anomBuildup': {
     sheet: 'Corin',
-    name: 'SpecialAttackCleanSweep_2_anomBuildup',
+    name: 'SpecialAttackCleanSweep_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -548,12 +548,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackCleanSweep_2_anomBuildup',
+      name: 'SpecialAttackCleanSweep_2',
     },
   },
-  EXSpecialAttackSkirtAlert_0_dmg: {
+  'EXSpecialAttackSkirtAlert_0:standardDmg': {
     sheet: 'Corin',
-    name: 'EXSpecialAttackSkirtAlert_0_dmg',
+    name: 'EXSpecialAttackSkirtAlert_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -562,12 +562,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackSkirtAlert_0_dmg',
+      name: 'EXSpecialAttackSkirtAlert_0',
     },
   },
-  EXSpecialAttackSkirtAlert_0_daze: {
+  'EXSpecialAttackSkirtAlert_0:dazeBuildup': {
     sheet: 'Corin',
-    name: 'EXSpecialAttackSkirtAlert_0_daze',
+    name: 'EXSpecialAttackSkirtAlert_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -576,12 +576,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackSkirtAlert_0_daze',
+      name: 'EXSpecialAttackSkirtAlert_0',
     },
   },
-  EXSpecialAttackSkirtAlert_0_anomBuildup: {
+  'EXSpecialAttackSkirtAlert_0:anomBuildup': {
     sheet: 'Corin',
-    name: 'EXSpecialAttackSkirtAlert_0_anomBuildup',
+    name: 'EXSpecialAttackSkirtAlert_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -590,12 +590,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackSkirtAlert_0_anomBuildup',
+      name: 'EXSpecialAttackSkirtAlert_0',
     },
   },
-  EXSpecialAttackSkirtAlert_1_dmg: {
+  'EXSpecialAttackSkirtAlert_1:standardDmg': {
     sheet: 'Corin',
-    name: 'EXSpecialAttackSkirtAlert_1_dmg',
+    name: 'EXSpecialAttackSkirtAlert_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -604,12 +604,12 @@ export const formulas = {
       damageType1: 'exSpecial',
       attribute: 'physical',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackSkirtAlert_1_dmg',
+      name: 'EXSpecialAttackSkirtAlert_1',
     },
   },
-  EXSpecialAttackSkirtAlert_1_daze: {
+  'EXSpecialAttackSkirtAlert_1:dazeBuildup': {
     sheet: 'Corin',
-    name: 'EXSpecialAttackSkirtAlert_1_daze',
+    name: 'EXSpecialAttackSkirtAlert_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -618,12 +618,12 @@ export const formulas = {
       damageType1: 'exSpecial',
       attribute: 'physical',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackSkirtAlert_1_daze',
+      name: 'EXSpecialAttackSkirtAlert_1',
     },
   },
-  EXSpecialAttackSkirtAlert_1_anomBuildup: {
+  'EXSpecialAttackSkirtAlert_1:anomBuildup': {
     sheet: 'Corin',
-    name: 'EXSpecialAttackSkirtAlert_1_anomBuildup',
+    name: 'EXSpecialAttackSkirtAlert_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -632,12 +632,12 @@ export const formulas = {
       damageType1: 'exSpecial',
       attribute: 'physical',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackSkirtAlert_1_anomBuildup',
+      name: 'EXSpecialAttackSkirtAlert_1',
     },
   },
-  EXSpecialAttackSkirtAlert_2_dmg: {
+  'EXSpecialAttackSkirtAlert_2:standardDmg': {
     sheet: 'Corin',
-    name: 'EXSpecialAttackSkirtAlert_2_dmg',
+    name: 'EXSpecialAttackSkirtAlert_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -646,12 +646,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackSkirtAlert_2_dmg',
+      name: 'EXSpecialAttackSkirtAlert_2',
     },
   },
-  EXSpecialAttackSkirtAlert_2_daze: {
+  'EXSpecialAttackSkirtAlert_2:dazeBuildup': {
     sheet: 'Corin',
-    name: 'EXSpecialAttackSkirtAlert_2_daze',
+    name: 'EXSpecialAttackSkirtAlert_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -660,12 +660,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackSkirtAlert_2_daze',
+      name: 'EXSpecialAttackSkirtAlert_2',
     },
   },
-  EXSpecialAttackSkirtAlert_2_anomBuildup: {
+  'EXSpecialAttackSkirtAlert_2:anomBuildup': {
     sheet: 'Corin',
-    name: 'EXSpecialAttackSkirtAlert_2_anomBuildup',
+    name: 'EXSpecialAttackSkirtAlert_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -674,12 +674,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackSkirtAlert_2_anomBuildup',
+      name: 'EXSpecialAttackSkirtAlert_2',
     },
   },
-  ChainAttackSorry_0_dmg: {
+  'ChainAttackSorry_0:standardDmg': {
     sheet: 'Corin',
-    name: 'ChainAttackSorry_0_dmg',
+    name: 'ChainAttackSorry_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -688,12 +688,12 @@ export const formulas = {
       damageType1: 'chain',
       attribute: 'physical',
       skillType: 'chainSkill',
-      name: 'ChainAttackSorry_0_dmg',
+      name: 'ChainAttackSorry_0',
     },
   },
-  ChainAttackSorry_0_daze: {
+  'ChainAttackSorry_0:dazeBuildup': {
     sheet: 'Corin',
-    name: 'ChainAttackSorry_0_daze',
+    name: 'ChainAttackSorry_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -702,12 +702,12 @@ export const formulas = {
       damageType1: 'chain',
       attribute: 'physical',
       skillType: 'chainSkill',
-      name: 'ChainAttackSorry_0_daze',
+      name: 'ChainAttackSorry_0',
     },
   },
-  ChainAttackSorry_0_anomBuildup: {
+  'ChainAttackSorry_0:anomBuildup': {
     sheet: 'Corin',
-    name: 'ChainAttackSorry_0_anomBuildup',
+    name: 'ChainAttackSorry_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -716,12 +716,12 @@ export const formulas = {
       damageType1: 'chain',
       attribute: 'physical',
       skillType: 'chainSkill',
-      name: 'ChainAttackSorry_0_anomBuildup',
+      name: 'ChainAttackSorry_0',
     },
   },
-  UltimateVeryVerySorry_0_dmg: {
+  'UltimateVeryVerySorry_0:standardDmg': {
     sheet: 'Corin',
-    name: 'UltimateVeryVerySorry_0_dmg',
+    name: 'UltimateVeryVerySorry_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -730,12 +730,12 @@ export const formulas = {
       damageType1: 'ult',
       attribute: 'physical',
       skillType: 'chainSkill',
-      name: 'UltimateVeryVerySorry_0_dmg',
+      name: 'UltimateVeryVerySorry_0',
     },
   },
-  UltimateVeryVerySorry_0_daze: {
+  'UltimateVeryVerySorry_0:dazeBuildup': {
     sheet: 'Corin',
-    name: 'UltimateVeryVerySorry_0_daze',
+    name: 'UltimateVeryVerySorry_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -744,12 +744,12 @@ export const formulas = {
       damageType1: 'ult',
       attribute: 'physical',
       skillType: 'chainSkill',
-      name: 'UltimateVeryVerySorry_0_daze',
+      name: 'UltimateVeryVerySorry_0',
     },
   },
-  UltimateVeryVerySorry_0_anomBuildup: {
+  'UltimateVeryVerySorry_0:anomBuildup': {
     sheet: 'Corin',
-    name: 'UltimateVeryVerySorry_0_anomBuildup',
+    name: 'UltimateVeryVerySorry_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -758,12 +758,12 @@ export const formulas = {
       damageType1: 'ult',
       attribute: 'physical',
       skillType: 'chainSkill',
-      name: 'UltimateVeryVerySorry_0_anomBuildup',
+      name: 'UltimateVeryVerySorry_0',
     },
   },
-  QuickAssistEmergencyMeasures_0_dmg: {
+  'QuickAssistEmergencyMeasures_0:standardDmg': {
     sheet: 'Corin',
-    name: 'QuickAssistEmergencyMeasures_0_dmg',
+    name: 'QuickAssistEmergencyMeasures_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -772,12 +772,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistEmergencyMeasures_0_dmg',
+      name: 'QuickAssistEmergencyMeasures_0',
     },
   },
-  QuickAssistEmergencyMeasures_0_daze: {
+  'QuickAssistEmergencyMeasures_0:dazeBuildup': {
     sheet: 'Corin',
-    name: 'QuickAssistEmergencyMeasures_0_daze',
+    name: 'QuickAssistEmergencyMeasures_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -786,12 +786,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistEmergencyMeasures_0_daze',
+      name: 'QuickAssistEmergencyMeasures_0',
     },
   },
-  QuickAssistEmergencyMeasures_0_anomBuildup: {
+  'QuickAssistEmergencyMeasures_0:anomBuildup': {
     sheet: 'Corin',
-    name: 'QuickAssistEmergencyMeasures_0_anomBuildup',
+    name: 'QuickAssistEmergencyMeasures_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -800,12 +800,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistEmergencyMeasures_0_anomBuildup',
+      name: 'QuickAssistEmergencyMeasures_0',
     },
   },
-  QuickAssistEmergencyMeasures_1_dmg: {
+  'QuickAssistEmergencyMeasures_1:standardDmg': {
     sheet: 'Corin',
-    name: 'QuickAssistEmergencyMeasures_1_dmg',
+    name: 'QuickAssistEmergencyMeasures_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -814,12 +814,12 @@ export const formulas = {
       damageType1: 'quickAssist',
       attribute: 'physical',
       skillType: 'assistSkill',
-      name: 'QuickAssistEmergencyMeasures_1_dmg',
+      name: 'QuickAssistEmergencyMeasures_1',
     },
   },
-  QuickAssistEmergencyMeasures_1_daze: {
+  'QuickAssistEmergencyMeasures_1:dazeBuildup': {
     sheet: 'Corin',
-    name: 'QuickAssistEmergencyMeasures_1_daze',
+    name: 'QuickAssistEmergencyMeasures_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -828,12 +828,12 @@ export const formulas = {
       damageType1: 'quickAssist',
       attribute: 'physical',
       skillType: 'assistSkill',
-      name: 'QuickAssistEmergencyMeasures_1_daze',
+      name: 'QuickAssistEmergencyMeasures_1',
     },
   },
-  QuickAssistEmergencyMeasures_1_anomBuildup: {
+  'QuickAssistEmergencyMeasures_1:anomBuildup': {
     sheet: 'Corin',
-    name: 'QuickAssistEmergencyMeasures_1_anomBuildup',
+    name: 'QuickAssistEmergencyMeasures_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -842,12 +842,12 @@ export const formulas = {
       damageType1: 'quickAssist',
       attribute: 'physical',
       skillType: 'assistSkill',
-      name: 'QuickAssistEmergencyMeasures_1_anomBuildup',
+      name: 'QuickAssistEmergencyMeasures_1',
     },
   },
-  DefensiveAssistPPleaseAllowMe_0_dmg: {
+  'DefensiveAssistPPleaseAllowMe_0:standardDmg': {
     sheet: 'Corin',
-    name: 'DefensiveAssistPPleaseAllowMe_0_dmg',
+    name: 'DefensiveAssistPPleaseAllowMe_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -856,12 +856,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistPPleaseAllowMe_0_dmg',
+      name: 'DefensiveAssistPPleaseAllowMe_0',
     },
   },
-  DefensiveAssistPPleaseAllowMe_0_daze: {
+  'DefensiveAssistPPleaseAllowMe_0:dazeBuildup': {
     sheet: 'Corin',
-    name: 'DefensiveAssistPPleaseAllowMe_0_daze',
+    name: 'DefensiveAssistPPleaseAllowMe_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -870,12 +870,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistPPleaseAllowMe_0_daze',
+      name: 'DefensiveAssistPPleaseAllowMe_0',
     },
   },
-  DefensiveAssistPPleaseAllowMe_0_anomBuildup: {
+  'DefensiveAssistPPleaseAllowMe_0:anomBuildup': {
     sheet: 'Corin',
-    name: 'DefensiveAssistPPleaseAllowMe_0_anomBuildup',
+    name: 'DefensiveAssistPPleaseAllowMe_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -884,12 +884,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistPPleaseAllowMe_0_anomBuildup',
+      name: 'DefensiveAssistPPleaseAllowMe_0',
     },
   },
-  DefensiveAssistPPleaseAllowMe_1_dmg: {
+  'DefensiveAssistPPleaseAllowMe_1:standardDmg': {
     sheet: 'Corin',
-    name: 'DefensiveAssistPPleaseAllowMe_1_dmg',
+    name: 'DefensiveAssistPPleaseAllowMe_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -898,12 +898,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistPPleaseAllowMe_1_dmg',
+      name: 'DefensiveAssistPPleaseAllowMe_1',
     },
   },
-  DefensiveAssistPPleaseAllowMe_1_daze: {
+  'DefensiveAssistPPleaseAllowMe_1:dazeBuildup': {
     sheet: 'Corin',
-    name: 'DefensiveAssistPPleaseAllowMe_1_daze',
+    name: 'DefensiveAssistPPleaseAllowMe_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -912,12 +912,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistPPleaseAllowMe_1_daze',
+      name: 'DefensiveAssistPPleaseAllowMe_1',
     },
   },
-  DefensiveAssistPPleaseAllowMe_1_anomBuildup: {
+  'DefensiveAssistPPleaseAllowMe_1:anomBuildup': {
     sheet: 'Corin',
-    name: 'DefensiveAssistPPleaseAllowMe_1_anomBuildup',
+    name: 'DefensiveAssistPPleaseAllowMe_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -926,12 +926,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistPPleaseAllowMe_1_anomBuildup',
+      name: 'DefensiveAssistPPleaseAllowMe_1',
     },
   },
-  DefensiveAssistPPleaseAllowMe_2_dmg: {
+  'DefensiveAssistPPleaseAllowMe_2:standardDmg': {
     sheet: 'Corin',
-    name: 'DefensiveAssistPPleaseAllowMe_2_dmg',
+    name: 'DefensiveAssistPPleaseAllowMe_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -940,12 +940,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistPPleaseAllowMe_2_dmg',
+      name: 'DefensiveAssistPPleaseAllowMe_2',
     },
   },
-  DefensiveAssistPPleaseAllowMe_2_daze: {
+  'DefensiveAssistPPleaseAllowMe_2:dazeBuildup': {
     sheet: 'Corin',
-    name: 'DefensiveAssistPPleaseAllowMe_2_daze',
+    name: 'DefensiveAssistPPleaseAllowMe_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -954,12 +954,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistPPleaseAllowMe_2_daze',
+      name: 'DefensiveAssistPPleaseAllowMe_2',
     },
   },
-  DefensiveAssistPPleaseAllowMe_2_anomBuildup: {
+  'DefensiveAssistPPleaseAllowMe_2:anomBuildup': {
     sheet: 'Corin',
-    name: 'DefensiveAssistPPleaseAllowMe_2_anomBuildup',
+    name: 'DefensiveAssistPPleaseAllowMe_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -968,12 +968,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistPPleaseAllowMe_2_anomBuildup',
+      name: 'DefensiveAssistPPleaseAllowMe_2',
     },
   },
-  AssistFollowUpQuickSweep_0_dmg: {
+  'AssistFollowUpQuickSweep_0:standardDmg': {
     sheet: 'Corin',
-    name: 'AssistFollowUpQuickSweep_0_dmg',
+    name: 'AssistFollowUpQuickSweep_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -982,12 +982,12 @@ export const formulas = {
       damageType1: 'assistFollowUp',
       attribute: 'physical',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpQuickSweep_0_dmg',
+      name: 'AssistFollowUpQuickSweep_0',
     },
   },
-  AssistFollowUpQuickSweep_0_daze: {
+  'AssistFollowUpQuickSweep_0:dazeBuildup': {
     sheet: 'Corin',
-    name: 'AssistFollowUpQuickSweep_0_daze',
+    name: 'AssistFollowUpQuickSweep_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -996,12 +996,12 @@ export const formulas = {
       damageType1: 'assistFollowUp',
       attribute: 'physical',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpQuickSweep_0_daze',
+      name: 'AssistFollowUpQuickSweep_0',
     },
   },
-  AssistFollowUpQuickSweep_0_anomBuildup: {
+  'AssistFollowUpQuickSweep_0:anomBuildup': {
     sheet: 'Corin',
-    name: 'AssistFollowUpQuickSweep_0_anomBuildup',
+    name: 'AssistFollowUpQuickSweep_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1010,7 +1010,7 @@ export const formulas = {
       damageType1: 'assistFollowUp',
       attribute: 'physical',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpQuickSweep_0_anomBuildup',
+      name: 'AssistFollowUpQuickSweep_0',
     },
   },
   m6_dmg: {

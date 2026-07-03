@@ -89,9 +89,9 @@ export const formulas = {
       name: 'dazeInst',
     },
   },
-  BasicAttackCapriccio_0_dmg: {
+  'BasicAttackCapriccio_0:standardDmg': {
     sheet: 'AstraYao',
-    name: 'BasicAttackCapriccio_0_dmg',
+    name: 'BasicAttackCapriccio_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -100,12 +100,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCapriccio_0_dmg',
+      name: 'BasicAttackCapriccio_0',
     },
   },
-  BasicAttackCapriccio_0_daze: {
+  'BasicAttackCapriccio_0:dazeBuildup': {
     sheet: 'AstraYao',
-    name: 'BasicAttackCapriccio_0_daze',
+    name: 'BasicAttackCapriccio_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -114,12 +114,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCapriccio_0_daze',
+      name: 'BasicAttackCapriccio_0',
     },
   },
-  BasicAttackCapriccio_0_anomBuildup: {
+  'BasicAttackCapriccio_0:anomBuildup': {
     sheet: 'AstraYao',
-    name: 'BasicAttackCapriccio_0_anomBuildup',
+    name: 'BasicAttackCapriccio_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -128,12 +128,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCapriccio_0_anomBuildup',
+      name: 'BasicAttackCapriccio_0',
     },
   },
-  BasicAttackCapriccio_1_dmg: {
+  'BasicAttackCapriccio_1:standardDmg': {
     sheet: 'AstraYao',
-    name: 'BasicAttackCapriccio_1_dmg',
+    name: 'BasicAttackCapriccio_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -142,12 +142,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCapriccio_1_dmg',
+      name: 'BasicAttackCapriccio_1',
     },
   },
-  BasicAttackCapriccio_1_daze: {
+  'BasicAttackCapriccio_1:dazeBuildup': {
     sheet: 'AstraYao',
-    name: 'BasicAttackCapriccio_1_daze',
+    name: 'BasicAttackCapriccio_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -156,12 +156,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCapriccio_1_daze',
+      name: 'BasicAttackCapriccio_1',
     },
   },
-  BasicAttackCapriccio_1_anomBuildup: {
+  'BasicAttackCapriccio_1:anomBuildup': {
     sheet: 'AstraYao',
-    name: 'BasicAttackCapriccio_1_anomBuildup',
+    name: 'BasicAttackCapriccio_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -170,12 +170,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCapriccio_1_anomBuildup',
+      name: 'BasicAttackCapriccio_1',
     },
   },
-  BasicAttackCapriccio_2_dmg: {
+  'BasicAttackCapriccio_2:standardDmg': {
     sheet: 'AstraYao',
-    name: 'BasicAttackCapriccio_2_dmg',
+    name: 'BasicAttackCapriccio_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -184,12 +184,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCapriccio_2_dmg',
+      name: 'BasicAttackCapriccio_2',
     },
   },
-  BasicAttackCapriccio_2_daze: {
+  'BasicAttackCapriccio_2:dazeBuildup': {
     sheet: 'AstraYao',
-    name: 'BasicAttackCapriccio_2_daze',
+    name: 'BasicAttackCapriccio_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -198,12 +198,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCapriccio_2_daze',
+      name: 'BasicAttackCapriccio_2',
     },
   },
-  BasicAttackCapriccio_2_anomBuildup: {
+  'BasicAttackCapriccio_2:anomBuildup': {
     sheet: 'AstraYao',
-    name: 'BasicAttackCapriccio_2_anomBuildup',
+    name: 'BasicAttackCapriccio_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -212,12 +212,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCapriccio_2_anomBuildup',
+      name: 'BasicAttackCapriccio_2',
     },
   },
-  BasicAttackCapriccio_3_dmg: {
+  'BasicAttackCapriccio_3:standardDmg': {
     sheet: 'AstraYao',
-    name: 'BasicAttackCapriccio_3_dmg',
+    name: 'BasicAttackCapriccio_3:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -226,12 +226,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCapriccio_3_dmg',
+      name: 'BasicAttackCapriccio_3',
     },
   },
-  BasicAttackCapriccio_3_daze: {
+  'BasicAttackCapriccio_3:dazeBuildup': {
     sheet: 'AstraYao',
-    name: 'BasicAttackCapriccio_3_daze',
+    name: 'BasicAttackCapriccio_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -240,12 +240,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCapriccio_3_daze',
+      name: 'BasicAttackCapriccio_3',
     },
   },
-  BasicAttackCapriccio_3_anomBuildup: {
+  'BasicAttackCapriccio_3:anomBuildup': {
     sheet: 'AstraYao',
-    name: 'BasicAttackCapriccio_3_anomBuildup',
+    name: 'BasicAttackCapriccio_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -254,12 +254,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCapriccio_3_anomBuildup',
+      name: 'BasicAttackCapriccio_3',
     },
   },
-  BasicAttackInterlude_0_dmg: {
+  'BasicAttackInterlude_0:standardDmg': {
     sheet: 'AstraYao',
-    name: 'BasicAttackInterlude_0_dmg',
+    name: 'BasicAttackInterlude_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -268,12 +268,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackInterlude_0_dmg',
+      name: 'BasicAttackInterlude_0',
     },
   },
-  BasicAttackInterlude_0_daze: {
+  'BasicAttackInterlude_0:dazeBuildup': {
     sheet: 'AstraYao',
-    name: 'BasicAttackInterlude_0_daze',
+    name: 'BasicAttackInterlude_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -282,12 +282,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackInterlude_0_daze',
+      name: 'BasicAttackInterlude_0',
     },
   },
-  BasicAttackInterlude_0_anomBuildup: {
+  'BasicAttackInterlude_0:anomBuildup': {
     sheet: 'AstraYao',
-    name: 'BasicAttackInterlude_0_anomBuildup',
+    name: 'BasicAttackInterlude_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -296,12 +296,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackInterlude_0_anomBuildup',
+      name: 'BasicAttackInterlude_0',
     },
   },
-  BasicAttackChorus_0_dmg: {
+  'BasicAttackChorus_0:standardDmg': {
     sheet: 'AstraYao',
-    name: 'BasicAttackChorus_0_dmg',
+    name: 'BasicAttackChorus_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -310,12 +310,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackChorus_0_dmg',
+      name: 'BasicAttackChorus_0',
     },
   },
-  BasicAttackChorus_0_daze: {
+  'BasicAttackChorus_0:dazeBuildup': {
     sheet: 'AstraYao',
-    name: 'BasicAttackChorus_0_daze',
+    name: 'BasicAttackChorus_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -324,12 +324,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackChorus_0_daze',
+      name: 'BasicAttackChorus_0',
     },
   },
-  BasicAttackChorus_0_anomBuildup: {
+  'BasicAttackChorus_0:anomBuildup': {
     sheet: 'AstraYao',
-    name: 'BasicAttackChorus_0_anomBuildup',
+    name: 'BasicAttackChorus_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -338,12 +338,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackChorus_0_anomBuildup',
+      name: 'BasicAttackChorus_0',
     },
   },
-  BasicAttackFinale_0_dmg: {
+  'BasicAttackFinale_0:standardDmg': {
     sheet: 'AstraYao',
-    name: 'BasicAttackFinale_0_dmg',
+    name: 'BasicAttackFinale_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -352,12 +352,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackFinale_0_dmg',
+      name: 'BasicAttackFinale_0',
     },
   },
-  BasicAttackFinale_0_daze: {
+  'BasicAttackFinale_0:dazeBuildup': {
     sheet: 'AstraYao',
-    name: 'BasicAttackFinale_0_daze',
+    name: 'BasicAttackFinale_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -366,12 +366,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackFinale_0_daze',
+      name: 'BasicAttackFinale_0',
     },
   },
-  BasicAttackFinale_0_anomBuildup: {
+  'BasicAttackFinale_0:anomBuildup': {
     sheet: 'AstraYao',
-    name: 'BasicAttackFinale_0_anomBuildup',
+    name: 'BasicAttackFinale_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -380,12 +380,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackFinale_0_anomBuildup',
+      name: 'BasicAttackFinale_0',
     },
   },
-  DashAttackLunarEclipseMelody_0_dmg: {
+  'DashAttackLunarEclipseMelody_0:standardDmg': {
     sheet: 'AstraYao',
-    name: 'DashAttackLunarEclipseMelody_0_dmg',
+    name: 'DashAttackLunarEclipseMelody_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -394,12 +394,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackLunarEclipseMelody_0_dmg',
+      name: 'DashAttackLunarEclipseMelody_0',
     },
   },
-  DashAttackLunarEclipseMelody_0_daze: {
+  'DashAttackLunarEclipseMelody_0:dazeBuildup': {
     sheet: 'AstraYao',
-    name: 'DashAttackLunarEclipseMelody_0_daze',
+    name: 'DashAttackLunarEclipseMelody_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -408,12 +408,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackLunarEclipseMelody_0_daze',
+      name: 'DashAttackLunarEclipseMelody_0',
     },
   },
-  DashAttackLunarEclipseMelody_0_anomBuildup: {
+  'DashAttackLunarEclipseMelody_0:anomBuildup': {
     sheet: 'AstraYao',
-    name: 'DashAttackLunarEclipseMelody_0_anomBuildup',
+    name: 'DashAttackLunarEclipseMelody_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -422,12 +422,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackLunarEclipseMelody_0_anomBuildup',
+      name: 'DashAttackLunarEclipseMelody_0',
     },
   },
-  DodgeCounterUmbrellaWaltz_0_dmg: {
+  'DodgeCounterUmbrellaWaltz_0:standardDmg': {
     sheet: 'AstraYao',
-    name: 'DodgeCounterUmbrellaWaltz_0_dmg',
+    name: 'DodgeCounterUmbrellaWaltz_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -436,12 +436,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterUmbrellaWaltz_0_dmg',
+      name: 'DodgeCounterUmbrellaWaltz_0',
     },
   },
-  DodgeCounterUmbrellaWaltz_0_daze: {
+  'DodgeCounterUmbrellaWaltz_0:dazeBuildup': {
     sheet: 'AstraYao',
-    name: 'DodgeCounterUmbrellaWaltz_0_daze',
+    name: 'DodgeCounterUmbrellaWaltz_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -450,12 +450,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterUmbrellaWaltz_0_daze',
+      name: 'DodgeCounterUmbrellaWaltz_0',
     },
   },
-  DodgeCounterUmbrellaWaltz_0_anomBuildup: {
+  'DodgeCounterUmbrellaWaltz_0:anomBuildup': {
     sheet: 'AstraYao',
-    name: 'DodgeCounterUmbrellaWaltz_0_anomBuildup',
+    name: 'DodgeCounterUmbrellaWaltz_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -464,12 +464,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterUmbrellaWaltz_0_anomBuildup',
+      name: 'DodgeCounterUmbrellaWaltz_0',
     },
   },
-  SpecialAttackWindchimesOaths_0_dmg: {
+  'SpecialAttackWindchimesOaths_0:standardDmg': {
     sheet: 'AstraYao',
-    name: 'SpecialAttackWindchimesOaths_0_dmg',
+    name: 'SpecialAttackWindchimesOaths_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -478,12 +478,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackWindchimesOaths_0_dmg',
+      name: 'SpecialAttackWindchimesOaths_0',
     },
   },
-  SpecialAttackWindchimesOaths_0_daze: {
+  'SpecialAttackWindchimesOaths_0:dazeBuildup': {
     sheet: 'AstraYao',
-    name: 'SpecialAttackWindchimesOaths_0_daze',
+    name: 'SpecialAttackWindchimesOaths_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -492,12 +492,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackWindchimesOaths_0_daze',
+      name: 'SpecialAttackWindchimesOaths_0',
     },
   },
-  SpecialAttackWindchimesOaths_0_anomBuildup: {
+  'SpecialAttackWindchimesOaths_0:anomBuildup': {
     sheet: 'AstraYao',
-    name: 'SpecialAttackWindchimesOaths_0_anomBuildup',
+    name: 'SpecialAttackWindchimesOaths_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -506,12 +506,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackWindchimesOaths_0_anomBuildup',
+      name: 'SpecialAttackWindchimesOaths_0',
     },
   },
-  Chord_0_dmg: {
+  'Chord_0:standardDmg': {
     sheet: 'AstraYao',
-    name: 'Chord_0_dmg',
+    name: 'Chord_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -520,12 +520,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'Chord_0_dmg',
+      name: 'Chord_0',
     },
   },
-  Chord_0_daze: {
+  'Chord_0:dazeBuildup': {
     sheet: 'AstraYao',
-    name: 'Chord_0_daze',
+    name: 'Chord_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -534,12 +534,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'Chord_0_daze',
+      name: 'Chord_0',
     },
   },
-  Chord_0_anomBuildup: {
+  'Chord_0:anomBuildup': {
     sheet: 'AstraYao',
-    name: 'Chord_0_anomBuildup',
+    name: 'Chord_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -548,12 +548,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'Chord_0_anomBuildup',
+      name: 'Chord_0',
     },
   },
-  Chord_1_dmg: {
+  'Chord_1:standardDmg': {
     sheet: 'AstraYao',
-    name: 'Chord_1_dmg',
+    name: 'Chord_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -562,12 +562,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'Chord_1_dmg',
+      name: 'Chord_1',
     },
   },
-  Chord_1_daze: {
+  'Chord_1:dazeBuildup': {
     sheet: 'AstraYao',
-    name: 'Chord_1_daze',
+    name: 'Chord_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -576,12 +576,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'Chord_1_daze',
+      name: 'Chord_1',
     },
   },
-  Chord_1_anomBuildup: {
+  'Chord_1:anomBuildup': {
     sheet: 'AstraYao',
-    name: 'Chord_1_anomBuildup',
+    name: 'Chord_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -590,12 +590,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'Chord_1_anomBuildup',
+      name: 'Chord_1',
     },
   },
-  ChainAttackTipsyConcerto_0_dmg: {
+  'ChainAttackTipsyConcerto_0:standardDmg': {
     sheet: 'AstraYao',
-    name: 'ChainAttackTipsyConcerto_0_dmg',
+    name: 'ChainAttackTipsyConcerto_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -604,12 +604,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackTipsyConcerto_0_dmg',
+      name: 'ChainAttackTipsyConcerto_0',
     },
   },
-  ChainAttackTipsyConcerto_0_daze: {
+  'ChainAttackTipsyConcerto_0:dazeBuildup': {
     sheet: 'AstraYao',
-    name: 'ChainAttackTipsyConcerto_0_daze',
+    name: 'ChainAttackTipsyConcerto_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -618,12 +618,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackTipsyConcerto_0_daze',
+      name: 'ChainAttackTipsyConcerto_0',
     },
   },
-  ChainAttackTipsyConcerto_0_anomBuildup: {
+  'ChainAttackTipsyConcerto_0:anomBuildup': {
     sheet: 'AstraYao',
-    name: 'ChainAttackTipsyConcerto_0_anomBuildup',
+    name: 'ChainAttackTipsyConcerto_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -632,12 +632,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackTipsyConcerto_0_anomBuildup',
+      name: 'ChainAttackTipsyConcerto_0',
     },
   },
-  UltimateFantasianSonata_0_dmg: {
+  'UltimateFantasianSonata_0:standardDmg': {
     sheet: 'AstraYao',
-    name: 'UltimateFantasianSonata_0_dmg',
+    name: 'UltimateFantasianSonata_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -646,12 +646,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateFantasianSonata_0_dmg',
+      name: 'UltimateFantasianSonata_0',
     },
   },
-  UltimateFantasianSonata_0_daze: {
+  'UltimateFantasianSonata_0:dazeBuildup': {
     sheet: 'AstraYao',
-    name: 'UltimateFantasianSonata_0_daze',
+    name: 'UltimateFantasianSonata_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -660,12 +660,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateFantasianSonata_0_daze',
+      name: 'UltimateFantasianSonata_0',
     },
   },
-  UltimateFantasianSonata_0_anomBuildup: {
+  'UltimateFantasianSonata_0:anomBuildup': {
     sheet: 'AstraYao',
-    name: 'UltimateFantasianSonata_0_anomBuildup',
+    name: 'UltimateFantasianSonata_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -674,12 +674,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateFantasianSonata_0_anomBuildup',
+      name: 'UltimateFantasianSonata_0',
     },
   },
-  QuickAssistOneLuminousSky_0_dmg: {
+  'QuickAssistOneLuminousSky_0:standardDmg': {
     sheet: 'AstraYao',
-    name: 'QuickAssistOneLuminousSky_0_dmg',
+    name: 'QuickAssistOneLuminousSky_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -688,12 +688,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistOneLuminousSky_0_dmg',
+      name: 'QuickAssistOneLuminousSky_0',
     },
   },
-  QuickAssistOneLuminousSky_0_daze: {
+  'QuickAssistOneLuminousSky_0:dazeBuildup': {
     sheet: 'AstraYao',
-    name: 'QuickAssistOneLuminousSky_0_daze',
+    name: 'QuickAssistOneLuminousSky_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -702,12 +702,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistOneLuminousSky_0_daze',
+      name: 'QuickAssistOneLuminousSky_0',
     },
   },
-  QuickAssistOneLuminousSky_0_anomBuildup: {
+  'QuickAssistOneLuminousSky_0:anomBuildup': {
     sheet: 'AstraYao',
-    name: 'QuickAssistOneLuminousSky_0_anomBuildup',
+    name: 'QuickAssistOneLuminousSky_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -716,12 +716,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistOneLuminousSky_0_anomBuildup',
+      name: 'QuickAssistOneLuminousSky_0',
     },
   },
-  AssistFollowUpThreeLifetimesOfFate_0_dmg: {
+  'AssistFollowUpThreeLifetimesOfFate_0:standardDmg': {
     sheet: 'AstraYao',
-    name: 'AssistFollowUpThreeLifetimesOfFate_0_dmg',
+    name: 'AssistFollowUpThreeLifetimesOfFate_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -730,12 +730,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpThreeLifetimesOfFate_0_dmg',
+      name: 'AssistFollowUpThreeLifetimesOfFate_0',
     },
   },
-  AssistFollowUpThreeLifetimesOfFate_0_daze: {
+  'AssistFollowUpThreeLifetimesOfFate_0:dazeBuildup': {
     sheet: 'AstraYao',
-    name: 'AssistFollowUpThreeLifetimesOfFate_0_daze',
+    name: 'AssistFollowUpThreeLifetimesOfFate_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -744,12 +744,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpThreeLifetimesOfFate_0_daze',
+      name: 'AssistFollowUpThreeLifetimesOfFate_0',
     },
   },
-  AssistFollowUpThreeLifetimesOfFate_0_anomBuildup: {
+  'AssistFollowUpThreeLifetimesOfFate_0:anomBuildup': {
     sheet: 'AstraYao',
-    name: 'AssistFollowUpThreeLifetimesOfFate_0_anomBuildup',
+    name: 'AssistFollowUpThreeLifetimesOfFate_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -758,7 +758,7 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpThreeLifetimesOfFate_0_anomBuildup',
+      name: 'AssistFollowUpThreeLifetimesOfFate_0',
     },
   },
   ultimate_heal: {

@@ -90,9 +90,9 @@ export const formulas = {
       name: 'dazeInst',
     },
   },
-  BasicAttackToweringPeaks_0_dmg: {
+  'BasicAttackToweringPeaks_0:sheerDmg': {
     sheet: 'Banyue',
-    name: 'BasicAttackToweringPeaks_0_dmg',
+    name: 'BasicAttackToweringPeaks_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -101,12 +101,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackToweringPeaks_0_dmg',
+      name: 'BasicAttackToweringPeaks_0',
     },
   },
-  BasicAttackToweringPeaks_0_daze: {
+  'BasicAttackToweringPeaks_0:dazeBuildup': {
     sheet: 'Banyue',
-    name: 'BasicAttackToweringPeaks_0_daze',
+    name: 'BasicAttackToweringPeaks_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -115,12 +115,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackToweringPeaks_0_daze',
+      name: 'BasicAttackToweringPeaks_0',
     },
   },
-  BasicAttackToweringPeaks_0_anomBuildup: {
+  'BasicAttackToweringPeaks_0:anomBuildup': {
     sheet: 'Banyue',
-    name: 'BasicAttackToweringPeaks_0_anomBuildup',
+    name: 'BasicAttackToweringPeaks_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -129,12 +129,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackToweringPeaks_0_anomBuildup',
+      name: 'BasicAttackToweringPeaks_0',
     },
   },
-  BasicAttackToweringPeaks_1_dmg: {
+  'BasicAttackToweringPeaks_1:sheerDmg': {
     sheet: 'Banyue',
-    name: 'BasicAttackToweringPeaks_1_dmg',
+    name: 'BasicAttackToweringPeaks_1:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -143,12 +143,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackToweringPeaks_1_dmg',
+      name: 'BasicAttackToweringPeaks_1',
     },
   },
-  BasicAttackToweringPeaks_1_daze: {
+  'BasicAttackToweringPeaks_1:dazeBuildup': {
     sheet: 'Banyue',
-    name: 'BasicAttackToweringPeaks_1_daze',
+    name: 'BasicAttackToweringPeaks_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -157,12 +157,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackToweringPeaks_1_daze',
+      name: 'BasicAttackToweringPeaks_1',
     },
   },
-  BasicAttackToweringPeaks_1_anomBuildup: {
+  'BasicAttackToweringPeaks_1:anomBuildup': {
     sheet: 'Banyue',
-    name: 'BasicAttackToweringPeaks_1_anomBuildup',
+    name: 'BasicAttackToweringPeaks_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -171,12 +171,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackToweringPeaks_1_anomBuildup',
+      name: 'BasicAttackToweringPeaks_1',
     },
   },
-  BasicAttackToweringPeaks_2_dmg: {
+  'BasicAttackToweringPeaks_2:sheerDmg': {
     sheet: 'Banyue',
-    name: 'BasicAttackToweringPeaks_2_dmg',
+    name: 'BasicAttackToweringPeaks_2:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -185,12 +185,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackToweringPeaks_2_dmg',
+      name: 'BasicAttackToweringPeaks_2',
     },
   },
-  BasicAttackToweringPeaks_2_daze: {
+  'BasicAttackToweringPeaks_2:dazeBuildup': {
     sheet: 'Banyue',
-    name: 'BasicAttackToweringPeaks_2_daze',
+    name: 'BasicAttackToweringPeaks_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -199,12 +199,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackToweringPeaks_2_daze',
+      name: 'BasicAttackToweringPeaks_2',
     },
   },
-  BasicAttackToweringPeaks_2_anomBuildup: {
+  'BasicAttackToweringPeaks_2:anomBuildup': {
     sheet: 'Banyue',
-    name: 'BasicAttackToweringPeaks_2_anomBuildup',
+    name: 'BasicAttackToweringPeaks_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -213,12 +213,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackToweringPeaks_2_anomBuildup',
+      name: 'BasicAttackToweringPeaks_2',
     },
   },
-  BasicAttackToweringPeaks_3_dmg: {
+  'BasicAttackToweringPeaks_3:sheerDmg': {
     sheet: 'Banyue',
-    name: 'BasicAttackToweringPeaks_3_dmg',
+    name: 'BasicAttackToweringPeaks_3:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -227,12 +227,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackToweringPeaks_3_dmg',
+      name: 'BasicAttackToweringPeaks_3',
     },
   },
-  BasicAttackToweringPeaks_3_daze: {
+  'BasicAttackToweringPeaks_3:dazeBuildup': {
     sheet: 'Banyue',
-    name: 'BasicAttackToweringPeaks_3_daze',
+    name: 'BasicAttackToweringPeaks_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -241,12 +241,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackToweringPeaks_3_daze',
+      name: 'BasicAttackToweringPeaks_3',
     },
   },
-  BasicAttackToweringPeaks_3_anomBuildup: {
+  'BasicAttackToweringPeaks_3:anomBuildup': {
     sheet: 'Banyue',
-    name: 'BasicAttackToweringPeaks_3_anomBuildup',
+    name: 'BasicAttackToweringPeaks_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -255,12 +255,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackToweringPeaks_3_anomBuildup',
+      name: 'BasicAttackToweringPeaks_3',
     },
   },
-  BasicAttackMajesticSummit_0_dmg: {
+  'BasicAttackMajesticSummit_0:sheerDmg': {
     sheet: 'Banyue',
-    name: 'BasicAttackMajesticSummit_0_dmg',
+    name: 'BasicAttackMajesticSummit_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -269,12 +269,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackMajesticSummit_0_dmg',
+      name: 'BasicAttackMajesticSummit_0',
     },
   },
-  BasicAttackMajesticSummit_0_daze: {
+  'BasicAttackMajesticSummit_0:dazeBuildup': {
     sheet: 'Banyue',
-    name: 'BasicAttackMajesticSummit_0_daze',
+    name: 'BasicAttackMajesticSummit_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -283,12 +283,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackMajesticSummit_0_daze',
+      name: 'BasicAttackMajesticSummit_0',
     },
   },
-  BasicAttackMajesticSummit_0_anomBuildup: {
+  'BasicAttackMajesticSummit_0:anomBuildup': {
     sheet: 'Banyue',
-    name: 'BasicAttackMajesticSummit_0_anomBuildup',
+    name: 'BasicAttackMajesticSummit_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -297,12 +297,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackMajesticSummit_0_anomBuildup',
+      name: 'BasicAttackMajesticSummit_0',
     },
   },
-  BasicAttackMajesticSummit_1_dmg: {
+  'BasicAttackMajesticSummit_1:sheerDmg': {
     sheet: 'Banyue',
-    name: 'BasicAttackMajesticSummit_1_dmg',
+    name: 'BasicAttackMajesticSummit_1:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -311,12 +311,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackMajesticSummit_1_dmg',
+      name: 'BasicAttackMajesticSummit_1',
     },
   },
-  BasicAttackMajesticSummit_1_daze: {
+  'BasicAttackMajesticSummit_1:dazeBuildup': {
     sheet: 'Banyue',
-    name: 'BasicAttackMajesticSummit_1_daze',
+    name: 'BasicAttackMajesticSummit_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -325,12 +325,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackMajesticSummit_1_daze',
+      name: 'BasicAttackMajesticSummit_1',
     },
   },
-  BasicAttackMajesticSummit_1_anomBuildup: {
+  'BasicAttackMajesticSummit_1:anomBuildup': {
     sheet: 'Banyue',
-    name: 'BasicAttackMajesticSummit_1_anomBuildup',
+    name: 'BasicAttackMajesticSummit_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -339,12 +339,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackMajesticSummit_1_anomBuildup',
+      name: 'BasicAttackMajesticSummit_1',
     },
   },
-  BasicAttackMajesticSummit_2_dmg: {
+  'BasicAttackMajesticSummit_2:sheerDmg': {
     sheet: 'Banyue',
-    name: 'BasicAttackMajesticSummit_2_dmg',
+    name: 'BasicAttackMajesticSummit_2:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -353,12 +353,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackMajesticSummit_2_dmg',
+      name: 'BasicAttackMajesticSummit_2',
     },
   },
-  BasicAttackMajesticSummit_2_daze: {
+  'BasicAttackMajesticSummit_2:dazeBuildup': {
     sheet: 'Banyue',
-    name: 'BasicAttackMajesticSummit_2_daze',
+    name: 'BasicAttackMajesticSummit_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -367,12 +367,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackMajesticSummit_2_daze',
+      name: 'BasicAttackMajesticSummit_2',
     },
   },
-  BasicAttackMajesticSummit_2_anomBuildup: {
+  'BasicAttackMajesticSummit_2:anomBuildup': {
     sheet: 'Banyue',
-    name: 'BasicAttackMajesticSummit_2_anomBuildup',
+    name: 'BasicAttackMajesticSummit_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -381,12 +381,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackMajesticSummit_2_anomBuildup',
+      name: 'BasicAttackMajesticSummit_2',
     },
   },
-  BasicAttackMajesticSummit_3_dmg: {
+  'BasicAttackMajesticSummit_3:sheerDmg': {
     sheet: 'Banyue',
-    name: 'BasicAttackMajesticSummit_3_dmg',
+    name: 'BasicAttackMajesticSummit_3:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -395,12 +395,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackMajesticSummit_3_dmg',
+      name: 'BasicAttackMajesticSummit_3',
     },
   },
-  BasicAttackMajesticSummit_3_daze: {
+  'BasicAttackMajesticSummit_3:dazeBuildup': {
     sheet: 'Banyue',
-    name: 'BasicAttackMajesticSummit_3_daze',
+    name: 'BasicAttackMajesticSummit_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -409,12 +409,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackMajesticSummit_3_daze',
+      name: 'BasicAttackMajesticSummit_3',
     },
   },
-  BasicAttackMajesticSummit_3_anomBuildup: {
+  'BasicAttackMajesticSummit_3:anomBuildup': {
     sheet: 'Banyue',
-    name: 'BasicAttackMajesticSummit_3_anomBuildup',
+    name: 'BasicAttackMajesticSummit_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -423,12 +423,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackMajesticSummit_3_anomBuildup',
+      name: 'BasicAttackMajesticSummit_3',
     },
   },
-  BasicAttackImmolate_0_dmg: {
+  'BasicAttackImmolate_0:sheerDmg': {
     sheet: 'Banyue',
-    name: 'BasicAttackImmolate_0_dmg',
+    name: 'BasicAttackImmolate_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -437,12 +437,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackImmolate_0_dmg',
+      name: 'BasicAttackImmolate_0',
     },
   },
-  BasicAttackImmolate_0_daze: {
+  'BasicAttackImmolate_0:dazeBuildup': {
     sheet: 'Banyue',
-    name: 'BasicAttackImmolate_0_daze',
+    name: 'BasicAttackImmolate_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -451,12 +451,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackImmolate_0_daze',
+      name: 'BasicAttackImmolate_0',
     },
   },
-  BasicAttackImmolate_0_anomBuildup: {
+  'BasicAttackImmolate_0:anomBuildup': {
     sheet: 'Banyue',
-    name: 'BasicAttackImmolate_0_anomBuildup',
+    name: 'BasicAttackImmolate_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -465,12 +465,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackImmolate_0_anomBuildup',
+      name: 'BasicAttackImmolate_0',
     },
   },
-  BasicAttackTopplingMountain_0_dmg: {
+  'BasicAttackTopplingMountain_0:sheerDmg': {
     sheet: 'Banyue',
-    name: 'BasicAttackTopplingMountain_0_dmg',
+    name: 'BasicAttackTopplingMountain_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -479,12 +479,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackTopplingMountain_0_dmg',
+      name: 'BasicAttackTopplingMountain_0',
     },
   },
-  BasicAttackTopplingMountain_0_daze: {
+  'BasicAttackTopplingMountain_0:dazeBuildup': {
     sheet: 'Banyue',
-    name: 'BasicAttackTopplingMountain_0_daze',
+    name: 'BasicAttackTopplingMountain_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -493,12 +493,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackTopplingMountain_0_daze',
+      name: 'BasicAttackTopplingMountain_0',
     },
   },
-  BasicAttackTopplingMountain_0_anomBuildup: {
+  'BasicAttackTopplingMountain_0:anomBuildup': {
     sheet: 'Banyue',
-    name: 'BasicAttackTopplingMountain_0_anomBuildup',
+    name: 'BasicAttackTopplingMountain_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -507,12 +507,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackTopplingMountain_0_anomBuildup',
+      name: 'BasicAttackTopplingMountain_0',
     },
   },
-  BasicAttackCrushingPeaks_0_dmg: {
+  'BasicAttackCrushingPeaks_0:sheerDmg': {
     sheet: 'Banyue',
-    name: 'BasicAttackCrushingPeaks_0_dmg',
+    name: 'BasicAttackCrushingPeaks_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -521,12 +521,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCrushingPeaks_0_dmg',
+      name: 'BasicAttackCrushingPeaks_0',
     },
   },
-  BasicAttackCrushingPeaks_0_daze: {
+  'BasicAttackCrushingPeaks_0:dazeBuildup': {
     sheet: 'Banyue',
-    name: 'BasicAttackCrushingPeaks_0_daze',
+    name: 'BasicAttackCrushingPeaks_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -535,12 +535,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCrushingPeaks_0_daze',
+      name: 'BasicAttackCrushingPeaks_0',
     },
   },
-  BasicAttackCrushingPeaks_0_anomBuildup: {
+  'BasicAttackCrushingPeaks_0:anomBuildup': {
     sheet: 'Banyue',
-    name: 'BasicAttackCrushingPeaks_0_anomBuildup',
+    name: 'BasicAttackCrushingPeaks_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -549,12 +549,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCrushingPeaks_0_anomBuildup',
+      name: 'BasicAttackCrushingPeaks_0',
     },
   },
-  DodgeImmovableMountain_0_dmg: {
+  'DodgeImmovableMountain_0:sheerDmg': {
     sheet: 'Banyue',
-    name: 'DodgeImmovableMountain_0_dmg',
+    name: 'DodgeImmovableMountain_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -563,12 +563,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeImmovableMountain_0_dmg',
+      name: 'DodgeImmovableMountain_0',
     },
   },
-  DodgeImmovableMountain_0_daze: {
+  'DodgeImmovableMountain_0:dazeBuildup': {
     sheet: 'Banyue',
-    name: 'DodgeImmovableMountain_0_daze',
+    name: 'DodgeImmovableMountain_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -577,12 +577,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeImmovableMountain_0_daze',
+      name: 'DodgeImmovableMountain_0',
     },
   },
-  DodgeImmovableMountain_0_anomBuildup: {
+  'DodgeImmovableMountain_0:anomBuildup': {
     sheet: 'Banyue',
-    name: 'DodgeImmovableMountain_0_anomBuildup',
+    name: 'DodgeImmovableMountain_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -591,12 +591,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeImmovableMountain_0_anomBuildup',
+      name: 'DodgeImmovableMountain_0',
     },
   },
-  DashAttackScatteringSands_0_dmg: {
+  'DashAttackScatteringSands_0:sheerDmg': {
     sheet: 'Banyue',
-    name: 'DashAttackScatteringSands_0_dmg',
+    name: 'DashAttackScatteringSands_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -605,12 +605,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackScatteringSands_0_dmg',
+      name: 'DashAttackScatteringSands_0',
     },
   },
-  DashAttackScatteringSands_0_daze: {
+  'DashAttackScatteringSands_0:dazeBuildup': {
     sheet: 'Banyue',
-    name: 'DashAttackScatteringSands_0_daze',
+    name: 'DashAttackScatteringSands_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -619,12 +619,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackScatteringSands_0_daze',
+      name: 'DashAttackScatteringSands_0',
     },
   },
-  DashAttackScatteringSands_0_anomBuildup: {
+  'DashAttackScatteringSands_0:anomBuildup': {
     sheet: 'Banyue',
-    name: 'DashAttackScatteringSands_0_anomBuildup',
+    name: 'DashAttackScatteringSands_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -633,12 +633,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackScatteringSands_0_anomBuildup',
+      name: 'DashAttackScatteringSands_0',
     },
   },
-  DodgeCounterStoneburst_0_dmg: {
+  'DodgeCounterStoneburst_0:sheerDmg': {
     sheet: 'Banyue',
-    name: 'DodgeCounterStoneburst_0_dmg',
+    name: 'DodgeCounterStoneburst_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -647,12 +647,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterStoneburst_0_dmg',
+      name: 'DodgeCounterStoneburst_0',
     },
   },
-  DodgeCounterStoneburst_0_daze: {
+  'DodgeCounterStoneburst_0:dazeBuildup': {
     sheet: 'Banyue',
-    name: 'DodgeCounterStoneburst_0_daze',
+    name: 'DodgeCounterStoneburst_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -661,12 +661,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterStoneburst_0_daze',
+      name: 'DodgeCounterStoneburst_0',
     },
   },
-  DodgeCounterStoneburst_0_anomBuildup: {
+  'DodgeCounterStoneburst_0:anomBuildup': {
     sheet: 'Banyue',
-    name: 'DodgeCounterStoneburst_0_anomBuildup',
+    name: 'DodgeCounterStoneburst_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -675,12 +675,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterStoneburst_0_anomBuildup',
+      name: 'DodgeCounterStoneburst_0',
     },
   },
-  EXSpecialAttackMountainTremor_0_dmg: {
+  'EXSpecialAttackMountainTremor_0:sheerDmg': {
     sheet: 'Banyue',
-    name: 'EXSpecialAttackMountainTremor_0_dmg',
+    name: 'EXSpecialAttackMountainTremor_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -689,12 +689,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackMountainTremor_0_dmg',
+      name: 'EXSpecialAttackMountainTremor_0',
     },
   },
-  EXSpecialAttackMountainTremor_0_daze: {
+  'EXSpecialAttackMountainTremor_0:dazeBuildup': {
     sheet: 'Banyue',
-    name: 'EXSpecialAttackMountainTremor_0_daze',
+    name: 'EXSpecialAttackMountainTremor_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -703,12 +703,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackMountainTremor_0_daze',
+      name: 'EXSpecialAttackMountainTremor_0',
     },
   },
-  EXSpecialAttackMountainTremor_0_anomBuildup: {
+  'EXSpecialAttackMountainTremor_0:anomBuildup': {
     sheet: 'Banyue',
-    name: 'EXSpecialAttackMountainTremor_0_anomBuildup',
+    name: 'EXSpecialAttackMountainTremor_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -717,12 +717,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackMountainTremor_0_anomBuildup',
+      name: 'EXSpecialAttackMountainTremor_0',
     },
   },
-  EXSpecialAttackEarthShaker_0_dmg: {
+  'EXSpecialAttackEarthShaker_0:sheerDmg': {
     sheet: 'Banyue',
-    name: 'EXSpecialAttackEarthShaker_0_dmg',
+    name: 'EXSpecialAttackEarthShaker_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -731,12 +731,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackEarthShaker_0_dmg',
+      name: 'EXSpecialAttackEarthShaker_0',
     },
   },
-  EXSpecialAttackEarthShaker_0_daze: {
+  'EXSpecialAttackEarthShaker_0:dazeBuildup': {
     sheet: 'Banyue',
-    name: 'EXSpecialAttackEarthShaker_0_daze',
+    name: 'EXSpecialAttackEarthShaker_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -745,12 +745,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackEarthShaker_0_daze',
+      name: 'EXSpecialAttackEarthShaker_0',
     },
   },
-  EXSpecialAttackEarthShaker_0_anomBuildup: {
+  'EXSpecialAttackEarthShaker_0:anomBuildup': {
     sheet: 'Banyue',
-    name: 'EXSpecialAttackEarthShaker_0_anomBuildup',
+    name: 'EXSpecialAttackEarthShaker_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -759,12 +759,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackEarthShaker_0_anomBuildup',
+      name: 'EXSpecialAttackEarthShaker_0',
     },
   },
-  EXSpecialAttackLionsRoar_0_dmg: {
+  'EXSpecialAttackLionsRoar_0:sheerDmg': {
     sheet: 'Banyue',
-    name: 'EXSpecialAttackLionsRoar_0_dmg',
+    name: 'EXSpecialAttackLionsRoar_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -773,12 +773,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackLionsRoar_0_dmg',
+      name: 'EXSpecialAttackLionsRoar_0',
     },
   },
-  EXSpecialAttackLionsRoar_0_daze: {
+  'EXSpecialAttackLionsRoar_0:dazeBuildup': {
     sheet: 'Banyue',
-    name: 'EXSpecialAttackLionsRoar_0_daze',
+    name: 'EXSpecialAttackLionsRoar_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -787,12 +787,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackLionsRoar_0_daze',
+      name: 'EXSpecialAttackLionsRoar_0',
     },
   },
-  EXSpecialAttackLionsRoar_0_anomBuildup: {
+  'EXSpecialAttackLionsRoar_0:anomBuildup': {
     sheet: 'Banyue',
-    name: 'EXSpecialAttackLionsRoar_0_anomBuildup',
+    name: 'EXSpecialAttackLionsRoar_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -801,12 +801,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackLionsRoar_0_anomBuildup',
+      name: 'EXSpecialAttackLionsRoar_0',
     },
   },
-  EXSpecialAttackOnesPath_0_dmg: {
+  'EXSpecialAttackOnesPath_0:sheerDmg': {
     sheet: 'Banyue',
-    name: 'EXSpecialAttackOnesPath_0_dmg',
+    name: 'EXSpecialAttackOnesPath_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -815,12 +815,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackOnesPath_0_dmg',
+      name: 'EXSpecialAttackOnesPath_0',
     },
   },
-  EXSpecialAttackOnesPath_0_daze: {
+  'EXSpecialAttackOnesPath_0:dazeBuildup': {
     sheet: 'Banyue',
-    name: 'EXSpecialAttackOnesPath_0_daze',
+    name: 'EXSpecialAttackOnesPath_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -829,12 +829,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackOnesPath_0_daze',
+      name: 'EXSpecialAttackOnesPath_0',
     },
   },
-  EXSpecialAttackOnesPath_0_anomBuildup: {
+  'EXSpecialAttackOnesPath_0:anomBuildup': {
     sheet: 'Banyue',
-    name: 'EXSpecialAttackOnesPath_0_anomBuildup',
+    name: 'EXSpecialAttackOnesPath_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -843,12 +843,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackOnesPath_0_anomBuildup',
+      name: 'EXSpecialAttackOnesPath_0',
     },
   },
-  EXSpecialAttackLionsRoarWrath_0_dmg: {
+  'EXSpecialAttackLionsRoarWrath_0:sheerDmg': {
     sheet: 'Banyue',
-    name: 'EXSpecialAttackLionsRoarWrath_0_dmg',
+    name: 'EXSpecialAttackLionsRoarWrath_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -857,12 +857,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackLionsRoarWrath_0_dmg',
+      name: 'EXSpecialAttackLionsRoarWrath_0',
     },
   },
-  EXSpecialAttackLionsRoarWrath_0_daze: {
+  'EXSpecialAttackLionsRoarWrath_0:dazeBuildup': {
     sheet: 'Banyue',
-    name: 'EXSpecialAttackLionsRoarWrath_0_daze',
+    name: 'EXSpecialAttackLionsRoarWrath_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -871,12 +871,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackLionsRoarWrath_0_daze',
+      name: 'EXSpecialAttackLionsRoarWrath_0',
     },
   },
-  EXSpecialAttackLionsRoarWrath_0_anomBuildup: {
+  'EXSpecialAttackLionsRoarWrath_0:anomBuildup': {
     sheet: 'Banyue',
-    name: 'EXSpecialAttackLionsRoarWrath_0_anomBuildup',
+    name: 'EXSpecialAttackLionsRoarWrath_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -885,12 +885,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackLionsRoarWrath_0_anomBuildup',
+      name: 'EXSpecialAttackLionsRoarWrath_0',
     },
   },
-  EXSpecialAttackMountainTremorWrath_0_dmg: {
+  'EXSpecialAttackMountainTremorWrath_0:sheerDmg': {
     sheet: 'Banyue',
-    name: 'EXSpecialAttackMountainTremorWrath_0_dmg',
+    name: 'EXSpecialAttackMountainTremorWrath_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -899,12 +899,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackMountainTremorWrath_0_dmg',
+      name: 'EXSpecialAttackMountainTremorWrath_0',
     },
   },
-  EXSpecialAttackMountainTremorWrath_0_daze: {
+  'EXSpecialAttackMountainTremorWrath_0:dazeBuildup': {
     sheet: 'Banyue',
-    name: 'EXSpecialAttackMountainTremorWrath_0_daze',
+    name: 'EXSpecialAttackMountainTremorWrath_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -913,12 +913,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackMountainTremorWrath_0_daze',
+      name: 'EXSpecialAttackMountainTremorWrath_0',
     },
   },
-  EXSpecialAttackMountainTremorWrath_0_anomBuildup: {
+  'EXSpecialAttackMountainTremorWrath_0:anomBuildup': {
     sheet: 'Banyue',
-    name: 'EXSpecialAttackMountainTremorWrath_0_anomBuildup',
+    name: 'EXSpecialAttackMountainTremorWrath_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -927,12 +927,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackMountainTremorWrath_0_anomBuildup',
+      name: 'EXSpecialAttackMountainTremorWrath_0',
     },
   },
-  ChainAttackBlazingWrath_0_dmg: {
+  'ChainAttackBlazingWrath_0:sheerDmg': {
     sheet: 'Banyue',
-    name: 'ChainAttackBlazingWrath_0_dmg',
+    name: 'ChainAttackBlazingWrath_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -941,12 +941,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackBlazingWrath_0_dmg',
+      name: 'ChainAttackBlazingWrath_0',
     },
   },
-  ChainAttackBlazingWrath_0_daze: {
+  'ChainAttackBlazingWrath_0:dazeBuildup': {
     sheet: 'Banyue',
-    name: 'ChainAttackBlazingWrath_0_daze',
+    name: 'ChainAttackBlazingWrath_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -955,12 +955,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackBlazingWrath_0_daze',
+      name: 'ChainAttackBlazingWrath_0',
     },
   },
-  ChainAttackBlazingWrath_0_anomBuildup: {
+  'ChainAttackBlazingWrath_0:anomBuildup': {
     sheet: 'Banyue',
-    name: 'ChainAttackBlazingWrath_0_anomBuildup',
+    name: 'ChainAttackBlazingWrath_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -969,12 +969,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackBlazingWrath_0_anomBuildup',
+      name: 'ChainAttackBlazingWrath_0',
     },
   },
-  UltimateTheWorldTrembles_0_dmg: {
+  'UltimateTheWorldTrembles_0:sheerDmg': {
     sheet: 'Banyue',
-    name: 'UltimateTheWorldTrembles_0_dmg',
+    name: 'UltimateTheWorldTrembles_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -983,12 +983,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateTheWorldTrembles_0_dmg',
+      name: 'UltimateTheWorldTrembles_0',
     },
   },
-  UltimateTheWorldTrembles_0_daze: {
+  'UltimateTheWorldTrembles_0:dazeBuildup': {
     sheet: 'Banyue',
-    name: 'UltimateTheWorldTrembles_0_daze',
+    name: 'UltimateTheWorldTrembles_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -997,12 +997,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateTheWorldTrembles_0_daze',
+      name: 'UltimateTheWorldTrembles_0',
     },
   },
-  UltimateTheWorldTrembles_0_anomBuildup: {
+  'UltimateTheWorldTrembles_0:anomBuildup': {
     sheet: 'Banyue',
-    name: 'UltimateTheWorldTrembles_0_anomBuildup',
+    name: 'UltimateTheWorldTrembles_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1011,12 +1011,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateTheWorldTrembles_0_anomBuildup',
+      name: 'UltimateTheWorldTrembles_0',
     },
   },
-  QuickAssistBatholith_0_dmg: {
+  'QuickAssistBatholith_0:sheerDmg': {
     sheet: 'Banyue',
-    name: 'QuickAssistBatholith_0_dmg',
+    name: 'QuickAssistBatholith_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1025,12 +1025,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistBatholith_0_dmg',
+      name: 'QuickAssistBatholith_0',
     },
   },
-  QuickAssistBatholith_0_daze: {
+  'QuickAssistBatholith_0:dazeBuildup': {
     sheet: 'Banyue',
-    name: 'QuickAssistBatholith_0_daze',
+    name: 'QuickAssistBatholith_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1039,12 +1039,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistBatholith_0_daze',
+      name: 'QuickAssistBatholith_0',
     },
   },
-  QuickAssistBatholith_0_anomBuildup: {
+  'QuickAssistBatholith_0:anomBuildup': {
     sheet: 'Banyue',
-    name: 'QuickAssistBatholith_0_anomBuildup',
+    name: 'QuickAssistBatholith_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1053,12 +1053,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistBatholith_0_anomBuildup',
+      name: 'QuickAssistBatholith_0',
     },
   },
-  DefensiveAssistIronBastion_0_dmg: {
+  'DefensiveAssistIronBastion_0:sheerDmg': {
     sheet: 'Banyue',
-    name: 'DefensiveAssistIronBastion_0_dmg',
+    name: 'DefensiveAssistIronBastion_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1067,12 +1067,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIronBastion_0_dmg',
+      name: 'DefensiveAssistIronBastion_0',
     },
   },
-  DefensiveAssistIronBastion_0_daze: {
+  'DefensiveAssistIronBastion_0:dazeBuildup': {
     sheet: 'Banyue',
-    name: 'DefensiveAssistIronBastion_0_daze',
+    name: 'DefensiveAssistIronBastion_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1081,12 +1081,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIronBastion_0_daze',
+      name: 'DefensiveAssistIronBastion_0',
     },
   },
-  DefensiveAssistIronBastion_0_anomBuildup: {
+  'DefensiveAssistIronBastion_0:anomBuildup': {
     sheet: 'Banyue',
-    name: 'DefensiveAssistIronBastion_0_anomBuildup',
+    name: 'DefensiveAssistIronBastion_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1095,12 +1095,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIronBastion_0_anomBuildup',
+      name: 'DefensiveAssistIronBastion_0',
     },
   },
-  DefensiveAssistIronBastion_1_dmg: {
+  'DefensiveAssistIronBastion_1:sheerDmg': {
     sheet: 'Banyue',
-    name: 'DefensiveAssistIronBastion_1_dmg',
+    name: 'DefensiveAssistIronBastion_1:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1109,12 +1109,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIronBastion_1_dmg',
+      name: 'DefensiveAssistIronBastion_1',
     },
   },
-  DefensiveAssistIronBastion_1_daze: {
+  'DefensiveAssistIronBastion_1:dazeBuildup': {
     sheet: 'Banyue',
-    name: 'DefensiveAssistIronBastion_1_daze',
+    name: 'DefensiveAssistIronBastion_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1123,12 +1123,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIronBastion_1_daze',
+      name: 'DefensiveAssistIronBastion_1',
     },
   },
-  DefensiveAssistIronBastion_1_anomBuildup: {
+  'DefensiveAssistIronBastion_1:anomBuildup': {
     sheet: 'Banyue',
-    name: 'DefensiveAssistIronBastion_1_anomBuildup',
+    name: 'DefensiveAssistIronBastion_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1137,12 +1137,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIronBastion_1_anomBuildup',
+      name: 'DefensiveAssistIronBastion_1',
     },
   },
-  DefensiveAssistIronBastion_2_dmg: {
+  'DefensiveAssistIronBastion_2:sheerDmg': {
     sheet: 'Banyue',
-    name: 'DefensiveAssistIronBastion_2_dmg',
+    name: 'DefensiveAssistIronBastion_2:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1151,12 +1151,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIronBastion_2_dmg',
+      name: 'DefensiveAssistIronBastion_2',
     },
   },
-  DefensiveAssistIronBastion_2_daze: {
+  'DefensiveAssistIronBastion_2:dazeBuildup': {
     sheet: 'Banyue',
-    name: 'DefensiveAssistIronBastion_2_daze',
+    name: 'DefensiveAssistIronBastion_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1165,12 +1165,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIronBastion_2_daze',
+      name: 'DefensiveAssistIronBastion_2',
     },
   },
-  DefensiveAssistIronBastion_2_anomBuildup: {
+  'DefensiveAssistIronBastion_2:anomBuildup': {
     sheet: 'Banyue',
-    name: 'DefensiveAssistIronBastion_2_anomBuildup',
+    name: 'DefensiveAssistIronBastion_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1179,12 +1179,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIronBastion_2_anomBuildup',
+      name: 'DefensiveAssistIronBastion_2',
     },
   },
-  AssistFollowUpLoftyAscent_0_dmg: {
+  'AssistFollowUpLoftyAscent_0:sheerDmg': {
     sheet: 'Banyue',
-    name: 'AssistFollowUpLoftyAscent_0_dmg',
+    name: 'AssistFollowUpLoftyAscent_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1193,12 +1193,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpLoftyAscent_0_dmg',
+      name: 'AssistFollowUpLoftyAscent_0',
     },
   },
-  AssistFollowUpLoftyAscent_0_daze: {
+  'AssistFollowUpLoftyAscent_0:dazeBuildup': {
     sheet: 'Banyue',
-    name: 'AssistFollowUpLoftyAscent_0_daze',
+    name: 'AssistFollowUpLoftyAscent_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1207,12 +1207,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpLoftyAscent_0_daze',
+      name: 'AssistFollowUpLoftyAscent_0',
     },
   },
-  AssistFollowUpLoftyAscent_0_anomBuildup: {
+  'AssistFollowUpLoftyAscent_0:anomBuildup': {
     sheet: 'Banyue',
-    name: 'AssistFollowUpLoftyAscent_0_anomBuildup',
+    name: 'AssistFollowUpLoftyAscent_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1221,12 +1221,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpLoftyAscent_0_anomBuildup',
+      name: 'AssistFollowUpLoftyAscent_0',
     },
   },
-  AssistFollowUpPierceHeavens_0_dmg: {
+  'AssistFollowUpPierceHeavens_0:sheerDmg': {
     sheet: 'Banyue',
-    name: 'AssistFollowUpPierceHeavens_0_dmg',
+    name: 'AssistFollowUpPierceHeavens_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1235,12 +1235,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpPierceHeavens_0_dmg',
+      name: 'AssistFollowUpPierceHeavens_0',
     },
   },
-  AssistFollowUpPierceHeavens_0_daze: {
+  'AssistFollowUpPierceHeavens_0:dazeBuildup': {
     sheet: 'Banyue',
-    name: 'AssistFollowUpPierceHeavens_0_daze',
+    name: 'AssistFollowUpPierceHeavens_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1249,12 +1249,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpPierceHeavens_0_daze',
+      name: 'AssistFollowUpPierceHeavens_0',
     },
   },
-  AssistFollowUpPierceHeavens_0_anomBuildup: {
+  'AssistFollowUpPierceHeavens_0:anomBuildup': {
     sheet: 'Banyue',
-    name: 'AssistFollowUpPierceHeavens_0_anomBuildup',
+    name: 'AssistFollowUpPierceHeavens_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1263,7 +1263,7 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpPierceHeavens_0_anomBuildup',
+      name: 'AssistFollowUpPierceHeavens_0',
     },
   },
   m6_dmg: {

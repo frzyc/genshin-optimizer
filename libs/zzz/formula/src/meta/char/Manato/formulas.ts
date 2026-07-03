@@ -90,9 +90,9 @@ export const formulas = {
       name: 'dazeInst',
     },
   },
-  BasicAttackBlazingWindSlash_0_dmg: {
+  'BasicAttackBlazingWindSlash_0:standardDmg': {
     sheet: 'Manato',
-    name: 'BasicAttackBlazingWindSlash_0_dmg',
+    name: 'BasicAttackBlazingWindSlash_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -101,12 +101,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackBlazingWindSlash_0_dmg',
+      name: 'BasicAttackBlazingWindSlash_0',
     },
   },
-  BasicAttackBlazingWindSlash_0_daze: {
+  'BasicAttackBlazingWindSlash_0:dazeBuildup': {
     sheet: 'Manato',
-    name: 'BasicAttackBlazingWindSlash_0_daze',
+    name: 'BasicAttackBlazingWindSlash_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -115,12 +115,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackBlazingWindSlash_0_daze',
+      name: 'BasicAttackBlazingWindSlash_0',
     },
   },
-  BasicAttackBlazingWindSlash_0_anomBuildup: {
+  'BasicAttackBlazingWindSlash_0:anomBuildup': {
     sheet: 'Manato',
-    name: 'BasicAttackBlazingWindSlash_0_anomBuildup',
+    name: 'BasicAttackBlazingWindSlash_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -129,12 +129,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackBlazingWindSlash_0_anomBuildup',
+      name: 'BasicAttackBlazingWindSlash_0',
     },
   },
-  BasicAttackBlazingWindSlash_1_dmg: {
+  'BasicAttackBlazingWindSlash_1:standardDmg': {
     sheet: 'Manato',
-    name: 'BasicAttackBlazingWindSlash_1_dmg',
+    name: 'BasicAttackBlazingWindSlash_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -143,12 +143,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackBlazingWindSlash_1_dmg',
+      name: 'BasicAttackBlazingWindSlash_1',
     },
   },
-  BasicAttackBlazingWindSlash_1_daze: {
+  'BasicAttackBlazingWindSlash_1:dazeBuildup': {
     sheet: 'Manato',
-    name: 'BasicAttackBlazingWindSlash_1_daze',
+    name: 'BasicAttackBlazingWindSlash_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -157,12 +157,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackBlazingWindSlash_1_daze',
+      name: 'BasicAttackBlazingWindSlash_1',
     },
   },
-  BasicAttackBlazingWindSlash_1_anomBuildup: {
+  'BasicAttackBlazingWindSlash_1:anomBuildup': {
     sheet: 'Manato',
-    name: 'BasicAttackBlazingWindSlash_1_anomBuildup',
+    name: 'BasicAttackBlazingWindSlash_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -171,12 +171,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackBlazingWindSlash_1_anomBuildup',
+      name: 'BasicAttackBlazingWindSlash_1',
     },
   },
-  BasicAttackBlazingWindSlash_2_dmg: {
+  'BasicAttackBlazingWindSlash_2:standardDmg': {
     sheet: 'Manato',
-    name: 'BasicAttackBlazingWindSlash_2_dmg',
+    name: 'BasicAttackBlazingWindSlash_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -185,12 +185,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackBlazingWindSlash_2_dmg',
+      name: 'BasicAttackBlazingWindSlash_2',
     },
   },
-  BasicAttackBlazingWindSlash_2_daze: {
+  'BasicAttackBlazingWindSlash_2:dazeBuildup': {
     sheet: 'Manato',
-    name: 'BasicAttackBlazingWindSlash_2_daze',
+    name: 'BasicAttackBlazingWindSlash_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -199,12 +199,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackBlazingWindSlash_2_daze',
+      name: 'BasicAttackBlazingWindSlash_2',
     },
   },
-  BasicAttackBlazingWindSlash_2_anomBuildup: {
+  'BasicAttackBlazingWindSlash_2:anomBuildup': {
     sheet: 'Manato',
-    name: 'BasicAttackBlazingWindSlash_2_anomBuildup',
+    name: 'BasicAttackBlazingWindSlash_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -213,12 +213,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackBlazingWindSlash_2_anomBuildup',
+      name: 'BasicAttackBlazingWindSlash_2',
     },
   },
-  BasicAttackBlazingWindSlash_3_dmg: {
+  'BasicAttackBlazingWindSlash_3:sheerDmg': {
     sheet: 'Manato',
-    name: 'BasicAttackBlazingWindSlash_3_dmg',
+    name: 'BasicAttackBlazingWindSlash_3:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -227,12 +227,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackBlazingWindSlash_3_dmg',
+      name: 'BasicAttackBlazingWindSlash_3',
     },
   },
-  BasicAttackBlazingWindSlash_3_daze: {
+  'BasicAttackBlazingWindSlash_3:dazeBuildup': {
     sheet: 'Manato',
-    name: 'BasicAttackBlazingWindSlash_3_daze',
+    name: 'BasicAttackBlazingWindSlash_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -241,12 +241,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackBlazingWindSlash_3_daze',
+      name: 'BasicAttackBlazingWindSlash_3',
     },
   },
-  BasicAttackBlazingWindSlash_3_anomBuildup: {
+  'BasicAttackBlazingWindSlash_3:anomBuildup': {
     sheet: 'Manato',
-    name: 'BasicAttackBlazingWindSlash_3_anomBuildup',
+    name: 'BasicAttackBlazingWindSlash_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -255,12 +255,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackBlazingWindSlash_3_anomBuildup',
+      name: 'BasicAttackBlazingWindSlash_3',
     },
   },
-  BasicAttackBlazingWindSlash_4_dmg: {
+  'BasicAttackBlazingWindSlash_4:sheerDmg': {
     sheet: 'Manato',
-    name: 'BasicAttackBlazingWindSlash_4_dmg',
+    name: 'BasicAttackBlazingWindSlash_4:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -269,12 +269,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackBlazingWindSlash_4_dmg',
+      name: 'BasicAttackBlazingWindSlash_4',
     },
   },
-  BasicAttackBlazingWindSlash_4_daze: {
+  'BasicAttackBlazingWindSlash_4:dazeBuildup': {
     sheet: 'Manato',
-    name: 'BasicAttackBlazingWindSlash_4_daze',
+    name: 'BasicAttackBlazingWindSlash_4:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -283,12 +283,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackBlazingWindSlash_4_daze',
+      name: 'BasicAttackBlazingWindSlash_4',
     },
   },
-  BasicAttackBlazingWindSlash_4_anomBuildup: {
+  'BasicAttackBlazingWindSlash_4:anomBuildup': {
     sheet: 'Manato',
-    name: 'BasicAttackBlazingWindSlash_4_anomBuildup',
+    name: 'BasicAttackBlazingWindSlash_4:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -297,12 +297,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackBlazingWindSlash_4_anomBuildup',
+      name: 'BasicAttackBlazingWindSlash_4',
     },
   },
-  BasicAttackBlazingWindSlash_5_dmg: {
+  'BasicAttackBlazingWindSlash_5:sheerDmg': {
     sheet: 'Manato',
-    name: 'BasicAttackBlazingWindSlash_5_dmg',
+    name: 'BasicAttackBlazingWindSlash_5:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -311,12 +311,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackBlazingWindSlash_5_dmg',
+      name: 'BasicAttackBlazingWindSlash_5',
     },
   },
-  BasicAttackBlazingWindSlash_5_daze: {
+  'BasicAttackBlazingWindSlash_5:dazeBuildup': {
     sheet: 'Manato',
-    name: 'BasicAttackBlazingWindSlash_5_daze',
+    name: 'BasicAttackBlazingWindSlash_5:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -325,12 +325,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackBlazingWindSlash_5_daze',
+      name: 'BasicAttackBlazingWindSlash_5',
     },
   },
-  BasicAttackBlazingWindSlash_5_anomBuildup: {
+  'BasicAttackBlazingWindSlash_5:anomBuildup': {
     sheet: 'Manato',
-    name: 'BasicAttackBlazingWindSlash_5_anomBuildup',
+    name: 'BasicAttackBlazingWindSlash_5:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -339,12 +339,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackBlazingWindSlash_5_anomBuildup',
+      name: 'BasicAttackBlazingWindSlash_5',
     },
   },
-  BasicAttackBlazingWindMistySlash_0_dmg: {
+  'BasicAttackBlazingWindMistySlash_0:sheerDmg': {
     sheet: 'Manato',
-    name: 'BasicAttackBlazingWindMistySlash_0_dmg',
+    name: 'BasicAttackBlazingWindMistySlash_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -353,12 +353,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackBlazingWindMistySlash_0_dmg',
+      name: 'BasicAttackBlazingWindMistySlash_0',
     },
   },
-  BasicAttackBlazingWindMistySlash_0_daze: {
+  'BasicAttackBlazingWindMistySlash_0:dazeBuildup': {
     sheet: 'Manato',
-    name: 'BasicAttackBlazingWindMistySlash_0_daze',
+    name: 'BasicAttackBlazingWindMistySlash_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -367,12 +367,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackBlazingWindMistySlash_0_daze',
+      name: 'BasicAttackBlazingWindMistySlash_0',
     },
   },
-  BasicAttackBlazingWindMistySlash_0_anomBuildup: {
+  'BasicAttackBlazingWindMistySlash_0:anomBuildup': {
     sheet: 'Manato',
-    name: 'BasicAttackBlazingWindMistySlash_0_anomBuildup',
+    name: 'BasicAttackBlazingWindMistySlash_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -381,12 +381,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackBlazingWindMistySlash_0_anomBuildup',
+      name: 'BasicAttackBlazingWindMistySlash_0',
     },
   },
-  BasicAttackBlazingWindMistySlash_1_dmg: {
+  'BasicAttackBlazingWindMistySlash_1:sheerDmg': {
     sheet: 'Manato',
-    name: 'BasicAttackBlazingWindMistySlash_1_dmg',
+    name: 'BasicAttackBlazingWindMistySlash_1:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -395,12 +395,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackBlazingWindMistySlash_1_dmg',
+      name: 'BasicAttackBlazingWindMistySlash_1',
     },
   },
-  BasicAttackBlazingWindMistySlash_1_daze: {
+  'BasicAttackBlazingWindMistySlash_1:dazeBuildup': {
     sheet: 'Manato',
-    name: 'BasicAttackBlazingWindMistySlash_1_daze',
+    name: 'BasicAttackBlazingWindMistySlash_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -409,12 +409,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackBlazingWindMistySlash_1_daze',
+      name: 'BasicAttackBlazingWindMistySlash_1',
     },
   },
-  BasicAttackBlazingWindMistySlash_1_anomBuildup: {
+  'BasicAttackBlazingWindMistySlash_1:anomBuildup': {
     sheet: 'Manato',
-    name: 'BasicAttackBlazingWindMistySlash_1_anomBuildup',
+    name: 'BasicAttackBlazingWindMistySlash_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -423,12 +423,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackBlazingWindMistySlash_1_anomBuildup',
+      name: 'BasicAttackBlazingWindMistySlash_1',
     },
   },
-  BasicAttackBlazingWindMistySlash_2_dmg: {
+  'BasicAttackBlazingWindMistySlash_2:sheerDmg': {
     sheet: 'Manato',
-    name: 'BasicAttackBlazingWindMistySlash_2_dmg',
+    name: 'BasicAttackBlazingWindMistySlash_2:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -437,12 +437,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackBlazingWindMistySlash_2_dmg',
+      name: 'BasicAttackBlazingWindMistySlash_2',
     },
   },
-  BasicAttackBlazingWindMistySlash_2_daze: {
+  'BasicAttackBlazingWindMistySlash_2:dazeBuildup': {
     sheet: 'Manato',
-    name: 'BasicAttackBlazingWindMistySlash_2_daze',
+    name: 'BasicAttackBlazingWindMistySlash_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -451,12 +451,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackBlazingWindMistySlash_2_daze',
+      name: 'BasicAttackBlazingWindMistySlash_2',
     },
   },
-  BasicAttackBlazingWindMistySlash_2_anomBuildup: {
+  'BasicAttackBlazingWindMistySlash_2:anomBuildup': {
     sheet: 'Manato',
-    name: 'BasicAttackBlazingWindMistySlash_2_anomBuildup',
+    name: 'BasicAttackBlazingWindMistySlash_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -465,12 +465,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackBlazingWindMistySlash_2_anomBuildup',
+      name: 'BasicAttackBlazingWindMistySlash_2',
     },
   },
-  BasicAttackBlazingWindMistySlash_3_dmg: {
+  'BasicAttackBlazingWindMistySlash_3:sheerDmg': {
     sheet: 'Manato',
-    name: 'BasicAttackBlazingWindMistySlash_3_dmg',
+    name: 'BasicAttackBlazingWindMistySlash_3:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -479,12 +479,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackBlazingWindMistySlash_3_dmg',
+      name: 'BasicAttackBlazingWindMistySlash_3',
     },
   },
-  BasicAttackBlazingWindMistySlash_3_daze: {
+  'BasicAttackBlazingWindMistySlash_3:dazeBuildup': {
     sheet: 'Manato',
-    name: 'BasicAttackBlazingWindMistySlash_3_daze',
+    name: 'BasicAttackBlazingWindMistySlash_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -493,12 +493,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackBlazingWindMistySlash_3_daze',
+      name: 'BasicAttackBlazingWindMistySlash_3',
     },
   },
-  BasicAttackBlazingWindMistySlash_3_anomBuildup: {
+  'BasicAttackBlazingWindMistySlash_3:anomBuildup': {
     sheet: 'Manato',
-    name: 'BasicAttackBlazingWindMistySlash_3_anomBuildup',
+    name: 'BasicAttackBlazingWindMistySlash_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -507,12 +507,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackBlazingWindMistySlash_3_anomBuildup',
+      name: 'BasicAttackBlazingWindMistySlash_3',
     },
   },
-  DashAttackRadiantBladeZanshin_0_dmg: {
+  'DashAttackRadiantBladeZanshin_0:standardDmg': {
     sheet: 'Manato',
-    name: 'DashAttackRadiantBladeZanshin_0_dmg',
+    name: 'DashAttackRadiantBladeZanshin_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -521,12 +521,12 @@ export const formulas = {
       damageType1: 'dash',
       attribute: 'physical',
       skillType: 'dodgeSkill',
-      name: 'DashAttackRadiantBladeZanshin_0_dmg',
+      name: 'DashAttackRadiantBladeZanshin_0',
     },
   },
-  DashAttackRadiantBladeZanshin_0_daze: {
+  'DashAttackRadiantBladeZanshin_0:dazeBuildup': {
     sheet: 'Manato',
-    name: 'DashAttackRadiantBladeZanshin_0_daze',
+    name: 'DashAttackRadiantBladeZanshin_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -535,12 +535,12 @@ export const formulas = {
       damageType1: 'dash',
       attribute: 'physical',
       skillType: 'dodgeSkill',
-      name: 'DashAttackRadiantBladeZanshin_0_daze',
+      name: 'DashAttackRadiantBladeZanshin_0',
     },
   },
-  DashAttackRadiantBladeZanshin_0_anomBuildup: {
+  'DashAttackRadiantBladeZanshin_0:anomBuildup': {
     sheet: 'Manato',
-    name: 'DashAttackRadiantBladeZanshin_0_anomBuildup',
+    name: 'DashAttackRadiantBladeZanshin_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -549,12 +549,12 @@ export const formulas = {
       damageType1: 'dash',
       attribute: 'physical',
       skillType: 'dodgeSkill',
-      name: 'DashAttackRadiantBladeZanshin_0_anomBuildup',
+      name: 'DashAttackRadiantBladeZanshin_0',
     },
   },
-  DodgeCounterRadiantBladeBattleSweep_0_dmg: {
+  'DodgeCounterRadiantBladeBattleSweep_0:sheerDmg': {
     sheet: 'Manato',
-    name: 'DodgeCounterRadiantBladeBattleSweep_0_dmg',
+    name: 'DodgeCounterRadiantBladeBattleSweep_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -563,12 +563,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterRadiantBladeBattleSweep_0_dmg',
+      name: 'DodgeCounterRadiantBladeBattleSweep_0',
     },
   },
-  DodgeCounterRadiantBladeBattleSweep_0_daze: {
+  'DodgeCounterRadiantBladeBattleSweep_0:dazeBuildup': {
     sheet: 'Manato',
-    name: 'DodgeCounterRadiantBladeBattleSweep_0_daze',
+    name: 'DodgeCounterRadiantBladeBattleSweep_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -577,12 +577,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterRadiantBladeBattleSweep_0_daze',
+      name: 'DodgeCounterRadiantBladeBattleSweep_0',
     },
   },
-  DodgeCounterRadiantBladeBattleSweep_0_anomBuildup: {
+  'DodgeCounterRadiantBladeBattleSweep_0:anomBuildup': {
     sheet: 'Manato',
-    name: 'DodgeCounterRadiantBladeBattleSweep_0_anomBuildup',
+    name: 'DodgeCounterRadiantBladeBattleSweep_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -591,12 +591,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterRadiantBladeBattleSweep_0_anomBuildup',
+      name: 'DodgeCounterRadiantBladeBattleSweep_0',
     },
   },
-  SpecialAttackReturnToAshes_0_dmg: {
+  'SpecialAttackReturnToAshes_0:sheerDmg': {
     sheet: 'Manato',
-    name: 'SpecialAttackReturnToAshes_0_dmg',
+    name: 'SpecialAttackReturnToAshes_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -605,12 +605,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackReturnToAshes_0_dmg',
+      name: 'SpecialAttackReturnToAshes_0',
     },
   },
-  SpecialAttackReturnToAshes_0_daze: {
+  'SpecialAttackReturnToAshes_0:dazeBuildup': {
     sheet: 'Manato',
-    name: 'SpecialAttackReturnToAshes_0_daze',
+    name: 'SpecialAttackReturnToAshes_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -619,12 +619,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackReturnToAshes_0_daze',
+      name: 'SpecialAttackReturnToAshes_0',
     },
   },
-  SpecialAttackReturnToAshes_0_anomBuildup: {
+  'SpecialAttackReturnToAshes_0:anomBuildup': {
     sheet: 'Manato',
-    name: 'SpecialAttackReturnToAshes_0_anomBuildup',
+    name: 'SpecialAttackReturnToAshes_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -633,12 +633,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackReturnToAshes_0_anomBuildup',
+      name: 'SpecialAttackReturnToAshes_0',
     },
   },
-  SpecialAttackReturnToAshes_1_dmg: {
+  'SpecialAttackReturnToAshes_1:sheerDmg': {
     sheet: 'Manato',
-    name: 'SpecialAttackReturnToAshes_1_dmg',
+    name: 'SpecialAttackReturnToAshes_1:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -647,12 +647,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackReturnToAshes_1_dmg',
+      name: 'SpecialAttackReturnToAshes_1',
     },
   },
-  SpecialAttackReturnToAshes_1_daze: {
+  'SpecialAttackReturnToAshes_1:dazeBuildup': {
     sheet: 'Manato',
-    name: 'SpecialAttackReturnToAshes_1_daze',
+    name: 'SpecialAttackReturnToAshes_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -661,12 +661,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackReturnToAshes_1_daze',
+      name: 'SpecialAttackReturnToAshes_1',
     },
   },
-  SpecialAttackReturnToAshes_1_anomBuildup: {
+  'SpecialAttackReturnToAshes_1:anomBuildup': {
     sheet: 'Manato',
-    name: 'SpecialAttackReturnToAshes_1_anomBuildup',
+    name: 'SpecialAttackReturnToAshes_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -675,12 +675,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackReturnToAshes_1_anomBuildup',
+      name: 'SpecialAttackReturnToAshes_1',
     },
   },
-  EXSpecialAttackReturnToAshesFall_0_dmg: {
+  'EXSpecialAttackReturnToAshesFall_0:sheerDmg': {
     sheet: 'Manato',
-    name: 'EXSpecialAttackReturnToAshesFall_0_dmg',
+    name: 'EXSpecialAttackReturnToAshesFall_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -689,12 +689,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackReturnToAshesFall_0_dmg',
+      name: 'EXSpecialAttackReturnToAshesFall_0',
     },
   },
-  EXSpecialAttackReturnToAshesFall_0_daze: {
+  'EXSpecialAttackReturnToAshesFall_0:dazeBuildup': {
     sheet: 'Manato',
-    name: 'EXSpecialAttackReturnToAshesFall_0_daze',
+    name: 'EXSpecialAttackReturnToAshesFall_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -703,12 +703,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackReturnToAshesFall_0_daze',
+      name: 'EXSpecialAttackReturnToAshesFall_0',
     },
   },
-  EXSpecialAttackReturnToAshesFall_0_anomBuildup: {
+  'EXSpecialAttackReturnToAshesFall_0:anomBuildup': {
     sheet: 'Manato',
-    name: 'EXSpecialAttackReturnToAshesFall_0_anomBuildup',
+    name: 'EXSpecialAttackReturnToAshesFall_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -717,12 +717,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackReturnToAshesFall_0_anomBuildup',
+      name: 'EXSpecialAttackReturnToAshesFall_0',
     },
   },
-  ChainAttackBlazingEruption_0_dmg: {
+  'ChainAttackBlazingEruption_0:sheerDmg': {
     sheet: 'Manato',
-    name: 'ChainAttackBlazingEruption_0_dmg',
+    name: 'ChainAttackBlazingEruption_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -731,12 +731,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackBlazingEruption_0_dmg',
+      name: 'ChainAttackBlazingEruption_0',
     },
   },
-  ChainAttackBlazingEruption_0_daze: {
+  'ChainAttackBlazingEruption_0:dazeBuildup': {
     sheet: 'Manato',
-    name: 'ChainAttackBlazingEruption_0_daze',
+    name: 'ChainAttackBlazingEruption_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -745,12 +745,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackBlazingEruption_0_daze',
+      name: 'ChainAttackBlazingEruption_0',
     },
   },
-  ChainAttackBlazingEruption_0_anomBuildup: {
+  'ChainAttackBlazingEruption_0:anomBuildup': {
     sheet: 'Manato',
-    name: 'ChainAttackBlazingEruption_0_anomBuildup',
+    name: 'ChainAttackBlazingEruption_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -759,12 +759,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackBlazingEruption_0_anomBuildup',
+      name: 'ChainAttackBlazingEruption_0',
     },
   },
-  UltimateMusouAratama_0_dmg: {
+  'UltimateMusouAratama_0:sheerDmg': {
     sheet: 'Manato',
-    name: 'UltimateMusouAratama_0_dmg',
+    name: 'UltimateMusouAratama_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -773,12 +773,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateMusouAratama_0_dmg',
+      name: 'UltimateMusouAratama_0',
     },
   },
-  UltimateMusouAratama_0_daze: {
+  'UltimateMusouAratama_0:dazeBuildup': {
     sheet: 'Manato',
-    name: 'UltimateMusouAratama_0_daze',
+    name: 'UltimateMusouAratama_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -787,12 +787,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateMusouAratama_0_daze',
+      name: 'UltimateMusouAratama_0',
     },
   },
-  UltimateMusouAratama_0_anomBuildup: {
+  'UltimateMusouAratama_0:anomBuildup': {
     sheet: 'Manato',
-    name: 'UltimateMusouAratama_0_anomBuildup',
+    name: 'UltimateMusouAratama_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -801,12 +801,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateMusouAratama_0_anomBuildup',
+      name: 'UltimateMusouAratama_0',
     },
   },
-  QuickAssistLoneShadowRegroup_0_dmg: {
+  'QuickAssistLoneShadowRegroup_0:sheerDmg': {
     sheet: 'Manato',
-    name: 'QuickAssistLoneShadowRegroup_0_dmg',
+    name: 'QuickAssistLoneShadowRegroup_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -815,12 +815,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistLoneShadowRegroup_0_dmg',
+      name: 'QuickAssistLoneShadowRegroup_0',
     },
   },
-  QuickAssistLoneShadowRegroup_0_daze: {
+  'QuickAssistLoneShadowRegroup_0:dazeBuildup': {
     sheet: 'Manato',
-    name: 'QuickAssistLoneShadowRegroup_0_daze',
+    name: 'QuickAssistLoneShadowRegroup_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -829,12 +829,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistLoneShadowRegroup_0_daze',
+      name: 'QuickAssistLoneShadowRegroup_0',
     },
   },
-  QuickAssistLoneShadowRegroup_0_anomBuildup: {
+  'QuickAssistLoneShadowRegroup_0:anomBuildup': {
     sheet: 'Manato',
-    name: 'QuickAssistLoneShadowRegroup_0_anomBuildup',
+    name: 'QuickAssistLoneShadowRegroup_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -843,12 +843,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistLoneShadowRegroup_0_anomBuildup',
+      name: 'QuickAssistLoneShadowRegroup_0',
     },
   },
-  DefensiveAssistLoneShadowMountainStand_0_dmg: {
+  'DefensiveAssistLoneShadowMountainStand_0:sheerDmg': {
     sheet: 'Manato',
-    name: 'DefensiveAssistLoneShadowMountainStand_0_dmg',
+    name: 'DefensiveAssistLoneShadowMountainStand_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -857,12 +857,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistLoneShadowMountainStand_0_dmg',
+      name: 'DefensiveAssistLoneShadowMountainStand_0',
     },
   },
-  DefensiveAssistLoneShadowMountainStand_0_daze: {
+  'DefensiveAssistLoneShadowMountainStand_0:dazeBuildup': {
     sheet: 'Manato',
-    name: 'DefensiveAssistLoneShadowMountainStand_0_daze',
+    name: 'DefensiveAssistLoneShadowMountainStand_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -871,12 +871,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistLoneShadowMountainStand_0_daze',
+      name: 'DefensiveAssistLoneShadowMountainStand_0',
     },
   },
-  DefensiveAssistLoneShadowMountainStand_0_anomBuildup: {
+  'DefensiveAssistLoneShadowMountainStand_0:anomBuildup': {
     sheet: 'Manato',
-    name: 'DefensiveAssistLoneShadowMountainStand_0_anomBuildup',
+    name: 'DefensiveAssistLoneShadowMountainStand_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -885,12 +885,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistLoneShadowMountainStand_0_anomBuildup',
+      name: 'DefensiveAssistLoneShadowMountainStand_0',
     },
   },
-  DefensiveAssistLoneShadowMountainStand_1_dmg: {
+  'DefensiveAssistLoneShadowMountainStand_1:sheerDmg': {
     sheet: 'Manato',
-    name: 'DefensiveAssistLoneShadowMountainStand_1_dmg',
+    name: 'DefensiveAssistLoneShadowMountainStand_1:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -899,12 +899,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistLoneShadowMountainStand_1_dmg',
+      name: 'DefensiveAssistLoneShadowMountainStand_1',
     },
   },
-  DefensiveAssistLoneShadowMountainStand_1_daze: {
+  'DefensiveAssistLoneShadowMountainStand_1:dazeBuildup': {
     sheet: 'Manato',
-    name: 'DefensiveAssistLoneShadowMountainStand_1_daze',
+    name: 'DefensiveAssistLoneShadowMountainStand_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -913,12 +913,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistLoneShadowMountainStand_1_daze',
+      name: 'DefensiveAssistLoneShadowMountainStand_1',
     },
   },
-  DefensiveAssistLoneShadowMountainStand_1_anomBuildup: {
+  'DefensiveAssistLoneShadowMountainStand_1:anomBuildup': {
     sheet: 'Manato',
-    name: 'DefensiveAssistLoneShadowMountainStand_1_anomBuildup',
+    name: 'DefensiveAssistLoneShadowMountainStand_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -927,12 +927,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistLoneShadowMountainStand_1_anomBuildup',
+      name: 'DefensiveAssistLoneShadowMountainStand_1',
     },
   },
-  DefensiveAssistLoneShadowMountainStand_2_dmg: {
+  'DefensiveAssistLoneShadowMountainStand_2:sheerDmg': {
     sheet: 'Manato',
-    name: 'DefensiveAssistLoneShadowMountainStand_2_dmg',
+    name: 'DefensiveAssistLoneShadowMountainStand_2:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -941,12 +941,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistLoneShadowMountainStand_2_dmg',
+      name: 'DefensiveAssistLoneShadowMountainStand_2',
     },
   },
-  DefensiveAssistLoneShadowMountainStand_2_daze: {
+  'DefensiveAssistLoneShadowMountainStand_2:dazeBuildup': {
     sheet: 'Manato',
-    name: 'DefensiveAssistLoneShadowMountainStand_2_daze',
+    name: 'DefensiveAssistLoneShadowMountainStand_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -955,12 +955,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistLoneShadowMountainStand_2_daze',
+      name: 'DefensiveAssistLoneShadowMountainStand_2',
     },
   },
-  DefensiveAssistLoneShadowMountainStand_2_anomBuildup: {
+  'DefensiveAssistLoneShadowMountainStand_2:anomBuildup': {
     sheet: 'Manato',
-    name: 'DefensiveAssistLoneShadowMountainStand_2_anomBuildup',
+    name: 'DefensiveAssistLoneShadowMountainStand_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -969,12 +969,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistLoneShadowMountainStand_2_anomBuildup',
+      name: 'DefensiveAssistLoneShadowMountainStand_2',
     },
   },
-  DefensiveAssistLoneShadowMountainStand_3_dmg: {
+  'DefensiveAssistLoneShadowMountainStand_3:sheerDmg': {
     sheet: 'Manato',
-    name: 'DefensiveAssistLoneShadowMountainStand_3_dmg',
+    name: 'DefensiveAssistLoneShadowMountainStand_3:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -983,12 +983,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistLoneShadowMountainStand_3_dmg',
+      name: 'DefensiveAssistLoneShadowMountainStand_3',
     },
   },
-  DefensiveAssistLoneShadowMountainStand_3_daze: {
+  'DefensiveAssistLoneShadowMountainStand_3:dazeBuildup': {
     sheet: 'Manato',
-    name: 'DefensiveAssistLoneShadowMountainStand_3_daze',
+    name: 'DefensiveAssistLoneShadowMountainStand_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -997,12 +997,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistLoneShadowMountainStand_3_daze',
+      name: 'DefensiveAssistLoneShadowMountainStand_3',
     },
   },
-  DefensiveAssistLoneShadowMountainStand_3_anomBuildup: {
+  'DefensiveAssistLoneShadowMountainStand_3:anomBuildup': {
     sheet: 'Manato',
-    name: 'DefensiveAssistLoneShadowMountainStand_3_anomBuildup',
+    name: 'DefensiveAssistLoneShadowMountainStand_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1011,12 +1011,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistLoneShadowMountainStand_3_anomBuildup',
+      name: 'DefensiveAssistLoneShadowMountainStand_3',
     },
   },
-  AssistFollowUpLoneShadowBreakingFang_0_dmg: {
+  'AssistFollowUpLoneShadowBreakingFang_0:sheerDmg': {
     sheet: 'Manato',
-    name: 'AssistFollowUpLoneShadowBreakingFang_0_dmg',
+    name: 'AssistFollowUpLoneShadowBreakingFang_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1025,12 +1025,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpLoneShadowBreakingFang_0_dmg',
+      name: 'AssistFollowUpLoneShadowBreakingFang_0',
     },
   },
-  AssistFollowUpLoneShadowBreakingFang_0_daze: {
+  'AssistFollowUpLoneShadowBreakingFang_0:dazeBuildup': {
     sheet: 'Manato',
-    name: 'AssistFollowUpLoneShadowBreakingFang_0_daze',
+    name: 'AssistFollowUpLoneShadowBreakingFang_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1039,12 +1039,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpLoneShadowBreakingFang_0_daze',
+      name: 'AssistFollowUpLoneShadowBreakingFang_0',
     },
   },
-  AssistFollowUpLoneShadowBreakingFang_0_anomBuildup: {
+  'AssistFollowUpLoneShadowBreakingFang_0:anomBuildup': {
     sheet: 'Manato',
-    name: 'AssistFollowUpLoneShadowBreakingFang_0_anomBuildup',
+    name: 'AssistFollowUpLoneShadowBreakingFang_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1053,12 +1053,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpLoneShadowBreakingFang_0_anomBuildup',
+      name: 'AssistFollowUpLoneShadowBreakingFang_0',
     },
   },
-  AssistFollowUpLoneShadowBreakingFang_1_dmg: {
+  'AssistFollowUpLoneShadowBreakingFang_1:sheerDmg': {
     sheet: 'Manato',
-    name: 'AssistFollowUpLoneShadowBreakingFang_1_dmg',
+    name: 'AssistFollowUpLoneShadowBreakingFang_1:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1067,12 +1067,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpLoneShadowBreakingFang_1_dmg',
+      name: 'AssistFollowUpLoneShadowBreakingFang_1',
     },
   },
-  AssistFollowUpLoneShadowBreakingFang_1_daze: {
+  'AssistFollowUpLoneShadowBreakingFang_1:dazeBuildup': {
     sheet: 'Manato',
-    name: 'AssistFollowUpLoneShadowBreakingFang_1_daze',
+    name: 'AssistFollowUpLoneShadowBreakingFang_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1081,12 +1081,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpLoneShadowBreakingFang_1_daze',
+      name: 'AssistFollowUpLoneShadowBreakingFang_1',
     },
   },
-  AssistFollowUpLoneShadowBreakingFang_1_anomBuildup: {
+  'AssistFollowUpLoneShadowBreakingFang_1:anomBuildup': {
     sheet: 'Manato',
-    name: 'AssistFollowUpLoneShadowBreakingFang_1_anomBuildup',
+    name: 'AssistFollowUpLoneShadowBreakingFang_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1095,7 +1095,7 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpLoneShadowBreakingFang_1_anomBuildup',
+      name: 'AssistFollowUpLoneShadowBreakingFang_1',
     },
   },
 } as const

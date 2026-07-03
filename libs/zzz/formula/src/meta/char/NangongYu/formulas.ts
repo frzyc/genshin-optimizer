@@ -89,9 +89,9 @@ export const formulas = {
       name: 'dazeInst',
     },
   },
-  BasicAttackShootingStarStep_0_dmg: {
+  'BasicAttackShootingStarStep_0:standardDmg': {
     sheet: 'NangongYu',
-    name: 'BasicAttackShootingStarStep_0_dmg',
+    name: 'BasicAttackShootingStarStep_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -100,12 +100,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackShootingStarStep_0_dmg',
+      name: 'BasicAttackShootingStarStep_0',
     },
   },
-  BasicAttackShootingStarStep_0_daze: {
+  'BasicAttackShootingStarStep_0:dazeBuildup': {
     sheet: 'NangongYu',
-    name: 'BasicAttackShootingStarStep_0_daze',
+    name: 'BasicAttackShootingStarStep_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -114,12 +114,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackShootingStarStep_0_daze',
+      name: 'BasicAttackShootingStarStep_0',
     },
   },
-  BasicAttackShootingStarStep_0_anomBuildup: {
+  'BasicAttackShootingStarStep_0:anomBuildup': {
     sheet: 'NangongYu',
-    name: 'BasicAttackShootingStarStep_0_anomBuildup',
+    name: 'BasicAttackShootingStarStep_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -128,12 +128,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackShootingStarStep_0_anomBuildup',
+      name: 'BasicAttackShootingStarStep_0',
     },
   },
-  BasicAttackShootingStarStep_1_dmg: {
+  'BasicAttackShootingStarStep_1:standardDmg': {
     sheet: 'NangongYu',
-    name: 'BasicAttackShootingStarStep_1_dmg',
+    name: 'BasicAttackShootingStarStep_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -142,12 +142,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackShootingStarStep_1_dmg',
+      name: 'BasicAttackShootingStarStep_1',
     },
   },
-  BasicAttackShootingStarStep_1_daze: {
+  'BasicAttackShootingStarStep_1:dazeBuildup': {
     sheet: 'NangongYu',
-    name: 'BasicAttackShootingStarStep_1_daze',
+    name: 'BasicAttackShootingStarStep_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -156,12 +156,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackShootingStarStep_1_daze',
+      name: 'BasicAttackShootingStarStep_1',
     },
   },
-  BasicAttackShootingStarStep_1_anomBuildup: {
+  'BasicAttackShootingStarStep_1:anomBuildup': {
     sheet: 'NangongYu',
-    name: 'BasicAttackShootingStarStep_1_anomBuildup',
+    name: 'BasicAttackShootingStarStep_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -170,12 +170,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackShootingStarStep_1_anomBuildup',
+      name: 'BasicAttackShootingStarStep_1',
     },
   },
-  BasicAttackShootingStarStep_2_dmg: {
+  'BasicAttackShootingStarStep_2:standardDmg': {
     sheet: 'NangongYu',
-    name: 'BasicAttackShootingStarStep_2_dmg',
+    name: 'BasicAttackShootingStarStep_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -184,12 +184,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackShootingStarStep_2_dmg',
+      name: 'BasicAttackShootingStarStep_2',
     },
   },
-  BasicAttackShootingStarStep_2_daze: {
+  'BasicAttackShootingStarStep_2:dazeBuildup': {
     sheet: 'NangongYu',
-    name: 'BasicAttackShootingStarStep_2_daze',
+    name: 'BasicAttackShootingStarStep_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -198,12 +198,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackShootingStarStep_2_daze',
+      name: 'BasicAttackShootingStarStep_2',
     },
   },
-  BasicAttackShootingStarStep_2_anomBuildup: {
+  'BasicAttackShootingStarStep_2:anomBuildup': {
     sheet: 'NangongYu',
-    name: 'BasicAttackShootingStarStep_2_anomBuildup',
+    name: 'BasicAttackShootingStarStep_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -212,12 +212,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackShootingStarStep_2_anomBuildup',
+      name: 'BasicAttackShootingStarStep_2',
     },
   },
-  BasicAttackAdorableExplosiveImpact_0_dmg: {
+  'BasicAttackAdorableExplosiveImpact_0:standardDmg': {
     sheet: 'NangongYu',
-    name: 'BasicAttackAdorableExplosiveImpact_0_dmg',
+    name: 'BasicAttackAdorableExplosiveImpact_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -226,12 +226,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackAdorableExplosiveImpact_0_dmg',
+      name: 'BasicAttackAdorableExplosiveImpact_0',
     },
   },
-  BasicAttackAdorableExplosiveImpact_0_daze: {
+  'BasicAttackAdorableExplosiveImpact_0:dazeBuildup': {
     sheet: 'NangongYu',
-    name: 'BasicAttackAdorableExplosiveImpact_0_daze',
+    name: 'BasicAttackAdorableExplosiveImpact_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -240,12 +240,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackAdorableExplosiveImpact_0_daze',
+      name: 'BasicAttackAdorableExplosiveImpact_0',
     },
   },
-  BasicAttackAdorableExplosiveImpact_0_anomBuildup: {
+  'BasicAttackAdorableExplosiveImpact_0:anomBuildup': {
     sheet: 'NangongYu',
-    name: 'BasicAttackAdorableExplosiveImpact_0_anomBuildup',
+    name: 'BasicAttackAdorableExplosiveImpact_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -254,12 +254,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackAdorableExplosiveImpact_0_anomBuildup',
+      name: 'BasicAttackAdorableExplosiveImpact_0',
     },
   },
-  BasicAttackAdorableExplosiveImpact_1_dmg: {
+  'BasicAttackAdorableExplosiveImpact_1:standardDmg': {
     sheet: 'NangongYu',
-    name: 'BasicAttackAdorableExplosiveImpact_1_dmg',
+    name: 'BasicAttackAdorableExplosiveImpact_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -268,12 +268,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackAdorableExplosiveImpact_1_dmg',
+      name: 'BasicAttackAdorableExplosiveImpact_1',
     },
   },
-  BasicAttackAdorableExplosiveImpact_1_daze: {
+  'BasicAttackAdorableExplosiveImpact_1:dazeBuildup': {
     sheet: 'NangongYu',
-    name: 'BasicAttackAdorableExplosiveImpact_1_daze',
+    name: 'BasicAttackAdorableExplosiveImpact_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -282,12 +282,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackAdorableExplosiveImpact_1_daze',
+      name: 'BasicAttackAdorableExplosiveImpact_1',
     },
   },
-  BasicAttackAdorableExplosiveImpact_1_anomBuildup: {
+  'BasicAttackAdorableExplosiveImpact_1:anomBuildup': {
     sheet: 'NangongYu',
-    name: 'BasicAttackAdorableExplosiveImpact_1_anomBuildup',
+    name: 'BasicAttackAdorableExplosiveImpact_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -296,12 +296,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackAdorableExplosiveImpact_1_anomBuildup',
+      name: 'BasicAttackAdorableExplosiveImpact_1',
     },
   },
-  BasicAttackAdorableExplosiveImpact_2_dmg: {
+  'BasicAttackAdorableExplosiveImpact_2:standardDmg': {
     sheet: 'NangongYu',
-    name: 'BasicAttackAdorableExplosiveImpact_2_dmg',
+    name: 'BasicAttackAdorableExplosiveImpact_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -310,12 +310,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackAdorableExplosiveImpact_2_dmg',
+      name: 'BasicAttackAdorableExplosiveImpact_2',
     },
   },
-  BasicAttackAdorableExplosiveImpact_2_daze: {
+  'BasicAttackAdorableExplosiveImpact_2:dazeBuildup': {
     sheet: 'NangongYu',
-    name: 'BasicAttackAdorableExplosiveImpact_2_daze',
+    name: 'BasicAttackAdorableExplosiveImpact_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -324,12 +324,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackAdorableExplosiveImpact_2_daze',
+      name: 'BasicAttackAdorableExplosiveImpact_2',
     },
   },
-  BasicAttackAdorableExplosiveImpact_2_anomBuildup: {
+  'BasicAttackAdorableExplosiveImpact_2:anomBuildup': {
     sheet: 'NangongYu',
-    name: 'BasicAttackAdorableExplosiveImpact_2_anomBuildup',
+    name: 'BasicAttackAdorableExplosiveImpact_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -338,12 +338,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackAdorableExplosiveImpact_2_anomBuildup',
+      name: 'BasicAttackAdorableExplosiveImpact_2',
     },
   },
-  BasicAttackAdorableExplosiveImpact_3_dmg: {
+  'BasicAttackAdorableExplosiveImpact_3:standardDmg': {
     sheet: 'NangongYu',
-    name: 'BasicAttackAdorableExplosiveImpact_3_dmg',
+    name: 'BasicAttackAdorableExplosiveImpact_3:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -352,12 +352,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackAdorableExplosiveImpact_3_dmg',
+      name: 'BasicAttackAdorableExplosiveImpact_3',
     },
   },
-  BasicAttackAdorableExplosiveImpact_3_daze: {
+  'BasicAttackAdorableExplosiveImpact_3:dazeBuildup': {
     sheet: 'NangongYu',
-    name: 'BasicAttackAdorableExplosiveImpact_3_daze',
+    name: 'BasicAttackAdorableExplosiveImpact_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -366,12 +366,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackAdorableExplosiveImpact_3_daze',
+      name: 'BasicAttackAdorableExplosiveImpact_3',
     },
   },
-  BasicAttackAdorableExplosiveImpact_3_anomBuildup: {
+  'BasicAttackAdorableExplosiveImpact_3:anomBuildup': {
     sheet: 'NangongYu',
-    name: 'BasicAttackAdorableExplosiveImpact_3_anomBuildup',
+    name: 'BasicAttackAdorableExplosiveImpact_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -380,12 +380,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackAdorableExplosiveImpact_3_anomBuildup',
+      name: 'BasicAttackAdorableExplosiveImpact_3',
     },
   },
-  DashAttackSpinningMeteor_0_dmg: {
+  'DashAttackSpinningMeteor_0:standardDmg': {
     sheet: 'NangongYu',
-    name: 'DashAttackSpinningMeteor_0_dmg',
+    name: 'DashAttackSpinningMeteor_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -394,12 +394,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackSpinningMeteor_0_dmg',
+      name: 'DashAttackSpinningMeteor_0',
     },
   },
-  DashAttackSpinningMeteor_0_daze: {
+  'DashAttackSpinningMeteor_0:dazeBuildup': {
     sheet: 'NangongYu',
-    name: 'DashAttackSpinningMeteor_0_daze',
+    name: 'DashAttackSpinningMeteor_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -408,12 +408,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackSpinningMeteor_0_daze',
+      name: 'DashAttackSpinningMeteor_0',
     },
   },
-  DashAttackSpinningMeteor_0_anomBuildup: {
+  'DashAttackSpinningMeteor_0:anomBuildup': {
     sheet: 'NangongYu',
-    name: 'DashAttackSpinningMeteor_0_anomBuildup',
+    name: 'DashAttackSpinningMeteor_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -422,12 +422,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackSpinningMeteor_0_anomBuildup',
+      name: 'DashAttackSpinningMeteor_0',
     },
   },
-  DodgeCounterAsteroidWaltz_0_dmg: {
+  'DodgeCounterAsteroidWaltz_0:standardDmg': {
     sheet: 'NangongYu',
-    name: 'DodgeCounterAsteroidWaltz_0_dmg',
+    name: 'DodgeCounterAsteroidWaltz_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -436,12 +436,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterAsteroidWaltz_0_dmg',
+      name: 'DodgeCounterAsteroidWaltz_0',
     },
   },
-  DodgeCounterAsteroidWaltz_0_daze: {
+  'DodgeCounterAsteroidWaltz_0:dazeBuildup': {
     sheet: 'NangongYu',
-    name: 'DodgeCounterAsteroidWaltz_0_daze',
+    name: 'DodgeCounterAsteroidWaltz_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -450,12 +450,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterAsteroidWaltz_0_daze',
+      name: 'DodgeCounterAsteroidWaltz_0',
     },
   },
-  DodgeCounterAsteroidWaltz_0_anomBuildup: {
+  'DodgeCounterAsteroidWaltz_0:anomBuildup': {
     sheet: 'NangongYu',
-    name: 'DodgeCounterAsteroidWaltz_0_anomBuildup',
+    name: 'DodgeCounterAsteroidWaltz_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -464,12 +464,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterAsteroidWaltz_0_anomBuildup',
+      name: 'DodgeCounterAsteroidWaltz_0',
     },
   },
-  SpecialAttackTheWeightOfLove_0_dmg: {
+  'SpecialAttackTheWeightOfLove_0:standardDmg': {
     sheet: 'NangongYu',
-    name: 'SpecialAttackTheWeightOfLove_0_dmg',
+    name: 'SpecialAttackTheWeightOfLove_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -478,12 +478,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackTheWeightOfLove_0_dmg',
+      name: 'SpecialAttackTheWeightOfLove_0',
     },
   },
-  SpecialAttackTheWeightOfLove_0_daze: {
+  'SpecialAttackTheWeightOfLove_0:dazeBuildup': {
     sheet: 'NangongYu',
-    name: 'SpecialAttackTheWeightOfLove_0_daze',
+    name: 'SpecialAttackTheWeightOfLove_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -492,12 +492,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackTheWeightOfLove_0_daze',
+      name: 'SpecialAttackTheWeightOfLove_0',
     },
   },
-  SpecialAttackTheWeightOfLove_0_anomBuildup: {
+  'SpecialAttackTheWeightOfLove_0:anomBuildup': {
     sheet: 'NangongYu',
-    name: 'SpecialAttackTheWeightOfLove_0_anomBuildup',
+    name: 'SpecialAttackTheWeightOfLove_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -506,12 +506,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackTheWeightOfLove_0_anomBuildup',
+      name: 'SpecialAttackTheWeightOfLove_0',
     },
   },
-  EXSpecialAttackTheUnbearableWeightOfLove_0_dmg: {
+  'EXSpecialAttackTheUnbearableWeightOfLove_0:standardDmg': {
     sheet: 'NangongYu',
-    name: 'EXSpecialAttackTheUnbearableWeightOfLove_0_dmg',
+    name: 'EXSpecialAttackTheUnbearableWeightOfLove_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -520,12 +520,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackTheUnbearableWeightOfLove_0_dmg',
+      name: 'EXSpecialAttackTheUnbearableWeightOfLove_0',
     },
   },
-  EXSpecialAttackTheUnbearableWeightOfLove_0_daze: {
+  'EXSpecialAttackTheUnbearableWeightOfLove_0:dazeBuildup': {
     sheet: 'NangongYu',
-    name: 'EXSpecialAttackTheUnbearableWeightOfLove_0_daze',
+    name: 'EXSpecialAttackTheUnbearableWeightOfLove_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -534,12 +534,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackTheUnbearableWeightOfLove_0_daze',
+      name: 'EXSpecialAttackTheUnbearableWeightOfLove_0',
     },
   },
-  EXSpecialAttackTheUnbearableWeightOfLove_0_anomBuildup: {
+  'EXSpecialAttackTheUnbearableWeightOfLove_0:anomBuildup': {
     sheet: 'NangongYu',
-    name: 'EXSpecialAttackTheUnbearableWeightOfLove_0_anomBuildup',
+    name: 'EXSpecialAttackTheUnbearableWeightOfLove_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -548,12 +548,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackTheUnbearableWeightOfLove_0_anomBuildup',
+      name: 'EXSpecialAttackTheUnbearableWeightOfLove_0',
     },
   },
-  ChainAttackCometGravity_0_dmg: {
+  'ChainAttackCometGravity_0:standardDmg': {
     sheet: 'NangongYu',
-    name: 'ChainAttackCometGravity_0_dmg',
+    name: 'ChainAttackCometGravity_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -562,12 +562,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackCometGravity_0_dmg',
+      name: 'ChainAttackCometGravity_0',
     },
   },
-  ChainAttackCometGravity_0_daze: {
+  'ChainAttackCometGravity_0:dazeBuildup': {
     sheet: 'NangongYu',
-    name: 'ChainAttackCometGravity_0_daze',
+    name: 'ChainAttackCometGravity_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -576,12 +576,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackCometGravity_0_daze',
+      name: 'ChainAttackCometGravity_0',
     },
   },
-  ChainAttackCometGravity_0_anomBuildup: {
+  'ChainAttackCometGravity_0:anomBuildup': {
     sheet: 'NangongYu',
-    name: 'ChainAttackCometGravity_0_anomBuildup',
+    name: 'ChainAttackCometGravity_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -590,12 +590,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackCometGravity_0_anomBuildup',
+      name: 'ChainAttackCometGravity_0',
     },
   },
-  UltimateMeteorShower_0_dmg: {
+  'UltimateMeteorShower_0:standardDmg': {
     sheet: 'NangongYu',
-    name: 'UltimateMeteorShower_0_dmg',
+    name: 'UltimateMeteorShower_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -604,12 +604,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateMeteorShower_0_dmg',
+      name: 'UltimateMeteorShower_0',
     },
   },
-  UltimateMeteorShower_0_daze: {
+  'UltimateMeteorShower_0:dazeBuildup': {
     sheet: 'NangongYu',
-    name: 'UltimateMeteorShower_0_daze',
+    name: 'UltimateMeteorShower_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -618,12 +618,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateMeteorShower_0_daze',
+      name: 'UltimateMeteorShower_0',
     },
   },
-  UltimateMeteorShower_0_anomBuildup: {
+  'UltimateMeteorShower_0:anomBuildup': {
     sheet: 'NangongYu',
-    name: 'UltimateMeteorShower_0_anomBuildup',
+    name: 'UltimateMeteorShower_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -632,12 +632,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateMeteorShower_0_anomBuildup',
+      name: 'UltimateMeteorShower_0',
     },
   },
-  QuickAssistEmergencySave_0_dmg: {
+  'QuickAssistEmergencySave_0:standardDmg': {
     sheet: 'NangongYu',
-    name: 'QuickAssistEmergencySave_0_dmg',
+    name: 'QuickAssistEmergencySave_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -646,12 +646,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistEmergencySave_0_dmg',
+      name: 'QuickAssistEmergencySave_0',
     },
   },
-  QuickAssistEmergencySave_0_daze: {
+  'QuickAssistEmergencySave_0:dazeBuildup': {
     sheet: 'NangongYu',
-    name: 'QuickAssistEmergencySave_0_daze',
+    name: 'QuickAssistEmergencySave_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -660,12 +660,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistEmergencySave_0_daze',
+      name: 'QuickAssistEmergencySave_0',
     },
   },
-  QuickAssistEmergencySave_0_anomBuildup: {
+  'QuickAssistEmergencySave_0:anomBuildup': {
     sheet: 'NangongYu',
-    name: 'QuickAssistEmergencySave_0_anomBuildup',
+    name: 'QuickAssistEmergencySave_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -674,12 +674,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistEmergencySave_0_anomBuildup',
+      name: 'QuickAssistEmergencySave_0',
     },
   },
-  DefensiveAssistPerfectedChoreography_0_dmg: {
+  'DefensiveAssistPerfectedChoreography_0:standardDmg': {
     sheet: 'NangongYu',
-    name: 'DefensiveAssistPerfectedChoreography_0_dmg',
+    name: 'DefensiveAssistPerfectedChoreography_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -688,12 +688,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistPerfectedChoreography_0_dmg',
+      name: 'DefensiveAssistPerfectedChoreography_0',
     },
   },
-  DefensiveAssistPerfectedChoreography_0_daze: {
+  'DefensiveAssistPerfectedChoreography_0:dazeBuildup': {
     sheet: 'NangongYu',
-    name: 'DefensiveAssistPerfectedChoreography_0_daze',
+    name: 'DefensiveAssistPerfectedChoreography_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -702,12 +702,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistPerfectedChoreography_0_daze',
+      name: 'DefensiveAssistPerfectedChoreography_0',
     },
   },
-  DefensiveAssistPerfectedChoreography_0_anomBuildup: {
+  'DefensiveAssistPerfectedChoreography_0:anomBuildup': {
     sheet: 'NangongYu',
-    name: 'DefensiveAssistPerfectedChoreography_0_anomBuildup',
+    name: 'DefensiveAssistPerfectedChoreography_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -716,12 +716,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistPerfectedChoreography_0_anomBuildup',
+      name: 'DefensiveAssistPerfectedChoreography_0',
     },
   },
-  DefensiveAssistPerfectedChoreography_1_dmg: {
+  'DefensiveAssistPerfectedChoreography_1:standardDmg': {
     sheet: 'NangongYu',
-    name: 'DefensiveAssistPerfectedChoreography_1_dmg',
+    name: 'DefensiveAssistPerfectedChoreography_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -730,12 +730,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistPerfectedChoreography_1_dmg',
+      name: 'DefensiveAssistPerfectedChoreography_1',
     },
   },
-  DefensiveAssistPerfectedChoreography_1_daze: {
+  'DefensiveAssistPerfectedChoreography_1:dazeBuildup': {
     sheet: 'NangongYu',
-    name: 'DefensiveAssistPerfectedChoreography_1_daze',
+    name: 'DefensiveAssistPerfectedChoreography_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -744,12 +744,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistPerfectedChoreography_1_daze',
+      name: 'DefensiveAssistPerfectedChoreography_1',
     },
   },
-  DefensiveAssistPerfectedChoreography_1_anomBuildup: {
+  'DefensiveAssistPerfectedChoreography_1:anomBuildup': {
     sheet: 'NangongYu',
-    name: 'DefensiveAssistPerfectedChoreography_1_anomBuildup',
+    name: 'DefensiveAssistPerfectedChoreography_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -758,12 +758,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistPerfectedChoreography_1_anomBuildup',
+      name: 'DefensiveAssistPerfectedChoreography_1',
     },
   },
-  DefensiveAssistPerfectedChoreography_2_dmg: {
+  'DefensiveAssistPerfectedChoreography_2:standardDmg': {
     sheet: 'NangongYu',
-    name: 'DefensiveAssistPerfectedChoreography_2_dmg',
+    name: 'DefensiveAssistPerfectedChoreography_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -772,12 +772,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistPerfectedChoreography_2_dmg',
+      name: 'DefensiveAssistPerfectedChoreography_2',
     },
   },
-  DefensiveAssistPerfectedChoreography_2_daze: {
+  'DefensiveAssistPerfectedChoreography_2:dazeBuildup': {
     sheet: 'NangongYu',
-    name: 'DefensiveAssistPerfectedChoreography_2_daze',
+    name: 'DefensiveAssistPerfectedChoreography_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -786,12 +786,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistPerfectedChoreography_2_daze',
+      name: 'DefensiveAssistPerfectedChoreography_2',
     },
   },
-  DefensiveAssistPerfectedChoreography_2_anomBuildup: {
+  'DefensiveAssistPerfectedChoreography_2:anomBuildup': {
     sheet: 'NangongYu',
-    name: 'DefensiveAssistPerfectedChoreography_2_anomBuildup',
+    name: 'DefensiveAssistPerfectedChoreography_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -800,12 +800,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistPerfectedChoreography_2_anomBuildup',
+      name: 'DefensiveAssistPerfectedChoreography_2',
     },
   },
-  AssistFollowUpImprovisedPerformance_0_dmg: {
+  'AssistFollowUpImprovisedPerformance_0:standardDmg': {
     sheet: 'NangongYu',
-    name: 'AssistFollowUpImprovisedPerformance_0_dmg',
+    name: 'AssistFollowUpImprovisedPerformance_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -814,12 +814,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpImprovisedPerformance_0_dmg',
+      name: 'AssistFollowUpImprovisedPerformance_0',
     },
   },
-  AssistFollowUpImprovisedPerformance_0_daze: {
+  'AssistFollowUpImprovisedPerformance_0:dazeBuildup': {
     sheet: 'NangongYu',
-    name: 'AssistFollowUpImprovisedPerformance_0_daze',
+    name: 'AssistFollowUpImprovisedPerformance_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -828,12 +828,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpImprovisedPerformance_0_daze',
+      name: 'AssistFollowUpImprovisedPerformance_0',
     },
   },
-  AssistFollowUpImprovisedPerformance_0_anomBuildup: {
+  'AssistFollowUpImprovisedPerformance_0:anomBuildup': {
     sheet: 'NangongYu',
-    name: 'AssistFollowUpImprovisedPerformance_0_anomBuildup',
+    name: 'AssistFollowUpImprovisedPerformance_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -842,7 +842,7 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpImprovisedPerformance_0_anomBuildup',
+      name: 'AssistFollowUpImprovisedPerformance_0',
     },
   },
 } as const

@@ -89,9 +89,9 @@ export const formulas = {
       name: 'dazeInst',
     },
   },
-  BasicAttackSmashNBash_0_dmg: {
+  'BasicAttackSmashNBash_0:standardDmg': {
     sheet: 'Koleda',
-    name: 'BasicAttackSmashNBash_0_dmg',
+    name: 'BasicAttackSmashNBash_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -100,12 +100,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackSmashNBash_0_dmg',
+      name: 'BasicAttackSmashNBash_0',
     },
   },
-  BasicAttackSmashNBash_0_daze: {
+  'BasicAttackSmashNBash_0:dazeBuildup': {
     sheet: 'Koleda',
-    name: 'BasicAttackSmashNBash_0_daze',
+    name: 'BasicAttackSmashNBash_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -114,12 +114,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackSmashNBash_0_daze',
+      name: 'BasicAttackSmashNBash_0',
     },
   },
-  BasicAttackSmashNBash_0_anomBuildup: {
+  'BasicAttackSmashNBash_0:anomBuildup': {
     sheet: 'Koleda',
-    name: 'BasicAttackSmashNBash_0_anomBuildup',
+    name: 'BasicAttackSmashNBash_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -128,12 +128,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackSmashNBash_0_anomBuildup',
+      name: 'BasicAttackSmashNBash_0',
     },
   },
-  BasicAttackSmashNBash_1_dmg: {
+  'BasicAttackSmashNBash_1:standardDmg': {
     sheet: 'Koleda',
-    name: 'BasicAttackSmashNBash_1_dmg',
+    name: 'BasicAttackSmashNBash_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -142,12 +142,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackSmashNBash_1_dmg',
+      name: 'BasicAttackSmashNBash_1',
     },
   },
-  BasicAttackSmashNBash_1_daze: {
+  'BasicAttackSmashNBash_1:dazeBuildup': {
     sheet: 'Koleda',
-    name: 'BasicAttackSmashNBash_1_daze',
+    name: 'BasicAttackSmashNBash_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -156,12 +156,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackSmashNBash_1_daze',
+      name: 'BasicAttackSmashNBash_1',
     },
   },
-  BasicAttackSmashNBash_1_anomBuildup: {
+  'BasicAttackSmashNBash_1:anomBuildup': {
     sheet: 'Koleda',
-    name: 'BasicAttackSmashNBash_1_anomBuildup',
+    name: 'BasicAttackSmashNBash_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -170,12 +170,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackSmashNBash_1_anomBuildup',
+      name: 'BasicAttackSmashNBash_1',
     },
   },
-  BasicAttackSmashNBash_2_dmg: {
+  'BasicAttackSmashNBash_2:standardDmg': {
     sheet: 'Koleda',
-    name: 'BasicAttackSmashNBash_2_dmg',
+    name: 'BasicAttackSmashNBash_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -184,12 +184,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackSmashNBash_2_dmg',
+      name: 'BasicAttackSmashNBash_2',
     },
   },
-  BasicAttackSmashNBash_2_daze: {
+  'BasicAttackSmashNBash_2:dazeBuildup': {
     sheet: 'Koleda',
-    name: 'BasicAttackSmashNBash_2_daze',
+    name: 'BasicAttackSmashNBash_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -198,12 +198,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackSmashNBash_2_daze',
+      name: 'BasicAttackSmashNBash_2',
     },
   },
-  BasicAttackSmashNBash_2_anomBuildup: {
+  'BasicAttackSmashNBash_2:anomBuildup': {
     sheet: 'Koleda',
-    name: 'BasicAttackSmashNBash_2_anomBuildup',
+    name: 'BasicAttackSmashNBash_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -212,12 +212,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackSmashNBash_2_anomBuildup',
+      name: 'BasicAttackSmashNBash_2',
     },
   },
-  BasicAttackSmashNBash_3_dmg: {
+  'BasicAttackSmashNBash_3:standardDmg': {
     sheet: 'Koleda',
-    name: 'BasicAttackSmashNBash_3_dmg',
+    name: 'BasicAttackSmashNBash_3:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -226,12 +226,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackSmashNBash_3_dmg',
+      name: 'BasicAttackSmashNBash_3',
     },
   },
-  BasicAttackSmashNBash_3_daze: {
+  'BasicAttackSmashNBash_3:dazeBuildup': {
     sheet: 'Koleda',
-    name: 'BasicAttackSmashNBash_3_daze',
+    name: 'BasicAttackSmashNBash_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -240,12 +240,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackSmashNBash_3_daze',
+      name: 'BasicAttackSmashNBash_3',
     },
   },
-  BasicAttackSmashNBash_3_anomBuildup: {
+  'BasicAttackSmashNBash_3:anomBuildup': {
     sheet: 'Koleda',
-    name: 'BasicAttackSmashNBash_3_anomBuildup',
+    name: 'BasicAttackSmashNBash_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -254,12 +254,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackSmashNBash_3_anomBuildup',
+      name: 'BasicAttackSmashNBash_3',
     },
   },
-  BasicAttackSmashNBash_4_dmg: {
+  'BasicAttackSmashNBash_4:standardDmg': {
     sheet: 'Koleda',
-    name: 'BasicAttackSmashNBash_4_dmg',
+    name: 'BasicAttackSmashNBash_4:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -268,12 +268,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSmashNBash_4_dmg',
+      name: 'BasicAttackSmashNBash_4',
     },
   },
-  BasicAttackSmashNBash_4_daze: {
+  'BasicAttackSmashNBash_4:dazeBuildup': {
     sheet: 'Koleda',
-    name: 'BasicAttackSmashNBash_4_daze',
+    name: 'BasicAttackSmashNBash_4:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -282,12 +282,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSmashNBash_4_daze',
+      name: 'BasicAttackSmashNBash_4',
     },
   },
-  BasicAttackSmashNBash_4_anomBuildup: {
+  'BasicAttackSmashNBash_4:anomBuildup': {
     sheet: 'Koleda',
-    name: 'BasicAttackSmashNBash_4_anomBuildup',
+    name: 'BasicAttackSmashNBash_4:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -296,12 +296,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSmashNBash_4_anomBuildup',
+      name: 'BasicAttackSmashNBash_4',
     },
   },
-  BasicAttackSmashNBash_5_dmg: {
+  'BasicAttackSmashNBash_5:standardDmg': {
     sheet: 'Koleda',
-    name: 'BasicAttackSmashNBash_5_dmg',
+    name: 'BasicAttackSmashNBash_5:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -310,12 +310,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSmashNBash_5_dmg',
+      name: 'BasicAttackSmashNBash_5',
     },
   },
-  BasicAttackSmashNBash_5_daze: {
+  'BasicAttackSmashNBash_5:dazeBuildup': {
     sheet: 'Koleda',
-    name: 'BasicAttackSmashNBash_5_daze',
+    name: 'BasicAttackSmashNBash_5:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -324,12 +324,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSmashNBash_5_daze',
+      name: 'BasicAttackSmashNBash_5',
     },
   },
-  BasicAttackSmashNBash_5_anomBuildup: {
+  'BasicAttackSmashNBash_5:anomBuildup': {
     sheet: 'Koleda',
-    name: 'BasicAttackSmashNBash_5_anomBuildup',
+    name: 'BasicAttackSmashNBash_5:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -338,12 +338,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSmashNBash_5_anomBuildup',
+      name: 'BasicAttackSmashNBash_5',
     },
   },
-  BasicAttackSmashNBash_6_dmg: {
+  'BasicAttackSmashNBash_6:standardDmg': {
     sheet: 'Koleda',
-    name: 'BasicAttackSmashNBash_6_dmg',
+    name: 'BasicAttackSmashNBash_6:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -352,12 +352,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSmashNBash_6_dmg',
+      name: 'BasicAttackSmashNBash_6',
     },
   },
-  BasicAttackSmashNBash_6_daze: {
+  'BasicAttackSmashNBash_6:dazeBuildup': {
     sheet: 'Koleda',
-    name: 'BasicAttackSmashNBash_6_daze',
+    name: 'BasicAttackSmashNBash_6:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -366,12 +366,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSmashNBash_6_daze',
+      name: 'BasicAttackSmashNBash_6',
     },
   },
-  BasicAttackSmashNBash_6_anomBuildup: {
+  'BasicAttackSmashNBash_6:anomBuildup': {
     sheet: 'Koleda',
-    name: 'BasicAttackSmashNBash_6_anomBuildup',
+    name: 'BasicAttackSmashNBash_6:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -380,12 +380,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackSmashNBash_6_anomBuildup',
+      name: 'BasicAttackSmashNBash_6',
     },
   },
-  DashAttackTremble_0_dmg: {
+  'DashAttackTremble_0:standardDmg': {
     sheet: 'Koleda',
-    name: 'DashAttackTremble_0_dmg',
+    name: 'DashAttackTremble_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -394,12 +394,12 @@ export const formulas = {
       damageType1: 'dash',
       attribute: 'physical',
       skillType: 'dodgeSkill',
-      name: 'DashAttackTremble_0_dmg',
+      name: 'DashAttackTremble_0',
     },
   },
-  DashAttackTremble_0_daze: {
+  'DashAttackTremble_0:dazeBuildup': {
     sheet: 'Koleda',
-    name: 'DashAttackTremble_0_daze',
+    name: 'DashAttackTremble_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -408,12 +408,12 @@ export const formulas = {
       damageType1: 'dash',
       attribute: 'physical',
       skillType: 'dodgeSkill',
-      name: 'DashAttackTremble_0_daze',
+      name: 'DashAttackTremble_0',
     },
   },
-  DashAttackTremble_0_anomBuildup: {
+  'DashAttackTremble_0:anomBuildup': {
     sheet: 'Koleda',
-    name: 'DashAttackTremble_0_anomBuildup',
+    name: 'DashAttackTremble_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -422,12 +422,12 @@ export const formulas = {
       damageType1: 'dash',
       attribute: 'physical',
       skillType: 'dodgeSkill',
-      name: 'DashAttackTremble_0_anomBuildup',
+      name: 'DashAttackTremble_0',
     },
   },
-  DodgeCounterDontLookDownOnMe_0_dmg: {
+  'DodgeCounterDontLookDownOnMe_0:standardDmg': {
     sheet: 'Koleda',
-    name: 'DodgeCounterDontLookDownOnMe_0_dmg',
+    name: 'DodgeCounterDontLookDownOnMe_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -436,12 +436,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterDontLookDownOnMe_0_dmg',
+      name: 'DodgeCounterDontLookDownOnMe_0',
     },
   },
-  DodgeCounterDontLookDownOnMe_0_daze: {
+  'DodgeCounterDontLookDownOnMe_0:dazeBuildup': {
     sheet: 'Koleda',
-    name: 'DodgeCounterDontLookDownOnMe_0_daze',
+    name: 'DodgeCounterDontLookDownOnMe_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -450,12 +450,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterDontLookDownOnMe_0_daze',
+      name: 'DodgeCounterDontLookDownOnMe_0',
     },
   },
-  DodgeCounterDontLookDownOnMe_0_anomBuildup: {
+  'DodgeCounterDontLookDownOnMe_0:anomBuildup': {
     sheet: 'Koleda',
-    name: 'DodgeCounterDontLookDownOnMe_0_anomBuildup',
+    name: 'DodgeCounterDontLookDownOnMe_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -464,12 +464,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterDontLookDownOnMe_0_anomBuildup',
+      name: 'DodgeCounterDontLookDownOnMe_0',
     },
   },
-  SpecialAttackHammerTime_0_dmg: {
+  'SpecialAttackHammerTime_0:standardDmg': {
     sheet: 'Koleda',
-    name: 'SpecialAttackHammerTime_0_dmg',
+    name: 'SpecialAttackHammerTime_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -478,12 +478,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackHammerTime_0_dmg',
+      name: 'SpecialAttackHammerTime_0',
     },
   },
-  SpecialAttackHammerTime_0_daze: {
+  'SpecialAttackHammerTime_0:dazeBuildup': {
     sheet: 'Koleda',
-    name: 'SpecialAttackHammerTime_0_daze',
+    name: 'SpecialAttackHammerTime_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -492,12 +492,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackHammerTime_0_daze',
+      name: 'SpecialAttackHammerTime_0',
     },
   },
-  SpecialAttackHammerTime_0_anomBuildup: {
+  'SpecialAttackHammerTime_0:anomBuildup': {
     sheet: 'Koleda',
-    name: 'SpecialAttackHammerTime_0_anomBuildup',
+    name: 'SpecialAttackHammerTime_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -506,12 +506,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackHammerTime_0_anomBuildup',
+      name: 'SpecialAttackHammerTime_0',
     },
   },
-  SpecialAttackHammerTime_1_dmg: {
+  'SpecialAttackHammerTime_1:standardDmg': {
     sheet: 'Koleda',
-    name: 'SpecialAttackHammerTime_1_dmg',
+    name: 'SpecialAttackHammerTime_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -520,12 +520,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackHammerTime_1_dmg',
+      name: 'SpecialAttackHammerTime_1',
     },
   },
-  SpecialAttackHammerTime_1_daze: {
+  'SpecialAttackHammerTime_1:dazeBuildup': {
     sheet: 'Koleda',
-    name: 'SpecialAttackHammerTime_1_daze',
+    name: 'SpecialAttackHammerTime_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -534,12 +534,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackHammerTime_1_daze',
+      name: 'SpecialAttackHammerTime_1',
     },
   },
-  SpecialAttackHammerTime_1_anomBuildup: {
+  'SpecialAttackHammerTime_1:anomBuildup': {
     sheet: 'Koleda',
-    name: 'SpecialAttackHammerTime_1_anomBuildup',
+    name: 'SpecialAttackHammerTime_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -548,12 +548,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackHammerTime_1_anomBuildup',
+      name: 'SpecialAttackHammerTime_1',
     },
   },
-  SpecialAttackHammerTime_2_dmg: {
+  'SpecialAttackHammerTime_2:standardDmg': {
     sheet: 'Koleda',
-    name: 'SpecialAttackHammerTime_2_dmg',
+    name: 'SpecialAttackHammerTime_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -562,12 +562,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackHammerTime_2_dmg',
+      name: 'SpecialAttackHammerTime_2',
     },
   },
-  SpecialAttackHammerTime_2_daze: {
+  'SpecialAttackHammerTime_2:dazeBuildup': {
     sheet: 'Koleda',
-    name: 'SpecialAttackHammerTime_2_daze',
+    name: 'SpecialAttackHammerTime_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -576,12 +576,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackHammerTime_2_daze',
+      name: 'SpecialAttackHammerTime_2',
     },
   },
-  SpecialAttackHammerTime_2_anomBuildup: {
+  'SpecialAttackHammerTime_2:anomBuildup': {
     sheet: 'Koleda',
-    name: 'SpecialAttackHammerTime_2_anomBuildup',
+    name: 'SpecialAttackHammerTime_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -590,12 +590,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackHammerTime_2_anomBuildup',
+      name: 'SpecialAttackHammerTime_2',
     },
   },
-  EXSpecialAttackBoilingFurnace_0_dmg: {
+  'EXSpecialAttackBoilingFurnace_0:standardDmg': {
     sheet: 'Koleda',
-    name: 'EXSpecialAttackBoilingFurnace_0_dmg',
+    name: 'EXSpecialAttackBoilingFurnace_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -604,12 +604,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackBoilingFurnace_0_dmg',
+      name: 'EXSpecialAttackBoilingFurnace_0',
     },
   },
-  EXSpecialAttackBoilingFurnace_0_daze: {
+  'EXSpecialAttackBoilingFurnace_0:dazeBuildup': {
     sheet: 'Koleda',
-    name: 'EXSpecialAttackBoilingFurnace_0_daze',
+    name: 'EXSpecialAttackBoilingFurnace_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -618,12 +618,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackBoilingFurnace_0_daze',
+      name: 'EXSpecialAttackBoilingFurnace_0',
     },
   },
-  EXSpecialAttackBoilingFurnace_0_anomBuildup: {
+  'EXSpecialAttackBoilingFurnace_0:anomBuildup': {
     sheet: 'Koleda',
-    name: 'EXSpecialAttackBoilingFurnace_0_anomBuildup',
+    name: 'EXSpecialAttackBoilingFurnace_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -632,12 +632,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackBoilingFurnace_0_anomBuildup',
+      name: 'EXSpecialAttackBoilingFurnace_0',
     },
   },
-  EXSpecialAttackBoilingFurnace_1_dmg: {
+  'EXSpecialAttackBoilingFurnace_1:standardDmg': {
     sheet: 'Koleda',
-    name: 'EXSpecialAttackBoilingFurnace_1_dmg',
+    name: 'EXSpecialAttackBoilingFurnace_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -646,12 +646,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackBoilingFurnace_1_dmg',
+      name: 'EXSpecialAttackBoilingFurnace_1',
     },
   },
-  EXSpecialAttackBoilingFurnace_1_daze: {
+  'EXSpecialAttackBoilingFurnace_1:dazeBuildup': {
     sheet: 'Koleda',
-    name: 'EXSpecialAttackBoilingFurnace_1_daze',
+    name: 'EXSpecialAttackBoilingFurnace_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -660,12 +660,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackBoilingFurnace_1_daze',
+      name: 'EXSpecialAttackBoilingFurnace_1',
     },
   },
-  EXSpecialAttackBoilingFurnace_1_anomBuildup: {
+  'EXSpecialAttackBoilingFurnace_1:anomBuildup': {
     sheet: 'Koleda',
-    name: 'EXSpecialAttackBoilingFurnace_1_anomBuildup',
+    name: 'EXSpecialAttackBoilingFurnace_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -674,12 +674,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackBoilingFurnace_1_anomBuildup',
+      name: 'EXSpecialAttackBoilingFurnace_1',
     },
   },
-  EXSpecialAttackBoilingFurnace_2_dmg: {
+  'EXSpecialAttackBoilingFurnace_2:standardDmg': {
     sheet: 'Koleda',
-    name: 'EXSpecialAttackBoilingFurnace_2_dmg',
+    name: 'EXSpecialAttackBoilingFurnace_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -688,12 +688,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackBoilingFurnace_2_dmg',
+      name: 'EXSpecialAttackBoilingFurnace_2',
     },
   },
-  EXSpecialAttackBoilingFurnace_2_daze: {
+  'EXSpecialAttackBoilingFurnace_2:dazeBuildup': {
     sheet: 'Koleda',
-    name: 'EXSpecialAttackBoilingFurnace_2_daze',
+    name: 'EXSpecialAttackBoilingFurnace_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -702,12 +702,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackBoilingFurnace_2_daze',
+      name: 'EXSpecialAttackBoilingFurnace_2',
     },
   },
-  EXSpecialAttackBoilingFurnace_2_anomBuildup: {
+  'EXSpecialAttackBoilingFurnace_2:anomBuildup': {
     sheet: 'Koleda',
-    name: 'EXSpecialAttackBoilingFurnace_2_anomBuildup',
+    name: 'EXSpecialAttackBoilingFurnace_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -716,12 +716,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackBoilingFurnace_2_anomBuildup',
+      name: 'EXSpecialAttackBoilingFurnace_2',
     },
   },
-  ChainAttackNaturalDisaster_0_dmg: {
+  'ChainAttackNaturalDisaster_0:standardDmg': {
     sheet: 'Koleda',
-    name: 'ChainAttackNaturalDisaster_0_dmg',
+    name: 'ChainAttackNaturalDisaster_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -730,12 +730,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackNaturalDisaster_0_dmg',
+      name: 'ChainAttackNaturalDisaster_0',
     },
   },
-  ChainAttackNaturalDisaster_0_daze: {
+  'ChainAttackNaturalDisaster_0:dazeBuildup': {
     sheet: 'Koleda',
-    name: 'ChainAttackNaturalDisaster_0_daze',
+    name: 'ChainAttackNaturalDisaster_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -744,12 +744,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackNaturalDisaster_0_daze',
+      name: 'ChainAttackNaturalDisaster_0',
     },
   },
-  ChainAttackNaturalDisaster_0_anomBuildup: {
+  'ChainAttackNaturalDisaster_0:anomBuildup': {
     sheet: 'Koleda',
-    name: 'ChainAttackNaturalDisaster_0_anomBuildup',
+    name: 'ChainAttackNaturalDisaster_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -758,12 +758,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackNaturalDisaster_0_anomBuildup',
+      name: 'ChainAttackNaturalDisaster_0',
     },
   },
-  UltimateHammerquake_0_dmg: {
+  'UltimateHammerquake_0:standardDmg': {
     sheet: 'Koleda',
-    name: 'UltimateHammerquake_0_dmg',
+    name: 'UltimateHammerquake_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -772,12 +772,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateHammerquake_0_dmg',
+      name: 'UltimateHammerquake_0',
     },
   },
-  UltimateHammerquake_0_daze: {
+  'UltimateHammerquake_0:dazeBuildup': {
     sheet: 'Koleda',
-    name: 'UltimateHammerquake_0_daze',
+    name: 'UltimateHammerquake_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -786,12 +786,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateHammerquake_0_daze',
+      name: 'UltimateHammerquake_0',
     },
   },
-  UltimateHammerquake_0_anomBuildup: {
+  'UltimateHammerquake_0:anomBuildup': {
     sheet: 'Koleda',
-    name: 'UltimateHammerquake_0_anomBuildup',
+    name: 'UltimateHammerquake_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -800,12 +800,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateHammerquake_0_anomBuildup',
+      name: 'UltimateHammerquake_0',
     },
   },
-  UltimateHammerquake_1_dmg: {
+  'UltimateHammerquake_1:standardDmg': {
     sheet: 'Koleda',
-    name: 'UltimateHammerquake_1_dmg',
+    name: 'UltimateHammerquake_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -814,12 +814,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateHammerquake_1_dmg',
+      name: 'UltimateHammerquake_1',
     },
   },
-  UltimateHammerquake_1_daze: {
+  'UltimateHammerquake_1:dazeBuildup': {
     sheet: 'Koleda',
-    name: 'UltimateHammerquake_1_daze',
+    name: 'UltimateHammerquake_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -828,12 +828,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateHammerquake_1_daze',
+      name: 'UltimateHammerquake_1',
     },
   },
-  UltimateHammerquake_1_anomBuildup: {
+  'UltimateHammerquake_1:anomBuildup': {
     sheet: 'Koleda',
-    name: 'UltimateHammerquake_1_anomBuildup',
+    name: 'UltimateHammerquake_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -842,12 +842,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateHammerquake_1_anomBuildup',
+      name: 'UltimateHammerquake_1',
     },
   },
-  QuickAssistComingThru_0_dmg: {
+  'QuickAssistComingThru_0:standardDmg': {
     sheet: 'Koleda',
-    name: 'QuickAssistComingThru_0_dmg',
+    name: 'QuickAssistComingThru_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -856,12 +856,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistComingThru_0_dmg',
+      name: 'QuickAssistComingThru_0',
     },
   },
-  QuickAssistComingThru_0_daze: {
+  'QuickAssistComingThru_0:dazeBuildup': {
     sheet: 'Koleda',
-    name: 'QuickAssistComingThru_0_daze',
+    name: 'QuickAssistComingThru_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -870,12 +870,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistComingThru_0_daze',
+      name: 'QuickAssistComingThru_0',
     },
   },
-  QuickAssistComingThru_0_anomBuildup: {
+  'QuickAssistComingThru_0:anomBuildup': {
     sheet: 'Koleda',
-    name: 'QuickAssistComingThru_0_anomBuildup',
+    name: 'QuickAssistComingThru_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -884,12 +884,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistComingThru_0_anomBuildup',
+      name: 'QuickAssistComingThru_0',
     },
   },
-  DefensiveAssistProtectiveHammer_0_dmg: {
+  'DefensiveAssistProtectiveHammer_0:standardDmg': {
     sheet: 'Koleda',
-    name: 'DefensiveAssistProtectiveHammer_0_dmg',
+    name: 'DefensiveAssistProtectiveHammer_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -898,12 +898,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistProtectiveHammer_0_dmg',
+      name: 'DefensiveAssistProtectiveHammer_0',
     },
   },
-  DefensiveAssistProtectiveHammer_0_daze: {
+  'DefensiveAssistProtectiveHammer_0:dazeBuildup': {
     sheet: 'Koleda',
-    name: 'DefensiveAssistProtectiveHammer_0_daze',
+    name: 'DefensiveAssistProtectiveHammer_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -912,12 +912,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistProtectiveHammer_0_daze',
+      name: 'DefensiveAssistProtectiveHammer_0',
     },
   },
-  DefensiveAssistProtectiveHammer_0_anomBuildup: {
+  'DefensiveAssistProtectiveHammer_0:anomBuildup': {
     sheet: 'Koleda',
-    name: 'DefensiveAssistProtectiveHammer_0_anomBuildup',
+    name: 'DefensiveAssistProtectiveHammer_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -926,12 +926,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistProtectiveHammer_0_anomBuildup',
+      name: 'DefensiveAssistProtectiveHammer_0',
     },
   },
-  DefensiveAssistProtectiveHammer_1_dmg: {
+  'DefensiveAssistProtectiveHammer_1:standardDmg': {
     sheet: 'Koleda',
-    name: 'DefensiveAssistProtectiveHammer_1_dmg',
+    name: 'DefensiveAssistProtectiveHammer_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -940,12 +940,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistProtectiveHammer_1_dmg',
+      name: 'DefensiveAssistProtectiveHammer_1',
     },
   },
-  DefensiveAssistProtectiveHammer_1_daze: {
+  'DefensiveAssistProtectiveHammer_1:dazeBuildup': {
     sheet: 'Koleda',
-    name: 'DefensiveAssistProtectiveHammer_1_daze',
+    name: 'DefensiveAssistProtectiveHammer_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -954,12 +954,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistProtectiveHammer_1_daze',
+      name: 'DefensiveAssistProtectiveHammer_1',
     },
   },
-  DefensiveAssistProtectiveHammer_1_anomBuildup: {
+  'DefensiveAssistProtectiveHammer_1:anomBuildup': {
     sheet: 'Koleda',
-    name: 'DefensiveAssistProtectiveHammer_1_anomBuildup',
+    name: 'DefensiveAssistProtectiveHammer_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -968,12 +968,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistProtectiveHammer_1_anomBuildup',
+      name: 'DefensiveAssistProtectiveHammer_1',
     },
   },
-  DefensiveAssistProtectiveHammer_2_dmg: {
+  'DefensiveAssistProtectiveHammer_2:standardDmg': {
     sheet: 'Koleda',
-    name: 'DefensiveAssistProtectiveHammer_2_dmg',
+    name: 'DefensiveAssistProtectiveHammer_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -982,12 +982,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistProtectiveHammer_2_dmg',
+      name: 'DefensiveAssistProtectiveHammer_2',
     },
   },
-  DefensiveAssistProtectiveHammer_2_daze: {
+  'DefensiveAssistProtectiveHammer_2:dazeBuildup': {
     sheet: 'Koleda',
-    name: 'DefensiveAssistProtectiveHammer_2_daze',
+    name: 'DefensiveAssistProtectiveHammer_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -996,12 +996,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistProtectiveHammer_2_daze',
+      name: 'DefensiveAssistProtectiveHammer_2',
     },
   },
-  DefensiveAssistProtectiveHammer_2_anomBuildup: {
+  'DefensiveAssistProtectiveHammer_2:anomBuildup': {
     sheet: 'Koleda',
-    name: 'DefensiveAssistProtectiveHammer_2_anomBuildup',
+    name: 'DefensiveAssistProtectiveHammer_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1010,12 +1010,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistProtectiveHammer_2_anomBuildup',
+      name: 'DefensiveAssistProtectiveHammer_2',
     },
   },
-  AssistFollowUpHammerBell_0_dmg: {
+  'AssistFollowUpHammerBell_0:standardDmg': {
     sheet: 'Koleda',
-    name: 'AssistFollowUpHammerBell_0_dmg',
+    name: 'AssistFollowUpHammerBell_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1024,12 +1024,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpHammerBell_0_dmg',
+      name: 'AssistFollowUpHammerBell_0',
     },
   },
-  AssistFollowUpHammerBell_0_daze: {
+  'AssistFollowUpHammerBell_0:dazeBuildup': {
     sheet: 'Koleda',
-    name: 'AssistFollowUpHammerBell_0_daze',
+    name: 'AssistFollowUpHammerBell_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1038,12 +1038,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpHammerBell_0_daze',
+      name: 'AssistFollowUpHammerBell_0',
     },
   },
-  AssistFollowUpHammerBell_0_anomBuildup: {
+  'AssistFollowUpHammerBell_0:anomBuildup': {
     sheet: 'Koleda',
-    name: 'AssistFollowUpHammerBell_0_anomBuildup',
+    name: 'AssistFollowUpHammerBell_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1052,7 +1052,7 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpHammerBell_0_anomBuildup',
+      name: 'AssistFollowUpHammerBell_0',
     },
   },
   m6_dmg: {

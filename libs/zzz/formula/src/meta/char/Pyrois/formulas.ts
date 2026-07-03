@@ -89,9 +89,9 @@ export const formulas = {
       name: 'dazeInst',
     },
   },
-  BasicAttackEmberglow_0_dmg: {
+  'BasicAttackEmberglow_0:standardDmg': {
     sheet: 'Pyrois',
-    name: 'BasicAttackEmberglow_0_dmg',
+    name: 'BasicAttackEmberglow_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -100,12 +100,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEmberglow_0_dmg',
+      name: 'BasicAttackEmberglow_0',
     },
   },
-  BasicAttackEmberglow_0_daze: {
+  'BasicAttackEmberglow_0:dazeBuildup': {
     sheet: 'Pyrois',
-    name: 'BasicAttackEmberglow_0_daze',
+    name: 'BasicAttackEmberglow_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -114,12 +114,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEmberglow_0_daze',
+      name: 'BasicAttackEmberglow_0',
     },
   },
-  BasicAttackEmberglow_0_anomBuildup: {
+  'BasicAttackEmberglow_0:anomBuildup': {
     sheet: 'Pyrois',
-    name: 'BasicAttackEmberglow_0_anomBuildup',
+    name: 'BasicAttackEmberglow_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -128,12 +128,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEmberglow_0_anomBuildup',
+      name: 'BasicAttackEmberglow_0',
     },
   },
-  BasicAttackEmberglow_1_dmg: {
+  'BasicAttackEmberglow_1:standardDmg': {
     sheet: 'Pyrois',
-    name: 'BasicAttackEmberglow_1_dmg',
+    name: 'BasicAttackEmberglow_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -142,12 +142,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEmberglow_1_dmg',
+      name: 'BasicAttackEmberglow_1',
     },
   },
-  BasicAttackEmberglow_1_daze: {
+  'BasicAttackEmberglow_1:dazeBuildup': {
     sheet: 'Pyrois',
-    name: 'BasicAttackEmberglow_1_daze',
+    name: 'BasicAttackEmberglow_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -156,12 +156,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEmberglow_1_daze',
+      name: 'BasicAttackEmberglow_1',
     },
   },
-  BasicAttackEmberglow_1_anomBuildup: {
+  'BasicAttackEmberglow_1:anomBuildup': {
     sheet: 'Pyrois',
-    name: 'BasicAttackEmberglow_1_anomBuildup',
+    name: 'BasicAttackEmberglow_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -170,12 +170,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEmberglow_1_anomBuildup',
+      name: 'BasicAttackEmberglow_1',
     },
   },
-  BasicAttackEmberglow_2_dmg: {
+  'BasicAttackEmberglow_2:standardDmg': {
     sheet: 'Pyrois',
-    name: 'BasicAttackEmberglow_2_dmg',
+    name: 'BasicAttackEmberglow_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -184,12 +184,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEmberglow_2_dmg',
+      name: 'BasicAttackEmberglow_2',
     },
   },
-  BasicAttackEmberglow_2_daze: {
+  'BasicAttackEmberglow_2:dazeBuildup': {
     sheet: 'Pyrois',
-    name: 'BasicAttackEmberglow_2_daze',
+    name: 'BasicAttackEmberglow_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -198,12 +198,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEmberglow_2_daze',
+      name: 'BasicAttackEmberglow_2',
     },
   },
-  BasicAttackEmberglow_2_anomBuildup: {
+  'BasicAttackEmberglow_2:anomBuildup': {
     sheet: 'Pyrois',
-    name: 'BasicAttackEmberglow_2_anomBuildup',
+    name: 'BasicAttackEmberglow_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -212,12 +212,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEmberglow_2_anomBuildup',
+      name: 'BasicAttackEmberglow_2',
     },
   },
-  BasicAttackCelestialLight_0_dmg: {
+  'BasicAttackCelestialLight_0:standardDmg': {
     sheet: 'Pyrois',
-    name: 'BasicAttackCelestialLight_0_dmg',
+    name: 'BasicAttackCelestialLight_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -226,12 +226,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCelestialLight_0_dmg',
+      name: 'BasicAttackCelestialLight_0',
     },
   },
-  BasicAttackCelestialLight_0_daze: {
+  'BasicAttackCelestialLight_0:dazeBuildup': {
     sheet: 'Pyrois',
-    name: 'BasicAttackCelestialLight_0_daze',
+    name: 'BasicAttackCelestialLight_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -240,12 +240,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCelestialLight_0_daze',
+      name: 'BasicAttackCelestialLight_0',
     },
   },
-  BasicAttackCelestialLight_0_anomBuildup: {
+  'BasicAttackCelestialLight_0:anomBuildup': {
     sheet: 'Pyrois',
-    name: 'BasicAttackCelestialLight_0_anomBuildup',
+    name: 'BasicAttackCelestialLight_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -254,12 +254,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCelestialLight_0_anomBuildup',
+      name: 'BasicAttackCelestialLight_0',
     },
   },
-  BasicAttackCelestialLight_1_dmg: {
+  'BasicAttackCelestialLight_1:standardDmg': {
     sheet: 'Pyrois',
-    name: 'BasicAttackCelestialLight_1_dmg',
+    name: 'BasicAttackCelestialLight_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -268,12 +268,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCelestialLight_1_dmg',
+      name: 'BasicAttackCelestialLight_1',
     },
   },
-  BasicAttackCelestialLight_1_daze: {
+  'BasicAttackCelestialLight_1:dazeBuildup': {
     sheet: 'Pyrois',
-    name: 'BasicAttackCelestialLight_1_daze',
+    name: 'BasicAttackCelestialLight_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -282,12 +282,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCelestialLight_1_daze',
+      name: 'BasicAttackCelestialLight_1',
     },
   },
-  BasicAttackCelestialLight_1_anomBuildup: {
+  'BasicAttackCelestialLight_1:anomBuildup': {
     sheet: 'Pyrois',
-    name: 'BasicAttackCelestialLight_1_anomBuildup',
+    name: 'BasicAttackCelestialLight_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -296,12 +296,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCelestialLight_1_anomBuildup',
+      name: 'BasicAttackCelestialLight_1',
     },
   },
-  BasicAttackCelestialLight_2_dmg: {
+  'BasicAttackCelestialLight_2:standardDmg': {
     sheet: 'Pyrois',
-    name: 'BasicAttackCelestialLight_2_dmg',
+    name: 'BasicAttackCelestialLight_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -310,12 +310,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCelestialLight_2_dmg',
+      name: 'BasicAttackCelestialLight_2',
     },
   },
-  BasicAttackCelestialLight_2_daze: {
+  'BasicAttackCelestialLight_2:dazeBuildup': {
     sheet: 'Pyrois',
-    name: 'BasicAttackCelestialLight_2_daze',
+    name: 'BasicAttackCelestialLight_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -324,12 +324,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCelestialLight_2_daze',
+      name: 'BasicAttackCelestialLight_2',
     },
   },
-  BasicAttackCelestialLight_2_anomBuildup: {
+  'BasicAttackCelestialLight_2:anomBuildup': {
     sheet: 'Pyrois',
-    name: 'BasicAttackCelestialLight_2_anomBuildup',
+    name: 'BasicAttackCelestialLight_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -338,12 +338,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCelestialLight_2_anomBuildup',
+      name: 'BasicAttackCelestialLight_2',
     },
   },
-  BasicAttackCelestialLight_3_dmg: {
+  'BasicAttackCelestialLight_3:standardDmg': {
     sheet: 'Pyrois',
-    name: 'BasicAttackCelestialLight_3_dmg',
+    name: 'BasicAttackCelestialLight_3:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -352,12 +352,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCelestialLight_3_dmg',
+      name: 'BasicAttackCelestialLight_3',
     },
   },
-  BasicAttackCelestialLight_3_daze: {
+  'BasicAttackCelestialLight_3:dazeBuildup': {
     sheet: 'Pyrois',
-    name: 'BasicAttackCelestialLight_3_daze',
+    name: 'BasicAttackCelestialLight_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -366,12 +366,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCelestialLight_3_daze',
+      name: 'BasicAttackCelestialLight_3',
     },
   },
-  BasicAttackCelestialLight_3_anomBuildup: {
+  'BasicAttackCelestialLight_3:anomBuildup': {
     sheet: 'Pyrois',
-    name: 'BasicAttackCelestialLight_3_anomBuildup',
+    name: 'BasicAttackCelestialLight_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -380,12 +380,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCelestialLight_3_anomBuildup',
+      name: 'BasicAttackCelestialLight_3',
     },
   },
-  DashAttackSunrise_0_dmg: {
+  'DashAttackSunrise_0:standardDmg': {
     sheet: 'Pyrois',
-    name: 'DashAttackSunrise_0_dmg',
+    name: 'DashAttackSunrise_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -394,12 +394,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackSunrise_0_dmg',
+      name: 'DashAttackSunrise_0',
     },
   },
-  DashAttackSunrise_0_daze: {
+  'DashAttackSunrise_0:dazeBuildup': {
     sheet: 'Pyrois',
-    name: 'DashAttackSunrise_0_daze',
+    name: 'DashAttackSunrise_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -408,12 +408,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackSunrise_0_daze',
+      name: 'DashAttackSunrise_0',
     },
   },
-  DashAttackSunrise_0_anomBuildup: {
+  'DashAttackSunrise_0:anomBuildup': {
     sheet: 'Pyrois',
-    name: 'DashAttackSunrise_0_anomBuildup',
+    name: 'DashAttackSunrise_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -422,12 +422,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackSunrise_0_anomBuildup',
+      name: 'DashAttackSunrise_0',
     },
   },
-  DodgeCounterFirstLight_0_dmg: {
+  'DodgeCounterFirstLight_0:standardDmg': {
     sheet: 'Pyrois',
-    name: 'DodgeCounterFirstLight_0_dmg',
+    name: 'DodgeCounterFirstLight_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -436,12 +436,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterFirstLight_0_dmg',
+      name: 'DodgeCounterFirstLight_0',
     },
   },
-  DodgeCounterFirstLight_0_daze: {
+  'DodgeCounterFirstLight_0:dazeBuildup': {
     sheet: 'Pyrois',
-    name: 'DodgeCounterFirstLight_0_daze',
+    name: 'DodgeCounterFirstLight_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -450,12 +450,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterFirstLight_0_daze',
+      name: 'DodgeCounterFirstLight_0',
     },
   },
-  DodgeCounterFirstLight_0_anomBuildup: {
+  'DodgeCounterFirstLight_0:anomBuildup': {
     sheet: 'Pyrois',
-    name: 'DodgeCounterFirstLight_0_anomBuildup',
+    name: 'DodgeCounterFirstLight_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -464,12 +464,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterFirstLight_0_anomBuildup',
+      name: 'DodgeCounterFirstLight_0',
     },
   },
-  SpecialAttackFadingRays_0_dmg: {
+  'SpecialAttackFadingRays_0:standardDmg': {
     sheet: 'Pyrois',
-    name: 'SpecialAttackFadingRays_0_dmg',
+    name: 'SpecialAttackFadingRays_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -478,12 +478,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackFadingRays_0_dmg',
+      name: 'SpecialAttackFadingRays_0',
     },
   },
-  SpecialAttackFadingRays_0_daze: {
+  'SpecialAttackFadingRays_0:dazeBuildup': {
     sheet: 'Pyrois',
-    name: 'SpecialAttackFadingRays_0_daze',
+    name: 'SpecialAttackFadingRays_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -492,12 +492,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackFadingRays_0_daze',
+      name: 'SpecialAttackFadingRays_0',
     },
   },
-  SpecialAttackFadingRays_0_anomBuildup: {
+  'SpecialAttackFadingRays_0:anomBuildup': {
     sheet: 'Pyrois',
-    name: 'SpecialAttackFadingRays_0_anomBuildup',
+    name: 'SpecialAttackFadingRays_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -506,12 +506,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackFadingRays_0_anomBuildup',
+      name: 'SpecialAttackFadingRays_0',
     },
   },
-  EXSpecialAttackSunsHalo_0_dmg: {
+  'EXSpecialAttackSunsHalo_0:standardDmg': {
     sheet: 'Pyrois',
-    name: 'EXSpecialAttackSunsHalo_0_dmg',
+    name: 'EXSpecialAttackSunsHalo_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -520,12 +520,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackSunsHalo_0_dmg',
+      name: 'EXSpecialAttackSunsHalo_0',
     },
   },
-  EXSpecialAttackSunsHalo_0_daze: {
+  'EXSpecialAttackSunsHalo_0:dazeBuildup': {
     sheet: 'Pyrois',
-    name: 'EXSpecialAttackSunsHalo_0_daze',
+    name: 'EXSpecialAttackSunsHalo_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -534,12 +534,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackSunsHalo_0_daze',
+      name: 'EXSpecialAttackSunsHalo_0',
     },
   },
-  EXSpecialAttackSunsHalo_0_anomBuildup: {
+  'EXSpecialAttackSunsHalo_0:anomBuildup': {
     sheet: 'Pyrois',
-    name: 'EXSpecialAttackSunsHalo_0_anomBuildup',
+    name: 'EXSpecialAttackSunsHalo_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -548,12 +548,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackSunsHalo_0_anomBuildup',
+      name: 'EXSpecialAttackSunsHalo_0',
     },
   },
-  SpecialAttackAssaultDirective_0_dmg: {
+  'SpecialAttackAssaultDirective_0:standardDmg': {
     sheet: 'Pyrois',
-    name: 'SpecialAttackAssaultDirective_0_dmg',
+    name: 'SpecialAttackAssaultDirective_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -562,12 +562,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackAssaultDirective_0_dmg',
+      name: 'SpecialAttackAssaultDirective_0',
     },
   },
-  SpecialAttackAssaultDirective_0_daze: {
+  'SpecialAttackAssaultDirective_0:dazeBuildup': {
     sheet: 'Pyrois',
-    name: 'SpecialAttackAssaultDirective_0_daze',
+    name: 'SpecialAttackAssaultDirective_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -576,12 +576,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackAssaultDirective_0_daze',
+      name: 'SpecialAttackAssaultDirective_0',
     },
   },
-  SpecialAttackAssaultDirective_0_anomBuildup: {
+  'SpecialAttackAssaultDirective_0:anomBuildup': {
     sheet: 'Pyrois',
-    name: 'SpecialAttackAssaultDirective_0_anomBuildup',
+    name: 'SpecialAttackAssaultDirective_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -590,12 +590,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackAssaultDirective_0_anomBuildup',
+      name: 'SpecialAttackAssaultDirective_0',
     },
   },
-  ChainAttackCeremonialMarch_0_dmg: {
+  'ChainAttackCeremonialMarch_0:standardDmg': {
     sheet: 'Pyrois',
-    name: 'ChainAttackCeremonialMarch_0_dmg',
+    name: 'ChainAttackCeremonialMarch_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -604,12 +604,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackCeremonialMarch_0_dmg',
+      name: 'ChainAttackCeremonialMarch_0',
     },
   },
-  ChainAttackCeremonialMarch_0_daze: {
+  'ChainAttackCeremonialMarch_0:dazeBuildup': {
     sheet: 'Pyrois',
-    name: 'ChainAttackCeremonialMarch_0_daze',
+    name: 'ChainAttackCeremonialMarch_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -618,12 +618,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackCeremonialMarch_0_daze',
+      name: 'ChainAttackCeremonialMarch_0',
     },
   },
-  ChainAttackCeremonialMarch_0_anomBuildup: {
+  'ChainAttackCeremonialMarch_0:anomBuildup': {
     sheet: 'Pyrois',
-    name: 'ChainAttackCeremonialMarch_0_anomBuildup',
+    name: 'ChainAttackCeremonialMarch_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -632,12 +632,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackCeremonialMarch_0_anomBuildup',
+      name: 'ChainAttackCeremonialMarch_0',
     },
   },
-  UltimateTotalAnnihilation_0_dmg: {
+  'UltimateTotalAnnihilation_0:standardDmg': {
     sheet: 'Pyrois',
-    name: 'UltimateTotalAnnihilation_0_dmg',
+    name: 'UltimateTotalAnnihilation_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -646,12 +646,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateTotalAnnihilation_0_dmg',
+      name: 'UltimateTotalAnnihilation_0',
     },
   },
-  UltimateTotalAnnihilation_0_daze: {
+  'UltimateTotalAnnihilation_0:dazeBuildup': {
     sheet: 'Pyrois',
-    name: 'UltimateTotalAnnihilation_0_daze',
+    name: 'UltimateTotalAnnihilation_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -660,12 +660,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateTotalAnnihilation_0_daze',
+      name: 'UltimateTotalAnnihilation_0',
     },
   },
-  UltimateTotalAnnihilation_0_anomBuildup: {
+  'UltimateTotalAnnihilation_0:anomBuildup': {
     sheet: 'Pyrois',
-    name: 'UltimateTotalAnnihilation_0_anomBuildup',
+    name: 'UltimateTotalAnnihilation_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -674,12 +674,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateTotalAnnihilation_0_anomBuildup',
+      name: 'UltimateTotalAnnihilation_0',
     },
   },
-  UltimateTriumphantReturn_0_dmg: {
+  'UltimateTriumphantReturn_0:standardDmg': {
     sheet: 'Pyrois',
-    name: 'UltimateTriumphantReturn_0_dmg',
+    name: 'UltimateTriumphantReturn_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -688,12 +688,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateTriumphantReturn_0_dmg',
+      name: 'UltimateTriumphantReturn_0',
     },
   },
-  UltimateTriumphantReturn_0_daze: {
+  'UltimateTriumphantReturn_0:dazeBuildup': {
     sheet: 'Pyrois',
-    name: 'UltimateTriumphantReturn_0_daze',
+    name: 'UltimateTriumphantReturn_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -702,12 +702,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateTriumphantReturn_0_daze',
+      name: 'UltimateTriumphantReturn_0',
     },
   },
-  UltimateTriumphantReturn_0_anomBuildup: {
+  'UltimateTriumphantReturn_0:anomBuildup': {
     sheet: 'Pyrois',
-    name: 'UltimateTriumphantReturn_0_anomBuildup',
+    name: 'UltimateTriumphantReturn_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -716,12 +716,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateTriumphantReturn_0_anomBuildup',
+      name: 'UltimateTriumphantReturn_0',
     },
   },
-  UltimateUnboundSwordstorm_0_dmg: {
+  'UltimateUnboundSwordstorm_0:standardDmg': {
     sheet: 'Pyrois',
-    name: 'UltimateUnboundSwordstorm_0_dmg',
+    name: 'UltimateUnboundSwordstorm_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -730,12 +730,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateUnboundSwordstorm_0_dmg',
+      name: 'UltimateUnboundSwordstorm_0',
     },
   },
-  UltimateUnboundSwordstorm_0_daze: {
+  'UltimateUnboundSwordstorm_0:dazeBuildup': {
     sheet: 'Pyrois',
-    name: 'UltimateUnboundSwordstorm_0_daze',
+    name: 'UltimateUnboundSwordstorm_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -744,12 +744,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateUnboundSwordstorm_0_daze',
+      name: 'UltimateUnboundSwordstorm_0',
     },
   },
-  UltimateUnboundSwordstorm_0_anomBuildup: {
+  'UltimateUnboundSwordstorm_0:anomBuildup': {
     sheet: 'Pyrois',
-    name: 'UltimateUnboundSwordstorm_0_anomBuildup',
+    name: 'UltimateUnboundSwordstorm_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -758,12 +758,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateUnboundSwordstorm_0_anomBuildup',
+      name: 'UltimateUnboundSwordstorm_0',
     },
   },
-  UltimateEternalImprisonment_0_dmg: {
+  'UltimateEternalImprisonment_0:standardDmg': {
     sheet: 'Pyrois',
-    name: 'UltimateEternalImprisonment_0_dmg',
+    name: 'UltimateEternalImprisonment_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -772,12 +772,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateEternalImprisonment_0_dmg',
+      name: 'UltimateEternalImprisonment_0',
     },
   },
-  UltimateEternalImprisonment_0_daze: {
+  'UltimateEternalImprisonment_0:dazeBuildup': {
     sheet: 'Pyrois',
-    name: 'UltimateEternalImprisonment_0_daze',
+    name: 'UltimateEternalImprisonment_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -786,12 +786,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateEternalImprisonment_0_daze',
+      name: 'UltimateEternalImprisonment_0',
     },
   },
-  UltimateEternalImprisonment_0_anomBuildup: {
+  'UltimateEternalImprisonment_0:anomBuildup': {
     sheet: 'Pyrois',
-    name: 'UltimateEternalImprisonment_0_anomBuildup',
+    name: 'UltimateEternalImprisonment_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -800,12 +800,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateEternalImprisonment_0_anomBuildup',
+      name: 'UltimateEternalImprisonment_0',
     },
   },
-  QuickAssistDuskguard_0_dmg: {
+  'QuickAssistDuskguard_0:standardDmg': {
     sheet: 'Pyrois',
-    name: 'QuickAssistDuskguard_0_dmg',
+    name: 'QuickAssistDuskguard_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -814,12 +814,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistDuskguard_0_dmg',
+      name: 'QuickAssistDuskguard_0',
     },
   },
-  QuickAssistDuskguard_0_daze: {
+  'QuickAssistDuskguard_0:dazeBuildup': {
     sheet: 'Pyrois',
-    name: 'QuickAssistDuskguard_0_daze',
+    name: 'QuickAssistDuskguard_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -828,12 +828,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistDuskguard_0_daze',
+      name: 'QuickAssistDuskguard_0',
     },
   },
-  QuickAssistDuskguard_0_anomBuildup: {
+  'QuickAssistDuskguard_0:anomBuildup': {
     sheet: 'Pyrois',
-    name: 'QuickAssistDuskguard_0_anomBuildup',
+    name: 'QuickAssistDuskguard_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -842,12 +842,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistDuskguard_0_anomBuildup',
+      name: 'QuickAssistDuskguard_0',
     },
   },
-  DefensiveAssistIronhideBehemoth_0_dmg: {
+  'DefensiveAssistIronhideBehemoth_0:standardDmg': {
     sheet: 'Pyrois',
-    name: 'DefensiveAssistIronhideBehemoth_0_dmg',
+    name: 'DefensiveAssistIronhideBehemoth_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -856,12 +856,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIronhideBehemoth_0_dmg',
+      name: 'DefensiveAssistIronhideBehemoth_0',
     },
   },
-  DefensiveAssistIronhideBehemoth_0_daze: {
+  'DefensiveAssistIronhideBehemoth_0:dazeBuildup': {
     sheet: 'Pyrois',
-    name: 'DefensiveAssistIronhideBehemoth_0_daze',
+    name: 'DefensiveAssistIronhideBehemoth_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -870,12 +870,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIronhideBehemoth_0_daze',
+      name: 'DefensiveAssistIronhideBehemoth_0',
     },
   },
-  DefensiveAssistIronhideBehemoth_0_anomBuildup: {
+  'DefensiveAssistIronhideBehemoth_0:anomBuildup': {
     sheet: 'Pyrois',
-    name: 'DefensiveAssistIronhideBehemoth_0_anomBuildup',
+    name: 'DefensiveAssistIronhideBehemoth_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -884,12 +884,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIronhideBehemoth_0_anomBuildup',
+      name: 'DefensiveAssistIronhideBehemoth_0',
     },
   },
-  DefensiveAssistIronhideBehemoth_1_dmg: {
+  'DefensiveAssistIronhideBehemoth_1:standardDmg': {
     sheet: 'Pyrois',
-    name: 'DefensiveAssistIronhideBehemoth_1_dmg',
+    name: 'DefensiveAssistIronhideBehemoth_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -898,12 +898,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIronhideBehemoth_1_dmg',
+      name: 'DefensiveAssistIronhideBehemoth_1',
     },
   },
-  DefensiveAssistIronhideBehemoth_1_daze: {
+  'DefensiveAssistIronhideBehemoth_1:dazeBuildup': {
     sheet: 'Pyrois',
-    name: 'DefensiveAssistIronhideBehemoth_1_daze',
+    name: 'DefensiveAssistIronhideBehemoth_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -912,12 +912,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIronhideBehemoth_1_daze',
+      name: 'DefensiveAssistIronhideBehemoth_1',
     },
   },
-  DefensiveAssistIronhideBehemoth_1_anomBuildup: {
+  'DefensiveAssistIronhideBehemoth_1:anomBuildup': {
     sheet: 'Pyrois',
-    name: 'DefensiveAssistIronhideBehemoth_1_anomBuildup',
+    name: 'DefensiveAssistIronhideBehemoth_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -926,12 +926,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIronhideBehemoth_1_anomBuildup',
+      name: 'DefensiveAssistIronhideBehemoth_1',
     },
   },
-  DefensiveAssistIronhideBehemoth_2_dmg: {
+  'DefensiveAssistIronhideBehemoth_2:standardDmg': {
     sheet: 'Pyrois',
-    name: 'DefensiveAssistIronhideBehemoth_2_dmg',
+    name: 'DefensiveAssistIronhideBehemoth_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -940,12 +940,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIronhideBehemoth_2_dmg',
+      name: 'DefensiveAssistIronhideBehemoth_2',
     },
   },
-  DefensiveAssistIronhideBehemoth_2_daze: {
+  'DefensiveAssistIronhideBehemoth_2:dazeBuildup': {
     sheet: 'Pyrois',
-    name: 'DefensiveAssistIronhideBehemoth_2_daze',
+    name: 'DefensiveAssistIronhideBehemoth_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -954,12 +954,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIronhideBehemoth_2_daze',
+      name: 'DefensiveAssistIronhideBehemoth_2',
     },
   },
-  DefensiveAssistIronhideBehemoth_2_anomBuildup: {
+  'DefensiveAssistIronhideBehemoth_2:anomBuildup': {
     sheet: 'Pyrois',
-    name: 'DefensiveAssistIronhideBehemoth_2_anomBuildup',
+    name: 'DefensiveAssistIronhideBehemoth_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -968,12 +968,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIronhideBehemoth_2_anomBuildup',
+      name: 'DefensiveAssistIronhideBehemoth_2',
     },
   },
-  AssistFollowUpReturnToDaylight_0_dmg: {
+  'AssistFollowUpReturnToDaylight_0:standardDmg': {
     sheet: 'Pyrois',
-    name: 'AssistFollowUpReturnToDaylight_0_dmg',
+    name: 'AssistFollowUpReturnToDaylight_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -982,12 +982,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpReturnToDaylight_0_dmg',
+      name: 'AssistFollowUpReturnToDaylight_0',
     },
   },
-  AssistFollowUpReturnToDaylight_0_daze: {
+  'AssistFollowUpReturnToDaylight_0:dazeBuildup': {
     sheet: 'Pyrois',
-    name: 'AssistFollowUpReturnToDaylight_0_daze',
+    name: 'AssistFollowUpReturnToDaylight_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -996,12 +996,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpReturnToDaylight_0_daze',
+      name: 'AssistFollowUpReturnToDaylight_0',
     },
   },
-  AssistFollowUpReturnToDaylight_0_anomBuildup: {
+  'AssistFollowUpReturnToDaylight_0:anomBuildup': {
     sheet: 'Pyrois',
-    name: 'AssistFollowUpReturnToDaylight_0_anomBuildup',
+    name: 'AssistFollowUpReturnToDaylight_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1010,7 +1010,7 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpReturnToDaylight_0_anomBuildup',
+      name: 'AssistFollowUpReturnToDaylight_0',
     },
   },
 } as const

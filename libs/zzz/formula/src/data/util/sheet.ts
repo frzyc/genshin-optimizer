@@ -155,7 +155,7 @@ export function customDmg(
     team,
     'standardDmg',
     tag(cond, dmgTag),
-    ownBuff.formula.base.add(base),
+    ownBuff.formula.standardDmgBase.add(base),
     ...extra
   )
 }
@@ -183,7 +183,7 @@ export function customSheerDmg(
     team,
     'sheerDmg',
     tag(cond, dmgTag),
-    ownBuff.formula.base.add(base),
+    ownBuff.formula.sheerDmgBase.add(base),
     ...extra
   )
 }
@@ -209,7 +209,7 @@ export function customShield(
     team,
     'shield',
     cond,
-    ownBuff.formula.base.add(base),
+    ownBuff.formula.shieldBase.add(base),
     ...extra
   )
 }
@@ -235,7 +235,7 @@ export function customHeal(
     team,
     'heal',
     cond,
-    ownBuff.formula.base.add(base),
+    ownBuff.formula.healBase.add(base),
     ...extra
   )
 }
@@ -263,7 +263,7 @@ export function customAnomalyDmg(
     team,
     'anomalyDmg',
     tag(cond, dmgTag),
-    ownBuff.formula.base.add(base),
+    ownBuff.formula.anomalyDmgBase.add(base),
     ...extra
   )
 }
@@ -290,7 +290,7 @@ export function customDaze(
     team,
     'dazeBuildup',
     tag(cond, dmgTag),
-    ownBuff.formula.base.add(base),
+    ownBuff.formula.dazeBuildupBase.add(base),
     ...extra
   )
 }
@@ -317,7 +317,7 @@ export function customAnomalyBuildup(
     team,
     'anomBuildup',
     tag(cond, dmgTag),
-    ownBuff.formula.base.add(base),
+    ownBuff.formula.anomBuildupBase.add(base),
     ...extra
   )
 }

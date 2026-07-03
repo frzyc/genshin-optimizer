@@ -99,11 +99,11 @@ export function dmgDazeAndAnom(
   const anom = arg.cond ? cmpNE(arg.cond, '', anomBase) : anomBase
   return [
     stat === 'sheerForce'
-      ? customSheerDmg(`${name}_dmg`, dmgTag, dmg, arg, ...extra)
-      : customDmg(`${name}_dmg`, dmgTag, dmg, arg, ...extra),
-    customDaze(`${name}_daze`, dmgTag, daze, arg, ...extra),
+      ? customSheerDmg(name, dmgTag, dmg, arg, ...extra)
+      : customDmg(name, dmgTag, dmg, arg, ...extra),
+    customDaze(name, dmgTag, daze, arg, ...extra),
     // TODO: No clue if this is right
-    customAnomalyBuildup(`${name}_anomBuildup`, dmgTag, anom, arg, ...extra),
+    customAnomalyBuildup(name, dmgTag, anom, arg, ...extra),
   ]
 }
 
@@ -150,12 +150,12 @@ export function dmgDazeAndAnomMerge(
   )
   return [
     stat === 'sheerForce'
-      ? customSheerDmg(`${name}_dmg`, dmgTag, dmgBase, arg, ...extra)
-      : customDmg(`${name}_dmg`, dmgTag, dmgBase, arg, ...extra),
-    customDaze(`${name}_daze`, dmgTag, dazeBase, arg, ...extra),
+      ? customSheerDmg(name, dmgTag, dmgBase, arg, ...extra)
+      : customDmg(name, dmgTag, dmgBase, arg, ...extra),
+    customDaze(name, dmgTag, dazeBase, arg, ...extra),
     // TODO: No clue if this is right
     customAnomalyBuildup(
-      `${name}_anomBuildup`,
+      name,
       dmgTag,
       constant(
         skillParam.reduce((acc, sp) => acc + sp.AttributeInfliction, 0) / 100

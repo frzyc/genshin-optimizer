@@ -3,14 +3,14 @@ import {
   type CardBackgroundColor,
   ColorText,
 } from '@genshin-optimizer/common/ui'
-import { getUnitStr, valueString } from '@genshin-optimizer/common/util'
-import type { CalcMeta, Read, Tag } from '@genshin-optimizer/game-opt/engine'
 import {
-  CalcContext,
-  DebugReadContext,
-  TagContext,
-} from '@genshin-optimizer/game-opt/formula-ui'
-import type { CalcResult } from '@genshin-optimizer/pando/engine'
+  type Unit,
+  getUnitStr,
+  valueString,
+} from '@genshin-optimizer/common/util'
+import type { CalcMeta, Read, Tag } from '@genshin-optimizer/game-opt/engine'
+import { CalcContext, TagContext } from '@genshin-optimizer/game-opt/formula-ui'
+import type { BaseRead, CalcResult } from '@genshin-optimizer/pando/engine'
 import { read } from '@genshin-optimizer/pando/engine'
 import HelpIcon from '@mui/icons-material/Help'
 import type { ListProps, PaletteColor, SxProps, Theme } from '@mui/material'
@@ -23,27 +23,81 @@ import {
   Typography,
   styled,
 } from '@mui/material'
-import type { ReactNode } from 'react'
-import React, { useCallback, useContext, useMemo } from 'react'
+import type { ElementType } from 'react'
+import { useCallback, useContext, useMemo, useState } from 'react'
 import {
+  CompareCalcContext,
   FormulaTextCacheContext,
   FormulaTextContext,
   FullTagDisplayContext,
   TagRowSxContext,
 } from '../context'
-import type { Field, TagField, TextField } from '../types'
+import type { Field, MultiTagField, TagField, TextField } from '../types'
+import { isMultiTagField } from '../types'
+
+export function CompareValueDisplay({
+  calcValue,
+  compareCalcValue,
+  unit,
+}: {
+  calcValue: number
+  compareCalcValue: number | undefined
+  unit: Unit
+}) {
+  const pctChange =
+    compareCalcValue !== undefined && compareCalcValue !== 0
+      ? (calcValue - compareCalcValue) / compareCalcValue
+      : undefined
+  const showPct = pctChange !== undefined && Math.round(pctChange * 1000) !== 0
+
+  return (
+    <>
+      <span>{valueString(calcValue, unit)}</span>
+      {showPct && (
+        <BootstrapTooltip
+          title={
+            <Typography>
+              Compare to <strong>{valueString(compareCalcValue!, unit)}</strong>
+            </Typography>
+          }
+        >
+          <ColorText
+            color={pctChange! > 0 ? 'success' : 'error'}
+            sx={{ ml: 0.5 }}
+          >
+            {pctChange! > 0 ? '+' : ''}
+            {valueString(pctChange!, '%', 1)}
+          </ColorText>
+        </BootstrapTooltip>
+      )}
+    </>
+  )
+}
+
+function useCompareCalcValue(
+  fieldRead: Read | BaseRead,
+  contextTag: Tag
+): number | undefined {
+  const compareCalc = useContext(CompareCalcContext)
+  return useMemo(() => {
+    if (!compareCalc) return undefined
+    return compareCalc.withTag(contextTag).compute(fieldRead).val
+  }, [compareCalc, contextTag, fieldRead])
+}
 
 export function FieldsDisplay({
   fields,
   bgt = 'normal',
+  onClickFormula,
 }: {
   fields: Field[]
   bgt?: CardBackgroundColor
+  onClickFormula?: (read: BaseRead) => void
 }) {
   return (
     <FieldDisplayList sx={{ m: 0 }} bgt={bgt}>
       {fields.map((field, i) => (
-        <FieldDisplay key={i} field={field} />
+        <FieldDisplay key={i} field={field} onClickFormula={onClickFormula} />
       ))}
     </FieldDisplayList>
   )
@@ -52,14 +106,34 @@ export function FieldsDisplay({
 function FieldDisplay({
   field,
   component = ListItem,
+  onClickFormula,
 }: {
   field: Field
-  component?: React.ElementType
+  component?: ElementType
+  onClickFormula?: (read: BaseRead) => void
 }) {
   if ('fieldValue' in field)
     return <TextFieldDisplay field={field} component={component} />
+  if (isMultiTagField(field)) {
+    return (
+      <MultiTagFieldDisplay
+        field={field}
+        component={component}
+        onClickFormula={onClickFormula}
+      />
+    )
+  }
   if ('fieldRef' in field) {
-    return <TagFieldDisplay field={field} component={component} />
+    const fieldRead = read(field.fieldRef)
+    return (
+      <TagFieldDisplay
+        field={field}
+        component={component}
+        onClickFormula={
+          onClickFormula ? () => onClickFormula(fieldRead) : undefined
+        }
+      />
+    )
   }
   return null
 }
@@ -69,7 +143,7 @@ export function TextFieldDisplay({
   component,
 }: {
   field: TextField
-  component?: React.ElementType
+  component?: ElementType
 }) {
   const { title, subtitle, variant, toFixed, fieldValue, unit } = field
   const titleEle = <span>{title}</span>
@@ -99,6 +173,158 @@ export function TextFieldDisplay({
   )
 }
 
+export function MultiTagFieldDisplay({
+  field,
+  component = ListItem,
+  showZero = process.env['NODE_ENV'] === 'development',
+  rowSx,
+  onClickFormula,
+  onMouseEnter,
+  onMouseLeave,
+}: {
+  field: MultiTagField
+  component?: ElementType
+  showZero?: boolean
+  rowSx?: SxProps<Theme>
+  onClickFormula?: (read: BaseRead) => void
+  onMouseEnter?: () => void
+  onMouseLeave?: () => void
+}) {
+  const calc = useContext(CalcContext)
+  const compareCalc = useContext(CompareCalcContext)
+  const contextTag = useContext(TagContext)
+  const getTagRowSx = useContext(TagRowSxContext)
+  const { icon, title, subtitle, fieldRefs } = field
+
+  const taggedCalc = useMemo(
+    () => (calc ? calc.withTag(contextTag) : undefined),
+    [calc, contextTag]
+  )
+  const taggedCompareCalc = useMemo(
+    () => (compareCalc ? compareCalc.withTag(contextTag) : undefined),
+    [compareCalc, contextTag]
+  )
+  const computed = useMemo(
+    () =>
+      taggedCalc
+        ? fieldRefs.map(({ label, ref: fieldRef }) => {
+            const fieldRead = read(fieldRef)
+            const valueCalcRes = taggedCalc.compute(fieldRead)
+            const compareCalcValue = taggedCompareCalc
+              ? taggedCompareCalc.compute(fieldRead).val
+              : undefined
+            return {
+              label,
+              fieldRef,
+              fieldRead,
+              valueCalcRes,
+              compareCalcValue,
+            }
+          })
+        : [],
+    [fieldRefs, taggedCalc, taggedCompareCalc]
+  )
+
+  if (!calc) return null
+
+  if (!showZero && computed.every(({ valueCalcRes }) => !valueCalcRes.val))
+    return null
+
+  const contextRowSx = computed
+    .map(({ fieldRef }) => getTagRowSx?.(fieldRef))
+    .find(Boolean)
+
+  const stackValues = fieldRefs.length > 1
+
+  return (
+    <Box
+      width="100%"
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      sx={[
+        {
+          display: 'flex',
+          justifyContent: 'space-between',
+          gap: 1,
+          py: 0.25,
+          alignItems: stackValues ? 'flex-start' : 'center',
+        },
+        ...(contextRowSx
+          ? Array.isArray(contextRowSx)
+            ? contextRowSx
+            : [contextRowSx]
+          : []),
+        ...(rowSx ? (Array.isArray(rowSx) ? rowSx : [rowSx]) : []),
+      ]}
+      component={component}
+    >
+      <Typography
+        component="div"
+        sx={{
+          display: 'flex',
+          gap: 1,
+          alignItems: 'center',
+          marginRight: 'auto',
+        }}
+      >
+        {icon}
+        {title}
+        {subtitle}
+      </Typography>
+      <Typography
+        component="div"
+        sx={{
+          display: 'flex',
+          flexDirection: stackValues ? 'column' : 'row',
+          gap: stackValues ? 0.25 : 1,
+          alignItems: stackValues ? 'flex-end' : 'center',
+          justifyContent: 'flex-end',
+          flexWrap: stackValues ? 'nowrap' : 'wrap',
+        }}
+      >
+        {computed.map(
+          ({ label, fieldRead, valueCalcRes, compareCalcValue }) => {
+            const calcValue = valueCalcRes.val
+            if (!showZero && !calcValue && !compareCalcValue) return null
+            const tag = fieldRead.tag
+            const unit = getUnitStr(tag['name'] || tag['q'] || '')
+            const onClick = onClickFormula
+              ? () => onClickFormula(fieldRead)
+              : undefined
+            return (
+              <Box
+                key={`${tag['sheet']}_${tag['name']}_${tag['q']}`}
+                sx={{
+                  display: 'flex',
+                  gap: 0.5,
+                  alignItems: 'center',
+                  justifyContent: 'flex-end',
+                }}
+              >
+                {label && (
+                  <Typography
+                    component="span"
+                    variant="body2"
+                    color="text.secondary"
+                  >
+                    {label}
+                  </Typography>
+                )}
+                <CompareValueDisplay
+                  calcValue={calcValue}
+                  compareCalcValue={compareCalcValue}
+                  unit={unit}
+                />
+                <FormulaHelpIcon computed={valueCalcRes} onClick={onClick} />
+              </Box>
+            )
+          }
+        )}
+      </Typography>
+    </Box>
+  )
+}
+
 export function TagFieldDisplay({
   field,
   component = ListItem,
@@ -111,7 +337,7 @@ export function TagFieldDisplay({
   onMouseLeave,
 }: {
   field: TagField
-  component?: React.ElementType
+  component?: ElementType
   emphasize?: boolean
 
   // Show field, even if the value is zero
@@ -127,80 +353,36 @@ export function TagFieldDisplay({
   const calc = useContext(CalcContext)
   const contextTag = useContext(TagContext)
   const getTagRowSx = useContext(TagRowSxContext)
-  const { setRead } = useContext(DebugReadContext)
   const contextRowSx = getTagRowSx?.(field.fieldRef)
   const fieldRead = useMemo(
     () => calcReadOverride ?? read(field.fieldRef),
     [calcReadOverride, field.fieldRef]
   )
 
-  const defaultHelpClick = useCallback(
-    () => setRead(fieldRead),
-    [fieldRead, setRead]
+  const valueCalcRes = useMemo(
+    () => calc?.withTag(contextTag).compute(fieldRead),
+    [calc, contextTag, fieldRead]
   )
-  const onClick = onClickFormula ?? defaultHelpClick
-  // const compareCalc: null | Calculator = null //TODO: compare calcs
-  if (!calc) return null
-  // if (!calc && !compareCalc) return null
+  const compareCalcValue = useCompareCalcValue(fieldRead, contextTag)
 
-  const valueCalcRes = calc.withTag(contextTag).compute(fieldRead)
-  // const compareValueCalcRes: CalcResult<number, CalcMeta> | null = null
+  const onClick = onClickFormula
+  if (!calc || !valueCalcRes) return null
 
-  // const { setFormulaData } = useContext(FormulaDataContext)
   const { multi, icon, title, subtitle } = field
   const multiDisplay = multi && <span>{multi}&#215;</span>
 
   const calcValue = valueCalcRes.val
-  const compareCalcValue = 0 //TODO: compare calcs
 
   if (!showZero && !calcValue && !compareCalcValue) return null
 
-  let fieldVal = false as ReactNode
   const unit = getUnitStr(fieldRead.tag['q'] || fieldRead.tag['name'] || '')
 
-  const diff = calcValue - compareCalcValue
-  const pctDiff =
-    compareCalcValue &&
-    unit !== '%' &&
-    (calcValue > 100 || compareCalcValue > 100)
-      ? valueString(diff / compareCalcValue, '%')
-      : null
-
-  fieldVal = (
-    <>
-      <span>{valueString(calcValue, unit)}</span>
-      {Math.abs(diff) > 0.0001 && !!compareCalcValue && (
-        <BootstrapTooltip
-          title={
-            <Typography>
-              Compare to <strong>{valueString(compareCalcValue, unit)}</strong>
-            </Typography>
-          }
-        >
-          <ColorText
-            color={diff > 0 ? 'success' : 'error'}
-            sx={{
-              display: 'flex',
-              gap: 0.5,
-              alignItems: 'center',
-              justifyContent: 'flex-end',
-              flexWrap: 'wrap',
-            }}
-          >
-            <span>
-              ({diff > 0 ? '+' : ''}
-              {valueString(diff, unit)})
-            </span>
-            {!!pctDiff && (
-              <span>
-                ({diff > 0 ? '+' : ''}
-                {pctDiff})
-              </span>
-            )}
-          </ColorText>
-        </BootstrapTooltip>
-      )}
-    </>
+  const fieldVal = (
+    <CompareValueDisplay
+      calcValue={calcValue}
+      compareCalcValue={compareCalcValue}
+      unit={unit}
+    />
   )
 
   return (
@@ -265,35 +447,45 @@ function FormulaHelpIcon({
   const FullTagDisplay = useContext(FullTagDisplayContext)
   const formulaText = useContext(FormulaTextContext)
   const formulaTextCache = useContext(FormulaTextCacheContext)
+  const [tooltipOpen, setTooltipOpen] = useState(false)
+  const onOpen = useCallback(() => setTooltipOpen(true), [])
+  const onClose = useCallback(() => setTooltipOpen(false), [])
   const tag = computed.meta.tag
   const name = tag?.['name'] || tag?.['q'] || ''
   const valDisplay = valueString(computed.val, getUnitStr(name))
   const fText = useMemo(
-    () => formulaText(computed as any, formulaTextCache),
-    [computed, formulaText, formulaTextCache]
+    () =>
+      tooltipOpen ? formulaText(computed as any, formulaTextCache) : undefined,
+    [tooltipOpen, computed, formulaText, formulaTextCache]
   )
   if (!tag) return null
   return (
     <BootstrapTooltip
+      onOpen={onOpen}
+      onClose={onClose}
       title={
-        <Typography component="div">
-          <Box sx={{ display: 'flex', gap: 1 }}>
-            <FullTagDisplay tag={tag} />
-            <span>{valDisplay}</span>
-          </Box>
-          <Divider />
-          <Box>{fText?.formula}</Box>
+        tooltipOpen ? (
+          <Typography component="div">
+            <Box sx={{ display: 'flex', gap: 1 }}>
+              <FullTagDisplay tag={tag} />
+              <span>{valDisplay}</span>
+            </Box>
+            <Divider />
+            <Box>{fText?.formula}</Box>
 
-          <Stack spacing={1} sx={{ pl: 1, pt: 1 }}>
-            {fText?.deps.map((dep, i) => (
-              <Box key={i}>
-                <Box>{dep.name}</Box>
-                <Divider />
-                <Box> {dep.formula}</Box>
-              </Box>
-            ))}
-          </Stack>
-        </Typography>
+            <Stack spacing={1} sx={{ pl: 1, pt: 1 }}>
+              {fText?.deps.map((dep, i) => (
+                <Box key={i}>
+                  <Box>{dep.name}</Box>
+                  <Divider />
+                  <Box> {dep.formula}</Box>
+                </Box>
+              ))}
+            </Stack>
+          </Typography>
+        ) : (
+          ''
+        )
       }
     >
       <HelpIcon onClick={onClick} fontSize="inherit" sx={{ cursor: 'help' }} />

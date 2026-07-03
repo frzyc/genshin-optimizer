@@ -89,9 +89,9 @@ export const formulas = {
       name: 'dazeInst',
     },
   },
-  BasicAttackHighPressureSpike_0_dmg: {
+  'BasicAttackHighPressureSpike_0:standardDmg': {
     sheet: 'Grace',
-    name: 'BasicAttackHighPressureSpike_0_dmg',
+    name: 'BasicAttackHighPressureSpike_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -100,12 +100,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackHighPressureSpike_0_dmg',
+      name: 'BasicAttackHighPressureSpike_0',
     },
   },
-  BasicAttackHighPressureSpike_0_daze: {
+  'BasicAttackHighPressureSpike_0:dazeBuildup': {
     sheet: 'Grace',
-    name: 'BasicAttackHighPressureSpike_0_daze',
+    name: 'BasicAttackHighPressureSpike_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -114,12 +114,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackHighPressureSpike_0_daze',
+      name: 'BasicAttackHighPressureSpike_0',
     },
   },
-  BasicAttackHighPressureSpike_0_anomBuildup: {
+  'BasicAttackHighPressureSpike_0:anomBuildup': {
     sheet: 'Grace',
-    name: 'BasicAttackHighPressureSpike_0_anomBuildup',
+    name: 'BasicAttackHighPressureSpike_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -128,12 +128,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackHighPressureSpike_0_anomBuildup',
+      name: 'BasicAttackHighPressureSpike_0',
     },
   },
-  BasicAttackHighPressureSpike_1_dmg: {
+  'BasicAttackHighPressureSpike_1:standardDmg': {
     sheet: 'Grace',
-    name: 'BasicAttackHighPressureSpike_1_dmg',
+    name: 'BasicAttackHighPressureSpike_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -142,12 +142,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackHighPressureSpike_1_dmg',
+      name: 'BasicAttackHighPressureSpike_1',
     },
   },
-  BasicAttackHighPressureSpike_1_daze: {
+  'BasicAttackHighPressureSpike_1:dazeBuildup': {
     sheet: 'Grace',
-    name: 'BasicAttackHighPressureSpike_1_daze',
+    name: 'BasicAttackHighPressureSpike_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -156,12 +156,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackHighPressureSpike_1_daze',
+      name: 'BasicAttackHighPressureSpike_1',
     },
   },
-  BasicAttackHighPressureSpike_1_anomBuildup: {
+  'BasicAttackHighPressureSpike_1:anomBuildup': {
     sheet: 'Grace',
-    name: 'BasicAttackHighPressureSpike_1_anomBuildup',
+    name: 'BasicAttackHighPressureSpike_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -170,12 +170,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackHighPressureSpike_1_anomBuildup',
+      name: 'BasicAttackHighPressureSpike_1',
     },
   },
-  BasicAttackHighPressureSpike_2_dmg: {
+  'BasicAttackHighPressureSpike_2:standardDmg': {
     sheet: 'Grace',
-    name: 'BasicAttackHighPressureSpike_2_dmg',
+    name: 'BasicAttackHighPressureSpike_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -184,12 +184,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackHighPressureSpike_2_dmg',
+      name: 'BasicAttackHighPressureSpike_2',
     },
   },
-  BasicAttackHighPressureSpike_2_daze: {
+  'BasicAttackHighPressureSpike_2:dazeBuildup': {
     sheet: 'Grace',
-    name: 'BasicAttackHighPressureSpike_2_daze',
+    name: 'BasicAttackHighPressureSpike_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -198,12 +198,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackHighPressureSpike_2_daze',
+      name: 'BasicAttackHighPressureSpike_2',
     },
   },
-  BasicAttackHighPressureSpike_2_anomBuildup: {
+  'BasicAttackHighPressureSpike_2:anomBuildup': {
     sheet: 'Grace',
-    name: 'BasicAttackHighPressureSpike_2_anomBuildup',
+    name: 'BasicAttackHighPressureSpike_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -212,12 +212,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackHighPressureSpike_2_anomBuildup',
+      name: 'BasicAttackHighPressureSpike_2',
     },
   },
-  BasicAttackHighPressureSpike_3_dmg: {
+  'BasicAttackHighPressureSpike_3:standardDmg': {
     sheet: 'Grace',
-    name: 'BasicAttackHighPressureSpike_3_dmg',
+    name: 'BasicAttackHighPressureSpike_3:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -226,12 +226,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackHighPressureSpike_3_dmg',
+      name: 'BasicAttackHighPressureSpike_3',
     },
   },
-  BasicAttackHighPressureSpike_3_daze: {
+  'BasicAttackHighPressureSpike_3:dazeBuildup': {
     sheet: 'Grace',
-    name: 'BasicAttackHighPressureSpike_3_daze',
+    name: 'BasicAttackHighPressureSpike_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -240,12 +240,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackHighPressureSpike_3_daze',
+      name: 'BasicAttackHighPressureSpike_3',
     },
   },
-  BasicAttackHighPressureSpike_3_anomBuildup: {
+  'BasicAttackHighPressureSpike_3:anomBuildup': {
     sheet: 'Grace',
-    name: 'BasicAttackHighPressureSpike_3_anomBuildup',
+    name: 'BasicAttackHighPressureSpike_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -254,12 +254,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackHighPressureSpike_3_anomBuildup',
+      name: 'BasicAttackHighPressureSpike_3',
     },
   },
-  BasicAttackHighPressureSpike_4_dmg: {
+  'BasicAttackHighPressureSpike_4:standardDmg': {
     sheet: 'Grace',
-    name: 'BasicAttackHighPressureSpike_4_dmg',
+    name: 'BasicAttackHighPressureSpike_4:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -268,12 +268,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackHighPressureSpike_4_dmg',
+      name: 'BasicAttackHighPressureSpike_4',
     },
   },
-  BasicAttackHighPressureSpike_4_daze: {
+  'BasicAttackHighPressureSpike_4:dazeBuildup': {
     sheet: 'Grace',
-    name: 'BasicAttackHighPressureSpike_4_daze',
+    name: 'BasicAttackHighPressureSpike_4:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -282,12 +282,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackHighPressureSpike_4_daze',
+      name: 'BasicAttackHighPressureSpike_4',
     },
   },
-  BasicAttackHighPressureSpike_4_anomBuildup: {
+  'BasicAttackHighPressureSpike_4:anomBuildup': {
     sheet: 'Grace',
-    name: 'BasicAttackHighPressureSpike_4_anomBuildup',
+    name: 'BasicAttackHighPressureSpike_4:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -296,12 +296,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackHighPressureSpike_4_anomBuildup',
+      name: 'BasicAttackHighPressureSpike_4',
     },
   },
-  DashAttackQuickInspection_0_dmg: {
+  'DashAttackQuickInspection_0:standardDmg': {
     sheet: 'Grace',
-    name: 'DashAttackQuickInspection_0_dmg',
+    name: 'DashAttackQuickInspection_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -310,12 +310,12 @@ export const formulas = {
       damageType1: 'dash',
       attribute: 'physical',
       skillType: 'dodgeSkill',
-      name: 'DashAttackQuickInspection_0_dmg',
+      name: 'DashAttackQuickInspection_0',
     },
   },
-  DashAttackQuickInspection_0_daze: {
+  'DashAttackQuickInspection_0:dazeBuildup': {
     sheet: 'Grace',
-    name: 'DashAttackQuickInspection_0_daze',
+    name: 'DashAttackQuickInspection_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -324,12 +324,12 @@ export const formulas = {
       damageType1: 'dash',
       attribute: 'physical',
       skillType: 'dodgeSkill',
-      name: 'DashAttackQuickInspection_0_daze',
+      name: 'DashAttackQuickInspection_0',
     },
   },
-  DashAttackQuickInspection_0_anomBuildup: {
+  'DashAttackQuickInspection_0:anomBuildup': {
     sheet: 'Grace',
-    name: 'DashAttackQuickInspection_0_anomBuildup',
+    name: 'DashAttackQuickInspection_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -338,12 +338,12 @@ export const formulas = {
       damageType1: 'dash',
       attribute: 'physical',
       skillType: 'dodgeSkill',
-      name: 'DashAttackQuickInspection_0_anomBuildup',
+      name: 'DashAttackQuickInspection_0',
     },
   },
-  DodgeCounterViolationPenalty_0_dmg: {
+  'DodgeCounterViolationPenalty_0:standardDmg': {
     sheet: 'Grace',
-    name: 'DodgeCounterViolationPenalty_0_dmg',
+    name: 'DodgeCounterViolationPenalty_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -352,12 +352,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterViolationPenalty_0_dmg',
+      name: 'DodgeCounterViolationPenalty_0',
     },
   },
-  DodgeCounterViolationPenalty_0_daze: {
+  'DodgeCounterViolationPenalty_0:dazeBuildup': {
     sheet: 'Grace',
-    name: 'DodgeCounterViolationPenalty_0_daze',
+    name: 'DodgeCounterViolationPenalty_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -366,12 +366,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterViolationPenalty_0_daze',
+      name: 'DodgeCounterViolationPenalty_0',
     },
   },
-  DodgeCounterViolationPenalty_0_anomBuildup: {
+  'DodgeCounterViolationPenalty_0:anomBuildup': {
     sheet: 'Grace',
-    name: 'DodgeCounterViolationPenalty_0_anomBuildup',
+    name: 'DodgeCounterViolationPenalty_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -380,12 +380,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterViolationPenalty_0_anomBuildup',
+      name: 'DodgeCounterViolationPenalty_0',
     },
   },
-  SpecialAttackObstructionRemoval_0_dmg: {
+  'SpecialAttackObstructionRemoval_0:standardDmg': {
     sheet: 'Grace',
-    name: 'SpecialAttackObstructionRemoval_0_dmg',
+    name: 'SpecialAttackObstructionRemoval_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -394,12 +394,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackObstructionRemoval_0_dmg',
+      name: 'SpecialAttackObstructionRemoval_0',
     },
   },
-  SpecialAttackObstructionRemoval_0_daze: {
+  'SpecialAttackObstructionRemoval_0:dazeBuildup': {
     sheet: 'Grace',
-    name: 'SpecialAttackObstructionRemoval_0_daze',
+    name: 'SpecialAttackObstructionRemoval_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -408,12 +408,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackObstructionRemoval_0_daze',
+      name: 'SpecialAttackObstructionRemoval_0',
     },
   },
-  SpecialAttackObstructionRemoval_0_anomBuildup: {
+  'SpecialAttackObstructionRemoval_0:anomBuildup': {
     sheet: 'Grace',
-    name: 'SpecialAttackObstructionRemoval_0_anomBuildup',
+    name: 'SpecialAttackObstructionRemoval_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -422,12 +422,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackObstructionRemoval_0_anomBuildup',
+      name: 'SpecialAttackObstructionRemoval_0',
     },
   },
-  EXSpecialAttackSuperchargedObstructionRemoval_0_dmg: {
+  'EXSpecialAttackSuperchargedObstructionRemoval_0:standardDmg': {
     sheet: 'Grace',
-    name: 'EXSpecialAttackSuperchargedObstructionRemoval_0_dmg',
+    name: 'EXSpecialAttackSuperchargedObstructionRemoval_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -436,12 +436,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackSuperchargedObstructionRemoval_0_dmg',
+      name: 'EXSpecialAttackSuperchargedObstructionRemoval_0',
     },
   },
-  EXSpecialAttackSuperchargedObstructionRemoval_0_daze: {
+  'EXSpecialAttackSuperchargedObstructionRemoval_0:dazeBuildup': {
     sheet: 'Grace',
-    name: 'EXSpecialAttackSuperchargedObstructionRemoval_0_daze',
+    name: 'EXSpecialAttackSuperchargedObstructionRemoval_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -450,12 +450,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackSuperchargedObstructionRemoval_0_daze',
+      name: 'EXSpecialAttackSuperchargedObstructionRemoval_0',
     },
   },
-  EXSpecialAttackSuperchargedObstructionRemoval_0_anomBuildup: {
+  'EXSpecialAttackSuperchargedObstructionRemoval_0:anomBuildup': {
     sheet: 'Grace',
-    name: 'EXSpecialAttackSuperchargedObstructionRemoval_0_anomBuildup',
+    name: 'EXSpecialAttackSuperchargedObstructionRemoval_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -464,12 +464,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackSuperchargedObstructionRemoval_0_anomBuildup',
+      name: 'EXSpecialAttackSuperchargedObstructionRemoval_0',
     },
   },
-  ChainAttackCollaborativeConstruction_0_dmg: {
+  'ChainAttackCollaborativeConstruction_0:standardDmg': {
     sheet: 'Grace',
-    name: 'ChainAttackCollaborativeConstruction_0_dmg',
+    name: 'ChainAttackCollaborativeConstruction_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -478,12 +478,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackCollaborativeConstruction_0_dmg',
+      name: 'ChainAttackCollaborativeConstruction_0',
     },
   },
-  ChainAttackCollaborativeConstruction_0_daze: {
+  'ChainAttackCollaborativeConstruction_0:dazeBuildup': {
     sheet: 'Grace',
-    name: 'ChainAttackCollaborativeConstruction_0_daze',
+    name: 'ChainAttackCollaborativeConstruction_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -492,12 +492,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackCollaborativeConstruction_0_daze',
+      name: 'ChainAttackCollaborativeConstruction_0',
     },
   },
-  ChainAttackCollaborativeConstruction_0_anomBuildup: {
+  'ChainAttackCollaborativeConstruction_0:anomBuildup': {
     sheet: 'Grace',
-    name: 'ChainAttackCollaborativeConstruction_0_anomBuildup',
+    name: 'ChainAttackCollaborativeConstruction_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -506,12 +506,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackCollaborativeConstruction_0_anomBuildup',
+      name: 'ChainAttackCollaborativeConstruction_0',
     },
   },
-  UltimateDemolitionBlastBeware_0_dmg: {
+  'UltimateDemolitionBlastBeware_0:standardDmg': {
     sheet: 'Grace',
-    name: 'UltimateDemolitionBlastBeware_0_dmg',
+    name: 'UltimateDemolitionBlastBeware_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -520,12 +520,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateDemolitionBlastBeware_0_dmg',
+      name: 'UltimateDemolitionBlastBeware_0',
     },
   },
-  UltimateDemolitionBlastBeware_0_daze: {
+  'UltimateDemolitionBlastBeware_0:dazeBuildup': {
     sheet: 'Grace',
-    name: 'UltimateDemolitionBlastBeware_0_daze',
+    name: 'UltimateDemolitionBlastBeware_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -534,12 +534,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateDemolitionBlastBeware_0_daze',
+      name: 'UltimateDemolitionBlastBeware_0',
     },
   },
-  UltimateDemolitionBlastBeware_0_anomBuildup: {
+  'UltimateDemolitionBlastBeware_0:anomBuildup': {
     sheet: 'Grace',
-    name: 'UltimateDemolitionBlastBeware_0_anomBuildup',
+    name: 'UltimateDemolitionBlastBeware_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -548,12 +548,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateDemolitionBlastBeware_0_anomBuildup',
+      name: 'UltimateDemolitionBlastBeware_0',
     },
   },
-  QuickAssistIncidentManagement_0_dmg: {
+  'QuickAssistIncidentManagement_0:standardDmg': {
     sheet: 'Grace',
-    name: 'QuickAssistIncidentManagement_0_dmg',
+    name: 'QuickAssistIncidentManagement_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -562,12 +562,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistIncidentManagement_0_dmg',
+      name: 'QuickAssistIncidentManagement_0',
     },
   },
-  QuickAssistIncidentManagement_0_daze: {
+  'QuickAssistIncidentManagement_0:dazeBuildup': {
     sheet: 'Grace',
-    name: 'QuickAssistIncidentManagement_0_daze',
+    name: 'QuickAssistIncidentManagement_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -576,12 +576,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistIncidentManagement_0_daze',
+      name: 'QuickAssistIncidentManagement_0',
     },
   },
-  QuickAssistIncidentManagement_0_anomBuildup: {
+  'QuickAssistIncidentManagement_0:anomBuildup': {
     sheet: 'Grace',
-    name: 'QuickAssistIncidentManagement_0_anomBuildup',
+    name: 'QuickAssistIncidentManagement_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -590,12 +590,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistIncidentManagement_0_anomBuildup',
+      name: 'QuickAssistIncidentManagement_0',
     },
   },
-  AssistFollowUpCounterVoltNeedle_0_dmg: {
+  'AssistFollowUpCounterVoltNeedle_0:standardDmg': {
     sheet: 'Grace',
-    name: 'AssistFollowUpCounterVoltNeedle_0_dmg',
+    name: 'AssistFollowUpCounterVoltNeedle_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -604,12 +604,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpCounterVoltNeedle_0_dmg',
+      name: 'AssistFollowUpCounterVoltNeedle_0',
     },
   },
-  AssistFollowUpCounterVoltNeedle_0_daze: {
+  'AssistFollowUpCounterVoltNeedle_0:dazeBuildup': {
     sheet: 'Grace',
-    name: 'AssistFollowUpCounterVoltNeedle_0_daze',
+    name: 'AssistFollowUpCounterVoltNeedle_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -618,12 +618,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpCounterVoltNeedle_0_daze',
+      name: 'AssistFollowUpCounterVoltNeedle_0',
     },
   },
-  AssistFollowUpCounterVoltNeedle_0_anomBuildup: {
+  'AssistFollowUpCounterVoltNeedle_0:anomBuildup': {
     sheet: 'Grace',
-    name: 'AssistFollowUpCounterVoltNeedle_0_anomBuildup',
+    name: 'AssistFollowUpCounterVoltNeedle_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -632,7 +632,7 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpCounterVoltNeedle_0_anomBuildup',
+      name: 'AssistFollowUpCounterVoltNeedle_0',
     },
   },
 } as const
