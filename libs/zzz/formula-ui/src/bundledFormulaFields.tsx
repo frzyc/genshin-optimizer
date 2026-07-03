@@ -10,6 +10,7 @@ import type { CharacterKey, SkillKey } from '@genshin-optimizer/zzz/consts'
 import type { TargetTag } from '@genshin-optimizer/zzz/db'
 import { type AbilityDim, isAbilityDim } from '@genshin-optimizer/zzz/formula'
 import type { Sheet, Tag } from '@genshin-optimizer/zzz/formula'
+import { skillFromTag } from './abilityTag'
 import {
   partitionBundlableTags,
   resolveBundleDmgQ,
@@ -29,12 +30,6 @@ function bundleFieldRefs(byQ: Map<string, Tag>) {
     { label: ABILITY_DIM_LABEL.dazeBuildup, ref: byQ.get('dazeBuildup')! },
     { label: ABILITY_DIM_LABEL.anomBuildup, ref: byQ.get('anomBuildup')! },
   ]
-}
-
-export function skillFromTag(tag: Tag): SkillKey | undefined {
-  const skillType = tag.skillType
-  if (!skillType?.endsWith('Skill')) return undefined
-  return skillType.slice(0, -'Skill'.length) as SkillKey
 }
 
 function singleFormulaField(

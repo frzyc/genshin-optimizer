@@ -1,7 +1,7 @@
 import type { CharacterKey, SkillKey } from '@genshin-optimizer/zzz/consts'
 import { abilityBaseName, isAbilityDim } from '@genshin-optimizer/zzz/formula'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
-import { parseAbilityHitFromName } from '../abilityTag'
+import { parseAbilityFromTag } from '../abilityTag'
 import { dimensionByAbilityDim } from '../formulaDimensionUi'
 import { st } from '../util'
 
@@ -10,17 +10,37 @@ function formulaDimensionFromTag(tag: Tag): string | undefined {
   return undefined
 }
 
-/** Translated hit label for a skill formula (`name` + `q`). */
+/** Translated hit label for an ability formula tag (`name` + `q`). */
+export function abilityFormulaLabel(
+  charKey: CharacterKey,
+  tag: Tag,
+  skillOverride?: SkillKey
+) {
+  const parsed = parseAbilityFromTag(
+    skillOverride && !tag.skillType
+      ? { ...tag, skillType: `${skillOverride}Skill` }
+      : tag
+  )
+  const type = formulaDimensionFromTag(tag)
+  if (!type || !parsed?.hitIndex) return undefined
+
+  return st(type, {
+    val: `$t(char_${charKey}_gen:${parsed.skill}.${parsed.abilityKey}.params.${parsed.hitIndex})`,
+  })
+}
+
+/** Translated hit label for a skill formula, with a stable fallback. */
 export function abilityFormulaNameToTranslated(
   charKey: CharacterKey,
   skill: SkillKey,
   tag: Tag
 ) {
   const baseName = abilityBaseName(tag.name)
-  const { abilityKey, hitIndex } = parseAbilityHitFromName(baseName)
-  const type = formulaDimensionFromTag(tag)
-  if (!type || !hitIndex) return baseName || tag.name || tag.q || ''
-  return st(type, {
-    val: `$t(char_${charKey}_gen:${skill}.${abilityKey}.params.${hitIndex.replace(/\D/g, '')})`,
-  })
+  return (
+    abilityFormulaLabel(charKey, tag, skill) ??
+    baseName ??
+    tag.name ??
+    tag.q ??
+    ''
+  )
 }

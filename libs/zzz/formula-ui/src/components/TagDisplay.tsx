@@ -2,31 +2,20 @@ import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { ColorText, SqBadge } from '@genshin-optimizer/common/ui'
 import { evalIfFunc, getUnitStr } from '@genshin-optimizer/common/util'
 import type { Calculator as GameOptCalculator } from '@genshin-optimizer/game-opt/engine'
-import type {
-  CharacterKey,
-  SkillKey,
-  StatKey,
-} from '@genshin-optimizer/zzz/consts'
+import type { CharacterKey, StatKey } from '@genshin-optimizer/zzz/consts'
 import {
   allCharacterKeys,
   elementalData,
-  isSkillKey,
   statKeyTextMap,
 } from '@genshin-optimizer/zzz/consts'
-import {
-  Read,
-  type Tag,
-  abilityBaseName,
-  isAbilityDim,
-} from '@genshin-optimizer/zzz/formula'
+import { Read, type Tag } from '@genshin-optimizer/zzz/formula'
 import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
 import { AttributeName, StatDisplay } from '@genshin-optimizer/zzz/ui'
-import type { ReactNode } from 'react'
+import { abilityFormulaLabel } from '../char/abilityFormulaLabels'
 import { getCondMap, tagFieldSubset } from '../char/tagFieldMap'
 import { damageTypeKeysMap, getDmgType, getVariant } from '../char/util'
-import { dimensionByAbilityDim } from '../formulaDimensionUi'
 import { useZzzCalcContext } from '../hooks'
-import { getTagLabel, st } from '../util'
+import { getTagLabel } from '../util'
 import { qtMap } from './qtMap'
 export function TagDisplay({
   tag,
@@ -70,29 +59,6 @@ const isExtraHandlingStats = (
   extraHandlingStats.includes(
     stat as 'hp' | 'hp_' | 'atk' | 'atk_' | 'def' | 'def_'
   )
-function abilityFormulaTitle(tag: Tag): ReactNode | undefined {
-  if (!tag.sheet || !allCharacterKeys.includes(tag.sheet as CharacterKey))
-    return undefined
-  if (!tag.name || !isAbilityDim(tag.q)) return undefined
-  if (!tag.skillType?.endsWith('Skill')) return undefined
-
-  const skill = tag.skillType.slice(0, -'Skill'.length)
-  if (!isSkillKey(skill)) return undefined
-
-  const baseName = abilityBaseName(tag.name)
-  const underscoreIdx = baseName.lastIndexOf('_')
-  if (underscoreIdx === -1) return baseName
-
-  const hitIndex = baseName.slice(underscoreIdx + 1)
-  if (!/^\d+$/.test(hitIndex)) return baseName
-
-  return st(dimensionByAbilityDim[tag.q], {
-    val: `$t(char_${tag.sheet}_gen:${skill as SkillKey}.${baseName.slice(
-      0,
-      underscoreIdx
-    )}.params.${hitIndex})`,
-  })
-}
 const labelMap = {
   // TODO: translation
   dmg_: 'DMG',
@@ -109,7 +75,10 @@ function TagStrDisplay({
   preventRecursion,
 }: { tag: Tag; showPercent?: boolean; preventRecursion?: boolean }) {
   const calc = useZzzCalcContext()
-  const abilityTitle = abilityFormulaTitle(tag)
+  const abilityTitle =
+    tag.sheet && allCharacterKeys.includes(tag.sheet as CharacterKey)
+      ? abilityFormulaLabel(tag.sheet as CharacterKey, tag)
+      : undefined
   if (abilityTitle) return abilityTitle
 
   const title = tagFieldSubset(tag)[0]?.title

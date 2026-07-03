@@ -1,9 +1,16 @@
-import type { SkillKey } from '@genshin-optimizer/zzz/consts'
+import { type SkillKey, isSkillKey } from '@genshin-optimizer/zzz/consts'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { abilityBaseName } from '@genshin-optimizer/zzz/formula'
-import { skillFromTag } from './bundledFormulaFields'
 
 export { abilityBaseName }
+
+export function skillFromTag(tag: Tag): SkillKey | undefined {
+  const skillType = tag.skillType
+  if (!skillType?.endsWith('Skill')) return undefined
+
+  const skill = skillType.slice(0, -'Skill'.length)
+  return isSkillKey(skill) ? skill : undefined
+}
 
 /** Split `AbilityName_0` into ability key + numeric hit index. */
 export function parseAbilityHitFromName(baseName: string): {
