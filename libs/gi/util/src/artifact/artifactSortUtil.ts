@@ -6,7 +6,7 @@ import type {
   FilterOption,
   IArtifact,
 } from '@genshin-optimizer/gi/schema'
-import { getArtifactEfficiency } from './artifact'
+import { getArtifactEfficiency, hasFourInitialSubstats } from './artifact'
 
 export function artifactSortConfigs(
   effFilterSet: Set<SubstatKey>
@@ -83,6 +83,12 @@ export function artifactFilterConfigs({
     },
     lines: (art, filter) =>
       [0, ...filter].includes(art.substats.filter((s) => s.value).length),
+    initialSubstats: (art, filter) => {
+      const initialSubstatsKey = hasFourInitialSubstats(art)
+        ? 'fourLiner'
+        : 'notFourLiner'
+      return filter.includes(initialSubstatsKey)
+    },
     excluded: (art, filter) => {
       if (!filter.includes('excluded') && excludedIds.includes(art.id))
         return false

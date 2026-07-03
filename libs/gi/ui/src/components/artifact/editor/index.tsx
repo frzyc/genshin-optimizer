@@ -900,7 +900,12 @@ export function ArtifactEditor({
                   >
                     {t('editor.preview')}
                   </Typography>
-                  {cArtifact && <ArtifactCardObj artifact={cArtifact} />}
+                  {cArtifact && (
+                    <ArtifactCardObj
+                      artifact={cArtifact}
+                      hideInitialSubstatBadge={!isValid}
+                    />
+                  )}
                 </CardThemed>
               </Grid>
             </Grid>
