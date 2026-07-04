@@ -3,11 +3,16 @@ import type { Field } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { BaseRead } from '@genshin-optimizer/pando/engine'
 import { read as tagRead } from '@genshin-optimizer/pando/engine'
 import type { AttributeKey } from '@genshin-optimizer/zzz/consts'
-import { type TargetTag, applyDamageTypeToTag, isGenericDmgInstTarget, targetTag } from '@genshin-optimizer/zzz/db'
+import {
+  type TargetTag,
+  applyDamageTypeToTag,
+  isGenericDmgInstTarget,
+  targetTag,
+} from '@genshin-optimizer/zzz/db'
 import type { Calculator, Tag } from '@genshin-optimizer/zzz/formula'
 import { own } from '@genshin-optimizer/zzz/formula'
-import { abilityFormulaGroupKey } from './bundledFormulaGrouping'
 import { primaryTagFromField } from './bundledFormulaFields'
+import { abilityFormulaGroupKey } from './bundledFormulaGrouping'
 
 function listingTagKey(tag: Tag): string {
   return `${tag.sheet ?? ''}:${tag.name ?? ''}:${tag.q ?? ''}:${tag.qt ?? ''}:${tag.attribute ?? ''}:${tag.damageType1 ?? ''}:${tag.damageType2 ?? ''}`

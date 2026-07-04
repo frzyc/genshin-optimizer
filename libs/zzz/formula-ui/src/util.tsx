@@ -9,9 +9,9 @@ import { abilityBaseName } from '@genshin-optimizer/zzz/formula'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { Translate } from '@genshin-optimizer/zzz/i18n'
 import type { ReactNode } from 'react'
+import { TagFieldTitle } from './TagFieldTitle'
 import { parseAbilityHitFromName } from './abilityTag'
 import { abilityDisplayNameString } from './char/abilityFormulaLabels'
-import { TagFieldTitle } from './TagFieldTitle'
 
 export function st(strKey: string, values?: Record<string, string | number>) {
   return <Translate ns="sheet" key18={strKey} values={values} />
@@ -59,7 +59,11 @@ export function getTagLabel(tag: Tag | undefined | null): string {
   if (et === 'own' && qt === 'formula' && q && formulaBaseQs.has(q))
     return 'base'
   if (et === 'own' && qt === 'formula' && q !== 'base') {
-    if (name && tag.sheet && allCharacterKeys.includes(tag.sheet as CharacterKey)) {
+    if (
+      name &&
+      tag.sheet &&
+      allCharacterKeys.includes(tag.sheet as CharacterKey)
+    ) {
       const display = abilityDisplayNameString(tag.sheet as CharacterKey, tag)
       if (display) return display
     }

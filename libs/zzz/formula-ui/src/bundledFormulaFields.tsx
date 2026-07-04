@@ -23,11 +23,7 @@ import { tagToTagField } from './util'
 
 export { primaryTagFromField } from './formulaFieldUtil'
 
-function abilityFieldTitle(
-  charKey: CharacterKey,
-  skill: SkillKey,
-  tag: Tag
-) {
+function abilityFieldTitle(charKey: CharacterKey, skill: SkillKey, tag: Tag) {
   return abilityTagDisplay(charKey, tag, skill) ?? tag.name ?? tag.q ?? ''
 }
 

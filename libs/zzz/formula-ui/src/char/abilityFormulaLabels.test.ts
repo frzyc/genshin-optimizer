@@ -19,8 +19,8 @@ describe('abilityDisplayNameString', () => {
     expect(abilityDisplayNameString('Soldier0Anby', s0AnbyAftershockUlt)).toBe(
       'UltimateVoidstrike DMG'
     )
-    expect(abilityDisplayNameString('Soldier0Anby', s0AnbyAftershockUlt)).not.toContain(
-      '_aftershock'
-    )
+    expect(
+      abilityDisplayNameString('Soldier0Anby', s0AnbyAftershockUlt)
+    ).not.toContain('_aftershock')
   })
 })

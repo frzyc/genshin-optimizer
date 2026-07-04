@@ -22,7 +22,11 @@ describe('resolveAbilityDim', () => {
       resolveAbilityDim(sheetFormulas, 'BasicAttackCirrusStrike_0', 'daze')
     ).toBe('dazeBuildup')
     expect(
-      resolveAbilityDim(sheetFormulas, 'BasicAttackCirrusStrike_0', 'anomBuildup')
+      resolveAbilityDim(
+        sheetFormulas,
+        'BasicAttackCirrusStrike_0',
+        'anomBuildup'
+      )
     ).toBe('anomBuildup')
   })
 })

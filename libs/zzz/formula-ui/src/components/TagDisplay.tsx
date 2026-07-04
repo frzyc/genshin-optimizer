@@ -11,9 +11,7 @@ import {
 import { Read, type Tag } from '@genshin-optimizer/zzz/formula'
 import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
 import { AttributeName, StatDisplay } from '@genshin-optimizer/zzz/ui'
-import {
-  abilityTagDisplay,
-} from '../char/abilityFormulaLabels'
+import { abilityTagDisplay } from '../char/abilityFormulaLabels'
 import { getCondMap, tagFieldSubset } from '../char/tagFieldMap'
 import { damageTypeKeysMap, getDmgType, getVariant } from '../char/util'
 import { useZzzCalcContext } from '../hooks'

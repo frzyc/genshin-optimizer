@@ -858,8 +858,7 @@ function getFormula(target: TargetTag) {
   if (!sheetFormulas) return
 
   if (q) {
-    if (isAbilityDim(q))
-      return bundledFormulaInSheet(sheetFormulas, name, q)
+    if (isAbilityDim(q)) return bundledFormulaInSheet(sheetFormulas, name, q)
     const byTagQ = Object.values(sheetFormulas).find(
       (entry) => entry.tag?.name === name && entry.tag?.q === q
     )

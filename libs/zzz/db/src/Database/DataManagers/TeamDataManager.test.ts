@@ -82,9 +82,7 @@ describe('TeamDataManager', () => {
       name: 'BasicAttackHarmonizingShot_0',
       q: 'standardDmg',
     })
-    expect(
-      targetTag(result!.frames[0]!.tag!).damageType2
-    ).toBe('aftershock')
+    expect(targetTag(result!.frames[0]!.tag!).damageType2).toBe('aftershock')
   })
 
   it('keeps damage types on generic inst opt targets', () => {

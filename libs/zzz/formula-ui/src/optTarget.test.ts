@@ -1,11 +1,7 @@
 import { read as tagRead } from '@genshin-optimizer/pando/engine'
 import { targetTag } from '@genshin-optimizer/zzz/db'
 import { describe, expect, it } from 'vitest'
-import {
-  formulaReadForTag,
-  isOptTargetTag,
-  mergeTagForOpt,
-} from './optTarget'
+import { formulaReadForTag, isOptTargetTag, mergeTagForOpt } from './optTarget'
 
 describe('isOptTargetTag', () => {
   it('matches stat-only targets by q/qt/attribute', () => {
