@@ -41,8 +41,6 @@ export function DimensionSelector() {
             sheet,
             name,
             q: nextAbilityDim,
-            damageType1: target.damageType1,
-            damageType2: target.damageType2,
           },
         })
       }}

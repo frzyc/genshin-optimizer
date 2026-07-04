@@ -12,7 +12,7 @@ import {
 } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { BaseRead } from '@genshin-optimizer/pando/engine'
 import type { StatKey } from '@genshin-optimizer/zzz/consts'
-import { applyDamageTypeToTag, targetTag } from '@genshin-optimizer/zzz/db'
+import { targetTag } from '@genshin-optimizer/zzz/db'
 import { getTeamFrame0 } from '@genshin-optimizer/zzz/db'
 import { useCharacterContext, useTeam } from '@genshin-optimizer/zzz/db-ui'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
@@ -30,7 +30,12 @@ import {
   useZzzCalcContext,
 } from '../hooks'
 import { OptPanelSectionHeader } from '../optPanelSections'
-import { formulaReadForTag, listingReadKey, statReadTagKey } from '../optTarget'
+import {
+  formulaReadForTag,
+  listingReadKey,
+  mergeTagForOpt,
+  statReadTagKey,
+} from '../optTarget'
 import { OptTargetCategorySectionHeader } from '../optTargetDisplay'
 import { tagToTagField } from '../util'
 
@@ -132,25 +137,6 @@ function useOptTargetTags() {
     [optTarget]
   )
   return { optTarget, resolvedOptTag }
-}
-
-function mergeTagForOpt(
-  tag: Tag,
-  resolvedOptTag: Tag | undefined,
-  optTarget: ReturnType<typeof getTeamFrame0>['tag']
-) {
-  if (
-    resolvedOptTag &&
-    tag.sheet === resolvedOptTag.sheet &&
-    tag.name === resolvedOptTag.name &&
-    tag.q === resolvedOptTag.q
-  )
-    return applyDamageTypeToTag(
-      tag,
-      optTarget?.damageType1,
-      optTarget?.damageType2
-    )
-  return tag
 }
 
 const CharStatRow = memo(function CharStatRow({

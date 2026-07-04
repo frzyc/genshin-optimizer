@@ -3,7 +3,7 @@ import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
 import { DebugReadContext } from '@genshin-optimizer/game-opt/formula-ui'
 import { commonDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { isSkillKey } from '@genshin-optimizer/zzz/consts'
+import { type SkillKey, isSkillKey } from '@genshin-optimizer/zzz/consts'
 import { isAbilityDim } from '@genshin-optimizer/zzz/formula'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import HelpIcon from '@mui/icons-material/Help'
@@ -11,8 +11,12 @@ import { Box, ListSubheader, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
 import { useContext, useMemo } from 'react'
 import { isAbilityFormulaTag, parseAbilityFromTag } from './abilityTag'
-import type { TalentSheetElementKey } from './char/consts'
+import {
+  abilityDisplayTitle,
+} from './char/abilityFormulaLabels'
 import { getFieldCategory } from './char/fieldCategory'
+import type { TalentSheetElementKey } from './char/consts'
+import { damageTypeKeysMap } from './char/util'
 import { tagFieldSubset } from './char/tagFieldMap'
 import { FullTagDisplay, TagDisplay } from './components'
 import type { FormulaDimension } from './formulaDimensionUi'
@@ -151,16 +155,27 @@ export function AbilityOptTargetLabel({
   /** Single-line layout for compact button titles. */
   inline?: boolean
 }) {
-  const parsed = parseAbilityFromTag(tag)
+  const category = getFieldCategory(charKey, tag)
+  const skillHint: SkillKey | undefined =
+    category && isSkillKey(category) ? category : undefined
+  const parsed = parseAbilityFromTag(
+    skillHint && !tag.skillType
+      ? { ...tag, skillType: `${skillHint}Skill` }
+      : tag
+  )
   if (!parsed) return <FullTagDisplay tag={tag} />
 
   const { skill, abilityKey, hitIndex } = parsed
   const [chg] = trans('char', charKey)
-  const abilityName = chg(`${skill}.${abilityKey}.name`)
+  const abilityName = abilityDisplayTitle(charKey, tag, skillHint)
   const skillName = st(`skills.${skill}`)
   const hitLabel =
     hitIndex !== undefined
       ? chg(`${skill}.${abilityKey}.params.${hitIndex.replace(/\D/g, '')}`)
+      : null
+  const damageType2Label =
+    tag.damageType2 && tag.damageType2 in damageTypeKeysMap
+      ? damageTypeKeysMap[tag.damageType2 as keyof typeof damageTypeKeysMap]
       : null
   const dimensionBadgeLabel =
     (tag.q && isAbilityDim(tag.q) ? ABILITY_DIM_LABEL[tag.q] : undefined) ??
@@ -194,6 +209,12 @@ export function AbilityOptTargetLabel({
                 {hitLabel}
               </>
             )}
+            {damageType2Label && (
+              <>
+                {' · '}
+                {damageType2Label}
+              </>
+            )}
           </Typography>
         </Typography>
         {showDimension && dimensionBadgeLabel && (
@@ -221,6 +242,12 @@ export function AbilityOptTargetLabel({
             <>
               {' · '}
               {hitLabel}
+            </>
+          )}
+          {damageType2Label && (
+            <>
+              {' · '}
+              {damageType2Label}
             </>
           )}
         </Typography>

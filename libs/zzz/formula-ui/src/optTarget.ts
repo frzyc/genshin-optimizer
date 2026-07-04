@@ -3,13 +3,14 @@ import type { Field } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { BaseRead } from '@genshin-optimizer/pando/engine'
 import { read as tagRead } from '@genshin-optimizer/pando/engine'
 import type { AttributeKey } from '@genshin-optimizer/zzz/consts'
-import { type TargetTag, targetTag } from '@genshin-optimizer/zzz/db'
+import { type TargetTag, applyDamageTypeToTag, isGenericDmgInstTarget, targetTag } from '@genshin-optimizer/zzz/db'
 import type { Calculator, Tag } from '@genshin-optimizer/zzz/formula'
 import { own } from '@genshin-optimizer/zzz/formula'
+import { abilityFormulaGroupKey } from './bundledFormulaGrouping'
 import { primaryTagFromField } from './bundledFormulaFields'
 
 function listingTagKey(tag: Tag): string {
-  return `${tag.sheet ?? ''}:${tag.name ?? ''}:${tag.q ?? ''}:${tag.qt ?? ''}:${tag.attribute ?? ''}`
+  return `${tag.sheet ?? ''}:${tag.name ?? ''}:${tag.q ?? ''}:${tag.qt ?? ''}:${tag.attribute ?? ''}:${tag.damageType1 ?? ''}:${tag.damageType2 ?? ''}`
 }
 
 /** Key for looking up a listing `Read` from `calc.listFormulas(own.listing.formulas)`. */
@@ -111,13 +112,50 @@ export function isOptTargetTag(
     )
   }
   const resolved = resolvedTag ?? targetTag(target)
-  return (
-    tag.sheet === resolved.sheet &&
-    tag.name === resolved.name &&
-    tag.q === resolved.q &&
-    tag.qt === resolved.qt &&
-    (tag.attribute ?? undefined) === (resolved.attribute ?? undefined)
+  if (
+    tag.sheet !== resolved.sheet ||
+    tag.name !== resolved.name ||
+    tag.q !== resolved.q ||
+    (tag.qt ?? undefined) !== (resolved.qt ?? undefined) ||
+    (tag.attribute ?? undefined) !== (resolved.attribute ?? undefined) ||
+    abilityFormulaGroupKey(tag) !== abilityFormulaGroupKey(resolved)
   )
+    return false
+  if (target.name && isGenericDmgInstTarget(target.name)) {
+    return (
+      (tag.damageType1 ?? undefined) === (resolved.damageType1 ?? undefined) &&
+      (tag.damageType2 ?? undefined) === (resolved.damageType2 ?? undefined)
+    )
+  }
+  return true
+}
+
+/** Merge opt-target inst overrides onto a matching stat row tag for compute/highlight. */
+export function mergeTagForOpt(
+  tag: Tag,
+  resolvedOptTag: Tag | undefined,
+  optTarget: TargetTag | undefined
+): Tag {
+  if (
+    !resolvedOptTag ||
+    tag.sheet !== resolvedOptTag.sheet ||
+    tag.name !== resolvedOptTag.name ||
+    tag.q !== resolvedOptTag.q
+  )
+    return tag
+
+  if (optTarget?.name && isGenericDmgInstTarget(optTarget.name)) {
+    return applyDamageTypeToTag(
+      tag,
+      optTarget.damageType1,
+      optTarget.damageType2
+    )
+  }
+
+  if (abilityFormulaGroupKey(tag) !== abilityFormulaGroupKey(resolvedOptTag))
+    return tag
+
+  return tag
 }
 
 /** Inset ring so opt-target rows show on striped `FieldDisplayList` rows. */

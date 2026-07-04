@@ -5,6 +5,7 @@ import {
 } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import type { Sheet, Tag } from '@genshin-optimizer/zzz/formula'
+import { abilityFormulaGroupKey } from '../bundledFormulaGrouping'
 import { primaryTagFromField } from '../formulaFieldUtil'
 import { type TalentSheetElementKey, allTalentSheetElementKey } from './consts'
 import { charSheets } from './sheets'
@@ -13,10 +14,6 @@ export type { TalentSheetElementKey }
 export const FIELD_CATEGORY_ORDER = allTalentSheetElementKey
 
 export type FieldCategoryIndex = Map<string, TalentSheetElementKey>
-
-export function formulaTagKey(tag: Tag): string {
-  return `${tag.sheet ?? ''}:${tag.name ?? ''}`
-}
 
 function withCharSheet(tag: Tag, charKey: CharacterKey): Tag {
   return tag.sheet ? tag : { ...tag, sheet: charKey as Sheet }
@@ -53,7 +50,7 @@ export function buildFieldCategoryIndex(
     const element = uiSheet[category]
     if (!element?.documents.length) continue
     for (const tag of tagsFromDocuments(element.documents)) {
-      index.set(formulaTagKey(withCharSheet(tag, charKey)), category)
+      index.set(abilityFormulaGroupKey(withCharSheet(tag, charKey)), category)
     }
   }
 
@@ -77,7 +74,7 @@ export function getFieldCategory(
   tag: Tag,
   index: FieldCategoryIndex = getOrBuildCategoryIndex(charKey)
 ): TalentSheetElementKey | undefined {
-  return index.get(formulaTagKey(withCharSheet(tag, charKey)))
+  return index.get(abilityFormulaGroupKey(withCharSheet(tag, charKey)))
 }
 
 export function groupFieldsByCategory(

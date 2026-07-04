@@ -15,13 +15,21 @@ import {
   partitionBundlableTags,
   resolveBundleDmgQ,
 } from './bundledFormulaGrouping'
-import { abilityFormulaNameToTranslated } from './char/abilityFormulaLabels'
+import { abilityTagDisplay } from './char/abilityFormulaLabels'
 import { getVariant } from './char/util'
 import { ABILITY_DIM_LABEL } from './formulaDimensionUi'
 import { primaryTagFromField } from './formulaFieldUtil'
 import { tagToTagField } from './util'
 
 export { primaryTagFromField } from './formulaFieldUtil'
+
+function abilityFieldTitle(
+  charKey: CharacterKey,
+  skill: SkillKey,
+  tag: Tag
+) {
+  return abilityTagDisplay(charKey, tag, skill) ?? tag.name ?? tag.q ?? ''
+}
 
 function bundleFieldRefs(byQ: Map<string, Tag>) {
   const dmgQ = resolveBundleDmgQ(byQ)!
@@ -41,7 +49,7 @@ function singleFormulaField(
     return {
       title: (
         <ColorText color={getVariant(tag)}>
-          {abilityFormulaNameToTranslated(charKey, skill, tag)}
+          {abilityFieldTitle(charKey, skill, tag)}
         </ColorText>
       ),
       fieldRef: tag,
@@ -70,7 +78,7 @@ export function groupFieldsByTag(
     if (charKey && resolvedSkill) {
       return (
         <ColorText color={getVariant(tag)}>
-          {abilityFormulaNameToTranslated(charKey, resolvedSkill, tag)}
+          {abilityFieldTitle(charKey, resolvedSkill, tag)}
         </ColorText>
       )
     }
@@ -131,9 +139,11 @@ export function abilityDimFromField(
 ): AbilityDim | undefined {
   const ref = primaryTagFromField(field)
   if (!ref?.name) return undefined
+  const sheet = ref.sheet ?? sheetFallback
+  const targetSheet = currentTarget?.sheet ?? sheetFallback
   if (
     currentTarget?.name === ref.name &&
-    (currentTarget.sheet ?? sheetFallback) === (ref.sheet ?? sheetFallback) &&
+    targetSheet === sheet &&
     currentTarget.q &&
     isAbilityDim(currentTarget.q)
   )

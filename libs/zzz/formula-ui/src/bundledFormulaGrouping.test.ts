@@ -8,18 +8,21 @@ function partTagKeys(
   return parts.map((part) => {
     if (part.kind === 'bundle') {
       const tag = part.byQ.get(part.dmgQ)!
-      return `${tag.name}:bundle`
+      const variant = tag.damageType2 ?? 'normal'
+      return `${tag.name}:${variant}:bundle`
     }
-    return `${part.tag.name}:${part.tag.q}`
+    const variant = part.tag.damageType2
+    return `${part.tag.name}:${part.tag.q}${variant ? `:${variant}` : ''}`
   })
 }
 
-const anbyTag = (name: string, q: string): Tag => ({
+const anbyTag = (name: string, q: string, damageType2?: string): Tag => ({
   et: 'own',
   qt: 'formula',
   sheet: 'Anby',
   name,
   q,
+  ...(damageType2 ? { damageType2 } : {}),
 })
 
 describe('partitionBundlableTags', () => {
@@ -58,7 +61,7 @@ describe('partitionBundlableTags', () => {
       anbyTag('HitA_0', 'dazeBuildup'),
       anbyTag('HitA_0', 'standardDmg'),
     ]
-    expect(partTagKeys(partitionBundlableTags(tags))).toEqual(['HitA_0:bundle'])
+    expect(partTagKeys(partitionBundlableTags(tags))).toEqual(['HitA_0:normal:bundle'])
   })
 
   it('keeps dual dmg dims as separate rows instead of bundling', () => {
@@ -73,6 +76,21 @@ describe('partitionBundlableTags', () => {
       'HitA_0:sheerDmg',
       'HitA_0:dazeBuildup',
       'HitA_0:anomBuildup',
+    ])
+  })
+
+  it('bundles aftershock hits separately from non-aftershock siblings', () => {
+    const tags = [
+      anbyTag('HitA_0', 'anomBuildup'),
+      anbyTag('HitA_0', 'dazeBuildup'),
+      anbyTag('HitA_0', 'standardDmg'),
+      anbyTag('HitA_0', 'anomBuildup', 'aftershock'),
+      anbyTag('HitA_0', 'dazeBuildup', 'aftershock'),
+      anbyTag('HitA_0', 'standardDmg', 'aftershock'),
+    ]
+    expect(partTagKeys(partitionBundlableTags(tags))).toEqual([
+      'HitA_0:normal:bundle',
+      'HitA_0:aftershock:bundle',
     ])
   })
 })

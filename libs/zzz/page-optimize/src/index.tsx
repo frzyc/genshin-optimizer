@@ -43,7 +43,7 @@ import {
   CharacterSingleSelectionModal,
 } from '@genshin-optimizer/zzz/ui'
 import { Box, Button } from '@mui/material'
-import { Suspense, useCallback, useMemo, useState } from 'react'
+import { Suspense, useCallback, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { CharacterOptDisplay } from './CharacterOptDisplay'
 import { OptTargetRow } from './OptTargetRow'
@@ -88,9 +88,13 @@ export default function PageOptimize() {
   // Load tooltip translations
   useTranslation('tooltips_gen')
   const character = useCharacter(characterKey)
-  if (characterKey && !character) database.chars.getOrCreate(characterKey)
+  useEffect(() => {
+    if (characterKey && !character) database.chars.getOrCreate(characterKey)
+  }, [characterKey, character, database.chars])
   const team = useTeam(characterKey)
-  if (characterKey && !team) database.teams.getOrCreate(characterKey)
+  useEffect(() => {
+    if (characterKey && !team) database.teams.getOrCreate(characterKey)
+  }, [characterKey, team, database.teams])
   useTitle(
     useMemo(() => {
       const charName = characterKey && t(`charNames_gen:${characterKey}`)

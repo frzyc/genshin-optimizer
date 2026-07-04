@@ -11,16 +11,19 @@ import {
 describe('resolveAbilityDim', () => {
   const sheetFormulas = formulas.Yixuan
 
-  it('resolves sheerDmg when standard is absent', () => {
+  it('picks sheerDmg when a hit has no standardDmg sibling', () => {
     expect(
       resolveAbilityDim(sheetFormulas, 'BasicAttackCirrusStrike_0', 'dmg')
     ).toBe('sheerDmg')
   })
 
-  it('resolves dazeBuildup ability dim', () => {
+  it('maps UI dimension buckets to the bundled ability dim that exists in meta', () => {
     expect(
       resolveAbilityDim(sheetFormulas, 'BasicAttackCirrusStrike_0', 'daze')
     ).toBe('dazeBuildup')
+    expect(
+      resolveAbilityDim(sheetFormulas, 'BasicAttackCirrusStrike_0', 'anomBuildup')
+    ).toBe('anomBuildup')
   })
 })
 
@@ -33,7 +36,7 @@ describe('dimensionByAbilityDim', () => {
 })
 
 describe('formulaDimensionLabel', () => {
-  it('uses longer anomaly label for dimension toggles', () => {
+  it('uses a longer anomaly label in dimension toggles than bundled row badges', () => {
     expect(formulaDimensionLabel('anomBuildup')).toBe('Anomaly Buildup')
     expect(ABILITY_DIM_LABEL.anomBuildup).toBe('Anom')
   })

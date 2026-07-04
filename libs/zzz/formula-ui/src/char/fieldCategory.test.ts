@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
+import { abilityFormulaGroupKey } from '../bundledFormulaGrouping'
 import {
   buildFieldCategoryIndex,
-  formulaTagKey,
   getFieldCategory,
   getOrBuildCategoryIndex,
 } from './fieldCategory'
@@ -11,28 +11,33 @@ describe('buildFieldCategoryIndex', () => {
     const index = buildFieldCategoryIndex('Anby')
     expect(index.size).toBeGreaterThan(0)
     expect(
-      index.get(
-        formulaTagKey({ sheet: 'Anby', name: 'BasicAttackTurboVolt_0' })
-      )
-    ).toBe('basic')
-  })
-
-  it('caches via getOrBuildCategoryIndex', () => {
-    const first = getOrBuildCategoryIndex('Anby')
-    const second = getOrBuildCategoryIndex('Anby')
-    expect(second).toBe(first)
-  })
-})
-
-describe('getFieldCategory', () => {
-  it('uses an explicitly passed index', () => {
-    const index = buildFieldCategoryIndex('Anby')
-    expect(
       getFieldCategory(
         'Anby',
         { sheet: 'Anby', name: 'BasicAttackTurboVolt_0' },
         index
       )
     ).toBe('basic')
+  })
+
+  it('keys aftershock variants separately from normal hits with the same name', () => {
+    const index = buildFieldCategoryIndex('Anby')
+    const normalKey = abilityFormulaGroupKey({
+      sheet: 'Anby',
+      name: 'BasicAttackTurboVolt_0',
+    })
+    const aftershockKey = abilityFormulaGroupKey({
+      sheet: 'Anby',
+      name: 'BasicAttackTurboVolt_0',
+      damageType2: 'aftershock',
+    })
+
+    expect(index.get(normalKey)).toBe('basic')
+    expect(index.get(aftershockKey)).toBeUndefined()
+  })
+
+  it('caches via getOrBuildCategoryIndex', () => {
+    const first = getOrBuildCategoryIndex('Anby')
+    const second = getOrBuildCategoryIndex('Anby')
+    expect(second).toBe(first)
   })
 })

@@ -62,6 +62,13 @@ export function formulaDimensionLabel(dim: FormulaDimension): string {
   return FORMULA_DIMENSION_LABEL[dim]
 }
 
+/** Longer labels in formula breakdown tooltips. */
+export function abilityDimTooltipLabel(q: AbilityDim): string {
+  const dim = dimensionByAbilityDim[q]
+  if (dim === 'anomBuildup') return formulaDimensionLabel('anomBuildup')
+  return ABILITY_DIM_LABEL[q]
+}
+
 /** Short value prefix for generated build rows (e.g. DMG, Daze, ATK). */
 export function optTargetShortValueLabel(
   target: TargetTag | undefined
