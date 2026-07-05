@@ -13,6 +13,7 @@ export const tagColor = {
   FFACFFFF: 'electro',
   '99FF88FF': 'dendro',
   '00FFFFFF': 'strong',
+  FFE14BFF: 'strong',
 } as const
 export type ColorTag = (typeof tagColor)[keyof typeof tagColor]
 
