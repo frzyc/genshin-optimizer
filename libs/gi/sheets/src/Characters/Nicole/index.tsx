@@ -3,7 +3,6 @@ import { type CharacterKey, allElementKeys } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   active,
-  compareEq,
   equal,
   greaterEq,
   inactive1,
@@ -149,59 +148,43 @@ const a1GuidanceActive_atkDisp = greaterEq(
     equal(condA1GuidanceActive, 'on', dm.passive1.atk)
   )
 )
+// Before C6, Guidance can only be triggered on active char
 const a1GuidanceActive_atk = any(
   a1GuidanceActive_atkDisp,
-  equal(
-    active.charKey,
-    target.charKey,
-    any(
-      1,
-      unequal(condA4NicoleGuidance, 'on', 1),
-      equal(condA4NicoleGuidance, 'on', unequal(target.charKey, key, 1))
-    )
-  ),
+  // If target is the active char
+  equal(active.charKey, target.charKey, 1),
+  // Or if Nicole is C6, then all chars will have Guidance if Nicole has Guidance
   greaterEq(
     input.constellation,
     6,
-    any(1, equal(condA4NicoleGuidance, 'on', 1), equal(active.charKey, key, 1))
+    any(
+      1,
+      // Nicole has guidance either with a4 or by being active char
+      equal(condA4NicoleGuidance, 'on', 1),
+      equal(active.charKey, key, 1)
+    )
   )
 )
 
+// Don't apply if Nicole is active, since we handled it above, and will hide this conditional
 const a4NicoleGuidanceActive_atk = greaterEq(
   input.asc,
   4,
   equal(
     condSkillGraceActive,
     'on',
-    equal(condA4NicoleGuidance, 'on', dm.passive1.atk)
-  )
-)
-
-const c2GraceActive_atkNode = greaterEq(
-  input.constellation,
-  2,
-  equal(
-    condSkillGraceActive,
-    'on',
-    compareEq(
-      target.charKey,
-      key,
-      unequal(condA4NicoleGuidance, 'on', dm.constellation2.atk),
-      unequal(condA1GuidanceActive, 'on', dm.constellation2.atk)
+    equal(
+      condA4NicoleGuidance,
+      'on',
+      unequal(target.charKey, key, dm.passive1.atk)
     )
   )
 )
-const c2GraceActive_atkDisp = compareEq(
-  input.activeCharKey,
-  key,
-  unequal(condA4NicoleGuidance, 'on', c2GraceActive_atkNode),
-  unequal(condA1GuidanceActive, 'on', c2GraceActive_atkNode)
-)
-const c2GraceActive_atk = compareEq(
-  target.charKey,
-  key,
-  unequal(condA4NicoleGuidance, 'on', c2GraceActive_atkNode),
-  unequal(condA1GuidanceActive, 'on', c2GraceActive_atkNode)
+
+const c2GraceActive_atk = greaterEq(
+  input.constellation,
+  2,
+  equal(condSkillGraceActive, 'on', dm.constellation2.atk)
 )
 // TODO: To properly support C6, we should make Guidance be a per-char toggle somehow. Just applying it team-wide now as a simple solution
 const c2GuidanceActive_eleRes_obj = objKeyValMap(
@@ -454,10 +437,7 @@ const sheet: TalentSheet = {
               node: skillGraceActive_atk,
             },
             {
-              node: infoMut(c2GraceActive_atkDisp, {
-                path: 'atk',
-                isTeamBuff: true,
-              }),
+              node: c2GraceActive_atk,
             },
             {
               text: ct.chg('skill.skillParams.5'),
@@ -547,7 +527,12 @@ const sheet: TalentSheet = {
     ct.condTem('passive2', {
       path: condA4NicoleGuidancePath,
       value: condA4NicoleGuidance,
-      canShow: equal(condSkillGraceActive, 'on', 1),
+      // Don't show if Nicole is active, since A1 will control Guidance instead
+      canShow: unequal(
+        active.charKey,
+        key,
+        equal(condSkillGraceActive, 'on', 1)
+      ),
       teamBuff: true,
       name: ct.ch('nicoleGuidanceCond'),
       states: {
