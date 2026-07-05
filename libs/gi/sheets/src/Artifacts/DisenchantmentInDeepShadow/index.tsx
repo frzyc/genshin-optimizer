@@ -21,6 +21,11 @@ const set4_superconduct_dmg_ = greaterEq(
   4,
   percent(0.8)
 )
+const set4_stellarconduct_dmg_ = greaterEq(
+  input.artSet.DisenchantmentInDeepShadow,
+  4,
+  percent(0.4)
+)
 const set4_critRate_ = greaterEq(
   input.artSet.DisenchantmentInDeepShadow,
   4,
@@ -31,6 +36,7 @@ export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     atk_: set2,
     superconduct_dmg_: set4_superconduct_dmg_,
+    stellarconduct_dmg_: set4_stellarconduct_dmg_,
   },
   total: {
     // TODO: this crit rate is on-hit. Might put it in a `hit.critRate_` namespace later.
@@ -47,6 +53,9 @@ const sheet: SetEffectSheet = {
         fields: [
           {
             node: set4_superconduct_dmg_,
+          },
+          {
+            node: set4_stellarconduct_dmg_,
           },
         ],
       },
