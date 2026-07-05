@@ -1,0 +1,13 @@
+{
+  "stellarconduct": {
+    "name": "Astroconduzione",
+    "desc": {
+      "0": "Quando viene innescata la reazione di Astroconduzione, l'area circostante si trasforma in un <strong>Campo astropolare</strong> per un breve periodo di tempo. Quando determinati personaggi si trovano all'interno di un Campo astropolare, entrano nello stato di <strong>Splendore: Astroconduzione</strong> che conferisce vari effetti positivi alle loro abilità."
+    },
+    "fieldName": "Campo astropolare",
+    "fieldDesc": {
+      "0": "Quando l'elemento Cryo entra in contatto con l'elemento Electro e vengono soddisfatte determinate condizioni, s'innesca una speciale reazione di Astroconduzione.",
+      "1": "Questa reazione crea uno speciale Campo astropolare: più volte gli avversari vengono colpiti da DAN da Cryo o da Electro all'interno del Campo astropolare, maggiori sono i DAN da Cryo, da Electro e da Astroconduzione che subiscono."
+    }
+  }
+}

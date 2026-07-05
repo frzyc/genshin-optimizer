@@ -1,0 +1,29 @@
+{
+  "name": "Bir Kaşık Üstünlük",
+  "description": {
+    "0": "Sonsuz hikayeler denizinde sayısız farklı tanıma sahip fantastik bir nesne. Evrenin veya rüyalar aleminin devasa ölçeğinde, cesur savaşçının kutsal kılıcıyla prensesin çay kaşığı arasında veyahut buz gibi soğuk bir saat zembereğiyle üstünlük kapılarını açacak anahtar arasında gerçek anlamda bir fark yoktur..."
+  },
+  "passiveName": "Beyaz Perinin Hükümranlığı",
+  "passiveDescription": {
+    "0": {
+      "0": "Saldırı <cryo>%28</cryo> artar.",
+      "1": "Ayrıca kuşanan karakter Yüklü Saldırı ile bir düşmana her vurduğunda kısa süreliğine \"Aşkınlık\" kazanır: 5 saniyeliğine Yıldız İletimi Hasarı <cryo>%16</cryo> artar. Bu etki her 0,2 saniyede bir kademe, toplamda en fazla 3 kademe birikebilir."
+    },
+    "1": {
+      "0": "Saldırı <cryo>%35</cryo> artar.",
+      "1": "Ayrıca kuşanan karakter Yüklü Saldırı ile bir düşmana her vurduğunda kısa süreliğine \"Aşkınlık\" kazanır: 5 saniyeliğine Yıldız İletimi Hasarı <cryo>%20</cryo> artar. Bu etki her 0,2 saniyede bir kademe, toplamda en fazla 3 kademe birikebilir."
+    },
+    "2": {
+      "0": "Saldırı <cryo>%42</cryo> artar.",
+      "1": "Ayrıca kuşanan karakter Yüklü Saldırı ile bir düşmana her vurduğunda kısa süreliğine \"Aşkınlık\" kazanır: 5 saniyeliğine Yıldız İletimi Hasarı <cryo>%24</cryo> artar. Bu etki her 0,2 saniyede bir kademe, toplamda en fazla 3 kademe birikebilir."
+    },
+    "3": {
+      "0": "Saldırı <cryo>%49</cryo> artar.",
+      "1": "Ayrıca kuşanan karakter Yüklü Saldırı ile bir düşmana her vurduğunda kısa süreliğine \"Aşkınlık\" kazanır: 5 saniyeliğine Yıldız İletimi Hasarı <cryo>%28</cryo> artar. Bu etki her 0,2 saniyede bir kademe, toplamda en fazla 3 kademe birikebilir."
+    },
+    "4": {
+      "0": "Saldırı <cryo>%56</cryo> artar.",
+      "1": "Ayrıca kuşanan karakter Yüklü Saldırı ile bir düşmana her vurduğunda kısa süreliğine \"Aşkınlık\" kazanır: 5 saniyeliğine Yıldız İletimi Hasarı <cryo>%32</cryo> artar. Bu etki her 0,2 saniyede bir kademe, toplamda en fazla 3 kademe birikebilir."
+    }
+  }
+}

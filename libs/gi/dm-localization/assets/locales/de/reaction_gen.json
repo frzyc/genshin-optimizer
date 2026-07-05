@@ -1,0 +1,13 @@
+{
+  "stellarconduct": {
+    "name": "Stellar-Supraleiter",
+    "desc": {
+      "0": "Verwandelt beim Auslösen der Reaktion Stellar-Supraleiter den umliegenden Bereich kurzzeitig in ein <strong>Sternglanzfeld</strong>. Befindet sich eine bestimmte Figur innerhalb des Sternglanzfelds, tritt sie in den Zustand <strong>Leuchten – Stellar-Supraleiter</strong> ein, in dem ihre verschiedenen Fähigkeiten jeweils entsprechende Verstärkungseffekte erhalten."
+    },
+    "fieldName": "Sternglanzfeld",
+    "fieldDesc": {
+      "0": "Wenn das Element Kryo auf Elektro trifft und bestimmte Bedingungen erfüllt werden, wird die besondere Reaktion „Stellar-Supraleiter“ ausgelöst.",
+      "1": "Diese Reaktion erzeugt ein besonderes Sternglanzfeld. Je öfter Gegnern im Sternglanzfeld Kryo- oder Elektro-Schaden zugefügt wird, desto höher sind Kryo-Schaden, Elektro-Schaden und Schaden durch die Reaktion „Stellar-Supraleiter“."
+    }
+  }
+}

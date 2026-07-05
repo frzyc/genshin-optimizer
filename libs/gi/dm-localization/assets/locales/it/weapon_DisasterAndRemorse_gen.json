@@ -3,7 +3,7 @@
   "description": {
     "0": "Una lancia forgiata in Pietrabianca e Argento astrale. La sua punta affilata è costantemente avvolta da un gelo pungente."
   },
-  "passiveName": "Colpo doloroso",
+  "passiveName": "Colpo funesto",
   "passiveDescription": {
     "0": {
       "0": "Dopo aver usato un'abilità elementale, il personaggio che equipaggia l'arma ottiene Sentiero del conflitto per 17 s, e gli effetti Imperdonabile e Irreparabile per 3 s ciascuno. Quest'effetto può attivarsi una volta ogni 18 s.",

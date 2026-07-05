@@ -448,5 +448,25 @@
     "description": {
       "0": "Dopo che Prune ha colpito un avversario con il <strong>Martello Scacciamali</strong> sottoposto a Conversione elementale, gli altri membri vicini del gruppo ottengono l'effetto Adunanza del rintocco, che aumenta i DAN da ATT in base all'ATT di Prune."
     }
+  },
+  "11330001": {
+    "name": "Decodifica",
+    "description": {
+      "0": "Una modalità attivata da Fagio quando si usa un attacco caricato.",
+      "1": "In questa modalità, Fagio ingaggia gli avversari davanti a sé con una Raffica di fuoco e sparando Raggi condensati a intervalli, infliggendo <cryo>DAN da Cryo ad area</cryo>.",
+      "2": "Nello stato di <strong>Splendore: Astroconduzione</strong>, i Raggi condensati infliggono <cryo>DAN da Cryo ad area</cryo> considerati DAN da Astroconduzione."
+    }
+  },
+  "11330002": {
+    "name": "Potenza di decodifica",
+    "description": {
+      "0": "Quando è in modalità <strong>Decodifica</strong>, la <strong>Potenza di decodifica</strong> di Fagio aumenta costantemente. Quando la sua Potenza di decodifica raggiunge il massimo, Fagio non è in grado di mantenere o rientrare in modalità Decodifica."
+    }
+  },
+  "11330003": {
+    "name": "Campo astropolare",
+    "description": {
+      "0": "Quando viene innescata la reazione di Astroconduzione, l'area circostante si trasforma in un <strong>Campo astropolare</strong> per un breve periodo di tempo. Quando determinati personaggi si trovano all'interno di un Campo astropolare, entrano nello stato di <strong>Splendore: Astroconduzione</strong> che conferisce vari effetti positivi alle loro abilità."
+    }
   }
 }

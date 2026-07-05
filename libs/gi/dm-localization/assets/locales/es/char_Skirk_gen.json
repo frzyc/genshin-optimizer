@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -66,7 +70,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -99,13 +107,17 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
     "name": "La razón más allá de la razón",
     "description": {
-      "0": "Cuando un personaje cercano del equipo cause una reacción de Congelado, Superconductor, Torbellino Cryo o Cristalización Cryo contra un enemigo, se creará una fisura del vacío cerca de dicho oponente. Este efecto puede ocurrir, como mucho, una vez cada 2.5 s, y podrán crearse un máximo de 3 fisuras del vacío a la vez.",
+      "0": "Cuando un personaje cercano del equipo cause una reacción de Congelado, Superconductor, Superconductor Estelar, Torbellino Cryo o Cristalización Cryo contra un enemigo, se creará una fisura del vacío cerca de dicho enemigo. Este efecto puede ocurrir, como mucho, una vez cada 2.5 s, y podrán crearse un máximo de 3 fisuras del vacío creadas por Skirk a la vez.",
       "1": "<br/>",
       "2": "Skirk puede absorber las fisuras del vacío que haya en un área cercana de las siguientes maneras:",
       "3": [

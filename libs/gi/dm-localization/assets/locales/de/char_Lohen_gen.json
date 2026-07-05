@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -66,13 +70,17 @@
       "12": "Abklingzeit",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
     "name": "Verhängte Strafe",
     "description": {
-      "0": "Führt schnell hintereinander mehrere Hiebe nach vorne aus, verbraucht sämtlichen <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Siegeswillen</strong></tooltip> und verursacht <cryo>Kryo-Schaden</cryo>. Erhöht den Schaden dieses Angriffs abhängig vom verbrauchten <strong>Siegeswillen</strong>. Verlängert, wenn Lohen sich beim Anwenden im Zustand <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Geniestreich</strong></tooltip> befindet, dessen Dauer um 1,65 s.",
+      "0": "Führt schnell hintereinander mehrere Hiebe nach vorne aus, verbraucht den gesamten <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Siegeswillen</strong></tooltip> und verursacht <cryo>Kryo-Schaden</cryo>. Erhöht den Schaden dieses Angriffs abhängig vom verbrauchten <strong>Siegeswillen</strong>. Verlängert, wenn Lohen sich beim Anwenden im Zustand <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Geniestreich</strong></tooltip> befindet, dessen Dauer um 1,65 s.",
       "1": "<br/>",
       "2": "<i>„Schon alles verraten? Schade, ich dachte, wir hätten gerade erst angefangen!“</i>"
     },
@@ -92,7 +100,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {

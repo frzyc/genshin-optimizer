@@ -1,0 +1,13 @@
+{
+  "stellarconduct": {
+    "name": "Yıldız İletimi",
+    "desc": {
+      "0": "Yıldız İletimi tetiklendiğinde çevredeki alan kısa süreliğine bir <strong>Kutup Yıldızı Alanına</strong> dönüşür ve belirli karakterler bir Kutup Yıldızı Alanı içindeyken çeşitli beceri güçlendirmeleri sağlayan <strong>Işıltı: Yıldız İletimi</strong> durumuna girer."
+    },
+    "fieldName": "Kutup Yıldızı Alanı",
+    "fieldDesc": {
+      "0": "Buz, Elektrik ile temas ettiğinde eğer belirli koşullar sağlanırsa özel bir Yıldız İletimi tepkimesi tetiklenir.",
+      "1": "Bu tepkime özel bir Kutup Yıldızı Alanı oluşturur. Kutup Yıldızı Alanı içindeki düşmanlara Buz veya Elektrik Hasarı ne kadar çok defa isabet ederse düşmanların aldıkları Buz Hasarı, Elektrik Hasarı ve Yıldız İletimi Hasarı da o kadar yüksek olur."
+    }
+  }
+}

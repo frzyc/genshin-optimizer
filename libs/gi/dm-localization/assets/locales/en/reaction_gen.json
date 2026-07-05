@@ -1,0 +1,13 @@
+{
+  "stellarconduct": {
+    "name": "Stellar-Conduct",
+    "desc": {
+      "0": "When Stellar-Conduct is triggered, the surrounding area will transform into a <strong>Polestar Field</strong> for a short period of time, and when inside a Polestar Field, certain characters will enter the <strong>Radiance: Stellar-Conduct</strong> state, which grants various skill buffs."
+    },
+    "fieldName": "Polestar Field",
+    "fieldDesc": {
+      "0": "When Cryo comes in contact with Electro, a special Stellar-Conduct reaction will be triggered if certain conditions are also met.",
+      "1": "This reaction creates a special Polestar Field. The more times opponents are hit by Cryo or Electro DMG within the Polestar Field, the higher the Cryo DMG, Electro DMG, and Stellar-Conduct DMG they take."
+    }
+  }
+}

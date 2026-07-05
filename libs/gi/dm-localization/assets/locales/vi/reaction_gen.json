@@ -1,0 +1,13 @@
+{
+  "stellarconduct": {
+    "name": "Tinh-Siêu Dẫn",
+    "desc": {
+      "0": "Khi kích hoạt phản ứng Tinh-Siêu Dẫn, khu vực lân cận sẽ tạm thời chuyển thành <strong>Vùng Trục Sao</strong>. Khi ở trong Vùng Trục Sao, nhân vật chỉ định sẽ tiến vào trạng thái <strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>, khiến các kỹ năng khác nhau lần lượt nhận được hiệu quả cường hóa tương ứng."
+    },
+    "fieldName": "Vùng Trục Sao",
+    "fieldDesc": {
+      "0": "Khi Nguyên Tố Băng tiếp xúc với Nguyên Tố Lôi, nếu thỏa mãn điều kiện nhất định, sẽ kích hoạt phản ứng \"Tinh-Siêu Dẫn\" đặc biệt.",
+      "1": "Phản ứng Tinh-Siêu Dẫn sẽ tạo ra Vùng Trục Sao đặc biệt. Trong Vùng Trục Sao, đánh trúng kẻ địch bằng sát thương Nguyên Tố Băng hoặc Lôi càng nhiều lần, thì Sát Thương Nguyên Tố Băng, Lôi và sát thương phản ứng Tinh-Siêu Dẫn gây ra sẽ càng cao."
+    }
+  }
+}

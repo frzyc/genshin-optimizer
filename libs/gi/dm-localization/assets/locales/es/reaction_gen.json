@@ -1,0 +1,13 @@
+{
+  "stellarconduct": {
+    "name": "Superconductor Estelar",
+    "desc": {
+      "0": "Al causar una reacción de Superconductor Estelar, el área cercana se convertirá en un <strong>campo estrellapolar</strong> durante un breve periodo de tiempo. Al encontrarse dentro de un campo estrellapolar, ciertos personajes entrarán en el estado de <strong>esplendor: Superconductor Estelar</strong>, lo que causará que sus diferentes habilidades obtengan el efecto de fortalecimiento correspondiente."
+    },
+    "fieldName": "Campo estrellapolar",
+    "fieldDesc": {
+      "0": "Cuando Cryo entra en contacto con Electro, si se cumplen ciertas condiciones, se desencadenará la reacción especial de Superconductor Estelar.",
+      "1": "Esta generará un campo estrellapolar dentro del cual, cuantas más veces golpees a los enemigos con Daño Cryo o Electro, mayor será el Daño Cryo, Electro y el daño de Superconductor Estelar infligido."
+    }
+  }
+}

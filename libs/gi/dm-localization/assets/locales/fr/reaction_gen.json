@@ -1,0 +1,13 @@
+{
+  "stellarconduct": {
+    "name": "Astroconduction",
+    "desc": {
+      "0": "Lorsqu'une réaction d'Astroconduction est déclenchée, la zone environnante se transforme temporairement en <strong>étendue polaris</strong>. Dans cette étendue polaris, certains personnages passent en <strong>radiance « Astroconduction »</strong>, ce qui accorde des bonus à leurs capacités."
+    },
+    "fieldName": "Étendue polaris",
+    "fieldDesc": {
+      "0": "Lorsque les éléments Cryo et Électro entrent en contact et si certaines conditions sont remplies, une réaction élémentaire spéciale d'Astroconduction est déclenchée.",
+      "1": "Cette réaction crée une étendue polaris spéciale : plus les ennemis à l'intérieur sont touchés un nombre de fois important par des DGT Cryo ou Électro, plus les DGT Cryo, Électro et de réaction d'Astroconduction qu'ils subissent sont importants."
+    }
+  }
+}

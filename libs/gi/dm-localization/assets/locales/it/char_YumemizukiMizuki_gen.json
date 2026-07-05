@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -69,7 +73,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -98,7 +106,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -119,16 +131,30 @@
       "0": "Quando Yumemizuki Mizuki è nel gruppo, i membri hanno una probabilità di ripristinare un 30% aggiuntivo dei propri PS quando usano cibi con effetti di guarigione e senza proprietà di rianimazione. La probabilità di innescare quest'effetto aumenta in proporzione al livello amicizia del personaggio corrispondente. Con {F#la viaggiatrice}{M#il viaggiatore}, l'effetto si innesca sempre."
     }
   },
+  "lockedPassive": {
+    "name": "Vasto sia il sogno",
+    "description": {
+      "0": "Quando Yumemizuki Mizuki innesca una reazione di Turbinio mentre è nello stato di Girasogni, la successiva iterazione di <anemo>DAN da Anemo ad area</anemo> periodici che infligge ai nemici vicini durante il suddetto stato aumenta di un 1.000% della sua maestria elementale. Tale effetto può attivarsi una volta ogni 2,5 s.",
+      "1": "Inoltre, mentre Yumemizuki Mizuki è nello stato di Girasogni, la maestria elementale dei membri vicini del gruppo aumenta di un 10% della maestria elementale di Yumemizuki Mizuki."
+    }
+  },
   "constellation1": {
     "name": "Acque nebbiose",
     "description": {
       "0": "Quando Yumemizuki Mizuki è nello stato di Girasogni, applica costantemente l'effetto \"Ventitré notti di attesa\" agli avversari vicini per 3 s ogni 3,5 s. Quando l'avversario viene colpito da reazioni di Turbinio innescate da DAN da Anemo mentre l'effetto sopracitato è attivo, l'effetto viene rimosso e i DAN inflitti dall'attuale iterazione di Turbinio aumentano di un 1.100% della maestria elementale di Mizuki."
+    },
+    "upgradedDescription": {
+      "0": "Quando Yumemizuki Mizuki è nello stato di Girasogni, applica costantemente l'effetto \"Ventitré notti di attesa\" agli avversari vicini per 3 s ogni 3,5 s. Quando l'avversario viene colpito da reazioni di Turbinio innescate da DAN da Anemo mentre l'effetto sopracitato è attivo, l'effetto viene rimosso e i DAN inflitti dall'attuale iterazione di Turbinio aumentano di un 1.100% della maestria elementale di Mizuki. Inoltre, Mizuki sferra un attacco aggiuntivo contro il medesimo avversario, infliggendo <anemo>DAN da Anemo</anemo> pari a un 1.000% della sua maestria elementale."
     }
   },
   "constellation2": {
     "name": "Nei sogni incontro il tuo eco",
     "description": {
       "0": "Quando entra nello stato di Girasogni, ogni punto di maestria elementale di Yumemizuki Mizuki aumenta di uno 0,04% i bonus DAN da <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo> ed <electro>Electro</electro> dei membri vicini del gruppo fino al termine del suddetto stato."
+    },
+    "upgradedDescription": {
+      "0": "Quando entra nello stato di Girasogni, ogni punto di maestria elementale di Yumemizuki Mizuki aumenta di uno 0,04% i bonus DAN da <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo> ed <electro>Electro</electro> dei membri vicini del gruppo fino al termine del suddetto stato.",
+      "1": "Inoltre, mentre Yumemizuki Mizuki si trova nello stato di Girasogni, le <pyro>RES a Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo>, <electro>Electro</electro> e <anemo>Anemo</anemo> degli avversari vicini si riducono di un 20%."
     }
   },
   "constellation3": {
@@ -142,6 +168,9 @@
     "name": "Caldi boccioli della sorgente limpida",
     "description": {
       "0": "Raccogliere uno <strong>Spuntino speciale in stile Yumemi</strong> del Tripudio elementale <strong>Terapia della sorgente segreta di Anraku</strong> infligge DAN e apporta effetti di guarigione in tutti i casi, ripristinando al contempo l'energia di Yumemizuki Mizuki di 5. L'energia può essere ripristinata in questo modo per un massimo di 4 volte per tutta la durata di <strong>Terapia della sorgente segreta di Anraku</strong>."
+    },
+    "upgradedDescription": {
+      "0": "Raccogliere uno <strong>Spuntino speciale in stile Yumemi</strong> del Tripudio elementale <strong>Terapia della sorgente segreta di Anraku</strong> infligge DAN e apporta effetti di guarigione. Inoltre, rigenera i PS del membro vicino del gruppo con la salute più bassa di un 266% della maestria elementale di Yumemizuki Mizuki e ripristina di 5 l'energia di quest'ultima. L'energia può essere ripristinata in questo modo per un massimo di 4 volte per tutta la durata di <strong>Terapia della sorgente segreta di Anraku</strong>."
     }
   },
   "constellation5": {
@@ -155,6 +184,10 @@
     "name": "Il cuore indugia a lungo",
     "description": {
       "0": "Quando Yumemizuki Mizuki è nello stato di Girasogni, i DAN da Turbinio inflitti dai membri vicini del gruppo possono causare colpi CRIT, con tasso di CRIT e DAN da CRIT fissati rispettivamente a un 30% e a un 100%."
+    },
+    "upgradedDescription": {
+      "0": "Quando Yumemizuki Mizuki è nello stato di Girasogni, i DAN da Turbinio inflitti dai membri vicini del gruppo possono causare colpi CRIT, con tasso di CRIT e DAN da CRIT fissati rispettivamente a un 30% e a un 100%.",
+      "1": "Ogni punto di maestria elementale di Yumemizuki Mizuki oltre i 500 aumenta il suo tasso di CRIT di uno 0,04% e i suoi DAN da CRIT di uno 0,16%, fino a un 20% e un 80% massimi rispettivamente."
     }
   }
 }

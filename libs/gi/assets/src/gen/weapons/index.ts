@@ -1,4 +1,5 @@
 // This is a generated index file.
+import ATeaspoonOfTranscendence from './ATeaspoonOfTranscendence'
 import AThousandBlazingSuns from './AThousandBlazingSuns'
 import AThousandFloatingDreams from './AThousandFloatingDreams'
 import Absolution from './Absolution'
@@ -235,6 +236,7 @@ import WolfsGravestone from './WolfsGravestone'
 import XiphosMoonlight from './XiphosMoonlight'
 
 const data = {
+  ATeaspoonOfTranscendence,
   AThousandBlazingSuns,
   AThousandFloatingDreams,
   Absolution,

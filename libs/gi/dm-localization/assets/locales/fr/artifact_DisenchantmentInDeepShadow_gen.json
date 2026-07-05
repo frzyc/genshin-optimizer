@@ -2,7 +2,7 @@
   "setName": "Désenchantement dans l'ombre profonde",
   "setEffects": {
     "2": "Augmente l'ATQ de 18 %.",
-    "4": "Augmente les DGT infligés par les réactions de Supraconduction de 80 %. Lorsque le personnage équipé de l'artéfact attaque un ennemi affecté par une réaction de Supraconduction, le taux CRIT de cette attaque augmente de 16 %. Une toute nouvelle bénédiction peut vous être accordée en vous rendant à Snezhnaya..."
+    "4": "Augmente les DGT infligés par les réactions de Supraconduction de 80 % et ceux infligés par les réactions d'Astroconduction de 40 %. Lorsque le personnage équipé de l'artéfact attaque un ennemi affecté par une réaction de Supraconduction ou d'Astroconduction, le taux CRIT de cette attaque augmente de 16 %."
   },
   "pieces": {
     "flower": {

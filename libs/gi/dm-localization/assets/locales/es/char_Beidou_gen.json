@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -74,7 +78,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -108,7 +116,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -132,6 +144,14 @@
     "description": {
       "0": "Disminuye en un 20% el Coste de Aguante al nadar de todos los miembros de tu equipo.",
       "1": "No se puede acumular con otros talentos pasivos que tengan los mismos efectos."
+    }
+  },
+  "lockedPassive": {
+    "name": "Polaris",
+    "description": {
+      "0": "Al mantener pulsado para usar la Habilidad Elemental, <strong>Invocadora de mareas</strong>, se obtendrá una carga de fuerza cada 0.8 s aunque no se reciban ataques, lo que aumentará el daño infligido al soltar la Habilidad.",
+      "1": "Además, al mantener pulsado para usar <strong>Invocadora de mareas</strong> y golpear a un enemigo, se obtendrá una bonificación adicional en función de las cargas de fuerza obtenidas, de manera que, por cada una, el TdE de la Habilidad Elemental se reducirá en 4 s y se regenerarán 8 pts. de Energía Elemental. Este efecto solo se puede activar una vez cada 15 s.",
+      "2": "Además, Beidou entrará en el estado de <strong>esplendor: Superconductor Estelar</strong> mientras se encuentre dentro de un <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>campo estrellapolar</strong></tooltip>."
     }
   },
   "constellation1": {
@@ -171,6 +191,12 @@
     "name": "Flagelo del mal",
     "description": {
       "0": "Mientras esté activa la habilidad <strong>Quebrantatormentas</strong>, la <electro>RES Electro</electro> de los enemigos cercanos se reduce en un 15%."
+    },
+    "upgradedDescription": {
+      "0": "Mientras la habilidad <strong>Quebrantatormentas</strong> esté activa, la <electro>RES Electro</electro> de los enemigos cercanos se reducirá en un 15%.",
+      "1": "<br/>",
+      "2": "<strong>Esplendor: Superconductor Estelar</strong>",
+      "3": "Mientras la habilidad “Quebrantatormentas” esté activa, la <cryo>RES Cryo</cryo> de los enemigos cercanos también se reducirá en un 15%, y la Maestría Elemental del personaje en uso aumentará en 200 pts."
     }
   }
 }

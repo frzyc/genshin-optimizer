@@ -1,0 +1,13 @@
+{
+  "stellarconduct": {
+    "name": "Stellar-Conduct",
+    "desc": {
+      "0": "Saat reaksi Stellar-Conduct terpicu, area di sekitar akan berubah menjadi <strong>Polestar Field</strong> untuk sementara. Saat berada di dalam Polestar Field, beberapa Karakter tertentu akan memasuki status <strong>Radiance: Stellar-Conduct</strong> yang memberikan efek penguatan pada skill-nya."
+    },
+    "fieldName": "Polestar Field",
+    "fieldDesc": {
+      "0": "Saat elemen Cryo bersentuhan dengan elemen Electro, jika syaratnya terpenuhi, maka reaksi Stellar-Conduct khusus akan terpicu.",
+      "1": "Reaksi Stellar-Conduct akan menghasilkan Polestar Field yang unik. Di dalam Polestar Field, makin banyak jumlah serangan Cryo atau Electro yang mengenai musuh, makin tinggi DMG Cryo, Electro, dan reaksi Stellar-Conduct diakibatkan."
+    }
+  }
+}

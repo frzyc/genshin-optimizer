@@ -2,7 +2,7 @@
   "setName": "Desencantamento na Sombra Profunda",
   "setEffects": {
     "2": "ATQ +18%",
-    "4": "Aumenta o Dano de Supercondutor em 80%. Quando o portador atacar inimigos afetados por Supercondutor, aumenta a Taxa CRIT deste ataque em 16%. Ao se aventurar por Snezhnaya, talvez você possa obter alguma bênção nova..."
+    "4": "Aumenta o Dano de Reação de Supercondutor em 80%. Aumenta o Dano de Supercondutor Estelar em 40%. Quando o portador ataca inimigos afetados por Supercondutor ou Supercondutor Estelar, aumenta a Taxa CRIT desse ataque em 16%."
   },
   "pieces": {
     "flower": {

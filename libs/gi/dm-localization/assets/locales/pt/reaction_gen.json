@@ -1,0 +1,13 @@
+{
+  "stellarconduct": {
+    "name": "Supercondutor Estelar",
+    "desc": {
+      "0": "Ao desencadear Supercondutor Estelar, as áreas próximas serão temporariamente transformadas em <strong>Campo da Estrela Polar</strong>. Quando estiver dentro de um Campo da Estrela Polar, o personagem específico entrará no estado <strong>Brilho Reluzente: Supercondutor Estelar</strong>, com suas Habilidades obtendo bônus de fortalecimento diferentes."
+    },
+    "fieldName": "Campo da Estrela Polar",
+    "fieldDesc": {
+      "0": "Quando Cryo entra em contato com electro, uma reação especial de Supercondutor Estelar será desencadeada caso certas condições sejam cumpridas.",
+      "1": "Essa reação cria um Campo da Estrela Polar especial. Quanto mais vezes os oponentes forem atingidos por Dano Cryo ou Electro no Campo da Estrela Polar, maior será o Dano Cryo, Electro e de Supercondutor Estelar sofrido."
+    }
+  }
+}

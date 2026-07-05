@@ -444,5 +444,25 @@
     "description": {
       "0": "Lorsque Prune a touché un ennemi avec un <strong>marteau-serment de chasse des fléaux</strong> dont l'élément a été converti, les autres personnages de l'équipe à proximité obtiennent l'effet Ralliement du glas : augmente les DGT infligés par les attaques selon l'ATQ de Prune."
     }
+  },
+  "11330001": {
+    "name": "Décodage",
+    "description": {
+      "0": "Fagio passe en mode Décodage lors d'une attaque chargée.",
+      "1": "Dans ce mode, Fagio déchaîne une attaque de tir dévastatrice sur les ennemis en avant et tire périodiquement des rayons condensés, infligeant des <cryo>DGT Cryo de zone</cryo>.",
+      "2": "<strong>Radiance « Astroconduction »</strong> : Les rayons condensés infligent à la place des <cryo>DGT Cryo de zone</cryo> considérés comme des DGT de réaction d'Astroconduction."
+    }
+  },
+  "11330002": {
+    "name": "Puissance de décodage",
+    "description": {
+      "0": "Pendant le mode <strong>Décodage</strong>, la <strong>puissance de décodage</strong> de Fagio augmente continuellement. Une fois à la limite, Fagio ne peut plus maintenir ni activer le mode Décodage."
+    }
+  },
+  "11330003": {
+    "name": "Étendue polaris",
+    "description": {
+      "0": "Lorsqu'une réaction d'Astroconduction est déclenchée, la zone environnante se transforme temporairement en <strong>étendue polaris</strong>. Dans cette étendue polaris, certains personnages passent en <strong>radiance « Astroconduction »</strong>, ce qui accorde des bonus à leurs capacités."
+    }
   }
 }

@@ -83,6 +83,7 @@ import Qiqi from './Qiqi'
 import RaidenShogun from './RaidenShogun'
 import Razor from './Razor'
 import Rosaria from './Rosaria'
+import Sandrone from './Sandrone'
 import SangonomiyaKokomi from './SangonomiyaKokomi'
 import Sayu from './Sayu'
 import Sethos from './Sethos'
@@ -207,6 +208,7 @@ const data: TagMapNodeEntries[] = [
   RaidenShogun,
   Razor,
   Rosaria,
+  Sandrone,
   SangonomiyaKokomi,
   Sayu,
   Sethos,

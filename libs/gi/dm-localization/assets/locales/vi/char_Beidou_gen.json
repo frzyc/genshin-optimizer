@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -74,7 +78,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -108,7 +116,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -130,6 +142,14 @@
     "description": {
       "0": "Giảm 20% tiêu hao thể lực khi bơi cho nhân vật trong đội của bản thân.",
       "1": "Không thể cộng dồn với buff Thiên Phú cố định có cùng hiệu quả."
+    }
+  },
+  "lockedPassive": {
+    "name": "Ngôi Sao Dẫn Đường",
+    "description": {
+      "0": "Khi nhấn giữ thi triển Kỹ Năng Nguyên Tố <strong>Bắt Sóng</strong>, cho dù không bị tấn công, mỗi 0.8s cũng sẽ chủ động tích lũy 1 tầng sức mạnh, giúp tăng sát thương gây ra khi giải phóng.",
+      "1": "Ngoài ra, khi nhấn giữ thi triển <strong>Bắt Sóng</strong> đánh trúng kẻ địch, sẽ còn dựa trên số tầng sức mạnh đã tích lũy để nhận hiệu quả cường hóa thêm: Mỗi tầng sức mạnh tích lũy sẽ giảm CD của Kỹ Năng Nguyên Tố đi 4s và hồi phục 8 điểm Năng Lượng Nguyên Tố cho bản thân. Hiệu quả này mỗi 15s tối đa kích hoạt một lần.",
+      "2": "Ngoài ra, khi ở trong <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Vùng Trục Sao</strong></tooltip>, Beidou sẽ vào trạng thái <strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>."
     }
   },
   "constellation1": {
@@ -170,6 +190,11 @@
     "name": "Beidou Diệt Ác",
     "description": {
       "0": "Trong thời gian <strong>Chước Lôi</strong> tồn tại, <electro>kháng Nguyên Tố Lôi</electro> của địch xung quanh giảm 15%."
+    },
+    "upgradedDescription": {
+      "0": "Trong thời gian duy trì <strong>Chước Lôi</strong>, kẻ địch xung quanh sẽ giảm 15% <electro>Kháng Nguyên Tố Lôi</electro>.",
+      "1": "<br/>",
+      "2": "<strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>: Trong thời gian duy trì Chước Lôi, kẻ địch xung quanh sẽ còn giảm 15% <cryo>Kháng Nguyên Tố Băng</cryo>, và nhân vật ra trận hiện tại sẽ tăng 200 điểm Tinh Thông Nguyên Tố."
     }
   }
 }

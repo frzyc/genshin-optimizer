@@ -442,5 +442,25 @@
     "description": {
       "0": "Após Prune acertar um oponente com o <strong>Martelo do Juramento Livrador</strong> que passou por uma Conversão Elemental, os outros membros da equipe próximos ganharão o efeito de Dança dos Sinos: O Dano de ATQ será aumentado baseado no ATQ de Prune."
     }
+  },
+  "11330001": {
+    "name": "Resolução",
+    "description": {
+      "0": "Ao realizar um Ataque Carregado, Fagio trocará para esse modo.",
+      "1": "Quando estiver nesse modo, Fagio atacará com uma rajada contra os inimigos em frente, periodicamente disparando Raios Congelantes, causando <cryo>Dano Cryo em uma AdE</cryo>.",
+      "2": "<strong>Brilho Reluzente: Supercondutor Estelar</strong>: Raio Congelante será convertido para causar <cryo>Dano Cryo em uma AdE</cryo> considerado como Dano de Supercondutor Estelar."
+    }
+  },
+  "11330002": {
+    "name": "Capacidade da Resolução",
+    "description": {
+      "0": "Quando está no modo <strong>Resolução</strong>, a <strong>Capacidade da Resolução</strong> de Fagio aumentará continuamente. Quando Capacidade da Resolução alcançar o máximo, não poderá manter ou reentrar no modo Resolução."
+    }
+  },
+  "11330003": {
+    "name": "Campo da Estrela Polar",
+    "description": {
+      "0": "Ao desencadear Supercondutor Estelar, as áreas próximas serão temporariamente transformadas em <strong>Campo da Estrela Polar</strong>. Quando estiver dentro de um Campo da Estrela Polar, o personagem específico entrará no estado <strong>Brilho Reluzente: Supercondutor Estelar</strong>, com suas Habilidades obtendo bônus de fortalecimento diferentes."
+    }
   }
 }

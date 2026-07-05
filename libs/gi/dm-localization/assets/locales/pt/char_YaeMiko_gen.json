@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -72,7 +76,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -82,6 +90,12 @@
       "1": "Quando ela usa esta habilidade, Yae Miko irá retirar os selos das Sesshou Sakura próximas, destruindo suas formas externas e transformando-as em Relâmpagos de Kitsunes Celestiais que caem dos céus, causando <electro>Dano Electro em uma AdE</electro>. Cada Sesshou Sakura destruída desta forma irá criar um Relâmpago.",
       "2": "<br/>",
       "3": "<i>Yae apenas usa os sinais da Kitsune Celestial em momentos assim, empunhando o próprio relâmpago. Todos que viram a cauda da Senhora Guuji foram transformados em cinzas, portanto, lembre-se, a Senhorita Yae não tem cauda alguma.</i>"
+    },
+    "upgradedDescription": {
+      "0": "A lenda da \"kitsunetsuki\", ou a manifestação do poder kitsune, é uma das lendas de Inazuma. Dentre elas, a da Kitsune Celestial é considerada especial, caindo sobre os inimigos do Grande Santuário Narukami sob a forma de relâmpagos, causando <electro>Dano Electro em uma AdE</electro>.",
+      "1": "Quando ela usa esta habilidade, Yae Miko se baseará nos selos das Sesshou Sakura próximas, destruindo suas formas externas e transformando-as em Relâmpagos de Kitsunes Celestiais que caem dos céus, causando <electro>Dano Electro em uma AdE</electro>. Cada Sesshou Sakura próxima pode fazer cair um Relâmpago de Kitsune Celestial.",
+      "2": "<br/>",
+      "3": "<i>Yae apenas usa os sinais da Kitsune Celestial em momentos assim, empunhando o próprio relâmpago. Todos que viram a cauda da Senhorita Guuji foram transformados em cinzas, portanto, lembre-se, a Senhorita Yae não tem cauda alguma.</i>"
     },
     "skillParams": {
       "0": "Dano de Habilidade",
@@ -99,13 +113,22 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
     "name": "Sombra Sagrada",
     "description": {
       "0": "Ao lançar <strong>Grande Arte Secreta: Tenko Kenshin</strong>, cada Sesshou Sakura destruída redefinirá o Tempo de Recarga de uma carga de <strong>Evocação Yakan: Sesshou Sakura</strong>."
+    },
+    "upgradedDescription": {
+      "0": "Ao lançar <strong>Grande Arte Secreta: Tenko Kenshin</strong>, cada Sesshou Sakura envolvida redefinirá uma vez a recarga de <strong>Evocação Yakan: Sesshou Sakura</strong>.",
+      "1": "Quando houverem simultaneamente pelo menos 3 Sesshou Sakura por perto e lançar <strong>Evocação Yakan: Sesshou Sakura</strong>, Yae Miko realizará um ataque de relâmpago adicional, causando 40% de seu ATQ como <electro>Dano Electro</electro>.",
+      "2": "<strong>Brilho Reluzente: Supercondutor Estelar</strong>: o ataque adicional Electro causará uma instância de <electro>Dano Electro</electro> considerado Dano de Supercondutor Estelar. O Dano é de 50% de seu ATQ."
     }
   },
   "passive2": {
@@ -120,16 +143,30 @@
       "0": "Há 25% de chance de obter um Material de Talento extra aleatório da mesma região. A raridade será a mesma dos materiais consumidos ao fabricar."
     }
   },
+  "lockedPassive": {
+    "name": "Proclamação da Purificação",
+    "description": {
+      "0": "A duração de Sesshou Sakura é estendida em 10s. Depois que os personagens próximos desencadearem Supercondutor ou Supercondutor Estelar, o próximo relâmpago de Sesshou Sakura será fortalecido: aumenta o Dano causado em 80% do ATQ de Yae Miko. Esse efeito pode ser desencadeado uma vez a cada 2.5s.",
+      "1": "<strong>Brilho Reluzente: Supercondutor Estelar</strong>: quando o raio fortalecido por esse efeito atingir o inimigo, causará uma instância de <electro>Dano Electro</electro> adicional equivalente a 200% do ATQ de Yae Miko. Esse Dano é considerado Dano de Supercondutor Estelar.",
+      "2": "Além disso, quando está no <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Campo da Estrela Polar</strong></tooltip>, Yae Miko entrará no estado <strong>Brilho Reluzente: Supercondutor Estelar</strong>."
+    }
+  },
   "constellation1": {
     "name": "Oferenda Yakan",
     "description": {
       "0": "Cada vez que <strong>Grande Arte Secreta: Tenko Kenshin</strong> desencadeia Relâmpago de Kitsune Celestial, Yae Miko regenera para ela mesma 8 pontos de Energia Elemental."
+    },
+    "upgradedDescription": {
+      "0": "Cada vez que <strong>Grande Arte Secreta: Tenko Kenshin</strong> desencadeia Relâmpago de Kitsune Celestial, Yae Miko regenera para ela mesma 8 pontos de Energia Elemental. Depois que Yae Miko ativar Supercondutor, Supercondutor Estelar ou causar Dano de Supercondutor Estelar, os membros próximos da equipe ganham 50% Bônus de Dano Electro e Bônus de Dano de Supercondutor Estelar por 10s. Ativar essas reações novamente redefinirá a duração dos bônus de Dano."
     }
   },
   "constellation2": {
     "name": "Uivos ao Luar",
     "description": {
       "0": "<strong>Sesshou Sakura</strong> inicia no Nível 2 quando é criada. O nível máximo é aumentado para 4, e a AdE de seu ataque aumenta em 60%."
+    },
+    "upgradedDescription": {
+      "0": "O nível inicial de <strong>Sesshou Sakura</strong> é elevado para Nível 2, o nível máximo é aumentado para o Nível 4 e a Área de ataque é aumentada em 60%. Além disso, quando a Sesshou Sakura estiver ativa, aumenta a Proficiência Elemental de Yae Miko e do personagem ativo próximo em 60/90/120/200 de acordo com a posição da Sesshou Sakura."
     }
   },
   "constellation3": {
@@ -143,6 +180,9 @@
     "name": "Canalização da Sakura",
     "description": {
       "0": "Depois de o raio de <strong>Sesshou Sakura</strong> atingir os inimigos, todos os personagens próximos da equipe obterão 20% de <electro>Bônus de Dano Electro</electro> por 5s."
+    },
+    "upgradedDescription": {
+      "0": "Quando o relâmpago de <strong>Sesshou Sakura</strong> atinge o inimigo, todos os personagens próximos obtêm 20% de <electro>Bônus de Dano Electro</electro> por 5s, e regeneram 8 de Energia Elemental para Yae Miko. Esse efeito de regeneração de Energia Elemental pode ser desencadeado uma vez a cada 5s. Além disso, aumenta o Dano do Supremo de Yae Miko em 100%."
     }
   },
   "constellation5": {
@@ -156,6 +196,9 @@
     "name": "Técnica Proibida: Massacre",
     "description": {
       "0": "Quando a <strong>Sesshou Sakura</strong> ataca os inimigos, ignora 60% de sua DEF."
+    },
+    "upgradedDescription": {
+      "0": "Quando a <strong>Sesshou Sakura</strong> atacar, ignorará 60% da DEF do inimigo. Aumenta o Dano CRIT do Dano de Supercondutor Estelar de Yae Miko em 200%."
     }
   }
 }
