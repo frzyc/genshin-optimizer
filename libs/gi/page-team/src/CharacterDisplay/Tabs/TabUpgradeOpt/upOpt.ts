@@ -38,7 +38,12 @@ type EvaluatedMarkovTree = {
   info: UpOptInfo
   evalMode: MarkovNode['type']
   id: string
-  chartData?: { x: number; est: number; estCons: number }[]
+  chartData?: {
+    left: number
+    right: number
+    bins: number
+    data: { x: number; est: number; estCons: number }[]
+  }
 }
 
 type ReshapeConfig = {
@@ -372,8 +377,13 @@ export class UpOptCalculatorV2 {
     { left, right, bins }: { left: number; right: number; bins: number }
   ) {
     const art = this.candidates[ix]
-    if (art.chartData) {
-      return art.chartData
+    if (
+      art.chartData &&
+      art.chartData.left === left &&
+      art.chartData.right === right &&
+      art.chartData.bins === bins
+    ) {
+      return art.chartData.data
     }
     const artGMM = art.tree.map(({ p, n }) => ({
       p,
@@ -413,7 +423,7 @@ export class UpOptCalculatorV2 {
     })
     hist.unshift({ x: perc(left), est: 0, estCons: 0 })
     hist.push({ x: perc(right), est: 0, estCons: 0 })
-    this.candidates[ix].chartData = hist
+    this.candidates[ix].chartData = { left, right, bins, data: hist }
     return hist
   }
 }
