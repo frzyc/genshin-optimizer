@@ -1,5 +1,9 @@
 import type { SubstatKey } from '@genshin-optimizer/gi/consts'
-import { allSubstatKeys } from '@genshin-optimizer/gi/consts'
+import {
+  allArtifactSlotKeys,
+  allSubstatKeys,
+  artSlotMainKeys,
+} from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { getMainStatValue, getSubstatValue } from '@genshin-optimizer/gi/util'
 import { dynRead, prod, sum } from '@genshin-optimizer/gi/wr'
@@ -26,6 +30,13 @@ import {
   levelUpArtifact,
 } from './upOpt'
 import type { MarkovNode, SubstatLevelNode } from './upOpt.types'
+import type { ElixirDefineQuery, ElixirNodeCache } from './upOptMemoize'
+import {
+  createElixirWeightCache,
+  elixirDefinitionMemoFull,
+  elixirDefinitionMemoWeights,
+  roughSizeOf,
+} from './upOptMemoize'
 
 const emptyBuild = {
   flower: undefined,
@@ -704,19 +715,167 @@ describe('upOpt makeSubstatNode(s)', () => {
       expect(def[0].n.base).toEqual({ hp: 4780 })
       expect(def.reduce((ptot, { p }) => ptot + p, 0)).toBeCloseTo(1, 8)
     })
-    test('defined with memoization', () => {
-      elixirDefinitionMemoize(
+    describe('memoization', () => {
+      const queries: ElixirDefineQuery[] = [
         {
           setKey: 'GladiatorsFinale',
           slotKey: 'flower',
-          mainStatKey: 'atk_',
-          affixes: ['atk', 'hp_'],
-          prob_4line: 1,
+          mainStatKey: 'hp',
+          affixes: ['atk', 'atk_'],
+          prob_4line: p4,
         },
-        emptyBuild,
-        obj,
-        {}
-      )
+        {
+          setKey: 'GladiatorsFinale',
+          slotKey: 'flower',
+          mainStatKey: 'hp',
+          affixes: ['atk_', 'def'],
+          prob_4line: p4,
+        },
+        // Unsorted affixes + main stat that is not a substat.
+        {
+          setKey: 'ShimenawasReminiscence',
+          slotKey: 'goblet',
+          mainStatKey: 'pyro_dmg_',
+          affixes: ['critRate_', 'atk_'],
+          prob_4line: p4,
+        },
+        // Same main/affixes as the first query but different set/slot (cache hit, new base).
+        {
+          setKey: 'EmblemOfSeveredFate',
+          slotKey: 'sands',
+          mainStatKey: 'hp',
+          affixes: ['atk', 'atk_'],
+          prob_4line: p4,
+        },
+        // Substat main stat; same weight signature as e.g. an hp_ main (weight-table hit).
+        {
+          setKey: 'GladiatorsFinale',
+          slotKey: 'sands',
+          mainStatKey: 'atk_',
+          affixes: ['critRate_', 'critDMG_'],
+          prob_4line: p4,
+        },
+      ]
+
+      test('full-node cache matches elixirDefinition', () => {
+        const cache: ElixirNodeCache = new Map()
+        queries.forEach((q) => {
+          const expected = elixirDefinition(q, emptyBuild)
+          // Cold (cache miss) then warm (cache hit).
+          expect(elixirDefinitionMemoFull(q, emptyBuild, cache)).toEqual(
+            expected
+          )
+          expect(elixirDefinitionMemoFull(q, emptyBuild, cache)).toEqual(
+            expected
+          )
+        })
+      })
+
+      test('weight cache matches elixirDefinition', () => {
+        const cache = createElixirWeightCache()
+        queries.forEach((q) => {
+          const expected = elixirDefinition(q, emptyBuild)
+          expect(elixirDefinitionMemoWeights(q, emptyBuild, cache)).toEqual(
+            expected
+          )
+          expect(elixirDefinitionMemoWeights(q, emptyBuild, cache)).toEqual(
+            expected
+          )
+        })
+      })
+
+      test('downstream dedup does not corrupt the full-node cache', () => {
+        const cache: ElixirNodeCache = new Map()
+        const q = queries[0]
+        // deduplicate() reassigns node fields in place; cached templates must survive.
+        deduplicate(obj, elixirDefinitionMemoFull(q, emptyBuild, cache))
+        expect(elixirDefinitionMemoFull(q, emptyBuild, cache)).toEqual(
+          elixirDefinition(q, emptyBuild)
+        )
+      })
+
+      test('downstream dedup does not corrupt the weight cache', () => {
+        const cache = createElixirWeightCache()
+        const q = queries[0]
+        // Retrieved nodes share the cached scaled mu/cov arrays; dedup must not mutate them.
+        deduplicate(obj, elixirDefinitionMemoWeights(q, emptyBuild, cache))
+        expect(elixirDefinitionMemoWeights(q, emptyBuild, cache)).toEqual(
+          elixirDefinition(q, emptyBuild)
+        )
+      })
+
+      test('benchmark: speedup & memory', () => {
+        const bench: ElixirDefineQuery[] = []
+        const setKeys = ['GladiatorsFinale', 'ShimenawasReminiscence'] as const
+        setKeys.forEach((setKey) =>
+          allArtifactSlotKeys.forEach((slotKey) =>
+            artSlotMainKeys[slotKey].forEach((mainStatKey) => {
+              const subs = allSubstatKeys.filter((s) => s !== mainStatKey)
+              for (let i = 0; i < subs.length; i++)
+                for (let j = i + 1; j < subs.length; j++)
+                  bench.push({
+                    setKey,
+                    slotKey,
+                    mainStatKey,
+                    affixes: [subs[i], subs[j]],
+                    prob_4line: p4,
+                  })
+            })
+          )
+        )
+        const time = (fn: () => void) => {
+          const t0 = performance.now()
+          fn()
+          return performance.now() - t0
+        }
+        // Warm the module-level caches (substatProb, rollCountMuVar, ...) shared by
+        // all three implementations, so baseline timing is representative.
+        bench.slice(0, 20).forEach((q) => elixirDefinition(q, emptyBuild))
+
+        const tBase = time(() =>
+          bench.forEach((q) => elixirDefinition(q, emptyBuild))
+        )
+        const fullCache: ElixirNodeCache = new Map()
+        const tFullCold = time(() =>
+          bench.forEach((q) =>
+            elixirDefinitionMemoFull(q, emptyBuild, fullCache)
+          )
+        )
+        const tFullWarm = time(() =>
+          bench.forEach((q) =>
+            elixirDefinitionMemoFull(q, emptyBuild, fullCache)
+          )
+        )
+        const weightCache = createElixirWeightCache()
+        const tWeightsCold = time(() =>
+          bench.forEach((q) =>
+            elixirDefinitionMemoWeights(q, emptyBuild, weightCache)
+          )
+        )
+        const tWeightsWarm = time(() =>
+          bench.forEach((q) =>
+            elixirDefinitionMemoWeights(q, emptyBuild, weightCache)
+          )
+        )
+
+        const kb = (x: unknown) => (roughSizeOf(x) / 1024).toFixed(1)
+        const line = (name: string, t: number) =>
+          `  ${name} ${t.toFixed(0)}ms (${(tBase / t).toFixed(1)}x)`
+        console.log(
+          `elixirDefinition benchmark over ${bench.length} queries:\n` +
+            `  baseline               ${tBase.toFixed(0)}ms\n` +
+            line('full-node memo (cold)', tFullCold) +
+            '\n' +
+            line('full-node memo (warm)', tFullWarm) +
+            `, cache ~${kb(fullCache)}kb (${fullCache.size} entries)\n` +
+            line('weight memo    (cold)', tWeightsCold) +
+            '\n' +
+            line('weight memo    (warm)', tWeightsWarm) +
+            `, cache ~${kb(weightCache)}kb ` +
+            `(${weightCache.probs.size} prob + ${weightCache.rollDistrs.size} roll + ` +
+            `${weightCache.scaled.size} scaled entries)`
+        )
+      }, 120_000)
     })
   })
 })
@@ -727,6 +886,6 @@ describe('gen', () => {
     // writeFileSync('out.json', JSON.stringify(umm))
 
     // console.log(rollCountMuVar(5, {n: 0, min: 0}))
-    console.log(rollCountMuVar(5, {n: 2, min: 2}))
+    console.log(rollCountMuVar(5, { n: 2, min: 2 }))
   })
 })

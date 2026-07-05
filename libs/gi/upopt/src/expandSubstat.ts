@@ -47,7 +47,7 @@ function getUniformSubstatValues(key: SubstatKey, rarity: ArtifactRarity) {
 }
 // Memoized substat value variance lookup
 const substatMuVarCache: Record<string, { mu: number; sig2: number }> = {}
-function subMuVar(key: SubstatKey, rarity: ArtifactRarity) {
+export function subMuVar(key: SubstatKey, rarity: ArtifactRarity) {
   const cacheKey = `${key}_${rarity}`
   if (substatMuVarCache[cacheKey]) return substatMuVarCache[cacheKey]
 
@@ -121,6 +121,25 @@ export function makeRollsNode(
   }
 }
 
+/**
+ * Roll-count distribution (mu & cov over the 4 substat slots) of `rollsLeft` upgrade
+ * rolls under reshape guarantees, with the reshaped affixes moved to positions
+ * `reshapeIxs`. Returned arrays are fresh copies, safe to mutate.
+ */
+export function reshapedRollCountMuVar(
+  rollsLeft: number,
+  reshapeIxs: number[],
+  reshape: { n: number; min: number }
+): { mu: number[]; cov: number[][] } {
+  const { mu, cov } = rollCountMuVar(rollsLeft, reshape)
+  ixsToSwaps(reshapeIxs, 4).forEach(([i, j]) => {
+    swap(mu, i, j)
+    swap(cov, i, j)
+    cov.forEach((row) => swap(row, i, j))
+  })
+  return { mu, cov }
+}
+
 type SubstatLevelInfo = {
   base: DynStat
   rarity: ArtifactRarity
@@ -132,19 +151,15 @@ export function makeSubstatNode(info: SubstatLevelInfo): SubstatLevelNode {
   const { rollsLeft, subkeys, reshape } = info
   subkeys.sort((a, b) => a.key.localeCompare(b.key)) // Ensure consistent ordering
   reshape?.affixes.sort((a, b) => a.localeCompare(b)) // Ensure consistent ordering
-  const { mu: muRoll, cov: covRoll } = rollCountMuVar(
+  // Reorder mu, cov so that reshaped affixes are where they should be.
+  const reshapeIxs: number[] = getReshapeIxs(subkeys, reshape)
+  const { mu: muRoll, cov: covRoll } = reshapedRollCountMuVar(
     rollsLeft,
+    reshapeIxs,
     reshape
       ? { n: reshape.affixes.length, min: reshape.mintotal }
       : { n: 0, min: 0 }
   )
-  // Reorder mu, cov so that reshaped affixes are where they should be.
-  const reshapeIxs: number[] = getReshapeIxs(subkeys, reshape)
-  ixsToSwaps(reshapeIxs, 4).forEach(([i, j]) => {
-    swap(muRoll, i, j)
-    swap(covRoll, i, j)
-    covRoll.forEach((row) => swap(row, i, j))
-  })
 
   // Increment muRoll by base rolls
   subkeys.forEach(({ baseRolls }, i) => {

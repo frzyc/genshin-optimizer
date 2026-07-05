@@ -244,7 +244,7 @@ function artToStats(art: ICachedArtifact, mainStatMax = true) {
   return stats
 }
 
-function toStats(
+export function toStats(
   build: Build,
   {
     slotKey,
