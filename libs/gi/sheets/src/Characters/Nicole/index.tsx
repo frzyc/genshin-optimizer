@@ -3,6 +3,7 @@ import { type CharacterKey, allElementKeys } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   active,
+  compareEq,
   equal,
   greaterEq,
   inactive1,
@@ -176,10 +177,31 @@ const a4NicoleGuidanceActive_atk = greaterEq(
   )
 )
 
-const c2GraceActive_atk = greaterEq(
+const c2GraceActive_atkNode = greaterEq(
   input.constellation,
   2,
-  equal(condSkillGraceActive, 'on', dm.constellation2.atk)
+  equal(
+    condSkillGraceActive,
+    'on',
+    compareEq(
+      target.charKey,
+      key,
+      unequal(condA4NicoleGuidance, 'on', dm.constellation2.atk),
+      unequal(condA1GuidanceActive, 'on', dm.constellation2.atk)
+    )
+  )
+)
+const c2GraceActive_atkDisp = compareEq(
+  input.activeCharKey,
+  key,
+  unequal(condA4NicoleGuidance, 'on', c2GraceActive_atkNode),
+  unequal(condA1GuidanceActive, 'on', c2GraceActive_atkNode)
+)
+const c2GraceActive_atk = compareEq(
+  target.charKey,
+  key,
+  unequal(condA4NicoleGuidance, 'on', c2GraceActive_atkNode),
+  unequal(condA1GuidanceActive, 'on', c2GraceActive_atkNode)
 )
 // TODO: To properly support C6, we should make Guidance be a per-char toggle somehow. Just applying it team-wide now as a simple solution
 const c2GuidanceActive_eleRes_obj = objKeyValMap(
@@ -432,7 +454,10 @@ const sheet: TalentSheet = {
               node: skillGraceActive_atk,
             },
             {
-              node: c2GraceActive_atk,
+              node: infoMut(c2GraceActive_atkDisp, {
+                path: 'atk',
+                isTeamBuff: true,
+              }),
             },
             {
               text: ct.chg('skill.skillParams.5'),

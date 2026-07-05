@@ -487,12 +487,15 @@ const common: Data = {
 
   enemy: {
     // TODO: shred cap of 90%
-    def: frac(
-      sum(input.lvl, 100),
-      prod(
-        sum(enemy.level, 100),
-        sum(one, prod(-1, enemy.defRed)),
-        sum(one, prod(-1, enemy.defIgn))
+    def: min(
+      percent(1),
+      frac(
+        sum(input.lvl, 100),
+        prod(
+          sum(enemy.level, 100),
+          sum(one, prod(-1, enemy.defRed)),
+          sum(one, prod(-1, enemy.defIgn))
+        )
       )
     ),
     transDef: frac(

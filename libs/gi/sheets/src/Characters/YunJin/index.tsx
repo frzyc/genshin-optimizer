@@ -322,7 +322,7 @@ const sheet: TalentSheet = {
       canShow: unequal(input.activeCharKey, key, equal(condBurst, 'on', 1)),
       value: condC4,
       path: condC4Path,
-      name: ct.ch('c4'),
+      name: st('elementalReaction.crystallizeOrLunar'),
       states: {
         on: {
           fields: [

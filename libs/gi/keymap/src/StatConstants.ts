@@ -53,7 +53,7 @@ export const transformativeReactions: Record<
   },
   lunarcharged: {
     name: 'Lunar-Charged',
-    multi: 1.8,
+    multi: 3,
     variants: ['electro'],
     resist: 'electro',
     canCrit: false, // It's a different kind of crit
@@ -109,7 +109,7 @@ export const transformativeReactions: Record<
   },
   lunarcrystallize: {
     name: 'Lunar-Crystallize',
-    multi: 0.96,
+    multi: 1.6,
     variants: ['hydro', 'geo'],
     resist: 'geo',
     canCrit: true,
