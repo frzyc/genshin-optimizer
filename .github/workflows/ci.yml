@@ -105,6 +105,7 @@ jobs:
       - name: Get Cache Key
         id: get-cache-key
         run: |
+          cat .gitmodules
           echo "key=$({ git ls-tree -r HEAD | grep '^160000'; cat .gitmodules; } | sha256sum | cut -d " " -f 1)" >> $GITHUB_OUTPUT
       - uses: actions/cache@v5
         with:
