@@ -114,6 +114,13 @@ export const transformativeReactions: Record<
     resist: 'geo',
     canCrit: true,
   },
+  stellarconduct: {
+    name: 'Stellar-Conduct',
+    multi: 0,
+    variants: ['electro', 'cryo'],
+    resist: 'electro', // This can be electro or cryo resist depending on trigger element
+    canCrit: true,
+  },
 } as const
 export const crittableTransformativeReactions = [
   'lunarcharged',
@@ -124,6 +131,7 @@ export const crittableTransformativeReactions = [
   'lunarbloom',
   'swirl',
   'lunarcrystallize',
+  'stellarconduct',
 ] as const
 export type CrittableTransformativeReactionsKey =
   (typeof crittableTransformativeReactions)[number]

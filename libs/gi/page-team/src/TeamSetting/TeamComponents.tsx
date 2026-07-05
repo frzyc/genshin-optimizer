@@ -20,6 +20,7 @@ import {
   MoonsignConditionalSection,
   dataSetEffects,
   getArtSheet,
+  reactionConditionals,
 } from '@genshin-optimizer/gi/sheets'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import type { dataContextObj } from '@genshin-optimizer/gi/ui'
@@ -34,7 +35,7 @@ import {
   NodeFieldDisplay,
   WeaponFullCardObj,
 } from '@genshin-optimizer/gi/ui'
-import { input } from '@genshin-optimizer/gi/wr'
+import { input, one } from '@genshin-optimizer/gi/wr'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import {
   Accordion,
@@ -296,13 +297,16 @@ function CharTalentCondDisplay() {
   const {
     character: { key: charKey },
   } = useContext(CharacterContext)
-  const { teamData } = useContext(DataContext)
+  const { teamData, data } = useContext(DataContext)
   const characterSheet = teamData[charKey]!.characterSheet as CharacterSheet
   const charRegion = getCharStat(charKey).region
   const sections = [
     ...(charRegion === 'nodKrai'
       ? []
       : [MoonsignConditionalSection(charKey, characterSheet)]),
+    ...reactionConditionals.filter(
+      (cond) => data.get(cond.canShow ?? one).value
+    ),
     ...Object.values(characterSheet.talent).flatMap((sts) => sts.sections),
   ]
   if (!sections) return null
