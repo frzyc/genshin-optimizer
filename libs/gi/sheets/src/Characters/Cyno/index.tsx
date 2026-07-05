@@ -306,7 +306,7 @@ const dmgFormulas = {
           'on',
           stellarDmg(
             percent(dm.passive1.boltStellarDmg),
-            'atk_',
+            'atk',
             'stellarconduct',
             'electro',
             {

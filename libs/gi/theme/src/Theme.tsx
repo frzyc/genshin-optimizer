@@ -290,7 +290,7 @@ export const theme = createTheme({
       name: 'lunarcrystallize',
     }),
     stellarconduct: commonTheme.palette.augmentColor({
-      color: { main: '#e4d1ff', contrastText: '#fff' },
+      color: { main: '#e4d1ff', contrastText: '#222' },
       name: 'stellarconduct',
     }),
   },
