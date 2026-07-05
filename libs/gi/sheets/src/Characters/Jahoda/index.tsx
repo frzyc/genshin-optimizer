@@ -277,7 +277,7 @@ const c6FlaskFull_critRate_ = greaterEq(
     equal(
       condC6FlaskFull,
       'on',
-      equal(target.isMoonsign, 1, dm.constellation6.critRate_)
+      equal(target.flags.moonsign, 1, dm.constellation6.critRate_)
     )
   )
 )
@@ -290,7 +290,7 @@ const c6FlaskFull_critDMG_ = greaterEq(
     equal(
       condC6FlaskFull,
       'on',
-      equal(target.isMoonsign, 1, dm.constellation6.critDMG_)
+      equal(target.flags.moonsign, 1, dm.constellation6.critDMG_)
     )
   )
 )
@@ -414,7 +414,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       critDMG_: c6FlaskFull_critDMG_,
     },
   },
-  isMoonsign: constant(1),
+  flags: { moonsign: constant(1) },
 })
 
 const sheet: TalentSheet = {

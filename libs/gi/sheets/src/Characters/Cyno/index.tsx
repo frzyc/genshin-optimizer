@@ -1,4 +1,4 @@
-import { range } from '@genshin-optimizer/common/util'
+import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
@@ -11,10 +11,13 @@ import {
   naught,
   percent,
   prod,
+  stellarDmg,
   subscript,
+  target,
   unequal,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
+import { condStellarRadiance } from '../../sharedConditionals'
 import { CharacterSheet } from '../CharacterSheet'
 import type { TalentSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
@@ -28,7 +31,11 @@ import {
 const key: CharacterKey = 'Cyno'
 const elementKey: ElementKey = 'electro'
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key)
+
+const [condLockRevelationPath, condLockRevelation] = cond(key, 'lockRevelation')
+const lockRevelation = equal(condLockRevelation, 'on', 1)
+
+const ct = charTemplates(key, lockRevelation)
 
 let s = 0,
   b = 5,
@@ -88,24 +95,30 @@ const dm = {
   passive1: {
     skill_dmg_: skillParam_gen.passive1[p1++][0],
     boltDmg: skillParam_gen.passive1[p1++][0],
+    boltStellarDmg: skillParam_gen.passive1[p1++][0],
   },
   passive2: {
     burst_normal_dmgInc_: skillParam_gen.passive2[p2++][0],
     bolt_dmgInc_: skillParam_gen.passive2[p2++][0],
+    boltStellar_dmgInc_: skillParam_gen.passive2[p2++][0],
   },
   constellation1: {
     normal_atkSpd_: skillParam_gen.constellation1[0],
     duration: skillParam_gen.constellation1[1],
+    eleMas: skillParam_gen.constellation1[2],
   },
   constellation2: {
     electro_dmg_: skillParam_gen.constellation2[0],
     duration: skillParam_gen.constellation2[1],
     maxStacks: skillParam_gen.constellation2[2],
     cd: skillParam_gen.constellation2[3],
+    stellarconduct_dmg_: skillParam_gen.constellation2[4],
   },
   constellation4: {
     energyRestore: skillParam_gen.constellation4[0],
     charges: skillParam_gen.constellation4[1],
+    energyRestore2: skillParam_gen.constellation4[2],
+    cd: skillParam_gen.constellation4[3],
   },
 } as const
 
@@ -132,6 +145,39 @@ const a4_bolt_dmgInc = greaterEq(
   4,
   prod(percent(dm.passive2.bolt_dmgInc_), input.total.eleMas)
 )
+const a4_boltStellar_dmgInc = greaterEq(
+  input.asc,
+  4,
+  equal(
+    condLockRevelation,
+    'on',
+    equal(
+      condStellarRadiance,
+      'on',
+      prod(percent(dm.passive2.boltStellar_dmgInc_), input.total.eleMas)
+    )
+  )
+)
+
+const [condC1TogetherPath, condC1Together] = cond(key, 'c1Together')
+const c1Together_eleMasDisp = greaterEq(
+  input.constellation,
+  1,
+  equal(
+    condLockRevelation,
+    'on',
+    equal(
+      condStellarRadiance,
+      'on',
+      equal(condC1Together, 'on', dm.constellation1.eleMas)
+    )
+  )
+)
+const c1Together_eleMas = equal(
+  input.activeCharKey,
+  target.charKey,
+  c1Together_eleMasDisp
+)
 
 const c2NormHitStacksArr = range(1, dm.constellation2.maxStacks)
 const [condC2NormHitStacksPath, condC2NormHitStacks] = cond(
@@ -150,6 +196,34 @@ const c2_electro_dmg_ = greaterEq(
       ])
     ),
     naught
+  )
+)
+
+const c2TeamHitStacksArr = range(1, 5)
+const [condC2TeamHitPath, condC2TeamHit] = cond(key, 'c2TeamHit')
+// TODO: Technically this only applies to certain hits
+const c2TeamHit_stellarconduct_dmg_ = greaterEq(
+  input.constellation,
+  2,
+  equal(
+    condLockRevelation,
+    'on',
+    equal(
+      condStellarRadiance,
+      'on',
+      equal(
+        condC1Together,
+        'on',
+        prod(
+          lookup(
+            condC2TeamHit,
+            objKeyMap(c2TeamHitStacksArr, (stack) => constant(stack)),
+            naught
+          ),
+          percent(dm.constellation2.stellarconduct_dmg_)
+        )
+      )
+    )
   )
 )
 
@@ -212,15 +286,43 @@ const dmgFormulas = {
     boltDmg: greaterEq(
       input.asc,
       1,
-      customDmgNode(prod(dm.passive1.boltDmg, input.total.atk), 'skill', {
-        hit: { ele: constant(elementKey) },
-        premod: { skill_dmgInc: a4_bolt_dmgInc },
-      })
+      customDmgNode(
+        prod(percent(dm.passive1.boltDmg), input.total.atk),
+        'skill',
+        {
+          hit: { ele: constant(elementKey) },
+          premod: { skill_dmgInc: a4_bolt_dmgInc },
+        }
+      )
+    ),
+    boltStellarDmg: greaterEq(
+      input.asc,
+      1,
+      equal(
+        condLockRevelation,
+        'on',
+        equal(
+          condStellarRadiance,
+          'on',
+          stellarDmg(
+            percent(dm.passive1.boltStellarDmg),
+            'atk_',
+            'stellarconduct',
+            'electro',
+            {
+              premod: {
+                stellarconduct_dmgInc: a4_boltStellar_dmgInc,
+              },
+            }
+          )
+        )
+      )
     ),
   },
   passive2: {
     burstNormalDmgInc: a4_burstNormal_dmgInc,
     boltDmgInc: a4_bolt_dmgInc,
+    a4_boltStellar_dmgInc,
   },
 }
 
@@ -234,6 +336,13 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
     eleMas: afterBurst_eleMas,
     electro_dmg_: c2_electro_dmg_,
   },
+  teamBuff: {
+    premod: {
+      eleMas: c1Together_eleMas,
+      stellarconduct_dmg_: c2TeamHit_stellarconduct_dmg_,
+    },
+  },
+  flags: { radiance: lockRevelation },
 })
 
 const sheet: TalentSheet = {
@@ -327,6 +436,11 @@ const sheet: TalentSheet = {
             name: ct.ch('p1Dmg'),
           }),
         },
+        {
+          node: infoMut(dmgFormulas.passive1.boltStellarDmg, {
+            name: ct.ch('p1StellarDmg'),
+          }),
+        },
       ],
     }),
     ct.condTem('passive1', {
@@ -352,6 +466,11 @@ const sheet: TalentSheet = {
         {
           node: infoMut(dmgFormulas.passive2.boltDmgInc, {
             name: ct.ch('boltDmgInc'),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.passive2.a4_boltStellar_dmgInc, {
+            name: ct.ch('boltStellarDmgInc'),
           }),
         },
       ],
@@ -444,7 +563,48 @@ const sheet: TalentSheet = {
   passive1: ct.talentTem('passive1'),
   passive2: ct.talentTem('passive2'),
   passive3: ct.talentTem('passive3'),
-  constellation1: ct.talentTem('constellation1'),
+  lockedPassive: ct.talentTem('lockedPassive', [
+    ct.condTem('lockedPassive', {
+      path: condLockRevelationPath,
+      value: condLockRevelation,
+      teamBuff: true,
+      name: st('revelation.done'),
+      states: {
+        on: {
+          fields: [
+            {
+              text: st('hexerei.talentEnhance'),
+            },
+          ],
+        },
+      },
+    }),
+  ]),
+  constellation1: ct.talentTem('constellation1', [
+    ct.condTem('constellation1', {
+      path: condC1TogetherPath,
+      value: condC1Together,
+      teamBuff: true,
+      name: ct.ch('c1Cond'),
+      canShow: equal(
+        condLockRevelation,
+        'on',
+        equal(condStellarRadiance, 'on', 1)
+      ),
+      states: {
+        on: {
+          fields: [
+            {
+              node: infoMut(c1Together_eleMasDisp, {
+                path: 'eleMas',
+                isTeamBuff: true,
+              }),
+            },
+          ],
+        },
+      },
+    }),
+  ]),
   constellation2: ct.talentTem('constellation2', [
     ct.condTem('constellation2', {
       path: condC2NormHitStacksPath,
@@ -454,11 +614,29 @@ const sheet: TalentSheet = {
         c2NormHitStacksArr.map((stack) => [
           stack,
           {
-            name: st('stack', { count: stack }),
+            name: st('hits', { count: stack }),
             fields: [{ node: c2_electro_dmg_ }],
           },
         ])
       ),
+    }),
+    ct.condTem('constellation2', {
+      path: condC2TeamHitPath,
+      value: condC2TeamHit,
+      name: ct.ch('c2Cond'),
+      canShow: equal(
+        condLockRevelation,
+        'on',
+        equal(condStellarRadiance, 'on', equal(condC1Together, 'on', 1))
+      ),
+      states: objKeyMap(c2TeamHitStacksArr, (stack) => ({
+        name: st('hits', { count: stack }),
+        fields: [
+          {
+            node: c2TeamHit_stellarconduct_dmg_,
+          },
+        ],
+      })),
     }),
   ]),
   constellation3: ct.talentTem('constellation3', [

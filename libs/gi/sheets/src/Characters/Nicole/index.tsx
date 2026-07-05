@@ -320,7 +320,7 @@ export const data = dataObjForCharacterSheet(
         atk: skillGraceActive_atk,
       },
     },
-    isHexerei: lockHomework_hexerei,
+    flags: { hexerei: lockHomework_hexerei },
   },
   {
     teamBuff: {

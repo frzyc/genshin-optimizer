@@ -187,6 +187,9 @@
     "moondriftTrigger": "After triggering Moondrift Harmony",
     "moondriftNearby": "Moondrift nearby",
     "lunarcharged": "After triggering a <lunarcharged>Lunar-Charged</lunarcharged> Reaction",
+    "superconductOrStellarconduct": "After triggering a <superconduct>Super-Conduct</superconduct> or <stellarconduct>Stellar-Conduct</stellarconduct> reaction or dealing <stellarconduct>Stellar-Conduct</stellarconduct> DMG",
+    "stellarRadiance": "Character in the <strong>Radiance: Stellar-Conduct</strong> state",
+    "polestar": "Character inside a Polestar Field",
     "team": {
       "pyro": "After a party member triggers a <pyro>Pyro-related</pyro> Elemental Reaction",
       "lunar": "After a party member triggers a Lunar Reaction",
@@ -258,5 +261,8 @@
     "homeworkDone": "After completing <strong>Witch's Homework</strong>",
     "becomeHexerei": "{{val}} becomes a <strong>Hexerei</strong> character",
     "talentEnhance": "Talents are enhanced"
+  },
+  "revelation": {
+    "done": "After completing <strong>Witch's Revelation</strong>"
   }
 }

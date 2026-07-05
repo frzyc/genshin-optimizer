@@ -315,7 +315,7 @@ const lockC4OmenHex_critDMG_disp = greaterEq(
   )
 )
 const lockC4OmenHex_critDMG_ = equal(
-  target.isHexerei,
+  target.flags.hexerei,
   1,
   lockC4OmenHex_critDMG_disp
 )
@@ -403,7 +403,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       critDMG_: lockC4OmenHex_critDMG_,
     },
   },
-  isHexerei: lockHomework_hexerei,
+  flags: { hexerei: lockHomework_hexerei },
 })
 
 const sheet: TalentSheet = {

@@ -215,7 +215,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       eleMas: a4AfterBurst_eleMas,
     },
   },
-  isMoonsign: constant(1),
+  flags: { moonsign: constant(1) },
 })
 
 const sheet: TalentSheet = {

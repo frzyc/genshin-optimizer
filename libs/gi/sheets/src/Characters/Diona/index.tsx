@@ -10,8 +10,10 @@ import {
   prod,
   sum,
   target,
+  unequal,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
+import { condStellarRadiance } from '../../sharedConditionals'
 import { CharacterSheet } from '../CharacterSheet'
 import type { TalentSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
@@ -27,7 +29,11 @@ import {
 const key: CharacterKey = 'Diona'
 const elementKey: ElementKey = 'cryo'
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key)
+
+const [condLockRevelationPath, condLockRevelation] = cond(key, 'lockRevelation')
+const lockRevelation = equal(condLockRevelation, 'on', 1)
+
+const ct = charTemplates(key, lockRevelation)
 
 let a = 0,
   s = 0,
@@ -90,6 +96,8 @@ const dm = {
   constellation6: {
     healingBonus_: skillParam_gen.constellation6[0],
     emBonus: skillParam_gen.constellation6[1],
+    hp_: skillParam_gen.constellation6[2],
+    sc_dmg_: skillParam_gen.constellation6[3],
   },
 } as const
 
@@ -194,12 +202,54 @@ const nodeC6emDisp = greaterEq(
   equal(condC6, 'higher', dm.constellation6.emBonus)
 )
 const nodeC6em = equal(input.activeCharKey, target.charKey, nodeC6emDisp)
+const nodeC6hp_ = greaterEq(
+  input.constellation,
+  6,
+  equal(condLockRevelation, 'on', dm.constellation6.hp_)
+)
+const nodeC6superconduct_dmg_disp = greaterEq(
+  input.constellation,
+  6,
+  equal(
+    condLockRevelation,
+    'on',
+    equal(
+      condStellarRadiance,
+      'on',
+      unequal(condC6, undefined, dm.constellation6.sc_dmg_)
+    )
+  )
+)
+const nodeC6superconduct_dmg_ = equal(
+  input.activeCharKey,
+  target.charKey,
+  nodeC6superconduct_dmg_disp
+)
+const nodeC6stellarconduct_dmg_disp = greaterEq(
+  input.constellation,
+  6,
+  equal(
+    condLockRevelation,
+    'on',
+    equal(
+      condStellarRadiance,
+      'on',
+      unequal(condC6, undefined, dm.constellation6.sc_dmg_)
+    )
+  )
+)
+const nodeC6stellarconduct_dmg_ = equal(
+  input.activeCharKey,
+  target.charKey,
+  nodeC6stellarconduct_dmg_disp
+)
 
 export const data = dataObjForCharacterSheet(key, dmgFormulas, {
   premod: {
     skillBoost: nodeC5,
     burstBoost: nodeC3,
     skill_dmg_: nodeC2skillDmg_,
+    hp_: nodeC6hp_,
   },
   teamBuff: {
     premod: {
@@ -207,8 +257,11 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       moveSPD_: nodeA1MoveSpeed,
       eleMas: nodeC6em,
       incHeal_: nodeC6healing_,
+      superconduct_dmg_: nodeC6superconduct_dmg_,
+      stellarconduct_dmg_: nodeC6stellarconduct_dmg_,
     },
   },
+  flags: { radiance: lockRevelation },
 })
 
 const sheet: TalentSheet = {
@@ -386,7 +439,22 @@ const sheet: TalentSheet = {
           name: st('lessEqPercentHP', { percent: 50 }),
           fields: [
             {
-              node: infoMut(nodeC6healing_Disp, { path: 'incHeal_' }),
+              node: infoMut(nodeC6healing_Disp, {
+                path: 'incHeal_',
+                isTeamBuff: true,
+              }),
+            },
+            {
+              node: infoMut(nodeC6superconduct_dmg_disp, {
+                path: 'superconduct_dmg_',
+                isTeamBuff: true,
+              }),
+            },
+            {
+              node: infoMut(nodeC6stellarconduct_dmg_disp, {
+                path: 'stellarconduct_dmg_',
+                isTeamBuff: true,
+              }),
             },
           ],
         },
@@ -394,7 +462,19 @@ const sheet: TalentSheet = {
           name: st('greaterPercentHP', { percent: 50 }),
           fields: [
             {
-              node: infoMut(nodeC6emDisp, { path: 'eleMas' }),
+              node: infoMut(nodeC6emDisp, { path: 'eleMas', isTeamBuff: true }),
+            },
+            {
+              node: infoMut(nodeC6superconduct_dmg_disp, {
+                path: 'superconduct_dmg_',
+                isTeamBuff: true,
+              }),
+            },
+            {
+              node: infoMut(nodeC6stellarconduct_dmg_disp, {
+                path: 'stellarconduct_dmg_',
+                isTeamBuff: true,
+              }),
             },
           ],
         },
@@ -405,6 +485,23 @@ const sheet: TalentSheet = {
   passive1: ct.talentTem('passive1'),
   passive2: ct.talentTem('passive2'),
   passive3: ct.talentTem('passive3'),
+  lockedPassive: ct.talentTem('lockedPassive', [
+    ct.condTem('lockedPassive', {
+      path: condLockRevelationPath,
+      value: condLockRevelation,
+      teamBuff: true,
+      name: st('revelation.done'),
+      states: {
+        on: {
+          fields: [
+            {
+              text: st('hexerei.talentEnhance'),
+            },
+          ],
+        },
+      },
+    }),
+  ]),
   constellation1: ct.talentTem('constellation1'),
   constellation2: ct.talentTem('constellation2', [
     {
@@ -444,7 +541,15 @@ const sheet: TalentSheet = {
   constellation5: ct.talentTem('constellation5', [
     { fields: [{ node: nodeC5 }] },
   ]),
-  constellation6: ct.talentTem('constellation6'),
+  constellation6: ct.talentTem('constellation6', [
+    {
+      fields: [
+        {
+          node: nodeC6hp_,
+        },
+      ],
+    },
+  ]),
 }
 
 export default new CharacterSheet(sheet, data)

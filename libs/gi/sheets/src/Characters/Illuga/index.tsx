@@ -352,7 +352,7 @@ export const data = dataObjForCharacterSheet(
         def: c4BurstActive_def,
       },
     },
-    isMoonsign: constant(1),
+    flags: { moonsign: constant(1) },
   },
   {
     teamBuff: {
