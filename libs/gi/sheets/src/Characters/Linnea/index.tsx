@@ -170,7 +170,7 @@ const c1TeamStacks_lunarcrystallize_dmgInc = greaterEq(
         percent(
           dm.constellation6.stacksConsumed *
             dm.constellation6.lunarcrystallize_dmgInc *
-              dm.constellation1.lunarcrystallize_dmgInc
+            dm.constellation1.lunarcrystallize_dmgInc
         ),
         percent(dm.constellation1.lunarcrystallize_dmgInc)
       ),
