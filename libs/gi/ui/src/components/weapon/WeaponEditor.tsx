@@ -5,9 +5,12 @@ import {
   StarsDisplay,
 } from '@genshin-optimizer/common/ui'
 import { weaponAsset } from '@genshin-optimizer/gi/assets'
-import type {
-  CharacterKey,
-  LocationCharacterKey,
+import {
+  type CharacterKey,
+  type LocationCharacterKey,
+  maxLevel,
+  maxLevelLow,
+  weaponMaxAscension,
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase, useWeapon } from '@genshin-optimizer/gi/db-ui'
@@ -115,7 +118,23 @@ export function WeaponEditor({
           ascension={ascension}
           show={showModal}
           onHide={onHideModal}
-          onSelect={(k) => weaponDispatch({ key: k })}
+          onSelect={(newKey) => {
+            // If changing from 1* or 2* max level to a 3*+ weapon, convert the max level accordingly
+            const lowStarWepAtMaxLevelChangingToHighStarWep =
+              key &&
+              !weaponHasRefinement(key) &&
+              level === maxLevelLow &&
+              weaponHasRefinement(newKey)
+            weaponDispatch({
+              key: newKey,
+              level: lowStarWepAtMaxLevelChangingToHighStarWep
+                ? maxLevel
+                : level,
+              ascension: lowStarWepAtMaxLevelChangingToHighStarWep
+                ? weaponMaxAscension[5]
+                : ascension,
+            })
+          }}
           // can only swap to a weapon of the same type
           weaponTypeFilter={weaponType}
         />
