@@ -1,726 +1,461 @@
-import { cartesian, objMap, range } from '@genshin-optimizer/common/util'
-import type {
-  ArtifactRarity,
-  ArtifactSlotKey,
+import { linspace, range } from '@genshin-optimizer/common/util'
+import {
+  type ArtifactSetKey,
+  type ArtifactSlotKey,
+  type MainStatKey,
+  type SubstatKey,
+  allSubstatKeys,
+  artSlotMainKeys,
 } from '@genshin-optimizer/gi/consts'
-import { allSubstatKeys, artMaxLevel } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
-import type { MainStatKey, SubstatKey } from '@genshin-optimizer/gi/dm'
-import type { ArtifactBuildData, DynStat } from '@genshin-optimizer/gi/solver'
+import type { ArtifactBuildData } from '@genshin-optimizer/gi/solver'
+import { compactArtifacts } from '@genshin-optimizer/gi/solver-tc'
 import {
-  getMainStatValue,
-  getRollsRemaining,
-  getSubstatValue,
-} from '@genshin-optimizer/gi/util'
-import {
-  type OptNode,
-  ddx,
-  optimize,
-  precompute,
-  zero_deriv,
-} from '@genshin-optimizer/gi/wr'
-import { crawlUpgrades, quadrinomial } from './mathUtil'
-import { gaussianPE, mvnPE_bad } from './mvncdf'
+  deduplicate,
+  dustReshape,
+  elixirDefinition,
+  evalMarkovNode,
+  expandNode,
+  expandNodes,
+  levelUpArtifact,
+  makeObjective,
+} from '@genshin-optimizer/gi/upopt'
+import type {
+  EvaluatedMarkovNode,
+  MarkovNode,
+  Objective,
+} from '@genshin-optimizer/gi/upopt'
+import { type OptNode, optimize, precompute } from '@genshin-optimizer/gi/wr'
+import { removeSetKeys } from './formulaUtils'
+import { erf } from './mathUtil'
 
-/**
- * Artifact upgrade distribution math summary.
- *
- * Let A be the upgrade distribution of some artifact `art0`. We write
- *  art ~ A to say `art` is a random artifact drawn from the
- *  upgrade distribution `A`.
- * With f(art) being damage function of the 1-swap of an artifact,
- *  we write dmg ~ f(A) to say `dmg` is a random number sampled by
- *  the process:  art ~ A ; dmg = f(art)
- *
- * To approximate f(A), we take the linear approximation of upgrade
- *  distribution of an artifact.
- *           L(art) = f(art0) + sum_i ∂f/∂x_i * s_i * RV_i
- *       L(art)  - Linear approximation of damage function
- *       ∂f/∂x_i - derivative of f wrt substat i (at art0)
- *       s_i     - "scale" of substat i
- *       RV_i    - roll value of substat i
- * Let k_i = ∂f/∂x_i * s_i below.
- *
- * The roll value is the sum of n_i uniform distributions {7, 8, 9, 10}.
- *  We approximate it with a Normal distribution:
- *          RV_i = N[ 8.5n_i, 1.25n_i ]
- *     n_i - number of upgrades for substat i
- * Magic numbers µ = 17/2 and ν = 5/4 come from the mean & std.dev of RV.
- *
- * The substat upgrades are chosen uniform randomly per roll, so
- *  the n_i follow a multinomial distribution. So the linearized
- *  dmg distribution `L(A)` can be written:
- *    L(A) = sum σ(n1, n2, n3, n4) * (f(art0) + sum_i k_i * RV_i(n_i))
- *          σ(n1, n2, n3, n4) - Multinomial distribution for upgrade numbers
- *                              with total n1 + n2 + n3 + n4 = N
- *  where the first sum is over the (n1, n2, n3, n4) of the multinomial
- *  distribution.
- *
- * =========== SLOW APPROXIMATION ==========
- * Because L(A) is written as the sum of Normal distributions, we
- *  can write it as a Gaussian Mixture. We can perform probability
- *  queries following ordinary Gaussian Mixture methods.
- * Note that in the code, `art0` is chosen as a function of n_i to
- *  account for the guaranteed stats due to the number of rolls.
- *
- * =========== FAST APPROXIMATION ==========
- * The Fast method approximates the slow Mixture distribution by matching
- *  the 1st and 2nd moments. This is not expected to be a good approximation;
- *  it's only useful for a ball-park estimate of the upgrade probability.
- * Note that in here, `art0` is fixed wrt n_i.
- *  mean of L(A) = f(art0) + sum_i mean(n_i) * µ k_i
- *  variance of L(A) = sum_i (mean(n_i)/4 * ν k_i^2 + N/4 (µ k_i)^2)
- *                     - N * (sum_i µ/4 k_i)^2
- *                   = N * (Q * sum_i k_i^2 - W * (sum_i k_i)^2)
- *            where Q = (ν + µ^2)/4 and W = (µ / 4)^2
- */
-const up_rv_mean = 17 / 2
-const up_rv_stdev = 5 / 4
-const Q = (up_rv_stdev + up_rv_mean ** 2) / 4
-const W = (up_rv_mean / 4) ** 2
-
-export enum ResultType {
-  Fast,
-  Slow,
-  Exact,
-}
-export type UpOptBuild = Record<ArtifactSlotKey, ArtifactBuildData>
-export type UpOptArtifact = {
+type Build = Record<ArtifactSlotKey, ICachedArtifact | undefined>
+type MarkovTree = { p: number; n: MarkovNode }[]
+type EvaluatedMarkovTree = {
+  result: { p: number; upAvg: number; lower: number; upper: number }
+  tree: { p: number; n: EvaluatedMarkovNode }[]
+  info: UpOptInfo
+  evalMode: MarkovNode['type']
   id: string
-  rollsLeft: number
-  mainStat: MainStatKey
-  subs: SubstatKey[]
-  values: DynStat
+  chartData?: {
+    left: number
+    right: number
+    bins: number
+    data: { x: number; est: number; estCons: number }[]
+  }
+}
+
+type ReshapeConfig = {
+  enabled: boolean
+  minTotal: 2 | 3 | 4
+}
+type DefineConfig = {
+  enabled: boolean
+  setKeys: ArtifactSetKey[]
+  slotKeys: ArtifactSlotKey[]
+  mainStats: MainStatKey[]
+  substats: SubstatKey[]
+}
+
+type LevelUpInfo = {
+  artifactId: string
+  type: 'levelUp'
+}
+type ReshapeInfo = {
+  artifactId: string
+  type: 'reshape'
+  affixes: SubstatKey[]
+  mintotal: number
+}
+type DefineInfo = {
+  type: 'definition'
+  setKey: ArtifactSetKey
   slotKey: ArtifactSlotKey
-
-  result?: UpOptResult
+  mainStatKey: MainStatKey
+  affixes: SubstatKey[]
 }
-export type UpOptResult = {
-  p: number
-  upAvg: number
-  distr: GaussianMixture
-  evalMode: ResultType
-}
-type GaussianMixture = {
-  gmm: {
-    phi: number // Item weight; must sum to 1.
-    cp: number // Constraint probability
-    mu: number
-    sig2: number
-  }[]
+export type UpOptInfo = LevelUpInfo | ReshapeInfo | DefineInfo
 
-  // Store estimates of left and right bounds of distribution for visualization.
-  lower: number
-  upper: number
+function canLevelUp(art: ICachedArtifact) {
+  // Restricted to 5* artifacts for now.
+  return art.level < 20 && art.rarity === 5
 }
 
-// TODO: put this into a `constants` files somewhere.
-/* substat roll weights */
-const fWeight: Record<SubstatKey, number> = {
-  hp: 6,
-  atk: 6,
-  def: 6,
-  hp_: 4,
-  atk_: 4,
-  def_: 4,
-  eleMas: 4,
-  enerRech_: 4,
-  critRate_: 3,
-  critDMG_: 3,
+export function canReshape(art: ICachedArtifact) {
+  if (art.rarity !== 5 || art.level !== 20) return false
+  if (art.substats.some(({ initialValue }) => initialValue === undefined))
+    return false
+  return true
 }
 
-/* Gets "0.1x" 1 roll value for a stat w/ the given rarity. */
-function scale(key: SubstatKey, rarity: ArtifactRarity = 5) {
-  return toDecimal(key, getSubstatValue(key, rarity) / 10)
+/** Yield control back to the browser so it can paint between work chunks. */
+function yieldToUi() {
+  return new Promise<void>((resolve) => setTimeout(resolve, 0))
+}
+const uiYieldBudgetMs = 12
+function shouldYieldToUi(lastYield: number) {
+  return Date.now() - lastYield >= uiYieldBudgetMs
 }
 
-/* Fixes silliness with percents and being multiplied by 100. */
-function toDecimal(key: SubstatKey | MainStatKey | '', value: number) {
-  return key.endsWith('_') ? value / 100 : value
-}
-
-export class UpOptCalculator {
-  /**
-   * Calculator class to track artifacts and their evaluation status. Method overview:
-   *    constructor(OptNode[], number[], Build):  Upgrade problem setup
-   *    addArtifact(ICachedArtifact):             Add an artifact to be considered
-   *    evalFast/Slow/Exact(number, bool):        Evaluate an artifact with X method and keep track of results
-   */
-  baseBuild: UpOptBuild
-  nodes: OptNode[]
-  thresholds: number[]
-  calc4th: boolean
-
-  skippableDerivatives: boolean[]
-  eval: (
-    stats: DynStat,
-    slot: ArtifactSlotKey
-  ) => { v: number; grads: number[] }[]
-
-  artifacts: UpOptArtifact[] = []
+export class UpOptCalculatorV2 {
+  build: Build
+  obj: Objective
+  candidates: EvaluatedMarkovTree[] = []
   fixedIx = 0
 
-  /**
-   * Constructs UpOptCalculator.
-   * @param nodes Formulas to find upgrades for. nodes[0] is main objective, the rest are constraints.
-   * @param thresholds Constraint values. thresholds[0] will be auto-populated with current objective value.
-   * @param build Build to check 1-swaps against.
-   * @param artifacts List of artifacts to consider upgrading.
-   */
+  /** Serializes exact-calc work so candidates are refined one at a time. */
+  private exactQueue: Promise<unknown> = Promise.resolve()
+
   constructor(
     nodes: OptNode[],
     thresholds: number[],
-    equippedBuild: Record<ArtifactSlotKey, ICachedArtifact | undefined>,
+    build: Build,
     artifacts: ICachedArtifact[],
-    calc4th = true
+    reshapeConfig: ReshapeConfig,
+    defineConfig: DefineConfig
   ) {
-    this.baseBuild = objMap(equippedBuild, (art) =>
-      art ? this.toArtifact(art) : { id: '', values: {} }
-    )
-    this.nodes = nodes
-    this.thresholds = thresholds
-    this.calc4th = calc4th
+    this.build = build
+    // Remove setKey thresholds that are always active/inactive, then optimize the formula tree.
+    nodes = removeSetKeys(nodes, build)
+    nodes = optimize(nodes, {})
 
-    const toEval: OptNode[] = []
-    nodes.forEach((n) => {
-      toEval.push(
-        n,
-        ...allSubstatKeys.map((sub) => ddx(n, (fo) => fo.path[1], sub))
-      )
+    // Populate threshold[0] with current value. It's a bit convoluted :/
+    const buildAsList = Object.values(build).filter((v) => v !== undefined)
+    const artsBySlot = compactArtifacts(buildAsList, 0, false)
+    const evalFn = precompute(nodes, artsBySlot.base, (f) => f.path[1], 5)
+    const baseBuild = Object.values(artsBySlot.values).map((v) =>
+      v.length > 0 ? v[0] : { id: '', values: {} }
+    )
+    thresholds[0] = evalFn(baseBuild as ArtifactBuildData[] & { length: 5 })[0]
+
+    // Create objective function & set up candidates.
+    this.obj = makeObjective(nodes, thresholds)
+    artifacts.forEach((art) => {
+      this.tryLevelUp(art)
+      if (reshapeConfig.enabled) this.tryReshape(art, reshapeConfig.minTotal)
     })
-    const evalOpt = optimize(toEval, {}, ({ path: [p] }) => p !== 'dyn')
+    if (defineConfig.enabled) this.tryDefine(defineConfig)
 
-    const evalFn = precompute(evalOpt, {}, (f) => f.path[1], 5)
-    thresholds[0] = evalFn(
-      Object.values(this.baseBuild) as ArtifactBuildData[] & { length: 5 }
-    )[0] // dmg threshold is current objective value
-
-    this.skippableDerivatives = allSubstatKeys.map((sub) =>
-      nodes.every((n) => zero_deriv(n, (f) => f.path[1], sub))
-    )
-    this.eval = (stats: DynStat, slot: ArtifactSlotKey) => {
-      const b2 = { ...this.baseBuild, [slot]: { id: '', values: stats } }
-      const out = evalFn(
-        Object.values(b2) as ArtifactBuildData[] & { length: 5 }
-      )
-      return nodes.map((_, i) => {
-        const ix = i * (1 + allSubstatKeys.length)
-        return {
-          v: out[ix],
-          grads: allSubstatKeys.map((sub, si) => out[ix + 1 + si]),
-        }
-      })
-    }
-
-    artifacts.forEach((art) => this._addArtifact(art))
-
-    // Do all fast calc
-    this.initCalc()
-  }
-
-  /** Adds an artifact to be tracked by UpOptCalc. It is initially un-evaluated. */
-  _addArtifact(art: ICachedArtifact) {
-    this.artifacts.push(this.toUpOptArtifact(art))
-  }
-  toUpOptArtifact(art: ICachedArtifact): UpOptArtifact {
-    const maxLevel = artMaxLevel[art.rarity]
-    const mainStatVal = getMainStatValue(art.mainStatKey, art.rarity, maxLevel) // 5* only
-    const out: UpOptArtifact = {
-      id: art.id,
-      rollsLeft: getRollsRemaining(art.level, art.rarity),
-      slotKey: art.slotKey,
-      mainStat: art.mainStatKey,
-      subs: art.substats
-        .map(({ key }) => key)
-        .filter((v) => v !== '') as SubstatKey[],
-      values: {
-        [art.setKey]: 1,
-        [art.mainStatKey]: mainStatVal,
-        ...Object.fromEntries(
-          art.substats
-            .filter(({ key }) => key !== '')
-            .map((substat) => [
-              substat.key,
-              toDecimal(substat.key, substat.accurateValue),
-            ])
-        ), // Assumes substats cannot match main stat key
-      },
-    }
-    if (art.unactivatedSubstats) {
-      art.unactivatedSubstats.forEach(({ key, value }) => {
-        if (key === '') return
-        out.subs.push(key)
-        out.values[key] = toDecimal(key, value)
-        out.rollsLeft -= 1
-      })
-    }
-    return out
-  }
-  reCalc(ix: number, art: ICachedArtifact) {
-    this.artifacts[ix] = this.toUpOptArtifact(art)
-    this.calcFast(ix, this.calc4th)
-  }
-  /** Calcs all artifacts using Fast method */
-  initCalc() {
-    function score(a: UpOptArtifact) {
-      return a.result!.p * a.result!.upAvg
-    }
-    this.artifacts.forEach((_, i) => this.calcFast(i, this.calc4th))
-
-    // do slow calc for the first page
+    this.candidates = this.candidates.filter((c) => c.result.p > 1e-6)
+    this.candidates.sort(compare)
     this.calcSlowToIndex(5)
-    // only store artifacts with possibility to increase score
-    this.artifacts = this.artifacts.filter((a) => score(a) > 0)
-    this.artifacts.sort((a, b) => score(b) - score(a))
-    this.fixedIx = 0
+  }
+
+  tryLevelUp(art: ICachedArtifact) {
+    if (!canLevelUp(art)) return
+    const info: LevelUpInfo = { artifactId: art.id, type: 'levelUp' }
+    this.candidates.push(this.fromLevelUpInfo(info, art))
+  }
+
+  fromLevelUpInfo(info: LevelUpInfo, art: ICachedArtifact) {
+    return {
+      ...this.evaluateNodes(levelUpArtifact(art, this.build)),
+      info,
+      evalMode: 'substat' as const,
+      id: `${this.candidates.length}`,
+    }
+  }
+
+  tryReshape(art: ICachedArtifact, mintotal: number) {
+    if (!canReshape(art)) return
+    const substatKeys = art.substats
+      .map(({ key }) => key)
+      .filter((key) => key !== '')
+
+    const ixPairs = range(0, substatKeys.length - 1).flatMap((i) =>
+      range(i + 1, substatKeys.length - 1).map((j) => [i, j] as const)
+    )
+    ixPairs.forEach(([i, j]) => {
+      const affixes = [substatKeys[i], substatKeys[j]]
+      const info: ReshapeInfo = {
+        artifactId: art.id,
+        type: 'reshape',
+        affixes,
+        mintotal,
+      }
+      this.candidates.push(this.fromReshapeInfo(info, art))
+    })
+  }
+
+  fromReshapeInfo(info: ReshapeInfo, art: ICachedArtifact) {
+    return {
+      ...this.evaluateNodes(
+        dustReshape(art, this.build, info.affixes, info.mintotal)
+      ),
+      info,
+      evalMode: 'substat' as const,
+      id: `${this.candidates.length}`,
+    }
+  }
+
+  tryDefine({ setKeys, slotKeys, mainStats, substats }: DefineConfig) {
+    setKeys = setKeys.filter((setKey) => this.obj.allReadKeys.includes(setKey))
+    if (!setKeys.length) {
+      console.warn(
+        'No useful set keys available for definition; picking Glad as default'
+      )
+      setKeys = ['GladiatorsFinale'] // Default to something so user sees some results
+    }
+    setKeys.forEach((setKey) => {
+      slotKeys.forEach((slotKey) => {
+        artSlotMainKeys[slotKey]
+          .filter((mainStat) => mainStats.includes(mainStat))
+          .forEach((mainStatKey) => {
+            const subOptions = allSubstatKeys
+              .filter((substat) => substat !== mainStatKey)
+              .filter((substat) => substats.includes(substat))
+            for (let i = 0; i < subOptions.length; i++) {
+              for (let j = i + 1; j < subOptions.length; j++) {
+                const affixes = [subOptions[i], subOptions[j]]
+                const info: DefineInfo = {
+                  type: 'definition',
+                  setKey,
+                  slotKey,
+                  mainStatKey,
+                  affixes,
+                }
+                this.candidates.push(this.fromDefineInfo(info))
+              }
+            }
+          })
+      })
+    })
+  }
+
+  fromDefineInfo(info: DefineInfo) {
+    return {
+      ...this.evaluateNodes(
+        elixirDefinition({ ...info, prob_4line: 0.34 }, this.build)
+      ),
+      info,
+      evalMode: 'substat' as const,
+      id: `${this.candidates.length}`,
+    }
+  }
+
+  evaluateNodes(nodes: MarkovTree) {
+    nodes = deduplicate(this.obj, nodes)
+    const evaluated = nodes.map(({ p, n }) => ({
+      p,
+      n: evalMarkovNode(this.obj, n),
+    }))
+    return { tree: evaluated, result: accumulateEvaluations(evaluated) }
   }
 
   calcSlowToIndex(ix: number, lookahead = 5) {
-    const fixedList = this.artifacts.slice(0, this.fixedIx)
-    const arr = this.artifacts.slice(this.fixedIx)
+    const fixedList = this.candidates.slice(0, this.fixedIx)
 
-    function score(a: UpOptArtifact) {
-      return a.result!.p * a.result!.upAvg
-    }
-    function compare(a: UpOptArtifact, b: UpOptArtifact) {
-      if (score(a) > 1e-5 || score(b) > 1e-5) return score(b) - score(a)
-
-      const meanA = a.result!.distr.gmm.reduce(
-        (pv, { phi, mu }) => pv + phi * mu,
-        0
-      )
-      const meanB = b.result!.distr.gmm.reduce(
-        (pv, { phi, mu }) => pv + phi * mu,
-        0
-      )
-      return meanB - meanA
-    }
-
-    // Assume `fixedList` is all slowEval'd.
+    // Assume `fixedList` is all expanded.
     let i = 0
-    const end = Math.min(ix - this.fixedIx + lookahead, arr.length)
+    const end = Math.min(
+      ix - this.fixedIx + lookahead,
+      this.candidates.length - this.fixedIx
+    )
     do {
-      for (; i < end; i++) this.calcSlow(this.fixedIx + i, this.calc4th)
+      for (; i < end; i++) this.expandSubstatLevel(this.fixedIx + i)
 
+      const arr = this.candidates.slice(this.fixedIx)
       arr.sort(compare)
-      this.artifacts = [...fixedList, ...arr]
+      this.candidates = [...fixedList, ...arr]
       for (i = 0; i < end; i++) {
-        if (arr[i].result!.evalMode === ResultType.Fast) break
+        if (arr[i].evalMode === 'substat') break
       }
     } while (i < end)
+    this.fixedIx = ix
+  }
+
+  expandSubstatLevel(ix: number) {
+    if (this.candidates[ix].evalMode !== 'substat') return
+    const newTree = expandNodes(this.candidates[ix].tree)
+    const newEval = this.evaluateNodes(newTree)
+    this.candidates[ix] = {
+      ...this.candidates[ix],
+      ...newEval,
+      evalMode: 'rolls',
+    }
   }
 
   /**
-   * Convert Fast method numbers to Result type.
+   * Background (cooperative) version of the exact calc. Expands the candidate's
+   * tree down to value level and evaluates it, yielding to the UI periodically
+   * so the main thread stays responsive. `shouldCancel` lets the caller abort
+   * in-flight work (e.g. when paging away). Returns false if cancelled.
    *
-   * Each target/constraint is treated as an independent 1D Gaussian, but we try
-   *   to over-estimate the true constraint probability by using the min() probability
-   *   of each constraint (rather than their product). If multiple Gaussians are
-   *   present in `distr[]`, they are aggregated following standard mixture distribution methods.
+   * Calls are serialized through `exactQueue` so candidates are refined one at a
+   * time (sequentially) rather than all starting at once.
    */
-  _toResultFast(
-    distr: { prob: number; mu: number[]; cov: number[] }[]
-  ): UpOptResult {
-    let ptot = 0
-    let upAvgtot = 0
-    const gmm = distr.map(({ prob, mu, cov }) => {
-      const z = mu.map((mui, i) => {
-        return gaussianPE(mui, cov[i], this.thresholds[i])
+  calcExactAsync(
+    ix: number,
+    histInfo: { left: number; right: number; bins: number },
+    shouldCancel: () => boolean = () => false
+  ) {
+    const run = this.exactQueue.then(() => {
+      if (shouldCancel()) return false
+      if (ix >= this.fixedIx) this.calcSlowToIndex(ix + 1)
+      return this.expandRollsLevelAsync(ix, shouldCancel).then((success) => {
+        if (!success) return false
+        this.histogram(ix, histInfo)
+        return true
       })
-      const p = Math.min(...z.map(({ p }) => p))
-      const cp = Math.min(...z.slice(1).map(({ p }) => p))
-      ptot += p * prob
-      upAvgtot += p * prob * z[0].upAvg
-      return { phi: prob, cp, mu: mu[0], sig2: cov[0] }
     })
-    const lowers = gmm.map(({ mu, sig2 }) => mu - 4 * Math.sqrt(sig2))
-    const uppers = gmm.map(({ mu, sig2 }) => mu + 4 * Math.sqrt(sig2))
-    return {
-      p: ptot,
-      upAvg: ptot < 1e-6 ? 0 : upAvgtot / ptot,
-      distr: { gmm, lower: Math.min(...lowers), upper: Math.max(...uppers) },
-      evalMode: ResultType.Fast,
+    // Keep the chain alive even if a run rejects, so later calls still proceed.
+    this.exactQueue = run.catch(() => {})
+    return run
+  }
+
+  expandRollsLevel(ix: number) {
+    if (this.candidates[ix].evalMode !== 'rolls') return
+    const newTree = expandNodes(this.candidates[ix].tree)
+    const newEval = this.evaluateNodes(newTree)
+    this.candidates[ix] = {
+      ...this.candidates[ix],
+      ...newEval,
+      evalMode: 'values',
     }
   }
 
-  /**
-   * Evaluates artifact using Fast method.
-   * Selection details based on artifacts[ix]
-   */
-  calcFast(ix: number, calc4th = true) {
-    if (this.artifacts[ix].subs.length === 4) calc4th = false
-    if (calc4th) this._calcFast4th(ix)
-    else this._calcFast(ix)
-  }
+  async expandRollsLevelAsync(ix: number, shouldCancel: () => boolean) {
+    if (this.candidates[ix].evalMode !== 'rolls') return true
+    let lastYield = Date.now()
 
-  /**
-   * Fast evaluation of 4-line artifact.
-   * If a 3-line artifact is passed, the 4th substat possibilities are ignored.
-   */
-  _calcFast(ix: number) {
-    const { subs, slotKey, rollsLeft } = this.artifacts[ix]
-    const N = rollsLeft - (subs.length < 4 ? 1 : 0) // only for 5*
-
-    const stats = { ...this.artifacts[ix].values }
-    subs.forEach((subKey) => {
-      stats[subKey] += up_rv_mean * (N / 4) * scale(subKey)
-    })
-    const objective = this.eval(stats, slotKey)
-    const gaussians = objective.map(({ v: mu, grads }) => {
-      const ks = subs.map(
-        (sub) => grads[allSubstatKeys.indexOf(sub)] * scale(sub)
-      )
-      const ksum = ks.reduce((a, b) => a + b, 0)
-      const ksum2 = ks.reduce((a, b) => a + b * b, 0)
-      const sig2 = (Q * ksum2 - W * ksum ** 2) * N
-
-      return { mu, sig2 }
-    })
-
-    this.artifacts[ix].result = this._toResultFast([
-      {
-        prob: 1,
-        mu: gaussians.map(({ mu }) => mu),
-        cov: gaussians.map(({ sig2 }) => sig2),
-      },
-    ])
-  }
-
-  /**
-   * Fast evaluation of a 3-line artifact, considering all possiblilties for its 4th stats.
-   * Passing a 4-line artifact will result in inaccurate results.
-   */
-  _calcFast4th(ix: number) {
-    const { mainStat, subs, slotKey, rollsLeft } = this.artifacts[ix]
-    const N = rollsLeft - 1 // Minus 1 because 4th slot takes 1.
-
-    const subsToConsider = allSubstatKeys.filter(
-      (s) => !subs.includes(s) && s !== mainStat
-    )
-
-    const Z = subsToConsider.reduce((tot, sub) => tot + fWeight[sub], 0)
-    const distr = subsToConsider.map((subKey4) => {
-      const prob = fWeight[subKey4] / Z
-      const stats = { ...this.artifacts[ix].values }
-      subs.forEach((subKey) => {
-        stats[subKey] += up_rv_mean * (N / 4) * scale(subKey)
-      })
-      stats[subKey4] =
-        (stats[subKey4] ?? 0) + up_rv_mean * (N / 4 + 1) * scale(subKey4)
-
-      const objective = this.eval(stats, slotKey)
-      const gaussians = objective.map(({ v: mu, grads }) => {
-        const ks = subs.map(
-          (sub) => grads[allSubstatKeys.indexOf(sub)] * scale(sub)
-        )
-        const k4 = grads[allSubstatKeys.indexOf(subKey4)] * scale(subKey4)
-        const ksum = ks.reduce((a, b) => a + b, k4)
-        const ksum2 = ks.reduce((a, b) => a + b * b, k4 * k4)
-        const sig2 = (Q * ksum2 - W * ksum ** 2) * N + up_rv_stdev * k4 * k4
-
-        return { mu, sig2 }
-      })
-
-      return {
-        prob,
-        mu: gaussians.map(({ mu }) => mu),
-        cov: gaussians.map(({ sig2 }) => sig2),
+    // Chunked expansion: rolls-level tree -> value-level tree.
+    const expanded: MarkovTree = []
+    const tree = this.candidates[ix].tree
+    for (let i = 0; i < tree.length; i++) {
+      const { p, n } = tree[i]
+      for (const { p: p2, n: n2 } of expandNode(n))
+        expanded.push({ p: p * p2, n: n2 })
+      if (shouldYieldToUi(lastYield)) {
+        if (shouldCancel()) return false
+        await yieldToUi()
+        lastYield = Date.now()
       }
-    })
-
-    this.artifacts[ix].result = this._toResultFast(distr)
-  }
-
-  /**
-   * Convert Slow method numbers to Result type.
-   * Here, targets and constraints are treated as multi-dimensional Gaussians with
-   *   non-zero covariances. The probabilities are evaluated using `mvncdf` and aggregated
-   *   following standard mixture distribution methods.
-   */
-  _toResultSlow(
-    distr: { prob: number; mu: number[]; cov: number[][] }[]
-  ): UpOptResult {
-    let ptot = 0
-    let upAvgtot = 0
-    const gmm = distr.map(({ prob, mu, cov }) => {
-      const { p, upAvg, cp } = mvnPE_bad(mu, cov, this.thresholds)
-      ptot += prob * p
-      upAvgtot += prob * p * upAvg
-      return { phi: prob, cp, mu: mu[0], sig2: cov[0][0] }
-    })
-    const lowers = gmm.map(({ mu, sig2 }) => mu - 4 * Math.sqrt(sig2))
-    const uppers = gmm.map(({ mu, sig2 }) => mu + 4 * Math.sqrt(sig2))
-    return {
-      p: ptot,
-      upAvg: ptot < 1e-6 ? 0 : upAvgtot / ptot,
-      distr: {
-        gmm,
-        lower: Math.min(...lowers, this.thresholds[0]),
-        upper: Math.max(...uppers, this.thresholds[0]),
-      },
-      evalMode: ResultType.Slow,
     }
+    if (shouldCancel()) return false
+
+    // Chunked evaluation (mirrors evaluateNodes, but yielding).
+    // const deduped = deduplicate(this.obj, expanded)
+    const deduped = expanded // TODO: make dedup work w/ async yield so it doesn't hang UI
+    const evaluated: { p: number; n: EvaluatedMarkovNode }[] = []
+    for (let i = 0; i < deduped.length; i++) {
+      const { p, n } = deduped[i]
+      evaluated.push({ p, n: evalMarkovNode(this.obj, n) })
+      if (shouldYieldToUi(lastYield)) {
+        if (shouldCancel()) return false
+        await yieldToUi()
+        lastYield = Date.now()
+      }
+    }
+    if (shouldCancel()) return false
+
+    this.candidates[ix] = {
+      id: this.candidates[ix].id,
+      tree: evaluated,
+      result: accumulateEvaluations(evaluated),
+      evalMode: 'values',
+      info: this.candidates[ix].info,
+    }
+    return true
   }
 
-  /** Selects evaluation method based on details of artifacts[ix] */
-  calcSlow(ix: number, calc4th = true) {
+  reCalc(ix: number, art: ICachedArtifact) {
+    const prevId = this.candidates[ix].id
+    if (this.candidates[ix].info.type === 'levelUp')
+      this.candidates[ix] = this.fromLevelUpInfo(this.candidates[ix].info, art)
+    else if (this.candidates[ix].info.type === 'reshape')
+      this.candidates[ix] = this.fromReshapeInfo(this.candidates[ix].info, art)
+    else
+      console.warn('Unexpected candidate info type; skipping recalc', {
+        info: this.candidates[ix].info,
+      })
+
+    this.candidates[ix].id = prevId
+    this.expandSubstatLevel(ix)
+  }
+
+  histogram(
+    ix: number,
+    { left, right, bins }: { left: number; right: number; bins: number }
+  ) {
+    const art = this.candidates[ix]
     if (
-      this.artifacts[ix].result?.evalMode === ResultType.Slow ||
-      this.artifacts[ix].result?.evalMode === ResultType.Exact
-    )
-      return
-    if (this.artifacts[ix].subs.length === 4) calc4th = false
-    if (calc4th) this._calcSlow4th(ix)
-    else this._calcSlow(ix)
-  }
-
-  /**
-   * Slow evaluation of 4-line artifact.
-   * If a 3-line artifact is passed, the 4th substat possibilities are ignored.
-   */
-  _calcSlow(ix: number) {
-    const { subs, slotKey, rollsLeft } = this.artifacts[ix]
-    const N = rollsLeft - (subs.length < 4 ? 1 : 0) // only for 5*
-
-    const distrs: { prob: number; mu: number[]; cov: number[][] }[] = []
-    crawlUpgrades(N, (ns, prob) => {
-      const stats = { ...this.artifacts[ix].values }
-      subs.forEach((subKey, i) => {
-        stats[subKey] += up_rv_mean * ns[i] * scale(subKey)
-      })
-
-      const objective = this.eval(stats, slotKey)
-      const obj_ks = objective.map(({ grads }) =>
-        subs.map((sub) => grads[allSubstatKeys.indexOf(sub)] * scale(sub))
-      )
-      const mu = objective.map((o) => o.v)
-      const cov = obj_ks.map((k1) =>
-        obj_ks.map((k2) =>
-          k1.reduce((pv, cv, j) => pv + k1[j] * k2[j] * ns[j], 0)
-        )
-      )
-      distrs.push({ prob, mu, cov })
-    })
-
-    this.artifacts[ix].result = this._toResultSlow(distrs)
-  }
-
-  /**
-   * Slow evaluation of a 3-line artifact, considering all possiblilties for its 4th stats.
-   * Passing a 4-line artifact will result in inaccurate results.
-   */
-  _calcSlow4th(ix: number) {
-    const { mainStat, subs, slotKey, rollsLeft } = this.artifacts[ix]
-    const N = rollsLeft - 1 // only for 5*
-
-    const subsToConsider = allSubstatKeys.filter(
-      (s) => !subs.includes(s) && s !== mainStat
-    )
-
-    const Z = subsToConsider.reduce((tot, sub) => tot + fWeight[sub], 0)
-    const distrs: { prob: number; mu: number[]; cov: number[][] }[] = []
-    subsToConsider.forEach((subKey4) => {
-      crawlUpgrades(N, (ns, prob) => {
-        prob = prob * (fWeight[subKey4] / Z)
-        const stats = { ...this.artifacts[ix].values }
-        ns[3] += 1 // last substat has initial roll
-        subs.forEach((subKey, i) => {
-          stats[subKey] += up_rv_mean * ns[i] * scale(subKey)
-        })
-        stats[subKey4] =
-          (stats[subKey4] ?? 0) + up_rv_mean * ns[3] * scale(subKey4)
-
-        const objective = this.eval(stats, slotKey)
-        const obj_ks = objective.map(({ grads }) => {
-          const ks = subs.map(
-            (sub) => grads[allSubstatKeys.indexOf(sub)] * scale(sub)
-          )
-          ks.push(grads[allSubstatKeys.indexOf(subKey4)] * scale(subKey4))
-          return ks
-        })
-        const mu = objective.map((o) => o.v)
-        const cov = obj_ks.map((k1) =>
-          obj_ks.map((k2) =>
-            k1.reduce((pv, cv, j) => pv + k1[j] * k2[j] * ns[j], 0)
-          )
-        )
-        distrs.push({ prob, mu, cov })
-      })
-    })
-
-    this.artifacts[ix].result = this._toResultSlow(distrs)
-  }
-
-  /**
-   * Convert Exact method numbers to Result type.
-   *
-   * Exact results have no variance, so we can directly check each upgrade branch
-   *   to compute the exact probability and upgrade value.
-   */
-  _toResultExact(distr: { prob: number; val: number[] }[]): UpOptResult {
-    let ptot = 0
-    let upAvgtot = 0
-    const gmm = distr.map(({ prob, val }) => {
-      if (val.every((vi, i) => vi >= this.thresholds[i])) {
-        ptot += prob
-        upAvgtot += prob * (val[0] - this.thresholds[0])
-        return { phi: prob, cp: 1, mu: val[0], sig2: 0 }
-      }
-      const consOK = val.slice(1).every((vi, i) => vi >= this.thresholds[i])
-      return { phi: prob, cp: consOK ? 1 : 0, mu: val[0], sig2: 0 }
-    })
-
-    const vals = gmm.map(({ mu }) => mu)
-    return {
-      p: ptot,
-      upAvg: ptot < 1e-6 ? 0 : upAvgtot / ptot,
-      distr: { gmm, lower: Math.min(...vals), upper: Math.max(...vals) },
-      evalMode: ResultType.Exact,
+      art.chartData &&
+      art.chartData.left === left &&
+      art.chartData.right === right &&
+      art.chartData.bins === bins
+    ) {
+      return art.chartData.data
     }
-  }
+    const artGMM = art.tree.map(({ p, n }) => ({
+      p,
+      cp: n.evaluation.constr_prob,
+      mu: n.evaluation.f_mu[0],
+      sig: Math.sqrt(n.evaluation.f_cov[0][0]),
+    }))
 
-  /**
-   * Evaluates artifact using Exact method.
-   * Selection details based on artifacts[ix]
-   */
-  calcExact(ix: number, calc4th = true) {
-    if (this.artifacts[ix].result?.evalMode === ResultType.Exact) return
-    if (this.artifacts[ix].subs.length === 4) calc4th = false
-    if (calc4th) this._calcExact4th(ix)
-    else this._calcExact(ix)
-  }
-
-  /**
-   * Exact evaluation of 4-line artifact.
-   * If a 3-line artifact is passed, the 4th substat possibilities are ignored.
-   */
-  _calcExact(ix: number) {
-    const { subs, slotKey, rollsLeft } = this.artifacts[ix]
-    const N = rollsLeft - (subs.length < 4 ? 1 : 0) // only for 5*
-
-    const distrs: { prob: number; val: number[] }[] = []
-    crawlUpgrades(N, (ns, prob) => {
-      const base = { ...this.artifacts[ix].values }
-      const vals = ns.map((ni, i) =>
-        subs[i] && !this.skippableDerivatives[allSubstatKeys.indexOf(subs[i])]
-          ? range(7 * ni, 10 * ni)
-          : [NaN]
-      )
-
-      cartesian(...vals).forEach((upVals) => {
-        const stats = { ...base }
-        let p_upVals = 1
-        for (let i = 0; i < 4; i++) {
-          if (isNaN(upVals[i])) continue
-
-          const key = subs[i]
-          const val = upVals[i]
-          const ni = ns[i]
-          stats[key] = (stats[key] ?? 0) + val * scale(key)
-          const p_val = 4 ** -ni * quadrinomial(ni, val - 7 * ni)
-          p_upVals *= p_val
+    const thr0 = this.obj.threshold[0]
+    function perc(x: number) {
+      return (100 * (x - thr0)) / thr0
+    }
+    function integrals(a: number, b: number) {
+      let est = 0,
+        estCons = 0
+      artGMM.forEach(({ p, cp, mu, sig }) => {
+        if (sig < 1e-3) {
+          if (mu >= a && mu <= b) {
+            est += p
+            estCons += cp * p
+          }
+          return
         }
-
-        distrs.push({
-          prob: prob * p_upVals,
-          val: this.eval(stats, slotKey).map((n) => n.v),
-        })
-      })
-    })
-
-    this.artifacts[ix].result = this._toResultExact(distrs)
-  }
-
-  /**
-   * Exact evaluation of a 3-line artifact, considering all possiblilties for its 4th stats.
-   * Passing a 4-line artifact will result in inaccurate results.
-   */
-  _calcExact4th(ix: number) {
-    const { mainStat, subs, slotKey, rollsLeft } = this.artifacts[ix]
-    const N = rollsLeft - 1 // only for 5*
-
-    const subsToConsider = allSubstatKeys.filter(
-      (s) => !subs.includes(s) && s !== mainStat
-    )
-    const Z = subsToConsider.reduce((tot, sub) => tot + fWeight[sub], 0)
-    const distrs: { prob: number; val: number[] }[] = []
-    subsToConsider.forEach((subKey4) => {
-      const prob_sub = fWeight[subKey4] / Z
-      crawlUpgrades(N, (ns, prob) => {
-        const vals = ns.map((ni, i) => {
-          if (i === 3) {
-            // 4th sub gets 1 initial roll.
-            ni += 1
-            return !this.skippableDerivatives[allSubstatKeys.indexOf(subKey4)]
-              ? range(7 * ni, 10 * ni)
-              : [NaN]
-          }
-          return subs[i] &&
-            !this.skippableDerivatives[allSubstatKeys.indexOf(subs[i])]
-            ? range(7 * ni, 10 * ni)
-            : [NaN]
-        })
-
-        cartesian(...vals).forEach((upVals) => {
-          const stats = { ...this.artifacts[ix].values }
-          let p_upVals = 1
-          for (let i = 0; i < 3; i++) {
-            if (isNaN(upVals[i])) continue
-
-            const key = subs[i]
-            const val = upVals[i]
-            const ni = ns[i]
-            stats[key] = (stats[key] ?? 0) + val * scale(key)
-            const p_val = 4 ** -ni * quadrinomial(ni, val - 7 * ni)
-            p_upVals *= p_val
-          }
-          if (!isNaN(upVals[3])) {
-            // i = 3 case
-            const key = subKey4
-            const val = upVals[3]
-            const ni = ns[3] + 1
-            stats[key] = (stats[key] ?? 0) + val * scale(key)
-            const p_val = 4 ** -ni * quadrinomial(ni, val - 7 * ni)
-            p_upVals *= p_val
-          }
-
-          distrs.push({
-            prob: prob_sub * prob * p_upVals,
-            val: this.eval(stats, slotKey).map((n) => n.v),
-          })
-        })
-      })
-    })
-
-    this.artifacts[ix].result = this._toResultExact(distrs)
-  }
-
-  /* ICachedArtifact to ArtifactBuildData. */
-  toArtifact(art: ICachedArtifact): ArtifactBuildData {
-    const mainStatVal = getMainStatValue(art.mainStatKey, art.rarity, art.level) // 5* only
-    const buildData = {
-      id: art.id,
-      slot: art.slotKey,
-      level: art.level,
-      rarity: art.rarity,
-      values: {
-        [art.setKey]: 1,
-        [art.mainStatKey]: mainStatVal,
-        ...Object.fromEntries(
-          art.substats
-            .map((substat) => [
-              substat.key,
-              toDecimal(substat.key, substat.accurateValue),
-            ])
-            .filter(([, value]) => value !== 0)
-        ),
-      },
-      subs: art.substats.reduce((sub: SubstatKey[], x) => {
-        if (x.key !== '') sub.push(x.key)
-        return sub
-      }, []),
+        const P = erf((mu - a) / sig) - erf((mu - b) / sig)
+        est += (p * P) / 2
+        estCons += (cp * p * P) / 2
+      }, 0)
+      return { est, estCons }
     }
-    delete buildData.values['']
-    return buildData
+    const step = (right - left) / bins
+    const hist = linspace(left, right, bins, false).flatMap((v) => {
+      const { est, estCons } = integrals(v, v + step)
+      return [
+        { x: perc(v), est, estCons },
+        { x: perc(v + step), est, estCons },
+      ]
+    })
+    hist.unshift({ x: perc(left), est: 0, estCons: 0 })
+    hist.push({ x: perc(right), est: 0, estCons: 0 })
+    this.candidates[ix].chartData = { left, right, bins, data: hist }
+    return hist
   }
+}
+
+function compare(a: EvaluatedMarkovTree, b: EvaluatedMarkovTree) {
+  const scoreA = a.result.p * a.result.upAvg
+  const scoreB = b.result.p * b.result.upAvg
+  if (scoreA > 1e-5 || scoreB > 1e-5) return scoreB - scoreA
+
+  const meanA = a.tree.reduce(
+    (acc, { p, n }) => acc + p * n.evaluation.f_mu[0],
+    0
+  )
+  const meanB = b.tree.reduce(
+    (acc, { p, n }) => acc + p * n.evaluation.f_mu[0],
+    0
+  )
+  return meanB - meanA
+}
+
+function accumulateEvaluations(
+  evaluated: { p: number; n: EvaluatedMarkovNode }[]
+) {
+  const { p, upAvgAcc, lower, upper } = evaluated.reduce(
+    (acc, { p, n: { evaluation } }) => ({
+      p: acc.p + p * evaluation.prob,
+      upAvgAcc: acc.upAvgAcc + p * evaluation.prob * evaluation.upAvg,
+      lower: Math.min(acc.lower, evaluation.lower),
+      upper: Math.max(acc.upper, evaluation.upper),
+    }),
+    { p: 0, upAvgAcc: 0, lower: Infinity, upper: -Infinity }
+  )
+  return { p, upAvg: p < 1e-6 ? 0 : upAvgAcc / p, lower, upper }
 }

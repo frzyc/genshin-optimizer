@@ -48,7 +48,7 @@ function getUniformSubstatValues(key: SubstatKey, rarity: ArtifactRarity) {
 // Memoized substat value variance lookup
 const substatMuVarCache: Record<string, { mu: number; sig2: number }> = {}
 function subMuVar(key: SubstatKey, rarity: ArtifactRarity) {
-  const cacheKey = JSON.stringify({ key, rarity })
+  const cacheKey = `${key}_${rarity}`
   if (substatMuVarCache[cacheKey]) return substatMuVarCache[cacheKey]
 
   const values = getUniformSubstatValues(key, rarity)

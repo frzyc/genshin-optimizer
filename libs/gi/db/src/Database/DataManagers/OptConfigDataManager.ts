@@ -9,6 +9,7 @@ import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSetKeys,
   allLocationCharacterKeys,
+  allSubstatKeys,
   artSlotMainKeys,
   defaultOptArtifactLevel,
 } from '@genshin-optimizer/gi/consts'
@@ -115,6 +116,10 @@ const optConfigSchema = z.object({
   generatedBuildListId: z.string().optional().catch(undefined),
   upOptLevelLow: zodClampedNumber(0, 20, 0),
   upOptLevelHigh: zodClampedNumber(0, 20, 19),
+  upOptReshape: zodBoolean(),
+  upOptReshapeRolls: zodClampedNumber(2, 4, 2),
+  upOptDefine: zodBoolean(),
+  upOptDefineSubstats: zodFilteredArray(allSubstatKeys, []),
 })
 export type OptConfig = z.infer<typeof optConfigSchema>
 
@@ -136,6 +141,7 @@ export class OptConfigDataManager extends DataManager<
     if (!result.success) return undefined
 
     const { ...data } = result.data
+    const { upOptReshapeRolls } = data
     let {
       artExclusion,
       excludedLocations,
@@ -196,6 +202,7 @@ export class OptConfigDataManager extends DataManager<
       levelHigh,
       upOptLevelLow,
       upOptLevelHigh,
+      upOptReshapeRolls,
     }
   }
   new(data: Partial<OptConfig> = {}) {

@@ -24,4 +24,5 @@ export type Objective = {
   computeWithDerivs: (x: DynStat) => [number[], DynStat[]]
   threshold: number[]
   zeroDeriv: SubstatKey[] // Substats that have zero derivative for all objective functions.
+  allReadKeys: string[]
 }
