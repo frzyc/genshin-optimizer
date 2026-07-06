@@ -51,7 +51,7 @@ const [offFieldHex_dmg_disp, offFieldHex_dmg_inactive] = nonStackBuff(
   prod(percent(0.5), dmg_node)
 )
 const offFieldHex_dmg_ = equal(
-  target.flags.hexerei,
+  target.flags.isHexerei,
   1,
   unequal(active.charKey, target.charKey, offFieldHex_dmg_disp)
 )

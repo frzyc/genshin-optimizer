@@ -136,9 +136,9 @@ const inputBase = {
   asc: read(undefined, { ...info('ascension'), prefix: 'char' }),
   special: read(),
   flags: {
-    hexerei: read(),
-    moonsign: read(),
-    radiance: read(),
+    isHexerei: read(),
+    isMoonsign: read(),
+    canRadianceStellarconduct: read(),
   },
 
   infusion: {

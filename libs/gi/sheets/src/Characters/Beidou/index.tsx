@@ -238,7 +238,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       eleMas: nodeBurstEleMas,
     },
   },
-  flags: { radiance: lockRevelation },
+  flags: { canRadianceStellarconduct: lockRevelation },
 })
 
 const sheet: TalentSheet = {

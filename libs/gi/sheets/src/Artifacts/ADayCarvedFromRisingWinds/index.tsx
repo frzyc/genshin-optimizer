@@ -22,7 +22,7 @@ const set4Cond = greaterEq(
 const set4Hex = greaterEq(
   input.artSet[key],
   4,
-  equal(condSet4, 'on', equal(input.flags.hexerei, 1, 0.2))
+  equal(condSet4, 'on', equal(input.flags.isHexerei, 1, 0.2))
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {

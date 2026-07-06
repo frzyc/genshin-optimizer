@@ -144,7 +144,7 @@ const a4_eleMas = greaterEq(
   4,
   prod(percent(dm.passive2.eleMas), input.premod.def)
 )
-const a4Active_teammate_eleMasDisp = equal(active.flags.moonsign, 1, {
+const a4Active_teammate_eleMasDisp = equal(active.flags.isMoonsign, 1, {
   ...a4_eleMas,
 })
 const a4Active_teammate_eleMas = equal(
@@ -152,7 +152,7 @@ const a4Active_teammate_eleMas = equal(
   target.charKey,
   a4Active_teammate_eleMasDisp
 )
-const a4Active_self_eleMas = unequal(active.flags.moonsign, 1, {
+const a4Active_self_eleMas = unequal(active.flags.isMoonsign, 1, {
   ...a4_eleMas,
 })
 
@@ -295,10 +295,10 @@ const dmgFormulas = {
   },
   passive2: {
     a4_eleMas: compareEq(
-      active.flags.moonsign,
+      active.flags.isMoonsign,
       1,
       a4Active_teammate_eleMasDisp,
-      unequal(active.flags.moonsign, 1, a4Active_self_eleMas)
+      unequal(active.flags.isMoonsign, 1, a4Active_self_eleMas)
     ),
   },
   passive3: {
@@ -338,7 +338,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       lunarcrystallize_specialDmg_: c6Gleam_lunarcrystallize_specialDmg_,
     },
   },
-  flags: { moonsign: constant(1) },
+  flags: { isMoonsign: constant(1) },
 })
 
 const sheet: TalentSheet = {

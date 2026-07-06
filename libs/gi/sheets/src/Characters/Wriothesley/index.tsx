@@ -555,7 +555,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
     burst_dmg_: c2EdictStacks_burst_dmg_,
     stellarconduct_dmg_: a1Stellarconduct_dmg_,
   },
-  flags: { radiance: lockRevelation },
+  flags: { canRadianceStellarconduct: lockRevelation },
 })
 
 const sheet: TalentSheet = {

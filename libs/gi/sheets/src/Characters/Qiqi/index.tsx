@@ -253,7 +253,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       stellarconduct_dmgInc: nodeC6Stellarconduct_dmgInc,
     },
   },
-  flags: { radiance: lockRevelation },
+  flags: { canRadianceStellarconduct: lockRevelation },
 })
 
 const sheet: TalentSheet = {

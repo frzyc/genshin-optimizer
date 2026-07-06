@@ -315,7 +315,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       stellarconduct_dmg_: c1Decoding_stellarconduct_dmg_,
     },
   },
-  flags: { radiance: constant(1) },
+  flags: { canRadianceStellarconduct: constant(1) },
 })
 
 const sheet: TalentSheet = {

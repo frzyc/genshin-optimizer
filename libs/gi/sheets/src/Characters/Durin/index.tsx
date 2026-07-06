@@ -533,7 +533,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       geo_dmg_: c2AfterBurst_geo_dmg_,
     },
   },
-  flags: { hexerei: lockHomework_hexerei },
+  flags: { isHexerei: lockHomework_hexerei },
 })
 
 const sheet: TalentSheet = {

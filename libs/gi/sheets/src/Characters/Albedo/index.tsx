@@ -216,7 +216,7 @@ const lockCreateSilver_normal_dmg_ = greaterEq(
       'on',
       // Hexerei check works even for display since Albedo must also be Hexerei
       equal(
-        target.flags.hexerei,
+        target.flags.isHexerei,
         1,
         min(
           prod(percent(dm.lockedPassive.hexDmg_), input.total.def, 1 / 1000),
@@ -389,7 +389,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
     burst_dmgInc: c2_burst_dmgInc,
     def_: c1LockAfterSkill_def_,
   },
-  flags: { hexerei: lockHomework_hexerei },
+  flags: { isHexerei: lockHomework_hexerei },
 })
 
 const sheet: TalentSheet = {

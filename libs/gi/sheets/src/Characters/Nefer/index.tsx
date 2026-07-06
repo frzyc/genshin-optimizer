@@ -331,7 +331,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       dendro_enemyRes_: c4ShadowDance_dendro_enemyRes_,
     },
   },
-  flags: { moonsign: constant(1) },
+  flags: { isMoonsign: constant(1) },
 })
 
 const sheet: TalentSheet = {

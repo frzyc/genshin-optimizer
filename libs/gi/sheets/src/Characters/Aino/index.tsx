@@ -244,7 +244,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       lunarcrystallize_dmg_: c6AfterBurst_total_lunarcrystallize_dmg_,
     },
   },
-  flags: { moonsign: constant(1) },
+  flags: { isMoonsign: constant(1) },
 })
 
 const sheet: TalentSheet = {

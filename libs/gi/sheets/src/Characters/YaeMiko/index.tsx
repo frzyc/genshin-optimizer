@@ -332,7 +332,7 @@ const data = dataObjForCharacterSheet(
         eleMas: nodeC2_eleMas,
       },
     },
-    flags: { radiance: lockRevelation },
+    flags: { canRadianceStellarconduct: lockRevelation },
   },
   {
     teamBuff: {

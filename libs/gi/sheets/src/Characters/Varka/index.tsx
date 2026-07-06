@@ -495,7 +495,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       ...c4Swirls_ele_dmg_,
     },
   },
-  flags: { hexerei: lockHomework_hexerei },
+  flags: { isHexerei: lockHomework_hexerei },
 })
 
 const sheet: TalentSheet = {

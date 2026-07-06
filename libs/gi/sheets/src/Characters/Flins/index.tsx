@@ -299,7 +299,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       lunarcharged_specialDmg_: c6_team_lunarcharged_specialDmg_,
     },
   },
-  flags: { moonsign: constant(1) },
+  flags: { isMoonsign: constant(1) },
 })
 
 const sheet: TalentSheet = {

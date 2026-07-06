@@ -294,7 +294,7 @@ export const data = dataObjForCharacterSheet(
         eleMas: c2Blade_eleMas,
       },
     },
-    flags: { hexerei: lockHomework_hexerei },
+    flags: { isHexerei: lockHomework_hexerei },
   },
   {
     premod: {

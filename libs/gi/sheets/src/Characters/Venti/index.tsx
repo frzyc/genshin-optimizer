@@ -391,7 +391,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       anemo_dmg_: lockC4SkillBurst_anemo_dmg_active,
     },
   },
-  flags: { hexerei: lockHomework_hexerei },
+  flags: { isHexerei: lockHomework_hexerei },
 })
 
 const sheet: TalentSheet = {

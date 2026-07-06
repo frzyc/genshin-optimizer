@@ -2,7 +2,6 @@ import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import { Translate } from '@genshin-optimizer/gi/i18n'
 import {
-  equal,
   inferInfoMut,
   input,
   lookup,
@@ -44,13 +43,6 @@ const polestarStacks_cryo_dmg_ = lookup(
 )
 const polestarStacks_electro_dmg_ = { ...polestarStacks_cryo_dmg_ }
 
-// Technically other elements can be inside the field and receive the buff, but it wouldn't be meaningful and clutters the UI like crazy
-const isCryoElectroAnemo = lookup(
-  input.charEle,
-  { anemo: one, electro: one, cryo: one },
-  naught
-)
-
 export const reactionConditionals: DocumentConditional[] = [
   {
     header: {
@@ -68,13 +60,12 @@ export const reactionConditionals: DocumentConditional[] = [
     path: condStellarRadiancePath,
     value: condStellarRadiance,
     name: st('elementalReaction.polestar'),
-    canShow: isCryoElectroAnemo,
+    canShow: input.flags.canRadianceStellarconduct,
     teamBuff: true,
     states: {
       on: {
         fields: [
           {
-            canShow: (data) => data.get(input.flags.radiance).value === 1,
             text: trm('gainRadiance'),
           },
         ],
@@ -98,7 +89,12 @@ export const reactionConditionals: DocumentConditional[] = [
     path: condPolestarStacksPath,
     value: condPolestarStacks,
     name: trm('polestarCond'),
-    canShow: equal(isCryoElectroAnemo, 1, equal(condStellarRadiance, 'on', 1)),
+    // Technically other elements can be inside the field and receive the buff, but it wouldn't be meaningful and clutters the UI like crazy
+    canShow: lookup(
+      input.charEle,
+      { anemo: one, electro: one, cryo: one },
+      naught
+    ),
     states: objKeyMap(polestarStacksArr, (stack) => ({
       name: st('stack', { count: stack }),
       fields: [
