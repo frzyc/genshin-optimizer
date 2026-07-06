@@ -38,6 +38,33 @@ export const formulas = {
       name: 'disorderDmgInst_electric',
     },
   },
+  vortexDmgInst_electric: {
+    sheet: 'Rina',
+    name: 'vortexDmgInst_electric',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'Rina',
+      attribute: 'electric',
+      damageType1: 'vortex',
+      name: 'vortexDmgInst_electric',
+    },
+  },
+  abloomDmgInst: {
+    sheet: 'Rina',
+    name: 'abloomDmgInst',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'Rina',
+      attribute: 'electric',
+      damageType1: 'anomaly',
+      damageType2: 'abloom',
+      name: 'abloomDmgInst',
+    },
+  },
   anomalyBuildupInst: {
     sheet: 'Rina',
     name: 'anomalyBuildupInst',
@@ -62,9 +89,9 @@ export const formulas = {
       name: 'dazeInst',
     },
   },
-  BasicAttackWhackTheDimwit_0_dmg: {
+  'BasicAttackWhackTheDimwit_0:standardDmg': {
     sheet: 'Rina',
-    name: 'BasicAttackWhackTheDimwit_0_dmg',
+    name: 'BasicAttackWhackTheDimwit_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -72,12 +99,13 @@ export const formulas = {
       sheet: 'Rina',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackWhackTheDimwit_0_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackWhackTheDimwit_0',
     },
   },
-  BasicAttackWhackTheDimwit_0_daze: {
+  'BasicAttackWhackTheDimwit_0:dazeBuildup': {
     sheet: 'Rina',
-    name: 'BasicAttackWhackTheDimwit_0_daze',
+    name: 'BasicAttackWhackTheDimwit_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -85,12 +113,13 @@ export const formulas = {
       sheet: 'Rina',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackWhackTheDimwit_0_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackWhackTheDimwit_0',
     },
   },
-  BasicAttackWhackTheDimwit_0_anomBuildup: {
+  'BasicAttackWhackTheDimwit_0:anomBuildup': {
     sheet: 'Rina',
-    name: 'BasicAttackWhackTheDimwit_0_anomBuildup',
+    name: 'BasicAttackWhackTheDimwit_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -98,12 +127,13 @@ export const formulas = {
       sheet: 'Rina',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackWhackTheDimwit_0_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackWhackTheDimwit_0',
     },
   },
-  BasicAttackWhackTheDimwit_1_dmg: {
+  'BasicAttackWhackTheDimwit_1:standardDmg': {
     sheet: 'Rina',
-    name: 'BasicAttackWhackTheDimwit_1_dmg',
+    name: 'BasicAttackWhackTheDimwit_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -111,12 +141,13 @@ export const formulas = {
       sheet: 'Rina',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackWhackTheDimwit_1_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackWhackTheDimwit_1',
     },
   },
-  BasicAttackWhackTheDimwit_1_daze: {
+  'BasicAttackWhackTheDimwit_1:dazeBuildup': {
     sheet: 'Rina',
-    name: 'BasicAttackWhackTheDimwit_1_daze',
+    name: 'BasicAttackWhackTheDimwit_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -124,12 +155,13 @@ export const formulas = {
       sheet: 'Rina',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackWhackTheDimwit_1_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackWhackTheDimwit_1',
     },
   },
-  BasicAttackWhackTheDimwit_1_anomBuildup: {
+  'BasicAttackWhackTheDimwit_1:anomBuildup': {
     sheet: 'Rina',
-    name: 'BasicAttackWhackTheDimwit_1_anomBuildup',
+    name: 'BasicAttackWhackTheDimwit_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -137,54 +169,13 @@ export const formulas = {
       sheet: 'Rina',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackWhackTheDimwit_1_anomBuildup',
-    },
-  },
-  BasicAttackWhackTheDimwit_2_dmg: {
-    sheet: 'Rina',
-    name: 'BasicAttackWhackTheDimwit_2_dmg',
-    tag: {
-      et: 'own',
-      qt: 'formula',
-      q: 'standardDmg',
-      sheet: 'Rina',
-      attribute: 'electric',
-      damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackWhackTheDimwit_2_dmg',
+      name: 'BasicAttackWhackTheDimwit_1',
     },
   },
-  BasicAttackWhackTheDimwit_2_daze: {
+  'BasicAttackWhackTheDimwit_2:standardDmg': {
     sheet: 'Rina',
-    name: 'BasicAttackWhackTheDimwit_2_daze',
-    tag: {
-      et: 'own',
-      qt: 'formula',
-      q: 'dazeBuildup',
-      sheet: 'Rina',
-      attribute: 'electric',
-      damageType1: 'basic',
-      skillType: 'basicSkill',
-      name: 'BasicAttackWhackTheDimwit_2_daze',
-    },
-  },
-  BasicAttackWhackTheDimwit_2_anomBuildup: {
-    sheet: 'Rina',
-    name: 'BasicAttackWhackTheDimwit_2_anomBuildup',
-    tag: {
-      et: 'own',
-      qt: 'formula',
-      q: 'anomBuildup',
-      sheet: 'Rina',
-      attribute: 'electric',
-      damageType1: 'basic',
-      skillType: 'basicSkill',
-      name: 'BasicAttackWhackTheDimwit_2_anomBuildup',
-    },
-  },
-  BasicAttackWhackTheDimwit_3_dmg: {
-    sheet: 'Rina',
-    name: 'BasicAttackWhackTheDimwit_3_dmg',
+    name: 'BasicAttackWhackTheDimwit_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -193,12 +184,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackWhackTheDimwit_3_dmg',
+      name: 'BasicAttackWhackTheDimwit_2',
     },
   },
-  BasicAttackWhackTheDimwit_3_daze: {
+  'BasicAttackWhackTheDimwit_2:dazeBuildup': {
     sheet: 'Rina',
-    name: 'BasicAttackWhackTheDimwit_3_daze',
+    name: 'BasicAttackWhackTheDimwit_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -207,12 +198,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackWhackTheDimwit_3_daze',
+      name: 'BasicAttackWhackTheDimwit_2',
     },
   },
-  BasicAttackWhackTheDimwit_3_anomBuildup: {
+  'BasicAttackWhackTheDimwit_2:anomBuildup': {
     sheet: 'Rina',
-    name: 'BasicAttackWhackTheDimwit_3_anomBuildup',
+    name: 'BasicAttackWhackTheDimwit_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -221,12 +212,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackWhackTheDimwit_3_anomBuildup',
+      name: 'BasicAttackWhackTheDimwit_2',
     },
   },
-  BasicAttackShooTheFool_0_dmg: {
+  'BasicAttackWhackTheDimwit_3:standardDmg': {
     sheet: 'Rina',
-    name: 'BasicAttackShooTheFool_0_dmg',
+    name: 'BasicAttackWhackTheDimwit_3:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -235,12 +226,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackShooTheFool_0_dmg',
+      name: 'BasicAttackWhackTheDimwit_3',
     },
   },
-  BasicAttackShooTheFool_0_daze: {
+  'BasicAttackWhackTheDimwit_3:dazeBuildup': {
     sheet: 'Rina',
-    name: 'BasicAttackShooTheFool_0_daze',
+    name: 'BasicAttackWhackTheDimwit_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -249,12 +240,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackShooTheFool_0_daze',
+      name: 'BasicAttackWhackTheDimwit_3',
     },
   },
-  BasicAttackShooTheFool_0_anomBuildup: {
+  'BasicAttackWhackTheDimwit_3:anomBuildup': {
     sheet: 'Rina',
-    name: 'BasicAttackShooTheFool_0_anomBuildup',
+    name: 'BasicAttackWhackTheDimwit_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -263,12 +254,54 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackShooTheFool_0_anomBuildup',
+      name: 'BasicAttackWhackTheDimwit_3',
     },
   },
-  DashAttackSuddenSurprise_0_dmg: {
+  'BasicAttackShooTheFool_0:standardDmg': {
     sheet: 'Rina',
-    name: 'DashAttackSuddenSurprise_0_dmg',
+    name: 'BasicAttackShooTheFool_0:standardDmg',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'standardDmg',
+      sheet: 'Rina',
+      attribute: 'electric',
+      damageType1: 'basic',
+      skillType: 'basicSkill',
+      name: 'BasicAttackShooTheFool_0',
+    },
+  },
+  'BasicAttackShooTheFool_0:dazeBuildup': {
+    sheet: 'Rina',
+    name: 'BasicAttackShooTheFool_0:dazeBuildup',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'dazeBuildup',
+      sheet: 'Rina',
+      attribute: 'electric',
+      damageType1: 'basic',
+      skillType: 'basicSkill',
+      name: 'BasicAttackShooTheFool_0',
+    },
+  },
+  'BasicAttackShooTheFool_0:anomBuildup': {
+    sheet: 'Rina',
+    name: 'BasicAttackShooTheFool_0:anomBuildup',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomBuildup',
+      sheet: 'Rina',
+      attribute: 'electric',
+      damageType1: 'basic',
+      skillType: 'basicSkill',
+      name: 'BasicAttackShooTheFool_0',
+    },
+  },
+  'DashAttackSuddenSurprise_0:standardDmg': {
+    sheet: 'Rina',
+    name: 'DashAttackSuddenSurprise_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -276,12 +309,13 @@ export const formulas = {
       sheet: 'Rina',
       damageType1: 'dash',
       attribute: 'physical',
-      name: 'DashAttackSuddenSurprise_0_dmg',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackSuddenSurprise_0',
     },
   },
-  DashAttackSuddenSurprise_0_daze: {
+  'DashAttackSuddenSurprise_0:dazeBuildup': {
     sheet: 'Rina',
-    name: 'DashAttackSuddenSurprise_0_daze',
+    name: 'DashAttackSuddenSurprise_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -289,12 +323,13 @@ export const formulas = {
       sheet: 'Rina',
       damageType1: 'dash',
       attribute: 'physical',
-      name: 'DashAttackSuddenSurprise_0_daze',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackSuddenSurprise_0',
     },
   },
-  DashAttackSuddenSurprise_0_anomBuildup: {
+  'DashAttackSuddenSurprise_0:anomBuildup': {
     sheet: 'Rina',
-    name: 'DashAttackSuddenSurprise_0_anomBuildup',
+    name: 'DashAttackSuddenSurprise_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -302,12 +337,13 @@ export const formulas = {
       sheet: 'Rina',
       damageType1: 'dash',
       attribute: 'physical',
-      name: 'DashAttackSuddenSurprise_0_anomBuildup',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackSuddenSurprise_0',
     },
   },
-  DodgeCounterBangbooCallback_0_dmg: {
+  'DodgeCounterBangbooCallback_0:standardDmg': {
     sheet: 'Rina',
-    name: 'DodgeCounterBangbooCallback_0_dmg',
+    name: 'DodgeCounterBangbooCallback_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -316,12 +352,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterBangbooCallback_0_dmg',
+      name: 'DodgeCounterBangbooCallback_0',
     },
   },
-  DodgeCounterBangbooCallback_0_daze: {
+  'DodgeCounterBangbooCallback_0:dazeBuildup': {
     sheet: 'Rina',
-    name: 'DodgeCounterBangbooCallback_0_daze',
+    name: 'DodgeCounterBangbooCallback_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -330,12 +366,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterBangbooCallback_0_daze',
+      name: 'DodgeCounterBangbooCallback_0',
     },
   },
-  DodgeCounterBangbooCallback_0_anomBuildup: {
+  'DodgeCounterBangbooCallback_0:anomBuildup': {
     sheet: 'Rina',
-    name: 'DodgeCounterBangbooCallback_0_anomBuildup',
+    name: 'DodgeCounterBangbooCallback_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -344,12 +380,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterBangbooCallback_0_anomBuildup',
+      name: 'DodgeCounterBangbooCallback_0',
     },
   },
-  SpecialAttackBeatTheBlockhead_0_dmg: {
+  'SpecialAttackBeatTheBlockhead_0:standardDmg': {
     sheet: 'Rina',
-    name: 'SpecialAttackBeatTheBlockhead_0_dmg',
+    name: 'SpecialAttackBeatTheBlockhead_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -358,12 +394,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackBeatTheBlockhead_0_dmg',
+      name: 'SpecialAttackBeatTheBlockhead_0',
     },
   },
-  SpecialAttackBeatTheBlockhead_0_daze: {
+  'SpecialAttackBeatTheBlockhead_0:dazeBuildup': {
     sheet: 'Rina',
-    name: 'SpecialAttackBeatTheBlockhead_0_daze',
+    name: 'SpecialAttackBeatTheBlockhead_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -372,12 +408,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackBeatTheBlockhead_0_daze',
+      name: 'SpecialAttackBeatTheBlockhead_0',
     },
   },
-  SpecialAttackBeatTheBlockhead_0_anomBuildup: {
+  'SpecialAttackBeatTheBlockhead_0:anomBuildup': {
     sheet: 'Rina',
-    name: 'SpecialAttackBeatTheBlockhead_0_anomBuildup',
+    name: 'SpecialAttackBeatTheBlockhead_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -386,12 +422,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackBeatTheBlockhead_0_anomBuildup',
+      name: 'SpecialAttackBeatTheBlockhead_0',
     },
   },
-  EXSpecialAttackDimwitDisappearingTrick_0_dmg: {
+  'EXSpecialAttackDimwitDisappearingTrick_0:standardDmg': {
     sheet: 'Rina',
-    name: 'EXSpecialAttackDimwitDisappearingTrick_0_dmg',
+    name: 'EXSpecialAttackDimwitDisappearingTrick_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -400,12 +436,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackDimwitDisappearingTrick_0_dmg',
+      name: 'EXSpecialAttackDimwitDisappearingTrick_0',
     },
   },
-  EXSpecialAttackDimwitDisappearingTrick_0_daze: {
+  'EXSpecialAttackDimwitDisappearingTrick_0:dazeBuildup': {
     sheet: 'Rina',
-    name: 'EXSpecialAttackDimwitDisappearingTrick_0_daze',
+    name: 'EXSpecialAttackDimwitDisappearingTrick_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -414,12 +450,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackDimwitDisappearingTrick_0_daze',
+      name: 'EXSpecialAttackDimwitDisappearingTrick_0',
     },
   },
-  EXSpecialAttackDimwitDisappearingTrick_0_anomBuildup: {
+  'EXSpecialAttackDimwitDisappearingTrick_0:anomBuildup': {
     sheet: 'Rina',
-    name: 'EXSpecialAttackDimwitDisappearingTrick_0_anomBuildup',
+    name: 'EXSpecialAttackDimwitDisappearingTrick_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -428,12 +464,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackDimwitDisappearingTrick_0_anomBuildup',
+      name: 'EXSpecialAttackDimwitDisappearingTrick_0',
     },
   },
-  ChainAttackCodeOfConduct_0_dmg: {
+  'ChainAttackCodeOfConduct_0:standardDmg': {
     sheet: 'Rina',
-    name: 'ChainAttackCodeOfConduct_0_dmg',
+    name: 'ChainAttackCodeOfConduct_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -442,12 +478,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackCodeOfConduct_0_dmg',
+      name: 'ChainAttackCodeOfConduct_0',
     },
   },
-  ChainAttackCodeOfConduct_0_daze: {
+  'ChainAttackCodeOfConduct_0:dazeBuildup': {
     sheet: 'Rina',
-    name: 'ChainAttackCodeOfConduct_0_daze',
+    name: 'ChainAttackCodeOfConduct_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -456,12 +492,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackCodeOfConduct_0_daze',
+      name: 'ChainAttackCodeOfConduct_0',
     },
   },
-  ChainAttackCodeOfConduct_0_anomBuildup: {
+  'ChainAttackCodeOfConduct_0:anomBuildup': {
     sheet: 'Rina',
-    name: 'ChainAttackCodeOfConduct_0_anomBuildup',
+    name: 'ChainAttackCodeOfConduct_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -470,12 +506,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackCodeOfConduct_0_anomBuildup',
+      name: 'ChainAttackCodeOfConduct_0',
     },
   },
-  UltimateTheQueensAttendants_0_dmg: {
+  'UltimateTheQueensAttendants_0:standardDmg': {
     sheet: 'Rina',
-    name: 'UltimateTheQueensAttendants_0_dmg',
+    name: 'UltimateTheQueensAttendants_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -484,12 +520,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateTheQueensAttendants_0_dmg',
+      name: 'UltimateTheQueensAttendants_0',
     },
   },
-  UltimateTheQueensAttendants_0_daze: {
+  'UltimateTheQueensAttendants_0:dazeBuildup': {
     sheet: 'Rina',
-    name: 'UltimateTheQueensAttendants_0_daze',
+    name: 'UltimateTheQueensAttendants_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -498,12 +534,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateTheQueensAttendants_0_daze',
+      name: 'UltimateTheQueensAttendants_0',
     },
   },
-  UltimateTheQueensAttendants_0_anomBuildup: {
+  'UltimateTheQueensAttendants_0:anomBuildup': {
     sheet: 'Rina',
-    name: 'UltimateTheQueensAttendants_0_anomBuildup',
+    name: 'UltimateTheQueensAttendants_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -512,12 +548,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateTheQueensAttendants_0_anomBuildup',
+      name: 'UltimateTheQueensAttendants_0',
     },
   },
-  QuickAssistDupleMeterAllemande_0_dmg: {
+  'QuickAssistDupleMeterAllemande_0:standardDmg': {
     sheet: 'Rina',
-    name: 'QuickAssistDupleMeterAllemande_0_dmg',
+    name: 'QuickAssistDupleMeterAllemande_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -526,12 +562,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistDupleMeterAllemande_0_dmg',
+      name: 'QuickAssistDupleMeterAllemande_0',
     },
   },
-  QuickAssistDupleMeterAllemande_0_daze: {
+  'QuickAssistDupleMeterAllemande_0:dazeBuildup': {
     sheet: 'Rina',
-    name: 'QuickAssistDupleMeterAllemande_0_daze',
+    name: 'QuickAssistDupleMeterAllemande_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -540,12 +576,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistDupleMeterAllemande_0_daze',
+      name: 'QuickAssistDupleMeterAllemande_0',
     },
   },
-  QuickAssistDupleMeterAllemande_0_anomBuildup: {
+  'QuickAssistDupleMeterAllemande_0:anomBuildup': {
     sheet: 'Rina',
-    name: 'QuickAssistDupleMeterAllemande_0_anomBuildup',
+    name: 'QuickAssistDupleMeterAllemande_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -554,12 +590,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistDupleMeterAllemande_0_anomBuildup',
+      name: 'QuickAssistDupleMeterAllemande_0',
     },
   },
-  AssistFollowUpQuadrupleMeterGavotte_0_dmg: {
+  'AssistFollowUpQuadrupleMeterGavotte_0:standardDmg': {
     sheet: 'Rina',
-    name: 'AssistFollowUpQuadrupleMeterGavotte_0_dmg',
+    name: 'AssistFollowUpQuadrupleMeterGavotte_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -568,12 +604,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpQuadrupleMeterGavotte_0_dmg',
+      name: 'AssistFollowUpQuadrupleMeterGavotte_0',
     },
   },
-  AssistFollowUpQuadrupleMeterGavotte_0_daze: {
+  'AssistFollowUpQuadrupleMeterGavotte_0:dazeBuildup': {
     sheet: 'Rina',
-    name: 'AssistFollowUpQuadrupleMeterGavotte_0_daze',
+    name: 'AssistFollowUpQuadrupleMeterGavotte_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -582,12 +618,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpQuadrupleMeterGavotte_0_daze',
+      name: 'AssistFollowUpQuadrupleMeterGavotte_0',
     },
   },
-  AssistFollowUpQuadrupleMeterGavotte_0_anomBuildup: {
+  'AssistFollowUpQuadrupleMeterGavotte_0:anomBuildup': {
     sheet: 'Rina',
-    name: 'AssistFollowUpQuadrupleMeterGavotte_0_anomBuildup',
+    name: 'AssistFollowUpQuadrupleMeterGavotte_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -596,7 +632,7 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpQuadrupleMeterGavotte_0_anomBuildup',
+      name: 'AssistFollowUpQuadrupleMeterGavotte_0',
     },
   },
 } as const

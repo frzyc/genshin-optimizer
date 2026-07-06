@@ -113,13 +113,13 @@
   "passive1": {
     "name": "Rüzgarın Zarafeti",
     "description": {
-      "0": "<strong>Işıltılı İlahi</strong> Element Patlamasının sağladığı Favonius Lütfu etkisindeki karakterler düşman üzerinde Donma tepkimesi tetiklediğinde Dahlia 2 Takdis kademesi kazanır. Bu etki her 8 saniyede bir tetiklenebilir."
+      "0": "<strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Işıltılı İlahi</tooltip></strong> Element Patlamasının sağladığı Favonius Lütfu etkisindeki karakterler düşman üzerinde Donma tepkimesi tetiklediğinde Dahlia 2 Takdis kademesi kazanır. Bu etki her 8 saniyede bir tetiklenebilir."
     }
   },
   "passive2": {
     "name": "Sevinç Duası",
     "description": {
-      "0": "Aktif grup üyesi <strong>\"Işıltılı İlahi\"</strong> Element Patlamasının sağladığı Favonius Lütfu etkisindeyken, Dahlia'nın Maks. Canına göre Saldırı Hızı artar: Her 1.000 Maks. Can için %0,5'lik artış kazanılır, bu artış en fazla %20 olabilir."
+      "0": "Aktif grup üyesi <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>\"Işıltılı İlahi\"</tooltip></strong> Element Patlamasının sağladığı Favonius Lütfu etkisindeyken, Dahlia'nın Maks. Canına göre Saldırı Hızı artar: Her 1.000 Maks. Can için %0,5'lik artış kazanılır, bu artış en fazla %20 olabilir."
     }
   },
   "passive3": {
@@ -132,39 +132,39 @@
   "constellation1": {
     "name": "Kusursuz Tören",
     "description": {
-      "0": "Dahlia, <strong>Işıltılı İlahi</strong> Element Patlamasını kullanarak 1 Takdis kademesi elde ettiği her seferde 2,5 Element Enerjisi yeniler."
+      "0": "Dahlia, <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Işıltılı İlahi</tooltip></strong> Element Patlamasını kullanarak 1 Takdis kademesi elde ettiği her seferde 2,5 Element Enerjisi yeniler."
     }
   },
   "constellation2": {
     "name": "Merhamet Buyruğu",
     "description": {
-      "0": "Dahlia, <strong>Işıltılı İlahi</strong> Element Patlamasının Takdis kademelerini tüketerek bir Kutsal Lütuf Kalkanı çağırdığında bu Kalkanla korunan karakterin 12 saniyeliğine Kalkan Gücü %25 artar."
+      "0": "Dahlia, <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Işıltılı İlahi</tooltip></strong> Element Patlamasının Takdis kademelerini tüketerek bir Kutsal Lütuf Kalkanı çağırdığında bu Kalkanla korunan karakterin 12 saniyeliğine Kalkan Gücü %25 artar."
     }
   },
   "constellation3": {
     "name": "Rüzgarçiçeği Adağı",
     "description": {
-      "0": "<strong>Işıltılı İlahi</strong> Seviyesini 3 artırır.",
+      "0": "<strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Işıltılı İlahi</tooltip></strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
   "constellation4": {
     "name": "Meclis Toplantısı",
     "description": {
-      "0": "Dahlia'nın <strong>Işıltılı İlahi</strong> Element Patlaması ile oluşturulan Favonius Lütfu 3 saniye daha uzun sürer."
+      "0": "Dahlia'nın <strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Işıltılı İlahi</tooltip></strong> Element Patlaması ile oluşturulan Favonius Lütfu 3 saniye daha uzun sürer."
     }
   },
   "constellation5": {
     "name": "Böyle Buyruldu",
     "description": {
-      "0": "<strong>Kutsal Emir</strong> Seviyesini 3 artırır.",
+      "0": "<strong><tooltip ns=char_Dahlia_gen baseKey18=skill>Kutsal Emir</tooltip></strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
   "constellation6": {
     "name": "Neşeyle Çık Yola",
     "description": {
-      "0": "<strong>Işıltılı İlahi</strong> Element Patlaması etkisindeki mevcut aktif karakterin Saldırı Hızı %10 artar.",
+      "0": "<strong><tooltip ns=char_Dahlia_gen baseKey18=burst>Işıltılı İlahi</tooltip></strong> Element Patlaması etkisindeki mevcut aktif karakterin Saldırı Hızı %10 artar.",
       "1": "Ayrıca Favonius Lütfu etkisindeki aktif karakter saf dışı kaldığında şu etkiler anında tetiklenir:",
       "2": [
         "Karakter dirilir.",

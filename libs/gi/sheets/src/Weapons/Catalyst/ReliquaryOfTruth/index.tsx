@@ -94,7 +94,7 @@ const sheet: IWeaponSheet = {
       value: condAfterLunarBloom,
       path: condAfterLunarBloomPath,
       header: headerTemplate(key, st('conditional')),
-      name: st('elementalReaction.team.lunarbloom'),
+      name: st('hitOp.lunarbloom'),
       states: {
         on: {
           fields: [

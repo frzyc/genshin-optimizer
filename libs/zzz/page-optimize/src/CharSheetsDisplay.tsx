@@ -6,10 +6,15 @@ import {
   Banyue,
   Manato,
   Soldier0Anby,
+  StarlightBilly,
   Yidhari,
   Yixuan,
 } from '@genshin-optimizer/zzz/formula'
-import { TagDisplay, charSheets } from '@genshin-optimizer/zzz/formula-ui'
+import {
+  CharMechanicsGroupedDisplay,
+  TagDisplay,
+  useDebugFormulaClick,
+} from '@genshin-optimizer/zzz/formula-ui'
 import { Box } from '@mui/material'
 
 export function CharSheetSection() {
@@ -21,16 +26,10 @@ export function CharSheetSection() {
       {characterKey === 'Manato' && <MinimalManatoSheet />}
       {characterKey === 'Yidhari' && <MinimalYidhariSheet />}
       {characterKey === 'Banyue' && <MinimalBanyueSheet />}
-      {shouldShowDevComponents &&
-        Object.values(charSheets[characterKey]).flatMap((sheet, index1) =>
-          sheet.documents.map((doc, index2) => (
-            <DocumentDisplay
-              key={`${index1}_${index2}`}
-              document={doc}
-              collapse
-            />
-          ))
-        )}
+      {characterKey === 'StarlightBilly' && <MinimalStarlightBillySheet />}
+      {shouldShowDevComponents && (
+        <CharMechanicsGroupedDisplay charKey={characterKey} />
+      )}
     </Box>
   )
 }
@@ -50,14 +49,22 @@ const yixuanDocs: Document[] = [
     ],
   },
 ]
-function MinimalYixuanSheet() {
+function MinimalSheetDocs({ docs }: { docs: Document[] }) {
+  const onClickFormula = useDebugFormulaClick()
   return (
     <>
-      {yixuanDocs.map((doc, index) => (
-        <DocumentDisplay key={index} document={doc} />
+      {docs.map((doc, index) => (
+        <DocumentDisplay
+          key={index}
+          document={doc}
+          onClickFormula={onClickFormula}
+        />
       ))}
     </>
   )
+}
+function MinimalYixuanSheet() {
+  return <MinimalSheetDocs docs={yixuanDocs} />
 }
 
 const s0AnbyDocs: Document[] = [
@@ -84,13 +91,7 @@ const s0AnbyDocs: Document[] = [
   },
 ]
 function MinimalS0AnbySheet() {
-  return (
-    <>
-      {s0AnbyDocs.map((doc, index) => (
-        <DocumentDisplay key={index} document={doc} />
-      ))}
-    </>
-  )
+  return <MinimalSheetDocs docs={s0AnbyDocs} />
 }
 
 const manatoDocs: Document[] = [
@@ -109,13 +110,7 @@ const manatoDocs: Document[] = [
   },
 ]
 function MinimalManatoSheet() {
-  return (
-    <>
-      {manatoDocs.map((doc, index) => (
-        <DocumentDisplay key={index} document={doc} />
-      ))}
-    </>
-  )
+  return <MinimalSheetDocs docs={manatoDocs} />
 }
 
 const yidhariDocs: Document[] = [
@@ -134,13 +129,7 @@ const yidhariDocs: Document[] = [
   },
 ]
 function MinimalYidhariSheet() {
-  return (
-    <>
-      {yidhariDocs.map((doc, index) => (
-        <DocumentDisplay key={index} document={doc} />
-      ))}
-    </>
-  )
+  return <MinimalSheetDocs docs={yidhariDocs} />
 }
 
 const banyueDocs: Document[] = [
@@ -159,11 +148,24 @@ const banyueDocs: Document[] = [
   },
 ]
 function MinimalBanyueSheet() {
-  return (
-    <>
-      {banyueDocs.map((doc, index) => (
-        <DocumentDisplay key={index} document={doc} />
-      ))}
-    </>
-  )
+  return <MinimalSheetDocs docs={banyueDocs} />
+}
+
+const starlightBillyDocs: Document[] = [
+  {
+    type: 'text',
+    text: "We automatically convert Starlight - Billy's HP to Sheer Force at a ratio of 1:0.1. Everything else in his kit is not factored",
+  },
+  {
+    type: 'fields',
+    fields: [
+      {
+        title: <TagDisplay tag={StarlightBilly.buffs.core_hpSheerForce.tag} />,
+        fieldRef: StarlightBilly.buffs.core_hpSheerForce.tag,
+      },
+    ],
+  },
+]
+function MinimalStarlightBillySheet() {
+  return <MinimalSheetDocs docs={starlightBillyDocs} />
 }

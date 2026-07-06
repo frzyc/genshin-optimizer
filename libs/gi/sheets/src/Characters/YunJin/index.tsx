@@ -12,7 +12,7 @@ import {
   tally,
   unequal,
 } from '@genshin-optimizer/gi/wr'
-import { cond, stg } from '../../SheetUtil'
+import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
 import type { TalentSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
@@ -358,7 +358,7 @@ const sheet: TalentSheet = {
     ct.condTem('constellation4', {
       value: condC4,
       path: condC4Path,
-      name: ct.ch('c4'),
+      name: st('elementalReaction.crystallizeOrLunar'),
       states: {
         on: {
           fields: [

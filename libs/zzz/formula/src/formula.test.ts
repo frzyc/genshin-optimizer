@@ -67,12 +67,14 @@ describe('character test', () => {
             promotion,
             key: charKey,
             mindscape: 0,
+            potential: 0,
             basic: 0,
             dodge: 0,
             special: 0,
             assist: 0,
             chain: 0,
             core,
+            potential: 0,
           })
         ),
       ]
@@ -107,12 +109,14 @@ describe('wengine test', () => {
             promotion: 0,
             key: 'Anby',
             mindscape: 0,
+            potential: 0,
             basic: 0,
             dodge: 0,
             special: 0,
             assist: 0,
             chain: 0,
             core: 0,
+            potential: 0,
           }),
           ...wengineTagMapNodeEntries({
             key: wengKey,
@@ -145,12 +149,14 @@ describe('char+wengine test', () => {
           promotion: 0,
           key: 'Anby',
           mindscape: 0,
+          potential: 0,
           basic: 0,
           dodge: 0,
           special: 0,
           assist: 0,
           chain: 0,
           core: 0,
+          potential: 0,
         }),
         ...wengineTagMapNodeEntries({
           key: 'SteamOven',
@@ -173,12 +179,14 @@ describe('char+wengine test', () => {
           promotion: 5,
           key: 'Anby',
           mindscape: 0,
+          potential: 0,
           basic: 0,
           dodge: 0,
           special: 0,
           assist: 0,
           chain: 0,
           core: 6,
+          potential: 0,
         }),
         ...wengineTagMapNodeEntries({
           key: 'VortexRevolver',
@@ -214,12 +222,14 @@ describe('char+wengine test', () => {
             promotion: 5,
             key: 'Anby',
             mindscape: 0,
+            potential: 0,
             basic: 0,
             dodge: 0,
             special: 0,
             assist: 0,
             chain: 0,
             core: 6,
+            potential: 0,
           }),
           ...wengineTagMapNodeEntries({
             key: 'VortexRevolver',
@@ -280,12 +290,14 @@ describe('char+wengine test', () => {
           promotion: 5,
           key: 'Anby',
           mindscape: 0,
+          potential: 0,
           basic: 0,
           dodge: 0,
           special: 0,
           assist: 0,
           chain: 0,
           core: 6,
+          potential: 0,
         }),
         ...wengineTagMapNodeEntries({
           key: 'VortexRevolver',
@@ -327,6 +339,43 @@ describe('char+wengine test', () => {
     expect(calc.compute(anby.final.dmg_.chain[1]).val).toBeCloseTo(0)
     expect(calc.compute(anby.final.common_dmg_).val).toBeCloseTo(0.2)
   })
+  it('keeps bundled damage, daze, and anomaly buildup bases isolated', () => {
+    const data: TagMapNodeEntries = [
+      ...withMember(
+        'Anby',
+        ...charTagMapNodeEntries({
+          level: 1,
+          promotion: 0,
+          key: 'Anby',
+          mindscape: 0,
+          potential: 0,
+          basic: 1,
+          dodge: 0,
+          special: 0,
+          assist: 0,
+          chain: 0,
+          core: 0,
+          potential: 0,
+        })
+      ),
+    ]
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Anby', dst: 'Anby' })
+
+    expect(
+      calc.compute(
+        read(formulas.Anby['BasicAttackTurboVolt_0:dazeBuildup'].tag, undefined)
+      ).val
+    ).toBeCloseTo(18.408)
+    expect(
+      calc.compute(
+        read(formulas.Anby['BasicAttackTurboVolt_0:anomBuildup'].tag, undefined)
+      ).val
+    ).toBeCloseTo(0)
+  })
 })
 
 describe('disc2p test', () => {
@@ -339,12 +388,14 @@ describe('disc2p test', () => {
           promotion: 0,
           key: 'Anby',
           mindscape: 0,
+          potential: 0,
           basic: 0,
           dodge: 0,
           special: 0,
           assist: 0,
           chain: 0,
           core: 0,
+          potential: 0,
         }),
         ...discTagMapNodeEntries({ atk: 100 }, { BranchBladeSong: 2 })
       ),
@@ -371,12 +422,14 @@ describe('team', () => {
           promotion: 0,
           key: 'Anby',
           mindscape: 0,
+          potential: 0,
           basic: 0,
           dodge: 0,
           special: 0,
           assist: 0,
           chain: 0,
           core: 0,
+          potential: 0,
         })
       ),
       ...withMember(
@@ -386,12 +439,14 @@ describe('team', () => {
           promotion: 0,
           key: 'Anton',
           mindscape: 0,
+          potential: 0,
           basic: 0,
           dodge: 0,
           special: 0,
           assist: 0,
           chain: 0,
           core: 0,
+          potential: 0,
         })
       ),
     ]

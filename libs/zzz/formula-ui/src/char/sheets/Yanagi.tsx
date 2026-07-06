@@ -8,8 +8,6 @@ const [, ch] = trans('char', key)
 const cond = Yanagi.conditionals
 const buff = Yanagi.buffs
 
-// TODO: check basic attack and ex special text
-// TODO: limit m2 cond to 2 stacks
 const sheet = createBaseSheet(key, {
   perSkillAbility: {
     basic: {

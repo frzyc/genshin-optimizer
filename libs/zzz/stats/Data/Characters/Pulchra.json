@@ -249,5 +249,6 @@
     [6, 6, 6, 6, 6, 6, 6]
   ],
   "abilityParams": [15, 0.3],
-  "mindscapeParams": [[0.1], [0.1], [2], [5], [2], [0.15, 2]]
+  "mindscapeParams": [[0.1], [0.1], [2], [5], [2], [0.15, 2]],
+  "potentialParams": []
 }

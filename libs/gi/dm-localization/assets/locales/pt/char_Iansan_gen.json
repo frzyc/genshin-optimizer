@@ -125,7 +125,7 @@
     "name": "Teste de Gradiente de Energia Cinética",
     "description": {
       "0": "Quando um membro próximo da equipe desencadeia Explosão do Espírito da Noite, Iansan obtém Aquecimento por 10s.",
-      "1": "Nesse período, quando Iansan regenerar pelo menos 1 ponto de Espírito da Noite, regenerará pontos de Espírito da Noite para o personagem ativo. A quantidade regenerada é baseada em 60% do ATQ de Iansan. Esse efeito pode ser desencadeado uma vez a cada 2.8s."
+      "1": "Nesse período, quando Iansan regenerar pelo menos 1 ponto de Espírito da Noite, ela curará seu personagem ativo atual em 60% do ATQ de Iansan. Esse efeito pode ser desencadeado uma vez a cada 2.8s."
     }
   },
   "passive3": {

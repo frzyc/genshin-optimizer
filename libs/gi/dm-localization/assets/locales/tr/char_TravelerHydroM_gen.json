@@ -111,6 +111,22 @@
       "1": "Bu şekilde en fazla 5.000 Hasar Bonusu kazanılabilir."
     }
   },
+  "lockedPassive": {
+    "name": "Yabancı Sular",
+    "description": {
+      "0": "Geçmiş yolculuklarından yeni bir güç al. Rezonansa girdiğin her element için ek <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>güçlendirmeler</strong></tooltip> kazanırsın.",
+      "1": "<br/>",
+      "2": "Ayrıca yakındaki grup üyelerinin mevcut Canı %5 arttığında veya azaldığında Gezgin 1 kademe Tüm Suların Kılıcı kazanır. Gezgin bu şekilde en fazla her 4 saniyede bir 1 kademe, toplamda en fazla 3 kademe Tüm Suların Kılıcı kazanabilir. En az 3 kademe Tüm Suların Kılıcı kazandıktan sonra Yüklü Saldırı yapmak, tüm Tüm Suların Kılıcı kademelerini tüketir ve Yüklü Saldırı gelişerek <strong>Yüklü Saldırı: Gelgit Akını</strong> olur.",
+      "3": "<br/>",
+      "4": "<strong>Yüklü Saldırı: Gelgit Akını</strong>",
+      "5": [
+        "İsabet eden her Yüklü Saldırı daha fazla <hydro>Su Hasarı</hydro> verir. Hasar artışı, Gezginin Saldırısının %150'sine eşittir.",
+        "Gezginin Canı en az %50 ise Maks. Canının %10'u tüketilir ve isabet eden her Yüklü Saldırının verdiği Hasar, Gezginin Saldırısının %100'ü kadar artar.",
+        "Gezginin Canı %50'nin altındayken bu saldırı bir düşmana isabet etiğinde tek seferliğine Gezginin Maks. Canının %25'i yenilenir.",
+        "<strong>Yüklü Saldırı: Gelgit Akını</strong> en fazla 15 saniyede bir tetiklenebilir."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Yükselen Göl",
     "description": {

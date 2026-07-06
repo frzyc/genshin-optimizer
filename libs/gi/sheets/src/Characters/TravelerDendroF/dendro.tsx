@@ -9,6 +9,7 @@ import type { DisplaySub } from '@genshin-optimizer/gi/wr'
 import {
   equal,
   greaterEq,
+  inferInfoMut,
   infoMut,
   input,
   lookup,
@@ -21,7 +22,12 @@ import type { Palette } from '@mui/material'
 import { cond, st, stg } from '../../SheetUtil'
 import type { TalentSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
-import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import {
+  customDmgNode,
+  dataObjForCharacterSheet,
+  dmgNode,
+  hitEle,
+} from '../dataUtil'
 
 export default function dendro(
   key: CharacterSheetKey,
@@ -35,6 +41,10 @@ export default function dendro(
   let s = 0,
     b = 0
   const dm = {
+    charged: {
+      dmg1: skillParam_gen.auto[5],
+      dmg2: skillParam_gen.auto[6],
+    },
     skill: {
       dmg: skillParam_gen.skill[s++],
       cd: skillParam_gen.skill[s++][0],
@@ -55,6 +65,14 @@ export default function dendro(
     passive2: {
       skill_dmgInc: skillParam_gen.passive2[0][0],
       burst_dmgInc: skillParam_gen.passive2[1][0],
+    },
+    lockedPassive: {
+      charged_dmgInc: skillParam_gen.lockedPassive![7][0],
+      cd: skillParam_gen.lockedPassive![8][0],
+      delay1: skillParam_gen.lockedPassive![9][0],
+      dmg: skillParam_gen.lockedPassive![10][0],
+      delay2: skillParam_gen.lockedPassive![11][0],
+      onehundred: skillParam_gen.lockedPassive![12][0],
     },
     constellation1: {
       energyRegen: 1,
@@ -132,6 +150,17 @@ export default function dendro(
     ])
   )
 
+  const [, condLockedPassive] = cond('Traveler', 'lockedPassive')
+  const lockedPassive_charged_dmgInc = equal(
+    condLockedPassive,
+    'on',
+    prod(percent(dm.lockedPassive.charged_dmgInc), input.total.atk)
+  )
+  const lockedPassiveData = inferInfoMut({
+    ...hitEle.dendro,
+    premod: { charged_dmgInc: lockedPassive_charged_dmgInc },
+  })
+
   const dmgFormulas = {
     ...dmgForms,
     skill: {
@@ -140,6 +169,27 @@ export default function dendro(
     burst: {
       lampDmg: dmgNode('atk', dm.burst.lampDmg, 'burst'),
       explosionDmg: dmgNode('atk', dm.burst.explosionDmg, 'burst'),
+    },
+    lockedPassive: {
+      dmg1: equal(
+        condLockedPassive,
+        'on',
+        dmgNode('atk', dm.charged.dmg1, 'charged', lockedPassiveData)
+      ),
+      dmg2: equal(
+        condLockedPassive,
+        'on',
+        dmgNode('atk', dm.charged.dmg2, 'charged', lockedPassiveData)
+      ),
+      vinecoreDmg: equal(
+        condLockedPassive,
+        'on',
+        customDmgNode(
+          prod(percent(dm.lockedPassive.dmg), input.total.atk),
+          'charged',
+          lockedPassiveData
+        )
+      ),
     },
   } as const
 
@@ -298,6 +348,38 @@ export default function dendro(
           },
           {
             node: a4_burst_dmg_,
+          },
+        ],
+      }),
+    ]),
+    lockedPassive: ct.talentTem('lockedPassive', [
+      ct.fieldsTem('lockedPassive', {
+        canShow: equal(condLockedPassive, 'on', 1),
+        fields: [
+          {
+            node: infoMut(dmgFormulas.lockedPassive.dmg1, {
+              name: ct.chg('auto.skillParams.5'),
+              textSuffix: '(1)',
+            }),
+          },
+          {
+            node: infoMut(dmgFormulas.lockedPassive.dmg2, {
+              name: ct.chg('auto.skillParams.5'),
+              textSuffix: '(2)',
+            }),
+          },
+          {
+            node: infoMut(dmgFormulas.lockedPassive.vinecoreDmg, {
+              name: st('dmg'),
+            }),
+          },
+          {
+            node: lockedPassive_charged_dmgInc,
+          },
+          {
+            text: stg('cd'),
+            value: dm.lockedPassive.cd,
+            unit: 's',
           },
         ],
       }),

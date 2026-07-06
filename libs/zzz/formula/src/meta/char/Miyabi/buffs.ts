@@ -1,16 +1,5 @@
 // WARNING: Generated file, do not modify
 export const buffs = {
-  frostbite_crit_dmg_: {
-    sheet: 'Miyabi',
-    name: 'frostbite_crit_dmg_',
-    tag: {
-      et: 'display',
-      qt: 'combat',
-      q: 'crit_dmg_',
-      sheet: 'Miyabi',
-      name: 'frostbite_crit_dmg_',
-    },
-  },
   ult_ice_dmg_: {
     sheet: 'Miyabi',
     name: 'ult_ice_dmg_',

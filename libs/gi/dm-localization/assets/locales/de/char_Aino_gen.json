@@ -97,7 +97,7 @@
     "description": {
       "0": "Verleiht Aino basierend auf dem <strong>Mondomen</strong> in der Truppe verschiedene Verstärkungseffekte.",
       "1": "<br/>",
-      "2": "<strong>Mondomen – Reifer Glanz</strong>: Verstärkt die Spezialfähigkeit <strong>Präzises Wasserkühlgerät</strong>: <strong>Sprudelente</strong> feuert häufiger Wassergeschosse und verursacht <hydro>Hydro-Flächenschaden</hydro> mit größerer Reichweite."
+      "2": "<strong>Mondomen – Reifer Glanz</strong>: Verstärkt die Spezialfähigkeit <strong><tooltip ns=char_Aino_gen baseKey18=burst>Präzises Wasserkühlgerät</tooltip></strong>: <strong>Sprudelente</strong> feuert häufiger Wassergeschosse und verursacht <hydro>Hydro-Flächenschaden</hydro> mit größerer Reichweite."
     }
   },
   "passive2": {
@@ -122,7 +122,7 @@
   "constellation1": {
     "name": "Theorie der Balance zwischen Grau und Kraftfeld",
     "description": {
-      "0": "Erhöht nach Anwenden von Ainos Elementarfähigkeit <strong>Ideenfänger</strong> oder ihrer Spezialfähigkeit <strong>Präzises Wasserkühlgerät</strong> 15 s lang die Elementarkunde von Aino selbst sowie der anderen aktuellen Figuren in der Nähe auf dem Feld um 80 Punkte.",
+      "0": "Erhöht nach Anwenden von Ainos Elementarfähigkeit <strong><tooltip ns=char_Aino_gen baseKey18=skill>Ideenfänger</tooltip></strong> oder ihrer Spezialfähigkeit <strong><tooltip ns=char_Aino_gen baseKey18=burst>Präzises Wasserkühlgerät</tooltip></strong> 15 s lang die Elementarkunde von Aino selbst sowie der anderen aktuellen Figuren in der Nähe auf dem Feld um 80 Punkte.",
       "1": "<br/>",
       "2": "Die Elementarkunde-Bonuseffekte dieses Sternbilds können nicht gestapelt werden."
     }
@@ -130,33 +130,33 @@
   "constellation2": {
     "name": "Prinzip der Übertragung bei Zahnraddifferentialen",
     "description": {
-      "0": "Schießt während der Dauer des durch Ainos Spezialfähigkeit <strong>Präzises Wasserkühlgerät</strong> generierten <strong>fokussierten Wasserkühlungsbereichs</strong>, wenn Aino inaktiv in der Truppe ist und die aktuelle eigene Figur einen Gegner in der Nähe trifft, mithilfe von <strong>„Sprudelente“</strong> ein zusätzliches Wassergeschoss auf den Gegner. Dieses verursacht <hydro>Hydro-Flächenschaden</hydro> basierend auf 25 % von Ainos ANG und 100 % von Ainos Elementarkunde. 5 s Abklingzeit. Der verursachte Schaden wird als Spezialfähigkeits-SCH gewertet."
+      "0": "Schießt während der Dauer des durch Ainos Spezialfähigkeit <strong><tooltip ns=char_Aino_gen baseKey18=burst>Präzises Wasserkühlgerät</tooltip></strong> generierten <strong>fokussierten Wasserkühlungsbereichs</strong>, wenn Aino inaktiv in der Truppe ist und die aktuelle eigene Figur einen Gegner in der Nähe trifft, mithilfe von <strong>„Sprudelente“</strong> ein zusätzliches Wassergeschoss auf den Gegner. Dieses verursacht <hydro>Hydro-Flächenschaden</hydro> basierend auf 25 % von Ainos ANG und 100 % von Ainos Elementarkunde. 5 s Abklingzeit. Der verursachte Schaden wird als Spezialfähigkeits-SCH gewertet."
     }
   },
   "constellation3": {
     "name": "Kunst von Kuchen und Vorrichtungen",
     "description": {
-      "0": "Erhöht die Stufe der Spezialfähigkeit <strong>Präzises Wasserkühlgerät</strong> um 3.",
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong><tooltip ns=char_Aino_gen baseKey18=burst>Präzises Wasserkühlgerät</tooltip></strong> um 3.",
       "1": "Höchststufe 15."
     }
   },
   "constellation4": {
     "name": "Butter, Katzen und die Regeln der Energieversorgung",
     "description": {
-      "0": "Stellt Aino beim Treffen von Gegnern mit der Elementarfähigkeit <strong>Ideenfänger</strong> 10 Punkte Elementarenergie wieder her, 10 s Abklingzeit."
+      "0": "Stellt Aino beim Treffen von Gegnern mit der Elementarfähigkeit <strong><tooltip ns=char_Aino_gen baseKey18=skill>Ideenfänger</tooltip></strong> 10 Punkte Elementarenergie wieder her, 10 s Abklingzeit."
     }
   },
   "constellation5": {
     "name": "Unvergängliche Turbinen aus Metall und Licht",
     "description": {
-      "0": "Erhöht die Stufe der Elementarfähigkeit <strong>Ideenfänger</strong> um 3.",
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong><tooltip ns=char_Aino_gen baseKey18=skill>Ideenfänger</tooltip></strong> um 3.",
       "1": "Höchststufe 15."
     }
   },
   "constellation6": {
     "name": "Die Last des kreativen Genies",
     "description": {
-      "0": "Erhöht nach Anwenden der Spezialfähigkeit <strong>Präzises Wasserkühlgerät</strong> 15 s lang den Schaden der von den aktuellen Figuren in der Nähe ausgelösten Reaktionen „Unter Strom“, „Sprießen“, „Mond unter Strom“ und „Mondspross“ um 15 %.",
+      "0": "Erhöht nach Anwenden der Spezialfähigkeit <strong><tooltip ns=char_Aino_gen baseKey18=burst>Präzises Wasserkühlgerät</tooltip></strong> 15 s lang den Schaden der von den aktuellen Figuren in der Nähe ausgelösten Reaktionen „Unter Strom“, „Sprießen“, „Mond unter Strom“, „Mondspross“ und „Mond-Kristallisation“ um 15 %.",
       "1": "<strong>Mondomen – Reifer Glanz</strong>: Erhöht den durch obige Reaktionen verursachten Schaden zusätzlich um 20 %."
     }
   }

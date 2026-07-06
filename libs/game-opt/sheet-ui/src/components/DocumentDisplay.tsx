@@ -1,31 +1,73 @@
-'use client'
 import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { evalIfFunc } from '@genshin-optimizer/common/util'
 import { CalcContext, TagContext } from '@genshin-optimizer/game-opt/formula-ui'
+import type { BaseRead } from '@genshin-optimizer/pando/engine'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
-import type { TypographyOwnProps } from '@mui/material'
+import type { SxProps, Theme, TypographyOwnProps } from '@mui/material'
 import { Box, Collapse, Typography } from '@mui/material'
-import { useContext, useState } from 'react'
+import { type ReactNode, createContext, useContext, useState } from 'react'
 import type { Document, FieldsDocument, TextDocument } from '../types'
 import { ConditionalsDisplay } from './ConditionalDisplay'
 import { FieldsDisplay } from './FieldDisplay'
 import { HeaderDisplay } from './HeaderDisplay'
 
-export function DocumentDisplay({
+const DocumentGroupContext = createContext(false)
+
+function useInDocumentGroup() {
+  return useContext(DocumentGroupContext)
+}
+
+/** Enables grouped document layout inside a caller-provided card surface. */
+export function DocumentGroupProvider({ children }: { children: ReactNode }) {
+  return (
+    <DocumentGroupContext.Provider value={true}>
+      {children}
+    </DocumentGroupContext.Provider>
+  )
+}
+
+/** Card wrapper for multiple {@link DocumentContent} siblings sharing one surface. */
+export function DocumentGroup({
+  children,
+  bgt = 'normal',
+  sx,
+}: {
+  children: ReactNode
+  bgt?: CardBackgroundColor
+  sx?: SxProps<Theme>
+}) {
+  return (
+    <DocumentGroupProvider>
+      <CardThemed bgt={bgt} sx={sx}>
+        {children}
+      </CardThemed>
+    </DocumentGroupProvider>
+  )
+}
+
+export function DocumentContent({
   document,
   bgt = 'normal',
   collapse = false,
   typoVariant = 'body1',
+  onClickFormula,
 }: {
   document: Document
   bgt?: CardBackgroundColor
   collapse?: boolean
   typoVariant?: TypographyOwnProps['variant']
+  onClickFormula?: (read: BaseRead) => void
 }) {
   switch (document.type) {
     case 'fields':
-      return <FieldsSectionDisplay fieldsDocument={document} bgt={bgt} />
+      return (
+        <FieldsSectionContent
+          fieldsDocument={document}
+          bgt={bgt}
+          onClickFormula={onClickFormula}
+        />
+      )
     case 'text':
       return collapse ? (
         <TextSectionDisplayCollapse
@@ -39,10 +81,8 @@ export function DocumentDisplay({
       return (
         <ConditionalsDisplay
           conditional={document.conditional}
-          // hideDesc={hideDesc}
-          // hideHeader={hideHeader}
-          // disabled={disabled}
           bgt={bgt}
+          onClickFormula={onClickFormula}
         />
       )
     default:
@@ -50,23 +90,57 @@ export function DocumentDisplay({
   }
 }
 
-function FieldsSectionDisplay({
+export function DocumentDisplay({
+  document,
+  bgt = 'normal',
+  collapse = false,
+  typoVariant = 'body1',
+  onClickFormula,
+}: {
+  document: Document
+  bgt?: CardBackgroundColor
+  collapse?: boolean
+  typoVariant?: TypographyOwnProps['variant']
+  onClickFormula?: (read: BaseRead) => void
+}) {
+  const content = (
+    <DocumentContent
+      document={document}
+      bgt={bgt}
+      collapse={collapse}
+      typoVariant={typoVariant}
+      onClickFormula={onClickFormula}
+    />
+  )
+  if (document.type === 'fields') {
+    return <CardThemed bgt={bgt}>{content}</CardThemed>
+  }
+  return content
+}
+
+function FieldsSectionContent({
   fieldsDocument,
   bgt = 'normal',
+  onClickFormula,
 }: {
   fieldsDocument: FieldsDocument
   bgt?: CardBackgroundColor
+  onClickFormula?: (read: BaseRead) => void
 }) {
   return (
-    <CardThemed bgt={bgt}>
+    <>
       {fieldsDocument.header && (
         <HeaderDisplay
           header={fieldsDocument.header}
           hideDivider={fieldsDocument.fields.length === 0}
         />
       )}
-      <FieldsDisplay bgt={bgt} fields={fieldsDocument.fields} />
-    </CardThemed>
+      <FieldsDisplay
+        bgt={bgt}
+        fields={fieldsDocument.fields}
+        onClickFormula={onClickFormula}
+      />
+    </>
   )
 }
 
@@ -79,14 +153,36 @@ function TextSectionDisplay({
 }) {
   const calculator = useContext(CalcContext)
   const tag = useContext(TagContext)
+  const grouped = useInDocumentGroup()
   if (!calculator) return null
+  const body = evalIfFunc(textDocument.text, calculator.withTag(tag))
+  const hasBody = body !== null && body !== undefined && body !== false
   return (
-    <Typography variant={typoVariant}>
-      {textDocument.header && <HeaderDisplay header={textDocument.header} />}
-      {evalIfFunc(textDocument.text, calculator.withTag(tag))}
-    </Typography>
+    <>
+      {textDocument.header && (
+        <HeaderDisplay
+          header={textDocument.header}
+          hideDivider={!hasBody}
+          compact={grouped}
+        />
+      )}
+      {hasBody && (
+        <Typography
+          component="div"
+          variant={typoVariant}
+          sx={{
+            px: 2,
+            pb: grouped ? 1 : 2,
+            pt: textDocument.header ? 0 : 2,
+          }}
+        >
+          {body}
+        </Typography>
+      )}
+    </>
   )
 }
+
 function TextSectionDisplayCollapse({
   textDocument,
   typoVariant,

@@ -9,7 +9,9 @@
   "cd": "Cooldown",
   "duration": "Duration",
   "shield": "Shield",
+  "heal": "Healing",
   "enterCombatOrSwitchIn": "Entering combat or switching in",
+  "offField": "Character is off-field",
   "uponLaunch": {
     "1": "Upon launching <strong>{{val1}}</strong>",
     "2": "Upon launching <strong>{{val1}}</strong> or <strong>{{val2}}</strong>",
@@ -23,9 +25,11 @@
   "dealsDamage": {
     "1": "Deals <strong>{{val1}}</strong> DMG"
   },
+  "mindscapes": "Mindscapes",
   "skills": {
     "basic": "Basic Attack",
-    "assistFollowUp": "Assist Follow-Up",
+    "dodge": "Dodge",
+    "assist": "Assist",
     "special": "Special Attack",
     "exSpecial": "EX Special Attack",
     "chain": "Chain Attack",
@@ -38,6 +42,7 @@
     "ice": "Ice",
     "physical": "Physical",
     "ether": "Ether",
-    "frost": "Frost"
+    "frost": "Frost",
+    "wind": "Wind"
   }
 }

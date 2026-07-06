@@ -38,6 +38,33 @@ export const formulas = {
       name: 'disorderDmgInst_electric',
     },
   },
+  vortexDmgInst_electric: {
+    sheet: 'Harumasa',
+    name: 'vortexDmgInst_electric',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'Harumasa',
+      attribute: 'electric',
+      damageType1: 'vortex',
+      name: 'vortexDmgInst_electric',
+    },
+  },
+  abloomDmgInst: {
+    sheet: 'Harumasa',
+    name: 'abloomDmgInst',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'Harumasa',
+      attribute: 'electric',
+      damageType1: 'anomaly',
+      damageType2: 'abloom',
+      name: 'abloomDmgInst',
+    },
+  },
   anomalyBuildupInst: {
     sheet: 'Harumasa',
     name: 'anomalyBuildupInst',
@@ -62,9 +89,9 @@ export const formulas = {
       name: 'dazeInst',
     },
   },
-  BasicAttackCloudPiercer_0_dmg: {
+  'BasicAttackCloudPiercer_0:standardDmg': {
     sheet: 'Harumasa',
-    name: 'BasicAttackCloudPiercer_0_dmg',
+    name: 'BasicAttackCloudPiercer_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -72,158 +99,125 @@ export const formulas = {
       sheet: 'Harumasa',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackCloudPiercer_0_dmg',
-    },
-  },
-  BasicAttackCloudPiercer_0_daze: {
-    sheet: 'Harumasa',
-    name: 'BasicAttackCloudPiercer_0_daze',
-    tag: {
-      et: 'own',
-      qt: 'formula',
-      q: 'dazeBuildup',
-      sheet: 'Harumasa',
-      damageType1: 'basic',
-      attribute: 'physical',
-      name: 'BasicAttackCloudPiercer_0_daze',
-    },
-  },
-  BasicAttackCloudPiercer_0_anomBuildup: {
-    sheet: 'Harumasa',
-    name: 'BasicAttackCloudPiercer_0_anomBuildup',
-    tag: {
-      et: 'own',
-      qt: 'formula',
-      q: 'anomBuildup',
-      sheet: 'Harumasa',
-      damageType1: 'basic',
-      attribute: 'physical',
-      name: 'BasicAttackCloudPiercer_0_anomBuildup',
-    },
-  },
-  BasicAttackCloudPiercer_1_dmg: {
-    sheet: 'Harumasa',
-    name: 'BasicAttackCloudPiercer_1_dmg',
-    tag: {
-      et: 'own',
-      qt: 'formula',
-      q: 'standardDmg',
-      sheet: 'Harumasa',
-      damageType1: 'basic',
-      attribute: 'physical',
-      name: 'BasicAttackCloudPiercer_1_dmg',
-    },
-  },
-  BasicAttackCloudPiercer_1_daze: {
-    sheet: 'Harumasa',
-    name: 'BasicAttackCloudPiercer_1_daze',
-    tag: {
-      et: 'own',
-      qt: 'formula',
-      q: 'dazeBuildup',
-      sheet: 'Harumasa',
-      damageType1: 'basic',
-      attribute: 'physical',
-      name: 'BasicAttackCloudPiercer_1_daze',
-    },
-  },
-  BasicAttackCloudPiercer_1_anomBuildup: {
-    sheet: 'Harumasa',
-    name: 'BasicAttackCloudPiercer_1_anomBuildup',
-    tag: {
-      et: 'own',
-      qt: 'formula',
-      q: 'anomBuildup',
-      sheet: 'Harumasa',
-      damageType1: 'basic',
-      attribute: 'physical',
-      name: 'BasicAttackCloudPiercer_1_anomBuildup',
-    },
-  },
-  BasicAttackCloudPiercer_2_dmg: {
-    sheet: 'Harumasa',
-    name: 'BasicAttackCloudPiercer_2_dmg',
-    tag: {
-      et: 'own',
-      qt: 'formula',
-      q: 'standardDmg',
-      sheet: 'Harumasa',
-      damageType1: 'basic',
-      attribute: 'physical',
-      name: 'BasicAttackCloudPiercer_2_dmg',
-    },
-  },
-  BasicAttackCloudPiercer_2_daze: {
-    sheet: 'Harumasa',
-    name: 'BasicAttackCloudPiercer_2_daze',
-    tag: {
-      et: 'own',
-      qt: 'formula',
-      q: 'dazeBuildup',
-      sheet: 'Harumasa',
-      damageType1: 'basic',
-      attribute: 'physical',
-      name: 'BasicAttackCloudPiercer_2_daze',
-    },
-  },
-  BasicAttackCloudPiercer_2_anomBuildup: {
-    sheet: 'Harumasa',
-    name: 'BasicAttackCloudPiercer_2_anomBuildup',
-    tag: {
-      et: 'own',
-      qt: 'formula',
-      q: 'anomBuildup',
-      sheet: 'Harumasa',
-      damageType1: 'basic',
-      attribute: 'physical',
-      name: 'BasicAttackCloudPiercer_2_anomBuildup',
-    },
-  },
-  BasicAttackCloudPiercer_3_dmg: {
-    sheet: 'Harumasa',
-    name: 'BasicAttackCloudPiercer_3_dmg',
-    tag: {
-      et: 'own',
-      qt: 'formula',
-      q: 'standardDmg',
-      sheet: 'Harumasa',
-      attribute: 'electric',
-      damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCloudPiercer_3_dmg',
+      name: 'BasicAttackCloudPiercer_0',
     },
   },
-  BasicAttackCloudPiercer_3_daze: {
+  'BasicAttackCloudPiercer_0:dazeBuildup': {
     sheet: 'Harumasa',
-    name: 'BasicAttackCloudPiercer_3_daze',
+    name: 'BasicAttackCloudPiercer_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Harumasa',
-      attribute: 'electric',
       damageType1: 'basic',
+      attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackCloudPiercer_3_daze',
+      name: 'BasicAttackCloudPiercer_0',
     },
   },
-  BasicAttackCloudPiercer_3_anomBuildup: {
+  'BasicAttackCloudPiercer_0:anomBuildup': {
     sheet: 'Harumasa',
-    name: 'BasicAttackCloudPiercer_3_anomBuildup',
+    name: 'BasicAttackCloudPiercer_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Harumasa',
-      attribute: 'electric',
       damageType1: 'basic',
+      attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackCloudPiercer_3_anomBuildup',
+      name: 'BasicAttackCloudPiercer_0',
     },
   },
-  BasicAttackCloudPiercer_4_dmg: {
+  'BasicAttackCloudPiercer_1:standardDmg': {
     sheet: 'Harumasa',
-    name: 'BasicAttackCloudPiercer_4_dmg',
+    name: 'BasicAttackCloudPiercer_1:standardDmg',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'standardDmg',
+      sheet: 'Harumasa',
+      damageType1: 'basic',
+      attribute: 'physical',
+      skillType: 'basicSkill',
+      name: 'BasicAttackCloudPiercer_1',
+    },
+  },
+  'BasicAttackCloudPiercer_1:dazeBuildup': {
+    sheet: 'Harumasa',
+    name: 'BasicAttackCloudPiercer_1:dazeBuildup',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'dazeBuildup',
+      sheet: 'Harumasa',
+      damageType1: 'basic',
+      attribute: 'physical',
+      skillType: 'basicSkill',
+      name: 'BasicAttackCloudPiercer_1',
+    },
+  },
+  'BasicAttackCloudPiercer_1:anomBuildup': {
+    sheet: 'Harumasa',
+    name: 'BasicAttackCloudPiercer_1:anomBuildup',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomBuildup',
+      sheet: 'Harumasa',
+      damageType1: 'basic',
+      attribute: 'physical',
+      skillType: 'basicSkill',
+      name: 'BasicAttackCloudPiercer_1',
+    },
+  },
+  'BasicAttackCloudPiercer_2:standardDmg': {
+    sheet: 'Harumasa',
+    name: 'BasicAttackCloudPiercer_2:standardDmg',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'standardDmg',
+      sheet: 'Harumasa',
+      damageType1: 'basic',
+      attribute: 'physical',
+      skillType: 'basicSkill',
+      name: 'BasicAttackCloudPiercer_2',
+    },
+  },
+  'BasicAttackCloudPiercer_2:dazeBuildup': {
+    sheet: 'Harumasa',
+    name: 'BasicAttackCloudPiercer_2:dazeBuildup',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'dazeBuildup',
+      sheet: 'Harumasa',
+      damageType1: 'basic',
+      attribute: 'physical',
+      skillType: 'basicSkill',
+      name: 'BasicAttackCloudPiercer_2',
+    },
+  },
+  'BasicAttackCloudPiercer_2:anomBuildup': {
+    sheet: 'Harumasa',
+    name: 'BasicAttackCloudPiercer_2:anomBuildup',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomBuildup',
+      sheet: 'Harumasa',
+      damageType1: 'basic',
+      attribute: 'physical',
+      skillType: 'basicSkill',
+      name: 'BasicAttackCloudPiercer_2',
+    },
+  },
+  'BasicAttackCloudPiercer_3:standardDmg': {
+    sheet: 'Harumasa',
+    name: 'BasicAttackCloudPiercer_3:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -232,12 +226,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCloudPiercer_4_dmg',
+      name: 'BasicAttackCloudPiercer_3',
     },
   },
-  BasicAttackCloudPiercer_4_daze: {
+  'BasicAttackCloudPiercer_3:dazeBuildup': {
     sheet: 'Harumasa',
-    name: 'BasicAttackCloudPiercer_4_daze',
+    name: 'BasicAttackCloudPiercer_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -246,12 +240,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCloudPiercer_4_daze',
+      name: 'BasicAttackCloudPiercer_3',
     },
   },
-  BasicAttackCloudPiercer_4_anomBuildup: {
+  'BasicAttackCloudPiercer_3:anomBuildup': {
     sheet: 'Harumasa',
-    name: 'BasicAttackCloudPiercer_4_anomBuildup',
+    name: 'BasicAttackCloudPiercer_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -260,51 +254,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCloudPiercer_4_anomBuildup',
+      name: 'BasicAttackCloudPiercer_3',
     },
   },
-  BasicAttackCloudPiercerDrift_0_dmg: {
+  'BasicAttackCloudPiercer_4:standardDmg': {
     sheet: 'Harumasa',
-    name: 'BasicAttackCloudPiercerDrift_0_dmg',
-    tag: {
-      et: 'own',
-      qt: 'formula',
-      q: 'standardDmg',
-      sheet: 'Harumasa',
-      damageType1: 'basic',
-      attribute: 'physical',
-      name: 'BasicAttackCloudPiercerDrift_0_dmg',
-    },
-  },
-  BasicAttackCloudPiercerDrift_0_daze: {
-    sheet: 'Harumasa',
-    name: 'BasicAttackCloudPiercerDrift_0_daze',
-    tag: {
-      et: 'own',
-      qt: 'formula',
-      q: 'dazeBuildup',
-      sheet: 'Harumasa',
-      damageType1: 'basic',
-      attribute: 'physical',
-      name: 'BasicAttackCloudPiercerDrift_0_daze',
-    },
-  },
-  BasicAttackCloudPiercerDrift_0_anomBuildup: {
-    sheet: 'Harumasa',
-    name: 'BasicAttackCloudPiercerDrift_0_anomBuildup',
-    tag: {
-      et: 'own',
-      qt: 'formula',
-      q: 'anomBuildup',
-      sheet: 'Harumasa',
-      damageType1: 'basic',
-      attribute: 'physical',
-      name: 'BasicAttackCloudPiercerDrift_0_anomBuildup',
-    },
-  },
-  BasicAttackFallingFeather_0_dmg: {
-    sheet: 'Harumasa',
-    name: 'BasicAttackFallingFeather_0_dmg',
+    name: 'BasicAttackCloudPiercer_4:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -313,12 +268,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackFallingFeather_0_dmg',
+      name: 'BasicAttackCloudPiercer_4',
     },
   },
-  BasicAttackFallingFeather_0_daze: {
+  'BasicAttackCloudPiercer_4:dazeBuildup': {
     sheet: 'Harumasa',
-    name: 'BasicAttackFallingFeather_0_daze',
+    name: 'BasicAttackCloudPiercer_4:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -327,12 +282,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackFallingFeather_0_daze',
+      name: 'BasicAttackCloudPiercer_4',
     },
   },
-  BasicAttackFallingFeather_0_anomBuildup: {
+  'BasicAttackCloudPiercer_4:anomBuildup': {
     sheet: 'Harumasa',
-    name: 'BasicAttackFallingFeather_0_anomBuildup',
+    name: 'BasicAttackCloudPiercer_4:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -341,12 +296,54 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackFallingFeather_0_anomBuildup',
+      name: 'BasicAttackCloudPiercer_4',
     },
   },
-  BasicAttackHaOtoNoYa_0_dmg: {
+  'BasicAttackCloudPiercerDrift_0:standardDmg': {
     sheet: 'Harumasa',
-    name: 'BasicAttackHaOtoNoYa_0_dmg',
+    name: 'BasicAttackCloudPiercerDrift_0:standardDmg',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'standardDmg',
+      sheet: 'Harumasa',
+      damageType1: 'basic',
+      attribute: 'physical',
+      skillType: 'basicSkill',
+      name: 'BasicAttackCloudPiercerDrift_0',
+    },
+  },
+  'BasicAttackCloudPiercerDrift_0:dazeBuildup': {
+    sheet: 'Harumasa',
+    name: 'BasicAttackCloudPiercerDrift_0:dazeBuildup',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'dazeBuildup',
+      sheet: 'Harumasa',
+      damageType1: 'basic',
+      attribute: 'physical',
+      skillType: 'basicSkill',
+      name: 'BasicAttackCloudPiercerDrift_0',
+    },
+  },
+  'BasicAttackCloudPiercerDrift_0:anomBuildup': {
+    sheet: 'Harumasa',
+    name: 'BasicAttackCloudPiercerDrift_0:anomBuildup',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomBuildup',
+      sheet: 'Harumasa',
+      damageType1: 'basic',
+      attribute: 'physical',
+      skillType: 'basicSkill',
+      name: 'BasicAttackCloudPiercerDrift_0',
+    },
+  },
+  'BasicAttackFallingFeather_0:standardDmg': {
+    sheet: 'Harumasa',
+    name: 'BasicAttackFallingFeather_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -355,12 +352,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackHaOtoNoYa_0_dmg',
+      name: 'BasicAttackFallingFeather_0',
     },
   },
-  BasicAttackHaOtoNoYa_0_daze: {
+  'BasicAttackFallingFeather_0:dazeBuildup': {
     sheet: 'Harumasa',
-    name: 'BasicAttackHaOtoNoYa_0_daze',
+    name: 'BasicAttackFallingFeather_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -369,12 +366,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackHaOtoNoYa_0_daze',
+      name: 'BasicAttackFallingFeather_0',
     },
   },
-  BasicAttackHaOtoNoYa_0_anomBuildup: {
+  'BasicAttackFallingFeather_0:anomBuildup': {
     sheet: 'Harumasa',
-    name: 'BasicAttackHaOtoNoYa_0_anomBuildup',
+    name: 'BasicAttackFallingFeather_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -383,12 +380,54 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackHaOtoNoYa_0_anomBuildup',
+      name: 'BasicAttackFallingFeather_0',
     },
   },
-  DashAttackHitenNoTsuru_0_dmg: {
+  'BasicAttackHaOtoNoYa_0:standardDmg': {
     sheet: 'Harumasa',
-    name: 'DashAttackHitenNoTsuru_0_dmg',
+    name: 'BasicAttackHaOtoNoYa_0:standardDmg',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'standardDmg',
+      sheet: 'Harumasa',
+      attribute: 'electric',
+      damageType1: 'basic',
+      skillType: 'basicSkill',
+      name: 'BasicAttackHaOtoNoYa_0',
+    },
+  },
+  'BasicAttackHaOtoNoYa_0:dazeBuildup': {
+    sheet: 'Harumasa',
+    name: 'BasicAttackHaOtoNoYa_0:dazeBuildup',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'dazeBuildup',
+      sheet: 'Harumasa',
+      attribute: 'electric',
+      damageType1: 'basic',
+      skillType: 'basicSkill',
+      name: 'BasicAttackHaOtoNoYa_0',
+    },
+  },
+  'BasicAttackHaOtoNoYa_0:anomBuildup': {
+    sheet: 'Harumasa',
+    name: 'BasicAttackHaOtoNoYa_0:anomBuildup',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomBuildup',
+      sheet: 'Harumasa',
+      attribute: 'electric',
+      damageType1: 'basic',
+      skillType: 'basicSkill',
+      name: 'BasicAttackHaOtoNoYa_0',
+    },
+  },
+  'DashAttackHitenNoTsuru_0:standardDmg': {
+    sheet: 'Harumasa',
+    name: 'DashAttackHitenNoTsuru_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -396,12 +435,13 @@ export const formulas = {
       sheet: 'Harumasa',
       damageType1: 'dash',
       attribute: 'physical',
-      name: 'DashAttackHitenNoTsuru_0_dmg',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackHitenNoTsuru_0',
     },
   },
-  DashAttackHitenNoTsuru_0_daze: {
+  'DashAttackHitenNoTsuru_0:dazeBuildup': {
     sheet: 'Harumasa',
-    name: 'DashAttackHitenNoTsuru_0_daze',
+    name: 'DashAttackHitenNoTsuru_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -409,12 +449,13 @@ export const formulas = {
       sheet: 'Harumasa',
       damageType1: 'dash',
       attribute: 'physical',
-      name: 'DashAttackHitenNoTsuru_0_daze',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackHitenNoTsuru_0',
     },
   },
-  DashAttackHitenNoTsuru_0_anomBuildup: {
+  'DashAttackHitenNoTsuru_0:anomBuildup': {
     sheet: 'Harumasa',
-    name: 'DashAttackHitenNoTsuru_0_anomBuildup',
+    name: 'DashAttackHitenNoTsuru_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -422,12 +463,13 @@ export const formulas = {
       sheet: 'Harumasa',
       damageType1: 'dash',
       attribute: 'physical',
-      name: 'DashAttackHitenNoTsuru_0_anomBuildup',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackHitenNoTsuru_0',
     },
   },
-  DodgeCounterHiddenEdge_0_dmg: {
+  'DodgeCounterHiddenEdge_0:standardDmg': {
     sheet: 'Harumasa',
-    name: 'DodgeCounterHiddenEdge_0_dmg',
+    name: 'DodgeCounterHiddenEdge_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -436,12 +478,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterHiddenEdge_0_dmg',
+      name: 'DodgeCounterHiddenEdge_0',
     },
   },
-  DodgeCounterHiddenEdge_0_daze: {
+  'DodgeCounterHiddenEdge_0:dazeBuildup': {
     sheet: 'Harumasa',
-    name: 'DodgeCounterHiddenEdge_0_daze',
+    name: 'DodgeCounterHiddenEdge_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -450,12 +492,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterHiddenEdge_0_daze',
+      name: 'DodgeCounterHiddenEdge_0',
     },
   },
-  DodgeCounterHiddenEdge_0_anomBuildup: {
+  'DodgeCounterHiddenEdge_0:anomBuildup': {
     sheet: 'Harumasa',
-    name: 'DodgeCounterHiddenEdge_0_anomBuildup',
+    name: 'DodgeCounterHiddenEdge_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -464,12 +506,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterHiddenEdge_0_anomBuildup',
+      name: 'DodgeCounterHiddenEdge_0',
     },
   },
-  DashAttackHitenNoTsuruSlash_0_dmg: {
+  'DashAttackHitenNoTsuruSlash_0:standardDmg': {
     sheet: 'Harumasa',
-    name: 'DashAttackHitenNoTsuruSlash_0_dmg',
+    name: 'DashAttackHitenNoTsuruSlash_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -477,12 +519,13 @@ export const formulas = {
       sheet: 'Harumasa',
       attribute: 'electric',
       damageType1: 'dash',
-      name: 'DashAttackHitenNoTsuruSlash_0_dmg',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackHitenNoTsuruSlash_0',
     },
   },
-  DashAttackHitenNoTsuruSlash_0_daze: {
+  'DashAttackHitenNoTsuruSlash_0:dazeBuildup': {
     sheet: 'Harumasa',
-    name: 'DashAttackHitenNoTsuruSlash_0_daze',
+    name: 'DashAttackHitenNoTsuruSlash_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -490,12 +533,13 @@ export const formulas = {
       sheet: 'Harumasa',
       attribute: 'electric',
       damageType1: 'dash',
-      name: 'DashAttackHitenNoTsuruSlash_0_daze',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackHitenNoTsuruSlash_0',
     },
   },
-  DashAttackHitenNoTsuruSlash_0_anomBuildup: {
+  'DashAttackHitenNoTsuruSlash_0:anomBuildup': {
     sheet: 'Harumasa',
-    name: 'DashAttackHitenNoTsuruSlash_0_anomBuildup',
+    name: 'DashAttackHitenNoTsuruSlash_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -503,12 +547,13 @@ export const formulas = {
       sheet: 'Harumasa',
       attribute: 'electric',
       damageType1: 'dash',
-      name: 'DashAttackHitenNoTsuruSlash_0_anomBuildup',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackHitenNoTsuruSlash_0',
     },
   },
-  DashAttackHitenNoTsuruSlash_1_dmg: {
+  'DashAttackHitenNoTsuruSlash_1:standardDmg': {
     sheet: 'Harumasa',
-    name: 'DashAttackHitenNoTsuruSlash_1_dmg',
+    name: 'DashAttackHitenNoTsuruSlash_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -516,12 +561,13 @@ export const formulas = {
       sheet: 'Harumasa',
       attribute: 'electric',
       damageType1: 'dash',
-      name: 'DashAttackHitenNoTsuruSlash_1_dmg',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackHitenNoTsuruSlash_1',
     },
   },
-  DashAttackHitenNoTsuruSlash_1_daze: {
+  'DashAttackHitenNoTsuruSlash_1:dazeBuildup': {
     sheet: 'Harumasa',
-    name: 'DashAttackHitenNoTsuruSlash_1_daze',
+    name: 'DashAttackHitenNoTsuruSlash_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -529,12 +575,13 @@ export const formulas = {
       sheet: 'Harumasa',
       attribute: 'electric',
       damageType1: 'dash',
-      name: 'DashAttackHitenNoTsuruSlash_1_daze',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackHitenNoTsuruSlash_1',
     },
   },
-  DashAttackHitenNoTsuruSlash_1_anomBuildup: {
+  'DashAttackHitenNoTsuruSlash_1:anomBuildup': {
     sheet: 'Harumasa',
-    name: 'DashAttackHitenNoTsuruSlash_1_anomBuildup',
+    name: 'DashAttackHitenNoTsuruSlash_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -542,12 +589,13 @@ export const formulas = {
       sheet: 'Harumasa',
       attribute: 'electric',
       damageType1: 'dash',
-      name: 'DashAttackHitenNoTsuruSlash_1_anomBuildup',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackHitenNoTsuruSlash_1',
     },
   },
-  DashAttackHitenNoTsuruSlash_2_dmg: {
+  'DashAttackHitenNoTsuruSlash_2:standardDmg': {
     sheet: 'Harumasa',
-    name: 'DashAttackHitenNoTsuruSlash_2_dmg',
+    name: 'DashAttackHitenNoTsuruSlash_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -555,12 +603,13 @@ export const formulas = {
       sheet: 'Harumasa',
       attribute: 'electric',
       damageType1: 'dash',
-      name: 'DashAttackHitenNoTsuruSlash_2_dmg',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackHitenNoTsuruSlash_2',
     },
   },
-  DashAttackHitenNoTsuruSlash_2_daze: {
+  'DashAttackHitenNoTsuruSlash_2:dazeBuildup': {
     sheet: 'Harumasa',
-    name: 'DashAttackHitenNoTsuruSlash_2_daze',
+    name: 'DashAttackHitenNoTsuruSlash_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -568,12 +617,13 @@ export const formulas = {
       sheet: 'Harumasa',
       attribute: 'electric',
       damageType1: 'dash',
-      name: 'DashAttackHitenNoTsuruSlash_2_daze',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackHitenNoTsuruSlash_2',
     },
   },
-  DashAttackHitenNoTsuruSlash_2_anomBuildup: {
+  'DashAttackHitenNoTsuruSlash_2:anomBuildup': {
     sheet: 'Harumasa',
-    name: 'DashAttackHitenNoTsuruSlash_2_anomBuildup',
+    name: 'DashAttackHitenNoTsuruSlash_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -581,12 +631,55 @@ export const formulas = {
       sheet: 'Harumasa',
       attribute: 'electric',
       damageType1: 'dash',
-      name: 'DashAttackHitenNoTsuruSlash_2_anomBuildup',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackHitenNoTsuruSlash_2',
     },
   },
-  SpecialAttackNowhereToHide_0_dmg: {
+  'ChasingThunder_0:standardDmg': {
     sheet: 'Harumasa',
-    name: 'SpecialAttackNowhereToHide_0_dmg',
+    name: 'ChasingThunder_0:standardDmg',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'standardDmg',
+      sheet: 'Harumasa',
+      attribute: 'electric',
+      damageType1: 'dash',
+      skillType: 'dodgeSkill',
+      name: 'ChasingThunder_0',
+    },
+  },
+  'ChasingThunder_0:dazeBuildup': {
+    sheet: 'Harumasa',
+    name: 'ChasingThunder_0:dazeBuildup',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'dazeBuildup',
+      sheet: 'Harumasa',
+      attribute: 'electric',
+      damageType1: 'dash',
+      skillType: 'dodgeSkill',
+      name: 'ChasingThunder_0',
+    },
+  },
+  'ChasingThunder_0:anomBuildup': {
+    sheet: 'Harumasa',
+    name: 'ChasingThunder_0:anomBuildup',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomBuildup',
+      sheet: 'Harumasa',
+      attribute: 'electric',
+      damageType1: 'dash',
+      skillType: 'dodgeSkill',
+      name: 'ChasingThunder_0',
+    },
+  },
+  'SpecialAttackNowhereToHide_0:standardDmg': {
+    sheet: 'Harumasa',
+    name: 'SpecialAttackNowhereToHide_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -595,12 +688,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackNowhereToHide_0_dmg',
+      name: 'SpecialAttackNowhereToHide_0',
     },
   },
-  SpecialAttackNowhereToHide_0_daze: {
+  'SpecialAttackNowhereToHide_0:dazeBuildup': {
     sheet: 'Harumasa',
-    name: 'SpecialAttackNowhereToHide_0_daze',
+    name: 'SpecialAttackNowhereToHide_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -609,12 +702,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackNowhereToHide_0_daze',
+      name: 'SpecialAttackNowhereToHide_0',
     },
   },
-  SpecialAttackNowhereToHide_0_anomBuildup: {
+  'SpecialAttackNowhereToHide_0:anomBuildup': {
     sheet: 'Harumasa',
-    name: 'SpecialAttackNowhereToHide_0_anomBuildup',
+    name: 'SpecialAttackNowhereToHide_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -623,12 +716,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackNowhereToHide_0_anomBuildup',
+      name: 'SpecialAttackNowhereToHide_0',
     },
   },
-  EXSpecialAttackNowhereToRun_0_dmg: {
+  'EXSpecialAttackNowhereToRun_0:standardDmg': {
     sheet: 'Harumasa',
-    name: 'EXSpecialAttackNowhereToRun_0_dmg',
+    name: 'EXSpecialAttackNowhereToRun_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -637,12 +730,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackNowhereToRun_0_dmg',
+      name: 'EXSpecialAttackNowhereToRun_0',
     },
   },
-  EXSpecialAttackNowhereToRun_0_daze: {
+  'EXSpecialAttackNowhereToRun_0:dazeBuildup': {
     sheet: 'Harumasa',
-    name: 'EXSpecialAttackNowhereToRun_0_daze',
+    name: 'EXSpecialAttackNowhereToRun_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -651,12 +744,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackNowhereToRun_0_daze',
+      name: 'EXSpecialAttackNowhereToRun_0',
     },
   },
-  EXSpecialAttackNowhereToRun_0_anomBuildup: {
+  'EXSpecialAttackNowhereToRun_0:anomBuildup': {
     sheet: 'Harumasa',
-    name: 'EXSpecialAttackNowhereToRun_0_anomBuildup',
+    name: 'EXSpecialAttackNowhereToRun_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -665,12 +758,54 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackNowhereToRun_0_anomBuildup',
+      name: 'EXSpecialAttackNowhereToRun_0',
     },
   },
-  ChainAttackKaiHanare_0_dmg: {
+  'EXSpecialAttackNowhereToRunPatrol_0:standardDmg': {
     sheet: 'Harumasa',
-    name: 'ChainAttackKaiHanare_0_dmg',
+    name: 'EXSpecialAttackNowhereToRunPatrol_0:standardDmg',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'standardDmg',
+      sheet: 'Harumasa',
+      attribute: 'electric',
+      damageType1: 'exSpecial',
+      skillType: 'specialSkill',
+      name: 'EXSpecialAttackNowhereToRunPatrol_0',
+    },
+  },
+  'EXSpecialAttackNowhereToRunPatrol_0:dazeBuildup': {
+    sheet: 'Harumasa',
+    name: 'EXSpecialAttackNowhereToRunPatrol_0:dazeBuildup',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'dazeBuildup',
+      sheet: 'Harumasa',
+      attribute: 'electric',
+      damageType1: 'exSpecial',
+      skillType: 'specialSkill',
+      name: 'EXSpecialAttackNowhereToRunPatrol_0',
+    },
+  },
+  'EXSpecialAttackNowhereToRunPatrol_0:anomBuildup': {
+    sheet: 'Harumasa',
+    name: 'EXSpecialAttackNowhereToRunPatrol_0:anomBuildup',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomBuildup',
+      sheet: 'Harumasa',
+      attribute: 'electric',
+      damageType1: 'exSpecial',
+      skillType: 'specialSkill',
+      name: 'EXSpecialAttackNowhereToRunPatrol_0',
+    },
+  },
+  'ChainAttackKaiHanare_0:standardDmg': {
+    sheet: 'Harumasa',
+    name: 'ChainAttackKaiHanare_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -679,12 +814,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackKaiHanare_0_dmg',
+      name: 'ChainAttackKaiHanare_0',
     },
   },
-  ChainAttackKaiHanare_0_daze: {
+  'ChainAttackKaiHanare_0:dazeBuildup': {
     sheet: 'Harumasa',
-    name: 'ChainAttackKaiHanare_0_daze',
+    name: 'ChainAttackKaiHanare_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -693,12 +828,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackKaiHanare_0_daze',
+      name: 'ChainAttackKaiHanare_0',
     },
   },
-  ChainAttackKaiHanare_0_anomBuildup: {
+  'ChainAttackKaiHanare_0:anomBuildup': {
     sheet: 'Harumasa',
-    name: 'ChainAttackKaiHanare_0_anomBuildup',
+    name: 'ChainAttackKaiHanare_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -707,12 +842,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackKaiHanare_0_anomBuildup',
+      name: 'ChainAttackKaiHanare_0',
     },
   },
-  UltimateZanshin_0_dmg: {
+  'UltimateZanshin_0:standardDmg': {
     sheet: 'Harumasa',
-    name: 'UltimateZanshin_0_dmg',
+    name: 'UltimateZanshin_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -721,12 +856,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateZanshin_0_dmg',
+      name: 'UltimateZanshin_0',
     },
   },
-  UltimateZanshin_0_daze: {
+  'UltimateZanshin_0:dazeBuildup': {
     sheet: 'Harumasa',
-    name: 'UltimateZanshin_0_daze',
+    name: 'UltimateZanshin_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -735,12 +870,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateZanshin_0_daze',
+      name: 'UltimateZanshin_0',
     },
   },
-  UltimateZanshin_0_anomBuildup: {
+  'UltimateZanshin_0:anomBuildup': {
     sheet: 'Harumasa',
-    name: 'UltimateZanshin_0_anomBuildup',
+    name: 'UltimateZanshin_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -749,12 +884,54 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateZanshin_0_anomBuildup',
+      name: 'UltimateZanshin_0',
     },
   },
-  QuickAssistBracedBow_0_dmg: {
+  'ZanshinScatteredBlossoms_0:standardDmg': {
     sheet: 'Harumasa',
-    name: 'QuickAssistBracedBow_0_dmg',
+    name: 'ZanshinScatteredBlossoms_0:standardDmg',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'standardDmg',
+      sheet: 'Harumasa',
+      attribute: 'electric',
+      damageType1: 'ult',
+      skillType: 'chainSkill',
+      name: 'ZanshinScatteredBlossoms_0',
+    },
+  },
+  'ZanshinScatteredBlossoms_0:dazeBuildup': {
+    sheet: 'Harumasa',
+    name: 'ZanshinScatteredBlossoms_0:dazeBuildup',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'dazeBuildup',
+      sheet: 'Harumasa',
+      attribute: 'electric',
+      damageType1: 'ult',
+      skillType: 'chainSkill',
+      name: 'ZanshinScatteredBlossoms_0',
+    },
+  },
+  'ZanshinScatteredBlossoms_0:anomBuildup': {
+    sheet: 'Harumasa',
+    name: 'ZanshinScatteredBlossoms_0:anomBuildup',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomBuildup',
+      sheet: 'Harumasa',
+      attribute: 'electric',
+      damageType1: 'ult',
+      skillType: 'chainSkill',
+      name: 'ZanshinScatteredBlossoms_0',
+    },
+  },
+  'QuickAssistBracedBow_0:standardDmg': {
+    sheet: 'Harumasa',
+    name: 'QuickAssistBracedBow_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -763,12 +940,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistBracedBow_0_dmg',
+      name: 'QuickAssistBracedBow_0',
     },
   },
-  QuickAssistBracedBow_0_daze: {
+  'QuickAssistBracedBow_0:dazeBuildup': {
     sheet: 'Harumasa',
-    name: 'QuickAssistBracedBow_0_daze',
+    name: 'QuickAssistBracedBow_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -777,12 +954,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistBracedBow_0_daze',
+      name: 'QuickAssistBracedBow_0',
     },
   },
-  QuickAssistBracedBow_0_anomBuildup: {
+  'QuickAssistBracedBow_0:anomBuildup': {
     sheet: 'Harumasa',
-    name: 'QuickAssistBracedBow_0_anomBuildup',
+    name: 'QuickAssistBracedBow_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -791,12 +968,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistBracedBow_0_anomBuildup',
+      name: 'QuickAssistBracedBow_0',
     },
   },
-  DefensiveAssistYugamae_0_dmg: {
+  'DefensiveAssistYugamae_0:standardDmg': {
     sheet: 'Harumasa',
-    name: 'DefensiveAssistYugamae_0_dmg',
+    name: 'DefensiveAssistYugamae_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -805,12 +982,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistYugamae_0_dmg',
+      name: 'DefensiveAssistYugamae_0',
     },
   },
-  DefensiveAssistYugamae_0_daze: {
+  'DefensiveAssistYugamae_0:dazeBuildup': {
     sheet: 'Harumasa',
-    name: 'DefensiveAssistYugamae_0_daze',
+    name: 'DefensiveAssistYugamae_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -819,12 +996,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistYugamae_0_daze',
+      name: 'DefensiveAssistYugamae_0',
     },
   },
-  DefensiveAssistYugamae_0_anomBuildup: {
+  'DefensiveAssistYugamae_0:anomBuildup': {
     sheet: 'Harumasa',
-    name: 'DefensiveAssistYugamae_0_anomBuildup',
+    name: 'DefensiveAssistYugamae_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -833,12 +1010,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistYugamae_0_anomBuildup',
+      name: 'DefensiveAssistYugamae_0',
     },
   },
-  DefensiveAssistYugamae_1_dmg: {
+  'DefensiveAssistYugamae_1:standardDmg': {
     sheet: 'Harumasa',
-    name: 'DefensiveAssistYugamae_1_dmg',
+    name: 'DefensiveAssistYugamae_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -847,12 +1024,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistYugamae_1_dmg',
+      name: 'DefensiveAssistYugamae_1',
     },
   },
-  DefensiveAssistYugamae_1_daze: {
+  'DefensiveAssistYugamae_1:dazeBuildup': {
     sheet: 'Harumasa',
-    name: 'DefensiveAssistYugamae_1_daze',
+    name: 'DefensiveAssistYugamae_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -861,12 +1038,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistYugamae_1_daze',
+      name: 'DefensiveAssistYugamae_1',
     },
   },
-  DefensiveAssistYugamae_1_anomBuildup: {
+  'DefensiveAssistYugamae_1:anomBuildup': {
     sheet: 'Harumasa',
-    name: 'DefensiveAssistYugamae_1_anomBuildup',
+    name: 'DefensiveAssistYugamae_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -875,12 +1052,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistYugamae_1_anomBuildup',
+      name: 'DefensiveAssistYugamae_1',
     },
   },
-  DefensiveAssistYugamae_2_dmg: {
+  'DefensiveAssistYugamae_2:standardDmg': {
     sheet: 'Harumasa',
-    name: 'DefensiveAssistYugamae_2_dmg',
+    name: 'DefensiveAssistYugamae_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -889,12 +1066,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistYugamae_2_dmg',
+      name: 'DefensiveAssistYugamae_2',
     },
   },
-  DefensiveAssistYugamae_2_daze: {
+  'DefensiveAssistYugamae_2:dazeBuildup': {
     sheet: 'Harumasa',
-    name: 'DefensiveAssistYugamae_2_daze',
+    name: 'DefensiveAssistYugamae_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -903,12 +1080,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistYugamae_2_daze',
+      name: 'DefensiveAssistYugamae_2',
     },
   },
-  DefensiveAssistYugamae_2_anomBuildup: {
+  'DefensiveAssistYugamae_2:anomBuildup': {
     sheet: 'Harumasa',
-    name: 'DefensiveAssistYugamae_2_anomBuildup',
+    name: 'DefensiveAssistYugamae_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -917,12 +1094,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistYugamae_2_anomBuildup',
+      name: 'DefensiveAssistYugamae_2',
     },
   },
-  AssistFollowUpYugamaeSlash_0_dmg: {
+  'AssistFollowUpYugamaeSlash_0:standardDmg': {
     sheet: 'Harumasa',
-    name: 'AssistFollowUpYugamaeSlash_0_dmg',
+    name: 'AssistFollowUpYugamaeSlash_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -931,12 +1108,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpYugamaeSlash_0_dmg',
+      name: 'AssistFollowUpYugamaeSlash_0',
     },
   },
-  AssistFollowUpYugamaeSlash_0_daze: {
+  'AssistFollowUpYugamaeSlash_0:dazeBuildup': {
     sheet: 'Harumasa',
-    name: 'AssistFollowUpYugamaeSlash_0_daze',
+    name: 'AssistFollowUpYugamaeSlash_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -945,12 +1122,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpYugamaeSlash_0_daze',
+      name: 'AssistFollowUpYugamaeSlash_0',
     },
   },
-  AssistFollowUpYugamaeSlash_0_anomBuildup: {
+  'AssistFollowUpYugamaeSlash_0:anomBuildup': {
     sheet: 'Harumasa',
-    name: 'AssistFollowUpYugamaeSlash_0_anomBuildup',
+    name: 'AssistFollowUpYugamaeSlash_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -959,7 +1136,7 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpYugamaeSlash_0_anomBuildup',
+      name: 'AssistFollowUpYugamaeSlash_0',
     },
   },
   m6_dmg: {

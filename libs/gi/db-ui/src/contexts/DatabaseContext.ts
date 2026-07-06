@@ -1,4 +1,3 @@
-'use client'
 import type { ArtCharDatabase } from '@genshin-optimizer/gi/db'
 import { createContext } from 'react'
 export type DatabaseContextObj = {

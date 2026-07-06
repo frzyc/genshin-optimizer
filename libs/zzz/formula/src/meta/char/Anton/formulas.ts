@@ -38,6 +38,33 @@ export const formulas = {
       name: 'disorderDmgInst_electric',
     },
   },
+  vortexDmgInst_electric: {
+    sheet: 'Anton',
+    name: 'vortexDmgInst_electric',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'Anton',
+      attribute: 'electric',
+      damageType1: 'vortex',
+      name: 'vortexDmgInst_electric',
+    },
+  },
+  abloomDmgInst: {
+    sheet: 'Anton',
+    name: 'abloomDmgInst',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'Anton',
+      attribute: 'electric',
+      damageType1: 'anomaly',
+      damageType2: 'abloom',
+      name: 'abloomDmgInst',
+    },
+  },
   anomalyBuildupInst: {
     sheet: 'Anton',
     name: 'anomalyBuildupInst',
@@ -62,9 +89,9 @@ export const formulas = {
       name: 'dazeInst',
     },
   },
-  BasicAttackEnthusiasticDrills_0_dmg: {
+  'BasicAttackEnthusiasticDrills_0:standardDmg': {
     sheet: 'Anton',
-    name: 'BasicAttackEnthusiasticDrills_0_dmg',
+    name: 'BasicAttackEnthusiasticDrills_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -72,12 +99,13 @@ export const formulas = {
       sheet: 'Anton',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackEnthusiasticDrills_0_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackEnthusiasticDrills_0',
     },
   },
-  BasicAttackEnthusiasticDrills_0_daze: {
+  'BasicAttackEnthusiasticDrills_0:dazeBuildup': {
     sheet: 'Anton',
-    name: 'BasicAttackEnthusiasticDrills_0_daze',
+    name: 'BasicAttackEnthusiasticDrills_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -85,12 +113,13 @@ export const formulas = {
       sheet: 'Anton',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackEnthusiasticDrills_0_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackEnthusiasticDrills_0',
     },
   },
-  BasicAttackEnthusiasticDrills_0_anomBuildup: {
+  'BasicAttackEnthusiasticDrills_0:anomBuildup': {
     sheet: 'Anton',
-    name: 'BasicAttackEnthusiasticDrills_0_anomBuildup',
+    name: 'BasicAttackEnthusiasticDrills_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -98,12 +127,13 @@ export const formulas = {
       sheet: 'Anton',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackEnthusiasticDrills_0_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackEnthusiasticDrills_0',
     },
   },
-  BasicAttackEnthusiasticDrills_1_dmg: {
+  'BasicAttackEnthusiasticDrills_1:standardDmg': {
     sheet: 'Anton',
-    name: 'BasicAttackEnthusiasticDrills_1_dmg',
+    name: 'BasicAttackEnthusiasticDrills_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -111,12 +141,13 @@ export const formulas = {
       sheet: 'Anton',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackEnthusiasticDrills_1_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackEnthusiasticDrills_1',
     },
   },
-  BasicAttackEnthusiasticDrills_1_daze: {
+  'BasicAttackEnthusiasticDrills_1:dazeBuildup': {
     sheet: 'Anton',
-    name: 'BasicAttackEnthusiasticDrills_1_daze',
+    name: 'BasicAttackEnthusiasticDrills_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -124,12 +155,13 @@ export const formulas = {
       sheet: 'Anton',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackEnthusiasticDrills_1_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackEnthusiasticDrills_1',
     },
   },
-  BasicAttackEnthusiasticDrills_1_anomBuildup: {
+  'BasicAttackEnthusiasticDrills_1:anomBuildup': {
     sheet: 'Anton',
-    name: 'BasicAttackEnthusiasticDrills_1_anomBuildup',
+    name: 'BasicAttackEnthusiasticDrills_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -137,12 +169,13 @@ export const formulas = {
       sheet: 'Anton',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackEnthusiasticDrills_1_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackEnthusiasticDrills_1',
     },
   },
-  BasicAttackEnthusiasticDrills_2_dmg: {
+  'BasicAttackEnthusiasticDrills_2:standardDmg': {
     sheet: 'Anton',
-    name: 'BasicAttackEnthusiasticDrills_2_dmg',
+    name: 'BasicAttackEnthusiasticDrills_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -150,12 +183,13 @@ export const formulas = {
       sheet: 'Anton',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackEnthusiasticDrills_2_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackEnthusiasticDrills_2',
     },
   },
-  BasicAttackEnthusiasticDrills_2_daze: {
+  'BasicAttackEnthusiasticDrills_2:dazeBuildup': {
     sheet: 'Anton',
-    name: 'BasicAttackEnthusiasticDrills_2_daze',
+    name: 'BasicAttackEnthusiasticDrills_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -163,12 +197,13 @@ export const formulas = {
       sheet: 'Anton',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackEnthusiasticDrills_2_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackEnthusiasticDrills_2',
     },
   },
-  BasicAttackEnthusiasticDrills_2_anomBuildup: {
+  'BasicAttackEnthusiasticDrills_2:anomBuildup': {
     sheet: 'Anton',
-    name: 'BasicAttackEnthusiasticDrills_2_anomBuildup',
+    name: 'BasicAttackEnthusiasticDrills_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -176,12 +211,13 @@ export const formulas = {
       sheet: 'Anton',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackEnthusiasticDrills_2_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackEnthusiasticDrills_2',
     },
   },
-  BasicAttackEnthusiasticDrills_3_dmg: {
+  'BasicAttackEnthusiasticDrills_3:standardDmg': {
     sheet: 'Anton',
-    name: 'BasicAttackEnthusiasticDrills_3_dmg',
+    name: 'BasicAttackEnthusiasticDrills_3:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -189,12 +225,13 @@ export const formulas = {
       sheet: 'Anton',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackEnthusiasticDrills_3_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackEnthusiasticDrills_3',
     },
   },
-  BasicAttackEnthusiasticDrills_3_daze: {
+  'BasicAttackEnthusiasticDrills_3:dazeBuildup': {
     sheet: 'Anton',
-    name: 'BasicAttackEnthusiasticDrills_3_daze',
+    name: 'BasicAttackEnthusiasticDrills_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -202,12 +239,13 @@ export const formulas = {
       sheet: 'Anton',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackEnthusiasticDrills_3_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackEnthusiasticDrills_3',
     },
   },
-  BasicAttackEnthusiasticDrills_3_anomBuildup: {
+  'BasicAttackEnthusiasticDrills_3:anomBuildup': {
     sheet: 'Anton',
-    name: 'BasicAttackEnthusiasticDrills_3_anomBuildup',
+    name: 'BasicAttackEnthusiasticDrills_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -215,12 +253,13 @@ export const formulas = {
       sheet: 'Anton',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackEnthusiasticDrills_3_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackEnthusiasticDrills_3',
     },
   },
-  BasicAttackEnthusiasticDrillsBurstMode_0_dmg: {
+  'BasicAttackEnthusiasticDrillsBurstMode_0:standardDmg': {
     sheet: 'Anton',
-    name: 'BasicAttackEnthusiasticDrillsBurstMode_0_dmg',
+    name: 'BasicAttackEnthusiasticDrillsBurstMode_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -228,12 +267,13 @@ export const formulas = {
       sheet: 'Anton',
       attribute: 'electric',
       damageType1: 'basic',
-      name: 'BasicAttackEnthusiasticDrillsBurstMode_0_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackEnthusiasticDrillsBurstMode_0',
     },
   },
-  BasicAttackEnthusiasticDrillsBurstMode_0_daze: {
+  'BasicAttackEnthusiasticDrillsBurstMode_0:dazeBuildup': {
     sheet: 'Anton',
-    name: 'BasicAttackEnthusiasticDrillsBurstMode_0_daze',
+    name: 'BasicAttackEnthusiasticDrillsBurstMode_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -241,12 +281,13 @@ export const formulas = {
       sheet: 'Anton',
       attribute: 'electric',
       damageType1: 'basic',
-      name: 'BasicAttackEnthusiasticDrillsBurstMode_0_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackEnthusiasticDrillsBurstMode_0',
     },
   },
-  BasicAttackEnthusiasticDrillsBurstMode_0_anomBuildup: {
+  'BasicAttackEnthusiasticDrillsBurstMode_0:anomBuildup': {
     sheet: 'Anton',
-    name: 'BasicAttackEnthusiasticDrillsBurstMode_0_anomBuildup',
+    name: 'BasicAttackEnthusiasticDrillsBurstMode_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -254,12 +295,13 @@ export const formulas = {
       sheet: 'Anton',
       attribute: 'electric',
       damageType1: 'basic',
-      name: 'BasicAttackEnthusiasticDrillsBurstMode_0_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackEnthusiasticDrillsBurstMode_0',
     },
   },
-  BasicAttackEnthusiasticDrillsBurstMode_1_dmg: {
+  'BasicAttackEnthusiasticDrillsBurstMode_1:standardDmg': {
     sheet: 'Anton',
-    name: 'BasicAttackEnthusiasticDrillsBurstMode_1_dmg',
+    name: 'BasicAttackEnthusiasticDrillsBurstMode_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -267,12 +309,13 @@ export const formulas = {
       sheet: 'Anton',
       attribute: 'electric',
       damageType1: 'basic',
-      name: 'BasicAttackEnthusiasticDrillsBurstMode_1_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackEnthusiasticDrillsBurstMode_1',
     },
   },
-  BasicAttackEnthusiasticDrillsBurstMode_1_daze: {
+  'BasicAttackEnthusiasticDrillsBurstMode_1:dazeBuildup': {
     sheet: 'Anton',
-    name: 'BasicAttackEnthusiasticDrillsBurstMode_1_daze',
+    name: 'BasicAttackEnthusiasticDrillsBurstMode_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -280,12 +323,13 @@ export const formulas = {
       sheet: 'Anton',
       attribute: 'electric',
       damageType1: 'basic',
-      name: 'BasicAttackEnthusiasticDrillsBurstMode_1_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackEnthusiasticDrillsBurstMode_1',
     },
   },
-  BasicAttackEnthusiasticDrillsBurstMode_1_anomBuildup: {
+  'BasicAttackEnthusiasticDrillsBurstMode_1:anomBuildup': {
     sheet: 'Anton',
-    name: 'BasicAttackEnthusiasticDrillsBurstMode_1_anomBuildup',
+    name: 'BasicAttackEnthusiasticDrillsBurstMode_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -293,12 +337,13 @@ export const formulas = {
       sheet: 'Anton',
       attribute: 'electric',
       damageType1: 'basic',
-      name: 'BasicAttackEnthusiasticDrillsBurstMode_1_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackEnthusiasticDrillsBurstMode_1',
     },
   },
-  BasicAttackEnthusiasticDrillsBurstMode_2_dmg: {
+  'BasicAttackEnthusiasticDrillsBurstMode_2:standardDmg': {
     sheet: 'Anton',
-    name: 'BasicAttackEnthusiasticDrillsBurstMode_2_dmg',
+    name: 'BasicAttackEnthusiasticDrillsBurstMode_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -306,12 +351,13 @@ export const formulas = {
       sheet: 'Anton',
       attribute: 'electric',
       damageType1: 'basic',
-      name: 'BasicAttackEnthusiasticDrillsBurstMode_2_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackEnthusiasticDrillsBurstMode_2',
     },
   },
-  BasicAttackEnthusiasticDrillsBurstMode_2_daze: {
+  'BasicAttackEnthusiasticDrillsBurstMode_2:dazeBuildup': {
     sheet: 'Anton',
-    name: 'BasicAttackEnthusiasticDrillsBurstMode_2_daze',
+    name: 'BasicAttackEnthusiasticDrillsBurstMode_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -319,12 +365,13 @@ export const formulas = {
       sheet: 'Anton',
       attribute: 'electric',
       damageType1: 'basic',
-      name: 'BasicAttackEnthusiasticDrillsBurstMode_2_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackEnthusiasticDrillsBurstMode_2',
     },
   },
-  BasicAttackEnthusiasticDrillsBurstMode_2_anomBuildup: {
+  'BasicAttackEnthusiasticDrillsBurstMode_2:anomBuildup': {
     sheet: 'Anton',
-    name: 'BasicAttackEnthusiasticDrillsBurstMode_2_anomBuildup',
+    name: 'BasicAttackEnthusiasticDrillsBurstMode_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -332,12 +379,13 @@ export const formulas = {
       sheet: 'Anton',
       attribute: 'electric',
       damageType1: 'basic',
-      name: 'BasicAttackEnthusiasticDrillsBurstMode_2_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackEnthusiasticDrillsBurstMode_2',
     },
   },
-  DashAttackFireWithFire_0_dmg: {
+  'DashAttackFireWithFire_0:standardDmg': {
     sheet: 'Anton',
-    name: 'DashAttackFireWithFire_0_dmg',
+    name: 'DashAttackFireWithFire_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -345,12 +393,13 @@ export const formulas = {
       sheet: 'Anton',
       damageType1: 'dash',
       attribute: 'physical',
-      name: 'DashAttackFireWithFire_0_dmg',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackFireWithFire_0',
     },
   },
-  DashAttackFireWithFire_0_daze: {
+  'DashAttackFireWithFire_0:dazeBuildup': {
     sheet: 'Anton',
-    name: 'DashAttackFireWithFire_0_daze',
+    name: 'DashAttackFireWithFire_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -358,12 +407,13 @@ export const formulas = {
       sheet: 'Anton',
       damageType1: 'dash',
       attribute: 'physical',
-      name: 'DashAttackFireWithFire_0_daze',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackFireWithFire_0',
     },
   },
-  DashAttackFireWithFire_0_anomBuildup: {
+  'DashAttackFireWithFire_0:anomBuildup': {
     sheet: 'Anton',
-    name: 'DashAttackFireWithFire_0_anomBuildup',
+    name: 'DashAttackFireWithFire_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -371,12 +421,13 @@ export const formulas = {
       sheet: 'Anton',
       damageType1: 'dash',
       attribute: 'physical',
-      name: 'DashAttackFireWithFire_0_anomBuildup',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackFireWithFire_0',
     },
   },
-  DodgeCounterRetaliation_0_dmg: {
+  'DodgeCounterRetaliation_0:standardDmg': {
     sheet: 'Anton',
-    name: 'DodgeCounterRetaliation_0_dmg',
+    name: 'DodgeCounterRetaliation_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -384,12 +435,13 @@ export const formulas = {
       sheet: 'Anton',
       damageType1: 'dodgeCounter',
       attribute: 'physical',
-      name: 'DodgeCounterRetaliation_0_dmg',
+      skillType: 'dodgeSkill',
+      name: 'DodgeCounterRetaliation_0',
     },
   },
-  DodgeCounterRetaliation_0_daze: {
+  'DodgeCounterRetaliation_0:dazeBuildup': {
     sheet: 'Anton',
-    name: 'DodgeCounterRetaliation_0_daze',
+    name: 'DodgeCounterRetaliation_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -397,12 +449,13 @@ export const formulas = {
       sheet: 'Anton',
       damageType1: 'dodgeCounter',
       attribute: 'physical',
-      name: 'DodgeCounterRetaliation_0_daze',
+      skillType: 'dodgeSkill',
+      name: 'DodgeCounterRetaliation_0',
     },
   },
-  DodgeCounterRetaliation_0_anomBuildup: {
+  'DodgeCounterRetaliation_0:anomBuildup': {
     sheet: 'Anton',
-    name: 'DodgeCounterRetaliation_0_anomBuildup',
+    name: 'DodgeCounterRetaliation_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -410,12 +463,13 @@ export const formulas = {
       sheet: 'Anton',
       damageType1: 'dodgeCounter',
       attribute: 'physical',
-      name: 'DodgeCounterRetaliation_0_anomBuildup',
+      skillType: 'dodgeSkill',
+      name: 'DodgeCounterRetaliation_0',
     },
   },
-  DodgeCounterOverloadDrillBurstMode_0_dmg: {
+  'DodgeCounterOverloadDrillBurstMode_0:standardDmg': {
     sheet: 'Anton',
-    name: 'DodgeCounterOverloadDrillBurstMode_0_dmg',
+    name: 'DodgeCounterOverloadDrillBurstMode_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -423,12 +477,13 @@ export const formulas = {
       sheet: 'Anton',
       attribute: 'electric',
       damageType1: 'dodgeCounter',
-      name: 'DodgeCounterOverloadDrillBurstMode_0_dmg',
+      skillType: 'dodgeSkill',
+      name: 'DodgeCounterOverloadDrillBurstMode_0',
     },
   },
-  DodgeCounterOverloadDrillBurstMode_0_daze: {
+  'DodgeCounterOverloadDrillBurstMode_0:dazeBuildup': {
     sheet: 'Anton',
-    name: 'DodgeCounterOverloadDrillBurstMode_0_daze',
+    name: 'DodgeCounterOverloadDrillBurstMode_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -436,12 +491,13 @@ export const formulas = {
       sheet: 'Anton',
       attribute: 'electric',
       damageType1: 'dodgeCounter',
-      name: 'DodgeCounterOverloadDrillBurstMode_0_daze',
+      skillType: 'dodgeSkill',
+      name: 'DodgeCounterOverloadDrillBurstMode_0',
     },
   },
-  DodgeCounterOverloadDrillBurstMode_0_anomBuildup: {
+  'DodgeCounterOverloadDrillBurstMode_0:anomBuildup': {
     sheet: 'Anton',
-    name: 'DodgeCounterOverloadDrillBurstMode_0_anomBuildup',
+    name: 'DodgeCounterOverloadDrillBurstMode_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -449,12 +505,13 @@ export const formulas = {
       sheet: 'Anton',
       attribute: 'electric',
       damageType1: 'dodgeCounter',
-      name: 'DodgeCounterOverloadDrillBurstMode_0_anomBuildup',
+      skillType: 'dodgeSkill',
+      name: 'DodgeCounterOverloadDrillBurstMode_0',
     },
   },
-  SpecialAttackSpinBro_0_dmg: {
+  'SpecialAttackSpinBro_0:standardDmg': {
     sheet: 'Anton',
-    name: 'SpecialAttackSpinBro_0_dmg',
+    name: 'SpecialAttackSpinBro_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -462,12 +519,13 @@ export const formulas = {
       sheet: 'Anton',
       attribute: 'electric',
       damageType1: 'special',
-      name: 'SpecialAttackSpinBro_0_dmg',
+      skillType: 'specialSkill',
+      name: 'SpecialAttackSpinBro_0',
     },
   },
-  SpecialAttackSpinBro_0_daze: {
+  'SpecialAttackSpinBro_0:dazeBuildup': {
     sheet: 'Anton',
-    name: 'SpecialAttackSpinBro_0_daze',
+    name: 'SpecialAttackSpinBro_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -475,12 +533,13 @@ export const formulas = {
       sheet: 'Anton',
       attribute: 'electric',
       damageType1: 'special',
-      name: 'SpecialAttackSpinBro_0_daze',
+      skillType: 'specialSkill',
+      name: 'SpecialAttackSpinBro_0',
     },
   },
-  SpecialAttackSpinBro_0_anomBuildup: {
+  'SpecialAttackSpinBro_0:anomBuildup': {
     sheet: 'Anton',
-    name: 'SpecialAttackSpinBro_0_anomBuildup',
+    name: 'SpecialAttackSpinBro_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -488,12 +547,13 @@ export const formulas = {
       sheet: 'Anton',
       attribute: 'electric',
       damageType1: 'special',
-      name: 'SpecialAttackSpinBro_0_anomBuildup',
+      skillType: 'specialSkill',
+      name: 'SpecialAttackSpinBro_0',
     },
   },
-  EXSpecialAttackSmashTheHorizonBro_0_dmg: {
+  'EXSpecialAttackSmashTheHorizonBro_0:standardDmg': {
     sheet: 'Anton',
-    name: 'EXSpecialAttackSmashTheHorizonBro_0_dmg',
+    name: 'EXSpecialAttackSmashTheHorizonBro_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -501,12 +561,13 @@ export const formulas = {
       sheet: 'Anton',
       attribute: 'electric',
       damageType1: 'exSpecial',
-      name: 'EXSpecialAttackSmashTheHorizonBro_0_dmg',
+      skillType: 'specialSkill',
+      name: 'EXSpecialAttackSmashTheHorizonBro_0',
     },
   },
-  EXSpecialAttackSmashTheHorizonBro_0_daze: {
+  'EXSpecialAttackSmashTheHorizonBro_0:dazeBuildup': {
     sheet: 'Anton',
-    name: 'EXSpecialAttackSmashTheHorizonBro_0_daze',
+    name: 'EXSpecialAttackSmashTheHorizonBro_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -514,12 +575,13 @@ export const formulas = {
       sheet: 'Anton',
       attribute: 'electric',
       damageType1: 'exSpecial',
-      name: 'EXSpecialAttackSmashTheHorizonBro_0_daze',
+      skillType: 'specialSkill',
+      name: 'EXSpecialAttackSmashTheHorizonBro_0',
     },
   },
-  EXSpecialAttackSmashTheHorizonBro_0_anomBuildup: {
+  'EXSpecialAttackSmashTheHorizonBro_0:anomBuildup': {
     sheet: 'Anton',
-    name: 'EXSpecialAttackSmashTheHorizonBro_0_anomBuildup',
+    name: 'EXSpecialAttackSmashTheHorizonBro_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -527,12 +589,13 @@ export const formulas = {
       sheet: 'Anton',
       attribute: 'electric',
       damageType1: 'exSpecial',
-      name: 'EXSpecialAttackSmashTheHorizonBro_0_anomBuildup',
+      skillType: 'specialSkill',
+      name: 'EXSpecialAttackSmashTheHorizonBro_0',
     },
   },
-  SpecialAttackExplosiveDrillBurstMode_0_dmg: {
+  'SpecialAttackExplosiveDrillBurstMode_0:standardDmg': {
     sheet: 'Anton',
-    name: 'SpecialAttackExplosiveDrillBurstMode_0_dmg',
+    name: 'SpecialAttackExplosiveDrillBurstMode_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -540,12 +603,13 @@ export const formulas = {
       sheet: 'Anton',
       attribute: 'electric',
       damageType1: 'special',
-      name: 'SpecialAttackExplosiveDrillBurstMode_0_dmg',
+      skillType: 'specialSkill',
+      name: 'SpecialAttackExplosiveDrillBurstMode_0',
     },
   },
-  SpecialAttackExplosiveDrillBurstMode_0_daze: {
+  'SpecialAttackExplosiveDrillBurstMode_0:dazeBuildup': {
     sheet: 'Anton',
-    name: 'SpecialAttackExplosiveDrillBurstMode_0_daze',
+    name: 'SpecialAttackExplosiveDrillBurstMode_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -553,12 +617,13 @@ export const formulas = {
       sheet: 'Anton',
       attribute: 'electric',
       damageType1: 'special',
-      name: 'SpecialAttackExplosiveDrillBurstMode_0_daze',
+      skillType: 'specialSkill',
+      name: 'SpecialAttackExplosiveDrillBurstMode_0',
     },
   },
-  SpecialAttackExplosiveDrillBurstMode_0_anomBuildup: {
+  'SpecialAttackExplosiveDrillBurstMode_0:anomBuildup': {
     sheet: 'Anton',
-    name: 'SpecialAttackExplosiveDrillBurstMode_0_anomBuildup',
+    name: 'SpecialAttackExplosiveDrillBurstMode_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -566,12 +631,13 @@ export const formulas = {
       sheet: 'Anton',
       attribute: 'electric',
       damageType1: 'special',
-      name: 'SpecialAttackExplosiveDrillBurstMode_0_anomBuildup',
+      skillType: 'specialSkill',
+      name: 'SpecialAttackExplosiveDrillBurstMode_0',
     },
   },
-  ChainAttackGoGoGo_0_dmg: {
+  'ChainAttackGoGoGo_0:standardDmg': {
     sheet: 'Anton',
-    name: 'ChainAttackGoGoGo_0_dmg',
+    name: 'ChainAttackGoGoGo_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -579,12 +645,13 @@ export const formulas = {
       sheet: 'Anton',
       attribute: 'electric',
       damageType1: 'chain',
-      name: 'ChainAttackGoGoGo_0_dmg',
+      skillType: 'chainSkill',
+      name: 'ChainAttackGoGoGo_0',
     },
   },
-  ChainAttackGoGoGo_0_daze: {
+  'ChainAttackGoGoGo_0:dazeBuildup': {
     sheet: 'Anton',
-    name: 'ChainAttackGoGoGo_0_daze',
+    name: 'ChainAttackGoGoGo_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -592,12 +659,13 @@ export const formulas = {
       sheet: 'Anton',
       attribute: 'electric',
       damageType1: 'chain',
-      name: 'ChainAttackGoGoGo_0_daze',
+      skillType: 'chainSkill',
+      name: 'ChainAttackGoGoGo_0',
     },
   },
-  ChainAttackGoGoGo_0_anomBuildup: {
+  'ChainAttackGoGoGo_0:anomBuildup': {
     sheet: 'Anton',
-    name: 'ChainAttackGoGoGo_0_anomBuildup',
+    name: 'ChainAttackGoGoGo_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -605,12 +673,13 @@ export const formulas = {
       sheet: 'Anton',
       attribute: 'electric',
       damageType1: 'chain',
-      name: 'ChainAttackGoGoGo_0_anomBuildup',
+      skillType: 'chainSkill',
+      name: 'ChainAttackGoGoGo_0',
     },
   },
-  UltimateGoGoGoGoGo_0_dmg: {
+  'UltimateGoGoGoGoGo_0:standardDmg': {
     sheet: 'Anton',
-    name: 'UltimateGoGoGoGoGo_0_dmg',
+    name: 'UltimateGoGoGoGoGo_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -618,12 +687,13 @@ export const formulas = {
       sheet: 'Anton',
       attribute: 'electric',
       damageType1: 'ult',
-      name: 'UltimateGoGoGoGoGo_0_dmg',
+      skillType: 'chainSkill',
+      name: 'UltimateGoGoGoGoGo_0',
     },
   },
-  UltimateGoGoGoGoGo_0_daze: {
+  'UltimateGoGoGoGoGo_0:dazeBuildup': {
     sheet: 'Anton',
-    name: 'UltimateGoGoGoGoGo_0_daze',
+    name: 'UltimateGoGoGoGoGo_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -631,12 +701,13 @@ export const formulas = {
       sheet: 'Anton',
       attribute: 'electric',
       damageType1: 'ult',
-      name: 'UltimateGoGoGoGoGo_0_daze',
+      skillType: 'chainSkill',
+      name: 'UltimateGoGoGoGoGo_0',
     },
   },
-  UltimateGoGoGoGoGo_0_anomBuildup: {
+  'UltimateGoGoGoGoGo_0:anomBuildup': {
     sheet: 'Anton',
-    name: 'UltimateGoGoGoGoGo_0_anomBuildup',
+    name: 'UltimateGoGoGoGoGo_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -644,12 +715,13 @@ export const formulas = {
       sheet: 'Anton',
       attribute: 'electric',
       damageType1: 'ult',
-      name: 'UltimateGoGoGoGoGo_0_anomBuildup',
+      skillType: 'chainSkill',
+      name: 'UltimateGoGoGoGoGo_0',
     },
   },
-  QuickAssistShoulderToShoulder_0_dmg: {
+  'QuickAssistShoulderToShoulder_0:standardDmg': {
     sheet: 'Anton',
-    name: 'QuickAssistShoulderToShoulder_0_dmg',
+    name: 'QuickAssistShoulderToShoulder_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -657,12 +729,13 @@ export const formulas = {
       sheet: 'Anton',
       damageType1: 'quickAssist',
       attribute: 'physical',
-      name: 'QuickAssistShoulderToShoulder_0_dmg',
+      skillType: 'assistSkill',
+      name: 'QuickAssistShoulderToShoulder_0',
     },
   },
-  QuickAssistShoulderToShoulder_0_daze: {
+  'QuickAssistShoulderToShoulder_0:dazeBuildup': {
     sheet: 'Anton',
-    name: 'QuickAssistShoulderToShoulder_0_daze',
+    name: 'QuickAssistShoulderToShoulder_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -670,12 +743,13 @@ export const formulas = {
       sheet: 'Anton',
       damageType1: 'quickAssist',
       attribute: 'physical',
-      name: 'QuickAssistShoulderToShoulder_0_daze',
+      skillType: 'assistSkill',
+      name: 'QuickAssistShoulderToShoulder_0',
     },
   },
-  QuickAssistShoulderToShoulder_0_anomBuildup: {
+  'QuickAssistShoulderToShoulder_0:anomBuildup': {
     sheet: 'Anton',
-    name: 'QuickAssistShoulderToShoulder_0_anomBuildup',
+    name: 'QuickAssistShoulderToShoulder_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -683,12 +757,13 @@ export const formulas = {
       sheet: 'Anton',
       damageType1: 'quickAssist',
       attribute: 'physical',
-      name: 'QuickAssistShoulderToShoulder_0_anomBuildup',
+      skillType: 'assistSkill',
+      name: 'QuickAssistShoulderToShoulder_0',
     },
   },
-  QuickAssistProtectiveDrillBurstMode_0_dmg: {
+  'QuickAssistProtectiveDrillBurstMode_0:standardDmg': {
     sheet: 'Anton',
-    name: 'QuickAssistProtectiveDrillBurstMode_0_dmg',
+    name: 'QuickAssistProtectiveDrillBurstMode_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -696,12 +771,13 @@ export const formulas = {
       sheet: 'Anton',
       attribute: 'electric',
       damageType1: 'quickAssist',
-      name: 'QuickAssistProtectiveDrillBurstMode_0_dmg',
+      skillType: 'assistSkill',
+      name: 'QuickAssistProtectiveDrillBurstMode_0',
     },
   },
-  QuickAssistProtectiveDrillBurstMode_0_daze: {
+  'QuickAssistProtectiveDrillBurstMode_0:dazeBuildup': {
     sheet: 'Anton',
-    name: 'QuickAssistProtectiveDrillBurstMode_0_daze',
+    name: 'QuickAssistProtectiveDrillBurstMode_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -709,12 +785,13 @@ export const formulas = {
       sheet: 'Anton',
       attribute: 'electric',
       damageType1: 'quickAssist',
-      name: 'QuickAssistProtectiveDrillBurstMode_0_daze',
+      skillType: 'assistSkill',
+      name: 'QuickAssistProtectiveDrillBurstMode_0',
     },
   },
-  QuickAssistProtectiveDrillBurstMode_0_anomBuildup: {
+  'QuickAssistProtectiveDrillBurstMode_0:anomBuildup': {
     sheet: 'Anton',
-    name: 'QuickAssistProtectiveDrillBurstMode_0_anomBuildup',
+    name: 'QuickAssistProtectiveDrillBurstMode_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -722,12 +799,13 @@ export const formulas = {
       sheet: 'Anton',
       attribute: 'electric',
       damageType1: 'quickAssist',
-      name: 'QuickAssistProtectiveDrillBurstMode_0_anomBuildup',
+      skillType: 'assistSkill',
+      name: 'QuickAssistProtectiveDrillBurstMode_0',
     },
   },
-  DefensiveAssistIronWrist_0_dmg: {
+  'DefensiveAssistIronWrist_0:standardDmg': {
     sheet: 'Anton',
-    name: 'DefensiveAssistIronWrist_0_dmg',
+    name: 'DefensiveAssistIronWrist_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -736,12 +814,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIronWrist_0_dmg',
+      name: 'DefensiveAssistIronWrist_0',
     },
   },
-  DefensiveAssistIronWrist_0_daze: {
+  'DefensiveAssistIronWrist_0:dazeBuildup': {
     sheet: 'Anton',
-    name: 'DefensiveAssistIronWrist_0_daze',
+    name: 'DefensiveAssistIronWrist_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -750,12 +828,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIronWrist_0_daze',
+      name: 'DefensiveAssistIronWrist_0',
     },
   },
-  DefensiveAssistIronWrist_0_anomBuildup: {
+  'DefensiveAssistIronWrist_0:anomBuildup': {
     sheet: 'Anton',
-    name: 'DefensiveAssistIronWrist_0_anomBuildup',
+    name: 'DefensiveAssistIronWrist_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -764,12 +842,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIronWrist_0_anomBuildup',
+      name: 'DefensiveAssistIronWrist_0',
     },
   },
-  DefensiveAssistIronWrist_1_dmg: {
+  'DefensiveAssistIronWrist_1:standardDmg': {
     sheet: 'Anton',
-    name: 'DefensiveAssistIronWrist_1_dmg',
+    name: 'DefensiveAssistIronWrist_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -778,12 +856,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIronWrist_1_dmg',
+      name: 'DefensiveAssistIronWrist_1',
     },
   },
-  DefensiveAssistIronWrist_1_daze: {
+  'DefensiveAssistIronWrist_1:dazeBuildup': {
     sheet: 'Anton',
-    name: 'DefensiveAssistIronWrist_1_daze',
+    name: 'DefensiveAssistIronWrist_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -792,12 +870,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIronWrist_1_daze',
+      name: 'DefensiveAssistIronWrist_1',
     },
   },
-  DefensiveAssistIronWrist_1_anomBuildup: {
+  'DefensiveAssistIronWrist_1:anomBuildup': {
     sheet: 'Anton',
-    name: 'DefensiveAssistIronWrist_1_anomBuildup',
+    name: 'DefensiveAssistIronWrist_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -806,12 +884,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIronWrist_1_anomBuildup',
+      name: 'DefensiveAssistIronWrist_1',
     },
   },
-  DefensiveAssistIronWrist_2_dmg: {
+  'DefensiveAssistIronWrist_2:standardDmg': {
     sheet: 'Anton',
-    name: 'DefensiveAssistIronWrist_2_dmg',
+    name: 'DefensiveAssistIronWrist_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -820,12 +898,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIronWrist_2_dmg',
+      name: 'DefensiveAssistIronWrist_2',
     },
   },
-  DefensiveAssistIronWrist_2_daze: {
+  'DefensiveAssistIronWrist_2:dazeBuildup': {
     sheet: 'Anton',
-    name: 'DefensiveAssistIronWrist_2_daze',
+    name: 'DefensiveAssistIronWrist_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -834,12 +912,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIronWrist_2_daze',
+      name: 'DefensiveAssistIronWrist_2',
     },
   },
-  DefensiveAssistIronWrist_2_anomBuildup: {
+  'DefensiveAssistIronWrist_2:anomBuildup': {
     sheet: 'Anton',
-    name: 'DefensiveAssistIronWrist_2_anomBuildup',
+    name: 'DefensiveAssistIronWrist_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -848,12 +926,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistIronWrist_2_anomBuildup',
+      name: 'DefensiveAssistIronWrist_2',
     },
   },
-  AssistFollowUpLimitBurst_0_dmg: {
+  'AssistFollowUpLimitBurst_0:standardDmg': {
     sheet: 'Anton',
-    name: 'AssistFollowUpLimitBurst_0_dmg',
+    name: 'AssistFollowUpLimitBurst_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -861,12 +939,13 @@ export const formulas = {
       sheet: 'Anton',
       attribute: 'electric',
       damageType1: 'assistFollowUp',
-      name: 'AssistFollowUpLimitBurst_0_dmg',
+      skillType: 'assistSkill',
+      name: 'AssistFollowUpLimitBurst_0',
     },
   },
-  AssistFollowUpLimitBurst_0_daze: {
+  'AssistFollowUpLimitBurst_0:dazeBuildup': {
     sheet: 'Anton',
-    name: 'AssistFollowUpLimitBurst_0_daze',
+    name: 'AssistFollowUpLimitBurst_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -874,12 +953,13 @@ export const formulas = {
       sheet: 'Anton',
       attribute: 'electric',
       damageType1: 'assistFollowUp',
-      name: 'AssistFollowUpLimitBurst_0_daze',
+      skillType: 'assistSkill',
+      name: 'AssistFollowUpLimitBurst_0',
     },
   },
-  AssistFollowUpLimitBurst_0_anomBuildup: {
+  'AssistFollowUpLimitBurst_0:anomBuildup': {
     sheet: 'Anton',
-    name: 'AssistFollowUpLimitBurst_0_anomBuildup',
+    name: 'AssistFollowUpLimitBurst_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -887,7 +967,8 @@ export const formulas = {
       sheet: 'Anton',
       attribute: 'electric',
       damageType1: 'assistFollowUp',
-      name: 'AssistFollowUpLimitBurst_0_anomBuildup',
+      skillType: 'assistSkill',
+      name: 'AssistFollowUpLimitBurst_0',
     },
   },
   m2_shield: {

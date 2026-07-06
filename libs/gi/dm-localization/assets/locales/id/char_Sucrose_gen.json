@@ -67,11 +67,11 @@
   "burst": {
     "name": "Forbidden Creation - Isomer 75 / Type II",
     "description": {
-      "0": "Sucrose melemparkan sebuah ramuan yang menciptakan Large Wind Spirit.",
-      "1": "Selama ramuan itu ada, Large Wind Spirit akan terus-menerus menarik musuh dan obyek yang ada di sekitar, menghasilkan <anemo>Anemo DMG</anemo>.",
+      "0": "Sucrose melemparkan sebuah ramuan yang menciptakan Wind Spirit besar.",
+      "1": "Selama ramuan itu ada, Wind Spirit besar akan terus-menerus menarik musuh dan obyek yang ada di sekitar, menghasilkan <anemo>Anemo DMG</anemo>.",
       "2": "<br/>",
       "3": "<strong>Elemental Absorption</strong>",
-      "4": "Ketika Wind Spirit bersentuhan dengan elemen<hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, maka akan mengakibatkan elemental DMG tambahan dari tipe tersebut.",
+      "4": "Ketika Wind Spirit bersentuhan dengan elemen <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, maka akan mengakibatkan elemental DMG tambahan dari tipe tersebut.",
       "5": "Elemental Absorption hanya dapat muncul satu kali dalam sekali penggunaan.",
       "6": "<br/>",
       "7": "<i>Sucrose dulunya selalu memberikan nama kepada Anemo Hypostases miliknya. Namun mereka berkembang biak dengan cepat sampai melampaui Baron Bunny ke-893.</i>"

@@ -139,6 +139,8 @@ export const talentlist = {
 export function clean(s: string) {
   //trim whitespace
   s = s.trim()
+  //remove tooltips
+  s = s.replace(/<\/?tooltip[\s\S]*?>/g, '')
   //italics become small
   s = s.replace(/(<i>[\s\S]*)\n([\s\S]*<\/i>)/g, (m) =>
     m.replace(/\n/g, '\n-# ')
@@ -233,6 +235,27 @@ export async function run(interaction: ChatInputCommandInteraction) {
   } catch (e) {
     error(interaction, e)
   }
+}
+
+export function tooltip(text: string, lang = 'en') {
+  let tooltips = ''
+  const list = [
+    ...text.matchAll(
+      /<tooltip ns=([\S]+) baseKey18=([\S]+)(?: values=)?([\S]*?)>/g
+    ),
+  ]
+  for (const match of list) {
+    const [_full, namespace, key, _value] = match
+    const o = translate(namespace, key, lang, true)
+    if (!o.name && !o.description) continue
+    tooltips +=
+      '**' +
+      o.name +
+      '**\n' +
+      Object.values(o.description).flat().join('\n') +
+      '\n\n'
+  }
+  return tooltips
 }
 
 export async function selectmenu(

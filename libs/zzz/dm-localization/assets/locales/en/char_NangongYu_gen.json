@@ -1,0 +1,282 @@
+{
+  "name": "Nangong Yu",
+  "fullName": "Nangong Yu",
+  "basic": {
+    "BasicAttackShootingStarStep": {
+      "name": "Basic Attack: Shooting Star Step",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Perform up to three attacks forward, dealing <ct color=#FE437E>Ether DMG</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit "
+      ]
+    },
+    "BasicAttackAdorableExplosiveImpact": {
+      "name": "Basic Attack: Adorable Explosive Impact",
+      "desc": {
+        "0": "Hold <IconNormal /> to launch a charged attack, dealing <ct color=#FE437E>Ether DMG</ct>. Release the button at the right moment to trigger precise charging, increasing the Daze dealt by the skill by 20%.",
+        "1": "Nangong Yu can perform up to three hits. The second and third hits each must consume 50 <ct color=#FFFFFF>Downbeats</ct>.",
+        "2": "After using a <ct color=#FFFFFF>Chain Attack</ct>, <ct color=#FFFFFF>Ultimate</ct>, or <ct color=#FFFFFF>EX Special Attack</ct>, if enough <ct color=#FFFFFF>Downbeats</ct> are available, hold <IconNormal /> to skip the first hit and directly perform the second and third hits, which always trigger precise charging.",
+        "3": "When Nangong Yu is the active character, <ct color=#FFFFFF>Chain Attacks</ct>, <ct color=#FFFFFF>Ultimates</ct>, and <ct color=#FFFFFF>EX Special Attacks</ct> do not interrupt the combo count of <ct color=#FFFFFF>Basic Attack: Adorable Explosive Impact</ct>.",
+        "4": "While charging the first hit, Anti-Interrupt Level increases and DMG taken decreases by 60%.",
+        "5": "While charging the second and third hits, the character is Invulnerable.",
+        "6": "During the dash phase of the first hit, enemy attacks can be Blocked. On a successful Block, the attack is treated as a precise charging attack.",
+        "7": "Character is invulnerable during all attacks."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "3rd-Hit (Coordinated) "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeNaturalDancer": {
+      "name": "Dodge: Natural Dancer",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackSpinningMeteor": {
+      "name": "Dash Attack: Spinning Meteor",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Deliver a quick attack forward, dealing <ct color=#FE437E>Ether DMG</ct>."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterAsteroidWaltz": {
+      "name": "Dodge Counter: Asteroid Waltz",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Launch a series of attacks on the target, dealing <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackTheWeightOfLove": {
+      "name": "Special Attack: The Weight of Love",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Delivers a morning star attack, dealing <ct color=#FE437E>Ether DMG</ct>."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackTheUnbearableWeightOfLove": {
+      "name": "EX Special Attack: The Unbearable Weight of Love",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Delivers a morning star attack, dealing <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "Energy Cost "
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackCometGravity": {
+      "name": "Chain Attack: Comet Gravity",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Launch a series of attacks forward, dealing massive <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateMeteorShower": {
+      "name": "Ultimate: Meteor Shower",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Launch multiple attacks forward, dealing massive <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "Upon activating this skill, Nangong Yu activates <ct color=#FFFFFF>Ether Veil: Delusion Reprise</ct>. While <ct color=#FFFFFF>Ether Veil: Delusion Reprise</ct> is active, all squad members gain an additional 50 ATK for 30s. If Nangong Yu activates <ct color=#FFFFFF>Ether Veil: Delusion Reprise</ct> again, the current <ct color=#FFFFFF>Ether Veil: Delusion Reprise</ct> will first deactivate.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistEmergencySave": {
+      "name": "Quick Assist: Emergency Save",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Launches a series of attacks on the target, dealing <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistPerfectedChoreography": {
+      "name": "Defensive Assist: Perfected Choreography",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "This skill excels at parrying enemy attacks and reduces the consumption of <ct color=#FFFFFF>Assist Points</ct> when the character is under intense attacks.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpImprovisedPerformance": {
+      "name": "Assist Follow-Up: Improvised Performance",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Launches a series of attacks on the target, dealing massive <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Prodigious Idol",
+    "desc": [
+      {
+        "0": "Nangong Yu's Anomaly Proficiency increases by <ct color=#2BAD00>60</ct>.",
+        "1": "When Nangong Yu's initial Anomaly Mastery exceeds 110, each point of initial Anomaly Mastery above that increases her Impact by 1.",
+        "2": "When an enemy is Stunned, each time any character triggers <ct color=#FFFFFF>Abloom</ct> DMG, <ct color=#FFFFFF>Disorder</ct> DMG, or inflicts an Attribute Anomaly on the enemy, the enemy gains 1 stacks of <ct color=#FFFFFF>Vibrato</ct>.",
+        "3": "A single enemy can have up to 4 stacks of <ct color=#FFFFFF>Vibrato</ct>.",
+        "4": "If <ct color=#FFFFFF>Vibrato</ct> reaches the maximum stacks and the enemy is afflicted with an <ct color=#FE437E>Ether</ct>, <ct color=#2EB6FF>Electric</ct>, <ct color=#FF5521>Fire</ct>, <ct color=#F0D12B>Physical</ct>, <ct color=#98EFF0>Ice</ct>, or <ct color=#A6C5FD>Wind</ct> Anomaly, or if the enemy has <ct color=#FFFFFF>Vibrato</ct> and recovers from being Stunned, all <ct color=#FFFFFF>Vibrato</ct> stacks will be cleared.",
+        "5": "When <ct color=#FFFFFF>Vibrato</ct> is cleared, if the enemy is suffering an aforementioned Attribute Anomaly, Nangong Yu triggers an instance of <ct color=#FFFFFF>Abloom</ct> DMG on the target, dealing an additional instance of Attribute Anomaly DMG equal to <ct color=#FE437E>720%</ct>/<ct color=#2EB6FF>360%</ct>/<ct color=#FF5521>900%</ct>/<ct color=#F0D12B>63%</ct>/<ct color=#98EFF0>90%</ct>/<ct color=#A6C5FD>36%</ct> of the original Attribute Anomaly DMG. Each stack of <ct color=#FFFFFF>Vibrato</ct> on the enemy increases this <ct color=#FFFFFF>Abloom</ct> DMG ratio by an additional 25%. During the same Stun period, once <ct color=#FFFFFF>Vibrato</ct> has been cleared, the enemy cannot gain <ct color=#FFFFFF>Vibrato</ct> again.",
+        "6": "When Nangong Yu's <ct color=#FFFFFF>Basic Attack: Adorable Explosive Impact</ct> or <ct color=#FFFFFF>EX Special Attack: The Unbearable Weight of Love</ct> hits an enemy, her Anomaly Buildup Rate increases by <ct color=#2BAD00>17%</ct>, and her Daze dealt increases by <ct color=#2BAD00>11%</ct>, and the whole squad's DMG dealt increases by <ct color=#2BAD00>13%</ct> for 30s. Repeated triggers reset the duration.",
+        "7": "While in combat, Nangong Yu restores 3.8 <ct color=#FFFFFF>Downbeats</ct>/s. When any squad member inflicts an Attribute Anomaly on an enemy, Nangong Yu restores an additional 12 <ct color=#FFFFFF>Downbeats</ct>. This effect can trigger once every 6s.",
+        "8": "Nangong Yu can have up to 100 <ct color=#FFFFFF>Downbeats</ct>, and starts with 30 <ct color=#FFFFFF>Downbeats</ct> upon entering the battlefield."
+      },
+      {
+        "0": "Nangong Yu's Anomaly Proficiency increases by <ct color=#2BAD00>70</ct>.",
+        "1": "When Nangong Yu's initial Anomaly Mastery exceeds 110, each point of initial Anomaly Mastery above that increases her Impact by 1.",
+        "2": "When an enemy is Stunned, each time any character triggers <ct color=#FFFFFF>Abloom</ct> DMG, <ct color=#FFFFFF>Disorder</ct> DMG, or inflicts an Attribute Anomaly on the enemy, the enemy gains 1 stacks of <ct color=#FFFFFF>Vibrato</ct>.",
+        "3": "A single enemy can have up to 4 stacks of <ct color=#FFFFFF>Vibrato</ct>.",
+        "4": "If <ct color=#FFFFFF>Vibrato</ct> reaches the maximum stacks and the enemy is afflicted with an <ct color=#FE437E>Ether</ct>, <ct color=#2EB6FF>Electric</ct>, <ct color=#FF5521>Fire</ct>, <ct color=#F0D12B>Physical</ct>, <ct color=#98EFF0>Ice</ct>, or <ct color=#A6C5FD>Wind</ct> Anomaly, or if the enemy has <ct color=#FFFFFF>Vibrato</ct> and recovers from being Stunned, all <ct color=#FFFFFF>Vibrato</ct> stacks will be cleared.",
+        "5": "When <ct color=#FFFFFF>Vibrato</ct> is cleared, if the enemy is suffering an aforementioned Attribute Anomaly, Nangong Yu triggers an instance of <ct color=#FFFFFF>Abloom</ct> DMG on the target, dealing an additional instance of Attribute Anomaly DMG equal to <ct color=#FE437E>720%</ct>/<ct color=#2EB6FF>360%</ct>/<ct color=#FF5521>900%</ct>/<ct color=#F0D12B>63%</ct>/<ct color=#98EFF0>90%</ct>/<ct color=#A6C5FD>36%</ct> of the original Attribute Anomaly DMG. Each stack of <ct color=#FFFFFF>Vibrato</ct> on the enemy increases this <ct color=#FFFFFF>Abloom</ct> DMG ratio by an additional 25%. During the same Stun period, once <ct color=#FFFFFF>Vibrato</ct> has been cleared, the enemy cannot gain <ct color=#FFFFFF>Vibrato</ct> again.",
+        "6": "When Nangong Yu's <ct color=#FFFFFF>Basic Attack: Adorable Explosive Impact</ct> or <ct color=#FFFFFF>EX Special Attack: The Unbearable Weight of Love</ct> hits an enemy, her Anomaly Buildup Rate increases by <ct color=#2BAD00>20%</ct>, and her Daze dealt increases by <ct color=#2BAD00>12.5%</ct>, and the whole squad's DMG dealt increases by <ct color=#2BAD00>15%</ct> for 30s. Repeated triggers reset the duration.",
+        "7": "While in combat, Nangong Yu restores 3.8 <ct color=#FFFFFF>Downbeats</ct>/s. When any squad member inflicts an Attribute Anomaly on an enemy, Nangong Yu restores an additional 12 <ct color=#FFFFFF>Downbeats</ct>. This effect can trigger once every 6s.",
+        "8": "Nangong Yu can have up to 100 <ct color=#FFFFFF>Downbeats</ct>, and starts with 30 <ct color=#FFFFFF>Downbeats</ct> upon entering the battlefield."
+      },
+      {
+        "0": "Nangong Yu's Anomaly Proficiency increases by <ct color=#2BAD00>80</ct>.",
+        "1": "When Nangong Yu's initial Anomaly Mastery exceeds 110, each point of initial Anomaly Mastery above that increases her Impact by 1.",
+        "2": "When an enemy is Stunned, each time any character triggers <ct color=#FFFFFF>Abloom</ct> DMG, <ct color=#FFFFFF>Disorder</ct> DMG, or inflicts an Attribute Anomaly on the enemy, the enemy gains 1 stacks of <ct color=#FFFFFF>Vibrato</ct>.",
+        "3": "A single enemy can have up to 4 stacks of <ct color=#FFFFFF>Vibrato</ct>.",
+        "4": "If <ct color=#FFFFFF>Vibrato</ct> reaches the maximum stacks and the enemy is afflicted with an <ct color=#FE437E>Ether</ct>, <ct color=#2EB6FF>Electric</ct>, <ct color=#FF5521>Fire</ct>, <ct color=#F0D12B>Physical</ct>, <ct color=#98EFF0>Ice</ct>, or <ct color=#A6C5FD>Wind</ct> Anomaly, or if the enemy has <ct color=#FFFFFF>Vibrato</ct> and recovers from being Stunned, all <ct color=#FFFFFF>Vibrato</ct> stacks will be cleared.",
+        "5": "When <ct color=#FFFFFF>Vibrato</ct> is cleared, if the enemy is suffering an aforementioned Attribute Anomaly, Nangong Yu triggers an instance of <ct color=#FFFFFF>Abloom</ct> DMG on the target, dealing an additional instance of Attribute Anomaly DMG equal to <ct color=#FE437E>720%</ct>/<ct color=#2EB6FF>360%</ct>/<ct color=#FF5521>900%</ct>/<ct color=#F0D12B>63%</ct>/<ct color=#98EFF0>90%</ct>/<ct color=#A6C5FD>36%</ct> of the original Attribute Anomaly DMG. Each stack of <ct color=#FFFFFF>Vibrato</ct> on the enemy increases this <ct color=#FFFFFF>Abloom</ct> DMG ratio by an additional 25%. During the same Stun period, once <ct color=#FFFFFF>Vibrato</ct> has been cleared, the enemy cannot gain <ct color=#FFFFFF>Vibrato</ct> again.",
+        "6": "When Nangong Yu's <ct color=#FFFFFF>Basic Attack: Adorable Explosive Impact</ct> or <ct color=#FFFFFF>EX Special Attack: The Unbearable Weight of Love</ct> hits an enemy, her Anomaly Buildup Rate increases by <ct color=#2BAD00>23%</ct>, and her Daze dealt increases by <ct color=#2BAD00>14%</ct>, and the whole squad's DMG dealt increases by <ct color=#2BAD00>17%</ct> for 30s. Repeated triggers reset the duration.",
+        "7": "While in combat, Nangong Yu restores 3.8 <ct color=#FFFFFF>Downbeats</ct>/s. When any squad member inflicts an Attribute Anomaly on an enemy, Nangong Yu restores an additional 12 <ct color=#FFFFFF>Downbeats</ct>. This effect can trigger once every 6s.",
+        "8": "Nangong Yu can have up to 100 <ct color=#FFFFFF>Downbeats</ct>, and starts with 30 <ct color=#FFFFFF>Downbeats</ct> upon entering the battlefield."
+      },
+      {
+        "0": "Nangong Yu's Anomaly Proficiency increases by <ct color=#2BAD00>90</ct>.",
+        "1": "When Nangong Yu's initial Anomaly Mastery exceeds 110, each point of initial Anomaly Mastery above that increases her Impact by 1.",
+        "2": "When an enemy is Stunned, each time any character triggers <ct color=#FFFFFF>Abloom</ct> DMG, <ct color=#FFFFFF>Disorder</ct> DMG, or inflicts an Attribute Anomaly on the enemy, the enemy gains 1 stacks of <ct color=#FFFFFF>Vibrato</ct>.",
+        "3": "A single enemy can have up to 4 stacks of <ct color=#FFFFFF>Vibrato</ct>.",
+        "4": "If <ct color=#FFFFFF>Vibrato</ct> reaches the maximum stacks and the enemy is afflicted with an <ct color=#FE437E>Ether</ct>, <ct color=#2EB6FF>Electric</ct>, <ct color=#FF5521>Fire</ct>, <ct color=#F0D12B>Physical</ct>, <ct color=#98EFF0>Ice</ct>, or <ct color=#A6C5FD>Wind</ct> Anomaly, or if the enemy has <ct color=#FFFFFF>Vibrato</ct> and recovers from being Stunned, all <ct color=#FFFFFF>Vibrato</ct> stacks will be cleared.",
+        "5": "When <ct color=#FFFFFF>Vibrato</ct> is cleared, if the enemy is suffering an aforementioned Attribute Anomaly, Nangong Yu triggers an instance of <ct color=#FFFFFF>Abloom</ct> DMG on the target, dealing an additional instance of Attribute Anomaly DMG equal to <ct color=#FE437E>720%</ct>/<ct color=#2EB6FF>360%</ct>/<ct color=#FF5521>900%</ct>/<ct color=#F0D12B>63%</ct>/<ct color=#98EFF0>90%</ct>/<ct color=#A6C5FD>36%</ct> of the original Attribute Anomaly DMG. Each stack of <ct color=#FFFFFF>Vibrato</ct> on the enemy increases this <ct color=#FFFFFF>Abloom</ct> DMG ratio by an additional 25%. During the same Stun period, once <ct color=#FFFFFF>Vibrato</ct> has been cleared, the enemy cannot gain <ct color=#FFFFFF>Vibrato</ct> again.",
+        "6": "When Nangong Yu's <ct color=#FFFFFF>Basic Attack: Adorable Explosive Impact</ct> or <ct color=#FFFFFF>EX Special Attack: The Unbearable Weight of Love</ct> hits an enemy, her Anomaly Buildup Rate increases by <ct color=#2BAD00>26%</ct>, and her Daze dealt increases by <ct color=#2BAD00>15.5%</ct>, and the whole squad's DMG dealt increases by <ct color=#2BAD00>19%</ct> for 30s. Repeated triggers reset the duration.",
+        "7": "While in combat, Nangong Yu restores 3.8 <ct color=#FFFFFF>Downbeats</ct>/s. When any squad member inflicts an Attribute Anomaly on an enemy, Nangong Yu restores an additional 12 <ct color=#FFFFFF>Downbeats</ct>. This effect can trigger once every 6s.",
+        "8": "Nangong Yu can have up to 100 <ct color=#FFFFFF>Downbeats</ct>, and starts with 30 <ct color=#FFFFFF>Downbeats</ct> upon entering the battlefield."
+      },
+      {
+        "0": "Nangong Yu's Anomaly Proficiency increases by <ct color=#2BAD00>100</ct>.",
+        "1": "When Nangong Yu's initial Anomaly Mastery exceeds 110, each point of initial Anomaly Mastery above that increases her Impact by 1.",
+        "2": "When an enemy is Stunned, each time any character triggers <ct color=#FFFFFF>Abloom</ct> DMG, <ct color=#FFFFFF>Disorder</ct> DMG, or inflicts an Attribute Anomaly on the enemy, the enemy gains 1 stacks of <ct color=#FFFFFF>Vibrato</ct>.",
+        "3": "A single enemy can have up to 4 stacks of <ct color=#FFFFFF>Vibrato</ct>.",
+        "4": "If <ct color=#FFFFFF>Vibrato</ct> reaches the maximum stacks and the enemy is afflicted with an <ct color=#FE437E>Ether</ct>, <ct color=#2EB6FF>Electric</ct>, <ct color=#FF5521>Fire</ct>, <ct color=#F0D12B>Physical</ct>, <ct color=#98EFF0>Ice</ct>, or <ct color=#A6C5FD>Wind</ct> Anomaly, or if the enemy has <ct color=#FFFFFF>Vibrato</ct> and recovers from being Stunned, all <ct color=#FFFFFF>Vibrato</ct> stacks will be cleared.",
+        "5": "When <ct color=#FFFFFF>Vibrato</ct> is cleared, if the enemy is suffering an aforementioned Attribute Anomaly, Nangong Yu triggers an instance of <ct color=#FFFFFF>Abloom</ct> DMG on the target, dealing an additional instance of Attribute Anomaly DMG equal to <ct color=#FE437E>720%</ct>/<ct color=#2EB6FF>360%</ct>/<ct color=#FF5521>900%</ct>/<ct color=#F0D12B>63%</ct>/<ct color=#98EFF0>90%</ct>/<ct color=#A6C5FD>36%</ct> of the original Attribute Anomaly DMG. Each stack of <ct color=#FFFFFF>Vibrato</ct> on the enemy increases this <ct color=#FFFFFF>Abloom</ct> DMG ratio by an additional 25%. During the same Stun period, once <ct color=#FFFFFF>Vibrato</ct> has been cleared, the enemy cannot gain <ct color=#FFFFFF>Vibrato</ct> again.",
+        "6": "When Nangong Yu's <ct color=#FFFFFF>Basic Attack: Adorable Explosive Impact</ct> or <ct color=#FFFFFF>EX Special Attack: The Unbearable Weight of Love</ct> hits an enemy, her Anomaly Buildup Rate increases by <ct color=#2BAD00>29%</ct>, and her Daze dealt increases by <ct color=#2BAD00>17%</ct>, and the whole squad's DMG dealt increases by <ct color=#2BAD00>21%</ct> for 30s. Repeated triggers reset the duration.",
+        "7": "While in combat, Nangong Yu restores 3.8 <ct color=#FFFFFF>Downbeats</ct>/s. When any squad member inflicts an Attribute Anomaly on an enemy, Nangong Yu restores an additional 12 <ct color=#FFFFFF>Downbeats</ct>. This effect can trigger once every 6s.",
+        "8": "Nangong Yu can have up to 100 <ct color=#FFFFFF>Downbeats</ct>, and starts with 30 <ct color=#FFFFFF>Downbeats</ct> upon entering the battlefield."
+      },
+      {
+        "0": "Nangong Yu's Anomaly Proficiency increases by <ct color=#2BAD00>110</ct>.",
+        "1": "When Nangong Yu's initial Anomaly Mastery exceeds 110, each point of initial Anomaly Mastery above that increases her Impact by 1.",
+        "2": "When an enemy is Stunned, each time any character triggers <ct color=#FFFFFF>Abloom</ct> DMG, <ct color=#FFFFFF>Disorder</ct> DMG, or inflicts an Attribute Anomaly on the enemy, the enemy gains 1 stacks of <ct color=#FFFFFF>Vibrato</ct>.",
+        "3": "A single enemy can have up to 4 stacks of <ct color=#FFFFFF>Vibrato</ct>.",
+        "4": "If <ct color=#FFFFFF>Vibrato</ct> reaches the maximum stacks and the enemy is afflicted with an <ct color=#FE437E>Ether</ct>, <ct color=#2EB6FF>Electric</ct>, <ct color=#FF5521>Fire</ct>, <ct color=#F0D12B>Physical</ct>, <ct color=#98EFF0>Ice</ct>, or <ct color=#A6C5FD>Wind</ct> Anomaly, or if the enemy has <ct color=#FFFFFF>Vibrato</ct> and recovers from being Stunned, all <ct color=#FFFFFF>Vibrato</ct> stacks will be cleared.",
+        "5": "When <ct color=#FFFFFF>Vibrato</ct> is cleared, if the enemy is suffering an aforementioned Attribute Anomaly, Nangong Yu triggers an instance of <ct color=#FFFFFF>Abloom</ct> DMG on the target, dealing an additional instance of Attribute Anomaly DMG equal to <ct color=#FE437E>720%</ct>/<ct color=#2EB6FF>360%</ct>/<ct color=#FF5521>900%</ct>/<ct color=#F0D12B>63%</ct>/<ct color=#98EFF0>90%</ct>/<ct color=#A6C5FD>36%</ct> of the original Attribute Anomaly DMG. Each stack of <ct color=#FFFFFF>Vibrato</ct> on the enemy increases this <ct color=#FFFFFF>Abloom</ct> DMG ratio by an additional 25%. During the same Stun period, once <ct color=#FFFFFF>Vibrato</ct> has been cleared, the enemy cannot gain <ct color=#FFFFFF>Vibrato</ct> again.",
+        "6": "When Nangong Yu's <ct color=#FFFFFF>Basic Attack: Adorable Explosive Impact</ct> or <ct color=#FFFFFF>EX Special Attack: The Unbearable Weight of Love</ct> hits an enemy, her Anomaly Buildup Rate increases by <ct color=#2BAD00>32%</ct>, and her Daze dealt increases by <ct color=#2BAD00>18.5%</ct>, and the whole squad's DMG dealt increases by <ct color=#2BAD00>23%</ct> for 30s. Repeated triggers reset the duration.",
+        "7": "While in combat, Nangong Yu restores 3.8 <ct color=#FFFFFF>Downbeats</ct>/s. When any squad member inflicts an Attribute Anomaly on an enemy, Nangong Yu restores an additional 12 <ct color=#FFFFFF>Downbeats</ct>. This effect can trigger once every 6s.",
+        "8": "Nangong Yu can have up to 100 <ct color=#FFFFFF>Downbeats</ct>, and starts with 30 <ct color=#FFFFFF>Downbeats</ct> upon entering the battlefield."
+      },
+      {
+        "0": "Nangong Yu's Anomaly Proficiency increases by <ct color=#2BAD00>120</ct>.",
+        "1": "When Nangong Yu's initial Anomaly Mastery exceeds 110, each point of initial Anomaly Mastery above that increases her Impact by 1.",
+        "2": "When an enemy is Stunned, each time any character triggers <ct color=#FFFFFF>Abloom</ct> DMG, <ct color=#FFFFFF>Disorder</ct> DMG, or inflicts an Attribute Anomaly on the enemy, the enemy gains 1 stacks of <ct color=#FFFFFF>Vibrato</ct>.",
+        "3": "A single enemy can have up to 4 stacks of <ct color=#FFFFFF>Vibrato</ct>.",
+        "4": "If <ct color=#FFFFFF>Vibrato</ct> reaches the maximum stacks and the enemy is afflicted with an <ct color=#FE437E>Ether</ct>, <ct color=#2EB6FF>Electric</ct>, <ct color=#FF5521>Fire</ct>, <ct color=#F0D12B>Physical</ct>, <ct color=#98EFF0>Ice</ct>, or <ct color=#A6C5FD>Wind</ct> Anomaly, or if the enemy has <ct color=#FFFFFF>Vibrato</ct> and recovers from being Stunned, all <ct color=#FFFFFF>Vibrato</ct> stacks will be cleared.",
+        "5": "When <ct color=#FFFFFF>Vibrato</ct> is cleared, if the enemy is suffering an aforementioned Attribute Anomaly, Nangong Yu triggers an instance of <ct color=#FFFFFF>Abloom</ct> DMG on the target, dealing an additional instance of Attribute Anomaly DMG equal to <ct color=#FE437E>720%</ct>/<ct color=#2EB6FF>360%</ct>/<ct color=#FF5521>900%</ct>/<ct color=#F0D12B>63%</ct>/<ct color=#98EFF0>90%</ct>/<ct color=#A6C5FD>36%</ct> of the original Attribute Anomaly DMG. Each stack of <ct color=#FFFFFF>Vibrato</ct> on the enemy increases this <ct color=#FFFFFF>Abloom</ct> DMG ratio by an additional 25%. During the same Stun period, once <ct color=#FFFFFF>Vibrato</ct> has been cleared, the enemy cannot gain <ct color=#FFFFFF>Vibrato</ct> again.",
+        "6": "When Nangong Yu's <ct color=#FFFFFF>Basic Attack: Adorable Explosive Impact</ct> or <ct color=#FFFFFF>EX Special Attack: The Unbearable Weight of Love</ct> hits an enemy, her Anomaly Buildup Rate increases by <ct color=#2BAD00>35%</ct>, and her Daze dealt increases by <ct color=#2BAD00>20%</ct>, and the whole squad's DMG dealt increases by <ct color=#2BAD00>25%</ct> for 30s. Repeated triggers reset the duration.",
+        "7": "While in combat, Nangong Yu restores 3.8 <ct color=#FFFFFF>Downbeats</ct>/s. When any squad member inflicts an Attribute Anomaly on an enemy, Nangong Yu restores an additional 12 <ct color=#FFFFFF>Downbeats</ct>. This effect can trigger once every 6s.",
+        "8": "Nangong Yu can have up to 100 <ct color=#FFFFFF>Downbeats</ct>, and starts with 30 <ct color=#FFFFFF>Downbeats</ct> upon entering the battlefield."
+      }
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Angel Captain",
+    "desc": {
+      "0": "When another character in your squad is an <ct color=#FFFFFF>Anomaly</ct> character or shares the same Faction:",
+      "1": "Any squad member's attack against a Stunned enemy has 30% increased Anomaly Buildup. <ct color=#FFFFFF>Chain Attacks</ct> against a Stunned enemy have an additional 30% increased Anomaly Buildup.",
+      "2": "When any squad member Stuns an enemy, Nangong Yu gains 2 stacks of <ct color=#FFFFFF>Dance Prowess</ct>, up to a maximum of 2 stacks, lasting 15s, repeated triggers reset the duration. With <ct color=#FFFFFF>Dance Prowess</ct>, when a heavy attack from Nangong Yu's <ct color=#FFFFFF>EX Special Attack: The Unbearable Weight of Love</ct>, <ct color=#FFFFFF>Basic Attack: Adorable Explosive Impact</ct>, or <ct color=#FFFFFF>Quick Assist: Emergency Save</ct> hits an enemy that is both Stunned and affected by an Attribute Anomaly, 1 stack of <ct color=#FFFFFF>Dance Prowess</ct> is consumed to trigger the special <ct color=#FFFFFF>Disorder</ct> effect <ct color=#FFFFFF>Polarity Disorder</ct> against all enemies who meet the conditions. This deals DMG equal to 25% of the original <ct color=#FFFFFF>Disorder</ct> DMG, and triggers the previous squad member's <ct color=#FFFFFF>Quick Assist</ct>. <ct color=#FFFFFF>Polarity Disorder</ct> does not clear the target's Attribute Anomaly. If the skill fails to trigger <ct color=#FFFFFF>Polarity Disorder</ct>, <ct color=#FFFFFF>Dance Prowess</ct> will not be consumed. When Nangong Yu has <ct color=#FFFFFF>Dance Prowess</ct>, the next time she switches to the field, she will immediately perform the first charged hit of <ct color=#FFFFFF>Basic Attack: Adorable Explosive Impact</ct>, which will always trigger precise charging.",
+      "3": "When any squad member Stuns an enemy, Nangong Yu's next <ct color=#FFFFFF>EX Special Attack</ct> will not consume Energy. This effect lasts 15s and can trigger once every 15s.",
+      "4": "When Nangong Yu and Aria are in the same squad, if Aria's <ct color=#FFFFFF>Basic Attack: Perfect Pitch</ct> heavy attack hits an enemy that is both Stunned and affected by an Attribute Anomaly, and Nangong Yu fully participates in the attack, 1 stack of <ct color=#FFFFFF>Dance Prowess</ct> will also be consumed to trigger <ct color=#FFFFFF>Polarity Disorder</ct> on all enemies who meet the conditions.",
+      "5": "When the third hit of Nangong Yu's <ct color=#FFFFFF>Basic Attack: Adorable Explosive Impact</ct> or <ct color=#FFFFFF>Ultimate: Meteor Shower</ct> hits an enemy, the enemy suffers <ct color=#FFFFFF>Misstep</ct>. Under this effect, Stun DMG Multiplier increases by 30% and when an enemy becomes Stunned, their Stun duration increases by 3s. Before recovering from Stun, <ct color=#FFFFFF>Misstep</ct> can only trigger once on the same target. The increased Stun duration cannot stack with similar effects. When an enemy with <ct color=#FFFFFF>Misstep</ct> recovers from Stun, the <ct color=#FFFFFF>Misstep</ct> effect ends."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Lazy Spotlight",
+      "desc": "When <ct color=#FFFFFF>EX Special Attack: The Unbearable Weight of Love</ct> or <ct color=#FFFFFF>Basic Attack: Adorable Explosive Impact</ct> hits an enemy, the enemy's All-Attribute RES decreases by 18% for 40s. Repeated triggers refresh the duration. When entering the battlefield, Nangong Yu's <ct color=#FFFFFF>Downbeat</ct> is restored to the maximum. In Investigation Zone Mode, this effect can trigger once every 180s.",
+      "flavor": "Dreams are such troublesome and expensive things. When the spotlight shines on her, it just feels a little warm, that's all. Honestly, watching Sunna blush from being teased, seeing Aria short-circuit from nerves, or discovering our next lucky break might be far more entertaining to her."
+    },
+    "2": {
+      "name": "Painless Tears",
+      "desc": "Each stack of <ct color=#FFFFFF>Vibrato</ct>'s additional <ct color=#FFFFFF>Abloom</ct> DMG ratio increase from <ct color=#FFFFFF>Core Passive: Prodigious Idol</ct> increases by an additional 10%. The Stun DMG Multiplier provided by <ct color=#FFFFFF>Additional Ability: Angel Captain</ct> increases by an additional 30%. When the active character's <ct color=#FFFFFF>Chain Attack</ct> heavy attack hits an enemy that is both Stunned and affected by an Attribute Anomaly, it triggers <ct color=#FFFFFF>Polarity Disorder</ct>, dealing DMG equal to 25% of the original <ct color=#FFFFFF>Disorder</ct> DMG. Each enemy can only trigger this effect once during the same Stun period.",
+      "flavor": "Tears are a valuable stage prop, but unfortunately, she's always been short on stock. Luckily, her acting skills as an idol are good enough to make them fall right on cue when needed... whether it's to comfort a real crybaby, or win a little sympathy from the audience."
+    },
+    "3": {
+      "name": "Chips on the Scales",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": "Choreography can be arranged, stage positions can be planned, and even popularity and the future seem like things money can sort out. Watching the numbers bounce around in the account feels like a reassuring little game... until a problem shows up with no price tag attached. Fiddling with the stack of \"chips\" she's best at using makes the scale of \"it's just business\" start to wobble."
+    },
+    "4": {
+      "name": "Accomplice's Dance Step",
+      "desc": "Anomaly Proficiency increases by 40. The Anomaly Buildup of <ct color=#FFFFFF>Basic Attack: Adorable Explosive Impact</ct> when hitting an enemy increases by 35%.",
+      "flavor": "I've got a habit of giving Sunna the most dazzling position on stage, and leaving Aria the high note that cuts through the night sky. My \"dream\" was borrowed from them, but the resolve to protect what I borrowed belongs entirely to me."
+    },
+    "5": {
+      "name": "Center Stage",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": "The Yearlight lanterns drift up into the sky, and the stage curtain finally opens. The stage, the lights, their faces... everything has never been this clear. Turns out I've been standing in the center of the spotlight all along. I was never just watching from the sidelines."
+    },
+    "6": {
+      "name": "An Angel's Delusion",
+      "desc": "Nangong Yu's attacks deal 50% more Daze. When the enemy is not Stunned, each time any character triggers <ct color=#FFFFFF>Abloom</ct> DMG, <ct color=#FFFFFF>Disorder</ct> DMG, or inflicts an Attribute Anomaly on them, the enemy gains 1 stacks of <ct color=#FFFFFF>Vibrato: Modified</ct>. When hit by the heavy attack of <ct color=#FFFFFF>EX Special Attack: The Unbearable Weight of Love</ct> or <ct color=#FFFFFF>Basic Attack: Adorable Explosive Impact</ct>, they gain 1 stacks of <ct color=#FFFFFF>Vibrato: Modified</ct>. When hit by the heavy attack of <ct color=#FFFFFF>Ultimate: Meteor Shower</ct>, they gain 2 stacks of <ct color=#FFFFFF>Vibrato: Modified</ct>. <ct color=#FFFFFF>Vibrato: Modified</ct> can stack up to 4 times. When the enemy becomes Stunned, all <ct color=#FFFFFF>Vibrato: Modified</ct> stacks are cleared. When <ct color=#FFFFFF>Vibrato: Modified</ct> is cleared, if the enemy is under an <ct color=#FE437E>Ether</ct>, <ct color=#2EB6FF>Electric</ct>, <ct color=#FF5521>Fire</ct>, <ct color=#F0D12B>Physical</ct>, <ct color=#98EFF0>Ice</ct>, or <ct color=#A6C5FD>Wind</ct> Anomaly, Nangong Yu triggers an instance of <ct color=#FFFFFF>Abloom</ct> DMG on the target, dealing an additional instance of Attribute Anomaly DMG equal to <ct color=#FE437E>800%</ct>/<ct color=#2EB6FF>400%</ct>/<ct color=#FF5521>1,000%</ct>/<ct color=#F0D12B>70%</ct>/<ct color=#98EFF0>100%</ct>/<ct color=#A6C5FD>40%</ct> of the original Attribute Anomaly DMG. Each stack of <ct color=#FFFFFF>Vibrato: Modified</ct> on the enemy increases this <ct color=#FFFFFF>Abloom</ct> DMG ratio by an additional 25%. <ct color=#FFFFFF>Vibrato: Modified</ct> cannot stack with <ct color=#FFFFFF>Vibrato</ct>.",
+      "flavor": "Cameras, cheering crowds, glow sticks... that distant warmth turns into blazing fire. The dream I borrowed from others has already fused with my flesh and blood. From here on, this intoxicating \"Delusion\" will be defined by Captain Nangong."
+    }
+  },
+  "potential": {}
+}

@@ -41,7 +41,7 @@
   "skill": {
     "name": "Binary Form: Convergence and Division",
     "description": {
-      "0": "Memurnikan substansi jiwa dan harapan untuk melakukan <strong>Essential Transmutation</strong>. Selama durasi ini, Elemental Skill Durin <strong>Binary Form: Convergence and Division</strong> akan berubah menjadi Elemental Skill khusus <strong>Transmutation: Confirmation of Purity</strong>, sedangkan Normal Attack <strong>Radiant Wingslash</strong> akan berubah menjadi Elemental Skill khusus <strong>Transmutation: Denial of Darkness</strong>.",
+      "0": "Memurnikan substansi jiwa dan harapan untuk melakukan <tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>Essential Transmutation</strong></tooltip>. Selama durasi ini, Elemental Skill Durin <strong>Binary Form: Convergence and Division</strong> akan berubah menjadi Elemental Skill khusus <strong>Transmutation: Confirmation of Purity</strong>, sedangkan Normal Attack <strong>Radiant Wingslash</strong> akan berubah menjadi Elemental Skill khusus <strong>Transmutation: Denial of Darkness</strong>.",
       "1": "<br/>",
       "2": "<strong>Transmutation: Confirmation of Purity</strong>",
       "3": "Mengakibatkan satu kali <pyro>Pyro DMG Area</pyro> terhadap musuh di sekitar, menghapus efek Essential Transmutation, dan memasuki status <strong>Confirmation of Purity</strong> selama 30 detik.",
@@ -73,7 +73,7 @@
   "burst": {
     "name": "Principle of Purity: As the Light Shifts",
     "description": {
-      "0": "Melepaskan kekuatan \"hewan buas\" dengan cara yang berbeda-beda. Durin bisa melancarkan Elemental Burst yang berbeda sesuai dengan status <strong>Essential Transmutation</strong> yang dimiliki.",
+      "0": "Melepaskan kekuatan \"hewan buas\" dengan cara yang berbeda-beda. Durin bisa melancarkan Elemental Burst yang berbeda sesuai dengan status <tooltip ns=tooltips_gen baseKey18=11230001 values=[]><strong>Essential Transmutation</strong></tooltip> yang dimiliki.",
       "1": "<br/>",
       "2": "<strong>Principle of Purity: As the Light Shifts</strong>",
       "3": "Jika sedang berada dalam status <strong>Confirmation of Purity</strong>, Durin akan melancarkan Elemental Burst <strong>Principle of Purity: As the Light Shifts</strong> untuk mengakibatkan 3 kali <pyro>Pyro DMG Area</pyro> terhadap musuh di depan dan akan menampakkan kekuatan dirinya dalam wujud <strong>Dragon of White Flame</strong>. Dragon of White Flame akan mengikuti Karakter aktif dan menyerang musuh-musuh di sekitar secara berkala, mengakibatkan <pyro>Pyro DMG Area</pyro>. DMG ini dianggap sebagai DMG Elemental Burst.",
@@ -133,7 +133,7 @@
       "0": "Setelah menyelesaikan <strong>PR Penyihir: Tentang Dunia Ini</strong>, Durin akan berubah menjadi Karakter <strong>Hexerei</strong>. Saat ada setidaknya 2 Karakter Hexerei di dalam party, akan mendapatkan efek <strong>Hexerei: Secret Rite</strong> yang memperkuat Karakter Hexerei.",
       "1": "<br/>",
       "2": "<strong>Hexerei: Secret Rite</strong>",
-      "3": "Meningkatkan seluruh efek Talenta Ascension <strong>Light Manifest of the Divine Calculus</strong> (kecuali durasinya) sebesar 75%."
+      "3": "Meningkatkan seluruh efek Talenta Ascension <tooltip ns=char_Durin_gen baseKey18=passive1><strong>Light Manifest of the Divine Calculus</strong></tooltip> (kecuali durasinya) sebesar 75%."
     }
   },
   "constellation1": {
@@ -157,20 +157,20 @@
   "constellation3": {
     "name": "Flame Mirror's Revelation",
     "description": {
-      "0": "Meningkatkan 3 level Elemental Burst <strong>Principle of Purity: As the Light Shifts</strong>.",
+      "0": "Meningkatkan 3 level Elemental Burst <strong><tooltip ns=char_Durin_gen baseKey18=burst>Principle of Purity: As the Light Shifts</tooltip></strong>.",
       "1": "Maksimum: Lv. 15."
     }
   },
   "constellation4": {
     "name": "Emanare's Source",
     "description": {
-      "0": "DMG Elemental Burst Durin meningkat 40%. Selain itu, saat efek mengonsumsi Cycle of Enlightenment dari Konstelasi <strong>Adamah's Redemption</strong> terpicu, ada 30% kemungkinan untuk tidak mengonsumsi <strong>Cycle of Enlightenment</strong> tersebut."
+      "0": "DMG Elemental Burst Durin meningkat 40%. Selain itu, saat efek mengonsumsi Cycle of Enlightenment dari Konstelasi <strong><tooltip ns=char_Durin_gen baseKey18=constellation1>Adamah's Redemption</tooltip></strong> terpicu, ada 30% kemungkinan untuk tidak mengonsumsi <strong>Cycle of Enlightenment</strong> tersebut."
     }
   },
   "constellation5": {
     "name": "Scouring Flame's Sundering",
     "description": {
-      "0": "Meningkatkan 3 level Elemental Skill <strong>Binary Form: Convergence and Division</strong>.",
+      "0": "Meningkatkan 3 level Elemental Skill <strong><tooltip ns=char_Durin_gen baseKey18=skill>Binary Form: Convergence and Division</tooltip></strong>.",
       "1": "Maksimum: Lv. 15."
     }
   },

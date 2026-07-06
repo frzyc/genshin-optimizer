@@ -1,0 +1,163 @@
+{
+  "name": "兹白",
+  "title": "驹隙隐泉",
+  "description": "璃月传说中的白马仙人，其名为兹白，璃月仙话中最神秘的一位。",
+  "constellationName": "白驹座",
+  "auto": {
+    "name": "金铗点桂",
+    "fields": {
+      "normal": {
+        "0": "<strong>普通攻击</strong>",
+        "1": "进行至多四段的连续剑击。"
+      },
+      "charged": {
+        "0": "<strong>重击</strong>",
+        "1": "消耗一定体力，瞬间向前方挥出两剑。"
+      },
+      "plunging": {
+        "0": "<strong>下落攻击</strong>",
+        "1": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。"
+      }
+    },
+    "skillParams": {
+      "0": "一段伤害",
+      "1": "二段伤害",
+      "2": "三段伤害",
+      "3": "四段伤害",
+      "4": "重击伤害",
+      "5": "重击体力消耗",
+      "6": "下坠期间伤害",
+      "7": "低空/高空坠地冲击伤害",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "天地忽然身",
+    "description": {
+      "0": "唤起旧日权能的片影，切换至<tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>「月转时隙」</strong></tooltip>模式。",
+      "1": "在该模式下，兹白进行普通攻击与重击时，将转为造成无法被附魔覆盖的<geo>岩元素伤害</geo>，并可以通过不同的方式，积攒特殊的<strong>「时隙浮光」</strong>；兹白可以消耗「时隙浮光」，施放特殊的元素战技<strong>灵驹飞踏</strong>。",
+      "2": "<br/>",
+      "3": "<strong>月兆·满辉</strong> ",
+      "4": "处于<strong>「月转时隙」</strong>模式下时，兹白进行普通攻击时，第四段攻击将额外造成一次<geo>岩元素伤害</geo>，该伤害视为月结晶反应伤害。"
+    },
+    "skillParams": {
+      "0": "月转时隙一段伤害",
+      "1": "月转时隙二段伤害",
+      "2": "月转时隙三段伤害",
+      "3": "月转时隙四段伤害",
+      "4": "月转时隙重击伤害",
+      "5": "灵驹飞踏第一段伤害",
+      "6": "灵驹飞踏第二段伤害",
+      "7": "月转时隙第四段额外伤害",
+      "8": "月转时隙持续时间",
+      "9": "冷却时间",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "三垣威仪法",
+    "description": {
+      "0": "兹白转起青玄乘阳华盖，造成两次<geo>岩元素伤害</geo>，其中的第二段伤害视为月结晶反应伤害。",
+      "1": "施放时，若兹白处于<tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>「月转时隙」</strong></tooltip>模式下，则本次「月转时隙」模式的持续时间还会延长1.7秒。"
+    },
+    "skillParams": {
+      "0": "技能第一段伤害",
+      "1": "技能第二段伤害",
+      "2": "冷却时间",
+      "3": "元素能量",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "月下素娥降仙",
+    "description": {
+      "0": "施放元素战技<strong><tooltip ns=char_Zibai_gen baseKey18=skill>天地忽然身</tooltip></strong>时，或队伍中附近的角色触发月笼谐奏时，兹白将获得持续4秒的<strong>「太阴降」</strong>效果：<tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>灵驹飞踏</strong></tooltip>第二段攻击造成的伤害提升，提升值相当于兹白防御力的60%。"
+    }
+  },
+  "passive2": {
+    "name": "叠嶂峦岫出云",
+    "description": {
+      "0": "队伍中每存在一名元素类型为<geo>岩元素</geo>的其他角色，都会使兹白的防御力提升15%；队伍中每存在一名元素类型为<hydro>水元素</hydro>的其他角色，都会使兹白的元素精通提升60点。"
+    }
+  },
+  "passive3": {
+    "name": "月兆祝赐·浮明若流",
+    "description": {
+      "0": "队伍中的角色触发水元素结晶反应时，将转为触发月结晶反应，且基于兹白的防御力，提升队伍中角色造成的月结晶反应的基础伤害：每100点防御力都将提升0.7%月结晶反应的基础伤害，至多通过这种方式提升14%伤害。",
+      "1": "<br/>",
+      "2": "此外，兹白在队伍中时，队伍的<strong>月兆</strong>将会上升一级。"
+    }
+  },
+  "passive": {
+    "name": "花林如霰",
+    "description": {
+      "0": "在夜间（18时至6时），不处于战斗状态下时，每2秒为兹白恢复1点元素能量。",
+      "1": "该效果在秘境、征讨领域、深境螺旋中无效。"
+    }
+  },
+  "constellation1": {
+    "name": "出勃然而入寥然",
+    "description": {
+      "0": "施放元素战技<strong><tooltip ns=char_Zibai_gen baseKey18=skill>天地忽然身</tooltip></strong>后，兹白会立即积攒100点<tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>「时隙浮光」</strong></tooltip>，且<strong>「月转时隙」</strong>模式下<strong>灵驹飞踏</strong>的最大可用次数增加至5次。",
+      "1": "此外，每次切换至「月转时隙」模式后，初次施放灵驹飞踏时，第二段攻击造成的月结晶反应伤害提升220%。"
+    }
+  },
+  "constellation2": {
+    "name": "化于生而死于尸",
+    "description": {
+      "0": "处于<tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>「月转时隙」</strong></tooltip>模式下时，队伍中附近的所有角色造成的月结晶反应伤害提升30%。",
+      "1": "<br/>",
+      "2": "<strong>月兆·满辉</strong>：突破天赋<strong><tooltip ns=char_Zibai_gen baseKey18=passive1>月下素娥降仙</tooltip></strong>的效果获得提升：<strong>灵驹飞踏</strong>第二段攻击造成的伤害进一步提升，提升值相当于兹白防御力的550%；该效果需要解锁突破天赋月下素娥降仙。"
+    }
+  },
+  "constellation3": {
+    "name": "解天韬而堕其帙",
+    "description": {
+      "0": "元素战技<strong><tooltip ns=char_Zibai_gen baseKey18=skill>天地忽然身</tooltip></strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
+    }
+  },
+  "constellation4": {
+    "name": "魂魄往而身从之",
+    "description": {
+      "0": "处于<tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>「月转时隙」</strong></tooltip>模式下时，兹白的普通攻击连击段数不会重置，且<strong>灵驹飞踏</strong>命中敌人时，兹白将获得<strong>「月涣华」</strong>效果：下一次进行普通攻击时，第四段额外攻击将造成相当于原本250%的月结晶反应伤害。"
+    }
+  },
+  "constellation5": {
+    "name": "明见无值至不论",
+    "description": {
+      "0": "元素爆发<strong><tooltip ns=char_Zibai_gen baseKey18=burst>三垣威仪法</tooltip></strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
+    }
+  },
+  "constellation6": {
+    "name": "天地忽如一远行",
+    "description": {
+      "0": "处于<tooltip ns=tooltips_gen baseKey18=11260001 values=[]><strong>「月转时隙」</strong></tooltip>模式下时，兹白积攒<strong>「时隙浮光」</strong>的效率提升50%。",
+      "1": "此外，<strong>灵驹飞踏</strong>将转为消耗所有的「时隙浮光」，基于消耗的「时隙浮光」超过70点的部分，每额外消耗1点「时隙浮光」，都会使本次灵驹飞踏与接下来3秒内兹白造成的月结晶反应伤害<tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>擢升</strong></tooltip>1.6%。该效果无法叠加。"
+    }
+  }
+}

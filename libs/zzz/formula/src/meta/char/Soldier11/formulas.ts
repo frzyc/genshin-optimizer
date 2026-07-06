@@ -38,6 +38,33 @@ export const formulas = {
       name: 'disorderDmgInst_fire',
     },
   },
+  vortexDmgInst_fire: {
+    sheet: 'Soldier11',
+    name: 'vortexDmgInst_fire',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'Soldier11',
+      attribute: 'fire',
+      damageType1: 'vortex',
+      name: 'vortexDmgInst_fire',
+    },
+  },
+  abloomDmgInst: {
+    sheet: 'Soldier11',
+    name: 'abloomDmgInst',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'Soldier11',
+      attribute: 'fire',
+      damageType1: 'anomaly',
+      damageType2: 'abloom',
+      name: 'abloomDmgInst',
+    },
+  },
   anomalyBuildupInst: {
     sheet: 'Soldier11',
     name: 'anomalyBuildupInst',
@@ -62,9 +89,9 @@ export const formulas = {
       name: 'dazeInst',
     },
   },
-  BasicAttackWarmupSparks_0_dmg: {
+  'BasicAttackWarmupSparks_0:standardDmg': {
     sheet: 'Soldier11',
-    name: 'BasicAttackWarmupSparks_0_dmg',
+    name: 'BasicAttackWarmupSparks_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -72,12 +99,13 @@ export const formulas = {
       sheet: 'Soldier11',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackWarmupSparks_0_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackWarmupSparks_0',
     },
   },
-  BasicAttackWarmupSparks_0_daze: {
+  'BasicAttackWarmupSparks_0:dazeBuildup': {
     sheet: 'Soldier11',
-    name: 'BasicAttackWarmupSparks_0_daze',
+    name: 'BasicAttackWarmupSparks_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -85,12 +113,13 @@ export const formulas = {
       sheet: 'Soldier11',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackWarmupSparks_0_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackWarmupSparks_0',
     },
   },
-  BasicAttackWarmupSparks_0_anomBuildup: {
+  'BasicAttackWarmupSparks_0:anomBuildup': {
     sheet: 'Soldier11',
-    name: 'BasicAttackWarmupSparks_0_anomBuildup',
+    name: 'BasicAttackWarmupSparks_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -98,12 +127,13 @@ export const formulas = {
       sheet: 'Soldier11',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackWarmupSparks_0_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackWarmupSparks_0',
     },
   },
-  BasicAttackWarmupSparks_1_dmg: {
+  'BasicAttackWarmupSparks_1:standardDmg': {
     sheet: 'Soldier11',
-    name: 'BasicAttackWarmupSparks_1_dmg',
+    name: 'BasicAttackWarmupSparks_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -111,12 +141,13 @@ export const formulas = {
       sheet: 'Soldier11',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackWarmupSparks_1_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackWarmupSparks_1',
     },
   },
-  BasicAttackWarmupSparks_1_daze: {
+  'BasicAttackWarmupSparks_1:dazeBuildup': {
     sheet: 'Soldier11',
-    name: 'BasicAttackWarmupSparks_1_daze',
+    name: 'BasicAttackWarmupSparks_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -124,12 +155,13 @@ export const formulas = {
       sheet: 'Soldier11',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackWarmupSparks_1_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackWarmupSparks_1',
     },
   },
-  BasicAttackWarmupSparks_1_anomBuildup: {
+  'BasicAttackWarmupSparks_1:anomBuildup': {
     sheet: 'Soldier11',
-    name: 'BasicAttackWarmupSparks_1_anomBuildup',
+    name: 'BasicAttackWarmupSparks_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -137,12 +169,13 @@ export const formulas = {
       sheet: 'Soldier11',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackWarmupSparks_1_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackWarmupSparks_1',
     },
   },
-  BasicAttackWarmupSparks_2_dmg: {
+  'BasicAttackWarmupSparks_2:standardDmg': {
     sheet: 'Soldier11',
-    name: 'BasicAttackWarmupSparks_2_dmg',
+    name: 'BasicAttackWarmupSparks_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -150,12 +183,13 @@ export const formulas = {
       sheet: 'Soldier11',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackWarmupSparks_2_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackWarmupSparks_2',
     },
   },
-  BasicAttackWarmupSparks_2_daze: {
+  'BasicAttackWarmupSparks_2:dazeBuildup': {
     sheet: 'Soldier11',
-    name: 'BasicAttackWarmupSparks_2_daze',
+    name: 'BasicAttackWarmupSparks_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -163,12 +197,13 @@ export const formulas = {
       sheet: 'Soldier11',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackWarmupSparks_2_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackWarmupSparks_2',
     },
   },
-  BasicAttackWarmupSparks_2_anomBuildup: {
+  'BasicAttackWarmupSparks_2:anomBuildup': {
     sheet: 'Soldier11',
-    name: 'BasicAttackWarmupSparks_2_anomBuildup',
+    name: 'BasicAttackWarmupSparks_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -176,12 +211,13 @@ export const formulas = {
       sheet: 'Soldier11',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackWarmupSparks_2_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackWarmupSparks_2',
     },
   },
-  BasicAttackWarmupSparks_3_dmg: {
+  'BasicAttackWarmupSparks_3:standardDmg': {
     sheet: 'Soldier11',
-    name: 'BasicAttackWarmupSparks_3_dmg',
+    name: 'BasicAttackWarmupSparks_3:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -189,12 +225,13 @@ export const formulas = {
       sheet: 'Soldier11',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackWarmupSparks_3_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackWarmupSparks_3',
     },
   },
-  BasicAttackWarmupSparks_3_daze: {
+  'BasicAttackWarmupSparks_3:dazeBuildup': {
     sheet: 'Soldier11',
-    name: 'BasicAttackWarmupSparks_3_daze',
+    name: 'BasicAttackWarmupSparks_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -202,12 +239,13 @@ export const formulas = {
       sheet: 'Soldier11',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackWarmupSparks_3_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackWarmupSparks_3',
     },
   },
-  BasicAttackWarmupSparks_3_anomBuildup: {
+  'BasicAttackWarmupSparks_3:anomBuildup': {
     sheet: 'Soldier11',
-    name: 'BasicAttackWarmupSparks_3_anomBuildup',
+    name: 'BasicAttackWarmupSparks_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -215,12 +253,13 @@ export const formulas = {
       sheet: 'Soldier11',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackWarmupSparks_3_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackWarmupSparks_3',
     },
   },
-  BasicAttackFireSuppression_0_dmg: {
+  'BasicAttackFireSuppression_0:standardDmg': {
     sheet: 'Soldier11',
-    name: 'BasicAttackFireSuppression_0_dmg',
+    name: 'BasicAttackFireSuppression_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -228,12 +267,13 @@ export const formulas = {
       sheet: 'Soldier11',
       attribute: 'fire',
       damageType1: 'basic',
-      name: 'BasicAttackFireSuppression_0_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackFireSuppression_0',
     },
   },
-  BasicAttackFireSuppression_0_daze: {
+  'BasicAttackFireSuppression_0:dazeBuildup': {
     sheet: 'Soldier11',
-    name: 'BasicAttackFireSuppression_0_daze',
+    name: 'BasicAttackFireSuppression_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -241,12 +281,13 @@ export const formulas = {
       sheet: 'Soldier11',
       attribute: 'fire',
       damageType1: 'basic',
-      name: 'BasicAttackFireSuppression_0_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackFireSuppression_0',
     },
   },
-  BasicAttackFireSuppression_0_anomBuildup: {
+  'BasicAttackFireSuppression_0:anomBuildup': {
     sheet: 'Soldier11',
-    name: 'BasicAttackFireSuppression_0_anomBuildup',
+    name: 'BasicAttackFireSuppression_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -254,12 +295,13 @@ export const formulas = {
       sheet: 'Soldier11',
       attribute: 'fire',
       damageType1: 'basic',
-      name: 'BasicAttackFireSuppression_0_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackFireSuppression_0',
     },
   },
-  BasicAttackFireSuppression_1_dmg: {
+  'BasicAttackFireSuppression_1:standardDmg': {
     sheet: 'Soldier11',
-    name: 'BasicAttackFireSuppression_1_dmg',
+    name: 'BasicAttackFireSuppression_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -267,12 +309,13 @@ export const formulas = {
       sheet: 'Soldier11',
       attribute: 'fire',
       damageType1: 'basic',
-      name: 'BasicAttackFireSuppression_1_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackFireSuppression_1',
     },
   },
-  BasicAttackFireSuppression_1_daze: {
+  'BasicAttackFireSuppression_1:dazeBuildup': {
     sheet: 'Soldier11',
-    name: 'BasicAttackFireSuppression_1_daze',
+    name: 'BasicAttackFireSuppression_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -280,12 +323,13 @@ export const formulas = {
       sheet: 'Soldier11',
       attribute: 'fire',
       damageType1: 'basic',
-      name: 'BasicAttackFireSuppression_1_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackFireSuppression_1',
     },
   },
-  BasicAttackFireSuppression_1_anomBuildup: {
+  'BasicAttackFireSuppression_1:anomBuildup': {
     sheet: 'Soldier11',
-    name: 'BasicAttackFireSuppression_1_anomBuildup',
+    name: 'BasicAttackFireSuppression_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -293,12 +337,13 @@ export const formulas = {
       sheet: 'Soldier11',
       attribute: 'fire',
       damageType1: 'basic',
-      name: 'BasicAttackFireSuppression_1_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackFireSuppression_1',
     },
   },
-  BasicAttackFireSuppression_2_dmg: {
+  'BasicAttackFireSuppression_2:standardDmg': {
     sheet: 'Soldier11',
-    name: 'BasicAttackFireSuppression_2_dmg',
+    name: 'BasicAttackFireSuppression_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -306,12 +351,13 @@ export const formulas = {
       sheet: 'Soldier11',
       attribute: 'fire',
       damageType1: 'basic',
-      name: 'BasicAttackFireSuppression_2_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackFireSuppression_2',
     },
   },
-  BasicAttackFireSuppression_2_daze: {
+  'BasicAttackFireSuppression_2:dazeBuildup': {
     sheet: 'Soldier11',
-    name: 'BasicAttackFireSuppression_2_daze',
+    name: 'BasicAttackFireSuppression_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -319,12 +365,13 @@ export const formulas = {
       sheet: 'Soldier11',
       attribute: 'fire',
       damageType1: 'basic',
-      name: 'BasicAttackFireSuppression_2_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackFireSuppression_2',
     },
   },
-  BasicAttackFireSuppression_2_anomBuildup: {
+  'BasicAttackFireSuppression_2:anomBuildup': {
     sheet: 'Soldier11',
-    name: 'BasicAttackFireSuppression_2_anomBuildup',
+    name: 'BasicAttackFireSuppression_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -332,12 +379,13 @@ export const formulas = {
       sheet: 'Soldier11',
       attribute: 'fire',
       damageType1: 'basic',
-      name: 'BasicAttackFireSuppression_2_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackFireSuppression_2',
     },
   },
-  BasicAttackFireSuppression_3_dmg: {
+  'BasicAttackFireSuppression_3:standardDmg': {
     sheet: 'Soldier11',
-    name: 'BasicAttackFireSuppression_3_dmg',
+    name: 'BasicAttackFireSuppression_3:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -345,12 +393,13 @@ export const formulas = {
       sheet: 'Soldier11',
       attribute: 'fire',
       damageType1: 'basic',
-      name: 'BasicAttackFireSuppression_3_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackFireSuppression_3',
     },
   },
-  BasicAttackFireSuppression_3_daze: {
+  'BasicAttackFireSuppression_3:dazeBuildup': {
     sheet: 'Soldier11',
-    name: 'BasicAttackFireSuppression_3_daze',
+    name: 'BasicAttackFireSuppression_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -358,12 +407,13 @@ export const formulas = {
       sheet: 'Soldier11',
       attribute: 'fire',
       damageType1: 'basic',
-      name: 'BasicAttackFireSuppression_3_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackFireSuppression_3',
     },
   },
-  BasicAttackFireSuppression_3_anomBuildup: {
+  'BasicAttackFireSuppression_3:anomBuildup': {
     sheet: 'Soldier11',
-    name: 'BasicAttackFireSuppression_3_anomBuildup',
+    name: 'BasicAttackFireSuppression_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -371,12 +421,139 @@ export const formulas = {
       sheet: 'Soldier11',
       attribute: 'fire',
       damageType1: 'basic',
-      name: 'BasicAttackFireSuppression_3_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackFireSuppression_3',
     },
   },
-  DashAttackBlazingFire_0_dmg: {
+  'BasicAttackFireSuppression_4:standardDmg': {
     sheet: 'Soldier11',
-    name: 'DashAttackBlazingFire_0_dmg',
+    name: 'BasicAttackFireSuppression_4:standardDmg',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'standardDmg',
+      sheet: 'Soldier11',
+      attribute: 'fire',
+      damageType1: 'basic',
+      skillType: 'basicSkill',
+      name: 'BasicAttackFireSuppression_4',
+    },
+  },
+  'BasicAttackFireSuppression_4:dazeBuildup': {
+    sheet: 'Soldier11',
+    name: 'BasicAttackFireSuppression_4:dazeBuildup',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'dazeBuildup',
+      sheet: 'Soldier11',
+      attribute: 'fire',
+      damageType1: 'basic',
+      skillType: 'basicSkill',
+      name: 'BasicAttackFireSuppression_4',
+    },
+  },
+  'BasicAttackFireSuppression_4:anomBuildup': {
+    sheet: 'Soldier11',
+    name: 'BasicAttackFireSuppression_4:anomBuildup',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomBuildup',
+      sheet: 'Soldier11',
+      attribute: 'fire',
+      damageType1: 'basic',
+      skillType: 'basicSkill',
+      name: 'BasicAttackFireSuppression_4',
+    },
+  },
+  'BasicAttackFireSuppression_5:standardDmg': {
+    sheet: 'Soldier11',
+    name: 'BasicAttackFireSuppression_5:standardDmg',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'standardDmg',
+      sheet: 'Soldier11',
+      attribute: 'fire',
+      damageType1: 'basic',
+      skillType: 'basicSkill',
+      name: 'BasicAttackFireSuppression_5',
+    },
+  },
+  'BasicAttackFireSuppression_5:dazeBuildup': {
+    sheet: 'Soldier11',
+    name: 'BasicAttackFireSuppression_5:dazeBuildup',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'dazeBuildup',
+      sheet: 'Soldier11',
+      attribute: 'fire',
+      damageType1: 'basic',
+      skillType: 'basicSkill',
+      name: 'BasicAttackFireSuppression_5',
+    },
+  },
+  'BasicAttackFireSuppression_5:anomBuildup': {
+    sheet: 'Soldier11',
+    name: 'BasicAttackFireSuppression_5:anomBuildup',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomBuildup',
+      sheet: 'Soldier11',
+      attribute: 'fire',
+      damageType1: 'basic',
+      skillType: 'basicSkill',
+      name: 'BasicAttackFireSuppression_5',
+    },
+  },
+  'BasicAttackFireSuppression_6:standardDmg': {
+    sheet: 'Soldier11',
+    name: 'BasicAttackFireSuppression_6:standardDmg',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'standardDmg',
+      sheet: 'Soldier11',
+      attribute: 'fire',
+      damageType1: 'basic',
+      skillType: 'basicSkill',
+      name: 'BasicAttackFireSuppression_6',
+    },
+  },
+  'BasicAttackFireSuppression_6:dazeBuildup': {
+    sheet: 'Soldier11',
+    name: 'BasicAttackFireSuppression_6:dazeBuildup',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'dazeBuildup',
+      sheet: 'Soldier11',
+      attribute: 'fire',
+      damageType1: 'basic',
+      skillType: 'basicSkill',
+      name: 'BasicAttackFireSuppression_6',
+    },
+  },
+  'BasicAttackFireSuppression_6:anomBuildup': {
+    sheet: 'Soldier11',
+    name: 'BasicAttackFireSuppression_6:anomBuildup',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomBuildup',
+      sheet: 'Soldier11',
+      attribute: 'fire',
+      damageType1: 'basic',
+      skillType: 'basicSkill',
+      name: 'BasicAttackFireSuppression_6',
+    },
+  },
+  'DashAttackBlazingFire_0:standardDmg': {
+    sheet: 'Soldier11',
+    name: 'DashAttackBlazingFire_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -384,12 +561,13 @@ export const formulas = {
       sheet: 'Soldier11',
       damageType1: 'dash',
       attribute: 'physical',
-      name: 'DashAttackBlazingFire_0_dmg',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackBlazingFire_0',
     },
   },
-  DashAttackBlazingFire_0_daze: {
+  'DashAttackBlazingFire_0:dazeBuildup': {
     sheet: 'Soldier11',
-    name: 'DashAttackBlazingFire_0_daze',
+    name: 'DashAttackBlazingFire_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -397,12 +575,13 @@ export const formulas = {
       sheet: 'Soldier11',
       damageType1: 'dash',
       attribute: 'physical',
-      name: 'DashAttackBlazingFire_0_daze',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackBlazingFire_0',
     },
   },
-  DashAttackBlazingFire_0_anomBuildup: {
+  'DashAttackBlazingFire_0:anomBuildup': {
     sheet: 'Soldier11',
-    name: 'DashAttackBlazingFire_0_anomBuildup',
+    name: 'DashAttackBlazingFire_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -410,12 +589,13 @@ export const formulas = {
       sheet: 'Soldier11',
       damageType1: 'dash',
       attribute: 'physical',
-      name: 'DashAttackBlazingFire_0_anomBuildup',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackBlazingFire_0',
     },
   },
-  DashAttackFireSuppression_0_dmg: {
+  'DashAttackFireSuppression_0:standardDmg': {
     sheet: 'Soldier11',
-    name: 'DashAttackFireSuppression_0_dmg',
+    name: 'DashAttackFireSuppression_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -423,12 +603,13 @@ export const formulas = {
       sheet: 'Soldier11',
       attribute: 'fire',
       damageType1: 'dash',
-      name: 'DashAttackFireSuppression_0_dmg',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackFireSuppression_0',
     },
   },
-  DashAttackFireSuppression_0_daze: {
+  'DashAttackFireSuppression_0:dazeBuildup': {
     sheet: 'Soldier11',
-    name: 'DashAttackFireSuppression_0_daze',
+    name: 'DashAttackFireSuppression_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -436,12 +617,13 @@ export const formulas = {
       sheet: 'Soldier11',
       attribute: 'fire',
       damageType1: 'dash',
-      name: 'DashAttackFireSuppression_0_daze',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackFireSuppression_0',
     },
   },
-  DashAttackFireSuppression_0_anomBuildup: {
+  'DashAttackFireSuppression_0:anomBuildup': {
     sheet: 'Soldier11',
-    name: 'DashAttackFireSuppression_0_anomBuildup',
+    name: 'DashAttackFireSuppression_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -449,12 +631,13 @@ export const formulas = {
       sheet: 'Soldier11',
       attribute: 'fire',
       damageType1: 'dash',
-      name: 'DashAttackFireSuppression_0_anomBuildup',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackFireSuppression_0',
     },
   },
-  DodgeCounterBackdraft_0_dmg: {
+  'DodgeCounterBackdraft_0:standardDmg': {
     sheet: 'Soldier11',
-    name: 'DodgeCounterBackdraft_0_dmg',
+    name: 'DodgeCounterBackdraft_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -463,12 +646,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterBackdraft_0_dmg',
+      name: 'DodgeCounterBackdraft_0',
     },
   },
-  DodgeCounterBackdraft_0_daze: {
+  'DodgeCounterBackdraft_0:dazeBuildup': {
     sheet: 'Soldier11',
-    name: 'DodgeCounterBackdraft_0_daze',
+    name: 'DodgeCounterBackdraft_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -477,12 +660,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterBackdraft_0_daze',
+      name: 'DodgeCounterBackdraft_0',
     },
   },
-  DodgeCounterBackdraft_0_anomBuildup: {
+  'DodgeCounterBackdraft_0:anomBuildup': {
     sheet: 'Soldier11',
-    name: 'DodgeCounterBackdraft_0_anomBuildup',
+    name: 'DodgeCounterBackdraft_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -491,12 +674,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterBackdraft_0_anomBuildup',
+      name: 'DodgeCounterBackdraft_0',
     },
   },
-  SpecialAttackRagingFire_0_dmg: {
+  'SpecialAttackRagingFire_0:standardDmg': {
     sheet: 'Soldier11',
-    name: 'SpecialAttackRagingFire_0_dmg',
+    name: 'SpecialAttackRagingFire_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -505,12 +688,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackRagingFire_0_dmg',
+      name: 'SpecialAttackRagingFire_0',
     },
   },
-  SpecialAttackRagingFire_0_daze: {
+  'SpecialAttackRagingFire_0:dazeBuildup': {
     sheet: 'Soldier11',
-    name: 'SpecialAttackRagingFire_0_daze',
+    name: 'SpecialAttackRagingFire_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -519,12 +702,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackRagingFire_0_daze',
+      name: 'SpecialAttackRagingFire_0',
     },
   },
-  SpecialAttackRagingFire_0_anomBuildup: {
+  'SpecialAttackRagingFire_0:anomBuildup': {
     sheet: 'Soldier11',
-    name: 'SpecialAttackRagingFire_0_anomBuildup',
+    name: 'SpecialAttackRagingFire_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -533,12 +716,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackRagingFire_0_anomBuildup',
+      name: 'SpecialAttackRagingFire_0',
     },
   },
-  EXSpecialAttackFerventFire_0_dmg: {
+  'EXSpecialAttackFerventFire_0:standardDmg': {
     sheet: 'Soldier11',
-    name: 'EXSpecialAttackFerventFire_0_dmg',
+    name: 'EXSpecialAttackFerventFire_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -547,12 +730,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackFerventFire_0_dmg',
+      name: 'EXSpecialAttackFerventFire_0',
     },
   },
-  EXSpecialAttackFerventFire_0_daze: {
+  'EXSpecialAttackFerventFire_0:dazeBuildup': {
     sheet: 'Soldier11',
-    name: 'EXSpecialAttackFerventFire_0_daze',
+    name: 'EXSpecialAttackFerventFire_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -561,12 +744,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackFerventFire_0_daze',
+      name: 'EXSpecialAttackFerventFire_0',
     },
   },
-  EXSpecialAttackFerventFire_0_anomBuildup: {
+  'EXSpecialAttackFerventFire_0:anomBuildup': {
     sheet: 'Soldier11',
-    name: 'EXSpecialAttackFerventFire_0_anomBuildup',
+    name: 'EXSpecialAttackFerventFire_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -575,12 +758,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackFerventFire_0_anomBuildup',
+      name: 'EXSpecialAttackFerventFire_0',
     },
   },
-  ChainAttackUpliftingFlame_0_dmg: {
+  'ChainAttackUpliftingFlame_0:standardDmg': {
     sheet: 'Soldier11',
-    name: 'ChainAttackUpliftingFlame_0_dmg',
+    name: 'ChainAttackUpliftingFlame_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -589,12 +772,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackUpliftingFlame_0_dmg',
+      name: 'ChainAttackUpliftingFlame_0',
     },
   },
-  ChainAttackUpliftingFlame_0_daze: {
+  'ChainAttackUpliftingFlame_0:dazeBuildup': {
     sheet: 'Soldier11',
-    name: 'ChainAttackUpliftingFlame_0_daze',
+    name: 'ChainAttackUpliftingFlame_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -603,12 +786,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackUpliftingFlame_0_daze',
+      name: 'ChainAttackUpliftingFlame_0',
     },
   },
-  ChainAttackUpliftingFlame_0_anomBuildup: {
+  'ChainAttackUpliftingFlame_0:anomBuildup': {
     sheet: 'Soldier11',
-    name: 'ChainAttackUpliftingFlame_0_anomBuildup',
+    name: 'ChainAttackUpliftingFlame_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -617,12 +800,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackUpliftingFlame_0_anomBuildup',
+      name: 'ChainAttackUpliftingFlame_0',
     },
   },
-  UltimateBellowingFlame_0_dmg: {
+  'UltimateBellowingFlame_0:standardDmg': {
     sheet: 'Soldier11',
-    name: 'UltimateBellowingFlame_0_dmg',
+    name: 'UltimateBellowingFlame_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -631,12 +814,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateBellowingFlame_0_dmg',
+      name: 'UltimateBellowingFlame_0',
     },
   },
-  UltimateBellowingFlame_0_daze: {
+  'UltimateBellowingFlame_0:dazeBuildup': {
     sheet: 'Soldier11',
-    name: 'UltimateBellowingFlame_0_daze',
+    name: 'UltimateBellowingFlame_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -645,12 +828,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateBellowingFlame_0_daze',
+      name: 'UltimateBellowingFlame_0',
     },
   },
-  UltimateBellowingFlame_0_anomBuildup: {
+  'UltimateBellowingFlame_0:anomBuildup': {
     sheet: 'Soldier11',
-    name: 'UltimateBellowingFlame_0_anomBuildup',
+    name: 'UltimateBellowingFlame_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -659,12 +842,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateBellowingFlame_0_anomBuildup',
+      name: 'UltimateBellowingFlame_0',
     },
   },
-  QuickAssistCoveringFire_0_dmg: {
+  'QuickAssistCoveringFire_0:standardDmg': {
     sheet: 'Soldier11',
-    name: 'QuickAssistCoveringFire_0_dmg',
+    name: 'QuickAssistCoveringFire_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -673,12 +856,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistCoveringFire_0_dmg',
+      name: 'QuickAssistCoveringFire_0',
     },
   },
-  QuickAssistCoveringFire_0_daze: {
+  'QuickAssistCoveringFire_0:dazeBuildup': {
     sheet: 'Soldier11',
-    name: 'QuickAssistCoveringFire_0_daze',
+    name: 'QuickAssistCoveringFire_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -687,12 +870,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistCoveringFire_0_daze',
+      name: 'QuickAssistCoveringFire_0',
     },
   },
-  QuickAssistCoveringFire_0_anomBuildup: {
+  'QuickAssistCoveringFire_0:anomBuildup': {
     sheet: 'Soldier11',
-    name: 'QuickAssistCoveringFire_0_anomBuildup',
+    name: 'QuickAssistCoveringFire_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -701,12 +884,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistCoveringFire_0_anomBuildup',
+      name: 'QuickAssistCoveringFire_0',
     },
   },
-  DefensiveAssistHoldTheLine_0_dmg: {
+  'DefensiveAssistHoldTheLine_0:standardDmg': {
     sheet: 'Soldier11',
-    name: 'DefensiveAssistHoldTheLine_0_dmg',
+    name: 'DefensiveAssistHoldTheLine_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -715,12 +898,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistHoldTheLine_0_dmg',
+      name: 'DefensiveAssistHoldTheLine_0',
     },
   },
-  DefensiveAssistHoldTheLine_0_daze: {
+  'DefensiveAssistHoldTheLine_0:dazeBuildup': {
     sheet: 'Soldier11',
-    name: 'DefensiveAssistHoldTheLine_0_daze',
+    name: 'DefensiveAssistHoldTheLine_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -729,12 +912,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistHoldTheLine_0_daze',
+      name: 'DefensiveAssistHoldTheLine_0',
     },
   },
-  DefensiveAssistHoldTheLine_0_anomBuildup: {
+  'DefensiveAssistHoldTheLine_0:anomBuildup': {
     sheet: 'Soldier11',
-    name: 'DefensiveAssistHoldTheLine_0_anomBuildup',
+    name: 'DefensiveAssistHoldTheLine_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -743,12 +926,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistHoldTheLine_0_anomBuildup',
+      name: 'DefensiveAssistHoldTheLine_0',
     },
   },
-  DefensiveAssistHoldTheLine_1_dmg: {
+  'DefensiveAssistHoldTheLine_1:standardDmg': {
     sheet: 'Soldier11',
-    name: 'DefensiveAssistHoldTheLine_1_dmg',
+    name: 'DefensiveAssistHoldTheLine_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -757,12 +940,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistHoldTheLine_1_dmg',
+      name: 'DefensiveAssistHoldTheLine_1',
     },
   },
-  DefensiveAssistHoldTheLine_1_daze: {
+  'DefensiveAssistHoldTheLine_1:dazeBuildup': {
     sheet: 'Soldier11',
-    name: 'DefensiveAssistHoldTheLine_1_daze',
+    name: 'DefensiveAssistHoldTheLine_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -771,12 +954,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistHoldTheLine_1_daze',
+      name: 'DefensiveAssistHoldTheLine_1',
     },
   },
-  DefensiveAssistHoldTheLine_1_anomBuildup: {
+  'DefensiveAssistHoldTheLine_1:anomBuildup': {
     sheet: 'Soldier11',
-    name: 'DefensiveAssistHoldTheLine_1_anomBuildup',
+    name: 'DefensiveAssistHoldTheLine_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -785,12 +968,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistHoldTheLine_1_anomBuildup',
+      name: 'DefensiveAssistHoldTheLine_1',
     },
   },
-  DefensiveAssistHoldTheLine_2_dmg: {
+  'DefensiveAssistHoldTheLine_2:standardDmg': {
     sheet: 'Soldier11',
-    name: 'DefensiveAssistHoldTheLine_2_dmg',
+    name: 'DefensiveAssistHoldTheLine_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -799,12 +982,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistHoldTheLine_2_dmg',
+      name: 'DefensiveAssistHoldTheLine_2',
     },
   },
-  DefensiveAssistHoldTheLine_2_daze: {
+  'DefensiveAssistHoldTheLine_2:dazeBuildup': {
     sheet: 'Soldier11',
-    name: 'DefensiveAssistHoldTheLine_2_daze',
+    name: 'DefensiveAssistHoldTheLine_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -813,12 +996,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistHoldTheLine_2_daze',
+      name: 'DefensiveAssistHoldTheLine_2',
     },
   },
-  DefensiveAssistHoldTheLine_2_anomBuildup: {
+  'DefensiveAssistHoldTheLine_2:anomBuildup': {
     sheet: 'Soldier11',
-    name: 'DefensiveAssistHoldTheLine_2_anomBuildup',
+    name: 'DefensiveAssistHoldTheLine_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -827,12 +1010,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistHoldTheLine_2_anomBuildup',
+      name: 'DefensiveAssistHoldTheLine_2',
     },
   },
-  AssistFollowUpReignition_0_dmg: {
+  'AssistFollowUpReignition_0:standardDmg': {
     sheet: 'Soldier11',
-    name: 'AssistFollowUpReignition_0_dmg',
+    name: 'AssistFollowUpReignition_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -841,12 +1024,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpReignition_0_dmg',
+      name: 'AssistFollowUpReignition_0',
     },
   },
-  AssistFollowUpReignition_0_daze: {
+  'AssistFollowUpReignition_0:dazeBuildup': {
     sheet: 'Soldier11',
-    name: 'AssistFollowUpReignition_0_daze',
+    name: 'AssistFollowUpReignition_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -855,12 +1038,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpReignition_0_daze',
+      name: 'AssistFollowUpReignition_0',
     },
   },
-  AssistFollowUpReignition_0_anomBuildup: {
+  'AssistFollowUpReignition_0:anomBuildup': {
     sheet: 'Soldier11',
-    name: 'AssistFollowUpReignition_0_anomBuildup',
+    name: 'AssistFollowUpReignition_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -869,7 +1052,7 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpReignition_0_anomBuildup',
+      name: 'AssistFollowUpReignition_0',
     },
   },
 } as const

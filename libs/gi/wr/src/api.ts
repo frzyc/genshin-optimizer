@@ -11,9 +11,13 @@ import type {
   MainStatKey,
   SubstatKey,
 } from '@genshin-optimizer/gi/consts'
-import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
+import {
+  allElementWithPhyKeys,
+  allTravelerKeys,
+} from '@genshin-optimizer/gi/consts'
 import type {
   CustomTarget,
+  ArtCharDatabase,
   ICachedArtifact,
   ICachedCharacter,
   ICachedWeapon,
@@ -129,6 +133,7 @@ export interface CharInfo extends ICharacter {
  */
 export function dataObjForCharacterNew(
   {
+    key,
     level,
     constellation,
     ascension,
@@ -142,6 +147,7 @@ export function dataObjForCharacterNew(
     hitMode: globalHitMode,
     reaction,
   }: CharInfo,
+  database: ArtCharDatabase,
   sheetData?: Data
 ): Data[] {
   const result: Data[] = [
@@ -194,6 +200,20 @@ export function dataObjForCharacterNew(
     (x: string, keys: string[]) =>
       layeredAssignment(result[0], keys, constant(x))
   )
+  // Insert elements resonanted with for traveler automatically
+  // using existing conditional system
+  if (key.includes('Traveler')) {
+    const dbTravelerKeys = allTravelerKeys.filter((tk) =>
+      database.chars.get(tk)
+    )
+    dbTravelerKeys.forEach((tk) =>
+      layeredAssignment(
+        result,
+        ['conditional', 'Traveler', tk.toLowerCase()],
+        constant('on')
+      )
+    )
+  }
 
   if (sheetData?.display) {
     sheetData.display['custom'] = {}

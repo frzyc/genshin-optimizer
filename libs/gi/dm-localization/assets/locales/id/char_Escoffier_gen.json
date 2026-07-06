@@ -53,7 +53,7 @@
       "9": "Setiap satu kurun waktu, saat Escoffier mengaktifkan Cooking Mek dalam Cold Storage Mode, akan menjatuhkan Surging Blade yang mengakibatkan Ousia-aligned <cryo>Cryo DMG Area</cryo>.",
       "10": "<br/>",
       "11": "<strong>Mode Tahan</strong>",
-      "12": "Mengaktifkan <strong>Off-the-Cuff Cookery Mode</strong> pada Cooking Mek miliknya."
+      "12": "Mengaktifkan <tooltip ns=tooltips_gen baseKey18=11120002 values=[]><strong>Off-the-Cuff Cookery Mode</strong></tooltip> pada Cooking Mek miliknya."
     },
     "skillParams": {
       "0": "DMG Skill",
@@ -101,19 +101,19 @@
   "passive1": {
     "name": "Better to Salivate Than Medicate",
     "description": {
-      "0": "Setelah melancarkan Elemental Burst <strong>Scoring Cuts</strong>, Escoffier akan mendapatkan efek Rehab Diet selama 9 detik: Memulihkan HP Karakter aktif di sekitar sebesar 138,24% ATK Escoffier setiap detiknya."
+      "0": "Setelah melancarkan Elemental Burst <strong><tooltip ns=char_Escoffier_gen baseKey18=burst>Scoring Cuts</tooltip></strong>, Escoffier akan mendapatkan efek Rehab Diet selama 9 detik: Memulihkan HP Karakter aktif di sekitar sebesar 138,24% ATK Escoffier setiap detiknya."
     }
   },
   "passive2": {
     "name": "Inspiration-Immersed Seasoning",
     "description": {
-      "0": "Saat ada 1/2/3/4 Karakter <hydro>Hydro</hydro> atau <cryo>Cryo</cryo> di dalam party, setelah Elemental Skill <strong>Low-Temperature Cooking</strong> atau Elemental Burst <strong>Scoring Cuts</strong> miliknya mengenai musuh, akan mengurangi <hydro>Hydro RES</hydro> dan <cryo>Cryo RES</cryo> musuh ini sebesar 5%/10%/15%/55% selama 12 detik."
+      "0": "Saat ada 1/2/3/4 Karakter <hydro>Hydro</hydro> atau <cryo>Cryo</cryo> di dalam party, setelah Elemental Skill <strong><tooltip ns=char_Escoffier_gen baseKey18=skill>Low-Temperature Cooking</tooltip></strong> atau Elemental Burst <strong><tooltip ns=char_Escoffier_gen baseKey18=burst>Scoring Cuts</tooltip></strong> miliknya mengenai musuh, akan mengurangi <hydro>Hydro RES</hydro> dan <cryo>Cryo RES</cryo> musuh ini sebesar 5%/10%/15%/55% selama 12 detik."
     }
   },
   "passive3": {
     "name": "Constant Off-the-Cuff Cookery",
     "description": {
-      "0": "Saat menahan tombol Elemental Skill <strong>Low-Temperature Cooking</strong>, Escoffier akan mengaktifkan All-Spectrum Multi-Use Cooking Mek dalam Off-the-Cuff Cookery Mode.",
+      "0": "Saat menahan tombol Elemental Skill <strong><tooltip ns=char_Escoffier_gen baseKey18=skill>Low-Temperature Cooking</tooltip></strong>, Escoffier akan mengaktifkan All-Spectrum Multi-Use Cooking Mek dalam Off-the-Cuff Cookery Mode.",
       "1": "<br/>",
       "2": "<strong>Cooking Mek: Off-the-Cuff Cookery Mode</strong>",
       "3": [
@@ -125,42 +125,42 @@
   "constellation1": {
     "name": "Pre-Dinner Dance for Your Taste Buds",
     "description": {
-      "0": "Saat 4 Karakter di dalam party berelemen <hydro>Hydro</hydro> atau <cryo>Cryo</cryo>, maka CRIT DMG <cryo>Cryo DMG</cryo> seluruh anggota party akan meningkat 60% selama 15 detik setelah Escoffier melancarkan Elemental Skill <strong>Low-Temperature Cooking</strong> atau Elemental Burst <strong>Scoring Cuts</strong>.",
+      "0": "Saat 4 Karakter di dalam party berelemen <hydro>Hydro</hydro> atau <cryo>Cryo</cryo>, maka CRIT DMG <cryo>Cryo DMG</cryo> seluruh anggota party akan meningkat 60% selama 15 detik setelah Escoffier melancarkan Elemental Skill <strong><tooltip ns=char_Escoffier_gen baseKey18=skill>Low-Temperature Cooking</tooltip></strong> atau Elemental Burst <strong><tooltip ns=char_Escoffier_gen baseKey18=burst>Scoring Cuts</tooltip></strong>.",
       "1": "Harus membuka Talenta Ascension \"Inspiration-Immersed Seasoning\" terlebih dahulu."
     }
   },
   "constellation2": {
     "name": "Fresh, Fragrant Stew is an Art",
     "description": {
-      "0": "Saat Escoffier mengaktifkan Cooking Mek dalam <strong>Cold Storage Mode</strong>, ia akan mendapatkan efek \"Freshly-Prepped Delicacy\" selama 15 detik. Selama durasi ini, Escoffier akan mendapatkan 5 lapis Cold Dish. Saat Karakter aktif di sekitar selain Escoffier mengakibatkan <cryo>Cryo DMG</cryo> dengan Normal, Charged, Plunging Attack, Elemental Skill, atau Elemental Burst, mereka akan mengonsumsi 1 lapis Cold Dish untuk meningkatkan DMG yang diakibatkan sebesar 240% ATK Escoffier.",
+      "0": "Saat Escoffier mengaktifkan Cooking Mek dalam <tooltip ns=tooltips_gen baseKey18=11120001 values=[]><strong>Cold Storage Mode</strong></tooltip>, ia akan mendapatkan efek \"Freshly-Prepped Delicacy\" selama 15 detik. Selama durasi ini, Escoffier akan mendapatkan 5 lapis Cold Dish. Saat Karakter aktif di sekitar selain Escoffier mengakibatkan <cryo>Cryo DMG</cryo> dengan Normal, Charged, Plunging Attack, Elemental Skill, atau Elemental Burst, mereka akan mengonsumsi 1 lapis Cold Dish untuk meningkatkan DMG yang diakibatkan sebesar 240% ATK Escoffier.",
       "1": "Saat satu kali <cryo>Cryo DMG</cryo> mengenai beberapa musuh secara bersamaan, jumlah lapisan Cold Dish yang dikonsumsi dan efeknya akan disesuaikan dengan jumlah musuh yang terkena serangan."
     }
   },
   "constellation3": {
     "name": "The Bakery Magic of Caramel Browning",
     "description": {
-      "0": "Meningkatkan 3 level <strong>Low-Temperature Cooking</strong> dari Elemental Skill.",
+      "0": "Meningkatkan 3 level <strong><tooltip ns=char_Escoffier_gen baseKey18=skill>Low-Temperature Cooking</tooltip></strong> dari Elemental Skill.",
       "1": "Maksimum: Lv. 15."
     }
   },
   "constellation4": {
     "name": "Secret Rosemary Recipe",
     "description": {
-      "0": "Durasi efek <strong>Rehab Diet</strong> diperpanjang 6 detik. Saat aktif, jika pemulihan HP <strong>Rehab Diet</strong> terpicu, ada kemungkinan untuk meningkatkan pemulihan sebesar 100% dan memulihkan 2 poin Energy Escoffier. Persentase kemungkinan ini didasarkan pada CRIT Rate Escoffier. Efek ini dapat terpicu maksimum 7 kali dalam satu kali durasi <strong>Rehab Diet</strong>.",
+      "0": "Durasi efek <tooltip ns=char_Escoffier_gen baseKey18=passive1><strong>Rehab Diet</strong></tooltip> diperpanjang 6 detik. Saat aktif, jika pemulihan HP <strong>Rehab Diet</strong> terpicu, ada kemungkinan untuk meningkatkan pemulihan sebesar 100% dan memulihkan 2 poin Energy Escoffier. Persentase kemungkinan ini didasarkan pada CRIT Rate Escoffier. Efek ini dapat terpicu maksimum 7 kali dalam satu kali durasi <strong>Rehab Diet</strong>.",
       "1": "Harus membuka Talenta Ascension \"Better to Salivate Than Medicate\" terlebih dahulu."
     }
   },
   "constellation5": {
     "name": "Symphony of a Thousand Sauces",
     "description": {
-      "0": "Meningkatkan 3 level Elemental Burst <strong>Scoring Cuts</strong>.",
+      "0": "Meningkatkan 3 level Elemental Burst <strong><tooltip ns=char_Escoffier_gen baseKey18=burst>Scoring Cuts</tooltip></strong>.",
       "1": "Maksimum: Lv. 15."
     }
   },
   "constellation6": {
     "name": "Tea Parties Bursting With Color",
     "description": {
-      "0": "<strong>Cooking Mek: Cold Storage Mode</strong> mendapatkan penguatan berikut:",
+      "0": "<tooltip ns=tooltips_gen baseKey18=11120001 values=[]><strong>Cooking Mek: Cold Storage Mode</strong></tooltip> mendapatkan penguatan berikut:",
       "1": [
         "Saat Normal Attack, Charged Attack, atau Plunging Attack Karakter aktif di dalam party mengenai musuh, Cooking Mek: Cold Storage Mode akan menembakkan sebuah Special-Grade Frosty Parfait tambahan, mengakibatkan <cryo>Cryo DMG Area</cryo> sebesar 500% ATK Escoffier. DMG ini dianggap sebagai DMG Elemental Skill."
       ],

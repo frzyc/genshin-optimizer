@@ -132,20 +132,6 @@
     }
   },
   "special": {
-    "EXSpecialAttackMountainTremor": {
-      "name": "EX Special Attack: Mountain Tremor",
-      "desc": {
-        "0": "With enough Adrenaline, can be activated in one of two ways:",
-        "1": "After the 1st or 2nd hit of <ct color=#FFFFFF>Basic Attack: Majestic Summit</ct>, press <IconNormal /> to activate:",
-        "2": "During an <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Basic Attack: Immolate</ct>, <ct color=#FFFFFF>Chain Attack</ct>, <ct color=#FFFFFF>Ultimate</ct>, <ct color=#FFFFFF>Assist Follow-Up</ct>, <ct color=#FFFFFF>Dodge Counter</ct>, or <ct color=#FFFFFF>Quick Assist</ct>, quickly input <IconSpecialReadyRp /> <IconSpecialReadyRp /> <IconNormal /> in sequence to activate:",
-        "3": "Banyue throws a mountain, dealing <ct color=#FF5521>Fire DMG</ct>.",
-        "4": "Character is invulnerable while using this skill."
-      },
-      "params": [
-        " ",
-        "Adrenaline Cost "
-      ]
-    },
     "EXSpecialAttackEarthShaker": {
       "name": "EX Special Attack: Earth Shaker",
       "desc": {
@@ -161,13 +147,13 @@
         "Adrenaline Cost "
       ]
     },
-    "EXSpecialAttackLionsRoar": {
-      "name": "EX Special Attack: Lion's Roar",
+    "EXSpecialAttackMountainTremor": {
+      "name": "EX Special Attack: Mountain Tremor",
       "desc": {
         "0": "With enough Adrenaline, can be activated in one of two ways:",
-        "1": "After the 1st or 2nd hit of <ct color=#FFFFFF>Basic Attack: Towering Peaks</ct>, press <IconSpecialReadyRp /> to activate:",
-        "2": "During an <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Basic Attack: Immolate</ct>, <ct color=#FFFFFF>Chain Attack</ct>, <ct color=#FFFFFF>Ultimate</ct>, <ct color=#FFFFFF>Assist Follow-Up</ct>, <ct color=#FFFFFF>Dodge Counter</ct>, or <ct color=#FFFFFF>Quick Assist</ct>, quickly input <IconNormal /> <IconNormal /> <IconSpecialReadyRp /> in sequence to activate:",
-        "3": "Banyue sends out a sonic wave forward, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "1": "After the 1st or 2nd hit of <ct color=#FFFFFF>Basic Attack: Majestic Summit</ct>, press <IconNormal /> to activate:",
+        "2": "During an <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Basic Attack: Immolate</ct>, <ct color=#FFFFFF>Chain Attack</ct>, <ct color=#FFFFFF>Ultimate</ct>, <ct color=#FFFFFF>Assist Follow-Up</ct>, <ct color=#FFFFFF>Dodge Counter</ct>, or <ct color=#FFFFFF>Quick Assist</ct>, quickly input <IconSpecialReadyRp /> <IconSpecialReadyRp /> <IconNormal /> in sequence to activate:",
+        "3": "Banyue throws a mountain, dealing <ct color=#FF5521>Fire DMG</ct>.",
         "4": "Character is invulnerable while using this skill."
       },
       "params": [
@@ -190,12 +176,14 @@
         "Adrenaline Cost "
       ]
     },
-    "EXSpecialAttackLionsRoarWrath": {
-      "name": "EX Special Attack: Lion's Roar - Wrath",
+    "EXSpecialAttackLionsRoar": {
+      "name": "EX Special Attack: Lion's Roar",
       "desc": {
-        "0": "With enough Adrenaline when using <ct color=#FFFFFF>EX Special Attack: One's Path</ct>, quickly input <IconNormal /> <IconNormal /> <IconSpecialReadyRp /> in sequence to activate:",
-        "1": "Banyue releases a powerful sonic wave in front, dealing <ct color=#FF5521>Fire DMG</ct>.",
-        "2": "Character is invulnerable while using this skill."
+        "0": "With enough Adrenaline, can be activated in one of two ways:",
+        "1": "After the 1st or 2nd hit of <ct color=#FFFFFF>Basic Attack: Towering Peaks</ct>, press <IconSpecialReadyRp /> to activate:",
+        "2": "During an <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Basic Attack: Immolate</ct>, <ct color=#FFFFFF>Chain Attack</ct>, <ct color=#FFFFFF>Ultimate</ct>, <ct color=#FFFFFF>Assist Follow-Up</ct>, <ct color=#FFFFFF>Dodge Counter</ct>, or <ct color=#FFFFFF>Quick Assist</ct>, quickly input <IconNormal /> <IconNormal /> <IconSpecialReadyRp /> in sequence to activate:",
+        "3": "Banyue sends out a sonic wave forward, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "4": "Character is invulnerable while using this skill."
       },
       "params": [
         " ",
@@ -207,6 +195,18 @@
       "desc": {
         "0": "With enough Adrenaline when using <ct color=#FFFFFF>EX Special Attack: Earth Shaker</ct>, quickly input <IconSpecialReadyRp /> <IconSpecialReadyRp /> <IconNormal /> in sequence to activate:",
         "1": "Banyue throws out an even larger mountain, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "Adrenaline Cost "
+      ]
+    },
+    "EXSpecialAttackLionsRoarWrath": {
+      "name": "EX Special Attack: Lion's Roar - Wrath",
+      "desc": {
+        "0": "With enough Adrenaline when using <ct color=#FFFFFF>EX Special Attack: One's Path</ct>, quickly input <IconNormal /> <IconNormal /> <IconSpecialReadyRp /> in sequence to activate:",
+        "1": "Banyue releases a powerful sonic wave in front, dealing <ct color=#FF5521>Fire DMG</ct>.",
         "2": "Character is invulnerable while using this skill."
       },
       "params": [
@@ -307,7 +307,7 @@
         "3": "Banyue can recover <ct color=#FFFFFF>Wrathful Fires</ct> through the following methods:",
         "4": "Recover 0.5 <ct color=#FFFFFF>Wrathful Fires</ct> for every point of Adrenaline consumed;",
         "5": "Recover 4 <ct color=#FFFFFF>Wrathful Fires</ct> upon activating <ct color=#FFFFFF>Defensive Assist</ct>;",
-        "6": "Recover 4 <ct color=#FFFFFF>Wrathful Fires</ct> when parrying an enemy with <ct color=#FFFFFF>Dodge: Immovable Mountain</ct>, and recover 6 <ct color=#FFFFFF>Wrathful Fires</ct> upon triggering a Perfect Block, up to once every 1s;",
+        "6": "Recover 4 <ct color=#FFFFFF>Wrathful Fires</ct> when parrying an enemy with <ct color=#FFFFFF>Dodge: Immovable Mountain</ct>, and recover 6 <ct color=#FFFFFF>Wrathful Fires</ct> instead upon triggering a Perfect Block, up to once every 1s;",
         "7": "Recover 4 <ct color=#FFFFFF>Wrathful Fires</ct> upon triggering a <ct color=#FFFFFF>Perfect Dodge</ct>, up to once every 1s.",
         "8": "Banyue can have up to 150 <ct color=#FFFFFF>Wrathful Fires</ct>. When he possesses at least 120 <ct color=#FFFFFF>Wrathful Fires</ct>, Banyue can enter the <ct color=#FFFFFF>Visage of Wrath</ct> state by using <ct color=#FFFFFF>Basic Attack: Immolate</ct>. While in <ct color=#FFFFFF>Visage of Wrath</ct> state, Banyue can no longer gain <ct color=#FFFFFF>Wrathful Fires</ct>. After Banyue uses <ct color=#FFFFFF>Basic Attack: Toppling Mountain</ct>, he exits the <ct color=#FFFFFF>Visage of Wrath</ct> state.",
         "9": "When entering the <ct color=#FFFFFF>Visage of Wrath</ct> state, Banyue gains 4 <ct color=#FFFFFF>Mountain's Might</ct>. If Banyue has <ct color=#FFFFFF>Mountain's Might</ct>, launching an <ct color=#FFFFFF>EX Special Attack</ct> no longer consumes Adrenaline, instead consuming 1 <ct color=#FFFFFF>Mountain's Might</ct> and restoring 10 Adrenaline. Upon exiting the <ct color=#FFFFFF>Visage of Wrath</ct> state, remove all <ct color=#FFFFFF>Mountain's Might</ct>.",
@@ -321,7 +321,7 @@
         "3": "Banyue can recover <ct color=#FFFFFF>Wrathful Fires</ct> through the following methods:",
         "4": "Recover 0.5 <ct color=#FFFFFF>Wrathful Fires</ct> for every point of Adrenaline consumed;",
         "5": "Recover 4 <ct color=#FFFFFF>Wrathful Fires</ct> upon activating <ct color=#FFFFFF>Defensive Assist</ct>;",
-        "6": "Recover 4 <ct color=#FFFFFF>Wrathful Fires</ct> when parrying an enemy with <ct color=#FFFFFF>Dodge: Immovable Mountain</ct>, and recover 6 <ct color=#FFFFFF>Wrathful Fires</ct> upon triggering a Perfect Block, up to once every 1s;",
+        "6": "Recover 4 <ct color=#FFFFFF>Wrathful Fires</ct> when parrying an enemy with <ct color=#FFFFFF>Dodge: Immovable Mountain</ct>, and recover 6 <ct color=#FFFFFF>Wrathful Fires</ct> instead upon triggering a Perfect Block, up to once every 1s;",
         "7": "Recover 4 <ct color=#FFFFFF>Wrathful Fires</ct> upon triggering a <ct color=#FFFFFF>Perfect Dodge</ct>, up to once every 1s.",
         "8": "Banyue can have up to 150 <ct color=#FFFFFF>Wrathful Fires</ct>. When he possesses at least 120 <ct color=#FFFFFF>Wrathful Fires</ct>, Banyue can enter the <ct color=#FFFFFF>Visage of Wrath</ct> state by using <ct color=#FFFFFF>Basic Attack: Immolate</ct>. While in <ct color=#FFFFFF>Visage of Wrath</ct> state, Banyue can no longer gain <ct color=#FFFFFF>Wrathful Fires</ct>. After Banyue uses <ct color=#FFFFFF>Basic Attack: Toppling Mountain</ct>, he exits the <ct color=#FFFFFF>Visage of Wrath</ct> state.",
         "9": "When entering the <ct color=#FFFFFF>Visage of Wrath</ct> state, Banyue gains 4 <ct color=#FFFFFF>Mountain's Might</ct>. If Banyue has <ct color=#FFFFFF>Mountain's Might</ct>, launching an <ct color=#FFFFFF>EX Special Attack</ct> no longer consumes Adrenaline, instead consuming 1 <ct color=#FFFFFF>Mountain's Might</ct> and restoring 10 Adrenaline. Upon exiting the <ct color=#FFFFFF>Visage of Wrath</ct> state, remove all <ct color=#FFFFFF>Mountain's Might</ct>.",
@@ -335,7 +335,7 @@
         "3": "Banyue can recover <ct color=#FFFFFF>Wrathful Fires</ct> through the following methods:",
         "4": "Recover 0.5 <ct color=#FFFFFF>Wrathful Fires</ct> for every point of Adrenaline consumed;",
         "5": "Recover 4 <ct color=#FFFFFF>Wrathful Fires</ct> upon activating <ct color=#FFFFFF>Defensive Assist</ct>;",
-        "6": "Recover 4 <ct color=#FFFFFF>Wrathful Fires</ct> when parrying an enemy with <ct color=#FFFFFF>Dodge: Immovable Mountain</ct>, and recover 6 <ct color=#FFFFFF>Wrathful Fires</ct> upon triggering a Perfect Block, up to once every 1s;",
+        "6": "Recover 4 <ct color=#FFFFFF>Wrathful Fires</ct> when parrying an enemy with <ct color=#FFFFFF>Dodge: Immovable Mountain</ct>, and recover 6 <ct color=#FFFFFF>Wrathful Fires</ct> instead upon triggering a Perfect Block, up to once every 1s;",
         "7": "Recover 4 <ct color=#FFFFFF>Wrathful Fires</ct> upon triggering a <ct color=#FFFFFF>Perfect Dodge</ct>, up to once every 1s.",
         "8": "Banyue can have up to 150 <ct color=#FFFFFF>Wrathful Fires</ct>. When he possesses at least 120 <ct color=#FFFFFF>Wrathful Fires</ct>, Banyue can enter the <ct color=#FFFFFF>Visage of Wrath</ct> state by using <ct color=#FFFFFF>Basic Attack: Immolate</ct>. While in <ct color=#FFFFFF>Visage of Wrath</ct> state, Banyue can no longer gain <ct color=#FFFFFF>Wrathful Fires</ct>. After Banyue uses <ct color=#FFFFFF>Basic Attack: Toppling Mountain</ct>, he exits the <ct color=#FFFFFF>Visage of Wrath</ct> state.",
         "9": "When entering the <ct color=#FFFFFF>Visage of Wrath</ct> state, Banyue gains 4 <ct color=#FFFFFF>Mountain's Might</ct>. If Banyue has <ct color=#FFFFFF>Mountain's Might</ct>, launching an <ct color=#FFFFFF>EX Special Attack</ct> no longer consumes Adrenaline, instead consuming 1 <ct color=#FFFFFF>Mountain's Might</ct> and restoring 10 Adrenaline. Upon exiting the <ct color=#FFFFFF>Visage of Wrath</ct> state, remove all <ct color=#FFFFFF>Mountain's Might</ct>.",
@@ -349,7 +349,7 @@
         "3": "Banyue can recover <ct color=#FFFFFF>Wrathful Fires</ct> through the following methods:",
         "4": "Recover 0.5 <ct color=#FFFFFF>Wrathful Fires</ct> for every point of Adrenaline consumed;",
         "5": "Recover 4 <ct color=#FFFFFF>Wrathful Fires</ct> upon activating <ct color=#FFFFFF>Defensive Assist</ct>;",
-        "6": "Recover 4 <ct color=#FFFFFF>Wrathful Fires</ct> when parrying an enemy with <ct color=#FFFFFF>Dodge: Immovable Mountain</ct>, and recover 6 <ct color=#FFFFFF>Wrathful Fires</ct> upon triggering a Perfect Block, up to once every 1s;",
+        "6": "Recover 4 <ct color=#FFFFFF>Wrathful Fires</ct> when parrying an enemy with <ct color=#FFFFFF>Dodge: Immovable Mountain</ct>, and recover 6 <ct color=#FFFFFF>Wrathful Fires</ct> instead upon triggering a Perfect Block, up to once every 1s;",
         "7": "Recover 4 <ct color=#FFFFFF>Wrathful Fires</ct> upon triggering a <ct color=#FFFFFF>Perfect Dodge</ct>, up to once every 1s.",
         "8": "Banyue can have up to 150 <ct color=#FFFFFF>Wrathful Fires</ct>. When he possesses at least 120 <ct color=#FFFFFF>Wrathful Fires</ct>, Banyue can enter the <ct color=#FFFFFF>Visage of Wrath</ct> state by using <ct color=#FFFFFF>Basic Attack: Immolate</ct>. While in <ct color=#FFFFFF>Visage of Wrath</ct> state, Banyue can no longer gain <ct color=#FFFFFF>Wrathful Fires</ct>. After Banyue uses <ct color=#FFFFFF>Basic Attack: Toppling Mountain</ct>, he exits the <ct color=#FFFFFF>Visage of Wrath</ct> state.",
         "9": "When entering the <ct color=#FFFFFF>Visage of Wrath</ct> state, Banyue gains 4 <ct color=#FFFFFF>Mountain's Might</ct>. If Banyue has <ct color=#FFFFFF>Mountain's Might</ct>, launching an <ct color=#FFFFFF>EX Special Attack</ct> no longer consumes Adrenaline, instead consuming 1 <ct color=#FFFFFF>Mountain's Might</ct> and restoring 10 Adrenaline. Upon exiting the <ct color=#FFFFFF>Visage of Wrath</ct> state, remove all <ct color=#FFFFFF>Mountain's Might</ct>.",
@@ -363,7 +363,7 @@
         "3": "Banyue can recover <ct color=#FFFFFF>Wrathful Fires</ct> through the following methods:",
         "4": "Recover 0.5 <ct color=#FFFFFF>Wrathful Fires</ct> for every point of Adrenaline consumed;",
         "5": "Recover 4 <ct color=#FFFFFF>Wrathful Fires</ct> upon activating <ct color=#FFFFFF>Defensive Assist</ct>;",
-        "6": "Recover 4 <ct color=#FFFFFF>Wrathful Fires</ct> when parrying an enemy with <ct color=#FFFFFF>Dodge: Immovable Mountain</ct>, and recover 6 <ct color=#FFFFFF>Wrathful Fires</ct> upon triggering a Perfect Block, up to once every 1s;",
+        "6": "Recover 4 <ct color=#FFFFFF>Wrathful Fires</ct> when parrying an enemy with <ct color=#FFFFFF>Dodge: Immovable Mountain</ct>, and recover 6 <ct color=#FFFFFF>Wrathful Fires</ct> instead upon triggering a Perfect Block, up to once every 1s;",
         "7": "Recover 4 <ct color=#FFFFFF>Wrathful Fires</ct> upon triggering a <ct color=#FFFFFF>Perfect Dodge</ct>, up to once every 1s.",
         "8": "Banyue can have up to 150 <ct color=#FFFFFF>Wrathful Fires</ct>. When he possesses at least 120 <ct color=#FFFFFF>Wrathful Fires</ct>, Banyue can enter the <ct color=#FFFFFF>Visage of Wrath</ct> state by using <ct color=#FFFFFF>Basic Attack: Immolate</ct>. While in <ct color=#FFFFFF>Visage of Wrath</ct> state, Banyue can no longer gain <ct color=#FFFFFF>Wrathful Fires</ct>. After Banyue uses <ct color=#FFFFFF>Basic Attack: Toppling Mountain</ct>, he exits the <ct color=#FFFFFF>Visage of Wrath</ct> state.",
         "9": "When entering the <ct color=#FFFFFF>Visage of Wrath</ct> state, Banyue gains 4 <ct color=#FFFFFF>Mountain's Might</ct>. If Banyue has <ct color=#FFFFFF>Mountain's Might</ct>, launching an <ct color=#FFFFFF>EX Special Attack</ct> no longer consumes Adrenaline, instead consuming 1 <ct color=#FFFFFF>Mountain's Might</ct> and restoring 10 Adrenaline. Upon exiting the <ct color=#FFFFFF>Visage of Wrath</ct> state, remove all <ct color=#FFFFFF>Mountain's Might</ct>.",
@@ -377,7 +377,7 @@
         "3": "Banyue can recover <ct color=#FFFFFF>Wrathful Fires</ct> through the following methods:",
         "4": "Recover 0.5 <ct color=#FFFFFF>Wrathful Fires</ct> for every point of Adrenaline consumed;",
         "5": "Recover 4 <ct color=#FFFFFF>Wrathful Fires</ct> upon activating <ct color=#FFFFFF>Defensive Assist</ct>;",
-        "6": "Recover 4 <ct color=#FFFFFF>Wrathful Fires</ct> when parrying an enemy with <ct color=#FFFFFF>Dodge: Immovable Mountain</ct>, and recover 6 <ct color=#FFFFFF>Wrathful Fires</ct> upon triggering a Perfect Block, up to once every 1s;",
+        "6": "Recover 4 <ct color=#FFFFFF>Wrathful Fires</ct> when parrying an enemy with <ct color=#FFFFFF>Dodge: Immovable Mountain</ct>, and recover 6 <ct color=#FFFFFF>Wrathful Fires</ct> instead upon triggering a Perfect Block, up to once every 1s;",
         "7": "Recover 4 <ct color=#FFFFFF>Wrathful Fires</ct> upon triggering a <ct color=#FFFFFF>Perfect Dodge</ct>, up to once every 1s.",
         "8": "Banyue can have up to 150 <ct color=#FFFFFF>Wrathful Fires</ct>. When he possesses at least 120 <ct color=#FFFFFF>Wrathful Fires</ct>, Banyue can enter the <ct color=#FFFFFF>Visage of Wrath</ct> state by using <ct color=#FFFFFF>Basic Attack: Immolate</ct>. While in <ct color=#FFFFFF>Visage of Wrath</ct> state, Banyue can no longer gain <ct color=#FFFFFF>Wrathful Fires</ct>. After Banyue uses <ct color=#FFFFFF>Basic Attack: Toppling Mountain</ct>, he exits the <ct color=#FFFFFF>Visage of Wrath</ct> state.",
         "9": "When entering the <ct color=#FFFFFF>Visage of Wrath</ct> state, Banyue gains 4 <ct color=#FFFFFF>Mountain's Might</ct>. If Banyue has <ct color=#FFFFFF>Mountain's Might</ct>, launching an <ct color=#FFFFFF>EX Special Attack</ct> no longer consumes Adrenaline, instead consuming 1 <ct color=#FFFFFF>Mountain's Might</ct> and restoring 10 Adrenaline. Upon exiting the <ct color=#FFFFFF>Visage of Wrath</ct> state, remove all <ct color=#FFFFFF>Mountain's Might</ct>.",
@@ -391,7 +391,7 @@
         "3": "Banyue can recover <ct color=#FFFFFF>Wrathful Fires</ct> through the following methods:",
         "4": "Recover 0.5 <ct color=#FFFFFF>Wrathful Fires</ct> for every point of Adrenaline consumed;",
         "5": "Recover 4 <ct color=#FFFFFF>Wrathful Fires</ct> upon activating <ct color=#FFFFFF>Defensive Assist</ct>;",
-        "6": "Recover 4 <ct color=#FFFFFF>Wrathful Fires</ct> when parrying an enemy with <ct color=#FFFFFF>Dodge: Immovable Mountain</ct>, and recover 6 <ct color=#FFFFFF>Wrathful Fires</ct> upon triggering a Perfect Block, up to once every 1s;",
+        "6": "Recover 4 <ct color=#FFFFFF>Wrathful Fires</ct> when parrying an enemy with <ct color=#FFFFFF>Dodge: Immovable Mountain</ct>, and recover 6 <ct color=#FFFFFF>Wrathful Fires</ct> instead upon triggering a Perfect Block, up to once every 1s;",
         "7": "Recover 4 <ct color=#FFFFFF>Wrathful Fires</ct> upon triggering a <ct color=#FFFFFF>Perfect Dodge</ct>, up to once every 1s.",
         "8": "Banyue can have up to 150 <ct color=#FFFFFF>Wrathful Fires</ct>. When he possesses at least 120 <ct color=#FFFFFF>Wrathful Fires</ct>, Banyue can enter the <ct color=#FFFFFF>Visage of Wrath</ct> state by using <ct color=#FFFFFF>Basic Attack: Immolate</ct>. While in <ct color=#FFFFFF>Visage of Wrath</ct> state, Banyue can no longer gain <ct color=#FFFFFF>Wrathful Fires</ct>. After Banyue uses <ct color=#FFFFFF>Basic Attack: Toppling Mountain</ct>, he exits the <ct color=#FFFFFF>Visage of Wrath</ct> state.",
         "9": "When entering the <ct color=#FFFFFF>Visage of Wrath</ct> state, Banyue gains 4 <ct color=#FFFFFF>Mountain's Might</ct>. If Banyue has <ct color=#FFFFFF>Mountain's Might</ct>, launching an <ct color=#FFFFFF>EX Special Attack</ct> no longer consumes Adrenaline, instead consuming 1 <ct color=#FFFFFF>Mountain's Might</ct> and restoring 10 Adrenaline. Upon exiting the <ct color=#FFFFFF>Visage of Wrath</ct> state, remove all <ct color=#FFFFFF>Mountain's Might</ct>.",
@@ -473,5 +473,6 @@
         "4": "\"I still question whether I have the wisdom and courage to judge... but that's no excuse to stop moving forward.\""
       }
     }
-  }
+  },
+  "potential": {}
 }

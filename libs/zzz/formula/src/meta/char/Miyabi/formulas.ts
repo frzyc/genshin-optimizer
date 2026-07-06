@@ -38,6 +38,33 @@ export const formulas = {
       name: 'disorderDmgInst_frost',
     },
   },
+  vortexDmgInst_frost: {
+    sheet: 'Miyabi',
+    name: 'vortexDmgInst_frost',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'Miyabi',
+      attribute: 'ice',
+      damageType1: 'vortex',
+      name: 'vortexDmgInst_frost',
+    },
+  },
+  abloomDmgInst: {
+    sheet: 'Miyabi',
+    name: 'abloomDmgInst',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'Miyabi',
+      attribute: 'ice',
+      damageType1: 'anomaly',
+      damageType2: 'abloom',
+      name: 'abloomDmgInst',
+    },
+  },
   anomalyBuildupInst: {
     sheet: 'Miyabi',
     name: 'anomalyBuildupInst',
@@ -62,9 +89,9 @@ export const formulas = {
       name: 'dazeInst',
     },
   },
-  BasicAttackKazahana_0_dmg: {
+  'BasicAttackKazahana_0:standardDmg': {
     sheet: 'Miyabi',
-    name: 'BasicAttackKazahana_0_dmg',
+    name: 'BasicAttackKazahana_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -72,12 +99,13 @@ export const formulas = {
       sheet: 'Miyabi',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackKazahana_0_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackKazahana_0',
     },
   },
-  BasicAttackKazahana_0_daze: {
+  'BasicAttackKazahana_0:dazeBuildup': {
     sheet: 'Miyabi',
-    name: 'BasicAttackKazahana_0_daze',
+    name: 'BasicAttackKazahana_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -85,12 +113,13 @@ export const formulas = {
       sheet: 'Miyabi',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackKazahana_0_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackKazahana_0',
     },
   },
-  BasicAttackKazahana_0_anomBuildup: {
+  'BasicAttackKazahana_0:anomBuildup': {
     sheet: 'Miyabi',
-    name: 'BasicAttackKazahana_0_anomBuildup',
+    name: 'BasicAttackKazahana_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -98,12 +127,13 @@ export const formulas = {
       sheet: 'Miyabi',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackKazahana_0_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackKazahana_0',
     },
   },
-  BasicAttackKazahana_1_dmg: {
+  'BasicAttackKazahana_1:standardDmg': {
     sheet: 'Miyabi',
-    name: 'BasicAttackKazahana_1_dmg',
+    name: 'BasicAttackKazahana_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -111,12 +141,13 @@ export const formulas = {
       sheet: 'Miyabi',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackKazahana_1_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackKazahana_1',
     },
   },
-  BasicAttackKazahana_1_daze: {
+  'BasicAttackKazahana_1:dazeBuildup': {
     sheet: 'Miyabi',
-    name: 'BasicAttackKazahana_1_daze',
+    name: 'BasicAttackKazahana_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -124,12 +155,13 @@ export const formulas = {
       sheet: 'Miyabi',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackKazahana_1_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackKazahana_1',
     },
   },
-  BasicAttackKazahana_1_anomBuildup: {
+  'BasicAttackKazahana_1:anomBuildup': {
     sheet: 'Miyabi',
-    name: 'BasicAttackKazahana_1_anomBuildup',
+    name: 'BasicAttackKazahana_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -137,12 +169,13 @@ export const formulas = {
       sheet: 'Miyabi',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackKazahana_1_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackKazahana_1',
     },
   },
-  BasicAttackKazahana_2_dmg: {
+  'BasicAttackKazahana_2:standardDmg': {
     sheet: 'Miyabi',
-    name: 'BasicAttackKazahana_2_dmg',
+    name: 'BasicAttackKazahana_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -150,12 +183,13 @@ export const formulas = {
       sheet: 'Miyabi',
       attribute: 'ice',
       damageType1: 'basic',
-      name: 'BasicAttackKazahana_2_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackKazahana_2',
     },
   },
-  BasicAttackKazahana_2_daze: {
+  'BasicAttackKazahana_2:dazeBuildup': {
     sheet: 'Miyabi',
-    name: 'BasicAttackKazahana_2_daze',
+    name: 'BasicAttackKazahana_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -163,12 +197,13 @@ export const formulas = {
       sheet: 'Miyabi',
       attribute: 'ice',
       damageType1: 'basic',
-      name: 'BasicAttackKazahana_2_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackKazahana_2',
     },
   },
-  BasicAttackKazahana_2_anomBuildup: {
+  'BasicAttackKazahana_2:anomBuildup': {
     sheet: 'Miyabi',
-    name: 'BasicAttackKazahana_2_anomBuildup',
+    name: 'BasicAttackKazahana_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -176,12 +211,13 @@ export const formulas = {
       sheet: 'Miyabi',
       attribute: 'ice',
       damageType1: 'basic',
-      name: 'BasicAttackKazahana_2_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackKazahana_2',
     },
   },
-  BasicAttackKazahana_3_dmg: {
+  'BasicAttackKazahana_3:standardDmg': {
     sheet: 'Miyabi',
-    name: 'BasicAttackKazahana_3_dmg',
+    name: 'BasicAttackKazahana_3:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -189,12 +225,13 @@ export const formulas = {
       sheet: 'Miyabi',
       attribute: 'ice',
       damageType1: 'basic',
-      name: 'BasicAttackKazahana_3_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackKazahana_3',
     },
   },
-  BasicAttackKazahana_3_daze: {
+  'BasicAttackKazahana_3:dazeBuildup': {
     sheet: 'Miyabi',
-    name: 'BasicAttackKazahana_3_daze',
+    name: 'BasicAttackKazahana_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -202,12 +239,13 @@ export const formulas = {
       sheet: 'Miyabi',
       attribute: 'ice',
       damageType1: 'basic',
-      name: 'BasicAttackKazahana_3_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackKazahana_3',
     },
   },
-  BasicAttackKazahana_3_anomBuildup: {
+  'BasicAttackKazahana_3:anomBuildup': {
     sheet: 'Miyabi',
-    name: 'BasicAttackKazahana_3_anomBuildup',
+    name: 'BasicAttackKazahana_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -215,12 +253,13 @@ export const formulas = {
       sheet: 'Miyabi',
       attribute: 'ice',
       damageType1: 'basic',
-      name: 'BasicAttackKazahana_3_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackKazahana_3',
     },
   },
-  BasicAttackKazahana_4_dmg: {
+  'BasicAttackKazahana_4:standardDmg': {
     sheet: 'Miyabi',
-    name: 'BasicAttackKazahana_4_dmg',
+    name: 'BasicAttackKazahana_4:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -228,12 +267,13 @@ export const formulas = {
       sheet: 'Miyabi',
       attribute: 'ice',
       damageType1: 'basic',
-      name: 'BasicAttackKazahana_4_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackKazahana_4',
     },
   },
-  BasicAttackKazahana_4_daze: {
+  'BasicAttackKazahana_4:dazeBuildup': {
     sheet: 'Miyabi',
-    name: 'BasicAttackKazahana_4_daze',
+    name: 'BasicAttackKazahana_4:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -241,12 +281,13 @@ export const formulas = {
       sheet: 'Miyabi',
       attribute: 'ice',
       damageType1: 'basic',
-      name: 'BasicAttackKazahana_4_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackKazahana_4',
     },
   },
-  BasicAttackKazahana_4_anomBuildup: {
+  'BasicAttackKazahana_4:anomBuildup': {
     sheet: 'Miyabi',
-    name: 'BasicAttackKazahana_4_anomBuildup',
+    name: 'BasicAttackKazahana_4:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -254,12 +295,13 @@ export const formulas = {
       sheet: 'Miyabi',
       attribute: 'ice',
       damageType1: 'basic',
-      name: 'BasicAttackKazahana_4_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackKazahana_4',
     },
   },
-  BasicAttackShimotsuki_0_dmg: {
+  'BasicAttackShimotsuki_0:standardDmg': {
     sheet: 'Miyabi',
-    name: 'BasicAttackShimotsuki_0_dmg',
+    name: 'BasicAttackShimotsuki_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -267,12 +309,13 @@ export const formulas = {
       sheet: 'Miyabi',
       attribute: 'ice',
       damageType1: 'basic',
-      name: 'BasicAttackShimotsuki_0_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackShimotsuki_0',
     },
   },
-  BasicAttackShimotsuki_0_daze: {
+  'BasicAttackShimotsuki_0:dazeBuildup': {
     sheet: 'Miyabi',
-    name: 'BasicAttackShimotsuki_0_daze',
+    name: 'BasicAttackShimotsuki_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -280,12 +323,13 @@ export const formulas = {
       sheet: 'Miyabi',
       attribute: 'ice',
       damageType1: 'basic',
-      name: 'BasicAttackShimotsuki_0_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackShimotsuki_0',
     },
   },
-  BasicAttackShimotsuki_0_anomBuildup: {
+  'BasicAttackShimotsuki_0:anomBuildup': {
     sheet: 'Miyabi',
-    name: 'BasicAttackShimotsuki_0_anomBuildup',
+    name: 'BasicAttackShimotsuki_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -293,12 +337,13 @@ export const formulas = {
       sheet: 'Miyabi',
       attribute: 'ice',
       damageType1: 'basic',
-      name: 'BasicAttackShimotsuki_0_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackShimotsuki_0',
     },
   },
-  BasicAttackShimotsuki_1_dmg: {
+  'BasicAttackShimotsuki_1:standardDmg': {
     sheet: 'Miyabi',
-    name: 'BasicAttackShimotsuki_1_dmg',
+    name: 'BasicAttackShimotsuki_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -306,12 +351,13 @@ export const formulas = {
       sheet: 'Miyabi',
       attribute: 'ice',
       damageType1: 'basic',
-      name: 'BasicAttackShimotsuki_1_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackShimotsuki_1',
     },
   },
-  BasicAttackShimotsuki_1_daze: {
+  'BasicAttackShimotsuki_1:dazeBuildup': {
     sheet: 'Miyabi',
-    name: 'BasicAttackShimotsuki_1_daze',
+    name: 'BasicAttackShimotsuki_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -319,12 +365,13 @@ export const formulas = {
       sheet: 'Miyabi',
       attribute: 'ice',
       damageType1: 'basic',
-      name: 'BasicAttackShimotsuki_1_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackShimotsuki_1',
     },
   },
-  BasicAttackShimotsuki_1_anomBuildup: {
+  'BasicAttackShimotsuki_1:anomBuildup': {
     sheet: 'Miyabi',
-    name: 'BasicAttackShimotsuki_1_anomBuildup',
+    name: 'BasicAttackShimotsuki_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -332,12 +379,13 @@ export const formulas = {
       sheet: 'Miyabi',
       attribute: 'ice',
       damageType1: 'basic',
-      name: 'BasicAttackShimotsuki_1_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackShimotsuki_1',
     },
   },
-  BasicAttackShimotsuki_2_dmg: {
+  'BasicAttackShimotsuki_2:standardDmg': {
     sheet: 'Miyabi',
-    name: 'BasicAttackShimotsuki_2_dmg',
+    name: 'BasicAttackShimotsuki_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -345,12 +393,13 @@ export const formulas = {
       sheet: 'Miyabi',
       attribute: 'ice',
       damageType1: 'basic',
-      name: 'BasicAttackShimotsuki_2_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackShimotsuki_2',
     },
   },
-  BasicAttackShimotsuki_2_daze: {
+  'BasicAttackShimotsuki_2:dazeBuildup': {
     sheet: 'Miyabi',
-    name: 'BasicAttackShimotsuki_2_daze',
+    name: 'BasicAttackShimotsuki_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -358,12 +407,13 @@ export const formulas = {
       sheet: 'Miyabi',
       attribute: 'ice',
       damageType1: 'basic',
-      name: 'BasicAttackShimotsuki_2_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackShimotsuki_2',
     },
   },
-  BasicAttackShimotsuki_2_anomBuildup: {
+  'BasicAttackShimotsuki_2:anomBuildup': {
     sheet: 'Miyabi',
-    name: 'BasicAttackShimotsuki_2_anomBuildup',
+    name: 'BasicAttackShimotsuki_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -371,12 +421,13 @@ export const formulas = {
       sheet: 'Miyabi',
       attribute: 'ice',
       damageType1: 'basic',
-      name: 'BasicAttackShimotsuki_2_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackShimotsuki_2',
     },
   },
-  DashAttackFuyubachi_0_dmg: {
+  'DashAttackFuyubachi_0:standardDmg': {
     sheet: 'Miyabi',
-    name: 'DashAttackFuyubachi_0_dmg',
+    name: 'DashAttackFuyubachi_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -384,12 +435,13 @@ export const formulas = {
       sheet: 'Miyabi',
       damageType1: 'dash',
       attribute: 'physical',
-      name: 'DashAttackFuyubachi_0_dmg',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackFuyubachi_0',
     },
   },
-  DashAttackFuyubachi_0_daze: {
+  'DashAttackFuyubachi_0:dazeBuildup': {
     sheet: 'Miyabi',
-    name: 'DashAttackFuyubachi_0_daze',
+    name: 'DashAttackFuyubachi_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -397,12 +449,13 @@ export const formulas = {
       sheet: 'Miyabi',
       damageType1: 'dash',
       attribute: 'physical',
-      name: 'DashAttackFuyubachi_0_daze',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackFuyubachi_0',
     },
   },
-  DashAttackFuyubachi_0_anomBuildup: {
+  'DashAttackFuyubachi_0:anomBuildup': {
     sheet: 'Miyabi',
-    name: 'DashAttackFuyubachi_0_anomBuildup',
+    name: 'DashAttackFuyubachi_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -410,12 +463,13 @@ export const formulas = {
       sheet: 'Miyabi',
       damageType1: 'dash',
       attribute: 'physical',
-      name: 'DashAttackFuyubachi_0_anomBuildup',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackFuyubachi_0',
     },
   },
-  DodgeCounterKanSuzume_0_dmg: {
+  'DodgeCounterKanSuzume_0:standardDmg': {
     sheet: 'Miyabi',
-    name: 'DodgeCounterKanSuzume_0_dmg',
+    name: 'DodgeCounterKanSuzume_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -424,12 +478,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterKanSuzume_0_dmg',
+      name: 'DodgeCounterKanSuzume_0',
     },
   },
-  DodgeCounterKanSuzume_0_daze: {
+  'DodgeCounterKanSuzume_0:dazeBuildup': {
     sheet: 'Miyabi',
-    name: 'DodgeCounterKanSuzume_0_daze',
+    name: 'DodgeCounterKanSuzume_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -438,12 +492,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterKanSuzume_0_daze',
+      name: 'DodgeCounterKanSuzume_0',
     },
   },
-  DodgeCounterKanSuzume_0_anomBuildup: {
+  'DodgeCounterKanSuzume_0:anomBuildup': {
     sheet: 'Miyabi',
-    name: 'DodgeCounterKanSuzume_0_anomBuildup',
+    name: 'DodgeCounterKanSuzume_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -452,12 +506,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterKanSuzume_0_anomBuildup',
+      name: 'DodgeCounterKanSuzume_0',
     },
   },
-  SpecialAttackMiyuki_0_dmg: {
+  'SpecialAttackMiyuki_0:standardDmg': {
     sheet: 'Miyabi',
-    name: 'SpecialAttackMiyuki_0_dmg',
+    name: 'SpecialAttackMiyuki_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -466,12 +520,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackMiyuki_0_dmg',
+      name: 'SpecialAttackMiyuki_0',
     },
   },
-  SpecialAttackMiyuki_0_daze: {
+  'SpecialAttackMiyuki_0:dazeBuildup': {
     sheet: 'Miyabi',
-    name: 'SpecialAttackMiyuki_0_daze',
+    name: 'SpecialAttackMiyuki_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -480,12 +534,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackMiyuki_0_daze',
+      name: 'SpecialAttackMiyuki_0',
     },
   },
-  SpecialAttackMiyuki_0_anomBuildup: {
+  'SpecialAttackMiyuki_0:anomBuildup': {
     sheet: 'Miyabi',
-    name: 'SpecialAttackMiyuki_0_anomBuildup',
+    name: 'SpecialAttackMiyuki_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -494,12 +548,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackMiyuki_0_anomBuildup',
+      name: 'SpecialAttackMiyuki_0',
     },
   },
-  EXSpecialAttackHisetsu_0_dmg: {
+  'EXSpecialAttackHisetsu_0:standardDmg': {
     sheet: 'Miyabi',
-    name: 'EXSpecialAttackHisetsu_0_dmg',
+    name: 'EXSpecialAttackHisetsu_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -508,12 +562,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackHisetsu_0_dmg',
+      name: 'EXSpecialAttackHisetsu_0',
     },
   },
-  EXSpecialAttackHisetsu_0_daze: {
+  'EXSpecialAttackHisetsu_0:dazeBuildup': {
     sheet: 'Miyabi',
-    name: 'EXSpecialAttackHisetsu_0_daze',
+    name: 'EXSpecialAttackHisetsu_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -522,12 +576,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackHisetsu_0_daze',
+      name: 'EXSpecialAttackHisetsu_0',
     },
   },
-  EXSpecialAttackHisetsu_0_anomBuildup: {
+  'EXSpecialAttackHisetsu_0:anomBuildup': {
     sheet: 'Miyabi',
-    name: 'EXSpecialAttackHisetsu_0_anomBuildup',
+    name: 'EXSpecialAttackHisetsu_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -536,12 +590,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackHisetsu_0_anomBuildup',
+      name: 'EXSpecialAttackHisetsu_0',
     },
   },
-  EXSpecialAttackHisetsu_1_dmg: {
+  'EXSpecialAttackHisetsu_1:standardDmg': {
     sheet: 'Miyabi',
-    name: 'EXSpecialAttackHisetsu_1_dmg',
+    name: 'EXSpecialAttackHisetsu_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -550,12 +604,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackHisetsu_1_dmg',
+      name: 'EXSpecialAttackHisetsu_1',
     },
   },
-  EXSpecialAttackHisetsu_1_daze: {
+  'EXSpecialAttackHisetsu_1:dazeBuildup': {
     sheet: 'Miyabi',
-    name: 'EXSpecialAttackHisetsu_1_daze',
+    name: 'EXSpecialAttackHisetsu_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -564,12 +618,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackHisetsu_1_daze',
+      name: 'EXSpecialAttackHisetsu_1',
     },
   },
-  EXSpecialAttackHisetsu_1_anomBuildup: {
+  'EXSpecialAttackHisetsu_1:anomBuildup': {
     sheet: 'Miyabi',
-    name: 'EXSpecialAttackHisetsu_1_anomBuildup',
+    name: 'EXSpecialAttackHisetsu_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -578,12 +632,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackHisetsu_1_anomBuildup',
+      name: 'EXSpecialAttackHisetsu_1',
     },
   },
-  EXSpecialAttackHisetsu_2_dmg: {
+  'EXSpecialAttackHisetsu_2:standardDmg': {
     sheet: 'Miyabi',
-    name: 'EXSpecialAttackHisetsu_2_dmg',
+    name: 'EXSpecialAttackHisetsu_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -592,12 +646,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackHisetsu_2_dmg',
+      name: 'EXSpecialAttackHisetsu_2',
     },
   },
-  EXSpecialAttackHisetsu_2_daze: {
+  'EXSpecialAttackHisetsu_2:dazeBuildup': {
     sheet: 'Miyabi',
-    name: 'EXSpecialAttackHisetsu_2_daze',
+    name: 'EXSpecialAttackHisetsu_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -606,12 +660,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackHisetsu_2_daze',
+      name: 'EXSpecialAttackHisetsu_2',
     },
   },
-  EXSpecialAttackHisetsu_2_anomBuildup: {
+  'EXSpecialAttackHisetsu_2:anomBuildup': {
     sheet: 'Miyabi',
-    name: 'EXSpecialAttackHisetsu_2_anomBuildup',
+    name: 'EXSpecialAttackHisetsu_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -620,12 +674,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackHisetsu_2_anomBuildup',
+      name: 'EXSpecialAttackHisetsu_2',
     },
   },
-  EXSpecialAttackHisetsu_3_dmg: {
+  'EXSpecialAttackHisetsu_3:standardDmg': {
     sheet: 'Miyabi',
-    name: 'EXSpecialAttackHisetsu_3_dmg',
+    name: 'EXSpecialAttackHisetsu_3:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -634,12 +688,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackHisetsu_3_dmg',
+      name: 'EXSpecialAttackHisetsu_3',
     },
   },
-  EXSpecialAttackHisetsu_3_daze: {
+  'EXSpecialAttackHisetsu_3:dazeBuildup': {
     sheet: 'Miyabi',
-    name: 'EXSpecialAttackHisetsu_3_daze',
+    name: 'EXSpecialAttackHisetsu_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -648,12 +702,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackHisetsu_3_daze',
+      name: 'EXSpecialAttackHisetsu_3',
     },
   },
-  EXSpecialAttackHisetsu_3_anomBuildup: {
+  'EXSpecialAttackHisetsu_3:anomBuildup': {
     sheet: 'Miyabi',
-    name: 'EXSpecialAttackHisetsu_3_anomBuildup',
+    name: 'EXSpecialAttackHisetsu_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -662,12 +716,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackHisetsu_3_anomBuildup',
+      name: 'EXSpecialAttackHisetsu_3',
     },
   },
-  ChainAttackSpringsCall_0_dmg: {
+  'ChainAttackSpringsCall_0:standardDmg': {
     sheet: 'Miyabi',
-    name: 'ChainAttackSpringsCall_0_dmg',
+    name: 'ChainAttackSpringsCall_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -675,12 +729,13 @@ export const formulas = {
       sheet: 'Miyabi',
       attribute: 'ice',
       damageType1: 'chain',
-      name: 'ChainAttackSpringsCall_0_dmg',
+      skillType: 'chainSkill',
+      name: 'ChainAttackSpringsCall_0',
     },
   },
-  ChainAttackSpringsCall_0_daze: {
+  'ChainAttackSpringsCall_0:dazeBuildup': {
     sheet: 'Miyabi',
-    name: 'ChainAttackSpringsCall_0_daze',
+    name: 'ChainAttackSpringsCall_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -688,12 +743,13 @@ export const formulas = {
       sheet: 'Miyabi',
       attribute: 'ice',
       damageType1: 'chain',
-      name: 'ChainAttackSpringsCall_0_daze',
+      skillType: 'chainSkill',
+      name: 'ChainAttackSpringsCall_0',
     },
   },
-  ChainAttackSpringsCall_0_anomBuildup: {
+  'ChainAttackSpringsCall_0:anomBuildup': {
     sheet: 'Miyabi',
-    name: 'ChainAttackSpringsCall_0_anomBuildup',
+    name: 'ChainAttackSpringsCall_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -701,12 +757,13 @@ export const formulas = {
       sheet: 'Miyabi',
       attribute: 'ice',
       damageType1: 'chain',
-      name: 'ChainAttackSpringsCall_0_anomBuildup',
+      skillType: 'chainSkill',
+      name: 'ChainAttackSpringsCall_0',
     },
   },
-  UltimateLingeringSnow_0_dmg: {
+  'UltimateLingeringSnow_0:standardDmg': {
     sheet: 'Miyabi',
-    name: 'UltimateLingeringSnow_0_dmg',
+    name: 'UltimateLingeringSnow_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -715,12 +772,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateLingeringSnow_0_dmg',
+      name: 'UltimateLingeringSnow_0',
     },
   },
-  UltimateLingeringSnow_0_daze: {
+  'UltimateLingeringSnow_0:dazeBuildup': {
     sheet: 'Miyabi',
-    name: 'UltimateLingeringSnow_0_daze',
+    name: 'UltimateLingeringSnow_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -729,12 +786,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateLingeringSnow_0_daze',
+      name: 'UltimateLingeringSnow_0',
     },
   },
-  UltimateLingeringSnow_0_anomBuildup: {
+  'UltimateLingeringSnow_0:anomBuildup': {
     sheet: 'Miyabi',
-    name: 'UltimateLingeringSnow_0_anomBuildup',
+    name: 'UltimateLingeringSnow_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -743,12 +800,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateLingeringSnow_0_anomBuildup',
+      name: 'UltimateLingeringSnow_0',
     },
   },
-  QuickAssistDancingPetals_0_dmg: {
+  'QuickAssistDancingPetals_0:standardDmg': {
     sheet: 'Miyabi',
-    name: 'QuickAssistDancingPetals_0_dmg',
+    name: 'QuickAssistDancingPetals_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -757,12 +814,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistDancingPetals_0_dmg',
+      name: 'QuickAssistDancingPetals_0',
     },
   },
-  QuickAssistDancingPetals_0_daze: {
+  'QuickAssistDancingPetals_0:dazeBuildup': {
     sheet: 'Miyabi',
-    name: 'QuickAssistDancingPetals_0_daze',
+    name: 'QuickAssistDancingPetals_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -771,12 +828,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistDancingPetals_0_daze',
+      name: 'QuickAssistDancingPetals_0',
     },
   },
-  QuickAssistDancingPetals_0_anomBuildup: {
+  'QuickAssistDancingPetals_0:anomBuildup': {
     sheet: 'Miyabi',
-    name: 'QuickAssistDancingPetals_0_anomBuildup',
+    name: 'QuickAssistDancingPetals_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -785,12 +842,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistDancingPetals_0_anomBuildup',
+      name: 'QuickAssistDancingPetals_0',
     },
   },
-  DefensiveAssistDriftingPetals_0_dmg: {
+  'DefensiveAssistDriftingPetals_0:standardDmg': {
     sheet: 'Miyabi',
-    name: 'DefensiveAssistDriftingPetals_0_dmg',
+    name: 'DefensiveAssistDriftingPetals_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -799,12 +856,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistDriftingPetals_0_dmg',
+      name: 'DefensiveAssistDriftingPetals_0',
     },
   },
-  DefensiveAssistDriftingPetals_0_daze: {
+  'DefensiveAssistDriftingPetals_0:dazeBuildup': {
     sheet: 'Miyabi',
-    name: 'DefensiveAssistDriftingPetals_0_daze',
+    name: 'DefensiveAssistDriftingPetals_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -813,12 +870,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistDriftingPetals_0_daze',
+      name: 'DefensiveAssistDriftingPetals_0',
     },
   },
-  DefensiveAssistDriftingPetals_0_anomBuildup: {
+  'DefensiveAssistDriftingPetals_0:anomBuildup': {
     sheet: 'Miyabi',
-    name: 'DefensiveAssistDriftingPetals_0_anomBuildup',
+    name: 'DefensiveAssistDriftingPetals_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -827,12 +884,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistDriftingPetals_0_anomBuildup',
+      name: 'DefensiveAssistDriftingPetals_0',
     },
   },
-  DefensiveAssistDriftingPetals_1_dmg: {
+  'DefensiveAssistDriftingPetals_1:standardDmg': {
     sheet: 'Miyabi',
-    name: 'DefensiveAssistDriftingPetals_1_dmg',
+    name: 'DefensiveAssistDriftingPetals_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -841,12 +898,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistDriftingPetals_1_dmg',
+      name: 'DefensiveAssistDriftingPetals_1',
     },
   },
-  DefensiveAssistDriftingPetals_1_daze: {
+  'DefensiveAssistDriftingPetals_1:dazeBuildup': {
     sheet: 'Miyabi',
-    name: 'DefensiveAssistDriftingPetals_1_daze',
+    name: 'DefensiveAssistDriftingPetals_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -855,12 +912,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistDriftingPetals_1_daze',
+      name: 'DefensiveAssistDriftingPetals_1',
     },
   },
-  DefensiveAssistDriftingPetals_1_anomBuildup: {
+  'DefensiveAssistDriftingPetals_1:anomBuildup': {
     sheet: 'Miyabi',
-    name: 'DefensiveAssistDriftingPetals_1_anomBuildup',
+    name: 'DefensiveAssistDriftingPetals_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -869,12 +926,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistDriftingPetals_1_anomBuildup',
+      name: 'DefensiveAssistDriftingPetals_1',
     },
   },
-  DefensiveAssistDriftingPetals_2_dmg: {
+  'DefensiveAssistDriftingPetals_2:standardDmg': {
     sheet: 'Miyabi',
-    name: 'DefensiveAssistDriftingPetals_2_dmg',
+    name: 'DefensiveAssistDriftingPetals_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -883,12 +940,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistDriftingPetals_2_dmg',
+      name: 'DefensiveAssistDriftingPetals_2',
     },
   },
-  DefensiveAssistDriftingPetals_2_daze: {
+  'DefensiveAssistDriftingPetals_2:dazeBuildup': {
     sheet: 'Miyabi',
-    name: 'DefensiveAssistDriftingPetals_2_daze',
+    name: 'DefensiveAssistDriftingPetals_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -897,12 +954,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistDriftingPetals_2_daze',
+      name: 'DefensiveAssistDriftingPetals_2',
     },
   },
-  DefensiveAssistDriftingPetals_2_anomBuildup: {
+  'DefensiveAssistDriftingPetals_2:anomBuildup': {
     sheet: 'Miyabi',
-    name: 'DefensiveAssistDriftingPetals_2_anomBuildup',
+    name: 'DefensiveAssistDriftingPetals_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -911,12 +968,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistDriftingPetals_2_anomBuildup',
+      name: 'DefensiveAssistDriftingPetals_2',
     },
   },
-  AssistFollowUpFallingPetals_0_dmg: {
+  'AssistFollowUpFallingPetals_0:standardDmg': {
     sheet: 'Miyabi',
-    name: 'AssistFollowUpFallingPetals_0_dmg',
+    name: 'AssistFollowUpFallingPetals_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -925,12 +982,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpFallingPetals_0_dmg',
+      name: 'AssistFollowUpFallingPetals_0',
     },
   },
-  AssistFollowUpFallingPetals_0_daze: {
+  'AssistFollowUpFallingPetals_0:dazeBuildup': {
     sheet: 'Miyabi',
-    name: 'AssistFollowUpFallingPetals_0_daze',
+    name: 'AssistFollowUpFallingPetals_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -939,12 +996,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpFallingPetals_0_daze',
+      name: 'AssistFollowUpFallingPetals_0',
     },
   },
-  AssistFollowUpFallingPetals_0_anomBuildup: {
+  'AssistFollowUpFallingPetals_0:anomBuildup': {
     sheet: 'Miyabi',
-    name: 'AssistFollowUpFallingPetals_0_anomBuildup',
+    name: 'AssistFollowUpFallingPetals_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -953,7 +1010,7 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpFallingPetals_0_anomBuildup',
+      name: 'AssistFollowUpFallingPetals_0',
     },
   },
   core_frostburnBreak_dmg: {

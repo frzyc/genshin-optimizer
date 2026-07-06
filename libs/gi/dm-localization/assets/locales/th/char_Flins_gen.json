@@ -49,7 +49,7 @@
       ],
       "2": "<br/>",
       "3": "<strong>Northland Spearstorm</strong>",
-      "4": "Flins จะเรียกแนวหอกออกมาด้านหน้า เพื่อสร้าง<electro>ความเสียหายไฟฟ้าวงกว้าง</electro> และทำให้ท่าไม้ตาย <strong>Ancient Ritual: Cometh the Night</strong> ของ Flins ถูกแทนที่ด้วยท่าไม้ตายพิเศษ <strong>Thunderous Symphony</strong> เป็นเวลา 6 วินาทีหลังจากนั้น",
+      "4": "Flins จะเรียกแนวหอกออกมาด้านหน้า เพื่อสร้าง<electro>ความเสียหายไฟฟ้าวงกว้าง</electro> และทำให้ท่าไม้ตาย <strong>Ancient Ritual: Cometh the Night</strong> ของ Flins ถูกแทนที่ด้วยท่าไม้ตายพิเศษ <tooltip ns=tooltips_gen baseKey18=11200001 values=[]><strong>Thunderous Symphony</strong></tooltip> เป็นเวลา 6 วินาทีหลังจากนั้น",
       "5": "ช่วงเวลาคูลดาวน์พื้นฐานของ <strong>Northland Spearstorm</strong> คือ 6 วินาที ซึ่งช่วงเวลาคูลดาวน์นี้จะไม่ได้รับผลกระทบจากเอฟเฟกต์อื่น ๆ"
     },
     "skillParams": {
@@ -148,7 +148,7 @@
   "constellation3": {
     "name": "Stranger in the Night",
     "description": {
-      "0": "เพิ่มเลเวลสกิลของท่าไม้ตาย <strong>Ancient Ritual: Cometh the Night</strong> ขึ้น 3 ระดับ",
+      "0": "เพิ่มเลเวลสกิลของท่าไม้ตาย <tooltip ns=char_Flins_gen baseKey18=burst><strong>Ancient Ritual: Cometh the Night</strong></tooltip> ขึ้น 3 ระดับ",
       "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
@@ -156,20 +156,20 @@
     "name": "Night on Bald Mountain",
     "description": {
       "0": "พลังโจมตีของ Flins เพิ่มขึ้น 20%",
-      "1": "นอกจากนี้ พรสวรรค์เพิ่มเติม <strong>\"Whispering Flame\" </strong> จะได้รับการเสริมพลัง: ความชำนาญธาตุของ Flins จะเพิ่มขึ้น โดยค่าที่เพิ่มจะเท่ากับ 10% ของพลังโจมตีของ Flins ด้วยวิธีนี้จะทำให้ความชำนาญธาตุของ Flins เพิ่มขึ้นได้มากสุด 220 หน่วย"
+      "1": "นอกจากนี้ พรสวรรค์เพิ่มเติม <tooltip ns=char_Flins_gen baseKey18=passive2><strong>\"Whispering Flame\" </strong></tooltip> จะได้รับการเสริมพลัง: ความชำนาญธาตุของ Flins จะเพิ่มขึ้น โดยค่าที่เพิ่มจะเท่ากับ 10% ของพลังโจมตีของ Flins ด้วยวิธีนี้จะทำให้ความชำนาญธาตุของ Flins เพิ่มขึ้นได้มากสุด 220 หน่วย"
     }
   },
   "constellation5": {
     "name": "Exile's Shadow",
     "description": {
-      "0": "เพิ่มเลเวลสกิลของสกิลธาตุ <strong>Ancient Rite: Arcane Light</strong> ขึ้น 3 ระดับ",
+      "0": "เพิ่มเลเวลสกิลของสกิลธาตุ <tooltip ns=char_Flins_gen baseKey18=skill><strong>Ancient Rite: Arcane Light</strong></tooltip> ขึ้น 3 ระดับ",
       "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {
     "name": "Songs and Dances of Death",
     "description": {
-      "0": "ความเสียหายของปฏิกิริยาชาร์จจันทราที่ Flins สร้างแก่ศัตรู <strong>ยกระดับ</strong>ขึ้น 35%",
+      "0": "ความเสียหายของปฏิกิริยาชาร์จจันทราที่ Flins สร้างแก่ศัตรู <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>ยกระดับ</strong></tooltip>ขึ้น 35%",
       "1": "<strong>ลัคนาจันทร์ - จรัสแสง</strong>: ความเสียหายของปฏิกิริยาชาร์จจันทราที่ตัวละครทั้งหมดในทีมที่อยู่ใกล้เคียงสร้าง <strong>ยกระดับ</strong>ขึ้น 10%"
     }
   }

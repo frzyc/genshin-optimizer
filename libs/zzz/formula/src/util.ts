@@ -46,9 +46,11 @@ type TempICharacter = {
   assist: number
   core: number
   mindscape: number
+  potential: number
 }
 export function charTagMapNodeEntries(data: TempICharacter): TagMapNodeEntries {
   const {
+    key,
     lvl,
     promotion,
     basic,
@@ -58,6 +60,7 @@ export function charTagMapNodeEntries(data: TempICharacter): TagMapNodeEntries {
     assist,
     core,
     mindscape,
+    potential,
   } = own.char
   const { char, iso, [data.key]: sheet } = reader.withAll('sheet', [])
 
@@ -65,6 +68,7 @@ export function charTagMapNodeEntries(data: TempICharacter): TagMapNodeEntries {
     char.reread(sheet),
     iso.reread(sheet),
 
+    key.add(data.key),
     lvl.add(data.level),
     basic.add(data.basic),
     dodge.add(data.dodge),
@@ -74,6 +78,7 @@ export function charTagMapNodeEntries(data: TempICharacter): TagMapNodeEntries {
     core.add(data.core),
     promotion.add(data.promotion),
     mindscape.add(data.mindscape),
+    potential.add(data.potential),
 
     // Default char
     ownBuff.base.crit_.add(0.05),

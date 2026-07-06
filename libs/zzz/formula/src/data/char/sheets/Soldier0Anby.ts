@@ -12,7 +12,13 @@ import {
   team,
   teamBuff,
 } from '../../util'
-import { entriesForChar, getBaseTag, registerAllDmgDazeAndAnom } from '../util'
+import {
+  dmgDazeAndAnom,
+  dmgDazeAndAnomOverride,
+  entriesForChar,
+  getBaseTag,
+  registerAllDmgDazeAndAnom,
+} from '../util'
 
 const key: CharacterKey = 'Soldier0Anby'
 const data_gen = allStats.char[key]
@@ -23,13 +29,85 @@ const { char } = own
 
 const { markedWithSilverStar } = allBoolConditionals(key)
 
+const ability_on = cmpGE(
+  sum(
+    team.common.count.withSpecialty('stun'),
+    team.common.count.withSpecialty('support')
+  ),
+  1,
+  'infer',
+  ''
+)
+const ability_off = cmpGE(
+  sum(
+    team.common.count.withSpecialty('stun'),
+    team.common.count.withSpecialty('support')
+  ),
+  1,
+  '',
+  'infer'
+)
+
 const sheet = register(
   key,
   // Handles base stats, core stats and Mindscapes 3 + 5
   entriesForChar(data_gen),
 
   // Formulas
-  ...registerAllDmgDazeAndAnom(key, dm),
+  ...registerAllDmgDazeAndAnom(
+    key,
+    dm,
+    dmgDazeAndAnomOverride(
+      dm,
+      'chain',
+      'ChainAttackLeapingThunderstrike',
+      0,
+      { ...baseTag, damageType1: 'chain', skillType: 'chainSkill' },
+      'atk',
+      { cond: ability_off }
+    ),
+    dmgDazeAndAnomOverride(
+      dm,
+      'chain',
+      'UltimateVoidstrike',
+      0,
+      {
+        ...baseTag,
+        damageType1: 'ult',
+        skillType: 'chainSkill',
+      },
+      'atk',
+      { cond: ability_off }
+    )
+  ),
+
+  // TODO: Technically causes wrong order in the meta file, probably won't matter?
+  ...dmgDazeAndAnom(
+    dm.chain.ChainAttackLeapingThunderstrike[0],
+    'ChainAttackLeapingThunderstrike_aftershock0',
+    {
+      ...baseTag,
+      damageType1: 'chain',
+      damageType2: 'aftershock',
+      skillType: 'chainSkill',
+    },
+    'atk',
+    'chain',
+    { cond: ability_on }
+  ),
+  ...dmgDazeAndAnom(
+    dm.chain.UltimateVoidstrike[0],
+    'UltimateVoidstrike_aftershock0',
+    {
+      ...baseTag,
+      damageType1: 'ult',
+      damageType2: 'aftershock',
+      skillType: 'chainSkill',
+    },
+    'atk',
+    'chain',
+    { cond: ability_on }
+  ),
 
   ...customDmg(
     'm6_additional_dmg',

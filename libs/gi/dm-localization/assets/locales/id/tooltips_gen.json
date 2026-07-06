@@ -1,0 +1,446 @@
+{
+  "10050001": {
+    "name": "Efek Buff Tambahan",
+    "description": {
+      "0": "Untuk setiap jenis elemen yang sudah diresonansi, Pengembara akan mendapatkan peningkatan stats berikut: ",
+      "1": "<anemo>Anemo</anemo>: CRIT Rate meningkat 10%.",
+      "2": "<geo>Geo</geo>: DEF meningkat 20%.",
+      "3": "<electro>Electro</electro>: Energy Recharge meningkat 20%.",
+      "4": "<dendro>Dendro</dendro>: Elemental Mastery meningkat 60 poin.",
+      "5": "<hydro>Hydro</hydro>: HP meningkat 20%.",
+      "6": "<pyro>Pyro</pyro>: ATK meningkat 20%.",
+      "7": "<cryo>Cryo</cryo>: CRIT DMG meningkat 20%."
+    }
+  },
+  "11120001": {
+    "name": "Cold Storage Mode",
+    "description": {
+      "0": "<strong>Mode Tekan</strong>",
+      "1": "Mengaktifkan All-Spectrum Multi-Use Cooking Mek dalam Cold Storage Mode dan mengakibatkan <cryo>Cryo DMG Area</cryo> ke musuh sekitar.",
+      "2": "<br/>",
+      "3": "<strong>Cooking Mek: Cold Storage Mode </strong>",
+      "4": "Akan mengikuti Karakter aktif dan menembakkan Frosty Parfait yang mengakibatkan <cryo>Cryo DMG</cryo> ke musuh di sekitar secara berkala."
+    }
+  },
+  "11120002": {
+    "name": "Off-the-Cuff Cookery Mode",
+    "description": {
+      "0": "<strong>Cooking Mek: Off-the-Cuff Cookery Mode</strong>",
+      "1": [
+        "Meletakkan Cooking Mek di medan pertempuran. Cooking Mek bisa menyerap serangan elemental. Saat energi elemental yang diserap mencapai batas tertentu, Escoffier akan mengonversi Bahan Masak yang sudah diletakkan sebelumnya menjadi makanan yang lezat.",
+        "Escoffier membutuhkan waktu untuk membeli Bahan Masak yang baru. Setiap minggunya, dia hanya dapat menggunakan cara ini untuk menghasilkan Makanan dalam jumlah tertentu, jumlah ini akan direset setiap hari Senin pukul 04:00."
+      ]
+    }
+  },
+  "11130001": {
+    "name": "Supporting Fire",
+    "description": {
+      "0": "Saat dalam status Nightsoul's Blessing, Normal Attack Ifa akan dikonversi menjadi Supporting Fire.",
+      "1": "<strong>Mode Tekan</strong>",
+      "2": "Menembakkan Tonicshot.",
+      "3": "<strong>Mode Tahan</strong>",
+      "4": "Menembakkan Tonicshot terus-menerus.",
+      "5": "<strong>Tonicshot</strong>",
+      "6": "Mengakibatkan Nightsoul-aligned <anemo>Anemo DMG</anemo>, dan akan memulihkan HP anggota party di sekitar saat mengenai musuh. Jumlah pemulihan HP didasarkan pada Elemental Mastery Ifa."
+    }
+  },
+  "11130002": {
+    "name": "Rescue Essentials",
+    "description": {
+      "0": "Maksimum 150 poin. Untuk setiap 1 poin Rescue Essentials yang dimiliki Ifa, DMG reaksi Swirl dan Electro-Charged yang diakibatkan anggota party di sekitar +1,5%, dan DMG yang diakibatkan reaksi Lunar-Charged +0,2%. Poin Rescue Essentials akan hilang setelah status Nightsoul's Blessing Ifa berakhir."
+    }
+  },
+  "11130003": {
+    "name": "Nightsoul's Blessing: Ifa",
+    "description": {
+      "0": "Terus mengonsumsi poin Nightsoul. Saat sudah habis dikonsumsi atau saat dilancarkan sekali lagi, Nightsoul's Blessing Ifa akan berakhir. Nightsoul's Blessing memiliki karakteristik sebagai berikut:",
+      "1": [
+        "Akan melayang berkat bantuan Cacucu, meningkatkan Movement SPD dan ketahanan Ifa terhadap interupsi. Dalam status ini, Ifa akan terus mengonsumsi poin Nightsoul untuk mempertahankan status melayangnya. Saat berlari atau meningkatkan ketinggian, akan mengonsumsi poin Nightsoul tambahan.",
+        "Saat melancarkan Normal Attack, akan dikonversi menjadi Supporting Fire yang berbeda berdasarkan Mode Tekan dan Mode Tahan."
+      ]
+    }
+  },
+  "11130004": {
+    "name": "Sedation Mark",
+    "description": {
+      "0": "Efek ini akan meledak setelah jeda singkat lalu menghilang dan mengakibatkan DMG Area dengan elemen yang sesuai. Obat penenang ini dapat memberikan efek Sedation Mark kepada maksimum 4 musuh yang terkena. Musuh tidak bisa berada dalam Sedation Mark dengan elemen yang berbeda di saat yang sama."
+    }
+  },
+  "11130005": {
+    "name": "Serpent's Subtlety",
+    "description": {
+      "0": "Skirk dapat mengonsumsi Serpent's Subtlety untuk mempertahankan mode Seven-Phase Flash miliknya, atau untuk melancarkan Elemental Burst \"Havoc: Ruin\".",
+      "1": "<br/>",
+      "2": "Skirk dapat memperoleh Serpent's Subtlety dengan cara-cara berikut:",
+      "3": [
+        "Melancarkan Elemental Skill \"Havoc: Warp\".",
+        "Menyerap Void Rift yang tercipta dari efek Talenta Ascension \"Reason Beyond Reason\"."
+      ],
+      "4": "<br/>",
+      "5": "Serpent's Subtlety yang dimiliki Skirk akan hilang saat Skirk meninggalkan medan pertempuran dalam mode Seven-Phase Flash atau saat mode Seven-Phase Flash berakhir."
+    }
+  },
+  "11130006": {
+    "name": "Seven-Phase Flash",
+    "description": {
+      "0": "Skirk akan berganti ke mode ini selama kurun waktu tertentu setelah melancarkan Elemental Skill <strong>Havoc: Warp</strong>. Mode ini memiliki karakteristik berikut:",
+      "1": [
+        "Terus mengonsumsi Serpent's Subtlety.",
+        "Meningkatkan radius serangan Normal Attack dan Charged Attack, serta ketahanan Skirk terhadap interupsi.",
+        "DMG dari Normal Attack, Charged Attack, dan Plunging Attack akan dikonversi menjadi <cryo>Cryo DMG</cryo> yang tidak bisa ditimpa Elemental Infusion lainnya.",
+        "Elemental Burst <strong>Havoc: Ruin</strong> akan berubah menjadi Elemental Burst spesial <strong>Havoc: Extinction</strong>.",
+        "Skirk dapat bergerak di atas permukaan air saat berlari.",
+        "Skirk akan keluar dari mode ini saat Serpent's Subtlety habis dikonsumsi atau saat durasinya berakhir, kemudian Elemental Skill-nya akan memasuki cooldown."
+      ]
+    }
+  },
+  "11130007": {
+    "name": "Reason Beyond Reason",
+    "description": {
+      "0": "Saat Karakter di dalam party memicu reaksi Frozen, Superconduct, Cryo Swirl, atau Cryo Crystallize terhadap musuh di sekitar, akan tercipta sebuah Void Rift di sekitar musuh tersebut. Efek ini dapat terpicu sekali setiap 2,5 detik, dan maksimum 3 Void Rift dapat tercipta di medan pertempuran dalam satu waktu.",
+      "1": "<br/>",
+      "2": "Skirk bisa menyerap Void Rift di sekitarnya dengan cara berikut:",
+      "3": [
+        "Saat Charged Attack yang dilancarkan Skirk dalam mode Seven-Phase Flash mengenai musuh.",
+        "Saat melancarkan Elemental Burst spesial <strong>Havoc: Extinction</strong> dalam mode Seven-Phase Flash.",
+        "Saat menahan tombol Elemental Skill <strong>Havoc: Warp</strong> untuk bergerak dengan cepat."
+      ],
+      "4": "<br/>",
+      "5": "Setiap Void Rift yang diserap akan memberikan Skirk 8 poin Serpent's Subtlety."
+    }
+  },
+  "11130008": {
+    "name": "Return to Oblivion",
+    "description": {
+      "0": "Saat serangan <hydro>Hydro</hydro> milik Karakter <hydro>Hydro</hydro> dalam party di sekitar mengenai musuh, atau saat serangan <cryo>Cryo</cryo> milik Karakter <cryo>Cryo</cryo> dalam party di sekitar mengenai musuh, maka Skirk akan mendapatkan satu lapis efek \"Death's Crossing\" selama 20 detik. \"Death's Crossing\" dapat ditumpuk hingga 3 lapis dan durasi setiap lapisannya dihitung terpisah.",
+      "1": "Setiap Karakter hanya bisa memberikan efek Death's Crossing sebanyak 1 kali kepada Skirk dengan cara ini.",
+      "2": "Setiap lapis Death's Crossing memberikan efek: Normal Attack Skirk dalam mode Seven-Phase Flash akan mengakibatkan 110%/120%/170% dari DMG awalnya, Elemental Burst <strong>Havoc: Ruin</strong> juga mengakibatkan 105%/115%/160% dari DMG awalnya."
+    }
+  },
+  "11130009": {
+    "name": "Sacramental Shower",
+    "description": {
+      "0": "Setelah musuh atau Karakter di dalam party menyentuh Sacramental Shower, akan muncul efek yang berbeda berdasarkan subjek yang menyentuhnya:",
+      "1": "Jika musuh yang menyentuh, maka Sacramental Shower akan meledak dan mengakibatkan <hydro>Hydro DMG Area</hydro> pada musuh di sekitar.",
+      "2": "Jika Karakter di dalam party yang menyentuh, maka Sacramental Shower akan mementalkan Karakter tersebut ke udara.",
+      "3": "<br/>",
+      "4": "Hanya bisa ada satu Sacramental Shower yang bisa dipanggil oleh Dahlia dalam satu waktu."
+    }
+  },
+  "11130010": {
+    "name": "Favonian Favor",
+    "description": {
+      "0": "Dahlia akan memberikan efek ini kepada Karakter sendiri di dalam party saat melancarkan Elemental Burst <strong>Radiant Psalter</strong>.",
+      "1": "Selama aktif, saat Shield of Sacred Favor berakhir atau perisainya dihancurkan, Dahlia akan mengonsumsi satu lapis efek Benison untuk menciptakan Shield of Sacred Favor baru."
+    }
+  },
+  "11130011": {
+    "name": "Benison",
+    "description": {
+      "0": "Dahlia bisa mendapatkan efek Benison dengan cara berikut:",
+      "1": [
+        "Dahlia akan mendapatkan X lapis efek Benison saat Karakter aktif di dalam party yang terpengaruh efek Favonian Favor menyerang musuh dengan Normal Attack sebanyak 4 kali.",
+        "Setelah efek Talenta Ascension \"The Wind's Gentle Grace\" terpicu."
+      ],
+      "2": "Dahlia bisa mendapatkan maksimum X lapis Benison untuk setiap durasi Favonian Favor."
+    }
+  },
+  "11160001": {
+    "name": "Birgitta",
+    "description": {
+      "0": "Sebagai asisten dan rekan Ineffa dalam pertempuran, Birgitta dapat dipanggil ke medan pertempuran dengan cara melancarkan Elemental Skill atau Elemental Burst.",
+      "1": "Jika ada musuh di sekitar, Birgitta akan langsung mendekati satu musuh dan melancarkan serangan setruman yang mengakibatkan <electro>Electro DMG Area</electro> setiap 2 detik.",
+      "2": "Ineffa sendiri hanya bisa memanggil satu Birgitta dalam waktu bersamaan.",
+      "3": "<br/>",
+      "4": "Selain itu, sepertinya akan ada cara khusus untuk mengubah penampilan Birgitta di Nod-Krai ...."
+    }
+  },
+  "11190001": {
+    "name": "Frostgrove Sanctuary",
+    "description": {
+      "0": "Formasi sihir yang menjaga para Pelantun Rembulan dan dapat dipanggil dengan melancarkan <strong>Runo: Dawnless Rest of Karsikko</strong>.",
+      "1": "Frostgrove Sanctuary akan mengikuti Karakter aktif dan mengakibatkan <dendro>Dendro DMG Area</dendro> kepada musuh di dalam formasi sihir satu kali setiap 2 detik. DMG ini dianggap sebagai DMG Elemental Skill."
+    }
+  },
+  "11190002": {
+    "name": "Moon Song",
+    "description": {
+      "0": "Melodi yang digunakan untuk menenun himne-himne doa. Moon Song dapat dikonversi menjadi Pale Hymn yang akan meningkatkan DMG reaksi Bloom, Hyperbloom, Burgeon, dan Lunar-Bloom dengan cara melancarkan Elemental Burst atau dalam waktu singkat setelah melancarkan Elemental Burst.",
+      "1": "Saat Lauma mengonsumsi Verdant Dew untuk melancarkan Elemental Skill <strong>Runo: Dawnless Rest of Karsikko</strong> dalam Mode Tahan, maka setiap Verdant Dew yang dikonsumsi akan memberikan satu lapis Moon Song kepada Lauma."
+    }
+  },
+  "11190003": {
+    "name": "Pale Hymn",
+    "description": {
+      "0": "Himne yang diturunkan dari satu generasi Pelantun Rembulan ke generasi berikutnya. Himne ini dapat meningkatkan DMG yang diakibatkan oleh reaksi Bloom, Hyperbloom, Burgeon, dan Lunar-Bloom.",
+      "1": "<br/>",
+      "2": "Lauma bisa memperoleh lapisan Pale Hymn dengan cara berikut:",
+      "3": [
+        "Saat melancarkan Elemental Burst <strong>Runo: All Hearts Become the Beating Moon</strong>.",
+        "Saat mengonsumsi efek Moon Song dengan melancarkan Elemental Burst <strong>Runo: All Hearts Become the Beating Moon</strong>.",
+        "Saat memicu efek Frostgrove Sanctuary dari Konstelasi <strong>\"I Offer Blood and Tears to the Moonlight\"</strong>."
+      ],
+      "4": "<br/>",
+      "5": "Saat Karakter dalam party mengakibatkan DMG reaksi Bloom, Hyperbloom, Burgeon, atau Lunar-Bloom, Lauma akan mengonsumsi 1 lapis Pale Hymn untuk meningkatkan DMG yang diakibatkan. Jumlah peningkatan DMG ini didasarkan pada Elemental Mastery Lauma. Saat DMG yang disebutkan di atas mengenai beberapa musuh secara bersamaan, jumlah lapisan Pale Hymn yang dikonsumsi akan didasarkan pada jumlah musuh yang terkena serangan.",
+      "6": "Durasi setiap lapis Pale Hymn akan dihitung secara terpisah."
+    }
+  },
+  "11190004": {
+    "name": "Dusktide Vigil",
+    "description": {
+      "0": "DMG reaksi Bloom, Hyperbloom, dan Burgeon yang dipicu oleh anggota party dapat mengakibatkan CRIT, dengan nilai CRIT Rate tetap sebesar 15%, dan CRIT DMG tetap sebesar 100%. CRIT Rate dari efek ini dapat ditumpuk dengan efek serupa lainnya yang membuat Reaksi Elemental dapat mengakibatkan CRIT juga."
+    }
+  },
+  "11190005": {
+    "name": "Moonlight Prayer",
+    "description": {
+      "0": "CRIT Rate reaksi Lunar-Bloom yang diakibatkan oleh anggota party +10%, CRIT DMG +20%."
+    }
+  },
+  "11190007": {
+    "name": "Bertumbuh",
+    "description": {
+      "0": "Efek peningkatan DMG spesial yang dihitung terpisah dari efek peningkatan DMG lainnya."
+    }
+  },
+  "11190008": {
+    "name": "Verdant Dew",
+    "description": {
+      "0": "Saat Karakter di dalam party memicu reaksi Lunar-Bloom, akan memberikan sumber daya bagi party.",
+      "1": "Selama 2,5 detik setelah memicu reaksi Lunar-Bloom, party akan mendapatkan 1 Verdant Dew setiap 2,5 detiknya. Party dapat memiliki maksimum 3 Verdant Dew. Jika party memicu reaksi Verdant Dew sekali lagi selama durasi di atas berlangsung, maka durasi efek ini akan diperbarui."
+    }
+  },
+  "11200001": {
+    "name": "Thunderous Symphony",
+    "description": {
+      "0": "Elemental Burst khusus yang dapat dilancarkan dengan mengonsumsi lebih sedikit Energy. Flins mengakibatkan <electro>Electro DMG Area</electro> yang dianggap sebagai DMG reaksi Lunar-Charged.",
+      "1": "<strong>Moonsign: Ascendant Gleam</strong>: Jika ada awan petir di sekitar, akan mengakibatkan satu kali <electro>Electro DMG Area</electro> tambahan yang dianggap sebagai DMG reaksi Lunar-Charged."
+    }
+  },
+  "11220001": {
+    "name": "Shadow Dance",
+    "description": {
+      "0": "Setelah melancarkan Elemental Skill <strong>Senet Strategy: Dance of a Thousand Nights</strong>, Nefer akan memasuki status ini.",
+      "1": "Saat dalam status Shadow Dance dan memiliki minimum 1 Verdant Dew, Charged Attack Nefer akan berubah menjadi Charged Attack Khusus bernama Phantasm Performance.",
+      "2": "Status Shadow Dance akan berakhir saat Nefer melancarkan Phantasm Performance 3 kali atau saat durasinya berakhir."
+    }
+  },
+  "11220002": {
+    "name": "Phantasm Performance",
+    "description": {
+      "0": "Saat berada dalam status Shadow Dance yang dihasilkan oleh Elemental Skill <strong>Senet Strategy: Dance of a Thousand Nights</strong> dan memiliki minimum 1 Verdant Dew, Charged Attack Nefer akan digantikan menjadi Charged Attack Khusus yang tidak mengonsumsi Stamina, yaitu Phantasm Performance.",
+      "1": "Nefer akan memanggil bayangan dirinya untuk melancarkan serangan terkoordinasi terhadap musuh. Diri sendiri dan bayangan akan melancarkan masing-masing 2/3 tahap <dendro>Dendro DMG Area</dendro>. DMG yang diakibatkan oleh bayangan akan dianggap sebagai DMG reaksi Lunar-Bloom. Untuk setiap bayangan pertama yang dipanggil setelah melancarkan Phantasm Performance, akan mengonsumsi 1 Verdant Dew."
+    }
+  },
+  "11220003": {
+    "name": "Veil of Falsehood",
+    "description": {
+      "0": "Nefer bisa mendapatkan efek ini dengan menyerap Seed of Deceit dari Talenta Ascension \"A Wager of Moonlight\" untuk meningkatkan DMG yang diakibatkan oleh Phantasm Performance.",
+      "1": "Setiap lapis Veil of Falsehood akan membuat DMG Phantasm Performance menjadi 8% lebih tinggi dari DMG awalnya. Lapisan awalnya dapat ditumpuk hingga 3 lapis, dengan durasi 9 detik. Durasi setiap lapisan dihitung terpisah."
+    }
+  },
+  "11230001": {
+    "name": "Essential Transmutation",
+    "description": {
+      "0": "Efek yang diperoleh setelah Durin melancarkan Elemental Skill <strong>Binary Form: Convergence and Division</strong>, berlangsung selama 6 detik.",
+      "1": "Selama durasi ini, Durin dapat menekan tombol Elemental Skill untuk memasuki status <strong>Confirmation of Purity</strong>, atau menekan tombol Normal Attack untuk memasuki status <strong>Denial of Darkness</strong>.",
+      "2": "Dalam kedua status ini, Durin akan mendapatkan efek penguatan yang berbeda dan dapat melancarkan Elemental Burst yang berbeda pula."
+    }
+  },
+  "11240001": {
+    "name": "Purr-loined Treasure Flask",
+    "description": {
+      "0": "Sebuah botol penampung elemen yang diambil oleh Jahoda saat ia melancarkan Elemental Skill <strong>Savvy Strategy: Splitting the Spoils</strong>.",
+      "1": "Saat Jahoda berada dalam status Shadow Pursuit, jika musuh di sekitar sedang terpengaruh oleh <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro>, atau <cryo>Cryo</cryo>, Purr-loined Treasure Flask akan dikonversi sesuai dengan jenis elemen yang sesuai dan akan terus diisi. Konversi elemen akan dilakukan sesuai prioritas urutan berikut: <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro>, dan <cryo>Cryo</cryo>. Setelah melancarkan setiap Elemental Skill, Purr-loined Treasure Flask hanya dapat dikonversi maksimum satu kali.",
+      "2": "Saat Purr-loined Treasure Flask terisi penuh, Jahoda akan keluar dari status Shadow Pursuit, mengakibatkan satu kali <anemo>Anemo DMG</anemo> terhadap musuh dan mengosongkan Purr-loined Treasure Flask.",
+      "3": "Setiap kali melancarkan Elemental Skill, Jahoda akan kembali mengeluarkan Purr-loined Treasure Flask yang baru.",
+      "4": "<br/>",
+      "5": "<strong>Moonsign: Ascendant Gleam</strong>: Saat <strong>Purr-loined Treasure Flask</strong>terisi penuh, Jahoda tidak akan langsung mengosongkannya, melainkan akan terus mengonsumsi elemen yang telah terkumpul dalam botol selama beberapa waktu, dan secara berkala menembakkan <strong>Fluffy Meowball</strong> pada musuh di sekitar, mengakibatkan DMG dengan jenis elemen yang sesuai dari <strong>Purr-loined Treasure Flask</strong>."
+    }
+  },
+  "11240002": {
+    "name": "Purrsonal Coordinated Assistance Robot",
+    "description": {
+      "0": "Salah satu peralatan yang selalu dibawa oleh Jahoda, si mantan pemburu harta karun. Alat ini akan dikeluarkan setelah Jahoda melancarkan Elemental Burst <strong>Hidden Aces: Seven Tools of the Hunter</strong>.",
+      "1": "Purrsonal Coordinated Assistance Robots akan terus memulihkan HP Karakter aktif dalam party sendiri. Jika HP Karakter yang dipulihkan lebih dari 70%, akan otomatis memulihkan HP Karakter sekitar dengan HP terendah di dalam party juga.",
+      "2": "<br/>",
+      "3": "<strong>Moonsign: Ascendant Gleam</strong>: Saat musuh di sekitar terpengaruh oleh efek <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro>, atau <cryo>Cryo</cryo>, maka Purrsonal Coordinated Assistance Robots akan dikonversi menjadi jenis elemen yang sesuai, dengan prioritas urutan konversi sebagai berikut: <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro>, <cryo>Cryo</cryo>. Setiap kali mengeluarkan Purrsonal Coordinated Assistance Robots, konversi elemen di atas hanya dapat terpicu satu kali. Setelah memicu konversi elemen, Purrsonal Coordinated Assistance Robots akan menyerang maksimum 3 musuh di sekitar secara berkala dan mengakibatkan Elemental DMG dengan jenis elemen yang sesuai."
+    }
+  },
+  "11250001": {
+    "name": "Gravity Ripple",
+    "description": {
+      "0": "Setelah melancarkan Elemental Skill <strong>Eternal Tides</strong>, Columbina akan memanggil <strong>Gravity Ripple</strong>.",
+      "1": "Gravity Ripple akan mengikuti Karakter aktif dan terus mengakibatkan <hydro>Hydro DMG Area</hydro> terhadap musuh di sekitar.",
+      "2": "<br/>",
+      "3": "Selain itu, selama Gravity Ripple aktif, jika ada Karakter party di sekitar yang memicu reaksi Lunar atau mengakibatkan DMG reaksi Lunar, maka Columbina akan mendapatkan efek New Moon's Omen selama 2 detik dan akan terus mengakumulasi nilai <strong>Gravity</strong> sebesar 20 poin setiap 2 detik.",
+      "4": "Nilai maksimum Gravity adalah 60 poin dan akan dihapus saat durasi Gravity Ripple berakhir.",
+      "5": "Ketika nilai Gravity mencapai maksimum, akan memicu <strong>Gravity Interference</strong> spesial yang akan menghasilkan efek berbeda berdasarkan reaksi Lunar yang paling banyak mengakumulasi nilai Gravity untuk Columbina. Jika reaksi Lunar yang paling banyak mengakumulasi Gravity untuk Columbina adalah:",
+      "6": [
+        "<strong>Lunar-Charged</strong>: Gravity Interference akan mengakibatkan satu kali <electro>Electro DMG Area</electro>, DMG ini dianggap sebagai DMG reaksi Lunar-Charged.",
+        "<strong>Lunar-Bloom</strong>: Gravity Interference akan menembakkan 5 Moondew Sigil terhadap musuh di sekitar dan mengakibatkan <dendro>Dendro DMG</dendro>, DMG ini dianggap sebagai DMG reaksi Lunar-Bloom.",
+        "<strong>Lunar-Crystallize</strong>: Gravity Interference akan mengakibatkan satu kali <geo>Geo DMG Area</geo>, DMG ini dianggap sebagai DMG reaksi Lunar-Crystallize."
+      ]
+    }
+  },
+  "11250002": {
+    "name": "Lunar Domain",
+    "description": {
+      "0": "Area yang diciptakan Columbina setelah ia melancarkan Elemental Burst <strong>Moonlit Melancholy</strong>. ",
+      "1": "Saat Karakter aktif berada dalam <strong>Lunar Domain</strong>, DMG reaksi Lunar yang diakibatkan seluruh Karakter dalam party akan meningkat."
+    }
+  },
+  "11250003": {
+    "name": "Moonridge Dew",
+    "description": {
+      "0": "Verdant Dew khusus yang dihasilkan oleh Talenta Pasif Columbina, <strong>Law of the New Moon</strong>. Durasi dan kapasitas maksimumnya dihitung terpisah dari Verdant Dew.",
+      "1": "Saat Verdant Dew yang dimiliki party habis terpakai, maka <strong>Moonridge Dew</strong> yang akan dikonsumsi.",
+      "2": "Batas maksimum <strong>Moonridge Dew</strong> yang dapat diperoleh adalah 3."
+    }
+  },
+  "11260001": {
+    "name": "Lunar Phase Shift",
+    "description": {
+      "0": "Zibai akan berganti ke mode ini setelah melancarkan Elemental Skill <strong>Heaven and Earth Made Manifest</strong>. Mode ini berlangsung selama maksimum 15 detik dan memiliki karakteristik berikut:",
+      "1": [
+        "Normal Attack dan Charged Attack akan dikonversi menjadi <geo>Geo DMG</geo> yang tidak bisa ditimpa Elemental Infusion lainnya.",
+        "Elemental Skill <strong>Heaven and Earth Made Manifest</strong> akan berubah menjadi Elemental Skill khusus <strong>Spirit Steed's Stride</strong>: Saat Zibai memiliki minimum 70 poin <strong>Phase Shift Radiance</strong>, dia dapat mengonsumsi 70 poin Phase Shift Radiance untuk melancarkan Spirit Steed's Stride yang mengakibatkan dua kali <geo>Geo DMG</geo>. DMG tahap keduanya dianggap sebagai DMG reaksi Lunar-Crystallize."
+      ],
+      "2": "<br/>",
+      "3": "Batas maksimum <strong>Phase Shift Radiance</strong> adalah 100 poin, dan Zibai dapat mengakumulasi Phase Shift Radiance melalui cara-cara berikut:",
+      "4": [
+        "Saat berada dalam mode <strong>Lunar Phase Shift</strong>, Zibai akan mengakumulasi 10 poin Phase Shift Radiance setiap detiknya.",
+        "Zibai akan mendapatkan 5 poin Phase Shift Radiance saat Normal Attack-nya mengenai musuh. Ia bisa mendapatkan Phase Shift Radiance dari cara ini maksimum 1 kali setiap 0,5 detik."
+      ],
+      "5": "<br/>",
+      "6": "<strong>Moonsign: Ascendant Gleam</strong>",
+      "7": "Saat Karakter party di sekitar memicu reaksi Lunar-Crystallize, Zibai juga akan mendapatkan 35 poin <strong>Phase Shift Radiance</strong>. Zibai bisa mendapatkan Phase Shift Radiance dari cara ini maksimum 1 kali setiap 4 detik. Melancarkan Elemental Skill Khusus <strong>Spirit Steed's Stride</strong> akan mengulang durasi CD <strong>Phase of Shift Radiance</strong> yang terakumulasi.",
+      "8": "<br/>",
+      "9": "Zibai akan keluar dari mode ini setelah melancarkan <strong>Spirit Steed's Stride</strong> 4 kali atau saat durasinya berakhir."
+    }
+  },
+  "11270001": {
+    "name": "Nightingale's Song",
+    "description": {
+      "0": "Efek yang diperoleh setelah Illuga melancarkan Elemental Burst <strong>Shadowless Reflection</strong>. Efek ini dapat meningkatkan <geo>Geo DMG</geo> yang diakibatkan Karakter aktif."
+    }
+  },
+  "11280001": {
+    "name": "Sturm und Drang",
+    "description": {
+      "0": "Varka akan berganti ke mode ini setelah melancarkan Elemental Skill <strong>Windbound Execution</strong> dalam Mode Tekan.",
+      "1": "Saat berada dalam mode ini, DMG Normal Attack dan Charged Attack Varka akan meningkat, tetapi tidak bisa melancarkan Plunging Attack. Saat melancarkan Normal Attack dan Charged Attack, pedang claymore di kedua tangan Varka akan mengakibatkan Elemental DMG dengan jenis elemen yang sesuai berdasarkan jenis elemen Karakter dalam party (Elemental DMG ini tidak bisa ditimpa Elemental Infusion lainnya):",
+      "2": [
+        "DMG dari pedang claymore di tangan kirinya akan dikonversi menjadi <anemo>Anemo DMG</anemo> yang tidak bisa ditimpa Elemental Infusion lainnya.",
+        "Jika ada Karakter <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro>, atau <cryo>Cryo</cryo> dalam party, maka pedang claymore di tangan kanannya akan mengakibatkan Elemental DMG dengan jenis elemen yang sesuai berdasarkan urutan prioritas elemen yang disebutkan di atas."
+      ],
+      "3": "<br/>",
+      "4": "Selain itu, saat dalam mode ini, jika ada Karakter <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <electro>Electro</electro>, atau <cryo>Cryo</cryo> dalam party, maka Elemental Skill Varka <strong>Windbound Execution</strong> akan dikonversi menjadi Elemental Skill Khusus <strong>Four Winds' Ascension</strong>."
+    }
+  },
+  "11280002": {
+    "name": "Four Winds' Ascension",
+    "description": {
+      "0": "Elemental Skill Khusus milik Varka. Mengakibatkan Elemental DMG Area yang tidak bisa ditimpa Elemental Infusion lainnya dan memiliki jenis elemen yang sesuai dengan pedang claymore di tangan kanan Varka, dan juga mengakibatkan <anemo>Anemo DMG Area</anemo>.",
+      "1": "Akan dimulai dengan cooldown dan memiliki jumlah penggunaan 2 kali.",
+      "2": "Saat Normal Attack Varka dalam mode <strong>Sturm und Drang</strong> mengenai musuh, maka CD <strong>Four Winds' Ascension</strong> akan berkurang 0,5 detik. Setiap kali berganti ke mode <strong>Sturm und Drang</strong>, efek ini dapat terpicu maksimum 15 kali.",
+      "3": "Selain itu, Varka dapat mengonsumsi jumlah penggunaan <strong>Four Winds' Ascension</strong> untuk melancarkan Charged Attack khusus yang tidak mengonsumsi Stamina, <strong>Azure Devour</strong>, untuk mengakibatkan 2 kali Elemental DMG (tidak bisa ditimpa Elemental Infusion lainnya) dengan jenis elemen yang sesuai dengan pedang claymore di tangan kanannya dan juga 2 kali <anemo>Anemo DMG</anemo>."
+    }
+  },
+  "11290001": {
+    "name": "Masterstroke",
+    "description": {
+      "0": "Lohen akan berganti ke mode ini setelah melancarkan Elemental Skill <strong>Unforeseen Strike</strong>. Mode Masterstroke memiliki karakteristik sebagai berikut:",
+      "1": [
+        "Normal Attack, Charged Attack, dan Plunging Attack Lohen akan dikonversi menjadi <cryo>Cryo DMG</cryo> yang tidak bisa ditimpa Elemental Infusion lainnya.",
+        "Saat Normal atau Charged Attack Lohen mengenai musuh, akan mengakumulasi <strong>Joy</strong> khusus untuk Lohen, yang dapat digunakan untuk melancarkan Elemental Skill Khusus <strong>Etched Into Bone and Soul</strong>. Setelah melancarkan maksimum 3 kali <strong>Etched Into Bone and Soul</strong> saat dalam mode <strong>Masterstroke</strong>, Lohen tidak bisa lagi mendapatkan <strong>Joy</strong>.",
+        "Saat anggota party lain di sekitar mengakibatkan DMG, Lohen juga akan mengakumulasi <strong>Will to Win</strong> khusus yang dapat meningkatkan DMG yang diakibatkan <strong>Etched Into Bone and Soul</strong>.",
+        "Lohen akan keluar dari mode Masterstroke saat meninggalkan medan pertempuran. Saat mode ini berakhir, semua <strong>Joy</strong> dan <strong>Will to Win</strong> yang dimiliki juga akan hilang."
+      ]
+    }
+  },
+  "11290002": {
+    "name": "Etched Into Bone and Soul",
+    "description": {
+      "0": "Elemental Skill Khusus yang dapat dilancarkan setelah <strong>Joy</strong> Lohen mencapai batas maksimum.",
+      "1": "Setelah mengenai musuh, Lohen akan mengonsumsi semua <strong>Joy</strong> dan <strong>Will to Win</strong> untuk mengakibatkan <cryo>Cryo DMG</cryo> dan meningkatkan DMG kali ini berdasarkan jumlah <strong>Will to Win</strong> yang dikonsumsi."
+    }
+  },
+  "11290003": {
+    "name": "Joy",
+    "description": {
+      "0": "Saat Normal Attack atau Charged Attack Lohen  dalam mode Masterstroke mengenai musuh, ia akan mendapatkan 0.381298 poin <strong>Joy</strong>, hingga maksimum 100 poin.",
+      "1": "<strong>Joy</strong> bisa diperoleh sekali setiap 0,1 detik. Setelah akumulasi <strong>Joy</strong> mencapai batas maksimum, Elemental Skill <strong>Unforeseen Strike</strong> milik Lohen akan berubah menjadi Elemental Skill Khusus, yaitu <strong>Etched Into Bone and Soul</strong>."
+    }
+  },
+  "11290004": {
+    "name": "Will to Win",
+    "description": {
+      "0": "Sumber daya khusus yang akan didapatkan Lohen saat anggota party lain di sekitar mengakibatkan DMG saat Lohen berada dalam mode Masterstroke, maksimum 100 poin.",
+      "1": "Selama durasi Masterstroke, jika anggota party lain di sekitar mengakibatkan DMG dan DMG yang diakibatkan kali ini tidak lebih rendah dari 55.2868% Base ATK Lohen, maka Lohen akan mengakumulasi 0.829302 poin <strong>Will to Win</strong>. Jika tidak, Lohen akan mengakumulasi 1 poin <strong>Will to Win</strong>.",
+      "2": "Satu Karakter dapat mengakumulasi <strong>Will to Win</strong> untuk Lohen satu kali setiap 0,1 detik."
+    }
+  },
+  "11300001": {
+    "name": "Lumi: Bentuk Serangan",
+    "description": {
+      "0": "Lumi memiliki 3 jenis Bentuk Serangan yang berbeda.",
+      "1": "<br/>",
+      "2": "<strong>Super Power Form</strong>",
+      "3": "Lumi akan menggunakan <strong>Pound-Pound Pummeler</strong> untuk terus menyerang musuh di sekitar, mengakibatkan 2 kali <geo>Geo DMG Area</geo> untuk setiap serangannya.",
+      "4": "Jika ada Moondrift di sekitar, Lumi akan berganti antara menggunakan <strong>Pound-Pound Pummeler</strong> dan <strong>Heavy Overdrive Hammer</strong> untuk terus menyerang musuh di sekitar. <geo>Geo DMG Area</geo> yang diakibatkan <strong>Heavy Overdrive Hammer</strong> akan dianggap sebagai DMG reaksi Lunar-Crystallize.",
+      "5": "<br/>",
+      "6": "<strong>Ultimate Power Form</strong>",
+      "7": "Lumi akan menggunakan <strong>Million Ton Crush</strong> yang super dahsyat untuk mengakibatkan satu kali <geo>Geo DMG Area</geo> yang kuat dan dianggap sebagai DMG reaksi Lunar-Crystallize, kemudian berganti ke bentuk <strong>Standard Power Form</strong>.",
+      "8": "<br/>",
+      "9": "<strong>Standard Power Form</strong>",
+      "10": "Meski bentuk ini tidak sehebat bentuk yang lain, tapi tetap saja, hebat.",
+      "11": "Lumi akan menggunakan <strong>Pound-Pound Pummeler</strong> untuk terus menyerang musuh di sekitar dengan jeda yang lebih lama, mengakibatkan 2 kali <geo>Geo DMG Area</geo> untuk setiap serangannya."
+    }
+  },
+  "11310001": {
+    "name": "Grace of Kenosis",
+    "description": {
+      "0": "Setelah melancarkan Elemental Skill <strong>Revelation: Uncreated Light</strong>, Nicole akan memberikan efek berikut kepada seluruh anggota party di sekitar: Meningkatkan ATK berdasarkan ATK Nicole.",
+      "1": "Setelah memenuhi syarat tertentu, efek <strong>Grace of Kenosis</strong> akan meningkat menjadi <strong>Guidance of Theosis</strong> dan akan meningkatkan ATK lebih besar."
+    }
+  },
+  "11310002": {
+    "name": "Guidance of Theosis",
+    "description": {
+      "0": "Efek <strong>Grace of Kenosis</strong> yang telah ditingkatkan. Efek ini akan memberikan peningkatan tambahan sebesar 300 poin ATK.",
+      "1": "Setelah membuka Talenta Ascension \"Methexis\" dan memenuhi salah satu kondisi \"observasi\" berikut, <strong>Grace of Kenosis</strong> akan berubah menjadi <strong>Guidance of Theosis</strong> selama sisa durasinya:",
+      "2": [
+        "Karakter lain yang diobservasi tetap berada di medan pertempuran selama lebih dari 3 detik.",
+        "Karakter lain yang diobservasi adalah Karakter Hexerei."
+      ],
+      "3": "<br/>",
+      "4": "Selain itu, setelah membuka Talenta Ascension \"Philokalia\" dan setelah Elemental DMG Karakter aktif di sekitar party mengenai musuh, <strong>Grace of Kenosis</strong> milik Nicole sendiri juga akan berubah menjadi <strong>Guidance of Theosis</strong> selama 8 detik.",
+      "5": "<br/>",
+      "6": "Selain Nicole, <strong>Guidance of Theosis</strong> yang dimiliki Karakter lain akan kembali menjadi <strong>Grace of Kenosis</strong> saat mereka meninggalkan medan pertempuran."
+    }
+  },
+  "11320001": {
+    "name": "Banehunter Oathhammer",
+    "description": {
+      "0": "Teman baik pemburu penyihir yang pantas dipercaya! Dapat memicu Elemental Conversion saat memenuhi kondisi tertentu, seluruh DMG awal yang diakibatkan Banehunter Oathhammer akan dikonversi menjadi DMG dengan jenis elemen yang sesuai terhadap musuh.",
+      "1": "Prune dapat memanggil Banehunter Oathhammer yang telah memicu Elemental Conversion melalui cara berikut:",
+      "2": [
+        "Dalam beberapa saat setelah Elemental Skill <strong>Ring-A-Ding-Ding! Hexhunter Chime</strong> yang dilancarkan memicu reaksi Swirl terhadap musuh, Prune dapat melancarkan Elemental Skill Khusus <strong>Clang Clang! Witch-tribution Comes!</strong>. Saat melancarkan Elemental Skill Khusus ini, Banehunter Oathhammer akan dikonversi menjadi jenis elemen lain yang terlibat dalam reaksi Swirl sebelumnya.",
+        "Setelah membuka Talenta Ascension \"Verdict and Punishment\", jika Witchlure Bell dalam mode Hunter-Seeker memicu reaksi Swirl terhadap musuh, maka akan memanggil Banehunter Oathhammer yang sudah mengalami Elemental Conversion berdasarkan reaksi Swirl kali ini untuk menyerang musuh."
+      ]
+    }
+  },
+  "11320002": {
+    "name": "Verdict and Punishment",
+    "description": {
+      "0": "Dalam Elemental Burst<strong> The Bell Tolls! The Hunt is On!</strong>, setelah Witchlure Bell dalam mode Hunter-Seeker mengakibatkan DMG terhadap musuh, jika DMG tersebut memicu reaksi Swirl terhadap musuh, maka akan memanggil <strong>Banehunter Oathhammer</strong> yang telah mengalami Elemental Conversion berdasarkan reaksi Swirl kali ini di depan musuh dan menghantamnya, mengakibatkan Elemental DMG yang sesuai dengan konversi Swirl. DMG ini dianggap sebagai DMG Elemental Burst."
+    }
+  },
+  "11320003": {
+    "name": "Tolling Synchronicity",
+    "description": {
+      "0": "Setelah Prune menggunakan <strong>Banehunter Oathhammer</strong>yang telah mengalami Elemental Conversion untuk mengenai musuh, anggota party lain di sekitar akan mendapatkan efek Tolling Rally: Meningkatkan DMG yang diakibatkan serangannya berdasarkan ATK Prune."
+    }
+  }
+}

@@ -1,5 +1,3 @@
-'use client'
-
 import { CardThemed, ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import { discDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { DiscSlotKey } from '@genshin-optimizer/zzz/consts'

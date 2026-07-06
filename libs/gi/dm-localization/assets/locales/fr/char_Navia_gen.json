@@ -42,7 +42,7 @@
   "skill": {
     "name": "Tir cristallin de cérémonie",
     "description": {
-      "0": "Lorsqu'un personnage de l'équipe obtient un fragment généré par une réaction de Cristallisation, Navia obtient 1 shrapnel cristallin. Navia peut détenir un maximum de 6 shrapnels cristallins, et chaque fois que cet effet se déclenche, la durée des shrapnels en sa possession est réinitialisée.",
+      "0": "Lorsqu'un personnage de l'équipe obtient un fragment généré par une réaction de Cristallisation ou déclenche une réaction de Sélénocristallisation, Navia obtient 1 shrapnel cristallin. Navia peut détenir un maximum de 6 shrapnels cristallins, et chaque fois que cet effet se déclenche, la durée des shrapnels en sa possession est réinitialisée. Navia peut obtenir 1 shrapnel cristallin toutes les secondes lors du déclenchement de réactions de Sélénocristallisation.",
       "1": "Lorsqu'elle tire, Navia consomme tous ses shrapnels cristallins et ouvre son élégante, mais néanmoins mortelle, canombrelle pour tirer plusieurs balles cristarosulées qui transpercent les ennemis, infligeant des <geo>DGT Géo</geo> aux ennemis touchés.",
       "2": "Consommer 0, 1, 2 ou au minimum 3 shrapnels cristallins permet de tirer respectivement 5, 7, 9 ou 11 balles cristarosulées. Plus le nombre de balles touchant un même ennemi est élevé, plus les DGT qu'il subit sont importants. Si toutes les 11 balles touchent, 200 % des DGT d'origine sont infligés.",
       "3": "De plus, chaque shrapnel consommé à partir du 4e augmente les DGT infligés de 15 % supplémentaires.",

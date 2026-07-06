@@ -38,6 +38,33 @@ export const formulas = {
       name: 'disorderDmgInst_ether',
     },
   },
+  vortexDmgInst_ether: {
+    sheet: 'ZhuYuan',
+    name: 'vortexDmgInst_ether',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'ZhuYuan',
+      attribute: 'ether',
+      damageType1: 'vortex',
+      name: 'vortexDmgInst_ether',
+    },
+  },
+  abloomDmgInst: {
+    sheet: 'ZhuYuan',
+    name: 'abloomDmgInst',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'ZhuYuan',
+      attribute: 'ether',
+      damageType1: 'anomaly',
+      damageType2: 'abloom',
+      name: 'abloomDmgInst',
+    },
+  },
   anomalyBuildupInst: {
     sheet: 'ZhuYuan',
     name: 'anomalyBuildupInst',
@@ -62,9 +89,9 @@ export const formulas = {
       name: 'dazeInst',
     },
   },
-  BasicAttackDontMove_0_dmg: {
+  'BasicAttackDontMove_0:standardDmg': {
     sheet: 'ZhuYuan',
-    name: 'BasicAttackDontMove_0_dmg',
+    name: 'BasicAttackDontMove_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -72,12 +99,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackDontMove_0_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackDontMove_0',
     },
   },
-  BasicAttackDontMove_0_daze: {
+  'BasicAttackDontMove_0:dazeBuildup': {
     sheet: 'ZhuYuan',
-    name: 'BasicAttackDontMove_0_daze',
+    name: 'BasicAttackDontMove_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -85,12 +113,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackDontMove_0_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackDontMove_0',
     },
   },
-  BasicAttackDontMove_0_anomBuildup: {
+  'BasicAttackDontMove_0:anomBuildup': {
     sheet: 'ZhuYuan',
-    name: 'BasicAttackDontMove_0_anomBuildup',
+    name: 'BasicAttackDontMove_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -98,12 +127,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackDontMove_0_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackDontMove_0',
     },
   },
-  BasicAttackDontMove_1_dmg: {
+  'BasicAttackDontMove_1:standardDmg': {
     sheet: 'ZhuYuan',
-    name: 'BasicAttackDontMove_1_dmg',
+    name: 'BasicAttackDontMove_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -111,12 +141,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackDontMove_1_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackDontMove_1',
     },
   },
-  BasicAttackDontMove_1_daze: {
+  'BasicAttackDontMove_1:dazeBuildup': {
     sheet: 'ZhuYuan',
-    name: 'BasicAttackDontMove_1_daze',
+    name: 'BasicAttackDontMove_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -124,12 +155,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackDontMove_1_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackDontMove_1',
     },
   },
-  BasicAttackDontMove_1_anomBuildup: {
+  'BasicAttackDontMove_1:anomBuildup': {
     sheet: 'ZhuYuan',
-    name: 'BasicAttackDontMove_1_anomBuildup',
+    name: 'BasicAttackDontMove_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -137,12 +169,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackDontMove_1_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackDontMove_1',
     },
   },
-  BasicAttackDontMove_2_dmg: {
+  'BasicAttackDontMove_2:standardDmg': {
     sheet: 'ZhuYuan',
-    name: 'BasicAttackDontMove_2_dmg',
+    name: 'BasicAttackDontMove_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -150,12 +183,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackDontMove_2_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackDontMove_2',
     },
   },
-  BasicAttackDontMove_2_daze: {
+  'BasicAttackDontMove_2:dazeBuildup': {
     sheet: 'ZhuYuan',
-    name: 'BasicAttackDontMove_2_daze',
+    name: 'BasicAttackDontMove_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -163,12 +197,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackDontMove_2_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackDontMove_2',
     },
   },
-  BasicAttackDontMove_2_anomBuildup: {
+  'BasicAttackDontMove_2:anomBuildup': {
     sheet: 'ZhuYuan',
-    name: 'BasicAttackDontMove_2_anomBuildup',
+    name: 'BasicAttackDontMove_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -176,12 +211,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackDontMove_2_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackDontMove_2',
     },
   },
-  BasicAttackDontMove_3_dmg: {
+  'BasicAttackDontMove_3:standardDmg': {
     sheet: 'ZhuYuan',
-    name: 'BasicAttackDontMove_3_dmg',
+    name: 'BasicAttackDontMove_3:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -189,12 +225,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackDontMove_3_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackDontMove_3',
     },
   },
-  BasicAttackDontMove_3_daze: {
+  'BasicAttackDontMove_3:dazeBuildup': {
     sheet: 'ZhuYuan',
-    name: 'BasicAttackDontMove_3_daze',
+    name: 'BasicAttackDontMove_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -202,12 +239,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackDontMove_3_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackDontMove_3',
     },
   },
-  BasicAttackDontMove_3_anomBuildup: {
+  'BasicAttackDontMove_3:anomBuildup': {
     sheet: 'ZhuYuan',
-    name: 'BasicAttackDontMove_3_anomBuildup',
+    name: 'BasicAttackDontMove_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -215,12 +253,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackDontMove_3_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackDontMove_3',
     },
   },
-  BasicAttackDontMove_4_dmg: {
+  'BasicAttackDontMove_4:standardDmg': {
     sheet: 'ZhuYuan',
-    name: 'BasicAttackDontMove_4_dmg',
+    name: 'BasicAttackDontMove_4:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -228,12 +267,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackDontMove_4_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackDontMove_4',
     },
   },
-  BasicAttackDontMove_4_daze: {
+  'BasicAttackDontMove_4:dazeBuildup': {
     sheet: 'ZhuYuan',
-    name: 'BasicAttackDontMove_4_daze',
+    name: 'BasicAttackDontMove_4:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -241,12 +281,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackDontMove_4_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackDontMove_4',
     },
   },
-  BasicAttackDontMove_4_anomBuildup: {
+  'BasicAttackDontMove_4:anomBuildup': {
     sheet: 'ZhuYuan',
-    name: 'BasicAttackDontMove_4_anomBuildup',
+    name: 'BasicAttackDontMove_4:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -254,12 +295,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackDontMove_4_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackDontMove_4',
     },
   },
-  BasicAttackPleaseDoNotResist_0_dmg: {
+  'BasicAttackPleaseDoNotResist_0:standardDmg': {
     sheet: 'ZhuYuan',
-    name: 'BasicAttackPleaseDoNotResist_0_dmg',
+    name: 'BasicAttackPleaseDoNotResist_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -267,12 +309,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackPleaseDoNotResist_0_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackPleaseDoNotResist_0',
     },
   },
-  BasicAttackPleaseDoNotResist_0_daze: {
+  'BasicAttackPleaseDoNotResist_0:dazeBuildup': {
     sheet: 'ZhuYuan',
-    name: 'BasicAttackPleaseDoNotResist_0_daze',
+    name: 'BasicAttackPleaseDoNotResist_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -280,12 +323,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackPleaseDoNotResist_0_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackPleaseDoNotResist_0',
     },
   },
-  BasicAttackPleaseDoNotResist_0_anomBuildup: {
+  'BasicAttackPleaseDoNotResist_0:anomBuildup': {
     sheet: 'ZhuYuan',
-    name: 'BasicAttackPleaseDoNotResist_0_anomBuildup',
+    name: 'BasicAttackPleaseDoNotResist_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -293,12 +337,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackPleaseDoNotResist_0_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackPleaseDoNotResist_0',
     },
   },
-  BasicAttackPleaseDoNotResist_1_dmg: {
+  'BasicAttackPleaseDoNotResist_1:standardDmg': {
     sheet: 'ZhuYuan',
-    name: 'BasicAttackPleaseDoNotResist_1_dmg',
+    name: 'BasicAttackPleaseDoNotResist_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -306,12 +351,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackPleaseDoNotResist_1_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackPleaseDoNotResist_1',
     },
   },
-  BasicAttackPleaseDoNotResist_1_daze: {
+  'BasicAttackPleaseDoNotResist_1:dazeBuildup': {
     sheet: 'ZhuYuan',
-    name: 'BasicAttackPleaseDoNotResist_1_daze',
+    name: 'BasicAttackPleaseDoNotResist_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -319,12 +365,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackPleaseDoNotResist_1_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackPleaseDoNotResist_1',
     },
   },
-  BasicAttackPleaseDoNotResist_1_anomBuildup: {
+  'BasicAttackPleaseDoNotResist_1:anomBuildup': {
     sheet: 'ZhuYuan',
-    name: 'BasicAttackPleaseDoNotResist_1_anomBuildup',
+    name: 'BasicAttackPleaseDoNotResist_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -332,12 +379,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackPleaseDoNotResist_1_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackPleaseDoNotResist_1',
     },
   },
-  BasicAttackPleaseDoNotResist_2_dmg: {
+  'BasicAttackPleaseDoNotResist_2:standardDmg': {
     sheet: 'ZhuYuan',
-    name: 'BasicAttackPleaseDoNotResist_2_dmg',
+    name: 'BasicAttackPleaseDoNotResist_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -345,12 +393,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackPleaseDoNotResist_2_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackPleaseDoNotResist_2',
     },
   },
-  BasicAttackPleaseDoNotResist_2_daze: {
+  'BasicAttackPleaseDoNotResist_2:dazeBuildup': {
     sheet: 'ZhuYuan',
-    name: 'BasicAttackPleaseDoNotResist_2_daze',
+    name: 'BasicAttackPleaseDoNotResist_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -358,12 +407,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackPleaseDoNotResist_2_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackPleaseDoNotResist_2',
     },
   },
-  BasicAttackPleaseDoNotResist_2_anomBuildup: {
+  'BasicAttackPleaseDoNotResist_2:anomBuildup': {
     sheet: 'ZhuYuan',
-    name: 'BasicAttackPleaseDoNotResist_2_anomBuildup',
+    name: 'BasicAttackPleaseDoNotResist_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -371,51 +421,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackPleaseDoNotResist_2_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackPleaseDoNotResist_2',
     },
   },
-  BasicAttackPleaseDoNotResist_3_dmg: {
+  'BasicAttackPleaseDoNotResist_3:standardDmg': {
     sheet: 'ZhuYuan',
-    name: 'BasicAttackPleaseDoNotResist_3_dmg',
-    tag: {
-      et: 'own',
-      qt: 'formula',
-      q: 'standardDmg',
-      sheet: 'ZhuYuan',
-      attribute: 'ether',
-      damageType1: 'basic',
-      name: 'BasicAttackPleaseDoNotResist_3_dmg',
-    },
-  },
-  BasicAttackPleaseDoNotResist_3_daze: {
-    sheet: 'ZhuYuan',
-    name: 'BasicAttackPleaseDoNotResist_3_daze',
-    tag: {
-      et: 'own',
-      qt: 'formula',
-      q: 'dazeBuildup',
-      sheet: 'ZhuYuan',
-      attribute: 'ether',
-      damageType1: 'basic',
-      name: 'BasicAttackPleaseDoNotResist_3_daze',
-    },
-  },
-  BasicAttackPleaseDoNotResist_3_anomBuildup: {
-    sheet: 'ZhuYuan',
-    name: 'BasicAttackPleaseDoNotResist_3_anomBuildup',
-    tag: {
-      et: 'own',
-      qt: 'formula',
-      q: 'anomBuildup',
-      sheet: 'ZhuYuan',
-      attribute: 'ether',
-      damageType1: 'basic',
-      name: 'BasicAttackPleaseDoNotResist_3_anomBuildup',
-    },
-  },
-  BasicAttackPleaseDoNotResist_4_dmg: {
-    sheet: 'ZhuYuan',
-    name: 'BasicAttackPleaseDoNotResist_4_dmg',
+    name: 'BasicAttackPleaseDoNotResist_3:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -423,12 +435,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       attribute: 'ether',
       damageType1: 'basic',
-      name: 'BasicAttackPleaseDoNotResist_4_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackPleaseDoNotResist_3',
     },
   },
-  BasicAttackPleaseDoNotResist_4_daze: {
+  'BasicAttackPleaseDoNotResist_3:dazeBuildup': {
     sheet: 'ZhuYuan',
-    name: 'BasicAttackPleaseDoNotResist_4_daze',
+    name: 'BasicAttackPleaseDoNotResist_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -436,12 +449,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       attribute: 'ether',
       damageType1: 'basic',
-      name: 'BasicAttackPleaseDoNotResist_4_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackPleaseDoNotResist_3',
     },
   },
-  BasicAttackPleaseDoNotResist_4_anomBuildup: {
+  'BasicAttackPleaseDoNotResist_3:anomBuildup': {
     sheet: 'ZhuYuan',
-    name: 'BasicAttackPleaseDoNotResist_4_anomBuildup',
+    name: 'BasicAttackPleaseDoNotResist_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -449,12 +463,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       attribute: 'ether',
       damageType1: 'basic',
-      name: 'BasicAttackPleaseDoNotResist_4_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackPleaseDoNotResist_3',
     },
   },
-  BasicAttackPleaseDoNotResist_5_dmg: {
+  'BasicAttackPleaseDoNotResist_4:standardDmg': {
     sheet: 'ZhuYuan',
-    name: 'BasicAttackPleaseDoNotResist_5_dmg',
+    name: 'BasicAttackPleaseDoNotResist_4:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -462,12 +477,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       attribute: 'ether',
       damageType1: 'basic',
-      name: 'BasicAttackPleaseDoNotResist_5_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackPleaseDoNotResist_4',
     },
   },
-  BasicAttackPleaseDoNotResist_5_daze: {
+  'BasicAttackPleaseDoNotResist_4:dazeBuildup': {
     sheet: 'ZhuYuan',
-    name: 'BasicAttackPleaseDoNotResist_5_daze',
+    name: 'BasicAttackPleaseDoNotResist_4:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -475,12 +491,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       attribute: 'ether',
       damageType1: 'basic',
-      name: 'BasicAttackPleaseDoNotResist_5_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackPleaseDoNotResist_4',
     },
   },
-  BasicAttackPleaseDoNotResist_5_anomBuildup: {
+  'BasicAttackPleaseDoNotResist_4:anomBuildup': {
     sheet: 'ZhuYuan',
-    name: 'BasicAttackPleaseDoNotResist_5_anomBuildup',
+    name: 'BasicAttackPleaseDoNotResist_4:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -488,12 +505,55 @@ export const formulas = {
       sheet: 'ZhuYuan',
       attribute: 'ether',
       damageType1: 'basic',
-      name: 'BasicAttackPleaseDoNotResist_5_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackPleaseDoNotResist_4',
     },
   },
-  DashAttackFirepowerOffensive_0_dmg: {
+  'BasicAttackPleaseDoNotResist_5:standardDmg': {
     sheet: 'ZhuYuan',
-    name: 'DashAttackFirepowerOffensive_0_dmg',
+    name: 'BasicAttackPleaseDoNotResist_5:standardDmg',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'standardDmg',
+      sheet: 'ZhuYuan',
+      attribute: 'ether',
+      damageType1: 'basic',
+      skillType: 'basicSkill',
+      name: 'BasicAttackPleaseDoNotResist_5',
+    },
+  },
+  'BasicAttackPleaseDoNotResist_5:dazeBuildup': {
+    sheet: 'ZhuYuan',
+    name: 'BasicAttackPleaseDoNotResist_5:dazeBuildup',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'dazeBuildup',
+      sheet: 'ZhuYuan',
+      attribute: 'ether',
+      damageType1: 'basic',
+      skillType: 'basicSkill',
+      name: 'BasicAttackPleaseDoNotResist_5',
+    },
+  },
+  'BasicAttackPleaseDoNotResist_5:anomBuildup': {
+    sheet: 'ZhuYuan',
+    name: 'BasicAttackPleaseDoNotResist_5:anomBuildup',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomBuildup',
+      sheet: 'ZhuYuan',
+      attribute: 'ether',
+      damageType1: 'basic',
+      skillType: 'basicSkill',
+      name: 'BasicAttackPleaseDoNotResist_5',
+    },
+  },
+  'DashAttackFirepowerOffensive_0:standardDmg': {
+    sheet: 'ZhuYuan',
+    name: 'DashAttackFirepowerOffensive_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -502,12 +562,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackFirepowerOffensive_0_dmg',
+      name: 'DashAttackFirepowerOffensive_0',
     },
   },
-  DashAttackFirepowerOffensive_0_daze: {
+  'DashAttackFirepowerOffensive_0:dazeBuildup': {
     sheet: 'ZhuYuan',
-    name: 'DashAttackFirepowerOffensive_0_daze',
+    name: 'DashAttackFirepowerOffensive_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -516,12 +576,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackFirepowerOffensive_0_daze',
+      name: 'DashAttackFirepowerOffensive_0',
     },
   },
-  DashAttackFirepowerOffensive_0_anomBuildup: {
+  'DashAttackFirepowerOffensive_0:anomBuildup': {
     sheet: 'ZhuYuan',
-    name: 'DashAttackFirepowerOffensive_0_anomBuildup',
+    name: 'DashAttackFirepowerOffensive_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -530,12 +590,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackFirepowerOffensive_0_anomBuildup',
+      name: 'DashAttackFirepowerOffensive_0',
     },
   },
-  DashAttackOverwhelmingFirepower_0_dmg: {
+  'DashAttackOverwhelmingFirepower_0:standardDmg': {
     sheet: 'ZhuYuan',
-    name: 'DashAttackOverwhelmingFirepower_0_dmg',
+    name: 'DashAttackOverwhelmingFirepower_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -543,12 +603,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       damageType1: 'dash',
       attribute: 'physical',
-      name: 'DashAttackOverwhelmingFirepower_0_dmg',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackOverwhelmingFirepower_0',
     },
   },
-  DashAttackOverwhelmingFirepower_0_daze: {
+  'DashAttackOverwhelmingFirepower_0:dazeBuildup': {
     sheet: 'ZhuYuan',
-    name: 'DashAttackOverwhelmingFirepower_0_daze',
+    name: 'DashAttackOverwhelmingFirepower_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -556,12 +617,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       damageType1: 'dash',
       attribute: 'physical',
-      name: 'DashAttackOverwhelmingFirepower_0_daze',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackOverwhelmingFirepower_0',
     },
   },
-  DashAttackOverwhelmingFirepower_0_anomBuildup: {
+  'DashAttackOverwhelmingFirepower_0:anomBuildup': {
     sheet: 'ZhuYuan',
-    name: 'DashAttackOverwhelmingFirepower_0_anomBuildup',
+    name: 'DashAttackOverwhelmingFirepower_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -569,12 +631,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       damageType1: 'dash',
       attribute: 'physical',
-      name: 'DashAttackOverwhelmingFirepower_0_anomBuildup',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackOverwhelmingFirepower_0',
     },
   },
-  DashAttackOverwhelmingFirepower_1_dmg: {
+  'DashAttackOverwhelmingFirepower_1:standardDmg': {
     sheet: 'ZhuYuan',
-    name: 'DashAttackOverwhelmingFirepower_1_dmg',
+    name: 'DashAttackOverwhelmingFirepower_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -582,12 +645,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       attribute: 'ether',
       damageType1: 'dash',
-      name: 'DashAttackOverwhelmingFirepower_1_dmg',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackOverwhelmingFirepower_1',
     },
   },
-  DashAttackOverwhelmingFirepower_1_daze: {
+  'DashAttackOverwhelmingFirepower_1:dazeBuildup': {
     sheet: 'ZhuYuan',
-    name: 'DashAttackOverwhelmingFirepower_1_daze',
+    name: 'DashAttackOverwhelmingFirepower_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -595,12 +659,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       attribute: 'ether',
       damageType1: 'dash',
-      name: 'DashAttackOverwhelmingFirepower_1_daze',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackOverwhelmingFirepower_1',
     },
   },
-  DashAttackOverwhelmingFirepower_1_anomBuildup: {
+  'DashAttackOverwhelmingFirepower_1:anomBuildup': {
     sheet: 'ZhuYuan',
-    name: 'DashAttackOverwhelmingFirepower_1_anomBuildup',
+    name: 'DashAttackOverwhelmingFirepower_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -608,12 +673,13 @@ export const formulas = {
       sheet: 'ZhuYuan',
       attribute: 'ether',
       damageType1: 'dash',
-      name: 'DashAttackOverwhelmingFirepower_1_anomBuildup',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackOverwhelmingFirepower_1',
     },
   },
-  DodgeCounterFireBlast_0_dmg: {
+  'DodgeCounterFireBlast_0:standardDmg': {
     sheet: 'ZhuYuan',
-    name: 'DodgeCounterFireBlast_0_dmg',
+    name: 'DodgeCounterFireBlast_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -622,12 +688,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterFireBlast_0_dmg',
+      name: 'DodgeCounterFireBlast_0',
     },
   },
-  DodgeCounterFireBlast_0_daze: {
+  'DodgeCounterFireBlast_0:dazeBuildup': {
     sheet: 'ZhuYuan',
-    name: 'DodgeCounterFireBlast_0_daze',
+    name: 'DodgeCounterFireBlast_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -636,12 +702,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterFireBlast_0_daze',
+      name: 'DodgeCounterFireBlast_0',
     },
   },
-  DodgeCounterFireBlast_0_anomBuildup: {
+  'DodgeCounterFireBlast_0:anomBuildup': {
     sheet: 'ZhuYuan',
-    name: 'DodgeCounterFireBlast_0_anomBuildup',
+    name: 'DodgeCounterFireBlast_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -650,12 +716,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterFireBlast_0_anomBuildup',
+      name: 'DodgeCounterFireBlast_0',
     },
   },
-  SpecialAttackBuckshotBlast_0_dmg: {
+  'SpecialAttackBuckshotBlast_0:standardDmg': {
     sheet: 'ZhuYuan',
-    name: 'SpecialAttackBuckshotBlast_0_dmg',
+    name: 'SpecialAttackBuckshotBlast_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -664,12 +730,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackBuckshotBlast_0_dmg',
+      name: 'SpecialAttackBuckshotBlast_0',
     },
   },
-  SpecialAttackBuckshotBlast_0_daze: {
+  'SpecialAttackBuckshotBlast_0:dazeBuildup': {
     sheet: 'ZhuYuan',
-    name: 'SpecialAttackBuckshotBlast_0_daze',
+    name: 'SpecialAttackBuckshotBlast_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -678,12 +744,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackBuckshotBlast_0_daze',
+      name: 'SpecialAttackBuckshotBlast_0',
     },
   },
-  SpecialAttackBuckshotBlast_0_anomBuildup: {
+  'SpecialAttackBuckshotBlast_0:anomBuildup': {
     sheet: 'ZhuYuan',
-    name: 'SpecialAttackBuckshotBlast_0_anomBuildup',
+    name: 'SpecialAttackBuckshotBlast_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -692,12 +758,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackBuckshotBlast_0_anomBuildup',
+      name: 'SpecialAttackBuckshotBlast_0',
     },
   },
-  EXSpecialAttackFullBarrage_0_dmg: {
+  'EXSpecialAttackFullBarrage_0:standardDmg': {
     sheet: 'ZhuYuan',
-    name: 'EXSpecialAttackFullBarrage_0_dmg',
+    name: 'EXSpecialAttackFullBarrage_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -706,12 +772,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackFullBarrage_0_dmg',
+      name: 'EXSpecialAttackFullBarrage_0',
     },
   },
-  EXSpecialAttackFullBarrage_0_daze: {
+  'EXSpecialAttackFullBarrage_0:dazeBuildup': {
     sheet: 'ZhuYuan',
-    name: 'EXSpecialAttackFullBarrage_0_daze',
+    name: 'EXSpecialAttackFullBarrage_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -720,12 +786,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackFullBarrage_0_daze',
+      name: 'EXSpecialAttackFullBarrage_0',
     },
   },
-  EXSpecialAttackFullBarrage_0_anomBuildup: {
+  'EXSpecialAttackFullBarrage_0:anomBuildup': {
     sheet: 'ZhuYuan',
-    name: 'EXSpecialAttackFullBarrage_0_anomBuildup',
+    name: 'EXSpecialAttackFullBarrage_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -734,12 +800,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackFullBarrage_0_anomBuildup',
+      name: 'EXSpecialAttackFullBarrage_0',
     },
   },
-  ChainAttackEradicationMode_0_dmg: {
+  'ChainAttackEradicationMode_0:standardDmg': {
     sheet: 'ZhuYuan',
-    name: 'ChainAttackEradicationMode_0_dmg',
+    name: 'ChainAttackEradicationMode_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -748,12 +814,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackEradicationMode_0_dmg',
+      name: 'ChainAttackEradicationMode_0',
     },
   },
-  ChainAttackEradicationMode_0_daze: {
+  'ChainAttackEradicationMode_0:dazeBuildup': {
     sheet: 'ZhuYuan',
-    name: 'ChainAttackEradicationMode_0_daze',
+    name: 'ChainAttackEradicationMode_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -762,12 +828,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackEradicationMode_0_daze',
+      name: 'ChainAttackEradicationMode_0',
     },
   },
-  ChainAttackEradicationMode_0_anomBuildup: {
+  'ChainAttackEradicationMode_0:anomBuildup': {
     sheet: 'ZhuYuan',
-    name: 'ChainAttackEradicationMode_0_anomBuildup',
+    name: 'ChainAttackEradicationMode_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -776,12 +842,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackEradicationMode_0_anomBuildup',
+      name: 'ChainAttackEradicationMode_0',
     },
   },
-  UltimateMaxEradicationMode_0_dmg: {
+  'UltimateMaxEradicationMode_0:standardDmg': {
     sheet: 'ZhuYuan',
-    name: 'UltimateMaxEradicationMode_0_dmg',
+    name: 'UltimateMaxEradicationMode_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -790,12 +856,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateMaxEradicationMode_0_dmg',
+      name: 'UltimateMaxEradicationMode_0',
     },
   },
-  UltimateMaxEradicationMode_0_daze: {
+  'UltimateMaxEradicationMode_0:dazeBuildup': {
     sheet: 'ZhuYuan',
-    name: 'UltimateMaxEradicationMode_0_daze',
+    name: 'UltimateMaxEradicationMode_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -804,12 +870,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateMaxEradicationMode_0_daze',
+      name: 'UltimateMaxEradicationMode_0',
     },
   },
-  UltimateMaxEradicationMode_0_anomBuildup: {
+  'UltimateMaxEradicationMode_0:anomBuildup': {
     sheet: 'ZhuYuan',
-    name: 'UltimateMaxEradicationMode_0_anomBuildup',
+    name: 'UltimateMaxEradicationMode_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -818,12 +884,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateMaxEradicationMode_0_anomBuildup',
+      name: 'UltimateMaxEradicationMode_0',
     },
   },
-  QuickAssistCoveringShot_0_dmg: {
+  'QuickAssistCoveringShot_0:standardDmg': {
     sheet: 'ZhuYuan',
-    name: 'QuickAssistCoveringShot_0_dmg',
+    name: 'QuickAssistCoveringShot_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -832,12 +898,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistCoveringShot_0_dmg',
+      name: 'QuickAssistCoveringShot_0',
     },
   },
-  QuickAssistCoveringShot_0_daze: {
+  'QuickAssistCoveringShot_0:dazeBuildup': {
     sheet: 'ZhuYuan',
-    name: 'QuickAssistCoveringShot_0_daze',
+    name: 'QuickAssistCoveringShot_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -846,12 +912,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistCoveringShot_0_daze',
+      name: 'QuickAssistCoveringShot_0',
     },
   },
-  QuickAssistCoveringShot_0_anomBuildup: {
+  'QuickAssistCoveringShot_0:anomBuildup': {
     sheet: 'ZhuYuan',
-    name: 'QuickAssistCoveringShot_0_anomBuildup',
+    name: 'QuickAssistCoveringShot_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -860,12 +926,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistCoveringShot_0_anomBuildup',
+      name: 'QuickAssistCoveringShot_0',
     },
   },
-  AssistFollowUpDefensiveCounter_0_dmg: {
+  'AssistFollowUpDefensiveCounter_0:standardDmg': {
     sheet: 'ZhuYuan',
-    name: 'AssistFollowUpDefensiveCounter_0_dmg',
+    name: 'AssistFollowUpDefensiveCounter_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -874,12 +940,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpDefensiveCounter_0_dmg',
+      name: 'AssistFollowUpDefensiveCounter_0',
     },
   },
-  AssistFollowUpDefensiveCounter_0_daze: {
+  'AssistFollowUpDefensiveCounter_0:dazeBuildup': {
     sheet: 'ZhuYuan',
-    name: 'AssistFollowUpDefensiveCounter_0_daze',
+    name: 'AssistFollowUpDefensiveCounter_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -888,12 +954,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpDefensiveCounter_0_daze',
+      name: 'AssistFollowUpDefensiveCounter_0',
     },
   },
-  AssistFollowUpDefensiveCounter_0_anomBuildup: {
+  'AssistFollowUpDefensiveCounter_0:anomBuildup': {
     sheet: 'ZhuYuan',
-    name: 'AssistFollowUpDefensiveCounter_0_anomBuildup',
+    name: 'AssistFollowUpDefensiveCounter_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -902,7 +968,7 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpDefensiveCounter_0_anomBuildup',
+      name: 'AssistFollowUpDefensiveCounter_0',
     },
   },
   m6_ether_afterglow: {

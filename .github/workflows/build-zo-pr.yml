@@ -9,8 +9,6 @@ on:
     paths-ignore:
       - 'apps/frontend/**'
       - 'apps/frontend-e2e/**'
-      - 'apps/gi-frontend/**'
-      - 'apps/gi-frontend-e2e/**'
       - 'apps/sr-frontend/**'
       - 'apps/sr-frontend-e2e/**'
       - 'apps/somnia/**'

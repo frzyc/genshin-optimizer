@@ -221,7 +221,7 @@
   "mindscapes": {
     "1": {
       "name": "12-Tone Equal Temperament",
-      "desc": "When Astra Yao's attack hits an enemy, the target's All-Attribute RES is reduced by 6%, stacking up to 3 times and lasting 30s. Repeated triggers reset the duration. Upon entering the battlefield, Astra Yao immediately gains 1,000 Decibels. When activating her <ct color=#FFFFFF>Ultimate</ct>, all squad members gain 1 stack of <ct color=#FFFFFF>Song of Protection</ct> for 60s. When attacked by an enemy, consume <ct color=#FFFFFF>Song of Protection</ct>, granting Invulnerability for 1s.",
+      "desc": "When Astra Yao's attack hits an enemy, the target's All-Attribute RES is reduced by 6%, stacking up to 3 times and lasting 30s. Repeated triggers reset the duration. Upon entering the battlefield, Astra Yao immediately gains 1,000 Decibels. This effect can trigger once every 180s in Investigation Zone Mode. When activating her <ct color=#FFFFFF>Ultimate</ct>, all squad members gain 1 stack of <ct color=#FFFFFF>Song of Protection</ct> for 60s. When attacked by an enemy, consume <ct color=#FFFFFF>Song of Protection</ct>, granting Invulnerability for 1s.",
       "flavor": {
         "0": "\"What is the 12-tone equal temperament?\"",
         "1": "\"12-tone equal temperament is a musical tuning system, just like how children have to line up, sounds need to be in order too.\"",
@@ -278,5 +278,6 @@
         "2": "\"This song is dedicated to the world!\""
       }
     }
-  }
+  },
+  "potential": {}
 }

@@ -120,8 +120,8 @@
       "1": "<br/>",
       "2": "<strong>Hexerei – Geheimes Ritual</strong>",
       "3": [
-        " Erhöht innerhalb von 15 s nach der Beschwörung einer kleinen Windseele den von Figuren in der Nähe durch Standardangriffe, heftige Schläge, Angriffe aus dem Fall, Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden um 5,71428 %.",
-        " Erhöht innerhalb von 20 s nach der Beschwörung einer großen Windseele den von Hexerei-Figuren in der Nähe durch Standardangriffe, heftige Schläge, Angriffe aus dem Fall, Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden um 7,14285 %."
+        " Erhöht innerhalb von 15 s nach der Beschwörung einer kleinen Windseele den von Truppenmitgliedern in der Nähe durch Standardangriffe, heftige Schläge, Angriffe aus dem Fall, Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden um 5,71428 %.",
+        " Erhöht innerhalb von 20 s nach der Beschwörung einer großen Windseele den von Hexerei-Truppenmitgliedern in der Nähe durch Standardangriffe, heftige Schläge, Angriffe aus dem Fall, Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden um 7,14285 %."
       ]
     }
   },
@@ -164,7 +164,7 @@
       "0": "Erhöht den jeweiligen Elementar-SCH aller Truppenmitglieder bei einer Elementarumwandlung von <strong>Verbotene Windseelenschaffung – Isomorpher Typ 75-II</strong> während der Wirkungsdauer der Fähigkeit um 20 %."
     },
     "upgradedDescription": {
-      "0": "Erhöht den jeweiligen Elementar-SCH aller Truppenmitglieder bei einer Elementarumwandlung von <strong>Verbotene Windseelenschaffung – Isomorpher Typ 75-II</strong> während der Wirkungsdauer der Fähigkeit um 20 % und verleiht zudem den Hexerei-Figuren aus der eigenen Truppe in der Nähe einen Elementar-SCH-Bonus des entsprechenden Elements von 8,57142 %."
+      "0": "Erhöht den jeweiligen Elementar-SCH aller Truppenmitglieder bei einer Elementarumwandlung von <strong>Verbotene Windseelenschaffung – Isomorpher Typ 75-II</strong> während der Wirkungsdauer der Fähigkeit um 20 % und verleiht zudem den Hexerei-Figuren der Truppe in der Nähe einen Elementar-SCH-Bonus des entsprechenden Elements von 8,57142 %."
     }
   }
 }

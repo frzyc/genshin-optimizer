@@ -1,6 +1,11 @@
 import { toDecimal } from '@genshin-optimizer/common/util'
 import type { Preset } from '@genshin-optimizer/game-opt/engine'
-import type { Candidate, Progress } from '@genshin-optimizer/game-opt/solver'
+import type {
+  Candidate,
+  Progress,
+  SolverConfig,
+} from '@genshin-optimizer/game-opt/solver'
+import { buildCount } from '@genshin-optimizer/game-opt/solver'
 
 import {
   constant,
@@ -10,13 +15,16 @@ import {
   read,
   sum,
 } from '@genshin-optimizer/pando/engine'
+import type { NumTagFree } from '@genshin-optimizer/pando/engine'
 import type {
   CharacterKey,
   DiscSetKey,
   DiscSlotKey,
+  DiscSubStatKey,
 } from '@genshin-optimizer/zzz/consts'
 import {
   allDiscSetKeys,
+  allDiscSlotKeys,
   allWengineKeys,
   getDiscMainStatVal,
   getDiscSubStatBaseVal,
@@ -28,24 +36,42 @@ import {
   StatFilterTagToTag,
 } from '@genshin-optimizer/zzz/db'
 import { type Calculator, Read, type Tag } from '@genshin-optimizer/zzz/formula'
+import { rainbowFilter } from './filters'
 
 const EPSILON = 1e-7
 
 type Frames = Array<{ tag: Tag; multiplier: number }>
 
-export function createSolverConfig(
-  characterKey: CharacterKey,
-  calc: Calculator,
-  frames: Frames,
-  statFilters: Array<Omit<StatFilter, 'disabled'>>,
-  setFilter2: DiscSetKey[],
-  setFilter4: DiscSetKey[],
-  wengines: ICachedWengine[],
-  discsBySlot: Record<DiscSlotKey, ICachedDisc[]>,
-  numWorkers: number,
-  numOfBuilds: number,
+export type CreateSolverConfigArgs = {
+  characterKey: CharacterKey
+  calc: Calculator
+  frames: Frames
+  statFilters: Array<Omit<StatFilter, 'disabled'>>
+  setFilter2: DiscSetKey[]
+  setFilter4: DiscSetKey[]
+  wengines: ICachedWengine[]
+  discsBySlot: Record<DiscSlotKey, ICachedDisc[]>
+  numWorkers: number
+  numOfBuilds: number
   setProgress: (progress: Progress) => void
-) {
+}
+
+type DetachedSolverBase = {
+  nodes: NumTagFree[]
+  minimum: number[]
+}
+
+function buildDetachedSolverBase({
+  characterKey,
+  calc,
+  frames,
+  statFilters,
+  setFilter2,
+  setFilter4,
+}: Omit<
+  CreateSolverConfigArgs,
+  'wengines' | 'discsBySlot' | 'numWorkers' | 'numOfBuilds' | 'setProgress'
+>): DetachedSolverBase {
   const discSetKeys = new Set(allDiscSetKeys)
   const wengineKeys = new Set(allWengineKeys)
   const undetachedNodes = [
@@ -114,27 +140,18 @@ export function createSolverConfig(
     // filter2: if not empty, at least one >= 2
     setFilter2.length
       ? max(...setFilter2.map((q) => read({ q }, 'sum')))
-      : constant(Infinity),
+      : constant(Number.POSITIVE_INFINITY),
     // filter4: if not empty, at least one >= 4
     setFilter4.length
       ? max(...setFilter4.map((q) => read({ q }, 'sum')))
-      : constant(Infinity)
+      : constant(Number.POSITIVE_INFINITY)
     // other calcs (graph, etc)
   )
 
   return {
     nodes,
-    candidates: [
-      wengines.map(wengineCandidate),
-      discsBySlot['1'].map(discCandidate),
-      discsBySlot['2'].map(discCandidate),
-      discsBySlot['3'].map(discCandidate),
-      discsBySlot['4'].map(discCandidate),
-      discsBySlot['5'].map(discCandidate),
-      discsBySlot['6'].map(discCandidate),
-    ],
     minimum: [
-      -Infinity, // opt-target itself is also used as a min constraint
+      Number.NEGATIVE_INFINITY, // opt-target itself is also used as a min constraint
       // Invert max constraints for pruning
       ...statFilters.map(({ value, isMax, tag }) => {
         const decimalVal = toDecimal(value, tag.q ?? '')
@@ -143,10 +160,63 @@ export function createSolverConfig(
       2, // setFilter2
       4, // setFilter4
     ],
+  }
+}
+
+function slotCandidates(
+  wengines: ICachedWengine[],
+  discsBySlot: Record<DiscSlotKey, ICachedDisc[]>
+): Candidate<string>[][] {
+  return [
+    wengines.map(wengineCandidate),
+    ...allDiscSlotKeys.map((slot) => discsBySlot[slot].map(discCandidate)),
+  ]
+}
+
+function solverConfigFromBase(
+  base: DetachedSolverBase,
+  candidates: Candidate<string>[][],
+  {
+    numWorkers,
+    numOfBuilds,
+    setProgress,
+  }: Pick<CreateSolverConfigArgs, 'numWorkers' | 'numOfBuilds' | 'setProgress'>
+): SolverConfig<string> {
+  return {
+    ...base,
+    candidates,
     numWorkers,
     topN: numOfBuilds,
     setProgress,
   }
+}
+
+export function createSolverConfig(
+  args: CreateSolverConfigArgs
+): SolverConfig<string> {
+  const base = buildDetachedSolverBase(args)
+  return solverConfigFromBase(
+    base,
+    slotCandidates(args.wengines, args.discsBySlot),
+    {
+      numWorkers: args.numWorkers,
+      numOfBuilds: args.numOfBuilds,
+      setProgress: args.setProgress,
+    }
+  )
+}
+
+// Orchestrator layer for rainbow / 4:2 batching
+export function createOptimizeConfig(
+  args: CreateSolverConfigArgs & { allowRainbow: boolean }
+): SolverConfig<string> | null {
+  const cfg = createSolverConfig(args)
+  if (!buildCount(cfg.candidates)) return null
+  if (!args.allowRainbow) {
+    cfg.filter = rainbowFilter(args)
+    if (!cfg.filter?.length) return null // no valid group
+  }
+  return cfg
 }
 
 function discCandidate(disc: ICachedDisc): Candidate<string> {
@@ -156,7 +226,10 @@ function discCandidate(disc: ICachedDisc): Candidate<string> {
     [mainStatKey]: getDiscMainStatVal(rarity, mainStatKey, level),
     ...Object.fromEntries(
       substats
-        .filter(({ key, upgrades }) => key && upgrades)
+        .filter(
+          (sub): sub is typeof sub & { key: DiscSubStatKey } =>
+            !!sub.key && !!sub.upgrades
+        )
         .map(({ key, upgrades }) => [
           key,
           getDiscSubStatBaseVal(key, rarity) * upgrades,

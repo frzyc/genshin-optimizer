@@ -1,13 +1,18 @@
 // WARNING: Generated file, do not modify
 import type { TagMapNodeEntries } from '../util'
+import AngelInTheShell from './sheets/AngelInTheShell'
 import BashfulDemon from './sheets/BashfulDemon'
 import BellicoseBlaze from './sheets/BellicoseBlaze'
 import BigCylinder from './sheets/BigCylinder'
 import BlazingLaurel from './sheets/BlazingLaurel'
+import BoisterousEchoes from './sheets/BoisterousEchoes'
 import BoxCutter from './sheets/BoxCutter'
 import BunnyBand from './sheets/BunnyBand'
 import CannonRotor from './sheets/CannonRotor'
+import CauldronOfClarity from './sheets/CauldronOfClarity'
+import ChiefSidekick from './sheets/ChiefSidekick'
 import CinderCobalt from './sheets/CinderCobalt'
+import CloudcleaveRadiance from './sheets/CloudcleaveRadiance'
 import CordisGermina from './sheets/CordisGermina'
 import DeepSeaVisitor from './sheets/DeepSeaVisitor'
 import DemaraBatteryMarkII from './sheets/DemaraBatteryMarkII'
@@ -17,16 +22,19 @@ import ElectroLipGloss from './sheets/ElectroLipGloss'
 import ElegantVanity from './sheets/ElegantVanity'
 import FlamemakerShaker from './sheets/FlamemakerShaker'
 import FlightOfFancy from './sheets/FlightOfFancy'
+import FrostfallSickle from './sheets/FrostfallSickle'
 import FusionCompiler from './sheets/FusionCompiler'
 import GildedBlossom from './sheets/GildedBlossom'
 import GrillOWisp from './sheets/GrillOWisp'
 import HailstormShrine from './sheets/HailstormShrine'
+import HalfSugarBunny from './sheets/HalfSugarBunny'
 import HeartstringNocturne from './sheets/HeartstringNocturne'
 import HellfireGears from './sheets/HellfireGears'
 import Housekeeper from './sheets/Housekeeper'
 import IceJadeTeapot from './sheets/IceJadeTeapot'
 import IdentityBase from './sheets/IdentityBase'
 import IdentityInflection from './sheets/IdentityInflection'
+import JoyauDore from './sheets/JoyauDore'
 import KaboomTheCannon from './sheets/KaboomTheCannon'
 import KrakensCradle from './sheets/KrakensCradle'
 import LunarDecrescent from './sheets/LunarDecrescent'
@@ -38,6 +46,7 @@ import MagneticStormCharlie from './sheets/MagneticStormCharlie'
 import MarcatoDesire from './sheets/MarcatoDesire'
 import Metanukimorphosis from './sheets/Metanukimorphosis'
 import MyriadEclipse from './sheets/MyriadEclipse'
+import NeonFantasies from './sheets/NeonFantasies'
 import OriginalTransmorpher from './sheets/OriginalTransmorpher'
 import PeacekeeperSpecialized from './sheets/PeacekeeperSpecialized'
 import PracticedPerfection from './sheets/PracticedPerfection'
@@ -53,20 +62,25 @@ import ReverbMarkIII from './sheets/ReverbMarkIII'
 import RiotSuppressorMarkVI from './sheets/RiotSuppressorMarkVI'
 import RoaringFurnace from './sheets/RoaringFurnace'
 import RoaringRide from './sheets/RoaringRide'
+import SerpentineSeeker from './sheets/SerpentineSeeker'
 import SeveredInnocence from './sheets/SeveredInnocence'
 import SharpenedStinger from './sheets/SharpenedStinger'
 import SixShooter from './sheets/SixShooter'
 import SliceOfTime from './sheets/SliceOfTime'
+import SolExuvia from './sheets/SolExuvia'
 import SpectralGaze from './sheets/SpectralGaze'
 import SpringEmbrace from './sheets/SpringEmbrace'
 import StarlightEngine from './sheets/StarlightEngine'
 import StarlightEngineReplica from './sheets/StarlightEngineReplica'
+import StarlightRiderFaceplate from './sheets/StarlightRiderFaceplate'
 import SteamOven from './sheets/SteamOven'
 import SteelCushion from './sheets/SteelCushion'
 import StreetSuperstar from './sheets/StreetSuperstar'
 import TheBrimstone from './sheets/TheBrimstone'
 import TheRestrained from './sheets/TheRestrained'
+import TheSimmeringPot from './sheets/TheSimmeringPot'
 import TheVault from './sheets/TheVault'
+import Thoughtbop from './sheets/Thoughtbop'
 import Timeweaver from './sheets/Timeweaver'
 import TremorTrigramVessel from './sheets/TremorTrigramVessel'
 import TusksOfFury from './sheets/TusksOfFury'
@@ -81,14 +95,19 @@ import YesterdayCalls from './sheets/YesterdayCalls'
 import ZanshinHerbCase from './sheets/ZanshinHerbCase'
 
 const data: TagMapNodeEntries[] = [
+  AngelInTheShell,
   BashfulDemon,
   BellicoseBlaze,
   BigCylinder,
   BlazingLaurel,
+  BoisterousEchoes,
   BoxCutter,
   BunnyBand,
   CannonRotor,
+  CauldronOfClarity,
+  ChiefSidekick,
   CinderCobalt,
+  CloudcleaveRadiance,
   CordisGermina,
   DeepSeaVisitor,
   DemaraBatteryMarkII,
@@ -98,16 +117,19 @@ const data: TagMapNodeEntries[] = [
   ElegantVanity,
   FlamemakerShaker,
   FlightOfFancy,
+  FrostfallSickle,
   FusionCompiler,
   GildedBlossom,
   GrillOWisp,
   HailstormShrine,
+  HalfSugarBunny,
   HeartstringNocturne,
   HellfireGears,
   Housekeeper,
   IceJadeTeapot,
   IdentityBase,
   IdentityInflection,
+  JoyauDore,
   KaboomTheCannon,
   KrakensCradle,
   LunarDecrescent,
@@ -119,6 +141,7 @@ const data: TagMapNodeEntries[] = [
   MarcatoDesire,
   Metanukimorphosis,
   MyriadEclipse,
+  NeonFantasies,
   OriginalTransmorpher,
   PeacekeeperSpecialized,
   PracticedPerfection,
@@ -134,20 +157,25 @@ const data: TagMapNodeEntries[] = [
   RiotSuppressorMarkVI,
   RoaringFurnace,
   RoaringRide,
+  SerpentineSeeker,
   SeveredInnocence,
   SharpenedStinger,
   SixShooter,
   SliceOfTime,
+  SolExuvia,
   SpectralGaze,
   SpringEmbrace,
   StarlightEngine,
   StarlightEngineReplica,
+  StarlightRiderFaceplate,
   SteamOven,
   SteelCushion,
   StreetSuperstar,
   TheBrimstone,
   TheRestrained,
+  TheSimmeringPot,
   TheVault,
+  Thoughtbop,
   Timeweaver,
   TremorTrigramVessel,
   TusksOfFury,

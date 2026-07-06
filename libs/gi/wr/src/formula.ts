@@ -68,6 +68,7 @@ const allNonModStatNodes = objKeyMap(allNonModStats, (key) =>
 for (const ele of allElements) {
   allNonModStatNodes[`${ele}_res_`].info!.variant = ele
   allNonModStatNodes[`${ele}_enemyRes_`].info!.variant = ele
+  allNonModStatNodes[`${ele}_critRate_`].info!.variant = ele
   allNonModStatNodes[`${ele}_critDMG_`].info!.variant = ele
   allNonModStatNodes[`${ele}_dmgInc`].info!.variant = ele
   allModStatNodes[`${ele}_dmg_`].info!.variant = ele
@@ -223,7 +224,6 @@ const inputBase = {
     maxEleMas: read('max'),
     moonsign: read('add'),
     hexerei: read('add'),
-    maxMoonsignBuff: read('max'),
   },
 }
 const input = setReadNodeKeys(deepNodeClone(inputBase))
@@ -281,6 +281,11 @@ const common: Data = {
         case 'critRate_':
           operands.push(
             percent(0.05, { ...inf, prefix: 'default' }),
+            lookup(
+              hit.ele,
+              objKeyMap(allElements, (ele) => premod[`${ele}_critRate_`]),
+              0
+            ),
             lookup(
               hit.move,
               // Plunging buff applies to both collision and shockwave types
@@ -525,6 +530,19 @@ const selected0 = setReadNodeKeys(deepNodeClone(inputBase), ['selected0'])
 const selected1 = setReadNodeKeys(deepNodeClone(inputBase), ['selected1'])
 const selected2 = setReadNodeKeys(deepNodeClone(inputBase), ['selected2'])
 const selected3 = setReadNodeKeys(deepNodeClone(inputBase), ['selected3'])
+const active = setReadNodeKeys(deepNodeClone(inputBase), ['active'])
+const inactive1 = setReadNodeKeys(deepNodeClone(inputBase), ['inactive1'])
+const inactive2 = setReadNodeKeys(deepNodeClone(inputBase), ['inactive2'])
+const inactive3 = setReadNodeKeys(deepNodeClone(inputBase), ['inactive3'])
 
 export { common, customBonus, input, tally, target, uiInput }
-export { selected0, selected1, selected2, selected3 }
+export {
+  selected0,
+  selected1,
+  selected2,
+  selected3,
+  active,
+  inactive1,
+  inactive2,
+  inactive3,
+}

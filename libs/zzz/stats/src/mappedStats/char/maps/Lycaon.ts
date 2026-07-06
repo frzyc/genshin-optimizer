@@ -34,11 +34,21 @@ const dm = {
       data_gen.skillParams['assist']['DefensiveAssistDisruptedHunt'],
     AssistFollowUpVengefulCounterattack:
       data_gen.skillParams['assist']['AssistFollowUpVengefulCounterattack'],
+    AssistFollowUpVengefulCounterattackGlacialWaltz:
+      data_gen.skillParams['assist'][
+        'AssistFollowUpVengefulCounterattackGlacialWaltz'
+      ],
   },
   core: {
     dazeInc_: data_gen.coreParams[0],
     ice_resRed_: data_gen.coreParams[1][0],
-    duration: data_gen.coreParams[2][0],
+    other_resRed_: data_gen.coreParams[2][0],
+    duration: data_gen.coreParams[3][0],
+    encirclePreyDuration: data_gen.coreParams[4][0],
+    encirclePreyGained: data_gen.coreParams[5][0],
+    storedEncirclePrey: data_gen.coreParams[6][0],
+    durationRemaining: data_gen.coreParams[7][0],
+    durationRemaining_dazeInc_: data_gen.coreParams[8][0],
   },
   ability: {
     stun_: data_gen.abilityParams[0],

@@ -124,6 +124,52 @@
           "FeverRecovery": 5029.75,
           "FeverRecoveryGrowth": 0,
           "AttributeInfliction": 182.8
+        },
+        {
+          "DamagePercentage": 4.417,
+          "DamagePercentageGrowth": 0.402,
+          "StunRatio": 1.453,
+          "StunRatioGrowth": 0.067,
+          "SpRecovery": 498,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 3806,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 138.33
+        },
+        {
+          "DamagePercentage": 4.417,
+          "DamagePercentageGrowth": 0.402,
+          "StunRatio": 1.453,
+          "StunRatioGrowth": 0.067,
+          "SpRecovery": 498,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 3806,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 138.33
+        },
+        {
+          "DamagePercentage": 0.828,
+          "DamagePercentageGrowth": 0.076,
+          "StunRatio": 0,
+          "StunRatioGrowth": 0,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
+      ],
+      "BasicAttackFireAssault": [
+        {
+          "DamagePercentage": 0.941,
+          "DamagePercentageGrowth": 0.086,
+          "StunRatio": 0.307,
+          "StunRatioGrowth": 0.014,
+          "SpRecovery": 105.1,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 803,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 29.16
         }
       ]
     },
@@ -292,7 +338,8 @@
   "calcedParams": {
     "basic": {
       "BasicAttackWarmupSparks": [],
-      "BasicAttackFireSuppression": []
+      "BasicAttackFireSuppression": [],
+      "BasicAttackFireAssault": []
     },
     "dodge": {
       "DodgeTemperedFire": [],
@@ -320,5 +367,6 @@
     [11, 0.18],
     [2],
     [11, 8, 8, 1, 0.25]
-  ]
+  ],
+  "potentialParams": [[0, 11, 11, 11, 11, 11], [0, 0.16, 0.24, 0.32, 0.4, 0.48]]
 }

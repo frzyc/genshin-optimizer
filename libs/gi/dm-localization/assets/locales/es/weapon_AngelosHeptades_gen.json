@@ -1,0 +1,29 @@
+{
+  "name": "Heptadas de los Ángeles",
+  "description": {
+    "0": "Un relicario dorado tan hermoso como la luz celestial. Cuenta la leyenda que, en un pasado remoto, perteneció a una emisaria de la corte eterna."
+  },
+  "passiveName": "Corona del advenimiento final",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta el ATQ en un <cryo>12%</cryo>. Cuando el portador de esta arma crea un escudo, obtiene durante 20 s el efecto de “luz pionera”, el cual aumenta el daño que inflige tu personaje en uso del equipo en un <cryo>10%</cryo> por cada 1000 pts. de ATQ que tenga dicho portador. Como máximo, el daño podrá aumentar en un <cryo>26%</cryo>. Además, cuando el portador crea un escudo, también obtendrá el efecto de “saciedad del guía”, el cual le restaurará <cryo>14</cryo> pts. de Energía Elemental. Este efecto solo puede ocurrir una vez cada 14 s, y se puede obtener también al abrir todo tipo de cofres estando fuera de combate. Dichos efectos se pueden activar incluso cuando el portador está en tu equipo pero no en uso.",
+      "1": "Taumaturgia: rito secreto: tus personajes taumatúrgicos del equipo que no estén en uso también obtendrán un 50% del aumento de daño otorgado por el efecto de luz pionera."
+    },
+    "1": {
+      "0": "Aumenta el ATQ en un <cryo>15%</cryo>. Cuando el portador de esta arma crea un escudo, obtiene durante 20 s el efecto de “luz pionera”, el cual aumenta el daño que inflige tu personaje en uso del equipo en un <cryo>13%</cryo> por cada 1000 pts. de ATQ que tenga dicho portador. Como máximo, el daño podrá aumentar en un <cryo>34%</cryo>. Además, cuando el portador crea un escudo, también obtendrá el efecto de “saciedad del guía”, el cual le restaurará <cryo>15</cryo> pts. de Energía Elemental. Este efecto solo puede ocurrir una vez cada 14 s, y se puede obtener también al abrir todo tipo de cofres estando fuera de combate. Dichos efectos se pueden activar incluso cuando el portador está en tu equipo pero no en uso.",
+      "1": "Taumaturgia: rito secreto: tus personajes taumatúrgicos del equipo que no estén en uso también obtendrán un 50% del aumento de daño otorgado por el efecto de luz pionera."
+    },
+    "2": {
+      "0": "Aumenta el ATQ en un <cryo>18%</cryo>. Cuando el portador de esta arma crea un escudo, obtiene durante 20 s el efecto de “luz pionera”, el cual aumenta el daño que inflige tu personaje en uso del equipo en un <cryo>16%</cryo> por cada 1000 pts. de ATQ que tenga dicho portador. Como máximo, el daño podrá aumentar en un <cryo>42%</cryo>. Además, cuando el portador crea un escudo, también obtendrá el efecto de “saciedad del guía”, el cual le restaurará <cryo>16</cryo> pts. de Energía Elemental. Este efecto solo puede ocurrir una vez cada 14 s, y se puede obtener también al abrir todo tipo de cofres estando fuera de combate. Dichos efectos se pueden activar incluso cuando el portador está en tu equipo pero no en uso.",
+      "1": "Taumaturgia: rito secreto: tus personajes taumatúrgicos del equipo que no estén en uso también obtendrán un 50% del aumento de daño otorgado por el efecto de luz pionera."
+    },
+    "3": {
+      "0": "Aumenta el ATQ en un <cryo>21%</cryo>. Cuando el portador de esta arma crea un escudo, obtiene durante 20 s el efecto de “luz pionera”, el cual aumenta el daño que inflige tu personaje en uso del equipo en un <cryo>19%</cryo> por cada 1000 pts. de ATQ que tenga dicho portador. Como máximo, el daño podrá aumentar en un <cryo>50%</cryo>. Además, cuando el portador crea un escudo, también obtendrá el efecto de “saciedad del guía”, el cual le restaurará <cryo>17</cryo> pts. de Energía Elemental. Este efecto solo puede ocurrir una vez cada 14 s, y se puede obtener también al abrir todo tipo de cofres estando fuera de combate. Dichos efectos se pueden activar incluso cuando el portador está en tu equipo pero no en uso.",
+      "1": "Taumaturgia: rito secreto: tus personajes taumatúrgicos del equipo que no estén en uso también obtendrán un 50% del aumento de daño otorgado por el efecto de luz pionera."
+    },
+    "4": {
+      "0": "Aumenta el ATQ en un <cryo>24%</cryo>. Cuando el portador de esta arma crea un escudo, obtiene durante 20 s el efecto de “luz pionera”, el cual aumenta el daño que inflige tu personaje en uso del equipo en un <cryo>22%</cryo> por cada 1000 pts. de ATQ que tenga dicho portador. Como máximo, el daño podrá aumentar en un <cryo>58%</cryo>. Además, cuando el portador crea un escudo, también obtendrá el efecto de “saciedad del guía”, el cual le restaurará <cryo>18</cryo> pts. de Energía Elemental. Este efecto solo puede ocurrir una vez cada 14 s, y se puede obtener también al abrir todo tipo de cofres estando fuera de combate. Dichos efectos se pueden activar incluso cuando el portador está en tu equipo pero no en uso.",
+      "1": "Taumaturgia: rito secreto: tus personajes taumatúrgicos del equipo que no estén en uso también obtendrán un 50% del aumento de daño otorgado por el efecto de luz pionera."
+    }
+  }
+}

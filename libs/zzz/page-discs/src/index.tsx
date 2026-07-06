@@ -1,7 +1,11 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
-import { DiscEditor, DiscInventory } from '@genshin-optimizer/zzz/ui'
+import {
+  DiscEditor,
+  DiscEditorSnackbarProvider,
+  DiscInventory,
+} from '@genshin-optimizer/zzz/ui'
 import { Box } from '@mui/material'
 
 import { Suspense, useCallback, useState } from 'react'
@@ -28,23 +32,25 @@ export default function PageDiscs() {
   )
 
   return (
-    <Box display="flex" flexDirection="column" gap={1} my={1}>
-      <Suspense fallback={false}>
-        <DiscEditor
-          disc={disc}
-          allowEmpty
-          allowUpload
-          show={show}
-          onClose={onClose}
-          onShow={onOpen}
-          cancelEdit={() => setDisc({})}
-        />
-      </Suspense>
+    <DiscEditorSnackbarProvider>
+      <Box display="flex" flexDirection="column" gap={1} my={1}>
+        <Suspense fallback={false}>
+          <DiscEditor
+            disc={disc}
+            allowEmpty
+            allowUpload
+            show={show}
+            onClose={onClose}
+            onShow={onOpen}
+            cancelEdit={() => setDisc({})}
+          />
+        </Suspense>
 
-      <Suspense fallback={false}>
-        <DupModal show={showDup} onHide={onHideDup} setDiscToEdit={onEdit} />
-      </Suspense>
-      <DiscInventory onAdd={onAddNew} onEdit={onEdit} onShowDup={onShowDup} />
-    </Box>
+        <Suspense fallback={false}>
+          <DupModal show={showDup} onHide={onHideDup} setDiscToEdit={onEdit} />
+        </Suspense>
+        <DiscInventory onAdd={onAddNew} onEdit={onEdit} onShowDup={onShowDup} />
+      </Box>
+    </DiscEditorSnackbarProvider>
   )
 }

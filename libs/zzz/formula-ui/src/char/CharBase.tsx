@@ -135,6 +135,44 @@ charBaseUiSheet.push(
       ),
     }
   }),
+  ...[
+    ...allAttributeKeys.filter((attr) => attr !== 'wind'),
+    'frost' as const,
+  ].map((attr): TagField => {
+    const attr_withoutFrost = attr === 'frost' ? 'ice' : attr
+    return {
+      fieldRef: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomalyDmg',
+        attribute: attr_withoutFrost,
+        damageType1: 'vortex',
+        name: `vortexDmgInst_${attr}`,
+      },
+      title: (
+        <ColorText color={attr_withoutFrost}>
+          {attr === 'frost' ? 'Frost' : elementalData[attr_withoutFrost]} Vortex
+          Damage
+        </ColorText>
+      ),
+    }
+  }),
+  ...allAttributeKeys.map(
+    (attr): TagField => ({
+      fieldRef: {
+        et: 'own',
+        qt: 'formula',
+        q: 'anomalyDmg',
+        attribute: attr,
+        damageType1: 'anomaly',
+        damageType2: 'abloom',
+        name: 'abloomDmgInst',
+      },
+      title: (
+        <ColorText color={attr}>{elementalData[attr]} Abloom Damage</ColorText>
+      ),
+    })
+  ),
   ...allAttributeKeys.map(
     (attr): TagField => ({
       fieldRef: {

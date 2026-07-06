@@ -41,7 +41,7 @@
   "skill": {
     "name": "Modo depuración: Frecuencia de onda estable",
     "description": {
-      "0": "Ineffa activa su módulo avanzado de limpieza para infligir una vez <electro>Daño Electro en el AdE</electro> a los enemigos cercanos, crear un escudo lumibarrera e invocar una unidad multiusos de asistencia inteligente llamada <strong>Birgitta</strong>.",
+      "0": "Ineffa activa su módulo avanzado de limpieza para infligir una vez <electro>Daño Electro en el AdE</electro> a los enemigos cercanos, crear un escudo lumibarrera e invocar una unidad multiusos de asistencia inteligente llamada <tooltip ns=tooltips_gen baseKey18=11160001 values=[]><strong>Birgitta</strong></tooltip>.",
       "1": "La absorción de daño del escudo lumibarrera aumenta en función del ATQ de Ineffa y tiene un 250% de efectividad de absorción de <electro>Daño Electro</electro>."
     },
     "skillParams": {
@@ -66,7 +66,7 @@
   "burst": {
     "name": "Orden suprema: Exterminación zonal",
     "description": {
-      "0": "Con la ayuda de <strong>Birgitta</strong>, la unidad multiusos de asistencia inteligente, ¡limpia a los enemigos con un puñetazo cohete! Ineffa lanza a Birgitta para infligir <electro>Daño Electro en el AdE</electro> y hacer que esta se quede en el campo de batalla.",
+      "0": "Con la ayuda de <tooltip ns=tooltips_gen baseKey18=11160001 values=[]><strong>Birgitta</strong></tooltip>, la unidad multiusos de asistencia inteligente, ¡limpia a los enemigos con un puñetazo cohete! Ineffa lanza a Birgitta para infligir <electro>Daño Electro en el AdE</electro> y hacer que esta se quede en el campo de batalla.",
       "1": "<br/>",
       "2": "Si, al hacer esto, en el campo ya había una Birgitta invocada por Ineffa, en su lugar, invocará una nueva Birgitta en la ubicación del objetivo y su duración se reiniciará."
     },
@@ -92,13 +92,13 @@
   "passive1": {
     "name": "Circuito sobreacelerado",
     "description": {
-      "0": "Si hay alguna nube de tormenta creada con la reacción de Electrocargado Lunar cerca de <strong>Birgitta</strong>, cuando esta realice un ataque electrizador, ejecutará un ataque adicional que inflige <electro>Daño Electro en el AdE</electro> en una cantidad equivalente al 65% del ATQ de Ineffa. Este daño se considera daño de Electrocargado Lunar."
+      "0": "Si hay alguna nube de tormenta creada con la reacción de Electrocargado Lunar cerca de <tooltip ns=tooltips_gen baseKey18=11160001 values=[]><strong>Birgitta</strong></tooltip>, cuando esta realice un ataque electrizador, ejecutará un ataque adicional que inflige <electro>Daño Electro en el AdE</electro> en una cantidad equivalente al 65% del ATQ de Ineffa. Este daño se considera daño de Electrocargado Lunar."
     }
   },
   "passive2": {
     "name": "Protocolo de refactorización holística",
     "description": {
-      "0": "Al usar la Habilidad Definitiva, <strong>Orden suprema: Exterminación zonal</strong>, todos tus personajes del equipo obtienen el efecto de “refactorización paramétrica”, el cual aumenta durante 20 s la Maestría Elemental de Ineffa y de tu personaje en uso del equipo en una cantidad equivalente al 6% del ATQ de Ineffa."
+      "0": "Al usar la Habilidad Definitiva, <strong><tooltip ns=char_Ineffa_gen baseKey18=burst>Orden suprema: Exterminación zonal</tooltip></strong>, todos tus personajes del equipo obtienen el efecto de “refactorización paramétrica”, el cual aumenta durante 20 s la Maestría Elemental de Ineffa y de tu personaje en uso del equipo en una cantidad equivalente al 6% del ATQ de Ineffa."
     }
   },
   "passive3": {
@@ -126,14 +126,14 @@
   "constellation2": {
     "name": "Módulo de limpieza auxiliar",
     "description": {
-      "0": "Tras golpear a los enemigos con la Habilidad Definitiva, <strong>Orden suprema: Exterminación zonal</strong>, aplica el estado de “edicto punitivo” a uno de los enemigos golpeados. Después de un breve lapso de tiempo o cuando dicho enemigo sea derrotado, se infligirá <electro>Daño Electro en el AdE</electro> a los demás enemigos cercanos en una cantidad equivalente al 300% del ATQ de Ineffa. Este daño se considera daño de Electrocargado Lunar.",
+      "0": "Tras golpear a los enemigos con la Habilidad Definitiva, <strong><tooltip ns=char_Ineffa_gen baseKey18=burst>Orden suprema: Exterminación zonal</tooltip></strong>, aplica el estado de “edicto punitivo” a uno de los enemigos golpeados. Después de un breve lapso de tiempo o cuando dicho enemigo sea derrotado, se infligirá <electro>Daño Electro en el AdE</electro> a los demás enemigos cercanos en una cantidad equivalente al 300% del ATQ de Ineffa. Este daño se considera daño de Electrocargado Lunar.",
       "1": "Además, al usar la Habilidad Definitiva, <strong>Orden suprema: Exterminación zonal</strong>, también se crea un escudo lumibarrera para los personajes en uso cercanos."
     }
   },
   "constellation3": {
     "name": "Emulador de emociones mejorado",
     "description": {
-      "0": "Aumenta el nivel de habilidad de <strong>Modo depuración: Frecuencia de onda estable</strong> +3.",
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_Ineffa_gen baseKey18=skill>Modo depuración: Frecuencia de onda estable</tooltip></strong> +3.",
       "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
@@ -146,7 +146,7 @@
   "constellation5": {
     "name": "Sueño trasciendespejos",
     "description": {
-      "0": "Aumenta el nivel de habilidad de <strong>Orden suprema: Exterminación zonal</strong> +3.",
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_Ineffa_gen baseKey18=burst>Orden suprema: Exterminación zonal</tooltip></strong> +3.",
       "1": "Puede ser aumentado hasta Niv. 15."
     }
   },

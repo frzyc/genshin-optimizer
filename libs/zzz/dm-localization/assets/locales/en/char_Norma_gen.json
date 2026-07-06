@@ -1,0 +1,310 @@
+{
+  "name": "Norma",
+  "fullName": "Norma Hollowell",
+  "basic": {
+    "BasicAttackEngineeringInsurance": {
+      "name": "Basic Attack: Engineering Insurance",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Performs up to four attacks forward, dealing <ct color=#FF5521>Fire DMG</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    },
+    "BasicAttackHatTrick": {
+      "name": "Basic Attack: Hat Trick",
+      "desc": {
+        "0": "When Norma is the active character and is in combat, she gains 1.5% <ct color=#FFFFFF>Preheated Chamber</ct> per second.",
+        "1": "When <ct color=#FFFFFF>Top Hat Companion</ct> is on her head, hold <IconNormal /> to activate:",
+        "2": "After firing, Norma throws out <ct color=#FFFFFF>Top Hat Companion</ct>, ordering it to unleash a round of aerial fire, dealing <ct color=#FF5521>Fire DMG</ct> and storing the current <ct color=#FFFFFF>Preheated Chamber</ct>.",
+        "3": "When the skill hits an enemy, it triggers the previous character's <ct color=#FFFFFF>Quick Assist</ct>. This effect can trigger once every 5s.",
+        "4": "Once <ct color=#FFFFFF>Top Hat Companion</ct> has been thrown out, it will accumulate and retain <ct color=#FFFFFF>Preheated Chamber</ct> at the same speed on behalf of Norma. Norma does not need to stay on the field during this period.",
+        "5": "After Norma retrieves the <ct color=#FFFFFF>Top Hat Companion</ct>, she immediately gains the stored <ct color=#FFFFFF>Preheated Chamber</ct>.",
+        "6": "When holding <IconNormal />, the <ct color=#FFFFFF>Top Hat Companion</ct> will accelerate toward Norma.",
+        "7": "If retrieving the <ct color=#FFFFFF>Top Hat Companion</ct> would raise <ct color=#FFFFFF>Preheated Chamber</ct> to 80% or higher, the <ct color=#FFFFFF>Top Hat Companion</ct> will automatically accelerate toward Norma.",
+        "8": "When Norma switches from on field to off field while in combat, if <ct color=#FFFFFF>Preheated Chamber</ct> is not full, <ct color=#FFFFFF>Top Hat Companion</ct> automatically enters the battlefield.",
+        "9": "Anti-Interrupt level is increased while using this skill. "
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeDevelopmentProtocols": {
+      "name": "Dodge: Development Protocols",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackDeadlineRush": {
+      "name": "Dash Attack: Deadline Rush",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Spins while firing at nearby enemies, dealing <ct color=#FF5521>Fire DMG</ct>."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterComplianceTesting": {
+      "name": "Dodge Counter: Compliance Testing",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Commands the Rumble Drill to continuously drill the target, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackThermalShutdown": {
+      "name": "Special Attack: Thermal Shutdown",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Bombards enemies, dealing <ct color=#FF5521>Fire DMG</ct>."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackEnNahBarrage": {
+      "name": "EX Special Attack: En-Nah Barrage",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Operates the turret to fire continuously and launch different types of missiles based on the target's state:",
+        "2": "When the primary target is not Stunned, launches an Armor-Piercing Warhead, dealing <ct color=#FF5521>Fire DMG</ct> and inflicting a large amount of <ct color=#FFFFFF>Daze</ct>.",
+        "3": "When the primary target is Stunned, launches a High-Explosive Warhead, dealing greater <ct color=#FF5521>Fire DMG</ct>.",
+        "4": "After using this skill, Norma gains 16% <ct color=#FFFFFF><tooltip ns=tooltips_gen baseKey18=1000011>Preheated Chamber</tooltip></ct> and enters the <ct color=#FFFFFF>En-Nah Barrage</ct> state for 32s. While <ct color=#FFFFFF>En-Nah Barrage</ct> is active, Norma deploys two <ct color=#FFFFFF>En-Nah Turrets</ct> to join the battle.",
+        "5": "Continuing to hold extends the firing time by up to 2s, continuously consuming energy. For each 1 point of energy consumed while holding, Norma gains an additional 0.4% <ct color=#FFFFFF>Preheated Chamber</ct>, and this round of <ct color=#FFFFFF>En-Nah Barrage</ct> lasts 0.8s longer, up to a maximum additional duration of {CAL:2*20*0.8,1,2}s.",
+        "6": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Shot ",
+        "Armor-Piercing Warhead ",
+        "High-Explosive Warhead ",
+        "Energy Cost to Use ",
+        "Extended Shot Per Sec ",
+        "Extended Shot Armor-Piercing Warhead Per Sec ",
+        "Extended Shot High-Explosive Warhead Per Sec ",
+        "Extended Shot Energy Cost Per Sec "
+      ]
+    },
+    "SpecialAttackTargetPractice": {
+      "name": "Special Attack: Target Practice",
+      "desc": "During battle, <ct color=#FFFFFF><tooltip ns=tooltips_gen baseKey18=1000010>En-Nah Turret</tooltip></ct> automatically attacks enemies, dealing <ct color=#FF5521>Fire DMG</ct>.",
+      "params": [
+        " ",
+        "Auto-Fire Interval "
+      ]
+    },
+    "EXSpecialAttackExplosiveExperiment": {
+      "name": "EX Special Attack: Explosive Experiment",
+      "desc": {
+        "0": "When any squad member Stuns an enemy, or when Norma consumes <ct color=#FFFFFF><tooltip ns=tooltips_gen baseKey18=1000011>Preheated Chamber</tooltip></ct> to trigger a <ct color=#FFFFFF>Chain Attack</ct>, <ct color=#FFFFFF><tooltip ns=tooltips_gen baseKey18=1000010>En-Nah Turret</tooltip></ct> deploys its missile bay for 8s. Repeated triggers reset the duration.",
+        "1": "During this time, <ct color=#FFFFFF>En-Nah Turrets</ct> automatically attack more frequently. When performing automatic attacks, they launch different missiles based on the enemy's state:",
+        "2": "When the primary target is not Stunned, launch an Armor-Piercing Warhead, dealing <ct color=#FF5521>Fire DMG</ct> and inflicting a large amount of <ct color=#FFFFFF>Daze</ct>.",
+        "3": "When the primary target is Stunned, launch a High-Explosive Warhead, dealing greater <ct color=#FF5521>Fire DMG</ct>."
+      },
+      "params": [
+        "Additional Armor-Piercing Warhead ",
+        "Additional High-Explosive Warhead ",
+        "Enhanced Form Auto-Fire Interval "
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackImpactDrill": {
+      "name": "Chain Attack: Impact Drill",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Commands a swarm of Rumble Drills to deal multiple hits, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateDoctrineOfSuperiorFirepower": {
+      "name": "Ultimate: Doctrine of Superior Firepower",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Calls in tactical artillery to bombard enemies ahead, dealing massive <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Upon activation, immediately gains 30% <ct color=#FFFFFF><tooltip ns=tooltips_gen baseKey18=1000011>Preheated Chamber</tooltip></ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistRoaringBackup": {
+      "name": "Quick Assist: Roaring Backup",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Commands the Rumble Drill to continuously attack the target, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistTechnologicalBastion": {
+      "name": "Defensive Assist: Technological Bastion",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "This skill excels at parrying enemy attacks and reduces the consumption of <ct color=#FFFFFF>Assist Points</ct> when the character is under intense attacks.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpTechnologicalSuppression": {
+      "name": "Assist Follow-Up: Technological Suppression",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Unleashes a series of attacks, dealing <ct color=#FF5521>Fire DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Precise Guidance",
+    "desc": [
+      {
+        "0": "When initial CRIT Rate exceeds 50%, every additional 1% increases her CRIT DMG by <ct color=#2BAD00>0.86%</ct>, up to a maximum increase of <ct color=#2BAD00>43%</ct>.",
+        "1": "When initial CRIT Rate exceeds 50%, every additional 1% increases the Daze dealt by her <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Ultimate</ct> by <ct color=#2BAD00>0.44%</ct> when they hit an enemy, up to a maximum increase of <ct color=#2BAD00>22%</ct>.",
+        "2": "Norma gains additional ATK based on her Sheer Force. Every 1 point of Sheer Force increases her ATK by 1.25, up to a maximum increase of 1,200 ATK.",
+        "3": "Upon entering the battlefield, Norma immediately gains 60% <ct color=#FFFFFF><tooltip ns=tooltips_gen baseKey18=1000011>Preheated Chamber</tooltip></ct>. In Investigation Zone Mode, this effect can trigger once every 180s.",
+        "4": "When <ct color=#FFFFFF>Preheated Chamber</ct> is at least 80%, the next <ct color=#FFFFFF>Basic Attack: Hat Trick</ct> can trigger a <ct color=#FFFFFF>Quick Assist</ct> regardless of cooldown, and consumes 80% <ct color=#FFFFFF>Preheated Chamber</ct> to replace the <ct color=#FFFFFF>Quick Assist</ct> with a <ct color=#FFFFFF>Chain Attack</ct>."
+      },
+      {
+        "0": "When initial CRIT Rate exceeds 50%, every additional 1% increases her CRIT DMG by <ct color=#2BAD00>1%</ct>, up to a maximum increase of <ct color=#2BAD00>50%</ct>.",
+        "1": "When initial CRIT Rate exceeds 50%, every additional 1% increases the Daze dealt by her <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Ultimate</ct> by <ct color=#2BAD00>0.5%</ct> when they hit an enemy, up to a maximum increase of <ct color=#2BAD00>25%</ct>.",
+        "2": "Norma gains additional ATK based on her Sheer Force. Every 1 point of Sheer Force increases her ATK by 1.25, up to a maximum increase of 1,200 ATK.",
+        "3": "Upon entering the battlefield, Norma immediately gains 60% <ct color=#FFFFFF><tooltip ns=tooltips_gen baseKey18=1000011>Preheated Chamber</tooltip></ct>. In Investigation Zone Mode, this effect can trigger once every 180s.",
+        "4": "When <ct color=#FFFFFF>Preheated Chamber</ct> is at least 80%, the next <ct color=#FFFFFF>Basic Attack: Hat Trick</ct> can trigger a <ct color=#FFFFFF>Quick Assist</ct> regardless of cooldown, and consumes 80% <ct color=#FFFFFF>Preheated Chamber</ct> to replace the <ct color=#FFFFFF>Quick Assist</ct> with a <ct color=#FFFFFF>Chain Attack</ct>."
+      },
+      {
+        "0": "When initial CRIT Rate exceeds 50%, every additional 1% increases her CRIT DMG by <ct color=#2BAD00>1.14%</ct>, up to a maximum increase of <ct color=#2BAD00>57%</ct>.",
+        "1": "When initial CRIT Rate exceeds 50%, every additional 1% increases the Daze dealt by her <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Ultimate</ct> by <ct color=#2BAD00>0.56%</ct> when they hit an enemy, up to a maximum increase of <ct color=#2BAD00>28%</ct>.",
+        "2": "Norma gains additional ATK based on her Sheer Force. Every 1 point of Sheer Force increases her ATK by 1.25, up to a maximum increase of 1,200 ATK.",
+        "3": "Upon entering the battlefield, Norma immediately gains 60% <ct color=#FFFFFF><tooltip ns=tooltips_gen baseKey18=1000011>Preheated Chamber</tooltip></ct>. In Investigation Zone Mode, this effect can trigger once every 180s.",
+        "4": "When <ct color=#FFFFFF>Preheated Chamber</ct> is at least 80%, the next <ct color=#FFFFFF>Basic Attack: Hat Trick</ct> can trigger a <ct color=#FFFFFF>Quick Assist</ct> regardless of cooldown, and consumes 80% <ct color=#FFFFFF>Preheated Chamber</ct> to replace the <ct color=#FFFFFF>Quick Assist</ct> with a <ct color=#FFFFFF>Chain Attack</ct>."
+      },
+      {
+        "0": "When initial CRIT Rate exceeds 50%, every additional 1% increases her CRIT DMG by <ct color=#2BAD00>1.28%</ct>, up to a maximum increase of <ct color=#2BAD00>64%</ct>.",
+        "1": "When initial CRIT Rate exceeds 50%, every additional 1% increases the Daze dealt by her <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Ultimate</ct> by <ct color=#2BAD00>0.62%</ct> when they hit an enemy, up to a maximum increase of <ct color=#2BAD00>31%</ct>.",
+        "2": "Norma gains additional ATK based on her Sheer Force. Every 1 point of Sheer Force increases her ATK by 1.25, up to a maximum increase of 1,200 ATK.",
+        "3": "Upon entering the battlefield, Norma immediately gains 60% <ct color=#FFFFFF><tooltip ns=tooltips_gen baseKey18=1000011>Preheated Chamber</tooltip></ct>. In Investigation Zone Mode, this effect can trigger once every 180s.",
+        "4": "When <ct color=#FFFFFF>Preheated Chamber</ct> is at least 80%, the next <ct color=#FFFFFF>Basic Attack: Hat Trick</ct> can trigger a <ct color=#FFFFFF>Quick Assist</ct> regardless of cooldown, and consumes 80% <ct color=#FFFFFF>Preheated Chamber</ct> to replace the <ct color=#FFFFFF>Quick Assist</ct> with a <ct color=#FFFFFF>Chain Attack</ct>."
+      },
+      {
+        "0": "When initial CRIT Rate exceeds 50%, every additional 1% increases her CRIT DMG by <ct color=#2BAD00>1.42%</ct>, up to a maximum increase of <ct color=#2BAD00>71%</ct>.",
+        "1": "When initial CRIT Rate exceeds 50%, every additional 1% increases the Daze dealt by her <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Ultimate</ct> by <ct color=#2BAD00>0.68%</ct> when they hit an enemy, up to a maximum increase of <ct color=#2BAD00>34%</ct>.",
+        "2": "Norma gains additional ATK based on her Sheer Force. Every 1 point of Sheer Force increases her ATK by 1.25, up to a maximum increase of 1,200 ATK.",
+        "3": "Upon entering the battlefield, Norma immediately gains 60% <ct color=#FFFFFF><tooltip ns=tooltips_gen baseKey18=1000011>Preheated Chamber</tooltip></ct>. In Investigation Zone Mode, this effect can trigger once every 180s.",
+        "4": "When <ct color=#FFFFFF>Preheated Chamber</ct> is at least 80%, the next <ct color=#FFFFFF>Basic Attack: Hat Trick</ct> can trigger a <ct color=#FFFFFF>Quick Assist</ct> regardless of cooldown, and consumes 80% <ct color=#FFFFFF>Preheated Chamber</ct> to replace the <ct color=#FFFFFF>Quick Assist</ct> with a <ct color=#FFFFFF>Chain Attack</ct>."
+      },
+      {
+        "0": "When initial CRIT Rate exceeds 50%, every additional 1% increases her CRIT DMG by <ct color=#2BAD00>1.56%</ct>, up to a maximum increase of <ct color=#2BAD00>78%</ct>.",
+        "1": "When initial CRIT Rate exceeds 50%, every additional 1% increases the Daze dealt by her <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Ultimate</ct> by <ct color=#2BAD00>0.74%</ct> when they hit an enemy, up to a maximum increase of <ct color=#2BAD00>37%</ct>.",
+        "2": "Norma gains additional ATK based on her Sheer Force. Every 1 point of Sheer Force increases her ATK by 1.25, up to a maximum increase of 1,200 ATK.",
+        "3": "Upon entering the battlefield, Norma immediately gains 60% <ct color=#FFFFFF><tooltip ns=tooltips_gen baseKey18=1000011>Preheated Chamber</tooltip></ct>. In Investigation Zone Mode, this effect can trigger once every 180s.",
+        "4": "When <ct color=#FFFFFF>Preheated Chamber</ct> is at least 80%, the next <ct color=#FFFFFF>Basic Attack: Hat Trick</ct> can trigger a <ct color=#FFFFFF>Quick Assist</ct> regardless of cooldown, and consumes 80% <ct color=#FFFFFF>Preheated Chamber</ct> to replace the <ct color=#FFFFFF>Quick Assist</ct> with a <ct color=#FFFFFF>Chain Attack</ct>."
+      },
+      {
+        "0": "When initial CRIT Rate exceeds 50%, every additional 1% increases her CRIT DMG by <ct color=#2BAD00>1.7%</ct>, up to a maximum increase of <ct color=#2BAD00>85%</ct>.",
+        "1": "When initial CRIT Rate exceeds 50%, every additional 1% increases the Daze dealt by her <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Ultimate</ct> by <ct color=#2BAD00>0.8%</ct> when they hit an enemy, up to a maximum increase of <ct color=#2BAD00>40%</ct>.",
+        "2": "Norma gains additional ATK based on her Sheer Force. Every 1 point of Sheer Force increases her ATK by 1.25, up to a maximum increase of 1,200 ATK.",
+        "3": "Upon entering the battlefield, Norma immediately gains 60% <ct color=#FFFFFF><tooltip ns=tooltips_gen baseKey18=1000011>Preheated Chamber</tooltip></ct>. In Investigation Zone Mode, this effect can trigger once every 180s.",
+        "4": "When <ct color=#FFFFFF>Preheated Chamber</ct> is at least 80%, the next <ct color=#FFFFFF>Basic Attack: Hat Trick</ct> can trigger a <ct color=#FFFFFF>Quick Assist</ct> regardless of cooldown, and consumes 80% <ct color=#FFFFFF>Preheated Chamber</ct> to replace the <ct color=#FFFFFF>Quick Assist</ct> with a <ct color=#FFFFFF>Chain Attack</ct>."
+      }
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Advantage in Numbers",
+    "desc": {
+      "0": "When another character in your squad is an <ct color=#FFFFFF>Attack</ct> or <ct color=#FFFFFF>Rupture</ct> character, or shares the same Faction:",
+      "1": "When Norma, her creations, or Combat Bangboo hit an enemy, they apply 1 stack of <ct color=#FFFFFF>Tech Divide</ct>. Each stack of <ct color=#FFFFFF>Tech Divide</ct> increases the target's Stun DMG Multiplier by 3%, stacking up to 10 times. This effect can stack once every 0.5s.",
+      "2": "Enemies with <ct color=#FFFFFF>Tech Divide</ct> stacks have their Stun duration increased by 2s upon becoming Stunned. This Stun duration increase cannot stack with similar effects. When an enemy affected by <ct color=#FFFFFF>Tech Divide</ct> recovers from Stun, the <ct color=#FFFFFF>Tech Divide</ct> effect ends.",
+      "3": "While <ct color=#FFFFFF><tooltip ns=tooltips_gen baseKey18=1000012>En-Nah Barrage</tooltip></ct> is active, Norma's ATK increases by 44. This effect scales with character level, increasing by 14 per level, up to a maximum increase of 870.",
+      "4": "While <ct color=#FFFFFF>En-Nah Barrage</ct> is active, DMG dealt by all squad members increases by <ct color=#FFFFFF>20%</ct>."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Visionary Extremism",
+      "desc": "The duration of the En-Nah Turret's missile bay deployed by <ct color=#FFFFFF>EX Special Attack: Explosive Experiment</ct> increases to 12s. When an Armor-Piercing Warhead or High-Explosive Warhead from any skill hits an enemy, the target's All-Attribute RES is reduced by 15% for 15s.",
+      "flavor": {
+        "0": "Advance! By any means necessary!",
+        "1": "Too many things are chasing us in this dying world: the pitch-black frontier, our fleeting lifespan.",
+        "2": "Human life and civilization are more fragile than a Bangboo's logic core.",
+        "3": "The only way to stay ahead of destruction is to keep moving forward, by any means necessary.",
+        "4": "\"Besides, the first to witness a new horizon always sees the most beautiful view, don't they?\""
+      }
+    },
+    "2": {
+      "name": "Axiom of Universal Unity",
+      "desc": "The Stun DMG Multiplier granted by each stack of <ct color=#FFFFFF>Tech Divide</ct> in Norma's <ct color=#FFFFFF>Additional Ability: Advantage in Numbers</ct> is increased to 6%. When Norma uses <ct color=#FFFFFF>Basic Attack: Hat Trick</ct> while in combat, she gains 25 Energy. This effect can trigger once every 20s.",
+      "flavor": {
+        "0": "The world of physicists is constantly overturned by new theories. The order ordinary people rely on is just as often shattered by unexpected events and conflict.",
+        "1": "The ties that bind all things are always mysterious, both incredibly intimate and incredibly fragile, impossible to fully comprehend.",
+        "2": "\"Bring Bangboo and Roscaelifer to greater heights? You mean 'the byproduct of chasing curiosity,' right?\""
+      }
+    },
+    "3": {
+      "name": "Natural-Born Villain Paradox",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "It's another calm, peaceful day in Roscaelifer, with clear skies and a gentle breeze.",
+        "1": "But for the Bangboo, there may still be one ultimate supervillain...",
+        "2": "\"Why is it that the smartest genius in every kids' cartoon always ends up becoming the bad guy...?\"",
+        "3": "\"Seriously, what's so great about those crazy scientists whose budget and hairline are both hanging on by a thread?\""
+      }
+    },
+    "4": {
+      "name": "Bangboo Superiority Theory",
+      "desc": "When Norma consumes <ct color=#FFFFFF>Preheated Chamber</ct> to trigger a <ct color=#FFFFFF>Chain Attack</ct>, both Norma and the corresponding Agent gain 200 Decibels.",
+      "flavor": {
+        "0": "Without a doubt, Bangboo are the most loyal companions humanity has had in the past century, the most efficient tools, and perhaps even... the most powerful weapons.",
+        "1": "Like any child yet to be taught or any blade yet to find a worthy owner, a Bangboo can serve anyone, whether it's the righteous Phaethon or the most ruthless villain.",
+        "2": "\"First of all, I'm a pacifist who happens to love Bangboo.\"",
+        "3": "\"Second, part of my job is making sure the sharpest sword stays in our hands.\""
+      }
+    },
+    "5": {
+      "name": "En-Nah Big Bang",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "According to archived External Strategy Department records, a project led by the young researcher Norma rapidly pushed the performance limits of mass-produced Bangboo to new heights.",
+        "1": "Before being promoted to Chief Technician of the ESD, Norma's most important assignment was proving that she wouldn't one day launch Booastrum into orbit.",
+        "2": "\"Higher! Faster! Stronger!\"",
+        "3": "\"The only things limiting imagination are courage and the R&D budget!\""
+      }
+    },
+    "6": {
+      "name": "The Primary Cause of Genius",
+      "desc": "After any squad member Stuns an enemy, Norma will continuously summon missiles to bombard random enemies on the field for 6s. A missile is launched every 0.75s, dealing <ct color=#FF5521>Fire DMG</ct> equal to 200% of Norma's ATK to enemies within the area. This DMG is considered <ct color=#FFFFFF>Ultimate</ct> DMG. Repeated triggers reset the duration. This effect can trigger once every 30s. The Daze inflicted by Armor-Piercing Warhead increases by <ct color=#FFFFFF>30%</ct>, and the DMG dealt by High-Explosive Warhead increases by <ct color=#FFFFFF>30%</ct>.",
+      "flavor": "Every great creation begins with curiosity and a happy accident. Perhaps the birth of the very first Bangboo soul was nothing more than Lady Sunbringer's fascination with the mysteries of life."
+    }
+  },
+  "potential": {}
+}

@@ -110,6 +110,20 @@
       "0": "Erhöht für jeden Punkt Elementarkunde {F#der}{M#des} Reisenden den mit <strong>Grasklinge</strong> verursachten Schaden um 0,15 % und den mit <strong>Florale Wandlung</strong> verursachten Schaden um 0,1 %."
     }
   },
+  "lockedPassive": {
+    "name": "Duftgras aus der Fremde",
+    "description": {
+      "0": "Verleiht {F#der}{M#dem} Reisenden Kraft aus der Vergangenheit und für jedes Element, mit dem {F#sie}{M#er} im Einklang gestanden hat, zusätzliche <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>Verstärkungseffekte</strong></tooltip>.",
+      "1": "<br/>",
+      "2": "Verleiht {F#der}{M#dem} Reisenden zudem, wenn in der Nähe ein Dendro-Kern (einschließlich Kerne der Fülle, Kerne der List) erzeugt wird, oder die Truppe „Grünender Tau“ erhält, eine Stapelung „Klinge der Gräser“. {F#Die}{M#Der} Reisende kann auf die obigen beiden Weisen jeweils maximal 1 Staplung „Klinge der Gräser“ pro 4 s erhalten, max. 3-fach stapelbar. Verbraucht, wenn 3 Stapelungen „Klinge der Gräser“ vorhanden sind und {F#die}{M#der} Reisende einen heftigen Schlag ausführt, alle Stapelungen und wandelt den heftigen Schlag in den besonderen <strong>heftigen Schlag – Gräser der Gunst</strong> um.",
+      "3": "<br/>",
+      "4": "<strong>Heftiger Schlag – Gräser der Gunst</strong>",
+      "5": [
+        " Verursacht erhöhten <dendro>Dendro-Schaden</dendro> in jeder Angriffsphase des heftigen Schlags. Die SCH-Erhöhung beträgt 80 % des ANG {F#der}{M#des} Reisenden. Generiert zudem an Ort und Stelle 2 <strong>Rebensockel</strong>, die jeweils nach 4/8 s explodieren und <dendro>Dendro-Schaden</dendro> in Höhe von 120 % des ANG {F#der}{M#des} Reisenden verursachen. Hierdurch verursachter Schaden gilt als Schaden des heftigen Schlags.",
+        " Der <strong>heftige Schlag – Gräser der Gunst</strong> kann alle 15 s nur einmal ausgeführt werden."
+      ]
+    }
+  },
   "constellation1": {
     "name": "Parasitäres Gras",
     "description": {

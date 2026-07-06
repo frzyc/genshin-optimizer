@@ -5,7 +5,6 @@ import {
   ColorText,
   InfoTooltipInline,
   ModalWrapper,
-  NextImage,
   SqBadge,
 } from '@genshin-optimizer/common/ui'
 import {
@@ -610,7 +609,7 @@ function ArtifactSetCard({
           sx={{ display: 'flex' }}
         >
           <Box
-            component={NextImage ? NextImage : 'img'}
+            component="img"
             src={artifactDefIcon(setKey)}
             sx={{ height: 100, width: 'auto', mx: -1 }}
           />
@@ -725,7 +724,6 @@ function ArtifactSetCard({
                   setKey={setKey}
                   setNumKey={parseInt(setNumKey) as SetNum}
                   hideHeader
-                  conditionalsOnly
                 />
               ))}
             </CardContent>

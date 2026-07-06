@@ -114,7 +114,8 @@ const sheet = register(
   // Buffs
   registerBuff(
     'core_ether_abloom',
-    teamBuff.dmg.anom_mv_mult_.ether.add(
+    teamBuff.dmg.anom_mv_mult_.ether.addWithDmgType(
+      'abloom',
       abloom.ifOn(
         prod(
           percent(subscript(char.core, dm.core.dmg_ether)),
@@ -128,7 +129,8 @@ const sheet = register(
   ),
   registerBuff(
     'core_electric_abloom',
-    teamBuff.dmg.anom_mv_mult_.electric.add(
+    teamBuff.dmg.anom_mv_mult_.electric.addWithDmgType(
+      'abloom',
       abloom.ifOn(
         prod(
           percent(subscript(char.core, dm.core.dmg_electric)),
@@ -142,7 +144,8 @@ const sheet = register(
   ),
   registerBuff(
     'core_fire_abloom',
-    teamBuff.dmg.anom_mv_mult_.fire.add(
+    teamBuff.dmg.anom_mv_mult_.fire.addWithDmgType(
+      'abloom',
       abloom.ifOn(
         prod(
           percent(subscript(char.core, dm.core.dmg_fire)),
@@ -156,7 +159,8 @@ const sheet = register(
   ),
   registerBuff(
     'core_physical_abloom',
-    teamBuff.dmg.anom_mv_mult_.physical.add(
+    teamBuff.dmg.anom_mv_mult_.physical.addWithDmgType(
+      'abloom',
       abloom.ifOn(
         prod(
           percent(subscript(char.core, dm.core.dmg_physical)),
@@ -170,7 +174,8 @@ const sheet = register(
   ),
   registerBuff(
     'core_ice_abloom',
-    teamBuff.dmg.anom_mv_mult_.ice.add(
+    teamBuff.dmg.anom_mv_mult_.ice.addWithDmgType(
+      'abloom',
       abloom.ifOn(
         prod(
           percent(subscript(char.core, dm.core.dmg_ice)),

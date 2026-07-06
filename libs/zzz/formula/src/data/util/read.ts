@@ -103,6 +103,9 @@ export class Read extends BaseRead<Tag> {
   get ether(): Read {
     return super.with('attribute', 'ether')
   }
+  get wind(): Read {
+    return super.with('attribute', 'wind')
+  }
 
   // Skill type
   get basicSkill(): Read {
@@ -161,6 +164,12 @@ export class Read extends BaseRead<Tag> {
   get ult(): Read[] {
     return [super.with('damageType1', 'ult'), super.with('damageType2', 'ult')]
   }
+  get entrySkill(): Read[] {
+    return [
+      super.with('damageType1', 'entrySkill'),
+      super.with('damageType2', 'entrySkill'),
+    ]
+  }
   get quickAssist(): Read[] {
     return [
       super.with('damageType1', 'quickAssist'),
@@ -213,6 +222,18 @@ export class Read extends BaseRead<Tag> {
     return [
       super.with('damageType1', 'sheer'),
       super.with('damageType2', 'sheer'),
+    ]
+  }
+  get abloom(): Read[] {
+    return [
+      super.with('damageType1', 'abloom'),
+      super.with('damageType2', 'abloom'),
+    ]
+  }
+  get vortex(): Read[] {
+    return [
+      super.with('damageType1', 'vortex'),
+      super.with('damageType2', 'vortex'),
     ]
   }
 

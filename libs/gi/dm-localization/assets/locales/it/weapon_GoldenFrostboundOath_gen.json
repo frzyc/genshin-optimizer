@@ -1,0 +1,24 @@
+{
+  "name": "Promessa del gelo dorato",
+  "description": {
+    "0": "Un arco lungo intagliato da un antico pezzo di legno bianco, un tempo impugnato dal re dei Jokul Frosti delle terre del Nord."
+  },
+  "passiveName": "Saluto all'alba",
+  "passiveDescription": {
+    "0": {
+      "0": "La DIF aumenta di un <cryo>16%</cryo>. Quando l'abilità elementale o gli attacchi di Cristallizzazione lunare del personaggio che equipaggia l'arma colpiscono gli avversari, si ottiene l'effetto Favore della Fata del ghiaccio per 6 s, che aumenta di un <cryo>40%</cryo> i DAN da Geo e da reazione di Cristallizzazione lunare inflitti dal personaggio. Finché l'effetto è attivo, se vicino al personaggio ci sono delle Gabbie lunari, gli altri personaggi vicini del gruppo ricevono l'effetto Dispetto della Fata del ghiaccio, che aumenta di un <cryo>20%</cryo> i DAN da Geo e i DAN da reazione di Cristallizzazione lunare. Quest'effetto può attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "1": {
+      "0": "La DIF aumenta di un <cryo>20%</cryo>. Quando l'abilità elementale o gli attacchi di Cristallizzazione lunare del personaggio che equipaggia l'arma colpiscono gli avversari, si ottiene l'effetto Favore della Fata del ghiaccio per 6 s, che aumenta di un <cryo>50%</cryo> i DAN da Geo e da reazione di Cristallizzazione lunare inflitti dal personaggio. Finché l'effetto è attivo, se vicino al personaggio ci sono delle Gabbie lunari, gli altri personaggi vicini del gruppo ricevono l'effetto Dispetto della Fata del ghiaccio, che aumenta di un <cryo>25%</cryo> i DAN da Geo e i DAN da reazione di Cristallizzazione lunare. Quest'effetto può attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "2": {
+      "0": "La DIF aumenta di un <cryo>24%</cryo>. Quando l'abilità elementale o gli attacchi di Cristallizzazione lunare del personaggio che equipaggia l'arma colpiscono gli avversari, si ottiene l'effetto Favore della Fata del ghiaccio per 6 s, che aumenta di un <cryo>60%</cryo> i DAN da Geo e da reazione di Cristallizzazione lunare inflitti dal personaggio. Finché l'effetto è attivo, se vicino al personaggio ci sono delle Gabbie lunari, gli altri personaggi vicini del gruppo ricevono l'effetto Dispetto della Fata del ghiaccio, che aumenta di un <cryo>30%</cryo> i DAN da Geo e i DAN da reazione di Cristallizzazione lunare. Quest'effetto può attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "3": {
+      "0": "La DIF aumenta di un <cryo>28%</cryo>. Quando l'abilità elementale o gli attacchi di Cristallizzazione lunare del personaggio che equipaggia l'arma colpiscono gli avversari, si ottiene l'effetto Favore della Fata del ghiaccio per 6 s, che aumenta di un <cryo>70%</cryo> i DAN da Geo e da reazione di Cristallizzazione lunare inflitti dal personaggio. Finché l'effetto è attivo, se vicino al personaggio ci sono delle Gabbie lunari, gli altri personaggi vicini del gruppo ricevono l'effetto Dispetto della Fata del ghiaccio, che aumenta di un <cryo>35%</cryo> i DAN da Geo e i DAN da reazione di Cristallizzazione lunare. Quest'effetto può attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "4": {
+      "0": "La DIF aumenta di un <cryo>32%</cryo>. Quando l'abilità elementale o gli attacchi di Cristallizzazione lunare del personaggio che equipaggia l'arma colpiscono gli avversari, si ottiene l'effetto Favore della Fata del ghiaccio per 6 s, che aumenta di un <cryo>80%</cryo> i DAN da Geo e da reazione di Cristallizzazione lunare inflitti dal personaggio. Finché l'effetto è attivo, se vicino al personaggio ci sono delle Gabbie lunari, gli altri personaggi vicini del gruppo ricevono l'effetto Dispetto della Fata del ghiaccio, che aumenta di un <cryo>40%</cryo> i DAN da Geo e i DAN da reazione di Cristallizzazione lunare. Quest'effetto può attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    }
+  }
+}

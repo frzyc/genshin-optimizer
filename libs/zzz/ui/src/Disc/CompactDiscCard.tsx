@@ -3,7 +3,6 @@ import {
   ColorText,
   ConditionalWrapper,
   ImgIcon,
-  NextImage,
 } from '@genshin-optimizer/common/ui'
 import {
   getUnitStr,
@@ -176,13 +175,11 @@ export function CompactDiscCard({
                     }}
                   >
                     <Box
-                      component={NextImage ? NextImage : 'img'}
+                      component="img"
                       alt="Disc Piece Image"
                       src={discDefIcon(disc.setKey)}
                       style={{
                         transform: `rotate(${rotation}deg)`,
-                      }}
-                      sx={{
                         width: 'auto',
                         float: 'right',
                         height: '92px',
@@ -318,8 +315,8 @@ function SubstatDisplay({
 }) {
   const { key, upgrades } = substat
   const { statHighlight, setStatHighlight } = useContext(StatHighlightContext)
-  const isHL = isHighlight(statHighlight, key)
   if (!upgrades || !key) return null
+  const isHL = isHighlight(statHighlight, key)
   const displayValue = toPercent(
     getDiscSubStatBaseVal(key, rarity) * upgrades,
     key

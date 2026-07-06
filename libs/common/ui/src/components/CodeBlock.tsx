@@ -1,4 +1,3 @@
-'use client'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import { Box, IconButton, styled } from '@mui/material'
 

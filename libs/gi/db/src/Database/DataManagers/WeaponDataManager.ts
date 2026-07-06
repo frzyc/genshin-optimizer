@@ -5,17 +5,19 @@ import type {
   WeaponTypeKey,
 } from '@genshin-optimizer/gi/consts'
 import {
-  allLocationCharacterKeys,
-  allWeaponKeys,
   charKeyToLocCharKey,
-  weaponMaxLevel,
+  defaultWeaponAscension,
+  defaultWeaponLevel,
 } from '@genshin-optimizer/gi/consts'
 import type { IGOOD, IWeapon } from '@genshin-optimizer/gi/good'
+import { parseWeapon } from '@genshin-optimizer/gi/good'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { validateWeaponLevelAsc } from '@genshin-optimizer/gi/util'
-import type { ICachedCharacter } from '../../Interfaces/ICachedCharacter'
-import type { ICachedWeapon } from '../../Interfaces/ICachedWeapon'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
+import type { ICachedCharacter } from './CharacterDataManager'
+
+export interface ICachedWeapon extends IWeapon {
+  id: string
+}
 import { DataManager } from '../DataManager'
 import type { IGO, ImportResult } from '../exim'
 import { initialCharacter } from './CharacterDataManager'
@@ -56,26 +58,9 @@ export class WeaponDataManager extends DataManager<
     this.set(weaponId, { ...weapon, location: locKey })
     return weapon
   }
-  override validate(obj: unknown): IWeapon | undefined {
-    if (typeof obj !== 'object') return undefined
-    const { key, level: rawLevel, ascension: rawAscension } = obj as IWeapon
-    let { refinement, location, lock } = obj as IWeapon
 
-    if (!allWeaponKeys.includes(key)) return undefined
-    const { rarity, weaponType } = allStats.weapon.data[key]
-    if (rawLevel > weaponMaxLevel[rarity]) return undefined
-    const { level, ascension } = validateWeaponLevelAsc(rawLevel, rawAscension)
-    if (typeof refinement !== 'number' || refinement < 1 || refinement > 5)
-      refinement = 1
-    if (location && !allLocationCharacterKeys.includes(location)) location = ''
-    if (
-      location &&
-      allStats.char.data[location as LocationCharacterKey].weaponType !==
-        weaponType
-    )
-      return undefined
-    lock = !!lock
-    return { key, level, ascension, refinement, location, lock }
+  override validate(obj: unknown): IWeapon | undefined {
+    return parseWeapon(obj)
   }
   override toCache(storageObj: IWeapon, id: string): ICachedWeapon | undefined {
     const newWeapon = { ...storageObj, id }
@@ -314,8 +299,8 @@ export const defaultInitialWeapon = (
 export const initialWeapon = (key: WeaponKey): ICachedWeapon => ({
   id: '',
   key,
-  level: 1,
-  ascension: 0,
+  level: defaultWeaponLevel,
+  ascension: defaultWeaponAscension,
   refinement: 1,
   location: '',
   lock: false,

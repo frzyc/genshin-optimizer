@@ -2,12 +2,14 @@
 import Alice from './maps/Alice'
 import Anby from './maps/Anby'
 import Anton from './maps/Anton'
+import Aria from './maps/Aria'
 import AstraYao from './maps/AstraYao'
 import Banyue from './maps/Banyue'
 import Ben from './maps/Ben'
 import Billy from './maps/Billy'
 import Burnice from './maps/Burnice'
 import Caesar from './maps/Caesar'
+import Cissia from './maps/Cissia'
 import Corin from './maps/Corin'
 import Dialyn from './maps/Dialyn'
 import Ellen from './maps/Ellen'
@@ -24,12 +26,16 @@ import Lucy from './maps/Lucy'
 import Lycaon from './maps/Lycaon'
 import Manato from './maps/Manato'
 import Miyabi from './maps/Miyabi'
+import NangongYu from './maps/NangongYu'
 import Nekomata from './maps/Nekomata'
 import Nicole from './maps/Nicole'
+import Norma from './maps/Norma'
 import OrphieMagus from './maps/OrphieMagus'
 import PanYinhu from './maps/PanYinhu'
 import Piper from './maps/Piper'
+import Promeia from './maps/Promeia'
 import Pulchra from './maps/Pulchra'
+import Pyrois from './maps/Pyrois'
 import Qingyi from './maps/Qingyi'
 import Rina from './maps/Rina'
 import Seed from './maps/Seed'
@@ -37,24 +43,31 @@ import Seth from './maps/Seth'
 import Soldier0Anby from './maps/Soldier0Anby'
 import Soldier11 from './maps/Soldier11'
 import Soukaku from './maps/Soukaku'
+import StarlightBilly from './maps/StarlightBilly'
+import Sunna from './maps/Sunna'
 import Trigger from './maps/Trigger'
+import Velina from './maps/Velina'
 import Vivian from './maps/Vivian'
 import Yanagi from './maps/Yanagi'
+import YeShunguang from './maps/YeShunguang'
 import Yidhari from './maps/Yidhari'
 import Yixuan from './maps/Yixuan'
 import Yuzuha from './maps/Yuzuha'
+import Zhao from './maps/Zhao'
 import ZhuYuan from './maps/ZhuYuan'
 
 const maps = {
   Alice,
   Anby,
   Anton,
+  Aria,
   AstraYao,
   Banyue,
   Ben,
   Billy,
   Burnice,
   Caesar,
+  Cissia,
   Corin,
   Dialyn,
   Ellen,
@@ -71,12 +84,16 @@ const maps = {
   Lycaon,
   Manato,
   Miyabi,
+  NangongYu,
   Nekomata,
   Nicole,
+  Norma,
   OrphieMagus,
   PanYinhu,
   Piper,
+  Promeia,
   Pulchra,
+  Pyrois,
   Qingyi,
   Rina,
   Seed,
@@ -84,12 +101,17 @@ const maps = {
   Soldier0Anby,
   Soldier11,
   Soukaku,
+  StarlightBilly,
+  Sunna,
   Trigger,
+  Velina,
   Vivian,
   Yanagi,
+  YeShunguang,
   Yidhari,
   Yixuan,
   Yuzuha,
+  Zhao,
   ZhuYuan,
 }
 export default maps

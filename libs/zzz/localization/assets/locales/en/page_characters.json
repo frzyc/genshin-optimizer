@@ -7,7 +7,8 @@
   },
   "characterEditor": {
     "delete": "Delete Character",
-    "new": "NEW"
+    "new": "NEW",
+    "none": "None"
   },
   "basic": "Basic Lv. {{level}}",
   "dodge": "Dodge Lv. {{level}}",
@@ -21,5 +22,6 @@
   },
   "mindscapeTitle": "Mindscape",
   "mindscape": "M{{level}}",
-  "characterName": "Character Name"
+  "characterName": "Character Name",
+  "potential": "Potential Lv. {{level}}"
 }

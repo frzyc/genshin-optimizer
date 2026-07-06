@@ -13,28 +13,27 @@ import type {
   IZZZDatabase,
   IZenlessObjectDescription,
 } from '../Interfaces'
-import type { CharOpt } from './DataManagers'
 
-export const currentDBVersion = 2
+export const currentDBVersion = 3
 
-export function migrateZOD(
-  zo: IZenlessObjectDescription & IZZZDatabase
+export function migrateZOOD(
+  zood: IZenlessObjectDescription & IZZZDatabase
 ): IZenlessObjectDescription & IZZZDatabase {
-  const version = zo.dbVersion ?? 0
+  const version = zood.dbVersion ?? 0
   function migrateVersion(version: number, cb: () => void) {
-    const dbver = zo.dbVersion ?? 0
+    const dbver = zood.dbVersion ?? 0
     if (dbver < version) {
       cb()
       // Update version upon each successful migration, so we don't
       // need to migrate that part again if later parts fail.
-      zo.dbVersion = version
+      zood.dbVersion = version
     }
   }
 
   // Change code name keys to char name keys
   migrateVersion(2, () => {
     function migrateData(oldKey: string, newKey: CharacterKey) {
-      const chars = zo['characters'] as ICharacter[]
+      const chars = zood['characters'] as ICharacter[]
       if (chars) {
         const char = chars.find((c) => (c.key as string) === oldKey)
         if (char) {
@@ -43,26 +42,7 @@ export function migrateZOD(
         }
       }
 
-      const charOpts = zo['charOpts'] as CharOpt[]
-      if (charOpts) {
-        const charOpt = charOpts.find(
-          (c) => ((c as any)['id'] as string) === oldKey
-        )
-        if (charOpt) {
-          // eslint-disable-next-line @typescript-eslint/no-extra-semi
-          ;(charOpt as any)['id'] = newKey
-          if (charOpt.target?.sheet === oldKey) {
-            charOpt.target.sheet = newKey
-          }
-          if (charOpt.conditionals) {
-            charOpt.conditionals
-              .filter((cond) => (cond.src as string) === oldKey)
-              .forEach((cond) => (cond.src = newKey))
-          }
-        }
-      }
-
-      const charMetas = zo['charMetas'] as ICharMeta[]
+      const charMetas = zood['charMetas'] as ICharMeta[]
       if (charMetas) {
         const charMeta = charMetas.find(
           (c) => ((c as any)['id'] as string) === oldKey
@@ -73,14 +53,14 @@ export function migrateZOD(
         }
       }
 
-      const discs = zo.discs
+      const discs = zood.discs
       if (discs) {
         discs
           .filter((disc) => (disc.location as string) === oldKey)
           .forEach((disc) => (disc.location = newKey))
       }
 
-      const weng = zo['wengines'] as IWengine[]
+      const weng = zood['wengines'] as IWengine[]
       if (weng) {
         weng
           .filter((weng) => (weng.location as string) === oldKey)
@@ -91,10 +71,57 @@ export function migrateZOD(
     migrateData('QingYi', 'Qingyi')
   })
 
-  zo.dbVersion = currentDBVersion
+  migrateVersion(3, () => {
+    function migrateCharOpt() {
+      const charOpts = zood['charOpts'] as any[] | undefined
+
+      if (charOpts) {
+        zood['teams'] = charOpts.map((charOpt) => {
+          const charKey = charOpt.id as string
+          const {
+            critMode,
+            bonusStats,
+            conditionals,
+            enemyStats,
+            optConfigId,
+            teammates: oldTeammates,
+            target,
+            ...rest
+          } = charOpt
+
+          return {
+            id: charKey,
+            teammates: [
+              { characterKey: charKey, optConfigId },
+              ...(oldTeammates ?? []).map((ck: any) => ({
+                characterKey: ck,
+              })),
+            ],
+            frames: [
+              {
+                multiplier: 1,
+                critMode,
+                bonusStats,
+                conditionals,
+                enemyStats,
+                tag: target,
+              },
+            ],
+            ...rest,
+          }
+        })
+
+        delete zood['charOpts']
+      }
+    }
+
+    migrateCharOpt()
+  })
+
+  zood.dbVersion = currentDBVersion
   if (version > currentDBVersion)
     throw new Error(`Database version ${version} is not supported`)
-  return zo
+  return zood
 }
 
 /**
@@ -167,6 +194,61 @@ export function migrateStorage(storage: DBStorage) {
     }
     migrateData('Astra', 'AstraYao')
     migrateData('QingYi', 'Qingyi')
+  })
+
+  migrateVersion(3, () => {
+    function migrateCharOpt() {
+      const keys = storage.keys
+      for (const key of keys) {
+        if (key.startsWith('zzz_charOpt_')) {
+          const charKey = key.slice('zzz_charOpt_'.length)
+          const oldTeam = storage.get(`zzz_team_${charKey}`)
+          const charOpt = storage.get(key)
+          const charMeta = storage.get(`zzz_charMeta_${charKey}`)
+
+          const {
+            critMode,
+            bonusStats,
+            conditionals,
+            enemyStats,
+            optConfigId,
+            teammates: oldTeammates,
+            target,
+            ...rest
+          } = charOpt
+          const frame = {
+            multiplier: 1,
+            critMode,
+            bonusStats,
+            conditionals,
+            enemyStats,
+            tag: target,
+          }
+          const teammates = [
+            { characterKey: charKey, optConfigId },
+            ...(oldTeammates ?? []).map((ck: any) => ({
+              characterKey: ck,
+            })),
+          ]
+
+          const team = {
+            teammates,
+            frames: [frame],
+            ...rest,
+          }
+
+          storage.set(`zzz_team_${charKey}`, team)
+          if (oldTeam) {
+            storage.set(`zzz_charMeta_${charKey}`, {
+              description: `${charMeta?.description ?? ''}\n\n${JSON.stringify(oldTeam)}`,
+            })
+          }
+          storage.remove(key)
+        }
+      }
+    }
+
+    migrateCharOpt()
   })
 
   storage.setDBVersion(currentDBVersion)

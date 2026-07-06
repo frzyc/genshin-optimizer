@@ -1,9 +1,13 @@
+import AngelsOfDelusion from './IconCampAngelsOfDelusion.png'
 import BelebogHeavyIndustries from './IconCampBelobogIndustries.png'
+import KrampusComplianceAuthority from './IconCampBlackRoot.png'
+import RoscaeliferExternalStrategyDepartment from './IconCampE.S.D.png'
 import CunningHares from './IconCampGentleHouse.png'
 import HollowSpecialOoperationsSection6 from './IconCampH.S.O-S6.png'
 import Mockingbird from './IconCampMockingBird.png'
 import CriminalInvestigationSpecialResponseTeam from './IconCampN.E.P.S..png'
 import NewEriduDefenseForce from './IconCampObols.png'
+import Phaethon from './IconCampPhaethon.png'
 import RandomPlay from './IconCampRandomPlay.png'
 import SonsOfCalydon from './IconCampSonsOfCalydon.png'
 import SpookShack from './IconCampSpookShack.png'
@@ -12,13 +16,17 @@ import YunkuiSummit from './IconCampSuibian.png'
 import VictoriaHousekeepingCo from './IconCampVictoriaHousekeepingCo.png'
 
 const data = {
+  AngelsOfDelusion,
   BelebogHeavyIndustries,
   CunningHares,
   CriminalInvestigationSpecialResponseTeam,
   HollowSpecialOoperationsSection6,
+  KrampusComplianceAuthority,
   Mockingbird,
   NewEriduDefenseForce,
+  Phaethon,
   RandomPlay,
+  RoscaeliferExternalStrategyDepartment,
   SonsOfCalydon,
   SpookShack,
   StarsOfLyra,

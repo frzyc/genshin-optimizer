@@ -44,6 +44,7 @@ export const stats = [
   'flat_dmg',
   'anom_flat_dmg',
   'addl_disorder_',
+  'direct_dmg_',
 ] as const
 
 export const flatAndPercentStats = [
@@ -70,6 +71,7 @@ export const damageTypes = [
   'exSpecial',
   'chain',
   'ult',
+  'entrySkill',
   'quickAssist',
   'defensiveAssist',
   'evasiveAssist',
@@ -79,6 +81,8 @@ export const damageTypes = [
   'aftershock',
   'elemental',
   'sheer',
+  'abloom',
+  'vortex',
 ] as const
 
 export const skillTypes = [

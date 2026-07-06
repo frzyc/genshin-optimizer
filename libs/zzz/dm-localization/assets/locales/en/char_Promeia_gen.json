@@ -1,0 +1,359 @@
+{
+  "name": "Promeia",
+  "fullName": "Promeia",
+  "basic": {
+    "BasicAttackSweepingEdge": {
+      "name": "Basic Attack: Sweeping Edge",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Performs up to five attacks against enemies ahead, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "After landing the fifth hit's downward attack, and with sufficient <ct color=#FFFFFF>Trial by Cold</ct>, keep holding <IconSpecial /> or <IconNormal /> to chain into <ct color=#FFFFFF>EX Special Attack: Execution - Merciless Judgment</ct>.",
+        "3": "Enters the <ct color=#FFFFFF>Bound Absolution</ct> state after throwing the cape during the fourth hit."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "5th-Hit ",
+        "Cloak Slash DMG Per Second Multiplier "
+      ]
+    },
+    "BasicAttackWhirlingBlade": {
+      "name": "Basic Attack: Whirling Blade",
+      "desc": {
+        "0": "Hold <IconNormal /> to activate:",
+        "1": "Promeia leaps into the air and attacks, throwing her cape beside the enemy and entering the <ct color=#FFFFFF>Bound Absolution</ct> state, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Hitting enemies does not accumulate <ct color=#FFFFFF>Corrosive Chill</ct>."
+      },
+      "params": [
+        "1st-Hit "
+      ]
+    },
+    "BoundAbsolution": {
+      "name": "Bound Absolution",
+      "desc": {
+        "0": "When using certain skills, Promeia throws her cape to continuously slice enemies, dealing <ct color=#98EFF0>Ice DMG</ct>. Does not accumulate <ct color=#FFFFFF>Corrosive Chill</ct> upon hit.",
+        "1": "While the cape remains out, Promeia can walk slowly.",
+        "2": "Press <IconNormal /> or <IconSpecial /> during this period to immediately follow up with the 5th hit of <ct color=#FFFFFF>Basic Attack: Sweeping Edge</ct>.",
+        "3": "If attacked during this period, Promeia triggers a <ct color=#FFFFFF>Perfect Dodge</ct> automatically. The dodge can trigger once every 20s."
+      },
+      "params": []
+    }
+  },
+  "dodge": {
+    "DodgeVeiledStep": {
+      "name": "Dodge: Veiled Step",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackGrimReap": {
+      "name": "Dash Attack: Grim Reap",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Delivers a quick attack forward, dealing <ct color=#98EFF0>Ice DMG</ct>."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterSoaringBat": {
+      "name": "Dodge Counter: Soaring Bat",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Unleashes consecutive attacks against the target, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "After using this skill, it can be immediately followed up with the 5th hit of <ct color=#FFFFFF>Basic Attack: Sweeping Edge</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackExecutionColdFlash": {
+      "name": "Special Attack: Execution - Cold Flash",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Launches a flying blade attack, dealing <ct color=#98EFF0>Ice DMG</ct>."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackExecutionGlacialDeath": {
+      "name": "EX Special Attack: Execution - Glacial Death",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Performs a flying blade attack, throwing her cape beside the enemy and entering the <ct color=#FFFFFF>Bound Absolution</ct> state, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "If attacked by an enemy shortly after using the move, automatically chains into <ct color=#FFFFFF>EX Special Attack: Execution - Shrouded in Shadow</ct>.",
+        "3": "Upon use, Promeia gains the <ct color=#FFFFFF>Absolute Order</ct> effect.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Blade Throw Total ",
+        "Energy Cost "
+      ]
+    },
+    "EXSpecialAttackExecutionShroudedInShadow": {
+      "name": "EX Special Attack: Execution - Shrouded in Shadow",
+      "desc": {
+        "0": "Triggers automatically when hit shortly upon activating <ct color=#FFFFFF>EX Special Attack: Execution - Glacial Death</ct>:",
+        "1": "Enters the <ct color=#FFFFFF>Vital View</ct> state briefly and swiftly circles behind the enemy.",
+        "2": "After triggering a <ct color=#FFFFFF>Perfect Dodge</ct>, and with enough Energy, press <IconSpecialReady /> to consume 40 Energy and activate <ct color=#FFFFFF>EX Special Attack: Execution - Shrouded in Shadow</ct>, gaining the <ct color=#FFFFFF>Absolute Order</ct> effect.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "SpecialAttackExecutionDescendingFrost": {
+      "name": "Special Attack: Execution - Descending Frost",
+      "desc": {
+        "0": "While under the <ct color=#FFFFFF>Absolute Order</ct> effect, press <IconNormal /> or <IconSpecial /> while in the <ct color=#FFFFFF>Bound Absolution</ct> state to activate:",
+        "1": "Leaps toward the enemy, retrieving the cape while performing a descending attack that deals <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "After landing, if Promeia possesses <ct color=#FFFFFF>Trial by Cold</ct>, keep holding <IconNormal /> or <IconSpecial /> to chain into <ct color=#FFFFFF>EX Special Attack: Execution - Merciless Judgment</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "SpecialAttackExecutionLayeredFrost": {
+      "name": "Special Attack: Execution - Layered Frost",
+      "desc": {
+        "0": "After triggering <ct color=#FFFFFF>EX Special Attack: Execution - Shrouded in Shadow</ct>, press <IconNormal /> or <IconSpecial /> to activate:",
+        "1": "Quickly launches a flurry of attacks, then leaps toward the enemy, retrieving the cape while performing a more powerful downward attack that deals <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "After landing, if Promeia possesses <ct color=#FFFFFF>Trial by Cold</ct>, keep holding <IconNormal /> or <IconSpecial /> to chain into <ct color=#FFFFFF>EX Special Attack: Execution - Merciless Judgment</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "Blade Slash Total "
+      ]
+    },
+    "EXSpecialAttackExecutionMercilessJudgment": {
+      "name": "EX Special Attack: Execution - Merciless Judgment",
+      "desc": {
+        "0": "With enough <ct color=#FFFFFF>Trial by Cold</ct> and after performing the final hit of <ct color=#FFFFFF>Basic Attack: Sweeping Edge</ct>, <ct color=#FFFFFF>Special Attack: Execution - Descending Frost</ct>, or <ct color=#FFFFFF>Special Attack: Execution - Layered Frost</ct>, keep holding <IconNormal /> or <IconSpecial /> after landing to activate:",
+        "1": "Quickly leaps back while unleashing a more powerful finishing move, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Hitting enemies does not accumulate <ct color=#FFFFFF>Corrosive Chill</ct>.",
+        "3": "After using this skill, hold <IconNormal /> or <IconSpecial />, or press <IconNormal /> to immediately follow up with the 5th hit of <ct color=#FFFFFF>Basic Attack: Sweeping Edge</ct>.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackHangingJudgment": {
+      "name": "Chain Attack: Hanging Judgment",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Throws flying blades and hangs upside down above the enemy, unleashing a flurry of attacks and ending with a finishing move, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "When the heavy attack hits an enemy afflicted with <ct color=#98EFF0>Ice Anomaly</ct>, <ct color=#FE437E>Ether Anomaly</ct>, <ct color=#2EB6FF>Electric Anomaly</ct>, <ct color=#FF5521>Fire Anomaly</ct>, <ct color=#F0D12B>Physical Anomaly</ct>, or <ct color=#A6C5FD>Wind Anomaly</ct>, it triggers <ct color=#FFFFFF>Abloom</ct> once, dealing 100% Attribute Anomaly DMG of the corresponding attribute.",
+        "3": "After using this skill, it can be immediately followed up with the 5th hit of <ct color=#FFFFFF>Basic Attack: Sweeping Edge</ct>.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateGlaciatingImpalement": {
+      "name": "Ultimate: Glaciating Impalement",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Launches a series of forward attacks, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "When the heavy attack hits an enemy afflicted with <ct color=#98EFF0>Ice Anomaly</ct>, <ct color=#FE437E>Ether Anomaly</ct>, <ct color=#2EB6FF>Electric Anomaly</ct>, <ct color=#FF5521>Fire Anomaly</ct>, <ct color=#F0D12B>Physical Anomaly</ct>, or <ct color=#A6C5FD>Wind Anomaly</ct>, it triggers <ct color=#FFFFFF>Abloom</ct> once, dealing 250% Attribute Anomaly DMG of the corresponding attribute.",
+        "3": "After using this skill, it can be immediately followed up with the 5th hit of <ct color=#FFFFFF>Basic Attack: Sweeping Edge</ct>.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistAmbushingStrike": {
+      "name": "Quick Assist: Ambushing Strike",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Unleashes consecutive attacks against the target, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistInjunction": {
+      "name": "Defensive Assist: Injunction",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpInterceptingStrike": {
+      "name": "Assist Follow-Up: Intercepting Strike",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Unleashes consecutive attacks against the target, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "After using this skill, it can be immediately followed up with the 5th hit of <ct color=#FFFFFF>Basic Attack: Sweeping Edge</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Thief of Flames",
+    "desc": [
+      {
+        "0": "If Promeia's initial Anomaly Mastery exceeds 150, each additional point increases her Anomaly Proficiency by 1.5 and increases the whole squad's <ct color=#FFFFFF>Abloom</ct> DMG by 0.35%.",
+        "1": "Promeia gains a set amount of <ct color=#FFFFFF>Corrosive Chill</ct> when her attacks hit enemies. When squad members trigger <ct color=#98EFF0>Freeze</ct>/<ct color=#FFFFFF>Disorder</ct>, when the enemy is inflicted with <ct color=#FFFFFF>Vortex</ct>, or when Promeia triggers <ct color=#FFFFFF>EX Special Attack: Execution - Shrouded in Shadow</ct>, she gains an additional 5/5/5/10 <ct color=#FFFFFF>Corrosive Chill</ct>, up to a maximum of 100 <ct color=#FFFFFF>Corrosive Chill</ct>.",
+        "2": "When a squad member triggers and hits an enemy with <ct color=#FFFFFF>Abloom</ct>, Promeia gains an additional 15 <ct color=#FFFFFF>Corrosive Chill</ct>.",
+        "3": "When <ct color=#FFFFFF>Corrosive Chill</ct> reaches at least 50, 50 <ct color=#FFFFFF>Corrosive Chill</ct> is consumed and converted into 1 point of <ct color=#FFFFFF>Trial by Cold</ct>, up to a maximum of 2 points of <ct color=#FFFFFF>Trial by Cold</ct>.",
+        "4": "Upon entering the battlefield, Promeia gains 2 points of <ct color=#FFFFFF>Trial by Cold</ct>.",
+        "5": "When the finishing move of <ct color=#FFFFFF>EX Special Attack: Execution - Merciless Judgment</ct> hits an enemy afflicted with <ct color=#98EFF0>Ice Anomaly</ct>, <ct color=#FE437E>Ether Anomaly</ct>, <ct color=#2EB6FF>Electric Anomaly</ct>, <ct color=#FF5521>Fire Anomaly</ct>, <ct color=#F0D12B>Physical Anomaly</ct>, or <ct color=#A6C5FD>Wind Anomaly</ct>, it triggers <ct color=#FFFFFF>Abloom</ct> once, dealing <ct color=#2BAD00>330%</ct> Attribute Anomaly DMG of the corresponding attribute. The skill consumes 1 <ct color=#FFFFFF>Trial by Cold</ct> upon activation.",
+        "6": "When Promeia triggers and hits an enemy with <ct color=#FFFFFF>Abloom</ct>, she gains an additional 100 Decibels. This effect can trigger once every 0.5s. Using <ct color=#FFFFFF>Ultimate: Glaciating Impalement</ct> grants <ct color=#FFFFFF>Frost Oath</ct>. With <ct color=#FFFFFF>Frost Oath</ct>, after using <ct color=#FFFFFF>EX Special Attack: Execution - Merciless Judgment</ct>, <ct color=#FFFFFF>Chain Attack: Hanging Judgment</ct>, or <ct color=#FFFFFF>Ultimate: Glaciating Impalement</ct>, press or hold <IconSpecial /> to consume <ct color=#FFFFFF>Frost Oath</ct> and immediately follow up with <ct color=#FFFFFF>Special Attack: Execution - Layered Frost</ct>. Only 1 stack of <ct color=#FFFFFF>Frost Oath</ct> can be held."
+      },
+      {
+        "0": "If Promeia's initial Anomaly Mastery exceeds 150, each additional point increases her Anomaly Proficiency by 1.5 and increases the whole squad's <ct color=#FFFFFF>Abloom</ct> DMG by 0.35%.",
+        "1": "Promeia gains a set amount of <ct color=#FFFFFF>Corrosive Chill</ct> when her attacks hit enemies. When squad members trigger <ct color=#98EFF0>Freeze</ct>/<ct color=#FFFFFF>Disorder</ct>, when the enemy is inflicted with <ct color=#FFFFFF>Vortex</ct>, or when Promeia triggers <ct color=#FFFFFF>EX Special Attack: Execution - Shrouded in Shadow</ct>, she gains an additional 5/5/5/10 <ct color=#FFFFFF>Corrosive Chill</ct>, up to a maximum of 100 <ct color=#FFFFFF>Corrosive Chill</ct>.",
+        "2": "When a squad member triggers and hits an enemy with <ct color=#FFFFFF>Abloom</ct>, Promeia gains an additional 15 <ct color=#FFFFFF>Corrosive Chill</ct>.",
+        "3": "When <ct color=#FFFFFF>Corrosive Chill</ct> reaches at least 50, 50 <ct color=#FFFFFF>Corrosive Chill</ct> is consumed and converted into 1 point of <ct color=#FFFFFF>Trial by Cold</ct>, up to a maximum of 2 points of <ct color=#FFFFFF>Trial by Cold</ct>.",
+        "4": "Upon entering the battlefield, Promeia gains 2 points of <ct color=#FFFFFF>Trial by Cold</ct>.",
+        "5": "When the finishing move of <ct color=#FFFFFF>EX Special Attack: Execution - Merciless Judgment</ct> hits an enemy afflicted with <ct color=#98EFF0>Ice Anomaly</ct>, <ct color=#FE437E>Ether Anomaly</ct>, <ct color=#2EB6FF>Electric Anomaly</ct>, <ct color=#FF5521>Fire Anomaly</ct>, <ct color=#F0D12B>Physical Anomaly</ct>, or <ct color=#A6C5FD>Wind Anomaly</ct>, it triggers <ct color=#FFFFFF>Abloom</ct> once, dealing <ct color=#2BAD00>385%</ct> Attribute Anomaly DMG of the corresponding attribute. The skill consumes 1 <ct color=#FFFFFF>Trial by Cold</ct> upon activation.",
+        "6": "When Promeia triggers and hits an enemy with <ct color=#FFFFFF>Abloom</ct>, she gains an additional 100 Decibels. This effect can trigger once every 0.5s. Using <ct color=#FFFFFF>Ultimate: Glaciating Impalement</ct> grants <ct color=#FFFFFF>Frost Oath</ct>. With <ct color=#FFFFFF>Frost Oath</ct>, after using <ct color=#FFFFFF>EX Special Attack: Execution - Merciless Judgment</ct>, <ct color=#FFFFFF>Chain Attack: Hanging Judgment</ct>, or <ct color=#FFFFFF>Ultimate: Glaciating Impalement</ct>, press or hold <IconSpecial /> to consume <ct color=#FFFFFF>Frost Oath</ct> and immediately follow up with <ct color=#FFFFFF>Special Attack: Execution - Layered Frost</ct>. Only 1 stack of <ct color=#FFFFFF>Frost Oath</ct> can be held."
+      },
+      {
+        "0": "If Promeia's initial Anomaly Mastery exceeds 150, each additional point increases her Anomaly Proficiency by 1.5 and increases the whole squad's <ct color=#FFFFFF>Abloom</ct> DMG by 0.35%.",
+        "1": "Promeia gains a set amount of <ct color=#FFFFFF>Corrosive Chill</ct> when her attacks hit enemies. When squad members trigger <ct color=#98EFF0>Freeze</ct>/<ct color=#FFFFFF>Disorder</ct>, when the enemy is inflicted with <ct color=#FFFFFF>Vortex</ct>, or when Promeia triggers <ct color=#FFFFFF>EX Special Attack: Execution - Shrouded in Shadow</ct>, she gains an additional 5/5/5/10 <ct color=#FFFFFF>Corrosive Chill</ct>, up to a maximum of 100 <ct color=#FFFFFF>Corrosive Chill</ct>.",
+        "2": "When a squad member triggers and hits an enemy with <ct color=#FFFFFF>Abloom</ct>, Promeia gains an additional 15 <ct color=#FFFFFF>Corrosive Chill</ct>.",
+        "3": "When <ct color=#FFFFFF>Corrosive Chill</ct> reaches at least 50, 50 <ct color=#FFFFFF>Corrosive Chill</ct> is consumed and converted into 1 point of <ct color=#FFFFFF>Trial by Cold</ct>, up to a maximum of 2 points of <ct color=#FFFFFF>Trial by Cold</ct>.",
+        "4": "Upon entering the battlefield, Promeia gains 2 points of <ct color=#FFFFFF>Trial by Cold</ct>.",
+        "5": "When the finishing move of <ct color=#FFFFFF>EX Special Attack: Execution - Merciless Judgment</ct> hits an enemy afflicted with <ct color=#98EFF0>Ice Anomaly</ct>, <ct color=#FE437E>Ether Anomaly</ct>, <ct color=#2EB6FF>Electric Anomaly</ct>, <ct color=#FF5521>Fire Anomaly</ct>, <ct color=#F0D12B>Physical Anomaly</ct>, or <ct color=#A6C5FD>Wind Anomaly</ct>, it triggers <ct color=#FFFFFF>Abloom</ct> once, dealing <ct color=#2BAD00>435%</ct> Attribute Anomaly DMG of the corresponding attribute. The skill consumes 1 <ct color=#FFFFFF>Trial by Cold</ct> upon activation.",
+        "6": "When Promeia triggers and hits an enemy with <ct color=#FFFFFF>Abloom</ct>, she gains an additional 100 Decibels. This effect can trigger once every 0.5s. Using <ct color=#FFFFFF>Ultimate: Glaciating Impalement</ct> grants <ct color=#FFFFFF>Frost Oath</ct>. With <ct color=#FFFFFF>Frost Oath</ct>, after using <ct color=#FFFFFF>EX Special Attack: Execution - Merciless Judgment</ct>, <ct color=#FFFFFF>Chain Attack: Hanging Judgment</ct>, or <ct color=#FFFFFF>Ultimate: Glaciating Impalement</ct>, press or hold <IconSpecial /> to consume <ct color=#FFFFFF>Frost Oath</ct> and immediately follow up with <ct color=#FFFFFF>Special Attack: Execution - Layered Frost</ct>. Only 1 stack of <ct color=#FFFFFF>Frost Oath</ct> can be held."
+      },
+      {
+        "0": "If Promeia's initial Anomaly Mastery exceeds 150, each additional point increases her Anomaly Proficiency by 1.5 and increases the whole squad's <ct color=#FFFFFF>Abloom</ct> DMG by 0.35%.",
+        "1": "Promeia gains a set amount of <ct color=#FFFFFF>Corrosive Chill</ct> when her attacks hit enemies. When squad members trigger <ct color=#98EFF0>Freeze</ct>/<ct color=#FFFFFF>Disorder</ct>, when the enemy is inflicted with <ct color=#FFFFFF>Vortex</ct>, or when Promeia triggers <ct color=#FFFFFF>EX Special Attack: Execution - Shrouded in Shadow</ct>, she gains an additional 5/5/5/10 <ct color=#FFFFFF>Corrosive Chill</ct>, up to a maximum of 100 <ct color=#FFFFFF>Corrosive Chill</ct>.",
+        "2": "When a squad member triggers and hits an enemy with <ct color=#FFFFFF>Abloom</ct>, Promeia gains an additional 15 <ct color=#FFFFFF>Corrosive Chill</ct>.",
+        "3": "When <ct color=#FFFFFF>Corrosive Chill</ct> reaches at least 50, 50 <ct color=#FFFFFF>Corrosive Chill</ct> is consumed and converted into 1 point of <ct color=#FFFFFF>Trial by Cold</ct>, up to a maximum of 2 points of <ct color=#FFFFFF>Trial by Cold</ct>.",
+        "4": "Upon entering the battlefield, Promeia gains 2 points of <ct color=#FFFFFF>Trial by Cold</ct>.",
+        "5": "When the finishing move of <ct color=#FFFFFF>EX Special Attack: Execution - Merciless Judgment</ct> hits an enemy afflicted with <ct color=#98EFF0>Ice Anomaly</ct>, <ct color=#FE437E>Ether Anomaly</ct>, <ct color=#2EB6FF>Electric Anomaly</ct>, <ct color=#FF5521>Fire Anomaly</ct>, <ct color=#F0D12B>Physical Anomaly</ct>, or <ct color=#A6C5FD>Wind Anomaly</ct>, it triggers <ct color=#FFFFFF>Abloom</ct> once, dealing <ct color=#2BAD00>485%</ct> Attribute Anomaly DMG of the corresponding attribute. The skill consumes 1 <ct color=#FFFFFF>Trial by Cold</ct> upon activation.",
+        "6": "When Promeia triggers and hits an enemy with <ct color=#FFFFFF>Abloom</ct>, she gains an additional 100 Decibels. This effect can trigger once every 0.5s. Using <ct color=#FFFFFF>Ultimate: Glaciating Impalement</ct> grants <ct color=#FFFFFF>Frost Oath</ct>. With <ct color=#FFFFFF>Frost Oath</ct>, after using <ct color=#FFFFFF>EX Special Attack: Execution - Merciless Judgment</ct>, <ct color=#FFFFFF>Chain Attack: Hanging Judgment</ct>, or <ct color=#FFFFFF>Ultimate: Glaciating Impalement</ct>, press or hold <IconSpecial /> to consume <ct color=#FFFFFF>Frost Oath</ct> and immediately follow up with <ct color=#FFFFFF>Special Attack: Execution - Layered Frost</ct>. Only 1 stack of <ct color=#FFFFFF>Frost Oath</ct> can be held."
+      },
+      {
+        "0": "If Promeia's initial Anomaly Mastery exceeds 150, each additional point increases her Anomaly Proficiency by 1.5 and increases the whole squad's <ct color=#FFFFFF>Abloom</ct> DMG by 0.35%.",
+        "1": "Promeia gains a set amount of <ct color=#FFFFFF>Corrosive Chill</ct> when her attacks hit enemies. When squad members trigger <ct color=#98EFF0>Freeze</ct>/<ct color=#FFFFFF>Disorder</ct>, when the enemy is inflicted with <ct color=#FFFFFF>Vortex</ct>, or when Promeia triggers <ct color=#FFFFFF>EX Special Attack: Execution - Shrouded in Shadow</ct>, she gains an additional 5/5/5/10 <ct color=#FFFFFF>Corrosive Chill</ct>, up to a maximum of 100 <ct color=#FFFFFF>Corrosive Chill</ct>.",
+        "2": "When a squad member triggers and hits an enemy with <ct color=#FFFFFF>Abloom</ct>, Promeia gains an additional 15 <ct color=#FFFFFF>Corrosive Chill</ct>.",
+        "3": "When <ct color=#FFFFFF>Corrosive Chill</ct> reaches at least 50, 50 <ct color=#FFFFFF>Corrosive Chill</ct> is consumed and converted into 1 point of <ct color=#FFFFFF>Trial by Cold</ct>, up to a maximum of 2 points of <ct color=#FFFFFF>Trial by Cold</ct>.",
+        "4": "Upon entering the battlefield, Promeia gains 2 points of <ct color=#FFFFFF>Trial by Cold</ct>.",
+        "5": "When the finishing move of <ct color=#FFFFFF>EX Special Attack: Execution - Merciless Judgment</ct> hits an enemy afflicted with <ct color=#98EFF0>Ice Anomaly</ct>, <ct color=#FE437E>Ether Anomaly</ct>, <ct color=#2EB6FF>Electric Anomaly</ct>, <ct color=#FF5521>Fire Anomaly</ct>, <ct color=#F0D12B>Physical Anomaly</ct>, or <ct color=#A6C5FD>Wind Anomaly</ct>, it triggers <ct color=#FFFFFF>Abloom</ct> once, dealing <ct color=#2BAD00>535%</ct> Attribute Anomaly DMG of the corresponding attribute. The skill consumes 1 <ct color=#FFFFFF>Trial by Cold</ct> upon activation.",
+        "6": "When Promeia triggers and hits an enemy with <ct color=#FFFFFF>Abloom</ct>, she gains an additional 100 Decibels. This effect can trigger once every 0.5s. Using <ct color=#FFFFFF>Ultimate: Glaciating Impalement</ct> grants <ct color=#FFFFFF>Frost Oath</ct>. With <ct color=#FFFFFF>Frost Oath</ct>, after using <ct color=#FFFFFF>EX Special Attack: Execution - Merciless Judgment</ct>, <ct color=#FFFFFF>Chain Attack: Hanging Judgment</ct>, or <ct color=#FFFFFF>Ultimate: Glaciating Impalement</ct>, press or hold <IconSpecial /> to consume <ct color=#FFFFFF>Frost Oath</ct> and immediately follow up with <ct color=#FFFFFF>Special Attack: Execution - Layered Frost</ct>. Only 1 stack of <ct color=#FFFFFF>Frost Oath</ct> can be held."
+      },
+      {
+        "0": "If Promeia's initial Anomaly Mastery exceeds 150, each additional point increases her Anomaly Proficiency by 1.5 and increases the whole squad's <ct color=#FFFFFF>Abloom</ct> DMG by 0.35%.",
+        "1": "Promeia gains a set amount of <ct color=#FFFFFF>Corrosive Chill</ct> when her attacks hit enemies. When squad members trigger <ct color=#98EFF0>Freeze</ct>/<ct color=#FFFFFF>Disorder</ct>, when the enemy is inflicted with <ct color=#FFFFFF>Vortex</ct>, or when Promeia triggers <ct color=#FFFFFF>EX Special Attack: Execution - Shrouded in Shadow</ct>, she gains an additional 5/5/5/10 <ct color=#FFFFFF>Corrosive Chill</ct>, up to a maximum of 100 <ct color=#FFFFFF>Corrosive Chill</ct>.",
+        "2": "When a squad member triggers and hits an enemy with <ct color=#FFFFFF>Abloom</ct>, Promeia gains an additional 15 <ct color=#FFFFFF>Corrosive Chill</ct>.",
+        "3": "When <ct color=#FFFFFF>Corrosive Chill</ct> reaches at least 50, 50 <ct color=#FFFFFF>Corrosive Chill</ct> is consumed and converted into 1 point of <ct color=#FFFFFF>Trial by Cold</ct>, up to a maximum of 2 points of <ct color=#FFFFFF>Trial by Cold</ct>.",
+        "4": "Upon entering the battlefield, Promeia gains 2 points of <ct color=#FFFFFF>Trial by Cold</ct>.",
+        "5": "When the finishing move of <ct color=#FFFFFF>EX Special Attack: Execution - Merciless Judgment</ct> hits an enemy afflicted with <ct color=#98EFF0>Ice Anomaly</ct>, <ct color=#FE437E>Ether Anomaly</ct>, <ct color=#2EB6FF>Electric Anomaly</ct>, <ct color=#FF5521>Fire Anomaly</ct>, <ct color=#F0D12B>Physical Anomaly</ct>, or <ct color=#A6C5FD>Wind Anomaly</ct>, it triggers <ct color=#FFFFFF>Abloom</ct> once, dealing <ct color=#2BAD00>585%</ct> Attribute Anomaly DMG of the corresponding attribute. The skill consumes 1 <ct color=#FFFFFF>Trial by Cold</ct> upon activation.",
+        "6": "When Promeia triggers and hits an enemy with <ct color=#FFFFFF>Abloom</ct>, she gains an additional 100 Decibels. This effect can trigger once every 0.5s. Using <ct color=#FFFFFF>Ultimate: Glaciating Impalement</ct> grants <ct color=#FFFFFF>Frost Oath</ct>. With <ct color=#FFFFFF>Frost Oath</ct>, after using <ct color=#FFFFFF>EX Special Attack: Execution - Merciless Judgment</ct>, <ct color=#FFFFFF>Chain Attack: Hanging Judgment</ct>, or <ct color=#FFFFFF>Ultimate: Glaciating Impalement</ct>, press or hold <IconSpecial /> to consume <ct color=#FFFFFF>Frost Oath</ct> and immediately follow up with <ct color=#FFFFFF>Special Attack: Execution - Layered Frost</ct>. Only 1 stack of <ct color=#FFFFFF>Frost Oath</ct> can be held."
+      },
+      {
+        "0": "If Promeia's initial Anomaly Mastery exceeds 150, each additional point increases her Anomaly Proficiency by 1.5 and increases the whole squad's <ct color=#FFFFFF>Abloom</ct> DMG by 0.35%.",
+        "1": "Promeia gains a set amount of <ct color=#FFFFFF>Corrosive Chill</ct> when her attacks hit enemies. When squad members trigger <ct color=#98EFF0>Freeze</ct>/<ct color=#FFFFFF>Disorder</ct>, when the enemy is inflicted with <ct color=#FFFFFF>Vortex</ct>, or when Promeia triggers <ct color=#FFFFFF>EX Special Attack: Execution - Shrouded in Shadow</ct>, she gains an additional 5/5/5/10 <ct color=#FFFFFF>Corrosive Chill</ct>, up to a maximum of 100 <ct color=#FFFFFF>Corrosive Chill</ct>.",
+        "2": "When a squad member triggers and hits an enemy with <ct color=#FFFFFF>Abloom</ct>, Promeia gains an additional 15 <ct color=#FFFFFF>Corrosive Chill</ct>.",
+        "3": "When <ct color=#FFFFFF>Corrosive Chill</ct> reaches at least 50, 50 <ct color=#FFFFFF>Corrosive Chill</ct> is consumed and converted into 1 point of <ct color=#FFFFFF>Trial by Cold</ct>, up to a maximum of 2 points of <ct color=#FFFFFF>Trial by Cold</ct>.",
+        "4": "Upon entering the battlefield, Promeia gains 2 points of <ct color=#FFFFFF>Trial by Cold</ct>.",
+        "5": "When the finishing move of <ct color=#FFFFFF>EX Special Attack: Execution - Merciless Judgment</ct> hits an enemy afflicted with <ct color=#98EFF0>Ice Anomaly</ct>, <ct color=#FE437E>Ether Anomaly</ct>, <ct color=#2EB6FF>Electric Anomaly</ct>, <ct color=#FF5521>Fire Anomaly</ct>, <ct color=#F0D12B>Physical Anomaly</ct>, or <ct color=#A6C5FD>Wind Anomaly</ct>, it triggers <ct color=#FFFFFF>Abloom</ct> once, dealing <ct color=#2BAD00>635%</ct> Attribute Anomaly DMG of the corresponding attribute. The skill consumes 1 <ct color=#FFFFFF>Trial by Cold</ct> upon activation.",
+        "6": "When Promeia triggers and hits an enemy with <ct color=#FFFFFF>Abloom</ct>, she gains an additional 100 Decibels. This effect can trigger once every 0.5s. Using <ct color=#FFFFFF>Ultimate: Glaciating Impalement</ct> grants <ct color=#FFFFFF>Frost Oath</ct>. With <ct color=#FFFFFF>Frost Oath</ct>, after using <ct color=#FFFFFF>EX Special Attack: Execution - Merciless Judgment</ct>, <ct color=#FFFFFF>Chain Attack: Hanging Judgment</ct>, or <ct color=#FFFFFF>Ultimate: Glaciating Impalement</ct>, press or hold <IconSpecial /> to consume <ct color=#FFFFFF>Frost Oath</ct> and immediately follow up with <ct color=#FFFFFF>Special Attack: Execution - Layered Frost</ct>. Only 1 stack of <ct color=#FFFFFF>Frost Oath</ct> can be held."
+      }
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Vessel of Ice",
+    "desc": {
+      "0": "When another character in your squad is an <ct color=#FFFFFF>Anomaly</ct> or <ct color=#FFFFFF>Support</ct> character:",
+      "1": "When using an <ct color=#FFFFFF>EX Special Attack</ct>, Promeia's <ct color=#98EFF0>Ice Anomaly Buildup Rate</ct> increases by 30% for 30s. Repeated triggers refresh the duration.",
+      "2": "When any squad member applies the <ct color=#98EFF0>Frostbite</ct> effect to an enemy, its duration is increased by 3s.",
+      "3": "When Promeia's <ct color=#FFFFFF>EX Special Attack</ct> hits an enemy, it inflicts <ct color=#FFFFFF>Presumption of Guilt</ct>. When any squad member triggers <ct color=#FFFFFF>Abloom</ct> on a target with <ct color=#FFFFFF>Presumption of Guilt</ct>, it ignores 40% of the target's DEF. <ct color=#FFFFFF>Presumption of Guilt</ct> lasts 30s, and repeated triggers refresh the duration."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Innocent Idealism",
+      "desc": "When Promeia uses <ct color=#FFFFFF>Ultimate: Glaciating Impalement</ct>, she gains an additional effect: if <ct color=#FFFFFF>Trial by Cold</ct> points are not at maximum, gain 1 point of <ct color=#FFFFFF>Trial by Cold</ct>. This effect can trigger once after using <ct color=#FFFFFF>Ultimate: Glaciating Impalement</ct>. When any squad member triggers <ct color=#FFFFFF>Abloom</ct> on enemies with <ct color=#FFFFFF>Presumption of Guilt</ct>, it ignores an additional 20% DEF.",
+      "flavor": {
+        "0": "This is a chaotic, lawless land.",
+        "1": "Roaring engines and swirling dust, steel clashing with flesh. Conflict and violence play out day and night.",
+        "2": "An innocent child grips an equally innocent weapon, wandering the same lost red earth.",
+        "3": "\"Would you be willing to do your part for the peace here?\""
+      }
+    },
+    "2": {
+      "name": "Faltering Conviction",
+      "desc": "Promeia's Anomaly Proficiency increases by 40. The multiplier of <ct color=#FFFFFF>Abloom</ct> triggered by consuming <ct color=#FFFFFF>Trial by Cold</ct> increases by 120%.",
+      "flavor": {
+        "0": "She became an exceptional Sweeper — swift, precise, and silent. Her targets were clear and countless: Ethereals, those infected with irreversible Corruption, those fated to turn into Ethereals... every kill marked by bloodshed and the echoes of their cries.",
+        "1": "But... is it right?",
+        "2": "\"This is a Sweeper's duty!\" \"Just think of it as... for the greater good, got it?\" \"Those people were going to die anyway.\" ...",
+        "3": "\"It's a necessary sacrifice.\""
+      }
+    },
+    "3": {
+      "name": "Cruel Moonlight",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "The truth is often carved out from an unremarkable accident.",
+        "1": "\"You think the Sweepers could get rich just by dealing with worthless Ethereals?\"",
+        "2": "\"Gang wars are a guaranteed profit. If you're afraid of getting your hands dirty, the 'Black Wolf' is more than eager...\"",
+        "3": "Night fell soon after, earlier than anyone expected.",
+        "4": "The Sweepers, Calydon, the gangs with names and those without... in this chaotic age, all seemed to vanish into the endless dark."
+      }
+    },
+    "4": {
+      "name": "Ruthless Accusation",
+      "desc": "When Promeia triggers <ct color=#FFFFFF>Abloom</ct>, she restores 5 <ct color=#FFFFFF>Corrosive Chill</ct>. This effect can trigger once every 0.5s.",
+      "flavor": {
+        "0": "An invitation arrived, summoning a moth to its judgment.",
+        "1": "The right to choose, light, justice, and everything that made her \"Promeia.\"",
+        "2": "She put on the handcuffs and chose exile for herself.",
+        "3": "\"This is my final choice.\""
+      }
+    },
+    "5": {
+      "name": "The Dying Moth",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "She buried herself in her work.",
+        "1": "Investigations, interrogations, judgments... an endless list.",
+        "2": "Her colleagues watched her with concern.",
+        "3": "\"How long are you going to keep this up...?\"",
+        "4": "\"Until every last sin is atoned for... or until death takes me.\""
+      }
+    },
+    "6": {
+      "name": "To Be Continued",
+      "desc": "When Promeia consumes <ct color=#FFFFFF>Trial by Cold</ct> to trigger <ct color=#FFFFFF>Abloom</ct>, it triggers an additional special <ct color=#FFFFFF>Abloom</ct> effect, dealing Attribute Anomaly DMG of the corresponding attribute at a fixed 200% multiplier. 5 <ct color=#FFFFFF>Corrosive Chill</ct> and 100 Decibels are also restored. This effect can trigger at most once every 15s. In addition, Attribute Anomaly DMG and <ct color=#FFFFFF>Disorder</ct> DMG dealt by Promeia ignore 15% of enemies' All-Attribute RES.",
+      "flavor": {
+        "0": "The end didn't arrive as expected, and the night wasn't as dark as imagined.",
+        "1": "Colleagues, old acquaintances, late-night lights, and new friends...",
+        "2": "The poor moth still couldn't shake off these heavy gifts, and that long-awaited ending now felt even further away.",
+        "3": "But maybe... such a fate isn't so bad."
+      }
+    }
+  },
+  "potential": {}
+}

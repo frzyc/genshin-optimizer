@@ -1,4 +1,5 @@
 import {
+  allElementKeys,
   allElementWithPhyKeys,
   allLunarReactionKeys,
 } from '@genshin-optimizer/gi/consts'
@@ -50,10 +51,14 @@ export const allNonstackBuffs = [
   'ttds',
   'wolf',
   'symphonist',
+  'moonsignascend',
   'gleamingmoonintent',
   'gleamingmoondevotion',
   'nightweaver',
   'bloomcd',
+  ...allElementKeys.map((ele) => `lightGuidance${ele}` as const),
+  ...allElementKeys.map((ele) => `mortalHymn${ele}` as const),
+  'angelos',
 ] as const
 export type NonStackBuff = (typeof allNonstackBuffs)[number]
 export const allMoves = [
@@ -98,6 +103,7 @@ export const allTransformative = [
   'burgeon',
   'hyperbloom',
   'lunarbloom',
+  'lunarcrystallize',
 ] as const
 export const allAmplifying = ['vaporize', 'melt'] as const
 export const allAdditive = ['spread', 'aggravate'] as const
@@ -135,6 +141,7 @@ export const allModStats = [
 export const allNonModStats = [
   ...allElements.flatMap((x) => [
     `${x}_dmgInc` as const,
+    `${x}_critRate_` as const,
     `${x}_critDMG_` as const,
     `${x}_res_` as const,
   ]),
@@ -153,6 +160,8 @@ export const allNonModStats = [
   ...allLunarReactionKeys.flatMap((lr) => [
     `${lr}_baseDmg_` as const,
     `${lr}_specialDmg_` as const,
+    `${lr}_reactionDmgInc` as const,
+    `${lr}_directDmgInc` as const,
   ]),
   ...allEleEnemyResKeys,
   'enemyDefRed_' as const,

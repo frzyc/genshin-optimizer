@@ -632,7 +632,7 @@ export function exclusionToAllowed(
 /** A *disjoint* set of `RequestFilter` satisfying the exclusion rules */
 export function* artSetPerm(
   exclusion: ArtSetExclusion,
-  _artSets: ArtifactSetKey[]
+  artSets: Set<ArtifactSetKey>
 ): Iterable<RequestFilter> {
   /**
    * This generation algorithm is separated into two parts:
@@ -644,8 +644,7 @@ export function* artSetPerm(
    *   - From the given shapes, it tries to fill in all non-rainbow slots, e.g., slots A and B of AABBC, with actual artifacts
    *   - It then fills the rainbow slots, e.g., slot C of AABBC while ensuring the exclusion rule of each sets
    */
-  const artSets = [...new Set(_artSets)],
-    allowedRainbows = exclusionToAllowed(exclusion.rainbow)
+  const allowedRainbows = exclusionToAllowed(exclusion.rainbow)
   let shapes: number[][] = []
   function populateShapes(
     current: number[],
@@ -704,7 +703,7 @@ export function* artSetPerm(
 
   const counts = {
     ...objMap(exclusion as Record<ArtSetExclusionKey, (2 | 4)[]>, (_) => 0),
-    ...objKeyMap(artSets, (_) => 0),
+    ...objKeyMap([...artSets], () => 0),
   }
   const allowedCounts = objMap(
     exclusion as Record<ArtSetExclusionKey, (2 | 4)[]>,

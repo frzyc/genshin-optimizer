@@ -38,6 +38,33 @@ export const formulas = {
       name: 'disorderDmgInst_fire',
     },
   },
+  vortexDmgInst_fire: {
+    sheet: 'JuFufu',
+    name: 'vortexDmgInst_fire',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'JuFufu',
+      attribute: 'fire',
+      damageType1: 'vortex',
+      name: 'vortexDmgInst_fire',
+    },
+  },
+  abloomDmgInst: {
+    sheet: 'JuFufu',
+    name: 'abloomDmgInst',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'JuFufu',
+      attribute: 'fire',
+      damageType1: 'anomaly',
+      damageType2: 'abloom',
+      name: 'abloomDmgInst',
+    },
+  },
   anomalyBuildupInst: {
     sheet: 'JuFufu',
     name: 'anomalyBuildupInst',
@@ -62,9 +89,9 @@ export const formulas = {
       name: 'dazeInst',
     },
   },
-  BasicAttackTigerSevenFormsFlamingClaw_0_dmg: {
+  'BasicAttackTigerSevenFormsFlamingClaw_0:standardDmg': {
     sheet: 'JuFufu',
-    name: 'BasicAttackTigerSevenFormsFlamingClaw_0_dmg',
+    name: 'BasicAttackTigerSevenFormsFlamingClaw_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -72,12 +99,13 @@ export const formulas = {
       sheet: 'JuFufu',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackTigerSevenFormsFlamingClaw_0_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackTigerSevenFormsFlamingClaw_0',
     },
   },
-  BasicAttackTigerSevenFormsFlamingClaw_0_daze: {
+  'BasicAttackTigerSevenFormsFlamingClaw_0:dazeBuildup': {
     sheet: 'JuFufu',
-    name: 'BasicAttackTigerSevenFormsFlamingClaw_0_daze',
+    name: 'BasicAttackTigerSevenFormsFlamingClaw_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -85,12 +113,13 @@ export const formulas = {
       sheet: 'JuFufu',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackTigerSevenFormsFlamingClaw_0_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackTigerSevenFormsFlamingClaw_0',
     },
   },
-  BasicAttackTigerSevenFormsFlamingClaw_0_anomBuildup: {
+  'BasicAttackTigerSevenFormsFlamingClaw_0:anomBuildup': {
     sheet: 'JuFufu',
-    name: 'BasicAttackTigerSevenFormsFlamingClaw_0_anomBuildup',
+    name: 'BasicAttackTigerSevenFormsFlamingClaw_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -98,12 +127,13 @@ export const formulas = {
       sheet: 'JuFufu',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackTigerSevenFormsFlamingClaw_0_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackTigerSevenFormsFlamingClaw_0',
     },
   },
-  BasicAttackTigerSevenFormsFlamingClaw_1_dmg: {
+  'BasicAttackTigerSevenFormsFlamingClaw_1:standardDmg': {
     sheet: 'JuFufu',
-    name: 'BasicAttackTigerSevenFormsFlamingClaw_1_dmg',
+    name: 'BasicAttackTigerSevenFormsFlamingClaw_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -111,12 +141,13 @@ export const formulas = {
       sheet: 'JuFufu',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackTigerSevenFormsFlamingClaw_1_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackTigerSevenFormsFlamingClaw_1',
     },
   },
-  BasicAttackTigerSevenFormsFlamingClaw_1_daze: {
+  'BasicAttackTigerSevenFormsFlamingClaw_1:dazeBuildup': {
     sheet: 'JuFufu',
-    name: 'BasicAttackTigerSevenFormsFlamingClaw_1_daze',
+    name: 'BasicAttackTigerSevenFormsFlamingClaw_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -124,12 +155,13 @@ export const formulas = {
       sheet: 'JuFufu',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackTigerSevenFormsFlamingClaw_1_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackTigerSevenFormsFlamingClaw_1',
     },
   },
-  BasicAttackTigerSevenFormsFlamingClaw_1_anomBuildup: {
+  'BasicAttackTigerSevenFormsFlamingClaw_1:anomBuildup': {
     sheet: 'JuFufu',
-    name: 'BasicAttackTigerSevenFormsFlamingClaw_1_anomBuildup',
+    name: 'BasicAttackTigerSevenFormsFlamingClaw_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -137,54 +169,13 @@ export const formulas = {
       sheet: 'JuFufu',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackTigerSevenFormsFlamingClaw_1_anomBuildup',
-    },
-  },
-  BasicAttackTigerSevenFormsFlamingClaw_2_dmg: {
-    sheet: 'JuFufu',
-    name: 'BasicAttackTigerSevenFormsFlamingClaw_2_dmg',
-    tag: {
-      et: 'own',
-      qt: 'formula',
-      q: 'standardDmg',
-      sheet: 'JuFufu',
-      attribute: 'fire',
-      damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackTigerSevenFormsFlamingClaw_2_dmg',
+      name: 'BasicAttackTigerSevenFormsFlamingClaw_1',
     },
   },
-  BasicAttackTigerSevenFormsFlamingClaw_2_daze: {
+  'BasicAttackTigerSevenFormsFlamingClaw_2:standardDmg': {
     sheet: 'JuFufu',
-    name: 'BasicAttackTigerSevenFormsFlamingClaw_2_daze',
-    tag: {
-      et: 'own',
-      qt: 'formula',
-      q: 'dazeBuildup',
-      sheet: 'JuFufu',
-      attribute: 'fire',
-      damageType1: 'basic',
-      skillType: 'basicSkill',
-      name: 'BasicAttackTigerSevenFormsFlamingClaw_2_daze',
-    },
-  },
-  BasicAttackTigerSevenFormsFlamingClaw_2_anomBuildup: {
-    sheet: 'JuFufu',
-    name: 'BasicAttackTigerSevenFormsFlamingClaw_2_anomBuildup',
-    tag: {
-      et: 'own',
-      qt: 'formula',
-      q: 'anomBuildup',
-      sheet: 'JuFufu',
-      attribute: 'fire',
-      damageType1: 'basic',
-      skillType: 'basicSkill',
-      name: 'BasicAttackTigerSevenFormsFlamingClaw_2_anomBuildup',
-    },
-  },
-  BasicAttackTigerSevenFormsFlamingClaw_3_dmg: {
-    sheet: 'JuFufu',
-    name: 'BasicAttackTigerSevenFormsFlamingClaw_3_dmg',
+    name: 'BasicAttackTigerSevenFormsFlamingClaw_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -193,12 +184,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackTigerSevenFormsFlamingClaw_3_dmg',
+      name: 'BasicAttackTigerSevenFormsFlamingClaw_2',
     },
   },
-  BasicAttackTigerSevenFormsFlamingClaw_3_daze: {
+  'BasicAttackTigerSevenFormsFlamingClaw_2:dazeBuildup': {
     sheet: 'JuFufu',
-    name: 'BasicAttackTigerSevenFormsFlamingClaw_3_daze',
+    name: 'BasicAttackTigerSevenFormsFlamingClaw_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -207,12 +198,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackTigerSevenFormsFlamingClaw_3_daze',
+      name: 'BasicAttackTigerSevenFormsFlamingClaw_2',
     },
   },
-  BasicAttackTigerSevenFormsFlamingClaw_3_anomBuildup: {
+  'BasicAttackTigerSevenFormsFlamingClaw_2:anomBuildup': {
     sheet: 'JuFufu',
-    name: 'BasicAttackTigerSevenFormsFlamingClaw_3_anomBuildup',
+    name: 'BasicAttackTigerSevenFormsFlamingClaw_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -221,12 +212,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackTigerSevenFormsFlamingClaw_3_anomBuildup',
+      name: 'BasicAttackTigerSevenFormsFlamingClaw_2',
     },
   },
-  BasicAttackHuWei_0_dmg: {
+  'BasicAttackTigerSevenFormsFlamingClaw_3:standardDmg': {
     sheet: 'JuFufu',
-    name: 'BasicAttackHuWei_0_dmg',
+    name: 'BasicAttackTigerSevenFormsFlamingClaw_3:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -235,12 +226,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackHuWei_0_dmg',
+      name: 'BasicAttackTigerSevenFormsFlamingClaw_3',
     },
   },
-  BasicAttackHuWei_0_daze: {
+  'BasicAttackTigerSevenFormsFlamingClaw_3:dazeBuildup': {
     sheet: 'JuFufu',
-    name: 'BasicAttackHuWei_0_daze',
+    name: 'BasicAttackTigerSevenFormsFlamingClaw_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -249,12 +240,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackHuWei_0_daze',
+      name: 'BasicAttackTigerSevenFormsFlamingClaw_3',
     },
   },
-  BasicAttackHuWei_0_anomBuildup: {
+  'BasicAttackTigerSevenFormsFlamingClaw_3:anomBuildup': {
     sheet: 'JuFufu',
-    name: 'BasicAttackHuWei_0_anomBuildup',
+    name: 'BasicAttackTigerSevenFormsFlamingClaw_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -263,51 +254,54 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackHuWei_0_anomBuildup',
+      name: 'BasicAttackTigerSevenFormsFlamingClaw_3',
     },
   },
-  DashAttackTigerSevenFormsTigerCharge_0_dmg: {
+  'BasicAttackHuWei_0:standardDmg': {
     sheet: 'JuFufu',
-    name: 'DashAttackTigerSevenFormsTigerCharge_0_dmg',
+    name: 'BasicAttackHuWei_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'JuFufu',
-      damageType1: 'dash',
-      attribute: 'physical',
-      name: 'DashAttackTigerSevenFormsTigerCharge_0_dmg',
+      attribute: 'fire',
+      damageType1: 'basic',
+      skillType: 'basicSkill',
+      name: 'BasicAttackHuWei_0',
     },
   },
-  DashAttackTigerSevenFormsTigerCharge_0_daze: {
+  'BasicAttackHuWei_0:dazeBuildup': {
     sheet: 'JuFufu',
-    name: 'DashAttackTigerSevenFormsTigerCharge_0_daze',
+    name: 'BasicAttackHuWei_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'JuFufu',
-      damageType1: 'dash',
-      attribute: 'physical',
-      name: 'DashAttackTigerSevenFormsTigerCharge_0_daze',
+      attribute: 'fire',
+      damageType1: 'basic',
+      skillType: 'basicSkill',
+      name: 'BasicAttackHuWei_0',
     },
   },
-  DashAttackTigerSevenFormsTigerCharge_0_anomBuildup: {
+  'BasicAttackHuWei_0:anomBuildup': {
     sheet: 'JuFufu',
-    name: 'DashAttackTigerSevenFormsTigerCharge_0_anomBuildup',
+    name: 'BasicAttackHuWei_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'JuFufu',
-      damageType1: 'dash',
-      attribute: 'physical',
-      name: 'DashAttackTigerSevenFormsTigerCharge_0_anomBuildup',
+      attribute: 'fire',
+      damageType1: 'basic',
+      skillType: 'basicSkill',
+      name: 'BasicAttackHuWei_0',
     },
   },
-  DashAttackTigerSevenFormsMountainKingsGame_0_dmg: {
+  'DashAttackTigerSevenFormsTigerCharge_0:standardDmg': {
     sheet: 'JuFufu',
-    name: 'DashAttackTigerSevenFormsMountainKingsGame_0_dmg',
+    name: 'DashAttackTigerSevenFormsTigerCharge_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -315,12 +309,13 @@ export const formulas = {
       sheet: 'JuFufu',
       damageType1: 'dash',
       attribute: 'physical',
-      name: 'DashAttackTigerSevenFormsMountainKingsGame_0_dmg',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackTigerSevenFormsTigerCharge_0',
     },
   },
-  DashAttackTigerSevenFormsMountainKingsGame_0_daze: {
+  'DashAttackTigerSevenFormsTigerCharge_0:dazeBuildup': {
     sheet: 'JuFufu',
-    name: 'DashAttackTigerSevenFormsMountainKingsGame_0_daze',
+    name: 'DashAttackTigerSevenFormsTigerCharge_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -328,12 +323,13 @@ export const formulas = {
       sheet: 'JuFufu',
       damageType1: 'dash',
       attribute: 'physical',
-      name: 'DashAttackTigerSevenFormsMountainKingsGame_0_daze',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackTigerSevenFormsTigerCharge_0',
     },
   },
-  DashAttackTigerSevenFormsMountainKingsGame_0_anomBuildup: {
+  'DashAttackTigerSevenFormsTigerCharge_0:anomBuildup': {
     sheet: 'JuFufu',
-    name: 'DashAttackTigerSevenFormsMountainKingsGame_0_anomBuildup',
+    name: 'DashAttackTigerSevenFormsTigerCharge_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -341,12 +337,55 @@ export const formulas = {
       sheet: 'JuFufu',
       damageType1: 'dash',
       attribute: 'physical',
-      name: 'DashAttackTigerSevenFormsMountainKingsGame_0_anomBuildup',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackTigerSevenFormsTigerCharge_0',
     },
   },
-  DodgeCounterTigerSevenFormsReignitedMountain_0_dmg: {
+  'DashAttackTigerSevenFormsMountainKingsGame_0:standardDmg': {
     sheet: 'JuFufu',
-    name: 'DodgeCounterTigerSevenFormsReignitedMountain_0_dmg',
+    name: 'DashAttackTigerSevenFormsMountainKingsGame_0:standardDmg',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'standardDmg',
+      sheet: 'JuFufu',
+      damageType1: 'dash',
+      attribute: 'physical',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackTigerSevenFormsMountainKingsGame_0',
+    },
+  },
+  'DashAttackTigerSevenFormsMountainKingsGame_0:dazeBuildup': {
+    sheet: 'JuFufu',
+    name: 'DashAttackTigerSevenFormsMountainKingsGame_0:dazeBuildup',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'dazeBuildup',
+      sheet: 'JuFufu',
+      damageType1: 'dash',
+      attribute: 'physical',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackTigerSevenFormsMountainKingsGame_0',
+    },
+  },
+  'DashAttackTigerSevenFormsMountainKingsGame_0:anomBuildup': {
+    sheet: 'JuFufu',
+    name: 'DashAttackTigerSevenFormsMountainKingsGame_0:anomBuildup',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomBuildup',
+      sheet: 'JuFufu',
+      damageType1: 'dash',
+      attribute: 'physical',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackTigerSevenFormsMountainKingsGame_0',
+    },
+  },
+  'DodgeCounterTigerSevenFormsReignitedMountain_0:standardDmg': {
+    sheet: 'JuFufu',
+    name: 'DodgeCounterTigerSevenFormsReignitedMountain_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -355,12 +394,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterTigerSevenFormsReignitedMountain_0_dmg',
+      name: 'DodgeCounterTigerSevenFormsReignitedMountain_0',
     },
   },
-  DodgeCounterTigerSevenFormsReignitedMountain_0_daze: {
+  'DodgeCounterTigerSevenFormsReignitedMountain_0:dazeBuildup': {
     sheet: 'JuFufu',
-    name: 'DodgeCounterTigerSevenFormsReignitedMountain_0_daze',
+    name: 'DodgeCounterTigerSevenFormsReignitedMountain_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -369,12 +408,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterTigerSevenFormsReignitedMountain_0_daze',
+      name: 'DodgeCounterTigerSevenFormsReignitedMountain_0',
     },
   },
-  DodgeCounterTigerSevenFormsReignitedMountain_0_anomBuildup: {
+  'DodgeCounterTigerSevenFormsReignitedMountain_0:anomBuildup': {
     sheet: 'JuFufu',
-    name: 'DodgeCounterTigerSevenFormsReignitedMountain_0_anomBuildup',
+    name: 'DodgeCounterTigerSevenFormsReignitedMountain_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -383,12 +422,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterTigerSevenFormsReignitedMountain_0_anomBuildup',
+      name: 'DodgeCounterTigerSevenFormsReignitedMountain_0',
     },
   },
-  DashAttackTigerSevenFormsMountainKingsGameMomentum_0_dmg: {
+  'DashAttackTigerSevenFormsMountainKingsGameMomentum_0:standardDmg': {
     sheet: 'JuFufu',
-    name: 'DashAttackTigerSevenFormsMountainKingsGameMomentum_0_dmg',
+    name: 'DashAttackTigerSevenFormsMountainKingsGameMomentum_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -397,12 +436,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackTigerSevenFormsMountainKingsGameMomentum_0_dmg',
+      name: 'DashAttackTigerSevenFormsMountainKingsGameMomentum_0',
     },
   },
-  DashAttackTigerSevenFormsMountainKingsGameMomentum_0_daze: {
+  'DashAttackTigerSevenFormsMountainKingsGameMomentum_0:dazeBuildup': {
     sheet: 'JuFufu',
-    name: 'DashAttackTigerSevenFormsMountainKingsGameMomentum_0_daze',
+    name: 'DashAttackTigerSevenFormsMountainKingsGameMomentum_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -411,12 +450,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackTigerSevenFormsMountainKingsGameMomentum_0_daze',
+      name: 'DashAttackTigerSevenFormsMountainKingsGameMomentum_0',
     },
   },
-  DashAttackTigerSevenFormsMountainKingsGameMomentum_0_anomBuildup: {
+  'DashAttackTigerSevenFormsMountainKingsGameMomentum_0:anomBuildup': {
     sheet: 'JuFufu',
-    name: 'DashAttackTigerSevenFormsMountainKingsGameMomentum_0_anomBuildup',
+    name: 'DashAttackTigerSevenFormsMountainKingsGameMomentum_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -425,12 +464,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackTigerSevenFormsMountainKingsGameMomentum_0_anomBuildup',
+      name: 'DashAttackTigerSevenFormsMountainKingsGameMomentum_0',
     },
   },
-  SpecialAttackTigerSevenFormsMountainDescendingTiger_0_dmg: {
+  'SpecialAttackTigerSevenFormsMountainDescendingTiger_0:standardDmg': {
     sheet: 'JuFufu',
-    name: 'SpecialAttackTigerSevenFormsMountainDescendingTiger_0_dmg',
+    name: 'SpecialAttackTigerSevenFormsMountainDescendingTiger_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -439,12 +478,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackTigerSevenFormsMountainDescendingTiger_0_dmg',
+      name: 'SpecialAttackTigerSevenFormsMountainDescendingTiger_0',
     },
   },
-  SpecialAttackTigerSevenFormsMountainDescendingTiger_0_daze: {
+  'SpecialAttackTigerSevenFormsMountainDescendingTiger_0:dazeBuildup': {
     sheet: 'JuFufu',
-    name: 'SpecialAttackTigerSevenFormsMountainDescendingTiger_0_daze',
+    name: 'SpecialAttackTigerSevenFormsMountainDescendingTiger_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -453,12 +492,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackTigerSevenFormsMountainDescendingTiger_0_daze',
+      name: 'SpecialAttackTigerSevenFormsMountainDescendingTiger_0',
     },
   },
-  SpecialAttackTigerSevenFormsMountainDescendingTiger_0_anomBuildup: {
+  'SpecialAttackTigerSevenFormsMountainDescendingTiger_0:anomBuildup': {
     sheet: 'JuFufu',
-    name: 'SpecialAttackTigerSevenFormsMountainDescendingTiger_0_anomBuildup',
+    name: 'SpecialAttackTigerSevenFormsMountainDescendingTiger_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -467,41 +506,43 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackTigerSevenFormsMountainDescendingTiger_0_anomBuildup',
+      name: 'SpecialAttackTigerSevenFormsMountainDescendingTiger_0',
     },
   },
-  EXSpecialAttackTigerSevenFormsAltMountainDescendingSavageTiger_0_dmg: {
-    sheet: 'JuFufu',
-    name: 'EXSpecialAttackTigerSevenFormsAltMountainDescendingSavageTiger_0_dmg',
-    tag: {
-      et: 'own',
-      qt: 'formula',
-      q: 'standardDmg',
-      sheet: 'JuFufu',
-      attribute: 'fire',
-      damageType1: 'exSpecial',
-      skillType: 'specialSkill',
-      name: 'EXSpecialAttackTigerSevenFormsAltMountainDescendingSavageTiger_0_dmg',
-    },
-  },
-  EXSpecialAttackTigerSevenFormsAltMountainDescendingSavageTiger_0_daze: {
-    sheet: 'JuFufu',
-    name: 'EXSpecialAttackTigerSevenFormsAltMountainDescendingSavageTiger_0_daze',
-    tag: {
-      et: 'own',
-      qt: 'formula',
-      q: 'dazeBuildup',
-      sheet: 'JuFufu',
-      attribute: 'fire',
-      damageType1: 'exSpecial',
-      skillType: 'specialSkill',
-      name: 'EXSpecialAttackTigerSevenFormsAltMountainDescendingSavageTiger_0_daze',
-    },
-  },
-  EXSpecialAttackTigerSevenFormsAltMountainDescendingSavageTiger_0_anomBuildup:
+  'EXSpecialAttackTigerSevenFormsAltMountainDescendingSavageTiger_0:standardDmg':
     {
       sheet: 'JuFufu',
-      name: 'EXSpecialAttackTigerSevenFormsAltMountainDescendingSavageTiger_0_anomBuildup',
+      name: 'EXSpecialAttackTigerSevenFormsAltMountainDescendingSavageTiger_0:standardDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'standardDmg',
+        sheet: 'JuFufu',
+        attribute: 'fire',
+        damageType1: 'exSpecial',
+        skillType: 'specialSkill',
+        name: 'EXSpecialAttackTigerSevenFormsAltMountainDescendingSavageTiger_0',
+      },
+    },
+  'EXSpecialAttackTigerSevenFormsAltMountainDescendingSavageTiger_0:dazeBuildup':
+    {
+      sheet: 'JuFufu',
+      name: 'EXSpecialAttackTigerSevenFormsAltMountainDescendingSavageTiger_0:dazeBuildup',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dazeBuildup',
+        sheet: 'JuFufu',
+        attribute: 'fire',
+        damageType1: 'exSpecial',
+        skillType: 'specialSkill',
+        name: 'EXSpecialAttackTigerSevenFormsAltMountainDescendingSavageTiger_0',
+      },
+    },
+  'EXSpecialAttackTigerSevenFormsAltMountainDescendingSavageTiger_0:anomBuildup':
+    {
+      sheet: 'JuFufu',
+      name: 'EXSpecialAttackTigerSevenFormsAltMountainDescendingSavageTiger_0:anomBuildup',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -510,12 +551,12 @@ export const formulas = {
         attribute: 'fire',
         damageType1: 'exSpecial',
         skillType: 'specialSkill',
-        name: 'EXSpecialAttackTigerSevenFormsAltMountainDescendingSavageTiger_0_anomBuildup',
+        name: 'EXSpecialAttackTigerSevenFormsAltMountainDescendingSavageTiger_0',
       },
     },
-  ChainAttackTigerCauldronCollapse_0_dmg: {
+  'ChainAttackTigerCauldronCollapse_0:standardDmg': {
     sheet: 'JuFufu',
-    name: 'ChainAttackTigerCauldronCollapse_0_dmg',
+    name: 'ChainAttackTigerCauldronCollapse_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -524,12 +565,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackTigerCauldronCollapse_0_dmg',
+      name: 'ChainAttackTigerCauldronCollapse_0',
     },
   },
-  ChainAttackTigerCauldronCollapse_0_daze: {
+  'ChainAttackTigerCauldronCollapse_0:dazeBuildup': {
     sheet: 'JuFufu',
-    name: 'ChainAttackTigerCauldronCollapse_0_daze',
+    name: 'ChainAttackTigerCauldronCollapse_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -538,12 +579,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackTigerCauldronCollapse_0_daze',
+      name: 'ChainAttackTigerCauldronCollapse_0',
     },
   },
-  ChainAttackTigerCauldronCollapse_0_anomBuildup: {
+  'ChainAttackTigerCauldronCollapse_0:anomBuildup': {
     sheet: 'JuFufu',
-    name: 'ChainAttackTigerCauldronCollapse_0_anomBuildup',
+    name: 'ChainAttackTigerCauldronCollapse_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -552,12 +593,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackTigerCauldronCollapse_0_anomBuildup',
+      name: 'ChainAttackTigerCauldronCollapse_0',
     },
   },
-  ChainAttackSuppressingTigerCauldron_0_dmg: {
+  'ChainAttackSuppressingTigerCauldron_0:standardDmg': {
     sheet: 'JuFufu',
-    name: 'ChainAttackSuppressingTigerCauldron_0_dmg',
+    name: 'ChainAttackSuppressingTigerCauldron_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -566,12 +607,13 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'chain',
       damageType2: 'aftershock',
-      name: 'ChainAttackSuppressingTigerCauldron_0_dmg',
+      skillType: 'chainSkill',
+      name: 'ChainAttackSuppressingTigerCauldron_0',
     },
   },
-  ChainAttackSuppressingTigerCauldron_0_daze: {
+  'ChainAttackSuppressingTigerCauldron_0:dazeBuildup': {
     sheet: 'JuFufu',
-    name: 'ChainAttackSuppressingTigerCauldron_0_daze',
+    name: 'ChainAttackSuppressingTigerCauldron_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -580,12 +622,13 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'chain',
       damageType2: 'aftershock',
-      name: 'ChainAttackSuppressingTigerCauldron_0_daze',
+      skillType: 'chainSkill',
+      name: 'ChainAttackSuppressingTigerCauldron_0',
     },
   },
-  ChainAttackSuppressingTigerCauldron_0_anomBuildup: {
+  'ChainAttackSuppressingTigerCauldron_0:anomBuildup': {
     sheet: 'JuFufu',
-    name: 'ChainAttackSuppressingTigerCauldron_0_anomBuildup',
+    name: 'ChainAttackSuppressingTigerCauldron_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -594,12 +637,13 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'chain',
       damageType2: 'aftershock',
-      name: 'ChainAttackSuppressingTigerCauldron_0_anomBuildup',
+      skillType: 'chainSkill',
+      name: 'ChainAttackSuppressingTigerCauldron_0',
     },
   },
-  UltimateTigerSevenFormsRagingTigerExplosion_0_dmg: {
+  'UltimateTigerSevenFormsRagingTigerExplosion_0:standardDmg': {
     sheet: 'JuFufu',
-    name: 'UltimateTigerSevenFormsRagingTigerExplosion_0_dmg',
+    name: 'UltimateTigerSevenFormsRagingTigerExplosion_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -608,12 +652,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateTigerSevenFormsRagingTigerExplosion_0_dmg',
+      name: 'UltimateTigerSevenFormsRagingTigerExplosion_0',
     },
   },
-  UltimateTigerSevenFormsRagingTigerExplosion_0_daze: {
+  'UltimateTigerSevenFormsRagingTigerExplosion_0:dazeBuildup': {
     sheet: 'JuFufu',
-    name: 'UltimateTigerSevenFormsRagingTigerExplosion_0_daze',
+    name: 'UltimateTigerSevenFormsRagingTigerExplosion_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -622,12 +666,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateTigerSevenFormsRagingTigerExplosion_0_daze',
+      name: 'UltimateTigerSevenFormsRagingTigerExplosion_0',
     },
   },
-  UltimateTigerSevenFormsRagingTigerExplosion_0_anomBuildup: {
+  'UltimateTigerSevenFormsRagingTigerExplosion_0:anomBuildup': {
     sheet: 'JuFufu',
-    name: 'UltimateTigerSevenFormsRagingTigerExplosion_0_anomBuildup',
+    name: 'UltimateTigerSevenFormsRagingTigerExplosion_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -636,12 +680,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateTigerSevenFormsRagingTigerExplosion_0_anomBuildup',
+      name: 'UltimateTigerSevenFormsRagingTigerExplosion_0',
     },
   },
-  QuickAssistDecisiveStomp_0_dmg: {
+  'QuickAssistDecisiveStomp_0:standardDmg': {
     sheet: 'JuFufu',
-    name: 'QuickAssistDecisiveStomp_0_dmg',
+    name: 'QuickAssistDecisiveStomp_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -650,12 +694,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistDecisiveStomp_0_dmg',
+      name: 'QuickAssistDecisiveStomp_0',
     },
   },
-  QuickAssistDecisiveStomp_0_daze: {
+  'QuickAssistDecisiveStomp_0:dazeBuildup': {
     sheet: 'JuFufu',
-    name: 'QuickAssistDecisiveStomp_0_daze',
+    name: 'QuickAssistDecisiveStomp_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -664,12 +708,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistDecisiveStomp_0_daze',
+      name: 'QuickAssistDecisiveStomp_0',
     },
   },
-  QuickAssistDecisiveStomp_0_anomBuildup: {
+  'QuickAssistDecisiveStomp_0:anomBuildup': {
     sheet: 'JuFufu',
-    name: 'QuickAssistDecisiveStomp_0_anomBuildup',
+    name: 'QuickAssistDecisiveStomp_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -678,12 +722,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistDecisiveStomp_0_anomBuildup',
+      name: 'QuickAssistDecisiveStomp_0',
     },
   },
-  DefensiveAssistSteadfastCrouchingTiger_0_dmg: {
+  'DefensiveAssistSteadfastCrouchingTiger_0:standardDmg': {
     sheet: 'JuFufu',
-    name: 'DefensiveAssistSteadfastCrouchingTiger_0_dmg',
+    name: 'DefensiveAssistSteadfastCrouchingTiger_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -692,12 +736,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistSteadfastCrouchingTiger_0_dmg',
+      name: 'DefensiveAssistSteadfastCrouchingTiger_0',
     },
   },
-  DefensiveAssistSteadfastCrouchingTiger_0_daze: {
+  'DefensiveAssistSteadfastCrouchingTiger_0:dazeBuildup': {
     sheet: 'JuFufu',
-    name: 'DefensiveAssistSteadfastCrouchingTiger_0_daze',
+    name: 'DefensiveAssistSteadfastCrouchingTiger_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -706,12 +750,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistSteadfastCrouchingTiger_0_daze',
+      name: 'DefensiveAssistSteadfastCrouchingTiger_0',
     },
   },
-  DefensiveAssistSteadfastCrouchingTiger_0_anomBuildup: {
+  'DefensiveAssistSteadfastCrouchingTiger_0:anomBuildup': {
     sheet: 'JuFufu',
-    name: 'DefensiveAssistSteadfastCrouchingTiger_0_anomBuildup',
+    name: 'DefensiveAssistSteadfastCrouchingTiger_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -720,12 +764,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistSteadfastCrouchingTiger_0_anomBuildup',
+      name: 'DefensiveAssistSteadfastCrouchingTiger_0',
     },
   },
-  DefensiveAssistSteadfastCrouchingTiger_1_dmg: {
+  'DefensiveAssistSteadfastCrouchingTiger_1:standardDmg': {
     sheet: 'JuFufu',
-    name: 'DefensiveAssistSteadfastCrouchingTiger_1_dmg',
+    name: 'DefensiveAssistSteadfastCrouchingTiger_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -734,12 +778,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistSteadfastCrouchingTiger_1_dmg',
+      name: 'DefensiveAssistSteadfastCrouchingTiger_1',
     },
   },
-  DefensiveAssistSteadfastCrouchingTiger_1_daze: {
+  'DefensiveAssistSteadfastCrouchingTiger_1:dazeBuildup': {
     sheet: 'JuFufu',
-    name: 'DefensiveAssistSteadfastCrouchingTiger_1_daze',
+    name: 'DefensiveAssistSteadfastCrouchingTiger_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -748,12 +792,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistSteadfastCrouchingTiger_1_daze',
+      name: 'DefensiveAssistSteadfastCrouchingTiger_1',
     },
   },
-  DefensiveAssistSteadfastCrouchingTiger_1_anomBuildup: {
+  'DefensiveAssistSteadfastCrouchingTiger_1:anomBuildup': {
     sheet: 'JuFufu',
-    name: 'DefensiveAssistSteadfastCrouchingTiger_1_anomBuildup',
+    name: 'DefensiveAssistSteadfastCrouchingTiger_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -762,12 +806,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistSteadfastCrouchingTiger_1_anomBuildup',
+      name: 'DefensiveAssistSteadfastCrouchingTiger_1',
     },
   },
-  DefensiveAssistSteadfastCrouchingTiger_2_dmg: {
+  'DefensiveAssistSteadfastCrouchingTiger_2:standardDmg': {
     sheet: 'JuFufu',
-    name: 'DefensiveAssistSteadfastCrouchingTiger_2_dmg',
+    name: 'DefensiveAssistSteadfastCrouchingTiger_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -776,12 +820,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistSteadfastCrouchingTiger_2_dmg',
+      name: 'DefensiveAssistSteadfastCrouchingTiger_2',
     },
   },
-  DefensiveAssistSteadfastCrouchingTiger_2_daze: {
+  'DefensiveAssistSteadfastCrouchingTiger_2:dazeBuildup': {
     sheet: 'JuFufu',
-    name: 'DefensiveAssistSteadfastCrouchingTiger_2_daze',
+    name: 'DefensiveAssistSteadfastCrouchingTiger_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -790,12 +834,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistSteadfastCrouchingTiger_2_daze',
+      name: 'DefensiveAssistSteadfastCrouchingTiger_2',
     },
   },
-  DefensiveAssistSteadfastCrouchingTiger_2_anomBuildup: {
+  'DefensiveAssistSteadfastCrouchingTiger_2:anomBuildup': {
     sheet: 'JuFufu',
-    name: 'DefensiveAssistSteadfastCrouchingTiger_2_anomBuildup',
+    name: 'DefensiveAssistSteadfastCrouchingTiger_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -804,12 +848,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistSteadfastCrouchingTiger_2_anomBuildup',
+      name: 'DefensiveAssistSteadfastCrouchingTiger_2',
     },
   },
-  AssistFollowUpFeralBlazingMaw_0_dmg: {
+  'AssistFollowUpFeralBlazingMaw_0:standardDmg': {
     sheet: 'JuFufu',
-    name: 'AssistFollowUpFeralBlazingMaw_0_dmg',
+    name: 'AssistFollowUpFeralBlazingMaw_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -818,12 +862,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpFeralBlazingMaw_0_dmg',
+      name: 'AssistFollowUpFeralBlazingMaw_0',
     },
   },
-  AssistFollowUpFeralBlazingMaw_0_daze: {
+  'AssistFollowUpFeralBlazingMaw_0:dazeBuildup': {
     sheet: 'JuFufu',
-    name: 'AssistFollowUpFeralBlazingMaw_0_daze',
+    name: 'AssistFollowUpFeralBlazingMaw_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -832,12 +876,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpFeralBlazingMaw_0_daze',
+      name: 'AssistFollowUpFeralBlazingMaw_0',
     },
   },
-  AssistFollowUpFeralBlazingMaw_0_anomBuildup: {
+  'AssistFollowUpFeralBlazingMaw_0:anomBuildup': {
     sheet: 'JuFufu',
-    name: 'AssistFollowUpFeralBlazingMaw_0_anomBuildup',
+    name: 'AssistFollowUpFeralBlazingMaw_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -846,7 +890,7 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpFeralBlazingMaw_0_anomBuildup',
+      name: 'AssistFollowUpFeralBlazingMaw_0',
     },
   },
   m6_dmg: {

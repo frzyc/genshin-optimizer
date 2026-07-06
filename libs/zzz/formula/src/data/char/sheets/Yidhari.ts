@@ -1,15 +1,23 @@
-import { cmpGE, constant, prod } from '@genshin-optimizer/pando/engine'
+import {
+  cmpEq,
+  cmpGE,
+  constant,
+  prod,
+  subscript,
+  sum,
+} from '@genshin-optimizer/pando/engine'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
   allBoolConditionals,
-  allListConditionals,
   allNumConditionals,
-  enemyDebuff,
+  customHeal,
   own,
   ownBuff,
+  percent,
   register,
   registerBuff,
+  team,
   teamBuff,
 } from '../../util'
 import { entriesForChar, registerAllDmgDazeAndAnom } from '../util'
@@ -20,10 +28,8 @@ const dm = mappedStats.char[key]
 
 const { char } = own
 
-// TODO: Add conditionals
-const { boolConditional } = allBoolConditionals(key)
-const { listConditional } = allListConditionals(key, ['val1', 'val2'])
-const { numConditional } = allNumConditionals(key, true, 0, 2)
+const { etherVeil, erudition } = allBoolConditionals(key)
+const { missingHp } = allNumConditionals(key, true, 0, 50)
 
 const sheet = register(
   key,
@@ -33,22 +39,74 @@ const sheet = register(
   // Formulas
   ...registerAllDmgDazeAndAnom(key, dm),
 
+  customHeal(
+    'm6_heal',
+    cmpGE(char.mindscape, 6, prod(own.final.hp, percent(dm.m6.healing)))
+  ),
+
   // Buffs
   registerBuff(
-    'core_hpSheerForce',
-    // TODO: use dm
-    ownBuff.initial.sheerForce.add(prod(own.final.hp, constant(0.1)))
+    'etherVeil_hp_',
+    teamBuff.combat.hp_.add(etherVeil.ifOn(percent(0.05))),
+    undefined,
+    true
   ),
   registerBuff(
-    'm6_dmg_',
-    ownBuff.combat.common_dmg_.add(
-      cmpGE(char.mindscape, 6, boolConditional.ifOn(1))
+    'core_hpSheerForce',
+    ownBuff.initial.sheerForce.add(
+      prod(own.final.hp, constant(dm.core.sheerForce))
     )
   ),
   registerBuff(
-    'team_dmg_',
-    teamBuff.combat.common_dmg_.add(listConditional.map({ val1: 1, val2: 2 }))
+    'core_common_dmg_',
+    ownBuff.combat.common_dmg_.add(
+      prod(missingHp, subscript(char.core, dm.core.common_dmg_), constant(0.02))
+    )
   ),
-  registerBuff('enemy_defRed_', enemyDebuff.common.defRed_.add(numConditional))
+  registerBuff(
+    'ability_crit_dmg_',
+    ownBuff.combat.crit_dmg_.add(
+      cmpGE(
+        sum(
+          team.common.count.withSpecialty('stun'),
+          team.common.count.withSpecialty('support')
+        ),
+        1,
+        cmpEq(missingHp, 50, percent(dm.ability.crit_dmg_))
+      )
+    )
+  ),
+  registerBuff(
+    'm1_basic_ice_resIgn_',
+    ownBuff.combat.resIgn_.ice.addWithDmgType(
+      'basic',
+      cmpGE(char.mindscape, 1, percent(dm.m1.ice_resIgn_))
+    )
+  ),
+  registerBuff(
+    'm1_exSpecial_ice_resIgn_',
+    ownBuff.combat.resIgn_.ice.addWithDmgType(
+      'exSpecial',
+      cmpGE(char.mindscape, 1, percent(dm.m1.ice_resIgn_))
+    )
+  ),
+  registerBuff(
+    'm2_crit_dmg_',
+    ownBuff.combat.crit_dmg_.add(
+      cmpGE(char.mindscape, 2, percent(dm.m2.crit_dmg_))
+    )
+  ),
+  registerBuff(
+    'm4_hp_',
+    ownBuff.combat.hp_.add(
+      cmpGE(char.mindscape, 4, etherVeil.ifOn(percent(dm.m4.hp_)))
+    )
+  ),
+  registerBuff(
+    'm6_sheer_dmg_',
+    ownBuff.combat.sheer_dmg_.add(
+      cmpGE(char.mindscape, 6, erudition.ifOn(percent(dm.m6.sheer_dmg_)))
+    )
+  )
 )
 export default sheet

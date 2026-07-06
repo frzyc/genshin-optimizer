@@ -1,12 +1,17 @@
 // WARNING: Generated file, do not modify
+import AngelInTheShell from './maps/AngelInTheShell'
 import BashfulDemon from './maps/BashfulDemon'
 import BellicoseBlaze from './maps/BellicoseBlaze'
 import BigCylinder from './maps/BigCylinder'
 import BlazingLaurel from './maps/BlazingLaurel'
+import BoisterousEchoes from './maps/BoisterousEchoes'
 import BoxCutter from './maps/BoxCutter'
 import BunnyBand from './maps/BunnyBand'
 import CannonRotor from './maps/CannonRotor'
+import CauldronOfClarity from './maps/CauldronOfClarity'
+import ChiefSidekick from './maps/ChiefSidekick'
 import CinderCobalt from './maps/CinderCobalt'
+import CloudcleaveRadiance from './maps/CloudcleaveRadiance'
 import CordisGermina from './maps/CordisGermina'
 import DeepSeaVisitor from './maps/DeepSeaVisitor'
 import DemaraBatteryMarkII from './maps/DemaraBatteryMarkII'
@@ -16,16 +21,19 @@ import ElectroLipGloss from './maps/ElectroLipGloss'
 import ElegantVanity from './maps/ElegantVanity'
 import FlamemakerShaker from './maps/FlamemakerShaker'
 import FlightOfFancy from './maps/FlightOfFancy'
+import FrostfallSickle from './maps/FrostfallSickle'
 import FusionCompiler from './maps/FusionCompiler'
 import GildedBlossom from './maps/GildedBlossom'
 import GrillOWisp from './maps/GrillOWisp'
 import HailstormShrine from './maps/HailstormShrine'
+import HalfSugarBunny from './maps/HalfSugarBunny'
 import HeartstringNocturne from './maps/HeartstringNocturne'
 import HellfireGears from './maps/HellfireGears'
 import Housekeeper from './maps/Housekeeper'
 import IceJadeTeapot from './maps/IceJadeTeapot'
 import IdentityBase from './maps/IdentityBase'
 import IdentityInflection from './maps/IdentityInflection'
+import JoyauDore from './maps/JoyauDore'
 import KaboomTheCannon from './maps/KaboomTheCannon'
 import KrakensCradle from './maps/KrakensCradle'
 import LunarDecrescent from './maps/LunarDecrescent'
@@ -37,6 +45,7 @@ import MagneticStormCharlie from './maps/MagneticStormCharlie'
 import MarcatoDesire from './maps/MarcatoDesire'
 import Metanukimorphosis from './maps/Metanukimorphosis'
 import MyriadEclipse from './maps/MyriadEclipse'
+import NeonFantasies from './maps/NeonFantasies'
 import OriginalTransmorpher from './maps/OriginalTransmorpher'
 import PeacekeeperSpecialized from './maps/PeacekeeperSpecialized'
 import PracticedPerfection from './maps/PracticedPerfection'
@@ -52,20 +61,25 @@ import ReverbMarkIII from './maps/ReverbMarkIII'
 import RiotSuppressorMarkVI from './maps/RiotSuppressorMarkVI'
 import RoaringFurnace from './maps/RoaringFurnace'
 import RoaringRide from './maps/RoaringRide'
+import SerpentineSeeker from './maps/SerpentineSeeker'
 import SeveredInnocence from './maps/SeveredInnocence'
 import SharpenedStinger from './maps/SharpenedStinger'
 import SixShooter from './maps/SixShooter'
 import SliceOfTime from './maps/SliceOfTime'
+import SolExuvia from './maps/SolExuvia'
 import SpectralGaze from './maps/SpectralGaze'
 import SpringEmbrace from './maps/SpringEmbrace'
 import StarlightEngine from './maps/StarlightEngine'
 import StarlightEngineReplica from './maps/StarlightEngineReplica'
+import StarlightRiderFaceplate from './maps/StarlightRiderFaceplate'
 import SteamOven from './maps/SteamOven'
 import SteelCushion from './maps/SteelCushion'
 import StreetSuperstar from './maps/StreetSuperstar'
 import TheBrimstone from './maps/TheBrimstone'
 import TheRestrained from './maps/TheRestrained'
+import TheSimmeringPot from './maps/TheSimmeringPot'
 import TheVault from './maps/TheVault'
+import Thoughtbop from './maps/Thoughtbop'
 import Timeweaver from './maps/Timeweaver'
 import TremorTrigramVessel from './maps/TremorTrigramVessel'
 import TusksOfFury from './maps/TusksOfFury'
@@ -80,14 +94,19 @@ import YesterdayCalls from './maps/YesterdayCalls'
 import ZanshinHerbCase from './maps/ZanshinHerbCase'
 
 const maps = {
+  AngelInTheShell,
   BashfulDemon,
   BellicoseBlaze,
   BigCylinder,
   BlazingLaurel,
+  BoisterousEchoes,
   BoxCutter,
   BunnyBand,
   CannonRotor,
+  CauldronOfClarity,
+  ChiefSidekick,
   CinderCobalt,
+  CloudcleaveRadiance,
   CordisGermina,
   DeepSeaVisitor,
   DemaraBatteryMarkII,
@@ -97,16 +116,19 @@ const maps = {
   ElegantVanity,
   FlamemakerShaker,
   FlightOfFancy,
+  FrostfallSickle,
   FusionCompiler,
   GildedBlossom,
   GrillOWisp,
   HailstormShrine,
+  HalfSugarBunny,
   HeartstringNocturne,
   HellfireGears,
   Housekeeper,
   IceJadeTeapot,
   IdentityBase,
   IdentityInflection,
+  JoyauDore,
   KaboomTheCannon,
   KrakensCradle,
   LunarDecrescent,
@@ -118,6 +140,7 @@ const maps = {
   MarcatoDesire,
   Metanukimorphosis,
   MyriadEclipse,
+  NeonFantasies,
   OriginalTransmorpher,
   PeacekeeperSpecialized,
   PracticedPerfection,
@@ -133,20 +156,25 @@ const maps = {
   RiotSuppressorMarkVI,
   RoaringFurnace,
   RoaringRide,
+  SerpentineSeeker,
   SeveredInnocence,
   SharpenedStinger,
   SixShooter,
   SliceOfTime,
+  SolExuvia,
   SpectralGaze,
   SpringEmbrace,
   StarlightEngine,
   StarlightEngineReplica,
+  StarlightRiderFaceplate,
   SteamOven,
   SteelCushion,
   StreetSuperstar,
   TheBrimstone,
   TheRestrained,
+  TheSimmeringPot,
   TheVault,
+  Thoughtbop,
   Timeweaver,
   TremorTrigramVessel,
   TusksOfFury,

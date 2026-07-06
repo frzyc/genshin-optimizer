@@ -1,4 +1,3 @@
-'use client'
 // use client due to hydration difference between client rendering and server in translation
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
@@ -10,7 +9,6 @@ import {
   InfoTooltip,
   InfoTooltipInline,
   ModalWrapper,
-  NextImage,
   SqBadge,
   StarsDisplay,
 } from '@genshin-optimizer/common/ui'
@@ -80,6 +78,9 @@ type Data = {
   effFilter?: Set<SubstatKey>
   extraButtons?: JSX.Element
   excluded?: boolean
+  hideSubstatValues?: boolean
+  hideLocation?: boolean
+  buildsBadgeLabel?: ReactNode
 }
 const allSubstatFilter = new Set(allSubstatKeys)
 
@@ -100,6 +101,9 @@ export function ArtifactCardObj({
   effFilter = allSubstatFilter,
   extraButtons,
   excluded = false,
+  hideSubstatValues = false,
+  hideLocation = false,
+  buildsBadgeLabel,
 }: {
   artifact: ICachedArtifact
 } & Data) {
@@ -313,7 +317,7 @@ export function ArtifactCardObj({
               sx={{ height: '100%', position: 'absolute', right: 0, top: 0 }}
             >
               <Box
-                component={NextImage ? NextImage : 'img'}
+                component="img"
                 alt="Artifact Piece Image"
                 src={artifactAsset(setKey, slotKey)}
                 sx={{
@@ -345,6 +349,7 @@ export function ArtifactCardObj({
                     stat={stat}
                     effFilter={effFilter}
                     rarity={rarity}
+                    hideValue={hideSubstatValues}
                   />
                 )
             )}
@@ -357,31 +362,34 @@ export function ArtifactCardObj({
                     effFilter={effFilter}
                     rarity={rarity}
                     isActiveStat={false}
+                    hideValue={hideSubstatValues}
                   />
                 )
             )}
-            <Typography
-              variant="caption"
-              sx={{ display: 'flex', gap: 1, alignItems: 'center' }}
-            >
-              <ColorText color="secondary" sx={{ flexGrow: 1 }}>
-                {t('artifact:editor.curSubEff')}
-              </ColorText>
-              <PercentBadge
-                value={currentEfficiency}
-                max={9}
-                valid={artifactValid}
-              />
-              {currentEfficiency !== currentEfficiency_ && <span>/</span>}
-              {currentEfficiency !== currentEfficiency_ && (
+            {!hideSubstatValues && (
+              <Typography
+                variant="caption"
+                sx={{ display: 'flex', gap: 1, alignItems: 'center' }}
+              >
+                <ColorText color="secondary" sx={{ flexGrow: 1 }}>
+                  {t('artifact:editor.curSubEff')}
+                </ColorText>
                 <PercentBadge
-                  value={currentEfficiency_}
+                  value={currentEfficiency}
                   max={9}
                   valid={artifactValid}
                 />
-              )}
-            </Typography>
-            {currentEfficiency !== maxEfficiency && (
+                {currentEfficiency !== currentEfficiency_ && <span>/</span>}
+                {currentEfficiency !== currentEfficiency_ && (
+                  <PercentBadge
+                    value={currentEfficiency_}
+                    max={9}
+                    valid={artifactValid}
+                  />
+                )}
+              </Typography>
+            )}
+            {!hideSubstatValues && currentEfficiency !== maxEfficiency && (
               <Typography variant="caption" sx={{ display: 'flex', gap: 1 }}>
                 <ColorText color="secondary" sx={{ flexGrow: 1 }}>
                   {t('artifact:editor.maxSubEff')}
@@ -426,7 +434,9 @@ export function ArtifactCardObj({
                 color={builds.length ? 'success' : 'secondary'}
                 onClick={builds.length ? onShowUsage : undefined}
               >
-                {t('builds', { count: builds.length })}
+                {!builds.length && buildsBadgeLabel
+                  ? buildsBadgeLabel
+                  : t('builds', { count: builds.length })}
               </SqBadge>
             </Typography>
           </CardContent>
@@ -441,14 +451,15 @@ export function ArtifactCardObj({
           }}
         >
           <Box sx={{ flexGrow: 1 }}>
-            {setLocation ? (
-              <LocationAutocomplete
-                location={location}
-                setLocation={setLocation}
-              />
-            ) : (
-              <LocationName location={location} />
-            )}
+            {!hideLocation &&
+              (setLocation ? (
+                <LocationAutocomplete
+                  location={location}
+                  setLocation={setLocation}
+                />
+              ) : (
+                <LocationName location={location} />
+              ))}
           </Box>
           <Box
             display="flex"
@@ -497,11 +508,13 @@ function SubstatDisplay({
   effFilter,
   rarity,
   isActiveStat = true,
+  hideValue = false,
 }: {
   stat: ICachedSubstat
   effFilter: Set<SubstatKey>
   rarity: ArtifactRarity
   isActiveStat?: boolean
+  hideValue?: boolean
 }) {
   const { t: tk } = useTranslation(['statKey_gen', 'ui'])
   const numRolls = stat.rolls?.length ?? 0
@@ -545,30 +558,40 @@ function SubstatDisplay({
     isActiveStat: boolean,
     rollColor: string
   ) => {
+    if (hideValue) return undefined
     if (numRolls && isActiveStat) return `${rollColor}.main`
     if (!isActiveStat) return 'secondary'
     return 'error.main'
   }
+  const statLabelSuffix = hideValue && stat.key.endsWith('_') ? '%' : ''
   return (
     <Box display="flex" gap={1} alignContent="center">
       <Typography
         sx={{ flexGrow: 1 }}
-        color={getSubstatColor(numRolls, isActiveStat, rollColor)}
+        color={
+          hideValue
+            ? 'roll1.main'
+            : getSubstatColor(numRolls, isActiveStat, rollColor)
+        }
         component="span"
       >
         <StatIcon statKey={stat.key} iconProps={iconInlineProps} />{' '}
         {tk(`statKey_gen:${stat.key}`)}
-        {`+${artDisplayValue(stat.value, getUnitStr(stat.key))}${unit}`}
+        {statLabelSuffix}
+        {!hideValue &&
+          `+${artDisplayValue(stat.value, getUnitStr(stat.key))}${unit}`}
         <Typography sx={{ ml: 0.5 }} component="span">
           {!isActiveStat && tk(`ui:${'notActive'}`)}
         </Typography>
       </Typography>
-      {progresses}
-      <Typography
-        sx={{ opacity: effOpacity, minWidth: 40, textAlign: 'right' }}
-      >
-        {(efficiency * 100).toFixed()}%
-      </Typography>
+      {!hideValue && progresses}
+      {!hideValue && (
+        <Typography
+          sx={{ opacity: effOpacity, minWidth: 40, textAlign: 'right' }}
+        >
+          {(efficiency * 100).toFixed()}%
+        </Typography>
+      )}
     </Box>
   )
 }

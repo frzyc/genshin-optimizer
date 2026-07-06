@@ -1,0 +1,29 @@
+{
+  "name": "Meleğin Yedi Fermanı",
+  "description": {
+    "0": "Göklerin ışığı kadar ihtişamlı altın bir kutu. Efsaneye göre bir zamanlar Ebedi Saray'ın kutsal bir elçisine aitmiş."
+  },
+  "passiveName": "Son Varisin Tacı",
+  "passiveDescription": {
+    "0": {
+      "0": "Saldırı <cryo>%12</cryo> artar. Kuşanan karakter bir Kalkan oluşturduktan sonra 20 saniyeliğine \"Öncünün Işığı\" etkisini kazanır: Aktif grup üyesinin Hasarı, kuşanan karakterin sahip olduğu her 1.000 Saldırı başına <cryo>%10</cryo> artar, bu artış en fazla <cryo>%26</cryo> olabilir. Ayrıca kuşanan karakter bir Kalkan oluşturduğunda \"Rehberin Memnuniyeti\" etkisini kazanır: Kuşanan karakter <cryo>14</cryo> Element Enerjisi yeniler. Bu etki 14 saniyede bir tetiklenebilir ve savaş dışında herhangi bir tür sandık açıldığında da tetiklenebilir. Kuşanan karakter bu etkiyi alanda olmasa bile tetikleyebilir.",
+      "1": "Cadılık: Saklı Ayin: Gruptaki Cadılık karakterin alanda olmadığında o da Öncünün Işığının sağladığı Hasar Artışının %50'sini kazanır."
+    },
+    "1": {
+      "0": "Saldırı <cryo>%15</cryo> artar. Kuşanan karakter bir Kalkan oluşturduktan sonra 20 saniyeliğine \"Öncünün Işığı\" etkisini kazanır: Aktif grup üyesinin Hasarı, kuşanan karakterin sahip olduğu her 1.000 Saldırı başına <cryo>%13</cryo> artar, bu artış en fazla <cryo>%34</cryo> olabilir. Ayrıca kuşanan karakter bir Kalkan oluşturduğunda \"Rehberin Memnuniyeti\" etkisini kazanır: Kuşanan karakter <cryo>15</cryo> Element Enerjisi yeniler. Bu etki 14 saniyede bir tetiklenebilir ve savaş dışında herhangi bir tür sandık açıldığında da tetiklenebilir. Kuşanan karakter bu etkiyi alanda olmasa bile tetikleyebilir.",
+      "1": "Cadılık: Saklı Ayin: Gruptaki Cadılık karakterin alanda olmadığında o da Öncünün Işığının sağladığı Hasar Artışının %50'sini kazanır."
+    },
+    "2": {
+      "0": "Saldırı <cryo>%18</cryo> artar. Kuşanan karakter bir Kalkan oluşturduktan sonra 20 saniyeliğine \"Öncünün Işığı\" etkisini kazanır: Aktif grup üyesinin Hasarı, kuşanan karakterin sahip olduğu her 1.000 Saldırı başına <cryo>%16</cryo> artar, bu artış en fazla <cryo>%42</cryo> olabilir. Ayrıca kuşanan karakter bir Kalkan oluşturduğunda \"Rehberin Memnuniyeti\" etkisini kazanır: Kuşanan karakter <cryo>16</cryo> Element Enerjisi yeniler. Bu etki 14 saniyede bir tetiklenebilir ve savaş dışında herhangi bir tür sandık açıldığında da tetiklenebilir. Kuşanan karakter bu etkiyi alanda olmasa bile tetikleyebilir.",
+      "1": "Cadılık: Saklı Ayin: Gruptaki Cadılık karakterin alanda olmadığında o da Öncünün Işığının sağladığı Hasar Artışının %50'sini kazanır."
+    },
+    "3": {
+      "0": "Saldırı <cryo>%21</cryo> artar. Kuşanan karakter bir Kalkan oluşturduktan sonra 20 saniyeliğine \"Öncünün Işığı\" etkisini kazanır: Aktif grup üyesinin Hasarı, kuşanan karakterin sahip olduğu her 1.000 Saldırı başına <cryo>%19</cryo> artar, bu artış en fazla <cryo>%50</cryo> olabilir. Ayrıca kuşanan karakter bir Kalkan oluşturduğunda \"Rehberin Memnuniyeti\" etkisini kazanır: Kuşanan karakter <cryo>17</cryo> Element Enerjisi yeniler. Bu etki 14 saniyede bir tetiklenebilir ve savaş dışında herhangi bir tür sandık açıldığında da tetiklenebilir. Kuşanan karakter bu etkiyi alanda olmasa bile tetikleyebilir.",
+      "1": "Cadılık: Saklı Ayin: Gruptaki Cadılık karakterin alanda olmadığında o da Öncünün Işığının sağladığı Hasar Artışının %50'sini kazanır."
+    },
+    "4": {
+      "0": "Saldırı <cryo>%24</cryo> artar. Kuşanan karakter bir Kalkan oluşturduktan sonra 20 saniyeliğine \"Öncünün Işığı\" etkisini kazanır: Aktif grup üyesinin Hasarı, kuşanan karakterin sahip olduğu her 1.000 Saldırı başına <cryo>%22</cryo> artar, bu artış en fazla <cryo>%58</cryo> olabilir. Ayrıca kuşanan karakter bir Kalkan oluşturduğunda \"Rehberin Memnuniyeti\" etkisini kazanır: Kuşanan karakter <cryo>18</cryo> Element Enerjisi yeniler. Bu etki 14 saniyede bir tetiklenebilir ve savaş dışında herhangi bir tür sandık açıldığında da tetiklenebilir. Kuşanan karakter bu etkiyi alanda olmasa bile tetikleyebilir.",
+      "1": "Cadılık: Saklı Ayin: Gruptaki Cadılık karakterin alanda olmadığında o da Öncünün Işığının sağladığı Hasar Artışının %50'sini kazanır."
+    }
+  }
+}

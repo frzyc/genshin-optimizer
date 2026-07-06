@@ -1,0 +1,29 @@
+{
+  "name": "Kudretli Kurdun Destanı",
+  "description": {
+    "0": "Efsaneye göre bu büyük kılıç, şövalyeliğe yükselmesinden önce Poyraz adını miras almış olan Ravenwood'un elleriyle dövülmüş."
+  },
+  "passiveName": "Yılmaz Cesaret",
+  "passiveDescription": {
+    "0": {
+      "0": "Saldırı Hızı %10 artar. Kuşanan karakter Normal Saldırılarla düşmanlara her vurduğunda, Element Becerisini her kullandığında veya Yüklü Saldırıya her başladığında sırayla 1/2/2 kademe Dört Rüzgarın İlahisi kazanır: 4 saniyeliğine verilen Hasar <cryo>%7,5</cryo> artar. Bu etki 0,01 saniyede bir tetiklenebilir ve 4 kademeye kadar birikebilir.",
+      "1": "Ayrıca grupta \"Cadılık: Saklı Ayin\" etkisi varken her Dört Rüzgarın İlahisi kademesi, kuşanan karakterin Kritik Hasarını <cryo>%7,5</cryo> artırır."
+    },
+    "1": {
+      "0": "Saldırı Hızı %10 artar. Kuşanan karakter Normal Saldırılarla düşmanlara her vurduğunda, Element Becerisini her kullandığında veya Yüklü Saldırıya her başladığında sırayla 1/2/2 kademe Dört Rüzgarın İlahisi kazanır: 4 saniyeliğine verilen Hasar <cryo>%9,5</cryo> artar. Bu etki 0,01 saniyede bir tetiklenebilir ve 4 kademeye kadar birikebilir.",
+      "1": "Ayrıca grupta \"Cadılık: Saklı Ayin\" etkisi varken her Dört Rüzgarın İlahisi kademesi, kuşanan karakterin Kritik Hasarını <cryo>%9,5</cryo> artırır."
+    },
+    "2": {
+      "0": "Saldırı Hızı %10 artar. Kuşanan karakter Normal Saldırılarla düşmanlara her vurduğunda, Element Becerisini her kullandığında veya Yüklü Saldırıya her başladığında sırayla 1/2/2 kademe Dört Rüzgarın İlahisi kazanır: 4 saniyeliğine verilen Hasar <cryo>%11,5</cryo> artar. Bu etki 0,01 saniyede bir tetiklenebilir ve 4 kademeye kadar birikebilir.",
+      "1": "Ayrıca grupta \"Cadılık: Saklı Ayin\" etkisi varken her Dört Rüzgarın İlahisi kademesi, kuşanan karakterin Kritik Hasarını <cryo>%11,5</cryo> artırır."
+    },
+    "3": {
+      "0": "Saldırı Hızı %10 artar. Kuşanan karakter Normal Saldırılarla düşmanlara her vurduğunda, Element Becerisini her kullandığında veya Yüklü Saldırıya her başladığında sırayla 1/2/2 kademe Dört Rüzgarın İlahisi kazanır: 4 saniyeliğine verilen Hasar <cryo>%13,5</cryo> artar. Bu etki 0,01 saniyede bir tetiklenebilir ve 4 kademeye kadar birikebilir.",
+      "1": "Ayrıca grupta \"Cadılık: Saklı Ayin\" etkisi varken her Dört Rüzgarın İlahisi kademesi, kuşanan karakterin Kritik Hasarını <cryo>%13,5</cryo> artırır."
+    },
+    "4": {
+      "0": "Saldırı Hızı %10 artar. Kuşanan karakter Normal Saldırılarla düşmanlara her vurduğunda, Element Becerisini her kullandığında veya Yüklü Saldırıya her başladığında sırayla 1/2/2 kademe Dört Rüzgarın İlahisi kazanır: 4 saniyeliğine verilen Hasar <cryo>%15,5</cryo> artar. Bu etki 0,01 saniyede bir tetiklenebilir ve 4 kademeye kadar birikebilir.",
+      "1": "Ayrıca grupta \"Cadılık: Saklı Ayin\" etkisi varken her Dört Rüzgarın İlahisi kademesi, kuşanan karakterin Kritik Hasarını <cryo>%15,5</cryo> artırır."
+    }
+  }
+}

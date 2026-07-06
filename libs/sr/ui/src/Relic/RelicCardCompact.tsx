@@ -3,7 +3,6 @@ import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
 import {
   CardThemed,
   ConditionalWrapper,
-  NextImage,
   SqBadge,
 } from '@genshin-optimizer/common/ui'
 import { getUnitStr, toPercent } from '@genshin-optimizer/common/util'
@@ -111,7 +110,7 @@ export function RelicCardCompactObj({
             }}
           >
             <Box
-              component={NextImage ? NextImage : 'img'}
+              component="img"
               src={relicAsset(setKey, slotKey)}
               sx={{
                 m: -1,
@@ -144,7 +143,7 @@ export function RelicCardCompactObj({
                 >
                   {location ? (
                     <Box
-                      component={NextImage ? NextImage : 'img'}
+                      component="img"
                       sx={{
                         borderRadius: '50%',
                         width: '2em',

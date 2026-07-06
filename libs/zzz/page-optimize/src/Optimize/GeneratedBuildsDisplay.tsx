@@ -1,28 +1,40 @@
 import { useDataManagerBase } from '@genshin-optimizer/common/database-ui'
 import { CardThemed } from '@genshin-optimizer/common/ui'
-import { valueString } from '@genshin-optimizer/common/util'
+import type { Calculator } from '@genshin-optimizer/game-opt/engine'
+import {
+  CompareCalcContext,
+  CompareValueDisplay,
+} from '@genshin-optimizer/game-opt/sheet-ui'
 import type { GeneratedBuild } from '@genshin-optimizer/zzz/db'
+import { getTeamFrame0 } from '@genshin-optimizer/zzz/db'
 import {
   OptConfigContext,
-  useCharOpt,
   useCharacterContext,
   useDatabaseContext,
+  useTeam,
 } from '@genshin-optimizer/zzz/db-ui'
 import {
   CharCalcProvider,
   CharStatsDisplay,
+  optTargetShortValueLabel,
+  useEquippedOptTargetValue,
+  useZzzCalcContext,
 } from '@genshin-optimizer/zzz/formula-ui'
 import { EquipGrid } from '@genshin-optimizer/zzz/ui'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
+import ExpandLessIcon from '@mui/icons-material/ExpandLess'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import {
   Box,
   Button,
   CardContent,
+  Collapse,
   Grid,
+  IconButton,
   Stack,
   Typography,
 } from '@mui/material'
-import { memo, useCallback, useContext } from 'react'
+import { memo, useCallback, useContext, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 function useGeneratedBuildList(listId: string) {
@@ -38,6 +50,11 @@ const GeneratedBuildsDisplay = memo(function GeneratedBuildsDisplay() {
   const generatedBuildList = useGeneratedBuildList(
     optConfig.generatedBuildListId ?? ''
   )
+  const character = useCharacterContext()!
+  const team = useTeam(character.key)!
+  const baseValue = useEquippedOptTargetValue()
+  const { tag: target } = getTeamFrame0(team)
+  const valueLabel = useMemo(() => optTargetShortValueLabel(target), [target])
   return (
     <Stack spacing={1}>
       {generatedBuildList?.builds.map((build, i) => (
@@ -47,6 +64,8 @@ const GeneratedBuildsDisplay = memo(function GeneratedBuildsDisplay() {
           )}`}
           build={build}
           index={i}
+          baseValue={baseValue}
+          valueLabel={valueLabel}
         />
       ))}
     </Stack>
@@ -83,53 +102,104 @@ function EquipBtn({
   )
 }
 
+function BuildValueCompare({
+  value,
+  baseValue,
+  label,
+}: {
+  value: number
+  baseValue: number | undefined
+  label: string
+}) {
+  return (
+    <>
+      {label && `${label} `}
+      <CompareValueDisplay
+        calcValue={value}
+        compareCalcValue={baseValue}
+        unit=""
+      />
+    </>
+  )
+}
+
 function GeneratedBuildDisplay({
   build,
   index,
+  baseValue,
+  valueLabel,
 }: {
   build: GeneratedBuild
   index: number
+  baseValue: number | undefined
+  valueLabel: string
 }) {
   const character = useCharacterContext()!
-  const charOpt = useCharOpt(character.key)!
+  const team = useTeam(character.key)!
+  const baseCalc = useZzzCalcContext()
+  const [expanded, setExpanded] = useState(false)
+  const toggleExpanded = useCallback(() => setExpanded((v) => !v), [])
   return (
-    <CharCalcProvider
-      character={character}
-      charOpt={charOpt}
-      discIds={build.discIds}
-      wengineId={build.wengineId}
-    >
-      <CardThemed>
-        <CardContent>
-          <Stack spacing={1}>
-            <Box
-              sx={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                gap: 1,
-              }}
-            >
-              <Typography>
-                Build {index + 1}: {valueString(build.value)}
+    <CardThemed>
+      <CardContent>
+        <Stack spacing={1}>
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              gap: 1,
+              alignItems: 'center',
+            }}
+          >
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+              <IconButton
+                size="small"
+                aria-label={expanded ? 'Collapse build' : 'Expand build'}
+                onClick={toggleExpanded}
+              >
+                {expanded ? (
+                  <ExpandLessIcon fontSize="small" />
+                ) : (
+                  <ExpandMoreIcon fontSize="small" />
+                )}
+              </IconButton>
+              <Typography component="span">
+                Build {index + 1}:{' '}
+                <BuildValueCompare
+                  value={build.value}
+                  baseValue={baseValue}
+                  label={valueLabel}
+                />
               </Typography>
-              <EquipBtn build={build} />
             </Box>
-            <Box>
-              <Grid container spacing={1}>
-                <Grid item xs={6} md={4} lg={3} xl={3}>
-                  <CharStatsDisplay />
-                </Grid>
-                <Grid item xs={6} md={8} lg={9} xl={9}>
-                  <EquipGrid
-                    discIds={build.discIds}
-                    wengineId={build.wengineId}
-                  />
-                </Grid>
-              </Grid>
-            </Box>
-          </Stack>
-        </CardContent>
-      </CardThemed>
-    </CharCalcProvider>
+            <EquipBtn build={build} />
+          </Box>
+          <Collapse in={expanded} unmountOnExit>
+            <CharCalcProvider
+              character={character}
+              team={team}
+              discIds={build.discIds}
+              wengineId={build.wengineId}
+            >
+              <CompareCalcContext.Provider value={baseCalc as Calculator}>
+                <Box>
+                  <Grid container spacing={1}>
+                    <Grid item xs={6} md={4} lg={3} xl={3}>
+                      <CharStatsDisplay />
+                    </Grid>
+                    <Grid item xs={6} md={8} lg={9} xl={9}>
+                      <EquipGrid
+                        discIds={build.discIds}
+                        wengineId={build.wengineId}
+                      />
+                    </Grid>
+                  </Grid>
+                </Box>
+              </CompareCalcContext.Provider>
+            </CharCalcProvider>
+          </Collapse>
+        </Stack>
+      </CardContent>
+    </CardThemed>
   )
 }

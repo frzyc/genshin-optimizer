@@ -118,28 +118,30 @@ const a1AfterOverload_electro_enemyRes_ = { ...a1AfterOverload_pyro_enemyRes_ }
 const [condA4AfterBallPath, condA4AfterBall] = cond(key, 'a4AfterBall')
 // TODO: Check if this is premod or total.
 // Should be premod since it's a stat that shows on the char screen.
-const a4AfterBall_atk_ = greaterEq(
+const a4AfterBall_atk_opt = greaterEq(
   input.asc,
   4,
   equal(
     condA4AfterBall,
     'on',
-    equal(
-      sum(
-        equal(target.charEle, 'pyro', 1),
-        equal(target.charEle, 'electro', 1)
+    min(
+      prod(
+        percent(dm.passive2.atk_),
+        infoMut({ ...input.premod.hp }, { pivot: true }),
+        1 / 1000
       ),
-      1,
-      min(
-        prod(
-          percent(dm.passive2.atk_),
-          infoMut({ ...input.premod.hp }, { pivot: true }),
-          1 / 1000
-        ),
-        percent(dm.passive2.max_atk_)
-      )
+      percent(dm.passive2.max_atk_)
     )
-  )
+  ),
+  {
+    path: 'atk_',
+    isTeamBuff: true,
+  }
+)
+const a4AfterBall_atk_ = equal(
+  sum(equal(target.charEle, 'pyro', 1), equal(target.charEle, 'electro', 1)),
+  1,
+  a4AfterBall_atk_opt
 )
 
 const c6AfterHealStacksArr = range(1, dm.constellation6.maxStacks)
@@ -175,14 +177,16 @@ const dmgFormulas = {
     holdDmg: dmgNode('atk', dm.skill.holdDmg, 'skill'),
     ballDmg: dmgNode('atk', dm.skill.ballDmg, 'skill'),
     heal: healNodeTalent('hp', dm.skill.healBase, dm.skill.healFlat, 'skill'),
-    bladeDmg: dmgNode('atk', dm.skill.bladeDmg, 'skill'),
+    bladeDmg: dmgNode('atk', dm.skill.bladeDmg, 'skill', {
+      hit: { reaction: constant('') },
+    }),
   },
   burst: {
     grenadeDmg: dmgNode('atk', dm.burst.grenadeDmg, 'burst'),
     shellDmg: dmgNode('atk', dm.burst.shellDmg, 'burst'),
   },
   passive2: {
-    a4AfterBall_atk_,
+    a4AfterBall_atk_: a4AfterBall_atk_opt,
   },
   constellation2: {
     dmg: greaterEq(

@@ -33,6 +33,21 @@ const anomalyDocs: Document[] = [
   {
     type: 'conditional',
     conditional: {
+      label: 'Windswept',
+      metadata: anomalyMeta.conditionals.windswept,
+      fields: [
+        {
+          title: (
+            <TagDisplay tag={anomalyMeta.buffs.windswept_direct_dmg_.tag} />
+          ),
+          fieldRef: anomalyMeta.buffs.windswept_direct_dmg_.tag,
+        },
+      ],
+    },
+  },
+  {
+    type: 'conditional',
+    conditional: {
       label: 'Anomaly Time Passed',
       metadata: anomalyMeta.conditionals.anomTimePassed,
     },

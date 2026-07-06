@@ -10,18 +10,20 @@ import type { CharacterKey, SkillKey } from '@genshin-optimizer/zzz/consts'
 import { allSkillKeys } from '@genshin-optimizer/zzz/consts'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { formulas, own } from '@genshin-optimizer/zzz/formula'
-import { mappedStats } from '@genshin-optimizer/zzz/stats'
-import { TagDisplay } from '../components'
-import { st, trans } from '../util'
+import { getCharStat, mappedStats } from '@genshin-optimizer/zzz/stats'
+import { TagFieldTitle } from '../TagFieldTitle'
+import { groupFormulaMetaToFields } from '../bundledFormulaFields'
+import { formulaMatchesAbility } from '../formulaFieldUtil'
+import { trans } from '../util'
 import type { CharUISheet } from './consts'
 
-type AddlDocumentsPerSkillAbility = Partial<
-  Record<SkillKey, Partial<Record<string, Document[]>>>
->
 type AddlDocuments = {
-  perSkillAbility?: AddlDocumentsPerSkillAbility
+  perSkillAbility?: Partial<
+    Record<SkillKey, Partial<Record<string, Document[]>>>
+  >
   core?: Document[]
   ability?: Document[]
+  potential?: Document[]
   m1?: Document[]
   m2?: Document[]
   m3?: Document[]
@@ -35,6 +37,8 @@ export function createBaseSheet(
   key: CharacterKey,
   addlDocuments: AddlDocuments = {}
 ): CharUISheet {
+  const hasPotential = getCharStat(key).potentialParams.length > 0
+
   return {
     ...createSkillsSheets(key, addlDocuments?.perSkillAbility),
     core: createCoreAndAbilitySheet(
@@ -42,6 +46,9 @@ export function createBaseSheet(
       addlDocuments?.core,
       addlDocuments?.ability
     ),
+    ...(hasPotential
+      ? { potential: createPotentialSheet(key, addlDocuments?.potential) }
+      : {}),
     m1: createMindscapeSheet(key, 1, addlDocuments?.m1),
     m2: createMindscapeSheet(key, 2, addlDocuments?.m2),
     m3: createMindscapeSheet(key, 3, addlDocuments?.m3),
@@ -54,17 +61,17 @@ export function createBaseSheet(
 // Creates proper field with automatic title for a given buff
 export function fieldForBuff(buff: IFormulaData<Tag>) {
   return {
-    title: <TagDisplay tag={buff.tag} preventRecursion />,
+    title: <TagFieldTitle tag={buff.tag} preventRecursion />,
     fieldRef: buff.tag,
   }
 }
 
 function createSkillsSheets(
   charKey: CharacterKey,
-  addlDocumentsPerSkillAbility?: AddlDocumentsPerSkillAbility
+  addlDocumentsPerSkillAbility?: AddlDocuments['perSkillAbility']
 ) {
   const dm = mappedStats.char[charKey]
-  const form = formulas[charKey]
+  const form = formulas[charKey] as Record<string, IFormulaData<Tag>>
   const [chg, _ch] = trans('char', charKey)
   return objKeyMap(
     allSkillKeys,
@@ -82,28 +89,18 @@ function createSkillsSheets(
         },
         {
           type: 'fields',
-          fields: Object.values(form)
-            .filter((f: any) => f.name.split('_')[0] === ability)
-            .map((f: any) => ({
-              title: abilityFormulaNameToTranslated(charKey, skill, f.name), // TODO: Translate
-              fieldRef: f.tag,
-            })),
+          fields: groupFormulaMetaToFields(
+            Object.values(form).filter((f) =>
+              formulaMatchesAbility(f, ability)
+            ),
+            charKey,
+            skill
+          ),
         },
         ...(addlDocumentsPerSkillAbility?.[skill]?.[ability] ?? []),
       ]),
     })
   )
-}
-
-function abilityFormulaNameToTranslated(
-  charKey: CharacterKey,
-  skill: SkillKey,
-  abilityFormulaName: string
-) {
-  const [ability, hitNumber, type] = abilityFormulaName.split('_')
-  return st(type, {
-    val: `$t(char_${charKey}_gen:${skill}.${ability}.params.${hitNumber})`,
-  })
 }
 
 function createCoreAndAbilitySheet(
@@ -162,6 +159,28 @@ function createMindscapeSheet(
         ),
       },
       ...addlDocuments,
+    ],
+  }
+}
+
+function createPotentialSheet(
+  charKey: CharacterKey,
+  addlPotentialDocuments: Document[] = []
+): UISheetElement {
+  const [chg, _ch] = trans('char', charKey)
+  return {
+    title: 'potential',
+    documents: [
+      {
+        type: 'text',
+        header: {
+          icon: <ImgIcon src={commonDefIcon('coreFlat')} size={1.5} />,
+          text: chg(`potential.name`),
+        },
+        text: (calc) =>
+          chg(`potential.desc.${calc.compute(own.char.potential).val}`),
+      },
+      ...addlPotentialDocuments,
     ],
   }
 }

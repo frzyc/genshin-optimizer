@@ -4,6 +4,7 @@ import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { absorbableEle } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
+  constant,
   equal,
   equalStr,
   greaterEq,
@@ -129,7 +130,9 @@ const dmgFormulas = {
   plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     thrustDmg: dmgNode('atk', dm.skill.thrustDmg, 'skill'),
-    bladeDmg: dmgNode('atk', dm.skill.bladeDmg, 'skill'),
+    bladeDmg: dmgNode('atk', dm.skill.bladeDmg, 'skill', {
+      hit: { reaction: constant('') },
+    }),
     hpRegen: healNode('hp', percent(dm.skill.hpRegen), 0),
     hpCost: prod(percent(dm.skill.hpCost), input.total.hp),
   },

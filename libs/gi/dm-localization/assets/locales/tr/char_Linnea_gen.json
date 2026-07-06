@@ -1,0 +1,182 @@
+{
+  "name": "Linnea",
+  "title": "Mucizelerin Kehaneti",
+  "description": "Nod-Krai Maceracılar Loncasına danışmanlık yapan bir doğa bilimci.",
+  "constellationName": "Yalıçapkını",
+  "auto": {
+    "name": "Yakalama Protokolü",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 3 ok atar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Daha isabetli ve daha yüksek Hasar veren bir <strong>Hedefli Atış</strong> yapar.",
+        "2": "Nişan alırken okun ucunda taş kristaller toplanır. Tam yüklü bu kristal ok <geo>Toprak Hasarı</geo> verir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken yaylım ok atışı yapar ve dalışa geçerek yere vurur. Yere vurduğunda Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "Hedefli Atış",
+      "4": "Tam Yüklü Hedefli Atış",
+      "5": "Havadan Saldırı Hasarı",
+      "6": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Karşı Hamle: Lumi'nin Savaş Narası!",
+    "description": {
+      "0": "Lumi ile maceraya atıl! Beceriye dokunma şekline göre Lumi farklı formlarda saldırır.",
+      "1": "<br/>",
+      "2": "<strong>Dokun</strong>",
+      "3": "Lumi, <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Süper Güç Formunda</tooltip></strong> hücuma kalkarak yakındaki düşmanlara sürekli olarak saldırır ve <geo>Toprak Alan Hasarı</geo> verir. Yakınlarda Ay Akıntısı varsa Lumi aynı zamanda yakındaki düşmanlara <geo>Toprak Alan Hasarı</geo> verir ve bu Hasar, Ay Kristalleşmesi Tepkimesi Hasarı olarak kabul edilir.",
+      "4": "<br/>",
+      "5": "<strong>Art Arda Dokun</strong>",
+      "6": "Neler yapabildiğimizi gösterme zamanı! Element Becerisini kullandıktan sonra Element Becerisine veya Normal Saldırısına art arda Dokunulduğunda Linnea, Lumi'yi parlak mücevherlerle besler. Karnı doyan Lumi, <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Mutlak Güç Formunda</tooltip></strong> hücuma kalkarak Ay Kristalleşmesi Tepkimesi Hasarı olarak kabul edilen ekstra güçlü bir <geo>Toprak Alan Hasarı</geo> verir ve ardından <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Standart Güç Formuna</tooltip></strong> geçer.",
+      "7": "Ayrıca Element Becerisine dokunmak, Linnea'nın müdahaleye karşı direncini artırır.",
+      "8": "<br/>",
+      "9": "<i>\"Sıra sende Lumi!\"</i>"
+    },
+    "skillParams": {
+      "0": "Lumi Bam Bam Pataklama Hasarı",
+      "1": "Lumi Gümbürdeten Topuz Hasarı",
+      "2": "Lumi Milyon Tonluk Darbe Hasarı",
+      "3": "Lumi Süresi",
+      "4": "BS",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Not: Ekstrem Koşullarda Hayatta Kalma Rehberi",
+    "description": {
+      "0": "Usta maceracıların bile iyice dinlenmesi gerekir! Linnea, Lumi'yi <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Süper Güç Formunda</tooltip></strong> saldırması için çağırır. Lumi ayrıca kısa bir süreliğine Linnea'nın Savunmasına bağlı olarak yakındaki aktif grup üyelerini devamlı iyileştirir.",
+      "1": "Linnea Element Patlamasını kullandığında Lumi zaten alandaysa Lumi'nin süresi yenilenir ve Saldırı Formu değişmez.",
+      "2": "<i>\"İşinin ehli her profesyonel maceracı için zorlu bir durumdan sağ çıkmak, ne kadar benzersiz olursa olsun yeni keşifler yapmaktan çok daha önceliklidir.\"</i>"
+    },
+    "skillParams": {
+      "0": "Başlangıç İyileştirme Miktarı",
+      "1": "Sürekli İyileştirme",
+      "2": "İyileştirme Süresi",
+      "3": "BS",
+      "4": "Enerji Maliyeti",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Saha Gözlem Notları",
+    "description": {
+      "0": "Lumi alandayken, Lumi'nin yakınındaki düşmanların <geo>Toprak Direnci</geo> %15 azalır.",
+      "1": "<br/>",
+      "2": "<strong>Ay Sembolü: Yükselen Parıltı</strong>: Linnea'nın <strong><tooltip ns=char_Linnea_gen baseKey18=skill>Karşı Hamle: Lumi'nin Savaş Narası!</tooltip></strong> Element Becerisi ve <strong><tooltip ns=char_Linnea_gen baseKey18=burst>Not: Ekstrem Koşullarda Hayatta Kalma Rehberi</tooltip></strong> Element Patlaması geliştirilir. Lumi çağrıldıktan sonra, Lumi'nin yakınındaki düşmanların <geo>Toprak Direnci</geo> %15 daha azalır."
+    }
+  },
+  "passive2": {
+    "name": "Evrensel Doğa Bilimleri Arşivi",
+    "description": {
+      "0": "Linnea, mevcut aktif karaktere göre grubundaki belirli karakterlerin Element Ustalığını artırır. Element Ustalığı, Linnea'nın Savunmasının %5'i kadar artar. Mevcut aktif karakter:",
+      "1": [
+        "Bir Ay Sembolü karakteriyse: Bu karakterin Element Ustalığı artar.",
+        "Bir Ay Sembolü karakteri değilse: Linnea'nın kendi Element Ustalığı artar."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Ay Sembolü Kutsaması: Habitat Araştırması",
+    "description": {
+      "0": "Bir grup üyesi Su Kristalleşmesi tepkimesi tetiklediğinde bu, Ay Kristalleşmesi tepkimesine dönüşür. Linnea'nın sahip olduğu her 100 Savunma, Ay Kristalleşmesi tepkimesinin Temel Hasarını %0,7 artırır; en fazla %14 artabilir.",
+      "1": "<br/>",
+      "2": "Ayrıca grubunda Linnea olduğunda, grubunun <strong>Ay Sembolü</strong> 1 seviye yükselir."
+    }
+  },
+  "passive": {
+    "name": "Usta Maceracı",
+    "description": {
+      "0": "Savaşta değilken Linnea'nın <strong>Hedefli Atış</strong> doldurma süresi büyük ölçüde azalır ve bunun yerine bir <strong>Müthiş Kullanışlı Hızlı Ok</strong> atar. Vurulan hedeflere bağlı olarak farklı etkiler meydana gelir:",
+      "1": [
+        "Belirli hayvanlar: <strong>Müthiş Kullanışlı Hızlı Ok</strong>, bu hayvanların özünü ve formunu yakalayabilen özel bir \"Ağ\"a dönüşür ve bu hayvanların fiziksel formunu tekrar ortaya çıkarmak için bir araç olarak kullanılır. \"Ağ\" her hafta sınırlı sayıda kullanılabilir.",
+        "Dövme için kullanılan cevher damarları: Linnea, <strong>Müthiş Kullanışlı Hızlı Ok</strong> ile işaretlediği cevhere Lumi'yi göndererek ona hızla saldırmasını ve düşenleri toplamasını sağlar. Lumi alanda değilse Linnea cevheri toplamaya yardımcı olması için onu kısa bir süreliğine çağırır."
+      ],
+      "2": "<br/>",
+      "3": "Linnea'nın <strong>Müthiş Kullanışlı Hızlı Ok</strong> ile düşmanlara verdiği Hasar, orijinal Yüklü Ok Hasarının %20'si kadar olur. Ayrıca kısa bir süre içinde belirli sayıda <strong>Müthiş Kullanışlı Hızlı Ok</strong> attıktan sonra, Linnea'nın Hızlı Ok kullanmaya devam etmeden önce kısa bir mola vermesi gerekir."
+    }
+  },
+  "constellation1": {
+    "name": "Geçici Sınıflandırma",
+    "description": {
+      "0": "<strong><tooltip ns=char_Linnea_gen baseKey18=skill>Karşı Hamle: Lumi'nin Savaş Narası!</tooltip></strong> Element Becerisi kullanıldığında veya Ay Akıntısı Ahengi tetiklendiğinde, 10 saniyeliğine Linnea 6 kademe <strong>Alan Kataloğu</strong> etkisi kazanır. En fazla 18 kademe birikebilir. Yakındaki grup üyeleri Ay Kristalleşmesi Tepkimesi Hasarı verdiğinde, verilen Hasarı artırmak için 1 kademe Alan Kataloğu tüketilir. Hasar artışı, Linnea'nın Savunmasının %75'ine eşittir.",
+      "1": "Ayrıca Lumi <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Mutlak Güç Formundayken</tooltip></strong> <strong>Milyon Tonluk Darbe</strong> kullandığında Linnea 5 kademeye kadar Alan Kataloğu tüketebilir. Her kademe, verilen Hasarı Linnea'nın Savunmasının %150'si kadar artırır."
+    }
+  },
+  "constellation2": {
+    "name": "Sevinç ve Keder Havadisleri",
+    "description": {
+      "0": "Ay Akıntısı Ahengi tetiklendikten sonra 8 saniyeliğine gruptaki tüm <hydro>Su</hydro> ve <geo>Toprak</geo> üyelerinin Kritik Hasarı %40 artar. Ayrıca Lumi, <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Mutlak Güç Formundayken</tooltip></strong> <strong>Milyon Tonluk Darbe</strong> kullandığında bu saldırının Kritik Hasarı ek olarak %150 artar.",
+      "1": "<br/>",
+      "2": "<strong>Ay Sembolü: Yükselen Parıltı</strong>: Lumi, <strong><tooltip ns=tooltips_gen baseKey18=11300001 values=[]>Süper Güç Formundayken</tooltip></strong> <strong>Gümbürdeten Topuz</strong> veya Mutlak Güç Formundayken <strong>Milyon Tonluk Darbe</strong> kullandığında bir Ay Akıntısı Ahengi tetiklenir. Bu Ay Akıntısı Ahengi için gruptaki tüm <hydro>Su</hydro> ve <geo>Toprak</geo> karakterlerinin tepkimede Elementlerini uygulamış olduğu varsayılır."
+    }
+  },
+  "constellation3": {
+    "name": "Hareketli Günlük Sayfası",
+    "description": {
+      "0": "<strong><tooltip ns=char_Linnea_gen baseKey18=skill>Karşı Hamle: Lumi'nin Savaş Narası!</tooltip></strong> seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Uzman İçgüdüsü",
+    "description": {
+      "0": "Ay Akıntısı Ahengini tetikledikten sonra 5 saniye boyunca Linnea'nın ve mevcut aktif karakterin Savunmasını ayrı ayrı %25 artırır. Linnea alandayken Savunma artışı etkisi birikebilir."
+    }
+  },
+  "constellation5": {
+    "name": "Peri Diyarının Veda Hediyesi",
+    "description": {
+      "0": "<strong><tooltip ns=char_Linnea_gen baseKey18=burst>Not: Ekstrem Koşullarda Hayatta Kalma Rehberi</tooltip></strong> Element Patlamasının seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Altın Tazının Rüyası",
+    "description": {
+      "0": "<strong>Geçici Sınıflandırma</strong> Takımyıldızının etkileri geliştirilir: <strong><tooltip ns=char_Linnea_gen baseKey18=skill>Karşı Hamle: Lumi'nin Savaş Narası!</tooltip></strong> Element Becerisi kullanıldığında veya Ay Akıntısı Ahengi tetiklendiğinde Linnea doğrudan maksimum sayıda <strong>Alan Kataloğu</strong> kademesi kazanır. <strong>Alan Kataloğu</strong> tüketilirken orijinal sayının iki katı kadar kademe tüketilir, böylece Hasar artışı orijinal değerin %150'sine yükseltilir.",
+      "1": "<br/>",
+      "2": "<strong>Ay Sembolü: Yükselen Parıltı</strong>: Yakındaki grup üyelerinin verdiği Ay Kristalleşmesi Tepkimesi Hasarı %25 <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>yükselir</strong></tooltip>."
+    }
+  }
+}

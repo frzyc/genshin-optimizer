@@ -332,5 +332,16 @@
       "desc": "When Ellen uses an <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or gains <ct color=#FFFFFF>Quick Charge</ct>, her PEN Ratio increases by 20% for 6s. She also gains 1 stack of <ct color=#FFFFFF>The Feast Begins</ct>, up to a maximum of 3 stacks. With 3 stacks of <ct color=#FFFFFF>The Feast Begins</ct>, using a Charged Scissors strike during <ct color=#FFFFFF>Dash Attack: Arctic Ambush</ct> consumes all stacks, increasing the DMG of the current attack by 250%.",
       "flavor": "An open wound, a drop of blood. A thrilling hunt, a grand feast. A fragile life, a moment of satisfaction."
     }
+  },
+  "potential": {
+    "name": "Potential Awakening: Permafrost Zone",
+    "desc": [
+      "",
+      "Ellen 's Additional Ability: Rising Storm CRIT DMG increases by <ct color=#2BAD00>1.6%</ct> per stack. At 10 stacks, the attack ignores <ct color=#2BAD00>3.3%</ct> of the target's <ct color=#98EFF0>Ice RES</ct>.",
+      "Ellen 's Additional Ability: Rising Storm CRIT DMG increases by <ct color=#2BAD00>2.4%</ct> per stack. At 10 stacks, the attack ignores <ct color=#2BAD00>5%</ct> of the target's <ct color=#98EFF0>Ice RES</ct>.",
+      "Ellen 's Additional Ability: Rising Storm CRIT DMG increases by <ct color=#2BAD00>3.2%</ct> per stack. At 10 stacks, the attack ignores <ct color=#2BAD00>6.7%</ct> of the target's <ct color=#98EFF0>Ice RES</ct>.",
+      "Ellen 's Additional Ability: Rising Storm CRIT DMG increases by <ct color=#2BAD00>4%</ct> per stack. At 10 stacks, the attack ignores <ct color=#2BAD00>8.3%</ct> of the target's <ct color=#98EFF0>Ice RES</ct>.",
+      "Ellen 's Additional Ability: Rising Storm CRIT DMG increases by <ct color=#2BAD00>4.8%</ct> per stack. At 10 stacks, the attack ignores <ct color=#2BAD00>10%</ct> of the target's <ct color=#98EFF0>Ice RES</ct>."
+    ]
   }
 }

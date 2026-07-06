@@ -1,0 +1,29 @@
+{
+  "setName": "Ascensão Zéfira",
+  "setEffects": {
+    "2": "ATQ +18%",
+    "4": "Quando o Ataque Normal, Carregado, Habilidade Elemental ou Supremo atingem o inimigo, obtém o efeito Piedade do Vento e Pastoreio por 6s: aumenta o ATQ em 25%. Se o portador já tiver concluído a Tarefa da Bruxa, Piedade do Vento e Pastoreio será elevado para Determinação do Vento e Pastoreio, aumentando a Taxa CRIT do portador que passou pelo teste em 20%. Esse efeito pode ser desencadeado mesmo quando o portador não é o personagem ativo."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Inscrição da Flor da Brisa",
+      "desc": "Uma flor de cristal azul. Dizem que pertenceu a uma jovem exilada de um passado remoto que remontava aos mil ventos das flores."
+    },
+    "plume": {
+      "name": "Juramento Brilhante do Amanhecer",
+      "desc": "Uma pena de cor clara, pura como a luz. Dizem que pertenceu a uma guardiã real de um passado remoto e que renunciou ao seu nome."
+    },
+    "sands": {
+      "name": "Uma Nota na Canção de Primavera",
+      "desc": "Uma ampulheta de areia que contém finos grãos azulados. Por alguma razão, a areia nunca volta a cair, mesmo que a vire."
+    },
+    "goblet": {
+      "name": "Contos Não Contados em Banquetes",
+      "desc": "Um cálice de vinho de cor azulada e estilo antigo. Dizem que pertenceu a um bardo desconhecido de um passado remoto."
+    },
+    "circlet": {
+      "name": "Poema do Amor e Lamento",
+      "desc": "Um luxuoso acessório de cabeça de jade e cristal que, segundo dizem, era um amuleto que o Rei da Tempestade deu para a pessoa que mais lhe importava em um passado remoto."
+    }
+  }
+}

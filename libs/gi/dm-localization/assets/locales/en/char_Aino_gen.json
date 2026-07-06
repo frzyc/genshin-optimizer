@@ -151,7 +151,7 @@
     "description": {
       "0": "Aino will be granted the corresponding buff effects based on the party's <strong>Moonsign</strong>.",
       "1": "<br/>",
-      "2": "<strong>Moonsign: Ascendant Gleam</strong>: Her Elemental Burst <strong>Precision Hydronic Cooler</strong> is enhanced: The <strong>Cool Your Jets Ducky</strong> will fire water balls more frequently, and the water balls will deal <hydro>AoE Hydro DMG</hydro> over a larger area of effect."
+      "2": "<strong>Moonsign: Ascendant Gleam</strong>: Her Elemental Burst <strong><tooltip ns=char_Aino_gen baseKey18=burst>Precision Hydronic Cooler</tooltip></strong> is enhanced: The <strong>Cool Your Jets Ducky</strong> will fire water balls more frequently, and the water balls will deal <hydro>AoE Hydro DMG</hydro> over a larger area of effect."
     }
   },
   "passive2": {
@@ -176,7 +176,7 @@
   "constellation1": {
     "name": "The Theory of Ash—Field Equilibrium",
     "description": {
-      "0": "After Aino uses her Elemental Skill <strong>Musecatcher</strong> or her Elemental Burst <strong>Precision Hydronic Cooler</strong>, her Elemental Mastery will be increased by 80. The Elemental Mastery of other nearby active party members will be increased by 80 for 15s.",
+      "0": "After Aino uses her Elemental Skill <strong><tooltip ns=char_Aino_gen baseKey18=skill>Musecatcher</tooltip></strong> or her Elemental Burst <strong><tooltip ns=char_Aino_gen baseKey18=burst>Precision Hydronic Cooler</tooltip></strong>, her Elemental Mastery will be increased by 80. The Elemental Mastery of other nearby active party members will be increased by 80 for 15s.",
       "1": "<br/>",
       "2": "The Elemental Mastery-increasing effects of this Constellation do not stack."
     }
@@ -184,33 +184,33 @@
   "constellation2": {
     "name": "The Principle of Transference in Gear Differentials",
     "description": {
-      "0": "If Aino is off-field while the <strong>Focused Hydronic Cooling Zone</strong> of her Elemental Burst <strong>Precision Hydronic Cooler</strong> is active, when your active party member hits a nearby opponent with an attack, the <strong>Cool Your Jets Ducky</strong> will fire an additional water ball at that opponent, dealing <hydro>AoE Hydro DMG</hydro> equal to 25% of Aino's ATK and 100% of her Elemental Mastery. This DMG is considered Elemental Burst DMG. This effect can be triggered once every 5s."
+      "0": "If Aino is off-field while the <strong>Focused Hydronic Cooling Zone</strong> of her Elemental Burst <strong><tooltip ns=char_Aino_gen baseKey18=burst>Precision Hydronic Cooler</tooltip></strong> is active, when your active party member hits a nearby opponent with an attack, the <strong>Cool Your Jets Ducky</strong> will fire an additional water ball at that opponent, dealing <hydro>AoE Hydro DMG</hydro> equal to 25% of Aino's ATK and 100% of her Elemental Mastery. This DMG is considered Elemental Burst DMG. This effect can be triggered once every 5s."
     }
   },
   "constellation3": {
     "name": "Cake and the Art of Mechanism Repair",
     "description": {
-      "0": "Increases the Level of <strong>Precision Hydronic Cooler</strong> by 3.",
+      "0": "Increases the Level of <strong><tooltip ns=char_Aino_gen baseKey18=burst>Precision Hydronic Cooler</tooltip></strong> by 3.",
       "1": "Maximum upgrade level is 15."
     }
   },
   "constellation4": {
     "name": "Butter and Cats and the Law of Energy Supply",
     "description": {
-      "0": "When the Elemental Skill <strong>Musecatcher</strong> hits an opponent, it will restore 10 Elemental Energy for Aino. Energy can be restored to her in this manner once every 10s."
+      "0": "When the Elemental Skill <strong><tooltip ns=char_Aino_gen baseKey18=skill>Musecatcher</tooltip></strong> hits an opponent, it will restore 10 Elemental Energy for Aino. Energy can be restored to her in this manner once every 10s."
     }
   },
   "constellation5": {
     "name": "Perpetual Turbine of Metal and Light",
     "description": {
-      "0": "Increases the Level of <strong>Musecatcher</strong> by 3.",
+      "0": "Increases the Level of <strong><tooltip ns=char_Aino_gen baseKey18=skill>Musecatcher</tooltip></strong> by 3.",
       "1": "Maximum upgrade level is 15."
     }
   },
   "constellation6": {
     "name": "The Burden of Creative Genius",
     "description": {
-      "0": "For the next 15s after using the Elemental Burst <strong>Precision Hydronic Cooler</strong>, DMG from nearby active characters' Electro-Charged, Bloom, Lunar-Charged, and Lunar-Bloom reactions is increased by 15%.",
+      "0": "For the next 15s after using the Elemental Burst <strong><tooltip ns=char_Aino_gen baseKey18=burst>Precision Hydronic Cooler</tooltip></strong>, DMG from nearby active characters' Electro-Charged, Bloom, Lunar-Charged, Lunar-Bloom, and Lunar-Crystallize reactions is increased by 15%.",
       "1": "<strong>Moonsign: Ascendant Gleam</strong>: DMG from the aforementioned reactions will be further increased by 20%."
     }
   }

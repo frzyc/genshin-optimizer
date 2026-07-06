@@ -1,4 +1,3 @@
-'use client'
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { CardThemed, ImgIcon } from '@genshin-optimizer/common/ui'

@@ -1,15 +1,19 @@
 import { SqBadge } from '@genshin-optimizer/common/ui'
-import { objKeyMap, toggleInArr } from '@genshin-optimizer/common/util'
+import {
+  objKeyMap,
+  stableArr,
+  toggleInArr,
+} from '@genshin-optimizer/common/util'
 import type { DiscSetKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
 import { allDiscSetKeys, allDiscSlotKeys } from '@genshin-optimizer/zzz/consts'
-import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
-import { useCharOpt, useCharacterContext } from '@genshin-optimizer/zzz/db-ui'
+import type { ICachedDisc, TeamConditional } from '@genshin-optimizer/zzz/db'
+import { useCharacterContext, useTeam } from '@genshin-optimizer/zzz/db-ui'
 import {
   CharCalcMockCountProvider,
   DiscSheetDisplay,
 } from '@genshin-optimizer/zzz/formula-ui'
 import { Box, Button, ButtonGroup, Grid, Typography } from '@mui/material'
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 
 export function DiscSetFilter({
   discBySlot,
@@ -26,7 +30,9 @@ export function DiscSetFilter({
   setSetFilter2: (setFilter2: DiscSetKey[]) => void
 }) {
   const character = useCharacterContext()
-  const charOpt = useCharOpt(character?.key)
+  const team = useTeam(character?.key)
+  const conditionals =
+    team?.frames[0]?.conditionals ?? stableArr<TeamConditional>()
   const discSetBySlot = useMemo(() => {
     const discSetBySlot: Record<
       DiscSetKey,
@@ -39,6 +45,16 @@ export function DiscSetFilter({
 
     return discSetBySlot
   }, [discBySlot])
+  const [showAllSets, setShowAllSets] = useState(false)
+  const visibleSetKeys = useMemo(() => {
+    if (showAllSets) return allDiscSetKeys
+    const keys = new Set<DiscSetKey>([...setFilter2, ...setFilter4])
+    for (const setKey of allDiscSetKeys) {
+      const counts = discSetBySlot[setKey]
+      if (Object.values(counts).some((count) => count > 0)) keys.add(setKey)
+    }
+    return allDiscSetKeys.filter((key) => keys.has(key))
+  }, [discSetBySlot, setFilter2, setFilter4, showAllSets])
   return (
     <>
       <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
@@ -51,16 +67,19 @@ export function DiscSetFilter({
         <Button disabled={!setFilter2.length} onClick={() => setSetFilter2([])}>
           Reset 2p filter
         </Button>
+        <Button onClick={() => setShowAllSets((v) => !v)}>
+          {showAllSets ? 'Show relevant sets' : 'Show all sets'}
+        </Button>
       </Box>
 
       <Box>
-        {character && charOpt && (
+        {character && team && (
           <CharCalcMockCountProvider
             character={character}
-            conditionals={charOpt.conditionals}
+            conditionals={conditionals}
           >
             <Grid container spacing={1}>
-              {allDiscSetKeys.map((d) => (
+              {visibleSetKeys.map((d) => (
                 <Grid item key={d} xs={1} md={2} lg={3}>
                   <AdvSetFilterDiscCard
                     numSlot={discSetBySlot[d]}

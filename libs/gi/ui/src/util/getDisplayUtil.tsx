@@ -1,4 +1,4 @@
-import { ColorText, ImgIcon, NextImage } from '@genshin-optimizer/common/ui'
+import { ColorText, ImgIcon } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import {
   artifactDefIcon,
@@ -60,19 +60,21 @@ export function getDisplayHeader(
     return { title: 'Received Team Buffs', icon: <GroupsIcon /> }
   else if (sectionKey === 'reaction')
     return { title: 'Transformative Reactions' }
+  else if (sectionKey === 'nicole')
+    return { title: "Nicole's Astral Projections" }
   else if (sectionKey === 'moonsign')
     return {
       title: 'Moonsign: Ascendant Gleam',
       icon: (
         <Box display="flex">
           <Box
-            component={NextImage ? NextImage : 'img'}
+            component="img"
             src={imgAssets.resonance.moonsign}
             width="2em"
             height="auto"
           />
           <Box
-            component={NextImage ? NextImage : 'img'}
+            component="img"
             src={imgAssets.resonance.moonsign}
             width="2em"
             height="auto"

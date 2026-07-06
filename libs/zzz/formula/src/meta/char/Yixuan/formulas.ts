@@ -39,6 +39,33 @@ export const formulas = {
       name: 'disorderDmgInst_ether',
     },
   },
+  vortexDmgInst_ether: {
+    sheet: 'Yixuan',
+    name: 'vortexDmgInst_ether',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'Yixuan',
+      attribute: 'ether',
+      damageType1: 'vortex',
+      name: 'vortexDmgInst_ether',
+    },
+  },
+  abloomDmgInst: {
+    sheet: 'Yixuan',
+    name: 'abloomDmgInst',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'Yixuan',
+      attribute: 'ether',
+      damageType1: 'anomaly',
+      damageType2: 'abloom',
+      name: 'abloomDmgInst',
+    },
+  },
   anomalyBuildupInst: {
     sheet: 'Yixuan',
     name: 'anomalyBuildupInst',
@@ -63,9 +90,9 @@ export const formulas = {
       name: 'dazeInst',
     },
   },
-  BasicAttackCirrusStrike_0_dmg: {
+  'BasicAttackCirrusStrike_0:sheerDmg': {
     sheet: 'Yixuan',
-    name: 'BasicAttackCirrusStrike_0_dmg',
+    name: 'BasicAttackCirrusStrike_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -74,12 +101,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCirrusStrike_0_dmg',
+      name: 'BasicAttackCirrusStrike_0',
     },
   },
-  BasicAttackCirrusStrike_0_daze: {
+  'BasicAttackCirrusStrike_0:dazeBuildup': {
     sheet: 'Yixuan',
-    name: 'BasicAttackCirrusStrike_0_daze',
+    name: 'BasicAttackCirrusStrike_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -88,12 +115,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCirrusStrike_0_daze',
+      name: 'BasicAttackCirrusStrike_0',
     },
   },
-  BasicAttackCirrusStrike_0_anomBuildup: {
+  'BasicAttackCirrusStrike_0:anomBuildup': {
     sheet: 'Yixuan',
-    name: 'BasicAttackCirrusStrike_0_anomBuildup',
+    name: 'BasicAttackCirrusStrike_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -102,12 +129,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCirrusStrike_0_anomBuildup',
+      name: 'BasicAttackCirrusStrike_0',
     },
   },
-  BasicAttackCirrusStrike_1_dmg: {
+  'BasicAttackCirrusStrike_1:sheerDmg': {
     sheet: 'Yixuan',
-    name: 'BasicAttackCirrusStrike_1_dmg',
+    name: 'BasicAttackCirrusStrike_1:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -116,12 +143,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCirrusStrike_1_dmg',
+      name: 'BasicAttackCirrusStrike_1',
     },
   },
-  BasicAttackCirrusStrike_1_daze: {
+  'BasicAttackCirrusStrike_1:dazeBuildup': {
     sheet: 'Yixuan',
-    name: 'BasicAttackCirrusStrike_1_daze',
+    name: 'BasicAttackCirrusStrike_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -130,12 +157,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCirrusStrike_1_daze',
+      name: 'BasicAttackCirrusStrike_1',
     },
   },
-  BasicAttackCirrusStrike_1_anomBuildup: {
+  'BasicAttackCirrusStrike_1:anomBuildup': {
     sheet: 'Yixuan',
-    name: 'BasicAttackCirrusStrike_1_anomBuildup',
+    name: 'BasicAttackCirrusStrike_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -144,12 +171,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCirrusStrike_1_anomBuildup',
+      name: 'BasicAttackCirrusStrike_1',
     },
   },
-  BasicAttackCirrusStrike_2_dmg: {
+  'BasicAttackCirrusStrike_2:sheerDmg': {
     sheet: 'Yixuan',
-    name: 'BasicAttackCirrusStrike_2_dmg',
+    name: 'BasicAttackCirrusStrike_2:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -158,12 +185,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCirrusStrike_2_dmg',
+      name: 'BasicAttackCirrusStrike_2',
     },
   },
-  BasicAttackCirrusStrike_2_daze: {
+  'BasicAttackCirrusStrike_2:dazeBuildup': {
     sheet: 'Yixuan',
-    name: 'BasicAttackCirrusStrike_2_daze',
+    name: 'BasicAttackCirrusStrike_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -172,12 +199,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCirrusStrike_2_daze',
+      name: 'BasicAttackCirrusStrike_2',
     },
   },
-  BasicAttackCirrusStrike_2_anomBuildup: {
+  'BasicAttackCirrusStrike_2:anomBuildup': {
     sheet: 'Yixuan',
-    name: 'BasicAttackCirrusStrike_2_anomBuildup',
+    name: 'BasicAttackCirrusStrike_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -186,12 +213,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCirrusStrike_2_anomBuildup',
+      name: 'BasicAttackCirrusStrike_2',
     },
   },
-  BasicAttackCirrusStrike_3_dmg: {
+  'BasicAttackCirrusStrike_3:sheerDmg': {
     sheet: 'Yixuan',
-    name: 'BasicAttackCirrusStrike_3_dmg',
+    name: 'BasicAttackCirrusStrike_3:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -200,12 +227,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCirrusStrike_3_dmg',
+      name: 'BasicAttackCirrusStrike_3',
     },
   },
-  BasicAttackCirrusStrike_3_daze: {
+  'BasicAttackCirrusStrike_3:dazeBuildup': {
     sheet: 'Yixuan',
-    name: 'BasicAttackCirrusStrike_3_daze',
+    name: 'BasicAttackCirrusStrike_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -214,12 +241,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCirrusStrike_3_daze',
+      name: 'BasicAttackCirrusStrike_3',
     },
   },
-  BasicAttackCirrusStrike_3_anomBuildup: {
+  'BasicAttackCirrusStrike_3:anomBuildup': {
     sheet: 'Yixuan',
-    name: 'BasicAttackCirrusStrike_3_anomBuildup',
+    name: 'BasicAttackCirrusStrike_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -228,12 +255,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCirrusStrike_3_anomBuildup',
+      name: 'BasicAttackCirrusStrike_3',
     },
   },
-  BasicAttackCirrusStrike_4_dmg: {
+  'BasicAttackCirrusStrike_4:sheerDmg': {
     sheet: 'Yixuan',
-    name: 'BasicAttackCirrusStrike_4_dmg',
+    name: 'BasicAttackCirrusStrike_4:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -242,12 +269,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCirrusStrike_4_dmg',
+      name: 'BasicAttackCirrusStrike_4',
     },
   },
-  BasicAttackCirrusStrike_4_daze: {
+  'BasicAttackCirrusStrike_4:dazeBuildup': {
     sheet: 'Yixuan',
-    name: 'BasicAttackCirrusStrike_4_daze',
+    name: 'BasicAttackCirrusStrike_4:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -256,12 +283,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCirrusStrike_4_daze',
+      name: 'BasicAttackCirrusStrike_4',
     },
   },
-  BasicAttackCirrusStrike_4_anomBuildup: {
+  'BasicAttackCirrusStrike_4:anomBuildup': {
     sheet: 'Yixuan',
-    name: 'BasicAttackCirrusStrike_4_anomBuildup',
+    name: 'BasicAttackCirrusStrike_4:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -270,12 +297,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackCirrusStrike_4_anomBuildup',
+      name: 'BasicAttackCirrusStrike_4',
     },
   },
-  BasicAttackInkVeilCloudCoalescence_0_dmg: {
+  'BasicAttackInkVeilCloudCoalescence_0:sheerDmg': {
     sheet: 'Yixuan',
-    name: 'BasicAttackInkVeilCloudCoalescence_0_dmg',
+    name: 'BasicAttackInkVeilCloudCoalescence_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -284,12 +311,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackInkVeilCloudCoalescence_0_dmg',
+      name: 'BasicAttackInkVeilCloudCoalescence_0',
     },
   },
-  BasicAttackInkVeilCloudCoalescence_0_daze: {
+  'BasicAttackInkVeilCloudCoalescence_0:dazeBuildup': {
     sheet: 'Yixuan',
-    name: 'BasicAttackInkVeilCloudCoalescence_0_daze',
+    name: 'BasicAttackInkVeilCloudCoalescence_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -298,12 +325,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackInkVeilCloudCoalescence_0_daze',
+      name: 'BasicAttackInkVeilCloudCoalescence_0',
     },
   },
-  BasicAttackInkVeilCloudCoalescence_0_anomBuildup: {
+  'BasicAttackInkVeilCloudCoalescence_0:anomBuildup': {
     sheet: 'Yixuan',
-    name: 'BasicAttackInkVeilCloudCoalescence_0_anomBuildup',
+    name: 'BasicAttackInkVeilCloudCoalescence_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -312,12 +339,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackInkVeilCloudCoalescence_0_anomBuildup',
+      name: 'BasicAttackInkVeilCloudCoalescence_0',
     },
   },
-  BasicAttackAuricArray_0_dmg: {
+  'BasicAttackAuricArray_0:sheerDmg': {
     sheet: 'Yixuan',
-    name: 'BasicAttackAuricArray_0_dmg',
+    name: 'BasicAttackAuricArray_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -325,12 +352,13 @@ export const formulas = {
       sheet: 'Yixuan',
       attribute: 'ether',
       damageType1: 'basic',
-      name: 'BasicAttackAuricArray_0_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackAuricArray_0',
     },
   },
-  BasicAttackAuricArray_0_daze: {
+  'BasicAttackAuricArray_0:dazeBuildup': {
     sheet: 'Yixuan',
-    name: 'BasicAttackAuricArray_0_daze',
+    name: 'BasicAttackAuricArray_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -338,12 +366,13 @@ export const formulas = {
       sheet: 'Yixuan',
       attribute: 'ether',
       damageType1: 'basic',
-      name: 'BasicAttackAuricArray_0_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackAuricArray_0',
     },
   },
-  BasicAttackAuricArray_0_anomBuildup: {
+  'BasicAttackAuricArray_0:anomBuildup': {
     sheet: 'Yixuan',
-    name: 'BasicAttackAuricArray_0_anomBuildup',
+    name: 'BasicAttackAuricArray_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -351,12 +380,13 @@ export const formulas = {
       sheet: 'Yixuan',
       attribute: 'ether',
       damageType1: 'basic',
-      name: 'BasicAttackAuricArray_0_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackAuricArray_0',
     },
   },
-  BasicAttackQingmingEruption_0_dmg: {
+  'BasicAttackQingmingEruption_0:sheerDmg': {
     sheet: 'Yixuan',
-    name: 'BasicAttackQingmingEruption_0_dmg',
+    name: 'BasicAttackQingmingEruption_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -364,12 +394,13 @@ export const formulas = {
       sheet: 'Yixuan',
       attribute: 'ether',
       damageType1: 'basic',
-      name: 'BasicAttackQingmingEruption_0_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackQingmingEruption_0',
     },
   },
-  BasicAttackQingmingEruption_0_daze: {
+  'BasicAttackQingmingEruption_0:dazeBuildup': {
     sheet: 'Yixuan',
-    name: 'BasicAttackQingmingEruption_0_daze',
+    name: 'BasicAttackQingmingEruption_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -377,12 +408,13 @@ export const formulas = {
       sheet: 'Yixuan',
       attribute: 'ether',
       damageType1: 'basic',
-      name: 'BasicAttackQingmingEruption_0_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackQingmingEruption_0',
     },
   },
-  BasicAttackQingmingEruption_0_anomBuildup: {
+  'BasicAttackQingmingEruption_0:anomBuildup': {
     sheet: 'Yixuan',
-    name: 'BasicAttackQingmingEruption_0_anomBuildup',
+    name: 'BasicAttackQingmingEruption_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -390,12 +422,13 @@ export const formulas = {
       sheet: 'Yixuan',
       attribute: 'ether',
       damageType1: 'basic',
-      name: 'BasicAttackQingmingEruption_0_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackQingmingEruption_0',
     },
   },
-  DashAttackSkybreaker_0_dmg: {
+  'DashAttackSkybreaker_0:sheerDmg': {
     sheet: 'Yixuan',
-    name: 'DashAttackSkybreaker_0_dmg',
+    name: 'DashAttackSkybreaker_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -404,12 +437,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackSkybreaker_0_dmg',
+      name: 'DashAttackSkybreaker_0',
     },
   },
-  DashAttackSkybreaker_0_daze: {
+  'DashAttackSkybreaker_0:dazeBuildup': {
     sheet: 'Yixuan',
-    name: 'DashAttackSkybreaker_0_daze',
+    name: 'DashAttackSkybreaker_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -418,12 +451,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackSkybreaker_0_daze',
+      name: 'DashAttackSkybreaker_0',
     },
   },
-  DashAttackSkybreaker_0_anomBuildup: {
+  'DashAttackSkybreaker_0:anomBuildup': {
     sheet: 'Yixuan',
-    name: 'DashAttackSkybreaker_0_anomBuildup',
+    name: 'DashAttackSkybreaker_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -432,12 +465,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'dash',
       skillType: 'dodgeSkill',
-      name: 'DashAttackSkybreaker_0_anomBuildup',
+      name: 'DashAttackSkybreaker_0',
     },
   },
-  DodgeCounterBanishingBlow_0_dmg: {
+  'DodgeCounterBanishingBlow_0:sheerDmg': {
     sheet: 'Yixuan',
-    name: 'DodgeCounterBanishingBlow_0_dmg',
+    name: 'DodgeCounterBanishingBlow_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -446,12 +479,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterBanishingBlow_0_dmg',
+      name: 'DodgeCounterBanishingBlow_0',
     },
   },
-  DodgeCounterBanishingBlow_0_daze: {
+  'DodgeCounterBanishingBlow_0:dazeBuildup': {
     sheet: 'Yixuan',
-    name: 'DodgeCounterBanishingBlow_0_daze',
+    name: 'DodgeCounterBanishingBlow_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -460,12 +493,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterBanishingBlow_0_daze',
+      name: 'DodgeCounterBanishingBlow_0',
     },
   },
-  DodgeCounterBanishingBlow_0_anomBuildup: {
+  'DodgeCounterBanishingBlow_0:anomBuildup': {
     sheet: 'Yixuan',
-    name: 'DodgeCounterBanishingBlow_0_anomBuildup',
+    name: 'DodgeCounterBanishingBlow_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -474,12 +507,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterBanishingBlow_0_anomBuildup',
+      name: 'DodgeCounterBanishingBlow_0',
     },
   },
-  SpecialAttackShadowIgnition_0_dmg: {
+  'SpecialAttackShadowIgnition_0:sheerDmg': {
     sheet: 'Yixuan',
-    name: 'SpecialAttackShadowIgnition_0_dmg',
+    name: 'SpecialAttackShadowIgnition_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -488,12 +521,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackShadowIgnition_0_dmg',
+      name: 'SpecialAttackShadowIgnition_0',
     },
   },
-  SpecialAttackShadowIgnition_0_daze: {
+  'SpecialAttackShadowIgnition_0:dazeBuildup': {
     sheet: 'Yixuan',
-    name: 'SpecialAttackShadowIgnition_0_daze',
+    name: 'SpecialAttackShadowIgnition_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -502,12 +535,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackShadowIgnition_0_daze',
+      name: 'SpecialAttackShadowIgnition_0',
     },
   },
-  SpecialAttackShadowIgnition_0_anomBuildup: {
+  'SpecialAttackShadowIgnition_0:anomBuildup': {
     sheet: 'Yixuan',
-    name: 'SpecialAttackShadowIgnition_0_anomBuildup',
+    name: 'SpecialAttackShadowIgnition_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -516,12 +549,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackShadowIgnition_0_anomBuildup',
+      name: 'SpecialAttackShadowIgnition_0',
     },
   },
-  EXSpecialAttackInkManifestation_0_dmg: {
+  'EXSpecialAttackInkManifestation_0:sheerDmg': {
     sheet: 'Yixuan',
-    name: 'EXSpecialAttackInkManifestation_0_dmg',
+    name: 'EXSpecialAttackInkManifestation_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -530,12 +563,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackInkManifestation_0_dmg',
+      name: 'EXSpecialAttackInkManifestation_0',
     },
   },
-  EXSpecialAttackInkManifestation_0_daze: {
+  'EXSpecialAttackInkManifestation_0:dazeBuildup': {
     sheet: 'Yixuan',
-    name: 'EXSpecialAttackInkManifestation_0_daze',
+    name: 'EXSpecialAttackInkManifestation_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -544,12 +577,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackInkManifestation_0_daze',
+      name: 'EXSpecialAttackInkManifestation_0',
     },
   },
-  EXSpecialAttackInkManifestation_0_anomBuildup: {
+  'EXSpecialAttackInkManifestation_0:anomBuildup': {
     sheet: 'Yixuan',
-    name: 'EXSpecialAttackInkManifestation_0_anomBuildup',
+    name: 'EXSpecialAttackInkManifestation_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -558,12 +591,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackInkManifestation_0_anomBuildup',
+      name: 'EXSpecialAttackInkManifestation_0',
     },
   },
-  EXSpecialAttackInkManifestation_1_dmg: {
+  'EXSpecialAttackInkManifestation_1:sheerDmg': {
     sheet: 'Yixuan',
-    name: 'EXSpecialAttackInkManifestation_1_dmg',
+    name: 'EXSpecialAttackInkManifestation_1:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -572,12 +605,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackInkManifestation_1_dmg',
+      name: 'EXSpecialAttackInkManifestation_1',
     },
   },
-  EXSpecialAttackInkManifestation_1_daze: {
+  'EXSpecialAttackInkManifestation_1:dazeBuildup': {
     sheet: 'Yixuan',
-    name: 'EXSpecialAttackInkManifestation_1_daze',
+    name: 'EXSpecialAttackInkManifestation_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -586,12 +619,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackInkManifestation_1_daze',
+      name: 'EXSpecialAttackInkManifestation_1',
     },
   },
-  EXSpecialAttackInkManifestation_1_anomBuildup: {
+  'EXSpecialAttackInkManifestation_1:anomBuildup': {
     sheet: 'Yixuan',
-    name: 'EXSpecialAttackInkManifestation_1_anomBuildup',
+    name: 'EXSpecialAttackInkManifestation_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -600,12 +633,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackInkManifestation_1_anomBuildup',
+      name: 'EXSpecialAttackInkManifestation_1',
     },
   },
-  EXSpecialAttackInkManifestation_2_dmg: {
+  'EXSpecialAttackInkManifestation_2:sheerDmg': {
     sheet: 'Yixuan',
-    name: 'EXSpecialAttackInkManifestation_2_dmg',
+    name: 'EXSpecialAttackInkManifestation_2:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -614,12 +647,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackInkManifestation_2_dmg',
+      name: 'EXSpecialAttackInkManifestation_2',
     },
   },
-  EXSpecialAttackInkManifestation_2_daze: {
+  'EXSpecialAttackInkManifestation_2:dazeBuildup': {
     sheet: 'Yixuan',
-    name: 'EXSpecialAttackInkManifestation_2_daze',
+    name: 'EXSpecialAttackInkManifestation_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -628,12 +661,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackInkManifestation_2_daze',
+      name: 'EXSpecialAttackInkManifestation_2',
     },
   },
-  EXSpecialAttackInkManifestation_2_anomBuildup: {
+  'EXSpecialAttackInkManifestation_2:anomBuildup': {
     sheet: 'Yixuan',
-    name: 'EXSpecialAttackInkManifestation_2_anomBuildup',
+    name: 'EXSpecialAttackInkManifestation_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -642,12 +675,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackInkManifestation_2_anomBuildup',
+      name: 'EXSpecialAttackInkManifestation_2',
     },
   },
-  EXSpecialAttackInkManifestation_3_dmg: {
+  'EXSpecialAttackInkManifestation_3:sheerDmg': {
     sheet: 'Yixuan',
-    name: 'EXSpecialAttackInkManifestation_3_dmg',
+    name: 'EXSpecialAttackInkManifestation_3:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -656,12 +689,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackInkManifestation_3_dmg',
+      name: 'EXSpecialAttackInkManifestation_3',
     },
   },
-  EXSpecialAttackInkManifestation_3_daze: {
+  'EXSpecialAttackInkManifestation_3:dazeBuildup': {
     sheet: 'Yixuan',
-    name: 'EXSpecialAttackInkManifestation_3_daze',
+    name: 'EXSpecialAttackInkManifestation_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -670,12 +703,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackInkManifestation_3_daze',
+      name: 'EXSpecialAttackInkManifestation_3',
     },
   },
-  EXSpecialAttackInkManifestation_3_anomBuildup: {
+  'EXSpecialAttackInkManifestation_3:anomBuildup': {
     sheet: 'Yixuan',
-    name: 'EXSpecialAttackInkManifestation_3_anomBuildup',
+    name: 'EXSpecialAttackInkManifestation_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -684,12 +717,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackInkManifestation_3_anomBuildup',
+      name: 'EXSpecialAttackInkManifestation_3',
     },
   },
-  EXSpecialAttackCloudShaper_0_dmg: {
+  'EXSpecialAttackCloudShaper_0:sheerDmg': {
     sheet: 'Yixuan',
-    name: 'EXSpecialAttackCloudShaper_0_dmg',
+    name: 'EXSpecialAttackCloudShaper_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -697,12 +730,13 @@ export const formulas = {
       sheet: 'Yixuan',
       attribute: 'ether',
       damageType1: 'exSpecial',
-      name: 'EXSpecialAttackCloudShaper_0_dmg',
+      skillType: 'specialSkill',
+      name: 'EXSpecialAttackCloudShaper_0',
     },
   },
-  EXSpecialAttackCloudShaper_0_daze: {
+  'EXSpecialAttackCloudShaper_0:dazeBuildup': {
     sheet: 'Yixuan',
-    name: 'EXSpecialAttackCloudShaper_0_daze',
+    name: 'EXSpecialAttackCloudShaper_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -710,12 +744,13 @@ export const formulas = {
       sheet: 'Yixuan',
       attribute: 'ether',
       damageType1: 'exSpecial',
-      name: 'EXSpecialAttackCloudShaper_0_daze',
+      skillType: 'specialSkill',
+      name: 'EXSpecialAttackCloudShaper_0',
     },
   },
-  EXSpecialAttackCloudShaper_0_anomBuildup: {
+  'EXSpecialAttackCloudShaper_0:anomBuildup': {
     sheet: 'Yixuan',
-    name: 'EXSpecialAttackCloudShaper_0_anomBuildup',
+    name: 'EXSpecialAttackCloudShaper_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -723,12 +758,13 @@ export const formulas = {
       sheet: 'Yixuan',
       attribute: 'ether',
       damageType1: 'exSpecial',
-      name: 'EXSpecialAttackCloudShaper_0_anomBuildup',
+      skillType: 'specialSkill',
+      name: 'EXSpecialAttackCloudShaper_0',
     },
   },
-  EXSpecialAttackAshenInkBecomesShadows_0_dmg: {
+  'EXSpecialAttackAshenInkBecomesShadows_0:sheerDmg': {
     sheet: 'Yixuan',
-    name: 'EXSpecialAttackAshenInkBecomesShadows_0_dmg',
+    name: 'EXSpecialAttackAshenInkBecomesShadows_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -736,12 +772,13 @@ export const formulas = {
       sheet: 'Yixuan',
       attribute: 'ether',
       damageType1: 'exSpecial',
-      name: 'EXSpecialAttackAshenInkBecomesShadows_0_dmg',
+      skillType: 'specialSkill',
+      name: 'EXSpecialAttackAshenInkBecomesShadows_0',
     },
   },
-  EXSpecialAttackAshenInkBecomesShadows_0_daze: {
+  'EXSpecialAttackAshenInkBecomesShadows_0:dazeBuildup': {
     sheet: 'Yixuan',
-    name: 'EXSpecialAttackAshenInkBecomesShadows_0_daze',
+    name: 'EXSpecialAttackAshenInkBecomesShadows_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -749,12 +786,13 @@ export const formulas = {
       sheet: 'Yixuan',
       attribute: 'ether',
       damageType1: 'exSpecial',
-      name: 'EXSpecialAttackAshenInkBecomesShadows_0_daze',
+      skillType: 'specialSkill',
+      name: 'EXSpecialAttackAshenInkBecomesShadows_0',
     },
   },
-  EXSpecialAttackAshenInkBecomesShadows_0_anomBuildup: {
+  'EXSpecialAttackAshenInkBecomesShadows_0:anomBuildup': {
     sheet: 'Yixuan',
-    name: 'EXSpecialAttackAshenInkBecomesShadows_0_anomBuildup',
+    name: 'EXSpecialAttackAshenInkBecomesShadows_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -762,12 +800,13 @@ export const formulas = {
       sheet: 'Yixuan',
       attribute: 'ether',
       damageType1: 'exSpecial',
-      name: 'EXSpecialAttackAshenInkBecomesShadows_0_anomBuildup',
+      skillType: 'specialSkill',
+      name: 'EXSpecialAttackAshenInkBecomesShadows_0',
     },
   },
-  ChainAttackAuricInkRush_0_dmg: {
+  'ChainAttackAuricInkRush_0:sheerDmg': {
     sheet: 'Yixuan',
-    name: 'ChainAttackAuricInkRush_0_dmg',
+    name: 'ChainAttackAuricInkRush_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -776,12 +815,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackAuricInkRush_0_dmg',
+      name: 'ChainAttackAuricInkRush_0',
     },
   },
-  ChainAttackAuricInkRush_0_daze: {
+  'ChainAttackAuricInkRush_0:dazeBuildup': {
     sheet: 'Yixuan',
-    name: 'ChainAttackAuricInkRush_0_daze',
+    name: 'ChainAttackAuricInkRush_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -790,12 +829,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackAuricInkRush_0_daze',
+      name: 'ChainAttackAuricInkRush_0',
     },
   },
-  ChainAttackAuricInkRush_0_anomBuildup: {
+  'ChainAttackAuricInkRush_0:anomBuildup': {
     sheet: 'Yixuan',
-    name: 'ChainAttackAuricInkRush_0_anomBuildup',
+    name: 'ChainAttackAuricInkRush_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -804,12 +843,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackAuricInkRush_0_anomBuildup',
+      name: 'ChainAttackAuricInkRush_0',
     },
   },
-  UltimateQingmingSkyshade_0_dmg: {
+  'UltimateQingmingSkyshade_0:sheerDmg': {
     sheet: 'Yixuan',
-    name: 'UltimateQingmingSkyshade_0_dmg',
+    name: 'UltimateQingmingSkyshade_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -818,12 +857,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateQingmingSkyshade_0_dmg',
+      name: 'UltimateQingmingSkyshade_0',
     },
   },
-  UltimateQingmingSkyshade_0_daze: {
+  'UltimateQingmingSkyshade_0:dazeBuildup': {
     sheet: 'Yixuan',
-    name: 'UltimateQingmingSkyshade_0_daze',
+    name: 'UltimateQingmingSkyshade_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -832,12 +871,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateQingmingSkyshade_0_daze',
+      name: 'UltimateQingmingSkyshade_0',
     },
   },
-  UltimateQingmingSkyshade_0_anomBuildup: {
+  'UltimateQingmingSkyshade_0:anomBuildup': {
     sheet: 'Yixuan',
-    name: 'UltimateQingmingSkyshade_0_anomBuildup',
+    name: 'UltimateQingmingSkyshade_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -846,12 +885,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateQingmingSkyshade_0_anomBuildup',
+      name: 'UltimateQingmingSkyshade_0',
     },
   },
-  UltimateEndlessTalismanSuppression_0_dmg: {
+  'UltimateEndlessTalismanSuppression_0:sheerDmg': {
     sheet: 'Yixuan',
-    name: 'UltimateEndlessTalismanSuppression_0_dmg',
+    name: 'UltimateEndlessTalismanSuppression_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -860,12 +899,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateEndlessTalismanSuppression_0_dmg',
+      name: 'UltimateEndlessTalismanSuppression_0',
     },
   },
-  UltimateEndlessTalismanSuppression_0_daze: {
+  'UltimateEndlessTalismanSuppression_0:dazeBuildup': {
     sheet: 'Yixuan',
-    name: 'UltimateEndlessTalismanSuppression_0_daze',
+    name: 'UltimateEndlessTalismanSuppression_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -874,12 +913,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateEndlessTalismanSuppression_0_daze',
+      name: 'UltimateEndlessTalismanSuppression_0',
     },
   },
-  UltimateEndlessTalismanSuppression_0_anomBuildup: {
+  'UltimateEndlessTalismanSuppression_0:anomBuildup': {
     sheet: 'Yixuan',
-    name: 'UltimateEndlessTalismanSuppression_0_anomBuildup',
+    name: 'UltimateEndlessTalismanSuppression_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -888,12 +927,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateEndlessTalismanSuppression_0_anomBuildup',
+      name: 'UltimateEndlessTalismanSuppression_0',
     },
   },
-  QuickAssistCloudstreamShadow_0_dmg: {
+  'QuickAssistCloudstreamShadow_0:sheerDmg': {
     sheet: 'Yixuan',
-    name: 'QuickAssistCloudstreamShadow_0_dmg',
+    name: 'QuickAssistCloudstreamShadow_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -902,12 +941,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistCloudstreamShadow_0_dmg',
+      name: 'QuickAssistCloudstreamShadow_0',
     },
   },
-  QuickAssistCloudstreamShadow_0_daze: {
+  'QuickAssistCloudstreamShadow_0:dazeBuildup': {
     sheet: 'Yixuan',
-    name: 'QuickAssistCloudstreamShadow_0_daze',
+    name: 'QuickAssistCloudstreamShadow_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -916,12 +955,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistCloudstreamShadow_0_daze',
+      name: 'QuickAssistCloudstreamShadow_0',
     },
   },
-  QuickAssistCloudstreamShadow_0_anomBuildup: {
+  'QuickAssistCloudstreamShadow_0:anomBuildup': {
     sheet: 'Yixuan',
-    name: 'QuickAssistCloudstreamShadow_0_anomBuildup',
+    name: 'QuickAssistCloudstreamShadow_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -930,12 +969,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistCloudstreamShadow_0_anomBuildup',
+      name: 'QuickAssistCloudstreamShadow_0',
     },
   },
-  DefensiveAssistClearSkySurge_0_dmg: {
+  'DefensiveAssistClearSkySurge_0:sheerDmg': {
     sheet: 'Yixuan',
-    name: 'DefensiveAssistClearSkySurge_0_dmg',
+    name: 'DefensiveAssistClearSkySurge_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -944,12 +983,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistClearSkySurge_0_dmg',
+      name: 'DefensiveAssistClearSkySurge_0',
     },
   },
-  DefensiveAssistClearSkySurge_0_daze: {
+  'DefensiveAssistClearSkySurge_0:dazeBuildup': {
     sheet: 'Yixuan',
-    name: 'DefensiveAssistClearSkySurge_0_daze',
+    name: 'DefensiveAssistClearSkySurge_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -958,12 +997,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistClearSkySurge_0_daze',
+      name: 'DefensiveAssistClearSkySurge_0',
     },
   },
-  DefensiveAssistClearSkySurge_0_anomBuildup: {
+  'DefensiveAssistClearSkySurge_0:anomBuildup': {
     sheet: 'Yixuan',
-    name: 'DefensiveAssistClearSkySurge_0_anomBuildup',
+    name: 'DefensiveAssistClearSkySurge_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -972,12 +1011,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistClearSkySurge_0_anomBuildup',
+      name: 'DefensiveAssistClearSkySurge_0',
     },
   },
-  DefensiveAssistClearSkySurge_1_dmg: {
+  'DefensiveAssistClearSkySurge_1:sheerDmg': {
     sheet: 'Yixuan',
-    name: 'DefensiveAssistClearSkySurge_1_dmg',
+    name: 'DefensiveAssistClearSkySurge_1:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -986,12 +1025,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistClearSkySurge_1_dmg',
+      name: 'DefensiveAssistClearSkySurge_1',
     },
   },
-  DefensiveAssistClearSkySurge_1_daze: {
+  'DefensiveAssistClearSkySurge_1:dazeBuildup': {
     sheet: 'Yixuan',
-    name: 'DefensiveAssistClearSkySurge_1_daze',
+    name: 'DefensiveAssistClearSkySurge_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1000,12 +1039,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistClearSkySurge_1_daze',
+      name: 'DefensiveAssistClearSkySurge_1',
     },
   },
-  DefensiveAssistClearSkySurge_1_anomBuildup: {
+  'DefensiveAssistClearSkySurge_1:anomBuildup': {
     sheet: 'Yixuan',
-    name: 'DefensiveAssistClearSkySurge_1_anomBuildup',
+    name: 'DefensiveAssistClearSkySurge_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1014,12 +1053,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistClearSkySurge_1_anomBuildup',
+      name: 'DefensiveAssistClearSkySurge_1',
     },
   },
-  DefensiveAssistClearSkySurge_2_dmg: {
+  'DefensiveAssistClearSkySurge_2:sheerDmg': {
     sheet: 'Yixuan',
-    name: 'DefensiveAssistClearSkySurge_2_dmg',
+    name: 'DefensiveAssistClearSkySurge_2:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1028,12 +1067,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistClearSkySurge_2_dmg',
+      name: 'DefensiveAssistClearSkySurge_2',
     },
   },
-  DefensiveAssistClearSkySurge_2_daze: {
+  'DefensiveAssistClearSkySurge_2:dazeBuildup': {
     sheet: 'Yixuan',
-    name: 'DefensiveAssistClearSkySurge_2_daze',
+    name: 'DefensiveAssistClearSkySurge_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1042,12 +1081,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistClearSkySurge_2_daze',
+      name: 'DefensiveAssistClearSkySurge_2',
     },
   },
-  DefensiveAssistClearSkySurge_2_anomBuildup: {
+  'DefensiveAssistClearSkySurge_2:anomBuildup': {
     sheet: 'Yixuan',
-    name: 'DefensiveAssistClearSkySurge_2_anomBuildup',
+    name: 'DefensiveAssistClearSkySurge_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1056,12 +1095,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistClearSkySurge_2_anomBuildup',
+      name: 'DefensiveAssistClearSkySurge_2',
     },
   },
-  AssistFollowUpCelestialCloudBlitz_0_dmg: {
+  'AssistFollowUpCelestialCloudBlitz_0:sheerDmg': {
     sheet: 'Yixuan',
-    name: 'AssistFollowUpCelestialCloudBlitz_0_dmg',
+    name: 'AssistFollowUpCelestialCloudBlitz_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1070,12 +1109,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpCelestialCloudBlitz_0_dmg',
+      name: 'AssistFollowUpCelestialCloudBlitz_0',
     },
   },
-  AssistFollowUpCelestialCloudBlitz_0_daze: {
+  'AssistFollowUpCelestialCloudBlitz_0:dazeBuildup': {
     sheet: 'Yixuan',
-    name: 'AssistFollowUpCelestialCloudBlitz_0_daze',
+    name: 'AssistFollowUpCelestialCloudBlitz_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1084,12 +1123,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpCelestialCloudBlitz_0_daze',
+      name: 'AssistFollowUpCelestialCloudBlitz_0',
     },
   },
-  AssistFollowUpCelestialCloudBlitz_0_anomBuildup: {
+  'AssistFollowUpCelestialCloudBlitz_0:anomBuildup': {
     sheet: 'Yixuan',
-    name: 'AssistFollowUpCelestialCloudBlitz_0_anomBuildup',
+    name: 'AssistFollowUpCelestialCloudBlitz_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1098,7 +1137,7 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpCelestialCloudBlitz_0_anomBuildup',
+      name: 'AssistFollowUpCelestialCloudBlitz_0',
     },
   },
   ability_dmg: {

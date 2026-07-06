@@ -97,7 +97,7 @@
     "description": {
       "0": "Căn cứ vào <strong>Nguyệt Triệu</strong> của đội, Aino sẽ nhận được hiệu quả cường hóa tương ứng.",
       "1": "<br/>",
-      "2": "<strong>Nguyệt Triệu - Rực Sáng</strong>: Kỹ Năng Nộ <strong>Máy Làm Lạnh Tinh Xảo</strong> được cường hóa: <strong>Vịt Bình Tĩnh</strong> sẽ tăng tần suất bắn đạn nước, gây <hydro>Sát Thương Phạm Vi Nguyên Tố Thủy</hydro> rộng hơn."
+      "2": "<strong>Nguyệt Triệu - Rực Sáng</strong>: Kỹ Năng Nộ <strong><tooltip ns=char_Aino_gen baseKey18=burst>Máy Làm Lạnh Tinh Xảo</tooltip></strong> được cường hóa: <strong>Vịt Bình Tĩnh</strong> sẽ tăng tần suất bắn đạn nước, gây <hydro>Sát Thương Phạm Vi Nguyên Tố Thủy</hydro> rộng hơn."
     }
   },
   "passive2": {
@@ -122,7 +122,7 @@
   "constellation1": {
     "name": "Lý Thuyết Cân Bằng Bụi Và Từ Trường",
     "description": {
-      "0": "Sau khi Aino thi triển Kỹ Năng Nguyên Tố <strong>Bàn Tay Kỳ Diệu</strong> hoặc Kỹ Năng Nộ <strong>Máy Làm Lạnh Tinh Xảo</strong>, Tinh Thông Nguyên Tố của Aino tăng 80 điểm, Tinh Thông Nguyên Tố của nhân vật khác trong trận gần đó tăng 80 điểm, duy trì 15s.",
+      "0": "Sau khi Aino thi triển Kỹ Năng Nguyên Tố <strong><tooltip ns=char_Aino_gen baseKey18=skill>Bàn Tay Kỳ Diệu</tooltip></strong> hoặc Kỹ Năng Nộ <strong><tooltip ns=char_Aino_gen baseKey18=burst>Máy Làm Lạnh Tinh Xảo</tooltip></strong>, Tinh Thông Nguyên Tố của Aino tăng 80 điểm, Tinh Thông Nguyên Tố của nhân vật khác trong trận gần đó tăng 80 điểm, duy trì 15s.",
       "1": "<br/>",
       "2": "Hiệu quả tăng Tinh Thông Nguyên Tố từ Cung Mệnh này sẽ không thể cộng dồn."
     }
@@ -130,33 +130,33 @@
   "constellation2": {
     "name": "Nguyên Lý Truyền Động Vi Sai Bánh Răng",
     "description": {
-      "0": "Trong thời gian duy trì <strong>Vùng Làm Mát Tập Trung</strong> từ Kỹ Năng Nộ <strong>Máy Làm Lạnh Tinh Xảo</strong>, nếu Aino không ra trận, nhân vật ra trận trong đội hiện tại của bản thân khi đánh trúng kẻ địch gần đó, <strong>Vịt Bình Tĩnh</strong> sẽ bắn thêm một viên đạn nước vào kẻ địch đó, gây <hydro>Sát Thương Phạm Vi Nguyên Tố Thủy</hydro> tương đương 25% Tấn Công và 100% Tinh Thông Nguyên Tố của Aino. Hiệu quả này mỗi 5s tối đa kích hoạt một lần, và sát thương này được tính là sát thương Kỹ Năng Nộ."
+      "0": "Trong thời gian duy trì <strong>Vùng Làm Mát Tập Trung</strong> từ Kỹ Năng Nộ <strong><tooltip ns=char_Aino_gen baseKey18=burst>Máy Làm Lạnh Tinh Xảo</tooltip></strong>, nếu Aino không ra trận, nhân vật ra trận trong đội hiện tại của bản thân khi đánh trúng kẻ địch gần đó, <strong>Vịt Bình Tĩnh</strong> sẽ bắn thêm một viên đạn nước vào kẻ địch đó, gây <hydro>Sát Thương Phạm Vi Nguyên Tố Thủy</hydro> tương đương 25% Tấn Công và 100% Tinh Thông Nguyên Tố của Aino. Hiệu quả này mỗi 5s tối đa kích hoạt một lần, và sát thương này được tính là sát thương Kỹ Năng Nộ."
     }
   },
   "constellation3": {
     "name": "Nghệ Thuật Bánh Kem Và Sửa Chữa Máy Móc",
     "description": {
-      "0": "Cấp kỹ năng <strong>Máy Làm Lạnh Tinh Xảo</strong> +3.",
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Aino_gen baseKey18=burst>Máy Làm Lạnh Tinh Xảo</tooltip></strong> +3.",
       "1": "Tăng tối đa đến cấp 15."
     }
   },
   "constellation4": {
     "name": "Bơ, Mèo Và Quy Tắc Cung Cấp Năng Lượng",
     "description": {
-      "0": "Khi Kỹ Năng Nguyên Tố <strong>Bàn Tay Kỳ Diệu</strong> đánh trúng kẻ địch, sẽ hồi phục 10 điểm Năng Lượng Nguyên Tố cho Aino. Mỗi 10s tối đa hồi phục một lần Năng Lượng Nguyên Tố thông qua cách này."
+      "0": "Khi Kỹ Năng Nguyên Tố <strong><tooltip ns=char_Aino_gen baseKey18=skill>Bàn Tay Kỳ Diệu</tooltip></strong> đánh trúng kẻ địch, sẽ hồi phục 10 điểm Năng Lượng Nguyên Tố cho Aino. Mỗi 10s tối đa hồi phục một lần Năng Lượng Nguyên Tố thông qua cách này."
     }
   },
   "constellation5": {
     "name": "Vòng Xoáy Bất Hủ Của Kim Loại Và Ánh Sáng",
     "description": {
-      "0": "Cấp kỹ năng <strong>Bàn Tay Kỳ Diệu</strong> +3.",
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Aino_gen baseKey18=skill>Bàn Tay Kỳ Diệu</tooltip></strong> +3.",
       "1": "Tăng tối đa đến cấp 15."
     }
   },
   "constellation6": {
     "name": "Trách Nhiệm Của Người Sáng Tạo Thiên Tài",
     "description": {
-      "0": "Trong 15s sau khi thi triển Kỹ Năng Nộ <strong>Máy Làm Lạnh Tinh Xảo</strong>, nhân vật trong trận hiện tại gần đó tăng 15% sát thương phản ứng Điện Cảm, Sum Suê, Nguyệt-Điện Cảm, Nguyệt-Sum Suê gây ra.",
+      "0": "Trong 15s sau khi thi triển Kỹ Năng Nộ <strong><tooltip ns=char_Aino_gen baseKey18=burst>Máy Làm Lạnh Tinh Xảo</tooltip></strong>, nhân vật trong trận hiện tại gần đó tăng 15% sát thương phản ứng Điện Cảm, Sum Suê, Nguyệt-Điện Cảm, Nguyệt-Sum Suê, Nguyệt-Kết Tinh gây ra.",
       "1": "<strong>Nguyệt Triệu - Rực Sáng</strong>: Sát thương phản ứng nêu trên tăng thêm 20%."
     }
   }

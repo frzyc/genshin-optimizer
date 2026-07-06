@@ -1,0 +1,20 @@
+{
+  "name": "Serpentine Seeker",
+  "desc": {
+    "0": "Beneath the cold alloy scales, venom made of data flows. Each flick of the serpent's tongue probes the dark, carving out an electronic circuit that leads the homeless snake back to its \"nest.\"",
+    "1": "",
+    "2": "Each cycle of data in and out leaves untraceable fragments of corrupted code — much like its user, driven by instinct to chew through truth's rigid shell.",
+    "3": "",
+    "4": "\"It says... this time, the target's hiding somewhere nice and warm.\" — Cissia brushes a hand over the subtly warm serpent head, her smile hovering between danger and anticipation."
+  },
+  "desc2": "Equip to increase Attack Agents' combat capabilities",
+  "desc3": "Digital venom flows beneath those alloy scales.",
+  "phase": "Bioengineered Venom",
+  "phaseDescs": [
+    "CRIT Rate increases by <ct color=#2BAD00>25%</ct>. When the equipper consumes at least 20 Energy in a single instance, every 20 Energy consumed grants 3s of a buff: when dealing <ct color=#2EB6FF>Electric DMG</ct>, ignore <ct color=#2BAD00>28%</ct> of the target's DEF. Repeated triggers extend the duration, up to a maximum of 30s. When entering combat, gain 10s of this buff. While the equipper is not the active character, the duration no longer decreases.",
+    "CRIT Rate increases by <ct color=#2BAD00>28.8%</ct>. When the equipper consumes at least 20 Energy in a single instance, every 20 Energy consumed grants 3s of a buff: when dealing <ct color=#2EB6FF>Electric DMG</ct>, ignore <ct color=#2BAD00>31.5%</ct> of the target's DEF. Repeated triggers extend the duration, up to a maximum of 30s. When entering combat, gain 10s of this buff. While the equipper is not the active character, the duration no longer decreases.",
+    "CRIT Rate increases by <ct color=#2BAD00>32.5%</ct>. When the equipper consumes at least 20 Energy in a single instance, every 20 Energy consumed grants 3s of a buff: when dealing <ct color=#2EB6FF>Electric DMG</ct>, ignore <ct color=#2BAD00>35%</ct> of the target's DEF. Repeated triggers extend the duration, up to a maximum of 30s. When entering combat, gain 10s of this buff. While the equipper is not the active character, the duration no longer decreases.",
+    "CRIT Rate increases by <ct color=#2BAD00>36.3%</ct>. When the equipper consumes at least 20 Energy in a single instance, every 20 Energy consumed grants 3s of a buff: when dealing <ct color=#2EB6FF>Electric DMG</ct>, ignore <ct color=#2BAD00>38.5%</ct> of the target's DEF. Repeated triggers extend the duration, up to a maximum of 30s. When entering combat, gain 10s of this buff. While the equipper is not the active character, the duration no longer decreases.",
+    "CRIT Rate increases by <ct color=#2BAD00>40%</ct>. When the equipper consumes at least 20 Energy in a single instance, every 20 Energy consumed grants 3s of a buff: when dealing <ct color=#2EB6FF>Electric DMG</ct>, ignore <ct color=#2BAD00>42%</ct> of the target's DEF. Repeated triggers extend the duration, up to a maximum of 30s. When entering combat, gain 10s of this buff. While the equipper is not the active character, the duration no longer decreases."
+  ]
+}

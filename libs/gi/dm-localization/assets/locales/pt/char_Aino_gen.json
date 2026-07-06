@@ -97,7 +97,7 @@
     "description": {
       "0": "Dependendo do <strong>Presságio Lunar</strong> da equipe, Aino obtém fortalecimentos correspondentes.",
       "1": "<br/>",
-      "2": "<strong>Presságio Lunar: Reluzir Cheio</strong>: fortalece o Supremo <strong>Dispositivo Refrigerador Preciso</strong>: o intervalo de disparo de Projéteis Hydro do <strong>Patinho Fica Frio</strong> é reduzido, e aumenta a AdE do <hydro>Dano Hydro em AdE</hydro>."
+      "2": "<strong>Presságio Lunar: Reluzir Cheio</strong>: fortalece o Supremo <strong><tooltip ns=char_Aino_gen baseKey18=burst>Dispositivo Refrigerador Preciso</tooltip></strong>: o intervalo de disparo de Projéteis Hydro do <strong>Patinho Fica Frio</strong> é reduzido, e aumenta a AdE do <hydro>Dano Hydro em AdE</hydro>."
     }
   },
   "passive2": {
@@ -122,7 +122,7 @@
   "constellation1": {
     "name": "Teoria do Equilíbrio do Campo de Cinzas",
     "description": {
-      "0": "Depois que Aino lança sua Habilidade Elemental <strong>Captura de Ideias</strong> ou o Supremo <strong>Dispositivo Refrigerador Preciso</strong>, aumenta sua Proficiência Elemental em 80, e a Proficiência Elemental dos outros personagens ativos próximos em 80 por 15s.",
+      "0": "Depois que Aino lança sua Habilidade Elemental <strong><tooltip ns=char_Aino_gen baseKey18=skill>Captura de Ideias</tooltip></strong> ou o Supremo <strong><tooltip ns=char_Aino_gen baseKey18=burst>Dispositivo Refrigerador Preciso</tooltip></strong>, aumenta sua Proficiência Elemental em 80, e a Proficiência Elemental dos outros personagens ativos próximos em 80 por 15s.",
       "1": "<br/>",
       "2": "O efeito de aumento de Proficiência Elemental dessa Constelação não é acumulável."
     }
@@ -130,33 +130,33 @@
   "constellation2": {
     "name": "O Princípio da Transferência em Diferenciais de Engrenagens",
     "description": {
-      "0": "Quando a <strong>Zona Focada Hydro</strong> do Supremo <strong>Dispositivo Refrigerador Preciso</strong> está em sua duração, se Aino não for a personagem ativa, e o personagem ativo da equipe atingir um ataque no inimigo próximo, <strong>Patinho Fica Frio</strong> dispara um Projétil Aquático adicional nesse inimigo, causando <hydro>Dano Hydro em AdE</hydro> equivalente a 100% da Proficiência Elemental e 25% do ATQ de Aino. Esse efeito pode ser desencadeado uma vez a cada 5s, e seu Dano é considerado Dano de Supremo."
+      "0": "Quando a <strong><tooltip ns=char_Aino_gen baseKey18=burst>Zona Focada Hydro</tooltip></strong> do Supremo <strong>Dispositivo Refrigerador Preciso</strong> está em sua duração, se Aino não for a personagem ativa, e o personagem ativo da equipe atingir um ataque no inimigo próximo, <strong>Patinho Fica Frio</strong> dispara um Projétil Aquático adicional nesse inimigo, causando <hydro>Dano Hydro em AdE</hydro> equivalente a 100% da Proficiência Elemental e 25% do ATQ de Aino. Esse efeito pode ser desencadeado uma vez a cada 5s, e seu Dano é considerado Dano de Supremo."
     }
   },
   "constellation3": {
     "name": "O Bolo e a Arte do Reparo Mecânico",
     "description": {
-      "0": "Aumenta o nível do Supremo <strong>Dispositivo Refrigerador Preciso</strong> em 3.",
+      "0": "Aumenta o nível do Supremo <strong><tooltip ns=char_Aino_gen baseKey18=burst>Dispositivo Refrigerador Preciso</tooltip></strong> em 3.",
       "1": "O nível máximo de elevação é 15."
     }
   },
   "constellation4": {
     "name": "Manteiga, Gatos e a Lei da Energia",
     "description": {
-      "0": "Quando a Habilidade Elemental <strong>Captura de Ideias</strong> atinge um inimigo, regenera 10 de Energia para Aino. É possível regenerar Energia uma vez a cada 10s dessa forma."
+      "0": "Quando a Habilidade Elemental <strong><tooltip ns=char_Aino_gen baseKey18=skill>Captura de Ideias</tooltip></strong> atinge um inimigo, regenera 10 de Energia para Aino. É possível regenerar Energia uma vez a cada 10s dessa forma."
     }
   },
   "constellation5": {
     "name": "A Turbina Perpétua de Metal e Luz",
     "description": {
-      "0": "Aumenta o nível da Habilidade Elemental <strong>Captura de Ideias</strong> em 3 níveis. ",
+      "0": "Aumenta o nível da Habilidade Elemental <strong><tooltip ns=char_Aino_gen baseKey18=skill>Captura de Ideias</tooltip></strong> em 3 níveis. ",
       "1": "O nível máximo de elevação é 15."
     }
   },
   "constellation6": {
     "name": "A Responsabilidade de um Gênio Mecânico",
     "description": {
-      "0": "Nos 15s depois de lançar o Supremo <strong>Dispositivo Refrigerador Preciso</strong>, se um personagem ativo próximo desencadear Eletricamente Carregado, Florescimento, Carga Lunar ou Florescimento Lunar, aumenta o Dano causado em 15%.",
+      "0": "Nos 15s depois de lançar o Supremo <strong><tooltip ns=char_Aino_gen baseKey18=burst>Dispositivo Refrigerador Preciso</tooltip></strong>, se um personagem ativo próximo desencadear Eletricamente Carregado, Florescimento, Carga Lunar, Florescimento Lunar ou Cristalização Lunar aumenta o Dano causado em 15%.",
       "1": "<strong>Presságio Lunar: Reluzir Cheio</strong>: aumenta o Dano da reação em mais 20%."
     }
   }

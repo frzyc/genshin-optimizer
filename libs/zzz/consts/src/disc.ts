@@ -7,6 +7,7 @@ export type DiscSlotKey = (typeof allDiscSlotKeys)[number]
 export const allDiscSetKeys = [
   'AstralVoice',
   'BranchBladeSong',
+  'BunnyInWonderland',
   'ChaosJazz',
   'ChaoticMetal',
   'DawnsBloom',
@@ -16,16 +17,21 @@ export const allDiscSetKeys = [
   'InfernoMetal',
   'KingOfTheSummit',
   'MoonlightLullaby',
+  'NotesFromTheChained',
   'PhaethonsMelody',
   'PolarMetal',
   'ProtoPunk',
   'PufferElectro',
   'ShadowHarmony',
+  'ShiningAria',
   'ShockstarDisco',
   'SoulRock',
   'SwingJazz',
+  'TheSkyAblaze',
   'ThunderMetal',
+  'WhiteWaterBallad',
   'WoodpeckerElectro',
+  'WutheringSalon',
   'YunkuiTales',
 ] as const
 export type DiscSetKey = (typeof allDiscSetKeys)[number]
@@ -53,6 +59,7 @@ export const allElementalDmgMainStatKeys = [
   'ice_dmg_',
   'physical_dmg_',
   'ether_dmg_',
+  'wind_dmg_',
 ] as const
 export const allDiscMainStatKeys = [
   'hp',
@@ -147,6 +154,7 @@ const mainData = {
   ice_dmg_: m123,
   physical_dmg_: m123,
   ether_dmg_: m123,
+  wind_dmg_: m123,
   anomMas_: m123,
   enerRegen_: { B: 0.2, A: 0.4, S: 0.6 },
   impact_: { B: 0.06, A: 0.12, S: 0.18 },
@@ -175,6 +183,7 @@ export const disc2pEffect: Record<
 > = {
   AstralVoice: { atk_: 0.1 },
   BranchBladeSong: { crit_dmg_: 0.16 },
+  BunnyInWonderland: { hp_: 0.1 },
   ChaosJazz: { anomProf: 30 },
   ChaoticMetal: { ether_dmg_: 0.1 },
   DawnsBloom: {}, // TODO: Handle this automatically. For now, we will need to add the 2p effect manually
@@ -184,17 +193,22 @@ export const disc2pEffect: Record<
   InfernoMetal: { fire_dmg_: 0.1 },
   KingOfTheSummit: { dazeInc_: 0.06 },
   MoonlightLullaby: { enerRegen_: 0.2 },
+  NotesFromTheChained: { ice_dmg_: 0.1 },
   PhaethonsMelody: { anomMas_: 0.08 },
   PolarMetal: { ice_dmg_: 0.1 },
   ProtoPunk: { shield_: 0.15 },
   PufferElectro: { pen_: 0.08 },
   ShadowHarmony: { dmg_: 0.15 },
+  ShiningAria: { ether_dmg_: 0.1 },
   ShockstarDisco: { impact_: 0.06 },
   SoulRock: { def_: 0.16 },
   SwingJazz: { enerRegen_: 0.2 },
   ThunderMetal: { electric_dmg_: 0.1 },
+  WhiteWaterBallad: { physical_dmg_: 0.1 },
   WoodpeckerElectro: { crit_: 0.08 },
   YunkuiTales: { hp_: 0.1 },
+  WutheringSalon: { wind_dmg_: 0.1 },
+  TheSkyAblaze: { ether_dmg_: 0.1 },
 }
 
 // Copied from libs\zzz\dm\src\dm\disc\discNames.json, mainly used for scanner.
@@ -221,4 +235,10 @@ export const discSetNames: Record<DiscSetKey, string> = {
   KingOfTheSummit: 'King of the Summit',
   DawnsBloom: "Dawn's Bloom",
   MoonlightLullaby: 'Moonlight Lullaby',
+  WhiteWaterBallad: 'White Water Ballad',
+  ShiningAria: 'Shining Aria',
+  BunnyInWonderland: 'Bunny in Wonderland',
+  NotesFromTheChained: 'Notes From the Chained',
+  WutheringSalon: 'Wuthering Salon',
+  TheSkyAblaze: 'The Sky Ablaze',
 }

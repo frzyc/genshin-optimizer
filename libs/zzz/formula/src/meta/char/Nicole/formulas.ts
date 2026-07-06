@@ -38,6 +38,33 @@ export const formulas = {
       name: 'disorderDmgInst_ether',
     },
   },
+  vortexDmgInst_ether: {
+    sheet: 'Nicole',
+    name: 'vortexDmgInst_ether',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'Nicole',
+      attribute: 'ether',
+      damageType1: 'vortex',
+      name: 'vortexDmgInst_ether',
+    },
+  },
+  abloomDmgInst: {
+    sheet: 'Nicole',
+    name: 'abloomDmgInst',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'Nicole',
+      attribute: 'ether',
+      damageType1: 'anomaly',
+      damageType2: 'abloom',
+      name: 'abloomDmgInst',
+    },
+  },
   anomalyBuildupInst: {
     sheet: 'Nicole',
     name: 'anomalyBuildupInst',
@@ -62,9 +89,9 @@ export const formulas = {
       name: 'dazeInst',
     },
   },
-  BasicAttackCunningCombo_0_dmg: {
+  'BasicAttackCunningCombo_0:standardDmg': {
     sheet: 'Nicole',
-    name: 'BasicAttackCunningCombo_0_dmg',
+    name: 'BasicAttackCunningCombo_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -72,12 +99,13 @@ export const formulas = {
       sheet: 'Nicole',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackCunningCombo_0_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackCunningCombo_0',
     },
   },
-  BasicAttackCunningCombo_0_daze: {
+  'BasicAttackCunningCombo_0:dazeBuildup': {
     sheet: 'Nicole',
-    name: 'BasicAttackCunningCombo_0_daze',
+    name: 'BasicAttackCunningCombo_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -85,12 +113,13 @@ export const formulas = {
       sheet: 'Nicole',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackCunningCombo_0_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackCunningCombo_0',
     },
   },
-  BasicAttackCunningCombo_0_anomBuildup: {
+  'BasicAttackCunningCombo_0:anomBuildup': {
     sheet: 'Nicole',
-    name: 'BasicAttackCunningCombo_0_anomBuildup',
+    name: 'BasicAttackCunningCombo_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -98,12 +127,13 @@ export const formulas = {
       sheet: 'Nicole',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackCunningCombo_0_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackCunningCombo_0',
     },
   },
-  BasicAttackCunningCombo_1_dmg: {
+  'BasicAttackCunningCombo_1:standardDmg': {
     sheet: 'Nicole',
-    name: 'BasicAttackCunningCombo_1_dmg',
+    name: 'BasicAttackCunningCombo_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -111,12 +141,13 @@ export const formulas = {
       sheet: 'Nicole',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackCunningCombo_1_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackCunningCombo_1',
     },
   },
-  BasicAttackCunningCombo_1_daze: {
+  'BasicAttackCunningCombo_1:dazeBuildup': {
     sheet: 'Nicole',
-    name: 'BasicAttackCunningCombo_1_daze',
+    name: 'BasicAttackCunningCombo_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -124,12 +155,13 @@ export const formulas = {
       sheet: 'Nicole',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackCunningCombo_1_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackCunningCombo_1',
     },
   },
-  BasicAttackCunningCombo_1_anomBuildup: {
+  'BasicAttackCunningCombo_1:anomBuildup': {
     sheet: 'Nicole',
-    name: 'BasicAttackCunningCombo_1_anomBuildup',
+    name: 'BasicAttackCunningCombo_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -137,12 +169,13 @@ export const formulas = {
       sheet: 'Nicole',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackCunningCombo_1_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackCunningCombo_1',
     },
   },
-  BasicAttackCunningCombo_2_dmg: {
+  'BasicAttackCunningCombo_2:standardDmg': {
     sheet: 'Nicole',
-    name: 'BasicAttackCunningCombo_2_dmg',
+    name: 'BasicAttackCunningCombo_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -150,12 +183,13 @@ export const formulas = {
       sheet: 'Nicole',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackCunningCombo_2_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackCunningCombo_2',
     },
   },
-  BasicAttackCunningCombo_2_daze: {
+  'BasicAttackCunningCombo_2:dazeBuildup': {
     sheet: 'Nicole',
-    name: 'BasicAttackCunningCombo_2_daze',
+    name: 'BasicAttackCunningCombo_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -163,12 +197,13 @@ export const formulas = {
       sheet: 'Nicole',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackCunningCombo_2_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackCunningCombo_2',
     },
   },
-  BasicAttackCunningCombo_2_anomBuildup: {
+  'BasicAttackCunningCombo_2:anomBuildup': {
     sheet: 'Nicole',
-    name: 'BasicAttackCunningCombo_2_anomBuildup',
+    name: 'BasicAttackCunningCombo_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -176,12 +211,13 @@ export const formulas = {
       sheet: 'Nicole',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackCunningCombo_2_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackCunningCombo_2',
     },
   },
-  BasicAttackDoAsIPlease_0_dmg: {
+  'BasicAttackDoAsIPlease_0:standardDmg': {
     sheet: 'Nicole',
-    name: 'BasicAttackDoAsIPlease_0_dmg',
+    name: 'BasicAttackDoAsIPlease_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -189,12 +225,13 @@ export const formulas = {
       sheet: 'Nicole',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackDoAsIPlease_0_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackDoAsIPlease_0',
     },
   },
-  BasicAttackDoAsIPlease_0_daze: {
+  'BasicAttackDoAsIPlease_0:dazeBuildup': {
     sheet: 'Nicole',
-    name: 'BasicAttackDoAsIPlease_0_daze',
+    name: 'BasicAttackDoAsIPlease_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -202,12 +239,13 @@ export const formulas = {
       sheet: 'Nicole',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackDoAsIPlease_0_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackDoAsIPlease_0',
     },
   },
-  BasicAttackDoAsIPlease_0_anomBuildup: {
+  'BasicAttackDoAsIPlease_0:anomBuildup': {
     sheet: 'Nicole',
-    name: 'BasicAttackDoAsIPlease_0_anomBuildup',
+    name: 'BasicAttackDoAsIPlease_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -215,12 +253,13 @@ export const formulas = {
       sheet: 'Nicole',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackDoAsIPlease_0_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackDoAsIPlease_0',
     },
   },
-  BasicAttackDoAsIPlease_1_dmg: {
+  'BasicAttackDoAsIPlease_1:standardDmg': {
     sheet: 'Nicole',
-    name: 'BasicAttackDoAsIPlease_1_dmg',
+    name: 'BasicAttackDoAsIPlease_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -228,12 +267,13 @@ export const formulas = {
       sheet: 'Nicole',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackDoAsIPlease_1_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackDoAsIPlease_1',
     },
   },
-  BasicAttackDoAsIPlease_1_daze: {
+  'BasicAttackDoAsIPlease_1:dazeBuildup': {
     sheet: 'Nicole',
-    name: 'BasicAttackDoAsIPlease_1_daze',
+    name: 'BasicAttackDoAsIPlease_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -241,12 +281,13 @@ export const formulas = {
       sheet: 'Nicole',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackDoAsIPlease_1_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackDoAsIPlease_1',
     },
   },
-  BasicAttackDoAsIPlease_1_anomBuildup: {
+  'BasicAttackDoAsIPlease_1:anomBuildup': {
     sheet: 'Nicole',
-    name: 'BasicAttackDoAsIPlease_1_anomBuildup',
+    name: 'BasicAttackDoAsIPlease_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -254,12 +295,13 @@ export const formulas = {
       sheet: 'Nicole',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackDoAsIPlease_1_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackDoAsIPlease_1',
     },
   },
-  BasicAttackDoAsIPlease_2_dmg: {
+  'BasicAttackDoAsIPlease_2:standardDmg': {
     sheet: 'Nicole',
-    name: 'BasicAttackDoAsIPlease_2_dmg',
+    name: 'BasicAttackDoAsIPlease_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -267,12 +309,13 @@ export const formulas = {
       sheet: 'Nicole',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackDoAsIPlease_2_dmg',
+      skillType: 'basicSkill',
+      name: 'BasicAttackDoAsIPlease_2',
     },
   },
-  BasicAttackDoAsIPlease_2_daze: {
+  'BasicAttackDoAsIPlease_2:dazeBuildup': {
     sheet: 'Nicole',
-    name: 'BasicAttackDoAsIPlease_2_daze',
+    name: 'BasicAttackDoAsIPlease_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -280,12 +323,13 @@ export const formulas = {
       sheet: 'Nicole',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackDoAsIPlease_2_daze',
+      skillType: 'basicSkill',
+      name: 'BasicAttackDoAsIPlease_2',
     },
   },
-  BasicAttackDoAsIPlease_2_anomBuildup: {
+  'BasicAttackDoAsIPlease_2:anomBuildup': {
     sheet: 'Nicole',
-    name: 'BasicAttackDoAsIPlease_2_anomBuildup',
+    name: 'BasicAttackDoAsIPlease_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -293,51 +337,13 @@ export const formulas = {
       sheet: 'Nicole',
       damageType1: 'basic',
       attribute: 'physical',
-      name: 'BasicAttackDoAsIPlease_2_anomBuildup',
+      skillType: 'basicSkill',
+      name: 'BasicAttackDoAsIPlease_2',
     },
   },
-  DashAttackJackInTheBox_0_dmg: {
+  'DashAttackJackInTheBox_0:standardDmg': {
     sheet: 'Nicole',
-    name: 'DashAttackJackInTheBox_0_dmg',
-    tag: {
-      et: 'own',
-      qt: 'formula',
-      q: 'standardDmg',
-      sheet: 'Nicole',
-      damageType1: 'dash',
-      attribute: 'physical',
-      name: 'DashAttackJackInTheBox_0_dmg',
-    },
-  },
-  DashAttackJackInTheBox_0_daze: {
-    sheet: 'Nicole',
-    name: 'DashAttackJackInTheBox_0_daze',
-    tag: {
-      et: 'own',
-      qt: 'formula',
-      q: 'dazeBuildup',
-      sheet: 'Nicole',
-      damageType1: 'dash',
-      attribute: 'physical',
-      name: 'DashAttackJackInTheBox_0_daze',
-    },
-  },
-  DashAttackJackInTheBox_0_anomBuildup: {
-    sheet: 'Nicole',
-    name: 'DashAttackJackInTheBox_0_anomBuildup',
-    tag: {
-      et: 'own',
-      qt: 'formula',
-      q: 'anomBuildup',
-      sheet: 'Nicole',
-      damageType1: 'dash',
-      attribute: 'physical',
-      name: 'DashAttackJackInTheBox_0_anomBuildup',
-    },
-  },
-  DashAttackJackInTheBox_1_dmg: {
-    sheet: 'Nicole',
-    name: 'DashAttackJackInTheBox_1_dmg',
+    name: 'DashAttackJackInTheBox_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -345,12 +351,13 @@ export const formulas = {
       sheet: 'Nicole',
       damageType1: 'dash',
       attribute: 'physical',
-      name: 'DashAttackJackInTheBox_1_dmg',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackJackInTheBox_0',
     },
   },
-  DashAttackJackInTheBox_1_daze: {
+  'DashAttackJackInTheBox_0:dazeBuildup': {
     sheet: 'Nicole',
-    name: 'DashAttackJackInTheBox_1_daze',
+    name: 'DashAttackJackInTheBox_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -358,12 +365,13 @@ export const formulas = {
       sheet: 'Nicole',
       damageType1: 'dash',
       attribute: 'physical',
-      name: 'DashAttackJackInTheBox_1_daze',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackJackInTheBox_0',
     },
   },
-  DashAttackJackInTheBox_1_anomBuildup: {
+  'DashAttackJackInTheBox_0:anomBuildup': {
     sheet: 'Nicole',
-    name: 'DashAttackJackInTheBox_1_anomBuildup',
+    name: 'DashAttackJackInTheBox_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -371,12 +379,55 @@ export const formulas = {
       sheet: 'Nicole',
       damageType1: 'dash',
       attribute: 'physical',
-      name: 'DashAttackJackInTheBox_1_anomBuildup',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackJackInTheBox_0',
     },
   },
-  DodgeCounterDivertedBombard_0_dmg: {
+  'DashAttackJackInTheBox_1:standardDmg': {
     sheet: 'Nicole',
-    name: 'DodgeCounterDivertedBombard_0_dmg',
+    name: 'DashAttackJackInTheBox_1:standardDmg',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'standardDmg',
+      sheet: 'Nicole',
+      damageType1: 'dash',
+      attribute: 'physical',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackJackInTheBox_1',
+    },
+  },
+  'DashAttackJackInTheBox_1:dazeBuildup': {
+    sheet: 'Nicole',
+    name: 'DashAttackJackInTheBox_1:dazeBuildup',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'dazeBuildup',
+      sheet: 'Nicole',
+      damageType1: 'dash',
+      attribute: 'physical',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackJackInTheBox_1',
+    },
+  },
+  'DashAttackJackInTheBox_1:anomBuildup': {
+    sheet: 'Nicole',
+    name: 'DashAttackJackInTheBox_1:anomBuildup',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomBuildup',
+      sheet: 'Nicole',
+      damageType1: 'dash',
+      attribute: 'physical',
+      skillType: 'dodgeSkill',
+      name: 'DashAttackJackInTheBox_1',
+    },
+  },
+  'DodgeCounterDivertedBombard_0:standardDmg': {
+    sheet: 'Nicole',
+    name: 'DodgeCounterDivertedBombard_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -384,12 +435,13 @@ export const formulas = {
       sheet: 'Nicole',
       attribute: 'ether',
       damageType1: 'dodgeCounter',
-      name: 'DodgeCounterDivertedBombard_0_dmg',
+      skillType: 'dodgeSkill',
+      name: 'DodgeCounterDivertedBombard_0',
     },
   },
-  DodgeCounterDivertedBombard_0_daze: {
+  'DodgeCounterDivertedBombard_0:dazeBuildup': {
     sheet: 'Nicole',
-    name: 'DodgeCounterDivertedBombard_0_daze',
+    name: 'DodgeCounterDivertedBombard_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -397,12 +449,13 @@ export const formulas = {
       sheet: 'Nicole',
       attribute: 'ether',
       damageType1: 'dodgeCounter',
-      name: 'DodgeCounterDivertedBombard_0_daze',
+      skillType: 'dodgeSkill',
+      name: 'DodgeCounterDivertedBombard_0',
     },
   },
-  DodgeCounterDivertedBombard_0_anomBuildup: {
+  'DodgeCounterDivertedBombard_0:anomBuildup': {
     sheet: 'Nicole',
-    name: 'DodgeCounterDivertedBombard_0_anomBuildup',
+    name: 'DodgeCounterDivertedBombard_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -410,12 +463,13 @@ export const formulas = {
       sheet: 'Nicole',
       attribute: 'ether',
       damageType1: 'dodgeCounter',
-      name: 'DodgeCounterDivertedBombard_0_anomBuildup',
+      skillType: 'dodgeSkill',
+      name: 'DodgeCounterDivertedBombard_0',
     },
   },
-  SpecialAttackSugarcoatedBullet_0_dmg: {
+  'SpecialAttackSugarcoatedBullet_0:standardDmg': {
     sheet: 'Nicole',
-    name: 'SpecialAttackSugarcoatedBullet_0_dmg',
+    name: 'SpecialAttackSugarcoatedBullet_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -423,12 +477,13 @@ export const formulas = {
       sheet: 'Nicole',
       attribute: 'ether',
       damageType1: 'special',
-      name: 'SpecialAttackSugarcoatedBullet_0_dmg',
+      skillType: 'specialSkill',
+      name: 'SpecialAttackSugarcoatedBullet_0',
     },
   },
-  SpecialAttackSugarcoatedBullet_0_daze: {
+  'SpecialAttackSugarcoatedBullet_0:dazeBuildup': {
     sheet: 'Nicole',
-    name: 'SpecialAttackSugarcoatedBullet_0_daze',
+    name: 'SpecialAttackSugarcoatedBullet_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -436,12 +491,13 @@ export const formulas = {
       sheet: 'Nicole',
       attribute: 'ether',
       damageType1: 'special',
-      name: 'SpecialAttackSugarcoatedBullet_0_daze',
+      skillType: 'specialSkill',
+      name: 'SpecialAttackSugarcoatedBullet_0',
     },
   },
-  SpecialAttackSugarcoatedBullet_0_anomBuildup: {
+  'SpecialAttackSugarcoatedBullet_0:anomBuildup': {
     sheet: 'Nicole',
-    name: 'SpecialAttackSugarcoatedBullet_0_anomBuildup',
+    name: 'SpecialAttackSugarcoatedBullet_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -449,12 +505,13 @@ export const formulas = {
       sheet: 'Nicole',
       attribute: 'ether',
       damageType1: 'special',
-      name: 'SpecialAttackSugarcoatedBullet_0_anomBuildup',
+      skillType: 'specialSkill',
+      name: 'SpecialAttackSugarcoatedBullet_0',
     },
   },
-  EXSpecialAttackStuffedSugarcoatedBullet_0_dmg: {
+  'EXSpecialAttackStuffedSugarcoatedBullet_0:standardDmg': {
     sheet: 'Nicole',
-    name: 'EXSpecialAttackStuffedSugarcoatedBullet_0_dmg',
+    name: 'EXSpecialAttackStuffedSugarcoatedBullet_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -463,12 +520,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackStuffedSugarcoatedBullet_0_dmg',
+      name: 'EXSpecialAttackStuffedSugarcoatedBullet_0',
     },
   },
-  EXSpecialAttackStuffedSugarcoatedBullet_0_daze: {
+  'EXSpecialAttackStuffedSugarcoatedBullet_0:dazeBuildup': {
     sheet: 'Nicole',
-    name: 'EXSpecialAttackStuffedSugarcoatedBullet_0_daze',
+    name: 'EXSpecialAttackStuffedSugarcoatedBullet_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -477,12 +534,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackStuffedSugarcoatedBullet_0_daze',
+      name: 'EXSpecialAttackStuffedSugarcoatedBullet_0',
     },
   },
-  EXSpecialAttackStuffedSugarcoatedBullet_0_anomBuildup: {
+  'EXSpecialAttackStuffedSugarcoatedBullet_0:anomBuildup': {
     sheet: 'Nicole',
-    name: 'EXSpecialAttackStuffedSugarcoatedBullet_0_anomBuildup',
+    name: 'EXSpecialAttackStuffedSugarcoatedBullet_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -491,12 +548,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackStuffedSugarcoatedBullet_0_anomBuildup',
+      name: 'EXSpecialAttackStuffedSugarcoatedBullet_0',
     },
   },
-  EXSpecialAttackStuffedSugarcoatedBullet_1_dmg: {
+  'EXSpecialAttackStuffedSugarcoatedBullet_1:standardDmg': {
     sheet: 'Nicole',
-    name: 'EXSpecialAttackStuffedSugarcoatedBullet_1_dmg',
+    name: 'EXSpecialAttackStuffedSugarcoatedBullet_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -505,12 +562,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackStuffedSugarcoatedBullet_1_dmg',
+      name: 'EXSpecialAttackStuffedSugarcoatedBullet_1',
     },
   },
-  EXSpecialAttackStuffedSugarcoatedBullet_1_daze: {
+  'EXSpecialAttackStuffedSugarcoatedBullet_1:dazeBuildup': {
     sheet: 'Nicole',
-    name: 'EXSpecialAttackStuffedSugarcoatedBullet_1_daze',
+    name: 'EXSpecialAttackStuffedSugarcoatedBullet_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -519,12 +576,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackStuffedSugarcoatedBullet_1_daze',
+      name: 'EXSpecialAttackStuffedSugarcoatedBullet_1',
     },
   },
-  EXSpecialAttackStuffedSugarcoatedBullet_1_anomBuildup: {
+  'EXSpecialAttackStuffedSugarcoatedBullet_1:anomBuildup': {
     sheet: 'Nicole',
-    name: 'EXSpecialAttackStuffedSugarcoatedBullet_1_anomBuildup',
+    name: 'EXSpecialAttackStuffedSugarcoatedBullet_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -533,12 +590,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackStuffedSugarcoatedBullet_1_anomBuildup',
+      name: 'EXSpecialAttackStuffedSugarcoatedBullet_1',
     },
   },
-  EXSpecialAttackStuffedSugarcoatedBullet_2_dmg: {
+  'EXSpecialAttackStuffedSugarcoatedBullet_2:standardDmg': {
     sheet: 'Nicole',
-    name: 'EXSpecialAttackStuffedSugarcoatedBullet_2_dmg',
+    name: 'EXSpecialAttackStuffedSugarcoatedBullet_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -547,12 +604,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackStuffedSugarcoatedBullet_2_dmg',
+      name: 'EXSpecialAttackStuffedSugarcoatedBullet_2',
     },
   },
-  EXSpecialAttackStuffedSugarcoatedBullet_2_daze: {
+  'EXSpecialAttackStuffedSugarcoatedBullet_2:dazeBuildup': {
     sheet: 'Nicole',
-    name: 'EXSpecialAttackStuffedSugarcoatedBullet_2_daze',
+    name: 'EXSpecialAttackStuffedSugarcoatedBullet_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -561,12 +618,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackStuffedSugarcoatedBullet_2_daze',
+      name: 'EXSpecialAttackStuffedSugarcoatedBullet_2',
     },
   },
-  EXSpecialAttackStuffedSugarcoatedBullet_2_anomBuildup: {
+  'EXSpecialAttackStuffedSugarcoatedBullet_2:anomBuildup': {
     sheet: 'Nicole',
-    name: 'EXSpecialAttackStuffedSugarcoatedBullet_2_anomBuildup',
+    name: 'EXSpecialAttackStuffedSugarcoatedBullet_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -575,12 +632,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackStuffedSugarcoatedBullet_2_anomBuildup',
+      name: 'EXSpecialAttackStuffedSugarcoatedBullet_2',
     },
   },
-  EXSpecialAttackStuffedSugarcoatedBullet_3_dmg: {
+  'EXSpecialAttackStuffedSugarcoatedBullet_3:standardDmg': {
     sheet: 'Nicole',
-    name: 'EXSpecialAttackStuffedSugarcoatedBullet_3_dmg',
+    name: 'EXSpecialAttackStuffedSugarcoatedBullet_3:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -589,12 +646,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackStuffedSugarcoatedBullet_3_dmg',
+      name: 'EXSpecialAttackStuffedSugarcoatedBullet_3',
     },
   },
-  EXSpecialAttackStuffedSugarcoatedBullet_3_daze: {
+  'EXSpecialAttackStuffedSugarcoatedBullet_3:dazeBuildup': {
     sheet: 'Nicole',
-    name: 'EXSpecialAttackStuffedSugarcoatedBullet_3_daze',
+    name: 'EXSpecialAttackStuffedSugarcoatedBullet_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -603,12 +660,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackStuffedSugarcoatedBullet_3_daze',
+      name: 'EXSpecialAttackStuffedSugarcoatedBullet_3',
     },
   },
-  EXSpecialAttackStuffedSugarcoatedBullet_3_anomBuildup: {
+  'EXSpecialAttackStuffedSugarcoatedBullet_3:anomBuildup': {
     sheet: 'Nicole',
-    name: 'EXSpecialAttackStuffedSugarcoatedBullet_3_anomBuildup',
+    name: 'EXSpecialAttackStuffedSugarcoatedBullet_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -617,12 +674,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackStuffedSugarcoatedBullet_3_anomBuildup',
+      name: 'EXSpecialAttackStuffedSugarcoatedBullet_3',
     },
   },
-  ChainAttackEtherShellacking_0_dmg: {
+  'ChainAttackEtherShellacking_0:standardDmg': {
     sheet: 'Nicole',
-    name: 'ChainAttackEtherShellacking_0_dmg',
+    name: 'ChainAttackEtherShellacking_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -630,12 +687,13 @@ export const formulas = {
       sheet: 'Nicole',
       attribute: 'ether',
       damageType1: 'chain',
-      name: 'ChainAttackEtherShellacking_0_dmg',
+      skillType: 'chainSkill',
+      name: 'ChainAttackEtherShellacking_0',
     },
   },
-  ChainAttackEtherShellacking_0_daze: {
+  'ChainAttackEtherShellacking_0:dazeBuildup': {
     sheet: 'Nicole',
-    name: 'ChainAttackEtherShellacking_0_daze',
+    name: 'ChainAttackEtherShellacking_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -643,12 +701,13 @@ export const formulas = {
       sheet: 'Nicole',
       attribute: 'ether',
       damageType1: 'chain',
-      name: 'ChainAttackEtherShellacking_0_daze',
+      skillType: 'chainSkill',
+      name: 'ChainAttackEtherShellacking_0',
     },
   },
-  ChainAttackEtherShellacking_0_anomBuildup: {
+  'ChainAttackEtherShellacking_0:anomBuildup': {
     sheet: 'Nicole',
-    name: 'ChainAttackEtherShellacking_0_anomBuildup',
+    name: 'ChainAttackEtherShellacking_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -656,12 +715,13 @@ export const formulas = {
       sheet: 'Nicole',
       attribute: 'ether',
       damageType1: 'chain',
-      name: 'ChainAttackEtherShellacking_0_anomBuildup',
+      skillType: 'chainSkill',
+      name: 'ChainAttackEtherShellacking_0',
     },
   },
-  ChainAttackEtherShellacking_1_dmg: {
+  'ChainAttackEtherShellacking_1:standardDmg': {
     sheet: 'Nicole',
-    name: 'ChainAttackEtherShellacking_1_dmg',
+    name: 'ChainAttackEtherShellacking_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -669,12 +729,13 @@ export const formulas = {
       sheet: 'Nicole',
       attribute: 'ether',
       damageType1: 'chain',
-      name: 'ChainAttackEtherShellacking_1_dmg',
+      skillType: 'chainSkill',
+      name: 'ChainAttackEtherShellacking_1',
     },
   },
-  ChainAttackEtherShellacking_1_daze: {
+  'ChainAttackEtherShellacking_1:dazeBuildup': {
     sheet: 'Nicole',
-    name: 'ChainAttackEtherShellacking_1_daze',
+    name: 'ChainAttackEtherShellacking_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -682,12 +743,13 @@ export const formulas = {
       sheet: 'Nicole',
       attribute: 'ether',
       damageType1: 'chain',
-      name: 'ChainAttackEtherShellacking_1_daze',
+      skillType: 'chainSkill',
+      name: 'ChainAttackEtherShellacking_1',
     },
   },
-  ChainAttackEtherShellacking_1_anomBuildup: {
+  'ChainAttackEtherShellacking_1:anomBuildup': {
     sheet: 'Nicole',
-    name: 'ChainAttackEtherShellacking_1_anomBuildup',
+    name: 'ChainAttackEtherShellacking_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -695,12 +757,13 @@ export const formulas = {
       sheet: 'Nicole',
       attribute: 'ether',
       damageType1: 'chain',
-      name: 'ChainAttackEtherShellacking_1_anomBuildup',
+      skillType: 'chainSkill',
+      name: 'ChainAttackEtherShellacking_1',
     },
   },
-  UltimateEtherGrenade_0_dmg: {
+  'UltimateEtherGrenade_0:standardDmg': {
     sheet: 'Nicole',
-    name: 'UltimateEtherGrenade_0_dmg',
+    name: 'UltimateEtherGrenade_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -709,12 +772,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateEtherGrenade_0_dmg',
+      name: 'UltimateEtherGrenade_0',
     },
   },
-  UltimateEtherGrenade_0_daze: {
+  'UltimateEtherGrenade_0:dazeBuildup': {
     sheet: 'Nicole',
-    name: 'UltimateEtherGrenade_0_daze',
+    name: 'UltimateEtherGrenade_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -723,12 +786,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateEtherGrenade_0_daze',
+      name: 'UltimateEtherGrenade_0',
     },
   },
-  UltimateEtherGrenade_0_anomBuildup: {
+  'UltimateEtherGrenade_0:anomBuildup': {
     sheet: 'Nicole',
-    name: 'UltimateEtherGrenade_0_anomBuildup',
+    name: 'UltimateEtherGrenade_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -737,12 +800,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateEtherGrenade_0_anomBuildup',
+      name: 'UltimateEtherGrenade_0',
     },
   },
-  UltimateEtherGrenade_1_dmg: {
+  'UltimateEtherGrenade_1:standardDmg': {
     sheet: 'Nicole',
-    name: 'UltimateEtherGrenade_1_dmg',
+    name: 'UltimateEtherGrenade_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -751,12 +814,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateEtherGrenade_1_dmg',
+      name: 'UltimateEtherGrenade_1',
     },
   },
-  UltimateEtherGrenade_1_daze: {
+  'UltimateEtherGrenade_1:dazeBuildup': {
     sheet: 'Nicole',
-    name: 'UltimateEtherGrenade_1_daze',
+    name: 'UltimateEtherGrenade_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -765,12 +828,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateEtherGrenade_1_daze',
+      name: 'UltimateEtherGrenade_1',
     },
   },
-  UltimateEtherGrenade_1_anomBuildup: {
+  'UltimateEtherGrenade_1:anomBuildup': {
     sheet: 'Nicole',
-    name: 'UltimateEtherGrenade_1_anomBuildup',
+    name: 'UltimateEtherGrenade_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -779,12 +842,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateEtherGrenade_1_anomBuildup',
+      name: 'UltimateEtherGrenade_1',
     },
   },
-  QuickAssistEmergencyBombard_0_dmg: {
+  'QuickAssistEmergencyBombard_0:standardDmg': {
     sheet: 'Nicole',
-    name: 'QuickAssistEmergencyBombard_0_dmg',
+    name: 'QuickAssistEmergencyBombard_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -792,12 +855,13 @@ export const formulas = {
       sheet: 'Nicole',
       attribute: 'ether',
       damageType1: 'quickAssist',
-      name: 'QuickAssistEmergencyBombard_0_dmg',
+      skillType: 'assistSkill',
+      name: 'QuickAssistEmergencyBombard_0',
     },
   },
-  QuickAssistEmergencyBombard_0_daze: {
+  'QuickAssistEmergencyBombard_0:dazeBuildup': {
     sheet: 'Nicole',
-    name: 'QuickAssistEmergencyBombard_0_daze',
+    name: 'QuickAssistEmergencyBombard_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -805,12 +869,13 @@ export const formulas = {
       sheet: 'Nicole',
       attribute: 'ether',
       damageType1: 'quickAssist',
-      name: 'QuickAssistEmergencyBombard_0_daze',
+      skillType: 'assistSkill',
+      name: 'QuickAssistEmergencyBombard_0',
     },
   },
-  QuickAssistEmergencyBombard_0_anomBuildup: {
+  'QuickAssistEmergencyBombard_0:anomBuildup': {
     sheet: 'Nicole',
-    name: 'QuickAssistEmergencyBombard_0_anomBuildup',
+    name: 'QuickAssistEmergencyBombard_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -818,12 +883,13 @@ export const formulas = {
       sheet: 'Nicole',
       attribute: 'ether',
       damageType1: 'quickAssist',
-      name: 'QuickAssistEmergencyBombard_0_anomBuildup',
+      skillType: 'assistSkill',
+      name: 'QuickAssistEmergencyBombard_0',
     },
   },
-  DefensiveAssistTheHareStrikesBack_0_dmg: {
+  'DefensiveAssistTheHareStrikesBack_0:standardDmg': {
     sheet: 'Nicole',
-    name: 'DefensiveAssistTheHareStrikesBack_0_dmg',
+    name: 'DefensiveAssistTheHareStrikesBack_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -832,12 +898,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistTheHareStrikesBack_0_dmg',
+      name: 'DefensiveAssistTheHareStrikesBack_0',
     },
   },
-  DefensiveAssistTheHareStrikesBack_0_daze: {
+  'DefensiveAssistTheHareStrikesBack_0:dazeBuildup': {
     sheet: 'Nicole',
-    name: 'DefensiveAssistTheHareStrikesBack_0_daze',
+    name: 'DefensiveAssistTheHareStrikesBack_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -846,12 +912,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistTheHareStrikesBack_0_daze',
+      name: 'DefensiveAssistTheHareStrikesBack_0',
     },
   },
-  DefensiveAssistTheHareStrikesBack_0_anomBuildup: {
+  'DefensiveAssistTheHareStrikesBack_0:anomBuildup': {
     sheet: 'Nicole',
-    name: 'DefensiveAssistTheHareStrikesBack_0_anomBuildup',
+    name: 'DefensiveAssistTheHareStrikesBack_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -860,12 +926,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistTheHareStrikesBack_0_anomBuildup',
+      name: 'DefensiveAssistTheHareStrikesBack_0',
     },
   },
-  DefensiveAssistTheHareStrikesBack_1_dmg: {
+  'DefensiveAssistTheHareStrikesBack_1:standardDmg': {
     sheet: 'Nicole',
-    name: 'DefensiveAssistTheHareStrikesBack_1_dmg',
+    name: 'DefensiveAssistTheHareStrikesBack_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -874,12 +940,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistTheHareStrikesBack_1_dmg',
+      name: 'DefensiveAssistTheHareStrikesBack_1',
     },
   },
-  DefensiveAssistTheHareStrikesBack_1_daze: {
+  'DefensiveAssistTheHareStrikesBack_1:dazeBuildup': {
     sheet: 'Nicole',
-    name: 'DefensiveAssistTheHareStrikesBack_1_daze',
+    name: 'DefensiveAssistTheHareStrikesBack_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -888,12 +954,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistTheHareStrikesBack_1_daze',
+      name: 'DefensiveAssistTheHareStrikesBack_1',
     },
   },
-  DefensiveAssistTheHareStrikesBack_1_anomBuildup: {
+  'DefensiveAssistTheHareStrikesBack_1:anomBuildup': {
     sheet: 'Nicole',
-    name: 'DefensiveAssistTheHareStrikesBack_1_anomBuildup',
+    name: 'DefensiveAssistTheHareStrikesBack_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -902,12 +968,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistTheHareStrikesBack_1_anomBuildup',
+      name: 'DefensiveAssistTheHareStrikesBack_1',
     },
   },
-  DefensiveAssistTheHareStrikesBack_2_dmg: {
+  'DefensiveAssistTheHareStrikesBack_2:standardDmg': {
     sheet: 'Nicole',
-    name: 'DefensiveAssistTheHareStrikesBack_2_dmg',
+    name: 'DefensiveAssistTheHareStrikesBack_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -916,12 +982,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistTheHareStrikesBack_2_dmg',
+      name: 'DefensiveAssistTheHareStrikesBack_2',
     },
   },
-  DefensiveAssistTheHareStrikesBack_2_daze: {
+  'DefensiveAssistTheHareStrikesBack_2:dazeBuildup': {
     sheet: 'Nicole',
-    name: 'DefensiveAssistTheHareStrikesBack_2_daze',
+    name: 'DefensiveAssistTheHareStrikesBack_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -930,12 +996,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistTheHareStrikesBack_2_daze',
+      name: 'DefensiveAssistTheHareStrikesBack_2',
     },
   },
-  DefensiveAssistTheHareStrikesBack_2_anomBuildup: {
+  'DefensiveAssistTheHareStrikesBack_2:anomBuildup': {
     sheet: 'Nicole',
-    name: 'DefensiveAssistTheHareStrikesBack_2_anomBuildup',
+    name: 'DefensiveAssistTheHareStrikesBack_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -944,12 +1010,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistTheHareStrikesBack_2_anomBuildup',
+      name: 'DefensiveAssistTheHareStrikesBack_2',
     },
   },
-  AssistFollowUpWindowOfOpportunity_0_dmg: {
+  'AssistFollowUpWindowOfOpportunity_0:standardDmg': {
     sheet: 'Nicole',
-    name: 'AssistFollowUpWindowOfOpportunity_0_dmg',
+    name: 'AssistFollowUpWindowOfOpportunity_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -958,12 +1024,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpWindowOfOpportunity_0_dmg',
+      name: 'AssistFollowUpWindowOfOpportunity_0',
     },
   },
-  AssistFollowUpWindowOfOpportunity_0_daze: {
+  'AssistFollowUpWindowOfOpportunity_0:dazeBuildup': {
     sheet: 'Nicole',
-    name: 'AssistFollowUpWindowOfOpportunity_0_daze',
+    name: 'AssistFollowUpWindowOfOpportunity_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -972,12 +1038,12 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpWindowOfOpportunity_0_daze',
+      name: 'AssistFollowUpWindowOfOpportunity_0',
     },
   },
-  AssistFollowUpWindowOfOpportunity_0_anomBuildup: {
+  'AssistFollowUpWindowOfOpportunity_0:anomBuildup': {
     sheet: 'Nicole',
-    name: 'AssistFollowUpWindowOfOpportunity_0_anomBuildup',
+    name: 'AssistFollowUpWindowOfOpportunity_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -986,7 +1052,7 @@ export const formulas = {
       attribute: 'ether',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpWindowOfOpportunity_0_anomBuildup',
+      name: 'AssistFollowUpWindowOfOpportunity_0',
     },
   },
 } as const

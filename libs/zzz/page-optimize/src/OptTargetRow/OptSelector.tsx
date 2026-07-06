@@ -1,105 +1,126 @@
 import { DropdownButton } from '@genshin-optimizer/common/ui'
-import type { TargetTag } from '@genshin-optimizer/zzz/db'
-import {
-  type CharOpt,
-  type ICachedCharacter,
-  targetTag,
-} from '@genshin-optimizer/zzz/db'
+import type { ICachedCharacter, Team } from '@genshin-optimizer/zzz/db'
+import { getTeamFrame0, targetTag } from '@genshin-optimizer/zzz/db'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
-import { own } from '@genshin-optimizer/zzz/formula'
 import {
   FullTagDisplay,
+  OptPanelSectionHeader,
+  OptTargetCategorySectionHeader,
+  OptTargetDebugHelp,
+  OptTargetSelectedLabel,
+  statReadTagKey,
+  statReadToTargetTag,
+  useGroupedOptFormulaFields,
+  useOptCategoryCollapse,
   useZzzCalcContext,
 } from '@genshin-optimizer/zzz/formula-ui'
 import { Box, ListItemText, MenuItem } from '@mui/material'
 import { useMemo } from 'react'
-
-const statTargets = [
-  own.final.atk,
-  own.final.hp,
-  own.final.def,
-  own.final.enerRegen,
-  own.final.anomProf,
-  own.final.anomMas,
-] as const
+import { OptTargetFieldMenuItem } from './OptTargetFieldMenuItem'
 
 export function OptSelector({
   character: { key: characterKey },
-  charOpt: { target },
+  team,
 }: {
-  charOpt: CharOpt
+  team: Team
   character: ICachedCharacter
 }) {
-  const calc = useZzzCalcContext()
+  const { tag: target } = getTeamFrame0(team)
   const { database } = useDatabaseContext()
+  const calc = useZzzCalcContext()
   const tag = useMemo(() => {
     if (!target) return undefined
     return targetTag(target)
   }, [target])
+
+  const { statReads, categorySections, otherFields } =
+    useGroupedOptFormulaFields(characterKey, calc)
+  const collapse = useOptCategoryCollapse()
+
+  const selectedTitle = tag ? (
+    <OptTargetSelectedLabel charKey={characterKey} tag={tag} inline />
+  ) : null
 
   return (
     <DropdownButton
       color={tag ? 'success' : 'warning'}
       title={
         tag ? (
-          <Box sx={{ display: 'flex', gap: 1 }}>
-            {/* TODO: translate */}
-            <strong>Optimization Target: </strong>
-            {<FullTagDisplay tag={tag} />}
+          <Box
+            sx={{
+              display: 'flex',
+              gap: 0.75,
+              alignItems: 'center',
+              minWidth: 0,
+              overflow: 'hidden',
+              textWrap: 'nowrap',
+            }}
+          >
+            <strong>Target:</strong>
+            {selectedTitle}
+            <OptTargetDebugHelp tag={tag} />
           </Box>
         ) : (
           'Select an Optimization Target'
         )
       }
       variant={tag ? 'outlined' : undefined}
-      sx={{ height: '100%', flexGrow: 1 }}
+      sx={{
+        height: '100%',
+        minWidth: 0,
+        maxWidth: '100%',
+        width: '100%',
+        justifyContent: 'flex-start',
+      }}
     >
-      {calc?.listFormulas(own.listing.formulas).map(({ tag }, i) => {
-        const { name, sheet } = tag
-        if (!name || !sheet) return
-        return (
+      <OptPanelSectionHeader section="stats">Stats</OptPanelSectionHeader>
+      {!(collapse?.isCollapsed('stats') ?? false) &&
+        statReads.map((read) => (
           <MenuItem
-            key={`${i}_${tag.sheet}_${tag.name}`}
+            key={`stat_${statReadTagKey(read.tag)}`}
             onClick={() =>
-              database.charOpts.set(characterKey, {
-                target: {
-                  sheet,
-                  name,
-                },
+              database.teams.setFrame0(characterKey, {
+                tag: statReadToTargetTag(read),
               })
             }
           >
             <ListItemText>
-              <Box sx={{ display: 'flex', gap: 1 }}>
-                <FullTagDisplay tag={tag} />
-              </Box>
+              <FullTagDisplay tag={read.tag} />
             </ListItemText>
           </MenuItem>
-        )
-      })}
-      {statTargets.map(({ tag }, i) => {
-        const { q, qt } = tag
-        if (!q || !qt) return
-        return (
-          <MenuItem
-            key={`${i}_${q}_${qt}`}
-            onClick={() =>
-              database.charOpts.set(characterKey, {
-                target: {
-                  q: q as TargetTag['q'],
-                  qt: qt as 'final',
-                },
-              })
-            }
-          >
-            <ListItemText>
-              <Box sx={{ display: 'flex', gap: 1 }}>
-                <FullTagDisplay tag={tag} />
-              </Box>
-            </ListItemText>
-          </MenuItem>
-        )
-      })}
+        ))}
+      {otherFields.length > 0 && (
+        <OptPanelSectionHeader section="other">Other</OptPanelSectionHeader>
+      )}
+      {!(collapse?.isCollapsed('other') ?? false) &&
+        otherFields.map((field, i) => (
+          <OptTargetFieldMenuItem
+            key={`other_${i}`}
+            field={field}
+            fieldKey={`other_${i}`}
+            characterKey={characterKey}
+            target={target}
+            database={database}
+          />
+        ))}
+      {categorySections.flatMap(({ category, fields }) => [
+        <OptTargetCategorySectionHeader
+          key={`header_${category}`}
+          category={category}
+        />,
+        ...((collapse?.isCollapsed(category) ?? false)
+          ? []
+          : fields.map((field, i) => (
+              <OptTargetFieldMenuItem
+                key={`${category}_${i}`}
+                field={field}
+                fieldKey={`${category}_${i}`}
+                characterKey={characterKey}
+                target={target}
+                database={database}
+              />
+            ))),
+      ])}
     </DropdownButton>
   )
 }

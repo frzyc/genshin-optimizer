@@ -174,8 +174,8 @@
       "0": "Verlängert die Dauer des Vorhandenseins von Oz um 2 s, greift gemeinsam mit der aktuellen eigenen Figur an und verursacht <electro>Elektro-Schaden</electro> in Höhe von 30 % von Fischls ANG."
     },
     "upgradedDescription": {
-      "0": "Verlängert die Dauer des Vorhandenseins von Oz um 2 s, greift gemeinsam mit der aktuellen eigenen Figur an und verursacht <electro>Elektro-Schaden</electro> in Höhe von 30 % von Fischls ANG.",
-      "1": "Erhöht, nachdem Oz einen abgestimmten Angriff ausgeführt hat, den Erhöhungs-Effekt für ANG und Elementarkunde in <strong>Geschenk der Hexennacht – Phantomkonzert</strong> um 100 %, hält 10 s."
+      "0": "Verlängert die Dauer des Vorhandenseins von Oz um 2 s. Oz greift gemeinsam mit der aktuellen eigenen Figur an und verursacht <electro>Elektro-Schaden</electro> in Höhe von 30 % von Fischls ANG.",
+      "1": "Erhöht, nachdem Oz einen abgestimmten Angriff ausgeführt hat, den Erhöhungs-Effekt für ANG und Elementarkunde von <strong>Geschenk der Hexennacht – Phantomkonzert</strong> um 100 %, hält 10 s."
     }
   }
 }

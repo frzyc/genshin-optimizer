@@ -13,6 +13,9 @@ export interface SolverConfig<ID> {
   topN: number
   numWorkers: number
   setProgress: (_: Progress) => void
+  /** The list of ids in each group, default to [<all ids>].
+   * Only groups in this list will be tested.  */
+  filter?: Set<ID>[]
 }
 
 type WorkerInfo<ID> = { builds: BuildResult<ID>[] }
@@ -25,7 +28,13 @@ export class Solver<ID extends string | number> {
 
   info = new Map<Worker, WorkerInfo<ID>>()
   state: IdleWorkers | ExcessWorks
-  progress: Progress = { computed: 0, failed: 0, skipped: 0, remaining: 0 }
+  progress: Progress = {
+    computed: 0,
+    failed: 0,
+    skipped: 0,
+    remaining: 0,
+    total: 0,
+  }
 
   results: Promise<BuildResult<ID>[]>
   nextReport = Date.now()
@@ -43,10 +52,23 @@ export class Solver<ID extends string | number> {
         })
     )
 
+    cfg.filter ??= [new Set(cfg.candidates.flatMap((c) => c.map((c) => c.id)))]
+    const unprunedCounts = cfg.filter.map((allowed) =>
+      buildCount(cfg.candidates.map((c) => c.filter((c) => allowed.has(c.id))))
+    )
+
     const pruned = prune(cfg.nodes, cfg.candidates, 'q', cfg.minimum, topN)
     const { nodes, minimum, candidates } = pruned
-    progress.remaining = buildCount(candidates)
-    progress.skipped = buildCount(cfg.candidates) - progress.remaining
+    const allIds = candidates.map((slot) => slot.map((c) => c.id))
+    const works = cfg.filter.map((allowed): Work => {
+      const ids = allIds.map((ids) => ids.filter((id) => allowed.has(id)))
+      return { ids, count: buildCount(ids) }
+    })
+
+    progress.total = unprunedCounts.reduce((c, w) => c + w, 0)
+    progress.remaining = works.reduce((c, w) => c + w.count, 0)
+    progress.skipped = progress.total - progress.remaining
+
     if (progress.remaining > Number.MAX_SAFE_INTEGER)
       // We use `remaining` to detect completion. Its accurate
       // bookkeeping is essential to ensure this actually halts.
@@ -55,8 +77,7 @@ export class Solver<ID extends string | number> {
     this.topN = topN
     this.optThreshold = minimum[0]
     this.info = new Map(workers.map((w) => [w, { builds: [] }]))
-    const ids = candidates.map((cnds) => cnds.map((c) => c.id))
-    this.state = { ty: 'work', works: [{ ids, count: progress.remaining }] }
+    this.state = { ty: 'work', works }
     this.report = () => setProgress({ ...progress })
     this.results = new Promise((res, rej) => {
       this.finalize = (result) => (this.report(), res(result))
@@ -130,7 +151,8 @@ export class Solver<ID extends string | number> {
 
           const bestBuilds = [...this.info.values()].flatMap((i) => i.builds)
           bestBuilds.sort((a, b) => b.value - a.value)
-          const threshold = bestBuilds[this.topN]?.value ?? -Infinity
+          const threshold =
+            bestBuilds[this.topN]?.value ?? Number.NEGATIVE_INFINITY
           if (threshold > this.optThreshold) {
             this.optThreshold = threshold
             this.info.forEach((_, w) => postMsg(w, { ty: 'config', threshold }))
