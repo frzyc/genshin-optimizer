@@ -14,7 +14,7 @@ import {
   accumulateEvaluation,
   deduplicate,
   dustReshape,
-  elixirDefinition,
+  elixirDefinitionMemoSimplified,
   evalMarkovNode,
   expandNode,
   expandNodes,
@@ -22,6 +22,7 @@ import {
   makeObjective,
 } from '@genshin-optimizer/gi/upopt'
 import type {
+  ElixirSimplifiedCache,
   EvaluatedMarkovNode,
   MarkovNode,
   Objective,
@@ -103,6 +104,7 @@ export class UpOptCalculatorV2 {
   obj: Objective
   candidates: EvaluatedMarkovTree[] = []
   fixedIx = 0
+  cache: ElixirSimplifiedCache = new Map()
 
   /** Serializes exact-calc work so candidates are refined one at a time. */
   private exactQueue: Promise<unknown> = Promise.resolve()
@@ -224,7 +226,13 @@ export class UpOptCalculatorV2 {
   fromDefineInfo(info: DefineInfo) {
     return {
       ...this.evaluateNodes(
-        elixirDefinition({ ...info, prob_4line: 0.34 }, this.build)
+        elixirDefinitionMemoSimplified(
+          { ...info, prob_4line: 0.34 },
+          this.build,
+          this.obj,
+          this.cache
+        )
+        // elixirDefinition({ ...info, prob_4line: 0.34 }, this.build)
       ),
       info,
       evalMode: 'substat' as const,

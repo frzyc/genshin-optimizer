@@ -15,6 +15,9 @@ export default defineConfig(() => ({
     globals: true,
     environment: 'node',
     include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+    // Skip benchmark tests by default; run them explicitly with
+    // `nx run gi-upopt:test -t benchmark` (CLI -t overrides this pattern).
+    testNamePattern: '^(?!.*benchmark)',
     reporters: ['default'],
     coverage: {
       reportsDirectory: '../../../coverage/libs/gi/upopt',

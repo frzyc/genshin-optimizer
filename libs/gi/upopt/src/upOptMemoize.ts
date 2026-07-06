@@ -9,11 +9,13 @@ import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import type { DynStat } from '@genshin-optimizer/gi/solver'
 import { getRollsRemaining } from '@genshin-optimizer/gi/util'
 import { substatWeights } from './consts'
+import { deduplicate } from './deduplicate'
 import {
   makeSubstatNode,
   reshapedRollCountMuVar,
   subMuVar,
 } from './expandSubstat'
+import type { Objective } from './markov-tree/markov.types'
 import { crawlSubstats } from './substatProbs'
 import { toStats } from './upOpt'
 import type { SubstatLevelNode } from './upOpt.types'
@@ -25,6 +27,11 @@ import type { SubstatLevelNode } from './upOpt.types'
  *
  * - `elixirDefinitionMemoFull`: cache the entire node list per (mainStatKey, affixes, lines)
  *   and stamp the query's `base` onto shallow clones. Fastest retrieval, largest cache.
+ * - `elixirDefinitionMemoSimplified`: like MemoFull, but templates are stored
+ *   post-`deduplicate(obj, ...)`: zero-derivative substats are stripped and combos that
+ *   differ only in irrelevant substats are merged. Fewer & smaller nodes per entry, so the
+ *   cache shrinks and every downstream stage (evaluation, expansion) does less work.
+ *   Assumes all calls sharing a cache use the same objective.
  * - `elixirDefinitionMemoWeights`: cache the crawl probabilities (keyed by substat
  *   *weights*, which many stats share), the reshaped roll-count distributions (keyed by
  *   affix positions), and the value-scaled mu/cov (keyed by the concrete substat combo,
@@ -58,11 +65,24 @@ function affixPool(mainStatKey: MainStatKey, affixes: SubstatKey[]) {
   return allSubstatKeys.filter((s) => !affixes.includes(s) && s !== mainStatKey)
 }
 
+/**
+ * Main stats that cannot appear as substats (elemental/physical dmg, heal_) all leave the
+ * same substat pool, so their templates are identical; collapse them to one '' bucket.
+ */
+function mainStatCacheKey(mainStatKey: MainStatKey) {
+  return (allSubstatKeys as readonly string[]).includes(mainStatKey)
+    ? mainStatKey
+    : ''
+}
+
 // ---------------------------------------------------------------------------
 // Method A: full node-list cache
 // ---------------------------------------------------------------------------
 
-/** `${mainStatKey};${affixes.join('+')};${3|4}` -> node list with empty `base`. */
+/**
+ * `${mainStatKey};${affixes.join('+')};${3|4}` -> node list with empty `base`.
+ * Non-substat main stats share the '' bucket (see `mainStatCacheKey`).
+ */
 export type ElixirNodeCache = Map<string, WeightedNode[]>
 export const defaultElixirNodeCache: ElixirNodeCache = new Map()
 
@@ -72,7 +92,7 @@ function getNodeTemplates(
   lines: 3 | 4,
   cache: ElixirNodeCache
 ): WeightedNode[] {
-  const cacheKey = `${mainStatKey};${affixes.join('+')};${lines}`
+  const cacheKey = `${mainStatCacheKey(mainStatKey)};${affixes.join('+')};${lines}`
   const hit = cache.get(cacheKey)
   if (hit) return hit
 
@@ -117,6 +137,77 @@ export function elixirDefinitionMemoFull(
     { p: p * info.prob_4line, n: rebase(n, base) },
     { p: t3[i].p * (1 - info.prob_4line), n: rebase(t3[i].n, base) },
   ])
+}
+
+// ---------------------------------------------------------------------------
+// Method A': objective-simplified node-list cache
+// ---------------------------------------------------------------------------
+
+/**
+ * `${mainStatKey};${affixes.join('+')};${3|4}` -> deduplicated node list with empty
+ * `base`. Non-substat main stats share the '' bucket (see `mainStatCacheKey`).
+ * Entries are simplified against a specific objective, so all calls sharing a
+ * cache MUST use the same objective; clear (or replace) the cache when it changes.
+ */
+export type ElixirSimplifiedCache = Map<string, WeightedNode[]>
+export const defaultElixirSimplifiedCache: ElixirSimplifiedCache = new Map()
+
+function getSimplifiedTemplates(
+  mainStatKey: MainStatKey,
+  affixes: SubstatKey[], // sorted
+  lines: 3 | 4,
+  obj: Objective,
+  cache: ElixirSimplifiedCache
+): WeightedNode[] {
+  const cacheKey = `${mainStatCacheKey(mainStatKey)};${affixes.join('+')};${lines}`
+  const hit = cache.get(cacheKey)
+  if (hit) return hit
+
+  const rollsLeft = getRollsRemaining(0, rarity) - (4 - lines)
+  // Build fresh raw nodes: deduplicate() mutates them in place, so they must not be
+  // shared with the plain full-node cache.
+  const raw = crawlSubstats(affixes, affixPool(mainStatKey, affixes)).map(
+    ({ p, subs }) => ({
+      p,
+      n: makeSubstatNode({
+        base: {},
+        rarity,
+        subkeys: subs.map((key) => ({ key, baseRolls: 1 })),
+        rollsLeft,
+        reshape: { affixes: [...affixes], mintotal },
+      }),
+    })
+  )
+  const templates = deduplicate(obj, raw) as WeightedNode[]
+  cache.set(cacheKey, templates)
+  return templates
+}
+
+/**
+ * Like `elixirDefinitionMemoFull`, but returns the objective-simplified & merged node
+ * list, i.e. what `deduplicate(obj, elixirDefinition(info, build))` would produce (up to
+ * float rounding in the merged probabilities). All calls sharing a cache must use the
+ * same objective.
+ */
+export function elixirDefinitionMemoSimplified(
+  info: ElixirDefineQuery,
+  currentBuild: Build,
+  obj: Objective,
+  cache: ElixirSimplifiedCache = defaultElixirSimplifiedCache
+): WeightedNode[] {
+  const base = toStats(currentBuild, { ...info, rarity })
+  const affixes = sortedAffixes(info.affixes)
+  // deduplicate() sorts 4-line (rollsLeft 5) nodes ahead of 3-line, so concatenating the
+  // two template blocks reproduces its output ordering.
+  const t4 = getSimplifiedTemplates(info.mainStatKey, affixes, 4, obj, cache)
+  const t3 = getSimplifiedTemplates(info.mainStatKey, affixes, 3, obj, cache)
+  return [
+    ...t4.map(({ p, n }) => ({ p: p * info.prob_4line, n: rebase(n, base) })),
+    ...t3.map(({ p, n }) => ({
+      p: p * (1 - info.prob_4line),
+      n: rebase(n, base),
+    })),
+  ]
 }
 
 // ---------------------------------------------------------------------------
@@ -301,6 +392,7 @@ export function roughSizeOf(x: unknown, seen = new Set<object>()): number {
 
 export function clearElixirMemoCaches() {
   defaultElixirNodeCache.clear()
+  defaultElixirSimplifiedCache.clear()
   defaultElixirWeightCache.probs.clear()
   defaultElixirWeightCache.rollDistrs.clear()
   defaultElixirWeightCache.scaled.clear()

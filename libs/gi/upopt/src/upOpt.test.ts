@@ -6,7 +6,7 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { getMainStatValue, getSubstatValue } from '@genshin-optimizer/gi/util'
-import { dynRead, prod, sum } from '@genshin-optimizer/gi/wr'
+import { dynRead, frac, prod, sum } from '@genshin-optimizer/gi/wr'
 
 import { substatWeights } from './consts'
 import { deduplicate } from './deduplicate'
@@ -19,7 +19,6 @@ import {
 import { evalMarkovNode, evaluateGaussian } from './markov-tree/evaluation'
 import { makeObjective } from './markov-tree/makeObjective'
 import type { GaussianNode, Objective } from './markov-tree/markov.types'
-import { rollCountMuVar } from './markov-tree/mathUtil'
 import { crawlSubstats } from './substatProbs'
 import { lvl0, lvl0_2, lvl20 } from './testArtifacts.json'
 import {
@@ -30,10 +29,15 @@ import {
   levelUpArtifact,
 } from './upOpt'
 import type { MarkovNode, SubstatLevelNode } from './upOpt.types'
-import type { ElixirDefineQuery, ElixirNodeCache } from './upOptMemoize'
+import type {
+  ElixirDefineQuery,
+  ElixirNodeCache,
+  ElixirSimplifiedCache,
+} from './upOptMemoize'
 import {
   createElixirWeightCache,
   elixirDefinitionMemoFull,
+  elixirDefinitionMemoSimplified,
   elixirDefinitionMemoWeights,
   roughSizeOf,
 } from './upOptMemoize'
@@ -755,6 +759,15 @@ describe('upOpt makeSubstatNode(s)', () => {
           affixes: ['critRate_', 'critDMG_'],
           prob_4line: p4,
         },
+        // Different non-substat main with the same affixes as the pyro_dmg_ query;
+        // hits the shared '' main-stat bucket in the node caches.
+        {
+          setKey: 'ShimenawasReminiscence',
+          slotKey: 'goblet',
+          mainStatKey: 'physical_dmg_',
+          affixes: ['atk_', 'critRate_'],
+          prob_4line: p4,
+        },
       ]
 
       test('full-node cache matches elixirDefinition', () => {
@@ -801,6 +814,47 @@ describe('upOpt makeSubstatNode(s)', () => {
         deduplicate(obj, elixirDefinitionMemoWeights(q, emptyBuild, cache))
         expect(elixirDefinitionMemoWeights(q, emptyBuild, cache)).toEqual(
           elixirDefinition(q, emptyBuild)
+        )
+      })
+
+      // Merged probabilities are summed pre-scaling in the cache but post-scaling in the
+      // reference pipeline, so p can differ by float rounding; everything else is exact.
+      function expectNodesClose(
+        got: { p: number; n: SubstatLevelNode }[],
+        want: { p: number; n: MarkovNode }[]
+      ) {
+        expect(got.length).toBe(want.length)
+        got.forEach(({ p, n }, i) => {
+          expect(p).toBeCloseTo(want[i].p, 12)
+          expect(n).toEqual(want[i].n)
+        })
+      }
+
+      test('simplified cache matches dedup(elixirDefinition)', () => {
+        const cache: ElixirSimplifiedCache = new Map()
+        queries.forEach((q) => {
+          const expected = deduplicate(obj, elixirDefinition(q, emptyBuild))
+          expectNodesClose(
+            elixirDefinitionMemoSimplified(q, emptyBuild, obj, cache),
+            expected
+          )
+          expectNodesClose(
+            elixirDefinitionMemoSimplified(q, emptyBuild, obj, cache),
+            expected
+          )
+        })
+      })
+
+      test('downstream dedup does not corrupt the simplified cache', () => {
+        const cache: ElixirSimplifiedCache = new Map()
+        const q = queries[0]
+        deduplicate(
+          obj,
+          elixirDefinitionMemoSimplified(q, emptyBuild, obj, cache)
+        )
+        expectNodesClose(
+          elixirDefinitionMemoSimplified(q, emptyBuild, obj, cache),
+          deduplicate(obj, elixirDefinition(q, emptyBuild))
         )
       })
 
@@ -858,6 +912,66 @@ describe('upOpt makeSubstatNode(s)', () => {
           )
         )
 
+        // Simplified memo vs a typical objective reading 6 of the 10 substats.
+        const benchObj = makeObjective(
+          [
+            prod(
+              sum(dynRead('atk'), prod(1500, dynRead('atk_'))),
+              sum(1, prod(dynRead('critRate_'), dynRead('critDMG_'))),
+              frac(dynRead('eleMas'), 1400)
+            ),
+            dynRead('enerRech_'),
+          ],
+          [0]
+        )
+        const simpCache: ElixirSimplifiedCache = new Map()
+        const tSimpCold = time(() =>
+          bench.forEach((q) =>
+            elixirDefinitionMemoSimplified(q, emptyBuild, benchObj, simpCache)
+          )
+        )
+        const tSimpWarm = time(() =>
+          bench.forEach((q) =>
+            elixirDefinitionMemoSimplified(q, emptyBuild, benchObj, simpCache)
+          )
+        )
+
+        // End-to-end incl. the caller's deduplicate(), i.e. what evaluateNodes()
+        // pays before per-node evaluation.
+        const tBaseDedup = time(() =>
+          bench.forEach((q) =>
+            deduplicate(benchObj, elixirDefinition(q, emptyBuild))
+          )
+        )
+        const tFullDedup = time(() =>
+          bench.forEach((q) =>
+            deduplicate(
+              benchObj,
+              elixirDefinitionMemoFull(q, emptyBuild, fullCache)
+            )
+          )
+        )
+        const tSimpDedup = time(() =>
+          bench.forEach((q) =>
+            deduplicate(
+              benchObj,
+              elixirDefinitionMemoSimplified(q, emptyBuild, benchObj, simpCache)
+            )
+          )
+        )
+        const nodesFull = bench.reduce(
+          (a, q) =>
+            a + elixirDefinitionMemoFull(q, emptyBuild, fullCache).length,
+          0
+        )
+        const nodesSimp = bench.reduce(
+          (a, q) =>
+            a +
+            elixirDefinitionMemoSimplified(q, emptyBuild, benchObj, simpCache)
+              .length,
+          0
+        )
+
         const kb = (x: unknown) => (roughSizeOf(x) / 1024).toFixed(1)
         const line = (name: string, t: number) =>
           `  ${name} ${t.toFixed(0)}ms (${(tBase / t).toFixed(1)}x)`
@@ -868,24 +982,24 @@ describe('upOpt makeSubstatNode(s)', () => {
             '\n' +
             line('full-node memo (warm)', tFullWarm) +
             `, cache ~${kb(fullCache)}kb (${fullCache.size} entries)\n` +
+            line('simplified memo (cold)', tSimpCold) +
+            '\n' +
+            line('simplified memo (warm)', tSimpWarm) +
+            `, cache ~${kb(simpCache)}kb (${simpCache.size} entries)\n` +
             line('weight memo    (cold)', tWeightsCold) +
             '\n' +
             line('weight memo    (warm)', tWeightsWarm) +
             `, cache ~${kb(weightCache)}kb ` +
             `(${weightCache.probs.size} prob + ${weightCache.rollDistrs.size} roll + ` +
-            `${weightCache.scaled.size} scaled entries)`
+            `${weightCache.scaled.size} scaled entries)\n` +
+            `  --- incl. caller deduplicate (6-substat objective) ---\n` +
+            `  baseline + dedup       ${tBaseDedup.toFixed(0)}ms\n` +
+            `  full memo + dedup      ${tFullDedup.toFixed(0)}ms\n` +
+            `  simplified (pre-dedup) ${tSimpDedup.toFixed(0)}ms\n` +
+            `  nodes/query: full ${(nodesFull / bench.length).toFixed(1)} -> ` +
+            `simplified ${(nodesSimp / bench.length).toFixed(1)}`
         )
       }, 120_000)
     })
-  })
-})
-
-describe('gen', () => {
-  test('doathing', () => {
-    // const umm = dothing()
-    // writeFileSync('out.json', JSON.stringify(umm))
-
-    // console.log(rollCountMuVar(5, {n: 0, min: 0}))
-    console.log(rollCountMuVar(5, { n: 2, min: 2 }))
   })
 })
