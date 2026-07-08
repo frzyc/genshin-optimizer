@@ -1,8 +1,16 @@
 {
+  "superconduct": {
+    "name": "Supraleiter",
+    "desc": {
+      "0": "Wenn <strong>Kryo</strong>- auf <strong>Elektro-Kraft</strong> trifft, wird <strong>Supraleiter</strong> ausgelöst. Supraleiter verursacht <strong>Kryo-Flächenschaden</strong> und <strong>verringert den physischen Widerstand von Wesen, die von Supraleiter betroffen sind</strong> über einen bestimmten Zeitraum."
+    }
+  },
   "stellarconduct": {
     "name": "Stellar-Supraleiter",
     "desc": {
-      "0": "Verwandelt beim Auslösen der Reaktion Stellar-Supraleiter den umliegenden Bereich kurzzeitig in ein <strong>Sternglanzfeld</strong>. Befindet sich eine bestimmte Figur innerhalb des Sternglanzfelds, tritt sie in den Zustand <strong>Leuchten – Stellar-Supraleiter</strong> ein, in dem ihre verschiedenen Fähigkeiten jeweils entsprechende Verstärkungseffekte erhalten."
+      "0": "Löst, wenn <strong>Kryo</strong> auf <strong>Elektro</strong> trifft und bestimmte Bedingungen erfüllt sind, die besondere Reaktion <strong>Stellar-Supraleiter</strong> aus, generiert ein „Sternenglanz-Prisma“ und verwandelt den umliegenden Bereich kurzzeitig in das mysteriöse „Sternglanzfeld“.",
+      "1": "Verleiht allen Figuren innerhalb des Bereichs einen Kryo- und Elektro-SCH-Bonus. Wenn Gegner im Sternglanzfeld von Kryo- oder Elektro-Angriffen getroffen werden, speichert das Feld die überschüssige Elementarkraft und setzt die gesamte gespeicherte Elementarkraft alle 4 s frei, wobei 4 s lang oben genannter SCH-Bonus zusätzlich erhöht sowie der Basis-Reaktionskoeffizient der Reaktion Stellar-Supraleiter erhöht werden.",
+      "2": "Verringert zudem den phys. WDS von Gegnern im Sternglanzfeld."
     },
     "fieldName": "Sternglanzfeld",
     "fieldDesc": {

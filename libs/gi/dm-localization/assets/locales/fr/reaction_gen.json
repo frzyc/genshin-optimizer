@@ -1,8 +1,16 @@
 {
+  "superconduct": {
+    "name": "Supraconduction",
+    "desc": {
+      "0": "La réaction élémentaire de <strong>Supraconduction</strong> se déclenche quand les éléments <strong>Cryo</strong> et <strong>Électro</strong> entrent en contact l'un avec l'autre. Elle provoque de puissantes explosions qui infligent des <strong>DGT Cryo de zone</strong> et <strong>diminue la RÉS physique</strong> des personnages ou ennemis touchés pendant une certaine durée."
+    }
+  },
   "stellarconduct": {
     "name": "Astroconduction",
     "desc": {
-      "0": "Lorsqu'une réaction d'Astroconduction est déclenchée, la zone environnante se transforme temporairement en <strong>étendue polaris</strong>. Dans cette étendue polaris, certains personnages passent en <strong>radiance « Astroconduction »</strong>, ce qui accorde des bonus à leurs capacités."
+      "0": "La rencontre des éléments <strong>Cryo</strong> et <strong>Électro</strong> déclenche, si certaines conditions sont remplies, une réaction élémentaire spéciale d'<strong>Astroconduction</strong> : génère un prisme de lumière stellaire et transforme temporairement la zone environnante en une magnifique étendue polaris.",
+      "1": "Tous les personnages dans l'étendue polaris bénéficient d'un bonus de DGT Cryo et d'un bonus de DGT Électro, et lorsqu'un ennemi dans l'étendue polaris se fait toucher par l'élément Cryo ou Électro, l'étendue polaris emmagasine l'énergie élémentaire dissipée puis la libère intégralement toutes les 4 s, ce qui augmente davantage ces bonus de DGT ainsi que le coefficient de DGT de base des réactions d'Astroconduction pendant 4 s.",
+      "2": "De plus, la RÉS physique des ennemis dans l'étendue polaris diminue."
     },
     "fieldName": "Étendue polaris",
     "fieldDesc": {

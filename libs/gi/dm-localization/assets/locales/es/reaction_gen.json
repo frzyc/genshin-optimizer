@@ -1,8 +1,16 @@
 {
+  "superconduct": {
+    "name": "Superconductor",
+    "desc": {
+      "0": "Cuando <strong>Cryo</strong> entra en contacto con <strong>Electro</strong>, se activa la reacción de <strong>Superconductor</strong>. Esta reacción inflige <strong>Daño Cryo en el AdE</strong> y <strong>disminuye notablemente la RES Física de todos los afectados por ella</strong> durante cierto tiempo."
+    }
+  },
   "stellarconduct": {
     "name": "Superconductor Estelar",
     "desc": {
-      "0": "Al causar una reacción de Superconductor Estelar, el área cercana se convertirá en un <strong>campo estrellapolar</strong> durante un breve periodo de tiempo. Al encontrarse dentro de un campo estrellapolar, ciertos personajes entrarán en el estado de <strong>esplendor: Superconductor Estelar</strong>, lo que causará que sus diferentes habilidades obtengan el efecto de fortalecimiento correspondiente."
+      "0": "Cuando <strong>Cryo</strong> entra en contacto con <strong>Electro</strong>, si se cumplen ciertos requisitos, se desatará una reacción de <strong>Superconductor Estelar</strong> especial y se creará un prisma brilloestelar que convertirá la zona cercana en un misterioso campo estrellapolar durante un breve periodo de tiempo.",
+      "1": "Todos los personajes que se encuentren dentro de este campo obtendrán un Bono de Daño Cryo y Electro. Cuando un enemigo en el interior de este campo reciba un ataque Cryo o Electro, el campo estrellapolar conservará la energía elemental dispersa para luego liberarla cada 4 s, lo que incrementará aún más el bono de daño anteriormente mencionado y aumentará el coeficiente base de la reacción de Superconductor Estelar durante 4 s.",
+      "2": "Además, la RES Física de los enemigos que se encuentren dentro del campo estrellapolar se reducirá."
     },
     "fieldName": "Campo estrellapolar",
     "fieldDesc": {

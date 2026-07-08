@@ -1,8 +1,16 @@
 {
+  "superconduct": {
+    "name": "Siêu Dẫn",
+    "desc": {
+      "0": "<strong>Nguyên Tố Băng</strong> tiếp xúc với <strong>Nguyên Tố Lôi</strong> sẽ dẫn đến phản ứng <strong>Siêu Dẫn</strong>. Siêu Dẫn sẽ gây ra <strong>sát thương phạm vi Nguyên Tố Băng</strong> và <strong>giảm mạnh kháng vật lý của sinh vật bị ảnh hưởng của Siêu Dẫn</strong> trong một khoảng thời gian."
+    }
+  },
   "stellarconduct": {
     "name": "Tinh-Siêu Dẫn",
     "desc": {
-      "0": "Khi kích hoạt phản ứng Tinh-Siêu Dẫn, khu vực lân cận sẽ tạm thời chuyển thành <strong>Vùng Trục Sao</strong>. Khi ở trong Vùng Trục Sao, nhân vật chỉ định sẽ tiến vào trạng thái <strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>, khiến các kỹ năng khác nhau lần lượt nhận được hiệu quả cường hóa tương ứng."
+      "0": "<strong>Nguyên Tố Băng</strong> khi tiếp xúc với <strong>Nguyên Tố Lôi</strong>, nếu đáp ứng điều kiện nhất định, sẽ kích hoạt phản ứng <strong>Tinh-Siêu Dẫn</strong> đặc biệt, tạo ra \"Pha Lê Tinh Huy\" đồng thời biến khu vực lân cận thành \"Vùng Trục Sao\" kỳ diệu trong một khoảng thời gian.",
+      "1": "Tất cả nhân vật trong khu vực sẽ nhận được Buff Sát Thương Nguyên Tố Băng và Lôi. Khi kẻ địch trong Vùng Trục Sao bị đòn tấn công Nguyên Tố Băng hoặc Lôi đánh trúng, Vùng Trục Sao sẽ hấp thụ và lưu trữ lượng sức mạnh nguyên tố tràn ra, và mỗi 4s sẽ giải phóng toàn bộ sức mạnh nguyên tố đã hấp thụ để tiếp tục tăng cường buff sát thương nêu trên, đồng thời tăng hệ số phản ứng cơ bản của phản ứng Tinh-Siêu Dẫn, duy trì 4s.",
+      "2": "Ngoài ra, kẻ địch trong Vùng Trục Sao sẽ bị giảm Kháng Vật Lý."
     },
     "fieldName": "Vùng Trục Sao",
     "fieldDesc": {

@@ -1,8 +1,16 @@
 {
+  "superconduct": {
+    "name": "Supercondutor",
+    "desc": {
+      "0": "Quando <strong>Cryo</strong> entra em contato com <strong>Electro</strong>, ocorre <strong>Supercondutor</strong>. Supercondutor infligirá <strong>Dano Cryo na AdE</strong> e <strong>diminuirá a RES Física de quaisquer seres afetados por Supercondutor</strong> por um período de tempo."
+    }
+  },
   "stellarconduct": {
     "name": "Supercondutor Estelar",
     "desc": {
-      "0": "Ao desencadear Supercondutor Estelar, as áreas próximas serão temporariamente transformadas em <strong>Campo da Estrela Polar</strong>. Quando estiver dentro de um Campo da Estrela Polar, o personagem específico entrará no estado <strong>Brilho Reluzente: Supercondutor Estelar</strong>, com suas Habilidades obtendo bônus de fortalecimento diferentes."
+      "0": "<strong>Cryo</strong> entra em contato com <strong>Electro</strong>, quando certas condições são atendidas, desencadeia a reação especial <strong>Supercondutor Estelar</strong>, criando o Campo da Estrela Polar e transformando brevemente a área ao redor em um misterioso Campo da Estrela Polar.",
+      "1": "Todos os personagens dentro dessa área obtêm bônus de Dano Cryo e Electro. Quando os oponentes dentro do Campo da Estrela Polar são atingidos por Cryo ou Electro, o campo armazenará a energia que se dissipa, a lançará completamente a cada 4s, aumenta ainda mais o efeito de bônus de Dano, e aumenta o coeficiente base de Supercondutor Estelar por 4s.",
+      "2": "Além disso, inimigos que estiverem dentro de Campo da Estrela Polar terão sua RES Física reduzida."
     },
     "fieldName": "Campo da Estrela Polar",
     "fieldDesc": {
