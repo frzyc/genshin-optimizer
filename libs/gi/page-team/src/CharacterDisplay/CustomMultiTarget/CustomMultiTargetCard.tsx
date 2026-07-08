@@ -82,6 +82,7 @@ export default function CustomMultiTargetCard({
 
   const setCustomTarget = useCallback(
     (index: number) => (ctarget: CustomTarget) => {
+      console.log(ctarget)
       const targets = [...target.targets]
       targets[index] = ctarget
       setTarget({ ...target, targets })

@@ -148,6 +148,7 @@ function ExclusiveConditionalSelector({
   disabled,
 }: ExclusiveConditionalSelectorProps) {
   const { teamId, teamCharId } = useContext(TeamCharacterContext)
+  const { customTarget, setCustomTarget } = useContext(MultiTargetContext)
   const { data } = useContext(DataContext)
   const database = useDatabase()
   const setConditional = useCallback(
@@ -162,7 +163,7 @@ function ExclusiveConditionalSelector({
           }
           team.conditional = conditionalValues
         })
-      else
+      else if (!customTarget)
         database.teamChars.set(teamCharId, (teamChar) => {
           const conditionalValues = deepClone(teamChar.conditional)
           if (v) {
@@ -172,8 +173,28 @@ function ExclusiveConditionalSelector({
           }
           teamChar.conditional = conditionalValues
         })
+      else {
+        const conditionalValues = deepClone(customTarget.conditionals)
+        if (v) {
+          layeredAssignment(conditionalValues, conditional.path, v)
+        } else {
+          deletePropPath(conditionalValues, conditional.path)
+        }
+        setCustomTarget({
+          ...customTarget,
+          conditionals: conditionalValues,
+        })
+      }
     },
-    [database, conditional.path, teamCharId, teamId]
+    [
+      conditional.path,
+      database.teams,
+      database.teamChars,
+      teamId,
+      customTarget,
+      teamCharId,
+      setCustomTarget,
+    ]
   )
 
   const conditionalValue = data.get(conditional.value).value

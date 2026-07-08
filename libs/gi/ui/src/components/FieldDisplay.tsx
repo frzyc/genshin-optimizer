@@ -65,16 +65,16 @@ function FieldDisplay({
   if ('node' in field) {
     const node = data.get(field.node)
     if (node.isEmpty) return null
-    console.log(node)
-    if (node.info.path === 'path_2163') {
-      console.log(data)
-      console.log(node)
-      console.log(field.node)
-      deleteNodes(data)
-      console.log('get')
-      data.get(field.node)
-      console.log('getDone')
-    }
+    // console.log(node)
+    // if (node.info.path === 'path_2163') {
+    //   console.log(data)
+    //   console.log(node)
+    //   console.log(field.node)
+    //   deleteNodes(data)
+    //   console.log('get')
+    //   data.get(field.node)
+    //   console.log('getDone')
+    // }
     if (compareData) {
       const compareNode = compareData.get(field.node)
       return (

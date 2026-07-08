@@ -156,8 +156,8 @@ export class UIData {
           layeredAssignment(result, key, this.get(x))
       )
     }
-    console.log(result)
-    console.log(this.data)
+    // console.log(result)
+    // console.log(this.data)
     return result
   }
 
@@ -513,7 +513,7 @@ export function uiDataForTeam(
   const asConst = true
 
   const keys = Object.keys(teamData)
-  console.log(teamData)
+  // console.log(teamData)
   const sources = keys.map((key): any =>
     key.includes('Traveler') ? key + gender : key
   )
@@ -587,15 +587,15 @@ export function uiDataForTeam(
   )
 
   const origin = new UIData(undefined as any, undefined)
-  console.log(teamData)
-  console.log(own)
-  console.log(target)
+  // console.log(teamData)
+  // console.log(own)
+  // console.log(target)
   keys.map((k, i) =>
     Object.values(teamData).forEach((td) =>
       td.filter((d) => d.hit?.hitMode && !d.lvl).forEach((d) => origin.child(d))
     )
   )
-  console.log(origin)
+  // console.log(origin)
   return Object.fromEntries(
     keys.map((k, i) => [k, { target: origin.child(target[i]).child(own[i]) }])
   )

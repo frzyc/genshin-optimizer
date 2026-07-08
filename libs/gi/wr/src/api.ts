@@ -16,8 +16,8 @@ import {
   allTravelerKeys,
 } from '@genshin-optimizer/gi/consts'
 import type {
-  CustomTarget,
   ArtCharDatabase,
+  CustomTarget,
   ICachedArtifact,
   ICachedCharacter,
   ICachedWeapon,
@@ -239,7 +239,7 @@ export function dataObjForCharacterNew(
         name,
         variant: 'invalid',
       })
-      console.log(multiTargetNode)
+      // console.log(multiTargetNode)
       sheetData.display!['custom'][i] = multiTargetNode
     })
   }
@@ -275,7 +275,7 @@ export function createDataForTarget(
       layeredAssignment(dataObj, keys, constant(x))
     }
   )
-  const mergedData = data ? mergeData([data, dataObj]) : dataObj
+  const mergedData = data ? mergeData([data, dataObj], true) : dataObj
   mergedData.hit!.hitMode = constant(hitMode)
   mergedData.hit!.reaction = reaction ? constant(reaction) : none
   mergedData.infusion!.team = infusionAura ? constant(infusionAura) : none
@@ -283,7 +283,7 @@ export function createDataForTarget(
   return mergedData
 }
 
-export function mergeData(data: Data[]): Data {
+export function mergeData(data: Data[], keepLatestUnique = false): Data {
   function internal(data: any[], path: string[]): any {
     if (data.length <= 1) return data[0]
     if (data[0].operation) {
@@ -293,6 +293,7 @@ export function mergeData(data: Data[]): Data {
         (objPathValue(input, path) as ReadNode<number | string> | undefined) ??
         {}
       if (accu === undefined) {
+        if (keepLatestUnique) return data[data.length - 1]
         const errMsg = `Multiple entries when merging \`unique\` for key ${path}`
         if (process.env['NODE_ENV'] === 'development') throw new Error(errMsg)
         else console.error(errMsg)

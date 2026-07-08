@@ -92,7 +92,7 @@ export default function MTargetEditor({
     character: { key: characterKey },
   } = useContext(CharacterContext)
   const dataContext = useContext(DataContext)
-  console.log(dataContext.data)
+  // console.log(dataContext.data)
   const {
     path,
     weight,
