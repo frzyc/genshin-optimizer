@@ -176,7 +176,7 @@ const a4NicoleGuidanceActive_atk = greaterEq(
     equal(
       condA4NicoleGuidance,
       'on',
-      unequal(target.charKey, key, dm.passive1.atk)
+      unequal(active.charKey, key, dm.passive1.atk)
     )
   )
 )
