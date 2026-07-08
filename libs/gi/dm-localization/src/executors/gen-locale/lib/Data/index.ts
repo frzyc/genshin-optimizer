@@ -95,9 +95,13 @@ export const mapHashData = {
     },
   },
   reaction: {
+    superconduct: {
+      name: 614154423,
+      desc: [1461828088, 'paragraph'],
+    },
     stellarconduct: {
       name: 1657351122,
-      desc: [1792761473, 'paragraph'],
+      desc: [2338957416, 'paragraph'],
       fieldName: 952980404,
       fieldDesc: [2459265094, 'paragraph'],
     },

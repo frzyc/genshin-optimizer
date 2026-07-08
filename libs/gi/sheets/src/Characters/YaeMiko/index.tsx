@@ -17,7 +17,6 @@ import {
   unequal,
 } from '@genshin-optimizer/gi/wr'
 import { any, cond, st, stg } from '../../SheetUtil'
-import { condStellarRadiance } from '../../sharedConditionals'
 import { CharacterSheet } from '../CharacterSheet'
 import type { TalentSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
@@ -112,6 +111,11 @@ const dm = {
     stellarconduct_critDMG_: skillParam_gen.constellation6[1],
   },
 } as const
+
+const [condLockStellarRadianceScPath, condLockStellarRadianceSc] = cond(
+  key,
+  'lockStellarRadianceSc'
+)
 
 const nodeLk_dmgInc = prod(percent(dm.lockedPassive.dmgInc), input.total.atk)
 
@@ -208,7 +212,7 @@ const dmgFormulas = {
         condLockRevelation,
         'on',
         unequal(
-          condStellarRadiance,
+          condLockStellarRadianceSc,
           'on',
           customDmgNode(
             prod(percent(dm.passive1.dmg), input.total.atk),
@@ -224,7 +228,7 @@ const dmgFormulas = {
         condLockRevelation,
         'on',
         equal(
-          condStellarRadiance,
+          condLockStellarRadianceSc,
           'on',
           stellarDmg(
             percent(dm.passive1.stellarDmg),
@@ -298,7 +302,7 @@ const dmgFormulas = {
       condLockRevelation,
       'on',
       equal(
-        condStellarRadiance,
+        condLockStellarRadianceSc,
         'on',
         stellarDmg(
           percent(dm.lockedPassive.stellarDmg),
@@ -332,7 +336,6 @@ const data = dataObjForCharacterSheet(
         eleMas: nodeC2_eleMas,
       },
     },
-    flags: { canRadianceStellarconduct: lockRevelation },
   },
   {
     teamBuff: {
@@ -565,6 +568,22 @@ const sheet: TalentSheet = {
           node: infoMut(dmgFormulas.lockedPassive.dmg, { name: st('dmg') }),
         },
       ],
+    }),
+    ct.condTem('lockedPassive', {
+      path: condLockStellarRadianceScPath,
+      value: condLockStellarRadianceSc,
+      teamBuff: true,
+      canShow: lockRevelation,
+      name: st('elementalReaction.polestar.inside'),
+      states: {
+        on: {
+          fields: [
+            {
+              text: st('elementalReaction.gainRadianceSc'),
+            },
+          ],
+        },
+      },
     }),
   ]),
   constellation1: ct.talentTem('constellation1', [

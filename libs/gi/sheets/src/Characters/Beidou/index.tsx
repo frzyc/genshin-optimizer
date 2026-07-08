@@ -12,7 +12,6 @@ import {
   target,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
-import { condStellarRadiance } from '../../sharedConditionals'
 import { CharacterSheet } from '../CharacterSheet'
 import type { TalentSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
@@ -99,6 +98,11 @@ const dm = {
   },
 } as const
 
+const [condLockStellarRadianceScPath, condLockStellarRadianceSc] = cond(
+  key,
+  'lockStellarRadianceSc'
+)
+
 //Toggleable stuff:
 // A4: Unleashing <b>Tidecaller</b> with its maximum DMG Bonus
 // Burst: During the duration of <b>Stormbreaker</b>
@@ -133,7 +137,7 @@ const nodeBurstCryoResRed_ = greaterEq(
     condLockRevelation,
     'on',
     equal(
-      condStellarRadiance,
+      condLockStellarRadianceSc,
       'on',
       equal(condBurst, 'on', dm.constellation6.cryoResShred_)
     )
@@ -146,7 +150,7 @@ const nodeBurstEleMasDisp = greaterEq(
     condLockRevelation,
     'on',
     equal(
-      condStellarRadiance,
+      condLockStellarRadianceSc,
       'on',
       equal(condBurst, 'on', dm.constellation6.eleMas)
     )
@@ -238,7 +242,6 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       eleMas: nodeBurstEleMas,
     },
   },
-  flags: { canRadianceStellarconduct: lockRevelation },
 })
 
 const sheet: TalentSheet = {
@@ -448,6 +451,22 @@ const sheet: TalentSheet = {
           fields: [
             {
               text: st('hexerei.talentEnhance'),
+            },
+          ],
+        },
+      },
+    }),
+    ct.condTem('lockedPassive', {
+      path: condLockStellarRadianceScPath,
+      value: condLockStellarRadianceSc,
+      teamBuff: true,
+      canShow: lockRevelation,
+      name: st('elementalReaction.polestar.inside'),
+      states: {
+        on: {
+          fields: [
+            {
+              text: st('elementalReaction.gainRadianceSc'),
             },
           ],
         },

@@ -13,7 +13,6 @@ import {
   unequal,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
-import { condStellarRadiance } from '../../sharedConditionals'
 import { CharacterSheet } from '../CharacterSheet'
 import type { TalentSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
@@ -175,6 +174,11 @@ const dmgFormulas = {
   },
 }
 
+const [condLockStellarRadianceScPath, condLockStellarRadianceSc] = cond(
+  key,
+  'lockStellarRadianceSc'
+)
+
 const nodeA1MoveSpeed = greaterEq(
   input.asc,
   1,
@@ -214,7 +218,7 @@ const nodeC6superconduct_dmg_disp = greaterEq(
     condLockRevelation,
     'on',
     equal(
-      condStellarRadiance,
+      condLockStellarRadianceSc,
       'on',
       unequal(condC6, undefined, dm.constellation6.sc_dmg_)
     )
@@ -232,7 +236,7 @@ const nodeC6stellarconduct_dmg_disp = greaterEq(
     condLockRevelation,
     'on',
     equal(
-      condStellarRadiance,
+      condLockStellarRadianceSc,
       'on',
       unequal(condC6, undefined, dm.constellation6.sc_dmg_)
     )
@@ -261,7 +265,6 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       stellarconduct_dmg_: nodeC6stellarconduct_dmg_,
     },
   },
-  flags: { canRadianceStellarconduct: lockRevelation },
 })
 
 const sheet: TalentSheet = {
@@ -496,6 +499,22 @@ const sheet: TalentSheet = {
           fields: [
             {
               text: st('hexerei.talentEnhance'),
+            },
+          ],
+        },
+      },
+    }),
+    ct.condTem('lockedPassive', {
+      path: condLockStellarRadianceScPath,
+      value: condLockStellarRadianceSc,
+      teamBuff: true,
+      canShow: lockRevelation,
+      name: st('elementalReaction.polestar.inside'),
+      states: {
+        on: {
+          fields: [
+            {
+              text: st('elementalReaction.gainRadianceSc'),
             },
           ],
         },

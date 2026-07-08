@@ -16,7 +16,6 @@ import {
   type DocumentSection,
   type TalentSheetElementKey,
   getCharSheet,
-  reactionConditionals,
 } from '@genshin-optimizer/gi/sheets'
 import {
   DataContext,
@@ -27,7 +26,7 @@ import {
   TalentDropdown,
 } from '@genshin-optimizer/gi/ui'
 import type { CalcResult } from '@genshin-optimizer/gi/uidata'
-import { uiInput as input, one } from '@genshin-optimizer/gi/wr'
+import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import {
   Box,
   CardActionArea,
@@ -209,37 +208,25 @@ function ReactionDisplay() {
   // Add Nicole projections here, idk where else
   const nicole = data.getDisplay()['nicole'] as Record<string, CalcResult>
   return (
-    <>
-      <CardThemed bgt="light">
-        <CardContent>
-          <Grid container spacing={1}>
-            {[...Object.entries(reaction), ...Object.entries(nicole)]
-              .filter(([_, node]) => !node.isEmpty)
-              .map(([key, node]) => {
-                return (
-                  <Grid item key={key}>
-                    <CardThemed>
-                      <CardContent sx={{ p: 1, '&:last-child': { pb: 1 } }}>
-                        <NodeFieldDisplay calcRes={node} />
-                      </CardContent>
-                    </CardThemed>
-                  </Grid>
-                )
-              })}
-          </Grid>
-        </CardContent>
-      </CardThemed>
-      {reactionConditionals.some(
-        (cond) => data.get(cond.canShow ?? one).value
-      ) && (
-        <CardThemed bgt="light">
-          <CardContent>
-            {/* Reaction conditionals */}
-            <DocumentDisplay sections={reactionConditionals} horizontal />
-          </CardContent>
-        </CardThemed>
-      )}
-    </>
+    <CardThemed bgt="light">
+      <CardContent>
+        <Grid container spacing={1}>
+          {[...Object.entries(reaction), ...Object.entries(nicole)]
+            .filter(([_, node]) => !node.isEmpty)
+            .map(([key, node]) => {
+              return (
+                <Grid item key={key}>
+                  <CardThemed>
+                    <CardContent sx={{ p: 1, '&:last-child': { pb: 1 } }}>
+                      <NodeFieldDisplay calcRes={node} />
+                    </CardContent>
+                  </CardThemed>
+                </Grid>
+              )
+            })}
+        </Grid>
+      </CardContent>
+    </CardThemed>
   )
 }
 

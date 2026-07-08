@@ -19,7 +19,6 @@ import {
   unequal,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
-import { condStellarRadiance } from '../../sharedConditionals'
 import { CharacterSheet } from '../CharacterSheet'
 import type { TalentSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
@@ -127,6 +126,11 @@ const dm = {
   },
 } as const
 
+const [condLockStellarRadianceScPath, condLockStellarRadianceSc] = cond(
+  key,
+  'lockStellarRadianceSc'
+)
+
 const a1Rebuke_dmg_ = greaterEq(input.asc, 1, dm.passive1.dmg_, { unit: '%' })
 const a1Stellarconduct_dmg_ = greaterEq(
   input.asc,
@@ -134,7 +138,7 @@ const a1Stellarconduct_dmg_ = greaterEq(
   equal(
     condLockRevelation,
     'on',
-    equal(condStellarRadiance, 'on', dm.lockedPassive.stellarconduct_dmg_)
+    equal(condLockStellarRadianceSc, 'on', dm.lockedPassive.stellarconduct_dmg_)
   )
 )
 
@@ -162,7 +166,7 @@ const c1Luster_5hitStellarconduct_dmg_ = greaterEq(
     condLockRevelation,
     'on',
     equal(
-      condStellarRadiance,
+      condLockStellarRadianceSc,
       'on',
       equal(condC1Luster, 'on', dm.constellation1.hit5_stellarconduct_dmg_)
     )
@@ -176,7 +180,7 @@ const c15Hit_lusterStellarconduct_dmg_ = greaterEq(
     condLockRevelation,
     'on',
     equal(
-      condStellarRadiance,
+      condLockStellarRadianceSc,
       'on',
       equal(condC15Hit, 'on', dm.constellation1.luster_dmg_)
     )
@@ -195,7 +199,7 @@ const c2EdictStacks_hit3AddlMult_ = greaterEq(
     condLockRevelation,
     'on',
     equal(
-      condStellarRadiance,
+      condLockStellarRadianceSc,
       'on',
       equal(
         condA4EdictStacks,
@@ -214,7 +218,7 @@ const c2EdictStacks_hit5AddlMult_ = greaterEq(
     condLockRevelation,
     'on',
     equal(
-      condStellarRadiance,
+      condLockStellarRadianceSc,
       'on',
       equal(
         condA4EdictStacks,
@@ -233,7 +237,7 @@ const c2EdictStacks_lusterAddlMult_ = greaterEq(
     condLockRevelation,
     'on',
     equal(
-      condStellarRadiance,
+      condLockStellarRadianceSc,
       'on',
       equal(condA4EdictStacks, '5', percent(dm.constellation2.lusterAddlMult_))
     )
@@ -246,7 +250,7 @@ const c2EdictStacks_normalAddlMult_ = greaterEq(
     condLockRevelation,
     'on',
     unequal(
-      condStellarRadiance,
+      condLockStellarRadianceSc,
       'on',
       equal(condA4EdictStacks, '5', percent(dm.constellation2.normal_mult_))
     )
@@ -259,7 +263,7 @@ const c2EdictStacks_chargedAddlMult_ = greaterEq(
     condLockRevelation,
     'on',
     unequal(
-      condStellarRadiance,
+      condLockStellarRadianceSc,
       'on',
       equal(condA4EdictStacks, '5', percent(dm.constellation2.charged_mult_))
     )
@@ -282,7 +286,7 @@ const c6ChillingRepellingLuster_critRate_ = greaterEq(
   equal(
     condLockRevelation,
     'on',
-    equal(condStellarRadiance, 'on', dm.constellation6.fist_critRate_)
+    equal(condLockStellarRadianceSc, 'on', dm.constellation6.fist_critRate_)
   )
 )
 const c6ChillingRepellingLuster_critDMG_ = greaterEq(
@@ -291,7 +295,7 @@ const c6ChillingRepellingLuster_critDMG_ = greaterEq(
   equal(
     condLockRevelation,
     'on',
-    equal(condStellarRadiance, 'on', dm.constellation6.fist_critDMG_)
+    equal(condLockStellarRadianceSc, 'on', dm.constellation6.fist_critDMG_)
   )
 )
 
@@ -377,7 +381,7 @@ const dmgFormulas = {
         condLockRevelation,
         'on',
         equal(
-          condStellarRadiance,
+          condLockStellarRadianceSc,
           'on',
           stellarDmg(
             subscript(input.total.autoIndex, dm.normal.hitArr[2], {
@@ -408,7 +412,7 @@ const dmgFormulas = {
         condLockRevelation,
         'on',
         equal(
-          condStellarRadiance,
+          condLockStellarRadianceSc,
           'on',
           stellarDmg(
             prod(
@@ -443,7 +447,7 @@ const dmgFormulas = {
         condLockRevelation,
         'on',
         equal(
-          condStellarRadiance,
+          condLockStellarRadianceSc,
           'on',
           stellarDmg(
             subscript(input.total.autoIndex, dm.charged.dmg, { unit: '%' }),
@@ -475,7 +479,7 @@ const dmgFormulas = {
           condLockRevelation,
           'on',
           equal(
-            condStellarRadiance,
+            condLockStellarRadianceSc,
             'on',
             stellarDmg(
               prod(
@@ -519,7 +523,7 @@ const dmgFormulas = {
           condLockRevelation,
           'on',
           equal(
-            condStellarRadiance,
+            condLockStellarRadianceSc,
             'on',
             stellarDmg(
               subscript(input.total.autoIndex, dm.charged.dmg, { unit: '%' }),
@@ -555,7 +559,6 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
     burst_dmg_: c2EdictStacks_burst_dmg_,
     stellarconduct_dmg_: a1Stellarconduct_dmg_,
   },
-  flags: { canRadianceStellarconduct: lockRevelation },
 })
 
 const sheet: TalentSheet = {
@@ -618,7 +621,7 @@ const sheet: TalentSheet = {
       canShow: equal(
         condLockRevelation,
         'on',
-        equal(condStellarRadiance, 'on', 1)
+        equal(condLockStellarRadianceSc, 'on', 1)
       ),
       fields: [
         {
@@ -720,7 +723,7 @@ const sheet: TalentSheet = {
       canShow: equal(
         condLockRevelation,
         'on',
-        equal(condStellarRadiance, 'on', 1)
+        equal(condLockStellarRadianceSc, 'on', 1)
       ),
       fields: [
         {
@@ -739,7 +742,7 @@ const sheet: TalentSheet = {
       canShow: equal(
         condLockRevelation,
         'on',
-        equal(condStellarRadiance, 'on', 1)
+        equal(condLockStellarRadianceSc, 'on', 1)
       ),
       fields: [
         {
@@ -868,6 +871,21 @@ const sheet: TalentSheet = {
         },
       },
     }),
+    ct.condTem('lockedPassive', {
+      path: condLockStellarRadianceScPath,
+      value: condLockStellarRadianceSc,
+      canShow: lockRevelation,
+      name: st('elementalReaction.polestar.inside'),
+      states: {
+        on: {
+          fields: [
+            {
+              text: st('elementalReaction.gainRadianceSc'),
+            },
+          ],
+        },
+      },
+    }),
   ]),
   constellation1: ct.talentTem('constellation1', [
     ct.condTem('constellation1', {
@@ -876,7 +894,7 @@ const sheet: TalentSheet = {
       canShow: equal(
         condLockRevelation,
         'on',
-        equal(condStellarRadiance, 'on', 1)
+        equal(condLockStellarRadianceSc, 'on', 1)
       ),
       name: ct.ch('c1LusterCond'),
       states: {
@@ -904,7 +922,7 @@ const sheet: TalentSheet = {
       canShow: equal(
         condLockRevelation,
         'on',
-        equal(condStellarRadiance, 'on', 1)
+        equal(condLockStellarRadianceSc, 'on', 1)
       ),
       name: ct.ch('c15HitCond'),
       states: {

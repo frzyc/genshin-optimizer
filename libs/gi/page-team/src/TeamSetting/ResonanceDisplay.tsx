@@ -11,6 +11,7 @@ import type { IResonance } from '@genshin-optimizer/gi/sheets'
 import {
   getMoonsignSheet,
   hexereiSheet,
+  reactionConditionals,
   resonanceSheets,
 } from '@genshin-optimizer/gi/sheets'
 import type { dataContextObj } from '@genshin-optimizer/gi/ui'
@@ -20,7 +21,7 @@ import {
   CardContent,
   CardHeader,
   Divider,
-  Stack,
+  Grid,
   Typography,
 } from '@mui/material'
 import { useContext, useMemo } from 'react'
@@ -51,11 +52,18 @@ export function ResonanceDisplay({
     dataContextValue && (
       <DataContext.Provider value={dataContextValue}>
         <TeamCharacterContext.Provider value={teamCharContextObj}>
-          <Stack gap={1}>
+          <Grid item xs={1} display="flex">
             <ElementalResonance teamId={teamId} />
+          </Grid>
+          <Grid item xs={1} display="flex">
             <Moonsign />
+          </Grid>
+          <Grid item xs={1} display="flex">
             <Hexerei />
-          </Stack>
+          </Grid>
+          <Grid item xs={1} display="flex">
+            <Reactions />
+          </Grid>
         </TeamCharacterContext.Provider>
       </DataContext.Provider>
     )
@@ -73,7 +81,7 @@ function ElementalResonance({
   const teamCount = loadoutData.reduce((a, t) => a + (t ? 1 : 0), 0)
 
   return (
-    <CardThemed bgt="light">
+    <CardThemed bgt="light" sx={{ width: '100%' }}>
       <CardHeader
         title={
           <span>
@@ -113,7 +121,10 @@ function Moonsign() {
   const moonsignCount = data.get(tally.moonsign).value
 
   return (
-    <CardThemed bgt="light">
+    <CardThemed
+      bgt="light"
+      sx={{ opacity: moonsignCount >= 1 ? 1 : 0.5, width: '100% ' }}
+    >
       <CardHeader
         title={
           <span>
@@ -147,7 +158,10 @@ function Hexerei() {
   const hexereiCount = data.get(tally.hexerei).value
 
   return (
-    <CardThemed bgt="light">
+    <CardThemed
+      bgt="light"
+      sx={{ opacity: hexereiCount >= 2 ? 1 : 0.5, width: '100% ' }}
+    >
       <CardHeader
         title={
           <span>
@@ -181,7 +195,7 @@ function TeamResonanceDisplay({ resonances }: { resonances: IResonance[] }) {
         const show = res.canShow(data)
         if (!show && hasReso) return null
         return (
-          <CardThemed key={i} sx={{ opacity: show ? 1 : 0.5 }}>
+          <CardThemed key={i} sx={{ opacity: show ? 1 : 0.5, width: '100%' }}>
             <CardHeader
               title={
                 <span>
@@ -202,5 +216,21 @@ function TeamResonanceDisplay({ resonances }: { resonances: IResonance[] }) {
         )
       })}
     </>
+  )
+}
+
+function Reactions() {
+  const { t } = useTranslation('sheet')
+  return (
+    <CardThemed bgt="light" sx={{ width: '100%' }}>
+      <CardHeader
+        title={t('elementalReaction.name')}
+        titleTypographyProps={{ variant: 'h6' }}
+      />
+      <Divider />
+      <CardContent>
+        <DocumentDisplay sections={reactionConditionals} teamBuffOnly />
+      </CardContent>
+    </CardThemed>
   )
 }

@@ -17,7 +17,6 @@ import {
   unequal,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
-import { condStellarRadiance } from '../../sharedConditionals'
 import { CharacterSheet } from '../CharacterSheet'
 import type { TalentSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
@@ -122,6 +121,11 @@ const dm = {
   },
 } as const
 
+const [condLockStellarRadianceScPath, condLockStellarRadianceSc] = cond(
+  key,
+  'lockStellarRadianceSc'
+)
+
 const [condAfterBurstPath, condAfterBurst] = cond(key, 'afterBurst')
 const afterBurst_eleMas = equal(condAfterBurst, 'on', dm.burst.eleMas)
 
@@ -152,7 +156,7 @@ const a4_boltStellar_dmgInc = greaterEq(
     condLockRevelation,
     'on',
     equal(
-      condStellarRadiance,
+      condLockStellarRadianceSc,
       'on',
       prod(percent(dm.passive2.boltStellar_dmgInc_), input.total.eleMas)
     )
@@ -167,7 +171,7 @@ const c1Together_eleMasDisp = greaterEq(
     condLockRevelation,
     'on',
     equal(
-      condStellarRadiance,
+      condLockStellarRadianceSc,
       'on',
       equal(condC1Together, 'on', dm.constellation1.eleMas)
     )
@@ -209,7 +213,7 @@ const c2TeamHit_stellarconduct_dmg_ = greaterEq(
     condLockRevelation,
     'on',
     equal(
-      condStellarRadiance,
+      condLockStellarRadianceSc,
       'on',
       equal(
         condC1Together,
@@ -302,7 +306,7 @@ const dmgFormulas = {
         condLockRevelation,
         'on',
         equal(
-          condStellarRadiance,
+          condLockStellarRadianceSc,
           'on',
           stellarDmg(
             percent(dm.passive1.boltStellarDmg),
@@ -342,7 +346,6 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       stellarconduct_dmg_: c2TeamHit_stellarconduct_dmg_,
     },
   },
-  flags: { canRadianceStellarconduct: lockRevelation },
 })
 
 const sheet: TalentSheet = {
@@ -579,6 +582,22 @@ const sheet: TalentSheet = {
         },
       },
     }),
+    ct.condTem('lockedPassive', {
+      path: condLockStellarRadianceScPath,
+      value: condLockStellarRadianceSc,
+      teamBuff: true,
+      canShow: lockRevelation,
+      name: st('elementalReaction.polestar.inside'),
+      states: {
+        on: {
+          fields: [
+            {
+              text: st('elementalReaction.gainRadianceSc'),
+            },
+          ],
+        },
+      },
+    }),
   ]),
   constellation1: ct.talentTem('constellation1', [
     ct.condTem('constellation1', {
@@ -589,7 +608,7 @@ const sheet: TalentSheet = {
       canShow: equal(
         condLockRevelation,
         'on',
-        equal(condStellarRadiance, 'on', 1)
+        equal(condLockStellarRadianceSc, 'on', 1)
       ),
       states: {
         on: {
@@ -627,7 +646,7 @@ const sheet: TalentSheet = {
       canShow: equal(
         condLockRevelation,
         'on',
-        equal(condStellarRadiance, 'on', equal(condC1Together, 'on', 1))
+        equal(condLockStellarRadianceSc, 'on', equal(condC1Together, 'on', 1))
       ),
       states: objKeyMap(c2TeamHitStacksArr, (stack) => ({
         name: st('hits', { count: stack }),

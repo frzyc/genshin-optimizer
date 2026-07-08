@@ -2,25 +2,21 @@ import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import { Translate } from '@genshin-optimizer/gi/i18n'
 import {
+  compareEq,
+  equal,
   inferInfoMut,
   input,
   lookup,
+  mergeData,
   naught,
-  one,
   percent,
+  unequal,
 } from '@genshin-optimizer/gi/wr'
 import { Box } from '@mui/material'
-import { st, stg } from './SheetUtil'
-import {
-  condPolestarStacks,
-  condPolestarStacksPath,
-  condStellarRadiance,
-  condStellarRadiancePath,
-} from './sharedConditionals'
+import { activeCharBuff, condReadNode, st, stg } from './SheetUtil'
 import type { DocumentConditional } from './sheet'
 
 const tr = (strKey: string) => <Translate ns="reaction_gen" key18={strKey} />
-const trm = (strKey: string) => <Translate ns="reaction" key18={strKey} />
 
 const stellarconductMultipliers = [
   0, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1,
@@ -28,22 +24,110 @@ const stellarconductMultipliers = [
 const cryo_electro_dmg_arr = [
   0.2, 0.29, 0.3, 0.31, 0.32, 0.33, 0.34, 0.35, 0.36, 0.37, 0.38, 0.39, 0.4,
 ]
+
+const condPolestarStacksPath = ['reaction', 'polestarStacks']
+const condPolestarStacks = condReadNode(condPolestarStacksPath)
+
 const polestarStacksArr = range(0, stellarconductMultipliers.length - 1)
-const polestarStacks_stellarconduct_mult_ = lookup(
-  condPolestarStacks,
-  objKeyMap(polestarStacksArr, (stack) =>
-    percent(stellarconductMultipliers[stack])
+const [
+  polestarStacks_stellarconduct_mult_disp,
+  polestarStacks_stellarconduct_mult_,
+] = activeCharBuff(
+  input.charKey,
+  lookup(
+    condPolestarStacks,
+    objKeyMap(polestarStacksArr, (stack) =>
+      percent(stellarconductMultipliers[stack])
+    ),
+    naught
   ),
-  naught
+  { path: 'stellarconduct_mult_' }
 )
-const polestarStacks_cryo_dmg_ = lookup(
-  condPolestarStacks,
-  objKeyMap(polestarStacksArr, (stack) => percent(cryo_electro_dmg_arr[stack])),
-  naught
+const [polestarStacks_cryo_dmg_disp, polestarStacks_cryo_dmg_] = activeCharBuff(
+  input.charKey,
+  lookup(
+    condPolestarStacks,
+    objKeyMap(polestarStacksArr, (stack) =>
+      percent(cryo_electro_dmg_arr[stack])
+    ),
+    naught
+  ),
+  { path: 'cryo_dmg_' }
 )
-const polestarStacks_electro_dmg_ = { ...polestarStacks_cryo_dmg_ }
+const [polestarStacks_electro_dmg_disp, polestarStacks_electro_dmg_] =
+  activeCharBuff(
+    input.charKey,
+    lookup(
+      condPolestarStacks,
+      objKeyMap(polestarStacksArr, (stack) =>
+        percent(cryo_electro_dmg_arr[stack])
+      ),
+      naught
+    ),
+    { path: 'electro_dmg_' }
+  )
+
+const condSuperconductPath = ['reaction', 'superconduct']
+const condSuperconduct = condReadNode(condSuperconductPath)
+const condOppInsidePolePath = ['reaction', 'oppInsidePole']
+const condOppInsidePole = condReadNode(condOppInsidePolePath)
+const [superconduct_physical_enemyRes_disp, superconduct_physical_enemyRes_] =
+  activeCharBuff(input.charKey, equal(condSuperconduct, 'on', -0.4), {
+    path: 'physical_enemyRes_',
+  })
+const oppInsidePole_physical_enemyRes_disp = equal(
+  condOppInsidePole,
+  'on',
+  compareEq(
+    condSuperconduct,
+    'on',
+    percent(-0.4, {
+      path: 'physical_enemyRes_',
+      isTeamBuff: true,
+      strikethrough: true,
+    }),
+    percent(-0.4, { path: 'physical_enemyRes_', isTeamBuff: true })
+  )
+)
+const [, oppInsidePole_physical_enemyRes_] = activeCharBuff(
+  input.charKey,
+  equal(condOppInsidePole, 'on', unequal(condSuperconduct, 'on', -0.4)),
+  { path: 'physical_enemyRes_' }
+)
 
 export const reactionConditionals: DocumentConditional[] = [
+  {
+    header: {
+      title: tr('superconduct.name'),
+      icon: (
+        <Box
+          component="img"
+          src={imgAssets.reaction.superconduct}
+          width="2em"
+          height="auto"
+        />
+      ),
+      description: tr('superconduct.desc'),
+    },
+    path: condSuperconductPath,
+    value: condSuperconduct,
+    name: st('enemyAffected.superconduct'),
+    teamBuff: true,
+    states: {
+      on: {
+        fields: [
+          {
+            node: superconduct_physical_enemyRes_disp,
+          },
+          {
+            text: stg('duration'),
+            value: 12,
+            unit: 's',
+          },
+        ],
+      },
+    },
+  },
   {
     header: {
       title: tr('stellarconduct.name'),
@@ -57,29 +141,27 @@ export const reactionConditionals: DocumentConditional[] = [
       ),
       description: tr('stellarconduct.desc'),
     },
-    path: condStellarRadiancePath,
-    value: condStellarRadiance,
-    name: st('elementalReaction.polestar'),
-    canShow: input.flags.canRadianceStellarconduct,
+    path: condOppInsidePolePath,
+    value: condOppInsidePole,
+    name: st('elementalReaction.polestar.oppInside'),
     teamBuff: true,
     states: {
       on: {
         fields: [
           {
-            text: trm('gainRadiance'),
+            node: oppInsidePole_physical_enemyRes_disp,
           },
         ],
       },
     },
   },
-
   {
     header: {
       title: tr('stellarconduct.fieldName'),
       icon: (
         <Box
           component="img"
-          src={imgAssets.reaction.stellarconductField}
+          src={imgAssets.reaction.polestarField}
           width="2em"
           height="auto"
         />
@@ -88,24 +170,19 @@ export const reactionConditionals: DocumentConditional[] = [
     },
     path: condPolestarStacksPath,
     value: condPolestarStacks,
-    name: trm('polestarCond'),
-    // Technically other elements can be inside the field and receive the buff, but it wouldn't be meaningful and clutters the UI like crazy
-    canShow: lookup(
-      input.charEle,
-      { anemo: one, electro: one, cryo: one },
-      naught
-    ),
+    name: st('elementalReaction.polestar.cond'),
+    teamBuff: true,
     states: objKeyMap(polestarStacksArr, (stack) => ({
       name: st('stack', { count: stack }),
       fields: [
         {
-          node: polestarStacks_cryo_dmg_,
+          node: polestarStacks_cryo_dmg_disp,
         },
         {
-          node: polestarStacks_electro_dmg_,
+          node: polestarStacks_electro_dmg_disp,
         },
         {
-          node: polestarStacks_stellarconduct_mult_,
+          node: polestarStacks_stellarconduct_mult_disp,
         },
         {
           text: stg('duration'),
@@ -117,10 +194,22 @@ export const reactionConditionals: DocumentConditional[] = [
   },
 ]
 
-export const reactionData = inferInfoMut({
-  premod: {
-    stellarconduct_mult_: polestarStacks_stellarconduct_mult_,
-    cryo_dmg_: polestarStacks_cryo_dmg_,
-    electro_dmg_: polestarStacks_electro_dmg_,
-  },
-})
+export const reactionData = mergeData([
+  inferInfoMut({
+    teamBuff: {
+      premod: {
+        stellarconduct_mult_: polestarStacks_stellarconduct_mult_,
+        cryo_dmg_: polestarStacks_cryo_dmg_,
+        electro_dmg_: polestarStacks_electro_dmg_,
+        physical_enemyRes_: superconduct_physical_enemyRes_,
+      },
+    },
+  }),
+  inferInfoMut({
+    teamBuff: {
+      premod: {
+        physical_enemyRes_: oppInsidePole_physical_enemyRes_,
+      },
+    },
+  }),
+])

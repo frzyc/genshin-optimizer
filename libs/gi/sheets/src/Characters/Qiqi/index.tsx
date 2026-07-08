@@ -13,7 +13,6 @@ import {
   unequal,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
-import { condStellarRadiance } from '../../sharedConditionals'
 import { CharacterSheet } from '../CharacterSheet'
 import type { TalentSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
@@ -102,6 +101,11 @@ const dm = {
   },
 } as const
 
+const [condLockStellarRadianceScPath, condLockStellarRadianceSc] = cond(
+  key,
+  'lockStellarRadianceSc'
+)
+
 const [condLkPath, condLk] = cond(key, 'QiqiLk')
 const [condA1Path, condA1] = cond(key, 'QiqiA1')
 const [condC2Path, condC2] = cond(key, 'QiqiC2')
@@ -111,7 +115,7 @@ const nodeLkSuperconduct_dmg_ = equal(
   condLockRevelation,
   'on',
   equal(
-    condStellarRadiance,
+    condLockStellarRadianceSc,
     'on',
     equal(condLk, 'on', dm.lockedPassive.sc_dmg_)
   )
@@ -144,7 +148,7 @@ const nodeC2Atk_ = greaterEq(
   equal(
     condLockRevelation,
     'on',
-    equal(condStellarRadiance, 'on', dm.constellation2.atk_)
+    equal(condLockStellarRadianceSc, 'on', dm.constellation2.atk_)
   )
 )
 
@@ -208,7 +212,7 @@ const dmgFormulas = {
       condLockRevelation,
       'on',
       equal(
-        condStellarRadiance,
+        condLockStellarRadianceSc,
         'on',
         stellarDmg(
           subscript(input.total.burstIndex, dm.burst.stellarDmg, { unit: '%' }),
@@ -253,7 +257,6 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       stellarconduct_dmgInc: nodeC6Stellarconduct_dmgInc,
     },
   },
-  flags: { canRadianceStellarconduct: lockRevelation },
 })
 
 const sheet: TalentSheet = {
@@ -438,13 +441,29 @@ const sheet: TalentSheet = {
       },
     }),
     ct.condTem('lockedPassive', {
+      path: condLockStellarRadianceScPath,
+      value: condLockStellarRadianceSc,
+      teamBuff: true,
+      canShow: lockRevelation,
+      name: st('elementalReaction.polestar.inside'),
+      states: {
+        on: {
+          fields: [
+            {
+              text: st('elementalReaction.gainRadianceSc'),
+            },
+          ],
+        },
+      },
+    }),
+    ct.condTem('lockedPassive', {
       path: condLkPath,
       value: condLk,
       teamBuff: true,
       canShow: equal(
         condLockRevelation,
         'on',
-        equal(condStellarRadiance, 'on', 1)
+        equal(condLockStellarRadianceSc, 'on', 1)
       ),
       name: ct.ch('lockCond'),
       states: {

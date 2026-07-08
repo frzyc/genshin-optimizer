@@ -312,7 +312,6 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       critDMG_: c6_critDMG_,
     },
   },
-  flags: { canRadianceStellarconduct: lockRevelation },
 })
 
 const sheet: TalentSheet = {

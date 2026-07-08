@@ -26,8 +26,9 @@ import sands from './icon_slot_sands.png'
 import hexerei from './UI_BtnIcon_Hexenzirkel.png'
 import moonsign from './UI_BtnIcon_MoonPhase.png'
 
-import stellarconductField from './UI_Buff_Element_StarSuperconductor.png'
+import polestarField from './UI_Buff_Element_StarSuperconductor.png'
 import stellarconduct from './UI_MessageIcon_StarSuperconductor.png'
+import superconduct from './UI_MessageIcon_Superconductivity.png'
 
 export const imgAssets = {
   weaponTypes: { bow, catalyst, claymore, polearm, sword },
@@ -59,6 +60,7 @@ export const imgAssets = {
   },
   reaction: {
     stellarconduct,
-    stellarconductField,
+    polestarField,
+    superconduct,
   },
 } as const

@@ -11,16 +11,9 @@ import type {
   IDocumentHeader,
   IDocumentText,
 } from '@genshin-optimizer/gi/sheets'
-import { theme } from '@genshin-optimizer/gi/theme'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import type { SxProps } from '@mui/material'
-import {
-  Box,
-  Collapse,
-  Divider,
-  Typography,
-  useMediaQuery,
-} from '@mui/material'
+import { Box, Collapse, Divider, Typography } from '@mui/material'
 import { useContext, useState } from 'react'
 import { DataContext } from '../context'
 import { FieldsDisplay } from './FieldDisplay'
@@ -34,7 +27,6 @@ export function DocumentDisplay({
   disabled = false,
   bgt = 'normal',
   collapse = false,
-  horizontal = false,
 }: {
   sections: DocumentSection[]
   teamBuffOnly?: boolean
@@ -43,10 +35,8 @@ export function DocumentDisplay({
   disabled?: boolean
   bgt?: CardBackgroundColor
   collapse?: boolean
-  horizontal?: boolean
 }) {
   const { data } = useContext(DataContext)
-  const isOneCol = useMediaQuery(theme.breakpoints.down('md'))
   if (!sections.length) return null
   const sectionDisplays = sections
     .map((s, i) => {
@@ -63,20 +53,13 @@ export function DocumentDisplay({
           disabled={disabled}
           bgt={bgt}
           collapse={collapse}
-          sx={horizontal ? { minWidth: isOneCol ? '100%' : '33%' } : undefined}
         />
       )
     })
     .filter((s) => s)
   if (!sectionDisplays.length) return null
   return (
-    <Box
-      display="flex"
-      flexDirection={horizontal ? 'row' : 'column'}
-      gap={1}
-      alignItems={horizontal ? 'flex-start' : undefined}
-      flexWrap="wrap"
-    >
+    <Box display="flex" flexDirection="column" gap={1} flexWrap="wrap">
       {sectionDisplays}
     </Box>
   )
@@ -89,7 +72,6 @@ function SectionDisplay({
   disabled = false,
   bgt = 'normal',
   collapse = false,
-  sx,
 }: {
   section: DocumentSection
   hideDesc?: boolean
@@ -97,7 +79,6 @@ function SectionDisplay({
   disabled?: boolean
   bgt?: CardBackgroundColor
   collapse?: boolean
-  sx?: SxProps
 }) {
   if ('fields' in section) {
     return (
@@ -106,7 +87,6 @@ function SectionDisplay({
         hideDesc={hideDesc}
         hideHeader={hideHeader}
         bgt={bgt}
-        sx={sx}
       />
     )
   } else if ('states' in section) {
@@ -117,14 +97,13 @@ function SectionDisplay({
         hideHeader={hideHeader}
         disabled={disabled}
         bgt={bgt}
-        sx={sx}
       />
     )
   } /* if ("text" in section) */ else {
     return collapse ? (
-      <TextSectionDisplayCollapse section={section} sx={sx} />
+      <TextSectionDisplayCollapse section={section} />
     ) : (
-      <TextSectionDisplay section={section} sx={sx} />
+      <TextSectionDisplay section={section} />
     )
   }
 }
@@ -133,18 +112,16 @@ function FieldsSectionDisplay({
   hideDesc,
   hideHeader,
   bgt = 'normal',
-  sx,
 }: {
   section: IDocumentFields
   hideDesc?: boolean
   hideHeader?: boolean | ((section: DocumentSection) => boolean)
   bgt?: CardBackgroundColor
-  sx?: SxProps
 }) {
   const { data } = useContext(DataContext)
   if (!data) return null
   return (
-    <CardThemed bgt={bgt} sx={sx}>
+    <CardThemed bgt={bgt}>
       {!evalIfFunc(hideHeader, section) && section.header && (
         <HeaderDisplay
           header={section.header}
