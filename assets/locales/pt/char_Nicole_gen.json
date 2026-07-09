@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -60,7 +64,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -88,14 +96,18 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
     "name": "Methexis",
     "description": {
-      "0": "Nos 20s após lançar a Habilidade Elemental <strong><tooltip ns=char_Nicole_gen baseKey18=skill>Revelação: Luz Não Criada</tooltip></strong>, Nicole aplicará Observação no personagem ativo da equipe. Personagens sob efeito de Observação terão sua <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Graça de Kenosis</strong></tooltip> elevada para <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Orientação de Theosis</strong></tooltip> 3s após entrarem em campo, aumentando seu ATQ em 300 adicionais. Se o personagem sob efeito de Observação for um personagem Mágico, o efeito <strong>Graça de Kenosis</strong> será elevado automaticamente para <strong>Orientação de Theosis</strong>.",
-      "1": "Com exceção de Nicole, outros personagens que possuem <strong>Orientação de Theosis</strong> voltarão a ter <strong>Graça de Kenosis</strong> quando saírem de campo."
+      "0": "Nos 20s após lançar a Habilidade Elemental <strong><tooltip ns=char_Nicole_gen baseKey18=skill>Revelação: Luz Não Criada</tooltip></strong>, Nicole continuará aplicando \"Observação\" nos outros personagens da equipe que estiverem atualmente em campo. Quando um personagem sob efeito de Observação permanecer em campo por 3s contínuos, o efeito <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Graça de Kenosis</strong></tooltip> que ele possui será elevado para <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Orientação de Theosis</strong></tooltip>, aumentando seu ATQ em 300 adicionais. Se o personagem sob efeito de Observação for um personagem Mágico, o efeito <strong>Graça de Kenosis</strong> será elevado diretamente para <strong>Orientação de Theosis</strong>.",
+      "1": "Com exceção de Nicole, quando outros personagens que possuem <strong>Orientação de Theosis</strong> saírem de campo, esse efeito voltará a ser <strong>Graça de Kenosis</strong>."
     }
   },
   "passive2": {

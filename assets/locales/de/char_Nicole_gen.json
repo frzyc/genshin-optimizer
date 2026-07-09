@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -60,7 +64,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -88,13 +96,17 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
     "name": "Methexis",
     "description": {
-      "0": "Nach dem Anwenden der Elementarfähigkeit <strong><tooltip ns=char_Nicole_gen baseKey18=skill>Verheißung des Wortes – Licht des Ungesehenen</tooltip></strong> „beobachtet“ Nicole die anderen eigenen aktuellen Truppenmitglieder 20 s lang. Stuft, nachdem die beobachtete Figur 3 s lang fortlaufend auf dem Feld war, deren Effekt <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Gabe der Kenosis</strong></tooltip> zu <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Führung der Theosis</strong></tooltip> hoch, und erhöht ihren ANG zusätzlich um 300 Pkt. Stuft, wenn es sich bei der beobachteten Figur um eine Hexerei-Figur handelt, deren Effekt <strong>Gabe der Kenosis</strong> direkt zu <strong>Führung der Theosis</strong> hoch.",
+      "0": "Nach dem Anwenden der Elementarfähigkeit <strong><tooltip ns=char_Nicole_gen baseKey18=skill>Verheißung des Wortes – Licht des Ungesehenen</tooltip></strong> „beobachtet“ Nicole die anderen eigenen aktuellen Truppenmitglieder 20 s lang. Stuft, nachdem die beobachtete Figur 3 s lang fortlaufend auf dem Feld war, deren Effekt <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Gabe der Kenosis</strong></tooltip> zu <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Führung der Theosis</strong></tooltip> hoch, wodurch ihr ANG zusätzlich um 300 Pkt. erhöht wird. Stuft, wenn es sich bei der beobachteten Figur um eine Hexerei-Figur handelt, deren Effekt <strong>Gabe der Kenosis</strong> direkt zu <strong>Führung der Theosis</strong> hoch.",
       "1": "Abgesehen von Nicole wird <strong>Führung der Theosis</strong> aller anderen Figuren nach dem Verlassen des Felds wieder auf <strong>Gabe der Kenosis</strong> zurückgestuft."
     }
   },
@@ -130,7 +142,7 @@
   "constellation2": {
     "name": "„Ich werde dich lehren und dir deinen eigenen Weg zeigen“",
     "description": {
-      "0": "Verstärkt den Effekt der Elementarfähigkeit <strong><tooltip ns=char_Nicole_gen baseKey18=skill>Verheißung des Wortes – Licht des Ungesehenen</tooltip></strong>: Erhöht den ANG durch <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Gabe der Kenosis</strong></tooltip> zusätzlich um 300 Pkt. (wird nicht in den max. ANG-Bonus dieses Effekts eingerechnet), und verringert durch <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Führung der Theosis</strong></tooltip> zudem abhängig vom Elementartyp der Figur den Elementar-Widerstand von Gegnern in der Nähe um 25 %. Effekte zur Verringerung des Elementar-Widerstands desselben Elementartyps können nicht gestapelt werden.",
+      "0": "Verstärkt den Effekt der Elementarfähigkeit <strong><tooltip ns=char_Nicole_gen baseKey18=skill>Verheißung des Wortes – Licht des Ungesehenen</tooltip></strong>: Erhöht den ANG durch <tooltip ns=tooltips_gen baseKey18=11310001 values=[]><strong>Gabe der Kenosis</strong></tooltip> zusätzlich um 300 Pkt. (wird nicht durch das ANG-Bonuslimit des Effekts begrenzt). Verringert durch <tooltip ns=tooltips_gen baseKey18=11310002 values=[]><strong>Führung der Theosis</strong></tooltip> je nach Elementartyp der Figur den entsprechenden Elementar-WDS von Gegnern in der Nähe um 25 %. Effekte zur Verringerung des Elementar-Widerstands desselben Elementartyps können nicht gestapelt werden.",
       "1": "Außerdem gewährt Nicole aktuellen Figuren in der Nähe einen Schild aus glühendem Licht, wenn sie die Elementarfähigkeit <strong>Verheißung des Wortes – Licht des Ungesehenen</strong> anwendet."
     }
   },

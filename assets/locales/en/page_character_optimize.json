@@ -30,12 +30,27 @@
   "upOptInfo": "The Artifact Upgrader identifies artifacts with high potential to boost the Optimization Target's value, guiding you to artifacts worth leveling up.<br/>As it only swaps one artifact at a time, for the best overall build across all artifacts, use the main artifact optimizer.",
   "upOptEmptyBuild": "You're using a partially empty build. Since the Artifact Upgrader only swaps artifacts individually, completing a set is unlikely. It's recommended to begin with a base build, preferably generated from the main Optimizer.",
   "upOptShowingNum": "Showing {{count}} out of {{value}} Artifacts",
+  "upOptReshape": {
+    "label": "Reshape",
+    "tooltip": "Evaluate level 20 artifacts as reshape candidates. Each eligible artifact is scored once per substat pair, for 6 total combinations.",
+    "rolls": "Number of rolls into the guaranteed substats:",
+    "rollOption": "{{count}} rolls"
+  },
+  "upOptDefine": {
+    "label": "Define",
+    "tooltip": "Evaluate hypothetical artifacts created by defining (sanctifying elixirs). Candidates are generated for the selected sets, slots, main stats, and every pair of the selected substats below.",
+    "substats": "Substats to consider for defining:"
+  },
   "upOptChart": {
     "est": " (est.)",
     "prob": "Prob. upgrade{{est}}: ",
     "average": "Average increase{{est}}: ",
     "equipped": "Equipped",
     "current": "Current on Build",
+    "reshape": "Reshape",
+    "reshapeStats": "Guaranteed: {{count}} rolls into {{stats}}",
+    "define": "Define",
+    "defineStats": "Guaranteed: 2 rolls into {{stats}}",
     "incLabel": "Relative Increase to Target",
     "probLabel": "Probability",
     "const": " Constrained",

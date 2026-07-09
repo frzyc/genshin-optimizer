@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -72,7 +76,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -80,6 +88,12 @@
     "description": {
       "0": "Die Legende des „Kitsunetsuki“, der Heimsuchung durch eine Kitsune, gehört zu den Volksmärchen von Inazuma. Unter ihnen gilt die der Himmelsfüchse als etwas Besonderes, die in Form eines Blitzes auf die Feinde des Großen Narukami-Schreins herabfallen, wobei <electro>Elektro-Flächenschaden</electro> verursacht wird.",
       "1": "Yae Miko aktiviert die Sesshou-Sakura in der Nähe beim Auslösen der Fähigkeit, zerstört ihre äußere Form und verwandelt sie in Tenko-Blitzschläge, die herunterprasseln und <electro>Elektro-Flächenschaden</electro> verursachen. Für jede zerstörte Sesshou-Sakura wird ein Tenko-Blitzschlag erzeugt.",
+      "2": "<br/>",
+      "3": "<i>Yae benutzt nur in solchen Zeiten das Zeichen der Himmelsfüchse, um Blitze zu beschwören. Alle, die bisher die Schwänze der Guuji gesehen haben, sind zu Asche zerfallen. Also vergiss nicht, Yae hat keine Schwänze.</i>"
+    },
+    "upgradedDescription": {
+      "0": "Die Legende des „Kitsunetsuki“, der Heimsuchung durch eine Kitsune, gehört zu den Volksmärchen von Inazuma. Unter ihnen gilt die der Himmelsfüchse als etwas Besonderes, die in Form eines Blitzes auf die Feinde des Großen Narukami-Schreins herabfallen, wobei <electro>Elektro-Flächenschaden</electro> verursacht wird.",
+      "1": "Yae Miko erzeugt beim Auslösen der Fähigkeit mithilfe der Sesshou-Sakura in der Nähe Tenko-Blitzschläge, die herunterprasseln und <electro>Elektro-Flächenschaden</electro> verursachen. Für jede Sesshou-Sakura wird ein Tenko-Blitzschlag erzeugt.",
       "2": "<br/>",
       "3": "<i>Yae benutzt nur in solchen Zeiten das Zeichen der Himmelsfüchse, um Blitze zu beschwören. Alle, die bisher die Schwänze der Guuji gesehen haben, sind zu Asche zerfallen. Also vergiss nicht, Yae hat keine Schwänze.</i>"
     },
@@ -99,13 +113,22 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
     "name": "Heiliger Schatten des Schreins",
     "description": {
       "0": "Überspringt beim Auslösen von <strong>Große Geheimkunst – Tenko Kenshin</strong> für jede zerstörte Sesshou-Sakura einmal die Abklingzeit von <strong>Yakan-Kriegszauber – Sesshou-Sakura</strong>."
+    },
+    "upgradedDescription": {
+      "0": "Setzt beim Anwenden von <strong>Große Geheimkunst – Tenko Kenshin</strong> für jede genutzte Sesshou-Sakura einmal die Abklingzeit von <strong>Yakan-Kriegszauber – Sesshou-Sakura</strong> zurück.",
+      "1": "Löst, wenn gleichzeitig mindestens 3 Sesshou-Sakura in der Nähe existieren, beim Anwenden von <strong>Yakan-Kriegszauber – Sesshou-Sakura</strong> zusätzlich einen Blitzschlag durch Yae Miko aus, der <electro>Elektro-Schaden</electro> in Höhe von 40 % von Yae Mikos ANG verursacht.",
+      "2": "<strong>Leuchten – Stellar-Supraleiter</strong>: Wandelt oben genannten zusätzlichen Blitzschlag stattdessen in <electro>Elektro-Schaden</electro> um, der als Schaden durch die Reaktion Stellar-Supraleiter gewertet wird und 50 % von Yae Mikos ANG entspricht."
     }
   },
   "passive2": {
@@ -120,16 +143,30 @@
       "0": "Erschafft mit einer Wahrscheinlichkeit von 25 % extra ein anderes zufälliges Material für Talente aus demselben Gebiet mit einer dem verbrauchten Material entsprechenden Stufe."
     }
   },
+  "lockedPassive": {
+    "name": "Verkündung des Reinigungsortes",
+    "description": {
+      "0": "Verlängert die Dauer der Sesshou-Sakura um 10 s. Verstärkt, nachdem Truppenmitglieder in der Nähe die Reaktion Supraleiter oder Stellar-Supraleiter ausgelöst haben, den nächsten Blitzschlag der Sesshou-Sakura: Erhöht den verursachten Schaden um 80 % von Yae Mikos ANG, 2,5 s Abklingzeit.",
+      "1": "<strong>Leuchten – Stellar-Supraleiter</strong>: Verursacht, nachdem ein mit obigem Effekt verstärkter Blitzschlag einen Gegner getroffen hat, zusätzlich einmal <electro>Elektro-Schaden</electro> in Höhe von 200 % von Yae Mikos ANG. Dieser Schaden wird als Schaden durch die Reaktion Stellar-Supraleiter gewertet.",
+      "2": "Versetzt Yae Miko zudem, wenn sie sich im <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Sternglanzfeld</strong></tooltip> befindet, in den Zustand <strong>Leuchten – Stellar-Supraleiter</strong>."
+    }
+  },
   "constellation1": {
     "name": "Yakan-Opfer",
     "description": {
       "0": "Stellt Yae Miko selbst bei jedem Tenko-Blitzschlag von <strong>Große Geheimkunst – Tenko Kenshin</strong> 8 Punkte Elementarenergie wieder her."
+    },
+    "upgradedDescription": {
+      "0": "Stellt Yae Miko selbst bei jedem Tenko-Blitzschlag von <strong>Große Geheimkunst – Tenko Kenshin</strong> 8 Punkte Elementarenergie wieder her. Verleiht Truppenmitgliedern in der Nähe, nachdem Yae Miko die Reaktion Supraleiter oder Stellar-Supraleiter ausgelöst oder Schaden mit Stellar-Supraleiter verursacht hat, 10 s lang einen Elektro-SCH-Bonus sowie einen Stellar-Supraleiter-SCH-Bonus von 50 %. Aktualisiert die Dauer bei erneuter Anwendung."
     }
   },
   "constellation2": {
     "name": "Mondgesang der Kitsune",
     "description": {
       "0": "<strong>Sesshou-Sakura</strong> sind bei der Entstehung anfänglich in Phase 2 und können höchstens Phase 4 erreichen. Außerdem wird ihr Angriffsradius um 60 % erhöht."
+    },
+    "upgradedDescription": {
+      "0": "<strong>Sesshou-Sakura</strong> sind bei der Entstehung anfänglich in Phase 2 und können höchstens Phase 4 erreichen. Außerdem wird ihr Angriffsradius um 60 % erhöht. Zudem erhöhen Sesshou-Sakura, solange sie aktiv sind, je nach ihrer aktuellen Phase die Elementarkunde von Yae Miko und des aktuellen Truppenmitglieds um 60/90/120/200 Punkte."
     }
   },
   "constellation3": {
@@ -143,6 +180,9 @@
     "name": "Rosarote Blitzleiter",
     "description": {
       "0": "Erhöht beim Treffen von Gegnern mit den Blitzschlägen von <strong>Sesshou-Sakura</strong> den <electro>Elektro-Schaden</electro> aller Truppenmitglieder in der Nähe 5 s lang um 20 %."
+    },
+    "upgradedDescription": {
+      "0": "Erhöht beim Treffen von Gegnern mit den Blitzschlägen von <strong>Sesshou-Sakura</strong> den <electro>Elektro-Schaden</electro> aller Truppenmitglieder in der Nähe 5 s lang um 20 %. Stellt zudem 8 Punkte Elementarenergie für Yae Miko wieder her. Der oben genannte Effekt zur Wiederherstellung von Elementarenergie hat eine Abklingzeit von 5 s. Erhöht zusätzlich den von Yae Miko mit ihrer Spezialfähigkeit verursachten Schaden um 100 %."
     }
   },
   "constellation5": {
@@ -156,6 +196,9 @@
     "name": "Daisesshou-Fluch",
     "description": {
       "0": "<strong>Sesshou-Sakura</strong> ignorieren beim Angriff 60 % der VTD des Gegners."
+    },
+    "upgradedDescription": {
+      "0": "<strong>Sesshou-Sakura</strong> ignorieren beim Angriff 60 % der VTD des Gegners. Der KSCH des von Yae Miko mit der Reaktion Stellar-Supraleiter verursachten Schadens wird um 200 % erhöht."
     }
   }
 }
