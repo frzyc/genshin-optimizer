@@ -168,7 +168,8 @@ const c1TeamStacks_lunarcrystallize_dmgInc = greaterEq(
         input.constellation,
         6,
         percent(
-          dm.constellation6.lunarcrystallize_dmgInc +
+          dm.constellation6.stacksConsumed *
+            dm.constellation6.lunarcrystallize_dmgInc *
             dm.constellation1.lunarcrystallize_dmgInc
         ),
         percent(dm.constellation1.lunarcrystallize_dmgInc)
@@ -196,7 +197,19 @@ const c1LumiStacks = lookup(
 const c1LumiStacks_lunarcrystallize_dmgInc = greaterEq(
   input.constellation,
   1,
-  prod(c1LumiStacks, percent(dm.constellation1.lumi_dmgInc), input.total.def)
+  prod(
+    c1LumiStacks,
+    threshold(
+      input.constellation,
+      6,
+      percent(
+        dm.constellation6.lunarcrystallize_dmgInc *
+          dm.constellation1.lumi_dmgInc
+      ),
+      percent(dm.constellation1.lumi_dmgInc)
+    ),
+    input.total.def
+  )
 )
 
 const [condC2MoondriftPath, condC2Moondrift] = cond(key, 'c2Moondrift')
