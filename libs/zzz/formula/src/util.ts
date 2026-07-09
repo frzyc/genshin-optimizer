@@ -170,24 +170,20 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
         reader
           .withTag({ et: 'member0', dst })
           .reread(reader.withTag({ et: 'own', dst: null, src: members[0] })),
-        reader
-          .withTag({ et: 'member1', dst })
-          .reread(
-            reader.withTag({
-              et: 'own',
-              dst: null,
-              src: members.length > 1 ? members[1] : members[0],
-            })
-          ),
-        reader
-          .withTag({ et: 'member2', dst })
-          .reread(
-            reader.withTag({
-              et: 'own',
-              dst: null,
-              src: members.length > 2 ? members[2] : members[0],
-            })
-          ),
+        reader.withTag({ et: 'member1', dst }).reread(
+          reader.withTag({
+            et: 'own',
+            dst: null,
+            src: members.length > 1 ? members[1] : members[0],
+          })
+        ),
+        reader.withTag({ et: 'member2', dst }).reread(
+          reader.withTag({
+            et: 'own',
+            dst: null,
+            src: members.length > 2 ? members[2] : members[0],
+          })
+        ),
         reader
           .withTag({ et: 'prevMember', dst })
           .reread(
