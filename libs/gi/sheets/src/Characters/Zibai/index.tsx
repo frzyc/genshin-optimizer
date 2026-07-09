@@ -332,7 +332,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       lunarcrystallize_baseDmg_: a0_lunarcrystallize_baseDmg_,
     },
   },
-  isMoonsign: constant(1),
+  flags: { isMoonsign: constant(1) },
 })
 
 const sheet: TalentSheet = {

@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -72,7 +76,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -104,7 +112,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -123,6 +135,13 @@
     "name": "Appetitsanreger",
     "description": {
       "0": "Stellt bei der perfekten Zubereitung eines Gerichts mit wiederherstellender Funktion mit einer Wahrscheinlichkeit von 12 % den 2-fachen Ertrag her."
+    }
+  },
+  "lockedPassive": {
+    "name": "Auserwählter Geheimschatz",
+    "description": {
+      "0": "Innerhalb von 20 s nach dem Anwenden der Elementarfähigkeit <strong>Eistatzen</strong> führt Diona einen abgestimmten Angriff durchs Abschießen von 3 <strong>Eistatzen</strong> aus, wenn ein Truppenmitglied die Reaktion Supraleiter oder Stellar-Supraleiter auslöst. Die auf diese Weise abgeschossenen <strong>Eistatzen</strong> erzeugen keine Elementarteilchen und generieren auch keinen Schild, wenn sie Gegner treffen. Dieser Effekt hat eine Abklingzeit von 3,5 s.",
+      "1": "Versetzt Diona zudem, wenn sie sich im <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Sternglanzfeld</strong></tooltip> befindet, in den Zustand <strong>Leuchten – Stellar-Supraleiter</strong>."
     }
   },
   "constellation1": {
@@ -166,6 +185,17 @@
         " Erhöht den passiven Heilungsbonus bei bis zu 50 % LP um 30 %.",
         " Erhöht die Elementarkunde bei mehr als 50 % LP um 200 Punkte."
       ]
+    },
+    "upgradedDescription": {
+      "0": "Verleiht Figuren im Bereich von <strong>Eisgekühlter Branntwein</strong> je nach ihren LP folgende Effekte:",
+      "1": [
+        " Erhöht den passiven Heilungsbonus bei bis zu 50 % LP um 30 %.",
+        " Erhöht die Elementarkunde bei mehr als 50 % LP um 200 Punkte."
+      ],
+      "2": "<br/>",
+      "3": "Erhöht zusätzlich Dionas max. LP um 25 %.",
+      "4": "<br/>",
+      "5": "<strong>Leuchten – Stellar-Supraleiter</strong>: Erhöht zudem den von Figuren im Bereich von <strong>Eisgekühlter Branntwein</strong> durch die Reaktionen Supraleiter und Stellar-Supraleiter verursachten Schaden um 40 %."
     }
   }
 }

@@ -575,6 +575,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
           'artifactNames',
           'statKey',
           'teams',
+          'reaction',
         ].includes(type)
       )
         return dumpFile(`${fileDir}/${type}_gen.json`, typeData)

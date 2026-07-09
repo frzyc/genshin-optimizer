@@ -60,7 +60,7 @@
     "superconduct": "นำไฟฟ้า",
     "vaporize": "ระเหย",
     "melt": "ละลาย",
-    "bloom": "งอกเงย",
+    "bloom": "",
     "burgeon": "เบ่งบาน",
     "hyperbloom": "ไฮเปอร์บลูม",
     "quicken": "ปลุกเร้า",
@@ -77,15 +77,15 @@
   "talentLvl": "เลเวลพรสวรรค์ {{level}}",
   "talents": {
     "auto": "โจมตีปกติ",
-    "skill": "สกิลธาตุ",
-    "burst": "ท่าไม้ตาย",
+    "skill": "",
+    "burst": "",
     "altSprint": "Alternate Sprint"
   },
   "unlockPassive1": "ปลดล็อกเมื่อตัวละครเลื่อนขั้นถึงระดับ 1",
   "unlockPassive2": "ปลดล็อกเมื่อตัวละครเลื่อนขั้นถึงระดับ 4",
   "unlockPassive3": "พรสวรรค์ติดตัว",
   "unlockLockedPassive": "ปลดล็อกหลังสำเร็จเควสต์ก่อนหน้า",
-  "witchPassive": "แบบฝึกหัดของแม่มด",
+  "witchPassive": "",
   "moonsign": "ลัคนาจันทร์",
   "hexerei": "มนตรา"
 }

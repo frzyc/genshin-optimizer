@@ -1,0 +1,21 @@
+{
+  "superconduct": {
+    "name": "Superconduzione",
+    "desc": {
+      "0": "L'unione tra <strong>Cryo</strong> ed <strong>Electro</strong> innesca <strong>Superconduzione</strong>, che infligge <strong>DAN da Cryo ad area</strong> e <strong>riduce la RES fisica di ogni essere vivente sotto effetto di Superconduzione</strong> per un certo periodo di tempo."
+    }
+  },
+  "stellarconduct": {
+    "name": "Astroconduzione",
+    "desc": {
+      "0": "Quando <strong>Cryo</strong> entra in contatto con <strong>Electro</strong>, si innesca una speciale reazione di <strong>Astroconduzione</strong> se vengono rispettate certe condizioni. Quando ciò accade, si genera un Prisma stellare e l'area circostante si trasforma in un prodigioso Campo astropolare per un breve periodo di tempo.",
+      "1": "Tutti i personaggi dentro al suddetto Campo ricevono un bonus DAN da Electro e da Cryo, e quando gli avversari nel raggio d'azione di un Campo astropolare vengono colpiti da attacchi di Cryo o Electro, il Campo immagazzina le energie elementali disperse e le sprigiona completamente ogni 4 s. Questo aumenta ulteriormente il suddetto bonus DAN e il coefficiente di base dei DAN da Astroconduzione per 4 s.",
+      "2": "Inoltre, gli avversari all'interno del Campo astropolare subiscono una riduzione della RES fisica."
+    },
+    "fieldName": "Campo astropolare",
+    "fieldDesc": {
+      "0": "Quando l'elemento Cryo entra in contatto con l'elemento Electro e vengono soddisfatte determinate condizioni, s'innesca una speciale reazione di Astroconduzione.",
+      "1": "Questa reazione crea uno speciale Campo astropolare: più volte gli avversari vengono colpiti da DAN da Cryo o da Electro all'interno del Campo astropolare, maggiori sono i DAN da Cryo, da Electro e da Astroconduzione che subiscono."
+    }
+  }
+}

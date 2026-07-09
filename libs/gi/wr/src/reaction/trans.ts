@@ -1,27 +1,17 @@
 import { isIn, objKeyMap, objKeyValMap } from '@genshin-optimizer/common/util'
-import type {
-  LunarReactionKey,
-  MainStatKey,
-  SubstatKey,
-} from '@genshin-optimizer/gi/consts'
 import {
   absorbableEle,
   allLunarReactionKeys,
+  allStellarReactionKeys,
 } from '@genshin-optimizer/gi/consts'
 import type { CrittableTransformativeReactionsKey } from '@genshin-optimizer/gi/keymap'
-import {
-  crystallizeLevelMultipliers,
-  transformativeReactionLevelMultipliers,
-  transformativeReactions,
-} from '@genshin-optimizer/gi/keymap'
-import { infusionNode, input } from './formula'
-import { info } from './info'
-import type { Data, NumNode } from './type'
+import { transformativeReactions } from '@genshin-optimizer/gi/keymap'
+import { infusionNode, input } from '../formula'
+import { info } from '../info'
 import {
   constant,
   data,
   equal,
-  frac,
   greaterEq,
   infoMut,
   lookup,
@@ -31,38 +21,16 @@ import {
   one,
   percent,
   prod,
-  subscript,
   sum,
-} from './utils'
+} from '../utils'
+import { lunarDmg } from './lunar'
+import { crystallizeHit, transMulti1, transMulti2 } from './multi'
 
-const crystallizeMulti1 = subscript(
-  input.lvl,
-  crystallizeLevelMultipliers,
-  info('crystallize_level_multi_')
-)
-const crystallizeElemas = prod(40 / 9, frac(input.total.eleMas, 1400))
-const crystallizeHit = infoMut(
-  prod(
-    infoMut(sum(one, /** + Crystallize bonus */ crystallizeElemas), {
-      pivot: true,
-      ...info('base_crystallize_multi_'),
-    }),
-    crystallizeMulti1
-  ),
-  info('crystallize')
-)
-
-const transMulti1 = subscript(
-  input.lvl,
-  transformativeReactionLevelMultipliers,
-  info('transformative_level_multi')
-)
-const transMulti2 = prod(16, frac(input.total.eleMas, 2000))
 const trans = {
   ...objKeyMap(
     Object.keys(transformativeReactions).filter(
-      // We handle lunar reactions separately
-      (k) => !isIn(allLunarReactionKeys, k)
+      // We handle lunar/stellar reactions separately
+      (k) => !isIn([...allLunarReactionKeys, ...allStellarReactionKeys], k)
     ),
     (reaction) => {
       const { multi, resist, canCrit } = transformativeReactions[reaction]
@@ -364,110 +332,4 @@ export const reactions = {
     hyperbloom: infusionReactions.hyperbloom,
     lunarcrystallize: infusionReactions.lunarcrystallize,
   },
-}
-
-export function lunarDmg(
-  multiplier: NumNode,
-  base: 'reaction' | MainStatKey | SubstatKey,
-  variant: LunarReactionKey,
-  additional: Data = {},
-  specialMultiplier?: NumNode
-) {
-  const transformative_dmg_ = sum(
-    infoMut(sum(percent(1), prod(6, frac(input.total.eleMas, 2000))), {
-      pivot: true,
-      path: 'base_transformative_multi_',
-    }),
-    input.total[`${variant}_dmg_`]
-  )
-  const cappedCritRate_ = infoMut(
-    max(
-      min(
-        sum(
-          input.total.critRate_,
-          input.total[`${variant}_critRate_`],
-          input.total[`${transformativeReactions[variant].resist}_critRate_`]
-        ),
-        one
-      ),
-      naught
-    ),
-    {
-      ...info('critRate_'),
-      prefix: 'total',
-      pivot: true,
-    }
-  )
-
-  const critDMG_ = infoMut(
-    sum(
-      input.total.critDMG_,
-      input.total[`${variant}_critDMG_`],
-      input.total[`${transformativeReactions[variant].resist}_critDMG_`]
-    ),
-    {
-      ...input.total.critDMG_.info,
-      pivot: true,
-    }
-  )
-
-  const reactionDmgInc = infoMut(
-    sum(
-      input.total[`${variant}_dmgInc`],
-      input.total[`${variant}_reactionDmgInc`]
-    ),
-    { pivot: true, ...input.total[`${variant}_dmgInc`].info! }
-  )
-  const directDmgInc = infoMut(
-    sum(
-      input.total[`${variant}_dmgInc`],
-      input.total[`${variant}_directDmgInc`]
-    ),
-    { pivot: true, ...input.total[`${variant}_dmgInc`].info! }
-  )
-
-  return data(
-    prod(
-      sum(
-        prod(
-          multiplier,
-          ...(specialMultiplier ? [specialMultiplier] : []),
-          ...lunarDmgMultiplier(base, variant),
-          transformative_dmg_,
-          infoMut(sum(percent(1), input.total[`${variant}_baseDmg_`]), {
-            path: `${variant}_baseDmg_`,
-          })
-        ),
-        ...(base === 'reaction' ? [reactionDmgInc] : [directDmgInc])
-      ),
-      lookup(
-        input.hit.hitMode,
-        {
-          hit: one,
-          critHit: sum(one, critDMG_),
-          avgHit: sum(one, prod(cappedCritRate_, critDMG_)),
-        },
-        NaN
-      ),
-      sum(percent(1), input.total[`${variant}_specialDmg_`]),
-      input.enemy.transDef,
-      input.enemy[`${transformativeReactions[variant].resist}_resMulti_`]
-    ),
-    additional
-  )
-}
-
-function lunarDmgMultiplier(
-  base: 'reaction' | MainStatKey | SubstatKey,
-  variant: LunarReactionKey
-) {
-  if (base === 'reaction') return [transMulti1]
-  switch (variant) {
-    case 'lunarcharged':
-      return [3, input.total[base]]
-    case 'lunarbloom':
-      return [input.total[base]]
-    case 'lunarcrystallize':
-      return [1.6, input.total[base]]
-  }
 }

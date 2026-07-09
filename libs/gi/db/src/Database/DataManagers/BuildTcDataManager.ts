@@ -26,6 +26,7 @@ import {
   allRefinementKeys,
   allSubstatKeys,
   allWeaponKeys,
+  charMaxLevel,
   defaultCharacterAscension,
   defaultCharacterLevel,
   defaultTalentLevel,
@@ -110,7 +111,7 @@ const talentSchema = z.object({
 
 const buildTcCharacterSchema = z
   .object({
-    level: zodClampedNumber(1, 90, defaultCharacterLevel),
+    level: zodClampedNumber(1, charMaxLevel, defaultCharacterLevel),
     ascension: zodNumericLiteralWithDefault(
       allAscensionKeys,
       defaultCharacterAscension

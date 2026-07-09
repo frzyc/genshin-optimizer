@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -66,7 +70,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -99,22 +107,26 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
     "name": "Razão Além da Razão",
     "description": {
-      "0": "Quando membros próximos da equipe desencadearem reações de Congelado, Supercondutor, Redemoinho Cryo ou Cristalização Cryo contra inimigos, uma Fenda do Vazio será criada próxima a esse inimigo. Esse efeito pode ser desencadeado uma vez a cada 2.5s. Um máximo de 3 Fendas do Vazio criadas pela própria Skirk pode existir simultaneamente em campo.",
+      "0": "Quando membros próximos da equipe desencadearem reações de Congelado, Supercondutor, Supercondutor Estelar, Redemoinho Cryo ou Cristalização Cryo contra inimigos, uma Fenda do Vazio será criada próxima a esse inimigo. Esse efeito pode ser desencadeado uma vez a cada 2.5s. Um máximo de 3 Fendas do Vazio criadas pela própria Skirk pode existir simultaneamente em campo.",
       "1": "<br/>",
       "2": "Skirk pode usar os seguintes métodos para absorver Fendas do Vazio próximas:",
       "3": [
         " Ao acertar um inimigo com um Ataque Carregado no <tooltip ns=tooltips_gen baseKey18=11130006 values=[]><strong>modo Lampejo de Sete Fases</strong></tooltip>.",
         " Ao usar o Supremo especial <strong>Devastação: Obliteração</strong> enquanto estiver no modo Lampejo de Sete Fases.",
-        " Ao Manter pressionada sua Habilidade Elemental <strong>Devastação: Lampejo</strong> para realizar se mover rapidamente."
+        " Ao Manter pressionada sua Habilidade Elemental <strong>Devastação: Lampejo</strong> para se mover rapidamente."
       ],
       "4": "<br/>",
-      "5": "Cada Fenda absorvida concederá a ela 8 pontos de Sutileza da Serpente."
+      "5": "Cada Fenda absorvida concederá a ela 8 pontos de <tooltip ns=tooltips_gen baseKey18=11130005 values=[]><strong>Sutileza da Serpente</strong></tooltip>."
     }
   },
   "passive2": {

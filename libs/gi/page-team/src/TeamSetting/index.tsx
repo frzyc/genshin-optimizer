@@ -235,15 +235,13 @@ function TeamEditor({
           loadoutData={loadoutData}
         />
       </Suspense>
-      <Grid container columns={{ xs: 1, md: 2 }} spacing={2}>
-        <Grid item xs={1}>
-          <ResonanceDisplay
-            teamId={teamId}
-            team={team}
-            dataContextValue={dataContextValue}
-          />
-        </Grid>
-        <Grid item xs={1}>
+      <Grid container columns={{ xs: 1, md: 2, lg: 3 }} spacing={2}>
+        <ResonanceDisplay
+          teamId={teamId}
+          team={team}
+          dataContextValue={dataContextValue}
+        />
+        <Grid item xs={1} width="100%">
           <AdResponsive
             bgt="light"
             dataAdSlot="5102492054"

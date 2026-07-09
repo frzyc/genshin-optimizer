@@ -443,5 +443,25 @@
     "description": {
       "0": "Sau khi Prune dùng <strong>Búa Săn Tai Ương</strong> đã chuyển hóa nguyên tố đánh trúng kẻ địch, nhân vật khác trong đội ở gần sẽ nhận được hiệu quả Tiếng Chuông Khích Lệ: Dựa trên Tấn Công của Prune, tăng sát thương gây ra bởi đòn tấn công."
     }
+  },
+  "11330001": {
+    "name": "Giải Mã",
+    "description": {
+      "0": "Khi thực hiện Trọng Kích, Fagio sẽ chuyển sang chế độ này.",
+      "1": "Khi trong chế độ này, Fagio sẽ thực hiện bắn phá kẻ địch phía trước và phóng Tia Ngưng Tụ theo chu kỳ, gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo>.",
+      "2": "<strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>: Tia Ngưng Tụ chuyển sang gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo> được xem là sát thương phản ứng Tinh-Siêu Dẫn."
+    }
+  },
+  "11330002": {
+    "name": "Công Suất Giải Mã",
+    "description": {
+      "0": "Khi trong chế độ <strong>Giải Mã</strong>, <strong>Công Suất Giải Mã</strong> của Fagio sẽ liên tục tăng lên. Khi Công Suất Giải Mã đạt đến giới hạn, sẽ không thể duy trì hoặc vào lại chế độ Giải Mã."
+    }
+  },
+  "11330003": {
+    "name": "Vùng Trục Sao",
+    "description": {
+      "0": "Khi kích hoạt phản ứng Tinh-Siêu Dẫn, khu vực lân cận sẽ tạm thời chuyển thành <strong>Vùng Trục Sao</strong>. Khi ở trong Vùng Trục Sao, nhân vật chỉ định sẽ tiến vào trạng thái <strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>, khiến các kỹ năng khác nhau lần lượt nhận được hiệu quả cường hóa tương ứng."
+    }
   }
 }

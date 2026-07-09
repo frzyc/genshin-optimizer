@@ -1,0 +1,29 @@
+{
+  "name": "Muỗng Trà Siêu Việt",
+  "description": {
+    "0": "Trong vô số câu chuyện, những đồ vật hư ảo có vô số định nghĩa. Ở quy mô vũ trụ hay giấc mơ, thánh kiếm của dũng sĩ và muỗng trà của công chúa, dây cót lạnh lẽo và chìa khóa mở ra cánh cửa siêu việt, bản chất thật ra cũng chẳng có gì khác biệt cả."
+  },
+  "passiveName": "Thăng Biến Của Bạch Nữ Hoàng",
+  "passiveDescription": {
+    "0": {
+      "0": "Tấn Công tăng <cryo>28%</cryo>.",
+      "1": "Ngoài ra, sau mỗi lần Trọng Kích của người trang bị đánh trúng kẻ địch, đều sẽ đạt được hiệu quả \"Siêu Việt\" trong giây lát: Người trang bị tăng <cryo>16%</cryo> sát thương phản ứng Tinh-Siêu Dẫn, duy trì 5s. Hiệu quả này tối đa cộng dồn 3 tầng, mỗi 0.2s tối đa cộng dồn một tầng."
+    },
+    "1": {
+      "0": "Tấn Công tăng <cryo>35%</cryo>.",
+      "1": "Ngoài ra, sau mỗi lần Trọng Kích của người trang bị đánh trúng kẻ địch, đều sẽ đạt được hiệu quả \"Siêu Việt\" trong giây lát: Người trang bị tăng <cryo>20%</cryo> sát thương phản ứng Tinh-Siêu Dẫn, duy trì 5s. Hiệu quả này tối đa cộng dồn 3 tầng, mỗi 0.2s tối đa cộng dồn một tầng."
+    },
+    "2": {
+      "0": "Tấn Công tăng <cryo>42%</cryo>.",
+      "1": "Ngoài ra, sau mỗi lần Trọng Kích của người trang bị đánh trúng kẻ địch, đều sẽ đạt được hiệu quả \"Siêu Việt\" trong giây lát: Người trang bị tăng <cryo>24%</cryo> sát thương phản ứng Tinh-Siêu Dẫn, duy trì 5s. Hiệu quả này tối đa cộng dồn 3 tầng, mỗi 0.2s tối đa cộng dồn một tầng."
+    },
+    "3": {
+      "0": "Tấn Công tăng <cryo>49%</cryo>.",
+      "1": "Ngoài ra, sau mỗi lần Trọng Kích của người trang bị đánh trúng kẻ địch, đều sẽ đạt được hiệu quả \"Siêu Việt\" trong giây lát: Người trang bị tăng <cryo>28%</cryo> sát thương phản ứng Tinh-Siêu Dẫn, duy trì 5s. Hiệu quả này tối đa cộng dồn 3 tầng, mỗi 0.2s tối đa cộng dồn một tầng."
+    },
+    "4": {
+      "0": "Tấn Công tăng <cryo>56%</cryo>.",
+      "1": "Ngoài ra, sau mỗi lần Trọng Kích của người trang bị đánh trúng kẻ địch, đều sẽ đạt được hiệu quả \"Siêu Việt\" trong giây lát: Người trang bị tăng <cryo>32%</cryo> sát thương phản ứng Tinh-Siêu Dẫn, duy trì 5s. Hiệu quả này tối đa cộng dồn 3 tầng, mỗi 0.2s tối đa cộng dồn một tầng."
+    }
+  }
+}

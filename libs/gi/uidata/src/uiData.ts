@@ -408,6 +408,7 @@ function accumulateInfo<V>(operands: CalcResult<V>[]): Info {
       case 'hyperbloom':
       case 'lunarbloom':
       case 'lunarcrystallize':
+      case 'stellarconduct':
       case 'vaporize':
       case 'melt':
       case 'spread':

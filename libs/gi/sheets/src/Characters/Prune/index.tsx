@@ -156,7 +156,7 @@ const lockRallyReaction_teamAtk_disp = greaterEq(
       equal(
         condLockRallyReaction,
         'swirl',
-        equal(target.isHexerei, 1, dm.lockedPassive.teamAtk_)
+        equal(target.flags.isHexerei, 1, dm.lockedPassive.teamAtk_)
       )
     )
   )
@@ -283,7 +283,7 @@ export const data = dataObjForCharacterSheet(
         atk: c6RallyReaction_atk,
       },
     },
-    isHexerei: lockHomework_hexerei,
+    flags: { isHexerei: lockHomework_hexerei },
   },
   {
     premod: {

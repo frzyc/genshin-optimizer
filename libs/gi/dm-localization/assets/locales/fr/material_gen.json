@@ -257,6 +257,9 @@
   "PalsSynergy": {
     "name": "Synergie d'amis"
   },
+  "VenuePopularity": {
+    "name": "Popularité de lieu"
+  },
   "Primogem": {
     "name": "Primo-gemme"
   },
@@ -1163,6 +1166,9 @@
   "Prune": {
     "name": "Prune"
   },
+  "Sandrone": {
+    "name": "Sandrone"
+  },
   "KachinasStellaFortuna": {
     "name": "Stella Fortuna de Kachina"
   },
@@ -1255,6 +1261,9 @@
   },
   "PrunesStellaFortuna": {
     "name": "Stella Fortuna de Prune"
+  },
+  "SandronesStellaFortuna": {
+    "name": "Stella Fortuna de Sandrone"
   },
   "Apple": {
     "name": "Pomme"
@@ -3728,6 +3737,9 @@
   "PineAmber": {
     "name": "Ambre de pin"
   },
+  "TeardropOfTheMoon": {
+    "name": "Larme de lune"
+  },
   "WindrestFlower": {
     "name": "Fleur de Vent-repos"
   },
@@ -5500,6 +5512,9 @@
   },
   "BorderlandShrineOfDepthsKey": {
     "name": "Clé de Sanctuaire des profondeurs de la frontière"
+  },
+  "FrostMoonShrineOfDepthsKey": {
+    "name": "Clé de Sanctuaire des profondeurs de la Lune de givre"
   },
   "MnemonicCluster": {
     "name": "Groupe de capacité"
@@ -8375,6 +8390,33 @@
   "BoredomBustingBubblegum": {
     "name": "Bonbon bullé brise-ennui"
   },
+  "TeaPartyPolyphony": {
+    "name": "Ensemble du goûteron"
+  },
+  "SuspiciousBirchSteamedPorkRibs": {
+    "name": "Travers de porc à la vapeur de bouleau (suspects)"
+  },
+  "BirchSteamedPorkRibs": {
+    "name": "Travers de porc à la vapeur de bouleau"
+  },
+  "DeliciousBirchSteamedPorkRibs": {
+    "name": "Travers de porc à la vapeur de bouleau (délicieux)"
+  },
+  "SuspiciousMeatFilledRyeBun": {
+    "name": "Pain de seigle au poisson (suspect)"
+  },
+  "MeatFilledRyeBun": {
+    "name": "Pain de seigle au poisson"
+  },
+  "DeliciousMeatFilledRyeBun": {
+    "name": "Pain de seigle au poisson (délicieux)"
+  },
+  "TeaPartyPreludeHerbalTea": {
+    "name": "Prélude au goûteron : Tisane"
+  },
+  "TeaPartyPreludeArtfulLatte": {
+    "name": "Prélude au goûteron : Café artistique"
+  },
   "RecipeItem": {
     "name": "Ingrédient"
   },
@@ -9182,6 +9224,12 @@
   "RecipeMintBubblegum": {
     "name": "Recette : Chewing-gum à la menthe"
   },
+  "RecipeBirchSteamedPorkRibs": {
+    "name": "Recette : Travers de porc à la vapeur de bouleau"
+  },
+  "RecipeMeatFilledRyeBun": {
+    "name": "Recette : Pain de seigle au poisson"
+  },
   "CraftedItems": {
     "name": "Produit synthétisé"
   },
@@ -9748,6 +9796,15 @@
   },
   "JeweledFlamingHilt": {
     "name": "Poignée enflammée ornée"
+  },
+  "FracturedLunarIron": {
+    "name": "Fer de lune endommagé"
+  },
+  "DepletedLunarIron": {
+    "name": "Fer de lune vide"
+  },
+  "UnblemishedLunarIron": {
+    "name": "Fer de lune immaculé"
   },
   "HurricaneSeed": {
     "name": "Graine d'ouragan"
@@ -13742,6 +13799,9 @@
   "AncientHandwriting": {
     "name": "Écriture ancienne"
   },
+  "SecretSourceAncientMoonsFount": {
+    "name": "Source secrète : Source de l'ancienne lune"
+  },
   "ALetterCarriedByTheWind": {
     "name": "Lettre portée par le vent"
   },
@@ -13750,6 +13810,9 @@
   },
   "VarkasSecretStashOfCash": {
     "name": "Cachette secrète d'argent de Varka"
+  },
+  "PaimonsNotes": {
+    "name": "Notes de Paimon"
   },
   "OnFungiCommunitiesDraftManuscript": {
     "name": "Manuscrit de « Sur les communautés fongiques »"
@@ -13850,11 +13913,35 @@
   "PrimalConstructComponent": {
     "name": "Composant de Structure primale"
   },
+  "WitnessOfTheMoon": {
+    "name": "Témoin de la lune"
+  },
+  "LostFlowerOfAncientTimes": {
+    "name": "Fleur perdue des temps anciens"
+  },
+  "SandronesTeaPartyInvitationLetter": {
+    "name": "Invitation de goûteron de Sandrone"
+  },
   "AncientMondstadtRoyalSeal": {
     "name": "Ancien sceau royal de Mondstadt"
   },
   "SegmentDomainControlModuleZeroParticle": {
     "name": "Module de contrôle du Domaine segmentaire : Particule zéro"
+  },
+  "FrostMoonSeal": {
+    "name": "Sceau de Lune de givre"
+  },
+  "FamilyPortraitByMamere": {
+    "name": "« Portrait de famille » par Mamère"
+  },
+  "AlainGuillotinsEpitaph": {
+    "name": "Épitaphe d'Alain Guillotin"
+  },
+  "MoongazersEngravingI": {
+    "name": "Gravure des Lunologues (1)"
+  },
+  "MoongazersEngravingII": {
+    "name": "Gravure des Lunologues (2)"
   },
   "TearsAmongTheStars": {
     "name": "Larme parmi les étoiles"
@@ -14806,6 +14893,24 @@
   },
   "RadiantSpincrystal182": {
     "name": "Gyrocristal radiant 182"
+  },
+  "RadiantSpincrystal183": {
+    "name": "Gyrocristal radiant 183"
+  },
+  "RadiantSpincrystal184": {
+    "name": "Gyrocristal radiant 184"
+  },
+  "RadiantSpincrystal185": {
+    "name": "Gyrocristal radiant 185"
+  },
+  "RadiantSpincrystal186": {
+    "name": "Gyrocristal radiant 186"
+  },
+  "RadiantSpincrystal187": {
+    "name": "Gyrocristal radiant 187"
+  },
+  "RadiantSpincrystal188": {
+    "name": "Gyrocristal radiant 188"
   },
   "LanternFiber": {
     "name": "Cellulose de lanterne"
@@ -15902,6 +16007,15 @@
   "TravelNotesGiftOfSplendor": {
     "name": "PB - Don de splendeur"
   },
+  "SandroneTeaBreak": {
+    "name": "Sandrone - Pause thé"
+  },
+  "NodKraiMoonbright": {
+    "name": "Nod-Krai - Clair de lune"
+  },
+  "TravelNotesSunnySummer": {
+    "name": "PB - Été au soleil"
+  },
   "EchoDandelionKnight": {
     "name": "Écho : Chevalier au Pissenlit"
   },
@@ -16312,6 +16426,12 @@
   },
   "LinneasNaturalistArchive": {
     "name": "Archive naturaliste de Linnea"
+  },
+  "SandronesPortableTeaTable": {
+    "name": "Table à thé portable de Sandrone"
+  },
+  "WitchsRevelationCase": {
+    "name": "Étui à révélations de la sorcière"
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Instructions : Pierre de résonance Anémoculus"
@@ -16922,6 +17042,27 @@
   "ShareWithYou": {
     "name": "Partager avec vous"
   },
+  "HealingTreats": {
+    "name": "Friandises curatives"
+  },
+  "RelaxedReadiness": {
+    "name": "Préparation détendue"
+  },
+  "GracefulDance": {
+    "name": "Danse gracieuse"
+  },
+  "CommandingStance": {
+    "name": "Posture dominante"
+  },
+  "GentleElegance": {
+    "name": "Élégance douce"
+  },
+  "PoisedToStrike": {
+    "name": "Paré à frapper"
+  },
+  "MajesticBearing": {
+    "name": "Tournure majestueuse"
+  },
   "FantasticalMarvel": {
     "name": "Merveille fantastique"
   },
@@ -16993,6 +17134,9 @@
   },
   "DemonSlayingGale": {
     "name": "Rafale pourfendeuse de démons"
+  },
+  "DovefeatherMoondew": {
+    "name": "Rosée sélénescente"
   },
   "VigorousYapping": {
     "name": "Parlotte énergétique"
@@ -17107,6 +17251,12 @@
   },
   "ExperimentalFieldGenerator": {
     "name": "Générateur de champ expérimental"
+  },
+  "WaywardHermeticSpiritspeaker": {
+    "name": "Spiritoratrice excentrique isolée"
+  },
+  "BlackSerpentKnightWindcutter": {
+    "name": "Chevalier des Serpents noirs - Fendeur de vent"
   },
   "UndividedHeart": {
     "name": "Cœur indivisible"
@@ -17524,6 +17674,15 @@
   },
   "GravityField": {
     "name": "Champ gravitationnel"
+  },
+  "VictoryFlowsFromTheTurningOfTides": {
+    "name": "La victoire découle des retournements"
+  },
+  "FlowOfForms": {
+    "name": "Flux des formes"
+  },
+  "OnceTheLoneWindThatKeptTheDarkCalamityAtBay": {
+    "name": "« Jadis, le vent solitaire tenait à distance le sombre fléau... »"
   },
   "MagicGuide": {
     "name": "Guide de magie"
@@ -18104,6 +18263,15 @@
   "ElementalTransfigurationStormgaleBlessing": {
     "name": "Transfiguration élémentaire : Grâce d'électropropagation"
   },
+  "NightmareOmen": {
+    "name": "Présage cauchemardesque"
+  },
+  "ElementalTransfigurationAquabreezeBlessing": {
+    "name": "Transfiguration élémentaire : Grâce d'aspergée"
+  },
+  "ElementalTransfigurationThunderbloomBlessing": {
+    "name": "Transfiguration élémentaire : Grâce de floréclair"
+  },
   "ElementalResonanceWovenIce": {
     "name": "Résonance élémentaire : Glace tissée"
   },
@@ -18362,6 +18530,12 @@
   "TheOtherSideOfTheFrostmoon": {
     "name": "L'autre versant de la lune de givre"
   },
+  "LilFungisFunTasticFiesta": {
+    "name": "Fête fun-tastique des cham-p'tit-gnons"
+  },
+  "ThePowerOfResearch": {
+    "name": "La puissance de la recherche"
+  },
   "Origin": {
     "name": "Origine"
   },
@@ -18538,6 +18712,12 @@
   },
   "RainlitBambooReverie": {
     "name": "Rêverie de bambous sous la pluie"
+  },
+  "WhispersOfStarsAndSmoke": {
+    "name": "Murmures d'étoiles et de fumée"
+  },
+  "HurlockVariations": {
+    "name": "Variations de Hurlock"
   },
   "RadiantPhantasm": {
     "name": "Illusion radieuse"
@@ -18890,6 +19070,9 @@
   "PreBattleRespite": {
     "name": "Répit d'avant-bataille"
   },
+  "ATeaPartyAtLeisure": {
+    "name": "Goûteron de farniente"
+  },
   "WildernessOfTheFarNorth": {
     "name": "Terres sauvages du grand nord"
   },
@@ -19178,6 +19361,12 @@
   "CityStreetLampLowLanternlight": {
     "name": "Réverbère de ville « Lanterne tamisée »"
   },
+  "MovableSmallSpotlight": {
+    "name": "Mini-lanterne mobile"
+  },
+  "StandingStreetLampBeaconInTheMistyNight": {
+    "name": "Lampadaire debout « Phare dans la brume »"
+  },
   "EfflorescentIllumination": {
     "name": "Illumination efflorescente"
   },
@@ -19457,6 +19646,9 @@
   "FrostMoonRoundTableASoftBlueSky": {
     "name": "Table ronde de givrelune « Doux ciel azuré »"
   },
+  "TeaPartyDiningTableThePerfectGathering": {
+    "name": "Table de goûteron « Rassemblement parfait »"
+  },
   "BreezeBlessedBed": {
     "name": "Lit « Douce brise »"
   },
@@ -19624,6 +19816,9 @@
   },
   "PedunculateOakWoodMoonrestBackedChair": {
     "name": "Chaise à dossier « Lune reposante » en chêne blanc"
+  },
+  "TeaPartyChairCrimsonAndGold": {
+    "name": "Chaise de goûteron « Rouge et or »"
   },
   "NorthernStoneHearth": {
     "name": "Cheminée en pierre du nord"
@@ -19895,6 +20090,9 @@
   "FluffyLittleRug": {
     "name": "Petit tapis duveteux"
   },
+  "TeaPartyCarpetSoftToTheTouch": {
+    "name": "Tapis de goûteron « Tout doux »"
+  },
   "VibrantPotBornInFlames": {
     "name": "Pot vibrant « Né des flammes »"
   },
@@ -20132,6 +20330,9 @@
   "FlowerShapedMachineComponent": {
     "name": "Composant de mécanisme floral"
   },
+  "TeaPartyCartDessertTime": {
+    "name": "Chariot de goûteron « L'heure du dessert »"
+  },
   "TeahouseToolMinisculeMissesMakeAMile": {
     "name": "Instrument de salon de thé « Pesage de précision »"
   },
@@ -20173,6 +20374,9 @@
   },
   "FrostMoonSmallTableAromaOfFreshFruit": {
     "name": "Petite table de givrelune « Arôme de fruits frais »"
+  },
+  "TeaPartyCupRefreshingFlavor": {
+    "name": "Coupe de goûteron « Goût rafraichissant »"
   },
   "RealizationsFromTheLandOfWisdom": {
     "name": "« Réalisation du pays de la sagesse »"
@@ -22217,6 +22421,9 @@
   "LittleCover": {
     "name": "Petit abri"
   },
+  "CampBarrierTreatmentArea": {
+    "name": "Barrière de camp « Zone de soin »"
+  },
   "BookshelfFreeReading": {
     "name": "Présentoir à livres « Lecture libre »"
   },
@@ -22354,6 +22561,9 @@
   },
   "GentleEmbrace": {
     "name": "Étreinte bienveillante"
+  },
+  "UnusableLegacy": {
+    "name": "Héritage inutilisable"
   },
   "WeatheredBambooFence": {
     "name": "Clôture en bambou usagé"
@@ -22772,6 +22982,24 @@
   "BloomingSplendor": {
     "name": "Splendeur florissante"
   },
+  "NashaStallDeepRootedTraditions": {
+    "name": "Étal de Nasha « Traditions ancrées »"
+  },
+  "VesselOfThePast": {
+    "name": "Réceptacle du passé"
+  },
+  "LargeCargoCrateReliableSupport": {
+    "name": "Caisse de grande taille « Soutien fiable »"
+  },
+  "MediumCargoCrateBasicSupplies": {
+    "name": "Caisse de taille moyenne « Provisions de base »"
+  },
+  "MediumMetalScrapBarrel": {
+    "name": "Baril moyen pour déchets métalliques"
+  },
+  "SignallessTower": {
+    "name": "Tour sans signal"
+  },
   "SirCapyOfTheLongIncisors": {
     "name": "« Chevalier incisif »"
   },
@@ -22804,5 +23032,11 @@
   },
   "MiniatureStonecraft": {
     "name": "Miniature en pierre"
+  },
+  "InfiniteRecursionFormula": {
+    "name": "Formule de récursion infinie"
+  },
+  "MoonEnvoyOfSilverRadiance": {
+    "name": "Émissaire lunaire de l'éclat argenté"
   }
 }

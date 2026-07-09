@@ -189,11 +189,12 @@ const lockBuff_normal_dmg_ = equal(
 const lockBuff_charged_dmg_ = { ...lockBuff_normal_dmg_ }
 
 const [condC2BladePath, condC2Blade] = cond(key, 'c2Blade')
-const c2Blade_eleMas = greaterEq(
+const c2Blade_eleMasDisp = greaterEq(
   input.constellation,
   2,
   equal(condC2Blade, 'on', dm.constellation2.eleMas)
 )
+const c2Blade_eleMas = unequal(target.charKey, key, c2Blade_eleMasDisp)
 
 const c6Etch_critDMG_ = greaterEq(
   input.constellation,
@@ -293,7 +294,7 @@ export const data = dataObjForCharacterSheet(
         eleMas: c2Blade_eleMas,
       },
     },
-    isHexerei: lockHomework_hexerei,
+    flags: { isHexerei: lockHomework_hexerei },
   },
   {
     premod: {
@@ -310,8 +311,9 @@ const sheet: TalentSheet = {
     {
       fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], {
-          name: ct.chg(`auto.skillParams.${i}`),
+          name: ct.chg(`auto.skillParams.${i > 4 ? i - 1 : i}`),
           multi: i === 2 ? 3 : undefined,
+          textSuffix: i >= 4 ? `(${i - 3})` : undefined,
         }),
       })),
     },
@@ -361,8 +363,9 @@ const sheet: TalentSheet = {
       fields: [
         ...dm.skill.hitArr.map((_, i) => ({
           node: infoMut(dmgFormulas.skill[i as 1 | 2 | 3 | 4 | 5], {
-            name: ct.chg(`skill.skillParams.${i}`),
+            name: ct.chg(`skill.skillParams.${i > 4 ? i - 1 : i}`),
             multi: i === 2 ? 3 : undefined,
+            textSuffix: i >= 4 ? `(${i - 3})` : undefined,
           }),
         })),
         {
@@ -591,7 +594,10 @@ const sheet: TalentSheet = {
         on: {
           fields: [
             {
-              node: c2Blade_eleMas,
+              node: infoMut(c2Blade_eleMasDisp, {
+                path: 'eleMas',
+                isTeamBuff: true,
+              }),
             },
             {
               text: stg('duration'),

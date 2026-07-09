@@ -40,13 +40,17 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
     "name": "Ancient Rite: The Thundering Sands",
     "description": {
-      "0": "Mengumpulkan kekuatan petir dan mengakibatkan <electro>Electro DMG Area</electro>, lalu bergerak mundur dengan cepat. Jika serangan kali ini memicu reaksi Electro-Charged, Lunar-Charged, Superconduct, Overloaded, Quicken, Aggravate, Hyperbloom, atau Electro Swirl terhadap musuh, maka Sethos akan memulihkan sejumlah Energy.",
+      "0": "Mengumpulkan kekuatan petir dan mengakibatkan <electro>Electro DMG Area</electro>, lalu bergerak mundur dengan cepat. Jika serangan kali ini memicu reaksi Electro-Charged, Lunar-Charged, Superconduct, Stellar-Conduct, Overloaded, Quicken, Aggravate, Hyperbloom, atau Electro Swirl terhadap musuh, maka Sethos akan memulihkan sejumlah Energy.",
       "1": "<br/>",
       "2": "<i>\"Dewa tinggal di dalam Imam, Majus yang mengubah sumur menjadi mata air, para penyanyi lautan pasir yang masih menyebarkan cerita mereka ... Tapi aku tahu itu semua bukan legenda semata, karena mereka adalah leluhur kita.\"</i>"
     },
@@ -66,7 +70,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -95,7 +103,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {

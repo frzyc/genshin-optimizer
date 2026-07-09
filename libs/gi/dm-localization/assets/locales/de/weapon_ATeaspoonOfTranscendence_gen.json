@@ -1,0 +1,29 @@
+{
+  "name": "Schlüssel der Überbietung",
+  "description": {
+    "0": "Ein Gegenstand der Fantasie, für den sich in unzähligen Geschichten zahllose Definitionen finden lassen. Im Maßstab des Universums oder der Träume gibt es im Kern keinen Unterschied zwischen dem heiligen Schwert des Helden und dem Teelöffel der Prinzessin, oder zwischen einem eiskalten Uhrwerk und dem Schlüssel, der das Tor der Transzendenz zu öffnen vermag."
+  },
+  "passiveName": "Verwandlung der weißen Herrscherin",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den ANG um <cryo>28 %</cryo>.",
+      "1": "Der Träger erreicht jedes Mal, wenn er mit seinem heftigen Schlag Gegner trifft, kurzzeitig „Übertreffen“: Erhöht den durch die Reaktion Stellar-Supraleiter verursachten Schaden des Trägers 5 s lang um <cryo>16 %</cryo>. Dieser Effekt ist 3-fach stapelbar, max. 1-fach alle 0,2 s."
+    },
+    "1": {
+      "0": "Erhöht den ANG um <cryo>35 %</cryo>.",
+      "1": "Der Träger erreicht jedes Mal, wenn er mit seinem heftigen Schlag Gegner trifft, kurzzeitig „Übertreffen“: Erhöht den durch die Reaktion Stellar-Supraleiter verursachten Schaden des Trägers 5 s lang um <cryo>20 %</cryo>. Dieser Effekt ist 3-fach stapelbar, max. 1-fach alle 0,2 s."
+    },
+    "2": {
+      "0": "Erhöht den ANG um <cryo>42 %</cryo>.",
+      "1": "Der Träger erreicht jedes Mal, wenn er mit seinem heftigen Schlag Gegner trifft, kurzzeitig „Übertreffen“: Erhöht den durch die Reaktion Stellar-Supraleiter verursachten Schaden des Trägers 5 s lang um <cryo>24 %</cryo>. Dieser Effekt ist 3-fach stapelbar, max. 1-fach alle 0,2 s."
+    },
+    "3": {
+      "0": "Erhöht den ANG um <cryo>49 %</cryo>.",
+      "1": "Der Träger erreicht jedes Mal, wenn er mit seinem heftigen Schlag Gegner trifft, kurzzeitig „Übertreffen“: Erhöht den durch die Reaktion Stellar-Supraleiter verursachten Schaden des Trägers 5 s lang um <cryo>28 %</cryo>. Dieser Effekt ist 3-fach stapelbar, max. 1-fach alle 0,2 s."
+    },
+    "4": {
+      "0": "Erhöht den ANG um <cryo>56 %</cryo>.",
+      "1": "Der Träger erreicht jedes Mal, wenn er mit seinem heftigen Schlag Gegner trifft, kurzzeitig „Übertreffen“: Erhöht den durch die Reaktion Stellar-Supraleiter verursachten Schaden des Trägers 5 s lang um <cryo>32 %</cryo>. Dieser Effekt ist 3-fach stapelbar, max. 1-fach alle 0,2 s."
+    }
+  }
+}
