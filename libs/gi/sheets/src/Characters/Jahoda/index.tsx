@@ -9,7 +9,6 @@ import {
   greaterEqStr,
   infoMut,
   input,
-  lessThan,
   one,
   sum,
   tally,
@@ -309,11 +308,7 @@ const dmgFormulas = {
   skill: {
     bombDmg: dmgNode('atk', dm.skill.bombDmg, 'skill'),
     unfilledDmg: dmgNode('atk', dm.skill.unfilledDmg, 'skill'),
-    filledDmg: lessThan(
-      tally.moonsign,
-      2,
-      dmgNode('atk', dm.skill.filledDmg, 'skill')
-    ),
+    filledDmg: dmgNode('atk', dm.skill.filledDmg, 'skill'),
     meowDmgPyro: greaterEq(
       tally.moonsign,
       2,
