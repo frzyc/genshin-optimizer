@@ -221,12 +221,7 @@ export default function PageCharacter() {
       {characterKey && character && team && (
         <TagContext.Provider value={tag}>
           <StatHighlightContext.Provider value={statHLContextObj}>
-            <CharCalcProvider
-              character={character}
-              team={team}
-              wengineId={character.equippedWengine}
-              discIds={character.equippedDiscs}
-            >
+            <CharCalcProvider team={team}>
               <CharacterEditor
                 characterKey={characterKey}
                 onClose={() => navigate('/characters')}

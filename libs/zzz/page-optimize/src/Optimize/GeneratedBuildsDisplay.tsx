@@ -175,12 +175,7 @@ function GeneratedBuildDisplay({
             <EquipBtn build={build} />
           </Box>
           <Collapse in={expanded} unmountOnExit>
-            <CharCalcProvider
-              character={character}
-              team={team}
-              discIds={build.discIds}
-              wengineId={build.wengineId}
-            >
+            <CharCalcProvider team={team}>
               <CompareCalcContext.Provider value={baseCalc as Calculator}>
                 <Box>
                   <Grid container spacing={1}>

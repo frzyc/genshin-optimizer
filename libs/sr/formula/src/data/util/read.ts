@@ -1,4 +1,7 @@
-import type { Tag as BaseTag } from '@genshin-optimizer/game-opt/engine'
+import type {
+  Tag as BaseTag,
+  EntryType,
+} from '@genshin-optimizer/game-opt/engine'
 import {
   Read as BaseRead,
   reader as baseReader,
@@ -38,7 +41,7 @@ export const fixedTags = {
   // Count
   path: paths,
 }
-export type Tag = BaseTag<Sheet, Src, Dst> & {
+export type Tag = BaseTag<Sheet, Src, Dst, EntryType> & {
   elementalType?: ElementalType | null
   damageType1?: DamageType | null
   damageType2?: DamageType | null

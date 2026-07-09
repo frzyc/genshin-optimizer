@@ -164,6 +164,45 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
     .sheet('agg')
     .withAll('et', [])
   return [
+    // memberx and prev/nextMember
+    members.flatMap((dst, i) => {
+      const arr = [
+        reader
+          .withTag({ et: 'member0', dst })
+          .reread(reader.withTag({ et: 'own', dst: null, src: members[0] })),
+        reader
+          .withTag({ et: 'member1', dst })
+          .reread(
+            reader.withTag({
+              et: 'own',
+              dst: null,
+              src: members.length > 1 ? members[1] : members[0],
+            })
+          ),
+        reader
+          .withTag({ et: 'member2', dst })
+          .reread(
+            reader.withTag({
+              et: 'own',
+              dst: null,
+              src: members.length > 2 ? members[2] : members[0],
+            })
+          ),
+        reader
+          .withTag({ et: 'prevMember', dst })
+          .reread(
+            reader.withTag({ et: 'own', dst: null, src: members.at(i - 1) })
+          ),
+        reader.withTag({ et: 'nextMember', dst }).reread(
+          reader.withTag({
+            et: 'own',
+            dst: null,
+            src: members.at((i + 1) % members.length),
+          })
+        ),
+      ]
+      return arr
+    }),
     // Target Entries
     members.map((dst) =>
       reader
