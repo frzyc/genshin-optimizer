@@ -92,7 +92,7 @@ export function FieldsDisplay({
 }: {
   fields: Field[]
   bgt?: CardBackgroundColor
-  onClickFormula?: (read: BaseRead) => void
+  onClickFormula?: (read: BaseRead, tag: Tag) => void
 }) {
   return (
     <FieldDisplayList sx={{ m: 0 }} bgt={bgt}>
@@ -110,8 +110,9 @@ function FieldDisplay({
 }: {
   field: Field
   component?: ElementType
-  onClickFormula?: (read: BaseRead) => void
+  onClickFormula?: (read: BaseRead, tag: Tag) => void
 }) {
+  const tag = useContext(TagContext)
   if ('fieldValue' in field)
     return <TextFieldDisplay field={field} component={component} />
   if (isMultiTagField(field)) {
@@ -130,7 +131,7 @@ function FieldDisplay({
         field={field}
         component={component}
         onClickFormula={
-          onClickFormula ? () => onClickFormula(fieldRead) : undefined
+          onClickFormula ? () => onClickFormula(fieldRead, tag) : undefined
         }
       />
     )
@@ -186,7 +187,7 @@ export function MultiTagFieldDisplay({
   component?: ElementType
   showZero?: boolean
   rowSx?: SxProps<Theme>
-  onClickFormula?: (read: BaseRead) => void
+  onClickFormula?: (read: BaseRead, tag: Tag) => void
   onMouseEnter?: () => void
   onMouseLeave?: () => void
 }) {
@@ -289,7 +290,7 @@ export function MultiTagFieldDisplay({
             const tag = fieldRead.tag
             const unit = getUnitStr(tag['name'] || tag['q'] || '')
             const onClick = onClickFormula
-              ? () => onClickFormula(fieldRead)
+              ? () => onClickFormula(fieldRead, contextTag)
               : undefined
             return (
               <Box

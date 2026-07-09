@@ -10,6 +10,7 @@ import { evalIfFunc } from '@genshin-optimizer/common/util'
 import type {
   IListConditionalData,
   INumConditionalData,
+  Tag,
 } from '@genshin-optimizer/game-opt/engine'
 import { CalcContext, TagContext } from '@genshin-optimizer/game-opt/formula-ui'
 import type { BaseRead } from '@genshin-optimizer/pando/engine'
@@ -46,7 +47,7 @@ export function ConditionalsDisplay({
 }: {
   bgt?: CardBackgroundColor
   conditional: Conditional
-  onClickFormula?: (read: BaseRead) => void
+  onClickFormula?: (read: BaseRead, tag: Tag) => void
 }) {
   const { srcDisplay, dstDisplay } = useContext(SrcDstDisplayContext)
   const setConditional = useContext(SetConditionalContext)
@@ -131,7 +132,7 @@ const ConditionalDisplay = memo(function ConditionalDisplay({
   setValue: (value: number) => void
   bgt?: CardBackgroundColor
   disabled?: boolean
-  onClickFormula?: (read: BaseRead) => void
+  onClickFormula?: (read: BaseRead, tag: Tag) => void
 }) {
   const { header, fields, targeted } = conditional
   const { srcDisplay, dstDisplay } = useContext(SrcDstDisplayContext)

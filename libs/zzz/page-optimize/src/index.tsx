@@ -150,12 +150,15 @@ export default function PageOptimize() {
   )
 
   const [debugRead, setDebugRead] = useState<BaseRead>()
+  const [debugTag, setDebugTag] = useState<Tag>()
   const debugObj = useMemo<DebugReadContextObj>(
     () => ({
       read: debugRead,
       setRead: setDebugRead,
+      tag: debugTag,
+      setTag: setDebugTag,
     }),
-    [debugRead]
+    [debugRead, debugTag]
   )
   return (
     <Box>

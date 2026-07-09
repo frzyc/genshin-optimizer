@@ -130,10 +130,9 @@ export function DebugListingsDisplay({
 }
 
 export function DebugReadModal() {
-  const tag = useContext(TagContext)
-  const calculator = useContext(CalcContext)?.withTag(tag)
+  const { read, setRead, tag, setTag } = useContext(DebugReadContext)
+  const calculator = useContext(CalcContext)?.withTag(tag ?? {})
   const debugCalc = calculator?.toDebug()
-  const { read, setRead } = useContext(DebugReadContext)
   const computed = read && calculator?.compute(read)
   const debug = read && debugCalc?.compute(read)
   const name = read?.tag['name'] || read?.tag['q']
@@ -141,12 +140,23 @@ export function DebugReadModal() {
   const jsonStr = meta && prettify(meta)
 
   return (
-    <ModalWrapper open={!!read} onClose={() => setRead(undefined)}>
+    <ModalWrapper
+      open={!!read && !!tag}
+      onClose={() => {
+        setRead(undefined)
+        setTag(undefined)
+      }}
+    >
       <CardThemed bgt="dark">
         <CardHeader
           title={`Debug formula for ${name}`}
           action={
-            <IconButton onClick={() => setRead(undefined)}>
+            <IconButton
+              onClick={() => {
+                setRead(undefined)
+                setTag(undefined)
+              }}
+            >
               <CloseIcon />
             </IconButton>
           }

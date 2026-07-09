@@ -168,7 +168,7 @@ const CharStatRow = memo(function CharStatRow({
   optTarget: ReturnType<typeof getTeamFrame0>['tag']
   resolvedOptTag: Tag | undefined
 }) {
-  const { setRead } = useContext(DebugReadContext)
+  const { setRead, setTag } = useContext(DebugReadContext)
   const calc = useZzzCalcContext()
   const baseTag = tagIn ?? read!.tag
 
@@ -225,8 +225,14 @@ const CharStatRow = memo(function CharStatRow({
   )
 
   const onClickFormula = useMemo(
-    () => (shouldShowDevComponents ? () => setRead(calcRead) : undefined),
-    [setRead, calcRead]
+    () =>
+      shouldShowDevComponents
+        ? () => {
+            setRead(calcRead)
+            setTag(mergedTag)
+          }
+        : undefined,
+    [setRead, calcRead, setTag, mergedTag]
   )
 
   return (

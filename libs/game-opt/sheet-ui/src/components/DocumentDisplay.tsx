@@ -1,6 +1,7 @@
 import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { evalIfFunc } from '@genshin-optimizer/common/util'
+import type { Tag } from '@genshin-optimizer/game-opt/engine'
 import { CalcContext, TagContext } from '@genshin-optimizer/game-opt/formula-ui'
 import type { BaseRead } from '@genshin-optimizer/pando/engine'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
@@ -57,7 +58,7 @@ export function DocumentContent({
   bgt?: CardBackgroundColor
   collapse?: boolean
   typoVariant?: TypographyOwnProps['variant']
-  onClickFormula?: (read: BaseRead) => void
+  onClickFormula?: (read: BaseRead, tag: Tag) => void
 }) {
   switch (document.type) {
     case 'fields':
@@ -125,7 +126,7 @@ function FieldsSectionContent({
 }: {
   fieldsDocument: FieldsDocument
   bgt?: CardBackgroundColor
-  onClickFormula?: (read: BaseRead) => void
+  onClickFormula?: (read: BaseRead, tag: Tag) => void
 }) {
   return (
     <>
