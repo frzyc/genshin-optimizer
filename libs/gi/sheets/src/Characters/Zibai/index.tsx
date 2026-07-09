@@ -176,12 +176,7 @@ const c2Moonfall_stride_dmgInc = infoMut(
         equal(
           condA1Moonfall,
           'on',
-          prod(
-            percent(
-              dm.constellation2.stride_dmgInc - dm.passive1.stride_dmgInc
-            ),
-            input.total.def
-          )
+          prod(percent(dm.constellation2.stride_dmgInc), input.total.def)
         )
       )
     )
@@ -550,7 +545,6 @@ const sheet: TalentSheet = {
       path: condC2ShiftModePath,
       value: condC2ShiftMode,
       name: ct.ch('c2Cond'),
-      canShow: greaterEq(tally.moonsign, 2, 1),
       teamBuff: true,
       states: {
         on: {
