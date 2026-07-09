@@ -51,7 +51,6 @@ export const allNonstackBuffs = [
   'hakushindendro',
   'ttds',
   'wolf',
-  'symphonist',
   'moonsignascend',
   'gleamingmoonintent',
   'gleamingmoondevotion',
