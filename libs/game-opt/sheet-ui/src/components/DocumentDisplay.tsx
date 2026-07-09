@@ -102,7 +102,7 @@ export function DocumentDisplay({
   bgt?: CardBackgroundColor
   collapse?: boolean
   typoVariant?: TypographyOwnProps['variant']
-  onClickFormula?: (read: BaseRead) => void
+  onClickFormula?: (read: BaseRead, tag: Tag) => void
 }) {
   const content = (
     <DocumentContent
