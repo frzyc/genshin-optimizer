@@ -2,7 +2,7 @@
   "setName": "Bedrückende Desillusionierung im Schatten",
   "setEffects": {
     "2": "Erhöht den ANG um 18 %.",
-    "4": "Erhöht den durch die Reaktion Supraleiter verursachten Schaden um 80 %. Erhöht, wenn der Träger einen Gegner angreift, der von der Reaktion Supraleiter betroffen ist, die KT dieses Angriffs um 16 %. Auf dem Weg nach Snezhnaya erhältst du möglicherweise neue Segnungen ..."
+    "4": "Erhöht den durch die Reaktion Supraleiter verursachten Schaden um 80 % und den durch die Reaktion Stellar-Supraleiter verursachten Schaden um 40 %. Erhöht, wenn der Träger einen Gegner angreift, der von der Reaktion Supraleiter oder Stellar-Supraleiter betroffen ist, die KT dieses Angriffs um 16 %."
   },
   "pieces": {
     "flower": {
@@ -15,7 +15,7 @@
     },
     "sands": {
       "name": "Moment, der mit dem Erwachen aus großen Träumen erlosch",
-      "desc": "Der Moment, den sie dem schweigsamen Alchimisten schenkte, um ihn an alle Termine zu erinnern."
+      "desc": "Die Uhr, die sie dem schweigsamen Alchimisten schenkte, um ihn an alle Termine zu erinnern."
     },
     "goblet": {
       "name": "Beifall, der mit dem Fest endete",

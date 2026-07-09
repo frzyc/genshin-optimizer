@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -72,7 +76,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -104,7 +112,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -123,6 +135,13 @@
     "name": "Omaggio della casa",
     "description": {
       "0": "Quando si ottiene una preparazione perfetta di un piatto con effetti rigeneranti, c'è un 12% di probabilità di ottenere il doppio del prodotto."
+    }
+  },
+  "lockedPassive": {
+    "name": "Collezione preziosa",
+    "description": {
+      "0": "Entro 20 s dall'utilizzo dell'abilità elementale <strong>Zampe glaciali</strong>, Diona scaglia tre <strong>Zampe glaciali</strong> aggiuntive quando i membri del gruppo innescano reazioni di Superconduzione o Astroconduzione. Le <strong>Zampe glaciali</strong> scagliate in questo modo non generano particelle elementali e non creano scudi dopo aver colpito gli avversari. Quest'effetto può verificarsi una volta ogni 3,5 s.",
+      "1": "Inoltre, quando si trova all'interno di un <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Campo astropolare</strong></tooltip>, Diona entra nello stato di <strong>Splendore: Astroconduzione</strong>."
     }
   },
   "constellation1": {
@@ -161,11 +180,22 @@
   "constellation6": {
     "name": "Orario di chiusura",
     "description": {
-      "0": "I personaggi nel raggio di <strong>Miscela d'autore</strong> ricevono i seguenti effetti in base alla loro quantità di PS:",
+      "0": "I personaggi nel raggio d'azione di <strong>Miscela d'autore</strong> ricevono i seguenti effetti in base al livello dei loro PS.",
       "1": [
-        " se i PS sono pari o inferiori a un 50%, il bonus di guarigione ricevuta aumenta di un 30%;",
-        " se i PS sono superiori a un 50%, la maestria elementale aumenta di 200."
+        " Quando i PS sono inferiori o pari a un 50%, il bonus di guarigione ricevuta aumenta di un 30%.",
+        " Quando i PS sono superiori a un 50%, la maestria elementale aumenta di 200."
       ]
+    },
+    "upgradedDescription": {
+      "0": "I personaggi nel raggio d'azione di <strong>Miscela d'autore</strong> ricevono i seguenti effetti in base al livello dei loro PS.",
+      "1": [
+        " Quando i PS sono inferiori o pari a un 50%, il bonus di guarigione ricevuta aumenta di un 30%.",
+        " Quando i PS sono superiori a un 50%, la maestria elementale aumenta di 200."
+      ],
+      "2": "<br/>",
+      "3": "Inoltre, i PS max di Diona aumentano di un 25%.",
+      "4": "<br/>",
+      "5": "Nello stato di <strong>Splendore: Astroconduzione</strong>, <strong>Miscela d'autore</strong> aumenta di un 40% i DAN delle reazioni di Superconduzione e Astroconduzione inflitti dai personaggi presenti nel suo raggio d'azione."
     }
   }
 }

@@ -1,0 +1,244 @@
+{
+  "name": "Sandrone",
+  "title": "Mirrored Analysis",
+  "description": "The Seventh of the Fatui Harbingers, \"Marionette.\" Interprets all phenomena through the prism of mathematics, and is an elegant lady who is never absent from a tea party.",
+  "constellationName": "Narcissorolegium",
+  "auto": {
+    "name": "Self-Evident Proposition",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Generates threads that control her weapon using formulae, performing up to 3 consecutive strikes."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Summons the Facilitatrice Automatisee Generaliste Interactive et Omnitache, or \"<strong>Fagio</strong>,\" and switches it to <strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>Decoding</tooltip></strong> mode: Unleashes a sweeping fire attack on enemies in front, as well as periodically fires condensed beams, dealing <cryo>AoE Cryo DMG</cryo>.",
+        "2": "<strong>Radiance: Stellar-Conduct</strong>: The condensed beams will instead deal <cryo>AoE Cryo DMG</cryo> that is considered Stellar-Conduct DMG.",
+        "3": "While in <strong>Decoding</strong> mode, Fagio's <strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>Decoding Power</tooltip></strong> will continuously increase. Firing condensed beams will also further increase its Decoding Power.",
+        "4": "When Fagio's Decoding Power reaches the maximum of 100 points, it switches to <strong>Power Overdrive</strong> mode, in which it fires at opponents with longer intervals, dealing <cryo>Cryo DMG</cryo>. It will be unable to switch to Decoding mode at this time.",
+        "5": "When not in <strong>Decoding</strong> mode, Fagio's <strong>Decoding Power</strong> gradually decreases. When Sandrone is off-field, she will focus on maintaining Fagio, causing its Decoding Power to decrease at 300% the original rate.",
+        "6": "Fagio exits <strong>Power Overdrive</strong> mode when its <strong>Decoding Power</strong> has decreased to under 50."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges from midair to strike the ground below, dealing DMG to opponents along their path and causing AoE DMG on landing."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "Charged Attack Sweeping Fire DMG",
+      "4": "Charged Attack Condensed Beam DMG",
+      "5": "Charged Attack Condensed Beam Stellar-Conduct DMG",
+      "6": "DMG When in Power Overdrive",
+      "7": "Plunge DMG",
+      "8": "Low/High Plunge DMG",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, percent(fixed: 1)}}%",
+      "3": "{{3, percent(fixed: 1)}}%",
+      "4": "{{4, percent(fixed: 1)}}%",
+      "5": "{{5, percent(fixed: 1)}}%",
+      "6": "{{6, percent(fixed: 1)}}%",
+      "7": "{{7, percent(fixed: 1)}}%",
+      "8": "{{8, percent}}%/{{9, percent}}%",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Formule Phenomenale: Differential Analysis",
+    "description": {
+      "0": "With her impeccable, ladylike poise, Sandrone boards the <strong>Tea Party Tactical Assault Hovermech</strong> and hovers forward for 6s. During this time, Sandrone can control the travel direction of the craft. Pressing Sprint consumes 10 Stamina and launches her into an elegant high-speed hover mode, in which she will move even faster at the cost of 15 Stamina per second.",
+      "1": "<br/>",
+      "2": "When Sandrone starts hovering, if there are opponents nearby, she will also summon a Prismatic Resonance Cannon and fire 2 Prism Shots at any opponents who have yet to cool down, dealing <cryo>Cryo DMG</cryo>.",
+      "3": "<strong>Radiance: Stellar-Conduct</strong>: The second Prism Shot will instead deal <cryo>Cryo DMG</cryo> that is considered Stellar-Conduct DMG.",
+      "4": "<br/>",
+      "5": "When on the Tea Party Tactical Assault Hovermech, Sandrone will also elegantly and quietly repair Fagio, causing <strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>Decoding Power</tooltip></strong> to swiftly decrease."
+    },
+    "skillParams": {
+      "0": "Prism Shot DMG",
+      "1": "Prism Shot Stellar-Conduct DMG",
+      "2": "CD",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, fixed(fixed: 1)}}s",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Formule Phenomenale: Q.E.D.",
+    "description": {
+      "0": "In line with established ladylike behavior, Sandrone summons a large number of Prismatic Resonance Cannons for a frontal bombardment before firing on her foes with a Convective Inhibition Ray, dealing <cryo>AoE Cryo DMG</cryo>.",
+      "1": "<strong>Radiance: Stellar-Conduct</strong>: The Convective Inhibition Ray instead deals <cryo>AoE Cryo DMG</cryo> that is considered Stellar-Conduct DMG."
+    },
+    "skillParams": {
+      "0": "Bombardment DMG",
+      "1": "Convective Inhibition Ray DMG",
+      "2": "Convective Inhibition Ray Stellar-Conduct DMG",
+      "3": "CD",
+      "4": "Energy Cost",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}% ×3",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, percent(fixed: 1)}}%",
+      "3": "{{3, fixed(fixed: 1)}}s",
+      "4": "{{4}}",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Eternal Speculation Engine",
+    "description": {
+      "0": "<strong>Radiance: Stellar-Conduct</strong>: When using the Elemental Skill <tooltip ns=char_Sandrone_gen baseKey18=skill><strong>Formule Phenomenale: Differential Analysis</strong></tooltip>, if Fagio's <strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>Decoding Power</tooltip></strong> is greater than 50, the second Prism Shot fired by Fagio at nearby opponents will deal 400% of its original DMG as Fagio's Decoding Power is decreased.",
+      "1": "Additionally, for every 10 points of <strong>Decoding Power</strong> Fagio loses, it gains 1 stack of <strong>Refined Tactics</strong> for 60s (max 10 stacks). When Sandrone uses the Elemental Burst <tooltip ns=char_Sandrone_gen baseKey18=burst><strong>Formule Phenomenale: Q.E.D.</strong></tooltip> while in the <strong>Radiance: Stellar-Conduct</strong> state, all stacks of Refined Tactics are cleared, causing the Convective Inhibition Ray to deal 100% + (number of stacks cleared) × 10% of its original DMG."
+    }
+  },
+  "passive2": {
+    "name": "A Lady's Code of Conduct",
+    "description": {
+      "0": "Increases Sandrone's Elemental Mastery based on her ATK. Every 100 ATK will increase her Elemental Mastery by 8. The maximum increase she can gain this way is 160."
+    }
+  },
+  "passive3": {
+    "name": "Light of Rationalisme",
+    "description": {
+      "0": "When party members trigger Superconduct, it will be changed to Stellar-Conduct, and party members' Base Stellar-Conduct DMG will be increased based on Sandrone's ATK: Every 100 ATK she has increases the Base Stellar-Conduct DMG by 0.7%. The maximum increase that can be gained this way is 14%.",
+      "1": "Additionally, when Sandrone is within a <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Polestar Field</strong></tooltip>, she will enter the <strong>Radiance: Stellar-Conduct</strong> state."
+    }
+  },
+  "passive": {
+    "name": "A Caucus Prelude and a Long Tale",
+    "description": {
+      "0": "When Sandrone is in the party, you will gain additional snack rewards after turning in your Daily Commissions with Katheryne."
+    }
+  },
+  "constellation1": {
+    "name": "Morrow After the Golden Dusk",
+    "description": {
+      "0": "When in <strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>Decoding</tooltip></strong> mode, Fagio's <strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>Decoding Power</tooltip></strong> increases at a 50% lower rate, and all party members deal 30% increased Stellar-Conduct DMG."
+    }
+  },
+  "constellation2": {
+    "name": "An Heiress Gazed Into the Looking-Glass",
+    "description": {
+      "0": "<strong>Radiance: Stellar-Conduct</strong>: Increases CRIT DMG from Charged Attack condensed beams by 40%. Also, each time a beam is fired, CRIT DMG dealt by all condensed beams fired during this <strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>Decoding</tooltip></strong> mode period will be further increased by 20%. Max 3 stacks."
+    }
+  },
+  "constellation3": {
+    "name": "Refuse the Wake of Dusk, the Moonlit Yoke",
+    "description": {
+      "0": "Increases the Level of <tooltip ns=char_Sandrone_gen baseKey18=normal><strong>Formule Phenomenale: Self-Evident Proposition</strong></tooltip> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "In Knowledge Lies the World's True Ground",
+    "description": {
+      "0": "When Sandrone deals Stellar-Conduct DMG to an opponent, she will also summon an extra Prismatic Resonance Cannon to fire off a coordinated attack which deals <cryo>Cryo DMG</cryo> at 125% of her ATK. This DMG is considered Stellar-Conduct DMG, and the effect can occur once every 4s."
+    }
+  },
+  "constellation5": {
+    "name": "Of All Beside, She Takes No Part",
+    "description": {
+      "0": "Increases the Level of <tooltip ns=char_Sandrone_gen baseKey18=burst><strong>Formule Phenomenale: Q.E.D.</strong></tooltip> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "Narcissus Wakes, Her Eyes Upon the Dawn",
+    "description": {
+      "0": "When Fagio fires a condensed beam for the third time while in <strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>Decoding</tooltip></strong> mode, the beam becomes a more powerful <strong>Condensed Cluster Beam</strong> that fires continuously. This beam will deal up to 4 additional instances of <cryo>AoE Cryo DMG</cryo> at 100% of Sandrone's ATK on top of any subsequent original beam fired.",
+      "1": "<strong>Radiance: Stellar-Conduct</strong>: The <strong>Condensed Cluster Beam</strong> will instead deal 4 additional instances of <cryo>AoE Cryo DMG</cryo> at 80% of Sandrone's ATK. This DMG is considered Stellar-Conduct DMG.",
+      "2": "Additionally, all Stellar-Conduct DMG dealt by Sandrone is <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>elevated</strong></tooltip> by 20%."
+    }
+  }
+}

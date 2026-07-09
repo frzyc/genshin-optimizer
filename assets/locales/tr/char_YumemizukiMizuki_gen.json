@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -69,7 +73,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -98,7 +106,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -119,16 +131,30 @@
       "0": "Yumemizuki Mizuki gruptayken, grup üyeleri canlandırma özelliği olmayan iyileştirme yiyecekleri kullandığında ek %30 Can yenileme olasılığı bulunur. Bu etkinin tetiklenme olasılığı ilgili karakterin Arkadaşlık Seviyesiyle birlikte artar. (Bu etki, iyileştirme yiyeceğini tüketen karakter Gezgin olduğunda her zaman tetiklenir.)"
     }
   },
+  "lockedPassive": {
+    "name": "Engin Olsun Düşler",
+    "description": {
+      "0": "Yumemizuki Mizuki Düşgezen durumundayken bir Girdap Tepkimesi tetiklediğinde, aynı durumun bir sonraki döngüsünde yakındaki düşmanlara verdiği <anemo>Rüzgar Alan Hasarı</anemo> kendi Element Ustalığının %1.000'i kadar artar. Bu etki her 2,5 saniyede bir tetiklenebilir.",
+      "1": "Ayrıca, Yumemizuki Mizuki Düşgezen durumundayken, yakındaki grup karakterlerinin Element Ustalığı, Yumemizuki Mizuki'nin Element Ustalığının %10'u kadar artar."
+    }
+  },
   "constellation1": {
     "name": "Sisli Sularda",
     "description": {
       "0": "Yumemizuki Mizuki, Düşgezen durumundayken sürekli olarak yakındaki düşmanlara 3,5 saniyede bir \"Yirmi Üç Gecenin Beklentisi\" etkisini uygular ve 3sn sürer. Bu etki aktifken, bir düşman Rüzgar Hasarıyla tetiklenen Girdap tepkimelerinden etkilenirse etki kaldırılır ve Girdabın verdiği Hasar, Mizuki'nin Element Ustalığının %1.100'ü kadar artar."
+    },
+    "upgradedDescription": {
+      "0": "Yumemizuki Mizuki, Düşgezen durumundayken sürekli olarak yakındaki düşmanlara her 3,5 saniyede bir \"Yirmi Üç Gecenin Beklentisi\" etkisini uygular ve 3sn sürer. Bu etki aktifken, bir düşman Rüzgar Hasarıyla tetiklenen Girdap tepkimelerinden etkilenirse etki kaldırılır ve Girdabın bu düşmana verdiği Hasar, Mizuki'nin Element Ustalığının %1.100'ü kadar artar. Ayrıca, aynı düşmana ek bir saldırı yaparak Yumemizuki Mizuki'nin Element Ustalığının %1.000'i kadar <anemo>Rüzgar Hasarı</anemo> verir."
     }
   },
   "constellation2": {
     "name": "Düşlerde Buluşalım",
     "description": {
       "0": "Yumemizuki Mizuki Düşgezen durumuna girdiğinde sahip olduğu Element Ustalığı puanları yakındaki tüm grup üyelerinin <pyro>Ateş</pyro>, <hydro>Su</hydro>, <cryo>Buz</cryo> ve <electro>Elektrik</electro> Hasarı Bonusunu %0,04 artırır. Bu etki, Düşgezen durumu sona erdiğinde kaybolur."
+    },
+    "upgradedDescription": {
+      "0": "Yumemizuki Mizuki Düşgezen durumuna girdiğinde, sahip olduğu her Element Ustalığı puanı, Düşgezen durumu sona erene kadar yakındaki tüm grup üyelerinin <pyro>Ateş</pyro>, <hydro>Su</hydro>, <cryo>Buz</cryo> ve <electro>Elektrik</electro> Hasarı Bonuslarını %0,04 artırır.",
+      "1": "Ayrıca, Yumemizuki Mizuki Düşgezen durumundayken yakındaki düşmanların <pyro>Ateş Direnci</pyro>, <hydro>Su Direnci</hydro>, <cryo>Buz Direnci</cryo>, <electro>Elektrik Direnci</electro> ve <anemo>Rüzgar Direnci</anemo> %20 azalır."
     }
   },
   "constellation3": {
@@ -142,6 +168,9 @@
     "name": "Pınarlar Akar",
     "description": {
       "0": "<strong>Anraku Gizli Kaplıca Terapisi</strong> Element Patlamasından gelen bir <strong>Yumemi Tarzı Özel Atıştırmalık</strong> almak hem Hasar verir hem iyileştirme sağlar ve Yumemizuki Mizuki için 5 Enerji yeniler. Her <strong>Anraku Gizli Kaplıca Terapisi</strong> için bu şekilde Enerji 4 defa yenilenebilir."
+    },
+    "upgradedDescription": {
+      "0": "<strong>Anraku Gizli Kaplıca Terapisi</strong> Element Patlamasından gelen bir <strong>Yumemi Tarzı Özel Atıştırmalık</strong> almak hem Hasar verir hem iyileştirme sağlar. Ayrıca Canı daha düşük olan yakındaki bir grup üyesini Yumemizuki Mizuki'nin Element Ustalığının %266'sı kadar iyileştirir ve Yumemizuki Mizuki için 5 Enerji yeniler. Her <strong>Anraku Gizli Kaplıca Terapisi</strong> boyunca bu şekilde Enerji 4 defa yenilenebilir."
     }
   },
   "constellation5": {
@@ -155,6 +184,10 @@
     "name": "Kalp Özlem Dolar",
     "description": {
       "0": "Yumemizuki Mizuki Düşgezen durumundayken yakındaki grup üyelerinin verdiği Girdap Hasarı Kritik Vuruş yapabilir. Kritik Oranı %30, Kritik Hasarı ise %100 olarak sabittir."
+    },
+    "upgradedDescription": {
+      "0": "Yumemizuki Mizuki Düşgezen durumundayken yakındaki grup üyelerinin verdiği Girdap Hasarı Kritik Vuruş yapabilir. Kritik Oranı %30, Kritik Hasarı ise %100 olarak sabittir.",
+      "1": "Yumemizuki Mizuki'nin 500'ü aşan her Element Ustalığı puanı, Kritik Oranını %0,04 ve Kritik Hasarını %0,16 artırır. Yumemizuki Mizuki'nin Kritik Oranı ve Kritik Hasarı bu şekilde sırasıyla en fazla %20 ve %80 artırılabilir."
     }
   }
 }

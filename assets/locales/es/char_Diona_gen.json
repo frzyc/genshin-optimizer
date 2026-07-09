@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -72,7 +76,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -104,7 +112,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -123,6 +135,13 @@
     "name": "Refrigerio gratis",
     "description": {
       "0": "Al lograr un “Perfecto” en un plato con efectos reconstituyentes, hay una probabilidad del 12% de obtener el doble."
+    }
+  },
+  "lockedPassive": {
+    "name": "Selección exquisita",
+    "description": {
+      "0": "Durante 20 s después de usar la Habilidad Elemental, <strong>Zarpazo helado</strong>, Diona disparará 3 <strong>garras heladas</strong> adicionales cuando un personaje del equipo cause una reacción de Superconductor o Superconductor Estelar. Las <strong>garras heladas</strong> disparadas de esta forma no generan partículas elementales ni crean un escudo al golpear a un enemigo. Este efecto solo se puede activar una vez cada 3.5 s.",
+      "1": "Además, Diona entrará en el estado de <strong>esplendor: Superconductor Estelar</strong> mientras se encuentre dentro de un <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>campo estrellapolar</strong></tooltip>."
     }
   },
   "constellation1": {
@@ -166,6 +185,18 @@
         "Si su Vida es igual o inferior al 50%, aumenta su Bono de Curación recibida en un 30%.",
         "Si su vida es superior al 50%, aumenta la Maestría Elemental en 200 pts."
       ]
+    },
+    "upgradedDescription": {
+      "0": "Los personajes que están dentro del área de <strong>Cóctel asesino</strong> obtienen uno de los siguientes efectos dependiendo de su Vida:",
+      "1": [
+        "Si su Vida es igual o inferior al 50%, aumenta su Bono de Curación recibida en un 30%.",
+        "Si su vida es superior al 50%, aumenta su Maestría Elemental en 200 pts."
+      ],
+      "2": "<br/>",
+      "3": "Además, la Vida Máx. de Diona aumenta en un 25%.",
+      "4": "<br/>",
+      "5": "<strong>Esplendor: Superconductor Estelar</strong>",
+      "6": "El daño de Superconductor y Superconductor Estelar infligido por los personajes dentro del área de <strong>Cóctel asesino</strong> aumenta en un 40%."
     }
   }
 }

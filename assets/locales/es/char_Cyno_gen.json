@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -45,7 +49,14 @@
       "1": "<br/>",
       "2": "Cuando Cyno está en el estado de abrecaminos del juramento de su Habilidad Definitiva, Rito sagrado: Celeridad lupina, realizará una <strong>ofrenda mortuoria</strong> que libera el poder del rayo para infligir <electro>Daño Electro en el AdE</electro> y prolongar la duración de abrecaminos del juramento.",
       "3": "<br/>",
-      "4": "<i>No tienes el derecho ni de aceptar ni de rechazar este veredicto, pues tanto tú como yo fuimos juzgados hace ya mucho tiempo.</i>"
+      "4": "<i>“No tienes el derecho ni de aceptar ni de rechazar este veredicto, pues tanto tú como yo fuimos juzgados hace ya mucho tiempo”.</i>"
+    },
+    "upgradedDescription": {
+      "0": "Se arroja rápidamente hacia delante para infligir <electro>Daño Electro</electro> contra los enemigos en el camino.",
+      "1": "<br/>",
+      "2": "Cuando Cyno está en el estado de abrecaminos del juramento, realizará una <strong>ofrenda mortuoria</strong> que libera el poder del rayo para infligir <electro>Daño Electro en el AdE</electro>. Si Cyno entra en el estado de abrecaminos del juramento por medio de su Habilidad Definitiva, <strong>Rito sagrado: Celeridad lupina</strong>, al realizar una <strong>ofrenda mortuoria</strong>, también prolongará la duración del estado de abrecaminos del juramento actualmente activo.",
+      "3": "<br/>",
+      "4": "<i>“No tienes el derecho ni de aceptar ni de rechazar este veredicto, pues tanto tú como yo fuimos juzgados hace ya mucho tiempo”.</i>"
     },
     "skillParams": {
       "0": "Daño de habilidad",
@@ -63,7 +74,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -98,7 +113,11 @@
       "12": "Energía Elemental",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -106,6 +125,12 @@
     "description": {
       "0": "Mientras está en el estado de abrecaminos del juramento de <strong>Rito sagrado: Celeridad lupina</strong>, Cyno entrará cada cierto tiempo en el estado de “profeta del fin”. Cuando usa <strong>Rito secreto: Guía de las almas abismales</strong> mientras está en ese estado, provocará el efecto de “sentencia”, el cual aumenta en un 35% el daño infligido con dicha habilidad y dispara hacia delante 3 rayos catastróficos que infligen <electro>Daño Electro</electro> equivalente al 100% del ATQ de Cyno.",
       "1": "El daño de los rayos catastróficos se considera daño de Habilidad Elemental."
+    },
+    "upgradedDescription": {
+      "0": "Mientras esté en el estado de abrecaminos del juramento, Cyno entrará cada cierto tiempo en el estado de “profeta del fin”. Cuando use <strong>Rito secreto: Guía de las almas abismales</strong> mientras está en ese estado, provocará el efecto de “sentencia”, el cual aumenta en un 35% el daño infligido con dicha habilidad y dispara hacia delante 3 rayos catastróficos que infligen <electro>Daño Electro</electro> equivalente al 100% del ATQ de Cyno. El daño de los rayos catastróficos se considera daño de Habilidad Elemental.",
+      "1": "<br/>",
+      "2": "<strong>Esplendor: Superconductor Estelar</strong>",
+      "3": "Al activar el efecto de sentencia, en su lugar Cyno disparará hacia delante 3 <strong>rayos catastróficos astroafines</strong> que infligen <electro>Daño Electro</electro> considerado como daño de Superconductor Estelar en una cantidad equivalente al 200% del ATQ de Cyno."
     }
   },
   "passive2": {
@@ -116,6 +141,14 @@
         "El daño de los Ataques Normales ejecutados en el estado de abrecaminos del juramento aumenta en un 150% de la Maestría Elemental.",
         "El daño de los rayos catastróficos del talento de ascensión “Juicio de la pluma” aumenta en un 250% de la Maestría Elemental."
       ]
+    },
+    "upgradedDescription": {
+      "0": "Aumenta el daño de los siguientes ataques de Cyno en función de su Maestría Elemental:",
+      "1": [
+        "El daño de los Ataques Normales ejecutados en el estado de abrecaminos del juramento aumenta en una cantidad equivalente al 150% de la Maestría Elemental.",
+        "El daño de los rayos catastróficos del talento de ascensión “Juicio de la pluma” aumenta en una cantidad equivalente al 250% de la Maestría Elemental.",
+        "El daño de los rayos catastróficos astroafines del talento de ascensión “Juicio de la pluma” aumenta en una cantidad equivalente al 600% de la Maestría Elemental."
+      ]
     }
   },
   "passive3": {
@@ -124,17 +157,36 @@
       "0": "Aumenta en un 25% las recompensas de las expediciones de 20 h en Sumeru."
     }
   },
+  "lockedPassive": {
+    "name": "Astro abrecaminos",
+    "description": {
+      "0": "Cuando Cyno use su Habilidad Elemental, <strong>Rito secreto: Guía de las almas abismales</strong>, sin encontrarse en el estado de abrecaminos del juramento, entrará en dicho estado durante 6 s.",
+      "1": "Además, Cyno entrará en el estado de <strong>esplendor: Superconductor Estelar</strong> mientras se encuentre dentro de un <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>campo estrellapolar</strong></tooltip>."
+    }
+  },
   "constellation1": {
     "name": "Decreto: Vigilancia incansable",
     "description": {
       "0": "Tras usar <strong>Rito sagrado: Celeridad lupina</strong>, la Vel. de Ataque Normal de Cyno aumenta en un 20% durante 10 s. Además, si al usar <strong>Rito secreto: Guía de las almas abismales</strong> se activa el efecto de “sentencia” del talento de ascensión “Juicio de la pluma”, la duración del aumento de Vel. de Ataque Normal se reiniciará.",
       "1": "Es necesario desbloquear el talento de ascensión “Juicio de la pluma”."
+    },
+    "upgradedDescription": {
+      "0": "Tras usar <strong>Rito sagrado: Celeridad lupina</strong>, la Vel. de Ataque Normal de Cyno aumenta en un 20% durante 10 s. Además, si al usar <strong>Rito secreto: Guía de las almas abismales</strong> se activa el efecto de “sentencia” del talento de ascensión “Juicio de la pluma”, la duración del aumento de Vel. de Ataque Normal se reiniciará.",
+      "1": "Es necesario desbloquear el talento de ascensión “Juicio de la pluma”.",
+      "2": "<br/>",
+      "3": "<strong>Esplendor: Superconductor Estelar</strong>",
+      "4": "Cuando entre en el estado de abrecaminos del juramento, Cyno también obtendrá el efecto de <strong>alzamiento junto al sol</strong>, el cual aumentará su Maestría Elemental en 200 pts. Mientras dicho efecto esté activo, si Cyno está en uso y cambias de personaje, el próximo personaje en entrar al campo de batalla heredará el efecto y la duración restante de <strong>alzamiento junto al sol</strong>."
     }
   },
   "constellation2": {
     "name": "Ceremonia: Retorno de las almas",
     "description": {
       "0": "Cuando Cyno golpea a un enemigo con un Ataque Normal, su <electro>Bono de Daño Electro</electro> aumenta en un 10% durante 4 s. Este efecto solo se puede activar una vez cada 0.1 s y puede acumularse un máximo de 5 veces."
+    },
+    "upgradedDescription": {
+      "0": "Cuando Cyno golpea a un enemigo con un Ataque Normal, su Bono de <electro>Daño Electro</electro> aumenta en un 10% durante 4 s. Este efecto solo se puede activar una vez cada 0.1 s y puede acumularse un máximo de 5 veces.",
+      "1": "<br/>",
+      "2": "Además, cuando un personaje bajo el efecto de <strong>alzamiento junto al sol</strong> golpee a un enemigo con un Ataque Normal o Cargado, el daño de Superconductor Estelar que inflige dicho personaje aumentará en un 16%. Este efecto durará hasta que termine <strong>alzamiento junto al sol</strong>, solo se podrá activar una vez cada 0.1 s y podrá acumularse un máximo de 5 veces."
     }
   },
   "constellation3": {
@@ -147,8 +199,13 @@
   "constellation4": {
     "name": "Inspección: Defensa intimidante",
     "description": {
-      "0": "Cuando Cyno está en el estado de “abrecaminos del juramento” de <strong>Rito sagrado: Celeridad lupina</strong> y causa una reacción de Electrocargado, Electrocargado Lunar, Superconductor, Sobrecarga, Aceleración, Intensificación, Sobreflorecimiento o Torbellino Electro, todos los miembros del equipo cercanos (a excepción de Cyno) recuperan 3 pts. de Energía Elemental.",
+      "0": "Cuando Cyno está en el estado de abrecaminos del juramento de <strong>Rito sagrado: Celeridad lupina</strong> y causa una reacción de Electrocargado, Electrocargado Lunar, Superconductor, Superconductor Estelar, Sobrecarga, Aceleración, Intensificación, Sobreflorecimiento o Torbellino Electro, todos los personajes cercanos del equipo (a excepción de Cyno) recuperan 3 pts. de Energía Elemental.",
       "1": "Este efecto solo puede ocurrir 5 veces por cada uso de <strong>Rito sagrado: Celeridad lupina</strong>."
+    },
+    "upgradedDescription": {
+      "0": "Cuando Cyno está en el estado de abrecaminos del juramento de <strong>Rito sagrado: Celeridad lupina</strong> y causa una reacción de Electrocargado, Electrocargado Lunar, Superconductor, Superconductor Estelar, Sobrecarga, Aceleración, Intensificación, Sobreflorecimiento o Torbellino Electro, todos los personajes cercanos del equipo (a excepción de Cyno) recuperan 3 pts. de Energía Elemental. Este efecto solo puede ocurrir 5 veces por cada uso de <strong>Rito sagrado: Celeridad lupina</strong>.",
+      "1": "<br/>",
+      "2": "Cuando otro personaje bajo el efecto de <strong>alzamiento junto al sol</strong> cause alguna de las anteriores reacciones, Cyno también recuperará 20 pts. de Energía Elemental. Este efecto solo se puede activar una vez cada 18 s."
     }
   },
   "constellation5": {
@@ -164,6 +221,12 @@
       "0": "Tras usar <strong>Rito sagrado: Celeridad lupina</strong> o tras activar el efecto de sentencia del talento de ascensión “Juicio de la pluma”, Cyno obtiene 4 cargas del efecto “rito chacálico”. Al golpear a un enemigo con un Ataque Normal, consume una carga y lanza un rayo catastrófico.",
       "1": "Rito chacálico dura 8 s, puede acumularse un máximo de 8 veces y se anulará cuando termine la duración del estado de abrecaminos del juramento de Rito sagrado: Celeridad lupina.",
       "2": "Como máximo, puede lanzar un rayo catastrófico cada 0.4 s de esta manera.",
+      "3": "Es necesario desbloquear el talento de ascensión “Juicio de la pluma”."
+    },
+    "upgradedDescription": {
+      "0": "Tras usar <strong>Rito sagrado: Celeridad lupina</strong> o tras activar el efecto de sentencia del talento de ascensión “Juicio de la pluma”, Cyno obtiene 4 cargas del efecto “rito chacálico”, de manera que, al golpear a un enemigo con un Ataque Normal, consumirá una carga y lanzará un rayo catastrófico. Si Cyno está bajo el efecto de <strong>alzamiento junto al sol</strong>, en su lugar disparará un <strong>rayo catastrófico astroafín</strong>.",
+      "1": "Rito chacálico dura 8 s, puede acumularse un máximo de 8 veces durante un estado de abrecaminos del juramento y se anulará cuando termine la duración del estado de abrecaminos del juramento de “Rito sagrado: Celeridad lupina”.",
+      "2": "Como máximo, puede disparar un rayo catastrófico o un rayo catastrófico astroafín cada 0.4 s de esta manera.",
       "3": "Es necesario desbloquear el talento de ascensión “Juicio de la pluma”."
     }
   }

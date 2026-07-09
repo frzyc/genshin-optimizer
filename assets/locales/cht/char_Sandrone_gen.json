@@ -1,0 +1,178 @@
+{
+  "name": "桑多涅",
+  "title": "鏡水析謬",
+  "description": "愚人眾執行官第七席，「木偶」。以數理解析事象之人，茶會上永不缺席的優雅淑女。",
+  "constellationName": "鏡中奇械座",
+  "auto": {
+    "name": "自明演繹",
+    "fields": {
+      "normal": {
+        "0": "<strong>普通攻擊</strong>",
+        "1": "以數式編織出操縱兵刃的絲線，進行至多三段的連續揮砍。"
+      },
+      "charged": {
+        "0": "<strong>重擊</strong>",
+        "1": "召喚出全功能通用型自動機關<strong>「法潔歐」</strong>，並使其切換至<strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>解算</tooltip></strong>模式：對前方的敵人進行掃射攻擊，並週期性發射冷凝射線，造成<cryo>冰元素範圍傷害</cryo>。",
+        "2": "<strong>輝映·星超導</strong>：冷凝射線轉為造成視為星超導反應傷害的<cryo>冰元素範圍傷害</cryo>。",
+        "3": "在<strong>解算</strong>模式下，法潔歐的<strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>解算功率</tooltip></strong>將會持續提升；發射冷凝射線時，還會使解算功率進一步提升。",
+        "4": "解算功率達到100點上限時，法潔歐將切換至<strong>功率過載</strong>模式，以更長的間隔對敵人進行射擊，造成<cryo>冰元素傷害</cryo>，且無法切換至解算模式。",
+        "5": "不處於<strong>解算</strong>模式下時，法潔歐的<strong>解算功率</strong>將會緩慢降低。桑多涅處於隊伍後臺時，還會專注於維修法潔歐，使其解算功率降低速度加快至原本的300%。",
+        "6": "<strong>解算功率</strong>降低至50點以下時，法潔歐將退出<strong>功率過載</strong>模式。"
+      },
+      "plunging": {
+        "0": "<strong>下落攻擊</strong>",
+        "1": "從空中下墜衝擊地面，攻擊下落路徑上的敵人，並在落地時造成範圍傷害。"
+      }
+    },
+    "skillParams": {
+      "0": "一段傷害",
+      "1": "二段傷害",
+      "2": "三段傷害",
+      "3": "重擊掃射傷害",
+      "4": "重擊冷凝射線傷害",
+      "5": "重擊冷凝射線星超導傷害",
+      "6": "功率超載時傷害",
+      "7": "下墜期間傷害",
+      "8": "低空/高空墜地衝擊傷害",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "事象數式·游衍解析",
+    "description": {
+      "0": "秉持淑女完美的法度，搭乘<strong>茶會用戰術突擊懸浮機關</strong>，並持續向前浮行6秒。期間，桑多涅可以控制浮行的方向，並且點按衝刺時，將會消耗10點體力，進入優雅的高速懸浮模式，每秒消耗15點體力，以更快的速度進行浮行。",
+      "1": "<br/>",
+      "2": "開始浮行時，若附近存在敵人，桑多涅還會召喚出一臺稜晶諧振炮，向沒有冷靜下來的敵人發射兩枚稜晶彈，造成<cryo>冰元素傷害</cryo>。",
+      "3": "<strong>輝映·星超導</strong>：第二枚稜晶彈將轉為造成視為星超導反應傷害的<cryo>冰元素傷害</cryo>。",
+      "4": "<br/>",
+      "5": "搭乘茶會用戰術突擊懸浮機關時，桑多涅還會優雅地悄悄維修法潔歐，使其<strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>解算功率</tooltip></strong>快速降低。"
+    },
+    "skillParams": {
+      "0": "稜晶彈傷害",
+      "1": "稜晶彈星超導傷害",
+      "2": "冷卻時間",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "事象數式·萬理證畢",
+    "description": {
+      "0": "秉持淑女優雅的禮儀，召喚出大量稜晶諧振炮對前方進行廣域轟炸，並在隨後發射負溫聚能光束轟擊敵人，造成<cryo>冰元素範圍傷害</cryo>。",
+      "1": "<strong>輝映·星超導</strong>：負溫聚能光束將轉為造成視為星超導反應傷害的<cryo>冰元素範圍傷害</cryo>。"
+    },
+    "skillParams": {
+      "0": "轟炸傷害",
+      "1": "聚能光束傷害",
+      "2": "聚能光束星超導傷害",
+      "3": "冷卻時間",
+      "4": "元素能量",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "悠久的演算機關",
+    "description": {
+      "0": "<strong>輝映·星超導</strong>：施放元素戰技<tooltip ns=char_Sandrone_gen baseKey18=skill><strong>事象數式·游衍解析</strong></tooltip>時，若法潔歐的<strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>解算功率</tooltip></strong>超過50點，則會在降低解算功率的同時，使向附近敵人發射的第二枚稜晶彈造成原本400%的傷害。",
+      "1": "此外，法潔歐的<strong>解算功率</strong>每降低10點，都會獲得一層持續60秒的<strong>改進戰術</strong>效果，該效果至多疊加10層。桑多涅處於<strong>輝映·星超導</strong>狀態下施放元素爆發<tooltip ns=char_Sandrone_gen baseKey18=burst><strong>事象數式·萬理證畢</strong></tooltip>時，將會清除全部的改進戰術層數，使負溫聚能光束造成原本100%+清除層數x10%的傷害。"
+    }
+  },
+  "passive2": {
+    "name": "淑女的行事準則",
+    "description": {
+      "0": "基於桑多涅的攻擊力，提升其元素精通：每100點攻擊力都將使桑多涅的元素精通提升8點，至多依此方式提升160點元素精通。"
+    }
+  },
+  "passive3": {
+    "name": "星耀祝禮·唯理為光",
+    "description": {
+      "0": "隊伍中的角色觸發超導反應時，將轉為觸發星超導反應，且基於桑多涅的攻擊力，提升隊伍中角色造成的星超導反應的基礎傷害：每100點攻擊力都將提升0.7%星超導反應的基礎傷害，至多依此方式提升14%傷害。",
+      "1": "此外，處於<tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>極星輝域</strong></tooltip>中時，桑多涅將會進入<strong>輝映·星超導</strong>狀態。"
+    }
+  },
+  "passive": {
+    "name": "茶會的序曲與長長的故事",
+    "description": {
+      "0": "桑多涅處於隊伍中時，向凱瑟琳交付每日委託任務後，會獲得額外的茶點獎勵。"
+    }
+  },
+  "constellation1": {
+    "name": "鎏金未凋，夕暮已遠",
+    "description": {
+      "0": "處於<strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>解算</tooltip></strong>模式下時，法潔歐的<strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>解算功率</tooltip></strong>提升速度降低50%，且隊伍中的所有角色造成的星超導反應傷害提升30%。"
+    }
+  },
+  "constellation2": {
+    "name": "回望鏡中，時歲翩然",
+    "description": {
+      "0": "<strong>輝映·星超導</strong>：重擊發射的冷凝射線的暴擊傷害提升40%，且每次發射冷凝射線時，都會使本次<strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>解算</tooltip></strong>模式期間，發射的所有冷凝射線的暴擊傷害進一步提升20%，該效果至多疊加3層。"
+    }
+  },
+  "constellation3": {
+    "name": "不嘆日落，不羨月升",
+    "description": {
+      "0": "普通攻擊<tooltip ns=char_Sandrone_gen baseKey18=normal><strong>事象數式·自明演繹</strong></tooltip>的技能等級提高3級。",
+      "1": "至多提升至15級。"
+    }
+  },
+  "constellation4": {
+    "name": "世事皆數，晝來夜往",
+    "description": {
+      "0": "桑多涅的星超導反應傷害命中敵人時，還會額外召喚一臺稜晶諧振炮進行協同攻擊，對敵人造成一次相當於桑多涅攻擊力125%的<cryo>冰元素傷害</cryo>，該傷害視為星超導反應造成的傷害。該效果每4秒至多觸發一次。"
+    }
+  },
+  "constellation5": {
+    "name": "萬象皆灰，唯理明暢",
+    "description": {
+      "0": "元素爆發<tooltip ns=char_Sandrone_gen baseKey18=burst><strong>事象數式·萬理證畢</strong></tooltip>的技能等級提高3級。",
+      "1": "至多提升至15級。"
+    }
+  },
+  "constellation6": {
+    "name": "水仙夢醒，且望晨光",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>解算</tooltip></strong>模式下，法潔歐第三次發射冷凝射線時，將轉為持續發射威力更強的<strong>集束型冷凝射線</strong>，在原本後續發射的冷凝射線基礎上，至多額外造成4段相當於桑多涅攻擊力100%的<cryo>冰元素範圍傷害</cryo>。",
+      "1": "<strong>輝映·星超導</strong>：<strong>集束型冷凝射線</strong>轉為至多額外造成4段相當於桑多涅攻擊力80%的<cryo>冰元素範圍傷害</cryo>，該傷害視為星超導反應造成的傷害。",
+      "2": "此外，桑多涅造成的所有星超導反應傷害<tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>擢升</strong></tooltip>20%。"
+    }
+  }
+}

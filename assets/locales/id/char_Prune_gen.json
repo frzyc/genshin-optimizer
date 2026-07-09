@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -63,7 +67,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -90,7 +98,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -102,7 +114,7 @@
   "passive2": {
     "name": "Tolling Synchronicity",
     "description": {
-      "0": "Setelah Prune menggunakan <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Banehunter Oathhammer</strong></tooltip> yang telah mengalami Elemental Conversion untuk mengenai musuh, anggota party lain di sekitar akan mendapatkan efek Tolling Rally yang berlangsung selama 5 detik: Saat Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, atau Elemental Burst mengakibatkan DMG terhadap musuh, akan meningkatkan DMG yang diakibatkan oleh serangan tersebut berdasarkan ATK Prune saat mendapatkan efek Tolling Rally yang melebihi 2.000 poin. Setiap 1 poin ATK yang berlebih akan meningkatkan DMG yang diakibatkan oleh serangan tersebut sebesar 0,02%, hingga maksimum 50%."
+      "0": "Setelah Prune menggunakan <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Banehunter Oathhammer</strong></tooltip> yang telah mengalami Elemental Conversion untuk mengenai musuh, anggota party lain di sekitar akan mendapatkan efek Tolling Rally yang berlangsung selama 5 detik: Saat Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, atau Elemental Burst mengakibatkan DMG terhadap musuh, akan meningkatkan DMG yang diakibatkan oleh serangan tersebut berdasarkan ATK Prune saat mendapatkan efek Tolling Rally yang melebihi 2.000 poin. Setiap 1 poin ATK yang berlebih akan meningkatkan DMG yang diakibatkan oleh serangan tersebut sebesar 0,025%, hingga maksimum 50%."
     }
   },
   "passive3": {
@@ -117,7 +129,7 @@
       "0": "Setelah menyelesaikan <strong>PR Penyihir: Tentang Hal yang Diperdebatkan</strong>, Prune akan berubah menjadi Karakter <strong>Hexerei</strong>. Saat ada setidaknya 2 Karakter Hexerei di dalam party, akan mendapatkan efek <strong>Hexerei: Secret Rite</strong> yang memperkuat Karakter Hexerei.",
       "1": "<br/>",
       "2": "<strong>Hexerei: Secret Rite</strong>",
-      "3": "Saat Karakter Hexerei di dalam party yang sedang terpengaruh efek Tolling Rally memicu Reaksi Elemental apa pun terhadap musuh, ATK Prune akan meningkat 60% selama 5 detik. Jika Reaksi Elemental yang dipicu Karakter ini adalah Swirl, maka ATK-nya akan meningkat 30% lagi selama 5 detik."
+      "3": "Saat Karakter Hexerei di dalam party yang sedang terpengaruh efek Tolling Rally memicu Reaksi Elemental apa pun terhadap musuh, ATK Prune akan meningkat 60% selama 5 detik. Jika Reaksi Elemental yang dipicu adalah Swirl, maka ATK Karakter yang memicu akan meningkat 30% lagi selama 5 detik."
     }
   },
   "constellation1": {
@@ -154,7 +166,7 @@
     }
   },
   "constellation6": {
-    "name": "And That’s the Story! Share It With Your Friends!",
+    "name": "And That's the Story! Share It With Your Friends!",
     "description": {
       "0": "Durasi mode Hunter-Seeker Witchlure Bell milik Elemental Burst <strong><tooltip ns=char_Prune_gen baseKey18=burst>The Bell Tolls! The Hunt is On!</tooltip></strong> diperpanjang 4 detik.",
       "1": "Selain itu, setelah Karakter dalam party yang terpengaruh oleh efek Tolling Rally memicu Reaksi Elemental apa pun pada musuh, ATK Prune dan Karakter aktif lain yang sedang berada di medan pertempuran yang memiliki efek Tolling Rally di sekitarnya meningkat 350 poin selama 5 detik."

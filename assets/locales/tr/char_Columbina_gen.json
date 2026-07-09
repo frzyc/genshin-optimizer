@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -62,7 +66,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -86,7 +94,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -117,7 +129,7 @@
   "passive": {
     "name": "Ay Nöbeti",
     "description": {
-      "0": "Nod-Krai bölgesindeyken bir grup üyesi saf dışı kaldığında Columbina o karakteri diriltir. Karakterin dirildiğinde sahip olacağı Can miktarı, Columbina'nın Arkadaşlık Seviyesine bağlıdır. Bu etki her 100 saniyede bir gerçekleşebilir. Bu etki Zindanlarda, Ezici Zindanlarda veya Hiçlik Sarmalında tetiklenemez.",
+      "0": "Nod-Krai veya Donuk Ay bölgelerindeyken bir grup üyesi saf dışı kaldığında Columbina o karakteri diriltir. Karakterin dirildiğinde sahip olacağı Can miktarı, Columbina'nın Arkadaşlık Seviyesine bağlıdır. Bu etki her 100 saniyede bir gerçekleşebilir. Bu etki Zindanlarda, Ezici Zindanlarda veya Hiçlik Sarmalında tetiklenemez.",
       "1": "Ayrıca Columbina'nın Kuuvahkiden etkilenen hayvanlara karşı özel bir yakınlığı vardır..."
     }
   },

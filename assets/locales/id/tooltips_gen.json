@@ -442,5 +442,26 @@
     "description": {
       "0": "Setelah Prune menggunakan <strong>Banehunter Oathhammer</strong>yang telah mengalami Elemental Conversion untuk mengenai musuh, anggota party lain di sekitar akan mendapatkan efek Tolling Rally: Meningkatkan DMG yang diakibatkan serangannya berdasarkan ATK Prune."
     }
+  },
+  "11330001": {
+    "name": "Mode Decoding",
+    "description": {
+      "0": "Fagio akan beralih ke mode ini saat melakukan Charged Attack.",
+      "1": "Dalam mode ini, Fagio akan melancarkan tembakan beruntun ke musuh di depannya, serta menembakkan sinar terkondensasi secara berkala, mengakibatkan <cryo>Cryo DMG Area</cryo>.",
+      "2": "<br/>",
+      "3": "<strong>Radiance: Stellar-Conduct</strong>: DMG dari sinar terkondensasinya berubah menjadi <cryo>Cryo DMG Area</cryo> yang dianggap sebagai DMG reaksi Stellar-Conduct."
+    }
+  },
+  "11330002": {
+    "name": "Decoding Power",
+    "description": {
+      "0": "Saat berada dalam mode <strong>Decoding</strong>, <strong>Decoding Power</strong> Fagio akan terus bertambah. Ketika Decoding Power mencapai batas maksimum, Fagio tidak bisa mempertahankan mode ini atau beralih ke mode Decoding lagi."
+    }
+  },
+  "11330003": {
+    "name": "Polestar Field",
+    "description": {
+      "0": "Saat reaksi Stellar-Conduct terpicu, area di sekitar akan berubah menjadi <strong>Polestar Field</strong> untuk sementara. Saat berada di dalam Polestar Field, beberapa Karakter tertentu akan memasuki status <strong>Radiance: Stellar-Conduct</strong> yang memberikan efek penguatan pada skill-nya."
+    }
   }
 }
