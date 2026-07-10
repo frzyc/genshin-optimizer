@@ -157,9 +157,6 @@ export function mergeTagForOpt(
     )
   }
 
-  if (abilityFormulaGroupKey(tag) !== abilityFormulaGroupKey(resolvedOptTag))
-    return tag
-
   return tag
 }
 

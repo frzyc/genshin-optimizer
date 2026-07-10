@@ -10,8 +10,12 @@ import HelpIcon from '@mui/icons-material/Help'
 import { Box, ListSubheader, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
 import { useContext, useMemo } from 'react'
-import { isAbilityFormulaTag, parseAbilityFromTag } from './abilityTag'
-import { abilityDisplayTitle } from './char/abilityFormulaLabels'
+import { isAbilityFormulaTag } from './abilityTag'
+import {
+  abilityDisplayTitle,
+  abilityHitParamTitle,
+  resolveAbilityDisplay,
+} from './char/abilityFormulaLabels'
 import type { TalentSheetElementKey } from './char/consts'
 import { getFieldCategory } from './char/fieldCategory'
 import { tagFieldSubset } from './char/tagFieldMap'
@@ -27,7 +31,7 @@ import {
   talentSheetElementLabel,
 } from './optPanelSections'
 import { formulaReadForTag } from './optTarget'
-import { st, trans } from './util'
+import { st } from './util'
 
 export {
   abilityDimLabel,
@@ -156,21 +160,13 @@ export function AbilityOptTargetLabel({
   const category = getFieldCategory(charKey, tag)
   const skillHint: SkillKey | undefined =
     category && isSkillKey(category) ? category : undefined
-  const parsed = parseAbilityFromTag(
-    skillHint && !tag.skillType
-      ? { ...tag, skillType: `${skillHint}Skill` }
-      : tag
-  )
-  if (!parsed) return <FullTagDisplay tag={tag} />
+  const resolved = resolveAbilityDisplay(tag, skillHint)
+  if (!resolved) return <FullTagDisplay tag={tag} />
 
-  const { skill, abilityKey, hitIndex } = parsed
-  const [chg] = trans('char', charKey)
+  const { skill } = resolved
   const abilityName = abilityDisplayTitle(charKey, tag, skillHint)
   const skillName = st(`skills.${skill}`)
-  const hitLabel =
-    hitIndex !== undefined
-      ? chg(`${skill}.${abilityKey}.params.${hitIndex.replace(/\D/g, '')}`)
-      : null
+  const hitLabel = abilityHitParamTitle(charKey, tag, skillHint) ?? null
   const damageType2Label =
     tag.damageType2 && tag.damageType2 in damageTypeKeysMap
       ? damageTypeKeysMap[tag.damageType2 as keyof typeof damageTypeKeysMap]

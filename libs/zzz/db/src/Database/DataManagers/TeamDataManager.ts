@@ -49,7 +49,7 @@ export const genericDmgInstNames = ['standardDmgInst', 'sheerDmgInst'] as const
 export function isGenericDmgInstTarget(
   name: string | undefined
 ): name is (typeof genericDmgInstNames)[number] {
-  return name === 'standardDmgInst' || name === 'sheerDmgInst'
+  return !!name && (genericDmgInstNames as readonly string[]).includes(name)
 }
 export const specificDmgTypeKeys: SpecificDmgTypeKey[] = [
   'basic',

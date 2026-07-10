@@ -1,6 +1,7 @@
 import {
   type SpecificDmgTypeKey,
   getTeamFrame0,
+  isGenericDmgInstTarget,
   specificDmgTypeKeys,
   withInstDamageType1,
 } from '@genshin-optimizer/zzz/db'
@@ -25,8 +26,7 @@ export function SpecificDmgTypeSelector() {
       }),
     [database.teams, character.key]
   )
-  if (target?.name !== 'standardDmgInst' && target?.name !== 'sheerDmgInst')
-    return null
+  if (!isGenericDmgInstTarget(target?.name)) return null
   return (
     <DmgTypeDropdown
       dmgType={target?.damageType1 as SpecificDmgTypeKey}
