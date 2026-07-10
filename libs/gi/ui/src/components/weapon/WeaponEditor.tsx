@@ -13,7 +13,11 @@ import {
   weaponMaxAscension,
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
-import { useDatabase, useWeapon } from '@genshin-optimizer/gi/db-ui'
+import {
+  CharacterContext,
+  useDatabase,
+  useWeapon,
+} from '@genshin-optimizer/gi/db-ui'
 import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import {
   getCharStat,
@@ -38,6 +42,7 @@ import {
 } from '@mui/material'
 import { useCallback, useContext, useMemo } from 'react'
 import { DataContext } from '../../context'
+import { useTeamData } from '../../hooks'
 import { DocumentDisplay } from '../DocumentDisplay'
 import { FieldDisplayList, NodeFieldDisplay } from '../FieldDisplay'
 import { RefinementDropdown } from '../RefinementDropdown'
@@ -63,7 +68,8 @@ export function WeaponEditor({
   onClose,
   extraButtons,
 }: WeaponStatsEditorCardProps) {
-  const { data } = useContext(DataContext)
+  const { teamData } = useContext(DataContext)
+  const { character } = useContext(CharacterContext)
 
   const database = useDatabase()
   const weapon = useWeapon(propWeaponId)
@@ -106,6 +112,8 @@ export function WeaponEditor({
       computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]),
     [weaponSheet, weapon]
   )
+
+  const newData = useTeamData(0, undefined, weapon)?.[character.key]?.target
 
   return (
     <ModalWrapper
@@ -259,8 +267,10 @@ export function WeaponEditor({
                       })}
                     </FieldDisplayList>
                   </CardThemed>
-                  {data && weaponSheet?.document && (
-                    <DocumentDisplay sections={weaponSheet.document} />
+                  {newData && weaponSheet?.document && (
+                    <DataContext.Provider value={{ data: newData, teamData }}>
+                      <DocumentDisplay sections={weaponSheet.document} />
+                    </DataContext.Provider>
                   )}
                 </Box>
               </Grid>
