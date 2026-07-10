@@ -63,7 +63,7 @@ const sheet: SetEffectSheet = {
         header: setHeader(4),
         value: condState,
         path: condStatePath,
-        name: st('enemyAffected.superconduct'),
+        name: st('enemyAffected.superconductOrStellarconduct'),
         states: {
           on: {
             fields: [{ node: set4_critRate_ }],
