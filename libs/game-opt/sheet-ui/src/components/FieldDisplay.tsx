@@ -9,7 +9,11 @@ import {
   valueString,
 } from '@genshin-optimizer/common/util'
 import type { CalcMeta, Read, Tag } from '@genshin-optimizer/game-opt/engine'
-import { CalcContext, TagContext } from '@genshin-optimizer/game-opt/formula-ui'
+import {
+  CalcContext,
+  TagContext,
+  useSetDebugTarget,
+} from '@genshin-optimizer/game-opt/formula-ui'
 import type { BaseRead, CalcResult } from '@genshin-optimizer/pando/engine'
 import { read } from '@genshin-optimizer/pando/engine'
 import HelpIcon from '@mui/icons-material/Help'
@@ -88,16 +92,14 @@ function useCompareCalcValue(
 export function FieldsDisplay({
   fields,
   bgt = 'normal',
-  onClickFormula,
 }: {
   fields: Field[]
   bgt?: CardBackgroundColor
-  onClickFormula?: (read: BaseRead) => void
 }) {
   return (
     <FieldDisplayList sx={{ m: 0 }} bgt={bgt}>
       {fields.map((field, i) => (
-        <FieldDisplay key={i} field={field} onClickFormula={onClickFormula} />
+        <FieldDisplay key={i} field={field} />
       ))}
     </FieldDisplayList>
   )
@@ -106,34 +108,17 @@ export function FieldsDisplay({
 function FieldDisplay({
   field,
   component = ListItem,
-  onClickFormula,
 }: {
   field: Field
   component?: ElementType
-  onClickFormula?: (read: BaseRead) => void
 }) {
   if ('fieldValue' in field)
     return <TextFieldDisplay field={field} component={component} />
   if (isMultiTagField(field)) {
-    return (
-      <MultiTagFieldDisplay
-        field={field}
-        component={component}
-        onClickFormula={onClickFormula}
-      />
-    )
+    return <MultiTagFieldDisplay field={field} component={component} />
   }
   if ('fieldRef' in field) {
-    const fieldRead = read(field.fieldRef)
-    return (
-      <TagFieldDisplay
-        field={field}
-        component={component}
-        onClickFormula={
-          onClickFormula ? () => onClickFormula(fieldRead) : undefined
-        }
-      />
-    )
+    return <TagFieldDisplay field={field} component={component} />
   }
   return null
 }
@@ -178,7 +163,6 @@ export function MultiTagFieldDisplay({
   component = ListItem,
   showZero = process.env['NODE_ENV'] === 'development',
   rowSx,
-  onClickFormula,
   onMouseEnter,
   onMouseLeave,
 }: {
@@ -186,7 +170,6 @@ export function MultiTagFieldDisplay({
   component?: ElementType
   showZero?: boolean
   rowSx?: SxProps<Theme>
-  onClickFormula?: (read: BaseRead) => void
   onMouseEnter?: () => void
   onMouseLeave?: () => void
 }) {
@@ -288,9 +271,6 @@ export function MultiTagFieldDisplay({
             if (!showZero && !calcValue && !compareCalcValue) return null
             const tag = fieldRead.tag
             const unit = getUnitStr(tag['name'] || tag['q'] || '')
-            const onClick = onClickFormula
-              ? () => onClickFormula(fieldRead)
-              : undefined
             return (
               <Box
                 key={`${tag['sheet']}_${tag['name']}_${tag['q']}`}
@@ -315,7 +295,10 @@ export function MultiTagFieldDisplay({
                   compareCalcValue={compareCalcValue}
                   unit={unit}
                 />
-                <FormulaHelpIcon computed={valueCalcRes} onClick={onClick} />
+                <FormulaHelpIcon
+                  computed={valueCalcRes}
+                  fieldRead={fieldRead}
+                />
               </Box>
             )
           }
@@ -332,7 +315,6 @@ export function TagFieldDisplay({
   showZero = process.env['NODE_ENV'] === 'development',
   calcRead: calcReadOverride,
   rowSx,
-  onClickFormula,
   onMouseEnter,
   onMouseLeave,
 }: {
@@ -345,8 +327,6 @@ export function TagFieldDisplay({
   /** Use when `listFormulas` returns a full `Read`. */
   calcRead?: Read
   rowSx?: SxProps<Theme>
-  /** Override help-icon click; pass a no-op to disable debug read. */
-  onClickFormula?: () => void
   onMouseEnter?: () => void
   onMouseLeave?: () => void
 }) {
@@ -365,7 +345,6 @@ export function TagFieldDisplay({
   )
   const compareCalcValue = useCompareCalcValue(fieldRead, contextTag)
 
-  const onClick = onClickFormula
   if (!calc || !valueCalcRes) return null
 
   const { multi, icon, title, subtitle } = field
@@ -433,17 +412,18 @@ export function TagFieldDisplay({
         {multiDisplay}
         {fieldVal}
       </Typography>
-      <FormulaHelpIcon computed={valueCalcRes} onClick={onClick} />
+      <FormulaHelpIcon computed={valueCalcRes} fieldRead={fieldRead} />
     </Box>
   )
 }
 function FormulaHelpIcon({
   computed,
-  onClick,
+  fieldRead,
 }: {
   computed: CalcResult<number, CalcMeta<Tag, string>>
-  onClick?: () => void
+  fieldRead: BaseRead
 }) {
+  const setDebugTarget = useSetDebugTarget()
   const FullTagDisplay = useContext(FullTagDisplayContext)
   const formulaText = useContext(FormulaTextContext)
   const formulaTextCache = useContext(FormulaTextCacheContext)
@@ -459,6 +439,7 @@ function FormulaHelpIcon({
     [tooltipOpen, computed, formulaText, formulaTextCache]
   )
   if (!tag) return null
+  const onClick = setDebugTarget ? () => setDebugTarget(fieldRead) : undefined
   return (
     <BootstrapTooltip
       onOpen={onOpen}

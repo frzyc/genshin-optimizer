@@ -1,6 +1,6 @@
 import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
-import { DebugReadContext } from '@genshin-optimizer/game-opt/formula-ui'
+import { useSetDebugTarget } from '@genshin-optimizer/game-opt/formula-ui'
 import { commonDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { isSkillKey } from '@genshin-optimizer/zzz/consts'
@@ -9,7 +9,7 @@ import type { Tag } from '@genshin-optimizer/zzz/formula'
 import HelpIcon from '@mui/icons-material/Help'
 import { Box, ListSubheader, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
-import { useContext, useMemo } from 'react'
+import { useMemo } from 'react'
 import { isAbilityFormulaTag, parseAbilityFromTag } from './abilityTag'
 import type { TalentSheetElementKey } from './char/consts'
 import { getFieldCategory } from './char/fieldCategory'
@@ -301,7 +301,7 @@ function OptTalentSheetSectionHeaderContent({
 /** Dev help icon: opens `DebugReadModal` for the current optimization target. */
 export function OptTargetDebugHelp({ tag }: { tag: Tag }) {
   const calc = useZzzCalcContext()
-  const { setRead } = useContext(DebugReadContext)
+  const setDebugTarget = useSetDebugTarget()
   const calcRead = useMemo(() => formulaReadForTag(calc, tag), [calc, tag])
 
   if (!shouldShowDevComponents) return null
@@ -312,7 +312,7 @@ export function OptTargetDebugHelp({ tag }: { tag: Tag }) {
       aria-label="Debug optimization target formula"
       onClick={(e) => {
         e.stopPropagation()
-        setRead(calcRead)
+        setDebugTarget?.(calcRead, tag)
       }}
       sx={{ flexShrink: 0, cursor: 'pointer' }}
     />
