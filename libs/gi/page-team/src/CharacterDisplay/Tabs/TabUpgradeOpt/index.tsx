@@ -1,5 +1,5 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
-import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
+import { CardThemed, InfoTooltip, SqBadge } from '@genshin-optimizer/common/ui'
 import {
   bulkCatTotal,
   clamp,
@@ -54,7 +54,6 @@ import { artifactFilterConfigs } from '@genshin-optimizer/gi/util'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { dynamicData, mergeData, optimize } from '@genshin-optimizer/gi/wr'
 import AddIcon from '@mui/icons-material/Add'
-import InfoIcon from '@mui/icons-material/Info'
 import {
   Alert,
   Box,
@@ -63,9 +62,9 @@ import {
   Checkbox,
   FormControlLabel,
   Grid,
+  Link,
   Pagination,
   Skeleton,
-  Tooltip,
   Typography,
 } from '@mui/material'
 import type { ButtonProps } from '@mui/material/Button'
@@ -604,13 +603,21 @@ export default function TabUpopt() {
                           <SqBadge color="info" sx={{ mr: 2 }}>
                             {reshapeCandidateCount}
                           </SqBadge>
-                          <Tooltip arrow title={t('upOptReshape.tooltip')}>
-                            <InfoIcon
-                              fontSize="small"
-                              color="action"
-                              sx={{ mb: 0.5 }}
-                            />
-                          </Tooltip>
+                          <InfoTooltip
+                            title={
+                              <Typography>
+                                <Trans t={t} i18nKey="upOptReshape.tooltip">
+                                  Evaluate level 20 artifacts as reshape
+                                  candidates. Each eligible artifact is scored
+                                  once per substat pair, for 6 total
+                                  combinations.
+                                  <br />
+                                  Note: This requires importing your data using{' '}
+                                  <Link href="/#/scanner">Irminsul</Link>
+                                </Trans>
+                              </Typography>
+                            }
+                          />
                         </Box>
                         <Box>
                           <Typography variant="body2" color="text.secondary">
@@ -657,13 +664,11 @@ export default function TabUpopt() {
                             }
                             label={t('upOptDefine.label')}
                           />
-                          <Tooltip arrow title={t('upOptDefine.tooltip')}>
-                            <InfoIcon
-                              fontSize="small"
-                              color="action"
-                              sx={{ mb: 0.5 }}
-                            />
-                          </Tooltip>
+                          <InfoTooltip
+                            title={
+                              <Typography>{t('upOptDefine.label')}</Typography>
+                            }
+                          />
                         </Box>
                         <Box>
                           <Typography variant="body2" color="text.secondary">
