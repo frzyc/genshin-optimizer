@@ -16,7 +16,7 @@ import {
 } from '@genshin-optimizer/gi/sheets'
 import type { dataContextObj } from '@genshin-optimizer/gi/ui'
 import { DataContext, DocumentDisplay } from '@genshin-optimizer/gi/ui'
-import { input, tally } from '@genshin-optimizer/gi/wr'
+import { input, one, tally } from '@genshin-optimizer/gi/wr'
 import {
   CardContent,
   CardHeader,
@@ -220,9 +220,13 @@ function TeamResonanceDisplay({ resonances }: { resonances: IResonance[] }) {
 }
 
 function Reactions() {
+  const { data } = useContext(DataContext)
   const { t } = useTranslation('sheet')
+  const show = reactionConditionals.some(
+    (cond) => data.get(cond.canShow ?? one).value
+  )
   return (
-    <CardThemed bgt="light" sx={{ width: '100%' }}>
+    <CardThemed bgt="light" sx={{ opacity: show ? 1 : 0.5, width: '100%' }}>
       <CardHeader
         title={t('elementalReaction.name')}
         titleTypographyProps={{ variant: 'h6' }}
