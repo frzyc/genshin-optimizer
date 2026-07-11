@@ -5,6 +5,7 @@ import {
   evalIfFunc,
   layeredAssignment,
 } from '@genshin-optimizer/common/util'
+import type { ArtCharDatabase } from '@genshin-optimizer/gi/db'
 import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { Translate } from '@genshin-optimizer/gi/i18n'
 import type {
@@ -67,31 +68,7 @@ function SimpleConditionalSelector({
   const { data } = useContext(DataContext)
   const database = useDatabase()
 
-  const setConditional = useCallback(
-    (v?: string) => {
-      if (conditional.path[0] === 'resonance')
-        database.teams.set(teamId, (team) => {
-          const conditionalValues = deepClone(team.conditional)
-          if (v) {
-            layeredAssignment(conditionalValues, conditional.path, v)
-          } else {
-            deletePropPath(conditionalValues, conditional.path)
-          }
-          team.conditional = conditionalValues
-        })
-      else
-        database.teamChars.set(teamCharId, (teamChar) => {
-          const conditionalValues = deepClone(teamChar.conditional)
-          if (v) {
-            layeredAssignment(conditionalValues, conditional.path, v)
-          } else {
-            deletePropPath(conditionalValues, conditional.path)
-          }
-          teamChar.conditional = conditionalValues
-        })
-    },
-    [database, conditional.path, teamCharId, teamId]
-  )
+  const setConditional = useSetConditionalCallback(database, teamId, teamCharId)
 
   const conditionalValue = data.get(conditional.value).value
   const [stateKey, st] = Object.entries(evalIfFunc(conditional.states, data))[0]
@@ -104,7 +81,12 @@ function SimpleConditionalSelector({
       size="small"
       sx={{ borderRadius: 0 }}
       color={conditionalValue ? 'success' : 'primary'}
-      onClick={() => setConditional(conditionalValue ? undefined : stateKey)}
+      onClick={() =>
+        setConditional(
+          conditional.path,
+          conditionalValue ? undefined : stateKey
+        )
+      }
       disabled={disabled}
       startIcon={
         conditionalValue ? <CheckBoxIcon /> : <CheckBoxOutlineBlankIcon />
@@ -125,31 +107,7 @@ function ExclusiveConditionalSelector({
   const { teamId, teamCharId } = useContext(TeamCharacterContext)
   const { data } = useContext(DataContext)
   const database = useDatabase()
-  const setConditional = useCallback(
-    (v?: string) => {
-      if (conditional.path[0] === 'resonance')
-        database.teams.set(teamId, (team) => {
-          const conditionalValues = deepClone(team.conditional)
-          if (v) {
-            layeredAssignment(conditionalValues, conditional.path, v)
-          } else {
-            deletePropPath(conditionalValues, conditional.path)
-          }
-          team.conditional = conditionalValues
-        })
-      else
-        database.teamChars.set(teamCharId, (teamChar) => {
-          const conditionalValues = deepClone(teamChar.conditional)
-          if (v) {
-            layeredAssignment(conditionalValues, conditional.path, v)
-          } else {
-            deletePropPath(conditionalValues, conditional.path)
-          }
-          teamChar.conditional = conditionalValues
-        })
-    },
-    [database, conditional.path, teamCharId, teamId]
-  )
+  const setConditional = useSetConditionalCallback(database, teamId, teamCharId)
 
   const conditionalValue = data.get(conditional.value).value
   const condStates = evalIfFunc(conditional.states, data)
@@ -175,7 +133,7 @@ function ExclusiveConditionalSelector({
       disabled={disabled}
     >
       <MenuItem
-        onClick={() => setConditional()}
+        onClick={() => setConditional(conditional.path)}
         selected={!state}
         disabled={!state}
       >
@@ -185,7 +143,7 @@ function ExclusiveConditionalSelector({
       {Object.entries(condStates).map(([stateKey, st]) => (
         <MenuItem
           key={stateKey}
-          onClick={() => setConditional(stateKey)}
+          onClick={() => setConditional(conditional.path, stateKey)}
           selected={conditionalValue === stateKey}
           disabled={conditionalValue === stateKey}
         >
@@ -206,31 +164,7 @@ function MultipleConditionalSelector({
   const { teamId, teamCharId } = useContext(TeamCharacterContext)
   const { data } = useContext(DataContext)
   const database = useDatabase()
-  const setConditional = useCallback(
-    (path: readonly string[], v?: string) => {
-      if (path[0] === 'resonance')
-        database.teamChars.set(teamId, (team) => {
-          const conditionalValues = deepClone(team.conditional)
-          if (v) {
-            layeredAssignment(conditionalValues, path, v)
-          } else {
-            deletePropPath(conditionalValues, path)
-          }
-          team.conditional = conditionalValues
-        })
-      else
-        database.teamChars.set(teamCharId, (teamChar) => {
-          const conditionalValues = deepClone(teamChar.conditional)
-          if (v) {
-            layeredAssignment(conditionalValues, path, v)
-          } else {
-            deletePropPath(conditionalValues, path)
-          }
-          teamChar.conditional = conditionalValues
-        })
-    },
-    [database, teamCharId, teamId]
-  )
+  const setConditional = useSetConditionalCallback(database, teamId, teamCharId)
 
   return (
     <ButtonGroup
@@ -299,4 +233,37 @@ function getCondName(condName: ReactNode): ReactNode {
     return <Translate ns={ns} key18={key} values={values} useBadge />
   }
   return condName
+}
+
+const teamConditionals = ['resonance', 'reaction']
+function useSetConditionalCallback(
+  database: ArtCharDatabase,
+  teamId: string,
+  teamCharId: string
+) {
+  return useCallback(
+    (path: readonly string[], v?: string) => {
+      if (teamConditionals.includes(path[0]))
+        database.teams.set(teamId, (team) => {
+          const conditionalValues = deepClone(team.conditional)
+          if (v) {
+            layeredAssignment(conditionalValues, path, v)
+          } else {
+            deletePropPath(conditionalValues, path)
+          }
+          team.conditional = conditionalValues
+        })
+      else
+        database.teamChars.set(teamCharId, (teamChar) => {
+          const conditionalValues = deepClone(teamChar.conditional)
+          if (v) {
+            layeredAssignment(conditionalValues, path, v)
+          } else {
+            deletePropPath(conditionalValues, path)
+          }
+          teamChar.conditional = conditionalValues
+        })
+    },
+    [database, teamId, teamCharId]
+  )
 }

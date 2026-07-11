@@ -53,11 +53,6 @@ const BOT_PX = 0
 const SECTION_SPACING_PX = 33
 const SectionNumContext = createContext(0)
 export function CharacterOptDisplay() {
-  const [statHighlight, setStatHighlight] = useState('')
-  const statHLContextObj = useMemo(
-    () => ({ statHighlight, setStatHighlight }),
-    [statHighlight, setStatHighlight]
-  )
   const sections: Array<[key: string, content: ReactNode]> = useMemo(() => {
     return [
       ['char', <CharacterSection key="char" />],
@@ -67,19 +62,17 @@ export function CharacterOptDisplay() {
   }, [])
 
   return (
-    <StatHighlightContext.Provider value={statHLContextObj}>
-      <OptTargetTagRowSxProvider>
-        <SectionNumContext.Provider value={sections.length}>
-          <Stack gap={1}>
-            {sections.map(([key, content], i) => (
-              <Section key={key} title={key} index={i} zIndex={100}>
-                {content}
-              </Section>
-            ))}
-          </Stack>
-        </SectionNumContext.Provider>
-      </OptTargetTagRowSxProvider>
-    </StatHighlightContext.Provider>
+    <OptTargetTagRowSxProvider>
+      <SectionNumContext.Provider value={sections.length}>
+        <Stack gap={1}>
+          {sections.map(([key, content], i) => (
+            <Section key={key} title={key} index={i} zIndex={100}>
+              {content}
+            </Section>
+          ))}
+        </Stack>
+      </SectionNumContext.Provider>
+    </OptTargetTagRowSxProvider>
   )
 }
 function Section({
@@ -135,6 +128,11 @@ function CharacterSection() {
   const [editorKey, setCharacterKey] = useState<CharacterKey | undefined>(
     undefined
   )
+  const [statHighlight, setStatHighlight] = useState('')
+  const statHLContextObj = useMemo(
+    () => ({ statHighlight, setStatHighlight }),
+    [statHighlight, setStatHighlight]
+  )
   const onClick = useCallback(() => {
     character?.key && setCharacterKey(character.key)
   }, [character])
@@ -171,7 +169,7 @@ function CharacterSection() {
   const isNotXs = useMediaQuery(theme.breakpoints.up('sm'))
 
   return (
-    <>
+    <StatHighlightContext.Provider value={statHLContextObj}>
       <CharacterEditor
         characterKey={editorKey}
         onClose={() => setCharacterKey(undefined)}
@@ -250,12 +248,14 @@ function CharacterSection() {
             </Grid>
           </CardContent>
         </CardThemed>
-        <DebugListingsDisplay
-          formulasRead={own.listing.formulas}
-          buffsRead={own.listing.buffs}
-        />
+        {shouldShowDevComponents && (
+          <DebugListingsDisplay
+            formulasRead={own.listing.formulas}
+            buffsRead={own.listing.buffs}
+          />
+        )}
       </Stack>
-    </>
+    </StatHighlightContext.Provider>
   )
 }
 

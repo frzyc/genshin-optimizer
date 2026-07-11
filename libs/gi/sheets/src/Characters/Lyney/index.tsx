@@ -187,7 +187,9 @@ const dmgFormulas = {
       input.total.hp
     ),
     pyrotechnic: dmgNode('atk', dm.charged.pyrotechnicDmg, 'charged', hat_addl),
-    spiritbreath: dmgNode('atk', dm.charged.thornDmg, 'charged', hit_ele_pyro),
+    spiritbreath: dmgNode('atk', dm.charged.thornDmg, 'charged', {
+      hit: { ele: constant('pyro'), reaction: constant('') },
+    }),
   },
   plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {

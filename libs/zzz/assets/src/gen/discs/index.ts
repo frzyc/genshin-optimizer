@@ -21,9 +21,11 @@ import ShiningAria from './ShiningAria'
 import ShockstarDisco from './ShockstarDisco'
 import SoulRock from './SoulRock'
 import SwingJazz from './SwingJazz'
+import TheSkyAblaze from './TheSkyAblaze'
 import ThunderMetal from './ThunderMetal'
 import WhiteWaterBallad from './WhiteWaterBallad'
 import WoodpeckerElectro from './WoodpeckerElectro'
+import WutheringSalon from './WutheringSalon'
 import YunkuiTales from './YunkuiTales'
 
 const data = {
@@ -49,9 +51,11 @@ const data = {
   ShockstarDisco,
   SoulRock,
   SwingJazz,
+  TheSkyAblaze,
   ThunderMetal,
   WhiteWaterBallad,
   WoodpeckerElectro,
+  WutheringSalon,
   YunkuiTales,
 } as const
 export default data

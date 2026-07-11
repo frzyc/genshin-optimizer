@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -79,7 +83,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -113,7 +121,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -157,7 +169,7 @@
   "constellation4": {
     "name": "Dança da Lua Nevada e Flauta",
     "description": {
-      "0": "Após Freminet desencadear uma reação de Congelamento, Quebrar Gelo ou Supercondução, aumenta seu ATQ em 9%. Esse efeito dura 6s e pode ser acumulado 2 vezes, podendo ser desencadeado uma vez a cada 0.3s."
+      "0": "Após Freminet desencadear uma reação de Congelamento, Quebrar Gelo, Supercondutor ou Supercondutor Estelar, aumenta seu ATQ em 9%. Esse efeito dura 6s e pode ser acumulado 2 vezes, podendo ser desencadeado uma vez a cada 0.3s."
     }
   },
   "constellation5": {
@@ -170,7 +182,7 @@
   "constellation6": {
     "name": "Momento do Despertar",
     "description": {
-      "0": "Após Freminet desencadear uma reação de Congelamento, Quebrar Gelo ou Supercondução, aumenta seu Dano CRIT em 12%. Esse efeito dura 6s e pode ser acumulado 3 vezes, podendo ser desencadeado uma vez a cada 0.3s."
+      "0": "Após Freminet desencadear uma reação de Congelamento, Quebrar Gelo, Supercondutor ou Supercondutor Estelar aumenta seu Dano CRIT em 12%. Esse efeito dura 6s e pode ser acumulado 3 vezes, podendo ser desencadeado uma vez a cada 0.3s."
     }
   }
 }

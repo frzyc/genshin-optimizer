@@ -13,7 +13,7 @@ import {
   DiscSheetDisplay,
 } from '@genshin-optimizer/zzz/formula-ui'
 import { Box, Button, ButtonGroup, Grid, Typography } from '@mui/material'
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 
 export function DiscSetFilter({
   discBySlot,
@@ -45,6 +45,16 @@ export function DiscSetFilter({
 
     return discSetBySlot
   }, [discBySlot])
+  const [showAllSets, setShowAllSets] = useState(false)
+  const visibleSetKeys = useMemo(() => {
+    if (showAllSets) return allDiscSetKeys
+    const keys = new Set<DiscSetKey>([...setFilter2, ...setFilter4])
+    for (const setKey of allDiscSetKeys) {
+      const counts = discSetBySlot[setKey]
+      if (Object.values(counts).some((count) => count > 0)) keys.add(setKey)
+    }
+    return allDiscSetKeys.filter((key) => keys.has(key))
+  }, [discSetBySlot, setFilter2, setFilter4, showAllSets])
   return (
     <>
       <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
@@ -57,6 +67,9 @@ export function DiscSetFilter({
         <Button disabled={!setFilter2.length} onClick={() => setSetFilter2([])}>
           Reset 2p filter
         </Button>
+        <Button onClick={() => setShowAllSets((v) => !v)}>
+          {showAllSets ? 'Show relevant sets' : 'Show all sets'}
+        </Button>
       </Box>
 
       <Box>
@@ -66,7 +79,7 @@ export function DiscSetFilter({
             conditionals={conditionals}
           >
             <Grid container spacing={1}>
-              {allDiscSetKeys.map((d) => (
+              {visibleSetKeys.map((d) => (
                 <Grid item key={d} xs={1} md={2} lg={3}>
                   <AdvSetFilterDiscCard
                     numSlot={discSetBySlot[d]}

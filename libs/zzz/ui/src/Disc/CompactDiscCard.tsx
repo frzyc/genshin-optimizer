@@ -180,8 +180,6 @@ export function CompactDiscCard({
                       src={discDefIcon(disc.setKey)}
                       style={{
                         transform: `rotate(${rotation}deg)`,
-                      }}
-                      sx={{
                         width: 'auto',
                         float: 'right',
                         height: '92px',

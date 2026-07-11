@@ -38,6 +38,19 @@ export const formulas = {
       name: 'disorderDmgInst_fire',
     },
   },
+  vortexDmgInst_fire: {
+    sheet: 'OrphieMagus',
+    name: 'vortexDmgInst_fire',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'OrphieMagus',
+      attribute: 'fire',
+      damageType1: 'vortex',
+      name: 'vortexDmgInst_fire',
+    },
+  },
   abloomDmgInst: {
     sheet: 'OrphieMagus',
     name: 'abloomDmgInst',
@@ -76,9 +89,9 @@ export const formulas = {
       name: 'dazeInst',
     },
   },
-  BasicAttackHighPressureFlamethrower_0_dmg: {
+  'BasicAttackHighPressureFlamethrower_0:standardDmg': {
     sheet: 'OrphieMagus',
-    name: 'BasicAttackHighPressureFlamethrower_0_dmg',
+    name: 'BasicAttackHighPressureFlamethrower_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -87,12 +100,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackHighPressureFlamethrower_0_dmg',
+      name: 'BasicAttackHighPressureFlamethrower_0',
     },
   },
-  BasicAttackHighPressureFlamethrower_0_daze: {
+  'BasicAttackHighPressureFlamethrower_0:dazeBuildup': {
     sheet: 'OrphieMagus',
-    name: 'BasicAttackHighPressureFlamethrower_0_daze',
+    name: 'BasicAttackHighPressureFlamethrower_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -101,12 +114,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackHighPressureFlamethrower_0_daze',
+      name: 'BasicAttackHighPressureFlamethrower_0',
     },
   },
-  BasicAttackHighPressureFlamethrower_0_anomBuildup: {
+  'BasicAttackHighPressureFlamethrower_0:anomBuildup': {
     sheet: 'OrphieMagus',
-    name: 'BasicAttackHighPressureFlamethrower_0_anomBuildup',
+    name: 'BasicAttackHighPressureFlamethrower_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -115,12 +128,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackHighPressureFlamethrower_0_anomBuildup',
+      name: 'BasicAttackHighPressureFlamethrower_0',
     },
   },
-  BasicAttackHighPressureFlamethrower_1_dmg: {
+  'BasicAttackHighPressureFlamethrower_1:standardDmg': {
     sheet: 'OrphieMagus',
-    name: 'BasicAttackHighPressureFlamethrower_1_dmg',
+    name: 'BasicAttackHighPressureFlamethrower_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -129,12 +142,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackHighPressureFlamethrower_1_dmg',
+      name: 'BasicAttackHighPressureFlamethrower_1',
     },
   },
-  BasicAttackHighPressureFlamethrower_1_daze: {
+  'BasicAttackHighPressureFlamethrower_1:dazeBuildup': {
     sheet: 'OrphieMagus',
-    name: 'BasicAttackHighPressureFlamethrower_1_daze',
+    name: 'BasicAttackHighPressureFlamethrower_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -143,12 +156,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackHighPressureFlamethrower_1_daze',
+      name: 'BasicAttackHighPressureFlamethrower_1',
     },
   },
-  BasicAttackHighPressureFlamethrower_1_anomBuildup: {
+  'BasicAttackHighPressureFlamethrower_1:anomBuildup': {
     sheet: 'OrphieMagus',
-    name: 'BasicAttackHighPressureFlamethrower_1_anomBuildup',
+    name: 'BasicAttackHighPressureFlamethrower_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -157,12 +170,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackHighPressureFlamethrower_1_anomBuildup',
+      name: 'BasicAttackHighPressureFlamethrower_1',
     },
   },
-  BasicAttackHighPressureFlamethrower_2_dmg: {
+  'BasicAttackHighPressureFlamethrower_2:standardDmg': {
     sheet: 'OrphieMagus',
-    name: 'BasicAttackHighPressureFlamethrower_2_dmg',
+    name: 'BasicAttackHighPressureFlamethrower_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -171,12 +184,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackHighPressureFlamethrower_2_dmg',
+      name: 'BasicAttackHighPressureFlamethrower_2',
     },
   },
-  BasicAttackHighPressureFlamethrower_2_daze: {
+  'BasicAttackHighPressureFlamethrower_2:dazeBuildup': {
     sheet: 'OrphieMagus',
-    name: 'BasicAttackHighPressureFlamethrower_2_daze',
+    name: 'BasicAttackHighPressureFlamethrower_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -185,12 +198,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackHighPressureFlamethrower_2_daze',
+      name: 'BasicAttackHighPressureFlamethrower_2',
     },
   },
-  BasicAttackHighPressureFlamethrower_2_anomBuildup: {
+  'BasicAttackHighPressureFlamethrower_2:anomBuildup': {
     sheet: 'OrphieMagus',
-    name: 'BasicAttackHighPressureFlamethrower_2_anomBuildup',
+    name: 'BasicAttackHighPressureFlamethrower_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -199,12 +212,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackHighPressureFlamethrower_2_anomBuildup',
+      name: 'BasicAttackHighPressureFlamethrower_2',
     },
   },
-  BasicAttackHighPressureFlamethrower_3_dmg: {
+  'BasicAttackHighPressureFlamethrower_3:standardDmg': {
     sheet: 'OrphieMagus',
-    name: 'BasicAttackHighPressureFlamethrower_3_dmg',
+    name: 'BasicAttackHighPressureFlamethrower_3:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -213,12 +226,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackHighPressureFlamethrower_3_dmg',
+      name: 'BasicAttackHighPressureFlamethrower_3',
     },
   },
-  BasicAttackHighPressureFlamethrower_3_daze: {
+  'BasicAttackHighPressureFlamethrower_3:dazeBuildup': {
     sheet: 'OrphieMagus',
-    name: 'BasicAttackHighPressureFlamethrower_3_daze',
+    name: 'BasicAttackHighPressureFlamethrower_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -227,12 +240,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackHighPressureFlamethrower_3_daze',
+      name: 'BasicAttackHighPressureFlamethrower_3',
     },
   },
-  BasicAttackHighPressureFlamethrower_3_anomBuildup: {
+  'BasicAttackHighPressureFlamethrower_3:anomBuildup': {
     sheet: 'OrphieMagus',
-    name: 'BasicAttackHighPressureFlamethrower_3_anomBuildup',
+    name: 'BasicAttackHighPressureFlamethrower_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -241,12 +254,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackHighPressureFlamethrower_3_anomBuildup',
+      name: 'BasicAttackHighPressureFlamethrower_3',
     },
   },
-  BasicAttackHighPressureFlamethrower_4_dmg: {
+  'BasicAttackHighPressureFlamethrower_4:standardDmg': {
     sheet: 'OrphieMagus',
-    name: 'BasicAttackHighPressureFlamethrower_4_dmg',
+    name: 'BasicAttackHighPressureFlamethrower_4:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -255,12 +268,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackHighPressureFlamethrower_4_dmg',
+      name: 'BasicAttackHighPressureFlamethrower_4',
     },
   },
-  BasicAttackHighPressureFlamethrower_4_daze: {
+  'BasicAttackHighPressureFlamethrower_4:dazeBuildup': {
     sheet: 'OrphieMagus',
-    name: 'BasicAttackHighPressureFlamethrower_4_daze',
+    name: 'BasicAttackHighPressureFlamethrower_4:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -269,12 +282,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackHighPressureFlamethrower_4_daze',
+      name: 'BasicAttackHighPressureFlamethrower_4',
     },
   },
-  BasicAttackHighPressureFlamethrower_4_anomBuildup: {
+  'BasicAttackHighPressureFlamethrower_4:anomBuildup': {
     sheet: 'OrphieMagus',
-    name: 'BasicAttackHighPressureFlamethrower_4_anomBuildup',
+    name: 'BasicAttackHighPressureFlamethrower_4:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -283,12 +296,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackHighPressureFlamethrower_4_anomBuildup',
+      name: 'BasicAttackHighPressureFlamethrower_4',
     },
   },
-  BasicAttackHighPressureFlamethrower_5_dmg: {
+  'BasicAttackHighPressureFlamethrower_5:standardDmg': {
     sheet: 'OrphieMagus',
-    name: 'BasicAttackHighPressureFlamethrower_5_dmg',
+    name: 'BasicAttackHighPressureFlamethrower_5:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -298,12 +311,12 @@ export const formulas = {
       damageType1: 'basic',
       damageType2: 'aftershock',
       skillType: 'basicSkill',
-      name: 'BasicAttackHighPressureFlamethrower_5_dmg',
+      name: 'BasicAttackHighPressureFlamethrower_5',
     },
   },
-  BasicAttackHighPressureFlamethrower_5_daze: {
+  'BasicAttackHighPressureFlamethrower_5:dazeBuildup': {
     sheet: 'OrphieMagus',
-    name: 'BasicAttackHighPressureFlamethrower_5_daze',
+    name: 'BasicAttackHighPressureFlamethrower_5:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -313,12 +326,12 @@ export const formulas = {
       damageType1: 'basic',
       damageType2: 'aftershock',
       skillType: 'basicSkill',
-      name: 'BasicAttackHighPressureFlamethrower_5_daze',
+      name: 'BasicAttackHighPressureFlamethrower_5',
     },
   },
-  BasicAttackHighPressureFlamethrower_5_anomBuildup: {
+  'BasicAttackHighPressureFlamethrower_5:anomBuildup': {
     sheet: 'OrphieMagus',
-    name: 'BasicAttackHighPressureFlamethrower_5_anomBuildup',
+    name: 'BasicAttackHighPressureFlamethrower_5:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -328,12 +341,12 @@ export const formulas = {
       damageType1: 'basic',
       damageType2: 'aftershock',
       skillType: 'basicSkill',
-      name: 'BasicAttackHighPressureFlamethrower_5_anomBuildup',
+      name: 'BasicAttackHighPressureFlamethrower_5',
     },
   },
-  DashAttackRushCommand_0_dmg: {
+  'DashAttackRushCommand_0:standardDmg': {
     sheet: 'OrphieMagus',
-    name: 'DashAttackRushCommand_0_dmg',
+    name: 'DashAttackRushCommand_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -342,12 +355,12 @@ export const formulas = {
       damageType1: 'dash',
       attribute: 'physical',
       skillType: 'dodgeSkill',
-      name: 'DashAttackRushCommand_0_dmg',
+      name: 'DashAttackRushCommand_0',
     },
   },
-  DashAttackRushCommand_0_daze: {
+  'DashAttackRushCommand_0:dazeBuildup': {
     sheet: 'OrphieMagus',
-    name: 'DashAttackRushCommand_0_daze',
+    name: 'DashAttackRushCommand_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -356,12 +369,12 @@ export const formulas = {
       damageType1: 'dash',
       attribute: 'physical',
       skillType: 'dodgeSkill',
-      name: 'DashAttackRushCommand_0_daze',
+      name: 'DashAttackRushCommand_0',
     },
   },
-  DashAttackRushCommand_0_anomBuildup: {
+  'DashAttackRushCommand_0:anomBuildup': {
     sheet: 'OrphieMagus',
-    name: 'DashAttackRushCommand_0_anomBuildup',
+    name: 'DashAttackRushCommand_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -370,12 +383,12 @@ export const formulas = {
       damageType1: 'dash',
       attribute: 'physical',
       skillType: 'dodgeSkill',
-      name: 'DashAttackRushCommand_0_anomBuildup',
+      name: 'DashAttackRushCommand_0',
     },
   },
-  DodgeCounterCounterStrikeOpportunity_0_dmg: {
+  'DodgeCounterCounterStrikeOpportunity_0:standardDmg': {
     sheet: 'OrphieMagus',
-    name: 'DodgeCounterCounterStrikeOpportunity_0_dmg',
+    name: 'DodgeCounterCounterStrikeOpportunity_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -384,12 +397,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterCounterStrikeOpportunity_0_dmg',
+      name: 'DodgeCounterCounterStrikeOpportunity_0',
     },
   },
-  DodgeCounterCounterStrikeOpportunity_0_daze: {
+  'DodgeCounterCounterStrikeOpportunity_0:dazeBuildup': {
     sheet: 'OrphieMagus',
-    name: 'DodgeCounterCounterStrikeOpportunity_0_daze',
+    name: 'DodgeCounterCounterStrikeOpportunity_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -398,12 +411,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterCounterStrikeOpportunity_0_daze',
+      name: 'DodgeCounterCounterStrikeOpportunity_0',
     },
   },
-  DodgeCounterCounterStrikeOpportunity_0_anomBuildup: {
+  'DodgeCounterCounterStrikeOpportunity_0:anomBuildup': {
     sheet: 'OrphieMagus',
-    name: 'DodgeCounterCounterStrikeOpportunity_0_anomBuildup',
+    name: 'DodgeCounterCounterStrikeOpportunity_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -412,12 +425,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterCounterStrikeOpportunity_0_anomBuildup',
+      name: 'DodgeCounterCounterStrikeOpportunity_0',
     },
   },
-  SpecialAttackBlazingChamber_0_dmg: {
+  'SpecialAttackBlazingChamber_0:standardDmg': {
     sheet: 'OrphieMagus',
-    name: 'SpecialAttackBlazingChamber_0_dmg',
+    name: 'SpecialAttackBlazingChamber_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -426,12 +439,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackBlazingChamber_0_dmg',
+      name: 'SpecialAttackBlazingChamber_0',
     },
   },
-  SpecialAttackBlazingChamber_0_daze: {
+  'SpecialAttackBlazingChamber_0:dazeBuildup': {
     sheet: 'OrphieMagus',
-    name: 'SpecialAttackBlazingChamber_0_daze',
+    name: 'SpecialAttackBlazingChamber_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -440,12 +453,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackBlazingChamber_0_daze',
+      name: 'SpecialAttackBlazingChamber_0',
     },
   },
-  SpecialAttackBlazingChamber_0_anomBuildup: {
+  'SpecialAttackBlazingChamber_0:anomBuildup': {
     sheet: 'OrphieMagus',
-    name: 'SpecialAttackBlazingChamber_0_anomBuildup',
+    name: 'SpecialAttackBlazingChamber_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -454,12 +467,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackBlazingChamber_0_anomBuildup',
+      name: 'SpecialAttackBlazingChamber_0',
     },
   },
-  SpecialAttackCorrosiveFlash_0_dmg: {
+  'SpecialAttackCorrosiveFlash_0:standardDmg': {
     sheet: 'OrphieMagus',
-    name: 'SpecialAttackCorrosiveFlash_0_dmg',
+    name: 'SpecialAttackCorrosiveFlash_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -469,12 +482,12 @@ export const formulas = {
       damageType1: 'special',
       damageType2: 'aftershock',
       skillType: 'specialSkill',
-      name: 'SpecialAttackCorrosiveFlash_0_dmg',
+      name: 'SpecialAttackCorrosiveFlash_0',
     },
   },
-  SpecialAttackCorrosiveFlash_0_daze: {
+  'SpecialAttackCorrosiveFlash_0:dazeBuildup': {
     sheet: 'OrphieMagus',
-    name: 'SpecialAttackCorrosiveFlash_0_daze',
+    name: 'SpecialAttackCorrosiveFlash_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -484,12 +497,12 @@ export const formulas = {
       damageType1: 'special',
       damageType2: 'aftershock',
       skillType: 'specialSkill',
-      name: 'SpecialAttackCorrosiveFlash_0_daze',
+      name: 'SpecialAttackCorrosiveFlash_0',
     },
   },
-  SpecialAttackCorrosiveFlash_0_anomBuildup: {
+  'SpecialAttackCorrosiveFlash_0:anomBuildup': {
     sheet: 'OrphieMagus',
-    name: 'SpecialAttackCorrosiveFlash_0_anomBuildup',
+    name: 'SpecialAttackCorrosiveFlash_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -499,57 +512,12 @@ export const formulas = {
       damageType1: 'special',
       damageType2: 'aftershock',
       skillType: 'specialSkill',
-      name: 'SpecialAttackCorrosiveFlash_0_anomBuildup',
+      name: 'SpecialAttackCorrosiveFlash_0',
     },
   },
-  EXSpecialAttackWatchYourStep_0_dmg: {
+  'EXSpecialAttackWatchYourStep_0:standardDmg': {
     sheet: 'OrphieMagus',
-    name: 'EXSpecialAttackWatchYourStep_0_dmg',
-    tag: {
-      et: 'own',
-      qt: 'formula',
-      q: 'standardDmg',
-      sheet: 'OrphieMagus',
-      attribute: 'fire',
-      damageType1: 'exSpecial',
-      damageType2: 'aftershock',
-      skillType: 'specialSkill',
-      name: 'EXSpecialAttackWatchYourStep_0_dmg',
-    },
-  },
-  EXSpecialAttackWatchYourStep_0_daze: {
-    sheet: 'OrphieMagus',
-    name: 'EXSpecialAttackWatchYourStep_0_daze',
-    tag: {
-      et: 'own',
-      qt: 'formula',
-      q: 'dazeBuildup',
-      sheet: 'OrphieMagus',
-      attribute: 'fire',
-      damageType1: 'exSpecial',
-      damageType2: 'aftershock',
-      skillType: 'specialSkill',
-      name: 'EXSpecialAttackWatchYourStep_0_daze',
-    },
-  },
-  EXSpecialAttackWatchYourStep_0_anomBuildup: {
-    sheet: 'OrphieMagus',
-    name: 'EXSpecialAttackWatchYourStep_0_anomBuildup',
-    tag: {
-      et: 'own',
-      qt: 'formula',
-      q: 'anomBuildup',
-      sheet: 'OrphieMagus',
-      attribute: 'fire',
-      damageType1: 'exSpecial',
-      damageType2: 'aftershock',
-      skillType: 'specialSkill',
-      name: 'EXSpecialAttackWatchYourStep_0_anomBuildup',
-    },
-  },
-  EXSpecialAttackCrimsonVortex_0_dmg: {
-    sheet: 'OrphieMagus',
-    name: 'EXSpecialAttackCrimsonVortex_0_dmg',
+    name: 'EXSpecialAttackWatchYourStep_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -559,12 +527,12 @@ export const formulas = {
       damageType1: 'exSpecial',
       damageType2: 'aftershock',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackCrimsonVortex_0_dmg',
+      name: 'EXSpecialAttackWatchYourStep_0',
     },
   },
-  EXSpecialAttackCrimsonVortex_0_daze: {
+  'EXSpecialAttackWatchYourStep_0:dazeBuildup': {
     sheet: 'OrphieMagus',
-    name: 'EXSpecialAttackCrimsonVortex_0_daze',
+    name: 'EXSpecialAttackWatchYourStep_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -574,12 +542,12 @@ export const formulas = {
       damageType1: 'exSpecial',
       damageType2: 'aftershock',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackCrimsonVortex_0_daze',
+      name: 'EXSpecialAttackWatchYourStep_0',
     },
   },
-  EXSpecialAttackCrimsonVortex_0_anomBuildup: {
+  'EXSpecialAttackWatchYourStep_0:anomBuildup': {
     sheet: 'OrphieMagus',
-    name: 'EXSpecialAttackCrimsonVortex_0_anomBuildup',
+    name: 'EXSpecialAttackWatchYourStep_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -589,12 +557,12 @@ export const formulas = {
       damageType1: 'exSpecial',
       damageType2: 'aftershock',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackCrimsonVortex_0_anomBuildup',
+      name: 'EXSpecialAttackWatchYourStep_0',
     },
   },
-  EXSpecialAttackHeatCharge_0_dmg: {
+  'EXSpecialAttackCrimsonVortex_0:standardDmg': {
     sheet: 'OrphieMagus',
-    name: 'EXSpecialAttackHeatCharge_0_dmg',
+    name: 'EXSpecialAttackCrimsonVortex_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -604,12 +572,12 @@ export const formulas = {
       damageType1: 'exSpecial',
       damageType2: 'aftershock',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackHeatCharge_0_dmg',
+      name: 'EXSpecialAttackCrimsonVortex_0',
     },
   },
-  EXSpecialAttackHeatCharge_0_daze: {
+  'EXSpecialAttackCrimsonVortex_0:dazeBuildup': {
     sheet: 'OrphieMagus',
-    name: 'EXSpecialAttackHeatCharge_0_daze',
+    name: 'EXSpecialAttackCrimsonVortex_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -619,12 +587,12 @@ export const formulas = {
       damageType1: 'exSpecial',
       damageType2: 'aftershock',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackHeatCharge_0_daze',
+      name: 'EXSpecialAttackCrimsonVortex_0',
     },
   },
-  EXSpecialAttackHeatCharge_0_anomBuildup: {
+  'EXSpecialAttackCrimsonVortex_0:anomBuildup': {
     sheet: 'OrphieMagus',
-    name: 'EXSpecialAttackHeatCharge_0_anomBuildup',
+    name: 'EXSpecialAttackCrimsonVortex_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -634,12 +602,12 @@ export const formulas = {
       damageType1: 'exSpecial',
       damageType2: 'aftershock',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackHeatCharge_0_anomBuildup',
+      name: 'EXSpecialAttackCrimsonVortex_0',
     },
   },
-  EXSpecialAttackFieryEruption_0_dmg: {
+  'EXSpecialAttackHeatCharge_0:standardDmg': {
     sheet: 'OrphieMagus',
-    name: 'EXSpecialAttackFieryEruption_0_dmg',
+    name: 'EXSpecialAttackHeatCharge_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -649,12 +617,12 @@ export const formulas = {
       damageType1: 'exSpecial',
       damageType2: 'aftershock',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackFieryEruption_0_dmg',
+      name: 'EXSpecialAttackHeatCharge_0',
     },
   },
-  EXSpecialAttackFieryEruption_0_daze: {
+  'EXSpecialAttackHeatCharge_0:dazeBuildup': {
     sheet: 'OrphieMagus',
-    name: 'EXSpecialAttackFieryEruption_0_daze',
+    name: 'EXSpecialAttackHeatCharge_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -664,12 +632,12 @@ export const formulas = {
       damageType1: 'exSpecial',
       damageType2: 'aftershock',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackFieryEruption_0_daze',
+      name: 'EXSpecialAttackHeatCharge_0',
     },
   },
-  EXSpecialAttackFieryEruption_0_anomBuildup: {
+  'EXSpecialAttackHeatCharge_0:anomBuildup': {
     sheet: 'OrphieMagus',
-    name: 'EXSpecialAttackFieryEruption_0_anomBuildup',
+    name: 'EXSpecialAttackHeatCharge_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -679,12 +647,57 @@ export const formulas = {
       damageType1: 'exSpecial',
       damageType2: 'aftershock',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackFieryEruption_0_anomBuildup',
+      name: 'EXSpecialAttackHeatCharge_0',
     },
   },
-  ChainAttackOverheatedBarrel_0_dmg: {
+  'EXSpecialAttackFieryEruption_0:standardDmg': {
     sheet: 'OrphieMagus',
-    name: 'ChainAttackOverheatedBarrel_0_dmg',
+    name: 'EXSpecialAttackFieryEruption_0:standardDmg',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'standardDmg',
+      sheet: 'OrphieMagus',
+      attribute: 'fire',
+      damageType1: 'exSpecial',
+      damageType2: 'aftershock',
+      skillType: 'specialSkill',
+      name: 'EXSpecialAttackFieryEruption_0',
+    },
+  },
+  'EXSpecialAttackFieryEruption_0:dazeBuildup': {
+    sheet: 'OrphieMagus',
+    name: 'EXSpecialAttackFieryEruption_0:dazeBuildup',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'dazeBuildup',
+      sheet: 'OrphieMagus',
+      attribute: 'fire',
+      damageType1: 'exSpecial',
+      damageType2: 'aftershock',
+      skillType: 'specialSkill',
+      name: 'EXSpecialAttackFieryEruption_0',
+    },
+  },
+  'EXSpecialAttackFieryEruption_0:anomBuildup': {
+    sheet: 'OrphieMagus',
+    name: 'EXSpecialAttackFieryEruption_0:anomBuildup',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomBuildup',
+      sheet: 'OrphieMagus',
+      attribute: 'fire',
+      damageType1: 'exSpecial',
+      damageType2: 'aftershock',
+      skillType: 'specialSkill',
+      name: 'EXSpecialAttackFieryEruption_0',
+    },
+  },
+  'ChainAttackOverheatedBarrel_0:standardDmg': {
+    sheet: 'OrphieMagus',
+    name: 'ChainAttackOverheatedBarrel_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -694,12 +707,12 @@ export const formulas = {
       damageType1: 'chain',
       damageType2: 'aftershock',
       skillType: 'chainSkill',
-      name: 'ChainAttackOverheatedBarrel_0_dmg',
+      name: 'ChainAttackOverheatedBarrel_0',
     },
   },
-  ChainAttackOverheatedBarrel_0_daze: {
+  'ChainAttackOverheatedBarrel_0:dazeBuildup': {
     sheet: 'OrphieMagus',
-    name: 'ChainAttackOverheatedBarrel_0_daze',
+    name: 'ChainAttackOverheatedBarrel_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -709,12 +722,12 @@ export const formulas = {
       damageType1: 'chain',
       damageType2: 'aftershock',
       skillType: 'chainSkill',
-      name: 'ChainAttackOverheatedBarrel_0_daze',
+      name: 'ChainAttackOverheatedBarrel_0',
     },
   },
-  ChainAttackOverheatedBarrel_0_anomBuildup: {
+  'ChainAttackOverheatedBarrel_0:anomBuildup': {
     sheet: 'OrphieMagus',
-    name: 'ChainAttackOverheatedBarrel_0_anomBuildup',
+    name: 'ChainAttackOverheatedBarrel_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -724,12 +737,12 @@ export const formulas = {
       damageType1: 'chain',
       damageType2: 'aftershock',
       skillType: 'chainSkill',
-      name: 'ChainAttackOverheatedBarrel_0_anomBuildup',
+      name: 'ChainAttackOverheatedBarrel_0',
     },
   },
-  UltimateDanceWithFire_0_dmg: {
+  'UltimateDanceWithFire_0:standardDmg': {
     sheet: 'OrphieMagus',
-    name: 'UltimateDanceWithFire_0_dmg',
+    name: 'UltimateDanceWithFire_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -739,12 +752,12 @@ export const formulas = {
       damageType1: 'chain',
       damageType2: 'aftershock',
       skillType: 'chainSkill',
-      name: 'UltimateDanceWithFire_0_dmg',
+      name: 'UltimateDanceWithFire_0',
     },
   },
-  UltimateDanceWithFire_0_daze: {
+  'UltimateDanceWithFire_0:dazeBuildup': {
     sheet: 'OrphieMagus',
-    name: 'UltimateDanceWithFire_0_daze',
+    name: 'UltimateDanceWithFire_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -754,12 +767,12 @@ export const formulas = {
       damageType1: 'chain',
       damageType2: 'aftershock',
       skillType: 'chainSkill',
-      name: 'UltimateDanceWithFire_0_daze',
+      name: 'UltimateDanceWithFire_0',
     },
   },
-  UltimateDanceWithFire_0_anomBuildup: {
+  'UltimateDanceWithFire_0:anomBuildup': {
     sheet: 'OrphieMagus',
-    name: 'UltimateDanceWithFire_0_anomBuildup',
+    name: 'UltimateDanceWithFire_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -769,12 +782,12 @@ export const formulas = {
       damageType1: 'chain',
       damageType2: 'aftershock',
       skillType: 'chainSkill',
-      name: 'UltimateDanceWithFire_0_anomBuildup',
+      name: 'UltimateDanceWithFire_0',
     },
   },
-  UltimateDanceWithFire_1_dmg: {
+  'UltimateDanceWithFire_1:standardDmg': {
     sheet: 'OrphieMagus',
-    name: 'UltimateDanceWithFire_1_dmg',
+    name: 'UltimateDanceWithFire_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -783,12 +796,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateDanceWithFire_1_dmg',
+      name: 'UltimateDanceWithFire_1',
     },
   },
-  UltimateDanceWithFire_1_daze: {
+  'UltimateDanceWithFire_1:dazeBuildup': {
     sheet: 'OrphieMagus',
-    name: 'UltimateDanceWithFire_1_daze',
+    name: 'UltimateDanceWithFire_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -797,12 +810,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateDanceWithFire_1_daze',
+      name: 'UltimateDanceWithFire_1',
     },
   },
-  UltimateDanceWithFire_1_anomBuildup: {
+  'UltimateDanceWithFire_1:anomBuildup': {
     sheet: 'OrphieMagus',
-    name: 'UltimateDanceWithFire_1_anomBuildup',
+    name: 'UltimateDanceWithFire_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -811,12 +824,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateDanceWithFire_1_anomBuildup',
+      name: 'UltimateDanceWithFire_1',
     },
   },
-  QuickAssistSearingSlash_0_dmg: {
+  'QuickAssistSearingSlash_0:standardDmg': {
     sheet: 'OrphieMagus',
-    name: 'QuickAssistSearingSlash_0_dmg',
+    name: 'QuickAssistSearingSlash_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -825,12 +838,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistSearingSlash_0_dmg',
+      name: 'QuickAssistSearingSlash_0',
     },
   },
-  QuickAssistSearingSlash_0_daze: {
+  'QuickAssistSearingSlash_0:dazeBuildup': {
     sheet: 'OrphieMagus',
-    name: 'QuickAssistSearingSlash_0_daze',
+    name: 'QuickAssistSearingSlash_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -839,12 +852,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistSearingSlash_0_daze',
+      name: 'QuickAssistSearingSlash_0',
     },
   },
-  QuickAssistSearingSlash_0_anomBuildup: {
+  'QuickAssistSearingSlash_0:anomBuildup': {
     sheet: 'OrphieMagus',
-    name: 'QuickAssistSearingSlash_0_anomBuildup',
+    name: 'QuickAssistSearingSlash_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -853,12 +866,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistSearingSlash_0_anomBuildup',
+      name: 'QuickAssistSearingSlash_0',
     },
   },
-  DefensiveAssistBlazingGunblade_0_dmg: {
+  'DefensiveAssistBlazingGunblade_0:standardDmg': {
     sheet: 'OrphieMagus',
-    name: 'DefensiveAssistBlazingGunblade_0_dmg',
+    name: 'DefensiveAssistBlazingGunblade_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -867,12 +880,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistBlazingGunblade_0_dmg',
+      name: 'DefensiveAssistBlazingGunblade_0',
     },
   },
-  DefensiveAssistBlazingGunblade_0_daze: {
+  'DefensiveAssistBlazingGunblade_0:dazeBuildup': {
     sheet: 'OrphieMagus',
-    name: 'DefensiveAssistBlazingGunblade_0_daze',
+    name: 'DefensiveAssistBlazingGunblade_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -881,12 +894,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistBlazingGunblade_0_daze',
+      name: 'DefensiveAssistBlazingGunblade_0',
     },
   },
-  DefensiveAssistBlazingGunblade_0_anomBuildup: {
+  'DefensiveAssistBlazingGunblade_0:anomBuildup': {
     sheet: 'OrphieMagus',
-    name: 'DefensiveAssistBlazingGunblade_0_anomBuildup',
+    name: 'DefensiveAssistBlazingGunblade_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -895,12 +908,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistBlazingGunblade_0_anomBuildup',
+      name: 'DefensiveAssistBlazingGunblade_0',
     },
   },
-  DefensiveAssistBlazingGunblade_1_dmg: {
+  'DefensiveAssistBlazingGunblade_1:standardDmg': {
     sheet: 'OrphieMagus',
-    name: 'DefensiveAssistBlazingGunblade_1_dmg',
+    name: 'DefensiveAssistBlazingGunblade_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -909,12 +922,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistBlazingGunblade_1_dmg',
+      name: 'DefensiveAssistBlazingGunblade_1',
     },
   },
-  DefensiveAssistBlazingGunblade_1_daze: {
+  'DefensiveAssistBlazingGunblade_1:dazeBuildup': {
     sheet: 'OrphieMagus',
-    name: 'DefensiveAssistBlazingGunblade_1_daze',
+    name: 'DefensiveAssistBlazingGunblade_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -923,12 +936,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistBlazingGunblade_1_daze',
+      name: 'DefensiveAssistBlazingGunblade_1',
     },
   },
-  DefensiveAssistBlazingGunblade_1_anomBuildup: {
+  'DefensiveAssistBlazingGunblade_1:anomBuildup': {
     sheet: 'OrphieMagus',
-    name: 'DefensiveAssistBlazingGunblade_1_anomBuildup',
+    name: 'DefensiveAssistBlazingGunblade_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -937,12 +950,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistBlazingGunblade_1_anomBuildup',
+      name: 'DefensiveAssistBlazingGunblade_1',
     },
   },
-  DefensiveAssistBlazingGunblade_2_dmg: {
+  'DefensiveAssistBlazingGunblade_2:standardDmg': {
     sheet: 'OrphieMagus',
-    name: 'DefensiveAssistBlazingGunblade_2_dmg',
+    name: 'DefensiveAssistBlazingGunblade_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -951,12 +964,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistBlazingGunblade_2_dmg',
+      name: 'DefensiveAssistBlazingGunblade_2',
     },
   },
-  DefensiveAssistBlazingGunblade_2_daze: {
+  'DefensiveAssistBlazingGunblade_2:dazeBuildup': {
     sheet: 'OrphieMagus',
-    name: 'DefensiveAssistBlazingGunblade_2_daze',
+    name: 'DefensiveAssistBlazingGunblade_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -965,12 +978,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistBlazingGunblade_2_daze',
+      name: 'DefensiveAssistBlazingGunblade_2',
     },
   },
-  DefensiveAssistBlazingGunblade_2_anomBuildup: {
+  'DefensiveAssistBlazingGunblade_2:anomBuildup': {
     sheet: 'OrphieMagus',
-    name: 'DefensiveAssistBlazingGunblade_2_anomBuildup',
+    name: 'DefensiveAssistBlazingGunblade_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -979,12 +992,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistBlazingGunblade_2_anomBuildup',
+      name: 'DefensiveAssistBlazingGunblade_2',
     },
   },
-  AssistFollowUpBoilingPierce_0_dmg: {
+  'AssistFollowUpBoilingPierce_0:standardDmg': {
     sheet: 'OrphieMagus',
-    name: 'AssistFollowUpBoilingPierce_0_dmg',
+    name: 'AssistFollowUpBoilingPierce_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -993,12 +1006,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpBoilingPierce_0_dmg',
+      name: 'AssistFollowUpBoilingPierce_0',
     },
   },
-  AssistFollowUpBoilingPierce_0_daze: {
+  'AssistFollowUpBoilingPierce_0:dazeBuildup': {
     sheet: 'OrphieMagus',
-    name: 'AssistFollowUpBoilingPierce_0_daze',
+    name: 'AssistFollowUpBoilingPierce_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1007,12 +1020,12 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpBoilingPierce_0_daze',
+      name: 'AssistFollowUpBoilingPierce_0',
     },
   },
-  AssistFollowUpBoilingPierce_0_anomBuildup: {
+  'AssistFollowUpBoilingPierce_0:anomBuildup': {
     sheet: 'OrphieMagus',
-    name: 'AssistFollowUpBoilingPierce_0_anomBuildup',
+    name: 'AssistFollowUpBoilingPierce_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1021,7 +1034,7 @@ export const formulas = {
       attribute: 'fire',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpBoilingPierce_0_anomBuildup',
+      name: 'AssistFollowUpBoilingPierce_0',
     },
   },
   m6_dmg: {

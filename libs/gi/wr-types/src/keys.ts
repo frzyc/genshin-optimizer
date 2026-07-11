@@ -2,6 +2,7 @@ import {
   allElementKeys,
   allElementWithPhyKeys,
   allLunarReactionKeys,
+  allStellarReactionKeys,
 } from '@genshin-optimizer/gi/consts'
 import {
   allEleEnemyResKeys,
@@ -50,7 +51,6 @@ export const allNonstackBuffs = [
   'hakushindendro',
   'ttds',
   'wolf',
-  'symphonist',
   'moonsignascend',
   'gleamingmoonintent',
   'gleamingmoondevotion',
@@ -104,6 +104,7 @@ export const allTransformative = [
   'hyperbloom',
   'lunarbloom',
   'lunarcrystallize',
+  'stellarconduct',
 ] as const
 export const allAmplifying = ['vaporize', 'melt'] as const
 export const allAdditive = ['spread', 'aggravate'] as const
@@ -162,6 +163,13 @@ export const allNonModStats = [
     `${lr}_specialDmg_` as const,
     `${lr}_reactionDmgInc` as const,
     `${lr}_directDmgInc` as const,
+  ]),
+  ...allStellarReactionKeys.flatMap((sr) => [
+    `${sr}_baseDmg_` as const,
+    `${sr}_specialDmg_` as const,
+    `${sr}_reactionDmgInc` as const,
+    `${sr}_directDmgInc` as const,
+    `${sr}_mult_` as const,
   ]),
   ...allEleEnemyResKeys,
   'enemyDefRed_' as const,

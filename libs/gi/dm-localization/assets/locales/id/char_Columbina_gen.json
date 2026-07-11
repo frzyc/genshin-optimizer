@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -62,7 +66,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -86,7 +94,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -117,7 +129,7 @@
   "passive": {
     "name": "Lunar Vigil",
     "description": {
-      "0": "Jika Karakter sendiri di dalam party gugur saat berada di area Nod-Krai, Columbina akan membangkitkan Karakter ini dan memulihkan HP-nya. Jumlah HP yang dipulihkan akan didasarkan pada level Persahabatan Columbina. Efek ini dapat terpicu sekali setiap 100 detik. Efek ini tidak aktif dalam Domain, Trounce Domain, atau Spiral Abyss.",
+      "0": "Jika Karakter sendiri di dalam party gugur saat berada di area Nod-Krai atau Frost Moon, Columbina akan membangkitkan Karakter ini dan memulihkan HP-nya. Jumlah HP yang dipulihkan akan didasarkan pada Level Persahabatan Columbina. Efek ini dapat terpicu sekali setiap 100 detik. Efek ini tidak aktif dalam Domain, Domain Trounce, atau Spiral Abyss.",
       "1": "Selain itu, Columbina sepertinya memiliki kedekatan khusus dengan sebagian hewan yang dipengaruhi oleh kuuvahki ...."
     }
   },

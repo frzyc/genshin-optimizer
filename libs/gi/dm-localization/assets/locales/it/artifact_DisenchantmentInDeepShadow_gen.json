@@ -2,7 +2,7 @@
   "setName": "Disincanto nell'ombra profonda",
   "setEffects": {
     "2": "ATT +18%.",
-    "4": "I DAN da reazione di Superconduzione aumentano di un 80%. Quando il personaggio che equipaggia il set sferra un attacco a un avversario affetto da Superconduzione, il tasso di CRIT di tale attacco aumenta di un 16%. Percorrendo la strada verso Snezhnaya, sarà possibile ottenere una nuova benedizione..."
+    "4": "I DAN da reazione di Superconduzione e Astroconduzione aumentano rispettivamente di un 80% e di un 40%. Quando il personaggio che equipaggia il set sferra un attacco a un avversario affetto da Superconduzione o Astroconduzione, il tasso di CRIT di tale attacco aumenta di un 16%."
   },
   "pieces": {
     "flower": {
@@ -23,7 +23,7 @@
     },
     "circlet": {
       "name": "Dondolio che cessò nella grande caduta",
-      "desc": "Era un delicato ninnolo conferitole in segno di elogio dal suo unico e solo maestro."
+      "desc": "Era un delicato ninnolo conferitole in segno di elogio dal suo unico e solo padrone."
     }
   }
 }

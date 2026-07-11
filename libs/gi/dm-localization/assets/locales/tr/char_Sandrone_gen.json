@@ -1,0 +1,178 @@
+{
+  "name": "Sandrone",
+  "title": "Yansımalı Analiz",
+  "description": "Fatui Habercilerinin Yedincisi, \"Kukla\". Tüm olayları matematiğin prizmasından yorumlayan ve hiçbir çay saatini kaçırmayan zarif bir hanımefendi.",
+  "constellationName": "Kurmalı Nergis",
+  "auto": {
+    "name": "Tartışmasız Önerme",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "Formüller kullanarak silahını kontrol eden iplikler oluşturur ve art arda en fazla 3 saldırı gerçekleştirir."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Faaliyet Asistanı Genel İnteraktif Otomaton'u veya diğer adıyla \"<strong>Fagio</strong>\"yu çağırır ve onu <strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>Deşifre</tooltip></strong> moduna geçirir: Önündeki düşmanlara bir tarama ateşi saldırısı yapar, ayrıca belirli aralıklarla yoğunlaştırılmış ışınlar ateşleyerek <cryo>Buz Alan Hasarı</cryo> verir.",
+        "2": "<strong>Işıltı: Yıldız İletimi</strong>: Yoğunlaştırılmış ışınlar bunun yerine Yıldız İletimi Hasarı sayılan <cryo>Buz Alan Hasarı</cryo> verir.",
+        "3": "<strong>Deşifre</strong> modundayken Fagio'nun <strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>Deşifre Gücü</tooltip></strong> sürekli artar. Ayrıca yoğunlaştırılmış ışınlar ateşlemek de Deşifre Gücünü artırır.",
+        "4": "Deşifre Gücü üst sınır olan 100 puana ulaştığında Fagio, <strong>Güç Aşımı</strong> moduna geçerek düşmanlara daha uzun aralıklarla ateş eder ve <cryo>Buz Hasarı</cryo> verir. Fagio bu süre zarfında Deşifre moduna geçemez.",
+        "5": "<strong>Deşifre</strong> modunda değilken Fagio'nun <strong>Deşifre Gücü</strong> gittikçe azalır. Sandrone savaş alanında değilken Fagio'ya bakım yapmaya odaklanır ve Deşifre Gücü, orijinal hızının %300'ü oranında azalır.",
+        "6": "Fagio'nun <strong>Deşifre Gücü</strong> 50'nin altına düştüğünde <strong>Güç Aşımı</strong> modundan çıkar."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadan yere doğru dalarak yolundaki düşmanlara Hasar verir ve yere indiğinde Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "Yüklü Saldırı Tarama Ateşi Hasarı",
+      "4": "Yüklü Saldırı Yoğunlaştırılmış Işın Hasarı",
+      "5": "Yüklü Saldırı Yoğunlaştırılmış Işın Yıldız İletimi Hasarı",
+      "6": "Güç Aşımı Hasarı",
+      "7": "Havadan Saldırı Hasarı",
+      "8": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Olağanüstü Formül: Farklılık Analizi",
+    "description": {
+      "0": "Sandrone, kusursuz duruşu ve salon kadını zarafetiyle <strong>Çay Saati Taktik Taarruz Mekanizmasına</strong> biner ve 6sn boyunca ileriye doğru süzülür. Bu süre zarfında aracın hareket yönünü kontrol edebilir. Depar tuşuna basmak 10 Dayanıklılık harcar ve Sandrone'nin daha da hızlı hareket ettiği, zarif ve yüksek hızlı bir süzülme moduna geçmesini sağlar. Bu moddayken saniyede 15 Dayanıklılık harcar.",
+      "1": "<br/>",
+      "2": "Sandrone süzülmeye başladığında yakında düşmanlar varsa ayrıca bir Prizmatik Rezonans Topu çağırır ve henüz aklını başına toplamamış düşmanlara 2 Prizma Atışı yaparak <cryo>Buz Hasarı</cryo> verir.",
+      "3": "<strong>Işıltı: Yıldız İletimi</strong>: İkinci Prizma Atışı, bunun yerine Yıldız İletimi Hasarı sayılan <cryo>Buz Hasarı</cryo> verir.",
+      "4": "<br/>",
+      "5": "Sandrone, Çay Saati Taktik Taarruz Mekanizması üzerindeyken zarifçe ve sessizce Fagio'yu tamir ederek Fagio'nun <strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>Deşifre Gücünü</tooltip></strong> hızla düşürür."
+    },
+    "skillParams": {
+      "0": "Prizma Atışı Hasarı",
+      "1": "Prizma Atışı Yıldız İletimi Hasarı",
+      "2": "BS",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Olağanüstü Formül: İspatlandı",
+    "description": {
+      "0": "Sandrone, zarif bir hanımefendi edasıyla çok sayıda Prizmatik Rezonans Topu çağırarak ön saflardan yoğun bir bombardıman başlatır ve ardından düşmanlarına Konvektif Engelleme Işını ile ateş ederek <cryo>Buz Alan Hasarı</cryo> verir.",
+      "1": "<strong>Işıltı: Yıldız İletimi</strong>: Konvektif Engelleme Işını, bunun yerine Yıldız İletimi Hasarı sayılan <cryo>Buz Alan Hasarı</cryo> verir."
+    },
+    "skillParams": {
+      "0": "Bombardıman Hasarı",
+      "1": "Konvektif Engelleme Işını Hasarı",
+      "2": "Konvektif Engelleme Işını Yıldız İletimi Hasarı",
+      "3": "BS",
+      "4": "Enerji Maliyeti",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Sonsuz Tahmin Motoru",
+    "description": {
+      "0": "<strong>Işıltı: Yıldız İletimi</strong>: <tooltip ns=char_Sandrone_gen baseKey18=skill><strong>Olağanüstü Formül: Farklılık Analizi</strong></tooltip> Element Becerisi kullanıldığında eğer Fagio'nun <strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>Deşifre Gücü</tooltip></strong> 50'den yüksekse Fagio'nun yakındaki düşmanlara ateşlediği ikinci Prizma Atışı, orijinal Hasarının %400'ü kadar Hasar verir ve Fagio'nun Deşifre Gücü azalır.",
+      "1": "Ayrıca Fagio, kaybettiği her 10 <strong>Deşifre Gücü</strong> puanı için 60sn süren 1 <strong>Zarif Taktikler</strong> kademesi kazanır, 10 kademeye kadar birikebilir. Sandrone <strong>Işıltı: Yıldız İletimi</strong> durumundayken <tooltip ns=char_Sandrone_gen baseKey18=burst><strong>Olağanüstü Formül: İspatlandı</strong></tooltip> Element Patlamasını kullandığında tüm Zarif Taktikler kademeleri silinir ve Konvektif Engelleme Işını, orijinal Hasarın %100'üne ek olarak silinen her kademe başına fazladan %10 Hasar daha verir."
+    }
+  },
+  "passive2": {
+    "name": "Bir Hanımefendinin Görgü Kuralları",
+    "description": {
+      "0": "Sandrone'nin Element Ustalığı, Saldırısına bağlı olarak artar. Her 100 Saldırı, Element Ustalığını 8 artırır. Sandrone'nin bu şekilde elde edebileceği maksimum Element Ustalığı artışı 160'tır."
+    }
+  },
+  "passive3": {
+    "name": "Rasyonalizm Işığı",
+    "description": {
+      "0": "Grup üyeleri Süper İletim tetiklediğinde bu tepkime Yıldız İletimi olarak değişir ve grup üyelerinin Temel Yıldız İletimi Hasarı, Sandrone'nin Saldırısına bağlı olarak artar: Sandrone'nin sahip olduğu her 100 Saldırı, Temel Yıldız İletimi Hasarını %0,7 artırır. Bu şekilde en fazla %14 artış elde edilebilir.",
+      "1": "Ayrıca Sandrone, bir <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Kutup Yıldızı Alanı</strong></tooltip> içindeyken <strong>Işıltı: Yıldız İletimi</strong> durumuna girer."
+    }
+  },
+  "passive": {
+    "name": "Çay Saati Başlangıcı ve Uzun Bir Hikaye",
+    "description": {
+      "0": "Sandrone gruptayken, Günlük Özel Görevlerini Katheryne'e teslim ettikten sonra ek atıştırmalık ödülleri kazanırsın."
+    }
+  },
+  "constellation1": {
+    "name": "Altın Gün Batımından Sonraki Sabah",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>Deşifre</tooltip></strong> modundayken Fagio'nun <strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>Deşifre Gücü</tooltip></strong> %50 daha düşük oranda artar ve tüm grup üyeleri %30 daha fazla Yıldız İletimi Hasarı verir."
+    }
+  },
+  "constellation2": {
+    "name": "Bir Varis Aynaya Baktı",
+    "description": {
+      "0": "<strong>Işıltı: Yıldız İletimi</strong>: Yüklü Saldırıdaki yoğunlaştırılmış ışınların verdiği Kritik Hasarı %40 artırır. Ayrıca her ışın ateşlendiğinde, bu <strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>Deşifre</tooltip></strong> modu süresince ateşlenen tüm yoğunlaştırılmış ışınların Kritik Hasarı %20 daha artar. 3 kademeye kadar birikebilir."
+    }
+  },
+  "constellation3": {
+    "name": "Günün Batışına, Ay Işığının Boyunduruğuna Karşı Koy",
+    "description": {
+      "0": "<tooltip ns=char_Sandrone_gen baseKey18=normal><strong>Olağanüstü Formül: Tartışmasız Önerme</strong></tooltip> seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Dünyanın Gerçek Temeli Bilgide Yatar",
+    "description": {
+      "0": "Sandrone, bir düşmana Yıldız İletimi Hasarı verdiğinde bir Ortak Saldırı yapan ve Sandrone'nin Saldırısının %125'i kadar <cryo>Buz Hasarı</cryo> veren fazladan bir Prizmatik Rezonans Topu çağırır. Bu Topun verdiği Hasar, Yıldız İletimi Hasarı sayılır ve bu etki her 4 saniyede bir gerçekleşebilir."
+    }
+  },
+  "constellation5": {
+    "name": "Diğerlerinin Aksine, Hiçbirinde Payı Yok",
+    "description": {
+      "0": "<tooltip ns=char_Sandrone_gen baseKey18=burst><strong>Olağanüstü Formül: İspatlandı</strong></tooltip> seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Nergis Uyanıyor, Gözleri Şafakta",
+    "description": {
+      "0": "Fagio, <strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>Deşifre</tooltip></strong> modundayken üçüncü defa yoğunlaştırılmış bir ışın ateşlediğinde, bu ışın daha güçlü ve sürekli ateşlenen bir <strong>Yoğunlaştırılmış Küme Işınına</strong> dönüşür. Bu ışın, sonrasında ateşlenen tüm orijinal ışınlara ek olarak en fazla 4 defa Sandrone'nin Saldırısının %100'ü kadar <cryo>Buz Alan Hasarı</cryo> verir.",
+      "1": "<strong>Işıltı: Yıldız İletimi</strong>: <strong>Yoğunlaştırılmış Küme Işını</strong>, bunun yerine fazladan 4 defa Sandrone'nin Saldırısının %80'i kadar <cryo>Buz Alan Hasarı</cryo> verir. Bu Hasar, Yıldız İletimi Hasarı sayılır.",
+      "2": "Ayrıca Sandrone tarafından verilen tüm Yıldız İletimi Hasarları %20 <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>yükselir</strong></tooltip>."
+    }
+  }
+}

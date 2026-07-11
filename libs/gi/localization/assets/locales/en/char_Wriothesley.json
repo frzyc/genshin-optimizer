@@ -2,7 +2,19 @@
   "rebukeDmg": "Rebuke: Vaulting Fist DMG",
   "a4Cond": "Prosecution Edict",
   "icicleDmg": "Icicle DMG",
-  "rebuke_critRate_": "Vaulting Fist CRIT Rate",
-  "rebuke_critDMG_": "Vaulting Fist CRIT DMG",
-  "rebuke_dmg_": "Vaulting Fist DMG Bonus"
+  "rebuke_critRate_": "Rebuke: Vaulting Fist CRIT Rate",
+  "rebuke_critDMG_": "Rebuke: Vaulting Fist CRIT DMG",
+  "rebuke_dmg_": "Rebuke: Vaulting Fist DMG Bonus",
+  "hit3AddlMult": "Chilling Penalty Repelling Fist 3-Hit Addl. DMG Mult.",
+  "hit5AddlMult": "Chilling Penalty Repelling Fist 5-Hit Addl. DMG Mult.",
+  "lusterDmg": "Luster: Vaulting Fist DMG",
+  "lusterAddlMult": "Luster: Vaulting Fist Addl. DMG Mult.",
+  "5Hit_stellarconduct_dmg_": "Chilling Penalty Repelling Fist 5-Hit Stellar-Conduct DMG Bonus",
+  "luster_stellarconduct_dmg_": "Luster: Vaulting Fist Stellar-Conduct DMG Bonus",
+  "chillingRepellingLuster_critRate_": "Chilling Penalty Repelling Fist and Luster: Vaulting Fist CRIT Rate",
+  "chillingRepellingLuster_critDMG_": "Chilling Penalty Repelling Fist and Luster: Vaulting Fist CRIT DMG",
+  "normalAddlMult": "Normal Attack Addl. DMG Mult.",
+  "chargedAddlMult": "Charged Attack Addl. DMG Mult.",
+  "c1LusterCond": "After hitting an opponent with Luster: Vaulting Fist",
+  "c15HitCond": "After hitting an opponent with Chilling Penalty Repelling Fist 5-Hit"
 }

@@ -63,6 +63,7 @@ import Lauma from './Character_Lauma_Card.webp'
 import Layla from './Character_Layla_Card.jpeg'
 import Linnea from './Character_Linnea_Card.webp'
 import Lisa from './Character_Lisa_Card.jpg'
+import Lohen from './Character_Lohen_Card.png'
 import Lynette from './Character_Lynette_Card.jpg'
 import Lyney from './Character_Lyney_Card.jpg'
 import Mavuika from './Character_Mavuika_Card.jpg'
@@ -83,6 +84,7 @@ import Qiqi from './Character_Qiqi_Card.jpg'
 import RaidenShogun from './Character_Raiden_Shogun_Card.png'
 import Razor from './Character_Razor_Card.jpg'
 import Rosaria from './Character_Rosaria_Card.png'
+import Sandrone from './Character_Sandrone_Card.png'
 import SangonomiyaKokomi from './Character_Sangonomiya_Kokomi_Card.jpg'
 import Sayu from './Character_Sayu_Card.png'
 import Sethos from './Character_Sethos_Card.jpg'
@@ -181,6 +183,7 @@ const charCards = {
   Layla,
   Linnea,
   Lisa,
+  Lohen,
   Lyney,
   Lynette,
   Mavuika,
@@ -201,6 +204,7 @@ const charCards = {
   RaidenShogun,
   Razor,
   Rosaria,
+  Sandrone,
   SangonomiyaKokomi,
   Sayu,
   Sethos,

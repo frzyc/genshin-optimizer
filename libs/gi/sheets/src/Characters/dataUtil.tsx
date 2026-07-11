@@ -1,4 +1,8 @@
-import { objKeyMap, verifyObjKeys } from '@genshin-optimizer/common/util'
+import {
+  deepClone,
+  objKeyMap,
+  verifyObjKeys,
+} from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   ElementKey,
@@ -222,17 +226,24 @@ export function plungingDmgNodes(
   overrideTalentType?: 'skill' | 'burst' | 'auto'
 ): Record<PlungingDmgKey, NumNode> {
   const nodes = Object.fromEntries(
-    Object.entries(lvlMultipliers).map(([key, multi]) => [
-      key,
-      dmgNode(
-        base,
-        multi,
-        key === 'dmg' ? 'plunging_collision' : 'plunging_impact',
-        additional,
-        specialMultiplier,
-        overrideTalentType
-      ),
-    ])
+    Object.entries(lvlMultipliers).map(([key, multi]) => {
+      const addl = deepClone(additional)
+      if (key === 'dmg') {
+        if (!addl.hit) addl.hit = {}
+        if (!addl.hit.reaction) addl.hit.reaction = constant('')
+      }
+      return [
+        key,
+        dmgNode(
+          base,
+          multi,
+          key === 'dmg' ? 'plunging_collision' : 'plunging_impact',
+          addl,
+          specialMultiplier,
+          overrideTalentType
+        ),
+      ]
+    })
   )
   verifyObjKeys(nodes, allPlungingDmgKeys)
   return nodes
@@ -380,7 +391,7 @@ export function dataObjForCharacterSheet(
     data.display!['nicole'] = projections
 
     // Moonsign buff handling for non-moonsign chars
-    if (additional[0]?.isMoonsign === undefined) {
+    if (additional[0]?.flags?.isMoonsign === undefined) {
       let moonsignBase: NumNode
       const moonsignTallyWrite = equalStr(
         condMoonsignAfterSkillBurst,
@@ -420,8 +431,8 @@ export function dataObjForCharacterSheet(
   }
 
   // Tally handling for faction stuff
-  data.teamBuff!.tally!.hexerei = additional[0]?.isHexerei
-  data.teamBuff!.tally!.moonsign = additional[0]?.isMoonsign
+  data.teamBuff!.tally!.hexerei = additional[0]?.flags?.isHexerei
+  data.teamBuff!.tally!.moonsign = additional[0]?.flags?.isMoonsign
   if (region) data.teamBuff!.tally![region] = constant(1)
 
   if (weaponType !== 'catalyst')
@@ -502,7 +513,7 @@ function findNicoleData(
 const nicoleBurst = findNicoleData((data) => data.total.burstIndex, -1)
 const nicoleConstellation = findNicoleData((data) => data.constellation, naught)
 const nicoleAtk = findNicoleData((data) => data.total.atk, naught)
-const nicoleHex = findNicoleData((data) => data.isHexerei, 0)
+const nicoleHex = findNicoleData((data) => data.flags.isHexerei, 0)
 const nicoleBurstScaling = allStats.char.skillParam.Nicole.burst[1]
 const nicoleC1Scaling = allStats.char.skillParam.Nicole.constellation1[0]
 const nicoleLockAddlScaling =
@@ -510,7 +521,7 @@ const nicoleLockAddlScaling =
 const nicoleCt = charTemplates('Nicole')
 const nicoleLockProjectionAddl = infoMut(
   equal(
-    input.isHexerei,
+    input.flags.isHexerei,
     1,
     greaterEq(
       tally.hexerei,
@@ -533,7 +544,7 @@ export const projections = {
         ),
         'elemental',
         {
-          hit: { ele: input.charEle },
+          hit: { ele: input.charEle, reaction: constant('') },
           premod: { all_dmgInc: nicoleLockProjectionAddl },
         }
       )
@@ -548,7 +559,7 @@ export const projections = {
         prod(percent(nicoleC1Scaling), input.total.atk),
         'elemental',
         {
-          hit: { ele: input.charEle },
+          hit: { ele: input.charEle, reaction: constant('') },
           premod: { all_dmgInc: nicoleLockProjectionAddl },
         }
       )

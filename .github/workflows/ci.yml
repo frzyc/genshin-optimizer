@@ -35,13 +35,14 @@ jobs:
       - name: Get Cache Key
         id: get-cache-key
         run: |
+          echo "baseKey=$(cat .gitmodules | sha256sum | cut -d " " -f 1)" >> $GITHUB_OUTPUT
           echo "key=$(git ls-tree -r HEAD | grep '^160000' | sha256sum | cut -d " " -f 1)" >> $GITHUB_OUTPUT
       - uses: actions/cache/restore@v5
         with:
           path: .git/modules
-          key: submodule-${{ steps.get-cache-key.outputs.key }}
+          key: submodule-${{steps.get-cache-key.outputs.baseKey}}-${{ steps.get-cache-key.outputs.key }}
           restore-keys: |
-            submodule-
+            submodule-${{steps.get-cache-key.outputs.baseKey}}
       - uses: actions/checkout@v6
         with:
           submodules: true
@@ -105,13 +106,14 @@ jobs:
       - name: Get Cache Key
         id: get-cache-key
         run: |
+          echo "baseKey=$(cat .gitmodules | sha256sum | cut -d " " -f 1)" >> $GITHUB_OUTPUT
           echo "key=$(git ls-tree -r HEAD | grep '^160000' | sha256sum | cut -d " " -f 1)" >> $GITHUB_OUTPUT
       - uses: actions/cache@v5
         with:
           path: .git/modules
-          key: submodule-${{ steps.get-cache-key.outputs.key }}
+          key: submodule-${{steps.get-cache-key.outputs.baseKey}}-${{ steps.get-cache-key.outputs.key }}
           restore-keys: |
-            submodule-
+            submodule-${{steps.get-cache-key.outputs.baseKey}}
       - uses: actions/checkout@v6
         with:
           submodules: true

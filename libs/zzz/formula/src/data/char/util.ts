@@ -13,6 +13,7 @@ import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import {
   type AttributeKey,
   type SkillKey,
+  allAttributeKeys,
   allSkillKeys,
 } from '@genshin-optimizer/zzz/consts'
 import {
@@ -98,11 +99,11 @@ export function dmgDazeAndAnom(
   const anom = arg.cond ? cmpNE(arg.cond, '', anomBase) : anomBase
   return [
     stat === 'sheerForce'
-      ? customSheerDmg(`${name}_dmg`, dmgTag, dmg, arg, ...extra)
-      : customDmg(`${name}_dmg`, dmgTag, dmg, arg, ...extra),
-    customDaze(`${name}_daze`, dmgTag, daze, arg, ...extra),
+      ? customSheerDmg(name, dmgTag, dmg, arg, ...extra)
+      : customDmg(name, dmgTag, dmg, arg, ...extra),
+    customDaze(name, dmgTag, daze, arg, ...extra),
     // TODO: No clue if this is right
-    customAnomalyBuildup(`${name}_anomBuildup`, dmgTag, anom, arg, ...extra),
+    customAnomalyBuildup(name, dmgTag, anom, arg, ...extra),
   ]
 }
 
@@ -149,12 +150,12 @@ export function dmgDazeAndAnomMerge(
   )
   return [
     stat === 'sheerForce'
-      ? customSheerDmg(`${name}_dmg`, dmgTag, dmgBase, arg, ...extra)
-      : customDmg(`${name}_dmg`, dmgTag, dmgBase, arg, ...extra),
-    customDaze(`${name}_daze`, dmgTag, dazeBase, arg, ...extra),
+      ? customSheerDmg(name, dmgTag, dmgBase, arg, ...extra)
+      : customDmg(name, dmgTag, dmgBase, arg, ...extra),
+    customDaze(name, dmgTag, dazeBase, arg, ...extra),
     // TODO: No clue if this is right
     customAnomalyBuildup(
-      `${name}_anomBuildup`,
+      name,
       dmgTag,
       constant(
         skillParam.reduce((acc, sp) => acc + sp.AttributeInfliction, 0) / 100
@@ -277,6 +278,10 @@ function inferDamageType(key: CharacterKey, abilityName: string): DamageType {
     if (key === 'Yanagi' && abilityName === 'StanceKagen') return 'basic'
     if (key === 'Yidhari' && abilityName === 'FrostsCrushingWeight')
       return 'basic'
+    if (key === 'Velina' && abilityName === 'SweepingCyclone')
+      return 'exSpecial'
+    if (key === 'Velina' && abilityName === 'CondensedCyclone')
+      return 'exSpecial'
     throw new Error(
       `Failed to infer damage type for key:${key} abilityName:${abilityName}. Please add an overide in zzz/formula/src/data/char/util.ts::inferDamageType`
     )
@@ -345,6 +350,7 @@ const anomalyMultipliers: Record<AttributeKey, number> = {
   ether: 0.625,
   ice: 5,
   physical: 7.13,
+  wind: 12.5,
 }
 const disorderTimeMultipliers: Record<AttributeKey | 'frost', number> = {
   fire: 1, // 2 * 0.5
@@ -353,6 +359,16 @@ const disorderTimeMultipliers: Record<AttributeKey | 'frost', number> = {
   ice: 0.075,
   physical: 0.075,
   frost: 0.75,
+  wind: 0, // Only for Polarity Disorder
+}
+const vortexMultipliers: Record<AttributeKey | 'frost', number> = {
+  fire: 9,
+  electric: 6.5,
+  ether: 6.5,
+  ice: 13,
+  physical: 8,
+  frost: 0,
+  wind: 0,
 }
 
 /**
@@ -380,6 +396,26 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     {} as Partial<Record<CoreStatKey, number[]>>
   )
   const isMiyabi = data_gen.id === '1091'
+
+  const vortex = (attribute: AttributeKey | 'frost') =>
+    customAnomalyDmg(
+      `vortexDmgInst_${attribute}`,
+      {
+        attribute: attribute === 'frost' ? 'ice' : attribute,
+        damageType1: 'vortex',
+      },
+      prod(
+        sum(
+          percent(vortexMultipliers[attribute]),
+          own.final.addl_disorder_,
+          prod(
+            percent(disorderTimeMultipliers[attribute]),
+            max(0, sum(constant(30), prod(constant(-1), anomTimePassed)))
+          )
+        ),
+        own.final.atk
+      )
+    )
 
   return [
     ownBuff.char.attribute.add(data_gen.attribute),
@@ -446,6 +482,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
         cmpEq(own.dmg.anom_mv_mult_, 0, percent(1), own.dmg.anom_mv_mult_)
       )
     ),
+    // Disorder DMG
     ...customAnomalyDmg(
       `disorderDmgInst_${isMiyabi ? 'frost' : data_gen.attribute}`,
       {
@@ -454,16 +491,18 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
       },
       prod(
         sum(
-          percent(isMiyabi ? 6 : 4.5),
+          percent(isMiyabi ? 6 : data_gen.attribute === 'wind' ? 1 : 4.5),
           own.final.addl_disorder_,
           prod(
-            max(
-              0,
-              sum(
-                constant(isMiyabi ? 20 : 10),
-                prod(constant(-1), anomTimePassed)
-              )
-            ),
+            data_gen.attribute === 'wind'
+              ? percent(1)
+              : max(
+                  0,
+                  sum(
+                    constant(isMiyabi ? 20 : 10),
+                    prod(constant(-1), anomTimePassed)
+                  )
+                ),
             percent(
               disorderTimeMultipliers[isMiyabi ? 'frost' : data_gen.attribute]
             )
@@ -472,6 +511,13 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
         own.final.atk
       )
     ),
+    // Vortex DMG
+    ...(data_gen.attribute === 'wind'
+      ? [
+          ...allAttributeKeys.filter((attr) => attr !== 'wind'),
+          'frost' as const,
+        ].flatMap(vortex)
+      : vortex(isMiyabi ? 'frost' : data_gen.attribute)),
     // Abloom DMG
     ...customAnomalyDmg(
       'abloomDmgInst',

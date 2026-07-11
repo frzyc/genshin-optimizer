@@ -414,7 +414,7 @@
         " Bei einer anderen beobachteten Figur handelt es sich um eine Hexerei-Figur."
       ],
       "3": "<br/>",
-      "4": "Stuft zudem, nachdem das Aufstiegstalent „Philokalie“ freigeschaltet wurde und ein aktuelles Truppenmitglied in der Nähe einem Gegner mit Elementar-Schaden getroffen hat, Nicoles eigene <strong>Gabe der Kenosis</strong> innerhalb von 8 s zu <strong>Führung der Theosis</strong> hoch.",
+      "4": "Stuft zudem, nachdem das Aufstiegstalent „Philokalie“ freigeschaltet wurde und ein aktuelles Truppenmitglied in der Nähe einem Gegner mit Elementar-Schaden getroffen hat, Nicoles eigene <strong>Gabe der Kenosis</strong> für 8 s zu <strong>Führung der Theosis</strong> hoch.",
       "5": "<br/>",
       "6": "Abgesehen von Nicole wird <strong>Führung der Theosis</strong> aller anderen Figuren nach dem Verlassen des Felds wieder auf <strong>Gabe der Kenosis</strong> zurückgestuft."
     }
@@ -440,6 +440,26 @@
     "name": "Herzschlag in Eintracht",
     "description": {
       "0": "Verleiht, wenn Prune einen Gegner mit dem <strong>Hammer des Jagdschwurs</strong>, der bereits eine Elementarumwandlung durchlaufen hat, trifft, anderen Truppenmitgliedern in der Nähe den Effekt Trommelwirbel: Erhöht den durch den Angriff verursachten Schaden basierend auf Prunes ANG."
+    }
+  },
+  "11330001": {
+    "name": "Berechnung",
+    "description": {
+      "0": "Der Modus, in den Fagio beim Ausführen heftiger Schläge wechselt.",
+      "1": "In diesem Modus führt Fagio einen Streuangriff auf Gegner vorne aus und feuert in bestimmten zeitlichen Abständen einen Kondensationsstrahl ab, der <cryo>Kryo-Flächenschaden</cryo> verursacht.",
+      "2": "<strong>Leuchten – Stellar-Supraleiter</strong>: Wandelt den Kondensationsstrahl um und verursacht stattdessen <cryo>Kryo-Flächenschaden</cryo>, der als Schaden durch die Reaktion Stellar-Supraleiter gewertet wird."
+    }
+  },
+  "11330002": {
+    "name": "Berechnungsleistung",
+    "description": {
+      "0": "Erhöht, solange Fagio sich im Modus <strong>Berechnung</strong> befindet, ihre <strong>Berechnungsleistung</strong> kontinuierlich. Erreicht die Berechnungsleistung die Obergrenze, kann der Modus „Berechnung“ weder aufrechterhalten noch erneut betreten werden."
+    }
+  },
+  "11330003": {
+    "name": "Sternglanzfeld",
+    "description": {
+      "0": "Verwandelt beim Auslösen der Reaktion Stellar-Supraleiter den umliegenden Bereich kurzzeitig in ein <strong>Sternglanzfeld</strong>. Befindet sich eine bestimmte Figur innerhalb des Sternglanzfelds, tritt sie in den Zustand <strong>Leuchten – Stellar-Supraleiter</strong> ein, in dem ihre verschiedenen Fähigkeiten jeweils entsprechende Verstärkungseffekte erhalten."
     }
   }
 }

@@ -1,0 +1,251 @@
+{
+  "name": "Lohen",
+  "title": "Sharpened Arrowhead",
+  "description": "Vice Captain of the Knights of Favonius Ranged Company, a knight known for his unorthodox approach and fondness for unconventional tactics.",
+  "constellationName": "Lepus Miles",
+  "auto": {
+    "name": "Spear of Favonius — Broken Oath",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Performs up to 5 consecutive strikes."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to perform a forward thrust."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "5-Hit DMG",
+      "5": "Charged Attack DMG",
+      "6": "Charged Attack Stamina Cost",
+      "7": "Plunge DMG",
+      "8": "Low/High Plunge DMG",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, percent(fixed: 1)}}%×3",
+      "3": "{{3, percent(fixed: 1)}}%",
+      "4": "{{4, percent(fixed: 1)}}%+{{5, percent(fixed: 1)}}%",
+      "5": "{{6, percent(fixed: 1)}}%×2",
+      "6": "{{7, fixed(fixed: 1)}}",
+      "7": "{{8, percent(fixed: 1)}}%",
+      "8": "{{9, percent}}%/{{10, percent}}%",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Unforeseen Strike",
+    "description": {
+      "0": "As he searches for weaknesses, Lohen switches to <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Masterstroke</strong></tooltip> mode. While in this state:",
+      "1": [
+        " Lohen can actively accumulate <tooltip ns=tooltips_gen baseKey18=11290003 values=[]><strong>Joy</strong></tooltip>, using it to unleash the special Elemental Skill <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Etched Into Bone and Soul</strong></tooltip>.",
+        " Nearby party members can accumulate <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Will to Win</strong></tooltip> for Lohen, increasing the DMG dealt by <strong>Etched Into Bone and Soul</strong>."
+      ],
+      "2": "Lohen can unleash <strong>Etched Into Bone and Soul</strong> up to 3 times while in <strong>Masterstroke</strong> mode, after which, he will no longer be able to accumulate <strong>Joy</strong>.",
+      "3": "<br/>",
+      "4": "<i>\"Chivalry? Hah, what better way to bait the trap? When an enemy dreams of an honorable victory, they inevitably fail to suspect the 'pleasant surprise' that awaits them.\"</i>"
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "5-Hit DMG",
+      "5": "Charged Attack DMG",
+      "6": "Charged Attack Stamina Cost",
+      "7": "Plunge DMG",
+      "8": "Low/High Plunge DMG",
+      "9": "Masterstroke",
+      "10": "Etched Into Bone and Soul DMG",
+      "11": "DMG Increase From Will to Win",
+      "12": "CD",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, percent(fixed: 1)}}%×3",
+      "3": "{{3, percent(fixed: 1)}}%",
+      "4": "{{4, percent(fixed: 1)}}%+{{5, percent(fixed: 1)}}%",
+      "5": "{{6, percent(fixed: 1)}}%×2",
+      "6": "{{7, fixed(fixed: 1)}}",
+      "7": "{{8, percent(fixed: 1)}}%",
+      "8": "{{9, percent}}%/{{10, percent}}%",
+      "9": "{{11, fixed(fixed: 1)}}s",
+      "10": "{{16, percent(fixed: 1)}}%×4",
+      "11": "{{17, percent(fixed: 2)}}%/Point",
+      "12": "{{18, fixed(fixed: 1)}}s",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Manifest Judgment",
+    "description": {
+      "0": "Performs a swift series of forward strikes, consuming all <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Will to Win</strong></tooltip> and dealing <cryo>Cryo DMG</cryo>. This DMG will be increased based on the amount of <strong>Will to Win</strong> consumed. If Lohen is in <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Masterstroke</strong></tooltip> mode when this is performed, the duration of <strong>Masterstroke</strong> will be extended by 1.65s.",
+      "1": "<br/>",
+      "2": "<i>\"So quick to cave? What a pity, I was just starting to enjoy myself...\"</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "DMG Increase From Will to Win",
+      "2": "CD",
+      "3": "Energy Cost",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%×6",
+      "1": "{{1, percent(fixed: 2)}}%/Point",
+      "2": "{{2, fixed(fixed: 1)}}s",
+      "3": "{{3}}",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Moratorium on Questioning",
+    "description": {
+      "0": "When nearby party members accumulate <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Will to Win</strong></tooltip> for Lohen by dealing DMG while he is in <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Masterstroke</strong></tooltip> mode, if that DMG is not less than 3,000% of Lohen's Base ATK, it will accumulate an extra 60 <strong>Will to Win</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Flippant Masterpiece",
+    "description": {
+      "0": "While in <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Masterstroke</strong></tooltip> mode, for 8s after another nearby party member triggers a <cryo>Cryo Reaction</cryo>, that character's ATK is increased by 15%, while Lohen's ATK is increased by 15%."
+    }
+  },
+  "passive3": {
+    "name": "When the Mood Strikes",
+    "description": {
+      "0": "Lohen gains \"High Spirits\" for 9s after he unleashes the Elemental Skill <strong>Unforeseen Strike</strong>: Increases the Skill Level of <strong>Unforeseen Strike</strong> by 1.",
+      "1": "When unleashing an Elemental Skill, if the Level of any other party member's Normal Attack, Elemental Skill, or Elemental Burst is not lower than Lohen's Elemental Skill Level, the duration of this instance of High Spirits will be increased by an additional 6s.",
+      "2": "High Spirits can be gained once every 18s."
+    }
+  },
+  "lockedPassive": {
+    "name": "Witch's Eve Rite: Unhealing Thorn",
+    "description": {
+      "0": "After completing <strong>Witch's Homework: Of Various Foes</strong>, Lohen becomes a <strong>Hexerei</strong> character. When the party includes at least 2 Hexerei characters, you gain the <strong>Hexerei: Secret Rite</strong> effect, which enhances Hexerei characters.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei: Secret Rite</strong>",
+      "3": "When the special Elemental Skill <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Etched Into Bone and Soul</strong></tooltip> hits an opponent or the Elemental Burst <strong>Manifest Judgment</strong> is unleashed, if Lohen's <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Will to Win</strong></tooltip> is at 50% or more of its max limit, his Normal Attack and Charged Attack DMG will be increased by 40% for 6s."
+    }
+  },
+  "constellation1": {
+    "name": "O Breezes, That So Oft Bear Sorrowful Lament",
+    "description": {
+      "0": "Lohen's maximum <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Will to Win</strong></tooltip> limit is increased to 300% of its original value.",
+      "1": "Additionally, when other nearby party members deal DMG while Lohen is in <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Masterstroke</strong></tooltip> mode, they accumulate 500% as much <strong>Will to Win</strong> for him as they originally would have."
+    }
+  },
+  "constellation2": {
+    "name": "In Flight, I Strike Whatever Flies",
+    "description": {
+      "0": "When in <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Masterstroke</strong></tooltip> mode, after the special Elemental Skill <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Etched Into Bone and Soul</strong></tooltip> hits an opponent or the Elemental Burst <strong>Manifest Judgment</strong> is unleashed, Lohen gains \"Evilsbane Blade\" for 4s: The next time Lohen hits an opponent with a Normal or Charged Attack while in Masterstroke mode, he will follow up with an additional strike that deals <cryo>AoE Cryo DMG</cryo> equal to 500% of his ATK, and increase the Elemental Mastery of other nearby party members by 200 for 8s. Evilsbane Blade can be triggered once every 4s."
+    }
+  },
+  "constellation3": {
+    "name": "Only the Spear That Wounds Can Heal",
+    "description": {
+      "0": "Increases the Level of <strong><tooltip ns=char_Lohen_gen baseKey18=skill>Unforeseen Strike</tooltip></strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "Radiant Love, Laughing Death",
+    "description": {
+      "0": "When Lohen unleashes the Elemental Burst <strong>Manifest Judgment</strong> while in <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Masterstroke</strong></tooltip> mode, his <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Will to Win</strong></tooltip> will be maxed out, causing this instance of his Elemental Burst to gain the maximum possible DMG increase.",
+      "1": "<br/>",
+      "2": "Additionally, when Lohen switches to <strong>Masterstroke</strong> mode, the following will occur depending on how much Elemental Energy he has:",
+      "3": [
+        " When Elemental Energy is not full: Lohen recovers 15 Elemental Energy.",
+        " When Elemental Energy is full: If, during the next 15s, Lohen unleashes the Elemental Burst <strong>Manifest Judgment</strong>, he will recover 15 Elemental Energy."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Never Ask, Nor Trouble You to Know",
+    "description": {
+      "0": "Increases the Level of <strong><tooltip ns=char_Lohen_gen baseKey18=burst>Manifest Judgment</tooltip></strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "To Drown, to Sink, Unconscious — Supreme Joy",
+    "description": {
+      "0": "Using the special Elemental Skill <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Etched Into Bone and Soul</strong></tooltip> and hitting an opponent with it or, while <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Masterstroke</strong></tooltip> mode is active, unleashing the Elemental Burst <strong>Manifest Judgment</strong>, will not consume any <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Will to Win</strong></tooltip>. Instead, Lohen's <tooltip ns=tooltips_gen baseKey18=11290003 values=[]><strong>Joy</strong></tooltip> will be maxed out, and if he hits an opponent the next time he uses the special Elemental Skill <strong>Etched Into Bone and Soul</strong>, the duration of this instance of <strong>Masterstroke</strong> will be extended by 1.25s. This effect can be triggered once every 7s.",
+      "1": "Additionally, the CRIT DMG of all the DMG described above is increased by 175%, and the number of times Lohen can unleash <strong>Etched Into Bone and Soul</strong> during this instance of <strong>Masterstroke</strong> is increased by 2."
+    }
+  }
+}

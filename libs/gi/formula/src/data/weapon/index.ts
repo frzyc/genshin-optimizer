@@ -1,4 +1,5 @@
 import type { TagMapNodeEntries } from '../util'
+import ATeaspoonOfTranscendence from './ATeaspoonOfTranscendence'
 import AThousandBlazingSuns from './AThousandBlazingSuns'
 import AThousandFloatingDreams from './AThousandFloatingDreams'
 import Absolution from './Absolution'
@@ -43,6 +44,7 @@ import DawningFrost from './DawningFrost'
 import Deathmatch from './Deathmatch'
 import DebateClub from './DebateClub'
 import DialoguesOfTheDesertSages from './DialoguesOfTheDesertSages'
+import DisasterAndRemorse from './DisasterAndRemorse'
 import DodocoTales from './DodocoTales'
 import DragonsBane from './DragonsBane'
 import DragonspineSpear from './DragonspineSpear'
@@ -287,6 +289,7 @@ const data: TagMapNodeEntries[] = [
   WolfFang,
   XiphosMoonlight,
   Akuoumaru,
+  ATeaspoonOfTranscendence,
   AThousandBlazingSuns,
   BeaconOfTheReedSea,
   BlackcliffSlasher,
@@ -338,6 +341,7 @@ const data: TagMapNodeEntries[] = [
   CrimsonMoonsSemblance,
   Deathmatch,
   DialoguesOfTheDesertSages,
+  DisasterAndRemorse,
   DragonsBane,
   DragonspineSpear,
   EngulfingLightning,

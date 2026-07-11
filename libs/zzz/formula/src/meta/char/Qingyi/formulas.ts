@@ -38,6 +38,19 @@ export const formulas = {
       name: 'disorderDmgInst_electric',
     },
   },
+  vortexDmgInst_electric: {
+    sheet: 'Qingyi',
+    name: 'vortexDmgInst_electric',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'Qingyi',
+      attribute: 'electric',
+      damageType1: 'vortex',
+      name: 'vortexDmgInst_electric',
+    },
+  },
   abloomDmgInst: {
     sheet: 'Qingyi',
     name: 'abloomDmgInst',
@@ -76,9 +89,9 @@ export const formulas = {
       name: 'dazeInst',
     },
   },
-  BasicAttackPenultimate_0_dmg: {
+  'BasicAttackPenultimate_0:standardDmg': {
     sheet: 'Qingyi',
-    name: 'BasicAttackPenultimate_0_dmg',
+    name: 'BasicAttackPenultimate_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -87,12 +100,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackPenultimate_0_dmg',
+      name: 'BasicAttackPenultimate_0',
     },
   },
-  BasicAttackPenultimate_0_daze: {
+  'BasicAttackPenultimate_0:dazeBuildup': {
     sheet: 'Qingyi',
-    name: 'BasicAttackPenultimate_0_daze',
+    name: 'BasicAttackPenultimate_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -101,12 +114,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackPenultimate_0_daze',
+      name: 'BasicAttackPenultimate_0',
     },
   },
-  BasicAttackPenultimate_0_anomBuildup: {
+  'BasicAttackPenultimate_0:anomBuildup': {
     sheet: 'Qingyi',
-    name: 'BasicAttackPenultimate_0_anomBuildup',
+    name: 'BasicAttackPenultimate_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -115,12 +128,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackPenultimate_0_anomBuildup',
+      name: 'BasicAttackPenultimate_0',
     },
   },
-  BasicAttackPenultimate_1_dmg: {
+  'BasicAttackPenultimate_1:standardDmg': {
     sheet: 'Qingyi',
-    name: 'BasicAttackPenultimate_1_dmg',
+    name: 'BasicAttackPenultimate_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -129,12 +142,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackPenultimate_1_dmg',
+      name: 'BasicAttackPenultimate_1',
     },
   },
-  BasicAttackPenultimate_1_daze: {
+  'BasicAttackPenultimate_1:dazeBuildup': {
     sheet: 'Qingyi',
-    name: 'BasicAttackPenultimate_1_daze',
+    name: 'BasicAttackPenultimate_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -143,12 +156,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackPenultimate_1_daze',
+      name: 'BasicAttackPenultimate_1',
     },
   },
-  BasicAttackPenultimate_1_anomBuildup: {
+  'BasicAttackPenultimate_1:anomBuildup': {
     sheet: 'Qingyi',
-    name: 'BasicAttackPenultimate_1_anomBuildup',
+    name: 'BasicAttackPenultimate_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -157,12 +170,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackPenultimate_1_anomBuildup',
+      name: 'BasicAttackPenultimate_1',
     },
   },
-  BasicAttackPenultimate_2_dmg: {
+  'BasicAttackPenultimate_2:standardDmg': {
     sheet: 'Qingyi',
-    name: 'BasicAttackPenultimate_2_dmg',
+    name: 'BasicAttackPenultimate_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -171,12 +184,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackPenultimate_2_dmg',
+      name: 'BasicAttackPenultimate_2',
     },
   },
-  BasicAttackPenultimate_2_daze: {
+  'BasicAttackPenultimate_2:dazeBuildup': {
     sheet: 'Qingyi',
-    name: 'BasicAttackPenultimate_2_daze',
+    name: 'BasicAttackPenultimate_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -185,12 +198,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackPenultimate_2_daze',
+      name: 'BasicAttackPenultimate_2',
     },
   },
-  BasicAttackPenultimate_2_anomBuildup: {
+  'BasicAttackPenultimate_2:anomBuildup': {
     sheet: 'Qingyi',
-    name: 'BasicAttackPenultimate_2_anomBuildup',
+    name: 'BasicAttackPenultimate_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -199,12 +212,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType: 'basicSkill',
-      name: 'BasicAttackPenultimate_2_anomBuildup',
+      name: 'BasicAttackPenultimate_2',
     },
   },
-  BasicAttackPenultimate_3_dmg: {
+  'BasicAttackPenultimate_3:standardDmg': {
     sheet: 'Qingyi',
-    name: 'BasicAttackPenultimate_3_dmg',
+    name: 'BasicAttackPenultimate_3:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -213,12 +226,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackPenultimate_3_dmg',
+      name: 'BasicAttackPenultimate_3',
     },
   },
-  BasicAttackPenultimate_3_daze: {
+  'BasicAttackPenultimate_3:dazeBuildup': {
     sheet: 'Qingyi',
-    name: 'BasicAttackPenultimate_3_daze',
+    name: 'BasicAttackPenultimate_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -227,12 +240,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackPenultimate_3_daze',
+      name: 'BasicAttackPenultimate_3',
     },
   },
-  BasicAttackPenultimate_3_anomBuildup: {
+  'BasicAttackPenultimate_3:anomBuildup': {
     sheet: 'Qingyi',
-    name: 'BasicAttackPenultimate_3_anomBuildup',
+    name: 'BasicAttackPenultimate_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -241,12 +254,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackPenultimate_3_anomBuildup',
+      name: 'BasicAttackPenultimate_3',
     },
   },
-  BasicAttackPenultimate_4_dmg: {
+  'BasicAttackPenultimate_4:standardDmg': {
     sheet: 'Qingyi',
-    name: 'BasicAttackPenultimate_4_dmg',
+    name: 'BasicAttackPenultimate_4:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -255,12 +268,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackPenultimate_4_dmg',
+      name: 'BasicAttackPenultimate_4',
     },
   },
-  BasicAttackPenultimate_4_daze: {
+  'BasicAttackPenultimate_4:dazeBuildup': {
     sheet: 'Qingyi',
-    name: 'BasicAttackPenultimate_4_daze',
+    name: 'BasicAttackPenultimate_4:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -269,12 +282,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackPenultimate_4_daze',
+      name: 'BasicAttackPenultimate_4',
     },
   },
-  BasicAttackPenultimate_4_anomBuildup: {
+  'BasicAttackPenultimate_4:anomBuildup': {
     sheet: 'Qingyi',
-    name: 'BasicAttackPenultimate_4_anomBuildup',
+    name: 'BasicAttackPenultimate_4:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -283,12 +296,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackPenultimate_4_anomBuildup',
+      name: 'BasicAttackPenultimate_4',
     },
   },
-  BasicAttackPenultimate_5_dmg: {
+  'BasicAttackPenultimate_5:standardDmg': {
     sheet: 'Qingyi',
-    name: 'BasicAttackPenultimate_5_dmg',
+    name: 'BasicAttackPenultimate_5:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -297,12 +310,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackPenultimate_5_dmg',
+      name: 'BasicAttackPenultimate_5',
     },
   },
-  BasicAttackPenultimate_5_daze: {
+  'BasicAttackPenultimate_5:dazeBuildup': {
     sheet: 'Qingyi',
-    name: 'BasicAttackPenultimate_5_daze',
+    name: 'BasicAttackPenultimate_5:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -311,12 +324,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackPenultimate_5_daze',
+      name: 'BasicAttackPenultimate_5',
     },
   },
-  BasicAttackPenultimate_5_anomBuildup: {
+  'BasicAttackPenultimate_5:anomBuildup': {
     sheet: 'Qingyi',
-    name: 'BasicAttackPenultimate_5_anomBuildup',
+    name: 'BasicAttackPenultimate_5:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -325,12 +338,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackPenultimate_5_anomBuildup',
+      name: 'BasicAttackPenultimate_5',
     },
   },
-  BasicAttackEnchantedBlossoms_0_dmg: {
+  'BasicAttackEnchantedBlossoms_0:standardDmg': {
     sheet: 'Qingyi',
-    name: 'BasicAttackEnchantedBlossoms_0_dmg',
+    name: 'BasicAttackEnchantedBlossoms_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -339,12 +352,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnchantedBlossoms_0_dmg',
+      name: 'BasicAttackEnchantedBlossoms_0',
     },
   },
-  BasicAttackEnchantedBlossoms_0_daze: {
+  'BasicAttackEnchantedBlossoms_0:dazeBuildup': {
     sheet: 'Qingyi',
-    name: 'BasicAttackEnchantedBlossoms_0_daze',
+    name: 'BasicAttackEnchantedBlossoms_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -353,12 +366,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnchantedBlossoms_0_daze',
+      name: 'BasicAttackEnchantedBlossoms_0',
     },
   },
-  BasicAttackEnchantedBlossoms_0_anomBuildup: {
+  'BasicAttackEnchantedBlossoms_0:anomBuildup': {
     sheet: 'Qingyi',
-    name: 'BasicAttackEnchantedBlossoms_0_anomBuildup',
+    name: 'BasicAttackEnchantedBlossoms_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -367,12 +380,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnchantedBlossoms_0_anomBuildup',
+      name: 'BasicAttackEnchantedBlossoms_0',
     },
   },
-  BasicAttackEnchantedMoonlitBlossoms_0_dmg: {
+  'BasicAttackEnchantedMoonlitBlossoms_0:standardDmg': {
     sheet: 'Qingyi',
-    name: 'BasicAttackEnchantedMoonlitBlossoms_0_dmg',
+    name: 'BasicAttackEnchantedMoonlitBlossoms_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -381,12 +394,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnchantedMoonlitBlossoms_0_dmg',
+      name: 'BasicAttackEnchantedMoonlitBlossoms_0',
     },
   },
-  BasicAttackEnchantedMoonlitBlossoms_0_daze: {
+  'BasicAttackEnchantedMoonlitBlossoms_0:dazeBuildup': {
     sheet: 'Qingyi',
-    name: 'BasicAttackEnchantedMoonlitBlossoms_0_daze',
+    name: 'BasicAttackEnchantedMoonlitBlossoms_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -395,12 +408,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnchantedMoonlitBlossoms_0_daze',
+      name: 'BasicAttackEnchantedMoonlitBlossoms_0',
     },
   },
-  BasicAttackEnchantedMoonlitBlossoms_0_anomBuildup: {
+  'BasicAttackEnchantedMoonlitBlossoms_0:anomBuildup': {
     sheet: 'Qingyi',
-    name: 'BasicAttackEnchantedMoonlitBlossoms_0_anomBuildup',
+    name: 'BasicAttackEnchantedMoonlitBlossoms_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -409,12 +422,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnchantedMoonlitBlossoms_0_anomBuildup',
+      name: 'BasicAttackEnchantedMoonlitBlossoms_0',
     },
   },
-  BasicAttackEnchantedMoonlitBlossoms_1_dmg: {
+  'BasicAttackEnchantedMoonlitBlossoms_1:standardDmg': {
     sheet: 'Qingyi',
-    name: 'BasicAttackEnchantedMoonlitBlossoms_1_dmg',
+    name: 'BasicAttackEnchantedMoonlitBlossoms_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -423,12 +436,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnchantedMoonlitBlossoms_1_dmg',
+      name: 'BasicAttackEnchantedMoonlitBlossoms_1',
     },
   },
-  BasicAttackEnchantedMoonlitBlossoms_1_daze: {
+  'BasicAttackEnchantedMoonlitBlossoms_1:dazeBuildup': {
     sheet: 'Qingyi',
-    name: 'BasicAttackEnchantedMoonlitBlossoms_1_daze',
+    name: 'BasicAttackEnchantedMoonlitBlossoms_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -437,12 +450,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnchantedMoonlitBlossoms_1_daze',
+      name: 'BasicAttackEnchantedMoonlitBlossoms_1',
     },
   },
-  BasicAttackEnchantedMoonlitBlossoms_1_anomBuildup: {
+  'BasicAttackEnchantedMoonlitBlossoms_1:anomBuildup': {
     sheet: 'Qingyi',
-    name: 'BasicAttackEnchantedMoonlitBlossoms_1_anomBuildup',
+    name: 'BasicAttackEnchantedMoonlitBlossoms_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -451,12 +464,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType: 'basicSkill',
-      name: 'BasicAttackEnchantedMoonlitBlossoms_1_anomBuildup',
+      name: 'BasicAttackEnchantedMoonlitBlossoms_1',
     },
   },
-  DashAttackBreach_0_dmg: {
+  'DashAttackBreach_0:standardDmg': {
     sheet: 'Qingyi',
-    name: 'DashAttackBreach_0_dmg',
+    name: 'DashAttackBreach_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -465,12 +478,12 @@ export const formulas = {
       damageType1: 'dash',
       attribute: 'physical',
       skillType: 'dodgeSkill',
-      name: 'DashAttackBreach_0_dmg',
+      name: 'DashAttackBreach_0',
     },
   },
-  DashAttackBreach_0_daze: {
+  'DashAttackBreach_0:dazeBuildup': {
     sheet: 'Qingyi',
-    name: 'DashAttackBreach_0_daze',
+    name: 'DashAttackBreach_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -479,12 +492,12 @@ export const formulas = {
       damageType1: 'dash',
       attribute: 'physical',
       skillType: 'dodgeSkill',
-      name: 'DashAttackBreach_0_daze',
+      name: 'DashAttackBreach_0',
     },
   },
-  DashAttackBreach_0_anomBuildup: {
+  'DashAttackBreach_0:anomBuildup': {
     sheet: 'Qingyi',
-    name: 'DashAttackBreach_0_anomBuildup',
+    name: 'DashAttackBreach_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -493,12 +506,12 @@ export const formulas = {
       damageType1: 'dash',
       attribute: 'physical',
       skillType: 'dodgeSkill',
-      name: 'DashAttackBreach_0_anomBuildup',
+      name: 'DashAttackBreach_0',
     },
   },
-  DodgeCounterLingeringSentiments_0_dmg: {
+  'DodgeCounterLingeringSentiments_0:standardDmg': {
     sheet: 'Qingyi',
-    name: 'DodgeCounterLingeringSentiments_0_dmg',
+    name: 'DodgeCounterLingeringSentiments_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -507,12 +520,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterLingeringSentiments_0_dmg',
+      name: 'DodgeCounterLingeringSentiments_0',
     },
   },
-  DodgeCounterLingeringSentiments_0_daze: {
+  'DodgeCounterLingeringSentiments_0:dazeBuildup': {
     sheet: 'Qingyi',
-    name: 'DodgeCounterLingeringSentiments_0_daze',
+    name: 'DodgeCounterLingeringSentiments_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -521,12 +534,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterLingeringSentiments_0_daze',
+      name: 'DodgeCounterLingeringSentiments_0',
     },
   },
-  DodgeCounterLingeringSentiments_0_anomBuildup: {
+  'DodgeCounterLingeringSentiments_0:anomBuildup': {
     sheet: 'Qingyi',
-    name: 'DodgeCounterLingeringSentiments_0_anomBuildup',
+    name: 'DodgeCounterLingeringSentiments_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -535,12 +548,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'dodgeCounter',
       skillType: 'dodgeSkill',
-      name: 'DodgeCounterLingeringSentiments_0_anomBuildup',
+      name: 'DodgeCounterLingeringSentiments_0',
     },
   },
-  SpecialAttackSunlitGlory_0_dmg: {
+  'SpecialAttackSunlitGlory_0:standardDmg': {
     sheet: 'Qingyi',
-    name: 'SpecialAttackSunlitGlory_0_dmg',
+    name: 'SpecialAttackSunlitGlory_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -549,12 +562,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackSunlitGlory_0_dmg',
+      name: 'SpecialAttackSunlitGlory_0',
     },
   },
-  SpecialAttackSunlitGlory_0_daze: {
+  'SpecialAttackSunlitGlory_0:dazeBuildup': {
     sheet: 'Qingyi',
-    name: 'SpecialAttackSunlitGlory_0_daze',
+    name: 'SpecialAttackSunlitGlory_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -563,12 +576,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackSunlitGlory_0_daze',
+      name: 'SpecialAttackSunlitGlory_0',
     },
   },
-  SpecialAttackSunlitGlory_0_anomBuildup: {
+  'SpecialAttackSunlitGlory_0:anomBuildup': {
     sheet: 'Qingyi',
-    name: 'SpecialAttackSunlitGlory_0_anomBuildup',
+    name: 'SpecialAttackSunlitGlory_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -577,12 +590,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'special',
       skillType: 'specialSkill',
-      name: 'SpecialAttackSunlitGlory_0_anomBuildup',
+      name: 'SpecialAttackSunlitGlory_0',
     },
   },
-  EXSpecialAttackMoonlitBegonia_0_dmg: {
+  'EXSpecialAttackMoonlitBegonia_0:standardDmg': {
     sheet: 'Qingyi',
-    name: 'EXSpecialAttackMoonlitBegonia_0_dmg',
+    name: 'EXSpecialAttackMoonlitBegonia_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -591,12 +604,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackMoonlitBegonia_0_dmg',
+      name: 'EXSpecialAttackMoonlitBegonia_0',
     },
   },
-  EXSpecialAttackMoonlitBegonia_0_daze: {
+  'EXSpecialAttackMoonlitBegonia_0:dazeBuildup': {
     sheet: 'Qingyi',
-    name: 'EXSpecialAttackMoonlitBegonia_0_daze',
+    name: 'EXSpecialAttackMoonlitBegonia_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -605,12 +618,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackMoonlitBegonia_0_daze',
+      name: 'EXSpecialAttackMoonlitBegonia_0',
     },
   },
-  EXSpecialAttackMoonlitBegonia_0_anomBuildup: {
+  'EXSpecialAttackMoonlitBegonia_0:anomBuildup': {
     sheet: 'Qingyi',
-    name: 'EXSpecialAttackMoonlitBegonia_0_anomBuildup',
+    name: 'EXSpecialAttackMoonlitBegonia_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -619,12 +632,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackMoonlitBegonia_0_anomBuildup',
+      name: 'EXSpecialAttackMoonlitBegonia_0',
     },
   },
-  EXSpecialAttackMoonlitBegonia_1_dmg: {
+  'EXSpecialAttackMoonlitBegonia_1:standardDmg': {
     sheet: 'Qingyi',
-    name: 'EXSpecialAttackMoonlitBegonia_1_dmg',
+    name: 'EXSpecialAttackMoonlitBegonia_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -633,12 +646,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackMoonlitBegonia_1_dmg',
+      name: 'EXSpecialAttackMoonlitBegonia_1',
     },
   },
-  EXSpecialAttackMoonlitBegonia_1_daze: {
+  'EXSpecialAttackMoonlitBegonia_1:dazeBuildup': {
     sheet: 'Qingyi',
-    name: 'EXSpecialAttackMoonlitBegonia_1_daze',
+    name: 'EXSpecialAttackMoonlitBegonia_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -647,12 +660,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackMoonlitBegonia_1_daze',
+      name: 'EXSpecialAttackMoonlitBegonia_1',
     },
   },
-  EXSpecialAttackMoonlitBegonia_1_anomBuildup: {
+  'EXSpecialAttackMoonlitBegonia_1:anomBuildup': {
     sheet: 'Qingyi',
-    name: 'EXSpecialAttackMoonlitBegonia_1_anomBuildup',
+    name: 'EXSpecialAttackMoonlitBegonia_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -661,12 +674,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackMoonlitBegonia_1_anomBuildup',
+      name: 'EXSpecialAttackMoonlitBegonia_1',
     },
   },
-  EXSpecialAttackMoonlitBegonia_2_dmg: {
+  'EXSpecialAttackMoonlitBegonia_2:standardDmg': {
     sheet: 'Qingyi',
-    name: 'EXSpecialAttackMoonlitBegonia_2_dmg',
+    name: 'EXSpecialAttackMoonlitBegonia_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -675,12 +688,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackMoonlitBegonia_2_dmg',
+      name: 'EXSpecialAttackMoonlitBegonia_2',
     },
   },
-  EXSpecialAttackMoonlitBegonia_2_daze: {
+  'EXSpecialAttackMoonlitBegonia_2:dazeBuildup': {
     sheet: 'Qingyi',
-    name: 'EXSpecialAttackMoonlitBegonia_2_daze',
+    name: 'EXSpecialAttackMoonlitBegonia_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -689,12 +702,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackMoonlitBegonia_2_daze',
+      name: 'EXSpecialAttackMoonlitBegonia_2',
     },
   },
-  EXSpecialAttackMoonlitBegonia_2_anomBuildup: {
+  'EXSpecialAttackMoonlitBegonia_2:anomBuildup': {
     sheet: 'Qingyi',
-    name: 'EXSpecialAttackMoonlitBegonia_2_anomBuildup',
+    name: 'EXSpecialAttackMoonlitBegonia_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -703,12 +716,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'exSpecial',
       skillType: 'specialSkill',
-      name: 'EXSpecialAttackMoonlitBegonia_2_anomBuildup',
+      name: 'EXSpecialAttackMoonlitBegonia_2',
     },
   },
-  ChainAttackTranquilSerenade_0_dmg: {
+  'ChainAttackTranquilSerenade_0:standardDmg': {
     sheet: 'Qingyi',
-    name: 'ChainAttackTranquilSerenade_0_dmg',
+    name: 'ChainAttackTranquilSerenade_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -717,12 +730,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackTranquilSerenade_0_dmg',
+      name: 'ChainAttackTranquilSerenade_0',
     },
   },
-  ChainAttackTranquilSerenade_0_daze: {
+  'ChainAttackTranquilSerenade_0:dazeBuildup': {
     sheet: 'Qingyi',
-    name: 'ChainAttackTranquilSerenade_0_daze',
+    name: 'ChainAttackTranquilSerenade_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -731,12 +744,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackTranquilSerenade_0_daze',
+      name: 'ChainAttackTranquilSerenade_0',
     },
   },
-  ChainAttackTranquilSerenade_0_anomBuildup: {
+  'ChainAttackTranquilSerenade_0:anomBuildup': {
     sheet: 'Qingyi',
-    name: 'ChainAttackTranquilSerenade_0_anomBuildup',
+    name: 'ChainAttackTranquilSerenade_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -745,12 +758,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'chain',
       skillType: 'chainSkill',
-      name: 'ChainAttackTranquilSerenade_0_anomBuildup',
+      name: 'ChainAttackTranquilSerenade_0',
     },
   },
-  UltimateEightSoundsOfGanzhou_0_dmg: {
+  'UltimateEightSoundsOfGanzhou_0:standardDmg': {
     sheet: 'Qingyi',
-    name: 'UltimateEightSoundsOfGanzhou_0_dmg',
+    name: 'UltimateEightSoundsOfGanzhou_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -759,12 +772,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateEightSoundsOfGanzhou_0_dmg',
+      name: 'UltimateEightSoundsOfGanzhou_0',
     },
   },
-  UltimateEightSoundsOfGanzhou_0_daze: {
+  'UltimateEightSoundsOfGanzhou_0:dazeBuildup': {
     sheet: 'Qingyi',
-    name: 'UltimateEightSoundsOfGanzhou_0_daze',
+    name: 'UltimateEightSoundsOfGanzhou_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -773,12 +786,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateEightSoundsOfGanzhou_0_daze',
+      name: 'UltimateEightSoundsOfGanzhou_0',
     },
   },
-  UltimateEightSoundsOfGanzhou_0_anomBuildup: {
+  'UltimateEightSoundsOfGanzhou_0:anomBuildup': {
     sheet: 'Qingyi',
-    name: 'UltimateEightSoundsOfGanzhou_0_anomBuildup',
+    name: 'UltimateEightSoundsOfGanzhou_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -787,12 +800,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'ult',
       skillType: 'chainSkill',
-      name: 'UltimateEightSoundsOfGanzhou_0_anomBuildup',
+      name: 'UltimateEightSoundsOfGanzhou_0',
     },
   },
-  QuickAssistWindThroughThePines_0_dmg: {
+  'QuickAssistWindThroughThePines_0:standardDmg': {
     sheet: 'Qingyi',
-    name: 'QuickAssistWindThroughThePines_0_dmg',
+    name: 'QuickAssistWindThroughThePines_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -801,12 +814,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistWindThroughThePines_0_dmg',
+      name: 'QuickAssistWindThroughThePines_0',
     },
   },
-  QuickAssistWindThroughThePines_0_daze: {
+  'QuickAssistWindThroughThePines_0:dazeBuildup': {
     sheet: 'Qingyi',
-    name: 'QuickAssistWindThroughThePines_0_daze',
+    name: 'QuickAssistWindThroughThePines_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -815,12 +828,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistWindThroughThePines_0_daze',
+      name: 'QuickAssistWindThroughThePines_0',
     },
   },
-  QuickAssistWindThroughThePines_0_anomBuildup: {
+  'QuickAssistWindThroughThePines_0:anomBuildup': {
     sheet: 'Qingyi',
-    name: 'QuickAssistWindThroughThePines_0_anomBuildup',
+    name: 'QuickAssistWindThroughThePines_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -829,12 +842,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'quickAssist',
       skillType: 'assistSkill',
-      name: 'QuickAssistWindThroughThePines_0_anomBuildup',
+      name: 'QuickAssistWindThroughThePines_0',
     },
   },
-  DefensiveAssistGracefulEmbellishment_0_dmg: {
+  'DefensiveAssistGracefulEmbellishment_0:standardDmg': {
     sheet: 'Qingyi',
-    name: 'DefensiveAssistGracefulEmbellishment_0_dmg',
+    name: 'DefensiveAssistGracefulEmbellishment_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -843,12 +856,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistGracefulEmbellishment_0_dmg',
+      name: 'DefensiveAssistGracefulEmbellishment_0',
     },
   },
-  DefensiveAssistGracefulEmbellishment_0_daze: {
+  'DefensiveAssistGracefulEmbellishment_0:dazeBuildup': {
     sheet: 'Qingyi',
-    name: 'DefensiveAssistGracefulEmbellishment_0_daze',
+    name: 'DefensiveAssistGracefulEmbellishment_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -857,12 +870,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistGracefulEmbellishment_0_daze',
+      name: 'DefensiveAssistGracefulEmbellishment_0',
     },
   },
-  DefensiveAssistGracefulEmbellishment_0_anomBuildup: {
+  'DefensiveAssistGracefulEmbellishment_0:anomBuildup': {
     sheet: 'Qingyi',
-    name: 'DefensiveAssistGracefulEmbellishment_0_anomBuildup',
+    name: 'DefensiveAssistGracefulEmbellishment_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -871,12 +884,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistGracefulEmbellishment_0_anomBuildup',
+      name: 'DefensiveAssistGracefulEmbellishment_0',
     },
   },
-  DefensiveAssistGracefulEmbellishment_1_dmg: {
+  'DefensiveAssistGracefulEmbellishment_1:standardDmg': {
     sheet: 'Qingyi',
-    name: 'DefensiveAssistGracefulEmbellishment_1_dmg',
+    name: 'DefensiveAssistGracefulEmbellishment_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -885,12 +898,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistGracefulEmbellishment_1_dmg',
+      name: 'DefensiveAssistGracefulEmbellishment_1',
     },
   },
-  DefensiveAssistGracefulEmbellishment_1_daze: {
+  'DefensiveAssistGracefulEmbellishment_1:dazeBuildup': {
     sheet: 'Qingyi',
-    name: 'DefensiveAssistGracefulEmbellishment_1_daze',
+    name: 'DefensiveAssistGracefulEmbellishment_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -899,12 +912,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistGracefulEmbellishment_1_daze',
+      name: 'DefensiveAssistGracefulEmbellishment_1',
     },
   },
-  DefensiveAssistGracefulEmbellishment_1_anomBuildup: {
+  'DefensiveAssistGracefulEmbellishment_1:anomBuildup': {
     sheet: 'Qingyi',
-    name: 'DefensiveAssistGracefulEmbellishment_1_anomBuildup',
+    name: 'DefensiveAssistGracefulEmbellishment_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -913,12 +926,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistGracefulEmbellishment_1_anomBuildup',
+      name: 'DefensiveAssistGracefulEmbellishment_1',
     },
   },
-  DefensiveAssistGracefulEmbellishment_2_dmg: {
+  'DefensiveAssistGracefulEmbellishment_2:standardDmg': {
     sheet: 'Qingyi',
-    name: 'DefensiveAssistGracefulEmbellishment_2_dmg',
+    name: 'DefensiveAssistGracefulEmbellishment_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -927,12 +940,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistGracefulEmbellishment_2_dmg',
+      name: 'DefensiveAssistGracefulEmbellishment_2',
     },
   },
-  DefensiveAssistGracefulEmbellishment_2_daze: {
+  'DefensiveAssistGracefulEmbellishment_2:dazeBuildup': {
     sheet: 'Qingyi',
-    name: 'DefensiveAssistGracefulEmbellishment_2_daze',
+    name: 'DefensiveAssistGracefulEmbellishment_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -941,12 +954,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistGracefulEmbellishment_2_daze',
+      name: 'DefensiveAssistGracefulEmbellishment_2',
     },
   },
-  DefensiveAssistGracefulEmbellishment_2_anomBuildup: {
+  'DefensiveAssistGracefulEmbellishment_2:anomBuildup': {
     sheet: 'Qingyi',
-    name: 'DefensiveAssistGracefulEmbellishment_2_anomBuildup',
+    name: 'DefensiveAssistGracefulEmbellishment_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -955,12 +968,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType: 'assistSkill',
-      name: 'DefensiveAssistGracefulEmbellishment_2_anomBuildup',
+      name: 'DefensiveAssistGracefulEmbellishment_2',
     },
   },
-  AssistFollowUpSongOfTheClearRiver_0_dmg: {
+  'AssistFollowUpSongOfTheClearRiver_0:standardDmg': {
     sheet: 'Qingyi',
-    name: 'AssistFollowUpSongOfTheClearRiver_0_dmg',
+    name: 'AssistFollowUpSongOfTheClearRiver_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -969,12 +982,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpSongOfTheClearRiver_0_dmg',
+      name: 'AssistFollowUpSongOfTheClearRiver_0',
     },
   },
-  AssistFollowUpSongOfTheClearRiver_0_daze: {
+  'AssistFollowUpSongOfTheClearRiver_0:dazeBuildup': {
     sheet: 'Qingyi',
-    name: 'AssistFollowUpSongOfTheClearRiver_0_daze',
+    name: 'AssistFollowUpSongOfTheClearRiver_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -983,12 +996,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpSongOfTheClearRiver_0_daze',
+      name: 'AssistFollowUpSongOfTheClearRiver_0',
     },
   },
-  AssistFollowUpSongOfTheClearRiver_0_anomBuildup: {
+  'AssistFollowUpSongOfTheClearRiver_0:anomBuildup': {
     sheet: 'Qingyi',
-    name: 'AssistFollowUpSongOfTheClearRiver_0_anomBuildup',
+    name: 'AssistFollowUpSongOfTheClearRiver_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -997,7 +1010,7 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'assistFollowUp',
       skillType: 'assistSkill',
-      name: 'AssistFollowUpSongOfTheClearRiver_0_anomBuildup',
+      name: 'AssistFollowUpSongOfTheClearRiver_0',
     },
   },
   m4_shield: {

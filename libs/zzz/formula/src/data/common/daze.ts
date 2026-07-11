@@ -19,7 +19,7 @@ const data: TagMapNodeEntries = [
   // Daze buildup
   ownBuff.formula.dazeBuildup.add(
     prod(
-      own.formula.base,
+      own.formula.dazeBuildupBase,
       own.final.impact,
       own.formula.daze_mult_,
       own.formula.enemyDazeRes_mult_,

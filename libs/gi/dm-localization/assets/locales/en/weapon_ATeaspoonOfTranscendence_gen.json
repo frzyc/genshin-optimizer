@@ -1,0 +1,29 @@
+{
+  "name": "A Teaspoon of Transcendence",
+  "description": {
+    "0": "An object of fantasy with countless definitions amidst an endless sea of stories. On the grand scale of the universe or the realm of dreams, there is no real difference between the holy sword of the brave warrior and the princess's teaspoon, or between the ice-cold clockspring and the key that will unlock the gates of transcendence..."
+  },
+  "passiveName": "White Fairy's Queening",
+  "passiveDescription": {
+    "0": {
+      "0": "ATK is increased by <cryo>28%</cryo>.",
+      "1": "Additionally, each time the equipping character hits an opponent with their Charged Attack, they attain \"Transcendence\" for a short time: their Stellar-Conduct DMG is increased by <cryo>16%</cryo> for 5s. This effect can stack once every 0.2s, max 3 stacks."
+    },
+    "1": {
+      "0": "ATK is increased by <cryo>35%</cryo>.",
+      "1": "Additionally, each time the equipping character hits an opponent with their Charged Attack, they attain \"Transcendence\" for a short time: their Stellar-Conduct DMG is increased by <cryo>20%</cryo> for 5s. This effect can stack once every 0.2s, max 3 stacks."
+    },
+    "2": {
+      "0": "ATK is increased by <cryo>42%</cryo>.",
+      "1": "Additionally, each time the equipping character hits an opponent with their Charged Attack, they attain \"Transcendence\" for a short time: their Stellar-Conduct DMG is increased by <cryo>24%</cryo> for 5s. This effect can stack once every 0.2s, max 3 stacks."
+    },
+    "3": {
+      "0": "ATK is increased by <cryo>49%</cryo>.",
+      "1": "Additionally, each time the equipping character hits an opponent with their Charged Attack, they attain \"Transcendence\" for a short time: their Stellar-Conduct DMG is increased by <cryo>28%</cryo> for 5s. This effect can stack once every 0.2s, max 3 stacks."
+    },
+    "4": {
+      "0": "ATK is increased by <cryo>56%</cryo>.",
+      "1": "Additionally, each time the equipping character hits an opponent with their Charged Attack, they attain \"Transcendence\" for a short time: their Stellar-Conduct DMG is increased by <cryo>32%</cryo> for 5s. This effect can stack once every 0.2s, max 3 stacks."
+    }
+  }
+}

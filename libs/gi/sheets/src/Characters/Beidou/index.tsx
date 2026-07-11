@@ -9,6 +9,7 @@ import {
   percent,
   prod,
   subscript,
+  target,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
@@ -27,7 +28,11 @@ import {
 const key: CharacterKey = 'Beidou'
 const elementKey: ElementKey = 'electro'
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key)
+
+const [condLockRevelationPath, condLockRevelation] = cond(key, 'lockRevelation')
+const lockRevelation = equal(condLockRevelation, 'on', 1)
+
+const ct = charTemplates(key, lockRevelation)
 
 let a = 0,
   s = 0,
@@ -74,6 +79,11 @@ const dm = {
     chargeDmg_: skillParam_gen.passive2[0][0],
     attackSpeed: skillParam_gen.passive2[0][0],
   },
+  lockedPassive: {
+    cdReduce: skillParam_gen.lockedPassive![0][0],
+    energyRegen: skillParam_gen.lockedPassive![1][0],
+    cd: skillParam_gen.lockedPassive![2][0],
+  },
   constellation1: {
     shieldHp_: skillParam_gen.constellation1[0],
   },
@@ -83,8 +93,15 @@ const dm = {
   },
   constellation6: {
     electroResShred_: -1 * skillParam_gen.constellation6[0],
+    cryoResShred_: -1 * skillParam_gen.constellation6[1],
+    eleMas: skillParam_gen.constellation6[2],
   },
 } as const
+
+const [condLockStellarRadianceScPath, condLockStellarRadianceSc] = cond(
+  key,
+  'lockStellarRadianceSc'
+)
 
 //Toggleable stuff:
 // A4: Unleashing <b>Tidecaller</b> with its maximum DMG Bonus
@@ -112,6 +129,37 @@ const nodeBurstElectroResRed_ = greaterEq(
   input.constellation,
   6,
   equal(condBurst, 'on', percent(dm.constellation6.electroResShred_))
+)
+const nodeBurstCryoResRed_ = greaterEq(
+  input.constellation,
+  6,
+  equal(
+    condLockRevelation,
+    'on',
+    equal(
+      condLockStellarRadianceSc,
+      'on',
+      equal(condBurst, 'on', dm.constellation6.cryoResShred_)
+    )
+  )
+)
+const nodeBurstEleMasDisp = greaterEq(
+  input.constellation,
+  6,
+  equal(
+    condLockRevelation,
+    'on',
+    equal(
+      condLockStellarRadianceSc,
+      'on',
+      equal(condBurst, 'on', dm.constellation6.eleMas)
+    )
+  )
+)
+const nodeBurstEleMas = equal(
+  target.charKey,
+  input.activeCharKey,
+  nodeBurstEleMasDisp
 )
 const nodeSkillNormalDmg_ = greaterEq(
   input.asc,
@@ -190,6 +238,8 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
     premod: {
       electro_enemyRes_: nodeBurstElectroResRed_,
       dmgRed_: infoMut(nodeBurstDmgRed_, { path: 'dmgRed_' }),
+      cryo_enemyRes_: nodeBurstCryoResRed_,
+      eleMas: nodeBurstEleMas,
     },
   },
 })
@@ -374,6 +424,15 @@ const sheet: TalentSheet = {
         {
           node: nodeBurstElectroResRed_,
         },
+        {
+          node: nodeBurstCryoResRed_,
+        },
+        {
+          node: infoMut(nodeBurstEleMasDisp, {
+            path: 'eleMas',
+            isTeamBuff: true,
+          }),
+        },
       ],
     }),
   ]),
@@ -381,6 +440,39 @@ const sheet: TalentSheet = {
   passive1: ct.talentTem('passive1'),
   passive2: ct.talentTem('passive2'),
   passive3: ct.talentTem('passive3'),
+  lockedPassive: ct.talentTem('lockedPassive', [
+    ct.condTem('lockedPassive', {
+      path: condLockRevelationPath,
+      value: condLockRevelation,
+      teamBuff: true,
+      name: st('revelation.done'),
+      states: {
+        on: {
+          fields: [
+            {
+              text: st('hexerei.talentEnhance'),
+            },
+          ],
+        },
+      },
+    }),
+    ct.condTem('lockedPassive', {
+      path: condLockStellarRadianceScPath,
+      value: condLockStellarRadianceSc,
+      teamBuff: true,
+      canShow: lockRevelation,
+      name: st('elementalReaction.polestar.inside'),
+      states: {
+        on: {
+          fields: [
+            {
+              text: st('elementalReaction.gainRadianceSc'),
+            },
+          ],
+        },
+      },
+    }),
+  ]),
   constellation1: ct.talentTem('constellation1', [
     ct.fieldsTem('constellation1', {
       fields: [

@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     },
     "skillParamsEncoding": {
       "0": "{{0, percent(fixed: 1)}}%",
@@ -54,7 +58,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -80,7 +88,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     },
     "skillParamsEncoding": {
       "0": "{{0, percent(fixed: 1)}}% Max HP",
@@ -98,7 +110,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -122,7 +138,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     },
     "skillParamsEncoding": {
       "0": "{{0, percent(fixed: 1)}}% Max HP",
@@ -140,7 +160,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -171,7 +195,7 @@
   "passive": {
     "name": "Lunar Vigil",
     "description": {
-      "0": "If one of your party members is incapacitated while in the Nod-Krai region, Columbina will revive this character. The amount of HP the character will have upon revival is based on Columbina's Friendship Level. This effect can occur once every 100s. This effect does not trigger in Domains, Trounce Domains, or the Spiral Abyss.",
+      "0": "If one of your party members is incapacitated while in the Nod-Krai or Frost Moon regions, Columbina will revive this character. The amount of HP the character will have upon revival is based on Columbina's Friendship Level. This effect can occur once every 100s. This effect does not trigger in Domains, Trounce Domains, or the Spiral Abyss.",
       "1": "Additionally, Columbina appears to have a special affinity for certain animals who are influenced by kuuvahki..."
     }
   },

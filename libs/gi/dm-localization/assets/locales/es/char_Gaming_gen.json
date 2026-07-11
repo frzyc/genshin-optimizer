@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -67,7 +71,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -97,7 +105,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -128,7 +140,7 @@
   "constellation2": {
     "name": "Paseo entre cerezos",
     "description": {
-      "0": "Cuando Gaming recibe curación teniendo la Vida al máximo, su ATQ aumenta en un 20% durante 5 s."
+      "0": "Cuando Gaming recibe exceso de curación, su ATQ aumenta en un 20% durante 5 s."
     }
   },
   "constellation3": {

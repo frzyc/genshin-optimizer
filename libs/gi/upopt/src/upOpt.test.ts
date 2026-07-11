@@ -50,6 +50,14 @@ const emptyBuild = {
   circlet: undefined,
 }
 
+const emptyBuild = {
+  flower: undefined,
+  plume: undefined,
+  sands: undefined,
+  goblet: undefined,
+  circlet: undefined,
+}
+
 /**
  * Checks whether the expanded nodes' evaluations match the base Gaussian node's evaluation.
  * Should only work for linear objectives.

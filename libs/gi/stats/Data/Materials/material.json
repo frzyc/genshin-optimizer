@@ -257,6 +257,9 @@
   "PalsSynergy": {
     "type": "MATERIAL_NONE"
   },
+  "VenuePopularity": {
+    "type": "MATERIAL_NONE"
+  },
   "Primogem": {
     "type": "MATERIAL_ADSORBATE"
   },
@@ -1131,7 +1134,7 @@
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "Nefer": {
-    "type": "MATERIAL_AVATAR"
+    "type": "MATERIAL_GCG_CARD_FACE"
   },
   "Durin": {
     "type": "MATERIAL_AVATAR"
@@ -1161,6 +1164,9 @@
     "type": "MATERIAL_AVATAR"
   },
   "Prune": {
+    "type": "MATERIAL_AVATAR"
+  },
+  "Sandrone": {
     "type": "MATERIAL_AVATAR"
   },
   "KachinasStellaFortuna": {
@@ -1254,6 +1260,9 @@
     "type": "MATERIAL_AVATAR_TALENT_MATERIAL"
   },
   "PrunesStellaFortuna": {
+    "type": "MATERIAL_AVATAR_TALENT_MATERIAL"
+  },
+  "SandronesStellaFortuna": {
     "type": "MATERIAL_AVATAR_TALENT_MATERIAL"
   },
   "Apple": {
@@ -3728,6 +3737,9 @@
   "PineAmber": {
     "type": "MATERIAL_QUEST"
   },
+  "TeardropOfTheMoon": {
+    "type": "MATERIAL_EXCHANGE"
+  },
   "WindrestFlower": {
     "type": "MATERIAL_EXCHANGE"
   },
@@ -5499,6 +5511,9 @@
     "type": "MATERIAL_ELEM_CRYSTAL"
   },
   "BorderlandShrineOfDepthsKey": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "FrostMoonShrineOfDepthsKey": {
     "type": "MATERIAL_CONSUME"
   },
   "MnemonicCluster": {
@@ -8190,7 +8205,7 @@
     "type": "MATERIAL_FOOD"
   },
   "LakkaberryPie": {
-    "type": "MATERIAL_FOOD"
+    "type": "MATERIAL_GCG_CARD_FACE"
   },
   "DeliciousLakkaberryPie": {
     "type": "MATERIAL_FOOD"
@@ -8374,6 +8389,33 @@
   },
   "BoredomBustingBubblegum": {
     "type": "MATERIAL_FOOD"
+  },
+  "TeaPartyPolyphony": {
+    "type": "MATERIAL_FOOD"
+  },
+  "SuspiciousBirchSteamedPorkRibs": {
+    "type": "MATERIAL_FOOD"
+  },
+  "BirchSteamedPorkRibs": {
+    "type": "MATERIAL_FOOD"
+  },
+  "DeliciousBirchSteamedPorkRibs": {
+    "type": "MATERIAL_FOOD"
+  },
+  "SuspiciousMeatFilledRyeBun": {
+    "type": "MATERIAL_FOOD"
+  },
+  "MeatFilledRyeBun": {
+    "type": "MATERIAL_FOOD"
+  },
+  "DeliciousMeatFilledRyeBun": {
+    "type": "MATERIAL_FOOD"
+  },
+  "TeaPartyPreludeHerbalTea": {
+    "type": "MATERIAL_NOTICE_ADD_HP"
+  },
+  "TeaPartyPreludeArtfulLatte": {
+    "type": "MATERIAL_NOTICE_ADD_HP"
   },
   "RecipeItem": {
     "type": "MATERIAL_CONSUME"
@@ -9182,6 +9224,12 @@
   "RecipeMintBubblegum": {
     "type": "MATERIAL_CONSUME"
   },
+  "RecipeBirchSteamedPorkRibs": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "RecipeMeatFilledRyeBun": {
+    "type": "MATERIAL_CONSUME"
+  },
   "CraftedItems": {
     "type": "MATERIAL_EXCHANGE"
   },
@@ -9747,6 +9795,15 @@
     "type": "MATERIAL_AVATAR_MATERIAL"
   },
   "JeweledFlamingHilt": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "FracturedLunarIron": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "DepletedLunarIron": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "UnblemishedLunarIron": {
     "type": "MATERIAL_AVATAR_MATERIAL"
   },
   "HurricaneSeed": {
@@ -13742,6 +13799,9 @@
   "AncientHandwriting": {
     "type": "MATERIAL_QUEST"
   },
+  "SecretSourceAncientMoonsFount": {
+    "type": "MATERIAL_QUEST"
+  },
   "ALetterCarriedByTheWind": {
     "type": "MATERIAL_QUEST"
   },
@@ -13749,6 +13809,9 @@
     "type": "MATERIAL_QUEST"
   },
   "VarkasSecretStashOfCash": {
+    "type": "MATERIAL_QUEST"
+  },
+  "PaimonsNotes": {
     "type": "MATERIAL_QUEST"
   },
   "OnFungiCommunitiesDraftManuscript": {
@@ -13850,11 +13913,35 @@
   "PrimalConstructComponent": {
     "type": "MATERIAL_QUEST"
   },
+  "WitnessOfTheMoon": {
+    "type": "MATERIAL_QUEST"
+  },
+  "LostFlowerOfAncientTimes": {
+    "type": "MATERIAL_QUEST"
+  },
+  "SandronesTeaPartyInvitationLetter": {
+    "type": "MATERIAL_MARIONETTE_TEA_TIME_INVITE"
+  },
   "AncientMondstadtRoyalSeal": {
     "type": "MATERIAL_CONSUME"
   },
   "SegmentDomainControlModuleZeroParticle": {
     "type": "MATERIAL_CONSUME"
+  },
+  "FrostMoonSeal": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "FamilyPortraitByMamere": {
+    "type": "MATERIAL_QUEST"
+  },
+  "AlainGuillotinsEpitaph": {
+    "type": "MATERIAL_QUEST"
+  },
+  "MoongazersEngravingI": {
+    "type": "MATERIAL_QUEST"
+  },
+  "MoongazersEngravingII": {
+    "type": "MATERIAL_QUEST"
   },
   "TearsAmongTheStars": {
     "type": "MATERIAL_QUEST"
@@ -14805,6 +14892,24 @@
     "type": "MATERIAL_BGM"
   },
   "RadiantSpincrystal182": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal183": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal184": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal185": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal186": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal187": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal188": {
     "type": "MATERIAL_BGM"
   },
   "LanternFiber": {
@@ -15902,6 +16007,15 @@
   "TravelNotesGiftOfSplendor": {
     "type": "MATERIAL_NAMECARD"
   },
+  "SandroneTeaBreak": {
+    "type": "MATERIAL_NAMECARD"
+  },
+  "NodKraiMoonbright": {
+    "type": "MATERIAL_NAMECARD"
+  },
+  "TravelNotesSunnySummer": {
+    "type": "MATERIAL_NAMECARD"
+  },
   "EchoDandelionKnight": {
     "type": "MATERIAL_AVATAR_TRACE"
   },
@@ -16311,6 +16425,12 @@
     "type": "MATERIAL_WIDGET"
   },
   "LinneasNaturalistArchive": {
+    "type": "MATERIAL_WIDGET"
+  },
+  "SandronesPortableTeaTable": {
+    "type": "MATERIAL_WIDGET"
+  },
+  "WitchsRevelationCase": {
     "type": "MATERIAL_WIDGET"
   },
   "InstructionsAnemoculusResonanceStone": {
@@ -16922,6 +17042,27 @@
   "ShareWithYou": {
     "type": "MATERIAL_PHOTOGRAPH_POSE"
   },
+  "HealingTreats": {
+    "type": "MATERIAL_PHOTOGRAPH_POSE"
+  },
+  "RelaxedReadiness": {
+    "type": "MATERIAL_PHOTOGRAPH_POSE"
+  },
+  "GracefulDance": {
+    "type": "MATERIAL_PHOTOGRAPH_POSE"
+  },
+  "CommandingStance": {
+    "type": "MATERIAL_PHOTOGRAPH_POSE"
+  },
+  "GentleElegance": {
+    "type": "MATERIAL_PHOTOGRAPH_POSE"
+  },
+  "PoisedToStrike": {
+    "type": "MATERIAL_PHOTOGRAPH_POSE"
+  },
+  "MajesticBearing": {
+    "type": "MATERIAL_PHOTOGRAPH_POSE"
+  },
   "FantasticalMarvel": {
     "type": "MATERIAL_MUSIC_GAME_BOOK_THEME"
   },
@@ -16992,6 +17133,9 @@
     "type": "MATERIAL_MUSIC_GAME_BOOK_THEME"
   },
   "DemonSlayingGale": {
+    "type": "MATERIAL_MUSIC_GAME_BOOK_THEME"
+  },
+  "DovefeatherMoondew": {
     "type": "MATERIAL_MUSIC_GAME_BOOK_THEME"
   },
   "VigorousYapping": {
@@ -17106,6 +17250,12 @@
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "ExperimentalFieldGenerator": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "WaywardHermeticSpiritspeaker": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "BlackSerpentKnightWindcutter": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "UndividedHeart": {
@@ -17523,6 +17673,15 @@
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "GravityField": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "VictoryFlowsFromTheTurningOfTides": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "FlowOfForms": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "OnceTheLoneWindThatKeptTheDarkCalamityAtBay": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "MagicGuide": {
@@ -18104,6 +18263,15 @@
   "ElementalTransfigurationStormgaleBlessing": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
+  "NightmareOmen": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "ElementalTransfigurationAquabreezeBlessing": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "ElementalTransfigurationThunderbloomBlessing": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
   "ElementalResonanceWovenIce": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
@@ -18362,6 +18530,12 @@
   "TheOtherSideOfTheFrostmoon": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
+  "LilFungisFunTasticFiesta": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "ThePowerOfResearch": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
   "Origin": {
     "type": "MATERIAL_GCG_CARD_BACK"
   },
@@ -18537,6 +18711,12 @@
     "type": "MATERIAL_COSTUME"
   },
   "RainlitBambooReverie": {
+    "type": "MATERIAL_COSTUME"
+  },
+  "WhispersOfStarsAndSmoke": {
+    "type": "MATERIAL_COSTUME"
+  },
+  "HurlockVariations": {
     "type": "MATERIAL_COSTUME"
   },
   "RadiantPhantasm": {
@@ -18890,6 +19070,9 @@
   "PreBattleRespite": {
     "type": "MATERIAL_FURNITURE_SUITE_FORMULA"
   },
+  "ATeaPartyAtLeisure": {
+    "type": "MATERIAL_FURNITURE_SUITE_FORMULA"
+  },
   "WildernessOfTheFarNorth": {
     "type": "MATERIAL_FURNITURE_SUITE_FORMULA"
   },
@@ -19178,6 +19361,12 @@
   "CityStreetLampLowLanternlight": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
+  "MovableSmallSpotlight": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "StandingStreetLampBeaconInTheMistyNight": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
   "EfflorescentIllumination": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
@@ -19457,6 +19646,9 @@
   "FrostMoonRoundTableASoftBlueSky": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
+  "TeaPartyDiningTableThePerfectGathering": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
   "BreezeBlessedBed": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
@@ -19623,6 +19815,9 @@
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "PedunculateOakWoodMoonrestBackedChair": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "TeaPartyChairCrimsonAndGold": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "NorthernStoneHearth": {
@@ -19895,6 +20090,9 @@
   "FluffyLittleRug": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
+  "TeaPartyCarpetSoftToTheTouch": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
   "VibrantPotBornInFlames": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
@@ -20132,6 +20330,9 @@
   "FlowerShapedMachineComponent": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
+  "TeaPartyCartDessertTime": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
   "TeahouseToolMinisculeMissesMakeAMile": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
@@ -20172,6 +20373,9 @@
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "FrostMoonSmallTableAromaOfFreshFruit": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "TeaPartyCupRefreshingFlavor": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "RealizationsFromTheLandOfWisdom": {
@@ -22217,6 +22421,9 @@
   "LittleCover": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
+  "CampBarrierTreatmentArea": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
   "BookshelfFreeReading": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
@@ -22353,6 +22560,9 @@
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "GentleEmbrace": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "UnusableLegacy": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "WeatheredBambooFence": {
@@ -22772,6 +22982,24 @@
   "BloomingSplendor": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
+  "NashaStallDeepRootedTraditions": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "VesselOfThePast": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "LargeCargoCrateReliableSupport": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "MediumCargoCrateBasicSupplies": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "MediumMetalScrapBarrel": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "SignallessTower": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
   "SirCapyOfTheLongIncisors": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
@@ -22803,6 +23031,12 @@
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "MiniatureStonecraft": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "InfiniteRecursionFormula": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "MoonEnvoyOfSilverRadiance": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   }
 }

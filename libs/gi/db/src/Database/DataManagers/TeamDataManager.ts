@@ -47,6 +47,7 @@ export interface Team {
   >
   conditional: {
     resonance: { [key: string]: string }
+    reaction: { [key: string]: string }
   }
   loadoutData: Array<LoadoutDatum | undefined>
   lastEdit: number
@@ -116,7 +117,7 @@ export class TeamDataManager extends DataManager<
       })
     }
 
-    if (!conditional) conditional = { resonance: {} }
+    if (!conditional) conditional = { resonance: {}, reaction: {} }
 
     {
       // validate teamCharIds

@@ -5,12 +5,19 @@ import {
   StarsDisplay,
 } from '@genshin-optimizer/common/ui'
 import { weaponAsset } from '@genshin-optimizer/gi/assets'
-import type {
-  CharacterKey,
-  LocationCharacterKey,
+import {
+  type CharacterKey,
+  type LocationCharacterKey,
+  maxLevel,
+  maxLevelLow,
+  weaponMaxAscension,
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
-import { useDatabase, useWeapon } from '@genshin-optimizer/gi/db-ui'
+import {
+  CharacterContext,
+  useDatabase,
+  useWeapon,
+} from '@genshin-optimizer/gi/db-ui'
 import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import {
   getCharStat,
@@ -35,6 +42,7 @@ import {
 } from '@mui/material'
 import { useCallback, useContext, useMemo } from 'react'
 import { DataContext } from '../../context'
+import { useTeamData } from '../../hooks'
 import { DocumentDisplay } from '../DocumentDisplay'
 import { FieldDisplayList, NodeFieldDisplay } from '../FieldDisplay'
 import { RefinementDropdown } from '../RefinementDropdown'
@@ -60,7 +68,8 @@ export function WeaponEditor({
   onClose,
   extraButtons,
 }: WeaponStatsEditorCardProps) {
-  const { data } = useContext(DataContext)
+  const { teamData } = useContext(DataContext)
+  const { character } = useContext(CharacterContext)
 
   const database = useDatabase()
   const weapon = useWeapon(propWeaponId)
@@ -104,6 +113,9 @@ export function WeaponEditor({
     [weaponSheet, weapon]
   )
 
+  const newTeamData = useTeamData(0, undefined, weapon)
+  const newData = character && newTeamData?.[character.key]?.target
+
   return (
     <ModalWrapper
       open={!!propWeaponId}
@@ -115,7 +127,23 @@ export function WeaponEditor({
           ascension={ascension}
           show={showModal}
           onHide={onHideModal}
-          onSelect={(k) => weaponDispatch({ key: k })}
+          onSelect={(newKey) => {
+            // If changing from 1* or 2* max level to a 3*+ weapon, convert the max level accordingly
+            const lowStarWepAtMaxLevelChangingToHighStarWep =
+              key &&
+              !weaponHasRefinement(key) &&
+              level === maxLevelLow &&
+              weaponHasRefinement(newKey)
+            weaponDispatch({
+              key: newKey,
+              level: lowStarWepAtMaxLevelChangingToHighStarWep
+                ? maxLevel
+                : level,
+              ascension: lowStarWepAtMaxLevelChangingToHighStarWep
+                ? weaponMaxAscension[5]
+                : ascension,
+            })
+          }}
           // can only swap to a weapon of the same type
           weaponTypeFilter={weaponType}
         />
@@ -240,8 +268,10 @@ export function WeaponEditor({
                       })}
                     </FieldDisplayList>
                   </CardThemed>
-                  {data && weaponSheet?.document && (
-                    <DocumentDisplay sections={weaponSheet.document} />
+                  {newData && weaponSheet?.document && (
+                    <DataContext.Provider value={{ data: newData, teamData }}>
+                      <DocumentDisplay sections={weaponSheet.document} />
+                    </DataContext.Provider>
                   )}
                 </Box>
               </Grid>

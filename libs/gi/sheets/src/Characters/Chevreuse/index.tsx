@@ -177,7 +177,9 @@ const dmgFormulas = {
     holdDmg: dmgNode('atk', dm.skill.holdDmg, 'skill'),
     ballDmg: dmgNode('atk', dm.skill.ballDmg, 'skill'),
     heal: healNodeTalent('hp', dm.skill.healBase, dm.skill.healFlat, 'skill'),
-    bladeDmg: dmgNode('atk', dm.skill.bladeDmg, 'skill'),
+    bladeDmg: dmgNode('atk', dm.skill.bladeDmg, 'skill', {
+      hit: { reaction: constant('') },
+    }),
   },
   burst: {
     grenadeDmg: dmgNode('atk', dm.burst.grenadeDmg, 'burst'),
