@@ -20,15 +20,19 @@ import {
 } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { CalcResult } from '@genshin-optimizer/pando/engine'
 import { constant } from '@genshin-optimizer/pando/engine'
+import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allDiscSetKeys, allWengineKeys } from '@genshin-optimizer/zzz/consts'
 import type {
-  DiscIds,
   ICachedCharacter,
   Team,
   TeamConditional,
 } from '@genshin-optimizer/zzz/db'
 import { getTeamFrame0, teamCharacterKeys } from '@genshin-optimizer/zzz/db'
-import { useDiscs, useWengine } from '@genshin-optimizer/zzz/db-ui'
+import {
+  useCharacter,
+  useDiscs,
+  useWengine,
+} from '@genshin-optimizer/zzz/db-ui'
 import {
   charTagMapNodeEntries,
   conditionalEntries,
@@ -44,26 +48,25 @@ import {
   withPreset,
   zzzCalculatorWithEntries,
 } from '@genshin-optimizer/zzz/formula'
-import { allStats } from '@genshin-optimizer/zzz/stats'
 import type { ReactNode } from 'react'
 import { useMemo } from 'react'
 import { FullTagDisplay, TagDisplay } from '../components'
 import { formulaText } from '../formulaText'
 
 export function CharCalcProvider({
-  character,
   team,
-  wengineId,
-  discIds,
   children,
 }: {
-  character: ICachedCharacter
   team: Team
-  wengineId?: string
-  discIds: DiscIds
   children: ReactNode
 }) {
-  const member0 = useCharacterAndEquipment(character, wengineId, discIds)
+  const member0 = useCharacterAndEquipment(team.teammates[0].characterKey)
+  const member1 = useCharacterAndEquipment(
+    team.teammates.length > 1 ? team.teammates[1].characterKey : undefined
+  )
+  const member2 = useCharacterAndEquipment(
+    team.teammates.length > 2 ? team.teammates[2].characterKey : undefined
+  )
 
   const calc = useMemo(() => {
     const frames = team.frames.length > 0 ? team.frames : [getTeamFrame0(team)]
@@ -90,7 +93,12 @@ export function CharCalcProvider({
             .flatMap(({ tag, value }) =>
               withPreset(preset, {
                 // since bonusStats are applied to own*, needs {src:key, dst:never}
-                tag: { ...tag, src: character.key, sheet: 'agg', et: 'own' },
+                tag: {
+                  ...tag,
+                  src: team.teammates[0].characterKey,
+                  sheet: 'agg',
+                  et: 'own',
+                },
                 value: constant(toDecimal(value, tag.q ?? '')),
               })
             ),
@@ -102,22 +110,11 @@ export function CharCalcProvider({
           ),
         ]
       }),
-      // Non-main teammates only; main counts come from charTagMapNodeEntries in member0.
-      ...team.teammates
-        .filter((t) => t.characterKey !== character.key)
-        .flatMap(({ characterKey: charKey }) => [
-          ownBuff.common.count
-            .withSpecialty(allStats.char[charKey].specialty)
-            .add(1),
-          ownBuff.common.count
-            .withFaction(allStats.char[charKey].faction)
-            .add(1),
-          ownBuff.common.count
-            .withTag({ attribute: allStats.char[charKey].attribute })
-            .add(1),
-        ]),
+      // Teammates
+      ...member1,
+      ...member2,
     ])
-  }, [member0, team, character.key])
+  }, [team, member0, member1, member2])
   // New map per calc so formula tooltips do not reuse stale nodes after gear/opt changes.
   const formulaTextCache = useMemo(() => calc && new Map(), [calc])
 
@@ -152,13 +149,10 @@ function ZzzSheetUiProviders({
   )
 }
 
-function useCharacterAndEquipment(
-  character: ICachedCharacter | undefined,
-  wengineId: string | undefined,
-  discIds: DiscIds
-) {
-  const wengine = useWengine(wengineId)
-  const discs = useDiscs(discIds)
+function useCharacterAndEquipment(characterKey: CharacterKey | undefined) {
+  const character = useCharacter(characterKey)
+  const wengine = useWengine(character?.equippedWengine)
+  const discs = useDiscs(character?.equippedDiscs)
   const wengineTagEntries = useMemo(
     () => wengineTagMapNodeEntries(wengine),
     [wengine]

@@ -238,6 +238,12 @@ export const own = convert(ownTag, { et: 'own', dst: null })
 export const team = convert(ownTag, { et: 'team', dst: null, ...noName })
 export const target = convert(ownTag, { et: 'target', ...noName })
 export const enemy = convert(enemyTag, { et: 'enemy', dst: null, ...noName })
+// Note: If the team does not have a prev/next or member1 or member2, it will fall back to member0.
+export const prevMember = convert(ownTag, { et: 'prevMember', ...noName })
+export const nextMember = convert(ownTag, { et: 'nextMember', ...noName })
+export const member0 = convert(ownTag, { et: 'member0', ...noName })
+export const member1 = convert(ownTag, { et: 'member1', ...noName })
+export const member2 = convert(ownTag, { et: 'member2', ...noName })
 // Avoid reading from two counts at once
 team.common.count = team.common.count.withTag({
   specialty: null,

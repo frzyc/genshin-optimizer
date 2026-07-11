@@ -2,7 +2,6 @@ import {
   Read as BaseRead,
   type Tag as BaseTag,
   reader as baseReader,
-  entryTypes,
   presets,
   setReader,
 } from '@genshin-optimizer/game-opt/engine'
@@ -11,6 +10,7 @@ import type {
   Attribute,
   DamageType,
   Dst,
+  EntryType,
   Faction,
   SkillType,
   Specialty,
@@ -21,6 +21,7 @@ import {
   type Sheet,
   attributes,
   damageTypes,
+  entryTypes,
   factions,
   members,
   sheets,
@@ -44,7 +45,7 @@ export const fixedTags = {
   specialty: specialties,
   faction: factions,
 }
-export interface Tag extends BaseTag<Sheet, Src, Dst> {
+export interface Tag extends BaseTag<Sheet, Src, Dst, EntryType> {
   attribute?: Attribute | null
   skillType?: SkillType | null
   damageType1?: DamageType | null

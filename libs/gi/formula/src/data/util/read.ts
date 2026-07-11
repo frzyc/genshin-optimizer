@@ -1,4 +1,7 @@
-import type { Tag as BaseTag } from '@genshin-optimizer/game-opt/engine'
+import type {
+  Tag as BaseTag,
+  EntryType,
+} from '@genshin-optimizer/game-opt/engine'
 import {
   Read as BaseRead,
   reader as baseReader,
@@ -31,7 +34,7 @@ export const fixedTags = {
   amp: [...allAmplifyingReactionKeys, ''],
   cata: [...allCatalyzeReactionKeys, ''],
 } as const
-export type Tag = BaseTag<Sheet, Src, Dst>
+export type Tag = BaseTag<Sheet, Src, Dst, EntryType>
 
 export class Read extends BaseRead<Tag> {
   override toString(): string {

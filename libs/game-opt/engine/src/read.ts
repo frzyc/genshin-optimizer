@@ -17,17 +17,18 @@ import {
   reread,
 } from '@genshin-optimizer/pando/engine'
 import type { IBaseConditionalData } from './IConditionalData'
-import type { EntryType, Preset } from './listing'
+import type { Preset } from './listing'
 
 export interface Tag<
   Sheet extends string = string,
   Src extends string | null = string | null,
   Dst extends string | null = string | null,
+  Et extends string = string,
 > extends BaseTag {
   preset?: Preset
   src?: Src | null
   dst?: Dst | null
-  et?: EntryType
+  et?: Et
   sheet?: Sheet
   name?: string | null
   qt?: string | null
