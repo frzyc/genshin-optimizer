@@ -12,6 +12,8 @@ import type { Interim, Setup } from '../type'
 
 export class ComputeWorker {
   builds: SolverBuild[] = []
+  bestBuildByArtifact: Record<string, SolverBuild> | undefined
+  bestBuild: SolverBuild | undefined
   buildValues: number[] | undefined = undefined
   plotData: PlotData | undefined
   threshold = -Infinity
@@ -24,12 +26,20 @@ export class ComputeWorker {
   callback: (interim: Interim) => void
 
   constructor(
-    { arts, optTarget, constraints, plotBase, topN }: Setup,
+    {
+      arts,
+      optTarget,
+      constraints,
+      plotBase,
+      topN,
+      keepBestPerArtifact,
+    }: Setup,
     callback: (interim: Interim) => void
   ) {
     this.arts = arts
     this.min = constraints.map((x) => x.min)
     this.topN = topN
+    if (keepBestPerArtifact) this.bestBuildByArtifact = {}
     this.callback = callback
     this.nodes = constraints.map((x) => x.value)
     this.nodes.push(optTarget)
@@ -52,7 +62,7 @@ export class ComputeWorker {
     let nodes = this.nodes
     ;({ nodes, arts: preArts } = pruneAll(
       nodes,
-      min,
+      this.bestBuildByArtifact ? min.map(() => -Infinity) : min,
       preArts,
       this.topN,
       {},
@@ -81,9 +91,25 @@ export class ComputeWorker {
     const permute = (i: number) => {
       if (i < 0) {
         const result = compute(buffer)
-        if (min.every((m, i) => m <= result[i])) {
-          const value = result[min.length],
-            { builds, plotData } = this
+        const meetsConstraints = min.every((m, i) => m <= result[i])
+        const value = result[min.length],
+          { builds, plotData } = this
+        if (this.bestBuildByArtifact) {
+          const build: SolverBuild = {
+            value,
+            artifactIds: buffer.map((x) => x.id).filter((id) => id),
+          }
+          for (const id of build.artifactIds) {
+            const old = this.bestBuildByArtifact[id]
+            if (!old || old.value < value) this.bestBuildByArtifact[id] = build
+          }
+          if (
+            meetsConstraints &&
+            (!this.bestBuild || this.bestBuild.value < value)
+          )
+            this.bestBuild = build
+          if (!meetsConstraints) count.failed += 1
+        } else if (meetsConstraints) {
           let build: SolverBuild | undefined
           if (value >= this.threshold) {
             build = {
@@ -122,6 +148,10 @@ export class ComputeWorker {
   }
 
   refresh(force: boolean): void {
+    if (this.bestBuildByArtifact) {
+      if (force) this.builds = Object.values(this.bestBuildByArtifact)
+      return
+    }
     const { topN } = this
     if (Object.keys(this.plotData ?? {}).length >= 100000)
       this.plotData = mergePlot([this.plotData!])

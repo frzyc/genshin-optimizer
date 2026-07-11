@@ -6,9 +6,10 @@ import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
 import { objMap, range } from '@genshin-optimizer/common/util'
 import {
   type ArtifactSlotKey,
+  allArtifactSlotKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
-import { cachedArtifact } from '@genshin-optimizer/gi/db'
+import { type ICachedArtifact, cachedArtifact } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
   useArtifact,
@@ -33,7 +34,7 @@ import {
   Tooltip,
   Typography,
 } from '@mui/material'
-import { useCallback, useContext, useEffect, useMemo, useState } from 'react'
+import { useCallback, useContext, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
   Area,
@@ -46,7 +47,11 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
-import { type UpOptCalculatorV2, type UpOptInfo } from './upOpt'
+import {
+  type UpOptBuild,
+  type UpOptCalculatorV2,
+  type UpOptInfo,
+} from './upOpt'
 
 type DefineInfo = Extract<UpOptInfo, { type: 'definition' }>
 
@@ -119,7 +124,21 @@ export default function UpgradeOptChartCard(props: Props) {
               artifactId={artifactId!}
               onEdit={() => props.setArtifactIdToEdit(artifactId)}
               extraButtons={
-                <EquipButton newArtId={artifactId!} disabled={isEquipped} />
+                <EquipButton
+                  recommendedArtifactIds={objMap(
+                    upOptArt.build,
+                    (artifact) => artifact?.id
+                  )}
+                  disabled={
+                    isEquipped &&
+                    Object.entries(upOptArt.build).every(
+                      ([slotKey, artifact]) =>
+                        !artifact ||
+                        data.get(input.art[slotKey as ArtifactSlotKey].id)
+                          .value === artifact.id
+                    )
+                  }
+                />
               }
             />
           )}
@@ -132,10 +151,10 @@ export default function UpgradeOptChartCard(props: Props) {
   )
 }
 function EquipButton({
-  newArtId,
+  recommendedArtifactIds,
   disabled,
 }: {
-  newArtId: string
+  recommendedArtifactIds: Record<ArtifactSlotKey, string | undefined>
   disabled: boolean
 }) {
   const database = useDatabase()
@@ -150,9 +169,6 @@ function EquipButton({
     database.teams.getLoadoutArtifacts(loadoutDatum),
     (art) => art?.id
   )
-  const newArt = database.arts.get(newArtId)
-  if (!newArt) return
-
   return (
     <>
       <EquipBuildModal
@@ -162,18 +178,20 @@ function EquipButton({
         currentWeaponId={weapon?.id}
         currentArtifactIds={artifactids}
         newWeaponId={weapon?.id}
-        newArtifactIds={objMap(artifactids, (art, slotKey) =>
-          slotKey === newArt.slotKey ? newArtId : art
-        )}
+        newArtifactIds={recommendedArtifactIds}
         show={show}
         onEquip={() => {
           if (buildType === 'equipped')
-            database.arts.set(newArtId, {
-              location: charKeyToLocCharKey(characterKey),
-            })
+            Object.values(recommendedArtifactIds).forEach(
+              (artifactId) =>
+                artifactId &&
+                database.arts.set(artifactId, {
+                  location: charKeyToLocCharKey(characterKey),
+                })
+            )
           else if (buildType === 'real')
             database.builds.set(buildId, (build) => {
-              build.artifactIds[newArt.slotKey] = newArtId
+              build.artifactIds = recommendedArtifactIds
             })
         }}
         onHide={onHide}
@@ -301,11 +319,14 @@ function UpgradeOptChartCardGraph({
   return (
     <CardThemed bgt="light" sx={{ height: '100%', minHeight: 350 }}>
       <Box sx={{ display: 'flex', flexDirection: 'row' }}>
-        <Box sx={{ height: 50, width: 50 }}>
-          {!!comparisonSlotKey && (
-            <EquippedArtifact slotKey={comparisonSlotKey} />
-          )}
-        </Box>
+        <RecommendedBuild
+          build={upArt.build}
+          definedArtifact={
+            upArt.info.type === 'definition'
+              ? defineDisplayArtifact(upArt.info)
+              : undefined
+          }
+        />
         <Box
           sx={{
             flexGrow: 1,
@@ -464,12 +485,26 @@ function UpgradeOptChartCardGraph({
   )
 }
 
-function EquippedArtifact({ slotKey }: { slotKey: ArtifactSlotKey }) {
-  const database = useDatabase()
-  const { data } = useContext(DataContext)
-  const artifact = useMemo(
-    () => database.arts.get(data.get(input.art[slotKey].id).value),
-    [slotKey, data, database]
+function RecommendedBuild({
+  build,
+  definedArtifact,
+}: {
+  build: UpOptBuild
+  definedArtifact?: ICachedArtifact
+}) {
+  return (
+    <Box sx={{ display: 'flex', flexShrink: 0 }}>
+      {allArtifactSlotKeys.map((slotKey) => {
+        const artifact =
+          definedArtifact?.slotKey === slotKey
+            ? definedArtifact
+            : build[slotKey]
+        return (
+          <Box key={slotKey} sx={{ height: 50, width: 50 }}>
+            <ArtifactCardPico slotKey={slotKey} artifactObj={artifact} />
+          </Box>
+        )
+      })}
+    </Box>
   )
-  return <ArtifactCardPico slotKey={slotKey} artifactObj={artifact} />
 }

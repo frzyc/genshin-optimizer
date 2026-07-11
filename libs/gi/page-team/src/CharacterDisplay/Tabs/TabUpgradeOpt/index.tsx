@@ -1,5 +1,11 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
-import { CardThemed, InfoTooltip, SqBadge } from '@genshin-optimizer/common/ui'
+import {
+  BootstrapTooltip,
+  CardThemed,
+  DropdownButton,
+  InfoTooltip,
+  SqBadge,
+} from '@genshin-optimizer/common/ui'
 import {
   bulkCatTotal,
   clamp,
@@ -9,11 +15,7 @@ import {
   objPathValue,
   range,
 } from '@genshin-optimizer/common/util'
-import type {
-  ArtifactSetKey,
-  CharacterKey,
-  MainStatKey,
-} from '@genshin-optimizer/gi/consts'
+import type { CharacterKey, MainStatKey } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSetKeys,
   allArtifactSlotKeys,
@@ -22,7 +24,6 @@ import {
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
 import type { ArtSetExclusionKey } from '@genshin-optimizer/gi/db'
-import { type ICachedArtifact } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
   useDBMeta,
@@ -34,6 +35,9 @@ import {
   type FilterOption,
   initialFilterOption,
 } from '@genshin-optimizer/gi/schema'
+import type { OptProblemInput, SolverBuild } from '@genshin-optimizer/gi/solver'
+import { GOSolver } from '@genshin-optimizer/gi/solver'
+import { compactArtifacts } from '@genshin-optimizer/gi/solver-tc'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import type { dataContextObj } from '@genshin-optimizer/gi/ui'
 import {
@@ -41,19 +45,27 @@ import {
   ArtifactEditor,
   ArtifactSetMultiAutocomplete,
   ArtifactSlotToggle,
+  CharacterName,
   DataContext,
   HitModeToggle,
   NoArtWarning,
   ReactionToggle,
   getTeamData,
   resolveInfo,
+  useGlobalError,
+  useNumWorkers,
   useTeamData,
 } from '@genshin-optimizer/gi/ui'
 import { uiDataForTeam } from '@genshin-optimizer/gi/uidata'
-import { artifactFilterConfigs } from '@genshin-optimizer/gi/util'
+import {
+  artifactFilterConfigs,
+  setKeysByRarities,
+} from '@genshin-optimizer/gi/util'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { dynamicData, mergeData, optimize } from '@genshin-optimizer/gi/wr'
 import AddIcon from '@mui/icons-material/Add'
+import CloseIcon from '@mui/icons-material/Close'
+import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import {
   Alert,
   Box,
@@ -63,6 +75,7 @@ import {
   FormControlLabel,
   Grid,
   Link,
+  MenuItem,
   Pagination,
   Skeleton,
   Typography,
@@ -77,12 +90,16 @@ import {
   useEffect,
   useMemo,
   useReducer,
+  useRef,
   useState,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { CustomMultiTargetButton } from '../../CustomMultiTarget/CustomMultiTargetButton'
 import ArtifactSetConfig from '../TabOptimize/Components/ArtifactSetConfig'
 import BonusStatsCard from '../TabOptimize/Components/BonusStatsCard'
+import BuildAlert, {
+  type BuildStatus,
+} from '../TabOptimize/Components/BuildAlert'
 import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard'
 import { OptCharacterCard } from '../TabOptimize/Components/OptCharacterCard'
 import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTargetSelector'
@@ -109,6 +126,17 @@ const filterOptionReducer = (
   state: Partial<FilterOption>,
   action: Partial<FilterOption>
 ) => ({ ...state, ...action })
+function initBuildStatus(): BuildStatus {
+  return {
+    type: 'inactive',
+    tested: 0,
+    failed: 0,
+    skipped: 0,
+    total: 0,
+    testedPerSecond: 0,
+    skippedPerSecond: 0,
+  }
+}
 export default function TabUpopt() {
   const { t } = useTranslation('page_character_optimize')
   const { t: tk } = useTranslation('statKey_gen')
@@ -149,16 +177,11 @@ export default function TabUpopt() {
 
   const [artsDirty, setArtsDirty] = useForceUpdate()
   /**
-   * Only register new/removal for artifact, so that changes to artifact will not cause upopt recalc.
-   * Artifact updates are captured in UpgradeOptChartCard.
-   * This makes updating an calculated artifact will not update the calculator list.(and will not change place in the list)
+   * Any artifact change can alter an artifact's best complementary build, so
+   * invalidate both the build search and the candidate calculations.
    */
   useEffect(
-    () =>
-      database.arts.followAny(
-        (_, reason) =>
-          (reason === 'new' || reason === 'remove') && setArtsDirty()
-      ),
+    () => database.arts.followAny(() => setArtsDirty()),
     [setArtsDirty, database]
   )
   const filteredArts = useMemo(() => {
@@ -252,9 +275,14 @@ export default function TabUpopt() {
     )
   }, [database, optConfig, filteredArtIdMap])
 
+  const [maxWorkers, nativeThreads, setMaxWorkers] = useNumWorkers()
   const equippedArts = useLoadoutArtifacts(loadoutDatum)
+  const [upOptCalc, setUpOptCalc] = useState<UpOptCalculatorV2>()
+  const [hasGenerated, setHasGenerated] = useState(false)
+  const [buildStatus, setBuildStatus] = useState(initBuildStatus)
+  const throwGlobalError = useGlobalError()
 
-  const upOptCalc = useMemo(() => {
+  const upOptInput = useMemo(() => {
     const {
       statFilters,
       optimizationTarget,
@@ -266,6 +294,10 @@ export default function TabUpopt() {
       upOptDefine,
       upOptDefineSubstats,
       artSetExclusion,
+      allowPartial,
+      useExcludedArts,
+      artExclusion,
+      excludedLocations,
     } = optConfig
 
     if (!optimizationTarget) return
@@ -303,61 +335,11 @@ export default function TabUpopt() {
         })
     )
 
-    const curEquipSetKeys = objKeyMap(
-      allArtifactSlotKeys,
-      (slotKey) => equippedArts[slotKey]?.setKey
-    )
-    function respectSexExclusion(art: ICachedArtifact) {
-      const newSK = { ...curEquipSetKeys }
-      newSK[art.slotKey] = art.setKey
-      const skc: Partial<Record<ArtifactSetKey, number>> = {}
-      allArtifactSlotKeys.forEach((slotKey) => {
-        const setKey = newSK[slotKey]
-        if (!setKey) return
-        if (setKey.startsWith('Prayers')) return
-        skc[setKey] = (skc[setKey] ?? 0) + 1
-      })
-      const pass = Object.entries(skc).every(([setKey, num]) => {
-        const ex = artSetExclusion[setKey as ArtSetExclusionKey]
-        if (!ex) return true
-        switch (num) {
-          case 0:
-          case 1:
-            return true
-          case 2:
-          case 3:
-            return !ex.includes(2)
-          case 4:
-          case 5:
-            return !ex.includes(4)
-          default:
-            throw Error('error in respectSetExclude: num > 5')
-        }
-      })
-      if (!pass) return false
-
-      if (!artSetExclusion['rainbow']) return true
-      const nRainbow = Object.values(skc).reduce((a, b) => a + (b % 2), 0)
-      switch (nRainbow) {
-        case 0:
-        case 1:
-          return true
-        case 2:
-        case 3:
-          return !artSetExclusion['rainbow'].includes(2)
-        case 4:
-        case 5:
-          return !artSetExclusion['rainbow'].includes(4)
-        default:
-          throw Error('error in respectSex: nRainbow > 5')
-      }
-    }
     const artifactsToConsider = filteredArts
       // retrieve the artifacts again, just incase there is an update that is not captured by UpgradeOptChartCard
       .map((art) => database.arts.get(art.id))
       .filter(notEmpty)
       .filter((art) => art.rarity === 5)
-      .filter(respectSexExclusion)
       .filter(
         (art) =>
           art.slotKey === 'flower' ||
@@ -379,9 +361,10 @@ export default function TabUpopt() {
     })
     const defineConfig = {
       enabled: upOptDefine && upOptDefineSubstats.length >= 2,
-      setKeys: (artSetKeys.length
-        ? artSetKeys
-        : [...allArtifactSetKeys]) as ArtifactSetKey[],
+      setKeys: setKeysByRarities[5].filter((setKey) => {
+        const excluded = artSetExclusion[setKey as ArtSetExclusionKey] ?? []
+        return !excluded.includes(2) || !excluded.includes(4)
+      }),
       slotKeys: slotKeys.length ? slotKeys : [...allArtifactSlotKeys],
       mainStats: [...new Set<MainStatKey>(mainStatsForDefine)],
       substats: upOptDefineSubstats,
@@ -394,14 +377,46 @@ export default function TabUpopt() {
       ({ path: [p] }) => p !== 'dyn'
     )
 
-    return new UpOptCalculatorV2(
+    const locKey = charKeyToLocCharKey(characterKey)
+    const equippableArts = database.arts.values.filter((art) => {
+      if (art.rarity !== 5) return false
+      if (!useExcludedArts && artExclusion.includes(art.id)) return false
+      if (
+        art.location &&
+        art.location !== locKey &&
+        excludedLocations.includes(art.location)
+      )
+        return false
+      return (
+        art.slotKey === 'flower' ||
+        art.slotKey === 'plume' ||
+        !mainStatKeys[art.slotKey]?.length ||
+        mainStatKeys[art.slotKey]?.includes(art.mainStatKey)
+      )
+    })
+    const problem: OptProblemInput = {
+      arts: compactArtifacts(equippableArts, 0, allowPartial),
+      optimizationTarget: nodes[0],
+      constraints: nodes.slice(1).map((value, i) => ({
+        value,
+        min: valueFilter[i].minimum,
+      })),
+      exclusion: artSetExclusion,
+      topN: 1,
+      keepBestPerArtifact: true,
+    }
+
+    return {
       nodes,
-      [-Infinity, ...valueFilter.map((x) => x.minimum)],
-      equippedArts,
+      thresholds: [-Infinity, ...valueFilter.map((x) => x.minimum)],
       artifactsToConsider,
-      { enabled: upOptReshape, minTotal: upOptReshapeRolls as 2 | 3 | 4 },
-      defineConfig
-    )
+      reshapeConfig: {
+        enabled: upOptReshape,
+        minTotal: upOptReshapeRolls as 2 | 3 | 4,
+      },
+      defineConfig,
+      problem,
+    }
     /**
      * WARNING:
      * Due to the violatile nature of the calculations above,
@@ -418,10 +433,119 @@ export default function TabUpopt() {
     activeCharKey,
     characterKey,
     filteredArts,
-    artSetKeys,
     slotKeys,
-    equippedArts,
   ])
+
+  const solveId = useRef(0)
+  const cancelToken = useRef(() => {})
+  const generateBuilds = useCallback(() => {
+    const id = ++solveId.current
+    setUpOptCalc(undefined)
+    setHasGenerated(false)
+    if (!upOptInput) return
+    const { problem } = upOptInput
+    if (Object.values(problem.arts.values).some((arts) => !arts.length)) {
+      setHasGenerated(true)
+      return
+    }
+
+    const status: Omit<BuildStatus, 'type'> = {
+      tested: 0,
+      failed: 0,
+      skipped: 0,
+      total: 0,
+      testedPerSecond: 0,
+      skippedPerSecond: 0,
+      startTime: performance.now(),
+    }
+    setBuildStatus({ type: 'active', ...status })
+    const timer = setInterval(
+      () => setBuildStatus({ type: 'active', ...status }),
+      100
+    )
+    const solver = new GOSolver(problem, status, maxWorkers)
+    let cancelled = false
+    cancelToken.current = () => {
+      if (cancelled) return
+      cancelled = true
+      ++solveId.current
+      clearInterval(timer)
+      solver.cancel(new Error('Artifact Upgrader search cancelled'))
+      setBuildStatus({
+        type: 'inactive',
+        ...status,
+        finishTime: performance.now(),
+      })
+    }
+
+    solver
+      .solve()
+      .then((results) => {
+        if (id !== solveId.current) return
+        const bestByArtifact = new Map<string, SolverBuild>()
+        for (const build of results.flatMap((result) => result.builds))
+          for (const artifactId of build.artifactIds) {
+            const old = bestByArtifact.get(artifactId)
+            if (!old || old.value < build.value)
+              bestByArtifact.set(artifactId, build)
+          }
+        const best = results
+          .map(({ bestBuild }) => bestBuild)
+          .filter(notEmpty)
+          .reduce<SolverBuild | undefined>(
+            (old, build) => (!old || old.value < build.value ? build : old),
+            undefined
+          )
+        if (!best) return
+        const toBuild = (build: SolverBuild) =>
+          objKeyMap(allArtifactSlotKeys, (slotKey) =>
+            build.artifactIds
+              .map((artifactId) => database.arts.get(artifactId))
+              .find((art) => art?.slotKey === slotKey)
+          )
+        const builds = new Map(
+          [...bestByArtifact].map(([artifactId, build]) => [
+            artifactId,
+            toBuild(build),
+          ])
+        )
+        setUpOptCalc(
+          new UpOptCalculatorV2(
+            upOptInput.nodes,
+            upOptInput.thresholds,
+            toBuild(best),
+            equippedArts,
+            builds,
+            upOptInput.artifactsToConsider,
+            upOptInput.reshapeConfig,
+            upOptInput.defineConfig
+          )
+        )
+        setHasGenerated(true)
+      })
+      .catch((error) => {
+        if (!cancelled && id === solveId.current) throwGlobalError(error)
+      })
+      .finally(() => {
+        if (id !== solveId.current) return
+        clearInterval(timer)
+        setHasGenerated(true)
+        setBuildStatus({
+          type: 'inactive',
+          ...status,
+          finishTime: performance.now(),
+        })
+        cancelToken.current = () => {}
+      })
+  }, [upOptInput, maxWorkers, database, throwGlobalError, equippedArts])
+
+  useEffect(() => {
+    cancelToken.current()
+    setUpOptCalc(undefined)
+    setHasGenerated(false)
+    setBuildStatus(initBuildStatus())
+  }, [upOptInput])
+  useEffect(() => () => cancelToken.current(), [])
 
   // Paging logic
   const [pageIdex, setpageIdex] = useState(0)
@@ -721,11 +845,65 @@ export default function TabUpopt() {
                     optimizationTarget: target,
                   })
                 }
-                disabled={false}
+                disabled={buildStatus.type === 'active'}
                 targetSelectorModalProps={{
                   excludeSections: ['character', 'bonusStats', 'teamBuff'],
                 }}
               />
+              <DropdownButton
+                disabled={buildStatus.type === 'active'}
+                title={
+                  <Trans t={t} i18nKey="thread" count={maxWorkers}>
+                    {{ count: maxWorkers }} Threads
+                  </Trans>
+                }
+              >
+                <MenuItem>
+                  <Typography variant="caption" color="info.main">
+                    {t('threadDropdownDesc')}
+                  </Typography>
+                </MenuItem>
+                {range(1, nativeThreads)
+                  .reverse()
+                  .map((workerCount) => (
+                    <MenuItem
+                      key={workerCount}
+                      onClick={() => setMaxWorkers(workerCount)}
+                    >
+                      <Trans t={t} i18nKey="thread" count={workerCount}>
+                        {{ count: workerCount }} Threads
+                      </Trans>
+                    </MenuItem>
+                  ))}
+              </DropdownButton>
+              <BootstrapTooltip
+                placement="top"
+                title={!optimizationTarget ? t('selectTargetFirst') : ''}
+              >
+                <span>
+                  <Button
+                    disabled={buildStatus.type === 'inactive' && !upOptInput}
+                    color={buildStatus.type === 'active' ? 'error' : 'success'}
+                    onClick={
+                      buildStatus.type === 'active'
+                        ? () => cancelToken.current()
+                        : generateBuilds
+                    }
+                    startIcon={
+                      buildStatus.type === 'active' ? (
+                        <CloseIcon />
+                      ) : (
+                        <TrendingUpIcon />
+                      )
+                    }
+                    sx={{ borderRadius: '0px 4px 4px 0px' }}
+                  >
+                    {buildStatus.type === 'active'
+                      ? t('generateButton.cancel')
+                      : t('generateButton.generateBuilds')}
+                  </Button>
+                </span>
+              </BootstrapTooltip>
             </ButtonGroup>
             <Alert severity="info">
               <Trans t={t} i18nKey={'upOptInfo'}>
@@ -733,20 +911,15 @@ export default function TabUpopt() {
                 to boost the Optimization Target's value, guiding you to
                 artifacts worth leveling up.
                 <br />
-                As it only swaps one artifact at a time, for the best overall
-                build across all artifacts, use the main artifact optimizer.
+                Each candidate is evaluated with its best equippable build.
               </Trans>
             </Alert>
-            {Object.values(equippedArts).some((a) => !a) && (
-              <Alert severity="warning">
-                <Trans t={t} i18nKey={'upOptEmptyBuild'}>
-                  You're using a partially empty build. Since the Artifact
-                  Upgrader only swaps artifacts individually, completing a set
-                  is unlikely. It's recommended to begin with a base build,
-                  preferably generated from the main Optimizer.
-                </Trans>
-              </Alert>
-            )}
+            <BuildAlert
+              status={buildStatus}
+              characterName={
+                <CharacterName characterKey={characterKey} gender={gender} />
+              }
+            />
             <CardThemed bgt="light">
               <CardContent>
                 <Grid container spacing={1}>
@@ -769,9 +942,11 @@ export default function TabUpopt() {
                 allowUpload
               />
             </Suspense>
-            {!upOptCalc?.candidates.length && (
-              <Alert severity="warning">{t('upOptNoResults')}</Alert>
-            )}
+            {hasGenerated &&
+              buildStatus.type === 'inactive' &&
+              !upOptCalc?.candidates.length && (
+                <Alert severity="warning">{t('upOptNoResults')}</Alert>
+              )}
             <Suspense
               fallback={
                 <Skeleton

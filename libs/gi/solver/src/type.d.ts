@@ -15,6 +15,8 @@ export type OptProblemInput = {
 
   topN: number
   plotBase?: OptNode
+  /** Keep the best build containing every artifact instead of only the global top N. */
+  keepBestPerArtifact?: boolean
 }
 
 export type WorkerCommand =
@@ -35,6 +37,7 @@ export interface Setup {
   constraints: { value: OptNode; min: number }[]
   plotBase: OptNode | undefined
   topN: number
+  keepBestPerArtifact?: boolean
 }
 export interface Split {
   command: 'split'
@@ -71,6 +74,7 @@ export interface CountResult {
 export interface FinalizeResult {
   resultType: 'finalize'
   builds: SolverBuild[]
+  bestBuild?: SolverBuild
   plotData?: PlotData | undefined
 }
 export interface Interim {

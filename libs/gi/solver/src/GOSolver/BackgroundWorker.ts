@@ -44,8 +44,8 @@ async function handleEvent(e: MessageEvent<WorkerCommand>): Promise<void> {
     }
     case 'finalize': {
       computeWorker.refresh(true)
-      const { builds, plotData } = computeWorker
-      postMessage({ resultType: 'finalize', builds, plotData })
+      const { builds, bestBuild, plotData } = computeWorker
+      postMessage({ resultType: 'finalize', builds, bestBuild, plotData })
       break
     }
     case 'count': {

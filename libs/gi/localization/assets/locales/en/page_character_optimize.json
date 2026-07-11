@@ -27,7 +27,7 @@
   "upOptLevelFilter": "Artifact Upgrader Level Filter",
   "upOptLevelFilterTooltip": "This level filter is not synced with Optimize config.",
   "upOptNoResults": "It looks like there aren't any artifacts available for upgrading that could enhance your setup. Your artifact filters might be too restrictive. Alternatively, try the main artifact optimizer to find a better build.",
-  "upOptInfo": "The Artifact Upgrader identifies artifacts with high potential to boost the Optimization Target's value, guiding you to artifacts worth leveling up.<br/>As it only swaps one artifact at a time, for the best overall build across all artifacts, use the main artifact optimizer.",
+  "upOptInfo": "The Artifact Upgrader identifies artifacts with high potential to boost the Optimization Target's value, guiding you to artifacts worth leveling up.<br/>Each candidate is evaluated with its best equippable build.",
   "upOptEmptyBuild": "You're using a partially empty build. Since the Artifact Upgrader only swaps artifacts individually, completing a set is unlikely. It's recommended to begin with a base build, preferably generated from the main Optimizer.",
   "upOptShowingNum": "Showing {{count}} out of {{value}} Artifacts",
   "upOptReshape": {
@@ -38,7 +38,7 @@
   },
   "upOptDefine": {
     "label": "Define",
-    "tooltip": "Evaluate hypothetical artifacts created by defining (Sanctifying Elixirs). Candidates are generated for the selected sets, slots, main stats, and every pair of the selected substats below.",
+    "tooltip": "Evaluate hypothetical artifacts created by defining (Sanctifying Elixirs). Candidates are generated for every set enabled in Artifact Set Configuration, the selected slots and main stats, and every pair of the selected substats below.",
     "substats": "Substats to consider for defining:"
   },
   "upOptChart": {
@@ -46,7 +46,7 @@
     "prob": "Prob. upgrade{{est}}: ",
     "average": "Average increase{{est}}: ",
     "equipped": "Equipped",
-    "current": "Current on Build",
+    "current": "Recommended Build",
     "reshape": "Reshape",
     "reshapeStats": "Guaranteed: {{count}} rolls into {{stats}}",
     "define": "Define",
