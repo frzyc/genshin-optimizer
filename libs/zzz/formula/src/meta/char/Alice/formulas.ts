@@ -114,7 +114,7 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType1: 'basicSkill',
-      name: 'BasicAttackCelestialOverture_0_daze',
+      name: 'BasicAttackCelestialOverture_0',
     },
   },
   'BasicAttackCelestialOverture_0:anomBuildup': {
@@ -128,7 +128,7 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType1: 'basicSkill',
-      name: 'BasicAttackCelestialOverture_0_anomBuildup',
+      name: 'BasicAttackCelestialOverture_0',
     },
   },
   'BasicAttackCelestialOverture_1:standardDmg': {
@@ -142,7 +142,7 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType1: 'basicSkill',
-      name: 'BasicAttackCelestialOverture_1_dmg',
+      name: 'BasicAttackCelestialOverture_1',
     },
   },
   'BasicAttackCelestialOverture_1:dazeBuildup': {
@@ -156,7 +156,7 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType1: 'basicSkill',
-      name: 'BasicAttackCelestialOverture_1_daze',
+      name: 'BasicAttackCelestialOverture_1',
     },
   },
   'BasicAttackCelestialOverture_1:anomBuildup': {
@@ -170,7 +170,7 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType1: 'basicSkill',
-      name: 'BasicAttackCelestialOverture_1_anomBuildup',
+      name: 'BasicAttackCelestialOverture_1',
     },
   },
   'BasicAttackCelestialOverture_2:standardDmg': {
@@ -184,7 +184,7 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType1: 'basicSkill',
-      name: 'BasicAttackCelestialOverture_2_dmg',
+      name: 'BasicAttackCelestialOverture_2',
     },
   },
   'BasicAttackCelestialOverture_2:dazeBuildup': {
@@ -198,7 +198,7 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType1: 'basicSkill',
-      name: 'BasicAttackCelestialOverture_2_daze',
+      name: 'BasicAttackCelestialOverture_2',
     },
   },
   'BasicAttackCelestialOverture_2:anomBuildup': {
@@ -212,7 +212,7 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType1: 'basicSkill',
-      name: 'BasicAttackCelestialOverture_2_anomBuildup',
+      name: 'BasicAttackCelestialOverture_2',
     },
   },
   'BasicAttackCelestialOverture_3:standardDmg': {
@@ -226,7 +226,7 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType1: 'basicSkill',
-      name: 'BasicAttackCelestialOverture_3_dmg',
+      name: 'BasicAttackCelestialOverture_3',
     },
   },
   'BasicAttackCelestialOverture_3:dazeBuildup': {
@@ -240,7 +240,7 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType1: 'basicSkill',
-      name: 'BasicAttackCelestialOverture_3_daze',
+      name: 'BasicAttackCelestialOverture_3',
     },
   },
   'BasicAttackCelestialOverture_3:anomBuildup': {
@@ -254,7 +254,7 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType1: 'basicSkill',
-      name: 'BasicAttackCelestialOverture_3_anomBuildup',
+      name: 'BasicAttackCelestialOverture_3',
     },
   },
   'BasicAttackCelestialOverture_4:standardDmg': {
@@ -268,7 +268,7 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType1: 'basicSkill',
-      name: 'BasicAttackCelestialOverture_4_dmg',
+      name: 'BasicAttackCelestialOverture_4',
     },
   },
   'BasicAttackCelestialOverture_4:dazeBuildup': {
@@ -282,7 +282,7 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType1: 'basicSkill',
-      name: 'BasicAttackCelestialOverture_4_daze',
+      name: 'BasicAttackCelestialOverture_4',
     },
   },
   'BasicAttackCelestialOverture_4:anomBuildup': {
@@ -296,7 +296,7 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType1: 'basicSkill',
-      name: 'BasicAttackCelestialOverture_4_anomBuildup',
+      name: 'BasicAttackCelestialOverture_4',
     },
   },
   'BasicAttackCelestialOverture_5:standardDmg': {
@@ -310,7 +310,7 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType1: 'basicSkill',
-      name: 'BasicAttackCelestialOverture_5_dmg',
+      name: 'BasicAttackCelestialOverture_5',
     },
   },
   'BasicAttackCelestialOverture_5:dazeBuildup': {
@@ -324,7 +324,7 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType1: 'basicSkill',
-      name: 'BasicAttackCelestialOverture_5_daze',
+      name: 'BasicAttackCelestialOverture_5',
     },
   },
   'BasicAttackCelestialOverture_5:anomBuildup': {
@@ -338,7 +338,7 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType1: 'basicSkill',
-      name: 'BasicAttackCelestialOverture_5_anomBuildup',
+      name: 'BasicAttackCelestialOverture_5',
     },
   },
   'BasicAttackStarshineWaltz_0:standardDmg': {
@@ -352,7 +352,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackStarshineWaltz_0_dmg',
+      name: 'BasicAttackStarshineWaltz_0',
     },
   },
   'BasicAttackStarshineWaltz_0:dazeBuildup': {
@@ -366,7 +366,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackStarshineWaltz_0_daze',
+      name: 'BasicAttackStarshineWaltz_0',
     },
   },
   'BasicAttackStarshineWaltz_0:anomBuildup': {
@@ -380,7 +380,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackStarshineWaltz_0_anomBuildup',
+      name: 'BasicAttackStarshineWaltz_0',
     },
   },
   'BasicAttackStarshineWaltz_1:standardDmg': {
@@ -394,7 +394,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackStarshineWaltz_1_dmg',
+      name: 'BasicAttackStarshineWaltz_1',
     },
   },
   'BasicAttackStarshineWaltz_1:dazeBuildup': {
@@ -408,7 +408,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackStarshineWaltz_1_daze',
+      name: 'BasicAttackStarshineWaltz_1',
     },
   },
   'BasicAttackStarshineWaltz_1:anomBuildup': {
@@ -422,7 +422,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackStarshineWaltz_1_anomBuildup',
+      name: 'BasicAttackStarshineWaltz_1',
     },
   },
   'BasicAttackStarshineWaltz_2:standardDmg': {
@@ -436,7 +436,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackStarshineWaltz_2_dmg',
+      name: 'BasicAttackStarshineWaltz_2',
     },
   },
   'BasicAttackStarshineWaltz_2:dazeBuildup': {
@@ -450,7 +450,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackStarshineWaltz_2_daze',
+      name: 'BasicAttackStarshineWaltz_2',
     },
   },
   'BasicAttackStarshineWaltz_2:anomBuildup': {
@@ -464,7 +464,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackStarshineWaltz_2_anomBuildup',
+      name: 'BasicAttackStarshineWaltz_2',
     },
   },
   'DashAttackBladeDancersGale_0:standardDmg': {
@@ -478,7 +478,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dash',
       skillType1: 'dodgeSkill',
-      name: 'DashAttackBladeDancersGale_0_dmg',
+      name: 'DashAttackBladeDancersGale_0',
     },
   },
   'DashAttackBladeDancersGale_0:dazeBuildup': {
@@ -492,7 +492,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dash',
       skillType1: 'dodgeSkill',
-      name: 'DashAttackBladeDancersGale_0_daze',
+      name: 'DashAttackBladeDancersGale_0',
     },
   },
   'DashAttackBladeDancersGale_0:anomBuildup': {
@@ -506,7 +506,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dash',
       skillType1: 'dodgeSkill',
-      name: 'DashAttackBladeDancersGale_0_anomBuildup',
+      name: 'DashAttackBladeDancersGale_0',
     },
   },
   'DodgeCounterCeremonyOfSwordlight_0:standardDmg': {
@@ -520,7 +520,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dodgeCounter',
       skillType1: 'dodgeSkill',
-      name: 'DodgeCounterCeremonyOfSwordlight_0_dmg',
+      name: 'DodgeCounterCeremonyOfSwordlight_0',
     },
   },
   'DodgeCounterCeremonyOfSwordlight_0:dazeBuildup': {
@@ -534,7 +534,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dodgeCounter',
       skillType1: 'dodgeSkill',
-      name: 'DodgeCounterCeremonyOfSwordlight_0_daze',
+      name: 'DodgeCounterCeremonyOfSwordlight_0',
     },
   },
   'DodgeCounterCeremonyOfSwordlight_0:anomBuildup': {
@@ -548,7 +548,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dodgeCounter',
       skillType1: 'dodgeSkill',
-      name: 'DodgeCounterCeremonyOfSwordlight_0_anomBuildup',
+      name: 'DodgeCounterCeremonyOfSwordlight_0',
     },
   },
   'SpecialAttackPiercingDawn_0:standardDmg': {
@@ -562,7 +562,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType1: 'specialSkill',
-      name: 'SpecialAttackPiercingDawn_0_dmg',
+      name: 'SpecialAttackPiercingDawn_0',
     },
   },
   'SpecialAttackPiercingDawn_0:dazeBuildup': {
@@ -576,7 +576,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType1: 'specialSkill',
-      name: 'SpecialAttackPiercingDawn_0_daze',
+      name: 'SpecialAttackPiercingDawn_0',
     },
   },
   'SpecialAttackPiercingDawn_0:anomBuildup': {
@@ -590,7 +590,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType1: 'specialSkill',
-      name: 'SpecialAttackPiercingDawn_0_anomBuildup',
+      name: 'SpecialAttackPiercingDawn_0',
     },
   },
   'EXSpecialAttackAuroraThrustNorthernCross_0:standardDmg': {
@@ -604,7 +604,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType1: 'specialSkill',
-      name: 'EXSpecialAttackAuroraThrustNorthernCross_0_dmg',
+      name: 'EXSpecialAttackAuroraThrustNorthernCross_0',
     },
   },
   'EXSpecialAttackAuroraThrustNorthernCross_0:dazeBuildup': {
@@ -618,7 +618,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType1: 'specialSkill',
-      name: 'EXSpecialAttackAuroraThrustNorthernCross_0_daze',
+      name: 'EXSpecialAttackAuroraThrustNorthernCross_0',
     },
   },
   'EXSpecialAttackAuroraThrustNorthernCross_0:anomBuildup': {
@@ -632,7 +632,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType1: 'specialSkill',
-      name: 'EXSpecialAttackAuroraThrustNorthernCross_0_anomBuildup',
+      name: 'EXSpecialAttackAuroraThrustNorthernCross_0',
     },
   },
   'EXSpecialAttackAuroraThrustSouthernCross_0:standardDmg': {
@@ -646,7 +646,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType1: 'specialSkill',
-      name: 'EXSpecialAttackAuroraThrustSouthernCross_0_dmg',
+      name: 'EXSpecialAttackAuroraThrustSouthernCross_0',
     },
   },
   'EXSpecialAttackAuroraThrustSouthernCross_0:dazeBuildup': {
@@ -660,7 +660,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType1: 'specialSkill',
-      name: 'EXSpecialAttackAuroraThrustSouthernCross_0_daze',
+      name: 'EXSpecialAttackAuroraThrustSouthernCross_0',
     },
   },
   'EXSpecialAttackAuroraThrustSouthernCross_0:anomBuildup': {
@@ -674,7 +674,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType1: 'specialSkill',
-      name: 'EXSpecialAttackAuroraThrustSouthernCross_0_anomBuildup',
+      name: 'EXSpecialAttackAuroraThrustSouthernCross_0',
     },
   },
   'ChainAttackStarfallIntermission_0:standardDmg': {
@@ -688,7 +688,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'chain',
       skillType1: 'chainSkill',
-      name: 'ChainAttackStarfallIntermission_0_dmg',
+      name: 'ChainAttackStarfallIntermission_0',
     },
   },
   'ChainAttackStarfallIntermission_0:dazeBuildup': {
@@ -702,7 +702,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'chain',
       skillType1: 'chainSkill',
-      name: 'ChainAttackStarfallIntermission_0_daze',
+      name: 'ChainAttackStarfallIntermission_0',
     },
   },
   'ChainAttackStarfallIntermission_0:anomBuildup': {
@@ -716,7 +716,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'chain',
       skillType1: 'chainSkill',
-      name: 'ChainAttackStarfallIntermission_0_anomBuildup',
+      name: 'ChainAttackStarfallIntermission_0',
     },
   },
   'UltimateStarfallFinale_0:standardDmg': {
@@ -730,7 +730,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'ult',
       skillType1: 'chainSkill',
-      name: 'UltimateStarfallFinale_0_dmg',
+      name: 'UltimateStarfallFinale_0',
     },
   },
   'UltimateStarfallFinale_0:dazeBuildup': {
@@ -744,7 +744,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'ult',
       skillType1: 'chainSkill',
-      name: 'UltimateStarfallFinale_0_daze',
+      name: 'UltimateStarfallFinale_0',
     },
   },
   'UltimateStarfallFinale_0:anomBuildup': {
@@ -758,7 +758,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'ult',
       skillType1: 'chainSkill',
-      name: 'UltimateStarfallFinale_0_anomBuildup',
+      name: 'UltimateStarfallFinale_0',
     },
   },
   'QuickAssistIntertwinedStab_0:standardDmg': {
@@ -772,7 +772,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'quickAssist',
       skillType1: 'assistSkill',
-      name: 'QuickAssistIntertwinedStab_0_dmg',
+      name: 'QuickAssistIntertwinedStab_0',
     },
   },
   'QuickAssistIntertwinedStab_0:dazeBuildup': {
@@ -786,7 +786,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'quickAssist',
       skillType1: 'assistSkill',
-      name: 'QuickAssistIntertwinedStab_0_daze',
+      name: 'QuickAssistIntertwinedStab_0',
     },
   },
   'QuickAssistIntertwinedStab_0:anomBuildup': {
@@ -800,7 +800,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'quickAssist',
       skillType1: 'assistSkill',
-      name: 'QuickAssistIntertwinedStab_0_anomBuildup',
+      name: 'QuickAssistIntertwinedStab_0',
     },
   },
   'DefensiveAssistParryGuard_0:standardDmg': {
@@ -814,7 +814,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistParryGuard_0_dmg',
+      name: 'DefensiveAssistParryGuard_0',
     },
   },
   'DefensiveAssistParryGuard_0:dazeBuildup': {
@@ -828,7 +828,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistParryGuard_0_daze',
+      name: 'DefensiveAssistParryGuard_0',
     },
   },
   'DefensiveAssistParryGuard_0:anomBuildup': {
@@ -842,7 +842,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistParryGuard_0_anomBuildup',
+      name: 'DefensiveAssistParryGuard_0',
     },
   },
   'DefensiveAssistParryGuard_1:standardDmg': {
@@ -856,7 +856,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistParryGuard_1_dmg',
+      name: 'DefensiveAssistParryGuard_1',
     },
   },
   'DefensiveAssistParryGuard_1:dazeBuildup': {
@@ -870,7 +870,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistParryGuard_1_daze',
+      name: 'DefensiveAssistParryGuard_1',
     },
   },
   'DefensiveAssistParryGuard_1:anomBuildup': {
@@ -884,7 +884,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistParryGuard_1_anomBuildup',
+      name: 'DefensiveAssistParryGuard_1',
     },
   },
   'DefensiveAssistParryGuard_2:standardDmg': {
@@ -898,7 +898,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistParryGuard_2_dmg',
+      name: 'DefensiveAssistParryGuard_2',
     },
   },
   'DefensiveAssistParryGuard_2:dazeBuildup': {
@@ -912,7 +912,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistParryGuard_2_daze',
+      name: 'DefensiveAssistParryGuard_2',
     },
   },
   'DefensiveAssistParryGuard_2:anomBuildup': {
@@ -926,7 +926,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistParryGuard_2_anomBuildup',
+      name: 'DefensiveAssistParryGuard_2',
     },
   },
   'AssistFollowUpCrossRiposte_0:standardDmg': {
@@ -940,7 +940,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'assistFollowUp',
       skillType1: 'assistSkill',
-      name: 'AssistFollowUpCrossRiposte_0_dmg',
+      name: 'AssistFollowUpCrossRiposte_0',
     },
   },
   'AssistFollowUpCrossRiposte_0:dazeBuildup': {
@@ -954,7 +954,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'assistFollowUp',
       skillType1: 'assistSkill',
-      name: 'AssistFollowUpCrossRiposte_0_daze',
+      name: 'AssistFollowUpCrossRiposte_0',
     },
   },
   'AssistFollowUpCrossRiposte_0:anomBuildup': {
@@ -968,7 +968,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'assistFollowUp',
       skillType1: 'assistSkill',
-      name: 'AssistFollowUpCrossRiposte_0_anomBuildup',
+      name: 'AssistFollowUpCrossRiposte_0',
     },
   },
   m6_dmg: {

@@ -39,6 +39,19 @@ export const formulas = {
       name: 'disorderDmgInst_physical',
     },
   },
+  vortexDmgInst_physical: {
+    sheet: 'StarlightBilly',
+    name: 'vortexDmgInst_physical',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'StarlightBilly',
+      attribute: 'physical',
+      damageType1: 'vortex',
+      name: 'vortexDmgInst_physical',
+    },
+  },
   abloomDmgInst: {
     sheet: 'StarlightBilly',
     name: 'abloomDmgInst',
@@ -77,9 +90,9 @@ export const formulas = {
       name: 'dazeInst',
     },
   },
-  BasicAttackKnightsTechnique_0_dmg: {
+  'BasicAttackKnightsTechnique_0:sheerDmg': {
     sheet: 'StarlightBilly',
-    name: 'BasicAttackKnightsTechnique_0_dmg',
+    name: 'BasicAttackKnightsTechnique_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -88,12 +101,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackKnightsTechnique_0_dmg',
+      name: 'BasicAttackKnightsTechnique_0',
     },
   },
-  BasicAttackKnightsTechnique_0_daze: {
+  'BasicAttackKnightsTechnique_0:dazeBuildup': {
     sheet: 'StarlightBilly',
-    name: 'BasicAttackKnightsTechnique_0_daze',
+    name: 'BasicAttackKnightsTechnique_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -102,12 +115,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackKnightsTechnique_0_daze',
+      name: 'BasicAttackKnightsTechnique_0',
     },
   },
-  BasicAttackKnightsTechnique_0_anomBuildup: {
+  'BasicAttackKnightsTechnique_0:anomBuildup': {
     sheet: 'StarlightBilly',
-    name: 'BasicAttackKnightsTechnique_0_anomBuildup',
+    name: 'BasicAttackKnightsTechnique_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -116,12 +129,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackKnightsTechnique_0_anomBuildup',
+      name: 'BasicAttackKnightsTechnique_0',
     },
   },
-  BasicAttackKnightsTechnique_1_dmg: {
+  'BasicAttackKnightsTechnique_1:sheerDmg': {
     sheet: 'StarlightBilly',
-    name: 'BasicAttackKnightsTechnique_1_dmg',
+    name: 'BasicAttackKnightsTechnique_1:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -130,12 +143,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackKnightsTechnique_1_dmg',
+      name: 'BasicAttackKnightsTechnique_1',
     },
   },
-  BasicAttackKnightsTechnique_1_daze: {
+  'BasicAttackKnightsTechnique_1:dazeBuildup': {
     sheet: 'StarlightBilly',
-    name: 'BasicAttackKnightsTechnique_1_daze',
+    name: 'BasicAttackKnightsTechnique_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -144,12 +157,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackKnightsTechnique_1_daze',
+      name: 'BasicAttackKnightsTechnique_1',
     },
   },
-  BasicAttackKnightsTechnique_1_anomBuildup: {
+  'BasicAttackKnightsTechnique_1:anomBuildup': {
     sheet: 'StarlightBilly',
-    name: 'BasicAttackKnightsTechnique_1_anomBuildup',
+    name: 'BasicAttackKnightsTechnique_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -158,12 +171,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackKnightsTechnique_1_anomBuildup',
+      name: 'BasicAttackKnightsTechnique_1',
     },
   },
-  BasicAttackKnightsTechnique_2_dmg: {
+  'BasicAttackKnightsTechnique_2:sheerDmg': {
     sheet: 'StarlightBilly',
-    name: 'BasicAttackKnightsTechnique_2_dmg',
+    name: 'BasicAttackKnightsTechnique_2:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -172,12 +185,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackKnightsTechnique_2_dmg',
+      name: 'BasicAttackKnightsTechnique_2',
     },
   },
-  BasicAttackKnightsTechnique_2_daze: {
+  'BasicAttackKnightsTechnique_2:dazeBuildup': {
     sheet: 'StarlightBilly',
-    name: 'BasicAttackKnightsTechnique_2_daze',
+    name: 'BasicAttackKnightsTechnique_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -186,12 +199,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackKnightsTechnique_2_daze',
+      name: 'BasicAttackKnightsTechnique_2',
     },
   },
-  BasicAttackKnightsTechnique_2_anomBuildup: {
+  'BasicAttackKnightsTechnique_2:anomBuildup': {
     sheet: 'StarlightBilly',
-    name: 'BasicAttackKnightsTechnique_2_anomBuildup',
+    name: 'BasicAttackKnightsTechnique_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -200,12 +213,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackKnightsTechnique_2_anomBuildup',
+      name: 'BasicAttackKnightsTechnique_2',
     },
   },
-  BasicAttackKnightsTechnique_3_dmg: {
+  'BasicAttackKnightsTechnique_3:sheerDmg': {
     sheet: 'StarlightBilly',
-    name: 'BasicAttackKnightsTechnique_3_dmg',
+    name: 'BasicAttackKnightsTechnique_3:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -214,12 +227,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackKnightsTechnique_3_dmg',
+      name: 'BasicAttackKnightsTechnique_3',
     },
   },
-  BasicAttackKnightsTechnique_3_daze: {
+  'BasicAttackKnightsTechnique_3:dazeBuildup': {
     sheet: 'StarlightBilly',
-    name: 'BasicAttackKnightsTechnique_3_daze',
+    name: 'BasicAttackKnightsTechnique_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -228,12 +241,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackKnightsTechnique_3_daze',
+      name: 'BasicAttackKnightsTechnique_3',
     },
   },
-  BasicAttackKnightsTechnique_3_anomBuildup: {
+  'BasicAttackKnightsTechnique_3:anomBuildup': {
     sheet: 'StarlightBilly',
-    name: 'BasicAttackKnightsTechnique_3_anomBuildup',
+    name: 'BasicAttackKnightsTechnique_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -242,12 +255,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackKnightsTechnique_3_anomBuildup',
+      name: 'BasicAttackKnightsTechnique_3',
     },
   },
-  BasicAttackFullThrottleStarlight_0_dmg: {
+  'BasicAttackFullThrottleStarlight_0:sheerDmg': {
     sheet: 'StarlightBilly',
-    name: 'BasicAttackFullThrottleStarlight_0_dmg',
+    name: 'BasicAttackFullThrottleStarlight_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -256,12 +269,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackFullThrottleStarlight_0_dmg',
+      name: 'BasicAttackFullThrottleStarlight_0',
     },
   },
-  BasicAttackFullThrottleStarlight_0_daze: {
+  'BasicAttackFullThrottleStarlight_0:dazeBuildup': {
     sheet: 'StarlightBilly',
-    name: 'BasicAttackFullThrottleStarlight_0_daze',
+    name: 'BasicAttackFullThrottleStarlight_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -270,12 +283,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackFullThrottleStarlight_0_daze',
+      name: 'BasicAttackFullThrottleStarlight_0',
     },
   },
-  BasicAttackFullThrottleStarlight_0_anomBuildup: {
+  'BasicAttackFullThrottleStarlight_0:anomBuildup': {
     sheet: 'StarlightBilly',
-    name: 'BasicAttackFullThrottleStarlight_0_anomBuildup',
+    name: 'BasicAttackFullThrottleStarlight_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -284,12 +297,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackFullThrottleStarlight_0_anomBuildup',
+      name: 'BasicAttackFullThrottleStarlight_0',
     },
   },
-  DashAttackStarlightRetribution_0_dmg: {
+  'DashAttackStarlightRetribution_0:sheerDmg': {
     sheet: 'StarlightBilly',
-    name: 'DashAttackStarlightRetribution_0_dmg',
+    name: 'DashAttackStarlightRetribution_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -298,12 +311,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dash',
       skillType1: 'dodgeSkill',
-      name: 'DashAttackStarlightRetribution_0_dmg',
+      name: 'DashAttackStarlightRetribution_0',
     },
   },
-  DashAttackStarlightRetribution_0_daze: {
+  'DashAttackStarlightRetribution_0:dazeBuildup': {
     sheet: 'StarlightBilly',
-    name: 'DashAttackStarlightRetribution_0_daze',
+    name: 'DashAttackStarlightRetribution_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -312,12 +325,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dash',
       skillType1: 'dodgeSkill',
-      name: 'DashAttackStarlightRetribution_0_daze',
+      name: 'DashAttackStarlightRetribution_0',
     },
   },
-  DashAttackStarlightRetribution_0_anomBuildup: {
+  'DashAttackStarlightRetribution_0:anomBuildup': {
     sheet: 'StarlightBilly',
-    name: 'DashAttackStarlightRetribution_0_anomBuildup',
+    name: 'DashAttackStarlightRetribution_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -326,12 +339,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dash',
       skillType1: 'dodgeSkill',
-      name: 'DashAttackStarlightRetribution_0_anomBuildup',
+      name: 'DashAttackStarlightRetribution_0',
     },
   },
-  DodgeCounterDuelKing_0_dmg: {
+  'DodgeCounterDuelKing_0:sheerDmg': {
     sheet: 'StarlightBilly',
-    name: 'DodgeCounterDuelKing_0_dmg',
+    name: 'DodgeCounterDuelKing_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -340,12 +353,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dodgeCounter',
       skillType1: 'dodgeSkill',
-      name: 'DodgeCounterDuelKing_0_dmg',
+      name: 'DodgeCounterDuelKing_0',
     },
   },
-  DodgeCounterDuelKing_0_daze: {
+  'DodgeCounterDuelKing_0:dazeBuildup': {
     sheet: 'StarlightBilly',
-    name: 'DodgeCounterDuelKing_0_daze',
+    name: 'DodgeCounterDuelKing_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -354,12 +367,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dodgeCounter',
       skillType1: 'dodgeSkill',
-      name: 'DodgeCounterDuelKing_0_daze',
+      name: 'DodgeCounterDuelKing_0',
     },
   },
-  DodgeCounterDuelKing_0_anomBuildup: {
+  'DodgeCounterDuelKing_0:anomBuildup': {
     sheet: 'StarlightBilly',
-    name: 'DodgeCounterDuelKing_0_anomBuildup',
+    name: 'DodgeCounterDuelKing_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -368,12 +381,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dodgeCounter',
       skillType1: 'dodgeSkill',
-      name: 'DodgeCounterDuelKing_0_anomBuildup',
+      name: 'DodgeCounterDuelKing_0',
     },
   },
-  DodgeCounterAfterfireSpin_0_dmg: {
+  'DodgeCounterAfterfireSpin_0:sheerDmg': {
     sheet: 'StarlightBilly',
-    name: 'DodgeCounterAfterfireSpin_0_dmg',
+    name: 'DodgeCounterAfterfireSpin_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -382,12 +395,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dodgeCounter',
       skillType1: 'dodgeSkill',
-      name: 'DodgeCounterAfterfireSpin_0_dmg',
+      name: 'DodgeCounterAfterfireSpin_0',
     },
   },
-  DodgeCounterAfterfireSpin_0_daze: {
+  'DodgeCounterAfterfireSpin_0:dazeBuildup': {
     sheet: 'StarlightBilly',
-    name: 'DodgeCounterAfterfireSpin_0_daze',
+    name: 'DodgeCounterAfterfireSpin_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -396,12 +409,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dodgeCounter',
       skillType1: 'dodgeSkill',
-      name: 'DodgeCounterAfterfireSpin_0_daze',
+      name: 'DodgeCounterAfterfireSpin_0',
     },
   },
-  DodgeCounterAfterfireSpin_0_anomBuildup: {
+  'DodgeCounterAfterfireSpin_0:anomBuildup': {
     sheet: 'StarlightBilly',
-    name: 'DodgeCounterAfterfireSpin_0_anomBuildup',
+    name: 'DodgeCounterAfterfireSpin_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -410,12 +423,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dodgeCounter',
       skillType1: 'dodgeSkill',
-      name: 'DodgeCounterAfterfireSpin_0_anomBuildup',
+      name: 'DodgeCounterAfterfireSpin_0',
     },
   },
-  SpecialAttackDriveSuppression_0_dmg: {
+  'SpecialAttackDriveSuppression_0:sheerDmg': {
     sheet: 'StarlightBilly',
-    name: 'SpecialAttackDriveSuppression_0_dmg',
+    name: 'SpecialAttackDriveSuppression_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -424,12 +437,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType1: 'specialSkill',
-      name: 'SpecialAttackDriveSuppression_0_dmg',
+      name: 'SpecialAttackDriveSuppression_0',
     },
   },
-  SpecialAttackDriveSuppression_0_daze: {
+  'SpecialAttackDriveSuppression_0:dazeBuildup': {
     sheet: 'StarlightBilly',
-    name: 'SpecialAttackDriveSuppression_0_daze',
+    name: 'SpecialAttackDriveSuppression_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -438,12 +451,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType1: 'specialSkill',
-      name: 'SpecialAttackDriveSuppression_0_daze',
+      name: 'SpecialAttackDriveSuppression_0',
     },
   },
-  SpecialAttackDriveSuppression_0_anomBuildup: {
+  'SpecialAttackDriveSuppression_0:anomBuildup': {
     sheet: 'StarlightBilly',
-    name: 'SpecialAttackDriveSuppression_0_anomBuildup',
+    name: 'SpecialAttackDriveSuppression_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -452,12 +465,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType1: 'specialSkill',
-      name: 'SpecialAttackDriveSuppression_0_anomBuildup',
+      name: 'SpecialAttackDriveSuppression_0',
     },
   },
-  SpecialAttackRunWild_0_dmg: {
+  'SpecialAttackRunWild_0:sheerDmg': {
     sheet: 'StarlightBilly',
-    name: 'SpecialAttackRunWild_0_dmg',
+    name: 'SpecialAttackRunWild_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -466,12 +479,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType1: 'specialSkill',
-      name: 'SpecialAttackRunWild_0_dmg',
+      name: 'SpecialAttackRunWild_0',
     },
   },
-  SpecialAttackRunWild_0_daze: {
+  'SpecialAttackRunWild_0:dazeBuildup': {
     sheet: 'StarlightBilly',
-    name: 'SpecialAttackRunWild_0_daze',
+    name: 'SpecialAttackRunWild_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -480,12 +493,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType1: 'specialSkill',
-      name: 'SpecialAttackRunWild_0_daze',
+      name: 'SpecialAttackRunWild_0',
     },
   },
-  SpecialAttackRunWild_0_anomBuildup: {
+  'SpecialAttackRunWild_0:anomBuildup': {
     sheet: 'StarlightBilly',
-    name: 'SpecialAttackRunWild_0_anomBuildup',
+    name: 'SpecialAttackRunWild_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -494,12 +507,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType1: 'specialSkill',
-      name: 'SpecialAttackRunWild_0_anomBuildup',
+      name: 'SpecialAttackRunWild_0',
     },
   },
-  EXSpecialAttackCoolWheelie_0_dmg: {
+  'EXSpecialAttackCoolWheelie_0:sheerDmg': {
     sheet: 'StarlightBilly',
-    name: 'EXSpecialAttackCoolWheelie_0_dmg',
+    name: 'EXSpecialAttackCoolWheelie_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -508,12 +521,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType1: 'specialSkill',
-      name: 'EXSpecialAttackCoolWheelie_0_dmg',
+      name: 'EXSpecialAttackCoolWheelie_0',
     },
   },
-  EXSpecialAttackCoolWheelie_0_daze: {
+  'EXSpecialAttackCoolWheelie_0:dazeBuildup': {
     sheet: 'StarlightBilly',
-    name: 'EXSpecialAttackCoolWheelie_0_daze',
+    name: 'EXSpecialAttackCoolWheelie_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -522,12 +535,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType1: 'specialSkill',
-      name: 'EXSpecialAttackCoolWheelie_0_daze',
+      name: 'EXSpecialAttackCoolWheelie_0',
     },
   },
-  EXSpecialAttackCoolWheelie_0_anomBuildup: {
+  'EXSpecialAttackCoolWheelie_0:anomBuildup': {
     sheet: 'StarlightBilly',
-    name: 'EXSpecialAttackCoolWheelie_0_anomBuildup',
+    name: 'EXSpecialAttackCoolWheelie_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -536,12 +549,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType1: 'specialSkill',
-      name: 'EXSpecialAttackCoolWheelie_0_anomBuildup',
+      name: 'EXSpecialAttackCoolWheelie_0',
     },
   },
-  EXSpecialAttackHighTractionWheels_0_dmg: {
+  'EXSpecialAttackHighTractionWheels_0:sheerDmg': {
     sheet: 'StarlightBilly',
-    name: 'EXSpecialAttackHighTractionWheels_0_dmg',
+    name: 'EXSpecialAttackHighTractionWheels_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -550,12 +563,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType1: 'specialSkill',
-      name: 'EXSpecialAttackHighTractionWheels_0_dmg',
+      name: 'EXSpecialAttackHighTractionWheels_0',
     },
   },
-  EXSpecialAttackHighTractionWheels_0_daze: {
+  'EXSpecialAttackHighTractionWheels_0:dazeBuildup': {
     sheet: 'StarlightBilly',
-    name: 'EXSpecialAttackHighTractionWheels_0_daze',
+    name: 'EXSpecialAttackHighTractionWheels_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -564,12 +577,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType1: 'specialSkill',
-      name: 'EXSpecialAttackHighTractionWheels_0_daze',
+      name: 'EXSpecialAttackHighTractionWheels_0',
     },
   },
-  EXSpecialAttackHighTractionWheels_0_anomBuildup: {
+  'EXSpecialAttackHighTractionWheels_0:anomBuildup': {
     sheet: 'StarlightBilly',
-    name: 'EXSpecialAttackHighTractionWheels_0_anomBuildup',
+    name: 'EXSpecialAttackHighTractionWheels_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -578,12 +591,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType1: 'specialSkill',
-      name: 'EXSpecialAttackHighTractionWheels_0_anomBuildup',
+      name: 'EXSpecialAttackHighTractionWheels_0',
     },
   },
-  EXSpecialAttackRockingFootwork_0_dmg: {
+  'EXSpecialAttackRockingFootwork_0:sheerDmg': {
     sheet: 'StarlightBilly',
-    name: 'EXSpecialAttackRockingFootwork_0_dmg',
+    name: 'EXSpecialAttackRockingFootwork_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -592,12 +605,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType1: 'specialSkill',
-      name: 'EXSpecialAttackRockingFootwork_0_dmg',
+      name: 'EXSpecialAttackRockingFootwork_0',
     },
   },
-  EXSpecialAttackRockingFootwork_0_daze: {
+  'EXSpecialAttackRockingFootwork_0:dazeBuildup': {
     sheet: 'StarlightBilly',
-    name: 'EXSpecialAttackRockingFootwork_0_daze',
+    name: 'EXSpecialAttackRockingFootwork_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -606,12 +619,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType1: 'specialSkill',
-      name: 'EXSpecialAttackRockingFootwork_0_daze',
+      name: 'EXSpecialAttackRockingFootwork_0',
     },
   },
-  EXSpecialAttackRockingFootwork_0_anomBuildup: {
+  'EXSpecialAttackRockingFootwork_0:anomBuildup': {
     sheet: 'StarlightBilly',
-    name: 'EXSpecialAttackRockingFootwork_0_anomBuildup',
+    name: 'EXSpecialAttackRockingFootwork_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -620,12 +633,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType1: 'specialSkill',
-      name: 'EXSpecialAttackRockingFootwork_0_anomBuildup',
+      name: 'EXSpecialAttackRockingFootwork_0',
     },
   },
-  ChainAttackKnightsSwagger_0_dmg: {
+  'ChainAttackKnightsSwagger_0:sheerDmg': {
     sheet: 'StarlightBilly',
-    name: 'ChainAttackKnightsSwagger_0_dmg',
+    name: 'ChainAttackKnightsSwagger_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -634,12 +647,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'chain',
       skillType1: 'chainSkill',
-      name: 'ChainAttackKnightsSwagger_0_dmg',
+      name: 'ChainAttackKnightsSwagger_0',
     },
   },
-  ChainAttackKnightsSwagger_0_daze: {
+  'ChainAttackKnightsSwagger_0:dazeBuildup': {
     sheet: 'StarlightBilly',
-    name: 'ChainAttackKnightsSwagger_0_daze',
+    name: 'ChainAttackKnightsSwagger_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -648,12 +661,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'chain',
       skillType1: 'chainSkill',
-      name: 'ChainAttackKnightsSwagger_0_daze',
+      name: 'ChainAttackKnightsSwagger_0',
     },
   },
-  ChainAttackKnightsSwagger_0_anomBuildup: {
+  'ChainAttackKnightsSwagger_0:anomBuildup': {
     sheet: 'StarlightBilly',
-    name: 'ChainAttackKnightsSwagger_0_anomBuildup',
+    name: 'ChainAttackKnightsSwagger_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -662,12 +675,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'chain',
       skillType1: 'chainSkill',
-      name: 'ChainAttackKnightsSwagger_0_anomBuildup',
+      name: 'ChainAttackKnightsSwagger_0',
     },
   },
-  UltimateStarlightKnightFlyingKick_0_dmg: {
+  'UltimateStarlightKnightFlyingKick_0:sheerDmg': {
     sheet: 'StarlightBilly',
-    name: 'UltimateStarlightKnightFlyingKick_0_dmg',
+    name: 'UltimateStarlightKnightFlyingKick_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -676,12 +689,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'ult',
       skillType1: 'chainSkill',
-      name: 'UltimateStarlightKnightFlyingKick_0_dmg',
+      name: 'UltimateStarlightKnightFlyingKick_0',
     },
   },
-  UltimateStarlightKnightFlyingKick_0_daze: {
+  'UltimateStarlightKnightFlyingKick_0:dazeBuildup': {
     sheet: 'StarlightBilly',
-    name: 'UltimateStarlightKnightFlyingKick_0_daze',
+    name: 'UltimateStarlightKnightFlyingKick_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -690,12 +703,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'ult',
       skillType1: 'chainSkill',
-      name: 'UltimateStarlightKnightFlyingKick_0_daze',
+      name: 'UltimateStarlightKnightFlyingKick_0',
     },
   },
-  UltimateStarlightKnightFlyingKick_0_anomBuildup: {
+  'UltimateStarlightKnightFlyingKick_0:anomBuildup': {
     sheet: 'StarlightBilly',
-    name: 'UltimateStarlightKnightFlyingKick_0_anomBuildup',
+    name: 'UltimateStarlightKnightFlyingKick_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -704,12 +717,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'ult',
       skillType1: 'chainSkill',
-      name: 'UltimateStarlightKnightFlyingKick_0_anomBuildup',
+      name: 'UltimateStarlightKnightFlyingKick_0',
     },
   },
-  QuickAssistStarlightPowerOfBonds_0_dmg: {
+  'QuickAssistStarlightPowerOfBonds_0:sheerDmg': {
     sheet: 'StarlightBilly',
-    name: 'QuickAssistStarlightPowerOfBonds_0_dmg',
+    name: 'QuickAssistStarlightPowerOfBonds_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -718,12 +731,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'quickAssist',
       skillType1: 'assistSkill',
-      name: 'QuickAssistStarlightPowerOfBonds_0_dmg',
+      name: 'QuickAssistStarlightPowerOfBonds_0',
     },
   },
-  QuickAssistStarlightPowerOfBonds_0_daze: {
+  'QuickAssistStarlightPowerOfBonds_0:dazeBuildup': {
     sheet: 'StarlightBilly',
-    name: 'QuickAssistStarlightPowerOfBonds_0_daze',
+    name: 'QuickAssistStarlightPowerOfBonds_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -732,12 +745,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'quickAssist',
       skillType1: 'assistSkill',
-      name: 'QuickAssistStarlightPowerOfBonds_0_daze',
+      name: 'QuickAssistStarlightPowerOfBonds_0',
     },
   },
-  QuickAssistStarlightPowerOfBonds_0_anomBuildup: {
+  'QuickAssistStarlightPowerOfBonds_0:anomBuildup': {
     sheet: 'StarlightBilly',
-    name: 'QuickAssistStarlightPowerOfBonds_0_anomBuildup',
+    name: 'QuickAssistStarlightPowerOfBonds_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -746,12 +759,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'quickAssist',
       skillType1: 'assistSkill',
-      name: 'QuickAssistStarlightPowerOfBonds_0_anomBuildup',
+      name: 'QuickAssistStarlightPowerOfBonds_0',
     },
   },
-  DefensiveAssistHerosEntrance_0_dmg: {
+  'DefensiveAssistHerosEntrance_0:sheerDmg': {
     sheet: 'StarlightBilly',
-    name: 'DefensiveAssistHerosEntrance_0_dmg',
+    name: 'DefensiveAssistHerosEntrance_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -760,12 +773,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistHerosEntrance_0_dmg',
+      name: 'DefensiveAssistHerosEntrance_0',
     },
   },
-  DefensiveAssistHerosEntrance_0_daze: {
+  'DefensiveAssistHerosEntrance_0:dazeBuildup': {
     sheet: 'StarlightBilly',
-    name: 'DefensiveAssistHerosEntrance_0_daze',
+    name: 'DefensiveAssistHerosEntrance_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -774,12 +787,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistHerosEntrance_0_daze',
+      name: 'DefensiveAssistHerosEntrance_0',
     },
   },
-  DefensiveAssistHerosEntrance_0_anomBuildup: {
+  'DefensiveAssistHerosEntrance_0:anomBuildup': {
     sheet: 'StarlightBilly',
-    name: 'DefensiveAssistHerosEntrance_0_anomBuildup',
+    name: 'DefensiveAssistHerosEntrance_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -788,12 +801,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistHerosEntrance_0_anomBuildup',
+      name: 'DefensiveAssistHerosEntrance_0',
     },
   },
-  DefensiveAssistHerosEntrance_1_dmg: {
+  'DefensiveAssistHerosEntrance_1:sheerDmg': {
     sheet: 'StarlightBilly',
-    name: 'DefensiveAssistHerosEntrance_1_dmg',
+    name: 'DefensiveAssistHerosEntrance_1:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -802,12 +815,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistHerosEntrance_1_dmg',
+      name: 'DefensiveAssistHerosEntrance_1',
     },
   },
-  DefensiveAssistHerosEntrance_1_daze: {
+  'DefensiveAssistHerosEntrance_1:dazeBuildup': {
     sheet: 'StarlightBilly',
-    name: 'DefensiveAssistHerosEntrance_1_daze',
+    name: 'DefensiveAssistHerosEntrance_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -816,12 +829,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistHerosEntrance_1_daze',
+      name: 'DefensiveAssistHerosEntrance_1',
     },
   },
-  DefensiveAssistHerosEntrance_1_anomBuildup: {
+  'DefensiveAssistHerosEntrance_1:anomBuildup': {
     sheet: 'StarlightBilly',
-    name: 'DefensiveAssistHerosEntrance_1_anomBuildup',
+    name: 'DefensiveAssistHerosEntrance_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -830,12 +843,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistHerosEntrance_1_anomBuildup',
+      name: 'DefensiveAssistHerosEntrance_1',
     },
   },
-  DefensiveAssistHerosEntrance_2_dmg: {
+  'DefensiveAssistHerosEntrance_2:sheerDmg': {
     sheet: 'StarlightBilly',
-    name: 'DefensiveAssistHerosEntrance_2_dmg',
+    name: 'DefensiveAssistHerosEntrance_2:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -844,12 +857,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistHerosEntrance_2_dmg',
+      name: 'DefensiveAssistHerosEntrance_2',
     },
   },
-  DefensiveAssistHerosEntrance_2_daze: {
+  'DefensiveAssistHerosEntrance_2:dazeBuildup': {
     sheet: 'StarlightBilly',
-    name: 'DefensiveAssistHerosEntrance_2_daze',
+    name: 'DefensiveAssistHerosEntrance_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -858,12 +871,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistHerosEntrance_2_daze',
+      name: 'DefensiveAssistHerosEntrance_2',
     },
   },
-  DefensiveAssistHerosEntrance_2_anomBuildup: {
+  'DefensiveAssistHerosEntrance_2:anomBuildup': {
     sheet: 'StarlightBilly',
-    name: 'DefensiveAssistHerosEntrance_2_anomBuildup',
+    name: 'DefensiveAssistHerosEntrance_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -872,12 +885,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistHerosEntrance_2_anomBuildup',
+      name: 'DefensiveAssistHerosEntrance_2',
     },
   },
-  AssistFollowUpVillainsExit_0_dmg: {
+  'AssistFollowUpVillainsExit_0:sheerDmg': {
     sheet: 'StarlightBilly',
-    name: 'AssistFollowUpVillainsExit_0_dmg',
+    name: 'AssistFollowUpVillainsExit_0:sheerDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -886,12 +899,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'assistFollowUp',
       skillType1: 'assistSkill',
-      name: 'AssistFollowUpVillainsExit_0_dmg',
+      name: 'AssistFollowUpVillainsExit_0',
     },
   },
-  AssistFollowUpVillainsExit_0_daze: {
+  'AssistFollowUpVillainsExit_0:dazeBuildup': {
     sheet: 'StarlightBilly',
-    name: 'AssistFollowUpVillainsExit_0_daze',
+    name: 'AssistFollowUpVillainsExit_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -900,12 +913,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'assistFollowUp',
       skillType1: 'assistSkill',
-      name: 'AssistFollowUpVillainsExit_0_daze',
+      name: 'AssistFollowUpVillainsExit_0',
     },
   },
-  AssistFollowUpVillainsExit_0_anomBuildup: {
+  'AssistFollowUpVillainsExit_0:anomBuildup': {
     sheet: 'StarlightBilly',
-    name: 'AssistFollowUpVillainsExit_0_anomBuildup',
+    name: 'AssistFollowUpVillainsExit_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -914,7 +927,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'assistFollowUp',
       skillType1: 'assistSkill',
-      name: 'AssistFollowUpVillainsExit_0_anomBuildup',
+      name: 'AssistFollowUpVillainsExit_0',
     },
   },
 } as const

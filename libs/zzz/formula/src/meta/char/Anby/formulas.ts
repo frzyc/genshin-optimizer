@@ -38,6 +38,19 @@ export const formulas = {
       name: 'disorderDmgInst_electric',
     },
   },
+  vortexDmgInst_electric: {
+    sheet: 'Anby',
+    name: 'vortexDmgInst_electric',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'Anby',
+      attribute: 'electric',
+      damageType1: 'vortex',
+      name: 'vortexDmgInst_electric',
+    },
+  },
   abloomDmgInst: {
     sheet: 'Anby',
     name: 'abloomDmgInst',
@@ -76,9 +89,9 @@ export const formulas = {
       name: 'dazeInst',
     },
   },
-  BasicAttackTurboVolt_0_dmg: {
+  'BasicAttackTurboVolt_0:standardDmg': {
     sheet: 'Anby',
-    name: 'BasicAttackTurboVolt_0_dmg',
+    name: 'BasicAttackTurboVolt_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -87,12 +100,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType1: 'basicSkill',
-      name: 'BasicAttackTurboVolt_0_dmg',
+      name: 'BasicAttackTurboVolt_0',
     },
   },
-  BasicAttackTurboVolt_0_daze: {
+  'BasicAttackTurboVolt_0:dazeBuildup': {
     sheet: 'Anby',
-    name: 'BasicAttackTurboVolt_0_daze',
+    name: 'BasicAttackTurboVolt_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -101,12 +114,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType1: 'basicSkill',
-      name: 'BasicAttackTurboVolt_0_daze',
+      name: 'BasicAttackTurboVolt_0',
     },
   },
-  BasicAttackTurboVolt_0_anomBuildup: {
+  'BasicAttackTurboVolt_0:anomBuildup': {
     sheet: 'Anby',
-    name: 'BasicAttackTurboVolt_0_anomBuildup',
+    name: 'BasicAttackTurboVolt_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -115,12 +128,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType1: 'basicSkill',
-      name: 'BasicAttackTurboVolt_0_anomBuildup',
+      name: 'BasicAttackTurboVolt_0',
     },
   },
-  BasicAttackTurboVolt_1_dmg: {
+  'BasicAttackTurboVolt_1:standardDmg': {
     sheet: 'Anby',
-    name: 'BasicAttackTurboVolt_1_dmg',
+    name: 'BasicAttackTurboVolt_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -129,12 +142,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType1: 'basicSkill',
-      name: 'BasicAttackTurboVolt_1_dmg',
+      name: 'BasicAttackTurboVolt_1',
     },
   },
-  BasicAttackTurboVolt_1_daze: {
+  'BasicAttackTurboVolt_1:dazeBuildup': {
     sheet: 'Anby',
-    name: 'BasicAttackTurboVolt_1_daze',
+    name: 'BasicAttackTurboVolt_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -143,12 +156,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType1: 'basicSkill',
-      name: 'BasicAttackTurboVolt_1_daze',
+      name: 'BasicAttackTurboVolt_1',
     },
   },
-  BasicAttackTurboVolt_1_anomBuildup: {
+  'BasicAttackTurboVolt_1:anomBuildup': {
     sheet: 'Anby',
-    name: 'BasicAttackTurboVolt_1_anomBuildup',
+    name: 'BasicAttackTurboVolt_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -157,12 +170,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType1: 'basicSkill',
-      name: 'BasicAttackTurboVolt_1_anomBuildup',
+      name: 'BasicAttackTurboVolt_1',
     },
   },
-  BasicAttackTurboVolt_2_dmg: {
+  'BasicAttackTurboVolt_2:standardDmg': {
     sheet: 'Anby',
-    name: 'BasicAttackTurboVolt_2_dmg',
+    name: 'BasicAttackTurboVolt_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -171,12 +184,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType1: 'basicSkill',
-      name: 'BasicAttackTurboVolt_2_dmg',
+      name: 'BasicAttackTurboVolt_2',
     },
   },
-  BasicAttackTurboVolt_2_daze: {
+  'BasicAttackTurboVolt_2:dazeBuildup': {
     sheet: 'Anby',
-    name: 'BasicAttackTurboVolt_2_daze',
+    name: 'BasicAttackTurboVolt_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -185,12 +198,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType1: 'basicSkill',
-      name: 'BasicAttackTurboVolt_2_daze',
+      name: 'BasicAttackTurboVolt_2',
     },
   },
-  BasicAttackTurboVolt_2_anomBuildup: {
+  'BasicAttackTurboVolt_2:anomBuildup': {
     sheet: 'Anby',
-    name: 'BasicAttackTurboVolt_2_anomBuildup',
+    name: 'BasicAttackTurboVolt_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -199,12 +212,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType1: 'basicSkill',
-      name: 'BasicAttackTurboVolt_2_anomBuildup',
+      name: 'BasicAttackTurboVolt_2',
     },
   },
-  BasicAttackTurboVolt_3_dmg: {
+  'BasicAttackTurboVolt_3:standardDmg': {
     sheet: 'Anby',
-    name: 'BasicAttackTurboVolt_3_dmg',
+    name: 'BasicAttackTurboVolt_3:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -213,12 +226,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackTurboVolt_3_dmg',
+      name: 'BasicAttackTurboVolt_3',
     },
   },
-  BasicAttackTurboVolt_3_daze: {
+  'BasicAttackTurboVolt_3:dazeBuildup': {
     sheet: 'Anby',
-    name: 'BasicAttackTurboVolt_3_daze',
+    name: 'BasicAttackTurboVolt_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -227,12 +240,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackTurboVolt_3_daze',
+      name: 'BasicAttackTurboVolt_3',
     },
   },
-  BasicAttackTurboVolt_3_anomBuildup: {
+  'BasicAttackTurboVolt_3:anomBuildup': {
     sheet: 'Anby',
-    name: 'BasicAttackTurboVolt_3_anomBuildup',
+    name: 'BasicAttackTurboVolt_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -241,12 +254,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackTurboVolt_3_anomBuildup',
+      name: 'BasicAttackTurboVolt_3',
     },
   },
-  BasicAttackThunderbolt_0_dmg: {
+  'BasicAttackThunderbolt_0:standardDmg': {
     sheet: 'Anby',
-    name: 'BasicAttackThunderbolt_0_dmg',
+    name: 'BasicAttackThunderbolt_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -255,12 +268,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackThunderbolt_0_dmg',
+      name: 'BasicAttackThunderbolt_0',
     },
   },
-  BasicAttackThunderbolt_0_daze: {
+  'BasicAttackThunderbolt_0:dazeBuildup': {
     sheet: 'Anby',
-    name: 'BasicAttackThunderbolt_0_daze',
+    name: 'BasicAttackThunderbolt_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -269,12 +282,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackThunderbolt_0_daze',
+      name: 'BasicAttackThunderbolt_0',
     },
   },
-  BasicAttackThunderbolt_0_anomBuildup: {
+  'BasicAttackThunderbolt_0:anomBuildup': {
     sheet: 'Anby',
-    name: 'BasicAttackThunderbolt_0_anomBuildup',
+    name: 'BasicAttackThunderbolt_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -283,12 +296,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackThunderbolt_0_anomBuildup',
+      name: 'BasicAttackThunderbolt_0',
     },
   },
-  DashAttackTaserBlast_0_dmg: {
+  'DashAttackTaserBlast_0:standardDmg': {
     sheet: 'Anby',
-    name: 'DashAttackTaserBlast_0_dmg',
+    name: 'DashAttackTaserBlast_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -297,12 +310,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'dash',
       skillType1: 'dodgeSkill',
-      name: 'DashAttackTaserBlast_0_dmg',
+      name: 'DashAttackTaserBlast_0',
     },
   },
-  DashAttackTaserBlast_0_daze: {
+  'DashAttackTaserBlast_0:dazeBuildup': {
     sheet: 'Anby',
-    name: 'DashAttackTaserBlast_0_daze',
+    name: 'DashAttackTaserBlast_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -311,12 +324,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'dash',
       skillType1: 'dodgeSkill',
-      name: 'DashAttackTaserBlast_0_daze',
+      name: 'DashAttackTaserBlast_0',
     },
   },
-  DashAttackTaserBlast_0_anomBuildup: {
+  'DashAttackTaserBlast_0:anomBuildup': {
     sheet: 'Anby',
-    name: 'DashAttackTaserBlast_0_anomBuildup',
+    name: 'DashAttackTaserBlast_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -325,12 +338,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'dash',
       skillType1: 'dodgeSkill',
-      name: 'DashAttackTaserBlast_0_anomBuildup',
+      name: 'DashAttackTaserBlast_0',
     },
   },
-  DodgeCounterThunderclap_0_dmg: {
+  'DodgeCounterThunderclap_0:standardDmg': {
     sheet: 'Anby',
-    name: 'DodgeCounterThunderclap_0_dmg',
+    name: 'DodgeCounterThunderclap_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -339,12 +352,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'dodgeCounter',
       skillType1: 'dodgeSkill',
-      name: 'DodgeCounterThunderclap_0_dmg',
+      name: 'DodgeCounterThunderclap_0',
     },
   },
-  DodgeCounterThunderclap_0_daze: {
+  'DodgeCounterThunderclap_0:dazeBuildup': {
     sheet: 'Anby',
-    name: 'DodgeCounterThunderclap_0_daze',
+    name: 'DodgeCounterThunderclap_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -353,12 +366,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'dodgeCounter',
       skillType1: 'dodgeSkill',
-      name: 'DodgeCounterThunderclap_0_daze',
+      name: 'DodgeCounterThunderclap_0',
     },
   },
-  DodgeCounterThunderclap_0_anomBuildup: {
+  'DodgeCounterThunderclap_0:anomBuildup': {
     sheet: 'Anby',
-    name: 'DodgeCounterThunderclap_0_anomBuildup',
+    name: 'DodgeCounterThunderclap_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -367,12 +380,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'dodgeCounter',
       skillType1: 'dodgeSkill',
-      name: 'DodgeCounterThunderclap_0_anomBuildup',
+      name: 'DodgeCounterThunderclap_0',
     },
   },
-  SpecialAttackForkLightning_0_dmg: {
+  'SpecialAttackForkLightning_0:standardDmg': {
     sheet: 'Anby',
-    name: 'SpecialAttackForkLightning_0_dmg',
+    name: 'SpecialAttackForkLightning_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -381,12 +394,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'special',
       skillType1: 'specialSkill',
-      name: 'SpecialAttackForkLightning_0_dmg',
+      name: 'SpecialAttackForkLightning_0',
     },
   },
-  SpecialAttackForkLightning_0_daze: {
+  'SpecialAttackForkLightning_0:dazeBuildup': {
     sheet: 'Anby',
-    name: 'SpecialAttackForkLightning_0_daze',
+    name: 'SpecialAttackForkLightning_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -395,12 +408,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'special',
       skillType1: 'specialSkill',
-      name: 'SpecialAttackForkLightning_0_daze',
+      name: 'SpecialAttackForkLightning_0',
     },
   },
-  SpecialAttackForkLightning_0_anomBuildup: {
+  'SpecialAttackForkLightning_0:anomBuildup': {
     sheet: 'Anby',
-    name: 'SpecialAttackForkLightning_0_anomBuildup',
+    name: 'SpecialAttackForkLightning_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -409,12 +422,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'special',
       skillType1: 'specialSkill',
-      name: 'SpecialAttackForkLightning_0_anomBuildup',
+      name: 'SpecialAttackForkLightning_0',
     },
   },
-  EXSpecialAttackLightningBolt_0_dmg: {
+  'EXSpecialAttackLightningBolt_0:standardDmg': {
     sheet: 'Anby',
-    name: 'EXSpecialAttackLightningBolt_0_dmg',
+    name: 'EXSpecialAttackLightningBolt_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -423,12 +436,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'exSpecial',
       skillType1: 'specialSkill',
-      name: 'EXSpecialAttackLightningBolt_0_dmg',
+      name: 'EXSpecialAttackLightningBolt_0',
     },
   },
-  EXSpecialAttackLightningBolt_0_daze: {
+  'EXSpecialAttackLightningBolt_0:dazeBuildup': {
     sheet: 'Anby',
-    name: 'EXSpecialAttackLightningBolt_0_daze',
+    name: 'EXSpecialAttackLightningBolt_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -437,12 +450,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'exSpecial',
       skillType1: 'specialSkill',
-      name: 'EXSpecialAttackLightningBolt_0_daze',
+      name: 'EXSpecialAttackLightningBolt_0',
     },
   },
-  EXSpecialAttackLightningBolt_0_anomBuildup: {
+  'EXSpecialAttackLightningBolt_0:anomBuildup': {
     sheet: 'Anby',
-    name: 'EXSpecialAttackLightningBolt_0_anomBuildup',
+    name: 'EXSpecialAttackLightningBolt_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -451,12 +464,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'exSpecial',
       skillType1: 'specialSkill',
-      name: 'EXSpecialAttackLightningBolt_0_anomBuildup',
+      name: 'EXSpecialAttackLightningBolt_0',
     },
   },
-  ChainAttackElectroEngine_0_dmg: {
+  'ChainAttackElectroEngine_0:standardDmg': {
     sheet: 'Anby',
-    name: 'ChainAttackElectroEngine_0_dmg',
+    name: 'ChainAttackElectroEngine_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -465,12 +478,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'chain',
       skillType1: 'chainSkill',
-      name: 'ChainAttackElectroEngine_0_dmg',
+      name: 'ChainAttackElectroEngine_0',
     },
   },
-  ChainAttackElectroEngine_0_daze: {
+  'ChainAttackElectroEngine_0:dazeBuildup': {
     sheet: 'Anby',
-    name: 'ChainAttackElectroEngine_0_daze',
+    name: 'ChainAttackElectroEngine_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -479,12 +492,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'chain',
       skillType1: 'chainSkill',
-      name: 'ChainAttackElectroEngine_0_daze',
+      name: 'ChainAttackElectroEngine_0',
     },
   },
-  ChainAttackElectroEngine_0_anomBuildup: {
+  'ChainAttackElectroEngine_0:anomBuildup': {
     sheet: 'Anby',
-    name: 'ChainAttackElectroEngine_0_anomBuildup',
+    name: 'ChainAttackElectroEngine_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -493,12 +506,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'chain',
       skillType1: 'chainSkill',
-      name: 'ChainAttackElectroEngine_0_anomBuildup',
+      name: 'ChainAttackElectroEngine_0',
     },
   },
-  UltimateOverdriveEngine_0_dmg: {
+  'UltimateOverdriveEngine_0:standardDmg': {
     sheet: 'Anby',
-    name: 'UltimateOverdriveEngine_0_dmg',
+    name: 'UltimateOverdriveEngine_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -507,12 +520,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'ult',
       skillType1: 'chainSkill',
-      name: 'UltimateOverdriveEngine_0_dmg',
+      name: 'UltimateOverdriveEngine_0',
     },
   },
-  UltimateOverdriveEngine_0_daze: {
+  'UltimateOverdriveEngine_0:dazeBuildup': {
     sheet: 'Anby',
-    name: 'UltimateOverdriveEngine_0_daze',
+    name: 'UltimateOverdriveEngine_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -521,12 +534,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'ult',
       skillType1: 'chainSkill',
-      name: 'UltimateOverdriveEngine_0_daze',
+      name: 'UltimateOverdriveEngine_0',
     },
   },
-  UltimateOverdriveEngine_0_anomBuildup: {
+  'UltimateOverdriveEngine_0:anomBuildup': {
     sheet: 'Anby',
-    name: 'UltimateOverdriveEngine_0_anomBuildup',
+    name: 'UltimateOverdriveEngine_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -535,12 +548,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'ult',
       skillType1: 'chainSkill',
-      name: 'UltimateOverdriveEngine_0_anomBuildup',
+      name: 'UltimateOverdriveEngine_0',
     },
   },
-  QuickAssistThunderfall_0_dmg: {
+  'QuickAssistThunderfall_0:standardDmg': {
     sheet: 'Anby',
-    name: 'QuickAssistThunderfall_0_dmg',
+    name: 'QuickAssistThunderfall_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -549,12 +562,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'quickAssist',
       skillType1: 'assistSkill',
-      name: 'QuickAssistThunderfall_0_dmg',
+      name: 'QuickAssistThunderfall_0',
     },
   },
-  QuickAssistThunderfall_0_daze: {
+  'QuickAssistThunderfall_0:dazeBuildup': {
     sheet: 'Anby',
-    name: 'QuickAssistThunderfall_0_daze',
+    name: 'QuickAssistThunderfall_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -563,12 +576,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'quickAssist',
       skillType1: 'assistSkill',
-      name: 'QuickAssistThunderfall_0_daze',
+      name: 'QuickAssistThunderfall_0',
     },
   },
-  QuickAssistThunderfall_0_anomBuildup: {
+  'QuickAssistThunderfall_0:anomBuildup': {
     sheet: 'Anby',
-    name: 'QuickAssistThunderfall_0_anomBuildup',
+    name: 'QuickAssistThunderfall_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -577,12 +590,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'quickAssist',
       skillType1: 'assistSkill',
-      name: 'QuickAssistThunderfall_0_anomBuildup',
+      name: 'QuickAssistThunderfall_0',
     },
   },
-  DefensiveAssistFlash_0_dmg: {
+  'DefensiveAssistFlash_0:standardDmg': {
     sheet: 'Anby',
-    name: 'DefensiveAssistFlash_0_dmg',
+    name: 'DefensiveAssistFlash_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -591,12 +604,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistFlash_0_dmg',
+      name: 'DefensiveAssistFlash_0',
     },
   },
-  DefensiveAssistFlash_0_daze: {
+  'DefensiveAssistFlash_0:dazeBuildup': {
     sheet: 'Anby',
-    name: 'DefensiveAssistFlash_0_daze',
+    name: 'DefensiveAssistFlash_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -605,12 +618,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistFlash_0_daze',
+      name: 'DefensiveAssistFlash_0',
     },
   },
-  DefensiveAssistFlash_0_anomBuildup: {
+  'DefensiveAssistFlash_0:anomBuildup': {
     sheet: 'Anby',
-    name: 'DefensiveAssistFlash_0_anomBuildup',
+    name: 'DefensiveAssistFlash_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -619,12 +632,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistFlash_0_anomBuildup',
+      name: 'DefensiveAssistFlash_0',
     },
   },
-  DefensiveAssistFlash_1_dmg: {
+  'DefensiveAssistFlash_1:standardDmg': {
     sheet: 'Anby',
-    name: 'DefensiveAssistFlash_1_dmg',
+    name: 'DefensiveAssistFlash_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -633,12 +646,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistFlash_1_dmg',
+      name: 'DefensiveAssistFlash_1',
     },
   },
-  DefensiveAssistFlash_1_daze: {
+  'DefensiveAssistFlash_1:dazeBuildup': {
     sheet: 'Anby',
-    name: 'DefensiveAssistFlash_1_daze',
+    name: 'DefensiveAssistFlash_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -647,12 +660,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistFlash_1_daze',
+      name: 'DefensiveAssistFlash_1',
     },
   },
-  DefensiveAssistFlash_1_anomBuildup: {
+  'DefensiveAssistFlash_1:anomBuildup': {
     sheet: 'Anby',
-    name: 'DefensiveAssistFlash_1_anomBuildup',
+    name: 'DefensiveAssistFlash_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -661,12 +674,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistFlash_1_anomBuildup',
+      name: 'DefensiveAssistFlash_1',
     },
   },
-  DefensiveAssistFlash_2_dmg: {
+  'DefensiveAssistFlash_2:standardDmg': {
     sheet: 'Anby',
-    name: 'DefensiveAssistFlash_2_dmg',
+    name: 'DefensiveAssistFlash_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -675,12 +688,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistFlash_2_dmg',
+      name: 'DefensiveAssistFlash_2',
     },
   },
-  DefensiveAssistFlash_2_daze: {
+  'DefensiveAssistFlash_2:dazeBuildup': {
     sheet: 'Anby',
-    name: 'DefensiveAssistFlash_2_daze',
+    name: 'DefensiveAssistFlash_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -689,12 +702,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistFlash_2_daze',
+      name: 'DefensiveAssistFlash_2',
     },
   },
-  DefensiveAssistFlash_2_anomBuildup: {
+  'DefensiveAssistFlash_2:anomBuildup': {
     sheet: 'Anby',
-    name: 'DefensiveAssistFlash_2_anomBuildup',
+    name: 'DefensiveAssistFlash_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -703,12 +716,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistFlash_2_anomBuildup',
+      name: 'DefensiveAssistFlash_2',
     },
   },
-  AssistFollowUpLightningWhirl_0_dmg: {
+  'AssistFollowUpLightningWhirl_0:standardDmg': {
     sheet: 'Anby',
-    name: 'AssistFollowUpLightningWhirl_0_dmg',
+    name: 'AssistFollowUpLightningWhirl_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -717,12 +730,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'assistFollowUp',
       skillType1: 'assistSkill',
-      name: 'AssistFollowUpLightningWhirl_0_dmg',
+      name: 'AssistFollowUpLightningWhirl_0',
     },
   },
-  AssistFollowUpLightningWhirl_0_daze: {
+  'AssistFollowUpLightningWhirl_0:dazeBuildup': {
     sheet: 'Anby',
-    name: 'AssistFollowUpLightningWhirl_0_daze',
+    name: 'AssistFollowUpLightningWhirl_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -731,12 +744,12 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'assistFollowUp',
       skillType1: 'assistSkill',
-      name: 'AssistFollowUpLightningWhirl_0_daze',
+      name: 'AssistFollowUpLightningWhirl_0',
     },
   },
-  AssistFollowUpLightningWhirl_0_anomBuildup: {
+  'AssistFollowUpLightningWhirl_0:anomBuildup': {
     sheet: 'Anby',
-    name: 'AssistFollowUpLightningWhirl_0_anomBuildup',
+    name: 'AssistFollowUpLightningWhirl_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -745,7 +758,7 @@ export const formulas = {
       attribute: 'electric',
       damageType1: 'assistFollowUp',
       skillType1: 'assistSkill',
-      name: 'AssistFollowUpLightningWhirl_0_anomBuildup',
+      name: 'AssistFollowUpLightningWhirl_0',
     },
   },
 } as const

@@ -38,6 +38,19 @@ export const formulas = {
       name: 'disorderDmgInst_physical',
     },
   },
+  vortexDmgInst_physical: {
+    sheet: 'Nekomata',
+    name: 'vortexDmgInst_physical',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'Nekomata',
+      attribute: 'physical',
+      damageType1: 'vortex',
+      name: 'vortexDmgInst_physical',
+    },
+  },
   abloomDmgInst: {
     sheet: 'Nekomata',
     name: 'abloomDmgInst',
@@ -76,9 +89,9 @@ export const formulas = {
       name: 'dazeInst',
     },
   },
-  BasicAttackKittySlash_0_dmg: {
+  'BasicAttackKittySlash_0:standardDmg': {
     sheet: 'Nekomata',
-    name: 'BasicAttackKittySlash_0_dmg',
+    name: 'BasicAttackKittySlash_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -87,12 +100,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackKittySlash_0_dmg',
+      name: 'BasicAttackKittySlash_0',
     },
   },
-  BasicAttackKittySlash_0_daze: {
+  'BasicAttackKittySlash_0:dazeBuildup': {
     sheet: 'Nekomata',
-    name: 'BasicAttackKittySlash_0_daze',
+    name: 'BasicAttackKittySlash_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -101,12 +114,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackKittySlash_0_daze',
+      name: 'BasicAttackKittySlash_0',
     },
   },
-  BasicAttackKittySlash_0_anomBuildup: {
+  'BasicAttackKittySlash_0:anomBuildup': {
     sheet: 'Nekomata',
-    name: 'BasicAttackKittySlash_0_anomBuildup',
+    name: 'BasicAttackKittySlash_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -115,12 +128,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackKittySlash_0_anomBuildup',
+      name: 'BasicAttackKittySlash_0',
     },
   },
-  BasicAttackKittySlash_1_dmg: {
+  'BasicAttackKittySlash_1:standardDmg': {
     sheet: 'Nekomata',
-    name: 'BasicAttackKittySlash_1_dmg',
+    name: 'BasicAttackKittySlash_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -129,12 +142,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackKittySlash_1_dmg',
+      name: 'BasicAttackKittySlash_1',
     },
   },
-  BasicAttackKittySlash_1_daze: {
+  'BasicAttackKittySlash_1:dazeBuildup': {
     sheet: 'Nekomata',
-    name: 'BasicAttackKittySlash_1_daze',
+    name: 'BasicAttackKittySlash_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -143,12 +156,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackKittySlash_1_daze',
+      name: 'BasicAttackKittySlash_1',
     },
   },
-  BasicAttackKittySlash_1_anomBuildup: {
+  'BasicAttackKittySlash_1:anomBuildup': {
     sheet: 'Nekomata',
-    name: 'BasicAttackKittySlash_1_anomBuildup',
+    name: 'BasicAttackKittySlash_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -157,12 +170,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackKittySlash_1_anomBuildup',
+      name: 'BasicAttackKittySlash_1',
     },
   },
-  BasicAttackKittySlash_2_dmg: {
+  'BasicAttackKittySlash_2:standardDmg': {
     sheet: 'Nekomata',
-    name: 'BasicAttackKittySlash_2_dmg',
+    name: 'BasicAttackKittySlash_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -171,12 +184,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackKittySlash_2_dmg',
+      name: 'BasicAttackKittySlash_2',
     },
   },
-  BasicAttackKittySlash_2_daze: {
+  'BasicAttackKittySlash_2:dazeBuildup': {
     sheet: 'Nekomata',
-    name: 'BasicAttackKittySlash_2_daze',
+    name: 'BasicAttackKittySlash_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -185,12 +198,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackKittySlash_2_daze',
+      name: 'BasicAttackKittySlash_2',
     },
   },
-  BasicAttackKittySlash_2_anomBuildup: {
+  'BasicAttackKittySlash_2:anomBuildup': {
     sheet: 'Nekomata',
-    name: 'BasicAttackKittySlash_2_anomBuildup',
+    name: 'BasicAttackKittySlash_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -199,12 +212,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackKittySlash_2_anomBuildup',
+      name: 'BasicAttackKittySlash_2',
     },
   },
-  BasicAttackKittySlash_3_dmg: {
+  'BasicAttackKittySlash_3:standardDmg': {
     sheet: 'Nekomata',
-    name: 'BasicAttackKittySlash_3_dmg',
+    name: 'BasicAttackKittySlash_3:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -213,12 +226,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackKittySlash_3_dmg',
+      name: 'BasicAttackKittySlash_3',
     },
   },
-  BasicAttackKittySlash_3_daze: {
+  'BasicAttackKittySlash_3:dazeBuildup': {
     sheet: 'Nekomata',
-    name: 'BasicAttackKittySlash_3_daze',
+    name: 'BasicAttackKittySlash_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -227,12 +240,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackKittySlash_3_daze',
+      name: 'BasicAttackKittySlash_3',
     },
   },
-  BasicAttackKittySlash_3_anomBuildup: {
+  'BasicAttackKittySlash_3:anomBuildup': {
     sheet: 'Nekomata',
-    name: 'BasicAttackKittySlash_3_anomBuildup',
+    name: 'BasicAttackKittySlash_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -241,12 +254,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackKittySlash_3_anomBuildup',
+      name: 'BasicAttackKittySlash_3',
     },
   },
-  BasicAttackKittySlash_4_dmg: {
+  'BasicAttackKittySlash_4:standardDmg': {
     sheet: 'Nekomata',
-    name: 'BasicAttackKittySlash_4_dmg',
+    name: 'BasicAttackKittySlash_4:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -255,12 +268,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackKittySlash_4_dmg',
+      name: 'BasicAttackKittySlash_4',
     },
   },
-  BasicAttackKittySlash_4_daze: {
+  'BasicAttackKittySlash_4:dazeBuildup': {
     sheet: 'Nekomata',
-    name: 'BasicAttackKittySlash_4_daze',
+    name: 'BasicAttackKittySlash_4:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -269,12 +282,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackKittySlash_4_daze',
+      name: 'BasicAttackKittySlash_4',
     },
   },
-  BasicAttackKittySlash_4_anomBuildup: {
+  'BasicAttackKittySlash_4:anomBuildup': {
     sheet: 'Nekomata',
-    name: 'BasicAttackKittySlash_4_anomBuildup',
+    name: 'BasicAttackKittySlash_4:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -283,12 +296,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackKittySlash_4_anomBuildup',
+      name: 'BasicAttackKittySlash_4',
     },
   },
-  BasicAttackCrimsonBlade_0_dmg: {
+  'BasicAttackCrimsonBlade_0:standardDmg': {
     sheet: 'Nekomata',
-    name: 'BasicAttackCrimsonBlade_0_dmg',
+    name: 'BasicAttackCrimsonBlade_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -297,12 +310,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackCrimsonBlade_0_dmg',
+      name: 'BasicAttackCrimsonBlade_0',
     },
   },
-  BasicAttackCrimsonBlade_0_daze: {
+  'BasicAttackCrimsonBlade_0:dazeBuildup': {
     sheet: 'Nekomata',
-    name: 'BasicAttackCrimsonBlade_0_daze',
+    name: 'BasicAttackCrimsonBlade_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -311,12 +324,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackCrimsonBlade_0_daze',
+      name: 'BasicAttackCrimsonBlade_0',
     },
   },
-  BasicAttackCrimsonBlade_0_anomBuildup: {
+  'BasicAttackCrimsonBlade_0:anomBuildup': {
     sheet: 'Nekomata',
-    name: 'BasicAttackCrimsonBlade_0_anomBuildup',
+    name: 'BasicAttackCrimsonBlade_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -325,12 +338,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackCrimsonBlade_0_anomBuildup',
+      name: 'BasicAttackCrimsonBlade_0',
     },
   },
-  DashAttackOverHere_0_dmg: {
+  'DashAttackOverHere_0:standardDmg': {
     sheet: 'Nekomata',
-    name: 'DashAttackOverHere_0_dmg',
+    name: 'DashAttackOverHere_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -339,12 +352,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dash',
       skillType1: 'dodgeSkill',
-      name: 'DashAttackOverHere_0_dmg',
+      name: 'DashAttackOverHere_0',
     },
   },
-  DashAttackOverHere_0_daze: {
+  'DashAttackOverHere_0:dazeBuildup': {
     sheet: 'Nekomata',
-    name: 'DashAttackOverHere_0_daze',
+    name: 'DashAttackOverHere_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -353,12 +366,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dash',
       skillType1: 'dodgeSkill',
-      name: 'DashAttackOverHere_0_daze',
+      name: 'DashAttackOverHere_0',
     },
   },
-  DashAttackOverHere_0_anomBuildup: {
+  'DashAttackOverHere_0:anomBuildup': {
     sheet: 'Nekomata',
-    name: 'DashAttackOverHere_0_anomBuildup',
+    name: 'DashAttackOverHere_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -367,12 +380,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dash',
       skillType1: 'dodgeSkill',
-      name: 'DashAttackOverHere_0_anomBuildup',
+      name: 'DashAttackOverHere_0',
     },
   },
-  DodgeCounterPhantomClaws_0_dmg: {
+  'DodgeCounterPhantomClaws_0:standardDmg': {
     sheet: 'Nekomata',
-    name: 'DodgeCounterPhantomClaws_0_dmg',
+    name: 'DodgeCounterPhantomClaws_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -381,12 +394,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dodgeCounter',
       skillType1: 'dodgeSkill',
-      name: 'DodgeCounterPhantomClaws_0_dmg',
+      name: 'DodgeCounterPhantomClaws_0',
     },
   },
-  DodgeCounterPhantomClaws_0_daze: {
+  'DodgeCounterPhantomClaws_0:dazeBuildup': {
     sheet: 'Nekomata',
-    name: 'DodgeCounterPhantomClaws_0_daze',
+    name: 'DodgeCounterPhantomClaws_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -395,12 +408,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dodgeCounter',
       skillType1: 'dodgeSkill',
-      name: 'DodgeCounterPhantomClaws_0_daze',
+      name: 'DodgeCounterPhantomClaws_0',
     },
   },
-  DodgeCounterPhantomClaws_0_anomBuildup: {
+  'DodgeCounterPhantomClaws_0:anomBuildup': {
     sheet: 'Nekomata',
-    name: 'DodgeCounterPhantomClaws_0_anomBuildup',
+    name: 'DodgeCounterPhantomClaws_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -409,12 +422,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'dodgeCounter',
       skillType1: 'dodgeSkill',
-      name: 'DodgeCounterPhantomClaws_0_anomBuildup',
+      name: 'DodgeCounterPhantomClaws_0',
     },
   },
-  SpecialAttackSurpriseAttack_0_dmg: {
+  'SpecialAttackSurpriseAttack_0:standardDmg': {
     sheet: 'Nekomata',
-    name: 'SpecialAttackSurpriseAttack_0_dmg',
+    name: 'SpecialAttackSurpriseAttack_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -423,12 +436,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType1: 'specialSkill',
-      name: 'SpecialAttackSurpriseAttack_0_dmg',
+      name: 'SpecialAttackSurpriseAttack_0',
     },
   },
-  SpecialAttackSurpriseAttack_0_daze: {
+  'SpecialAttackSurpriseAttack_0:dazeBuildup': {
     sheet: 'Nekomata',
-    name: 'SpecialAttackSurpriseAttack_0_daze',
+    name: 'SpecialAttackSurpriseAttack_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -437,12 +450,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType1: 'specialSkill',
-      name: 'SpecialAttackSurpriseAttack_0_daze',
+      name: 'SpecialAttackSurpriseAttack_0',
     },
   },
-  SpecialAttackSurpriseAttack_0_anomBuildup: {
+  'SpecialAttackSurpriseAttack_0:anomBuildup': {
     sheet: 'Nekomata',
-    name: 'SpecialAttackSurpriseAttack_0_anomBuildup',
+    name: 'SpecialAttackSurpriseAttack_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -451,12 +464,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'special',
       skillType1: 'specialSkill',
-      name: 'SpecialAttackSurpriseAttack_0_anomBuildup',
+      name: 'SpecialAttackSurpriseAttack_0',
     },
   },
-  EXSpecialAttackSuperSurpriseAttack_0_dmg: {
+  'EXSpecialAttackSuperSurpriseAttack_0:standardDmg': {
     sheet: 'Nekomata',
-    name: 'EXSpecialAttackSuperSurpriseAttack_0_dmg',
+    name: 'EXSpecialAttackSuperSurpriseAttack_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -465,12 +478,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType1: 'specialSkill',
-      name: 'EXSpecialAttackSuperSurpriseAttack_0_dmg',
+      name: 'EXSpecialAttackSuperSurpriseAttack_0',
     },
   },
-  EXSpecialAttackSuperSurpriseAttack_0_daze: {
+  'EXSpecialAttackSuperSurpriseAttack_0:dazeBuildup': {
     sheet: 'Nekomata',
-    name: 'EXSpecialAttackSuperSurpriseAttack_0_daze',
+    name: 'EXSpecialAttackSuperSurpriseAttack_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -479,12 +492,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType1: 'specialSkill',
-      name: 'EXSpecialAttackSuperSurpriseAttack_0_daze',
+      name: 'EXSpecialAttackSuperSurpriseAttack_0',
     },
   },
-  EXSpecialAttackSuperSurpriseAttack_0_anomBuildup: {
+  'EXSpecialAttackSuperSurpriseAttack_0:anomBuildup': {
     sheet: 'Nekomata',
-    name: 'EXSpecialAttackSuperSurpriseAttack_0_anomBuildup',
+    name: 'EXSpecialAttackSuperSurpriseAttack_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -493,12 +506,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'exSpecial',
       skillType1: 'specialSkill',
-      name: 'EXSpecialAttackSuperSurpriseAttack_0_anomBuildup',
+      name: 'EXSpecialAttackSuperSurpriseAttack_0',
     },
   },
-  ChainAttackClawSwipe_0_dmg: {
+  'ChainAttackClawSwipe_0:standardDmg': {
     sheet: 'Nekomata',
-    name: 'ChainAttackClawSwipe_0_dmg',
+    name: 'ChainAttackClawSwipe_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -507,12 +520,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'chain',
       skillType1: 'chainSkill',
-      name: 'ChainAttackClawSwipe_0_dmg',
+      name: 'ChainAttackClawSwipe_0',
     },
   },
-  ChainAttackClawSwipe_0_daze: {
+  'ChainAttackClawSwipe_0:dazeBuildup': {
     sheet: 'Nekomata',
-    name: 'ChainAttackClawSwipe_0_daze',
+    name: 'ChainAttackClawSwipe_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -521,12 +534,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'chain',
       skillType1: 'chainSkill',
-      name: 'ChainAttackClawSwipe_0_daze',
+      name: 'ChainAttackClawSwipe_0',
     },
   },
-  ChainAttackClawSwipe_0_anomBuildup: {
+  'ChainAttackClawSwipe_0:anomBuildup': {
     sheet: 'Nekomata',
-    name: 'ChainAttackClawSwipe_0_anomBuildup',
+    name: 'ChainAttackClawSwipe_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -535,12 +548,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'chain',
       skillType1: 'chainSkill',
-      name: 'ChainAttackClawSwipe_0_anomBuildup',
+      name: 'ChainAttackClawSwipe_0',
     },
   },
-  UltimateClawSmash_0_dmg: {
+  'UltimateClawSmash_0:standardDmg': {
     sheet: 'Nekomata',
-    name: 'UltimateClawSmash_0_dmg',
+    name: 'UltimateClawSmash_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -549,12 +562,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'ult',
       skillType1: 'chainSkill',
-      name: 'UltimateClawSmash_0_dmg',
+      name: 'UltimateClawSmash_0',
     },
   },
-  UltimateClawSmash_0_daze: {
+  'UltimateClawSmash_0:dazeBuildup': {
     sheet: 'Nekomata',
-    name: 'UltimateClawSmash_0_daze',
+    name: 'UltimateClawSmash_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -563,12 +576,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'ult',
       skillType1: 'chainSkill',
-      name: 'UltimateClawSmash_0_daze',
+      name: 'UltimateClawSmash_0',
     },
   },
-  UltimateClawSmash_0_anomBuildup: {
+  'UltimateClawSmash_0:anomBuildup': {
     sheet: 'Nekomata',
-    name: 'UltimateClawSmash_0_anomBuildup',
+    name: 'UltimateClawSmash_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -577,12 +590,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'ult',
       skillType1: 'chainSkill',
-      name: 'UltimateClawSmash_0_anomBuildup',
+      name: 'UltimateClawSmash_0',
     },
   },
-  QuickAssistCatsPaw_0_dmg: {
+  'QuickAssistCatsPaw_0:standardDmg': {
     sheet: 'Nekomata',
-    name: 'QuickAssistCatsPaw_0_dmg',
+    name: 'QuickAssistCatsPaw_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -591,12 +604,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'quickAssist',
       skillType1: 'assistSkill',
-      name: 'QuickAssistCatsPaw_0_dmg',
+      name: 'QuickAssistCatsPaw_0',
     },
   },
-  QuickAssistCatsPaw_0_daze: {
+  'QuickAssistCatsPaw_0:dazeBuildup': {
     sheet: 'Nekomata',
-    name: 'QuickAssistCatsPaw_0_daze',
+    name: 'QuickAssistCatsPaw_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -605,12 +618,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'quickAssist',
       skillType1: 'assistSkill',
-      name: 'QuickAssistCatsPaw_0_daze',
+      name: 'QuickAssistCatsPaw_0',
     },
   },
-  QuickAssistCatsPaw_0_anomBuildup: {
+  'QuickAssistCatsPaw_0:anomBuildup': {
     sheet: 'Nekomata',
-    name: 'QuickAssistCatsPaw_0_anomBuildup',
+    name: 'QuickAssistCatsPaw_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -619,12 +632,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'quickAssist',
       skillType1: 'assistSkill',
-      name: 'QuickAssistCatsPaw_0_anomBuildup',
+      name: 'QuickAssistCatsPaw_0',
     },
   },
-  DefensiveAssistDesperateDefense_0_dmg: {
+  'DefensiveAssistDesperateDefense_0:standardDmg': {
     sheet: 'Nekomata',
-    name: 'DefensiveAssistDesperateDefense_0_dmg',
+    name: 'DefensiveAssistDesperateDefense_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -633,12 +646,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistDesperateDefense_0_dmg',
+      name: 'DefensiveAssistDesperateDefense_0',
     },
   },
-  DefensiveAssistDesperateDefense_0_daze: {
+  'DefensiveAssistDesperateDefense_0:dazeBuildup': {
     sheet: 'Nekomata',
-    name: 'DefensiveAssistDesperateDefense_0_daze',
+    name: 'DefensiveAssistDesperateDefense_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -647,12 +660,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistDesperateDefense_0_daze',
+      name: 'DefensiveAssistDesperateDefense_0',
     },
   },
-  DefensiveAssistDesperateDefense_0_anomBuildup: {
+  'DefensiveAssistDesperateDefense_0:anomBuildup': {
     sheet: 'Nekomata',
-    name: 'DefensiveAssistDesperateDefense_0_anomBuildup',
+    name: 'DefensiveAssistDesperateDefense_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -661,12 +674,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistDesperateDefense_0_anomBuildup',
+      name: 'DefensiveAssistDesperateDefense_0',
     },
   },
-  DefensiveAssistDesperateDefense_1_dmg: {
+  'DefensiveAssistDesperateDefense_1:standardDmg': {
     sheet: 'Nekomata',
-    name: 'DefensiveAssistDesperateDefense_1_dmg',
+    name: 'DefensiveAssistDesperateDefense_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -675,12 +688,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistDesperateDefense_1_dmg',
+      name: 'DefensiveAssistDesperateDefense_1',
     },
   },
-  DefensiveAssistDesperateDefense_1_daze: {
+  'DefensiveAssistDesperateDefense_1:dazeBuildup': {
     sheet: 'Nekomata',
-    name: 'DefensiveAssistDesperateDefense_1_daze',
+    name: 'DefensiveAssistDesperateDefense_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -689,12 +702,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistDesperateDefense_1_daze',
+      name: 'DefensiveAssistDesperateDefense_1',
     },
   },
-  DefensiveAssistDesperateDefense_1_anomBuildup: {
+  'DefensiveAssistDesperateDefense_1:anomBuildup': {
     sheet: 'Nekomata',
-    name: 'DefensiveAssistDesperateDefense_1_anomBuildup',
+    name: 'DefensiveAssistDesperateDefense_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -703,12 +716,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistDesperateDefense_1_anomBuildup',
+      name: 'DefensiveAssistDesperateDefense_1',
     },
   },
-  DefensiveAssistDesperateDefense_2_dmg: {
+  'DefensiveAssistDesperateDefense_2:standardDmg': {
     sheet: 'Nekomata',
-    name: 'DefensiveAssistDesperateDefense_2_dmg',
+    name: 'DefensiveAssistDesperateDefense_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -717,12 +730,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistDesperateDefense_2_dmg',
+      name: 'DefensiveAssistDesperateDefense_2',
     },
   },
-  DefensiveAssistDesperateDefense_2_daze: {
+  'DefensiveAssistDesperateDefense_2:dazeBuildup': {
     sheet: 'Nekomata',
-    name: 'DefensiveAssistDesperateDefense_2_daze',
+    name: 'DefensiveAssistDesperateDefense_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -731,12 +744,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistDesperateDefense_2_daze',
+      name: 'DefensiveAssistDesperateDefense_2',
     },
   },
-  DefensiveAssistDesperateDefense_2_anomBuildup: {
+  'DefensiveAssistDesperateDefense_2:anomBuildup': {
     sheet: 'Nekomata',
-    name: 'DefensiveAssistDesperateDefense_2_anomBuildup',
+    name: 'DefensiveAssistDesperateDefense_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -745,12 +758,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistDesperateDefense_2_anomBuildup',
+      name: 'DefensiveAssistDesperateDefense_2',
     },
   },
-  AssistFollowUpShadowStrike_0_dmg: {
+  'AssistFollowUpShadowStrike_0:standardDmg': {
     sheet: 'Nekomata',
-    name: 'AssistFollowUpShadowStrike_0_dmg',
+    name: 'AssistFollowUpShadowStrike_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -759,12 +772,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'assistFollowUp',
       skillType1: 'assistSkill',
-      name: 'AssistFollowUpShadowStrike_0_dmg',
+      name: 'AssistFollowUpShadowStrike_0',
     },
   },
-  AssistFollowUpShadowStrike_0_daze: {
+  'AssistFollowUpShadowStrike_0:dazeBuildup': {
     sheet: 'Nekomata',
-    name: 'AssistFollowUpShadowStrike_0_daze',
+    name: 'AssistFollowUpShadowStrike_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -773,12 +786,12 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'assistFollowUp',
       skillType1: 'assistSkill',
-      name: 'AssistFollowUpShadowStrike_0_daze',
+      name: 'AssistFollowUpShadowStrike_0',
     },
   },
-  AssistFollowUpShadowStrike_0_anomBuildup: {
+  'AssistFollowUpShadowStrike_0:anomBuildup': {
     sheet: 'Nekomata',
-    name: 'AssistFollowUpShadowStrike_0_anomBuildup',
+    name: 'AssistFollowUpShadowStrike_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -787,7 +800,7 @@ export const formulas = {
       attribute: 'physical',
       damageType1: 'assistFollowUp',
       skillType1: 'assistSkill',
-      name: 'AssistFollowUpShadowStrike_0_anomBuildup',
+      name: 'AssistFollowUpShadowStrike_0',
     },
   },
 } as const

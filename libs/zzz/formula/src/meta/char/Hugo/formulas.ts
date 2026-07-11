@@ -38,6 +38,19 @@ export const formulas = {
       name: 'disorderDmgInst_ice',
     },
   },
+  vortexDmgInst_ice: {
+    sheet: 'Hugo',
+    name: 'vortexDmgInst_ice',
+    tag: {
+      et: 'own',
+      qt: 'formula',
+      q: 'anomalyDmg',
+      sheet: 'Hugo',
+      attribute: 'ice',
+      damageType1: 'vortex',
+      name: 'vortexDmgInst_ice',
+    },
+  },
   abloomDmgInst: {
     sheet: 'Hugo',
     name: 'abloomDmgInst',
@@ -76,9 +89,9 @@ export const formulas = {
       name: 'dazeInst',
     },
   },
-  BasicAttackDarkAbyssQuartet_0_dmg: {
+  'BasicAttackDarkAbyssQuartet_0:standardDmg': {
     sheet: 'Hugo',
-    name: 'BasicAttackDarkAbyssQuartet_0_dmg',
+    name: 'BasicAttackDarkAbyssQuartet_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -87,12 +100,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType1: 'basicSkill',
-      name: 'BasicAttackDarkAbyssQuartet_0_dmg',
+      name: 'BasicAttackDarkAbyssQuartet_0',
     },
   },
-  BasicAttackDarkAbyssQuartet_0_daze: {
+  'BasicAttackDarkAbyssQuartet_0:dazeBuildup': {
     sheet: 'Hugo',
-    name: 'BasicAttackDarkAbyssQuartet_0_daze',
+    name: 'BasicAttackDarkAbyssQuartet_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -101,12 +114,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType1: 'basicSkill',
-      name: 'BasicAttackDarkAbyssQuartet_0_daze',
+      name: 'BasicAttackDarkAbyssQuartet_0',
     },
   },
-  BasicAttackDarkAbyssQuartet_0_anomBuildup: {
+  'BasicAttackDarkAbyssQuartet_0:anomBuildup': {
     sheet: 'Hugo',
-    name: 'BasicAttackDarkAbyssQuartet_0_anomBuildup',
+    name: 'BasicAttackDarkAbyssQuartet_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -115,12 +128,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType1: 'basicSkill',
-      name: 'BasicAttackDarkAbyssQuartet_0_anomBuildup',
+      name: 'BasicAttackDarkAbyssQuartet_0',
     },
   },
-  BasicAttackDarkAbyssQuartet_1_dmg: {
+  'BasicAttackDarkAbyssQuartet_1:standardDmg': {
     sheet: 'Hugo',
-    name: 'BasicAttackDarkAbyssQuartet_1_dmg',
+    name: 'BasicAttackDarkAbyssQuartet_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -129,12 +142,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType1: 'basicSkill',
-      name: 'BasicAttackDarkAbyssQuartet_1_dmg',
+      name: 'BasicAttackDarkAbyssQuartet_1',
     },
   },
-  BasicAttackDarkAbyssQuartet_1_daze: {
+  'BasicAttackDarkAbyssQuartet_1:dazeBuildup': {
     sheet: 'Hugo',
-    name: 'BasicAttackDarkAbyssQuartet_1_daze',
+    name: 'BasicAttackDarkAbyssQuartet_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -143,12 +156,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType1: 'basicSkill',
-      name: 'BasicAttackDarkAbyssQuartet_1_daze',
+      name: 'BasicAttackDarkAbyssQuartet_1',
     },
   },
-  BasicAttackDarkAbyssQuartet_1_anomBuildup: {
+  'BasicAttackDarkAbyssQuartet_1:anomBuildup': {
     sheet: 'Hugo',
-    name: 'BasicAttackDarkAbyssQuartet_1_anomBuildup',
+    name: 'BasicAttackDarkAbyssQuartet_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -157,12 +170,12 @@ export const formulas = {
       damageType1: 'basic',
       attribute: 'physical',
       skillType1: 'basicSkill',
-      name: 'BasicAttackDarkAbyssQuartet_1_anomBuildup',
+      name: 'BasicAttackDarkAbyssQuartet_1',
     },
   },
-  BasicAttackDarkAbyssQuartet_2_dmg: {
+  'BasicAttackDarkAbyssQuartet_2:standardDmg': {
     sheet: 'Hugo',
-    name: 'BasicAttackDarkAbyssQuartet_2_dmg',
+    name: 'BasicAttackDarkAbyssQuartet_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -171,12 +184,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackDarkAbyssQuartet_2_dmg',
+      name: 'BasicAttackDarkAbyssQuartet_2',
     },
   },
-  BasicAttackDarkAbyssQuartet_2_daze: {
+  'BasicAttackDarkAbyssQuartet_2:dazeBuildup': {
     sheet: 'Hugo',
-    name: 'BasicAttackDarkAbyssQuartet_2_daze',
+    name: 'BasicAttackDarkAbyssQuartet_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -185,12 +198,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackDarkAbyssQuartet_2_daze',
+      name: 'BasicAttackDarkAbyssQuartet_2',
     },
   },
-  BasicAttackDarkAbyssQuartet_2_anomBuildup: {
+  'BasicAttackDarkAbyssQuartet_2:anomBuildup': {
     sheet: 'Hugo',
-    name: 'BasicAttackDarkAbyssQuartet_2_anomBuildup',
+    name: 'BasicAttackDarkAbyssQuartet_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -199,12 +212,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackDarkAbyssQuartet_2_anomBuildup',
+      name: 'BasicAttackDarkAbyssQuartet_2',
     },
   },
-  BasicAttackDarkAbyssQuartet_3_dmg: {
+  'BasicAttackDarkAbyssQuartet_3:standardDmg': {
     sheet: 'Hugo',
-    name: 'BasicAttackDarkAbyssQuartet_3_dmg',
+    name: 'BasicAttackDarkAbyssQuartet_3:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -213,12 +226,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackDarkAbyssQuartet_3_dmg',
+      name: 'BasicAttackDarkAbyssQuartet_3',
     },
   },
-  BasicAttackDarkAbyssQuartet_3_daze: {
+  'BasicAttackDarkAbyssQuartet_3:dazeBuildup': {
     sheet: 'Hugo',
-    name: 'BasicAttackDarkAbyssQuartet_3_daze',
+    name: 'BasicAttackDarkAbyssQuartet_3:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -227,12 +240,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackDarkAbyssQuartet_3_daze',
+      name: 'BasicAttackDarkAbyssQuartet_3',
     },
   },
-  BasicAttackDarkAbyssQuartet_3_anomBuildup: {
+  'BasicAttackDarkAbyssQuartet_3:anomBuildup': {
     sheet: 'Hugo',
-    name: 'BasicAttackDarkAbyssQuartet_3_anomBuildup',
+    name: 'BasicAttackDarkAbyssQuartet_3:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -241,12 +254,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackDarkAbyssQuartet_3_anomBuildup',
+      name: 'BasicAttackDarkAbyssQuartet_3',
     },
   },
-  BasicAttackDarkAbyssQuartet_4_dmg: {
+  'BasicAttackDarkAbyssQuartet_4:standardDmg': {
     sheet: 'Hugo',
-    name: 'BasicAttackDarkAbyssQuartet_4_dmg',
+    name: 'BasicAttackDarkAbyssQuartet_4:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -255,12 +268,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackDarkAbyssQuartet_4_dmg',
+      name: 'BasicAttackDarkAbyssQuartet_4',
     },
   },
-  BasicAttackDarkAbyssQuartet_4_daze: {
+  'BasicAttackDarkAbyssQuartet_4:dazeBuildup': {
     sheet: 'Hugo',
-    name: 'BasicAttackDarkAbyssQuartet_4_daze',
+    name: 'BasicAttackDarkAbyssQuartet_4:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -269,12 +282,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackDarkAbyssQuartet_4_daze',
+      name: 'BasicAttackDarkAbyssQuartet_4',
     },
   },
-  BasicAttackDarkAbyssQuartet_4_anomBuildup: {
+  'BasicAttackDarkAbyssQuartet_4:anomBuildup': {
     sheet: 'Hugo',
-    name: 'BasicAttackDarkAbyssQuartet_4_anomBuildup',
+    name: 'BasicAttackDarkAbyssQuartet_4:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -283,12 +296,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackDarkAbyssQuartet_4_anomBuildup',
+      name: 'BasicAttackDarkAbyssQuartet_4',
     },
   },
-  BasicAttackDarkAbyssQuartet_5_dmg: {
+  'BasicAttackDarkAbyssQuartet_5:standardDmg': {
     sheet: 'Hugo',
-    name: 'BasicAttackDarkAbyssQuartet_5_dmg',
+    name: 'BasicAttackDarkAbyssQuartet_5:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -297,12 +310,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackDarkAbyssQuartet_5_dmg',
+      name: 'BasicAttackDarkAbyssQuartet_5',
     },
   },
-  BasicAttackDarkAbyssQuartet_5_daze: {
+  'BasicAttackDarkAbyssQuartet_5:dazeBuildup': {
     sheet: 'Hugo',
-    name: 'BasicAttackDarkAbyssQuartet_5_daze',
+    name: 'BasicAttackDarkAbyssQuartet_5:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -311,12 +324,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackDarkAbyssQuartet_5_daze',
+      name: 'BasicAttackDarkAbyssQuartet_5',
     },
   },
-  BasicAttackDarkAbyssQuartet_5_anomBuildup: {
+  'BasicAttackDarkAbyssQuartet_5:anomBuildup': {
     sheet: 'Hugo',
-    name: 'BasicAttackDarkAbyssQuartet_5_anomBuildup',
+    name: 'BasicAttackDarkAbyssQuartet_5:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -325,12 +338,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackDarkAbyssQuartet_5_anomBuildup',
+      name: 'BasicAttackDarkAbyssQuartet_5',
     },
   },
-  BasicAttackDarkAbyssConcerto_0_dmg: {
+  'BasicAttackDarkAbyssConcerto_0:standardDmg': {
     sheet: 'Hugo',
-    name: 'BasicAttackDarkAbyssConcerto_0_dmg',
+    name: 'BasicAttackDarkAbyssConcerto_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -339,12 +352,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackDarkAbyssConcerto_0_dmg',
+      name: 'BasicAttackDarkAbyssConcerto_0',
     },
   },
-  BasicAttackDarkAbyssConcerto_0_daze: {
+  'BasicAttackDarkAbyssConcerto_0:dazeBuildup': {
     sheet: 'Hugo',
-    name: 'BasicAttackDarkAbyssConcerto_0_daze',
+    name: 'BasicAttackDarkAbyssConcerto_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -353,12 +366,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackDarkAbyssConcerto_0_daze',
+      name: 'BasicAttackDarkAbyssConcerto_0',
     },
   },
-  BasicAttackDarkAbyssConcerto_0_anomBuildup: {
+  'BasicAttackDarkAbyssConcerto_0:anomBuildup': {
     sheet: 'Hugo',
-    name: 'BasicAttackDarkAbyssConcerto_0_anomBuildup',
+    name: 'BasicAttackDarkAbyssConcerto_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -367,12 +380,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackDarkAbyssConcerto_0_anomBuildup',
+      name: 'BasicAttackDarkAbyssConcerto_0',
     },
   },
-  BasicAttackDarkAbyssConcerto_1_dmg: {
+  'BasicAttackDarkAbyssConcerto_1:standardDmg': {
     sheet: 'Hugo',
-    name: 'BasicAttackDarkAbyssConcerto_1_dmg',
+    name: 'BasicAttackDarkAbyssConcerto_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -381,12 +394,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackDarkAbyssConcerto_1_dmg',
+      name: 'BasicAttackDarkAbyssConcerto_1',
     },
   },
-  BasicAttackDarkAbyssConcerto_1_daze: {
+  'BasicAttackDarkAbyssConcerto_1:dazeBuildup': {
     sheet: 'Hugo',
-    name: 'BasicAttackDarkAbyssConcerto_1_daze',
+    name: 'BasicAttackDarkAbyssConcerto_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -395,12 +408,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackDarkAbyssConcerto_1_daze',
+      name: 'BasicAttackDarkAbyssConcerto_1',
     },
   },
-  BasicAttackDarkAbyssConcerto_1_anomBuildup: {
+  'BasicAttackDarkAbyssConcerto_1:anomBuildup': {
     sheet: 'Hugo',
-    name: 'BasicAttackDarkAbyssConcerto_1_anomBuildup',
+    name: 'BasicAttackDarkAbyssConcerto_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -409,12 +422,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackDarkAbyssConcerto_1_anomBuildup',
+      name: 'BasicAttackDarkAbyssConcerto_1',
     },
   },
-  BasicAttackDarkAbyssConcerto_2_dmg: {
+  'BasicAttackDarkAbyssConcerto_2:standardDmg': {
     sheet: 'Hugo',
-    name: 'BasicAttackDarkAbyssConcerto_2_dmg',
+    name: 'BasicAttackDarkAbyssConcerto_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -423,12 +436,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackDarkAbyssConcerto_2_dmg',
+      name: 'BasicAttackDarkAbyssConcerto_2',
     },
   },
-  BasicAttackDarkAbyssConcerto_2_daze: {
+  'BasicAttackDarkAbyssConcerto_2:dazeBuildup': {
     sheet: 'Hugo',
-    name: 'BasicAttackDarkAbyssConcerto_2_daze',
+    name: 'BasicAttackDarkAbyssConcerto_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -437,12 +450,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackDarkAbyssConcerto_2_daze',
+      name: 'BasicAttackDarkAbyssConcerto_2',
     },
   },
-  BasicAttackDarkAbyssConcerto_2_anomBuildup: {
+  'BasicAttackDarkAbyssConcerto_2:anomBuildup': {
     sheet: 'Hugo',
-    name: 'BasicAttackDarkAbyssConcerto_2_anomBuildup',
+    name: 'BasicAttackDarkAbyssConcerto_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -451,12 +464,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'basic',
       skillType1: 'basicSkill',
-      name: 'BasicAttackDarkAbyssConcerto_2_anomBuildup',
+      name: 'BasicAttackDarkAbyssConcerto_2',
     },
   },
-  DashAttackPhantasmShatter_0_dmg: {
+  'DashAttackPhantasmShatter_0:standardDmg': {
     sheet: 'Hugo',
-    name: 'DashAttackPhantasmShatter_0_dmg',
+    name: 'DashAttackPhantasmShatter_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -465,12 +478,12 @@ export const formulas = {
       damageType1: 'dash',
       attribute: 'physical',
       skillType1: 'dodgeSkill',
-      name: 'DashAttackPhantasmShatter_0_dmg',
+      name: 'DashAttackPhantasmShatter_0',
     },
   },
-  DashAttackPhantasmShatter_0_daze: {
+  'DashAttackPhantasmShatter_0:dazeBuildup': {
     sheet: 'Hugo',
-    name: 'DashAttackPhantasmShatter_0_daze',
+    name: 'DashAttackPhantasmShatter_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -479,12 +492,12 @@ export const formulas = {
       damageType1: 'dash',
       attribute: 'physical',
       skillType1: 'dodgeSkill',
-      name: 'DashAttackPhantasmShatter_0_daze',
+      name: 'DashAttackPhantasmShatter_0',
     },
   },
-  DashAttackPhantasmShatter_0_anomBuildup: {
+  'DashAttackPhantasmShatter_0:anomBuildup': {
     sheet: 'Hugo',
-    name: 'DashAttackPhantasmShatter_0_anomBuildup',
+    name: 'DashAttackPhantasmShatter_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -493,12 +506,12 @@ export const formulas = {
       damageType1: 'dash',
       attribute: 'physical',
       skillType1: 'dodgeSkill',
-      name: 'DashAttackPhantasmShatter_0_anomBuildup',
+      name: 'DashAttackPhantasmShatter_0',
     },
   },
-  DodgeCounterPhantasmSlash_0_dmg: {
+  'DodgeCounterPhantasmSlash_0:standardDmg': {
     sheet: 'Hugo',
-    name: 'DodgeCounterPhantasmSlash_0_dmg',
+    name: 'DodgeCounterPhantasmSlash_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -507,12 +520,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'dodgeCounter',
       skillType1: 'dodgeSkill',
-      name: 'DodgeCounterPhantasmSlash_0_dmg',
+      name: 'DodgeCounterPhantasmSlash_0',
     },
   },
-  DodgeCounterPhantasmSlash_0_daze: {
+  'DodgeCounterPhantasmSlash_0:dazeBuildup': {
     sheet: 'Hugo',
-    name: 'DodgeCounterPhantasmSlash_0_daze',
+    name: 'DodgeCounterPhantasmSlash_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -521,12 +534,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'dodgeCounter',
       skillType1: 'dodgeSkill',
-      name: 'DodgeCounterPhantasmSlash_0_daze',
+      name: 'DodgeCounterPhantasmSlash_0',
     },
   },
-  DodgeCounterPhantasmSlash_0_anomBuildup: {
+  'DodgeCounterPhantasmSlash_0:anomBuildup': {
     sheet: 'Hugo',
-    name: 'DodgeCounterPhantasmSlash_0_anomBuildup',
+    name: 'DodgeCounterPhantasmSlash_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -535,12 +548,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'dodgeCounter',
       skillType1: 'dodgeSkill',
-      name: 'DodgeCounterPhantasmSlash_0_anomBuildup',
+      name: 'DodgeCounterPhantasmSlash_0',
     },
   },
-  DodgeCounterPhantasmSlash_1_dmg: {
+  'DodgeCounterPhantasmSlash_1:standardDmg': {
     sheet: 'Hugo',
-    name: 'DodgeCounterPhantasmSlash_1_dmg',
+    name: 'DodgeCounterPhantasmSlash_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -549,12 +562,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'dodgeCounter',
       skillType1: 'dodgeSkill',
-      name: 'DodgeCounterPhantasmSlash_1_dmg',
+      name: 'DodgeCounterPhantasmSlash_1',
     },
   },
-  DodgeCounterPhantasmSlash_1_daze: {
+  'DodgeCounterPhantasmSlash_1:dazeBuildup': {
     sheet: 'Hugo',
-    name: 'DodgeCounterPhantasmSlash_1_daze',
+    name: 'DodgeCounterPhantasmSlash_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -563,12 +576,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'dodgeCounter',
       skillType1: 'dodgeSkill',
-      name: 'DodgeCounterPhantasmSlash_1_daze',
+      name: 'DodgeCounterPhantasmSlash_1',
     },
   },
-  DodgeCounterPhantasmSlash_1_anomBuildup: {
+  'DodgeCounterPhantasmSlash_1:anomBuildup': {
     sheet: 'Hugo',
-    name: 'DodgeCounterPhantasmSlash_1_anomBuildup',
+    name: 'DodgeCounterPhantasmSlash_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -577,12 +590,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'dodgeCounter',
       skillType1: 'dodgeSkill',
-      name: 'DodgeCounterPhantasmSlash_1_anomBuildup',
+      name: 'DodgeCounterPhantasmSlash_1',
     },
   },
-  DodgeCounterPhantasmSlash_2_dmg: {
+  'DodgeCounterPhantasmSlash_2:standardDmg': {
     sheet: 'Hugo',
-    name: 'DodgeCounterPhantasmSlash_2_dmg',
+    name: 'DodgeCounterPhantasmSlash_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -591,12 +604,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'dodgeCounter',
       skillType1: 'dodgeSkill',
-      name: 'DodgeCounterPhantasmSlash_2_dmg',
+      name: 'DodgeCounterPhantasmSlash_2',
     },
   },
-  DodgeCounterPhantasmSlash_2_daze: {
+  'DodgeCounterPhantasmSlash_2:dazeBuildup': {
     sheet: 'Hugo',
-    name: 'DodgeCounterPhantasmSlash_2_daze',
+    name: 'DodgeCounterPhantasmSlash_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -605,12 +618,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'dodgeCounter',
       skillType1: 'dodgeSkill',
-      name: 'DodgeCounterPhantasmSlash_2_daze',
+      name: 'DodgeCounterPhantasmSlash_2',
     },
   },
-  DodgeCounterPhantasmSlash_2_anomBuildup: {
+  'DodgeCounterPhantasmSlash_2:anomBuildup': {
     sheet: 'Hugo',
-    name: 'DodgeCounterPhantasmSlash_2_anomBuildup',
+    name: 'DodgeCounterPhantasmSlash_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -619,12 +632,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'dodgeCounter',
       skillType1: 'dodgeSkill',
-      name: 'DodgeCounterPhantasmSlash_2_anomBuildup',
+      name: 'DodgeCounterPhantasmSlash_2',
     },
   },
-  SpecialAttackSoulHunterJudgment_0_dmg: {
+  'SpecialAttackSoulHunterJudgment_0:standardDmg': {
     sheet: 'Hugo',
-    name: 'SpecialAttackSoulHunterJudgment_0_dmg',
+    name: 'SpecialAttackSoulHunterJudgment_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -633,12 +646,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'special',
       skillType1: 'specialSkill',
-      name: 'SpecialAttackSoulHunterJudgment_0_dmg',
+      name: 'SpecialAttackSoulHunterJudgment_0',
     },
   },
-  SpecialAttackSoulHunterJudgment_0_daze: {
+  'SpecialAttackSoulHunterJudgment_0:dazeBuildup': {
     sheet: 'Hugo',
-    name: 'SpecialAttackSoulHunterJudgment_0_daze',
+    name: 'SpecialAttackSoulHunterJudgment_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -647,12 +660,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'special',
       skillType1: 'specialSkill',
-      name: 'SpecialAttackSoulHunterJudgment_0_daze',
+      name: 'SpecialAttackSoulHunterJudgment_0',
     },
   },
-  SpecialAttackSoulHunterJudgment_0_anomBuildup: {
+  'SpecialAttackSoulHunterJudgment_0:anomBuildup': {
     sheet: 'Hugo',
-    name: 'SpecialAttackSoulHunterJudgment_0_anomBuildup',
+    name: 'SpecialAttackSoulHunterJudgment_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -661,12 +674,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'special',
       skillType1: 'specialSkill',
-      name: 'SpecialAttackSoulHunterJudgment_0_anomBuildup',
+      name: 'SpecialAttackSoulHunterJudgment_0',
     },
   },
-  EXSpecialAttackSoulHunterPunishment_0_dmg: {
+  'EXSpecialAttackSoulHunterPunishment_0:standardDmg': {
     sheet: 'Hugo',
-    name: 'EXSpecialAttackSoulHunterPunishment_0_dmg',
+    name: 'EXSpecialAttackSoulHunterPunishment_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -675,12 +688,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType1: 'specialSkill',
-      name: 'EXSpecialAttackSoulHunterPunishment_0_dmg',
+      name: 'EXSpecialAttackSoulHunterPunishment_0',
     },
   },
-  EXSpecialAttackSoulHunterPunishment_0_daze: {
+  'EXSpecialAttackSoulHunterPunishment_0:dazeBuildup': {
     sheet: 'Hugo',
-    name: 'EXSpecialAttackSoulHunterPunishment_0_daze',
+    name: 'EXSpecialAttackSoulHunterPunishment_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -689,12 +702,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType1: 'specialSkill',
-      name: 'EXSpecialAttackSoulHunterPunishment_0_daze',
+      name: 'EXSpecialAttackSoulHunterPunishment_0',
     },
   },
-  EXSpecialAttackSoulHunterPunishment_0_anomBuildup: {
+  'EXSpecialAttackSoulHunterPunishment_0:anomBuildup': {
     sheet: 'Hugo',
-    name: 'EXSpecialAttackSoulHunterPunishment_0_anomBuildup',
+    name: 'EXSpecialAttackSoulHunterPunishment_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -703,12 +716,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'exSpecial',
       skillType1: 'specialSkill',
-      name: 'EXSpecialAttackSoulHunterPunishment_0_anomBuildup',
+      name: 'EXSpecialAttackSoulHunterPunishment_0',
     },
   },
-  ChainAttackTrickOfFate_0_dmg: {
+  'ChainAttackTrickOfFate_0:standardDmg': {
     sheet: 'Hugo',
-    name: 'ChainAttackTrickOfFate_0_dmg',
+    name: 'ChainAttackTrickOfFate_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -717,12 +730,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'chain',
       skillType1: 'chainSkill',
-      name: 'ChainAttackTrickOfFate_0_dmg',
+      name: 'ChainAttackTrickOfFate_0',
     },
   },
-  ChainAttackTrickOfFate_0_daze: {
+  'ChainAttackTrickOfFate_0:dazeBuildup': {
     sheet: 'Hugo',
-    name: 'ChainAttackTrickOfFate_0_daze',
+    name: 'ChainAttackTrickOfFate_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -731,12 +744,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'chain',
       skillType1: 'chainSkill',
-      name: 'ChainAttackTrickOfFate_0_daze',
+      name: 'ChainAttackTrickOfFate_0',
     },
   },
-  ChainAttackTrickOfFate_0_anomBuildup: {
+  'ChainAttackTrickOfFate_0:anomBuildup': {
     sheet: 'Hugo',
-    name: 'ChainAttackTrickOfFate_0_anomBuildup',
+    name: 'ChainAttackTrickOfFate_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -745,12 +758,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'chain',
       skillType1: 'chainSkill',
-      name: 'ChainAttackTrickOfFate_0_anomBuildup',
+      name: 'ChainAttackTrickOfFate_0',
     },
   },
-  UltimateBlaspheme_0_dmg: {
+  'UltimateBlaspheme_0:standardDmg': {
     sheet: 'Hugo',
-    name: 'UltimateBlaspheme_0_dmg',
+    name: 'UltimateBlaspheme_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -759,12 +772,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'ult',
       skillType1: 'chainSkill',
-      name: 'UltimateBlaspheme_0_dmg',
+      name: 'UltimateBlaspheme_0',
     },
   },
-  UltimateBlaspheme_0_daze: {
+  'UltimateBlaspheme_0:dazeBuildup': {
     sheet: 'Hugo',
-    name: 'UltimateBlaspheme_0_daze',
+    name: 'UltimateBlaspheme_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -773,12 +786,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'ult',
       skillType1: 'chainSkill',
-      name: 'UltimateBlaspheme_0_daze',
+      name: 'UltimateBlaspheme_0',
     },
   },
-  UltimateBlaspheme_0_anomBuildup: {
+  'UltimateBlaspheme_0:anomBuildup': {
     sheet: 'Hugo',
-    name: 'UltimateBlaspheme_0_anomBuildup',
+    name: 'UltimateBlaspheme_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -787,12 +800,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'ult',
       skillType1: 'chainSkill',
-      name: 'UltimateBlaspheme_0_anomBuildup',
+      name: 'UltimateBlaspheme_0',
     },
   },
-  QuickAssistElegy_0_dmg: {
+  'QuickAssistElegy_0:standardDmg': {
     sheet: 'Hugo',
-    name: 'QuickAssistElegy_0_dmg',
+    name: 'QuickAssistElegy_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -801,12 +814,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'quickAssist',
       skillType1: 'assistSkill',
-      name: 'QuickAssistElegy_0_dmg',
+      name: 'QuickAssistElegy_0',
     },
   },
-  QuickAssistElegy_0_daze: {
+  'QuickAssistElegy_0:dazeBuildup': {
     sheet: 'Hugo',
-    name: 'QuickAssistElegy_0_daze',
+    name: 'QuickAssistElegy_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -815,12 +828,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'quickAssist',
       skillType1: 'assistSkill',
-      name: 'QuickAssistElegy_0_daze',
+      name: 'QuickAssistElegy_0',
     },
   },
-  QuickAssistElegy_0_anomBuildup: {
+  'QuickAssistElegy_0:anomBuildup': {
     sheet: 'Hugo',
-    name: 'QuickAssistElegy_0_anomBuildup',
+    name: 'QuickAssistElegy_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -829,12 +842,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'quickAssist',
       skillType1: 'assistSkill',
-      name: 'QuickAssistElegy_0_anomBuildup',
+      name: 'QuickAssistElegy_0',
     },
   },
-  QuickAssistElegy_1_dmg: {
+  'QuickAssistElegy_1:standardDmg': {
     sheet: 'Hugo',
-    name: 'QuickAssistElegy_1_dmg',
+    name: 'QuickAssistElegy_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -843,12 +856,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'quickAssist',
       skillType1: 'assistSkill',
-      name: 'QuickAssistElegy_1_dmg',
+      name: 'QuickAssistElegy_1',
     },
   },
-  QuickAssistElegy_1_daze: {
+  'QuickAssistElegy_1:dazeBuildup': {
     sheet: 'Hugo',
-    name: 'QuickAssistElegy_1_daze',
+    name: 'QuickAssistElegy_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -857,12 +870,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'quickAssist',
       skillType1: 'assistSkill',
-      name: 'QuickAssistElegy_1_daze',
+      name: 'QuickAssistElegy_1',
     },
   },
-  QuickAssistElegy_1_anomBuildup: {
+  'QuickAssistElegy_1:anomBuildup': {
     sheet: 'Hugo',
-    name: 'QuickAssistElegy_1_anomBuildup',
+    name: 'QuickAssistElegy_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -871,12 +884,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'quickAssist',
       skillType1: 'assistSkill',
-      name: 'QuickAssistElegy_1_anomBuildup',
+      name: 'QuickAssistElegy_1',
     },
   },
-  QuickAssistElegy_2_dmg: {
+  'QuickAssistElegy_2:standardDmg': {
     sheet: 'Hugo',
-    name: 'QuickAssistElegy_2_dmg',
+    name: 'QuickAssistElegy_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -885,12 +898,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'quickAssist',
       skillType1: 'assistSkill',
-      name: 'QuickAssistElegy_2_dmg',
+      name: 'QuickAssistElegy_2',
     },
   },
-  QuickAssistElegy_2_daze: {
+  'QuickAssistElegy_2:dazeBuildup': {
     sheet: 'Hugo',
-    name: 'QuickAssistElegy_2_daze',
+    name: 'QuickAssistElegy_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -899,12 +912,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'quickAssist',
       skillType1: 'assistSkill',
-      name: 'QuickAssistElegy_2_daze',
+      name: 'QuickAssistElegy_2',
     },
   },
-  QuickAssistElegy_2_anomBuildup: {
+  'QuickAssistElegy_2:anomBuildup': {
     sheet: 'Hugo',
-    name: 'QuickAssistElegy_2_anomBuildup',
+    name: 'QuickAssistElegy_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -913,12 +926,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'quickAssist',
       skillType1: 'assistSkill',
-      name: 'QuickAssistElegy_2_anomBuildup',
+      name: 'QuickAssistElegy_2',
     },
   },
-  DefensiveAssistTheEndHasNotCome_0_dmg: {
+  'DefensiveAssistTheEndHasNotCome_0:standardDmg': {
     sheet: 'Hugo',
-    name: 'DefensiveAssistTheEndHasNotCome_0_dmg',
+    name: 'DefensiveAssistTheEndHasNotCome_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -927,12 +940,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistTheEndHasNotCome_0_dmg',
+      name: 'DefensiveAssistTheEndHasNotCome_0',
     },
   },
-  DefensiveAssistTheEndHasNotCome_0_daze: {
+  'DefensiveAssistTheEndHasNotCome_0:dazeBuildup': {
     sheet: 'Hugo',
-    name: 'DefensiveAssistTheEndHasNotCome_0_daze',
+    name: 'DefensiveAssistTheEndHasNotCome_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -941,12 +954,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistTheEndHasNotCome_0_daze',
+      name: 'DefensiveAssistTheEndHasNotCome_0',
     },
   },
-  DefensiveAssistTheEndHasNotCome_0_anomBuildup: {
+  'DefensiveAssistTheEndHasNotCome_0:anomBuildup': {
     sheet: 'Hugo',
-    name: 'DefensiveAssistTheEndHasNotCome_0_anomBuildup',
+    name: 'DefensiveAssistTheEndHasNotCome_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -955,12 +968,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistTheEndHasNotCome_0_anomBuildup',
+      name: 'DefensiveAssistTheEndHasNotCome_0',
     },
   },
-  DefensiveAssistTheEndHasNotCome_1_dmg: {
+  'DefensiveAssistTheEndHasNotCome_1:standardDmg': {
     sheet: 'Hugo',
-    name: 'DefensiveAssistTheEndHasNotCome_1_dmg',
+    name: 'DefensiveAssistTheEndHasNotCome_1:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -969,12 +982,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistTheEndHasNotCome_1_dmg',
+      name: 'DefensiveAssistTheEndHasNotCome_1',
     },
   },
-  DefensiveAssistTheEndHasNotCome_1_daze: {
+  'DefensiveAssistTheEndHasNotCome_1:dazeBuildup': {
     sheet: 'Hugo',
-    name: 'DefensiveAssistTheEndHasNotCome_1_daze',
+    name: 'DefensiveAssistTheEndHasNotCome_1:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -983,12 +996,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistTheEndHasNotCome_1_daze',
+      name: 'DefensiveAssistTheEndHasNotCome_1',
     },
   },
-  DefensiveAssistTheEndHasNotCome_1_anomBuildup: {
+  'DefensiveAssistTheEndHasNotCome_1:anomBuildup': {
     sheet: 'Hugo',
-    name: 'DefensiveAssistTheEndHasNotCome_1_anomBuildup',
+    name: 'DefensiveAssistTheEndHasNotCome_1:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -997,12 +1010,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistTheEndHasNotCome_1_anomBuildup',
+      name: 'DefensiveAssistTheEndHasNotCome_1',
     },
   },
-  DefensiveAssistTheEndHasNotCome_2_dmg: {
+  'DefensiveAssistTheEndHasNotCome_2:standardDmg': {
     sheet: 'Hugo',
-    name: 'DefensiveAssistTheEndHasNotCome_2_dmg',
+    name: 'DefensiveAssistTheEndHasNotCome_2:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1011,12 +1024,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistTheEndHasNotCome_2_dmg',
+      name: 'DefensiveAssistTheEndHasNotCome_2',
     },
   },
-  DefensiveAssistTheEndHasNotCome_2_daze: {
+  'DefensiveAssistTheEndHasNotCome_2:dazeBuildup': {
     sheet: 'Hugo',
-    name: 'DefensiveAssistTheEndHasNotCome_2_daze',
+    name: 'DefensiveAssistTheEndHasNotCome_2:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1025,12 +1038,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistTheEndHasNotCome_2_daze',
+      name: 'DefensiveAssistTheEndHasNotCome_2',
     },
   },
-  DefensiveAssistTheEndHasNotCome_2_anomBuildup: {
+  'DefensiveAssistTheEndHasNotCome_2:anomBuildup': {
     sheet: 'Hugo',
-    name: 'DefensiveAssistTheEndHasNotCome_2_anomBuildup',
+    name: 'DefensiveAssistTheEndHasNotCome_2:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1039,12 +1052,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'defensiveAssist',
       skillType1: 'assistSkill',
-      name: 'DefensiveAssistTheEndHasNotCome_2_anomBuildup',
+      name: 'DefensiveAssistTheEndHasNotCome_2',
     },
   },
-  AssistFollowUpAceReversal_0_dmg: {
+  'AssistFollowUpAceReversal_0:standardDmg': {
     sheet: 'Hugo',
-    name: 'AssistFollowUpAceReversal_0_dmg',
+    name: 'AssistFollowUpAceReversal_0:standardDmg',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1053,12 +1066,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'assistFollowUp',
       skillType1: 'assistSkill',
-      name: 'AssistFollowUpAceReversal_0_dmg',
+      name: 'AssistFollowUpAceReversal_0',
     },
   },
-  AssistFollowUpAceReversal_0_daze: {
+  'AssistFollowUpAceReversal_0:dazeBuildup': {
     sheet: 'Hugo',
-    name: 'AssistFollowUpAceReversal_0_daze',
+    name: 'AssistFollowUpAceReversal_0:dazeBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1067,12 +1080,12 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'assistFollowUp',
       skillType1: 'assistSkill',
-      name: 'AssistFollowUpAceReversal_0_daze',
+      name: 'AssistFollowUpAceReversal_0',
     },
   },
-  AssistFollowUpAceReversal_0_anomBuildup: {
+  'AssistFollowUpAceReversal_0:anomBuildup': {
     sheet: 'Hugo',
-    name: 'AssistFollowUpAceReversal_0_anomBuildup',
+    name: 'AssistFollowUpAceReversal_0:anomBuildup',
     tag: {
       et: 'own',
       qt: 'formula',
@@ -1081,7 +1094,7 @@ export const formulas = {
       attribute: 'ice',
       damageType1: 'assistFollowUp',
       skillType1: 'assistSkill',
-      name: 'AssistFollowUpAceReversal_0_anomBuildup',
+      name: 'AssistFollowUpAceReversal_0',
     },
   },
 } as const
