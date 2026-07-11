@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { abilityFormulaGroupKey } from '../bundledFormulaGrouping'
+import { formulaFieldGroupKey } from '../bundledFormulaGrouping'
 import {
   buildFieldCategoryIndex,
   getFieldCategory,
@@ -21,11 +21,11 @@ describe('buildFieldCategoryIndex', () => {
 
   it('keys aftershock variants separately from normal hits with the same name', () => {
     const index = buildFieldCategoryIndex('Anby')
-    const normalKey = abilityFormulaGroupKey({
+    const normalKey = formulaFieldGroupKey({
       sheet: 'Anby',
       name: 'BasicAttackTurboVolt_0',
     })
-    const aftershockKey = abilityFormulaGroupKey({
+    const aftershockKey = formulaFieldGroupKey({
       sheet: 'Anby',
       name: 'BasicAttackTurboVolt_0',
       damageType2: 'aftershock',

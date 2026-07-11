@@ -9,13 +9,12 @@ import { commonDefIcon, mindscapeDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { CharacterKey, SkillKey } from '@genshin-optimizer/zzz/consts'
 import { allSkillKeys } from '@genshin-optimizer/zzz/consts'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
-import { formulas, own } from '@genshin-optimizer/zzz/formula'
+import { own } from '@genshin-optimizer/zzz/formula'
 import { getCharStat, mappedStats } from '@genshin-optimizer/zzz/stats'
 import { TagFieldTitle } from '../TagFieldTitle'
-import { groupFormulaMetaToFields } from '../bundledFormulaFields'
-import { formulaMatchesAbility } from '../formulaFieldUtil'
 import { trans } from '../util'
 import type { CharUISheet } from './consts'
+import { skillAbilityTextDocument } from './sheetDocuments'
 
 type AddlDocuments = {
   perSkillAbility?: Partial<
@@ -71,7 +70,6 @@ function createSkillsSheets(
   addlDocumentsPerSkillAbility?: AddlDocuments['perSkillAbility']
 ) {
   const dm = mappedStats.char[charKey]
-  const form = formulas[charKey] as Record<string, IFormulaData<Tag>>
   const [chg, _ch] = trans('char', charKey)
   return objKeyMap(
     allSkillKeys,
@@ -79,24 +77,14 @@ function createSkillsSheets(
       title: skill, // TODO: Translate. Though this doesn't seem to be shown anywhere
       img: commonDefIcon(`${skill}Flat`),
       documents: Object.keys(dm[skill]).flatMap((ability): Document[] => [
-        {
-          type: 'text',
+        skillAbilityTextDocument({
+          abilityKey: ability,
           header: {
             icon: <ImgIcon src={commonDefIcon(`${skill}Flat`)} size={1.5} />,
             text: chg(`${skill}.${ability}.name`),
           },
           text: chg(`${skill}.${ability}.desc`),
-        },
-        {
-          type: 'fields',
-          fields: groupFormulaMetaToFields(
-            Object.values(form).filter((f) =>
-              formulaMatchesAbility(f, ability)
-            ),
-            charKey,
-            skill
-          ),
-        },
+        }),
         ...(addlDocumentsPerSkillAbility?.[skill]?.[ability] ?? []),
       ]),
     })

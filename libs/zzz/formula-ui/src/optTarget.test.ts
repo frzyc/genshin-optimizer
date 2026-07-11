@@ -1,7 +1,12 @@
 import { read as tagRead } from '@genshin-optimizer/pando/engine'
 import { targetTag } from '@genshin-optimizer/zzz/db'
 import { describe, expect, it } from 'vitest'
-import { formulaReadForTag, isOptTargetTag, mergeTagForOpt } from './optTarget'
+import {
+  formulaReadForTag,
+  isOptTargetTag,
+  mergeTagForOpt,
+  statKeyFromListingTag,
+} from './optTarget'
 
 describe('isOptTargetTag', () => {
   it('matches stat-only targets by q/qt/attribute', () => {
@@ -91,6 +96,38 @@ describe('isOptTargetTag', () => {
 
     expect(isOptTargetTag(resolved, target)).toBe(true)
     expect(isOptTargetTag(wrongDmg, target, resolved)).toBe(false)
+  })
+})
+
+describe('statKeyFromListingTag', () => {
+  it('maps capped crit listing tags to stat highlight keys', () => {
+    expect(statKeyFromListingTag({ q: 'cappedCrit_', qt: 'final' })).toBe(
+      'crit_'
+    )
+    expect(statKeyFromListingTag({ q: 'anom_cappedCrit_', qt: 'final' })).toBe(
+      'anom_crit_'
+    )
+  })
+
+  it('returns empty string for named formula hits', () => {
+    expect(
+      statKeyFromListingTag({
+        sheet: 'Anby',
+        name: 'Hit_0',
+        q: 'standardDmg',
+        qt: 'formula',
+      })
+    ).toBe('')
+  })
+
+  it('uses attribute prefix for elemental stat rows', () => {
+    expect(
+      statKeyFromListingTag({
+        q: 'atk_',
+        qt: 'final',
+        attribute: 'atk',
+      })
+    ).toBe('atk_atk_')
   })
 })
 

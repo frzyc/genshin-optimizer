@@ -7,7 +7,7 @@ import { type SkillKey, isSkillKey } from '@genshin-optimizer/zzz/consts'
 import { isAbilityDim } from '@genshin-optimizer/zzz/formula'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import HelpIcon from '@mui/icons-material/Help'
-import { Box, ListSubheader, Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
 import { useMemo } from 'react'
 import { isAbilityFormulaTag } from './abilityTag'
@@ -250,28 +250,6 @@ export function AbilityOptTargetLabel({
         <SqBadge>{dimensionBadgeLabel}</SqBadge>
       )}
     </Box>
-  )
-}
-
-export function OptTargetSkillSectionHeader({ skill }: { skill: string }) {
-  return (
-    <ListSubheader
-      sx={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: 1,
-        lineHeight: 2,
-        bgcolor: 'background.paper',
-      }}
-    >
-      <ImgIcon
-        src={commonDefIcon(
-          skillSectionFlatIconKey(skill) as Parameters<typeof commonDefIcon>[0]
-        )}
-        size={1.25}
-      />
-      {st(`skills.${skill}`)}
-    </ListSubheader>
   )
 }
 

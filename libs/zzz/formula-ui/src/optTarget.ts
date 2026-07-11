@@ -2,7 +2,7 @@ import type { Read } from '@genshin-optimizer/game-opt/engine'
 import type { Field } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { BaseRead } from '@genshin-optimizer/pando/engine'
 import { read as tagRead } from '@genshin-optimizer/pando/engine'
-import type { AttributeKey } from '@genshin-optimizer/zzz/consts'
+import type { AttributeKey, StatKey } from '@genshin-optimizer/zzz/consts'
 import {
   type TargetTag,
   applyDamageTypeToTag,
@@ -11,27 +11,8 @@ import {
 } from '@genshin-optimizer/zzz/db'
 import type { Calculator, Tag } from '@genshin-optimizer/zzz/formula'
 import { own } from '@genshin-optimizer/zzz/formula'
-import { primaryTagFromField } from './bundledFormulaFields'
-import { abilityFormulaGroupKey } from './bundledFormulaGrouping'
-
-function listingTagKey(tag: Tag): string {
-  return `${tag.sheet ?? ''}:${tag.name ?? ''}:${tag.q ?? ''}:${tag.qt ?? ''}:${tag.attribute ?? ''}:${tag.damageType1 ?? ''}:${tag.damageType2 ?? ''}`
-}
-
-/** Key for looking up a listing `Read` from `calc.listFormulas(own.listing.formulas)`. */
-export function listingReadKey(tag: Tag): string {
-  return listingTagKey(tag)
-}
-
-export function buildListingReadMap(
-  reads: Read<Tag>[]
-): Map<string, Read<Tag>> {
-  const map = new Map<string, Read<Tag>>()
-  for (const read of reads) {
-    map.set(listingTagKey(read.tag), read)
-  }
-  return map
-}
+import { formulaFieldGroupKey } from './bundledFormulaGrouping'
+import { formulaListingTagKey, primaryTagFromField } from './formulaFieldUtil'
 
 function readWithMergedTag(read: BaseRead | Read<Tag>, tag: Tag): Read<Tag> {
   if (typeof (read as Read<Tag>).withTag === 'function') {
@@ -49,14 +30,14 @@ export function formulaReadForTag(
 ): Read<Tag> {
   if (listingRead) return readWithMergedTag(listingRead, tag)
   if (readByListingKey) {
-    const match = readByListingKey.get(listingTagKey(tag))
+    const match = readByListingKey.get(formulaListingTagKey(tag))
     if (match) return match.withTag(tag)
   }
   if (calc) {
-    const key = listingTagKey(tag)
+    const key = formulaListingTagKey(tag)
     const match = calc
       .listFormulas(own.listing.formulas)
-      .find((read) => listingTagKey(read.tag) === key)
+      .find((read) => formulaListingTagKey(read.tag) === key)
     if (match) return match.withTag(tag)
   }
   return tagRead(tag) as Read<Tag>
@@ -69,6 +50,15 @@ export function isListingStatTag(tag: Tag): boolean {
 
 export function statReadTagKey(tag: Tag): string {
   return `${tag.qt ?? ''}:${tag.q ?? ''}:${tag.attribute ?? ''}`
+}
+
+/** Stat highlight key for listing stat rows (not named formula hits). */
+export function statKeyFromListingTag(tag: Tag): StatKey | '' {
+  if (tag.name) return ''
+  if (tag.attribute) return `${tag.attribute}_${tag.q}` as StatKey
+  if (tag.q === 'cappedCrit_') return 'crit_'
+  if (tag.q === 'anom_cappedCrit_') return 'anom_crit_'
+  return (tag.q ?? '') as StatKey
 }
 
 /** Stat rows from `calc.listFormulas(own.listing.formulas)` (per-char util listing). */
@@ -123,7 +113,7 @@ export function isOptTargetTag(
     tag.q !== resolved.q ||
     (tag.qt ?? undefined) !== (resolved.qt ?? undefined) ||
     (tag.attribute ?? undefined) !== (resolved.attribute ?? undefined) ||
-    abilityFormulaGroupKey(tag) !== abilityFormulaGroupKey(resolved)
+    formulaFieldGroupKey(tag) !== formulaFieldGroupKey(resolved)
   )
     return false
   if (target.name && isGenericDmgInstTarget(target.name)) {

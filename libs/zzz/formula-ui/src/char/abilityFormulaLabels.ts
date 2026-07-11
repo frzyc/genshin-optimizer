@@ -6,7 +6,6 @@ import type { ReactNode } from 'react'
 import { createElement } from 'react'
 import { parseAbilityFromTag } from '../abilityTag'
 import {
-  ABILITY_DIM_LABEL,
   abilityDimTooltipLabel,
   dimensionByAbilityDim,
 } from '../formulaDimensionUi'
@@ -14,12 +13,19 @@ import { st, trans } from '../util'
 
 type AbilitySheetDim = (typeof dimensionByAbilityDim)[AbilityDim]
 
-export type AbilityDisplayResolved = {
+type AbilityDisplayResolved = {
   skill: SkillKey
   abilityKey: string
   hitIndex?: string
   abilityDim?: AbilityDim
   sheetDim?: AbilitySheetDim
+}
+
+type AbilityLabelStyle = 'field' | 'name' | 'bundle'
+
+type AbilityLabelContent = {
+  string: string | undefined
+  node: ReactNode | undefined
 }
 
 function effectiveAbilitySkillHint(
@@ -45,6 +51,35 @@ function hitParamI18nKey(resolved: AbilityDisplayResolved): string | undefined {
   return `${resolved.skill}.${resolved.abilityKey}.params.${hitIndex}`
 }
 
+function isBlankHitParam(text: string): boolean {
+  return !text.trim()
+}
+
+function hitParamString(
+  charKey: CharacterKey,
+  resolved: AbilityDisplayResolved
+): string | undefined {
+  const paramKey = hitParamI18nKey(resolved)
+  if (!resolved.hitIndex || !paramKey) return undefined
+
+  const paramTranslated = i18n.t(paramKey, {
+    ns: `char_${charKey}_gen`,
+    defaultValue: resolved.hitIndex.replace(/\D/g, ''),
+  })
+  return isBlankHitParam(paramTranslated) ? undefined : paramTranslated
+}
+
+function abilityNameString(
+  charKey: CharacterKey,
+  resolved: AbilityDisplayResolved
+): string {
+  const translated = i18n.t(nameI18nKey(resolved), {
+    ns: `char_${charKey}_gen`,
+    defaultValue: '',
+  })
+  return translated || resolved.abilityKey
+}
+
 /** Parsed ability identity + display dims for a formula tag. */
 export function resolveAbilityDisplay(
   tag: Tag,
@@ -63,6 +98,10 @@ export function resolveAbilityDisplay(
   }
 }
 
+function abilityDimSuffix(abilityDim: AbilityDim): string {
+  return abilityDimTooltipLabel(abilityDim)
+}
+
 function abilityHitLabelString(
   charKey: CharacterKey,
   resolved: AbilityDisplayResolved
@@ -70,12 +109,10 @@ function abilityHitLabelString(
   const paramKey = hitParamI18nKey(resolved)
   if (!resolved.sheetDim || !paramKey || !resolved.hitIndex) return undefined
 
-  const paramTranslated = i18n.t(paramKey, {
-    ns: `char_${charKey}_gen`,
-    defaultValue: resolved.hitIndex.replace(/\D/g, ''),
-  })
+  const paramTranslated = hitParamString(charKey, resolved)
+  if (!paramTranslated) return undefined
   const dimSuffix = resolved.abilityDim
-    ? ABILITY_DIM_LABEL[resolved.abilityDim]
+    ? abilityDimSuffix(resolved.abilityDim)
     : ''
   const label = i18n.t(resolved.sheetDim, {
     ns: 'sheet',
@@ -91,38 +128,115 @@ function abilityBaseNameString(
   charKey: CharacterKey,
   resolved: AbilityDisplayResolved
 ): string {
-  const translated = i18n.t(nameI18nKey(resolved), {
-    ns: `char_${charKey}_gen`,
-    defaultValue: '',
-  })
-  const base = translated || resolved.abilityKey
+  const base = abilityNameString(charKey, resolved)
   if (resolved.abilityDim) {
-    return `${base} ${abilityDimTooltipLabel(resolved.abilityDim)}`
+    return `${base} ${abilityDimSuffix(resolved.abilityDim)}`
   }
   return base
+}
+
+function abilityDisplayNameNode(
+  charKey: CharacterKey,
+  resolved: AbilityDisplayResolved
+): ReactNode {
+  const name = abilityNameString(charKey, resolved)
+  if (name === resolved.abilityKey) return name
+  const [chg] = trans('char', charKey)
+  return chg(nameI18nKey(resolved))
 }
 
 function abilityHitLabelNode(
   charKey: CharacterKey,
   resolved: AbilityDisplayResolved
 ): ReactNode | undefined {
-  const paramKey = hitParamI18nKey(resolved)
-  if (!resolved.sheetDim || !paramKey) return undefined
+  if (!resolved.sheetDim || !hitParamString(charKey, resolved)) return undefined
 
+  const paramKey = hitParamI18nKey(resolved)!
   return st(resolved.sheetDim, {
     val: `$t(char_${charKey}_gen:${paramKey})`,
   })
 }
 
-/** Translated hit label for an ability formula tag (`name` + `q`). */
-export function abilityFormulaLabel(
+function hitParamTitleNode(
+  charKey: CharacterKey,
+  resolved: AbilityDisplayResolved
+): ReactNode | undefined {
+  const paramKey = hitParamI18nKey(resolved)
+  if (!paramKey || !hitParamString(charKey, resolved)) return undefined
+  const [chg] = trans('char', charKey)
+  return chg(paramKey)
+}
+
+function fieldLabelNode(
+  charKey: CharacterKey,
+  resolved: AbilityDisplayResolved
+): ReactNode | undefined {
+  const hitLabel = abilityHitLabelNode(charKey, resolved)
+  if (hitLabel) return hitLabel
+  const name = abilityDisplayNameNode(charKey, resolved)
+  if (resolved.abilityDim) {
+    return createElement(
+      'span',
+      null,
+      name,
+      ' ',
+      abilityDimSuffix(resolved.abilityDim)
+    )
+  }
+  return name
+}
+
+/** Hit param and optional ability-name fallback (bundle row title vs opt-target hit crumb). */
+function bundleLabelContent(
+  charKey: CharacterKey,
+  resolved: AbilityDisplayResolved,
+  opts: { nameFallback: boolean }
+): AbilityLabelContent {
+  const hitParam = hitParamString(charKey, resolved)
+  const hitNode = hitParamTitleNode(charKey, resolved)
+  if (!opts.nameFallback && !hitParam) {
+    return { string: undefined, node: undefined }
+  }
+  return {
+    string: hitParam ?? abilityNameString(charKey, resolved),
+    node: hitNode ?? abilityDisplayNameNode(charKey, resolved),
+  }
+}
+
+function resolveAbilityLabelContent(
+  charKey: CharacterKey,
+  resolved: AbilityDisplayResolved,
+  style: AbilityLabelStyle
+): AbilityLabelContent {
+  switch (style) {
+    case 'name':
+      return {
+        string: abilityBaseNameString(charKey, resolved),
+        node: abilityDisplayNameNode(charKey, resolved),
+      }
+    case 'bundle':
+      return bundleLabelContent(charKey, resolved, { nameFallback: true })
+    case 'field':
+      return {
+        string:
+          abilityHitLabelString(charKey, resolved) ??
+          abilityBaseNameString(charKey, resolved),
+        node: fieldLabelNode(charKey, resolved),
+      }
+  }
+}
+
+function abilityLabel(
   charKey: CharacterKey,
   tag: Tag,
+  style: AbilityLabelStyle,
+  output: 'react' | 'string',
   skillHint?: SkillKey
-) {
+): ReactNode | string | undefined {
   const resolved = resolveAbilityDisplay(tag, skillHint)
   if (!resolved) return undefined
-  return abilityHitLabelNode(charKey, resolved)
+  const content = resolveAbilityLabelContent(charKey, resolved, style)
+  return output === 'string' ? content.string : content.node
 }
 
 /** Translated ability name for a formula tag. */
@@ -131,10 +245,9 @@ export function abilityDisplayTitle(
   tag: Tag,
   skillHint?: SkillKey
 ): ReactNode | undefined {
-  const resolved = resolveAbilityDisplay(tag, skillHint)
-  if (!resolved) return undefined
-  const [chg] = trans('char', charKey)
-  return chg(nameI18nKey(resolved))
+  return abilityLabel(charKey, tag, 'name', 'react', skillHint) as
+    | ReactNode
+    | undefined
 }
 
 /** Translated hit param only (no sheet dim suffix), for multi-part opt-target rows. */
@@ -144,11 +257,30 @@ export function abilityHitParamTitle(
   skillHint?: SkillKey
 ): ReactNode | undefined {
   const resolved = resolveAbilityDisplay(tag, skillHint)
-  const paramKey = resolved ? hitParamI18nKey(resolved) : undefined
-  if (!resolved?.hitIndex || !paramKey) return undefined
+  if (!resolved) return undefined
+  return bundleLabelContent(charKey, resolved, { nameFallback: false }).node
+}
 
-  const [chg] = trans('char', charKey)
-  return chg(paramKey)
+function AbilityBundleTitleInner({
+  charKey,
+  tag,
+  skillHint,
+}: {
+  charKey: CharacterKey
+  tag: Tag
+  skillHint?: SkillKey
+}) {
+  const label = abilityLabel(charKey, tag, 'bundle', 'react', skillHint)
+  return label ?? null
+}
+
+/** Lazy i18n bundle row title; defers lookup until render (sheet docs build at import). */
+export function abilityBundleTitle(
+  charKey: CharacterKey,
+  tag: Tag,
+  skillHint?: SkillKey
+): ReactNode {
+  return createElement(AbilityBundleTitleInner, { charKey, tag, skillHint })
 }
 
 export function abilityTagDisplay(
@@ -156,26 +288,9 @@ export function abilityTagDisplay(
   tag: Tag,
   skillHint?: SkillKey
 ): ReactNode | undefined {
-  const resolved = resolveAbilityDisplay(tag, skillHint)
-  if (!resolved) return undefined
-
-  const hitLabel = abilityHitLabelNode(charKey, resolved)
-  if (hitLabel) return hitLabel
-
-  const [chg] = trans('char', charKey)
-  const name = chg(nameI18nKey(resolved))
-  if (!name) return undefined
-
-  if (resolved.abilityDim) {
-    return createElement(
-      'span',
-      null,
-      name,
-      ' ',
-      abilityDimTooltipLabel(resolved.abilityDim)
-    )
-  }
-  return name
+  return abilityLabel(charKey, tag, 'field', 'react', skillHint) as
+    | ReactNode
+    | undefined
 }
 
 export function abilityDisplayNameString(
@@ -183,11 +298,7 @@ export function abilityDisplayNameString(
   tag: Tag,
   skillHint?: SkillKey
 ): string | undefined {
-  const resolved = resolveAbilityDisplay(tag, skillHint)
-  if (!resolved) return undefined
-
-  const hitLabel = abilityHitLabelString(charKey, resolved)
-  if (hitLabel) return hitLabel
-
-  return abilityBaseNameString(charKey, resolved)
+  return abilityLabel(charKey, tag, 'field', 'string', skillHint) as
+    | string
+    | undefined
 }

@@ -5,7 +5,8 @@ import {
 } from '@genshin-optimizer/zzz/formula'
 import type { Sheet, Tag } from '@genshin-optimizer/zzz/formula'
 
-export function abilityFormulaGroupKey(tag: Tag): string {
+/** Stable key for bundling, category index, and opt-target row identity (incl. `damageType2`). */
+export function formulaFieldGroupKey(tag: Tag): string {
   return `${tag.sheet ?? ''}:${tag.name ?? ''}:${tag.damageType2 ?? ''}`
 }
 
@@ -71,13 +72,13 @@ export function partitionBundlableTags(
       continue
     }
 
-    const key = abilityFormulaGroupKey(tag)
+    const key = formulaFieldGroupKey(tag)
     if (seenGroups.has(key)) continue
     seenGroups.add(key)
 
     const group = sortedTags.filter(
       (t) =>
-        abilityFormulaGroupKey(t) === key &&
+        formulaFieldGroupKey(t) === key &&
         t.name === name &&
         t.sheet === tag.sheet &&
         isAbilityDim(t.q)

@@ -4,14 +4,13 @@ import {
   FieldDisplayList,
   type MultiTagField,
   MultiTagFieldDisplay,
+  type TagField,
   TagFieldDisplay,
   isMultiTagField,
   isTagField,
 } from '@genshin-optimizer/game-opt/sheet-ui'
-import type { StatKey } from '@genshin-optimizer/zzz/consts'
-import { targetTag } from '@genshin-optimizer/zzz/db'
-import { getTeamFrame0 } from '@genshin-optimizer/zzz/db'
-import { useCharacterContext, useTeam } from '@genshin-optimizer/zzz/db-ui'
+import type { TargetTag } from '@genshin-optimizer/zzz/db'
+import { useCharacterContext } from '@genshin-optimizer/zzz/db-ui'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import {
   StatHighlightContext,
@@ -20,36 +19,40 @@ import {
   isHighlight,
 } from '@genshin-optimizer/zzz/ui'
 import { ListItem } from '@mui/material'
-import { Fragment, memo, useCallback, useContext, useMemo } from 'react'
+import { memo, useCallback, useContext, useMemo } from 'react'
+import { OptFormulaSections } from '../OptFormulaSections'
+import { formulaListingTagKey } from '../formulaFieldUtil'
 import {
-  useGroupedOptFormulaFields,
+  useCharFormulaFields,
   useOptCategoryCollapse,
+  useResolvedOptTarget,
   useZzzCalcContext,
 } from '../hooks'
-import { OptPanelSectionHeader } from '../optPanelSections'
 import {
   formulaReadForTag,
-  listingReadKey,
   mergeTagForOpt,
+  statKeyFromListingTag,
   statReadTagKey,
 } from '../optTarget'
-import { OptTargetCategorySectionHeader } from '../optTargetDisplay'
 import { tagToTagField } from '../util'
 
 export function CharStatsDisplay() {
   const character = useCharacterContext()
   const calc = useZzzCalcContext()
   const collapse = useOptCategoryCollapse()
-  const { optTarget, resolvedOptTag } = useOptTargetTags()
+  const { optTarget, resolvedOptTag } = useResolvedOptTarget()
   const { statReads, readByListingKey, categorySections, otherFields } =
-    useGroupedOptFormulaFields(character?.key, calc)
+    useCharFormulaFields(character?.key, calc)
 
   return (
     <ZCard>
       <FieldDisplayList sx={{ m: 0 }} bgt="normal">
-        <OptPanelSectionHeader section="stats">Stats</OptPanelSectionHeader>
-        {!(collapse?.isCollapsed('stats') ?? false) &&
-          statReads.map((read) => (
+        <OptFormulaSections
+          statReads={statReads}
+          otherFields={otherFields}
+          categorySections={categorySections}
+          collapse={collapse}
+          renderStatRow={(read) => (
             <CharStatRow
               key={statReadTagKey(read.tag)}
               read={read}
@@ -57,37 +60,19 @@ export function CharStatsDisplay() {
               optTarget={optTarget}
               resolvedOptTag={resolvedOptTag}
             />
-          ))}
-        {otherFields.length > 0 && (
-          <>
-            <OptPanelSectionHeader section="other">Other</OptPanelSectionHeader>
-            {!(collapse?.isCollapsed('other') ?? false) &&
-              otherFields.map((field, index) => (
-                <FormulaFieldRow
-                  key={`other_${index}`}
-                  field={field}
-                  readByListingKey={readByListingKey}
-                  optTarget={optTarget}
-                  resolvedOptTag={resolvedOptTag}
-                />
-              ))}
-          </>
-        )}
-        {categorySections.map(({ category, fields }) => (
-          <Fragment key={category}>
-            <OptTargetCategorySectionHeader category={category} />
-            {!(collapse?.isCollapsed(category) ?? false) &&
-              fields.map((field, index) => (
-                <FormulaFieldRow
-                  key={`${category}_${index}`}
-                  field={field}
-                  readByListingKey={readByListingKey}
-                  optTarget={optTarget}
-                  resolvedOptTag={resolvedOptTag}
-                />
-              ))}
-          </Fragment>
-        ))}
+          )}
+          renderFormulaField={(field, { section, category, index }) => (
+            <FormulaFieldRow
+              key={
+                section === 'other' ? `other_${index}` : `${category}_${index}`
+              }
+              field={field}
+              readByListingKey={readByListingKey}
+              optTarget={optTarget}
+              resolvedOptTag={resolvedOptTag}
+            />
+          )}
+        />
       </FieldDisplayList>
     </ZCard>
   )
@@ -101,7 +86,7 @@ function FormulaFieldRow({
 }: {
   field: Field
   readByListingKey: Map<string, Read<Tag>>
-  optTarget: ReturnType<typeof getTeamFrame0>['tag']
+  optTarget: TargetTag | undefined
   resolvedOptTag: Tag | undefined
 }) {
   if (isMultiTagField(field))
@@ -115,8 +100,8 @@ function FormulaFieldRow({
   if (isTagField(field))
     return (
       <CharStatRow
-        tag={field.fieldRef}
-        listingRead={readByListingKey.get(listingReadKey(field.fieldRef))}
+        sourceField={field}
+        listingRead={readByListingKey.get(formulaListingTagKey(field.fieldRef))}
         readByListingKey={readByListingKey}
         optTarget={optTarget}
         resolvedOptTag={resolvedOptTag}
@@ -125,34 +110,23 @@ function FormulaFieldRow({
   return null
 }
 
-function useOptTargetTags() {
-  const character = useCharacterContext()
-  const team = useTeam(character?.key)
-  const optTarget = team ? getTeamFrame0(team).tag : undefined
-  const resolvedOptTag = useMemo(
-    () => (optTarget ? targetTag(optTarget) : undefined),
-    [optTarget]
-  )
-  return { optTarget, resolvedOptTag }
-}
-
 const CharStatRow = memo(function CharStatRow({
   read,
-  tag: tagIn,
+  sourceField,
   listingRead,
   readByListingKey,
   optTarget,
   resolvedOptTag,
 }: {
   read?: Read<Tag>
-  tag?: Tag
+  sourceField?: TagField
   listingRead?: Read<Tag>
   readByListingKey?: Map<string, Read<Tag>>
-  optTarget: ReturnType<typeof getTeamFrame0>['tag']
+  optTarget: TargetTag | undefined
   resolvedOptTag: Tag | undefined
 }) {
   const calc = useZzzCalcContext()
-  const baseTag = tagIn ?? read!.tag
+  const baseTag = sourceField?.fieldRef ?? read!.tag
 
   const mergedTag = useMemo(
     () => mergeTagForOpt(baseTag, resolvedOptTag, optTarget),
@@ -165,21 +139,17 @@ const CharStatRow = memo(function CharStatRow({
     [calc, mergedTag, read, listingRead, readByListingKey]
   )
 
-  const field = useMemo(() => tagToTagField(mergedTag), [mergedTag])
+  const field = useMemo(
+    () =>
+      sourceField
+        ? { ...sourceField, fieldRef: mergedTag }
+        : tagToTagField(mergedTag),
+    [mergedTag, sourceField]
+  )
 
   const { statHighlight, setStatHighlight } = useContext(StatHighlightContext)
-  const tagQStatKey = mergedTag.name
-    ? ''
-    : mergedTag.attribute
-      ? `${mergedTag.attribute}_${mergedTag.q}`
-      : mergedTag.q === 'cappedCrit_'
-        ? 'crit_'
-        : mergedTag.q === 'anom_cappedCrit_'
-          ? 'anom_crit_'
-          : mergedTag.q
-  const isHL = tagQStatKey
-    ? isHighlight(statHighlight, tagQStatKey as StatKey)
-    : false
+  const tagQStatKey = statKeyFromListingTag(mergedTag)
+  const isHL = tagQStatKey ? isHighlight(statHighlight, tagQStatKey) : false
 
   const onMouseEnter = useCallback(() => {
     if (tagQStatKey) setStatHighlight(tagQStatKey)
@@ -225,7 +195,7 @@ const MultiFormulaFieldRow = memo(function MultiFormulaFieldRow({
   resolvedOptTag,
 }: {
   field: MultiTagField
-  optTarget: ReturnType<typeof getTeamFrame0>['tag']
+  optTarget: TargetTag | undefined
   resolvedOptTag: Tag | undefined
 }) {
   const mergedField = useMemo(() => {

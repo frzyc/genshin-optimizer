@@ -4,13 +4,12 @@ import { getTeamFrame0, targetTag } from '@genshin-optimizer/zzz/db'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import {
   FullTagDisplay,
-  OptPanelSectionHeader,
-  OptTargetCategorySectionHeader,
+  OptFormulaSections,
   OptTargetDebugHelp,
   OptTargetSelectedLabel,
   statReadTagKey,
   statReadToTargetTag,
-  useGroupedOptFormulaFields,
+  useCharFormulaFields,
   useOptCategoryCollapse,
   useZzzCalcContext,
 } from '@genshin-optimizer/zzz/formula-ui'
@@ -33,8 +32,10 @@ export function OptSelector({
     return targetTag(target)
   }, [target])
 
-  const { statReads, categorySections, otherFields } =
-    useGroupedOptFormulaFields(characterKey, calc)
+  const { statReads, categorySections, otherFields } = useCharFormulaFields(
+    characterKey,
+    calc
+  )
   const collapse = useOptCategoryCollapse()
 
   const selectedTitle = tag ? (
@@ -73,9 +74,12 @@ export function OptSelector({
         justifyContent: 'flex-start',
       }}
     >
-      <OptPanelSectionHeader section="stats">Stats</OptPanelSectionHeader>
-      {!(collapse?.isCollapsed('stats') ?? false) &&
-        statReads.map((read) => (
+      <OptFormulaSections
+        statReads={statReads}
+        otherFields={otherFields}
+        categorySections={categorySections}
+        collapse={collapse}
+        renderStatRow={(read) => (
           <MenuItem
             key={`stat_${statReadTagKey(read.tag)}`}
             onClick={() =>
@@ -88,39 +92,22 @@ export function OptSelector({
               <FullTagDisplay tag={read.tag} />
             </ListItemText>
           </MenuItem>
-        ))}
-      {otherFields.length > 0 && (
-        <OptPanelSectionHeader section="other">Other</OptPanelSectionHeader>
-      )}
-      {!(collapse?.isCollapsed('other') ?? false) &&
-        otherFields.map((field, i) => (
+        )}
+        renderFormulaField={(field, { section, category, index }) => (
           <OptTargetFieldMenuItem
-            key={`other_${i}`}
+            key={
+              section === 'other' ? `other_${index}` : `${category}_${index}`
+            }
             field={field}
-            fieldKey={`other_${i}`}
+            fieldKey={
+              section === 'other' ? `other_${index}` : `${category}_${index}`
+            }
             characterKey={characterKey}
             target={target}
             database={database}
           />
-        ))}
-      {categorySections.flatMap(({ category, fields }) => [
-        <OptTargetCategorySectionHeader
-          key={`header_${category}`}
-          category={category}
-        />,
-        ...((collapse?.isCollapsed(category) ?? false)
-          ? []
-          : fields.map((field, i) => (
-              <OptTargetFieldMenuItem
-                key={`${category}_${i}`}
-                field={field}
-                fieldKey={`${category}_${i}`}
-                characterKey={characterKey}
-                target={target}
-                database={database}
-              />
-            ))),
-      ])}
+        )}
+      />
     </DropdownButton>
   )
 }

@@ -1,6 +1,4 @@
 import { ColorText } from '@genshin-optimizer/common/ui'
-import type { Read } from '@genshin-optimizer/game-opt/engine'
-import type { IFormulaData } from '@genshin-optimizer/game-opt/engine'
 import type {
   Field,
   MultiTagField,
@@ -15,17 +13,14 @@ import {
   partitionBundlableTags,
   resolveBundleDmgQ,
 } from './bundledFormulaGrouping'
-import { abilityTagDisplay } from './char/abilityFormulaLabels'
+import {
+  abilityBundleTitle,
+  abilityTagDisplay,
+} from './char/abilityFormulaLabels'
 import { getVariant } from './char/util'
 import { ABILITY_DIM_LABEL } from './formulaDimensionUi'
 import { primaryTagFromField } from './formulaFieldUtil'
 import { tagToTagField } from './util'
-
-export { primaryTagFromField } from './formulaFieldUtil'
-
-function abilityFieldTitle(charKey: CharacterKey, skill: SkillKey, tag: Tag) {
-  return abilityTagDisplay(charKey, tag, skill) ?? tag.name ?? tag.q ?? ''
-}
 
 function bundleFieldRefs(byQ: Map<string, Tag>) {
   const dmgQ = resolveBundleDmgQ(byQ)!
@@ -45,7 +40,7 @@ function singleFormulaField(
     return {
       title: (
         <ColorText color={getVariant(tag)}>
-          {abilityFieldTitle(charKey, skill, tag)}
+          {abilityTagDisplay(charKey, tag, skill) ?? tag.name ?? tag.q ?? ''}
         </ColorText>
       ),
       fieldRef: tag,
@@ -74,7 +69,10 @@ export function groupFieldsByTag(
     if (charKey && resolvedSkill) {
       return (
         <ColorText color={getVariant(tag)}>
-          {abilityFieldTitle(charKey, resolvedSkill, tag)}
+          {abilityBundleTitle(charKey, tag, resolvedSkill) ??
+            tag.name ??
+            tag.q ??
+            ''}
         </ColorText>
       )
     }
@@ -101,30 +99,6 @@ export function groupFieldsByTag(
   }
 
   return fields
-}
-
-export function groupFormulas(
-  reads: Read<Tag>[],
-  sheet?: Sheet,
-  charKey?: CharacterKey
-): Field[] {
-  return groupFieldsByTag(
-    reads.map((r) => r.tag),
-    { sheet, charKey }
-  )
-}
-
-/** Skill sheet / mechanics fields from formula meta (e.g. bundled Miyabi). */
-export function groupFormulaMetaToFields(
-  formulas: IFormulaData<Tag>[],
-  charKey: CharacterKey,
-  skill: SkillKey
-): Field[] {
-  const tags = formulas.map((f) => ({
-    ...f.tag,
-    sheet: (f.tag.sheet ?? f.sheet ?? charKey) as Sheet,
-  }))
-  return groupFieldsByTag(tags, { sheet: charKey, charKey, skill })
 }
 
 /** Resolve bundled ability dim for an opt-target field row. */
