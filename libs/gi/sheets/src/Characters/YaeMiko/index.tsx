@@ -514,10 +514,12 @@ const sheet: TalentSheet = {
     ct.fieldsTem('passive1', {
       fields: [
         {
-          node: infoMut(dmgFormulas.passive1.dmg, { name: st('dmg') }),
+          node: infoMut(dmgFormulas.passive1.dmg, { name: ct.ch('a1Dmg') }),
         },
         {
-          node: infoMut(dmgFormulas.passive1.stellarDmg, { name: st('dmg') }),
+          node: infoMut(dmgFormulas.passive1.stellarDmg, {
+            name: ct.ch('a1StellarDmg'),
+          }),
         },
       ],
     }),
@@ -565,7 +567,9 @@ const sheet: TalentSheet = {
           }),
         },
         {
-          node: infoMut(dmgFormulas.lockedPassive.dmg, { name: st('dmg') }),
+          node: infoMut(dmgFormulas.lockedPassive.dmg, {
+            name: ct.ch('lockStellarDmg'),
+          }),
         },
       ],
     }),

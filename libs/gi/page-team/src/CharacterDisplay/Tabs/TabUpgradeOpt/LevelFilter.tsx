@@ -1,8 +1,7 @@
-import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
+import { CardThemed, InfoTooltip, SqBadge } from '@genshin-optimizer/common/ui'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { ArtifactLevelSlider } from '@genshin-optimizer/gi/ui'
-import InfoIcon from '@mui/icons-material/Info'
-import { CardContent, Divider, Tooltip, Typography } from '@mui/material'
+import { CardContent, Divider, Typography } from '@mui/material'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -28,9 +27,9 @@ export const LevelFilter = memo(function LevelFilter({
           {t('upOptLevelFilter')}
         </Typography>
         <SqBadge color="info">{levelTotal}</SqBadge>
-        <Tooltip title={t('upOptLevelFilterTooltip')}>
-          <InfoIcon />
-        </Tooltip>
+        <InfoTooltip
+          title={<Typography>{t('upOptLevelFilterTooltip')}</Typography>}
+        />
       </CardContent>
       <Divider />
       <ArtifactLevelSlider

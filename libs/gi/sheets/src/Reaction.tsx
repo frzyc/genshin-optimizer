@@ -4,12 +4,15 @@ import { Translate } from '@genshin-optimizer/gi/i18n'
 import {
   compareEq,
   equal,
+  greaterEq,
   inferInfoMut,
   input,
   lookup,
   mergeData,
   naught,
   percent,
+  sum,
+  tally,
   unequal,
 } from '@genshin-optimizer/gi/wr'
 import { Box } from '@mui/material'
@@ -34,35 +37,47 @@ const [
   polestarStacks_stellarconduct_mult_,
 ] = activeCharBuff(
   input.charKey,
-  lookup(
-    condPolestarStacks,
-    objKeyMap(polestarStacksArr, (stack) =>
-      percent(stellarconductMultipliers[stack])
-    ),
-    naught
+  greaterEq(
+    sum(tally.cryo, tally.electro),
+    1,
+    lookup(
+      condPolestarStacks,
+      objKeyMap(polestarStacksArr, (stack) =>
+        percent(stellarconductMultipliers[stack])
+      ),
+      naught
+    )
   ),
   { path: 'stellarconduct_mult_' }
 )
 const [polestarStacks_cryo_dmg_disp, polestarStacks_cryo_dmg_] = activeCharBuff(
   input.charKey,
-  lookup(
-    condPolestarStacks,
-    objKeyMap(polestarStacksArr, (stack) =>
-      percent(cryo_electro_dmg_arr[stack])
-    ),
-    naught
-  ),
-  { path: 'cryo_dmg_' }
-)
-const [polestarStacks_electro_dmg_disp, polestarStacks_electro_dmg_] =
-  activeCharBuff(
-    input.charKey,
+  greaterEq(
+    sum(tally.cryo, tally.electro),
+    1,
     lookup(
       condPolestarStacks,
       objKeyMap(polestarStacksArr, (stack) =>
         percent(cryo_electro_dmg_arr[stack])
       ),
       naught
+    )
+  ),
+  { path: 'cryo_dmg_' }
+)
+const [polestarStacks_electro_dmg_disp, polestarStacks_electro_dmg_] =
+  activeCharBuff(
+    input.charKey,
+    greaterEq(
+      sum(tally.cryo, tally.electro),
+      1,
+      lookup(
+        condPolestarStacks,
+        objKeyMap(polestarStacksArr, (stack) =>
+          percent(cryo_electro_dmg_arr[stack])
+        ),
+        naught
+      )
     ),
     { path: 'electro_dmg_' }
   )
@@ -72,26 +87,42 @@ const condSuperconduct = condReadNode(condSuperconductPath)
 const condOppInsidePolePath = ['reaction', 'oppInsidePole']
 const condOppInsidePole = condReadNode(condOppInsidePolePath)
 const [superconduct_physical_enemyRes_disp, superconduct_physical_enemyRes_] =
-  activeCharBuff(input.charKey, equal(condSuperconduct, 'on', -0.4), {
-    path: 'physical_enemyRes_',
-  })
-const oppInsidePole_physical_enemyRes_disp = equal(
-  condOppInsidePole,
-  'on',
-  compareEq(
-    condSuperconduct,
-    'on',
-    percent(-0.4, {
+  activeCharBuff(
+    input.charKey,
+    greaterEq(
+      sum(tally.cryo, tally.electro),
+      1,
+      equal(condSuperconduct, 'on', -0.4)
+    ),
+    {
       path: 'physical_enemyRes_',
-      isTeamBuff: true,
-      strikethrough: true,
-    }),
-    percent(-0.4, { path: 'physical_enemyRes_', isTeamBuff: true })
+    }
+  )
+const oppInsidePole_physical_enemyRes_disp = greaterEq(
+  sum(tally.cryo, tally.electro),
+  1,
+  equal(
+    condOppInsidePole,
+    'on',
+    compareEq(
+      condSuperconduct,
+      'on',
+      percent(-0.4, {
+        path: 'physical_enemyRes_',
+        isTeamBuff: true,
+        strikethrough: true,
+      }),
+      percent(-0.4, { path: 'physical_enemyRes_', isTeamBuff: true })
+    )
   )
 )
 const [, oppInsidePole_physical_enemyRes_] = activeCharBuff(
   input.charKey,
-  equal(condOppInsidePole, 'on', unequal(condSuperconduct, 'on', -0.4)),
+  greaterEq(
+    sum(tally.cryo, tally.electro),
+    1,
+    equal(condOppInsidePole, 'on', unequal(condSuperconduct, 'on', -0.4))
+  ),
   { path: 'physical_enemyRes_' }
 )
 
@@ -113,6 +144,7 @@ export const reactionConditionals: DocumentConditional[] = [
     value: condSuperconduct,
     name: st('enemyAffected.superconduct'),
     teamBuff: true,
+    canShow: greaterEq(sum(tally.cryo, tally.electro), 1, 1),
     states: {
       on: {
         fields: [
@@ -145,6 +177,7 @@ export const reactionConditionals: DocumentConditional[] = [
     value: condOppInsidePole,
     name: st('elementalReaction.polestar.oppInside'),
     teamBuff: true,
+    canShow: greaterEq(sum(tally.cryo, tally.electro), 1, 1),
     states: {
       on: {
         fields: [
@@ -172,6 +205,7 @@ export const reactionConditionals: DocumentConditional[] = [
     value: condPolestarStacks,
     name: st('elementalReaction.polestar.cond'),
     teamBuff: true,
+    canShow: greaterEq(sum(tally.cryo, tally.electro), 1, 1),
     states: objKeyMap(polestarStacksArr, (stack) => ({
       name: st('stack', { count: stack }),
       fields: [

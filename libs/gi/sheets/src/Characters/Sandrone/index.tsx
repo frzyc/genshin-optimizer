@@ -428,7 +428,7 @@ const sheet: TalentSheet = {
         },
         {
           node: infoMut(dmgFormulas.burst.rayStellarDmg, {
-            name: ct.chg(`burst.skillParams.1`),
+            name: ct.chg(`burst.skillParams.2`),
           }),
         },
         {
@@ -567,7 +567,9 @@ const sheet: TalentSheet = {
     ct.fieldsTem('constellation4', {
       fields: [
         {
-          node: infoMut(dmgFormulas.constellation4.dmg, { name: st('dmg') }),
+          node: infoMut(dmgFormulas.constellation4.dmg, {
+            name: ct.ch('c4StellarDmg'),
+          }),
         },
         {
           text: stg('cd'),
@@ -584,10 +586,14 @@ const sheet: TalentSheet = {
     ct.fieldsTem('constellation6', {
       fields: [
         {
-          node: infoMut(dmgFormulas.constellation6.dmg, { name: st('dmg') }),
+          node: infoMut(dmgFormulas.constellation6.dmg, {
+            name: ct.ch('c6Dmg'),
+          }),
         },
         {
-          node: infoMut(dmgFormulas.constellation6.dmg2, { name: st('dmg') }),
+          node: infoMut(dmgFormulas.constellation6.dmg2, {
+            name: ct.ch('c6StellarDmg'),
+          }),
         },
       ],
     }),
