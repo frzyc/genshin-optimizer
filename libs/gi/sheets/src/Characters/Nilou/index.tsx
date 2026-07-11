@@ -30,7 +30,7 @@ const ct = charTemplates(key)
 let a = 0,
   s = 0,
   b = 0
-export const dm = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++], // 1

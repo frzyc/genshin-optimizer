@@ -1,13 +1,15 @@
 {
   "name": "genshin-optimizer",
-  "version": "10.34.0",
+  "version": "10.37.1",
   "license": "MIT",
   "private": true,
   "scripts": {
+    "preinstall": "node tools/scripts/check-node.mjs",
     "frontend": "nx serve frontend",
     "somnia": "nx serve somnia",
     "build-all": "nx run-many -t build",
-    "mini-ci": "biome format --write --changed && nx affected -t typecheck && nx affected -t eslint:lint --max-warnings=0 && CI=true nx affected -t test",
+    "biome:local": "biome check --write --changed --no-errors-on-unmatched && biome check --write --staged --no-errors-on-unmatched",
+    "mini-ci": "yarn biome:local && nx affected -t typecheck && nx affected -t eslint:lint --max-warnings=0 && CI=true nx affected -t test",
     "reload-dm": "git submodule update --init",
     "update-dm": "git submodule update --remote",
     "gen-file": "nx run-many -t gen-file",

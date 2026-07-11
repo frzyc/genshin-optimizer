@@ -6,19 +6,19 @@
   "passiveName": "Kutsal Kiraz Ağacının Kagura Dansı",
   "passiveDescription": {
     "0": {
-      "0": "Bir Element Becerisi kullanıldığında Kagura Dansı etkisi devreye girer. 16 saniyeliğine bu silahı kullanan karakterin Element Beceri Hasarı <cryo>%12</cryo> artar. En fazla 3 kademe birikebilir. Karakter 3 kademe biriktirdiğinde tüm elementler için <cryo>%12</cryo> Element Hasarı Bonusu kazanır."
+      "0": "Element Becerisi kullanmak, Kagura Dansı etkisi sağlayarak kuşanan karakterin Element Becerisi Hasarını <cryo>%12</cryo> ve Yıldız İletimi Hasarını <cryo>%12</cryo> artırır. Bu etki 24 saniye sürer. 3 kademeye kadar birikebilir. Bu karakter 3 kademeye sahip olduğunda <cryo>%12</cryo> Tüm Element Hasarları Bonusu kazanır."
     },
     "1": {
-      "0": "Bir Element Becerisi kullanıldığında Kagura Dansı etkisi devreye girer. 16 saniyeliğine bu silahı kullanan karakterin Element Beceri Hasarı <cryo>%15</cryo> artar. En fazla 3 kademe birikebilir. Karakter 3 kademe biriktirdiğinde tüm elementler için <cryo>%15</cryo> Element Hasarı Bonusu kazanır."
+      "0": "Element Becerisi kullanmak, Kagura Dansı etkisi sağlayarak kuşanan karakterin Element Becerisi Hasarını <cryo>%15</cryo> ve Yıldız İletimi Hasarını <cryo>%15</cryo> artırır. Bu etki 24 saniye sürer. 3 kademeye kadar birikebilir. Bu karakter 3 kademeye sahip olduğunda <cryo>%15</cryo> Tüm Element Hasarları Bonusu kazanır."
     },
     "2": {
-      "0": "Bir Element Becerisi kullanıldığında Kagura Dansı etkisi devreye girer. 16 saniyeliğine bu silahı kullanan karakterin Element Beceri Hasarı <cryo>%18</cryo> artar. En fazla 3 kademe birikebilir. Karakter 3 kademe biriktirdiğinde tüm elementler için <cryo>%18</cryo> Element Hasarı Bonusu kazanır."
+      "0": "Element Becerisi kullanmak, Kagura Dansı etkisi sağlayarak kuşanan karakterin Element Becerisi Hasarını <cryo>%18</cryo> ve Yıldız İletimi Hasarını <cryo>%18</cryo> artırır. Bu etki 24 saniye sürer. 3 kademeye kadar birikebilir. Bu karakter 3 kademeye sahip olduğunda <cryo>%18</cryo> Tüm Element Hasarları Bonusu kazanır."
     },
     "3": {
-      "0": "Bir Element Becerisi kullanıldığında Kagura Dansı etkisi devreye girer. 16 saniyeliğine bu silahı kullanan karakterin Element Beceri Hasarı <cryo>%21</cryo> artar. En fazla 3 kademe birikebilir. Karakter 3 kademe biriktirdiğinde tüm elementler için <cryo>%21</cryo> Element Hasarı Bonusu kazanır."
+      "0": "Element Becerisi kullanmak, Kagura Dansı etkisi sağlayarak kuşanan karakterin Element Becerisi Hasarını <cryo>%21</cryo> ve Yıldız İletimi Hasarını <cryo>%21</cryo> artırır. Bu etki 24 saniye sürer. 3 kademeye kadar birikebilir. Bu karakter 3 kademeye sahip olduğunda <cryo>%21</cryo> Tüm Element Hasarları Bonusu kazanır."
     },
     "4": {
-      "0": "Bir Element Becerisi kullanıldığında Kagura Dansı etkisi devreye girer. 16 saniyeliğine bu silahı kullanan karakterin Element Beceri Hasarı <cryo>%24</cryo> artar. En fazla 3 kademe birikebilir. Karakter 3 kademe biriktirdiğinde tüm elementler için <cryo>%24</cryo> Element Hasarı Bonusu kazanır."
+      "0": "Element Becerisi kullanmak, Kagura Dansı etkisi sağlayarak kuşanan karakterin Element Becerisi Hasarını <cryo>%24</cryo> ve Yıldız İletimi Hasarını <cryo>%24</cryo> artırır. Bu etki 24 saniye sürer. 3 kademeye kadar birikebilir. Bu karakter 3 kademeye sahip olduğunda <cryo>%24</cryo> Tüm Element Hasarları Bonusu kazanır."
     }
   }
 }

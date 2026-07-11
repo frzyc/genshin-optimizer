@@ -120,6 +120,7 @@ const stats: Record<Stat, Desc> = {
   addl_disorder_: agg,
   anom_mv_mult_: agg,
   veilVulnerabilityCap_: agg,
+  direct_dmg_: agg,
 } as const
 const finalStats = objFilterKeys(stats, [
   ...flatAndPercentStats,
@@ -142,6 +143,7 @@ export const ownTag = {
   combat: stats,
   final: finalStats,
   char: {
+    key: iso,
     lvl: iso,
     attribute: iso,
     specialty: iso,
@@ -176,9 +178,16 @@ export const ownTag = {
     sheer_mult_: fixed,
     anomaly_crit_mult_: fixed,
     anom_base_mult_: fixed,
+    direct_dmg_mult_: fixed,
   },
   formula: {
-    base: agg,
+    standardDmgBase: agg,
+    sheerDmgBase: agg,
+    anomalyDmgBase: agg,
+    shieldBase: agg,
+    dazeBuildupBase: agg,
+    anomBuildupBase: agg,
+    healBase: agg,
     listing: aggStr,
     standardDmg: prepProd,
     sheerDmg: prepProd,

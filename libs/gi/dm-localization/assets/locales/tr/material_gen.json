@@ -254,6 +254,12 @@
   "JointExhibitionPopularity": {
     "name": "Ortak Sergi Popülerliği"
   },
+  "PalsSynergy": {
+    "name": "Dost Sinerjisi"
+  },
+  "VenuePopularity": {
+    "name": "Mekan Popülerliği"
+  },
   "Primogem": {
     "name": "Köken Taşı"
   },
@@ -1148,8 +1154,20 @@
   "Varka": {
     "name": "Varka"
   },
+  "Lohen": {
+    "name": "Lohen"
+  },
   "Linnea": {
     "name": "Linnea"
+  },
+  "Nicole": {
+    "name": "Nicole"
+  },
+  "Prune": {
+    "name": "Prune"
+  },
+  "Sandrone": {
+    "name": "Sandrone"
   },
   "KachinasStellaFortuna": {
     "name": "Kachina'nın Yaşam Yıldızı"
@@ -1232,8 +1250,20 @@
   "VarkasStellaFortuna": {
     "name": "Varka'nın Yaşam Yıldızı"
   },
+  "LohensStellaFortuna": {
+    "name": "Lohen'in Yaşam Yıldızı"
+  },
   "LinneasStellaFortuna": {
     "name": "Linnea'nın Yaşam Yıldızı"
+  },
+  "NicolesStellaFortuna": {
+    "name": "Nicole'un Yaşam Yıldızı"
+  },
+  "PrunesStellaFortuna": {
+    "name": "Prune'un Yaşam Yıldızı"
+  },
+  "SandronesStellaFortuna": {
+    "name": "Sandrone'nin Yaşam Yıldızı"
   },
   "Apple": {
     "name": "Elma"
@@ -1822,6 +1852,15 @@
   },
   "FischlDictionaryDieNeuauflageDerPrinzessin": {
     "name": "Fischl Sözlüğü: Yeni Prinzessin Baskısı"
+  },
+  "TheOriginsOfTheExperiment": {
+    "name": "Deneyin Kökeni"
+  },
+  "NotesOnTheExperimentalSubjects": {
+    "name": "Denekler Hakkında Notlar"
+  },
+  "ScribbledNotes": {
+    "name": "Karalanmış Notlar"
   },
   "WyattsRedKey": {
     "name": "Wyatt'ın Kırmızı Anahtarı"
@@ -3698,6 +3737,9 @@
   "PineAmber": {
     "name": "Çam Reçinesi"
   },
+  "TeardropOfTheMoon": {
+    "name": "Ayın Gözyaşı"
+  },
   "WindrestFlower": {
     "name": "Rüzgartepe Çiçeği"
   },
@@ -5470,6 +5512,9 @@
   },
   "BorderlandShrineOfDepthsKey": {
     "name": "Uç Diyar Derinlikler Tapınağı Anahtarı"
+  },
+  "FrostMoonShrineOfDepthsKey": {
+    "name": "Donuk Ay Derinlikler Tapınağı Anahtarı"
   },
   "MnemonicCluster": {
     "name": "Bellek Kümesi"
@@ -8318,6 +8363,60 @@
   "SugarSculptureLinnea": {
     "name": "Şeker Heykelcik: Linnea"
   },
+  "SuspiciousStuffedTofuWithMincedMeat": {
+    "name": "Kıymalı Tofu Dolması (Tuhaf)"
+  },
+  "StuffedTofuWithMincedMeat": {
+    "name": "Kıymalı Tofu Dolması"
+  },
+  "DeliciousStuffedTofuWithMincedMeat": {
+    "name": "Kıymalı Tofu Dolması (Lezzetli)"
+  },
+  "SuspiciousMintBubblegum": {
+    "name": "Balonlu Nane Sakızı (Tuhaf)"
+  },
+  "MintBubblegum": {
+    "name": "Balonlu Nane Sakızı"
+  },
+  "DeliciousMintBubblegum": {
+    "name": "Balonlu Nane Sakızı (Lezzetli)"
+  },
+  "SpinningSpecial": {
+    "name": "Dönen Spesiyal"
+  },
+  "GildedChest": {
+    "name": "Yaldızlı Sandık"
+  },
+  "BoredomBustingBubblegum": {
+    "name": "Sıkıntı Geçiren Balonlu Sakız"
+  },
+  "TeaPartyPolyphony": {
+    "name": "Çay Saati Polifonisi"
+  },
+  "SuspiciousBirchSteamedPorkRibs": {
+    "name": "Huş Buharında Kaburga (Tuhaf)"
+  },
+  "BirchSteamedPorkRibs": {
+    "name": "Huş Buharında Kaburga"
+  },
+  "DeliciousBirchSteamedPorkRibs": {
+    "name": "Huş Buharında Kaburga (Lezzetli)"
+  },
+  "SuspiciousMeatFilledRyeBun": {
+    "name": "Balıklı Çavdar Çöreği (Tuhaf)"
+  },
+  "MeatFilledRyeBun": {
+    "name": "Balıklı Çavdar Çöreği"
+  },
+  "DeliciousMeatFilledRyeBun": {
+    "name": "Balıklı Çavdar Çöreği (Lezzetli)"
+  },
+  "TeaPartyPreludeHerbalTea": {
+    "name": "Çay Saati Girizgahı: Bitki Çayı"
+  },
+  "TeaPartyPreludeArtfulLatte": {
+    "name": "Çay Saati Girizgahı: Süslemeli Latte"
+  },
   "RecipeItem": {
     "name": "Yemek Malzemesi"
   },
@@ -9119,6 +9218,18 @@
   "RecipeMillhavensMorningPlate": {
     "name": "Tarif: Değirmenköy Kahvaltı Tabağı"
   },
+  "RecipeStuffedTofuWithMincedMeat": {
+    "name": "Tarif: Kıymalı Tofu Dolması"
+  },
+  "RecipeMintBubblegum": {
+    "name": "Tarif: Balonlu Nane Sakızı"
+  },
+  "RecipeBirchSteamedPorkRibs": {
+    "name": "Tarif: Huş Buharında Kaburga"
+  },
+  "RecipeMeatFilledRyeBun": {
+    "name": "Tarif: Balıklı Çavdar Çöreği"
+  },
   "CraftedItems": {
     "name": "Üretilen Malzemeler"
   },
@@ -9686,6 +9797,15 @@
   "JeweledFlamingHilt": {
     "name": "Cevherli Alevli Kabza"
   },
+  "FracturedLunarIron": {
+    "name": "Kırık Ay Demiri"
+  },
+  "DepletedLunarIron": {
+    "name": "Sönmüş Ay Demiri"
+  },
+  "UnblemishedLunarIron": {
+    "name": "Kusursuz Ay Demiri"
+  },
   "HurricaneSeed": {
     "name": "Kasırga Tohumu"
   },
@@ -9943,6 +10063,15 @@
   },
   "PlumeOfTheFallenWatcher": {
     "name": "Düşmüş Gözcünün Tüyü"
+  },
+  "CounterfeitResin": {
+    "name": "Sahte Reçine"
+  },
+  "TwistedWitheredBranch": {
+    "name": "Kurumuş Çarpık Dal"
+  },
+  "ProfanedSprout": {
+    "name": "Kirlenmiş Filiz"
   },
   "TileOfDecarabiansTower": {
     "name": "Decarabian'ın Kırık Çinisi"
@@ -13172,9 +13301,6 @@
   "EasybreezeHolidayResortMap": {
     "name": "Sefa Yeli Tatil Köyü Haritası"
   },
-  "ScribbledNotes": {
-    "name": "Karalanmış Notlar"
-  },
   "BeautifullyWrittenNotes": {
     "name": "Güzel Yazılmış Notlar"
   },
@@ -13673,6 +13799,9 @@
   "AncientHandwriting": {
     "name": "Kadim El Yazısı"
   },
+  "SecretSourceAncientMoonsFount": {
+    "name": "Gizli Kaynak: Kadim Ay Pınarı"
+  },
   "ALetterCarriedByTheWind": {
     "name": "Rüzgarın Getirdiği Bir Mektup"
   },
@@ -13681,6 +13810,9 @@
   },
   "VarkasSecretStashOfCash": {
     "name": "Varka'nın Gizli Para Zulası"
+  },
+  "PaimonsNotes": {
+    "name": "Paimon'un Notları"
   },
   "OnFungiCommunitiesDraftManuscript": {
     "name": "\"Mantar Toplulukları Üzerine\" Taslak Metni"
@@ -13733,6 +13865,9 @@
   "LohensWorkReport": {
     "name": "Lohen'in Çalışma Raporu"
   },
+  "LohensFriendshipFee": {
+    "name": "Lohen'in \"Arkadaşlık Ücreti\""
+  },
   "ArcadiaTheEntombedCapital": {
     "name": "Arkadya, Gömülü Başkent"
   },
@@ -13745,23 +13880,68 @@
   "VerasMelancholyFinalVolumeVersionI": {
     "name": "Vera'nın Melankolisi: Son Cilt (I. Versiyon)"
   },
-  "TheDreamOfRhonabwy": {
-    "name": "Rhonabwy'nin Rüyası"
+  "TheDreamOfRhonabouillet": {
+    "name": "Rhonabouillet'nin Rüyası"
   },
   "TheSongOfAyKhanoum": {
     "name": "Ay-Khanoum'un Şarkısı"
   },
-  "TheCanonOfLoveDivineInspirationAndVirtue": {
-    "name": "Sevgi, İlahi İlham ve Erdem Kanonu"
+  "RevelationsOfDivineLove": {
+    "name": "İlahi Aşkın Tezahürü"
   },
   "Note": {
     "name": "Not"
+  },
+  "PhotoWithTheLittleWitchesAndTheirImaginaryFriends": {
+    "name": "Küçük Cadıların ve Hayali Arkadaşlarının Fotoğrafı"
+  },
+  "AnomalousTreeMarrowI": {
+    "name": "Anormal Ağaç İliği I"
+  },
+  "AnomalousTreeMarrowII": {
+    "name": "Anormal Ağaç İliği II"
+  },
+  "AnomalousTreeMarrowIII": {
+    "name": "Anormal Ağaç İliği III"
+  },
+  "AnomalousTreeMarrow": {
+    "name": "Anormal Ağaç İliği"
+  },
+  "DangoMilkInfusedWithMagic": {
+    "name": "\"Büyüyle Harmanlanmış\" Sütlü Dango"
+  },
+  "PrimalConstructComponent": {
+    "name": "Kadim Yapı Bileşeni"
+  },
+  "WitnessOfTheMoon": {
+    "name": "Ayın Tanığı"
+  },
+  "LostFlowerOfAncientTimes": {
+    "name": "Kadim Zamanlardan Kalan Kayıp Çiçek"
+  },
+  "SandronesTeaPartyInvitationLetter": {
+    "name": "Sandrone'nin Çay Saati Davet Mektubu"
   },
   "AncientMondstadtRoyalSeal": {
     "name": "Kadim Mondstadt Kraliyet Mührü"
   },
   "SegmentDomainControlModuleZeroParticle": {
     "name": "Kesitler Alemi Kontrol Modülü: Sıfır Parçacığı"
+  },
+  "FrostMoonSeal": {
+    "name": "Donuk Ay Mührü"
+  },
+  "FamilyPortraitByMamere": {
+    "name": "Mamere'in \"Aile Portresi\""
+  },
+  "AlainGuillotinsEpitaph": {
+    "name": "Alain Guillotin'in Mezar Taşı"
+  },
+  "MoongazersEngravingI": {
+    "name": "Ay Gözcüsünün Oyması (I)"
+  },
+  "MoongazersEngravingII": {
+    "name": "Ay Gözcüsünün Oyması (II)"
   },
   "TearsAmongTheStars": {
     "name": "Yıldızlar Arasındaki Gözyaşları"
@@ -14713,6 +14893,24 @@
   },
   "RadiantSpincrystal182": {
     "name": "Parlak Burgu Kristal 182"
+  },
+  "RadiantSpincrystal183": {
+    "name": "Parlak Burgu Kristal 183"
+  },
+  "RadiantSpincrystal184": {
+    "name": "Parlak Burgu Kristal 184"
+  },
+  "RadiantSpincrystal185": {
+    "name": "Parlak Burgu Kristal 185"
+  },
+  "RadiantSpincrystal186": {
+    "name": "Parlak Burgu Kristal 186"
+  },
+  "RadiantSpincrystal187": {
+    "name": "Parlak Burgu Kristal 187"
+  },
+  "RadiantSpincrystal188": {
+    "name": "Parlak Burgu Kristal 188"
   },
   "LanternFiber": {
     "name": "Fener Lifi"
@@ -15797,6 +15995,27 @@
   "TravelNotesHomecoming": {
     "name": "Gezi Notları: Eve Dönüş"
   },
+  "NicoleHeavenlyStairway": {
+    "name": "Nicole: Semavi Merdiven"
+  },
+  "LohenBenevolence": {
+    "name": "Lohen: İyilikseverlik"
+  },
+  "PruneJudgment": {
+    "name": "Prune: Yargı"
+  },
+  "TravelNotesGiftOfSplendor": {
+    "name": "Gezi Notları: Görkemli Armağan"
+  },
+  "SandroneTeaBreak": {
+    "name": "Sandrone: Çay Molası"
+  },
+  "NodKraiMoonbright": {
+    "name": "Nod-Krai: Parlak Ay"
+  },
+  "TravelNotesSunnySummer": {
+    "name": "Gezi Notları: Yaz Esintisi"
+  },
   "EchoDandelionKnight": {
     "name": "Yankı: Karahindiba Şövalyesi"
   },
@@ -15853,6 +16072,12 @@
   },
   "EchoPillarOfFortitude": {
     "name": "Yankı: Metanet Abidesi"
+  },
+  "EchoEonsAdrift": {
+    "name": "Yankı: Sonsuzluğa Sürüklenme"
+  },
+  "EchoHelmOfTheRadiantRose": {
+    "name": "Yankı: Parlak Gülün Önderi"
   },
   "FaintGlow": {
     "name": "Soluk Işıltı"
@@ -16201,6 +16426,12 @@
   },
   "LinneasNaturalistArchive": {
     "name": "Linnea'nın Doğa Bilimleri Arşivi"
+  },
+  "SandronesPortableTeaTable": {
+    "name": "Sandrone'nin Portatif Çay Masası"
+  },
+  "WitchsRevelationCase": {
+    "name": "Cadının Kehanet Kutusu"
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Talimatlar: Rüzgar Özü Rezonans Taşı"
@@ -16787,6 +17018,51 @@
   "MeditativeReading": {
     "name": "Meditatif Okuma"
   },
+  "PatrolBreak": {
+    "name": "Devriye Arası"
+  },
+  "MasterpieceComplete": {
+    "name": "Şaheser Tamamlandı"
+  },
+  "ReadyToSprint": {
+    "name": "Depara Hazır"
+  },
+  "InterludeRest": {
+    "name": "Kulis Molası"
+  },
+  "HarnessTheBlaze": {
+    "name": "Alevin Dizginleri"
+  },
+  "PerfectRating": {
+    "name": "Mükemmel Derece"
+  },
+  "RhythmMoment": {
+    "name": "Ritim Anı"
+  },
+  "ShareWithYou": {
+    "name": "Seninle Paylaşalım"
+  },
+  "HealingTreats": {
+    "name": "İyileştirici Atıştırmalıklar"
+  },
+  "RelaxedReadiness": {
+    "name": "Rahat Hazırlık"
+  },
+  "GracefulDance": {
+    "name": "Zarif Dans"
+  },
+  "CommandingStance": {
+    "name": "Emredici Duruş"
+  },
+  "GentleElegance": {
+    "name": "Nazik Zarafet"
+  },
+  "PoisedToStrike": {
+    "name": "Saldırıya Hazır"
+  },
+  "MajesticBearing": {
+    "name": "Görkemli Duruş"
+  },
   "FantasticalMarvel": {
     "name": "Olağanüstü Mucize"
   },
@@ -16852,6 +17128,15 @@
   },
   "MysteriousWhiteStar": {
     "name": "Gizemli Beyaz Yıldız"
+  },
+  "EclipsingFlame": {
+    "name": "Alev Gölgesi"
+  },
+  "DemonSlayingGale": {
+    "name": "İblis Kesen Fırtına"
+  },
+  "DovefeatherMoondew": {
+    "name": "Güvercin Tüyü Ay Çiyi"
   },
   "VigorousYapping": {
     "name": "Heyecanlı Sohbet"
@@ -16963,6 +17248,15 @@
   },
   "ConsecratedFangedBeast": {
     "name": "Kutsanmış Sivri Dişli Canavar"
+  },
+  "ExperimentalFieldGenerator": {
+    "name": "Deneysel Alan Oluşturucu"
+  },
+  "WaywardHermeticSpiritspeaker": {
+    "name": "Asi Hermetik Ruh Sözcüsü"
+  },
+  "BlackSerpentKnightWindcutter": {
+    "name": "Kara Yılan Şövalyesi: Rüzgarkesen"
   },
   "UndividedHeart": {
     "name": "Tek Yürek"
@@ -17372,6 +17666,24 @@
   "WitheredReedsEclipseTheSun": {
     "name": "Solmuş Sazlar Güneşi Kapatır"
   },
+  "PartTheVeilOfSnow": {
+    "name": "Kar Perdesini Arala"
+  },
+  "OLipsWeaveMeSongsAndPsalms": {
+    "name": "\"Şarkıdan ve İlahiden Başkasını Okumasın Bu Dudaklar\""
+  },
+  "GravityField": {
+    "name": "Yer Çekimi Alanı"
+  },
+  "VictoryFlowsFromTheTurningOfTides": {
+    "name": "Rüzgar Tersine Estiğinde Zafer Gelir"
+  },
+  "FlowOfForms": {
+    "name": "Biçimlerin Akışı"
+  },
+  "OnceTheLoneWindThatKeptTheDarkCalamityAtBay": {
+    "name": "\"Bir Zamanlar Karanlık Felaketi Uzak Tutan Yalnız Rüzgar...\""
+  },
   "MagicGuide": {
     "name": "Büyü Rehberi"
   },
@@ -17717,6 +18029,9 @@
   "Blubberbeast": {
     "name": "Tombalak"
   },
+  "GladiatorsFinale": {
+    "name": "Gladyatörün Son Yemini"
+  },
   "LiyueHarborWharf": {
     "name": "Liyue Limanı Rıhtımı"
   },
@@ -17938,6 +18253,24 @@
   },
   "ElementalTransfigurationLavaBlessing": {
     "name": "Element Başkalaşımı: Lav Lütfu"
+  },
+  "Netochka": {
+    "name": "Netochka"
+  },
+  "ElementalTransfigurationRimegrassBlessing": {
+    "name": "Element Başkalaşımı: Buz Otu Lütfu"
+  },
+  "ElementalTransfigurationStormgaleBlessing": {
+    "name": "Element Başkalaşımı: Şiddetli Fırtına Lütfu"
+  },
+  "NightmareOmen": {
+    "name": "Kabus Alameti"
+  },
+  "ElementalTransfigurationAquabreezeBlessing": {
+    "name": "Element Başkalaşımı: Su Esintisi Lütfu"
+  },
+  "ElementalTransfigurationThunderbloomBlessing": {
+    "name": "Element Başkalaşımı: Yıldırım Çiçeği Lütfu"
   },
   "ElementalResonanceWovenIce": {
     "name": "Element Rezonansı: Örülü Buzlar"
@@ -18194,6 +18527,15 @@
   "CleaningTime": {
     "name": "Temizlik Vakti"
   },
+  "TheOtherSideOfTheFrostmoon": {
+    "name": "Donuk Ayın Öteki Tarafı"
+  },
+  "LilFungisFunTasticFiesta": {
+    "name": "Küçük Mantarların Eğlenceli Şöleni"
+  },
+  "ThePowerOfResearch": {
+    "name": "Araştırmanın Gücü"
+  },
   "Origin": {
     "name": "Köken"
   },
@@ -18371,6 +18713,12 @@
   "RainlitBambooReverie": {
     "name": "Yağmurlu Bambu Rüyası"
   },
+  "WhispersOfStarsAndSmoke": {
+    "name": "Yıldızların ve Dumanın Fısıltıları"
+  },
+  "HurlockVariations": {
+    "name": "Hurlock Çeşitlemeleri"
+  },
   "RadiantPhantasm": {
     "name": "Parıltılı Düşler"
   },
@@ -18409,6 +18757,9 @@
   },
   "PhantasmalGiftStarOmen": {
     "name": "Hayali Hediye: Yıldız Alameti"
+  },
+  "SuperAwesomeMagicKey": {
+    "name": "Süper Müthiş Büyülü Anahtar"
   },
   "UnbreakableDurandarte": {
     "name": "Sarsılmaz: Durandarte"
@@ -18719,6 +19070,9 @@
   "PreBattleRespite": {
     "name": "Savaş Öncesi Mola"
   },
+  "ATeaPartyAtLeisure": {
+    "name": "Keyifli Bir Çay Saati"
+  },
   "WildernessOfTheFarNorth": {
     "name": "Uzak Kuzeyin Yabanı"
   },
@@ -19007,6 +19361,12 @@
   "CityStreetLampLowLanternlight": {
     "name": "Şehir Sokak Lambası: \"Alçak Fener Işığı\""
   },
+  "MovableSmallSpotlight": {
+    "name": "Taşınabilir Küçük Spot Işığı"
+  },
+  "StandingStreetLampBeaconInTheMistyNight": {
+    "name": "Sokak Lambası: Sisli Gecedeki Fener"
+  },
   "EfflorescentIllumination": {
     "name": "Gelişen Aydınlatma"
   },
@@ -19286,6 +19646,9 @@
   "FrostMoonRoundTableASoftBlueSky": {
     "name": "Donuk Ay Yuvarlak Masası: Yumuşak Mavi Bir Gökyüzü"
   },
+  "TeaPartyDiningTableThePerfectGathering": {
+    "name": "Çay Saati Yemek Masası: Mükemmel Buluşma"
+  },
   "BreezeBlessedBed": {
     "name": "Zarif Esinti Yatağı"
   },
@@ -19453,6 +19816,9 @@
   },
   "PedunculateOakWoodMoonrestBackedChair": {
     "name": "Saplı Meşe \"Ay Dinlencesi\" Arkalıklı Sandalye"
+  },
+  "TeaPartyChairCrimsonAndGold": {
+    "name": "Çay Saati Sandalyesi: Kızıl ve Altın"
   },
   "NorthernStoneHearth": {
     "name": "Taş Şömine"
@@ -19724,6 +20090,9 @@
   "FluffyLittleRug": {
     "name": "Pofuduk Küçük Halı"
   },
+  "TeaPartyCarpetSoftToTheTouch": {
+    "name": "Çay Saati Halısı: Yumuşak Dokunuş"
+  },
   "VibrantPotBornInFlames": {
     "name": "Renkli Saksı: Alevlerden Doğan"
   },
@@ -19961,6 +20330,9 @@
   "FlowerShapedMachineComponent": {
     "name": "Çiçek Şeklinde Makina Parçası"
   },
+  "TeaPartyCartDessertTime": {
+    "name": "Çay Saati Servis Arabası: Tatlı Zamanı"
+  },
   "TeahouseToolMinisculeMissesMakeAMile": {
     "name": "Çayevi Gereçleri: Damlaya Damlaya Göl Olur"
   },
@@ -20002,6 +20374,9 @@
   },
   "FrostMoonSmallTableAromaOfFreshFruit": {
     "name": "Donuk Ay Küçük Masası: Taze Meyve Aroması"
+  },
+  "TeaPartyCupRefreshingFlavor": {
+    "name": "Çay Saati Fincanı: Ferahlatıcı Tat"
   },
   "RealizationsFromTheLandOfWisdom": {
     "name": "\"Bilgelik Diyarı İdrakı\""
@@ -22046,6 +22421,9 @@
   "LittleCover": {
     "name": "Küçük Örtü"
   },
+  "CampBarrierTreatmentArea": {
+    "name": "Kamp Bariyeri: Tedavi Alanı"
+  },
   "BookshelfFreeReading": {
     "name": "Kitaplık: Serbest Okuma"
   },
@@ -22183,6 +22561,9 @@
   },
   "GentleEmbrace": {
     "name": "Nazik Bir Sarılma"
+  },
+  "UnusableLegacy": {
+    "name": "Kullanılamaz Miras"
   },
   "WeatheredBambooFence": {
     "name": "Eski Bambu Çit"
@@ -22601,6 +22982,24 @@
   "BloomingSplendor": {
     "name": "\"Çiçeklenen İhtişam\""
   },
+  "NashaStallDeepRootedTraditions": {
+    "name": "Nasha Tezgahı: Köklü Gelenekler"
+  },
+  "VesselOfThePast": {
+    "name": "Geçmişten Gelen Kasa"
+  },
+  "LargeCargoCrateReliableSupport": {
+    "name": "Büyük Yük Kasası: Güvenilir Destek"
+  },
+  "MediumCargoCrateBasicSupplies": {
+    "name": "Orta Yük Kasası: Temel Malzemeler"
+  },
+  "MediumMetalScrapBarrel": {
+    "name": "Orta Metal Çöp Varili"
+  },
+  "SignallessTower": {
+    "name": "Sinyalsiz Kule"
+  },
   "SirCapyOfTheLongIncisors": {
     "name": "Dişlek Sör Kapibara"
   },
@@ -22630,5 +23029,14 @@
   },
   "AllFangsAndSnarls": {
     "name": "\"Keskin Dişler ve Hırıltılar\""
+  },
+  "MiniatureStonecraft": {
+    "name": "\"İşlenmiş Minyatür Taş\""
+  },
+  "InfiniteRecursionFormula": {
+    "name": "Sonsuz Özyineleme Formülü"
+  },
+  "MoonEnvoyOfSilverRadiance": {
+    "name": "Gümüşi Işıltılı Ay Elçisi"
   }
 }

@@ -22,6 +22,7 @@ if (!atk_arr)
   throw new Error(`data_gen.refinementBonus.atk_ for ${key} was undefined`)
 const normal_dmg_arr = [-1, 0.16, 0.2, 0.24, 0.28, 0.32]
 const charged_dmg_arr = [-1, 0.14, 0.175, 0.21, 0.245, 0.28]
+const stellarconduct_dmg_arr = [-1, 0.14, 0.175, 0.21, 0.245, 0.28]
 const atkSPD_arr = [-1, 0.08, 0.1, 0.12, 0.14, 0.16]
 
 const atk_ = equal(
@@ -52,6 +53,16 @@ const charged_dmg_ = lookup(
   ),
   naught
 )
+const stellarconduct_dmg_ = lookup(
+  condHpChanges,
+  objKeyMap(hpChangesArr, (symbol) =>
+    prod(
+      symbol,
+      subscript(input.weapon.refinement, stellarconduct_dmg_arr, { unit: '%' })
+    )
+  ),
+  naught
+)
 const atkSPD_ = equal(
   condHpChanges,
   '3',
@@ -63,6 +74,7 @@ const data = dataObjForWeaponSheet(key, {
     atk_,
     normal_dmg_,
     charged_dmg_,
+    stellarconduct_dmg_,
     atkSPD_,
   },
 })
@@ -90,6 +102,9 @@ const sheet: IWeaponSheet = {
           },
           {
             node: charged_dmg_,
+          },
+          {
+            node: stellarconduct_dmg_,
           },
           {
             node: atkSPD_,

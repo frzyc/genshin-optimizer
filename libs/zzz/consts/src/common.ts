@@ -79,6 +79,7 @@ export const allAttributeKeys = [
   'ice',
   'physical',
   'ether',
+  'wind',
 ] as const
 export type AttributeKey = (typeof allAttributeKeys)[number]
 
@@ -88,6 +89,7 @@ export const allAttributeDamageKeys = [
   'ice_dmg_',
   'physical_dmg_',
   'ether_dmg_',
+  'wind_dmg_',
 ] as const
 export type AttributeDamageKey = (typeof allAttributeDamageKeys)[number]
 
@@ -152,6 +154,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   dazeRes_: 'Enemy Daze RES',
   dazeRed_: 'Enemy Daze Taken Reduction',
   dmgInc_: 'Enemy DMG Taken Increase',
+  direct_dmg_: 'Direct DMG Bonus',
 
   initial_hp: 'Initial HP',
   initial_def: 'Initial DEF',
@@ -193,6 +196,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   buff_mult_: 'Buff Multiplier',
   anom_base_mult_: 'Anomaly Base DMG Multiplier',
   veilVulnerabilityCap_: 'Veil Vulnerability',
+  direct_dmg_mult_: 'Direct DMG Multiplier',
 }
 
 export const elementalData: Record<AttributeKey, string> = {
@@ -201,6 +205,7 @@ export const elementalData: Record<AttributeKey, string> = {
   ice: 'Ice',
   physical: 'Physical',
   ether: 'Ether',
+  wind: 'Wind',
 } as const
 
 Object.entries(elementalData).forEach(([e, name]) => {

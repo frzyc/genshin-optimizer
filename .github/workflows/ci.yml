@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
         with:
-          node-version: 24
+          node-version-file: '.nvmrc'
           cache: 'yarn'
       - name: Yarn Install
         run: |
@@ -35,19 +35,20 @@ jobs:
       - name: Get Cache Key
         id: get-cache-key
         run: |
+          echo "baseKey=$(cat .gitmodules | sha256sum | cut -d " " -f 1)" >> $GITHUB_OUTPUT
           echo "key=$(git ls-tree -r HEAD | grep '^160000' | sha256sum | cut -d " " -f 1)" >> $GITHUB_OUTPUT
       - uses: actions/cache/restore@v5
         with:
           path: .git/modules
-          key: submodule-${{ steps.get-cache-key.outputs.key }}
+          key: submodule-${{steps.get-cache-key.outputs.baseKey}}-${{ steps.get-cache-key.outputs.key }}
           restore-keys: |
-            submodule-
+            submodule-${{steps.get-cache-key.outputs.baseKey}}
       - uses: actions/checkout@v6
         with:
           submodules: true
       - uses: actions/setup-node@v6
         with:
-          node-version: 24
+          node-version-file: '.nvmrc'
           cache: 'yarn'
       - name: Yarn Install
         run: |
@@ -69,7 +70,7 @@ jobs:
           git fetch --no-tags --no-recurse-submodules --filter=blob:none origin +master:refs/heads/master
       - uses: actions/setup-node@v6
         with:
-          node-version: 24
+          node-version-file: '.nvmrc'
           cache: 'yarn'
       - name: Yarn Install
         run: |
@@ -89,7 +90,7 @@ jobs:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
         with:
-          node-version: 24
+          node-version-file: '.nvmrc'
           cache: 'yarn'
       - name: Yarn Install
         run: |
@@ -105,13 +106,14 @@ jobs:
       - name: Get Cache Key
         id: get-cache-key
         run: |
+          echo "baseKey=$(cat .gitmodules | sha256sum | cut -d " " -f 1)" >> $GITHUB_OUTPUT
           echo "key=$(git ls-tree -r HEAD | grep '^160000' | sha256sum | cut -d " " -f 1)" >> $GITHUB_OUTPUT
       - uses: actions/cache@v5
         with:
           path: .git/modules
-          key: submodule-${{ steps.get-cache-key.outputs.key }}
+          key: submodule-${{steps.get-cache-key.outputs.baseKey}}-${{ steps.get-cache-key.outputs.key }}
           restore-keys: |
-            submodule-
+            submodule-${{steps.get-cache-key.outputs.baseKey}}
       - uses: actions/checkout@v6
         with:
           submodules: true
@@ -121,7 +123,7 @@ jobs:
           $(cd libs/sr/dm/StarRailData && git sparse-checkout set TextMap ExcelOutput)
       - uses: actions/setup-node@v6
         with:
-          node-version: 24
+          node-version-file: '.nvmrc'
           cache: 'yarn'
       - name: Yarn Install
         run: |

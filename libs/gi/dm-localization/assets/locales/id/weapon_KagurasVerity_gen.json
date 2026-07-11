@@ -6,19 +6,19 @@
   "passiveName": "Kagura Dance of the Sacred Sakura",
   "passiveDescription": {
     "0": {
-      "0": "Saat melancarkan Elemental Skill, akan memperoleh efek Kagura Dance yang akan meningkatkan <cryo>12%</cryo> DMG Elemental Skill dari Karakter pengguna senjata ini selama 16 detik. Maksimum 3 lapis. Saat memiliki 3 lapis, Karakter tersebut akan memperoleh <cryo>12%</cryo> DMG Bonus untuk semua elemen."
+      "0": "Saat melancarkan Elemental Skill, akan memperoleh efek Kagura Dance yang akan meningkatkan DMG Elemental Skill sebesar <cryo>12%</cryo> dan DMG reaksi Stellar-Conduct yang diakibatkan Karakter pengguna Senjata ini sebesar <cryo>12%</cryo> selama 24 detik. Dapat ditumpuk sampai 3 lapis. Saat memiliki 3 lapis, Karakter yang mengenakan akan memperoleh <cryo>12%</cryo> Elemental DMG Bonus seluruh elemen."
     },
     "1": {
-      "0": "Saat melancarkan Elemental Skill, akan memperoleh efek Kagura Dance yang akan meningkatkan <cryo>15%</cryo> DMG Elemental Skill dari Karakter pengguna senjata ini selama 16 detik. Maksimum 3 lapis. Saat memiliki 3 lapis, Karakter tersebut akan memperoleh <cryo>15%</cryo> DMG Bonus untuk semua elemen."
+      "0": "Saat melancarkan Elemental Skill, akan memperoleh efek Kagura Dance yang akan meningkatkan DMG Elemental Skill sebesar <cryo>15%</cryo> dan DMG reaksi Stellar-Conduct yang diakibatkan Karakter pengguna Senjata ini sebesar <cryo>15%</cryo> selama 24 detik. Dapat ditumpuk sampai 3 lapis. Saat memiliki 3 lapis, Karakter yang mengenakan akan memperoleh <cryo>15%</cryo> Elemental DMG Bonus seluruh elemen."
     },
     "2": {
-      "0": "Saat melancarkan Elemental Skill, akan memperoleh efek Kagura Dance yang akan meningkatkan <cryo>18%</cryo> DMG Elemental Skill dari Karakter pengguna senjata ini selama 16 detik. Maksimum 3 lapis. Saat memiliki 3 lapis, Karakter tersebut akan memperoleh <cryo>18%</cryo> DMG Bonus untuk semua elemen."
+      "0": "Saat melancarkan Elemental Skill, akan memperoleh efek Kagura Dance yang akan meningkatkan DMG Elemental Skill sebesar <cryo>18%</cryo> dan DMG reaksi Stellar-Conduct yang diakibatkan Karakter pengguna Senjata ini sebesar <cryo>18%</cryo> selama 24 detik. Dapat ditumpuk sampai 3 lapis. Saat memiliki 3 lapis, Karakter yang mengenakan akan memperoleh <cryo>18%</cryo> Elemental DMG Bonus seluruh elemen."
     },
     "3": {
-      "0": "Saat melancarkan Elemental Skill, akan memperoleh efek Kagura Dance yang akan meningkatkan <cryo>21%</cryo> DMG Elemental Skill dari Karakter pengguna senjata ini selama 16 detik. Maksimum 3 lapis. Saat memiliki 3 lapis, Karakter tersebut akan memperoleh <cryo>21%</cryo> DMG Bonus untuk semua elemen."
+      "0": "Saat melancarkan Elemental Skill, akan memperoleh efek Kagura Dance yang akan meningkatkan DMG Elemental Skill sebesar <cryo>21%</cryo> dan DMG reaksi Stellar-Conduct yang diakibatkan Karakter pengguna Senjata ini sebesar <cryo>21%</cryo> selama 24 detik. Dapat ditumpuk sampai 3 lapis. Saat memiliki 3 lapis, Karakter yang mengenakan akan memperoleh <cryo>21%</cryo> Elemental DMG Bonus seluruh elemen."
     },
     "4": {
-      "0": "Saat melancarkan Elemental Skill, akan memperoleh efek Kagura Dance yang akan meningkatkan <cryo>24%</cryo> DMG Elemental Skill dari Karakter pengguna senjata ini selama 16 detik. Maksimum 3 lapis. Saat memiliki 3 lapis, Karakter tersebut akan memperoleh <cryo>24%</cryo> DMG Bonus untuk semua elemen."
+      "0": "Saat melancarkan Elemental Skill, akan memperoleh efek Kagura Dance yang akan meningkatkan DMG Elemental Skill sebesar <cryo>24%</cryo> dan DMG reaksi Stellar-Conduct yang diakibatkan Karakter pengguna Senjata ini sebesar <cryo>24%</cryo> selama 24 detik. Dapat ditumpuk sampai 3 lapis. Saat memiliki 3 lapis, Karakter yang mengenakan akan memperoleh <cryo>24%</cryo> Elemental DMG Bonus seluruh elemen."
     }
   }
 }

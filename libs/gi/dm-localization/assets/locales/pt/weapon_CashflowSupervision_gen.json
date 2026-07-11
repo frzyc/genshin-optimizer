@@ -6,19 +6,19 @@
   "passiveName": "Maré de Sangue Dourado",
   "passiveDescription": {
     "0": {
-      "0": "Aumenta o ATQ em <cryo>16%</cryo>. Quando a Vida atual aumentar ou cair, o Dano causado pelo Ataque Normal aumenta em <cryo>16%</cryo>, e o Dano causado pelo Ataque Carregado em <cryo>14%</cryo>. Esse efeito dura 4s, pode ser acumulado até 3 vezes e desencadeado uma vez a cada 0.3s. Quando possuir 3 acúmulos, aumenta a Vel. de ATQ em <cryo>8%</cryo>."
+      "0": "Aumenta o ATQ em <cryo>16%</cryo>. Quando a Vida aumentar ou reduzir, aumenta o Dano causado pelo Ataque Normal em <cryo>16%</cryo>, aumenta o Dano causado pelo Ataque Carregado em <cryo>14%</cryo>, e aumenta o Dano causado por Supercondutor Estelar em <cryo>14%</cryo> por 4s. Acumulável até 3 vezes. É possível desencadear uma vez a cada 0.3s. Ao possuir 3 acúmulos, aumenta a Vel. de ATQ em <cryo>8%</cryo>."
     },
     "1": {
-      "0": "Aumenta o ATQ em <cryo>20%</cryo>. Quando a Vida atual aumentar ou cair, o Dano causado pelo Ataque Normal aumenta em <cryo>20%</cryo>, e o Dano causado pelo Ataque Carregado em <cryo>17.5%</cryo>. Esse efeito dura 4s, pode ser acumulado até 3 vezes e desencadeado uma vez a cada 0.3s. Quando possuir 3 acúmulos, aumenta a Vel. de ATQ em <cryo>10%</cryo>."
+      "0": "Aumenta o ATQ em <cryo>20%</cryo>. Quando a Vida aumentar ou reduzir, aumenta o Dano causado pelo Ataque Normal em <cryo>20%</cryo>, aumenta o Dano causado pelo Ataque Carregado em <cryo>17.5%</cryo>, e aumenta o Dano causado por Supercondutor Estelar em <cryo>17.5%</cryo> por 4s. Acumulável até 3 vezes. É possível desencadear uma vez a cada 0.3s. Ao possuir 3 acúmulos, aumenta a Vel. de ATQ em <cryo>10%</cryo>."
     },
     "2": {
-      "0": "Aumenta o ATQ em <cryo>24%</cryo>. Quando a Vida atual aumentar ou cair, o Dano causado pelo Ataque Normal aumenta em <cryo>24%</cryo>, e o Dano causado pelo Ataque Carregado em <cryo>21%</cryo>. Esse efeito dura 4s, pode ser acumulado até 3 vezes e desencadeado uma vez a cada 0.3s. Quando possuir 3 acúmulos, aumenta a Vel. de ATQ em <cryo>12%</cryo>."
+      "0": "Aumenta o ATQ em <cryo>24%</cryo>. Quando a Vida aumentar ou reduzir, aumenta o Dano causado pelo Ataque Normal em <cryo>24%</cryo>, aumenta o Dano causado pelo Ataque Carregado em <cryo>21%</cryo>, e aumenta o Dano causado por Supercondutor Estelar em <cryo>21%</cryo> por 4s. Acumulável até 3 vezes. É possível desencadear uma vez a cada 0.3s. Ao possuir 3 acúmulos, aumenta a Vel. de ATQ em <cryo>12%</cryo>."
     },
     "3": {
-      "0": "Aumenta o ATQ em <cryo>28%</cryo>. Quando a Vida atual aumentar ou cair, o Dano causado pelo Ataque Normal aumenta em <cryo>28%</cryo>, e o Dano causado pelo Ataque Carregado em <cryo>24.5%</cryo>. Esse efeito dura 4s, pode ser acumulado até 3 vezes e desencadeado uma vez a cada 0.3s. Quando possuir 3 acúmulos, aumenta a Vel. de ATQ em <cryo>14%</cryo>."
+      "0": "Aumenta o ATQ em <cryo>28%</cryo>. Quando a Vida aumentar ou reduzir, aumenta o Dano causado pelo Ataque Normal em <cryo>28%</cryo>, aumenta o Dano causado pelo Ataque Carregado em <cryo>24.5%</cryo>, e aumenta o Dano causado por Supercondutor Estelar em <cryo>24.5%</cryo> por 4s. Acumulável até 3 vezes. É possível desencadear uma vez a cada 0.3s. Ao possuir 3 acúmulos, aumenta a Vel. de ATQ em <cryo>14%</cryo>."
     },
     "4": {
-      "0": "Aumenta o ATQ em <cryo>32%</cryo>. Quando a Vida atual aumentar ou cair, o Dano causado pelo Ataque Normal aumenta em <cryo>32%</cryo>, e o Dano causado pelo Ataque Carregado em <cryo>28%</cryo>. Esse efeito dura 4s, pode ser acumulado até 3 vezes e desencadeado uma vez a cada 0.3s. Quando possuir 3 acúmulos, aumenta a Vel. de ATQ em <cryo>16%</cryo>."
+      "0": "Aumenta o ATQ em <cryo>32%</cryo>. Quando a Vida aumentar ou reduzir, aumenta o Dano causado pelo Ataque Normal em <cryo>32%</cryo>, aumenta o Dano causado pelo Ataque Carregado em <cryo>28%</cryo>, e aumenta o Dano causado por Supercondutor Estelar em <cryo>28%</cryo> por 4s. Acumulável até 3 vezes. É possível desencadear uma vez a cada 0.3s. Ao possuir 3 acúmulos, aumenta a Vel. de ATQ em <cryo>16%</cryo>."
     }
   }
 }

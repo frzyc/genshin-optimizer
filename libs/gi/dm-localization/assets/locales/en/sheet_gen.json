@@ -60,7 +60,7 @@
     "superconduct": "Superconduct",
     "vaporize": "Vaporize",
     "melt": "Melt",
-    "bloom": "Bloom",
+    "bloom": "",
     "burgeon": "Burgeon",
     "hyperbloom": "Hyperbloom",
     "quicken": "Quicken",
@@ -77,15 +77,15 @@
   "talentLvl": "Talent Lv. {{level}}",
   "talents": {
     "auto": "Normal Attack",
-    "skill": "Elemental Skill",
-    "burst": "Elemental Burst",
+    "skill": "",
+    "burst": "",
     "altSprint": "Alternate Sprint"
   },
   "unlockPassive1": "Unlocks at Character Ascension Phase 1",
   "unlockPassive2": "Unlocks at Character Ascension Phase 4",
   "unlockPassive3": "Passive Talent",
   "unlockLockedPassive": "Unlocks after completing the prerequisite quests",
-  "witchPassive": "Witch's Homework",
+  "witchPassive": "",
   "moonsign": "Moonsign",
   "hexerei": "Hexerei"
 }

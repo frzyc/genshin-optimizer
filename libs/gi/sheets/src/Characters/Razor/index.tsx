@@ -296,7 +296,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       enemyDefRed_,
     },
   },
-  isHexerei: lockHomework_hexerei,
+  flags: { isHexerei: lockHomework_hexerei },
 })
 
 const sheet: TalentSheet = {
@@ -541,6 +541,7 @@ const sheet: TalentSheet = {
         },
         {
           text: stg('cd'),
+          canShow: (data) => data.get(input.flags.isHexerei).value === 1,
           value: dm.lockedPassive.cd,
           unit: 's',
         },

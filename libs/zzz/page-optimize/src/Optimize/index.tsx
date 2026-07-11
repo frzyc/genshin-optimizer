@@ -2,22 +2,25 @@ import { useDataManagerValues } from '@genshin-optimizer/common/database-ui'
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { BuildResult, Progress } from '@genshin-optimizer/game-opt/solver'
-import { Solver, buildCount } from '@genshin-optimizer/game-opt/solver'
+import { Solver } from '@genshin-optimizer/game-opt/solver'
 import {
   type DiscSlotKey,
   allDiscSlotKeys,
 } from '@genshin-optimizer/zzz/consts'
-
-import { type ICachedDisc, targetTag } from '@genshin-optimizer/zzz/db'
+import {
+  type ICachedDisc,
+  getTeamFrame0,
+  targetTag,
+} from '@genshin-optimizer/zzz/db'
 import {
   OptConfigContext,
   OptConfigProvider,
-  useCharOpt,
   useCharacterContext,
   useDatabaseContext,
+  useTeam,
 } from '@genshin-optimizer/zzz/db-ui'
 import { useZzzCalcContext } from '@genshin-optimizer/zzz/formula-ui'
-import { createSolverConfig } from '@genshin-optimizer/zzz/solver'
+import { createOptimizeConfig } from '@genshin-optimizer/zzz/solver'
 import { getCharStat, getWengineStat } from '@genshin-optimizer/zzz/stats'
 import { BuildsSelector, WorkerSelector } from '@genshin-optimizer/zzz/ui'
 import CloseIcon from '@mui/icons-material/Close'
@@ -30,7 +33,6 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
-import type { MouseEvent } from 'react'
 import {
   useCallback,
   useContext,
@@ -46,16 +48,20 @@ import { WengineFilter } from './WengineFilter'
 
 export default function Optimize() {
   const { key: characterKey } = useCharacterContext()!
-  const { optConfigId } = useCharOpt(characterKey)!
+  const team = useTeam(characterKey)!
   const { database } = useDatabaseContext()
+  const mate = team.teammates.find((t) => t.characterKey === characterKey)
+  const optConfigId = mate?.optConfigId
 
   if (!optConfigId) {
     const newOptConfigId = database.optConfigs.new({
       wEngineTypes: [getCharStat(characterKey).specialty],
     })
-    database.charOpts.set(characterKey, {
-      optConfigId: newOptConfigId,
-    })
+    database.teams.setTeammateOptConfigId(
+      characterKey,
+      characterKey,
+      newOptConfigId
+    )
     return null
   }
   return (
@@ -70,7 +76,8 @@ function OptimizeWrapper() {
   const { database } = useDatabaseContext()
   const calc = useZzzCalcContext()
   const { key: characterKey } = useCharacterContext()!
-  const { target } = useCharOpt(characterKey)!
+  const team = useTeam(characterKey)!
+  const { tag: target } = getTeamFrame0(team)
   const [numWorkers, setNumWorkers] = useState(8)
   const [progress, setProgress] = useState<Progress | undefined>(undefined)
   const { optConfig, optConfigId } = useContext(OptConfigContext)
@@ -148,11 +155,6 @@ function OptimizeWrapper() {
     optConfig.useEquippedWengine,
   ])
 
-  const totalPermutations = useMemo(
-    () => buildCount(Object.values(discsBySlot)) * filteredWengines.length,
-    [filteredWengines.length, discsBySlot]
-  )
-
   const [optimizing, setOptimizing] = useState(false)
 
   // Provides a function to cancel the work
@@ -160,84 +162,81 @@ function OptimizeWrapper() {
   //terminate worker when component unmounts
   useEffect(() => () => cancelToken.current(), [])
 
-  const onOptimize = useCallback(
-    async (event: MouseEvent) => {
-      if (!calc || !target) return
-      const cancelled = new Promise<void>((r) => (cancelToken.current = r))
-      setProgress(undefined)
-      setOptimizing(true)
+  const currentSolver = useRef<Solver<string> | null>(null)
+  const cfg = useMemo(() => {
+    if (!calc || !target) return
+    return createOptimizeConfig({
+      characterKey,
+      calc,
+      frames: [{ tag: targetTag(target), multiplier: 1 }],
+      statFilters: (optConfig.statFilters ?? []).filter((s) => !s.disabled),
+      setFilter2: optConfig.setFilter2,
+      setFilter4: optConfig.setFilter4,
+      allowRainbow: optConfig.allowRainbow,
+      wengines: filteredWengines,
+      discsBySlot,
+      numWorkers,
+      numOfBuilds: optConfig.maxBuildsToShow,
+      setProgress,
+    })
+  }, [
+    calc,
+    target,
+    optConfig.statFilters,
+    optConfig.setFilter2,
+    optConfig.setFilter4,
+    optConfig.allowRainbow,
+    optConfig.maxBuildsToShow,
+    characterKey,
+    filteredWengines,
+    discsBySlot,
+    numWorkers,
+    setProgress,
+  ])
 
-      // Filter out disabled
-      const statFilters = (optConfig.statFilters ?? []).filter(
-        (s) => !s.disabled
-      )
-      const config = createSolverConfig(
-        characterKey,
-        calc,
-        [
-          {
-            tag: targetTag(target),
-            multiplier: 1,
-          },
-        ],
-        statFilters,
-        optConfig.setFilter2,
-        optConfig.setFilter4,
-        filteredWengines,
-        discsBySlot,
-        numWorkers,
-        optConfig.maxBuildsToShow,
-        setProgress
-      )
+  const onOptimize = useCallback(async () => {
+    const cancelled = new Promise<void>((r) => (cancelToken.current = r))
+    setProgress(undefined)
+    setOptimizing(true)
+    await new Promise<void>((resolve) => {
+      requestAnimationFrame(() => setTimeout(resolve, 0))
+    })
 
-      if (event.altKey) {
-        console.log(config)
-        setOptimizing(false)
-        return
-      }
-
-      const optimizer = new Solver(config)
-
-      cancelled.then(() => optimizer.terminate('user cancelled'))
-      let results: BuildResult<string>[]
-      try {
-        results = await optimizer.results
-      } catch {
-        return
-      } finally {
+    cancelled.then(() => currentSolver.current?.terminate('user cancelled'))
+    let optimizer: Solver<string> | undefined
+    let results: BuildResult<string>[]
+    try {
+      if (!cfg) return
+      currentSolver.current = optimizer = new Solver(cfg)
+      results = await optimizer.results
+      // a newer run replaced us, let it own the state
+      if (currentSolver.current !== optimizer) return
+    } catch {
+      return
+    } finally {
+      // skip cleanup if a newer run replaced us
+      if (currentSolver.current === optimizer) {
+        currentSolver.current = null
         cancelToken.current = () => {}
         setOptimizing(false)
       }
-      // Save results to optConfig
-      database.optConfigs.newOrSetGeneratedBuildList(optConfigId, {
-        builds: results.map(({ ids, value }) => ({
-          wengineId: ids[0],
-          discIds: objKeyMap(allDiscSlotKeys, (_slot, index) => ids[index + 1]),
-          value,
-        })),
-        buildDate: Date.now(),
-      })
-    },
-    [
-      calc,
-      target,
-      optConfig.statFilters,
-      optConfig.setFilter2,
-      optConfig.setFilter4,
-      optConfig.maxBuildsToShow,
-      characterKey,
-      filteredWengines,
-      discsBySlot,
-      numWorkers,
-      database.optConfigs,
-      optConfigId,
-    ]
-  )
+    }
+    // Save results to optConfig
+    database.optConfigs.newOrSetGeneratedBuildList(optConfigId, {
+      builds: results.map(({ ids, value }) => ({
+        wengineId: ids[0],
+        discIds: objKeyMap(allDiscSlotKeys, (_slot, index) => ids[index + 1]),
+        value,
+      })),
+      buildDate: Date.now(),
+    })
+  }, [cfg, setProgress, database.optConfigs, optConfigId])
 
   const onCancel = useCallback(() => {
     cancelToken.current()
     setOptimizing(false)
-  }, [cancelToken])
+    setProgress(undefined)
+  }, [cancelToken, setProgress])
 
   return (
     <CardThemed>
@@ -256,9 +255,7 @@ function OptimizeWrapper() {
             <DiscFilter discsBySlot={discsBySlot} />
           </Box>
 
-          {progress && (
-            <ProgressIndicator progress={progress} total={totalPermutations} />
-          )}
+          {progress && <ProgressIndicator progress={progress} />}
           <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 1 }}>
             <BuildsSelector
               maxBuildsToShow={optConfig.maxBuildsToShow}
@@ -269,7 +266,7 @@ function OptimizeWrapper() {
               setNumWorkers={setNumWorkers}
             />
             <Button
-              disabled={!totalPermutations || !target}
+              disabled={!cfg}
               onClick={optimizing ? onCancel : onOptimize}
               color={optimizing ? 'error' : 'primary'}
               startIcon={optimizing ? <CloseIcon /> : <TrendingUpIcon />}
@@ -291,12 +288,12 @@ function Monospace({ value }: { value: number }): JSX.Element {
     </Box>
   )
 }
-function ProgressIndicator(props: { progress: Progress; total: number }) {
+function ProgressIndicator(props: { progress: Progress }) {
   const { t } = useTranslation('optimize')
-  const { computed, remaining, skipped } = props.progress
+  const { computed, remaining, skipped, total } = props.progress
   const unskipped = computed + remaining
 
-  const unskippedRatio = Math.log1p(unskipped) / Math.log1p(props.total)
+  const unskippedRatio = Math.log1p(unskipped) / Math.log1p(total)
   const remRatio = (remaining / unskipped) * unskippedRatio
   return (
     <Box>
@@ -306,7 +303,7 @@ function ProgressIndicator(props: { progress: Progress; total: number }) {
       </Typography>
       <Typography>
         {t('computed + skipped')}: <Monospace value={computed + skipped} /> /{' '}
-        <Monospace value={props.total} />
+        <Monospace value={total} />
       </Typography>
       <LinearProgress // ideally, it should be | <computed> | <remaining> | <skipped> |
         variant="determinate"

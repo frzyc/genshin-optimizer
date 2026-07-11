@@ -1,21 +1,23 @@
 import { DropdownButton } from '@genshin-optimizer/common/ui'
-import type { CharOpt, ICachedCharacter } from '@genshin-optimizer/zzz/db'
+import type { ICachedCharacter, Team } from '@genshin-optimizer/zzz/db'
+import { getTeamFrame0 } from '@genshin-optimizer/zzz/db'
 import {
-  useCharOpt,
   useCharacterContext,
   useDatabaseContext,
+  useTeam,
 } from '@genshin-optimizer/zzz/db-ui'
 import { qtMap } from '@genshin-optimizer/zzz/formula-ui'
 import { Box, MenuItem } from '@mui/material'
 import { useCallback } from 'react'
 import { AfterShockToggleButton } from '../AfterShockToggleButton'
 import { CritModeSelector } from './CritModeSelector'
+import { DimensionSelector } from './DimensionSelector'
 import { OptSelector } from './OptSelector'
 import { SpecificDmgTypeSelector } from './SpecificDmgTypeSelector'
 export function OptTargetRow({
   character,
-  charOpt,
-}: { character: ICachedCharacter; charOpt: CharOpt }) {
+  team,
+}: { character: ICachedCharacter; team: Team }) {
   return (
     <Box
       display="flex"
@@ -27,7 +29,8 @@ export function OptTargetRow({
         background: '#0C1020',
       }}
     >
-      <OptSelector character={character} charOpt={charOpt} />
+      <OptSelector character={character} team={team} />
+      <DimensionSelector />
       <StatQtDropDown />
       <SpecificDmgTypeSelector />
       <AfterShockToggle />
@@ -39,15 +42,16 @@ export function OptTargetRow({
 function AfterShockToggle() {
   const { database } = useDatabaseContext()
   const character = useCharacterContext()!
-  const charOpt = useCharOpt(character.key)!
-  const { target } = charOpt
+  const team = useTeam(character.key)!
+  const { tag: target } = getTeamFrame0(team)
   const setAfterShock = useCallback(
     (aftershock: boolean) =>
-      database.charOpts.set(character.key, ({ target: oldTarget = {} }) => {
+      database.teams.setFrame0(character.key, (frame) => {
+        const { tag: oldTarget = {} } = frame
         const { damageType2, ...oTarget } = oldTarget
-        if (!aftershock) return { target: oTarget }
+        if (!aftershock) return { tag: oTarget }
         return {
-          target: {
+          tag: {
             ...oTarget,
             damageType2: 'aftershock',
           },
@@ -67,8 +71,8 @@ function AfterShockToggle() {
 function StatQtDropDown() {
   const { database } = useDatabaseContext()
   const character = useCharacterContext()!
-  const charOpt = useCharOpt(character.key)!
-  const { target } = charOpt
+  const team = useTeam(character.key)!
+  const { tag: target } = getTeamFrame0(team)
   const { q, qt } = target ?? {}
   if (!q || !qt) return null
   return (
@@ -79,7 +83,7 @@ function StatQtDropDown() {
           selected={mqt === qt}
           disabled={mqt === qt}
           onClick={() =>
-            database.charOpts.set(character.key, { target: { q, qt: mqt } })
+            database.teams.setFrame0(character.key, { tag: { q, qt: mqt } })
           }
         >
           {qtMap[mqt]}

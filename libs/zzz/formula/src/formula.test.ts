@@ -339,6 +339,43 @@ describe('char+wengine test', () => {
     expect(calc.compute(anby.final.dmg_.chain[1]).val).toBeCloseTo(0)
     expect(calc.compute(anby.final.common_dmg_).val).toBeCloseTo(0.2)
   })
+  it('keeps bundled damage, daze, and anomaly buildup bases isolated', () => {
+    const data: TagMapNodeEntries = [
+      ...withMember(
+        'Anby',
+        ...charTagMapNodeEntries({
+          level: 1,
+          promotion: 0,
+          key: 'Anby',
+          mindscape: 0,
+          potential: 0,
+          basic: 1,
+          dodge: 0,
+          special: 0,
+          assist: 0,
+          chain: 0,
+          core: 0,
+          potential: 0,
+        })
+      ),
+    ]
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Anby', dst: 'Anby' })
+
+    expect(
+      calc.compute(
+        read(formulas.Anby['BasicAttackTurboVolt_0:dazeBuildup'].tag, undefined)
+      ).val
+    ).toBeCloseTo(18.408)
+    expect(
+      calc.compute(
+        read(formulas.Anby['BasicAttackTurboVolt_0:anomBuildup'].tag, undefined)
+      ).val
+    ).toBeCloseTo(0)
+  })
 })
 
 describe('disc2p test', () => {

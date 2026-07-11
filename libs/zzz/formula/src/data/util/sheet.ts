@@ -158,7 +158,7 @@ export function customDmg(
     team,
     'standardDmg',
     tag(cond, dmgTag),
-    ownBuff.formula.base.add(base),
+    ownBuff.formula.standardDmgBase.add(base),
     ...extra
   )
 }
@@ -186,7 +186,7 @@ export function customSheerDmg(
     team,
     'sheerDmg',
     tag(cond, dmgTag),
-    ownBuff.formula.base.add(base),
+    ownBuff.formula.sheerDmgBase.add(base),
     ...extra
   )
 }
@@ -212,7 +212,7 @@ export function customShield(
     team,
     'shield',
     cond,
-    ownBuff.formula.base.add(base),
+    ownBuff.formula.shieldBase.add(base),
     ...extra
   )
 }
@@ -238,7 +238,7 @@ export function customHeal(
     team,
     'heal',
     cond,
-    ownBuff.formula.base.add(base),
+    ownBuff.formula.healBase.add(base),
     ...extra
   )
 }
@@ -266,7 +266,7 @@ export function customAnomalyDmg(
     team,
     'anomalyDmg',
     tag(cond, dmgTag),
-    ownBuff.formula.base.add(base),
+    ownBuff.formula.anomalyDmgBase.add(base),
     ...extra
   )
 }
@@ -293,7 +293,7 @@ export function customDaze(
     team,
     'dazeBuildup',
     tag(cond, dmgTag),
-    ownBuff.formula.base.add(base),
+    ownBuff.formula.dazeBuildupBase.add(base),
     ...extra
   )
 }
@@ -320,7 +320,7 @@ export function customAnomalyBuildup(
     team,
     'anomBuildup',
     tag(cond, dmgTag),
-    ownBuff.formula.base.add(base),
+    ownBuff.formula.anomBuildupBase.add(base),
     ...extra
   )
 }
@@ -335,6 +335,7 @@ export function getStatFromStatKey(
     case 'ice_dmg_':
     case 'physical_dmg_':
     case 'ether_dmg_':
+    case 'wind_dmg_':
       // substring will fetch 'physical' from 'physical_dmg_', for example
       return buff.dmg_[statKey.substring(0, statKey.indexOf('_')) as Attribute]
     case 'dmg_':

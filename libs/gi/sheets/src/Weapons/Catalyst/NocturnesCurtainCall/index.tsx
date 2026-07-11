@@ -3,7 +3,7 @@ import {
   type WeaponKey,
   allLunarReactionKeys,
 } from '@genshin-optimizer/gi/consts'
-import { equal, infoMut, input, subscript, sum } from '@genshin-optimizer/gi/wr'
+import { equal, input, subscript, sum } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
@@ -34,10 +34,7 @@ const passiveLunarCritDMG_ = equal(
 )
 const passiveLunarCritDMG_obj = objKeyValMap(allLunarReactionKeys, (k) => [
   `${k}_critDMG_`,
-  infoMut(
-    { ...passiveLunarCritDMG_ },
-    { path: `${k}_critDMG_`, isTeamBuff: true }
-  ),
+  { ...passiveLunarCritDMG_ },
 ])
 
 const data = dataObjForWeaponSheet(key, {

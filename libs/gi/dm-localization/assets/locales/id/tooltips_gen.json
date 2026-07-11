@@ -347,6 +347,40 @@
       "3": "Selain itu, Varka dapat mengonsumsi jumlah penggunaan <strong>Four Winds' Ascension</strong> untuk melancarkan Charged Attack khusus yang tidak mengonsumsi Stamina, <strong>Azure Devour</strong>, untuk mengakibatkan 2 kali Elemental DMG (tidak bisa ditimpa Elemental Infusion lainnya) dengan jenis elemen yang sesuai dengan pedang claymore di tangan kanannya dan juga 2 kali <anemo>Anemo DMG</anemo>."
     }
   },
+  "11290001": {
+    "name": "Masterstroke",
+    "description": {
+      "0": "Lohen akan berganti ke mode ini setelah melancarkan Elemental Skill <strong>Unforeseen Strike</strong>. Mode Masterstroke memiliki karakteristik sebagai berikut:",
+      "1": [
+        "Normal Attack, Charged Attack, dan Plunging Attack Lohen akan dikonversi menjadi <cryo>Cryo DMG</cryo> yang tidak bisa ditimpa Elemental Infusion lainnya.",
+        "Saat Normal atau Charged Attack Lohen mengenai musuh, akan mengakumulasi <strong>Joy</strong> khusus untuk Lohen, yang dapat digunakan untuk melancarkan Elemental Skill Khusus <strong>Etched Into Bone and Soul</strong>. Setelah melancarkan maksimum 3 kali <strong>Etched Into Bone and Soul</strong> saat dalam mode <strong>Masterstroke</strong>, Lohen tidak bisa lagi mendapatkan <strong>Joy</strong>.",
+        "Saat anggota party lain di sekitar mengakibatkan DMG, Lohen juga akan mengakumulasi <strong>Will to Win</strong> khusus yang dapat meningkatkan DMG yang diakibatkan <strong>Etched Into Bone and Soul</strong>.",
+        "Lohen akan keluar dari mode Masterstroke saat meninggalkan medan pertempuran. Saat mode ini berakhir, semua <strong>Joy</strong> dan <strong>Will to Win</strong> yang dimiliki juga akan hilang."
+      ]
+    }
+  },
+  "11290002": {
+    "name": "Etched Into Bone and Soul",
+    "description": {
+      "0": "Elemental Skill Khusus yang dapat dilancarkan setelah <strong>Joy</strong> Lohen mencapai batas maksimum.",
+      "1": "Setelah mengenai musuh, Lohen akan mengonsumsi semua <strong>Joy</strong> dan <strong>Will to Win</strong> untuk mengakibatkan <cryo>Cryo DMG</cryo> dan meningkatkan DMG kali ini berdasarkan jumlah <strong>Will to Win</strong> yang dikonsumsi."
+    }
+  },
+  "11290003": {
+    "name": "Joy",
+    "description": {
+      "0": "Saat Normal Attack atau Charged Attack Lohen  dalam mode Masterstroke mengenai musuh, ia akan mendapatkan 0.381298 poin <strong>Joy</strong>, hingga maksimum 100 poin.",
+      "1": "<strong>Joy</strong> bisa diperoleh sekali setiap 0,1 detik. Setelah akumulasi <strong>Joy</strong> mencapai batas maksimum, Elemental Skill <strong>Unforeseen Strike</strong> milik Lohen akan berubah menjadi Elemental Skill Khusus, yaitu <strong>Etched Into Bone and Soul</strong>."
+    }
+  },
+  "11290004": {
+    "name": "Will to Win",
+    "description": {
+      "0": "Sumber daya khusus yang akan didapatkan Lohen saat anggota party lain di sekitar mengakibatkan DMG saat Lohen berada dalam mode Masterstroke, maksimum 100 poin.",
+      "1": "Selama durasi Masterstroke, jika anggota party lain di sekitar mengakibatkan DMG dan DMG yang diakibatkan kali ini tidak lebih rendah dari 55.2868% Base ATK Lohen, maka Lohen akan mengakumulasi 0.829302 poin <strong>Will to Win</strong>. Jika tidak, Lohen akan mengakumulasi 1 poin <strong>Will to Win</strong>.",
+      "2": "Satu Karakter dapat mengakumulasi <strong>Will to Win</strong> untuk Lohen satu kali setiap 0,1 detik."
+    }
+  },
   "11300001": {
     "name": "Lumi: Bentuk Serangan",
     "description": {
@@ -362,6 +396,72 @@
       "9": "<strong>Standard Power Form</strong>",
       "10": "Meski bentuk ini tidak sehebat bentuk yang lain, tapi tetap saja, hebat.",
       "11": "Lumi akan menggunakan <strong>Pound-Pound Pummeler</strong> untuk terus menyerang musuh di sekitar dengan jeda yang lebih lama, mengakibatkan 2 kali <geo>Geo DMG Area</geo> untuk setiap serangannya."
+    }
+  },
+  "11310001": {
+    "name": "Grace of Kenosis",
+    "description": {
+      "0": "Setelah melancarkan Elemental Skill <strong>Revelation: Uncreated Light</strong>, Nicole akan memberikan efek berikut kepada seluruh anggota party di sekitar: Meningkatkan ATK berdasarkan ATK Nicole.",
+      "1": "Setelah memenuhi syarat tertentu, efek <strong>Grace of Kenosis</strong> akan meningkat menjadi <strong>Guidance of Theosis</strong> dan akan meningkatkan ATK lebih besar."
+    }
+  },
+  "11310002": {
+    "name": "Guidance of Theosis",
+    "description": {
+      "0": "Efek <strong>Grace of Kenosis</strong> yang telah ditingkatkan. Efek ini akan memberikan peningkatan tambahan sebesar 300 poin ATK.",
+      "1": "Setelah membuka Talenta Ascension \"Methexis\" dan memenuhi salah satu kondisi \"observasi\" berikut, <strong>Grace of Kenosis</strong> akan berubah menjadi <strong>Guidance of Theosis</strong> selama sisa durasinya:",
+      "2": [
+        "Karakter lain yang diobservasi tetap berada di medan pertempuran selama lebih dari 3 detik.",
+        "Karakter lain yang diobservasi adalah Karakter Hexerei."
+      ],
+      "3": "<br/>",
+      "4": "Selain itu, setelah membuka Talenta Ascension \"Philokalia\" dan setelah Elemental DMG Karakter aktif di sekitar party mengenai musuh, <strong>Grace of Kenosis</strong> milik Nicole sendiri juga akan berubah menjadi <strong>Guidance of Theosis</strong> selama 8 detik.",
+      "5": "<br/>",
+      "6": "Selain Nicole, <strong>Guidance of Theosis</strong> yang dimiliki Karakter lain akan kembali menjadi <strong>Grace of Kenosis</strong> saat mereka meninggalkan medan pertempuran."
+    }
+  },
+  "11320001": {
+    "name": "Banehunter Oathhammer",
+    "description": {
+      "0": "Teman baik pemburu penyihir yang pantas dipercaya! Dapat memicu Elemental Conversion saat memenuhi kondisi tertentu, seluruh DMG awal yang diakibatkan Banehunter Oathhammer akan dikonversi menjadi DMG dengan jenis elemen yang sesuai terhadap musuh.",
+      "1": "Prune dapat memanggil Banehunter Oathhammer yang telah memicu Elemental Conversion melalui cara berikut:",
+      "2": [
+        "Dalam beberapa saat setelah Elemental Skill <strong>Ring-A-Ding-Ding! Hexhunter Chime</strong> yang dilancarkan memicu reaksi Swirl terhadap musuh, Prune dapat melancarkan Elemental Skill Khusus <strong>Clang Clang! Witch-tribution Comes!</strong>. Saat melancarkan Elemental Skill Khusus ini, Banehunter Oathhammer akan dikonversi menjadi jenis elemen lain yang terlibat dalam reaksi Swirl sebelumnya.",
+        "Setelah membuka Talenta Ascension \"Verdict and Punishment\", jika Witchlure Bell dalam mode Hunter-Seeker memicu reaksi Swirl terhadap musuh, maka akan memanggil Banehunter Oathhammer yang sudah mengalami Elemental Conversion berdasarkan reaksi Swirl kali ini untuk menyerang musuh."
+      ]
+    }
+  },
+  "11320002": {
+    "name": "Verdict and Punishment",
+    "description": {
+      "0": "Dalam Elemental Burst<strong> The Bell Tolls! The Hunt is On!</strong>, setelah Witchlure Bell dalam mode Hunter-Seeker mengakibatkan DMG terhadap musuh, jika DMG tersebut memicu reaksi Swirl terhadap musuh, maka akan memanggil <strong>Banehunter Oathhammer</strong> yang telah mengalami Elemental Conversion berdasarkan reaksi Swirl kali ini di depan musuh dan menghantamnya, mengakibatkan Elemental DMG yang sesuai dengan konversi Swirl. DMG ini dianggap sebagai DMG Elemental Burst."
+    }
+  },
+  "11320003": {
+    "name": "Tolling Synchronicity",
+    "description": {
+      "0": "Setelah Prune menggunakan <strong>Banehunter Oathhammer</strong>yang telah mengalami Elemental Conversion untuk mengenai musuh, anggota party lain di sekitar akan mendapatkan efek Tolling Rally: Meningkatkan DMG yang diakibatkan serangannya berdasarkan ATK Prune."
+    }
+  },
+  "11330001": {
+    "name": "Mode Decoding",
+    "description": {
+      "0": "Fagio akan beralih ke mode ini saat melakukan Charged Attack.",
+      "1": "Dalam mode ini, Fagio akan melancarkan tembakan beruntun ke musuh di depannya, serta menembakkan sinar terkondensasi secara berkala, mengakibatkan <cryo>Cryo DMG Area</cryo>.",
+      "2": "<br/>",
+      "3": "<strong>Radiance: Stellar-Conduct</strong>: DMG dari sinar terkondensasinya berubah menjadi <cryo>Cryo DMG Area</cryo> yang dianggap sebagai DMG reaksi Stellar-Conduct."
+    }
+  },
+  "11330002": {
+    "name": "Decoding Power",
+    "description": {
+      "0": "Saat berada dalam mode <strong>Decoding</strong>, <strong>Decoding Power</strong> Fagio akan terus bertambah. Ketika Decoding Power mencapai batas maksimum, Fagio tidak bisa mempertahankan mode ini atau beralih ke mode Decoding lagi."
+    }
+  },
+  "11330003": {
+    "name": "Polestar Field",
+    "description": {
+      "0": "Saat reaksi Stellar-Conduct terpicu, area di sekitar akan berubah menjadi <strong>Polestar Field</strong> untuk sementara. Saat berada di dalam Polestar Field, beberapa Karakter tertentu akan memasuki status <strong>Radiance: Stellar-Conduct</strong> yang memberikan efek penguatan pada skill-nya."
     }
   }
 }

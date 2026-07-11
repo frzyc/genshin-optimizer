@@ -348,6 +348,40 @@
       "3": "Ngoài ra, Varka có thể tiêu hao số lần khả dụng của <strong>Tứ Phong Trỗi Dậy</strong> để thực hiện Trọng Kích đặc biệt <strong>Trời Xanh Cắn Xé</strong> không tiêu hao thể lực, gây 2 lần sát thương nguyên tố tương ứng không thể bị thay thế từ trọng kiếm tay phải của Varka và 2 lần <anemo>Sát Thương Nguyên Tố Phong</anemo>."
     }
   },
+  "11290001": {
+    "name": "Kỳ Mưu",
+    "description": {
+      "0": "Sau khi thi triển Kỹ Năng Nguyên Tố <strong>Kỳ Binh Quỷ Xuất</strong>, Lohen sẽ chuyển sang trạng thái này. Trạng thái Kỳ Mưu có đặc tính sau:",
+      "1": [
+        "Tấn Công Thường, Trọng Kích và Tấn Công Khi Đáp của Lohen sẽ chuyển sang gây <cryo>Sát Thương Nguyên Tố Băng</cryo> không thể bị thay thế.",
+        "Khi Lohen Tấn Công Thường hoặc Trọng Kích trúng kẻ địch, sẽ tích lũy <strong>Niềm Vui</strong> đặc biệt cho Lohen, dùng để thi triển Kỹ Năng Nguyên Tố đặc biệt <strong>Khắc Cốt Ghi Tâm</strong>. Trong trạng thái <strong>Kỳ Mưu</strong> tối đa thi triển 3 lần <strong>Khắc Cốt Ghi Tâm</strong>, sau đó sẽ không được nhận <strong>Niềm Vui</strong> nữa.",
+        "Khi nhân vật khác trong đội ở gần gây sát thương, sẽ tích lũy <strong>Nỗ Lực Chiến Thắng</strong> đặc biệt cho Lohen, dùng để tăng sát thương Kỹ Năng Nguyên Tố đặc biệt <strong>Khắc Cốt Ghi Tâm</strong>.",
+        "Khi Lohen rời trận, cũng sẽ kết thúc trạng thái Kỳ Mưu. Khi trạng thái Kỳ Mưu kết thúc, <strong>Niềm Vui</strong> và <strong>Nỗ Lực Chiến Thắng</strong> cũng sẽ bị xóa."
+      ]
+    }
+  },
+  "11290002": {
+    "name": "Khắc Cốt Ghi Tâm",
+    "description": {
+      "0": "Sau khi Lohen tích lũy <strong>Niềm Vui</strong> đến giới hạn, sẽ có thể thi triển Kỹ Năng Nguyên Tố đặc biệt này.",
+      "1": "Sau khi trúng kẻ địch sẽ tiêu hao toàn bộ <strong>Niềm Vui</strong> và <strong>Nỗ Lực Chiến Thắng</strong>, gây <cryo>Sát Thương Nguyên Tố Băng</cryo> và đồng thời tăng sát thương lần này dựa trên <strong>Nỗ Lực Chiến Thắng</strong> đã tiêu hao."
+    }
+  },
+  "11290003": {
+    "name": "Niềm Vui",
+    "description": {
+      "0": "Trong trạng thái Kỳ Mưu, khi Lohen Tấn Công Thường hoặc Trọng Kích trúng kẻ địch, sẽ nhận được 0.381298 điểm <strong>Niềm Vui</strong>, giới hạn 100 điểm.",
+      "1": "Mỗi 0.1s tối đa nhận một lần <strong>Niềm Vui</strong>. Sau khi tích lũy <strong>Niềm Vui</strong> đến giới hạn, Kỹ Năng Nguyên Tố <strong>Kỳ Binh Quỷ Xuất</strong> của Lohen sẽ được thay thế bằng Kỹ Năng Nguyên Tố đặc biệt <strong>Khắc Cốt Ghi Tâm</strong>."
+    }
+  },
+  "11290004": {
+    "name": "Nỗ Lực Chiến Thắng",
+    "description": {
+      "0": "Trong trạng thái Kỳ Mưu, khi nhân vật khác trong đội ở gần gây sát thương, sẽ cung cấp tài nguyên đặc biệt này cho Lohen, giới hạn 100 điểm.",
+      "1": "Trong thời gian duy trì trạng thái Kỳ Mưu, khi nhân vật khác trong đội ở gần gây sát thương, nếu sát thương lần này không thấp hơn 55.2868% Tấn Công cơ bản của Lohen, thì sẽ tích lũy 0.829302 <strong>Nỗ Lực Chiến Thắng</strong> cho Lohen. Nếu ngược lại, thì sẽ tích lũy 1 <strong>Nỗ Lực Chiến Thắng</strong> cho Lohen.",
+      "2": "Cùng một nhân vật mỗi 0.1s tối đa tích lũy một lần <strong>Nỗ Lực Chiến Thắng</strong> cho Lohen."
+    }
+  },
   "11300001": {
     "name": "Lumi - Hình Thái Xuất Kích",
     "description": {
@@ -363,6 +397,71 @@
       "9": "<strong>Hình Thái Thông Thường</strong>",
       "10": "Tuy không ghê gớm bằng các hình thái khác, nhưng cũng vẫn rất lợi hại.",
       "11": "Lumi sẽ dùng <strong>Đánh Đập Dồn Dập</strong> với giãn cách dài hơn để liên tục tấn công kẻ địch ở gần, mỗi lần tấn công sẽ gây 2 lần <geo>Sát Thương Phạm Vi Nguyên Tố Nham</geo>."
+    }
+  },
+  "11310001": {
+    "name": "Ân Huệ Khiêm Nhường",
+    "description": {
+      "0": "Sau khi thi triển Kỹ Năng Nguyên Tố <strong>Khải Huyền - Ánh Sáng Chưa Hiển Hiện</strong>, Nicole sẽ ban hiệu quả này cho tất cả nhân vật trong đội ở gần: Tăng Tấn Công dựa trên Tấn Công của Nicole.",
+      "1": "Sau khi đạt điều kiện cụ thể, hiệu quả <strong>Ân Huệ Khiêm Nhường</strong> sẽ nâng cấp thành <strong>Chỉ Dẫn Thần Thánh</strong>, tiếp tục tăng thêm Tấn Công."
+    }
+  },
+  "11310002": {
+    "name": "Chỉ Dẫn Thần Thánh",
+    "description": {
+      "0": "Hiệu quả <strong>Ân Huệ Khiêm Nhường</strong> sau khi nâng cấp, sẽ tăng thêm 300 điểm Tấn Công.",
+      "1": "Sau khi mở khóa Thiên Phú Đột Phá \"Sự Sẻ Chia\" và đáp ứng điều kiện \"Quan Sát\" bất kỳ trong đó, <strong>Ân Huệ Khiêm Nhường</strong> sẽ được nâng cấp thành <strong>Chỉ Dẫn Thần Thánh</strong> trong thời gian duy trì còn lại:",
+      "2": [
+        "Nhân vật được Quan Sát liên tục ở trong trận trên 3s.",
+        "Nhân vật được Quan Sát là nhân vật Hexerei."
+      ],
+      "3": "<br/>",
+      "4": "Ngoài ra, sau khi mở khóa Thiên Phú Đột Phá \"Sự Hướng Thiện\", sau khi Sát Thương Nguyên Tố của nhân vật ra trận hiện tại trong đội ở gần đánh trúng kẻ địch, <strong>Ân Huệ Khiêm Nhường</strong> mà bản thân Nicole sở hữu cũng sẽ nâng cấp thành <strong>Chỉ Dẫn Thần Thánh</strong> trong vòng 8s.",
+      "5": "<br/>",
+      "6": "Ngoài Nicole, <strong>Chỉ Dẫn Thần Thánh</strong> mà nhân vật khác sở hữu sẽ khôi phục về trạng thái <strong>Ân Huệ Khiêm Nhường</strong> khi họ rời trận."
+    }
+  },
+  "11320001": {
+    "name": "Búa Săn Tai Ương",
+    "description": {
+      "0": "Bạn đồng hành săn lùng ma nữ rất đáng tin cậy! Có thể phát sinh chuyển hóa nguyên tố trong điều kiện nhất định, tất cả sát thương vốn do Búa Săn Tai Ương gây ra đều sẽ chuyển sang gây sát thương nguyên tố tương ứng lên kẻ địch.",
+      "1": "Prune có thể thông qua những cách thức sau để triệu hồi Búa Săn Tai Ương chuyển hóa nguyên tố:",
+      "2": [
+        "Trong một khoảng thời gian nhất định sau khi Prune thi triển Kỹ Năng Nguyên Tố <strong>Reng Reng - Âm Thanh Săn Ma</strong> và kích hoạt phản ứng Khuếch Tán lên kẻ địch, có thể thi triển Kỹ Năng Nguyên Tố đặc biệt <strong>Leng Keng - Trừng Phạt Ác Ma</strong>. Khi thi triển Kỹ Năng Nguyên Tố đặc biệt này, Búa Săn Tai Ương sẽ chuyển sang loại nguyên tố khác đã tham gia phản ứng Khuếch Tán trước đó.",
+        "Sau khi mở khóa Thiên Phú Đột Phá \"Phán Quyết Truy Cứu\", nếu Chuông Nhử Phù Thủy ở chế độ Săn Lùng kích hoạt phản ứng Khuếch Tán lên kẻ địch, sẽ triệu hồi một Búa Săn Tai Ương chuyển hóa nguyên tố theo phản ứng Khuếch Tán lần này để tấn công kẻ địch."
+      ]
+    }
+  },
+  "11320002": {
+    "name": "Phán Quyết Truy Cứu",
+    "description": {
+      "0": "Trong Kỹ Năng Nộ <strong>Chuông Reo - Thời Khắc Săn Ma</strong>, sau khi Chuông Nhử Phù Thủy ở chế độ \"Săn Lùng\" gây sát thương lên kẻ địch, nếu lần sát thương này kích hoạt phản ứng Khuếch Tán, sẽ triệu hồi một <strong>Búa Săn Tai Ương</strong> được chuyển hóa nguyên tố theo phản ứng Khuếch Tán lần này ở trước mặt kẻ địch và đập xuống, gây Sát Thương Nguyên Tố tương ứng. Sát thương này được xem là sát thương Kỹ Năng Nộ."
+    }
+  },
+  "11320003": {
+    "name": "Tiếng Chuông Cộng Hưởng",
+    "description": {
+      "0": "Sau khi Prune dùng <strong>Búa Săn Tai Ương</strong> đã chuyển hóa nguyên tố đánh trúng kẻ địch, nhân vật khác trong đội ở gần sẽ nhận được hiệu quả Tiếng Chuông Khích Lệ: Dựa trên Tấn Công của Prune, tăng sát thương gây ra bởi đòn tấn công."
+    }
+  },
+  "11330001": {
+    "name": "Giải Mã",
+    "description": {
+      "0": "Khi thực hiện Trọng Kích, Fagio sẽ chuyển sang chế độ này.",
+      "1": "Khi trong chế độ này, Fagio sẽ thực hiện bắn phá kẻ địch phía trước và phóng Tia Ngưng Tụ theo chu kỳ, gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo>.",
+      "2": "<strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>: Tia Ngưng Tụ chuyển sang gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo> được xem là sát thương phản ứng Tinh-Siêu Dẫn."
+    }
+  },
+  "11330002": {
+    "name": "Công Suất Giải Mã",
+    "description": {
+      "0": "Khi trong chế độ <strong>Giải Mã</strong>, <strong>Công Suất Giải Mã</strong> của Fagio sẽ liên tục tăng lên. Khi Công Suất Giải Mã đạt đến giới hạn, sẽ không thể duy trì hoặc vào lại chế độ Giải Mã."
+    }
+  },
+  "11330003": {
+    "name": "Vùng Trục Sao",
+    "description": {
+      "0": "Khi kích hoạt phản ứng Tinh-Siêu Dẫn, khu vực lân cận sẽ tạm thời chuyển thành <strong>Vùng Trục Sao</strong>. Khi ở trong Vùng Trục Sao, nhân vật chỉ định sẽ tiến vào trạng thái <strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>, khiến các kỹ năng khác nhau lần lượt nhận được hiệu quả cường hóa tương ứng."
     }
   }
 }

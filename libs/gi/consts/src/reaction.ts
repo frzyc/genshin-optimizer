@@ -1,3 +1,5 @@
+export const allStellarReactionKeys = ['stellarconduct'] as const
+export type StellarReactionKey = (typeof allStellarReactionKeys)[number]
 export const allLunarReactionKeys = [
   'lunarcharged',
   'lunarbloom',
@@ -17,6 +19,7 @@ export const allTransformativeReactionKeys = [
   'hyperbloom',
   'lunarbloom',
   'lunarcrystallize',
+  'stellarconduct',
 ] as const
 export type TransformativeReactionKey =
   (typeof allTransformativeReactionKeys)[number]

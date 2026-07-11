@@ -1,3 +1,4 @@
+import { clamp } from '@genshin-optimizer/common/util'
 import { type AscensionKey, type RarityKey, validateLevelAsc } from './common'
 
 export const allWeaponTypeKeys = [
@@ -67,6 +68,7 @@ export type WeaponSwordKey = (typeof allWeaponSwordKeys)[number]
 
 export const allWeaponClaymoreKeys = [
   'Akuoumaru',
+  'ATeaspoonOfTranscendence',
   'AThousandBlazingSuns',
   'BeaconOfTheReedSea',
   'BlackcliffSlasher',
@@ -122,6 +124,7 @@ export const allWeaponPolearmKeys = [
   'CrimsonMoonsSemblance',
   'Deathmatch',
   'DialoguesOfTheDesertSages',
+  'DisasterAndRemorse',
   'DragonsBane',
   'DragonspineSpear',
   'EngulfingLightning',
@@ -207,6 +210,7 @@ export const allWeaponBowKeys = [
 export type WeaponBowKey = (typeof allWeaponBowKeys)[number]
 
 export const allWeaponCatalystKeys = [
+  'AngelosHeptades',
   'ApprenticesNotes',
   'AshGravenDrinkingHorn',
   'AThousandFloatingDreams',
@@ -306,12 +310,14 @@ export const allWeaponSubstatKeys = [
 ] as const
 export type WeaponSubstatKey = (typeof allWeaponSubstatKeys)[number]
 
-// Weapon global max level constant
-const weaponGlobalMaxLevel = 90
-
 export function validateWeaponLevelAsc(
   level: number,
-  ascension: AscensionKey
+  ascension: AscensionKey,
+  rarity: RarityKey
 ): { level: number; ascension: AscensionKey } {
-  return validateLevelAsc(level, ascension, weaponGlobalMaxLevel)
+  const maxLvl = weaponMaxLevel[rarity]
+  const maxAsc = weaponMaxAscension[rarity]
+  const clampedLevel = clamp(level, 1, maxLvl)
+  const clampedAscension = clamp(ascension, 0, maxAsc) as AscensionKey
+  return validateLevelAsc(clampedLevel, clampedAscension, maxLvl)
 }

@@ -46,6 +46,7 @@ export const stats = [
   'anom_flat_dmg',
   'addl_disorder_',
   'veilVulnerabilityCap_',
+  'direct_dmg_',
 ] as const
 
 export const flatAndPercentStats = [
@@ -83,6 +84,7 @@ export const damageTypes = [
   'elemental',
   'sheer',
   'abloom',
+  'vortex',
 ] as const
 
 export const skillTypes = [

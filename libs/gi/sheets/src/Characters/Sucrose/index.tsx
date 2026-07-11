@@ -167,7 +167,7 @@ const c6LockBase = greaterEq(
   equal(
     condLockHomework,
     'on',
-    equal(target.isHexerei, 1, percent(dm.constellation6.hex_dmg_))
+    equal(target.flags.isHexerei, 1, percent(dm.constellation6.hex_dmg_))
   )
 )
 const c6LockBonus = objKeyMap(
@@ -233,7 +233,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       burst_dmg_: sum(lockAfterSkill_burst_dmg_, lockAfterBurst_burst_dmg_),
     },
   },
-  isHexerei: lockHomework_hexerei,
+  flags: { isHexerei: lockHomework_hexerei },
 })
 
 const sheet: TalentSheet = {

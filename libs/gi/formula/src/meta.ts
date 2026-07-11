@@ -75,6 +75,13 @@ export const conditionals = {
       type: 'bool',
     },
   },
+  CelestialGift: {
+    someBoolConditional: {
+      sheet: 'CelestialGift',
+      name: 'someBoolConditional',
+      type: 'bool',
+    },
+  },
   CrimsonWitchOfFlames: {
     someBoolConditional: {
       sheet: 'CrimsonWitchOfFlames',
@@ -99,6 +106,13 @@ export const conditionals = {
   DesertPavilionChronicle: {
     someBoolConditional: {
       sheet: 'DesertPavilionChronicle',
+      name: 'someBoolConditional',
+      type: 'bool',
+    },
+  },
+  DisenchantmentInDeepShadow: {
+    someBoolConditional: {
+      sheet: 'DisenchantmentInDeepShadow',
       name: 'someBoolConditional',
       type: 'bool',
     },
@@ -1549,6 +1563,20 @@ export const formulas = {
       },
     },
   },
+  Lohen: {
+    normal1: {
+      sheet: 'Lohen',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Lohen',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   Lynette: {
     normal1: {
       sheet: 'Lynette',
@@ -1809,6 +1837,20 @@ export const formulas = {
       },
     },
   },
+  Nicole: {
+    normal1: {
+      sheet: 'Nicole',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Nicole',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   Nilou: {
     normal_0: {
       sheet: 'Nilou',
@@ -2057,6 +2099,20 @@ export const formulas = {
       },
     },
   },
+  Prune: {
+    normal1: {
+      sheet: 'Prune',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Prune',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   Qiqi: {
     normal1: {
       sheet: 'Qiqi',
@@ -2108,6 +2164,20 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         sheet: 'Rosaria',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  Sandrone: {
+    normal1: {
+      sheet: 'Sandrone',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Sandrone',
         move: 'normal',
         name: 'normal1',
       },

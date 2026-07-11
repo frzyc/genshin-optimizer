@@ -1,0 +1,175 @@
+{
+  "name": "Prune",
+  "title": "Childlike Dreams Cherished",
+  "description": "\"Pemburu Penyihir\" cilik. Dia menempuh perjalanan jauh dari Nod-Krai hanya untuk menaklukkan penyihir yang, menurutnya, gemar menindas yang lemah dan melakukan segala macam kejahatan.",
+  "constellationName": "Turris Venefica",
+  "auto": {
+    "name": "Badaboom! Hexbuster Hammer",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Mengayunkan Banehunter Oathhammer, melancarkan hingga 3 serangan dan mengakibatkan <anemo>Anemo DMG</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina, melakukan ayunan palu ke atas untuk mengakibatkan <anemo>Anemo DMG</anemo> terhadap musuh di depan."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Mengumpulkan kekuatan Anemo dan menerjang tanah, menyerang musuh di jalur terjangan dan mengakibatkan <anemo>Anemo DMG Area</anemo> saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Charged Attack",
+      "4": "Konsumsi Stamina Charged Attack",
+      "5": "DMG Selama Plunging",
+      "6": "DMG Plunging Attack Rendah/Tinggi",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Ring-A-Ding-Ding! Hexhunter Chime",
+    "description": {
+      "0": "Mengeluarkan kekuatan angin dengan tekad untuk mengalahkan sang penyihir \"jahat\" menyelamatkan Descartes! Prune menggunakan Banehunter Oathhammer untuk menghantam Witchlure Bell dan mengakibatkan <anemo>Anemo DMG</anemo>.",
+      "1": "Jika Prune memicu reaksi Swirl terhadap musuh melalui serangan ini, maka <strong>Ring-A-Ding-Ding! Hexhunter Chime</strong> akan berubah menjadi <strong>Clang Clang! Witch-tribution Comes!</strong> selama 6 detik ke depan.",
+      "2": "<br/>",
+      "3": "<strong>Clang Clang! Witch-tribution Comes!</strong>",
+      "4": "Membungkus palu Prune dengan jenis elemen yang sebelumnya terlibat dalam reaksi Swirl, dan membuat <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Banehunter Oathhammer</strong></tooltip> mengalami Elemental Conversion. Saat dilancarkan dengan Mode Tekan, Prune melompat dan menendang Banehunter Oathhammer ke depan, mengakibatkan Elemental DMG dengan jenis elemen yang sesuai terhadap musuh di depannya."
+    },
+    "skillParams": {
+      "0": "DMG Ring-A-Ding-Ding! Hexhunter Chime",
+      "1": "DMG Clang Clang! Witch-tribution Comes!",
+      "2": "Cooldown",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "The Bell Tolls! The Hunt is On!",
+    "description": {
+      "0": "Prune mengayunkan Witchlure Bell dengan lembut, mengakibatkan <anemo>Anemo DMG</anemo> terhadap musuh di sekitar. Setelahnya, Witchlure Bell akan memasuki mode Hunter-Seeker.",
+      "1": "<br/>",
+      "2": "<strong>Witchlure Bell: Hunter Seeker</strong>",
+      "3": "Dalam mode ini, Witchlure Bell akan mengikuti Karakter aktif sambil menyerang musuh di sekitar secara berkala dan mengakibatkan <anemo>Anemo DMG Area</anemo>. DMG ini dianggap sebagai DMG Elemental Burst."
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Witchlure Bell",
+      "2": "Durasi Mode Hunter-Seeker",
+      "3": "Cooldown",
+      "4": "Konsumsi Energy",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Verdict and Punishment",
+    "description": {
+      "0": "Dalam Elemental Burst<strong> <tooltip ns=char_Prune_gen baseKey18=burst>The Bell Tolls! The Hunt is On!</tooltip></strong>, setelah Witchlure Bell dalam mode Hunter-Seeker mengakibatkan DMG terhadap musuh, jika DMG tersebut memicu reaksi Swirl terhadap musuh, maka akan memanggil <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Banehunter Oathhammer</strong></tooltip> yang telah mengalami Elemental Conversion berdasarkan reaksi Swirl kali ini di depan musuh dan menghantamnya, mengakibatkan Elemental DMG yang sesuai dengan konversi Swirl sebesar 150% ATK Prune. DMG ini dianggap sebagai DMG Elemental Burst."
+    }
+  },
+  "passive2": {
+    "name": "Tolling Synchronicity",
+    "description": {
+      "0": "Setelah Prune menggunakan <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Banehunter Oathhammer</strong></tooltip> yang telah mengalami Elemental Conversion untuk mengenai musuh, anggota party lain di sekitar akan mendapatkan efek Tolling Rally yang berlangsung selama 5 detik: Saat Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, atau Elemental Burst mengakibatkan DMG terhadap musuh, akan meningkatkan DMG yang diakibatkan oleh serangan tersebut berdasarkan ATK Prune saat mendapatkan efek Tolling Rally yang melebihi 2.000 poin. Setiap 1 poin ATK yang berlebih akan meningkatkan DMG yang diakibatkan oleh serangan tersebut sebesar 0,025%, hingga maksimum 50%."
+    }
+  },
+  "passive3": {
+    "name": "Tinker-Tink, Clank, and Bang!",
+    "description": {
+      "0": "Memberikan 10% peluang untuk mendapatkan 1 tambahan Material Talenta acak yang sewilayah saat craft. Kelangkaannya sama dengan material yang dihasilkan."
+    }
+  },
+  "lockedPassive": {
+    "name": "Witch's Eve Rite: Witchseeker's Vow",
+    "description": {
+      "0": "Setelah menyelesaikan <strong>PR Penyihir: Tentang Hal yang Diperdebatkan</strong>, Prune akan berubah menjadi Karakter <strong>Hexerei</strong>. Saat ada setidaknya 2 Karakter Hexerei di dalam party, akan mendapatkan efek <strong>Hexerei: Secret Rite</strong> yang memperkuat Karakter Hexerei.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei: Secret Rite</strong>",
+      "3": "Saat Karakter Hexerei di dalam party yang sedang terpengaruh efek Tolling Rally memicu Reaksi Elemental apa pun terhadap musuh, ATK Prune akan meningkat 60% selama 5 detik. Jika Reaksi Elemental yang dipicu adalah Swirl, maka ATK Karakter yang memicu akan meningkat 30% lagi selama 5 detik."
+    }
+  },
+  "constellation1": {
+    "name": "With a Vow to Rescue, the Journey Begins",
+    "description": {
+      "0": "Setelah serangan <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Banehunter Oathhammer</strong></tooltip> yang telah melalui Elemental Conversion mengenai musuh, akan memulihkan 2 poin Energy untuk Prune. Efek ini dapat terpicu sekali setiap 1,8 detik."
+    }
+  },
+  "constellation2": {
+    "name": "Useful for Cleaning Messy Baggage, Elemental Powers Are Indeed",
+    "description": {
+      "0": "Selama Elemental Burst <strong><tooltip ns=char_Prune_gen baseKey18=burst>The Bell Tolls! The Hunt is On!</tooltip></strong>, saat Witchlure Bell berada dalam mode Hunter-Seeker, Prune akan mendapatkan efek Hunt the Witch: ATK Prune meningkat 10%, saat Witchlure Bell dan <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Banehunter Oathhammer</strong></tooltip> yang telah melalui Elemental Conversion mengenai musuh, ATK-nya akan meningkat 5% lagi. Peningkatan ATK maksimum yang bisa didapatkan melalui cara di atas adalah 40%.",
+      "1": "Melancarkan The Bell Tolls! The Hunt is On! lagi selama efek di atas masih aktif akan menghapus efek terdahulu."
+    }
+  },
+  "constellation3": {
+    "name": "The Caravan Exits the Mountain Pass, the Scenery Once More Changed",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Burst <strong><tooltip ns=char_Prune_gen baseKey18=burst>The Bell Tolls! The Hunt is On!</tooltip></strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Looking Back Following the Wind, One's Shadow Still Halved",
+    "description": {
+      "0": "Setelah <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Banehunter Oathhammer</strong></tooltip> yang telah mengalami Elemental Conversion mengenai musuh, ia akan memantul lagi dan terjatuh di posisi musuh di sekitar, mengakibatkan Elemental DMG dengan jenis elemen yang sesuai sebesar 80% ATK terhadap musuh yang terkena."
+    }
+  },
+  "constellation5": {
+    "name": "100 Defeats? No Problem, Tomorrow, We Go Again",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Skill <strong><tooltip ns=char_Prune_gen baseKey18=skill>Ring-A-Ding-Ding! Hexhunter Chime</tooltip></strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "And That's the Story! Share It With Your Friends!",
+    "description": {
+      "0": "Durasi mode Hunter-Seeker Witchlure Bell milik Elemental Burst <strong><tooltip ns=char_Prune_gen baseKey18=burst>The Bell Tolls! The Hunt is On!</tooltip></strong> diperpanjang 4 detik.",
+      "1": "Selain itu, setelah Karakter dalam party yang terpengaruh oleh efek Tolling Rally memicu Reaksi Elemental apa pun pada musuh, ATK Prune dan Karakter aktif lain yang sedang berada di medan pertempuran yang memiliki efek Tolling Rally di sekitarnya meningkat 350 poin selama 5 detik."
+    }
+  }
+}

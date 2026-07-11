@@ -1,0 +1,335 @@
+import { isIn, objKeyMap, objKeyValMap } from '@genshin-optimizer/common/util'
+import {
+  absorbableEle,
+  allLunarReactionKeys,
+  allStellarReactionKeys,
+} from '@genshin-optimizer/gi/consts'
+import type { CrittableTransformativeReactionsKey } from '@genshin-optimizer/gi/keymap'
+import { transformativeReactions } from '@genshin-optimizer/gi/keymap'
+import { infusionNode, input } from '../formula'
+import { info } from '../info'
+import {
+  constant,
+  data,
+  equal,
+  greaterEq,
+  infoMut,
+  lookup,
+  max,
+  min,
+  naught,
+  one,
+  percent,
+  prod,
+  sum,
+} from '../utils'
+import { lunarDmg } from './lunar'
+import { crystallizeHit, transMulti1, transMulti2 } from './multi'
+
+const trans = {
+  ...objKeyMap(
+    Object.keys(transformativeReactions).filter(
+      // We handle lunar/stellar reactions separately
+      (k) => !isIn([...allLunarReactionKeys, ...allStellarReactionKeys], k)
+    ),
+    (reaction) => {
+      const { multi, resist, canCrit } = transformativeReactions[reaction]
+      return infoMut(
+        prod(
+          sum(
+            prod(
+              prod(constant(multi, info(`${reaction}_multi_`)), transMulti1),
+              sum(
+                infoMut(sum(one, transMulti2), {
+                  pivot: true,
+                  ...info('base_transformative_multi_'),
+                }),
+                input.total[`${reaction}_dmg_`]
+              )
+            ),
+            input.total[`${reaction}_dmgInc`]
+          ),
+          lookup(
+            input.hit.hitMode,
+            {
+              hit: one,
+              critHit: canCrit
+                ? sum(
+                    one,
+                    input.total[
+                      `${
+                        reaction as CrittableTransformativeReactionsKey
+                      }_critDMG_`
+                    ]
+                  )
+                : one,
+              avgHit: canCrit
+                ? sum(
+                    one,
+                    prod(
+                      infoMut(
+                        max(
+                          min(
+                            input.total[
+                              `${
+                                reaction as CrittableTransformativeReactionsKey
+                              }_critRate_`
+                            ],
+                            one
+                          ),
+                          naught
+                        ),
+                        {
+                          ...input.total[
+                            `${
+                              reaction as CrittableTransformativeReactionsKey
+                            }_critRate_`
+                          ].info,
+                          pivot: true,
+                        }
+                      ),
+                      input.total[
+                        `${
+                          reaction as CrittableTransformativeReactionsKey
+                        }_critDMG_`
+                      ]
+                    )
+                  )
+                : one,
+            },
+            NaN
+          ),
+          input.enemy.transDef,
+          input.enemy[`${resist}_resMulti_`]
+        ),
+        info(`${reaction}_hit`)
+      )
+    }
+  ),
+  swirl: objKeyMap(transformativeReactions.swirl.variants, (ele) => {
+    const base = sum(
+      prod(
+        prod(
+          constant(transformativeReactions.swirl.multi, info('swirl_multi_')),
+          transMulti1
+        ),
+        sum(
+          infoMut(sum(one, transMulti2), {
+            pivot: true,
+            ...info('base_transformative_multi_'),
+          }),
+          input.total.swirl_dmg_
+        )
+      ),
+      input.total.swirl_dmgInc
+    )
+    const res = input.enemy[`${ele}_resMulti_`]
+    const crit = sum(one, input.total.swirl_critDMG_)
+    const avgCrit = sum(
+      one,
+      prod(
+        infoMut(max(min(input.total.swirl_critRate_, one), naught), {
+          ...input.total.swirl_critRate_.info,
+          pivot: true,
+        }),
+        input.total.swirl_critDMG_
+      )
+    )
+    const critFactor = lookup(
+      input.hit.hitMode,
+      {
+        critHit: crit,
+        avgHit: avgCrit,
+        hit: one,
+      },
+      NaN
+    )
+    return infoMut(
+      // CAUTION:
+      // Add amp multiplier/additive term only to swirls that have amp/additive reactions.
+      // It is wasteful to add them indiscriminately, but this means
+      // that we need to audit and add appropriate elements here
+      // should amp/additive reactions be added to more swirls.
+      ['pyro', 'hydro', 'cryo', 'electro'].includes(ele)
+        ? ele === 'electro'
+          ? // Additive reactions apply the additive term before resistance, but after swirl bonuses
+            data(prod(sum(base, input.hit.addTerm), critFactor, res), {
+              hit: { ele: constant(ele) },
+            })
+          : // Amp reaction
+            data(prod(base, critFactor, res, input.hit.ampMulti), {
+              hit: { ele: constant(ele) },
+            })
+        : prod(base, res),
+      info(`${ele}_swirl_hit`)
+    )
+  }),
+  lunarcharged: infoMut(
+    lunarDmg(
+      constant(
+        transformativeReactions.lunarcharged.multi,
+        info('lunarcharged_multi_')
+      ),
+      'reaction',
+      'lunarcharged'
+    ),
+    { path: 'lunarcharged_hit' }
+  ),
+  lunarcrystallize: infoMut(
+    lunarDmg(
+      constant(
+        transformativeReactions.lunarcrystallize.multi,
+        info('lunarcrystallize_multi_')
+      ),
+      'reaction',
+      'lunarcrystallize'
+    ),
+    { path: 'lunarcrystallize_hit' }
+  ),
+}
+const infusionReactions = {
+  overloaded: infoMut(
+    greaterEq(
+      sum(equal(infusionNode, 'pyro', 1), equal(infusionNode, 'electro', 1)),
+      1,
+      trans.overloaded
+    ),
+    info('overloaded_hit')
+  ),
+  electrocharged: infoMut(
+    greaterEq(
+      sum(equal(infusionNode, 'hydro', 1), equal(infusionNode, 'electro', 1)),
+      1,
+      trans.electrocharged
+    ),
+    info('electrocharged_hit')
+  ),
+  lunarcharged: infoMut(
+    greaterEq(
+      sum(equal(infusionNode, 'hydro', 1), equal(infusionNode, 'electro', 1)),
+      1,
+      trans.lunarcharged
+    ),
+    info('lunarcharged_hit')
+  ),
+  superconduct: infoMut(
+    equal(infusionNode, 'cryo', trans.superconduct),
+    info('superconduct_hit')
+  ),
+  burning: infoMut(
+    equal(infusionNode, 'pyro', trans.burning),
+    info('burning_hit')
+  ),
+  bloom: infoMut(equal(infusionNode, 'hydro', trans.bloom), info('bloom_hit')),
+  burgeon: infoMut(
+    equal(infusionNode, 'pyro', trans.burgeon),
+    info('burgeon_hit')
+  ),
+  hyperbloom: infoMut(
+    equal(infusionNode, 'electro', trans.hyperbloom),
+    info('hyperbloom_hit')
+  ),
+  lunarcrystallize: infoMut(
+    greaterEq(
+      sum(equal(infusionNode, 'hydro', 1), equal(infusionNode, 'geo', 1)),
+      1,
+      trans.lunarcrystallize
+    ),
+    info('lunarcrystallize_hit')
+  ),
+}
+export const reactions = {
+  anemo: {
+    electroSwirl: trans.swirl.electro,
+    pyroSwirl: trans.swirl.pyro,
+    cryoSwirl: trans.swirl.cryo,
+    hydroSwirl: trans.swirl.hydro,
+    overloaded: trans.overloaded,
+    electrocharged: trans.electrocharged,
+    lunarcharged: trans.lunarcharged,
+    superconduct: trans.superconduct,
+    shattered: trans.shattered,
+    burning: trans.burning,
+    bloom: trans.bloom,
+    burgeon: trans.burgeon,
+    hyperbloom: trans.hyperbloom,
+    lunarcrystallize: trans.lunarcrystallize,
+  },
+  geo: {
+    crystallize: crystallizeHit,
+    ...objKeyValMap(absorbableEle, (e) => [
+      `${e}Crystallize`,
+      infoMut(prod(percent(2.5), crystallizeHit), info(`${e}_crystallize`)),
+    ]),
+    shattered: trans.shattered,
+    overloaded: infusionReactions.overloaded,
+    electrocharged: infusionReactions.electrocharged,
+    lunarcharged: infusionReactions.lunarcharged,
+    superconduct: infusionReactions.superconduct,
+    burning: infusionReactions.burning,
+    bloom: infusionReactions.bloom,
+    burgeon: infusionReactions.burgeon,
+    hyperbloom: infusionReactions.hyperbloom,
+    lunarcrystallize: trans.lunarcrystallize,
+  },
+  electro: {
+    overloaded: trans.overloaded,
+    electrocharged: trans.electrocharged,
+    lunarcharged: trans.lunarcharged,
+    superconduct: trans.superconduct,
+    shattered: trans.shattered,
+    hyperbloom: trans.hyperbloom,
+    burning: infusionReactions.burning,
+    bloom: infusionReactions.bloom,
+    burgeon: infusionReactions.burgeon,
+    lunarcrystallize: infusionReactions.lunarcrystallize,
+  },
+  hydro: {
+    electrocharged: trans.electrocharged,
+    lunarcharged: trans.lunarcharged,
+    shattered: trans.shattered,
+    bloom: trans.bloom,
+    overloaded: infusionReactions.overloaded,
+    superconduct: infusionReactions.superconduct,
+    burning: infusionReactions.burning,
+    burgeon: infusionReactions.burgeon,
+    hyperbloom: infusionReactions.hyperbloom,
+    lunarcrystallize: trans.lunarcrystallize,
+  },
+  pyro: {
+    overloaded: trans.overloaded,
+    shattered: trans.shattered,
+    burning: trans.burning,
+    burgeon: trans.burgeon,
+    electrocharged: infusionReactions.electrocharged,
+    lunarcharged: infusionReactions.lunarcharged,
+    superconduct: infusionReactions.superconduct,
+    bloom: infusionReactions.bloom,
+    hyperbloom: infusionReactions.hyperbloom,
+    lunarcrystallize: infusionReactions.lunarcrystallize,
+  },
+  cryo: {
+    superconduct: trans.superconduct,
+    shattered: trans.shattered,
+    overloaded: infusionReactions.overloaded,
+    electrocharged: infusionReactions.electrocharged,
+    lunarcharged: infusionReactions.lunarcharged,
+    burning: infusionReactions.burning,
+    bloom: infusionReactions.bloom,
+    burgeon: infusionReactions.burgeon,
+    hyperbloom: infusionReactions.hyperbloom,
+    lunarcrystallize: infusionReactions.lunarcrystallize,
+  },
+  dendro: {
+    shattered: trans.shattered,
+    burning: trans.burning,
+    bloom: trans.bloom,
+    overloaded: infusionReactions.overloaded,
+    electrocharged: infusionReactions.electrocharged,
+    lunarcharged: infusionReactions.lunarcharged,
+    superconduct: infusionReactions.superconduct,
+    burgeon: infusionReactions.burgeon,
+    hyperbloom: infusionReactions.hyperbloom,
+    lunarcrystallize: infusionReactions.lunarcrystallize,
+  },
+}

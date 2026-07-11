@@ -1,0 +1,178 @@
+{
+  "name": "桑多涅",
+  "title": "镜水析谬",
+  "description": "愚人众执行官第七席，「木偶」。以数理解析事象之人，茶会上永不缺席的优雅淑女。",
+  "constellationName": "镜中奇械座",
+  "auto": {
+    "name": "自明演绎",
+    "fields": {
+      "normal": {
+        "0": "<strong>普通攻击</strong>",
+        "1": "以数式编织出操纵兵刃的丝线，进行至多三段的连续挥砍。"
+      },
+      "charged": {
+        "0": "<strong>重击</strong>",
+        "1": "召唤出全功能通用型自动机关<strong>「法洁欧」</strong>，并使其切换至<strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>解算</tooltip></strong>模式：对前方的敌人进行扫射攻击，并周期性发射冷凝射线，造成<cryo>冰元素范围伤害</cryo>。",
+        "2": "<strong>辉映·星超导</strong>：冷凝射线转为造成视为星超导反应伤害的<cryo>冰元素范围伤害</cryo>。",
+        "3": "在<strong>解算</strong>模式下，法洁欧的<strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>解算功率</tooltip></strong>将会持续提升；发射冷凝射线时，还会使解算功率进一步提升。",
+        "4": "解算功率达到100点上限时，法洁欧将切换至<strong>功率过载</strong>模式，以更长的间隔对敌人进行射击，造成<cryo>冰元素伤害</cryo>，且无法切换至解算模式。",
+        "5": "不处于<strong>解算</strong>模式下时，法洁欧的<strong>解算功率</strong>将会缓慢降低；桑多涅处于队伍后台时，还会专注于维修法洁欧，使其解算功率降低速度加快至原本的300%。",
+        "6": "<strong>解算功率</strong>降低至50点以下时，法洁欧将退出<strong>功率过载</strong>模式。"
+      },
+      "plunging": {
+        "0": "<strong>下落攻击</strong>",
+        "1": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。"
+      }
+    },
+    "skillParams": {
+      "0": "一段伤害",
+      "1": "二段伤害",
+      "2": "三段伤害",
+      "3": "重击扫射伤害",
+      "4": "重击冷凝射线伤害",
+      "5": "重击冷凝射线星超导伤害",
+      "6": "功率过载时伤害",
+      "7": "下坠期间伤害",
+      "8": "低空/高空坠地冲击伤害",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "事象数式·游衍解析",
+    "description": {
+      "0": "秉持淑女完美的法度，搭乘<strong>茶会用战术突击悬浮机关</strong>，并持续向前浮行6秒。期间，桑多涅可以控制浮行的方向，并且点按冲刺时，将会消耗10点体力，进入优雅的高速悬浮模式，每秒消耗15点体力，以更快的速度进行浮行。",
+      "1": "<br/>",
+      "2": "开始浮行时，若附近存在敌人，桑多涅还会召唤出一台棱晶谐振炮，向没有冷静下来的敌人发射两枚棱晶弹，造成<cryo>冰元素伤害</cryo>。",
+      "3": "<strong>辉映·星超导</strong>：第二枚棱晶弹将转为造成视为星超导反应伤害的<cryo>冰元素伤害</cryo>。",
+      "4": "<br/>",
+      "5": "搭乘茶会用战术突击悬浮机关时，桑多涅还会优雅地悄悄维修法洁欧，使其<strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>解算功率</tooltip></strong>快速降低。"
+    },
+    "skillParams": {
+      "0": "棱晶弹伤害",
+      "1": "棱晶弹星超导伤害",
+      "2": "冷却时间",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "事象数式·万理证毕",
+    "description": {
+      "0": "秉持淑女优雅的礼仪，召唤出大量棱晶谐振炮对前方进行广域轰炸，并在随后发射负温聚能光束轰击敌人，造成<cryo>冰元素范围伤害</cryo>。",
+      "1": "<strong>辉映·星超导</strong>：负温聚能光束将转为造成视为星超导反应伤害的<cryo>冰元素范围伤害</cryo>。"
+    },
+    "skillParams": {
+      "0": "轰炸伤害",
+      "1": "聚能光束伤害",
+      "2": "聚能光束星超导伤害",
+      "3": "冷却时间",
+      "4": "元素能量",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "悠久的演算机关",
+    "description": {
+      "0": "<strong>辉映·星超导</strong>：施放元素战技<tooltip ns=char_Sandrone_gen baseKey18=skill><strong>事象数式·游衍解析</strong></tooltip>时，若法洁欧的<strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>解算功率</tooltip></strong>超过50点，则会在降低解算功率的同时，使向附近敌人发射的第二枚棱晶弹造成原本400%的伤害。",
+      "1": "此外，法洁欧的<strong>解算功率</strong>每降低10点，都会获得一层持续60秒的<strong>改进战术</strong>效果，该效果至多叠加10层。桑多涅处于<strong>辉映·星超导</strong>状态下施放元素爆发<tooltip ns=char_Sandrone_gen baseKey18=burst><strong>事象数式·万理证毕</strong></tooltip>时，将会清除全部的改进战术层数，使负温聚能光束造成原本100%+清除层数*10%的伤害。"
+    }
+  },
+  "passive2": {
+    "name": "淑女的行事准则",
+    "description": {
+      "0": "基于桑多涅的攻击力，提升其元素精通：每100点攻击力都将使桑多涅的元素精通提升8点，至多通过这种方式提升160点元素精通。"
+    }
+  },
+  "passive3": {
+    "name": "星耀祝礼·唯理为光",
+    "description": {
+      "0": "队伍中的角色触发超导反应时，将转为触发星超导反应，且基于桑多涅的攻击力，提升队伍中角色造成的星超导反应的基础伤害：每100点攻击力都将提升0.7%星超导反应的基础伤害，至多通过这种方式提升14%伤害。",
+      "1": "此外，处于<tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>极星辉域</strong></tooltip>中时，桑多涅将会进入<strong>辉映·星超导</strong>状态。"
+    }
+  },
+  "passive": {
+    "name": "茶会的序曲与长长的故事",
+    "description": {
+      "0": "桑多涅处于队伍中时，向凯瑟琳交付每日委托任务后，会获得额外的茶点奖励。"
+    }
+  },
+  "constellation1": {
+    "name": "鎏金未凋，夕暮已远",
+    "description": {
+      "0": "处于<strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>解算</tooltip></strong>模式下时，法洁欧的<strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>解算功率</tooltip></strong>提升速度降低50%，且队伍中的所有角色造成的星超导反应伤害提升30%。"
+    }
+  },
+  "constellation2": {
+    "name": "回望镜中，时岁翩然",
+    "description": {
+      "0": "<strong>辉映·星超导</strong>：重击发射的冷凝射线的暴击伤害提升40%，且每次发射冷凝射线时，都会使本次<strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>解算</tooltip></strong>模式期间，发射的所有冷凝射线的暴击伤害进一步提升20%，该效果至多叠加3层。"
+    }
+  },
+  "constellation3": {
+    "name": "不叹日落，不羡月升",
+    "description": {
+      "0": "普通攻击<tooltip ns=char_Sandrone_gen baseKey18=normal><strong>事象数式·自明演绎</strong></tooltip>的技能等级提高3级。",
+      "1": "至多提升至15级。"
+    }
+  },
+  "constellation4": {
+    "name": "世事皆数，昼来夜往",
+    "description": {
+      "0": "桑多涅的星超导反应伤害命中敌人时，还会额外召唤一台棱晶谐振炮进行协同攻击，对敌人造成一次相当于桑多涅攻击力125%的<cryo>冰元素伤害</cryo>，该伤害视为星超导反应造成的伤害。该效果每4秒至多触发一次。"
+    }
+  },
+  "constellation5": {
+    "name": "万象皆灰，唯理明畅",
+    "description": {
+      "0": "元素爆发<tooltip ns=char_Sandrone_gen baseKey18=burst><strong>事象数式·万理证毕</strong></tooltip>的技能等级提高3级。",
+      "1": "至多提升至15级。"
+    }
+  },
+  "constellation6": {
+    "name": "水仙梦醒，且望晨光",
+    "description": {
+      "0": "<strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>解算</tooltip></strong>模式下，法洁欧第三次发射冷凝射线时，将转为持续发射威力更强的<strong>集束型冷凝射线</strong>，在原本后续发射的冷凝射线基础上，至多额外造成4段相当于桑多涅攻击力100%的<cryo>冰元素范围伤害</cryo>。",
+      "1": "<strong>辉映·星超导</strong>：<strong>集束型冷凝射线</strong>转为至多额外造成4段相当于桑多涅攻击力80%的<cryo>冰元素范围伤害</cryo>，该伤害视为星超导反应造成的伤害。",
+      "2": "此外，桑多涅造成的所有星超导反应伤害<tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>擢升</strong></tooltip>20%。"
+    }
+  }
+}

@@ -347,6 +347,40 @@
       "3": "Além disso, Varka consome os Usos de <strong>Ascensão dos Quatro Ventos</strong> para realizar o Ataque Carregado especial <strong>Devoração Cerúlea</strong> que não consome Stamina, causando 2 instâncias de Dano Elemental correspondente insubstituível com o espadão de sua mão direita e 2 instâncias de <anemo>Dano Anemo</anemo>."
     }
   },
+  "11290001": {
+    "name": "Golpe de Mestre",
+    "description": {
+      "0": "Depois de lançar a Habilidade Elemental <strong>Ataque Surpresa</strong>, Lohen retornará para esse estado. O estado Golpe de Mestre possui as seguintes características:",
+      "1": [
+        " Os Ataques Normais, Carregados e Imersivos de Lohen serão convertidos para <cryo>Dano Cryo</cryo> que não pode ser substituído.",
+        " Quando os Ataques Normais ou Carregados de Lohen atingem um inimigo, acumulam <strong>Alegria</strong> para Lohen, que é utilizada ao lançar a Habilidade Elemental especial <strong>Entalhado em Alma e Osso</strong>. Lohen pode lançar <strong>Entalhado em Alma e Osso</strong> até 3 vezes enquanto está no modo <strong>Golpe de Mestre</strong>, do qual ele não poderá mais acumular <strong>Alegria</strong>",
+        " Quando os outros membros próximos da equipe causam Dano, acumulam <strong>Luta pela Vitória</strong> para Lohen, que é utilizada para aumentar o Dano causado pela Habilidade Elemental <strong>Entalhado em Alma e Osso</strong>.",
+        " Quando Lohen sair de campo, Golpe de Mestre será removido. Quando Golpe de Mestre é removido, <strong>Alegria</strong> e <strong>Luta pela Vitória</strong> também serão removidos."
+      ]
+    }
+  },
+  "11290002": {
+    "name": "Entalhado em Alma e Osso",
+    "description": {
+      "0": "Quando <strong>Alegria</strong> de Lohen acumula até o limite máximo, pode lançar a Habilidade Elemental especial.",
+      "1": "Após acertar um inimigo, consome tudo de <strong>Alegria</strong> e <strong>Luta pela Vitória</strong> para causar <cryo>Dano Cryo</cryo>, e aumenta o Dano causado de acordo com a quantidade de <strong>Luta pela Vitória</strong> consumido."
+    }
+  },
+  "11290003": {
+    "name": "Alegria",
+    "description": {
+      "0": "Quando Lohen atinge oponentes com um Ataque Normal ou Ataque Carregado enquanto está no modo <strong>Golpe de Mestre</strong>, ele acumula 0.381298 de <strong>Alegria</strong>. É possível acumular até 100 pontos de Alegria por vez.",
+      "1": "A <strong>Alegria</strong> pode ser acumulada uma vez a cada 0.1s. Quando <strong>Alegria</strong> atinge o limite máximo, a Habilidade Elemental de Lohen, <strong>Ataque Surpresa</strong>, será substituída pela Habilidade Elemental especial <strong>Entalhado em Alma e Osso</strong>."
+    }
+  },
+  "11290004": {
+    "name": "Luta pela Vitória",
+    "description": {
+      "0": "Um recurso especial fornecido para Lohen no estrado Golpe de Mestre quando os outros personagens próximos da equipe causam Dano. Máximo de 100 pontos.",
+      "1": "Na duração de Golpe de Mestre, quando os outros membros próximos da equipe causarem Dano, se esse Dano não for menor que 55.2868% do ATQ Básico de Lohen, acumulará 0.829302 pontos de <strong>Luta pela Vitória</strong> para Lohen, caso contrário, acumulará 1 ponto de <strong>Espírito</strong>.",
+      "2": "O mesmo personagem pode acumular <strong>Luta pela Vitória</strong> uma vez a cada 0.1s para Lohen."
+    }
+  },
   "11300001": {
     "name": "Lumi: Forma de Ataque",
     "description": {
@@ -362,6 +396,71 @@
       "9": "<strong>Forma de Poder Normal</strong>",
       "10": "Não é tão chamativa quanto as outras formas, mas ainda é forte.",
       "11": " Lumi usa o <strong>Golpeador Arrematador</strong> em intervalos maiores para atacar inimigos continuamente. Cada ataque causa 2 instâncias de <geo>Dano Geo em AdE</geo>."
+    }
+  },
+  "11310001": {
+    "name": "Graça de Kenosis",
+    "description": {
+      "0": "Depois de lançar a Habilidade Elemental <strong>Revelação: Luz Não Criada</strong>, Nicole concede o seguinte efeito para todos os personagens próximos da equipe: aumenta o ATQ deles com base no ATQ de Nicole.",
+      "1": "Quando satisfazer requisitos específicos, <strong>Graça de Kenosis</strong> aumentará para <strong>Orientação de Theosis</strong>, aumentando ainda mais o ATQ."
+    }
+  },
+  "11310002": {
+    "name": "Orientação de Theosis",
+    "description": {
+      "0": "Depois que o efeito de <strong>Graça de Kenosis</strong> for elevado, aumentará mais 300 de ATQ.",
+      "1": "Depois de desbloquear o Talento de Ascensão \"Methexis\" e satisfazer qualquer um dos requisitos de \"Observação\", <strong>Graça de Kenosis</strong> será elevada para <strong>Orientação de Theosis</strong> no tempo restante da duração:",
+      "2": [
+        " Personagens sob efeito de Observação que permanecer ativo por mais de 3s; ou",
+        " Outros personagens Mágicos sob efeito de Observação."
+      ],
+      "3": "<br/>",
+      "4": "Além disso, depois de desbloquear o Talento de Ascensão \"Philokalia\", quando um membro da equipe ativo próximo causar Dano a um oponente com sua Habilidade Elemental, a <strong>Graça de Kenosis</strong> de Nicole será elevada para <strong>Orientação de Theosis</strong> por 8s.",
+      "5": "<br/>",
+      "6": "Com exceção de Nicole, os demais personagens que possuem <strong>Orientação de Theosis</strong> retornarão para <strong>Graça de Kenosis</strong> quando deixarem de ser o personagem ativo."
+    }
+  },
+  "11320001": {
+    "name": "Martelo do Juramento Livrador",
+    "description": {
+      "0": "A companheira confiável de uma caçadora de bruxas! O Martelo do Juramento Livrador Pode passar por Conversão Elemental sob certas circunstâncias, transformando todo seu Dano em Dano do Tipo Elemental correspondente.",
+      "1": "Prune pode invocar o Martelo do Juramento Livrador que passou por Conversão Elemental das seguintes formas: ",
+      "2": [
+        " Por um certo tempo após desencadear Redemoinho contra um oponente com a Habilidade Elemental <strong>Ding-ding! Tilintar Caçador de Magia!</strong>, pode lançar a Habilidade Elemental especial <strong>Ting-Ting! Retribuição das Bruxas!</strong>. Ao lançar a Habilidade Elemental especial, o Martelo do Juramento Livrador se converterá para o outro Tipo Elemental da reação de Redemoinho.",
+        " Depois de desbloquear o Talento Passivo \"Veredito e Punição\", se estiver no Modo Caçador e o Sino Chama-Bruxa causar Redemoinho nos inimigos, invoca um Martelo do Juramento Livrador que passou por Conversão Elemental de acordo com o Redemoinho atual para atacar o inimigo."
+      ]
+    }
+  },
+  "11320002": {
+    "name": "Veredito e Punição",
+    "description": {
+      "0": "Quando causar Dano contra o inimigo no Modo Caçador do Sino Chama-Bruxa do Supremo <strong>O Sino Toca! A Caçada Chegou!</strong>, se esse Dano desencadear Redemoinho, invoca um <strong>Martelo do Juramento Livrador</strong> que causa Dano do tipo correspondente da Conversão Elemental de Redemoinho. Esse Dano é considerado como Dano de Supremo."
+    }
+  },
+  "11320003": {
+    "name": "Badalar Síncrono",
+    "description": {
+      "0": "Após Prune acertar um oponente com o <strong>Martelo do Juramento Livrador</strong> que passou por uma Conversão Elemental, os outros membros da equipe próximos ganharão o efeito de Dança dos Sinos: O Dano de ATQ será aumentado baseado no ATQ de Prune."
+    }
+  },
+  "11330001": {
+    "name": "Resolução",
+    "description": {
+      "0": "Ao realizar um Ataque Carregado, Fagio trocará para esse modo.",
+      "1": "Quando estiver nesse modo, Fagio atacará com uma rajada contra os inimigos em frente, periodicamente disparando Raios Congelantes, causando <cryo>Dano Cryo em uma AdE</cryo>.",
+      "2": "<strong>Brilho Reluzente: Supercondutor Estelar</strong>: Raio Congelante será convertido para causar <cryo>Dano Cryo em uma AdE</cryo> considerado como Dano de Supercondutor Estelar."
+    }
+  },
+  "11330002": {
+    "name": "Capacidade da Resolução",
+    "description": {
+      "0": "Quando está no modo <strong>Resolução</strong>, a <strong>Capacidade da Resolução</strong> de Fagio aumentará continuamente. Quando Capacidade da Resolução alcançar o máximo, não poderá manter ou reentrar no modo Resolução."
+    }
+  },
+  "11330003": {
+    "name": "Campo da Estrela Polar",
+    "description": {
+      "0": "Ao desencadear Supercondutor Estelar, as áreas próximas serão temporariamente transformadas em <strong>Campo da Estrela Polar</strong>. Quando estiver dentro de um Campo da Estrela Polar, o personagem específico entrará no estado <strong>Brilho Reluzente: Supercondutor Estelar</strong>, com suas Habilidades obtendo bônus de fortalecimento diferentes."
     }
   }
 }

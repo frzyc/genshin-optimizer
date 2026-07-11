@@ -1,0 +1,175 @@
+{
+  "name": "Prune",
+  "title": "Geschätzte kindliche Träume",
+  "description": "Eine kleine „Hexenjägerin“. Sie ist den ganzen Weg von Nod-Krai hergereist, nur um die Hexe zu besiegen, die ihrer Meinung nach die Schwachen schikaniert und nichts als Böses tut.",
+  "constellationName": "Turris Venefica",
+  "auto": {
+    "name": "Babäääm! Hexenjäger-Hammer",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Schwingt den „Hammer des Jagdschwurs“, führt bis zu drei Angriffe aus und verursacht <anemo>Anemo-Schaden</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer und führt einen Hammerhieb nach oben aus, der Gegnern vorne <anemo>Anemo-Schaden</anemo> zufügt."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Konzentriert die Kraft des Windes, schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen <anemo>Anemo-Flächenschaden</anemo>."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH heftiger Schläge",
+      "4": "Ausdauerverbrauch heftiger Schläge",
+      "5": "SCH beim Fallen",
+      "6": "SCH beim Fallen aus niedriger/großer Höhe",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Klingeling! Klang der Hexenjagd",
+    "description": {
+      "0": "Mit der Entschlossenheit, die böse Hexe zu besiegen und Descartes zu retten, entfessle die Kraft des Windes! Prune schlägt mit dem „Hammer des Jagdschwurs“ auf das „Köderglöckchen“ und verursacht <anemo>Anemo-SCH</anemo>.",
+      "1": "Wenn Prune durch diesen Angriff bei einem Gegner eine Verwirbelung auslöst, wird innerhalb der nächsten 6 s <strong>Klingeling! Klang der Hexenjagd</strong> durch <strong>Bumm-Bumm! Strafe des Hexenrichters</strong> ersetzt.",
+      "2": "<br/>",
+      "3": "<strong>Bumm-Bumm! Strafe des Hexenrichters</strong>",
+      "4": "Die Elementarenergie vom Typ der vorigen Verwirbelung umhüllt jetzt den „Hammer des Jagdschwurs“, der nun eine Elementarumwandlung durchläuft. Bei Anwendung durch Drücken springt Prune hoch und tritt den <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Hammer des Jagdschwurs</strong></tooltip> nach vorne, wodurch sie Gegnern vor ihr SCH des entsprechenden Elementartyps zufügt."
+    },
+    "skillParams": {
+      "0": "SCH durch „Klingeling! Klang der Hexenjagd“",
+      "1": "SCH durch „Bumm-Bumm! Strafe des Hexenrichters“",
+      "2": "Abklingzeit",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Glockenläuten! Die Jagd ist eröffnet!",
+    "description": {
+      "0": "Prune schwingt das „Köderglöckchen“ leicht und fügt Gegnern in der Umgebung <anemo>Anemo-SCH</anemo> zu. Danach wechselt das „Köderglöckchen“ in den Modus „Jagdsuche“.",
+      "1": "<br/>",
+      "2": "<strong>Köderglöckchen – Jagdsuche</strong>",
+      "3": "In diesem Modus folgt das „Köderglöckchen“ der aktuellen Figur, greift in regelmäßigen Abständen Gegner in der Umgebung an und verursacht <anemo>Anemo-Flächenschaden</anemo>. Hierdurch verursachter Schaden gilt als Schaden der Spezialfähigkeit."
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "SCH durch Köderglöckchen",
+      "2": "Dauer von Modus Jagdsuche",
+      "3": "Abklingzeit",
+      "4": "Elementarenergie",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Entscheidung und Strafe",
+    "description": {
+      "0": "Beschwört, wenn das „Köderglöckchen“ im Modus „Jagdsuche“ der Spezialfähigkeit <strong><tooltip ns=char_Prune_gen baseKey18=burst>Glockenläuten! Die Jagd ist eröffnet!</tooltip></strong> einem Gegner Schaden zufügt und dieser Schaden eine Verwirbelung auslöst, die den Gegner trifft, vor dem Gegner einen <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Hammer des Jagdschwurs</strong></tooltip>. Dieser führt eine Elementarumwandlung basierend auf der ausgelösten Verwirbelung durch, schlägt auf den Gegner ein und verursacht dabei Elementar-Schaden des entsprechenden Typs in Höhe von 150 % von Prunes ANG. Hierdurch verursachter Schaden gilt als Schaden der Spezialfähigkeit."
+    }
+  },
+  "passive2": {
+    "name": "Herzschlag in Eintracht",
+    "description": {
+      "0": "Verleiht, wenn Prune einen Gegner mit dem <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Hammer des Jagdschwurs</strong></tooltip>, der bereits eine Elementarumwandlung durchlaufen hat, trifft, anderen Truppenmitgliedern in der Nähe 5 s lang den Effekt Trommelwirbel: Erhöht, wenn Standardangriffe, heftige Schläge, Angriffe aus dem Fall, Elementarfähigkeiten oder Spezialfähigkeiten Gegnern Schaden zufügen, den durch diesen Angriff verursachte Schaden basierend auf dem Teil von Prunes ANG, der über 2.000 liegt, zu dem Zeitpunkt, an dem sie den Effekt „Trommelwirbel“ erhielten: Erhöht für jeden Punkt ANG den durch diesen Angriff verursachte Schaden um 0,025 %, bis zu 50 %."
+    }
+  },
+  "passive3": {
+    "name": "Umbau! Krach, bumm!",
+    "description": {
+      "0": "Erschafft mit einer Wahrscheinlichkeit von 10 % extra ein anderes zufälliges Material für Figurentalente aus demselben Gebiet mit einer dem erhaltenen Material entsprechenden Stufe."
+    }
+  },
+  "lockedPassive": {
+    "name": "Geschenk der Hexennacht – Schwur der Hexenjäger",
+    "description": {
+      "0": "Wandelt Prune nach dem Abschluss von <strong>Aufgabe der Hexe – Von Widerlegung</strong> in eine <strong>Hexerei</strong>-Figur um. Verleiht, wenn sich in der Truppe mindestens 2 Hexerei-Figuren befinden, den Effekt <strong>Hexerei – Geheimes Ritual</strong>, der Hexerei-Figuren verstärkt.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei – Geheimes Ritual</strong>",
+      "3": "Erhöht, nachdem eine Hexerei-Figur in der Truppe, die unter dem Einfluss von „Trommelwirbel“ steht, eine beliebige Elementarreaktion an einem Gegner auslöst, Prunes eigenen ANG 5 s lang um 60 %. Wenn es sich bei der Elementarreaktion der Figur um eine Verwirbelungsreaktion handelt, wird der ANG dieser Figur 5 s lang zusätzlich um 30 % erhöht."
+    }
+  },
+  "constellation1": {
+    "name": "Mit dem Rettungsschwur begann die Reise",
+    "description": {
+      "0": "Stellt, nachdem ein Gegner durch einen Angriff mit dem <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Hammer des Jagdschwurs</strong></tooltip>, der bereits eine Elementarumwandlung durchlaufen hat, getroffen wurde, Prune 2 Punkte Elementarenergie wieder her, 1,8 s Abklingzeit."
+    }
+  },
+  "constellation2": {
+    "name": "Mit Elementarkraft kann man das Gepäck gut reinigen",
+    "description": {
+      "0": "Verleiht Prune, wenn sich das „Köderglöckchen“ im Modus „Jagdsuche“ der Spezialfähigkeit <strong><tooltip ns=char_Prune_gen baseKey18=burst>Glockenläuten! Die Jagd ist eröffnet!</tooltip></strong> befindet, zudem den Effekt „Hexenjagd“: Erhöht Prunes ANG um 10 %; erhöht den ANG, wenn das „Köderglöckchen“ und der <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Hammer des Jagdschwurs</strong></tooltip>, der bereits eine Elementarumwandlung durchlaufen hat, einen Gegner treffen, um weitere 5 %. Durch die oben beschriebene Methode kann der ANG um bis zu 40 % erhöht werden.",
+      "1": "Entfernt, wenn während der Wirkungsdauer von „Glockenläuten! Die Jagd ist eröffnet!“ diese erneut angewendet wird, die oben genannten Effekte."
+    }
+  },
+  "constellation3": {
+    "name": "Die Karawane überquert die Berge, die Landschaft ändert sich erneut",
+    "description": {
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong><tooltip ns=char_Prune_gen baseKey18=burst>Glockenläuten! Die Jagd ist eröffnet!</tooltip></strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Im Wind, zurückblickend – dem Schatten fehlt noch eine Hälfte",
+    "description": {
+      "0": "Wenn der <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Hammer des Jagdschwurs</strong></tooltip> nach einer Elementarumwandlung einen Gegner trifft, prallt er ab, landet erneut auf einem Gegner in der Nähe und fügt diesem Elementar-Schaden des entsprechenden Elements in Höhe von 80 % des ANG zu."
+    }
+  },
+  "constellation5": {
+    "name": "Einhundert Niederlagen? Morgen nochmal",
+    "description": {
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong><tooltip ns=char_Prune_gen baseKey18=skill>Klingeling! Klang der Hexenjagd</tooltip></strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Das war’s. Erzähl die Geschichte deinen Freunden!",
+    "description": {
+      "0": "Verlängert die Dauer des Modus „Jagdsuche“ des „Köderglöckchens“ der Spezialfähigkeit <strong><tooltip ns=char_Prune_gen baseKey18=burst>Glockenläuten! Die Jagd ist eröffnet!</tooltip></strong> um 4 s.",
+      "1": "Erhöht zudem den ANG von Prune und der aktuellen Figuren in der Nähe, die unter dem Einfluss des Effekts „Trommelwirbel“ stehen, 5 s lang um 350 Punkte, wenn von „Trommelwirbel“ beeinflusste Truppenmitgliedern eine beliebige Elementarreaktion an einem Gegner ausgelöst haben."
+    }
+  }
+}

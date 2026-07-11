@@ -13,9 +13,8 @@ import type {
   IZZZDatabase,
   IZenlessObjectDescription,
 } from '../Interfaces'
-import type { CharOpt } from './DataManagers'
 
-export const currentDBVersion = 2
+export const currentDBVersion = 3
 
 export function migrateZOOD(
   zood: IZenlessObjectDescription & IZZZDatabase
@@ -40,25 +39,6 @@ export function migrateZOOD(
         if (char) {
           char.key = newKey
           ;(char as any).id = newKey
-        }
-      }
-
-      const charOpts = zood['charOpts'] as CharOpt[]
-      if (charOpts) {
-        const charOpt = charOpts.find(
-          (c) => ((c as any)['id'] as string) === oldKey
-        )
-        if (charOpt) {
-          // eslint-disable-next-line @typescript-eslint/no-extra-semi
-          ;(charOpt as any)['id'] = newKey
-          if (charOpt.target?.sheet === oldKey) {
-            charOpt.target.sheet = newKey
-          }
-          if (charOpt.conditionals) {
-            charOpt.conditionals
-              .filter((cond) => (cond.src as string) === oldKey)
-              .forEach((cond) => (cond.src = newKey))
-          }
         }
       }
 
@@ -89,6 +69,53 @@ export function migrateZOOD(
     }
     migrateData('Astra', 'AstraYao')
     migrateData('QingYi', 'Qingyi')
+  })
+
+  migrateVersion(3, () => {
+    function migrateCharOpt() {
+      const charOpts = zood['charOpts'] as any[] | undefined
+
+      if (charOpts) {
+        zood['teams'] = charOpts.map((charOpt) => {
+          const charKey = charOpt.id as string
+          const {
+            critMode,
+            bonusStats,
+            conditionals,
+            enemyStats,
+            optConfigId,
+            teammates: oldTeammates,
+            target,
+            ...rest
+          } = charOpt
+
+          return {
+            id: charKey,
+            teammates: [
+              { characterKey: charKey, optConfigId },
+              ...(oldTeammates ?? []).map((ck: any) => ({
+                characterKey: ck,
+              })),
+            ],
+            frames: [
+              {
+                multiplier: 1,
+                critMode,
+                bonusStats,
+                conditionals,
+                enemyStats,
+                tag: target,
+              },
+            ],
+            ...rest,
+          }
+        })
+
+        delete zood['charOpts']
+      }
+    }
+
+    migrateCharOpt()
   })
 
   zood.dbVersion = currentDBVersion
@@ -167,6 +194,61 @@ export function migrateStorage(storage: DBStorage) {
     }
     migrateData('Astra', 'AstraYao')
     migrateData('QingYi', 'Qingyi')
+  })
+
+  migrateVersion(3, () => {
+    function migrateCharOpt() {
+      const keys = storage.keys
+      for (const key of keys) {
+        if (key.startsWith('zzz_charOpt_')) {
+          const charKey = key.slice('zzz_charOpt_'.length)
+          const oldTeam = storage.get(`zzz_team_${charKey}`)
+          const charOpt = storage.get(key)
+          const charMeta = storage.get(`zzz_charMeta_${charKey}`)
+
+          const {
+            critMode,
+            bonusStats,
+            conditionals,
+            enemyStats,
+            optConfigId,
+            teammates: oldTeammates,
+            target,
+            ...rest
+          } = charOpt
+          const frame = {
+            multiplier: 1,
+            critMode,
+            bonusStats,
+            conditionals,
+            enemyStats,
+            tag: target,
+          }
+          const teammates = [
+            { characterKey: charKey, optConfigId },
+            ...(oldTeammates ?? []).map((ck: any) => ({
+              characterKey: ck,
+            })),
+          ]
+
+          const team = {
+            teammates,
+            frames: [frame],
+            ...rest,
+          }
+
+          storage.set(`zzz_team_${charKey}`, team)
+          if (oldTeam) {
+            storage.set(`zzz_charMeta_${charKey}`, {
+              description: `${charMeta?.description ?? ''}\n\n${JSON.stringify(oldTeam)}`,
+            })
+          }
+          storage.remove(key)
+        }
+      }
+    }
+
+    migrateCharOpt()
   })
 
   storage.setDBVersion(currentDBVersion)

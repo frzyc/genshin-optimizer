@@ -95,6 +95,7 @@ const optConfigSchema = z.object({
   ]) as z.ZodType<DiscMainStatKey[]>,
   setFilter2: zodFilteredArray(allDiscSetKeys, []) as z.ZodType<DiscSetKey[]>,
   setFilter4: zodFilteredArray(allDiscSetKeys, []) as z.ZodType<DiscSetKey[]>,
+  allowRainbow: zodBoolean(),
   useEquipped: zodBoolean(),
 
   optWengine: zodBoolean(),
@@ -194,10 +195,9 @@ export class OptConfigDataManager extends DataManager<
       listId && this.database.generatedBuildList.get(listId)
     if (listId && generatedBuildList)
       return this.database.generatedBuildList.set(listId, list)
-    else
-      return this.database.optConfigs.set(optConfigId, {
-        generatedBuildListId: this.database.generatedBuildList.new(list),
-      })
+    return this.set(optConfigId, {
+      generatedBuildListId: this.database.generatedBuildList.new(list),
+    })
   }
 }
 

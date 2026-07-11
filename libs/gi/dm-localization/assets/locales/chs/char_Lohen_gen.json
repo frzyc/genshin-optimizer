@@ -1,0 +1,185 @@
+{
+  "name": "洛恩",
+  "title": "恣锐锋镞",
+  "description": "西风骑士团远程小队副队长，行事不拘一格，钟情于非常规战术的骑士。",
+  "constellationName": "狡兔座",
+  "auto": {
+    "name": "破誓",
+    "fields": {
+      "normal": {
+        "0": "<strong>普通攻击</strong>",
+        "1": "进行至多五段的连续攻击。"
+      },
+      "charged": {
+        "0": "<strong>重击</strong>",
+        "1": "消耗一定体力，进行向前的突刺攻击。"
+      },
+      "plunging": {
+        "0": "<strong>下落攻击</strong>",
+        "1": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。"
+      }
+    },
+    "skillParams": {
+      "0": "一段伤害",
+      "1": "二段伤害",
+      "2": "三段伤害",
+      "3": "四段伤害",
+      "4": "五段伤害",
+      "5": "重击伤害",
+      "6": "重击体力消耗",
+      "7": "下坠期间伤害",
+      "8": "低空/高空坠地冲击伤害",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "奇兵诡出",
+    "description": {
+      "0": "寻觅敌人的破绽，切换至<tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>奇谋</strong></tooltip>状态。在这种状态下：",
+      "1": [
+        "洛恩可以主动积攒<tooltip ns=tooltips_gen baseKey18=11290003 values=[]><strong>欢悦</strong></tooltip>，从而施放特殊的元素战技<tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>镂骨彻心</strong></tooltip>；",
+        "队伍中附近的其他角色可以为洛恩积攒<tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>争胜</strong></tooltip>，来提高<strong>镂骨彻心</strong>的伤害。"
+      ],
+      "2": "在<strong>奇谋</strong>状态下至多施放3次<strong>镂骨彻心</strong>，之后无法获得<strong>欢悦</strong>。",
+      "3": "<br/>",
+      "4": "<i>「骑士道？哈，那倒确实是绝佳的诱饵。当敌人还幻想着堂堂正正一决胜负时，绝不会想到等待他们的是怎样的『惊喜』。」</i>"
+    },
+    "skillParams": {
+      "0": "一段伤害",
+      "1": "二段伤害",
+      "2": "三段伤害",
+      "3": "四段伤害",
+      "4": "五段伤害",
+      "5": "重击伤害",
+      "6": "重击体力消耗",
+      "7": "下坠期间伤害",
+      "8": "低空/高空坠地冲击伤害",
+      "9": "奇谋持续时间",
+      "10": "镂骨彻心伤害",
+      "11": "每点争胜提升原本伤害",
+      "12": "冷却时间",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "裁罚遂成",
+    "description": {
+      "0": "向前方快速连续斩击，消耗所有<tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>争胜</strong></tooltip>，造成<cryo>冰元素伤害</cryo>，并依据消耗的<strong>争胜</strong>，提升本次伤害。施放时，若洛恩处于<tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>奇谋</strong></tooltip>状态下，则本次<strong>奇谋</strong>状态的持续时间还会延长1.65秒。",
+      "1": "<br/>",
+      "2": "<i>「这么快就全说了？我都还没尽兴呢。」</i>"
+    },
+    "skillParams": {
+      "0": "技能伤害",
+      "1": "每点争胜提升原本伤害",
+      "2": "冷却时间",
+      "3": "元素能量",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "禁问的训诫",
+    "description": {
+      "0": "在<tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>奇谋</strong></tooltip>状态下，队伍中附近的其他角色通过造成伤害为洛恩积攒<tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>争胜</strong></tooltip>时，若本次伤害不低于洛恩基础攻击力的3000%，则还会为洛恩额外积攒60点<strong>争胜</strong>。"
+    }
+  },
+  "passive2": {
+    "name": "戏言的杰作",
+    "description": {
+      "0": "在<tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>奇谋</strong></tooltip>状态下，队伍中附近的其他角色对敌人触发<cryo>冰元素相关反应</cryo>后的8秒内，该角色的攻击力提升15%，洛恩的攻击力提升15%。"
+    }
+  },
+  "passive3": {
+    "name": "兴尽且去来",
+    "description": {
+      "0": "施放元素战技<strong>奇兵诡出</strong>后，洛恩还会获得9秒的「乘兴」效果：持续期间，元素战技<strong>奇兵诡出</strong>的技能等级提高1级。",
+      "1": "施放元素战技时，如果队伍中其他角色的普通攻击、元素战技或元素爆发中，任一技能等级不低于洛恩的元素战技的技能等级，则本次「乘兴」效果的持续时间额外延长6秒。",
+      "2": "每18秒至多获得一次「乘兴」效果。"
+    }
+  },
+  "lockedPassive": {
+    "name": "魔女的前夜礼·不愈之刺",
+    "description": {
+      "0": "完成<strong>魔女的课业·诸敌之题</strong>后，洛恩将成为<strong>魔导</strong>角色。队伍中编入至少2名魔导角色时，将获得<strong>魔导·秘仪</strong>效果，使魔导角色获得强化。",
+      "1": "<br/>",
+      "2": "<strong>魔导·秘仪</strong>",
+      "3": "特殊元素战技<tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>镂骨彻心</strong></tooltip>命中敌人或施放元素爆发<strong>裁罚遂成</strong>时，若<tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>争胜</strong></tooltip>至少为上限的50%，则洛恩的普通攻击与重击造成的伤害提升40%，持续6秒。"
+    }
+  },
+  "constellation1": {
+    "name": "往昔微风，载满悲歌",
+    "description": {
+      "0": "洛恩的<tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>争胜</strong></tooltip>上限提升至原来的300%。",
+      "1": "此外，处于<tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>奇谋</strong></tooltip>状态下时，队伍中附近的其他角色通过造成伤害为洛恩积攒的<strong>争胜</strong>提升至原来的500%。"
+    }
+  },
+  "constellation2": {
+    "name": "凡飞翔者，皆为靶标",
+    "description": {
+      "0": "处于<tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>奇谋</strong></tooltip>状态下时，特殊元素战技<tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>镂骨彻心</strong></tooltip>命中敌人或施放元素爆发<strong>裁罚遂成</strong>后的4秒内，洛恩将获得「破邪之刃」效果：在奇谋状态下，洛恩的下一次普通攻击或重击命中敌人时，将会额外追加进行一次攻击，造成相当于洛恩攻击力500%的<cryo>冰元素范围伤害</cryo>，并使队伍中附近的其他角色的元素精通提升200点，持续8秒，每4秒至多获得一次「破邪之刃」效果。"
+    }
+  },
+  "constellation3": {
+    "name": "唯有锋刃，能愈此伤",
+    "description": {
+      "0": "元素战技<strong><tooltip ns=char_Lohen_gen baseKey18=skill>奇兵诡出</tooltip></strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
+    }
+  },
+  "constellation4": {
+    "name": "爱若流光，逝如欢歌",
+    "description": {
+      "0": "洛恩在<tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>奇谋</strong></tooltip>状态下施放元素爆发<strong>裁罚遂成</strong>时，还会将洛恩的<tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>争胜</strong></tooltip>积攒至上限，从而使本次元素爆发获得最高的伤害提升效果。",
+      "1": "<br/>",
+      "2": "此外，洛恩切换至<strong>奇谋</strong>状态时，若元素能量：",
+      "3": [
+        "未充满：为洛恩恢复15点元素能量；",
+        "已充满：接下来的15秒内，施放元素爆发<strong>裁罚遂成</strong>后，为洛恩恢复15点元素能量。"
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "无可窥探，无可质疑",
+    "description": {
+      "0": "元素爆发<strong><tooltip ns=char_Lohen_gen baseKey18=burst>裁罚遂成</tooltip></strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
+    }
+  },
+  "constellation6": {
+    "name": "身沦魂销，唯余欢悦",
+    "description": {
+      "0": "施放特殊元素战技<tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>镂骨彻心</strong></tooltip>命中敌人或在<tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>奇谋</strong></tooltip>状态下施放元素爆发<strong>裁罚遂成</strong>不会消耗<tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>争胜</strong></tooltip>，并会使洛恩的<tooltip ns=tooltips_gen baseKey18=11290003 values=[]><strong>欢悦</strong></tooltip>恢复至上限，且在下一次施放特殊元素战技<strong>镂骨彻心</strong>命中敌人时，使本次<strong>奇谋</strong>状态的持续时间延长1.25秒，该效果每7秒至多触发一次。",
+      "1": "此外，上述所有伤害的暴击伤害都将提升175%，且本次<strong>奇谋</strong>期间，洛恩施放<strong>镂骨彻心</strong>的最大次数增加2次。"
+    }
+  }
+}

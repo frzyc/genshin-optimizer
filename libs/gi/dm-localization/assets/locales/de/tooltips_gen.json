@@ -346,6 +346,40 @@
       "3": "Außerdem kann Varka die Anwendungsmöglichkeiten von <strong>Aufkommen der vier Winde</strong> verbrauchen, um den besonderen heftigen Schlag <strong>Azurbiss</strong> auszuführen, der keine Ausdauer verbraucht und 2-mal Schaden des Elements des Großschwerts, das er in der rechten Hand hält, sowie 2-mal <anemo>Anemo-Schaden</anemo> verursacht, die nicht von anderen Elementen überdeckt werden können."
     }
   },
+  "11290001": {
+    "name": "Geniestreich",
+    "description": {
+      "0": "Versetzt Lohen nach dem Anwenden der Elementarfähigkeit <strong>Unerwarteter Schachzug</strong> in den Zustand „Geniestreich“, der über folgende Eigenschaften verfügt:",
+      "1": [
+        " Wandelt Lohens Standardangriffe, heftige Schläge und Angriffe aus dem Fall in <cryo>Kryo-Schaden</cryo> um, der nicht von anderen Elementen überdeckt werden kann.",
+        " Sammelt, wenn Lohen Gegner mit einem Standardangriff oder heftigen Schlag trifft, besondere <strong>Freude</strong> für Lohen an, die zum Anwenden der besonderen Elementarfähigkeit <strong>Bis ins Mark</strong> benötigt wird. Nach max. dreimaliger Anwendung von <strong>Bis ins Mark</strong> im Zustand <strong>Geniestreich</strong> kann keine <strong>Freude</strong> mehr erhalten werden.",
+        " Sammelt, wenn andere Truppenmitglieder in der Nähe Schaden verursachen, besonderen <strong>Siegeswillen</strong> für Lohen an, der den von der besonderen Elementarfähigkeit <strong>Bis ins Mark</strong> verursachten Schaden erhöht.",
+        " Hebt den Zustand „Geniestreich“ auf, wenn Lohen ausgewechselt wird. Löscht, wenn der Zustand „Geniestreich“ aufgehoben wird, auch <strong>Freude</strong> und <strong>Siegeswille</strong>."
+      ]
+    }
+  },
+  "11290002": {
+    "name": "Bis ins Mark",
+    "description": {
+      "0": "Eine besondere Elementarfähigkeit, die Lohen anwenden kann, nachdem er den Höchstwert an <strong>Freude</strong> angesammelt hat.",
+      "1": "Verbraucht nach dem Treffen eines Gegners die gesamte Menge an <strong>Freude</strong> und <strong>Siegeswille</strong>, um <cryo>Kryo-Schaden</cryo> zu verursachen und diesen Schaden gemäß der verbrauchten <strong>Siegeswillen</strong> zu erhöhen."
+    }
+  },
+  "11290003": {
+    "name": "Freude",
+    "description": {
+      "0": "Verleiht Lohen, wenn er im Zustand „Geniestreich“ Gegner mit Standardangriffen oder heftigen Schlägen trifft, 0.381298 Pkt. <strong>Freude</strong>, max. 100 Pkt.",
+      "1": "<strong>Freude</strong> kann nur einmal alle 0,1 s erhalten werden. Ersetzt, wenn <strong>Freude</strong> den Höchstwert erreicht, Lohens Elementarfähigkeit <strong>Unerwarteter Schachzug</strong> durch die besondere Elementarfähigkeit <strong>Bis ins Mark</strong>."
+    }
+  },
+  "11290004": {
+    "name": "Siegeswille",
+    "description": {
+      "0": "Eine besondere Ressource, die Lohen im Zustand „Geniestreich“ bereitgestellt wird, wenn andere Truppenmitglieder in der Nähe Schaden verursachen. Sie ist auf max. 100 Punkte begrenzt.",
+      "1": "Sammelt während der Dauer des Zustands „Geniestreich“ 0.829302 Punkte <strong>Siegeswille</strong> für Lohen an, wenn der von anderen Truppenmitgliedern in der Nähe verursachte Schaden nicht unter 55.2868 % von Lohens Basis-ANG liegt, andernfalls lediglich 1 Punkt <strong>Siegeswille</strong>.",
+      "2": "Dieselbe Figur kann höchstens einmal alle 0,1 s <strong>Siegeswille</strong> für Lohen sammeln."
+    }
+  },
   "11300001": {
     "name": "Lumi – Angriffsmodi",
     "description": {
@@ -361,6 +395,71 @@
       "9": "<strong>Standard-Modus</strong>",
       "10": "Nicht so mächtig wie die anderen Modi, aber trotzdem stark.",
       "11": "Lumi nutzt den <strong>Hammerschlag</strong>, allerdings nun in längeren Abständen, um Gegner in der Nähe fortlaufend anzugreifen. Jeder Angriff verursacht 2-mal <geo>Geo-Flächenschaden</geo>."
+    }
+  },
+  "11310001": {
+    "name": "Gabe der Kenosis",
+    "description": {
+      "0": "Verleiht, nachdem die Elementarfähigkeit <strong>Verheißung des Wortes – Licht des Ungesehenen</strong> ausgelöst wurde, allen Truppenmitgliedern in der Nähe durch Nicole diesen Effekt: Erhöht den ANG basierend auf Nicoles ANG.",
+      "1": "Wenn bestimmte Bedingungen erfüllt sind, wird der Effekt <strong>Gabe der Kenosis</strong> zu <strong>Führung der Theosis</strong> hochgestuft, was den ANG weiter erhöht."
+    }
+  },
+  "11310002": {
+    "name": "Führung der Theosis",
+    "description": {
+      "0": "Verstärkte Version des Effekts <strong>Gabe der Kenosis</strong>, die den ANG zusätzlich um 300 Pkt. erhöhen kann.",
+      "1": "Wenn das Aufstiegstalent „Methexis“ freigeschaltet ist und eine der „Beobachtungs“-Bedingungen erfüllt ist, wird der Effekt <strong>Gabe der Kenosis</strong> für die restliche Dauer zu <strong>Führung der Theosis</strong> hochgestuft:",
+      "2": [
+        " Eine andere beobachtete Figur bleibt länger als 3 s auf dem Feld.",
+        " Bei einer anderen beobachteten Figur handelt es sich um eine Hexerei-Figur."
+      ],
+      "3": "<br/>",
+      "4": "Stuft zudem, nachdem das Aufstiegstalent „Philokalie“ freigeschaltet wurde und ein aktuelles Truppenmitglied in der Nähe einem Gegner mit Elementar-Schaden getroffen hat, Nicoles eigene <strong>Gabe der Kenosis</strong> für 8 s zu <strong>Führung der Theosis</strong> hoch.",
+      "5": "<br/>",
+      "6": "Abgesehen von Nicole wird <strong>Führung der Theosis</strong> aller anderen Figuren nach dem Verlassen des Felds wieder auf <strong>Gabe der Kenosis</strong> zurückgestuft."
+    }
+  },
+  "11320001": {
+    "name": "Hammer des Jagdschwurs",
+    "description": {
+      "0": "Ein toller Gefährte der Hexenjägerin! Unter bestimmten Umständen findet eine Elementarumwandlung statt, bei der der gesamte vom „Hammer des Jagdschwurs“ verursachte Schaden in Schaden des entsprechenden Elementartyps umgewandelt wird.",
+      "1": "Prune kann den „Hammer des Jagdschwurs“, der eine Elementarumwandlung durchläuft, auf folgende Art und Weise heraufbeschwören:",
+      "2": [
+        " Ermöglicht innerhalb einer bestimmten Zeit, nachdem Prune mit ihrer Elementarfähigkeit <strong>Klingeling! Klang der Hexenjagd</strong> eine Verwirbelung gegen Gegner ausgelöst hat, die Anwendung der besonderen Elementarfähigkeit <strong>Bumm-Bumm! Strafe des Hexenrichters</strong>. Beim Anwenden dieser besonderen Elementarfähigkeit wandelt sich der „Hammer des Jagdschwurs“ in den anderen Elementartyp um, der an der vorherigen Verwirbelung beteiligt war.",
+        " Beschwört nach dem Freischalten des Aufstiegstalents „Entscheidung und Strafe“, wenn das „Köderglöckchen“ im Modus „Jagdsuche“ eine Verwirbelung gegen Gegner ausgelöst hat, einen „Hammer des Jagdschwurs“ herbei, der basierend auf dieser Verwirbelung eine Elementarumwandlung durchläuft und Gegner angreift."
+      ]
+    }
+  },
+  "11320002": {
+    "name": "Entscheidung und Strafe",
+    "description": {
+      "0": "Beschwört, wenn das „Köderglöckchen“ im Modus „Jagdsuche“ der Spezialfähigkeit <strong>Glockenläuten! Die Jagd ist eröffnet!</strong> einem Gegner Schaden zufügt und dieser Schaden eine Verwirbelung auslöst, die den Gegner trifft, vor dem Gegner einen <strong>Hammer des Jagdschwurs</strong>. Dieser führt eine Elementarumwandlung basierend auf der ausgelösten Verwirbelung durch, schlägt auf den Gegner ein und verursacht dabei Elementar-Schaden des entsprechenden Typs. Hierdurch verursachter Schaden gilt als Schaden der Spezialfähigkeit."
+    }
+  },
+  "11320003": {
+    "name": "Herzschlag in Eintracht",
+    "description": {
+      "0": "Verleiht, wenn Prune einen Gegner mit dem <strong>Hammer des Jagdschwurs</strong>, der bereits eine Elementarumwandlung durchlaufen hat, trifft, anderen Truppenmitgliedern in der Nähe den Effekt Trommelwirbel: Erhöht den durch den Angriff verursachten Schaden basierend auf Prunes ANG."
+    }
+  },
+  "11330001": {
+    "name": "Berechnung",
+    "description": {
+      "0": "Der Modus, in den Fagio beim Ausführen heftiger Schläge wechselt.",
+      "1": "In diesem Modus führt Fagio einen Streuangriff auf Gegner vorne aus und feuert in bestimmten zeitlichen Abständen einen Kondensationsstrahl ab, der <cryo>Kryo-Flächenschaden</cryo> verursacht.",
+      "2": "<strong>Leuchten – Stellar-Supraleiter</strong>: Wandelt den Kondensationsstrahl um und verursacht stattdessen <cryo>Kryo-Flächenschaden</cryo>, der als Schaden durch die Reaktion Stellar-Supraleiter gewertet wird."
+    }
+  },
+  "11330002": {
+    "name": "Berechnungsleistung",
+    "description": {
+      "0": "Erhöht, solange Fagio sich im Modus <strong>Berechnung</strong> befindet, ihre <strong>Berechnungsleistung</strong> kontinuierlich. Erreicht die Berechnungsleistung die Obergrenze, kann der Modus „Berechnung“ weder aufrechterhalten noch erneut betreten werden."
+    }
+  },
+  "11330003": {
+    "name": "Sternglanzfeld",
+    "description": {
+      "0": "Verwandelt beim Auslösen der Reaktion Stellar-Supraleiter den umliegenden Bereich kurzzeitig in ein <strong>Sternglanzfeld</strong>. Befindet sich eine bestimmte Figur innerhalb des Sternglanzfelds, tritt sie in den Zustand <strong>Leuchten – Stellar-Supraleiter</strong> ein, in dem ihre verschiedenen Fähigkeiten jeweils entsprechende Verstärkungseffekte erhalten."
     }
   }
 }

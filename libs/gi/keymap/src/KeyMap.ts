@@ -1,11 +1,13 @@
 import type {
   ElementWithPhyKey,
   LunarReactionKey,
+  StellarReactionKey,
   TransformativeReactionKey,
 } from '@genshin-optimizer/gi/consts'
 import {
   allElementWithPhyKeys,
   allLunarReactionKeys,
+  allStellarReactionKeys,
 } from '@genshin-optimizer/gi/consts'
 
 import elementalData from './ElementalData'
@@ -186,7 +188,8 @@ type NonSwirlReactionHitKey = `${
   | 'lunarbloom'
   | 'burgeon'
   | 'hyperbloom'
-  | 'lunarcrystallize'}_hit`
+  | 'lunarcrystallize'
+  | 'stellarconduct'}_hit`
 type NonSwirlReactionMultiKey = `${keyof typeof transformativeReactions}_multi_`
 type TransformativeReactions =
   | SwirlReactionKey
@@ -214,6 +217,23 @@ allLunarReactionKeys.forEach((lr) => {
     `${transformativeReactions[lr].name} Reaction DMG Increase`
   statMap[`${lr}_directDmgInc`] =
     `${transformativeReactions[lr].name} Direct DMG Increase`
+})
+
+type StellarReactionsBaseDmgKey = `${StellarReactionKey}_baseDmg_`
+type StellarReactionsSpecialDmgKey = `${StellarReactionKey}_specialDmg_`
+type StellarReactionsReactionDmgIncKey = `${StellarReactionKey}_reactionDmgInc`
+type StellarReactionsDirectDmgIncKey = `${StellarReactionKey}_directDmgInc`
+type StellarReactionsMultKey = `${StellarReactionKey}_mult_`
+allStellarReactionKeys.forEach((sr) => {
+  statMap[`${sr}_baseDmg_`] =
+    `${transformativeReactions[sr].name} Base DMG Multiplier`
+  statMap[`${sr}_specialDmg_`] =
+    `${transformativeReactions[sr].name} Special DMG Bonus`
+  statMap[`${sr}_reactionDmgInc`] =
+    `${transformativeReactions[sr].name} Reaction DMG Increase`
+  statMap[`${sr}_directDmgInc`] =
+    `${transformativeReactions[sr].name} Direct DMG Increase`
+  statMap[`${sr}_mult_`] = `${transformativeReactions[sr].name} Multiplier`
 })
 
 type TransformativeReactionsCritRateKey =
@@ -265,6 +285,11 @@ export type StatKey =
   | LunarReactionsSpecialDmgKey
   | LunarReactionsReactionDmgIncKey
   | LunarReactionsDirectDmgIncKey
+  | StellarReactionsBaseDmgKey
+  | StellarReactionsSpecialDmgKey
+  | StellarReactionsReactionDmgIncKey
+  | StellarReactionsDirectDmgIncKey
+  | StellarReactionsMultKey
   | CrystallizeKey
   | AmplifyingReactionsDmgKey
   | AmplifyingReactionsMultiKey

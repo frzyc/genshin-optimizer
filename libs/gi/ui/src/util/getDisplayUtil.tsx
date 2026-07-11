@@ -2,6 +2,7 @@ import { ColorText, ImgIcon } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import {
   artifactDefIcon,
+  characterAsset,
   imgAssets,
   weaponAsset,
 } from '@genshin-optimizer/gi/assets'
@@ -60,6 +61,18 @@ export function getDisplayHeader(
     return { title: 'Received Team Buffs', icon: <GroupsIcon /> }
   else if (sectionKey === 'reaction')
     return { title: 'Transformative Reactions' }
+  else if (sectionKey === 'nicole')
+    return {
+      title: "Nicole's Astral Projections",
+      icon: (
+        <Box
+          component="img"
+          src={characterAsset('Nicole', 'burst')}
+          width="2em"
+          height="auto"
+        />
+      ),
+    }
   else if (sectionKey === 'moonsign')
     return {
       title: 'Moonsign: Ascendant Gleam',

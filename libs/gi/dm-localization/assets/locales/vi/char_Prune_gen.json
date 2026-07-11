@@ -1,0 +1,175 @@
+{
+  "name": "Prune",
+  "title": "Giấc Mơ Trẻ Thơ",
+  "description": "\"Thợ Săn Ma Nữ\" nhỏ bé. Từ Nod-Krai vượt ngàn dặm đến đây, chỉ để thảo phạt một ma nữ mà theo lời cô ấy, đó là kẻ \"ỷ mạnh hiếp yếu, tội ác tày trời\".",
+  "constellationName": "Cung Ma Tháp",
+  "auto": {
+    "name": "Búa Phá Ma",
+    "fields": {
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Vung Búa Săn Tai Ương, thực hiện tối đa 3 lần tấn công, gây <anemo>Sát Thương Nguyên Tố Phong</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao Thể Lực nhất định để vung búa lên, gây <anemo>Sát Thương Nguyên Tố Phong</anemo> cho kẻ địch phía trước."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Ngưng tụ sức mạnh Nguyên Tố Phong, từ trên không lao xuống mặt đất, tấn công kẻ địch trên đường và gây <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo> khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát thương lần 1",
+      "1": "Sát thương lần 2",
+      "2": "Sát thương lần 3",
+      "3": "Sát thương Trọng Kích",
+      "4": "Thể lực Trọng Kích tiêu hao",
+      "5": "Sát thương khi đáp",
+      "6": "Sát thương khi đáp từ độ cao thấp/cao",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Reng Reng - Âm Thanh Săn Ma",
+    "description": {
+      "0": "Với quyết tâm đánh bại ma nữ \"tà ác\" và giải cứu Descartes, giải phóng sức mạnh của gió nào! Prune dùng Búa Săn Tai Ương gõ vào Chuông Nhử Phù Thủy, gây <anemo>Sát Thương Nguyên Tố Phong</anemo>.",
+      "1": "Nếu Prune kích hoạt phản ứng Khuếch Tán lên kẻ địch thông qua lần tấn công này, thì trong 6s tiếp theo, <strong>Reng Reng - Âm Thanh Săn Ma</strong> sẽ được thay thế bằng <strong>Leng Keng - Trừng Phạt Ác Ma</strong>.",
+      "2": "<br/>",
+      "3": "<strong>Leng Keng - Trừng Phạt Ác Ma</strong>",
+      "4": "Lấy Loại Nguyên Tố tham gia phản ứng Khuếch Tán trước đó cuốn quanh chiếc búa, chuyển hóa nguyên tố của <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Búa Săn Tai Ương</strong></tooltip>. Khi nhấn thi triển, Prune sẽ nhảy lên và đá Búa Săn Tai Ương về phía trước, gây Sát Thương Nguyên Tố tương ứng lên kẻ địch trước mặt."
+    },
+    "skillParams": {
+      "0": "Sát thương Reng Reng - Âm Thanh Săn Ma",
+      "1": "Sát thương Leng Keng - Trừng Phạt Ác Ma",
+      "2": "CD",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Chuông Reo - Thời Khắc Săn Ma",
+    "description": {
+      "0": "Prune nhẹ nhàng lắc Chuông Nhử Phù Thủy, gây <anemo>Sát Thương Nguyên Tố Phong</anemo> lên kẻ địch xung quanh. Sau đó, Chuông Nhử Phù Thủy sẽ chuyển sang chế độ \"Săn Lùng\".",
+      "1": "<br/>",
+      "2": "<strong>Chuông Nhử Phù Thủy - Săn Lùng</strong>",
+      "3": "Trong chế độ này, Chuông Nhử Phù Thủy sẽ đi theo nhân vật ra trận hiện tại và tấn công kẻ địch xung quanh theo chu kỳ, gây <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo>, sát thương này được xem là sát thương Kỹ Năng Nộ."
+    },
+    "skillParams": {
+      "0": "Sát thương kỹ năng",
+      "1": "Sát thương Chuông Nhử Phù Thủy",
+      "2": "Thời gian duy trì chế độ Săn Lùng",
+      "3": "CD",
+      "4": "Năng Lượng Nguyên Tố",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Phán Quyết Truy Cứu",
+    "description": {
+      "0": "Trong Kỹ Năng Nộ <strong><tooltip ns=char_Prune_gen baseKey18=burst>Chuông Reo - Thời Khắc Săn Ma</tooltip></strong>, sau khi Chuông Nhử Phù Thủy ở chế độ \"Săn Lùng\" gây sát thương lên kẻ địch, nếu lần sát thương này kích hoạt phản ứng Khuếch Tán, sẽ triệu hồi một <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Búa Săn Tai Ương</strong></tooltip> được chuyển hóa nguyên tố theo phản ứng Khuếch Tán lần này ở trước mặt kẻ địch và đập xuống, gây Sát Thương Nguyên Tố tương ứng bằng 150% Tấn Công của Prune. Sát thương này được xem là sát thương Kỹ Năng Nộ."
+    }
+  },
+  "passive2": {
+    "name": "Tiếng Chuông Cộng Hưởng",
+    "description": {
+      "0": "Sau khi Prune dùng <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Búa Săn Tai Ương</strong></tooltip> đã chuyển hóa nguyên tố đánh trúng kẻ địch, các nhân vật khác trong đội ở gần sẽ nhận được hiệu quả Tiếng Chuông Khích Lệ kéo dài 5s: Khi Tấn Công Thường, Trọng Kích, Tấn Công Khi Đáp, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ gây sát thương lên kẻ địch, dựa trên phần Tấn Công vượt quá 2000 của Prune khi họ nhận hiệu quả Tiếng Chuông Khích Lệ, sẽ tăng sát thương gây ra của lần tấn công này: Mỗi điểm Tấn Công sẽ tăng 0.025% sát thương gây ra bởi lần tấn công này, tối đa tăng 50%."
+    }
+  },
+  "passive3": {
+    "name": "Cải Tạo! Gõ Gõ Gõ!",
+    "description": {
+      "0": "Khi ghép nguyên liệu thiên phú nhân vật, có tỷ lệ 10% sản sinh thêm 1 nguyên liệu thiên phú ngẫu nhiên khác của cùng khu vực, cấp bậc giống với nguyên liệu nhận được sau khi ghép."
+    }
+  },
+  "lockedPassive": {
+    "name": "Đêm Lễ Ma Nữ - Lời Thề Săn Ma",
+    "description": {
+      "0": "Sau khi hoàn thành <strong>Bài Tập Của Ma Nữ - Về Chuyện Bác Bỏ</strong>, Prune sẽ trở thành nhân vật <strong>Hexerei</strong>. Khi đội hình có ít nhất 2 nhân vật Hexerei, sẽ nhận được hiệu quả <strong>Hexerei - Nghi Thức Bí Mật</strong>, giúp nhân vật Hexerei nhận được cường hóa.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei - Nghi Thức Bí Mật</strong>",
+      "3": "Sau khi nhân vật Hexerei đang áp dụng Tiếng Chuông Khích Lệ trong đội kích hoạt phản ứng nguyên tố bất kỳ lên kẻ địch, bản thân Prune sẽ tăng 60% Tấn Công trong 5s. Nếu phản ứng do nhân vật này kích hoạt là phản ứng Khuếch Tán, thì nhân vật đó sẽ còn tăng thêm 30% Tấn Công trong 5s."
+    }
+  },
+  "constellation1": {
+    "name": "Lời Thề Giải Cứu, Hành Trình Bắt Đầu Từ Đây",
+    "description": {
+      "0": "Sau khi đòn tấn công của <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Búa Săn Tai Ương</strong></tooltip> đã chuyển hóa nguyên tố đánh trúng kẻ địch, sẽ hồi phục 2 điểm Năng Lượng Nguyên Tố cho Prune. Hiệu quả này mỗi 1.8s tối đa kích hoạt một lần."
+    }
+  },
+  "constellation2": {
+    "name": "Xếp Gọn Hành Trang, Sức Mạnh Nguyên Tố Diệu Kỳ",
+    "description": {
+      "0": "Trong Kỹ Năng Nộ <strong><tooltip ns=char_Prune_gen baseKey18=burst>Chuông Reo - Thời Khắc Săn Ma</tooltip></strong>, khi Chuông Nhử Phù Thủy đang ở chế độ \"Săn Lùng\", Prune sẽ nhận thêm hiệu quả \"Săn Lùng Ma Nữ\": Tấn Công của Prune tăng 10%. Khi Chuông Nhử Phù Thủy và <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Búa Săn Tai Ương</strong></tooltip> đã chuyển hóa nguyên tố đánh trúng kẻ địch, Tấn Công sẽ tiếp tục tăng thêm 5%. Thông qua cách thức trên, tối đa tăng Tấn Công đến 40%.",
+      "1": "Trong thời gian duy trì hiệu quả, nếu thi triển lại Chuông Reo - Thời Khắc Săn Ma, sẽ xóa bỏ hiệu quả nêu trên."
+    }
+  },
+  "constellation3": {
+    "name": "Thương Đội Vượt Núi, Cảnh Sắc Trước Mắt Đổi Thay",
+    "description": {
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Prune_gen baseKey18=burst>Chuông Reo - Thời Khắc Săn Ma</tooltip></strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Ngoảnh Đầu Theo Gió, Bóng Hình Chỉ Còn Một Nửa",
+    "description": {
+      "0": "Sau khi <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Búa Săn Tai Ương</strong></tooltip> đã chuyển hóa nguyên tố đánh trúng kẻ địch, sẽ nảy lên một lần nữa và rơi xuống vị trí kẻ địch ở gần, gây Sát Thương Nguyên Tố tương ứng bằng 80% Tấn Công lên kẻ địch trúng đòn."
+    }
+  },
+  "constellation5": {
+    "name": "Thất Bại Trăm Lần? Ngày Mai Lại Chiến Đấu Tiếp",
+    "description": {
+      "0": "Cấp kỹ năng <strong><tooltip ns=char_Prune_gen baseKey18=skill>Reng Reng - Âm Thanh Săn Ma</tooltip></strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Câu Chuyện Kết Thúc, Chia Sẻ Hết Cho Bạn Bè",
+    "description": {
+      "0": "Thời gian duy trì chế độ \"Săn Lùng\" của Chuông Nhử Phù Thủy trong Kỹ Năng Nộ <strong><tooltip ns=char_Prune_gen baseKey18=burst>Chuông Reo - Thời Khắc Săn Ma</tooltip></strong> sẽ kéo dài thêm 4s.",
+      "1": "Ngoài ra, sau khi nhân vật đang áp dụng Tiếng Chuông Khích Lệ trong đội kích hoạt phản ứng nguyên tố bất kỳ lên kẻ địch, đều sẽ khiến Prune và nhân vật khác đang mang Tiếng Chuông Khích Lệ trong trận ở gần tăng 350 điểm Tấn Công, duy trì 5s."
+    }
+  }
+}

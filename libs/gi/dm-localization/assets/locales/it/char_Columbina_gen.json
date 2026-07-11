@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -62,7 +66,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -86,7 +94,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -117,7 +129,7 @@
   "passive": {
     "name": "Veglia lunare",
     "description": {
-      "0": "Se un membro del gruppo viene sconfitto mentre si trova a Nod-Krai, quest'ultimo viene rianimato da Colombina. La quantità di PS posseduti dal personaggio dopo la rianimazione dipende dal livello amicizia di Colombina. L'effetto può innescarsi una volta ogni 100 s. Non si attiva nei domini, nei Domini della conquista o nell'Abisso a spirale.",
+      "0": "Se un membro del tuo gruppo viene sconfitto mentre si trova a Nod-Krai o nelle aree della Luna gelata, viene rianimato da Colombina. La quantità di PS posseduti dal personaggio dopo la rianimazione dipende dal livello amicizia di Colombina. L'effetto può innescarsi una volta ogni 100 s. Non si attiva nei domini, nei Domini della conquista o nell'Abisso a spirale.",
       "1": "Inoltre, Colombina sembra avere un'affinità speciale con alcuni animali influenzati dal Kuuvahki..."
     }
   },

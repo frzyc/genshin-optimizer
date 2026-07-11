@@ -1,0 +1,29 @@
+{
+  "name": "A Teaspoon of Transcendence",
+  "description": {
+    "0": "Dalam cerita yang tak terhitung jumlahnya, benda imajinasi yang memiliki definisi yang tak terhitung jumlahnya. Dari skala alam semesta dan mimpi, sebenarnya tidak ada perbedaan nyata antara pedang suci sang pahlawan dan sendok teh sang putri, roda gigi yang dingin, dan kunci untuk membuka gerbang yang melampaui batas."
+  },
+  "passiveName": "White Fairy's Queening",
+  "passiveDescription": {
+    "0": {
+      "0": "ATK +<cryo>28%</cryo>.",
+      "1": "Setiap kali Charged Attack Karakter yang mengenakan mengenai musuh, Karakter akan mencapai efek \"Surmount\" singkat: DMG reaksi Stellar-Conduct Karakter yang mengenakan +<cryo>16%</cryo> selama 5 detik. Efek ini dapat ditumpuk sampai 3 lapis, maksimum ditumpuk sekali setiap 0,2 detik."
+    },
+    "1": {
+      "0": "ATK +<cryo>35%</cryo>.",
+      "1": "Setiap kali Charged Attack Karakter yang mengenakan mengenai musuh, Karakter akan mencapai efek \"Surmount\" singkat: DMG reaksi Stellar-Conduct Karakter yang mengenakan +<cryo>20%</cryo> selama 5 detik. Efek ini dapat ditumpuk sampai 3 lapis, maksimum ditumpuk sekali setiap 0,2 detik."
+    },
+    "2": {
+      "0": "ATK +<cryo>42%</cryo>.",
+      "1": "Setiap kali Charged Attack Karakter yang mengenakan mengenai musuh, Karakter akan mencapai efek \"Surmount\" singkat: DMG reaksi Stellar-Conduct Karakter yang mengenakan +<cryo>24%</cryo> selama 5 detik. Efek ini dapat ditumpuk sampai 3 lapis, maksimum ditumpuk sekali setiap 0,2 detik."
+    },
+    "3": {
+      "0": "ATK +<cryo>49%</cryo>.",
+      "1": "Setiap kali Charged Attack Karakter yang mengenakan mengenai musuh, Karakter akan mencapai efek \"Surmount\" singkat: DMG reaksi Stellar-Conduct Karakter yang mengenakan +<cryo>28%</cryo> selama 5 detik. Efek ini dapat ditumpuk sampai 3 lapis, maksimum ditumpuk sekali setiap 0,2 detik."
+    },
+    "4": {
+      "0": "ATK +<cryo>56%</cryo>.",
+      "1": "Setiap kali Charged Attack Karakter yang mengenakan mengenai musuh, Karakter akan mencapai efek \"Surmount\" singkat: DMG reaksi Stellar-Conduct Karakter yang mengenakan +<cryo>32%</cryo> selama 5 detik. Efek ini dapat ditumpuk sampai 3 lapis, maksimum ditumpuk sekali setiap 0,2 detik."
+    }
+  }
+}

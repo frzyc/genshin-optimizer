@@ -10,6 +10,12 @@ export type AscensionKey = (typeof allAscensionKeys)[number]
 export const ascensionMaxLevelLow = [20, 40, 50, 60, 70] as const
 export const maxLevelLow = 70
 export const maxLevel = 90
+export const defaultCharacterLevel = maxLevel
+export const defaultCharacterAscension: AscensionKey = 6
+export const defaultTalentLevel = 9
+export const defaultWeaponLevel = maxLevel
+export const defaultWeaponAscension: AscensionKey = 6
+export const defaultOptArtifactLevel = 20
 export const ascensionMaxLevel = [...ascensionMaxLevelLow, 80, 90] as const
 export const milestoneLevelsLow = [
   [70, 4],

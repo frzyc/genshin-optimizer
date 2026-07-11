@@ -62,6 +62,7 @@ import Lauma from './Lauma'
 import Layla from './Layla'
 import Linnea from './Linnea'
 import Lisa from './Lisa'
+import Lohen from './Lohen'
 import Lynette from './Lynette'
 import Lyney from './Lyney'
 import Mavuika from './Mavuika'
@@ -72,14 +73,17 @@ import Nahida from './Nahida'
 import Navia from './Navia'
 import Nefer from './Nefer'
 import Neuvillette from './Neuvillette'
+import Nicole from './Nicole'
 import Nilou from './Nilou'
 import Ningguang from './Ningguang'
 import Noelle from './Noelle'
 import Ororon from './Ororon'
+import Prune from './Prune'
 import Qiqi from './Qiqi'
 import RaidenShogun from './RaidenShogun'
 import Razor from './Razor'
 import Rosaria from './Rosaria'
+import Sandrone from './Sandrone'
 import SangonomiyaKokomi from './SangonomiyaKokomi'
 import Sayu from './Sayu'
 import Sethos from './Sethos'
@@ -185,6 +189,7 @@ const data = {
   Layla,
   Linnea,
   Lisa,
+  Lohen,
   Lynette,
   Lyney,
   Mavuika,
@@ -195,14 +200,17 @@ const data = {
   Navia,
   Nefer,
   Neuvillette,
+  Nicole,
   Nilou,
   Ningguang,
   Noelle,
   Ororon,
+  Prune,
   Qiqi,
   RaidenShogun,
   Razor,
   Rosaria,
+  Sandrone,
   SangonomiyaKokomi,
   Sayu,
   Sethos,

@@ -9,7 +9,6 @@ import {
   greaterEqStr,
   infoMut,
   input,
-  lessThan,
   one,
   sum,
   tally,
@@ -277,7 +276,7 @@ const c6FlaskFull_critRate_ = greaterEq(
     equal(
       condC6FlaskFull,
       'on',
-      equal(target.isMoonsign, 1, dm.constellation6.critRate_)
+      equal(target.flags.isMoonsign, 1, dm.constellation6.critRate_)
     )
   )
 )
@@ -290,7 +289,7 @@ const c6FlaskFull_critDMG_ = greaterEq(
     equal(
       condC6FlaskFull,
       'on',
-      equal(target.isMoonsign, 1, dm.constellation6.critDMG_)
+      equal(target.flags.isMoonsign, 1, dm.constellation6.critDMG_)
     )
   )
 )
@@ -309,11 +308,7 @@ const dmgFormulas = {
   skill: {
     bombDmg: dmgNode('atk', dm.skill.bombDmg, 'skill'),
     unfilledDmg: dmgNode('atk', dm.skill.unfilledDmg, 'skill'),
-    filledDmg: lessThan(
-      tally.moonsign,
-      2,
-      dmgNode('atk', dm.skill.filledDmg, 'skill')
-    ),
+    filledDmg: dmgNode('atk', dm.skill.filledDmg, 'skill'),
     meowDmgPyro: greaterEq(
       tally.moonsign,
       2,
@@ -414,7 +409,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       critDMG_: c6FlaskFull_critDMG_,
     },
   },
-  isMoonsign: constant(1),
+  flags: { isMoonsign: constant(1) },
 })
 
 const sheet: TalentSheet = {

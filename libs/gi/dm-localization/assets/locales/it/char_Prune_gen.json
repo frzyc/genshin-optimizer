@@ -1,0 +1,175 @@
+{
+  "name": "Prune",
+  "title": "Preziosi sogni d'infanzia",
+  "description": "Una minuta Cacciastreghe che ha viaggiato fin da Nod-Krai con l'unico scopo di stanare una strega che, stando alle sue parole, ha commesso ogni peccato immaginabile: incluso fare la prepotente con i bambini!",
+  "constellationName": "Turris Venefica",
+  "auto": {
+    "name": "Badabum! Martello spezzamalefici",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attacco normale</strong>",
+        "1": "Sferra fino a 3 attacchi roteando il Martello Scacciamali, infliggendo <anemo>DAN da Anemo</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per sferrare una martellata verso l'alto, infliggendo <anemo>DAN da Anemo</anemo> agli avversari di fronte a sé."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Evocando il potere di Anemo, si scaglia contro il suolo da mezz'aria, danneggiando tutti gli avversari lungo la sua traiettoria. Infligge <anemo>DAN da Anemo ad area</anemo> all'impatto col suolo."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da ATT caricato",
+      "4": "Costo vigore ATT caricato",
+      "5": "DAN da ATT in picchiata",
+      "6": "DAN da ATT in picchiata basso/alto",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Din-din-dan! Scampanio Scacciastreghe",
+    "description": {
+      "0": "Scatena la potenza del vento al fine di sconfiggere la strega malvagia e salvare Descartes! Prune colpisce la Campana Ammaliastreghe con il suo Martello Scacciamali, infliggendo <anemo>DAN da Anemo</anemo>.",
+      "1": "Se Prune innesca un Turbinio su un avversario usando questo attacco, <strong>Din-din-dan! Scampanio Scacciastreghe</strong> viene sostituito da <strong>Don don! Castigo della strega!</strong> per i successivi 6 s.",
+      "2": "<br/>",
+      "3": "<strong>Don don! Castigo della strega!</strong>",
+      "4": "Il martello di Prune viene avvolto dall'elemento coinvolto nella precedente reazione di Turbinio, sottoponendo il <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Martello Scacciamali</strong></tooltip> a una Conversione elementale. Attivando l'abilità con una pressione, Prune compie un balzo in alto e dà un calcio in avanti al Martello Scacciamali, infliggendo DAN elementali del tipo corrispondente agli avversari di fronte a lei."
+    },
+    "skillParams": {
+      "0": "DAN da Din-din-dan! Scampanio Scacciastreghe",
+      "1": "DAN da Don don! Castigo della strega!",
+      "2": "TdR",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "La campana rintocca! La caccia è aperta!",
+    "description": {
+      "0": "Prune agita delicatamente la Campana Ammaliastreghe, infliggendo <anemo>DAN da Anemo</anemo> agli avversari vicini. Successivamente, la Campana entra in modalità Caccia.",
+      "1": "<br/>",
+      "2": "<strong>Campana Ammaliastreghe: Caccia</strong>",
+      "3": "In questa modalità, la Campana Ammaliastreghe segue il personaggio attivo attuale, attaccando gli avversari circostanti a intervalli e infliggendo <anemo>DAN da Anemo ad area</anemo>. Tali DAN sono considerati DAN da Tripudio elementale."
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "DAN da Campana Ammaliastreghe",
+      "2": "Durata modalità Caccia",
+      "3": "TdR",
+      "4": "Costo energia",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Verdetto e punizione",
+    "description": {
+      "0": "Durante il Tripudio elementale <strong><tooltip ns=char_Prune_gen baseKey18=burst>La campana rintocca! La caccia è aperta!</tooltip></strong>, dopo aver inflitto DAN tramite la Campana Ammaliastreghe in modalità Caccia, se tali DAN innescano un Turbinio su un avversario, viene evocato anche un <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Martello Scacciamali</strong></tooltip> che infligge DAN pari a un 150% dell'ATT di Prune del tipo corrispondente alla Conversione elementale del Turbinio. Tali DAN sono considerati DAN da Tripudio elementale."
+    }
+  },
+  "passive2": {
+    "name": "Rintocchi sincronizzati",
+    "description": {
+      "0": "Dopo che Prune ha colpito un avversario con il <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Martello Scacciamali</strong></tooltip> sottoposto a Conversione elementale, gli altri membri vicini del gruppo ottengono l'effetto Adunanza del rintocco per 5 s: quando gli attacchi normali, caricati o in picchiata, le abilità elementali o i Tripudi elementali infliggono DAN agli avversari, i DAN di tali attacchi aumentano in base alla quantità di ATT di Prune superiore a 2.000 nel momento in cui l'effetto Adunanza del rintocco si attiva. Ogni punto di ATT in eccesso aumenta tale iterazione di DAN di uno 0,025%, fino a un 50% massimo."
+    }
+  },
+  "passive3": {
+    "name": "Tin-tin, clang e bang!",
+    "description": {
+      "0": "Ha un 10% di probabilità di ottenere 1 materiale per talenti dei personaggi regionale (materiali di base esclusi) durante la creazione. La rarità è quella del materiale risultante."
+    }
+  },
+  "lockedPassive": {
+    "name": "Rito della Vigilia della strega: Voto della Cercastreghe",
+    "description": {
+      "0": "Dopo aver completato <strong>Compiti della strega: Sulle controversie</strong>, Prune acquisisce l'attributo <strong>Hexerei</strong>. Quando il gruppo include almeno 2 personaggi con attributo Hexerei, questi ultimi ottengono l'effetto di potenziamento <strong>Hexerei: Rito segreto</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Hexerei: Rito segreto</strong>",
+      "3": "Dopo che un personaggio con attributo Hexerei nel gruppo sotto l'effetto di Adunanza del rintocco ha innescato una reazione elementale su un nemico, l'ATT di Prune aumenta di un 60% per 5 s. Se la reazione elementale innescata è una reazione di Turbinio, l'ATT del personaggio che l'ha innescata aumenta di un ulteriore 30% per 5 s."
+    }
+  },
+  "constellation1": {
+    "name": "Con un giuramento di soccorso, il viaggio ha inizio",
+    "description": {
+      "0": "Dopo aver colpito un avversario con il <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Martello Scacciamali</strong></tooltip> sottoposto a Conversione elementale, Prune recupera 2 di energia. Quest'effetto può attivarsi una volta ogni 1,8 s."
+    }
+  },
+  "constellation2": {
+    "name": "A ripulire i bagagli in disordine, servono i poteri elementali",
+    "description": {
+      "0": "Durante il Tripudio elementale <strong><tooltip ns=char_Prune_gen baseKey18=burst>La campana rintocca! La caccia è aperta!</tooltip></strong>, quando la Campana Ammaliastreghe è in modalità Caccia, Prune ottiene l'effetto Caccia alla strega: l'ATT di Prune aumenta di un 10% e, quando la Campana Ammaliastreghe e il <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Martello Scacciamali</strong></tooltip> sottoposto a Conversione elementale colpiscono un avversario, l'ATT di Prune aumenta di un ulteriore 5%, fino a un 40% massimo.",
+      "1": "L'iterazione originale del sopracitato effetto viene rimossa se si riutilizza La campana rintocca! La caccia è aperta! durante questo periodo di tempo."
+    }
+  },
+  "constellation3": {
+    "name": "Dal valico esce la carovana, muta ancora il paesaggio",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong><tooltip ns=char_Prune_gen baseKey18=burst>La campana rintocca! La caccia è aperta!</tooltip></strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Volgendosi per seguire il vento, l'ombra ancora si dimezza",
+    "description": {
+      "0": "Dopo che il <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Martello Scacciamali</strong></tooltip> sottoposto a Conversione elementale colpisce un avversario, esso rimbalza e piomba su un altro avversario nelle vicinanze, infliggendo DAN del tipo elementale corrispondente pari a un 80% dell'ATT."
+    }
+  },
+  "constellation5": {
+    "name": "Cento sconfitte? Nessun problema, ci riproveremo domani",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong><tooltip ns=char_Prune_gen baseKey18=skill>Din-din-dan! Scampanio Scacciastreghe</tooltip></strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "La storia è conclusa! Va' e condividila coi tuoi amici!",
+    "description": {
+      "0": "La durata della modalità Caccia della Campana Ammaliastreghe del Tripudio elementale <strong><tooltip ns=char_Prune_gen baseKey18=burst>La campana rintocca! La caccia è aperta!</tooltip></strong> si estende di 4 s.",
+      "1": "Inoltre, quando i membri del gruppo dotati dell'effetto Adunanza del rintocco innescano una reazione elementale, Prune e gli altri personaggi attivi dotati del suddetto effetto ottengono un bonus di 350 ATT per 5 s."
+    }
+  }
+}

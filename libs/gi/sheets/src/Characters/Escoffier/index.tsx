@@ -1,6 +1,7 @@
 import { type CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
+  constant,
   equal,
   greaterEq,
   infoMut,
@@ -165,7 +166,9 @@ const dmgFormulas = {
   skill: {
     skillDmg: dmgNode('atk', dm.skill.skillDmg, 'skill'),
     parfaitDmg: dmgNode('atk', dm.skill.parfaitDmg, 'skill'),
-    bladeDmg: dmgNode('atk', dm.skill.bladeDmg, 'skill'),
+    bladeDmg: dmgNode('atk', dm.skill.bladeDmg, 'skill', {
+      hit: { reaction: constant('') },
+    }),
   },
   burst: {
     skillDmg: dmgNode('atk', dm.burst.skillDmg, 'burst'),

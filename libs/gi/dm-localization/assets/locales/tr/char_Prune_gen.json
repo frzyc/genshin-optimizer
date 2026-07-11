@@ -1,0 +1,175 @@
+{
+  "name": "Prune",
+  "title": "Özlenen Çocuksu Hayaller",
+  "description": "Dediğine göre küçük çocuklara zorbalık yapmak da dahil akla gelebilecek her türlü günahı işlemiş bir cadının kökünü kazıma niyetiyle ta Nod-Krai'dan onca yolu tepip gelmiş minik bir Cadı Avcısı.",
+  "constellationName": "Büyü Kulesi",
+  "auto": {
+    "name": "Badabum! Büyükıran Çekiç",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "Bela Kovan Ant Çekicini savurarak <anemo>Rüzgar Hasarı</anemo> veren en fazla 3 saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcayarak çekiciyle yukarı doğru bir vuruş yapar ve önündeki düşmanlara <anemo>Rüzgar Hasarı</anemo> verir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Rüzgar gücünü çağırarak havadayken yere doğru atılır ve yoluna çıkan tüm düşmanlara hasar verir. Yere vurduğunda <anemo>Rüzgar Alan Hasarı</anemo> verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "Yüklü Saldırı Hasarı",
+      "4": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "5": "Havadan Saldırı Hasarı",
+      "6": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Ding Ding! Büyü Avı Zili",
+    "description": {
+      "0": "Rüzgarın kudretini serbest bırakarak kötü cadıyı yen ve Descartes'ı kurtar! Prune, Bela Kovan Ant Çekiciyle Cadıkapan Çanına vurarak <anemo>Rüzgar Hasarı</anemo> verir.",
+      "1": "Prune bu saldırıyı kullanarak düşmanın üzerinde Girdap Tepkimesi tetiklediğinde <strong>Ding Ding! Büyü Avı Zili</strong> 6 saniyeliğine <strong>Çın Çın! Cadıyı Cezalandırma Zamanı!</strong> ile değiştirilir.",
+      "2": "<br/>",
+      "3": "<strong>Çın Çın! Cadıyı Cezalandırma Zamanı!</strong>",
+      "4": "Prune'un çekici, önceki Girdap tepkimesindeki elementin tesirine girer ve <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Bela Kovan Ant Çekici</strong></tooltip> Element Dönüşümü geçirir. Bu beceri Dokunarak etkinleştirildiğinde Prune yukarı sıçrayarak Bela Kovan Ant Çekicini ileriye tekmeler ve önündeki düşmanlara ilgili türde Element Hasarı verir."
+    },
+    "skillParams": {
+      "0": "Ding Ding! Büyü Avı Zili Hasarı",
+      "1": "Çın Çın! Cadıyı Cezalandırma Zamanı! Hasarı",
+      "2": "BS",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Çanlar Çalıyor! Av Başladı!",
+    "description": {
+      "0": "Prune, Cadıkapan Çanını hafifçe savurarak yakındaki düşmanlara <anemo>Rüzgar Hasarı</anemo> verir. Çan bunun ardından Avcı-Arayıcı moduna girer.",
+      "1": "<br/>",
+      "2": "<strong>Cadıkapan Çanı: Avcı-Arayıcı</strong>",
+      "3": "Cadıkapan Çanı bu moddayken mevcut aktif karakteri takip eder ve belirli aralıklarla çevredeki düşmanlara saldırarak <anemo>Rüzgar Alan Hasarı</anemo> verir. Bu Hasar, Element Patlaması Hasarı sayılır."
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Cadıkapan Çanı Hasarı",
+      "2": "Avcı-Arayıcı Modu Süresi",
+      "3": "BS",
+      "4": "Enerji Maliyeti",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Yargı ve Ceza",
+    "description": {
+      "0": "<strong><tooltip ns=char_Prune_gen baseKey18=burst>Çanlar Çalıyor! Av Başladı!</tooltip></strong> Element Patlaması sırasında, Avcı-Arayıcı modundaki Cadıkapan Çanı bir düşmana Hasar verdikten sonra bu Hasar düşman üzerinde Girdap tepkimesi tetiklerse o düşmana Prune'un Saldırısının %150'si kadar Hasar veren bir <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Bela Kovan Ant Çekici</strong></tooltip> çağrılır. Hasarın türü, Girdap tepkimesinde gerçekleşen Element Dönüşümüyle aynı olur. Bu Hasar, Element Patlaması Hasarı sayılır."
+    }
+  },
+  "passive2": {
+    "name": "Eş Zamanlı Çınlama",
+    "description": {
+      "0": "Prune, Element Dönüşümü geçirmiş <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Bela Kovan Ant Çekicini</strong></tooltip> kullanarak bir düşmana vurduğunda, yakındaki diğer grup üyeleri 5 saniyeliğine İlham Yankısı etkisi kazanır: Normal, Yüklü veya Havadan Saldırılar ya da Element Becerileri ve Element Patlamaları ile düşmanlara Hasar verip İlham Yankısı etkisi aldıklarında bu saldırının Hasarı, Prune'un 2.000'in üzerindeki Saldırı değerine bağlı olarak artar. Sınırın üzerindeki her Saldırı puanı başına verilen Hasar %0,025 artar, en fazla %50 artabilir."
+    }
+  },
+  "passive3": {
+    "name": "Tangır, Tungur, Pat!",
+    "description": {
+      "0": "Üretim sırasında %10 ihtimalle 1 yöresel Karakter Yeteneği Malzemesi verir (temel malzeme hariç). Verdiği malzemelerin nadirliği üretilen malzemeyle aynıdır."
+    }
+  },
+  "lockedPassive": {
+    "name": "Cadının Gece Ayini: Cadı Arayanın Yemini",
+    "description": {
+      "0": "<strong>Cadının Ödevi: Çekişmeli Konular</strong> tamamlandıktan sonra Prune bir <strong>Cadılık</strong> karakteri olur. Grupta en az 2 Cadılık karakteri olduğunda, Cadılık karakterlerini güçlendiren <strong>Cadılık: Saklı Ayin</strong> etkisi kazanırsın.",
+      "1": "<br/>",
+      "2": "<strong>Cadılık: Saklı Ayin</strong>",
+      "3": "Grupta İlham Yankısı etkisindeki bir Cadılık karakteri bir düşman üzerinde Element Tepkimesi tetiklediğinde 5 saniyeliğine Prune'un Saldırısı %60 artar. Eğer tetiklenen Element Tepkimesi bir Girdap tepkimesiyse 5 saniyeliğine tetikleyen karakterin Saldırısı da %30 artar."
+    }
+  },
+  "constellation1": {
+    "name": "Kurtuluşa Ant İçtin, Başladı Yolculuğun",
+    "description": {
+      "0": "Element Dönüşümü geçiren <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Bela Kovan Ant Çekici</strong></tooltip> düşmana isabet ettiğinde Prune 2 Enerji yeniler. Bu etki 1,8 saniyede bir tetiklenebilir."
+    }
+  },
+  "constellation2": {
+    "name": "Dağınıklığı Toplamaya Birebirdir Element Güçleri",
+    "description": {
+      "0": "<strong><tooltip ns=char_Prune_gen baseKey18=burst>Çanlar Çalıyor! Av Başladı!</tooltip></strong> Element Patlaması sırasında Cadıkapan Çanı Avcı-Arayıcı modundayken Prune, Cadı Avı etkisini kazanır: Prune'un Saldırısı %10 artar, Cadıkapan Çanı ve Element Dönüşümü geçiren <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Bela Kovan Ant Çekici</strong></tooltip> bir düşmana isabet ettiğinde Saldırısı %5 daha artar. Prune'un Saldırısı bu şekilde en fazla %40 artabilir.",
+      "1": "Bu etki aktifken \"Çanlar Çalıyor! Av Başladı!\" yeniden kullanılırsa yukarıdaki orijinal etki kaldırılır."
+    }
+  },
+  "constellation3": {
+    "name": "Kervan Dağları Aşar, Belirir Yeni Ufuklar",
+    "description": {
+      "0": "<strong><tooltip ns=char_Prune_gen baseKey18=burst>Çanlar Çalıyor! Av Başladı!</tooltip></strong> seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Rüzgarla Geçmişe Baktım, Gölgem Hâlâ Yarım",
+    "description": {
+      "0": "Element Dönüşümü geçiren <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Bela Kovan Ant Çekici</strong></tooltip> bir düşmana isabet ettiğinde yakındaki bir düşmana seker ve ilgili Element Türünde Saldırı değerinin %80'i kadar Hasar verir."
+    }
+  },
+  "constellation5": {
+    "name": "Varsın Yüz Defa Yenilelim, Yarın Tekrar Savaşacağız",
+    "description": {
+      "0": "<strong><tooltip ns=char_Prune_gen baseKey18=skill>Ding Ding! Büyü Avı Zili</tooltip></strong> seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Hikaye Burada Sona Eriyor, Anlat Eşe Dosta!",
+    "description": {
+      "0": "<strong><tooltip ns=char_Prune_gen baseKey18=burst>Çanlar Çalıyor! Av Başladı!</tooltip></strong> Element Patlamasıyla etkinleşen Cadıkapan Çanı Avcı-Arayıcı modunun süresi 4sn uzar.",
+      "1": "Ayrıca İlham Yankısı etkisindeki grup üyeleri herhangi bir Element Tepkimesi tetikledikten sonra, Prune ve İlham Yankısı etkisindeki diğer mevcut aktif karakterler 5 saniyeliğine 350 Saldırı kazanır."
+    }
+  }
+}

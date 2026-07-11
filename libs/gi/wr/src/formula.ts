@@ -8,6 +8,7 @@ import {
   allArtifactSlotKeys,
   allLunarReactionKeys,
   allRegionKeys,
+  allStellarReactionKeys,
 } from '@genshin-optimizer/gi/consts'
 import {
   crittableTransformativeReactions,
@@ -87,6 +88,11 @@ for (const reaction of allLunarReactionKeys) {
   allNonModStatNodes[`${reaction}_baseDmg_`].info!.variant = reaction
   allNonModStatNodes[`${reaction}_specialDmg_`].info!.variant = reaction
 }
+for (const reaction of allStellarReactionKeys) {
+  allNonModStatNodes[`${reaction}_baseDmg_`].info!.variant = reaction
+  allNonModStatNodes[`${reaction}_specialDmg_`].info!.variant = reaction
+  allNonModStatNodes[`${reaction}_mult_`].info!.variant = reaction
+}
 crittableTransformativeReactions.forEach((reaction) => {
   allNonModStatNodes[`${reaction}_critRate_`].info!.variant = reaction
   allNonModStatNodes[`${reaction}_critDMG_`].info!.variant = reaction
@@ -129,8 +135,10 @@ const inputBase = {
   constellation: read(undefined, { ...info('constellation'), prefix: 'char' }),
   asc: read(undefined, { ...info('ascension'), prefix: 'char' }),
   special: read(),
-  isHexerei: read(),
-  isMoonsign: read(),
+  flags: {
+    isHexerei: read(),
+    isMoonsign: read(),
+  },
 
   infusion: {
     overridableSelf: stringRead('small'),
@@ -478,12 +486,15 @@ const common: Data = {
 
   enemy: {
     // TODO: shred cap of 90%
-    def: frac(
-      sum(input.lvl, 100),
-      prod(
-        sum(enemy.level, 100),
-        sum(one, prod(-1, enemy.defRed)),
-        sum(one, prod(-1, enemy.defIgn))
+    def: min(
+      percent(1),
+      frac(
+        sum(input.lvl, 100),
+        prod(
+          sum(enemy.level, 100),
+          sum(one, prod(-1, enemy.defRed)),
+          sum(one, prod(-1, enemy.defIgn))
+        )
       )
     ),
     transDef: frac(
@@ -530,6 +541,19 @@ const selected0 = setReadNodeKeys(deepNodeClone(inputBase), ['selected0'])
 const selected1 = setReadNodeKeys(deepNodeClone(inputBase), ['selected1'])
 const selected2 = setReadNodeKeys(deepNodeClone(inputBase), ['selected2'])
 const selected3 = setReadNodeKeys(deepNodeClone(inputBase), ['selected3'])
+const active = setReadNodeKeys(deepNodeClone(inputBase), ['active'])
+const inactive1 = setReadNodeKeys(deepNodeClone(inputBase), ['inactive1'])
+const inactive2 = setReadNodeKeys(deepNodeClone(inputBase), ['inactive2'])
+const inactive3 = setReadNodeKeys(deepNodeClone(inputBase), ['inactive3'])
 
 export { common, customBonus, input, tally, target, uiInput }
-export { selected0, selected1, selected2, selected3 }
+export {
+  selected0,
+  selected1,
+  selected2,
+  selected3,
+  active,
+  inactive1,
+  inactive2,
+  inactive3,
+}

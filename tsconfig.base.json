@@ -129,6 +129,7 @@
       "@genshin-optimizer/gi/theme": ["libs/gi/theme/src/index.ts"],
       "@genshin-optimizer/gi/ui": ["libs/gi/ui/src/index.ts"],
       "@genshin-optimizer/gi/uidata": ["libs/gi/uidata/src/index.ts"],
+      "@genshin-optimizer/gi/upopt": ["libs/gi/upopt/src/index.ts"],
       "@genshin-optimizer/gi/util": ["libs/gi/util/src/index.ts"],
       "@genshin-optimizer/gi/wr": ["libs/gi/wr/src/index.ts"],
       "@genshin-optimizer/gi/wr-types": ["libs/gi/wr-types/src/index.ts"],

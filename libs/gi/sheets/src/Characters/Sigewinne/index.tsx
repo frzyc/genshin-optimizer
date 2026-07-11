@@ -220,7 +220,9 @@ const dmgFormulas = {
       skillTier_heal_
     ),
     selfHeal: healNode('hp', dm.skill.selfHealMult, 0),
-    bladeDmg: dmgNode('hp', dm.skill.bladeDmg, 'skill'),
+    bladeDmg: dmgNode('hp', dm.skill.bladeDmg, 'skill', {
+      hit: { reaction: constant('') },
+    }),
     a1Conva_skill_dmgInc,
   },
   burst: {

@@ -350,6 +350,40 @@
       "3": "Ayrıca Varka, <strong>Dört Rüzgarın Yükselişi</strong> kullanım haklarını harcayarak Dayanıklılık tüketmeyen özel <strong>Gök Yutan</strong> Yüklü Saldırısını gerçekleştirebilir. Bu saldırı, 2 defa Varka'nın sağ eliyle tuttuğu çift elli kılıcın elementine karşılık gelen ve diğer element tesirleriyle değiştirilemeyen Element Hasarı ve 2 defa da <anemo>Rüzgar Hasarı</anemo> verir."
     }
   },
+  "11290001": {
+    "name": "Usta Vuruş",
+    "description": {
+      "0": "Lohen, <strong>Öngörülmez Darbe</strong> Element Becerisini kullandıktan sonra bu moda geçer. Usta Vuruş modu aşağıdaki özelliklere sahiptir:",
+      "1": [
+        "Lohen'in Normal, Yüklü ve Havadan Saldırıları, diğer element tesirleriyle değişmeyecek şekilde <cryo>Buz Hasarı</cryo> verir.",
+        "Lohen bir düşmana Normal Saldırı veya Yüklü Saldırıyla vurduğunda <strong>Haz</strong> kademeleri biriktirir. Bu kademeleri tüketerek <strong>İliğe ve Ruha Kazınmış</strong> özel Element Becerisini kullanabilir. Lohen <strong>Usta Vuruş</strong> modundayken <strong>İliğe ve Ruha Kazınmış</strong> becerisini en fazla 3 defa kullanabilir, sonrasında artık <strong>Haz</strong> biriktiremez.",
+        "Yakındaki grup üyeleri Hasar verdiğinde Lohen için <strong>Kazanma Arzusu</strong> biriktirirler. Kazanma Arzusu kullanılarak <strong>İliğe ve Ruha Kazınmış</strong> Hasarı artırılabilir.",
+        "Lohen savaş alanından çıktığında Usta Vuruş modu sona erer, <strong>Haz</strong> ve <strong>Kazanma Arzusu</strong> sıfırlanır."
+      ]
+    }
+  },
+  "11290002": {
+    "name": "İliğe ve Ruha Kazınmış",
+    "description": {
+      "0": "Lohen'in <strong>Haz</strong> değeri maksimum sınıra ulaştığında kullanabildiği özel Element Becerisi.",
+      "1": "Bir düşmana isabet ettiğinde tüm <strong>Haz</strong> ve <strong>Kazanma Arzusu</strong> kademelerini tüketerek <cryo>Buz Hasarı</cryo> verir. Bu Hasar, tüketilen <strong>Kazanma Arzusu</strong> miktarına göre artar."
+    }
+  },
+  "11290003": {
+    "name": "Haz",
+    "description": {
+      "0": "Lohen Usta Vuruş modundayken Normal veya Yüklü Saldırılarıyla düşmanlara vurduğunda 0.381298 <strong>Haz</strong> birikir. En fazla 100 Haz birikebilir.",
+      "1": "Her 0,1 saniyede bir <strong>Haz</strong> biriktirilebilir. <strong>Haz</strong> maksimum sınıra ulaştığında Lohen'in <strong>Öngörülmez Darbe</strong> Element Becerisi, özel <strong>İliğe ve Ruha Kazınmış</strong> Element Becerisi olarak değişir."
+    }
+  },
+  "11290004": {
+    "name": "Kazanma Arzusu",
+    "description": {
+      "0": "Lohen Usta Vuruş modundayken yakındaki diğer grup üyeleri Hasar verdiğinde biriken özel bir kaynak. Aynı anda en fazla 100 Kazanma Arzusu birikebilir.",
+      "1": "Usta Vuruş modu etkinken yakındaki diğer grup üyeleri Hasar verdiğinde, bu Hasar Lohen'in Temel Saldırısının %55.2868 kadarından daha az değilse Lohen 0.829302 <strong>Kazanma Arzusu</strong> biriktirir. Aksi takdirde 1 <strong>Kazanma Arzusu</strong> birikir.",
+      "2": "Her karakter, Lohen için her 0,1 saniyede bir <strong>Kazanma Arzusu</strong> biriktirebilir."
+    }
+  },
   "11300001": {
     "name": "Lumi: Saldırı Formları",
     "description": {
@@ -365,6 +399,71 @@
       "9": "<strong>Standart Güç Formu</strong>",
       "10": "Diğer formlar kadar gösterişli olmasa da yine de ciddi bir güce sahiptir.",
       "11": "Lumi, yakındaki düşmanlara sürekli olarak saldırmak için daha uzun aralıklarla <strong>Bam Bam Pataklama</strong> kullanır. Her saldırı 2 defa <geo>Toprak Alan Hasarı</geo> verir."
+    }
+  },
+  "11310001": {
+    "name": "Fedakarlık Lütfu",
+    "description": {
+      "0": "<strong>Vahiy: Var Edilmemiş Işık</strong> Element Becerisi kullanıldıktan sonra Nicole yakındaki tüm grup üyelerine şu etkiyi bahşeder: Grup üyelerinin Saldırısı Nicole'un Saldırısına göre artar.",
+      "1": "Belirli koşullar karşılandığında <strong>Fedakarlık Lütfu</strong> etkisi gelişerek <strong>İlahi Rehberlik</strong> haline gelir ve Saldırıyı daha da artırır."
+    }
+  },
+  "11310002": {
+    "name": "İlahi Rehberlik",
+    "description": {
+      "0": "<strong>Fedakarlık Lütfu</strong> etkisini geliştirmek Saldırıyı 300 daha artırır.",
+      "1": "\"İştirak\" Yükseltme Yeteneği açıldıktan sonra aşağıdaki gözlem koşullarından herhangi biri karşılandığında, <strong>Fedakarlık Lütfu</strong> gelişerek kalan süresi boyunca <strong>İlahi Rehberlik</strong> haline gelir:",
+      "2": [
+        "Gözlem altındaki başka bir karakter 3 saniyeden uzun süre alanda kalırsa.",
+        "Gözlem altındaki başka bir karakter bir Cadılık karakteriyse."
+      ],
+      "3": "<br/>",
+      "4": "Ayrıca \"İyilik Sevgisi\" Yükseltme Yeteneği açıldıktan sonra yakındaki aktif bir grup üyesinin verdiği Element Hasarı bir düşmana isabet ettiğinde, Nicole'un kendi <strong>Fedakarlık Lütfu</strong> da 8 saniyeliğine gelişerek <strong>İlahi Rehberlik</strong> halini alır.",
+      "5": "<br/>",
+      "6": "<strong>İlahi Rehberlik</strong> etkisine sahip olan Nicole dışındaki karakterler alandan ayrıldığında etkileri tekrar <strong>Fedakarlık Lütfu</strong> haline döner."
+    }
+  },
+  "11320001": {
+    "name": "Bela Kovan Ant Çekici",
+    "description": {
+      "0": "Cadı avcısının güvenilir yoldaşı! Bela Kovan Ant Çekici doğru koşullar altında Element Dönüşümü geçirerek tüm Hasarını ilgili Element Türünün Hasarına dönüştürür.",
+      "1": "Prune, Element Dönüşümüne uğramış Bela Kovan Ant Çekicini aşağıdaki şekillerde çağırabilir:",
+      "2": [
+        " Prune <strong>Ding Ding! Büyü Avı Zili</strong> Element Becerisi ile bir düşman üzerinde Girdap Tepkimesi tetiklendikten sonra belirli bir süreliğine <strong>Çın Çın! Cadıyı Cezalandırma Zamanı!</strong> özel Element Becerisini kullanabilir. Bu özel Element Becerisi kullanıldığında Bela Kovan Ant Çekici, söz konusu Girdap Tepkimesinde yer alan diğer Element Türüne dönüşür.",
+        "\"Yargı ve Ceza\" Yükseltme Yeteneği açıldıktan sonra, Avcı-Arayıcı modundaki Cadıkapan Çanı bir düşman üzerinde Girdap tetiklediğinde düşmana saldırmak için ilgili Element Dönüşümüne uğramış bir Bela Kovan Ant Çekici çağırır."
+      ]
+    }
+  },
+  "11320002": {
+    "name": "Yargı ve Ceza",
+    "description": {
+      "0": "<strong>Çanlar Çalıyor! Av Başladı!</strong> Element Patlaması sırasında, Avcı-Arayıcı modundaki Cadıkapan Çanı bir düşmana Hasar verdikten sonra bu Hasar düşman üzerinde Girdap tepkimesi tetiklerse Girdap tepkimesinde gerçekleşen Element Dönüşümüyle aynı türde Hasar veren bir <strong>Bela Kovan Ant Çekici</strong> çağrılır. Bu Hasar, Element Patlaması Hasarı sayılır."
+    }
+  },
+  "11320003": {
+    "name": "Eş Zamanlı Çınlama",
+    "description": {
+      "0": "Prune, Element Dönüşümü geçirmiş <strong>Bela Kovan Ant Çekicini</strong> kullanarak bir düşmana vurduğunda, yakındaki diğer grup üyeleri İlham Yankısı etkisini kazanır: Saldırı Hasarı, Prune'un Saldırısına göre artar."
+    }
+  },
+  "11330001": {
+    "name": "Deşifre",
+    "description": {
+      "0": "Yüklü Saldırı kullanıldığında Fagio bu moda geçer.",
+      "1": "Bu moddayken Fagio önündeki düşmanlara bir tarama ateşi saldırısı yapar ve belirli aralıklarla yoğunlaştırılmış ışınlar ateşleyerek <cryo>Buz Alan Hasarı</cryo> verir.",
+      "2": "<strong>Işıltı: Yıldız İletimi</strong>: Yoğunlaştırılmış ışınlar bunun yerine Yıldız İletimi Hasarı sayılan <cryo>Buz Alan Hasarı</cryo> verir."
+    }
+  },
+  "11330002": {
+    "name": "Deşifre Gücü",
+    "description": {
+      "0": "<strong>Deşifre</strong> modundayken Fagio'nun <strong>Deşifre Gücü</strong> sürekli artar. Deşifre Gücü maksimuma ulaştığında Fagio, Deşifre modunu sürdüremez veya bu moda yeniden giremez."
+    }
+  },
+  "11330003": {
+    "name": "Kutup Yıldızı Alanı",
+    "description": {
+      "0": "Yıldız İletimi tetiklendiğinde çevredeki alan kısa süreliğine bir <strong>Kutup Yıldızı Alanına</strong> dönüşür ve belirli karakterler bir Kutup Yıldızı Alanı içindeyken çeşitli beceri güçlendirmeleri sağlayan <strong>Işıltı: Yıldız İletimi</strong> durumuna girer."
     }
   }
 }

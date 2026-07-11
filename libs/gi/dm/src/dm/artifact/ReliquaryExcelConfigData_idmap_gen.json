@@ -553,7 +553,7 @@
   ],
   "23407": [
     15002,
-    "ViridescentArrowFeather"
+    "ViridescentVenerersDiadem"
   ],
   "23408": [
     15002,
@@ -1113,7 +1113,7 @@
   ],
   "23547": [
     15017,
-    "CeremonialWarPlume"
+    "NoblesPledgingVessel"
   ],
   "23548": [
     15017,
@@ -2206,6 +2206,86 @@
   "23820": [
     15044,
     "ANoteInSpringsLeich"
+  ],
+  "23821": [
+    15045,
+    "HeavensentReward"
+  ],
+  "23822": [
+    15045,
+    "HeavensentDemise"
+  ],
+  "23823": [
+    15045,
+    "HeavensentCrown"
+  ],
+  "23824": [
+    15045,
+    "HeavensentFragrance"
+  ],
+  "23825": [
+    15045,
+    "HeavensentDecree"
+  ],
+  "23826": [
+    15045,
+    "HeavensentReward"
+  ],
+  "23827": [
+    15045,
+    "HeavensentDemise"
+  ],
+  "23828": [
+    15045,
+    "HeavensentCrown"
+  ],
+  "23829": [
+    15045,
+    "HeavensentFragrance"
+  ],
+  "23830": [
+    15045,
+    "HeavensentDecree"
+  ],
+  "23831": [
+    15046,
+    "OvationsThatCeasedUponFestivity"
+  ],
+  "23832": [
+    15046,
+    "SharpnessThatCeasedUponWondrousCreation"
+  ],
+  "23833": [
+    15046,
+    "PendulumThatCeasedAmidstAGreatFall"
+  ],
+  "23834": [
+    15046,
+    "IridescenceThatCeasedAmidstGlory"
+  ],
+  "23835": [
+    15046,
+    "MomentThatCeasedUponWakingFromGrandDreams"
+  ],
+  "23836": [
+    15046,
+    "OvationsThatCeasedUponFestivity"
+  ],
+  "23837": [
+    15046,
+    "SharpnessThatCeasedUponWondrousCreation"
+  ],
+  "23838": [
+    15046,
+    "PendulumThatCeasedAmidstAGreatFall"
+  ],
+  "23839": [
+    15046,
+    "IridescenceThatCeasedAmidstGlory"
+  ],
+  "23840": [
+    15046,
+    "MomentThatCeasedUponWakingFromGrandDreams"
   ],
   "24101": [
     15001,
@@ -4646,6 +4726,166 @@
   "44554": [
     15044,
     "ANoteInSpringsLeich"
+  ],
+  "45412": [
+    15045,
+    "HeavensentReward"
+  ],
+  "45413": [
+    15045,
+    "HeavensentReward"
+  ],
+  "45422": [
+    15045,
+    "HeavensentDemise"
+  ],
+  "45423": [
+    15045,
+    "HeavensentDemise"
+  ],
+  "45432": [
+    15045,
+    "HeavensentCrown"
+  ],
+  "45433": [
+    15045,
+    "HeavensentCrown"
+  ],
+  "45442": [
+    15045,
+    "HeavensentFragrance"
+  ],
+  "45443": [
+    15045,
+    "HeavensentFragrance"
+  ],
+  "45452": [
+    15045,
+    "HeavensentDecree"
+  ],
+  "45453": [
+    15045,
+    "HeavensentDecree"
+  ],
+  "45513": [
+    15045,
+    "HeavensentReward"
+  ],
+  "45514": [
+    15045,
+    "HeavensentReward"
+  ],
+  "45523": [
+    15045,
+    "HeavensentDemise"
+  ],
+  "45524": [
+    15045,
+    "HeavensentDemise"
+  ],
+  "45533": [
+    15045,
+    "HeavensentCrown"
+  ],
+  "45534": [
+    15045,
+    "HeavensentCrown"
+  ],
+  "45543": [
+    15045,
+    "HeavensentFragrance"
+  ],
+  "45544": [
+    15045,
+    "HeavensentFragrance"
+  ],
+  "45553": [
+    15045,
+    "HeavensentDecree"
+  ],
+  "45554": [
+    15045,
+    "HeavensentDecree"
+  ],
+  "46412": [
+    15046,
+    "OvationsThatCeasedUponFestivity"
+  ],
+  "46413": [
+    15046,
+    "OvationsThatCeasedUponFestivity"
+  ],
+  "46422": [
+    15046,
+    "SharpnessThatCeasedUponWondrousCreation"
+  ],
+  "46423": [
+    15046,
+    "SharpnessThatCeasedUponWondrousCreation"
+  ],
+  "46432": [
+    15046,
+    "PendulumThatCeasedAmidstAGreatFall"
+  ],
+  "46433": [
+    15046,
+    "PendulumThatCeasedAmidstAGreatFall"
+  ],
+  "46442": [
+    15046,
+    "IridescenceThatCeasedAmidstGlory"
+  ],
+  "46443": [
+    15046,
+    "IridescenceThatCeasedAmidstGlory"
+  ],
+  "46452": [
+    15046,
+    "MomentThatCeasedUponWakingFromGrandDreams"
+  ],
+  "46453": [
+    15046,
+    "MomentThatCeasedUponWakingFromGrandDreams"
+  ],
+  "46513": [
+    15046,
+    "OvationsThatCeasedUponFestivity"
+  ],
+  "46514": [
+    15046,
+    "OvationsThatCeasedUponFestivity"
+  ],
+  "46523": [
+    15046,
+    "SharpnessThatCeasedUponWondrousCreation"
+  ],
+  "46524": [
+    15046,
+    "SharpnessThatCeasedUponWondrousCreation"
+  ],
+  "46533": [
+    15046,
+    "PendulumThatCeasedAmidstAGreatFall"
+  ],
+  "46534": [
+    15046,
+    "PendulumThatCeasedAmidstAGreatFall"
+  ],
+  "46543": [
+    15046,
+    "IridescenceThatCeasedAmidstGlory"
+  ],
+  "46544": [
+    15046,
+    "IridescenceThatCeasedAmidstGlory"
+  ],
+  "46553": [
+    15046,
+    "MomentThatCeasedUponWakingFromGrandDreams"
+  ],
+  "46554": [
+    15046,
+    "MomentThatCeasedUponWakingFromGrandDreams"
   ],
   "51110": [
     10001,

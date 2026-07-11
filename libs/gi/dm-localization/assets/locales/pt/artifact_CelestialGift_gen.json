@@ -1,0 +1,29 @@
+{
+  "setName": "Dádiva Celestial",
+  "setEffects": {
+    "2": "Recarga de Energia +20%",
+    "4": "Se o portador já completou a Tarefa da Bruxa, após usar uma Habilidade Elemental, obtém \"Orientação da Luz Celestial\" por 20s: todos os personagens próximos da equipe obtêm 20% de Bônus de Dano Elemental correspondente ao Tipo Elemental do portador. Esse efeito pode ser desencadeado mesmo se o portador estiver fora de campo. Bônus de Dano fornecidos por Conjuntos de Artefatos com o mesmo nome não acumulam.\\n· Quando a equipe possui o efeito \"Mágico: Ritual Secreto\", \"Orientação da Luz Celestial\" é elevada para \"Cântico do Mundo Mortal\": todos os personagens próximos da equipe passam a obter 40% de Bônus de Dano Elemental correspondente tanto ao Tipo Elemental do portador quanto ao Tipo Elemental do personagem ativo atual da equipe. Se ambos os personagens tiverem o mesmo Tipo Elemental, esses bônus não acumulam."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Fragrância Celestial",
+      "desc": "Os altos céus deram uma flor que não murcha ao emissário. Um destino sem fim dá origem somente à ganância."
+    },
+    "plume": {
+      "name": "Perdição Celestial",
+      "desc": "Os altos céus deram uma pluma do renascimento ao emissário. Todos os pecados serão perdoados no final do destino."
+    },
+    "sands": {
+      "name": "Decreto Celestial",
+      "desc": "Os altos céus deram um relógio de sol invertido ao emissário. Uma interdição inviolável se tornou a nascente da fúria."
+    },
+    "goblet": {
+      "name": "Recompensa Celestial",
+      "desc": "Os altos céus deram o néctar doce ao emissário. O banquete eterno abriu as portas para o desejo."
+    },
+    "circlet": {
+      "name": "Coroa Celestial",
+      "desc": "Os altos céus deram uma coroa esplêndida ao emissário. Poder fora de controle ajuda a nutrir as sementes da arrogância."
+    }
+  }
+}

@@ -254,6 +254,12 @@
   "JointExhibitionPopularity": {
     "name": "Fervor de exposición conjunta"
   },
+  "PalsSynergy": {
+    "name": "Sinergia de superamistad"
+  },
+  "VenuePopularity": {
+    "name": "Popularidad del recinto"
+  },
   "Primogem": {
     "name": "Protogema"
   },
@@ -1148,8 +1154,20 @@
   "Varka": {
     "name": "Varka"
   },
+  "Lohen": {
+    "name": "Lohen"
+  },
   "Linnea": {
     "name": "Linnéa"
+  },
+  "Nicole": {
+    "name": "Nicole"
+  },
+  "Prune": {
+    "name": "Prune"
+  },
+  "Sandrone": {
+    "name": "Sandrone"
   },
   "KachinasStellaFortuna": {
     "name": "Stella Fortuna de Kachina"
@@ -1232,8 +1250,20 @@
   "VarkasStellaFortuna": {
     "name": "Stella Fortuna de Varka"
   },
+  "LohensStellaFortuna": {
+    "name": "Stella Fortuna de Lohen"
+  },
   "LinneasStellaFortuna": {
     "name": "Stella Fortuna de Linnéa"
+  },
+  "NicolesStellaFortuna": {
+    "name": "Stella Fortuna de Nicole"
+  },
+  "PrunesStellaFortuna": {
+    "name": "Stella Fortuna de Prune"
+  },
+  "SandronesStellaFortuna": {
+    "name": "Stella Fortuna de Sandrone"
   },
   "Apple": {
     "name": "Manzana"
@@ -1822,6 +1852,15 @@
   },
   "FischlDictionaryDieNeuauflageDerPrinzessin": {
     "name": "Diccionario de Fischl: Nueva edición de la Princesa"
+  },
+  "TheOriginsOfTheExperiment": {
+    "name": "Sobre el origen del experimento"
+  },
+  "NotesOnTheExperimentalSubjects": {
+    "name": "Notas sobre los sujetos de prueba"
+  },
+  "ScribbledNotes": {
+    "name": "Notas garabateadas"
   },
   "WyattsRedKey": {
     "name": "Llave roja de Wyatt"
@@ -3698,6 +3737,9 @@
   "PineAmber": {
     "name": "Ámbar de pino"
   },
+  "TeardropOfTheMoon": {
+    "name": "Lágrima lunar"
+  },
   "WindrestFlower": {
     "name": "Flor vientosuspiro"
   },
@@ -5470,6 +5512,9 @@
   },
   "BorderlandShrineOfDepthsKey": {
     "name": "Llave de Santuario de las Profundidades de la frontera"
+  },
+  "FrostMoonShrineOfDepthsKey": {
+    "name": "Llave de Santuario de las Profundidades de la Luna Escarchada"
   },
   "MnemonicCluster": {
     "name": "Bloque tecnorreminiscente"
@@ -8318,6 +8363,60 @@
   "SugarSculptureLinnea": {
     "name": "Figura de caramelo: Linnéa"
   },
+  "SuspiciousStuffedTofuWithMincedMeat": {
+    "name": "Tofu relleno de carne picada extraño"
+  },
+  "StuffedTofuWithMincedMeat": {
+    "name": "Tofu relleno de carne picada"
+  },
+  "DeliciousStuffedTofuWithMincedMeat": {
+    "name": "Tofu relleno de carne picada delicioso"
+  },
+  "SuspiciousMintBubblegum": {
+    "name": "Chicles de menta extraños"
+  },
+  "MintBubblegum": {
+    "name": "Chicles de menta"
+  },
+  "DeliciousMintBubblegum": {
+    "name": "Chicles de menta deliciosos"
+  },
+  "SpinningSpecial": {
+    "name": "Bebidas “gira-gira”"
+  },
+  "GildedChest": {
+    "name": "Cofre dorado"
+  },
+  "BoredomBustingBubblegum": {
+    "name": "Chicles antitedio"
+  },
+  "TeaPartyPolyphony": {
+    "name": "Polifonía de la hora del té"
+  },
+  "SuspiciousBirchSteamedPorkRibs": {
+    "name": "Costillas al abedul extrañas"
+  },
+  "BirchSteamedPorkRibs": {
+    "name": "Costillas al abedul"
+  },
+  "DeliciousBirchSteamedPorkRibs": {
+    "name": "Costillas al abedul deliciosas"
+  },
+  "SuspiciousMeatFilledRyeBun": {
+    "name": "Bollo de centeno relleno extraño"
+  },
+  "MeatFilledRyeBun": {
+    "name": "Bollo de centeno relleno"
+  },
+  "DeliciousMeatFilledRyeBun": {
+    "name": "Bollo de centeno relleno delicioso"
+  },
+  "TeaPartyPreludeHerbalTea": {
+    "name": "Preludio de la hora del té: Té de hierbas"
+  },
+  "TeaPartyPreludeArtfulLatte": {
+    "name": "Preludio de la hora del té: Café artístico"
+  },
   "RecipeItem": {
     "name": "Ingredientes"
   },
@@ -9119,6 +9218,18 @@
   "RecipeMillhavensMorningPlate": {
     "name": "Receta: mañana en Villamolino"
   },
+  "RecipeStuffedTofuWithMincedMeat": {
+    "name": "Receta: tofu relleno de carne picada"
+  },
+  "RecipeMintBubblegum": {
+    "name": "Receta: chicles de menta"
+  },
+  "RecipeBirchSteamedPorkRibs": {
+    "name": "Receta: costillas al abedul"
+  },
+  "RecipeMeatFilledRyeBun": {
+    "name": "Receta: bollo de centeno relleno"
+  },
   "CraftedItems": {
     "name": "Objeto sintetizado"
   },
@@ -9686,6 +9797,15 @@
   "JeweledFlamingHilt": {
     "name": "Empuñadura flamígera engarzada"
   },
+  "FracturedLunarIron": {
+    "name": "Hierro lunar fracturado"
+  },
+  "DepletedLunarIron": {
+    "name": "Hierro lunar mermado"
+  },
+  "UnblemishedLunarIron": {
+    "name": "Hierro lunar inmaculado"
+  },
   "HurricaneSeed": {
     "name": "Semilla de huracán"
   },
@@ -9943,6 +10063,15 @@
   },
   "PlumeOfTheFallenWatcher": {
     "name": "Pluma celestecaída"
+  },
+  "CounterfeitResin": {
+    "name": "Resina falsa"
+  },
+  "TwistedWitheredBranch": {
+    "name": "Rama marchita retorcida"
+  },
+  "ProfanedSprout": {
+    "name": "Brote blasfemo"
   },
   "TileOfDecarabiansTower": {
     "name": "Fragmento de azulejo de Decarabian"
@@ -13172,9 +13301,6 @@
   "EasybreezeHolidayResortMap": {
     "name": "Mapa del Resort Brisapacible"
   },
-  "ScribbledNotes": {
-    "name": "Notas garabateadas"
-  },
   "BeautifullyWrittenNotes": {
     "name": "Notas con caligrafía hermosa"
   },
@@ -13673,6 +13799,9 @@
   "AncientHandwriting": {
     "name": "Nota antigua"
   },
+  "SecretSourceAncientMoonsFount": {
+    "name": "Fuentenigma: Fuente Lunarcaica"
+  },
   "ALetterCarriedByTheWind": {
     "name": "Carta traída por el viento"
   },
@@ -13681,6 +13810,9 @@
   },
   "VarkasSecretStashOfCash": {
     "name": "Ahorros secretos de Varka"
+  },
+  "PaimonsNotes": {
+    "name": "Notas de Paimon"
   },
   "OnFungiCommunitiesDraftManuscript": {
     "name": "Versión provisional de «Compendio sobre las comunidades de Hongos»"
@@ -13733,6 +13865,9 @@
   "LohensWorkReport": {
     "name": "Informe de trabajo de Lohen"
   },
+  "LohensFriendshipFee": {
+    "name": "“Cuota de amigos” de Lohen"
+  },
   "ArcadiaTheEntombedCapital": {
     "name": "Arcadia, la ciudad caída y sepultada"
   },
@@ -13745,23 +13880,68 @@
   "VerasMelancholyFinalVolumeVersionI": {
     "name": "La melancolía de Vera: volumen final (versión I)"
   },
-  "TheDreamOfRhonabwy": {
-    "name": "El sueño de Rhonabwy"
+  "TheDreamOfRhonabouillet": {
+    "name": "El sueño de Rhonabouillet"
   },
   "TheSongOfAyKhanoum": {
     "name": "La canción de Ai Janum"
   },
-  "TheCanonOfLoveDivineInspirationAndVirtue": {
-    "name": "Códice del amor, la palabra divina y la virtud"
+  "RevelationsOfDivineLove": {
+    "name": "Revelaciones del amor divino"
   },
   "Note": {
     "name": "Nota"
+  },
+  "PhotoWithTheLittleWitchesAndTheirImaginaryFriends": {
+    "name": "Imagen con las brujitas y los amigos imaginarios"
+  },
+  "AnomalousTreeMarrowI": {
+    "name": "Médula de árbol anómala (I)"
+  },
+  "AnomalousTreeMarrowII": {
+    "name": "Médula de árbol anómala (II)"
+  },
+  "AnomalousTreeMarrowIII": {
+    "name": "Médula de árbol anómala (III)"
+  },
+  "AnomalousTreeMarrow": {
+    "name": "Médula de árbol anómala"
+  },
+  "DangoMilkInfusedWithMagic": {
+    "name": "Leche de dango con un “aura mágica”"
+  },
+  "PrimalConstructComponent": {
+    "name": "Componente de Creación Primigenia"
+  },
+  "WitnessOfTheMoon": {
+    "name": "Testigo de los Vigías Lunares"
+  },
+  "LostFlowerOfAncientTimes": {
+    "name": "Flor de antaño perdida"
+  },
+  "SandronesTeaPartyInvitationLetter": {
+    "name": "Carta de invitación a la hora del té de Sandrone"
   },
   "AncientMondstadtRoyalSeal": {
     "name": "Insignia de la nobleza antigua de Mondstadt"
   },
   "SegmentDomainControlModuleZeroParticle": {
     "name": "Módulo de gestión de dominio: punto cero"
+  },
+  "FrostMoonSeal": {
+    "name": "Sellorroca de la Luna Escarchada"
+  },
+  "FamilyPortraitByMamere": {
+    "name": "Retrato familiar pintado por Maime"
+  },
+  "AlainGuillotinsEpitaph": {
+    "name": "Epitafio de Alain Guillotin"
+  },
+  "MoongazersEngravingI": {
+    "name": "Tallado de los Vigías Lunares (I)"
+  },
+  "MoongazersEngravingII": {
+    "name": "Tallado de los Vigías Lunares (II)"
   },
   "TearsAmongTheStars": {
     "name": "Lágrima estelar"
@@ -14713,6 +14893,24 @@
   },
   "RadiantSpincrystal182": {
     "name": "Girocristal radiante (182)"
+  },
+  "RadiantSpincrystal183": {
+    "name": "Girocristal radiante (183)"
+  },
+  "RadiantSpincrystal184": {
+    "name": "Girocristal radiante (184)"
+  },
+  "RadiantSpincrystal185": {
+    "name": "Girocristal radiante (185)"
+  },
+  "RadiantSpincrystal186": {
+    "name": "Girocristal radiante (186)"
+  },
+  "RadiantSpincrystal187": {
+    "name": "Girocristal radiante (187)"
+  },
+  "RadiantSpincrystal188": {
+    "name": "Girocristal radiante (188)"
   },
   "LanternFiber": {
     "name": "Celulosa para linterna"
@@ -15797,6 +15995,27 @@
   "TravelNotesHomecoming": {
     "name": "PB - Retorno"
   },
+  "NicoleHeavenlyStairway": {
+    "name": "Nicole - Escalinata celestial"
+  },
+  "LohenBenevolence": {
+    "name": "Lohen - Magnánimo"
+  },
+  "PruneJudgment": {
+    "name": "Prune - Castigo"
+  },
+  "TravelNotesGiftOfSplendor": {
+    "name": "PB - Obsequios fantásticos"
+  },
+  "SandroneTeaBreak": {
+    "name": "Sandrone - Descanso para el té"
+  },
+  "NodKraiMoonbright": {
+    "name": "Nod Krai - Esplendor lunar"
+  },
+  "TravelNotesSunnySummer": {
+    "name": "PB - Verano soleado"
+  },
   "EchoDandelionKnight": {
     "name": "Estela: Caballera de Dandelion"
   },
@@ -15853,6 +16072,12 @@
   },
   "EchoPillarOfFortitude": {
     "name": "Estela: El Vigoroso Estratega"
+  },
+  "EchoEonsAdrift": {
+    "name": "Estela: El Caminante Eterno"
+  },
+  "EchoHelmOfTheRadiantRose": {
+    "name": "Estela: La Líder de las Rosas"
   },
   "FaintGlow": {
     "name": "Destello tenue"
@@ -16201,6 +16426,12 @@
   },
   "LinneasNaturalistArchive": {
     "name": "Archivo de especies naturales de Linnéa"
+  },
+  "SandronesPortableTeaTable": {
+    "name": "Mesa de té portátil de Sandrone"
+  },
+  "WitchsRevelationCase": {
+    "name": "Baraja del oráculo de la bruja"
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Instrucciones: Roca de resonancia de anemóculus"
@@ -16787,6 +17018,51 @@
   "MeditativeReading": {
     "name": "Lectura tranquila"
   },
+  "PatrolBreak": {
+    "name": "Intervalo de patrulla"
+  },
+  "MasterpieceComplete": {
+    "name": "Obra maestra completada"
+  },
+  "ReadyToSprint": {
+    "name": "Preparación para acelerar"
+  },
+  "InterludeRest": {
+    "name": "Reposo del interludio"
+  },
+  "HarnessTheBlaze": {
+    "name": "Domina las llamas"
+  },
+  "PerfectRating": {
+    "name": "Puntuación perfecta"
+  },
+  "RhythmMoment": {
+    "name": "Momento rítmico"
+  },
+  "ShareWithYou": {
+    "name": "Compartiendo contigo"
+  },
+  "HealingTreats": {
+    "name": "Aperitivo curativo"
+  },
+  "RelaxedReadiness": {
+    "name": "Preparación relajada"
+  },
+  "GracefulDance": {
+    "name": "Danza grácil"
+  },
+  "CommandingStance": {
+    "name": "Pose imponente"
+  },
+  "GentleElegance": {
+    "name": "Elegancia gentil"
+  },
+  "PoisedToStrike": {
+    "name": "Pose fiera"
+  },
+  "MajesticBearing": {
+    "name": "Porte majestuoso"
+  },
   "FantasticalMarvel": {
     "name": "Maravilla festiva"
   },
@@ -16852,6 +17128,15 @@
   },
   "MysteriousWhiteStar": {
     "name": "Estrella blanca misteriosa"
+  },
+  "EclipsingFlame": {
+    "name": "Llama eclipsante"
+  },
+  "DemonSlayingGale": {
+    "name": "Vendaval arrasademonios"
+  },
+  "DovefeatherMoondew": {
+    "name": "Rocío lunar plumapaloma"
   },
   "VigorousYapping": {
     "name": "Conversación animada"
@@ -16963,6 +17248,15 @@
   },
   "ConsecratedFangedBeast": {
     "name": "Colmibestia Sacrósea"
+  },
+  "ExperimentalFieldGenerator": {
+    "name": "Generador de Campo Experimental"
+  },
+  "WaywardHermeticSpiritspeaker": {
+    "name": "Asceta Espiritista"
+  },
+  "BlackSerpentKnightWindcutter": {
+    "name": "Caballero Serpiente Negra - Aire afilado"
   },
   "UndividedHeart": {
     "name": "Corazón indiviso"
@@ -17372,6 +17666,24 @@
   "WitheredReedsEclipseTheSun": {
     "name": "Hierba marchita eclipsasol"
   },
+  "PartTheVeilOfSnow": {
+    "name": "Aparta el velo de las nieves"
+  },
+  "OLipsWeaveMeSongsAndPsalms": {
+    "name": "“¡Oh, labios, tejan para mí salmos y cantares!”"
+  },
+  "GravityField": {
+    "name": "Campo gravitacional"
+  },
+  "VictoryFlowsFromTheTurningOfTides": {
+    "name": "La victoria se consigue cuando se vuelven las tornas"
+  },
+  "FlowOfForms": {
+    "name": "Flujo pictórico"
+  },
+  "OnceTheLoneWindThatKeptTheDarkCalamityAtBay": {
+    "name": "“El viento solitario que una vez mantuvo a raya la calamidad oscura...”"
+  },
   "MagicGuide": {
     "name": "Guía Mágica"
   },
@@ -17717,6 +18029,9 @@
   "Blubberbeast": {
     "name": "Foca Abotargada"
   },
+  "GladiatorsFinale": {
+    "name": "Final del Gladiador"
+  },
   "LiyueHarborWharf": {
     "name": "Puerto de Liyue"
   },
@@ -17938,6 +18253,24 @@
   },
   "ElementalTransfigurationLavaBlessing": {
     "name": "Transmutación elemental: Bendición de la Pirorroca"
+  },
+  "Netochka": {
+    "name": "Netochka"
+  },
+  "ElementalTransfigurationRimegrassBlessing": {
+    "name": "Transmutación elemental: Bendición de la Herboescarcha"
+  },
+  "ElementalTransfigurationStormgaleBlessing": {
+    "name": "Transmutación elemental: Bendición de la Electrobrisa"
+  },
+  "NightmareOmen": {
+    "name": "Augurio de la pesadilla"
+  },
+  "ElementalTransfigurationAquabreezeBlessing": {
+    "name": "Transmutación elemental: Bendición de Hidrobrisa"
+  },
+  "ElementalTransfigurationThunderbloomBlessing": {
+    "name": "Transmutación elemental: Bendición de Herbotrueno"
   },
   "ElementalResonanceWovenIce": {
     "name": "Consonancia elemental: Hielo entrelazado"
@@ -18194,6 +18527,15 @@
   "CleaningTime": {
     "name": "Hora de la limpieza"
   },
+  "TheOtherSideOfTheFrostmoon": {
+    "name": "La cara oculta de la Luna Escarchada"
+  },
+  "LilFungisFunTasticFiesta": {
+    "name": "La Champifiesta"
+  },
+  "ThePowerOfResearch": {
+    "name": "El poder de la investigación"
+  },
   "Origin": {
     "name": "Origen"
   },
@@ -18371,6 +18713,12 @@
   "RainlitBambooReverie": {
     "name": "Embelesamiento de la lluvia y el bambú"
   },
+  "WhispersOfStarsAndSmoke": {
+    "name": "Susurros de las estrellas y el humo"
+  },
+  "HurlockVariations": {
+    "name": "Variación de Hurlock"
+  },
   "RadiantPhantasm": {
     "name": "Miraje radiante"
   },
@@ -18409,6 +18757,9 @@
   },
   "PhantasmalGiftStarOmen": {
     "name": "Rito Ilusorio: Augurio Estelar"
+  },
+  "SuperAwesomeMagicKey": {
+    "name": "Llave Mágica Superpoderosa"
   },
   "UnbreakableDurandarte": {
     "name": "Durandal, la Indestructible"
@@ -18719,6 +19070,9 @@
   "PreBattleRespite": {
     "name": "Descanso previo a la batalla"
   },
+  "ATeaPartyAtLeisure": {
+    "name": "Una hora del té tranquila"
+  },
   "WildernessOfTheFarNorth": {
     "name": "Prado del Lejano Norte"
   },
@@ -19007,6 +19361,12 @@
   "CityStreetLampLowLanternlight": {
     "name": "Farola urbana: Iluminación baja"
   },
+  "MovableSmallSpotlight": {
+    "name": "Foco pequeño portátil"
+  },
+  "StandingStreetLampBeaconInTheMistyNight": {
+    "name": "Farola: Guía en la niebla nocturna"
+  },
   "EfflorescentIllumination": {
     "name": "Luminiscencia floral"
   },
@@ -19286,6 +19646,9 @@
   "FrostMoonRoundTableASoftBlueSky": {
     "name": "Mesa redonda Lunaescarcha: Azul celeste suave"
   },
+  "TeaPartyDiningTableThePerfectGathering": {
+    "name": "Mesa de la hora del té: La reunión perfecta"
+  },
   "BreezeBlessedBed": {
     "name": "Cama baja suave como la brisa"
   },
@@ -19453,6 +19816,9 @@
   },
   "PedunculateOakWoodMoonrestBackedChair": {
     "name": "Silla de madera de roble estival “Reposo en la luna”"
+  },
+  "TeaPartyChairCrimsonAndGold": {
+    "name": "Silla de la hora del té: Rojo áureo"
   },
   "NorthernStoneHearth": {
     "name": "Chimenea de piedra del norte"
@@ -19724,6 +20090,9 @@
   "FluffyLittleRug": {
     "name": "Alfombra suavecita"
   },
+  "TeaPartyCarpetSoftToTheTouch": {
+    "name": "Alfombra de la hora del té: Textura suave"
+  },
   "VibrantPotBornInFlames": {
     "name": "Jarrón colorido: Nacido de las llamas"
   },
@@ -19961,6 +20330,9 @@
   "FlowerShapedMachineComponent": {
     "name": "Componente mecánico con forma de flor"
   },
+  "TeaPartyCartDessertTime": {
+    "name": "Carrito de la hora del té: Fiesta de postres"
+  },
   "TeahouseToolMinisculeMissesMakeAMile": {
     "name": "Utensilio del Taller de Té: Peso de hoja"
   },
@@ -20002,6 +20374,9 @@
   },
   "FrostMoonSmallTableAromaOfFreshFruit": {
     "name": "Mesita Lunaescarcha: Aroma frutal"
+  },
+  "TeaPartyCupRefreshingFlavor": {
+    "name": "Taza de la hora del té: Sabor refrescante"
   },
   "RealizationsFromTheLandOfWisdom": {
     "name": "Desvelo del emplazamiento del saber"
@@ -22046,6 +22421,9 @@
   "LittleCover": {
     "name": "Pequeño refugio"
   },
+  "CampBarrierTreatmentArea": {
+    "name": "Biombo de campamento: Zona de tratamiento"
+  },
   "BookshelfFreeReading": {
     "name": "Estante para periódicos: Libertad de lectura"
   },
@@ -22183,6 +22561,9 @@
   },
   "GentleEmbrace": {
     "name": "Abrazo cálido"
+  },
+  "UnusableLegacy": {
+    "name": "Reliquia inaplicable"
   },
   "WeatheredBambooFence": {
     "name": "Valla de bambú desgastada"
@@ -22601,6 +22982,24 @@
   "BloomingSplendor": {
     "name": "Esplendor floreciente"
   },
+  "NashaStallDeepRootedTraditions": {
+    "name": "Puesto de la Villa Nasha: Cultura longeva"
+  },
+  "VesselOfThePast": {
+    "name": "Contenedor del pasado"
+  },
+  "LargeCargoCrateReliableSupport": {
+    "name": "Caja de carga grande: Estabilidad garantizada"
+  },
+  "MediumCargoCrateBasicSupplies": {
+    "name": "Caja de carga mediana: Suministros básicos"
+  },
+  "MediumMetalScrapBarrel": {
+    "name": "Cubo mediano de chatarra"
+  },
+  "SignallessTower": {
+    "name": "Torre sin señal"
+  },
   "SirCapyOfTheLongIncisors": {
     "name": "Caballero Dentudo"
   },
@@ -22630,5 +23029,14 @@
   },
   "AllFangsAndSnarls": {
     "name": "Sacacolmillos"
+  },
+  "MiniatureStonecraft": {
+    "name": "Tallado de piedra en miniatura"
+  },
+  "InfiniteRecursionFormula": {
+    "name": "Fórmula de recursión infinita"
+  },
+  "MoonEnvoyOfSilverRadiance": {
+    "name": "Emisario de la luna plateada"
   }
 }

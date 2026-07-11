@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -62,7 +66,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -86,7 +94,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -117,7 +129,7 @@
   "passive": {
     "name": "Vigília Lunar",
     "description": {
-      "0": "Quando está em Nod-Krai e um personagem da equipe é derrotado, Columbina revive esse personagem e regenera a Vida desse personagem com base no nível de Amizade de Columbina. Esse efeito pode ser desencadeado uma vez a cada 100s. Esse efeito não funciona em domínios, domínios dizimados e no Abismo do Espiral.",
+      "0": "Quando está em Nod-Krai ou na Lua Gelada e um personagem da equipe é derrotado, Columbina revive esse personagem e regenera a Vida desse personagem com base no nível de Amizade de Columbina. Esse efeito pode ser desencadeado uma vez a cada 100s. Esse efeito não funciona em domínios, domínios dizimados e no Abismo do Espiral.",
       "1": "Além disso, Columbina parece possuir afinidade especial com certos animais influenciados por Kuuvahki..."
     }
   },

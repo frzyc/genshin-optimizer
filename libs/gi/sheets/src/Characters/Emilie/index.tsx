@@ -154,7 +154,9 @@ const dmgFormulas = {
     skillDmg: dmgNode('atk', dm.skill.skillDmg, 'skill'),
     level1Dmg: dmgNode('atk', dm.skill.level1Dmg, 'skill'),
     level2Dmg: dmgNode('atk', dm.skill.level2Dmg, 'skill'),
-    thornDmg: dmgNode('atk', dm.skill.thornDmg, 'skill'),
+    thornDmg: dmgNode('atk', dm.skill.thornDmg, 'skill', {
+      hit: { reaction: constant('') },
+    }),
   },
   burst: {
     level3Dmg: dmgNode('atk', dm.burst.level3Dmg, 'burst'),

@@ -99,7 +99,9 @@ const dmgFormulas = {
     stack1: dmgNode('atk', dm.skill.stack1, 'skill'),
     stack2: dmgNode('atk', dm.skill.stack2, 'skill'),
     stack3: dmgNode('atk', dm.skill.stack3, 'skill'),
-    press: dmgNode('atk', dm.skill.press, 'skill'),
+    press: dmgNode('atk', dm.skill.press, 'skill', {
+      hit: { reaction: constant('') },
+    }),
   },
   burst: {
     summon: customDmgNode(

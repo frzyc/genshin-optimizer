@@ -1,0 +1,29 @@
+{
+  "name": "Sieben Gebote von Staub und Licht",
+  "description": {
+    "0": "Ein goldenes Kästchen, so schön wie das Licht des Himmels, das der Legende nach in ferner Vergangenheit einem Gesandten des Ewigen Hofes gehörte."
+  },
+  "passiveName": "Krone des Endankömmlings",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den ANG um <cryo>12 %</cryo>. Verleiht dem Träger nach dem Generieren eines Schildes 20 s lang den Effekt „Licht der Pfadfinder“: Erhöht den von der eigenen aktuellen Figur verursachten Schaden pro 1.000 Punkte ANG des Trägers um <cryo>10 %</cryo>, um max. <cryo>26 %</cryo>. Verleiht dem Träger, wenn er einen Schild generiert, zusätzlich den Effekt „Zufriedenheit des Leiters“, der dem Träger <cryo>14</cryo> Punkte Elementarenergie wiederherstellt, 14 s Abklingzeit. Er erhält den Effekt auch, wenn er sich beim Öffnen einer beliebigen Truhe nicht im Kampf befindet. Obige Effekte können auch ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet.",
+      "1": "Hexerei – Geheimes Ritual: Verleiht, wenn sich die eigene Hexerei-Figur inaktiv in der Truppe befindet, dieser ebenfalls 50 % des Schadensbonus von „Licht der Pfadfinder“."
+    },
+    "1": {
+      "0": "Erhöht den ANG um <cryo>15 %</cryo>. Verleiht dem Träger nach dem Generieren eines Schildes 20 s lang den Effekt „Licht der Pfadfinder“: Erhöht den von der eigenen aktuellen Figur verursachten Schaden pro 1.000 Punkte ANG des Trägers um <cryo>13 %</cryo>, um max. <cryo>34 %</cryo>. Verleiht dem Träger, wenn er einen Schild generiert, zusätzlich den Effekt „Zufriedenheit des Leiters“, der dem Träger <cryo>15</cryo> Punkte Elementarenergie wiederherstellt, 14 s Abklingzeit. Er erhält den Effekt auch, wenn er sich beim Öffnen einer beliebigen Truhe nicht im Kampf befindet. Obige Effekte können auch ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet.",
+      "1": "Hexerei – Geheimes Ritual: Verleiht, wenn sich die eigene Hexerei-Figur inaktiv in der Truppe befindet, dieser ebenfalls 50 % des Schadensbonus von „Licht der Pfadfinder“."
+    },
+    "2": {
+      "0": "Erhöht den ANG um <cryo>18 %</cryo>. Verleiht dem Träger nach dem Generieren eines Schildes 20 s lang den Effekt „Licht der Pfadfinder“: Erhöht den von der eigenen aktuellen Figur verursachten Schaden pro 1.000 Punkte ANG des Trägers um <cryo>16 %</cryo>, um max. <cryo>42 %</cryo>. Verleiht dem Träger, wenn er einen Schild generiert, zusätzlich den Effekt „Zufriedenheit des Leiters“, der dem Träger <cryo>16</cryo> Punkte Elementarenergie wiederherstellt, 14 s Abklingzeit. Er erhält den Effekt auch, wenn er sich beim Öffnen einer beliebigen Truhe nicht im Kampf befindet. Obige Effekte können auch ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet.",
+      "1": "Hexerei – Geheimes Ritual: Verleiht, wenn sich die eigene Hexerei-Figur inaktiv in der Truppe befindet, dieser ebenfalls 50 % des Schadensbonus von „Licht der Pfadfinder“."
+    },
+    "3": {
+      "0": "Erhöht den ANG um <cryo>21 %</cryo>. Verleiht dem Träger nach dem Generieren eines Schildes 20 s lang den Effekt „Licht der Pfadfinder“: Erhöht den von der eigenen aktuellen Figur verursachten Schaden pro 1.000 Punkte ANG des Trägers um <cryo>19 %</cryo>, um max. <cryo>50 %</cryo>. Verleiht dem Träger, wenn er einen Schild generiert, zusätzlich den Effekt „Zufriedenheit des Leiters“, der dem Träger <cryo>17</cryo> Punkte Elementarenergie wiederherstellt, 14 s Abklingzeit. Er erhält den Effekt auch, wenn er sich beim Öffnen einer beliebigen Truhe nicht im Kampf befindet. Obige Effekte können auch ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet.",
+      "1": "Hexerei – Geheimes Ritual: Verleiht, wenn sich die eigene Hexerei-Figur inaktiv in der Truppe befindet, dieser ebenfalls 50 % des Schadensbonus von „Licht der Pfadfinder“."
+    },
+    "4": {
+      "0": "Erhöht den ANG um <cryo>24 %</cryo>. Verleiht dem Träger nach dem Generieren eines Schildes 20 s lang den Effekt „Licht der Pfadfinder“: Erhöht den von der eigenen aktuellen Figur verursachten Schaden pro 1.000 Punkte ANG des Trägers um <cryo>22 %</cryo>, um max. <cryo>58 %</cryo>. Verleiht dem Träger, wenn er einen Schild generiert, zusätzlich den Effekt „Zufriedenheit des Leiters“, der dem Träger <cryo>18</cryo> Punkte Elementarenergie wiederherstellt, 14 s Abklingzeit. Er erhält den Effekt auch, wenn er sich beim Öffnen einer beliebigen Truhe nicht im Kampf befindet. Obige Effekte können auch ausgelöst werden, wenn sich der Träger inaktiv in der Truppe befindet.",
+      "1": "Hexerei – Geheimes Ritual: Verleiht, wenn sich die eigene Hexerei-Figur inaktiv in der Truppe befindet, dieser ebenfalls 50 % des Schadensbonus von „Licht der Pfadfinder“."
+    }
+  }
+}

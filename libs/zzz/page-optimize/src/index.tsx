@@ -1,7 +1,11 @@
 import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { ImgIcon, useTitle } from '@genshin-optimizer/common/ui'
-import { objKeyMap } from '@genshin-optimizer/common/util'
+import {
+  objKeyMap,
+  shouldShowDevComponents,
+  stableArr,
+} from '@genshin-optimizer/common/util'
 import type { DebugReadContextObj } from '@genshin-optimizer/game-opt/formula-ui'
 import {
   DebugReadContext,
@@ -18,11 +22,13 @@ import type { BaseRead } from '@genshin-optimizer/pando/engine'
 import { characterAsset } from '@genshin-optimizer/zzz/assets'
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allCharacterKeys } from '@genshin-optimizer/zzz/consts'
+import type { TeamConditional } from '@genshin-optimizer/zzz/db'
+import type { ICachedCharacter, Team } from '@genshin-optimizer/zzz/db'
 import {
   CharacterContext,
-  useCharOpt,
   useCharacter,
   useDatabaseContext,
+  useTeam,
 } from '@genshin-optimizer/zzz/db-ui'
 import {
   type Tag,
@@ -43,6 +49,30 @@ import { CharacterOptDisplay } from './CharacterOptDisplay'
 import { OptTargetRow } from './OptTargetRow'
 import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
 
+function OptimizePageContent({
+  character,
+  team,
+}: {
+  character: ICachedCharacter
+  team: Team
+}) {
+  return (
+    <Box
+      sx={{
+        display: 'flex',
+        gap: 1,
+        flexDirection: 'column',
+        mt: 1,
+      }}
+    >
+      <OptTargetRow character={character} team={team} />
+      <TeamHeaderHeightContext.Provider value={74}>
+        <CharacterOptDisplay key={character.key} />
+      </TeamHeaderHeightContext.Provider>
+    </Box>
+  )
+}
+
 export default function PageOptimize() {
   const { database } = useDatabaseContext()
   const { optCharKey } = useDataEntryBase(database.dbMeta)
@@ -55,10 +85,12 @@ export default function PageOptimize() {
   )
 
   const { t } = useTranslation(['charNames_gen', 'page_character'])
+  // Load tooltip translations
+  useTranslation('tooltips_gen')
   const character = useCharacter(characterKey)
   if (characterKey && !character) database.chars.getOrCreate(characterKey)
-  const charOpt = useCharOpt(characterKey)
-  if (characterKey && !charOpt) database.charOpts.getOrCreate(characterKey)
+  const team = useTeam(characterKey)
+  if (characterKey && !team) database.teams.getOrCreate(characterKey)
   useTitle(
     useMemo(() => {
       const charName = characterKey && t(`charNames_gen:${characterKey}`)
@@ -66,9 +98,9 @@ export default function PageOptimize() {
     }, [characterKey, t])
   )
   const srcDstDisplayContextValue = useMemo(() => {
-    const charList = charOpt?.teammates
-      ? [characterKey, ...charOpt.teammates]
-      : [characterKey]
+    const charList =
+      team?.teammates.map((t) => t.characterKey) ?? stableArr<CharacterKey>()
+
     const charDisplay = objKeyMap(charList, (ck) => (
       <CharacterName characterKey={ck} />
     ))
@@ -76,7 +108,7 @@ export default function PageOptimize() {
       srcDisplay: charDisplay,
       dstDisplay: charDisplay,
     }
-  }, [charOpt?.teammates, characterKey])
+  }, [team])
 
   const setConditional = useCallback<SetConditionalFunc>(
     (
@@ -91,8 +123,9 @@ export default function PageOptimize() {
       const cond = getConditional(sheet, condKey)
       if (!cond) return
 
-      database.charOpts.setConditional(
+      database.teams.setFrameConditional(
         characterKey,
+        0,
         sheet,
         condKey,
         src,
@@ -100,7 +133,7 @@ export default function PageOptimize() {
         condValue
       )
     },
-    [characterKey, database.charOpts]
+    [characterKey, database.teams]
   )
   const tag = useMemo<Tag>(
     () => ({
@@ -109,6 +142,11 @@ export default function PageOptimize() {
       preset: `preset0`,
     }),
     [characterKey]
+  )
+
+  const conditionals = useMemo(
+    () => [...(team?.frames[0]?.conditionals ?? stableArr<TeamConditional>())],
+    [team?.frames]
   )
 
   const [debugRead, setDebugRead] = useState<BaseRead>()
@@ -151,34 +189,29 @@ export default function PageOptimize() {
           </Box>
         </Button>
       </Box>
-      {character && charOpt && (
+      {character && team && (
         <CharacterContext.Provider value={character}>
           <TagContext.Provider value={tag}>
             <CharCalcProvider
               character={character}
-              charOpt={charOpt}
+              team={team}
               wengineId={character.equippedWengine}
               discIds={character.equippedDiscs}
             >
               <SrcDstDisplayContext.Provider value={srcDstDisplayContextValue}>
-                <ConditionalValuesContext.Provider value={charOpt.conditionals}>
+                <ConditionalValuesContext.Provider value={conditionals}>
                   <SetConditionalContext.Provider value={setConditional}>
-                    <DebugReadContext.Provider value={debugObj}>
-                      <DebugReadModal />
-                      <Box
-                        sx={{
-                          display: 'flex',
-                          gap: 1,
-                          flexDirection: 'column',
-                          mt: 1,
-                        }}
-                      >
-                        <OptTargetRow character={character} charOpt={charOpt} />
-                        <TeamHeaderHeightContext.Provider value={74}>
-                          <CharacterOptDisplay key={character.key} />
-                        </TeamHeaderHeightContext.Provider>
-                      </Box>
-                    </DebugReadContext.Provider>
+                    {shouldShowDevComponents ? (
+                      <DebugReadContext.Provider value={debugObj}>
+                        <DebugReadModal />
+                        <OptimizePageContent
+                          character={character}
+                          team={team}
+                        />
+                      </DebugReadContext.Provider>
+                    ) : (
+                      <OptimizePageContent character={character} team={team} />
+                    )}
                   </SetConditionalContext.Provider>
                 </ConditionalValuesContext.Provider>
               </SrcDstDisplayContext.Provider>
