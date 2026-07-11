@@ -6,10 +6,8 @@ import {
   shouldShowDevComponents,
   stableArr,
 } from '@genshin-optimizer/common/util'
-import type { DebugReadContextObj } from '@genshin-optimizer/game-opt/formula-ui'
 import {
-  DebugReadContext,
-  DebugReadModal,
+  DebugReadProvider,
   TagContext,
 } from '@genshin-optimizer/game-opt/formula-ui'
 import type { SetConditionalFunc } from '@genshin-optimizer/game-opt/sheet-ui'
@@ -18,7 +16,6 @@ import {
   SetConditionalContext,
   SrcDstDisplayContext,
 } from '@genshin-optimizer/game-opt/sheet-ui'
-import type { BaseRead } from '@genshin-optimizer/pando/engine'
 import { characterAsset } from '@genshin-optimizer/zzz/assets'
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allCharacterKeys } from '@genshin-optimizer/zzz/consts'
@@ -43,7 +40,7 @@ import {
   CharacterSingleSelectionModal,
 } from '@genshin-optimizer/zzz/ui'
 import { Box, Button } from '@mui/material'
-import { Suspense, useCallback, useMemo, useState } from 'react'
+import { Suspense, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { CharacterOptDisplay } from './CharacterOptDisplay'
 import { OptTargetRow } from './OptTargetRow'
@@ -149,14 +146,6 @@ export default function PageOptimize() {
     [team?.frames]
   )
 
-  const [debugRead, setDebugRead] = useState<BaseRead>()
-  const debugObj = useMemo<DebugReadContextObj>(
-    () => ({
-      read: debugRead,
-      setRead: setDebugRead,
-    }),
-    [debugRead]
-  )
   return (
     <Box>
       <Suspense fallback={false}>
@@ -202,13 +191,12 @@ export default function PageOptimize() {
                 <ConditionalValuesContext.Provider value={conditionals}>
                   <SetConditionalContext.Provider value={setConditional}>
                     {shouldShowDevComponents ? (
-                      <DebugReadContext.Provider value={debugObj}>
-                        <DebugReadModal />
+                      <DebugReadProvider>
                         <OptimizePageContent
                           character={character}
                           team={team}
                         />
-                      </DebugReadContext.Provider>
+                      </DebugReadProvider>
                     ) : (
                       <OptimizePageContent character={character} team={team} />
                     )}

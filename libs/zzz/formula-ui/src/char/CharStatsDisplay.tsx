@@ -1,6 +1,4 @@
-import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
 import type { Read } from '@genshin-optimizer/game-opt/engine'
-import { DebugReadContext } from '@genshin-optimizer/game-opt/formula-ui'
 import {
   type Field,
   FieldDisplayList,
@@ -10,7 +8,6 @@ import {
   isMultiTagField,
   isTagField,
 } from '@genshin-optimizer/game-opt/sheet-ui'
-import type { BaseRead } from '@genshin-optimizer/pando/engine'
 import type { StatKey } from '@genshin-optimizer/zzz/consts'
 import { applyDamageTypeToTag, targetTag } from '@genshin-optimizer/zzz/db'
 import { getTeamFrame0 } from '@genshin-optimizer/zzz/db'
@@ -168,7 +165,6 @@ const CharStatRow = memo(function CharStatRow({
   optTarget: ReturnType<typeof getTeamFrame0>['tag']
   resolvedOptTag: Tag | undefined
 }) {
-  const { setRead } = useContext(DebugReadContext)
   const calc = useZzzCalcContext()
   const baseTag = tagIn ?? read!.tag
 
@@ -224,11 +220,6 @@ const CharStatRow = memo(function CharStatRow({
     [isHL]
   )
 
-  const onClickFormula = useMemo(
-    () => (shouldShowDevComponents ? () => setRead(calcRead) : undefined),
-    [setRead, calcRead]
-  )
-
   return (
     <TagFieldDisplay
       field={field}
@@ -238,7 +229,6 @@ const CharStatRow = memo(function CharStatRow({
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       rowSx={rowSx}
-      onClickFormula={onClickFormula}
     />
   )
 })
@@ -252,8 +242,6 @@ const MultiFormulaFieldRow = memo(function MultiFormulaFieldRow({
   optTarget: ReturnType<typeof getTeamFrame0>['tag']
   resolvedOptTag: Tag | undefined
 }) {
-  const { setRead } = useContext(DebugReadContext)
-
   const mergedField = useMemo(() => {
     return {
       ...field,
@@ -264,20 +252,7 @@ const MultiFormulaFieldRow = memo(function MultiFormulaFieldRow({
     }
   }, [field, resolvedOptTag, optTarget])
 
-  const onClickFormula = useMemo(
-    () =>
-      shouldShowDevComponents
-        ? (fieldRead: BaseRead) => setRead(fieldRead)
-        : undefined,
-    [setRead]
-  )
-
   return (
-    <MultiTagFieldDisplay
-      field={mergedField}
-      showZero
-      component={ListItem}
-      onClickFormula={onClickFormula}
-    />
+    <MultiTagFieldDisplay field={mergedField} showZero component={ListItem} />
   )
 })
