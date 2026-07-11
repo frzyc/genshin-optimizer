@@ -154,13 +154,14 @@ const a1GuidanceActive_atk = any(
   // If target is the active char
   equal(active.charKey, target.charKey, 1),
   // Or if Nicole is C6, then all chars will have Guidance if Nicole has Guidance
+  // Don't apply to off-fielf Nicole though, since she has her own A4 conditional for Guidance
   greaterEq(
     input.constellation,
     6,
     any(
       1,
-      // Nicole has guidance either with a4 or by being active char
-      equal(condA4NicoleGuidance, 'on', 1),
+      // Nicole has guidance either with a4 (handled below) or by being active char
+      unequal(target.charKey, key, equal(condA4NicoleGuidance, 'on', 1)),
       equal(active.charKey, key, 1)
     )
   )
