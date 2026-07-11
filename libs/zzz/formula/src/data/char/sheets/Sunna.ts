@@ -5,11 +5,15 @@ import {
   subscript,
   sum,
 } from '@genshin-optimizer/pando/engine'
-import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
+import {
+  type CharacterKey,
+  allAttributeKeys,
+} from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
   allBoolConditionals,
   allNumConditionals,
+  customDmg,
   customHeal,
   enemyDebuff,
   own,
@@ -20,11 +24,12 @@ import {
   team,
   teamBuff,
 } from '../../util'
-import { entriesForChar, registerAllDmgDazeAndAnom } from '../util'
+import { entriesForChar, getBaseTag, registerAllDmgDazeAndAnom } from '../util'
 
 const key: CharacterKey = 'Sunna'
 const data_gen = allStats.char[key]
 const dm = mappedStats.char[key]
+const baseTag = getBaseTag(data_gen)
 
 const { char } = own
 
@@ -37,6 +42,14 @@ const {
 } = allBoolConditionals(key)
 const { catsGaze } = allNumConditionals(key, true, 0, dm.m1.maxStacks)
 
+const core_crit_ = ownBuff.combat.crit_.add(percent(1))
+const core_crit_dmg_ = ownBuff.combat.crit_dmg_.add(
+  percent(subscript(char.core, dm.core.crit_dmg_))
+)
+const m6_common_dmg_ = teamBuff.combat.common_dmg_.add(
+  cmpGE(char.mindscape, 6, focusedCreation.ifOn(percent(dm.m6.dmg_)))
+)
+
 const sheet = register(
   key,
   // Handles base stats, core stats and Mindscapes 3 + 5
@@ -47,6 +60,48 @@ const sheet = register(
 
   customHeal('ult_heal', sum(-50, prod(char.chain, 250)), { team: true }),
 
+  // TODO: do this properly
+  ...allAttributeKeys.flatMap((attr) =>
+    ['anomaly' as const, 'attack' as const].map((type) =>
+      customDmg(
+        `core_${type}_${attr}_dmg`,
+        { damageType1: 'elemental', attribute: attr },
+        prod(
+          own.final.atk,
+          sum(
+            percent(subscript(char.core, dm.core[`dmg_${type}`])),
+            cmpGE(char.mindscape, 2, percent(dm.m2[`dmg_${type}`]))
+          )
+        ),
+        undefined,
+        core_crit_,
+        core_crit_dmg_,
+        m6_common_dmg_
+      )
+    )
+  ),
+  customDmg(
+    'm6_dmg',
+    { ...baseTag, damageType1: 'elemental' },
+    cmpGE(
+      char.mindscape,
+      6,
+      focusedCreation.ifOn(
+        prod(
+          own.final.atk,
+          sum(
+            percent(subscript(char.core, dm.core.dmg_attack)),
+            cmpGE(char.mindscape, 2, percent(dm.m2.dmg_attack))
+          )
+        )
+      )
+    ),
+    undefined,
+    core_crit_,
+    core_crit_dmg_,
+    m6_common_dmg_
+  ),
+
   // Buffs
   registerBuff(
     'exSpecial_atk',
@@ -54,6 +109,8 @@ const sheet = register(
     undefined,
     true
   ),
+  registerBuff('core_crit_', core_crit_, undefined, false, false),
+  registerBuff('core_crit_dmg_', core_crit_dmg_, undefined, false, false),
   registerBuff(
     'core_atk',
     teamBuff.combat.atk.add(
@@ -126,6 +183,7 @@ const sheet = register(
         )
       )
     )
-  )
+  ),
+  registerBuff('m6_common_dmg_', m6_common_dmg_, undefined, false, false)
 )
 export default sheet

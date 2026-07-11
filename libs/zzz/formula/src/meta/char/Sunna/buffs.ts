@@ -11,6 +11,28 @@ export const buffs = {
       name: 'exSpecial_atk',
     },
   },
+  core_crit_: {
+    sheet: 'Sunna',
+    name: 'core_crit_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'crit_',
+      sheet: 'Sunna',
+      name: 'core_crit_',
+    },
+  },
+  core_crit_dmg_: {
+    sheet: 'Sunna',
+    name: 'core_crit_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'crit_dmg_',
+      sheet: 'Sunna',
+      name: 'core_crit_dmg_',
+    },
+  },
   core_atk: {
     sheet: 'Sunna',
     name: 'core_atk',
@@ -86,6 +108,17 @@ export const buffs = {
       q: 'crit_dmg_',
       sheet: 'Sunna',
       name: 'm6_crit_dmg_',
+    },
+  },
+  m6_common_dmg_: {
+    sheet: 'Sunna',
+    name: 'm6_common_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'common_dmg_',
+      sheet: 'Sunna',
+      name: 'm6_common_dmg_',
     },
   },
 } as const

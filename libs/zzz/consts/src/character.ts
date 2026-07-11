@@ -72,6 +72,15 @@ export const allSpecialityKeys = [
 ] as const
 export type SpecialityKey = (typeof allSpecialityKeys)[number]
 
+export const specialtyData: Record<SpecialityKey, string> = {
+  attack: 'Attack',
+  stun: 'Stun',
+  anomaly: 'Anomaly',
+  support: 'Support',
+  defense: 'Defense',
+  rupture: 'Rupture',
+} as const
+
 export const allFactionKeys = [
   'RandomPlay',
   'CunningHares',

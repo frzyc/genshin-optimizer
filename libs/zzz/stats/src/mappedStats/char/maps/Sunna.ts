@@ -46,8 +46,8 @@ const dm = {
     maxAtk: data_gen.coreParams[1],
     maxInitialAtk: data_gen.coreParams[2][0],
     duration: data_gen.coreParams[3][0],
-    dmgAttack: data_gen.coreParams[4],
-    dmgAnomaly: data_gen.coreParams[5],
+    dmg_attack: data_gen.coreParams[4],
+    dmg_anomaly: data_gen.coreParams[5],
     crit_dmg_: data_gen.coreParams[6],
   },
   ability: {
@@ -67,8 +67,8 @@ const dm = {
     atk_: data_gen.mindscapeParams[1][0],
     clawSharpener: data_gen.mindscapeParams[1][1],
     cooldown: data_gen.mindscapeParams[1][2],
-    dmgAttackIncrease: data_gen.mindscapeParams[1][3],
-    dmgAnomalyIncrease: data_gen.mindscapeParams[1][4],
+    dmg_attack: data_gen.mindscapeParams[1][3],
+    dmg_anomaly: data_gen.mindscapeParams[1][4],
   },
   m4: {
     dmg_: data_gen.mindscapeParams[3][0],

@@ -87,6 +87,19 @@ export const buffs = {
       name: 'core_ether_anom_mv_mult_',
     },
   },
+  core_wind_anom_mv_mult_: {
+    sheet: 'Aria',
+    name: 'core_wind_anom_mv_mult_',
+    tag: {
+      et: 'display',
+      qt: 'dmg',
+      q: 'anom_mv_mult_',
+      sheet: 'Aria',
+      attribute: 'wind',
+      damageType1: 'abloom',
+      name: 'core_wind_anom_mv_mult_',
+    },
+  },
   m1_basic_ether_anomBuildupResIgn_: {
     sheet: 'Aria',
     name: 'm1_basic_ether_anomBuildupResIgn_',
@@ -304,6 +317,18 @@ export const buffs = {
       sheet: 'Aria',
       damageType1: 'abloom',
       name: 'm2_abloom_defIgn_',
+    },
+  },
+  m2_vortex_defIgn_: {
+    sheet: 'Aria',
+    name: 'm2_vortex_defIgn_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'defIgn_',
+      sheet: 'Aria',
+      damageType1: 'vortex',
+      name: 'm2_vortex_defIgn_',
     },
   },
   m2_defIgn_: {
