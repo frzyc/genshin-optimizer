@@ -113,7 +113,8 @@ export function WeaponEditor({
     [weaponSheet, weapon]
   )
 
-  const newData = useTeamData(0, undefined, weapon)?.[character.key]?.target
+  const newTeamData = useTeamData(0, undefined, weapon)
+  const newData = character && newTeamData?.[character.key]?.target
 
   return (
     <ModalWrapper

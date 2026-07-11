@@ -666,7 +666,9 @@ export default function TabUpopt() {
                           />
                           <InfoTooltip
                             title={
-                              <Typography>{t('upOptDefine.label')}</Typography>
+                              <Typography>
+                                {t('upOptDefine.tooltip')}
+                              </Typography>
                             }
                           />
                         </Box>
