@@ -1,9 +1,13 @@
 {
   "duringBurst": "In the <strong>Pactsworn Pathclearer</strong> state",
   "p1Dmg": "Duststalker Bolt DMG",
+  "p1StellarDmg": "Duststalker Bolt - Starsame DMG",
   "judication": "Triggering the Judication effect",
   "afterBurstOrJudication": "After using <strong>Sacred Rite: Wolf's Swiftness</strong> or triggering the Judication effect",
   "burstNormalDmgInc": "Pactsworn Pathclearer's Normal Attack DMG Inc.",
   "boltDmgInc": "Duststalker Bolt DMG Inc.",
-  "a1soulfarer_dmg_": "Chasmic Soulfarer DMG Bonus"
+  "boltStellarDmgInc": "Duststalker Bolt - Starsame DMG Inc.",
+  "a1soulfarer_dmg_": "Chasmic Soulfarer DMG Bonus",
+  "c1Cond": "Character under the <strong>Together We Rise</strong> effect",
+  "c2Cond": "After hitting an opponent with a Normal Attack or Charged Attack while under the <strong>Together We Rise</strong> effect"
 }

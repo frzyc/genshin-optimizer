@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -69,7 +73,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -98,7 +106,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -119,16 +131,30 @@
       "0": "Saat Yumemizuki Mizuki berada di dalam party, anggota party memiliki kemungkinan untuk mendapatkan 30% pemulihan HP tambahan saat mengonsumsi makanan pemulihan HP yang tidak memiliki fungsi menghidupkan kembali Karakter gugur. Kemungkinan terpicunya efek ini didasarkan pada Level Persahabatan Karakter yang bersangkutan. (Efek ini akan selalu terpicu jika Pengembara yang mengonsumsi makanan pemulihan.)"
     }
   },
+  "lockedPassive": {
+    "name": "Vast Be the Dream",
+    "description": {
+      "0": "Setelah Yumemizuki Mizuki memicu reaksi Swirl saat berada dalam status Dreamdrifter, <anemo>Anemo DMG Area</anemo> selanjutnya yang diakibatkan terhadap musuh di sekitar secara berkala selama durasi Dreamdrifter kali ini akan meningkat sebesar 1.000% Elemental Mastery Yumemizuki Mizuki. Efek di atas dapat terpicu sekali setiap 2,5 detik.",
+      "1": "Selain itu, saat berada dalam status Dreamdrifter, Elemental Mastery Karakter party di sekitar meningkat sebesar 10% dari Elemental Mastery Yumemizuki Mizuki sendiri."
+    }
+  },
   "constellation1": {
     "name": "In Mist-Like Waters",
     "description": {
       "0": "Saat Yumemizuki Mizuki berada dalam status Dreamdrifter, ia akan memberikan efek \"Twenty-Three Nights' Awaiting\" pada musuh di sekitar setiap 3,5 detik dan bertahan selama 3 detik. Saat musuh yang berada dalam status \"Twenty-Three Nights' Awaiting\" terkena Anemo DMG dan memicu reaksi Swirl, maka efek ini terhapus dan membuat DMG reaksi Swirl pada musuh yang bersangkutan kali ini meningkat sebesar 1.100% dari Elemental Mastery Yumemizuki Mizuki."
+    },
+    "upgradedDescription": {
+      "0": "Saat Yumemizuki Mizuki berada dalam status Dreamdrifter, ia akan memberikan efek \"Twenty-Three Nights' Awaiting\" pada musuh di sekitar setiap 3,5 detik dan efek ini bertahan selama 3 detik. Saat musuh yang berada dalam status \"Twenty-Three Nights' Awaiting\" terkena Anemo DMG dan memicu reaksi Swirl, maka efek Twenty-Three Nights' Awaiting akan terhapus dan membuat DMG reaksi Swirl pada musuh yang bersangkutan kali ini meningkat sebesar 1.100% dari Elemental Mastery Yumemizuki Mizuki. Selain itu, Yumemizuki Mizuki juga akan melancarkan satu serangan tambahan terhadap musuh ini yang mengakibatkan <anemo>Anemo DMG</anemo> sebesar 1.000% Elemental Mastery-nya."
     }
   },
   "constellation2": {
     "name": "Your Echo I Meet in Dreams",
     "description": {
       "0": "Saat memasuki status Dreamdrifter, setiap poin Elemental Mastery Yumemizuki Mizuki akan memberikan 0,04% <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo>, dan <electro>Electro</electro> DMG Bonus terhadap seluruh Karakter lain dalam party yang ada di sekitar dan berlangsung hingga status Dreamdrifter berakhir."
+    },
+    "upgradedDescription": {
+      "0": "Saat memasuki status Dreamdrifter, setiap poin Elemental Mastery Yumemizuki Mizuki akan memberikan 0,04% <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo>, dan <electro>Electro</electro> DMG Bonus terhadap seluruh Karakter lain dalam party yang ada di sekitar dan berlangsung hingga status Dreamdrifter berakhir.",
+      "1": "Selain itu, saat Yumemizuki Mizuki berada dalam status Dreamdrifter, <pyro>Pyro RES</pyro>, <hydro>Hydro RES</hydro>, <cryo>Cryo RES</cryo>, <electro>Electro RES</electro>, dan <anemo>Anemo RES</anemo> musuh di sekitar berkurang 20%."
     }
   },
   "constellation3": {
@@ -142,6 +168,9 @@
     "name": "Buds Warm Lucid Springs",
     "description": {
       "0": "Saat mengambil <strong>Yumemi Style Special Snacks</strong> dari Elemental Burst <strong>Anraku Secret Spring Therapy</strong>, Snack ini akan mengakibatkan DMG dan memulihkan HP di waktu yang bersamaan, juga memulihkan 5 poin Energy untuk Yumemizuki Mizuki. Dalam satu durasi<strong>Anraku Secret Spring Therapy</strong>, maksimum 4 kali pemulihan Energy yang bisa diperoleh dengan cara ini."
+    },
+    "upgradedDescription": {
+      "0": "Saat mengambil <strong>Yumemi Style Special Snacks</strong> dari Elemental Burst <strong>Anraku Secret Spring Therapy</strong>, Snack ini akan mengakibatkan DMG dan memulihkan HP di waktu yang bersamaan, juga akan memulihkan HP satu rekan party yang lain di sekitar yang memiliki HP yang lebih rendah sebesar 266% Elemental Mastery Yumemizuki Mizuki, serta memulihkan 5 poin Energy untuk Yumemizuki Mizuki. Dalam satu durasi<strong>Anraku Secret Spring Therapy</strong>, Yumemizuki bisa mendapatkan maksimum 4 kali pemulihan Energy dengan cara ini."
     }
   },
   "constellation5": {
@@ -155,6 +184,10 @@
     "name": "The Heart Lingers Long",
     "description": {
       "0": "Saat Yumemizuki Mizuki berada dalam status Dreamdrifter, DMG reaksi Swirl yang dipicu oleh anggota party di sekitar dapat mengakibatkan CRIT, dengan nilai CRIT Rate tetap sebesar 30% dan CRIT DMG tetap sebesar 100%."
+    },
+    "upgradedDescription": {
+      "0": "Saat Yumemizuki Mizuki berada dalam status Dreamdrifter, DMG reaksi Swirl yang dipicu oleh anggota party di sekitar dapat mengakibatkan CRIT, dengan nilai CRIT Rate tetap sebesar 30% dan CRIT DMG tetap sebesar 100%.",
+      "1": "Untuk setiap Elemental Mastery Yumemizuki Mizuki yang melebihi 500 poin, akan meningkatkan CRIT Rate Yumemizuki Mizuki sebesar 0,04% dan CRIT DMG-nya sebesar 0,16%. Maksimum bisa meningkatkan hingga 20% CRIT Rate dan 80% CRIT DMG Yumemizuki Mizuki dengan cara ini."
     }
   }
 }

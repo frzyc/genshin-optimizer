@@ -379,7 +379,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       bloomcd: bloomRelatedCdNonstackWrite,
     },
   },
-  isMoonsign: constant(1),
+  flags: { isMoonsign: constant(1) },
 })
 
 const sheet: TalentSheet = {

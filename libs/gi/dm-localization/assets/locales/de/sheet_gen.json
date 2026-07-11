@@ -60,7 +60,7 @@
     "superconduct": "Supraleiter",
     "vaporize": "Verdampfen",
     "melt": "Schmelzen",
-    "bloom": "Sprießen",
+    "bloom": "",
     "burgeon": "Flammenspross",
     "hyperbloom": "Supraspross",
     "quicken": "Urwuchs",
@@ -77,15 +77,15 @@
   "talentLvl": "Talentstufe {{level}}",
   "talents": {
     "auto": "Standardangriff",
-    "skill": "Elementarfähigkeit",
-    "burst": "Spezialfähigkeit",
+    "skill": "",
+    "burst": "",
     "altSprint": "Ersetzt Rennen"
   },
   "unlockPassive1": "Ab Figurenaufstiegsstufe 1 verfügbar",
   "unlockPassive2": "Ab Figurenaufstiegsstufe 4 verfügbar",
   "unlockPassive3": "Passives Talent",
   "unlockLockedPassive": "Nach dem Abschließen der vorausgehenden Aufträge verfügbar",
-  "witchPassive": "Aufgabe der Hexe",
+  "witchPassive": "",
   "moonsign": "Mondomen",
   "hexerei": "Hexerei"
 }

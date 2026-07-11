@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -70,7 +74,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -99,7 +107,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -121,6 +133,16 @@
       "0": "Al crear materiales de ascensión de arma, hay una probabilidad del 10% de recibir el doble."
     }
   },
+  "lockedPassive": {
+    "name": "Las injusticias siempre salen a la luz",
+    "description": {
+      "0": "<strong>Esplendor: Superconductor Estelar</strong>",
+      "1": "Transforma el efecto del talento de ascensión “Refutación del dogma”:",
+      "2": "Cuando la Vida de Wriothesley está por debajo del 60%, obtiene el efecto de “merced reprensora: manifestación”, el cual fortalece el siguiente Ataque Cargado de <strong>Ataque Normal: Combo glaciodemoledor</strong> para convertirlo en un gancho alto cenital que no consume Aguante y que, al golpear al enemigo, restaura Vida a Wriothesley en una cantidad equivalente al 30% de su propia Vida Máx. Como máximo, podrá restaurar Vida de esta manera una vez cada 2 s.",
+      "3": "Además, los puñetazos expeledores tercero y quinto fortalecidos por <strong>sentencia gélida</strong> infligirán, respectivamente, el 60/80% del <cryo>Daño Cryo</cryo> original, y el gancho alto cenital infligirá el 100% del <cryo>Daño Cryo en el AdE</cryo> original. Estos se consideran daño de Superconductor Estelar, y el daño de esta reacción infligido por Wriothesley aumenta en un 30%.",
+      "4": "Además, Wriothesley entrará en el estado de <strong>esplendor: Superconductor Estelar</strong> mientras se encuentre dentro de un <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>campo estrellapolar</strong></tooltip>."
+    }
+  },
   "constellation1": {
     "name": "Aterrorizar a los facinerosos",
     "description": {
@@ -134,6 +156,27 @@
       ],
       "5": "<br/>",
       "6": "Es necesario desbloquear el talento de ascensión “Refutación del dogma”."
+    },
+    "upgradedDescription": {
+      "0": "Transforma el efecto de merced reprensora del talento de ascensión “Refutación del dogma”:",
+      "1": "Cuando la Vida de Wriothesley está por debajo del 60% o cuando se encuentra en el estado de sentencia gélida de <strong>Envite ateridor</strong>, golpear al enemigo con el quinto puñetazo expeledor otorga a Wriothesley el efecto de merced reprensora. Solo podrá obtener este efecto una vez cada 2.5 s.",
+      "2": "<br/>",
+      "3": "Además, el gancho alto disciplinario obtiene los siguientes fortalecimientos:",
+      "4": [
+        "El aumento de daño que otorga se incrementa hasta el 200%.",
+        "Si Wriothesley golpea a un enemigo con el gancho alto disciplinario mientras se encuentra en el estado de sentencia gélida, la duración de dicho estado se prolonga 4 s."
+      ],
+      "5": "<br/>",
+      "6": "<strong>Esplendor: Superconductor Estelar</strong>",
+      "7": [
+        "Tras golpear a un enemigo con el gancho alto cenital, el daño infligido por el siguiente quinto puñetazo expeledor fortalecido por sentencia gélida aumenta en un 50% durante 5 s.",
+        "Tras golpear a un enemigo con el quinto puñetazo expeledor fortalecido por sentencia gélida, el daño infligido por el gancho alto cenital aumenta en un 50% durante 5 s.",
+        "Al golpear a un enemigo con el gancho alto cenital mientras Wriothesley está en el estado de sentencia gélida, la duración de dicho estado se prolonga 4 s."
+      ],
+      "8": "<br/>",
+      "9": "Esta prolongación solo puede ocurrir una vez de esta manera por cada vez que se active sentencia gélida.",
+      "10": "<br/>",
+      "11": "Es necesario desbloquear el talento de ascensión “Refutación del dogma”."
     }
   },
   "constellation2": {
@@ -141,6 +184,17 @@
     "description": {
       "0": "Al usar <strong>Devoración aureosombría</strong>, cada carga del efecto decreto punitivo del talento de ascensión “Redención del pecado” aumenta el daño infligido en un 40%.",
       "1": "Es necesario desbloquear el talento de ascensión “Redención del pecado”."
+    },
+    "upgradedDescription": {
+      "0": "Al usar <strong>Devoración aureosombría</strong>, cada carga de decreto punitivo del talento de ascensión “Redención del pecado” aumenta en un 40% el daño infligido.",
+      "1": "<br/>",
+      "2": "Además, al alcanzar 5 cargas de decreto punitivo, si Wriothesley:",
+      "3": [
+        "Se encuentra en el estado de <strong>esplendor: Superconductor Estelar</strong>, el talento “Las injusticias siempre salen a la luz” se fortalece, de manera que los puñetazos expeledores tercero y quinto fortalecidos por <strong>sentencia gélida</strong> infligirán, respectivamente, el 90/120% del <cryo>Daño Cryo</cryo> original, y el gancho alto cenital infligirá el 150% del <cryo>Daño Cryo en el AdE</cryo> original. Estos se consideran daño de Superconductor Estelar.",
+        "No se encuentra en el estado de <strong>esplendor: Superconductor Estelar</strong>, el Ataque Normal y el Ataque Cargado infligirán, respectivamente, el 125/130% del daño original."
+      ],
+      "4": "<br/>",
+      "5": "Es necesario desbloquear el talento de ascensión “Redención del pecado”."
     }
   },
   "constellation3": {
@@ -154,7 +208,15 @@
     "name": "Redimir a los diligentes",
     "description": {
       "0": "La Vida que el gancho alto disciplinario restaura a Wriothesley aumenta hasta un 50% de su Vida Máx. (es necesario desbloquear el talento de ascensión “Refutación del dogma”).",
-      "1": "Además, cuando Wriothesley recibe curación, si su Vida está al máximo, obtendrá distintos efectos dependiendo de si es el personaje en uso o no al recibir dicha curación. Si estaba en uso, su Vel. de Ataque aumenta en un 20% durante 4 s; si estaba en tu equipo pero no en uso, la Vel. de Ataque de todos tus personajes del equipo aumenta en un 10% durante 6 s. Estos dos aumentos de Vel. de Ataque no se pueden acumular."
+      "1": "Además, cuando Wriothesley reciba exceso de curación, obtendrá distintos efectos dependiendo de si es el personaje en uso o no al recibir dicha curación. Si estaba en uso, su Vel. de Ataque aumenta en un 20% durante 4 s; si estaba en tu equipo pero no en uso, la Vel. de Ataque de todos tus personajes del equipo aumenta en un 10% durante 6 s. Estos dos aumentos de Vel. de Ataque no se pueden acumular."
+    },
+    "upgradedDescription": {
+      "0": "La Vida que el gancho alto disciplinario restaura a Wriothesley aumenta a un 50% de su Vida Máx. Es necesario desbloquear el talento de ascensión “Refutación del dogma”.",
+      "1": "Además, cuando Wriothesley reciba exceso de curación, obtendrá distintos efectos dependiendo de si es el personaje en uso o no al recibir dicha curación: si está en uso, su Vel. de Ataque aumentará en un 20% durante 4 s; si está en tu equipo pero no en uso, la Vel. de Ataque de todos tus personajes del equipo aumentará en un 10% durante 6 s. Estos dos aumentos de Vel. de Ataque no se pueden acumular.",
+      "2": "<br/>",
+      "3": "<strong>Esplendor: Superconductor Estelar</strong>",
+      "4": "Los efectos anteriormente mencionados cambian a:",
+      "5": "El daño que recibe Wriothesley se reduce en un 25%, y su Vel. de Ataque aumenta en un 20%; la Vel. de Ataque de los demás personajes cercanos del equipo aumenta en un 10%."
     }
   },
   "constellation5": {
@@ -167,8 +229,19 @@
   "constellation6": {
     "name": "Confortar a los inocentes",
     "description": {
-      "0": "La Prob. CRIT del gancho alto disciplinario aumenta en un 10%, su Daño CRIT aumenta en un 80% y crea un carámbano adicional que inflige un 100% del <cryo>Daño Cryo</cryo> del carámbano original. El daño infligido de esta manera se considera daño de Ataque Cargado.",
+      "0": "La Prob. CRIT del gancho alto disciplinario aumenta en un 10%, su Daño CRIT aumenta en un 80% y crea un carámbano adicional que inflige un 100% del <cryo>Daño Cryo</cryo> original. El daño infligido de esta manera se considera daño de Ataque Cargado.",
       "1": "Es necesario desbloquear el talento de ascensión “Refutación del dogma”."
+    },
+    "upgradedDescription": {
+      "0": "Aumenta en un 10% la Prob. CRIT y en un 80% el Daño CRIT del gancho alto disciplinario, y crea un carámbano adicional que inflige un 100% del <cryo>Daño Cryo</cryo> original. El daño infligido de esta manera se considera daño de Ataque Cargado.",
+      "1": "<br/>",
+      "2": "<strong>Esplendor: Superconductor Estelar</strong>",
+      "3": "El efecto anterior cambia a:",
+      "4": [
+        "Aumenta en un 10% la Prob. CRIT y en un 80% el Daño CRIT del puñetazo expeledor fortalecido por <strong>sentencia gélida</strong> y del gancho alto cenital. Además, el quinto puñetazo expeledor fortalecido por <strong>sentencia gélida</strong> y el gancho alto cenital pueden crear un carámbano adicional que inflige el 60% del <cryo>Daño Cryo</cryo> original considerado como daño de Superconductor Estelar."
+      ],
+      "5": "<br/>",
+      "6": "Es necesario desbloquear el talento de ascensión “Refutación del dogma”."
     }
   }
 }

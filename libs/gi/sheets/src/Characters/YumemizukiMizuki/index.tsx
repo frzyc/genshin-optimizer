@@ -6,15 +6,21 @@ import {
   greaterEq,
   infoMut,
   input,
+  max,
+  min,
+  naught,
   percent,
   prod,
   subscript,
+  sum,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
 import type { TalentSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
 import {
+  customDmgNode,
+  customHealNode,
   dataObjForCharacterSheet,
   dmgNode,
   healNodeTalent,
@@ -23,7 +29,11 @@ import {
 
 const key: CharacterKey = 'YumemizukiMizuki'
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key)
+
+const [condLockRevelationPath, condLockRevelation] = cond(key, 'lockRevelation')
+const lockRevelation = equal(condLockRevelation, 'on', 1)
+
+const ct = charTemplates(key, lockRevelation)
 
 let a = 0,
   s = 0,
@@ -65,20 +75,34 @@ const dm = {
     eleMas: skillParam_gen.passive2[0][0],
     duration: skillParam_gen.passive2[1][0],
   },
+  lockedPassive: {
+    skillContDmgInc: skillParam_gen.lockedPassive![0][0],
+    cd: skillParam_gen.lockedPassive![1][0],
+    eleMas: skillParam_gen.lockedPassive![2][0],
+    durationIThink: skillParam_gen.lockedPassive![3][0],
+  },
   constellation1: {
     swirl_dmgInc: skillParam_gen.constellation1[0],
     duration: skillParam_gen.constellation1[1],
     cd: skillParam_gen.constellation1[2],
+    dmg: skillParam_gen.constellation1[3],
   },
   constellation2: {
     phec_dmg_: skillParam_gen.constellation2[0],
+    eleRes_: -skillParam_gen.constellation2[1],
   },
   constellation4: {
     energyRestore: skillParam_gen.constellation4[0],
+    heal: skillParam_gen.constellation4[1],
   },
   constellation6: {
     swirl_critRate_: skillParam_gen.constellation6[0],
     swirl_critDMG_: 1,
+    eleMasThresh: skillParam_gen.constellation6[1],
+    critRate_: skillParam_gen.constellation6[2],
+    critDMG_: skillParam_gen.constellation6[3],
+    maxCritRate_: skillParam_gen.constellation6[4],
+    maxCritDMG_: skillParam_gen.constellation6[5],
   },
 } as const
 
@@ -97,6 +121,16 @@ const a4Phec_eleMas = greaterEq(
   input.asc,
   4,
   equal(condA4Phec, 'on', dm.passive2.eleMas)
+)
+
+const lockDream_eleMas = equal(
+  condLockRevelation,
+  'on',
+  equal(
+    condSkillDream,
+    'on',
+    prod(percent(dm.lockedPassive.eleMas), input.premod.eleMas)
+  )
 )
 
 const [condC1AwaitingPath, condC1Awaiting] = cond(key, 'c1Awaiting')
@@ -122,6 +156,14 @@ const c2Dream_dmg_ = objKeyValMap(absorbableEle, (ele) => [
     )
   ),
 ])
+const c2Dream_res_ = objKeyValMap([...absorbableEle, 'anemo'], (ele) => [
+  `${ele}_enemyRes_`,
+  greaterEq(
+    input.constellation,
+    2,
+    equal(condLockRevelation, 'on', dm.constellation2.eleRes_)
+  ),
+])
 
 const c6Dream_swirlCritRate_ = greaterEq(
   input.constellation,
@@ -132,6 +174,43 @@ const c6Dream_swirlCritDMG_ = greaterEq(
   input.constellation,
   6,
   equal(condSkillDream, 'on', dm.constellation6.swirl_critDMG_)
+)
+// TODO: Verify if this reads premod or total
+const c6_critRate_ = greaterEq(
+  input.constellation,
+  6,
+  equal(
+    condLockRevelation,
+    'on',
+    max(
+      naught,
+      min(
+        percent(dm.constellation6.maxCritRate_),
+        prod(
+          percent(dm.constellation6.critRate_),
+          sum(input.premod.eleMas, -dm.constellation6.eleMasThresh)
+        )
+      )
+    )
+  )
+)
+const c6_critDMG_ = greaterEq(
+  input.constellation,
+  6,
+  equal(
+    condLockRevelation,
+    'on',
+    max(
+      naught,
+      min(
+        percent(dm.constellation6.maxCritDMG_),
+        prod(
+          percent(dm.constellation6.critDMG_),
+          sum(input.premod.eleMas, -dm.constellation6.eleMasThresh)
+        )
+      )
+    )
+  )
 )
 
 const dmgFormulas = {
@@ -159,11 +238,52 @@ const dmgFormulas = {
       'burst'
     ),
   },
+  lockedPassive: {
+    skillContDmg: dmgNode('atk', dm.skill.contDmg, 'skill', {
+      premod: {
+        skill_dmgInc: equal(
+          condLockRevelation,
+          'on',
+          prod(percent(dm.lockedPassive.skillContDmgInc), input.total.eleMas)
+        ),
+      },
+    }),
+    lockDream_eleMas,
+  },
   constellation1: {
     c1Awaiting_swirl_dmgInc,
+    dmg: greaterEq(
+      input.constellation,
+      1,
+      equal(
+        condLockRevelation,
+        'on',
+        customDmgNode(
+          prod(percent(dm.constellation1.dmg), input.total.eleMas),
+          'elemental'
+        )
+      )
+    ),
   },
   constellation2: {
     ...c2Dream_dmg_,
+  },
+  constellation4: {
+    heal: greaterEq(
+      input.constellation,
+      4,
+      equal(
+        condLockRevelation,
+        'on',
+        customHealNode(
+          prod(percent(dm.constellation4.heal), input.total.eleMas)
+        )
+      )
+    ),
+  },
+  constellation6: {
+    c6_critRate_,
+    c6_critDMG_,
   },
 }
 
@@ -180,9 +300,16 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
     premod: {
       swirl_dmg_: skillDream_swirl_dmg_,
       swirl_dmgInc: c1Awaiting_swirl_dmgInc,
-      ...c2Dream_dmg_,
+      ...c2Dream_dmg_, // Maybe should be total?
+      ...c2Dream_res_,
       swirl_critRate_: c6Dream_swirlCritRate_,
       swirl_critDMG_: c6Dream_swirlCritDMG_,
+    },
+    // Maybe should be premod?
+    total: {
+      eleMas: lockDream_eleMas,
+      critRate_: c6_critRate_,
+      critDMG_: c6_critDMG_,
     },
   },
 })
@@ -279,10 +406,21 @@ const sheet: TalentSheet = {
         },
       },
     }),
+    ct.headerTem('lockedPassive', {
+      canShow: equal(condSkillDream, 'on', 1),
+      fields: [
+        {
+          node: lockDream_eleMas,
+        },
+      ],
+    }),
     ct.headerTem('constellation2', {
       canShow: equal(condSkillDream, 'on', 1),
       teamBuff: true,
-      fields: Object.values(c2Dream_dmg_).map((node) => ({ node })),
+      fields: [
+        ...Object.values(c2Dream_dmg_).map((node) => ({ node })),
+        ...Object.values(c2Dream_res_).map((node) => ({ node })),
+      ],
     }),
     ct.headerTem('constellation6', {
       canShow: equal(condSkillDream, 'on', 1),
@@ -358,6 +496,28 @@ const sheet: TalentSheet = {
     }),
   ]),
   passive3: ct.talentTem('passive3'),
+  lockedPassive: ct.talentTem('lockedPassive', [
+    ct.condTem('lockedPassive', {
+      path: condLockRevelationPath,
+      value: condLockRevelation,
+      teamBuff: true,
+      name: st('revelation.done'),
+      states: {
+        on: {
+          fields: [
+            {
+              text: st('hexerei.talentEnhance'),
+            },
+            {
+              node: infoMut(dmgFormulas.lockedPassive.skillContDmg, {
+                name: ct.chg('skill.skillParams.1'),
+              }),
+            },
+          ],
+        },
+      },
+    }),
+  ]),
   constellation1: ct.talentTem('constellation1', [
     ct.condTem('constellation1', {
       value: condC1Awaiting,
@@ -394,10 +554,31 @@ const sheet: TalentSheet = {
   constellation3: ct.talentTem('constellation3', [
     { fields: [{ node: skillC3 }] },
   ]),
-  constellation4: ct.talentTem('constellation4'),
+  constellation4: ct.talentTem('constellation4', [
+    {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.constellation4.heal, {
+            name: stg('healing'),
+          }),
+        },
+      ],
+    },
+  ]),
   constellation5: ct.talentTem('constellation5', [
     { fields: [{ node: burstC5 }] },
   ]),
-  constellation6: ct.talentTem('constellation6'),
+  constellation6: ct.talentTem('constellation6', [
+    {
+      fields: [
+        {
+          node: c6_critRate_,
+        },
+        {
+          node: c6_critDMG_,
+        },
+      ],
+    },
+  ]),
 }
 export default new CharacterSheet(sheet, data)

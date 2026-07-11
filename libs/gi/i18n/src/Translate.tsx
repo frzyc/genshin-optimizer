@@ -81,6 +81,7 @@ const textComponents = {
   burgeon: <ColorText color="burgeon" />,
   hyperbloom: <ColorText color="hyperbloom" />,
   lunarcrystallize: <ColorText color="lunarcrystallize" />,
+  stellarconduct: <ColorText color="stellarconduct" />,
   colorText: <ColorText />,
   tooltip: <LinkedTooltip />,
 }
@@ -107,6 +108,7 @@ const badgeComponents = {
   burgeon: <SqBadge color="burgeon" />,
   hyperbloom: <SqBadge color="hyperbloom" />,
   lunarcrystallize: <SqBadge color="lunarcrystallize" />,
+  stellarconduct: <SqBadge color="stellarconduct" />,
   colorText: <ColorText />,
 }
 

@@ -3,11 +3,12 @@ import {
   useForceUpdate,
 } from '@genshin-optimizer/common/react-util'
 import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
-import { linspace, objMap } from '@genshin-optimizer/common/util'
+import { objMap, range } from '@genshin-optimizer/common/util'
 import {
   type ArtifactSlotKey,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
+import { cachedArtifact } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
   useArtifact,
@@ -15,14 +16,24 @@ import {
 } from '@genshin-optimizer/gi/db-ui'
 import {
   ArtifactCard,
+  ArtifactCardObj,
   ArtifactCardPico,
   DataContext,
   EquipBuildModal,
 } from '@genshin-optimizer/gi/ui'
+import { getSubstatValue } from '@genshin-optimizer/gi/util'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
-import { Box, Button, Divider, Grid, Tooltip, Typography } from '@mui/material'
-import { useCallback, useContext, useEffect, useMemo } from 'react'
+import {
+  Box,
+  Button,
+  CircularProgress,
+  Divider,
+  Grid,
+  Tooltip,
+  Typography,
+} from '@mui/material'
+import { useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
   Area,
@@ -35,44 +46,83 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
-import { erf } from './mathUtil'
-import type { UpOptCalculator } from './upOpt'
-import { ResultType } from './upOpt'
+import { type UpOptCalculatorV2, type UpOptInfo } from './upOpt'
+
+type DefineInfo = Extract<UpOptInfo, { type: 'definition' }>
+
+/**
+ * Build a synthetic artifact for displaying a define (sanctifying elixir)
+ * candidate, which has no backing DB artifact. Only set/slot/main/affixes are
+ * meaningful, so it's rendered with `hideSubstatValues`/`hideLocation`.
+ */
+function defineDisplayArtifact(info: DefineInfo) {
+  return cachedArtifact(
+    {
+      setKey: info.setKey,
+      slotKey: info.slotKey,
+      level: 0,
+      rarity: 5,
+      mainStatKey: info.mainStatKey,
+      location: '',
+      lock: false,
+      // `cachedArtifact` requires exactly 4 substats. The affixes get a non-zero
+      // value so the card renders them (it filters out value===0); the actual
+      // value is hidden via `hideSubstatValues`. The remaining slots are empty.
+      substats: [
+        ...info.affixes.map((key) => ({ key, value: getSubstatValue(key, 5) })),
+        ...range(info.affixes.length, 3).map(() => ({
+          key: '' as const,
+          value: 0,
+        })),
+      ],
+    },
+    `define-${info.setKey}-${info.slotKey}-${info.mainStatKey}-${info.affixes.join('-')}`
+  ).artifact
+}
 
 type Props = {
   setArtifactIdToEdit: (id: string | undefined) => void
-  showTrue?: boolean
   objMin: number
   objMax: number
   thresholds: number[]
   ix: number
-  upOptCalc: UpOptCalculator
-}
-type ChartData = {
-  x: number
-  est: number
-  estCons: number
+  upOptCalc: UpOptCalculatorV2
 }
 
 const nbins = 50
 
 export default function UpgradeOptChartCard(props: Props) {
+  const { t } = useTranslation('page_character_optimize')
   const database = useDatabase()
-  const id = props.upOptCalc.artifacts[props.ix]?.id
-  const upArt = database.arts.get(id)
   const { data } = useContext(DataContext)
+  const upOptArt = props.upOptCalc.candidates[props.ix]
+  if (!upOptArt) return null
+  const info = upOptArt.info
+  const artifactId = info.type === 'definition' ? undefined : info.artifactId
+  const upArt = artifactId ? database.arts.get(artifactId) : undefined
   const currentlyEquippedArtId =
     upArt?.slotKey && data.get(input.art[upArt.slotKey].id).value
-  const isEquipped = id === currentlyEquippedArtId
+  const isEquipped = !!artifactId && artifactId === currentlyEquippedArtId
   return (
     <Box>
       <Grid container spacing={1}>
         <Grid item xs={12} sm={5} md={4} lg={3} xl={3}>
-          <ArtifactCard
-            artifactId={id}
-            onEdit={() => props.setArtifactIdToEdit(id)}
-            extraButtons={<EquipButton newArtId={id} disabled={isEquipped} />}
-          />
+          {info.type === 'definition' ? (
+            <ArtifactCardObj
+              artifact={defineDisplayArtifact(info)}
+              hideLocation
+              hideSubstatValues
+              buildsBadgeLabel={t('upOptChart.define')}
+            />
+          ) : (
+            <ArtifactCard
+              artifactId={artifactId!}
+              onEdit={() => props.setArtifactIdToEdit(artifactId)}
+              extraButtons={
+                <EquipButton newArtId={artifactId!} disabled={isEquipped} />
+              }
+            />
+          )}
         </Grid>
         <Grid item xs={12} sm={7} md={8} lg={9} xl={9}>
           <UpgradeOptChartCardGraph {...props} />
@@ -152,9 +202,17 @@ function UpgradeOptChartCardGraph({
   ix,
 }: Props) {
   const { t } = useTranslation('page_character_optimize')
-  const upArt = upOptCalc.artifacts[ix]
+  const { t: tk } = useTranslation('statKey_gen')
+  const formatReshapeLabel = useCallback(
+    (key: string) =>
+      `${tk(key)}${['atk_', 'def_', 'hp_'].includes(key) ? '%' : ''}`,
+    [tk]
+  )
+  const upArt = upOptCalc.candidates[ix]
+  const infoArtifactId =
+    upArt.info.type === 'definition' ? undefined : upArt.info.artifactId
   const [, forceUpdate] = useForceUpdate()
-  const equippedArt = useArtifact(upArt.id)
+  const equippedArt = useArtifact(infoArtifactId)
 
   useEffect(() => {
     if (equippedArt) {
@@ -164,44 +222,14 @@ function UpgradeOptChartCardGraph({
   }, [equippedArt, upOptCalc, ix, forceUpdate])
 
   const constrained = thresholds.length > 1
-
-  // Returns P(a < DMG < b)
-  const integral = (a: number, b: number) =>
-    upArt.result!.distr.gmm.reduce((pv, { phi, mu, sig2 }) => {
-      const sig = Math.sqrt(sig2)
-      if (sig < 1e-3) return a <= mu && mu < b ? phi + pv : pv
-      const P = erf((mu - a) / sig) - erf((mu - b) / sig)
-      return pv + (phi * P) / 2
-    }, 0)
-  const integralCons = (a: number, b: number) =>
-    upArt.result!.distr.gmm.reduce((pv, { cp, phi, mu, sig2 }) => {
-      const sig = Math.sqrt(sig2)
-      if (sig < 1e-3) return a <= mu && mu < b ? cp * phi + pv : pv
-      const P = erf((mu - a) / sig) - erf((mu - b) / sig)
-      return pv + (cp * phi * P) / 2
-    }, 0)
   const thr0 = thresholds[0]
   const perc = useCallback((x: number) => (100 * (x - thr0)) / thr0, [thr0])
-
-  const step = (objMax - objMin) / nbins
-  const dataHist: ChartData[] = linspace(objMin, objMax, nbins, false).flatMap(
-    (v) => {
-      return [
-        {
-          x: perc(v),
-          est: integral(v, v + step),
-          estCons: integralCons(v, v + step),
-        },
-        {
-          x: perc(v + step),
-          est: integral(v, v + step),
-          estCons: integralCons(v, v + step),
-        },
-      ]
-    }
-  )
-  dataHist.unshift({ x: perc(objMin), est: 0, estCons: 0 })
-  dataHist.push({ x: perc(objMax), est: 0, estCons: 0 })
+  const [isExactPending, setIsExactPending] = useState(false)
+  const dataHist = upOptCalc.histogram(ix, {
+    left: objMin,
+    right: objMax,
+    bins: nbins,
+  })
 
   const ymax = dataHist.reduce((max, { est }) => Math.max(max, est!), 0) || 1
   const xpercent = (thr0 - objMin) / (objMax - objMin)
@@ -210,13 +238,31 @@ function UpgradeOptChartCardGraph({
   const reportP = upArt.result!.p
   const reportD = upArt.result!.upAvg
   const chartData = dataHist
-  const isExact = upArt.result!.evalMode === ResultType.Exact
+  const isExact = upArt.evalMode === 'values'
 
   useEffect(() => {
     if (isExact) return
-    upOptCalc.calcExact(ix)
-    forceUpdate()
-  }, [upOptCalc, isExact, ix, forceUpdate])
+    setIsExactPending(true)
+    let cancelled = false
+    upOptCalc
+      .calcExactAsync(
+        ix,
+        {
+          left: objMin,
+          right: objMax,
+          bins: nbins,
+        },
+        () => cancelled
+      )
+      .then((updated) => {
+        if (cancelled) return
+        setIsExactPending(false)
+        if (updated) forceUpdate()
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [upOptCalc, isExact, ix, forceUpdate, objMin, objMax])
 
   const probUpgradeText = (
     <span>
@@ -234,15 +280,30 @@ function UpgradeOptChartCardGraph({
     </span>
   )
   const { data } = useContext(DataContext)
+  // Define candidates have no backing artifact, so compare against whatever is
+  // currently equipped in the candidate's target slot.
+  const comparisonSlotKey: ArtifactSlotKey | undefined =
+    upArt.info.type === 'definition' ? upArt.info.slotKey : equippedArt?.slotKey
   const currentlyEquippedArtId =
-    equippedArt?.slotKey && data.get(input.art[equippedArt.slotKey].id).value
-  const isCurrentlyEquipped = currentlyEquippedArtId === upArt.id
+    comparisonSlotKey && data.get(input.art[comparisonSlotKey].id).value
+  const isCurrentlyEquipped =
+    !!infoArtifactId && currentlyEquippedArtId === infoArtifactId
+  const reshapeLabel =
+    upArt.info.type === 'reshape'
+      ? upArt.info.affixes.map((affix) => formatReshapeLabel(affix)).join(' / ')
+      : ''
+  const reshapeRolls =
+    upArt.info.type === 'reshape' ? upArt.info.mintotal : undefined
+  const defineLabel =
+    upArt.info.type === 'definition'
+      ? upArt.info.affixes.map((affix) => formatReshapeLabel(affix)).join(' / ')
+      : ''
   return (
-    <CardThemed bgt="light" sx={{ height: '100%' }}>
+    <CardThemed bgt="light" sx={{ height: '100%', minHeight: 350 }}>
       <Box sx={{ display: 'flex', flexDirection: 'row' }}>
         <Box sx={{ height: 50, width: 50 }}>
-          {!!equippedArt?.slotKey && (
-            <EquippedArtifact slotKey={equippedArt.slotKey} />
+          {!!comparisonSlotKey && (
+            <EquippedArtifact slotKey={comparisonSlotKey} />
           )}
         </Box>
         <Box
@@ -261,6 +322,28 @@ function UpgradeOptChartCardGraph({
               <SqBadge color="secondary">{t('upOptChart.equipped')}</SqBadge>
             ) : (
               <Typography>{t('upOptChart.current')}</Typography>
+            )}
+          </Box>
+          <Box display="flex" alignItems="center" gap={1}>
+            {isExactPending && <CircularProgress size={18} />}
+            {upArt.info.type === 'reshape' && (
+              <>
+                <SqBadge color="secondary">{t('upOptChart.reshape')}</SqBadge>
+                <Typography variant="body2">
+                  {t('upOptChart.reshapeStats', {
+                    stats: reshapeLabel,
+                    count: reshapeRolls,
+                  })}
+                </Typography>
+              </>
+            )}
+            {upArt.info.type === 'definition' && (
+              <>
+                <SqBadge color="secondary">{t('upOptChart.define')}</SqBadge>
+                <Typography variant="body2">
+                  {t('upOptChart.defineStats', { stats: defineLabel })}
+                </Typography>
+              </>
             )}
           </Box>
 

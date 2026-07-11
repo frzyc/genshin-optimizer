@@ -12,6 +12,7 @@ import type {
   IDocumentText,
 } from '@genshin-optimizer/gi/sheets'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
+import type { SxProps } from '@mui/material'
 import { Box, Collapse, Divider, Typography } from '@mui/material'
 import { useContext, useState } from 'react'
 import { DataContext } from '../context'
@@ -58,7 +59,7 @@ export function DocumentDisplay({
     .filter((s) => s)
   if (!sectionDisplays.length) return null
   return (
-    <Box display="flex" flexDirection="column" gap={1}>
+    <Box display="flex" flexDirection="column" gap={1} flexWrap="wrap">
       {sectionDisplays}
     </Box>
   )
@@ -133,16 +134,22 @@ function FieldsSectionDisplay({
   )
 }
 
-function TextSectionDisplay({ section }: { section: IDocumentText }) {
+function TextSectionDisplay({
+  section,
+  sx,
+}: { section: IDocumentText; sx?: SxProps }) {
   const { data } = useContext(DataContext)
-  return <div>{evalIfFunc(section.text, data)}</div>
+  return <Box sx={sx}>{evalIfFunc(section.text, data)}</Box>
 }
-function TextSectionDisplayCollapse({ section }: { section: IDocumentText }) {
+function TextSectionDisplayCollapse({
+  section,
+  sx,
+}: { section: IDocumentText; sx?: SxProps }) {
   const { data } = useContext(DataContext)
   const [expanded, setExpanded] = useState(false)
   const [hover, setHover] = useState(false)
   return (
-    <Box sx={{ position: 'relative' }}>
+    <Box sx={{ ...sx, position: 'relative' }}>
       {!expanded && (
         <Box
           sx={{

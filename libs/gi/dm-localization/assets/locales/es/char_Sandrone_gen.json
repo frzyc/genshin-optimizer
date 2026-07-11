@@ -1,0 +1,184 @@
+{
+  "name": "Sandrone",
+  "title": "La Analizadora de Reflejos",
+  "description": "La séptima de Los Once de los Fatui, conocida como “La Títere”. Además de interpretar todos los fenómenos a través del prisma de las matemáticas, es una elegante dama que nunca falta a las horas del té.",
+  "constellationName": "Narcissorolegium",
+  "auto": {
+    "name": "Deducción autoevidente",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 3 tajos consecutivos valiéndose de hilos tejidos con fórmulas matemáticas para controlar su arma."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Convoca a <strong>Fagio</strong>, la Facilitadora Automatizada Generalista Interactiva y Omnitarea, y hace que entre en el modo de <strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>decodificación</tooltip></strong>, de manera que realizará un ataque de ráfaga contra los enemigos que tenga enfrente y disparará un rayo criocondensador de forma periódica que inflige <cryo>Daño Cryo en el AdE</cryo>.",
+        "2": "<strong>Esplendor: Superconductor Estelar</strong>",
+        "3": "El rayo criocondensador pasará a infligir <cryo>Daño Cryo en el AdE</cryo> considerado como daño de Superconductor Estelar.",
+        "4": "En el modo de <strong>decodificación</strong>, la <strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>capacidad de decodificación</tooltip></strong> de Fagio aumentará continuamente. Además, al disparar un rayo criocondensador, la <strong>capacidad de decodificación</strong> se incrementará aún más.",
+        "5": "Cuando la <strong>capacidad de decodificación</strong> alcance el límite de 100 pts., Fagio entrará en el modo de <strong>sobrecarga de capacidad</strong>, en el que infligirá <cryo>Daño Cryo</cryo> a los enemigos en intervalos más largos y no podrá pasar al modo de <strong>decodificación</strong>.",
+        "6": "Cuando no esté en el modo de <strong>decodificación</strong>, la <strong>capacidad de decodificación</strong> de Fagio disminuirá lentamente. Cuando Sandrone esté en tu equipo pero no en uso, se centrará en realizar tareas de mantenimiento de Fagio, con lo que la velocidad de disminución de su <strong>capacidad de decodificación</strong> aumentará a un 300% del valor original.",
+        "7": "Cuando la <strong>capacidad de decodificación</strong> caiga por debajo de los 50 pts., Fagio saldrá del modo de <strong>sobrecarga de capacidad</strong>."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de ráfaga de ATQ Cargado",
+      "4": "Daño del rayo criocondensador de ATQ Cargado",
+      "5": "Daño de Superconductor Estelar del rayo criocondensador de ATQ Cargado",
+      "6": "Daño durante la sobrecarga de capacidad",
+      "7": "Daño de Caída",
+      "8": "Daño de impacto de caída baja/alta",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Ecuación fenomenológica: Análisis diferencial",
+    "description": {
+      "0": "Siguiendo la perfecta etiqueta de una dama, Sandrone se sienta en el <strong>mecanismo de suspensión de asalto táctico de la hora del té</strong> y flota continuamente hacia delante durante 6 s. En este tiempo, Sandrone podrá controlar la dirección del movimiento y, al pulsar una vez para esprintar, consumirá 10 pts. de Aguante para entrar en el modo de “suspensión elegante de alta velocidad”, en el que consumirá 15 pts. de Aguante por segundo para avanzar flotando a una mayor velocidad.",
+      "1": "<br/>",
+      "2": "Cuando Sandrone comienza a flotar, si hay algún enemigo en las cercanías, invocará un cañón de resonancia prismática que disparará a los enemigos agitados dos proyectiles prismáticos que infligen <cryo>Daño Cryo</cryo>.",
+      "3": "<strong>Esplendor: Superconductor Estelar</strong>",
+      "4": "El segundo proyectil prismático pasará a infligir <cryo>Daño Cryo</cryo> considerado como daño de Superconductor Estelar.",
+      "5": "<br/>",
+      "6": "Cuando Sandrone esté sentada en el mecanismo de suspensión de asalto táctico de la hora del té, también realizará tareas de mantenimiento de Fagio con gran elegancia y sigilo, lo que causará que su <strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>capacidad de decodificación</tooltip></strong> se reduzca rápidamente."
+    },
+    "skillParams": {
+      "0": "Daño de proyectil prismático",
+      "1": "Daño de Superconductor Estelar de proyectil prismático",
+      "2": "TdE",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Ecuación fenomenológica: Quod erat demonstrandum",
+    "description": {
+      "0": "Con la debida elegancia de una dama, Sandrone invoca un gran número de cañones de resonancia prismática para bombardear una amplia zona frente a sí y luego realizar una descarga de haces de inhibición térmica, con lo que infligirá <cryo>Daño Cryo en el AdE</cryo>.",
+      "1": "<strong>Esplendor: Superconductor Estelar</strong>",
+      "2": "Los haces de inhibición térmica pasarán a infligir <cryo>Daño Cryo en el AdE</cryo> considerado como daño de Superconductor Estelar."
+    },
+    "skillParams": {
+      "0": "Daño de bombardeo",
+      "1": "Daño de haces de inhibición térmica",
+      "2": "Daño de Superconductor Estelar de haces de inhibición térmica",
+      "3": "TdE",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Mecanismo de cómputo arcaico",
+    "description": {
+      "0": "<strong>Esplendor: Superconductor Estelar</strong>",
+      "1": "Al usar la Habilidad Elemental, <tooltip ns=char_Sandrone_gen baseKey18=skill><strong>Ecuación fenomenológica: Análisis diferencial</strong></tooltip>, si la <strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>capacidad de decodificación</tooltip></strong> de Fagio supera los 50 pts., el segundo proyectil prismático disparado contra los enemigos cercanos infligirá un 400% del daño original mientras también se reduce la capacidad de decodificación.",
+      "2": "Además, por cada 10 pts. que se reduzca la <strong>capacidad de decodificación</strong> de Fagio, esta obtendrá una acumulación del efecto <strong>mejora táctica</strong> durante 60 s. Este efecto podrá acumularse un máximo de 10 veces. Cuando Sandrone use su Habilidad Definitiva, <tooltip ns=char_Sandrone_gen baseKey18=burst><strong>Ecuación fenomenológica: Quod erat demonstrandum</strong></tooltip>, mientras está en el estado de <strong>esplendor: Superconductor Estelar</strong>, se consumirán todas las acumulaciones de mejora táctica, lo que hará que los haces de inhibición térmica inflijan un 100% de su daño original, además de un 10% adicional por cada acumulación consumida."
+    }
+  },
+  "passive2": {
+    "name": "El código de conducta de una dama",
+    "description": {
+      "0": "Por cada 100 pts. de ATQ que tenga Sandrone, su Maestría Elemental aumentará en 8 pts. Como máximo, la Maestría Elemental puede aumentar en 160 pts. de esta manera."
+    }
+  },
+  "passive3": {
+    "name": "Bendición fulgorestelar: Luz del racionalismo",
+    "description": {
+      "0": "Cuando un personaje del equipo cause una reacción de Superconductor, esta se transformará en una reacción de Superconductor Estelar. El daño base de las reacciones de Superconductor Estelar de los personajes del equipo aumentará en un 0.7% por cada 100 pts. de ATQ que tenga Sandrone. Como máximo, dicho daño puede aumentar en un 14% de esta manera.",
+      "1": "Además, Sandrone entrará en el estado de <strong>esplendor: Superconductor Estelar</strong> mientras se encuentre dentro de un <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>campo estrellapolar</strong></tooltip>."
+    }
+  },
+  "passive": {
+    "name": "Preludio de la hora del té y una larga historia",
+    "description": {
+      "0": "Cuando Sandrone esté en el equipo, obtendrá una recompensa de refrigerio adicional tras entregar los encargos del día a Katheryne."
+    }
+  },
+  "constellation1": {
+    "name": "Mañana tras el crepúsculo dorado",
+    "description": {
+      "0": "Cuando Fagio esté en el modo de <strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>decodificación</tooltip></strong>, la velocidad de aumento de su <strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>capacidad de decodificación</tooltip></strong> se reducirá en un 50%, y el daño de Superconductor Estelar infligido por todos los personajes del equipo aumentará en un 30%."
+    }
+  },
+  "constellation2": {
+    "name": "A través del espejo se observa una heredera",
+    "description": {
+      "0": "<strong>Esplendor: Superconductor Estelar</strong>",
+      "1": "Aumenta en un 40% el Daño CRIT de los rayos criocondensadores del Ataque Cargado. Además, cada vez que se dispare un rayo criocondensador, el Daño CRIT de todos los rayos criocondensadores del modo de <strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>decodificación</tooltip></strong> actualmente activo aumentará en un 20% adicional. Este efecto puede acumularse hasta 3 veces."
+    }
+  },
+  "constellation3": {
+    "name": "Reniega del ocaso y del yugo de la luna",
+    "description": {
+      "0": "Aumenta el nivel de habilidad del Ataque Normal <tooltip ns=char_Sandrone_gen baseKey18=normal><strong>Ecuación fenomenológica: Deducción autoevidente</strong></tooltip> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Intelecto y conocimiento, los cimientos del mundo",
+    "description": {
+      "0": "Cuando Sandrone golpee a un enemigo con el daño de Superconductor Estelar, invocará un cañón de resonancia prismática adicional que realizará un ataque coordinado que infligirá una cantidad de <cryo>Daño Cryo</cryo> equivalente al 125% del ATQ de Sandrone considerado como daño de Superconductor Estelar. Este efecto solo podrá ocurrir una vez cada 4 s."
+    }
+  },
+  "constellation5": {
+    "name": "Obviándolo todo, ella se queda al margen",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <tooltip ns=char_Sandrone_gen baseKey18=burst><strong>Ecuación fenomenológica: Quod erat demonstrandum</strong></tooltip> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Narciso se despierta, ella contempla el alba",
+    "description": {
+      "0": "En el modo de <strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>decodificación</tooltip></strong>, la tercera vez que Fagio lance su rayo criocondensador, este pasará a ser un <strong>rayo criocondensador concentrado</strong> más poderoso que se disparará de forma continua e infligirá hasta 4 golpes adicionales de <cryo>Daño Cryo en el AdE</cryo> equivalentes al 100% del ATQ de Sandrone, además del daño original de los rayos criocondensadores subsecuentes.",
+      "1": "<strong>Esplendor: Superconductor Estelar</strong>",
+      "2": "El <strong>rayo criocondensador concentrado</strong> pasará a infligir hasta 4 golpes adicionales de <cryo>Daño Cryo en el AdE</cryo> equivalentes al 80% del ATQ de Sandrone que se considerarán como daño de Superconductor Estelar.",
+      "3": "Además, el daño de Superconductor Estelar infligido por Sandrone <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>asciende</strong></tooltip> en un 20%."
+    }
+  }
+}

@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -69,7 +73,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -98,7 +106,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -119,16 +131,30 @@
       "0": "Khi Yumemizuki Mizuki ở trong đội, nhân vật trong đội của bản thân khi dùng thực phẩm dạng hồi phục không có chức năng hồi sinh sẽ có tỷ lệ tăng 30% lượng hồi phục. Xác suất kích hoạt hiệu quả này sẽ căn cứ vào Cấp Yêu Thích của nhân vật tương ứng (Khi Nhà Lữ Hành sử dụng, hiệu quả này sẽ luôn kích hoạt)."
     }
   },
+  "lockedPassive": {
+    "name": "Giấc Mơ Sáng Tỏ",
+    "description": {
+      "0": "Sau khi Yumemizuki Mizuki kích hoạt phản ứng Khuếch Tán trong trạng thái Mộng Trôi, trong thời gian Mộng Trôi lần này, lần sau gây <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo> theo chu kỳ lên kẻ địch ở gần sẽ tăng sát thương gây ra, mức tăng tương đương 1000% Tinh Thông Nguyên Tố của Yumemizuki Mizuki. Hiệu quả nêu trên mỗi 2.5s tối đa kích hoạt một lần.",
+      "1": "Ngoài ra, khi trong trạng thái Mộng Trôi, các nhân vật trong đội ở gần sẽ tăng Tinh Thông Nguyên Tố, mức tăng tương đương 10% Tinh Thông Nguyên Tố của bản thân Yumemizuki Mizuki."
+    }
+  },
   "constellation1": {
     "name": "Sương Mù Mờ Ảo Như Nước Xa",
     "description": {
       "0": "Yumemizuki Mizuki khi ở trong trạng thái Mộng Trôi, mỗi 3.5s sẽ gán hiệu ứng \"Chờ Đợi Hai Mươi Ba Đêm\" cho kẻ địch gần đó trong 3s. Kẻ địch bị ảnh hưởng bởi hiệu quả \"Chờ Đợi Hai Mươi Ba Đêm\" khi chịu Sát Thương Nguyên Tố Phong và kích hoạt phản ứng Khuếch Tán sẽ xóa bỏ hiệu quả này, khiến sát thương của lần Khuếch Tán đó lên kẻ địch gia tăng tương ứng với 1100% Tinh Thông Nguyên Tố của Mizuki."
+    },
+    "upgradedDescription": {
+      "0": "Yumemizuki Mizuki khi ở trong trạng thái Mộng Trôi, mỗi 3.5s sẽ gán hiệu ứng \"Chờ Đợi Hai Mươi Ba Đêm\" cho kẻ địch gần đó trong 3s. Kẻ địch bị ảnh hưởng bởi hiệu quả \"Chờ Đợi Hai Mươi Ba Đêm\" khi chịu Sát Thương Nguyên Tố Phong và kích hoạt phản ứng Khuếch Tán sẽ xóa bỏ hiệu quả này, khiến sát thương của lần Khuếch Tán đó lên kẻ địch gia tăng tương ứng với 1100% Tinh Thông Nguyên Tố của Mizuki, đồng thời thực hiện thêm một lần tấn công lên kẻ địch này, gây <anemo>Sát Thương Nguyên Tố Phong</anemo> tương đương 1000% Tinh Thông Nguyên Tố của Mizuki."
     }
   },
   "constellation2": {
     "name": "Như Từng Gặp Nhau Trong Giấc Mộng",
     "description": {
       "0": "Khi vào trạng thái Mộng Trôi, mỗi điểm Tinh Thông Nguyên Tố của Yumemizuki Mizuki sẽ cung cấp 0.04% Buff Sát Thương Nguyên Tố <pyro>Hỏa</pyro>, <hydro>Thủy</hydro>, <cryo>Băng</cryo>, <electro>Lôi</electro> cho tất cả nhân vật khác trong đội gần đó. Hiệu quả này duy trì đến khi trạng thái Mộng Trôi kết thúc."
+    },
+    "upgradedDescription": {
+      "0": "Khi vào trạng thái Mộng Trôi, mỗi điểm Tinh Thông Nguyên Tố của Yumemizuki Mizuki sẽ cung cấp 0.04% Buff Sát Thương Nguyên Tố <pyro>Hỏa</pyro>, <hydro>Thủy</hydro>, <cryo>Băng</cryo>, <electro>Lôi</electro> cho tất cả nhân vật khác trong đội gần đó. Hiệu quả này duy trì đến khi trạng thái Mộng Trôi kết thúc.",
+      "1": "Ngoài ra, khi Yumemizuki Mizuki trong trạng thái Mộng Trôi, kẻ địch ở gần sẽ giảm 20% Kháng Nguyên Tố <pyro>Hỏa</pyro>, <hydro>Thủy</hydro>, <cryo>Băng</cryo>, <electro>Lôi</electro> và <anemo>Phong</anemo>."
     }
   },
   "constellation3": {
@@ -142,6 +168,9 @@
     "name": "Dòng Suối Ấm Áp Hương Hoa Nồng",
     "description": {
       "0": "Khi nhặt <strong>Đồ Ăn Vặt Yumemi</strong> sinh ra từ Kỹ Năng Nộ <strong>Liệu Pháp Bí Truyền Anraku</strong> sẽ cùng lúc nhận được trị liệu và gây ra sát thương, đồng thời hồi phục cho Mizuki 5 điểm Năng Lượng Nguyên Tố. Trong thời gian duy trì một lần <strong>Liệu Pháp Bí Truyền Anraku</strong> tối đa hồi phục 4 lần Năng Lượng Nguyên Tố thông qua cách thức này."
+    },
+    "upgradedDescription": {
+      "0": "Khi nhặt <strong>Đồ Ăn Vặt Yumemi</strong> sinh ra từ Kỹ Năng Nộ <strong>Liệu Pháp Bí Truyền Anraku</strong> sẽ cùng lúc nhận được trị liệu và gây ra sát thương, và còn chữa trị thêm cho một nhân vật khác có HP khá thấp trong đội ở gần, lượng trị liệu bằng 266% Tinh Thông Nguyên Tố của Mizuki, đồng thời hồi phục 5 điểm Năng Lượng Nguyên Tố cho Mizuki. Trong thời gian duy trì một lần <strong>Liệu Pháp Bí Truyền Anraku</strong> tối đa hồi phục 4 lần Năng Lượng Nguyên Tố thông qua cách này."
     }
   },
   "constellation5": {
@@ -155,6 +184,10 @@
     "name": "Nỗi Nhớ Quanh Quẩn Vướng Trong Tim",
     "description": {
       "0": "Khi Yumemizuki Mizuki ở trong trạng thái Mộng Trôi, sát thương phản ứng Khuếch Tán kích hoạt từ nhân vật trong đội gần đó có thể Bạo Kích, với Tỷ Lệ Bạo Kích cố định là 30%, Sát Thương Bạo Kích cố định là 100%."
+    },
+    "upgradedDescription": {
+      "0": "Khi Yumemizuki Mizuki ở trong trạng thái Mộng Trôi, sát thương phản ứng Khuếch Tán kích hoạt từ nhân vật trong đội gần đó có thể Bạo Kích, với Tỷ Lệ Bạo Kích cố định là 30%, Sát Thương Bạo Kích cố định là 100%.",
+      "1": "Dựa trên phần Tinh Thông Nguyên Tố vượt quá 500 của Yumemizuki Mizuki, mỗi điểm sẽ khiến Yumemizuki Mizuki tăng 0.04% Tỷ Lệ Bạo Kích và 0.16% Sát Thương Bạo Kích, tối đa khiến Yumemizuki Mizuki tăng 20% Tỷ Lệ Bạo Kích và 80% Sát Thương Bạo Kích theo cách này."
     }
   }
 }

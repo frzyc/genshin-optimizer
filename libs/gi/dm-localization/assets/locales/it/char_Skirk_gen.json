@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -66,7 +70,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -99,13 +107,17 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
     "name": "Oltre ogni logica",
     "description": {
-      "0": "Quando i membri del gruppo vicini innescano reazioni di Congelamento, Superconduzione, Turbinio di Cryo o Cristallizzazione di Cryo su un avversario, si genera un Varco nel Vuoto vicino a quest'ultimo. Quest'effetto può attivarsi una volta ogni 2,5 s. Nel campo possono coesistere fino a 3 Varchi nel Vuoto generati da Skirk.",
+      "0": "Quando i membri del gruppo vicini innescano reazioni di Congelamento, Superconduzione, Astroconduzione, Turbinio di Cryo o Cristallizzazione di Cryo su un avversario, si genera un Varco nel Vuoto vicino a quest'ultimo. Quest'effetto può attivarsi una volta ogni 2,5 s. Nel campo possono coesistere fino a 3 Varchi nel Vuoto generati da Skirk.",
       "1": "<br/>",
       "2": "Per assorbire i Varchi nel Vuoto vicini, Skirk può usare i seguenti metodi:",
       "3": [

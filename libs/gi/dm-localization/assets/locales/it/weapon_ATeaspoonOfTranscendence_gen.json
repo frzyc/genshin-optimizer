@@ -1,0 +1,29 @@
+{
+  "name": "Un cucchiaino di trascendenza",
+  "description": {
+    "0": "Un oggetto di fantasia dotato d'innumerevoli definizioni in un mare di storie infinite. Nella vastità dell'universo o nel regno dei sogni, non c'è una vera differenza tra la spada sacra di un valoroso guerriero e il cucchiaino da tè di una principessa, né tra una gelida molla d'orologio e la chiave che apre le porte della trascendenza..."
+  },
+  "passiveName": "Promozione della Fata bianca",
+  "passiveDescription": {
+    "0": {
+      "0": "L'ATT aumenta di un <cryo>28%</cryo>.",
+      "1": "Inoltre, ogni volta che il personaggio che equipaggia l'arma colpisce un avversario con il suo attacco caricato, ottiene per un breve periodo l'effetto Trascendenza, che aumenta i suoi DAN da Astroconduzione di un <cryo>16%</cryo> per 5 s. L'effetto può accumularsi una volta ogni 0,2 s, per un massimo di 3 accumuli."
+    },
+    "1": {
+      "0": "L'ATT aumenta di un <cryo>35%</cryo>.",
+      "1": "Inoltre, ogni volta che il personaggio che equipaggia l'arma colpisce un avversario con il suo attacco caricato, ottiene per un breve periodo l'effetto Trascendenza, che aumenta i suoi DAN da Astroconduzione di un <cryo>20%</cryo> per 5 s. L'effetto può accumularsi una volta ogni 0,2 s, per un massimo di 3 accumuli."
+    },
+    "2": {
+      "0": "L'ATT aumenta di un <cryo>42%</cryo>.",
+      "1": "Inoltre, ogni volta che il personaggio che equipaggia l'arma colpisce un avversario con il suo attacco caricato, ottiene per un breve periodo l'effetto Trascendenza, che aumenta i suoi DAN da Astroconduzione di un <cryo>24%</cryo> per 5 s. L'effetto può accumularsi una volta ogni 0,2 s, per un massimo di 3 accumuli."
+    },
+    "3": {
+      "0": "L'ATT aumenta di un <cryo>49%</cryo>.",
+      "1": "Inoltre, ogni volta che il personaggio che equipaggia l'arma colpisce un avversario con il suo attacco caricato, ottiene per un breve periodo l'effetto Trascendenza, che aumenta i suoi DAN da Astroconduzione di un <cryo>28%</cryo> per 5 s. L'effetto può accumularsi una volta ogni 0,2 s, per un massimo di 3 accumuli."
+    },
+    "4": {
+      "0": "L'ATT aumenta di un <cryo>56%</cryo>.",
+      "1": "Inoltre, ogni volta che il personaggio che equipaggia l'arma colpisce un avversario con il suo attacco caricato, ottiene per un breve periodo l'effetto Trascendenza, che aumenta i suoi DAN da Astroconduzione di un <cryo>32%</cryo> per 5 s. L'effetto può accumularsi una volta ogni 0,2 s, per un massimo di 3 accumuli."
+    }
+  }
+}

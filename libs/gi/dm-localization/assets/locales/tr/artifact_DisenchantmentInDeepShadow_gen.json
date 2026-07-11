@@ -2,7 +2,7 @@
   "setName": "Derin Gölgelerde Uyanış",
   "setEffects": {
     "2": "+%18 Saldırı.",
-    "4": "Süper İletim Tepkimesi Hasarını %80 artırır. Kuşanan karakter Süper İletim etkisindeki düşmanlara saldırdığında bu saldırının Kritik Oranı %16 artar. Snezhnaya'ya yaklaşırken yeni bir lütuf elde edebilirsin..."
+    "4": "Süper İletim Tepkimesi Hasarını %80 ve Yıldız İletimi Tepkimesi Hasarını %40 artırır. Kuşanan karakter Süper İletim veya Yıldız İletiminden etkilenen düşmanlara saldırdığında bu saldırının Kritik Oranı %16 artar."
   },
   "pieces": {
     "flower": {

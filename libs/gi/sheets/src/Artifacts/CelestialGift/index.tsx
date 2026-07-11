@@ -40,7 +40,7 @@ const lightGuidanceWriteObj = objKeyValMap(
           condSet4,
           'on',
           equalStr(
-            input.isHexerei,
+            input.flags.isHexerei,
             1,
             equalStr(
               input.charEle,
@@ -73,7 +73,7 @@ const mortalHymnWriteObj = objKeyValMap(
           condSet4,
           'on',
           equalStr(
-            input.isHexerei,
+            input.flags.isHexerei,
             1,
             greaterEqStr(
               tally.hexerei,
@@ -128,7 +128,7 @@ const sheet: SetEffectSheet = {
     document: [
       {
         header: setHeader(4),
-        canShow: equal(input.isHexerei, 1, 1),
+        canShow: equal(input.flags.isHexerei, 1, 1),
         teamBuff: true,
         path: condSet4Path,
         value: condSet4,

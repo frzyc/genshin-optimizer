@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -75,7 +79,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -109,7 +117,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -134,6 +146,14 @@
     "description": {
       "0": "Diminue la consommation d'endurance de vos personnages dans l'équipe de 20 % lors de la nage.",
       "1": "Ne peut pas être cumulé avec d'autres aptitudes passives aux effets identiques."
+    }
+  },
+  "lockedPassive": {
+    "name": "En tête d'affiche",
+    "description": {
+      "0": "Utiliser la compétence élémentaire <strong>Invocation des marées</strong> avec un appui long permet d'obtenir 1 cumul de puissance toutes les 0,8 s, même hors attaque, afin d'augmenter les DGT infligés lors du déclenchement.",
+      "1": "De plus, toucher un ennemi en utilisant la compétence élémentaire <strong>Invocation des marées</strong> avec un appui long accorde également un effet bonus supplémentaire selon la puissance cumulée : chaque cumul diminue le TdR de la compétence élémentaire de 4 s et restaure 8 pts d'énergie élémentaire à Beidou, cet effet pouvant être déclenché une fois toutes les 15 s.",
+      "2": "De plus, Beidou passe en <strong>radiance « Astroconduction »</strong> lorsqu'elle est dans une <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>étendue polaris</strong></tooltip>."
     }
   },
   "constellation1": {
@@ -174,6 +194,11 @@
     "name": "Chancre du mal",
     "description": {
       "0": "La <electro>RÉS Électro</electro> des ennemis proches diminue de 15 % tant que <strong>Brisure d'orage</strong> est actif."
+    },
+    "upgradedDescription": {
+      "0": "La <electro>RÉS Électro</electro> des ennemis proches diminue de 15 % tant que <strong>Brisure d'orage</strong> est actif.",
+      "1": "<br/>",
+      "2": "<strong>Radiance « Astroconduction »</strong> : La <cryo>RÉS Cryo</cryo> des ennemis proches diminue de 15 % pendant la durée de Brisure d'orage et la maîtrise élémentaire du personnage déployé augmente de 200 pts."
     }
   }
 }

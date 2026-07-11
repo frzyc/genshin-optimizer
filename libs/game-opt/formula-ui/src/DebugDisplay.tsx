@@ -19,8 +19,14 @@ import {
 } from '@mui/material'
 import { Box, Stack } from '@mui/system'
 import type { SyntheticEvent } from 'react'
-import { useContext, useState } from 'react'
-import { CalcContext, DebugReadContext, TagContext } from './context'
+import { type ReactNode, useContext, useState } from 'react'
+import {
+  CalcContext,
+  DebugReadContext,
+  TagContext,
+  useDebugReadContextValue,
+} from './context'
+import type { DebugReadTarget } from './context'
 
 export function DebugListingsDisplay({
   formulasRead,
@@ -129,53 +135,77 @@ export function DebugListingsDisplay({
   )
 }
 
+export function DebugReadProvider({ children }: { children: ReactNode }) {
+  const value = useDebugReadContextValue()
+  return (
+    <DebugReadContext.Provider value={value}>
+      <DebugReadModal />
+      {children}
+    </DebugReadContext.Provider>
+  )
+}
+
 export function DebugReadModal() {
-  const tag = useContext(TagContext)
+  const { target, setTarget } = useContext(DebugReadContext)
+  const onClose = () => setTarget(undefined)
+  if (!target) return null
+  return (
+    <ModalWrapper open onClose={onClose}>
+      <DebugReadModalContent target={target} onClose={onClose} />
+    </ModalWrapper>
+  )
+}
+
+function DebugReadModalContent({
+  target,
+  onClose,
+}: {
+  target: DebugReadTarget
+  onClose: () => void
+}) {
+  const { read, tag } = target
   const calculator = useContext(CalcContext)?.withTag(tag)
   const debugCalc = calculator?.toDebug()
-  const { read, setRead } = useContext(DebugReadContext)
-  const computed = read && calculator?.compute(read)
-  const debug = read && debugCalc?.compute(read)
-  const name = read?.tag['name'] || read?.tag['q']
+  const computed = calculator?.compute(read)
+  const debug = debugCalc?.compute(read)
+  const name = read.tag['name'] || read.tag['q']
   const meta = debug?.meta
   const jsonStr = meta && prettify(meta)
 
   return (
-    <ModalWrapper open={!!read} onClose={() => setRead(undefined)}>
-      <CardThemed bgt="dark">
-        <CardHeader
-          title={`Debug formula for ${name}`}
-          action={
-            <IconButton onClick={() => setRead(undefined)}>
-              <CloseIcon />
-            </IconButton>
-          }
-        />
-        <CardContent>
-          <CardThemed bgt="normal">
-            <CardContent>
-              <Stack gap={1}>
-                Computed value: {computed?.val}
-                <Divider />
-                <Typography variant="h6">Read</Typography>
-                <CodeBlock text={prettify(read)} />
-                <Divider />
-                <Typography variant="h6">Calculator Tag</Typography>
-                <CodeBlock text={JSON.stringify(calculator?.cache.tag)} />
-                <Divider />
-                <Typography variant="h6">Tag Context</Typography>
-                <CodeBlock text={JSON.stringify(tag)} />
-                <Divider />
-                <Typography variant="h6">Conditionals</Typography>
-                <CodeBlock text={prettify(computed?.meta.conds)} />
-                <Divider />
-                <Typography variant="h6">Formula</Typography>
-                <CodeBlock text={jsonStr || ''} />
-              </Stack>
-            </CardContent>
-          </CardThemed>
-        </CardContent>
-      </CardThemed>
-    </ModalWrapper>
+    <CardThemed bgt="dark">
+      <CardHeader
+        title={`Debug formula for ${name}`}
+        action={
+          <IconButton onClick={onClose}>
+            <CloseIcon />
+          </IconButton>
+        }
+      />
+      <CardContent>
+        <CardThemed bgt="normal">
+          <CardContent>
+            <Stack gap={1}>
+              Computed value: {computed?.val}
+              <Divider />
+              <Typography variant="h6">Read</Typography>
+              <CodeBlock text={prettify(read)} />
+              <Divider />
+              <Typography variant="h6">Calculator Tag</Typography>
+              <CodeBlock text={JSON.stringify(calculator?.cache.tag)} />
+              <Divider />
+              <Typography variant="h6">Debug Tag</Typography>
+              <CodeBlock text={JSON.stringify(tag)} />
+              <Divider />
+              <Typography variant="h6">Conditionals</Typography>
+              <CodeBlock text={prettify(computed?.meta.conds)} />
+              <Divider />
+              <Typography variant="h6">Formula</Typography>
+              <CodeBlock text={jsonStr || ''} />
+            </Stack>
+          </CardContent>
+        </CardThemed>
+      </CardContent>
+    </CardThemed>
   )
 }

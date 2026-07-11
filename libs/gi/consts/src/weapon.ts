@@ -68,6 +68,7 @@ export type WeaponSwordKey = (typeof allWeaponSwordKeys)[number]
 
 export const allWeaponClaymoreKeys = [
   'Akuoumaru',
+  'ATeaspoonOfTranscendence',
   'AThousandBlazingSuns',
   'BeaconOfTheReedSea',
   'BlackcliffSlasher',

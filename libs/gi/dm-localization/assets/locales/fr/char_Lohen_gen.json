@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -66,13 +70,17 @@
       "12": "Temps de recharge",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
     "name": "Jugement manifeste",
     "description": {
-      "0": "Exécute une série rapide de frappes vers l'avant, consommant toute la <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>détermination</strong></tooltip> pour infliger des <cryo>DGT Cryo</cryo>, les DGT étant augmentés selon la quantité de <strong>détermination</strong> consommée. Si Lohen est dans l'état <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Coup de maître</strong></tooltip> lors de l'utilisation, la durée de la <strong>détermination</strong> augmente de 1,65 s.",
+      "0": "Exécute une série rapide de frappes vers l'avant, consommant toute la <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>détermination</strong></tooltip> pour infliger des <cryo>DGT Cryo</cryo>, les DGT étant augmentés selon la quantité de <strong>détermination</strong> consommée. Si Lohen est dans l'état <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Coup de maître</strong></tooltip> lors de l'utilisation, la durée de ce <strong>Coup de maître</strong> augmente de 1,65 s.",
       "1": "<br/>",
       "2": "<i>« Si prompt à céder ? Quel dommage, je ne faisais que commencer... »</i>"
     },
@@ -92,7 +100,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -121,7 +133,7 @@
       "0": "Après avoir terminé le <strong>devoir de la sorcière « Question d'opposition »</strong>, Lohen devient un personnage <strong>héxère</strong>. Si l'équipe contient au moins 2 personnages héxères, elle bénéficie de l'effet <strong>Hexerei : Rituel secret</strong> qui améliore les personnages héxères.",
       "1": "<br/>",
       "2": "<strong>Hexerei : Rituel secret</strong>",
-      "3": "En touchant un ennemi avec sa compétence élémentaire spéciale <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Gravé dans les os et l'âme</strong></tooltip> ou en utilisant son déchaînement élémentaire <strong>Jugement manifeste</strong>, les DGT des attaques normales et chargées de Lohen augmentent de 40 % pendant 6 s si sa <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>joie</strong></tooltip> a atteint au moins 50 % de son maximum."
+      "3": "En touchant un ennemi avec sa compétence élémentaire spéciale <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>Gravé dans les os et l'âme</strong></tooltip> ou en utilisant son déchaînement élémentaire <strong>Jugement manifeste</strong>, les DGT des attaques normales et chargées de Lohen augmentent de 40 % pendant 6 s si sa <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>détermination</strong></tooltip> a atteint au moins 50 % de son maximum."
     }
   },
   "constellation1": {

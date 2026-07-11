@@ -257,6 +257,9 @@
   "PalsSynergy": {
     "name": "Synergie fantastischer Freundschaft"
   },
+  "VenuePopularity": {
+    "name": "Beliebtheit des Veranstaltungsortes"
+  },
   "Primogem": {
     "name": "Urgestein"
   },
@@ -1163,6 +1166,9 @@
   "Prune": {
     "name": "Prune"
   },
+  "Sandrone": {
+    "name": "Sandrone"
+  },
   "KachinasStellaFortuna": {
     "name": "Stella Fortuna von Kachina"
   },
@@ -1255,6 +1261,9 @@
   },
   "PrunesStellaFortuna": {
     "name": "Stella Fortuna von Prune"
+  },
+  "SandronesStellaFortuna": {
+    "name": "Stella Fortuna von Sandrone"
   },
   "Apple": {
     "name": "Apfel"
@@ -3728,6 +3737,9 @@
   "PineAmber": {
     "name": "Bernharzkraut"
   },
+  "TeardropOfTheMoon": {
+    "name": "Träne des Mondes"
+  },
   "WindrestFlower": {
     "name": "Windhauchblume"
   },
@@ -5500,6 +5512,9 @@
   },
   "BorderlandShrineOfDepthsKey": {
     "name": "Schlüssel zu den Schreinen der Tiefe in den Grenzlanden"
+  },
+  "FrostMoonShrineOfDepthsKey": {
+    "name": "Schlüssel zu den Schreinen der Tiefe auf dem Frostmond"
   },
   "MnemonicCluster": {
     "name": "Fähigkeitsklumpen"
@@ -8375,6 +8390,33 @@
   "BoredomBustingBubblegum": {
     "name": "Kaugummi zum Zeitvertreib"
   },
+  "TeaPartyPolyphony": {
+    "name": "Polyphonie von Teegesellschaften"
+  },
+  "SuspiciousBirchSteamedPorkRibs": {
+    "name": "Misslungenes Pinnekjøtt"
+  },
+  "BirchSteamedPorkRibs": {
+    "name": "Pinnekjøtt"
+  },
+  "DeliciousBirchSteamedPorkRibs": {
+    "name": "Leckeres Pinnekjøtt"
+  },
+  "SuspiciousMeatFilledRyeBun": {
+    "name": "Misslungener Kalakukko"
+  },
+  "MeatFilledRyeBun": {
+    "name": "Kalakukko"
+  },
+  "DeliciousMeatFilledRyeBun": {
+    "name": "Leckerer Kalakukko"
+  },
+  "TeaPartyPreludeHerbalTea": {
+    "name": "Einstimmung auf die Teegesellschaft: Kräutertee"
+  },
+  "TeaPartyPreludeArtfulLatte": {
+    "name": "Einstimmung auf die Teegesellschaft: Kunstvoller Latte"
+  },
   "RecipeItem": {
     "name": "Objekt für Rezepte"
   },
@@ -9182,6 +9224,12 @@
   "RecipeMintBubblegum": {
     "name": "Rezept: Minz-Kaugummi"
   },
+  "RecipeBirchSteamedPorkRibs": {
+    "name": "Rezept: Pinnekjøtt"
+  },
+  "RecipeMeatFilledRyeBun": {
+    "name": "Rezept: Kalakukko"
+  },
   "CraftedItems": {
     "name": "Hergestelltes Produkt"
   },
@@ -9748,6 +9796,15 @@
   },
   "JeweledFlamingHilt": {
     "name": "Juwelenbesetzter Flammengriff"
+  },
+  "FracturedLunarIron": {
+    "name": "Zerbrochenes Mond-Eisen"
+  },
+  "DepletedLunarIron": {
+    "name": "Erschöpftes Mond-Eisen"
+  },
+  "UnblemishedLunarIron": {
+    "name": "Makelloses Mond-Eisen"
   },
   "HurricaneSeed": {
     "name": "Orkansamen"
@@ -13742,6 +13799,9 @@
   "AncientHandwriting": {
     "name": "Alte Handschrift"
   },
+  "SecretSourceAncientMoonsFount": {
+    "name": "Geheimquelle – Brunnen des alten Mondes"
+  },
   "ALetterCarriedByTheWind": {
     "name": "Vom Wind herbeigewehter Brief"
   },
@@ -13750,6 +13810,9 @@
   },
   "VarkasSecretStashOfCash": {
     "name": "Varkas eiserne Reserve"
+  },
+  "PaimonsNotes": {
+    "name": "Paimons Notizen"
   },
   "OnFungiCommunitiesDraftManuscript": {
     "name": "Entwurf von „Allgemeine Abhandlung über Pilzbestien-Gruppen“"
@@ -13850,11 +13913,35 @@
   "PrimalConstructComponent": {
     "name": "Urkonstrukt-Komponente"
   },
+  "WitnessOfTheMoon": {
+    "name": "„Zeugnis der Mondbeobachtung“"
+  },
+  "LostFlowerOfAncientTimes": {
+    "name": "Verlorene Blume alter Zeiten"
+  },
+  "SandronesTeaPartyInvitationLetter": {
+    "name": "Einladungsschreiben zu Sandrones Teegesellschaft"
+  },
   "AncientMondstadtRoyalSeal": {
     "name": "Altes Mondstädter Adelssiegel"
   },
   "SegmentDomainControlModuleZeroParticle": {
     "name": "Segment-Bereichskontrollmodul – Nullpartikel"
+  },
+  "FrostMoonSeal": {
+    "name": "Gravurstein des Frostmonds"
+  },
+  "FamilyPortraitByMamere": {
+    "name": "Von Mamère gemaltes „Familienporträt“"
+  },
+  "AlainGuillotinsEpitaph": {
+    "name": "Epitaph von Alain Guillotin"
+  },
+  "MoongazersEngravingI": {
+    "name": "Gravur des Mondbeobachters – Band I"
+  },
+  "MoongazersEngravingII": {
+    "name": "Gravur des Mondbeobachters – Band II"
   },
   "TearsAmongTheStars": {
     "name": "Tränen zwischen den Sternen"
@@ -14806,6 +14893,24 @@
   },
   "RadiantSpincrystal182": {
     "name": "Strahlender Drehkristall CLXXXII"
+  },
+  "RadiantSpincrystal183": {
+    "name": "Strahlender Drehkristall CLXXXIII"
+  },
+  "RadiantSpincrystal184": {
+    "name": "Strahlender Drehkristall CLXXXIV"
+  },
+  "RadiantSpincrystal185": {
+    "name": "Strahlender Drehkristall CLXXXV"
+  },
+  "RadiantSpincrystal186": {
+    "name": "Strahlender Drehkristall CLXXXVI"
+  },
+  "RadiantSpincrystal187": {
+    "name": "Strahlender Drehkristall CLXXXVII"
+  },
+  "RadiantSpincrystal188": {
+    "name": "Strahlender Drehkristall CLXXXVIII"
   },
   "LanternFiber": {
     "name": "Laternenpapierfasern"
@@ -15902,6 +16007,15 @@
   "TravelNotesGiftOfSplendor": {
     "name": "Erlebnispass – Geschenk der Pracht"
   },
+  "SandroneTeaBreak": {
+    "name": "Sandrone – Teepäuschen"
+  },
+  "NodKraiMoonbright": {
+    "name": "Nod-Krai – Mondhell"
+  },
+  "TravelNotesSunnySummer": {
+    "name": "Erlebnispass – Sommerfilm"
+  },
   "EchoDandelionKnight": {
     "name": "Echo – Löwenzahnritter"
   },
@@ -16312,6 +16426,12 @@
   },
   "LinneasNaturalistArchive": {
     "name": "Linneas Naturkundearchiv"
+  },
+  "SandronesPortableTeaTable": {
+    "name": "Sandrones tragbarer Teetisch"
+  },
+  "WitchsRevelationCase": {
+    "name": "Weissagungskästchen der Hexe"
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Erläuterung: Anemoculus-Resonanzstein"
@@ -16922,6 +17042,27 @@
   "ShareWithYou": {
     "name": "Mit dir geteilt"
   },
+  "HealingTreats": {
+    "name": "Leckereien zur Genesung"
+  },
+  "RelaxedReadiness": {
+    "name": "Entspannte Bereitschaft"
+  },
+  "GracefulDance": {
+    "name": "Anmutiger Tanz"
+  },
+  "CommandingStance": {
+    "name": "Autoritäre Haltung"
+  },
+  "GentleElegance": {
+    "name": "Sanfte Eleganz"
+  },
+  "PoisedToStrike": {
+    "name": "Bereit zum Angriff"
+  },
+  "MajesticBearing": {
+    "name": "Erhabene Haltung"
+  },
   "FantasticalMarvel": {
     "name": "Fantastische Wunder"
   },
@@ -16993,6 +17134,9 @@
   },
   "DemonSlayingGale": {
     "name": "Dämonentötender Sturm"
+  },
+  "DovefeatherMoondew": {
+    "name": "Mondtau-Taubenfeder"
   },
   "VigorousYapping": {
     "name": "Vitales Gespräch"
@@ -17107,6 +17251,12 @@
   },
   "ExperimentalFieldGenerator": {
     "name": "Experimenteller Feldgenerator"
+  },
+  "WaywardHermeticSpiritspeaker": {
+    "name": "Wandernde eremitische Seelensprecherin"
+  },
+  "BlackSerpentKnightWindcutter": {
+    "name": "Schwarzer Schlangenreiter – Wind schneidendes Schwert"
   },
   "UndividedHeart": {
     "name": "Eintracht"
@@ -17524,6 +17674,15 @@
   },
   "GravityField": {
     "name": "Schwerkraftfeld"
+  },
+  "VictoryFlowsFromTheTurningOfTides": {
+    "name": "Sieg entspringt dem Umbruch der Zeit"
+  },
+  "FlowOfForms": {
+    "name": "Fluss der Formen"
+  },
+  "OnceTheLoneWindThatKeptTheDarkCalamityAtBay": {
+    "name": "„Einst war es der einsame Wind, der das dunkle Unheil in Schach hielt ...“"
   },
   "MagicGuide": {
     "name": "Magieführer"
@@ -18104,6 +18263,15 @@
   "ElementalTransfigurationStormgaleBlessing": {
     "name": "Elementare Transfiguration: Gewitter-Segen"
   },
+  "NightmareOmen": {
+    "name": "Omen des Albtraums"
+  },
+  "ElementalTransfigurationAquabreezeBlessing": {
+    "name": "Elementare Transfiguration: Segen der Meeresbrise"
+  },
+  "ElementalTransfigurationThunderbloomBlessing": {
+    "name": "Elementare Transfiguration: Blühender Donnersegen"
+  },
   "ElementalResonanceWovenIce": {
     "name": "Elementarer Einklang – Gebündeltes Eis"
   },
@@ -18362,6 +18530,12 @@
   "TheOtherSideOfTheFrostmoon": {
     "name": "Die andere Seite des Frostmonds"
   },
+  "LilFungisFunTasticFiesta": {
+    "name": "Kleiner Pilzling, große Illusionen"
+  },
+  "ThePowerOfResearch": {
+    "name": "Der Antrieb der Forschung"
+  },
   "Origin": {
     "name": "Anbeginn"
   },
@@ -18538,6 +18712,12 @@
   },
   "RainlitBambooReverie": {
     "name": "Ein Traum von Regen und Bambus"
+  },
+  "WhispersOfStarsAndSmoke": {
+    "name": "Nachtgespräch zwischen Sternen und Rauch"
+  },
+  "HurlockVariations": {
+    "name": "Hurlock-Variationen"
   },
   "RadiantPhantasm": {
     "name": "Strahlende Erscheinung"
@@ -18890,6 +19070,9 @@
   "PreBattleRespite": {
     "name": "Ruhepause vor dem Kampf"
   },
+  "ATeaPartyAtLeisure": {
+    "name": "Freizeitliche Teegesellschaft"
+  },
   "WildernessOfTheFarNorth": {
     "name": "Die Ebenen des hohen Nordens"
   },
@@ -19178,6 +19361,12 @@
   "CityStreetLampLowLanternlight": {
     "name": "Städtische Straßenlaterne – „Niedriges Laternenlicht“"
   },
+  "MovableSmallSpotlight": {
+    "name": "Bewegbare, kleine Leuchte"
+  },
+  "StandingStreetLampBeaconInTheMistyNight": {
+    "name": "Straßenlaterne – „Nebelführer“"
+  },
   "EfflorescentIllumination": {
     "name": "„Mannigfaltiges Licht der Blütenblätter“"
   },
@@ -19457,6 +19646,9 @@
   "FrostMoonRoundTableASoftBlueSky": {
     "name": "Frostmond-Rundtisch – „Sanftes Himmelblau“"
   },
+  "TeaPartyDiningTableThePerfectGathering": {
+    "name": "Tisch für die Teegesellschaft – „Perfektes Beisammensein“"
+  },
   "BreezeBlessedBed": {
     "name": "Brisenbelüftetes Bett"
   },
@@ -19624,6 +19816,9 @@
   },
   "PedunculateOakWoodMoonrestBackedChair": {
     "name": "Sommereichenstuhl – „Mondkissen“"
+  },
+  "TeaPartyChairCrimsonAndGold": {
+    "name": "Stuhl für die Teegesellschaft – „Rotgold“"
   },
   "NorthernStoneHearth": {
     "name": "Steinherd aus dem Norden"
@@ -19895,6 +20090,9 @@
   "FluffyLittleRug": {
     "name": "„Flauschteppich“"
   },
+  "TeaPartyCarpetSoftToTheTouch": {
+    "name": "Teppich für die Teegesellschaft – „Weiche Textur“"
+  },
   "VibrantPotBornInFlames": {
     "name": "Tonkrug – „Geboren aus der Glut“"
   },
@@ -20132,6 +20330,9 @@
   "FlowerShapedMachineComponent": {
     "name": "„Blumenförmige Vorrichtungskomponente“"
   },
+  "TeaPartyCartDessertTime": {
+    "name": "Servierwagen für die Teegesellschaft – „Dessertzeit“"
+  },
   "TeahouseToolMinisculeMissesMakeAMile": {
     "name": "Teestuben-Utensil – „Aufs Miligramm genau“"
   },
@@ -20173,6 +20374,9 @@
   },
   "FrostMoonSmallTableAromaOfFreshFruit": {
     "name": "Frostmond-Tischchen – „Fruchtiger Duft“"
+  },
+  "TeaPartyCupRefreshingFlavor": {
+    "name": "Teetasse für die Teegesellschaft – „Frischer Geschmack“"
   },
   "RealizationsFromTheLandOfWisdom": {
     "name": "„Erhabenheit am Ort der Gelehrsamkeit“"
@@ -22217,6 +22421,9 @@
   "LittleCover": {
     "name": "„Kleine Überdachung“"
   },
+  "CampBarrierTreatmentArea": {
+    "name": "Lagerbarriere – „Behandlungsbereich“"
+  },
   "BookshelfFreeReading": {
     "name": "Bücher- und Zeitschriftenregal – „Zur freien Verfügung“"
   },
@@ -22354,6 +22561,9 @@
   },
   "GentleEmbrace": {
     "name": "„Sanfte Umarmung“"
+  },
+  "UnusableLegacy": {
+    "name": "„Unbenutzbares Vermächtnis“"
   },
   "WeatheredBambooFence": {
     "name": "Verwitterter Bambuszaun"
@@ -22772,6 +22982,24 @@
   "BloomingSplendor": {
     "name": "„Blumige Fülle“"
   },
+  "NashaStallDeepRootedTraditions": {
+    "name": "Stand in Nasha – „Uralte Herkunft“"
+  },
+  "VesselOfThePast": {
+    "name": "„Gefäß der Vergangenheit“"
+  },
+  "LargeCargoCrateReliableSupport": {
+    "name": "Große Kiste – „Stabiler Schutz“"
+  },
+  "MediumCargoCrateBasicSupplies": {
+    "name": "Mittelgroße Kiste – „Grundlegende Versorgung“"
+  },
+  "MediumMetalScrapBarrel": {
+    "name": "Mittelgroßer Eisenschrotteimer"
+  },
+  "SignallessTower": {
+    "name": "„Turm ohne Signal“"
+  },
   "SirCapyOfTheLongIncisors": {
     "name": "„Ritter Schneidezahn“"
   },
@@ -22804,5 +23032,11 @@
   },
   "MiniatureStonecraft": {
     "name": "„Miniatur-Steinmetzkunst“"
+  },
+  "InfiniteRecursionFormula": {
+    "name": "„Formel für unendliche Rekursion“"
+  },
+  "MoonEnvoyOfSilverRadiance": {
+    "name": "„Mondgesandte des Silberglanzes“"
   }
 }

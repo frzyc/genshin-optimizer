@@ -1,4 +1,5 @@
 import type { TagMapNodeEntries } from '../util'
+import ATeaspoonOfTranscendence from './ATeaspoonOfTranscendence'
 import AThousandBlazingSuns from './AThousandBlazingSuns'
 import AThousandFloatingDreams from './AThousandFloatingDreams'
 import Absolution from './Absolution'
@@ -288,6 +289,7 @@ const data: TagMapNodeEntries[] = [
   WolfFang,
   XiphosMoonlight,
   Akuoumaru,
+  ATeaspoonOfTranscendence,
   AThousandBlazingSuns,
   BeaconOfTheReedSea,
   BlackcliffSlasher,

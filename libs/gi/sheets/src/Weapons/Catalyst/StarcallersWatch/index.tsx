@@ -1,5 +1,12 @@
 import { type WeaponKey } from '@genshin-optimizer/gi/consts'
-import { equal, equalStr, input, subscript } from '@genshin-optimizer/gi/wr'
+import {
+  equal,
+  equalStr,
+  infoMut,
+  input,
+  subscript,
+  target,
+} from '@genshin-optimizer/gi/wr'
 import { cond, nonStackBuff, st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
@@ -16,11 +23,12 @@ const eleMas = equal(
 const dmg_arr = [-1, 0.28, 0.35, 0.42, 0.49, 0.56]
 const [condShieldPath, condShield] = cond(key, 'shield')
 const nonstackWrite = equalStr(condShield, 'on', input.charKey)
-const [shield_dmg_, shield_dmg_inactive] = nonStackBuff(
+const [shield_dmg_disp, shield_dmg_dispinactive] = nonStackBuff(
   'starcaller',
   'all_dmg_',
   subscript(input.weapon.refinement, dmg_arr)
 )
+const shield_dmg_ = equal(input.activeCharKey, target.charKey, shield_dmg_disp)
 
 const data = dataObjForWeaponSheet(key, {
   premod: {
@@ -56,10 +64,13 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: shield_dmg_,
+              node: infoMut(shield_dmg_disp, {
+                path: 'all_dmg_',
+                isTeamBuff: true,
+              }),
             },
             {
-              node: shield_dmg_inactive,
+              node: shield_dmg_dispinactive,
             },
           ],
         },

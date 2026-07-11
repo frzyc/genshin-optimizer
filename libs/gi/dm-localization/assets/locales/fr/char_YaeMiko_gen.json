@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -72,7 +76,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -80,6 +88,12 @@
     "description": {
       "0": "La légende du « kitsunetsuki », ou la possession par un Kitsune, est l'un des contes populaires d'Inazuma. Parmi eux, celui du Kitsune céleste est considéré comme spécial, accablant les ennemis du Sanctuaire de Narukami sous la forme d'un éclair qui s'abat, infligeant des <electro>DGT Électro de zone</electro>.",
       "1": "En utilisant cette compétence, Yae Miko descelle les sakura dévastateurs à proximité pour détruire leurs formes extérieures et les transformer en éclairs de tenko descendant du ciel, infligeant des <electro>DGT Électro de zone</electro>. Chaque sakura dévastateur détruit de cette manière déclenche un éclair.",
+      "2": "<br/>",
+      "3": "<i>Yae n'utilise sa quintessence de Kitsune céleste que dans ces moments-là, brandissant elle-même la foudre. Tous ceux qui ont vu les queues de la guuji ont été réduits en cendres, alors rappelez-vous que dame Yae n'a pas de queue !</i>"
+    },
+    "upgradedDescription": {
+      "0": "La légende du « kitsunetsuki », ou la possession par un Kitsune, est l'un des contes populaires d'Inazuma. Parmi eux, celui du Kitsune céleste est considéré comme spécial, accablant les ennemis du Sanctuaire de Narukami sous la forme d'un éclair qui s'abat, infligeant des <electro>DGT Électro de zone</electro>.",
+      "1": "En utilisant cette compétence, Yae Miko utilise les sakura dévastateurs à proximité pour faire descendre des éclairs de tenko du ciel, infligeant des <electro>DGT Électro de zone</electro>. Chaque sakura dévastateur à portée déclenche un éclair.",
       "2": "<br/>",
       "3": "<i>Yae n'utilise sa quintessence de Kitsune céleste que dans ces moments-là, brandissant elle-même la foudre. Tous ceux qui ont vu les queues de la guuji ont été réduits en cendres, alors rappelez-vous que dame Yae n'a pas de queue !</i>"
     },
@@ -99,13 +113,22 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
     "name": "Ombre sacrée du sanctuaire",
     "description": {
       "0": "Lors de l'utilisation de <strong>Technique secrète : Incarnation de tenko</strong>, le TdR d'<strong>Évocation des yakan : Sakura dévastateur</strong> se réinitialise une fois pour chaque sakura dévastateur détruit."
+    },
+    "upgradedDescription": {
+      "0": "Chaque sakura dévastateur utilisé lors de <strong>Technique secrète : Incarnation de tenko</strong> réinitialise le TdR d'<strong>Évocation des yakan : Sakura dévastateur</strong>.",
+      "1": "Utiliser <strong>Évocation des yakan : Sakura dévastateur</strong> lorsqu'au moins 3 sakura dévastateurs sont à proximité permet également à Yae Miko de déclencher un éclair qui inflige des <electro>DGT Électro</electro> d'une valeur équivalant à 40 % de son ATQ.",
+      "2": "<strong>Radiance « Astroconduction »</strong> : L'éclair supplémentaire mentionné précédemment est converti pour infliger une instance de <electro>DGT Électro</electro> considérés comme des DGT de réaction d'Astroconduction d'une valeur équivalant à 50 % de l'ATQ de Yae Miko."
     }
   },
   "passive2": {
@@ -120,16 +143,30 @@
       "0": "25 % de chances de synthétiser un matériau d'aptitude aléatoire supplémentaire (même rareté et région que les matériaux consommés)."
     }
   },
+  "lockedPassive": {
+    "name": "Édit de purification",
+    "description": {
+      "0": "Prolonge la durée des sakura dévastateurs de 10 s. Lorsqu'un personnage de l'équipe à proximité a déclenché une réaction de Supraconduction ou d'Astroconduction, le prochain éclair de sakura dévastateur est renforcé : les DGT infligés augmentent d'une valeur équivalant à 80 % de l'ATQ de Yae Miko, cet effet pouvant être déclenché une fois toutes les 2,5 s.",
+      "1": "<strong>Radiance « Astroconduction »</strong> : Toucher un ennemi avec un éclair ainsi renforcé d'un sakura dévastateur inflige une instance supplémentaire de <electro>DGT Électro</electro> d'une valeur équivalant à 200 % de l'ATQ de Yae Miko, ces DGT étant considérés comme des DGT de réaction d'Astroconduction.",
+      "2": "De plus, Yae Miko passe en <strong>radiance « Astroconduction »</strong> lorsqu'elle est dans une <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>étendue polaris</strong></tooltip>."
+    }
+  },
   "constellation1": {
     "name": "Offrande des yakan",
     "description": {
       "0": "Lorsque <strong>Technique secrète : Incarnation de tenko</strong> déclenche un éclair de tenko, Yae Miko récupère 8 pts d'énergie élémentaire."
+    },
+    "upgradedDescription": {
+      "0": "Lorsque <strong>Technique secrète : Incarnation de tenko</strong> déclenche un éclair de tenko, Yae Miko récupère 8 pts d'énergie élémentaire. Lorsque Yae Miko a déclenché une réaction de Supraconduction ou d'Astroconduction ou infligé des DGT de réaction d'Astroconduction, les personnages de l'équipe à proximité bénéficient d'un bonus de DGT Électro et d'un bonus de DGT d'Astroconduction de 50 % pendant 10 s, la durée de l'effet étant actualisée s'il est de nouveau déclenché."
     }
   },
   "constellation2": {
     "name": "Glapissement sous la lune",
     "description": {
       "0": "Les <strong>sakura dévastateurs</strong> commencent au Niv.2 et peuvent monter jusqu'au Niv.4, et leur portée d'attaque augmente de 60 %."
+    },
+    "upgradedDescription": {
+      "0": "Les <strong>sakura dévastateurs</strong> commencent au Niv.2 et peuvent monter jusqu'au Niv.4, et leur portée d'attaque augmente de 60 %. De plus, la maîtrise élémentaire de Yae Miko et celle de votre personnage déployé augmentent de 60, 90, 120, 200 pts si un sakura dévastateur est sur le terrain, selon le niveau de ce dernier."
     }
   },
   "constellation3": {
@@ -143,6 +180,9 @@
     "name": "Canalisation de sakura",
     "description": {
       "0": "Lorsque l'éclair d'un <strong>sakura dévastateur</strong> a touché un ennemi, tous les membres de l'équipe à proximité obtiennent un <electro>bonus de DGT Électro</electro> de 20 % pendant 5 s."
+    },
+    "upgradedDescription": {
+      "0": "Lorsque l'éclair d'un <strong>sakura dévastateur</strong> a touché un ennemi, tous les membres de l'équipe à proximité obtiennent un <electro>bonus de DGT Électro</electro> de 20 % pendant 5 s et Yae Miko récupère 8 pts d'énergie élémentaire, cette restauration d'énergie élémentaire pouvant être déclenchée une fois toutes les 5 s. De plus, les DGT des déchaînements élémentaires de Yae Miko augmentent de 100 %."
     }
   },
   "constellation5": {
@@ -156,6 +196,9 @@
     "name": "Art tabou : Daisesshou",
     "description": {
       "0": "Les attaques des <strong>sakura dévastateurs</strong> ignorent 60 % de la DÉF de l'ennemi."
+    },
+    "upgradedDescription": {
+      "0": "Les attaques des <strong>sakura dévastateurs</strong> ignorent 60 % de la DÉF de l'ennemi et les DGT CRIT des DGT de réactions d'Astroconduction infligées par Yae Miko augmentent de 200 %."
     }
   }
 }

@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -79,7 +83,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -113,7 +121,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -157,7 +169,7 @@
   "constellation4": {
     "name": "Vũ Điệu Trăng Tuyết Và Sáo Trúc",
     "description": {
-      "0": "Freminet sau khi kích hoạt phản ứng Đóng Băng, Phá Băng, Siêu Dẫn lên kẻ địch, tấn công tăng 9%. Hiệu quả này duy trì 6s, tối đa cộng dồn 2 lần, mỗi 0.3s tối đa kích hoạt một lần."
+      "0": "Freminet sau khi kích hoạt phản ứng Đóng Băng, Phá Băng, Siêu Dẫn, Tinh-Siêu Dẫn lên kẻ địch, Tấn Công tăng 9%. Hiệu quả này duy trì 6s, tối đa cộng dồn 2 lần, mỗi 0.3s tối đa kích hoạt một lần."
     }
   },
   "constellation5": {
@@ -170,7 +182,7 @@
   "constellation6": {
     "name": "Thời Khắc Bừng Tỉnh Và Quyết Tâm",
     "description": {
-      "0": "Freminet sau khi kích hoạt phản ứng Đóng Băng, Phá Băng, Siêu Dẫn lên kẻ địch, sát thương bạo kích tăng 12%. Hiệu quả này duy trì 6s, tối đa cộng dồn 3 lần, mỗi 0.3s tối đa kích hoạt một lần."
+      "0": "Freminet sau khi kích hoạt phản ứng Đóng Băng, Phá Băng, Siêu Dẫn, Tinh-Siêu Dẫn lên kẻ địch, Sát Thương Bạo Kích tăng 12%. Hiệu quả này duy trì 6s, tối đa cộng dồn 3 lần, mỗi 0.3s tối đa kích hoạt một lần."
     }
   }
 }

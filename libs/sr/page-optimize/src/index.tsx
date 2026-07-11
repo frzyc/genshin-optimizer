@@ -1,9 +1,7 @@
 import { useTitle } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
-import type { DebugReadContextObj } from '@genshin-optimizer/game-opt/formula-ui'
 import {
-  DebugReadContext,
-  DebugReadModal,
+  DebugReadProvider,
   TagContext,
 } from '@genshin-optimizer/game-opt/formula-ui'
 import type { SetConditionalFunc } from '@genshin-optimizer/game-opt/sheet-ui'
@@ -12,7 +10,6 @@ import {
   SetConditionalContext,
   SrcDstDisplayContext,
 } from '@genshin-optimizer/game-opt/sheet-ui'
-import type { BaseRead } from '@genshin-optimizer/pando/engine'
 import { characterKeyToGenderedKey } from '@genshin-optimizer/sr/assets'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import { allCharacterKeys } from '@genshin-optimizer/sr/consts'
@@ -105,14 +102,6 @@ export default function PageOptimize() {
     [characterKey]
   )
 
-  const [debugRead, setDebugRead] = useState<BaseRead>()
-  const debugObj = useMemo<DebugReadContextObj>(
-    () => ({
-      read: debugRead,
-      setRead: setDebugRead,
-    }),
-    [debugRead]
-  )
   return (
     <Box>
       <CharacterAutocomplete
@@ -126,8 +115,7 @@ export default function PageOptimize() {
               <SrcDstDisplayContext.Provider value={srcDstDisplayContextValue}>
                 <ConditionalValuesContext.Provider value={charOpt.conditionals}>
                   <SetConditionalContext.Provider value={setConditional}>
-                    <DebugReadContext.Provider value={debugObj}>
-                      <DebugReadModal />
+                    <DebugReadProvider>
                       <Box
                         sx={{
                           display: 'flex',
@@ -141,7 +129,7 @@ export default function PageOptimize() {
                           <CharacterOptDisplay />
                         </TeamHeaderHeightContext.Provider>
                       </Box>
-                    </DebugReadContext.Provider>
+                    </DebugReadProvider>
                   </SetConditionalContext.Provider>
                 </ConditionalValuesContext.Provider>
               </SrcDstDisplayContext.Provider>
