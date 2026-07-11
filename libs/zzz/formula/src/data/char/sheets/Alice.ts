@@ -126,7 +126,7 @@ const sheet = register(
   // Buffs
   registerBuff(
     'core_anom_mv_mult_',
-    teamBuff.dmg.anom_mv_mult_.physical.add(
+    teamBuff.combat.anom_mv_mult_.physical.add(
       physical_anomaly_inflicted.ifOn(percent(dm.core.dmg))
     ),
     undefined,

@@ -22,6 +22,8 @@ const dm = {
       data_gen.skillParams['special']['SpecialAttackAzureFlash'],
     SpecialAttackThunderSmite:
       data_gen.skillParams['special']['SpecialAttackThunderSmite'],
+    SpecialAttackAzureFlashBoundary:
+      data_gen.skillParams['special']['SpecialAttackAzureFlashBoundary'],
     EXSpecialAttackSunderingBolt:
       data_gen.skillParams['special']['EXSpecialAttackSunderingBolt'],
   },
@@ -41,10 +43,15 @@ const dm = {
   core: {
     common_dmg_: data_gen.coreParams[0],
     aftershock_crit_dmg_scaling_: data_gen.coreParams[1],
+    cooldown: data_gen.coreParams[2],
+    bonus_aftershock_crit_dmg_scaling_: data_gen.coreParams[3][0],
   },
   ability: {
     crit_: data_gen.abilityParams[0],
     aftershock_dmg_: data_gen.abilityParams[1],
+  },
+  potential: {
+    aftershock_dmg_: data_gen.potentialParams[0],
   },
   m1: {
     additional_dmg_triggers: data_gen.mindscapeParams[0][0],

@@ -1,6 +1,7 @@
 import {
   cmpGE,
   constant,
+  max,
   min,
   prod,
   subscript,
@@ -35,7 +36,7 @@ const baseTag = getBaseTag(data_gen)
 
 const { char } = own
 
-const { exSpecial_active, additional_burn } = allBoolConditionals(key)
+const { exSpecial_active, additional_burn, abloom } = allBoolConditionals(key)
 const { thermal_penetration } = allNumConditionals(key, true, 0, dm.m2.stacks)
 
 const core_afterburn_dmg_ = ownBuff.combat.common_dmg_.add(
@@ -94,7 +95,12 @@ const sheet = register(
       'basic',
       'BasicAttackMixedFlameBlend',
       0,
-      { ...baseTag, damageType1: 'basic' },
+      {
+        ...baseTag,
+        damageType1: 'basic',
+        skillType1: 'basicSkill',
+        skillType2: 'assistSkill',
+      },
       'atk',
       undefined,
       ability_fire_anomBuildup_
@@ -104,7 +110,12 @@ const sheet = register(
       'basic',
       'BasicAttackMixedFlameBlend',
       1,
-      { ...baseTag, damageType1: 'basic' },
+      {
+        ...baseTag,
+        damageType1: 'basic',
+        skillType1: 'basicSkill',
+        skillType2: 'assistSkill',
+      },
       'atk',
       undefined,
       ability_fire_anomBuildup_
@@ -155,7 +166,7 @@ const sheet = register(
 
   ...customDmg(
     'core_afterburn_dmg',
-    { ...baseTag, skillType: 'assistSkill' },
+    { ...baseTag, skillType1: 'assistSkill' },
     prod(
       own.final.atk,
       sum(
@@ -172,7 +183,7 @@ const sheet = register(
     'core_afterburn_anomBuildup',
     {
       ...baseTag,
-      skillType: 'assistSkill',
+      skillType1: 'assistSkill',
     },
     constant(60),
     undefined,
@@ -182,7 +193,7 @@ const sheet = register(
   ),
   ...customDmg(
     'm6_additional_afterburn_dmg',
-    { ...baseTag, skillType: 'assistSkill' },
+    { ...baseTag, skillType1: 'assistSkill' },
     cmpGE(
       char.mindscape,
       6,
@@ -193,6 +204,51 @@ const sheet = register(
   ),
 
   // Buffs
+  registerBuff(
+    'exSpecial_ether_anom_mv_mult_',
+    teamBuff.combat.anom_mv_mult_.ether.addWithDmgType(
+      'abloom',
+      abloom.ifOn(percent(4.8))
+    ),
+    undefined,
+    true
+  ),
+  registerBuff(
+    'exSpecial_electric_anom_mv_mult_',
+    teamBuff.combat.anom_mv_mult_.electric.addWithDmgType(
+      'abloom',
+      abloom.ifOn(percent(2.4))
+    ),
+    undefined,
+    true
+  ),
+  registerBuff(
+    'exSpecial_fire_anom_mv_mult_',
+    teamBuff.combat.anom_mv_mult_.fire.addWithDmgType(
+      'abloom',
+      abloom.ifOn(percent(6))
+    ),
+    undefined,
+    true
+  ),
+  registerBuff(
+    'exSpecial_physical_anom_mv_mult_',
+    teamBuff.combat.anom_mv_mult_.physical.addWithDmgType(
+      'abloom',
+      abloom.ifOn(percent(0.4))
+    ),
+    undefined,
+    true
+  ),
+  registerBuff(
+    'exSpecial_ice_anom_mv_mult_',
+    teamBuff.combat.anom_mv_mult_.ice.addWithDmgType(
+      'abloom',
+      abloom.ifOn(percent(0.6))
+    ),
+    undefined,
+    true
+  ),
   registerBuff(
     'core_afterburn_dmg_',
     core_afterburn_dmg_,
@@ -206,6 +262,32 @@ const sheet = register(
     undefined,
     undefined,
     false
+  ),
+  registerBuff(
+    'potential_anomMas',
+    ownBuff.combat.anomMas.add(
+      min(
+        dm.potential.max_anomMas,
+        prod(
+          max(0, sum(own.initial.enerRegen, -dm.potential.initial_enerRegen)),
+          subscript(char.potential, dm.potential.anomMas),
+          percent(1 / dm.potential.enerRegenStep)
+        )
+      )
+    )
+  ),
+  registerBuff(
+    'potential_common_dmg_',
+    ownBuff.combat.common_dmg_.add(
+      min(
+        percent(dm.potential.max_common_dmg_),
+        prod(
+          max(0, sum(own.initial.enerRegen, -dm.potential.initial_enerRegen)),
+          subscript(char.potential, dm.potential.common_dmg_),
+          percent(1 / dm.potential.enerRegenStep)
+        )
+      )
+    )
   ),
   registerBuff(
     'm1_afterburn_fire_anomBuildup_',
@@ -231,7 +313,8 @@ const sheet = register(
   ),
   registerBuff(
     'm4_assistSkill_crit_',
-    ownBuff.combat.crit_.assistSkill.add(
+    ownBuff.combat.crit_.addWithSkillType(
+      'assistSkill',
       cmpGE(char.mindscape, 4, dm.m4.exSpecial_assist_crit_)
     )
   ),
@@ -251,7 +334,7 @@ const sheet = register(
   registerBuff('m6_fire_resIgn_', m6_fire_resIgn_, undefined, undefined, false),
   registerBuff(
     'm6_fire_anom_mv_mult_',
-    ownBuff.dmg.anom_mv_mult_.fire.add(
+    ownBuff.combat.anom_mv_mult_.fire.add(
       cmpGE(
         char.mindscape,
         6,

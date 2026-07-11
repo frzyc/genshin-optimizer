@@ -113,8 +113,10 @@ function getPotentialStrings(data: CharacterData['potential']) {
   if (Object.keys(data).length === 0) {
     return {}
   }
+  const desc = Object.values(data).map((pot) => processText(pot.Desc))
+  desc.unshift('')
   return {
     name: Object.values(data).filter((_, i) => i > 0)[0].Name,
-    desc: Object.values(data).map((pot) => processText(pot.Desc)),
+    desc,
   }
 }

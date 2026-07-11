@@ -23,6 +23,17 @@ export const buffs = {
       name: 'ability_fire_dmg_',
     },
   },
+  ability_crit_dmg_: {
+    sheet: 'Soldier11',
+    name: 'ability_crit_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'crit_dmg_',
+      sheet: 'Soldier11',
+      name: 'ability_crit_dmg_',
+    },
+  },
   m2_common_dmg_: {
     sheet: 'Soldier11',
     name: 'm2_common_dmg_',

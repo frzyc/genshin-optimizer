@@ -118,6 +118,8 @@ const stats: Record<Stat, Desc> = {
   flat_dmg: agg,
   anom_flat_dmg: agg,
   addl_disorder_: agg,
+  anom_mv_mult_: agg,
+  veilVulnerabilityCap_: agg,
   direct_dmg_: agg,
 } as const
 const finalStats = objFilterKeys(stats, [
@@ -173,7 +175,6 @@ export const ownTag = {
     dmg_taken_mult_: fixed,
     stunned_mult_: fixed,
     mv_mult_: agg,
-    anom_mv_mult_: agg,
     sheer_mult_: fixed,
     anomaly_crit_mult_: fixed,
     anom_base_mult_: fixed,

@@ -9,6 +9,26 @@ const cond = Grace.conditionals
 const buff = Grace.buffs
 
 const sheet = createBaseSheet(key, {
+  perSkillAbility: {
+    special: {
+      Pulse: [
+        {
+          type: 'conditional',
+          conditional: {
+            label: ch('abloom'),
+            metadata: cond.abloom,
+            fields: [
+              fieldForBuff(buff.special_ether_anom_mv_mult_),
+              fieldForBuff(buff.special_electric_anom_mv_mult_),
+              fieldForBuff(buff.special_fire_anom_mv_mult_),
+              fieldForBuff(buff.special_physical_anom_mv_mult_),
+              fieldForBuff(buff.special_ice_anom_mv_mult_),
+            ],
+          },
+        },
+      ],
+    },
+  },
   core: [
     {
       type: 'conditional',
@@ -29,6 +49,16 @@ const sheet = createBaseSheet(key, {
         label: st('uponLaunch.1', { val1: '$t(skills.exSpecial)' }),
         metadata: cond.exSpecialHit,
         fields: [fieldForBuff(buff.ability_shock_dmg_)],
+      },
+    },
+  ],
+  potential: [
+    {
+      type: 'conditional',
+      conditional: {
+        label: ch('potentialCond'),
+        metadata: cond.zapConsumed,
+        fields: [fieldForBuff(buff.potential_electric_dmg_)],
       },
     },
   ],

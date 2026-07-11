@@ -1,3 +1,4 @@
+import type { NumNode } from '@genshin-optimizer/pando/engine'
 import { cmpGE, prod, subscript, sum } from '@genshin-optimizer/pando/engine'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
@@ -29,6 +30,17 @@ const { ice_attacks } = allNumConditionals(key, true, 0, dm.ability.stacks)
 const { exSpecial_chain_quickCharge, feast_begins } = allBoolConditionals(key)
 const { flash_freeze_consumed } = allNumConditionals(key, true, 0, dm.m1.stacks)
 const { flash_freeze } = allNumConditionals(key, true, 0, 3)
+
+const ability_check = (a: number | NumNode) =>
+  cmpGE(
+    sum(
+      team.common.count.withSpecialty('stun'),
+      team.common.count.ice,
+      team.common.count.withFaction('VictoriaHousekeepingCo')
+    ),
+    3,
+    a
+  )
 
 const core_basic_crit_dmg_ = ownBuff.combat.crit_dmg_.addWithDmgType(
   'basic',
@@ -168,17 +180,6 @@ const sheet = register(
       undefined,
       ...core_basic_crit_dmg_
     )
-    // TODO: a hit should be here
-    // dmgDazeAndAnomOverride(
-    //   dm,
-    //   'basic',
-    //   'BasicAttackIcyBlade',
-    //   2,
-    //   { ...baseTag, damageType1: 'basic' },
-    //   'atk',
-    //   undefined,
-    //   ...core_basic_crit_dmg_
-    // )
   ),
 
   // Buffs
@@ -213,14 +214,29 @@ const sheet = register(
   registerBuff(
     'ability_ice_dmg_',
     ownBuff.combat.dmg_.ice.add(
-      cmpGE(
-        sum(
-          team.common.count.withSpecialty('stun'),
-          team.common.count.ice,
-          team.common.count.withFaction('VictoriaHousekeepingCo')
-        ),
-        3,
-        prod(ice_attacks, percent(dm.ability.ice_dmg_))
+      ability_check(prod(ice_attacks, percent(dm.ability.ice_dmg_)))
+    )
+  ),
+  registerBuff(
+    'ability_crit_dmg_',
+    ownBuff.combat.crit_dmg_.add(
+      ability_check(
+        prod(
+          ice_attacks,
+          percent(subscript(char.potential, dm.potential.crit_dmg_))
+        )
+      )
+    )
+  ),
+  registerBuff(
+    'ability_ice_resIgn_',
+    ownBuff.combat.resIgn_.ice.add(
+      ability_check(
+        cmpGE(
+          ice_attacks,
+          dm.potential.stackThreshold,
+          percent(subscript(char.potential, dm.potential.ice_resIgn_))
+        )
       )
     )
   ),

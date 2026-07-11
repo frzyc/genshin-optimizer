@@ -17,7 +17,7 @@ export function abilityFormulaLabel(
   skillOverride?: SkillKey
 ) {
   const parsed = parseAbilityFromTag(
-    skillOverride && !tag.skillType
+    skillOverride && !tag.skillType1
       ? { ...tag, skillType: `${skillOverride}Skill` }
       : tag
   )

@@ -11,6 +11,7 @@ import {
   register,
   registerBuff,
   team,
+  teamBuff,
 } from '../../util'
 import {
   dmgDazeAndAnomOverride,
@@ -24,7 +25,8 @@ const dm = mappedStats.char[key]
 
 const { char } = own
 
-const { fullZap, grenadeHit, chargeConsumed } = allBoolConditionals(key)
+const { fullZap, grenadeHit, chargeConsumed, zapConsumed, abloom } =
+  allBoolConditionals(key)
 const { exSpecialHit } = allNumConditionals(key, true, 0, dm.ability.stacks)
 
 const sheet = register(
@@ -74,6 +76,51 @@ const sheet = register(
 
   // Buffs
   registerBuff(
+    'special_ether_anom_mv_mult_',
+    teamBuff.combat.anom_mv_mult_.ether.addWithDmgType(
+      'abloom',
+      abloom.ifOn(percent(5.6))
+    ),
+    undefined,
+    true
+  ),
+  registerBuff(
+    'special_electric_anom_mv_mult_',
+    teamBuff.combat.anom_mv_mult_.electric.addWithDmgType(
+      'abloom',
+      abloom.ifOn(percent(2.8))
+    ),
+    undefined,
+    true
+  ),
+  registerBuff(
+    'special_fire_anom_mv_mult_',
+    teamBuff.combat.anom_mv_mult_.fire.addWithDmgType(
+      'abloom',
+      abloom.ifOn(percent(7))
+    ),
+    undefined,
+    true
+  ),
+  registerBuff(
+    'special_physical_anom_mv_mult_',
+    teamBuff.combat.anom_mv_mult_.physical.addWithDmgType(
+      'abloom',
+      abloom.ifOn(percent(0.5))
+    ),
+    undefined,
+    true
+  ),
+  registerBuff(
+    'special_ice_anom_mv_mult_',
+    teamBuff.combat.anom_mv_mult_.ice.addWithDmgType(
+      'abloom',
+      abloom.ifOn(percent(0.7))
+    ),
+    undefined,
+    true
+  ),
+  registerBuff(
     'core_special_electric_anomBuildup_',
     ownBuff.combat.anomBuildup_.electric.addWithDmgType(
       'special',
@@ -94,10 +141,19 @@ const sheet = register(
       cmpGE(
         sum(
           team.common.count.electric,
-          team.common.count.withFaction('BelebogHeavyIndustries')
+          team.common.count.withFaction('BelebogHeavyIndustries'),
+          team.common.count.withSpecialty('anomaly')
         ),
-        3,
+        4,
         prod(exSpecialHit, percent(dm.ability.shock_dmg_))
+      )
+    )
+  ),
+  registerBuff(
+    'potential_electric_dmg_',
+    ownBuff.combat.dmg_.electric.add(
+      zapConsumed.ifOn(
+        percent(subscript(char.potential, dm.potential.electric_dmg_))
       )
     )
   ),

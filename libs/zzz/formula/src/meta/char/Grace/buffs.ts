@@ -1,5 +1,70 @@
 // WARNING: Generated file, do not modify
 export const buffs = {
+  special_ether_anom_mv_mult_: {
+    sheet: 'Grace',
+    name: 'special_ether_anom_mv_mult_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'anom_mv_mult_',
+      sheet: 'Grace',
+      attribute: 'ether',
+      damageType1: 'abloom',
+      name: 'special_ether_anom_mv_mult_',
+    },
+  },
+  special_electric_anom_mv_mult_: {
+    sheet: 'Grace',
+    name: 'special_electric_anom_mv_mult_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'anom_mv_mult_',
+      sheet: 'Grace',
+      attribute: 'electric',
+      damageType1: 'abloom',
+      name: 'special_electric_anom_mv_mult_',
+    },
+  },
+  special_fire_anom_mv_mult_: {
+    sheet: 'Grace',
+    name: 'special_fire_anom_mv_mult_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'anom_mv_mult_',
+      sheet: 'Grace',
+      attribute: 'fire',
+      damageType1: 'abloom',
+      name: 'special_fire_anom_mv_mult_',
+    },
+  },
+  special_physical_anom_mv_mult_: {
+    sheet: 'Grace',
+    name: 'special_physical_anom_mv_mult_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'anom_mv_mult_',
+      sheet: 'Grace',
+      attribute: 'physical',
+      damageType1: 'abloom',
+      name: 'special_physical_anom_mv_mult_',
+    },
+  },
+  special_ice_anom_mv_mult_: {
+    sheet: 'Grace',
+    name: 'special_ice_anom_mv_mult_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'anom_mv_mult_',
+      sheet: 'Grace',
+      attribute: 'ice',
+      damageType1: 'abloom',
+      name: 'special_ice_anom_mv_mult_',
+    },
+  },
   core_special_electric_anomBuildup_: {
     sheet: 'Grace',
     name: 'core_special_electric_anomBuildup_',
@@ -37,6 +102,18 @@ export const buffs = {
       attribute: 'electric',
       damageType1: 'anomaly',
       name: 'ability_shock_dmg_',
+    },
+  },
+  potential_electric_dmg_: {
+    sheet: 'Grace',
+    name: 'potential_electric_dmg_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'dmg_',
+      sheet: 'Grace',
+      attribute: 'electric',
+      name: 'potential_electric_dmg_',
     },
   },
   m2_electric_resRed_: {

@@ -30,6 +30,10 @@ const dm = {
       data_gen.skillParams['special'][
         'EXSpecialAttackIntenseHeatStirringMethodDoubleShot'
       ],
+    EXSpecialAttackIntenseHeatTossingMethod:
+      data_gen.skillParams['special'][
+        'EXSpecialAttackIntenseHeatTossingMethod'
+      ],
   },
   chain: {
     ChainAttackFuelFedFlame:
@@ -61,6 +65,15 @@ const dm = {
   ability: {
     fire_anomBuildup: data_gen.abilityParams[0],
     duration_extension: data_gen.abilityParams[1],
+  },
+  potential: {
+    initial_enerRegen: data_gen.potentialParams[0][2],
+    enerRegenStep: data_gen.potentialParams[1][2],
+    anomMas: data_gen.potentialParams[2],
+    common_dmg_: data_gen.potentialParams[3],
+    max_anomMas: data_gen.potentialParams[4][2],
+    max_common_dmg_: data_gen.potentialParams[5][2],
+    cooldown: data_gen.potentialParams[6][2],
   },
   m1: {
     initial_heat: data_gen.mindscapeParams[0][0],

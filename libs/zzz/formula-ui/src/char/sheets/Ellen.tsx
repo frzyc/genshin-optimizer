@@ -26,7 +26,24 @@ const sheet = createBaseSheet(key, {
       conditional: {
         label: st('dealsDamage', { val1: '$t(attributes.ice)' }),
         metadata: cond.ice_attacks,
-        fields: [fieldForBuff(buff.ability_ice_dmg_)],
+        fields: [
+          fieldForBuff(buff.ability_ice_dmg_),
+          fieldForBuff(buff.ability_crit_dmg_),
+          fieldForBuff(buff.ability_ice_resIgn_),
+        ],
+      },
+    },
+  ],
+  potential: [
+    {
+      type: 'conditional',
+      conditional: {
+        label: st('dealsDamage', { val1: '$t(attributes.ice)' }),
+        metadata: cond.ice_attacks,
+        fields: [
+          fieldForBuff(buff.ability_crit_dmg_),
+          fieldForBuff(buff.ability_ice_resIgn_),
+        ],
       },
     },
   ],

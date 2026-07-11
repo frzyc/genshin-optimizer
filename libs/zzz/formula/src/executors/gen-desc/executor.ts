@@ -93,6 +93,15 @@ export default async function runExecutor(
         ) {
           return undefined
         }
+        // Ignore double listings for skillType
+        if (
+          preExisting &&
+          preExisting.tag.skillType1 !== undefined &&
+          preExisting.tag.skillType1 === value.tag['skillType2'] &&
+          preExisting.tag.skillType2 === value.tag['skillType1']
+        ) {
+          return undefined
+        }
         return { sheet, name, tag: { ...tag, ...value.tag } }
       }
       return undefined
