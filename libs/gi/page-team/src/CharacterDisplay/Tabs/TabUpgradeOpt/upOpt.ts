@@ -4,6 +4,7 @@ import {
   type ArtifactSlotKey,
   type MainStatKey,
   type SubstatKey,
+  allArtifactSlotKeys,
   allSubstatKeys,
   artSlotMainKeys,
 } from '@genshin-optimizer/gi/consts'
@@ -26,10 +27,9 @@ import type {
   Objective,
 } from '@genshin-optimizer/gi/upopt'
 import { type OptNode, optimize, precompute } from '@genshin-optimizer/gi/wr'
-import { removeSetKeys } from './formulaUtils'
 import { erf } from './mathUtil'
 
-type Build = Record<ArtifactSlotKey, ICachedArtifact | undefined>
+export type UpOptBuild = Record<ArtifactSlotKey, ICachedArtifact | undefined>
 type MarkovTree = { p: number; n: MarkovNode }[]
 type EvaluatedMarkovTree = {
   result: { p: number; upAvg: number; lower: number; upper: number }
@@ -37,6 +37,7 @@ type EvaluatedMarkovTree = {
   info: UpOptInfo
   evalMode: MarkovNode['type']
   id: string
+  build: UpOptBuild
   chartData?: {
     left: number
     right: number
@@ -98,29 +99,38 @@ function shouldYieldToUi(lastYield: number) {
 }
 
 export class UpOptCalculatorV2 {
-  build: Build
+  build: UpOptBuild
+  thresholdBuild: UpOptBuild
+  builds: Map<string, UpOptBuild>
   obj: Objective
   candidates: EvaluatedMarkovTree[] = []
   fixedIx = 0
 
   /** Serializes exact-calc work so candidates are refined one at a time. */
   private exactQueue: Promise<unknown> = Promise.resolve()
+  private definitionBuildCache = new Map<string, UpOptBuild[]>()
 
   constructor(
     nodes: OptNode[],
     thresholds: number[],
-    build: Build,
+    build: UpOptBuild,
+    thresholdBuild: UpOptBuild,
+    builds: Map<string, UpOptBuild>,
     artifacts: ICachedArtifact[],
     reshapeConfig: ReshapeConfig,
     defineConfig: DefineConfig
   ) {
     this.build = build
-    // Remove setKey thresholds that are always active/inactive, then optimize the formula tree.
-    nodes = removeSetKeys(nodes, build)
+    this.thresholdBuild = thresholdBuild
+    this.builds = builds
+    // Set thresholds cannot be folded because candidates may use different
+    // complementary builds.
     nodes = optimize(nodes, {})
 
     // Populate threshold[0] with current value. It's a bit convoluted :/
-    const buildAsList = Object.values(build).filter((v) => v !== undefined)
+    const buildAsList = Object.values(thresholdBuild).filter(
+      (v) => v !== undefined
+    )
     const artsBySlot = compactArtifacts(buildAsList, 0, false)
     const evalFn = precompute(nodes, artsBySlot.base, (f) => f.path[1], 5)
     const baseBuild = Object.values(artsBySlot.values).map((v) =>
@@ -131,6 +141,7 @@ export class UpOptCalculatorV2 {
     // Create objective function & set up candidates.
     this.obj = makeObjective(nodes, thresholds)
     artifacts.forEach((art) => {
+      if (!builds.has(art.id)) return
       this.tryLevelUp(art)
       if (reshapeConfig.enabled) this.tryReshape(art, reshapeConfig.minTotal)
     })
@@ -148,9 +159,14 @@ export class UpOptCalculatorV2 {
   }
 
   fromLevelUpInfo(info: LevelUpInfo, art: ICachedArtifact) {
+    const { build, evaluation } = this.bestBuildEvaluation(
+      (build) => this.evaluateNodes(levelUpArtifact(art, build)),
+      art.id
+    )
     return {
-      ...this.evaluateNodes(levelUpArtifact(art, this.build)),
+      ...evaluation,
       info,
+      build,
       evalMode: 'substat' as const,
       id: `${this.candidates.length}`,
     }
@@ -178,24 +194,85 @@ export class UpOptCalculatorV2 {
   }
 
   fromReshapeInfo(info: ReshapeInfo, art: ICachedArtifact) {
+    const { build, evaluation } = this.bestBuildEvaluation(
+      (build) =>
+        this.evaluateNodes(
+          dustReshape(art, build, info.affixes, info.mintotal)
+        ),
+      art.id
+    )
     return {
-      ...this.evaluateNodes(
-        dustReshape(art, this.build, info.affixes, info.mintotal)
-      ),
+      ...evaluation,
       info,
+      build,
       evalMode: 'substat' as const,
       id: `${this.candidates.length}`,
     }
   }
 
-  tryDefine({ setKeys, slotKeys, mainStats, substats }: DefineConfig) {
-    setKeys = setKeys.filter((setKey) => this.obj.allReadKeys.includes(setKey))
-    if (!setKeys.length) {
-      console.warn(
-        'No useful set keys available for definition; picking Glad as default'
+  private bestBuildEvaluation(
+    evaluate: (
+      build: UpOptBuild
+    ) => Pick<EvaluatedMarkovTree, 'tree' | 'result'>,
+    artifactId: string
+  ) {
+    const recommended = this.builds.get(artifactId) ?? this.build
+    const options = [recommended]
+    if (
+      Object.values(this.thresholdBuild).some(
+        (artifact) => artifact?.id === artifactId
+      ) &&
+      this.thresholdBuild !== recommended
+    )
+      options.push(this.thresholdBuild)
+
+    return options
+      .map((build) => ({ build, evaluation: evaluate(build) }))
+      .reduce((best, candidate) =>
+        compare(candidate.evaluation, best.evaluation) < 0 ? candidate : best
       )
-      setKeys = ['GladiatorsFinale'] // Default to something so user sees some results
+  }
+
+  private bestDefinitionEvaluation(info: DefineInfo) {
+    const cacheKey = `${info.setKey}|${info.slotKey}|${info.mainStatKey}`
+    let options = this.definitionBuildCache.get(cacheKey)
+    if (!options) {
+      const seen = new Set<string>()
+      options = [
+        this.build,
+        this.thresholdBuild,
+        ...[...this.builds.values()].filter((build) => {
+          const artifact = build[info.slotKey]
+          return (
+            artifact?.setKey === info.setKey &&
+            artifact.mainStatKey === info.mainStatKey
+          )
+        }),
+      ].filter((build) => {
+        const key = allArtifactSlotKeys
+          .map((slotKey) => build[slotKey]?.id ?? '')
+          .join('|')
+        if (seen.has(key)) return false
+        seen.add(key)
+        return true
+      })
+      this.definitionBuildCache.set(cacheKey, options)
     }
+
+    return options
+      .map((build) => ({
+        build,
+        evaluation: this.evaluateNodes(
+          elixirDefinition({ ...info, prob_4line: 0.34 }, build)
+        ),
+      }))
+      .reduce((best, candidate) =>
+        compare(candidate.evaluation, best.evaluation) < 0 ? candidate : best
+      )
+  }
+
+  tryDefine({ setKeys, slotKeys, mainStats, substats }: DefineConfig) {
+    if (!setKeys.length) return
     setKeys.forEach((setKey) => {
       slotKeys.forEach((slotKey) => {
         artSlotMainKeys[slotKey]
@@ -223,11 +300,11 @@ export class UpOptCalculatorV2 {
   }
 
   fromDefineInfo(info: DefineInfo) {
+    const { build, evaluation } = this.bestDefinitionEvaluation(info)
     return {
-      ...this.evaluateNodes(
-        elixirDefinition({ ...info, prob_4line: 0.34 }, this.build)
-      ),
+      ...evaluation,
       info,
+      build,
       evalMode: 'substat' as const,
       id: `${this.candidates.length}`,
     }
@@ -354,6 +431,7 @@ export class UpOptCalculatorV2 {
       result: accumulateEvaluations(evaluated),
       evalMode: 'values',
       info: this.candidates[ix].info,
+      build: this.candidates[ix].build,
     }
     return true
   }
@@ -429,7 +507,10 @@ export class UpOptCalculatorV2 {
   }
 }
 
-function compare(a: EvaluatedMarkovTree, b: EvaluatedMarkovTree) {
+function compare(
+  a: Pick<EvaluatedMarkovTree, 'tree' | 'result'>,
+  b: Pick<EvaluatedMarkovTree, 'tree' | 'result'>
+) {
   const scoreA = a.result.p * a.result.upAvg
   const scoreB = b.result.p * b.result.upAvg
   if (scoreA > 1e-5 || scoreB > 1e-5) return scoreB - scoreA

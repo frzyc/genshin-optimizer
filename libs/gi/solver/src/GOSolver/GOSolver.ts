@@ -89,6 +89,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     topN,
     exclusion,
     constraints,
+    keepBestPerArtifact,
   }: OptProblemInput): Setup {
     constraints = constraints.filter((x) => x.min > -Infinity)
 
@@ -105,7 +106,9 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
       reaffine: true,
       pruneArtRange: true,
       pruneNodeRange: true,
-      pruneOrder: true,
+      // Dominated artifacts can still be part of the best build containing
+      // that artifact, so they must be retained for Artifact Upgrader.
+      pruneOrder: !keepBestPerArtifact,
     }))
     nodes = optimize(nodes, {}, (_) => false)
 
@@ -118,6 +121,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
       optTarget,
       plotBase,
       topN,
+      keepBestPerArtifact,
       constraints: nodes.map((value, i) => ({ value, min: minimums[i] })),
     }
   }
