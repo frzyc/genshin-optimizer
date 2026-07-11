@@ -5,5 +5,8 @@
   "rayMult_": "Convective Inhibition Ray Mult.",
   "c1Cond": "In Decoding mode",
   "beam_critDMG_": "Charged Attack Condensed Beam CRIT DMG",
-  "c2Cond": "Charged Attack Condensed Beams fired"
+  "c2Cond": "Charged Attack Condensed Beams fired",
+  "c4StellarDmg": "Coordinated Stellar-Conduct DMG",
+  "c6Dmg": "Additional Beam DMG",
+  "c6StellarDmg": "Additional Beam Stellar-Conduct DMG"
 }
