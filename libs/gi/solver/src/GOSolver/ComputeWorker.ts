@@ -41,7 +41,7 @@ export class ComputeWorker {
   }
 
   setThreshold(newThreshold: number) {
-    if (this.threshold > newThreshold) this.threshold = newThreshold
+    if (this.threshold < newThreshold) this.threshold = newThreshold
   }
   compute(filter: RequestFilter) {
     const { min } = this

@@ -171,7 +171,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
       const { topN } = this,
         oldThreshold = this.buildValues[topN - 1].val ?? -Infinity
 
-      this.buildValues.filter(({ w }) => w !== worker)
+      this.buildValues = this.buildValues.filter(({ w }) => w !== worker)
       this.buildValues.push(
         ...r.buildValues.map((val) => ({ w: worker!, val }))
       )
