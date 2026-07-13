@@ -14,6 +14,7 @@ import type {
 import { countBuilds, filterArts, pruneAll } from '../../common'
 import type { Interim, Setup } from '../../type'
 import type { SplitWorker } from '../BackgroundWorker'
+import { pruneDominance } from './diffBound'
 import { pickSplitKey, splitAtValue, splitOnSet } from './heuristicSplitting'
 import type { Linear } from './linearUB'
 import { linearUB } from './linearUB'
@@ -43,6 +44,16 @@ export class BNBSplitWorker implements SplitWorker {
   nodes: OptNode[]
   arts: ArtifactsBySlot
   topN: number
+  /** Swap-dominance pruning discards builds that could still populate plot
+   * bins, so it must stay off when plotting. */
+  canPruneDominance: boolean
+  /** Per-artifact cap on swap-dominance candidates tested (sorted
+   * best-first); keeps `pruneDominance` roughly linear per slot on repeated
+   * filter passes. */
+  maxDominanceCandidates = 32
+  /** Only run swap-dominance pruning on filters at least this large; smaller
+   * filters don't repay the bound evaluations. */
+  minDominanceCount = 1 << 16
 
   /**
    * Filters are not neccessarily in a valid state, i.e., "calculated".
@@ -56,7 +67,7 @@ export class BNBSplitWorker implements SplitWorker {
   callback: (interim: Interim) => void
 
   constructor(
-    { arts, optTarget, constraints, topN }: Setup,
+    { arts, optTarget, constraints, topN, plotBase }: Setup,
     callback: (interim: Interim) => void
   ) {
     this.arts = arts
@@ -64,6 +75,7 @@ export class BNBSplitWorker implements SplitWorker {
     this.nodes = [optTarget, ...constraints.map((x) => x.value)]
     this.callback = callback
     this.topN = topN
+    this.canPruneDominance = !plotBase
 
     // make sure we can approximate it
     linearUB(this.nodes, arts)
@@ -164,6 +176,13 @@ export class BNBSplitWorker implements SplitWorker {
     ))
     nodes = optimize(nodes, {}, (_) => false)
     if (Object.values(arts.values).every((x) => x.length)) {
+      if (this.canPruneDominance && countBuilds(arts) > this.minDominanceCount)
+        arts = pruneDominance(
+          nodes,
+          arts,
+          this.topN,
+          this.maxDominanceCandidates
+        ).arts
       const data = approximation(nodes, arts)
       lins = data.lins
       approxs = data.approxs
