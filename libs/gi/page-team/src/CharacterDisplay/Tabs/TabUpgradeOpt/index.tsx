@@ -50,7 +50,10 @@ import {
   useTeamData,
 } from '@genshin-optimizer/gi/ui'
 import { uiDataForTeam } from '@genshin-optimizer/gi/uidata'
-import { artifactFilterConfigs } from '@genshin-optimizer/gi/util'
+import {
+  artifactFilterConfigs,
+  setKeysByRarities,
+} from '@genshin-optimizer/gi/util'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { dynamicData, mergeData, optimize } from '@genshin-optimizer/gi/wr'
 import AddIcon from '@mui/icons-material/Add'
@@ -380,8 +383,10 @@ export default function TabUpopt() {
     const defineConfig = {
       enabled: upOptDefine && upOptDefineSubstats.length >= 2,
       setKeys: (artSetKeys.length
-        ? artSetKeys
-        : [...allArtifactSetKeys]) as ArtifactSetKey[],
+        ? (artSetKeys as ArtifactSetKey[]).filter((setKey) =>
+            setKeysByRarities[5].includes(setKey)
+          )
+        : [...setKeysByRarities[5]]) as ArtifactSetKey[],
       slotKeys: slotKeys.length ? slotKeys : [...allArtifactSlotKeys],
       mainStats: [...new Set<MainStatKey>(mainStatsForDefine)],
       substats: upOptDefineSubstats,
