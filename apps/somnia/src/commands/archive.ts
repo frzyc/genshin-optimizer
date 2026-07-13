@@ -121,8 +121,9 @@ function translate(
     ...options,
   })
 }
-export { translate }
+
 export type { ArchiveSubcommand }
+export { translate }
 export const talentlist = {
   p: { name: 'Character Profile', value: 'p' },
   n: { name: 'Normal/Charged/Plunging Attack', value: 'n' },

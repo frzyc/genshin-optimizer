@@ -546,14 +546,19 @@ const inactive1 = setReadNodeKeys(deepNodeClone(inputBase), ['inactive1'])
 const inactive2 = setReadNodeKeys(deepNodeClone(inputBase), ['inactive2'])
 const inactive3 = setReadNodeKeys(deepNodeClone(inputBase), ['inactive3'])
 
-export { common, customBonus, input, tally, target, uiInput }
 export {
+  active,
+  common,
+  customBonus,
+  inactive1,
+  inactive2,
+  inactive3,
+  input,
   selected0,
   selected1,
   selected2,
   selected3,
-  active,
-  inactive1,
-  inactive2,
-  inactive3,
+  tally,
+  target,
+  uiInput,
 }

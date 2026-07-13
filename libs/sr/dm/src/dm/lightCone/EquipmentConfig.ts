@@ -76,4 +76,5 @@ const equipmentConfig = objFilterKeys(
   objKeyValMap(equipmentConfigSrc, (config) => [config.EquipmentID, config]),
   Object.keys(lightConeIdMap) as LightConeId[]
 ) as Record<LightConeId, EquipmentConfig>
+
 export { equipmentConfig }

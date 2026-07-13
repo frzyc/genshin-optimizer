@@ -16,16 +16,7 @@ import {
   transformativeReactionLevelMultipliers,
   transformativeReactions,
 } from './StatConstants'
-export {
-  KeyMap,
-  allEleDmgKeys,
-  allEleEnemyResKeys,
-  allEleResKeys,
-  crittableTransformativeReactions,
-  crystallizeLevelMultipliers,
-  transformativeReactionLevelMultipliers,
-  transformativeReactions,
-}
+
 export type {
   AdditiveReactionsKey,
   AmplifyingReactionsKey,
@@ -33,4 +24,14 @@ export type {
   EleEnemyResKey,
   StatKey,
   Unit,
+}
+export {
+  allEleDmgKeys,
+  allEleEnemyResKeys,
+  allEleResKeys,
+  crittableTransformativeReactions,
+  crystallizeLevelMultipliers,
+  KeyMap,
+  transformativeReactionLevelMultipliers,
+  transformativeReactions,
 }

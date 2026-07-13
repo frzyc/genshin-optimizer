@@ -109,6 +109,7 @@ for (const category in databank['key']) {
     if (fs.existsSync(itempath)) databank[category][name] = require(itempath)
   }
 }
+
 export { databank }
 export const skillsList = {
   n: { name: 'Basic Attack', value: 'n' },

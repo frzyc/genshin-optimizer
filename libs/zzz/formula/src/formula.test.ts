@@ -55,40 +55,37 @@ describe('character test', () => {
     [60, 5, 0, 583.957, 612.6038, 7500.7134, 118, 94, 93],
     [60, 5, 3, 608.957, 612.6038, 7500.7134, 130, 94, 93],
     [60, 5, 6, 658.957, 612.6038, 7500.7134, 136, 94, 93],
-  ])(
-    'Calculate character base stats for lvl %i, promo %i, core %i',
-    (lvl, promotion, core, atk, def, hp, impact, anomMas, anomProf) => {
-      const charKey: CharacterKey = 'Anby'
-      const data: TagMapNodeEntries = [
-        ...withMember(
-          'Anby',
-          ...charTagMapNodeEntries({
-            level: lvl,
-            promotion,
-            key: charKey,
-            mindscape: 0,
-            potential: 0,
-            basic: 0,
-            dodge: 0,
-            special: 0,
-            assist: 0,
-            chain: 0,
-            core,
-            potential: 0,
-          })
-        ),
-      ]
-      const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
+  ])('Calculate character base stats for lvl %i, promo %i, core %i', (lvl, promotion, core, atk, def, hp, impact, anomMas, anomProf) => {
+    const charKey: CharacterKey = 'Anby'
+    const data: TagMapNodeEntries = [
+      ...withMember(
+        'Anby',
+        ...charTagMapNodeEntries({
+          level: lvl,
+          promotion,
+          key: charKey,
+          mindscape: 0,
+          potential: 0,
+          basic: 0,
+          dodge: 0,
+          special: 0,
+          assist: 0,
+          chain: 0,
+          core,
+          potential: 0,
+        })
+      ),
+    ]
+    const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
 
-      const anby = convert(ownTag, { et: 'own', src: 'Anby' })
-      expect(calc.compute(anby.final.atk).val).toBeCloseTo(atk)
-      expect(calc.compute(anby.final.def).val).toBeCloseTo(def)
-      expect(calc.compute(anby.final.hp).val).toBeCloseTo(hp)
-      expect(calc.compute(anby.final.impact).val).toBeCloseTo(impact)
-      expect(calc.compute(anby.final.anomMas).val).toBeCloseTo(anomMas)
-      expect(calc.compute(anby.final.anomProf).val).toBeCloseTo(anomProf)
-    }
-  )
+    const anby = convert(ownTag, { et: 'own', src: 'Anby' })
+    expect(calc.compute(anby.final.atk).val).toBeCloseTo(atk)
+    expect(calc.compute(anby.final.def).val).toBeCloseTo(def)
+    expect(calc.compute(anby.final.hp).val).toBeCloseTo(hp)
+    expect(calc.compute(anby.final.impact).val).toBeCloseTo(impact)
+    expect(calc.compute(anby.final.anomMas).val).toBeCloseTo(anomMas)
+    expect(calc.compute(anby.final.anomProf).val).toBeCloseTo(anomProf)
+  })
 })
 
 describe('wengine test', () => {
@@ -97,46 +94,43 @@ describe('wengine test', () => {
     [10, 0, 102.728, 0.2],
     [10, 1, 138.416, 0.26],
     [60, 5, 594.8, 0.5],
-  ])(
-    'Calculate wengine base stats for lvl %i, mod %i',
-    (lvl, modification, atk, substat) => {
-      const wengKey: WengineKey = 'SteamOven'
-      const data: TagMapNodeEntries = [
-        ...withMember(
-          'Anby',
-          ...charTagMapNodeEntries({
-            level: 1,
-            promotion: 0,
-            key: 'Anby',
-            mindscape: 0,
-            potential: 0,
-            basic: 0,
-            dodge: 0,
-            special: 0,
-            assist: 0,
-            chain: 0,
-            core: 0,
-            potential: 0,
-          }),
-          ...wengineTagMapNodeEntries({
-            key: wengKey,
-            level: lvl,
-            modification: modification as MilestoneKey,
-            phase: 1,
-          })
-        ),
-      ]
-      const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
+  ])('Calculate wengine base stats for lvl %i, mod %i', (lvl, modification, atk, substat) => {
+    const wengKey: WengineKey = 'SteamOven'
+    const data: TagMapNodeEntries = [
+      ...withMember(
+        'Anby',
+        ...charTagMapNodeEntries({
+          level: 1,
+          promotion: 0,
+          key: 'Anby',
+          mindscape: 0,
+          potential: 0,
+          basic: 0,
+          dodge: 0,
+          special: 0,
+          assist: 0,
+          chain: 0,
+          core: 0,
+          potential: 0,
+        }),
+        ...wengineTagMapNodeEntries({
+          key: wengKey,
+          level: lvl,
+          modification: modification as MilestoneKey,
+          phase: 1,
+        })
+      ),
+    ]
+    const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
 
-      const wengine0 = convert(ownTag, {
-        et: 'own',
-        src: 'Anby',
-        sheet: 'wengine',
-      })
-      expect(calc.compute(wengine0.base.atk).val).toBeCloseTo(atk)
-      expect(calc.compute(wengine0.initial.enerRegen_).val).toBeCloseTo(substat)
-    }
-  )
+    const wengine0 = convert(ownTag, {
+      et: 'own',
+      src: 'Anby',
+      sheet: 'wengine',
+    })
+    expect(calc.compute(wengine0.base.atk).val).toBeCloseTo(atk)
+    expect(calc.compute(wengine0.initial.enerRegen_).val).toBeCloseTo(substat)
+  })
 })
 
 describe('char+wengine test', () => {
@@ -211,76 +205,73 @@ describe('char+wengine test', () => {
     [true, 'avg', 6696.093, 22320.30908],
     [true, 'crit', 7892.378, 22320.30908],
     [true, 'nonCrit', 3107.236, 22320.30908],
-  ])(
-    'calculate standard+anomaly damage, stunned: %o, critMode: %s',
-    (isStunned, critMode, expectedStandardDmg, expectedAnomalyDmg) => {
-      const data: TagMapNodeEntries = [
-        ...withMember(
-          'Anby',
-          ...charTagMapNodeEntries({
-            level: 60,
-            promotion: 5,
-            key: 'Anby',
-            mindscape: 0,
-            potential: 0,
-            basic: 0,
-            dodge: 0,
-            special: 0,
-            assist: 0,
-            chain: 0,
-            core: 6,
-            potential: 0,
-          }),
-          ...wengineTagMapNodeEntries({
-            key: 'VortexRevolver',
-            level: 60,
-            modification: 5,
-            phase: 1,
-          }),
+  ])('calculate standard+anomaly damage, stunned: %o, critMode: %s', (isStunned, critMode, expectedStandardDmg, expectedAnomalyDmg) => {
+    const data: TagMapNodeEntries = [
+      ...withMember(
+        'Anby',
+        ...charTagMapNodeEntries({
+          level: 60,
+          promotion: 5,
+          key: 'Anby',
+          mindscape: 0,
+          potential: 0,
+          basic: 0,
+          dodge: 0,
+          special: 0,
+          assist: 0,
+          chain: 0,
+          core: 6,
+          potential: 0,
+        }),
+        ...wengineTagMapNodeEntries({
+          key: 'VortexRevolver',
+          level: 60,
+          modification: 5,
+          phase: 1,
+        }),
 
-          ownBuff.initial.atk.add(25),
-          ownBuff.combat.atk.add(100),
-          ownBuff.combat.atk_.add(0.08),
-          ownBuff.initial.crit_.add(0.7),
-          ownBuff.initial.crit_dmg_.add(1.04),
-          ownBuff.initial.dmg_.electric.add(0.4),
-          ownBuff.initial.pen_.add(0.05),
-          ownBuff.initial.pen.add(90),
-          ownBuff.initial.resIgn_.add(0.02),
-          ownBuff.initial.anomProf.add(338)
-        ),
-        own.common.critMode.add(critMode),
-        enemy.common.def.add(635),
-        enemy.common.res_.electric.add(0.1),
-        conditionalEntries(
-          'enemy',
-          'Anby',
-          null
-        )(conditionals.enemy.isStunned.name, isStunned ? 1 : 0),
-        enemyDebuff.common.resRed_.electric.add(0.15),
-        enemyDebuff.common.dmgInc_.add(0.1),
-        enemyDebuff.common.dmgRed_.add(0.15),
-        enemyDebuff.common.stun_.add(1.5),
-        enemyDebuff.common.unstun_.add(1),
-      ]
-      const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
-      const anby = convert(ownTag, { et: 'own', src: 'Anby' })
-      expect(calc.compute(anby.base.atk).val).toBeCloseTo(1134.797)
-      expect(calc.compute(anby.final.atk).val).toBeCloseTo(1597.696912)
+        ownBuff.initial.atk.add(25),
+        ownBuff.combat.atk.add(100),
+        ownBuff.combat.atk_.add(0.08),
+        ownBuff.initial.crit_.add(0.7),
+        ownBuff.initial.crit_dmg_.add(1.04),
+        ownBuff.initial.dmg_.electric.add(0.4),
+        ownBuff.initial.pen_.add(0.05),
+        ownBuff.initial.pen.add(90),
+        ownBuff.initial.resIgn_.add(0.02),
+        ownBuff.initial.anomProf.add(338)
+      ),
+      own.common.critMode.add(critMode),
+      enemy.common.def.add(635),
+      enemy.common.res_.electric.add(0.1),
+      conditionalEntries(
+        'enemy',
+        'Anby',
+        null
+      )(conditionals.enemy.isStunned.name, isStunned ? 1 : 0),
+      enemyDebuff.common.resRed_.electric.add(0.15),
+      enemyDebuff.common.dmgInc_.add(0.1),
+      enemyDebuff.common.dmgRed_.add(0.15),
+      enemyDebuff.common.stun_.add(1.5),
+      enemyDebuff.common.unstun_.add(1),
+    ]
+    const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
+    const anby = convert(ownTag, { et: 'own', src: 'Anby' })
+    expect(calc.compute(anby.base.atk).val).toBeCloseTo(1134.797)
+    expect(calc.compute(anby.final.atk).val).toBeCloseTo(1597.696912)
 
-      expect(
-        calc
-          .withTag({ src: 'Anby', dst: 'Anby' })
-          .compute(read(formulas.Anby.standardDmgInst.tag, undefined)).val
-      ).toBeCloseTo(expectedStandardDmg)
+    expect(
+      calc
+        .withTag({ src: 'Anby', dst: 'Anby' })
+        .compute(read(formulas.Anby.standardDmgInst.tag, undefined)).val
+    ).toBeCloseTo(expectedStandardDmg)
 
-      expect(
-        calc
-          .withTag({ src: 'Anby', dst: 'Anby' })
-          .compute(read(formulas.Anby.anomalyDmgInst.tag, undefined)).val
-      ).toBeCloseTo(expectedAnomalyDmg)
-    }
-  )
+    expect(
+      calc
+        .withTag({ src: 'Anby', dst: 'Anby' })
+        .compute(read(formulas.Anby.anomalyDmgInst.tag, undefined)).val
+    ).toBeCloseTo(expectedAnomalyDmg)
+  })
   it('calculate specific elemental damage bonus separate from common', () => {
     const data: TagMapNodeEntries = [
       ...withMember(

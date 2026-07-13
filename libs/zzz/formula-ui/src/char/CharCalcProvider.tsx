@@ -208,9 +208,7 @@ export function CharCalcMockCountProvider({
           ),
           // mock wengine
           // Opt-in for wengine buffs, instead of enabling it by default to reduce `read` traffic
-          reader
-            .sheet('agg')
-            .reread(reader.sheet('wengine')),
+          reader.sheet('agg').reread(reader.sheet('wengine')),
           own.wengine.lvl.add(60),
           own.wengine.modification.add(5),
           own.wengine.phase.add(1),

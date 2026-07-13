@@ -8,5 +8,5 @@ import type {
   MergeResultCounter,
 } from './exim'
 
-export { ArtCharDatabase }
 export type { ImportResult, ImportResultCounter, MergeResultCounter }
+export { ArtCharDatabase }

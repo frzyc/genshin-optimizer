@@ -65,4 +65,5 @@ const avatarServantConfig = objFilterKeys(
   objKeyValMap(avatarServantConfigSrc, (config) => [config.ServantID, config]),
   Object.keys(servantIdMap) as ServantId[]
 ) as Record<ServantId, AvatarServantConfig>
+
 export { avatarServantConfig }
