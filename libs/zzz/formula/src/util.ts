@@ -5,11 +5,11 @@ import {
   type DiscMainStatKey,
   type DiscSetKey,
   type DiscSubStatKey,
+  getDiscMainStatVal,
+  getDiscSubStatBaseVal,
   type MilestoneKey,
   type PhaseKey,
   type WengineKey,
-  getDiscMainStatVal,
-  getDiscSubStatBaseVal,
 } from '@genshin-optimizer/zzz/consts'
 import type { IDisc } from '@genshin-optimizer/zzz/zood'
 import type { Member, TagMapNodeEntries } from './data/util'

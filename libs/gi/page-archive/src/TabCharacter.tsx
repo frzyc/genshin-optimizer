@@ -13,14 +13,14 @@ import type {
   ArchiveCharacterOption,
   ICachedCharacter,
 } from '@genshin-optimizer/gi/db'
-import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useDatabase, useDBMeta } from '@genshin-optimizer/gi/db-ui'
 import { i18n } from '@genshin-optimizer/gi/i18n'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import { ElementIcon } from '@genshin-optimizer/gi/svgicons'
 import {
   CharacterName,
-  SillyContext,
   iconAsset,
+  SillyContext,
 } from '@genshin-optimizer/gi/ui'
 import SearchIcon from '@mui/icons-material/Search'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
@@ -41,8 +41,8 @@ import {
   ToggleButtonGroup,
 } from '@mui/material'
 import {
-  Suspense,
   memo,
+  Suspense,
   useCallback,
   useContext,
   useDeferredValue,
@@ -50,6 +50,7 @@ import {
   useState,
 } from 'react'
 import { CharacterView } from './CharacterView'
+
 const rarties = [5, 4] as const
 export default function TabCharacter() {
   const { silly } = useContext(SillyContext)

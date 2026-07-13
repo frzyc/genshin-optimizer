@@ -34,8 +34,8 @@ import { maxBuildsToShowList } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
   useArtifacts,
-  useDBMeta,
   useDatabase,
+  useDBMeta,
   useGeneratedBuildList,
   useOptConfig,
   useTeammateArtifactIds,
@@ -52,10 +52,10 @@ import {
   DataContext,
   GOAdWrapper,
   GraphContext,
+  getTeamData,
   HitModeToggle,
   NoArtWarning,
   ReactionToggle,
-  getTeamData,
   resolveInfo,
   statFilterToNumNode,
   useGlobalError,
@@ -94,8 +94,8 @@ import {
 } from '@mui/material'
 import type { FormEventHandler, ReactNode } from 'react'
 import React, {
-  Suspense,
   memo,
+  Suspense,
   useCallback,
   useContext,
   useDeferredValue,

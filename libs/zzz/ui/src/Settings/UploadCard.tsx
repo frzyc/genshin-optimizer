@@ -17,9 +17,9 @@ import {
   CardContent,
   Divider,
   Grid,
+  styled,
   Tooltip,
   Typography,
-  styled,
 } from '@mui/material'
 import { useCallback, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'

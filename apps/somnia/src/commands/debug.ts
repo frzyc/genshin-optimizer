@@ -1,4 +1,5 @@
 import process = require('process')
+
 import type { ChatInputCommandInteraction } from 'discord.js'
 import { EmbedBuilder, SlashCommandBuilder } from 'discord.js'
 import { readFile, stat } from 'fs/promises'

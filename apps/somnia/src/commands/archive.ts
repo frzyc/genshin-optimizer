@@ -1,3 +1,12 @@
+import {
+  type ArtifactSetKey,
+  allArtifactSetKeys,
+  allCharacterSheetKeys,
+  allWeaponKeys,
+  type CharacterSheetKey,
+  type WeaponKey,
+} from '@genshin-optimizer/gi/consts'
+import { i18nInstance } from '@genshin-optimizer/gi/i18n-node'
 import type {
   ApplicationCommandOptionChoiceData,
   AutocompleteInteraction,
@@ -12,18 +21,7 @@ import {
   InteractionContextType,
   SlashCommandBuilder,
 } from 'discord.js'
-
 import { error } from '../lib/message'
-
-import {
-  type ArtifactSetKey,
-  type CharacterSheetKey,
-  type WeaponKey,
-  allArtifactSetKeys,
-  allCharacterSheetKeys,
-  allWeaponKeys,
-} from '@genshin-optimizer/gi/consts'
-import { i18nInstance } from '@genshin-optimizer/gi/i18n-node'
 import permissions from '../lib/permissions'
 import { artifactArchive } from './archive/artifact'
 import { charArchive, charReaction } from './archive/char'

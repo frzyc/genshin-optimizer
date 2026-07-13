@@ -1,4 +1,3 @@
-import { writeFileSync } from 'fs'
 import { formatText } from '@genshin-optimizer/common/pipeline'
 import {
   allCharacterKeys,
@@ -7,6 +6,7 @@ import {
 } from '@genshin-optimizer/zzz/consts'
 import type { Tree } from '@nx/devkit'
 import { workspaceRoot } from '@nx/devkit'
+import { writeFileSync } from 'fs'
 
 export default async function genIndex(tree: Tree, map_type: string) {
   const file_location = `${workspaceRoot}/libs/zzz/stats/src/mappedStats/${map_type}/index.ts`

@@ -7,8 +7,8 @@ import {
 import { objPathValue } from '@genshin-optimizer/common/util'
 import type {
   AdditiveReactionKey,
-  AmpReactionKey,
   AmplifyingReactionKey,
+  AmpReactionKey,
   ElementKey,
   InfusionAuraElementKey,
 } from '@genshin-optimizer/gi/consts'
@@ -25,8 +25,8 @@ import {
   AdditiveReactionModeText,
   AmpReactionModeText,
   DataContext,
-  StatEditorList,
   infusionVals,
+  StatEditorList,
 } from '@genshin-optimizer/gi/ui'
 import type { CalcResult } from '@genshin-optimizer/gi/uidata'
 import { allInputPremodKeys } from '@genshin-optimizer/gi/wr-types'

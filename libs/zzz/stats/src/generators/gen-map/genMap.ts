@@ -1,10 +1,10 @@
-import { existsSync, writeFileSync } from 'fs'
-import * as path from 'path'
 import { formatText } from '@genshin-optimizer/common/pipeline'
 import { objMap } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import type { Tree } from '@nx/devkit'
 import { generateFiles } from '@nx/devkit'
+import { existsSync, writeFileSync } from 'fs'
+import * as path from 'path'
 import { allStats } from '../../allStats'
 import type { GenMapGeneratorSchema } from './schema'
 

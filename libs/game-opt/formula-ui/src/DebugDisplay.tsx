@@ -20,13 +20,13 @@ import {
 import { Box, Stack } from '@mui/system'
 import type { SyntheticEvent } from 'react'
 import { type ReactNode, useContext, useState } from 'react'
+import type { DebugReadTarget } from './context'
 import {
   CalcContext,
   DebugReadContext,
   TagContext,
   useDebugReadContextValue,
 } from './context'
-import type { DebugReadTarget } from './context'
 
 export function DebugListingsDisplay({
   formulasRead,

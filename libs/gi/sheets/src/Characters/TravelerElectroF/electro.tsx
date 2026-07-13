@@ -19,7 +19,6 @@ import {
   target,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../SheetUtil'
-import type { TalentSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
 import {
   customDmgNode,
@@ -27,6 +26,7 @@ import {
   dmgNode,
   hitEle,
 } from '../dataUtil'
+import type { TalentSheet } from '../ICharacterSheet.d'
 
 export default function electro(
   key: CharacterSheetKey,

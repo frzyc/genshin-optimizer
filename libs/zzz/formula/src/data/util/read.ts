@@ -18,11 +18,11 @@ import type {
   TagMapNodeEntry,
 } from '.'
 import {
-  type Sheet,
   attributes,
   damageTypes,
   factions,
   members,
+  type Sheet,
   sheets,
   skillTypes,
   specialties,

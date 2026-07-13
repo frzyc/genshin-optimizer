@@ -70,11 +70,7 @@ export function ResonanceDisplay({
   )
 }
 
-function ElementalResonance({
-  teamId,
-}: {
-  teamId: string
-}) {
+function ElementalResonance({ teamId }: { teamId: string }) {
   const { t } = useTranslation('page_character')
 
   const { loadoutData } = useTeam(teamId)!

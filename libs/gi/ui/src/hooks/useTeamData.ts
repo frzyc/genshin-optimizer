@@ -10,8 +10,8 @@ import {
 } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
-  useDBMeta,
   useDatabase,
+  useDBMeta,
   useTeam,
 } from '@genshin-optimizer/gi/db-ui'
 import type { ICharacter } from '@genshin-optimizer/gi/good'

@@ -10,8 +10,8 @@ import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import type { ICharacter, IWengine } from '@genshin-optimizer/zzz/zood'
 import type {
   ICharMeta,
-  IZZZDatabase,
   IZenlessObjectDescription,
+  IZZZDatabase,
 } from '../Interfaces'
 
 export const currentDBVersion = 3

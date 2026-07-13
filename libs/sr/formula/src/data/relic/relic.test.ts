@@ -8,7 +8,6 @@ import type {
   RelicSetKey,
   RelicSubStatKey,
 } from '@genshin-optimizer/sr/consts'
-import { data, keys, values } from '..'
 import { conditionals } from '../..'
 import { Calculator } from '../../calculator'
 import {
@@ -17,15 +16,16 @@ import {
   teamData,
   withMember,
 } from '../../util'
+import { data, keys, values } from '..'
 import type { Read } from '../util'
 import {
-  type TagMapNodeEntries,
   conditionalEntries,
   convert,
   enemy,
   own,
   ownBuff,
   ownTag,
+  type TagMapNodeEntries,
 } from '../util'
 
 setDebugMode(true)

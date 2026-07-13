@@ -1,8 +1,8 @@
 import { objPathValue } from '@genshin-optimizer/common/util'
 import type { MainSubStatKey } from '@genshin-optimizer/gi/consts'
 import {
-  type CharacterKey,
   allMainSubStatKeys,
+  type CharacterKey,
 } from '@genshin-optimizer/gi/consts'
 import type { OptConfig } from '@genshin-optimizer/gi/db'
 import type { NumNode } from '@genshin-optimizer/gi/wr'

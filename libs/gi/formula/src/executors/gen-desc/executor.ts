@@ -1,11 +1,11 @@
-import { writeFileSync } from 'fs'
-import * as path from 'path'
 import { formatText } from '@genshin-optimizer/common/pipeline'
 import {
   extractCondMetadata,
   extractFormulaMetadata,
 } from '@genshin-optimizer/game-opt/formula'
 import { workspaceRoot } from '@nx/devkit'
+import { writeFileSync } from 'fs'
+import * as path from 'path'
 import { entries } from '../../data'
 import type { Tag } from '../../data/util'
 import type { GenDescExecutorSchema } from './schema'

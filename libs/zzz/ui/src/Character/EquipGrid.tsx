@@ -7,6 +7,7 @@ import { Stack } from '@mui/system'
 import { useMemo } from 'react'
 import { CompactDiscCard, DiscSetCardCompact } from '../Disc'
 import { CompactWengineCard } from '../Wengine'
+
 const emptyDiscs = objKeyMap(allDiscSlotKeys, () => undefined)
 const DEFAULT_COLUMNS = { xs: 1, sm: 1, md: 2, lg: 3, xl: 4 } as const
 export function EquipGrid({

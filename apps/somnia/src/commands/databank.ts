@@ -1,5 +1,8 @@
-import * as fs from 'fs'
-import * as path from 'path'
+import type {
+  CharacterGenderedKey,
+  LightConeKey,
+  RelicSetKey,
+} from '@genshin-optimizer/sr/consts'
 import type {
   ApplicationCommandOptionChoiceData,
   AutocompleteInteraction,
@@ -8,15 +11,10 @@ import type {
   StringSelectMenuInteraction,
 } from 'discord.js'
 import { SlashCommandBuilder } from 'discord.js'
-
+import * as fs from 'fs'
+import * as path from 'path'
 import { error } from '../lib/message'
 import { cwd } from '../lib/util'
-
-import type {
-  CharacterGenderedKey,
-  LightConeKey,
-  RelicSetKey,
-} from '@genshin-optimizer/sr/consts'
 import { charBank } from './databank/char'
 import { lightconeBank } from './databank/lightcone'
 import { relicBank } from './databank/relics'

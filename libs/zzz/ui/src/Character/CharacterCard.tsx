@@ -5,9 +5,9 @@ import {
   specialityDefIcon,
 } from '@genshin-optimizer/zzz/assets'
 import {
+  allSkillKeys,
   type CharacterKey,
   type MilestoneKey,
-  allSkillKeys,
   milestoneMaxLevel,
 } from '@genshin-optimizer/zzz/consts'
 import { useCharacter } from '@genshin-optimizer/zzz/db-ui'

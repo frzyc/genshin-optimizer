@@ -1,5 +1,6 @@
 import { clamp } from '@genshin-optimizer/common/util'
 import { useCallback, useEffect, useState } from 'react'
+
 const LS_KEY = 'num_opt_workers'
 export function useNumWorkers() {
   const nativeThreads = navigator?.hardwareConcurrency || 8

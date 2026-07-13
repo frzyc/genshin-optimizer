@@ -42,12 +42,12 @@ import {
 } from 'react'
 import { BonusStatsSection } from './BonusStats'
 import { BuildsDisplay, EquipRowTC } from './BuildsDisplay'
+import { PresetContext, useTeamContext, useTeammateContext } from './context'
 import { LightConeSheetsDisplay } from './LightConeSheetsDisplay'
 import Optimize from './Optimize'
 import { RelicSheetsDisplay } from './RelicSheetsDisplay'
 import CharacterTalentPane from './TalentContent'
 import { TeamHeaderHeightContext } from './TeamHeader'
-import { PresetContext, useTeamContext, useTeammateContext } from './context'
 
 const BOT_PX = 0
 const SECTION_SPACING_PX = 33

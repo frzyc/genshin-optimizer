@@ -1,6 +1,6 @@
 import type { Monotonicity, Range } from '@genshin-optimizer/pando/engine'
 import { prune } from '@genshin-optimizer/pando/engine'
-import { type Candidate, buildCount, splitThreshold } from './common'
+import { buildCount, type Candidate, splitThreshold } from './common'
 import type { Subwork, Worker } from './worker'
 
 /** split `subwork` into smaller works, or only `prune` it if it is small enough */

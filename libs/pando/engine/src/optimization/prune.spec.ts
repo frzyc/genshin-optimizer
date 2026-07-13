@@ -13,8 +13,8 @@ import {
   sum,
   sumfrac,
 } from '../node'
-import { type Monotonicity, addCustomOperation } from '../util'
-import { State, pruneBranches, pruneRange, reaffine } from './prune'
+import { addCustomOperation, type Monotonicity } from '../util'
+import { pruneBranches, pruneRange, reaffine, State } from './prune'
 
 const r0 = read({ q: 'c0' })
 const r1 = read({ q: 'c1' })

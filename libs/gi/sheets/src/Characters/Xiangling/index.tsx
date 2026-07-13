@@ -12,7 +12,6 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { activeCharBuff, cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { TalentSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
 import {
   customDmgNode,
@@ -20,6 +19,7 @@ import {
   dmgNode,
   plungingDmgNodes,
 } from '../dataUtil'
+import type { TalentSheet } from '../ICharacterSheet.d'
 
 const key: CharacterKey = 'Xiangling'
 const elementKey: ElementKey = 'pyro'

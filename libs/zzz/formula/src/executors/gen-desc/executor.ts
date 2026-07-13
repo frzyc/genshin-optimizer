@@ -1,4 +1,3 @@
-import * as path from 'path'
 import { formatText } from '@genshin-optimizer/common/pipeline'
 import {
   extractCondMetadata,
@@ -11,8 +10,9 @@ import {
 } from '@genshin-optimizer/zzz/consts'
 import { workspaceRoot } from '@nx/devkit'
 import { writeFile } from 'fs/promises'
+import * as path from 'path'
 import { data } from '../../data'
-import { type Tag, commonSheets } from '../../data/util'
+import { commonSheets, type Tag } from '../../data/util'
 import {
   normalizeSheetFormulaKeys,
   provisionalFormulaMetaKey,

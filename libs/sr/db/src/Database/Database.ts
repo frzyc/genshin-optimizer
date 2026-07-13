@@ -13,8 +13,8 @@ import {
 import {
   BuildDataManager,
   BuildTcDataManager,
-  CharMetaDataManager,
   CharacterDataManager,
+  CharMetaDataManager,
   GeneratedBuildListDataManager,
   LightConeDataManager,
   OptConfigDataManager,

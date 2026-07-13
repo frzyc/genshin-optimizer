@@ -5,6 +5,7 @@ import {
 import { objKeyValMap, objMap } from '@genshin-optimizer/common/util'
 import { PROJROOT_PATH } from '../../consts'
 import { DEBUG } from './debug'
+
 const URL_BASE = 'https://static.nanoka.cc/zzz/'
 const VERSION = '3.0'
 

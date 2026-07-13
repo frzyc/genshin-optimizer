@@ -9,13 +9,13 @@ import type {
 import {
   type AdditiveReactionKey,
   type AmpReactionKey,
-  type CharacterKey,
-  type InfusionAuraElementKey,
   allAdditiveReactions,
   allAmpReactionKeys,
   allCharacterKeys,
   allHitModeKeys,
   allInfusionAuraElementKeys,
+  type CharacterKey,
+  type InfusionAuraElementKey,
 } from '@genshin-optimizer/gi/consts'
 import type { IGOOD } from '@genshin-optimizer/gi/good'
 import { getCharStat } from '@genshin-optimizer/gi/stats'

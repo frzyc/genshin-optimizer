@@ -4,10 +4,10 @@ import {
   verifyObjKeys,
 } from '@genshin-optimizer/common/util'
 import {
-  TrailblazerPathMap,
   allElementalTypeKeys,
   allTrailblazerGenderedKeys,
   allTrailblazerKeys,
+  TrailblazerPathMap,
 } from '@genshin-optimizer/sr/consts'
 import type { LanguageKey } from '@genshin-optimizer/sr/dm'
 import { allLanguageKeys, languageMap } from '@genshin-optimizer/sr/dm'

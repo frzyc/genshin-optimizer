@@ -25,14 +25,14 @@ import {
   allCharacterKeys,
   allElementKeys,
   allWeaponTypeKeys,
+  getCharMaxLevel,
 } from '@genshin-optimizer/gi/consts'
-import { getCharMaxLevel } from '@genshin-optimizer/gi/consts'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import {
-  useCharMeta,
   useCharacter,
-  useDBMeta,
+  useCharMeta,
   useDatabase,
+  useDBMeta,
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import CloseIcon from '@mui/icons-material/Close'
@@ -46,11 +46,11 @@ import {
   Divider,
   Grid,
   IconButton,
+  keyframes,
+  styled,
   TextField,
   Tooltip,
   Typography,
-  keyframes,
-  styled,
   tooltipClasses,
 } from '@mui/material'
 import type { ChangeEvent } from 'react'

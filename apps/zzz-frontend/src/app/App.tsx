@@ -18,12 +18,13 @@ import {
   StyledEngineProvider,
   ThemeProvider,
 } from '@mui/material'
-import { Suspense, lazy } from 'react'
+import { lazy, Suspense } from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import '../styles.scss'
 import { ZOAdWrapper } from '@genshin-optimizer/zzz/ui'
 import Footer from './Footer'
 import Header from './Header'
+
 const PageDiscs = lazy(() => import('@genshin-optimizer/zzz/page-discs'))
 const PageOptimize = lazy(() => import('@genshin-optimizer/zzz/page-optimize'))
 const PageCharacters = lazy(

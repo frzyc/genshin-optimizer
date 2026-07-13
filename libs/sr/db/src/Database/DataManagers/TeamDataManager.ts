@@ -17,14 +17,14 @@ import {
 } from '@genshin-optimizer/sr/consts'
 import type { Dst, Src } from '@genshin-optimizer/sr/formula'
 import {
-  type Sheet,
-  type Tag,
   getConditional,
   isMember,
+  type Sheet,
+  type Tag,
 } from '@genshin-optimizer/sr/formula'
 import { z } from 'zod'
-import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
+import { DataManager } from '../DataManager'
 import { validateTag } from '../tagUtil'
 import type { RelicIds } from './BuildDataManager'
 

@@ -12,7 +12,6 @@ import type {
   ProudSkillExcelConfigData,
 } from '@genshin-optimizer/gi/dm'
 import {
-  TextMapEN,
   avatarExcelConfigData,
   avatarSkillDepotExcelConfigData,
   avatarSkillExcelConfigData,
@@ -21,6 +20,7 @@ import {
   getHakushinCharData,
   hakushinChars,
   proudSkillExcelConfigData,
+  TextMapEN,
 } from '@genshin-optimizer/gi/dm'
 import * as somniaData from './Somnia/skillParam.json'
 

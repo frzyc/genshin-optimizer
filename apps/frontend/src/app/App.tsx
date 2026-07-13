@@ -23,7 +23,7 @@ import {
   ThemeProvider,
   useTheme,
 } from '@mui/material'
-import { Suspense, lazy, useCallback, useMemo, useState } from 'react'
+import { lazy, Suspense, useCallback, useMemo, useState } from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import './App.scss'
 import {

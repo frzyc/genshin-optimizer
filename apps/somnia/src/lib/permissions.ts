@@ -1,4 +1,3 @@
-import { readFileSync } from 'fs'
 import type {
   ChatInputCommandInteraction,
   Message,
@@ -8,6 +7,8 @@ import type {
   PermissionsBitField,
   User,
 } from 'discord.js'
+import { readFileSync } from 'fs'
+
 // So we can modify config.json after building, thereby not exposing credentials in our build drop
 const { clientid } = JSON.parse(
   readFileSync('./apps/somnia/src/config.json').toString()

@@ -3,8 +3,8 @@ import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import type { CharacterContextObj } from '@genshin-optimizer/gi/db-ui'
 import {
   CharacterContext,
-  useCharMeta,
   useCharacter,
+  useCharMeta,
   useDatabase,
 } from '@genshin-optimizer/gi/db-ui'
 import FavoriteIcon from '@mui/icons-material/Favorite'

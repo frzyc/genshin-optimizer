@@ -1,4 +1,5 @@
 import { linspace, range } from './array'
+
 describe('test @genshin_optimizer/util/array', function () {
   it('test linspace', () => {
     expect(linspace(1, 2, 3)).toEqual([1, 1.5, 2])

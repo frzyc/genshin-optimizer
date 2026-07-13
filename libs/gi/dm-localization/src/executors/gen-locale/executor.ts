@@ -16,7 +16,6 @@ import type {
 import { allGenderKeys } from '@genshin-optimizer/gi/consts'
 import type { AvatarSkillDepotExcelConfigData } from '@genshin-optimizer/gi/dm'
 import {
-  TextMapEN,
   artifactIdMap,
   artifactSlotMap,
   avatarExcelConfigData,
@@ -38,6 +37,7 @@ import {
   proudSkillExcelConfigData,
   reliquaryExcelConfigData,
   reliquarySetExcelConfigData,
+  TextMapEN,
   weaponExcelConfigData,
   weaponIdMap,
 } from '@genshin-optimizer/gi/dm'

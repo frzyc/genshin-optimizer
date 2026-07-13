@@ -12,6 +12,7 @@ import {
 import type { Monotonicity, Range } from '../util'
 import { ArrayMap, assertUnreachable, customOps, isDebug } from '../util'
 import { simplify } from './simplify'
+
 const { arithmetic, branching } = calculation
 
 type OP = Exclude<TaggedOP, 'tag' | 'dtag' | 'vtag'>

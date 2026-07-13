@@ -1,4 +1,3 @@
-import { fail } from 'assert'
 import {
   compileTagMapValues,
   read,
@@ -6,11 +5,12 @@ import {
 } from '@genshin-optimizer/pando/engine'
 import type { MilestoneKey, WengineKey } from '@genshin-optimizer/zzz/consts'
 import {
-  type CharacterKey,
   allCharacterKeys,
   allDiscSetKeys,
   allWengineKeys,
+  type CharacterKey,
 } from '@genshin-optimizer/zzz/consts'
+import { fail } from 'assert'
 import {
   charTagMapNodeEntries,
   conditionals,
@@ -23,7 +23,6 @@ import {
 import { Calculator } from './calculator'
 import { data, keys, values } from './data'
 import {
-  type TagMapNodeEntries,
   conditionalEntries,
   convert,
   enemy,
@@ -32,6 +31,7 @@ import {
   own,
   ownBuff,
   ownTag,
+  type TagMapNodeEntries,
   tagStr,
   team,
 } from './data/util'

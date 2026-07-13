@@ -25,8 +25,8 @@ import type { ArtSetExclusionKey } from '@genshin-optimizer/gi/db'
 import { type ICachedArtifact } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
-  useDBMeta,
   useDatabase,
+  useDBMeta,
   useLoadoutArtifacts,
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
@@ -42,10 +42,10 @@ import {
   ArtifactSetMultiAutocomplete,
   ArtifactSlotToggle,
   DataContext,
+  getTeamData,
   HitModeToggle,
   NoArtWarning,
   ReactionToggle,
-  getTeamData,
   resolveInfo,
   useTeamData,
 } from '@genshin-optimizer/gi/ui'
@@ -89,7 +89,7 @@ import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTa
 import StatFilterCard from '../TabOptimize/Components/StatFilterCard'
 import { LevelFilter } from './LevelFilter'
 import UpgradeOptChartCard from './UpgradeOptChartCard'
-import { UpOptCalculatorV2, canReshape } from './upOpt'
+import { canReshape, UpOptCalculatorV2 } from './upOpt'
 
 // artifact button gets its own type so multiple translations can be used
 type AddArtifactButtonProps = Omit<ButtonProps, 'onClick'> & {

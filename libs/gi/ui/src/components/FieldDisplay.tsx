@@ -20,8 +20,8 @@ import {
   List,
   ListItem,
   Skeleton,
-  Typography,
   styled,
+  Typography,
 } from '@mui/material'
 import type { ReactNode } from 'react'
 import React, { Suspense, useCallback, useContext, useMemo } from 'react'

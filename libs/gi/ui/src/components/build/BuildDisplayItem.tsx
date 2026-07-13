@@ -23,8 +23,8 @@ import {
   CharacterContext,
   TeamCharacterContext,
   useArtifact,
-  useDBMeta,
   useDatabase,
+  useDBMeta,
   useEquippedInTeam,
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
@@ -45,8 +45,8 @@ import {
 } from '@mui/material'
 import type { ReactNode } from 'react'
 import {
-  Suspense,
   memo,
+  Suspense,
   useCallback,
   useContext,
   useEffect,
@@ -67,6 +67,7 @@ import { StatDisplayComponent } from '../character/StatDisplayComponent'
 import { WeaponCard, WeaponCardNano } from '../weapon'
 import { EquipBuildModal } from './EquipBuildModal'
 import { TeammateEquippedAlert } from './TeammateEquippedAlert'
+
 type NewOld = {
   newId: string
   oldId?: string

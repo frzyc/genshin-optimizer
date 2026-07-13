@@ -6,7 +6,7 @@ import {
   transposeArray,
   verifyObjKeys,
 } from '@genshin-optimizer/common/util'
-import { type CharacterKey, allSkillKeys } from '@genshin-optimizer/zzz/consts'
+import { allSkillKeys, type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import type { CharacterData } from '@genshin-optimizer/zzz/dm'
 import {
   charactersDetailedJSONData,

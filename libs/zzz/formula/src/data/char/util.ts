@@ -12,19 +12,18 @@ import {
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import {
   type AttributeKey,
-  type SkillKey,
   allAttributeKeys,
   allSkillKeys,
+  type SkillKey,
 } from '@genshin-optimizer/zzz/consts'
 import {
+  allStats,
   type CharacterDatum,
   type SkillParam,
-  allStats,
 } from '@genshin-optimizer/zzz/stats'
 import { anomTimePassed } from '../common/anomaly'
 import type { DamageType, DmgTag, FormulaArg, Stat } from '../util'
 import {
-  type TagMapNodeEntries,
   customAnomalyBuildup,
   customAnomalyDmg,
   customDaze,
@@ -37,6 +36,7 @@ import {
   own,
   ownBuff,
   percent,
+  type TagMapNodeEntries,
 } from '../util'
 
 type AbilityScalingType = SkillKey

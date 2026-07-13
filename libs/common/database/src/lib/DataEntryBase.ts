@@ -1,6 +1,6 @@
 import { deepFreeze } from '@genshin-optimizer/common/util'
-import type { Database } from './Database'
 import type { TriggerString } from './common'
+import type { Database } from './Database'
 
 export class DataEntryBase<
   // Key used to reference this data entry

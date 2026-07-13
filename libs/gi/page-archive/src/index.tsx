@@ -16,6 +16,7 @@ import {
 import TabArtifact from './TabArtifact'
 import TabCharacter from './TabCharacter'
 import TabWeapon from './TabWeapon'
+
 type Tab = {
   i18Key: string
   icon: ReactElement

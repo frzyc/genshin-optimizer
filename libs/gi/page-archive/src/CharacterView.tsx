@@ -7,8 +7,8 @@ import { useDBMeta } from '@genshin-optimizer/gi/db-ui'
 import type { TalentSheetElementKey } from '@genshin-optimizer/gi/sheets'
 import { getCharSheet } from '@genshin-optimizer/gi/sheets'
 import {
-  CharIconSide,
   CharacterName,
+  CharIconSide,
   DocumentDisplay,
 } from '@genshin-optimizer/gi/ui'
 import CloseIcon from '@mui/icons-material/Close'
@@ -24,6 +24,7 @@ import {
 } from '@mui/material'
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
+
 const talentSpacing = {
   xs: 12,
   sm: 6,

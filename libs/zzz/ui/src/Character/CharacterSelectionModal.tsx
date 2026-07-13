@@ -165,7 +165,10 @@ export function CharacterSingleSelectionModal({
 function CharacterCard({
   characterKey,
   onClick,
-}: { characterKey: CharacterKey | undefined; onClick: () => void }) {
+}: {
+  characterKey: CharacterKey | undefined
+  onClick: () => void
+}) {
   return (
     <CardThemed
       bgt="light"

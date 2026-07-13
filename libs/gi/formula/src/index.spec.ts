@@ -1,4 +1,10 @@
+import {
+  allArtifactSetKeys,
+  allCharacterKeys,
+  allWeaponKeys,
+} from '@genshin-optimizer/gi/consts'
 import { compileTagMapValues } from '@genshin-optimizer/pando/engine'
+import { fail } from 'assert'
 import { Calculator } from './calculator'
 import { entries, keys, values } from './data'
 import type { Member, Sheet, TagMapNodeEntries } from './data/util'
@@ -12,13 +18,6 @@ import {
   teamBuff,
 } from './data/util'
 import { teamData, withMember } from './util'
-
-import { fail } from 'assert'
-import {
-  allArtifactSetKeys,
-  allCharacterKeys,
-  allWeaponKeys,
-} from '@genshin-optimizer/gi/consts'
 
 describe('calculator', () => {
   describe('correctness', () => {

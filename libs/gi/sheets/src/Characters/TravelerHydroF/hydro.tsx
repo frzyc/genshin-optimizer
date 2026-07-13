@@ -21,7 +21,6 @@ import {
   subscript,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../SheetUtil'
-import type { TalentSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
 import {
   dataObjForCharacterSheet,
@@ -31,6 +30,7 @@ import {
   shieldElement,
   shieldNode,
 } from '../dataUtil'
+import type { TalentSheet } from '../ICharacterSheet'
 
 export default function hydro(
   key: CharacterSheetKey,

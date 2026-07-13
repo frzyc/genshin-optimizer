@@ -20,7 +20,6 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import type { Palette } from '@mui/material'
 import { cond, st, stg } from '../../SheetUtil'
-import type { TalentSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
 import {
   customDmgNode,
@@ -28,6 +27,7 @@ import {
   dmgNode,
   hitEle,
 } from '../dataUtil'
+import type { TalentSheet } from '../ICharacterSheet.d'
 
 export default function dendro(
   key: CharacterSheetKey,

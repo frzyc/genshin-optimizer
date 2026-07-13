@@ -28,7 +28,7 @@ import {
   Typography,
 } from '@mui/material'
 import type { ReactNode } from 'react'
-import { Suspense, memo, useCallback } from 'react'
+import { memo, Suspense, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { StatDisplay } from '../Character'
 import { LocationAutocomplete } from '../Character/LocationAutocomplete'

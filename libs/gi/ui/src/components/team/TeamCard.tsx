@@ -25,8 +25,8 @@ import type { CharacterContextObj } from '@genshin-optimizer/gi/db-ui'
 import {
   CharacterContext,
   useCharacter,
-  useDBMeta,
   useDatabase,
+  useDBMeta,
   useTeam,
   useTeamChar,
 } from '@genshin-optimizer/gi/db-ui'

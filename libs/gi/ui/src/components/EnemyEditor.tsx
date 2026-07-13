@@ -20,8 +20,8 @@ import {
   Collapse,
   Grid,
   IconButton,
-  Typography,
   styled,
+  Typography,
 } from '@mui/material'
 import { useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'

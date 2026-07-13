@@ -8,7 +8,6 @@ import type {
 } from '@genshin-optimizer/gi/consts'
 import type { CharacterId, StatKey } from '@genshin-optimizer/gi/dm'
 import {
-  QualityTypeMap,
   ascensionData,
   avatarExcelConfigData,
   avatarSkillDepotExcelConfigData,
@@ -19,6 +18,7 @@ import {
   getHakushinCharData,
   hakushinChars,
   propTypeMap,
+  QualityTypeMap,
   regionMap,
   weaponMap,
 } from '@genshin-optimizer/gi/dm'

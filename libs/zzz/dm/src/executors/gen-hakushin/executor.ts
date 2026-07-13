@@ -1,6 +1,7 @@
 import type { PromiseExecutor } from '@nx/devkit'
 import { getDataFromHakushin } from './hakushin'
 import type { GenHakushinDataExecutorSchema } from './schema'
+
 // import { workspaceRoot } from '@nx/devkit'
 // const folderPath = `${workspaceRoot}/libs/zzz/dm/HakushinData`
 

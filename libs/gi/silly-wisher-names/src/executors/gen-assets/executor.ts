@@ -1,6 +1,6 @@
-import { existsSync, mkdirSync, writeFileSync } from 'fs'
 import { langKeys } from '@genshin-optimizer/common/pipeline'
-import { PROJROOT_PATH, languageMap } from '../../../Translated/util'
+import { existsSync, mkdirSync, writeFileSync } from 'fs'
+import { languageMap, PROJROOT_PATH } from '../../../Translated/util'
 import type { GenAssetsExecutorSchema } from './schema'
 
 const swKeyMap = {

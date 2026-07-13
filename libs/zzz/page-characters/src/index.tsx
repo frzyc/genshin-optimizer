@@ -28,21 +28,21 @@ import {
 } from '@genshin-optimizer/zzz/db-ui'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import {
-  CharCalcProvider,
   CharacterEditor,
+  CharCalcProvider,
 } from '@genshin-optimizer/zzz/formula-ui'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
 import type { CharacterSortKey } from '@genshin-optimizer/zzz/ui'
 import {
-  CharSpecialtyToggle,
   CharacterCard,
   CharacterRarityToggle,
   CharacterSingleSelectionModal,
-  ElementToggle,
-  StatHighlightContext,
+  CharSpecialtyToggle,
   characterFilterConfigs,
   characterSortConfigs,
   characterSortMap,
+  ElementToggle,
+  StatHighlightContext,
 } from '@genshin-optimizer/zzz/ui'
 import AddIcon from '@mui/icons-material/Add'
 import {

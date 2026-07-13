@@ -12,8 +12,8 @@ import type {
 import { randomizeRelic } from '@genshin-optimizer/sr/util'
 import type { ICachedLightCone, ISroDatabase } from '../Interfaces'
 import { SroSource } from '../Interfaces'
-import { initialCharacter } from './DataManagers/CharacterDataManager'
 import { SroDatabase } from './Database'
+import { initialCharacter } from './DataManagers/CharacterDataManager'
 
 const dbStorage = new DBLocalStorage(localStorage, 'sro')
 const dbIndex = 1

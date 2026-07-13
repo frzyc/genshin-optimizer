@@ -1,5 +1,3 @@
-import { mkdirSync, writeFileSync } from 'fs'
-import { dirname } from 'path'
 import { formatText } from '@genshin-optimizer/common/pipeline'
 import {
   allCharacterKeys,
@@ -8,6 +6,8 @@ import {
 } from '@genshin-optimizer/zzz/consts'
 import type { Tree } from '@nx/devkit'
 import { workspaceRoot } from '@nx/devkit'
+import { mkdirSync, writeFileSync } from 'fs'
+import { dirname } from 'path'
 import { commonSheets } from '../../data/util'
 
 export default async function genIndex(_tree: Tree, sheet_type: string) {

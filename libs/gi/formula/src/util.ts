@@ -13,8 +13,8 @@ import {
   own,
   ownBuff,
   ownTag,
-  readStat,
   reader,
+  readStat,
 } from './data/util'
 
 export function withPreset(

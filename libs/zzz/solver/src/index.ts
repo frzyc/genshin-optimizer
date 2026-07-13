@@ -6,7 +6,7 @@ import type {
   SolverConfig,
 } from '@genshin-optimizer/game-opt/solver'
 import { buildCount } from '@genshin-optimizer/game-opt/solver'
-
+import type { NumTagFree } from '@genshin-optimizer/pando/engine'
 import {
   constant,
   detach,
@@ -15,7 +15,6 @@ import {
   read,
   sum,
 } from '@genshin-optimizer/pando/engine'
-import type { NumTagFree } from '@genshin-optimizer/pando/engine'
 import type {
   CharacterKey,
   DiscSetKey,

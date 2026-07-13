@@ -34,6 +34,7 @@ import type { TeamData } from '../../type'
 import { ArtifactCardNano } from '../artifact'
 import { StatDisplayComponent } from '../character'
 import { WeaponCardNano } from '../weapon'
+
 type Props = {
   currentName: string
   currentWeaponId: string | undefined

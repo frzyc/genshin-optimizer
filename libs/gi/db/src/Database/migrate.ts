@@ -13,8 +13,12 @@ import {
   travelerElements,
 } from '@genshin-optimizer/gi/consts'
 import type { ICharacter, IGOOD } from '@genshin-optimizer/gi/good'
-import type { CustomMultiTarget } from './DataManagers'
-import type { LoadoutDatum, Team, TeamCharacter } from './DataManagers'
+import type {
+  CustomMultiTarget,
+  LoadoutDatum,
+  Team,
+  TeamCharacter,
+} from './DataManagers'
 import type { IGO } from './exim'
 
 // MIGRATION STEP

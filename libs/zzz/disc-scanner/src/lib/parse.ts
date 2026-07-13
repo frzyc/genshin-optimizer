@@ -1,10 +1,10 @@
 import { levenshteinDistance } from '@genshin-optimizer/common/util'
 import type { DiscRarityKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
 import {
-  type DiscSetKey,
   allDiscMainStatKeys,
   allDiscSetKeys,
   allDiscSubStatKeys,
+  type DiscSetKey,
   discMaxLevel,
   discSlotToMainStatKeys,
 } from '@genshin-optimizer/zzz/consts'

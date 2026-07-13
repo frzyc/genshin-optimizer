@@ -4,6 +4,7 @@ import {
 } from '@genshin-optimizer/common/pipeline'
 import { PROJROOT_PATH } from '../../consts'
 import { DEBUG } from './debug'
+
 const URL_BASE = 'https://api.hakush.in/gi/'
 
 async function dumpHakushinData(filename: string, obj: unknown) {

@@ -4,8 +4,8 @@ import {
   setDebugMode,
 } from '@genshin-optimizer/pando/engine'
 import type { CharacterKey, LightConeKey } from '@genshin-optimizer/sr/consts'
-import { data, keys, values } from '..'
 import { Calculator } from '../../calculator'
+import { data, keys, values } from '..'
 import '../../index'
 import { conditionals, formulas } from '../../meta'
 import {
@@ -16,13 +16,13 @@ import {
 } from '../../util'
 import type { TagMapNodeEntries } from '../util'
 import {
-  Read,
   conditionalEntries,
   convert,
   enemy,
   own,
   ownBuff,
   ownTag,
+  Read,
 } from '../util'
 
 setDebugMode(true)

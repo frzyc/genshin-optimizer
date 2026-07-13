@@ -8,7 +8,6 @@ import type {
   DiscSetKey,
   DiscSubStatKey,
 } from '@genshin-optimizer/zzz/consts'
-import { data, keys, values } from '..'
 import {
   charTagMapNodeEntries,
   conditionals,
@@ -17,9 +16,9 @@ import {
   withMember,
 } from '../..'
 import { Calculator } from '../../calculator'
+import { data, keys, values } from '..'
 import type { Read } from '../util'
 import {
-  type TagMapNodeEntries,
   conditionalEntries,
   convert,
   enemy,
@@ -27,6 +26,7 @@ import {
   own,
   ownBuff,
   ownTag,
+  type TagMapNodeEntries,
 } from '../util'
 
 setDebugMode(true)

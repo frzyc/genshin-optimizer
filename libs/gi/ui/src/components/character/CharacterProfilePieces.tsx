@@ -7,12 +7,12 @@ import { getCharLevelString } from '@genshin-optimizer/gi/consts'
 import {
   CharacterContext,
   useCharMeta,
-  useDBMeta,
   useDatabase,
+  useDBMeta,
 } from '@genshin-optimizer/gi/db-ui'
 import {
-  type TalentSheetElementKey,
   getCharSheet,
+  type TalentSheetElementKey,
 } from '@genshin-optimizer/gi/sheets'
 import { splash } from '@genshin-optimizer/gi/silly-wisher'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'

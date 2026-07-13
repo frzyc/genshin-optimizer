@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+
 const googleAdsURL =
   'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
 

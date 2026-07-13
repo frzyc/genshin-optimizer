@@ -5,7 +5,7 @@ import { artifactDefIcon } from '@genshin-optimizer/gi/assets'
 import { allArtifactSetKeys } from '@genshin-optimizer/gi/consts'
 import type { ArchiveArtifactOption } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { Translate, i18n } from '@genshin-optimizer/gi/i18n'
+import { i18n, Translate } from '@genshin-optimizer/gi/i18n'
 import { getArtSetStat } from '@genshin-optimizer/gi/stats'
 import { ArtifactSetName } from '@genshin-optimizer/gi/ui'
 import SearchIcon from '@mui/icons-material/Search'
@@ -33,6 +33,7 @@ import {
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
+
 const maxRarities = [5, 4, 3] as const
 export default function TabArtifact() {
   const database = useDatabase()

@@ -9,10 +9,10 @@ import type {
   CustomTarget,
 } from './CustomMultiTarget'
 import {
-  MAX_DESC_LENGTH,
-  MAX_NAME_LENGTH,
   initCustomMultiTarget,
   initCustomTarget,
+  MAX_DESC_LENGTH,
+  MAX_NAME_LENGTH,
   validateCustomMultiTarget,
 } from './CustomMultiTarget'
 import type { GeneratedBuild } from './GeneratedBuildListDataManager'

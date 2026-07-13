@@ -6,8 +6,8 @@ import type {
 } from '@genshin-optimizer/game-opt/engine'
 import { presets } from '@genshin-optimizer/game-opt/engine'
 import { CalcContext } from '@genshin-optimizer/game-opt/formula-ui'
-import type { FormulaText } from '@genshin-optimizer/game-opt/sheet-ui'
 import type {
+  FormulaText,
   FormulaTextFunc,
   FullTagDisplayComponent,
   TagDisplayComponent,
@@ -32,8 +32,8 @@ import { useDiscs, useWengine } from '@genshin-optimizer/zzz/db-ui'
 import {
   charTagMapNodeEntries,
   conditionalEntries,
-  discTagMapNodeEntries,
   discsToTagMapNodeEntries,
+  discTagMapNodeEntries,
   enemy,
   own,
   ownBuff,
