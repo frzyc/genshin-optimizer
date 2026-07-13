@@ -2,5 +2,9 @@
   "name": "@genshin-optimizer/zzz/dm",
   "version": "0.0.1",
   "type": "commonjs",
-  "executors": "./executors.json"
+  "executors": "./executors.json",
+  "dependencies": {
+    "@nx/devkit": "20.5.0"
+  },
+  "generators": "./generators.json"
 }

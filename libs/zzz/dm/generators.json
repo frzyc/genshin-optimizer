@@ -1,0 +1,14 @@
+{
+  "generators": {
+    "generate-all-deobf-template": {
+      "factory": "./src/generators/generate-all-deobf-template",
+      "schema": "./src/generators/all-schema.json",
+      "description": "generate-all-deobf-template generator"
+    },
+    "generate-single-deobf-template": {
+      "factory": "./src/generators/generate-single-deobf-template",
+      "schema": "./src/generators/single-schema.json",
+      "description": "generate-single-deobf-template generator"
+    }
+  }
+}

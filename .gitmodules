@@ -21,3 +21,8 @@
 	url = https://github.com/genshin-optimizer/zzz-hakushin-data
 	shallow = true
 	branch = master
+[submodule "libs/zzz/dm/ZenlessDataDeobf"]
+	path = libs/zzz/dm/ZenlessDataDeobf
+	url = https://github.com/genshin-optimizer/ZenlessDataDeobf
+	shallow = true
+	branch = master

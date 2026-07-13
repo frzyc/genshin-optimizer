@@ -4,6 +4,11 @@
       "implementation": "./src/executors/gen-hakushin/executor",
       "schema": "./src/executors/gen-hakushin/schema.json",
       "description": "gen-hakushin executor"
+    },
+    "deobf": {
+      "implementation": "./src/executors/deobf/deobf",
+      "schema": "./src/executors/deobf/schema.json",
+      "description": "deobf executor"
     }
   }
 }
