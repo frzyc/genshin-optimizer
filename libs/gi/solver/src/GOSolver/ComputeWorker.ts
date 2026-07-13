@@ -13,6 +13,7 @@ import type { Interim, Setup } from '../type'
 export class ComputeWorker {
   builds: SolverBuild[] = []
   buildValues: number[] | undefined = undefined
+  buildPlots: number[] | undefined = undefined
   plotData: PlotData | undefined
   threshold = -Infinity
   topN: number
@@ -84,24 +85,28 @@ export class ComputeWorker {
         if (min.every((m, i) => m <= result[i])) {
           const value = result[min.length],
             { builds, plotData } = this
+          // Set `plot` on every kept build (not just plot-bin bests) so the
+          // top-N builds carry the (plot, value) points used for
+          // frontier-aware threshold pruning.
+          const x = plotData ? result[min.length + 1] : undefined
           let build: SolverBuild | undefined
           if (value >= this.threshold) {
             build = {
               value,
+              plot: x,
               artifactIds: buffer.map((x) => x.id).filter((id) => id),
             }
             builds.push(build)
           }
           if (plotData) {
-            const x = result[min.length + 1]
-            if (!plotData[x] || plotData[x]!.value < value) {
+            if (!plotData[x!] || plotData[x!]!.value < value) {
               if (!build)
                 build = {
                   value,
+                  plot: x,
                   artifactIds: buffer.map((x) => x.id).filter((id) => id),
                 }
-              build.plot = x
-              plotData[x] = build
+              plotData[x!] = build
             }
           }
         } else count.failed += 1
@@ -129,6 +134,9 @@ export class ComputeWorker {
     if (this.builds.length >= 1000 || force) {
       this.builds = this.builds.sort((a, b) => b.value - a.value).slice(0, topN)
       this.buildValues = this.builds.map((x) => x.value)
+      this.buildPlots = this.plotData
+        ? this.builds.map((x) => x.plot ?? -Infinity)
+        : undefined
       this.threshold = Math.max(
         this.threshold,
         this.buildValues[topN - 1] ?? -Infinity
@@ -143,9 +151,11 @@ export class ComputeWorker {
     this.callback({
       resultType: 'interim',
       buildValues: this.buildValues,
+      buildPlots: this.buildPlots,
       ...count,
     })
     this.buildValues = undefined
+    this.buildPlots = undefined
     count.tested = 0
     count.failed = 0
     count.skipped = 0
