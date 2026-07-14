@@ -54,6 +54,16 @@ export class BNBSplitWorker implements SplitWorker {
   /** Only run swap-dominance pruning on filters at least this large; smaller
    * filters don't repay the bound evaluations. */
   minDominanceCount = 1 << 16
+  /**
+   * Index of `plotBase` in `nodes` when plotting. The plot must show the
+   * Pareto frontier of (plotBase, optTarget), so regions below the opt-target
+   * threshold may only be pruned if they are also below `plotThreshold` in
+   * plotBase — i.e., only when they are Pareto-dominated by a known top-N
+   * build (whose plotBase value is `plotThreshold`, sent by `GOSolver`).
+   * Pruning on the threshold alone would truncate the frontier's extrema.
+   */
+  plotNodeIdx: number | undefined
+  plotThreshold = -Infinity
 
   /**
    * Filters are not neccessarily in a valid state, i.e., "calculated".
@@ -73,11 +83,17 @@ export class BNBSplitWorker implements SplitWorker {
     this.arts = arts
     this.min = [-Infinity, ...constraints.map((x) => x.min)]
     this.nodes = [optTarget, ...constraints.map((x) => x.value)]
+    if (plotBase) {
+      this.plotNodeIdx = this.nodes.length
+      this.nodes.push(plotBase)
+      this.min.push(-Infinity)
+    }
     this.callback = callback
     this.topN = topN
     this.canPruneDominance = !plotBase
 
-    // make sure we can approximate it
+    // make sure we can approximate it (incl. `plotBase`; on failure the
+    // caller falls back to `DefaultSplitWorker`, which never prunes)
     linearUB(this.nodes, arts)
   }
 
@@ -94,9 +110,17 @@ export class BNBSplitWorker implements SplitWorker {
         count,
       })
   }
-  setThreshold(newThreshold: number): void {
+  setThreshold(newThreshold: number, plotThreshold?: number): void {
+    let stale = false
     if (newThreshold > this.min[0]) {
       this.min[0] = newThreshold
+      stale = true
+    }
+    if (plotThreshold !== undefined && plotThreshold !== this.plotThreshold) {
+      this.plotThreshold = plotThreshold
+      stale = true
+    }
+    if (stale) {
       // All calculations become stale
       this.firstUncalculated = 0
       this.filters.forEach((filter) => delete filter.calculated)
@@ -166,9 +190,16 @@ export class BNBSplitWorker implements SplitWorker {
     let { nodes, arts, maxConts, lins, approxs } = this.filters[i]
     const { count: oldCount, calculated } = this.filters[i]
     if (calculated) return
+    // `pruneAll` prunes each node against its minimum independently, which
+    // cannot express the (objective AND plot) domination condition, so when
+    // plotting the opt-target threshold must not be applied there.
+    const pruneMin =
+      this.plotNodeIdx === undefined
+        ? this.min
+        : [-Infinity, ...this.min.slice(1)]
     ;({ nodes, arts } = pruneAll(
       nodes,
-      this.min,
+      pruneMin,
       arts,
       this.topN,
       {},
@@ -195,16 +226,37 @@ export class BNBSplitWorker implements SplitWorker {
     // We could actually loop `newValues` computation if the removed artifacts have
     // the highest contribution in one of the target node as the removal will raise
     // the required contribution even further. However, once is generally enough.
+    const plotIdx = this.plotNodeIdx
+    const reqMins =
+      plotIdx === undefined
+        ? this.min
+        : this.min.map((m, i) => (i === plotIdx ? this.plotThreshold : m))
     const leadingConts = maxConts.map((cont, i) =>
       Object.values(cont).reduce(
         (accu, val) => accu + val,
-        approxs[i].base - this.min[i]
+        approxs[i].base - reqMins[i]
       )
     )
     const newValues = objMap(arts.values, (arts, slot) => {
       const requiredConts = leadingConts.map((lc, i) => maxConts[i][slot] - lc)
-      return arts.filter(({ id }) =>
-        approxs.every(({ conts }, i) => conts[id] >= requiredConts[i])
+      if (plotIdx === undefined || !approxs.length)
+        return arts.filter(({ id }) =>
+          approxs.every(({ conts }, i) => conts[id] >= requiredConts[i])
+        )
+      // When plotting, keep everything that could be on the Pareto frontier
+      // of (plotBase, optTarget): hard constraints must still hold, but the
+      // opt-target threshold may only remove an artifact when its best-case
+      // plotBase value is also below `plotThreshold` — otherwise its builds
+      // are not necessarily dominated by the top-N build that set the
+      // thresholds, and pruning would clip the frontier's extrema.
+      return arts.filter(
+        ({ id }) =>
+          approxs.every(
+            ({ conts }, i) =>
+              i === 0 || i === plotIdx || conts[id] >= requiredConts[i]
+          ) &&
+          (approxs[0].conts[id] >= requiredConts[0] ||
+            approxs[plotIdx].conts[id] >= requiredConts[plotIdx])
       )
     })
     arts = { base: arts.base, values: newValues }

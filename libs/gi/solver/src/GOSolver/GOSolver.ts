@@ -24,8 +24,10 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
   >
   private exclusion: Count['exclusion']
   private topN: number
-  private buildValues: { w: Worker; val: number }[]
+  private buildValues: { w: Worker; val: number; plot?: number }[]
   private finalizedResults: FinalizeResult[] = []
+  private plotting: boolean
+  private plotThreshold = -Infinity
 
   constructor(
     problem: OptProblemInput,
@@ -60,6 +62,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     this.status = status
     this.exclusion = exclusion
     this.topN = topN
+    this.plotting = !!problem.plotBase
     this.status.total = NaN
     this.status.testedPerSecond = 0
     this.status.skippedPerSecond = 0
@@ -173,13 +176,32 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
 
       this.buildValues = this.buildValues.filter(({ w }) => w !== worker)
       this.buildValues.push(
-        ...r.buildValues.map((val) => ({ w: worker!, val }))
+        ...r.buildValues.map((val, i) => ({
+          w: worker!,
+          val,
+          plot: r.buildPlots?.[i],
+        }))
       )
       this.buildValues.sort((a, b) => b.val - a.val).splice(topN)
 
       const threshold = this.buildValues[topN - 1].val ?? -Infinity
-      if (oldThreshold !== threshold)
-        this.broadcast({ command: 'threshold', threshold })
+      let changed = oldThreshold !== threshold
+      let plotThreshold: number | undefined
+      if (this.plotting) {
+        // Each top-N build is a certified frontier dominator point
+        // (plot, value >= threshold); regions may only be threshold-pruned
+        // when their plotBase upper bound also falls below this.
+        plotThreshold = this.buildValues.reduce(
+          (a, { plot }) => Math.max(a, plot ?? -Infinity),
+          -Infinity
+        )
+        if (plotThreshold !== this.plotThreshold) {
+          this.plotThreshold = plotThreshold
+          changed = true
+        }
+      }
+      if (changed)
+        this.broadcast({ command: 'threshold', threshold, plotThreshold })
     }
   }
 }

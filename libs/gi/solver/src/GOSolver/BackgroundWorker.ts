@@ -38,7 +38,7 @@ async function handleEvent(e: MessageEvent<WorkerCommand>): Promise<void> {
       computeWorker.compute(data.filter)
       break
     case 'threshold': {
-      splitWorker.setThreshold(data.threshold)
+      splitWorker.setThreshold(data.threshold, data.plotThreshold)
       computeWorker.setThreshold(data.threshold)
       return // This is a fire-and-forget command
     }
@@ -91,5 +91,5 @@ onmessage = async (e: MessageEvent<WorkerCommand>) => {
 
 export interface SplitWorker {
   split(filter: RequestFilter, minCount: number): Iterable<RequestFilter>
-  setThreshold(newThreshold: number): void
+  setThreshold(newThreshold: number, plotThreshold?: number): void
 }
