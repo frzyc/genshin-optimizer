@@ -10,6 +10,7 @@ import type { WorkerCommand, WorkerResult } from '../type'
 import { BNBSplitWorker } from './BNBSplitWorker'
 import { ComputeWorker } from './ComputeWorker'
 import { DefaultSplitWorker } from './DefaultSplitWorker'
+import { tightenPartialBuilds } from './tightenPartials'
 
 declare function postMessage(command: WorkerCommand | WorkerResult): void
 
@@ -45,7 +46,22 @@ async function handleEvent(e: MessageEvent<WorkerCommand>): Promise<void> {
     case 'finalize': {
       computeWorker.refresh(true)
       const { builds, plotData } = computeWorker
-      postMessage({ resultType: 'finalize', builds, plotData })
+      const partialCandidates = computeWorker.partialCandidates()
+      postMessage({
+        resultType: 'finalize',
+        builds,
+        plotData,
+        partialCandidates,
+      })
+      break
+    }
+    case 'tighten': {
+      const { candidates, threshold } = data
+      const setup = computeWorker.partialSetup
+      const partialBuilds = setup
+        ? tightenPartialBuilds(setup, candidates, threshold)
+        : {}
+      postMessage({ resultType: 'tighten', partialBuilds })
       break
     }
     case 'count': {

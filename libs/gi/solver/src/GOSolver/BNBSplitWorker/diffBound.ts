@@ -3,7 +3,12 @@ import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
 import type { ConstantNode, OptNode } from '@genshin-optimizer/gi/wr'
 import { allOperations, forEachNodes } from '@genshin-optimizer/gi/wr'
-import type { ArtifactBuildData, ArtifactsBySlot } from '../../common'
+import type {
+  ArtifactBuildData,
+  ArtifactsBySlot,
+  DynMinMax,
+  MinMax,
+} from '../../common'
 import { computeFullArtRange, computeNodeRange } from '../../common'
 
 /**
@@ -76,7 +81,10 @@ export type SlotDiffBound = {
    * Difference intervals of the top-level nodes for the swap `m -> n`.
    * The returned buffers (length = nodes.length) are reused across calls.
    */
-  evaluate: (m: ArtContext, n: ArtContext) => { lo: Float64Array; hi: Float64Array }
+  evaluate: (
+    m: ArtContext,
+    n: ArtContext
+  ) => { lo: Float64Array; hi: Float64Array }
 }
 
 export type DiffBound = {
@@ -87,7 +95,17 @@ export type DiffBound = {
   /** Midpoint estimate of `nodes[0]` (the opt target) — used to order
    * dominator candidates from most to least promising. */
   score: (ctx: ArtContext) => number
+  /** Conditioned range of top-level node `j` under a context. */
+  nodeRange: (ctx: ArtContext, j: number) => MinMax
   forSlot: (slot: ArtifactSlotKey) => SlotDiffBound
+  /**
+   * Like `forSlot`, but with an explicit rest box over `readKeys` (absolute,
+   * i.e. including `arts.base` and every stat not part of the swapped
+   * vector). The swapped entity can be any stat vector layered on top of the
+   * box — e.g. a whole 4-slot combo, with the box covering only the
+   * remaining slot (see `PartialBuildTracker.ts` / `tightenPartials.ts`).
+   */
+  forRest: (restLo: Float64Array, restHi: Float64Array) => SlotDiffBound
 }
 
 export class DiffBoundError extends Error {
@@ -139,11 +157,18 @@ function resSlopeRange(min: number, max: number) {
 
 export function compileDiffBound(
   nodes: OptNode[],
-  arts: ArtifactsBySlot
+  arts: ArtifactsBySlot,
+  /** Per-slot stat boxes (e.g. of hypothetical future artifacts) unioned
+   * into that slot's range, widening every rest box the bound quantifies
+   * over. See `Setup.partialBuilds`. */
+  extraSlotRange?: Partial<Record<ArtifactSlotKey, DynMinMax>>
 ): DiffBound {
   // Full-box ranges, for compile-time pattern guards only; the runtime uses
   // the tighter per-artifact conditioned ranges.
-  const globalRange = computeNodeRange(nodes, computeFullArtRange(arts))
+  const globalRange = computeNodeRange(
+    nodes,
+    computeFullArtRange(arts, extraSlotRange)
+  )
 
   // Topological order (operands before parents), shared nodes visited once.
   const order: OptNode[] = []
@@ -326,10 +351,7 @@ export function compileDiffBound(
           hi[i] = resOp([lo[x]])
         })
         evalInstrs.push((dLo, dHi, m, n) => {
-          resSlopeRange(
-            Math.min(m.lo[x], n.lo[x]),
-            Math.max(m.hi[x], n.hi[x])
-          )
+          resSlopeRange(Math.min(m.lo[x], n.lo[x]), Math.max(m.hi[x], n.hi[x]))
           imul(slope.lo, slope.hi, dLo[x], dHi[x])
           setD(i, prod.lo, prod.hi, dLo, dHi, m, n)
         })
@@ -370,7 +392,10 @@ export function compileDiffBound(
           pOp.operation === 'const' && fOp.operation === 'const'
         if (
           !constBranches &&
-          !(fOp.operation === 'const' && (fOp as ConstantNode<number>).value === 0)
+          !(
+            fOp.operation === 'const' &&
+            (fOp as ConstantNode<number>).value === 0
+          )
         )
           throw new DiffBoundError('unsupported pass/fail pattern', operation)
 
@@ -458,27 +483,58 @@ export function compileDiffBound(
 
   const outIdx = nodes.map((node) => idx.get(node)!)
   const i0 = outIdx[0]
-  // Per-slot stat ranges over `readKeys` (missing stat counts as 0).
-  const slotLo = objMap(arts.values, (list) =>
-    Float64Array.from(readKeys, (k) =>
-      list.reduce((a, art) => Math.min(a, art.values[k] ?? 0), Infinity)
+  // Per-slot stat ranges over `readKeys` (missing stat counts as 0),
+  // unioned with `extraSlotRange`.
+  const slotLo = objMap(arts.values, (list, slot) => {
+    const extra = extraSlotRange?.[slot]
+    return Float64Array.from(readKeys, (k) =>
+      Math.min(
+        list.reduce((a, art) => Math.min(a, art.values[k] ?? 0), Infinity),
+        extra?.[k]?.min ?? Infinity
+      )
     )
-  )
-  const slotHi = objMap(arts.values, (list) =>
-    Float64Array.from(readKeys, (k) =>
-      list.reduce((a, art) => Math.max(a, art.values[k] ?? 0), -Infinity)
+  })
+  const slotHi = objMap(arts.values, (list, slot) => {
+    const extra = extraSlotRange?.[slot]
+    return Float64Array.from(readKeys, (k) =>
+      Math.max(
+        list.reduce((a, art) => Math.max(a, art.values[k] ?? 0), -Infinity),
+        extra?.[k]?.max ?? -Infinity
+      )
     )
-  )
+  })
 
   const outLo = new Float64Array(nodes.length)
   const outHi = new Float64Array(nodes.length)
   const dLo = new Float64Array(nNodes)
   const dHi = new Float64Array(nNodes)
 
+  const forRest = (
+    restLo: Float64Array,
+    restHi: Float64Array
+  ): SlotDiffBound => ({
+    context: (vec) => {
+      const lo = new Float64Array(nNodes)
+      const hi = new Float64Array(nNodes)
+      for (const instr of ctxInstrs) instr(lo, hi, vec, restLo, restHi)
+      return { vec, lo, hi }
+    },
+    evaluate: (m, n) => {
+      for (const instr of evalInstrs) instr(dLo, dHi, m, n)
+      for (let j = 0; j < outIdx.length; j++) {
+        outLo[j] = dLo[outIdx[j]]
+        outHi[j] = dHi[outIdx[j]]
+      }
+      return { lo: outLo, hi: outHi }
+    },
+  })
+
   return {
     readKeys,
     toVector: (art) => Float64Array.from(readKeys, (k) => art.values[k] ?? 0),
     score: (ctx) => (ctx.lo[i0] + ctx.hi[i0]) / 2,
+    nodeRange: (ctx, j) => ({ min: ctx.lo[outIdx[j]], max: ctx.hi[outIdx[j]] }),
+    forRest,
     forSlot: (slot) => {
       const restLo = Float64Array.from(
         readKeys,
@@ -498,22 +554,7 @@ export function compileDiffBound(
             0
           )
       )
-      return {
-        context: (vec) => {
-          const lo = new Float64Array(nNodes)
-          const hi = new Float64Array(nNodes)
-          for (const instr of ctxInstrs) instr(lo, hi, vec, restLo, restHi)
-          return { vec, lo, hi }
-        },
-        evaluate: (m, n) => {
-          for (const instr of evalInstrs) instr(dLo, dHi, m, n)
-          for (let j = 0; j < outIdx.length; j++) {
-            outLo[j] = dLo[outIdx[j]]
-            outHi[j] = dHi[outIdx[j]]
-          }
-          return { lo: outLo, hi: outHi }
-        },
-      }
+      return forRest(restLo, restHi)
     },
   }
 }
@@ -545,12 +586,16 @@ export function pruneDominance(
   nodes: OptNode[],
   arts: ArtifactsBySlot,
   numTop: number,
-  maxCandidates = Infinity
+  maxCandidates = Infinity,
+  /** Widen each slot's rest box (see `compileDiffBound`); pass the
+   * future-artifact boxes when partial builds are being tracked so that a
+   * swap is only certified if it also holds for every future completion. */
+  extraSlotRange?: Partial<Record<ArtifactSlotKey, DynMinMax>>
 ): { arts: ArtifactsBySlot; dominators: Map<string, string[]> } {
   const dominators = new Map<string, string[]>()
   if (Object.values(arts.values).some((l) => !l.length))
     return { arts, dominators }
-  const bound = compileDiffBound(nodes, arts)
+  const bound = compileDiffBound(nodes, arts, extraSlotRange)
   const nNodes = nodes.length
   const strictTol = 1e-9
 

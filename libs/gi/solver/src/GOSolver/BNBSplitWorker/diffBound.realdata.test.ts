@@ -92,8 +92,7 @@ function loadArts(charBase: DynStat): ArtifactsBySlot {
 // production dyn reads accumulate (`accu: 'add'`); plain customRead would
 // constant-fold missing keys to NaN inside pruneAll's reaffine pass
 const r = (k: string) => dynRead(k)
-const crcd = () =>
-  sum(1, prod(min(r('critRate_'), 1), r('critDMG_')))
+const crcd = () => sum(1, prod(min(r('critRate_'), 1), r('critDMG_')))
 
 type Scenario = {
   name: string
@@ -105,10 +104,7 @@ type Scenario = {
 /** Raiden-style burst DPS: Emblem 4pc converts ER to burst DMG, ER >= 180% */
 function emblemBurst(): Scenario {
   const atk = sum(r('atk'), prod(880, r('atk_')))
-  const er = sum(
-    r('enerRech_'),
-    threshold(r('EmblemOfSeveredFate'), 2, 0.2, 0)
-  )
+  const er = sum(r('enerRech_'), threshold(r('EmblemOfSeveredFate'), 2, 0.2, 0))
   const emblem4 = threshold(
     r('EmblemOfSeveredFate'),
     4,
@@ -208,9 +204,16 @@ describe.each([emblemBurst(), goldenTroupeSkill(), crimsonVape()])(
 
     // Baseline: what the solver does today at the root of the search
     // (calculateFilter: pruneAll incl. coordinate-wise pruneOrder, then fold)
-    const pruned = pruneAll(rawNodes, mins, raw, numTop, {}, {
-      pruneNodeRange: true,
-    })
+    const pruned = pruneAll(
+      rawNodes,
+      mins,
+      raw,
+      numTop,
+      {},
+      {
+        pruneNodeRange: true,
+      }
+    )
     const nodes = optimize(pruned.nodes, {}, (_) => false)
     const baseline = pruned.arts
 
@@ -270,11 +273,18 @@ describe.each([emblemBurst(), goldenTroupeSkill(), crimsonVape()])(
       const t0 = performance.now()
       for (let round = 0; round < 10; round++) {
         const before = totalCount(cur.arts)
-        const p = pruneAll(cur.nodes, mins, cur.arts, numTop, {}, {
-          pruneArtRange: true,
-          pruneOrder: true,
-          pruneNodeRange: true,
-        })
+        const p = pruneAll(
+          cur.nodes,
+          mins,
+          cur.arts,
+          numTop,
+          {},
+          {
+            pruneArtRange: true,
+            pruneOrder: true,
+            pruneNodeRange: true,
+          }
+        )
         const newNodes = optimize(p.nodes, {}, (_) => false)
         cur = {
           nodes: newNodes,

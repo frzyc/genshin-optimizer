@@ -2,6 +2,10 @@ import type { ArtSetExclusion } from '@genshin-optimizer/gi/db'
 import type { OptNode } from '@genshin-optimizer/gi/wr'
 import type {
   ArtifactsBySlot,
+  PartialBuildCandidates,
+  PartialBuildsData,
+  PartialBuildsRequest,
+  PartialBuildsSetup,
   PlotData,
   RequestFilter,
   SolverBuild,
@@ -15,6 +19,17 @@ export type OptProblemInput = {
 
   topN: number
   plotBase?: OptNode
+  /**
+   * Also return, per requested slot, a tight set of partial builds with
+   * witness proofs (see `PartialBuildsData` on `GOSolver.partialBuilds`):
+   * the ways to fill the *other four* slots that could matter for a top-1
+   * re-solve once a hypothetical artifact from the given profiles lands in
+   * this slot. Profiles use the same dyn keys as `arts` (set-count keys
+   * included as `fixed: { [set]: 1 }`). Requesting this slows the solve and
+   * — until pruning is made future-aware — partials whose builds were all
+   * pruned at solve time may be missing. Mutually exclusive with `plotBase`.
+   */
+  partialBuilds?: PartialBuildsRequest
 }
 
 export type WorkerCommand =
@@ -23,8 +38,15 @@ export type WorkerCommand =
   | Iterate
   | Threshold
   | Finalize
+  | Tighten
   | Count
-export type WorkerResult = Interim | CountResult | FinalizeResult | Done | Error
+export type WorkerResult =
+  | Interim
+  | CountResult
+  | FinalizeResult
+  | TightenResult
+  | Done
+  | Error
 
 export interface Setup {
   command: 'setup'
@@ -35,6 +57,9 @@ export interface Setup {
   constraints: { value: OptNode; min: number }[]
   plotBase: OptNode | undefined
   topN: number
+  /** Original-stat-space snapshot for partial-build tracking; present iff
+   * `OptProblemInput.partialBuilds` was requested. */
+  partialBuilds?: PartialBuildsSetup
 }
 export interface Split {
   command: 'split'
@@ -61,6 +86,13 @@ export interface Threshold {
 export interface Finalize {
   command: 'finalize'
 }
+export interface Tighten {
+  command: 'tighten'
+  /** merged candidate partial builds from every worker's finalize */
+  candidates: PartialBuildCandidates
+  /** the solve's final top-1 build value */
+  threshold: number
+}
 export interface Count {
   command: 'count'
   exclusion: ArtSetExclusion
@@ -81,6 +113,13 @@ export interface FinalizeResult {
   resultType: 'finalize'
   builds: SolverBuild[]
   plotData?: PlotData | undefined
+  /** This worker's candidate partial builds (id combos); merged with
+   * `mergePartialCandidates` and winnowed by the `tighten` pass. */
+  partialCandidates?: PartialBuildCandidates | undefined
+}
+export interface TightenResult {
+  resultType: 'tighten'
+  partialBuilds: PartialBuildsData
 }
 export interface Interim {
   resultType: 'interim'

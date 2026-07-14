@@ -1,5 +1,16 @@
+import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import { optimize } from '@genshin-optimizer/gi/wr'
-import { pruneAll, pruneExclusion } from '../common'
+import type {
+  FutureArtifactProfile,
+  PartialBuildsData,
+  PartialBuildsSetup,
+} from '../common'
+import {
+  computeArtRange,
+  mergePartialCandidates,
+  pruneAll,
+  pruneExclusion,
+} from '../common'
 import { WorkerCoordinator } from '../coordinator'
 import type {
   Count,
@@ -28,6 +39,10 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
   private finalizedResults: FinalizeResult[] = []
   private plotting: boolean
   private plotThreshold = -Infinity
+  private tracksPartials = false
+  /** Tight partial builds with witnesses, per requested slot; populated by
+   * `solve()` when `OptProblemInput.partialBuilds` was given. */
+  partialBuilds: PartialBuildsData | undefined
 
   constructor(
     problem: OptProblemInput,
@@ -42,13 +57,16 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
             type: 'module',
           })
       )
-    super(workers, ['iterate', 'split', 'count'], (r, w) => {
+    super(workers, ['iterate', 'split', 'count', 'tighten'], (r, w) => {
       switch (r.resultType) {
         case 'interim':
           this.interim(r, w)
           break
         case 'finalize':
           this.finalizedResults.push(r)
+          break
+        case 'tighten':
+          this.partialBuilds = r.partialBuilds
           break
         case 'count':
           this.status.total = r.count
@@ -68,7 +86,9 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     this.status.skippedPerSecond = 0
     this.buildValues = Array(topN).fill({ w: undefined as any, val: -Infinity })
 
-    this.notifiedBroadcast(this.preprocess(problem))
+    const setup = this.preprocess(problem)
+    this.tracksPartials = !!setup.partialBuilds
+    this.notifiedBroadcast(setup)
   }
 
   async solve() {
@@ -82,6 +102,15 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     stopTracking()
     this.notifiedBroadcast({ command: 'finalize' })
     await this.execute([])
+    if (this.tracksPartials) {
+      // Winnow the merged candidates to the tight witnessed set, in a single
+      // worker (it holds the original-space snapshot from setup).
+      const candidates = mergePartialCandidates(
+        this.finalizedResults.map((r) => r.partialCandidates ?? {})
+      )
+      const threshold = this.buildValues[0]?.val ?? -Infinity
+      await this.execute([{ command: 'tighten', candidates, threshold }])
+    }
     return this.finalizedResults
   }
 
@@ -92,8 +121,13 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     topN,
     exclusion,
     constraints,
+    partialBuilds,
   }: OptProblemInput): Setup {
     constraints = constraints.filter((x) => x.min > -Infinity)
+    if (partialBuilds && !Object.keys(partialBuilds).length)
+      partialBuilds = undefined
+    if (partialBuilds && plotBase)
+      throw new Error('plotBase and partialBuilds are mutually exclusive')
 
     let nodes = [...constraints.map((x) => x.value), optimizationTarget]
     const minimums = [...constraints.map((x) => x.min), -Infinity]
@@ -104,6 +138,31 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
 
     nodes = pruneExclusion(nodes, exclusion)
     nodes = optimize(nodes, {}, (_) => false)
+
+    // Partial builds are tracked in this *original* stat space: `pruneAll`
+    // below reaffines dyn keys, but future-artifact profiles and their
+    // witnesses only make sense in real stat keys. Workers join the two
+    // spaces by artifact id.
+    const bundle: PartialBuildsSetup | undefined = partialBuilds && {
+      profiles: Object.fromEntries(
+        Object.entries(partialBuilds).map(([slot, profiles]) => [
+          slot,
+          [
+            ...(profiles ?? []),
+            // Auto-added current-inventory profile so re-checking an owned
+            // artifact stays covered even if the caller's profiles miss it.
+            {
+              fixed: {},
+              substats: computeArtRange(arts.values[slot as ArtifactSlotKey]),
+              maxSubstats: Infinity,
+            } satisfies FutureArtifactProfile,
+          ],
+        ])
+      ),
+      nodes: [nodes[nodes.length - 1], ...nodes.slice(0, -1)],
+      mins: [-Infinity, ...minimums.slice(0, -1)],
+      arts,
+    }
     ;({ nodes, arts } = pruneAll(nodes, minimums, arts, topN, exclusion, {
       reaffine: true,
       pruneArtRange: true,
@@ -121,6 +180,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
       optTarget,
       plotBase,
       topN,
+      partialBuilds: bundle,
       constraints: nodes.map((value, i) => ({ value, min: minimums[i] })),
     }
   }

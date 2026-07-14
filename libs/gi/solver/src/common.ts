@@ -410,7 +410,50 @@ function addArtRange(ranges: DynMinMax[]): DynMinMax {
   })
   return result
 }
-function computeArtRange(arts: ArtifactBuildData[]): DynMinMax {
+/**
+ * Append two inert corner "artifacts" per extended slot so that any consumer
+ * that only derives per-slot stat *ranges* from the artifact lists (e.g.
+ * `linearUB`) covers the extended box. The corners must never be treated as
+ * real build candidates — do not feed the result to anything that filters,
+ * enumerates, or swap-tests artifacts.
+ */
+export function extendArtRangeArts(
+  arts: ArtifactsBySlot,
+  extraRange: Partial<Record<ArtifactSlotKey, DynMinMax>>
+): ArtifactsBySlot {
+  const values = { ...arts.values }
+  for (const [slot, box] of Object.entries(extraRange) as [
+    ArtifactSlotKey,
+    DynMinMax,
+  ][]) {
+    if (!box) continue
+    const lo: DynStat = {}
+    const hi: DynStat = {}
+    for (const [k, { min, max }] of Object.entries(box)) {
+      lo[k] = min
+      hi[k] = max
+    }
+    values[slot] = [
+      ...values[slot],
+      { id: `!future-lo-${slot}`, values: lo },
+      { id: `!future-hi-${slot}`, values: hi },
+    ]
+  }
+  return { base: arts.base, values }
+}
+
+/** Per-key union of a slot's stat range with an extra box; keys absent from
+ * either side count as 0 (an artifact without the stat). */
+export function unionArtRange(range: DynMinMax, extra?: DynMinMax): DynMinMax {
+  if (!extra) return range
+  const result = { ...range }
+  for (const [key, { min, max }] of Object.entries(extra)) {
+    const cur = result[key] ?? { min: 0, max: 0 }
+    result[key] = { min: Math.min(cur.min, min), max: Math.max(cur.max, max) }
+  }
+  return result
+}
+export function computeArtRange(arts: ArtifactBuildData[]): DynMinMax {
   const result: DynMinMax = {}
   if (arts.length) {
     Object.keys(arts[0].values)
@@ -431,13 +474,18 @@ function computeArtRange(arts: ArtifactBuildData[]): DynMinMax {
   }
   return result
 }
-export function computeFullArtRange(arts: ArtifactsBySlot): DynMinMax {
+export function computeFullArtRange(
+  arts: ArtifactsBySlot,
+  extraRange?: Partial<Record<ArtifactSlotKey, DynMinMax>>
+): DynMinMax {
   const baseRange = Object.fromEntries(
     Object.entries(arts.base).map(([key, x]) => [key, { min: x, max: x }])
   )
   return addArtRange([
     baseRange,
-    ...Object.values(arts.values).map((values) => computeArtRange(values)),
+    ...allArtifactSlotKeys.map((slot) =>
+      unionArtRange(computeArtRange(arts.values[slot]), extraRange?.[slot])
+    ),
   ])
 }
 export function computeNodeRange(
@@ -839,6 +887,145 @@ export interface SolverBuild {
   value: number
   plot?: number
   artifactIds: string[]
+}
+
+/**
+ * A family of hypothetical future artifacts for one slot: every artifact in
+ * the family carries `fixed` (its main stat at the assumed level, its
+ * set-count key, …) plus up to `maxSubstats` substats drawn from the
+ * `substats` pool, optionally limited by a total roll budget.
+ */
+export type FutureArtifactProfile = {
+  fixed: DynStat
+  /** Substat pool: value range per key (e.g. `{min: 0, max: 6 * roll}`). */
+  substats: DynMinMax
+  /** Max substat keys present simultaneously (default 4). */
+  maxSubstats?: number
+  /** Cap on total rolls: `Σ_k value_k / rollSize_k <= totalRolls`. */
+  rollBudget?: { rollSize: DynStat; totalRolls: number }
+}
+/** Slot -> future-artifact profiles to track partial builds for. */
+export type PartialBuildsRequest = Partial<
+  Record<ArtifactSlotKey, FutureArtifactProfile[]>
+>
+/**
+ * Original-stat-space snapshot for partial-build tracking. `preprocess`
+ * reaffines the solve's stat space, but future-artifact profiles and their
+ * witnesses only make sense in real stat keys, so the tracker and the
+ * tighten pass run on this snapshot instead, joined to the solve by
+ * artifact ids (which survive reaffine and pruning).
+ */
+export type PartialBuildsSetup = {
+  profiles: PartialBuildsRequest
+  /** `[optTarget, ...constraints]`, original stat space */
+  nodes: OptNode[]
+  /** aligned with `nodes`; `mins[0]` (the opt target's) is `-Infinity` */
+  mins: number[]
+  /** the artifact pool before any pruning */
+  arts: ArtifactsBySlot
+}
+
+/** Proof of relevance for a partial build: an explicit artifact from one of
+ * the requested profiles at which the partial is the best choice. */
+export interface PartialBuildWitness {
+  /** the artifact's stats (fixed profile stats + chosen substats) */
+  artifact: DynStat
+  /** exact opt-target value of the witness + this partial build */
+  value: number
+  /** `value` minus the better of the solve's best-build value and the best
+   * alternative partial's value at the witness. `> 0` certifies this partial
+   * is strictly necessary: dropping the witness artifact improves the
+   * re-solve answer, and only this partial delivers it. `<= 0` marks a
+   * member kept only because the search budget could not certify it
+   * covered. */
+  margin: number
+}
+export interface SolverPartialBuild {
+  /** One artifact per slot other than the left-out slot. */
+  artifactIds: string[]
+  /** Bounds of the opt target over the future-artifact bounding box. */
+  minValue: number
+  maxValue: number
+  /** Absent only when the search budget ran out without ever finding a
+   * feasible sample point (possible under constraints). */
+  witness?: PartialBuildWitness
+}
+/**
+ * Slot -> tight partial builds for that slot, or `undefined` if the
+ * candidate frontier overflowed (too many mutually incomparable partials).
+ *
+ * Guards a top-1 re-solve: when an artifact `x` from the requested profiles
+ * drops in the slot, the new best build is
+ * `max(the solve's best build, max over this list of optTarget(x + p))` —
+ * up to candidates lost to solve-time pruning (a known gap until the
+ * pruning is made future-aware).
+ */
+export type PartialBuildsData = Partial<
+  Record<ArtifactSlotKey, SolverPartialBuild[] | undefined>
+>
+
+/** Per-worker candidate partial builds, as id combos (one id per slot other
+ * than the left-out slot); `undefined` = that slot's frontier overflowed. */
+export type PartialBuildCandidates = Partial<
+  Record<ArtifactSlotKey, string[][] | undefined>
+>
+
+/** Bounding box of every artifact expressible by `profiles`: per-key union
+ * over profiles of `fixed` plus the (optional) substat range. */
+export function profileBoundingBox(
+  profiles: FutureArtifactProfile[]
+): DynMinMax {
+  const keys = new Set<string>()
+  for (const p of profiles) {
+    for (const k of Object.keys(p.fixed)) keys.add(k)
+    for (const k of Object.keys(p.substats)) keys.add(k)
+  }
+  const box: DynMinMax = {}
+  for (const k of keys) {
+    let lo = Infinity
+    let hi = -Infinity
+    for (const p of profiles) {
+      const f = p.fixed[k] ?? 0
+      const s = p.substats[k]
+      const pLo = f + (s ? Math.min(0, s.min) : 0)
+      const pHi = f + (s ? Math.max(0, s.max) : 0)
+      if (pLo < lo) lo = pLo
+      if (pHi > hi) hi = pHi
+    }
+    box[k] = { min: lo, max: hi }
+  }
+  return box
+}
+
+/** Union of per-worker candidate frontiers; each worker's frontier covers the
+ * builds that worker enumerated, so the deduped union covers them all. A slot
+ * that overflowed in any worker is incomplete everywhere (`undefined`). */
+export function mergePartialCandidates(
+  data: PartialBuildCandidates[]
+): PartialBuildCandidates {
+  const result: PartialBuildCandidates = {}
+  const seen = new Map<ArtifactSlotKey, Set<string>>()
+  for (const datum of data) {
+    for (const [slot, combos] of Object.entries(datum) as [
+      ArtifactSlotKey,
+      string[][] | undefined,
+    ][]) {
+      if (!combos) continue
+      const keys = seen.get(slot) ?? seen.set(slot, new Set()).get(slot)!
+      const list = (result[slot] ??= [])
+      for (const ids of combos) {
+        const key = ids.join('|')
+        if (keys.has(key)) continue
+        keys.add(key)
+        list.push(ids)
+      }
+    }
+  }
+  // a slot that overflowed anywhere is incomplete everywhere
+  for (const datum of data)
+    for (const slot of Object.keys(datum) as ArtifactSlotKey[])
+      if (datum[slot] === undefined) result[slot] = undefined
+  return result
 }
 
 export type DynMinMax = { [key in string]: MinMax }

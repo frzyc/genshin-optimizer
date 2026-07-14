@@ -1,11 +1,23 @@
 import { assertUnreachable, cartesian } from '@genshin-optimizer/common/util'
 import type { OptNode } from '@genshin-optimizer/gi/wr'
-import type { ArtifactsBySlot, DynStat, MinMax } from '../../common'
+import type { ArtifactsBySlot, DynMinMax, DynStat, MinMax } from '../../common'
 import { computeFullArtRange } from '../../common'
 import { polyUB } from './polyUB'
 import { solveLP } from './solveLP'
 
 export type Linear = DynStat & { $c: number }
+
+/** Max contribution of one artifact drawn from the stat box `box` under the
+ * linear weight `lin` (a key absent from the box contributes 0). */
+export function maxLinCont(lin: Linear, box: DynMinMax): number {
+  let total = 0
+  for (const [k, w] of Object.entries(lin)) {
+    if (k === '$c') continue
+    const r = box[k]
+    if (r) total += Math.max(w * r.min, w * r.max, 0)
+  }
+  return total
+}
 
 function weightedSum(
   ...entries: readonly (readonly [number, Linear])[]

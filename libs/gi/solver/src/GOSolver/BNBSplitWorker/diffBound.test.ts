@@ -20,24 +20,12 @@ import { compileDiffBound, pruneDominance } from './diffBound'
 import { BNBSplitWorker } from './index'
 
 /* 90/90 Kokomi with Donut (same fixture as polyUB.test.ts) */
-const hp = sum(
-  dynRead('hp'),
-  prod(13471, dynRead('hp_'))
-)
-const atk = sum(
-  dynRead('atk'),
-  prod(842, dynRead('atk_'))
-)
-const crcd = sum(
-  1,
-  prod(dynRead('critRate_'), dynRead('critDMG_'))
-)
+const hp = sum(dynRead('hp'), prod(13471, dynRead('hp_')))
+const atk = sum(dynRead('atk'), prod(842, dynRead('atk_')))
+const crcd = sum(1, prod(dynRead('critRate_'), dynRead('critDMG_')))
 const crcd0 = sum(
   1,
-  prod(
-    max(sum(dynRead('critRate_'), -0.3), 0),
-    dynRead('critDMG_')
-  )
+  prod(max(sum(dynRead('critRate_'), -0.3), 0), dynRead('critDMG_'))
 )
 const dmg_ = sum(
   1,

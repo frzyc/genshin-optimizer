@@ -3,12 +3,15 @@ import { optimize, precompute } from '@genshin-optimizer/gi/wr'
 import type {
   ArtifactBuildData,
   ArtifactsBySlot,
+  PartialBuildCandidates,
+  PartialBuildsSetup,
   PlotData,
   RequestFilter,
   SolverBuild,
 } from '../common'
 import { countBuilds, filterArts, mergePlot, pruneAll } from '../common'
 import type { Interim, Setup } from '../type'
+import { PartialBuildTracker } from './PartialBuildTracker'
 
 export class ComputeWorker {
   builds: SolverBuild[] = []
@@ -21,11 +24,16 @@ export class ComputeWorker {
 
   arts: ArtifactsBySlot
   nodes: OptNode[]
+  /** Present when `Setup.partialBuilds` was requested and the nodes are
+   * bound-able; fed with every region this worker enumerates. */
+  partialTracker: PartialBuildTracker | undefined
+  /** The original-space snapshot, kept for the `tighten` command. */
+  partialSetup: PartialBuildsSetup | undefined
 
   callback: (interim: Interim) => void
 
   constructor(
-    { arts, optTarget, constraints, plotBase, topN }: Setup,
+    { arts, optTarget, constraints, plotBase, topN, partialBuilds }: Setup,
     callback: (interim: Interim) => void
   ) {
     this.arts = arts
@@ -38,11 +46,26 @@ export class ComputeWorker {
       this.plotData = {}
       this.nodes.push(plotBase)
     }
+    if (partialBuilds)
+      try {
+        this.partialTracker = new PartialBuildTracker(partialBuilds)
+        this.partialSetup = partialBuilds
+      } catch {
+        // nodes not bound-able (the DefaultSplitWorker fallback case);
+        // partial builds are reported as absent
+        this.partialTracker = undefined
+      }
     this.nodes = optimize(this.nodes, {}, (_) => false)
   }
 
   setThreshold(newThreshold: number) {
     if (this.threshold < newThreshold) this.threshold = newThreshold
+    if (this.partialTracker && this.partialTracker.threshold < newThreshold)
+      this.partialTracker.threshold = newThreshold
+  }
+
+  partialCandidates(): PartialBuildCandidates | undefined {
+    return this.partialTracker?.candidates()
   }
   compute(filter: RequestFilter) {
     const { min } = this
@@ -62,6 +85,10 @@ export class ComputeWorker {
         pruneNodeRange: true,
       }
     ))
+    // Only artifact *ids* enter the tracker, so the reaffine/pruning above
+    // (sound for the top-N problem) is invisible to it; regions it removes
+    // are a plan-2 completeness concern, not a soundness one.
+    this.partialTracker?.processFilter(preArts.values)
     const arts = Object.values(preArts.values).sort(
       (a, b) => a.length - b.length
     )

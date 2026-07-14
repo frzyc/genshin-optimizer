@@ -2,7 +2,13 @@ import { cartesian, objKeyMap } from '@genshin-optimizer/common/util'
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
 import type { OptNode } from '@genshin-optimizer/gi/wr'
-import { dynRead, precompute, prod, sum, threshold } from '@genshin-optimizer/gi/wr'
+import {
+  dynRead,
+  precompute,
+  prod,
+  sum,
+  threshold,
+} from '@genshin-optimizer/gi/wr'
 import type { ArtifactsBySlot } from '../../common'
 import { countBuilds, filterArts } from '../../common'
 import type { Interim } from '../../type'
@@ -46,29 +52,142 @@ const arts: ArtifactsBySlot = {
   },
   values: {
     flower: [
-      { id: 'f1', set: 'OceanHuedClam', values: { hp: 4780, hp_: 0.058, atk: 31, enerRech_: 0.227, OceanHuedClam: 1 } },
-      { id: 'f2', set: 'OceanHuedClam', values: { hp: 4780, hp_: 0.06, atk: 32, enerRech_: 0.207, OceanHuedClam: 1 } },
-      { id: 'f3', set: 'HeartOfDepth', values: { hp: 717, critDMG_: 0.054, hp_: 0.047, critRate_: 0.031, HeartOfDepth: 1 } },
+      {
+        id: 'f1',
+        set: 'OceanHuedClam',
+        values: {
+          hp: 4780,
+          hp_: 0.058,
+          atk: 31,
+          enerRech_: 0.227,
+          OceanHuedClam: 1,
+        },
+      },
+      {
+        id: 'f2',
+        set: 'OceanHuedClam',
+        values: {
+          hp: 4780,
+          hp_: 0.06,
+          atk: 32,
+          enerRech_: 0.207,
+          OceanHuedClam: 1,
+        },
+      },
+      {
+        id: 'f3',
+        set: 'HeartOfDepth',
+        values: {
+          hp: 717,
+          critDMG_: 0.054,
+          hp_: 0.047,
+          critRate_: 0.031,
+          HeartOfDepth: 1,
+        },
+      },
     ],
     plume: [
-      { id: 'p1', set: 'OceanHuedClam', values: { atk: 311, hp_: 0.163, hp: 568, OceanHuedClam: 1 } },
-      { id: 'p2', set: 'OceanHuedClam', values: { atk: 311, hp_: 0.173, hp: 508, OceanHuedClam: 1 } },
-      { id: 'p3', set: 'HeartOfDepth', values: { atk: 311, critDMG_: 0.062, enerRech_: 0.065, atk_: 0.262, HeartOfDepth: 1 } },
+      {
+        id: 'p1',
+        set: 'OceanHuedClam',
+        values: { atk: 311, hp_: 0.163, hp: 568, OceanHuedClam: 1 },
+      },
+      {
+        id: 'p2',
+        set: 'OceanHuedClam',
+        values: { atk: 311, hp_: 0.173, hp: 508, OceanHuedClam: 1 },
+      },
+      {
+        id: 'p3',
+        set: 'HeartOfDepth',
+        values: {
+          atk: 311,
+          critDMG_: 0.062,
+          enerRech_: 0.065,
+          atk_: 0.262,
+          HeartOfDepth: 1,
+        },
+      },
     ],
     sands: [
-      { id: 's1', set: 'OceanHuedClam', values: { enerRech_: 0.518, hp: 568, atk_: 0.105, hp_: 0.105, OceanHuedClam: 1 } },
-      { id: 's2', set: 'OceanHuedClam', values: { enerRech_: 0.518, hp: 538, atk_: 0.115, hp_: 0.115, OceanHuedClam: 1 } },
-      { id: 's3', set: 'HeartOfDepth', values: { hp_: 0.466, atk_: 0.058, atk: 45, enerRech_: 0.155, HeartOfDepth: 1 } },
+      {
+        id: 's1',
+        set: 'OceanHuedClam',
+        values: {
+          enerRech_: 0.518,
+          hp: 568,
+          atk_: 0.105,
+          hp_: 0.105,
+          OceanHuedClam: 1,
+        },
+      },
+      {
+        id: 's2',
+        set: 'OceanHuedClam',
+        values: {
+          enerRech_: 0.518,
+          hp: 538,
+          atk_: 0.115,
+          hp_: 0.115,
+          OceanHuedClam: 1,
+        },
+      },
+      {
+        id: 's3',
+        set: 'HeartOfDepth',
+        values: {
+          hp_: 0.466,
+          atk_: 0.058,
+          atk: 45,
+          enerRech_: 0.155,
+          HeartOfDepth: 1,
+        },
+      },
     ],
     goblet: [
-      { id: 'g1', set: 'OceanHuedClam', values: { hydroDmg_: 0.466, hp: 478, OceanHuedClam: 1 } },
-      { id: 'g2', set: 'OceanHuedClam', values: { hydroDmg_: 0.466, hp: 498, OceanHuedClam: 1 } },
-      { id: 'g3', set: 'HeartOfDepth', values: { hydroDmg_: 0.466, critDMG_: 0.124, hp_: 0.099, HeartOfDepth: 1 } },
+      {
+        id: 'g1',
+        set: 'OceanHuedClam',
+        values: { hydroDmg_: 0.466, hp: 478, OceanHuedClam: 1 },
+      },
+      {
+        id: 'g2',
+        set: 'OceanHuedClam',
+        values: { hydroDmg_: 0.466, hp: 498, OceanHuedClam: 1 },
+      },
+      {
+        id: 'g3',
+        set: 'HeartOfDepth',
+        values: {
+          hydroDmg_: 0.466,
+          critDMG_: 0.124,
+          hp_: 0.099,
+          HeartOfDepth: 1,
+        },
+      },
     ],
     circlet: [
-      { id: 'c1', set: 'OceanHuedClam', values: { heal_: 0.359, critRate_: 0.058, hp_: 0.198, atk: 14 } },
-      { id: 'c2', set: 'OceanHuedClam', values: { heal_: 0.359, critRate_: 0.063, hp_: 0.178, atk: 15 } },
-      { id: 'c3', set: 'HeartOfDepth', values: { critRate_: 0.311, hp: 299, critDMG_: 0.155, atk_: 0.105, HeartOfDepth: 1 } },
+      {
+        id: 'c1',
+        set: 'OceanHuedClam',
+        values: { heal_: 0.359, critRate_: 0.058, hp_: 0.198, atk: 14 },
+      },
+      {
+        id: 'c2',
+        set: 'OceanHuedClam',
+        values: { heal_: 0.359, critRate_: 0.063, hp_: 0.178, atk: 15 },
+      },
+      {
+        id: 'c3',
+        set: 'HeartOfDepth',
+        values: {
+          critRate_: 0.311,
+          hp: 299,
+          critDMG_: 0.155,
+          atk_: 0.105,
+          HeartOfDepth: 1,
+        },
+      },
     ],
   },
 }
