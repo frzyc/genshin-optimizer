@@ -1,5 +1,4 @@
 // This is a generated index file.
-
 import Absolution from './Absolution'
 import Akuoumaru from './Akuoumaru'
 import AlleyHunter from './AlleyHunter'
