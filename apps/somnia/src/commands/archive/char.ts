@@ -129,10 +129,10 @@ function getEmbed(
 }
 
 function getAssets(id: CharacterSheetKey) {
-  if (id.includes('Traveler')) {
-    id = `Traveler${id.charAt(id.length - 1)}`
-  }
-  return AssetData.chars[id as LocationGenderedCharacterKey]
+  const locKey = id.includes('Traveler')
+    ? `Traveler${id.charAt(id.length - 1)}`
+    : id
+  return AssetData.chars[locKey as LocationGenderedCharacterKey]
 }
 
 function getName(id: CharacterSheetKey, lang: string) {
