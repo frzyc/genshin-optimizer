@@ -78,7 +78,7 @@ export type UpOptInfo = LevelUpInfo | ReshapeInfo | DefineInfo
 
 function canLevelUp(art: ICachedArtifact) {
   // Restricted to 5* artifacts for now.
-  return art.level < 20 && art.rarity === 5
+  return art.rarity === 5
 }
 
 export function canReshape(art: ICachedArtifact) {
