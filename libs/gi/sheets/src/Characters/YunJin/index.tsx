@@ -189,7 +189,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg, {
-            name: ct.chg(`auto.skillParams.5`),
+            name: ct.chg('auto.skillParams.5'),
           }),
         },
         {
@@ -227,22 +227,22 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.dmg, {
-            name: ct.chg(`skill.skillParams.0`),
+            name: ct.chg('skill.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.dmg1, {
-            name: ct.chg(`skill.skillParams.1`),
+            name: ct.chg('skill.skillParams.1'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.dmg2, {
-            name: ct.chg(`skill.skillParams.2`),
+            name: ct.chg('skill.skillParams.2'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.shield, {
-            name: ct.chg(`skill.skillParams.3`),
+            name: ct.chg('skill.skillParams.3'),
           }),
         },
         {
@@ -264,7 +264,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.dmg, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
           }),
         },
         {

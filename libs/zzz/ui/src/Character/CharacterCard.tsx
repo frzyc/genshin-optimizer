@@ -150,7 +150,7 @@ function CharImage({
         height="auto"
         position="relative"
         zIndex="2"
-      ></Box>
+      />
     </Box>
   )
 }

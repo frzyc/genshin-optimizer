@@ -25,11 +25,11 @@ export function AdditiveReactionModeText({
       <SqBadge sx={sqBadgeStyle} color={'dendro'}>
         <DendroIcon {...iconInlineProps} />
       </SqBadge>
-      {`+`}
+      {'+'}
       <SqBadge sx={sqBadgeStyle} color={'electro'}>
         <ElectroIcon {...iconInlineProps} />
       </SqBadge>
-      {`+`}
+      {'+'}
       <SqBadge sx={sqBadgeStyle} color={trigger}>
         <ElementIcon ele={trigger} iconProps={iconInlineProps} />
       </SqBadge>

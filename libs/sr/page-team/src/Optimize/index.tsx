@@ -6,7 +6,7 @@ import {
   allRelicSlotKeys,
   type RelicSlotKey,
 } from '@genshin-optimizer/sr/consts'
-import { type ICachedRelic } from '@genshin-optimizer/sr/db'
+import type { ICachedRelic } from '@genshin-optimizer/sr/db'
 import {
   OptConfigContext,
   OptConfigProvider,

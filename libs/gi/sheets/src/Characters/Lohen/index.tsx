@@ -1,5 +1,5 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
-import { type CharacterKey } from '@genshin-optimizer/gi/consts'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import {
@@ -324,7 +324,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg, {
-            name: ct.chg(`auto.skillParams.5`),
+            name: ct.chg('auto.skillParams.5'),
             multi: 2,
           }),
         },
@@ -370,7 +370,7 @@ const sheet: TalentSheet = {
         })),
         {
           node: infoMut(dmgFormulas.skill.chargedDmg, {
-            name: ct.chg(`skill.skillParams.5`),
+            name: ct.chg('skill.skillParams.5'),
             multi: 2,
           }),
         },
@@ -438,7 +438,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.burstDmg, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
             multi: 6,
           }),
         },

@@ -72,7 +72,7 @@ function testCharacterData(
 function cond(setKey: DiscSetKey, name: string, value: number) {
   return conditionalEntries(setKey, 'Anby', null)(name, value)
 }
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// biome-ignore lint/correctness/noUnusedVariables: helper util for tests
 function printDebug(calc: Calculator, read: Read) {
   console.log(prettify(calc.toDebug().compute(read)))
 }

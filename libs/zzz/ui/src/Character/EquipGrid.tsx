@@ -1,6 +1,6 @@
 import { objKeyMap, objMap } from '@genshin-optimizer/common/util'
 import { allDiscSlotKeys } from '@genshin-optimizer/zzz/consts'
-import { type DiscIds } from '@genshin-optimizer/zzz/db'
+import type { DiscIds } from '@genshin-optimizer/zzz/db'
 import { useDiscs, useWengine } from '@genshin-optimizer/zzz/db-ui'
 import { Grid } from '@mui/material'
 import { Stack } from '@mui/system'

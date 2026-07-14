@@ -95,12 +95,10 @@ function ElementalResonance({ teamId }: { teamId: string }) {
         titleTypographyProps={{ variant: 'h6' }}
       />
 
-      <>
-        <Divider />
-        <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-          <TeamResonanceDisplay resonances={resonanceSheets} />
-        </CardContent>
-      </>
+      <Divider />
+      <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+        <TeamResonanceDisplay resonances={resonanceSheets} />
+      </CardContent>
     </CardThemed>
   )
 }
@@ -135,14 +133,12 @@ function Moonsign() {
         titleTypographyProps={{ variant: 'h6' }}
       />
 
-      <>
-        <Divider />
-        <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-          <TeamResonanceDisplay
-            resonances={[getMoonsignSheet(moonsignCondCharData)]}
-          />
-        </CardContent>
-      </>
+      <Divider />
+      <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+        <TeamResonanceDisplay
+          resonances={[getMoonsignSheet(moonsignCondCharData)]}
+        />
+      </CardContent>
     </CardThemed>
   )
 }
@@ -172,12 +168,10 @@ function Hexerei() {
         titleTypographyProps={{ variant: 'h6' }}
       />
 
-      <>
-        <Divider />
-        <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-          <TeamResonanceDisplay resonances={[hexereiSheet]} />
-        </CardContent>
-      </>
+      <Divider />
+      <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+        <TeamResonanceDisplay resonances={[hexereiSheet]} />
+      </CardContent>
     </CardThemed>
   )
 }

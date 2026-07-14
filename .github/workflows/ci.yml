@@ -26,7 +26,7 @@ jobs:
           yarn install --immutable --immutable-cache
       - name: Run lint
         run: |
-          yarn run nx run-many --target=eslint:lint --fix=false --max-warnings=0
+          yarn run biome lint --diagnostic-level=warn
   test:
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -78,11 +78,11 @@ jobs:
       - name: Check Formatting (Changed Files)
         if: ${{ github.event_name == 'pull_request' }}
         run: |
-          yarn biome ci --changed --no-errors-on-unmatched
+          yarn biome format --changed --no-errors-on-unmatched
       - name: Check Formatting
         if: ${{ github.event_name != 'pull_request' }}
         run: |
-          yarn biome ci
+          yarn biome format
   typecheck:
     runs-on: ubuntu-latest
     timeout-minutes: 10

@@ -1,9 +1,10 @@
 // viteStaticCopy contains some `require`, so we need to have our config as .mts instead of .ts.
 // https://vitejs.dev/guide/troubleshooting.html#this-package-is-esm-only
+
+import { resolve } from 'node:path'
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 /// <reference types="vitest" />
 import react from '@vitejs/plugin-react'
-import { resolve } from 'path'
 import { defineConfig, normalizePath } from 'vite'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 import pkg from '../../package.json' with { type: 'json' }

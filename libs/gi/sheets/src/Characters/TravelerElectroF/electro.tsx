@@ -111,7 +111,7 @@ export default function electro(
 
   const burstEnergyRestore = infoMut(
     subscript(input.total.burstIndex, dm.burst.energyRestore),
-    { name: ct.chg(`burst.skillParmas.2`) }
+    { name: ct.chg('burst.skillParmas.2') }
   )
 
   const [condC2ThunderPath, condC2Thunder] = cond(
@@ -206,7 +206,7 @@ export default function electro(
         fields: [
           {
             node: infoMut(dmgFormulas.skill.dmg, {
-              name: ct.chg(`skill.skillParams.0`),
+              name: ct.chg('skill.skillParams.0'),
             }),
           },
           {
@@ -214,7 +214,7 @@ export default function electro(
             node: infoMut(
               subscript(input.total.skillIndex, dm.skill.energyRestore),
               {
-                name: ch(`skill.enerRest.none`),
+                name: ch('skill.enerRest.none'),
               }
             ),
           },
@@ -301,12 +301,12 @@ export default function electro(
         fields: [
           {
             node: infoMut(dmgFormulas.burst.pressDmg, {
-              name: ct.chg(`burst.skillParams.0`),
+              name: ct.chg('burst.skillParams.0'),
             }),
           },
           {
             node: infoMut(dmgFormulas.burst.thunderDmg, {
-              name: ct.chg(`burst.skillParams.1`),
+              name: ct.chg('burst.skillParams.1'),
             }),
           },
           {
@@ -322,7 +322,7 @@ export default function electro(
           },
           {
             node: infoMut(burstEnergyRestore, {
-              name: ct.chg(`burst.skillParams.2`),
+              name: ct.chg('burst.skillParams.2'),
               fixed: 1,
             }),
           },

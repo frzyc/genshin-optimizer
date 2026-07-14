@@ -285,5 +285,5 @@ export async function reaction(
   )
     return reaction.message.delete()
 
-  if (arg[1] == 'char') return charReaction(reaction)
+  if (arg[1] === 'char') return charReaction(reaction)
 }

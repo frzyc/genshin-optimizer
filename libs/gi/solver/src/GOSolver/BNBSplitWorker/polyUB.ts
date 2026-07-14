@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { assertUnreachable, cartesian } from '@genshin-optimizer/common/util'
 import type { ConstantNode, OptNode } from '@genshin-optimizer/gi/wr'
 import {
@@ -109,7 +108,8 @@ export function polyUB(
     nodes,
     (f) => {
       const { operation } = f
-      if (operation === 'mul') minMaxes.set(f, { min: NaN, max: NaN })
+      if (operation === 'mul')
+        minMaxes.set(f, { min: Number.NaN, max: Number.NaN })
       switch (operation) {
         case 'mul':
         case 'min':
@@ -117,7 +117,9 @@ export function polyUB(
         case 'threshold':
         case 'res':
         case 'sum_frac':
-          f.operands.forEach((op) => minMaxes.set(op, { min: NaN, max: NaN }))
+          f.operands.forEach((op) =>
+            minMaxes.set(op, { min: Number.NaN, max: Number.NaN })
+          )
       }
     },
     (_) => _

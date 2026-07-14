@@ -196,7 +196,11 @@ export function EnemyEditor({
                 </ColorText>
               }
               value={
-                val !== undefined ? (elementImmunity ? Infinity : val) : 10
+                val !== undefined
+                  ? elementImmunity
+                    ? Number.POSITIVE_INFINITY
+                    : val
+                  : 10
               }
               placeholder={elementImmunity ? '∞ ' : KeyMap.getStr(statKey)}
               defaultValue={defaultVal}

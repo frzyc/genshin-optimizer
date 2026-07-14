@@ -167,7 +167,7 @@ export class Solver<ID extends string | number> {
         this.distribute(msg.works)
         break
       case 'err':
-        this.terminate(msg.msg + ' (Worker Error)')
+        this.terminate(`${msg.msg} (Worker Error)`)
     }
   }
 }

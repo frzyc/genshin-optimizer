@@ -51,7 +51,7 @@ export function UploadCard({
           setErrorMsg('uploadCard.error.jsonParse')
           return undefined
         }
-      } catch (e) {
+      } catch (_e) {
         setErrorMsg('uploadCard.error.jsonParse')
         return undefined
       }

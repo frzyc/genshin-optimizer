@@ -1,3 +1,5 @@
+import * as fs from 'node:fs'
+import * as path from 'node:path'
 import type {
   CharacterGenderedKey,
   LightConeKey,
@@ -11,8 +13,6 @@ import type {
   StringSelectMenuInteraction,
 } from 'discord.js'
 import { SlashCommandBuilder } from 'discord.js'
-import * as fs from 'fs'
-import * as path from 'path'
 import { error } from '../lib/message'
 import { cwd } from '../lib/util'
 import { charBank } from './databank/char'

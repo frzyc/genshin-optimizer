@@ -11,48 +11,77 @@
     "ignoreUnknown": false,
     "includes": [
       "**",
-      "!dist",
-      "!coverage",
-      "!.yarn",
-      "!libs/gi/dm/GenshinData",
-      "!libs/gi/dm/HakushinData",
-      "!libs/sr/dm/StarRailData",
-      "!libs/zzz/dm/ZenlessData",
-      "!libs/zzz/dm/HakushinData",
+      "!!dist",
+      "!!coverage",
+      "!!.yarn",
+      "!!libs/gi/dm/GenshinData",
+      "!!libs/gi/dm/HakushinData",
+      "!!libs/sr/dm/StarRailData",
+      "!!libs/zzz/dm/ZenlessData",
+      "!!libs/zzz/dm/HakushinData",
+      "!!.nx/cache",
+      "!!.nx/workspace-data",
       "!**/*_gen.json",
-      "!libs/gi/stats/Data/**",
-      "!.nx/cache",
-      "!.nx/workspace-data",
+      "!libs/gi/stats/Data",
       "!libs/**/*/localization/assets/locales/**/*/*.json",
       "!libs/gi/silly-wisher-names/Translated/**/*.json"
     ]
   },
   "formatter": {
     "enabled": true,
-    "useEditorconfig": true,
     "formatWithErrors": false,
     "indentStyle": "space",
     "indentWidth": 2,
     "lineEnding": "lf",
     "lineWidth": 80,
     "attributePosition": "auto",
-    "bracketSpacing": true
+    "bracketSpacing": true,
+    "useEditorconfig": true
   },
-  "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "linter": {
-    "enabled": false,
+    "enabled": true,
     "rules": {
+      "preset": "recommended",
+      "a11y": {
+        "noAmbiguousAnchorText": "off",
+        "noSvgWithoutTitle": "off"
+      },
+      "complexity": {
+        "noImportantStyles": "off",
+        "useLiteralKeys": "off",
+        "noCommaOperator": "off"
+      },
+      "correctness": {
+        "useParseIntRadix": "off",
+        "useExhaustiveDependencies": {
+          "level": "on",
+          "options": {
+            "reportUnnecessaryDependencies": false
+          }
+        },
+        "noVoidTypeReturn": "info",
+        "noUnusedPrivateClassMembers": "off"
+      },
+      "performance": {
+        "noAccumulatingSpread": "off"
+      },
       "style": {
-        "noParameterAssign": "error",
-        "useAsConstAssertion": "error",
-        "useDefaultParameterLast": "error",
-        "useEnumInitializers": "error",
-        "useSelfClosingElements": "error",
-        "useSingleVarDeclarator": "error",
-        "noUnusedTemplateLiteral": "error",
-        "useNumberNamespace": "error",
         "noInferrableTypes": "error",
-        "noUselessElse": "error"
+        "noUnusedTemplateLiteral": "error",
+        "useAsConstAssertion": "error",
+        "useEnumInitializers": "error",
+        "useNumberNamespace": "error",
+        "useSelfClosingElements": "error",
+        "noNonNullAssertion": "off"
+      },
+      "suspicious": {
+        "noExplicitAny": "info",
+        "useIterableCallbackReturn": "off",
+        "noAssignInExpressions": "off",
+        "noGlobalAssign": "off",
+        "noArrayIndexKey": "info",
+        "noImplicitAnyLet": "info",
+        "noConfusingVoidType": "off"
       }
     }
   },
@@ -68,5 +97,9 @@
       "attributePosition": "auto",
       "bracketSpacing": true
     }
+  },
+  "assist": {
+    "enabled": null,
+    "actions": { "source": { "organizeImports": "on" } }
   }
 }

@@ -56,10 +56,7 @@ export const WengineCard = memo(function WengineCard({
 }) {
   const { database } = useDatabaseContext()
   const wengine = useWengine(wengineId)
-  const onEditCB = useCallback(
-    () => onEdit && onEdit(wengineId),
-    [wengineId, onEdit]
-  )
+  const onEditCB = useCallback(() => onEdit?.(wengineId), [wengineId, onEdit])
   const setLocation = useCallback(
     (location: LocationKey) => database.wengines.set(wengineId, { location }),
     [database.wengines, wengineId]

@@ -60,7 +60,7 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: infoMut(shield, { name: stg(`dmgAbsorption`) }),
+              node: infoMut(shield, { name: stg('dmgAbsorption') }),
             },
             {
               text: stg('cd'),

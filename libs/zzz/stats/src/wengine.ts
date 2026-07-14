@@ -27,7 +27,7 @@ export function getWengineStats(
       atk_base * (1 + atk_multiplier[level] / 10000 + 0.8922 * ascension),
     [second_statkey]: second_statvalue * (1 + 0.3 * ascension),
     wenginePhase,
-    wengineIndex: allWengineKeys.findIndex((k) => k === wk),
+    wengineIndex: allWengineKeys.indexOf(wk),
   }
 
   return stats

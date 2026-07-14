@@ -131,7 +131,7 @@ export default function MTargetEditor({
       sx={{
         boxShadow: '0 0 10px black',
         position: 'sticky',
-        bottom: `10px`,
+        bottom: '10px',
         zIndex: 1000,
       }}
     >
@@ -169,7 +169,7 @@ export default function MTargetEditor({
           }}
           type="number"
           value={rank.toString()}
-          onChange={(v) => setTargetIndex(parseInt(v))}
+          onChange={(v) => setTargetIndex(Number.parseInt(v))}
           size="small"
           sx={{ minWidth: isMobile ? '4em' : '6em' }}
         />
@@ -197,7 +197,7 @@ export default function MTargetEditor({
                 }}
                 type="number"
                 value={weight.toString()}
-                onChange={(v) => setWeight(parseFloat(v))}
+                onChange={(v) => setWeight(Number.parseFloat(v))}
                 size="small"
               />
               <OptimizationTargetSelector

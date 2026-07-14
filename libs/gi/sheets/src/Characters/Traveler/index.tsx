@@ -171,13 +171,13 @@ export function travelerSheet(
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg1, {
-            name: ct.chg(`auto.skillParams.5`),
+            name: ct.chg('auto.skillParams.5'),
             textSuffix: '(1)',
           }),
         },
         {
           node: infoMut(dmgFormulas.charged.dmg2, {
-            name: ct.chg(`auto.skillParams.5`),
+            name: ct.chg('auto.skillParams.5'),
             textSuffix: '(2)',
           }),
         },

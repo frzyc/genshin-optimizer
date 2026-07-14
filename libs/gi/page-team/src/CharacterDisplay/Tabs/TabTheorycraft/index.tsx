@@ -209,7 +209,7 @@ export default function TabTheorycraft() {
       } = buildTc
       buildTc.optimization.distributedSubstats =
         20 - (rarity === 5 ? 0 : rarity === 4 ? 10 : 15)
-      buildTc.artifact.substats.stats = objMap(stats, (val, statKey) => {
+      buildTc.artifact.substats.stats = objMap(stats, (_val, statKey) => {
         const substatValue = getSubstatValue(statKey, rarity, type)
         return substatValue * 2
       })

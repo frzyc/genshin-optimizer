@@ -78,7 +78,7 @@ export class DisplayRelicEntry extends DataEntry<
   override set(
     value:
       | Partial<IDisplayRelic>
-      | ((v: IDisplayRelic) => Partial<IDisplayRelic> | void)
+      | ((v: IDisplayRelic) => Partial<IDisplayRelic> | undefined)
       | { action: 'reset' }
   ): boolean {
     if ('action' in value) {

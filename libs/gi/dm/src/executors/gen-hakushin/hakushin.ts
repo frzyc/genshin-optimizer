@@ -20,7 +20,7 @@ export async function getDataFromHakushin() {
 }
 async function getAndDumpCategoryData(category: Category) {
   const indexData = (await fetchJsonFromUrl(
-    URL_BASE + `data/${category}.json`,
+    `${URL_BASE}data/${category}.json`,
     DEBUG
   )) as Record<string, unknown>
   await dumpHakushinData(`${category}.json`, indexData)
@@ -28,7 +28,7 @@ async function getAndDumpCategoryData(category: Category) {
     Object.keys(indexData).map(async (id) => {
       // NOTE: hakushin also has data in en, ko, chs, ja
       const itemData = await fetchJsonFromUrl(
-        URL_BASE + `data/en/${category}/${id}.json`
+        `${URL_BASE}data/en/${category}/${id}.json`
       )
       await dumpHakushinData(`${category}/${id}.json`, itemData)
     })

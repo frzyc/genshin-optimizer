@@ -431,12 +431,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.aimed, {
-            name: ct.chg(`auto.skillParams.3`),
+            name: ct.chg('auto.skillParams.3'),
           }),
         },
         {
           node: infoMut(dmgFormulas.charged.fullyAimed, {
-            name: ct.chg(`auto.skillParams.4`),
+            name: ct.chg('auto.skillParams.4'),
           }),
         },
       ],
@@ -470,17 +470,17 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.bombDmg, {
-            name: ct.chg(`skill.skillParams.0`),
+            name: ct.chg('skill.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.unfilledDmg, {
-            name: ct.chg(`skill.skillParams.1`),
+            name: ct.chg('skill.skillParams.1'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.filledDmg, {
-            name: ct.chg(`skill.skillParams.2`),
+            name: ct.chg('skill.skillParams.2'),
           }),
         },
         {
@@ -490,22 +490,22 @@ const sheet: TalentSheet = {
         },
         {
           node: infoMut(dmgFormulas.skill.meowDmgPyro, {
-            name: ct.chg(`skill.skillParams.4`),
+            name: ct.chg('skill.skillParams.4'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.meowDmgHydro, {
-            name: ct.chg(`skill.skillParams.4`),
+            name: ct.chg('skill.skillParams.4'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.meowDmgElectro, {
-            name: ct.chg(`skill.skillParams.4`),
+            name: ct.chg('skill.skillParams.4'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.meowDmgCryo, {
-            name: ct.chg(`skill.skillParams.4`),
+            name: ct.chg('skill.skillParams.4'),
           }),
         },
         {
@@ -522,27 +522,27 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.dmg, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.robotDmgPyro, {
-            name: ct.chg(`burst.skillParams.1`),
+            name: ct.chg('burst.skillParams.1'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.robotDmgHydro, {
-            name: ct.chg(`burst.skillParams.1`),
+            name: ct.chg('burst.skillParams.1'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.robotDmgElectro, {
-            name: ct.chg(`burst.skillParams.1`),
+            name: ct.chg('burst.skillParams.1'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.robotDmgCryo, {
-            name: ct.chg(`burst.skillParams.1`),
+            name: ct.chg('burst.skillParams.1'),
           }),
         },
         {
@@ -552,12 +552,12 @@ const sheet: TalentSheet = {
         },
         {
           node: infoMut(dmgFormulas.burst.robotHeal, {
-            name: ct.chg(`burst.skillParams.3`),
+            name: ct.chg('burst.skillParams.3'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.lowestHeal, {
-            name: ct.chg(`burst.skillParams.4`),
+            name: ct.chg('burst.skillParams.4'),
           }),
         },
         {

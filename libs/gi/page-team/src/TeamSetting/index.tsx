@@ -55,7 +55,7 @@ export default function TeamSetting({
 
   const onDelNoChars = () => {
     database.teams.remove(teamId)
-    navigate(`/teams`)
+    navigate('/teams')
   }
 
   const onDup = () => {
@@ -90,7 +90,7 @@ export default function TeamSetting({
           teamId={teamId}
           show={showDel}
           onHide={onHideDel}
-          onDel={() => navigate(`/teams`)}
+          onDel={() => navigate('/teams')}
         />
         <Button
           color="error"

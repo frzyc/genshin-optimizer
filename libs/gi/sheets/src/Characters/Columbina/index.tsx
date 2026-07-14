@@ -488,7 +488,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg, {
-            name: ct.chg(`auto.skillParams.3`),
+            name: ct.chg('auto.skillParams.3'),
           }),
         },
         {
@@ -497,7 +497,7 @@ const sheet: TalentSheet = {
         },
         {
           node: infoMut(dmgFormulas.charged.dewDmg, {
-            name: ct.chg(`auto.skillParams.5`),
+            name: ct.chg('auto.skillParams.5'),
             multi: 3,
           }),
         },

@@ -74,8 +74,8 @@ export default function TeamExportModal({
     const { optimizationTarget } = optConfig
     if (!optimizationTarget) return setting
     if (optimizationTarget[0] !== 'custom') return setting
-    const ind = parseInt(optimizationTarget[1])
-    if (isNaN(ind)) return setting
+    const ind = Number.parseInt(optimizationTarget[1])
+    if (Number.isNaN(ind)) return setting
     if (setting.exportCustomMultiTarget.includes(ind)) return setting
     setting.exportCustomMultiTarget.push(ind)
     return setting
@@ -229,7 +229,7 @@ function LoadoutSetting({
 
   const selMtargetInd =
     optimizationTarget && optimizationTarget[0] === 'custom'
-      ? parseInt(optimizationTarget[1])
+      ? Number.parseInt(optimizationTarget[1])
       : -1
 
   // FIXME: Kind of annoying to have to do a whole calc to show opt target, will likely get addressed in Pando.

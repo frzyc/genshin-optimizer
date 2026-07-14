@@ -60,7 +60,7 @@ export class BNBSplitWorker implements SplitWorker {
     callback: (interim: Interim) => void
   ) {
     this.arts = arts
-    this.min = [-Infinity, ...constraints.map((x) => x.min)]
+    this.min = [Number.NEGATIVE_INFINITY, ...constraints.map((x) => x.min)]
     this.nodes = [optTarget, ...constraints.map((x) => x.value)]
     this.callback = callback
     this.topN = topN

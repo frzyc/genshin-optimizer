@@ -218,12 +218,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.spinningDmg, {
-            name: ct.chg(`auto.skillParams.4`),
+            name: ct.chg('auto.skillParams.4'),
           }),
         },
         {
           node: infoMut(dmgFormulas.charged.finalDmg, {
-            name: ct.chg(`auto.skillParams.5`),
+            name: ct.chg('auto.skillParams.5'),
           }),
         },
         {
@@ -267,17 +267,17 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.dmg, {
-            name: ct.chg(`skill.skillParams.0`),
+            name: ct.chg('skill.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.shield, {
-            name: ct.chg(`skill.skillParams.1`),
+            name: ct.chg('skill.skillParams.1'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.heal, {
-            name: ct.chg(`skill.skillParams.2`),
+            name: ct.chg('skill.skillParams.2'),
           }),
         },
         {
@@ -309,7 +309,7 @@ const sheet: TalentSheet = {
         {
           canShow: (data) => data.get(input.asc).value >= 4,
           text: ct.chg('skill.skillParams.5'),
-          value: ct.ch(`p4cd`),
+          value: ct.ch('p4cd'),
         },
       ],
     },
@@ -320,12 +320,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.burstDmg, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.skillDmg, {
-            name: ct.chg(`burst.skillParams.1`),
+            name: ct.chg('burst.skillParams.1'),
           }),
         },
         {
@@ -337,7 +337,7 @@ const sheet: TalentSheet = {
         {
           canShow: (data) => data.get(input.constellation).value >= 6,
           text: ct.chg('burst.skillParams.3'),
-          value: ct.ch(`c6duration`),
+          value: ct.ch('c6duration'),
         },
         {
           text: ct.chg('burst.skillParams.4'),
@@ -389,7 +389,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.passive1.devotionShield, {
-            name: ct.chg(`skill.skillParams.1`),
+            name: ct.chg('skill.skillParams.1'),
           }),
         },
         {

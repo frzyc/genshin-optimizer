@@ -222,7 +222,7 @@ export function CharCalcMockCountProvider({
         enemy.common.unstun_.add(1),
         ...conditionals.flatMap(({ sheet, src, dst, condKey, condValue }) =>
           withPreset(
-            `preset0`,
+            'preset0',
             conditionalEntries(sheet, src, dst)(condKey, condValue)
           )
         ),

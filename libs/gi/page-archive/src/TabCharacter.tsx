@@ -181,6 +181,7 @@ export default function TabCharacter() {
           <TableRow>
             {columns.map(({ key, label, width }) => (
               <TableCell
+                key={key}
                 sortDirection={
                   character.sortOrderBy === key ? character.sortOrder : false
                 }

@@ -1,3 +1,5 @@
+import { readFileSync } from 'node:fs'
+import * as http from 'node:http'
 import {
   Client,
   Collection,
@@ -7,8 +9,6 @@ import {
   REST,
   Routes,
 } from 'discord.js'
-import { readFileSync } from 'fs'
-import * as http from 'http'
 
 // So we can modify config.json after building, thereby not exposing credentials in our build drop
 const { clientid, token } = JSON.parse(
@@ -73,7 +73,7 @@ client.login(token)
 
 // Listen on port 8080 for Azure Web App alive check
 http
-  .createServer(function (_req, res) {
+  .createServer((_req, res) => {
     res.writeHead(200, { 'Content-Type': 'text/plain' })
     res.write('Alive')
     res.end()

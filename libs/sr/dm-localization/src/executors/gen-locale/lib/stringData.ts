@@ -85,7 +85,7 @@ function createValueStr(
   plainString: string | null
 ) {
   if (index) {
-    if (suffix == '%') {
+    if (suffix === '%') {
       if (type?.startsWith('f')) {
         return `{{${index}, percent(fixed: ${type.substring(1)})}}${suffix}`
       } else {

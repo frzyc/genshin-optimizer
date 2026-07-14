@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs'
 import type {
   ChatInputCommandInteraction,
   Message,
@@ -7,7 +8,6 @@ import type {
   PermissionsBitField,
   User,
 } from 'discord.js'
-import { readFileSync } from 'fs'
 
 // So we can modify config.json after building, thereby not exposing credentials in our build drop
 const { clientid } = JSON.parse(
@@ -17,10 +17,10 @@ const { clientid } = JSON.parse(
 export default {
   //true if interaction author has permissions
   has(interaction: ChatInputCommandInteraction, arr: PermissionsBitField) {
-    if ((interaction.member?.permissions as PermissionsBitField).has(arr))
+    if ((interaction.member!.permissions as PermissionsBitField).has(arr))
       return true
     interaction.reply({
-      content: `You do not have permission to use this command.`,
+      content: 'You do not have permission to use this command.',
       ephemeral: true,
     })
     return false

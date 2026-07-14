@@ -520,13 +520,13 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg1, {
-            name: ct.chg(`auto.skillParams.5`),
+            name: ct.chg('auto.skillParams.5'),
             textSuffix: '(1)',
           }),
         },
         {
           node: infoMut(dmgFormulas.charged.dmg2, {
-            name: ct.chg(`auto.skillParams.5`),
+            name: ct.chg('auto.skillParams.5'),
             textSuffix: '(2)',
           }),
         },
@@ -578,38 +578,38 @@ const sheet: TalentSheet = {
         })),
         {
           node: infoMut(dmgFormulas.skill.ca1, {
-            name: ct.chg(`skill.skillParams.9`),
+            name: ct.chg('skill.skillParams.9'),
             textSuffix: '(1)',
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.ca2, {
-            name: ct.chg(`skill.skillParams.9`),
+            name: ct.chg('skill.skillParams.9'),
             textSuffix: '(2)',
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.fourWind1, {
-            name: ct.chg(`skill.skillParams.10`),
+            name: ct.chg('skill.skillParams.10'),
             textSuffix: '(1)',
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.fourWind2, {
-            name: ct.chg(`skill.skillParams.10`),
+            name: ct.chg('skill.skillParams.10'),
             textSuffix: '(2)',
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.azure1, {
-            name: ct.chg(`skill.skillParams.11`),
+            name: ct.chg('skill.skillParams.11'),
             multi: 2,
             textSuffix: '(1)',
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.azure2, {
-            name: ct.chg(`skill.skillParams.11`),
+            name: ct.chg('skill.skillParams.11'),
             multi: 2,
             textSuffix: '(2)',
           }),
@@ -643,12 +643,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.dmg1, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.dmg2, {
-            name: ct.chg(`burst.skillParams.1`),
+            name: ct.chg('burst.skillParams.1'),
           }),
         },
         {
@@ -747,26 +747,26 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.constellation1.fourWind1, {
-            name: ct.chg(`skill.skillParams.10`),
+            name: ct.chg('skill.skillParams.10'),
             textSuffix: '(1)',
           }),
         },
         {
           node: infoMut(dmgFormulas.constellation1.fourWind2, {
-            name: ct.chg(`skill.skillParams.10`),
+            name: ct.chg('skill.skillParams.10'),
             textSuffix: '(2)',
           }),
         },
         {
           node: infoMut(dmgFormulas.constellation1.azure1, {
-            name: ct.chg(`skill.skillParams.11`),
+            name: ct.chg('skill.skillParams.11'),
             multi: 2,
             textSuffix: '(1)',
           }),
         },
         {
           node: infoMut(dmgFormulas.constellation1.azure2, {
-            name: ct.chg(`skill.skillParams.11`),
+            name: ct.chg('skill.skillParams.11'),
             multi: 2,
             textSuffix: '(2)',
           }),

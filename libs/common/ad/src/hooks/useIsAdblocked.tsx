@@ -16,7 +16,7 @@ export function useIsAdblocked() {
         await fetch(new Request(googleAdsURL)).catch((_) => {
           setAdBlockEnabled(true)
         })
-      } catch (err) {
+      } catch (_err) {
         setAdBlockEnabled(true)
       }
     }

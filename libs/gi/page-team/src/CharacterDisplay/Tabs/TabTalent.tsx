@@ -84,6 +84,7 @@ export default function CharacterTalentPane() {
     () =>
       range(1, maxConstellationCount).map((i) => (
         <SkillDisplayCard
+          key={i}
           talentKey={`constellation${i}` as TalentSheetElementKey}
           subtitle={t('constellationLvl', { level: i })}
           onClickTitle={() =>

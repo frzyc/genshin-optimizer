@@ -82,7 +82,7 @@ function PatchNotesCard() {
         const release = JSON.parse(data)
         setState({ isLoaded: true, text: release.body })
       })
-      .catch((err) => console.log('Error: ' + err.message))
+      .catch((err) => console.log(`Error: ${err.message}`))
   }, [])
 
   return (
@@ -98,7 +98,7 @@ function PatchNotesCard() {
       />
       <CardContent>
         {isLoaded ? (
-          <ReactMarkdown children={text} remarkPlugins={[remarkGfm]} />
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{text}</ReactMarkdown>
         ) : (
           'Loading...'
         )}

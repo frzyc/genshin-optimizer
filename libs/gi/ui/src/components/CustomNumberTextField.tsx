@@ -19,7 +19,7 @@ export function CustomNumberTextField({
   const [state, setState] = useState('')
   const sendChange = useCallback(() => {
     if (state === '') return onChange(0)
-    const parseFunc = float ? parseFloat : parseInt
+    const parseFunc = float ? Number.parseFloat : Number.parseInt
     onChange(parseFunc(state))
   }, [onChange, state, float])
   useEffect(() => setState(value?.toString() ?? ''), [value, setState]) // update value on value change

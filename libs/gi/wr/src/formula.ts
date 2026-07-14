@@ -385,7 +385,7 @@ const common: Data = {
           lookup(
             hit.ele,
             objKeyMap(allElements, (element) => total[`${element}_dmgInc`]),
-            NaN
+            Number.NaN
           ),
           lookup(
             hit.move,
@@ -395,7 +395,7 @@ const common: Data = {
                 ? sum(total[`${move}_dmgInc`], total.plunging_dmgInc)
                 : total[`${move}_dmgInc`]
             ),
-            NaN
+            Number.NaN
           )
         ),
         { ...info('dmgInc'), pivot }
@@ -438,13 +438,13 @@ const common: Data = {
           critHit: sum(one, total.critDMG_),
           avgHit: sum(one, prod(total.cappedCritRate, total.critDMG_)),
         },
-        NaN
+        Number.NaN
       ),
       enemy.def,
       lookup(
         hit.ele,
         objKeyMap(allElements, (ele) => enemy[`${ele}_resMulti_` as const]),
-        NaN
+        Number.NaN
       ),
       hit.ampMulti
     ),

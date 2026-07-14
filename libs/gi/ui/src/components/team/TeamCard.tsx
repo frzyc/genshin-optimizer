@@ -125,7 +125,7 @@ export function TeamCard({
             teamId={teamId}
             show={showDel}
             onHide={onHideDel}
-            onDel={function (): void {}}
+            onDel={(): void => {}}
           />
           <Button
             variant="outlined"
@@ -464,7 +464,7 @@ function WeaponCard({ weapon }: { weapon: ICachedWeapon }) {
         height: '100%',
         display: 'flex',
         flexDirection: 'horizontal',
-        boxShadow: `0 0 10px rgba(0,0,0,0.4)`,
+        boxShadow: '0 0 10px rgba(0,0,0,0.4)',
       }}
     >
       <Box
@@ -509,7 +509,7 @@ function ArtifactCard({ artifactData }: { artifactData: ArtifactData }) {
         maxHeight: '50px',
         display: 'flex',
         flexDirection: 'horizontal',
-        boxShadow: `0 0 10px rgba(0,0,0,0.4)`,
+        boxShadow: '0 0 10px rgba(0,0,0,0.4)',
         flexGrow: 1,
       }}
     >
@@ -609,7 +609,7 @@ function Set22({ sets }: { sets: ArtifactSetKey[] }) {
           left: 0,
           Width: '50px',
           height: '50px',
-          clipPath: `polygon(0 0, 0 100%, 100% 0)`,
+          clipPath: 'polygon(0 0, 0 100%, 100% 0)',
         }}
         src={artifactAsset(set1, 'flower')}
       />
@@ -622,7 +622,7 @@ function Set22({ sets }: { sets: ArtifactSetKey[] }) {
           left: 0,
           Width: '50px',
           height: '50px',
-          clipPath: `polygon(100% 100%, 0 100%, 100% 0)`,
+          clipPath: 'polygon(100% 100%, 0 100%, 100% 0)',
         }}
         src={artifactAsset(set2, 'flower')}
       />

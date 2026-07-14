@@ -148,6 +148,7 @@ export default function TabArtifact() {
             const { rarities } = getArtSetStat(setKey)
             return (
               <Suspense
+                key={setKey}
                 fallback={
                   <TableRow>
                     <TableCell colSpan={4}>
@@ -186,13 +187,13 @@ export default function TabArtifact() {
                   <TableCell>
                     <Translate
                       ns={`artifact_${setKey}_gen`}
-                      key18={`setEffects.2`}
+                      key18={'setEffects.2'}
                     />
                   </TableCell>
                   <TableCell>
                     <Translate
                       ns={`artifact_${setKey}_gen`}
-                      key18={`setEffects.4`}
+                      key18={'setEffects.4'}
                     />
                   </TableCell>
                 </TableRow>
@@ -256,7 +257,7 @@ export default function TabArtifact() {
                   <TableCell width="90%">
                     <Translate
                       ns={`artifact_${setKey}_gen`}
-                      key18={`setEffects.1`}
+                      key18={'setEffects.1'}
                     />
                   </TableCell>
                 </TableRow>

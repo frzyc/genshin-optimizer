@@ -1,8 +1,8 @@
+import { execSync } from 'node:child_process'
+import * as fs from 'node:fs'
+import * as path from 'node:path'
 import type { ExecutorContext } from '@nx/devkit'
 import { workspaceRoot } from '@nx/devkit'
-import { execSync } from 'child_process'
-import * as fs from 'fs'
-import * as path from 'path'
 import type { SyncRepoExecutorSchema } from './schema'
 
 export default async function runExecutor(
@@ -44,6 +44,6 @@ Caution: if this is part of nx cache replay,
 }
 
 export const getLocalRepoHash = (cwd: string): string =>
-  `${execSync(`git rev-parse HEAD`, { cwd })}`.trimEnd()
+  `${execSync('git rev-parse HEAD', { cwd })}`.trimEnd()
 export const getRemoteRepoHash = (cwd: string): string =>
   `${execSync(`git ls-tree --object-only HEAD ${cwd}`)}`.trimEnd()

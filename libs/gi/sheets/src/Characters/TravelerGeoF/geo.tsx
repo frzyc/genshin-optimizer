@@ -174,7 +174,7 @@ export default function geo(
         fields: [
           {
             node: infoMut(dmgFormulas.skill.dmg, {
-              name: ct.chg(`skill.skillParams.0`),
+              name: ct.chg('skill.skillParams.0'),
             }),
           },
           {

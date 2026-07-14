@@ -51,7 +51,7 @@ const PageTeams = lazy(() => import('@genshin-optimizer/gi/page-teams'))
 const PageTeam = lazy(() => import('@genshin-optimizer/gi/page-team'))
 
 function App() {
-  const dbIndex = parseInt(localStorage.getItem('dbIndex') || '1')
+  const dbIndex = Number.parseInt(localStorage.getItem('dbIndex') || '1')
   const [databases, setDatabases] = useState(() => {
     localStorage.removeItem('GONewTabDetection')
     localStorage.setItem('GONewTabDetection', 'debug')

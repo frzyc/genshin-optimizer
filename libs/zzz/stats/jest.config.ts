@@ -1,4 +1,3 @@
-/* eslint-disable */
 export default {
   displayName: 'zzz-stats',
   preset: '../../../jest.preset.js',

@@ -175,7 +175,7 @@ function createPotentialSheet(
         type: 'text',
         header: {
           icon: <ImgIcon src={commonDefIcon('coreFlat')} size={1.5} />,
-          text: chg(`potential.name`),
+          text: chg('potential.name'),
         },
         text: (calc) =>
           chg(`potential.desc.${calc.compute(own.char.potential).val}`),

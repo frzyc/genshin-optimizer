@@ -1,4 +1,3 @@
-/* eslint-disable */
 export default {
   displayName: 'gi-stats',
   preset: '../../../jest.preset.js',

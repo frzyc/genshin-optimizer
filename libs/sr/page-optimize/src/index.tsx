@@ -97,7 +97,7 @@ export default function PageOptimize() {
     () => ({
       src: characterKey,
       dst: characterKey,
-      preset: `preset0`,
+      preset: 'preset0',
     }),
     [characterKey]
   )

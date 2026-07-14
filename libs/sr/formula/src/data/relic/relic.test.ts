@@ -149,7 +149,7 @@ function cond(setKey: RelicSetKey, name: string, value: number) {
   return conditionalEntries(setKey, 'Seele', null)(name, value)
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// biome-ignore lint/correctness/noUnusedVariables: helper util for tests
 function printDebug(calc: Calculator, read: Read) {
   console.log(prettify(calc.toDebug().compute(read)))
 }

@@ -1,3 +1,5 @@
+import { writeFile } from 'node:fs/promises'
+import * as path from 'node:path'
 import { formatText } from '@genshin-optimizer/common/pipeline'
 import {
   extractCondMetadata,
@@ -9,8 +11,6 @@ import {
   allWengineKeys,
 } from '@genshin-optimizer/zzz/consts'
 import { workspaceRoot } from '@nx/devkit'
-import { writeFile } from 'fs/promises'
-import * as path from 'path'
 import { data } from '../../data'
 import { commonSheets, type Tag } from '../../data/util'
 import {
@@ -72,7 +72,7 @@ export default async function runExecutor(
         tag.sheet !== 'disc' &&
         tag.sheet !== 'wengine' &&
         // formula listing
-        tag.qt == 'listing' &&
+        tag.qt === 'listing' &&
         tag.q === 'buffs' &&
         // pattern from `registerBuffs`
         value.op === 'tag' &&

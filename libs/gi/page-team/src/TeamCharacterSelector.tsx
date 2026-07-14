@@ -73,11 +73,11 @@ export default function TeamCharacterSelector({
           // color for team setting
           backrgba,
           ...elementArray.map((ele, i) => {
-            if (!ele) return `rgba(0,0,0,0)`
+            if (!ele) return 'rgba(0,0,0,0)'
 
             const hex = theme.palette[ele].main as string
             const color = hexToColor(hex)
-            if (!color) return `rgba(0,0,0,0)`
+            if (!color) return 'rgba(0,0,0,0)'
             return colorToRgbaString(color, selectedIndex === i ? 0.5 : 0.15)
           }),
         ]

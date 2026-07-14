@@ -16,7 +16,7 @@ export function optimizeNodesForScaling(
   statFilters: OptConfig['statFilters']
 ) {
   if (!optimizationTarget) return {}
-  const workerData = teamDataProp[characterKey]?.target.data![0]
+  const workerData = teamDataProp[characterKey]?.target.data[0]
   if (!workerData) return {}
   const unoptimizedOptimizationTargetNode = objPathValue(
     workerData.display ?? {},

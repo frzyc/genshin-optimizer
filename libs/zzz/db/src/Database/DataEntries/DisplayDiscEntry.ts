@@ -78,7 +78,7 @@ export class DisplayDiscEntry extends DataEntry<
   override set(
     value:
       | Partial<IDisplayDisc>
-      | ((v: IDisplayDisc) => Partial<IDisplayDisc> | void)
+      | ((v: IDisplayDisc) => Partial<IDisplayDisc> | undefined)
       | { action: 'reset' }
   ): boolean {
     if ('action' in value) {

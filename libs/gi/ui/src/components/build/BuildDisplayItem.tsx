@@ -372,6 +372,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
                         <Box>
                           {sameAsBuildIds.map((buildId) => (
                             <Typography
+                              key={buildId}
                               sx={{
                                 display: 'flex',
                                 gap: 1,

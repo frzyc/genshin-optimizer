@@ -1,11 +1,11 @@
+import { writeFileSync } from 'node:fs'
+import * as path from 'node:path'
 import { formatText } from '@genshin-optimizer/common/pipeline'
 import {
   extractCondMetadata,
   extractFormulaMetadata,
 } from '@genshin-optimizer/game-opt/formula'
 import { workspaceRoot } from '@nx/devkit'
-import { writeFileSync } from 'fs'
-import * as path from 'path'
 import { entries } from '../../data'
 import type { Tag } from '../../data/util'
 import type { GenDescExecutorSchema } from './schema'
@@ -22,13 +22,13 @@ export default async function runExecutor(
   const formulas = extractFormulaMetadata(entries, (tag: Tag, value) => {
     if (
       // sheet-specific
-      tag.sheet != 'agg' &&
+      tag.sheet !== 'agg' &&
       tag.sheet !== 'art' &&
       // formula listing
-      tag.qt == 'listing' &&
-      tag.q == 'formulas' &&
+      tag.qt === 'listing' &&
+      tag.q === 'formulas' &&
       // pattern from `registerFormula`
-      value.op == 'tag' &&
+      value.op === 'tag' &&
       'name' in value.tag &&
       'q' in value.tag
     ) {

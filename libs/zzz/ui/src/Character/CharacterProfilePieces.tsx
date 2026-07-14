@@ -158,7 +158,7 @@ function CoverArea({
         component="img"
         width="100%"
         height="auto"
-      ></Box>
+      />
     </Box>
   )
 }

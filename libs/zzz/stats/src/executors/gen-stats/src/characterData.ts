@@ -13,7 +13,7 @@ import {
   filterUnbuffedKits,
   hakushinSkillMap,
 } from '@genshin-optimizer/zzz/dm'
-import { type CharacterDatum } from '../../../char'
+import type { CharacterDatum } from '../../../char'
 import { extractParamsFromString } from './util'
 
 export type CharactersData = Record<CharacterKey, CharacterDatum>
@@ -146,7 +146,7 @@ function extractCalcedParams(skills: CharacterData['skills']) {
                         formula: par.Desc.replace(
                           /AvatarSkillLevel\((\d)\)/g,
                           (_match, index) =>
-                            avatarSkillLevelIndexing[parseInt(index)]
+                            avatarSkillLevelIndexing[Number.parseInt(index)]
                         ),
                       }
                     : undefined

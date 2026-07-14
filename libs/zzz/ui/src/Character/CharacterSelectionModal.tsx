@@ -45,8 +45,9 @@ import {
   Typography,
   useTheme,
 } from '@mui/material'
+import type React from 'react'
 import type { ChangeEvent } from 'react'
-import React, { Suspense, useDeferredValue, useMemo, useState } from 'react'
+import { Suspense, useDeferredValue, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { CharSpecialtyToggle, ElementToggle } from '../toggles'
 import {

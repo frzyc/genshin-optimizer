@@ -129,12 +129,11 @@ export default function CharacterTalentPane() {
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
           >
             <EidolonDropdown eidolon={eidolon} />
-            {eidolonCards &&
-              eidolonCards.map((c, i) => (
-                <Box key={i} sx={{ opacity: eidolon >= i + 1 ? 1 : 0.5 }}>
-                  {c}
-                </Box>
-              ))}
+            {eidolonCards?.map((c, i) => (
+              <Box key={i} sx={{ opacity: eidolon >= i + 1 ? 1 : 0.5 }}>
+                {c}
+              </Box>
+            ))}
           </Grid>
         )}
         <Grid item xs={12} md={12} lg={9} container spacing={1}>

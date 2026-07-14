@@ -48,7 +48,6 @@ export function migrateZOOD(
           (c) => ((c as any)['id'] as string) === oldKey
         )
         if (charMeta) {
-          // eslint-disable-next-line @typescript-eslint/no-extra-semi
           ;(charMeta as any)['id'] = newKey
         }
       }

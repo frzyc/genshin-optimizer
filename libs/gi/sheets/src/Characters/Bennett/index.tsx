@@ -220,13 +220,13 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg1, {
-            name: ct.chg(`auto.skillParams.5`),
+            name: ct.chg('auto.skillParams.5'),
             textSuffix: '(1)',
           }),
         },
         {
           node: infoMut(dmgFormulas.charged.dmg2, {
-            name: ct.chg(`auto.skillParams.5`),
+            name: ct.chg('auto.skillParams.5'),
             textSuffix: '(2)',
           }),
         },
@@ -266,7 +266,7 @@ const sheet: TalentSheet = {
         {
           // Press
           node: infoMut(dmgFormulas.skill.press, {
-            name: ct.chg(`skill.skillParams.0`),
+            name: ct.chg('skill.skillParams.0'),
           }),
         },
         {
@@ -277,13 +277,13 @@ const sheet: TalentSheet = {
         {
           // Lvl 1
           node: infoMut(dmgFormulas.skill.hold1_1, {
-            name: ct.chg(`skill.skillParams.1`),
+            name: ct.chg('skill.skillParams.1'),
             textSuffix: '(1)',
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.hold1_2, {
-            name: ct.chg(`skill.skillParams.1`),
+            name: ct.chg('skill.skillParams.1'),
             textSuffix: '(2)',
           }),
         },
@@ -295,19 +295,19 @@ const sheet: TalentSheet = {
         {
           // Lvl 2
           node: infoMut(dmgFormulas.skill.hold2_1, {
-            name: ct.chg(`skill.skillParams.2`),
+            name: ct.chg('skill.skillParams.2'),
             textSuffix: '(1)',
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.hold2_2, {
-            name: ct.chg(`skill.skillParams.2`),
+            name: ct.chg('skill.skillParams.2'),
             textSuffix: '(2)',
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.explosion, {
-            name: ct.chg(`skill.skillParams.3`),
+            name: ct.chg('skill.skillParams.3'),
           }),
         },
         {
@@ -331,12 +331,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.dmg, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.regen, {
-            name: ct.chg(`burst.skillParams.1`),
+            name: ct.chg('burst.skillParams.1'),
           }),
         },
         {
@@ -449,13 +449,13 @@ export default new CharacterSheet(sheet, data)
 
 function calculateSkillCD(data: UIData, skillCD: number): string {
   let cdFactor = 1.0
-  let result: string = skillCD + 's'
+  let result = `${skillCD}s`
   if (data.get(input.asc).value >= 1) {
     cdFactor = 0.8
   }
   cdFactor *= 1 - data.get(activeInAreaA4).value
   if (cdFactor !== 1.0) {
-    result += ' - ' + (100 - cdFactor * 100) + '% = ' + skillCD * cdFactor
+    result += ` - ${100 - cdFactor * 100}% = ${skillCD * cdFactor}`
   }
   return result
 }

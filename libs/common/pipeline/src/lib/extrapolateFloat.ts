@@ -19,7 +19,7 @@ type Options = {
  * (https://cseweb.ucsd.edu/~lerner/papers/fp-printing-popl16.pdf)
  * */
 export function extrapolateFloat(val: number, options: Options = {}): number {
-  if (!isFinite(val)) return val
+  if (!Number.isFinite(val)) return val
   if (val < 0) return -extrapolateFloat(-val, options)
   if (val === 0) return 0
 
@@ -35,11 +35,11 @@ export function extrapolateFloat(val: number, options: Options = {}): number {
   const string = shortestInRange(lower, upper, val)
 
   // Make sure we get the right number
-  if (!forced && Math.fround(parseFloat(string)) !== val)
+  if (!forced && Math.fround(Number.parseFloat(string)) !== val)
     console.error(
       `Extrapolation error: extrapolated ${val} to an incorrect number ${string}`
     )
-  return parseFloat(string)
+  return Number.parseFloat(string)
 }
 
 /**
@@ -95,7 +95,7 @@ function roundingRange(
   n: number
 ): [lower: number, upper: number] {
   const [sig, mul] = normalize(float)
-  const ulpOfOne = Math.pow(1 / 2, n)
+  const ulpOfOne = (1 / 2) ** n
   const nextSig = sig + ulpOfOne
   const prevSig = sig - (sig === 1 ? ulpOfOne / 2 : ulpOfOne)
   const midNextSig = (sig + nextSig) / 2
@@ -106,7 +106,7 @@ function roundingRange(
 /** Round `val` to the nearest value with `n`-bit mantissa */
 export function roundMantissa(val: number, n: number): number {
   const [sig, mul] = normalize(val)
-  const unit = Math.pow(1 / 2, n)
+  const unit = (1 / 2) ** n
   const roundedSig = Math.round(sig / unit) * unit
   return roundedSig * mul
 }
@@ -115,9 +115,9 @@ export function roundMantissa(val: number, n: number): number {
 function normalize(val: number): [number, number] {
   if (val === 0) return [0, 1]
   const exponent = Math.floor(Math.log2(val))
-  const multiplier = Math.pow(2, exponent)
+  const multiplier = 2 ** exponent
   const significand = val / multiplier
-  if (!isFinite(significand) || significand < 1 || significand >= 2)
+  if (!Number.isFinite(significand) || significand < 1 || significand >= 2)
     throw new Error(`Unable to normalize ${val} `)
   return [significand, multiplier]
 }

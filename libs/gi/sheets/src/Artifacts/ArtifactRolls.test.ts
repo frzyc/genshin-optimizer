@@ -561,7 +561,7 @@ function somePerm(
 ): boolean {
   const base = [...indices]
   const count = indices.reduce((a, _, i) => a * (i + 1), 1)
-  if (count > ehrlich.length) throw new Error(`Permutation too large`)
+  if (count > ehrlich.length) throw new Error('Permutation too large')
 
   for (let i = 0; i < count; i++) {
     if (callback(base)) return true

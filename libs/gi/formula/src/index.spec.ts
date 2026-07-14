@@ -1,10 +1,10 @@
+import { fail } from 'node:assert'
 import {
   allArtifactSetKeys,
   allCharacterKeys,
   allWeaponKeys,
 } from '@genshin-optimizer/gi/consts'
 import { compileTagMapValues } from '@genshin-optimizer/pando/engine'
-import { fail } from 'assert'
 import { Calculator } from './calculator'
 import { entries, keys, values } from './data'
 import type { Member, Sheet, TagMapNodeEntries } from './data/util'
@@ -90,19 +90,20 @@ describe('sheet', () => {
       if (tag.et && tag.qt && tag.q) {
         switch (tag.et) {
           case 'notOwnBuff':
+          // biome-ignore lint/suspicious/noFallthroughSwitchClause: will not fall
           case 'teamBuff': {
             const { sheet } = (ownTag as any)[tag.qt][tag.q]
             if (sheet === 'agg' && sheets.has(tag.sheet as any)) continue
             fail(`Ill-form entry (${tagStr(tag)}) for sheet ${sheet}`)
           }
-          // eslint-disable-next-line no-fallthrough
+          // biome-ignore lint/suspicious/noFallthroughSwitchClause: will not fall
           case 'enemyDeBuff': {
             const { sheet } = (enemyTag as any)[tag.qt][tag.q]
             if (sheet === 'agg' && sheets.has(tag.sheet as any)) continue
             if (sheet === tag.sheet) continue
             fail(`Ill-form entry (${tagStr(tag)}) for sheet ${sheet}`)
           }
-          // eslint-disable-next-line no-fallthrough
+          // biome-ignore lint/suspicious/noFallthroughSwitchClause: will not fall
           case 'own': {
             const desc = (ownTag as any)[tag.qt]?.[tag.q]
             if (!desc) continue
@@ -112,7 +113,6 @@ describe('sheet', () => {
               continue
             fail(`Illform entry (${tagStr(tag)}) for sheet ${sheet}`)
           }
-          // eslint-disable-next-line no-fallthrough
           case 'enemy': {
             const desc = (enemyTag as any)[tag.qt]?.[tag.q]
             if (!desc) continue

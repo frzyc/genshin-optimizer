@@ -339,22 +339,22 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.sweepDmg, {
-            name: ct.chg(`auto.skillParams.3`),
+            name: ct.chg('auto.skillParams.3'),
           }),
         },
         {
           node: infoMut(dmgFormulas.charged.beamDmg, {
-            name: ct.chg(`auto.skillParams.4`),
+            name: ct.chg('auto.skillParams.4'),
           }),
         },
         {
           node: infoMut(dmgFormulas.charged.beamStellarDmg, {
-            name: ct.chg(`auto.skillParams.5`),
+            name: ct.chg('auto.skillParams.5'),
           }),
         },
         {
           node: infoMut(dmgFormulas.charged.overdriveDmg, {
-            name: ct.chg(`auto.skillParams.6`),
+            name: ct.chg('auto.skillParams.6'),
           }),
         },
       ],
@@ -417,18 +417,18 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.bombardDmg, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
             multi: 3,
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.rayDmg, {
-            name: ct.chg(`burst.skillParams.1`),
+            name: ct.chg('burst.skillParams.1'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.rayStellarDmg, {
-            name: ct.chg(`burst.skillParams.2`),
+            name: ct.chg('burst.skillParams.2'),
           }),
         },
         {

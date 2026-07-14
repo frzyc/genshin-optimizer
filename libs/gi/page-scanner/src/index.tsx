@@ -191,7 +191,7 @@ export default function PageScanner() {
                 </WarningWrapper>
               </Typography>
               <Typography gutterBottom>
-                <Trans t={t} i18nKey="ik.p1"></Trans>
+                <Trans t={t} i18nKey="ik.p1" />
               </Typography>
               <Typography gutterBottom>
                 <Trans t={t} i18nKey="seelieme">
@@ -374,7 +374,7 @@ export default function PageScanner() {
                 </WarningWrapper>
               </Typography>
               <Typography gutterBottom>
-                <Trans t={t} i18nKey="is.p1"></Trans>
+                <Trans t={t} i18nKey="is.p1" />
               </Typography>
               <Typography gutterBottom>
                 <Trans t={t} i18nKey="seelieme">

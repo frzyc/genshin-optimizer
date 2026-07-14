@@ -42,7 +42,7 @@ export function AmpReactionModeText({
       <SqBadge sx={sqBadgeStyle} color={base}>
         {<ElementIcon ele={base} iconProps={iconInlineProps} />}
       </SqBadge>
-      {`+`}
+      {'+'}
       <SqBadge sx={sqBadgeStyle} color={trigger as 'cryo' | 'pyro' | 'hydro'}>
         {<ElementIcon ele={trigger} iconProps={iconInlineProps} />}
       </SqBadge>

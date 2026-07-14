@@ -294,7 +294,7 @@ function InTeam() {
       >
         {t('charContentModal.addLoAndTeam')}
       </Button>
-      <CardThemed bgt="light"></CardThemed>
+      <CardThemed bgt="light" />
     </Box>
   )
 }

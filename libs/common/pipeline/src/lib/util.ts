@@ -1,7 +1,7 @@
+import { spawn } from 'node:child_process'
+import { mkdirSync, writeFileSync } from 'node:fs'
+import { dirname, join } from 'node:path'
 import { workspaceRoot } from '@nx/devkit'
-import { spawn } from 'child_process'
-import { mkdirSync, writeFileSync } from 'fs'
-import { dirname, join } from 'path'
 
 /**
  * Formats text, returns formatted text. This function does not write directly to the provided file path.

@@ -225,13 +225,13 @@ export const parsingFunctions: {
     }
     throw `parsing fields error[${keys}](${lang}) len ${strings.length}: ${string}`
   },
-  paragraph: (lang, string) => paragraph(string),
-  skillParam: (lang, string) => {
+  paragraph: (_lang, string) => paragraph(string),
+  skillParam: (_lang, string) => {
     if (!string) string = ''
     string = string.split('|')[0]
     return string
   },
-  skillParamEncoding: (lang, string) => {
+  skillParamEncoding: (_lang, string) => {
     if (!string) return ''
     string = string.split('|')[1]
     // Convert to i18n'able format
@@ -256,7 +256,7 @@ export const parsingFunctions: {
         }
         // 'P'
         else if (percent === 'P') {
-          return `, percent}}%`
+          return ', percent}}%'
         }
         // 'I' has no formatting
         return '}}'
@@ -266,12 +266,12 @@ export const parsingFunctions: {
   },
   plungeLow: (lang, string) => plungeUtil(lang, string, true),
   plungeHigh: (lang, string) => plungeUtil(lang, string, false),
-  string: (lang, string) => string,
-  constellation: (lang, string) => constellation(string),
-  talent: (lang, string) => talent(string),
-  altSprint: (lang, string) => altSprint(string),
-  passive1: (lang, string) => passive1(string),
-  passive4: (lang, string) => passive4(string),
+  string: (_lang, string) => string,
+  constellation: (_lang, string) => constellation(string),
+  talent: (_lang, string) => talent(string),
+  altSprint: (_lang, string) => altSprint(string),
+  passive1: (_lang, string) => passive1(string),
+  passive4: (_lang, string) => passive4(string),
 }
 
 export function constellation(string: string) {

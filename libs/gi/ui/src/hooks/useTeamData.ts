@@ -1,12 +1,12 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { notEmpty, objMap } from '@genshin-optimizer/common/util'
 import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
-import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
-import {
-  type ArtCharDatabase,
-  type ICachedArtifact,
-  type ICachedCharacter,
-  type ICachedWeapon,
+import type {
+  ArtCharDatabase,
+  ICachedArtifact,
+  ICachedCharacter,
+  ICachedWeapon,
+  LoadoutDatum,
 } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,

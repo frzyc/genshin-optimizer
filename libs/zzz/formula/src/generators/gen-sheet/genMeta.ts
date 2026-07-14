@@ -1,7 +1,7 @@
+import { existsSync } from 'node:fs'
+import * as path from 'node:path'
 import type { Tree } from '@nx/devkit'
 import { generateFiles } from '@nx/devkit'
-import { existsSync } from 'fs'
-import * as path from 'path'
 import type { GenSheetGeneratorSchema } from './schema'
 
 export default async function genMeta(
@@ -11,7 +11,7 @@ export default async function genMeta(
 ) {
   console.log(options)
   const { sheet_type, sheet } = options
-  const file_location = `libs/zzz/formula/src/meta`
+  const file_location = 'libs/zzz/formula/src/meta'
   const types = ['formulas', 'conditionals', 'buffs']
   for (const type of types) {
     const dest = path.join(

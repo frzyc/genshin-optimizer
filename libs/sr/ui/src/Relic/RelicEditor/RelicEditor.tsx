@@ -273,7 +273,7 @@ export function RelicEditor({
                     value={level}
                     disabled={!sheet}
                     onChange={(e) => {
-                      const value = parseInt(e.target.value) || 0
+                      const value = Number.parseInt(e.target.value) || 0
                       update({ level: value })
                     }}
                   />

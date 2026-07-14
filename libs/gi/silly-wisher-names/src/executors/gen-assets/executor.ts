@@ -1,5 +1,5 @@
+import { existsSync, mkdirSync, writeFileSync } from 'node:fs'
 import { langKeys } from '@genshin-optimizer/common/pipeline'
-import { existsSync, mkdirSync, writeFileSync } from 'fs'
 import { languageMap, PROJROOT_PATH } from '../../../Translated/util'
 import type { GenAssetsExecutorSchema } from './schema'
 
@@ -138,7 +138,7 @@ export default async function runExecutor(_options: GenAssetsExecutorSchema) {
     const fileDir = `${localeDir}${langkey}`
     if (!existsSync(fileDir)) mkdirSync(fileDir, { recursive: true })
     const fileName = `${fileDir}/sillyWisher_charNames.json`
-    writeFileSync(fileName, JSON.stringify(content, undefined, 2) + '\n')
+    writeFileSync(fileName, `${JSON.stringify(content, undefined, 2)}\n`)
     console.log('Generated JSON at', fileName)
   })
   return {

@@ -53,8 +53,9 @@ import {
   Typography,
   tooltipClasses,
 } from '@mui/material'
+import type React from 'react'
 import type { ChangeEvent } from 'react'
-import React, {
+import {
   useContext,
   useDeferredValue,
   useEffect,

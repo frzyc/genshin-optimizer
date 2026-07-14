@@ -250,7 +250,7 @@ function CoverArea({
         <FavoriteButton />
         <LevelBadge level={level} ascension={ascension} />
       </Box>
-      <Box src={src} component="img" width="100%" height="auto"></Box>
+      <Box src={src} component="img" width="100%" height="auto" />
     </Box>
   )
 }

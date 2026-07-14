@@ -96,7 +96,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
       const name = `Team Name ${num}`
       if (existing.some((tc) => tc.name !== name)) return name
     }
-    return `Team Name`
+    return 'Team Name'
   }
   override validate(obj: unknown): Team | undefined {
     const result = teamSchema.safeParse(obj)

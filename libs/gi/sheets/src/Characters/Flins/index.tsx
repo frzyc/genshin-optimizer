@@ -1,4 +1,4 @@
-import { type CharacterKey } from '@genshin-optimizer/gi/consts'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   constant,
@@ -322,7 +322,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg, {
-            name: ct.chg(`auto.skillParams.5`),
+            name: ct.chg('auto.skillParams.5'),
           }),
         },
         {
@@ -360,38 +360,38 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.na1, {
-            name: ct.chg(`skill.skillParams.0`),
+            name: ct.chg('skill.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.na2, {
-            name: ct.chg(`skill.skillParams.1`),
+            name: ct.chg('skill.skillParams.1'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.na3, {
-            name: ct.chg(`skill.skillParams.2`),
+            name: ct.chg('skill.skillParams.2'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.na4, {
-            name: ct.chg(`skill.skillParams.3`),
+            name: ct.chg('skill.skillParams.3'),
             multi: 2,
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.na5, {
-            name: ct.chg(`skill.skillParams.4`),
+            name: ct.chg('skill.skillParams.4'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.ca, {
-            name: ct.chg(`skill.skillParams.5`),
+            name: ct.chg('skill.skillParams.5'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.spearDmg, {
-            name: ct.chg(`skill.skillParams.6`),
+            name: ct.chg('skill.skillParams.6'),
           }),
         },
         {
@@ -418,17 +418,17 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.skillDmg, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.middleLunarDmg, {
-            name: ct.chg(`burst.skillParams.1`),
+            name: ct.chg('burst.skillParams.1'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.finalLunarDmg, {
-            name: ct.chg(`burst.skillParams.2`),
+            name: ct.chg('burst.skillParams.2'),
           }),
         },
         {
@@ -442,12 +442,12 @@ const sheet: TalentSheet = {
         },
         {
           node: infoMut(dmgFormulas.burst.thunderDmg, {
-            name: ct.chg(`burst.skillParams.5`),
+            name: ct.chg('burst.skillParams.5'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.thunderAddlDmg, {
-            name: ct.chg(`burst.skillParams.6`),
+            name: ct.chg('burst.skillParams.6'),
           }),
         },
         {

@@ -103,7 +103,7 @@ export default function PageCharacter() {
     () => ({
       src: characterKey,
       dst: characterKey,
-      preset: `preset0`,
+      preset: 'preset0',
     }),
     [characterKey]
   )
@@ -255,7 +255,7 @@ export default function PageCharacter() {
                 value={specialtyType}
                 totals={charSpecialtyTotals}
                 size="small"
-              ></CharSpecialtyToggle>
+              />
             </Grid>
             <Grid item>
               <ElementToggle

@@ -184,22 +184,22 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.aimed, {
-            name: ct.chg(`auto.skillParams.6`),
+            name: ct.chg('auto.skillParams.6'),
           }),
         },
         {
           node: infoMut(dmgFormulas.charged.aimedCharged, {
-            name: ct.chg(`auto.skillParams.7`),
+            name: ct.chg('auto.skillParams.7'),
           }),
         },
         {
           node: infoMut(dmgFormulas.charged.frostflake, {
-            name: ct.chg(`auto.skillParams.8`),
+            name: ct.chg('auto.skillParams.8'),
           }),
         },
         {
           node: infoMut(dmgFormulas.charged.frostflakeBloom, {
-            name: ct.chg(`auto.skillParams.9`),
+            name: ct.chg('auto.skillParams.9'),
           }),
         },
       ],
@@ -272,13 +272,13 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.inheritedHp, {
-            name: ct.chg(`skill.skillParams.0`),
+            name: ct.chg('skill.skillParams.0'),
             variant: 'heal',
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.dmg, {
-            name: ct.chg(`skill.skillParams.1`),
+            name: ct.chg('skill.skillParams.1'),
           }),
         },
         {
@@ -303,7 +303,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.dmg, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
           }),
         },
         {
