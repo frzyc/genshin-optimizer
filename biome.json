@@ -72,7 +72,18 @@
         "useEnumInitializers": "error",
         "useNumberNamespace": "error",
         "useSelfClosingElements": "error",
-        "noNonNullAssertion": "off"
+        "noNonNullAssertion": "off",
+        "noRestrictedImports": {
+          "level": "error",
+          "options": {
+            "patterns": [
+              {
+                "group": ["../**/src/**"],
+                "message": "Cross-module imports are not allowed, use imports at the library level like `import {} from '@genshin-optimizer/gi/stats"
+              }
+            ]
+          }
+        }
       },
       "suspicious": {
         "noExplicitAny": "info",
