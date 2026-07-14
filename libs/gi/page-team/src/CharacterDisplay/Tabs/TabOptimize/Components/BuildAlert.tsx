@@ -1,6 +1,6 @@
 import { timeStringMs } from '@genshin-optimizer/common/util'
 import { Alert, Grid, LinearProgress, Typography, styled } from '@mui/material'
-import type { ReactNode } from 'react'
+import { type ReactNode, useSyncExternalStore } from 'react'
 
 export const warningBuildNumber = 10000000
 export type BuildStatus = {
@@ -13,6 +13,8 @@ export type BuildStatus = {
   skippedPerSecond: number // number of configs skipped in the last second (none are tested)
   startTime?: number
   finishTime?: number
+  changed: boolean
+  cb?: () => void
 }
 
 const Monospace = styled('strong')({
@@ -23,23 +25,42 @@ const BorderLinearProgress = styled(LinearProgress)(() => ({
   height: 10,
   borderRadius: 5,
 }))
+
+function useBuildStatus(buildStatus: BuildStatus): BuildStatus {
+  let last = { ...buildStatus }
+  return useSyncExternalStore(
+    (cb) => {
+      buildStatus.cb = cb
+      return () => {}
+    },
+    () => {
+      if (buildStatus.changed) {
+        buildStatus.changed = false
+        last = { ...buildStatus }
+      }
+      return last
+    }
+  )
+}
+
 export default function BuildAlert({
-  status: {
+  buildStatus,
+  characterName,
+}: {
+  buildStatus: BuildStatus
+  characterName: ReactNode
+}) {
+  const status = useBuildStatus(buildStatus)
+  const {
     type,
     tested,
-    failed: _,
     skipped,
     total,
     testedPerSecond,
     skippedPerSecond,
     startTime,
     finishTime,
-  },
-  characterName,
-}: {
-  status: BuildStatus
-  characterName: ReactNode
-}) {
+  } = status
   const hasTotal = isFinite(total)
 
   const generatingBuilds = type !== 'inactive'

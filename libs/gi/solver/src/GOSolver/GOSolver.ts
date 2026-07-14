@@ -21,7 +21,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     | 'testedPerSecond'
     | 'skippedPerSecond',
     number
-  >
+  > & { changed: boolean }
   private exclusion: Count['exclusion']
   private topN: number
   private buildValues: { w: Worker; val: number }[]
@@ -74,9 +74,11 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
 
     // Cleanup function from the BPS tracker
     const stopTracking = this.trackBuildsPerSecond()
-
-    await this.execute([{ command: 'count', exclusion, maxIterateSize }])
-    stopTracking()
+    try {
+      await this.execute([{ command: 'count', exclusion, maxIterateSize }])
+    } finally {
+      stopTracking()
+    }
     this.notifiedBroadcast({ command: 'finalize' })
     await this.execute([])
     return this.finalizedResults
@@ -151,6 +153,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
         lastTime = currentTime
         lastTested = this.status.tested
         lastSkipped = this.status.skipped
+        this.status.changed = true
       }, 1000)
     } catch (e) {
       cleanup()
@@ -166,6 +169,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     this.status.tested += r.tested
     this.status.failed += r.failed
     this.status.skipped += r.skipped
+    this.status.changed = true
 
     if (r.buildValues) {
       const { topN } = this,
