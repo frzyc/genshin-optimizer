@@ -11,8 +11,8 @@ import {
 } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSetKey,
+  ArtifactSlotKey,
   CharacterKey,
-  MainStatKey,
 } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSetKeys,
@@ -22,7 +22,6 @@ import {
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
 import type { ArtSetExclusionKey } from '@genshin-optimizer/gi/db'
-import { type ICachedArtifact } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
   useDBMeta,
@@ -50,10 +49,7 @@ import {
   useTeamData,
 } from '@genshin-optimizer/gi/ui'
 import { uiDataForTeam } from '@genshin-optimizer/gi/uidata'
-import {
-  artifactFilterConfigs,
-  setKeysByRarities,
-} from '@genshin-optimizer/gi/util'
+import { artifactFilterConfigs } from '@genshin-optimizer/gi/util'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { dynamicData, mergeData, optimize } from '@genshin-optimizer/gi/wr'
 import AddIcon from '@mui/icons-material/Add'
@@ -310,9 +306,12 @@ export default function TabUpopt() {
       allArtifactSlotKeys,
       (slotKey) => equippedArts[slotKey]?.setKey
     )
-    function respectSexExclusion(art: ICachedArtifact) {
+    function respectSexExclusion({
+      slotKey,
+      setKey,
+    }: { slotKey: ArtifactSlotKey; setKey: ArtifactSetKey }) {
       const newSK = { ...curEquipSetKeys }
-      newSK[art.slotKey] = art.setKey
+      newSK[slotKey] = setKey
       const skc: Partial<Record<ArtifactSetKey, number>> = {}
       allArtifactSlotKeys.forEach((slotKey) => {
         const setKey = newSK[slotKey]
@@ -374,21 +373,23 @@ export default function TabUpopt() {
           (upOptLevelLow <= art.level && art.level <= upOptLevelHigh)
       )
 
-    const mainStatsForDefine = allArtifactSlotKeys.flatMap((slotKey) => {
-      if (slotKey === 'flower' || slotKey === 'plume')
-        return artSlotMainKeys[slotKey]
-      const selected = mainStatKeys[slotKey]
-      return selected.length ? selected : artSlotMainKeys[slotKey]
-    })
     const defineConfig = {
       enabled: upOptDefine && upOptDefineSubstats.length >= 2,
-      setKeys: (artSetKeys.length
-        ? (artSetKeys as ArtifactSetKey[]).filter((setKey) =>
-            setKeysByRarities[5].includes(setKey)
-          )
-        : [...setKeysByRarities[5]]) as ArtifactSetKey[],
-      slotKeys: slotKeys.length ? slotKeys : [...allArtifactSlotKeys],
-      mainStats: [...new Set<MainStatKey>(mainStatsForDefine)],
+      setSlotMainStatKeys: objKeyMap(allArtifactSlotKeys, (slotKey) => {
+        const mainStats =
+          slotKey === 'flower' ||
+          slotKey === 'plume' ||
+          mainStatKeys[slotKey].length === 0
+            ? artSlotMainKeys[slotKey]
+            : artSlotMainKeys[slotKey]
+        const setKeys = allArtifactSetKeys.filter((setKey) =>
+          respectSexExclusion({ slotKey, setKey })
+        )
+        return {
+          setKeys,
+          mainStats,
+        }
+      }),
       substats: upOptDefineSubstats,
     }
 
@@ -423,8 +424,6 @@ export default function TabUpopt() {
     activeCharKey,
     characterKey,
     filteredArts,
-    artSetKeys,
-    slotKeys,
     equippedArts,
   ])
 
