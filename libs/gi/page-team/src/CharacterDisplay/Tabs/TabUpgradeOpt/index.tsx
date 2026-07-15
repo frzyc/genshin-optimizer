@@ -381,7 +381,7 @@ export default function TabUpopt() {
           slotKey === 'plume' ||
           mainStatKeys[slotKey].length === 0
             ? artSlotMainKeys[slotKey]
-            : artSlotMainKeys[slotKey]
+            : mainStatKeys[slotKey]
         const setKeys = allArtifactSetKeys.filter((setKey) =>
           respectSexExclusion({ slotKey, setKey })
         )
