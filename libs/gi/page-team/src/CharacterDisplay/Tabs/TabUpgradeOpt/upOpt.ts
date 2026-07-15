@@ -232,7 +232,6 @@ export class UpOptCalculatorV2 {
           this.obj,
           this.cache
         )
-        // elixirDefinition({ ...info, prob_4line: 0.34 }, this.build)
       ),
       info,
       evalMode: 'substat' as const,
