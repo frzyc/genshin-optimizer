@@ -198,7 +198,6 @@ export class UpOptCalculatorV2 {
       let validSetKeys = setKeys.filter((setKey) =>
         this.obj.allReadKeys.includes(setKey)
       )
-      console.log('valid set keys', slotKey, validSetKeys)
       if (!validSetKeys.length && setKeys.length > 0) {
         console.warn(`Picking ${setKeys[0]} b/c none of them matter.`)
         validSetKeys = [setKeys[0]] // Default to something so user sees some results
