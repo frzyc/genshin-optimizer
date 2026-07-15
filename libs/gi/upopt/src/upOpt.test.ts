@@ -50,14 +50,6 @@ const emptyBuild = {
   circlet: undefined,
 }
 
-const emptyBuild = {
-  flower: undefined,
-  plume: undefined,
-  sands: undefined,
-  goblet: undefined,
-  circlet: undefined,
-}
-
 /**
  * Checks whether the expanded nodes' evaluations match the base Gaussian node's evaluation.
  * Should only work for linear objectives.
@@ -967,6 +959,14 @@ describe('upOpt makeSubstatNode(s)', () => {
             )
           )
         )
+        const tWeightsDedup = time(() =>
+          bench.forEach((q) =>
+            deduplicate(
+              benchObj,
+              elixirDefinitionMemoWeights(q, emptyBuild, weightCache)
+            )
+          )
+        )
         const nodesFull = bench.reduce(
           (a, q) =>
             a + elixirDefinitionMemoFull(q, emptyBuild, fullCache).length,
@@ -1003,6 +1003,7 @@ describe('upOpt makeSubstatNode(s)', () => {
             `  --- incl. caller deduplicate (6-substat objective) ---\n` +
             `  baseline + dedup       ${tBaseDedup.toFixed(0)}ms\n` +
             `  full memo + dedup      ${tFullDedup.toFixed(0)}ms\n` +
+            `  weight memo + dedup    ${tWeightsDedup.toFixed(0)}ms\n` +
             `  simplified (pre-dedup) ${tSimpDedup.toFixed(0)}ms\n` +
             `  nodes/query: full ${(nodesFull / bench.length).toFixed(1)} -> ` +
             `simplified ${(nodesSimp / bench.length).toFixed(1)}`
