@@ -1,7 +1,7 @@
 import { prod, read, sum } from '@genshin-optimizer/pando/engine'
-import type { Progress } from './common'
-import { buildCount } from './common'
-import { Worker } from './worker'
+import type { Progress } from './common.js'
+import { buildCount } from './common.js'
+import { Worker } from './worker.js'
 
 type ID = any
 

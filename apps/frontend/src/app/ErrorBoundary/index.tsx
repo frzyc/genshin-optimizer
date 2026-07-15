@@ -193,4 +193,6 @@ class ErrorBoundary extends Component<Props, State> {
   }
 }
 
-export default withTranslation('page_error')(ErrorBoundary)
+export default withTranslation('page_error')(
+  ErrorBoundary
+) as React.ComponentType

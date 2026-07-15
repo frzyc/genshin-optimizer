@@ -5,6 +5,7 @@
     "types": [
       "node",
       "object-overrides",
+      "css",
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"
     ]
