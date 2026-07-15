@@ -40,7 +40,7 @@ export function expandNodes(
   )
 }
 
-export function accumulateEvaluation(
+export function accumulateEvaluations(
   evaluated: { p: number; n: EvaluatedMarkovNode }[]
 ) {
   const { p, upAvgAcc, lower, upper } = evaluated.reduce(

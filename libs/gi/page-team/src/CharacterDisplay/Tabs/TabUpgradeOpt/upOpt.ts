@@ -11,7 +11,7 @@ import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import type { ArtifactBuildData } from '@genshin-optimizer/gi/solver'
 import { compactArtifacts } from '@genshin-optimizer/gi/solver-tc'
 import {
-  accumulateEvaluation,
+  accumulateEvaluations,
   deduplicate,
   dustReshape,
   elixirDefinitionMemoSimplified,
@@ -248,7 +248,7 @@ export class UpOptCalculatorV2 {
       p,
       n: evalMarkovNode(this.obj, n),
     }))
-    return { tree: evaluated, result: accumulateEvaluation(evaluated) }
+    return { tree: evaluated, result: accumulateEvaluations(evaluated) }
   }
 
   calcSlowToIndex(ix: number, lookahead = 5) {
@@ -360,7 +360,7 @@ export class UpOptCalculatorV2 {
     this.candidates[ix] = {
       id: this.candidates[ix].id,
       tree: evaluated,
-      result: accumulateEvaluation(evaluated),
+      result: accumulateEvaluations(evaluated),
       evalMode: 'values',
       info: this.candidates[ix].info,
     }
