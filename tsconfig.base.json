@@ -8,7 +8,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "es2025",
+    "target": "es6",
     "module": "nodenext",
     "lib": ["es2021", "dom"],
     "skipLibCheck": true,

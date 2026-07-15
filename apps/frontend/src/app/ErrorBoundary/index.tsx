@@ -195,4 +195,4 @@ class ErrorBoundary extends Component<Props, State> {
 
 export default withTranslation('page_error')(
   ErrorBoundary
-) as React.ComponentType
+) as React.ComponentType<{ children: ReactNode }>
