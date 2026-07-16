@@ -3,90 +3,53 @@
   "targetDefaults": {
     "load-dm": {
       "executor": "@genshin-optimizer/common/plugin:sync-repo",
-      "outputs": [
-        "{projectRoot}/{options.outputPath}.hash"
-      ],
+      "outputs": ["{projectRoot}/{options.outputPath}.hash"],
       "cache": true
     },
     "gen-file": {
-      "dependsOn": [
-        "load-dm",
-        "^gen-file"
-      ],
-      "inputs": [
-        "production",
-        "^production"
-      ],
+      "dependsOn": ["load-dm", "^gen-file"],
+      "inputs": ["production", "^production"],
       "cache": true
     },
     "e2e": {
-      "inputs": [
-        "default",
-        "^production"
-      ],
+      "inputs": ["default", "^production"],
       "cache": true
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/{projectRoot}"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
         "jestConfig": "{projectRoot}/jest.config.ts",
         "coverageDirectory": "{workspaceRoot}/coverage/{projectRoot}",
         "reportsDirectory": "{workspaceRoot}/coverage/{projectRoot}",
         "passWithNoTests": true
       },
-      "inputs": [
-        "default",
-        "^production",
-        "{workspaceRoot}/jest.preset.js"
-      ],
+      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"],
       "cache": true
     },
     "publish": {
-      "dependsOn": [
-        "build"
-      ]
+      "dependsOn": ["build"]
     },
     "@nx/js:tsc": {
       "cache": true,
-      "dependsOn": [
-        "^build"
-      ],
-      "inputs": [
-        "production",
-        "^production"
-      ]
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     },
     "@nx/esbuild:esbuild": {
       "cache": true,
-      "dependsOn": [
-        "^build"
-      ],
-      "inputs": [
-        "production",
-        "^production"
-      ]
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     },
     "e2e-ci--**/*": {
-      "dependsOn": [
-        "^build"
-      ]
+      "dependsOn": ["^build"]
     },
     "@nx/vitest:test": {
       "cache": true,
-      "inputs": [
-        "default",
-        "^production"
-      ]
+      "inputs": ["default", "^production"]
     }
   },
   "namedInputs": {
-    "default": [
-      "{projectRoot}/**/*",
-      "sharedGlobals"
-    ],
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
       "default",
       "!{projectRoot}/.eslintrc.json",
@@ -95,9 +58,7 @@
       "!{projectRoot}/jest.config.[jt]s",
       "!{projectRoot}/src/test-setup.[jt]s"
     ],
-    "sharedGlobals": [
-      "{workspaceRoot}/babel.config.json"
-    ]
+    "sharedGlobals": ["{workspaceRoot}/babel.config.json"]
   },
   "generators": {
     "@nx/web:application": {
@@ -136,14 +97,7 @@
       "plugin": "@nx/eslint/plugin",
       "options": {
         "targetName": "eslint:lint",
-        "extensions": [
-          "ts",
-          "tsx",
-          "js",
-          "jsx",
-          "html",
-          "vue"
-        ]
+        "extensions": ["ts", "tsx", "js", "jsx", "html", "vue"]
       }
     },
     {
