@@ -1,3 +1,5 @@
 {
-  "presets": ["@nx/js/babel"]
+  "presets": [
+    "@nx/js/babel"
+  ]
 }

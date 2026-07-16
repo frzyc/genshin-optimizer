@@ -4,13 +4,14 @@
   "sourceRoot": "libs/zzz/formula-ui/src",
   "projectType": "library",
   "tags": [],
-  "// targets": "to see all targets run: nx show project zzz-formula-ui --web",
   "targets": {
     "test": {
-      "executor": "@nx/vite:test",
-      "outputs": ["{options.reportsDirectory}"],
+      "executor": "@nx/vitest:test",
+      "outputs": [
+        "{options.reportsDirectory}"
+      ],
       "options": {
-        "reportsDirectory": "../../../coverage/libs/zzz/formula-ui"
+        "reportsDirectory": "{projectRoot}/../../../coverage/libs/zzz/formula-ui"
       }
     }
   }

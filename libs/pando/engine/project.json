@@ -3,6 +3,7 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/pando/engine/src",
   "projectType": "library",
+  "tags": [],
   "targets": {
     "build": {},
     "build-ts": {
@@ -17,12 +18,13 @@
       }
     },
     "test": {
-      "executor": "@nx/vite:test",
-      "outputs": ["{options.reportsDirectory}"],
+      "executor": "@nx/vitest:test",
+      "outputs": [
+        "{options.reportsDirectory}"
+      ],
       "options": {
-        "reportsDirectory": "../../../coverage/libs/test"
+        "reportsDirectory": "{projectRoot}/../../../coverage/libs/test"
       }
     }
-  },
-  "tags": []
+  }
 }

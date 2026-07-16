@@ -1,0 +1,11 @@
+{
+  "migrations": [
+    {
+      "version": "22.6.0-beta.11",
+      "description": "Prefix reportsDirectory with {projectRoot} to maintain correct resolution after workspace-root-relative behavior change.",
+      "implementation": "./src/migrations/update-22-6-0/prefix-reports-directory-with-project-root",
+      "package": "@nx/vitest",
+      "name": "update-22-6-0-prefix-reports-directory"
+    }
+  ]
+}
