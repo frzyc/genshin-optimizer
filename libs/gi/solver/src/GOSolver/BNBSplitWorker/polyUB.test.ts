@@ -12,11 +12,11 @@ import {
   sum,
   threshold,
 } from '@genshin-optimizer/gi/wr'
-import type { ArtifactsBySlot, DynStat } from '../../common'
-import type { Linear } from './linearUB'
-import { linearUB } from './linearUB'
-import type { SumOfMonomials } from './polyUB'
-import { polyUB } from './polyUB'
+import type { ArtifactsBySlot, DynStat } from '../../common.js'
+import type { Linear } from './linearUB.js'
+import { linearUB } from './linearUB.js'
+import type { SumOfMonomials } from './polyUB.js'
+import { polyUB } from './polyUB.js'
 
 const prettyMuchZero = 1e-6
 function evalPoly(polys: SumOfMonomials[], x: DynStat) {

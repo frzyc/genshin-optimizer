@@ -10,13 +10,13 @@ import type {
   ArtifactsBySlot,
   DynStat,
   RequestFilter,
-} from '../../common'
-import { countBuilds, filterArts, pruneAll } from '../../common'
-import type { Interim, Setup } from '../../type'
-import type { SplitWorker } from '../BackgroundWorker'
-import { pickSplitKey, splitAtValue, splitOnSet } from './heuristicSplitting'
-import type { Linear } from './linearUB'
-import { linearUB } from './linearUB'
+} from '../../common.js'
+import { countBuilds, filterArts, pruneAll } from '../../common.js'
+import type { Interim, Setup } from '../../type.js'
+import type { SplitWorker } from '../BackgroundWorker.js'
+import { pickSplitKey, splitAtValue, splitOnSet } from './heuristicSplitting.js'
+import type { Linear } from './linearUB.js'
+import { linearUB } from './linearUB.js'
 
 type Approximation = {
   base: number
