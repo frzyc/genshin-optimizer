@@ -32,7 +32,12 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     | 'testedPerSecond'
     | 'skippedPerSecond',
     number
-  >
+  > & {
+    /** set when the post-solve partial-build tighten pass starts; persists
+     * after the solve so the UI can keep reporting the pass */
+    phase?: 'tighten'
+    tightenStartTime?: number
+  }
   private exclusion: Count['exclusion']
   private topN: number
   private buildValues: { w: Worker; val: number; plot?: number }[]
@@ -105,6 +110,8 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     if (this.tracksPartials) {
       // Winnow the merged candidates to the tight witnessed set, in a single
       // worker (it holds the original-space snapshot from setup).
+      this.status.phase = 'tighten'
+      this.status.tightenStartTime = performance.now()
       const candidates = mergePartialCandidates(
         this.finalizedResults.map((r) => r.partialCandidates ?? {})
       )

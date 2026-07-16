@@ -23,6 +23,14 @@
     "highlightedBuilds": "Highlighted Builds",
     "buildAlreadyInList": "Build is already in the list"
   },
+  "partialBuilds": {
+    "checkbox": "Find Partial Builds",
+    "tooltip": "For each slot, also compute the ways to fill the other 4 slots such that when a new artifact is obtained for that slot, the best build uses one of them. Enabling this is optional, will slow down build times, and cannot be combined with graphing.",
+    "title": "Partial Builds",
+    "overflow": "Too many candidates",
+    "witnessExample": "Example new artifact for which this partial build becomes the best choice:",
+    "overOptimal": "{{value}} over optimal"
+  },
   "levelFilter": "Artifact Level Filter",
   "upOptLevelFilter": "Artifact Upgrader Level Filter",
   "upOptLevelFilterTooltip": "This level filter is not synced with Optimize config.",

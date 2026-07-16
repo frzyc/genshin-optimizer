@@ -7,7 +7,7 @@ import { clamp, getUnitStr } from '@genshin-optimizer/common/util'
 import { artifactAsset, imgAssets } from '@genshin-optimizer/gi/assets'
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
-import type { ICachedSubstat } from '@genshin-optimizer/gi/db'
+import type { ICachedArtifact, ICachedSubstat } from '@genshin-optimizer/gi/db'
 import { useArtifact, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import {
@@ -32,6 +32,9 @@ import { artifactLevelVariant } from './util'
 
 type Data = {
   artifactId?: string
+  /** an artifact not in the database (e.g. a hypothetical one); takes
+   * precedence over `artifactId` */
+  artifactObj?: ICachedArtifact
   slotKey: ArtifactSlotKey
   mainStatAssumptionLevel?: number
   onClick?: () => void
@@ -40,12 +43,14 @@ type Data = {
 
 export function ArtifactCardNano({
   artifactId,
+  artifactObj,
   slotKey: pSlotKey,
   mainStatAssumptionLevel = 0,
   showLocation = false,
   onClick,
 }: Data) {
-  const art = useArtifact(artifactId)
+  const dbArt = useArtifact(artifactId)
+  const art = artifactObj ?? dbArt
   const database = useDatabase()
   const actionWrapperFunc = useCallback(
     (children: ReactNode) => (

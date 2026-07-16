@@ -13,6 +13,10 @@ export type BuildStatus = {
   skippedPerSecond: number // number of configs skipped in the last second (none are tested)
   startTime?: number
   finishTime?: number
+  /** set when the post-solve partial-build tighten pass starts; persists
+   * after the solve finishes */
+  phase?: 'tighten'
+  tightenStartTime?: number
 }
 
 const Monospace = styled('strong')({
@@ -34,6 +38,8 @@ export default function BuildAlert({
     skippedPerSecond,
     startTime,
     finishTime,
+    phase,
+    tightenStartTime,
   },
   characterName,
 }: {
@@ -57,6 +63,15 @@ export default function BuildAlert({
     <Monospace>
       {timeStringMs(
         Math.round((finishTime ?? performance.now()) - (startTime ?? NaN))
+      )}
+    </Monospace>
+  )
+  const tightenDurationString = (
+    <Monospace>
+      {timeStringMs(
+        Math.round(
+          (finishTime ?? performance.now()) - (tightenStartTime ?? NaN)
+        )
       )}
     </Monospace>
   )
@@ -89,8 +104,18 @@ export default function BuildAlert({
   const color = 'success' as 'success' | 'warning' | 'error'
   let title = '' as ReactNode
   let subtitle = '' as ReactNode
+  let partialBuildsText = '' as ReactNode
   let progress = undefined as undefined | number
+  const tightening = generatingBuilds && phase === 'tighten'
 
+  if (phase === 'tighten') {
+    partialBuildsText = (
+      <Typography>
+        {tightening ? 'Computing' : 'Computed'} partial build sets for{' '}
+        <b>{characterName}</b>. ({tightenDurationString})
+      </Typography>
+    )
+  }
   if (generatingBuilds) {
     progress = ((tested + skipped) / total) * 100
     title = (
@@ -135,17 +160,20 @@ export default function BuildAlert({
       }}
     >
       {title}
+      {partialBuildsText}
       {subtitle}
       {progress !== undefined && (
         <Grid container spacing={1} alignItems="center">
-          {hasTotal && (
+          {hasTotal && !tightening && (
             <Grid item>
               <Typography>{`${progress.toFixed(1)}%`}</Typography>
             </Grid>
           )}
           <Grid item flexGrow={1}>
             <BorderLinearProgress
-              variant={hasTotal ? 'determinate' : 'indeterminate'}
+              variant={
+                hasTotal && !tightening ? 'determinate' : 'indeterminate'
+              }
               value={progress}
               color="primary"
             />

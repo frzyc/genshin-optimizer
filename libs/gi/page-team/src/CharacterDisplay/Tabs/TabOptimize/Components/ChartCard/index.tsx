@@ -72,12 +72,16 @@ type ChartCardProps = {
   setPlotBase: (path: string[] | undefined) => void
   disabled?: boolean
   showTooltip?: boolean
+  trackPartialBuilds?: boolean
+  setTrackPartialBuilds?: (track: boolean) => void
 }
 export default function ChartCard({
   plotBase,
   setPlotBase,
   disabled = false,
   showTooltip = false,
+  trackPartialBuilds = false,
+  setTrackPartialBuilds,
 }: ChartCardProps) {
   const { t } = useTranslation(['page_character_optimize', 'ui'])
   const { data } = useContext(DataContext)
@@ -273,6 +277,32 @@ export default function ChartCard({
               title={t('page_character_optimize:tcGraph.desc')}
             />
           </Grid>
+          {setTrackPartialBuilds && (
+            <Grid item>
+              <BootstrapTooltip
+                placement="top"
+                title={t('page_character_optimize:partialBuilds.tooltip')}
+              >
+                <span>
+                  <Button
+                    size="small"
+                    startIcon={
+                      trackPartialBuilds ? (
+                        <CheckBox />
+                      ) : (
+                        <CheckBoxOutlineBlank />
+                      )
+                    }
+                    color={trackPartialBuilds ? 'success' : 'secondary'}
+                    onClick={() => setTrackPartialBuilds(!trackPartialBuilds)}
+                    disabled={disabled}
+                  >
+                    {t('page_character_optimize:partialBuilds.checkbox')}
+                  </Button>
+                </span>
+              </BootstrapTooltip>
+            </Grid>
+          )}
           {!!downloadData && (
             <Grid item>
               <Button

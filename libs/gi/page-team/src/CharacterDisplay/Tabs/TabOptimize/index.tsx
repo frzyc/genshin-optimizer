@@ -41,7 +41,10 @@ import {
   useTeammateArtifactIds,
   useWeapon,
 } from '@genshin-optimizer/gi/db-ui'
-import type { OptProblemInput } from '@genshin-optimizer/gi/solver'
+import type {
+  OptProblemInput,
+  PartialBuildsData,
+} from '@genshin-optimizer/gi/solver'
 import { GOSolver, mergeBuilds, mergePlot } from '@genshin-optimizer/gi/solver'
 import { compactArtifacts } from '@genshin-optimizer/gi/solver-tc'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
@@ -118,6 +121,7 @@ import ExcludeArt from './Components/ExcludeArt'
 import MainStatSelectionCard from './Components/MainStatSelectionCard'
 import { OptCharacterCard } from './Components/OptCharacterCard'
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector'
+import PartialBuildsCard from './Components/PartialBuildsCard'
 import StatFilterCard from './Components/StatFilterCard'
 import UseEquipped from './Components/UseEquipped'
 import { UseTeammateArt } from './Components/UseTeammateArt'
@@ -158,8 +162,17 @@ export default function TabBuild() {
 
   const [maxWorkers, nativeThreads, setMaxWorkers] = useNumWorkers()
 
+  // Partial-build tracking (mutually exclusive with graphing)
+  const [trackPartialBuilds, setTrackPartialBuilds] = useState(false)
+  const [partialBuildsData, setPartialBuildsData] = useState<
+    PartialBuildsData | undefined
+  >(undefined)
+
   // Clear state when changing characters
-  if (usePrev(characterKey) !== characterKey) setBuildStatus(initBuildStatus())
+  if (usePrev(characterKey) !== characterKey) {
+    setBuildStatus(initBuildStatus())
+    setPartialBuildsData(undefined)
+  }
 
   const noArtifact = useMemo(() => !database.arts.values.length, [database])
 
@@ -336,6 +349,7 @@ export default function TabBuild() {
     const valueFilter = statFilterToNumNode(workerData, statFilters)
 
     setChartData(undefined)
+    setPartialBuildsData(undefined)
 
     const cancelled = new Promise<void>((r) => (cancelToken.current = r))
 
@@ -344,8 +358,11 @@ export default function TabBuild() {
       unoptimizedOptimizationTargetNode,
     ]
     const minimum = [...valueFilter.map((x) => x.minimum), -Infinity]
+    // plotBase and partialBuilds are mutually exclusive in the solver
     const plotBaseNumNode: NumNode =
-      plotBase && objPathValue(workerData.display ?? {}, plotBase)
+      !trackPartialBuilds &&
+      plotBase &&
+      objPathValue(workerData.display ?? {}, plotBase)
     if (plotBaseNumNode) {
       unoptimizedNodes.push(plotBaseNumNode)
       minimum.push(-Infinity)
@@ -367,6 +384,11 @@ export default function TabBuild() {
 
       topN: maxBuildsToShow,
       plotBase: plotBaseNode,
+      // Empty profile lists: the solver auto-adds a current-inventory profile
+      // per requested slot, covering artifacts within today's stat ranges.
+      partialBuilds: trackPartialBuilds
+        ? objKeyMap(allArtifactSlotKeys, () => [])
+        : undefined,
     }
     const status: Omit<BuildStatus, 'type'> = {
       tested: 0,
@@ -389,6 +411,11 @@ export default function TabBuild() {
 
       const results = await solver.solve()
       solver.cancel() // Done using `solver`
+
+      if (trackPartialBuilds) {
+        setPartialBuildsData(solver.partialBuilds)
+        console.log('Partial Builds', solver.partialBuilds)
+      }
 
       cancelToken.current = () => {}
       const weaponId = database.teams.getLoadoutWeapon(loadoutDatum).id
@@ -491,6 +518,7 @@ export default function TabBuild() {
     maxWorkers,
     loadoutDatum,
     optConfigId,
+    trackPartialBuilds,
     t,
     throwGlobalError,
   ])
@@ -503,8 +531,18 @@ export default function TabBuild() {
     (plotBase: string[] | undefined) => {
       database.optConfigs.set(optConfigId, { plotBase })
       setChartData(undefined)
+      // Graphing and partial-build tracking are mutually exclusive
+      if (plotBase) setTrackPartialBuilds(false)
     },
     [database, optConfigId, setChartData]
+  )
+  // Unchecking keeps the last computed list; it only clears on the next solve
+  const trackPartialBuildsSetter = useCallback(
+    (track: boolean) => {
+      if (track) setPlotBase(undefined)
+      setTrackPartialBuilds(track)
+    },
+    [setPlotBase]
   )
 
   const targetSelector = (
@@ -772,8 +810,13 @@ export default function TabBuild() {
             plotBase={plotBase}
             setPlotBase={setPlotBase}
             showTooltip={!optimizationTarget}
+            trackPartialBuilds={trackPartialBuilds}
+            setTrackPartialBuilds={trackPartialBuildsSetter}
           />
         </Box>
+      )}
+      {optimizationTarget && partialBuildsData && (
+        <PartialBuildsCard data={partialBuildsData} />
       )}
       {optimizationTarget && (
         <CardThemed bgt="light">
