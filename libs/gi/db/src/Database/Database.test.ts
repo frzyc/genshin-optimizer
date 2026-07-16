@@ -23,56 +23,52 @@ describe('Database', () => {
     database = new ArtCharDatabase(dbIndex, dbStorage)
   })
 
-  test(
-    'Support roundtrip import-export',
-    () => {
-      const albedo = initialCharacter('Albedo'),
-        amber = initialCharacter('Amber')
-      const albedoWeapon = defaultInitialWeapon('sword'),
-        amberWeapon = defaultInitialWeapon('bow')
+  test('Support roundtrip import-export', () => {
+    const albedo = initialCharacter('Albedo'),
+      amber = initialCharacter('Amber')
+    const albedoWeapon = defaultInitialWeapon('sword'),
+      amberWeapon = defaultInitialWeapon('bow')
 
-      const art1 = randomizeArtifact({ slotKey: 'circlet' }),
-        art2 = randomizeArtifact()
-      albedo.talent.auto = 4
-      art1.location = 'Albedo'
-      albedoWeapon.location = 'Albedo'
+    const art1 = randomizeArtifact({ slotKey: 'circlet' }),
+      art2 = randomizeArtifact()
+    albedo.talent.auto = 4
+    art1.location = 'Albedo'
+    albedoWeapon.location = 'Albedo'
 
-      database.chars.set(albedo.key, albedo)
-      database.chars.set(amber.key, amber)
+    database.chars.set(albedo.key, albedo)
+    database.chars.set(amber.key, amber)
 
-      database.weapons.new(albedoWeapon)
-      const amberWeaponid = database.weapons.new(amberWeapon)
+    database.weapons.new(albedoWeapon)
+    const amberWeaponid = database.weapons.new(amberWeapon)
 
-      database.arts.new(art1)
-      const art2id = database.arts.new(art2)
-      database.arts.set(art2id, { location: 'Amber' })
-      database.weapons.set(amberWeaponid, { location: 'Amber' })
+    database.arts.new(art1)
+    const art2id = database.arts.new(art2)
+    database.arts.set(art2id, { location: 'Amber' })
+    database.weapons.set(amberWeaponid, { location: 'Amber' })
 
-      const newDB = new ArtCharDatabase(dbIndex, new SandboxStorage())
-      const good = database.exportGOOD()
-      newDB.importGOOD(good, false, false)!
-      expect(
-        database.storage.entries.filter(
-          ([k]) =>
-            k.startsWith('weapon_') ||
-            k.startsWith('character_') ||
-            k.startsWith('artifact_')
-        )
-      ).toEqual(
-        newDB.storage.entries.filter(
-          ([k]) =>
-            k.startsWith('weapon_') ||
-            k.startsWith('character_') ||
-            k.startsWith('artifact_')
-        )
+    const newDB = new ArtCharDatabase(dbIndex, new SandboxStorage())
+    const good = database.exportGOOD()
+    newDB.importGOOD(good, false, false)!
+    expect(
+      database.storage.entries.filter(
+        ([k]) =>
+          k.startsWith('weapon_') ||
+          k.startsWith('character_') ||
+          k.startsWith('artifact_')
       )
-      expect(database.chars.values).toEqual(newDB.chars.values)
-      expect(database.weapons.values).toEqual(newDB.weapons.values)
-      expect(database.arts.values).toEqual(newDB.arts.values)
-      // Can't check IcharacterCache because equipped can have differing id
-    },
-    { timeout: 10000 }
-  )
+    ).toEqual(
+      newDB.storage.entries.filter(
+        ([k]) =>
+          k.startsWith('weapon_') ||
+          k.startsWith('character_') ||
+          k.startsWith('artifact_')
+      )
+    )
+    expect(database.chars.values).toEqual(newDB.chars.values)
+    expect(database.weapons.values).toEqual(newDB.weapons.values)
+    expect(database.arts.values).toEqual(newDB.arts.values)
+    // Can't check IcharacterCache because equipped can have differing id
+  })
 
   test('Does not crash from invalid storage', () => {
     function tryStorage(
