@@ -400,6 +400,8 @@ describe('Database', () => {
           skill: 1,
           ult: 1,
           talent: 1,
+          servantSkill: 1,
+          servantTalent: 1,
           bonusAbilities: objKeyMap(range(1, 3), () => false),
           statBoosts: objKeyMap(range(1, 10), () => false),
         },

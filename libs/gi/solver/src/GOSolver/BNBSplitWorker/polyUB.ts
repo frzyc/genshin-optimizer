@@ -7,9 +7,9 @@ import {
   prod,
   threshold,
 } from '@genshin-optimizer/gi/wr'
-import type { ArtifactsBySlot, MinMax } from '../../common'
-import { computeFullArtRange, computeNodeRange } from '../../common'
-import type { Linear } from './linearUB'
+import type { ArtifactsBySlot, MinMax } from '../../common.js'
+import { computeFullArtRange, computeNodeRange } from '../../common.js'
+import type { Linear } from './linearUB.js'
 
 /**
  * With xi being the variables and pi(x1, x2, ...) being polynomials on xi

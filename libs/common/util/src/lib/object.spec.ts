@@ -100,6 +100,6 @@ describe('verifyObjKeys ', () => {
   test('should succeed', () => {
     const obj = { a: '1', c: '2' }
     const keys = ['a', 'c']
-    expect(() => verifyObjKeys(obj, keys)).not.toThrowError()
+    expect(() => verifyObjKeys(obj, keys)).not.toThrow()
   })
 })

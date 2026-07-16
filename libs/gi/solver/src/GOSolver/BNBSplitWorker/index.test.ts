@@ -10,9 +10,9 @@ import {
   sum,
   threshold,
 } from '@genshin-optimizer/gi/wr'
-import type { ArtifactsBySlot, DynStat } from '../../common'
-import type { Linear } from './linearUB'
-import { linearUB as linearUpperBound } from './linearUB'
+import type { ArtifactsBySlot, DynStat } from '../../common.js'
+import type { Linear } from './linearUB.js'
+import { linearUB as linearUpperBound } from './linearUB.js'
 
 function apply(value: DynStat, linear: Linear): number {
   return Object.entries(linear).reduce(
