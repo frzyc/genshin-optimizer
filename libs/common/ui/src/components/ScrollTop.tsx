@@ -1,5 +1,5 @@
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
-import { Box, Fab, Zoom, useScrollTrigger } from '@mui/material'
+import { Box, Fab, useScrollTrigger, Zoom } from '@mui/material'
 
 export function ScrollTop() {
   const trigger = useScrollTrigger({

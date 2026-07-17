@@ -17,7 +17,6 @@ import {
   target,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../SheetUtil'
-import type { TalentSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
 import {
   customDmgNode,
@@ -25,6 +24,7 @@ import {
   dmgNode,
   hitEle,
 } from '../dataUtil'
+import type { TalentSheet } from '../ICharacterSheet.d'
 
 export default function geo(
   key: CharacterSheetKey,
@@ -174,7 +174,7 @@ export default function geo(
         fields: [
           {
             node: infoMut(dmgFormulas.skill.dmg, {
-              name: ct.chg(`skill.skillParams.0`),
+              name: ct.chg('skill.skillParams.0'),
             }),
           },
           {

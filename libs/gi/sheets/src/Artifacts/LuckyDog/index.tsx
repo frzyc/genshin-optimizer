@@ -3,8 +3,8 @@ import type { Data } from '@genshin-optimizer/gi/wr'
 import { greaterEq, infoMut, input } from '@genshin-optimizer/gi/wr'
 import { stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { SetEffectSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
+import type { SetEffectSheet } from '../IArtifactSheet'
 
 const key: ArtifactSetKey = 'LuckyDog'
 const setHeader = setHeaderTemplate(key)

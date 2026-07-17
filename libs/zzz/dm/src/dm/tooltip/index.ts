@@ -21,4 +21,5 @@ Object.entries(tooltipJSONDataSrc).forEach(([key, tooltip]) => {
     desc: tooltip.Desc,
   }
 })
+
 export { tooltipJSONData }

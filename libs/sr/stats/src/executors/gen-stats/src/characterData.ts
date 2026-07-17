@@ -8,12 +8,12 @@ import {
 import type { CharacterKey, TrailblazerKey } from '@genshin-optimizer/sr/consts'
 import {
   type AbilityKey,
+  allCharacterKeys,
+  allTrailblazerGenderedKeys,
   type ElementalTypeKey,
   type PathKey,
   type RarityKey,
   type StatKey,
-  allCharacterKeys,
-  allTrailblazerGenderedKeys,
 } from '@genshin-optimizer/sr/consts'
 import type {
   Anchor,
@@ -24,7 +24,6 @@ import type {
   SkillTreeType,
 } from '@genshin-optimizer/sr/dm'
 import {
-  DmAttackTypeMap,
   allAvatarSkillTreeTypes,
   allRanks,
   allSkillTreeTypes,
@@ -38,6 +37,7 @@ import {
   avatarSkillConfig,
   avatarSkillTreeConfig,
   characterIdMap,
+  DmAttackTypeMap,
   statKeyMap,
 } from '@genshin-optimizer/sr/dm'
 

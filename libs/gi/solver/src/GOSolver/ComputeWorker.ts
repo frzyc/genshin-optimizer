@@ -8,9 +8,9 @@ import type {
   PlotData,
   RequestFilter,
   SolverBuild,
-} from '../common'
-import { countBuilds, filterArts, mergePlot, pruneAll } from '../common'
-import type { Interim, Setup } from '../type'
+} from '../common.js'
+import { countBuilds, filterArts, mergePlot, pruneAll } from '../common.js'
+import type { Interim, Setup } from '../type.js'
 import { PartialBuildTracker } from './PartialBuildTracker'
 
 export class ComputeWorker {
@@ -18,7 +18,7 @@ export class ComputeWorker {
   buildValues: number[] | undefined = undefined
   buildPlots: number[] | undefined = undefined
   plotData: PlotData | undefined
-  threshold = -Infinity
+  threshold = Number.NEGATIVE_INFINITY
   topN: number
   min: number[]
 
@@ -162,11 +162,11 @@ export class ComputeWorker {
       this.builds = this.builds.sort((a, b) => b.value - a.value).slice(0, topN)
       this.buildValues = this.builds.map((x) => x.value)
       this.buildPlots = this.plotData
-        ? this.builds.map((x) => x.plot ?? -Infinity)
+        ? this.builds.map((x) => x.plot ?? Number.NEGATIVE_INFINITY)
         : undefined
       this.threshold = Math.max(
         this.threshold,
-        this.buildValues[topN - 1] ?? -Infinity
+        this.buildValues[topN - 1] ?? Number.NEGATIVE_INFINITY
       )
     }
   }

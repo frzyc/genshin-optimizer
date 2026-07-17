@@ -5,10 +5,10 @@ import {
   objKeyValMap,
 } from '@genshin-optimizer/common/util'
 import { parse } from 'json-bigint'
-import { TextMapEN } from '../../TextMapUtil'
 import { PROJROOT_PATH } from '../../consts'
 import type { ServantId } from '../../mapping'
 import { servantIdMap } from '../../mapping'
+import { TextMapEN } from '../../TextMapUtil'
 import { readDMJSON } from '../../util'
 import type { HashId, Value } from '../common'
 
@@ -65,4 +65,5 @@ const avatarServantConfig = objFilterKeys(
   objKeyValMap(avatarServantConfigSrc, (config) => [config.ServantID, config]),
   Object.keys(servantIdMap) as ServantId[]
 ) as Record<ServantId, AvatarServantConfig>
+
 export { avatarServantConfig }

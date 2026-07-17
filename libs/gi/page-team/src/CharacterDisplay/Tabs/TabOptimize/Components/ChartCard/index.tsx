@@ -99,8 +99,8 @@ export default function ChartCard({
     generatedBuildListId ?? ''
   ) ?? { builds: [] as GeneratedBuild[] }
 
-  const [sliderLow, setSliderLow] = useState(-Infinity)
-  const [sliderHigh, setSliderHigh] = useState(Infinity)
+  const [sliderLow, setSliderLow] = useState(Number.NEGATIVE_INFINITY)
+  const [sliderHigh, setSliderHigh] = useState(Number.POSITIVE_INFINITY)
   const setSlider = useCallback(
     (_e: unknown, value: number | number[]) => {
       if (typeof value === 'number') throw new TypeError()
@@ -113,14 +113,14 @@ export default function ChartCard({
   )
   // Reset the slider when chartData changes
   if (usePrev(chartData) !== chartData) {
-    setSliderLow(-Infinity)
-    setSliderHigh(Infinity)
+    setSliderLow(Number.NEGATIVE_INFINITY)
+    setSliderHigh(Number.POSITIVE_INFINITY)
   }
 
   const { displayData, downloadData, sliderMin, sliderMax } = useMemo(() => {
     if (!chartData) return { displayData: null, downloadData: null }
-    let sliderMin = Infinity
-    let sliderMax = -Infinity
+    let sliderMin = Number.POSITIVE_INFINITY
+    let sliderMax = Number.NEGATIVE_INFINITY
     const currentBuild = allArtifactSlotKeys.map(
       (slotKey) => data?.get(input.art[slotKey].id).value ?? ''
     )
@@ -406,7 +406,7 @@ function Chart({
   )
   const chartOnClick = useCallback(
     (props) => {
-      if (props && props.chartX && props.chartY)
+      if (props?.chartX && props.chartY)
         setSelectedPoint(
           getNearestPoint(props.chartX, props.chartY, 20, displayData)
         )
@@ -610,7 +610,7 @@ function getLabelFromNode(info: InfoExtra & Info, t: TFunction) {
   ) {
     let formattedInfo = ''
     if (typeof nodeInfo === 'string') formattedInfo = nodeInfo
-    else if (nodeInfo && nodeInfo.props?.key18) {
+    else if (nodeInfo?.props?.key18) {
       formattedInfo =
         // Pass in data such as namespace, values, etc... through second parameter.
         `${t(`${nodeInfo.props.key18}`, { ns: nodeInfo.props.ns, ...nodeInfo.props.values })}`

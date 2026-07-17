@@ -5,11 +5,11 @@ import {
   type DiscMainStatKey,
   type DiscSetKey,
   type DiscSubStatKey,
+  getDiscMainStatVal,
+  getDiscSubStatBaseVal,
   type MilestoneKey,
   type PhaseKey,
   type WengineKey,
-  getDiscMainStatVal,
-  getDiscSubStatBaseVal,
 } from '@genshin-optimizer/zzz/consts'
 import type { IDisc } from '@genshin-optimizer/zzz/zood'
 import type { Member, TagMapNodeEntries } from './data/util'
@@ -98,9 +98,7 @@ export function wengineTagMapNodeEntries(
 ): TagMapNodeEntries {
   return [
     // Opt-in for wengine buffs, instead of enabling it by default to reduce `read` traffic
-    reader
-      .sheet('agg')
-      .reread(reader.sheet('wengine')),
+    reader.sheet('agg').reread(reader.sheet('wengine')),
     // Mark wengine cones as used
     ...(wengInfo
       ? [
@@ -123,9 +121,7 @@ export function discTagMapNodeEntries(
   } = convert(ownTag, { sheet: 'disc', et: 'own' })
   return [
     // Opt-in for disc buffs, instead of enabling it by default to reduce `read` traffic
-    reader
-      .sheet('agg')
-      .reread(reader.sheet('disc')),
+    reader.sheet('agg').reread(reader.sheet('disc')),
 
     // Add `sheet:dyn` between the stat and the buff so that we can `detach` them easily
     // Used for disc main/sub stats, as those are fed into the builder at run-time, after nodes are optimized

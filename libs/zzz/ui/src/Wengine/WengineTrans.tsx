@@ -17,10 +17,6 @@ export function WengineRefineDesc({
   )
 }
 
-export function WengineRefineName({
-  wKey,
-}: {
-  wKey: WengineKey
-}) {
+export function WengineRefineName({ wKey }: { wKey: WengineKey }) {
   return <Translate ns={`wengine_${wKey}_gen`} key18="phase" />
 }

@@ -20,7 +20,7 @@ import type {
   Setup,
   WorkerCommand,
   WorkerResult,
-} from '../type'
+} from '../type.js'
 
 export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
   private maxIterateSize = 32_000_000
@@ -43,7 +43,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
   private buildValues: { w: Worker; val: number; plot?: number }[]
   private finalizedResults: FinalizeResult[] = []
   private plotting: boolean
-  private plotThreshold = -Infinity
+  private plotThreshold = Number.NEGATIVE_INFINITY
   private tracksPartials = false
   /** Tight partial builds with witnesses, per requested slot; populated by
    * `solve()` when `OptProblemInput.partialBuilds` was given. */
@@ -55,7 +55,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     numWorker: number
   ) {
     const workers = Array(numWorker)
-      .fill(NaN)
+      .fill(Number.NaN)
       .map(
         (_) =>
           new Worker(new URL('./BackgroundWorker.ts', import.meta.url), {
@@ -86,10 +86,13 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     this.exclusion = exclusion
     this.topN = topN
     this.plotting = !!problem.plotBase
-    this.status.total = NaN
+    this.status.total = Number.NaN
     this.status.testedPerSecond = 0
     this.status.skippedPerSecond = 0
-    this.buildValues = Array(topN).fill({ w: undefined as any, val: -Infinity })
+    this.buildValues = Array(topN).fill({
+      w: undefined as any,
+      val: Number.NEGATIVE_INFINITY,
+    })
 
     const setup = this.preprocess(problem)
     this.tracksPartials = !!setup.partialBuilds
@@ -115,7 +118,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
       const candidates = mergePartialCandidates(
         this.finalizedResults.map((r) => r.partialCandidates ?? {})
       )
-      const threshold = this.buildValues[0]?.val ?? -Infinity
+      const threshold = this.buildValues[0]?.val ?? Number.NEGATIVE_INFINITY
       await this.execute([{ command: 'tighten', candidates, threshold }])
     }
     return this.finalizedResults
@@ -130,17 +133,20 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     constraints,
     partialBuilds,
   }: OptProblemInput): Setup {
-    constraints = constraints.filter((x) => x.min > -Infinity)
+    constraints = constraints.filter((x) => x.min > Number.NEGATIVE_INFINITY)
     if (partialBuilds && !Object.keys(partialBuilds).length)
       partialBuilds = undefined
     if (partialBuilds && plotBase)
       throw new Error('plotBase and partialBuilds are mutually exclusive')
 
     let nodes = [...constraints.map((x) => x.value), optimizationTarget]
-    const minimums = [...constraints.map((x) => x.min), -Infinity]
+    const minimums = [
+      ...constraints.map((x) => x.min),
+      Number.NEGATIVE_INFINITY,
+    ]
     if (plotBase) {
       nodes.push(plotBase)
-      minimums.push(-Infinity)
+      minimums.push(Number.NEGATIVE_INFINITY)
     }
 
     nodes = pruneExclusion(nodes, exclusion)
@@ -167,13 +173,13 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
                   substats: computeArtRange(
                     arts.values[slot as ArtifactSlotKey]
                   ),
-                  maxSubstats: Infinity,
+                  maxSubstats: Number.POSITIVE_INFINITY,
                 } satisfies FutureArtifactProfile,
               ],
         ])
       ),
       nodes: [nodes[nodes.length - 1], ...nodes.slice(0, -1)],
-      mins: [-Infinity, ...minimums.slice(0, -1)],
+      mins: [Number.NEGATIVE_INFINITY, ...minimums.slice(0, -1)],
       arts,
     }
     ;({ nodes, arts } = pruneAll(nodes, minimums, arts, topN, exclusion, {
@@ -219,7 +225,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
         const testedDifference = this.status.tested - lastTested
         const skippedDifference = this.status.skipped - lastSkipped
 
-        if (elapsedTime != 0) {
+        if (elapsedTime !== 0) {
           this.status.testedPerSecond = testedDifference / elapsedTime
           this.status.skippedPerSecond = skippedDifference / elapsedTime
         }
@@ -245,7 +251,8 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
 
     if (r.buildValues) {
       const { topN } = this,
-        oldThreshold = this.buildValues[topN - 1].val ?? -Infinity
+        oldThreshold =
+          this.buildValues[topN - 1].val ?? Number.NEGATIVE_INFINITY
 
       this.buildValues = this.buildValues.filter(({ w }) => w !== worker)
       this.buildValues.push(
@@ -257,7 +264,8 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
       )
       this.buildValues.sort((a, b) => b.val - a.val).splice(topN)
 
-      const threshold = this.buildValues[topN - 1].val ?? -Infinity
+      const threshold =
+        this.buildValues[topN - 1].val ?? Number.NEGATIVE_INFINITY
       let changed = oldThreshold !== threshold
       let plotThreshold: number | undefined
       if (this.plotting) {
@@ -265,8 +273,8 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
         // (plot, value >= threshold); regions may only be threshold-pruned
         // when their plotBase upper bound also falls below this.
         plotThreshold = this.buildValues.reduce(
-          (a, { plot }) => Math.max(a, plot ?? -Infinity),
-          -Infinity
+          (a, { plot }) => Math.max(a, plot ?? Number.NEGATIVE_INFINITY),
+          Number.NEGATIVE_INFINITY
         )
         if (plotThreshold !== this.plotThreshold) {
           this.plotThreshold = plotThreshold

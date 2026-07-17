@@ -12,7 +12,6 @@ import type {
   ProudSkillExcelConfigData,
 } from '@genshin-optimizer/gi/dm'
 import {
-  TextMapEN,
   avatarExcelConfigData,
   avatarSkillDepotExcelConfigData,
   avatarSkillExcelConfigData,
@@ -21,6 +20,7 @@ import {
   getHakushinCharData,
   hakushinChars,
   proudSkillExcelConfigData,
+  TextMapEN,
 } from '@genshin-optimizer/gi/dm'
 import * as somniaData from './Somnia/skillParam.json'
 
@@ -199,27 +199,27 @@ export default function characterSkillParam() {
         candSkillDepotIds
       const gender = characterIdMap[charid] === 'TravelerF' ? 'F' : 'M'
       genTalentHash(
-        ['TravelerAnemo' + gender],
+        [`TravelerAnemo${gender}`],
         avatarSkillDepotExcelConfigData[anemo]
       )
       genTalentHash(
-        ['TravelerGeo' + gender],
+        [`TravelerGeo${gender}`],
         avatarSkillDepotExcelConfigData[geo]
       )
       genTalentHash(
-        ['TravelerElectro' + gender],
+        [`TravelerElectro${gender}`],
         avatarSkillDepotExcelConfigData[electro]
       )
       genTalentHash(
-        ['TravelerDendro' + gender],
+        [`TravelerDendro${gender}`],
         avatarSkillDepotExcelConfigData[dendro]
       )
       genTalentHash(
-        ['TravelerHydro' + gender],
+        [`TravelerHydro${gender}`],
         avatarSkillDepotExcelConfigData[hydro]
       )
       genTalentHash(
-        ['TravelerPyro' + gender],
+        [`TravelerPyro${gender}`],
         avatarSkillDepotExcelConfigData[pyro]
       )
     } else {

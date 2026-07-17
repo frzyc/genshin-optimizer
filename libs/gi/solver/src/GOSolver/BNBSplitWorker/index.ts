@@ -10,14 +10,13 @@ import type {
   ArtifactsBySlot,
   DynStat,
   RequestFilter,
-} from '../../common'
-import { countBuilds, filterArts, pruneAll } from '../../common'
-import type { Interim, Setup } from '../../type'
-import type { SplitWorker } from '../BackgroundWorker'
-import { pruneDominance } from './diffBound'
-import { pickSplitKey, splitAtValue, splitOnSet } from './heuristicSplitting'
-import type { Linear } from './linearUB'
-import { linearUB } from './linearUB'
+} from '../../common.js'
+import { countBuilds, filterArts, pruneAll } from '../../common.js'
+import type { Interim, Setup } from '../../type.js'
+import type { SplitWorker } from '../BackgroundWorker.js'
+import { pickSplitKey, splitAtValue, splitOnSet } from './heuristicSplitting.js'
+import type { Linear } from './linearUB.js'
+import { linearUB } from './linearUB.js'
 
 type Approximation = {
   base: number
@@ -63,7 +62,7 @@ export class BNBSplitWorker implements SplitWorker {
    * Pruning on the threshold alone would truncate the frontier's extrema.
    */
   plotNodeIdx: number | undefined
-  plotThreshold = -Infinity
+  plotThreshold = Number.NEGATIVE_INFINITY
 
   /**
    * Filters are not neccessarily in a valid state, i.e., "calculated".
@@ -81,12 +80,12 @@ export class BNBSplitWorker implements SplitWorker {
     callback: (interim: Interim) => void
   ) {
     this.arts = arts
-    this.min = [-Infinity, ...constraints.map((x) => x.min)]
+    this.min = [Number.NEGATIVE_INFINITY, ...constraints.map((x) => x.min)]
     this.nodes = [optTarget, ...constraints.map((x) => x.value)]
     if (plotBase) {
       this.plotNodeIdx = this.nodes.length
       this.nodes.push(plotBase)
-      this.min.push(-Infinity)
+      this.min.push(Number.NEGATIVE_INFINITY)
     }
     this.callback = callback
     this.topN = topN
@@ -196,7 +195,7 @@ export class BNBSplitWorker implements SplitWorker {
     const pruneMin =
       this.plotNodeIdx === undefined
         ? this.min
-        : [-Infinity, ...this.min.slice(1)]
+        : [Number.NEGATIVE_INFINITY, ...this.min.slice(1)]
     ;({ nodes, arts } = pruneAll(
       nodes,
       pruneMin,

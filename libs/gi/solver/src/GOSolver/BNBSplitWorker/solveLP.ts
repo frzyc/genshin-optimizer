@@ -81,7 +81,7 @@ function pivotInplace(A: number[][], { i, j }: Pivot) {
 function findPiv1(A: number[][]) {
   const r = A.length,
     c = A[0].length
-  let minloc = { i: -1, j: -1, cmp: Infinity }
+  let minloc = { i: -1, j: -1, cmp: Number.POSITIVE_INFINITY }
   for (let j = 0; j < c - 1; j++) {
     if (A[r - 1][j] >= -zero) continue
     for (let i = 0; i < r - 1; i++) {
@@ -101,7 +101,7 @@ function findPiv1(A: number[][]) {
 function findPiv2(A: number[][]) {
   const r = A.length,
     c = A[0].length
-  let minloc = { i: -1, j: -1, cmp: Infinity }
+  let minloc = { i: -1, j: -1, cmp: Number.POSITIVE_INFINITY }
   for (let i = 0; i < r - 1; i++) {
     if (A[i][c - 1] >= -zero) continue
     for (let j = 0; j < c - 1; j++) {

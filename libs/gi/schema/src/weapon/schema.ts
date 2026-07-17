@@ -7,11 +7,11 @@ import {
 } from '@genshin-optimizer/common/database'
 import {
   type AscensionKey,
-  type RefinementKey,
-  type WeaponKey,
   allLocationCharacterKeys,
   allWeaponKeys,
+  type RefinementKey,
   validateWeaponLevelAsc,
+  type WeaponKey,
 } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import { z } from 'zod'

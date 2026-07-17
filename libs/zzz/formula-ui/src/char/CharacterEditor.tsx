@@ -1,5 +1,5 @@
 import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
-import { type CharacterKey, allSkillKeys } from '@genshin-optimizer/zzz/consts'
+import { allSkillKeys, type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import {
   CharacterContext,
   useCharacter,
@@ -144,7 +144,7 @@ export function Content({ onClose }: { onClose?: () => void }) {
               <CharacterCard
                 characterKey={characterKey}
                 charCardConfig={charCardConfig}
-              ></CharacterCard>
+              />
               <Box sx={{ px: 1 }}>
                 <LevelSelect
                   level={character.level}

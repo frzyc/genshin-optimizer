@@ -6,7 +6,7 @@ import {
   ModalWrapper,
   SqBadge,
 } from '@genshin-optimizer/common/ui'
-import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useDatabase, useDBMeta } from '@genshin-optimizer/gi/db-ui'
 import { CharacterName } from '@genshin-optimizer/gi/ui'
 import PersonIcon from '@mui/icons-material/Person'
 import {
