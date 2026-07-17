@@ -2,10 +2,10 @@ import { linspace, range } from '@genshin-optimizer/common/util'
 import {
   type ArtifactSetKey,
   type ArtifactSlotKey,
-  type MainStatKey,
-  type SubstatKey,
   allArtifactSlotKeys,
   allSubstatKeys,
+  type MainStatKey,
+  type SubstatKey,
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import type { ArtifactBuildData } from '@genshin-optimizer/gi/solver'
