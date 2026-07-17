@@ -14,9 +14,9 @@ import type { BuildTcArtifactSlot } from '@genshin-optimizer/gi/db'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import { SlotIcon, StatIcon } from '@genshin-optimizer/gi/svgicons'
 import {
+  artifactLevelVariant,
   StatColoredWithUnit,
   StatWithUnit,
-  artifactLevelVariant,
 } from '@genshin-optimizer/gi/ui'
 import {
   artDisplayValue,

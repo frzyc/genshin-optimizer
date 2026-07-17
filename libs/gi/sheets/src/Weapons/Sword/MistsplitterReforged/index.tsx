@@ -11,8 +11,8 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
-import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
+import { headerTemplate, WeaponSheet } from '../../WeaponSheet'
 
 const key: WeaponKey = 'MistsplitterReforged'
 const [, trm] = trans('weapon', key)
@@ -78,7 +78,7 @@ const sheet: IWeaponSheet = {
         stacks.map((stack) => [
           stack,
           {
-            name: st('stack', { count: parseInt(stack) }),
+            name: st('stack', { count: Number.parseInt(stack) }),
             fields: allElementKeys.map((ele) => ({
               node: stacks_dmg_[`${ele}_dmg_`],
             })),

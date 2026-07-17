@@ -1,6 +1,6 @@
 import type { CharacterKey, SkillKey } from '@genshin-optimizer/zzz/consts'
-import { abilityBaseName, isAbilityDim } from '@genshin-optimizer/zzz/formula'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
+import { abilityBaseName, isAbilityDim } from '@genshin-optimizer/zzz/formula'
 import { parseAbilityFromTag } from '../abilityTag'
 import { dimensionByAbilityDim } from '../formulaDimensionUi'
 import { st } from '../util'

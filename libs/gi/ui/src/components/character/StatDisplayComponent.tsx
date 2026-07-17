@@ -48,8 +48,7 @@ export function StatDisplayComponent({
   )
   const compareSections = useMemo(
     () =>
-      compareDataDisplaySections &&
-      compareDataDisplaySections.filter(([, ns]) =>
+      compareDataDisplaySections?.filter(([, ns]) =>
         Object.values(ns).some((n) => !n.isEmpty)
       ),
     [compareDataDisplaySections]

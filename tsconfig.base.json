@@ -25,6 +25,7 @@
     "strictNullChecks": true,
     "typeRoots": ["./node_modules/@types", "./node_modules", "./types"],
     "paths": {
+      "@genshin-optimizer/biome": ["./plugin/biome/src/index.ts"],
       "@genshin-optimizer/common/ad": ["./libs/common/ad/src/index.ts"],
       "@genshin-optimizer/common/database": [
         "./libs/common/database/src/index.ts"

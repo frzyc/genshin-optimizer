@@ -6,6 +6,7 @@ import { allCharacterRarityKeys } from '@genshin-optimizer/gi/consts'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import { Box, Chip, ToggleButton, useMediaQuery, useTheme } from '@mui/material'
 import type { ReactNode } from 'react'
+
 type CharacterRarityToggleProps = Omit<
   SolidToggleButtonGroupProps,
   'onChange' | 'value'

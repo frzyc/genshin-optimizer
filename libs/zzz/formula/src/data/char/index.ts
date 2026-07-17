@@ -1,5 +1,5 @@
 // WARNING: Generated file, do not modify
-import { type TagMapNodeEntries } from '../util'
+import type { TagMapNodeEntries } from '../util'
 import Alice from './sheets/Alice'
 import Anby from './sheets/Anby'
 import Anton from './sheets/Anton'

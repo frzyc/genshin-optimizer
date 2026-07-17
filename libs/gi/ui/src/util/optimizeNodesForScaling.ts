@@ -1,8 +1,8 @@
 import { objPathValue } from '@genshin-optimizer/common/util'
 import type { MainSubStatKey } from '@genshin-optimizer/gi/consts'
 import {
-  type CharacterKey,
   allMainSubStatKeys,
+  type CharacterKey,
 } from '@genshin-optimizer/gi/consts'
 import type { OptConfig } from '@genshin-optimizer/gi/db'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
@@ -16,7 +16,7 @@ export function optimizeNodesForScaling(
   statFilters: OptConfig['statFilters']
 ) {
   if (!optimizationTarget) return {}
-  const workerData = teamDataProp[characterKey]?.target.data![0]
+  const workerData = teamDataProp[characterKey]?.target.data[0]
   if (!workerData) return {}
   const unoptimizedOptimizationTargetNode = objPathValue(
     workerData.display ?? {},

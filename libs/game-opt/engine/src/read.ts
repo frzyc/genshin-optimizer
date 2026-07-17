@@ -10,11 +10,11 @@ import type {
   TagValRead,
 } from '@genshin-optimizer/pando/engine'
 import {
-  TypedRead,
   tag as baseTag,
   tagVal as baseTagVal,
   constant,
   reread,
+  TypedRead,
 } from '@genshin-optimizer/pando/engine'
 import type { IBaseConditionalData } from './IConditionalData'
 import type { EntryType, Preset } from './listing'
@@ -121,7 +121,7 @@ export function tag<Tag_ extends Tag>(
   v: number | string | AnyNode,
   tag: Tag_
 ): TagOverride<AnyNode> {
-  return typeof v == 'object' && v.op == 'tag'
+  return typeof v === 'object' && v.op === 'tag'
     ? baseTag(v.x[0], { ...v.tag, ...tag }) // Fold nested tag nodes
     : baseTag(v, tag)
 }

@@ -17,7 +17,10 @@ import { SpecificDmgTypeSelector } from './SpecificDmgTypeSelector'
 export function OptTargetRow({
   character,
   team,
-}: { character: ICachedCharacter; team: Team }) {
+}: {
+  character: ICachedCharacter
+  team: Team
+}) {
   return (
     <Box
       display="flex"

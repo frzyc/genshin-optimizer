@@ -13,7 +13,7 @@ import {
   ThemeProvider,
 } from '@mui/material'
 import type { ComponentType } from 'react'
-import { Suspense, lazy } from 'react'
+import { lazy, Suspense } from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import Footer from './Footer'
 import Header from './Header'

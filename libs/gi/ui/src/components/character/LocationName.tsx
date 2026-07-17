@@ -1,5 +1,5 @@
 import type { CharacterKey, LocationKey } from '@genshin-optimizer/gi/consts'
-import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import { useDatabase, useDBMeta } from '@genshin-optimizer/gi/db-ui'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import type { TypographyProps } from '@mui/material'
 import { Box, Typography } from '@mui/material'
