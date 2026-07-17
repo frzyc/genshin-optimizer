@@ -40,11 +40,7 @@ export type ElixirDefineQuery = {
 const rarity = 5 as const
 const mintotal = 2 // Elixir guarantees at least 2 total rolls on the 2 chosen affixes.
 
-function sortedAffixes(affixes: SubstatKey[]) {
-  return [...affixes].sort((a, b) => a.localeCompare(b))
-}
-
-function affixPool(mainStatKey: MainStatKey, affixes: SubstatKey[]) {
+function substatPool(mainStatKey: MainStatKey, affixes: SubstatKey[]) {
   return allSubstatKeys.filter((s) => !affixes.includes(s) && s !== mainStatKey)
 }
 
@@ -93,7 +89,7 @@ function getSimplifiedTemplates(
   const rollsLeft = getRollsRemaining(0, rarity) - (4 - lines)
   // Build fresh raw nodes: deduplicate() mutates them in place, so they must not be
   // shared with the plain full-node cache.
-  const raw = crawlSubstats(affixes, affixPool(mainStatKey, affixes)).map(
+  const raw = crawlSubstats(affixes, substatPool(mainStatKey, affixes)).map(
     ({ p, subs }) => ({
       p,
       n: makeSubstatNode({
@@ -122,7 +118,7 @@ export function elixirDefinitionMemoSimplified(
   cache: ElixirSimplifiedCache
 ): WeightedNode[] {
   const base = toStats(currentBuild, { ...info, rarity })
-  const affixes = sortedAffixes(info.affixes)
+  const affixes = info.affixes.sort((a, b) => a.localeCompare(b)) // Ensure consistent ordering
   // deduplicate() sorts 4-line (rollsLeft 5) nodes ahead of 3-line, so concatenating the
   // two template blocks reproduces its output ordering.
   const t4 = getSimplifiedTemplates(info.mainStatKey, affixes, 4, obj, cache)
