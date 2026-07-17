@@ -1,5 +1,5 @@
 import type { Tag } from '@genshin-optimizer/zzz/formula'
-import { Suspense, lazy } from 'react'
+import { lazy, Suspense } from 'react'
 
 const TagDisplay = lazy(() =>
   import('./components/TagDisplay.js').then((m) => ({ default: m.TagDisplay }))

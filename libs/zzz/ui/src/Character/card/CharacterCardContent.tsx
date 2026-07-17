@@ -4,7 +4,7 @@ import {
   rarityDefIcon,
   specialityDefIcon,
 } from '@genshin-optimizer/zzz/assets'
-import { type CharacterKey, allSkillKeys } from '@genshin-optimizer/zzz/consts'
+import { allSkillKeys, type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { useCharacter } from '@genshin-optimizer/zzz/db-ui'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
 import { ElementIcon } from '@genshin-optimizer/zzz/svgicons'

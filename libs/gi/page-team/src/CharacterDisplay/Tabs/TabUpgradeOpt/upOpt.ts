@@ -10,6 +10,11 @@ import {
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import type { ArtifactBuildData } from '@genshin-optimizer/gi/solver'
 import { compactArtifacts } from '@genshin-optimizer/gi/solver-tc'
+import type {
+  EvaluatedMarkovNode,
+  MarkovNode,
+  Objective,
+} from '@genshin-optimizer/gi/upopt'
 import {
   deduplicate,
   dustReshape,
@@ -19,11 +24,6 @@ import {
   expandNodes,
   levelUpArtifact,
   makeObjective,
-} from '@genshin-optimizer/gi/upopt'
-import type {
-  EvaluatedMarkovNode,
-  MarkovNode,
-  Objective,
 } from '@genshin-optimizer/gi/upopt'
 import { type OptNode, optimize, precompute } from '@genshin-optimizer/gi/wr'
 import { removeSetKeys } from './formulaUtils'
@@ -458,7 +458,12 @@ function accumulateEvaluations(
       lower: Math.min(acc.lower, evaluation.lower),
       upper: Math.max(acc.upper, evaluation.upper),
     }),
-    { p: 0, upAvgAcc: 0, lower: Infinity, upper: -Infinity }
+    {
+      p: 0,
+      upAvgAcc: 0,
+      lower: Number.POSITIVE_INFINITY,
+      upper: Number.NEGATIVE_INFINITY,
+    }
   )
   return { p, upAvg: p < 1e-6 ? 0 : upAvgAcc / p, lower, upper }
 }

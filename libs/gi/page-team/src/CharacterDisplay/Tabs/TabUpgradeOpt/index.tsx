@@ -24,8 +24,8 @@ import {
 import type { ArtSetExclusionKey } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
-  useDBMeta,
   useDatabase,
+  useDBMeta,
   useLoadoutArtifacts,
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
@@ -41,10 +41,10 @@ import {
   ArtifactSetMultiAutocomplete,
   ArtifactSlotToggle,
   DataContext,
+  getTeamData,
   HitModeToggle,
   NoArtWarning,
   ReactionToggle,
-  getTeamData,
   resolveInfo,
   useTeamData,
 } from '@genshin-optimizer/gi/ui'
@@ -88,7 +88,7 @@ import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTa
 import StatFilterCard from '../TabOptimize/Components/StatFilterCard'
 import { LevelFilter } from './LevelFilter'
 import UpgradeOptChartCard from './UpgradeOptChartCard'
-import { UpOptCalculatorV2, canReshape } from './upOpt'
+import { canReshape, UpOptCalculatorV2 } from './upOpt'
 
 // artifact button gets its own type so multiple translations can be used
 type AddArtifactButtonProps = Omit<ButtonProps, 'onClick'> & {
@@ -276,7 +276,7 @@ export default function TabUpopt() {
       teamDataLocal.teamData,
       gender,
       activeCharKey
-    )[characterKey]?.target.data![0]
+    )[characterKey]?.target.data[0]
     if (!workerData) return
     Object.assign(workerData, mergeData([workerData, dynamicData])) // Mark art fields as dynamic
     const optimizationTargetNode = objPathValue(
@@ -402,7 +402,7 @@ export default function TabUpopt() {
 
     return new UpOptCalculatorV2(
       nodes,
-      [-Infinity, ...valueFilter.map((x) => x.minimum)],
+      [Number.NEGATIVE_INFINITY, ...valueFilter.map((x) => x.minimum)],
       equippedArts,
       artifactsToConsider,
       { enabled: upOptReshape, minTotal: upOptReshapeRolls as 2 | 3 | 4 },
@@ -473,7 +473,7 @@ export default function TabUpopt() {
       }
     }, [pageIdex, upOptCalc])
   const setPage = useCallback(
-    (e: React.ChangeEvent<unknown>, value: number) => {
+    (_e: React.ChangeEvent<unknown>, value: number) => {
       if (!upOptCalc) return
       const end = value * artifactsToDisplayPerPage
       upOptCalc.calcSlowToIndex(end)
@@ -754,7 +754,7 @@ export default function TabUpopt() {
             <CardThemed bgt="light">
               <CardContent>
                 <Grid container spacing={1}>
-                  <Grid item></Grid>
+                  <Grid item />
                   <Grid item>
                     <HitModeToggle size="small" />
                   </Grid>

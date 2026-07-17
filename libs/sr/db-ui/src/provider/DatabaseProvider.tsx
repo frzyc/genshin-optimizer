@@ -8,7 +8,7 @@ import { useCallback, useMemo, useState } from 'react'
 import { DatabaseContext, type DatabaseContextObj } from '../context'
 
 export function DatabaseProvider({ children }: { children: ReactNode }) {
-  const dbIndex = parseInt(localStorage.getItem('sro_dbIndex') || '1')
+  const dbIndex = Number.parseInt(localStorage.getItem('sro_dbIndex') || '1')
   const [databases, setDatabases] = useState(() => {
     localStorage.removeItem('sro_newTabDetection')
     localStorage.setItem('sro_newTabDetection', 'debug')

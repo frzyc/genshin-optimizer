@@ -1,4 +1,5 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
+import GroupsIcon from '@mui/icons-material/Groups'
 import {
   Box,
   CardContent,
@@ -8,6 +9,7 @@ import {
   Link,
   Typography,
 } from '@mui/material'
+import { useTranslation } from 'react-i18next'
 import d1 from './teamIcons/d1.png'
 import frzyc from './teamIcons/frzyc.png'
 import lantua from './teamIcons/lantua.png'
@@ -20,8 +22,6 @@ import van from './teamIcons/van.webp'
 import vlad from './teamIcons/vlad.jpg'
 import yae from './teamIcons/yae.png'
 
-import GroupsIcon from '@mui/icons-material/Groups'
-import { useTranslation } from 'react-i18next'
 const team = [
   {
     name: 'frzyc',

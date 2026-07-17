@@ -1,10 +1,10 @@
 import type { TargetTag } from '@genshin-optimizer/zzz/db'
 import {
   type AbilityDim,
-  type Tag,
   bundledFormulaInSheet,
   dmgAbilityDims,
   isAbilityDim,
+  type Tag,
 } from '@genshin-optimizer/zzz/formula'
 
 export const formulaDimensions = ['dmg', 'daze', 'anomBuildup'] as const

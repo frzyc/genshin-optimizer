@@ -108,7 +108,7 @@ export function specialReactionDmg(
           critHit: sum(one, critDMG_),
           avgHit: sum(one, prod(cappedCritRate_, critDMG_)),
         },
-        NaN
+        Number.NaN
       ),
       sum(percent(1), input.total[`${variant}_specialDmg_`]),
       input.enemy.transDef,

@@ -5,6 +5,7 @@ import {
 import { objKeyValMap, objMap } from '@genshin-optimizer/common/util'
 import { PROJROOT_PATH } from '../../consts'
 import { DEBUG } from './debug'
+
 const URL_BASE = 'https://static.nanoka.cc/zzz/'
 const VERSION = '3.0'
 
@@ -81,7 +82,7 @@ export async function getDataFromHakushin() {
 }
 async function getAndDumpCategoryData(category: Category) {
   const indexData = (await fetchJsonFromUrl(
-    URL_BASE + VERSION + `/${category}.json`,
+    `${URL_BASE + VERSION}/${category}.json`,
     DEBUG
   )) as Record<string, unknown>
   await dumpHakushinIndex(`${category}.json`, indexData)
@@ -89,7 +90,7 @@ async function getAndDumpCategoryData(category: Category) {
     Object.keys(indexData).map(async (id) => {
       // NOTE: hakushin also has data in en, ko, chs, ja
       const itemData = (await fetchJsonFromUrl(
-        URL_BASE + VERSION + `/en/${category}/${id}.json`
+        `${URL_BASE + VERSION}/en/${category}/${id}.json`
       )) as object
       await dumpHakushinData(`${category}/${id}.json`, itemData)
     })
@@ -97,7 +98,7 @@ async function getAndDumpCategoryData(category: Category) {
 }
 async function getAndDumpNounData() {
   const nounData = (await fetchJsonFromUrl(
-    URL_BASE + VERSION + '/en/noun.json'
+    `${URL_BASE + VERSION}/en/noun.json`
   )) as object
   await dumpHakushinData('noun.json', nounData)
 }

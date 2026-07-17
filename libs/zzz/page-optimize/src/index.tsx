@@ -19,8 +19,11 @@ import {
 import { characterAsset } from '@genshin-optimizer/zzz/assets'
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allCharacterKeys } from '@genshin-optimizer/zzz/consts'
-import type { TeamConditional } from '@genshin-optimizer/zzz/db'
-import type { ICachedCharacter, Team } from '@genshin-optimizer/zzz/db'
+import type {
+  ICachedCharacter,
+  Team,
+  TeamConditional,
+} from '@genshin-optimizer/zzz/db'
 import {
   CharacterContext,
   useCharacter,
@@ -28,10 +31,10 @@ import {
   useTeam,
 } from '@genshin-optimizer/zzz/db-ui'
 import {
-  type Tag,
   getConditional,
   isMember,
   isSheet,
+  type Tag,
 } from '@genshin-optimizer/zzz/formula'
 import { CharCalcProvider } from '@genshin-optimizer/zzz/formula-ui'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
@@ -43,8 +46,8 @@ import { Box, Button } from '@mui/material'
 import { Suspense, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { CharacterOptDisplay } from './CharacterOptDisplay'
-import { OptTargetRow } from './OptTargetRow'
 import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
+import { OptTargetRow } from './OptTargetRow'
 
 function OptimizePageContent({
   character,
@@ -91,7 +94,7 @@ export default function PageOptimize() {
   useTitle(
     useMemo(() => {
       const charName = characterKey && t(`charNames_gen:${characterKey}`)
-      return charName ? `Optimize - ${charName}` : `Optimize`
+      return charName ? `Optimize - ${charName}` : 'Optimize'
     }, [characterKey, t])
   )
   const srcDstDisplayContextValue = useMemo(() => {
@@ -136,7 +139,7 @@ export default function PageOptimize() {
     () => ({
       src: characterKey,
       dst: characterKey,
-      preset: `preset0`,
+      preset: 'preset0',
     }),
     [characterKey]
   )

@@ -1,10 +1,8 @@
 import { createTestDBStorage } from '@genshin-optimizer/common/database'
 import { ArtCharDatabase } from './ArtCharDatabase'
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const testDatabaseJson = require('./Van_2025-07-16_19-59-13.json')
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function normalizeForComparison(data: any) {
   const clone = structuredClone(data)
   // Remove time-based fields that change between imports
@@ -27,7 +25,6 @@ describe(
       const dbStorage1 = createTestDBStorage('go')
       const database1 = new ArtCharDatabase(1, dbStorage1)
 
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const input = structuredClone(testDatabaseJson) as any
       database1.importGOOD(input, false, false)
       const firstExport = database1.exportGOOD()

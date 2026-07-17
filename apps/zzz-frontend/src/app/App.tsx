@@ -19,7 +19,7 @@ import {
   ThemeProvider,
 } from '@mui/material'
 import type { ComponentType } from 'react'
-import { Suspense, lazy } from 'react'
+import { lazy, Suspense } from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import '../styles.scss'
 import { ZOAdWrapper } from '@genshin-optimizer/zzz/ui'
@@ -28,8 +28,6 @@ import Header from './Header'
 const PageDiscs = lazy(
   () =>
     import('@genshin-optimizer/zzz/page-discs') as unknown as Promise<{
-      default: ComponentType<any>
-    }> as unknown as Promise<{
       default: ComponentType<any>
     }>
 )

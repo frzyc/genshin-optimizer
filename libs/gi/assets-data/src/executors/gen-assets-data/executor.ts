@@ -175,7 +175,7 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
       layeredAssignment(
         assetChar,
         [ck, 'burst'],
-        avatarSkillExcelConfigData[burst].skillIcon + '_HD'
+        `${avatarSkillExcelConfigData[burst].skillIcon}_HD`
       )
       if (sprint)
         layeredAssignment(

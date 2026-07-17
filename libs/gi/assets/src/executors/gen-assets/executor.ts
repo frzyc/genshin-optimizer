@@ -1,5 +1,5 @@
-import * as fs from 'fs'
-import * as path from 'path'
+import * as fs from 'node:fs'
+import * as path from 'node:path'
 import { generateIndexFromObj } from '@genshin-optimizer/common/pipeline'
 import { crawlObject } from '@genshin-optimizer/common/util'
 import { AssetData } from '@genshin-optimizer/gi/assets-data'
@@ -16,7 +16,7 @@ export default async function runExecutor(
   let copyAssets = true
   if (!fs.existsSync(DM2D_PATH)) {
     console.log(
-      `Texture2D does not exist, no assets will be copied. Only index files will be generated.`
+      'Texture2D does not exist, no assets will be copied. Only index files will be generated.'
     )
     copyAssets = false
   }

@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import type { SillyContextObj } from '../context'
+
 const lsKey = 'silly_optimizer_enabled'
 
 export function useSilly(): SillyContextObj {

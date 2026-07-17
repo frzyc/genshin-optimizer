@@ -2,8 +2,8 @@ import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { equal, input, subscript } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
-import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
+import { headerTemplate, WeaponSheet } from '../../WeaponSheet'
 
 const key: WeaponKey = 'BloodsoakedRuins'
 const lunarcharged_dmg_arr = [-1, 0.36, 0.48, 0.6, 0.72, 0.84]

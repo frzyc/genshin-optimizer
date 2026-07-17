@@ -5,6 +5,7 @@ import type { WengineRarityKey } from '@genshin-optimizer/zzz/consts'
 import { allWengineRarityKeys } from '@genshin-optimizer/zzz/consts'
 import { Box, Chip, ToggleButton, useMediaQuery, useTheme } from '@mui/material'
 import type { ReactNode } from 'react'
+
 type WengineRarityToggleProps = Omit<
   SolidToggleButtonGroupProps,
   'onChange' | 'value'

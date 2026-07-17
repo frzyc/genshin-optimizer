@@ -33,8 +33,8 @@ import {
 } from '@genshin-optimizer/sr/consts'
 import { z } from 'zod'
 import type { ICachedLightCone, ICachedRelic } from '../../Interfaces'
-import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
+import { DataManager } from '../DataManager'
 
 const buildTcRelicSlotSchema = z.object({
   level: z.number().int().min(0).max(15).catch(15),

@@ -1,4 +1,3 @@
-/* eslint-disable */
 export default {
   displayName: 'gi-mats',
   preset: '../../../jest.preset.js',

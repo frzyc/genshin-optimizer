@@ -6,8 +6,8 @@ import type {
 } from '@genshin-optimizer/game-opt/engine'
 import { presets } from '@genshin-optimizer/game-opt/engine'
 import { CalcContext } from '@genshin-optimizer/game-opt/formula-ui'
-import type { FormulaText } from '@genshin-optimizer/game-opt/sheet-ui'
 import type {
+  FormulaText,
   FormulaTextFunc,
   FullTagDisplayComponent,
   TagDisplayComponent,
@@ -32,8 +32,8 @@ import { useDiscs, useWengine } from '@genshin-optimizer/zzz/db-ui'
 import {
   charTagMapNodeEntries,
   conditionalEntries,
-  discTagMapNodeEntries,
   discsToTagMapNodeEntries,
+  discTagMapNodeEntries,
   enemy,
   own,
   ownBuff,
@@ -208,9 +208,7 @@ export function CharCalcMockCountProvider({
           ),
           // mock wengine
           // Opt-in for wengine buffs, instead of enabling it by default to reduce `read` traffic
-          reader
-            .sheet('agg')
-            .reread(reader.sheet('wengine')),
+          reader.sheet('agg').reread(reader.sheet('wengine')),
           own.wengine.lvl.add(60),
           own.wengine.modification.add(5),
           own.wengine.phase.add(1),
@@ -224,7 +222,7 @@ export function CharCalcMockCountProvider({
         enemy.common.unstun_.add(1),
         ...conditionals.flatMap(({ sheet, src, dst, condKey, condValue }) =>
           withPreset(
-            `preset0`,
+            'preset0',
             conditionalEntries(sheet, src, dst)(condKey, condValue)
           )
         ),
