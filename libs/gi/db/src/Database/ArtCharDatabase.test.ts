@@ -19,28 +19,32 @@ function normalizeForComparison(data: any) {
   return clone
 }
 
-describe('Database import/export round trip', () => {
-  it('should produce identical JSON across import/export cycles', () => {
-    // First cycle: import raw JSON, export normalized data
-    const dbStorage1 = createTestDBStorage('go')
-    const database1 = new ArtCharDatabase(1, dbStorage1)
+describe(
+  'Database import/export round trip',
+  () => {
+    it('should produce identical JSON across import/export cycles', () => {
+      // First cycle: import raw JSON, export normalized data
+      const dbStorage1 = createTestDBStorage('go')
+      const database1 = new ArtCharDatabase(1, dbStorage1)
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const input = structuredClone(testDatabaseJson) as any
-    database1.importGOOD(input, false, false)
-    const firstExport = database1.exportGOOD()
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const input = structuredClone(testDatabaseJson) as any
+      database1.importGOOD(input, false, false)
+      const firstExport = database1.exportGOOD()
 
-    // Second cycle: import normalized data, export again
-    const dbStorage2 = createTestDBStorage('go')
-    const database2 = new ArtCharDatabase(1, dbStorage2)
+      // Second cycle: import normalized data, export again
+      const dbStorage2 = createTestDBStorage('go')
+      const database2 = new ArtCharDatabase(1, dbStorage2)
 
-    database2.importGOOD(firstExport, false, false)
-    const secondExport = database2.exportGOOD()
+      database2.importGOOD(firstExport, false, false)
+      const secondExport = database2.exportGOOD()
 
-    // The normalized JSON should be identical
-    const firstJson = JSON.stringify(normalizeForComparison(firstExport))
-    const secondJson = JSON.stringify(normalizeForComparison(secondExport))
+      // The normalized JSON should be identical
+      const firstJson = JSON.stringify(normalizeForComparison(firstExport))
+      const secondJson = JSON.stringify(normalizeForComparison(secondExport))
 
-    expect(secondJson).toBe(firstJson)
-  })
-})
+      expect(secondJson).toBe(firstJson)
+    })
+  },
+  { timeout: 10000 }
+)

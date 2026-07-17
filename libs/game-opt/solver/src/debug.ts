@@ -6,7 +6,7 @@ import {
   compileTagMapValues,
   constant,
 } from '@genshin-optimizer/pando/engine'
-import type { Candidate } from './common'
+import type { Candidate } from './common.js'
 
 export function debugMeta(
   nodes: AnyTagFree[],

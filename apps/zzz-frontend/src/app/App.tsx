@@ -18,19 +18,45 @@ import {
   StyledEngineProvider,
   ThemeProvider,
 } from '@mui/material'
+import type { ComponentType } from 'react'
 import { Suspense, lazy } from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import '../styles.scss'
 import { ZOAdWrapper } from '@genshin-optimizer/zzz/ui'
 import Footer from './Footer'
 import Header from './Header'
-const PageDiscs = lazy(() => import('@genshin-optimizer/zzz/page-discs'))
-const PageOptimize = lazy(() => import('@genshin-optimizer/zzz/page-optimize'))
-const PageCharacters = lazy(
-  () => import('@genshin-optimizer/zzz/page-characters')
+const PageDiscs = lazy(
+  () =>
+    import('@genshin-optimizer/zzz/page-discs') as unknown as Promise<{
+      default: ComponentType<any>
+    }> as unknown as Promise<{
+      default: ComponentType<any>
+    }>
 )
-const PageWengines = lazy(() => import('@genshin-optimizer/zzz/page-wengines'))
-const PageSettings = lazy(() => import('@genshin-optimizer/zzz/page-settings'))
+const PageOptimize = lazy(
+  () =>
+    import('@genshin-optimizer/zzz/page-optimize') as unknown as Promise<{
+      default: ComponentType<any>
+    }>
+)
+const PageCharacters = lazy(
+  () =>
+    import('@genshin-optimizer/zzz/page-characters') as unknown as Promise<{
+      default: ComponentType<any>
+    }>
+)
+const PageWengines = lazy(
+  () =>
+    import('@genshin-optimizer/zzz/page-wengines') as unknown as Promise<{
+      default: ComponentType<any>
+    }>
+)
+const PageSettings = lazy(
+  () =>
+    import('@genshin-optimizer/zzz/page-settings') as unknown as Promise<{
+      default: ComponentType<any>
+    }>
+)
 
 // Enable debug mode for Pando calcs
 setDebugMode(isDev)
