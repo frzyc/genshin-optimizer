@@ -1,7 +1,5 @@
 import type { SubstatKey } from '@genshin-optimizer/gi/consts'
-import {
-  allSubstatKeys,
-} from '@genshin-optimizer/gi/consts'
+import { allSubstatKeys } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { getMainStatValue, getSubstatValue } from '@genshin-optimizer/gi/util'
 import { dynRead, prod, sum } from '@genshin-optimizer/gi/wr'
