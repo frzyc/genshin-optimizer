@@ -154,16 +154,22 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
       profiles: Object.fromEntries(
         Object.entries(partialBuilds).map(([slot, profiles]) => [
           slot,
-          [
-            ...(profiles ?? []),
-            // Auto-added current-inventory profile so re-checking an owned
-            // artifact stays covered even if the caller's profiles miss it.
-            {
-              fixed: {},
-              substats: computeArtRange(arts.values[slot as ArtifactSlotKey]),
-              maxSubstats: Infinity,
-            } satisfies FutureArtifactProfile,
-          ],
+          profiles?.length
+            ? profiles
+            : [
+                // Fallback for an empty request: a current-inventory profile,
+                // so re-checking an owned artifact stays covered. Its box is
+                // coarse (no roll structure), so witnesses from it are only
+                // box geometry — callers wanting realistic certificates
+                // should pass explicit profiles instead.
+                {
+                  fixed: {},
+                  substats: computeArtRange(
+                    arts.values[slot as ArtifactSlotKey]
+                  ),
+                  maxSubstats: Infinity,
+                } satisfies FutureArtifactProfile,
+              ],
         ])
       ),
       nodes: [nodes[nodes.length - 1], ...nodes.slice(0, -1)],

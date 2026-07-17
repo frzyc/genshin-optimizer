@@ -19,7 +19,7 @@ import type {
   PartialBuildsSetup,
   SolverPartialBuild,
 } from '../common'
-import { tightenPartialBuilds } from './tightenPartials'
+import { dedupeProfiles, tightenPartialBuilds } from './tightenPartials'
 
 /**
  * Exhaustive validation of `tightenPartialBuilds`: candidates are the *full*
@@ -173,7 +173,8 @@ function makeRng(seed: number) {
   }
 }
 
-/** A random legal artifact from `profile`: <=4 substats, roll budget kept. */
+/** A random legal artifact from `profile`: exactly 4 substats, one mandatory
+ * roll each, whole-roll extras within the budget, realistic roll quality. */
 function sampleLegal(
   profile: FutureArtifactProfile,
   rng: () => number
@@ -185,11 +186,11 @@ function sampleLegal(
     const k = keys[Math.floor(rng() * keys.length)]
     if (!picked.includes(k)) picked.push(k)
   }
-  let budget = TOTAL_ROLLS
+  let extra = TOTAL_ROLLS - picked.length
   for (const k of picked) {
-    const rolls = Math.min(6, budget) * rng()
-    budget -= rolls
-    values[k] = rolls * SUB_ROLL[k]
+    const rolls = 1 + Math.floor(Math.min(5, extra) * rng())
+    extra -= rolls - 1
+    values[k] = rolls * SUB_ROLL[k] * (0.7 + 0.3 * rng())
   }
   return { id: 'x', values }
 }
@@ -277,8 +278,14 @@ function checkWitnesses(
         )
       )
         return false
+      // budget: the 4 - subs.length junk substats eat a mandatory roll each
       const rolls = subs.reduce((a, [k, v]) => a + v / SUB_ROLL[k], 0)
-      return rolls <= TOTAL_ROLLS + 1e-9
+      if (rolls + (4 - subs.length) > TOTAL_ROLLS + 1e-9) return false
+      // budgeted substats must be whole numbers of rolls
+      return subs.every(([k, v]) => {
+        const r = v / SUB_ROLL[k]
+        return Math.abs(r - Math.round(r)) < 1e-6
+      })
     })
     expect(legal).toBe(true)
 
@@ -363,6 +370,41 @@ describe('tightenPartialBuilds (exhaustive candidates)', () => {
     expect(members.length).toBeLessThan(combosR.length)
     checkWitnesses(members, nodes, mins)
     checkGuarantee(members, nodes, mins, threshold)
+  })
+
+  test('profiles differing only in unread keys are deduped, same result', () => {
+    const nodes = [target]
+    const mins = [-Infinity]
+    // Adventurer is read by no formula: same space as the OceanHuedClam
+    // profile (both have HeartOfDepth: 0), so it must collapse into it.
+    const extra: FutureArtifactProfile = {
+      ...flowerProfiles[1],
+      fixed: { hp: 4780, Adventurer: 1 },
+    }
+    const readKeys = [
+      'hp',
+      'hp_',
+      'eleMas',
+      'enerRech_',
+      'critRate_',
+      'critDMG_',
+      'hydroDmg_',
+      'HeartOfDepth',
+    ]
+    expect(dedupeProfiles([...flowerProfiles, extra], readKeys).length).toBe(2)
+    expect(dedupeProfiles(flowerProfiles, readKeys).length).toBe(2)
+
+    const threshold = bruteThreshold(nodes, mins)
+    const base = run(nodes, mins, threshold)
+    const withDup = tightenPartialBuilds(
+      {
+        ...setup(nodes, mins),
+        profiles: { flower: [...flowerProfiles, extra] },
+      },
+      { flower: fullCandidates },
+      threshold
+    ).flower!
+    expect(withDup).toEqual(base)
   })
 
   test('reported margins are consistent with the returned set', () => {

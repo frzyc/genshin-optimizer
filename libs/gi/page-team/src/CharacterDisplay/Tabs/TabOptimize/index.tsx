@@ -45,7 +45,12 @@ import type {
   OptProblemInput,
   PartialBuildsData,
 } from '@genshin-optimizer/gi/solver'
-import { GOSolver, mergeBuilds, mergePlot } from '@genshin-optimizer/gi/solver'
+import {
+  GOSolver,
+  futureArtifactProfiles,
+  mergeBuilds,
+  mergePlot,
+} from '@genshin-optimizer/gi/solver'
 import { compactArtifacts } from '@genshin-optimizer/gi/solver-tc'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import {
@@ -315,6 +320,7 @@ export default function TabBuild() {
       statFilters,
       optimizationTarget,
       mainStatAssumptionLevel,
+      mainStatKeys,
       allowPartial,
       maxBuildsToShow,
     } = buildSetting
@@ -384,10 +390,11 @@ export default function TabBuild() {
 
       topN: maxBuildsToShow,
       plotBase: plotBaseNode,
-      // Empty profile lists: the solver auto-adds a current-inventory profile
-      // per requested slot, covering artifacts within today's stat ranges.
+      // One future-drop profile per allowed (slot, set, main stat) combo:
+      // fully leveled, any legal substats within the roll budget — witnesses
+      // come out as attainable artifacts.
       partialBuilds: trackPartialBuilds
-        ? objKeyMap(allArtifactSlotKeys, () => [])
+        ? futureArtifactProfiles(mainStatKeys)
         : undefined,
     }
     const status: Omit<BuildStatus, 'type'> = {

@@ -899,9 +899,13 @@ export type FutureArtifactProfile = {
   fixed: DynStat
   /** Substat pool: value range per key (e.g. `{min: 0, max: 6 * roll}`). */
   substats: DynMinMax
-  /** Max substat keys present simultaneously (default 4). */
+  /** Max substat keys present simultaneously (default 4). When `rollBudget`
+   * is set, the artifact carries exactly this many substats — see below. */
   maxSubstats?: number
-  /** Cap on total rolls: `Σ_k value_k / rollSize_k <= totalRolls`. */
+  /** Cap on total rolls. Every one of the artifact's `maxSubstats` substats
+   * consumes at least its mandatory single roll, so
+   * `Σ_present max(1, value_k / rollSize_k) + (maxSubstats - #present) <=
+   * totalRolls`, where `present` are the substats carrying tracked value. */
   rollBudget?: { rollSize: DynStat; totalRolls: number }
 }
 /** Slot -> future-artifact profiles to track partial builds for. */

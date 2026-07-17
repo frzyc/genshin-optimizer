@@ -182,11 +182,12 @@ function sampleLegal(
     const k = keys[Math.floor(rng() * keys.length)]
     if (!picked.includes(k)) picked.push(k)
   }
-  let budget = 9
+  // exactly 4 substats, one mandatory roll each, whole-roll extras in budget
+  let extra = 9 - picked.length
   for (const k of picked) {
-    const rolls = Math.min(6, budget) * rng()
-    budget -= rolls
-    values[k] = rolls * SUB_ROLL[k]
+    const rolls = 1 + Math.floor(Math.min(5, extra) * rng())
+    extra -= rolls - 1
+    values[k] = rolls * SUB_ROLL[k] * (0.7 + 0.3 * rng())
   }
   return { id: 'x', values }
 }

@@ -58,7 +58,9 @@ import { compileDiffBound } from './BNBSplitWorker/diffBound'
  *    budget already exceeded by the box minima);
  *  - a box is *covered* when some live member covers `m` on it;
  *  - otherwise the box center is *legalized* (top `maxSubstats` substats by
- *    invested rolls, scaled into the roll budget) and evaluated **exactly**.
+ *    invested rolls, scaled into the roll budget — net of each substat
+ *    slot's mandatory roll — and rounded to whole rolls) and evaluated
+ *    **exactly**.
  *    If `m` is feasible and beats `max(θ, every live member)` there, that
  *    point is the witness: `margin > 0` is a strict proof of necessity;
  *  - failing all three, bisect the highest-impact dimension and recurse.
@@ -96,6 +98,33 @@ export function tightenPartialBuilds(
     result[slot] =
       combos && new SlotTightener(setup, slot, combos, threshold, options).run()
   return result
+}
+
+/** Profiles that agree on every key the formulas read span the same search
+ * space (unread keys cannot affect any comparison); keep one representative
+ * each. The representative's unread `fixed` keys still appear in witness
+ * artifacts, standing in for every merged combo. */
+export function dedupeProfiles(
+  profiles: FutureArtifactProfile[],
+  readKeys: string[]
+): FutureArtifactProfile[] {
+  const seen = new Set<string>()
+  const out: FutureArtifactProfile[] = []
+  for (const p of profiles) {
+    const sig = JSON.stringify([
+      readKeys.map((k) => p.fixed[k] ?? 0),
+      readKeys.map((k) => {
+        const s = p.substats[k]
+        return s ? [s.min, s.max, p.rollBudget?.rollSize[k] ?? null] : null
+      }),
+      p.maxSubstats ?? 4,
+      p.rollBudget?.totalRolls ?? null,
+    ])
+    if (seen.has(sig)) continue
+    seen.add(sig)
+    out.push(p)
+  }
+  return out
 }
 
 type Member = {
@@ -149,7 +178,7 @@ class SlotTightener {
     const slotProfiles = profiles[slot] ?? []
     const box = profileBoundingBox(slotProfiles)
     this.bound = compileDiffBound(nodes, arts, { [slot]: box })
-    this.profiles = slotProfiles.map(
+    this.profiles = dedupeProfiles(slotProfiles, this.bound.readKeys).map(
       (p) => new ProfileSpace(p, this.bound, arts)
     )
     this.compute = precompute(nodes, arts.base, (f) => f.path[1], 5) as (
@@ -430,34 +459,68 @@ class ProfileSpace {
     return { lo: this.root.lo.slice(), hi: this.root.hi.slice() }
   }
 
+  /** Mandatory rolls of the substat slots not carrying tracked value: a real
+   * artifact has exactly `maxSubstats` substats, one roll minimum each, so
+   * slots beyond the `present` tracked ones still consume a roll apiece. */
+  private junkRolls(present: number): number {
+    return Number.isFinite(this.maxSubstats)
+      ? Math.max(0, this.maxSubstats - present)
+      : 0
+  }
+
+  /** Rolls a present substat consumes: at least its mandatory single roll. */
+  private rollFloor(d: number, value: number): number {
+    const size = this.rollSize(d)
+    return Math.max(1, Number.isFinite(size) ? value / size : 0)
+  }
+
   /** The box forces more nonzero substats than an artifact may carry, or
-   * more rolls than the budget allows — nothing legal lives here. */
+   * more rolls than the budget allows (each forced substat consumes at least
+   * `max(1, lo/rollSize)` rolls, and every remaining substat slot at least
+   * its mandatory one) — nothing legal lives here. */
   noLegalArtifact({ lo }: Box): boolean {
     let forced = 0
-    let forcedRolls = 0
+    let floor = 0
     for (let d = 0; d < lo.length; d++)
       if (lo[d] > 0) {
         forced++
-        forcedRolls += lo[d] / this.rollSize(d)
+        floor += this.rollFloor(d, lo[d])
       }
-    return forced > this.maxSubstats || forcedRolls > this.totalRolls + 1e-9
+    return (
+      forced > this.maxSubstats ||
+      floor + this.junkRolls(forced) > this.totalRolls + 1e-9
+    )
   }
 
   /** Conditioned bound with x restricted to `fixed + box`, with each
    * dimension's top end clamped by the roll budget left after every other
-   * dimension's forced minimum — a per-axis relaxation of the budget simplex
-   * that stays a (sound) box. */
+   * dimension's forced minimum and every other substat slot's mandatory
+   * roll — a per-axis relaxation of the budget simplex that stays a (sound)
+   * box. */
   forBox(box: Box): SlotDiffBound {
     const lo = this.restLo.slice()
     const hi = this.restHi.slice()
-    let forcedRolls = 0
+    let forced = 0
+    let floorAll = 0
     for (let d = 0; d < this.dims.length; d++)
-      forcedRolls += box.lo[d] / this.rollSize(d)
+      if (box.lo[d] > 0) {
+        forced++
+        floorAll += this.rollFloor(d, box.lo[d])
+      }
     for (let d = 0; d < this.dims.length; d++) {
       const size = this.rollSize(d)
-      const budgetHi = Number.isFinite(size)
-        ? (this.totalRolls - (forcedRolls - box.lo[d] / size)) * size
-        : Infinity
+      let budgetHi = Infinity
+      if (Number.isFinite(size) && Number.isFinite(this.totalRolls)) {
+        const isForced = box.lo[d] > 0
+        const floorOther =
+          floorAll - (isForced ? this.rollFloor(d, box.lo[d]) : 0)
+        const forcedOther = forced - (isForced ? 1 : 0)
+        // d occupies one substat slot; each remaining slot, forced or not,
+        // consumes at least one roll
+        budgetHi =
+          (this.totalRolls - floorOther - this.junkRolls(forcedOther + 1)) *
+          size
+      }
       lo[this.dimIdx[d]] += box.lo[d]
       hi[this.dimIdx[d]] += Math.min(box.hi[d], Math.max(box.lo[d], budgetHi))
     }
@@ -477,7 +540,10 @@ class ProfileSpace {
 
   /** Make a point legal: keep the `maxSubstats` most-invested substats (in
    * rolls, or fraction of the root range when no roll size is given), drop
-   * the rest, and scale into the roll budget. */
+   * the rest, scale into the roll budget net of every other substat slot's
+   * mandatory roll, and round each budgeted substat to a whole number of
+   * rolls (witnesses must be attainable artifacts, not box geometry). Dims
+   * without a roll size stay continuous. */
   private legalize(point: number[]): ArtifactBuildData {
     const invested = point.map((c, d) =>
       Number.isFinite(this.rollSize(d))
@@ -489,12 +555,60 @@ class ProfileSpace {
       .filter((d) => point[d] > 0)
       .sort((a, b) => invested[b] - invested[a])
       .slice(0, this.maxSubstats)
+    // Proportional pre-scale into the kept dims' share of the budget. The
+    // mandatory-roll floors do not scale, so this is only a heuristic; the
+    // shed loop below enforces the budget exactly.
+    let budget = this.totalRolls - this.junkRolls(keep.length)
     let rolls = 0
-    for (const d of keep) rolls += point[d] / this.rollSize(d)
-    const scale = rolls > this.totalRolls ? this.totalRolls / rolls : 1
-    const values: DynStat = { ...this.profile.fixed }
     for (const d of keep)
-      values[this.dims[d]] = (values[this.dims[d]] ?? 0) + point[d] * scale
+      if (Number.isFinite(this.rollSize(d)))
+        rolls += this.rollFloor(d, point[d])
+    const scale = rolls > budget ? budget / rolls : 1
+
+    const quantized = keep.map((d) => {
+      const size = this.rollSize(d)
+      if (!Number.isFinite(size)) return point[d]
+      const maxRolls = Math.floor(this.root.hi[d] / size + 1e-9)
+      return Math.min(maxRolls, Math.round((point[d] * scale) / size)) * size
+    })
+    if (Number.isFinite(this.totalRolls)) {
+      // Dims rounded out became junk: their slots still eat a roll each.
+      let present = 0
+      let total = 0
+      keep.forEach((d, i) => {
+        if (quantized[i] <= 1e-12) return
+        present++
+        if (Number.isFinite(this.rollSize(d)))
+          total += quantized[i] / this.rollSize(d)
+      })
+      budget = this.totalRolls - this.junkRolls(present)
+      // Shed whole rolls from the most over-rounded dims (never below the
+      // mandatory one) until the budget fits. Terminates: with every kept
+      // dim at a single roll, `total = present <= budget` for any profile
+      // with `totalRolls >= maxSubstats`.
+      while (total > budget + 1e-9) {
+        let at = -1
+        let over = -Infinity
+        keep.forEach((d, i) => {
+          const size = this.rollSize(d)
+          if (!Number.isFinite(size) || quantized[i] < 2 * size - 1e-9) return
+          const o = quantized[i] - point[d] * scale
+          if (o > over) {
+            over = o
+            at = i
+          }
+        })
+        if (at < 0) break
+        quantized[at] -= this.rollSize(keep[at])
+        total -= 1
+      }
+    }
+
+    const values: DynStat = { ...this.profile.fixed }
+    keep.forEach((d, i) => {
+      if (quantized[i] > 1e-12)
+        values[this.dims[d]] = (values[this.dims[d]] ?? 0) + quantized[i]
+    })
     return { id: '!witness', values }
   }
 
