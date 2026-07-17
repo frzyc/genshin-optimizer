@@ -135,7 +135,7 @@ export class ComputeWorker {
       this.builds = this.builds.sort((a, b) => b.value - a.value).slice(0, topN)
       this.buildValues = this.builds.map((x) => x.value)
       this.buildPlots = this.plotData
-        ? this.builds.map((x) => x.plot ?? -Infinity)
+        ? this.builds.map((x) => x.plot ?? Number.NEGATIVE_INFINITY)
         : undefined
       this.threshold = Math.max(
         this.threshold,

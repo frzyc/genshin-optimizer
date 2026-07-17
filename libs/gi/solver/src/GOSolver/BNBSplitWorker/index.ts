@@ -52,7 +52,7 @@ export class BNBSplitWorker implements SplitWorker {
    * Pruning on the threshold alone would truncate the frontier's extrema.
    */
   plotNodeIdx: number | undefined
-  plotThreshold = -Infinity
+  plotThreshold = Number.NEGATIVE_INFINITY
 
   /**
    * Filters are not neccessarily in a valid state, i.e., "calculated".
@@ -75,7 +75,7 @@ export class BNBSplitWorker implements SplitWorker {
     if (plotBase) {
       this.plotNodeIdx = this.nodes.length
       this.nodes.push(plotBase)
-      this.min.push(-Infinity)
+      this.min.push(Number.NEGATIVE_INFINITY)
     }
     this.callback = callback
     this.topN = topN
@@ -184,7 +184,7 @@ export class BNBSplitWorker implements SplitWorker {
     const pruneMin =
       this.plotNodeIdx === undefined
         ? this.min
-        : [-Infinity, ...this.min.slice(1)]
+        : [Number.NEGATIVE_INFINITY, ...this.min.slice(1)]
     ;({ nodes, arts } = pruneAll(
       nodes,
       pruneMin,
