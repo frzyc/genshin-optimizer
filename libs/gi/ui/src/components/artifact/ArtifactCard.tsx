@@ -1,6 +1,7 @@
 // use client due to hydration difference between client rendering and server in translation
-import { useBoolState } from '@genshin-optimizer/common/react-util'
+
 import { useDataManagerEntries } from '@genshin-optimizer/common/database-ui'
+import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import {
   BootstrapTooltip,
