@@ -309,7 +309,10 @@ export default function TabUpopt() {
     function respectSexExclusion({
       slotKey,
       setKey,
-    }: { slotKey: ArtifactSlotKey; setKey: ArtifactSetKey }) {
+    }: {
+      slotKey: ArtifactSlotKey
+      setKey: ArtifactSetKey
+    }) {
       const newSK = { ...curEquipSetKeys }
       newSK[slotKey] = setKey
       const skc: Partial<Record<ArtifactSetKey, number>> = {}
