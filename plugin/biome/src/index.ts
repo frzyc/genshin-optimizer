@@ -6,7 +6,6 @@ import {
 import { dirname } from 'path'
 
 export type MyPluginOptions = {
-  fix: boolean
 }
 
 export const createNodesV2: CreateNodesV2<MyPluginOptions> = [
@@ -39,7 +38,7 @@ async function createNodesInternal(
           'lint': {
             // Nx target syntax to execute a command. More on {projectRoot} below
             command:
-              `yarn biome lint${options?.fix ? ' --fix' : ''} --changed --diagnostic-level=warn {projectRoot}`,
+              `yarn biome lint --diagnostic-level=warn {projectRoot}`,
             cache: true,
             inputs: [
               'default',
@@ -52,7 +51,7 @@ async function createNodesInternal(
           },
           'format': {
             // Nx target syntax to execute a command. More on {projectRoot} below
-            command: `yarn biome format${options?.fix ? ' --fix' : ''} --changed {projectRoot}`,
+            command: `yarn biome format {projectRoot}`,
             cache: true,
             inputs: [
               'default',

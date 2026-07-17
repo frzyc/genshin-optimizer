@@ -30,6 +30,16 @@
     "publish": {
       "dependsOn": ["build"]
     },
+    "lint": {
+      "options": {
+        "args": ["--fix"]
+      }
+    },
+    "format": {
+      "options": {
+        "args": ["--fix"]
+      }
+    },
     "@nx/js:tsc": {
       "cache": true,
       "dependsOn": ["^build"],
@@ -118,10 +128,7 @@
       }
     },
     {
-      "plugin": "@genshin-optimizer/biome",
-      "options": {
-        "fix": true
-      }
+      "plugin": "@genshin-optimizer/biome"
     }
   ],
   "nxCloudAccessToken_disabled": "MTMwNzFkNGItNDI5OC00MTAwLTliMzItMDYzYzhjNzRiMTVifHJlYWQtd3JpdGU=",
