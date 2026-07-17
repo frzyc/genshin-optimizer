@@ -16,18 +16,18 @@ describe('export and import test', () => {
     // Create a team [Raiden, null, bennett, null]
 
     const raidenId = database.teamChars.new('RaidenShogun', {
-      buildIds: [database.builds.new()],
-      buildTcIds: [database.buildTcs.new(initCharTC('EngulfingLightning'))],
       optConfigId: database.optConfigs.new({
         optimizationTarget: ['test'],
       }),
     })
-    expect(database.teamChars.get(raidenId)?.buildIds.length).toEqual(1)
-    expect(database.teamChars.get(raidenId)?.buildTcIds.length).toEqual(1)
-    const bennettId = database.teamChars.new('Bennett', {
-      buildIds: [database.builds.new()],
-      buildTcIds: [database.buildTcs.new(initCharTC('SapwoodBlade'))],
-    })
+    database.builds.new({ characterKey: 'RaidenShogun' })
+    database.buildTcs.new(initCharTC('RaidenShogun', 'EngulfingLightning'))
+    expect(database.builds.forCharacter('RaidenShogun').length).toEqual(1)
+    expect(database.buildTcs.forCharacter('RaidenShogun').length).toEqual(1)
+
+    const bennettId = database.teamChars.new('Bennett')
+    database.builds.new({ characterKey: 'Bennett' })
+    database.buildTcs.new(initCharTC('Bennett', 'SapwoodBlade'))
     const teamId = database.teams.new({
       loadoutData: [
         { teamCharId: raidenId } as LoadoutDatum,
@@ -81,8 +81,7 @@ describe('export and import test', () => {
       importTeam.loadoutData[0]?.teamCharId
     )
     expect(raidenTeamChar?.key).toEqual('RaidenShogun')
-    expect(raidenTeamChar?.buildIds.length).toEqual(0)
-    expect(raidenTeamChar?.buildTcIds.length).toEqual(1)
+    expect(database.buildTcs.forCharacter('RaidenShogun').length).toEqual(2)
     expect(
       database.optConfigs.get(raidenTeamChar?.optConfigId)?.optimizationTarget
     ).toEqual(['test'])
@@ -90,7 +89,45 @@ describe('export and import test', () => {
       importTeam.loadoutData[2]?.teamCharId
     )
     expect(bennettTeamChar?.key).toEqual('Bennett')
-    expect(bennettTeamChar?.buildIds.length).toEqual(0)
-    expect(bennettTeamChar?.buildTcIds.length).toEqual(1)
+    expect(database.buildTcs.forCharacter('Bennett').length).toEqual(2)
+  })
+
+  test('deleting loadout does not delete builds', () => {
+    const teamCharId = database.teamChars.new('HuTao')
+    database.builds.new({ characterKey: 'HuTao' })
+    database.buildTcs.new(initCharTC('HuTao', 'StaffOfHoma'))
+    expect(database.builds.forCharacter('HuTao').length).toEqual(1)
+    expect(database.buildTcs.forCharacter('HuTao').length).toEqual(1)
+
+    database.teamChars.remove(teamCharId)
+
+    expect(database.builds.forCharacter('HuTao').length).toEqual(1)
+    expect(database.buildTcs.forCharacter('HuTao').length).toEqual(1)
+  })
+
+  test('two loadouts for same character can reference same build', () => {
+    const loadoutA = database.teamChars.new('Xiangling')
+    const loadoutB = database.teamChars.new('Xiangling')
+    database.builds.new({ characterKey: 'Xiangling' })
+    const buildId = database.builds.keys[0]!
+
+    const teamId = database.teams.new({
+      loadoutData: [
+        {
+          teamCharId: loadoutA,
+          buildType: 'real',
+          buildId,
+        } as LoadoutDatum,
+        {
+          teamCharId: loadoutB,
+          buildType: 'real',
+          buildId,
+        } as LoadoutDatum,
+      ],
+    })
+
+    const team = database.teams.get(teamId)!
+    expect(team.loadoutData[0]?.buildId).toEqual(buildId)
+    expect(team.loadoutData[1]?.buildId).toEqual(buildId)
   })
 })

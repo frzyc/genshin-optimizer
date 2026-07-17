@@ -62,10 +62,12 @@ function BuildManagementContent({ onClose }: { onClose: () => void }) {
   const { t } = useTranslation('loadout')
   const database = useDatabase()
   const {
-    teamCharId,
     loadoutDatum,
-    teamChar: { key: characterKey, buildIds, buildTcIds },
+    teamChar: { key: characterKey },
   } = useContext(TeamCharacterContext)
+
+  const characterBuilds = database.builds.entriesForCharacter(characterKey)
+  const characterTcBuilds = database.buildTcs.entriesForCharacter(characterKey)
 
   const weaponTypeKey = getCharStat(characterKey).weaponType
   const onChangeBuild = useCallback(
@@ -94,7 +96,7 @@ function BuildManagementContent({ onClose }: { onClose: () => void }) {
           startIcon={<AddIcon />}
           color="info"
           size="small"
-          onClick={() => database.teamChars.newBuild(teamCharId)}
+          onClick={() => database.builds.new({ characterKey })}
         >
           {t('loadoutSettings.newBuildBtn')}
         </Button>
@@ -102,7 +104,7 @@ function BuildManagementContent({ onClose }: { onClose: () => void }) {
       <BuildInfoAlert />
       <Box>
         <Grid container columns={columns} spacing={2}>
-          {buildIds.map((id) => (
+          {characterBuilds.map(([id]) => (
             <Grid item xs={1} key={id}>
               <BuildReal
                 buildId={id}
@@ -124,7 +126,7 @@ function BuildManagementContent({ onClose }: { onClose: () => void }) {
           color="info"
           size="small"
           onClick={() =>
-            database.teamChars.newBuildTcFromBuild(teamCharId, weaponTypeKey)
+            database.buildTcs.newFromBuild(characterKey, weaponTypeKey)
           }
         >
           {t('loadoutSettings.newTcBuildBtn')}
@@ -133,7 +135,7 @@ function BuildManagementContent({ onClose }: { onClose: () => void }) {
       <TCBuildInfoAlert />
       <Box>
         <Grid container columns={columns} spacing={2}>
-          {buildTcIds.map((id) => (
+          {characterTcBuilds.map(([id]) => (
             <Grid item xs={1} key={id}>
               <BuildTc
                 buildTcId={id}

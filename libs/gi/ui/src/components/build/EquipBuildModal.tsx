@@ -81,7 +81,8 @@ function Content(props: Props) {
 
   const toEquip = () => {
     if (copyCurrent) {
-      database.teamChars.newBuild(teamCharId, {
+      database.builds.new({
+        characterKey,
         name:
           name !== '' ? name : t('equipBuildModal.newName', { currentName }),
         artifactIds: currentArtifactIds,

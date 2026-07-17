@@ -92,7 +92,6 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
   const { t } = useTranslation('build')
   const {
     loadoutDatum: { buildType, buildId },
-    teamChar: { buildIds = [] },
   } = useContext(TeamCharacterContext)
   const {
     character: { key: characterKey, equippedArtifacts, equippedWeapon },
@@ -101,13 +100,18 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
   const { data, compareData } = useContext(DataContext)
 
   const [dbDirty, setDbDirty] = useForceUpdate()
+  const characterBuildIds = useMemo(
+    () => database.builds.entriesForCharacter(characterKey).map(([id]) => id),
+    [database.builds, characterKey, dbDirty]
+  )
+
   // update when a build is changed
   useEffect(() => {
-    const unfollowBuilds = buildIds.map((buildId) =>
+    const unfollowBuilds = characterBuildIds.map((buildId) =>
       database.builds.follow(buildId, setDbDirty)
     )
     return () => unfollowBuilds.forEach((unFollow) => unFollow())
-  }, [database, buildIds, setDbDirty])
+  }, [database, characterBuildIds, setDbDirty])
 
   // update when data is recalc'd
   const weaponNewOld = useMemo(
@@ -255,7 +259,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
   const sameAsBuildIds = useMemo(
     () =>
       dbDirty &&
-      buildIds.filter((buildId) => {
+      characterBuildIds.filter((buildId) => {
         const build = database.builds.get(buildId)
         if (!build) return false
         const { artifactIds: buildArtIds, weaponId: buildWeaponId } = build
@@ -265,7 +269,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
           ) && weaponId === buildWeaponId
         )
       }),
-    [dbDirty, database, buildIds, artifactIds, weaponId]
+    [dbDirty, database, characterBuildIds, artifactIds, weaponId]
   )
 
   const isActiveBuild = buildType === 'real' && sameAsBuildIds.includes(buildId)

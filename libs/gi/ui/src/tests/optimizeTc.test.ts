@@ -16,6 +16,7 @@ describe('A general optimizeTC usecase', () => {
     const buildTcId = database.buildTcs.new({
       name: 'test',
       description: 'test',
+      characterKey: 'HuTao',
       artifact: {
         slots: {
           flower: { level: 20, rarity: 5, statKey: 'hp' },

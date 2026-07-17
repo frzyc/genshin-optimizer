@@ -1,3 +1,4 @@
+export * from './useAddTeamForLoadout'
 export * from './useCharData'
 export * from './useCharSelectionCallback'
 export * from './useGlobalError'

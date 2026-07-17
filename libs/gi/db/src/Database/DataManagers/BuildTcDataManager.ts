@@ -14,14 +14,17 @@ import type {
   ArtifactSetKey,
   ArtifactSlotKey,
   AscensionKey,
+  CharacterKey,
   RefinementKey,
   WeaponKey,
+  WeaponTypeKey,
 } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactRarityKeys,
   allArtifactSetKeys,
   allArtifactSlotKeys,
   allAscensionKeys,
+  allCharacterKeys,
   allMainStatKeys,
   allRefinementKeys,
   allSubstatKeys,
@@ -42,7 +45,10 @@ import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
 import type { IGO, ImportResult } from '../exim'
 import type { ICachedArtifact } from './ArtifactDataManager'
-import type { ICachedWeapon } from './WeaponDataManager'
+import {
+  defaultInitialWeaponKey,
+  type ICachedWeapon,
+} from './WeaponDataManager'
 
 const buildTcArtifactSlotSchema = z.object({
   level: z.number().int().min(0).max(20).catch(20),
@@ -164,6 +170,7 @@ const buildTcOptimizationSchema = z.object({
 const buildTcSchema = z.object({
   name: zodString('Build(TC) Name'),
   description: zodString(),
+  characterKey: zodEnum(allCharacterKeys),
   character: buildTcCharacterSchema,
   weapon: buildTcWeaponSchemaWithTransform,
   artifact: zodObject(buildTcArtifactSchema.shape).catch({
@@ -199,7 +206,28 @@ export class BuildTcDataManager extends DataManager<
   }
   override validate(obj: unknown): BuildTc | undefined {
     const result = buildTcSchema.safeParse(obj)
-    return result.success ? result.data : undefined
+    if (!result.success) return undefined
+    return result.data
+  }
+
+  forCharacter(characterKey: CharacterKey): BuildTc[] {
+    return this.values.filter((b) => b.characterKey === characterKey)
+  }
+  entriesForCharacter(characterKey: CharacterKey): [string, BuildTc][] {
+    return this.entries.filter(([, b]) => b.characterKey === characterKey)
+  }
+  newFromBuild(
+    characterKey: CharacterKey,
+    weaponTypeKey: WeaponTypeKey,
+    weapon?: ICachedWeapon,
+    arts: Array<ICachedArtifact | undefined> = []
+  ): string | undefined {
+    const buildTc = initCharTC(
+      characterKey,
+      weapon?.key ?? defaultInitialWeaponKey(weaponTypeKey)
+    )
+    toBuildTc(buildTc, weapon, arts)
+    return this.new(buildTc)
   }
   new(data: Partial<BuildTc>) {
     const id = this.generateKey()
@@ -213,11 +241,6 @@ export class BuildTcDataManager extends DataManager<
   }
   override remove(key: string, notify?: boolean): BuildTc | undefined {
     const buildTc = super.remove(key, notify)
-    this.database.teamChars.entries.forEach(
-      ([teamCharId, teamChar]) =>
-        teamChar.buildTcIds.includes(key) &&
-        this.database.teamChars.set(teamCharId, {})
-    )
     this.database.teams.entries.forEach(
       ([teamId, team]) =>
         team.loadoutData?.some(
@@ -256,10 +279,14 @@ function initBuildTcOptimizationMaxSubstats(): BuildTc['optimization']['maxSubst
   return defaultMaxSubstats()
 }
 
-export function initCharTC(weaponKey: WeaponKey): BuildTc {
+export function initCharTC(
+  characterKey: CharacterKey,
+  weaponKey: WeaponKey
+): BuildTc {
   return {
     name: 'Build(TC) Name',
     description: '',
+    characterKey,
     weapon: {
       key: weaponKey,
       level: defaultWeaponLevel,

@@ -19,7 +19,8 @@ export default function BuildDropdown({
   const database = useDatabase()
   const { teamCharId, buildType, buildId, buildTcId } = loadoutDatum
   const teamChar = database.teamChars.get(teamCharId)!
-  const { buildIds, buildTcIds } = teamChar
+  const characterBuilds = database.builds.entriesForCharacter(teamChar.key)
+  const characterTcBuilds = database.buildTcs.entriesForCharacter(teamChar.key)
   const onChangeLoadoutDatum = (l: Partial<LoadoutDatum>) =>
     database.teams.setLoadoutDatum(teamId, teamCharId, l)
 
@@ -43,8 +44,7 @@ export default function BuildDropdown({
       >
         {t('buildDropdown.equipped')}
       </MenuItem>
-      {buildIds.map((bId) => {
-        const { name } = database.builds.get(bId)!
+      {characterBuilds.map(([bId, { name }]) => {
         return (
           <MenuItem
             key={bId}
@@ -59,8 +59,7 @@ export default function BuildDropdown({
         )
       })}
 
-      {buildTcIds.map((btcId) => {
-        const { name } = database.buildTcs.get(btcId)!
+      {characterTcBuilds.map(([btcId, { name }]) => {
         return (
           <MenuItem
             key={btcId}

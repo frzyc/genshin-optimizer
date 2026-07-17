@@ -23,8 +23,10 @@ export default function CompareBtn({
     teamId,
     teamCharId,
     loadoutDatum,
-    teamChar: { buildIds, buildTcIds },
+    teamChar: { key: characterKey },
   } = useContext(TeamCharacterContext)
+  const characterBuilds = database.builds.entriesForCharacter(characterKey)
+  const characterTcBuilds = database.buildTcs.entriesForCharacter(characterKey)
   const {
     buildType,
     buildId,
@@ -79,7 +81,9 @@ export default function CompareBtn({
             )}
           </>
         }
-        disabled={!compare || (!buildIds.length && !buildTcIds.length)}
+        disabled={
+          !compare || (!characterBuilds.length && !characterTcBuilds.length)
+        }
       >
         <MenuItem
           onClick={() =>
@@ -95,9 +99,9 @@ export default function CompareBtn({
             </SqBadge>
           )}
         </MenuItem>
-        {buildIds.map((bId) => (
+        {characterBuilds.map(([bId, { name, weaponId }]) => (
           <MenuItem
-            disabled={!database.builds.get(bId)?.weaponId}
+            disabled={!weaponId}
             key={bId}
             onClick={() =>
               database.teams.setLoadoutDatum(teamId, teamCharId, {
@@ -106,7 +110,7 @@ export default function CompareBtn({
               })
             }
           >
-            {database.builds.get(bId)!.name}{' '}
+            {name}{' '}
             {buildType === 'real' && bId === buildId && (
               <SqBadge color="info" sx={{ ml: 1 }}>
                 {t('compareBtn.crrBadge')}
@@ -114,7 +118,7 @@ export default function CompareBtn({
             )}
           </MenuItem>
         ))}
-        {buildTcIds.map((bTcId) => (
+        {characterTcBuilds.map(([bTcId, { name }]) => (
           <MenuItem
             key={bTcId}
             onClick={() =>
@@ -124,7 +128,7 @@ export default function CompareBtn({
               })
             }
           >
-            {database.buildTcs.get(bTcId)?.name ?? ''}{' '}
+            {name ?? ''}{' '}
             <SqBadge color="info" sx={{ ml: 1 }}>
               {t('compareBtn.tcBadge')}
             </SqBadge>

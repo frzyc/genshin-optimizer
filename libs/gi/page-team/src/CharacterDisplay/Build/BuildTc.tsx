@@ -68,7 +68,7 @@ export default function BuildTc({
     database.buildTcs.remove(buildTcId)
   }
   const onDupe = () =>
-    database.teamChars.newBuildTc(teamCharId, {
+    database.buildTcs.new({
       ...structuredClone(buildTc),
       name: t('buildTcCard.copy.nameTc', { name }),
     })

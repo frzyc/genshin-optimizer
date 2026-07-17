@@ -90,8 +90,8 @@ export default function BuildReal({
   }
   const weaponTypeKey = getCharStat(characterKey).weaponType
   const copyToTc = () => {
-    const newBuildTcId = database.teamChars.newBuildTcFromBuild(
-      teamCharId,
+    const newBuildTcId = database.buildTcs.newFromBuild(
+      characterKey,
       weaponTypeKey,
       database.weapons.get(weaponId),
       Object.values(artifactIds).map((id) => database.arts.get(id))
@@ -104,7 +104,8 @@ export default function BuildReal({
     })
   }
   const onDupe = () =>
-    database.teamChars.newBuild(teamCharId, {
+    database.builds.new({
+      characterKey,
       name: t('buildRealCard.copy.nameReal', { name }),
       artifactIds: artifactIds,
       weaponId: weaponId,
