@@ -6,9 +6,9 @@ import { own } from '@genshin-optimizer/zzz/formula'
 import { useMemo } from 'react'
 import { groupFormulas } from '../bundledFormulaFields'
 import {
-  type TalentSheetElementKey,
   groupFieldsByCategory,
   orderedFieldCategories,
+  type TalentSheetElementKey,
 } from '../char/fieldCategory'
 import {
   buildListingReadMap,

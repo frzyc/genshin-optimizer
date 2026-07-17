@@ -9,20 +9,20 @@ import { PhaseWrapper } from '../components'
 const key: WengineKey = '<%= sheet %>'
 const [chg, _ch] = trans('wengine', key)
 // TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// biome-ignore lint/suspicious/noTsIgnore: temp
 //@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// biome-ignore lint/correctness/noUnusedVariables: temp
 const dm = mappedStats.wengine[key]
 const icon = wengineAsset(key, 'icon')
 // TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// biome-ignore lint/suspicious/noTsIgnore: temp
 //@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// biome-ignore lint/correctness/noUnusedVariables: temp
 const cond = <%= sheet %>.conditionals
 // TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// biome-ignore lint/suspicious/noTsIgnore: temp
 //@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// biome-ignore lint/correctness/noUnusedVariables: temp
 const buff = <%= sheet %>.buffs
 
 const sheet: UISheetElement = {

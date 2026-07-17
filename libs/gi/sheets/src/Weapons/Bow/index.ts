@@ -48,6 +48,7 @@ import TheStringless from './TheStringless'
 import TheViridescentHunt from './TheViridescentHunt'
 import ThunderingPulse from './ThunderingPulse'
 import WindblumeOde from './WindblumeOde'
+
 const bow: Record<WeaponBowKey, WeaponSheet> = {
   AlleyHunter,
   AmosBow,

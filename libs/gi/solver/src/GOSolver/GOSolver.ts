@@ -1,6 +1,6 @@
 import { optimize } from '@genshin-optimizer/gi/wr'
-import { pruneAll, pruneExclusion } from '../common'
-import { WorkerCoordinator } from '../coordinator'
+import { pruneAll, pruneExclusion } from '../common.js'
+import { WorkerCoordinator } from '../coordinator.js'
 import type {
   Count,
   FinalizeResult,
@@ -9,7 +9,7 @@ import type {
   Setup,
   WorkerCommand,
   WorkerResult,
-} from '../type'
+} from '../type.js'
 
 export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
   private maxIterateSize = 32_000_000
@@ -27,7 +27,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
   private buildValues: { w: Worker; val: number; plot?: number }[]
   private finalizedResults: FinalizeResult[] = []
   private plotting: boolean
-  private plotThreshold = -Infinity
+  private plotThreshold = Number.NEGATIVE_INFINITY
 
   constructor(
     problem: OptProblemInput,
@@ -35,7 +35,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     numWorker: number
   ) {
     const workers = Array(numWorker)
-      .fill(NaN)
+      .fill(Number.NaN)
       .map(
         (_) =>
           new Worker(new URL('./BackgroundWorker.ts', import.meta.url), {
@@ -63,10 +63,13 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     this.exclusion = exclusion
     this.topN = topN
     this.plotting = !!problem.plotBase
-    this.status.total = NaN
+    this.status.total = Number.NaN
     this.status.testedPerSecond = 0
     this.status.skippedPerSecond = 0
-    this.buildValues = Array(topN).fill({ w: undefined as any, val: -Infinity })
+    this.buildValues = Array(topN).fill({
+      w: undefined as any,
+      val: Number.NEGATIVE_INFINITY,
+    })
 
     this.notifiedBroadcast(this.preprocess(problem))
   }
@@ -93,13 +96,16 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     exclusion,
     constraints,
   }: OptProblemInput): Setup {
-    constraints = constraints.filter((x) => x.min > -Infinity)
+    constraints = constraints.filter((x) => x.min > Number.NEGATIVE_INFINITY)
 
     let nodes = [...constraints.map((x) => x.value), optimizationTarget]
-    const minimums = [...constraints.map((x) => x.min), -Infinity]
+    const minimums = [
+      ...constraints.map((x) => x.min),
+      Number.NEGATIVE_INFINITY,
+    ]
     if (plotBase) {
       nodes.push(plotBase)
-      minimums.push(-Infinity)
+      minimums.push(Number.NEGATIVE_INFINITY)
     }
 
     nodes = pruneExclusion(nodes, exclusion)
@@ -146,7 +152,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
         const testedDifference = this.status.tested - lastTested
         const skippedDifference = this.status.skipped - lastSkipped
 
-        if (elapsedTime != 0) {
+        if (elapsedTime !== 0) {
           this.status.testedPerSecond = testedDifference / elapsedTime
           this.status.skippedPerSecond = skippedDifference / elapsedTime
         }
@@ -172,7 +178,8 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
 
     if (r.buildValues) {
       const { topN } = this,
-        oldThreshold = this.buildValues[topN - 1].val ?? -Infinity
+        oldThreshold =
+          this.buildValues[topN - 1].val ?? Number.NEGATIVE_INFINITY
 
       this.buildValues = this.buildValues.filter(({ w }) => w !== worker)
       this.buildValues.push(
@@ -184,7 +191,8 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
       )
       this.buildValues.sort((a, b) => b.val - a.val).splice(topN)
 
-      const threshold = this.buildValues[topN - 1].val ?? -Infinity
+      const threshold =
+        this.buildValues[topN - 1].val ?? Number.NEGATIVE_INFINITY
       let changed = oldThreshold !== threshold
       let plotThreshold: number | undefined
       if (this.plotting) {
@@ -192,8 +200,8 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
         // (plot, value >= threshold); regions may only be threshold-pruned
         // when their plotBase upper bound also falls below this.
         plotThreshold = this.buildValues.reduce(
-          (a, { plot }) => Math.max(a, plot ?? -Infinity),
-          -Infinity
+          (a, { plot }) => Math.max(a, plot ?? Number.NEGATIVE_INFINITY),
+          Number.NEGATIVE_INFINITY
         )
         if (plotThreshold !== this.plotThreshold) {
           this.plotThreshold = plotThreshold

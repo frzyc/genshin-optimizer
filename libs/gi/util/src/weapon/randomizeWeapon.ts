@@ -4,8 +4,8 @@ import {
   getRandomIntInclusive,
 } from '@genshin-optimizer/common/util'
 import {
-  type RefinementKey,
   allWeaponKeys,
+  type RefinementKey,
   validateWeaponLevelAsc,
 } from '@genshin-optimizer/gi/consts'
 import type { IWeapon } from '@genshin-optimizer/gi/schema'

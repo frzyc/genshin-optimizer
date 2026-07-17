@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { DBStorage } from '@genshin-optimizer/common/database'
 import { notEmpty } from '@genshin-optimizer/common/util'
 import type {
@@ -13,8 +12,12 @@ import {
   travelerElements,
 } from '@genshin-optimizer/gi/consts'
 import type { ICharacter, IGOOD } from '@genshin-optimizer/gi/good'
-import type { CustomMultiTarget } from './DataManagers'
-import type { LoadoutDatum, Team, TeamCharacter } from './DataManagers'
+import type {
+  CustomMultiTarget,
+  LoadoutDatum,
+  Team,
+  TeamCharacter,
+} from './DataManagers'
 import type { IGO } from './exim'
 
 // MIGRATION STEP
@@ -209,7 +212,8 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
         teamCharIds: Array<string | undefined>
       } = {
         name: `${characterKey} Team`,
-        description: `Generated team due to database migration for GO version 10`,
+        description:
+          'Generated team due to database migration for GO version 10',
         enemyOverride,
         teamCharIds,
         conditional: { resonance: {}, reaction: {} },
@@ -398,9 +402,9 @@ export function migrate(storage: DBStorage) {
   // 10.0.0 - 10.1.0
   migrateVersion(24, () => {
     const keys = storage.keys
-    let teamInd = keys.filter((k) => k.startsWith(`team_`)).length
-    let teamCharInd = keys.filter((k) => k.startsWith(`teamchar_`)).length
-    let optConfigInd = keys.filter((k) => k.startsWith(`optConfig_`)).length
+    let teamInd = keys.filter((k) => k.startsWith('team_')).length
+    let teamCharInd = keys.filter((k) => k.startsWith('teamchar_')).length
+    let optConfigInd = keys.filter((k) => k.startsWith('optConfig_')).length
     for (const key of keys) {
       // convert character to a Team
       if (key.startsWith('char_')) {
@@ -455,7 +459,8 @@ export function migrate(storage: DBStorage) {
           teamCharIds: Array<string | undefined>
         } = {
           name: `${characterKey} Team`,
-          description: `Generated team due to database migration for GO version 10`,
+          description:
+            'Generated team due to database migration for GO version 10',
           enemyOverride,
           teamCharIds,
           conditional: { resonance: {}, reaction: {} },

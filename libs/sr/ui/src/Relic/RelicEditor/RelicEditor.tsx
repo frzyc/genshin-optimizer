@@ -54,8 +54,8 @@ import { RelicCard } from '../RelicCard'
 import { RelicMainStatDropdown } from '../RelicMainStatDropdown'
 import { RelicRarityDropdown } from '../RelicRarityDropdown'
 import { RelicSetAutocomplete } from '../RelicSetAutocomplete'
-import SubstatInput from './SubstatInput'
 import { relicReducer } from './reducer'
+import SubstatInput from './SubstatInput'
 
 // TODO: temporary until relic sheet is implemented
 interface IRelicSheet {
@@ -273,7 +273,7 @@ export function RelicEditor({
                     value={level}
                     disabled={!sheet}
                     onChange={(e) => {
-                      const value = parseInt(e.target.value) || 0
+                      const value = Number.parseInt(e.target.value) || 0
                       update({ level: value })
                     }}
                   />

@@ -1,4 +1,5 @@
 import type { SvgIconProps } from '@mui/material'
+
 export * from './icons/AnvilIcon'
 export * from './icons/DiscordIcon'
 export * from './icons/FriendshipIcon'

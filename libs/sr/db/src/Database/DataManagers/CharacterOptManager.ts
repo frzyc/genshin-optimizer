@@ -5,8 +5,8 @@ import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import type { Dst, Sheet, Src, Tag } from '@genshin-optimizer/sr/formula'
 import { getConditional, isMember } from '@genshin-optimizer/sr/formula'
 import { z } from 'zod'
-import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
+import { DataManager } from '../DataManager'
 import { validateTag } from '../tagUtil'
 
 const tagSchema = z.record(z.string(), z.unknown()) as z.ZodType<Tag>

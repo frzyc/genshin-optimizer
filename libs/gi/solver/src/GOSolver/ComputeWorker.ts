@@ -6,16 +6,16 @@ import type {
   PlotData,
   RequestFilter,
   SolverBuild,
-} from '../common'
-import { countBuilds, filterArts, mergePlot, pruneAll } from '../common'
-import type { Interim, Setup } from '../type'
+} from '../common.js'
+import { countBuilds, filterArts, mergePlot, pruneAll } from '../common.js'
+import type { Interim, Setup } from '../type.js'
 
 export class ComputeWorker {
   builds: SolverBuild[] = []
   buildValues: number[] | undefined = undefined
   buildPlots: number[] | undefined = undefined
   plotData: PlotData | undefined
-  threshold = -Infinity
+  threshold = Number.NEGATIVE_INFINITY
   topN: number
   min: number[]
 
@@ -139,7 +139,7 @@ export class ComputeWorker {
         : undefined
       this.threshold = Math.max(
         this.threshold,
-        this.buildValues[topN - 1] ?? -Infinity
+        this.buildValues[topN - 1] ?? Number.NEGATIVE_INFINITY
       )
     }
   }

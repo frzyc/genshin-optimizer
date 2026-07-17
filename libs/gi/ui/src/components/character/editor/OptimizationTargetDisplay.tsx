@@ -32,7 +32,7 @@ export function OptimizationTargetDisplay({
     icon: infoIcon,
     // Since mtargets are not passed in the character UIData, retrieve the name manually.
     name = optimizationTarget[0] === 'custom'
-      ? customMultiTargets[parseInt(optimizationTarget[1] ?? '')]?.name
+      ? customMultiTargets[Number.parseInt(optimizationTarget[1] ?? '')]?.name
       : undefined,
   } = (node && resolveInfo(node.info)) ?? {}
 

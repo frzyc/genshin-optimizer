@@ -2,8 +2,8 @@ import type { WeaponPoleArmKey } from '@genshin-optimizer/gi/consts'
 import type { WeaponSheet } from '../WeaponSheet'
 import BalladOfTheFjords from './BalladOfTheFjords'
 import BeginnersProtector from './BeginnersProtector'
-import BlackTassel from './BlackTassel'
 import BlackcliffPole from './BlackcliffPole'
+import BlackTassel from './BlackTassel'
 import BloodsoakedRuins from './BloodsoakedRuins'
 import CalamityQueller from './CalamityQueller'
 import CrescentPike from './CrescentPike'
@@ -41,6 +41,7 @@ import TheCatch from './TheCatch'
 import VortexVanquisher from './VortexVanquisher'
 import WavebreakersFin from './WavebreakersFin'
 import WhiteTassel from './WhiteTassel'
+
 const polearm: Record<WeaponPoleArmKey, WeaponSheet> = {
   BalladOfTheFjords,
   BeginnersProtector,

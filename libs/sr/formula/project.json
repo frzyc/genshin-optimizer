@@ -3,6 +3,7 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/sr/formula/src",
   "projectType": "library",
+  "tags": [],
   "targets": {
     "gen-file": {
       "executor": "@genshin-optimizer/sr/formula:gen-desc",
@@ -11,12 +12,11 @@
       }
     },
     "test": {
-      "executor": "@nx/vite:test",
+      "executor": "@nx/vitest:test",
       "outputs": ["{options.reportsDirectory}"],
       "options": {
-        "reportsDirectory": "../../../coverage/libs/test"
+        "reportsDirectory": "{projectRoot}/../../../coverage/libs/test"
       }
     }
-  },
-  "tags": []
+  }
 }

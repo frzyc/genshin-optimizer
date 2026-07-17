@@ -77,7 +77,7 @@ export function DiscInventory({
         numShowing={totalDiscsNum}
         total={totalDiscsNum}
         discIds={discIds}
-      ></DiscFilter>
+      />
       <CardThemed bgt="dark">
         <CardContent>
           <Box
