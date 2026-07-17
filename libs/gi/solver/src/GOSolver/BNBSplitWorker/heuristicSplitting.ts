@@ -6,8 +6,8 @@ import {
   type ArtifactsBySlot,
   computeFullArtRange,
   countBuilds,
-} from '../../common'
-import type { Linear } from './linearUB'
+} from '../../common.js'
+import type { Linear } from './linearUB.js'
 
 /**
  * Heuristically picks splitting key based on minimizing the approximation error.

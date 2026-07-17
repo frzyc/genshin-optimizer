@@ -6,9 +6,9 @@ import type {
   PlotData,
   RequestFilter,
   SolverBuild,
-} from '../common'
-import { countBuilds, filterArts, mergePlot, pruneAll } from '../common'
-import type { Interim, Setup } from '../type'
+} from '../common.js'
+import { countBuilds, filterArts, mergePlot, pruneAll } from '../common.js'
+import type { Interim, Setup } from '../type.js'
 
 export class ComputeWorker {
   builds: SolverBuild[] = []
