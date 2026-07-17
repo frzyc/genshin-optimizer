@@ -50,7 +50,12 @@ export function accumulateEvaluations(
       lower: Math.min(acc.lower, evaluation.lower),
       upper: Math.max(acc.upper, evaluation.upper),
     }),
-    { p: 0, upAvgAcc: 0, lower: Infinity, upper: -Infinity }
+    {
+      p: 0,
+      upAvgAcc: 0,
+      lower: Number.POSITIVE_INFINITY,
+      upper: Number.NEGATIVE_INFINITY,
+    }
   )
   return { p, upAvg: p < 1e-6 ? 0 : upAvgAcc / p, lower, upper }
 }
