@@ -6,6 +6,8 @@ import {
   allSubstatKeys,
   type MainStatKey,
   type SubstatKey,
+  allArtifactSlotKeys,
+  allSubstatKeys,
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import type { ArtifactBuildData } from '@genshin-optimizer/gi/solver'
