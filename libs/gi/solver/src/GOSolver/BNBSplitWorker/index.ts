@@ -14,6 +14,7 @@ import type {
 import { countBuilds, filterArts, pruneAll } from '../../common.js'
 import type { Interim, Setup } from '../../type.js'
 import type { SplitWorker } from '../BackgroundWorker.js'
+import { pruneDominance } from './diffBound.js'
 import { pickSplitKey, splitAtValue, splitOnSet } from './heuristicSplitting.js'
 import type { Linear } from './linearUB.js'
 import { linearUB } from './linearUB.js'

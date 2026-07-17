@@ -160,7 +160,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
       profiles: Object.fromEntries(
         Object.entries(partialBuilds).map(([slot, profiles]) => [
           slot,
-          profiles?.length
+          profiles.length
             ? profiles
             : [
                 // Fallback for an empty request: a current-inventory profile,
