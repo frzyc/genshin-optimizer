@@ -1,6 +1,11 @@
 import { assertUnreachable, cartesian } from '@genshin-optimizer/common/util'
 import type { OptNode } from '@genshin-optimizer/gi/wr'
-import type { ArtifactsBySlot, DynMinMax, DynStat, MinMax } from '../../common.js'
+import type {
+  ArtifactsBySlot,
+  DynMinMax,
+  DynStat,
+  MinMax,
+} from '../../common.js'
 import { computeFullArtRange } from '../../common.js'
 import { polyUB } from './polyUB.js'
 import { solveLP } from './solveLP.js'

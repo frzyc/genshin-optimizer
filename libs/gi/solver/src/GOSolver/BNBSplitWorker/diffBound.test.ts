@@ -375,19 +375,18 @@ describe('pruneDominance', () => {
     return vals.sort((a, b) => b - a).slice(0, k)
   }
 
-  test.each([1, 2, 3])(
-    'preserves top-%i feasible builds under constraints',
-    (k) => {
-      const target = prod(atk, dmg_, crcd, em)
-      const nodes = [target, er]
-      const mins = [-Infinity, 1.35]
-      const before = bruteTopK(nodes, mins, exampleArts, k)
-      const { arts } = pruneDominance(nodes, exampleArts, k)
-      const after = bruteTopK(nodes, mins, arts, k)
-      expect(after.length).toBe(before.length)
-      after.forEach((v, i) => expect(v).toBeCloseTo(before[i], 9))
-    }
-  )
+  test.each([
+    1, 2, 3,
+  ])('preserves top-%i feasible builds under constraints', (k) => {
+    const target = prod(atk, dmg_, crcd, em)
+    const nodes = [target, er]
+    const mins = [-Infinity, 1.35]
+    const before = bruteTopK(nodes, mins, exampleArts, k)
+    const { arts } = pruneDominance(nodes, exampleArts, k)
+    const after = bruteTopK(nodes, mins, arts, k)
+    expect(after.length).toBe(before.length)
+    after.forEach((v, i) => expect(v).toBeCloseTo(before[i], 9))
+  })
 
   test.each([1, 2])('preserves top-%i without constraints', (k) => {
     const target = prod(hp, dmg_, crcd, em)

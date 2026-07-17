@@ -196,142 +196,143 @@ function makeRng(seed: number) {
   }
 }
 
-describe.each([emblemBurst(), goldenTroupeSkill(), crimsonVape()])(
-  'pruneDominance on real data: $name',
-  ({ nodes: rawNodes, mins, base }) => {
-    const numTop = 1
-    const raw = loadArts(base)
+describe.each([
+  emblemBurst(),
+  goldenTroupeSkill(),
+  crimsonVape(),
+])('pruneDominance on real data: $name', ({ nodes: rawNodes, mins, base }) => {
+  const numTop = 1
+  const raw = loadArts(base)
 
-    // Baseline: what the solver does today at the root of the search
-    // (calculateFilter: pruneAll incl. coordinate-wise pruneOrder, then fold)
-    const pruned = pruneAll(
-      rawNodes,
-      mins,
-      raw,
-      numTop,
-      {},
-      {
-        pruneNodeRange: true,
-      }
+  // Baseline: what the solver does today at the root of the search
+  // (calculateFilter: pruneAll incl. coordinate-wise pruneOrder, then fold)
+  const pruned = pruneAll(
+    rawNodes,
+    mins,
+    raw,
+    numTop,
+    {},
+    {
+      pruneNodeRange: true,
+    }
+  )
+  const nodes = optimize(pruned.nodes, {}, (_) => false)
+  const baseline = pruned.arts
+
+  const t0 = performance.now()
+  const { arts: dominated, dominators } = pruneDominance(
+    nodes,
+    baseline,
+    numTop
+  )
+  const elapsed = performance.now() - t0
+
+  test('shrinks the per-slot lists beyond pruneAll/pruneOrder', () => {
+    console.log(
+      `[${rawNodes.length} node(s)] raw:`,
+      slotCounts(raw),
+      '\n  pruneAll (current):',
+      slotCounts(baseline),
+      '\n  +pruneDominance:   ',
+      slotCounts(dominated),
+      `\n  (${totalCount(raw)} -> ${totalCount(baseline)} -> ${totalCount(
+        dominated
+      )} artifacts, dominance pass took ${elapsed.toFixed(0)}ms)`
     )
-    const nodes = optimize(pruned.nodes, {}, (_) => false)
-    const baseline = pruned.arts
+    allArtifactSlotKeys.forEach((slot) =>
+      expect(dominated.values[slot].length).toBeLessThanOrEqual(
+        baseline.values[slot].length
+      )
+    )
+    expect(totalCount(dominated)).toBeLessThan(totalCount(baseline))
+  })
 
+  test('candidate cap keeps nearly all pruning power', () => {
+    const t1 = performance.now()
+    const capped = pruneDominance(nodes, baseline, numTop, 32)
+    const cappedElapsed = performance.now() - t1
+    console.log(
+      `  cap=32: ${totalCount(capped.arts)} kept (uncapped ${totalCount(
+        dominated
+      )}), ${cappedElapsed.toFixed(0)}ms (uncapped ${elapsed.toFixed(0)}ms)`
+    )
+    // Fewer candidates tested => fewer (or equal) removals, never more
+    expect(totalCount(capped.arts)).toBeGreaterThanOrEqual(
+      totalCount(dominated)
+    )
+    // ... but the best-first ordering should retain most removals
+    const removedUncapped = totalCount(baseline) - totalCount(dominated)
+    const removedCapped = totalCount(baseline) - totalCount(capped.arts)
+    expect(removedCapped).toBeGreaterThanOrEqual(0.8 * removedUncapped)
+  })
+
+  test('iterating to a fixpoint tightens the box and cuts deeper', () => {
+    // Removing artifacts shrinks the stat ranges, which tightens both
+    // pruneAll and the interval factors in the telescoped mul bound, which
+    // unlocks further removals. This mimics interleaving the passes inside
+    // the pruneAll micropass loop.
+    let cur = { nodes, arts: dominated }
     const t0 = performance.now()
-    const { arts: dominated, dominators } = pruneDominance(
-      nodes,
-      baseline,
-      numTop
-    )
+    for (let round = 0; round < 10; round++) {
+      const before = totalCount(cur.arts)
+      const p = pruneAll(
+        cur.nodes,
+        mins,
+        cur.arts,
+        numTop,
+        {},
+        {
+          pruneArtRange: true,
+          pruneOrder: true,
+          pruneNodeRange: true,
+        }
+      )
+      const newNodes = optimize(p.nodes, {}, (_) => false)
+      cur = {
+        nodes: newNodes,
+        arts: pruneDominance(newNodes, p.arts, numTop).arts,
+      }
+      if (totalCount(cur.arts) === before) break
+    }
     const elapsed = performance.now() - t0
+    console.log(
+      '  fixpoint:          ',
+      slotCounts(cur.arts),
+      `\n  (${totalCount(dominated)} -> ${totalCount(
+        cur.arts
+      )} artifacts, +${elapsed.toFixed(0)}ms)`
+    )
+    expect(totalCount(cur.arts)).toBeLessThanOrEqual(totalCount(dominated))
+  })
 
-    test('shrinks the per-slot lists beyond pruneAll/pruneOrder', () => {
-      console.log(
-        `[${rawNodes.length} node(s)] raw:`,
-        slotCounts(raw),
-        '\n  pruneAll (current):',
-        slotCounts(baseline),
-        '\n  +pruneDominance:   ',
-        slotCounts(dominated),
-        `\n  (${totalCount(raw)} -> ${totalCount(baseline)} -> ${totalCount(
-          dominated
-        )} artifacts, dominance pass took ${elapsed.toFixed(0)}ms)`
-      )
-      allArtifactSlotKeys.forEach((slot) =>
-        expect(dominated.values[slot].length).toBeLessThanOrEqual(
-          baseline.values[slot].length
-        )
-      )
-      expect(totalCount(dominated)).toBeLessThan(totalCount(baseline))
-    })
-
-    test('candidate cap keeps nearly all pruning power', () => {
-      const t1 = performance.now()
-      const capped = pruneDominance(nodes, baseline, numTop, 32)
-      const cappedElapsed = performance.now() - t1
-      console.log(
-        `  cap=32: ${totalCount(capped.arts)} kept (uncapped ${totalCount(
-          dominated
-        )}), ${cappedElapsed.toFixed(0)}ms (uncapped ${elapsed.toFixed(0)}ms)`
-      )
-      // Fewer candidates tested => fewer (or equal) removals, never more
-      expect(totalCount(capped.arts)).toBeGreaterThanOrEqual(
-        totalCount(dominated)
-      )
-      // ... but the best-first ordering should retain most removals
-      const removedUncapped = totalCount(baseline) - totalCount(dominated)
-      const removedCapped = totalCount(baseline) - totalCount(capped.arts)
-      expect(removedCapped).toBeGreaterThanOrEqual(0.8 * removedUncapped)
-    })
-
-    test('iterating to a fixpoint tightens the box and cuts deeper', () => {
-      // Removing artifacts shrinks the stat ranges, which tightens both
-      // pruneAll and the interval factors in the telescoped mul bound, which
-      // unlocks further removals. This mimics interleaving the passes inside
-      // the pruneAll micropass loop.
-      let cur = { nodes, arts: dominated }
-      const t0 = performance.now()
-      for (let round = 0; round < 10; round++) {
-        const before = totalCount(cur.arts)
-        const p = pruneAll(
-          cur.nodes,
-          mins,
-          cur.arts,
-          numTop,
-          {},
-          {
-            pruneArtRange: true,
-            pruneOrder: true,
-            pruneNodeRange: true,
-          }
-        )
-        const newNodes = optimize(p.nodes, {}, (_) => false)
-        cur = {
-          nodes: newNodes,
-          arts: pruneDominance(newNodes, p.arts, numTop).arts,
-        }
-        if (totalCount(cur.arts) === before) break
-      }
-      const elapsed = performance.now() - t0
-      console.log(
-        '  fixpoint:          ',
-        slotCounts(cur.arts),
-        `\n  (${totalCount(dominated)} -> ${totalCount(
-          cur.arts
-        )} artifacts, +${elapsed.toFixed(0)}ms)`
-      )
-      expect(totalCount(cur.arts)).toBeLessThanOrEqual(totalCount(dominated))
-    })
-
-    test('every removal is sound on sampled builds', () => {
-      const compute = precompute(nodes, baseline.base, (f) => f.path[1], 5)
-      const rng = makeRng(0xc0ffee)
-      const violations: string[] = []
-      for (const slot of allArtifactSlotKeys) {
-        const list = baseline.values[slot]
-        const byId = new Map(list.map((a) => [a.id, a]))
-        const others = allArtifactSlotKeys
-          .filter((s) => s !== slot)
-          .map((s) => baseline.values[s])
-        const removed = list.filter((a) => dominators.has(a.id)).slice(0, 40)
-        for (const m of removed) {
-          const n = byId.get(dominators.get(m.id)![0])!
-          for (let trial = 0; trial < 100; trial++) {
-            const rest = others.map(
-              (arts) => arts[Math.floor(rng() * arts.length)]
-            )
-            const fm = compute([m, ...rest] as any)
-            const fn = compute([n, ...rest] as any)
-            nodes.forEach((_, i) => {
-              if (fn[i] < fm[i] - 1e-9 * Math.max(1, Math.abs(fm[i])))
-                violations.push(
-                  `${slot} ${m.id} -> ${n.id}, node ${i}: ${fn[i]} < ${fm[i]}`
-                )
-            })
-          }
+  test('every removal is sound on sampled builds', () => {
+    const compute = precompute(nodes, baseline.base, (f) => f.path[1], 5)
+    const rng = makeRng(0xc0ffee)
+    const violations: string[] = []
+    for (const slot of allArtifactSlotKeys) {
+      const list = baseline.values[slot]
+      const byId = new Map(list.map((a) => [a.id, a]))
+      const others = allArtifactSlotKeys
+        .filter((s) => s !== slot)
+        .map((s) => baseline.values[s])
+      const removed = list.filter((a) => dominators.has(a.id)).slice(0, 40)
+      for (const m of removed) {
+        const n = byId.get(dominators.get(m.id)![0])!
+        for (let trial = 0; trial < 100; trial++) {
+          const rest = others.map(
+            (arts) => arts[Math.floor(rng() * arts.length)]
+          )
+          const fm = compute([m, ...rest] as any)
+          const fn = compute([n, ...rest] as any)
+          nodes.forEach((_, i) => {
+            if (fn[i] < fm[i] - 1e-9 * Math.max(1, Math.abs(fm[i])))
+              violations.push(
+                `${slot} ${m.id} -> ${n.id}, node ${i}: ${fn[i]} < ${fm[i]}`
+              )
+          })
         }
       }
-      expect(violations).toEqual([])
-    })
-  }
-)
+    }
+    expect(violations).toEqual([])
+  })
+})

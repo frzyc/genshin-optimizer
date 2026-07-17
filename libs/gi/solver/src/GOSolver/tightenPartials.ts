@@ -7,18 +7,18 @@ import type {
   DynStat,
   FutureArtifactProfile,
   PartialBuildCandidates,
-  PartialBuildWitness,
   PartialBuildsData,
   PartialBuildsSetup,
+  PartialBuildWitness,
   SolverPartialBuild,
-} from '../common'
-import { profileBoundingBox } from '../common'
+} from '../common.js'
+import { profileBoundingBox } from '../common.js'
 import type {
   ArtContext,
   DiffBound,
   SlotDiffBound,
-} from './BNBSplitWorker/diffBound'
-import { compileDiffBound } from './BNBSplitWorker/diffBound'
+} from './BNBSplitWorker/diffBound.js'
+import { compileDiffBound } from './BNBSplitWorker/diffBound.js'
 
 /**
  * Winnow the accumulated candidate partial builds down to a *tight* set, and
@@ -286,7 +286,7 @@ class SlotTightener {
     profile: ProfileSpace
   ): { covered: boolean; witness?: PartialBuildWitness; best?: Sample } {
     const queue: { box: Box; prio: number }[] = [
-      { box: profile.rootBox(), prio: Infinity },
+      { box: profile.rootBox(), prio: Number.POSITIVE_INFINITY },
     ]
     let boxes = 0
     let undecided = false
@@ -358,7 +358,7 @@ class SlotTightener {
     ctxM: ArtContext,
     others: Member[]
   ): number | undefined {
-    let advantage = Infinity
+    let advantage = Number.POSITIVE_INFINITY
     let tried = 0
     for (const q of others) {
       if (++tried > this.maxCoverers) break
@@ -451,8 +451,9 @@ class ProfileSpace {
     this.restHi = this.restLo.slice()
     this.maxSubstats = profile.maxSubstats ?? 4
     const budget = profile.rollBudget
-    this.rollSize = (d) => budget?.rollSize[this.dims[d]] ?? Infinity
-    this.totalRolls = budget?.totalRolls ?? Infinity
+    this.rollSize = (d) =>
+      budget?.rollSize[this.dims[d]] ?? Number.POSITIVE_INFINITY
+    this.totalRolls = budget?.totalRolls ?? Number.POSITIVE_INFINITY
   }
 
   rootBox(): Box {
@@ -509,7 +510,7 @@ class ProfileSpace {
       }
     for (let d = 0; d < this.dims.length; d++) {
       const size = this.rollSize(d)
-      let budgetHi = Infinity
+      let budgetHi = Number.POSITIVE_INFINITY
       if (Number.isFinite(size) && Number.isFinite(this.totalRolls)) {
         const isForced = box.lo[d] > 0
         const floorOther =
@@ -588,7 +589,7 @@ class ProfileSpace {
       // with `totalRolls >= maxSubstats`.
       while (total > budget + 1e-9) {
         let at = -1
-        let over = -Infinity
+        let over = Number.NEGATIVE_INFINITY
         keep.forEach((d, i) => {
           const size = this.rollSize(d)
           if (!Number.isFinite(size) || quantized[i] < 2 * size - 1e-9) return
