@@ -28,8 +28,8 @@ import {
   makeObjective,
 } from '@genshin-optimizer/gi/upopt'
 import { type OptNode, optimize, precompute } from '@genshin-optimizer/gi/wr'
-import { removeSetKeys } from './formulaUtils'
-import { erf } from './mathUtil'
+import { removeSetKeys } from './formulaUtils.js'
+import { erf } from './mathUtil.js'
 
 type Build = Record<ArtifactSlotKey, ICachedArtifact | undefined>
 type MarkovTree = { p: number; n: MarkovNode }[]
