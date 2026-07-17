@@ -9,6 +9,7 @@ import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
 import artifacts from './gen/artifacts'
 import chars from './gen/chars'
 import weapons from './gen/weapons'
+
 export * from './assets'
 
 type characterAssetKey =

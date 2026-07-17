@@ -1,4 +1,4 @@
-import { type ISrObjectDescription } from '@genshin-optimizer/sr/srod'
+import type { ISrObjectDescription } from '@genshin-optimizer/sr/srod'
 
 export const SroSource = 'Star Rail Optimizer' as const
 export const SroFormat = 'SRO' as const

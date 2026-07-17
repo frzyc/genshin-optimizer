@@ -22,7 +22,7 @@ export function deduplicate(
   })
   nodes = nodes.filter(({ p }) => p > 0)
   nodes.sort((a, b) => -cmpNodes(a.n, b.n))
-  let prev: weightedNode | undefined = undefined
+  let prev: weightedNode | undefined
   return nodes.filter((cur) => {
     if (prev && cmpNodes(prev.n, cur.n) === 0) {
       prev.p += cur.p

@@ -6,8 +6,8 @@ import {
   useDatabase,
 } from '@genshin-optimizer/gi/db-ui'
 import { useContext } from 'react'
-import { EquipBuildModal } from '.'
 import { BuildEditContext } from '../../context/BuildEditContext'
+import { EquipBuildModal } from '.'
 
 type WrapperProps = {
   artIdOrSlot?: string | ArtifactSlotKey

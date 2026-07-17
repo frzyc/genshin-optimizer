@@ -46,4 +46,5 @@ dumpFile(
   `${PROJROOT_PATH}/src/dm/character/AvatarPromotionConfig_arrayed_gen.json`,
   avatarPromotionConfig
 )
+
 export { avatarPromotionConfig }

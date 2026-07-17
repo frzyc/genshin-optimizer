@@ -24,7 +24,7 @@ import {
   useTheme,
 } from '@mui/material'
 import type { ComponentType } from 'react'
-import { Suspense, lazy, useCallback, useMemo, useState } from 'react'
+import { lazy, Suspense, useCallback, useMemo, useState } from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import './App.scss'
 import {
@@ -105,7 +105,7 @@ const PageTeam = lazy(
 )
 
 function App() {
-  const dbIndex = parseInt(localStorage.getItem('dbIndex') || '1')
+  const dbIndex = Number.parseInt(localStorage.getItem('dbIndex') || '1')
   const [databases, setDatabases] = useState(() => {
     localStorage.removeItem('GONewTabDetection')
     localStorage.setItem('GONewTabDetection', 'debug')

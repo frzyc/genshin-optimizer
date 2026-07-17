@@ -17,14 +17,14 @@ import {
 } from '@genshin-optimizer/sr/consts'
 import type { Dst, Src } from '@genshin-optimizer/sr/formula'
 import {
-  type Sheet,
-  type Tag,
   getConditional,
   isMember,
+  type Sheet,
+  type Tag,
 } from '@genshin-optimizer/sr/formula'
 import { z } from 'zod'
-import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
+import { DataManager } from '../DataManager'
 import { validateTag } from '../tagUtil'
 import type { RelicIds } from './BuildDataManager'
 
@@ -96,7 +96,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
       const name = `Team Name ${num}`
       if (existing.some((tc) => tc.name !== name)) return name
     }
-    return `Team Name`
+    return 'Team Name'
   }
   override validate(obj: unknown): Team | undefined {
     const result = teamSchema.safeParse(obj)

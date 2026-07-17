@@ -1,6 +1,5 @@
 import type { SpecificDmgTypeKey } from '@genshin-optimizer/zzz/db'
-import { specificDmgTypeKeys } from '@genshin-optimizer/zzz/db'
-import { getTeamFrame0 } from '@genshin-optimizer/zzz/db'
+import { getTeamFrame0, specificDmgTypeKeys } from '@genshin-optimizer/zzz/db'
 import {
   useCharacterContext,
   useDatabaseContext,

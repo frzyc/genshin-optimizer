@@ -12,8 +12,8 @@ import type {
 import { parseCharacter } from '@genshin-optimizer/sr/srod'
 import type { ICachedCharacter, ISroDatabase } from '../../Interfaces'
 import { SroSource } from '../../Interfaces'
-import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
+import { DataManager } from '../DataManager'
 import type { ImportResult } from '../exim'
 
 export class CharacterDataManager extends DataManager<

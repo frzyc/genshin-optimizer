@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+
 const googleAdsURL =
   'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
 
@@ -15,7 +16,7 @@ export function useIsAdblocked() {
         await fetch(new Request(googleAdsURL)).catch((_) => {
           setAdBlockEnabled(true)
         })
-      } catch (err) {
+      } catch (_err) {
         setAdBlockEnabled(true)
       }
     }

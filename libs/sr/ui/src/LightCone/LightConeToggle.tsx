@@ -6,6 +6,7 @@ import { allPathKeys } from '@genshin-optimizer/sr/consts'
 import { PathIcon } from '@genshin-optimizer/sr/svgicons'
 import { Chip, ToggleButton, useMediaQuery, useTheme } from '@mui/material'
 import type { ReactNode } from 'react'
+
 type LightConeToggleProps = Omit<
   SolidToggleButtonGroupProps,
   'onChange' | 'value'

@@ -3,16 +3,17 @@ import type {
   CharacterKey,
 } from '@genshin-optimizer/sr/consts'
 import {
+  isTrailblazerKey,
   type LightConeKey,
   type NonTrailblazerCharacterKey,
   type RelicSetKey,
   type RelicSlotKey,
   type TrailblazerGenderedKey,
-  isTrailblazerKey,
 } from '@genshin-optimizer/sr/consts'
 import chars from './gen/chars'
 import lightCones from './gen/lightCones'
 import relics from './gen/relics'
+
 type characterAssetKey =
   | 'icon'
   | 'basic_0'

@@ -30,6 +30,16 @@
     "publish": {
       "dependsOn": ["build"]
     },
+    "lint": {
+      "options": {
+        "args": ["--fix"]
+      }
+    },
+    "format": {
+      "options": {
+        "args": ["--fix"]
+      }
+    },
     "@nx/js:tsc": {
       "cache": true,
       "dependsOn": ["^build"],
@@ -52,7 +62,7 @@
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
       "default",
-      "!{projectRoot}/.eslintrc.json",
+      "!{projectRoot}/biome.json",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
       "!{projectRoot}/tsconfig.spec.json",
       "!{projectRoot}/jest.config.[jt]s",
@@ -63,20 +73,20 @@
   "generators": {
     "@nx/web:application": {
       "style": "scss",
-      "linter": "eslint",
+      "linter": "biome",
       "unitTestRunner": "vitest",
       "e2eTestRunner": "cypress"
     },
     "@nx/web:library": {
       "style": "scss",
-      "linter": "eslint",
+      "linter": "biome",
       "unitTestRunner": "vitest"
     },
     "@nx/react": {
       "application": {
         "babel": true,
         "style": "@emotion/styled",
-        "linter": "eslint",
+        "linter": "biome",
         "bundler": "webpack"
       },
       "component": {
@@ -84,7 +94,7 @@
       },
       "library": {
         "style": "@emotion/styled",
-        "linter": "eslint",
+        "linter": "biome",
         "unitTestRunner": "none"
       }
     }
@@ -93,13 +103,6 @@
     "defaultBase": "master"
   },
   "plugins": [
-    {
-      "plugin": "@nx/eslint/plugin",
-      "options": {
-        "targetName": "eslint:lint",
-        "extensions": ["ts", "tsx", "js", "jsx", "html", "vue"]
-      }
-    },
     {
       "plugin": "@nx/vite/plugin",
       "options": {
@@ -123,6 +126,9 @@
       "options": {
         "testTargetName": "test"
       }
+    },
+    {
+      "plugin": "@genshin-optimizer/biome"
     }
   ],
   "nxCloudAccessToken_disabled": "MTMwNzFkNGItNDI5OC00MTAwLTliMzItMDYzYzhjNzRiMTVifHJlYWQtd3JpdGU=",

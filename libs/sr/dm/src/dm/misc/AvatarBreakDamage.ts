@@ -16,4 +16,5 @@ dumpFile(`${PROJROOT_PATH}/src/dm/character/AvatarBreakDamage_list_gen.json`, [
   -1,
   ...avatarBreakDamage.map((config) => config.BreakBaseDamage.Value),
 ])
+
 export { avatarBreakDamage }

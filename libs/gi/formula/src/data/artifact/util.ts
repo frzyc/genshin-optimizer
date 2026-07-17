@@ -1,6 +1,6 @@
 import { registerEquipment } from '@genshin-optimizer/game-opt/formula'
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
-import { type NumNode } from '@genshin-optimizer/pando/engine'
+import type { NumNode } from '@genshin-optimizer/pando/engine'
 import type { Tag, TagMapNodeEntries, TagMapNodeEntry } from '../util'
 import { own } from '../util'
 

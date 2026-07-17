@@ -20,8 +20,8 @@ import {
   Collapse,
   Grid,
   IconButton,
-  Typography,
   styled,
+  Typography,
 } from '@mui/material'
 import { useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -196,7 +196,11 @@ export function EnemyEditor({
                 </ColorText>
               }
               value={
-                val !== undefined ? (elementImmunity ? Infinity : val) : 10
+                val !== undefined
+                  ? elementImmunity
+                    ? Number.POSITIVE_INFINITY
+                    : val
+                  : 10
               }
               placeholder={elementImmunity ? '∞ ' : KeyMap.getStr(statKey)}
               defaultValue={defaultVal}

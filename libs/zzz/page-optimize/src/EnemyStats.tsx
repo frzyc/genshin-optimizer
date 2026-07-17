@@ -21,8 +21,8 @@ import {
 } from '@genshin-optimizer/zzz/db-ui'
 import {
   type Attribute,
-  type Tag,
   enemyMeta,
+  type Tag,
 } from '@genshin-optimizer/zzz/formula'
 import { TagDisplay } from '@genshin-optimizer/zzz/formula-ui'
 import { AttributeName } from '@genshin-optimizer/zzz/ui'

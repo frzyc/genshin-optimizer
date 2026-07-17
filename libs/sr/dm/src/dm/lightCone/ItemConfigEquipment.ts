@@ -5,10 +5,10 @@ import {
   objKeyValMap,
 } from '@genshin-optimizer/common/util'
 import { parse } from 'json-bigint'
-import { TextMapEN } from '../../TextMapUtil'
 import { PROJROOT_PATH } from '../../consts'
 import type { LightConeId } from '../../mapping/lightCone'
 import { lightConeIdMap } from '../../mapping/lightCone'
+import { TextMapEN } from '../../TextMapUtil'
 import { readDMJSON } from '../../util'
 import type { HashId } from '../common'
 
@@ -69,4 +69,5 @@ const ItemConfigEquipment = objFilterKeys(
   objKeyValMap(ItemConfigEquipmentSrc, (config) => [config.ID, config]),
   Object.keys(lightConeIdMap) as LightConeId[]
 ) as Record<LightConeId, ItemConfigEquipment>
+
 export { ItemConfigEquipment }

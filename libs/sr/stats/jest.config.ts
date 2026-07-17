@@ -1,4 +1,3 @@
-/* eslint-disable */
 export default {
   displayName: 'sr-stats',
   preset: '../../../jest.preset.js',
