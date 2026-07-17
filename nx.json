@@ -116,6 +116,12 @@
       "options": {
         "testTargetName": "test"
       }
+    },
+    {
+      "plugin": "@genshin-optimizer/biome",
+      "options": {
+        "fix": true
+      }
     }
   ],
   "nxCloudAccessToken_disabled": "MTMwNzFkNGItNDI5OC00MTAwLTliMzItMDYzYzhjNzRiMTVifHJlYWQtd3JpdGU=",
