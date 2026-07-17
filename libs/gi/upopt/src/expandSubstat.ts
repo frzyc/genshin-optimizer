@@ -77,29 +77,6 @@ function getReshapeIxs(
   })
 }
 
-/**
- * Given a list of indices, [i0, i2, ..., ik], return a list of swaps (i, j) that will
- * place a[0] at i0, a[1] at i1, ..., a[k] at ik.
- */
-function ixsToSwaps(ixs: number[], nmax: number): number[][] {
-  const tracker = Array.from({ length: nmax }, (_, i) => i)
-
-  const out: number[][] = []
-  ixs.forEach((i, j) => {
-    if (i === tracker[j]) return
-    out.push([i, tracker[j]])
-    swap(tracker, i, j)
-  })
-  return out
-}
-
-function swap(arr: any[], i: number, j: number) {
-  if (i === j) return
-  const tmp = arr[i]
-  arr[i] = arr[j]
-  arr[j] = tmp
-}
-
 export function makeRollsNode(
   { base, rarity }: SubstatLevelNode,
   rolls: { key: SubstatKey; rolls: number }[]
@@ -121,25 +98,6 @@ export function makeRollsNode(
   }
 }
 
-/**
- * Roll-count distribution (mu & cov over the 4 substat slots) of `rollsLeft` upgrade
- * rolls under reshape guarantees, with the reshaped affixes moved to positions
- * `reshapeIxs`. Returned arrays are fresh copies, safe to mutate.
- */
-export function reshapedRollCountMuVar(
-  rollsLeft: number,
-  reshapeIxs: number[],
-  reshape: { n: number; min: number }
-): { mu: number[]; cov: number[][] } {
-  const { mu, cov } = rollCountMuVar(rollsLeft, reshape)
-  ixsToSwaps(reshapeIxs, 4).forEach(([i, j]) => {
-    swap(mu, i, j)
-    swap(cov, i, j)
-    cov.forEach((row) => swap(row, i, j))
-  })
-  return { mu, cov }
-}
-
 type SubstatLevelInfo = {
   base: DynStat
   rarity: ArtifactRarity
@@ -153,7 +111,7 @@ export function makeSubstatNode(info: SubstatLevelInfo): SubstatLevelNode {
   reshape?.affixes.sort((a, b) => a.localeCompare(b)) // Ensure consistent ordering
   // Reorder mu, cov so that reshaped affixes are where they should be.
   const reshapeIxs: number[] = getReshapeIxs(subkeys, reshape)
-  const { mu: muRoll, cov: covRoll } = reshapedRollCountMuVar(
+  const { mu: muRoll, cov: covRoll } = rollCountMuVar(
     rollsLeft,
     reshapeIxs,
     reshape
