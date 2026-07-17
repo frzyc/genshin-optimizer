@@ -1,7 +1,7 @@
 import {
   type FilterConfigs,
-  type SortConfigs,
   notEmpty,
+  type SortConfigs,
 } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import type {

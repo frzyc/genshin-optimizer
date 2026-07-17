@@ -3,7 +3,7 @@ import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import { buffs, conditionals, formulas } from '@genshin-optimizer/sr/formula'
 import { mappedStats } from '@genshin-optimizer/sr/stats'
 import { trans } from '../../util'
-import { type TalentSheetElementKey } from '../consts'
+import type { TalentSheetElementKey } from '../consts'
 import {
   bonusAbilitySheet,
   bonusStatsSheets,
@@ -15,19 +15,19 @@ const key: CharacterKey = 'Yanqing'
 const [chg, _ch] = trans('char', key)
 const formula = formulas[key]
 // TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// biome-ignore lint/suspicious/noTsIgnore: temp
 //@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// biome-ignore lint/correctness/noUnusedVariables: temp
 const cond = conditionals[key]
 // TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// biome-ignore lint/suspicious/noTsIgnore: temp
 //@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// biome-ignore lint/correctness/noUnusedVariables: temp
 const buff = buffs[key]
 // TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// biome-ignore lint/suspicious/noTsIgnore: temp
 //@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// biome-ignore lint/correctness/noUnusedVariables: temp
 const dm = mappedStats.char[key]
 
 const sheet: UISheet<TalentSheetElementKey> = {

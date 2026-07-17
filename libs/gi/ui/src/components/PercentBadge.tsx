@@ -24,7 +24,7 @@ export function PercentBadge({
             1,
             6
           )}` as RollColorKey,
-          (value * 100).toFixed() + '%',
+          `${(value * 100).toFixed()}%`,
         ]
       : ['secondary', value]
   return <SqBadge color={valid ? badgeColor : 'error'}>{text}</SqBadge>

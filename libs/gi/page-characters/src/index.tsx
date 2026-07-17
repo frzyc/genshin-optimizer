@@ -34,13 +34,13 @@ import {
   CharacterEditor,
   CharacterRarityToggle,
   CharacterSingleSelectionModal,
-  ElementToggle,
-  SillyContext,
-  WeaponToggle,
   characterFilterConfigs,
   characterSortConfigs,
   characterSortMap,
+  ElementToggle,
+  SillyContext,
   useCharSelectionCallback,
+  WeaponToggle,
 } from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
 import {
@@ -62,6 +62,7 @@ import {
 import ReactGA from 'react-ga4'
 import { useTranslation } from 'react-i18next'
 import { useMatch, useNavigate } from 'react-router-dom'
+
 const columns = { xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }
 const numToShowMap = { xs: 5, sm: 8, md: 9, lg: 12, xl: 12 }
 const sortKeys = Object.keys(characterSortMap)

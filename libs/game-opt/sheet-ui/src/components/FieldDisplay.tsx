@@ -4,8 +4,8 @@ import {
   ColorText,
 } from '@genshin-optimizer/common/ui'
 import {
-  type Unit,
   getUnitStr,
+  type Unit,
   valueString,
 } from '@genshin-optimizer/common/util'
 import type { CalcMeta, Read, Tag } from '@genshin-optimizer/game-opt/engine'
@@ -24,8 +24,8 @@ import {
   List,
   ListItem,
   Stack,
-  Typography,
   styled,
+  Typography,
 } from '@mui/material'
 import type { ElementType } from 'react'
 import { useCallback, useContext, useMemo, useState } from 'react'

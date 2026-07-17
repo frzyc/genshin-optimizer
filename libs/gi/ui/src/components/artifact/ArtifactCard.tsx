@@ -57,8 +57,8 @@ import type { ReactNode } from 'react'
 import { Suspense, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { CloseIcon, ExcludeIcon, LoadoutIcon } from '../../consts'
-import { PercentBadge } from '../PercentBadge'
 import { CharIconSide, LocationAutocomplete, LocationName } from '../character'
+import { PercentBadge } from '../PercentBadge'
 import { ArtifactSetTooltipContent } from './ArtifactSetTooltip'
 import {
   ArtifactSetName,

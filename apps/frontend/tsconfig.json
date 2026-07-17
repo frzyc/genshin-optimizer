@@ -1,12 +1,9 @@
 {
   "compilerOptions": {
     "jsx": "react-jsx",
-    "esModuleInterop": false,
-    "module": "ESNext",
     "noPropertyAccessFromIndexSignature": false,
     "noImplicitAny": false,
     "exactOptionalPropertyTypes": false,
-    "allowSyntheticDefaultImports": true,
     "jsxImportSource": "@emotion/react",
     "types": ["vite/client", "vitest"]
   },

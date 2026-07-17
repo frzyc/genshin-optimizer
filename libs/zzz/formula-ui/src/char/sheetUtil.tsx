@@ -11,9 +11,9 @@ import { allSkillKeys } from '@genshin-optimizer/zzz/consts'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { formulas, own } from '@genshin-optimizer/zzz/formula'
 import { getCharStat, mappedStats } from '@genshin-optimizer/zzz/stats'
-import { TagFieldTitle } from '../TagFieldTitle'
 import { groupFormulaMetaToFields } from '../bundledFormulaFields'
 import { formulaMatchesAbility } from '../formulaFieldUtil'
+import { TagFieldTitle } from '../TagFieldTitle'
 import { trans } from '../util'
 import type { CharUISheet } from './consts'
 
@@ -175,7 +175,7 @@ function createPotentialSheet(
         type: 'text',
         header: {
           icon: <ImgIcon src={commonDefIcon('coreFlat')} size={1.5} />,
-          text: chg(`potential.name`),
+          text: chg('potential.name'),
         },
         text: (calc) =>
           chg(`potential.desc.${calc.compute(own.char.potential).val}`),

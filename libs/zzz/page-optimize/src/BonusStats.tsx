@@ -17,16 +17,17 @@ import type {
 import {
   bonusStatDamageTypes,
   bonusStatDmgTypeIncStats,
+  bonusStatKeys,
   bonusStatQtKeys,
+  newBonusStatTag,
 } from '@genshin-optimizer/zzz/db'
-import { bonusStatKeys, newBonusStatTag } from '@genshin-optimizer/zzz/db'
 import {
   useCharacterContext,
   useDatabaseContext,
   useTeam,
 } from '@genshin-optimizer/zzz/db-ui'
 import type { Attribute, Tag } from '@genshin-optimizer/zzz/formula'
-import { TagDisplay, qtMap } from '@genshin-optimizer/zzz/formula-ui'
+import { qtMap, TagDisplay } from '@genshin-optimizer/zzz/formula-ui'
 import { AttributeName, StatDisplay } from '@genshin-optimizer/zzz/ui'
 import {
   CheckBox,

@@ -83,15 +83,15 @@ export function isTalentKey(
 export function getStatBoostKey(
   key: TalentSheetElementStatBoostKey
 ): StatBoostKey {
-  return parseInt(key.split('statBoost')[1] ?? '1') as StatBoostKey
+  return Number.parseInt(key.split('statBoost')[1] ?? '1') as StatBoostKey
 }
 
 export function getEidolonKey(key: TalentSheetElementEidolonKey): EidolonKey {
-  return parseInt(key.split('eidolon')[1] ?? '1') as EidolonKey
+  return Number.parseInt(key.split('eidolon')[1] ?? '1') as EidolonKey
 }
 
 export function getBonusAbilityKey(
   key: TalentSheetElementBonusAbilityKey
 ): BonusAbilityKey {
-  return parseInt(key.split('bonusAbility')[1] ?? '1') as BonusAbilityKey
+  return Number.parseInt(key.split('bonusAbility')[1] ?? '1') as BonusAbilityKey
 }

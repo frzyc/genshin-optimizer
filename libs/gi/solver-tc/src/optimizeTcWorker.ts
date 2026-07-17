@@ -1,6 +1,6 @@
 import type { BuildTc } from '@genshin-optimizer/gi/db'
 import type { NumNode, OptNode } from '@genshin-optimizer/gi/wr'
-import { optimizeTcUsingNodes } from './optimizeTc'
+import { optimizeTcUsingNodes } from './optimizeTc.js'
 
 type WorkerData = {
   nodes: OptNode[]
