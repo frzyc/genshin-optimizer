@@ -4,14 +4,14 @@ import type {
   FutureArtifactProfile,
   PartialBuildsData,
   PartialBuildsSetup,
-} from '../common'
+} from '../common.js'
 import {
   computeArtRange,
   mergePartialCandidates,
   pruneAll,
   pruneExclusion,
-} from '../common'
-import { WorkerCoordinator } from '../coordinator'
+} from '../common.js'
+import { WorkerCoordinator } from '../coordinator.js'
 import type {
   Count,
   FinalizeResult,

@@ -21,7 +21,7 @@ import type {
   DynStat,
   FutureArtifactProfile,
   PartialBuildsRequest,
-} from './common'
+} from './common.js'
 
 /**
  * Future-drop profiles for partial-build tracking: for every slot, one

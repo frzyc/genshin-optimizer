@@ -7,11 +7,11 @@ import type {
   MinMax,
   PartialBuildCandidates,
   PartialBuildsSetup,
-} from '../common'
-import { extendArtRangeArts, profileBoundingBox } from '../common'
-import type { ArtContext, SlotDiffBound } from './BNBSplitWorker/diffBound'
-import { compileDiffBound } from './BNBSplitWorker/diffBound'
-import { linearUB, maxLinCont } from './BNBSplitWorker/linearUB'
+} from '../common.js'
+import { extendArtRangeArts, profileBoundingBox } from '../common.js'
+import type { ArtContext, SlotDiffBound } from './BNBSplitWorker/diffBound.js'
+import { compileDiffBound } from './BNBSplitWorker/diffBound.js'
+import { linearUB, maxLinCont } from './BNBSplitWorker/linearUB.js'
 
 /**
  * Streaming per-slot frontier of *candidate* partial builds, fed by
@@ -47,7 +47,7 @@ import { linearUB, maxLinCont } from './BNBSplitWorker/linearUB'
  */
 export class PartialBuildTracker {
   /** Current top-N opt-target threshold; irrelevant partials are excused. */
-  threshold = -Infinity
+  threshold = Number.NEGATIVE_INFINITY
   /** Dominance tests per offer, best-first. */
   maxCandidates = 64
   /** Per-slot frontier size at which the slot overflows (reported as
@@ -189,7 +189,7 @@ class TrackedSlot {
     for (let d = lists.length - 1; d >= 0; d--) {
       const acc = remMax[d + 1].slice()
       for (let j = 0; j < nOut; j++) {
-        let m = -Infinity
+        let m = Number.NEGATIVE_INFINITY
         for (const c of conts[d]) if (c[j] > m) m = c[j]
         acc[j] += m
       }

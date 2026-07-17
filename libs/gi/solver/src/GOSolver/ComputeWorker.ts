@@ -11,7 +11,7 @@ import type {
 } from '../common.js'
 import { countBuilds, filterArts, mergePlot, pruneAll } from '../common.js'
 import type { Interim, Setup } from '../type.js'
-import { PartialBuildTracker } from './PartialBuildTracker'
+import { PartialBuildTracker } from './PartialBuildTracker.js'
 
 export class ComputeWorker {
   builds: SolverBuild[] = []

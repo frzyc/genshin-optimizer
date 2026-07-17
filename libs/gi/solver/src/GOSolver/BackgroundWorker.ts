@@ -10,7 +10,7 @@ import type { WorkerCommand, WorkerResult } from '../type.js'
 import { BNBSplitWorker } from './BNBSplitWorker/index.js'
 import { ComputeWorker } from './ComputeWorker.js'
 import { DefaultSplitWorker } from './DefaultSplitWorker.js'
-import { tightenPartialBuilds } from './tightenPartials'
+import { tightenPartialBuilds } from './tightenPartials.js'
 
 declare function postMessage(command: WorkerCommand | WorkerResult): void
 

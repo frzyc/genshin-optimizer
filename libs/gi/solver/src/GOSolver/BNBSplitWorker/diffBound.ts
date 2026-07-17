@@ -8,8 +8,8 @@ import type {
   ArtifactsBySlot,
   DynMinMax,
   MinMax,
-} from '../../common'
-import { computeFullArtRange, computeNodeRange } from '../../common'
+} from '../../common.js'
+import { computeFullArtRange, computeNodeRange } from '../../common.js'
 
 /**
  * Pairwise "swap dominance" bounds.
@@ -136,8 +136,8 @@ const slope = { lo: 0, hi: 0 }
  * difference lies in slopeRange ⊗ Δx.
  */
 function resSlopeRange(min: number, max: number) {
-  let lo = Infinity,
-    hi = -Infinity
+  let lo = Number.POSITIVE_INFINITY,
+    hi = Number.NEGATIVE_INFINITY
   if (min < 0) {
     lo = Math.min(lo, -0.5)
     hi = Math.max(hi, -0.5)
@@ -318,7 +318,10 @@ export function compileDiffBound(
       case 'max': {
         const op = operation
         ctxInstrs.push((lo, hi) => {
-          let l = op === 'min' ? Infinity : -Infinity,
+          let l =
+              op === 'min'
+                ? Number.POSITIVE_INFINITY
+                : Number.NEGATIVE_INFINITY,
             h = l
           for (const j of ops) {
             if (op === 'min') {
@@ -333,8 +336,8 @@ export function compileDiffBound(
           hi[i] = h
         })
         evalInstrs.push((dLo, dHi, m, n) => {
-          let l = Infinity,
-            h = -Infinity
+          let l = Number.POSITIVE_INFINITY,
+            h = Number.NEGATIVE_INFINITY
           for (const j of ops) {
             if (dLo[j] < l) l = dLo[j]
             if (dHi[j] > h) h = dHi[j]
@@ -421,8 +424,8 @@ export function compileDiffBound(
             const nA = n.lo[v] >= t,
               nN = n.hi[v] < t
             const bothMaybe = !mA && !mN && !nA && !nN
-            let l = Infinity,
-              h = -Infinity
+            let l = Number.POSITIVE_INFINITY,
+              h = Number.NEGATIVE_INFINITY
             if ((!nN && !mN) || (!nA && !mA)) {
               l = 0 // same branch on both sides
               h = 0
@@ -447,8 +450,8 @@ export function compileDiffBound(
             const nA = n.lo[v] >= t,
               nN = n.hi[v] < t
             const bothMaybe = !mA && !mN && !nA && !nN
-            let l = Infinity,
-              h = -Infinity
+            let l = Number.POSITIVE_INFINITY,
+              h = Number.NEGATIVE_INFINITY
             if (!nN && !mN) {
               // both pass: p_n - p_m = D(p)
               if (dLo[p] < l) l = dLo[p]
@@ -489,8 +492,11 @@ export function compileDiffBound(
     const extra = extraSlotRange?.[slot]
     return Float64Array.from(readKeys, (k) =>
       Math.min(
-        list.reduce((a, art) => Math.min(a, art.values[k] ?? 0), Infinity),
-        extra?.[k]?.min ?? Infinity
+        list.reduce(
+          (a, art) => Math.min(a, art.values[k] ?? 0),
+          Number.POSITIVE_INFINITY
+        ),
+        extra?.[k]?.min ?? Number.POSITIVE_INFINITY
       )
     )
   })
@@ -498,8 +504,11 @@ export function compileDiffBound(
     const extra = extraSlotRange?.[slot]
     return Float64Array.from(readKeys, (k) =>
       Math.max(
-        list.reduce((a, art) => Math.max(a, art.values[k] ?? 0), -Infinity),
-        extra?.[k]?.max ?? -Infinity
+        list.reduce(
+          (a, art) => Math.max(a, art.values[k] ?? 0),
+          Number.NEGATIVE_INFINITY
+        ),
+        extra?.[k]?.max ?? Number.NEGATIVE_INFINITY
       )
     )
   })
@@ -586,7 +595,7 @@ export function pruneDominance(
   nodes: OptNode[],
   arts: ArtifactsBySlot,
   numTop: number,
-  maxCandidates = Infinity,
+  maxCandidates = Number.POSITIVE_INFINITY,
   /** Widen each slot's rest box (see `compileDiffBound`); pass the
    * future-artifact boxes when partial builds are being tracked so that a
    * swap is only certified if it also holds for every future completion. */
