@@ -109,7 +109,6 @@ export function makeSubstatNode(info: SubstatLevelInfo): SubstatLevelNode {
   const { rollsLeft, subkeys, reshape } = info
   subkeys.sort((a, b) => a.key.localeCompare(b.key)) // Ensure consistent ordering
   reshape?.affixes.sort((a, b) => a.localeCompare(b)) // Ensure consistent ordering
-  // Reorder mu, cov so that reshaped affixes are where they should be.
   const reshapeIxs: number[] = getReshapeIxs(subkeys, reshape)
   const { mu: muRoll, cov: covRoll } = rollCountMuVar(
     rollsLeft,
