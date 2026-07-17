@@ -17,7 +17,6 @@ import type {
   CharacterKey,
   RefinementKey,
   WeaponKey,
-  WeaponTypeKey,
 } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactRarityKeys,
@@ -39,7 +38,7 @@ import {
   validateWeaponLevelAsc,
 } from '@genshin-optimizer/gi/consts'
 import type { IGOOD } from '@genshin-optimizer/gi/good'
-import { allStats } from '@genshin-optimizer/gi/stats'
+import { allStats, getCharStat } from '@genshin-optimizer/gi/stats'
 import { z } from 'zod'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
@@ -218,13 +217,13 @@ export class BuildTcDataManager extends DataManager<
   }
   newFromBuild(
     characterKey: CharacterKey,
-    weaponTypeKey: WeaponTypeKey,
     weapon?: ICachedWeapon,
     arts: Array<ICachedArtifact | undefined> = []
   ): string | undefined {
     const buildTc = initCharTC(
       characterKey,
-      weapon?.key ?? defaultInitialWeaponKey(weaponTypeKey)
+      weapon?.key ??
+        defaultInitialWeaponKey(getCharStat(characterKey).weaponType)
     )
     toBuildTc(buildTc, weapon, arts)
     return this.new(buildTc)

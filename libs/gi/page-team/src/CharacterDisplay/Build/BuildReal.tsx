@@ -88,11 +88,9 @@ export default function BuildReal({
     //TODO: prompt user for removal
     database.builds.remove(buildId)
   }
-  const weaponTypeKey = getCharStat(characterKey).weaponType
   const copyToTc = () => {
     const newBuildTcId = database.buildTcs.newFromBuild(
       characterKey,
-      weaponTypeKey,
       database.weapons.get(weaponId),
       Object.values(artifactIds).map((id) => database.arts.get(id))
     )
@@ -107,14 +105,15 @@ export default function BuildReal({
     database.builds.new({
       characterKey,
       name: t('buildRealCard.copy.nameReal', { name }),
-      artifactIds: artifactIds,
-      weaponId: weaponId,
+      artifactIds,
+      weaponId,
     })
 
   const { weaponUsedInTeamCharKey, artUsedInTeamCharKeys } = useEquippedInTeam(
     weaponId!,
     artifactIds
   )
+  const weaponTypeKey = getCharStat(characterKey).weaponType
 
   const [show, onShow, onHide] = useBoolState()
   return (

@@ -96,9 +96,9 @@ export class BuildDataManager extends DataManager<
     return this.entries.filter(([, b]) => b.characterKey === characterKey)
   }
 
-  new(build: Partial<Build> = {}): string {
+  new(build: Partial<Build> & Pick<Build, 'characterKey'>): string {
     const id = this.generateKey()
-    this.set(id, build)
+    if (!this.set(id, build)) return ''
     return id
   }
   duplicate(buildId: string): string {

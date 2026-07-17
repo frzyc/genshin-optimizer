@@ -1,5 +1,6 @@
 // use client due to hydration difference between client rendering and server in translation
 import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { useDataManagerEntries } from '@genshin-optimizer/common/database-ui'
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import {
   BootstrapTooltip,
@@ -62,8 +63,8 @@ import { Suspense, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { CloseIcon, ExcludeIcon } from '../../consts'
 import {
-  CharIconSide,
   CharacterName,
+  CharIconSide,
   LocationAutocomplete,
   LocationName,
 } from '../character'
@@ -177,11 +178,12 @@ export function ArtifactCardObj({
     level
   )
   const database = useDatabase()
+  const buildEntries = useDataManagerEntries(database.builds)
   const builds: {
     buildName: string
     charKey: CharacterKey
   }[] = useMemo(() => {
-    return database.builds.entries
+    return buildEntries
       .filter(
         ([, { artifactIds }]) => artifactIds[artifact.slotKey] === artifact.id
       )
@@ -189,7 +191,7 @@ export function ArtifactCardObj({
         charKey: characterKey,
         buildName: name,
       }))
-  }, [database.builds, artifact.slotKey, artifact.id])
+  }, [buildEntries, artifact.slotKey, artifact.id])
   const artifactValid = maxEfficiency !== 0
   const slotName = <ArtifactSetSlotName setKey={setKey} slotKey={slotKey} />
   const slotDesc = <ArtifactSetSlotDesc setKey={setKey} slotKey={slotKey} />

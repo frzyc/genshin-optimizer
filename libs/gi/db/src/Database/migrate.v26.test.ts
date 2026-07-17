@@ -19,8 +19,12 @@ describe('migrate v26 global builds', () => {
       weaponId: undefined,
       artifactIds: {},
     })
+    const { characterKey: _characterKey, ...legacyBuildTc } = initCharTC(
+      'RaidenShogun',
+      'EngulfingLightning'
+    )
     storage.set(buildTcId, {
-      ...initCharTC('RaidenShogun', 'EngulfingLightning'),
+      ...legacyBuildTc,
       name: 'Test TC',
     })
     storage.set(teamCharId, {

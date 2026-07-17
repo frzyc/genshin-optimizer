@@ -128,7 +128,7 @@ export default function CompareBtn({
               })
             }
           >
-            {name ?? ''}{' '}
+            {name}{' '}
             <SqBadge color="info" sx={{ ml: 1 }}>
               {t('compareBtn.tcBadge')}
             </SqBadge>

@@ -1,7 +1,6 @@
 import { AdResponsive } from '@genshin-optimizer/common/ad'
 import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
 import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { getCharStat } from '@genshin-optimizer/gi/stats'
 import {
   BuildInfoAlert,
   EquippedBuildInfoAlert,
@@ -69,7 +68,6 @@ function BuildManagementContent({ onClose }: { onClose: () => void }) {
   const characterBuilds = database.builds.entriesForCharacter(characterKey)
   const characterTcBuilds = database.buildTcs.entriesForCharacter(characterKey)
 
-  const weaponTypeKey = getCharStat(characterKey).weaponType
   const onChangeBuild = useCallback(
     () => setTimeout(onClose, 1000),
 
@@ -125,9 +123,7 @@ function BuildManagementContent({ onClose }: { onClose: () => void }) {
           startIcon={<AddIcon />}
           color="info"
           size="small"
-          onClick={() =>
-            database.buildTcs.newFromBuild(characterKey, weaponTypeKey)
-          }
+          onClick={() => database.buildTcs.newFromBuild(characterKey)}
         >
           {t('loadoutSettings.newTcBuildBtn')}
         </Button>

@@ -1,7 +1,8 @@
 import {
-  useBoolState,
-  useForceUpdate,
-} from '@genshin-optimizer/common/react-util'
+  useDataManagerBase,
+  useDataManagerEntries,
+} from '@genshin-optimizer/common/database-ui'
+import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
   BootstrapTooltip,
   CardThemed,
@@ -49,7 +50,6 @@ import {
   Suspense,
   useCallback,
   useContext,
-  useEffect,
   useMemo,
   useState,
 } from 'react'
@@ -99,21 +99,18 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
   const database = useDatabase()
   const { data, compareData } = useContext(DataContext)
 
-  const [dbDirty, setDbDirty] = useForceUpdate()
+  const buildEntries = useDataManagerEntries(database.builds)
   const characterBuildIds = useMemo(
-    () => database.builds.entriesForCharacter(characterKey).map(([id]) => id),
-    [database.builds, characterKey, dbDirty]
+    () =>
+      buildEntries
+        .filter(([, b]) => b.characterKey === characterKey)
+        .map(([id]) => id),
+    [buildEntries, characterKey]
   )
-
-  // update when a build is changed
-  useEffect(() => {
-    const unfollowBuilds = characterBuildIds.map((buildId) =>
-      database.builds.follow(buildId, setDbDirty)
-    )
-    return () => unfollowBuilds.forEach((unFollow) => unFollow())
-  }, [database, characterBuildIds, setDbDirty])
-
-  // update when data is recalc'd
+  const activeBuild = useDataManagerBase(
+    database.builds,
+    buildType === 'real' ? buildId : ''
+  )
   const weaponNewOld = useMemo(
     () => ({
       oldId: compareData?.get(input.weapon.id)?.value,
@@ -258,7 +255,6 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
 
   const sameAsBuildIds = useMemo(
     () =>
-      dbDirty &&
       characterBuildIds.filter((buildId) => {
         const build = database.builds.get(buildId)
         if (!build) return false
@@ -269,7 +265,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
           ) && weaponId === buildWeaponId
         )
       }),
-    [dbDirty, database, characterBuildIds, artifactIds, weaponId]
+    [database, characterBuildIds, artifactIds, weaponId]
   )
 
   const isActiveBuild = buildType === 'real' && sameAsBuildIds.includes(buildId)
@@ -282,37 +278,23 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
 
   const currentWeaponId = useMemo(() => {
     if (compareFromCharEditor) return equippedWeapon
-    if (dbDirty && buildType === 'real')
-      return database.builds.get(buildId)!.weaponId
-    if (dbDirty && buildType === 'equipped') return equippedWeapon
+    if (buildType === 'real') return activeBuild?.weaponId ?? ''
+    if (buildType === 'equipped') return equippedWeapon
 
-    // default
     return ''
-  }, [
-    dbDirty,
-    database,
-    buildType,
-    buildId,
-    equippedWeapon,
-    compareFromCharEditor,
-  ])
+  }, [activeBuild, buildType, equippedWeapon, compareFromCharEditor])
 
   const currentArtifactIds = useMemo(() => {
     if (compareFromCharEditor) return equippedArtifacts
-    if (dbDirty && buildType === 'real')
-      return database.builds.get(buildId)!.artifactIds
-    if (dbDirty && buildType === 'equipped') return equippedArtifacts
+    if (buildType === 'real')
+      return (
+        activeBuild?.artifactIds ??
+        objKeyMap(allArtifactSlotKeys, () => undefined)
+      )
+    if (buildType === 'equipped') return equippedArtifacts
 
-    // default
     return objKeyMap(allArtifactSlotKeys, () => '')
-  }, [
-    dbDirty,
-    database,
-    buildType,
-    buildId,
-    equippedArtifacts,
-    compareFromCharEditor,
-  ])
+  }, [activeBuild, buildType, equippedArtifacts, compareFromCharEditor])
 
   const [showEquipChange, onShowEquipChange, onHideEquipChange] = useBoolState()
 

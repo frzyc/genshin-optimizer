@@ -44,11 +44,9 @@ export function BuildEquipped({
       artifactIds: equippedArtifacts,
       weaponId: equippedWeapon,
     })
-  const weaponTypeKey = getCharStat(characterKey).weaponType
   const copyToTc = () => {
     const newBuildTcId = database.buildTcs.newFromBuild(
       characterKey,
-      weaponTypeKey,
       database.weapons.get(equippedWeapon),
       Object.values(equippedArtifacts).map((id) => database.arts.get(id))
     )
