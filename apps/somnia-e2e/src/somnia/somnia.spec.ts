@@ -1,4 +1,4 @@
-import { execSync } from 'node:child_process'
+import { execFileSync } from 'node:child_process'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -10,7 +10,9 @@ describe('CLI tests', () => {
     )
     const cliPath = join(repoRoot, 'dist/apps/somnia')
 
-    const output = execSync(`node ${cliPath}`, { cwd: repoRoot }).toString()
+    const output = execFileSync('node', [cliPath], {
+      cwd: repoRoot,
+    }).toString()
 
     expect(output).toMatch(/Hello World/)
   })
