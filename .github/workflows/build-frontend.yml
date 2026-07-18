@@ -42,7 +42,7 @@ jobs:
           cache: 'yarn'
       - name: Yarn install
         run: |
-          yarn install --immutable --immutable-cache
+          yarn install --immutable
       - name: Setup .env
         run: |
           printf '%s' "$ENVFILE" > apps/frontend/.env.local
