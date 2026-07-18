@@ -58,7 +58,16 @@
     "estimatedDist": "Estimated Distribution",
     "currentTarget": "Current Target",
     "currentLine": "Current Target Value",
-    "averageLine": "Average Increase"
+    "averageLine": "Average Increase",
+    "rollAllocations": {
+      "title": "Enhancement roll allocation",
+      "description": "Each row fixes how many enhancement rolls land in each substat, then evaluates every possible roll value and newly activated substat. A dash means the artifact does not have that substat. Allocation chance sums to 100%. Overall contribution sums to the card's Prob. upgrade.",
+      "summary": "Check: Allocation chance {{allocation}} · Prob. upgrade {{probability}} · Average increase {{increase}}",
+      "allocationChance": "Allocation chance",
+      "upgradeWithinAllocation": "Upgrade chance",
+      "overallContribution": "Overall contribution",
+      "averageSuccessfulIncrease": "Avg. successful increase"
+    }
   },
   "excludeArt": {
     "title_exclude": "Excluded Artifacts",
