@@ -11,7 +11,7 @@ import {
 import { Read, type Tag } from '@genshin-optimizer/zzz/formula'
 import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
 import { AttributeName, StatDisplay } from '@genshin-optimizer/zzz/ui'
-import { abilityFormulaLabel } from '../char/abilityFormulaLabels'
+import { abilityTagDisplay } from '../char/abilityFormulaLabels'
 import { getCondMap, tagFieldSubset } from '../char/tagFieldMap'
 import { damageTypeKeysMap, getDmgType, getVariant } from '../char/util'
 import { useZzzCalcContext } from '../hooks'
@@ -88,7 +88,7 @@ function TagStrDisplay({
   const calc = useZzzCalcContext()
   const abilityTitle =
     tag.sheet && allCharacterKeys.includes(tag.sheet as CharacterKey)
-      ? abilityFormulaLabel(tag.sheet as CharacterKey, tag)
+      ? abilityTagDisplay(tag.sheet as CharacterKey, tag)
       : undefined
   if (abilityTitle) return abilityTitle
 

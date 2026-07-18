@@ -1,4 +1,3 @@
-import { ColorText } from '@genshin-optimizer/common/ui'
 import {
   type ConditionalDocument,
   type Field,
@@ -7,27 +6,12 @@ import {
   type MultiTagField,
   type TagField,
 } from '@genshin-optimizer/game-opt/sheet-ui'
-import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { allCharacterKeys } from '@genshin-optimizer/zzz/consts'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { createTagMap } from '@genshin-optimizer/zzz/formula'
-import { createElement } from 'react'
 import { discUiSheets } from '../disc/sheets'
 import { wengineUiSheets } from '../wengine/sheets'
-import { abilityFormulaLabel } from './abilityFormulaLabels'
 import { charBaseUiSheet } from './CharBase'
 import { charSheets } from './sheets'
-import { getVariant } from './util'
-
-function titleForBundledRef(field: MultiTagField, ref: Tag) {
-  const sheet = ref.sheet
-  if (sheet && allCharacterKeys.includes(sheet as CharacterKey)) {
-    const label = abilityFormulaLabel(sheet as CharacterKey, ref)
-    if (label)
-      return createElement(ColorText, { color: getVariant(ref) }, label)
-  }
-  return field.title
-}
 
 export function buildTagFieldMaps() {
   const tagValue: Array<{ tag: Tag; value: TagField }> = []
@@ -43,7 +27,7 @@ export function buildTagFieldMaps() {
         tagValue.push({
           tag: ref,
           value: {
-            title: titleForBundledRef(field, ref),
+            title: field.title,
             fieldRef: ref,
             subtitle: field.subtitle,
             icon: field.icon,

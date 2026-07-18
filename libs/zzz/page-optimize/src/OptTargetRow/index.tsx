@@ -1,6 +1,10 @@
 import { DropdownButton } from '@genshin-optimizer/common/ui'
 import type { ICachedCharacter, Team } from '@genshin-optimizer/zzz/db'
-import { getTeamFrame0 } from '@genshin-optimizer/zzz/db'
+import {
+  getTeamFrame0,
+  isGenericDmgInstTarget,
+  withInstDamageType2,
+} from '@genshin-optimizer/zzz/db'
 import {
   useCharacterContext,
   useDatabaseContext,
@@ -51,19 +55,11 @@ function AfterShockToggle() {
     (aftershock: boolean) =>
       database.teams.setFrame0(character.key, (frame) => {
         const { tag: oldTarget = {} } = frame
-        const { damageType2, ...oTarget } = oldTarget
-        if (!aftershock) return { tag: oTarget }
-        return {
-          tag: {
-            ...oTarget,
-            damageType2: 'aftershock',
-          },
-        }
+        return { tag: withInstDamageType2(oldTarget, aftershock) }
       }),
     [database, character.key]
   )
-  if (target?.name !== 'standardDmgInst' && target?.name !== 'sheerDmgInst')
-    return null
+  if (!isGenericDmgInstTarget(target?.name)) return null
   return (
     <AfterShockToggleButton
       isAftershock={target?.damageType2 === 'aftershock'}

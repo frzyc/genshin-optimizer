@@ -20,17 +20,13 @@ function setAbilityTarget(
   characterKey: CharacterKey,
   sheet: string,
   name: string,
-  q: string,
-  damageType1?: TargetTag['damageType1'],
-  damageType2?: TargetTag['damageType2']
+  q: string
 ) {
   database.teams.setFrame0(characterKey, {
     tag: {
       sheet,
       name,
       q,
-      damageType1,
-      damageType2,
     },
   })
 }

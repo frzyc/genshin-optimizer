@@ -2,18 +2,23 @@ import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
 import { useSetDebugTarget } from '@genshin-optimizer/game-opt/formula-ui'
 import { commonDefIcon } from '@genshin-optimizer/zzz/assets'
-import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { isSkillKey } from '@genshin-optimizer/zzz/consts'
+import { type CharacterKey, type SkillKey, isSkillKey } from '@genshin-optimizer/zzz/consts'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { isAbilityDim } from '@genshin-optimizer/zzz/formula'
 import HelpIcon from '@mui/icons-material/Help'
-import { Box, ListSubheader, Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
 import { useMemo } from 'react'
-import { isAbilityFormulaTag, parseAbilityFromTag } from './abilityTag'
+import { isAbilityFormulaTag } from './abilityTag'
+import {
+  abilityDisplayTitle,
+  abilityHitParamTitle,
+  resolveAbilityDisplay,
+} from './char/abilityFormulaLabels'
 import type { TalentSheetElementKey } from './char/consts'
 import { getFieldCategory } from './char/fieldCategory'
 import { tagFieldSubset } from './char/tagFieldMap'
+import { damageTypeKeysMap } from './char/util'
 import { FullTagDisplay, TagDisplay } from './components'
 import type { FormulaDimension } from './formulaDimensionUi'
 import { ABILITY_DIM_LABEL, formulaDimensionLabel } from './formulaDimensionUi'
@@ -25,7 +30,7 @@ import {
   talentSheetElementLabel,
 } from './optPanelSections'
 import { formulaReadForTag } from './optTarget'
-import { st, trans } from './util'
+import { st } from './util'
 
 export type { FormulaDimension } from './formulaDimensionUi'
 export {
@@ -151,16 +156,19 @@ export function AbilityOptTargetLabel({
   /** Single-line layout for compact button titles. */
   inline?: boolean
 }) {
-  const parsed = parseAbilityFromTag(tag)
-  if (!parsed) return <FullTagDisplay tag={tag} />
+  const category = getFieldCategory(charKey, tag)
+  const skillHint: SkillKey | undefined =
+    category && isSkillKey(category) ? category : undefined
+  const resolved = resolveAbilityDisplay(tag, skillHint)
+  if (!resolved) return <FullTagDisplay tag={tag} />
 
-  const { skill, abilityKey, hitIndex } = parsed
-  const [chg] = trans('char', charKey)
-  const abilityName = chg(`${skill}.${abilityKey}.name`)
+  const { skill } = resolved
+  const abilityName = abilityDisplayTitle(charKey, tag, skillHint)
   const skillName = st(`skills.${skill}`)
-  const hitLabel =
-    hitIndex !== undefined
-      ? chg(`${skill}.${abilityKey}.params.${hitIndex.replace(/\D/g, '')}`)
+  const hitLabel = abilityHitParamTitle(charKey, tag, skillHint) ?? null
+  const damageType2Label =
+    tag.damageType2 && tag.damageType2 in damageTypeKeysMap
+      ? damageTypeKeysMap[tag.damageType2 as keyof typeof damageTypeKeysMap]
       : null
   const dimensionBadgeLabel =
     (tag.q && isAbilityDim(tag.q) ? ABILITY_DIM_LABEL[tag.q] : undefined) ??
@@ -194,6 +202,12 @@ export function AbilityOptTargetLabel({
                 {hitLabel}
               </>
             )}
+            {damageType2Label && (
+              <>
+                {' · '}
+                {damageType2Label}
+              </>
+            )}
           </Typography>
         </Typography>
         {showDimension && dimensionBadgeLabel && (
@@ -223,34 +237,18 @@ export function AbilityOptTargetLabel({
               {hitLabel}
             </>
           )}
+          {damageType2Label && (
+            <>
+              {' · '}
+              {damageType2Label}
+            </>
+          )}
         </Typography>
       </Box>
       {showDimension && dimensionBadgeLabel && (
         <SqBadge>{dimensionBadgeLabel}</SqBadge>
       )}
     </Box>
-  )
-}
-
-export function OptTargetSkillSectionHeader({ skill }: { skill: string }) {
-  return (
-    <ListSubheader
-      sx={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: 1,
-        lineHeight: 2,
-        bgcolor: 'background.paper',
-      }}
-    >
-      <ImgIcon
-        src={commonDefIcon(
-          skillSectionFlatIconKey(skill) as Parameters<typeof commonDefIcon>[0]
-        )}
-        size={1.25}
-      />
-      {st(`skills.${skill}`)}
-    </ListSubheader>
   )
 }
 
