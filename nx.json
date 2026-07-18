@@ -16,15 +16,13 @@
       "cache": true
     },
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "executor": "@nx/vitest:test",
+      "outputs": ["{options.reportsDirectory}"],
       "options": {
-        "jestConfig": "{projectRoot}/jest.config.ts",
-        "coverageDirectory": "{workspaceRoot}/coverage/{projectRoot}",
         "reportsDirectory": "{workspaceRoot}/coverage/{projectRoot}",
         "passWithNoTests": true
       },
-      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"],
+      "inputs": ["default", "^production"],
       "cache": true
     },
     "publish": {
@@ -65,7 +63,8 @@
       "!{projectRoot}/biome.json",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
       "!{projectRoot}/tsconfig.spec.json",
-      "!{projectRoot}/jest.config.[jt]s",
+      "!{projectRoot}/vitest.config.[jt]s",
+      "!{projectRoot}/vitest.config.mts",
       "!{projectRoot}/src/test-setup.[jt]s"
     ],
     "sharedGlobals": ["{workspaceRoot}/babel.config.json"]
@@ -124,7 +123,8 @@
     {
       "plugin": "@nx/vitest",
       "options": {
-        "testTargetName": "test"
+        "testTargetName": "test",
+        "exclude": ["somnia-e2e"]
       }
     },
     {

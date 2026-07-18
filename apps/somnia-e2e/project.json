@@ -5,10 +5,11 @@
   "implicitDependencies": ["somnia"],
   "targets": {
     "e2e": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{e2eProjectRoot}"],
+      "executor": "@nx/vitest:test",
+      "outputs": ["{options.reportsDirectory}"],
       "options": {
-        "jestConfig": "apps/somnia-e2e/jest.config.ts",
+        "reportsDirectory": "{workspaceRoot}/coverage/{projectRoot}",
+        "configFile": "apps/somnia-e2e/vitest.e2e.config.ts",
         "passWithNoTests": true
       }
     }
