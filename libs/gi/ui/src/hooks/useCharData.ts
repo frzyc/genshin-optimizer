@@ -9,8 +9,8 @@ import type {
 import { defaultInitialWeapon } from '@genshin-optimizer/gi/db'
 import {
   useCharacter,
-  useDBMeta,
   useDatabase,
+  useDBMeta,
 } from '@genshin-optimizer/gi/db-ui'
 import type { CharacterSheet, WeaponSheet } from '@genshin-optimizer/gi/sheets'
 import {

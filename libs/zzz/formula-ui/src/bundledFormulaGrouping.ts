@@ -1,9 +1,9 @@
+import type { Sheet, Tag } from '@genshin-optimizer/zzz/formula'
 import {
-  type DmgAbilityDim,
   abilityDims,
+  type DmgAbilityDim,
   isAbilityDim,
 } from '@genshin-optimizer/zzz/formula'
-import type { Sheet, Tag } from '@genshin-optimizer/zzz/formula'
 
 /** Stable key for bundling, category index, and opt-target row identity (incl. `damageType2`). */
 export function formulaFieldGroupKey(tag: Tag): string {

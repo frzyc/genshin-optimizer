@@ -9,7 +9,6 @@ import type {
   WengineKey,
 } from '@genshin-optimizer/zzz/consts'
 import { getWengineStat } from '@genshin-optimizer/zzz/stats'
-import { data, keys, values } from '..'
 import {
   charTagMapNodeEntries,
   conditionals,
@@ -18,15 +17,16 @@ import {
   withMember,
 } from '../..'
 import { Calculator } from '../../calculator'
+import { data, keys, values } from '..'
 import type { Read } from '../util'
 import {
-  type TagMapNodeEntries,
   conditionalEntries,
   convert,
   enemy,
   enemyDebuff,
   own,
   ownTag,
+  type TagMapNodeEntries,
 } from '../util'
 
 setDebugMode(true)
@@ -85,8 +85,7 @@ function cond(
 ) {
   return conditionalEntries(wKey, characterKey, null)(name, value)
 }
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// biome-ignore lint/correctness/noUnusedVariables: helper util for tests
 function printDebug(calc: Calculator, read: Read) {
   console.log(prettify(calc.toDebug().compute(read)))
 }

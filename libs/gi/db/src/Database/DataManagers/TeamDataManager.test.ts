@@ -67,7 +67,7 @@ describe('export and import test', () => {
       'test',
     ])
 
-    let res: object | undefined = undefined
+    let res: object | undefined
     expect(() => {
       const json = JSON.stringify(exp)
       res = JSON.parse(json)

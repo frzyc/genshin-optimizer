@@ -75,7 +75,7 @@ function getSkillStrings(data: CharacterData['skills']) {
 }
 
 function processParamText(text: string) {
-  return text.replace(/\s*(DMG Multiplier|Daze Multiplier)/, '').trim() + ' '
+  return `${text.replace(/\s*(DMG Multiplier|Daze Multiplier)/, '').trim()} `
 }
 
 function getCoreStrings(data: CharacterData['cores']) {

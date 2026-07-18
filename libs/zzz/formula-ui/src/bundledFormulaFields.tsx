@@ -6,8 +6,8 @@ import type {
 } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { CharacterKey, SkillKey } from '@genshin-optimizer/zzz/consts'
 import type { TargetTag } from '@genshin-optimizer/zzz/db'
-import { type AbilityDim, isAbilityDim } from '@genshin-optimizer/zzz/formula'
 import type { Sheet, Tag } from '@genshin-optimizer/zzz/formula'
+import { type AbilityDim, isAbilityDim } from '@genshin-optimizer/zzz/formula'
 import { skillFromTag } from './abilityTag'
 import {
   partitionBundlableTags,

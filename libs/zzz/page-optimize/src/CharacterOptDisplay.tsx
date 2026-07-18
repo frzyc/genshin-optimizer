@@ -1,7 +1,7 @@
 import { CardThemed, useScrollRef } from '@genshin-optimizer/common/ui'
 import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
 import { DebugListingsDisplay } from '@genshin-optimizer/game-opt/formula-ui'
-import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
+import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { getMainCharacterOptConfigId } from '@genshin-optimizer/zzz/db'
 import {
   OptConfigProvider,
@@ -13,8 +13,8 @@ import {
 } from '@genshin-optimizer/zzz/db-ui'
 import { own } from '@genshin-optimizer/zzz/formula'
 import {
-  CharStatsDisplay,
   CharacterEditor,
+  CharStatsDisplay,
   DiscSheetDisplay,
   OptTargetTagRowSxProvider,
   WengineSheetDisplay,
@@ -42,12 +42,12 @@ import { useTranslation } from 'react-i18next'
 import { AnomalySection } from './Anomaly'
 import { BonusStatsSection } from './BonusStats'
 import { CharSheetSection } from './CharSheetsDisplay'
+import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
 import { EnemyStatsSection } from './EnemyStats'
 import Optimize from './Optimize'
 import { EquippedGrid } from './Optimize/EquippedGrid'
 import GeneratedBuildsDisplay from './Optimize/GeneratedBuildsDisplay'
 import { TeammatesSection } from './Teammates'
-import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
 
 const BOT_PX = 0
 const SECTION_SPACING_PX = 33

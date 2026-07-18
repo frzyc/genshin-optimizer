@@ -1,6 +1,7 @@
 import { layeredAssignment } from '@genshin-optimizer/common/util'
 import type { PropTypeKey } from '../../mapping'
 import { readDMJSON } from '../../util'
+
 type WeaponPromoteExcelConfigData = {
   weaponPromoteId: number //12406,
   promoteLevel: number //6,

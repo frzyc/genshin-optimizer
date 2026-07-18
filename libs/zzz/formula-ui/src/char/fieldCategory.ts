@@ -9,7 +9,7 @@ import { formulas } from '@genshin-optimizer/zzz/formula'
 import { isAbilityFormulaTag, skillFromTag } from '../abilityTag'
 import { formulaFieldGroupKey } from '../bundledFormulaGrouping'
 import { primaryTagFromField } from '../formulaFieldUtil'
-import { type TalentSheetElementKey, allTalentSheetElementKey } from './consts'
+import { allTalentSheetElementKey, type TalentSheetElementKey } from './consts'
 import { charSheets } from './sheets'
 
 export type { TalentSheetElementKey }

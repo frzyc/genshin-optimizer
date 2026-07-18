@@ -23,8 +23,8 @@ import HarbingerOfDawn from './HarbingerOfDawn'
 import IronSting from './IronSting'
 import KagotsurubeIsshin from './KagotsurubeIsshin'
 import KeyOfKhajNisut from './KeyOfKhajNisut'
-import LightOfFoliarIncision from './LightOfFoliarIncision'
 import LightbearingMoonshard from './LightbearingMoonshard'
+import LightOfFoliarIncision from './LightOfFoliarIncision'
 import LionsRoar from './LionsRoar'
 import MistsplitterReforged from './MistsplitterReforged'
 import MoonweaversDawn from './MoonweaversDawn'
@@ -52,6 +52,7 @@ import TravelersHandySword from './TravelersHandySword'
 import UrakuMisugiri from './UrakuMisugiri'
 import WolfFang from './WolfFang'
 import XiphosMoonlight from './XiphosMoonlight'
+
 const sword: Record<WeaponSwordKey, WeaponSheet> = {
   Absolution,
   AmenomaKageuchi,

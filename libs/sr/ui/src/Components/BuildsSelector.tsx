@@ -7,7 +7,10 @@ import { useTranslation } from 'react-i18next'
 export function BuildsSelector({
   maxBuildsToShow,
   optConfigId,
-}: { maxBuildsToShow: number; optConfigId: string }) {
+}: {
+  maxBuildsToShow: number
+  optConfigId: string
+}) {
   const { database } = useDatabaseContext()
   const { t } = useTranslation('page_optimize')
 

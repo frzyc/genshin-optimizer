@@ -6,9 +6,9 @@ import { own } from '@genshin-optimizer/zzz/formula'
 import { useMemo } from 'react'
 import { buildCharFormulaFields } from '../char/charFormulaFields'
 import {
-  type TalentSheetElementKey,
   groupFieldsByCategory,
   orderedFieldCategories,
+  type TalentSheetElementKey,
 } from '../char/fieldCategory'
 import { filterNonStatFields, listStatReadsFromFormulas } from '../optTarget'
 

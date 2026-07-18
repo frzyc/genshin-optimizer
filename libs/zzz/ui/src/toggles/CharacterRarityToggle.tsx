@@ -12,6 +12,7 @@ import {
   useTheme,
 } from '@mui/material'
 import { type ReactNode, useCallback, useMemo } from 'react'
+
 type CharacterRarityToggleProps = Omit<
   SolidToggleButtonGroupProps,
   'onChange' | 'value'

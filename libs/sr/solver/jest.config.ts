@@ -1,4 +1,3 @@
-/* eslint-disable */
 export default {
   displayName: 'sr-solver',
   preset: '../../../jest.preset.js',

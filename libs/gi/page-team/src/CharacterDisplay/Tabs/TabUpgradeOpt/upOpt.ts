@@ -4,12 +4,17 @@ import {
   type ArtifactSlotKey,
   type MainStatKey,
   type SubstatKey,
+  allArtifactSlotKeys,
   allSubstatKeys,
-  artSlotMainKeys,
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import type { ArtifactBuildData } from '@genshin-optimizer/gi/solver'
 import { compactArtifacts } from '@genshin-optimizer/gi/solver-tc'
+import type {
+  EvaluatedMarkovNode,
+  MarkovNode,
+  Objective,
+} from '@genshin-optimizer/gi/upopt'
 import {
   deduplicate,
   dustReshape,
@@ -19,11 +24,6 @@ import {
   expandNodes,
   levelUpArtifact,
   makeObjective,
-} from '@genshin-optimizer/gi/upopt'
-import type {
-  EvaluatedMarkovNode,
-  MarkovNode,
-  Objective,
 } from '@genshin-optimizer/gi/upopt'
 import { type OptNode, optimize, precompute } from '@genshin-optimizer/gi/wr'
 import { removeSetKeys } from './formulaUtils'
@@ -51,9 +51,13 @@ type ReshapeConfig = {
 }
 type DefineConfig = {
   enabled: boolean
-  setKeys: ArtifactSetKey[]
-  slotKeys: ArtifactSlotKey[]
-  mainStats: MainStatKey[]
+  setSlotMainStatKeys: Record<
+    ArtifactSlotKey,
+    {
+      setKeys: readonly ArtifactSetKey[]
+      mainStats: readonly MainStatKey[]
+    }
+  >
   substats: SubstatKey[]
 }
 
@@ -78,7 +82,7 @@ export type UpOptInfo = LevelUpInfo | ReshapeInfo | DefineInfo
 
 function canLevelUp(art: ICachedArtifact) {
   // Restricted to 5* artifacts for now.
-  return art.level < 20 && art.rarity === 5
+  return art.rarity === 5
 }
 
 export function canReshape(art: ICachedArtifact) {
@@ -188,36 +192,35 @@ export class UpOptCalculatorV2 {
     }
   }
 
-  tryDefine({ setKeys, slotKeys, mainStats, substats }: DefineConfig) {
-    setKeys = setKeys.filter((setKey) => this.obj.allReadKeys.includes(setKey))
-    if (!setKeys.length) {
-      console.warn(
-        'No useful set keys available for definition; picking Glad as default'
+  tryDefine({ setSlotMainStatKeys, substats }: DefineConfig) {
+    allArtifactSlotKeys.forEach((slotKey) => {
+      const { setKeys, mainStats } = setSlotMainStatKeys[slotKey]
+      let validSetKeys = setKeys.filter((setKey) =>
+        this.obj.allReadKeys.includes(setKey)
       )
-      setKeys = ['GladiatorsFinale'] // Default to something so user sees some results
-    }
-    setKeys.forEach((setKey) => {
-      slotKeys.forEach((slotKey) => {
-        artSlotMainKeys[slotKey]
-          .filter((mainStat) => mainStats.includes(mainStat))
-          .forEach((mainStatKey) => {
-            const subOptions = allSubstatKeys
-              .filter((substat) => substat !== mainStatKey)
-              .filter((substat) => substats.includes(substat))
-            for (let i = 0; i < subOptions.length; i++) {
-              for (let j = i + 1; j < subOptions.length; j++) {
-                const affixes = [subOptions[i], subOptions[j]]
-                const info: DefineInfo = {
-                  type: 'definition',
-                  setKey,
-                  slotKey,
-                  mainStatKey,
-                  affixes,
-                }
-                this.candidates.push(this.fromDefineInfo(info))
+      if (!validSetKeys.length && setKeys.length > 0) {
+        console.warn(`Picking ${setKeys[0]} b/c none of them matter.`)
+        validSetKeys = [setKeys[0]] // Default to something so user sees some results
+      }
+      validSetKeys.forEach((setKey) => {
+        mainStats.forEach((mainStatKey) => {
+          const subOptions = allSubstatKeys
+            .filter((substat) => substat !== mainStatKey)
+            .filter((substat) => substats.includes(substat))
+          for (let i = 0; i < subOptions.length; i++) {
+            for (let j = i + 1; j < subOptions.length; j++) {
+              const affixes = [subOptions[i], subOptions[j]]
+              const info: DefineInfo = {
+                type: 'definition',
+                setKey,
+                slotKey,
+                mainStatKey,
+                affixes,
               }
+              this.candidates.push(this.fromDefineInfo(info))
             }
-          })
+          }
+        })
       })
     })
   }
@@ -455,7 +458,12 @@ function accumulateEvaluations(
       lower: Math.min(acc.lower, evaluation.lower),
       upper: Math.max(acc.upper, evaluation.upper),
     }),
-    { p: 0, upAvgAcc: 0, lower: Infinity, upper: -Infinity }
+    {
+      p: 0,
+      upAvgAcc: 0,
+      lower: Number.POSITIVE_INFINITY,
+      upper: Number.NEGATIVE_INFINITY,
+    }
   )
   return { p, upAvg: p < 1e-6 ? 0 : upAvgAcc / p, lower, upper }
 }

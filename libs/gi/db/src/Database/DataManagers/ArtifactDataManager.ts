@@ -455,7 +455,7 @@ export function cachedArtifact(
     lowerBound = low + Math.floor(level / 4),
     upperBound = high + Math.floor(level / 4)
 
-  let highestScore = -Infinity // -Max(substats.rolls[i].length) over ambiguous rolls
+  let highestScore = Number.NEGATIVE_INFINITY // -Max(substats.rolls[i].length) over ambiguous rolls
   const tryAllSubstats = (
     rolls: { index: number; roll: number[] }[],
     currentScore: number,
@@ -491,7 +491,7 @@ export function cachedArtifact(
     }
   }
 
-  tryAllSubstats([], Infinity, totalUnambiguousRolls)
+  tryAllSubstats([], Number.POSITIVE_INFINITY, totalUnambiguousRolls)
 
   if (substats[3].rolls.length && unactivatedSubstats?.length) {
     validated.unactivatedSubstats = []

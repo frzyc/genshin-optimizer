@@ -1,9 +1,10 @@
 import {
   type ConditionalDocument,
   type Field,
-  type TagField,
   isMultiTagField,
   isTagField,
+  type MultiTagField,
+  type TagField,
 } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { createTagMap } from '@genshin-optimizer/zzz/formula'

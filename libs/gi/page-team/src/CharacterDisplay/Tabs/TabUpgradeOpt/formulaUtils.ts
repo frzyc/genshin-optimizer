@@ -4,7 +4,7 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import type { DynStat } from '@genshin-optimizer/gi/solver'
-import { type OptNode, mapFormulas } from '@genshin-optimizer/gi/wr'
+import { mapFormulas, type OptNode } from '@genshin-optimizer/gi/wr'
 
 /**
  * Given a build and at most 1 replacement artifact, remove all the threshold(setKey) nodes that are always active/inactive.

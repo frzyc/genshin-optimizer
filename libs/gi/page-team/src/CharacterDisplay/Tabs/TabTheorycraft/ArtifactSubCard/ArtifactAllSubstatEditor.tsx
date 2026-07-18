@@ -108,13 +108,13 @@ export function ArtifactAllSubstatEditor({
           step={1}
           marks
           valueLabelDisplay="auto"
-          onChange={(e, v) => setRolls([v as number])}
-          onChangeCommitted={(e, v) => setRolls([v as number])}
+          onChange={(_e, v) => setRolls([v as number])}
+          onChangeCommitted={(_e, v) => setRolls([v as number])}
           disabled={disabled}
         />
       </CardThemed>
       <NumberInputLazy
-        value={parseFloat((rolls ?? 0).toFixed(2))}
+        value={Number.parseFloat((rolls ?? 0).toFixed(2))}
         float
         onChange={(v) => v !== undefined && setRolls([v])}
         color={rolls && invalid ? 'warning' : 'primary'}

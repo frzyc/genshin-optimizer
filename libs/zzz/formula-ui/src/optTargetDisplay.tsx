@@ -2,10 +2,9 @@ import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
 import { useSetDebugTarget } from '@genshin-optimizer/game-opt/formula-ui'
 import { commonDefIcon } from '@genshin-optimizer/zzz/assets'
-import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { type SkillKey, isSkillKey } from '@genshin-optimizer/zzz/consts'
-import { isAbilityDim } from '@genshin-optimizer/zzz/formula'
+import { type CharacterKey, type SkillKey, isSkillKey } from '@genshin-optimizer/zzz/consts'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
+import { isAbilityDim } from '@genshin-optimizer/zzz/formula'
 import HelpIcon from '@mui/icons-material/Help'
 import { Box, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
@@ -33,16 +32,16 @@ import {
 import { formulaReadForTag } from './optTarget'
 import { st } from './util'
 
+export type { FormulaDimension } from './formulaDimensionUi'
 export {
-  abilityDimLabel,
   ABILITY_DIM_LABEL,
+  abilityDimLabel,
   abilityDimsForDimension,
   dimensionByAbilityDim,
   formulaDimensionLabel,
   formulaDimensions,
   resolveAbilityDim,
 } from './formulaDimensionUi'
-export type { FormulaDimension } from './formulaDimensionUi'
 
 function optTargetFormulaTitle(tag: Tag): ReactNode {
   return (
@@ -287,7 +286,9 @@ function OptTargetSkillSectionHeaderContent({ skill }: { skill: string }) {
 
 function OptTalentSheetSectionHeaderContent({
   sheetKey,
-}: { sheetKey: string }) {
+}: {
+  sheetKey: string
+}) {
   const icon = talentSheetElementIcon(sheetKey)
   return (
     <>

@@ -27,7 +27,7 @@ export function headerTemplate(
 ): IDocumentHeader {
   const [tr] = trans('weapon', weaponKey)
   return {
-    title: tr(`passiveName`),
+    title: tr('passiveName'),
     icon: (data: UIData) => (
       <ImgIcon
         size={2}

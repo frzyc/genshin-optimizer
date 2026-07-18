@@ -1,4 +1,4 @@
-import { type SkillKey, isSkillKey } from '@genshin-optimizer/zzz/consts'
+import { isSkillKey, type SkillKey } from '@genshin-optimizer/zzz/consts'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { abilityBaseName } from '@genshin-optimizer/zzz/formula'
 

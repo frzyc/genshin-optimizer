@@ -20,7 +20,6 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { TalentSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
 import {
   dataObjForCharacterSheet,
@@ -28,6 +27,7 @@ import {
   hitEle,
   plungingDmgNodes,
 } from '../dataUtil'
+import type { TalentSheet } from '../ICharacterSheet'
 
 const key: CharacterKey = 'Zibai'
 const skillParam_gen = allStats.char.skillParam[key]
@@ -355,7 +355,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg, {
-            name: ct.chg(`auto.skillParams.4`),
+            name: ct.chg('auto.skillParams.4'),
             multi: 2,
           }),
         },
@@ -394,44 +394,44 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.shift1Dmg, {
-            name: ct.chg(`skill.skillParams.0`),
+            name: ct.chg('skill.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.shift2Dmg, {
-            name: ct.chg(`skill.skillParams.1`),
+            name: ct.chg('skill.skillParams.1'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.shift3Dmg, {
-            name: ct.chg(`skill.skillParams.2`),
+            name: ct.chg('skill.skillParams.2'),
             multi: 2,
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.shift4Dmg, {
-            name: ct.chg(`skill.skillParams.3`),
+            name: ct.chg('skill.skillParams.3'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.shift4GleamDmg, {
-            name: ct.chg(`skill.skillParams.7`),
+            name: ct.chg('skill.skillParams.7'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.shiftCaDmg, {
-            name: ct.chg(`skill.skillParams.4`),
+            name: ct.chg('skill.skillParams.4'),
             multi: 2,
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.stride1Dmg, {
-            name: ct.chg(`skill.skillParams.5`),
+            name: ct.chg('skill.skillParams.5'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.stride2Dmg, {
-            name: ct.chg(`skill.skillParams.6`),
+            name: ct.chg('skill.skillParams.6'),
           }),
         },
         {
@@ -453,12 +453,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.skill1Dmg, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.skill2Dmg, {
-            name: ct.chg(`burst.skillParams.1`),
+            name: ct.chg('burst.skillParams.1'),
           }),
         },
         {

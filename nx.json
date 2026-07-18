@@ -30,9 +30,15 @@
     "publish": {
       "dependsOn": ["build"]
     },
-    "@nx/vite:test": {
-      "cache": true,
-      "inputs": ["default", "^production"]
+    "lint": {
+      "options": {
+        "args": ["--fix"]
+      }
+    },
+    "format": {
+      "options": {
+        "args": ["--fix"]
+      }
     },
     "@nx/js:tsc": {
       "cache": true,
@@ -46,13 +52,17 @@
     },
     "e2e-ci--**/*": {
       "dependsOn": ["^build"]
+    },
+    "@nx/vitest:test": {
+      "cache": true,
+      "inputs": ["default", "^production"]
     }
   },
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
       "default",
-      "!{projectRoot}/.eslintrc.json",
+      "!{projectRoot}/biome.json",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
       "!{projectRoot}/tsconfig.spec.json",
       "!{projectRoot}/jest.config.[jt]s",
@@ -63,20 +73,20 @@
   "generators": {
     "@nx/web:application": {
       "style": "scss",
-      "linter": "eslint",
+      "linter": "biome",
       "unitTestRunner": "vitest",
       "e2eTestRunner": "cypress"
     },
     "@nx/web:library": {
       "style": "scss",
-      "linter": "eslint",
+      "linter": "biome",
       "unitTestRunner": "vitest"
     },
     "@nx/react": {
       "application": {
         "babel": true,
         "style": "@emotion/styled",
-        "linter": "eslint",
+        "linter": "biome",
         "bundler": "webpack"
       },
       "component": {
@@ -84,7 +94,7 @@
       },
       "library": {
         "style": "@emotion/styled",
-        "linter": "eslint",
+        "linter": "biome",
         "unitTestRunner": "none"
       }
     }
@@ -94,17 +104,9 @@
   },
   "plugins": [
     {
-      "plugin": "@nx/eslint/plugin",
-      "options": {
-        "targetName": "eslint:lint",
-        "extensions": ["ts", "tsx", "js", "jsx", "html", "vue"]
-      }
-    },
-    {
       "plugin": "@nx/vite/plugin",
       "options": {
         "buildTargetName": "build",
-        "testTargetName": "test",
         "serveTargetName": "serve",
         "previewTargetName": "preview",
         "serveStaticTargetName": "serve-static"
@@ -118,7 +120,17 @@
         "componentTestingTargetName": "component-test",
         "ciTargetName": "e2e-ci"
       }
+    },
+    {
+      "plugin": "@nx/vitest",
+      "options": {
+        "testTargetName": "test"
+      }
+    },
+    {
+      "plugin": "@genshin-optimizer/biome"
     }
   ],
-  "nxCloudAccessToken_disabled": "MTMwNzFkNGItNDI5OC00MTAwLTliMzItMDYzYzhjNzRiMTVifHJlYWQtd3JpdGU="
+  "nxCloudAccessToken_disabled": "MTMwNzFkNGItNDI5OC00MTAwLTliMzItMDYzYzhjNzRiMTVifHJlYWQtd3JpdGU=",
+  "analytics": false
 }
