@@ -1,7 +1,6 @@
 import { AdResponsive } from '@genshin-optimizer/common/ad'
 import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
 import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { getCharStat } from '@genshin-optimizer/gi/stats'
 import {
   BuildInfoAlert,
   EquippedBuildInfoAlert,
@@ -62,12 +61,20 @@ function BuildManagementContent({ onClose }: { onClose: () => void }) {
   const { t } = useTranslation('loadout')
   const database = useDatabase()
   const {
-    teamCharId,
     loadoutDatum,
-    teamChar: { key: characterKey, buildIds, buildTcIds },
+    teamCharId,
+    teamChar: { key: characterKey },
   } = useContext(TeamCharacterContext)
 
-  const weaponTypeKey = getCharStat(characterKey).weaponType
+  const characterBuilds = database.builds.entriesForCharacter(
+    characterKey,
+    teamCharId
+  )
+  const characterTcBuilds = database.buildTcs.entriesForCharacter(
+    characterKey,
+    teamCharId
+  )
+
   const onChangeBuild = useCallback(
     () => setTimeout(onClose, 1000),
 
@@ -94,7 +101,9 @@ function BuildManagementContent({ onClose }: { onClose: () => void }) {
           startIcon={<AddIcon />}
           color="info"
           size="small"
-          onClick={() => database.teamChars.newBuild(teamCharId)}
+          onClick={() =>
+            database.builds.new({ characterKey, srcTeamCharId: teamCharId })
+          }
         >
           {t('loadoutSettings.newBuildBtn')}
         </Button>
@@ -102,7 +111,7 @@ function BuildManagementContent({ onClose }: { onClose: () => void }) {
       <BuildInfoAlert />
       <Box>
         <Grid container columns={columns} spacing={2}>
-          {buildIds.map((id) => (
+          {characterBuilds.map(([id]) => (
             <Grid item xs={1} key={id}>
               <BuildReal
                 buildId={id}
@@ -124,7 +133,12 @@ function BuildManagementContent({ onClose }: { onClose: () => void }) {
           color="info"
           size="small"
           onClick={() =>
-            database.teamChars.newBuildTcFromBuild(teamCharId, weaponTypeKey)
+            database.buildTcs.newFromBuild(
+              characterKey,
+              undefined,
+              [],
+              teamCharId
+            )
           }
         >
           {t('loadoutSettings.newTcBuildBtn')}
@@ -133,7 +147,7 @@ function BuildManagementContent({ onClose }: { onClose: () => void }) {
       <TCBuildInfoAlert />
       <Box>
         <Grid container columns={columns} spacing={2}>
-          {buildTcIds.map((id) => (
+          {characterTcBuilds.map(([id]) => (
             <Grid item xs={1} key={id}>
               <BuildTc
                 buildTcId={id}

@@ -8,6 +8,7 @@ import type {
   TravelerKey,
 } from '@genshin-optimizer/gi/consts'
 import {
+  allCharacterKeys,
   allLocationCharacterKeys,
   travelerElements,
 } from '@genshin-optimizer/gi/consts'
@@ -27,7 +28,7 @@ import type { IGO } from './exim'
 // 3. Update `currentDBVersion`
 // 4. Test on import, and also on version update
 
-export const currentDBVersion = 25
+export const currentDBVersion = 26
 
 export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
   const version = good.dbVersion ?? 0
@@ -265,6 +266,70 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
         })
       }
     )
+  })
+
+  // global builds: backfill characterKey from teamchar ownership, drop buildIds
+  migrateVersion(26, () => {
+    const teamchars = (good as any).teamchars as
+      | Array<
+          TeamCharacter & {
+            buildIds?: string[]
+            buildTcIds?: string[]
+            id?: string
+          }
+        >
+      | undefined
+    const buildCharKeyMap = new Map<string, CharacterKey>()
+    const buildTcCharKeyMap = new Map<string, CharacterKey>()
+    const buildSrcTeamCharMap = new Map<string, string>()
+    const buildTcSrcTeamCharMap = new Map<string, string>()
+
+    teamchars?.forEach((teamchar) => {
+      if (!allCharacterKeys.includes(teamchar.key)) return
+      const teamCharId = teamchar.id
+      teamchar.buildIds?.forEach((buildId) => {
+        buildCharKeyMap.set(buildId, teamchar.key)
+        if (teamCharId) buildSrcTeamCharMap.set(buildId, teamCharId)
+      })
+      teamchar.buildTcIds?.forEach((buildTcId) => {
+        buildTcCharKeyMap.set(buildTcId, teamchar.key)
+        if (teamCharId) buildTcSrcTeamCharMap.set(buildTcId, teamCharId)
+      })
+      delete teamchar.buildIds
+      delete teamchar.buildTcIds
+    })
+
+    const builds = (good as any).builds as
+      | Array<Record<string, unknown>>
+      | undefined
+    if (builds) {
+      ;(good as any).builds = builds.filter((build) => {
+        const id = build['id'] as string
+        const characterKey = (buildCharKeyMap.get(id) ??
+          build['characterKey']) as CharacterKey
+        if (!allCharacterKeys.includes(characterKey)) return false
+        build['characterKey'] = characterKey
+        const srcTeamCharId = buildSrcTeamCharMap.get(id)
+        if (srcTeamCharId) build['srcTeamCharId'] = srcTeamCharId
+        return true
+      })
+    }
+
+    const buildTcs = (good as any).buildTcs as
+      | Array<Record<string, unknown>>
+      | undefined
+    if (buildTcs) {
+      ;(good as any).buildTcs = buildTcs.filter((buildTc) => {
+        const id = buildTc['id'] as string
+        const characterKey = (buildTcCharKeyMap.get(id) ??
+          buildTc['characterKey']) as CharacterKey
+        if (!allCharacterKeys.includes(characterKey)) return false
+        buildTc['characterKey'] = characterKey
+        const srcTeamCharId = buildTcSrcTeamCharMap.get(id)
+        if (srcTeamCharId) buildTc['srcTeamCharId'] = srcTeamCharId
+        return true
+      })
+    }
   })
 
   good.dbVersion = currentDBVersion
@@ -507,6 +572,67 @@ export function migrate(storage: DBStorage) {
         })
 
         storage.set(key, team)
+      }
+    }
+  })
+
+  // global builds: backfill characterKey from teamchar ownership, drop buildIds
+  migrateVersion(26, () => {
+    const buildCharKeyMap = new Map<string, CharacterKey>()
+    const buildTcCharKeyMap = new Map<string, CharacterKey>()
+    const buildSrcTeamCharMap = new Map<string, string>()
+    const buildTcSrcTeamCharMap = new Map<string, string>()
+
+    for (const key of storage.keys) {
+      if (!key.startsWith('teamchar_')) continue
+      const teamchar = storage.get(key) as TeamCharacter & {
+        buildIds?: string[]
+        buildTcIds?: string[]
+      }
+      if (allCharacterKeys.includes(teamchar.key)) {
+        teamchar.buildIds?.forEach((buildId) => {
+          buildCharKeyMap.set(buildId, teamchar.key)
+          buildSrcTeamCharMap.set(buildId, key)
+        })
+        teamchar.buildTcIds?.forEach((buildTcId) => {
+          buildTcCharKeyMap.set(buildTcId, teamchar.key)
+          buildTcSrcTeamCharMap.set(buildTcId, key)
+        })
+      }
+      delete teamchar.buildIds
+      delete teamchar.buildTcIds
+      storage.set(key, teamchar)
+    }
+
+    for (const key of storage.keys) {
+      if (key.startsWith('buildTc_')) {
+        const buildTc = storage.get(key) as Record<string, unknown>
+        const characterKey = (buildTcCharKeyMap.get(key) ??
+          buildTc['characterKey']) as CharacterKey
+        if (!allCharacterKeys.includes(characterKey)) {
+          storage.remove(key)
+          continue
+        }
+        const srcTeamCharId = buildTcSrcTeamCharMap.get(key)
+        storage.set(key, {
+          ...buildTc,
+          characterKey,
+          ...(srcTeamCharId ? { srcTeamCharId } : {}),
+        })
+      } else if (key.startsWith('build_')) {
+        const build = storage.get(key) as Record<string, unknown>
+        const characterKey = (buildCharKeyMap.get(key) ??
+          build['characterKey']) as CharacterKey
+        if (!allCharacterKeys.includes(characterKey)) {
+          storage.remove(key)
+          continue
+        }
+        const srcTeamCharId = buildSrcTeamCharMap.get(key)
+        storage.set(key, {
+          ...build,
+          characterKey,
+          ...(srcTeamCharId ? { srcTeamCharId } : {}),
+        })
       }
     }
   })

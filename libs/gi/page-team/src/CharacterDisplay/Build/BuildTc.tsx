@@ -14,6 +14,7 @@ import {
   TeamCharacterContext,
   useBuildTc,
   useDatabase,
+  useSrcTeamCharName,
 } from '@genshin-optimizer/gi/db-ui'
 import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
@@ -52,7 +53,8 @@ export default function BuildTc({
   const { teamId, teamCharId } = useContext(TeamCharacterContext)
   const database = useDatabase()
   const buildTc = useBuildTc(buildTcId)!
-  const { name, description } = buildTc
+  const { name, description, srcTeamCharId } = buildTc
+  const source = useSrcTeamCharName(srcTeamCharId)
   const onActive = useMemo(() => {
     if (active) return undefined
     return () => {
@@ -68,7 +70,7 @@ export default function BuildTc({
     database.buildTcs.remove(buildTcId)
   }
   const onDupe = () =>
-    database.teamChars.newBuildTc(teamCharId, {
+    database.buildTcs.new({
       ...structuredClone(buildTc),
       name: t('buildTcCard.copy.nameTc', { name }),
     })
@@ -84,6 +86,7 @@ export default function BuildTc({
       <BuildCard
         name={name}
         description={description}
+        source={source}
         active={active}
         onActive={onActive}
         onEdit={onOpen}

@@ -3,6 +3,9 @@
     "tcBadge": "TC",
     "equipped": "Equipped Build"
   },
+  "buildCard": {
+    "source": "source: {{name}}"
+  },
   "buildCardTip": {
     "edit": "Edit Build Settings",
     "copyTc": "Copy to TC Builds",

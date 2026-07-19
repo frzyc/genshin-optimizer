@@ -5,7 +5,7 @@ import {
   TextFieldLazy,
 } from '@genshin-optimizer/common/ui'
 import { crawlObject, getUnitStr } from '@genshin-optimizer/common/util'
-import type { LoadoutDatum, TeamCharacter } from '@genshin-optimizer/gi/db'
+import type { TeamCharacter } from '@genshin-optimizer/gi/db'
 import {
   useDatabase,
   useOptConfig,
@@ -37,12 +37,10 @@ import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { OptimizationIcon } from '../../../consts'
-import { BuildInfoAlert, TCBuildInfoAlert } from '../../build'
+import { useAddTeamForLoadout } from '../../../hooks'
 import { DocumentDisplay } from '../../DocumentDisplay'
 import { LoadoutInfoAlert } from '../../loadout'
 import { TeamCard, TeamInfoAlert } from '../../team'
-import { BuildRealSimplified } from './BuildRealSimplified'
-import { BuildTcSimplified } from './BuildTcSimplified'
 import { OptimizationTargetDisplay } from './OptimizationTargetDisplay'
 import { RemoveLoadout } from './RemoveLoadout'
 
@@ -59,14 +57,12 @@ export function LoadoutEditor({
 }) {
   const { t } = useTranslation('loadout')
   const [showRemoval, onShowRemoval, onHideRemoval] = useBoolState()
+  const onAddTeam = useAddTeamForLoadout()
   const navigate = useNavigate()
   const database = useDatabase()
   const {
-    key: characterKey,
     name,
     description,
-    buildIds,
-    buildTcIds,
     customMultiTargets,
     bonusStats,
     optConfigId,
@@ -81,13 +77,6 @@ export function LoadoutEditor({
     const newTeamCharId = database.teamChars.duplicate(teamCharId)
     if (!newTeamCharId) return
     onHide()
-  }
-  const onAddTeam = (teamCharId: string) => {
-    const teamId = database.teams.new()
-    database.teams.set(teamId, (team) => {
-      team.loadoutData[0] = { teamCharId } as LoadoutDatum
-    })
-    navigate(`/teams/${teamId}`)
   }
   const conditionalCount = useMemo(() => {
     let count = 0
@@ -226,42 +215,6 @@ export function LoadoutEditor({
                   </CardContent>
                 </CardThemed>
               </Grid>
-            </Grid>
-          </Box>
-        </CardContent>
-        <Divider />
-        <CardHeader
-          title={
-            <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-              <CheckroomIcon />
-              <span>{t('loadoutEditor.builds')}</span>
-            </Box>
-          }
-        />
-        <Divider />
-        <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-          <BuildInfoAlert />
-          <Box>
-            <Grid container columns={{ xs: 1, md: 2 }} spacing={2}>
-              {buildIds.map((id) => (
-                <Grid item xs={1} key={id}>
-                  <BuildRealSimplified
-                    buildId={id}
-                    characterKey={characterKey}
-                  />
-                </Grid>
-              ))}
-            </Grid>
-          </Box>
-
-          <TCBuildInfoAlert />
-          <Box>
-            <Grid container columns={{ xs: 1, md: 2 }} spacing={2}>
-              {buildTcIds.map((id) => (
-                <Grid item xs={1} key={id}>
-                  <BuildTcSimplified buildTcId={id} />
-                </Grid>
-              ))}
             </Grid>
           </Box>
         </CardContent>

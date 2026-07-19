@@ -11,6 +11,7 @@ import {
   useBuild,
   useDatabase,
   useEquippedInTeam,
+  useSrcTeamCharName,
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import {
@@ -55,7 +56,9 @@ export default function BuildReal({
   } = useContext(CharacterContext)
   const database = useDatabase()
 
-  const { name, description, weaponId, artifactIds } = useBuild(buildId)!
+  const { name, description, weaponId, artifactIds, srcTeamCharId } =
+    useBuild(buildId)!
+  const source = useSrcTeamCharName(srcTeamCharId)
   const onActive = useMemo(() => {
     if (active) return undefined
     return () => {
@@ -88,13 +91,12 @@ export default function BuildReal({
     //TODO: prompt user for removal
     database.builds.remove(buildId)
   }
-  const weaponTypeKey = getCharStat(characterKey).weaponType
   const copyToTc = () => {
-    const newBuildTcId = database.teamChars.newBuildTcFromBuild(
-      teamCharId,
-      weaponTypeKey,
+    const newBuildTcId = database.buildTcs.newFromBuild(
+      characterKey,
       database.weapons.get(weaponId),
-      Object.values(artifactIds).map((id) => database.arts.get(id))
+      Object.values(artifactIds).map((id) => database.arts.get(id)),
+      teamCharId
     )
     if (!newBuildTcId) return
     // copy over name/desc
@@ -104,16 +106,18 @@ export default function BuildReal({
     })
   }
   const onDupe = () =>
-    database.teamChars.newBuild(teamCharId, {
+    database.builds.new({
+      characterKey,
       name: t('buildRealCard.copy.nameReal', { name }),
-      artifactIds: artifactIds,
-      weaponId: weaponId,
+      artifactIds,
+      weaponId,
     })
 
   const { weaponUsedInTeamCharKey, artUsedInTeamCharKeys } = useEquippedInTeam(
     weaponId!,
     artifactIds
   )
+  const weaponTypeKey = getCharStat(characterKey).weaponType
 
   const [show, onShow, onHide] = useBoolState()
   return (
@@ -134,6 +138,7 @@ export default function BuildReal({
       <BuildCard
         name={name}
         description={description}
+        source={source}
         active={active}
         onEdit={onOpen}
         onActive={onActive}
