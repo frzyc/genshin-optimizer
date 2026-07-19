@@ -105,6 +105,41 @@ describe('export and import test', () => {
     expect(database.buildTcs.forCharacter('HuTao').length).toEqual(1)
   })
 
+  test('entriesForCharacter sorts srcTeamCharId builds first', () => {
+    const loadoutA = database.teamChars.new('Xiangling')
+    const loadoutB = database.teamChars.new('Xiangling')
+    const id1 = database.builds.new({ characterKey: 'Xiangling' })
+    const id2 = database.builds.new({
+      characterKey: 'Xiangling',
+      srcTeamCharId: loadoutB,
+    })
+    const id3 = database.builds.new({
+      characterKey: 'Xiangling',
+      srcTeamCharId: loadoutA,
+    })
+
+    expect(
+      database.builds
+        .entriesForCharacter('Xiangling', loadoutA)
+        .map(([id]) => id)
+    ).toEqual([id3, id1, id2])
+
+    const tcId1 = database.buildTcs.new(initCharTC('Xiangling', 'StaffOfHoma'))
+    const tcId2 = database.buildTcs.new({
+      ...initCharTC('Xiangling', 'StaffOfHoma'),
+      srcTeamCharId: loadoutB,
+    })
+    const tcId3 = database.buildTcs.new({
+      ...initCharTC('Xiangling', 'StaffOfHoma'),
+      srcTeamCharId: loadoutA,
+    })
+    expect(
+      database.buildTcs
+        .entriesForCharacter('Xiangling', loadoutA)
+        .map(([id]) => id)
+    ).toEqual([tcId3, tcId1, tcId2])
+  })
+
   test('two loadouts for same character can reference same build', () => {
     const loadoutA = database.teamChars.new('Xiangling')
     const loadoutB = database.teamChars.new('Xiangling')

@@ -43,12 +43,14 @@ export function BuildEquipped({
       name: t('buildEqCard.copy.nameReal'),
       artifactIds: equippedArtifacts,
       weaponId: equippedWeapon,
+      srcTeamCharId: teamCharId,
     })
   const copyToTc = () => {
     const newBuildTcId = database.buildTcs.newFromBuild(
       characterKey,
       database.weapons.get(equippedWeapon),
-      Object.values(equippedArtifacts).map((id) => database.arts.get(id))
+      Object.values(equippedArtifacts).map((id) => database.arts.get(id)),
+      teamCharId
     )
     if (!newBuildTcId) return
     // copy over name

@@ -15,6 +15,7 @@ import { z } from 'zod'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
 import type { IGO, ImportResult } from '../exim'
+import { sortEntriesBySrcTeamCharId } from './buildUtil'
 import { defaultInitialWeaponKey, initialWeapon } from './WeaponDataManager'
 
 const artifactIdsSchema = zodTypedRecord(
@@ -31,6 +32,8 @@ const buildSchema = z.object({
   artifactIds: artifactIdsSchema.catch(
     objKeyMap(allArtifactSlotKeys, () => undefined)
   ),
+  /** Loose reference to the teamChar loadout that created this build. */
+  srcTeamCharId: z.string().optional(),
 })
 export type Build = z.infer<typeof buildSchema>
 
@@ -51,7 +54,8 @@ export class BuildDataManager extends DataManager<
     const result = buildSchema.safeParse(obj)
     if (!result.success) return undefined
 
-    const { name, description, id, artifactIds, characterKey } = result.data
+    const { name, description, id, artifactIds, characterKey, srcTeamCharId } =
+      result.data
     let { weaponId } = result.data
 
     if (weaponId && !this.database.weapons.get(weaponId)) weaponId = undefined
@@ -86,14 +90,21 @@ export class BuildDataManager extends DataManager<
       characterKey,
       weaponId,
       artifactIds: validatedArtifactIds,
+      ...(srcTeamCharId ? { srcTeamCharId } : {}),
     }
   }
 
   forCharacter(characterKey: CharacterKey): Build[] {
     return this.values.filter((b) => b.characterKey === characterKey)
   }
-  entriesForCharacter(characterKey: CharacterKey): [string, Build][] {
-    return this.entries.filter(([, b]) => b.characterKey === characterKey)
+  entriesForCharacter(
+    characterKey: CharacterKey,
+    srcTeamCharId?: string
+  ): [string, Build][] {
+    return sortEntriesBySrcTeamCharId(
+      this.entries.filter(([, b]) => b.characterKey === characterKey),
+      srcTeamCharId
+    )
   }
 
   new(build: Partial<Build> & Pick<Build, 'characterKey'>): string {

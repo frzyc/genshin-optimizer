@@ -44,6 +44,7 @@ import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
 import type { IGO, ImportResult } from '../exim'
 import type { ICachedArtifact } from './ArtifactDataManager'
+import { sortEntriesBySrcTeamCharId } from './buildUtil'
 import {
   defaultInitialWeaponKey,
   type ICachedWeapon,
@@ -185,6 +186,8 @@ const buildTcSchema = z.object({
     distributedSubstats: 45,
     maxSubstats: defaultMaxSubstats(),
   }),
+  /** Loose reference to the teamChar loadout that created this build. */
+  srcTeamCharId: z.string().optional(),
 })
 
 export type BuildTc = z.infer<typeof buildTcSchema>
@@ -212,13 +215,20 @@ export class BuildTcDataManager extends DataManager<
   forCharacter(characterKey: CharacterKey): BuildTc[] {
     return this.values.filter((b) => b.characterKey === characterKey)
   }
-  entriesForCharacter(characterKey: CharacterKey): [string, BuildTc][] {
-    return this.entries.filter(([, b]) => b.characterKey === characterKey)
+  entriesForCharacter(
+    characterKey: CharacterKey,
+    srcTeamCharId?: string
+  ): [string, BuildTc][] {
+    return sortEntriesBySrcTeamCharId(
+      this.entries.filter(([, b]) => b.characterKey === characterKey),
+      srcTeamCharId
+    )
   }
   newFromBuild(
     characterKey: CharacterKey,
     weapon?: ICachedWeapon,
-    arts: Array<ICachedArtifact | undefined> = []
+    arts: Array<ICachedArtifact | undefined> = [],
+    srcTeamCharId?: string
   ): string | undefined {
     const buildTc = initCharTC(
       characterKey,
@@ -226,7 +236,10 @@ export class BuildTcDataManager extends DataManager<
         defaultInitialWeaponKey(getCharStat(characterKey).weaponType)
     )
     toBuildTc(buildTc, weapon, arts)
-    return this.new(buildTc)
+    return this.new({
+      ...buildTc,
+      ...(srcTeamCharId ? { srcTeamCharId } : {}),
+    })
   }
   new(data: Partial<BuildTc>) {
     const id = this.generateKey()

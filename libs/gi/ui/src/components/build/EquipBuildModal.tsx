@@ -87,6 +87,7 @@ function Content(props: Props) {
           name !== '' ? name : t('equipBuildModal.newName', { currentName }),
         artifactIds: currentArtifactIds,
         weaponId: currentWeaponId,
+        srcTeamCharId: teamCharId,
       })
     }
 

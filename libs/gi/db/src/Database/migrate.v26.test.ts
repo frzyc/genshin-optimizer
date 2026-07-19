@@ -1,9 +1,55 @@
 import { SandboxStorage } from '@genshin-optimizer/common/database'
 import { ArtCharDatabase } from './ArtCharDatabase'
 import { initCharTC } from './DataManagers/BuildTcDataManager'
-import { migrate } from './migrate'
+import { migrate, migrateGOOD } from './migrate'
 
 describe('migrate v26 global builds', () => {
+  test('migrateGOOD backfills srcTeamCharId from teamchar buildIds', () => {
+    const buildId = 'build_0'
+    const buildTcId = 'buildTc_0'
+    const teamCharId = 'teamchar_0'
+    const { characterKey: _characterKey, ...legacyBuildTc } = initCharTC(
+      'RaidenShogun',
+      'EngulfingLightning'
+    )
+
+    const good = migrateGOOD({
+      dbVersion: 25,
+      builds: [
+        {
+          name: 'Test Build',
+          description: '',
+          id: buildId,
+          artifactIds: {},
+        },
+      ],
+      buildTcs: [{ ...legacyBuildTc, id: buildTcId, name: 'Test TC' }],
+      teamchars: [
+        {
+          id: teamCharId,
+          key: 'RaidenShogun',
+          name: 'Raiden Loadout',
+          description: '',
+          customMultiTargets: [],
+          conditional: {},
+          bonusStats: {},
+          hitMode: 'avgHit',
+          buildIds: [buildId],
+          buildTcIds: [buildTcId],
+          optConfigId: 'optConfig_0',
+        },
+      ],
+      optConfigs: [{ id: 'optConfig_0' }],
+    } as any)
+
+    expect(good.dbVersion).toEqual(26)
+    expect(good.teamchars?.[0]?.buildIds).toBeUndefined()
+    expect(good.builds?.[0]?.characterKey).toEqual('RaidenShogun')
+    expect(good.builds?.[0]?.srcTeamCharId).toEqual(teamCharId)
+    expect(good.buildTcs?.[0]?.characterKey).toEqual('RaidenShogun')
+    expect(good.buildTcs?.[0]?.srcTeamCharId).toEqual(teamCharId)
+  })
+
   test('backfills characterKey from teamchar buildIds and strips loadout lists', () => {
     const storage = new SandboxStorage({})
     storage.setDBVersion(25)
@@ -48,6 +94,8 @@ describe('migrate v26 global builds', () => {
     expect(storage.get(teamCharId).buildTcIds).toBeUndefined()
     expect(storage.get(buildId).characterKey).toEqual('RaidenShogun')
     expect(storage.get(buildTcId).characterKey).toEqual('RaidenShogun')
+    expect(storage.get(buildId).srcTeamCharId).toEqual(teamCharId)
+    expect(storage.get(buildTcId).srcTeamCharId).toEqual(teamCharId)
     expect(storage.get(buildId)).toBeTruthy()
     expect(storage.get(buildTcId)).toBeTruthy()
   })

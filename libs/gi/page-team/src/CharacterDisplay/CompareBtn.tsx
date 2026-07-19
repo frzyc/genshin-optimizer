@@ -6,6 +6,7 @@ import type { ButtonGroupProps } from '@mui/material'
 import { Button, ButtonGroup, MenuItem } from '@mui/material'
 import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
+import { BuildNameWithSource } from '../BuildNameWithSource'
 
 /**
  * The UI component that modifies the compare data in a TeamChar.
@@ -25,8 +26,14 @@ export default function CompareBtn({
     loadoutDatum,
     teamChar: { key: characterKey },
   } = useContext(TeamCharacterContext)
-  const characterBuilds = database.builds.entriesForCharacter(characterKey)
-  const characterTcBuilds = database.buildTcs.entriesForCharacter(characterKey)
+  const characterBuilds = database.builds.entriesForCharacter(
+    characterKey,
+    teamCharId
+  )
+  const characterTcBuilds = database.buildTcs.entriesForCharacter(
+    characterKey,
+    teamCharId
+  )
   const {
     buildType,
     buildId,
@@ -99,7 +106,7 @@ export default function CompareBtn({
             </SqBadge>
           )}
         </MenuItem>
-        {characterBuilds.map(([bId, { name, weaponId }]) => (
+        {characterBuilds.map(([bId, { name, weaponId, srcTeamCharId }]) => (
           <MenuItem
             disabled={!weaponId}
             key={bId}
@@ -110,15 +117,21 @@ export default function CompareBtn({
               })
             }
           >
-            {name}{' '}
-            {buildType === 'real' && bId === buildId && (
-              <SqBadge color="info" sx={{ ml: 1 }}>
-                {t('compareBtn.crrBadge')}
-              </SqBadge>
-            )}
+            <BuildNameWithSource
+              name={name}
+              srcTeamCharId={srcTeamCharId}
+              suffix={
+                buildType === 'real' &&
+                bId === buildId && (
+                  <SqBadge color="info" sx={{ ml: 1 }}>
+                    {t('compareBtn.crrBadge')}
+                  </SqBadge>
+                )
+              }
+            />
           </MenuItem>
         ))}
-        {characterTcBuilds.map(([bTcId, { name }]) => (
+        {characterTcBuilds.map(([bTcId, { name, srcTeamCharId }]) => (
           <MenuItem
             key={bTcId}
             onClick={() =>
@@ -128,15 +141,22 @@ export default function CompareBtn({
               })
             }
           >
-            {name}{' '}
-            <SqBadge color="info" sx={{ ml: 1 }}>
-              {t('compareBtn.tcBadge')}
-            </SqBadge>
-            {buildType === 'tc' && bTcId === buildTcId && (
-              <SqBadge color="info" sx={{ ml: 1 }}>
-                {t('compareBtn.crrBadge')}
-              </SqBadge>
-            )}
+            <BuildNameWithSource
+              name={name}
+              srcTeamCharId={srcTeamCharId}
+              suffix={
+                <>
+                  <SqBadge color="info" sx={{ ml: 1 }}>
+                    {t('compareBtn.tcBadge')}
+                  </SqBadge>
+                  {buildType === 'tc' && bTcId === buildTcId && (
+                    <SqBadge color="info" sx={{ ml: 1 }}>
+                      {t('compareBtn.crrBadge')}
+                    </SqBadge>
+                  )}
+                </>
+              }
+            />
           </MenuItem>
         ))}
       </DropdownButton>

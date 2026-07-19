@@ -22,6 +22,7 @@ export function BuildCard({
   avatar,
   name,
   description,
+  source,
   active = false,
   onActive,
   children,
@@ -35,6 +36,8 @@ export function BuildCard({
   avatar?: ReactNode
   name: ReactNode
   description?: ReactNode
+  /** Loadout name for `srcTeamCharId` display. */
+  source?: string
   active?: boolean
   onActive?: () => void
   children: ReactNode
@@ -51,9 +54,16 @@ export function BuildCard({
       <CardHeader
         avatar={avatar}
         title={
-          <Typography noWrap gutterBottom variant="h6">
-            {name}
-          </Typography>
+          <Box>
+            <Typography noWrap gutterBottom variant="h6">
+              {name}
+            </Typography>
+            {source && (
+              <Typography noWrap variant="caption" color="text.secondary">
+                {t('buildCard.source', { name: source })}
+              </Typography>
+            )}
+          </Box>
         }
         action={
           description && (

@@ -120,10 +120,10 @@ export default function TeamExportModal({
         if (!loadout) return defLoadoutExportSetting()
         const { key: characterKey, customMultiTargets } = loadout
         const buildIds = database.builds
-          .entriesForCharacter(characterKey)
+          .entriesForCharacter(characterKey, loadoutDatum.teamCharId)
           .map(([id]) => id)
         const buildTcIds = database.buildTcs
-          .entriesForCharacter(characterKey)
+          .entriesForCharacter(characterKey, loadoutDatum.teamCharId)
           .map(([id]) => id)
         return enforceOptTargetMtarget(loadoutDatum, {
           convertEquipped: true,
@@ -224,10 +224,10 @@ function LoadoutSetting({
   const teamChar = useTeamChar(loadout.teamCharId)!
   const { key: characterKey, name, description, customMultiTargets } = teamChar
   const buildIds = database.builds
-    .entriesForCharacter(characterKey)
+    .entriesForCharacter(characterKey, loadout.teamCharId)
     .map(([id]) => id)
   const buildTcIds = database.buildTcs
-    .entriesForCharacter(characterKey)
+    .entriesForCharacter(characterKey, loadout.teamCharId)
     .map(([id]) => id)
   const optConfig = useOptConfig(teamChar.optConfigId)!
   const { optimizationTarget } = optConfig

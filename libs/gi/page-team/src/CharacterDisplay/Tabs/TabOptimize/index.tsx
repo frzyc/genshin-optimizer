@@ -1011,6 +1011,7 @@ function CopyTcButton({ build }: { build: GeneratedBuild }) {
   const database = useDatabase()
   const {
     loadoutDatum,
+    teamCharId,
     teamChar: { key: characterKey },
   } = useContext(TeamCharacterContext)
 
@@ -1019,7 +1020,8 @@ function CopyTcButton({ build }: { build: GeneratedBuild }) {
     const buildTcId = database.buildTcs.newFromBuild(
       characterKey,
       weapon,
-      Object.values(build.artifactIds).map((id) => database.arts.get(id))
+      Object.values(build.artifactIds).map((id) => database.arts.get(id)),
+      teamCharId
     )
     if (buildTcId)
       database.buildTcs.set(buildTcId, {
@@ -1088,6 +1090,7 @@ function CopyBuildButton({
 
   const database = useDatabase()
   const {
+    teamCharId,
     teamChar: { key: characterKey },
   } = useContext(TeamCharacterContext)
 
@@ -1098,6 +1101,7 @@ function CopyBuildButton({
       name,
       artifactIds,
       weaponId,
+      srcTeamCharId: teamCharId,
     })
 
     setName('')

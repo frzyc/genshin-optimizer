@@ -11,6 +11,7 @@ import {
   useBuild,
   useDatabase,
   useEquippedInTeam,
+  useSrcTeamCharName,
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import {
@@ -55,7 +56,9 @@ export default function BuildReal({
   } = useContext(CharacterContext)
   const database = useDatabase()
 
-  const { name, description, weaponId, artifactIds } = useBuild(buildId)!
+  const { name, description, weaponId, artifactIds, srcTeamCharId } =
+    useBuild(buildId)!
+  const source = useSrcTeamCharName(srcTeamCharId)
   const onActive = useMemo(() => {
     if (active) return undefined
     return () => {
@@ -92,7 +95,8 @@ export default function BuildReal({
     const newBuildTcId = database.buildTcs.newFromBuild(
       characterKey,
       database.weapons.get(weaponId),
-      Object.values(artifactIds).map((id) => database.arts.get(id))
+      Object.values(artifactIds).map((id) => database.arts.get(id)),
+      teamCharId
     )
     if (!newBuildTcId) return
     // copy over name/desc
@@ -134,6 +138,7 @@ export default function BuildReal({
       <BuildCard
         name={name}
         description={description}
+        source={source}
         active={active}
         onEdit={onOpen}
         onActive={onActive}

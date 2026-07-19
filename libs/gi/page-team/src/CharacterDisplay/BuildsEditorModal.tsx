@@ -62,11 +62,18 @@ function BuildManagementContent({ onClose }: { onClose: () => void }) {
   const database = useDatabase()
   const {
     loadoutDatum,
+    teamCharId,
     teamChar: { key: characterKey },
   } = useContext(TeamCharacterContext)
 
-  const characterBuilds = database.builds.entriesForCharacter(characterKey)
-  const characterTcBuilds = database.buildTcs.entriesForCharacter(characterKey)
+  const characterBuilds = database.builds.entriesForCharacter(
+    characterKey,
+    teamCharId
+  )
+  const characterTcBuilds = database.buildTcs.entriesForCharacter(
+    characterKey,
+    teamCharId
+  )
 
   const onChangeBuild = useCallback(
     () => setTimeout(onClose, 1000),
@@ -94,7 +101,9 @@ function BuildManagementContent({ onClose }: { onClose: () => void }) {
           startIcon={<AddIcon />}
           color="info"
           size="small"
-          onClick={() => database.builds.new({ characterKey })}
+          onClick={() =>
+            database.builds.new({ characterKey, srcTeamCharId: teamCharId })
+          }
         >
           {t('loadoutSettings.newBuildBtn')}
         </Button>
@@ -123,7 +132,14 @@ function BuildManagementContent({ onClose }: { onClose: () => void }) {
           startIcon={<AddIcon />}
           color="info"
           size="small"
-          onClick={() => database.buildTcs.newFromBuild(characterKey)}
+          onClick={() =>
+            database.buildTcs.newFromBuild(
+              characterKey,
+              undefined,
+              [],
+              teamCharId
+            )
+          }
         >
           {t('loadoutSettings.newTcBuildBtn')}
         </Button>

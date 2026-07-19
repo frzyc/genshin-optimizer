@@ -281,15 +281,20 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
       | undefined
     const buildCharKeyMap = new Map<string, CharacterKey>()
     const buildTcCharKeyMap = new Map<string, CharacterKey>()
+    const buildSrcTeamCharMap = new Map<string, string>()
+    const buildTcSrcTeamCharMap = new Map<string, string>()
 
     teamchars?.forEach((teamchar) => {
       if (!allCharacterKeys.includes(teamchar.key)) return
-      teamchar.buildIds?.forEach((buildId) =>
+      const teamCharId = teamchar.id
+      teamchar.buildIds?.forEach((buildId) => {
         buildCharKeyMap.set(buildId, teamchar.key)
-      )
-      teamchar.buildTcIds?.forEach((buildTcId) =>
+        if (teamCharId) buildSrcTeamCharMap.set(buildId, teamCharId)
+      })
+      teamchar.buildTcIds?.forEach((buildTcId) => {
         buildTcCharKeyMap.set(buildTcId, teamchar.key)
-      )
+        if (teamCharId) buildTcSrcTeamCharMap.set(buildTcId, teamCharId)
+      })
       delete teamchar.buildIds
       delete teamchar.buildTcIds
     })
@@ -304,6 +309,8 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
           build['characterKey']) as CharacterKey
         if (!allCharacterKeys.includes(characterKey)) return false
         build['characterKey'] = characterKey
+        const srcTeamCharId = buildSrcTeamCharMap.get(id)
+        if (srcTeamCharId) build['srcTeamCharId'] = srcTeamCharId
         return true
       })
     }
@@ -318,6 +325,8 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
           buildTc['characterKey']) as CharacterKey
         if (!allCharacterKeys.includes(characterKey)) return false
         buildTc['characterKey'] = characterKey
+        const srcTeamCharId = buildTcSrcTeamCharMap.get(id)
+        if (srcTeamCharId) buildTc['srcTeamCharId'] = srcTeamCharId
         return true
       })
     }
@@ -571,6 +580,8 @@ export function migrate(storage: DBStorage) {
   migrateVersion(26, () => {
     const buildCharKeyMap = new Map<string, CharacterKey>()
     const buildTcCharKeyMap = new Map<string, CharacterKey>()
+    const buildSrcTeamCharMap = new Map<string, string>()
+    const buildTcSrcTeamCharMap = new Map<string, string>()
 
     for (const key of storage.keys) {
       if (!key.startsWith('teamchar_')) continue
@@ -579,12 +590,14 @@ export function migrate(storage: DBStorage) {
         buildTcIds?: string[]
       }
       if (allCharacterKeys.includes(teamchar.key)) {
-        teamchar.buildIds?.forEach((buildId) =>
+        teamchar.buildIds?.forEach((buildId) => {
           buildCharKeyMap.set(buildId, teamchar.key)
-        )
-        teamchar.buildTcIds?.forEach((buildTcId) =>
+          buildSrcTeamCharMap.set(buildId, key)
+        })
+        teamchar.buildTcIds?.forEach((buildTcId) => {
           buildTcCharKeyMap.set(buildTcId, teamchar.key)
-        )
+          buildTcSrcTeamCharMap.set(buildTcId, key)
+        })
       }
       delete teamchar.buildIds
       delete teamchar.buildTcIds
@@ -600,7 +613,12 @@ export function migrate(storage: DBStorage) {
           storage.remove(key)
           continue
         }
-        storage.set(key, { ...buildTc, characterKey })
+        const srcTeamCharId = buildTcSrcTeamCharMap.get(key)
+        storage.set(key, {
+          ...buildTc,
+          characterKey,
+          ...(srcTeamCharId ? { srcTeamCharId } : {}),
+        })
       } else if (key.startsWith('build_')) {
         const build = storage.get(key) as Record<string, unknown>
         const characterKey = (buildCharKeyMap.get(key) ??
@@ -609,7 +627,12 @@ export function migrate(storage: DBStorage) {
           storage.remove(key)
           continue
         }
-        storage.set(key, { ...build, characterKey })
+        const srcTeamCharId = buildSrcTeamCharMap.get(key)
+        storage.set(key, {
+          ...build,
+          characterKey,
+          ...(srcTeamCharId ? { srcTeamCharId } : {}),
+        })
       }
     }
   })
