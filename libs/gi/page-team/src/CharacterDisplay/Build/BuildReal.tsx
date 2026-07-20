@@ -11,7 +11,7 @@ import {
   useBuild,
   useDatabase,
   useEquippedInTeam,
-  useSrcTeamCharName,
+  useTeamChar,
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import {
@@ -58,7 +58,7 @@ export default function BuildReal({
 
   const { name, description, weaponId, artifactIds, srcTeamCharId } =
     useBuild(buildId)!
-  const source = useSrcTeamCharName(srcTeamCharId)
+  const source = useTeamChar(srcTeamCharId ?? '')?.name
   const onActive = useMemo(() => {
     if (active) return undefined
     return () => {

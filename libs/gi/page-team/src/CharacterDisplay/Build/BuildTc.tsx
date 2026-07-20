@@ -14,7 +14,7 @@ import {
   TeamCharacterContext,
   useBuildTc,
   useDatabase,
-  useSrcTeamCharName,
+  useTeamChar,
 } from '@genshin-optimizer/gi/db-ui'
 import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
@@ -54,7 +54,7 @@ export default function BuildTc({
   const database = useDatabase()
   const buildTc = useBuildTc(buildTcId)!
   const { name, description, srcTeamCharId } = buildTc
-  const source = useSrcTeamCharName(srcTeamCharId)
+  const source = useTeamChar(srcTeamCharId ?? '')?.name
   const onActive = useMemo(() => {
     if (active) return undefined
     return () => {

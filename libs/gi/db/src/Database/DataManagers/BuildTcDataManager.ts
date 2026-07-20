@@ -241,9 +241,9 @@ export class BuildTcDataManager extends DataManager<
       ...(srcTeamCharId ? { srcTeamCharId } : {}),
     })
   }
-  new(data: Partial<BuildTc>) {
+  new(data: Partial<BuildTc> & Pick<BuildTc, 'characterKey'>) {
     const id = this.generateKey()
-    this.set(id, data)
+    if (!this.set(id, data)) return ''
     return id
   }
   duplicate(buildTcId: string): string {

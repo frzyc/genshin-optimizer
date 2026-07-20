@@ -1,4 +1,4 @@
-import { useSrcTeamCharName } from '@genshin-optimizer/gi/db-ui'
+import { useTeamChar } from '@genshin-optimizer/gi/db-ui'
 import { Box, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -13,7 +13,7 @@ export function BuildNameWithSource({
   suffix?: ReactNode
 }) {
   const { t } = useTranslation('build')
-  const source = useSrcTeamCharName(srcTeamCharId)
+  const source = useTeamChar(srcTeamCharId ?? '')?.name
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
       <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>

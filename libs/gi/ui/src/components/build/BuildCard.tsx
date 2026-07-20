@@ -53,6 +53,7 @@ export function BuildCard({
     <Box>
       <CardHeader
         avatar={avatar}
+        disableTypography
         title={
           <Box>
             <Typography noWrap gutterBottom variant="h6">
