@@ -73,13 +73,18 @@ jobs:
       - name: Output date
         id: output-date
         run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
-      # - name: Maintain comment
-      #   uses: actions-cool/maintain-one-comment@v3
-      #   if: ${{ needs.set-env.outputs.prNumber != '' }}
-      #   with:
-      #     token: ${{ secrets.GITHUB_TOKEN }}
-      #     number: ${{ needs.set-env.outputs.prNumber }}
-      #     body: |
-      #       [${{ needs.set-env.outputs.env }}] [${{ steps.output-date.outputs.date }}] - Deployed ${{ needs.set-env.outputs.ref }} to ${{ needs.set-env.outputs.env }}" >> $GITHUB_OUTPUT
-      #     body-include: '<!-- Created by actions-cool/maintain-one-comment -->'
-      #     update-mode: 'append'
+      - name: Find Comment
+        uses: peter-evans/find-comment@v3
+        id: fc
+        if: ${{ needs.set-env.outputs.prNumber != '' }}
+        with:
+          issue-number: ${{ needs.set-env.outputs.prNumber }}
+          comment-author: 'github-actions[bot]'
+          body-includes: Deployed
+      - name: Create or update comment
+        uses: peter-evans/create-or-update-comment@v5
+        if: ${{ needs.set-env.outputs.prNumber != '' }}
+        with:
+          issue-number: ${{ needs.set-env.outputs.prNumber }}
+          body: |
+            [${{ needs.set-env.outputs.env }}] [${{ steps.output-date.outputs.date }}] - Deployed ${{ needs.set-env.outputs.ref }} to ${{ needs.set-env.outputs.env }}" >> $GITHUB_OUTPUT
