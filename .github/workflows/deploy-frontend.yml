@@ -98,10 +98,12 @@ jobs:
         with:
           issue-number: ${{ steps.vars.outputs.deployment_name }}
           comment-author: 'github-actions[bot]'
+          body-includes: Deployed
       - name: Create or update comment
         uses: peter-evans/create-or-update-comment@v5
         if: ${{ steps.vars.outputs.deployment_name != 'beta' }}
         with:
+          comment-id: ${{ steps.fc.outputs.comment-id }}
           issue-number: ${{ steps.vars.outputs.deployment_name }}
           body: |
             [${{ steps.vars.outputs.frontend_name }}] [${{ steps.output-date2.outputs.date }}] - ${{ steps.export-url.outputs.url }}
