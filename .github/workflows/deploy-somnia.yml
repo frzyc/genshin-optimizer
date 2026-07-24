@@ -80,7 +80,6 @@ jobs:
         with:
           issue-number: ${{ needs.set-env.outputs.prNumber }}
           comment-author: 'github-actions[bot]'
-          body-includes: Deployed
       - name: Create or update comment
         uses: peter-evans/create-or-update-comment@v5
         if: ${{ needs.set-env.outputs.prNumber != '' }}
