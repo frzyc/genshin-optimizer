@@ -40,8 +40,6 @@ jobs:
     environment:
       name: ${{ needs.set-env.outputs.env }}
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-    permissions:
-      id-token: write # This is required for requesting the JWT
     if: ${{ github.event.workflow_run.conclusion == 'success' && (needs.set-env.outputs.shouldDeploy == 'true' || needs.set-env.outputs.env == 'somnia-prod') }}
     steps:
       - name: Download build artifact
@@ -88,4 +86,4 @@ jobs:
           comment-id: ${{ steps.fc.outputs.comment-id }}
           issue-number: ${{ needs.set-env.outputs.prNumber }}
           body: |
-            [${{ needs.set-env.outputs.env }}] [${{ steps.output-date.outputs.date }}] - Deployed ${{ needs.set-env.outputs.ref }} to ${{ needs.set-env.outputs.env }}" >> $GITHUB_OUTPUT
+            [${{ needs.set-env.outputs.env }}] [${{ steps.output-date.outputs.date }}] - Deployed ${{ needs.set-env.outputs.ref }} to ${{ needs.set-env.outputs.env }}
