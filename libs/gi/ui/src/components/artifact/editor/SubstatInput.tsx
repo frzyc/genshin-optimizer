@@ -89,7 +89,6 @@ export function SubstatInput({
     rollNum = rolls.length
 
   let error = '',
-    rollData: readonly number[] = [],
     allowedRolls = 0
 
   if (artifact) {
@@ -98,8 +97,8 @@ export function SubstatInput({
     const { numUpgrades, high } = artSubstatRollData[rarity]
     const maxRollNum = numUpgrades + high - 3
     allowedRolls = maxRollNum - rollNum
-    rollData = key ? getSubstatValuesPercent(key, rarity) : []
   }
+  const rollData = artifact && key ? getSubstatValuesPercent(key, rarity) : []
   const rollOffset = 7 - rollData.length
 
   if (!rollNum && key && value)
@@ -120,10 +119,6 @@ export function SubstatInput({
     [key, rarity]
   )
 
-  // Once an artifact is +20, its substats are done rolling and the very first
-  // roll of each substat can be recorded via `initialValue`. The possible
-  // initial rolls are exactly the single-roll values, which line up with the
-  // first few dots (marks) on the slider.
   const showInitialValue = level === 20 && !!key
 
   // With exactly one total roll, the substat's value is unambiguously its
@@ -140,12 +135,22 @@ export function SubstatInput({
     setInitialSubstatValue,
   ])
 
-  // Only the ambiguous case (multiple rolls) needs the slider to pick which of
-  // the possible first rolls was the initial one.
-  const initialRollValues =
-    showInitialValue && rollNum > 1
-      ? rollData.map((v) => Number.parseFloat(artDisplayValue(v, unit)))
-      : []
+  const initialRollValues = useMemo(() => {
+    if (!(showInitialValue && rollNum > 1) || !rollData.length) return []
+    const minRoll = Math.min(...rollData)
+    const maxRoll = Math.max(...rollData)
+    const remainingRolls = rollNum - 1
+    const eps = 1e-6
+    return rollData
+      .filter((v) => {
+        const remaining = accurateValue - v
+        return (
+          remaining >= remainingRolls * minRoll - eps &&
+          remaining <= remainingRolls * maxRoll + eps
+        )
+      })
+      .map((v) => Number.parseFloat(artDisplayValue(v, unit)))
+  }, [showInitialValue, rollNum, rollData, accurateValue, unit])
 
   return (
     <CardThemed bgt="light">
