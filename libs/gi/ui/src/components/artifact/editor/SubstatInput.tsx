@@ -122,9 +122,11 @@ export function SubstatInput({
   const showInitialValue = level === 20 && !!key
 
   // With exactly one total roll, the substat's value is unambiguously its
-  // initial roll, so record it automatically (and don't offer the slider).
+  // initial roll, so keep it recorded automatically (and don't offer the
+  // slider). This also corrects a stale value carried over from when the
+  // substat had multiple rolls.
   useEffect(() => {
-    if (showInitialValue && rollNum === 1 && initialValue === undefined)
+    if (showInitialValue && rollNum === 1 && initialValue !== value)
       setInitialSubstatValue(index, value)
   }, [
     showInitialValue,
@@ -137,20 +139,40 @@ export function SubstatInput({
 
   const initialRollValues = useMemo(() => {
     if (!(showInitialValue && rollNum > 1) || !rollData.length) return []
-    const minRoll = Math.min(...rollData)
-    const maxRoll = Math.max(...rollData)
-    const remainingRolls = rollNum - 1
-    const eps = 1e-6
+    const minRoll = Math.min(...rollData),
+      maxRoll = Math.max(...rollData)
     return rollData
       .filter((v) => {
         const remaining = accurateValue - v
         return (
-          remaining >= remainingRolls * minRoll - eps &&
-          remaining <= remainingRolls * maxRoll + eps
+          remaining >= (rollNum - 1) * minRoll - 1e-6 &&
+          remaining <= (rollNum - 1) * maxRoll + 1e-6
         )
       })
       .map((v) => Number.parseFloat(artDisplayValue(v, unit)))
   }, [showInitialValue, rollNum, rollData, accurateValue, unit])
+
+  // If a change to the roll value makes the currently selected initial roll no
+  // longer a possible first roll, reset it.
+  useEffect(() => {
+    if (
+      showInitialValue &&
+      rollNum > 1 &&
+      initialValue !== undefined &&
+      !initialRollValues.some(
+        (v) => artDisplayValue(v, unit) === artDisplayValue(initialValue, unit)
+      )
+    )
+      setInitialSubstatValue(index, undefined)
+  }, [
+    showInitialValue,
+    rollNum,
+    initialValue,
+    initialRollValues,
+    unit,
+    index,
+    setInitialSubstatValue,
+  ])
 
   return (
     <CardThemed bgt="light">
