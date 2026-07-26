@@ -33,6 +33,7 @@ import {
   getMainStatDisplayStr,
   getSubstatValue,
   getSubstatValuesPercent,
+  sortedSubstatRolls,
 } from '@genshin-optimizer/gi/util'
 import { Lock, LockOpen } from '@mui/icons-material'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
@@ -538,20 +539,22 @@ function SubstatDisplay({
           height="1.3em"
           sx={{ opacity: inFilter ? 1 : 0.3 }}
         >
-          {[...stat.rolls].sort().map((v, i) => (
-            <SmolProgress
-              key={`${i}${v}`}
-              value={(100 * v) / maxRoll}
-              color={`roll${clamp(
-                rollOffset + rollData.indexOf(v),
-                1,
-                6
-              )}.main`}
-            />
-          ))}
+          {sortedSubstatRolls(stat.rolls, stat.initialValue !== undefined).map(
+            (v, i) => (
+              <SmolProgress
+                key={`${i}${v}`}
+                value={(100 * v) / maxRoll}
+                color={`roll${clamp(
+                  rollOffset + rollData.indexOf(v),
+                  1,
+                  6
+                )}.main`}
+              />
+            )
+          )}
         </Box>
       ),
-    [inFilter, stat.rolls, maxRoll, rollData, rollOffset]
+    [inFilter, stat.rolls, stat.initialValue, maxRoll, rollData, rollOffset]
   )
   const getSubstatColor = (
     numRolls: number,

@@ -19,6 +19,7 @@ import {
   artDisplayValue,
   getSubstatSummedRolls,
   getSubstatValuesPercent,
+  sortedSubstatRolls,
 } from '@genshin-optimizer/gi/util'
 import {
   Box,
@@ -319,20 +320,22 @@ export function SubstatInput({
             </Grid>
             <Grid item>
               {!!rolls.length &&
-                [...rolls].sort().map((val, i) => (
-                  <Typography
-                    component="span"
-                    key={`${i}.${val}`}
-                    color={`roll${clamp(
-                      rollOffset + rollData.indexOf(val),
-                      1,
-                      6
-                    )}.main`}
-                    sx={{ ml: 1 }}
-                  >
-                    {artDisplayValue(val, unit)}
-                  </Typography>
-                ))}
+                sortedSubstatRolls(rolls, initialValue !== undefined).map(
+                  (val, i) => (
+                    <Typography
+                      component="span"
+                      key={`${i}.${val}`}
+                      color={`roll${clamp(
+                        rollOffset + rollData.indexOf(val),
+                        1,
+                        6
+                      )}.main`}
+                      sx={{ ml: 1 }}
+                    >
+                      {artDisplayValue(val, unit)}
+                    </Typography>
+                  )
+                )}
             </Grid>
             <Grid item flexGrow={1}>
               {index === 3 ? (
