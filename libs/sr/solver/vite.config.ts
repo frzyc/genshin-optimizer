@@ -23,4 +23,17 @@ export default defineConfig({
   worker: {
     plugins: () => [nxViteTsPaths()],
   },
+
+  test: {
+    watch: false,
+    globals: true,
+    environment: 'node',
+    passWithNoTests: true,
+    include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+    reporters: ['default'],
+    coverage: {
+      reportsDirectory: '../../../coverage/libs/sr/solver',
+      provider: 'v8' as const,
+    },
+  },
 })

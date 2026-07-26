@@ -128,7 +128,7 @@ function getDataFromHakushin(key: NonTravelerCharacterKey) {
   const ascension: CharacterDataGen['ascensionBonus'] = {}
   for (const asc of data.StatsModifier.Ascension) {
     for (const [prop, value] of Object.entries(asc)) {
-      const statKey = propTypeMap[prop]
+      const statKey = propTypeMap[prop as keyof typeof propTypeMap]
       if (!ascension[statKey]) ascension[statKey] = [0]
       ascension[statKey].push(value)
     }
