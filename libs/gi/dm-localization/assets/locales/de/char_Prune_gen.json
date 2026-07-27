@@ -12,7 +12,7 @@
       },
       "charged": {
         "0": "<strong>Heftiger Schlag</strong>",
-        "1": "Verbraucht eine gewisse Menge Ausdauer und führt einen Hammerhieb nach oben aus, der nach kurzer Aufladezeit Gegnern vorne <anemo>Anemo-Schaden</anemo> zufügt."
+        "1": "Verbraucht eine gewisse Menge Ausdauer und führt einen Hammerhieb nach oben aus, der Gegnern vorne <anemo>Anemo-Schaden</anemo> zufügt."
       },
       "plunging": {
         "0": "<strong>Angriff aus dem Fall</strong>",
@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -63,7 +67,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -90,7 +98,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -117,7 +129,7 @@
       "0": "Wandelt Prune nach dem Abschluss von <strong>Aufgabe der Hexe – Von Widerlegung</strong> in eine <strong>Hexerei</strong>-Figur um. Verleiht, wenn sich in der Truppe mindestens 2 Hexerei-Figuren befinden, den Effekt <strong>Hexerei – Geheimes Ritual</strong>, der Hexerei-Figuren verstärkt.",
       "1": "<br/>",
       "2": "<strong>Hexerei – Geheimes Ritual</strong>",
-      "3": "Erhöht, nachdem ein Hexerei-Truppenmitglied, das unter dem Einfluss von „Trommelwirbel“ steht, eine beliebige Elementarreaktion an einem Gegner auslöst, Prunes eigenen ANG 5 s lang um 60 %. Erhöht ihren eigenen ANG, wenn es sich bei der Elementarreaktion dieser Figur um eine Verwirbelungsreaktion handelt, 5 s lang zusätzlich um 30 %."
+      "3": "Erhöht, nachdem eine Hexerei-Figur in der Truppe, die unter dem Einfluss von „Trommelwirbel“ steht, eine beliebige Elementarreaktion an einem Gegner auslöst, Prunes eigenen ANG 5 s lang um 60 %. Wenn es sich bei der Elementarreaktion der Figur um eine Verwirbelungsreaktion handelt, wird der ANG dieser Figur 5 s lang zusätzlich um 30 % erhöht."
     }
   },
   "constellation1": {
@@ -157,7 +169,7 @@
     "name": "Das war’s. Erzähl die Geschichte deinen Freunden!",
     "description": {
       "0": "Verlängert die Dauer des Modus „Jagdsuche“ des „Köderglöckchens“ der Spezialfähigkeit <strong><tooltip ns=char_Prune_gen baseKey18=burst>Glockenläuten! Die Jagd ist eröffnet!</tooltip></strong> um 4 s.",
-      "1": "Erhöht zudem den ANG von Prune und der aktuellen Figuren in der Nähe, die unter dem Einfluss des Effekts „Trommelwirbel“ stehen, 5 s um 350 Punkte, wenn von „Trommelwirbel“ beeinflusste Truppenmitgliedern eine beliebige Elementarreaktion an einem Gegner ausgelöst haben."
+      "1": "Erhöht zudem den ANG von Prune und der aktuellen Figuren in der Nähe, die unter dem Einfluss des Effekts „Trommelwirbel“ stehen, 5 s lang um 350 Punkte, wenn von „Trommelwirbel“ beeinflusste Truppenmitgliedern eine beliebige Elementarreaktion an einem Gegner ausgelöst haben."
     }
   }
 }

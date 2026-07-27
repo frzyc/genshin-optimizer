@@ -11,12 +11,12 @@ export function WeaponName({ weaponKey }: { weaponKey: WeaponKey }) {
   return <Translate ns="weaponNames_gen" key18={weaponKey} />
 }
 export function WeaponDesc({ weaponKey }: { weaponKey: WeaponKey }) {
-  return <Translate ns={sheet(weaponKey)} key18={`description`} />
+  return <Translate ns={sheet(weaponKey)} key18={'description'} />
 }
 
 export function WeaponPassiveName({ weaponKey }: { weaponKey: WeaponKey }) {
   if (!weaponHasRefinement(weaponKey)) return null
-  return <Translate ns={sheet(weaponKey)} key18={`passiveName`} />
+  return <Translate ns={sheet(weaponKey)} key18={'passiveName'} />
 }
 
 export function WeaponPassiveDesc({

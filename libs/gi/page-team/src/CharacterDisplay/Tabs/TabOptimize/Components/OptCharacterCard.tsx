@@ -7,7 +7,7 @@ import {
   CharacterCardStats,
 } from '@genshin-optimizer/gi/ui'
 import { Box, Skeleton } from '@mui/material'
-import { Suspense, memo } from 'react'
+import { memo, Suspense } from 'react'
 
 export const OptCharacterCard = memo(function OptCharacterCard({
   characterKey,

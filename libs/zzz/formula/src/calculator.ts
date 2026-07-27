@@ -57,6 +57,8 @@ export class Calculator extends Base<Tag, never> {
             'dazeInst',
             ...allAttributeKeys.map((k) => `disorderDmgInst_${k}`),
             'disorderDmgInst_frost',
+            ...allAttributeKeys.map((k) => `vortexDmgInst_${k}`),
+            'vortexDmgInst_frost',
           ].includes(r.tag.name ?? '')
       )
   }

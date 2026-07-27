@@ -54,7 +54,7 @@ function SetToolTipTitle({
       {Object.keys(artifactSheet.setEffects).map((setNum) => (
         <Box
           key={setNum}
-          sx={{ opacity: parseInt(setNum) <= numInSet ? 1 : 0.5 }}
+          sx={{ opacity: Number.parseInt(setNum) <= numInSet ? 1 : 0.5 }}
         >
           <Typography>
             <SqBadge color="success">{t(`${setNum}set`)}</SqBadge>

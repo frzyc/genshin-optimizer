@@ -1,4 +1,5 @@
-import * as path from 'path'
+import { writeFile } from 'node:fs/promises'
+import * as path from 'node:path'
 import { formatText } from '@genshin-optimizer/common/pipeline'
 import {
   extractCondMetadata,
@@ -10,9 +11,12 @@ import {
   allWengineKeys,
 } from '@genshin-optimizer/zzz/consts'
 import { workspaceRoot } from '@nx/devkit'
-import { writeFile } from 'fs/promises'
 import { data } from '../../data'
-import { type Tag, commonSheets } from '../../data/util'
+import { commonSheets, type Tag } from '../../data/util'
+import {
+  normalizeSheetFormulaKeys,
+  provisionalFormulaMetaKey,
+} from '../../formulaMeta'
 import type { GenDescExecutorSchema } from './schema'
 
 export default async function runExecutor(
@@ -24,26 +28,41 @@ export default async function runExecutor(
     sheet: sheet!,
     name: q!,
   }))
-  const formulas = extractFormulaMetadata(data, (tag: Tag, value) => {
-    if (
-      // sheet-specific
-      tag.sheet !== 'agg' &&
-      tag.sheet !== 'disc' &&
-      tag.sheet !== 'wengine' &&
-      // formula listing
-      tag.qt === 'listing' &&
-      tag.q === 'formulas' &&
-      // pattern from `registerFormula`
-      value.op === 'tag' &&
-      'name' in value.tag &&
-      'q' in value.tag
-    ) {
-      const sheet = tag.sheet!
-      const name = value.tag['name']!
-      return { sheet, name, tag: { ...tag, ...value.tag } }
+  const rawFormulas = extractFormulaMetadata<Tag, Tag>(
+    data,
+    (tag: Tag, value, _result) => {
+      if (
+        // sheet-specific
+        tag.sheet !== 'agg' &&
+        tag.sheet !== 'disc' &&
+        tag.sheet !== 'wengine' &&
+        // formula listing
+        tag.qt === 'listing' &&
+        tag.q === 'formulas' &&
+        // pattern from `registerFormula`
+        value.op === 'tag' &&
+        'name' in value.tag &&
+        'q' in value.tag
+      ) {
+        const sheet = tag.sheet!
+        const abilityName = value.tag['name']!
+        const q = value.tag['q']!
+        const metaKey = provisionalFormulaMetaKey(abilityName, q)
+        return {
+          sheet,
+          name: metaKey,
+          tag: { ...tag, ...value.tag, name: abilityName },
+        }
+      }
+      return undefined
     }
-    return undefined
-  })
+  )
+  const formulas = Object.fromEntries(
+    Object.entries(rawFormulas).map(([sheet, sheetFormulas]) => [
+      sheet,
+      normalizeSheetFormulaKeys(sheetFormulas),
+    ])
+  )
   const buffs = extractFormulaMetadata<Tag, Tag>(
     data,
     (tag: Tag, value, result) => {
@@ -53,7 +72,7 @@ export default async function runExecutor(
         tag.sheet !== 'disc' &&
         tag.sheet !== 'wengine' &&
         // formula listing
-        tag.qt == 'listing' &&
+        tag.qt === 'listing' &&
         tag.q === 'buffs' &&
         // pattern from `registerBuffs`
         value.op === 'tag' &&

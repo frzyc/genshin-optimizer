@@ -1,7 +1,7 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import { Box, Divider } from '@mui/material'
-import { type MutableRefObject, createContext } from 'react'
+import { createContext, type MutableRefObject } from 'react'
 import { ComboEditor } from './ComboEditor'
 import { TeamCharacterSelector } from './TeamCharacterSelector'
 import TeamNameCardHeader from './TeamNameCardHeader'

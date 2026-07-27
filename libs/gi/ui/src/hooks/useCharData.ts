@@ -9,8 +9,8 @@ import type {
 import { defaultInitialWeapon } from '@genshin-optimizer/gi/db'
 import {
   useCharacter,
-  useDBMeta,
   useDatabase,
+  useDBMeta,
 } from '@genshin-optimizer/gi/db-ui'
 import type { CharacterSheet, WeaponSheet } from '@genshin-optimizer/gi/sheets'
 import {
@@ -18,6 +18,7 @@ import {
   displayDataMap,
   getCharSheet,
   getWeaponSheet,
+  reactionData,
   resonanceData,
 } from '@genshin-optimizer/gi/sheets'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
@@ -220,6 +221,7 @@ function getCharDataBundle(
     sheetData,
     common, // NEED TO PUT THIS AT THE END
     resonanceData,
+    reactionData,
   ]
   return { character, weapon, characterSheet, weaponSheet, data }
 }

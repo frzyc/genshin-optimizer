@@ -1,5 +1,5 @@
 import { objKeyMap, objKeyValMap, range } from '@genshin-optimizer/common/util'
-import { type CharacterKey, absorbableEle } from '@genshin-optimizer/gi/consts'
+import { absorbableEle, type CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   active,
@@ -21,7 +21,6 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { any, cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { TalentSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
 import {
   customDmgNode,
@@ -30,6 +29,7 @@ import {
   hitEle,
   plungingDmgNodes,
 } from '../dataUtil'
+import type { TalentSheet } from '../ICharacterSheet'
 
 const key: CharacterKey = 'Prune'
 const skillParam_gen = allStats.char.skillParam[key]
@@ -156,7 +156,7 @@ const lockRallyReaction_teamAtk_disp = greaterEq(
       equal(
         condLockRallyReaction,
         'swirl',
-        equal(target.isHexerei, 1, dm.lockedPassive.teamAtk_)
+        equal(target.flags.isHexerei, 1, dm.lockedPassive.teamAtk_)
       )
     )
   )
@@ -174,14 +174,18 @@ const c2StackArr = range(
   (dm.constellation2.maxAtk_ - dm.constellation2.atk_) /
     dm.constellation2.moreAtk_
 )
-const c2StackAtk_ = sum(
-  percent(dm.constellation2.atk_),
-  prod(
-    percent(dm.constellation2.moreAtk_),
-    lookup(
-      condC2Stack,
-      objKeyMap(c2StackArr, (s) => constant(s)),
-      naught
+const c2StackAtk_ = greaterEq(
+  input.constellation,
+  2,
+  sum(
+    percent(dm.constellation2.atk_),
+    prod(
+      percent(dm.constellation2.moreAtk_),
+      lookup(
+        condC2Stack,
+        objKeyMap(c2StackArr, (s) => constant(s)),
+        naught
+      )
     )
   )
 )
@@ -279,7 +283,7 @@ export const data = dataObjForCharacterSheet(
         atk: c6RallyReaction_atk,
       },
     },
-    isHexerei: lockHomework_hexerei,
+    flags: { isHexerei: lockHomework_hexerei },
   },
   {
     premod: {
@@ -307,7 +311,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg, {
-            name: ct.chg(`auto.skillParams.3`),
+            name: ct.chg('auto.skillParams.3'),
           }),
         },
         {

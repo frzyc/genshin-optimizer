@@ -42,7 +42,7 @@ export class DisplayArtifactEntry extends DataEntry<
   override set(
     value:
       | Partial<IDisplayArtifact>
-      | ((v: IDisplayArtifact) => Partial<IDisplayArtifact> | void)
+      | ((v: IDisplayArtifact) => Partial<IDisplayArtifact> | undefined)
       | { action: 'reset' }
   ): boolean {
     if ('action' in value) {

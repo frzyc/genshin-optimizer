@@ -1,9 +1,9 @@
 import { DropdownButton, NumberInputLazy } from '@genshin-optimizer/common/ui'
 import { clamp } from '@genshin-optimizer/common/util'
 import {
-  type MilestoneKey,
   ambiguousLevel,
   ambiguousLevelLow,
+  type MilestoneKey,
   maxLevel,
   maxLevelLow,
   milestoneLevels,

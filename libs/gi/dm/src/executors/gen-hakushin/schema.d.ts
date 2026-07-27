@@ -1,1 +1,2 @@
-export interface GenHakushinDataExecutorSchema {} // eslint-disable-line
+// biome-ignore lint/complexity/noBannedTypes: Generated/temp
+export type GenHakushinDataExecutorSchema = {}

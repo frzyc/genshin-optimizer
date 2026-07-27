@@ -56,7 +56,7 @@ function ArtifactSetBadge({
   const artifactSheet = getArtSheet(setKey)
   const numInSet = slotarr.length
   const setActive = Object.keys(artifactSheet.setEffects)
-    .map((setKey) => parseInt(setKey))
+    .map((setKey) => Number.parseInt(setKey))
     .filter((setNum) => setNum <= numInSet)
   return (
     <Box>
@@ -72,7 +72,7 @@ function ArtifactSetBadge({
             ))}{' '}
             <ArtifactSetName setKey={setKey} />
             {setActive.map((n, i) => (
-              <SqBadge sx={{ ml: 0.5 }} key={'' + n + i} color="success">
+              <SqBadge sx={{ ml: 0.5 }} key={`${n}${i}`} color="success">
                 {n}
               </SqBadge>
             ))}

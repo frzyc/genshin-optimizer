@@ -8,7 +8,6 @@ import type {
   DiscSetKey,
   DiscSubStatKey,
 } from '@genshin-optimizer/zzz/consts'
-import { data, keys, values } from '..'
 import {
   charTagMapNodeEntries,
   conditionals,
@@ -17,9 +16,9 @@ import {
   withMember,
 } from '../..'
 import { Calculator } from '../../calculator'
+import { data, keys, values } from '..'
 import type { Read } from '../util'
 import {
-  type TagMapNodeEntries,
   conditionalEntries,
   convert,
   enemy,
@@ -27,6 +26,7 @@ import {
   own,
   ownBuff,
   ownTag,
+  type TagMapNodeEntries,
 } from '../util'
 
 setDebugMode(true)
@@ -53,6 +53,7 @@ function testCharacterData(
         assist: 0,
         chain: 0,
         core: 6,
+        potential: 0,
       }),
       ...discTagMapNodeEntries(discStats, {
         [setKey]: 4,
@@ -72,7 +73,7 @@ function testCharacterData(
 function cond(setKey: DiscSetKey, name: string, value: number) {
   return conditionalEntries(setKey, 'Anby', null)(name, value)
 }
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// biome-ignore lint/correctness/noUnusedVariables: helper util for tests
 function printDebug(calc: Calculator, read: Read) {
   console.log(prettify(calc.toDebug().compute(read)))
 }

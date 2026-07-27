@@ -12,7 +12,6 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { TalentSheet } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
 import {
   customDmgNode,
@@ -20,6 +19,7 @@ import {
   dmgNode,
   plungingDmgNodes,
 } from '../dataUtil'
+import type { TalentSheet } from '../ICharacterSheet.d'
 
 const key: CharacterKey = 'Lisa'
 const skillParam_gen = allStats.char.skillParam[key]
@@ -99,7 +99,9 @@ const dmgFormulas = {
     stack1: dmgNode('atk', dm.skill.stack1, 'skill'),
     stack2: dmgNode('atk', dm.skill.stack2, 'skill'),
     stack3: dmgNode('atk', dm.skill.stack3, 'skill'),
-    press: dmgNode('atk', dm.skill.press, 'skill'),
+    press: dmgNode('atk', dm.skill.press, 'skill', {
+      hit: { reaction: constant('') },
+    }),
   },
   burst: {
     summon: customDmgNode(
@@ -144,7 +146,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg, {
-            name: ct.chg(`auto.skillParams.4`),
+            name: ct.chg('auto.skillParams.4'),
           }),
         },
         {
@@ -182,7 +184,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.press, {
-            name: ct.chg(`skill.skillParams.0`),
+            name: ct.chg('skill.skillParams.0'),
           }),
         },
         ...(range(0, 3) as Array<0 | 1 | 2 | 3>).map((i) => ({

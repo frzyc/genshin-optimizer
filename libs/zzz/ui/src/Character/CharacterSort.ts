@@ -1,12 +1,12 @@
 import type { FilterConfigs, SortConfigs } from '@genshin-optimizer/common/util'
 import {
   type AttributeKey,
-  type CharacterKey,
-  type CharacterRarityKey,
-  type SpecialityKey,
   allAttributeKeys,
   allCharacterRarityKeys,
   allSpecialityKeys,
+  type CharacterKey,
+  type CharacterRarityKey,
+  type SpecialityKey,
 } from '@genshin-optimizer/zzz/consts'
 import type { ZzzDatabase } from '@genshin-optimizer/zzz/db'
 import { i18n } from '@genshin-optimizer/zzz/i18n'

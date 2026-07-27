@@ -1,8 +1,8 @@
 import {
-  type DiscRarityKey,
-  type DiscSetKey,
   allDiscRarityKeys,
   allDiscSetKeys,
+  type DiscRarityKey,
+  type DiscSetKey,
 } from '@genshin-optimizer/zzz/consts'
 
 export const setKeysByRarities = Object.fromEntries(

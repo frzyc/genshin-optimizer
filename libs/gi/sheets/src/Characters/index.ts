@@ -5,8 +5,6 @@ import type {
   TravelerKey,
 } from '@genshin-optimizer/gi/consts'
 import { allTravelerKeys } from '@genshin-optimizer/gi/consts'
-import type { CharacterSheet } from './CharacterSheet'
-
 import Aino from './Aino'
 import Albedo from './Albedo'
 import Alhaitham from './Alhaitham'
@@ -19,6 +17,7 @@ import Barbara from './Barbara'
 import Beidou from './Beidou'
 import Bennett from './Bennett'
 import Candace from './Candace'
+import type { CharacterSheet } from './CharacterSheet'
 import Charlotte from './Charlotte'
 import Chasca from './Chasca'
 import Chevreuse from './Chevreuse'
@@ -70,6 +69,7 @@ import Lauma from './Lauma'
 import Layla from './Layla'
 import Linnea from './Linnea'
 import Lisa from './Lisa'
+import Lohen from './Lohen'
 import Lynette from './Lynette'
 import Lyney from './Lyney'
 import Mavuika from './Mavuika'
@@ -90,6 +90,7 @@ import Qiqi from './Qiqi'
 import RaidenShogun from './RaidenShogun'
 import Razor from './Razor'
 import Rosaria from './Rosaria'
+import Sandrone from './Sandrone'
 import SangonomiyaKokomi from './SangonomiyaKokomi'
 import Sayu from './Sayu'
 import Sethos from './Sethos'
@@ -199,6 +200,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Layla,
   Linnea,
   Lisa,
+  Lohen,
   Lynette,
   Lyney,
   Mavuika,
@@ -219,6 +221,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   RaidenShogun,
   Razor,
   Rosaria,
+  Sandrone,
   SangonomiyaKokomi,
   Sayu,
   Sethos,

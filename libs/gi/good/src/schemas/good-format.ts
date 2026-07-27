@@ -1,9 +1,9 @@
 import {
+  artifactSchema,
+  characterSchema,
   type IArtifact,
   type ICharacter,
   type IWeapon,
-  artifactSchema,
-  characterSchema,
   weaponSchema,
 } from '@genshin-optimizer/gi/schema'
 import { z } from 'zod'

@@ -5,8 +5,8 @@ import {
 } from '@genshin-optimizer/common/ui'
 import { lightConeAsset } from '@genshin-optimizer/sr/assets'
 import {
-  type LocationKey,
   ascensionMaxLevel,
+  type LocationKey,
 } from '@genshin-optimizer/sr/consts'
 import type { Calculator } from '@genshin-optimizer/sr/formula'
 import {

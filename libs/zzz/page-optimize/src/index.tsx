@@ -1,11 +1,13 @@
 import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { ImgIcon, useTitle } from '@genshin-optimizer/common/ui'
-import { objKeyMap, stableArr } from '@genshin-optimizer/common/util'
-import type { DebugReadContextObj } from '@genshin-optimizer/game-opt/formula-ui'
 import {
-  DebugReadContext,
-  DebugReadModal,
+  objKeyMap,
+  shouldShowDevComponents,
+  stableArr,
+} from '@genshin-optimizer/common/util'
+import {
+  DebugReadProvider,
   TagContext,
 } from '@genshin-optimizer/game-opt/formula-ui'
 import type { SetConditionalFunc } from '@genshin-optimizer/game-opt/sheet-ui'
@@ -14,11 +16,14 @@ import {
   SetConditionalContext,
   SrcDstDisplayContext,
 } from '@genshin-optimizer/game-opt/sheet-ui'
-import type { BaseRead } from '@genshin-optimizer/pando/engine'
 import { characterAsset } from '@genshin-optimizer/zzz/assets'
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allCharacterKeys } from '@genshin-optimizer/zzz/consts'
-import type { TeamConditional } from '@genshin-optimizer/zzz/db'
+import type {
+  ICachedCharacter,
+  Team,
+  TeamConditional,
+} from '@genshin-optimizer/zzz/db'
 import {
   CharacterContext,
   useCharacter,
@@ -26,10 +31,10 @@ import {
   useTeam,
 } from '@genshin-optimizer/zzz/db-ui'
 import {
-  type Tag,
   getConditional,
   isMember,
   isSheet,
+  type Tag,
 } from '@genshin-optimizer/zzz/formula'
 import { CharCalcProvider } from '@genshin-optimizer/zzz/formula-ui'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
@@ -38,11 +43,35 @@ import {
   CharacterSingleSelectionModal,
 } from '@genshin-optimizer/zzz/ui'
 import { Box, Button } from '@mui/material'
-import { Suspense, useCallback, useMemo, useState } from 'react'
+import { Suspense, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { CharacterOptDisplay } from './CharacterOptDisplay'
-import { OptTargetRow } from './OptTargetRow'
 import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
+import { OptTargetRow } from './OptTargetRow'
+
+function OptimizePageContent({
+  character,
+  team,
+}: {
+  character: ICachedCharacter
+  team: Team
+}) {
+  return (
+    <Box
+      sx={{
+        display: 'flex',
+        gap: 1,
+        flexDirection: 'column',
+        mt: 1,
+      }}
+    >
+      <OptTargetRow character={character} team={team} />
+      <TeamHeaderHeightContext.Provider value={74}>
+        <CharacterOptDisplay key={character.key} />
+      </TeamHeaderHeightContext.Provider>
+    </Box>
+  )
+}
 
 export default function PageOptimize() {
   const { database } = useDatabaseContext()
@@ -56,6 +85,8 @@ export default function PageOptimize() {
   )
 
   const { t } = useTranslation(['charNames_gen', 'page_character'])
+  // Load tooltip translations
+  useTranslation('tooltips_gen')
   const character = useCharacter(characterKey)
   if (characterKey && !character) database.chars.getOrCreate(characterKey)
   const team = useTeam(characterKey)
@@ -63,7 +94,7 @@ export default function PageOptimize() {
   useTitle(
     useMemo(() => {
       const charName = characterKey && t(`charNames_gen:${characterKey}`)
-      return charName ? `Optimize - ${charName}` : `Optimize`
+      return charName ? `Optimize - ${charName}` : 'Optimize'
     }, [characterKey, t])
   )
   const srcDstDisplayContextValue = useMemo(() => {
@@ -108,19 +139,16 @@ export default function PageOptimize() {
     () => ({
       src: characterKey,
       dst: characterKey,
-      preset: `preset0`,
+      preset: 'preset0',
     }),
     [characterKey]
   )
 
-  const [debugRead, setDebugRead] = useState<BaseRead>()
-  const debugObj = useMemo<DebugReadContextObj>(
-    () => ({
-      read: debugRead,
-      setRead: setDebugRead,
-    }),
-    [debugRead]
+  const conditionals = useMemo(
+    () => [...(team?.frames[0]?.conditionals ?? stableArr<TeamConditional>())],
+    [team?.frames]
   )
+
   return (
     <Box>
       <Suspense fallback={false}>
@@ -163,28 +191,18 @@ export default function PageOptimize() {
               discIds={character.equippedDiscs}
             >
               <SrcDstDisplayContext.Provider value={srcDstDisplayContextValue}>
-                <ConditionalValuesContext.Provider
-                  value={
-                    team.frames[0]?.conditionals ?? stableArr<TeamConditional>()
-                  }
-                >
+                <ConditionalValuesContext.Provider value={conditionals}>
                   <SetConditionalContext.Provider value={setConditional}>
-                    <DebugReadContext.Provider value={debugObj}>
-                      <DebugReadModal />
-                      <Box
-                        sx={{
-                          display: 'flex',
-                          gap: 1,
-                          flexDirection: 'column',
-                          mt: 1,
-                        }}
-                      >
-                        <OptTargetRow character={character} team={team} />
-                        <TeamHeaderHeightContext.Provider value={74}>
-                          <CharacterOptDisplay key={character.key} />
-                        </TeamHeaderHeightContext.Provider>
-                      </Box>
-                    </DebugReadContext.Provider>
+                    {shouldShowDevComponents ? (
+                      <DebugReadProvider>
+                        <OptimizePageContent
+                          character={character}
+                          team={team}
+                        />
+                      </DebugReadProvider>
+                    ) : (
+                      <OptimizePageContent character={character} team={team} />
+                    )}
                   </SetConditionalContext.Provider>
                 </ConditionalValuesContext.Provider>
               </SrcDstDisplayContext.Provider>

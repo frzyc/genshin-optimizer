@@ -446,5 +446,26 @@
     "description": {
       "0": "Cuando Prune golpee a un enemigo con su <strong>Martillo del Juramento Cazahecatombes</strong> después de que este haya sufrido un cambio elemental, los demás personajes cercanos del equipo obtendrán el efecto de “inspiración tintineante”, el cual aumenta el daño que infligen con sus ataques en función del ATQ de Prune."
     }
+  },
+  "11330001": {
+    "name": "Decodificación",
+    "description": {
+      "0": "Al realizar un Ataque Cargado, Fagio entrará en este modo.",
+      "1": "Mientras el modo esté activo, Fagio realizará un ataque de ráfaga contra los enemigos que tenga enfrente y disparará un rayo criocondensador de forma periódica que inflige <cryo>Daño Cryo en el AdE</cryo>.",
+      "2": "<strong>Esplendor: Superconductor Estelar</strong>",
+      "3": "El rayo criocondensador pasará a infligir <cryo>Daño Cryo en el AdE</cryo> considerado como daño de Superconductor Estelar."
+    }
+  },
+  "11330002": {
+    "name": "Capacidad de decodificación",
+    "description": {
+      "0": "Cuando Fagio se encuentre en modo de <strong>decodificación</strong>, su <strong>capacidad de decodificación</strong> aumentará sin cesar. Cuando la capacidad alcance el máximo, no podrá mantener el modo de decodificación ni volver a entrar en él."
+    }
+  },
+  "11330003": {
+    "name": "Campo estrellapolar",
+    "description": {
+      "0": "Al causar una reacción de Superconductor Estelar, el área cercana se convertirá en un <strong>campo estrellapolar</strong> durante un breve periodo de tiempo. Al encontrarse dentro de un campo estrellapolar, ciertos personajes entrarán en el estado de <strong>esplendor: Superconductor Estelar</strong>, lo que causará que sus diferentes habilidades obtengan el efecto de fortalecimiento correspondiente."
+    }
   }
 }

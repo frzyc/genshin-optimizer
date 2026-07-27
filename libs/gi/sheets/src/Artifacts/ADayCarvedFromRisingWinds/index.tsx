@@ -3,8 +3,8 @@ import type { Data } from '@genshin-optimizer/gi/wr'
 import { equal, greaterEq, input, sum } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { SetEffectSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
+import type { SetEffectSheet } from '../IArtifactSheet'
 
 const key: ArtifactSetKey = 'ADayCarvedFromRisingWinds'
 const setHeader = setHeaderTemplate(key)
@@ -22,7 +22,7 @@ const set4Cond = greaterEq(
 const set4Hex = greaterEq(
   input.artSet[key],
   4,
-  equal(condSet4, 'on', equal(input.isHexerei, 1, 0.2))
+  equal(condSet4, 'on', equal(input.flags.isHexerei, 1, 0.2))
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {

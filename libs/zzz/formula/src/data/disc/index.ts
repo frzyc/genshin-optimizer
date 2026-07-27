@@ -22,9 +22,11 @@ import ShiningAria from './sheets/ShiningAria'
 import ShockstarDisco from './sheets/ShockstarDisco'
 import SoulRock from './sheets/SoulRock'
 import SwingJazz from './sheets/SwingJazz'
+import TheSkyAblaze from './sheets/TheSkyAblaze'
 import ThunderMetal from './sheets/ThunderMetal'
 import WhiteWaterBallad from './sheets/WhiteWaterBallad'
 import WoodpeckerElectro from './sheets/WoodpeckerElectro'
+import WutheringSalon from './sheets/WutheringSalon'
 import YunkuiTales from './sheets/YunkuiTales'
 
 const data: TagMapNodeEntries[] = [
@@ -50,9 +52,11 @@ const data: TagMapNodeEntries[] = [
   ShockstarDisco,
   SoulRock,
   SwingJazz,
+  TheSkyAblaze,
   ThunderMetal,
   WhiteWaterBallad,
   WoodpeckerElectro,
+  WutheringSalon,
   YunkuiTales,
 ]
 export default data.flat()

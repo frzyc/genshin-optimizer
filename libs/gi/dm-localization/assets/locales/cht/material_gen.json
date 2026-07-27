@@ -257,6 +257,9 @@
   "PalsSynergy": {
     "name": "幻友默契"
   },
+  "VenuePopularity": {
+    "name": "場館人氣"
+  },
   "Primogem": {
     "name": "原石"
   },
@@ -1163,6 +1166,9 @@
   "Prune": {
     "name": "布倫妮"
   },
+  "Sandrone": {
+    "name": "桑多涅"
+  },
   "KachinasStellaFortuna": {
     "name": "卡齊娜的命星"
   },
@@ -1255,6 +1261,9 @@
   },
   "PrunesStellaFortuna": {
     "name": "布倫妮的命星"
+  },
+  "SandronesStellaFortuna": {
+    "name": "桑多涅的命星"
   },
   "Apple": {
     "name": "蘋果"
@@ -3728,6 +3737,9 @@
   "PineAmber": {
     "name": "松珀香"
   },
+  "TeardropOfTheMoon": {
+    "name": "凝月淚滴"
+  },
   "WindrestFlower": {
     "name": "風息花"
   },
@@ -5500,6 +5512,9 @@
   },
   "BorderlandShrineOfDepthsKey": {
     "name": "邊域地靈龕之鑰"
+  },
+  "FrostMoonShrineOfDepthsKey": {
+    "name": "霜月地靈龕之鑰"
   },
   "MnemonicCluster": {
     "name": "技藝團塊"
@@ -8375,6 +8390,33 @@
   "BoredomBustingBubblegum": {
     "name": "解悶泡泡糖"
   },
+  "TeaPartyPolyphony": {
+    "name": "「茶會多重奏」"
+  },
+  "SuspiciousBirchSteamedPorkRibs": {
+    "name": "奇怪的樺木蒸肋排"
+  },
+  "BirchSteamedPorkRibs": {
+    "name": "樺木蒸肋排"
+  },
+  "DeliciousBirchSteamedPorkRibs": {
+    "name": "美味的樺木蒸肋排"
+  },
+  "SuspiciousMeatFilledRyeBun": {
+    "name": "奇怪的肉餡黑麥包"
+  },
+  "MeatFilledRyeBun": {
+    "name": "肉餡黑麥包"
+  },
+  "DeliciousMeatFilledRyeBun": {
+    "name": "美味的肉餡黑麥包"
+  },
+  "TeaPartyPreludeHerbalTea": {
+    "name": "茶會序曲・花草香茶"
+  },
+  "TeaPartyPreludeArtfulLatte": {
+    "name": "茶會序曲・拉花咖啡"
+  },
   "RecipeItem": {
     "name": "食譜道具"
   },
@@ -9182,6 +9224,12 @@
   "RecipeMintBubblegum": {
     "name": "食譜：薄荷泡泡糖"
   },
+  "RecipeBirchSteamedPorkRibs": {
+    "name": "食譜：樺木蒸肋排"
+  },
+  "RecipeMeatFilledRyeBun": {
+    "name": "食譜：肉餡黑麥包"
+  },
   "CraftedItems": {
     "name": "合成產物"
   },
@@ -9748,6 +9796,15 @@
   },
   "JeweledFlamingHilt": {
     "name": "寶飾的焰劍"
+  },
+  "FracturedLunarIron": {
+    "name": "殘損的月鐵"
+  },
+  "DepletedLunarIron": {
+    "name": "空竭的月鐵"
+  },
+  "UnblemishedLunarIron": {
+    "name": "無穢的月鐵"
   },
   "HurricaneSeed": {
     "name": "颶風之種"
@@ -13742,6 +13799,9 @@
   "AncientHandwriting": {
     "name": "古老的字跡"
   },
+  "SecretSourceAncientMoonsFount": {
+    "name": "秘源·古月之源"
+  },
   "ALetterCarriedByTheWind": {
     "name": "由風捎來的信"
   },
@@ -13750,6 +13810,9 @@
   },
   "VarkasSecretStashOfCash": {
     "name": "法爾伽的私房錢"
+  },
+  "PaimonsNotes": {
+    "name": "派蒙的抄寫條"
   },
   "OnFungiCommunitiesDraftManuscript": {
     "name": "《蕈獸族群綜論》暫定稿"
@@ -13850,11 +13913,35 @@
   "PrimalConstructComponent": {
     "name": "元能構裝體零件"
   },
+  "WitnessOfTheMoon": {
+    "name": "「望月的見證」"
+  },
+  "LostFlowerOfAncientTimes": {
+    "name": "失落的遠古之花"
+  },
+  "SandronesTeaPartyInvitationLetter": {
+    "name": "桑多涅的茶會邀請函"
+  },
   "AncientMondstadtRoyalSeal": {
     "name": "古蒙德宗室之印"
   },
   "SegmentDomainControlModuleZeroParticle": {
     "name": "切片轄域管控模組·零質點"
+  },
+  "FrostMoonSeal": {
+    "name": "霜月印磐"
+  },
+  "FamilyPortraitByMamere": {
+    "name": "瑪梅赫畫的「全家福」"
+  },
+  "AlainGuillotinsEpitaph": {
+    "name": "阿蘭·吉約丹的墓誌銘"
+  },
+  "MoongazersEngravingI": {
+    "name": "望月者的摹刻·卷一"
+  },
+  "MoongazersEngravingII": {
+    "name": "望月者的摹刻·卷二"
   },
   "TearsAmongTheStars": {
     "name": "星間之淚"
@@ -14806,6 +14893,24 @@
   },
   "RadiantSpincrystal182": {
     "name": "旋曜玉帛·其一百八十二"
+  },
+  "RadiantSpincrystal183": {
+    "name": "旋曜玉帛·其一百八十三"
+  },
+  "RadiantSpincrystal184": {
+    "name": "旋曜玉帛·其一百八十四"
+  },
+  "RadiantSpincrystal185": {
+    "name": "旋曜玉帛·其一百八十五"
+  },
+  "RadiantSpincrystal186": {
+    "name": "旋曜玉帛·其一百八十六"
+  },
+  "RadiantSpincrystal187": {
+    "name": "旋曜玉帛·其一百八十七"
+  },
+  "RadiantSpincrystal188": {
+    "name": "旋曜玉帛·其一百八十八"
   },
   "LanternFiber": {
     "name": "燈紙纖維"
@@ -15902,6 +16007,15 @@
   "TravelNotesGiftOfSplendor": {
     "name": "紀行·贈綺"
   },
+  "SandroneTeaBreak": {
+    "name": "桑多涅·茶歇"
+  },
+  "NodKraiMoonbright": {
+    "name": "挪德卡萊·皎皎"
+  },
+  "TravelNotesSunnySummer": {
+    "name": "紀行·映夏"
+  },
   "EchoDandelionKnight": {
     "name": "遊跡·蒲公英騎士"
   },
@@ -16312,6 +16426,12 @@
   },
   "LinneasNaturalistArchive": {
     "name": "莉奈婭的博物圖鑑"
+  },
+  "SandronesPortableTeaTable": {
+    "name": "桑多涅的攜帶式茶桌"
+  },
+  "WitchsRevelationCase": {
+    "name": "魔女的諭示匣"
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "說明：風神瞳共鳴石"
@@ -16922,6 +17042,27 @@
   "ShareWithYou": {
     "name": "與你分享"
   },
+  "HealingTreats": {
+    "name": "療癒點心"
+  },
+  "RelaxedReadiness": {
+    "name": "悠然待戰"
+  },
+  "GracefulDance": {
+    "name": "翩然舞姿"
+  },
+  "CommandingStance": {
+    "name": "大將風姿"
+  },
+  "GentleElegance": {
+    "name": "婉約儀容"
+  },
+  "PoisedToStrike": {
+    "name": "凌厲戰姿"
+  },
+  "MajesticBearing": {
+    "name": "威嚴儀態"
+  },
   "FantasticalMarvel": {
     "name": "幻戲瑰意"
   },
@@ -16993,6 +17134,9 @@
   },
   "DemonSlayingGale": {
     "name": "斬魔的烈風"
+  },
+  "DovefeatherMoondew": {
+    "name": "鴿羽月露"
   },
   "VigorousYapping": {
     "name": "活力相談"
@@ -17107,6 +17251,12 @@
   },
   "ExperimentalFieldGenerator": {
     "name": "實驗性場力發生裝置"
+  },
+  "WaywardHermeticSpiritspeaker": {
+    "name": "靈覺隱修的迷者"
+  },
+  "BlackSerpentKnightWindcutter": {
+    "name": "黑蛇騎士·斬風之劍"
   },
   "UndividedHeart": {
     "name": "唯此一心"
@@ -17524,6 +17674,15 @@
   },
   "GravityField": {
     "name": "重力場域"
+  },
+  "VictoryFlowsFromTheTurningOfTides": {
+    "name": "決勝於逆轉之時"
+  },
+  "FlowOfForms": {
+    "name": "流變的繪形"
+  },
+  "OnceTheLoneWindThatKeptTheDarkCalamityAtBay": {
+    "name": "「曾如孤風阻隔黑災蔓延…」"
   },
   "MagicGuide": {
     "name": "魔導緒論"
@@ -18104,6 +18263,15 @@
   "ElementalTransfigurationStormgaleBlessing": {
     "name": "元素幻變：雷風祝佑"
   },
+  "NightmareOmen": {
+    "name": "噩夢的預兆"
+  },
+  "ElementalTransfigurationAquabreezeBlessing": {
+    "name": "元素幻變：水風祝佑"
+  },
+  "ElementalTransfigurationThunderbloomBlessing": {
+    "name": "元素幻變：雷草祝佑"
+  },
   "ElementalResonanceWovenIce": {
     "name": "元素共鳴：交織之冰"
   },
@@ -18362,6 +18530,12 @@
   "TheOtherSideOfTheFrostmoon": {
     "name": "另一側的霜月"
   },
+  "LilFungisFunTasticFiesta": {
+    "name": "小小靈蕈大幻戲"
+  },
+  "ThePowerOfResearch": {
+    "name": "研究的動力"
+  },
   "Origin": {
     "name": "原初"
   },
@@ -18538,6 +18712,12 @@
   },
   "RainlitBambooReverie": {
     "name": "聆雨聽竹"
+  },
+  "WhispersOfStarsAndSmoke": {
+    "name": "星與煙帷的夜語"
+  },
+  "HurlockVariations": {
+    "name": "赫爾洛克變奏曲"
   },
   "RadiantPhantasm": {
     "name": "幻煌至形"
@@ -18890,6 +19070,9 @@
   "PreBattleRespite": {
     "name": "戰前的小憩"
   },
+  "ATeaPartyAtLeisure": {
+    "name": "閒暇的茶會"
+  },
   "WildernessOfTheFarNorth": {
     "name": "終北之地的原野"
   },
@@ -19178,6 +19361,12 @@
   "CityStreetLampLowLanternlight": {
     "name": "城鎮路燈-「低空照明」"
   },
+  "MovableSmallSpotlight": {
+    "name": "可移動小型聚光燈"
+  },
+  "StandingStreetLampBeaconInTheMistyNight": {
+    "name": "立式路燈-「霧夜引路」"
+  },
   "EfflorescentIllumination": {
     "name": "「花葉百相之光」"
   },
@@ -19457,6 +19646,9 @@
   "FrostMoonRoundTableASoftBlueSky": {
     "name": "霜月圓桌-「柔軟天藍」"
   },
+  "TeaPartyDiningTableThePerfectGathering": {
+    "name": "茶會餐桌-「完美聚會」"
+  },
   "BreezeBlessedBed": {
     "name": "柔風加護的床榻"
   },
@@ -19624,6 +19816,9 @@
   },
   "PedunculateOakWoodMoonrestBackedChair": {
     "name": "夏櫟木「枕月」靠背椅"
+  },
+  "TeaPartyChairCrimsonAndGold": {
+    "name": "茶會椅子-「暗紅灑金」"
   },
   "NorthernStoneHearth": {
     "name": "北地石製壁爐"
@@ -19895,6 +20090,9 @@
   "FluffyLittleRug": {
     "name": "「絨絨小毯」"
   },
+  "TeaPartyCarpetSoftToTheTouch": {
+    "name": "茶會地毯-「柔軟質感」"
+  },
   "VibrantPotBornInFlames": {
     "name": "炫彩陶罐-「生於烈焰」"
   },
@@ -20132,6 +20330,9 @@
   "FlowerShapedMachineComponent": {
     "name": "「花型機關零件」"
   },
+  "TeaPartyCartDessertTime": {
+    "name": "茶會餐車-「甜點時間」"
+  },
   "TeahouseToolMinisculeMissesMakeAMile": {
     "name": "茶坊用具-「重於毫釐」"
   },
@@ -20173,6 +20374,9 @@
   },
   "FrostMoonSmallTableAromaOfFreshFruit": {
     "name": "霜月小桌-「果香四溢」"
+  },
+  "TeaPartyCupRefreshingFlavor": {
+    "name": "茶會茶杯-「清新風味」"
   },
   "RealizationsFromTheLandOfWisdom": {
     "name": "「卓識之地的餘醒」"
@@ -22217,6 +22421,9 @@
   "LittleCover": {
     "name": "「小小遮蓋」"
   },
+  "CampBarrierTreatmentArea": {
+    "name": "營地屏障-「診療區域」"
+  },
   "BookshelfFreeReading": {
     "name": "書報架-「自由取閱」"
   },
@@ -22354,6 +22561,9 @@
   },
   "GentleEmbrace": {
     "name": "「溫柔的懷抱」"
+  },
+  "UnusableLegacy": {
+    "name": "「無可應用的遺留」"
   },
   "WeatheredBambooFence": {
     "name": "飽經風雨的竹製圍籬"
@@ -22772,6 +22982,24 @@
   "BloomingSplendor": {
     "name": "「簇簇團團的繽紛」"
   },
+  "NashaStallDeepRootedTraditions": {
+    "name": "那夏小攤-「源遠流長」"
+  },
+  "VesselOfThePast": {
+    "name": "「過往的容器」"
+  },
+  "LargeCargoCrateReliableSupport": {
+    "name": "大型貨箱-「穩定保障」"
+  },
+  "MediumCargoCrateBasicSupplies": {
+    "name": "中型貨箱-「基礎供給」"
+  },
+  "MediumMetalScrapBarrel": {
+    "name": "中型鐵製廢料桶"
+  },
+  "SignallessTower": {
+    "name": "「無訊號之塔」"
+  },
   "SirCapyOfTheLongIncisors": {
     "name": "「睏睏門牙騎士」"
   },
@@ -22804,5 +23032,11 @@
   },
   "MiniatureStonecraft": {
     "name": "「石間小塑」"
+  },
+  "InfiniteRecursionFormula": {
+    "name": "「無限遞迴術式」"
+  },
+  "MoonEnvoyOfSilverRadiance": {
+    "name": "「散布銀輝之月使」"
   }
 }

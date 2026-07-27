@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -72,7 +76,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -104,7 +112,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -123,6 +135,13 @@
     "name": "İkramımız Olsun",
     "description": {
       "0": "Yenileyici etkide olan bir yemek Mükemmel Pişirildiğinde elde edilen ürün %12 ihtimalle iki katına çıkar."
+    }
+  },
+  "lockedPassive": {
+    "name": "Seçkin Hazineler",
+    "description": {
+      "0": "<strong>Buz Patisi</strong> Element Becerisi kullanıldıktan sonraki 20sn içinde grup üyeleri Süper İletim veya Yıldız İletimi tepkimelerini tetiklediğinde Diona da ayrıca üç adet <strong>Buz Patisi</strong> fırlatır. Bu şekilde fırlatılan <strong>Buz Patileri</strong> Element Parçacıkları üretemez ve düşmanlara isabet ettiğinde kalkan oluşturmaz. Bu etki her 3,5 saniyede bir gerçekleşebilir.",
+      "1": "Ayrıca Diona bir <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Kutup Yıldızı Alanı</strong></tooltip> içindeyken <strong>Işıltı: Yıldız İletimi</strong> durumuna girer."
     }
   },
   "constellation1": {
@@ -166,6 +185,17 @@
         "Can %50 veya altındayken Gelen İyileştirme Bonusu %30 artar.",
         "Can %50'nin üzerindeyken Element Ustalığı 200 artar."
       ]
+    },
+    "upgradedDescription": {
+      "0": "<strong>Özel Karışım</strong> alanındaki karakterler, sahip oldukları Can miktarına göre aşağıdaki etkileri kazanır:",
+      "1": [
+        "Can %50 veya altındayken Gelen İyileştirme Bonusu %30 artar.",
+        "Can %50'nin üzerindeyken Element Ustalığı 200 artar."
+      ],
+      "2": "<br/>",
+      "3": "Ayrıca Diona'nın Maks. Canı %25 artar.",
+      "4": "<br/>",
+      "5": "<strong>Işıltı: Yıldız İletimi</strong>: <strong>Özel Karışım</strong> alanındaki karakterlerin verdiği Süper İletim ve Yıldız İletimi Tepkime Hasarı %40 artar."
     }
   }
 }

@@ -1,0 +1,214 @@
+import { ImgIcon } from '@genshin-optimizer/common/ui'
+import type { Document } from '@genshin-optimizer/game-opt/sheet-ui'
+import {
+  DocumentContent,
+  DocumentGroupProvider,
+} from '@genshin-optimizer/game-opt/sheet-ui'
+import { commonDefIcon } from '@genshin-optimizer/zzz/assets'
+import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
+import { allSkillKeys } from '@genshin-optimizer/zzz/consts'
+import { ZCard } from '@genshin-optimizer/zzz/ui'
+import { Box, Stack, Typography } from '@mui/material'
+import { type ReactNode, useMemo } from 'react'
+import {
+  skillSectionFlatIconKey,
+  talentSheetElementIcon,
+  talentSheetElementLabel,
+} from '../optPanelSections'
+import { st } from '../util'
+import {
+  allMindscapeSheetElementKeys,
+  allTalentSheetElementKey,
+} from './consts'
+import { charSheets } from './sheets'
+
+const nonSkillSheetKeys = allTalentSheetElementKey.filter(
+  (
+    k
+  ): k is Exclude<
+    (typeof allTalentSheetElementKey)[number],
+    | (typeof allSkillKeys)[number]
+    | (typeof allMindscapeSheetElementKeys)[number]
+  > =>
+    !allSkillKeys.includes(k as (typeof allSkillKeys)[number]) &&
+    !allMindscapeSheetElementKeys.includes(
+      k as (typeof allMindscapeSheetElementKeys)[number]
+    )
+)
+
+const talentSheetDocumentsSx = {
+  mb: 1,
+  overflow: 'hidden',
+} as const
+
+const mechanicsSectionCardSx = {
+  overflow: 'hidden',
+} as const
+
+function CharMechanicsSectionHeader({
+  iconSrc,
+  children,
+}: {
+  iconSrc?: string
+  children: ReactNode
+}) {
+  return (
+    <Box
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: 1,
+        px: 2,
+        py: 1.25,
+        borderBottom: (theme) =>
+          `1px solid ${theme.palette.contentLight.light}`,
+      }}
+    >
+      {iconSrc && <ImgIcon src={iconSrc} size={1.5} />}
+      <Typography
+        variant="h6"
+        component="div"
+        sx={{ fontSize: '1.1rem', fontWeight: 700, lineHeight: 1.3 }}
+      >
+        {children}
+      </Typography>
+    </Box>
+  )
+}
+
+function documentStartsSection(doc: Document): boolean {
+  return (doc.type === 'text' || doc.type === 'fields') && doc.header != null
+}
+
+/** Split flat sheet documents into subsections */
+function groupDocumentsBySection(documents: Document[]): Document[][] {
+  const groups: Document[][] = []
+  for (const doc of documents) {
+    if (documentStartsSection(doc) || groups.length === 0) {
+      groups.push([doc])
+    } else {
+      groups[groups.length - 1].push(doc)
+    }
+  }
+  return groups.filter((group) => group.length > 0)
+}
+
+function TalentSheetDocuments({ documents }: { documents: Document[] }) {
+  if (!documents.length) return null
+  return (
+    <DocumentGroupProvider>
+      <ZCard bgt="normal" sx={talentSheetDocumentsSx}>
+        {documents.map((document, i) => (
+          <DocumentContent
+            key={i}
+            document={document}
+            typoVariant="body2"
+            collapse={document.type === 'text'}
+          />
+        ))}
+      </ZCard>
+    </DocumentGroupProvider>
+  )
+}
+
+function GroupedTalentSheetDocuments({ documents }: { documents: Document[] }) {
+  const groups = useMemo(() => groupDocumentsBySection(documents), [documents])
+  if (!groups.length) return null
+  if (groups.length === 1) {
+    return <TalentSheetDocuments documents={groups[0]} />
+  }
+  return (
+    <Stack spacing={1.5}>
+      {groups.map((group, i) => (
+        <TalentSheetDocuments key={i} documents={group} />
+      ))}
+    </Stack>
+  )
+}
+
+function CharMechanicsSectionCard({
+  iconSrc,
+  title,
+  children,
+}: {
+  iconSrc?: string
+  title: ReactNode
+  children: ReactNode
+}) {
+  return (
+    <ZCard bgt="light" sx={mechanicsSectionCardSx}>
+      <CharMechanicsSectionHeader iconSrc={iconSrc}>
+        {title}
+      </CharMechanicsSectionHeader>
+      <Box sx={{ px: 1.5, py: 1.5 }}>{children}</Box>
+    </ZCard>
+  )
+}
+
+export function CharMechanicsGroupedDisplay({
+  charKey,
+}: {
+  charKey: CharacterKey
+}) {
+  const skillSections = useMemo(
+    () =>
+      allSkillKeys
+        .map((skill) => ({
+          skill,
+          documents: charSheets[charKey][skill]?.documents ?? [],
+        }))
+        .filter(({ documents }) => documents.length > 0),
+    [charKey]
+  )
+
+  return (
+    <Stack spacing={2} sx={{ pb: 1 }}>
+      {skillSections.map(({ skill, documents }) => (
+        <CharMechanicsSectionCard
+          key={skill}
+          iconSrc={commonDefIcon(
+            skillSectionFlatIconKey(skill) as Parameters<
+              typeof commonDefIcon
+            >[0]
+          )}
+          title={st(`skills.${skill}`)}
+        >
+          <GroupedTalentSheetDocuments documents={documents} />
+        </CharMechanicsSectionCard>
+      ))}
+      {nonSkillSheetKeys.map((sheetKey) => {
+        const element = charSheets[charKey][sheetKey]
+        if (!element?.documents.length) return null
+        return (
+          <CharMechanicsSectionCard
+            key={sheetKey}
+            iconSrc={talentSheetElementIcon(sheetKey)}
+            title={talentSheetElementLabel(sheetKey)}
+          >
+            <GroupedTalentSheetDocuments documents={element.documents} />
+          </CharMechanicsSectionCard>
+        )
+      })}
+      {allMindscapeSheetElementKeys.some(
+        (sheetKey) => charSheets[charKey][sheetKey]?.documents.length
+      ) && (
+        <CharMechanicsSectionCard key="mindscapes" title={st('mindscapes')}>
+          <Stack spacing={1.5}>
+            {allMindscapeSheetElementKeys.flatMap((sheetKey) => {
+              const element = charSheets[charKey][sheetKey]
+              if (!element?.documents.length) return []
+              return groupDocumentsBySection(element.documents).map(
+                (group, i) => (
+                  <TalentSheetDocuments
+                    key={`${sheetKey}_${i}`}
+                    documents={group}
+                  />
+                )
+              )
+            })}
+          </Stack>
+        </CharMechanicsSectionCard>
+      )}
+    </Stack>
+  )
+}

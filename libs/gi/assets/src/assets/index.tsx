@@ -1,3 +1,4 @@
+/** biome-ignore-all assist/source/organizeImports: custom order */
 import bow from './icon_bow.png'
 import catalyst from './icon_catalyst.png'
 import claymore from './icon_claymore.png'
@@ -26,6 +27,10 @@ import sands from './icon_slot_sands.png'
 import hexerei from './UI_BtnIcon_Hexenzirkel.png'
 import moonsign from './UI_BtnIcon_MoonPhase.png'
 
+import polestarField from './UI_Buff_Element_StarSuperconductor.png'
+import stellarconduct from './UI_MessageIcon_StarSuperconductor.png'
+import superconduct from './UI_MessageIcon_Superconductivity.png'
+
 export const imgAssets = {
   weaponTypes: { bow, catalyst, claymore, polearm, sword },
   slot: {
@@ -53,5 +58,10 @@ export const imgAssets = {
   resonance: {
     moonsign,
     hexerei,
+  },
+  reaction: {
+    stellarconduct,
+    polestarField,
+    superconduct,
   },
 } as const

@@ -5,6 +5,7 @@ import { portrait } from '@genshin-optimizer/gi/silly-wisher'
 import { styled } from '@mui/material/styles'
 import { useContext } from 'react'
 import { SillyContext } from '../../context'
+
 interface ImgIconProps {
   size?: number
   sideMargin?: boolean

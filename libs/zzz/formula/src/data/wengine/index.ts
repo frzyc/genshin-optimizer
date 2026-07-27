@@ -5,10 +5,12 @@ import BashfulDemon from './sheets/BashfulDemon'
 import BellicoseBlaze from './sheets/BellicoseBlaze'
 import BigCylinder from './sheets/BigCylinder'
 import BlazingLaurel from './sheets/BlazingLaurel'
+import BoisterousEchoes from './sheets/BoisterousEchoes'
 import BoxCutter from './sheets/BoxCutter'
 import BunnyBand from './sheets/BunnyBand'
 import CannonRotor from './sheets/CannonRotor'
 import CauldronOfClarity from './sheets/CauldronOfClarity'
+import ChiefSidekick from './sheets/ChiefSidekick'
 import CinderCobalt from './sheets/CinderCobalt'
 import CloudcleaveRadiance from './sheets/CloudcleaveRadiance'
 import CordisGermina from './sheets/CordisGermina'
@@ -32,6 +34,7 @@ import Housekeeper from './sheets/Housekeeper'
 import IceJadeTeapot from './sheets/IceJadeTeapot'
 import IdentityBase from './sheets/IdentityBase'
 import IdentityInflection from './sheets/IdentityInflection'
+import JoyauDore from './sheets/JoyauDore'
 import KaboomTheCannon from './sheets/KaboomTheCannon'
 import KrakensCradle from './sheets/KrakensCradle'
 import LunarDecrescent from './sheets/LunarDecrescent'
@@ -64,6 +67,7 @@ import SeveredInnocence from './sheets/SeveredInnocence'
 import SharpenedStinger from './sheets/SharpenedStinger'
 import SixShooter from './sheets/SixShooter'
 import SliceOfTime from './sheets/SliceOfTime'
+import SolExuvia from './sheets/SolExuvia'
 import SpectralGaze from './sheets/SpectralGaze'
 import SpringEmbrace from './sheets/SpringEmbrace'
 import StarlightEngine from './sheets/StarlightEngine'
@@ -96,10 +100,12 @@ const data: TagMapNodeEntries[] = [
   BellicoseBlaze,
   BigCylinder,
   BlazingLaurel,
+  BoisterousEchoes,
   BoxCutter,
   BunnyBand,
   CannonRotor,
   CauldronOfClarity,
+  ChiefSidekick,
   CinderCobalt,
   CloudcleaveRadiance,
   CordisGermina,
@@ -123,6 +129,7 @@ const data: TagMapNodeEntries[] = [
   IceJadeTeapot,
   IdentityBase,
   IdentityInflection,
+  JoyauDore,
   KaboomTheCannon,
   KrakensCradle,
   LunarDecrescent,
@@ -155,6 +162,7 @@ const data: TagMapNodeEntries[] = [
   SharpenedStinger,
   SixShooter,
   SliceOfTime,
+  SolExuvia,
   SpectralGaze,
   SpringEmbrace,
   StarlightEngine,

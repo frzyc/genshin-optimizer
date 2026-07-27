@@ -10,8 +10,8 @@ import {
   allWengineRarityKeys,
 } from '@genshin-optimizer/zzz/consts'
 import { z } from 'zod'
-import { DataEntry } from '../DataEntry'
 import type { ZzzDatabase } from '../Database'
+import { DataEntry } from '../DataEntry'
 
 export const wengineSortKeys = ['level', 'rarity', 'name'] as const
 export type WengineSortKey = (typeof wengineSortKeys)[number]
@@ -55,7 +55,7 @@ export class DisplayWengineEntry extends DataEntry<
   override set(
     value:
       | Partial<IDisplayWengine>
-      | ((v: IDisplayWengine) => Partial<IDisplayWengine> | void)
+      | ((v: IDisplayWengine) => Partial<IDisplayWengine> | undefined)
       | { action: 'reset' }
   ): boolean {
     if ('action' in value) {

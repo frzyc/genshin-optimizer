@@ -60,7 +60,7 @@
     "superconduct": "Сверхпроводник",
     "vaporize": "Пар",
     "melt": "Таяние",
-    "bloom": "Бутонизация",
+    "bloom": "",
     "burgeon": "Цветение",
     "hyperbloom": "Вегетация",
     "quicken": "Стимуляция",
@@ -77,15 +77,15 @@
   "talentLvl": "Уровень таланта {{level}}",
   "talents": {
     "auto": "Обычная атака",
-    "skill": "Элементальный навык",
-    "burst": "Взрыв стихии",
+    "skill": "",
+    "burst": "",
     "altSprint": "Заменяет спринт."
   },
   "unlockPassive1": "Открывается на Фазе возвышения персонажа 1.",
   "unlockPassive2": "Открывается на Фазе возвышения персонажа 4.",
   "unlockPassive3": "Пассивный талант",
   "unlockLockedPassive": "Завершите предыдущие задания, чтобы открыть",
-  "witchPassive": "Уроки ведьм",
+  "witchPassive": "",
   "moonsign": "Лунное знамение",
   "hexerei": "Ведьмовство"
 }

@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom'
 import { TeamCard } from '../../team'
 import { LoadoutEditor } from './LoadoutEditor'
 import { LoadoutHeaderContent } from './LoadoutHeaderContent'
+
 const columns = {
   xs: 1,
   md: 2,

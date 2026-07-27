@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -69,7 +73,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -98,7 +106,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -119,16 +131,30 @@
       "0": "Gerichte mit wiederherstellender, aber ohne wiederbelebende Funktion stellen eigenen Truppenmitgliedern mit gewisser Wahrscheinlichkeit 30 % mehr LP wieder her, wenn Yumemizuki Mizuki in der Truppe ist. Die Wahrscheinlichkeit zum Auslösen dieses Effekts steigt mit höherer Freundschaftsstufe der jeweiligen Figur. Ist {F#die}{M#der} Reisende der Anwender, wird dieser Effekt immer ausgelöst."
     }
   },
+  "lockedPassive": {
+    "name": "Ein Traum entsteht",
+    "description": {
+      "0": "Erhöht, nachdem Yumemizuki Mizuki im Zustand „Träumerisches Treiben“ eine Verwirbelung ausgelöst hat, den den Gegnern in der Nähe beim nächsten Mal zugefügten, regelmäßigen <anemo>Anemo-Flächenschaden</anemo> während der Wirkungsdauer dieses „Träumerischen Treibens“ um 1.000 % von Yumemizuki Mizukis Elementarkunde, 2,5 s Abklingzeit.",
+      "1": "Erhöht zudem, solange Yumemizuki Mizuki sich im Zustand „Träumerisches Treiben“ befindet, die Elementarkunde der Truppenmitglieder in der Nähe um 10 % von Yumemizuki Mizukis Elementarkunde."
+    }
+  },
   "constellation1": {
     "name": "Fernen Wassern gleicher Nebel in der Nacht",
     "description": {
       "0": "Yumemizuki Mizuki fügt im Zustand Träumerisches Treiben alle 3,5 s Gegnern in der Nähe den 3 s haltenden Effekt „Dreiundzwanzig Nächte des Wartens“ zu. Entfernt diesen Effekt von Gegnern, sobald diese von einer Reaktion Verwirbelung erfasst werden, die durch Anemo-Schaden entsteht, und erhöht den diesen Gegnern durch diese Reaktion zugefügten Schaden einmalig um 1.100 % von Yumemizuki Mizukis Elementarkunde."
+    },
+    "upgradedDescription": {
+      "0": "Yumemizuki Mizuki fügt im Zustand Träumerisches Treiben alle 3,5 s Gegnern in der Nähe den 3 s haltenden Effekt „Dreiundzwanzig Nächte des Wartens“ zu. Entfernt diesen Effekt von Gegnern, sobald diese von einer Reaktion Verwirbelung erfasst werden, die durch Anemo-Schaden entsteht, und erhöht den dem Gegner durch diese Reaktion zugefügten Schaden um 1.100 % von Yumemizuki Mizukis Elementarkunde. Greift diesen Gegner zusätzlich einmal an und fügt ihm <anemo>Anemo-SCH</anemo> in Höhe von 1.000 % von Yumemizuki Mizukis Elementarkunde zu."
     }
   },
   "constellation2": {
     "name": "Begegnung mit dir in meinen Träumen",
     "description": {
       "0": "Erhöht im Zustand Träumerisches Treiben den <pyro>Pyro</pyro>-, <hydro>Hydro</hydro>-, <cryo>Kryo</cryo>- und <electro>Elektro</electro>-Schaden aller anderen Truppenmitglieder in der Nähe für jeden Punkt Elementarkunde von Yumemizuki Mizuki um 0,04 %, hält bis zum Ende des Zustands Träumerisches Treiben."
+    },
+    "upgradedDescription": {
+      "0": "Erhöht im Zustand Träumerisches Treiben den <pyro>Pyro</pyro>-, <hydro>Hydro</hydro>-, <cryo>Kryo</cryo>- und <electro>Elektro</electro>-Schaden aller anderen Truppenmitglieder in der Nähe für jeden Punkt Elementarkunde von Yumemizuki Mizuki um 0,04 %, hält bis zum Ende des Zustands Träumerisches Treiben.",
+      "1": "Verringert zudem, wenn Yumemizuki Mizuki sich im Zustand Träumerisches Treiben befindet, den <pyro>Pyro</pyro>-, <hydro>Hydro</hydro>-, <cryo>Kryo</cryo>-, <electro>Elektro</electro>- und <anemo>Anemo</anemo>-WDS von Gegnern in der Nähe um 20 %."
     }
   },
   "constellation3": {
@@ -142,6 +168,9 @@
     "name": "Im warmen Quellwasser treibende Blüten",
     "description": {
       "0": "Verursacht beim Aufsammeln von <strong>Snacks nach Yumemi-Art</strong> der Spezialfähigkeit <strong>Anraku-Therapie in den geheimen Quellen</strong> Schaden und heilt gleichzeitig. Stellt Yumemizuki Mizuki dabei 5 Punkte Elementarenergie wieder her, während einer Anwendung von <strong>Anraku-Therapie in den geheimen Quellen</strong> aber höchstens 4-mal."
+    },
+    "upgradedDescription": {
+      "0": "Verursacht beim Aufsammeln von <strong>Snacks nach Yumemi-Art</strong> der Spezialfähigkeit <strong>Anraku-Therapie in den geheimen Quellen</strong> Schaden und heilt gleichzeitig. Stellt zudem bei einem weiteren Truppenmitglied in der Nähe mit niedrigen LP LP in Höhe von 266 % von Yumemizuki Mizukis Elementarkunde wieder her. Stellt Yumemizuki Mizuki dabei 5 Punkte Elementarenergie wieder her, während einer Anwendung von <strong>Anraku-Therapie in den geheimen Quellen</strong> aber höchstens 4-mal."
     }
   },
   "constellation5": {
@@ -155,6 +184,10 @@
     "name": "Sehnsucht tief in meinem Herzen",
     "description": {
       "0": "Wenn Yumemizuki Mizuki im Zustand Träumerisches Treiben ist, können beim Verursachen der Reaktion Verwirbelung durch Truppenmitglieder in der Nähe Kritische Treffer des entsprechenden Schadens ausgelöst werden, wobei die KT auf 30 % und der KSCH auf 100 % festgelegt sind."
+    },
+    "upgradedDescription": {
+      "0": "Wenn Yumemizuki Mizuki im Zustand Träumerisches Treiben ist, können beim Verursachen der Reaktion Verwirbelung durch Truppenmitglieder in der Nähe Kritische Treffer des entsprechenden Schadens ausgelöst werden, wobei die KT auf 30 % und der Kritische Schaden auf 100 % festgelegt sind.",
+      "1": "Erhöht für den Teil, der 500 Punkte von Yumemizuki Mizukis Elementarkunde überschreitet, für jeden Punkt Elementarkunde die KT um 0,04 % und den KSCH um 0,16 %. Auf diese Weise können Yumemizuki Mizukis KT um max. 20 % und ihr KSCH um max. 80 % erhöht werden."
     }
   }
 }

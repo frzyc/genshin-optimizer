@@ -5,10 +5,10 @@ import {
   objKeyValMap,
 } from '@genshin-optimizer/common/util'
 import { parse } from 'json-bigint'
-import { TextMapEN } from '../../TextMapUtil'
 import { PROJROOT_PATH } from '../../consts'
 import type { AvatarBaseTypeKey, AvatarId } from '../../mapping'
 import { characterIdMap } from '../../mapping'
+import { TextMapEN } from '../../TextMapUtil'
 import { readDMJSON } from '../../util'
 import type { HashId, MaterialValue, Value } from '../common'
 
@@ -103,4 +103,5 @@ const avatarConfig = objFilterKeys(
   objKeyValMap(avatarConfigSrc, (config) => [config.AvatarID, config]),
   Object.keys(characterIdMap) as AvatarId[]
 ) as Record<AvatarId, AvatarConfig>
+
 export { avatarConfig }

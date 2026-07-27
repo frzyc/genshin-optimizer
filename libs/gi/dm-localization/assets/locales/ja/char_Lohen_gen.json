@@ -1,0 +1,181 @@
+{
+  "name": "ローエン",
+  "title": "鋭鋒の矢",
+  "description": "西風騎士団遠距離小隊副隊長。型破りな行動を取り、常軌を逸した戦術を好む騎士。",
+  "constellationName": "騎士兎座",
+  "auto": {
+    "name": "西風槍術・破誓",
+    "fields": {
+      "normal": {
+        "0": "<strong>通常攻撃</strong>",
+        "1": "最大5段の連続攻撃を行う。"
+      },
+      "charged": {
+        "0": "<strong>重撃</strong>",
+        "1": "一定のスタミナを消費し、前方へ突き攻撃を行う。"
+      },
+      "plunging": {
+        "0": "<strong>落下攻撃</strong>",
+        "1": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に範囲ダメージを与える。"
+      }
+    },
+    "skillParams": {
+      "0": "1段ダメージ",
+      "1": "2段ダメージ",
+      "2": "3段ダメージ",
+      "3": "4段ダメージ",
+      "4": "5段ダメージ",
+      "5": "重撃ダメージ",
+      "6": "重撃スタミナ消費",
+      "7": "落下期間のダメージ",
+      "8": "低空/高空落下攻撃ダメージ",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "掟破りの奇兵",
+    "description": {
+      "0": "敵の隙をついて、<tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>奇策</strong></tooltip>状態に入る。この状態では、次の効果が発動する。",
+      "1": "・ローエンは<tooltip ns=tooltips_gen baseKey18=11290003 values=[]><strong>愉悦</strong></tooltip>を蓄積することで、特殊な元素スキル<tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>魂を穿つ痛み</strong></tooltip>を発動できるようになる。",
+      "2": "・周囲にいるチーム内の他キャラクターはローエンに<tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>闘争心</strong></tooltip>を蓄積させることができ、これにより<strong>魂を穿つ痛み</strong>がダメージアップする。",
+      "3": "<strong>奇策</strong>状態では<strong>魂を穿つ痛み</strong>を最大3回まで発動でき、その後<strong>愉悦</strong>を蓄積できなくなる。",
+      "4": "<br/>",
+      "5": "<i>「騎士道っつったか？フン、確かに格好の餌食だな。正々堂々と勝負だなんて寝ぼけたことを考えてるような敵は、自分たちに一体どんな『サプライズ』が待ち受けてるのか、想像もつかないだろうよ。」</i>"
+    },
+    "skillParams": {
+      "0": "1段ダメージ",
+      "1": "2段ダメージ",
+      "2": "3段ダメージ",
+      "3": "4段ダメージ",
+      "4": "5段ダメージ",
+      "5": "重撃ダメージ",
+      "6": "重撃スタミナ消費",
+      "7": "落下期間のダメージ",
+      "8": "低空/高空落下攻撃ダメージ",
+      "9": "奇策継続時間",
+      "10": "魂を穿つ痛みダメージ",
+      "11": "闘争心1につきアップするダメージ",
+      "12": "クールタイム",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "制裁の刻",
+    "description": {
+      "0": "前方に素早い連続斬りを繰り出し、すべての<tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>闘争心</strong></tooltip>を消費して<cryo>氷元素ダメージ</cryo>を与える。この時、消費した<strong>闘争心</strong>に応じてダメージがアップする。発動時、ローエンが<tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>奇策</strong></tooltip>状態にある場合、その<strong>奇策</strong>状態の継続時間が1.65秒延長される。",
+      "1": "<br/>",
+      "2": "<i>「もう全部吐いちまったのか？お楽しみはこれからだってのに。」</i>"
+    },
+    "skillParams": {
+      "0": "スキルダメージ",
+      "1": "闘争心1につきアップするダメージ",
+      "2": "クールタイム",
+      "3": "元素エネルギー",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "絶対服従の訓戒",
+    "description": {
+      "0": "<tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>奇策</strong></tooltip>状態の時、チーム内にいる近くの他のキャラクターがダメージを与えてローエンが<tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>闘争心</strong></tooltip>を蓄積する時、そのダメージがローエンの基礎攻撃力の3000%以上の場合、ローエンは追加で<strong>闘争心</strong>を60獲得する。"
+    }
+  },
+  "passive2": {
+    "name": "秀逸なる戯言",
+    "description": {
+      "0": "<tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>奇策</strong></tooltip>状態の時、チーム内の近くにいる他のキャラクターが敵に<cryo>氷元素関連反応</cryo>を起こした後の8秒間、そのキャラクターとローエンの攻撃力+15%。"
+    }
+  },
+  "passive3": {
+    "name": "気の赴くままに",
+    "description": {
+      "0": "元素スキル<strong>掟破りの奇兵</strong>を発動した後、ローエンは9秒間の「乗興」効果を獲得し、その継続期間中、元素スキル<strong>掟破りの奇兵</strong>のスキルLv.+1。",
+      "1": "元素スキルを発動した時、チーム内の他キャラクターの通常攻撃、元素スキル、元素爆発のいずれかのスキルLv.がローエンの元素スキルのスキルLv.以上である場合、その時の「乗興」効果の継続時間は追加で6秒延長される。",
+      "2": "「乗興」効果は18秒毎に1回のみ獲得できる。"
+    }
+  },
+  "lockedPassive": {
+    "name": "魔女からの贈り物・刺さったままの棘",
+    "description": {
+      "0": "<strong>魔女の課題・諸敵の題</strong>を完了すると、ローエンは<strong>魔導</strong>キャラクターとして扱われるようになる。チームに魔導キャラクターを2名以上編成すると、<strong>魔導秘儀</strong>効果が発動し、魔導キャラクターは強化される。",
+      "1": "<br/>",
+      "2": "<strong>魔導秘儀</strong>",
+      "3": "特殊元素スキル<tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>魂を穿つ痛み</strong></tooltip>が敵に命中、または元素爆発<strong>制裁の刻</strong>を発動した時、<tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>闘争心</strong></tooltip>が上限の50%以上だった場合、ローエンの通常攻撃と重撃のダメージ+40%。継続時間6秒。"
+    }
+  },
+  "constellation1": {
+    "name": "哀しき歌を運ぶ あの日のそよ風",
+    "description": {
+      "0": "ローエンの<tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>闘争心</strong></tooltip>の上限が本来の300%までアップする。",
+      "1": "また、<tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>奇策</strong></tooltip>状態にある時、付近にいるチーム内の他のキャラクターがダメージを与えると、ローエンが獲得する<strong>闘争心</strong>が本来の500%までアップする。"
+    }
+  },
+  "constellation2": {
+    "name": "的にするものは 翼を持つすべて",
+    "description": {
+      "0": "<tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>奇策</strong></tooltip>状態の時、特殊元素スキル<tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>魂を穿つ痛み</strong></tooltip>が敵に命中、または元素爆発<strong>制裁の刻</strong>を発動した後の4秒間、ローエンは「破邪の刃」効果を獲得する。奇策状態にあるローエンの次の通常攻撃または重撃が敵に命中した時、追加でローエンの攻撃力500%分の<cryo>氷元素範囲ダメージ</cryo>を一回与える。さらに、付近にいるチーム内の他のキャラクター全員の元素熟知+200、継続時間8秒。「破邪の刃」効果は4秒毎に1回のみ獲得可能。"
+    }
+  },
+  "constellation3": {
+    "name": "この傷を癒すは 鋭く光る刃だけ",
+    "description": {
+      "0": "元素スキル<strong><tooltip ns=char_Lohen_gen baseKey18=skill>掟破りの奇兵</tooltip></strong>のスキルLv.+3。",
+      "1": "最大Lv.15まで。"
+    }
+  },
+  "constellation4": {
+    "name": "愛は果てた 光や歓びの歌のように",
+    "description": {
+      "0": "ローエンが<tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>奇策</strong></tooltip>状態の時に元素爆発<strong>制裁の刻</strong>を発動すると、ローエンの<tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>闘争心</strong></tooltip>が上限まで蓄積され、この時の元素爆発は最大のダメージアップ効果を獲得する。",
+      "1": "<br/>",
+      "2": "また、ローエンが<strong>奇策</strong>状態に切り替わる時、元素エネルギーのチャージ状態に応じて以下の効果を発動する。",
+      "3": "・チャージが完了していない場合、ローエンの元素エネルギーを15回復する。",
+      "4": "・チャージが完了している場合、次の15秒間、元素爆発<strong>制裁の刻</strong>を発動した後、ローエンの元素エネルギーを15回復する。"
+    }
+  },
+  "constellation5": {
+    "name": "見えざるものと 疑われ得ぬもの",
+    "description": {
+      "0": "元素爆発<strong><tooltip ns=char_Lohen_gen baseKey18=burst>制裁の刻</tooltip></strong>のスキルLv.+3。",
+      "1": "最大Lv.15まで。"
+    }
+  },
+  "constellation6": {
+    "name": "身も心も堕ちて 残るは悦楽のみ",
+    "description": {
+      "0": "特殊元素スキル<tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>魂を穿つ痛み</strong></tooltip>を発動して敵に命中、または<tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>奇策</strong></tooltip>状態で元素爆発<strong>制裁の刻</strong>を発動する際、<tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>闘争心</strong></tooltip>を消費しなくなる。さらに、ローエンの<tooltip ns=tooltips_gen baseKey18=11290003 values=[]><strong>愉悦</strong></tooltip>が上限まで回復し、次に発動する特殊元素スキル<strong>魂を穿つ痛み</strong>が敵に命中した時、その<strong>奇策</strong>状態の継続時間が1.25秒延長される。この効果は7秒毎に1回のみ発動可能。",
+      "1": "また、上記全てのダメージの会心ダメージが175%アップし、この<strong>奇策</strong>状態の期間中、<strong>魂を穿つ痛み</strong>を発動できる最大回数+2。"
+    }
+  }
+}

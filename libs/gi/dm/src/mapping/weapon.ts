@@ -109,6 +109,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   12513: 'FangOfTheMountainKing',
   12514: 'AThousandBlazingSuns',
   12515: 'GestOfTheMightyWolf',
+  12516: 'ATeaspoonOfTranscendence',
 
   //polearm
   13101: 'BeginnersProtector',
@@ -154,6 +155,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   13514: 'SymphonistOfScents',
   13515: 'FracturedHalo',
   13516: 'BloodsoakedRuins',
+  13517: 'DisasterAndRemorse',
 
   //catalyst
   14101: 'ApprenticesNotes',

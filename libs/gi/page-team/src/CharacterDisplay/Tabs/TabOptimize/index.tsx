@@ -34,8 +34,8 @@ import { maxBuildsToShowList } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
   useArtifacts,
-  useDBMeta,
   useDatabase,
+  useDBMeta,
   useGeneratedBuildList,
   useOptConfig,
   useTeammateArtifactIds,
@@ -52,10 +52,10 @@ import {
   DataContext,
   GOAdWrapper,
   GraphContext,
+  getTeamData,
   HitModeToggle,
   NoArtWarning,
   ReactionToggle,
-  getTeamData,
   resolveInfo,
   statFilterToNumNode,
   useGlobalError,
@@ -92,10 +92,11 @@ import {
   TextField,
   Typography,
 } from '@mui/material'
+import type React from 'react'
 import type { FormEventHandler, ReactNode } from 'react'
-import React, {
-  Suspense,
+import {
   memo,
+  Suspense,
   useCallback,
   useContext,
   useDeferredValue,
@@ -324,7 +325,7 @@ export default function TabBuild() {
     if (!teamData) return
     const workerData = uiDataForTeam(teamData.teamData, gender, activeCharKey)[
       characterKey
-    ]?.target.data![0]
+    ]?.target.data[0]
     if (!workerData) return
     Object.assign(workerData, mergeData([workerData, dynamicData])) // Mark art fields as dynamic
     const unoptimizedOptimizationTargetNode = objPathValue(
@@ -343,12 +344,15 @@ export default function TabBuild() {
       ...valueFilter.map((x) => x.value),
       unoptimizedOptimizationTargetNode,
     ]
-    const minimum = [...valueFilter.map((x) => x.minimum), -Infinity]
+    const minimum = [
+      ...valueFilter.map((x) => x.minimum),
+      Number.NEGATIVE_INFINITY,
+    ]
     const plotBaseNumNode: NumNode =
       plotBase && objPathValue(workerData.display ?? {}, plotBase)
     if (plotBaseNumNode) {
       unoptimizedNodes.push(plotBaseNumNode)
-      minimum.push(-Infinity)
+      minimum.push(Number.NEGATIVE_INFINITY)
     }
 
     const nodes = optimize(

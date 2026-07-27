@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -52,6 +56,19 @@
       "4": "<br/>",
       "5": "<i>„Mein Freund hier dient größtenteils der Frischhaltung ... also für die kostbaren Wirkstoffe von Herrn Bai.“</i>"
     },
+    "upgradedDescription": {
+      "0": "Beschwört den Frostbringer mithilfe des Frostader-Talismans und fügt den Gegnern in der Umgebung <cryo>Kryo-Schaden</cryo> zu.",
+      "1": "<br/>",
+      "2": "<strong>Frostbringer</strong>",
+      "3": [
+        " Stellt, wenn Qiqi Gegner mit Standardangriffen und heftigen Schlägen trifft, allen eigenen Truppenmitgliedern und verbündeten Figuren in der Nähe LP basierend auf ihrem ANG wieder her.",
+        " Stellt der aktuellen eigenen Figur in regelmäßigen Abständen LP wieder her.",
+        " Folgt der Figur und fügt Gegnern in deren Weg <cryo>Kryo-Schaden</cryo> zu.",
+        " Führt, wenn die eigene aktuelle Figur einen Gegner trifft, einen abgestimmten Angriff aus und fügt dem Gegner <cryo>Kryo-Schaden</cryo> zu."
+      ],
+      "4": "<br/>",
+      "5": "<i>„Mein Freund hier dient größtenteils der Frischhaltung ... also für die kostbaren Wirkstoffe von Herrn Bai.“</i>"
+    },
     "skillParams": {
       "0": "Fähigkeits-SCH",
       "1": "Heilung bei Treffer",
@@ -59,16 +76,20 @@
       "3": "Frostbringer-SCH",
       "4": "Dauer",
       "5": "Abklingzeit",
-      "6": "",
-      "7": "",
-      "8": "",
+      "6": "SCH abgestimmter Angriffe des Frostbringers",
+      "7": "Abklingzeit abgestimmter Angriffe des Frostbringers",
+      "8": "Abklingzeit",
       "9": "",
       "10": "",
       "11": "",
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -82,13 +103,23 @@
       "5": "<i>„Ich bin die Fürstin der Befreiung von Leid und Elend, das wiederauferstandene Kind.“</i>",
       "6": "<i>- An diese Worte erinnert sich Qiqi längst nicht mehr.</i>"
     },
+    "upgradedDescription": {
+      "0": "Qiqi lässt der adeptischen Kraft, die in ihrem Körper versiegelt ist, freien Lauf, markiert Gegner in der Nähe mit ihrem Leidbefreiungs-Talisman und verursacht <cryo>Kryo-Schaden</cryo>.",
+      "1": "<strong>Leuchten – Stellar-Supraleiter</strong>: Verursacht zusätzlich einmal <cryo>Kryo-Schaden</cryo>, der als Schaden durch die Reaktion Stellar-Supraleiter gewertet wird.",
+      "2": "<br/>",
+      "3": "<strong>Leidbefreiungs-Talisman</strong>",
+      "4": "Stellt Figuren, die vom Effekt des Leidbefreiungs-Talismans betroffenen Gegnern Schaden zufügen, LP wieder her.",
+      "5": "<br/>",
+      "6": "<i>„Ich bin die Fürstin der Befreiung von Leid und Elend, das wiederauferstandene Kind.“</i>",
+      "7": "<i>- An diese Worte erinnert sich Qiqi längst nicht mehr.</i>"
+    },
     "skillParams": {
       "0": "Fähigkeits-SCH",
       "1": "Heilung",
       "2": "Dauer",
       "3": "Abklingzeit",
       "4": "Elementarenergie",
-      "5": "",
+      "5": "Stellar-Supraleiter-SCH",
       "6": "",
       "7": "",
       "8": "",
@@ -98,7 +129,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -111,6 +146,10 @@
     "name": "Blick ins Ungewisse",
     "description": {
       "0": "Fügt mit Standardangriffen und heftigen Schlägen von Qiqi getroffenen Gegnern mit einer Wahrscheinlichkeit von 50 % einen Leidbefreiungs-Talisman hinzu, hält 6 s. 30 s Abklingzeit"
+    },
+    "upgradedDescription": {
+      "0": "Fügt mit Standardangriffen und heftigen Schlägen von Qiqi getroffenen Gegnern mit einer Wahrscheinlichkeit von 50 % einen Leidbefreiungs-Talisman hinzu, der 6 s hält. 30 s Abklingzeit.",
+      "1": "<strong>Leuchten – Stellar-Supraleiter</strong>: Erhöht die Auslösewahrscheinlichkeit dieses Effekts auf 100 % und verringert die Abklingzeit auf 15 s."
     }
   },
   "passive3": {
@@ -119,16 +158,32 @@
       "0": "Zeigt alle <strong>Besonderheiten Liyues</strong> in der Nähe auf der Minikarte an."
     }
   },
+  "lockedPassive": {
+    "name": "Sieben Heilige Schätze",
+    "description": {
+      "0": "Verkürzt die Abklingzeit der Elementarfähigkeit <strong>Adeptenkunst – Frostbringer</strong> auf 15 s.",
+      "1": "<strong>Leuchten – Stellar-Supraleiter</strong>: Erhöht während der Dauer von Frostbringer den durch die Reaktionen Supraleiter und Stellar-Supraleiter verursachten Schaden der eigenen Truppenmitglieder um 50 %.",
+      "2": "Versetzt Qiqi zudem, wenn sie sich im <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Sternglanzfeld</strong></tooltip> befindet, in den Zustand <strong>Leuchten – Stellar-Supraleiter</strong>."
+    }
+  },
   "constellation1": {
     "name": "Winterliche Ernte",
     "description": {
       "0": "Stellt Qiqi beim Treffen von mit dem Leidbefreiungs-Talisman markierten Gegnern mit Frostbringer 2 Punkte Elementarenergie wieder her."
+    },
+    "upgradedDescription": {
+      "0": "Stellt Qiqi, wenn der Frostbringer einen mit einem Leidbefreiungs-Talisman markierten Gegner trifft, 2 Punkte Elementarenergie wieder her.",
+      "1": "<strong>Leuchten – Stellar-Supraleiter</strong>: Stellt, wenn der Frostbringer einen Gegner mit Angriffen oder abgestimmten Angriffen trifft, Qiqi ebenfalls 6 Punkte Elementarenergie wieder her, 6 s Abklingzeit."
     }
   },
   "constellation2": {
     "name": "Fröstelnde Glieder",
     "description": {
       "0": "Erhöht den von <cryo>Kryo</cryo>-Effekten betroffenen Gegnern mit Qiqis Standardangriffen und heftigen Schlägen zugefügten Schaden um 15 %."
+    },
+    "upgradedDescription": {
+      "0": "Erhöht den von <cryo>Kryo</cryo>-Effekten betroffenen Gegnern mit Qiqis Standardangriffen und heftigen Schlägen zugefügten Schaden um 15 %.",
+      "1": "<strong>Leuchten – Stellar-Supraleiter</strong>: Erhöht Qiqis ANG um 50 %."
     }
   },
   "constellation3": {
@@ -142,6 +197,10 @@
     "name": "Stärke des Himmels",
     "description": {
       "0": "Verringert den ANG von mit dem Leidbefreiungs-Talisman markierten Zielen um 20 %."
+    },
+    "upgradedDescription": {
+      "0": "Verringert den ANG von mit dem Leidbefreiungs-Talisman markierten Zielen um 20 %.",
+      "1": "Gewährt zudem beim Auslösen des Heilungseffekts des Leidbefreiungs-Talismans der Figur mit dem niedrigsten LP-Anteil in der Nähe einmalig eine Heilung in Höhe von 180 % von Qiqis ANG."
     }
   },
   "constellation5": {
@@ -156,6 +215,11 @@
     "description": {
       "0": "Belebt alle besiegten Figuren der Truppe in der Nähe bei Anwendung von <strong>Adeptenkunst – Befreiung vom Leid</strong> wieder und stellt ihnen LP auf bis zu 50 % ihrer max. LP wieder her.",
       "1": "15 min Abklingzeit."
+    },
+    "upgradedDescription": {
+      "0": "Belebt beim Anwenden von <strong>Adeptenkunst – Befreiung vom Leid</strong> alle ohnmächtigen Truppenmitglieder in der Nähe wieder und stellt ihre LP auf 50 % wieder her.",
+      "1": "Dieser Effekt hat 15 min Abklingzeit.",
+      "2": "Verleiht Qiqi nach dem Anwenden von <strong>Adeptenkunst – Befreiung vom Leid</strong> zudem 4 Stapelungen <strong>Hauch eines Mysteriums</strong>. Verbraucht, wenn das eigene aktuelle Truppenmitglied (außer Qiqi selbst) Schaden der Reaktion Stellar-Supraleiter verursacht, 1 Stapelungen <strong>Hauch eines Mysteriums</strong> und erhöht diesen Schaden um 600 % von Qiqis ANG. <strong>Hauch eines Mysteriums</strong> hält maximal 12 s an. Beim Anwenden von <strong>Adeptenkunst – Befreiung vom Leid</strong> werden die Stapelungen aktualisiert."
     }
   }
 }

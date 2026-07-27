@@ -1,5 +1,10 @@
-import * as fs from 'fs'
-import * as path from 'path'
+import * as fs from 'node:fs'
+import * as path from 'node:path'
+import type {
+  CharacterGenderedKey,
+  LightConeKey,
+  RelicSetKey,
+} from '@genshin-optimizer/sr/consts'
 import type {
   ApplicationCommandOptionChoiceData,
   AutocompleteInteraction,
@@ -8,15 +13,8 @@ import type {
   StringSelectMenuInteraction,
 } from 'discord.js'
 import { SlashCommandBuilder } from 'discord.js'
-
 import { error } from '../lib/message'
 import { cwd } from '../lib/util'
-
-import type {
-  CharacterGenderedKey,
-  LightConeKey,
-  RelicSetKey,
-} from '@genshin-optimizer/sr/consts'
 import { charBank } from './databank/char'
 import { lightconeBank } from './databank/lightcone'
 import { relicBank } from './databank/relics'
@@ -111,6 +109,7 @@ for (const category in databank['key']) {
     if (fs.existsSync(itempath)) databank[category][name] = require(itempath)
   }
 }
+
 export { databank }
 export const skillsList = {
   n: { name: 'Basic Attack', value: 'n' },

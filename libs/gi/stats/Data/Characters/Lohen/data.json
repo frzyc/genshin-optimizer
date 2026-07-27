@@ -1,0 +1,66 @@
+{
+  "key": "Lohen",
+  "ele": "cryo",
+  "region": "mondstadt",
+  "weaponType": "polearm",
+  "birthday": {
+    "month": 4,
+    "day": 3
+  },
+  "rarity": 5,
+  "lvlCurves": [
+    {
+      "key": "hp",
+      "base": 1000.986,
+      "curve": "GROW_CURVE_HP_S5"
+    },
+    {
+      "key": "atk",
+      "base": 26.8128,
+      "curve": "GROW_CURVE_ATTACK_S5"
+    },
+    {
+      "key": "def",
+      "base": 61.0266,
+      "curve": "GROW_CURVE_HP_S5"
+    }
+  ],
+  "ascensionBonus": {
+    "hp": [
+      0,
+      858.255,
+      1468.0677,
+      2281.1514,
+      2890.964,
+      3500.7769,
+      4110.59
+    ],
+    "def": [
+      0,
+      52.326,
+      89.505,
+      139.077,
+      176.256,
+      213.435,
+      250.614
+    ],
+    "atk": [
+      0,
+      22.987871,
+      39.32136,
+      61.099342,
+      77.43283,
+      93.76632,
+      110.09981
+    ],
+    "critDMG_": [
+      0,
+      0,
+      0.096,
+      0.192,
+      0.192,
+      0.288,
+      0.384
+    ]
+  }
+}

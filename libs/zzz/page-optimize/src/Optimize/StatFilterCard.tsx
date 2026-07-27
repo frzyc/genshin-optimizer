@@ -4,23 +4,23 @@ import {
   DropdownButton,
   NumberInputLazy,
 } from '@genshin-optimizer/common/ui'
-import { type UnArray, isPercentStat } from '@genshin-optimizer/common/util'
+import { isPercentStat, type UnArray } from '@genshin-optimizer/common/util'
 import type { AttributeKey } from '@genshin-optimizer/zzz/consts'
 import { allAttributeKeys } from '@genshin-optimizer/zzz/consts'
 import type { StatFilterTag } from '@genshin-optimizer/zzz/db'
-import { statFilterStatQtKeys } from '@genshin-optimizer/zzz/db'
 import {
+  newStatFilterTag,
   type StatFilterStatKey,
   type StatFilters,
-  newStatFilterTag,
   statFilterStatKeys,
+  statFilterStatQtKeys,
 } from '@genshin-optimizer/zzz/db'
 import {
   OptConfigContext,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
-import { TagDisplay, qtMap } from '@genshin-optimizer/zzz/formula-ui'
+import { qtMap, TagDisplay } from '@genshin-optimizer/zzz/formula-ui'
 import { AttributeName, StatDisplay } from '@genshin-optimizer/zzz/ui'
 import {
   CheckBox,

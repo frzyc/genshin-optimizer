@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -75,7 +79,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -109,7 +117,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -133,6 +145,14 @@
     "description": {
       "0": "Mengurangi 20% konsumsi Stamina Karakter party sendiri saat berenang.",
       "1": "Efek ini tidak dapat ditumpuk dengan Talenta Pasif lain dengan efek yang sama persis."
+    }
+  },
+  "lockedPassive": {
+    "name": "Polaris",
+    "description": {
+      "0": "Saat menahan tombol Elemental Skill <strong>Tidecaller</strong>, Beidou akan mengakumulasi satu lapis kekuatan setiap 0,8 detiknya meskipun tidak menerima serangan. Lapisan kekuatan ini akan meningkatkan DMG yang diakibatkan saat dilancarkan.",
+      "1": "Selain itu, saat melancarkan <strong>Tidecaller</strong> dengan Mode Tahan dan mengenai musuh, juga akan memberikan buff tambahan berdasarkan lapisan kekuatan yang terkumpul: Setiap satu lapis kekuatan akan mengurangi CD Elemental Skill sebesar 4 detik dan memulihkan 8 Energy diri sendiri. Efek ini dapat terpicu sekali setiap 15 detik.",
+      "2": "Selain itu, saat berada di dalam <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Polestar Field</strong></tooltip>, Beidou akan memasuki status <strong>Radiance: Stellar-Conduct</strong>."
     }
   },
   "constellation1": {
@@ -173,6 +193,11 @@
     "name": "Bane of Evil",
     "description": {
       "0": "Selama durasi <strong>Stormbreaker</strong>, <electro>Electro RES</electro> musuh di sekitar berkurang 15%."
+    },
+    "upgradedDescription": {
+      "0": "Selama durasi <strong>Stormbreaker</strong>, <electro>Electro RES</electro> musuh di sekitar berkurang 15%.",
+      "1": "<br/>",
+      "2": "<strong>Radiance: Stellar-Conduct</strong>: Selama durasi Stormbreaker, <cryo>Cryo RES</cryo> musuh di sekitar berkurang 15% dan Elemental Mastery Karakter aktif meningkat 200 poin."
     }
   }
 }

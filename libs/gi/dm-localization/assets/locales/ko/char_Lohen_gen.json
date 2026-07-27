@@ -1,0 +1,185 @@
+{
+  "name": "로엔",
+  "title": "서늘한 화살촉",
+  "description": "페보니우스 기사단 원거리 소대 부대장. 규율에 얽매이지 않고, 일반적이지 않은 전술을 좋아하는 기사다",
+  "constellationName": "교활한 토끼자리",
+  "auto": {
+    "name": "깨진 맹세",
+    "fields": {
+      "normal": {
+        "0": "<strong>일반 공격</strong>",
+        "1": "최대 5번 공격한다."
+      },
+      "charged": {
+        "0": "<strong>강공격</strong>",
+        "1": "일정 스태미나를 소모해 전방으로 돌진해 공격한다."
+      },
+      "plunging": {
+        "0": "<strong>낙하 공격</strong>",
+        "1": "공중에서 땅을 내려찍어 경로상의 적을 공격하고 착지 시 범위 피해를 준다"
+      }
+    },
+    "skillParams": {
+      "0": "1단 공격 피해",
+      "1": "2단 공격 피해",
+      "2": "3단 공격 피해",
+      "3": "4단 공격 피해",
+      "4": "5단 공격 피해",
+      "5": "강공격 피해",
+      "6": "강공격 스태미나 소모",
+      "7": "낙하 기간 피해",
+      "8": "저공/고공 추락 충격 피해",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "기습",
+    "description": {
+      "0": "적의 약점을 찾고, <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>기책</strong></tooltip> 상태로 전환한다. 해당 상태일 때:",
+      "1": [
+        "로엔은 능동적으로 <tooltip ns=tooltips_gen baseKey18=11290003 values=[]><strong>희열</strong></tooltip>을 축적해, 특수한 원소전투 스킬 <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>뼈를 꿰뚫는 창</strong></tooltip>을 발동할 수 있다.",
+        "파티 내 주변의 다른 캐릭터는 로엔을 위해 <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>투쟁심</strong></tooltip>을 축적해, <strong>뼈를 꿰뚫는 창</strong>의 피해를 증가시킨다."
+      ],
+      "2": "<strong>기책</strong> 상태에서 <strong>뼈를 꿰뚫는 창</strong>을 최대 3회 발동하면, 이후 더 이상 <strong>희열</strong>을 획득할 수 없다.",
+      "3": "<br/>",
+      "4": "<i>「기사도? 하, 그건 확실히 최고의 미끼지. 적이 정정당당한 승부를 꿈꾸는 순간, 어떤 『깜짝선물』이 기다리고 있는지 상상조차 못 할 테니까」</i>"
+    },
+    "skillParams": {
+      "0": "1단 공격 피해",
+      "1": "2단 공격 피해",
+      "2": "3단 공격 피해",
+      "3": "4단 공격 피해",
+      "4": "5단 공격 피해",
+      "5": "강공격 피해",
+      "6": "강공격 스태미나 소모",
+      "7": "낙하 기간 피해",
+      "8": "저공/고공 추락 충격 피해",
+      "9": "기책 지속 시간",
+      "10": "뼈를 꿰뚫는 창 피해",
+      "11": "투쟁심 1pt당 기존 피해 증가",
+      "12": "재사용 대기시간",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "징벌자",
+    "description": {
+      "0": "전방으로 빠르게 연속 참격을 가해 모든 <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>투쟁심</strong></tooltip>을 소모하고 <cryo>얼음 원소 피해</cryo>를 주며, 소모한 <strong>투쟁심</strong>에 따라 이번 피해가 증가한다. 발동 시 로엔이 <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>기책</strong></tooltip> 상태라면 이번 <strong>기책</strong> 상태의 지속 시간이 1.65초 연장된다.",
+      "1": "<br/>",
+      "2": "<i>「벌써 다 불어버렸네? 난 아직 제대로 즐기지도 못했는데」</i>"
+    },
+    "skillParams": {
+      "0": "스킬 피해",
+      "1": "투쟁심 1pt당 기존 피해 증가",
+      "2": "재사용 대기시간",
+      "3": "원소 에너지",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "질문 금지",
+    "description": {
+      "0": "<tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>기책</strong></tooltip> 상태에서 파티 내 주변의 다른 캐릭터가 피해를 발생시켜 로엔의 <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>투쟁심</strong></tooltip>이 축적될 시, 이번 피해가 로엔 기초 공격력의 3000% 이상일 경우 로엔의 <strong>투쟁심</strong>이 추가로 60pt 축적된다"
+    }
+  },
+  "passive2": {
+    "name": "절묘한 농담",
+    "description": {
+      "0": "<tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>기책</strong></tooltip> 상태에서 파티 내 주변의 다른 캐릭터가 적에게 <cryo>얼음 원소 관련 반응</cryo> 발동 후 8초 동안, 해당 캐릭터의 공격력이 15% 증가하고 로엔의 공격력이 15% 증가한다"
+    }
+  },
+  "passive3": {
+    "name": "흥미 추구",
+    "description": {
+      "0": "원소전투 스킬 <strong>기습</strong> 발동 후, 로엔이 9초 동안 지속되는 「흥미」 효과를 획득한다: 지속 시간 동안 원소전투 스킬 <strong>기습</strong>의 스킬 레벨이 1레벨 증가한다.",
+      "1": "원소전투 스킬 발동 시, 파티 내 다른 캐릭터의 일반 공격, 원소전투 스킬 또는 원소폭발의 스킬 레벨 중 하나라도 로엔의 원소전투 스킬 레벨 이상일 경우, 이번 「흥미」 효과의 지속 시간이 추가로 6초 연장된다.",
+      "2": "18초마다 「흥미」 효과를 최대 1회 획득할 수 있다"
+    }
+  },
+  "lockedPassive": {
+    "name": "마녀의 전야제·치명적인 가시",
+    "description": {
+      "0": "<strong>마녀의 과제·강적</strong>을 완료하면, 로엔은 <strong>마도</strong> 캐릭터가 된다. 파티에 마도 캐릭터를 2명 이상 편성하면 <strong>마도·비밀 의식</strong> 효과를 획득해 마도 캐릭터가 강화된다.",
+      "1": "<br/>",
+      "2": "<strong>마도·비밀 의식</strong>",
+      "3": "특수 원소전투 스킬 <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>뼈를 꿰뚫는 창</strong></tooltip>으로 적 명중 또는 원소폭발 <strong>징벌자</strong> 발동 시, <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>투쟁심</strong></tooltip>이 최대치의 50% 이상일 경우 로엔의 일반 공격과 강공격으로 주는 피해가 40% 증가한다, 지속 시간: 6초"
+    }
+  },
+  "constellation1": {
+    "name": "탄식으로 채워지던 하늘",
+    "description": {
+      "0": "로엔의 <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>투쟁심</strong></tooltip> 최대치가 기존의 300%로 증가한다.",
+      "1": "또한, <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>기책</strong></tooltip> 상태 시, 파티 내 주변의 다른 캐릭터가 피해를 발생시켜 축적되는 <strong>투쟁심</strong>이 기존의 500%로 증가한다"
+    }
+  },
+  "constellation2": {
+    "name": "날아다니는 것을 모두 맞히리",
+    "description": {
+      "0": "<tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>기책</strong></tooltip> 상태에서 특수 원소전투 스킬 <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>뼈를 꿰뚫는 창</strong></tooltip> 혹은 원소폭발 <strong>징벌자</strong>를 발동해 적 명중 후 4초 동안, 로엔이 「악을 베는 검」 효과를 획득한다: 기책 상태에서 로엔의 다음 일반 공격 또는 강공격이 적 명중 시 추가로 1회의 공격을 발동해 로엔 공격력의 500%에 해당하는 <cryo>얼음 원소 범위 피해</cryo>를 주고, 파티 내 주변의 다른 캐릭터의 원소 마스터리를 200pt 증가시킨다. 지속 시간: 8초. 4초마다 「악을 베는 검」 효과를 최대 1회 획득할 수 있다"
+    }
+  },
+  "constellation3": {
+    "name": "상처는 창으로만 치유되리라",
+    "description": {
+      "0": "원소전투 스킬 <strong><tooltip ns=char_Lohen_gen baseKey18=skill>기습</tooltip></strong>의 스킬 레벨+3",
+      "1": "최대 Lv.15까지 상승"
+    }
+  },
+  "constellation4": {
+    "name": "빛나는 사랑 웃음 속의 죽음",
+    "description": {
+      "0": "로엔이 <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>기책</strong></tooltip> 상태에서 원소폭발 <strong>징벌자</strong> 발동 시, 로엔의 <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>투쟁심</strong></tooltip>이 최대치까지 축적되어, 이번 원소폭발이 최대 피해 증가 효과를 획득한다.",
+      "1": "<br/>",
+      "2": "또한, 로엔이 <strong>기책</strong> 상태로 전환 시 원소 에너지가:",
+      "3": [
+        "가득 차지 않았을 경우: 로엔이 원소 에너지를 15pt 회복한다.",
+        "가득 찼을 경우: 이후 15초 내에 원소폭발 <strong>징벌자</strong> 발동 후, 로엔이 원소 에너지를 15pt 회복한다"
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "묻지도 말고 알려고 하지도 말라",
+    "description": {
+      "0": "원소폭발 <strong><tooltip ns=char_Lohen_gen baseKey18=burst>징벌자</tooltip></strong>의 스킬 레벨+3",
+      "1": "최대 Lv.15까지 상승"
+    }
+  },
+  "constellation6": {
+    "name": "무의식 속 더할 나위 없는 희열이여",
+    "description": {
+      "0": "특수 원소전투 스킬 <tooltip ns=tooltips_gen baseKey18=11290002 values=[]><strong>뼈를 꿰뚫는 창</strong></tooltip>으로 적을 명중하거나 <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>기책</strong></tooltip> 상태에서 원소폭발 <strong>징벌자</strong>를 발동해도 <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>투쟁심</strong></tooltip>을 소모하지 않고, 로엔의 <tooltip ns=tooltips_gen baseKey18=11290003 values=[]><strong>희열</strong></tooltip>을 최대치까지 회복시킨다. 또한, 다음 특수 원소전투 스킬 <strong>뼈를 꿰뚫는 창</strong> 발동으로 적 명중 시, 이번 <strong>기책</strong> 상태의 지속 시간이 1.25초 연장된다. 해당 효과는 7초마다 최대 1회 발동된다.",
+      "1": "또한, 상술한 모든 피해의 치명타 피해가 175% 증가한다. 이번 <strong>기책</strong> 기간 동안 로엔의 <strong>뼈를 꿰뚫는 창</strong> 최대 발동 횟수가 2회 증가한다"
+    }
+  }
+}

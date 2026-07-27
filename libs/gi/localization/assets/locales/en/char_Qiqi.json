@@ -1,3 +1,5 @@
 {
-  "a1C": "After triggering an Elemental Reaction while under the effects of <strong>Adeptus Art: Herald of Frost</strong>"
+  "a1C": "After triggering an Elemental Reaction while under the effects of <strong>Adeptus Art: Herald of Frost</strong>",
+  "lockCond": "While the Herald of Frost is on the field",
+  "c6Cond": "Active character consuming <strong>Glimpse of Mystery</strong>"
 }

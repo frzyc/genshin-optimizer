@@ -9,11 +9,11 @@ import {
 } from '@genshin-optimizer/common/util'
 import type { AttributeKey, SpecialityKey } from '@genshin-optimizer/zzz/consts'
 import {
-  type DiscMainStatKey,
-  type DiscSetKey,
   allAttributeKeys,
   allDiscSetKeys,
   allSpecialityKeys,
+  type DiscMainStatKey,
+  type DiscSetKey,
   discMaxLevel,
   discSlotToMainStatKeys,
   wengineMaxLevel,
@@ -95,6 +95,7 @@ const optConfigSchema = z.object({
   ]) as z.ZodType<DiscMainStatKey[]>,
   setFilter2: zodFilteredArray(allDiscSetKeys, []) as z.ZodType<DiscSetKey[]>,
   setFilter4: zodFilteredArray(allDiscSetKeys, []) as z.ZodType<DiscSetKey[]>,
+  allowRainbow: zodBoolean(),
   useEquipped: zodBoolean(),
 
   optWengine: zodBoolean(),

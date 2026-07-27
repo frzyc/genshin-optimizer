@@ -22,6 +22,7 @@ import {
 } from '@mui/material'
 import type { ReactNode } from 'react'
 import { useState } from 'react'
+
 const booksData = {
   advice: {
     name: "Wanderer's Advice",
@@ -270,7 +271,7 @@ export default function EXPCalc() {
                 <Typography>EXP {!goUnder ? 'Waste' : 'Diff'}: </Typography>
                 <Typography>
                   <b>
-                    <ColorText color={expDiff < 0 ? `error` : `success`}>
+                    <ColorText color={expDiff < 0 ? 'error' : 'success'}>
                       {expDiff}
                     </ColorText>
                   </b>
@@ -286,7 +287,7 @@ export default function EXPCalc() {
                 <Typography>Final Mora: </Typography>
                 <Typography>
                   <b>
-                    <ColorText color={finalMora < 0 ? `error` : `success`}>
+                    <ColorText color={finalMora < 0 ? 'error' : 'success'}>
                       {finalMora}
                     </ColorText>
                   </b>
@@ -316,7 +317,7 @@ export default function EXPCalc() {
                 <Typography>Final EXP: </Typography>
                 <Typography>
                   <b>
-                    <ColorText color={finalExp < 0 ? `error` : `success`}>
+                    <ColorText color={finalExp < 0 ? 'error' : 'success'}>
                       {finalExp}
                     </ColorText>
                   </b>

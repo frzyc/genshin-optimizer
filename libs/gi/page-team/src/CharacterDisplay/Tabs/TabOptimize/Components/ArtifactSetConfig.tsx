@@ -722,7 +722,7 @@ function ArtifactSetCard({
                 <SetEffectDisplay
                   key={setNumKey}
                   setKey={setKey}
-                  setNumKey={parseInt(setNumKey) as SetNum}
+                  setNumKey={Number.parseInt(setNumKey) as SetNum}
                   hideHeader
                 />
               ))}

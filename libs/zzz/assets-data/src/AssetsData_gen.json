@@ -155,6 +155,18 @@
       "cd_s": "ItemSuitNotesFromtheChained_S.png",
       "cd_a": "ItemSuitNotesFromtheChained_A.png",
       "cd_b": "ItemSuitNotesFromtheChained_B.png"
+    },
+    "WutheringSalon": {
+      "circle": "SuitWutheringSalon.png",
+      "cd_s": "ItemSuitWutheringSalon_S.png",
+      "cd_a": "ItemSuitWutheringSalon_A.png",
+      "cd_b": "ItemSuitWutheringSalon_B.png"
+    },
+    "TheSkyAblaze": {
+      "circle": "SuitTheSkyAblaze.png",
+      "cd_s": "ItemSuitTheSkyAblaze_S.png",
+      "cd_a": "ItemSuitTheSkyAblaze_A.png",
+      "cd_b": "ItemSuitTheSkyAblaze_B.png"
     }
   },
   "chars": {
@@ -528,6 +540,27 @@
       "trap": "IconRoleGeneral61.png",
       "select": "IconRoleSelect61.png",
       "interknot": "IconInterKnotRole0061.png"
+    },
+    "Pyrois": {
+      "full": "IconRole63.png",
+      "circle": "IconRoleCircle63.png",
+      "trap": "IconRoleGeneral63.png",
+      "select": "IconRoleSelect63.png",
+      "interknot": "IconInterKnotRole0063.png"
+    },
+    "Velina": {
+      "full": "IconRole64.png",
+      "circle": "IconRoleCircle64.png",
+      "trap": "IconRoleGeneral64.png",
+      "select": "IconRoleSelect64.png",
+      "interknot": "IconInterKnotRole0064.png"
+    },
+    "Norma": {
+      "full": "IconRole65.png",
+      "circle": "IconRoleCircle65.png",
+      "trap": "IconRoleGeneral65.png",
+      "select": "IconRoleSelect65.png",
+      "interknot": "IconInterKnotRole0065.png"
     }
   },
   "wengines": {
@@ -654,6 +687,10 @@
     "ReelProjector": {
       "icon": "Weapon_A_Common_16.png",
       "big": "Weapon_A_Common_16Big.png"
+    },
+    "BoisterousEchoes": {
+      "icon": "Weapon_A_Common_18.png",
+      "big": "Weapon_A_Common_18Big.png"
     },
     "CauldronOfClarity": {
       "icon": "Weapon_A_Common_19.png",
@@ -886,6 +923,18 @@
     "FrostfallSickle": {
       "icon": "Weapon_S_1541.png",
       "big": "Weapon_S_1541Big.png"
+    },
+    "SolExuvia": {
+      "icon": "Weapon_S_Common_04.png",
+      "big": "Weapon_S_Common_04Big.png"
+    },
+    "JoyauDore": {
+      "icon": "Weapon_S_1561.png",
+      "big": "Weapon_S_1561Big.png"
+    },
+    "ChiefSidekick": {
+      "icon": "Weapon_S_1571.png",
+      "big": "Weapon_S_1571Big.png"
     }
   }
 }

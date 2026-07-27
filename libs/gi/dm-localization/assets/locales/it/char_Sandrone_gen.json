@@ -1,0 +1,178 @@
+{
+  "name": "Sandrone",
+  "title": "Analisi speculare",
+  "description": "La settima dei Messaggeri dei Fatui, nota come la \"Marionetta\". Interpreta tutti i fenomeni attraverso il prisma della matematica, ed è un'elegante dama che non manca mai a un ricevimento.",
+  "constellationName": "Narcissorolegium",
+  "auto": {
+    "name": "Proposizione autoevidente",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attacco normale</strong>",
+        "1": "Genera fili tramite formule che controllano la sua arma, sferrando fino a 3 colpi consecutivi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Evoca la Facilitatrice Automatisée Généraliste Interactive et Omnitâche, anche detta \"<strong>Fagio</strong>\", che entra in modalità <strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>Decodifica</tooltip></strong>, durante la quale scatena una Raffica di fuoco contro i nemici di fronte a sé e spara periodicamente Raggi condensati che infliggono <cryo>DAN da Cryo ad area</cryo>.",
+        "2": "Nello stato di <strong>Splendore: Astroconduzione</strong>, i <cryo>DAN da Cryo ad area</cryo> inflitti dai Raggi condensati sono considerati DAN da Astroconduzione.",
+        "3": "In modalità <strong>Decodifica</strong>, la <strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>Potenza di decodifica</tooltip></strong> di Fagio aumenta costantemente. Sparare Raggi condensati incrementa la Potenza di decodifica in maniera ulteriore.",
+        "4": "Quando la Potenza di decodifica di Fagio raggiunge il massimo di 100 punti, Fagio passa alla modalità <strong>Overdrive di potenza</strong>, durante la quale spara agli avversari a intervalli più lunghi infliggendo <cryo>DAN da Cryo</cryo>, e non può rientrare in modalità Decodifica.",
+        "5": "Quando non è in modalità <strong>Decodifica</strong>, la <strong>Potenza di decodifica</strong> di Fagio si riduce gradualmente. Quando Sandrone non è in campo, quest'ultima si concentra sul mantenimento di Fagio, e la Potenza di decodifica si riduce a un 300% del tasso di riduzione originale.",
+        "6": "Fagio esce dalla modalità <strong>Overdrive di potenza</strong> quando la <strong>Potenza di decodifica</strong> scende al di sotto dei 50 punti."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da attacco caricato Raffica di fuoco",
+      "4": "DAN da attacco caricato Raggio condensato",
+      "5": "DAN da Astroconduzione attacco caricato Raggio condensato",
+      "6": "DAN durante Overdrive di potenza",
+      "7": "DAN da ATT in picchiata",
+      "8": "DAN da ATT in picchiata basso/alto",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Formula fenomenale: Analisi differenziale",
+    "description": {
+      "0": "Con il suo portamento impeccabile e signorile, Sandrone sale a bordo dell'<strong>Hovermech d'assalto tattico del tè pomeridiano</strong> e fluttua in avanti per 6 s. Durante questo periodo di tempo, Sandrone può controllare la direzione del mezzo. Tramite la pressione dello Scatto, consuma 10 di vigore per lanciarsi in un'elegante modalità di levitazione ad alta velocità, che le permette di muoversi ancora più velocemente consumando 15 di vigore al secondo.",
+      "1": "<br/>",
+      "2": "Quando Sandrone inizia a levitare, se sono presenti avversari nelle vicinanze, evoca anche un Cannone a risonanza prismatica e spara 2 Colpi prismatici contro qualsiasi avversario ancora a tiro, infliggendo <cryo>DAN da Cryo</cryo>.",
+      "3": "Nello stato di <strong>Splendore: Astroconduzione</strong>, il secondo Colpo prismatico infligge <cryo>DAN da Cryo</cryo> considerati DAN da Astroconduzione.",
+      "4": "<br/>",
+      "5": "Quando l'Hovermech d'assalto tattico del tè pomeridiano è attivo, Sandrone ne approfitta per riparare Fagio con grazia ed eleganza, causando una rapida riduzione della <strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>Potenza di decodifica</tooltip></strong>."
+    },
+    "skillParams": {
+      "0": "DAN da Colpo prismatico",
+      "1": "DAN da Astroconduzione Colpo prismatico",
+      "2": "TdR",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Formula fenomenale: Quod erat demonstrandum",
+    "description": {
+      "0": "In linea con l'etichetta di una vera dama, Sandrone evoca un gran numero di Cannoni a risonanza prismatica per sferrare un Bombardamento frontale, per poi colpire i nemici con un Raggio a inibizione convettiva, infliggendo <cryo>DAN da Cryo ad area</cryo>.",
+      "1": "Nello stato di <strong>Splendore: Astroconduzione</strong>, il Raggio a inibizione convettiva infligge <cryo>DAN da Cryo ad area</cryo> considerati DAN da Astroconduzione."
+    },
+    "skillParams": {
+      "0": "DAN da Bombardamento",
+      "1": "DAN da Raggio a inibizione convettiva",
+      "2": "DAN da Astroconduzione Raggio a inibizione convettiva",
+      "3": "TdR",
+      "4": "Costo energia",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Motore di calcolo eterno",
+    "description": {
+      "0": "Nello stato di <strong>Splendore: Astroconduzione</strong>, quando Sandrone utilizza l'abilità elementale <tooltip ns=char_Sandrone_gen baseKey18=skill><strong>Formula fenomenale: Analisi differenziale</strong></tooltip>, se la <strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>Potenza di decodifica</tooltip></strong> di Fagio è superiore a 50 punti, il secondo Colpo prismatico di Fagio scagliato agli avversari vicini infligge un 400% dei suoi DAN originali, comportando al contempo una riduzione della Potenza di decodifica.",
+      "1": "In più, per ogni 10 punti di <strong>Potenza di decodifica</strong> persi, Fagio ottiene 1 accumulo di <strong>Tattiche sofisticate</strong> per 60 s (massimo 10 accumuli). Quando Sandrone utilizza il Tripudio elementale <tooltip ns=char_Sandrone_gen baseKey18=burst><strong>Formula fenomenale: Quod erat demonstrandum</strong></tooltip> mentre è nello stato di <strong>Splendore: Astroconduzione</strong>, tutti gli accumuli di Tattiche sofisticate vengono rimossi, permettendo al Raggio a inibizione convettiva di infliggere un 100% + (numero di accumuli rimossi) × 10% dei suoi DAN originali."
+    }
+  },
+  "passive2": {
+    "name": "Codice di condotta di una signora",
+    "description": {
+      "0": "Per ogni 100 di ATT, la maestria elementale di Sandrone aumenta di 8. L'aumento massimo ottenibile in questo modo è pari a 160."
+    }
+  },
+  "passive3": {
+    "name": "Luce del razionalismo",
+    "description": {
+      "0": "Quando i membri del gruppo innescano una reazione di Superconduzione, questa si trasforma in Astroconduzione, e i DAN base da Astroconduzione dei membri del gruppo vengono aumentati in base all'ATT di Sandrone. Per ogni 100 di ATT di Sandrone, i suddetti DAN base aumentano di uno 0,7%, fino a un 14% massimo.",
+      "1": "Inoltre, quando Sandrone si trova in un <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Campo astropolare</strong></tooltip>, entra nello stato di <strong>Splendore: Astroconduzione</strong>."
+    }
+  },
+  "passive": {
+    "name": "Preludio del caucus e un lungo racconto",
+    "description": {
+      "0": "Quando Sandrone è nel gruppo, ottieni ricompense aggiuntive sotto forma di spuntini dopo aver completato gli incarichi giornalieri di Katheryne."
+    }
+  },
+  "constellation1": {
+    "name": "L'indomani di un tramonto dorato",
+    "description": {
+      "0": "Quando è in modalità <strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>Decodifica</tooltip></strong>, il tasso di aumento della <strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>Potenza di decodifica</tooltip></strong> di Fagio si riduce di un 50%, e tutti i membri del gruppo infliggono un 30% di DAN da Astroconduzione in più."
+    }
+  },
+  "constellation2": {
+    "name": "Attraverso lo specchio e quel che l'ereditiera vi trovò",
+    "description": {
+      "0": "Nello stato di <strong>Splendore: Astroconduzione</strong>, i DAN da CRIT dei Raggi condensati degli attacchi caricati aumentano di un 40%. Inoltre, a ogni raggio sparato, i DAN da CRIT inflitti da tutti i Raggi condensati sparati durante la modalità <strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>Decodifica</tooltip></strong> aumentano di un ulteriore 20%. Massimo 3 accumuli."
+    }
+  },
+  "constellation3": {
+    "name": "Rifiuta il risveglio del crepuscolo, il giogo illuminato dalla luna",
+    "description": {
+      "0": "Aumenta di 3 il livello di <tooltip ns=char_Sandrone_gen baseKey18=normal><strong>Formula fenomenale: Proposizione autoevidente</strong></tooltip>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "La conoscenza è il vero fondamento del mondo",
+    "description": {
+      "0": "Quando Sandrone infligge DAN da Astroconduzione a un avversario, evoca anche un Cannone a risonanza prismatica aggiuntivo per sparare un attacco coordinato che infligge <cryo>DAN da Cryo</cryo> pari a un 125% del suo ATT. Tali DAN sono considerati DAN da Astroconduzione. Quest'effetto può verificarsi una volta ogni 4 s."
+    }
+  },
+  "constellation5": {
+    "name": "Di tutto ciò che la circonda, lei non fa parte",
+    "description": {
+      "0": "Aumenta di 3 il livello di <tooltip ns=char_Sandrone_gen baseKey18=burst><strong>Formula fenomenale: Quod erat demonstrandum</strong></tooltip>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Narcissus si desta, i suoi occhi sull'alba",
+    "description": {
+      "0": "Mentre è nella modalità <strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>Decodifica</tooltip></strong>, quando Fagio spara un Raggio condensato per la terza volta, quest'ultimo viene convertito in un più potente <strong>Raggio a grappolo condensato</strong> che spara continuamente. Quest'ultimo infligge fino a 4 iterazioni aggiuntive di <cryo>DAN da Cryo ad area</cryo>, pari a un 100% dell'ATT di Sandrone, oltre a qualsiasi raggio originale successivo sparato.",
+      "1": "Nello stato di <strong>Splendore: Astroconduzione</strong>, invece, il <strong>Raggio a grappolo condensato</strong> infligge 4 iterazioni aggiuntive di <cryo>DAN da Cryo ad area</cryo>, pari a un 80% dell'ATT di Sandrone, considerati come DAN da Astroconduzione.",
+      "2": "Inoltre, tutti i DAN da Astroconduzione inflitti da Sandrone vengono <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>innalzati</strong></tooltip> di un 20%."
+    }
+  }
+}

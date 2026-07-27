@@ -9,13 +9,13 @@ import type {
 import {
   type AdditiveReactionKey,
   type AmpReactionKey,
-  type CharacterKey,
-  type InfusionAuraElementKey,
   allAdditiveReactions,
   allAmpReactionKeys,
   allCharacterKeys,
   allHitModeKeys,
   allInfusionAuraElementKeys,
+  type CharacterKey,
+  type InfusionAuraElementKey,
 } from '@genshin-optimizer/gi/consts'
 import type { IGOOD } from '@genshin-optimizer/gi/good'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
@@ -130,9 +130,11 @@ export class TeamCharacterDataManager extends DataManager<
 
     if (!conditional) conditional = {}
 
-    // Resonance conditionals have been moved to teams
+    // Resonance/reaction conditionals have been moved to teams
     if ((conditional as any)['resonance'])
       delete (conditional as any)['resonance']
+    if ((conditional as any)['reaction'])
+      delete (conditional as any)['reaction']
 
     // TODO: validate bonusStats
     if (
@@ -345,11 +347,11 @@ export class TeamCharacterDataManager extends DataManager<
       .filter((id) => buildTcIds.includes(id))
       .map((buildTcId) => this.database.buildTcs.export(buildTcId))
 
-    let overrideOptTarget: string[] | undefined = undefined
+    let overrideOptTarget: string[] | undefined
     if (optimizationTarget?.[0] === 'custom') {
-      const ind = parseInt(optimizationTarget[1])
-      if (!isNaN(ind)) {
-        const newInd = exportCustomMultiTarget.findIndex((i) => i === ind)
+      const ind = Number.parseInt(optimizationTarget[1])
+      if (!Number.isNaN(ind)) {
+        const newInd = exportCustomMultiTarget.indexOf(ind)
         if (newInd !== -1) {
           overrideOptTarget = structuredClone(optimizationTarget)
           overrideOptTarget[1] = newInd.toString()

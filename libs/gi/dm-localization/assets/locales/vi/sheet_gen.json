@@ -60,7 +60,7 @@
     "superconduct": "Siêu Dẫn",
     "vaporize": "Bốc Hơi",
     "melt": "Tan Chảy",
-    "bloom": "Sum Suê",
+    "bloom": "",
     "burgeon": "Bung Tỏa",
     "hyperbloom": "Nở Rộ",
     "quicken": "Sinh Trưởng",
@@ -77,15 +77,15 @@
   "talentLvl": "Cấp Thiên Phú {{level}}",
   "talents": {
     "auto": "Đánh Thường",
-    "skill": "Kỹ Năng Nguyên Tố",
-    "burst": "Kỹ Năng Nộ",
+    "skill": "",
+    "burst": "",
     "altSprint": "Thay thế xung kích"
   },
   "unlockPassive1": "Nhân vật đột phá Cấp 1 sẽ mở",
   "unlockPassive2": "Nhân vật đột phá Cấp 4 sẽ mở",
   "unlockPassive3": "Thiên Phú Cố Định",
   "unlockLockedPassive": "Hoàn thành nhiệm vụ trước đó sẽ mở khóa",
-  "witchPassive": "Bài Tập Của Ma Nữ",
+  "witchPassive": "",
   "moonsign": "Nguyệt Triệu",
   "hexerei": "Hexerei"
 }

@@ -88,7 +88,7 @@ export function compileTagMapValues<V>(
 export function mergeTagMapValues<V>(
   entries: RawTagMapValues<V>[]
 ): RawTagMapValues<V> {
-  if (entries.length == 1) return entries[0]!
+  if (entries.length === 1) return entries[0]!
   const keys = new Set(entries.flatMap((entry) => Object.keys(entry)))
   const result: RawTagMapValues<V> = Object.fromEntries(
     [...keys].map((key) => [

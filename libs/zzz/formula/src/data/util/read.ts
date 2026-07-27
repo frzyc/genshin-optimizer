@@ -18,11 +18,11 @@ import type {
   TagMapNodeEntry,
 } from '.'
 import {
-  type Sheet,
   attributes,
   damageTypes,
   factions,
   members,
+  type Sheet,
   sheets,
   skillTypes,
   specialties,
@@ -102,6 +102,9 @@ export class Read extends BaseRead<Tag> {
   }
   get ether(): Read {
     return super.with('attribute', 'ether')
+  }
+  get wind(): Read {
+    return super.with('attribute', 'wind')
   }
 
   // Skill type
@@ -227,6 +230,12 @@ export class Read extends BaseRead<Tag> {
       super.with('damageType2', 'abloom'),
     ]
   }
+  get vortex(): Read[] {
+    return [
+      super.with('damageType1', 'vortex'),
+      super.with('damageType2', 'vortex'),
+    ]
+  }
 
   // For `count` usage, use lighter footprint so it doesn't pollute autocomplete
   // Specialty
@@ -267,7 +276,7 @@ export function tagStr(tag: Tag, ex?: any): string {
     includedBar = false
   function required(str: string | undefined | null, name: string) {
     if (!str && str !== null) return
-    result += str === null ? `!${name} ` : str + ' '
+    result += str === null ? `!${name} ` : `${str} `
     includedRequired = true
   }
   function optional(str: string | undefined | null, name: string) {
@@ -276,7 +285,7 @@ export function tagStr(tag: Tag, ex?: any): string {
       includedBar = true
       result += '| '
     }
-    result += str === null ? `!${name} ` : str + ' '
+    result += str === null ? `!${name} ` : `${str} `
   }
   required(name && `#${name}`, 'name')
   required(preset, 'preset')
@@ -295,5 +304,5 @@ export function tagStr(tag: Tag, ex?: any): string {
   optional(faction, 'fac')
   if (ex) result += `[${ex}] `
   if (Object.keys(remaining).length) result += `${JSON.stringify(remaining)} `
-  return result + '}'
+  return `${result}}`
 }

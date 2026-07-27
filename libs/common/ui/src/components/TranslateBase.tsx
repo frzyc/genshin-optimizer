@@ -1,4 +1,3 @@
-import type { EmotionJSX } from '@emotion/react/types/jsx-namespace'
 import { Skeleton, Typography } from '@mui/material'
 import type { TFunction } from 'i18next'
 import type { ReactNode } from 'react'
@@ -19,7 +18,7 @@ export function TranslateBase({
   key18: string
   values?: Record<string, string | number>
   children?: ReactNode
-  components?: Record<string, EmotionJSX.Element>
+  components?: Record<string, React.ReactElement>
 }) {
   const { t } = useTranslation(ns)
   const textKey = `${ns}:${key18}`
@@ -62,7 +61,7 @@ function T({
   li?: boolean
   t: TFunction<string, undefined>
   values?: any
-  components?: Record<string, EmotionJSX.Element>
+  components?: Record<string, React.ReactElement>
 }) {
   if (typeof obj === 'string')
     return (

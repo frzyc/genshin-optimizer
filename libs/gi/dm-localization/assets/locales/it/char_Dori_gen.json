@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -63,7 +67,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -100,13 +108,17 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
     "name": "Fiuto per gli affari",
     "description": {
-      "0": "Quando il personaggio connesso al <strong>djinn</strong> innesca una reazione di Electrocarica, Carica lunare, Superconduzione, Sovraccarico, Vivificazione, Accentuazione, Iperfioritura, Turbinio di Electro o Cristallizzazione di Electro, il TdR di <strong>Lampada sigilla spiriti: Cannone solvitutto</strong> si riduce di 1 s.",
+      "0": "Quando il personaggio connesso al <strong>djinn</strong> innesca una reazione di Electrocarica, Carica lunare, Superconduzione, Astroconduzione, Sovraccarico, Vivificazione, Accentuazione, Iperfioritura, Turbinio di Electro o Cristallizzazione di Electro, il TdR di <strong>Lampada sigilla spiriti: Cannone solvitutto</strong> si riduce di 1 s.",
       "1": "Quest'effetto può attivarsi una volta ogni 3 s."
     }
   },

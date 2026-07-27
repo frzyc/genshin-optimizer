@@ -1,0 +1,17 @@
+{
+  "name": "Sol Exuvia",
+  "desc": {
+    "0": "Names once warm and tender, names once brilliant and blazing, were all stained by pitch-black disaster. The star that should have brought the hope of sunrise instead delivered ruin and destruction. This is a story of origins we already know well, yet the dying mirage extinguished within the valley will one day be reborn from the sea. The beast that trampled fate beneath its feet will become the chariot that clears the path ahead.",
+    "1": "\"Grip my reins tightly, or let my flames close around your throat.\" —An echo from fate itself."
+  },
+  "desc2": "Equip to increase Pyrois' combat capabilities. Can also be used to increase other Attack Agents' combat capabilities.",
+  "desc3": "The blazing sun falls, leaving the trapped beast with nowhere left to run.",
+  "phase": "Eclipse Effect",
+  "phaseDescs": [
+    "CRIT Rate increases by 20%. When the equipper is Pyrois, using an <ct color=#FFFFFF>Ultimate</ct> grants the Eclipse effect. When the Eclipse effect is active, DMG dealt by the equipper ignores <ct color=#2BAD00>16%</ct> of <ct color=#FE437E>Ether RES</ct>, lasting 45s. Repeated triggers reset the duration. When the equipper enters combat, they gain the Eclipse effect.",
+    "CRIT Rate increases by 20%. When the equipper is Pyrois, using an <ct color=#FFFFFF>Ultimate</ct> grants the Eclipse effect. When the Eclipse effect is active, DMG dealt by the equipper ignores <ct color=#2BAD00>17.5%</ct> of <ct color=#FE437E>Ether RES</ct>, lasting 45s. Repeated triggers reset the duration. When the equipper enters combat, they gain the Eclipse effect.",
+    "CRIT Rate increases by 20%. When the equipper is Pyrois, using an <ct color=#FFFFFF>Ultimate</ct> grants the Eclipse effect. When the Eclipse effect is active, DMG dealt by the equipper ignores <ct color=#2BAD00>19%</ct> of <ct color=#FE437E>Ether RES</ct>, lasting 45s. Repeated triggers reset the duration. When the equipper enters combat, they gain the Eclipse effect.",
+    "CRIT Rate increases by 20%. When the equipper is Pyrois, using an <ct color=#FFFFFF>Ultimate</ct> grants the Eclipse effect. When the Eclipse effect is active, DMG dealt by the equipper ignores <ct color=#2BAD00>20.5%</ct> of <ct color=#FE437E>Ether RES</ct>, lasting 45s. Repeated triggers reset the duration. When the equipper enters combat, they gain the Eclipse effect.",
+    "CRIT Rate increases by 20%. When the equipper is Pyrois, using an <ct color=#FFFFFF>Ultimate</ct> grants the Eclipse effect. When the Eclipse effect is active, DMG dealt by the equipper ignores <ct color=#2BAD00>22%</ct> of <ct color=#FE437E>Ether RES</ct>, lasting 45s. Repeated triggers reset the duration. When the equipper enters combat, they gain the Eclipse effect."
+  ]
+}

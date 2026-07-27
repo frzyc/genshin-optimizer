@@ -31,7 +31,7 @@ export function WengineLevelSlider({
   if (usePrev(levelHigh) !== levelHigh) setsliderHigh(levelHigh)
   const setSlider = useCallback(
     (_: unknown, value: number | number[]) => {
-      if (typeof value == 'number') throw new TypeError()
+      if (typeof value === 'number') throw new TypeError()
       const [l, h] = value
       setsliderLow(l)
       setsliderHigh(h)

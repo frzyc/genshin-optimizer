@@ -1,0 +1,322 @@
+{
+  "name": "Pyrois",
+  "fullName": "Pyrois",
+  "basic": {
+    "BasicAttackEmberglow": {
+      "name": "Basic Attack: Emberglow",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Performs up to three attacks forward, dealing <ct color=#FE437E>Ether DMG</ct>."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit "
+      ]
+    },
+    "BasicAttackCelestialLight": {
+      "name": "Basic Attack: Celestial Light",
+      "desc": {
+        "0": "With 30 or more <tooltip ns=tooltips_gen baseKey18=1000018>Solar Prominence</tooltip>, hold <IconNormal /> to activate:",
+        "1": "Unleashes up to four attacks forward, dealing massive <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "If another character is switched in during the 3rd hit, Pyrois automatically performs the 4th hit off-field.",
+        "3": "Each hit consumes a certain amount of Solar Prominence.",
+        "4": "Character is invulnerable during the 3rd and 4th hits."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeTwilight": {
+      "name": "Dodge: Twilight",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackSunrise": {
+      "name": "Dash Attack: Sunrise",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Delivers a quick slash forward, dealing <ct color=#FE437E>Ether DMG</ct>."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterFirstLight": {
+      "name": "Dodge Counter: First Light",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Performs a forward spinning slash, dealing <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "After using the skill and with 30 or more <tooltip ns=tooltips_gen baseKey18=1000018>Solar Prominence</tooltip>, hold <IconNormal /> to immediately follow up with the 3rd hit of Basic Attack: Celestial Light.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackFadingRays": {
+      "name": "Special Attack: Fading Rays",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Performs a rush attack, dealing <ct color=#FE437E>Ether DMG</ct>."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackSunsHalo": {
+      "name": "EX Special Attack: Sun's Halo",
+      "desc": {
+        "0": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "1": "Quickly charges forward and performs a series of consecutive attacks, dealing massive <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "If hit by an enemy attack during the charge, triggers a Perfect Block effect, nullifying the damage and increasing the move's Interrupt Level to that of a Heavy Defensive Assist.",
+        "3": "After using the skill and with 30 or more <tooltip ns=tooltips_gen baseKey18=1000018>Solar Prominence</tooltip>, hold <IconNormal /> to immediately follow up with the 3rd hit of Basic Attack: Celestial Light.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "SpecialAttackAssaultDirective": {
+      "name": "Special Attack: Assault Directive",
+      "desc": "When an <ct color=#FFFFFF>Ultimate</ct> or <ct color=#FFFFFF>EX Special Attack: Sun's Halo</ct> is used, Phaethon performs an assist attack, dealing <ct color=#FE437E>Ether DMG</ct>. This effect can trigger once every 2.5s, and is guaranteed to trigger when using an <ct color=#FFFFFF>Ultimate</ct>.",
+      "params": [
+        " "
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackCeremonialMarch": {
+      "name": "Chain Attack: Ceremonial March",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Performs a coordinated attack with Phaethon, dealing massive <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "After using the skill and with 30 or more <tooltip ns=tooltips_gen baseKey18=1000018>Solar Prominence</tooltip>, press or hold <IconNormal /> to immediately follow up with the 3rd hit of Basic Attack: Celestial Light.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateTotalAnnihilation": {
+      "name": "Ultimate: Total Annihilation",
+      "desc": {
+        "0": "When Decibel Rating is at or above <ct color=#FFFFFF>Blasting</ct>, press <IconUltimateReady /> and select the upper branch to activate:",
+        "1": "After charging, performs a downward slash, dealing massive <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "After using the skill and with 30 or more <tooltip ns=tooltips_gen baseKey18=1000018>Solar Prominence</tooltip>, press or hold <IconNormal /> to immediately follow up with the 3rd hit of Basic Attack: Celestial Light.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateTriumphantReturn": {
+      "name": "Ultimate: Triumphant Return",
+      "desc": {
+        "0": "When Decibel Rating is at or above <ct color=#FFFFFF>Blasting</ct>, press <IconUltimateReady /> and select the lower branch to activate:",
+        "1": "Releases an energy burst in the surrounding area, dealing massive <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "After using the skill and with 30 or more <tooltip ns=tooltips_gen baseKey18=1000018>Solar Prominence</tooltip>, hold <IconNormal /> to immediately follow up with the 3rd hit of Basic Attack: Celestial Light.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateUnboundSwordstorm": {
+      "name": "Ultimate: Unbound Swordstorm",
+      "desc": {
+        "0": "When Decibel Rating is at or above <ct color=#FFFFFF>Blasting</ct>, press <IconUltimateReady /> and select the left branch to activate:",
+        "1": "Unleashes consecutive attacks forward, dealing massive <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "After using the skill and with 30 or more <tooltip ns=tooltips_gen baseKey18=1000018>Solar Prominence</tooltip>, hold <IconNormal /> to immediately follow up with the 3rd hit of Basic Attack: Celestial Light.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateEternalImprisonment": {
+      "name": "Ultimate: Eternal Imprisonment",
+      "desc": {
+        "0": "When Decibel Rating is at or above <ct color=#FFFFFF>Blasting</ct>, press <IconUltimateReady /> and select the right branch to activate:",
+        "1": "Gathers energy ahead before unleashing a Finishing Move, dealing massive <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "After using the skill and with 30 or more <tooltip ns=tooltips_gen baseKey18=1000018>Solar Prominence</tooltip>, hold <IconNormal /> to immediately follow up with the 3rd hit of Basic Attack: Celestial Light.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistDuskguard": {
+      "name": "Quick Assist: Duskguard",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Launches a series of attacks against the target, dealing <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "After using the skill and with 30 or more <tooltip ns=tooltips_gen baseKey18=1000018>Solar Prominence</tooltip>, hold <IconNormal /> to immediately follow up with the 3rd hit of Basic Attack: Celestial Light.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistIronhideBehemoth": {
+      "name": "Defensive Assist: Ironhide Behemoth",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpReturnToDaylight": {
+      "name": "Assist Follow-Up: Return to Daylight",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Performs a forward thrust attack, dealing <ct color=#FE437E>Ether DMG</ct>.",
+        "2": "After using the skill and with 30 or more <tooltip ns=tooltips_gen baseKey18=1000018>Solar Prominence</tooltip>, press or hold <IconNormal /> to immediately follow up with the 3rd hit of Basic Attack: Celestial Light.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Radiant Chariot",
+    "desc": [
+      {
+        "0": "Upon entering battle, Pyrois gains 30 <tooltip ns=tooltips_gen baseKey18=1000018>Solar Prominence</tooltip>. This effect can trigger once every 180s in Investigation Zone mode. Landing different attacks on enemies grants a certain amount of <ct color=#FFFFFF>Solar Prominence</ct>, and Pyrois also gains 0.5 <ct color=#FFFFFF>Solar Prominence</ct> every second while in combat, up to a max of 60.",
+        "1": "When Pyrois uses different Ultimates, they gain the following effects:",
+        "2": "Upper Branch - Ultimate: Total Annihilation: Gain 30 Solar Prominence and enter the <tooltip ns=tooltips_gen baseKey18=1000019>Mirage</tooltip> state. While in the Mirage state, Pyrois' Ultimate deals 40% increased CRIT DMG against Stunned enemies, and with 30 or more Solar Prominence hold <IconNormal /> during the 4th hit of Basic Attack: Celestial Light to immediately follow up with the 3rd hit of Basic Attack: Celestial Light. This effect lasts 21s. Repeated triggers reset the duration.",
+        "3": "Lower Branch - Ultimate: Triumphant Return: Enter the <tooltip ns=tooltips_gen baseKey18=1000020>Sunflare</tooltip> state. While in the Sunflare state, Energy Generation Rate increases by 15%, and DMG dealt increases by <ct color=#2BAD00>20%</ct>, and triggering a Perfect Block with an EX Special Attack grants 10 Solar Prominence. This effect lasts 200s. Repeated triggers reset the duration.",
+        "4": "Left Branch - Ultimate: Unbound Swordstorm: Heavy attacks that hit enemies in the Contamination state deal <ct color=#2BAD00>450%</ct> of ATK as additional DMG.",
+        "5": "Right Branch - Ultimate: Eternal Imprisonment: Heavy attacks that hit Stunned enemies trigger the <tooltip ns=tooltips_gen baseKey18=1000021>Totalize</tooltip> effect, dealing <ct color=#2BAD00>1,125%</ct> of ATK as additional DMG. Upon activating this skill, the Stun duration of all currently Stunned enemies is extended by 3s. When the Finishing Move hits, the enemy's Stun state ends."
+      },
+      {
+        "0": "Upon entering battle, Pyrois gains 30 <tooltip ns=tooltips_gen baseKey18=1000018>Solar Prominence</tooltip>. This effect can trigger once every 180s in Investigation Zone mode. Landing different attacks on enemies grants a certain amount of <ct color=#FFFFFF>Solar Prominence</ct>, and Pyrois also gains 0.5 <ct color=#FFFFFF>Solar Prominence</ct> every second while in combat, up to a max of 60.",
+        "1": "When Pyrois uses different Ultimates, they gain the following effects:",
+        "2": "Upper Branch - Ultimate: Total Annihilation: Gain 30 Solar Prominence and enter the <tooltip ns=tooltips_gen baseKey18=1000019>Mirage</tooltip> state. While in the Mirage state, Pyrois' Ultimate deals 40% increased CRIT DMG against Stunned enemies, and with 30 or more Solar Prominence hold <IconNormal /> during the 4th hit of Basic Attack: Celestial Light to immediately follow up with the 3rd hit of Basic Attack: Celestial Light. This effect lasts 21s. Repeated triggers reset the duration.",
+        "3": "Lower Branch - Ultimate: Triumphant Return: Enter the <tooltip ns=tooltips_gen baseKey18=1000020>Sunflare</tooltip> state. While in the Sunflare state, Energy Generation Rate increases by 15%, and DMG dealt increases by <ct color=#2BAD00>23.4%</ct>, and triggering a Perfect Block with an EX Special Attack grants 10 Solar Prominence. This effect lasts 200s. Repeated triggers reset the duration.",
+        "4": "Left Branch - Ultimate: Unbound Swordstorm: Heavy attacks that hit enemies in the Contamination state deal <ct color=#2BAD00>525%</ct> of ATK as additional DMG.",
+        "5": "Right Branch - Ultimate: Eternal Imprisonment: Heavy attacks that hit Stunned enemies trigger the <tooltip ns=tooltips_gen baseKey18=1000021>Totalize</tooltip> effect, dealing <ct color=#2BAD00>1,312%</ct> of ATK as additional DMG. Upon activating this skill, the Stun duration of all currently Stunned enemies is extended by 3s. When the Finishing Move hits, the enemy's Stun state ends."
+      },
+      {
+        "0": "Upon entering battle, Pyrois gains 30 <tooltip ns=tooltips_gen baseKey18=1000018>Solar Prominence</tooltip>. This effect can trigger once every 180s in Investigation Zone mode. Landing different attacks on enemies grants a certain amount of <ct color=#FFFFFF>Solar Prominence</ct>, and Pyrois also gains 0.5 <ct color=#FFFFFF>Solar Prominence</ct> every second while in combat, up to a max of 60.",
+        "1": "When Pyrois uses different Ultimates, they gain the following effects:",
+        "2": "Upper Branch - Ultimate: Total Annihilation: Gain 30 Solar Prominence and enter the <tooltip ns=tooltips_gen baseKey18=1000019>Mirage</tooltip> state. While in the Mirage state, Pyrois' Ultimate deals 40% increased CRIT DMG against Stunned enemies, and with 30 or more Solar Prominence hold <IconNormal /> during the 4th hit of Basic Attack: Celestial Light to immediately follow up with the 3rd hit of Basic Attack: Celestial Light. This effect lasts 21s. Repeated triggers reset the duration.",
+        "3": "Lower Branch - Ultimate: Triumphant Return: Enter the <tooltip ns=tooltips_gen baseKey18=1000020>Sunflare</tooltip> state. While in the Sunflare state, Energy Generation Rate increases by 15%, and DMG dealt increases by <ct color=#2BAD00>26.8%</ct>, and triggering a Perfect Block with an EX Special Attack grants 10 Solar Prominence. This effect lasts 200s. Repeated triggers reset the duration.",
+        "4": "Left Branch - Ultimate: Unbound Swordstorm: Heavy attacks that hit enemies in the Contamination state deal <ct color=#2BAD00>600%</ct> of ATK as additional DMG.",
+        "5": "Right Branch - Ultimate: Eternal Imprisonment: Heavy attacks that hit Stunned enemies trigger the <tooltip ns=tooltips_gen baseKey18=1000021>Totalize</tooltip> effect, dealing <ct color=#2BAD00>1,499%</ct> of ATK as additional DMG. Upon activating this skill, the Stun duration of all currently Stunned enemies is extended by 3s. When the Finishing Move hits, the enemy's Stun state ends."
+      },
+      {
+        "0": "Upon entering battle, Pyrois gains 30 <tooltip ns=tooltips_gen baseKey18=1000018>Solar Prominence</tooltip>. This effect can trigger once every 180s in Investigation Zone mode. Landing different attacks on enemies grants a certain amount of <ct color=#FFFFFF>Solar Prominence</ct>, and Pyrois also gains 0.5 <ct color=#FFFFFF>Solar Prominence</ct> every second while in combat, up to a max of 60.",
+        "1": "When Pyrois uses different Ultimates, they gain the following effects:",
+        "2": "Upper Branch - Ultimate: Total Annihilation: Gain 30 Solar Prominence and enter the <tooltip ns=tooltips_gen baseKey18=1000019>Mirage</tooltip> state. While in the Mirage state, Pyrois' Ultimate deals 40% increased CRIT DMG against Stunned enemies, and with 30 or more Solar Prominence hold <IconNormal /> during the 4th hit of Basic Attack: Celestial Light to immediately follow up with the 3rd hit of Basic Attack: Celestial Light. This effect lasts 21s. Repeated triggers reset the duration.",
+        "3": "Lower Branch - Ultimate: Triumphant Return: Enter the <tooltip ns=tooltips_gen baseKey18=1000020>Sunflare</tooltip> state. While in the Sunflare state, Energy Generation Rate increases by 15%, and DMG dealt increases by <ct color=#2BAD00>30.2%</ct>, and triggering a Perfect Block with an EX Special Attack grants 10 Solar Prominence. This effect lasts 200s. Repeated triggers reset the duration.",
+        "4": "Left Branch - Ultimate: Unbound Swordstorm: Heavy attacks that hit enemies in the Contamination state deal <ct color=#2BAD00>675%</ct> of ATK as additional DMG.",
+        "5": "Right Branch - Ultimate: Eternal Imprisonment: Heavy attacks that hit Stunned enemies trigger the <tooltip ns=tooltips_gen baseKey18=1000021>Totalize</tooltip> effect, dealing <ct color=#2BAD00>1,686%</ct> of ATK as additional DMG. Upon activating this skill, the Stun duration of all currently Stunned enemies is extended by 3s. When the Finishing Move hits, the enemy's Stun state ends."
+      },
+      {
+        "0": "Upon entering battle, Pyrois gains 30 <tooltip ns=tooltips_gen baseKey18=1000018>Solar Prominence</tooltip>. This effect can trigger once every 180s in Investigation Zone mode. Landing different attacks on enemies grants a certain amount of <ct color=#FFFFFF>Solar Prominence</ct>, and Pyrois also gains 0.5 <ct color=#FFFFFF>Solar Prominence</ct> every second while in combat, up to a max of 60.",
+        "1": "When Pyrois uses different Ultimates, they gain the following effects:",
+        "2": "Upper Branch - Ultimate: Total Annihilation: Gain 30 Solar Prominence and enter the <tooltip ns=tooltips_gen baseKey18=1000019>Mirage</tooltip> state. While in the Mirage state, Pyrois' Ultimate deals 40% increased CRIT DMG against Stunned enemies, and with 30 or more Solar Prominence hold <IconNormal /> during the 4th hit of Basic Attack: Celestial Light to immediately follow up with the 3rd hit of Basic Attack: Celestial Light. This effect lasts 21s. Repeated triggers reset the duration.",
+        "3": "Lower Branch - Ultimate: Triumphant Return: Enter the <tooltip ns=tooltips_gen baseKey18=1000020>Sunflare</tooltip> state. While in the Sunflare state, Energy Generation Rate increases by 15%, and DMG dealt increases by <ct color=#2BAD00>33.6%</ct>, and triggering a Perfect Block with an EX Special Attack grants 10 Solar Prominence. This effect lasts 200s. Repeated triggers reset the duration.",
+        "4": "Left Branch - Ultimate: Unbound Swordstorm: Heavy attacks that hit enemies in the Contamination state deal <ct color=#2BAD00>750%</ct> of ATK as additional DMG.",
+        "5": "Right Branch - Ultimate: Eternal Imprisonment: Heavy attacks that hit Stunned enemies trigger the <tooltip ns=tooltips_gen baseKey18=1000021>Totalize</tooltip> effect, dealing <ct color=#2BAD00>1,873%</ct> of ATK as additional DMG. Upon activating this skill, the Stun duration of all currently Stunned enemies is extended by 3s. When the Finishing Move hits, the enemy's Stun state ends."
+      },
+      {
+        "0": "Upon entering battle, Pyrois gains 30 <tooltip ns=tooltips_gen baseKey18=1000018>Solar Prominence</tooltip>. This effect can trigger once every 180s in Investigation Zone mode. Landing different attacks on enemies grants a certain amount of <ct color=#FFFFFF>Solar Prominence</ct>, and Pyrois also gains 0.5 <ct color=#FFFFFF>Solar Prominence</ct> every second while in combat, up to a max of 60.",
+        "1": "When Pyrois uses different Ultimates, they gain the following effects:",
+        "2": "Upper Branch - Ultimate: Total Annihilation: Gain 30 Solar Prominence and enter the <tooltip ns=tooltips_gen baseKey18=1000019>Mirage</tooltip> state. While in the Mirage state, Pyrois' Ultimate deals 40% increased CRIT DMG against Stunned enemies, and with 30 or more Solar Prominence hold <IconNormal /> during the 4th hit of Basic Attack: Celestial Light to immediately follow up with the 3rd hit of Basic Attack: Celestial Light. This effect lasts 21s. Repeated triggers reset the duration.",
+        "3": "Lower Branch - Ultimate: Triumphant Return: Enter the <tooltip ns=tooltips_gen baseKey18=1000020>Sunflare</tooltip> state. While in the Sunflare state, Energy Generation Rate increases by 15%, and DMG dealt increases by <ct color=#2BAD00>37%</ct>, and triggering a Perfect Block with an EX Special Attack grants 10 Solar Prominence. This effect lasts 200s. Repeated triggers reset the duration.",
+        "4": "Left Branch - Ultimate: Unbound Swordstorm: Heavy attacks that hit enemies in the Contamination state deal <ct color=#2BAD00>825%</ct> of ATK as additional DMG.",
+        "5": "Right Branch - Ultimate: Eternal Imprisonment: Heavy attacks that hit Stunned enemies trigger the <tooltip ns=tooltips_gen baseKey18=1000021>Totalize</tooltip> effect, dealing <ct color=#2BAD00>2,060%</ct> of ATK as additional DMG. Upon activating this skill, the Stun duration of all currently Stunned enemies is extended by 3s. When the Finishing Move hits, the enemy's Stun state ends."
+      },
+      {
+        "0": "Upon entering battle, Pyrois gains 30 <tooltip ns=tooltips_gen baseKey18=1000018>Solar Prominence</tooltip>. This effect can trigger once every 180s in Investigation Zone mode. Landing different attacks on enemies grants a certain amount of <ct color=#FFFFFF>Solar Prominence</ct>, and Pyrois also gains 0.5 <ct color=#FFFFFF>Solar Prominence</ct> every second while in combat, up to a max of 60.",
+        "1": "When Pyrois uses different Ultimates, they gain the following effects:",
+        "2": "Upper Branch - Ultimate: Total Annihilation: Gain 30 Solar Prominence and enter the <tooltip ns=tooltips_gen baseKey18=1000019>Mirage</tooltip> state. While in the Mirage state, Pyrois' Ultimate deals 40% increased CRIT DMG against Stunned enemies, and with 30 or more Solar Prominence hold <IconNormal /> during the 4th hit of Basic Attack: Celestial Light to immediately follow up with the 3rd hit of Basic Attack: Celestial Light. This effect lasts 21s. Repeated triggers reset the duration.",
+        "3": "Lower Branch - Ultimate: Triumphant Return: Enter the <tooltip ns=tooltips_gen baseKey18=1000020>Sunflare</tooltip> state. While in the Sunflare state, Energy Generation Rate increases by 15%, and DMG dealt increases by <ct color=#2BAD00>40%</ct>, and triggering a Perfect Block with an EX Special Attack grants 10 Solar Prominence. This effect lasts 200s. Repeated triggers reset the duration.",
+        "4": "Left Branch - Ultimate: Unbound Swordstorm: Heavy attacks that hit enemies in the Contamination state deal <ct color=#2BAD00>900%</ct> of ATK as additional DMG.",
+        "5": "Right Branch - Ultimate: Eternal Imprisonment: Heavy attacks that hit Stunned enemies trigger the <tooltip ns=tooltips_gen baseKey18=1000021>Totalize</tooltip> effect, dealing <ct color=#2BAD00>2,250%</ct> of ATK as additional DMG. Upon activating this skill, the Stun duration of all currently Stunned enemies is extended by 3s. When the Finishing Move hits, the enemy's Stun state ends."
+      }
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Glorious Legion",
+    "desc": {
+      "0": "When another character in your squad is a <ct color=#FFFFFF>Stun</ct> or <ct color=#FFFFFF>Support</ct> character:",
+      "1": "Pyrois' CRIT DMG increases by 40%.",
+      "2": "Using a Chain Attack grants 300 <ct color=#FFFFFF>Decibels</ct>."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Shadows of Twilight Past",
+      "desc": "Upon entering the battlefield, Pyrois gains 1,000 <ct color=#FFFFFF>Decibels</ct>. This effect can trigger once every 180s in Investigation Zone mode. CRIT Rate increases by 8%.",
+      "flavor": {
+        "0": "The dark night is a tide of shadow, drowning the fields of a fallen civilization.",
+        "1": "Deluded gods forge a blazing golden spear, seeking to pierce the throat of the abyss."
+      }
+    },
+    "2": {
+      "name": "Blazing Cavalry",
+      "desc": "Using Ultimate: Triumphant Return grants 1,500 <ct color=#FFFFFF>Decibels</ct>. This effect can trigger once every 180s. Pyrois's Decibel limit increases by 1,000.",
+      "flavor": {
+        "0": "All forgotten stories and muffled cries sink into the arid sea behind a pair of eyes,",
+        "1": "awaiting a chariot ablaze with searing flames to roll across the lightless surface of the abyss."
+      }
+    },
+    "3": {
+      "name": "Chains of Fate",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "The chariot shines in splendor, the scorched earth stretches without end.",
+        "1": "Yet within the body of an innocent child grows a tyrant destined to consume all life."
+      }
+    },
+    "4": {
+      "name": "Balefire Horizon",
+      "desc": "Mindscape Effect Hidden",
+      "flavor": {
+        "0": "Perhaps the beacon of first light can only be reached by passing through the darkest night. Perhaps every hero must walk a road of thorns.",
+        "1": "So the forsaken child wanders in self-imposed exile, until the cursed fire burns away the final remains of their mortal shell."
+      }
+    },
+    "5": {
+      "name": "Youthful Guardian",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "The tyrant's crown is remade as a bridle, with silver-white iron wardens and gallant horses.",
+        "1": "They guard the child who burns forever, crossing beyond the digital prison and the deceptions of the night."
+      }
+    },
+    "6": {
+      "name": "Morning Star at Dawn",
+      "desc": "Mindscape Effect Hidden",
+      "flavor": {
+        "0": "Dusk bleeds crimson, dawn soft as ever.",
+        "1": "The morning star has risen above the horizon, wiping away the tears of childhood.",
+        "2": "Its soft sigh lingers like the closing rhyme of a poem.",
+        "3": "The long night is but a prelude to sunrise."
+      }
+    }
+  },
+  "potential": {}
+}

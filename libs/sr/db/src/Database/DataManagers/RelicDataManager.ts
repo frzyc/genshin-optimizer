@@ -18,8 +18,8 @@ import type {
   ICachedSubstat,
   ISroDatabase,
 } from '../../Interfaces'
-import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
+import { DataManager } from '../DataManager'
 import type { ImportResult } from '../exim'
 
 export class RelicDataManager extends DataManager<

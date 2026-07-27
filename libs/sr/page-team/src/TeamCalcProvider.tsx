@@ -24,8 +24,8 @@ import {
   withPreset,
 } from '@genshin-optimizer/sr/formula'
 import {
-  relicTcTagMapNodes,
   relicsTagMapNodes,
+  relicTcTagMapNodes,
 } from '@genshin-optimizer/sr/solver'
 import type { ILightCone } from '@genshin-optimizer/sr/srod'
 import type { ReactNode } from 'react'

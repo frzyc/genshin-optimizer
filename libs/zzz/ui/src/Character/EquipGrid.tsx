@@ -1,12 +1,13 @@
 import { objKeyMap, objMap } from '@genshin-optimizer/common/util'
 import { allDiscSlotKeys } from '@genshin-optimizer/zzz/consts'
-import { type DiscIds } from '@genshin-optimizer/zzz/db'
+import type { DiscIds } from '@genshin-optimizer/zzz/db'
 import { useDiscs, useWengine } from '@genshin-optimizer/zzz/db-ui'
 import { Grid } from '@mui/material'
 import { Stack } from '@mui/system'
 import { useMemo } from 'react'
 import { CompactDiscCard, DiscSetCardCompact } from '../Disc'
 import { CompactWengineCard } from '../Wengine'
+
 const emptyDiscs = objKeyMap(allDiscSlotKeys, () => undefined)
 const DEFAULT_COLUMNS = { xs: 1, sm: 1, md: 2, lg: 3, xl: 4 } as const
 export function EquipGrid({

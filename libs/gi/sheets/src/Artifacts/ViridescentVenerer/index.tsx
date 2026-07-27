@@ -11,8 +11,8 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { condReadNode, nonStackBuff, st } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { SetEffectSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
+import type { SetEffectSheet } from '../IArtifactSheet'
 
 const key: ArtifactSetKey = 'ViridescentVenerer'
 const setHeader = setHeaderTemplate(key)

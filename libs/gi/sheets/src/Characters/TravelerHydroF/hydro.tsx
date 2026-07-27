@@ -21,7 +21,6 @@ import {
   subscript,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../SheetUtil'
-import type { TalentSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
 import {
   dataObjForCharacterSheet,
@@ -31,6 +30,7 @@ import {
   shieldElement,
   shieldNode,
 } from '../dataUtil'
+import type { TalentSheet } from '../ICharacterSheet'
 
 export default function hydro(
   key: CharacterSheetKey,
@@ -200,7 +200,9 @@ export default function hydro(
       dewdropDmg: dmgNode('atk', dm.skill.dewdropDmg, 'skill', {
         premod: { skill_dmgInc: suffusion_dewdrop_dmgInc },
       }),
-      thornDmg: dmgNode('atk', dm.skill.thornDmg, 'skill'),
+      thornDmg: dmgNode('atk', dm.skill.thornDmg, 'skill', {
+        hit: { reaction: constant('') },
+      }),
       suffusion_hpCost,
       suffusion_dewdrop_dmgInc,
     },
@@ -248,17 +250,17 @@ export default function hydro(
         fields: [
           {
             node: infoMut(dmgFormulas.skill.surgeDmg, {
-              name: ct.chg(`skill.skillParams.0`),
+              name: ct.chg('skill.skillParams.0'),
             }),
           },
           {
             node: infoMut(dmgFormulas.skill.dewdropDmg, {
-              name: ct.chg(`skill.skillParams.1`),
+              name: ct.chg('skill.skillParams.1'),
             }),
           },
           {
             node: infoMut(dmgFormulas.skill.thornDmg, {
-              name: ct.chg(`skill.skillParams.2`),
+              name: ct.chg('skill.skillParams.2'),
             }),
           },
           {
@@ -335,7 +337,7 @@ export default function hydro(
         fields: [
           {
             node: infoMut(dmgFormulas.burst.dmg, {
-              name: ct.chg(`burst.skillParams.0`),
+              name: ct.chg('burst.skillParams.0'),
             }),
           },
           {

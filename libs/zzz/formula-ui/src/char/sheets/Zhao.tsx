@@ -5,19 +5,19 @@ import { createBaseSheet } from '../sheetUtil'
 
 const key: CharacterKey = 'Zhao'
 // TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// biome-ignore lint/suspicious/noTsIgnore: temp
 //@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// biome-ignore lint/correctness/noUnusedVariables: temp
 const [, ch] = trans('char', key)
 // TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// biome-ignore lint/suspicious/noTsIgnore: temp
 //@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// biome-ignore lint/correctness/noUnusedVariables: temp
 const cond = Zhao.conditionals
 // TODO: Cleanup
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// biome-ignore lint/suspicious/noTsIgnore: temp
 //@ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// biome-ignore lint/correctness/noUnusedVariables: temp
 const buff = Zhao.buffs
 
 const sheet = createBaseSheet(key)

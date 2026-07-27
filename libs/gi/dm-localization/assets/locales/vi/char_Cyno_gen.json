@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -44,6 +48,13 @@
       "0": "Đột kích siêu tốc, gây <electro>Sát Thương Nguyên Tố Lôi</electro> cho kẻ địch trên đường.",
       "1": "<br/>",
       "2": "Khi Cyno trong trạng thái Sứ Giả Dẫn Lối của Kỹ Năng Nộ \"Nghi Thức Thần Thánh - Nhanh Như Sói\" sẽ thi triển trạng thái <strong>Tang Lễ</strong>, giải phóng sức mạnh sấm sét, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro>, đồng thời kéo dài thời gian duy trì trạng thái Sứ Giả Dẫn Lối.",
+      "3": "<br/>",
+      "4": "<i>\"Ngươi không có quyền lựa chọn chấp nhận hay từ chối, cả ngươi và ta đều đã sớm nằm trong sự phán quyết này.\"</i>"
+    },
+    "upgradedDescription": {
+      "0": "Đột kích siêu tốc, gây <electro>Sát Thương Nguyên Tố Lôi</electro> cho kẻ địch trên đường.",
+      "1": "<br/>",
+      "2": "Khi Cyno trong trạng thái Sứ Giả Dẫn Lối, sẽ chuyển sang thi triển <strong>Tang Lễ</strong>, giải phóng sức mạnh sấm sét, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro>. Nếu Cyno thông qua thi triển Kỹ Năng Nộ <strong>Nghi Thức Thần Thánh - Nhanh Như Sói</strong> để vào trạng thái Sứ Giả Dẫn Lối, thì khi thi triển <strong>Tang Lễ</strong>, sẽ còn kéo dài thêm thời gian duy trì trạng thái Sứ Giả Dẫn Lối lần này.",
       "3": "<br/>",
       "4": "<i>\"Ngươi không có quyền lựa chọn chấp nhận hay từ chối, cả ngươi và ta đều đã sớm nằm trong sự phán quyết này.\"</i>"
     },
@@ -63,7 +74,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -98,7 +113,11 @@
       "12": "Năng Lượng Nguyên Tố",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -106,6 +125,11 @@
     "description": {
       "0": "Khi trong trạng thái Sứ Giả Dẫn Lối của <strong>Nghi Thức Thần Thánh - Nhanh Như Sói</strong>, Cyno sẽ vào trạng thái Soi Thấu Đường Cùng trong từng khoảng thời gian. Nếu thi triển <strong>Nghi Thức Bí Ẩn - Dẫn Hồn Đáy Vực</strong> trong trạng thái này sẽ kích hoạt hiệu quả \"Phán Quyết\", tăng 35% sát thương Nghi Thức Bí Ẩn - Dẫn Hồn Đáy Vực lần đó gây ra, đồng thời bắn về phía trước 3 luồng Tia Sét Xuyên Thấu, gây <electro>Sát Thương Nguyên Tố Lôi</electro> bằng 100% sức tấn công của Cyno.",
       "1": "Sát thương Tia Sét Xuyên Thấu gây ra được tính là sát thương Kỹ Năng Nguyên Tố."
+    },
+    "upgradedDescription": {
+      "0": "Khi trong trạng thái Sứ Giả Dẫn Lối, Cyno sẽ vào trạng thái \"Soi Thấu Đường Cùng\" theo chu kỳ. Nếu thi triển <strong>Nghi Thức Bí Ẩn - Dẫn Hồn Đáy Vực</strong> trong trạng thái này sẽ kích hoạt hiệu quả \"Phán Quyết\", tăng 35% sát thương Nghi Thức Bí Ẩn - Dẫn Hồn Đáy Vực lần này, đồng thời bắn 3 luồng Tia Sét Xuyên Thấu về phía trước, gây <electro>Sát Thương Nguyên Tố Lôi</electro> bằng 100% Tấn Công của Cyno. Sát thương Tia Sét Xuyên Thấu được xem là sát thương Kỹ Năng Nguyên Tố.",
+      "1": "<br/>",
+      "2": "<strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>: Khi kích hoạt hiệu quả Phán Quyết, sẽ chuyển sang bắn 3 luồng <strong>Tia Sét Xuyên Thấu - Sao Bay</strong> về phía trước, gây <electro>Sát Thương Nguyên Tố Lôi</electro> bằng 200% Tấn Công của Cyno và được xem là sát thương phản ứng Tinh-Siêu Dẫn."
     }
   },
   "passive2": {
@@ -116,6 +140,14 @@
         "Đánh thường trong trạng thái Sứ Giả Dẫn Lối: Tăng 150% dựa vào Tinh Thông Nguyên Tố;",
         "Tia Sét Xuyên Thấu của thiên phú \"Lạc Vũ Phán Quyết\": Tăng 250% dựa vào Tinh Thông Nguyên Tố."
       ]
+    },
+    "upgradedDescription": {
+      "0": "Dựa trên Tinh Thông Nguyên Tố của Cyno, tăng sát thương các đòn tấn công của bản thân như sau:",
+      "1": [
+        "Tấn Công Thường trong trạng thái Sứ Giả Dẫn Lối: 150% Tinh Thông Nguyên Tố.",
+        "Tia Sét Xuyên Thấu của thiên phú \"Lạc Vũ Phán Quyết\": 250% Tinh Thông Nguyên Tố.",
+        "Tia Sét Xuyên Thấu - Sao Bay của thiên phú \"Lạc Vũ Phán Quyết\": 600% Tinh Thông Nguyên Tố."
+      ]
     }
   },
   "passive3": {
@@ -124,17 +156,35 @@
       "0": "Khi làm nhiệm vụ Phái Đi Thám Hiểm có thời gian là 20 giờ ở Sumeru, phần thưởng nhận được tăng 25%."
     }
   },
+  "lockedPassive": {
+    "name": "Hộ Tinh Khởi Hành",
+    "description": {
+      "0": "Khi không trong trạng thái Sứ Giả Dẫn Lối, sau khi thi triển Kỹ Năng Nguyên Tố <strong>Nghi Thức Bí Ẩn - Dẫn Hồn Đáy Vực</strong>, Cyno sẽ tạm thời tiến vào trạng thái Sứ Giả Dẫn Lối trong 6s.",
+      "1": "Ngoài ra, khi ở trong <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Vùng Trục Sao</strong></tooltip>, Cyno sẽ vào trạng thái <strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>."
+    }
+  },
   "constellation1": {
     "name": "Lập Nghi - Phủ Lãm Trú Minh",
     "description": {
       "0": "Sau khi thi triển <strong>Nghi Thức Thần Thánh - Nhanh Như Sói</strong>, tốc độ đánh thường của Cyno tăng 20%, duy trì 10s. Nếu kích hoạt hiệu quả \"Phán Quyết\" của thiên phú Lạc Vũ Phán Quyết khi thi triển <strong>Nghi Thức Bí Ẩn - Dẫn Hồn Đáy Vực</strong>, sẽ làm mới thời gian duy trì hiệu quả này.",
       "1": "Cần mở khóa thiên phú đột phá \"Lạc Vũ Phán Quyết\"."
+    },
+    "upgradedDescription": {
+      "0": "Sau khi thi triển <strong>Nghi Thức Thần Thánh - Nhanh Như Sói</strong>, tốc độ Tấn Công Thường của Cyno tăng 20%, duy trì 10s. Nếu kích hoạt hiệu quả \"Phán Quyết\" của thiên phú Lạc Vũ Phán Quyết khi thi triển <strong>Nghi Thức Bí Ẩn - Dẫn Hồn Đáy Vực</strong>, sẽ làm mới thời gian duy trì hiệu quả này.",
+      "1": "Cần mở khóa Thiên Phú Đột Phá \"Lạc Vũ Phán Quyết\".",
+      "2": "<br/>",
+      "3": "<strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>: Khi vào trạng thái Sứ Giả Dẫn Lối, sẽ còn nhận được hiệu quả <strong>Đồng Hành Vươn Lên</strong>: Tăng 200 điểm Tinh Thông Nguyên Tố. Trong thời gian duy trì, nếu Cyno đổi nhân vật khi đang ra trận, thì nhân vật ra trận tiếp theo sẽ kế thừa hiệu quả <strong>Đồng Hành Vươn Lên</strong> và thời gian duy trì còn lại."
     }
   },
   "constellation2": {
     "name": "Lệnh Nghi - Dẫn Yết Quy Linh",
     "description": {
       "0": "Sau khi Cyno dùng tấn công thường đánh trúng kẻ địch, sẽ tăng 10% buff <electro>Sát Thương Nguyên Tố Lôi</electro>, duy trì 4s. Hiệu quả này mỗi 0.1s tối đa kích hoạt một lần, tối đa cộng dồn 5 tầng."
+    },
+    "upgradedDescription": {
+      "0": "Sau khi Cyno dùng Tấn Công Thường đánh trúng kẻ địch, sẽ tăng 10% buff <electro>Sát Thương Nguyên Tố Lôi</electro>, duy trì 4s. Hiệu quả này mỗi 0.1s tối đa kích hoạt một lần, tối đa cộng dồn 5 tầng.",
+      "1": "<br/>",
+      "2": "Ngoài ra, khi đòn Tấn Công Thường và Trọng Kích của nhân vật đang áp dụng hiệu quả <strong>Đồng Hành Vươn Lên</strong> đánh trúng kẻ địch, nhân vật này sẽ tăng 16% sát thương phản ứng Tinh-Siêu Dẫn. Hiệu quả này sẽ duy trì đến khi kết thúc <strong>Đồng Hành Vươn Lên</strong>, mỗi 0.1s tối đa kích hoạt một lần, tối đa cộng dồn 5 tầng."
     }
   },
   "constellation3": {
@@ -147,8 +197,13 @@
   "constellation4": {
     "name": "Tuần Nghi - Siển Hộ Cấm Võng",
     "description": {
-      "0": "Khi Cyno trong trạng thái Sứ Giả Dẫn Lối của <strong>Nghi Thức Thần Thánh - Nhanh Như Sói</strong>, sau khi kích hoạt phản ứng Điện Cảm, Nguyệt-Điện Cảm, Siêu Dẫn, Quá Tải, Sinh Trưởng, Tăng Cường, Nở Rộ, Khuếch Tán Nguyên Tố Lôi, sẽ khiến tất cả nhân vật trong đội gần đó (trừ bản thân Cyno) hồi phục 3 điểm Năng Lượng Nguyên Tố.",
+      "0": "Khi Cyno trong trạng thái Sứ Giả Dẫn Lối của <strong>Nghi Thức Thần Thánh - Nhanh Như Sói</strong>, sau khi kích hoạt phản ứng Điện Cảm, Nguyệt-Điện Cảm, Siêu Dẫn, Tinh-Siêu Dẫn, Quá Tải, Sinh Trưởng, Tăng Cường, Nở Rộ, Khuếch Tán Nguyên Tố Lôi, sẽ khiến tất cả nhân vật trong đội gần đó (trừ bản thân Cyno) hồi phục 3 điểm Năng Lượng Nguyên Tố.",
       "1": "Hiệu quả này trong một lần <strong>Nghi Thức Thần Thánh - Nhanh Như Sói</strong> tối đa kích hoạt 5 lần."
+    },
+    "upgradedDescription": {
+      "0": "Khi Cyno trong trạng thái Sứ Giả Dẫn Lối của <strong>Nghi Thức Thần Thánh - Nhanh Như Sói</strong>, sau khi kích hoạt phản ứng Điện Cảm, Nguyệt-Điện Cảm, Siêu Dẫn, Tinh-Siêu Dẫn, Quá Tải, Sinh Trưởng, Tăng Cường, Nở Rộ, Khuếch Tán Nguyên Tố Lôi, sẽ khiến tất cả nhân vật trong đội gần đó (trừ bản thân Cyno) hồi phục 3 điểm Năng Lượng Nguyên Tố. Hiệu quả này trong một lần <strong>Nghi Thức Thần Thánh - Nhanh Như Sói</strong> tối đa kích hoạt 5 lần.",
+      "1": "<br/>",
+      "2": "Sau khi nhân vật khác đang áp dụng hiệu quả <strong>Đồng Hành Vươn Lên</strong> kích hoạt các phản ứng nêu trên, sẽ còn hồi phục 20 điểm Năng Lượng Nguyên Tố cho Cyno. Hiệu quả này mỗi 18s tối đa kích hoạt một lần."
     }
   },
   "constellation5": {
@@ -165,6 +220,12 @@
       "1": "Hiệu quả \"Nghi Thức Sói\" duy trì 8s, tối đa cộng dồn 8 tầng, đồng thời sẽ xóa bỏ sau khi trạng thái Sứ Giả Dẫn Lối của Nghi Thức Thần Thánh - Nhanh Như Sói kết thúc.",
       "2": "Mỗi 0.4s tối đa bắn ra một Tia Sét Xuyên Thấu bằng cách này.",
       "3": "Cần mở khóa thiên phú đột phá \"Lạc Vũ Phán Quyết\"."
+    },
+    "upgradedDescription": {
+      "0": "Sau khi thi triển <strong>Nghi Thức Thần Thánh - Nhanh Như Sói</strong> hoặc kích hoạt hiệu quả \"Phán Quyết\" của thiên phú đột phá Lạc Vũ Phán Quyết, Cyno sẽ nhận được 4 tầng hiệu quả \"Nghi Thức Sói\". Khi Tấn Công Thường của Cyno đánh trúng kẻ địch, sẽ tiêu hao một tầng Nghi Thức Sói và bắn ra một Tia Sét Xuyên Thấu. Nếu Cyno đang áp dụng hiệu quả <strong>Đồng Hành Vươn Lên</strong>, sẽ chuyển sang bắn một luồng <strong>Tia Sét Xuyên Thấu - Sao Bay</strong>.",
+      "1": "Hiệu quả \"Nghi Thức Sói\" duy trì 8s, trong một lần Sứ Giả Dẫn Lối tối đa cộng dồn 8 tầng, đồng thời sẽ xóa bỏ sau khi trạng thái Sứ Giả Dẫn Lối của Nghi Thức Thần Thánh - Nhanh Như Sói kết thúc.",
+      "2": "Mỗi 0.4s tối đa bắn ra một Tia Sét Xuyên Thấu hoặc Tia Sét Xuyên Thấu - Sao Bay bằng cách này.",
+      "3": "Cần mở khóa thiên phú đột phá Lạc Vũ Phán Quyết."
     }
   }
 }

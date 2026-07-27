@@ -60,7 +60,7 @@
     "superconduct": "Süper İletim",
     "vaporize": "Buharlaştı",
     "melt": "Eridi",
-    "bloom": "Çiçeklenme",
+    "bloom": "",
     "burgeon": "Filizlenme",
     "hyperbloom": "Aşırı Çiçeklenme",
     "quicken": "Hızlandı",
@@ -77,15 +77,15 @@
   "talentLvl": "Yetenek Sv. {{level}}",
   "talents": {
     "auto": "Normal Saldırı",
-    "skill": "Element Becerisi",
-    "burst": "Element Patlaması",
+    "skill": "",
+    "burst": "",
     "altSprint": "Alternatif Depar"
   },
   "unlockPassive1": "1. Karakter Yükseltme Aşamasında açılır",
   "unlockPassive2": "4. Karakter Yükseltme Aşamasında açılır",
   "unlockPassive3": "Pasif Yetenek",
   "unlockLockedPassive": "Öncelikli görevler tamamlandıktan sonra açılır",
-  "witchPassive": "Cadının Ödevi",
+  "witchPassive": "",
   "moonsign": "Ay Sembolü",
   "hexerei": "Cadılık"
 }

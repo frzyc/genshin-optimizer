@@ -7,9 +7,9 @@ import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
 import { artDisplayValue } from '@genshin-optimizer/gi/util'
 import { Box, Grid } from '@mui/material'
-import { StatWithUnit } from '../../StatDisplay'
 import { ArtifactSetName } from '../../artifact'
 import { BuildCard } from '../../build'
+import { StatWithUnit } from '../../StatDisplay'
 import { WeaponCardNanoObj } from '../../weapon'
 
 export function BuildTcSimplified({ buildTcId }: { buildTcId: string }) {

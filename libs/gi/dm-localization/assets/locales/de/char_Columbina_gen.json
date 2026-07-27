@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -62,7 +66,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -86,7 +94,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -117,7 +129,7 @@
   "passive": {
     "name": "Mondwache",
     "description": {
-      "0": "Wenn in Nod-Krai ein Truppenmitglied ohnmächtig wird, belebt Columbina diese Figur wieder und stellt ihre LP wieder her; der Wiederherstellungswert ist abhängig von Columbinas Freundschaftsstufe; 100 s Abklingzeit. Dieser Effekt gilt nicht in Sphären, Gebietssäuberungen und im Gewundenen Abgrund.",
+      "0": "Wenn in Nod-Krai oder in der Region um den Frostmond ein eigenes Truppenmitglied ohnmächtig wird, belebt Columbina diese Figur wieder und stellt ihre LP wieder her; der Wiederherstellungswert ist abhängig von Columbinas Freundschaftsstufe; 100 s Abklingzeit. Dieser Effekt gilt nicht in Sphären, Gebietssäuberungen und im Gewundenen Abgrund.",
       "1": "Außerdem scheint Columbina eine besondere Verbindung zu einigen kleinen Tieren zu haben, die von Kuuvahki beeinflusst sind ..."
     }
   },

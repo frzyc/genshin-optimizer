@@ -1563,6 +1563,20 @@ export const formulas = {
       },
     },
   },
+  Lohen: {
+    normal1: {
+      sheet: 'Lohen',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Lohen',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   Lynette: {
     normal1: {
       sheet: 'Lynette',
@@ -2150,6 +2164,20 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         sheet: 'Rosaria',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  Sandrone: {
+    normal1: {
+      sheet: 'Sandrone',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Sandrone',
         move: 'normal',
         name: 'normal1',
       },

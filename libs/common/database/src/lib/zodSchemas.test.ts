@@ -35,8 +35,8 @@ describe('zodSchemas utilities', () => {
 
     it('should return fallback for non-finite values', () => {
       expect(schema.parse('string')).toBe(50)
-      expect(schema.parse(NaN)).toBe(50)
-      expect(schema.parse(Infinity)).toBe(50)
+      expect(schema.parse(Number.NaN)).toBe(50)
+      expect(schema.parse(Number.POSITIVE_INFINITY)).toBe(50)
     })
   })
 
@@ -50,7 +50,7 @@ describe('zodSchemas utilities', () => {
 
     it('should return fallback for non-finite values', () => {
       expect(schema.parse('string')).toBe(50)
-      expect(schema.parse(NaN)).toBe(50)
+      expect(schema.parse(Number.NaN)).toBe(50)
     })
   })
 
