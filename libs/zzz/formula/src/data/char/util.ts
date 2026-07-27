@@ -99,11 +99,12 @@ export function dmgDazeAndAnom(
   const anom = arg.cond ? cmpNE(arg.cond, '', anomBase) : anomBase
   return [
     stat === 'sheerForce'
-      ? customSheerDmg(name, dmgTag, dmg, arg, ...extra)
-      : customDmg(name, dmgTag, dmg, arg, ...extra),
-    customDaze(name, dmgTag, daze, arg, ...extra),
-    // TODO: No clue if this is right
-    customAnomalyBuildup(name, dmgTag, anom, arg, ...extra),
+      ? customSheerDmg(name, dmgTag, dmg, arg)
+      : customDmg(name, dmgTag, dmg, arg),
+    customDaze(name, dmgTag, daze, arg),
+    customAnomalyBuildup(name, dmgTag, anom, arg),
+    // Apply buffs one time, since all of these custom instances will share a name
+    extra.map(({ tag, value }) => ({ tag: { ...tag, name }, value })),
   ]
 }
 
@@ -150,19 +151,19 @@ export function dmgDazeAndAnomMerge(
   )
   return [
     stat === 'sheerForce'
-      ? customSheerDmg(name, dmgTag, dmgBase, arg, ...extra)
-      : customDmg(name, dmgTag, dmgBase, arg, ...extra),
-    customDaze(name, dmgTag, dazeBase, arg, ...extra),
-    // TODO: No clue if this is right
+      ? customSheerDmg(name, dmgTag, dmgBase, arg)
+      : customDmg(name, dmgTag, dmgBase, arg),
+    customDaze(name, dmgTag, dazeBase, arg),
     customAnomalyBuildup(
       name,
       dmgTag,
       constant(
         skillParam.reduce((acc, sp) => acc + sp.AttributeInfliction, 0) / 100
       ),
-      arg,
-      ...extra
+      arg
     ),
+    // Apply buffs one time, since all of these custom instances will share a name
+    extra.map(({ tag, value }) => ({ tag: { ...tag, name }, value })),
   ]
 }
 
