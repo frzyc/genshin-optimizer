@@ -132,8 +132,7 @@ export function LoadoutDropdown({
       >
         <MenuItem onClick={() => onShow()}>{t('loDropdown.create')}</MenuItem>
         {teamCharIds.map((tcId) => {
-          const { name, buildIds, buildTcIds, customMultiTargets } =
-            database.teamChars.get(tcId)!
+          const { name, customMultiTargets } = database.teamChars.get(tcId)!
           return (
             <MenuItem
               key={tcId}
@@ -143,16 +142,8 @@ export function LoadoutDropdown({
             >
               <span>{name}</span>
               <SqBadge
-                color={buildIds.length ? 'primary' : 'secondary'}
-                sx={{ marginLeft: 'auto' }}
-              >
-                {t('loDropdown.builds', { count: buildIds.length })}
-              </SqBadge>
-              <SqBadge color={buildTcIds.length ? 'primary' : 'secondary'}>
-                {t('loDropdown.tcs', { count: buildTcIds.length })}
-              </SqBadge>
-              <SqBadge
                 color={customMultiTargets.length ? 'success' : 'secondary'}
+                sx={{ marginLeft: 'auto' }}
               >
                 {t('loDropdown.multi', { count: customMultiTargets.length })}
               </SqBadge>
