@@ -13,6 +13,7 @@ declare module '@mui/material/styles' {
     physical: Palette['primary']
     ether: Palette['primary']
     wind: Palette['primary']
+    lumiflux: Palette['primary']
     rankS: Palette['primary']
     rankA: Palette['primary']
     rankB: Palette['primary']
@@ -29,6 +30,7 @@ declare module '@mui/material/styles' {
     physical?: PaletteOptions['primary']
     ether?: PaletteOptions['primary']
     wind?: PaletteOptions['primary']
+    lumiflux?: PaletteOptions['primary']
     rankS?: PaletteOptions['primary']
     rankA?: PaletteOptions['primary']
     rankB?: PaletteOptions['primary']
@@ -44,6 +46,7 @@ declare module '@mui/material/Button' {
     physical: true
     ether: true
     wind: true
+    lumiflux: true
   }
 }
 
@@ -56,6 +59,7 @@ declare module '@mui/material/Chip' {
     physical: true
     ether: true
     wind: true
+    lumiflux: true
   }
 }
 
@@ -68,6 +72,7 @@ declare module '@mui/material/InputBase' {
     physical: true
     ether: true
     wind: true
+    lumiflux: true
   }
 }
 
@@ -80,6 +85,7 @@ declare module '@mui/material/SvgIcon' {
     physical: true
     ether: true
     wind: true
+    lumiflux: true
   }
 }
 
@@ -132,6 +138,10 @@ export const theme = createTheme({
     wind: commonTheme.palette.augmentColor({
       color: { main: '#74a4ff', contrastText: '#fff' },
       name: 'wind',
+    }),
+    lumiflux: commonTheme.palette.augmentColor({
+      color: { main: '#FFA9DD', contrastText: '#fff' },
+      name: 'lumiflux',
     }),
     rankS: commonTheme.palette.augmentColor({
       color: { main: '#FF9100', contrastText: '#fff' },

@@ -9,10 +9,12 @@ import {
   subscript,
   sum,
 } from '@genshin-optimizer/pando/engine'
-import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
+import type {
+  AttributeAnomalyKey,
+  CharacterKey,
+} from '@genshin-optimizer/zzz/consts'
 import {
-  type AttributeKey,
-  allAttributeKeys,
+  allAttributeAnomalyKeys,
   allSkillKeys,
   type SkillKey,
 } from '@genshin-optimizer/zzz/consts'
@@ -275,6 +277,8 @@ function inferDamageType(key: CharacterKey, abilityName: string): DamageType {
     if (key === 'Lucy' && abilityName === 'GuardBoarsToArms') return 'basic'
     if (key === 'Lucy' && abilityName === 'GuardBoarsSpinningSwing')
       return 'basic'
+    if (key === 'Remielle' && abilityName === 'AssistFlowerFeatherDance')
+      return 'assistFollowUp'
     if (key === 'Yanagi' && abilityName === 'StanceJougen') return 'basic'
     if (key === 'Yanagi' && abilityName === 'StanceKagen') return 'basic'
     if (key === 'Yidhari' && abilityName === 'FrostsCrushingWeight')
@@ -345,7 +349,7 @@ export function heal(
   return customHeal(name, base, arg, ...extra)
 }
 
-const anomalyMultipliers: Record<AttributeKey, number> = {
+const anomalyMultipliers: Record<AttributeAnomalyKey, number> = {
   fire: 0.5,
   electric: 1.25,
   ether: 0.625,
@@ -353,7 +357,7 @@ const anomalyMultipliers: Record<AttributeKey, number> = {
   physical: 7.13,
   wind: 12.5,
 }
-const disorderTimeMultipliers: Record<AttributeKey | 'frost', number> = {
+const disorderTimeMultipliers: Record<AttributeAnomalyKey | 'frost', number> = {
   fire: 1, // 2 * 0.5
   electric: 1.25,
   ether: 1.25, // 2 * 0.625
@@ -362,7 +366,7 @@ const disorderTimeMultipliers: Record<AttributeKey | 'frost', number> = {
   frost: 0.75,
   wind: 0, // Only for Polarity Disorder
 }
-const vortexMultipliers: Record<AttributeKey | 'frost', number> = {
+const vortexMultipliers: Record<AttributeAnomalyKey | 'frost', number> = {
   fire: 9,
   electric: 6.5,
   ether: 6.5,
@@ -398,7 +402,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
   )
   const isMiyabi = data_gen.id === '1091'
 
-  const vortex = (attribute: AttributeKey | 'frost') =>
+  const vortex = (attribute: AttributeAnomalyKey | 'frost') =>
     customAnomalyDmg(
       `vortexDmgInst_${attribute}`,
       {
@@ -471,69 +475,79 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
           prod(percent(1.5), own.final.atk)
         )),
     // Anomaly DMG
-    ...customAnomalyDmg(
-      'anomalyDmgInst',
-      {
-        attribute: data_gen.attribute,
-        damageType1: 'anomaly',
-      },
-      prod(
-        percent(anomalyMultipliers[data_gen.attribute]),
-        own.final.atk,
-        cmpEq(own.dmg.anom_mv_mult_, 0, percent(1), own.dmg.anom_mv_mult_)
-      )
-    ),
-    // Disorder DMG
-    ...customAnomalyDmg(
-      `disorderDmgInst_${isMiyabi ? 'frost' : data_gen.attribute}`,
-      {
-        attribute: data_gen.attribute,
-        damageType1: 'disorder',
-      },
-      prod(
-        sum(
-          percent(isMiyabi ? 6 : data_gen.attribute === 'wind' ? 1 : 4.5),
-          own.final.addl_disorder_,
+    ...(data_gen.attribute !== 'lumiflux'
+      ? customAnomalyDmg(
+          'anomalyDmgInst',
+          {
+            attribute: data_gen.attribute,
+            damageType1: 'anomaly',
+          },
           prod(
-            data_gen.attribute === 'wind'
-              ? percent(1)
-              : max(
-                  0,
-                  sum(
-                    constant(isMiyabi ? 20 : 10),
-                    prod(constant(-1), anomTimePassed)
-                  )
-                ),
-            percent(
-              disorderTimeMultipliers[isMiyabi ? 'frost' : data_gen.attribute]
-            )
+            percent(anomalyMultipliers[data_gen.attribute]),
+            own.final.atk,
+            cmpEq(own.dmg.anom_mv_mult_, 0, percent(1), own.dmg.anom_mv_mult_)
           )
-        ),
-        own.final.atk
-      )
-    ),
+        )
+      : []),
+    // Disorder DMG
+    ...(data_gen.attribute !== 'lumiflux'
+      ? customAnomalyDmg(
+          `disorderDmgInst_${isMiyabi ? 'frost' : data_gen.attribute}`,
+          {
+            attribute: data_gen.attribute,
+            damageType1: 'disorder',
+          },
+          prod(
+            sum(
+              percent(isMiyabi ? 6 : data_gen.attribute === 'wind' ? 1 : 4.5),
+              own.final.addl_disorder_,
+              prod(
+                data_gen.attribute === 'wind'
+                  ? percent(1)
+                  : max(
+                      0,
+                      sum(
+                        constant(isMiyabi ? 20 : 10),
+                        prod(constant(-1), anomTimePassed)
+                      )
+                    ),
+                percent(
+                  disorderTimeMultipliers[
+                    isMiyabi ? 'frost' : data_gen.attribute
+                  ]
+                )
+              )
+            ),
+            own.final.atk
+          )
+        )
+      : []),
     // Vortex DMG
-    ...(data_gen.attribute === 'wind'
-      ? [
-          ...allAttributeKeys.filter((attr) => attr !== 'wind'),
-          'frost' as const,
-        ].flatMap(vortex)
-      : vortex(isMiyabi ? 'frost' : data_gen.attribute)),
+    ...(data_gen.attribute === 'lumiflux'
+      ? []
+      : data_gen.attribute === 'wind'
+        ? [
+            ...allAttributeAnomalyKeys.filter((attr) => attr !== 'wind'),
+            'frost' as const,
+          ].flatMap(vortex)
+        : vortex(isMiyabi ? 'frost' : data_gen.attribute)),
     // Abloom DMG
-    ...customAnomalyDmg(
-      'abloomDmgInst',
-      {
-        attribute: data_gen.attribute,
-        damageType1: 'anomaly',
-        damageType2: 'abloom',
-      },
-      prod(
-        percent(anomalyMultipliers[data_gen.attribute]),
-        own.final.atk,
-        cmpEq(own.dmg.anom_mv_mult_, 0, percent(1), own.dmg.anom_mv_mult_)
-      ),
-      { cond: cmpEq(own.dmg.anom_mv_mult_, 0, '', 'infer') }
-    ),
+    ...(data_gen.attribute !== 'lumiflux'
+      ? customAnomalyDmg(
+          'abloomDmgInst',
+          {
+            attribute: data_gen.attribute,
+            damageType1: 'anomaly',
+            damageType2: 'abloom',
+          },
+          prod(
+            percent(anomalyMultipliers[data_gen.attribute]),
+            own.final.atk,
+            cmpEq(own.dmg.anom_mv_mult_, 0, percent(1), own.dmg.anom_mv_mult_)
+          ),
+          { cond: cmpEq(own.dmg.anom_mv_mult_, 0, '', 'infer') }
+        )
+      : []),
     ...customAnomalyBuildup(
       'anomalyBuildupInst',
       { attribute: data_gen.attribute },

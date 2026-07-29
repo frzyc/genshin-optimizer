@@ -37,9 +37,11 @@ import Promeia from './maps/Promeia'
 import Pulchra from './maps/Pulchra'
 import Pyrois from './maps/Pyrois'
 import Qingyi from './maps/Qingyi'
+import Remielle from './maps/Remielle'
 import Rina from './maps/Rina'
 import Seed from './maps/Seed'
 import Seth from './maps/Seth'
+import Sigrid from './maps/Sigrid'
 import Soldier0Anby from './maps/Soldier0Anby'
 import Soldier11 from './maps/Soldier11'
 import Soukaku from './maps/Soukaku'
@@ -95,9 +97,11 @@ const maps = {
   Pulchra,
   Pyrois,
   Qingyi,
+  Remielle,
   Rina,
   Seed,
   Seth,
+  Sigrid,
   Soldier0Anby,
   Soldier11,
   Soukaku,

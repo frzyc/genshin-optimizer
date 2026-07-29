@@ -1,0 +1,359 @@
+{
+  "name": "Remielle",
+  "fullName": "Remielle Dan",
+  "basic": {
+    "BasicAttackLeap": {
+      "name": "Basic Attack: Leap",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Performs up to four attacks ahead, dealing <ct color=#FFA9DD>Lumiflux DMG</ct>.",
+        "2": "If the Basic Attack hits the target, gains <tooltip ns=tooltips_gen baseKey18=1000032>Floating Radiance</tooltip></Term> after the skill ends.",
+        "3": "After the 4th hit of the Basic Attack ends, 1 <ct color=#FFA9DD>Lumiflux Buildup</ct> is applied to enemies hit."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit ",
+        "1st Hit Floating Radiance Gained ",
+        "2nd Hit Floating Radiance Gained ",
+        "3rd Hit Floating Radiance Gained ",
+        "4th Hit Floating Radiance Gained "
+      ]
+    },
+    "BasicAttackSoloDance": {
+      "name": "Basic Attack: Solo Dance",
+      "desc": {
+        "0": "Hold <IconNormal /> to activate:",
+        "1": "Performs a slash in an area ahead, dealing <ct color=#FFA9DD>Lumiflux DMG</ct>.",
+        "2": "If it hits a target, gains <ct color=#FFFFFF>Floating Radiance</ct> after the skill ends."
+      },
+      "params": [
+        " ",
+        "Floating Radiance Gained "
+      ]
+    },
+    "BasicAttackRainbowsEnd": {
+      "name": "Basic Attack: Rainbow's End",
+      "desc": {
+        "0": "When Remielle has stored <tooltip ns=tooltips_gen baseKey18=1000033>Voidflare</tooltip></Term>, hold <IconNormal /> to activate:",
+        "1": "Unleashes a powerful attack across a large area ahead, dealing <ct color=#FFA9DD>Lumiflux DMG</ct>.",
+        "2": "Grants a large amount of <ct color=#FFFFFF>Floating Radiance</ct> when the skill ends.",
+        "3": "If the attack hits a target, triggers the <tooltip ns=tooltips_gen baseKey18=1000034>Luminize</tooltip></Term> effect after the skill ends with a <ct color=#2BAD00>{CAL:100+AvatarSkillLevel(0)*5,1,2}%</ct> multiplier.",
+        "4": "Consumes all stored <ct color=#FFFFFF>Voidflare</ct> upon use."
+      },
+      "params": [
+        " ",
+        "Floating Radiance Gained ",
+        "Luminize Multiplier "
+      ]
+    },
+    "BasicAttackFleetingGrace": {
+      "name": "Basic Attack: Fleeting Grace",
+      "desc": {
+        "0": "When Remielle has stored <ct color=#FFFFFF>Voidflare</ct> and is in the <ct color=#FFFFFF>Luminous Reflection</ct> state, hold <IconNormal /> to activate:",
+        "1": "Unleashes a powerful attack across a large area ahead, dealing <ct color=#FFA9DD>Lumiflux DMG</ct>.",
+        "2": "Grants a large amount of <ct color=#FFFFFF>Floating Radiance</ct> when the skill ends.",
+        "3": "If the attack hits a target, triggers the <ct color=#FFFFFF>Luminize</ct> effect after the skill ends with a <ct color=#2BAD00>{CAL:200+AvatarSkillLevel(0)*10,1,2}%</ct> multiplier.",
+        "4": "Consumes all stored <ct color=#FFFFFF>Voidflare</ct> upon use."
+      },
+      "params": [
+        " ",
+        "Floating Radiance Gained ",
+        "Luminize Multiplier "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeRetreatingLight": {
+      "name": "Dodge: Retreating Light",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackKeenLight": {
+      "name": "Dash Attack: Keen Light",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Launches a quick attack ahead, dealing <ct color=#FFA9DD>Lumiflux DMG</ct>."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterMirroredShadow": {
+      "name": "Dodge Counter: Mirrored Shadow",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Unleashes a powerful slash at the target, dealing <ct color=#FFA9DD>Lumiflux DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackSliverOfLight": {
+      "name": "Special Attack: Sliver of Light",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Launches a ranged attack ahead, dealing <ct color=#FFA9DD>Lumiflux DMG</ct>."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackOdeToDawn": {
+      "name": "EX Special Attack: Ode to Dawn",
+      "desc": {
+        "0": "Upon entering the battlefield, if Remielle has less than 60 Energy, her Energy is recovered to 60. In Investigation Zone Mode, this effect can trigger once every 180s.",
+        "1": "With enough Energy, press <IconSpecialReady /> to activate:",
+        "2": "Unleashes a powerful attack across a large area ahead, dealing <ct color=#FFA9DD>Lumiflux DMG</ct>.",
+        "3": "After the skill ends, apply 2 <ct color=#FFA9DD>Lumiflux Buildup</ct> to all enemies hit.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "Energy Cost "
+      ]
+    },
+    "SpecialAttackOdeToDawnRadiantTurn": {
+      "name": "Special Attack: Ode to Dawn - Radiant Turn",
+      "desc": {
+        "0": "When Remielle is in combat and her <ct color=#FFFFFF>Floating Radiance</ct> reaches its maximum of 120, hold <IconSpecial /> after a <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct> to enter <ct color=#FFFFFF>Stance Shift</ct>. Switching characters while in <ct color=#FFFFFF>Stance Shift</ct> causes Remielle to enter the <ct color=#FFFFFF>Phase Flow</ct> state:",
+        "1": "While in the <ct color=#FFFFFF>Phase Flow</ct> state, Remielle acts autonomously to assist in combat. In this state, <ct color=#FFFFFF>Floating Radiance</ct> is consumed over time, and some of her attacks apply <ct color=#FFA9DD>Lumiflux Buildup</ct> to the target. When <ct color=#FFFFFF>Floating Radiance</ct> is fully depleted or upon leaving combat, Remielle exits the <ct color=#FFFFFF>Phase Flow</ct> state. Before exiting the <ct color=#FFFFFF>Phase Flow</ct> state, Remielle cannot be actively switched in except via a <ct color=#FFFFFF>Chain Attack</ct>.",
+        "2": "If Remielle triggers 3 <tooltip ns=tooltips_gen baseKey18=1000031>Refringe</tooltip></Term> reactions in one <ct color=#FFFFFF>Phase Flow</ct> state, or has at least 1 stored <tooltip ns=tooltips_gen baseKey18=1000033>Voidflare</tooltip></Term> when <ct color=#FFFFFF>Floating Radiance</ct> is fully depleted, <ct color=#FFFFFF>Assist: Flower & Feather Dance</ct> becomes available, and her normal switch-in is unlocked. <ct color=#FFFFFF>Assist: Flower & Feather Dance</ct> is automatically used on Remielle's next normal switch-in.",
+        "3": "Upon entering the <ct color=#FFFFFF>Phase Flow</ct> state, Remielle increases all squad members's DMG by <ct color=#2BAD00>{CAL:0+AvatarSkillLevel(1)*1.5,1,2}%</ct> for 60s. Repeated triggers reset the duration.",
+        "4": "When Remielle's <ct color=#FFFFFF>Floating Radiance</ct> has reached its maximum of 120 and her <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct> hits a Stunned enemy, she can also enter the <ct color=#FFFFFF>Phase Flow</ct> state by switching characters during the <ct color=#FFFFFF>Special Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>.",
+        "5": "If no character is switched in after entering <ct color=#FFFFFF>Stance Shift</ct>, Remielle uses a downward attack to return to the ground instead."
+      },
+      "params": [
+        " ",
+        "DMG Increase "
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackInterwovenDanceSteps": {
+      "name": "Chain Attack: Interwoven Dance Steps",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Launches multiple attacks ahead in a large area, dealing <ct color=#FFA9DD>Lumiflux DMG</ct>.",
+        "2": "Enters the <ct color=#FFFFFF>Luminous Reflection</ct> state upon activation. The next <ct color=#FFFFFF>Basic Attack: Rainbow's End</ct> is upgraded to <ct color=#FFFFFF>Basic Attack: Fleeting Grace</ct>.",
+        "3": "After the skill ends, apply 2 <ct color=#FFA9DD>Lumiflux Buildup</ct> to enemies hit.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateDazzlingCurtainCall": {
+      "name": "Ultimate: Dazzling Curtain Call",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Launches an attack across a large area in front, dealing <ct color=#FFA9DD>Lumiflux DMG</ct>.",
+        "2": "If the skill hits, the <tooltip ns=tooltips_gen baseKey18=1000034>Luminize</tooltip></Term> effect can be triggered after the skill ends with a multiplier of <ct color=#2BAD00>{CAL:210+AvatarSkillLevel(3)*10.5,1,2}%</ct>.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "Luminize Multiplier "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistFeatherglowRebirth": {
+      "name": "Quick Assist: Featherglow Rebirth",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Unleashes a slash at the target, dealing <ct color=#FFA9DD>Lumiflux DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistFleetingLight": {
+      "name": "Defensive Assist: Fleeting Light",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpAwakeningGlimmer": {
+      "name": "Assist Follow-Up: Awakening Glimmer",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Unleashes a series of slashes against the target, dealing <ct color=#FFA9DD>Lumiflux DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "AssistFlowerFeatherDance": {
+      "name": "Assist: Flower & Feather Dance",
+      "desc": {
+        "0": "Enters the battlefield and unleashes an attack in a large area, dealing <ct color=#FFA9DD>Lumiflux DMG</ct>.",
+        "1": "Consumes 40 <tooltip ns=tooltips_gen baseKey18=1000032>Floating Radiance</tooltip></Term> upon activation. With 90 or fewer <ct color=#FFFFFF>Floating Radiance</ct> remaining upon activation, this <ct color=#FFFFFF>Assist: Flower & Feather Dance</ct> does not consume <ct color=#FFFFFF>Floating Radiance</ct>. Remielle also enters the <ct color=#FFFFFF>Luminous Reflection</ct> state, and the next <ct color=#FFFFFF>Basic Attack: Rainbow's End</ct> is upgraded to <ct color=#FFFFFF>Basic Attack: Fleeting Grace</ct>.",
+        "2": "When this skill hits a Stunned enemy, their Stun duration is extended by 3s. Each enemy can be affected by this effect only once per Stun window. This Stun duration increase cannot stack with other effects of the same type.",
+        "3": "If this skill lands a hit, the <tooltip ns=tooltips_gen baseKey18=1000034>Luminize</tooltip></Term> effect can be triggered after the skill ends with a multiplier of <ct color=#2BAD00>{CAL:200+AvatarSkillLevel(6)*10,1,2}%</ct>.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "Luminize Multiplier ",
+        "Floating Radiance Consumed "
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Temporal Patterns = Stilled Colors",
+    "desc": [
+      {
+        "0": "Remielle's <ct color=#FFA9DD>Refringe Coefficient</ct> is equal to 0.02% of her Anomaly Proficiency. If there are 3 <ct color=#FFFFFF>Anomaly</ct> characters in the squad, her <ct color=#FFA9DD>Refringe Coefficient</ct> increases by an additional 10%.",
+        "1": "When Remielle triggers a <tooltip ns=tooltips_gen baseKey18=1000031>Refringe</tooltip></Term> reaction through a teammate, she generates <ct color=#FFFFFF>Voidflare</ct> based on the enhanced <tooltip ns=tooltips_gen baseKey18=1000023>Anomaly Effect Strength</tooltip></Term> of the current Attribute Anomaly after it has been <ct color=#FFA9DD>Refringed</ct>. Up to the 3 most recently generated <ct color=#FFFFFF>Voidflares</ct> can be stored.",
+        "2": "If <ct color=#FFFFFF>Assist: Flower & Feather Dance</ct>, <ct color=#FFFFFF>Ultimate: Dazzling Curtain Call</ct>, <ct color=#FFFFFF>Basic Attack: Rainbow's End</ct>, or <ct color=#FFFFFF>Basic Attack: Fleeting Grace</ct> hits a target, <ct color=#FFFFFF>Luminize</ct> is triggered after the skill ends：",
+        "3": "Based on the <ct color=#FFFFFF>Anomaly Effect Strength</ct> of all stored <ct color=#FFFFFF>Voidflares</ct>, deals Attribute Anomaly DMG to the enemy using the corresponding skill's DMG multiplier. This multiplier is further increased by <ct color=#2BAD00>0.1%</ct> of Remielle's Anomaly Proficiency.",
+        "4": "All stored <ct color=#FFFFFF>Voidflares</ct> are cleared when Remielle enters the <tooltip ns=tooltips_gen baseKey18=1000035>Phase Flow</tooltip></Term> state or after using <ct color=#FFFFFF>Basic Attack: Rainbow's End</ct> or <ct color=#FFFFFF>Basic Attack: Fleeting Grace</ct>."
+      },
+      {
+        "0": "Remielle's <ct color=#FFA9DD>Refringe Coefficient</ct> is equal to 0.02% of her Anomaly Proficiency. If there are 3 <ct color=#FFFFFF>Anomaly</ct> characters in the squad, her <ct color=#FFA9DD>Refringe Coefficient</ct> increases by an additional 10%.",
+        "1": "When Remielle triggers a <tooltip ns=tooltips_gen baseKey18=1000031>Refringe</tooltip></Term> reaction through a teammate, she generates <ct color=#FFFFFF>Voidflare</ct> based on the enhanced <tooltip ns=tooltips_gen baseKey18=1000023>Anomaly Effect Strength</tooltip></Term> of the current Attribute Anomaly after it has been <ct color=#FFA9DD>Refringed</ct>. Up to the 3 most recently generated <ct color=#FFFFFF>Voidflares</ct> can be stored.",
+        "2": "If <ct color=#FFFFFF>Assist: Flower & Feather Dance</ct>, <ct color=#FFFFFF>Ultimate: Dazzling Curtain Call</ct>, <ct color=#FFFFFF>Basic Attack: Rainbow's End</ct>, or <ct color=#FFFFFF>Basic Attack: Fleeting Grace</ct> hits a target, <ct color=#FFFFFF>Luminize</ct> is triggered after the skill ends：",
+        "3": "Based on the <ct color=#FFFFFF>Anomaly Effect Strength</ct> of all stored <ct color=#FFFFFF>Voidflares</ct>, deals Attribute Anomaly DMG to the enemy using the corresponding skill's DMG multiplier. This multiplier is further increased by <ct color=#2BAD00>0.12%</ct> of Remielle's Anomaly Proficiency.",
+        "4": "All stored <ct color=#FFFFFF>Voidflares</ct> are cleared when Remielle enters the <tooltip ns=tooltips_gen baseKey18=1000035>Phase Flow</tooltip></Term> state or after using <ct color=#FFFFFF>Basic Attack: Rainbow's End</ct> or <ct color=#FFFFFF>Basic Attack: Fleeting Grace</ct>."
+      },
+      {
+        "0": "Remielle's <ct color=#FFA9DD>Refringe Coefficient</ct> is equal to 0.02% of her Anomaly Proficiency. If there are 3 <ct color=#FFFFFF>Anomaly</ct> characters in the squad, her <ct color=#FFA9DD>Refringe Coefficient</ct> increases by an additional 10%.",
+        "1": "When Remielle triggers a <tooltip ns=tooltips_gen baseKey18=1000031>Refringe</tooltip></Term> reaction through a teammate, she generates <ct color=#FFFFFF>Voidflare</ct> based on the enhanced <tooltip ns=tooltips_gen baseKey18=1000023>Anomaly Effect Strength</tooltip></Term> of the current Attribute Anomaly after it has been <ct color=#FFA9DD>Refringed</ct>. Up to the 3 most recently generated <ct color=#FFFFFF>Voidflares</ct> can be stored.",
+        "2": "If <ct color=#FFFFFF>Assist: Flower & Feather Dance</ct>, <ct color=#FFFFFF>Ultimate: Dazzling Curtain Call</ct>, <ct color=#FFFFFF>Basic Attack: Rainbow's End</ct>, or <ct color=#FFFFFF>Basic Attack: Fleeting Grace</ct> hits a target, <ct color=#FFFFFF>Luminize</ct> is triggered after the skill ends：",
+        "3": "Based on the <ct color=#FFFFFF>Anomaly Effect Strength</ct> of all stored <ct color=#FFFFFF>Voidflares</ct>, deals Attribute Anomaly DMG to the enemy using the corresponding skill's DMG multiplier. This multiplier is further increased by <ct color=#2BAD00>0.14%</ct> of Remielle's Anomaly Proficiency.",
+        "4": "All stored <ct color=#FFFFFF>Voidflares</ct> are cleared when Remielle enters the <tooltip ns=tooltips_gen baseKey18=1000035>Phase Flow</tooltip></Term> state or after using <ct color=#FFFFFF>Basic Attack: Rainbow's End</ct> or <ct color=#FFFFFF>Basic Attack: Fleeting Grace</ct>."
+      },
+      {
+        "0": "Remielle's <ct color=#FFA9DD>Refringe Coefficient</ct> is equal to 0.02% of her Anomaly Proficiency. If there are 3 <ct color=#FFFFFF>Anomaly</ct> characters in the squad, her <ct color=#FFA9DD>Refringe Coefficient</ct> increases by an additional 10%.",
+        "1": "When Remielle triggers a <tooltip ns=tooltips_gen baseKey18=1000031>Refringe</tooltip></Term> reaction through a teammate, she generates <ct color=#FFFFFF>Voidflare</ct> based on the enhanced <tooltip ns=tooltips_gen baseKey18=1000023>Anomaly Effect Strength</tooltip></Term> of the current Attribute Anomaly after it has been <ct color=#FFA9DD>Refringed</ct>. Up to the 3 most recently generated <ct color=#FFFFFF>Voidflares</ct> can be stored.",
+        "2": "If <ct color=#FFFFFF>Assist: Flower & Feather Dance</ct>, <ct color=#FFFFFF>Ultimate: Dazzling Curtain Call</ct>, <ct color=#FFFFFF>Basic Attack: Rainbow's End</ct>, or <ct color=#FFFFFF>Basic Attack: Fleeting Grace</ct> hits a target, <ct color=#FFFFFF>Luminize</ct> is triggered after the skill ends：",
+        "3": "Based on the <ct color=#FFFFFF>Anomaly Effect Strength</ct> of all stored <ct color=#FFFFFF>Voidflares</ct>, deals Attribute Anomaly DMG to the enemy using the corresponding skill's DMG multiplier. This multiplier is further increased by <ct color=#2BAD00>0.15%</ct> of Remielle's Anomaly Proficiency.",
+        "4": "All stored <ct color=#FFFFFF>Voidflares</ct> are cleared when Remielle enters the <tooltip ns=tooltips_gen baseKey18=1000035>Phase Flow</tooltip></Term> state or after using <ct color=#FFFFFF>Basic Attack: Rainbow's End</ct> or <ct color=#FFFFFF>Basic Attack: Fleeting Grace</ct>."
+      },
+      {
+        "0": "Remielle's <ct color=#FFA9DD>Refringe Coefficient</ct> is equal to 0.02% of her Anomaly Proficiency. If there are 3 <ct color=#FFFFFF>Anomaly</ct> characters in the squad, her <ct color=#FFA9DD>Refringe Coefficient</ct> increases by an additional 10%.",
+        "1": "When Remielle triggers a <tooltip ns=tooltips_gen baseKey18=1000031>Refringe</tooltip></Term> reaction through a teammate, she generates <ct color=#FFFFFF>Voidflare</ct> based on the enhanced <tooltip ns=tooltips_gen baseKey18=1000023>Anomaly Effect Strength</tooltip></Term> of the current Attribute Anomaly after it has been <ct color=#FFA9DD>Refringed</ct>. Up to the 3 most recently generated <ct color=#FFFFFF>Voidflares</ct> can be stored.",
+        "2": "If <ct color=#FFFFFF>Assist: Flower & Feather Dance</ct>, <ct color=#FFFFFF>Ultimate: Dazzling Curtain Call</ct>, <ct color=#FFFFFF>Basic Attack: Rainbow's End</ct>, or <ct color=#FFFFFF>Basic Attack: Fleeting Grace</ct> hits a target, <ct color=#FFFFFF>Luminize</ct> is triggered after the skill ends：",
+        "3": "Based on the <ct color=#FFFFFF>Anomaly Effect Strength</ct> of all stored <ct color=#FFFFFF>Voidflares</ct>, deals Attribute Anomaly DMG to the enemy using the corresponding skill's DMG multiplier. This multiplier is further increased by <ct color=#2BAD00>0.16%</ct> of Remielle's Anomaly Proficiency.",
+        "4": "All stored <ct color=#FFFFFF>Voidflares</ct> are cleared when Remielle enters the <tooltip ns=tooltips_gen baseKey18=1000035>Phase Flow</tooltip></Term> state or after using <ct color=#FFFFFF>Basic Attack: Rainbow's End</ct> or <ct color=#FFFFFF>Basic Attack: Fleeting Grace</ct>."
+      },
+      {
+        "0": "Remielle's <ct color=#FFA9DD>Refringe Coefficient</ct> is equal to 0.02% of her Anomaly Proficiency. If there are 3 <ct color=#FFFFFF>Anomaly</ct> characters in the squad, her <ct color=#FFA9DD>Refringe Coefficient</ct> increases by an additional 10%.",
+        "1": "When Remielle triggers a <tooltip ns=tooltips_gen baseKey18=1000031>Refringe</tooltip></Term> reaction through a teammate, she generates <ct color=#FFFFFF>Voidflare</ct> based on the enhanced <tooltip ns=tooltips_gen baseKey18=1000023>Anomaly Effect Strength</tooltip></Term> of the current Attribute Anomaly after it has been <ct color=#FFA9DD>Refringed</ct>. Up to the 3 most recently generated <ct color=#FFFFFF>Voidflares</ct> can be stored.",
+        "2": "If <ct color=#FFFFFF>Assist: Flower & Feather Dance</ct>, <ct color=#FFFFFF>Ultimate: Dazzling Curtain Call</ct>, <ct color=#FFFFFF>Basic Attack: Rainbow's End</ct>, or <ct color=#FFFFFF>Basic Attack: Fleeting Grace</ct> hits a target, <ct color=#FFFFFF>Luminize</ct> is triggered after the skill ends：",
+        "3": "Based on the <ct color=#FFFFFF>Anomaly Effect Strength</ct> of all stored <ct color=#FFFFFF>Voidflares</ct>, deals Attribute Anomaly DMG to the enemy using the corresponding skill's DMG multiplier. This multiplier is further increased by <ct color=#2BAD00>0.18%</ct> of Remielle's Anomaly Proficiency.",
+        "4": "All stored <ct color=#FFFFFF>Voidflares</ct> are cleared when Remielle enters the <tooltip ns=tooltips_gen baseKey18=1000035>Phase Flow</tooltip></Term> state or after using <ct color=#FFFFFF>Basic Attack: Rainbow's End</ct> or <ct color=#FFFFFF>Basic Attack: Fleeting Grace</ct>."
+      },
+      {
+        "0": "Remielle's <ct color=#FFA9DD>Refringe Coefficient</ct> is equal to 0.02% of her Anomaly Proficiency. If there are 3 <ct color=#FFFFFF>Anomaly</ct> characters in the squad, her <ct color=#FFA9DD>Refringe Coefficient</ct> increases by an additional 10%.",
+        "1": "When Remielle triggers a <tooltip ns=tooltips_gen baseKey18=1000031>Refringe</tooltip></Term> reaction through a teammate, she generates <ct color=#FFFFFF>Voidflare</ct> based on the enhanced <tooltip ns=tooltips_gen baseKey18=1000023>Anomaly Effect Strength</tooltip></Term> of the current Attribute Anomaly after it has been <ct color=#FFA9DD>Refringed</ct>. Up to the 3 most recently generated <ct color=#FFFFFF>Voidflares</ct> can be stored.",
+        "2": "If <ct color=#FFFFFF>Assist: Flower & Feather Dance</ct>, <ct color=#FFFFFF>Ultimate: Dazzling Curtain Call</ct>, <ct color=#FFFFFF>Basic Attack: Rainbow's End</ct>, or <ct color=#FFFFFF>Basic Attack: Fleeting Grace</ct> hits a target, <ct color=#FFFFFF>Luminize</ct> is triggered after the skill ends：",
+        "3": "Based on the <ct color=#FFFFFF>Anomaly Effect Strength</ct> of all stored <ct color=#FFFFFF>Voidflares</ct>, deals Attribute Anomaly DMG to the enemy using the corresponding skill's DMG multiplier. This multiplier is further increased by <ct color=#2BAD00>0.2%</ct> of Remielle's Anomaly Proficiency.",
+        "4": "All stored <ct color=#FFFFFF>Voidflares</ct> are cleared when Remielle enters the <tooltip ns=tooltips_gen baseKey18=1000035>Phase Flow</tooltip></Term> state or after using <ct color=#FFFFFF>Basic Attack: Rainbow's End</ct> or <ct color=#FFFFFF>Basic Attack: Fleeting Grace</ct>."
+      }
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Invitation to Bloom",
+    "desc": {
+      "0": "When another character in your squad is an <ct color=#FFFFFF>Anomaly</ct> character or shares the same faction:",
+      "1": "When there are 1/2/3 <ct color=#FFFFFF>Anomaly</ct> characters in the squad, upon entering the battlefield, all squad members gain an ATK increase equal to 6%/12%/40% of Remielle's initial ATK, up to a maximum increase of 1,600 ATK. Remielle's Daze dealt while in the <tooltip ns=tooltips_gen baseKey18=1000035>Phase Flow</tooltip></Term> state increases by 6%/12%/35%.",
+      "2": "When applying <ct color=#FFA9DD>Lumiflux Buildup</ct> to an enemy, Remielle also applies the <ct color=#FFFFFF>Prismatic</ct> effect: All squad members' attacks against enemies with the <ct color=#FFFFFF>Prismatic</ct> effect have 15% increased Anomaly Buildup Rate. <ct color=#FFFFFF>Prismatic</ct> is removed when the enemy no longer has <ct color=#FFA9DD>Lumiflux Buildup</ct>. After <ct color=#FFFFFF>Prismatic</ct> is removed, the Anomaly Buildup Rate increase persists for an additional 8s."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Naive Oath",
+      "desc": "Upon entering the battlefield, Remielle gains 3 special <tooltip ns=tooltips_gen baseKey18=1000033>Voidflare</tooltip></Term>s. In Investigation Zone mode, this effect can trigger once every 180s. When Remielle triggers <tooltip ns=tooltips_gen baseKey18=1000034>Luminize</tooltip></Term> to deal DMG, she ignores 50% of the target's All-Attribute RES. When using <ct color=#FFFFFF>Assist: Flower & Feather Dance</ct>, she gains 200 Decibels. This effect can trigger once every 18s. While Remielle is in the <tooltip ns=tooltips_gen baseKey18=1000035>Phase Flow</tooltip></Term> state, other squad members' Attribute Anomaly DMG increases by 10%.",
+      "flavor": {
+        "0": "\"We can put an end to evil and split the heavens. We can walk out of the fog and step closer to the truth...\"",
+        "1": "\"This is our nation, forever standing tall, and with the power to accomplish miracles.\"",
+        "2": "\"...\"",
+        "3": "The pink-haired girl finally can't hold it in anymore. Lowering the brim of her hat, she quietly grumbles to the figure at the front of the line:",
+        "4": "\"Beli... This oath is way too long. We're not going to have to recite it all the time, are we?\"",
+        "5": "\"Just wait. It'll only get longer.\"",
+        "6": "Even the ever-composed figure can't help but smile wryly."
+      }
+    },
+    "2": {
+      "name": "Fall Into the Noise",
+      "desc": "Remielle's <ct color=#FFA9DD>Refringe Coefficient</ct> increases by 20%. When an <ct color=#FFFFFF>Anomaly</ct> character in the squad deals Anomaly DMG to an enemy affected by <ct color=#FFFFFF>Prismatic</ct>, the attack ignores 15% of the target's DEF. This effect persists for an additional 8s after <ct color=#FFFFFF>Prismatic</ct> ends. While Remielle is in the <tooltip ns=tooltips_gen baseKey18=1000035>Phase Flow</tooltip></Term> state, the frequency at which she automatically attacks to apply <ct color=#FFA9DD>Lumiflux Buildup</ct> to enemies increases.",
+      "flavor": {
+        "0": "It was a grand ball.",
+        "1": "The city was captivated. Even the full moon paled beside it.",
+        "2": "Crowds gathered in celebration, calling out the heroes' names, laughing and singing as though the night would never end.",
+        "3": "Those of unparalleled achievement stood together, gazing upon the jubilant crowd as they made a humble vow. \"This is where miracles begin.\"",
+        "4": "And so, Eridu's journey was about to begin.",
+        "5": "A great adventure to reclaim the world.",
+        "6": "\"Come on, the ball's almost over, and you still haven't found a partner? Well... I suppose I can spare you a dance.\""
+      }
+    },
+    "3": {
+      "name": "The Garden of Diverging Time",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "The girl wrote her name among the Sunseekers, driven by an ideal that burned brighter than the blazing sun.",
+        "1": "She believed every wound could be healed. She believed every sacrifice could one day come to an end. And so, she turned and walked into the secret garden.",
+        "2": "She did not yet know that, deep within that garden, time forever diverged, leading to countless futures.",
+        "3": "Some led to glory. Some led to hope...",
+        "4": "Others led to the shadow cast by the sun, to a long night that no one would remember.",
+        "5": "\"I know, I know. But someone's gotta do it, right?\""
+      }
+    },
+    "4": {
+      "name": "The Long Goodbye",
+      "desc": "When Remielle triggers <tooltip ns=tooltips_gen baseKey18=1000034>Luminize</tooltip></Term>, the DMG multiplier is increased by an additional 12%. After entering the battlefield and gaining 3 special <tooltip ns=tooltips_gen baseKey18=1000033>Voidflare</tooltip></Term>s, if all <ct color=#FFFFFF>Voidflares</ct> are consumed, she immediately gains the maximum number of special <ct color=#FFFFFF>Voidflares</ct> again. This effect to regain special <ct color=#FFFFFF>Voidflares</ct> is removed after being triggered once or when Remielle enters the <tooltip ns=tooltips_gen baseKey18=1000035>Phase Flow</tooltip></Term> state.",
+      "flavor": {
+        "0": "She awakens to a pale, desolate world",
+        "1": "A hundred years is a dream too long. Long enough for the mists to swallow the remnants of a bygone age. Long enough for pale silence to smother the lingering warmth in her memory.",
+        "2": "A hundred years is a dream too short. Short enough that the smile before parting still reflects in her eyes. Short enough that her fingertips still reach for a fleeting dance.",
+        "3": "Then she remembers a summer night. The star-filled sky they once gazed upon together. So she begins to dance alone, just as she always has.",
+        "4": "Turn. Pause. Reach. Fall into empty air.",
+        "5": "To an old friend. To a bygone age.",
+        "6": "May this lament serve as the farewell that has waited a hundred years to be spoken.",
+        "7": "\"Hey... Care to share a dance with me?\""
+      }
+    },
+    "5": {
+      "name": "To Drink Forgetfulness",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "Dusk spills over the rooftops of the world, and lights flicker on one by one. Behind every window glows the warmth of home.",
+        "1": "Her thin clothes do little to keep out the wind and rain. The girl once called a hero fusses over her disheveled wings.",
+        "2": "She drains a cup brimming with forgetfulness, yet searing memories still burn her throat as moonlight flows across her lowered gaze.",
+        "3": "\"Be careful... The ghosts of the old world just might come knocking at your window.\""
+      }
+    },
+    "6": {
+      "name": "Lone Feather's Endless Flight",
+      "desc": "When Remielle uses <ct color=#FFFFFF>Basic Attack: Rainbow's End</ct> or <ct color=#FFFFFF>Basic Attack: Fleeting Grace</ct>, <tooltip ns=tooltips_gen baseKey18=1000034>Luminize</tooltip></Term> is triggered 2 times. If the 4th hit of her <ct color=#FFFFFF>Basic Attack</ct> lands against a target, Remielle gains 3 special <ct color=#FFFFFF>Voidflares</ct> after the skill ends. Special <tooltip ns=tooltips_gen baseKey18=1000033>Voidflare</tooltip></Term>s gained this way deal DMG equal to 25% of the special <ct color=#FFFFFF>Voidflares</ct> gained upon entering the battlefield.",
+      "flavor": {
+        "0": "The end of one journey is simply the beginning of another. Beyond every sky of stars lies yet another.",
+        "1": "So, once more... just once more, spread your wings and soar.",
+        "2": "Silent, fallen feathers will touch the sky again,",
+        "3": "crossing scars that have yet to heal, crossing the shattered yesterdays,",
+        "4": "toward a tomorrow still waiting to be written.",
+        "5": "\"My story ends here. I believe it's your turn now, dear partner-in-crime.\""
+      }
+    }
+  },
+  "potential": {}
+}

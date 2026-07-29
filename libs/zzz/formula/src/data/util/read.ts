@@ -106,6 +106,9 @@ export class Read extends BaseRead<Tag> {
   get wind(): Read {
     return super.with('attribute', 'wind')
   }
+  get lumiflux(): Read {
+    return super.with('attribute', 'lumiflux')
+  }
 
   // Skill type
   get basicSkill(): Read {

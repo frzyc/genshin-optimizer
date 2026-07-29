@@ -1,0 +1,9 @@
+{
+  "name": "Feathered Fate",
+  "desc2": "Anomaly Proficiency +30",
+  "desc4": {
+    "0": "When the equipper enters the battlefield or is switched in as the active character, they gain the following buff: Anomaly Proficiency increases by 50. If the equipper is a <ct color=#FFA9DD>Lumiflux</ct> character, Attribute Anomaly DMG increases by 15%, lasting 15s.",
+    "1": "This buff remains active while the equipper is off-field."
+  },
+  "story": "An ancient folk song. Some claim it's been sung since the founding of Eridu, though no historical records support that claim."
+}

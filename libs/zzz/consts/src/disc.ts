@@ -12,6 +12,7 @@ export const allDiscSetKeys = [
   'ChaoticMetal',
   'DawnsBloom',
   'FangedMetal',
+  'FeatheredFate',
   'FreedomBlues',
   'HormonePunk',
   'InfernoMetal',
@@ -28,6 +29,7 @@ export const allDiscSetKeys = [
   'SoulRock',
   'SwingJazz',
   'TheSkyAblaze',
+  'ThornedRose',
   'ThunderMetal',
   'WhiteWaterBallad',
   'WoodpeckerElectro',
@@ -209,6 +211,8 @@ export const disc2pEffect: Record<
   YunkuiTales: { hp_: 0.1 },
   WutheringSalon: { wind_dmg_: 0.1 },
   TheSkyAblaze: { ether_dmg_: 0.1 },
+  ThornedRose: { anomProf: 30 },
+  FeatheredFate: { def_: 0.16 },
 }
 
 // Copied from libs\zzz\dm\src\dm\disc\discNames.json, mainly used for scanner.
@@ -241,4 +245,6 @@ export const discSetNames: Record<DiscSetKey, string> = {
   NotesFromTheChained: 'Notes From the Chained',
   WutheringSalon: 'Wuthering Salon',
   TheSkyAblaze: 'The Sky Ablaze',
+  FeatheredFate: 'Feathered Fate',
+  ThornedRose: 'Thorned Rose',
 }

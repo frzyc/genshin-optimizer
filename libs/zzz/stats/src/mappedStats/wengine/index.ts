@@ -35,6 +35,7 @@ import IdentityBase from './maps/IdentityBase'
 import IdentityInflection from './maps/IdentityInflection'
 import JoyauDore from './maps/JoyauDore'
 import KaboomTheCannon from './maps/KaboomTheCannon'
+import KnightsExtolment from './maps/KnightsExtolment'
 import KrakensCradle from './maps/KrakensCradle'
 import LunarDecrescent from './maps/LunarDecrescent'
 import LunarNoviluna from './maps/LunarNoviluna'
@@ -46,6 +47,7 @@ import MarcatoDesire from './maps/MarcatoDesire'
 import Metanukimorphosis from './maps/Metanukimorphosis'
 import MyriadEclipse from './maps/MyriadEclipse'
 import NeonFantasies from './maps/NeonFantasies'
+import OdeOfResurrectedWings from './maps/OdeOfResurrectedWings'
 import OriginalTransmorpher from './maps/OriginalTransmorpher'
 import PeacekeeperSpecialized from './maps/PeacekeeperSpecialized'
 import PracticedPerfection from './maps/PracticedPerfection'
@@ -130,6 +132,7 @@ const maps = {
   IdentityInflection,
   JoyauDore,
   KaboomTheCannon,
+  KnightsExtolment,
   KrakensCradle,
   LunarDecrescent,
   LunarNoviluna,
@@ -141,6 +144,7 @@ const maps = {
   Metanukimorphosis,
   MyriadEclipse,
   NeonFantasies,
+  OdeOfResurrectedWings,
   OriginalTransmorpher,
   PeacekeeperSpecialized,
   PracticedPerfection,
