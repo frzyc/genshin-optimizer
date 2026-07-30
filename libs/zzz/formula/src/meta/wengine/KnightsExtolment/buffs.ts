@@ -1,36 +1,26 @@
 // WARNING: Generated file, do not modify
 export const buffs = {
-  cond_dmg_: {
+  cond_crit_dmg_: {
     sheet: 'KnightsExtolment',
-    name: 'cond_dmg_',
+    name: 'cond_crit_dmg_',
     tag: {
       et: 'display',
       qt: 'combat',
-      q: 'common_dmg_',
+      q: 'crit_dmg_',
       sheet: 'KnightsExtolment',
-      name: 'cond_dmg_',
+      name: 'cond_crit_dmg_',
     },
   },
-  team_dmg_: {
+  cond_ice_resIgn_: {
     sheet: 'KnightsExtolment',
-    name: 'team_dmg_',
+    name: 'cond_ice_resIgn_',
     tag: {
       et: 'display',
       qt: 'combat',
-      q: 'common_dmg_',
+      q: 'resIgn_',
       sheet: 'KnightsExtolment',
-      name: 'team_dmg_',
-    },
-  },
-  enemy_defIgn_: {
-    sheet: 'KnightsExtolment',
-    name: 'enemy_defIgn_',
-    tag: {
-      et: 'display',
-      qt: 'common',
-      q: 'dmgRed_',
-      sheet: 'KnightsExtolment',
-      name: 'enemy_defIgn_',
+      attribute: 'ice',
+      name: 'cond_ice_resIgn_',
     },
   },
 } as const

@@ -1,36 +1,37 @@
 // WARNING: Generated file, do not modify
 export const buffs = {
-  cond_dmg_: {
+  passive_anomProf: {
     sheet: 'OdeOfResurrectedWings',
-    name: 'cond_dmg_',
+    name: 'passive_anomProf',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'anomProf',
+      sheet: 'OdeOfResurrectedWings',
+      name: 'passive_anomProf',
+    },
+  },
+  cond_anomaly_buff_: {
+    sheet: 'OdeOfResurrectedWings',
+    name: 'cond_anomaly_buff_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'buff_',
+      sheet: 'OdeOfResurrectedWings',
+      damageType1: 'anomaly',
+      name: 'cond_anomaly_buff_',
+    },
+  },
+  cond_common_dmg_: {
+    sheet: 'OdeOfResurrectedWings',
+    name: 'cond_common_dmg_',
     tag: {
       et: 'display',
       qt: 'combat',
       q: 'common_dmg_',
       sheet: 'OdeOfResurrectedWings',
-      name: 'cond_dmg_',
-    },
-  },
-  team_dmg_: {
-    sheet: 'OdeOfResurrectedWings',
-    name: 'team_dmg_',
-    tag: {
-      et: 'display',
-      qt: 'combat',
-      q: 'common_dmg_',
-      sheet: 'OdeOfResurrectedWings',
-      name: 'team_dmg_',
-    },
-  },
-  enemy_defIgn_: {
-    sheet: 'OdeOfResurrectedWings',
-    name: 'enemy_defIgn_',
-    tag: {
-      et: 'display',
-      qt: 'common',
-      q: 'dmgRed_',
-      sheet: 'OdeOfResurrectedWings',
-      name: 'enemy_defIgn_',
+      name: 'cond_common_dmg_',
     },
   },
 } as const

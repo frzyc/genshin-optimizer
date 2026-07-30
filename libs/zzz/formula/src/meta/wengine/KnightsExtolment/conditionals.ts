@@ -1,19 +1,8 @@
 // WARNING: Generated file, do not modify
 export const conditionals = {
-  boolConditional: {
+  battleEdge: {
     sheet: 'KnightsExtolment',
-    name: 'boolConditional',
-    type: 'bool',
-  },
-  listConditional: {
-    sheet: 'KnightsExtolment',
-    name: 'listConditional',
-    type: 'list',
-    list: ['val1', 'val2'],
-  },
-  numConditional: {
-    sheet: 'KnightsExtolment',
-    name: 'numConditional',
+    name: 'battleEdge',
     type: 'num',
     int_only: true,
     min: 0,

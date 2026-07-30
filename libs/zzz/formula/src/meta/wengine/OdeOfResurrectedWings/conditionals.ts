@@ -1,22 +1,8 @@
 // WARNING: Generated file, do not modify
 export const conditionals = {
-  boolConditional: {
+  refringeTriggered: {
     sheet: 'OdeOfResurrectedWings',
-    name: 'boolConditional',
+    name: 'refringeTriggered',
     type: 'bool',
-  },
-  listConditional: {
-    sheet: 'OdeOfResurrectedWings',
-    name: 'listConditional',
-    type: 'list',
-    list: ['val1', 'val2'],
-  },
-  numConditional: {
-    sheet: 'OdeOfResurrectedWings',
-    name: 'numConditional',
-    type: 'num',
-    int_only: true,
-    min: 0,
-    max: 2,
   },
 } as const
