@@ -140,7 +140,7 @@ export const theme = createTheme({
       name: 'wind',
     }),
     lumiflux: commonTheme.palette.augmentColor({
-      color: { main: '#FFA9DD', contrastText: '#fff' },
+      color: { main: '#fe9ac9', contrastText: '#fff' },
       name: 'lumiflux',
     }),
     rankS: commonTheme.palette.augmentColor({
