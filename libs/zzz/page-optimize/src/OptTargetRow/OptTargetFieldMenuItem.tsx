@@ -5,12 +5,10 @@ import { isAbilityDim } from '@genshin-optimizer/zzz/formula'
 import {
   AbilityOptTargetLabel,
   abilityDimFromField,
-  FullTagDisplay,
-  getFieldCategory,
   isAbilityFormulaTag,
   isMultiTagField,
   isTagField,
-  OptTargetFormulaLabel,
+  OptTargetSelectedLabel,
   primaryTagFromField,
 } from '@genshin-optimizer/zzz/formula-ui'
 import { ListItemText, MenuItem } from '@mui/material'
@@ -111,11 +109,7 @@ export function OptTargetFieldMenuItem({
       }
     >
       <ListItemText>
-        {getFieldCategory(characterKey, fieldRef) ? (
-          <OptTargetFormulaLabel charKey={characterKey} tag={fieldRef} />
-        ) : (
-          <FullTagDisplay tag={fieldRef} />
-        )}
+        <OptTargetSelectedLabel charKey={characterKey} tag={fieldRef} />
       </ListItemText>
     </MenuItem>
   )

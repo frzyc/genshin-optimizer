@@ -2,7 +2,11 @@ import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
 import { useSetDebugTarget } from '@genshin-optimizer/game-opt/formula-ui'
 import { commonDefIcon } from '@genshin-optimizer/zzz/assets'
-import { type CharacterKey, type SkillKey, isSkillKey } from '@genshin-optimizer/zzz/consts'
+import {
+  type CharacterKey,
+  isSkillKey,
+  type SkillKey,
+} from '@genshin-optimizer/zzz/consts'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { isAbilityDim } from '@genshin-optimizer/zzz/formula'
 import HelpIcon from '@mui/icons-material/Help'
@@ -19,7 +23,7 @@ import type { TalentSheetElementKey } from './char/consts'
 import { getFieldCategory } from './char/fieldCategory'
 import { tagFieldSubset } from './char/tagFieldMap'
 import { damageTypeKeysMap } from './char/util'
-import { FullTagDisplay, TagDisplay } from './components'
+import { FullTagDisplay, TagFallbackLabel } from './components'
 import type { FormulaDimension } from './formulaDimensionUi'
 import { ABILITY_DIM_LABEL, formulaDimensionLabel } from './formulaDimensionUi'
 import { useZzzCalcContext } from './hooks'
@@ -44,9 +48,7 @@ export {
 } from './formulaDimensionUi'
 
 function optTargetFormulaTitle(tag: Tag): ReactNode {
-  return (
-    tagFieldSubset(tag)[0]?.title ?? <TagDisplay tag={tag} preventRecursion />
-  )
+  return tagFieldSubset(tag)[0]?.title ?? <TagFallbackLabel tag={tag} />
 }
 
 /** Label for sheet-listed formulas (heal, shield, etc.) with a display section. */
@@ -62,7 +64,15 @@ export function OptTargetFormulaLabel({
   const category = getFieldCategory(charKey, tag)
   const formulaTitle = optTargetFormulaTitle(tag)
 
-  if (!category) return <FullTagDisplay tag={tag} />
+  if (!category) {
+    return inline ? (
+      <Typography component="span" variant="body2" noWrap>
+        {formulaTitle}
+      </Typography>
+    ) : (
+      formulaTitle
+    )
+  }
 
   const sectionName = isSkillKey(category)
     ? st(`skills.${category}`)
@@ -136,7 +146,7 @@ export function OptTargetSelectedLabel({
   if (isAbilityFormulaTag(tag)) {
     return <AbilityOptTargetLabel charKey={charKey} tag={tag} inline={inline} />
   }
-  if (getFieldCategory(charKey, tag)) {
+  if (getFieldCategory(charKey, tag) || tagFieldSubset(tag)[0]?.title) {
     return <OptTargetFormulaLabel charKey={charKey} tag={tag} inline={inline} />
   }
   return <FullTagDisplay tag={tag} />

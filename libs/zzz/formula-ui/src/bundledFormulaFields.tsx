@@ -8,6 +8,7 @@ import type { CharacterKey, SkillKey } from '@genshin-optimizer/zzz/consts'
 import type { TargetTag } from '@genshin-optimizer/zzz/db'
 import type { Sheet, Tag } from '@genshin-optimizer/zzz/formula'
 import { type AbilityDim, isAbilityDim } from '@genshin-optimizer/zzz/formula'
+import type { ReactNode } from 'react'
 import { skillFromTag } from './abilityTag'
 import {
   partitionBundlableTags,
@@ -18,9 +19,9 @@ import {
   abilityTagDisplay,
 } from './char/abilityFormulaLabels'
 import { getVariant } from './char/util'
+import { TagDisplay } from './components/TagDisplay'
 import { ABILITY_DIM_LABEL } from './formulaDimensionUi'
 import { primaryTagFromField } from './formulaFieldUtil'
-import { tagToTagField } from './util'
 
 function bundleFieldRefs(byQ: Map<string, Tag>) {
   const dmgQ = resolveBundleDmgQ(byQ)!
@@ -29,6 +30,10 @@ function bundleFieldRefs(byQ: Map<string, Tag>) {
     { label: ABILITY_DIM_LABEL.dazeBuildup, ref: byQ.get('dazeBuildup')! },
     { label: ABILITY_DIM_LABEL.anomBuildup, ref: byQ.get('anomBuildup')! },
   ]
+}
+
+function listingFormulaTitle(tag: Tag): ReactNode {
+  return <TagDisplay tag={tag} />
 }
 
 function singleFormulaField(
@@ -46,7 +51,10 @@ function singleFormulaField(
       fieldRef: tag,
     }
   }
-  return tagToTagField(tag, { preventRecursion: true }) as TagField
+  return {
+    title: listingFormulaTitle(tag),
+    fieldRef: tag,
+  }
 }
 
 type GroupFieldsOpts = {
@@ -76,7 +84,7 @@ export function groupFieldsByTag(
         </ColorText>
       )
     }
-    return tagToTagField(tag, { preventRecursion: true }).title
+    return listingFormulaTitle(tag)
   }
 
   const fields: Field[] = []
@@ -88,11 +96,8 @@ export function groupFieldsByTag(
     }
 
     const dmgTag = part.byQ.get(part.dmgQ)!
-    const titleField = tagToTagField(dmgTag, { preventRecursion: true })
     const multiField: MultiTagField = {
       title: bundledTitle(dmgTag),
-      icon: titleField.icon,
-      subtitle: titleField.subtitle,
       fieldRefs: bundleFieldRefs(part.byQ),
     }
     fields.push(multiField)

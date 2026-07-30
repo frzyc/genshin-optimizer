@@ -11,8 +11,7 @@ import { allSkillKeys } from '@genshin-optimizer/zzz/consts'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { own } from '@genshin-optimizer/zzz/formula'
 import { getCharStat, mappedStats } from '@genshin-optimizer/zzz/stats'
-import { TagFieldTitle } from '../TagFieldTitle'
-import { trans } from '../util'
+import { tagToTagField, trans } from '../util'
 import type { CharUISheet } from './consts'
 import { skillAbilityTextDocument } from './sheetDocuments'
 
@@ -57,12 +56,8 @@ export function createBaseSheet(
   }
 }
 
-// Creates proper field with automatic title for a given buff
 export function fieldForBuff(buff: IFormulaData<Tag>) {
-  return {
-    title: <TagFieldTitle tag={buff.tag} preventRecursion />,
-    fieldRef: buff.tag,
-  }
+  return tagToTagField(buff.tag)
 }
 
 function createSkillsSheets(
