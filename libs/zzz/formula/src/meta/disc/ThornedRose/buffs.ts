@@ -22,26 +22,15 @@ export const buffs = {
       name: 'set4_dmg_',
     },
   },
-  team_dmg_: {
+  set4_crit_: {
     sheet: 'ThornedRose',
-    name: 'team_dmg_',
+    name: 'set4_crit_',
     tag: {
       et: 'display',
       qt: 'combat',
-      q: 'common_dmg_',
+      q: 'crit_',
       sheet: 'ThornedRose',
-      name: 'team_dmg_',
-    },
-  },
-  enemy_defIgn_: {
-    sheet: 'ThornedRose',
-    name: 'enemy_defIgn_',
-    tag: {
-      et: 'display',
-      qt: 'common',
-      q: 'dmgRed_',
-      sheet: 'ThornedRose',
-      name: 'enemy_defIgn_',
+      name: 'set4_crit_',
     },
   },
 } as const

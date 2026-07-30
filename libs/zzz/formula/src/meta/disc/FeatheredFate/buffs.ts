@@ -11,37 +11,27 @@ export const buffs = {
       name: 'set2',
     },
   },
-  set4_dmg_: {
+  set4_anomProf: {
     sheet: 'FeatheredFate',
-    name: 'set4_dmg_',
+    name: 'set4_anomProf',
     tag: {
       et: 'display',
       qt: 'combat',
-      q: 'common_dmg_',
+      q: 'anomProf',
       sheet: 'FeatheredFate',
-      name: 'set4_dmg_',
+      name: 'set4_anomProf',
     },
   },
-  team_dmg_: {
+  set4_buff_: {
     sheet: 'FeatheredFate',
-    name: 'team_dmg_',
+    name: 'set4_buff_',
     tag: {
       et: 'display',
       qt: 'combat',
-      q: 'common_dmg_',
+      q: 'buff_',
       sheet: 'FeatheredFate',
-      name: 'team_dmg_',
-    },
-  },
-  enemy_defIgn_: {
-    sheet: 'FeatheredFate',
-    name: 'enemy_defIgn_',
-    tag: {
-      et: 'display',
-      qt: 'common',
-      q: 'dmgRed_',
-      sheet: 'FeatheredFate',
-      name: 'enemy_defIgn_',
+      damageType1: 'anomaly',
+      name: 'set4_buff_',
     },
   },
 } as const

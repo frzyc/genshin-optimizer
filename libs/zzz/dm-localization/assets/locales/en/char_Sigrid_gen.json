@@ -29,6 +29,27 @@
         "7": "Character is invulnerable during the third stage of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct>."
       },
       "params": []
+    },
+    "BasicAttackConvergingSpear1stStage": {
+      "name": "Basic Attack: Converging Spear 1st Stage",
+      "desc": "",
+      "params": [
+        " "
+      ]
+    },
+    "BasicAttackConvergingSpear2ndStage": {
+      "name": "Basic Attack: Converging Spear 2nd Stage",
+      "desc": "",
+      "params": [
+        " "
+      ]
+    },
+    "BasicAttackConvergingSpear3rdStage": {
+      "name": "Basic Attack: Converging Spear 3rd Stage",
+      "desc": "",
+      "params": [
+        " "
+      ]
     }
   },
   "dodge": {
