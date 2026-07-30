@@ -51,11 +51,11 @@
   },
   "1000016": {
     "name": "Sweeping Cyclone",
-    "desc": "When Velina uses <ct color=#FFFFFF>EX Special Attack: Wind Shear - Eye of the Storm</ct> or triggers <ct color=#FFFFFF>Vortex</ct> while consuming 2 points of WindbiteWindbite</Term>, she summons a <ct color=#FFFFFF>Sweeping Cyclone</ct> to continuously deal <ct color=#A6C5FD>Wind DMG</ct> that is capable of triggering the Chromatic TintChromatic Tint</Term> effect. When <ct color=#FFFFFF>Sweeping Cyclone</ct> attacks hit enemies, the enemy's <ct color=#A6C5FD>Wind Anomaly Buildup RES</ct> and the corresponding <ct color=#FFFFFF>Attribute Anomaly Buildup RES</ct> from <ct color=#FFFFFF>Chromatic Tint</ct> are reduced. When <ct color=#FFFFFF>Sweeping Cyclone</ct> dissipates, it triggers an explosion. If the explosion hits an enemy suffering a <ct color=#A6C5FD>Wind Anomaly</ct>, it deals one instance of <ct color=#FFFFFF>Abloom</ct> DMG."
+    "desc": "When Velina uses <ct color=#FFFFFF>EX Special Attack: Wind Shear - Eye of the Storm</ct> or triggers <ct color=#FFFFFF>Vortex</ct> while consuming 2 points of Windbite, she summons a <ct color=#FFFFFF>Sweeping Cyclone</ct> to continuously deal <ct color=#A6C5FD>Wind DMG</ct> that is capable of triggering the Chromatic Tint effect. When <ct color=#FFFFFF>Sweeping Cyclone</ct> attacks hit enemies, the enemy's <ct color=#A6C5FD>Wind Anomaly Buildup RES</ct> and the corresponding <ct color=#FFFFFF>Attribute Anomaly Buildup RES</ct> from <ct color=#FFFFFF>Chromatic Tint</ct> are reduced. When <ct color=#FFFFFF>Sweeping Cyclone</ct> dissipates, it triggers an explosion. If the explosion hits an enemy suffering a <ct color=#A6C5FD>Wind Anomaly</ct>, it deals one instance of <ct color=#FFFFFF>Abloom</ct> DMG."
   },
   "1000017": {
     "name": "Chromatic Tint",
-    "desc": "When Sweeping CycloneSweeping Cyclone</Term> hits an enemy afflicted with <ct color=#FFFFFF>Contamination</ct> for the first time, it triggers the <ct color=#FFFFFF>Chromatic Tint</ct> effect, converting into a <ct color=#FFFFFF>Sweeping Cyclone</ct> of the corresponding attribute and dealing the corresponding attribute's DMG."
+    "desc": "When Sweeping Cyclone hits an enemy afflicted with <ct color=#FFFFFF>Contamination</ct> for the first time, it triggers the <ct color=#FFFFFF>Chromatic Tint</ct> effect, converting into a <ct color=#FFFFFF>Sweeping Cyclone</ct> of the corresponding attribute and dealing the corresponding attribute's DMG."
   },
   "1000018": {
     "name": "Solar Prominence",
@@ -70,7 +70,7 @@
   },
   "1000020": {
     "name": "Sunflare",
-    "desc": "Pyrois enters the Sunflare state when using Ultimate: Triumphant Return. While Sunflare is active, Energy Generation Rate and DMG dealt increase, and triggering a Perfect Block with an EX Special Attack restores additional Solar Prominence</Term>."
+    "desc": "Pyrois enters the Sunflare state when using Ultimate: Triumphant Return. While Sunflare is active, Energy Generation Rate and DMG dealt increase, and triggering a Perfect Block with an EX Special Attack restores additional Solar Prominence."
   },
   "1000021": {
     "name": "Totalize",
@@ -108,11 +108,11 @@
   },
   "1000026": {
     "name": "Fright",
-    "desc": "While <ct color=#FFFFFF>Spotless</Term></ct> is active, each activation of Drusilla or Anastella's <ct color=#FFFFFF>Basic Attack: Morning Cleanup</ct> grants 1 stack of <ct color=#FFFFFF>Fright</ct>. Upon reaching 6 stacks, the next <ct color=#FFFFFF>Basic Attack: Morning Cleanup</ct> consumes all <ct color=#FFFFFF>Fright</ct> stacks and is replaced with <ct color=#FFFFFF>Basic Attack: Midnight Cleanup</ct>."
+    "desc": "While <ct color=#FFFFFF>Spotless</ct> is active, each activation of Drusilla or Anastella's <ct color=#FFFFFF>Basic Attack: Morning Cleanup</ct> grants 1 stack of <ct color=#FFFFFF>Fright</ct>. Upon reaching 6 stacks, the next <ct color=#FFFFFF>Basic Attack: Morning Cleanup</ct> consumes all <ct color=#FFFFFF>Fright</ct> stacks and is replaced with <ct color=#FFFFFF>Basic Attack: Midnight Cleanup</ct>."
   },
   "1000027": {
     "name": "Spotless",
-    "desc": "While this is active, Drusilla or Anastella automatically uses <ct color=#FFFFFF>Basic Attack: Morning Cleanup</ct> to attack enemies and gain <ct color=#FFFFFF>Fright</Term></ct>. After using the skill, Drusilla and Anastella's exit timer resets."
+    "desc": "While this is active, Drusilla or Anastella automatically uses <ct color=#FFFFFF>Basic Attack: Morning Cleanup</ct> to attack enemies and gain <ct color=#FFFFFF>Fright</ct>. After using the skill, Drusilla and Anastella's exit timer resets."
   },
   "1000028": {
     "name": "Formation Breaker",
@@ -125,36 +125,36 @@
     "name": "Unbridled Spear",
     "desc": {
       "0": "The 4th hit of the <ct color=#FFFFFF>Basic Attack</ct>, the <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Assist Follow-Up</ct>, <ct color=#FFFFFF>Chain Attack</ct>, <ct color=#FFFFFF>Ultimate</ct>, and <ct color=#FFFFFF>Dodge Counter</ct> are considered <ct color=#FFFFFF>Unbridled Spear</ct> skills.",
-      "1": "When Sigrid hits an enemy with any <ct color=#FFFFFF>Unbridled Spear</ct>, if she is not currently in the Aerial Patrol Spear</Term> state, she enters the Aerial Patrol Spear</Term> state and gains 1 activation of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct>, up to 1 activation can be stored."
+      "1": "When Sigrid hits an enemy with any <ct color=#FFFFFF>Unbridled Spear</ct>, if she is not currently in the Aerial Patrol Spear state, she enters the Aerial Patrol Spear state and gains 1 activation of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct>, up to 1 activation can be stored."
     }
   },
   "1000030": {
     "name": "Aerial Patrol Spear",
-    "desc": "While in the <ct color=#FFFFFF>Aerial Patrol Spear</ct> state, hold <IconNormal /> to use <ct color=#FFFFFF>Basic Attack: Converging Spear</ct>. When Sigrid uses any Unbridled Spear</Term>, the <ct color=#FFFFFF>Aerial Patrol Spear</ct> state is refreshed, and she gains 1 activation of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct>. Up to 1 activation can be stored."
+    "desc": "While in the <ct color=#FFFFFF>Aerial Patrol Spear</ct> state, hold <IconNormal /> to use <ct color=#FFFFFF>Basic Attack: Converging Spear</ct>. When Sigrid uses any Unbridled Spear, the <ct color=#FFFFFF>Aerial Patrol Spear</ct> state is refreshed, and she gains 1 activation of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct>. Up to 1 activation can be stored."
   },
   "1000031": {
     "name": "Refringe",
-    "desc": "If an enemy has <ct color=#FFA9DD>Lumiflux Buildup</ct>, when they're about to be inflicted with an Anomaly, that Anomaly is <ct color=#FFA9DD>Refringed</ct>. After being <ct color=#FFA9DD>Refringed</ct>, the Anomaly's Anomaly Effect Strength</Term> is enhanced based on the provider's <ct color=#FFA9DD>Refringe Coefficient</ct>, increasing the total DMG that Anomaly can deal."
+    "desc": "If an enemy has <ct color=#FFA9DD>Lumiflux Buildup</ct>, when they're about to be inflicted with an Anomaly, that Anomaly is <ct color=#FFA9DD>Refringed</ct>. After being <ct color=#FFA9DD>Refringed</ct>, the Anomaly's Anomaly Effect Strength is enhanced based on the provider's <ct color=#FFA9DD>Refringe Coefficient</ct>, increasing the total DMG that Anomaly can deal."
   },
   "1000032": {
     "name": "Floating Radiance",
     "desc": {
       "0": "Remielle can gain <ct color=#FFFFFF>Floating Radiance</ct> through <ct color=#FFFFFF>Basic Attacks</ct>.",
-      "1": "When <ct color=#FFFFFF>Floating Radiance</ct> reaches its maximum of 120, Remielle can enter the Phase Flow</Term> state.",
+      "1": "When <ct color=#FFFFFF>Floating Radiance</ct> reaches its maximum of 120, Remielle can enter the Phase Flow state.",
       "2": "While in the <ct color=#FFFFFF>Phase Flow</ct> state, <ct color=#FFFFFF>Floating Radiance</ct> is consumed over time. When <ct color=#FFFFFF>Floating Radiance</ct> is fully consumed, Remielle exits the <ct color=#FFFFFF>Phase Flow</ct> state."
     }
   },
   "1000033": {
     "name": "Voidflare",
-    "desc": "When a squad member triggers Remielle's <ct color=#FFA9DD>Lumiflux</ct> Refringe</Term> reaction, Remielle generates <ct color=#FFFFFF>Voidflare</ct> based on the enhanced Anomaly Effect Strength</Term> of that Attribute Anomaly after it has been <ct color=#FFA9DD>Refringed</ct>. Up to the 3 most recently generated <ct color=#FFFFFF>Voidflares</ct> can be stored."
+    "desc": "When a squad member triggers Remielle's <ct color=#FFA9DD>Lumiflux</ct> Refringe reaction, Remielle generates <ct color=#FFFFFF>Voidflare</ct> based on the enhanced Anomaly Effect Strength of that Attribute Anomaly after it has been <ct color=#FFA9DD>Refringed</ct>. Up to the 3 most recently generated <ct color=#FFFFFF>Voidflares</ct> can be stored."
   },
   "1000034": {
     "name": "Luminize",
-    "desc": "Deals Attribute Anomaly DMG to enemies using the skill's DMG Multiplier, based on the Anomaly Effect Strength</Term> of all stored Voidflare</Term>."
+    "desc": "Deals Attribute Anomaly DMG to enemies using the skill's DMG Multiplier, based on the Anomaly Effect Strength of all stored Voidflare."
   },
   "1000035": {
     "name": "Phase Flow",
-    "desc": "While in the <ct color=#FFFFFF>Phase Flow</ct> state, Remielle acts autonomously to assist in combat. During this, some attacks can also apply <ct color=#FFA9DD>Lumiflux Buildup</ct> to the target. While in the <ct color=#FFFFFF>Phase Flow</ct> state, Floating Radiance</Term> is consumed over time. When <ct color=#FFFFFF>Floating Radiance</ct> is fully depleted, she exits the <ct color=#FFFFFF>Phase Flow</ct> state. Before exiting the <ct color=#FFFFFF>Phase Flow</ct> state, she cannot be actively switched in except through <ct color=#FFFFFF>Chain Attacks</ct>."
+    "desc": "While in the <ct color=#FFFFFF>Phase Flow</ct> state, Remielle acts autonomously to assist in combat. During this, some attacks can also apply <ct color=#FFA9DD>Lumiflux Buildup</ct> to the target. While in the <ct color=#FFFFFF>Phase Flow</ct> state, Floating Radiance is consumed over time. When <ct color=#FFFFFF>Floating Radiance</ct> is fully depleted, she exits the <ct color=#FFFFFF>Phase Flow</ct> state. Before exiting the <ct color=#FFFFFF>Phase Flow</ct> state, she cannot be actively switched in except through <ct color=#FFFFFF>Chain Attacks</ct>."
   },
   "2000001": {
     "name": "Corruptive Barrier",

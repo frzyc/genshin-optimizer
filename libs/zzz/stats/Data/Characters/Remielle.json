@@ -326,7 +326,9 @@
       "QuickAssistFeatherglowRebirth": [],
       "DefensiveAssistFleetingLight": [],
       "AssistFollowUpAwakeningGlimmer": [],
-      "AssistFlowerFeatherDance": [{ "formula": "{CAL:200+undefined*10,1,2}%" }]
+      "AssistFlowerFeatherDance": [
+        { "formula": "{CAL:200+assistLevel*10,1,2}%" }
+      ]
     }
   },
   "coreParams": [

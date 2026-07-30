@@ -38,7 +38,7 @@
     },
     "BasicAttackMidnightCleanup": {
       "name": "Basic Attack: Midnight Cleanup",
-      "desc": "When <ct color=#FFFFFF><tooltip ns=tooltips_gen baseKey18=1000026>Fright</tooltip></Term></ct> reaches 6 stacks, the next <ct color=#FFFFFF>Basic Attack: Morning Cleanup</ct> performed by Drusilla or Anastella consumes all <ct color=#FFFFFF>Fright</ct> stacks and is replaced with <ct color=#FFFFFF>Basic Attack: Midnight Cleanup</ct>, dealing <ct color=#2EB6FF>Electric DMG</ct>. After using the skill, Drusilla and Anastella's exit timer resets.",
+      "desc": "When <ct color=#FFFFFF><tooltip ns=tooltips_gen baseKey18=1000026>Fright</tooltip></ct> reaches 6 stacks, the next <ct color=#FFFFFF>Basic Attack: Morning Cleanup</ct> performed by Drusilla or Anastella consumes all <ct color=#FFFFFF>Fright</ct> stacks and is replaced with <ct color=#FFFFFF>Basic Attack: Midnight Cleanup</ct>, dealing <ct color=#2EB6FF>Electric DMG</ct>. After using the skill, Drusilla and Anastella's exit timer resets.",
       "params": [
         " "
       ]
