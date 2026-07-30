@@ -1,11 +1,10 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { CardThemed } from '@genshin-optimizer/common/ui'
-import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
-import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import AddIcon from '@mui/icons-material/Add'
 import { Button, CardContent, Grid } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
+import { useAddTeamForLoadout } from '../../../hooks'
 import { TeamCard } from '../../team'
 import { LoadoutEditor } from './LoadoutEditor'
 import { LoadoutHeaderContent } from './LoadoutHeaderContent'
@@ -24,14 +23,7 @@ export function LoadoutCard({
 }) {
   const { t } = useTranslation('page_character')
   const navigate = useNavigate()
-  const database = useDatabase()
-  const onAddTeam = (teamCharId: string) => {
-    const teamId = database.teams.new()
-    database.teams.set(teamId, (team) => {
-      team.loadoutData[0] = { teamCharId } as LoadoutDatum
-    })
-    navigate(`/teams/${teamId}`)
-  }
+  const onAddTeam = useAddTeamForLoadout()
   const [show, onShow, onHide] = useBoolState()
   return (
     <>

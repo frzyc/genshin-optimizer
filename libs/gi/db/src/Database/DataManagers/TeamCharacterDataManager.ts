@@ -4,7 +4,6 @@ import type {
   ArtifactSetKey,
   HitModeKey,
   WeaponKey,
-  WeaponTypeKey,
 } from '@genshin-optimizer/gi/consts'
 import {
   type AdditiveReactionKey,
@@ -23,15 +22,11 @@ import type { InputPremodKey } from '@genshin-optimizer/gi/wr-types'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
 import type { IGO, ImportResult } from '../exim'
-import type { ICachedArtifact } from './ArtifactDataManager'
-import type { Build } from './BuildDataManager'
-import type { BuildTc } from './BuildTcDataManager'
 import { initCharTC, toBuildTc } from './BuildTcDataManager'
 import type { CustomMultiTarget } from './CustomMultiTarget'
 import { validateCustomMultiTarget } from './CustomMultiTarget'
 import type { LoadoutExportSetting } from './TeamDataManager'
-import type { ICachedWeapon } from './WeaponDataManager'
-import { defaultInitialWeaponKey, initialWeapon } from './WeaponDataManager'
+import { defaultInitialWeaponKey } from './WeaponDataManager'
 
 type CondKey = CharacterKey | ArtifactSetKey | WeaponKey
 export type IConditionalValues = Partial<
@@ -56,9 +51,6 @@ export interface TeamCharacter {
   hitMode: HitModeKey
   reaction?: AmpReactionKey | AdditiveReactionKey
 
-  buildIds: string[]
-
-  buildTcIds: string[]
   optConfigId: string
 }
 
@@ -110,8 +102,6 @@ export class TeamCharacterDataManager extends DataManager<
       hitMode,
       reaction,
 
-      buildIds,
-      buildTcIds,
       optConfigId,
     } = obj as TeamCharacter
     if (!allCharacterKeys.includes(characterKey)) return undefined // non-recoverable
@@ -160,16 +150,6 @@ export class TeamCharacterDataManager extends DataManager<
     )
       reaction = undefined
 
-    if (!Array.isArray(buildIds)) buildIds = []
-    buildIds = buildIds.filter((buildId) =>
-      this.database.builds.keys.includes(buildId)
-    )
-
-    if (!Array.isArray(buildTcIds)) buildTcIds = []
-    buildTcIds = buildTcIds.filter((buildTcId) =>
-      this.database.buildTcs.keys.includes(buildTcId)
-    )
-
     if (!optConfigId || !this.database.optConfigs.keys.includes(optConfigId))
       optConfigId = this.database.optConfigs.new()
 
@@ -184,8 +164,6 @@ export class TeamCharacterDataManager extends DataManager<
       hitMode,
       reaction,
 
-      buildIds,
-      buildTcIds,
       optConfigId,
     }
   }
@@ -202,7 +180,7 @@ export class TeamCharacterDataManager extends DataManager<
   ): TeamCharacter | undefined {
     const rem = super.remove(teamCharId, notify)
     if (!rem) return
-    const { optConfigId, buildIds, buildTcIds } = rem
+    const { optConfigId } = rem
     this.database.optConfigs.remove(optConfigId)
     this.database.teams.keys.forEach((teamId) => {
       if (
@@ -215,8 +193,6 @@ export class TeamCharacterDataManager extends DataManager<
         this.database.teams.set(teamId, {}) // use validator to remove teamCharId entries
     })
 
-    buildIds.forEach((buildId) => this.database.builds.remove(buildId))
-    buildTcIds.forEach((buildTcId) => this.database.buildTcs.remove(buildTcId))
     return rem
   }
   override clear(): void {
@@ -227,77 +203,16 @@ export class TeamCharacterDataManager extends DataManager<
     if (!teamCharRaw) return ''
     const teamChar = deepClone(teamCharRaw)
 
-    teamChar.buildIds = teamChar.buildIds.map((buildId) =>
-      this.database.builds.duplicate(buildId)
-    )
-
-    teamChar.buildTcIds = teamChar.buildTcIds.map((buildTcId) =>
-      this.database.buildTcs.duplicate(buildTcId)
-    )
-
     teamChar.optConfigId = this.database.optConfigs.duplicate(
       teamChar.optConfigId
     )
     teamChar.name = `${teamChar.name} (duplicated)`
     return this.new(teamChar.key, teamChar)
   }
-  newBuild(teamCharId: string, build: Partial<Build> = {}) {
-    if (!this.get(teamCharId)) return
-
-    // force the build to have a valid weapon
-    if (!build.weaponId) {
-      const teamChar = this.database.teamChars.get(teamCharId)
-      if (!teamChar) return
-      const weaponTypeKey = getCharStat(teamChar.key).weaponType
-      const defWeaponKey = defaultInitialWeaponKey(weaponTypeKey)
-
-      build.weaponId = this.database.weapons.keys.find((weaponId) => {
-        const { key, location } = this.database.weapons.get(weaponId)!
-        return !location && key === defWeaponKey
-      })
-      if (!build.weaponId)
-        build.weaponId = this.database.weapons.new(initialWeapon(defWeaponKey))
-    }
-
-    const buildId = this.database.builds.new(build)
-    if (!buildId) return
-    this.set(teamCharId, (teamChar) => {
-      teamChar.buildIds.unshift(buildId)
-    })
-  }
-  newBuildTc(teamCharId: string, data: Partial<BuildTc> = {}) {
-    if (!this.get(teamCharId)) return
-
-    const buildTcId = this.database.buildTcs.new(data)
-    if (!buildTcId) return
-    this.set(teamCharId, (teamChar) => {
-      teamChar.buildTcIds.unshift(buildTcId)
-    })
-  }
-  newBuildTcFromBuild(
-    teamcharId: string,
-    weaponTypeKey: WeaponTypeKey,
-    weapon?: ICachedWeapon,
-    arts: Array<ICachedArtifact | undefined> = []
-  ): string | undefined {
-    if (!this.get(teamcharId)) return undefined
-    const buildTc = initCharTC(
-      weapon?.key ?? defaultInitialWeaponKey(weaponTypeKey)
-    )
-    toBuildTc(buildTc, weapon, arts)
-    const buildTcId = this.database.buildTcs.new(buildTc)
-    if (!buildTcId) return undefined
-    this.set(teamcharId, (teamChar) => {
-      teamChar.buildTcIds.unshift(buildTcId)
-    })
-    return buildTcId
-  }
-
   export(teamCharId: string, settings: LoadoutExportSetting): object {
     const teamChar = this.database.teamChars.get(teamCharId)
     if (!teamChar) return {}
-    const { buildIds, buildTcIds, optConfigId, customMultiTargets, ...rest } =
-      teamChar
+    const { optConfigId, customMultiTargets, ...rest } = teamChar
     const { optimizationTarget } = this.database.optConfigs.get(optConfigId)!
     const { weaponType } = getCharStat(teamChar.key)
     const {
@@ -316,7 +231,7 @@ export class TeamCharacterDataManager extends DataManager<
         this.database.arts.get(id)
       )
       const buildTC = toBuildTc(
-        initCharTC(defaultInitialWeaponKey(weaponType)),
+        initCharTC(teamChar.key, defaultInitialWeaponKey(weaponType)),
         weapon,
         arts
       )
@@ -325,7 +240,9 @@ export class TeamCharacterDataManager extends DataManager<
       return buildTC
     }
     const convertedBuilds = convertbuilds
-      .filter((id) => buildIds.includes(id))
+      .filter(
+        (id) => this.database.builds.get(id)?.characterKey === teamChar.key
+      )
       .map((buildId) => {
         const build = this.database.builds.get(buildId)
         if (!build) return
@@ -335,7 +252,7 @@ export class TeamCharacterDataManager extends DataManager<
           this.database.arts.get(id)
         )
         const buildTC = toBuildTc(
-          initCharTC(defaultInitialWeaponKey(weaponType)),
+          initCharTC(teamChar.key, defaultInitialWeaponKey(weaponType)),
           weapon,
           arts
         )
@@ -344,7 +261,9 @@ export class TeamCharacterDataManager extends DataManager<
         return buildTC
       })
     const convertedTcBuilds = convertTcBuilds
-      .filter((id) => buildTcIds.includes(id))
+      .filter(
+        (id) => this.database.buildTcs.get(id)?.characterKey === teamChar.key
+      )
       .map((buildTcId) => this.database.buildTcs.export(buildTcId))
 
     let overrideOptTarget: string[] | undefined
@@ -381,15 +300,19 @@ export class TeamCharacterDataManager extends DataManager<
       optConfig: object
     }
     const id = this.generateKey()
+    const { key: characterKey } = rest
 
     if (
       !this.set(id, {
         ...rest,
-        buildTcIds: buildTcs.map((obj) => this.database.buildTcs.import(obj)),
         optConfigId: this.database.optConfigs.import(optConfig),
       })
     )
       return ''
+
+    buildTcs?.forEach((obj) =>
+      this.database.buildTcs.import({ ...obj, characterKey })
+    )
     return id
   }
   followChar(teamCharId: string, callback: DataManagerCallback<CharacterKey>) {

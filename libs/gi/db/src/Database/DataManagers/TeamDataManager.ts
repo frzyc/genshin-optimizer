@@ -136,12 +136,19 @@ export class TeamDataManager extends DataManager<
       if (!teamChar) return undefined
 
       if (!buildTypeKeys.includes(buildType)) buildType = 'equipped'
-      if (typeof buildId !== 'string' || !teamChar.buildIds.includes(buildId))
+      const build = this.database.builds.get(buildId)
+      if (
+        typeof buildId !== 'string' ||
+        !build ||
+        build.characterKey !== teamChar.key
+      )
         buildId = ''
 
+      const buildTc = this.database.buildTcs.get(buildTcId)
       if (
         typeof buildTcId !== 'string' ||
-        !teamChar.buildTcIds.includes(buildTcId)
+        !buildTc ||
+        buildTc.characterKey !== teamChar.key
       )
         buildTcId = ''
 
@@ -157,16 +164,20 @@ export class TeamDataManager extends DataManager<
 
       if (
         typeof compareBuildId !== 'string' ||
-        !teamChar.buildIds.includes(compareBuildId) ||
+        !this.database.builds.get(compareBuildId) ||
+        this.database.builds.get(compareBuildId)?.characterKey !==
+          teamChar.key ||
         !this.database.builds.get(compareBuildId)?.weaponId
       ) {
         compareBuildId = ''
         if (compareType === 'real') compareType = 'equipped'
       }
 
+      const compareBuildTc = this.database.buildTcs.get(compareBuildTcId)
       if (
         typeof compareBuildTcId !== 'string' ||
-        !teamChar.buildTcIds.includes(compareBuildTcId)
+        !compareBuildTc ||
+        compareBuildTc.characterKey !== teamChar.key
       ) {
         compareBuildTcId = ''
         if (compareType === 'tc') compareType = 'equipped'
