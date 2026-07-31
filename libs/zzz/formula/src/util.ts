@@ -1,4 +1,4 @@
-import type { Preset } from '@genshin-optimizer/game-opt/engine'
+import type { Preset, Read } from '@genshin-optimizer/game-opt/engine'
 import { cmpEq, cmpNE } from '@genshin-optimizer/pando/engine'
 import {
   type CharacterKey,
@@ -12,14 +12,17 @@ import {
   type WengineKey,
 } from '@genshin-optimizer/zzz/consts'
 import type { IDisc } from '@genshin-optimizer/zzz/zood'
-import type { Member, TagMapNodeEntries } from './data/util'
+import type { Calculator } from './calculator'
+import type { Member, Tag, TagMapNodeEntries } from './data/util'
 import {
   convert,
+  enemyTag,
   getStatFromStatKey,
   own,
   ownBuff,
   ownTag,
   reader,
+  teamBuff,
 } from './data/util'
 
 export function withPreset(
@@ -205,4 +208,84 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
     // Total Team Stat
     members.map((src) => teamEntry.add(reader.withTag({ src, et: 'own' }))),
   ].flat()
+}
+
+// Enemy stats on `ownBuff.listing` that still debuff the main unit's targets.
+const ENEMY_DEBUFF_QS: ReadonlySet<string> = new Set(Object.keys(enemyTag.common))
+
+/** Match listing reads and sheet fields by sheet + register name. */
+export function teamBuffListingKey(tag: Tag): string | null {
+  const { sheet, name } = tag
+  return sheet && name ? `${sheet}:${name}` : null
+}
+
+export function isMindscapeGatedBuff(
+  buffName: string | null | undefined,
+  mindscape: number
+): boolean {
+  const match = buffName?.match(/^m(\d)_/)
+  return !!match && parseInt(match[1], 10) > mindscape
+}
+
+function isEnemyDebuffListingRead(read: Read<Tag>): boolean {
+  const q = read.tag.q
+  return read.tag.qt === 'common' && !!q && ENEMY_DEBUFF_QS.has(q)
+}
+
+function uniqReadsByListingKey(reads: Read<Tag>[]): Read<Tag>[] {
+  const seen = new Set<string>()
+  return reads.filter((read) => {
+    const key = teamBuffListingKey(read.tag)
+    if (!key || seen.has(key)) return false
+    seen.add(key)
+    return true
+  })
+}
+
+/**
+ * Team-buff (and whitelisted enemy-debuff) listing reads for one teammate `src`.
+ * Used by teammate buff UI discovery on the optimize page.
+ */
+export function listTeammateTeamBuffReads(
+  calc: Calculator | null | undefined,
+  teammateKey: CharacterKey,
+  mindscape: number
+): Read<Tag>[] {
+  if (!calc) return []
+
+  const reads = [
+    ...calc.listFormulas(teamBuff.listing.buffs),
+    ...calc.listFormulas(ownBuff.listing.buffs).filter(isEnemyDebuffListingRead),
+  ]
+
+  return uniqReadsByListingKey(
+    reads.filter(
+      (read) =>
+        read.tag.src === teammateKey &&
+        // Global anomaly team buffs (e.g. Frostbite) use AnomalySection on this page.
+        read.tag.sheet !== 'anomaly' &&
+        !isMindscapeGatedBuff(read.tag.name, mindscape)
+    )
+  )
+}
+
+/** Conditional keys (`sheet:name`) that gate the given listing reads. */
+export function conditionalKeysFromReads(
+  calc: Calculator,
+  reads: Read<Tag>[]
+): Set<string> {
+  return new Set(
+    reads.flatMap((read) => {
+      const conds = calc.compute(read).meta.conds as
+        | Record<string, Record<string, Record<string, Record<string, unknown>>>>
+        | undefined
+      return Object.values(conds ?? {}).flatMap((dst) =>
+        Object.values(dst ?? {}).flatMap((src) =>
+          Object.entries(src ?? {}).flatMap(([sheet, names]) =>
+            Object.keys(names ?? {}).map((name) => `${sheet}:${name}`)
+          )
+        )
+      )
+    })
+  )
 }

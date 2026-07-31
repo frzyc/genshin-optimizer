@@ -27,10 +27,12 @@ import {
   useTeam,
   useWengine,
 } from '@genshin-optimizer/zzz/db-ui'
+import type { Tag } from '@genshin-optimizer/zzz/formula'
 import {
   TeammateDiscSheetDisplay,
   TeammateWengineSheetDisplay,
   tagToTagField,
+  useTeammateBuffDisplayData,
 } from '@genshin-optimizer/zzz/formula-ui'
 import { allStats, getCharStat } from '@genshin-optimizer/zzz/stats'
 import { ElementIcon } from '@genshin-optimizer/zzz/svgicons'
@@ -42,7 +44,6 @@ import {
 import { Box, Button, Grid, Stack } from '@mui/material'
 import type { ReactNode } from 'react'
 import { Suspense, useCallback, useContext, useMemo, useState } from 'react'
-import { useTeammateBuffDisplayData } from './useTeammateBuffDisplayData'
 
 const EXTRA_TEAMMATE_SLOTS = [1, 2] as const
 
@@ -275,7 +276,7 @@ function TeammateConditionalProvider({
   )
 }
 
-function ListingOnlyFieldList({ reads }: { reads: Read[] }) {
+function ListingOnlyFieldList({ reads }: { reads: Read<Tag>[] }) {
   // Fallback when a buff is in team listing but has no matching sheet field row.
   if (!reads.length) return null
   return (
