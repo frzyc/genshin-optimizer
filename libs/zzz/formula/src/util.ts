@@ -276,7 +276,9 @@ export function conditionalKeysFromReads(
 ): Set<string> {
   return new Set(
     reads.flatMap((read) => {
-      const conds = calc.compute(read).meta.conds as
+      // Optimize is single-frame today; pin preset0 so multiopt can find these call sites.
+      // (A global conditional read works for one frame, but is less intentional.)
+      const conds = calc.compute(read.with('preset', 'preset0')).meta.conds as
         | Record<string, Record<string, Record<string, Record<string, unknown>>>>
         | undefined
       return Object.values(conds ?? {}).flatMap((dst) =>
