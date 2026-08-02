@@ -51,7 +51,6 @@ import {
   withPreset,
   zzzCalculatorWithEntries,
 } from '@genshin-optimizer/zzz/formula'
-import { allStats } from '@genshin-optimizer/zzz/stats'
 import type { ReactNode } from 'react'
 import { useMemo } from 'react'
 import { FullTagDisplay, TagDisplay } from '../components'
@@ -114,13 +113,13 @@ function buildTeamCalculatorEntries({
   return [
     ...teamData(teamCharacterKeys(team)),
     ...member0,
-    // Teammate char + wengine + disc entries (src = teammate) for team-buff formulas.
+    // Teammate char/wengine/disc (src = teammate) for team-buff formulas.
+    // Also supplies specialty/faction/attribute counts via sheet reread.
     ...fullTeammateEntries,
     ...enemyStatEntries(team),
     ...frames.flatMap((frame, index) =>
       presetFrameEntries(frame, presets[index] ?? 'preset0', character.key)
     ),
-    ...teammateCountEntries(team, character.key),
   ]
 }
 
@@ -161,22 +160,6 @@ function presetFrameEntries(
         value: constant(toDecimal(value, tag.q ?? '')),
       })
     ),
-  ]
-}
-
-function teammateCountEntries(team: Team, mainCharacterKey: CharacterKey) {
-  // Non-main teammates only; main counts come from charTagMapNodeEntries in member0.
-  return team.teammates
-    .filter(({ characterKey }) => characterKey !== mainCharacterKey)
-    .flatMap(({ characterKey }) => teammateCountEntriesForChar(characterKey))
-}
-
-function teammateCountEntriesForChar(charKey: CharacterKey) {
-  const { specialty, faction, attribute } = allStats.char[charKey]
-  return [
-    ownBuff.common.count.withSpecialty(specialty).add(1),
-    ownBuff.common.count.withFaction(faction).add(1),
-    ownBuff.common.count.withTag({ attribute }).add(1),
   ]
 }
 
