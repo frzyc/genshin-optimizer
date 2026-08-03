@@ -43,6 +43,7 @@
     "physical": "Physical",
     "ether": "Ether",
     "frost": "Frost",
-    "wind": "Wind"
+    "wind": "Wind",
+    "lumiflux": "Lumiflux"
   }
 }

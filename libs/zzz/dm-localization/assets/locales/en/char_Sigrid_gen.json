@@ -1,0 +1,332 @@
+{
+  "name": "Sigrid",
+  "fullName": "Sigrid de L'Azur",
+  "basic": {
+    "BasicAttackFrostTippedSpear": {
+      "name": "Basic Attack: Frost-Tipped Spear",
+      "desc": {
+        "0": "Press <IconNormal /> to activate:",
+        "1": "Launches up to four forward slashes, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "The 4th hit of <ct color=#FFFFFF>Basic Attack: Frost-Tipped Spear</ct> is considered an <tooltip ns=tooltips_gen baseKey18=1000029>Unbridled Spear</tooltip> attack."
+      },
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit ",
+        "4th-Hit "
+      ]
+    },
+    "BasicAttackConvergingSpear": {
+      "name": "Basic Attack: Converging Spear",
+      "desc": {
+        "0": "While in the <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> state and <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> can be used, hold <IconNormal /> to activate:",
+        "1": "Launches the corresponding <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> based on the current stage, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "<ct color=#FFFFFF>Basic Attack: Converging Spear</ct> has three stages. Each use advances it to the next stage. After performing the third stage of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct>, it resets to the first stage.",
+        "3": "If Sigrid is attacked while charging the 1st or 2nd stage of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct>, she blocks with her shield. On a successful block, the attack's DMG is negated, the next <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> deals 100% more Daze, the <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> state is refreshed, and she gains one use of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct>. Press <IconNormal /> after a successful block to perform the corresponding stage of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct>.",
+        "4": "<ct color=#FFFFFF>Basic Attack: Converging Spear</ct> performed after <ct color=#FFFFFF>Basic Attack: Frost-Tipped Spear</ct> retains the current stage of <ct color=#FFFFFF>Basic Attack: Frost-Tipped Spear</ct>.",
+        "5": "DMG taken is reduced by 60% during this skill.",
+        "6": "Anti-Interrupt level is increased while using this skill.",
+        "7": "Character is invulnerable during the third stage of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct>."
+      },
+      "params": []
+    },
+    "BasicAttackConvergingSpear1stStage": {
+      "name": "Basic Attack: Converging Spear 1st Stage",
+      "desc": "",
+      "params": [
+        " "
+      ]
+    },
+    "BasicAttackConvergingSpear2ndStage": {
+      "name": "Basic Attack: Converging Spear 2nd Stage",
+      "desc": "",
+      "params": [
+        " "
+      ]
+    },
+    "BasicAttackConvergingSpear3rdStage": {
+      "name": "Basic Attack: Converging Spear 3rd Stage",
+      "desc": "",
+      "params": [
+        " "
+      ]
+    }
+  },
+  "dodge": {
+    "DodgeCloudstep": {
+      "name": "Dodge: Cloudstep",
+      "desc": {
+        "0": "Press <IconEvade /> to activate:",
+        "1": "A quick dash dodge.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": []
+    },
+    "DashAttackWindchase": {
+      "name": "Dash Attack: Windchase",
+      "desc": {
+        "0": "Press <IconNormal /> during a dodge to activate:",
+        "1": "Performs a forward cleaving slash, dealing <ct color=#F0D12B>Physical DMG</ct>."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DodgeCounterCounterthrust": {
+      "name": "Dodge Counter: Counterthrust",
+      "desc": {
+        "0": "Press <IconNormal /> during a <ct color=#FFFFFF>Perfect Dodge</ct> to activate:",
+        "1": "Condenses frost around the spearhead before unleashing a powerful counterattack, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "When performed after <ct color=#FFFFFF>Basic Attack: Frost-Tipped Spear</ct>, <ct color=#FFFFFF>Dodge Counter: Counterthrust</ct> retains the current stage of <ct color=#FFFFFF>Basic Attack: Frost-Tipped Spear</ct>.",
+        "3": "This skill is considered an <tooltip ns=tooltips_gen baseKey18=1000029>Unbridled Spear</tooltip> attack.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "special": {
+    "SpecialAttackFrostflower": {
+      "name": "Special Attack: Frostflower",
+      "desc": {
+        "0": "Press <IconSpecial /> to activate:",
+        "1": "Performs three forward thrusts, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Anti-Interrupt level is increased while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "EXSpecialAttackScatteredJade": {
+      "name": "EX Special Attack: Scattered Jade",
+      "desc": {
+        "0": "With enough Energy and while not in the <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> state, press <IconSpecialReady /> to activate:",
+        "1": "Performs a series of powerful stabs ahead, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "This skill is considered an <tooltip ns=tooltips_gen baseKey18=1000029>Unbridled Spear</tooltip> attack.",
+        "3": "When <ct color=#FFFFFF>EX Special Attack: Scattered Jade</ct> is chained after <ct color=#FFFFFF>Basic Attack: Frost-Tipped Spear</ct>, <ct color=#FFFFFF>Basic Attack: Frost-Tipped Spear</ct>'s hit count will be retained.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "Energy Cost "
+      ]
+    },
+    "EXSpecialAttackShatteredJade": {
+      "name": "EX Special Attack: Shattered Jade",
+      "desc": {
+        "0": "With enough Energy and while in the <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> state, press <IconSpecialReady /> to activate:",
+        "1": "Performs a series of powerful lunging stabs ahead, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "This skill is considered an <tooltip ns=tooltips_gen baseKey18=1000029>Unbridled Spear</tooltip> attack.",
+        "3": "When <ct color=#FFFFFF>EX Special Attack: Shattered Jade</ct> is chained after <ct color=#FFFFFF>Basic Attack: Frost-Tipped Spear</ct>, <ct color=#FFFFFF>Basic Attack: Frost-Tipped Spear</ct>'s hit count will be retained.",
+        "4": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " ",
+        "Energy Cost "
+      ]
+    }
+  },
+  "chain": {
+    "ChainAttackEncroachingIce": {
+      "name": "Chain Attack: Encroaching Ice",
+      "desc": {
+        "0": "When a <ct color=#FFFFFF>Chain Attack</ct> is triggered, select the character to activate:",
+        "1": "Performs a powerful piercing attack against enemies ahead, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Upon activating this skill, gains the <ct color=#FFFFFF>Tempered</ct> effect, increasing the DMG dealt by subsequent <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> attacks by 20% for 50s.",
+        "3": "When the current skill hits a Stunned elite or boss enemy for the first time, the current stage of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> is recorded and then reset before entering the <tooltip ns=tooltips_gen baseKey18=1000028>Formation Breaker</tooltip> state. While in <tooltip ns=tooltips_gen baseKey18=1000028>Formation Breaker</tooltip>, <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip>'s duration will not be reduced. Hold <IconNormal /> to continuously activate the 1st through 3rd stage of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct>. After activating the 3rd stage of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct>, <tooltip ns=tooltips_gen baseKey18=1000028>Formation Breaker</tooltip> ends and <ct color=#FFFFFF>Basic Attack: Converging Spear</ct>'s stage is restored to the recorded stage.",
+        "4": "<tooltip ns=tooltips_gen baseKey18=1000028>Formation Breaker</tooltip> can trigger at most once against the same target before the target recovers from Stun.",
+        "5": "This skill is considered an <tooltip ns=tooltips_gen baseKey18=1000029>Unbridled Spear</tooltip> attack.",
+        "6": "While in the <tooltip ns=tooltips_gen baseKey18=1000028>Formation Breaker</tooltip> state, <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> does not trigger the Chain Attack window when hitting Stunned enemies.",
+        "7": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "UltimateFrozenHeavens": {
+      "name": "Ultimate: Frozen Heavens",
+      "desc": {
+        "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
+        "1": "Gathers the power of extreme cold before unleashing a devastating series of lunging attacks, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "This skill is considered an <tooltip ns=tooltips_gen baseKey18=1000029>Unbridled Spear</tooltip> attack.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "assist": {
+    "QuickAssistIronSentinel": {
+      "name": "Quick Assist: Iron Sentinel",
+      "desc": {
+        "0": "When the active character is launched, press <IconSwitch /> to activate:",
+        "1": "Condenses ice before lunging forward, dealing <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    },
+    "DefensiveAssistDauntlessCold": {
+      "name": "Defensive Assist: Dauntless Cold",
+      "desc": {
+        "0": "When the on-field character is about to be attacked, press <IconSwitch /> to activate:",
+        "1": "Parries the enemy's attack, dealing massive Daze.",
+        "2": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        "Light Defensive ",
+        "Heavy Defensive ",
+        "Chain Defensive "
+      ]
+    },
+    "AssistFollowUpDevouringFrost": {
+      "name": "Assist Follow-Up: Devouring Frost",
+      "desc": {
+        "0": "Press <IconNormal /> after a <ct color=#FFFFFF>Defensive Assist</ct> to activate:",
+        "1": "Swings the spear upward before following with a powerful downward attack, dealing massive <ct color=#98EFF0>Ice DMG</ct>.",
+        "2": "This skill is considered an <tooltip ns=tooltips_gen baseKey18=1000029>Unbridled Spear</tooltip> attack.",
+        "3": "Character is invulnerable while using this skill."
+      },
+      "params": [
+        " "
+      ]
+    }
+  },
+  "core": {
+    "name": "Core Passive: Sky Knight",
+    "desc": [
+      {
+        "0": "The 4th hit of <ct color=#FFFFFF>Basic Attack: Frost-Tipped Spear</ct>, as well as <ct color=#FFFFFF>EX Special Attack: Scattered Jade</ct>, <ct color=#FFFFFF>EX Special Attack: Shattered Jade</ct>, <ct color=#FFFFFF>Assist Follow-Up: Devouring Frost</ct>, <ct color=#FFFFFF>Chain Attack: Encroaching Ice</ct>, <ct color=#FFFFFF>Ultimate: Frozen Heavens</ct>, and <ct color=#FFFFFF>Dodge Counter: Counterthrust</ct> are considered <tooltip ns=tooltips_gen baseKey18=1000029>Unbridled Spear</tooltip> attacks.",
+        "1": "Whenever Sigrid uses and hits an enemy with any <tooltip ns=tooltips_gen baseKey18=1000029>Unbridled Spear</tooltip> while not in the <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> state, she enters the <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> state and gains 1 use of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> that cannot be stacked.",
+        "2": "While in the <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> state, when Sigrid hits an enemy with an <tooltip ns=tooltips_gen baseKey18=1000029>Unbridled Spear</tooltip> skill, the <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> state is refreshed and she gains 1 use of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> that cannot be stacked.",
+        "3": "When triggering or refreshing <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip>, its duration decreases as the stage of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> increases. At stage 1/2/3, its duration is <ct color=#FFFFFF>8</ct>/<ct color=#FFFFFF>7</ct>/<ct color=#FFFFFF>6</ct>s.",
+        "4": "When <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> ends, the stage of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> is reduced by one, to a minimum of stage 1.",
+        "5": "Activating or refreshing <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> increases Sigrid's CRIT Rate by <ct color=#2BAD00>33%</ct> for <ct color=#FFFFFF>8</ct>s. Repeated triggers extend the duration by <ct color=#FFFFFF>8</ct>s, up to a maximum of <ct color=#FFFFFF>40</ct>s.",
+        "6": "When Sigrid hits a Stunned enemy while in <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip>, the Stun DMG Multiplier of her DMG dealt to the target is increased by 20%."
+      },
+      {
+        "0": "The 4th hit of <ct color=#FFFFFF>Basic Attack: Frost-Tipped Spear</ct>, as well as <ct color=#FFFFFF>EX Special Attack: Scattered Jade</ct>, <ct color=#FFFFFF>EX Special Attack: Shattered Jade</ct>, <ct color=#FFFFFF>Assist Follow-Up: Devouring Frost</ct>, <ct color=#FFFFFF>Chain Attack: Encroaching Ice</ct>, <ct color=#FFFFFF>Ultimate: Frozen Heavens</ct>, and <ct color=#FFFFFF>Dodge Counter: Counterthrust</ct> are considered <tooltip ns=tooltips_gen baseKey18=1000029>Unbridled Spear</tooltip> attacks.",
+        "1": "Whenever Sigrid uses and hits an enemy with any <tooltip ns=tooltips_gen baseKey18=1000029>Unbridled Spear</tooltip> while not in the <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> state, she enters the <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> state and gains 1 use of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> that cannot be stacked.",
+        "2": "While in the <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> state, when Sigrid hits an enemy with an <tooltip ns=tooltips_gen baseKey18=1000029>Unbridled Spear</tooltip> skill, the <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> state is refreshed and she gains 1 use of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> that cannot be stacked.",
+        "3": "When triggering or refreshing <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip>, its duration decreases as the stage of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> increases. At stage 1/2/3, its duration is <ct color=#FFFFFF>8</ct>/<ct color=#FFFFFF>7</ct>/<ct color=#FFFFFF>6</ct>s.",
+        "4": "When <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> ends, the stage of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> is reduced by one, to a minimum of stage 1.",
+        "5": "Activating or refreshing <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> increases Sigrid's CRIT Rate by <ct color=#2BAD00>39%</ct> for <ct color=#FFFFFF>8</ct>s. Repeated triggers extend the duration by <ct color=#FFFFFF>8</ct>s, up to a maximum of <ct color=#FFFFFF>40</ct>s.",
+        "6": "When Sigrid hits a Stunned enemy while in <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip>, the Stun DMG Multiplier of her DMG dealt to the target is increased by 20%."
+      },
+      {
+        "0": "The 4th hit of <ct color=#FFFFFF>Basic Attack: Frost-Tipped Spear</ct>, as well as <ct color=#FFFFFF>EX Special Attack: Scattered Jade</ct>, <ct color=#FFFFFF>EX Special Attack: Shattered Jade</ct>, <ct color=#FFFFFF>Assist Follow-Up: Devouring Frost</ct>, <ct color=#FFFFFF>Chain Attack: Encroaching Ice</ct>, <ct color=#FFFFFF>Ultimate: Frozen Heavens</ct>, and <ct color=#FFFFFF>Dodge Counter: Counterthrust</ct> are considered <tooltip ns=tooltips_gen baseKey18=1000029>Unbridled Spear</tooltip> attacks.",
+        "1": "Whenever Sigrid uses and hits an enemy with any <tooltip ns=tooltips_gen baseKey18=1000029>Unbridled Spear</tooltip> while not in the <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> state, she enters the <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> state and gains 1 use of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> that cannot be stacked.",
+        "2": "While in the <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> state, when Sigrid hits an enemy with an <tooltip ns=tooltips_gen baseKey18=1000029>Unbridled Spear</tooltip> skill, the <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> state is refreshed and she gains 1 use of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> that cannot be stacked.",
+        "3": "When triggering or refreshing <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip>, its duration decreases as the stage of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> increases. At stage 1/2/3, its duration is <ct color=#FFFFFF>8</ct>/<ct color=#FFFFFF>7</ct>/<ct color=#FFFFFF>6</ct>s.",
+        "4": "When <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> ends, the stage of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> is reduced by one, to a minimum of stage 1.",
+        "5": "Activating or refreshing <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> increases Sigrid's CRIT Rate by <ct color=#2BAD00>44%</ct> for <ct color=#FFFFFF>8</ct>s. Repeated triggers extend the duration by <ct color=#FFFFFF>8</ct>s, up to a maximum of <ct color=#FFFFFF>40</ct>s.",
+        "6": "When Sigrid hits a Stunned enemy while in <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip>, the Stun DMG Multiplier of her DMG dealt to the target is increased by 20%."
+      },
+      {
+        "0": "The 4th hit of <ct color=#FFFFFF>Basic Attack: Frost-Tipped Spear</ct>, as well as <ct color=#FFFFFF>EX Special Attack: Scattered Jade</ct>, <ct color=#FFFFFF>EX Special Attack: Shattered Jade</ct>, <ct color=#FFFFFF>Assist Follow-Up: Devouring Frost</ct>, <ct color=#FFFFFF>Chain Attack: Encroaching Ice</ct>, <ct color=#FFFFFF>Ultimate: Frozen Heavens</ct>, and <ct color=#FFFFFF>Dodge Counter: Counterthrust</ct> are considered <tooltip ns=tooltips_gen baseKey18=1000029>Unbridled Spear</tooltip> attacks.",
+        "1": "Whenever Sigrid uses and hits an enemy with any <tooltip ns=tooltips_gen baseKey18=1000029>Unbridled Spear</tooltip> while not in the <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> state, she enters the <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> state and gains 1 use of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> that cannot be stacked.",
+        "2": "While in the <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> state, when Sigrid hits an enemy with an <tooltip ns=tooltips_gen baseKey18=1000029>Unbridled Spear</tooltip> skill, the <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> state is refreshed and she gains 1 use of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> that cannot be stacked.",
+        "3": "When triggering or refreshing <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip>, its duration decreases as the stage of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> increases. At stage 1/2/3, its duration is <ct color=#FFFFFF>8</ct>/<ct color=#FFFFFF>7</ct>/<ct color=#FFFFFF>6</ct>s.",
+        "4": "When <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> ends, the stage of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> is reduced by one, to a minimum of stage 1.",
+        "5": "Activating or refreshing <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> increases Sigrid's CRIT Rate by <ct color=#2BAD00>50%</ct> for <ct color=#FFFFFF>8</ct>s. Repeated triggers extend the duration by <ct color=#FFFFFF>8</ct>s, up to a maximum of <ct color=#FFFFFF>40</ct>s.",
+        "6": "When Sigrid hits a Stunned enemy while in <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip>, the Stun DMG Multiplier of her DMG dealt to the target is increased by 20%."
+      },
+      {
+        "0": "The 4th hit of <ct color=#FFFFFF>Basic Attack: Frost-Tipped Spear</ct>, as well as <ct color=#FFFFFF>EX Special Attack: Scattered Jade</ct>, <ct color=#FFFFFF>EX Special Attack: Shattered Jade</ct>, <ct color=#FFFFFF>Assist Follow-Up: Devouring Frost</ct>, <ct color=#FFFFFF>Chain Attack: Encroaching Ice</ct>, <ct color=#FFFFFF>Ultimate: Frozen Heavens</ct>, and <ct color=#FFFFFF>Dodge Counter: Counterthrust</ct> are considered <tooltip ns=tooltips_gen baseKey18=1000029>Unbridled Spear</tooltip> attacks.",
+        "1": "Whenever Sigrid uses and hits an enemy with any <tooltip ns=tooltips_gen baseKey18=1000029>Unbridled Spear</tooltip> while not in the <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> state, she enters the <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> state and gains 1 use of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> that cannot be stacked.",
+        "2": "While in the <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> state, when Sigrid hits an enemy with an <tooltip ns=tooltips_gen baseKey18=1000029>Unbridled Spear</tooltip> skill, the <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> state is refreshed and she gains 1 use of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> that cannot be stacked.",
+        "3": "When triggering or refreshing <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip>, its duration decreases as the stage of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> increases. At stage 1/2/3, its duration is <ct color=#FFFFFF>8</ct>/<ct color=#FFFFFF>7</ct>/<ct color=#FFFFFF>6</ct>s.",
+        "4": "When <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> ends, the stage of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> is reduced by one, to a minimum of stage 1.",
+        "5": "Activating or refreshing <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> increases Sigrid's CRIT Rate by <ct color=#2BAD00>55%</ct> for <ct color=#FFFFFF>8</ct>s. Repeated triggers extend the duration by <ct color=#FFFFFF>8</ct>s, up to a maximum of <ct color=#FFFFFF>40</ct>s.",
+        "6": "When Sigrid hits a Stunned enemy while in <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip>, the Stun DMG Multiplier of her DMG dealt to the target is increased by 20%."
+      },
+      {
+        "0": "The 4th hit of <ct color=#FFFFFF>Basic Attack: Frost-Tipped Spear</ct>, as well as <ct color=#FFFFFF>EX Special Attack: Scattered Jade</ct>, <ct color=#FFFFFF>EX Special Attack: Shattered Jade</ct>, <ct color=#FFFFFF>Assist Follow-Up: Devouring Frost</ct>, <ct color=#FFFFFF>Chain Attack: Encroaching Ice</ct>, <ct color=#FFFFFF>Ultimate: Frozen Heavens</ct>, and <ct color=#FFFFFF>Dodge Counter: Counterthrust</ct> are considered <tooltip ns=tooltips_gen baseKey18=1000029>Unbridled Spear</tooltip> attacks.",
+        "1": "Whenever Sigrid uses and hits an enemy with any <tooltip ns=tooltips_gen baseKey18=1000029>Unbridled Spear</tooltip> while not in the <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> state, she enters the <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> state and gains 1 use of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> that cannot be stacked.",
+        "2": "While in the <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> state, when Sigrid hits an enemy with an <tooltip ns=tooltips_gen baseKey18=1000029>Unbridled Spear</tooltip> skill, the <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> state is refreshed and she gains 1 use of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> that cannot be stacked.",
+        "3": "When triggering or refreshing <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip>, its duration decreases as the stage of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> increases. At stage 1/2/3, its duration is <ct color=#FFFFFF>8</ct>/<ct color=#FFFFFF>7</ct>/<ct color=#FFFFFF>6</ct>s.",
+        "4": "When <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> ends, the stage of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> is reduced by one, to a minimum of stage 1.",
+        "5": "Activating or refreshing <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> increases Sigrid's CRIT Rate by <ct color=#2BAD00>61%</ct> for <ct color=#FFFFFF>8</ct>s. Repeated triggers extend the duration by <ct color=#FFFFFF>8</ct>s, up to a maximum of <ct color=#FFFFFF>40</ct>s.",
+        "6": "When Sigrid hits a Stunned enemy while in <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip>, the Stun DMG Multiplier of her DMG dealt to the target is increased by 20%."
+      },
+      {
+        "0": "The 4th hit of <ct color=#FFFFFF>Basic Attack: Frost-Tipped Spear</ct>, as well as <ct color=#FFFFFF>EX Special Attack: Scattered Jade</ct>, <ct color=#FFFFFF>EX Special Attack: Shattered Jade</ct>, <ct color=#FFFFFF>Assist Follow-Up: Devouring Frost</ct>, <ct color=#FFFFFF>Chain Attack: Encroaching Ice</ct>, <ct color=#FFFFFF>Ultimate: Frozen Heavens</ct>, and <ct color=#FFFFFF>Dodge Counter: Counterthrust</ct> are considered <tooltip ns=tooltips_gen baseKey18=1000029>Unbridled Spear</tooltip> attacks.",
+        "1": "Whenever Sigrid uses and hits an enemy with any <tooltip ns=tooltips_gen baseKey18=1000029>Unbridled Spear</tooltip> while not in the <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> state, she enters the <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> state and gains 1 use of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> that cannot be stacked.",
+        "2": "While in the <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> state, when Sigrid hits an enemy with an <tooltip ns=tooltips_gen baseKey18=1000029>Unbridled Spear</tooltip> skill, the <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> state is refreshed and she gains 1 use of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> that cannot be stacked.",
+        "3": "When triggering or refreshing <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip>, its duration decreases as the stage of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> increases. At stage 1/2/3, its duration is <ct color=#FFFFFF>8</ct>/<ct color=#FFFFFF>7</ct>/<ct color=#FFFFFF>6</ct>s.",
+        "4": "When <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> ends, the stage of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> is reduced by one, to a minimum of stage 1.",
+        "5": "Activating or refreshing <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip> increases Sigrid's CRIT Rate by <ct color=#2BAD00>66%</ct> for <ct color=#FFFFFF>8</ct>s. Repeated triggers extend the duration by <ct color=#FFFFFF>8</ct>s, up to a maximum of <ct color=#FFFFFF>40</ct>s.",
+        "6": "When Sigrid hits a Stunned enemy while in <tooltip ns=tooltips_gen baseKey18=1000030>Aerial Patrol Spear</tooltip>, the Stun DMG Multiplier of her DMG dealt to the target is increased by 20%."
+      }
+    ]
+  },
+  "ability": {
+    "name": "Additional Ability: Legion of the Skies",
+    "desc": {
+      "0": "When another character in your squad is a <ct color=#FFFFFF>Support</ct> or <ct color=#FFFFFF>Stun</ct> character:",
+      "1": "Sigrid's ATK increases by 120. This effect scales with character level, with each level providing an additional increase of 12, up to a maximum increase of 840.",
+      "2": "DMG increases by <ct color=#FFFFFF>15%</ct> when hitting enemies in the <ct color=#FFFFFF>Contamination</ct> state."
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "name": "Long, Long Ago",
+      "desc": "Upon activating the 3rd stage of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct>, enters the <ct color=#FFFFFF>Aerial Patrol Spear</ct> and gains 1 additional activation of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct>. When activations exceed the stored <ct color=#FFFFFF>Basic Attack: Converging Spear</ct>'s activation limit, the next <ct color=#FFFFFF>Basic Attack: Converging Spear</ct>'s final hit deals an additional <ct color=#FFFFFF>100%</ct> of ATK as <ct color=#98EFF0>Ice DMG</ct>. Sigrid's <ct color=#FFFFFF>ATK</ct> increases by <ct color=#FFFFFF>25%</ct>.",
+      "flavor": {
+        "0": "Long, long ago, Lady Sunbringer lifted the very first handful of soil that would become this sky island...",
+        "1": "Alright, alright. The children have already heard the story of Lady Sunbringer creating Roscaelifer's first island a thousand times over.",
+        "2": "Today, we're telling the story of the warrior who stood at Lady Sunbringer's side. Clad in moon-bright silver armor, she looked just like an ancient knight from a fairy tale..."
+      }
+    },
+    "2": {
+      "name": "Legend's First Act",
+      "desc": "PEN Ratio of <ct color=#FFFFFF>Unbridled Spear</ct> attacks and <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> increases by <ct color=#FFFFFF>24%</ct>. The duration of <ct color=#FFFFFF>Aerial Patrol Spear</ct> is extended by 2s. Sigrid's Decibel Generation Rate increases by 10%.",
+      "flavor": {
+        "0": "She was Roscaelifer's first soldier, its first spear. She stood on the first front line against the Hollows and led the very first charge.",
+        "1": "She was the first wing to follow Lady Sunbringer, and with her own hands, she raised Roscaelifer's very first wall.",
+        "2": "She was Roscaelifer's first blade broken. Her family name was de L'Azur.",
+        "3": "Like her legend, her descendants burn eternally in the night sky above Roscaelifer."
+      }
+    },
+    "3": {
+      "name": "Protector of Miracles",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "Roscaelifer is the miracle of the skies, and the title of those who protect that miracle has never belonged to only a select few.",
+        "1": "Yet someone must lead those guardians. That was originally Lady Lindverne's duty, but with her bright and carefree nature, she was hardly suited to be a commanding general.",
+        "2": "Fortunately, she had a dashing deputy. More accurately, she had one after another."
+      }
+    },
+    "4": {
+      "name": "Hero in Training",
+      "desc": "Each time upon gaining <ct color=#FFFFFF>Aerial Patrol Spear</ct>, DMG dealt increases by <ct color=#FFFFFF>18%</ct> for <ct color=#FFFFFF>8</ct>s. Repeated triggers extend the duration by <ct color=#FFFFFF>8</ct>s, up to a maximum of <ct color=#FFFFFF>40</ct>s.",
+      "flavor": {
+        "0": "The soldiers and civilians couldn't help comparing the newly appointed Deputy Administrative Director to her predecessor. Who can blame them? After all, according to Lady Lindverne Sunbringer, every head of House de L'Azur was a legendary figure.",
+        "1": "Because of that, everyone expected the young de L'Azur to surpass the last, proving worthy of the legendary guardian family's name.",
+        "2": "And so Lindverne continued weaving new, even more groundbreaking legends for Sigrid."
+      }
+    },
+    "5": {
+      "name": "Skybound Oath",
+      "desc": "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dodge</ct>, <ct color=#FFFFFF>Assist</ct>, <ct color=#FFFFFF>Special Attack</ct>, and <ct color=#FFFFFF>Chain Attack</ct> Lv. +2",
+      "flavor": {
+        "0": "Today, Lady Sunbringer commands countless followers through her reputation as a Void Hunter alone. But every renowned leader once stood with no one behind them.",
+        "1": "To follow that young leader into the skies and build a miracle city that should never have been possible required either a brute's courage or a fool's innocence.",
+        "2": "And each time a new de L'Azur recites that oath to conquer the skies, those two qualities shine brilliantly once more."
+      }
+    },
+    "6": {
+      "name": "Knight of the Skies",
+      "desc": "When <ct color=#FFFFFF>Basic Attack: Converging Spear</ct>'s 1st/2nd/3rd stage's final hit lands, it deals an additional <ct color=#FFFFFF>80%</ct>/<ct color=#FFFFFF>90%</ct>/<ct color=#FFFFFF>100%</ct> ATK as <ct color=#98EFF0>Ice DMG</ct>. There is no more limit on the number of times Sigrid can enter the <ct color=#FFFFFF>Formation Breaker</ct> state upon hitting a Stunned enemy with <ct color=#FFFFFF>Chain Attack: Encroaching Ice</ct>. <ct color=#FFFFFF>Formation Breaker</ct> state's <ct color=#FFFFFF>Basic Attack: Converging Spear</ct> will activate faster.",
+      "flavor": {
+        "0": "Ancient legends tell of a Knight of the Lake.",
+        "1": "In the ballads of the distant future, a frostbound spear will also pierce the skies across time and space.",
+        "2": "\"Until this spear is broken, the miracle of the skies shall never end.\""
+      }
+    }
+  },
+  "potential": {}
+}

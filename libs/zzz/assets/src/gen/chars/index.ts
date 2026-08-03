@@ -37,9 +37,11 @@ import Promeia from './Promeia'
 import Pulchra from './Pulchra'
 import Pyrois from './Pyrois'
 import Qingyi from './Qingyi'
+import Remielle from './Remielle'
 import Rina from './Rina'
 import Seed from './Seed'
 import Seth from './Seth'
+import Sigrid from './Sigrid'
 import Soldier0Anby from './Soldier0Anby'
 import Soldier11 from './Soldier11'
 import Soukaku from './Soukaku'
@@ -95,9 +97,11 @@ const data = {
   Pulchra,
   Pyrois,
   Qingyi,
+  Remielle,
   Rina,
   Seed,
   Seth,
+  Sigrid,
   Soldier0Anby,
   Soldier11,
   Soukaku,

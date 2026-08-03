@@ -26,6 +26,22 @@
       "params": [
         " "
       ]
+    },
+    "BasicAttackMorningCleanup": {
+      "name": "Basic Attack: Morning Cleanup",
+      "desc": "After Rina uses an <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Chain Attack</ct>, or <ct color=#FFFFFF>Ultimate</ct>, she enters the <ct color=#FFFFFF>Spotless</ct> state for 13s. During this time, Drusilla or Anastella attacks an enemy once every 2.5s, dealing <ct color=#F0D12B>Physical DMG</ct> and <ct color=#2EB6FF>Electric DMG</ct>, and grants 1 stack of <ct color=#FFFFFF>Fright</ct>, up to a maximum of 6 stacks. After using the skill, Drusilla and Anastella's exit timer resets.",
+      "params": [
+        "1st-Hit ",
+        "2nd-Hit ",
+        "3rd-Hit "
+      ]
+    },
+    "BasicAttackMidnightCleanup": {
+      "name": "Basic Attack: Midnight Cleanup",
+      "desc": "When <ct color=#FFFFFF><tooltip ns=tooltips_gen baseKey18=1000026>Fright</tooltip></ct> reaches 6 stacks, the next <ct color=#FFFFFF>Basic Attack: Morning Cleanup</ct> performed by Drusilla or Anastella consumes all <ct color=#FFFFFF>Fright</ct> stacks and is replaced with <ct color=#FFFFFF>Basic Attack: Midnight Cleanup</ct>, dealing <ct color=#2EB6FF>Electric DMG</ct>. After using the skill, Drusilla and Anastella's exit timer resets.",
+      "params": [
+        " "
+      ]
     }
   },
   "dodge": {
@@ -76,9 +92,9 @@
       "name": "EX Special Attack: Dimwit Disappearing Trick",
       "desc": {
         "0": "With enough Energy, press <IconSpecialReady /> to activate:",
-        "1": "Order Drusilla and Anastella to execute multiple downward smashes, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "1": "Commands Drusilla and Anastella to unleash a continuous downward smash attack, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
         "2": "Character is invulnerable while using this skill.",
-        "3": "A <ct color=#FFFFFF>Quick Assist</ct> is triggered when this skill hits an enemy."
+        "3": "After using this skill, a <ct color=#FFFFFF>Quick Assist</ct> is triggered."
       },
       "params": [
         " ",
@@ -104,11 +120,11 @@
       "name": "Ultimate: The Queen's Attendants",
       "desc": {
         "0": "When Decibel Rating is at <ct color=#FFFFFF>Maximum</ct>, press <IconUltimateReady /> to activate:",
-        "1": "Order Drusilla and Anastella to spin forward, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
+        "1": "Commands Drusilla and Anastella to spin forward, dealing massive <ct color=#2EB6FF>Electric DMG</ct>.",
         "2": "During this skill, Drusilla and Anastella are unable to respond to <ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dash Attack</ct>, <ct color=#FFFFFF>Special Attack</ct>, or <ct color=#FFFFFF>EX Special Attack</ct> commands, but can be recalled to Rina's side through <ct color=#FFFFFF>Basic Attack: Shoo the Fool</ct>.",
-        "3": "Upon activating this skill, the other squad members recover 10 Energy. The next character to switch in recovers an additional 20 Energy.",
+        "3": "Upon activating this skill, other squad members recover 10 Energy. The next character to switch in recovers an additional 20 Energy.",
         "4": "Character is invulnerable while using this skill.",
-        "5": "A <ct color=#FFFFFF>Quick Assist</ct> is triggered when this skill hits an enemy."
+        "5": "After using this skill, a <ct color=#FFFFFF>Quick Assist</ct> is triggered."
       },
       "params": [
         " "
@@ -140,8 +156,9 @@
       "name": "Assist Follow-Up: Quadruple Meter Gavotte",
       "desc": {
         "0": "Press <IconNormal /> after an <ct color=#FFFFFF>Evasive Assist</ct> to activate:",
-        "1": "Order Drusilla and Anastella to push forward and generate an electrical vortex, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
-        "2": "Character is invulnerable while using this skill."
+        "1": "Commands Drusilla and Anastella to continuously advance while generating a vortex of electricity, dealing <ct color=#2EB6FF>Electric DMG</ct>.",
+        "2": "While using this skill, Rina can quickly chain into <ct color=#FFFFFF>EX Special Attack: Dimwit Disappearing Trick</ct>.",
+        "3": "Character is invulnerable while using this skill."
       },
       "params": [
         " "
@@ -218,5 +235,15 @@
       }
     }
   },
-  "potential": {}
+  "potential": {
+    "name": "Awakened Potential: Perfect Service",
+    "desc": [
+      "",
+      "PEN Ratio increases by 1.6%. While the buff gained from <ct color=#FFFFFF>Core Passive: Mini Destruction Partner</ct> is active, for every 1% of Rina's PEN Ratio, all squad members gain <ct color=#2BAD00>3</ct> ATK and <ct color=#2BAD00>2.5</ct> DEF, up to a maximum of 576 ATK and 468 DEF.",
+      "PEN Ratio increases by 1.6%. While the buff gained from <ct color=#FFFFFF>Core Passive: Mini Destruction Partner</ct> is active, for every 1% of Rina's PEN Ratio, all squad members gain <ct color=#2BAD00>4.2</ct> ATK and <ct color=#2BAD00>3.5</ct> DEF, up to a maximum of 576 ATK and 468 DEF.",
+      "PEN Ratio increases by 1.6%. While the buff gained from <ct color=#FFFFFF>Core Passive: Mini Destruction Partner</ct> is active, for every 1% of Rina's PEN Ratio, all squad members gain <ct color=#2BAD00>5.5</ct> ATK and <ct color=#2BAD00>4.5</ct> DEF, up to a maximum of 576 ATK and 468 DEF.",
+      "PEN Ratio increases by 1.6%. While the buff gained from <ct color=#FFFFFF>Core Passive: Mini Destruction Partner</ct> is active, for every 1% of Rina's PEN Ratio, all squad members gain <ct color=#2BAD00>6.7</ct> ATK and <ct color=#2BAD00>5.5</ct> DEF, up to a maximum of 576 ATK and 468 DEF.",
+      "PEN Ratio increases by 1.6%. While the buff gained from <ct color=#FFFFFF>Core Passive: Mini Destruction Partner</ct> is active, for every 1% of Rina's PEN Ratio, all squad members gain <ct color=#2BAD00>8</ct> ATK and <ct color=#2BAD00>6.5</ct> DEF, up to a maximum of 576 ATK and 468 DEF."
+    ]
+  }
 }

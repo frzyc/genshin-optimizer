@@ -1,6 +1,7 @@
 import { ColorText } from '@genshin-optimizer/common/ui'
 import type { TagField } from '@genshin-optimizer/game-opt/sheet-ui'
 import {
+  allAttributeAnomalyKeys,
   allAttributeDamageKeys,
   allAttributeKeys,
   elementalData,
@@ -116,7 +117,7 @@ charBaseUiSheet.push(
       ),
     })
   ),
-  ...[...allAttributeKeys, 'frost' as const].map((attr): TagField => {
+  ...[...allAttributeAnomalyKeys, 'frost' as const].map((attr): TagField => {
     const attr_withoutFrost = attr === 'frost' ? 'ice' : attr
     return {
       fieldRef: {
@@ -136,7 +137,7 @@ charBaseUiSheet.push(
     }
   }),
   ...[
-    ...allAttributeKeys.filter((attr) => attr !== 'wind'),
+    ...allAttributeAnomalyKeys.filter((attr) => attr !== 'wind'),
     'frost' as const,
   ].map((attr): TagField => {
     const attr_withoutFrost = attr === 'frost' ? 'ice' : attr
@@ -157,7 +158,7 @@ charBaseUiSheet.push(
       ),
     }
   }),
-  ...allAttributeKeys.map(
+  ...allAttributeAnomalyKeys.map(
     (attr): TagField => ({
       fieldRef: {
         et: 'own',
