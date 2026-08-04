@@ -55,6 +55,17 @@ export function getSubstatRolls(
   )
 }
 
+// Sorts substat rolls for display; keeps initial value first if it exists.
+export function sortedSubstatRolls(
+  rolls: readonly number[],
+  hasInitialValue: boolean
+): number[] {
+  if (!hasInitialValue || rolls.length <= 1)
+    return [...rolls].sort((a, b) => a - b)
+  const [initial, ...rest] = rolls
+  return [initial, ...rest.sort((a, b) => a - b)]
+}
+
 export function getSubstatSummedRolls(
   rarity: ArtifactRarity,
   key: SubstatKey

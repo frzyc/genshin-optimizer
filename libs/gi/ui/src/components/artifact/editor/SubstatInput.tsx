@@ -5,6 +5,7 @@ import {
   SqBadge,
   TextButton,
 } from '@genshin-optimizer/common/ui'
+import type { Unit } from '@genshin-optimizer/common/util'
 import { clamp, getUnitStr } from '@genshin-optimizer/common/util'
 import {
   allSubstatKeys,
@@ -18,6 +19,7 @@ import {
   artDisplayValue,
   getSubstatSummedRolls,
   getSubstatValuesPercent,
+  sortedSubstatRolls,
 } from '@genshin-optimizer/gi/util'
 import {
   Box,
@@ -58,6 +60,7 @@ export function SubstatInput({
   index,
   artifact,
   setSubstat,
+  setInitialSubstatValue,
   onChange,
   isUnactivatedSubstat,
 }: {
@@ -68,6 +71,7 @@ export function SubstatInput({
     substat: ISubstat,
     isUnactivatedSubstat: boolean
   ) => void
+  setInitialSubstatValue: (index: number, value: number | undefined) => void
   onChange: (index: number, substat: ISubstat, isChecked: boolean) => void
   isUnactivatedSubstat: boolean
 }) {
@@ -78,6 +82,7 @@ export function SubstatInput({
     value = 0,
     rolls = [],
     efficiency = 0,
+    initialValue,
   } = getCorrectSubstats(artifact, isUnactivatedSubstat, index) ?? {}
 
   const accurateValue = rolls.reduce((a, b) => a + b, 0)
@@ -85,7 +90,6 @@ export function SubstatInput({
     rollNum = rolls.length
 
   let error = '',
-    rollData: readonly number[] = [],
     allowedRolls = 0
 
   if (artifact) {
@@ -94,8 +98,8 @@ export function SubstatInput({
     const { numUpgrades, high } = artSubstatRollData[rarity]
     const maxRollNum = numUpgrades + high - 3
     allowedRolls = maxRollNum - rollNum
-    rollData = key ? getSubstatValuesPercent(key, rarity) : []
   }
+  const rollData = artifact && key ? getSubstatValuesPercent(key, rarity) : []
   const rollOffset = 7 - rollData.length
 
   if (!rollNum && key && value)
@@ -115,6 +119,61 @@ export function SubstatInput({
         : [{ value: 0 }],
     [key, rarity]
   )
+
+  const showInitialValue = level === 20 && !!key
+
+  // With exactly one total roll, the substat's value is unambiguously its
+  // initial roll, so keep it recorded automatically (and don't offer the
+  // slider). This also corrects a stale value carried over from when the
+  // substat had multiple rolls.
+  useEffect(() => {
+    if (showInitialValue && rollNum === 1 && initialValue !== value)
+      setInitialSubstatValue(index, value)
+  }, [
+    showInitialValue,
+    rollNum,
+    initialValue,
+    value,
+    index,
+    setInitialSubstatValue,
+  ])
+
+  const initialRollValues = useMemo(() => {
+    if (!(showInitialValue && rollNum > 1) || !rollData.length) return []
+    const minRoll = Math.min(...rollData),
+      maxRoll = Math.max(...rollData)
+    return rollData
+      .filter((v) => {
+        const remaining = accurateValue - v
+        return (
+          remaining >= (rollNum - 1) * minRoll - 1e-6 &&
+          remaining <= (rollNum - 1) * maxRoll + 1e-6
+        )
+      })
+      .map((v) => Number.parseFloat(artDisplayValue(v, unit)))
+  }, [showInitialValue, rollNum, rollData, accurateValue, unit])
+
+  // If a change to the roll value makes the currently selected initial roll no
+  // longer a possible first roll, reset it.
+  useEffect(() => {
+    if (
+      showInitialValue &&
+      rollNum > 1 &&
+      initialValue !== undefined &&
+      !initialRollValues.some(
+        (v) => artDisplayValue(v, unit) === artDisplayValue(initialValue, unit)
+      )
+    )
+      setInitialSubstatValue(index, undefined)
+  }, [
+    showInitialValue,
+    rollNum,
+    initialValue,
+    initialRollValues,
+    unit,
+    index,
+    setInitialSubstatValue,
+  ])
 
   return (
     <CardThemed bgt="light">
@@ -235,6 +294,10 @@ export function SubstatInput({
             )
           }
           disabled={!key || (isUnactivatedSubstat && index === 3)}
+          initialRollValues={initialRollValues}
+          initialValue={initialValue}
+          unit={unit}
+          setInitialValue={(v) => setInitialSubstatValue(index, v)}
         />
       </Box>
       <Box sx={{ px: 1, pb: 1 }}>
@@ -257,20 +320,22 @@ export function SubstatInput({
             </Grid>
             <Grid item>
               {!!rolls.length &&
-                [...rolls].sort().map((val, i) => (
-                  <Typography
-                    component="span"
-                    key={`${i}.${val}`}
-                    color={`roll${clamp(
-                      rollOffset + rollData.indexOf(val),
-                      1,
-                      6
-                    )}.main`}
-                    sx={{ ml: 1 }}
-                  >
-                    {artDisplayValue(val, unit)}
-                  </Typography>
-                ))}
+                sortedSubstatRolls(rolls, initialValue !== undefined).map(
+                  (val, i) => (
+                    <Typography
+                      component="span"
+                      key={`${i}.${val}`}
+                      color={`roll${clamp(
+                        rollOffset + rollData.indexOf(val),
+                        1,
+                        6
+                      )}.main`}
+                      sx={{ ml: 1 }}
+                    >
+                      {artDisplayValue(val, unit)}
+                    </Typography>
+                  )
+                )}
             </Grid>
             <Grid item flexGrow={1}>
               {index === 3 ? (
@@ -327,25 +392,128 @@ function SliderWrapper({
   setValue,
   marks,
   disabled = false,
+  initialRollValues = [],
+  initialValue,
+  unit,
+  setInitialValue,
 }: {
   value: number
   setValue: (v: number) => void
   marks: Array<{ value: number }>
   disabled: boolean
+  initialRollValues?: number[]
+  initialValue?: number
+  unit?: Unit
+  setInitialValue?: (v: number | undefined) => void
 }) {
   const [innerValue, setinnerValue] = useState(value)
   useEffect(() => setinnerValue(value), [value])
+  const max = marks[marks.length - 1]?.value ?? 0
+  return (
+    <Box sx={{ position: 'relative' }}>
+      <Slider
+        value={innerValue}
+        step={null}
+        disabled={disabled}
+        marks={marks}
+        min={0}
+        max={max}
+        onChange={(_e, v) => setinnerValue(v as number)}
+        onChangeCommitted={(_e, v) => setValue(v as number)}
+        valueLabelDisplay="auto"
+      />
+      {!disabled && !!initialRollValues.length && max > 0 && (
+        <InitialValueSlider
+          initialRollValues={initialRollValues}
+          initialValue={initialValue}
+          unit={unit}
+          max={max}
+          setInitialValue={setInitialValue}
+        />
+      )}
+    </Box>
+  )
+}
+
+// An invisible slider layered on top of the substat slider. Only its thumb is
+// shown, so the user can drag it to the first-roll dots to record/save the
+// substat's `initialValue`. When no initial value is set the thumb is parked
+// (grayed) at the minimum; dragging it back there clears the value again.
+function InitialValueSlider({
+  initialRollValues,
+  initialValue,
+  unit,
+  max,
+  setInitialValue,
+}: {
+  initialRollValues: number[]
+  initialValue?: number
+  unit?: Unit
+  max: number
+  setInitialValue?: (v: number | undefined) => void
+}) {
+  const { t } = useTranslation('artifact')
+  const marks = useMemo(
+    () => [{ value: 0 }, ...initialRollValues.map((v) => ({ value: v }))],
+    [initialRollValues]
+  )
+  const defined = initialValue !== undefined
+  const [innerValue, setInnerValue] = useState(initialValue ?? 0)
+  useEffect(() => setInnerValue(initialValue ?? 0), [initialValue])
   return (
     <Slider
       value={innerValue}
       step={null}
-      disabled={disabled}
       marks={marks}
       min={0}
-      max={marks[marks.length - 1]?.value ?? 0}
-      onChange={(_e, v) => setinnerValue(v as number)}
-      onChangeCommitted={(_e, v) => setValue(v as number)}
+      max={max}
+      aria-label={t('editor.substat.initialRoll')}
       valueLabelDisplay="auto"
+      valueLabelFormat={(v) => (v ? artDisplayValue(v, unit ?? '') : '—')}
+      onChange={(_e, v) => setInnerValue(v as number)}
+      onChangeCommitted={(_e, v) =>
+        setInitialValue?.((v as number) === 0 ? undefined : (v as number))
+      }
+      sx={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        // Let clicks fall through to the substat slider underneath; only the
+        // thumb itself stays interactive.
+        pointerEvents: 'none',
+        '& .MuiSlider-rail, & .MuiSlider-track, & .MuiSlider-mark': {
+          display: 'none',
+        },
+        // Small diamond thumb. The diamond is drawn on a rotated ::before so it
+        // can carry a real outline (a border on a clip-path'd thumb would be
+        // clipped away), while the thumb keeps its centering transform.
+        '& .MuiSlider-thumb': {
+          pointerEvents: 'auto',
+          width: 12,
+          height: 12,
+          backgroundColor: 'transparent',
+          boxShadow: 'none',
+          '&:hover, &.Mui-focusVisible, &.Mui-active': { boxShadow: 'none' },
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            width: 9,
+            height: 9,
+            // Reset the thumb's inherited 50% radius, otherwise the rotated
+            // square renders as a circle.
+            borderRadius: 0,
+            transform: 'translate(-50%, -50%) rotate(45deg)',
+            boxShadow: 'none',
+            border: '1px solid',
+            borderColor: (theme) => theme.palette.common.black,
+            backgroundColor: (theme) =>
+              defined ? theme.palette.primary.main : theme.palette.grey[500],
+          },
+        },
+      }}
     />
   )
 }
