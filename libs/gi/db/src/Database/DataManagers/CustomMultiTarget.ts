@@ -49,6 +49,7 @@ const customTargetSchema = z
       .catch(undefined),
     bonusStats: bonusStatsSchema,
     description: zodString(),
+    conditionals: z.object()
   })
   .refine((ct) => ct.path[0] !== 'custom', {
     message: 'Path cannot start with "custom"',
@@ -91,9 +92,9 @@ export function initCustomTarget(path: string[], multi = 1): CustomTarget {
     hitMode: 'avgHit',
     bonusStats: {},
     description: '',
+    conditionals: {},
   }
 }
-
 export function validateCustomMultiTarget(
   cmt: unknown
 ): CustomMultiTarget | undefined {

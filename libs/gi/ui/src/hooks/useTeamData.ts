@@ -307,7 +307,7 @@ function getCharDataBundle(
     : [artifacts]
   const data = [
     ...artifactData,
-    dataObjForCharacterNew(
+    ...dataObjForCharacterNew(
       charInfo,
       database,
       useCustom ? sheetData : undefined

@@ -34,6 +34,7 @@ import { TargetSelectorModal } from '../Tabs/TabOptimize/Components/TargetSelect
 import CustomTargetDisplay from './CustomTargetDisplay'
 import JsonDescWarning from './JsonDescWarning'
 import MTargetEditor from './MTargetEditor'
+
 export default function CustomMultiTargetCard({
   customMultiTarget: targetProp,
   setTarget: setTargetProp,
@@ -63,9 +64,12 @@ export default function CustomMultiTargetCard({
   }
 
   const onSave = useCallback(() => {
-    onHide()
     setTargetProp(target)
-  }, [onHide, setTargetProp, target])
+  }, [setTargetProp, target])
+  const onSaveAndClose = useCallback(() => {
+    onHide()
+    onSave()
+  }, [onHide, onSave])
 
   const addTarget = useCallback(
     (t: string[], multi?: number) => {
@@ -78,6 +82,7 @@ export default function CustomMultiTargetCard({
 
   const setCustomTarget = useCallback(
     (index: number) => (ctarget: CustomTarget) => {
+      console.log(ctarget)
       const targets = [...target.targets]
       targets[index] = ctarget
       setTarget({ ...target, targets })
@@ -143,6 +148,9 @@ export default function CustomMultiTargetCard({
       )),
     [selectedTarget, target.targets]
   )
+
+  const [collapse, setcollapse] = useState(true)
+
   const selectedTargetValid = clamp(
     selectedTarget,
     -1,
@@ -177,12 +185,12 @@ export default function CustomMultiTargetCard({
           />
         </CardActionArea>
       </CardThemed>
-      <ModalWrapper open={show} onClose={onSave}>
+      <ModalWrapper open={show} onClose={onSaveAndClose}>
         <CardThemed sx={{ overflow: 'visible' }}>
           <CardHeader
             title={name}
             action={
-              <IconButton onClick={onSave}>
+              <IconButton onClick={onSaveAndClose}>
                 <CloseIcon />
               </IconButton>
             }
@@ -264,6 +272,10 @@ export default function CustomMultiTargetCard({
             <AddCustomTargetBtn setTarget={addTarget} />
             {target.targets[selectedTargetValid] && (
               <MTargetEditor
+                key={
+                  target.targets[selectedTargetValid].path.join() +
+                  selectedTargetValid
+                }
                 customTarget={target.targets[selectedTargetValid]}
                 setCustomTarget={setCustomTarget(selectedTargetValid)}
                 deleteCustomTarget={deleteCustomTarget(selectedTargetValid)}
@@ -271,6 +283,9 @@ export default function CustomMultiTargetCard({
                 maxRank={target.targets.length}
                 setTargetIndex={setTargetIndex(selectedTargetValid)}
                 onDup={dupCustomTarget(selectedTargetValid)}
+                collapse={collapse}
+                setcollapse={setcollapse}
+                onSave={onSave}
               />
             )}
           </CardContent>
