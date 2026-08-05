@@ -229,7 +229,7 @@ export function WengineEditor({
                           variant="subtitle1"
                           sx={{ fontWeight: 'bold' }}
                         >
-                          {wengineStats && wengineStats['atk_base'].toFixed()}
+                          {wengineStats?.['atk_base'].toFixed()}
                         </Typography>
                       </Box>
 

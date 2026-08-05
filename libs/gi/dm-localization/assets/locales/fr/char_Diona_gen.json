@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -72,7 +76,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -104,7 +112,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -123,6 +135,13 @@
     "name": "Apéritif offert",
     "description": {
       "0": "12 % de chances d'obtenir un plat supplémentaire lorsque vous cuisinez un plat de soins parfait."
+    }
+  },
+  "lockedPassive": {
+    "name": "Trésors de choix",
+    "description": {
+      "0": "Si un personnage de l'équipe déclenche une réaction de Supraconduction ou d'Astroconduction moins de 20 s après que Diona utilise sa compétence élémentaire <strong>Griffes Cryo</strong>, elle tire de façon coordonnée 3 <strong>griffes de chat Cryo</strong>. Les <strong>griffes de chat Cryo</strong> tirées de cette manière ne génèrent pas de particule, ni ne créent de bouclier en touchant un ennemi. Cet effet peut être déclenché une fois toutes les 3,5 s.",
+      "1": "De plus, Diona passe en <strong>radiance « Astroconduction »</strong> lorsqu'elle est dans une <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>étendue polaris</strong></tooltip>."
     }
   },
   "constellation1": {
@@ -166,6 +185,16 @@
         " Augmente le bonus de soins reçus de 30 % si les PV sont inférieurs ou égaux à 50 %.",
         " Augmente la maîtrise élémentaire de 200 si les PV sont supérieurs à 50 %."
       ]
+    },
+    "upgradedDescription": {
+      "0": "Les personnages se trouvant dans le champ d'alcool de <strong>Cuvée spéciale</strong> bénéficient des effets suivants selon les PV qu'il leur reste :",
+      "1": [
+        " Augmente le bonus de soins reçus de 30 % si les PV sont inférieurs ou égaux à 50 %.",
+        " Augmente la maîtrise élémentaire de 200 si les PV sont supérieurs à 50 %."
+      ],
+      "2": "<br/>",
+      "3": "De plus, les PV max de Diona augmentent de 25 %.",
+      "4": "<strong>Radiance « Astroconduction »</strong>: Les DGT infligés par les réactions de Supraconduction et d'Astroconduction des personnages à portée de <strong>Cuvée spéciale</strong> augmentent de 40 %."
     }
   }
 }

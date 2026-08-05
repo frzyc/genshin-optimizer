@@ -6,8 +6,8 @@ import {
 } from '@genshin-optimizer/zzz/db-ui'
 import { formulas, isAbilityDim } from '@genshin-optimizer/zzz/formula'
 import {
-  type FormulaDimension,
   dimensionByAbilityDim,
+  type FormulaDimension,
   formulaDimensionLabel,
   formulaDimensions,
   resolveAbilityDim,

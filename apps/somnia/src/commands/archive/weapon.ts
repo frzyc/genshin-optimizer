@@ -68,7 +68,7 @@ export async function weaponArchive(id: WeaponKey, args: string, lang: string) {
     i18nInstance.t(`statKey_gen:${stat.mainStat.type}`)
   text += `## ${mainstat}`
   //substat
-  if (stat.subStat && stat.subStat.type) {
+  if (stat.subStat?.type) {
     const sub =
       stat.subStat.base * allStats.weapon.expCurve[stat.subStat.curve][90]
     let substat = valueString(
@@ -76,7 +76,7 @@ export async function weaponArchive(id: WeaponKey, args: string, lang: string) {
       getUnitStr(stat.subStat.type),
       getFixed(stat.subStat.type)
     )
-    substat += ' ' + i18nInstance.t(`statKey_gen:${stat.subStat.type}`)
+    substat += ` ${i18nInstance.t(`statKey_gen:${stat.subStat.type}`)}`
     text += `\n**${substat}**`
   }
   //default r1 5stars

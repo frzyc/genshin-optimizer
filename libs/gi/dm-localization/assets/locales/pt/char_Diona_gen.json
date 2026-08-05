@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -70,7 +74,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -100,7 +108,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -119,6 +131,13 @@
     "name": "Aperitivos Grátis",
     "description": {
       "0": "Quando uma Culinária Perfeita é feita em uma comida com efeito de recuperação, tem uma chance de 12% de receber o dobro de produção."
+    }
+  },
+  "lockedPassive": {
+    "name": "Seleção Refinada",
+    "description": {
+      "0": "Nos 20s após lançar a Habilidade Elemental <strong>Garra de Gato Gelada</strong>, quando um personagem da equipe desencadear Supercondutor ou Supercondutor Estelar, Diona disparará 3 <strong>Garras de Gato Gelada</strong> coordenadas. As <strong>Garras de Gato Geladas</strong> disparadas dessa forma não gerarão Partículas Elementais, e também não gerarão um Escudo ao atingirem um inimigo. Esse efeito pode ser desencadeado uma vez a cada 3.5s.",
+      "1": "Além disso, quando está no <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Campo da Estrela Polar</strong></tooltip>, Diona entrará no estado <strong>Brilho Reluzente: Supercondutor Estelar</strong>."
     }
   },
   "constellation1": {
@@ -159,6 +178,15 @@
       "0": "Os personagens dentro da AdE do <strong>Coquetel Assassino</strong> de acordo com a Vida obtém o seguinte efeito:",
       "1": "Quando a Vida é igual ou inferior a 50%, o Bônus de Cura Recebida aumenta 30%;",
       "2": "Quando a Vida é superior a 50%, a Proficiência Elemental aumenta 200."
+    },
+    "upgradedDescription": {
+      "0": "Os personagens dentro da AdE do <strong>Coquetel Assassino</strong>,de acordo com a Vida, obtêm o seguinte efeito:",
+      "1": "Quando a Vida é igual ou inferior a 50%, o Bônus de Cura Recebida aumenta 30%;",
+      "2": "Quando a Vida é superior a 50%, a Proficiência Elemental aumenta 200.",
+      "3": "<br/>",
+      "4": "Além disso, aumenta a Vida Máxima de Diona em 25%.",
+      "5": "<br/>",
+      "6": "<strong>Brilho Reluzente: Supercondutor Estelar</strong>: aumenta o Dano de Supercondutor e Supercondutor Estelar em 40% para os personagens que estiverem dentro da AdE de <strong>Coquetel Assassino</strong>."
     }
   }
 }

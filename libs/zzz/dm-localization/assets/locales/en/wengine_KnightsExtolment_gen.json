@@ -1,0 +1,33 @@
+{
+  "name": "Knight's Extolment",
+  "desc": {
+    "0": "Every Deputy Administrative Director of the Airspace Patrol Department from House de L'Azur has had a custom W-Engine of their own. The badge and ode of the guardians of the skies are all forged into this elegant white emblem. To the children, the members of the Airspace Patrol Department who protect the City in the Sky are knights from a fairy tale. The peace and tranquility above the clouds are the quiet ode of their extolment.",
+    "1": "\"Every knight in a fairy tale has their own trusty steed. Which reminds me...\"",
+    "2": "—Lady Lindverne Sunbringer eyes her knight with unmistakable mischief."
+  },
+  "desc2": "Equip to increase Attack Agents' combat capabilities",
+  "desc3": "Across the vast skies and seas of clouds, the extolment for the knights echoes in quiet reverence.",
+  "phase": "Knight's Rite",
+  "phaseDescs": [
+    {
+      "0": "When the equipper's <ct color=#FFFFFF>Basic Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>'s heavy attack hits an enemy, they gain 1 stack of <ct color=#FFFFFF>Battle Edge</ct>, increasing CRIT DMG by <ct color=#2BAD00>32%</ct> for 25s. <ct color=#FFFFFF>Battle Edge</ct> can stack up to 2 times, and each skill type can provide up to 1 stack. Repeated triggers refresh the duration of all <ct color=#FFFFFF>Battle Edge</ct>.",
+      "1": "At 2 stacks of <ct color=#FFFFFF>Battle Edge</ct>, the equipper gains <ct color=#FFFFFF>Bonechill</ct>: Their DMG ignores <ct color=#2BAD00>20%</ct> of the target's <ct color=#98EFF0>Ice RES</ct>."
+    },
+    {
+      "0": "When the equipper's <ct color=#FFFFFF>Basic Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>'s heavy attack hits an enemy, they gain 1 stack of <ct color=#FFFFFF>Battle Edge</ct>, increasing CRIT DMG by <ct color=#2BAD00>36.8%</ct> for 25s. <ct color=#FFFFFF>Battle Edge</ct> can stack up to 2 times, and each skill type can provide up to 1 stack. Repeated triggers refresh the duration of all <ct color=#FFFFFF>Battle Edge</ct>.",
+      "1": "At 2 stacks of <ct color=#FFFFFF>Battle Edge</ct>, the equipper gains <ct color=#FFFFFF>Bonechill</ct>: Their DMG ignores <ct color=#2BAD00>23%</ct> of the target's <ct color=#98EFF0>Ice RES</ct>."
+    },
+    {
+      "0": "When the equipper's <ct color=#FFFFFF>Basic Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>'s heavy attack hits an enemy, they gain 1 stack of <ct color=#FFFFFF>Battle Edge</ct>, increasing CRIT DMG by <ct color=#2BAD00>41.6%</ct> for 25s. <ct color=#FFFFFF>Battle Edge</ct> can stack up to 2 times, and each skill type can provide up to 1 stack. Repeated triggers refresh the duration of all <ct color=#FFFFFF>Battle Edge</ct>.",
+      "1": "At 2 stacks of <ct color=#FFFFFF>Battle Edge</ct>, the equipper gains <ct color=#FFFFFF>Bonechill</ct>: Their DMG ignores <ct color=#2BAD00>26%</ct> of the target's <ct color=#98EFF0>Ice RES</ct>."
+    },
+    {
+      "0": "When the equipper's <ct color=#FFFFFF>Basic Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>'s heavy attack hits an enemy, they gain 1 stack of <ct color=#FFFFFF>Battle Edge</ct>, increasing CRIT DMG by <ct color=#2BAD00>46.4%</ct> for 25s. <ct color=#FFFFFF>Battle Edge</ct> can stack up to 2 times, and each skill type can provide up to 1 stack. Repeated triggers refresh the duration of all <ct color=#FFFFFF>Battle Edge</ct>.",
+      "1": "At 2 stacks of <ct color=#FFFFFF>Battle Edge</ct>, the equipper gains <ct color=#FFFFFF>Bonechill</ct>: Their DMG ignores <ct color=#2BAD00>29%</ct> of the target's <ct color=#98EFF0>Ice RES</ct>."
+    },
+    {
+      "0": "When the equipper's <ct color=#FFFFFF>Basic Attack</ct> or <ct color=#FFFFFF>EX Special Attack</ct>'s heavy attack hits an enemy, they gain 1 stack of <ct color=#FFFFFF>Battle Edge</ct>, increasing CRIT DMG by <ct color=#2BAD00>51.2%</ct> for 25s. <ct color=#FFFFFF>Battle Edge</ct> can stack up to 2 times, and each skill type can provide up to 1 stack. Repeated triggers refresh the duration of all <ct color=#FFFFFF>Battle Edge</ct>.",
+      "1": "At 2 stacks of <ct color=#FFFFFF>Battle Edge</ct>, the equipper gains <ct color=#FFFFFF>Bonechill</ct>: Their DMG ignores <ct color=#2BAD00>32%</ct> of the target's <ct color=#98EFF0>Ice RES</ct>."
+    }
+  ]
+}

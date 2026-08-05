@@ -205,7 +205,7 @@
   "ability": {
     "name": "Additional Ability: Bask in Frost",
     "desc": {
-      "0": "When another character in your squad is a <ct color=#FFFFFF>Support</ct> character or shares the same Faction:",
+      "0": "When another character in your squad is a <ct color=#FFFFFF>Support</ct> or <ct color=#FFFFFF>Anomaly</ct> character, or shares the same Faction:",
       "1": "<ct color=#FFFFFF>Basic Attack: Shimotsuki</ct> DMG increases by 60%. When any squad member triggers <ct color=#FFFFFF>Disorder</ct>, Hoshimi Miyabi obtains 2 points of <ct color=#FFFFFF>Fallen Frost</ct> and <ct color=#FFFFFF>Basic Attack: Shimotsuki</ct> during the next <ct color=#FFFFFF>Shimotsuki Stance</ct> will ignore 30% of the target's <ct color=#98EFF0>Ice RES</ct>."
     }
   },

@@ -2,7 +2,7 @@
   "setName": "Ảo Tưởng Vụn Vỡ Trong Bóng Tối",
   "setEffects": {
     "2": "Tấn Công tăng 18%.",
-    "4": "Sát thương phản ứng Siêu Dẫn tăng 80%. Khi người trang bị tấn công kẻ địch bị ảnh hưởng bởi phản ứng Siêu Dẫn, lần tấn công này tăng 16% Tỷ Lệ Bạo Kích. Trên đường đến Snezhnaya, có lẽ sẽ nhận được sự chúc phúc hoàn toàn mới..."
+    "4": "Sát thương phản ứng Siêu Dẫn tăng 80%, sát thương phản ứng Tinh-Siêu Dẫn tăng 40%. Khi người trang bị tấn công kẻ địch bị ảnh hưởng bởi phản ứng Siêu Dẫn hoặc Tinh-Siêu Dẫn, lần tấn công này tăng 16% Tỷ Lệ Bạo Kích."
   },
   "pieces": {
     "flower": {

@@ -6,19 +6,19 @@
   "passiveName": "Danse Kagura du cerisier sacré",
   "passiveDescription": {
     "0": {
-      "0": "Libérer une compétence élémentaire confère l'effet Danse Kagura, permettant d'augmenter les DGT infligés par les compétences élémentaires du personnage équipé de l'arme de <cryo>12 %</cryo> pendant 16 s. Cet effet peut être cumulé 3 fois maximum. Avec 3 cumuls, le personnage bénéficie d'un bonus de DGT élémentaires de <cryo>12 %</cryo>."
+      "0": "Libérer une compétence élémentaire confère l'effet Danse Kagura, permettant d'augmenter les DGT infligés par les compétences élémentaires du personnage équipé de l'arme de <cryo>12 %</cryo> et ses DGT de réaction d'Astroconduction de <cryo>12 %</cryo>, le tout pendant 24 s. Cet effet peut être cumulé 3 fois maximum. Avec 3 cumuls, le personnage bénéficie d'un bonus de DGT élémentaires de <cryo>12 %</cryo>."
     },
     "1": {
-      "0": "Libérer une compétence élémentaire confère l'effet Danse Kagura, permettant d'augmenter les DGT infligés par les compétences élémentaires du personnage équipé de l'arme de <cryo>15 %</cryo> pendant 16 s. Cet effet peut être cumulé 3 fois maximum. Avec 3 cumuls, le personnage bénéficie d'un bonus de DGT élémentaires de <cryo>15 %</cryo>."
+      "0": "Libérer une compétence élémentaire confère l'effet Danse Kagura, permettant d'augmenter les DGT infligés par les compétences élémentaires du personnage équipé de l'arme de <cryo>15 %</cryo> et ses DGT de réaction d'Astroconduction de <cryo>15 %</cryo>, le tout pendant 24 s. Cet effet peut être cumulé 3 fois maximum. Avec 3 cumuls, le personnage bénéficie d'un bonus de DGT élémentaires de <cryo>15 %</cryo>."
     },
     "2": {
-      "0": "Libérer une compétence élémentaire confère l'effet Danse Kagura, permettant d'augmenter les DGT infligés par les compétences élémentaires du personnage équipé de l'arme de <cryo>18 %</cryo> pendant 16 s. Cet effet peut être cumulé 3 fois maximum. Avec 3 cumuls, le personnage bénéficie d'un bonus de DGT élémentaires de <cryo>18 %</cryo>."
+      "0": "Libérer une compétence élémentaire confère l'effet Danse Kagura, permettant d'augmenter les DGT infligés par les compétences élémentaires du personnage équipé de l'arme de <cryo>18 %</cryo> et ses DGT de réaction d'Astroconduction de <cryo>18 %</cryo>, le tout pendant 24 s. Cet effet peut être cumulé 3 fois maximum. Avec 3 cumuls, le personnage bénéficie d'un bonus de DGT élémentaires de <cryo>18 %</cryo>."
     },
     "3": {
-      "0": "Libérer une compétence élémentaire confère l'effet Danse Kagura, permettant d'augmenter les DGT infligés par les compétences élémentaires du personnage équipé de l'arme de <cryo>21 %</cryo> pendant 16 s. Cet effet peut être cumulé 3 fois maximum. Avec 3 cumuls, le personnage bénéficie d'un bonus de DGT élémentaires de <cryo>21 %</cryo>."
+      "0": "Libérer une compétence élémentaire confère l'effet Danse Kagura, permettant d'augmenter les DGT infligés par les compétences élémentaires du personnage équipé de l'arme de <cryo>21 %</cryo> et ses DGT de réaction d'Astroconduction de <cryo>21 %</cryo>, le tout pendant 24 s. Cet effet peut être cumulé 3 fois maximum. Avec 3 cumuls, le personnage bénéficie d'un bonus de DGT élémentaires de <cryo>21 %</cryo>."
     },
     "4": {
-      "0": "Libérer une compétence élémentaire confère l'effet Danse Kagura, permettant d'augmenter les DGT infligés par les compétences élémentaires du personnage équipé de l'arme de <cryo>24 %</cryo> pendant 16 s. Cet effet peut être cumulé 3 fois maximum. Avec 3 cumuls, le personnage bénéficie d'un bonus de DGT élémentaires de <cryo>24 %</cryo>."
+      "0": "Libérer une compétence élémentaire confère l'effet Danse Kagura, permettant d'augmenter les DGT infligés par les compétences élémentaires du personnage équipé de l'arme de <cryo>24 %</cryo> et ses DGT de réaction d'Astroconduction de <cryo>24 %</cryo>, le tout pendant 24 s. Cet effet peut être cumulé 3 fois maximum. Avec 3 cumuls, le personnage bénéficie d'un bonus de DGT élémentaires de <cryo>24 %</cryo>."
     }
   }
 }

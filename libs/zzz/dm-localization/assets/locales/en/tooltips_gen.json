@@ -83,6 +83,79 @@
     "name": "Cinderfire",
     "desc": "Gain Cinderfire when using a Chain Attack. All Cinderfire stacks are consumed upon using an Ultimate, granting a certain amount of <ct color=#FFFFFF>Decibels</ct> for each stack consumed."
   },
+  "1000023": {
+    "name": "Anomaly Effect Strength",
+    "desc": {
+      "0": "When applying Attribute Anomaly Buildup to an enemy, each attack's ATK, PEN, Anomaly Proficiency, DMG Bonus, and other effects proportionally increase the resulting <ct color=#FFFFFF>Anomaly Effect Strength</ct> based on that attack's contribution to the total Attribute Anomaly Buildup.",
+      "1": "PEN effects: Includes PEN and PEN Ratio",
+      "2": "DMG Bonus: Includes both non-Attribute DMG Bonus and Attribute DMG Bonus"
+    }
+  },
+  "1000024": {
+    "name": "Purr Energy",
+    "desc": {
+      "0": "Nekomata gains 40 Purr Energy upon entering the battlefield. She recovers 1 <ct color=#FFFFFF>Purr Energy</ct> every second, and different skills restore different amounts of Purr Energy on hit.",
+      "1": "When Purr Energy is at least 40, press <IconEvade /> after triggering a <ct color=#FFFFFF>Perfect Dodge</ct> to consume 30 Purr Energy and activate Dodge: Disappearing Tail.",
+      "2": "When Purr Energy is at least 40, hold <IconNormal /> to consume 40 Purr Energy and directly activate Dodge Counter: Fluffy Piercing Claw."
+    }
+  },
+  "1000025": {
+    "name": "Pawpad Ambush",
+    "desc": {
+      "0": "Nekomata enters Pawpad Ambush state for 40s after using Dodge Counter: Fluffy Piercing Claw. Repeated triggers reset the duration.",
+      "1": "While Pawpad Ambush is active, all of Nekomata's attacks count as hitting from behind and trigger Super Mean Pawprint, dealing <ct color=#F0D12B>Physical DMG</ct> equal to 30% of Nekomata's ATK. This effect can trigger once every 1s."
+    }
+  },
+  "1000026": {
+    "name": "Fright",
+    "desc": "While <ct color=#FFFFFF>Spotless</ct> is active, each activation of Drusilla or Anastella's <ct color=#FFFFFF>Basic Attack: Morning Cleanup</ct> grants 1 stack of <ct color=#FFFFFF>Fright</ct>. Upon reaching 6 stacks, the next <ct color=#FFFFFF>Basic Attack: Morning Cleanup</ct> consumes all <ct color=#FFFFFF>Fright</ct> stacks and is replaced with <ct color=#FFFFFF>Basic Attack: Midnight Cleanup</ct>."
+  },
+  "1000027": {
+    "name": "Spotless",
+    "desc": "While this is active, Drusilla or Anastella automatically uses <ct color=#FFFFFF>Basic Attack: Morning Cleanup</ct> to attack enemies and gain <ct color=#FFFFFF>Fright</ct>. After using the skill, Drusilla and Anastella's exit timer resets."
+  },
+  "1000028": {
+    "name": "Formation Breaker",
+    "desc": {
+      "0": "When <ct color=#FFFFFF>Chain Attack: Encroaching Ice</ct> hits a Stunned elite or boss enemy for the first time, Sigrid enters the <ct color=#FFFFFF>Formation Breaker</ct> state.",
+      "1": "While in <ct color=#FFFFFF>Formation Breaker</ct> state, hold <IconNormal /> to continuously use the 1st through 3rd stages of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct>."
+    }
+  },
+  "1000029": {
+    "name": "Unbridled Spear",
+    "desc": {
+      "0": "The 4th hit of the <ct color=#FFFFFF>Basic Attack</ct>, the <ct color=#FFFFFF>EX Special Attack</ct>, <ct color=#FFFFFF>Assist Follow-Up</ct>, <ct color=#FFFFFF>Chain Attack</ct>, <ct color=#FFFFFF>Ultimate</ct>, and <ct color=#FFFFFF>Dodge Counter</ct> are considered <ct color=#FFFFFF>Unbridled Spear</ct> skills.",
+      "1": "When Sigrid hits an enemy with any <ct color=#FFFFFF>Unbridled Spear</ct>, if she is not currently in the Aerial Patrol Spear state, she enters the Aerial Patrol Spear state and gains 1 activation of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct>, up to 1 activation can be stored."
+    }
+  },
+  "1000030": {
+    "name": "Aerial Patrol Spear",
+    "desc": "While in the <ct color=#FFFFFF>Aerial Patrol Spear</ct> state, hold <IconNormal /> to use <ct color=#FFFFFF>Basic Attack: Converging Spear</ct>. When Sigrid uses any Unbridled Spear, the <ct color=#FFFFFF>Aerial Patrol Spear</ct> state is refreshed, and she gains 1 activation of <ct color=#FFFFFF>Basic Attack: Converging Spear</ct>. Up to 1 activation can be stored."
+  },
+  "1000031": {
+    "name": "Refringe",
+    "desc": "If an enemy has <ct color=#FFA9DD>Lumiflux Buildup</ct>, when they're about to be inflicted with an Anomaly, that Anomaly is <ct color=#FFA9DD>Refringed</ct>. After being <ct color=#FFA9DD>Refringed</ct>, the Anomaly's Anomaly Effect Strength is enhanced based on the provider's <ct color=#FFA9DD>Refringe Coefficient</ct>, increasing the total DMG that Anomaly can deal."
+  },
+  "1000032": {
+    "name": "Floating Radiance",
+    "desc": {
+      "0": "Remielle can gain <ct color=#FFFFFF>Floating Radiance</ct> through <ct color=#FFFFFF>Basic Attacks</ct>.",
+      "1": "When <ct color=#FFFFFF>Floating Radiance</ct> reaches its maximum of 120, Remielle can enter the Phase Flow state.",
+      "2": "While in the <ct color=#FFFFFF>Phase Flow</ct> state, <ct color=#FFFFFF>Floating Radiance</ct> is consumed over time. When <ct color=#FFFFFF>Floating Radiance</ct> is fully consumed, Remielle exits the <ct color=#FFFFFF>Phase Flow</ct> state."
+    }
+  },
+  "1000033": {
+    "name": "Voidflare",
+    "desc": "When a squad member triggers Remielle's <ct color=#FFA9DD>Lumiflux</ct> Refringe reaction, Remielle generates <ct color=#FFFFFF>Voidflare</ct> based on the enhanced Anomaly Effect Strength of that Attribute Anomaly after it has been <ct color=#FFA9DD>Refringed</ct>. Up to the 3 most recently generated <ct color=#FFFFFF>Voidflares</ct> can be stored."
+  },
+  "1000034": {
+    "name": "Luminize",
+    "desc": "Deals Attribute Anomaly DMG to enemies using the skill's DMG Multiplier, based on the Anomaly Effect Strength of all stored Voidflare."
+  },
+  "1000035": {
+    "name": "Phase Flow",
+    "desc": "While in the <ct color=#FFFFFF>Phase Flow</ct> state, Remielle acts autonomously to assist in combat. During this, some attacks can also apply <ct color=#FFA9DD>Lumiflux Buildup</ct> to the target. While in the <ct color=#FFFFFF>Phase Flow</ct> state, Floating Radiance is consumed over time. When <ct color=#FFFFFF>Floating Radiance</ct> is fully depleted, she exits the <ct color=#FFFFFF>Phase Flow</ct> state. Before exiting the <ct color=#FFFFFF>Phase Flow</ct> state, she cannot be actively switched in except through <ct color=#FFFFFF>Chain Attacks</ct>."
+  },
   "2000001": {
     "name": "Corruptive Barrier",
     "desc": {
@@ -103,6 +176,153 @@
       "0": "· Skills <ct color=#FFAF2C>ignore the Invulnerable effect</ct> and have no flash prompts. Agents cannot activate their Ultimates during this time. Only one Agent switch is allowed per enemy attack, and each Agent can only perform one dodge.",
       "1": "· <ct color=#FFAF2C>Defensive Assist</ct> or <ct color=#FFAF2C>Evasive Assist</ct> can be used to counter this skill. Successfully countering all skills inflicts the <ct color=#FFAF2C>Shutdown</ct> effect on the enemy, dealing massive DMG and accumulating a large amount of Daze."
     }
+  },
+  "2000004": {
+    "name": "Chain Parry",
+    "desc": {
+      "0": "· When an <ct color=#FFAF2C>×-shape golden light</ct> prompt appears on an enemy attack, <ct color=#FFAF2C>tap twice</ct> in quick succession on <IconSwitch /> to trigger a Chain Parry. Both Agents will parry the attack together and <ct color=#FFAF2C>accumulate a large amount of Daze</ct>;",
+      "1": "· After successfully triggering a Chain Parry, tap <IconNormal /> to launch a Chain Assault."
+    }
+  },
+  "4000001": {
+    "name": "Basic Technique",
+    "desc": "There are 3 buffs that can reduce the required score of an order, making the order <IconMap:Icon_SummerTide_SIcon01> -1, <IconMap:Icon_SummerTide_SIcon02> -1, and <IconMap:Icon_SummerTide_SIcon03> -1"
+  },
+  "4000002": {
+    "name": "Starfish",
+    "desc": "A type of Sea Materials used to make souvenirs, providing the scores needed to fulfill orders"
+  },
+  "4000003": {
+    "name": "Bottle Cap",
+    "desc": "A type of Sea Materials used to make souvenirs, providing the scores needed to fulfill orders"
+  },
+  "4000004": {
+    "name": "Giant Crab Claw",
+    "desc": "A type of Sea Materials used to make souvenirs, providing the scores needed to fulfill orders"
+  },
+  "4000005": {
+    "name": "Conch",
+    "desc": "A type of Sea Materials used to make souvenirs, providing the scores needed to fulfill orders"
+  },
+  "4000006": {
+    "name": "Pebble",
+    "desc": "A type of Sea Materials used to make souvenirs, providing the scores needed to fulfill orders"
+  },
+  "4000007": {
+    "name": "Overflow Score",
+    "desc": "The portion of the Sea Materials score that exceeds the order score requirement when an order is completed"
+  },
+  "4000008": {
+    "name": "Single-Color Order",
+    "desc": "Orders with only one score requirement, using the order's original required score as the benchmark"
+  },
+  "4000009": {
+    "name": "Three-Color Order",
+    "desc": "Orders with three types of score requirements, judged by the order's original required score"
+  },
+  "4000010": {
+    "name": "White Feather",
+    "desc": "When a skill is released, current order <IconMap:Icon_SummerTide_SIcon01><IconMap:Icon_SummerTide_SIcon02><IconMap:Icon_SummerTide_SIcon03> randomly -1"
+  },
+  "4000011": {
+    "name": "Black Feather",
+    "desc": "When a skill is released, a random Sea Materials <IconMap:Icon_SummerTide_SIcon01><IconMap:Icon_SummerTide_SIcon02><IconMap:Icon_SummerTide_SIcon03> randomly +1"
+  },
+  "4000012": {
+    "name": "Durability",
+    "desc": "Reduces the Durability consumed by this Gear by 1, to a minimum of 1."
+  },
+  "4000013": {
+    "name": "Core",
+    "desc": "Agent's [Core Skill] Lv.+<ct color=#2BAD00>1</ct>."
+  },
+  "4000014": {
+    "name": "Skill",
+    "desc": "All of the Agent's skill Lv. except Core Skill +<ct color=#2BAD00>1</ct>."
+  },
+  "4000015": {
+    "name": "Shield",
+    "desc": "After being out of combat for <ct color=#2BAD00>10</ct>s, gain a shield equal to <ct color=#2BAD00>3%</ct> of Max HP. Can trigger at most once every <ct color=#2BAD00>30</ct>s."
+  },
+  "4000016": {
+    "name": "Corrosion Resistance",
+    "desc": "Each time Corruption is triggered, DMG taken is reduced by <ct color=#2BAD00>10%</ct> for <ct color=#2BAD00>15</ct>s."
+  },
+  "4000017": {
+    "name": "Dodge",
+    "desc": "[Dodge] count +1, <ct color=#FFFFFF>[Perfect Dodge]</ct> is easier to trigger when <ct color=#FFFFFF>[Dodging]</ct>."
+  },
+  "4000018": {
+    "name": "Charge Up",
+    "desc": "When HP is above <ct color=#2BAD00>80%</ct>, deal an additional <ct color=#2BAD00>10%</ct> DMG and <ct color=#2BAD00>20%</ct> Anomaly Buildup."
+  },
+  "4000019": {
+    "name": "Curtain",
+    "desc": "While in [Ether Veil], hitting an enemy increases their Stun DMG Multiplier by <ct color=#2BAD00>15%</ct> for <ct color=#2BAD00>15</ct>s. Repeated triggers reset the duration."
+  },
+  "4000020": {
+    "name": "Skill",
+    "desc": "All of the Agent's skill Lv. except Core Skill +<ct color=#2BAD00>2</ct>."
+  },
+  "4000021": {
+    "name": "Shield",
+    "desc": "After being out of combat for <ct color=#2BAD00>10</ct>s, gain a shield equal to <ct color=#2BAD00>6%</ct> of Max HP. Can trigger at most once every <ct color=#2BAD00>30</ct>s."
+  },
+  "4000022": {
+    "name": "Corrosion Resistance",
+    "desc": "Each time Corruption is triggered, DMG taken is reduced by <ct color=#2BAD00>10%</ct> for <ct color=#2BAD00>30</ct>s."
+  },
+  "4000023": {
+    "name": "Charge Up",
+    "desc": "When HP is above <ct color=#2BAD00>50%</ct>, deal an additional <ct color=#2BAD00>10%</ct> DMG and <ct color=#2BAD00>20%</ct> Anomaly Buildup."
+  },
+  "4000024": {
+    "name": "Swift",
+    "desc": "After triggering [Perfect Dodge], CRIT Rate increases by <ct color=#2BAD00>8%</ct> for <ct color=#2BAD00>10</ct>s. Repeated triggers refresh the duration."
+  },
+  "4000025": {
+    "name": "Basic Attack",
+    "desc": "[Basic Attack] Upon hitting an enemy, increases own ATK by <ct color=#2BAD00>4%</ct> for <ct color=#2BAD00>10</ct>s, stacking up to <ct color=#2BAD00>3</ct> times."
+  },
+  "4000026": {
+    "name": "Abloom",
+    "desc": "After triggering [Abloom], the Agent's Anomaly DMG increases by <ct color=#2BAD00>6%</ct> for <ct color=#2BAD00>12</ct>s, stacking up to <ct color=#2BAD00>2</ct> times."
+  },
+  "4000027": {
+    "name": "Disorder",
+    "desc": "After triggering [Disorder], gain an effect that ignores <ct color=#2BAD00>6%</ct> of the target's All-Attribute RES for <ct color=#2BAD00>12</ct>s. Repeated triggers reset the duration."
+  },
+  "4000028": {
+    "name": "Follow-up Attack",
+    "desc": "[Aftershock] On hit, causes your DMG to ignore <ct color=#2BAD00>8%</ct> of the target's defense for <ct color=#2BAD00>10</ct>s; repeated triggers reset the duration."
+  },
+  "4000029": {
+    "name": "Pierce",
+    "desc": "After using [EX Special Attack], Sheer DMG increases by <ct color=#2BAD00>3%</ct> for <ct color=#2BAD00>15</ct>s, stacking up to <ct color=#2BAD00>2</ct> times."
+  },
+  "4000030": {
+    "name": "Chain Attack",
+    "desc": "When a [Chain Attack] is unleashed, increases own CRIT DMG by <ct color=#2BAD00>16%</ct> for <ct color=#2BAD00>12</ct>s. Gaining the effect again refreshes the duration."
+  },
+  "4000031": {
+    "name": "Blood Rage",
+    "desc": "When losing HP, the Agent's CRIT DMG increases by <ct color=#2BAD00>16%</ct> for <ct color=#2BAD00>8</ct>s. Gaining this effect again refreshes its duration."
+  },
+  "4000032": {
+    "name": "Vortex",
+    "desc": "When [Vortex] is triggered, the Agent's Anomaly DMG increases by <ct color=#2BAD00>12%</ct> for <ct color=#2BAD00>15</ct>s. Gaining it again resets the duration."
+  },
+  "4000033": {
+    "name": "Energy Generation",
+    "desc": "Using an [Ultimate] generates <ct color=#2BAD00>20</ct> Energy for the Agent."
+  },
+  "4000034": {
+    "name": "Stun",
+    "desc": "When an enemy is Dazed, restore <ct color=#2BAD00>300</ct> Decibel. This effect can trigger once every <ct color=#2BAD00>30</ct> seconds."
+  },
+  "4000035": {
+    "name": "Strong Shield",
+    "desc": "Shielded Agents gain <ct color=#2BAD00>10% CRIT Rate</ct>."
   },
   "10000081": {
     "name": "Windbloom",

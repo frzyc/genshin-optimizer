@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -52,6 +56,20 @@
       "4": "<br/>",
       "5": "<i>« Je l'utilise pour empêcher le réchauffement et la pourriture... des précieux ingrédients de monsieur Baizhu, bien sûr. »</i>"
     },
+    "upgradedDescription": {
+      "0": "Utilise un talisman infusé de glace et de sang pour invoquer un héraut de givre, infligeant des <cryo>DGT Cryo</cryo> aux ennemis proches.",
+      "1": "<br/>",
+      "2": "<strong>Héraut de givre</strong>",
+      "3": [
+        " Les attaques normales et chargées de Qiqi restaurent les PV de vos personnages dans l'équipe ainsi que des alliés proches lorsqu'elles touchent. La quantité de PV restaurée est proportionnelle à l'ATQ de Qiqi.",
+        " Régénère les PV du personnage déployé à intervalles réguliers.",
+        " Le héraut suit le personnage déployé et inflige des <cryo>DGT Cryo</cryo> aux ennemis sur sa route.",
+        " Le héraut de givre déclenche une attaque coordonnée infligeant des <cryo>DGT Cryo</cryo> lorsqu'une attaque de votre personnage déployé touche un ennemi."
+      ],
+      "4": "<br/>",
+      "5": "<br/>",
+      "6": "<i>« Je l'utilise pour empêcher le réchauffement et la pourriture... des précieux ingrédients de monsieur Baizhu, bien sûr. »</i>"
+    },
     "skillParams": {
       "0": "DGT compétence",
       "1": "Soins équipe",
@@ -59,16 +77,20 @@
       "3": "DGT Héraut de givre",
       "4": "Durée",
       "5": "Temps de recharge",
-      "6": "",
-      "7": "",
-      "8": "",
+      "6": "DGT attaque coordonnée (Héraut de givre)",
+      "7": "TdR attaque coordonnée (Héraut de givre)",
+      "8": "Temps de recharge",
       "9": "",
       "10": "",
       "11": "",
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -82,13 +104,23 @@
       "5": "<i>« Je suis l'envoyée de la Providence, le symbole de la renaissance. »</i>",
       "6": "<i>— Qiqi est bien incapable de se rappeler de ces mots.</i>"
     },
+    "upgradedDescription": {
+      "0": "Qiqi libère le pouvoir d'Adepte scellé en elle et marque les ennemis proches d'un talisman de fortune qui leur inflige des <cryo>DGT Cryo</cryo>.",
+      "1": "<strong>Radiance « Astroconduction »</strong> : Inflige une fois supplémentaire des <cryo>DGT Cryo</cryo> considérés comme des DGT de réaction d'Astroconduction.",
+      "2": "<br/>",
+      "3": "<strong>Talisman de fortune</strong>",
+      "4": "Les personnages récupèrent des PV en infligeant des DGT aux ennemis marqués.",
+      "5": "<br/>",
+      "6": "<i>« Je suis l'envoyée de la Providence, le symbole de la renaissance. »</i>",
+      "7": "<i>— Qiqi est bien incapable de se rappeler de ces mots.</i>"
+    },
     "skillParams": {
       "0": "DGT compétence",
       "1": "Soins",
       "2": "Durée",
       "3": "Temps de recharge",
       "4": "Énergie élémentaire",
-      "5": "",
+      "5": "DGT d'Astroconduction",
       "6": "",
       "7": "",
       "8": "",
@@ -98,7 +130,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -111,6 +147,10 @@
     "name": "Ouverture des arcanes",
     "description": {
       "0": "Les attaques normales et chargées de Qiqi ont 50 % de chances de marquer l'ennemi touché d'un talisman de fortune pendant 6 s. Cet effet peut être déclenché une fois toutes les 30 s."
+    },
+    "upgradedDescription": {
+      "0": "Les attaques normales et chargées de Qiqi ont 50 % de chances de marquer l'ennemi touché d'un talisman de fortune pendant 6 s. Cet effet peut être déclenché une fois toutes les 30 s.",
+      "1": "<strong>Radiance « Astroconduction »</strong> : L'effet a maintenant 100 % de chances de se déclencher et le TdR passe à 15 s."
     }
   },
   "passive3": {
@@ -119,16 +159,32 @@
       "0": "Affiche l'emplacement des <strong>produits de Liyue</strong> sur la mini-carte."
     }
   },
+  "lockedPassive": {
+    "name": "Sept trésors sacrés",
+    "description": {
+      "0": "Diminue le TdR de la compétence élémentaire <strong>Arcane d'Adepte : Héraut de givre</strong> à 15 s.",
+      "1": "<strong>Radiance « Astroconduction »</strong> : Les DGT des réactions de Supraconduction et d'Astroconduction déclenchées par vos personnages dans l'équipe augmentent de 50 % pendant la durée du héraut de givre.",
+      "2": "De plus, Qiqi passe en <strong>radiance « Astroconduction »</strong> lorsqu'elle est dans une <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>étendue polaris</strong></tooltip>."
+    }
+  },
   "constellation1": {
     "name": "Ascèse du givre",
     "description": {
       "0": "Qiqi récupère 2 pts d'énergie élémentaire à chaque fois que son héraut de givre touche un ennemi marqué par un talisman de fortune."
+    },
+    "upgradedDescription": {
+      "0": "Qiqi récupère 2 pts d'énergie élémentaire à chaque fois que son héraut de givre touche un ennemi marqué par un talisman de fortune.",
+      "1": "<strong>Radiance « Astroconduction »</strong> : Qiqi récupère également 6 pts d'énergie élémentaire lorsque l'attaque ou une attaque coordonnée du héraut de givre touche un ennemi, ceci pouvant être déclenché une fois toutes les 6 s."
     }
   },
   "constellation2": {
     "name": "Gelé jusqu'à l'os",
     "description": {
       "0": "Les attaques normales et chargées de Qiqi infligent 15 % de DGT supplémentaires contre les ennemis affectés par l'<cryo>élément Cryo</cryo>."
+    },
+    "upgradedDescription": {
+      "0": "Les attaques normales et chargées de Qiqi infligent 15 % de DGT supplémentaires contre les ennemis affectés par l'<cryo>élément Cryo</cryo>.",
+      "1": "<strong>Radiance « Astroconduction »</strong> : L'ATQ de Qiqi augmente de 50 %."
     }
   },
   "constellation3": {
@@ -142,6 +198,10 @@
     "name": "Répression divine",
     "description": {
       "0": "L'ATQ des cibles marquées par un talisman de fortune diminue de 20 %."
+    },
+    "upgradedDescription": {
+      "0": "L'ATQ des cibles marquées par un talisman de fortune diminue de 20 %.",
+      "1": "De plus, déclencher l'effet de soins d'un talisman de fortune soigne également le personnage proche ayant le pourcentage de PV restant le plus bas une fois pour une valeur équivalant à 180 % de l'ATQ de Qiqi."
     }
   },
   "constellation5": {
@@ -156,6 +216,11 @@
     "description": {
       "0": "L'activation d'<strong>Arcane d'Adepte : Talisman sacré</strong> réanime tous les personnages de l'équipe à proximité et restaure 50 % de leurs PV.",
       "1": "Cet effet peut être déclenché une fois toutes les 15 min."
+    },
+    "upgradedDescription": {
+      "0": "L'activation d'<strong>Arcane d'Adepte : Talisman sacré</strong> réanime tous les personnages de l'équipe à proximité et restaure 50 % de leurs PV.",
+      "1": "Cet effet peut être déclenché une fois toutes les 15 min.",
+      "2": "De plus, après l'utilisation d'<strong>Arcane d'Adepte : Talisman sacré</strong>, Qiqi obtient également 4 cumuls de l'effet <strong>Aperçu de mystère</strong>, et les DGT augmentent d'une valeur équivalant à 600 % de l'ATQ de Qiqi au prix d'un cumul d'<strong>Aperçu de mystère</strong> lorsque votre personnage déployé (hormis Qiqi) inflige des DGT de réaction d'Astroconduction. L'effet <strong>Aperçu de mystère</strong> dure un maximum de 12 s et utiliser <strong>Arcane d'Adepte : Talisman sacré</strong> réinitialise ses cumuls."
     }
   }
 }

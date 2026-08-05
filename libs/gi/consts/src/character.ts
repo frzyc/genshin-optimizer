@@ -173,6 +173,7 @@ export const nonTravelerCharacterKeys = [
   'RaidenShogun',
   'Razor',
   'Rosaria',
+  'Sandrone',
   'SangonomiyaKokomi',
   'Sayu',
   'Sethos',

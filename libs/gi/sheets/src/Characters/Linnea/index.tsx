@@ -25,7 +25,6 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { TalentSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
 import {
   dataObjForCharacterSheet,
@@ -33,6 +32,7 @@ import {
   healNodeTalent,
   plungingDmgNodes,
 } from '../dataUtil'
+import type { TalentSheet } from '../ICharacterSheet'
 
 const key: CharacterKey = 'Linnea'
 const skillParam_gen = allStats.char.skillParam[key]
@@ -144,7 +144,7 @@ const a4_eleMas = greaterEq(
   4,
   prod(percent(dm.passive2.eleMas), input.premod.def)
 )
-const a4Active_teammate_eleMasDisp = equal(active.isMoonsign, 1, {
+const a4Active_teammate_eleMasDisp = equal(active.flags.isMoonsign, 1, {
   ...a4_eleMas,
 })
 const a4Active_teammate_eleMas = equal(
@@ -152,7 +152,7 @@ const a4Active_teammate_eleMas = equal(
   target.charKey,
   a4Active_teammate_eleMasDisp
 )
-const a4Active_self_eleMas = unequal(active.isMoonsign, 1, {
+const a4Active_self_eleMas = unequal(active.flags.isMoonsign, 1, {
   ...a4_eleMas,
 })
 
@@ -168,7 +168,8 @@ const c1TeamStacks_lunarcrystallize_dmgInc = greaterEq(
         input.constellation,
         6,
         percent(
-          dm.constellation6.lunarcrystallize_dmgInc +
+          dm.constellation6.stacksConsumed *
+            dm.constellation6.lunarcrystallize_dmgInc *
             dm.constellation1.lunarcrystallize_dmgInc
         ),
         percent(dm.constellation1.lunarcrystallize_dmgInc)
@@ -196,7 +197,19 @@ const c1LumiStacks = lookup(
 const c1LumiStacks_lunarcrystallize_dmgInc = greaterEq(
   input.constellation,
   1,
-  prod(c1LumiStacks, percent(dm.constellation1.lumi_dmgInc), input.total.def)
+  prod(
+    c1LumiStacks,
+    threshold(
+      input.constellation,
+      6,
+      percent(
+        dm.constellation6.lunarcrystallize_dmgInc *
+          dm.constellation1.lumi_dmgInc
+      ),
+      percent(dm.constellation1.lumi_dmgInc)
+    ),
+    input.total.def
+  )
 )
 
 const [condC2MoondriftPath, condC2Moondrift] = cond(key, 'c2Moondrift')
@@ -295,10 +308,10 @@ const dmgFormulas = {
   },
   passive2: {
     a4_eleMas: compareEq(
-      active.isMoonsign,
+      active.flags.isMoonsign,
       1,
       a4Active_teammate_eleMasDisp,
-      unequal(active.isMoonsign, 1, a4Active_self_eleMas)
+      unequal(active.flags.isMoonsign, 1, a4Active_self_eleMas)
     ),
   },
   passive3: {
@@ -338,7 +351,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       lunarcrystallize_specialDmg_: c6Gleam_lunarcrystallize_specialDmg_,
     },
   },
-  isMoonsign: constant(1),
+  flags: { isMoonsign: constant(1) },
 })
 
 const sheet: TalentSheet = {
@@ -360,12 +373,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.aimed, {
-            name: ct.chg(`auto.skillParams.3`),
+            name: ct.chg('auto.skillParams.3'),
           }),
         },
         {
           node: infoMut(dmgFormulas.charged.fullyAimed, {
-            name: ct.chg(`auto.skillParams.4`),
+            name: ct.chg('auto.skillParams.4'),
           }),
         },
       ],
@@ -399,17 +412,17 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.pummelerDmg, {
-            name: ct.chg(`skill.skillParams.0`),
+            name: ct.chg('skill.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.hammerDmg, {
-            name: ct.chg(`skill.skillParams.1`),
+            name: ct.chg('skill.skillParams.1'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.crushDmg, {
-            name: ct.chg(`skill.skillParams.2`),
+            name: ct.chg('skill.skillParams.2'),
           }),
         },
         {
@@ -431,12 +444,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.initialHeal, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.continuousHeal, {
-            name: ct.chg(`burst.skillParams.1`),
+            name: ct.chg('burst.skillParams.1'),
           }),
         },
         {
@@ -505,7 +518,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.passive.fullyAimed, {
-            name: ct.chg(`auto.skillParams.4`),
+            name: ct.chg('auto.skillParams.4'),
           }),
         },
       ],

@@ -2,7 +2,7 @@
   "setName": "Disenchantment in Deep Shadow",
   "setEffects": {
     "2": "ATK +18%.",
-    "4": "DMG reaksi Superconduct +80%. Saat Karakter yang mengenakan menyerang musuh yang terpengaruh oleh reaksi Superconduct, CRIT Rate dari serangan ini +16%. Dalam perjalanan ke Snezhnaya, mungkin kamu akan mendapatkan berkah baru ...."
+    "4": "DMG yang diakibatkan reaksi Superconduct +80%, DMG yang diakibatkan reaksi Stellar-Conduct +40%. Saat Karakter yang mengenakan menyerang musuh yang terpengaruh oleh reaksi Superconduct atau Stellar-Conduct, CRIT Rate serangan ini +16%."
   },
   "pieces": {
     "flower": {

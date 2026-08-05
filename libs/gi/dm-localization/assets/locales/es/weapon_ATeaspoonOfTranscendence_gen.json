@@ -1,0 +1,29 @@
+{
+  "name": "Llave de la Trascendencia",
+  "description": {
+    "0": "Un objeto fantástico con infinitas definiciones, presente en un sinfín de historias. A escala universal u onírica, en esencia, no hay diferencia entre la espada sagrada de un héroe y la cucharita de té de una princesa, o entre una fría máquina y la llave que abre la puerta de la trascendencia."
+  },
+  "passiveName": "Coronación del hada blanca",
+  "passiveDescription": {
+    "0": {
+      "0": "El ATQ aumenta en un <cryo>28%</cryo>.",
+      "1": "Además, cada vez que el portador de esta arma golpee a un enemigo con un Ataque Cargado, obtendrá brevemente el efecto de “trascendencia”, el cual aumenta en un <cryo>16%</cryo> su daño de Superconductor Estelar durante 5 s. Este efecto puede acumularse hasta 3 veces y solo se puede obtener 1 carga cada 0.2 s."
+    },
+    "1": {
+      "0": "El ATQ aumenta en un <cryo>35%</cryo>.",
+      "1": "Además, cada vez que el portador de esta arma golpee a un enemigo con un Ataque Cargado, obtendrá brevemente el efecto de “trascendencia”, el cual aumenta en un <cryo>20%</cryo> su daño de Superconductor Estelar durante 5 s. Este efecto puede acumularse hasta 3 veces y solo se puede obtener 1 carga cada 0.2 s."
+    },
+    "2": {
+      "0": "El ATQ aumenta en un <cryo>42%</cryo>.",
+      "1": "Además, cada vez que el portador de esta arma golpee a un enemigo con un Ataque Cargado, obtendrá brevemente el efecto de “trascendencia”, el cual aumenta en un <cryo>24%</cryo> su daño de Superconductor Estelar durante 5 s. Este efecto puede acumularse hasta 3 veces y solo se puede obtener 1 carga cada 0.2 s."
+    },
+    "3": {
+      "0": "El ATQ aumenta en un <cryo>49%</cryo>.",
+      "1": "Además, cada vez que el portador de esta arma golpee a un enemigo con un Ataque Cargado, obtendrá brevemente el efecto de “trascendencia”, el cual aumenta en un <cryo>28%</cryo> su daño de Superconductor Estelar durante 5 s. Este efecto puede acumularse hasta 3 veces y solo se puede obtener 1 carga cada 0.2 s."
+    },
+    "4": {
+      "0": "El ATQ aumenta en un <cryo>56%</cryo>.",
+      "1": "Además, cada vez que el portador de esta arma golpee a un enemigo con un Ataque Cargado, obtendrá brevemente el efecto de “trascendencia”, el cual aumenta en un <cryo>32%</cryo> su daño de Superconductor Estelar durante 5 s. Este efecto puede acumularse hasta 3 veces y solo se puede obtener 1 carga cada 0.2 s."
+    }
+  }
+}

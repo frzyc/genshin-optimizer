@@ -13,7 +13,6 @@ import {
 import {
   CharMechanicsGroupedDisplay,
   TagDisplay,
-  useDebugFormulaClick,
 } from '@genshin-optimizer/zzz/formula-ui'
 import { Box } from '@mui/material'
 
@@ -50,15 +49,10 @@ const yixuanDocs: Document[] = [
   },
 ]
 function MinimalSheetDocs({ docs }: { docs: Document[] }) {
-  const onClickFormula = useDebugFormulaClick()
   return (
     <>
       {docs.map((doc, index) => (
-        <DocumentDisplay
-          key={index}
-          document={doc}
-          onClickFormula={onClickFormula}
-        />
+        <DocumentDisplay key={index} document={doc} />
       ))}
     </>
   )

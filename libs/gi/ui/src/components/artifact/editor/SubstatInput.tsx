@@ -212,7 +212,7 @@ export function SubstatInput({
                 onClick={() =>
                   setSubstat(
                     index,
-                    { key, value: parseFloat(newValue) },
+                    { key, value: Number.parseFloat(newValue) },
                     isUnactivatedSubstat
                   )
                 }
@@ -288,7 +288,7 @@ export function SubstatInput({
                       }
                       sx={{ padding: 0 }}
                       disabled={!artifact || level > 0}
-                    ></Checkbox>
+                    />
                   }
                   sx={{ ml: 1 }}
                 />
@@ -343,8 +343,8 @@ function SliderWrapper({
       marks={marks}
       min={0}
       max={marks[marks.length - 1]?.value ?? 0}
-      onChange={(e, v) => setinnerValue(v as number)}
-      onChangeCommitted={(e, v) => setValue(v as number)}
+      onChange={(_e, v) => setinnerValue(v as number)}
+      onChangeCommitted={(_e, v) => setValue(v as number)}
       valueLabelDisplay="auto"
     />
   )

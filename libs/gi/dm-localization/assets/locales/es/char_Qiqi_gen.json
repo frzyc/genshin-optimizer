@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -52,6 +56,20 @@
       "4": "<br/>",
       "5": "<i>“Utilizo esto para evitar el aumento de la temperatura y la podredumbre de... las valiosas hierbas medicinales del Dr. Baizhu”</i>."
     },
+    "upgradedDescription": {
+      "0": "Usando su talismán de sangre helada, Qiqi invoca al Heraldo de la escarcha e inflige <cryo>Daño Cryo</cryo> a todos los enemigos cercanos.",
+      "1": "<br/>",
+      "2": "<strong>Heraldo de la escarcha</strong>",
+      "3": [
+        "Cuando Qiqi golpea a un objetivo con sus Ataques Normales o Cargados, regenera Vida para tus personajes del equipo y los personajes aliados cercanos. La cantidad de Vida regenerada es proporcional al ATQ de Qiqi.",
+        "Regenera periódicamente una cierta cantidad de Vida a tu personaje en uso.",
+        "Sigue al personaje en uso para infligir <cryo>Daño Cryo</cryo> a todos los enemigos que se encuentre a su paso.",
+        "Cuando tu personaje en uso del equipo golpee a un enemigo con un ataque, el Heraldo de la escarcha ejecutará un ataque coordinado que inflige <cryo>Daño Cryo</cryo>."
+      ],
+      "4": "<br/>",
+      "5": "<br/>",
+      "6": "<i>“Utilizo esto para evitar el aumento de la temperatura y la podredumbre de... las valiosas hierbas medicinales del Dr. Baizhu”.</i>"
+    },
     "skillParams": {
       "0": "Daño de habilidad",
       "1": "Curación al golpear",
@@ -59,16 +77,20 @@
       "3": "Daño de Heraldo de la escarcha",
       "4": "Duración",
       "5": "TdE",
-      "6": "",
-      "7": "",
-      "8": "",
+      "6": "Daño de ataque coordinado del Heraldo de la escarcha",
+      "7": "TdE de ataque coordinado del Heraldo de la escarcha",
+      "8": "TdE",
       "9": "",
       "10": "",
       "11": "",
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -82,13 +104,24 @@
       "5": "<i>“Soy la Preservadora de la Fortuna, la Doncella de la Resurrección”.</i>",
       "6": "<i>—Qiqi no recuerda cuándo dijo estas palabras.</i>"
     },
+    "upgradedDescription": {
+      "0": "Qiqi libera el poder adéptico sellado dentro de su cuerpo para marcar a los enemigos cercanos con un talismán de conservación de la fortuna e infligir <cryo>Daño Cryo</cryo>.",
+      "1": "<strong>Esplendor: Superconductor Estelar</strong>",
+      "2": "Inflige una vez adicional <cryo>Daño Cryo</cryo> considerado como daño de Superconductor Estelar.",
+      "3": "<br/>",
+      "4": "<strong>Talismán de conservación de la fortuna</strong>",
+      "5": "Cuando los enemigos marcados con el talismán reciban daño, el personaje que infligió el daño recuperará Vida.",
+      "6": "<br/>",
+      "7": "<i>“Soy la Preservadora de la Fortuna, la Doncella de la Resurrección”.</i>",
+      "8": "<i>Qiqi no recuerda cuándo dijo estas palabras.</i>"
+    },
     "skillParams": {
       "0": "Daño de habilidad",
       "1": "Curación",
       "2": "Duración",
       "3": "TdE",
       "4": "Energía Elemental",
-      "5": "",
+      "5": "Daño de Superconductor Estelar",
       "6": "",
       "7": "",
       "8": "",
@@ -98,7 +131,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -111,6 +148,11 @@
     "name": "Apertura arcana",
     "description": {
       "0": "Cuando Qiqi golpea a sus enemigos con un Ataque Normal o Cargado, tiene un 50% de probabilidad de ponerles un talismán de conservación de la fortuna durante 6 s. Este efecto solo puede activarse una vez cada 30 s."
+    },
+    "upgradedDescription": {
+      "0": "Cuando Qiqi golpea a un enemigo con un Ataque Normal o Cargado, tiene un 50% de probabilidad de añadirle un talismán de conservación de la fortuna durante 6 s. Este efecto solo se puede activar una vez cada 30 s.",
+      "1": "<strong>Esplendor: Superconductor Estelar</strong>",
+      "2": "La probabilidad de que se active este efecto aumenta al 100% y su TdE se reduce a 15 s."
     }
   },
   "passive3": {
@@ -119,16 +161,35 @@
       "0": "Muestra la ubicación de los <strong>objetos típicos de Liyue</strong> cercanos en el minimapa."
     }
   },
+  "lockedPassive": {
+    "name": "Siete tesoros sagrados",
+    "description": {
+      "0": "El TdE de la Habilidad Elemental, <strong>Magia Adeptus: Heraldo de la escarcha</strong>, se reduce a 15 s.",
+      "1": "<strong>Esplendor: Superconductor Estelar</strong>",
+      "2": "Mientras el Heraldo de la escarcha esté activo, el daño de las reacciones de Superconductor y Superconductor Estelar de tus personajes del equipo aumentará en un 50%.",
+      "3": "Además, Qiqi entrará en el estado de <strong>esplendor: Superconductor Estelar</strong> mientras se encuentre dentro de un <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>campo estrellapolar</strong></tooltip>."
+    }
+  },
   "constellation1": {
     "name": "Ascetismo de la escarcha",
     "description": {
       "0": "Qiqi regenera 2 pts. de Energía Elemental cuando el Heraldo de la escarcha golpea a un enemigo marcado por un talismán de conservación de la fortuna."
+    },
+    "upgradedDescription": {
+      "0": "Qiqi recupera 2 pts. de Energía Elemental cuando el Heraldo de la escarcha golpea a un enemigo marcado por un talismán de conservación de la fortuna.",
+      "1": "<strong>Esplendor: Superconductor Estelar</strong>",
+      "2": "Qiqi también recupera 6 pts. de Energía Elemental cuando el Heraldo de la escarcha golpea a un enemigo con un ataque o con un ataque coordinado. Este efecto solo se puede activar una vez cada 6 s."
     }
   },
   "constellation2": {
     "name": "Frío polar",
     "description": {
       "0": "El daño del Ataque Normal y Cargado de Qiqi aumenta en un 15% contra enemigos afectados por <cryo>Cryo</cryo>."
+    },
+    "upgradedDescription": {
+      "0": "El daño del Ataque Normal y Cargado de Qiqi aumenta en un 15% contra los enemigos afectados por <cryo>Cryo</cryo>.",
+      "1": "<strong>Esplendor: Superconductor Estelar</strong>",
+      "2": "El ATQ de Qiqi aumenta en un 50%."
     }
   },
   "constellation3": {
@@ -142,6 +203,10 @@
     "name": "Supresión divina",
     "description": {
       "0": "Reduce en un 20% el ATQ de los objetivos marcados por el talismán de conservación de la fortuna."
+    },
+    "upgradedDescription": {
+      "0": "Reduce en un 20% el ATQ de los objetivos marcados por el talismán de conservación de la fortuna.",
+      "1": "Además, al activarse el efecto de curación del talismán de conservación de la fortuna, se restaurará Vida una vez adicional al personaje cercano con el porcentaje de Vida más bajo en una cantidad equivalente al 180% del ATQ de Qiqi."
     }
   },
   "constellation5": {
@@ -156,6 +221,11 @@
     "description": {
       "0": "Al lanzar la habilidad <strong>Magia Adeptus: Preservadora de la fortuna</strong>, revive a todos los miembros del equipo cercanos que han sido derrotados y regenera un 50% de su Vida.",
       "1": "Solo puede ocurrir una vez cada 15 min."
+    },
+    "upgradedDescription": {
+      "0": "Al usar <strong>Magia Adeptus: Preservadora de la fortuna</strong>, revive a todos los miembros del equipo cercanos que han sido derrotados y regenera un 50% de su Vida.",
+      "1": "Este efecto solo se puede activar una vez cada 15 min.",
+      "2": "Además, tras usar <strong>Magia Adeptus: Preservadora de la fortuna</strong>, Qiqi obtendrá 4 cargas de <strong>misticismo</strong>. Cuando tu personaje en uso del equipo (a excepción de Qiqi) inflija daño de Superconductor Estelar, consumirá 1 carga de <strong>misticismo</strong> para aumentar el daño infligido en una cantidad equivalente al 600% del ATQ de Qiqi. Como máximo, el efecto de <strong>misticismo</strong> puede durar hasta 12 s y las cargas se reiniciarán al usar <strong>Magia Adeptus: Preservadora de la fortuna</strong>."
     }
   }
 }

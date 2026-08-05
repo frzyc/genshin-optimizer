@@ -1,6 +1,6 @@
 import type {
-  DataEntryBase,
   Database,
+  DataEntryBase,
 } from '@genshin-optimizer/common/database'
 import { useCallback, useSyncExternalStore } from 'react'
 export function useDataEntryBase<

@@ -1,5 +1,5 @@
-import type { BuildResult, Progress, Work } from './common'
-import { Worker, type WorkerConfig } from './worker'
+import type { BuildResult, Progress, Work } from './common.js'
+import { Worker, type WorkerConfig } from './worker.js'
 
 declare function postMessage(res: Response): void
 

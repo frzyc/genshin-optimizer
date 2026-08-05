@@ -135,7 +135,7 @@ describe('example', () => {
     // Simple check that all tags are in the correct format
     const names: string[] = []
     for (const { name, move, ...tag } of listing.filter(
-      (x) => x.sheet === 'Nahida' && x.qt == 'formula' // exclude stats
+      (x) => x.sheet === 'Nahida' && x.qt === 'formula' // exclude stats
     )) {
       names.push(name!)
       expect(name).toBeTruthy()
@@ -218,8 +218,8 @@ describe('example', () => {
     // Step 2: Detach nodes from Calculator
     const allArts = new Set(allArtifactSetKeys) // Cache for fast lookup, put in global
     let detached = detach(nodes, calc, (tag: Tag) => {
-      if (tag['src'] != '0') return undefined // Wrong member
-      if (tag['et'] != 'own') return undefined // Not applied (only) to 'own'
+      if (tag['src'] !== '0') return undefined // Wrong member
+      if (tag['et'] !== 'own') return undefined // Not applied (only) to 'own'
 
       if (tag['sheet'] === 'dyn' && tag['qt'] === 'premod')
         return { q: tag['q']! } // Art stat bonus

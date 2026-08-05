@@ -123,6 +123,9 @@ export class Read extends BaseRead<Tag> {
   get lunarcrystallize(): Read {
     return super.with('trans', 'lunarcrystallize')
   }
+  get stellarconduct(): Read {
+    return super.with('trans', 'stellarconduct')
+  }
   get vaporize(): Read {
     return super.with('amp', 'vaporize')
   }
@@ -196,7 +199,7 @@ export function tagStr(tag: Tag, ex?: any): string {
     includedBar = false
   function required(str: string | undefined | null, name: string) {
     if (!str && str !== null) return
-    result += str === null ? `!${name} ` : str + ' '
+    result += str === null ? `!${name} ` : `${str} `
     includedRequired = true
   }
   function optional(str: string | undefined | null, name: string) {
@@ -205,7 +208,7 @@ export function tagStr(tag: Tag, ex?: any): string {
       includedBar = true
       result += '| '
     }
-    result += str === null ? `!${name} ` : str + ' '
+    result += str === null ? `!${name} ` : `${str} `
   }
   required(name && `#${name}`, 'name')
   required(preset, 'preset')
@@ -224,5 +227,5 @@ export function tagStr(tag: Tag, ex?: any): string {
   optional(amp, 'amp')
   optional(cata, 'cata')
   if (ex) result += `[${ex}] `
-  return result + '}'
+  return `${result}}`
 }

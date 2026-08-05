@@ -1,6 +1,6 @@
 import { deepFreeze } from '@genshin-optimizer/common/util'
-import type { Database } from './Database'
 import type { TriggerString } from './common'
+import type { Database } from './Database'
 
 export class DataEntryBase<
   // Key used to reference this data entry
@@ -59,7 +59,7 @@ export class DataEntryBase<
   set(
     valueOrFunc:
       | Partial<StorageValue>
-      | ((v: StorageValue) => Partial<StorageValue> | void)
+      | ((v: StorageValue) => Partial<StorageValue> | undefined)
   ): boolean {
     const old = this.getStorage()
     const value =

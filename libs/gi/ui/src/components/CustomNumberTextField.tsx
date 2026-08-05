@@ -1,6 +1,7 @@
 import type { TextFieldProps } from '@mui/material'
 import { TextField } from '@mui/material'
 import { useCallback, useEffect, useState } from 'react'
+
 type props = Omit<TextFieldProps, 'value' | 'onChange'> & {
   value?: number | undefined
   onChange: (newValue: number | undefined) => void
@@ -18,7 +19,7 @@ export function CustomNumberTextField({
   const [state, setState] = useState('')
   const sendChange = useCallback(() => {
     if (state === '') return onChange(0)
-    const parseFunc = float ? parseFloat : parseInt
+    const parseFunc = float ? Number.parseFloat : Number.parseInt
     onChange(parseFunc(state))
   }, [onChange, state, float])
   useEffect(() => setState(value?.toString() ?? ''), [value, setState]) // update value on value change

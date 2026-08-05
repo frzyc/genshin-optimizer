@@ -268,7 +268,7 @@ export class UIData {
     return first ? this.computeNode(first) : illformedStr
   }
   private _small(nodes: readonly StrNode[]): CalcResult<string | undefined> {
-    let smallest: CalcResult<string | undefined> | undefined = undefined
+    let smallest: CalcResult<string | undefined> | undefined
     for (const node of nodes) {
       const candidate = this.computeNode(node)
       if (
@@ -412,6 +412,7 @@ function accumulateInfo<V>(operands: CalcResult<V>[]): Info {
       case 'hyperbloom':
       case 'lunarbloom':
       case 'lunarcrystallize':
+      case 'stellarconduct':
       case 'vaporize':
       case 'melt':
       case 'spread':

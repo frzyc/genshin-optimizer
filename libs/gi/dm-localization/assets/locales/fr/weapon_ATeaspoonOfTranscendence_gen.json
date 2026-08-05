@@ -1,0 +1,29 @@
+{
+  "name": "Une cuillerée de transcendance",
+  "description": {
+    "0": "Un objet de fantaisie aux mille définitions, au sein d'un océan infini de récits. À l'échelle de l'univers ou du royaume des rêves, il n'y a guère de différence entre l'épée sacrée du brave guerrier et la cuillère à café de la princesse, ni entre le ressort glacé d'une horloge et la clé qui ouvrira les portes de la transcendance..."
+  },
+  "passiveName": "Promotion de la fée blanche",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente l'ATQ du personnage équipé de l'arme de <cryo>28 %</cryo>.",
+      "1": "De plus, chaque fois que le personnage équipé de l'arme a touché un ennemi avec une attaque chargée, il obtient une transcendance temporaire : augmente ses DGT de réaction d'Astroconduction de <cryo>16 %</cryo> pendant 5 s. Cet effet peut être cumulé 3 fois maximum et déclenché une fois toutes les 0,2 s."
+    },
+    "1": {
+      "0": "Augmente l'ATQ du personnage équipé de l'arme de <cryo>35 %</cryo>.",
+      "1": "De plus, chaque fois que le personnage équipé de l'arme a touché un ennemi avec une attaque chargée, il obtient une transcendance temporaire : augmente ses DGT de réaction d'Astroconduction de <cryo>20 %</cryo> pendant 5 s. Cet effet peut être cumulé 3 fois maximum et déclenché une fois toutes les 0,2 s."
+    },
+    "2": {
+      "0": "Augmente l'ATQ du personnage équipé de l'arme de <cryo>42 %</cryo>.",
+      "1": "De plus, chaque fois que le personnage équipé de l'arme a touché un ennemi avec une attaque chargée, il obtient une transcendance temporaire : augmente ses DGT de réaction d'Astroconduction de <cryo>24 %</cryo> pendant 5 s. Cet effet peut être cumulé 3 fois maximum et déclenché une fois toutes les 0,2 s."
+    },
+    "3": {
+      "0": "Augmente l'ATQ du personnage équipé de l'arme de <cryo>49 %</cryo>.",
+      "1": "De plus, chaque fois que le personnage équipé de l'arme a touché un ennemi avec une attaque chargée, il obtient une transcendance temporaire : augmente ses DGT de réaction d'Astroconduction de <cryo>28 %</cryo> pendant 5 s. Cet effet peut être cumulé 3 fois maximum et déclenché une fois toutes les 0,2 s."
+    },
+    "4": {
+      "0": "Augmente l'ATQ du personnage équipé de l'arme de <cryo>56 %</cryo>.",
+      "1": "De plus, chaque fois que le personnage équipé de l'arme a touché un ennemi avec une attaque chargée, il obtient une transcendance temporaire : augmente ses DGT de réaction d'Astroconduction de <cryo>32 %</cryo> pendant 5 s. Cet effet peut être cumulé 3 fois maximum et déclenché une fois toutes les 0,2 s."
+    }
+  }
+}

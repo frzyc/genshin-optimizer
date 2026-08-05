@@ -6,7 +6,7 @@ import {
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import type { Sheet, Tag } from '@genshin-optimizer/zzz/formula'
 import { primaryTagFromField } from '../formulaFieldUtil'
-import { type TalentSheetElementKey, allTalentSheetElementKey } from './consts'
+import { allTalentSheetElementKey, type TalentSheetElementKey } from './consts'
 import { charSheets } from './sheets'
 
 export type { TalentSheetElementKey }

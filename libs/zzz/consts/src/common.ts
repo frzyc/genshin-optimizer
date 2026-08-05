@@ -80,6 +80,7 @@ export const allAttributeKeys = [
   'physical',
   'ether',
   'wind',
+  'lumiflux',
 ] as const
 export type AttributeKey = (typeof allAttributeKeys)[number]
 
@@ -92,6 +93,18 @@ export const allAttributeDamageKeys = [
   'wind_dmg_',
 ] as const
 export type AttributeDamageKey = (typeof allAttributeDamageKeys)[number]
+
+// Attribute keys which can proc anomaly effects
+// Also used for Remielle's infusion
+export const allAttributeAnomalyKeys = [
+  'electric',
+  'fire',
+  'ice',
+  'physical',
+  'ether',
+  'wind',
+] as const
+export type AttributeAnomalyKey = (typeof allAttributeAnomalyKeys)[number]
 
 export const allAnomalyDmgKeys = [
   'burn',
@@ -204,6 +217,7 @@ export const elementalData: Record<AttributeKey, string> = {
   physical: 'Physical',
   ether: 'Ether',
   wind: 'Wind',
+  lumiflux: 'Lumiflux',
 } as const
 
 Object.entries(elementalData).forEach(([e, name]) => {

@@ -2,15 +2,15 @@ export const deobfPropMappings = {
   // AvatarSkillExcelConfigData, correlates to 465838203 in first object
   // AvatarTalentExcelConfigData, correlates to 1775626709 in first object
   // ProudSkillExcelConfigData, correlates to 2132035084 in first object
-  upgradedDescTextMapHash: 'BDLFGGJDHLI',
+  upgradedDescTextMapHash: 'OBHFOBHLHFK',
   // AvatarSkillDepotExcelConfigData, correlates to 5-length array in first object
-  inherentProudSkillOpens: 'LHNAJLJNBAH',
+  inherentProudSkillOpens: 'BOIOJNENKHP',
   // AvatarSkillDepotExcelConfigData, correlates to obfuscated property in 5-length array in first object
-  needAvatarPromoteLevel: 'KGGNNMEALJM',
+  needAvatarPromoteLevel: 'CCHNLJKDDKI',
   // AvatarSkillDepotExcelConfigData, correlates to 2-length array in first object
-  lockedProudSkillOpens: 'NMKACHALCPO',
+  lockedProudSkillOpens: 'EIBOFEEGGID',
   // AvatarSkillDepotExcelConfigData, correlates to array property in 2-length array in first object
-  numberArray: 'CKBELEONLAH',
+  numberArray: 'EACFHNOICDN',
   // AvatarSkillDepotExcelConfigData, correlates to string property in 2-length array in first object
-  unlockCondition: 'MIEAPIAGKHJ',
+  unlockCondition: 'POHEDLHDCEJ',
 } as const

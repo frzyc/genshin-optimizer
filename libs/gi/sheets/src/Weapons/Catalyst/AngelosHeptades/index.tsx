@@ -1,4 +1,4 @@
-import { type WeaponKey } from '@genshin-optimizer/gi/consts'
+import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import {
   active,
   equal,
@@ -16,8 +16,8 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, nonStackBuff, st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
-import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
+import { headerTemplate, WeaponSheet } from '../../WeaponSheet'
 
 const key: WeaponKey = 'AngelosHeptades'
 
@@ -51,7 +51,7 @@ const [offFieldHex_dmg_disp, offFieldHex_dmg_inactive] = nonStackBuff(
   prod(percent(0.5), dmg_node)
 )
 const offFieldHex_dmg_ = equal(
-  target.isHexerei,
+  target.flags.isHexerei,
   1,
   unequal(active.charKey, target.charKey, offFieldHex_dmg_disp)
 )

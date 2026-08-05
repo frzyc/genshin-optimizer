@@ -1,5 +1,5 @@
 import { objKeyMap } from '@genshin-optimizer/common/util'
-import { type WeaponKey, allElementKeys } from '@genshin-optimizer/gi/consts'
+import { allElementKeys, type WeaponKey } from '@genshin-optimizer/gi/consts'
 import {
   equal,
   infoMut,
@@ -12,8 +12,8 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
-import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
+import { headerTemplate, WeaponSheet } from '../../WeaponSheet'
 
 const key: WeaponKey = 'FlowingPurity'
 const [, trm] = trans('weapon', key)

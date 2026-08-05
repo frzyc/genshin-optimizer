@@ -16,17 +16,17 @@ import {
 } from '@genshin-optimizer/gi/util'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import {
+  alpha,
   Box,
   CardActionArea,
   Chip,
   Typography,
-  alpha,
   useTheme,
 } from '@mui/material'
 import type { ReactNode } from 'react'
 import { useCallback } from 'react'
-import { StatColoredWithUnit } from '../StatDisplay'
 import { CharIconSide } from '../character'
+import { StatColoredWithUnit } from '../StatDisplay'
 import { ArtifactTooltip } from './ArtifactTooltip'
 import { artifactLevelVariant } from './util'
 
@@ -220,7 +220,10 @@ export function ArtifactCardNano({
 function SubstatDisplay({
   stat,
   isActiveStat = true,
-}: { stat: ICachedSubstat; isActiveStat?: boolean }) {
+}: {
+  stat: ICachedSubstat
+  isActiveStat?: boolean
+}) {
   if (!stat.value) return null
   const numRolls = stat.rolls?.length ?? 0
   const rollColor = `roll${clamp(numRolls, 1, 6)}`

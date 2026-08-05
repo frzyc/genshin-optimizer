@@ -10,12 +10,12 @@ import {
 } from '@genshin-optimizer/sr/consts'
 import type { AvatarSkillTreeConfig, Rank } from '@genshin-optimizer/sr/dm'
 import {
-  DmAttackTypeMap,
   avatarConfig,
   avatarRankConfig,
   avatarSkillConfig,
   avatarSkillTreeConfig,
   characterIdMap,
+  DmAttackTypeMap,
 } from '@genshin-optimizer/sr/dm'
 import { convertToHash } from '../util'
 

@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -52,6 +56,19 @@
       "4": "<br/>",
       "5": "<i>Lo uso per evitare che... i preziosi ingredienti del dottor Bai si riscaldino e marciscano. Sì.</i>"
     },
+    "upgradedDescription": {
+      "0": "Usando il Talismano glaciale, Qiqi richiama il Messaggero del gelo, infliggendo <cryo>DAN da Cryo</cryo> agli avversari circostanti.",
+      "1": "<br/>",
+      "2": "<strong>Messaggero del gelo</strong>",
+      "3": [
+        " Quando vanno a segno, gli attacchi normali e caricati di Qiqi rigenerano i PS dei membri del tuo gruppo e dei compagni di squadra vicini. La guarigione varia in base all'ATT di Qiqi.",
+        " Rigenera periodicamente i PS del tuo personaggio attivo.",
+        " Segue il personaggio, infliggendo <cryo>DAN da Cryo</cryo> agli avversari sul percorso del personaggio."
+      ],
+      "4": "Se il tuo personaggio attivo colpisce un avversario con un attacco, il Messaggero del gelo esegue un attacco coordinato sull'avversario, infliggendo <cryo>DAN da Cryo</cryo>.",
+      "5": "<br/>",
+      "6": "<i>\"Lo uso per evitare che... i preziosi ingredienti del dottor Bai si riscaldino e marciscano. Sì.\"</i>"
+    },
     "skillParams": {
       "0": "DAN da abilità",
       "1": "RIGEN per colpo a segno",
@@ -59,28 +76,42 @@
       "3": "DAN da Messaggero del gelo",
       "4": "Durata",
       "5": "TdR",
-      "6": "",
-      "7": "",
-      "8": "",
+      "6": "DAN da attacco coordinato Messaggero del gelo",
+      "7": "TdR attacco coordinato Messaggero del gelo",
+      "8": "TdR",
       "9": "",
       "10": "",
       "11": "",
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
     "name": "Arte dell'Adeptus: Protettrice della fortuna",
     "description": {
-      "0": "Qiqi libera il potere dell'Adeptus sigillato nel suo corpo, marchiando gli avversari vicini con un Talismano proteggi fortuna che infligge <cryo>DAN da Cryo</cryo>.",
+      "0": "Qiqi libera il potere adeptico sigillato nel suo corpo, marchiando gli avversari vicini con un Talismano proteggi fortuna che infligge <cryo>DAN da Cryo</cryo>.",
       "1": "<br/>",
       "2": "<strong>Talismano proteggi fortuna</strong>",
-      "3": "Quando gli avversari colpiti da questo Talismano subiscono DAN, il personaggio che ha inflitto i DAN rigenera i suoi PS.",
+      "3": "Quando gli avversari colpiti dal Talismano subiscono DAN, i PS del personaggio che ha inflitto tali DAN si ripristinano.",
       "4": "<br/>",
       "5": "<i>\"Sono la protettrice della fortuna, la Sacerdotessa della resurrezione.\"</i>",
       "6": "<i>— Qiqi non ricorda queste parole.</i>"
+    },
+    "upgradedDescription": {
+      "0": "Qiqi libera il potere adeptico sigillato nel suo corpo, marchiando gli avversari vicini con un Talismano proteggi fortuna che infligge <cryo>DAN da Cryo</cryo>.",
+      "1": "Nello stato di <strong>Splendore: Astroconduzione</strong>, infligge un'iterazione di <cryo>DAN da Cryo</cryo> aggiuntiva. Tali DAN sono considerati DAN da Astroconduzione.",
+      "2": "<br/>",
+      "3": "<strong>Talismano proteggi fortuna</strong>",
+      "4": "Quando gli avversari colpiti dal Talismano subiscono DAN, i PS del personaggio che ha inflitto tali DAN si ripristinano.",
+      "5": "<br/>",
+      "6": "<i>\"Sono la protettrice della fortuna, la Sacerdotessa della resurrezione.\"</i>",
+      "7": "<i>— Qiqi non ricorda queste parole.</i>"
     },
     "skillParams": {
       "0": "DAN da abilità",
@@ -88,7 +119,7 @@
       "2": "Durata",
       "3": "TdR",
       "4": "Costo energia",
-      "5": "",
+      "5": "DAN da Astroconduzione",
       "6": "",
       "7": "",
       "8": "",
@@ -98,7 +129,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -111,6 +146,10 @@
     "name": "Mistero arcano",
     "description": {
       "0": "Quando Qiqi colpisce gli avversari con gli attacchi normali e caricati, ha un 50% di probabilità di marchiarli con un Talismano proteggi fortuna per 6 s. Si può verificare una sola volta ogni 30 s."
+    },
+    "upgradedDescription": {
+      "0": "Quando Qiqi colpisce gli avversari con gli attacchi normali e caricati, ha un 50% di probabilità di marchiarli con un Talismano proteggi fortuna per 6 s. Si può verificare una sola volta ogni 30 s.",
+      "1": "Nello stato di <strong>Splendore: Astroconduzione</strong>, la probabilità di innescare l'effetto aumenta a un 100% e il TdR si riduce a 15 s."
     }
   },
   "passive3": {
@@ -119,16 +158,32 @@
       "0": "Mostra sulla minimappa la posizione delle <strong>risorse uniche di Liyue</strong>."
     }
   },
+  "lockedPassive": {
+    "name": "Sette tesori sacri",
+    "description": {
+      "0": "Il TdR dell'abilità elementale <strong>Arte dell'Adeptus: Messaggero del gelo</strong> si riduce a 15 s.",
+      "1": "Nello stato di <strong>Splendore: Astroconduzione</strong>, mentre Messaggero del gelo è in campo, i DAN delle reazioni di Superconduzione e Astroconduzione dei personaggi nel gruppo di Qiqi aumentano di un 50%.",
+      "2": "Inoltre, quando si trova all'interno di un <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Campo astropolare</strong></tooltip>, Qiqi entra nello stato di <strong>Splendore: Astroconduzione</strong>."
+    }
+  },
   "constellation1": {
     "name": "Ascetismo del gelo",
     "description": {
       "0": "Quando il Messaggero del gelo colpisce un avversario marchiato da un Talismano proteggi fortuna, l'energia di Qiqi si rigenera di 2."
+    },
+    "upgradedDescription": {
+      "0": "Quando il Messaggero del gelo colpisce un avversario marchiato da un Talismano proteggi fortuna, l'energia di Qiqi si rigenera di 2.",
+      "1": "Nello stato di <strong>Splendore: Astroconduzione</strong>, l'energia elementale di Qiqi si rigenera di 6 quando gli attacchi e gli attacchi coordinati del Messaggero del gelo colpiscono gli avversari. Quest'effetto può attivarsi una volta ogni 6 s."
     }
   },
   "constellation2": {
     "name": "Freddo penetrante",
     "description": {
       "0": "I DAN degli attacchi normali e caricati di Qiqi contro gli avversari sotto l'effetto di <cryo>Cryo</cryo> aumentano di un 15%."
+    },
+    "upgradedDescription": {
+      "0": "I DAN degli attacchi normali e caricati di Qiqi contro gli avversari sotto l'effetto di <cryo>Cryo</cryo> aumentano di un 15%.",
+      "1": "Nello stato di <strong>Splendore: Astroconduzione</strong>, l'ATT di Qiqi aumenta di un 50%."
     }
   },
   "constellation3": {
@@ -142,6 +197,10 @@
     "name": "Soppressione divina",
     "description": {
       "0": "L'ATT dei bersagli marchiati dal Talismano proteggi fortuna si riduce di un 20%."
+    },
+    "upgradedDescription": {
+      "0": "L'ATT dei bersagli marchiati da un Talismano proteggi fortuna si riduce di un 20%.",
+      "1": "Inoltre, quando l'effetto di guarigione del Talismano proteggi fortuna si attiva, il membro del gruppo nelle vicinanze con la percentuale di PS rimanenti più bassa riceve anche una guarigione aggiuntiva pari a un 180% dell'ATT di Qiqi."
     }
   },
   "constellation5": {
@@ -154,8 +213,13 @@
   "constellation6": {
     "name": "Rito della rinascita",
     "description": {
-      "0": "<strong>Arte dell'Adeptus: Protettrice della fortuna</strong> rianima tutti i membri sconfitti del gruppo e rigenera un 50% dei loro PS.",
+      "0": "<strong>Arte dell'Adeptus: Protettrice della fortuna</strong> rianima tutti i membri del gruppo sconfitti nelle vicinanze e rigenera un 50% dei loro PS.",
       "1": "Si può verificare una sola volta ogni 15 min."
+    },
+    "upgradedDescription": {
+      "0": "<strong>Arte dell'Adeptus: Protettrice della fortuna</strong> rianima tutti i membri del gruppo sconfitti nelle vicinanze e rigenera un 50% dei loro PS.",
+      "1": "Si può verificare una sola volta ogni 15 min.",
+      "2": "Inoltre, dopo aver usato <strong>Arte dell'Adeptus: Protettrice della fortuna</strong>, Qiqi ottiene 4 accumuli di <strong>Scorcio misterioso</strong>, e quando il tuo personaggio attivo attuale (diverso da Qiqi) infligge DAN da Astroconduzione, consuma 1 accumulo di <strong>Scorcio misterioso</strong> per aumentare i DAN inflitti di un 600% dell'ATT di Qiqi. L'effetto di <strong>Scorcio misterioso</strong> dura fino a 12 s, e sprigionare nuovamente <strong>Arte dell'Adeptus: Protettrice della fortuna</strong> ne ripristina gli accumuli."
     }
   }
 }

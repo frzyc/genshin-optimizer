@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -66,7 +70,11 @@
       "12": "Cooldown",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -92,7 +100,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -125,7 +137,7 @@
     }
   },
   "constellation1": {
-    "name": "Yesterday's Breeze, Laden With Sorrowful Song",
+    "name": "O Breezes, That So Oft Bear Sorrowful Lament",
     "description": {
       "0": "Batas maksimum <tooltip ns=tooltips_gen baseKey18=11290004 values=[]><strong>Will to Win</strong></tooltip> Lohen meningkat menjadi 300% dari batas awalnya.",
       "1": "Selain itu, saat Lohen berada dalam mode <tooltip ns=tooltips_gen baseKey18=11290001 values=[]><strong>Masterstroke</strong></tooltip>, <strong>Will to Win</strong> yang diakumulasi anggota party lain di sekitar dengan cara mengakibatkan DMG akan bertambah menjadi 500% dari nilai awalnya."
@@ -138,7 +150,7 @@
     }
   },
   "constellation3": {
-    "name": "Only a Sharp Blade Can Heal This Hurt",
+    "name": "Only the Spear That Wounds Can Heal",
     "description": {
       "0": "Meningkatkan 3 level Elemental Skill <strong><tooltip ns=char_Lohen_gen baseKey18=skill>Unforeseen Strike</tooltip></strong>.",
       "1": "Maksimum: Lv. 15."

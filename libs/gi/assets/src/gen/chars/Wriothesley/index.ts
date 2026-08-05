@@ -12,6 +12,7 @@ import constellation4 from './UI_Talent_S_Wriothesley_03.png'
 import constellation6 from './UI_Talent_S_Wriothesley_04.png'
 import passive1 from './UI_Talent_S_Wriothesley_05.png'
 import passive2 from './UI_Talent_S_Wriothesley_06.png'
+import lockedPassive from './UI_Talent_S_Wriothesley_08.png'
 import constellation3 from './UI_Talent_U_Wriothesley_01.png'
 import constellation5 from './UI_Talent_U_Wriothesley_02.png'
 
@@ -27,6 +28,7 @@ const data = {
   constellation6,
   icon,
   iconSide,
+  lockedPassive,
   passive1,
   passive2,
   passive3,

@@ -2169,6 +2169,20 @@ export const formulas = {
       },
     },
   },
+  Sandrone: {
+    normal1: {
+      sheet: 'Sandrone',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Sandrone',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   SangonomiyaKokomi: {
     normal1: {
       sheet: 'SangonomiyaKokomi',

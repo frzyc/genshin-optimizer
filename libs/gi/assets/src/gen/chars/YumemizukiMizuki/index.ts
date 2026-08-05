@@ -12,6 +12,7 @@ import constellation6 from './UI_Talent_S_Mizuki_04.png'
 import passive1 from './UI_Talent_S_Mizuki_05.png'
 import passive2 from './UI_Talent_S_Mizuki_06.png'
 import passive3 from './UI_Talent_S_Mizuki_07.png'
+import lockedPassive from './UI_Talent_S_Mizuki_08.png'
 import constellation3 from './UI_Talent_U_Mizuki_01.png'
 import constellation5 from './UI_Talent_U_Mizuki_02.png'
 
@@ -27,6 +28,7 @@ const data = {
   constellation6,
   icon,
   iconSide,
+  lockedPassive,
   passive1,
   passive2,
   passive3,

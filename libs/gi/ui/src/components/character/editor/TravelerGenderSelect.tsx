@@ -1,7 +1,7 @@
 import {
   CharacterContext,
-  useDBMeta,
   useDatabase,
+  useDBMeta,
 } from '@genshin-optimizer/gi/db-ui'
 import FemaleIcon from '@mui/icons-material/Female'
 import MaleIcon from '@mui/icons-material/Male'

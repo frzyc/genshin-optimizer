@@ -385,13 +385,41 @@
     ]
   ],
   "passive3": [],
+  "lockedPassive": [
+    [
+      0.6
+    ],
+    [
+      0.3
+    ],
+    [
+      2
+    ],
+    [
+      0.3
+    ],
+    [
+      -0.4
+    ],
+    [
+      -0.2
+    ]
+  ],
   "constellation1": [
     2.5,
     1.5,
-    4
+    4,
+    0.5,
+    0.5,
+    5
   ],
   "constellation2": [
-    0.4
+    0.4,
+    0.25,
+    0.3,
+    -0.1,
+    0.2,
+    0.5
   ],
   "constellation3": [],
   "constellation4": [
@@ -399,13 +427,24 @@
     4,
     0.1,
     6,
-    0.2
+    0.2,
+    0.25,
+    0.2,
+    0.1
   ],
   "constellation5": [],
   "constellation6": [
     0.1,
     0.8,
-    1
+    1,
+    0.1,
+    0.8,
+    0.2
   ],
-  "upgradeableSkills": []
+  "upgradeableSkills": [
+    "constellation1",
+    "constellation2",
+    "constellation4",
+    "constellation6"
+  ]
 }

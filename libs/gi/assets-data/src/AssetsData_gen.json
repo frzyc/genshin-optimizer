@@ -376,6 +376,10 @@
       "icon": "UI_EquipIcon_Claymore_EnsisAquilonis",
       "awakenIcon": "UI_EquipIcon_Claymore_EnsisAquilonis_Awaken"
     },
+    "ATeaspoonOfTranscendence": {
+      "icon": "UI_EquipIcon_Claymore_CrystallineSword",
+      "awakenIcon": "UI_EquipIcon_Claymore_CrystallineSword_Awaken"
+    },
     "BeginnersProtector": {
       "icon": "UI_EquipIcon_Pole_Gewalt",
       "awakenIcon": "UI_EquipIcon_Pole_Gewalt_Awaken"
@@ -1539,6 +1543,7 @@
       "passive1": "UI_Talent_S_Beidou_05",
       "passive2": "UI_Talent_S_Beidou_06",
       "passive3": "UI_Talent_Explosion_Swim",
+      "lockedPassive": "UI_Talent_S_Beidou_08",
       "constellation1": "UI_Talent_S_Beidou_02",
       "constellation2": "UI_Talent_S_Beidou_01",
       "constellation3": "UI_Talent_U_Beidou_01",
@@ -1711,6 +1716,7 @@
       "passive1": "UI_Talent_S_Qiqi_05",
       "passive2": "UI_Talent_S_Qiqi_06",
       "passive3": "UI_Talent_Collect_Local_Liyue",
+      "lockedPassive": "UI_Talent_S_Qiqi_08",
       "constellation1": "UI_Talent_S_Qiqi_01",
       "constellation2": "UI_Talent_S_Qiqi_02",
       "constellation3": "UI_Talent_U_Qiqi_01",
@@ -1780,6 +1786,7 @@
       "passive1": "UI_Talent_S_Diona_05",
       "passive2": "UI_Talent_S_Diona_06",
       "passive3": "UI_Talent_Cook_Heal",
+      "lockedPassive": "UI_Talent_S_Diona_08",
       "constellation1": "UI_Talent_S_Diona_01",
       "constellation2": "UI_Talent_S_Diona_02",
       "constellation3": "UI_Talent_U_Diona_01",
@@ -2090,6 +2097,7 @@
       "passive1": "UI_Talent_S_Yae_05",
       "passive2": "UI_Talent_S_Yae_06",
       "passive3": "UI_Talent_S_Yae_07",
+      "lockedPassive": "UI_Talent_S_Yae_08",
       "constellation1": "UI_Talent_S_Yae_01",
       "constellation2": "UI_Talent_S_Yae_02",
       "constellation3": "UI_Talent_U_Yae_01",
@@ -2311,6 +2319,7 @@
       "passive1": "UI_Talent_S_Cyno_05",
       "passive2": "UI_Talent_S_Cyno_06",
       "passive3": "UI_Talent_S_Cyno_07",
+      "lockedPassive": "UI_Talent_S_Cyno_08",
       "constellation1": "UI_Talent_S_Cyno_01",
       "constellation2": "UI_Talent_S_Cyno_02",
       "constellation3": "UI_Talent_U_Cyno_01",
@@ -2566,6 +2575,7 @@
       "passive1": "UI_Talent_S_Wriothesley_05",
       "passive2": "UI_Talent_S_Wriothesley_06",
       "passive3": "UI_Talent_Combine_Weapon_Double",
+      "lockedPassive": "UI_Talent_S_Wriothesley_08",
       "constellation1": "UI_Talent_S_Wriothesley_01",
       "constellation2": "UI_Talent_S_Wriothesley_02",
       "constellation3": "UI_Talent_U_Wriothesley_01",
@@ -2965,6 +2975,7 @@
       "passive1": "UI_Talent_S_Mizuki_05",
       "passive2": "UI_Talent_S_Mizuki_06",
       "passive3": "UI_Talent_S_Mizuki_07",
+      "lockedPassive": "UI_Talent_S_Mizuki_08",
       "constellation1": "UI_Talent_S_Mizuki_01",
       "constellation2": "UI_Talent_S_Mizuki_02",
       "constellation3": "UI_Talent_U_Mizuki_01",
@@ -3346,6 +3357,24 @@
       "constellation4": "UI_Talent_S_Prune_03",
       "constellation5": "UI_Talent_U_Prune_02",
       "constellation6": "UI_Talent_S_Prune_04"
+    },
+    "Sandrone": {
+      "icon": "UI_AvatarIcon_MarionetteNew",
+      "iconSide": "UI_AvatarIcon_Side_MarionetteNew",
+      "banner": "UI_NameCardPic_MarionetteNew_P",
+      "bar": "UI_NameCardPic_MarionetteNew_Alpha",
+      "skill": "Skill_S_MarionetteNew_01",
+      "burst": "Skill_E_MarionetteNew_01_HD",
+      "passive1": "UI_Talent_S_MarionetteNew_05",
+      "passive2": "UI_Talent_S_MarionetteNew_06",
+      "passive3": "UI_Talent_S_MarionetteNew_07",
+      "passive": "UI_Talent_S_MarionetteNew_08",
+      "constellation1": "UI_Talent_S_MarionetteNew_01",
+      "constellation2": "UI_Talent_S_MarionetteNew_02",
+      "constellation3": "UI_Talent_U_MarionetteNew_01",
+      "constellation4": "UI_Talent_S_MarionetteNew_03",
+      "constellation5": "UI_Talent_U_MarionetteNew_02",
+      "constellation6": "UI_Talent_S_MarionetteNew_04"
     },
     "TravelerAnemo": {
       "skill": "Skill_S_PlayerWind_01",

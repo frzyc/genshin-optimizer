@@ -1,0 +1,178 @@
+{
+  "name": "Sandrone",
+  "title": "Gương Soi Nỗi Lòng",
+  "description": "Quan Chấp Hành thứ bảy của Fatui, Sandrone. Người dùng toán học để phân tích mọi sự vật, một quý cô thanh lịch chưa bao giờ vắng mặt trong buổi tiệc trà.",
+  "constellationName": "Cung Kính Trung Kỳ Giới",
+  "auto": {
+    "name": "Mệnh Đề Hiển Nhiên",
+    "fields": {
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Dùng công thức dệt nên những sợi chỉ điều khiển vũ khí, thực hiện tối đa 3 đòn chém liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Triệu hồi Cỗ Máy Tự Động Đa Năng Thông Dụng <strong>\"Fagio\"</strong>, chuyển sang chế độ <strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>Giải Mã</tooltip></strong>: Bắn phá kẻ địch phía trước và phóng Tia Ngưng Tụ theo chu kỳ, gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo>.",
+        "2": "<strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>: Tia Ngưng Tụ chuyển sang gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo> được xem là sát thương phản ứng Tinh-Siêu Dẫn.",
+        "3": "Trong chế độ <strong>Giải Mã</strong>, <strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>Công Suất Giải Mã</tooltip></strong> của Fagio sẽ liên tục gia tăng. Khi phóng Tia Ngưng Tụ, Công Suất Giải Mã sẽ tiếp tục tăng thêm.",
+        "4": "Khi Công Suất Giải Mã đạt giới hạn 100 điểm, Fagio sẽ chuyển sang chế độ <strong>Quá Tải Công Suất</strong>, thực hiện bắn phá kẻ địch với thời gian giãn cách dài hơn, gây <cryo>Sát Thương Nguyên Tố Băng</cryo> và không thể chuyển sang chế độ Giải Mã.",
+        "5": "Khi không trong chế độ <strong>Giải Mã</strong>, <strong>Công Suất Giải Mã</strong> của Fagio sẽ giảm dần. Khi Sandrone dự bị trong đội, sẽ còn tập trung sửa chữa Fagio hơn nữa, khiến tốc độ giảm Công Suất Giải Mã tăng đến 300% mức gốc.",
+        "6": "Khi <strong>Công Suất Giải Mã</strong> giảm xuống dưới 50, Fagio sẽ thoát khỏi chế độ <strong>Quá Tải Công Suất</strong>."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát thương lần 1",
+      "1": "Sát thương lần 2",
+      "2": "Sát thương lần 3",
+      "3": "Sát thương Trọng Kích bắn phá",
+      "4": "Sát thương Tia Ngưng Tụ Trọng Kích",
+      "5": "Sát thương Tinh-Siêu Dẫn từ Tia Ngưng Tụ Trọng Kích",
+      "6": "Sát thương khi Quá Tải Công Suất",
+      "7": "Sát thương khi đáp",
+      "8": "Sát thương khi đáp từ độ cao thấp/cao",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Công Thức Hiện Tượng - Phân Tích Vi Sai",
+    "description": {
+      "0": "Tuân thủ chuẩn mực hoàn hảo của một quý cô, ngồi <strong>Thiết Bị Đột Kích Chiến Thuật Tiệc Trà</strong> và liên tục lướt về phía trước trong 6s. Trong thời gian này, Sandrone có thể điều khiển hướng lướt, khi nhấn Xung Kích sẽ tiêu hao 10 điểm Thể Lực để bước vào chế độ lơ lửng tốc độ cao thanh lịch, mỗi giây sẽ tiêu hao 15 điểm Thể Lực để lướt với tốc độ nhanh hơn.",
+      "1": "<br/>",
+      "2": "Khi bắt đầu lướt, nếu có kẻ địch ở gần, Sandrone sẽ còn triệu hồi một khẩu Pháo Cộng Hưởng Lăng Kính, bắn hai viên Đạn Lăng Kính vào những kẻ địch chưa bình tĩnh lại, gây <cryo>Sát Thương Nguyên Tố Băng</cryo>.",
+      "3": "<strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>: Viên Đạn Lăng Kính thứ hai sẽ chuyển sang gây <cryo>Sát Thương Nguyên Tố Băng</cryo> và được xem là sát thương phản ứng Tinh-Siêu Dẫn.",
+      "4": "<br/>",
+      "5": "Khi ngồi lên Thiết Bị Đột Kích Chiến Thuật Tiệc Trà, Sandrone sẽ còn lặng lẽ sửa chữa Fagio một cách thanh lịch, khiến <strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>Công Suất Giải Mã</tooltip></strong> của Fagio giảm xuống nhanh chóng."
+    },
+    "skillParams": {
+      "0": "Sát thương Đạn Lăng Kính",
+      "1": "Sát thương Tinh-Siêu Dẫn Đạn Lăng Kính",
+      "2": "CD",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Công Thức Hiện Tượng - Chứng Minh Mọi Nguyên Lý",
+    "description": {
+      "0": "Giữ vững lễ nghi thanh lịch của một quý cô, triệu hồi lượng lớn Pháo Cộng Hưởng Lăng Kính để oanh tạc một khu vực rộng lớn phía trước, sau đó phóng ra Chùm Tia Tụ Năng Nhiệt Độ Âm bắn phá kẻ địch, gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo>.",
+      "1": "<strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>: Chùm Tia Tụ Năng Nhiệt Độ Âm sẽ chuyển sang gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo> và được xem là sát thương phản ứng Tinh-Siêu Dẫn."
+    },
+    "skillParams": {
+      "0": "Sát thương oanh tạc",
+      "1": "Sát thương Chùm Tia Tụ Năng",
+      "2": "Sát thương Tinh-Siêu Dẫn từ Chùm Tia Tụ Năng",
+      "3": "CD",
+      "4": "Năng Lượng Nguyên Tố",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Cỗ Máy Tính Toán Lâu Đời",
+    "description": {
+      "0": "<strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>: Khi thi triển Kỹ Năng Nguyên Tố <tooltip ns=char_Sandrone_gen baseKey18=skill><strong>Công Thức Hiện Tượng - Phân Tích Vi Sai</strong></tooltip>, nếu <strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>Công Suất Giải Mã</tooltip></strong> của Fagio trên 50 điểm, thì cùng lúc với việc giảm Công Suất Giải Mã, viên Đạn Lăng Kính thứ hai bắn về phía kẻ địch ở gần sẽ gây ra 400% sát thương gốc.",
+      "1": "Ngoài ra, mỗi khi <strong>Công Suất Giải Mã</strong> của Fagio giảm 10 điểm, đều sẽ nhận được 1 tầng hiệu quả <strong>Chiến Thuật Cải Tiến</strong> duy trì 60s, tối đa cộng dồn 10 tầng. Khi Sandrone thi triển Kỹ Năng Nộ <tooltip ns=char_Sandrone_gen baseKey18=burst><strong>Công Thức Hiện Tượng - Chứng Minh Mọi Nguyên Lý</strong></tooltip> trong trạng thái <strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>, sẽ xóa toàn bộ số tầng Chiến Thuật Cải Tiến, khiến Chùm Tia Tụ Năng Nhiệt Độ Âm gây sát thương bằng \"100% + (số tầng đã xóa)×10%\" mức gốc."
+    }
+  },
+  "passive2": {
+    "name": "Nguyên Tắc Hành Xử Của Quý Cô",
+    "description": {
+      "0": "Tăng Tinh Thông Nguyên Tố của Sandrone dựa trên Tấn Công của bản thân: Mỗi 100 điểm Tấn Công sẽ tăng 8 điểm Tinh Thông Nguyên Tố cho Sandrone, tối đa tăng 160 điểm Tinh Thông Nguyên Tố theo cách này."
+    }
+  },
+  "passive3": {
+    "name": "Chúc Phúc Tinh Tú - Lý Trí Là Ánh Sáng",
+    "description": {
+      "0": "Khi nhân vật trong đội kích hoạt phản ứng Siêu Dẫn, sẽ chuyển thành phản ứng Tinh-Siêu Dẫn, đồng thời tăng sát thương cơ bản của phản ứng Tinh-Siêu Dẫn nhân vật trong đội gây ra dựa trên Tấn Công của Sandrone: Mỗi 100 điểm Tấn Công sẽ tăng 0.7% sát thương cơ bản của phản ứng Tinh-Siêu Dẫn, tối đa tăng 14% sát thương theo cách này.",
+      "1": "Ngoài ra, khi ở trong <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Vùng Trục Sao</strong></tooltip>, Sandrone sẽ vào trạng thái <strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>."
+    }
+  },
+  "passive": {
+    "name": "Dạo Đầu Của Tiệc Trà Và Những Câu Chuyện Dài",
+    "description": {
+      "0": "Khi Sandrone có mặt trong đội, sau khi bàn giao nhiệm vụ ủy thác hằng ngày với Katheryne, sẽ được nhận thêm phần thưởng điểm tâm trà."
+    }
+  },
+  "constellation1": {
+    "name": "Vàng Ròng Chưa Tàn, Hoàng Hôn Đã Xa",
+    "description": {
+      "0": "Khi trong chế độ <strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>Giải Mã</tooltip></strong>, tốc độ tăng <strong><tooltip ns=tooltips_gen baseKey18=11330002 values=[]>Công Suất Giải Mã</tooltip></strong> của Fagio giảm 50%, đồng thời sát thương phản ứng Tinh-Siêu Dẫn gây ra bởi tất cả nhân vật trong đội tăng 30%."
+    }
+  },
+  "constellation2": {
+    "name": "Nhìn Lại Gương Xưa, Năm Tháng Nhẹ Trôi",
+    "description": {
+      "0": "<strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>: Tia Ngưng Tụ từ Trọng Kích tăng 40% Sát Thương Bạo Kích, đồng thời mỗi lần phóng Tia Ngưng Tụ, đều sẽ tăng thêm 20% Sát Thương Bạo Kích cho tất cả Tia Ngưng Tụ được phóng ra trong thời gian duy trì chế độ <strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>Giải Mã</tooltip></strong> lần này. Hiệu quả này tối đa cộng dồn 3 tầng."
+    }
+  },
+  "constellation3": {
+    "name": "Không Than Trời Lặn, Không Giận Trăng Lên",
+    "description": {
+      "0": "Cấp kỹ năng Tấn Công Thường <tooltip ns=char_Sandrone_gen baseKey18=normal><strong>Công Thức Hiện Tượng - Mệnh Đề Hiển Nhiên</strong></tooltip> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Thế Sự Là Số, Ngày Đêm Lại Qua",
+    "description": {
+      "0": "Khi sát thương phản ứng Tinh-Siêu Dẫn của Sandrone đánh trúng kẻ địch, sẽ triệu hồi thêm một Pháo Cộng Hưởng Lăng Kính để hỗ trợ tấn công, gây một lần <cryo>Sát Thương Nguyên Tố Băng</cryo> lên kẻ địch tương đương 125% Tấn Công của Sandrone và được xem là sát thương phản ứng Tinh-Siêu Dẫn. Hiệu quả này mỗi 4s tối đa kích hoạt một lần."
+    }
+  },
+  "constellation5": {
+    "name": "Vạn Vật Tro Tàn, Duy Lý Khai Sáng",
+    "description": {
+      "0": "Cấp kỹ năng <tooltip ns=char_Sandrone_gen baseKey18=burst><strong>Công Thức Hiện Tượng - Chứng Minh Mọi Nguyên Lý</strong></tooltip> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Thủy Tiên Tỉnh Mộng, Mong Đợi Bình Minh",
+    "description": {
+      "0": "Trong chế độ <strong><tooltip ns=tooltips_gen baseKey18=11330001 values=[]>Giải Mã</tooltip></strong>, khi Fagio phóng Tia Ngưng Tụ lần thứ ba, sẽ chuyển sang liên tục phóng <strong>Chùm Tia Ngưng Tụ</strong> mạnh mẽ hơn, dựa trên cơ sở Tia Ngưng Tụ gốc để gây thêm tối đa 4 lần <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo> tương đương 100% Tấn Công của Sandrone.",
+      "1": "<strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>: <strong>Chùm Tia Ngưng Tụ</strong> chuyển sang gây thêm tối đa 4 lần <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo> tương đương 80% Tấn Công của Sandrone và được xem là sát thương phản ứng Tinh-Siêu Dẫn.",
+      "2": "Ngoài ra, toàn bộ sát thương phản ứng Tinh-Siêu Dẫn do Sandrone gây ra sẽ <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Thăng Tiến</strong></tooltip> 20%."
+    }
+  }
+}

@@ -61,8 +61,8 @@ import {
   MenuItem,
   Skeleton,
   Stack,
-  Typography,
   styled,
+  Typography,
   useMediaQuery,
   useTheme,
 } from '@mui/material'

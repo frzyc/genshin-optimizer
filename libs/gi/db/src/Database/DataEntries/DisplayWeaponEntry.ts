@@ -52,7 +52,7 @@ export class DisplayWeaponEntry extends DataEntry<
   override set(
     value:
       | Partial<IDisplayWeapon>
-      | ((v: IDisplayWeapon) => Partial<IDisplayWeapon> | void)
+      | ((v: IDisplayWeapon) => Partial<IDisplayWeapon> | undefined)
       | { action: 'reset' }
   ): boolean {
     if ('action' in value) {

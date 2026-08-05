@@ -445,5 +445,25 @@
     "description": {
       "0": "Prune, Element Dönüşümü geçirmiş <strong>Bela Kovan Ant Çekicini</strong> kullanarak bir düşmana vurduğunda, yakındaki diğer grup üyeleri İlham Yankısı etkisini kazanır: Saldırı Hasarı, Prune'un Saldırısına göre artar."
     }
+  },
+  "11330001": {
+    "name": "Deşifre",
+    "description": {
+      "0": "Yüklü Saldırı kullanıldığında Fagio bu moda geçer.",
+      "1": "Bu moddayken Fagio önündeki düşmanlara bir tarama ateşi saldırısı yapar ve belirli aralıklarla yoğunlaştırılmış ışınlar ateşleyerek <cryo>Buz Alan Hasarı</cryo> verir.",
+      "2": "<strong>Işıltı: Yıldız İletimi</strong>: Yoğunlaştırılmış ışınlar bunun yerine Yıldız İletimi Hasarı sayılan <cryo>Buz Alan Hasarı</cryo> verir."
+    }
+  },
+  "11330002": {
+    "name": "Deşifre Gücü",
+    "description": {
+      "0": "<strong>Deşifre</strong> modundayken Fagio'nun <strong>Deşifre Gücü</strong> sürekli artar. Deşifre Gücü maksimuma ulaştığında Fagio, Deşifre modunu sürdüremez veya bu moda yeniden giremez."
+    }
+  },
+  "11330003": {
+    "name": "Kutup Yıldızı Alanı",
+    "description": {
+      "0": "Yıldız İletimi tetiklendiğinde çevredeki alan kısa süreliğine bir <strong>Kutup Yıldızı Alanına</strong> dönüşür ve belirli karakterler bir Kutup Yıldızı Alanı içindeyken çeşitli beceri güçlendirmeleri sağlayan <strong>Işıltı: Yıldız İletimi</strong> durumuna girer."
+    }
   }
 }

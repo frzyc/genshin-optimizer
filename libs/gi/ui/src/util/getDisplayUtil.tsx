@@ -2,6 +2,7 @@ import { ColorText, ImgIcon } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import {
   artifactDefIcon,
+  characterAsset,
   imgAssets,
   weaponAsset,
 } from '@genshin-optimizer/gi/assets'
@@ -21,6 +22,7 @@ import GroupsIcon from '@mui/icons-material/Groups'
 import { Box } from '@mui/material'
 import type { ReactNode } from 'react'
 import { ArtifactSetName, WeaponName } from '../components'
+
 const errHeader = {
   title: <ColorText color="warning">ERROR</ColorText>,
 }
@@ -61,7 +63,17 @@ export function getDisplayHeader(
   else if (sectionKey === 'reaction')
     return { title: 'Transformative Reactions' }
   else if (sectionKey === 'nicole')
-    return { title: "Nicole's Astral Projections" }
+    return {
+      title: "Nicole's Astral Projections",
+      icon: (
+        <Box
+          component="img"
+          src={characterAsset('Nicole', 'burst')}
+          width="2em"
+          height="auto"
+        />
+      ),
+    }
   else if (sectionKey === 'moonsign')
     return {
       title: 'Moonsign: Ascendant Gleam',

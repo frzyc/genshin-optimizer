@@ -11,8 +11,8 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
-import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
+import { headerTemplate, WeaponSheet } from '../../WeaponSheet'
 
 const key: WeaponKey = 'LostPrayerToTheSacredWinds'
 const ele_dmg_s = [-1, 0.08, 0.1, 0.12, 0.14, 0.16]

@@ -1,0 +1,29 @@
+{
+  "name": "Chave da Transcendência",
+  "description": {
+    "0": "Um objeto fantástico de incontáveis definições em um mar infinito de histórias. Seja na escala do universo ou dos sonhos, a espada sagrada do herói e a xícara de chá da princesa, a máquina gelada e a chave para abrir a porta da transcendência, no fundo, nada disso possui diferença."
+  },
+  "passiveName": "Coroação da Fada Branca",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta o ATQ em <cryo>28%</cryo>.",
+      "1": "Além disso, toda vez que o Ataque Carregado do portador atingir o inimigo, alcançará temporariamente Transcendência: aumenta o Dano de Supercondutor Estelar causado pelo portador em <cryo>16%</cryo> por 5s. Esse efeito pode ser acumulado até 3 vezes, e pode ser acumulado uma vez a cada 0.2s."
+    },
+    "1": {
+      "0": "Aumenta o ATQ em <cryo>35%</cryo>.",
+      "1": "Além disso, toda vez que o Ataque Carregado do portador atingir o inimigo, alcançará temporariamente Transcendência: aumenta o Dano de Supercondutor Estelar causado pelo portador em <cryo>20%</cryo> por 5s. Esse efeito pode ser acumulado até 3 vezes, e pode ser acumulado uma vez a cada 0.2s."
+    },
+    "2": {
+      "0": "Aumenta o ATQ em <cryo>42%</cryo>.",
+      "1": "Além disso, toda vez que o Ataque Carregado do portador atingir o inimigo, alcançará temporariamente Transcendência: aumenta o Dano de Supercondutor Estelar causado pelo portador em <cryo>24%</cryo> por 5s. Esse efeito pode ser acumulado até 3 vezes, e pode ser acumulado uma vez a cada 0.2s."
+    },
+    "3": {
+      "0": "Aumenta o ATQ em <cryo>49%</cryo>.",
+      "1": "Além disso, toda vez que o Ataque Carregado do portador atingir o inimigo, alcançará temporariamente Transcendência: aumenta o Dano de Supercondutor Estelar causado pelo portador em <cryo>28%</cryo> por 5s. Esse efeito pode ser acumulado até 3 vezes, e pode ser acumulado uma vez a cada 0.2s."
+    },
+    "4": {
+      "0": "Aumenta o ATQ em <cryo>56%</cryo>.",
+      "1": "Além disso, toda vez que o Ataque Carregado do portador atingir o inimigo, alcançará temporariamente Transcendência: aumenta o Dano de Supercondutor Estelar causado pelo portador em <cryo>32%</cryo> por 5s. Esse efeito pode ser acumulado até 3 vezes, e pode ser acumulado uma vez a cada 0.2s."
+    }
+  }
+}

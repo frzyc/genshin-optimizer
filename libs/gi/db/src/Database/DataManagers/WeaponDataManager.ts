@@ -18,6 +18,7 @@ import type { ICachedCharacter } from './CharacterDataManager'
 export interface ICachedWeapon extends IWeapon {
   id: string
 }
+
 import { DataManager } from '../DataManager'
 import type { IGO, ImportResult } from '../exim'
 import { initialCharacter } from './CharacterDataManager'

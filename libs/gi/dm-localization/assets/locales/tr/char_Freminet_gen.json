@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -79,7 +83,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -113,7 +121,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -157,7 +169,7 @@
   "constellation4": {
     "name": "Karlı Ay ve Flüt Dansı",
     "description": {
-      "0": "Freminet düşman üzerinde Donma, Tuzla Buz veya Süper İletim tetikledikten sonra 6 saniyeliğine Saldırısı %9 artar. En fazla 2 kademeye kadar birikir. Bu etki her 0,3 saniyede bir tetiklenebilir."
+      "0": "Freminet düşman üzerinde Donma, Tuzla Buz, Süper İletim veya Yıldız İletimi tetikledikten sonra 6 saniyeliğine Saldırısı %9 artar. 2 kademeye kadar birikebilir. Bu etki her 0,3 saniyede bir tetiklenebilir."
     }
   },
   "constellation5": {
@@ -170,7 +182,7 @@
   "constellation6": {
     "name": "Farkındalık ve Kararlılık Anı",
     "description": {
-      "0": "Freminet düşman üzerinde Donma, Tuzla Buz veya Süper İletim tetikledikten sonra 6 saniyeliğine Kritik Hasarı %12 artar. En fazla 3 kademeye kadar birikir. Bu etki her 0,3 saniyede bir tetiklenebilir."
+      "0": "Freminet düşman üzerinde Donma, Tuzla Buz, Süper İletim veya Yıldız İletimi tetikledikten sonra 6 saniyeliğine Kritik Hasarı %12 artar. 3 kademeye kadar birikebilir. Bu etki her 0,3 saniyede bir tetiklenebilir."
     }
   }
 }

@@ -1,6 +1,6 @@
-import type { OptProblemInput } from './type'
+import type { OptProblemInput } from './type.js'
 
-export * from './common'
-export * from './GOSolver'
+export * from './common.js'
+export * from './GOSolver/index.js'
 
 export type { OptProblemInput }
