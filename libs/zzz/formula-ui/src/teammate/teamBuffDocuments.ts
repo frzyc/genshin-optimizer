@@ -9,9 +9,7 @@ import type { CharUISheet } from '../char/consts'
 
 export function listingKeysFromTags(tags: readonly Tag[]): Set<string> {
   return new Set(
-    tags
-      .map(teamBuffListingKey)
-      .filter((key): key is string => !!key)
+    tags.map(teamBuffListingKey).filter((key): key is string => !!key)
   )
 }
 
@@ -39,7 +37,7 @@ export function isKitSheetSectionUnlocked(
 ): boolean {
   const match = sectionKey.match(/^m(\d)$/)
   if (!match) return true
-  return parseInt(match[1], 10) <= mindscape
+  return Number.parseInt(match[1], 10) <= mindscape
 }
 
 /** Flatten kit UI docs, skipping locked mindscape sections. */
@@ -79,7 +77,8 @@ export function filterDocumentsForTeamBuffs(
           teamBuffListingKeys,
           mindscape
         )
-        const { sheet: condSheet, name: condKey } = document.conditional.metadata
+        const { sheet: condSheet, name: condKey } =
+          document.conditional.metadata
         const gatesListedBuff =
           !!condSheet &&
           !!condKey &&

@@ -21,13 +21,17 @@ import {
 import type { CalcResult } from '@genshin-optimizer/pando/engine'
 import { constant } from '@genshin-optimizer/pando/engine'
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { allDiscSetKeys, allWengineKeys } from '@genshin-optimizer/zzz/consts'
+import {
+  allDiscSetKeys,
+  allDiscSlotKeys,
+  allWengineKeys,
+} from '@genshin-optimizer/zzz/consts'
 import type {
   DiscIds,
   ICachedCharacter,
+  OptFrame,
   Team,
   TeamConditional,
-  OptFrame,
 } from '@genshin-optimizer/zzz/db'
 import { getTeamFrame0, teamCharacterKeys } from '@genshin-optimizer/zzz/db'
 import {
@@ -57,6 +61,7 @@ import { FullTagDisplay, TagDisplay } from '../components'
 import { formulaText } from '../formulaText'
 
 const EMPTY_ENTRIES: TagMapNodeEntries = []
+const EMPTY_DISC_IDS: DiscIds = objKeyMap(allDiscSlotKeys, () => undefined)
 
 export function CharCalcProvider({
   character,
@@ -84,7 +89,7 @@ export function CharCalcProvider({
           fullTeammateEntries,
         })
       ),
-    [member0, fullTeammateEntries, team, character.key]
+    [member0, fullTeammateEntries, team, character]
   )
   // New map per calc so formula tooltips do not reuse stale nodes after gear/opt changes.
   const formulaTextCache = useMemo(() => calc && new Map(), [calc])
@@ -163,7 +168,10 @@ function presetFrameEntries(
   ]
 }
 
-function useFullTeammateMemberEntries(team: Team, mainCharacterKey: CharacterKey) {
+function useFullTeammateMemberEntries(
+  team: Team,
+  mainCharacterKey: CharacterKey
+) {
   // Optimize page teammate slots are indexed 1 and 2 in team.teammates.
   const slot1Entries = useTeammateMemberEntries(
     team.teammates[1]?.characterKey,
@@ -231,7 +239,7 @@ function useTeammateMemberEntries(
   const character = useCharacter(teammateKey)
   const { wengineTagEntries, discTagEntries } = useEquipmentTagEntries(
     character?.equippedWengine,
-    character?.equippedDiscs ?? {}
+    character?.equippedDiscs ?? EMPTY_DISC_IDS
   )
   return useMemo(() => {
     if (!character || !teammateKey || teammateKey === mainCharacterKey)
@@ -250,7 +258,10 @@ function useTeammateMemberEntries(
   ])
 }
 
-function useEquipmentTagEntries(wengineId: string | undefined, discIds: DiscIds) {
+function useEquipmentTagEntries(
+  wengineId: string | undefined,
+  discIds: DiscIds
+) {
   const wengine = useWengine(wengineId)
   const discs = useDiscs(discIds)
   const wengineTagEntries = useMemo(

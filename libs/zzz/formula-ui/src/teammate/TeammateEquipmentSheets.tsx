@@ -1,5 +1,8 @@
 import { ImgIcon } from '@genshin-optimizer/common/ui'
-import type { Document, UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
+import type {
+  Document,
+  UISheetElement,
+} from '@genshin-optimizer/game-opt/sheet-ui'
 import { DocumentDisplay } from '@genshin-optimizer/game-opt/sheet-ui'
 import { discDefIcon, wengineAsset } from '@genshin-optimizer/zzz/assets'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'

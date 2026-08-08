@@ -1,3 +1,4 @@
+import type { Preset } from '@genshin-optimizer/game-opt/engine'
 import type { Document } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { CharacterKey, DiscSetKey } from '@genshin-optimizer/zzz/consts'
 import type { useWengine } from '@genshin-optimizer/zzz/db-ui'
@@ -10,22 +11,21 @@ import { useCallback, useMemo } from 'react'
 import { charSheets } from '../char/sheets'
 import { useZzzCalcContext } from '../hooks'
 import { wengineUiSheets } from '../wengine/sheets'
+import { type DiscDisplay, discDisplaysFromSets } from './discTeamBuffDisplays'
 import {
   buffListingKeysInDocuments,
   filterDocumentsForTeamBuffs,
   kitDocumentsForMindscape,
   listingKeysFromTags,
 } from './teamBuffDocuments'
-import {
-  discDisplaysFromSets,
-  type DiscDisplay,
-} from './discTeamBuffDisplays'
 
 type UseTeammateBuffDisplayDataArgs = {
   teammateKey: CharacterKey
   mindscape: number
   sets: Partial<Record<DiscSetKey, number>>
   wengine: ReturnType<typeof useWengine>
+  /** Multiopt frame; optimize is single-target so default preset0. */
+  preset?: Preset
 }
 
 export function useTeammateBuffDisplayData({
@@ -33,6 +33,7 @@ export function useTeammateBuffDisplayData({
   mindscape,
   sets,
   wengine,
+  preset = 'preset0',
 }: UseTeammateBuffDisplayDataArgs) {
   const calc = useZzzCalcContext()
   const teamBuffReads = useMemo(
@@ -43,10 +44,10 @@ export function useTeammateBuffDisplayData({
   const usedConditionalKeys = useMemo(
     // Keep conditionals that gate displayed buffs, even without a direct field row.
     () =>
-      (calc
-        ? conditionalKeysFromReads(calc, teamBuffReads)
-        : new Set<string>()),
-    [calc, teamBuffReads]
+      calc
+        ? conditionalKeysFromReads(calc, teamBuffReads, preset)
+        : new Set<string>(),
+    [calc, teamBuffReads, preset]
   )
   const teamBuffListingKeys = useMemo(
     () => listingKeysFromTags(teamBuffReads.map(({ tag }) => tag)),
@@ -71,9 +72,7 @@ export function useTeammateBuffDisplayData({
   const wengineDocuments = useMemo(
     () =>
       wengine
-        ? filterTeamBuffDocuments(
-            wengineUiSheets[wengine.key]?.documents ?? []
-          )
+        ? filterTeamBuffDocuments(wengineUiSheets[wengine.key]?.documents ?? [])
         : [],
     [wengine, filterTeamBuffDocuments]
   )

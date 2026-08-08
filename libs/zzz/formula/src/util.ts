@@ -211,7 +211,9 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
 }
 
 // Enemy stats on `ownBuff.listing` that still debuff the main unit's targets.
-const ENEMY_DEBUFF_QS: ReadonlySet<string> = new Set(Object.keys(enemyTag.common))
+const ENEMY_DEBUFF_QS: ReadonlySet<string> = new Set(
+  Object.keys(enemyTag.common)
+)
 
 /** Match listing reads and sheet fields by sheet + register name. */
 export function teamBuffListingKey(tag: Tag): string | null {
@@ -224,7 +226,7 @@ export function isMindscapeGatedBuff(
   mindscape: number
 ): boolean {
   const match = buffName?.match(/^m(\d)_/)
-  return !!match && parseInt(match[1], 10) > mindscape
+  return !!match && Number.parseInt(match[1], 10) > mindscape
 }
 
 function isEnemyDebuffListingRead(read: Read<Tag>): boolean {
@@ -255,7 +257,9 @@ export function listTeammateTeamBuffReads(
 
   const reads = [
     ...calc.listFormulas(teamBuff.listing.buffs),
-    ...calc.listFormulas(ownBuff.listing.buffs).filter(isEnemyDebuffListingRead),
+    ...calc
+      .listFormulas(ownBuff.listing.buffs)
+      .filter(isEnemyDebuffListingRead),
   ]
 
   return uniqReadsByListingKey(
@@ -272,14 +276,17 @@ export function listTeammateTeamBuffReads(
 /** Conditional keys (`sheet:name`) that gate the given listing reads. */
 export function conditionalKeysFromReads(
   calc: Calculator,
-  reads: Read<Tag>[]
+  reads: Read<Tag>[],
+  // Multiopt frame; optimize is single-target today so callers use preset0.
+  preset: Preset = 'preset0'
 ): Set<string> {
   return new Set(
     reads.flatMap((read) => {
-      // Optimize is single-frame today; pin preset0 so multiopt can find these call sites.
-      // (A global conditional read works for one frame, but is less intentional.)
-      const conds = calc.compute(read.with('preset', 'preset0')).meta.conds as
-        | Record<string, Record<string, Record<string, Record<string, unknown>>>>
+      const conds = calc.compute(read.with('preset', preset)).meta.conds as
+        | Record<
+            string,
+            Record<string, Record<string, Record<string, unknown>>>
+          >
         | undefined
       return Object.values(conds ?? {}).flatMap((dst) =>
         Object.values(dst ?? {}).flatMap((src) =>

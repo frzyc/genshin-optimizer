@@ -7,10 +7,10 @@ import {
   DocumentDisplay,
   FieldDisplayList,
   SetConditionalContext,
-  TagFieldDisplay,
   type SetConditionalFunc,
   SrcDstDisplayContext,
   type SrcDstDisplayContextObj,
+  TagFieldDisplay,
 } from '@genshin-optimizer/game-opt/sheet-ui'
 import {
   characterAsset,
@@ -212,7 +212,14 @@ function TeammateBuffsContent({
       wengine,
     })
 
-  if (!hasAnyContent(kitDocuments, wengineDocuments, discDisplays, listingOnlyReads))
+  if (
+    !hasAnyContent(
+      kitDocuments,
+      wengineDocuments,
+      discDisplays,
+      listingOnlyReads
+    )
+  )
     return null
 
   return (
