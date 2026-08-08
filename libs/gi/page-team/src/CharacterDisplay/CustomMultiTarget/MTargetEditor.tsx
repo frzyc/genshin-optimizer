@@ -74,7 +74,6 @@ export default function MTargetEditor({
   onDup,
   collapse,
   setcollapse,
-  onSave,
 }: {
   customTarget: CustomTarget
   setCustomTarget: (t: CustomTarget) => void
@@ -85,14 +84,12 @@ export default function MTargetEditor({
   onDup: () => void
   collapse: boolean
   setcollapse: (v: boolean | ((v: boolean) => boolean)) => void
-  onSave: () => void
 }) {
   const { t } = useTranslation(['page_character', 'loadout'])
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)
   const dataContext = useContext(DataContext)
-  // console.log(dataContext.data)
   const {
     path,
     weight,
@@ -101,7 +98,6 @@ export default function MTargetEditor({
     infusionAura,
     bonusStats,
     description,
-    conditionals,
   } = customTarget
 
   const setWeight = useCallback(
@@ -337,21 +333,6 @@ export default function MTargetEditor({
                   </Grid>
                   <Grid item xs={1}>
                     <ConditionalModal />
-                    <TextFieldLazy
-                      fullWidth
-                      label={t('loadout:mTargetEditor.conds')}
-                      value={JSON.stringify(conditionals)}
-                      onChange={(conditionals) => {
-                        setCustomTarget({
-                          ...customTarget,
-                          conditionals: JSON.parse(conditionals),
-                        })
-                        onSave()
-                      }}
-                      multiline
-                      minRows={2}
-                      sx={{ mt: 1 }}
-                    />
                   </Grid>
                 </Grid>
               </Box>

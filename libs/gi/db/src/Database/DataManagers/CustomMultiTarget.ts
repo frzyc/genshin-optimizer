@@ -49,7 +49,7 @@ const customTargetSchema = z
       .catch(undefined),
     bonusStats: bonusStatsSchema,
     description: zodString(),
-    conditionals: z.object()
+    conditionals: z.record(z.string(), z.record(z.string(), z.string())),
   })
   .refine((ct) => ct.path[0] !== 'custom', {
     message: 'Path cannot start with "custom"',

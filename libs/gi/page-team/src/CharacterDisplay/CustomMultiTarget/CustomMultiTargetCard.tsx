@@ -285,7 +285,6 @@ export default function CustomMultiTargetCard({
                 onDup={dupCustomTarget(selectedTargetValid)}
                 collapse={collapse}
                 setcollapse={setcollapse}
-                onSave={onSave}
               />
             )}
           </CardContent>
