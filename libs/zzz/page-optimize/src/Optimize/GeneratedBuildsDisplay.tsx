@@ -28,7 +28,6 @@ import {
   Box,
   Button,
   CardContent,
-  Collapse,
   Grid,
   IconButton,
   Stack,
@@ -174,7 +173,7 @@ function GeneratedBuildDisplay({
             </Box>
             <EquipBtn build={build} />
           </Box>
-          <Collapse in={expanded} unmountOnExit>
+          {expanded && (
             <CharCalcProvider
               character={character}
               team={team}
@@ -197,7 +196,7 @@ function GeneratedBuildDisplay({
                 </Box>
               </CompareCalcContext.Provider>
             </CharCalcProvider>
-          </Collapse>
+          )}
         </Stack>
       </CardContent>
     </CardThemed>

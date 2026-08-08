@@ -4,27 +4,42 @@ import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import type { Calculator, Tag } from '@genshin-optimizer/zzz/formula'
 import { own } from '@genshin-optimizer/zzz/formula'
 import { useMemo } from 'react'
-import { groupFormulas } from '../bundledFormulaFields'
+import { buildCharFormulaFields } from '../char/charFormulaFields'
 import {
   groupFieldsByCategory,
   orderedFieldCategories,
   type TalentSheetElementKey,
 } from '../char/fieldCategory'
-import {
-  buildListingReadMap,
-  filterNonStatFields,
-  listStatReadsFromFormulas,
-} from '../optTarget'
+import { filterNonStatFields, listStatReadsFromFormulas } from '../optTarget'
 
-export function useGroupedOptFormulaFields(
+const emptyGrouped = {
+  reads: [] as Read<Tag>[],
+  fields: [] as Field[],
+  readByListingKey: new Map<string, Read<Tag>>(),
+  abilityFieldsBySkill: {},
+  statReads: [] as Read<Tag>[],
+  categorySections: [] as Array<{
+    category: TalentSheetElementKey
+    fields: Field[]
+  }>,
+  otherFields: [] as Field[],
+}
+
+/** Live formula reads, bundled fields, and opt-panel category grouping. */
+export function useCharFormulaFields(
   charKey: CharacterKey | undefined,
   calc: Calculator | null | undefined
 ) {
   return useMemo(() => {
-    if (!calc || !charKey) {
+    if (!charKey) return emptyGrouped
+
+    const reads = calc?.listFormulas(own.listing.formulas) ?? []
+    const built = buildCharFormulaFields(charKey, reads)
+
+    if (!calc) {
       return {
+        ...built,
         statReads: [] as Read<Tag>[],
-        readByListingKey: new Map<string, Read<Tag>>(),
         categorySections: [] as Array<{
           category: TalentSheetElementKey
           fields: Field[]
@@ -32,13 +47,11 @@ export function useGroupedOptFormulaFields(
         otherFields: [] as Field[],
       }
     }
-    const reads = calc.listFormulas(own.listing.formulas)
-    const readByListingKey = buildListingReadMap(reads)
-    const fields = groupFormulas(reads, charKey, charKey)
-    const { byCategory, other } = groupFieldsByCategory(charKey, fields)
+
+    const { byCategory, other } = groupFieldsByCategory(charKey, built.fields)
     return {
+      ...built,
       statReads: listStatReadsFromFormulas(reads),
-      readByListingKey,
       categorySections: orderedFieldCategories(byCategory),
       otherFields: filterNonStatFields(other),
     }

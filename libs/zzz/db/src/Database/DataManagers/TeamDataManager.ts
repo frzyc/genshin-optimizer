@@ -42,6 +42,15 @@ export type SpecificDmgTypeKey = Exclude<
   DamageType,
   'anomaly' | 'disorder' | 'aftershock' | 'elemental' | 'vortex'
 >
+
+/** Inst formulas where the user picks damage bucket / aftershock in the opt row. */
+export const genericDmgInstNames = ['standardDmgInst', 'sheerDmgInst'] as const
+
+export function isGenericDmgInstTarget(
+  name: string | undefined
+): name is (typeof genericDmgInstNames)[number] {
+  return !!name && (genericDmgInstNames as readonly string[]).includes(name)
+}
 export const specificDmgTypeKeys: SpecificDmgTypeKey[] = [
   'basic',
   'dash',
@@ -382,24 +391,26 @@ export class TeamDataManager extends DataManager<
       if (formula) {
         const abilityName = formula.tag.name
         if (!abilityName) return undefined
+        const q = rawTarget.q ?? formula.tag.q ?? undefined
+        const base = removeUndefinedFields({
+          sheet: sheet ?? formula.sheet,
+          name: abilityName,
+          q,
+        }) as TargetTag
+        if (!isGenericDmgInstTarget(abilityName)) return base
+
         let damageType1: SpecificDmgTypeKey | undefined
         let damageType2: 'aftershock' | 'abloom' | undefined
         if (
-          abilityName === 'standardDmgInst' ||
-          abilityName === 'sheerDmgInst'
-        ) {
-          if (
-            rawTarget.damageType1 &&
-            isSpecificDmgTypeKey(rawTarget.damageType1)
-          )
-            damageType1 = rawTarget.damageType1
-          if (
-            rawTarget.damageType2 === 'aftershock' ||
-            rawTarget.damageType2 === 'abloom'
-          )
-            damageType2 = rawTarget.damageType2
-        }
-        const q = rawTarget.q ?? formula.tag.q ?? undefined
+          rawTarget.damageType1 &&
+          isSpecificDmgTypeKey(rawTarget.damageType1)
+        )
+          damageType1 = rawTarget.damageType1
+        if (
+          rawTarget.damageType2 === 'aftershock' ||
+          rawTarget.damageType2 === 'abloom'
+        )
+          damageType2 = rawTarget.damageType2
         return removeUndefinedFields({
           sheet: sheet ?? formula.sheet,
           name: abilityName,
@@ -773,11 +784,25 @@ export function applyDamageTypeToTag(
   }
 }
 
-function resolveFormulaSheet(target: {
-  name?: string
-  sheet?: string
-  q?: string
-}): Sheet | undefined {
+/** Set or clear `damageType1` on a generic inst opt target. */
+export function withInstDamageType1<T extends TargetTag>(
+  target: T,
+  damageType1: SpecificDmgTypeKey | undefined
+): T {
+  const { damageType1: _, ...rest } = target
+  return (damageType1 ? { ...rest, damageType1 } : rest) as T
+}
+
+/** Set or clear aftershock (`damageType2`) on a generic inst opt target. */
+export function withInstDamageType2<T extends TargetTag>(
+  target: T,
+  aftershock: boolean
+): T {
+  const { damageType2: _, ...rest } = target
+  return (aftershock ? { ...rest, damageType2: 'aftershock' } : rest) as T
+}
+
+function resolveFormulaSheet(target: TargetTag): Sheet | undefined {
   const { name, q, sheet } = target
   if (!name) return undefined
 
@@ -845,10 +870,15 @@ function getFormula(target: TargetTag) {
 }
 
 export function targetTag(target: TargetTag): Tag {
-  const { damageType1, damageType2, attribute } = target
+  const { attribute } = target
   const formula = getFormula(target)
-  if (formula)
-    return applyDamageTypeToTag(formula.tag, damageType1, damageType2)
+  if (formula) {
+    if (isGenericDmgInstTarget(target.name)) {
+      const { damageType1, damageType2 } = target
+      return applyDamageTypeToTag(formula.tag, damageType1, damageType2)
+    }
+    return formula.tag
+  }
   const qt = target.qt ?? 'final'
   return {
     et: 'own',
