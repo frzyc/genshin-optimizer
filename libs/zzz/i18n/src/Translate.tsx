@@ -49,6 +49,7 @@ const textComponents = {
   wind: <ColorText color="wind" />,
   physical: <ColorText color="physical" />,
   ether: <ColorText color="ether" />,
+  lumiflux: <ColorText color="lumiflux" />,
   ct: <ColorText />,
   tooltip: <LinkedTooltip />,
   IconNormal: <ImgIcon src={commonDefIcon('basicFlat')} size={1.5} />,
@@ -74,6 +75,7 @@ const badgeComponents = {
   physical: <SqBadge color="physical" />,
   ether: <SqBadge color="ether" />,
   wind: <SqBadge color="wind" />,
+  lumiflux: <SqBadge color="lumiflux" />,
   ct: <ColorText />,
 }
 

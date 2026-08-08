@@ -8,7 +8,7 @@ import {
 } from '@genshin-optimizer/common/ui'
 import { stableArr } from '@genshin-optimizer/common/util'
 import type { StatKey } from '@genshin-optimizer/zzz/consts'
-import { allAttributeKeys } from '@genshin-optimizer/zzz/consts'
+import { allAttributeAnomalyKeys } from '@genshin-optimizer/zzz/consts'
 import type {
   BonusStatKey,
   BonusStatTag,
@@ -253,7 +253,7 @@ function AttributeDropdown({
       color={tag.attribute!}
     >
       <MenuItem onClick={() => setAttribute(null)}>No Attribute</MenuItem>
-      {allAttributeKeys.map((attr) => (
+      {allAttributeAnomalyKeys.map((attr) => (
         <MenuItem key={attr} onClick={() => setAttribute(attr)}>
           <ColorText color={attr}>
             <AttributeName attribute={attr} />

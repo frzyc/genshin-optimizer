@@ -128,6 +128,8 @@ const avatarSkillLevelIndexing = [
   'specialLevel',
   'dodgeLevel',
   'chainLevel',
+  'PLEASE_CHECK_IF_CORRECT',
+  'PLEASE_CHECK_IF_CORRECT',
   'assistLevel',
 ]
 function extractCalcedParams(skills: CharacterData['skills']) {
