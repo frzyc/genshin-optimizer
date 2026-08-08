@@ -79,6 +79,13 @@ type DefineInfo = {
   affixes: SubstatKey[]
 }
 export type UpOptInfo = LevelUpInfo | ReshapeInfo | DefineInfo
+type ExactRollAllocationGroup = {
+  rolls: { key: SubstatKey; count: number }[]
+  probability: number
+  upgradeProbability: number
+  overallUpgradeProbability: number
+  averageIncrease: number
+}
 
 function canLevelUp(art: ICachedArtifact) {
   // Restricted to 5* artifacts for now.
@@ -106,6 +113,11 @@ export class UpOptCalculatorV2 {
   obj: Objective
   candidates: EvaluatedMarkovTree[] = []
   fixedIx = 0
+  private artifactsById = new Map<string, ICachedArtifact>()
+  private exactRollAllocationCache = new Map<
+    string,
+    ExactRollAllocationGroup[]
+  >()
 
   /** Serializes exact-calc work so candidates are refined one at a time. */
   private exactQueue: Promise<unknown> = Promise.resolve()
@@ -135,6 +147,7 @@ export class UpOptCalculatorV2 {
     // Create objective function & set up candidates.
     this.obj = makeObjective(nodes, thresholds)
     artifacts.forEach((art) => {
+      this.artifactsById.set(art.id, art)
       this.tryLevelUp(art)
       if (reshapeConfig.enabled) this.tryReshape(art, reshapeConfig.minTotal)
     })
@@ -306,15 +319,105 @@ export class UpOptCalculatorV2 {
     return run
   }
 
-  expandRollsLevel(ix: number) {
-    if (this.candidates[ix].evalMode !== 'rolls') return
-    const newTree = expandNodes(this.candidates[ix].tree)
-    const newEval = this.evaluateNodes(newTree)
-    this.candidates[ix] = {
-      ...this.candidates[ix],
-      ...newEval,
-      evalMode: 'values',
+  exactRollAllocationGroups(ix: number): ExactRollAllocationGroup[] {
+    const candidate = this.candidates[ix]
+    if (
+      !candidate ||
+      candidate.evalMode !== 'values' ||
+      candidate.info.type === 'definition'
+    )
+      return []
+
+    const cacheKey = candidate.id
+    const cached = this.exactRollAllocationCache.get(cacheKey)
+    if (cached) return cached
+
+    const artifact = this.artifactsById.get(candidate.info.artifactId)
+    if (!artifact) return []
+    const initialNodes =
+      candidate.info.type === 'reshape'
+        ? dustReshape(
+            artifact,
+            this.build,
+            [...candidate.info.affixes],
+            candidate.info.mintotal
+          )
+        : levelUpArtifact(artifact, this.build)
+    type MutableAllocation = Pick<
+      ExactRollAllocationGroup,
+      'rolls' | 'probability' | 'overallUpgradeProbability'
+    > & {
+      increaseAccumulator: number
     }
+    const grouped = new Map<string, MutableAllocation>()
+
+    initialNodes.forEach(({ p: initialProbability, n: initialNode }) => {
+      if (initialNode.type !== 'substat') return
+      const baseRolls = new Map(
+        initialNode.subkeys.map(({ key, baseRolls }) => [key, baseRolls])
+      )
+      expandNode(initialNode).forEach(({ p: rollProbability, n: rollNode }) => {
+        if (rollNode.type !== 'rolls') return
+        const allocationProbability = initialProbability * rollProbability
+        const rolls = rollNode.subs.map(({ key, rolls }) => ({
+          key,
+          count: rolls - (baseRolls.get(key) ?? 0),
+        }))
+        const allocationKey = rolls
+          .map(({ key, count }) => `${key}:${count}`)
+          .join('|')
+        let overallUpgradeProbability = 0
+        let increaseAccumulator = 0
+
+        expandNode(rollNode).forEach(({ p: valueProbability, n }) => {
+          const evaluated = evalMarkovNode(this.obj, n)
+          const { prob, upAvg } = evaluated.evaluation
+          overallUpgradeProbability +=
+            allocationProbability * valueProbability * prob
+          increaseAccumulator +=
+            allocationProbability * valueProbability * prob * upAvg
+        })
+
+        const existing = grouped.get(allocationKey)
+        if (existing) {
+          existing.probability += allocationProbability
+          existing.overallUpgradeProbability += overallUpgradeProbability
+          existing.increaseAccumulator += increaseAccumulator
+        } else {
+          grouped.set(allocationKey, {
+            rolls,
+            probability: allocationProbability,
+            overallUpgradeProbability,
+            increaseAccumulator,
+          })
+        }
+      })
+    })
+
+    const allocations = [...grouped.values()].map(
+      ({ increaseAccumulator, ...allocation }) => ({
+        ...allocation,
+        upgradeProbability:
+          allocation.probability > 1e-12
+            ? allocation.overallUpgradeProbability / allocation.probability
+            : 0,
+        averageIncrease:
+          allocation.overallUpgradeProbability > 1e-12
+            ? increaseAccumulator / allocation.overallUpgradeProbability
+            : 0,
+      })
+    )
+
+    allocations.sort((a, b) => {
+      if (b.probability !== a.probability) return b.probability - a.probability
+      for (let i = 0; i < a.rolls.length; i++) {
+        const countDiff = b.rolls[i].count - a.rolls[i].count
+        if (countDiff) return countDiff
+      }
+      return 0
+    })
+    this.exactRollAllocationCache.set(cacheKey, allocations)
+    return allocations
   }
 
   async expandRollsLevelAsync(ix: number, shouldCancel: () => boolean) {
@@ -363,6 +466,8 @@ export class UpOptCalculatorV2 {
 
   reCalc(ix: number, art: ICachedArtifact) {
     const prevId = this.candidates[ix].id
+    this.artifactsById.set(art.id, art)
+    this.exactRollAllocationCache.delete(prevId)
     if (this.candidates[ix].info.type === 'levelUp')
       this.candidates[ix] = this.fromLevelUpInfo(this.candidates[ix].info, art)
     else if (this.candidates[ix].info.type === 'reshape')
