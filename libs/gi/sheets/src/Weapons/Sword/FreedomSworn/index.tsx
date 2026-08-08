@@ -3,8 +3,8 @@ import { allStats } from '@genshin-optimizer/gi/stats'
 import { equal, equalStr, input, subscript } from '@genshin-optimizer/gi/wr'
 import { cond, nonStackBuff, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
-import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
+import { headerTemplate, WeaponSheet } from '../../WeaponSheet'
 
 const key: WeaponKey = 'FreedomSworn'
 const data_gen = allStats.weapon.data[key]

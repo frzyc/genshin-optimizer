@@ -13,8 +13,9 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, nonStackBuff, stg, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { SetEffectSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
+import type { SetEffectSheet } from '../IArtifactSheet'
+
 const key: ArtifactSetKey = 'ArchaicPetra'
 const setHeader = setHeaderTemplate(key)
 const [, trm] = trans('artifact', key)

@@ -23,10 +23,10 @@ jobs:
           cache: 'yarn'
       - name: Yarn Install
         run: |
-          yarn install --immutable --immutable-cache
+          yarn install --immutable
       - name: Run lint
         run: |
-          yarn run nx run-many --target=eslint:lint --fix=false --max-warnings=0
+          yarn run nx run-many -t lint --args=""
   test:
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -52,7 +52,7 @@ jobs:
           cache: 'yarn'
       - name: Yarn Install
         run: |
-          yarn install --immutable --immutable-cache
+          yarn install --immutable
       - name: Run Tests
         run: |
           yarn run nx run-many --target=test
@@ -74,15 +74,10 @@ jobs:
           cache: 'yarn'
       - name: Yarn Install
         run: |
-          yarn install --immutable --immutable-cache
-      - name: Check Formatting (Changed Files)
-        if: ${{ github.event_name == 'pull_request' }}
-        run: |
-          yarn biome ci --changed --no-errors-on-unmatched
+          yarn install --immutable
       - name: Check Formatting
-        if: ${{ github.event_name != 'pull_request' }}
         run: |
-          yarn biome ci
+          yarn run nx run-many -t format --args=""
   typecheck:
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -94,7 +89,7 @@ jobs:
           cache: 'yarn'
       - name: Yarn Install
         run: |
-          yarn install --immutable --immutable-cache
+          yarn install --immutable
       - name: Check types
         run: |
           yarn run nx run-many --target=typecheck
@@ -127,7 +122,7 @@ jobs:
           cache: 'yarn'
       - name: Yarn Install
         run: |
-          yarn install --immutable --immutable-cache
+          yarn install --immutable
       - name: Check Gen File
         run: |
           yarn run nx run-many -t gen-file

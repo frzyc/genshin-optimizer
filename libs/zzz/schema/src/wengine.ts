@@ -5,10 +5,10 @@ import {
   zodEnumWithDefault,
 } from '@genshin-optimizer/common/database'
 import {
-  type MilestoneKey,
-  type PhaseKey,
   allLocationKeys,
   allWengineKeys,
+  type MilestoneKey,
+  type PhaseKey,
   validateLevelMilestone,
   wengineMaxLevel,
 } from '@genshin-optimizer/zzz/consts'

@@ -98,6 +98,8 @@ export const WengineIdMap = {
   '14155': 'SolExuvia',
   '14156': 'JoyauDore',
   '14157': 'ChiefSidekick',
+  '14158': 'OdeOfResurrectedWings',
+  '14159': 'KnightsExtolment',
 } as const
 
 export const specialityMap: Record<number, SpecialityKey> = {

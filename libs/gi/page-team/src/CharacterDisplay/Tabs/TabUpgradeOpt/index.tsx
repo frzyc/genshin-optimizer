@@ -1,5 +1,5 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
-import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
+import { CardThemed, InfoTooltip, SqBadge } from '@genshin-optimizer/common/ui'
 import {
   bulkCatTotal,
   clamp,
@@ -11,8 +11,8 @@ import {
 } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSetKey,
+  ArtifactSlotKey,
   CharacterKey,
-  MainStatKey,
 } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSetKeys,
@@ -22,11 +22,10 @@ import {
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
 import type { ArtSetExclusionKey } from '@genshin-optimizer/gi/db'
-import { type ICachedArtifact } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
-  useDBMeta,
   useDatabase,
+  useDBMeta,
   useLoadoutArtifacts,
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
@@ -42,10 +41,10 @@ import {
   ArtifactSetMultiAutocomplete,
   ArtifactSlotToggle,
   DataContext,
+  getTeamData,
   HitModeToggle,
   NoArtWarning,
   ReactionToggle,
-  getTeamData,
   resolveInfo,
   useTeamData,
 } from '@genshin-optimizer/gi/ui'
@@ -54,7 +53,6 @@ import { artifactFilterConfigs } from '@genshin-optimizer/gi/util'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { dynamicData, mergeData, optimize } from '@genshin-optimizer/gi/wr'
 import AddIcon from '@mui/icons-material/Add'
-import InfoIcon from '@mui/icons-material/Info'
 import {
   Alert,
   Box,
@@ -63,9 +61,9 @@ import {
   Checkbox,
   FormControlLabel,
   Grid,
+  Link,
   Pagination,
   Skeleton,
-  Tooltip,
   Typography,
 } from '@mui/material'
 import type { ButtonProps } from '@mui/material/Button'
@@ -90,7 +88,7 @@ import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTa
 import StatFilterCard from '../TabOptimize/Components/StatFilterCard'
 import { LevelFilter } from './LevelFilter'
 import UpgradeOptChartCard from './UpgradeOptChartCard'
-import { UpOptCalculatorV2, canReshape } from './upOpt'
+import { canReshape, UpOptCalculatorV2 } from './upOpt'
 
 // artifact button gets its own type so multiple translations can be used
 type AddArtifactButtonProps = Omit<ButtonProps, 'onClick'> & {
@@ -278,7 +276,7 @@ export default function TabUpopt() {
       teamDataLocal.teamData,
       gender,
       activeCharKey
-    )[characterKey]?.target.data![0]
+    )[characterKey]?.target.data[0]
     if (!workerData) return
     Object.assign(workerData, mergeData([workerData, dynamicData])) // Mark art fields as dynamic
     const optimizationTargetNode = objPathValue(
@@ -308,9 +306,15 @@ export default function TabUpopt() {
       allArtifactSlotKeys,
       (slotKey) => equippedArts[slotKey]?.setKey
     )
-    function respectSexExclusion(art: ICachedArtifact) {
+    function respectSexExclusion({
+      slotKey,
+      setKey,
+    }: {
+      slotKey: ArtifactSlotKey
+      setKey: ArtifactSetKey
+    }) {
       const newSK = { ...curEquipSetKeys }
-      newSK[art.slotKey] = art.setKey
+      newSK[slotKey] = setKey
       const skc: Partial<Record<ArtifactSetKey, number>> = {}
       allArtifactSlotKeys.forEach((slotKey) => {
         const setKey = newSK[slotKey]
@@ -372,19 +376,23 @@ export default function TabUpopt() {
           (upOptLevelLow <= art.level && art.level <= upOptLevelHigh)
       )
 
-    const mainStatsForDefine = allArtifactSlotKeys.flatMap((slotKey) => {
-      if (slotKey === 'flower' || slotKey === 'plume')
-        return artSlotMainKeys[slotKey]
-      const selected = mainStatKeys[slotKey]
-      return selected.length ? selected : artSlotMainKeys[slotKey]
-    })
     const defineConfig = {
       enabled: upOptDefine && upOptDefineSubstats.length >= 2,
-      setKeys: (artSetKeys.length
-        ? artSetKeys
-        : [...allArtifactSetKeys]) as ArtifactSetKey[],
-      slotKeys: slotKeys.length ? slotKeys : [...allArtifactSlotKeys],
-      mainStats: [...new Set<MainStatKey>(mainStatsForDefine)],
+      setSlotMainStatKeys: objKeyMap(allArtifactSlotKeys, (slotKey) => {
+        const mainStats =
+          slotKey === 'flower' ||
+          slotKey === 'plume' ||
+          mainStatKeys[slotKey].length === 0
+            ? artSlotMainKeys[slotKey]
+            : mainStatKeys[slotKey]
+        const setKeys = allArtifactSetKeys.filter((setKey) =>
+          respectSexExclusion({ slotKey, setKey })
+        )
+        return {
+          setKeys,
+          mainStats,
+        }
+      }),
       substats: upOptDefineSubstats,
     }
 
@@ -397,7 +405,7 @@ export default function TabUpopt() {
 
     return new UpOptCalculatorV2(
       nodes,
-      [-Infinity, ...valueFilter.map((x) => x.minimum)],
+      [Number.NEGATIVE_INFINITY, ...valueFilter.map((x) => x.minimum)],
       equippedArts,
       artifactsToConsider,
       { enabled: upOptReshape, minTotal: upOptReshapeRolls as 2 | 3 | 4 },
@@ -419,8 +427,6 @@ export default function TabUpopt() {
     activeCharKey,
     characterKey,
     filteredArts,
-    artSetKeys,
-    slotKeys,
     equippedArts,
   ])
 
@@ -470,7 +476,7 @@ export default function TabUpopt() {
       }
     }, [pageIdex, upOptCalc])
   const setPage = useCallback(
-    (e: React.ChangeEvent<unknown>, value: number) => {
+    (_e: React.ChangeEvent<unknown>, value: number) => {
       if (!upOptCalc) return
       const end = value * artifactsToDisplayPerPage
       upOptCalc.calcSlowToIndex(end)
@@ -604,13 +610,21 @@ export default function TabUpopt() {
                           <SqBadge color="info" sx={{ mr: 2 }}>
                             {reshapeCandidateCount}
                           </SqBadge>
-                          <Tooltip arrow title={t('upOptReshape.tooltip')}>
-                            <InfoIcon
-                              fontSize="small"
-                              color="action"
-                              sx={{ mb: 0.5 }}
-                            />
-                          </Tooltip>
+                          <InfoTooltip
+                            title={
+                              <Typography>
+                                <Trans t={t} i18nKey="upOptReshape.tooltip">
+                                  Evaluate level 20 artifacts as reshape
+                                  candidates. Each eligible artifact is scored
+                                  once per substat pair, for 6 total
+                                  combinations.
+                                  <br />
+                                  Note: This requires importing your data using{' '}
+                                  <Link href="/#/scanner">Irminsul</Link>
+                                </Trans>
+                              </Typography>
+                            }
+                          />
                         </Box>
                         <Box>
                           <Typography variant="body2" color="text.secondary">
@@ -657,13 +671,13 @@ export default function TabUpopt() {
                             }
                             label={t('upOptDefine.label')}
                           />
-                          <Tooltip arrow title={t('upOptDefine.tooltip')}>
-                            <InfoIcon
-                              fontSize="small"
-                              color="action"
-                              sx={{ mb: 0.5 }}
-                            />
-                          </Tooltip>
+                          <InfoTooltip
+                            title={
+                              <Typography>
+                                {t('upOptDefine.tooltip')}
+                              </Typography>
+                            }
+                          />
                         </Box>
                         <Box>
                           <Typography variant="body2" color="text.secondary">
@@ -743,7 +757,7 @@ export default function TabUpopt() {
             <CardThemed bgt="light">
               <CardContent>
                 <Grid container spacing={1}>
-                  <Grid item></Grid>
+                  <Grid item />
                   <Grid item>
                     <HitModeToggle size="small" />
                   </Grid>

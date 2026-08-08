@@ -21,7 +21,11 @@ export function TagDisplay({
   tag,
   showPercent,
   preventRecursion,
-}: { tag: Tag; showPercent?: boolean; preventRecursion?: boolean }) {
+}: {
+  tag: Tag
+  showPercent?: boolean
+  preventRecursion?: boolean
+}) {
   return (
     <ColorText color={getVariant(tag)}>
       <TagStrDisplay
@@ -35,7 +39,10 @@ export function TagDisplay({
 export function FullTagDisplay({
   tag,
   showPercent,
-}: { tag: Tag; showPercent?: boolean }) {
+}: {
+  tag: Tag
+  showPercent?: boolean
+}) {
   return (
     <>
       <TagDisplay tag={tag} showPercent={showPercent} />
@@ -73,7 +80,11 @@ function TagStrDisplay({
   tag,
   showPercent,
   preventRecursion,
-}: { tag: Tag; showPercent?: boolean; preventRecursion?: boolean }) {
+}: {
+  tag: Tag
+  showPercent?: boolean
+  preventRecursion?: boolean
+}) {
   const calc = useZzzCalcContext()
   const abilityTitle =
     tag.sheet && allCharacterKeys.includes(tag.sheet as CharacterKey)

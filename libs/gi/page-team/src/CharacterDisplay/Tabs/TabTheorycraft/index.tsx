@@ -4,28 +4,28 @@ import { artSubstatRollData } from '@genshin-optimizer/gi/consts'
 import type { BuildTc } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
-  useDBMeta,
   useDatabase,
+  useDBMeta,
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
 import type { TCWorkerResult } from '@genshin-optimizer/gi/solver-tc'
 import {
-  TCWorker,
   getMinSubAndOtherRolls,
+  TCWorker,
 } from '@genshin-optimizer/gi/solver-tc'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import type { dataContextObj } from '@genshin-optimizer/gi/ui'
 import {
   BuildAlert,
   DataContext,
-  HitModeToggle,
-  ReactionToggle,
-  StatDisplayComponent,
   getBuildTcArtifactData,
   getBuildTcWeaponData,
   getTeamDataCalc,
+  HitModeToggle,
   initialBuildStatus,
   optimizeNodesForScaling,
+  ReactionToggle,
+  StatDisplayComponent,
 } from '@genshin-optimizer/gi/ui'
 import { getSubstatValue } from '@genshin-optimizer/gi/util'
 import CalculateIcon from '@mui/icons-material/Calculate'
@@ -209,7 +209,7 @@ export default function TabTheorycraft() {
       } = buildTc
       buildTc.optimization.distributedSubstats =
         20 - (rarity === 5 ? 0 : rarity === 4 ? 10 : 15)
-      buildTc.artifact.substats.stats = objMap(stats, (val, statKey) => {
+      buildTc.artifact.substats.stats = objMap(stats, (_val, statKey) => {
         const substatValue = getSubstatValue(statKey, rarity, type)
         return substatValue * 2
       })

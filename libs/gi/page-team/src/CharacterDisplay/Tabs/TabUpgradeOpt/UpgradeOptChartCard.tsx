@@ -46,7 +46,7 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
-import { type UpOptCalculatorV2, type UpOptInfo } from './upOpt'
+import type { UpOptCalculatorV2, UpOptInfo } from './upOpt'
 
 type DefineInfo = Extract<UpOptInfo, { type: 'definition' }>
 

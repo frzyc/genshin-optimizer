@@ -6,11 +6,12 @@ import type {
 } from '@genshin-optimizer/zzz/consts'
 import { readHakushinJSON } from '../../util'
 import {
-  WengineIdMap,
   specialityMap,
   subStatMap,
+  WengineIdMap,
   wengineRarityMap,
 } from './consts'
+
 const SCALING = 10000
 type WengineRawData = {
   Rarity: number

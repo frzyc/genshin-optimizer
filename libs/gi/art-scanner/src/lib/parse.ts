@@ -78,7 +78,7 @@ export function parseMainStatValues(
     let match = regex.exec(text)
     if (match)
       results.push({
-        mainStatValue: parseFloat(
+        mainStatValue: Number.parseFloat(
           match[1].replace(/,/g, '.').replace(/\.{2,}/g, '.')
         ),
         unit: '%',
@@ -87,7 +87,7 @@ export function parseMainStatValues(
     match = regex.exec(text)
     if (match)
       results.push({
-        mainStatValue: parseInt(match[1].replace(/[,|\\.]+/g, '')),
+        mainStatValue: Number.parseInt(match[1].replace(/[,|\\.]+/g, '')),
       })
   }
   return results
@@ -106,13 +106,13 @@ export function parseSubstats(texts: string[]): ISubstat[] {
       const name = statMap[key]
       const regex =
         getUnitStr(key) === '%'
-          ? new RegExp(name + '\\s*\\+\\s*(\\d+[\\.|,]+\\d)%', 'im')
-          : new RegExp(name + '\\s*\\+\\s*(\\d+,\\d+|\\d+)($|\\s)', 'im')
+          ? new RegExp(`${name}\\s*\\+\\s*(\\d+[\\.|,]+\\d)%`, 'im')
+          : new RegExp(`${name}\\s*\\+\\s*(\\d+,\\d+|\\d+)($|\\s)`, 'im')
       const match = regex.exec(text)
       if (match)
         matches.push({
           key,
-          value: parseFloat(
+          value: Number.parseFloat(
             match[1]
               .replace(/(,|\.)(\d{3}(?!\d))/g, '$2')
               .replace(/,/g, '.')
@@ -126,10 +126,9 @@ export function parseSubstats(texts: string[]): ISubstat[] {
 
 export function parseUnactivatedSubstats(texts: string[]): ISubstat[] {
   const matches: ISubstat[] = []
-  // eslint-disable-next-line prefer-const
   for (let [index, text] of texts.entries()) {
     if (index === 4 && texts[5]?.includes('(unactivated)')) {
-      text = text + ' (unactivated)'
+      text = `${text} (unactivated)`
     }
     text = text.replace(/^[\W]+/, '').replace(/\n/, '')
     // Apply OCR character corrections (e.g., '#' → '+') before parsing substats
@@ -142,7 +141,7 @@ export function parseUnactivatedSubstats(texts: string[]): ISubstat[] {
       const regex =
         getUnitStr(key) === '%'
           ? new RegExp(
-              name + '\\s*\\+\\s*(\\d+[\\.|,]+\\d)%\\s*(\\(unactivated\\))',
+              `${name}\\s*\\+\\s*(\\d+[\\.|,]+\\d)%\\s*(\\(unactivated\\))`,
               'im'
             )
           : new RegExp(
@@ -154,7 +153,7 @@ export function parseUnactivatedSubstats(texts: string[]): ISubstat[] {
       if (match)
         matches.push({
           key,
-          value: parseFloat(
+          value: Number.parseFloat(
             match[1]
               .replace(/(,|\.)(\d{3}(?!\d))/g, '$2')
               .replace(/,/g, '.')

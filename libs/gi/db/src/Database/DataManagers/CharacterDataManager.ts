@@ -22,6 +22,7 @@ export interface ICachedCharacter extends ICharacter {
   equippedArtifacts: Record<ArtifactSlotKey, string>
   equippedWeapon: string
 }
+
 import { DataManager } from '../DataManager'
 import type { IGO, ImportResult } from '../exim'
 import { GOSource } from '../exim'

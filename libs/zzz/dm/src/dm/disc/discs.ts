@@ -2,6 +2,7 @@ import { dumpPrettyFile } from '@genshin-optimizer/common/pipeline'
 import { nameToKey, objFilter, objMap } from '@genshin-optimizer/common/util'
 import { PROJROOT_PATH } from '../../consts'
 import { readHakushinJSON } from '../../util'
+
 type discTrans = {
   name: string
   desc2: string

@@ -1,17 +1,17 @@
 import { useRefSize } from '@genshin-optimizer/common/ui'
 import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
 import { allRelicSlotKeys } from '@genshin-optimizer/sr/consts'
-import { type RelicIds } from '@genshin-optimizer/sr/db'
+import type { RelicIds } from '@genshin-optimizer/sr/db'
 import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import { Box, useTheme } from '@mui/material'
 import { useEffect, useMemo, useState } from 'react'
-import { LightConeCardCompact } from '../LightCone'
-import { RelicCardCompact, RelicSetCardCompact } from '../Relic'
 import {
   COMPACT_ELE_HEIGHT,
   COMPACT_ELE_WIDTH,
   COMPACT_ELE_WIDTH_NUMBER,
 } from '../compactConst'
+import { LightConeCardCompact } from '../LightCone'
+import { RelicCardCompact, RelicSetCardCompact } from '../Relic'
 export function EquipRow({
   relicIds,
   lightConeId,
@@ -44,8 +44,10 @@ export function EquipRow({
   const theme = useTheme()
   useEffect(() => {
     if (!ref.current || !width) return
-    const fontSize = parseFloat(window.getComputedStyle(ref.current).fontSize)
-    const spacing = parseFloat(theme.spacing(1))
+    const fontSize = Number.parseFloat(
+      window.getComputedStyle(ref.current).fontSize
+    )
+    const spacing = Number.parseFloat(theme.spacing(1))
     const eleWidthPx = fontSize * COMPACT_ELE_WIDTH_NUMBER
     const numCols =
       Math.floor((width - eleWidthPx) / (eleWidthPx + spacing)) + 1

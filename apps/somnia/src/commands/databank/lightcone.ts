@@ -57,7 +57,7 @@ export function lightconeBank(
   if (args) superimposition = args
   //name and passive
   name += ` (S${superimpositions[superimposition]})`
-  const text = `\n\n**${data.passive.name}:** ` + data.passive.description
+  const text = `\n\n**${data.passive.name}:** ${data.passive.description}`
   //thumbnail
   const thumbnail = AssetData.lightCones[id].icon
   //create dropdown menu

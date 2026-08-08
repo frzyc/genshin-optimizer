@@ -38,7 +38,7 @@ export function translate(
   switch (op) {
     case 'const':
       formula = tag?.q?.endsWith('_') ? `${(val * 100).toFixed(2)}%` : `${val}`
-      prec = Infinity
+      prec = Number.POSITIVE_INFINITY
       break
     case 'sum':
     case 'prod':
@@ -78,7 +78,7 @@ export function translate(
   let name: string | undefined, sheet: string | undefined
   if (tag) {
     const { qt, q, src, dst, et, sheet: s, ...remaining } = tag
-    const mem = (src ? ' m' + src : '') + (dst ? ' => m' + dst : '')
+    const mem = (src ? ` m${src}` : '') + (dst ? ` => m${dst}` : '')
 
     // TODO: Compute name, unit, source, etc.
     name = `(${et}${mem}) ${qt}.${q} ${Object.entries(remaining)
@@ -102,6 +102,6 @@ export function translate(
 const details = {
   sum: { head: '', joiner: ' + ', end: '', prec: 1 },
   prod: { head: '', joiner: ' * ', end: '', prec: 2 },
-  max: { head: 'Max(', joiner: ', ', end: ')', prec: Infinity },
-  min: { head: 'Min(', joiner: ', ', end: ')', prec: Infinity },
+  max: { head: 'Max(', joiner: ', ', end: ')', prec: Number.POSITIVE_INFINITY },
+  min: { head: 'Min(', joiner: ', ', end: ')', prec: Number.POSITIVE_INFINITY },
 } as const

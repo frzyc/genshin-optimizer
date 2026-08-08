@@ -22,6 +22,7 @@ import GroupsIcon from '@mui/icons-material/Groups'
 import { Box } from '@mui/material'
 import type { ReactNode } from 'react'
 import { ArtifactSetName, WeaponName } from '../components'
+
 const errHeader = {
   title: <ColorText color="warning">ERROR</ColorText>,
 }

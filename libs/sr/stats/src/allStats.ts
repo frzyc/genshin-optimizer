@@ -5,5 +5,5 @@ import type { AllStats } from './executors/gen-stats/executor'
 
 const allStats = allStat_gen as AllStats
 
-export { allStats }
 export type { AllStats }
+export { allStats }

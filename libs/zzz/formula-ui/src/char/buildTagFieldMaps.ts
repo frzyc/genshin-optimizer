@@ -2,10 +2,10 @@ import { ColorText } from '@genshin-optimizer/common/ui'
 import {
   type ConditionalDocument,
   type Field,
-  type MultiTagField,
-  type TagField,
   isMultiTagField,
   isTagField,
+  type MultiTagField,
+  type TagField,
 } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allCharacterKeys } from '@genshin-optimizer/zzz/consts'
@@ -14,8 +14,8 @@ import { createTagMap } from '@genshin-optimizer/zzz/formula'
 import { createElement } from 'react'
 import { discUiSheets } from '../disc/sheets'
 import { wengineUiSheets } from '../wengine/sheets'
-import { charBaseUiSheet } from './CharBase'
 import { abilityFormulaLabel } from './abilityFormulaLabels'
+import { charBaseUiSheet } from './CharBase'
 import { charSheets } from './sheets'
 import { getVariant } from './util'
 

@@ -18,9 +18,9 @@ import {
   CardContent,
   Divider,
   Grid,
+  styled,
   Tooltip,
   Typography,
-  styled,
 } from '@mui/material'
 import type { ChangeEventHandler, DragEventHandler } from 'react'
 import { useCallback, useContext, useMemo, useState } from 'react'
@@ -55,7 +55,7 @@ export function UploadCard({
           setErrorMsg('uploadCard.error.jsonParse')
           return undefined
         }
-      } catch (e) {
+      } catch (_e) {
         setErrorMsg('uploadCard.error.jsonParse')
         return undefined
       }

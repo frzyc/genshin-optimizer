@@ -12,7 +12,6 @@ import type {
   ProudSkillExcelConfigData,
 } from '@genshin-optimizer/gi/dm'
 import {
-  TextMapEN,
   avatarExcelConfigData,
   avatarSkillDepotExcelConfigData,
   avatarSkillExcelConfigData,
@@ -21,6 +20,7 @@ import {
   getHakushinCharData,
   hakushinChars,
   proudSkillExcelConfigData,
+  TextMapEN,
 } from '@genshin-optimizer/gi/dm'
 import * as somniaData from './Somnia/skillParam.json'
 
@@ -199,27 +199,27 @@ export default function characterSkillParam() {
         candSkillDepotIds
       const gender = characterIdMap[charid] === 'TravelerF' ? 'F' : 'M'
       genTalentHash(
-        ['TravelerAnemo' + gender],
+        [`TravelerAnemo${gender}`],
         avatarSkillDepotExcelConfigData[anemo]
       )
       genTalentHash(
-        ['TravelerGeo' + gender],
+        [`TravelerGeo${gender}`],
         avatarSkillDepotExcelConfigData[geo]
       )
       genTalentHash(
-        ['TravelerElectro' + gender],
+        [`TravelerElectro${gender}`],
         avatarSkillDepotExcelConfigData[electro]
       )
       genTalentHash(
-        ['TravelerDendro' + gender],
+        [`TravelerDendro${gender}`],
         avatarSkillDepotExcelConfigData[dendro]
       )
       genTalentHash(
-        ['TravelerHydro' + gender],
+        [`TravelerHydro${gender}`],
         avatarSkillDepotExcelConfigData[hydro]
       )
       genTalentHash(
-        ['TravelerPyro' + gender],
+        [`TravelerPyro${gender}`],
         avatarSkillDepotExcelConfigData[pyro]
       )
     } else {
@@ -256,10 +256,9 @@ function getDataFromHakushin(key: NonTravelerCharacterKey) {
     passive3: data.Passives[data.Passives.length - 1].ParamList.map((val) => [
       val,
     ]),
-    passive:
-      key === 'Ineffa'
-        ? data.Passives[2].ParamList.map((val) => [val])
-        : undefined,
+    ...(key === 'Ineffa'
+      ? { passive: data.Passives[2].ParamList.map((val) => [val]) }
+      : {}),
     constellation1: data.Constellations[0].ParamList,
     constellation2: data.Constellations[1].ParamList,
     constellation3: data.Constellations[2].ParamList,

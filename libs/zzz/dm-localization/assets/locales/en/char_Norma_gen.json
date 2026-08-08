@@ -252,7 +252,7 @@
   "mindscapes": {
     "1": {
       "name": "Visionary Extremism",
-      "desc": "The duration of the En-Nah Turret's missile bay deployed by <ct color=#FFFFFF>EX Special Attack: Explosive Experiment</ct> increases to 12s. When an Armor-Piercing Warhead or High-Explosive Warhead from any skill hits an enemy, the target's All-Attribute RES is reduced by 15% for 15s.",
+      "desc": "The duration of the En-Nah Turret's missile bay deployed by <ct color=#FFFFFF>EX Special Attack: Explosive Experiment</ct> increases to 12s. When an Armor-Piercing Warhead or High-Explosive Warhead from any skill hits an enemy, the target's All-Attribute RES is reduced by 15% for 15s. Repeated triggers reset the duration.",
       "flavor": {
         "0": "Advance! By any means necessary!",
         "1": "Too many things are chasing us in this dying world: the pitch-black frontier, our fleeting lifespan.",

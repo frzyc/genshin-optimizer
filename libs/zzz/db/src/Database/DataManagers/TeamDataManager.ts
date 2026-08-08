@@ -11,18 +11,18 @@ import {
 import { correctConditionalValue } from '@genshin-optimizer/game-opt/engine'
 import {
   type AttributeKey,
-  type CharacterKey,
   allAttributeKeys,
   allCharacterKeys,
+  type CharacterKey,
 } from '@genshin-optimizer/zzz/consts'
 import type {
   DamageType,
   Dst,
+  enemy,
+  own,
   Sheet,
   Src,
   Tag,
-  enemy,
-  own,
 } from '@genshin-optimizer/zzz/formula'
 import {
   bundledFormulaInSheet,

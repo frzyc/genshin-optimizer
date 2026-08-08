@@ -1,5 +1,8 @@
 {
   "c4": "Opponent's been hit by <strong>Sesshou Sakura</strong>'s lightning",
   "c6": "Sesshou Sakura Enemy DEF Ignore",
-  "c2Cond": "Level of Sesshou Sakura"
+  "c2Cond": "Level of Sesshou Sakura",
+  "a1Dmg": "Lightning Strike DMG",
+  "a1StellarDmg": "Lightning Strike Stellar-Conduct DMG",
+  "lockStellarDmg": "Additional Stellar-Conduct DMG"
 }

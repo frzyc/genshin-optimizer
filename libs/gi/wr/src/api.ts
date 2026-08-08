@@ -268,7 +268,6 @@ export function mergeData(data: Data[]): Data {
     if (data.length <= 1) return data[0]
     if (data[0].operation) {
       if (path[0] === 'teamBuff') path = path.slice(1)
-      /*eslint prefer-const: ["error", {"destructuring": "all"}]*/
       let { accu, type } =
         (objPathValue(input, path) as ReadNode<number | string> | undefined) ??
         {}

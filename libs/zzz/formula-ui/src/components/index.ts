@@ -1,2 +1,2 @@
-export * from './TagDisplay'
 export * from './qtMap'
+export * from './TagDisplay'

@@ -48,8 +48,8 @@ import { DiscCardObj } from '../DiscCard'
 import { DiscMainStatGroup } from '../DiscMainStatGroup'
 import { DiscRarityDropdown } from '../DiscRarityDropdown'
 import { DiscSetAutocomplete } from '../DiscSetAutocomplete'
-import { useDiscEditorSnackbar } from './DiscEditorSnackbarContext'
 import type { DiscEditorSnackbarKind } from './DiscEditorSnackbarContext'
+import { useDiscEditorSnackbar } from './DiscEditorSnackbarContext'
 import { DiscScanPanel } from './DiscScanPanel'
 import SubstatInput from './SubstatInput'
 import type { CycleTickResult } from './useGameCapture'
@@ -388,7 +388,7 @@ export function DiscEditor({
                       value={level}
                       disabled={!disc.rarity}
                       onChange={(e) => {
-                        const value = parseInt(e.target.value) || 0
+                        const value = Number.parseInt(e.target.value) || 0
                         setDisc({ level: value })
                       }}
                     />
@@ -447,7 +447,7 @@ export function DiscEditor({
                     <Button
                       onClick={() => setDisc({ lock: !disc?.lock })}
                       color={disc?.lock ? 'success' : 'primary'}
-                      disabled={!disc || !disc.mainStatKey}
+                      disabled={!disc?.mainStatKey}
                     >
                       {disc?.lock ? <LockIcon /> : <LockOpenIcon />}
                     </Button>

@@ -3,8 +3,8 @@ import type { Data } from '@genshin-optimizer/gi/wr'
 import { equal, greaterEq, input, percent } from '@genshin-optimizer/gi/wr'
 import { cond, st } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { SetEffectSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
+import type { SetEffectSheet } from '../IArtifactSheet'
 
 const key: ArtifactSetKey = 'DisenchantmentInDeepShadow'
 const setHeader = setHeaderTemplate(key)
@@ -63,7 +63,7 @@ const sheet: SetEffectSheet = {
         header: setHeader(4),
         value: condState,
         path: condStatePath,
-        name: st('enemyAffected.superconduct'),
+        name: st('enemyAffected.superconductOrStellarconduct'),
         states: {
           on: {
             fields: [{ node: set4_critRate_ }],

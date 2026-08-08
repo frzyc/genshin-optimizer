@@ -12,7 +12,6 @@ import type {
   INumConditionalData,
 } from '@genshin-optimizer/game-opt/engine'
 import { CalcContext, TagContext } from '@genshin-optimizer/game-opt/formula-ui'
-import type { BaseRead } from '@genshin-optimizer/pando/engine'
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
@@ -33,8 +32,6 @@ import {
   SetConditionalContext,
   SrcDstDisplayContext,
 } from '../context'
-import {} from '../context/SetConditionalContext'
-import {} from '../context/SrcDstDisplayContext'
 import type { Conditional } from '../types'
 import { FieldsDisplay } from './FieldDisplay'
 import { HeaderDisplay } from './HeaderDisplay'
@@ -42,11 +39,9 @@ import { HeaderDisplay } from './HeaderDisplay'
 export function ConditionalsDisplay({
   conditional,
   bgt,
-  onClickFormula,
 }: {
   bgt?: CardBackgroundColor
   conditional: Conditional
-  onClickFormula?: (read: BaseRead) => void
 }) {
   const { srcDisplay, dstDisplay } = useContext(SrcDstDisplayContext)
   const setConditional = useContext(SetConditionalContext)
@@ -88,7 +83,6 @@ export function ConditionalsDisplay({
           value={condValue}
           setValue={(v) => setConditional(sheet, name, src, dst, v)}
           bgt={bgt}
-          onClickFormula={onClickFormula}
         />
       ))}
       {/* // empty default conditional UI */}
@@ -103,7 +97,6 @@ export function ConditionalsDisplay({
           value={0}
           setValue={(v) => setConditional(sheet, name, src, dst, v)}
           disabled={hasExisting(src, dst)}
-          onClickFormula={onClickFormula}
         />
       )}
     </Stack>
@@ -120,7 +113,6 @@ const ConditionalDisplay = memo(function ConditionalDisplay({
   setValue,
   bgt = 'normal',
   disabled,
-  onClickFormula,
 }: {
   conditional: Conditional
   src: string
@@ -131,7 +123,6 @@ const ConditionalDisplay = memo(function ConditionalDisplay({
   setValue: (value: number) => void
   bgt?: CardBackgroundColor
   disabled?: boolean
-  onClickFormula?: (read: BaseRead) => void
 }) {
   const { header, fields, targeted } = conditional
   const { srcDisplay, dstDisplay } = useContext(SrcDstDisplayContext)
@@ -140,7 +131,8 @@ const ConditionalDisplay = memo(function ConditionalDisplay({
     () => ({
       ...tag,
       src,
-      dst,
+      // Disc/char conditionals often store dst=null; keep TagContext dst for reads.
+      dst: dst ?? tag.dst ?? null,
     }),
     [tag, src, dst]
   )
@@ -165,11 +157,7 @@ const ConditionalDisplay = memo(function ConditionalDisplay({
       />
       {!!fields && (
         <TagContext.Provider value={newTag}>
-          <FieldsDisplay
-            bgt={bgt}
-            fields={fields}
-            onClickFormula={onClickFormula}
-          />
+          <FieldsDisplay bgt={bgt} fields={fields} />
         </TagContext.Provider>
       )}
     </CardThemed>

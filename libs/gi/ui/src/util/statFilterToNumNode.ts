@@ -22,5 +22,5 @@ export function statFilterToNumNode(
           return { value: filterNode, minimum: minimum }
         })
     )
-    .filter((x) => x.value && x.minimum > -Infinity)
+    .filter((x) => x.value && x.minimum > Number.NEGATIVE_INFINITY)
 }

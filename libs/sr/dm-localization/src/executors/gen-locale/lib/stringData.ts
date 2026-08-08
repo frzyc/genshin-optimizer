@@ -4,10 +4,10 @@ import {
   verifyObjKeys,
 } from '@genshin-optimizer/common/util'
 import {
-  TrailblazerPathMap,
   allElementalTypeKeys,
   allTrailblazerGenderedKeys,
   allTrailblazerKeys,
+  TrailblazerPathMap,
 } from '@genshin-optimizer/sr/consts'
 import type { LanguageKey } from '@genshin-optimizer/sr/dm'
 import { allLanguageKeys, languageMap } from '@genshin-optimizer/sr/dm'
@@ -85,7 +85,7 @@ function createValueStr(
   plainString: string | null
 ) {
   if (index) {
-    if (suffix == '%') {
+    if (suffix === '%') {
       if (type?.startsWith('f')) {
         return `{{${index}, percent(fixed: ${type.substring(1)})}}${suffix}`
       } else {

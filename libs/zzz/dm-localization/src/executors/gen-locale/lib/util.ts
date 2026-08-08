@@ -9,7 +9,7 @@ export function processText(text: string, inTooltip = false) {
       /<IconMap:([a-zA-Z_]*?)>/g,
       (_match, capture: string) => `<${capture.replaceAll('_', '')} />`
     )
-    .replaceAll(/<Term:(.*?)>/g, (_match, capture: string) =>
+    .replaceAll(/<Term:(.*?)>(?:.*?<\/Term>)?/g, (_match, capture: string) =>
       inTooltip
         ? tooltipJSONData[capture]?.name
         : `<tooltip ns=tooltips_gen baseKey18=${capture}>${tooltipJSONData[capture]?.name || capture}</tooltip>`

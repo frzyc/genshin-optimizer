@@ -16,8 +16,8 @@ import type { SxProps } from '@mui/material'
 import { Box, Collapse, Divider, Typography } from '@mui/material'
 import { useContext, useState } from 'react'
 import { DataContext } from '../context'
-import { FieldsDisplay } from './FieldDisplay'
 import { ConditionalDisplay } from './conditional/ConditionalDisplay'
+import { FieldsDisplay } from './FieldDisplay'
 
 export function DocumentDisplay({
   sections,
@@ -137,14 +137,20 @@ function FieldsSectionDisplay({
 function TextSectionDisplay({
   section,
   sx,
-}: { section: IDocumentText; sx?: SxProps }) {
+}: {
+  section: IDocumentText
+  sx?: SxProps
+}) {
   const { data } = useContext(DataContext)
   return <Box sx={sx}>{evalIfFunc(section.text, data)}</Box>
 }
 function TextSectionDisplayCollapse({
   section,
   sx,
-}: { section: IDocumentText; sx?: SxProps }) {
+}: {
+  section: IDocumentText
+  sx?: SxProps
+}) {
   const { data } = useContext(DataContext)
   const [expanded, setExpanded] = useState(false)
   const [hover, setHover] = useState(false)

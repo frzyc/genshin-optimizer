@@ -71,6 +71,8 @@ export function listStatReadsFromFormulas(reads: Read<Tag>[]): Read<Tag>[] {
   const result: Read<Tag>[] = []
   for (const read of reads) {
     if (!isListingStatTag(read.tag)) continue
+    // Ignore Lumiflux DMG bonus since it doesn't exist
+    if (read.tag.q === 'dmg_' && read.tag.attribute === 'lumiflux') continue
     const key = statReadTagKey(read.tag)
     if (seen.has(key)) continue
     seen.add(key)
