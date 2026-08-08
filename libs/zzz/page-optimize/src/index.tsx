@@ -184,7 +184,12 @@ export default function PageOptimize() {
       {character && team && (
         <CharacterContext.Provider value={character}>
           <TagContext.Provider value={tag}>
-            <CharCalcProvider team={team}>
+            <CharCalcProvider
+              character={character}
+              team={team}
+              wengineId={character.equippedWengine}
+              discIds={character.equippedDiscs}
+            >
               <SrcDstDisplayContext.Provider value={srcDstDisplayContextValue}>
                 <ConditionalValuesContext.Provider value={conditionals}>
                   <SetConditionalContext.Provider value={setConditional}>

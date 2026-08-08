@@ -64,18 +64,19 @@ const EMPTY_ENTRIES: TagMapNodeEntries = []
 const EMPTY_DISC_IDS: DiscIds = objKeyMap(allDiscSlotKeys, () => undefined)
 
 export function CharCalcProvider({
+  character,
   team,
+  wengineId,
+  discIds,
   children,
 }: {
+  character: ICachedCharacter
   team: Team
+  wengineId?: string
+  discIds: DiscIds
   children: ReactNode
 }) {
-  const character = useCharacter(team.teammates[0].characterKey)!
-  const member0 = useCharacterAndEquipment(
-    character,
-    character.equippedWengine,
-    character.equippedDiscs
-  )
+  const member0 = useCharacterAndEquipment(character, wengineId, discIds)
   const fullTeammateEntries = useFullTeammateMemberEntries(team, character.key)
 
   const calc = useMemo(
