@@ -80,8 +80,8 @@ export function registerBuff(
 ): TagMapNodeEntries {
   if (!Array.isArray(entries)) entries = [entries]
   return entries.flatMap((entry) => {
-    const namedReader = displayNamedReader(entry, name)
-    const buffListing = buffListingRoot(resolveTeamBuffListing(entry, team))
+    const namedReader = getDisplayNamedReader(entry, name)
+    const buffListing = getBuffListingRoot(resolveTeamBuffListing(entry, team))
       .listing.buffs
     return [
       buffListing.add(listingItem(namedReader, cond)),
@@ -107,8 +107,8 @@ export function registerBuffFormula(
   cond: string | StrNode = 'infer',
   team?: boolean
 ): TagMapNodeEntries {
-  const namedReader = displayNamedReader(entry, name)
-  const listingRoot = buffListingRoot(resolveTeamBuffListing(entry, team))
+  const namedReader = getDisplayNamedReader(entry, name)
+  const listingRoot = getBuffListingRoot(resolveTeamBuffListing(entry, team))
   return [
     listingRoot.listing.buffs.add(listingItem(namedReader, cond)),
     listingRoot.listing.formulas.add(listingItem(namedReader, cond)),
