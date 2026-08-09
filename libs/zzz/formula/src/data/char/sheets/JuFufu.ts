@@ -113,27 +113,21 @@ const sheet = register(
           )
         )
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'core_chain_dmg_',
     teamBuff.combat.dmg_.addWithDmgType(
       'chain',
       tigers_roar.ifOn(percent(subscript(char.core, dm.core.chain_dmg_)))
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'core_ult_dmg_',
     teamBuff.combat.dmg_.addWithDmgType(
       'ult',
       tigers_roar.ifOn(percent(subscript(char.core, dm.core.ult_dmg_)))
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'core_impact',
@@ -149,17 +143,13 @@ const sheet = register(
     'm1_stun_',
     enemyDebuff.common.stun_.add(
       cmpGE(char.mindscape, 1, chain_hit.ifOn(percent(dm.m1.stun_)))
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm2_crit_dmg_',
     teamBuff.combat.crit_dmg_.add(
       cmpGE(char.mindscape, 2, percent(dm.m2.crit_dmg_))
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm4_crit_dmg_',

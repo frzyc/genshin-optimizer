@@ -258,9 +258,7 @@ const sheet = register(
     'm4_crit_',
     teamBuff.combat.crit_.add(
       cmpGE(char.mindscape, 4, chain_ult_used.ifOn(percent(dm.m4.crit_)))
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff('m6_dmg_', m6_dmg_, undefined, false, false)
 )

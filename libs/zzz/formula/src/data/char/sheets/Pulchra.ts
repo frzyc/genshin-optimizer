@@ -90,9 +90,7 @@ const sheet = register(
         6,
         abilityCheck(binding_trap.ifOn(percent(dm.ability.aftershock_dmg_)))
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm1_crit_',
@@ -119,9 +117,7 @@ const sheet = register(
         6,
         abilityCheck(percent(dm.ability.aftershock_dmg_))
       )
-    ),
-    undefined,
-    true
+    )
   )
 )
 export default sheet

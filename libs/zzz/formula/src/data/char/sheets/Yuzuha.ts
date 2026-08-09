@@ -124,15 +124,11 @@ const sheet = register(
           prod(own.initial.atk, percent(dm.core.atk))
         )
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'core_common_dmg_',
-    teamBuff.combat.common_dmg_.add(tanuki_wish.ifOn(dm.core.common_dmg_)),
-    undefined,
-    true
+    teamBuff.combat.common_dmg_.add(tanuki_wish.ifOn(dm.core.common_dmg_))
   ),
   registerBuff(
     'ability_anomBuildup_',
@@ -148,9 +144,7 @@ const sheet = register(
           )
         )
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'ability_anomaly_buff_',
@@ -171,9 +165,7 @@ const sheet = register(
           )
         )
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'ability_disorder_buff_',
@@ -194,17 +186,13 @@ const sheet = register(
           )
         )
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm1_resRed_',
     enemyDebuff.common.resRed_.add(
       cmpGE(char.mindscape, 1, sweet_scare.ifOn(percent(dm.m1.resRed_)))
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm2_common_dmg_',
@@ -214,9 +202,7 @@ const sheet = register(
         2,
         exSpecial_ult_hit.ifOn(percent(dm.m2.common_dmg_))
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm2_anomBuildup_',
@@ -226,9 +212,7 @@ const sheet = register(
         2,
         exSpecial_ult_hit.ifOn(percent(dm.m2.anomBuildup_))
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm4_assistFollowUp_dmg_',
@@ -252,9 +236,7 @@ const sheet = register(
         6,
         prod(powerful_shell_hits, percent(dm.m6.add_disorder_))
       )
-    ),
-    undefined,
-    true
+    )
   )
 )
 export default sheet

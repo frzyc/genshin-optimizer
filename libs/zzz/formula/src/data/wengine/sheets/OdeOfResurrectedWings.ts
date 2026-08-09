@@ -56,8 +56,7 @@ const sheet = registerWengine(
         refringeTriggered.ifOn(percent(subscript(phase, dm.common_dmg_)))
       )
     ),
-    showSpecialtyAndEquipped(key),
-    true
+    showSpecialtyAndEquipped(key)
   )
 )
 export default sheet

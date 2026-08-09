@@ -224,9 +224,7 @@ const sheet = register(
           )
         )
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'ability_aftershock_defIgn_',
@@ -240,18 +238,14 @@ const sheet = register(
         1,
         zeroedIn.ifOn(percent(dm.ability.aftershock_defIgn_))
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff('m1_fire_resIgn_', m1_fire_resIgn_, undefined, undefined, false),
   registerBuff(
     'm1_common_dmg_',
     teamBuff.combat.common_dmg_.add(
       cmpGE(char.mindscape, 1, zeroedIn.ifOn(percent(dm.m1.dmg_)))
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm2_atk_',

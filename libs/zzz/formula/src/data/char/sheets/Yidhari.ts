@@ -47,9 +47,7 @@ const sheet = register(
   // Buffs
   registerBuff(
     'etherVeil_hp_',
-    teamBuff.combat.hp_.add(etherVeil.ifOn(percent(0.05))),
-    undefined,
-    true
+    teamBuff.combat.hp_.add(etherVeil.ifOn(percent(0.05)))
   ),
   registerBuff(
     'core_hpSheerForce',
