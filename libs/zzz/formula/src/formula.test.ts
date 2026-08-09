@@ -17,6 +17,7 @@ import {
   discTagMapNodeEntries,
   formulas,
   teamData,
+  Vivian,
   wengineTagMapNodeEntries,
   withMember,
 } from '.'
@@ -28,11 +29,16 @@ import {
   enemy,
   enemyDebuff,
   enemyTag,
+  member0,
+  member1,
+  nextMember,
   own,
   ownBuff,
   ownTag,
+  prevMember,
   type TagMapNodeEntries,
   tagStr,
+  target,
   team,
 } from './data/util'
 
@@ -65,13 +71,13 @@ describe('character test', () => {
           promotion,
           key: charKey,
           mindscape: 0,
+          potential: 0,
           basic: 0,
           dodge: 0,
           special: 0,
           assist: 0,
           chain: 0,
           core,
-          potential: 0,
         })
       ),
     ]
@@ -103,13 +109,13 @@ describe('wengine test', () => {
           promotion: 0,
           key: 'Anby',
           mindscape: 0,
+          potential: 0,
           basic: 0,
           dodge: 0,
           special: 0,
           assist: 0,
           chain: 0,
           core: 0,
-          potential: 0,
         }),
         ...wengineTagMapNodeEntries({
           key: wengKey,
@@ -210,13 +216,13 @@ describe('char+wengine test', () => {
           promotion: 5,
           key: 'Anby',
           mindscape: 0,
+          potential: 0,
           basic: 0,
           dodge: 0,
           special: 0,
           assist: 0,
           chain: 0,
           core: 6,
-          potential: 0,
         }),
         ...wengineTagMapNodeEntries({
           key: 'VortexRevolver',
@@ -448,6 +454,103 @@ describe('team', () => {
     expect(
       calc.compute(team.common.count.withFaction('StarsOfLyra')).val
     ).toEqual(0)
+  })
+  test('target works', () => {
+    const data: TagMapNodeEntries = [
+      ...teamData(['Seth', 'Vivian']),
+      ...withMember(
+        'Vivian',
+        ...charTagMapNodeEntries({
+          level: 60,
+          promotion: 5,
+          key: 'Vivian',
+          mindscape: 0,
+          potential: 0,
+          basic: 0,
+          dodge: 0,
+          special: 0,
+          assist: 0,
+          chain: 0,
+          core: 6,
+        }),
+
+        ownBuff.initial.atk.add(25),
+        ownBuff.combat.atk.add(100),
+        ownBuff.combat.atk_.add(0.08),
+        ownBuff.initial.crit_.add(0.7),
+        ownBuff.initial.crit_dmg_.add(1.04),
+        ownBuff.initial.dmg_.electric.add(0.4),
+        ownBuff.initial.pen_.add(0.05),
+        ownBuff.initial.pen.add(90),
+        ownBuff.initial.resIgn_.add(0.02),
+        ownBuff.initial.anomProf.add(338)
+      ),
+      ...withMember(
+        'Seth',
+        ...charTagMapNodeEntries({
+          level: 60,
+          promotion: 5,
+          key: 'Seth',
+          mindscape: 0,
+          potential: 0,
+          basic: 0,
+          dodge: 0,
+          special: 0,
+          assist: 0,
+          chain: 0,
+          core: 6,
+        }),
+
+        ownBuff.initial.atk.add(25),
+        ownBuff.combat.atk.add(100),
+        ownBuff.combat.atk_.add(0.08),
+        ownBuff.initial.crit_.add(0.7),
+        ownBuff.initial.crit_dmg_.add(1.04),
+        ownBuff.initial.dmg_.electric.add(0.4),
+        ownBuff.initial.pen_.add(0.05),
+        ownBuff.initial.pen.add(90),
+        ownBuff.initial.resIgn_.add(0.02),
+        ownBuff.initial.anomProf.add(338)
+      ),
+      own.common.critMode.add('avg'),
+      enemy.common.def.add(635),
+      enemy.common.res_.electric.add(0.1),
+      conditionalEntries(
+        'Vivian',
+        'Vivian',
+        'Seth'
+      )(Vivian.conditionals.abloom.name, 1),
+      enemyDebuff.common.resRed_.electric.add(0.15),
+      enemyDebuff.common.dmgInc_.add(0.1),
+      enemyDebuff.common.dmgRed_.add(0.15),
+      enemyDebuff.common.stun_.add(1.5),
+      enemyDebuff.common.unstun_.add(1),
+    ]
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Vivian', dst: 'Seth', preset: 'preset0' })
+    expect(calc.compute(own.final.atk).val).toBeCloseTo(1078.2, 1)
+    expect(calc.compute(member1.final.atk).val).toBeCloseTo(1078.2, 1)
+    expect(calc.compute(target.final.atk).val).toBeCloseTo(821.76, 1)
+    expect(calc.compute(target.final.anomProf).val).toBeCloseTo(428, 1)
+    expect(calc.compute(member0.final.anomProf).val).toBeCloseTo(428, 1)
+
+    expect(
+      calc
+        .withTag({ src: 'Vivian', dst: 'Vivian', preset: 'preset0' })
+        .compute(prevMember.final.anomProf).val
+    ).toBeCloseTo(428, 1)
+    expect(
+      calc
+        .withTag({ src: 'Vivian', dst: 'Vivian', preset: 'preset0' })
+        .compute(nextMember.final.anomProf).val
+    ).toBeCloseTo(428, 1)
+
+    expect(
+      calc.compute(read(Vivian.buffs.core_electric_abloom.tag, undefined)).val
+    ).toBeCloseTo(428 * 0.1 * 0.032)
   })
 })
 
