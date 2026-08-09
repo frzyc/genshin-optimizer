@@ -40,7 +40,7 @@ function getBuffListingRoot(useTeamListing: boolean) {
   return useTeamListing ? teamBuff : ownBuff
 }
 
-function displayNamedReader(entry: TagMapNodeEntry, name: string) {
+function getDisplayNamedReader(entry: TagMapNodeEntry, name: string) {
   // Cannot use `sheet: null`; namedReader is also used as a `Tag` in `listingItem`.
   const { sheet: _sheet, ...tag } = entry.tag
   return reader.withTag({ ...tag, et: 'display', name })
