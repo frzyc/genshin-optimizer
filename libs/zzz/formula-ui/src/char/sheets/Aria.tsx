@@ -1,5 +1,8 @@
-import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { Aria, attributes } from '@genshin-optimizer/zzz/formula'
+import {
+  allAttributeAnomalyKeys,
+  type CharacterKey,
+} from '@genshin-optimizer/zzz/consts'
+import { Aria } from '@genshin-optimizer/zzz/formula'
 import { trans } from '../../util'
 import { createBaseSheet, fieldForBuff } from '../sheetUtil'
 
@@ -33,7 +36,7 @@ const sheet = createBaseSheet(key, {
       conditional: {
         label: ch('abloom'),
         metadata: cond.abloom,
-        fields: attributes.map((attr) =>
+        fields: allAttributeAnomalyKeys.map((attr) =>
           fieldForBuff(buff[`core_${attr}_anom_mv_mult_`])
         ),
       },

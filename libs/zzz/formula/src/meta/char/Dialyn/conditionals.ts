@@ -18,9 +18,9 @@ export const conditionals = {
     name: 'overwhelmingly_positive',
     type: 'bool',
   },
-  prevMember: {
+  previousMember: {
     sheet: 'Dialyn',
-    name: 'prevMember',
+    name: 'previousMember',
     type: 'list',
     list: ['attack', 'rupture'],
   },

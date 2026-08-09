@@ -6,12 +6,14 @@ import {
   subscript,
   sum,
 } from '@genshin-optimizer/pando/engine'
-import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
+import {
+  allAttributeAnomalyKeys,
+  type CharacterKey,
+} from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
 import { isStunned } from '../../common/enemy'
 import {
   allBoolConditionals,
-  attributes,
   damageTypes,
   own,
   ownBuff,
@@ -87,7 +89,7 @@ const sheet = register(
     'core_anomProf',
     ownBuff.combat.anomProf.add(percent(subscript(char.core, dm.core.anomProf)))
   ),
-  ...attributes.map((attr) =>
+  ...allAttributeAnomalyKeys.map((attr) =>
     registerBuff(
       `core_${attr}_anom_mv_mult_`,
       teamBuff.dmg.anom_mv_mult_[attr].addWithDmgType(

@@ -1,9 +1,4 @@
-import {
-  allAttributeKeys,
-  type CharacterKey,
-  elementalData,
-  specialtyData,
-} from '@genshin-optimizer/zzz/consts'
+import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { Sunna } from '@genshin-optimizer/zzz/formula'
 import { st, trans } from '../../util'
 import { createBaseSheet, fieldForBuff } from '../sheetUtil'
@@ -30,19 +25,20 @@ const sheet = createBaseSheet(key, {
     },
   },
   core: [
-    {
-      type: 'fields',
-      fields: [
-        ...allAttributeKeys.flatMap((attr) =>
-          ['attack' as const, 'anomaly' as const].map((type) => ({
-            title: `${specialtyData[type]} ${elementalData[attr]} DMG`,
-            fieldRef: formula[`core_${type}_${attr}_dmg`].tag,
-          }))
-        ),
-        fieldForBuff(buff.core_crit_),
-        fieldForBuff(buff.core_crit_dmg_),
-      ],
-    },
+    // {
+    //   type: 'fields',
+    //   fields: [
+    //     ...allAttributeAnomalyKeys.flatMap((attr) =>
+    //       ['attack' as const, 'anomaly' as const].map((type) => ({
+    //         title: `${specialtyData[type]} ${elementalData[attr]} DMG`,
+    //         fieldRef: formula[`core_${type}_${attr}_dmg`].tag,
+    //         targeted: true,
+    //       }))
+    //     ),
+    //     fieldForBuff(buff.core_crit_),
+    //     fieldForBuff(buff.core_crit_dmg_),
+    //   ],
+    // },
     {
       type: 'conditional',
       conditional: {

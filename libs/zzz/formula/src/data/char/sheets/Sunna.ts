@@ -1,11 +1,15 @@
 import {
+  cmpEq,
   cmpGE,
   min,
   prod,
   subscript,
   sum,
 } from '@genshin-optimizer/pando/engine'
-import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
+import {
+  allAttributeAnomalyKeys,
+  type CharacterKey,
+} from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
   allBoolConditionals,
@@ -18,6 +22,7 @@ import {
   percent,
   register,
   registerBuff,
+  target,
   team,
   teamBuff,
 } from '../../util'
@@ -39,8 +44,8 @@ const {
 } = allBoolConditionals(key)
 const { catsGaze } = allNumConditionals(key, true, 0, dm.m1.maxStacks)
 
-const core_crit_ = ownBuff.combat.crit_.add(percent(1))
-const core_crit_dmg_ = ownBuff.combat.crit_dmg_.add(
+const core_crit_ = teamBuff.combat.crit_.add(percent(1))
+const core_crit_dmg_ = teamBuff.combat.crit_dmg_.add(
   percent(subscript(char.core, dm.core.crit_dmg_))
 )
 const m6_common_dmg_ = teamBuff.combat.common_dmg_.add(
@@ -57,26 +62,34 @@ const sheet = register(
 
   customHeal('ult_heal', sum(-50, prod(char.chain, 250)), { team: true }),
 
-  // TODO: do this properly
-  ...allAttributeKeys.flatMap((attr) =>
-    ['anomaly' as const, 'attack' as const].map((type) =>
-      customDmg(
-        `core_${type}_${attr}_dmg`,
-        { damageType1: 'elemental', attribute: attr },
-        prod(
-          own.final.atk,
-          sum(
-            percent(subscript(char.core, dm.core[`dmg_${type}`])),
-            cmpGE(char.mindscape, 2, percent(dm.m2[`dmg_${type}`]))
-          )
-        ),
-        undefined,
-        core_crit_,
-        core_crit_dmg_,
-        m6_common_dmg_
-      )
-    )
-  ),
+  // // TODO: do this properly
+  // ...allAttributeAnomalyKeys.flatMap((attr) =>
+  //   ['anomaly' as const, 'attack' as const].map((type) =>
+  //     customDmg(
+  //       `core_${type}_${attr}_dmg`,
+  //       { damageType1: 'elemental', attribute: attr },
+  //       cmpEq(
+  //         target.char.attribute,
+  //         attr,
+  //         cmpEq(
+  //           target.char.specialty,
+  //           type,
+  //           prod(
+  //             target.final.atk,
+  //             sum(
+  //               percent(subscript(char.core, dm.core[`dmg_${type}`])),
+  //               cmpGE(char.mindscape, 2, percent(dm.m2[`dmg_${type}`]))
+  //             )
+  //           )
+  //         )
+  //       ),
+  //       { team: true },
+  //       core_crit_,
+  //       core_crit_dmg_,
+  //       m6_common_dmg_
+  //     )
+  //   )
+  // ),
   customDmg(
     'm6_dmg',
     { ...baseTag, damageType1: 'elemental' },

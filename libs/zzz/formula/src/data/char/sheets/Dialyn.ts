@@ -20,6 +20,7 @@ import {
   own,
   ownBuff,
   percent,
+  prevMember,
   register,
   registerBuff,
   team,
@@ -41,7 +42,7 @@ const { malicious_complaint, overwhelmingly_positive } =
   allBoolConditionals(key)
 // TODO: fix this cond to use actual previous member stats
 const { atk_sheerForce } = allNumConditionals(key, true, 0, 5000)
-const { prevMember } = allListConditionals(key, ['attack', 'rupture'])
+const { previousMember } = allListConditionals(key, ['attack', 'rupture'])
 
 const ability_check = (a: NumNode | number, b?: NumNode | number) =>
   cmpGE(
@@ -58,7 +59,7 @@ const ability_attack_dmg = ownBuff.combat.flat_dmg.addWithDmgType(
   'exSpecial',
   ability_check(
     cmpEq(
-      prevMember.value,
+      previousMember.value,
       1,
       prod(atk_sheerForce, percent(dm.ability.attack_dmg))
     )
@@ -68,7 +69,7 @@ const ability_rupture_dmg = ownBuff.combat.flat_dmg.addWithDmgType(
   'exSpecial',
   ability_check(
     cmpEq(
-      prevMember.value,
+      previousMember.value,
       2,
       prod(atk_sheerForce, percent(dm.ability.rupture_dmg))
     )
@@ -124,7 +125,10 @@ const sheet = register(
     { attribute: 'physical', damageType1: 'exSpecial' },
     cmpGE(char.mindscape, 6, prod(own.final.atk, percent(dm.m6.dmg)))
   ),
-
+  registerBuff(
+    'test',
+    ownBuff.combat.atk.add(cmpEq(prevMember.char.key, 'Banyue', 1000))
+  ),
   // Buffs
   registerBuff(
     'core_impact',
