@@ -36,7 +36,7 @@ function resolveTeamBuffListing(
   return team ?? TEAM_LISTING_ENTRY_TYPES.has(entry.tag.et)
 }
 
-function buffListingRoot(useTeamListing: boolean) {
+function getBuffListingRoot(useTeamListing: boolean) {
   return useTeamListing ? teamBuff : ownBuff
 }
 
