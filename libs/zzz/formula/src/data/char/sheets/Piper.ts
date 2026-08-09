@@ -141,9 +141,7 @@ const sheet = register(
           dm.ability.common_dmg_
         )
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm2_physical_dmg_',

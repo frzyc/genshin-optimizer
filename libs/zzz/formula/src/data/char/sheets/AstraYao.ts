@@ -154,9 +154,7 @@ const sheet = register(
       idyllic_cadenza.ifOn(
         sum(percent(0.08), prod(char.special, percent(0.01)))
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'crit_dmg_',
@@ -164,9 +162,7 @@ const sheet = register(
       idyllic_cadenza.ifOn(
         sum(percent(0.07), prod(char.special, percent(0.015)))
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'core_atk',
@@ -181,9 +177,7 @@ const sheet = register(
           )
         )
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm1_resRed_',
@@ -203,9 +197,7 @@ const sheet = register(
           4,
           idyllic_cadenza.ifOn(prod(own.final.atk, percent(dm.m4.attack)))
         )
-      ),
-    undefined,
-    true
+      )
   ),
   registerBuff(
     'm4_anomaly_quickAssist_anomBuildup_',
@@ -214,9 +206,7 @@ const sheet = register(
       .addWithDmgType(
         'quickAssist',
         cmpGE(char.mindscape, 4, idyllic_cadenza.ifOn(dm.m4.anomaly))
-      ),
-    undefined,
-    true
+      )
   ),
   registerBuff(
     'm4_stun_quickAssist_dazeInc_',
@@ -225,9 +215,7 @@ const sheet = register(
       .addWithDmgType(
         'quickAssist',
         cmpGE(char.mindscape, 4, idyllic_cadenza.ifOn(dm.m4.stun))
-      ),
-    undefined,
-    true
+      )
   ),
   registerBuff('m6_crit_', m6_crit_, undefined, undefined, false),
   registerBuff('m6_mv_mult_', m6_mv_mult, undefined, undefined, false),

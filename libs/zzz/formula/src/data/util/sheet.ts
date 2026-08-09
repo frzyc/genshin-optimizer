@@ -83,9 +83,8 @@ export function registerBuff(
   if (!Array.isArray(entries)) entries = [entries]
   return entries.flatMap((entry) => {
     const namedReader = displayNamedReader(entry, name)
-    const buffListing = buffListingRoot(
-      resolveTeamBuffListing(entry, team)
-    ).listing.buffs
+    const buffListing = buffListingRoot(resolveTeamBuffListing(entry, team))
+      .listing.buffs
     return [
       buffListing.add(listingItem(namedReader, cond)),
       namedReader.toEntry(entry.value),

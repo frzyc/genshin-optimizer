@@ -45,8 +45,7 @@ const sheet = registerWengine(
         etherVeilActive.ifOn(percent(subscript(phase, dm.common_dmg_)))
       )
     ),
-    showSpecialtyAndEquipped(key),
-    true
+    showSpecialtyAndEquipped(key)
   ),
   registerBuff(
     'hp_',
@@ -56,8 +55,7 @@ const sheet = registerWengine(
         etherVeilActive.ifOn(percent(subscript(phase, dm.hp_)))
       )
     ),
-    showSpecialtyAndEquipped(key),
-    true
+    showSpecialtyAndEquipped(key)
   )
 )
 export default sheet

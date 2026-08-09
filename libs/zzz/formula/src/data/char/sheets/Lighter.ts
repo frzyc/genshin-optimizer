@@ -173,15 +173,11 @@ const sheet = register(
   ),
   registerBuff(
     'ability_ice_dmg_',
-    teamBuff.combat.dmg_.ice.add(ability_ice_fire_dmg_check),
-    undefined,
-    true
+    teamBuff.combat.dmg_.ice.add(ability_ice_fire_dmg_check)
   ),
   registerBuff(
     'ability_fire_dmg_',
-    teamBuff.combat.dmg_.fire.add(ability_ice_fire_dmg_check),
-    undefined,
-    true
+    teamBuff.combat.dmg_.fire.add(ability_ice_fire_dmg_check)
   ),
   registerBuff(
     'm1_ice_resRed_',
@@ -212,9 +208,7 @@ const sheet = register(
     'm4_enerRegen_',
     notOwnBuff.combat.enerRegen_.add(
       cmpGE(char.mindscape, 4, percent(dm.m4.enerRegen_))
-    ),
-    undefined,
-    true
+    )
   )
 )
 export default sheet

@@ -105,9 +105,7 @@ const sheet = register(
     'm2_electric_resRed_',
     enemyDebuff.common.resRed_.electric.add(
       cmpGE(char.mindscape, 2, grenadeHit.ifOn(percent(dm.m2.electric_resRed_)))
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm2_electric_anomBuildupResRed_',
@@ -117,9 +115,7 @@ const sheet = register(
         2,
         grenadeHit.ifOn(percent(-dm.m2.electric_anomBuildupResRed_))
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm4_enerRegen_',

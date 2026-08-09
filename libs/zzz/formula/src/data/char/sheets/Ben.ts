@@ -140,17 +140,13 @@ const sheet = register(
         3,
         shieldOn.ifOn(percent(dm.ability.crit_))
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm1_dmg_red_',
     teamBuff.combat.dmg_red_.add(
       cmpGE(char.mindscape, 1, enemyBlocked.ifOn(percent(dm.m1.dmg_red_)))
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff('m4_dmg_', m4_dmg_, undefined, undefined, false),
   registerBuff(

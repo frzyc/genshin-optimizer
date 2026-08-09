@@ -200,9 +200,7 @@ const sheet = register(
           )
         )
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff('core_atk', core_atk, undefined, undefined, false),
   registerBuff('ability_crit_', ability_crit_, undefined, undefined, false),
@@ -217,9 +215,7 @@ const sheet = register(
     'm4_crit_dmg_',
     teamBuff.combat.crit_dmg_.add(
       cmpGE(char.mindscape, 4, cheerOn.ifOn(percent(dm.m4.crit_dmg_)))
-    ),
-    undefined,
-    true
+    )
   )
 )
 export default sheet

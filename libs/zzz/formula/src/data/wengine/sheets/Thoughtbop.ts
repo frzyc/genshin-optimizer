@@ -48,8 +48,7 @@ const sheet = registerWengine(
         prod(physExSpecialUsed, percent(subscript(phase, dm.common_dmg_)))
       )
     ),
-    showSpecialtyAndEquipped(key),
-    true
+    showSpecialtyAndEquipped(key)
   ),
   registerBuff(
     'team_atk_',
@@ -59,8 +58,7 @@ const sheet = registerWengine(
         cmpGE(physExSpecialUsed, dm.stackThreshold, subscript(phase, dm.atk_))
       )
     ),
-    showSpecialtyAndEquipped(key),
-    true
+    showSpecialtyAndEquipped(key)
   )
 )
 export default sheet
