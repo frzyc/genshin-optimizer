@@ -33,9 +33,7 @@ function resolveTeamBuffListing(
   entry: TagMapNodeEntry,
   team?: boolean
 ): boolean {
-  if (team === true) return true
-  if (team === false) return false
-  return TEAM_LISTING_ENTRY_TYPES.has(entry.tag.et)
+  return team ?? TEAM_LISTING_ENTRY_TYPES.has(entry.tag.et)
 }
 
 function buffListingRoot(useTeamListing: boolean) {
