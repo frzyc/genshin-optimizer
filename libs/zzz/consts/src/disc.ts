@@ -211,8 +211,8 @@ export const disc2pEffect: Record<
   YunkuiTales: { hp_: 0.1 },
   WutheringSalon: { wind_dmg_: 0.1 },
   TheSkyAblaze: { ether_dmg_: 0.1 },
-  ThornedRose: { anomProf: 30 },
-  FeatheredFate: { def_: 0.16 },
+  ThornedRose: { def_: 0.16 },
+  FeatheredFate: { anomProf: 30 },
 }
 
 // Copied from libs\zzz\dm\src\dm\disc\discNames.json, mainly used for scanner.
