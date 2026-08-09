@@ -311,29 +311,67 @@
       90
     ]
   ],
-  "passive1": [],
+  "passive1": [
+    [
+      0.4
+    ],
+    [
+      0.5
+    ]
+  ],
   "passive2": [
     [
       0.0015
     ]
   ],
   "passive3": [],
+  "lockedPassive": [
+    [
+      0.8
+    ],
+    [
+      2.5
+    ],
+    [
+      2
+    ],
+    [
+      10
+    ]
+  ],
   "constellation1": [
-    8
+    8,
+    0.5,
+    10
   ],
   "constellation2": [
     2.56,
     0.6,
-    1
+    1,
+    60,
+    90,
+    120,
+    200
   ],
   "constellation3": [],
   "constellation4": [
     0.2,
-    5
+    5,
+    8,
+    5,
+    1
   ],
   "constellation5": [],
   "constellation6": [
-    0.6
+    0.6,
+    2
   ],
-  "upgradeableSkills": []
+  "upgradeableSkills": [
+    "burst",
+    "passive1",
+    "constellation1",
+    "constellation2",
+    "constellation4",
+    "constellation6"
+  ]
 }

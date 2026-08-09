@@ -16,8 +16,8 @@ import {
   FieldDisplayList,
   GetCalcDisplay,
   NodeFieldDisplay,
-  StatEditorList,
   resolveInfo,
+  StatEditorList,
 } from '@genshin-optimizer/gi/ui'
 import type { ReadNode } from '@genshin-optimizer/gi/wr'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
@@ -38,6 +38,7 @@ import {
 import type { ReactNode } from 'react'
 import { useContext, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
+
 const cols = {
   xs: 1,
   md: 2,

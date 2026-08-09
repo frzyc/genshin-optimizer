@@ -21,7 +21,7 @@ export function deduplicate(
     else if (n.type === 'rolls') simplifyRollsNode(obj, n)
   })
   nodes.sort((a, b) => -cmpNodes(a.n, b.n))
-  let prev: weightedNode | undefined = undefined
+  let prev: weightedNode | undefined
   return nodes.filter((cur) => {
     if (prev && cmpNodes(prev.n, cur.n) === 0) {
       prev.p += cur.p

@@ -1,3 +1,4 @@
+import { toDecimal } from '@genshin-optimizer/common/util'
 import type {
   ArtifactRarity,
   ArtifactSetKey,
@@ -28,6 +29,14 @@ export function expandNode(node: MarkovNode): { p: number; n: MarkovNode }[] {
   return [{ p: 1, n: node }]
 }
 
+export function expandNodes(
+  nodes: { p: number; n: MarkovNode }[]
+): { p: number; n: MarkovNode }[] {
+  return nodes.flatMap(({ p, n }) =>
+    expandNode(n).map(({ p: p2, n: n2 }) => ({ p: p * p2, n: n2 }))
+  )
+}
+
 /**
  * Simulates leveling up an existing artifact to its max level.
  */
@@ -51,10 +60,11 @@ export function levelUpArtifact(
   if (subkeys.length === 4) return [{ p: 1, n: makeSubstatNode(info) }]
 
   // Unactivated substats - Insert and remove a remaining roll.
-  if (art.unactivatedSubstats) {
-    art.unactivatedSubstats.forEach(({ key, value }) => {
+  const anyUnactivated = art.unactivatedSubstats?.some(({ key }) => key !== '')
+  if (art.unactivatedSubstats && anyUnactivated) {
+    art.unactivatedSubstats.forEach(({ key, accurateValue }) => {
       if (key === '') return
-      info.base[key] = (info.base[key] ?? 0) + value
+      info.base[key] = (info.base[key] ?? 0) + toDecimal(accurateValue, key)
       info.subkeys.push({ key, baseRolls: 0 })
       info.rollsLeft -= 1
     })
@@ -126,8 +136,6 @@ export function freshArtifact(
 /**
  * Artifact reshaping / rerolling using Dust of Enlightenment. We select two affixes and reroll from
  * Level 0 (or 4) and guarantee that at least `mintotal` rolls go into those affixes.
- *
- * TODO: Check that initial value is handled correctly
  */
 export function dustReshape(
   art: IArtifact,
@@ -137,14 +145,16 @@ export function dustReshape(
 ): weightedNode[] {
   const base = toStats(currentBuild, art)
   const { rarity } = art
-  const rollsLeft = getRollsRemaining(0, art.rarity)
   const subkeys = art.substats.flatMap(({ key, initialValue }) => {
     if (key === '') return []
     if (initialValue === undefined)
-      throw new Error('initialValue must be defined for reshaping')
-    base[key] = (base[key] ?? 0) + initialValue
+      throw new Error('Cannot reshape artifacts with `initialValue` undefined.')
+    base[key] = (base[key] ?? 0) + toDecimal(initialValue, key)
     return [{ key, baseRolls: 0 }]
   })
+  const totalRolls =
+    art.totalRolls ?? subkeys.length + getRollsRemaining(0, art.rarity)
+  const rollsLeft = Math.max(0, totalRolls - subkeys.length)
   return [
     {
       p: 1,
@@ -161,16 +171,15 @@ export function dustReshape(
 
 /**
  * Artifact definition using Sanctifying Elixir. Two affixes are guaranteed w/ two
- * reshape-style roll guarantees.
- *
- * TODO: Can defined arts have 3-line starts? Currently assumes 4-line only.
+ * reshape-style roll guarantees. Defined artifacts can start as either 3-line or 4-line.
  */
 export function elixirDefinition(
   info: {
-    setKey: ArtifactSetKey
+    setKey: ArtifactSetKey | ''
     slotKey: ArtifactSlotKey
     mainStatKey: MainStatKey
     affixes: SubstatKey[]
+    prob_4line: number
   },
   currentBuild: Build
 ): weightedNode[] {
@@ -181,33 +190,39 @@ export function elixirDefinition(
   const subsToConsider = allSubstatKeys.filter(
     (s) => !info.affixes.includes(s) && s !== info.mainStatKey
   )
-  return crawlSubstats(info.affixes, subsToConsider).map(({ p, subs }) => {
-    const nodeInfo = {
+  return crawlSubstats(info.affixes, subsToConsider).flatMap(({ p, subs }) => {
+    const nodeInfo_4line = {
       base,
       rarity,
       subkeys: subs.map((key) => ({ key, baseRolls: 1 })),
       rollsLeft,
-      reshape: { affixes: info.affixes, mintotal: 2 },
+      reshape: { affixes: [...info.affixes], mintotal: 2 },
     }
-    return {
-      p,
-      n: makeSubstatNode(nodeInfo),
-    }
+    const nodeInfo_3line = { ...nodeInfo_4line, rollsLeft: rollsLeft - 1 }
+    return [
+      {
+        p: p * info.prob_4line,
+        n: makeSubstatNode(nodeInfo_4line),
+      },
+      {
+        p: p * (1 - info.prob_4line),
+        n: makeSubstatNode(nodeInfo_3line),
+      },
+    ]
   })
 }
 
 function artToStats(art: ICachedArtifact, mainStatMax = true) {
   const stats = {} as DynStat
-  if (mainStatMax) {
-    stats[art.mainStatKey] = getMainStatValue(
-      art.mainStatKey,
-      art.rarity,
-      mainStatMax ? artMaxLevel[art.rarity] : art.level
-    )
-  } else {
-    stats[art.mainStatKey] = art.mainStatVal
-  }
-  art.substats.forEach(({ key, value }) => (stats[key] = value))
+  stats[art.mainStatKey] = getMainStatValue(
+    art.mainStatKey,
+    art.rarity,
+    mainStatMax ? artMaxLevel[art.rarity] : art.level
+  )
+  art.substats.forEach(({ key, accurateValue }) => {
+    if (!key) return
+    stats[key] = toDecimal(accurateValue, key)
+  })
   stats[art.setKey] = 1
   return stats
 }
@@ -223,7 +238,7 @@ function toStats(
     slotKey: ArtifactSlotKey
     mainStatKey: MainStatKey
     rarity: ArtifactRarity
-    setKey: ArtifactSetKey
+    setKey: ArtifactSetKey | ''
   }
 ) {
   const baseStats = allArtifactSlotKeys.reduce((acc, slot) => {
@@ -236,7 +251,7 @@ function toStats(
     })
     return acc
   }, {} as DynStat)
-  baseStats[setKey] = (baseStats[setKey] ?? 0) + 1
+  if (setKey !== '') baseStats[setKey] = (baseStats[setKey] ?? 0) + 1
   baseStats[mainStatKey] =
     (baseStats[mainStatKey] ?? 0) +
     getMainStatValue(mainStatKey, rarity, artMaxLevel[rarity])
@@ -245,9 +260,9 @@ function toStats(
 
 function getSubkeys(art: ICachedArtifact) {
   const subkeys = art.substats.map(({ key }) => key).filter((key) => key !== '') // Filter out empty substats
-  const stats = art.substats.reduce((acc, { key, value }) => {
+  const stats = art.substats.reduce((acc, { key, accurateValue }) => {
     if (key === '') return acc
-    acc[key] = value
+    acc[key] = toDecimal(accurateValue, key)
     return acc
   }, {} as DynStat)
   return { subkeys, stats }

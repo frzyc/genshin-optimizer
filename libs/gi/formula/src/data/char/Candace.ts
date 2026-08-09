@@ -110,7 +110,7 @@ export default register(
   dm.normal.hitArr.flatMap((arr, i) =>
     dmg(`normal_${i}`, info, 'atk', arr, 'normal')
   ),
-  dmg(`charged`, info, 'atk', dm.charged.dmg, 'charged'),
+  dmg('charged', info, 'atk', dm.charged.dmg, 'charged'),
   Object.entries(dm.plunging).flatMap(([name, arr]) =>
     dmg(`plunging_${name}`, info, 'atk', arr, 'plunging')
   ),
@@ -121,21 +121,21 @@ export default register(
     dmg(`burst_${k}`, info, 'hp', dm.burst[`${k}_dmg`], 'burst')
   ),
   shield(
-    `skill_shield`,
+    'skill_shield',
     'hp',
     dm.skill.shield_hp_,
     dm.skill.shield_base,
     'skill'
   ),
   shield(
-    `skill_hydroShield`,
+    'skill_hydroShield',
     'hp',
     dm.skill.shield_hp_,
     dm.skill.shield_base,
     'skill',
     { ele: 'hydro' }
   ),
-  customDmg(`c6`, info.ele, 'burst', prod(dm.constellation6.dmg, final.hp), {
+  customDmg('c6', info.ele, 'burst', prod(dm.constellation6.dmg, final.hp), {
     cond: cmpGE(own.char.constellation, 6, 'infer', ''),
   })
 )

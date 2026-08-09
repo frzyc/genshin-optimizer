@@ -6,10 +6,10 @@ import {
 } from '@genshin-optimizer/common/ui'
 import { toggleInArr } from '@genshin-optimizer/common/util'
 import {
+  defLoadoutExportSetting,
   type LoadoutDataExportSetting,
   type LoadoutDatum,
   type LoadoutExportSetting,
-  defLoadoutExportSetting,
 } from '@genshin-optimizer/gi/db'
 import {
   useDatabase,
@@ -74,8 +74,8 @@ export default function TeamExportModal({
     const { optimizationTarget } = optConfig
     if (!optimizationTarget) return setting
     if (optimizationTarget[0] !== 'custom') return setting
-    const ind = parseInt(optimizationTarget[1])
-    if (isNaN(ind)) return setting
+    const ind = Number.parseInt(optimizationTarget[1])
+    if (Number.isNaN(ind)) return setting
     if (setting.exportCustomMultiTarget.includes(ind)) return setting
     setting.exportCustomMultiTarget.push(ind)
     return setting
@@ -118,7 +118,13 @@ export default function TeamExportModal({
 
         const loadout = database.teamChars.get(loadoutDatum.teamCharId)
         if (!loadout) return defLoadoutExportSetting()
-        const { buildIds, buildTcIds, customMultiTargets } = loadout
+        const { key: characterKey, customMultiTargets } = loadout
+        const buildIds = database.builds
+          .entriesForCharacter(characterKey, loadoutDatum.teamCharId)
+          .map(([id]) => id)
+        const buildTcIds = database.buildTcs
+          .entriesForCharacter(characterKey, loadoutDatum.teamCharId)
+          .map(([id]) => id)
         return enforceOptTargetMtarget(loadoutDatum, {
           convertEquipped: true,
           convertbuilds: buildIds,
@@ -216,20 +222,19 @@ function LoadoutSetting({
   const { t } = useTranslation('page_team')
   const database = useDatabase()
   const teamChar = useTeamChar(loadout.teamCharId)!
-  const {
-    key: characterKey,
-    name,
-    description,
-    buildIds,
-    buildTcIds,
-    customMultiTargets,
-  } = teamChar
+  const { key: characterKey, name, description, customMultiTargets } = teamChar
+  const buildIds = database.builds
+    .entriesForCharacter(characterKey, loadout.teamCharId)
+    .map(([id]) => id)
+  const buildTcIds = database.buildTcs
+    .entriesForCharacter(characterKey, loadout.teamCharId)
+    .map(([id]) => id)
   const optConfig = useOptConfig(teamChar.optConfigId)!
   const { optimizationTarget } = optConfig
 
   const selMtargetInd =
     optimizationTarget && optimizationTarget[0] === 'custom'
-      ? parseInt(optimizationTarget[1])
+      ? Number.parseInt(optimizationTarget[1])
       : -1
 
   // FIXME: Kind of annoying to have to do a whole calc to show opt target, will likely get addressed in Pando.

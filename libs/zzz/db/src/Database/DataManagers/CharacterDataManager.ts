@@ -5,8 +5,8 @@ import { allDiscSlotKeys } from '@genshin-optimizer/zzz/consts'
 import type { ICharacter } from '@genshin-optimizer/zzz/zood'
 import { parseCharacter } from '@genshin-optimizer/zzz/zood'
 import type { ICachedCharacter } from '../../Interfaces'
-import { DataManager } from '../DataManager'
 import type { ZzzDatabase } from '../Database'
+import { DataManager } from '../DataManager'
 
 export class CharacterDataManager extends DataManager<
   CharacterKey,

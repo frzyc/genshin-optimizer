@@ -69,7 +69,10 @@ function CaptureCountdownAlert({
 function CapturePausedAlert({
   hint,
   pausedHint,
-}: { hint: string; pausedHint: string }) {
+}: {
+  hint: string
+  pausedHint: string
+}) {
   return (
     <Alert severity="info" sx={{ mt: 1 }}>
       <Typography sx={{ mb: 1 }}>{hint}</Typography>

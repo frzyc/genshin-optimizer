@@ -4,13 +4,13 @@ import type { TargetTag, ZzzDatabase } from '@genshin-optimizer/zzz/db'
 import { isAbilityDim } from '@genshin-optimizer/zzz/formula'
 import {
   AbilityOptTargetLabel,
-  FullTagDisplay,
-  OptTargetFormulaLabel,
   abilityDimFromField,
+  FullTagDisplay,
   getFieldCategory,
   isAbilityFormulaTag,
   isMultiTagField,
   isTagField,
+  OptTargetFormulaLabel,
   primaryTagFromField,
 } from '@genshin-optimizer/zzz/formula-ui'
 import { ListItemText, MenuItem } from '@mui/material'

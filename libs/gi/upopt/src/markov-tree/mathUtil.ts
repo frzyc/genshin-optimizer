@@ -135,7 +135,7 @@ export function rollCountMuVar(
   rollsLeft: number,
   reshape: { n: number; min: number }
 ): { mu: number[]; cov: number[][] } {
-  const cacheKey = JSON.stringify({ rollsLeft, reshape })
+  const cacheKey = `${rollsLeft}_${reshape.n}_${reshape.min}`
   if (rollMuVarCache[cacheKey]) {
     const { mu, cov } = rollMuVarCache[cacheKey]
     return {

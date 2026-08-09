@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     },
     "skillParamsEncoding": {
       "0": "{{0, percent(fixed: 1)}}%",
@@ -54,7 +58,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -90,7 +98,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     },
     "skillParamsEncoding": {
       "0": "{{0, percent(fixed: 1)}}% per Paw",
@@ -108,7 +120,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -140,7 +156,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     },
     "skillParamsEncoding": {
       "0": "{{0, percent}}%",
@@ -158,7 +178,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -177,6 +201,13 @@
     "name": "Complimentary Bar Food",
     "description": {
       "0": "When a Perfect Cooking is achieved on a dish with restorative effects, there is a 12% chance to obtain double the product."
+    }
+  },
+  "lockedPassive": {
+    "name": "Choice Treasures",
+    "description": {
+      "0": "Within 20s after using the Elemental Skill <strong>Icy Paws</strong>, Diona will also fire off three <strong>Icy Paws</strong> when party members trigger Superconduct or Stellar-Conduct reactions. <strong>Icy Paws</strong> fired this way cannot generate Elemental Particles, nor will they generate a shield upon hitting opponents. This effect can occur once every 3.5s.",
+      "1": "Additionally, when inside a <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Polestar Field</strong></tooltip>, Diona will enter the <strong>Radiance: Stellar-Conduct</strong> state."
     }
   },
   "constellation1": {
@@ -220,6 +251,17 @@
         "Increases Incoming Healing Bonus by 30% when HP falls below or is equal to 50%.",
         "Elemental Mastery increased by 200 when HP is above 50%."
       ]
+    },
+    "upgradedDescription": {
+      "0": "Characters within <strong>Signature Mix</strong>'s radius gain the following effects based on their HP levels:",
+      "1": [
+        " The Incoming Healing Bonus is increased by 30% when HP is at, or lower than, 50%.",
+        " Elemental Mastery is increased by 200 when HP is above 50%."
+      ],
+      "2": "<br/>",
+      "3": "Additionally, Diona's Max HP is increased by 25%.",
+      "4": "<br/>",
+      "5": "<strong>Radiance: Stellar-Conduct</strong>: Characters within <strong>Signature Mix</strong>'s radius deal 40% increased Superconduct and Stellar-Conduct Reaction DMG."
     }
   }
 }

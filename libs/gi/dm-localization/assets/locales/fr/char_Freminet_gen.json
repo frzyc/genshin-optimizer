@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -79,7 +83,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -113,7 +121,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -157,7 +169,7 @@
   "constellation4": {
     "name": "Danse de lune et de flûte",
     "description": {
-      "0": "Lorsque Fréminet a déclenché une réaction de Gel, de Brise-glace ou de Supraconduction sur un ennemi, son ATQ augmente de 9 % pendant 6 s. Cet effet peut être cumulé 2 fois maximum et déclenché une fois toutes les 0,3 s."
+      "0": "Lorsque Fréminet a déclenché une réaction de Gel, de Brise-glace, de Supraconduction ou d'Astroconduction sur un ennemi, son ATQ augmente de 9 % pendant 6 s. Cet effet peut être cumulé 2 fois maximum et déclenché une fois toutes les 0,3 s."
     }
   },
   "constellation5": {
@@ -170,7 +182,7 @@
   "constellation6": {
     "name": "Instant d'aube et de détermination",
     "description": {
-      "0": "Lorsque Fréminet a déclenché une réaction de Gel, de Brise-glace ou de Supraconduction sur un ennemi, ses DGT CRIT augmentent de 12 % pendant 6 s. Cet effet peut être cumulé 3 fois maximum et déclenché une fois toutes les 0,3 s."
+      "0": "Lorsque Fréminet a déclenché une réaction de Gel, de Brise-glace, de Supraconduction ou d'Astroconduction sur un ennemi, ses DGT CRIT augmentent de 12 % pendant 6 s. Cet effet peut être cumulé 3 fois maximum et déclenché une fois toutes les 0,3 s."
     }
   }
 }

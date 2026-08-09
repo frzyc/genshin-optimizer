@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -74,7 +78,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -108,7 +116,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -132,6 +144,14 @@
     "description": {
       "0": "Diminuisce di un 20% il consumo di vigore durante il nuoto per i membri del tuo gruppo.",
       "1": "Non è cumulabile con talenti passivi che conferiscono gli stessi effetti."
+    }
+  },
+  "lockedPassive": {
+    "name": "Polaris",
+    "description": {
+      "0": "Tenendo premuta l'abilità elementale <strong>Governamaree</strong> si ottiene 1 accumulo di potere ogni 0,8 s, anche quando non si è sotto attacco. Questo aumenta i DAN inflitti quando si sprigiona l'abilità elementale.",
+      "1": "Inoltre, tenere premuto in maniera prolungata <strong>Governamaree</strong> e colpire l'avversario conferisce degli effetti positivi aggiuntivi in base al potere accumulato. Ogni accumulo attivo riduce il TdR dell'abilità elementale di Beidou di 4 s, e rigenera 8 della sua energia elementale. Quest'effetto può attivarsi una volta ogni 15 s.",
+      "2": "Inoltre, quando si trova all'interno di un <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Campo astropolare</strong></tooltip>, Beidou entra nello stato di <strong>Splendore: Astroconduzione</strong>."
     }
   },
   "constellation1": {
@@ -174,6 +194,11 @@
     "name": "Fine del male",
     "description": {
       "0": "Finché <strong>Tempesta tagliente</strong> è attiva, la <electro>RES a Electro</electro> degli avversari circostanti si riduce di un 15%."
+    },
+    "upgradedDescription": {
+      "0": "Mentre <strong>Tempesta tagliente</strong> è attiva, la <electro>RES a Electro</electro> degli avversari vicini si riduce di un 15%.",
+      "1": "<br/>",
+      "2": "Nello stato di <strong>Splendore: Astroconduzione</strong>, la <cryo>RES a Cryo</cryo> degli avversari vicini si riduce di un 15% e la maestria elementale del membro attivo attuale aumenta di 200 mentre Tempesta tagliente è attiva."
     }
   }
 }

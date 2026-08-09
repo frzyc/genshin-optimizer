@@ -51,8 +51,8 @@ export function evaluateGaussian(
     constr_prob,
     upAvg,
 
-    lower: upAvg - 4 * Math.sqrt(f_cov[0][0]),
-    upper: upAvg + 4 * Math.sqrt(f_cov[0][0]),
+    lower: f_mu[0] - 4 * Math.sqrt(f_cov[0][0]),
+    upper: f_mu[0] + 4 * Math.sqrt(f_cov[0][0]),
   }
 }
 

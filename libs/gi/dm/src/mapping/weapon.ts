@@ -109,6 +109,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   12513: 'FangOfTheMountainKing',
   12514: 'AThousandBlazingSuns',
   12515: 'GestOfTheMightyWolf',
+  12516: 'ATeaspoonOfTranscendence',
 
   //polearm
   13101: 'BeginnersProtector',

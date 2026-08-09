@@ -257,6 +257,9 @@
   "PalsSynergy": {
     "name": "Pals Synergy"
   },
+  "VenuePopularity": {
+    "name": "Venue Popularity"
+  },
   "Primogem": {
     "name": "Primogem"
   },
@@ -1163,6 +1166,9 @@
   "Prune": {
     "name": "Prune"
   },
+  "Sandrone": {
+    "name": "Sandrone"
+  },
   "KachinasStellaFortuna": {
     "name": "Kachina's Stella Fortuna"
   },
@@ -1255,6 +1261,9 @@
   },
   "PrunesStellaFortuna": {
     "name": "Prune's Stella Fortuna"
+  },
+  "SandronesStellaFortuna": {
+    "name": "Sandrone's Stella Fortuna"
   },
   "Apple": {
     "name": "Apple"
@@ -3728,6 +3737,9 @@
   "PineAmber": {
     "name": "Pine Amber"
   },
+  "TeardropOfTheMoon": {
+    "name": "Teardrop of the Moon"
+  },
   "WindrestFlower": {
     "name": "Windrest Flower"
   },
@@ -5500,6 +5512,9 @@
   },
   "BorderlandShrineOfDepthsKey": {
     "name": "Borderland Shrine of Depths Key"
+  },
+  "FrostMoonShrineOfDepthsKey": {
+    "name": "Frost Moon Shrine of Depths Key"
   },
   "MnemonicCluster": {
     "name": "Skill Cluster"
@@ -8375,6 +8390,33 @@
   "BoredomBustingBubblegum": {
     "name": "Boredom-Busting Bubblegum"
   },
+  "TeaPartyPolyphony": {
+    "name": "Tea Party Polyphony"
+  },
+  "SuspiciousBirchSteamedPorkRibs": {
+    "name": "Suspicious Birch-Steamed Pork Ribs"
+  },
+  "BirchSteamedPorkRibs": {
+    "name": "Birch-Steamed Pork Ribs"
+  },
+  "DeliciousBirchSteamedPorkRibs": {
+    "name": "Delicious Birch-Steamed Pork Ribs"
+  },
+  "SuspiciousMeatFilledRyeBun": {
+    "name": "Suspicious Meat-Filled Rye Bun"
+  },
+  "MeatFilledRyeBun": {
+    "name": "Meat-Filled Rye Bun"
+  },
+  "DeliciousMeatFilledRyeBun": {
+    "name": "Delicious Meat-Filled Rye Bun"
+  },
+  "TeaPartyPreludeHerbalTea": {
+    "name": "Tea Party Prelude: Herbal Tea"
+  },
+  "TeaPartyPreludeArtfulLatte": {
+    "name": "Tea Party Prelude: Artful Latte"
+  },
   "RecipeItem": {
     "name": "Bahan Resep"
   },
@@ -9182,6 +9224,12 @@
   "RecipeMintBubblegum": {
     "name": "Resep: Mint Bubblegum"
   },
+  "RecipeBirchSteamedPorkRibs": {
+    "name": "Resep: Birch-Steamed Pork Ribs"
+  },
+  "RecipeMeatFilledRyeBun": {
+    "name": "Resep: Meat-Filled Rye Bun"
+  },
   "CraftedItems": {
     "name": "Hasil Craft"
   },
@@ -9748,6 +9796,15 @@
   },
   "JeweledFlamingHilt": {
     "name": "Jeweled Flaming Hilt"
+  },
+  "FracturedLunarIron": {
+    "name": "Fractured Lunar Iron"
+  },
+  "DepletedLunarIron": {
+    "name": "Depleted Lunar Iron"
+  },
+  "UnblemishedLunarIron": {
+    "name": "Unblemished Lunar Iron"
   },
   "HurricaneSeed": {
     "name": "Hurricane Seed"
@@ -13742,6 +13799,9 @@
   "AncientHandwriting": {
     "name": "Tulisan Tangan Kuno"
   },
+  "SecretSourceAncientMoonsFount": {
+    "name": "Sumber Rahasia: Ancient Moon's Fount"
+  },
   "ALetterCarriedByTheWind": {
     "name": "Surat yang Terbawa Angin"
   },
@@ -13750,6 +13810,9 @@
   },
   "VarkasSecretStashOfCash": {
     "name": "Uang Simpanan Pribadi Varka"
+  },
+  "PaimonsNotes": {
+    "name": "Catatan Paimon"
   },
   "OnFungiCommunitiesDraftManuscript": {
     "name": "Manuskrip Sementara \"Ciri Khas Spesies Fungus\""
@@ -13850,11 +13913,35 @@
   "PrimalConstructComponent": {
     "name": "Komponen Primal Construct"
   },
+  "WitnessOfTheMoon": {
+    "name": "Saksi Bulan"
+  },
+  "LostFlowerOfAncientTimes": {
+    "name": "Bunga Kuno yang Hilang"
+  },
+  "SandronesTeaPartyInvitationLetter": {
+    "name": "Surat Undangan Pesta Teh Sandrone"
+  },
   "AncientMondstadtRoyalSeal": {
     "name": "Ancient Mondstadt Royal Seal"
   },
   "SegmentDomainControlModuleZeroParticle": {
     "name": "Segment Domain Control Module: Zero Particle"
+  },
+  "FrostMoonSeal": {
+    "name": "Frost Moon Seal"
+  },
+  "FamilyPortraitByMamere": {
+    "name": "\"Foto Keluarga\" yang Dilukis Mamere"
+  },
+  "AlainGuillotinsEpitaph": {
+    "name": "Epitaf Alain Guillotin"
+  },
+  "MoongazersEngravingI": {
+    "name": "Ukiran Penatap Bulan (I)"
+  },
+  "MoongazersEngravingII": {
+    "name": "Ukiran Penatap Bulan (II)"
   },
   "TearsAmongTheStars": {
     "name": "Air Mata di Lautan Bintang"
@@ -14806,6 +14893,24 @@
   },
   "RadiantSpincrystal182": {
     "name": "Radiant Spincrystal 182"
+  },
+  "RadiantSpincrystal183": {
+    "name": "Radiant Spincrystal 183"
+  },
+  "RadiantSpincrystal184": {
+    "name": "Radiant Spincrystal 184"
+  },
+  "RadiantSpincrystal185": {
+    "name": "Radiant Spincrystal 185"
+  },
+  "RadiantSpincrystal186": {
+    "name": "Radiant Spincrystal 186"
+  },
+  "RadiantSpincrystal187": {
+    "name": "Radiant Spincrystal 187"
+  },
+  "RadiantSpincrystal188": {
+    "name": "Radiant Spincrystal 188"
   },
   "LanternFiber": {
     "name": "Lantern Fiber"
@@ -15902,6 +16007,15 @@
   "TravelNotesGiftOfSplendor": {
     "name": "Catatan Perjalanan: Hadiah Kemegahan"
   },
+  "SandroneTeaBreak": {
+    "name": "Sandrone: Istirahat Minum Teh"
+  },
+  "NodKraiMoonbright": {
+    "name": "Nod-Krai: Cahaya Bulan"
+  },
+  "TravelNotesSunnySummer": {
+    "name": "Catatan Perjalanan: Musim Panas yang Cerah"
+  },
   "EchoDandelionKnight": {
     "name": "Echo: Dandelion Knight"
   },
@@ -16312,6 +16426,12 @@
   },
   "LinneasNaturalistArchive": {
     "name": "Linnea's Naturalist Archive"
+  },
+  "SandronesPortableTeaTable": {
+    "name": "Sandrone's Portable Tea Table"
+  },
+  "WitchsRevelationCase": {
+    "name": "Witch's Revelation Case"
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Panduan: Anemoculus Resonance Stone"
@@ -16922,6 +17042,27 @@
   "ShareWithYou": {
     "name": "Berbagi Denganmu"
   },
+  "HealingTreats": {
+    "name": "Camilan Penyembuh"
+  },
+  "RelaxedReadiness": {
+    "name": "Pose Bersiap yang Santai"
+  },
+  "GracefulDance": {
+    "name": "Tarian Anggun"
+  },
+  "CommandingStance": {
+    "name": "Wibawa Panglima"
+  },
+  "GentleElegance": {
+    "name": "Penampilan Anggun"
+  },
+  "PoisedToStrike": {
+    "name": "Postur Tempur Garang"
+  },
+  "MajesticBearing": {
+    "name": "Sikap Berwibawa"
+  },
   "FantasticalMarvel": {
     "name": "Fantastical Marvel"
   },
@@ -16993,6 +17134,9 @@
   },
   "DemonSlayingGale": {
     "name": "Demon-Slaying Gale"
+  },
+  "DovefeatherMoondew": {
+    "name": "Dovefeather Moondew"
   },
   "VigorousYapping": {
     "name": "Celotehan Bersemangat"
@@ -17107,6 +17251,12 @@
   },
   "ExperimentalFieldGenerator": {
     "name": "Experimental Field Generator"
+  },
+  "WaywardHermeticSpiritspeaker": {
+    "name": "Wayward Hermetic Spiritspeaker"
+  },
+  "BlackSerpentKnightWindcutter": {
+    "name": "Black Serpent Knight: Windcutter"
   },
   "UndividedHeart": {
     "name": "Undivided Heart"
@@ -17524,6 +17674,15 @@
   },
   "GravityField": {
     "name": "Gravity Field"
+  },
+  "VictoryFlowsFromTheTurningOfTides": {
+    "name": "Victory Flows from the Turning of Tides"
+  },
+  "FlowOfForms": {
+    "name": "Flow of Forms"
+  },
+  "OnceTheLoneWindThatKeptTheDarkCalamityAtBay": {
+    "name": "\"Once, the Lone Wind That Kept the Dark Calamity at Bay...\""
   },
   "MagicGuide": {
     "name": "Magic Guide"
@@ -18104,6 +18263,15 @@
   "ElementalTransfigurationStormgaleBlessing": {
     "name": "Elemental Transfiguration: Stormgale Blessing"
   },
+  "NightmareOmen": {
+    "name": "Nightmare Omen"
+  },
+  "ElementalTransfigurationAquabreezeBlessing": {
+    "name": "Elemental Transfiguration: Aquabreeze Blessing"
+  },
+  "ElementalTransfigurationThunderbloomBlessing": {
+    "name": "Elemental Transfiguration: Thunderbloom Blessing"
+  },
   "ElementalResonanceWovenIce": {
     "name": "Resonansi Elemental: Woven Ice"
   },
@@ -18362,6 +18530,12 @@
   "TheOtherSideOfTheFrostmoon": {
     "name": "The Other Side of the Frostmoon"
   },
+  "LilFungisFunTasticFiesta": {
+    "name": "Lil' Fungi's Fun-Tastic Fiesta"
+  },
+  "ThePowerOfResearch": {
+    "name": "The Power of Research"
+  },
   "Origin": {
     "name": "Origin"
   },
@@ -18538,6 +18712,12 @@
   },
   "RainlitBambooReverie": {
     "name": "Rainlit Bamboo Reverie"
+  },
+  "WhispersOfStarsAndSmoke": {
+    "name": "Whispers of Stars and Smoke"
+  },
+  "HurlockVariations": {
+    "name": "Hurlock Variations"
   },
   "RadiantPhantasm": {
     "name": "Radiant Phantasm"
@@ -18890,6 +19070,9 @@
   "PreBattleRespite": {
     "name": "Istirahat Sebelum Pertempuran"
   },
+  "ATeaPartyAtLeisure": {
+    "name": "Pesta Teh di Waktu Luang"
+  },
   "WildernessOfTheFarNorth": {
     "name": "Hutan Belantara di Ujung Utara"
   },
@@ -19178,6 +19361,12 @@
   "CityStreetLampLowLanternlight": {
     "name": "Lampu Jalan Kota: Pencahayaan Rendah"
   },
+  "MovableSmallSpotlight": {
+    "name": "Lampu Sorot Kecil yang Dapat Dipindahkan"
+  },
+  "StandingStreetLampBeaconInTheMistyNight": {
+    "name": "Lampu Jalan Berdiri: Mercusuar di Malam Berkabut"
+  },
   "EfflorescentIllumination": {
     "name": "Iluminasi Berbunga"
   },
@@ -19457,6 +19646,9 @@
   "FrostMoonRoundTableASoftBlueSky": {
     "name": "Meja Bundar Bulan Embun: Langit Biru yang Lembut"
   },
+  "TeaPartyDiningTableThePerfectGathering": {
+    "name": "Meja Makan Pesta Teh: Tempat Berkumpul yang Sempurna"
+  },
   "BreezeBlessedBed": {
     "name": "Ranjang Sesejuk Angin"
   },
@@ -19624,6 +19816,9 @@
   },
   "PedunculateOakWoodMoonrestBackedChair": {
     "name": "Kursi Sandar \"Bulan Bantal\" Kayu Pedunculate Oak"
+  },
+  "TeaPartyChairCrimsonAndGold": {
+    "name": "Kursi Pesta Teh: Merah Tua dan Emas"
   },
   "NorthernStoneHearth": {
     "name": "Perapian Batu Northland"
@@ -19895,6 +20090,9 @@
   "FluffyLittleRug": {
     "name": "Karpet Kecil Lembut"
   },
+  "TeaPartyCarpetSoftToTheTouch": {
+    "name": "Karpet Pesta Teh: Tekstur Lembut"
+  },
   "VibrantPotBornInFlames": {
     "name": "Pot Berwarna-Warni: \"Lahir dari Api\""
   },
@@ -20132,6 +20330,9 @@
   "FlowerShapedMachineComponent": {
     "name": "\"Komponen Mesin Berbentuk Bunga\""
   },
+  "TeaPartyCartDessertTime": {
+    "name": "Gerobak Pesta Teh: Waktunya Hidangan Penutup"
+  },
   "TeahouseToolMinisculeMissesMakeAMile": {
     "name": "Peralatan Kedai Teh: Tak Seringan Debu"
   },
@@ -20173,6 +20374,9 @@
   },
   "FrostMoonSmallTableAromaOfFreshFruit": {
     "name": "Meja Kecil Bulan Embun: Aroma Buah Segar"
+  },
+  "TeaPartyCupRefreshingFlavor": {
+    "name": "Cangkir Pesta Teh: Rasa yang Menyegarkan"
   },
   "RealizationsFromTheLandOfWisdom": {
     "name": "\"Kesadaran dari Tanah Kebijaksanaan\""
@@ -22217,6 +22421,9 @@
   "LittleCover": {
     "name": "\"Penutup Mini\""
   },
+  "CampBarrierTreatmentArea": {
+    "name": "Penghalang Kemah: Area Perawatan"
+  },
   "BookshelfFreeReading": {
     "name": "Rak Buku: Baca dengan Bebas"
   },
@@ -22354,6 +22561,9 @@
   },
   "GentleEmbrace": {
     "name": "Pelukan Lembut"
+  },
+  "UnusableLegacy": {
+    "name": "Warisan yang Tidak Dapat Digunakan"
   },
   "WeatheredBambooFence": {
     "name": "Pagar Bambu Lapuk"
@@ -22772,6 +22982,24 @@
   "BloomingSplendor": {
     "name": "Kumpulan Warna-Warni"
   },
+  "NashaStallDeepRootedTraditions": {
+    "name": "Kios Nasha: Tradisi yang Mengakar Kuat"
+  },
+  "VesselOfThePast": {
+    "name": "Wadah Masa Lalu"
+  },
+  "LargeCargoCrateReliableSupport": {
+    "name": "Peti Kargo Besar: Jaminan Stabil"
+  },
+  "MediumCargoCrateBasicSupplies": {
+    "name": "Peti Kargo Sedang: Perlengkapan Dasar"
+  },
+  "MediumMetalScrapBarrel": {
+    "name": "Tong Sampah Besi Sedang"
+  },
+  "SignallessTower": {
+    "name": "Menara Tanpa Sinyal"
+  },
   "SirCapyOfTheLongIncisors": {
     "name": "\"Kesatria Kapi Bertaring Panjang\""
   },
@@ -22804,5 +23032,11 @@
   },
   "MiniatureStonecraft": {
     "name": "Kerajinan Batu Miniatur"
+  },
+  "InfiniteRecursionFormula": {
+    "name": "Rumus Rekursi Tak Terhingga"
+  },
+  "MoonEnvoyOfSilverRadiance": {
+    "name": "Utusan Bulan Cahaya Perak"
   }
 }

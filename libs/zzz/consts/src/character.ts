@@ -38,9 +38,11 @@ export const allCharacterKeys = [
   'Pulchra',
   'Pyrois',
   'Qingyi',
+  'Remielle',
   'Rina',
   'Seed',
   'Seth',
+  'Sigrid',
   'Soldier0Anby',
   'Soldier11',
   'Soukaku',
@@ -98,6 +100,7 @@ export const allFactionKeys = [
   'AngelsOfDelusion',
   'RoscaeliferExternalStrategyDepartment',
   'Phaethon',
+  'CovenantOfDayat',
 ] as const
 export type FactionKey = (typeof allFactionKeys)[number]
 

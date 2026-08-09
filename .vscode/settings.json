@@ -3,7 +3,7 @@
   "editor.detectIndentation": false,
   "editor.codeActionsOnSave": {
     "source.organizeImports.biome": "explicit",
-    "source.fixAll.eslint": "explicit"
+    "source.fixAll.biome": "explicit"
   },
   "files.trimFinalNewlines": true,
   "files.insertFinalNewline": true,
@@ -11,5 +11,6 @@
   "typescript.preferences.importModuleSpecifier": "project-relative",
   "editor.defaultFormatter": "biomejs.biome",
   "files.eol": "\n",
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "js/ts.tsdk.path": "node_modules/typescript/lib"
 }

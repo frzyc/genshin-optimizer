@@ -443,5 +443,25 @@
     "description": {
       "0": "After Prune hits an opponent with the <strong>Banehunter Oathhammer</strong> that has undergone Elemental Conversion, other nearby party members will gain the Tolling Rally effect: Attack DMG will be increased based on Prune's ATK."
     }
+  },
+  "11330001": {
+    "name": "Decoding",
+    "description": {
+      "0": "Fagio will switch to this mode when using a Charged Attack.",
+      "1": "When in this mode, Fagio will engage any opponents ahead with a sweeping fire attack, as well as fire condensed beams at intervals, dealing <cryo>AoE Cryo DMG</cryo>.",
+      "2": "<strong>Radiance: Stellar-Conduct</strong>: The condensed beams will instead deal <cryo>AoE Cryo DMG</cryo> that is considered Stellar-Conduct DMG."
+    }
+  },
+  "11330002": {
+    "name": "Decoding Power",
+    "description": {
+      "0": "When in <strong>Decoding</strong> mode, Fagio's <strong>Decoding Power</strong> will continuously increase. When its Decoding Power reaches the maximum, Fagio will be unable to maintain or re-enter Decoding mode."
+    }
+  },
+  "11330003": {
+    "name": "Polestar Field",
+    "description": {
+      "0": "When Stellar-Conduct is triggered, the surrounding area will transform into a <strong>Polestar Field</strong> for a short period of time, and when inside a Polestar Field, certain characters will enter the <strong>Radiance: Stellar-Conduct</strong> state, which grants various skill buffs."
+    }
   }
 }

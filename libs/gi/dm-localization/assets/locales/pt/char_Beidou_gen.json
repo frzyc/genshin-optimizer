@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -72,7 +76,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -104,7 +112,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -126,6 +138,14 @@
     "description": {
       "0": "Diminui o consumo de Stamina ao Nadar de todos os seus personagens em 20%.",
       "1": "Não acumulável com Talentos Passivos que concedem exatamente os mesmos efeitos."
+    }
+  },
+  "lockedPassive": {
+    "name": "Polaris",
+    "description": {
+      "0": "Ao manter pressionado para lançar a Habilidade Elemental <strong>Invocadora da Maré</strong>, não sofrerá o ataque, e acumulará 1 acúmulo de poder manualmente a cada 0.8s, aumentando o Dano causado ao lançar.",
+      "1": "Além disso, quando o manter pressionado <strong>Invocadora da Maré</strong> atinge o inimigo, obtém um efeito bônus adicional de acordo com a quantidade de poder acumulado: cada acúmulo de poder reduz a recarga da Habilidade Elemental em 4s, e regenera 8 de Energia Elemental para si mesma. Esse efeito pode ser desencadeado uma vez a cada 15s.",
+      "2": "Além disso, quando está em <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Campo da Estrela Polar</strong></tooltip>, Beidou entrará no estado <strong>Brilho Reluzente: Supercondutor Estelar</strong>."
     }
   },
   "constellation1": {
@@ -166,6 +186,11 @@
     "name": "Destruição do Mal",
     "description": {
       "0": "Ao longo da duração do <strong>Quebrador de Tempestades</strong>, a <electro>RES Electro</electro> dos inimigos próximos é diminuída em 15%."
+    },
+    "upgradedDescription": {
+      "0": "Na duração de <strong>Quebrador de Tempestades</strong>, reduz a <electro>RES Electro</electro> dos inimigos próximos em 15%.",
+      "1": "<br/>",
+      "2": "<strong>Brilho Reluzente: Supercondutor Estelar</strong>: na duração de Quebrador de Tempestades, reduz a <cryo>RES Cryo</cryo> dos inimigos ao redor em 15%, e aumenta a Proficiência Elemental do personagem ativo em 200."
     }
   }
 }

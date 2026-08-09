@@ -6,7 +6,7 @@ import type {
   SolverConfig,
 } from '@genshin-optimizer/game-opt/solver'
 import { buildCount } from '@genshin-optimizer/game-opt/solver'
-
+import type { NumTagFree } from '@genshin-optimizer/pando/engine'
 import {
   constant,
   detach,
@@ -15,7 +15,6 @@ import {
   read,
   sum,
 } from '@genshin-optimizer/pando/engine'
-import type { NumTagFree } from '@genshin-optimizer/pando/engine'
 import type {
   CharacterKey,
   DiscSetKey,
@@ -96,7 +95,7 @@ function buildDetachedSolverBase({
       const newTag: Tag = {
         ...StatFilterTagToTag(tag),
         src: characterKey,
-        preset: `preset0`,
+        preset: 'preset0',
       }
       // Invert max constraints for pruning, undefined as 'infer'
       return isMax
@@ -125,7 +124,7 @@ function buildDetachedSolverBase({
 
     // wengine bonus
     if (
-      tag['qt'] == 'wengine' &&
+      tag['qt'] === 'wengine' &&
       ['lvl', 'phase', 'modification'].includes(tag['q'] as string)
     )
       return { q: tag['q']! }

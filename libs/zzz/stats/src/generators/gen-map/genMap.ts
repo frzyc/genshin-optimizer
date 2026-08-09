@@ -1,5 +1,5 @@
-import { existsSync, writeFileSync } from 'fs'
-import * as path from 'path'
+import { existsSync, writeFileSync } from 'node:fs'
+import * as path from 'node:path'
 import { formatText } from '@genshin-optimizer/common/pipeline'
 import { objMap } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'

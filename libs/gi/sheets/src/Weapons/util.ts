@@ -53,7 +53,7 @@ export function dataObjForWeaponSheet(
     weapon: { main: mainStatNode },
   })
 
-  if (subStat && subStat.type) {
+  if (subStat?.type) {
     if (
       subStat.type === 'atk' ||
       subStat.type === 'def' ||

@@ -1,8 +1,9 @@
 import { allSubstatKeys } from '@genshin-optimizer/gi/consts'
 import type { ArtifactBuildData, DynStat } from '@genshin-optimizer/gi/solver'
 import {
-  type OptNode,
   ddx,
+  forEachNodes,
+  type OptNode,
   optimize,
   precompute,
   zero_deriv,
@@ -28,6 +29,10 @@ export function makeObjective(
     ({ path: [p] }) => p !== 'dyn'
   )
   const evalFn = precompute(allNodes, {}, (f) => f.path[1], 1)
+  const allKeys = new Set<string>()
+  forEachNodes(allNodes, (f) => {
+    if (f.operation === 'read') allKeys.add(f.path[1])
+  })
 
   return {
     threshold,
@@ -45,5 +50,6 @@ export function makeObjective(
     zeroDeriv: allSubstatKeys.filter((s) =>
       nonzeroDerivs.every((subs) => !subs.includes(s))
     ),
+    allReadKeys: [...allKeys],
   }
 }

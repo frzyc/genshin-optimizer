@@ -2,11 +2,10 @@ import type { ArtifactSetKey, SetNum } from '@genshin-optimizer/gi/consts'
 import { allArtifactSetKeys } from '@genshin-optimizer/gi/consts'
 import type { UIData } from '@genshin-optimizer/gi/uidata'
 import { input, mergeData } from '@genshin-optimizer/gi/wr'
-import type { ArtifactSheet } from './ArtifactSheet'
-
 import ADayCarvedFromRisingWinds from './ADayCarvedFromRisingWinds'
 import Adventurer from './Adventurer'
 import ArchaicPetra from './ArchaicPetra'
+import type { ArtifactSheet } from './ArtifactSheet'
 import AubadeOfMorningstarAndMoon from './AubadeOfMorningstarAndMoon'
 import Berserker from './Berserker'
 import BlizzardStrayer from './BlizzardStrayer'
@@ -142,7 +141,7 @@ export function dataSetEffects(data: UIData) {
   allArtifactSetKeys.forEach((setKey) => {
     const sheet = getArtSheet(setKey)
     const setNums = (
-      Object.keys(sheet.setEffects).map((k) => parseInt(k)) as SetNum[]
+      Object.keys(sheet.setEffects).map((k) => Number.parseInt(k)) as SetNum[]
     ).filter((sn) => (data.get(input.artSet[setKey]).value ?? 0) >= sn)
     if (setNums.length) artifactSetEffect[setKey] = setNums
   })

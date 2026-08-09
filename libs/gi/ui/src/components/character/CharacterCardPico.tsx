@@ -9,8 +9,8 @@ import { imgAssets } from '@genshin-optimizer/gi/assets'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { getCharLevelString } from '@genshin-optimizer/gi/consts'
 import {
-  useCharMeta,
   useCharacter,
+  useCharMeta,
   useDBMeta,
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharStat } from '@genshin-optimizer/gi/stats'

@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -72,7 +76,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -104,7 +112,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -123,6 +135,13 @@
     "name": "Complimentary Bar Food",
     "description": {
       "0": "Saat masakan jenis pemulihan dimasak dengan sempurna, memiliki 12% kemungkinan mendapatkan hasil 2 kali lipat."
+    }
+  },
+  "lockedPassive": {
+    "name": "Choice Treasures",
+    "description": {
+      "0": "Selama 20 detik setelah melancarkan Elemental Skill <strong>Icy Paws</strong>, saat Karakter party memicu reaksi Superconduct atau Stellar-Conduct, maka Diona juga akan melancarkan 3 <strong>Icy Paw</strong> secara bersamaan. <strong>Icy Paw</strong> yang dilancarkan dengan cara ini tidak dapat menghasilkan Elemental Particle, dan tidak akan menciptakan Perisai saat mengenai musuh. Efek ini dapat terpicu sekali setiap 3,5 detik.",
+      "1": "Selain itu, saat berada di dalam <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Polestar Field</strong></tooltip>, Diona akan memasuki status <strong>Radiance: Stellar-Conduct</strong>."
     }
   },
   "constellation1": {
@@ -166,6 +185,17 @@
         "Meningkatkan 30% Bonus Pemulihan HP saat HP sama dengan atau kurang dari 50%.",
         "Elemental Mastery +200 ketika HP di atas 50%."
       ]
+    },
+    "upgradedDescription": {
+      "0": "Karakter dalam area <strong>Signature Mix</strong> akan mendapatkan efek berikut berdasarkan jumlah HP mereka:",
+      "1": [
+        "Meningkatkan 30% Incoming Healing Bonus saat HP sama dengan atau kurang dari 50%.",
+        "Elemental Mastery +200 ketika HP di atas 50%."
+      ],
+      "2": "<br/>",
+      "3": "Selain itu, Max HP Diona meningkat 25%.",
+      "4": "<br/>",
+      "5": "<strong>Radiance: Stellar-Conduct</strong>: Meningkatkan 40% DMG Superconduct dan Stellar-Conduct yang diakibatkan oleh Karakter yang berada di dalam area <strong>Signature Mix</strong>."
     }
   }
 }

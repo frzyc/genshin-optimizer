@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     },
     "skillParamsEncoding": {
       "0": "{{0, percent(fixed: 1)}}%",
@@ -53,7 +57,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -87,7 +95,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     },
     "skillParamsEncoding": {
       "0": "{{3, percent(fixed: 1)}}%",
@@ -105,7 +117,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -134,7 +150,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     },
     "skillParamsEncoding": {
       "0": "{{0, percent(fixed: 1)}}%",
@@ -152,7 +172,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -173,16 +197,30 @@
       "0": "When Yumemizuki Mizuki is in the party, party members have a chance to recover 30% additional HP when using healing foods that do not have reviving properties. The trigger chance for this effect increases with the corresponding character's Friendship Level. (This effect will always trigger if the Traveler is the character consuming healing food.)"
     }
   },
+  "lockedPassive": {
+    "name": "Vast Be the Dream",
+    "description": {
+      "0": "When Yumemizuki Mizuki triggers a Swirl reaction while in the Dreamdrifter state, the next instance of periodic <anemo>AoE Anemo DMG</anemo> she deals to nearby enemies during that same state will be increased by 1,000% of her Elemental Mastery. The aforementioned effect can trigger once every 2.5s.",
+      "1": "Additionally, while Yumemizuki Mizuki is in the Dreamdrifter state, the Elemental Mastery of nearby party characters is increased by 10% of Yumemizuki Mizuki's Elemental Mastery."
+    }
+  },
   "constellation1": {
     "name": "In Mist-Like Waters",
     "description": {
       "0": "When Yumemizuki Mizuki is in the Dreamdrifter state, she will continuously apply the \"Twenty-Three Nights' Awaiting\" effect to nearby opponents for 3s every 3.5s. When an opponent is affected by Anemo DMG-triggered Swirl reactions while the aforementioned effect is active, the effect will be canceled and this Swirl instance has its DMG against this opponent increased by 1,100% of Mizuki's Elemental Mastery."
+    },
+    "upgradedDescription": {
+      "0": "When Yumemizuki Mizuki is in the Dreamdrifter state, she will continuously apply the \"Twenty-Three Nights' Awaiting\" effect to nearby opponents for 3s every 3.5s. When an opponent is affected by Anemo DMG-triggered Swirl reactions while the aforementioned effect is active, the effect will be canceled, and this Swirl instance has its DMG against this opponent increased by 1,100% of Mizuki's Elemental Mastery. She also launches an additional attack on the same opponent, dealing <anemo>Anemo DMG</anemo> equal to 1,000% of Yumemizuki Mizuki's Elemental Mastery."
     }
   },
   "constellation2": {
     "name": "Your Echo I Meet in Dreams",
     "description": {
       "0": "When Yumemizuki Mizuki enters the Dreamdrifter state, every Elemental Mastery point she has will increase all nearby party members' <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo>, and <electro>Electro</electro> DMG Bonuses by 0.04% until the Dreamdrifter state ends."
+    },
+    "upgradedDescription": {
+      "0": "When Yumemizuki Mizuki enters the Dreamdrifter state, every Elemental Mastery point she has will increase all nearby party members' <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo>, and <electro>Electro</electro> DMG Bonuses by 0.04% until the Dreamdrifter state ends.",
+      "1": "Additionally, while Yumemizuki Mizuki is in the Dreamdrifter state, the <pyro>Pyro RES</pyro>, <hydro>Hydro RES</hydro>, <cryo>Cryo RES</cryo>, <electro>Electro RES</electro>, and <anemo>Anemo RES</anemo> of nearby opponents are lowered by 20%."
     }
   },
   "constellation3": {
@@ -196,6 +234,9 @@
     "name": "Buds Warm Lucid Springs",
     "description": {
       "0": "Picking up a <strong>Yumemi Style Special Snack</strong> from the Elemental Burst <strong>Anraku Secret Spring Therapy</strong> will both deal DMG and heal, and will restore 5 Energy to Yumemizuki Mizuki. Energy can be restored this way 4 times per <strong>Anraku Secret Spring Therapy</strong> duration."
+    },
+    "upgradedDescription": {
+      "0": "Picking up a <strong>Yumemi Style Special Snack</strong> from the Elemental Burst <strong>Anraku Secret Spring Therapy</strong> will both deal DMG and heal. It will also heal a nearby party member with lower HP for 266% of Yumemizuki Mizuki's Elemental Mastery, as well as regenerate 5 Energy for Yumemizuki Mizuki. Energy can be restored this way 4 times per <strong>Anraku Secret Spring Therapy</strong> duration."
     }
   },
   "constellation5": {
@@ -209,6 +250,10 @@
     "name": "The Heart Lingers Long",
     "description": {
       "0": "While Yumemizuki Mizuki is in the Dreamdrifter state, Swirl DMG dealt by nearby party members can score CRIT Hits, with CRIT Rate fixed at 30%, and CRIT DMG fixed at 100%."
+    },
+    "upgradedDescription": {
+      "0": "While Yumemizuki Mizuki is in the Dreamdrifter state, Swirl DMG dealt by nearby party members can score CRIT Hits, with CRIT Rate fixed at 30%, and CRIT DMG fixed at 100%.",
+      "1": "Every point of Elemental Mastery Yumemizuki Mizuki has in excess of 500 increases her CRIT Rate by 0.04% and her CRIT DMG by 0.16%. Yumemizuki Mizuki's CRIT Rate and CRIT DMG can be increased by up to 20% and 80% in this way, respectively."
     }
   }
 }

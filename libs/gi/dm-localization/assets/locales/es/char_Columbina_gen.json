@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -64,7 +68,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -88,7 +96,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -119,7 +131,7 @@
   "passive": {
     "name": "Custodia de la luna",
     "description": {
-      "0": "Cuando uno de tus personajes del equipo sea derrotado en Nod Krai, Colombina revivirá a dicho personaje y le restaurará cierta cantidad de Vida según el Niv. de Amistad de Colombina. Este efecto solo puede ocurrir una vez cada 100 s. Este efecto no se activará en dominios, Dominios de la cruzada o en la Espiral del Abismo.",
+      "0": "Cuando uno de tus personajes del equipo sea derrotado en Nod Krai o en la Luna Escarchada, Colombina revivirá a dicho personaje y le restaurará cierta cantidad de Vida según el Niv. de Amistad de Colombina. Este efecto solo puede ocurrir una vez cada 100 s. Este efecto no se activará en dominios, Dominios de la cruzada o en la Espiral del Abismo.",
       "1": "Además, parece que Colombina tiene un vínculo especial con algunos animales pequeños afectados por el kuuvahki..."
     }
   },

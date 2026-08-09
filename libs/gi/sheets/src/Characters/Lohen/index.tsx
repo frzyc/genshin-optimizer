@@ -1,5 +1,5 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
-import { type CharacterKey } from '@genshin-optimizer/gi/consts'
+import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import {
@@ -20,7 +20,6 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { TalentSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
 import {
   customDmgNode,
@@ -29,6 +28,7 @@ import {
   hitEle,
   plungingDmgNodes,
 } from '../dataUtil'
+import type { TalentSheet } from '../ICharacterSheet'
 
 const key: CharacterKey = 'Lohen'
 const skillParam_gen = allStats.char.skillParam[key]
@@ -189,11 +189,12 @@ const lockBuff_normal_dmg_ = equal(
 const lockBuff_charged_dmg_ = { ...lockBuff_normal_dmg_ }
 
 const [condC2BladePath, condC2Blade] = cond(key, 'c2Blade')
-const c2Blade_eleMas = greaterEq(
+const c2Blade_eleMasDisp = greaterEq(
   input.constellation,
   2,
   equal(condC2Blade, 'on', dm.constellation2.eleMas)
 )
+const c2Blade_eleMas = unequal(target.charKey, key, c2Blade_eleMasDisp)
 
 const c6Etch_critDMG_ = greaterEq(
   input.constellation,
@@ -293,7 +294,7 @@ export const data = dataObjForCharacterSheet(
         eleMas: c2Blade_eleMas,
       },
     },
-    isHexerei: lockHomework_hexerei,
+    flags: { isHexerei: lockHomework_hexerei },
   },
   {
     premod: {
@@ -310,8 +311,9 @@ const sheet: TalentSheet = {
     {
       fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], {
-          name: ct.chg(`auto.skillParams.${i}`),
+          name: ct.chg(`auto.skillParams.${i > 4 ? i - 1 : i}`),
           multi: i === 2 ? 3 : undefined,
+          textSuffix: i >= 4 ? `(${i - 3})` : undefined,
         }),
       })),
     },
@@ -322,7 +324,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg, {
-            name: ct.chg(`auto.skillParams.5`),
+            name: ct.chg('auto.skillParams.5'),
             multi: 2,
           }),
         },
@@ -361,13 +363,14 @@ const sheet: TalentSheet = {
       fields: [
         ...dm.skill.hitArr.map((_, i) => ({
           node: infoMut(dmgFormulas.skill[i as 1 | 2 | 3 | 4 | 5], {
-            name: ct.chg(`skill.skillParams.${i}`),
+            name: ct.chg(`skill.skillParams.${i > 4 ? i - 1 : i}`),
             multi: i === 2 ? 3 : undefined,
+            textSuffix: i >= 4 ? `(${i - 3})` : undefined,
           }),
         })),
         {
           node: infoMut(dmgFormulas.skill.chargedDmg, {
-            name: ct.chg(`skill.skillParams.5`),
+            name: ct.chg('skill.skillParams.5'),
             multi: 2,
           }),
         },
@@ -435,7 +438,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.burstDmg, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
             multi: 6,
           }),
         },
@@ -591,7 +594,10 @@ const sheet: TalentSheet = {
         on: {
           fields: [
             {
-              node: c2Blade_eleMas,
+              node: infoMut(c2Blade_eleMasDisp, {
+                path: 'eleMas',
+                isTeamBuff: true,
+              }),
             },
             {
               text: stg('duration'),

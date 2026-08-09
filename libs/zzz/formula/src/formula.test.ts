@@ -1,4 +1,4 @@
-import { fail } from 'assert'
+import { fail } from 'node:assert'
 import {
   compileTagMapValues,
   read,
@@ -6,10 +6,10 @@ import {
 } from '@genshin-optimizer/pando/engine'
 import type { MilestoneKey, WengineKey } from '@genshin-optimizer/zzz/consts'
 import {
-  type CharacterKey,
   allCharacterKeys,
   allDiscSetKeys,
   allWengineKeys,
+  type CharacterKey,
 } from '@genshin-optimizer/zzz/consts'
 import {
   charTagMapNodeEntries,
@@ -17,22 +17,28 @@ import {
   discTagMapNodeEntries,
   formulas,
   teamData,
+  Vivian,
   wengineTagMapNodeEntries,
   withMember,
 } from '.'
 import { Calculator } from './calculator'
 import { data, keys, values } from './data'
 import {
-  type TagMapNodeEntries,
   conditionalEntries,
   convert,
   enemy,
   enemyDebuff,
   enemyTag,
+  member0,
+  member1,
+  nextMember,
   own,
   ownBuff,
   ownTag,
+  prevMember,
+  type TagMapNodeEntries,
   tagStr,
+  target,
   team,
 } from './data/util'
 
@@ -55,39 +61,36 @@ describe('character test', () => {
     [60, 5, 0, 583.957, 612.6038, 7500.7134, 118, 94, 93],
     [60, 5, 3, 608.957, 612.6038, 7500.7134, 130, 94, 93],
     [60, 5, 6, 658.957, 612.6038, 7500.7134, 136, 94, 93],
-  ])(
-    'Calculate character base stats for lvl %i, promo %i, core %i',
-    (lvl, promotion, core, atk, def, hp, impact, anomMas, anomProf) => {
-      const charKey: CharacterKey = 'Anby'
-      const data: TagMapNodeEntries = [
-        ...withMember(
-          'Anby',
-          ...charTagMapNodeEntries({
-            level: lvl,
-            promotion,
-            key: charKey,
-            mindscape: 0,
-            potential: 0,
-            basic: 0,
-            dodge: 0,
-            special: 0,
-            assist: 0,
-            chain: 0,
-            core,
-          })
-        ),
-      ]
-      const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
+  ])('Calculate character base stats for lvl %i, promo %i, core %i', (lvl, promotion, core, atk, def, hp, impact, anomMas, anomProf) => {
+    const charKey: CharacterKey = 'Anby'
+    const data: TagMapNodeEntries = [
+      ...withMember(
+        'Anby',
+        ...charTagMapNodeEntries({
+          level: lvl,
+          promotion,
+          key: charKey,
+          mindscape: 0,
+          potential: 0,
+          basic: 0,
+          dodge: 0,
+          special: 0,
+          assist: 0,
+          chain: 0,
+          core,
+        })
+      ),
+    ]
+    const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
 
-      const anby = convert(ownTag, { et: 'own', src: 'Anby' })
-      expect(calc.compute(anby.final.atk).val).toBeCloseTo(atk)
-      expect(calc.compute(anby.final.def).val).toBeCloseTo(def)
-      expect(calc.compute(anby.final.hp).val).toBeCloseTo(hp)
-      expect(calc.compute(anby.final.impact).val).toBeCloseTo(impact)
-      expect(calc.compute(anby.final.anomMas).val).toBeCloseTo(anomMas)
-      expect(calc.compute(anby.final.anomProf).val).toBeCloseTo(anomProf)
-    }
-  )
+    const anby = convert(ownTag, { et: 'own', src: 'Anby' })
+    expect(calc.compute(anby.final.atk).val).toBeCloseTo(atk)
+    expect(calc.compute(anby.final.def).val).toBeCloseTo(def)
+    expect(calc.compute(anby.final.hp).val).toBeCloseTo(hp)
+    expect(calc.compute(anby.final.impact).val).toBeCloseTo(impact)
+    expect(calc.compute(anby.final.anomMas).val).toBeCloseTo(anomMas)
+    expect(calc.compute(anby.final.anomProf).val).toBeCloseTo(anomProf)
+  })
 })
 
 describe('wengine test', () => {
@@ -96,45 +99,42 @@ describe('wengine test', () => {
     [10, 0, 102.728, 0.2],
     [10, 1, 138.416, 0.26],
     [60, 5, 594.8, 0.5],
-  ])(
-    'Calculate wengine base stats for lvl %i, mod %i',
-    (lvl, modification, atk, substat) => {
-      const wengKey: WengineKey = 'SteamOven'
-      const data: TagMapNodeEntries = [
-        ...withMember(
-          'Anby',
-          ...charTagMapNodeEntries({
-            level: 1,
-            promotion: 0,
-            key: 'Anby',
-            mindscape: 0,
-            potential: 0,
-            basic: 0,
-            dodge: 0,
-            special: 0,
-            assist: 0,
-            chain: 0,
-            core: 0,
-          }),
-          ...wengineTagMapNodeEntries({
-            key: wengKey,
-            level: lvl,
-            modification: modification as MilestoneKey,
-            phase: 1,
-          })
-        ),
-      ]
-      const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
+  ])('Calculate wengine base stats for lvl %i, mod %i', (lvl, modification, atk, substat) => {
+    const wengKey: WengineKey = 'SteamOven'
+    const data: TagMapNodeEntries = [
+      ...withMember(
+        'Anby',
+        ...charTagMapNodeEntries({
+          level: 1,
+          promotion: 0,
+          key: 'Anby',
+          mindscape: 0,
+          potential: 0,
+          basic: 0,
+          dodge: 0,
+          special: 0,
+          assist: 0,
+          chain: 0,
+          core: 0,
+        }),
+        ...wengineTagMapNodeEntries({
+          key: wengKey,
+          level: lvl,
+          modification: modification as MilestoneKey,
+          phase: 1,
+        })
+      ),
+    ]
+    const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
 
-      const wengine0 = convert(ownTag, {
-        et: 'own',
-        src: 'Anby',
-        sheet: 'wengine',
-      })
-      expect(calc.compute(wengine0.base.atk).val).toBeCloseTo(atk)
-      expect(calc.compute(wengine0.initial.enerRegen_).val).toBeCloseTo(substat)
-    }
-  )
+    const wengine0 = convert(ownTag, {
+      et: 'own',
+      src: 'Anby',
+      sheet: 'wengine',
+    })
+    expect(calc.compute(wengine0.base.atk).val).toBeCloseTo(atk)
+    expect(calc.compute(wengine0.initial.enerRegen_).val).toBeCloseTo(substat)
+  })
 })
 
 describe('char+wengine test', () => {
@@ -147,7 +147,6 @@ describe('char+wengine test', () => {
           promotion: 0,
           key: 'Anby',
           mindscape: 0,
-          potential: 0,
           basic: 0,
           dodge: 0,
           special: 0,
@@ -176,7 +175,6 @@ describe('char+wengine test', () => {
           promotion: 5,
           key: 'Anby',
           mindscape: 0,
-          potential: 0,
           basic: 0,
           dodge: 0,
           special: 0,
@@ -207,76 +205,7 @@ describe('char+wengine test', () => {
     [true, 'avg', 6696.093, 22320.30908],
     [true, 'crit', 7892.378, 22320.30908],
     [true, 'nonCrit', 3107.236, 22320.30908],
-  ])(
-    'calculate standard+anomaly damage, stunned: %o, critMode: %s',
-    (isStunned, critMode, expectedStandardDmg, expectedAnomalyDmg) => {
-      const data: TagMapNodeEntries = [
-        ...withMember(
-          'Anby',
-          ...charTagMapNodeEntries({
-            level: 60,
-            promotion: 5,
-            key: 'Anby',
-            mindscape: 0,
-            potential: 0,
-            basic: 0,
-            dodge: 0,
-            special: 0,
-            assist: 0,
-            chain: 0,
-            core: 6,
-          }),
-          ...wengineTagMapNodeEntries({
-            key: 'VortexRevolver',
-            level: 60,
-            modification: 5,
-            phase: 1,
-          }),
-
-          ownBuff.initial.atk.add(25),
-          ownBuff.combat.atk.add(100),
-          ownBuff.combat.atk_.add(0.08),
-          ownBuff.initial.crit_.add(0.7),
-          ownBuff.initial.crit_dmg_.add(1.04),
-          ownBuff.initial.dmg_.electric.add(0.4),
-          ownBuff.initial.pen_.add(0.05),
-          ownBuff.initial.pen.add(90),
-          ownBuff.initial.resIgn_.add(0.02),
-          ownBuff.initial.anomProf.add(338)
-        ),
-        own.common.critMode.add(critMode),
-        enemy.common.def.add(635),
-        enemy.common.res_.electric.add(0.1),
-        conditionalEntries(
-          'enemy',
-          'Anby',
-          null
-        )(conditionals.enemy.isStunned.name, isStunned ? 1 : 0),
-        enemyDebuff.common.resRed_.electric.add(0.15),
-        enemyDebuff.common.dmgInc_.add(0.1),
-        enemyDebuff.common.dmgRed_.add(0.15),
-        enemyDebuff.common.stun_.add(1.5),
-        enemyDebuff.common.unstun_.add(1),
-      ]
-      const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
-      const anby = convert(ownTag, { et: 'own', src: 'Anby' })
-      expect(calc.compute(anby.base.atk).val).toBeCloseTo(1134.797)
-      expect(calc.compute(anby.final.atk).val).toBeCloseTo(1597.696912)
-
-      expect(
-        calc
-          .withTag({ src: 'Anby', dst: 'Anby' })
-          .compute(read(formulas.Anby.standardDmgInst.tag, undefined)).val
-      ).toBeCloseTo(expectedStandardDmg)
-
-      expect(
-        calc
-          .withTag({ src: 'Anby', dst: 'Anby' })
-          .compute(read(formulas.Anby.anomalyDmgInst.tag, undefined)).val
-      ).toBeCloseTo(expectedAnomalyDmg)
-    }
-  )
-  it('calculate specific elemental damage bonus separate from common', () => {
+  ])('calculate standard+anomaly damage, stunned: %o, critMode: %s', (isStunned, critMode, expectedStandardDmg, expectedAnomalyDmg) => {
     const data: TagMapNodeEntries = [
       ...withMember(
         'Anby',
@@ -286,6 +215,71 @@ describe('char+wengine test', () => {
           key: 'Anby',
           mindscape: 0,
           potential: 0,
+          basic: 0,
+          dodge: 0,
+          special: 0,
+          assist: 0,
+          chain: 0,
+          core: 6,
+        }),
+        ...wengineTagMapNodeEntries({
+          key: 'VortexRevolver',
+          level: 60,
+          modification: 5,
+          phase: 1,
+        }),
+
+        ownBuff.initial.atk.add(25),
+        ownBuff.combat.atk.add(100),
+        ownBuff.combat.atk_.add(0.08),
+        ownBuff.initial.crit_.add(0.7),
+        ownBuff.initial.crit_dmg_.add(1.04),
+        ownBuff.initial.dmg_.electric.add(0.4),
+        ownBuff.initial.pen_.add(0.05),
+        ownBuff.initial.pen.add(90),
+        ownBuff.initial.resIgn_.add(0.02),
+        ownBuff.initial.anomProf.add(338)
+      ),
+      own.common.critMode.add(critMode),
+      enemy.common.def.add(635),
+      enemy.common.res_.electric.add(0.1),
+      conditionalEntries(
+        'enemy',
+        'Anby',
+        null
+      )(conditionals.enemy.isStunned.name, isStunned ? 1 : 0),
+      enemyDebuff.common.resRed_.electric.add(0.15),
+      enemyDebuff.common.dmgInc_.add(0.1),
+      enemyDebuff.common.dmgRed_.add(0.15),
+      enemyDebuff.common.stun_.add(1.5),
+      enemyDebuff.common.unstun_.add(1),
+    ]
+    const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
+    const anby = convert(ownTag, { et: 'own', src: 'Anby' })
+    expect(calc.compute(anby.base.atk).val).toBeCloseTo(1134.797)
+    expect(calc.compute(anby.final.atk).val).toBeCloseTo(1597.696912)
+
+    expect(
+      calc
+        .withTag({ src: 'Anby', dst: 'Anby' })
+        .compute(read(formulas.Anby.standardDmgInst.tag, undefined)).val
+    ).toBeCloseTo(expectedStandardDmg)
+
+    expect(
+      calc
+        .withTag({ src: 'Anby', dst: 'Anby' })
+        .compute(read(formulas.Anby.anomalyDmgInst.tag, undefined)).val
+    ).toBeCloseTo(expectedAnomalyDmg)
+  })
+  it('calculate specific elemental damage bonus separate from common', () => {
+    const data: TagMapNodeEntries = [
+      ...withMember(
+        'Anby',
+        ...charTagMapNodeEntries({
+          level: 60,
+          promotion: 5,
+          key: 'Anby',
+          mindscape: 0,
           basic: 0,
           dodge: 0,
           special: 0,
@@ -342,7 +336,6 @@ describe('char+wengine test', () => {
           promotion: 0,
           key: 'Anby',
           mindscape: 0,
-          potential: 0,
           basic: 1,
           dodge: 0,
           special: 0,
@@ -382,7 +375,6 @@ describe('disc2p test', () => {
           promotion: 0,
           key: 'Anby',
           mindscape: 0,
-          potential: 0,
           basic: 0,
           dodge: 0,
           special: 0,
@@ -415,7 +407,6 @@ describe('team', () => {
           promotion: 0,
           key: 'Anby',
           mindscape: 0,
-          potential: 0,
           basic: 0,
           dodge: 0,
           special: 0,
@@ -431,7 +422,6 @@ describe('team', () => {
           promotion: 0,
           key: 'Anton',
           mindscape: 0,
-          potential: 0,
           basic: 0,
           dodge: 0,
           special: 0,
@@ -459,6 +449,103 @@ describe('team', () => {
       calc.compute(team.common.count.withFaction('StarsOfLyra')).val
     ).toEqual(0)
   })
+  test('target works', () => {
+    const data: TagMapNodeEntries = [
+      ...teamData(['Seth', 'Vivian']),
+      ...withMember(
+        'Vivian',
+        ...charTagMapNodeEntries({
+          level: 60,
+          promotion: 5,
+          key: 'Vivian',
+          mindscape: 0,
+          potential: 0,
+          basic: 0,
+          dodge: 0,
+          special: 0,
+          assist: 0,
+          chain: 0,
+          core: 6,
+        }),
+
+        ownBuff.initial.atk.add(25),
+        ownBuff.combat.atk.add(100),
+        ownBuff.combat.atk_.add(0.08),
+        ownBuff.initial.crit_.add(0.7),
+        ownBuff.initial.crit_dmg_.add(1.04),
+        ownBuff.initial.dmg_.electric.add(0.4),
+        ownBuff.initial.pen_.add(0.05),
+        ownBuff.initial.pen.add(90),
+        ownBuff.initial.resIgn_.add(0.02),
+        ownBuff.initial.anomProf.add(338)
+      ),
+      ...withMember(
+        'Seth',
+        ...charTagMapNodeEntries({
+          level: 60,
+          promotion: 5,
+          key: 'Seth',
+          mindscape: 0,
+          potential: 0,
+          basic: 0,
+          dodge: 0,
+          special: 0,
+          assist: 0,
+          chain: 0,
+          core: 6,
+        }),
+
+        ownBuff.initial.atk.add(25),
+        ownBuff.combat.atk.add(100),
+        ownBuff.combat.atk_.add(0.08),
+        ownBuff.initial.crit_.add(0.7),
+        ownBuff.initial.crit_dmg_.add(1.04),
+        ownBuff.initial.dmg_.electric.add(0.4),
+        ownBuff.initial.pen_.add(0.05),
+        ownBuff.initial.pen.add(90),
+        ownBuff.initial.resIgn_.add(0.02),
+        ownBuff.initial.anomProf.add(338)
+      ),
+      own.common.critMode.add('avg'),
+      enemy.common.def.add(635),
+      enemy.common.res_.electric.add(0.1),
+      conditionalEntries(
+        'Vivian',
+        'Vivian',
+        'Seth'
+      )(Vivian.conditionals.abloom.name, 1),
+      enemyDebuff.common.resRed_.electric.add(0.15),
+      enemyDebuff.common.dmgInc_.add(0.1),
+      enemyDebuff.common.dmgRed_.add(0.15),
+      enemyDebuff.common.stun_.add(1.5),
+      enemyDebuff.common.unstun_.add(1),
+    ]
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Vivian', dst: 'Seth', preset: 'preset0' })
+    expect(calc.compute(own.final.atk).val).toBeCloseTo(1078.2, 1)
+    expect(calc.compute(member1.final.atk).val).toBeCloseTo(1078.2, 1)
+    expect(calc.compute(target.final.atk).val).toBeCloseTo(821.76, 1)
+    expect(calc.compute(target.final.anomProf).val).toBeCloseTo(428, 1)
+    expect(calc.compute(member0.final.anomProf).val).toBeCloseTo(428, 1)
+
+    expect(
+      calc
+        .withTag({ src: 'Vivian', dst: 'Vivian', preset: 'preset0' })
+        .compute(prevMember.final.anomProf).val
+    ).toBeCloseTo(428, 1)
+    expect(
+      calc
+        .withTag({ src: 'Vivian', dst: 'Vivian', preset: 'preset0' })
+        .compute(nextMember.final.anomProf).val
+    ).toBeCloseTo(428, 1)
+
+    expect(
+      calc.compute(read(Vivian.buffs.core_electric_abloom.tag, undefined)).val
+    ).toBeCloseTo(428 * 0.1 * 0.032)
+  })
 })
 
 describe('sheet', () => {
@@ -475,20 +562,21 @@ describe('sheet', () => {
       if (tag.et && tag.qt && tag.q) {
         switch (tag.et) {
           case 'notOwnBuff':
+          // biome-ignore lint/suspicious/noFallthroughSwitchClause: will not fall
           case 'teamBuff': {
             const { sheet } = (ownTag as any)[tag.qt][tag.q]
             // Buff entries are for agg queries inside a sheet
             if (sheet === 'agg' && sheets.has(tag.sheet as any)) continue
             fail(`Ill-form entry (${tagStr(tag)}) for sheet ${sheet}`)
           }
-          // eslint-disable-next-line no-fallthrough
+          // biome-ignore lint/suspicious/noFallthroughSwitchClause: will not fall
           case 'enemyDeBuff': {
             const { sheet } = (enemyTag as any)[tag.qt][tag.q]
             if (sheet === 'agg' && sheets.has(tag.sheet as any)) continue
             if (sheet === tag.sheet) continue
             fail(`Ill-form entry (${tagStr(tag)}) for sheet ${sheet}`)
           }
-          // eslint-disable-next-line no-fallthrough
+          // biome-ignore lint/suspicious/noFallthroughSwitchClause: will not fall
           case 'own': {
             const desc = (ownTag as any)[tag.qt]?.[tag.q]
             if (!desc) continue
@@ -498,7 +586,6 @@ describe('sheet', () => {
               continue
             fail(`Illform entry (${tagStr(tag)}) for sheet ${sheet}`)
           }
-          // eslint-disable-next-line no-fallthrough
           case 'enemy': {
             const desc = (enemyTag as any)[tag.qt]?.[tag.q]
             if (!desc) continue

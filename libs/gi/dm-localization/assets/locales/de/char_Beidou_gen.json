@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -74,7 +78,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -108,7 +116,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -132,6 +144,14 @@
     "description": {
       "0": "Verringert die beim Schwimmen verbrauchte Ausdauer aller eigenen Truppenmitglieder um 20 %.",
       "1": "Nicht mit passiven Talenten mit völlig gleichen Effekten stapelbar."
+    }
+  },
+  "lockedPassive": {
+    "name": "Polarstern",
+    "description": {
+      "0": "Sammelt beim Gedrückthalten der Elementarfähigkeit <strong>Wellenfänger</strong> alle 0,8 s automatisch, auch ohne erlittene Treffer, eine Stapelung Kraft an und erhöht den beim Loslassen verursachten Schaden.",
+      "1": "Verleiht beim Treffen eines Gegners durchs Gedrückthalten von <strong>Wellenfänger</strong>, abhängig von der gesammelten Kraft, einen zusätzlichen Bonuseffekt: Verkürzt die Abklingzeit der Elementarfähigkeit pro Stapelung Kraft um 4 s und stellt sich selbst zudem 8 Punkte Elementarenergie wieder her, 15 s Abklingzeit.",
+      "2": "Versetzt Beidou zudem, wenn sie sich im <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Sternglanzfeld</strong></tooltip> befindet, in den Zustand <strong>Leuchten – Stellar-Supraleiter</strong>."
     }
   },
   "constellation1": {
@@ -172,6 +192,11 @@
     "name": "Schrecken des Bösen",
     "description": {
       "0": "Verringert während der Wirkungsdauer von <strong>Blitzbrecher</strong> den <electro>Elektro-WDS</electro> von Gegnern in der Umgebung um 15 %."
+    },
+    "upgradedDescription": {
+      "0": "Verringert während der Dauer von <strong>Blitzbrecher</strong> den <electro>Elektro-WDS</electro> von Gegnern in der Umgebung um 15 %.",
+      "1": "<br/>",
+      "2": "<strong>Leuchten – Stellar-Supraleiter</strong>: Verringert während der Dauer von Blitzbrecher außerdem den <cryo>Kryo-WDS</cryo> von Gegnern in der Nähe um 15 % und erhöht die Elementarkunde der aktuellen Figur um 200 Punkte."
     }
   }
 }

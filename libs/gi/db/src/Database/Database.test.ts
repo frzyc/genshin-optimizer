@@ -83,8 +83,8 @@ describe('Database', () => {
 
     tryStorage(
       (storage) => {
-        storage.char_x = '{ test: "test" }'
-        storage.artifact_x = '{}'
+        storage['char_x'] = '{ test: "test" }'
+        storage['artifact_x'] = '{}'
       },
       (storage) => {
         expect(storage.getItem('char_x')).toBeNull()
@@ -93,9 +93,9 @@ describe('Database', () => {
     for (let i = 2; i < 5; i++) {
       tryStorage(
         (storage) => {
-          storage.db_ver = `${i}`
-          storage.char_x = '{ "test": "test" }'
-          storage.artifact_x = '{}'
+          storage['db_ver'] = `${i}`
+          storage['char_x'] = '{ "test": "test" }'
+          storage['artifact_x'] = '{}'
           expect(storage.getItem('char_x')).not.toBeNull()
         },
         (storage) => {
@@ -106,8 +106,8 @@ describe('Database', () => {
     }
     tryStorage(
       (storage) => {
-        storage.char_x = '{ test: "test" }'
-        storage.artifact_x = '{}'
+        storage['char_x'] = '{ test: "test" }'
+        storage['artifact_x'] = '{}'
         expect(storage.getItem('char_x')).not.toBeNull()
       },
       (storage) => {

@@ -1,9 +1,9 @@
+import type { Sheet, Tag } from '@genshin-optimizer/zzz/formula'
 import {
-  type DmgAbilityDim,
   abilityDims,
+  type DmgAbilityDim,
   isAbilityDim,
 } from '@genshin-optimizer/zzz/formula'
-import type { Sheet, Tag } from '@genshin-optimizer/zzz/formula'
 
 function groupKey(tag: Tag) {
   return `${tag.sheet ?? ''}:${tag.name ?? ''}`

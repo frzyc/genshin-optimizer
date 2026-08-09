@@ -1,0 +1,21 @@
+{
+  "superconduct": {
+    "name": "Superconduct",
+    "desc": {
+      "0": "Saat <strong>Cryo</strong> berpadu dengan <strong>Electro</strong>, maka Reaksi Elemental <strong>Superconduct</strong> akan terpicu. Superconduct akan mengakibatkan <strong>Cryo DMG Area</strong>, dan akan <strong>mengurangi Physical RES dari semua makhluk yang terpengaruh oleh Superconduct</strong> dalam satu waktu secara signifikan."
+    }
+  },
+  "stellarconduct": {
+    "name": "Stellar-Conduct",
+    "desc": {
+      "0": "Saat elemen <strong>Cryo</strong> berpadu dengan <strong>Electro</strong> dan memenuhi syarat tertentu, maka akan memicu sebuah reaksi khusus bernama <strong>Stellar-Conduct</strong>. Saat reaksi ini terpicu, akan tercipta sebuah Starlight Prism dan area di sekitar berubah menjadi Polestar Field yang ajaib untuk sementara.",
+      "1": "Seluruh Karakter yang berada di dalam area akan mendapatkan Cryo dan Electro DMG Bonus. Saat musuh yang berada di dalam Polestar Field terkena serangan Cryo atau Electro, maka Polestar Field akan menyimpan elemen yang tersebar, lalu melepaskan seluruh energi elemen yang tersimpan setiap 4 detik sekali. Hal ini akan meningkatkan DMG Bonus yang disebutkan di atas sekali lagi, serta meningkatkan koefisien dasar dari reaksi Stellar-Conduct selama 4 detik.",
+      "2": "Selain itu, Physical RES musuh yang berada di dalam Polestar Field akan berkurang."
+    },
+    "fieldName": "Polestar Field",
+    "fieldDesc": {
+      "0": "Saat elemen Cryo bersentuhan dengan elemen Electro, jika syaratnya terpenuhi, maka reaksi Stellar-Conduct khusus akan terpicu.",
+      "1": "Reaksi Stellar-Conduct akan menghasilkan Polestar Field yang unik. Di dalam Polestar Field, makin banyak jumlah serangan Cryo atau Electro yang mengenai musuh, makin tinggi DMG Cryo, Electro, dan reaksi Stellar-Conduct diakibatkan."
+    }
+  }
+}

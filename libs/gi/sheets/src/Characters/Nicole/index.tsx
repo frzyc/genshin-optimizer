@@ -1,5 +1,5 @@
 import { objKeyValMap } from '@genshin-optimizer/common/util'
-import { type CharacterKey, allElementKeys } from '@genshin-optimizer/gi/consts'
+import { allElementKeys, type CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   active,
@@ -20,7 +20,6 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { any, cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { TalentSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
 import {
   dataObjForCharacterSheet,
@@ -29,6 +28,7 @@ import {
   shieldElement,
   shieldNodeTalent,
 } from '../dataUtil'
+import type { TalentSheet } from '../ICharacterSheet'
 
 const key: CharacterKey = 'Nicole'
 const skillParam_gen = allStats.char.skillParam[key]
@@ -148,31 +148,37 @@ const a1GuidanceActive_atkDisp = greaterEq(
     equal(condA1GuidanceActive, 'on', dm.passive1.atk)
   )
 )
+// Before C6, Guidance can only be triggered on active char
 const a1GuidanceActive_atk = any(
   a1GuidanceActive_atkDisp,
-  equal(
-    active.charKey,
-    target.charKey,
-    any(
-      1,
-      unequal(condA4NicoleGuidance, 'on', 1),
-      equal(condA4NicoleGuidance, 'on', unequal(target.charKey, key, 1))
-    )
-  ),
+  // If target is the active char
+  equal(active.charKey, target.charKey, 1),
+  // Or if Nicole is C6, then all chars will have Guidance if Nicole has Guidance
+  // Don't apply to off-fielf Nicole though, since she has her own A4 conditional for Guidance
   greaterEq(
     input.constellation,
     6,
-    any(1, equal(condA4NicoleGuidance, 'on', 1), equal(active.charKey, key, 1))
+    any(
+      1,
+      // Nicole has guidance either with a4 (handled below) or by being active char
+      unequal(target.charKey, key, equal(condA4NicoleGuidance, 'on', 1)),
+      equal(active.charKey, key, 1)
+    )
   )
 )
 
+// Don't apply if Nicole is active, since we handled it above, and will hide this conditional
 const a4NicoleGuidanceActive_atk = greaterEq(
   input.asc,
   4,
   equal(
     condSkillGraceActive,
     'on',
-    equal(condA4NicoleGuidance, 'on', dm.passive1.atk)
+    equal(
+      condA4NicoleGuidance,
+      'on',
+      unequal(active.charKey, key, dm.passive1.atk)
+    )
   )
 )
 
@@ -320,7 +326,7 @@ export const data = dataObjForCharacterSheet(
         atk: skillGraceActive_atk,
       },
     },
-    isHexerei: lockHomework_hexerei,
+    flags: { isHexerei: lockHomework_hexerei },
   },
   {
     teamBuff: {
@@ -357,7 +363,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg, {
-            name: ct.chg(`auto.skillParams.3`),
+            name: ct.chg('auto.skillParams.3'),
           }),
         },
         {
@@ -522,7 +528,12 @@ const sheet: TalentSheet = {
     ct.condTem('passive2', {
       path: condA4NicoleGuidancePath,
       value: condA4NicoleGuidance,
-      canShow: equal(condSkillGraceActive, 'on', 1),
+      // Don't show if Nicole is active, since A1 will control Guidance instead
+      canShow: unequal(
+        active.charKey,
+        key,
+        equal(condSkillGraceActive, 'on', 1)
+      ),
       teamBuff: true,
       name: ct.ch('nicoleGuidanceCond'),
       states: {

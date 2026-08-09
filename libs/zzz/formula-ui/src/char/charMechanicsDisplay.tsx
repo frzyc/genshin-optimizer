@@ -10,7 +10,6 @@ import { allSkillKeys } from '@genshin-optimizer/zzz/consts'
 import { ZCard } from '@genshin-optimizer/zzz/ui'
 import { Box, Stack, Typography } from '@mui/material'
 import { type ReactNode, useMemo } from 'react'
-import { useDebugFormulaClick } from '../hooks'
 import {
   skillSectionFlatIconKey,
   talentSheetElementIcon,
@@ -95,7 +94,6 @@ function groupDocumentsBySection(documents: Document[]): Document[][] {
 }
 
 function TalentSheetDocuments({ documents }: { documents: Document[] }) {
-  const onClickFormula = useDebugFormulaClick()
   if (!documents.length) return null
   return (
     <DocumentGroupProvider>
@@ -106,7 +104,6 @@ function TalentSheetDocuments({ documents }: { documents: Document[] }) {
             document={document}
             typoVariant="body2"
             collapse={document.type === 'text'}
-            onClickFormula={onClickFormula}
           />
         ))}
       </ZCard>

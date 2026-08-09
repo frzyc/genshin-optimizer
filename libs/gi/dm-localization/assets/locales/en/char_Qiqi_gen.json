@@ -35,7 +35,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     },
     "skillParamsEncoding": {
       "0": "{{0, percent(fixed: 1)}}%",
@@ -53,7 +57,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -70,6 +78,19 @@
       "4": "<br/>",
       "5": "<i>I use this to prevent warming and rot... of Dr. Bai's precious ingredients. Yes.</i>"
     },
+    "upgradedDescription": {
+      "0": "Using the Icevein Talisman, Qiqi brings forth the Herald of Frost, dealing <cryo>Cryo DMG</cryo> to surrounding opponents.",
+      "1": "<br/>",
+      "2": "<strong>Herald of Frost</strong>",
+      "3": [
+        " On hit, Qiqi's Normal and Charged Attacks regenerate HP for your own party members and nearby teammates, with healing scaled based on Qiqi's ATK.",
+        " Periodically regenerates your active character's HP.",
+        " Follows the character around, dealing <cryo>Cryo DMG</cryo> to opponents in the character's path."
+      ],
+      "4": "If your current active character hits an opponent with an attack, the Herald of Frost will perform a coordinated attack on the opponent, dealing <cryo>Cryo DMG</cryo>.",
+      "5": "<br/>",
+      "6": "<i>\"I use this to prevent warming and rot... of Dr. Bai's precious ingredients. Yes.\"</i>"
+    },
     "skillParams": {
       "0": "Skill DMG",
       "1": "Regeneration on Hit",
@@ -77,16 +98,20 @@
       "3": "Herald of Frost DMG",
       "4": "Duration",
       "5": "CD",
-      "6": "",
-      "7": "",
-      "8": "",
+      "6": "Herald of Frost Coordinated Attack DMG",
+      "7": "Herald of Frost Coordinated Attack CD",
+      "8": "CD",
       "9": "",
       "10": "",
       "11": "",
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     },
     "skillParamsEncoding": {
       "0": "{{7, percent}}%",
@@ -95,16 +120,20 @@
       "3": "{{4, percent(fixed: 1)}}%",
       "4": "{{5, fixed(fixed: 1)}}s",
       "5": "{{6, fixed(fixed: 1)}}s",
-      "6": "",
-      "7": "",
-      "8": "",
+      "6": "{{8, percent(fixed: 1)}}%",
+      "7": "{{9, fixed(fixed: 1)}}s",
+      "8": "{{10, fixed(fixed: 1)}}s",
       "9": "",
       "10": "",
       "11": "",
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -118,13 +147,23 @@
       "5": "<i>\"I am the Fortune Preserver, the Maiden of Resurrection.\"</i>",
       "6": "<i>— Qiqi does not remember these words.</i>"
     },
+    "upgradedDescription": {
+      "0": "Qiqi releases the Adeptal power sealed within her body, marking nearby opponents with a Fortune-Preserving Talisman that deals <cryo>Cryo DMG</cryo>.",
+      "1": "<strong>Radiance: Stellar-Conduct</strong>: Deals an additional instance of <cryo>Cryo DMG</cryo> that is also considered Stellar-Conduct DMG.",
+      "2": "<br/>",
+      "3": "<strong>Fortune-Preserving Talisman</strong>",
+      "4": "When opponents affected by this Talisman take DMG, the character that dealt this DMG regenerates HP.",
+      "5": "<br/>",
+      "6": "<i>\"I am the Fortune Preserver, the Maiden of Resurrection.\"</i>",
+      "7": "<i>— Qiqi does not remember these words.</i>"
+    },
     "skillParams": {
       "0": "Skill DMG",
       "1": "Healing",
       "2": "Duration",
       "3": "CD",
       "4": "Energy Cost",
-      "5": "",
+      "5": "Stellar-Conduct DMG",
       "6": "",
       "7": "",
       "8": "",
@@ -134,7 +173,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     },
     "skillParamsEncoding": {
       "0": "{{2, percent}}%",
@@ -142,7 +185,7 @@
       "2": "{{3, fixed(fixed: 1)}}s",
       "3": "{{4, fixed(fixed: 1)}}s",
       "4": "{{5}}",
-      "5": "",
+      "5": "{{6, percent(fixed: 1)}}%",
       "6": "",
       "7": "",
       "8": "",
@@ -152,7 +195,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -165,6 +212,10 @@
     "name": "A Glimpse Into Arcanum",
     "description": {
       "0": "When Qiqi hits opponents with her Normal and Charged Attacks, she has a 50% chance to apply a Fortune-Preserving Talisman to them for 6s. This effect can only occur once every 30s."
+    },
+    "upgradedDescription": {
+      "0": "When Qiqi hits opponents with her Normal and Charged Attacks, she has a 50% chance to apply a Fortune-Preserving Talisman to them for 6s. This effect can only occur once every 30s.",
+      "1": "<strong>Radiance: Stellar-Conduct</strong>: The effect now has a 100% chance to trigger, and cooldown time is reduced to 15s."
     }
   },
   "passive3": {
@@ -173,16 +224,32 @@
       "0": "Displays the location of nearby <strong>resources unique to Liyue</strong> on the mini-map."
     }
   },
+  "lockedPassive": {
+    "name": "Seven Sacred Treasures",
+    "description": {
+      "0": "The cooldown of the Elemental Skill <strong>Adeptus Art: Herald of Frost</strong> is reduced to 15s.",
+      "1": "<strong>Radiance: Stellar-Conduct</strong>: While the Herald of Frost is on the field, characters in Qiqi's party have their Superconduct and Stellar-Conduct Reaction DMG increased by 50%.",
+      "2": "Additionally, when inside a <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Polestar Field</strong></tooltip>, Qiqi will enter the <strong>Radiance: Stellar-Conduct</strong> state."
+    }
+  },
   "constellation1": {
     "name": "Ascetics of Frost",
     "description": {
       "0": "When the Herald of Frost hits an opponent marked by a Fortune-Preserving Talisman, Qiqi regenerates 2 Energy."
+    },
+    "upgradedDescription": {
+      "0": "Qiqi regenerates 2 Energy when the Herald of Frost hits an opponent marked by a Fortune-Preserving Talisman.",
+      "1": "<strong>Radiance: Stellar-Conduct</strong>: Qiqi also regenerates 6 Elemental Energy when the Herald of Frost's attacks and coordinated attacks hit opponents. This effect can trigger once every 6s."
     }
   },
   "constellation2": {
     "name": "Frozen to the Bone",
     "description": {
       "0": "Qiqi's Normal and Charged Attack DMG against opponents affected by <cryo>Cryo</cryo> is increased by 15%."
+    },
+    "upgradedDescription": {
+      "0": "Qiqi's Normal and Charged Attack DMG against opponents affected by <cryo>Cryo</cryo> is increased by 15%.",
+      "1": "<strong>Radiance: Stellar-Conduct</strong>: Qiqi's ATK is increased by 50%."
     }
   },
   "constellation3": {
@@ -196,6 +263,10 @@
     "name": "Divine Suppression",
     "description": {
       "0": "Targets marked by the Fortune-Preserving Talisman have their ATK decreased by 20%."
+    },
+    "upgradedDescription": {
+      "0": "Targets marked by a Fortune-Preserving Talisman have their ATK reduced by 20%.",
+      "1": "Additionally, when the healing effect of Fortune-Preserving Talisman triggers, the nearby party member with the lowest HP percentage remaining will also receive an additional instance of healing for 180% of Qiqi's ATK."
     }
   },
   "constellation5": {
@@ -210,6 +281,11 @@
     "description": {
       "0": "Using <strong>Adeptus Art: Preserver of Fortune</strong> revives all fallen party members nearby and regenerates 50% of their HP.",
       "1": "This effect can only occur once every 15 mins."
+    },
+    "upgradedDescription": {
+      "0": "Using <strong>Adeptus Art: Preserver of Fortune</strong> revives all fallen party members nearby and regenerates 50% of their HP.",
+      "1": "This effect can only occur once every 15 mins.",
+      "2": "Additionally, after using <strong>Adeptus Art: Preserver of Fortune</strong>, Qiqi will also gain 4 stacks of <strong>Glimpse of Mystery</strong>, and when your current active character (other than Qiqi) deals Stellar-Conduct DMG, 1 stack of <strong>Glimpse of Mystery</strong> is consumed, and DMG dealt is increased by 600% of Qiqi's ATK. The <strong>Glimpse of Mystery</strong> effect lasts up to 12s, and unleashing <strong>Adeptus Art: Preserver of Fortune</strong> refreshes the stack count."
     }
   }
 }

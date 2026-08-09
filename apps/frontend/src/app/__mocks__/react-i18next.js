@@ -1,11 +1,10 @@
 const React = require('react')
 const reactI18next = require('react-i18next')
 
-const hasChildren = (node) =>
-  node && (node.children || (node.props && node.props.children))
+const hasChildren = (node) => node && (node.children || node.props?.children)
 
 const getChildren = (node) =>
-  node && node.children ? node.children : node.props && node.props.children
+  node?.children ? node.children : node.props?.children
 
 const renderNodes = (reactNodes) => {
   if (typeof reactNodes === 'string') {

@@ -7,7 +7,6 @@ import type {
   ProudSkillExcelConfigData,
 } from '@genshin-optimizer/gi/dm'
 import {
-  TextMapEN,
   ascensionData,
   avatarExcelConfigData,
   avatarSkillDepotExcelConfigData,
@@ -15,6 +14,7 @@ import {
   characterIdMap,
   materialExcelConfigData,
   proudSkillExcelConfigData,
+  TextMapEN,
 } from '@genshin-optimizer/gi/dm'
 import type { UpgradeCost } from '.'
 import * as somniaData from './Somnia/data.json'

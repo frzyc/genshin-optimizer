@@ -4,8 +4,8 @@ import {
   isMultiTagField,
   isTagField,
 } from '@genshin-optimizer/game-opt/sheet-ui'
-import { isDmgAbilityDim } from '@genshin-optimizer/zzz/formula'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
+import { isDmgAbilityDim } from '@genshin-optimizer/zzz/formula'
 
 /** Primary formula tag for grouping / labels (dmg ability dim of a bundled row). */
 export function primaryTagFromField(field: Field): Tag | undefined {

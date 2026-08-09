@@ -13,8 +13,8 @@ import {
   sum,
   sumfrac,
 } from '../node'
-import { type Monotonicity, addCustomOperation } from '../util'
-import { State, pruneBranches, pruneRange, reaffine } from './prune'
+import { addCustomOperation, type Monotonicity } from '../util'
+import { pruneBranches, pruneRange, reaffine, State } from './prune'
 
 const r0 = read({ q: 'c0' })
 const r1 = read({ q: 'c1' })
@@ -99,7 +99,7 @@ describe('pruning', () => {
   })
   test('pruneRanges', () => {
     const nodes = [sum(1, r2), r0, r1, prod(r1, r2)]
-    const minimum = [-Infinity, 5, 0]
+    const minimum = [Number.NEGATIVE_INFINITY, 5, 0]
     const state = new State(nodes, minimum, candidates, 'q')
     state.progress = false
     pruneRange(state, 1)
@@ -183,20 +183,26 @@ describe('state', () => {
       return inc ? n : sumfrac(10000, n)
     }
     function getMonotonicity(node: NumTagFree): Map<string, Monotonicity> {
-      return new State([node], [-Infinity], candidates, 'q').monotonicities
+      return new State([node], [Number.NEGATIVE_INFINITY], candidates, 'q')
+        .monotonicities
     }
 
     test('only on constraint nodes', () => {
       const nodes = [r0, prod(-1, r0)]
       {
         // only the first node affect monotonicity
-        const m = new State(nodes, [-Infinity], candidates, 'q').monotonicities
+        const m = new State(nodes, [Number.NEGATIVE_INFINITY], candidates, 'q')
+          .monotonicities
         expect(m).toEqual(new Map([['c0', { inc: true, dec: false }]]))
       }
       {
         // both nodes affect monotonicity
-        const m = new State(nodes, [-Infinity, -Infinity], candidates, 'q')
-          .monotonicities
+        const m = new State(
+          nodes,
+          [Number.NEGATIVE_INFINITY, Number.NEGATIVE_INFINITY],
+          candidates,
+          'q'
+        ).monotonicities
         expect(m).toEqual(new Map([['c0', { inc: false, dec: false }]]))
       }
     })

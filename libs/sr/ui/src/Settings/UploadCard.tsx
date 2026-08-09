@@ -17,9 +17,9 @@ import {
   CardContent,
   Divider,
   Grid,
+  styled,
   Tooltip,
   Typography,
-  styled,
 } from '@mui/material'
 import { useCallback, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
@@ -51,7 +51,7 @@ export function UploadCard({
           setErrorMsg('uploadCard.error.jsonParse')
           return undefined
         }
-      } catch (e) {
+      } catch (_e) {
         setErrorMsg('uploadCard.error.jsonParse')
         return undefined
       }

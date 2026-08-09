@@ -1,6 +1,6 @@
 import {
-  type CharacterKey,
   allAttributeKeys,
+  type CharacterKey,
   elementalData,
   specialtyData,
 } from '@genshin-optimizer/zzz/consts'

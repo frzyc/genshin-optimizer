@@ -16,7 +16,7 @@ const have = Number.parseInt(process.versions.node.split('.')[0], 10)
 if (have !== want) {
   const msg =
     `\n  This repo requires Node ${want}.x, but you are running ${process.version}.\n` +
-    `  Run \`fnm use\` (or \`nvm use\`) in this directory to switch, then retry.\n`
+    '  Run `fnm use` (or `nvm use`) in this directory to switch, then retry.\n'
   try {
     const tty = openSync('/dev/tty', 'w')
     writeSync(tty, msg)

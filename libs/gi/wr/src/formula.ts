@@ -8,6 +8,7 @@ import {
   allArtifactSlotKeys,
   allLunarReactionKeys,
   allRegionKeys,
+  allStellarReactionKeys,
 } from '@genshin-optimizer/gi/consts'
 import {
   crittableTransformativeReactions,
@@ -87,6 +88,11 @@ for (const reaction of allLunarReactionKeys) {
   allNonModStatNodes[`${reaction}_baseDmg_`].info!.variant = reaction
   allNonModStatNodes[`${reaction}_specialDmg_`].info!.variant = reaction
 }
+for (const reaction of allStellarReactionKeys) {
+  allNonModStatNodes[`${reaction}_baseDmg_`].info!.variant = reaction
+  allNonModStatNodes[`${reaction}_specialDmg_`].info!.variant = reaction
+  allNonModStatNodes[`${reaction}_mult_`].info!.variant = reaction
+}
 crittableTransformativeReactions.forEach((reaction) => {
   allNonModStatNodes[`${reaction}_critRate_`].info!.variant = reaction
   allNonModStatNodes[`${reaction}_critDMG_`].info!.variant = reaction
@@ -129,8 +135,10 @@ const inputBase = {
   constellation: read(undefined, { ...info('constellation'), prefix: 'char' }),
   asc: read(undefined, { ...info('ascension'), prefix: 'char' }),
   special: read(),
-  isHexerei: read(),
-  isMoonsign: read(),
+  flags: {
+    isHexerei: read(),
+    isMoonsign: read(),
+  },
 
   infusion: {
     overridableSelf: stringRead('small'),
@@ -377,7 +385,7 @@ const common: Data = {
           lookup(
             hit.ele,
             objKeyMap(allElements, (element) => total[`${element}_dmgInc`]),
-            NaN
+            Number.NaN
           ),
           lookup(
             hit.move,
@@ -387,7 +395,7 @@ const common: Data = {
                 ? sum(total[`${move}_dmgInc`], total.plunging_dmgInc)
                 : total[`${move}_dmgInc`]
             ),
-            NaN
+            Number.NaN
           )
         ),
         { ...info('dmgInc'), pivot }
@@ -430,13 +438,13 @@ const common: Data = {
           critHit: sum(one, total.critDMG_),
           avgHit: sum(one, prod(total.cappedCritRate, total.critDMG_)),
         },
-        NaN
+        Number.NaN
       ),
       enemy.def,
       lookup(
         hit.ele,
         objKeyMap(allElements, (ele) => enemy[`${ele}_resMulti_` as const]),
-        NaN
+        Number.NaN
       ),
       hit.ampMulti
     ),
@@ -478,12 +486,15 @@ const common: Data = {
 
   enemy: {
     // TODO: shred cap of 90%
-    def: frac(
-      sum(input.lvl, 100),
-      prod(
-        sum(enemy.level, 100),
-        sum(one, prod(-1, enemy.defRed)),
-        sum(one, prod(-1, enemy.defIgn))
+    def: min(
+      percent(1),
+      frac(
+        sum(input.lvl, 100),
+        prod(
+          sum(enemy.level, 100),
+          sum(one, prod(-1, enemy.defRed)),
+          sum(one, prod(-1, enemy.defIgn))
+        )
       )
     ),
     transDef: frac(
@@ -535,14 +546,19 @@ const inactive1 = setReadNodeKeys(deepNodeClone(inputBase), ['inactive1'])
 const inactive2 = setReadNodeKeys(deepNodeClone(inputBase), ['inactive2'])
 const inactive3 = setReadNodeKeys(deepNodeClone(inputBase), ['inactive3'])
 
-export { common, customBonus, input, tally, target, uiInput }
 export {
+  active,
+  common,
+  customBonus,
+  inactive1,
+  inactive2,
+  inactive3,
+  input,
   selected0,
   selected1,
   selected2,
   selected3,
-  active,
-  inactive1,
-  inactive2,
-  inactive3,
+  tally,
+  target,
+  uiInput,
 }

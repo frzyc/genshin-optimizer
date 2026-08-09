@@ -81,7 +81,7 @@ export function ArtifactSetEditor({
             disabled={disabled}
           >
             {Object.keys(artifactSheet.setEffects)
-              .map((setKey) => parseInt(setKey))
+              .map((setKey) => Number.parseInt(setKey))
               .map((setKey) => (
                 <MenuItem
                   key={setKey}
@@ -110,7 +110,7 @@ export function ArtifactSetEditor({
             <SetEffectDisplay
               key={setNumKey}
               setKey={setKey}
-              setNumKey={parseInt(setNumKey) as SetNum}
+              setNumKey={Number.parseInt(setNumKey) as SetNum}
               hideHeader
               disabled={disabled}
             />

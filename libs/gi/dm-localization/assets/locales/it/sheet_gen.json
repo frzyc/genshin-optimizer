@@ -60,7 +60,7 @@
     "superconduct": "Superconduzione",
     "vaporize": "Vaporizzazione",
     "melt": "Fusione",
-    "bloom": "Fioritura",
+    "bloom": "",
     "burgeon": "Germinazione",
     "hyperbloom": "Iperfioritura",
     "quicken": "Vivificazione",
@@ -77,15 +77,15 @@
   "talentLvl": "Liv. talento {{level}}",
   "talents": {
     "auto": "Attacco normale",
-    "skill": "Abilità elementale",
-    "burst": "Tripudio elementale",
+    "skill": "",
+    "burst": "",
     "altSprint": "Scatto alternativo"
   },
   "unlockPassive1": "Si sblocca dopo aver raggiunto la fase d'ascensione 1",
   "unlockPassive2": "Si sblocca dopo aver raggiunto la fase d'ascensione 4",
   "unlockPassive3": "Talento passivo",
   "unlockLockedPassive": "Si sblocca dopo aver completato le missioni preliminari",
-  "witchPassive": "Compiti della strega",
+  "witchPassive": "",
   "moonsign": "Presagio lunare",
   "hexerei": "Hexerei"
 }

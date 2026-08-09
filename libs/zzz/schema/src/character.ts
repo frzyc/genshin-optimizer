@@ -1,9 +1,9 @@
 import { zodBoundedNumber, zodEnum } from '@genshin-optimizer/common/database'
 import { clamp } from '@genshin-optimizer/common/util'
 import {
-  type MilestoneKey,
   allCharacterKeys,
   coreByLevel,
+  type MilestoneKey,
   skillByLevel,
   validateLevelMilestone,
 } from '@genshin-optimizer/zzz/consts'

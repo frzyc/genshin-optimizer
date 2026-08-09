@@ -60,7 +60,7 @@
     "superconduct": "Superconductor",
     "vaporize": "Vaporizado",
     "melt": "Derretido",
-    "bloom": "Florecimiento",
+    "bloom": "",
     "burgeon": "Crepitar",
     "hyperbloom": "Sobreflorecimiento",
     "quicken": "Aceleración",
@@ -77,15 +77,15 @@
   "talentLvl": "Niv. talento {{level}}",
   "talents": {
     "auto": "Ataque Normal",
-    "skill": "Habilidad Elemental",
-    "burst": "Habilidad Definitiva",
+    "skill": "",
+    "burst": "",
     "altSprint": "Reemplaza a Esprintar"
   },
   "unlockPassive1": "Se desbloquea al alcanzar Niv. de ascensión 1",
   "unlockPassive2": "Se desbloquea al alcanzar Niv. de ascensión 4",
   "unlockPassive3": "Talento pasivo",
   "unlockLockedPassive": "Se desbloquea tras completar las misiones requeridas",
-  "witchPassive": "Lecciones del Aquelarre",
+  "witchPassive": "",
   "moonsign": "Presagio lunar",
   "hexerei": "Taumaturgia"
 }

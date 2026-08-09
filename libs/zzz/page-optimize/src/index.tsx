@@ -6,10 +6,8 @@ import {
   shouldShowDevComponents,
   stableArr,
 } from '@genshin-optimizer/common/util'
-import type { DebugReadContextObj } from '@genshin-optimizer/game-opt/formula-ui'
 import {
-  DebugReadContext,
-  DebugReadModal,
+  DebugReadProvider,
   TagContext,
 } from '@genshin-optimizer/game-opt/formula-ui'
 import type { SetConditionalFunc } from '@genshin-optimizer/game-opt/sheet-ui'
@@ -18,12 +16,14 @@ import {
   SetConditionalContext,
   SrcDstDisplayContext,
 } from '@genshin-optimizer/game-opt/sheet-ui'
-import type { BaseRead } from '@genshin-optimizer/pando/engine'
 import { characterAsset } from '@genshin-optimizer/zzz/assets'
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allCharacterKeys } from '@genshin-optimizer/zzz/consts'
-import type { TeamConditional } from '@genshin-optimizer/zzz/db'
-import type { ICachedCharacter, Team } from '@genshin-optimizer/zzz/db'
+import type {
+  ICachedCharacter,
+  Team,
+  TeamConditional,
+} from '@genshin-optimizer/zzz/db'
 import {
   CharacterContext,
   useCharacter,
@@ -31,10 +31,10 @@ import {
   useTeam,
 } from '@genshin-optimizer/zzz/db-ui'
 import {
-  type Tag,
   getConditional,
   isMember,
   isSheet,
+  type Tag,
 } from '@genshin-optimizer/zzz/formula'
 import { CharCalcProvider } from '@genshin-optimizer/zzz/formula-ui'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
@@ -43,11 +43,11 @@ import {
   CharacterSingleSelectionModal,
 } from '@genshin-optimizer/zzz/ui'
 import { Box, Button } from '@mui/material'
-import { Suspense, useCallback, useMemo, useState } from 'react'
+import { Suspense, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { CharacterOptDisplay } from './CharacterOptDisplay'
-import { OptTargetRow } from './OptTargetRow'
 import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
+import { OptTargetRow } from './OptTargetRow'
 
 function OptimizePageContent({
   character,
@@ -94,7 +94,7 @@ export default function PageOptimize() {
   useTitle(
     useMemo(() => {
       const charName = characterKey && t(`charNames_gen:${characterKey}`)
-      return charName ? `Optimize - ${charName}` : `Optimize`
+      return charName ? `Optimize - ${charName}` : 'Optimize'
     }, [characterKey, t])
   )
   const srcDstDisplayContextValue = useMemo(() => {
@@ -139,7 +139,7 @@ export default function PageOptimize() {
     () => ({
       src: characterKey,
       dst: characterKey,
-      preset: `preset0`,
+      preset: 'preset0',
     }),
     [characterKey]
   )
@@ -149,14 +149,6 @@ export default function PageOptimize() {
     [team?.frames]
   )
 
-  const [debugRead, setDebugRead] = useState<BaseRead>()
-  const debugObj = useMemo<DebugReadContextObj>(
-    () => ({
-      read: debugRead,
-      setRead: setDebugRead,
-    }),
-    [debugRead]
-  )
   return (
     <Box>
       <Suspense fallback={false}>
@@ -202,13 +194,12 @@ export default function PageOptimize() {
                 <ConditionalValuesContext.Provider value={conditionals}>
                   <SetConditionalContext.Provider value={setConditional}>
                     {shouldShowDevComponents ? (
-                      <DebugReadContext.Provider value={debugObj}>
-                        <DebugReadModal />
+                      <DebugReadProvider>
                         <OptimizePageContent
                           character={character}
                           team={team}
                         />
-                      </DebugReadContext.Provider>
+                      </DebugReadProvider>
                     ) : (
                       <OptimizePageContent character={character} team={team} />
                     )}

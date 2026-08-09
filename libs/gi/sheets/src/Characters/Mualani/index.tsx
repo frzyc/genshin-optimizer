@@ -15,13 +15,13 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { TalentSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
 import {
   dataObjForCharacterSheet,
   dmgNode,
   plungingDmgNodes,
 } from '../dataUtil'
+import type { TalentSheet } from '../ICharacterSheet'
 
 const key: CharacterKey = 'Mualani'
 const skillParam_gen = allStats.char.skillParam[key]
@@ -239,7 +239,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg, {
-            name: ct.chg(`auto.skillParams.3`),
+            name: ct.chg('auto.skillParams.3'),
           }),
         },
         {

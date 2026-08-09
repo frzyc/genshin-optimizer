@@ -9,8 +9,8 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
-import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
+import { headerTemplate, WeaponSheet } from '../../WeaponSheet'
 
 const key: WeaponKey = 'FlowerWreathedFeathers'
 const charged_dmg_arr = [-1, 0.06, 0.075, 0.09, 0.105, 0.12]

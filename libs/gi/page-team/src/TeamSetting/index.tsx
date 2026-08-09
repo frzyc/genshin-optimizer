@@ -2,13 +2,13 @@ import { AdResponsive } from '@genshin-optimizer/common/ad'
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
-import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import type { TeamData, dataContextObj } from '@genshin-optimizer/gi/ui'
+import { useDatabase, useDBMeta } from '@genshin-optimizer/gi/db-ui'
+import type { dataContextObj, TeamData } from '@genshin-optimizer/gi/ui'
 import {
-  CharIconSide,
   CharacterMultiSelectionModal,
   CharacterName,
   CharacterSingleSelectionModal,
+  CharIconSide,
   EnemyExpandCard,
   GOAdWrapper,
   TeamDelModal,
@@ -55,7 +55,7 @@ export default function TeamSetting({
 
   const onDelNoChars = () => {
     database.teams.remove(teamId)
-    navigate(`/teams`)
+    navigate('/teams')
   }
 
   const onDup = () => {
@@ -90,7 +90,7 @@ export default function TeamSetting({
           teamId={teamId}
           show={showDel}
           onHide={onHideDel}
-          onDel={() => navigate(`/teams`)}
+          onDel={() => navigate('/teams')}
         />
         <Button
           color="error"
@@ -235,15 +235,13 @@ function TeamEditor({
           loadoutData={loadoutData}
         />
       </Suspense>
-      <Grid container columns={{ xs: 1, md: 2 }} spacing={2}>
-        <Grid item xs={1}>
-          <ResonanceDisplay
-            teamId={teamId}
-            team={team}
-            dataContextValue={dataContextValue}
-          />
-        </Grid>
-        <Grid item xs={1}>
+      <Grid container columns={{ xs: 1, md: 2, lg: 3 }} spacing={2}>
+        <ResonanceDisplay
+          teamId={teamId}
+          team={team}
+          dataContextValue={dataContextValue}
+        />
+        <Grid item xs={1} width="100%">
           <AdResponsive
             bgt="light"
             dataAdSlot="5102492054"

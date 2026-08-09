@@ -21,7 +21,6 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { TalentSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
 import {
   dataObjForCharacterSheet,
@@ -29,6 +28,7 @@ import {
   plungingDmgNodes,
   splitScaleDmgNode,
 } from '../dataUtil'
+import type { TalentSheet } from '../ICharacterSheet'
 
 const key: CharacterKey = 'Nefer'
 const skillParam_gen = allStats.char.skillParam[key]
@@ -331,7 +331,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       dendro_enemyRes_: c4ShadowDance_dendro_enemyRes_,
     },
   },
-  isMoonsign: constant(1),
+  flags: { isMoonsign: constant(1) },
 })
 
 const sheet: TalentSheet = {
@@ -354,7 +354,7 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg, {
-            name: ct.chg(`auto.skillParams.4`),
+            name: ct.chg('auto.skillParams.4'),
           }),
         },
         {

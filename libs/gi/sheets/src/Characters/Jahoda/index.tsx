@@ -9,7 +9,6 @@ import {
   greaterEqStr,
   infoMut,
   input,
-  lessThan,
   one,
   sum,
   tally,
@@ -18,7 +17,6 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { TalentSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
 import {
   dataObjForCharacterSheet,
@@ -27,6 +25,7 @@ import {
   hitEle,
   plungingDmgNodes,
 } from '../dataUtil'
+import type { TalentSheet } from '../ICharacterSheet'
 
 const key: CharacterKey = 'Jahoda'
 const skillParam_gen = allStats.char.skillParam[key]
@@ -277,7 +276,7 @@ const c6FlaskFull_critRate_ = greaterEq(
     equal(
       condC6FlaskFull,
       'on',
-      equal(target.isMoonsign, 1, dm.constellation6.critRate_)
+      equal(target.flags.isMoonsign, 1, dm.constellation6.critRate_)
     )
   )
 )
@@ -290,7 +289,7 @@ const c6FlaskFull_critDMG_ = greaterEq(
     equal(
       condC6FlaskFull,
       'on',
-      equal(target.isMoonsign, 1, dm.constellation6.critDMG_)
+      equal(target.flags.isMoonsign, 1, dm.constellation6.critDMG_)
     )
   )
 )
@@ -309,11 +308,7 @@ const dmgFormulas = {
   skill: {
     bombDmg: dmgNode('atk', dm.skill.bombDmg, 'skill'),
     unfilledDmg: dmgNode('atk', dm.skill.unfilledDmg, 'skill'),
-    filledDmg: lessThan(
-      tally.moonsign,
-      2,
-      dmgNode('atk', dm.skill.filledDmg, 'skill')
-    ),
+    filledDmg: dmgNode('atk', dm.skill.filledDmg, 'skill'),
     meowDmgPyro: greaterEq(
       tally.moonsign,
       2,
@@ -414,7 +409,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       critDMG_: c6FlaskFull_critDMG_,
     },
   },
-  isMoonsign: constant(1),
+  flags: { isMoonsign: constant(1) },
 })
 
 const sheet: TalentSheet = {
@@ -436,12 +431,12 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.aimed, {
-            name: ct.chg(`auto.skillParams.3`),
+            name: ct.chg('auto.skillParams.3'),
           }),
         },
         {
           node: infoMut(dmgFormulas.charged.fullyAimed, {
-            name: ct.chg(`auto.skillParams.4`),
+            name: ct.chg('auto.skillParams.4'),
           }),
         },
       ],
@@ -475,17 +470,17 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.bombDmg, {
-            name: ct.chg(`skill.skillParams.0`),
+            name: ct.chg('skill.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.unfilledDmg, {
-            name: ct.chg(`skill.skillParams.1`),
+            name: ct.chg('skill.skillParams.1'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.filledDmg, {
-            name: ct.chg(`skill.skillParams.2`),
+            name: ct.chg('skill.skillParams.2'),
           }),
         },
         {
@@ -495,22 +490,22 @@ const sheet: TalentSheet = {
         },
         {
           node: infoMut(dmgFormulas.skill.meowDmgPyro, {
-            name: ct.chg(`skill.skillParams.4`),
+            name: ct.chg('skill.skillParams.4'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.meowDmgHydro, {
-            name: ct.chg(`skill.skillParams.4`),
+            name: ct.chg('skill.skillParams.4'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.meowDmgElectro, {
-            name: ct.chg(`skill.skillParams.4`),
+            name: ct.chg('skill.skillParams.4'),
           }),
         },
         {
           node: infoMut(dmgFormulas.skill.meowDmgCryo, {
-            name: ct.chg(`skill.skillParams.4`),
+            name: ct.chg('skill.skillParams.4'),
           }),
         },
         {
@@ -527,27 +522,27 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.dmg, {
-            name: ct.chg(`burst.skillParams.0`),
+            name: ct.chg('burst.skillParams.0'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.robotDmgPyro, {
-            name: ct.chg(`burst.skillParams.1`),
+            name: ct.chg('burst.skillParams.1'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.robotDmgHydro, {
-            name: ct.chg(`burst.skillParams.1`),
+            name: ct.chg('burst.skillParams.1'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.robotDmgElectro, {
-            name: ct.chg(`burst.skillParams.1`),
+            name: ct.chg('burst.skillParams.1'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.robotDmgCryo, {
-            name: ct.chg(`burst.skillParams.1`),
+            name: ct.chg('burst.skillParams.1'),
           }),
         },
         {
@@ -557,12 +552,12 @@ const sheet: TalentSheet = {
         },
         {
           node: infoMut(dmgFormulas.burst.robotHeal, {
-            name: ct.chg(`burst.skillParams.3`),
+            name: ct.chg('burst.skillParams.3'),
           }),
         },
         {
           node: infoMut(dmgFormulas.burst.lowestHeal, {
-            name: ct.chg(`burst.skillParams.4`),
+            name: ct.chg('burst.skillParams.4'),
           }),
         },
         {

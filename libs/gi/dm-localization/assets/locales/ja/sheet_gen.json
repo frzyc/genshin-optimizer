@@ -60,7 +60,7 @@
     "superconduct": "超電導",
     "vaporize": "蒸発",
     "melt": "溶解",
-    "bloom": "開花",
+    "bloom": "",
     "burgeon": "烈開花",
     "hyperbloom": "超開花",
     "quicken": "原激化",
@@ -77,15 +77,15 @@
   "talentLvl": "天賦Lv.{{level}}",
   "talents": {
     "auto": "通常攻撃",
-    "skill": "元素スキル",
-    "burst": "元素爆発",
+    "skill": "",
+    "burst": "",
     "altSprint": "ダッシュの代わりに発動する"
   },
   "unlockPassive1": "突破段階「1」で解放",
   "unlockPassive2": "突破段階「4」で解放",
   "unlockPassive3": "固有天賦",
   "unlockLockedPassive": "前提任務クリア後に開放",
-  "witchPassive": "魔女の課題",
+  "witchPassive": "",
   "moonsign": "月兆",
   "hexerei": "魔導"
 }

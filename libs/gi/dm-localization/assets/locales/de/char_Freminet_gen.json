@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -79,7 +83,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -113,7 +121,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -157,7 +169,7 @@
   "constellation4": {
     "name": "Tanz des frostigen Mondes und der Flöte",
     "description": {
-      "0": "Erhöht den ANG 6 s lang um 9 %, nachdem Fréminet beim Gegner die Reaktionen Gefroren, Eisbrecher und Supraleiter ausgelöst hat. 2-fach stapelbar, 0,3 s Abklingzeit."
+      "0": "Erhöht den ANG 6 s lang um 9 %, nachdem Fréminet beim Gegner die Reaktionen Gefroren, Eisbrecher, Supraleiter oder Stellar-Supraleiter ausgelöst hat. 2-fach stapelbar, 0,3 s Abklingzeit."
     }
   },
   "constellation5": {
@@ -170,7 +182,7 @@
   "constellation6": {
     "name": "Moment des Erwachens und der Entschlossenheit",
     "description": {
-      "0": "Erhöht den KSCH 6 s lang um 12 %, nachdem Fréminet beim Gegner die Reaktionen Gefroren, Eisbrecher und Supraleiter ausgelöst hat. 3-fach stapelbar, 0,3 s Abklingzeit."
+      "0": "Erhöht den KSCH 6 s lang um 12 %, nachdem Fréminet beim Gegner die Reaktionen Gefroren, Eisbrecher, Supraleiter oder Stellar-Supraleiter ausgelöst hat. 3-fach stapelbar, 0,3 s Abklingzeit."
     }
   }
 }

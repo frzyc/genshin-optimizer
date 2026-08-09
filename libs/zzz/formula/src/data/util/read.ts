@@ -2,7 +2,6 @@ import {
   Read as BaseRead,
   type Tag as BaseTag,
   reader as baseReader,
-  entryTypes,
   presets,
   setReader,
 } from '@genshin-optimizer/game-opt/engine'
@@ -11,6 +10,7 @@ import type {
   Attribute,
   DamageType,
   Dst,
+  EntryType,
   Faction,
   SkillType,
   Specialty,
@@ -18,11 +18,12 @@ import type {
   TagMapNodeEntry,
 } from '.'
 import {
-  type Sheet,
   attributes,
   damageTypes,
+  entryTypes,
   factions,
   members,
+  type Sheet,
   sheets,
   skillTypes,
   specialties,
@@ -44,7 +45,7 @@ export const fixedTags = {
   specialty: specialties,
   faction: factions,
 }
-export interface Tag extends BaseTag<Sheet, Src, Dst> {
+export interface Tag extends BaseTag<Sheet, Src, Dst, EntryType> {
   attribute?: Attribute | null
   skillType?: SkillType | null
   damageType1?: DamageType | null
@@ -105,6 +106,9 @@ export class Read extends BaseRead<Tag> {
   }
   get wind(): Read {
     return super.with('attribute', 'wind')
+  }
+  get lumiflux(): Read {
+    return super.with('attribute', 'lumiflux')
   }
 
   // Skill type
@@ -276,7 +280,7 @@ export function tagStr(tag: Tag, ex?: any): string {
     includedBar = false
   function required(str: string | undefined | null, name: string) {
     if (!str && str !== null) return
-    result += str === null ? `!${name} ` : str + ' '
+    result += str === null ? `!${name} ` : `${str} `
     includedRequired = true
   }
   function optional(str: string | undefined | null, name: string) {
@@ -285,7 +289,7 @@ export function tagStr(tag: Tag, ex?: any): string {
       includedBar = true
       result += '| '
     }
-    result += str === null ? `!${name} ` : str + ' '
+    result += str === null ? `!${name} ` : `${str} `
   }
   required(name && `#${name}`, 'name')
   required(preset, 'preset')
@@ -304,5 +308,5 @@ export function tagStr(tag: Tag, ex?: any): string {
   optional(faction, 'fac')
   if (ex) result += `[${ex}] `
   if (Object.keys(remaining).length) result += `${JSON.stringify(remaining)} `
-  return result + '}'
+  return `${result}}`
 }

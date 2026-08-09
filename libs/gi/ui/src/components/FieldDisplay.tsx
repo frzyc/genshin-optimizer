@@ -20,11 +20,12 @@ import {
   List,
   ListItem,
   Skeleton,
-  Typography,
   styled,
+  Typography,
 } from '@mui/material'
+import type React from 'react'
 import type { ReactNode } from 'react'
-import React, { Suspense, useCallback, useContext, useMemo } from 'react'
+import { Suspense, useCallback, useContext, useMemo } from 'react'
 import { DataContext, FormulaDataContext } from '../context'
 import { GetCalcDisplay, resolveInfo } from '../util'
 import { AmpReactionModeText } from './AmpReactionModeText'

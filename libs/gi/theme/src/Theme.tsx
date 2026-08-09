@@ -1,6 +1,5 @@
-import { createTheme } from '@mui/material'
-
 import { theme as commonTheme } from '@genshin-optimizer/common/ui'
+import { createTheme } from '@mui/material'
 
 declare module '@mui/material/styles' {
   interface Palette {
@@ -31,6 +30,7 @@ declare module '@mui/material/styles' {
     hyperbloom: Palette['primary']
     lunarbloom: Palette['primary']
     lunarcrystallize: Palette['primary']
+    stellarconduct: Palette['primary']
   }
 
   interface PaletteOptions {
@@ -61,6 +61,7 @@ declare module '@mui/material/styles' {
     hyperbloom?: PaletteOptions['primary']
     lunarbloom?: PaletteOptions['primary']
     lunarcrystallize?: PaletteOptions['primary']
+    stellarconduct?: PaletteOptions['primary']
   }
 }
 
@@ -93,6 +94,7 @@ declare module '@mui/material/Button' {
     hyperbloom: true
     lunarbloom: true
     lunarcrystallize: true
+    stellarconduct: true
   }
 }
 
@@ -125,6 +127,7 @@ declare module '@mui/material/Chip' {
     hyperbloom: true
     lunarbloom: true
     lunarcrystallize: true
+    stellarconduct: true
   }
 }
 
@@ -173,6 +176,7 @@ declare module '@mui/material/SvgIcon' {
     hyperbloom: true
     lunarbloom: true
     lunarcrystallize: true
+    stellarconduct: true
   }
 }
 
@@ -283,6 +287,10 @@ export const theme = createTheme({
     lunarcrystallize: commonTheme.palette.augmentColor({
       color: { main: '#fff2baff', contrastText: '#222' },
       name: 'lunarcrystallize',
+    }),
+    stellarconduct: commonTheme.palette.augmentColor({
+      color: { main: '#e4d1ff', contrastText: '#222' },
+      name: 'stellarconduct',
     }),
   },
 })

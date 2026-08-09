@@ -16,6 +16,7 @@ import frzyc from './teamIcons/frzyc.png'
 import lantua from './teamIcons/lantua.png'
 import lunik from './teamIcons/lunik.png'
 import van from './teamIcons/van.webp'
+
 const team = [
   {
     name: 'frzyc',

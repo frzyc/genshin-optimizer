@@ -36,7 +36,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "skill": {
@@ -79,7 +83,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "burst": {
@@ -113,7 +121,11 @@
       "12": "",
       "13": "",
       "14": "",
-      "15": ""
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
     }
   },
   "passive1": {
@@ -157,7 +169,7 @@
   "constellation4": {
     "name": "Danza del flauto e della candida luna",
     "description": {
-      "0": "Quando Freminet innesca Congelamento, Rompigelo o Superconduzione sugli avversari, il suo ATT aumenta di un 9% per 6 s. L'effetto si accumula fino a 2 volte. Può attivarsi una volta ogni 0,3 s."
+      "0": "Quando Freminet innesca Congelamento, Rompigelo, Superconduzione o Astroconduzione sugli avversari, il suo ATT aumenta di un 9% per 6 s. L'effetto si accumula fino a 2 volte. Può attivarsi una volta ogni 0,3 s."
     }
   },
   "constellation5": {
@@ -170,7 +182,7 @@
   "constellation6": {
     "name": "Risveglio e determinazione",
     "description": {
-      "0": "Quando Freminet innesca Congelamento, Rompigelo o Superconduzione sugli avversari, i suoi DAN da CRIT aumentano di un 12% per 6 s. L'effetto si accumula fino a 3 volte. Può attivarsi una volta ogni 0,3 s."
+      "0": "Quando Freminet innesca Congelamento, Rompigelo, Superconduzione o Astroconduzione sugli avversari, i suoi DAN da CRIT aumentano di un 12% per 6 s. L'effetto si accumula fino a 3 volte. Può attivarsi una volta ogni 0,3 s."
     }
   }
 }

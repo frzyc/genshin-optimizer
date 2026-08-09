@@ -1,4 +1,4 @@
-import { readFileSync, readdirSync } from 'fs'
+import { readdirSync, readFileSync } from 'node:fs'
 import { dumpFile } from '@genshin-optimizer/common/pipeline'
 import type { GenLocaleExecutorSchema } from './schema'
 
