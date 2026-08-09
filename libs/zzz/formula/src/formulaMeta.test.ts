@@ -64,6 +64,27 @@ describe('formulaMetaKey', () => {
       bundledFormulaInSheet(sheetFormulas, 'BasicAttack_0', 'sheerDmg')
     ).toBeUndefined()
   })
+
+  it('has at most one bundled ability entry per tag.name + ability dim', () => {
+    const collisions = new Map<string, string[]>()
+
+    for (const [sheet, sheetFormulas] of Object.entries(formulas)) {
+      for (const entry of Object.values(sheetFormulas)) {
+        const tag = entry.tag
+        if (tag?.qt !== 'formula' || !tag.name || !isAbilityDim(tag.q)) continue
+
+        const key = `${sheet}\0${tag.name}\0${tag.q}`
+        const variants = collisions.get(key) ?? []
+        variants.push(tag.damageType2 ?? '')
+        collisions.set(key, variants)
+      }
+    }
+
+    for (const [key, damageType2s] of collisions) {
+      const unique = new Set(damageType2s)
+      expect(unique.size, key).toBeLessThanOrEqual(1)
+    }
+  })
 })
 
 describe('abilityBaseName', () => {

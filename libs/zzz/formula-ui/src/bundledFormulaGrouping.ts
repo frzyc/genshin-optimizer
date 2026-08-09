@@ -5,8 +5,9 @@ import {
   isAbilityDim,
 } from '@genshin-optimizer/zzz/formula'
 
-function groupKey(tag: Tag) {
-  return `${tag.sheet ?? ''}:${tag.name ?? ''}`
+/** Stable key for bundling, category index, and opt-target row identity (incl. `damageType2`). */
+export function formulaFieldGroupKey(tag: Tag): string {
+  return `${tag.sheet ?? ''}:${tag.name ?? ''}:${tag.damageType2 ?? ''}`
 }
 
 function abilityDimSortIndex(q: string | null | undefined): number {
@@ -23,6 +24,9 @@ export function compareBundlableTags(a: Tag, b: Tag): number {
   const nameA = a.name ?? ''
   const nameB = b.name ?? ''
   if (nameA !== nameB) return nameA.localeCompare(nameB)
+  const dmgType2A = a.damageType2 ?? ''
+  const dmgType2B = b.damageType2 ?? ''
+  if (dmgType2A !== dmgType2B) return dmgType2A.localeCompare(dmgType2B)
   const qOrd = abilityDimSortIndex(a.q) - abilityDimSortIndex(b.q)
   if (qOrd) return qOrd
   return (a.q ?? '').localeCompare(b.q ?? '')
@@ -68,12 +72,16 @@ export function partitionBundlableTags(
       continue
     }
 
-    const key = groupKey(tag)
+    const key = formulaFieldGroupKey(tag)
     if (seenGroups.has(key)) continue
     seenGroups.add(key)
 
     const group = sortedTags.filter(
-      (t) => t.name === name && t.sheet === tag.sheet && isAbilityDim(t.q)
+      (t) =>
+        formulaFieldGroupKey(t) === key &&
+        t.name === name &&
+        t.sheet === tag.sheet &&
+        isAbilityDim(t.q)
     )
     const byQ = new Map<string, Tag>()
     for (const t of group) {

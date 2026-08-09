@@ -44,7 +44,6 @@ import {
 import type { OptProblemInput } from '@genshin-optimizer/gi/solver'
 import { GOSolver, mergeBuilds, mergePlot } from '@genshin-optimizer/gi/solver'
 import { compactArtifacts } from '@genshin-optimizer/gi/solver-tc'
-import { getCharStat } from '@genshin-optimizer/gi/stats'
 import {
   ArtifactLevelSlider,
   BuildDisplayItem,
