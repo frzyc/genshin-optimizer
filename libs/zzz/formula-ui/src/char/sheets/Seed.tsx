@@ -30,8 +30,8 @@ const sheet = createBaseSheet(key, {
         fields: [
           fieldForBuff(buff.core_vanguard_atk),
           fieldForBuff(buff.core_vanguard_crit_dmg_),
+          fieldForBuff(buff.core_vanguard_dmg_),
         ],
-        targeted: true,
       },
     },
     {
@@ -95,7 +95,6 @@ const sheet = createBaseSheet(key, {
       conditional: {
         label: ch('coreCond.directStrike'),
         metadata: cond.directStrike,
-        targeted: true,
       },
     },
     {
