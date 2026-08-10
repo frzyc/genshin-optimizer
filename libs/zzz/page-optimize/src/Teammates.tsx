@@ -259,9 +259,9 @@ function TeammateConditionalProvider({
   mainCharacterKey: CharacterKey
   children: ReactNode
 }) {
-  // Route sheet conditionals through this teammate as `src`. Clear main-dst
-  // leftovers and store dst=null so ownBuff + notOwnBuff both see the toggle;
-  // coalesce still shows legacy All/main rows as checked.
+  // Src is fixed by TagContext (this teammate); clear main-dst leftovers and
+  // store dst=null so ownBuff + notOwnBuff both see the toggle. Coalesce still
+  // shows legacy All/main rows as checked.
   const parentSetConditional = useContext(SetConditionalContext)
   const parentConditionals = useContext(ConditionalValuesContext)
   const parentSrcDstDisplay = useContext(SrcDstDisplayContext)
