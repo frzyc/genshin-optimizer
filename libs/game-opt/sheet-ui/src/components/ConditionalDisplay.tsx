@@ -72,6 +72,22 @@ export function ConditionalsDisplay({
   const [dst, setDst] = useState<string | null>(
     targeted ? Object.keys(dstDisplay)[0] : null
   )
+  // Hide the empty adder when every concrete src×dst pair is already used.
+  // "All" (dst=null) is not counted — it kept a duplicate empty row after a
+  // named target was already set.
+  const canAddTargeted = useMemo(() => {
+    if (!targeted) return false
+    const srcKeys = Object.keys(srcDisplay)
+    const dstKeys = Object.keys(dstDisplay)
+    if (!dstKeys.length) return false
+    return srcKeys.some((s) => dstKeys.some((d) => !hasExisting(s, d)))
+  }, [targeted, srcDisplay, dstDisplay, hasExisting])
+  const showEmptyConditional = targeted
+    ? canAddTargeted
+    : !filteredConditionals.length
+  // Avoid disabled one-option src/dst dropdowns that look like dead toggles.
+  const canPickSrc = Object.keys(srcDisplay).length > 1
+  const canPickDst = Object.keys(dstDisplay).length > 1
   return (
     <Stack spacing={1}>
       {filteredConditionals.map(({ src, dst, condKey, condValue }) => (
@@ -85,15 +101,14 @@ export function ConditionalsDisplay({
           bgt={bgt}
         />
       ))}
-      {/* // empty default conditional UI */}
-      {(targeted || !filteredConditionals.length) && (
+      {showEmptyConditional && (
         <ConditionalDisplay
           conditional={conditional}
           bgt={bgt}
           src={src}
-          setSrc={setSrc}
+          setSrc={canPickSrc ? setSrc : undefined}
           dst={dst}
-          setDst={setDst}
+          setDst={canPickDst ? setDst : undefined}
           value={0}
           setValue={(v) => setConditional(sheet, name, src, dst, v)}
           disabled={hasExisting(src, dst)}
