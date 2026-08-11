@@ -141,6 +141,11 @@ export default function MTargetEditor({
     (path[0] === 'normal' || path[0] === 'charged' || path[0] === 'plunging')
   const isTransformativeReaction = path[0] === 'reaction'
 
+  const condCount = Object.values(customTarget.conditionals).reduce(
+    (count, namespace) => count + Object.keys(namespace).length,
+    0
+  )
+
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
 
@@ -332,7 +337,7 @@ export default function MTargetEditor({
                     />
                   </Grid>
                   <Grid item xs={1}>
-                    <ConditionalModal />
+                    <ConditionalModal condCount={condCount} />
                   </Grid>
                 </Grid>
               </Box>

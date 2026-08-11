@@ -13,7 +13,7 @@ import type {
 } from '@genshin-optimizer/gi/sheets'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import type { SxProps } from '@mui/material'
-import { Box, Collapse, Divider, Typography } from '@mui/material'
+import { Box, Collapse, Divider, Grid, Typography } from '@mui/material'
 import { useContext, useState } from 'react'
 import { DataContext } from '../context'
 import { ConditionalDisplay } from './conditional/ConditionalDisplay'
@@ -27,6 +27,7 @@ export function DocumentDisplay({
   disabled = false,
   bgt = 'normal',
   collapse = false,
+  columns = 1,
 }: {
   sections: DocumentSection[]
   teamBuffOnly?: boolean
@@ -35,6 +36,7 @@ export function DocumentDisplay({
   disabled?: boolean
   bgt?: CardBackgroundColor
   collapse?: boolean
+  columns?: number
 }) {
   const { data } = useContext(DataContext)
   if (!sections.length) return null
@@ -45,23 +47,24 @@ export function DocumentDisplay({
       // If we are showing only teambuffs, and this section is not a teambuff, return null
       if (teamBuffOnly && !s.teamBuff) return null
       return (
-        <SectionDisplay
-          section={s}
-          key={i}
-          hideDesc={hideDesc}
-          hideHeader={hideHeader}
-          disabled={disabled}
-          bgt={bgt}
-          collapse={collapse}
-        />
+        <Grid item key={i} xs={1}>
+          <SectionDisplay
+            section={s}
+            hideDesc={hideDesc}
+            hideHeader={hideHeader}
+            disabled={disabled}
+            bgt={bgt}
+            collapse={collapse}
+          />
+        </Grid>
       )
     })
     .filter((s) => s)
   if (!sectionDisplays.length) return null
   return (
-    <Box display="flex" flexDirection="column" gap={1} flexWrap="wrap">
+    <Grid container spacing={1} columns={columns}>
       {sectionDisplays}
-    </Box>
+    </Grid>
   )
 }
 
