@@ -1,9 +1,11 @@
+import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { allCharacterKeys } from '@genshin-optimizer/zzz/consts'
+import { allCharacterKeys, statKeyTextMap } from '@genshin-optimizer/zzz/consts'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { abilityBaseName } from '@genshin-optimizer/zzz/formula'
 import { parseAbilityHitFromName } from './abilityTag'
 import { abilityDisplayNameString } from './char/abilityFormulaLabels'
+import { statKeyFromListingTag } from './optTarget'
 
 const formulaBaseQs = new Set([
   'standardDmgBase',
@@ -35,5 +37,19 @@ export function getTagLabel(tag: Tag | undefined | null): string {
     }
     return q ?? ''
   }
+  const statKey = statKeyFromListingTag(tag)
+  if (statKey) return statKey
   return q ?? ''
+}
+
+/** Dev-only: log when a tag falls through to a raw q / stat key with no display mapping. */
+export function warnUnresolvedTagLabel(tag: Tag, label: string): void {
+  if (!shouldShowDevComponents || !label) return
+  const mappedStatKey = statKeyFromListingTag(tag)
+  if (mappedStatKey && statKeyTextMap[mappedStatKey]) return
+  if (statKeyTextMap[label]) return
+  console.error(
+    '[zzz-formula-ui] Unresolved tag label: expected a mapped stat or sheet title',
+    { tag, label }
+  )
 }

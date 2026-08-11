@@ -11,7 +11,8 @@ import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
 import { StatDisplay } from '@genshin-optimizer/zzz/ui'
 import { abilityTagDisplay } from '../char/abilityFormulaLabels'
 import { damageTypeKeysMap } from '../char/util'
-import { getTagLabel } from '../tagLabel'
+import { statKeyFromListingTag } from '../optTarget'
+import { getTagLabel, warnUnresolvedTagLabel } from '../tagLabel'
 import { qtMap } from './qtMap'
 
 const extraHandlingStats = ['hp', 'hp_', 'atk', 'atk_', 'def', 'def_'] as const
@@ -72,5 +73,12 @@ export function TagFallbackLabel({
     ]
     return <span>{strs.join(' ')}</span>
   }
+
+  const displayStatKey = (statKeyFromListingTag(tag) || label) as StatKey
+  if (statKeyTextMap[displayStatKey]) {
+    return <StatDisplay statKey={displayStatKey} showPercent={showPercent} />
+  }
+
+  warnUnresolvedTagLabel(tag, label)
   return <StatDisplay statKey={label as StatKey} showPercent={showPercent} />
 }
