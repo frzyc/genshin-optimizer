@@ -14,6 +14,7 @@ import {
 } from '@genshin-optimizer/gi/ui'
 import { type CalcResult, UIData } from '@genshin-optimizer/gi/uidata'
 import { createDataForTarget } from '@genshin-optimizer/gi/wr'
+import { ToggleOn } from '@mui/icons-material'
 import BarChartIcon from '@mui/icons-material/BarChart'
 import CommentIcon from '@mui/icons-material/Comment'
 import {
@@ -49,6 +50,7 @@ export default function CustomTargetDisplay({
     infusionAura,
     bonusStats,
     description,
+    conditionals,
   } = customTarget
   const targetData = createDataForTarget(customTarget, {
     ...dataContext.data.data[0],
@@ -63,13 +65,18 @@ export default function CustomTargetDisplay({
     | CalcResult
     | undefined
 
+  const condCount = Object.values(conditionals).reduce(
+    (count, namespace) => count + Object.keys(namespace).length,
+    0
+  )
+
   return (
     <DataContext.Provider value={dataContextWithConds}>
       <CardThemed
         bgt="light"
         sx={{
           display: 'flex',
-          border: selected ? '2px solid green' : undefined,
+          border: selected ? '3px solid green' : undefined,
         }}
       >
         <CardActionArea sx={{ p: 1, flexGrow: 1 }} onClick={setSelect}>
@@ -95,6 +102,12 @@ export default function CustomTargetDisplay({
                 reaction={reaction}
                 node={node}
                 infusionAura={infusionAura}
+              />
+            )}
+            {!!condCount && (
+              <Chip
+                avatar={<ToggleOn />}
+                label={<strong>{condCount}</strong>}
               />
             )}
             {!!Object.values(bonusStats).length && (

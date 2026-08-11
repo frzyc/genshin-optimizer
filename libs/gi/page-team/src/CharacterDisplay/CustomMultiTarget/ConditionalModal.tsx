@@ -14,7 +14,7 @@ import {
   WeaponSheet,
 } from '@genshin-optimizer/gi/sheets'
 import { CloseIcon, DocumentDisplay } from '@genshin-optimizer/gi/ui'
-import { DashboardCustomize } from '@mui/icons-material'
+import { DashboardCustomize, ToggleOn } from '@mui/icons-material'
 import {
   Button,
   CardContent,
@@ -56,7 +56,7 @@ export function ConditionalModal({ condCount }: { condCount: number }) {
 
   return (
     <>
-      <Button color="info" onClick={onShow}>
+      <Button color="info" onClick={onShow} startIcon={<ToggleOn />}>
         <Box display="flex" gap={1} alignItems="center">
           <span>{t('multiTarget.conditional.button')}</span>
           <SqBadge color={condCount ? 'success' : 'secondary'}>
