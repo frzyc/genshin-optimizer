@@ -105,6 +105,7 @@ export const allTransformative = [
   'lunarbloom',
   'lunarcrystallize',
   'stellarconduct',
+  'stellarswirl',
 ] as const
 export const allAmplifying = ['vaporize', 'melt'] as const
 export const allAdditive = ['spread', 'aggravate'] as const

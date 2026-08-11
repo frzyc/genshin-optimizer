@@ -25,6 +25,7 @@ import {
 } from '../utils'
 import { lunarDmg } from './lunar'
 import { crystallizeHit, transMulti1, transMulti2 } from './multi'
+import { stellarDmg } from './stellar'
 
 const trans = {
   ...objKeyMap(
@@ -186,6 +187,36 @@ const trans = {
     ),
     { path: 'lunarcrystallize_hit' }
   ),
+  stellarswirl: infoMut(
+    stellarDmg(
+      constant(
+        transformativeReactions.stellarswirl.multi,
+        info('stellarswirl_multi_')
+      ),
+      'reaction',
+      'stellarswirl',
+      'anemo'
+    ),
+    { path: 'stellarswirl_hit' }
+  ),
+  stellarswirl_vortex1: infoMut(
+    stellarDmg(
+      constant(2, info('stellarswirl_multi_')),
+      'reaction',
+      'stellarswirl',
+      'cryo'
+    ),
+    { path: 'stellarswirl_vortex1_hit' }
+  ),
+  stellarswirl_vortex2: infoMut(
+    stellarDmg(
+      constant(3, info('stellarswirl_multi_')),
+      'reaction',
+      'stellarswirl',
+      'cryo'
+    ),
+    { path: 'stellarswirl_vortex2_hit' }
+  ),
 }
 const infusionReactions = {
   overloaded: infoMut(
@@ -237,7 +268,32 @@ const infusionReactions = {
     ),
     info('lunarcrystallize_hit')
   ),
+  stellarswirl: infoMut(
+    greaterEq(
+      sum(equal(infusionNode, 'anemo', 1), equal(infusionNode, 'cryo', 1)),
+      1,
+      trans.stellarswirl
+    ),
+    info('stellarswirl_hit')
+  ),
+  stellarswirl_vortex1: infoMut(
+    greaterEq(
+      sum(equal(infusionNode, 'anemo', 1), equal(infusionNode, 'cryo', 1)),
+      1,
+      trans.stellarswirl_vortex1
+    ),
+    info('stellarswirl_vortex1_hit')
+  ),
+  stellarswirl_vortex2: infoMut(
+    greaterEq(
+      sum(equal(infusionNode, 'anemo', 1), equal(infusionNode, 'cryo', 1)),
+      1,
+      trans.stellarswirl_vortex2
+    ),
+    info('stellarswirl_vortex2_hit')
+  ),
 }
+
 export const reactions = {
   anemo: {
     electroSwirl: trans.swirl.electro,
@@ -254,6 +310,9 @@ export const reactions = {
     burgeon: trans.burgeon,
     hyperbloom: trans.hyperbloom,
     lunarcrystallize: trans.lunarcrystallize,
+    stellarswirl: trans.stellarswirl,
+    stellarswirl_vortex1: trans.stellarswirl_vortex1,
+    stellarswirl_vortex2: trans.stellarswirl_vortex2,
   },
   geo: {
     crystallize: crystallizeHit,
@@ -271,6 +330,9 @@ export const reactions = {
     burgeon: infusionReactions.burgeon,
     hyperbloom: infusionReactions.hyperbloom,
     lunarcrystallize: trans.lunarcrystallize,
+    stellarswirl: infusionReactions.stellarswirl,
+    stellarswirl_vortex1: infusionReactions.stellarswirl_vortex1,
+    stellarswirl_vortex2: infusionReactions.stellarswirl_vortex2,
   },
   electro: {
     overloaded: trans.overloaded,
@@ -283,6 +345,9 @@ export const reactions = {
     bloom: infusionReactions.bloom,
     burgeon: infusionReactions.burgeon,
     lunarcrystallize: infusionReactions.lunarcrystallize,
+    stellarswirl: infusionReactions.stellarswirl,
+    stellarswirl_vortex1: infusionReactions.stellarswirl_vortex1,
+    stellarswirl_vortex2: infusionReactions.stellarswirl_vortex2,
   },
   hydro: {
     electrocharged: trans.electrocharged,
@@ -295,6 +360,9 @@ export const reactions = {
     burgeon: infusionReactions.burgeon,
     hyperbloom: infusionReactions.hyperbloom,
     lunarcrystallize: trans.lunarcrystallize,
+    stellarswirl: infusionReactions.stellarswirl,
+    stellarswirl_vortex1: infusionReactions.stellarswirl_vortex1,
+    stellarswirl_vortex2: infusionReactions.stellarswirl_vortex2,
   },
   pyro: {
     overloaded: trans.overloaded,
@@ -307,6 +375,9 @@ export const reactions = {
     bloom: infusionReactions.bloom,
     hyperbloom: infusionReactions.hyperbloom,
     lunarcrystallize: infusionReactions.lunarcrystallize,
+    stellarswirl: infusionReactions.stellarswirl,
+    stellarswirl_vortex1: infusionReactions.stellarswirl_vortex1,
+    stellarswirl_vortex2: infusionReactions.stellarswirl_vortex2,
   },
   cryo: {
     superconduct: trans.superconduct,
@@ -319,6 +390,9 @@ export const reactions = {
     burgeon: infusionReactions.burgeon,
     hyperbloom: infusionReactions.hyperbloom,
     lunarcrystallize: infusionReactions.lunarcrystallize,
+    stellarswirl: trans.stellarswirl,
+    stellarswirl_vortex1: trans.stellarswirl_vortex1,
+    stellarswirl_vortex2: trans.stellarswirl_vortex2,
   },
   dendro: {
     shattered: trans.shattered,
@@ -331,5 +405,8 @@ export const reactions = {
     burgeon: infusionReactions.burgeon,
     hyperbloom: infusionReactions.hyperbloom,
     lunarcrystallize: infusionReactions.lunarcrystallize,
+    stellarswirl: infusionReactions.stellarswirl,
+    stellarswirl_vortex1: infusionReactions.stellarswirl_vortex1,
+    stellarswirl_vortex2: infusionReactions.stellarswirl_vortex2,
   },
 }

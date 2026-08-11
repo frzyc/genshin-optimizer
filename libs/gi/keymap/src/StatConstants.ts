@@ -121,6 +121,13 @@ export const transformativeReactions: Record<
     resist: 'electro', // This can be electro or cryo resist depending on trigger element
     canCrit: true,
   },
+  stellarswirl: {
+    name: 'Stellar-Swirl',
+    multi: 0.75, // 2x or 3x for the vortex
+    variants: ['anemo', 'cryo'],
+    resist: 'anemo', // This can be anemo or cryo resist depending on type
+    canCrit: true,
+  },
 } as const
 export const crittableTransformativeReactions = [
   'lunarcharged',
@@ -132,6 +139,7 @@ export const crittableTransformativeReactions = [
   'swirl',
   'lunarcrystallize',
   'stellarconduct',
+  'stellarswirl',
 ] as const
 export type CrittableTransformativeReactionsKey =
   (typeof crittableTransformativeReactions)[number]

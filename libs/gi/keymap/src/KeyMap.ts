@@ -189,7 +189,10 @@ type NonSwirlReactionHitKey = `${
   | 'burgeon'
   | 'hyperbloom'
   | 'lunarcrystallize'
-  | 'stellarconduct'}_hit`
+  | 'stellarconduct'
+  | 'stellarswirl'
+  | 'stellarswirl_vortex1'
+  | 'stellarswirl_vortex2'}_hit`
 type NonSwirlReactionMultiKey = `${keyof typeof transformativeReactions}_multi_`
 type TransformativeReactions =
   | SwirlReactionKey
@@ -203,6 +206,8 @@ Object.entries(transformativeReactions).forEach(([reaction, { name }]) => {
   else statMap[`${reaction}_hit`] = `${name} DMG`
   statMap[`${reaction}_multi_`] = `${name} Multiplier`
 })
+statMap.stellarswirl_vortex1_hit = 'Stellar-Swirl Vortex Lvl. 1 DMG'
+statMap.stellarswirl_vortex2_hit = 'Stellar-Swirl Vortex Lvl. 2 DMG'
 
 type LunarReactionsBaseDmgKey = `${LunarReactionKey}_baseDmg_`
 type LunarReactionsSpecialDmgKey = `${LunarReactionKey}_specialDmg_`
