@@ -97,6 +97,7 @@ import Tartaglia from './Tartaglia'
 import Thoma from './Thoma'
 import Tighnari from './Tighnari'
 import TravelerAnemo from './TravelerAnemo'
+import TravelerCryo from './TravelerCryo'
 import TravelerDendro from './TravelerDendro'
 import TravelerElectro from './TravelerElectro'
 import TravelerGeo from './TravelerGeo'
@@ -242,6 +243,7 @@ const data: TagMapNodeEntries[] = [
   Zhongli,
   Zibai,
   TravelerAnemo,
+  TravelerCryo,
   TravelerGeo,
   TravelerElectro,
   TravelerDendro,
