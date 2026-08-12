@@ -52,6 +52,7 @@ export function TagFallbackLabel({
   if (abilityTitle) return abilityTitle
 
   const label = getTagLabel(tag)
+  const labelMapKey = tag.attribute ? (tag.q ?? label) : label
 
   if (isExtraHandlingStats(label))
     return (
@@ -64,12 +65,12 @@ export function TagFallbackLabel({
         </span>
       </span>
     )
-  if (labelMap[label as keyof typeof labelMap]) {
+  if (labelMap[labelMapKey as keyof typeof labelMap]) {
     const strs = [
       ...(tag.attribute ? [elementalData[tag.attribute]] : []),
       ...(tag.damageType1 ? [damageTypeKeysMap[tag.damageType1]] : []),
       ...(tag.damageType2 ? [damageTypeKeysMap[tag.damageType2]] : []),
-      labelMap[label as keyof typeof labelMap],
+      labelMap[labelMapKey as keyof typeof labelMap],
     ]
     return <span>{strs.join(' ')}</span>
   }
