@@ -6,6 +6,7 @@ import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
 import { objMap, range } from '@genshin-optimizer/common/util'
 import {
   type ArtifactSlotKey,
+  allSubstatKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
 import { cachedArtifact } from '@genshin-optimizer/gi/db'
@@ -24,12 +25,22 @@ import {
 import { getSubstatValue } from '@genshin-optimizer/gi/util'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
   Box,
   Button,
   CircularProgress,
   Divider,
   Grid,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
   Tooltip,
   Typography,
 } from '@mui/material'
@@ -225,6 +236,7 @@ function UpgradeOptChartCardGraph({
   const thr0 = thresholds[0]
   const perc = useCallback((x: number) => (100 * (x - thr0)) / thr0, [thr0])
   const [isExactPending, setIsExactPending] = useState(false)
+  const [showRollAllocations, setShowRollAllocations] = useState(false)
   const dataHist = upOptCalc.histogram(ix, {
     left: objMin,
     right: objMax,
@@ -239,6 +251,29 @@ function UpgradeOptChartCardGraph({
   const reportD = upArt.result!.upAvg
   const chartData = dataHist
   const isExact = upArt.evalMode === 'values'
+  const exactRollAllocations = useMemo(
+    () =>
+      showRollAllocations && isExact
+        ? upOptCalc.exactRollAllocationGroups(ix)
+        : [],
+    [showRollAllocations, isExact, upOptCalc, ix]
+  )
+  const rollAllocationKeys = useMemo(
+    () =>
+      allSubstatKeys.filter((key) =>
+        exactRollAllocations.some((group) =>
+          group.rolls.some((roll) => roll.key === key)
+        )
+      ),
+    [exactRollAllocations]
+  )
+  const formatProbability = (value: number) => {
+    const percent = 100 * value
+    if (percent > 0 && percent < 0.01) return '<0.01%'
+    return `${percent.toFixed(2)}%`
+  }
+  const formatSignedPercent = (value: number, digits: number) =>
+    `${value > 0 ? '+' : ''}${value.toFixed(digits)}%`
 
   useEffect(() => {
     if (isExact) return
@@ -460,6 +495,103 @@ function UpgradeOptChartCardGraph({
           />
         </ComposedChart>
       </ResponsiveContainer>
+      {isExact && upArt.info.type !== 'definition' && (
+        <Accordion
+          expanded={showRollAllocations}
+          onChange={(_, expanded) => setShowRollAllocations(expanded)}
+          disableGutters
+        >
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+            <Typography>{t('upOptChart.rollAllocations.title')}</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+              {t('upOptChart.rollAllocations.description')}
+            </Typography>
+            <Typography variant="body2" sx={{ mb: 1 }}>
+              {t('upOptChart.rollAllocations.summary', {
+                allocation: formatProbability(
+                  exactRollAllocations.reduce(
+                    (sum, group) => sum + group.probability,
+                    0
+                  )
+                ),
+                probability: formatProbability(
+                  exactRollAllocations.reduce(
+                    (sum, group) => sum + group.overallUpgradeProbability,
+                    0
+                  )
+                ),
+                increase: formatSignedPercent((100 * reportD) / thr0, 2),
+              })}
+            </Typography>
+            <TableContainer sx={{ maxHeight: 440 }}>
+              <Table size="small" stickyHeader>
+                <TableHead>
+                  <TableRow>
+                    {rollAllocationKeys.map((key) => (
+                      <TableCell key={key} align="right">
+                        {formatReshapeLabel(key)}
+                      </TableCell>
+                    ))}
+                    <TableCell align="right">
+                      {t('upOptChart.rollAllocations.allocationChance')}
+                    </TableCell>
+                    <TableCell align="right">
+                      {t('upOptChart.rollAllocations.upgradeWithinAllocation')}
+                    </TableCell>
+                    <TableCell align="right">
+                      {t('upOptChart.rollAllocations.overallContribution')}
+                    </TableCell>
+                    <TableCell align="right">
+                      {t(
+                        'upOptChart.rollAllocations.averageSuccessfulIncrease'
+                      )}
+                    </TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {exactRollAllocations.map((group) => (
+                    <TableRow
+                      key={group.rolls
+                        .map(({ key, count }) => `${key}:${count}`)
+                        .join('|')}
+                    >
+                      {rollAllocationKeys.map((key) => {
+                        const roll = group.rolls.find(
+                          (roll) => roll.key === key
+                        )
+                        return (
+                          <TableCell key={key} align="right">
+                            {roll?.count ?? '—'}
+                          </TableCell>
+                        )
+                      })}
+                      <TableCell align="right">
+                        {formatProbability(group.probability)}
+                      </TableCell>
+                      <TableCell align="right">
+                        {formatProbability(group.upgradeProbability)}
+                      </TableCell>
+                      <TableCell align="right">
+                        {formatProbability(group.overallUpgradeProbability)}
+                      </TableCell>
+                      <TableCell align="right">
+                        {group.upgradeProbability > 0
+                          ? formatSignedPercent(
+                              (100 * group.averageIncrease) / thr0,
+                              2
+                            )
+                          : '—'}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </AccordionDetails>
+        </Accordion>
+      )}
     </CardThemed>
   )
 }
