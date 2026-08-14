@@ -11,7 +11,8 @@ import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
 import { StatDisplay } from '@genshin-optimizer/zzz/ui'
 import { abilityTagDisplay } from '../char/abilityFormulaLabels'
 import { damageTypeKeysMap } from '../char/util'
-import { getTagLabel } from '../tagLabel'
+import { statKeyFromListingTag } from '../optTarget'
+import { getTagLabel, warnUnresolvedTagLabel } from '../tagLabel'
 import { qtMap } from './qtMap'
 
 const extraHandlingStats = ['hp', 'hp_', 'atk', 'atk_', 'def', 'def_'] as const
@@ -51,6 +52,7 @@ export function TagFallbackLabel({
   if (abilityTitle) return abilityTitle
 
   const label = getTagLabel(tag)
+  const labelMapKey = tag.attribute ? (tag.q ?? label) : label
 
   if (isExtraHandlingStats(label))
     return (
@@ -63,14 +65,21 @@ export function TagFallbackLabel({
         </span>
       </span>
     )
-  if (labelMap[label as keyof typeof labelMap]) {
+  if (labelMap[labelMapKey as keyof typeof labelMap]) {
     const strs = [
       ...(tag.attribute ? [elementalData[tag.attribute]] : []),
       ...(tag.damageType1 ? [damageTypeKeysMap[tag.damageType1]] : []),
       ...(tag.damageType2 ? [damageTypeKeysMap[tag.damageType2]] : []),
-      labelMap[label as keyof typeof labelMap],
+      labelMap[labelMapKey as keyof typeof labelMap],
     ]
     return <span>{strs.join(' ')}</span>
   }
+
+  const displayStatKey = (statKeyFromListingTag(tag) || label) as StatKey
+  if (statKeyTextMap[displayStatKey]) {
+    return <StatDisplay statKey={displayStatKey} showPercent={showPercent} />
+  }
+
+  warnUnresolvedTagLabel(tag, label)
   return <StatDisplay statKey={label as StatKey} showPercent={showPercent} />
 }

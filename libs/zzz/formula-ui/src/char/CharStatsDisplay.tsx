@@ -20,7 +20,6 @@ import {
 } from '@genshin-optimizer/zzz/ui'
 import { ListItem } from '@mui/material'
 import { memo, useCallback, useContext, useMemo } from 'react'
-import { OptFormulaSections } from '../OptFormulaSections'
 import { formulaListingTagKey } from '../formulaFieldUtil'
 import {
   useCharFormulaFields,
@@ -28,6 +27,7 @@ import {
   useResolvedOptTarget,
   useZzzCalcContext,
 } from '../hooks'
+import { OptFormulaSections } from '../OptFormulaSections'
 import {
   formulaReadForTag,
   mergeTagForOpt,
@@ -35,6 +35,7 @@ import {
   statReadTagKey,
 } from '../optTarget'
 import { tagToTagField } from '../util'
+import { tagFieldSubset } from './tagFieldMap'
 
 export function CharStatsDisplay() {
   const character = useCharacterContext()
@@ -139,13 +140,12 @@ const CharStatRow = memo(function CharStatRow({
     [calc, mergedTag, read, listingRead, readByListingKey]
   )
 
-  const field = useMemo(
-    () =>
-      sourceField
-        ? { ...sourceField, fieldRef: mergedTag }
-        : tagToTagField(mergedTag),
-    [mergedTag, sourceField]
-  )
+  const field = useMemo(() => {
+    if (sourceField) return { ...sourceField, fieldRef: mergedTag }
+    const owned = tagFieldSubset(mergedTag)[0]
+    if (owned) return { ...owned, fieldRef: mergedTag }
+    return tagToTagField(mergedTag)
+  }, [mergedTag, sourceField])
 
   const { statHighlight, setStatHighlight } = useContext(StatHighlightContext)
   const tagQStatKey = statKeyFromListingTag(mergedTag)

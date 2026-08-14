@@ -11,8 +11,6 @@ import type { ReactNode } from 'react'
 import { getVariant } from './char/util'
 import { TagFallbackLabel } from './components/TagFallbackLabel'
 
-export { getTagLabel } from './tagLabel'
-
 export function st(strKey: string, values?: Record<string, string | number>) {
   return <Translate ns="sheet" key18={strKey} values={values} />
 }
