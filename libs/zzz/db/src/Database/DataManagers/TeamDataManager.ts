@@ -29,6 +29,7 @@ import {
   isMember,
   lookupFormulaEntry,
   resolveFormulaSheet,
+  stripCalcContextTag,
 } from '@genshin-optimizer/zzz/formula'
 import { z } from 'zod'
 import type { ZzzDatabase } from '../..'
@@ -382,66 +383,7 @@ export class TeamDataManager extends DataManager<
   private validateTargetTag(
     rawTarget: TargetTag | undefined
   ): TargetTag | undefined {
-    if (!rawTarget) return undefined
-
-    if (rawTarget.name) {
-      const sheet = rawTarget.sheet ?? resolveFormulaSheet(rawTarget)
-      const formula = lookupFormulaEntry({ ...rawTarget, sheet })
-      if (formula) {
-        const abilityName = formula.tag.name
-        if (!abilityName) return undefined
-        const q = rawTarget.q ?? formula.tag.q ?? undefined
-        const base = removeUndefinedFields({
-          sheet: sheet ?? formula.sheet,
-          name: abilityName,
-          q,
-        }) as TargetTag
-        if (!isGenericDmgInstTarget(abilityName)) return base
-
-        let damageType1: SpecificDmgTypeKey | undefined
-        let damageType2: 'aftershock' | 'abloom' | undefined
-        if (
-          rawTarget.damageType1 &&
-          isSpecificDmgTypeKey(rawTarget.damageType1)
-        )
-          damageType1 = rawTarget.damageType1
-        if (
-          rawTarget.damageType2 === 'aftershock' ||
-          rawTarget.damageType2 === 'abloom'
-        )
-          damageType2 = rawTarget.damageType2
-        return removeUndefinedFields({
-          sheet: sheet ?? formula.sheet,
-          name: abilityName,
-          q,
-          damageType1,
-          damageType2,
-        }) as TargetTag
-      }
-      return undefined
-    }
-
-    const { q, qt, attribute } = rawTarget
-    if (
-      q &&
-      qt &&
-      (targetQ as readonly string[]).includes(q) &&
-      targetQt.includes(qt)
-    ) {
-      let validAttribute: AttributeKey | undefined
-      if (q === 'dmg_' && attribute) {
-        validAttribute = validateValue(attribute, allAttributeKeys) as
-          | AttributeKey
-          | undefined
-        if (!validAttribute) return undefined
-      }
-      return removeUndefinedFields({
-        q,
-        qt,
-        attribute: validAttribute,
-      }) as TargetTag
-    }
-    return undefined
+    return sanitizeTargetTag(rawTarget)
   }
 
   private validateConditionals(
@@ -652,8 +594,19 @@ export class TeamDataManager extends DataManager<
       const frame0 = getTeamFrame0(team)
       const patch = typeof update === 'function' ? update(frame0) : update
       if (patch === false) return false
+      let nextPatch = patch
+      if ('tag' in patch && patch.tag) {
+        const sanitized = sanitizeTargetTag(patch.tag)
+        if (!sanitized) {
+          console.error('[zzz-db] setFrame0: rejected invalid opt target', {
+            tag: patch.tag,
+          })
+          return false
+        }
+        nextPatch = { ...patch, tag: sanitized }
+      }
       const frames = [...team.frames]
-      frames[0] = { ...frame0, ...patch }
+      frames[0] = { ...frame0, ...nextPatch }
       return { frames }
     })
   }
@@ -760,14 +713,12 @@ export function teamCharacterKeys(team: Team): CharacterKey[] {
 
 export function teamToSolverFrames(team: Team) {
   return team.frames
-    .map(({ tag, multiplier }) =>
-      tag
-        ? {
-            tag: targetTag(tag),
-            multiplier,
-          }
-        : undefined
-    )
+    .map(({ tag, multiplier }) => {
+      if (!tag) return undefined
+      const resolved = resolveTargetTag(tag)
+      if (!resolved) return undefined
+      return { tag: resolved, multiplier }
+    })
     .filter(notEmpty)
 }
 
@@ -801,25 +752,104 @@ export function withInstDamageType2<T extends TargetTag>(
   return (aftershock ? { ...rest, damageType2: 'aftershock' } : rest) as T
 }
 
-export function targetTag(target: TargetTag): Tag {
-  const { attribute } = target
-  const formulaTag = lookupFormulaEntry(target)?.tag
-  if (formulaTag) {
-    if (isGenericDmgInstTarget(target.name)) {
-      const { damageType1, damageType2 } = target
-      return applyDamageTypeToTag(formulaTag, damageType1, damageType2)
+/** Validate and normalize a persisted optimization target. */
+export function sanitizeTargetTag(
+  rawTarget: TargetTag | undefined
+): TargetTag | undefined {
+  if (!rawTarget) return undefined
+
+  if (rawTarget.name) {
+    const sheet = rawTarget.sheet ?? resolveFormulaSheet(rawTarget)
+    const formula = lookupFormulaEntry({ ...rawTarget, sheet })
+    if (formula) {
+      const abilityName = formula.tag.name
+      if (!abilityName) return undefined
+      const q = rawTarget.q ?? formula.tag.q ?? undefined
+      const base = removeUndefinedFields({
+        sheet: sheet ?? formula.sheet,
+        name: abilityName,
+        q,
+      }) as TargetTag
+      if (!isGenericDmgInstTarget(abilityName)) return base
+
+      let damageType1: SpecificDmgTypeKey | undefined
+      let damageType2: 'aftershock' | 'abloom' | undefined
+      if (rawTarget.damageType1 && isSpecificDmgTypeKey(rawTarget.damageType1))
+        damageType1 = rawTarget.damageType1
+      if (
+        rawTarget.damageType2 === 'aftershock' ||
+        rawTarget.damageType2 === 'abloom'
+      )
+        damageType2 = rawTarget.damageType2
+      return removeUndefinedFields({
+        sheet: sheet ?? formula.sheet,
+        name: abilityName,
+        q,
+        damageType1,
+        damageType2,
+      }) as TargetTag
     }
-    return formulaTag
+    return undefined
   }
-  const qt = target.qt ?? 'final'
-  return {
+
+  const { q, qt, attribute } = rawTarget
+  if (
+    q &&
+    qt &&
+    (targetQ as readonly string[]).includes(q) &&
+    targetQt.includes(qt)
+  ) {
+    let validAttribute: AttributeKey | undefined
+    if (q === 'dmg_' && attribute) {
+      validAttribute = validateValue(attribute, allAttributeKeys) as
+        | AttributeKey
+        | undefined
+      if (!validAttribute) return undefined
+    }
+    return removeUndefinedFields({
+      q,
+      qt,
+      attribute: validAttribute,
+    }) as TargetTag
+  }
+  return undefined
+}
+
+/** Resolve a validated opt target to a calculator tag. */
+export function resolveTargetTag(target: TargetTag): Tag | undefined {
+  const sanitized = sanitizeTargetTag(target)
+  if (!sanitized) return undefined
+
+  const { attribute } = sanitized
+
+  if (sanitized.name) {
+    const sheet = sanitized.sheet ?? resolveFormulaSheet(sanitized)
+    const formula = lookupFormulaEntry({ ...sanitized, sheet })
+    const formulaTag = formula?.tag
+    if (!formulaTag) return undefined
+    if (isGenericDmgInstTarget(sanitized.name)) {
+      const { damageType1, damageType2 } = sanitized
+      return stripCalcContextTag(
+        applyDamageTypeToTag(formulaTag, damageType1, damageType2)
+      )
+    }
+    return stripCalcContextTag(formulaTag)
+  }
+
+  const { q, qt } = sanitized
+  if (!q || !qt) return undefined
+
+  return stripCalcContextTag({
     et: 'own',
-    q: target.q ?? 'atk',
+    q,
     qt,
     sheet: qt === 'common' ? 'iso' : 'agg',
     ...(attribute ? { attribute } : {}),
-  }
+  })
 }
+
+/** @deprecated Use {@link resolveTargetTag} — returns `undefined` for invalid targets. */
+export const targetTag = resolveTargetTag
 
 export function newBonusStatTag(q: BonusStatKey): BonusStatTag {
   return {

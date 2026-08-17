@@ -2,15 +2,23 @@ import type { Read } from '@genshin-optimizer/game-opt/engine'
 import type { Field } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { BaseRead } from '@genshin-optimizer/pando/engine'
 import { read as tagRead } from '@genshin-optimizer/pando/engine'
-import type { AttributeKey, StatKey } from '@genshin-optimizer/zzz/consts'
+import type {
+  AttributeKey,
+  CharacterKey,
+  StatKey,
+} from '@genshin-optimizer/zzz/consts'
 import {
   type TargetTag,
   isGenericDmgInstTarget,
-  targetTag,
+  resolveTargetTag,
 } from '@genshin-optimizer/zzz/db'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
-import { hitId, listingId } from '@genshin-optimizer/zzz/formula'
-import { primaryTagFromField } from './formulaFieldUtil'
+import {
+  hitId,
+  listingId,
+  stripCalcContextTag,
+} from '@genshin-optimizer/zzz/formula'
+import { optTargetQFromField, primaryTagFromField } from './formulaFieldUtil'
 
 function readWithMergedTag(read: BaseRead | Read<Tag>, tag: Tag): Read<Tag> {
   if (typeof (read as Read<Tag>).withTag === 'function') {
@@ -19,13 +27,37 @@ function readWithMergedTag(read: BaseRead | Read<Tag>, tag: Tag): Read<Tag> {
   return { ...read, tag: { ...read.tag, ...tag } } as Read<Tag>
 }
 
+/** Named formula listing row (`qt: 'formula'` with `name`). */
+export function isNamedFormulaListingTag(tag: Tag): boolean {
+  return tag.qt === 'formula' && !!tag.name
+}
+
 /** Resolve a listing `Read` for debug / compute. */
 export function formulaReadForTag(
   tag: Tag,
   readByListingKey?: Map<string, Read<Tag>>
-): Read<Tag> {
+): Read<Tag> | undefined {
+  const listingTag = stripCalcContextTag(tag)
+  if (isNamedFormulaListingTag(listingTag)) {
+    if (!readByListingKey) {
+      console.error(
+        '[zzz-formula-ui] formulaReadForTag: named formula without listing read map',
+        { tag: listingTag }
+      )
+      return undefined
+    }
+    const match = readByListingKey.get(listingId(listingTag))
+    if (!match) {
+      console.error(
+        '[zzz-formula-ui] formulaReadForTag: missing listing read for named formula',
+        { tag: listingTag }
+      )
+      return undefined
+    }
+    return readWithMergedTag(match, tag)
+  }
   if (readByListingKey) {
-    const match = readByListingKey.get(listingId(tag))
+    const match = readByListingKey.get(listingId(listingTag))
     if (match) return readWithMergedTag(match, tag)
   }
   return tagRead(tag) as Read<Tag>
@@ -82,6 +114,16 @@ export function filterNonStatFields(fields: Field[]): Field[] {
   })
 }
 
+/** Drop named formula rows that cannot be persisted as an opt target. */
+export function filterSelectableOptTargetFields(
+  charKey: CharacterKey,
+  fields: Field[]
+): Field[] {
+  return fields.filter(
+    (field) => !!optTargetQFromField(field, undefined, charKey)
+  )
+}
+
 export function isOptTargetTag(
   tag: Tag,
   target: TargetTag | undefined,
@@ -95,7 +137,8 @@ export function isOptTargetTag(
       (target.attribute ?? undefined) === (tag.attribute ?? undefined)
     )
   }
-  const resolved = resolvedTag ?? targetTag(target)
+  const resolved = resolvedTag ?? resolveTargetTag(target)
+  if (!resolved) return false
   if (target.name && isGenericDmgInstTarget(target.name)) {
     return listingId(tag) === listingId(resolved)
   }
@@ -108,9 +151,16 @@ export function mergeTagForOpt(
   resolvedOptTag: Tag | undefined,
   optTarget: TargetTag | undefined
 ): Tag {
-  if (!optTarget?.name || !isGenericDmgInstTarget(optTarget.name)) return tag
-  if (!resolvedOptTag) return tag
-  if (tag.name === optTarget.name && tag.q === optTarget.q)
-    return resolvedOptTag
-  return tag
+  const rowTag = stripCalcContextTag(tag)
+  if (!optTarget?.name || !isGenericDmgInstTarget(optTarget.name)) return rowTag
+  if (!resolvedOptTag) return rowTag
+  const targetSheet = optTarget.sheet
+  if (!targetSheet) return rowTag
+  if (
+    rowTag.name === optTarget.name &&
+    rowTag.q === optTarget.q &&
+    rowTag.sheet === targetSheet
+  )
+    return stripCalcContextTag(resolvedOptTag)
+  return rowTag
 }

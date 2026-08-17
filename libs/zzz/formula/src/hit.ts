@@ -22,6 +22,16 @@ export function listingId(tag: Tag): string {
   return `${tag.sheet ?? ''}:${tag.name ?? ''}:${tag.q ?? ''}:${tag.qt ?? ''}:${tag.attribute ?? ''}:${tag.damageType1 ?? ''}:${tag.damageType2 ?? ''}`
 }
 
+/** Drop calc/runtime keys before meta lookup, display, or persistence. */
+export function stripCalcContextTag(tag: Tag): Tag {
+  const { src, dst, preset, ...rest } = tag as Tag & {
+    src?: string | null
+    dst?: string | null
+    preset?: string | null
+  }
+  return rest
+}
+
 function abilityDimSortIndex(q: string | null | undefined): number {
   if (!q) return abilityDims.length
   if (isAbilityDim(q)) return abilityDims.indexOf(q)
@@ -159,10 +169,13 @@ export function resolveFormulaSheet(target: {
   )
     return sheet as Sheet
 
+  let resolved: Sheet | undefined
   for (const charSheet of allCharacterKeys) {
-    if (matchesFormula(charSheet, name, q)) return charSheet as Sheet
+    if (!matchesFormula(charSheet, name, q)) continue
+    if (resolved) return undefined
+    resolved = charSheet as Sheet
   }
-  return undefined
+  return resolved
 }
 
 /** Resolve a formula listing entry by persisted target key. */

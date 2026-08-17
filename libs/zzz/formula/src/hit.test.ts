@@ -5,6 +5,7 @@ import {
   lookupFormulaEntry,
   partitionAbilityHits,
   resolveFormulaSheet,
+  stripCalcContextTag,
 } from './hit'
 
 function partTagKeys(parts: ReturnType<typeof partitionAbilityHits>): string[] {
@@ -115,6 +116,25 @@ describe('hitId', () => {
   })
 })
 
+describe('stripCalcContextTag', () => {
+  it('removes calc runtime keys before listing lookup', () => {
+    const tag = {
+      sheet: 'Soldier0Anby',
+      name: 'm6_additional_dmg',
+      q: 'standardDmg',
+      qt: 'formula' as const,
+      src: 'Soldier0Anby',
+      preset: 'preset0',
+    }
+    expect(stripCalcContextTag(tag)).toEqual({
+      sheet: 'Soldier0Anby',
+      name: 'm6_additional_dmg',
+      q: 'standardDmg',
+      qt: 'formula',
+    })
+  })
+})
+
 describe('resolveFormulaSheet', () => {
   it('honors an explicit sheet hint for cross-char formula names', () => {
     expect(
@@ -133,6 +153,15 @@ describe('resolveFormulaSheet', () => {
         q: 'standardDmg',
       })
     ).toBe('Soldier0Anby')
+  })
+
+  it('returns undefined when multiple sheets own the same name and q', () => {
+    expect(
+      resolveFormulaSheet({
+        name: 'standardDmgInst',
+        q: 'standardDmg',
+      })
+    ).toBeUndefined()
   })
 
   it('distinguishes normal and aftershock sibling abilities', () => {

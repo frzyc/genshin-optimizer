@@ -2,6 +2,7 @@ import { ColorText, SqBadge } from '@genshin-optimizer/common/ui'
 import { evalIfFunc } from '@genshin-optimizer/common/util'
 import type { Calculator as GameOptCalculator } from '@genshin-optimizer/game-opt/engine'
 import { Read, type Tag } from '@genshin-optimizer/zzz/formula'
+import { stripCalcContextTag } from '@genshin-optimizer/zzz/formula'
 import { AttributeName } from '@genshin-optimizer/zzz/ui'
 import { getCondMap, tagFieldSubset } from '../char/tagFieldMap'
 import { damageTypeKeysMap, getDmgType, getVariant } from '../char/util'
@@ -52,8 +53,12 @@ function TagStrDisplay({
   showPercent?: boolean
 }) {
   const calc = useZzzCalcContext()
+  const listingTag = stripCalcContextTag(tag)
 
-  const ownedTitle = tagFieldSubset(tag)[0]?.title
+  const ownedTitle =
+    listingTag.qt !== 'formula'
+      ? tagFieldSubset(listingTag)[0]?.title
+      : undefined
   if (ownedTitle) return ownedTitle
 
   if (tag.qt === 'cond' && tag.q && tag.sheet && calc) {

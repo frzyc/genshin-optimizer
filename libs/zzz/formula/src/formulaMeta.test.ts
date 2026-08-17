@@ -1,3 +1,4 @@
+import { allCharacterKeys } from '@genshin-optimizer/zzz/consts'
 import { describe, expect, it } from 'vitest'
 import {
   type AbilityDim,
@@ -87,13 +88,16 @@ describe('formulaMetaKey', () => {
   })
 
   it('includes skillType on every named ability hit listing', () => {
-    for (const [sheet, sheetFormulas] of Object.entries(formulas)) {
+    for (const charKey of allCharacterKeys) {
+      const sheetFormulas = formulas[charKey as keyof typeof formulas]
+      if (!sheetFormulas) continue
       for (const entry of Object.values(sheetFormulas)) {
         const tag = entry.tag
         if (tag?.qt !== 'formula' || !tag.name || !isAbilityDim(tag.q)) continue
-        if (!tag.skillType?.endsWith('Skill')) continue
-
-        expect(tag.skillType, `${sheet}/${tag.name}:${tag.q}`).toBeTruthy()
+        if (!/_?(?:aftershock)?\d+$/.test(tag.name)) continue
+        expect(tag.skillType, `${charKey}/${tag.name}:${tag.q}`).toMatch(
+          /Skill$/
+        )
       }
     }
   })

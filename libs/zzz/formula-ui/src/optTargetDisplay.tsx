@@ -3,6 +3,7 @@ import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
 import { useSetDebugTarget } from '@genshin-optimizer/game-opt/formula-ui'
 import { commonDefIcon } from '@genshin-optimizer/zzz/assets'
 import { type CharacterKey, isSkillKey } from '@genshin-optimizer/zzz/consts'
+import type { Read } from '@genshin-optimizer/game-opt/engine'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import HelpIcon from '@mui/icons-material/Help'
 import { Box, Typography } from '@mui/material'
@@ -17,7 +18,7 @@ import {
 import type { TalentSheetElementKey } from './char/consts'
 import { getFieldCategory } from './char/fieldCategory'
 import { damageTypeKeysMap } from './char/util'
-import { FullTagDisplay, TagDisplay } from './components'
+import { TagDisplay } from './components'
 import {
   OptCollapsibleSectionHeader,
   skillSectionFlatIconKey,
@@ -125,7 +126,11 @@ export function OptTargetSelectedLabel({
   if (getFieldCategory(charKey, tag)) {
     return <OptTargetFormulaLabel charKey={charKey} tag={tag} inline={inline} />
   }
-  return <FullTagDisplay tag={tag} />
+  console.error(
+    '[zzz-formula-ui] OptTargetSelectedLabel: uncategorized opt target tag',
+    { charKey, tag }
+  )
+  return null
 }
 
 function AbilityOptTargetSecondaryLine({
@@ -167,7 +172,13 @@ export function AbilityOptTargetLabel({
   inline?: boolean
 }) {
   const resolved = resolveAbilityDisplay(tag)
-  if (!resolved) return <FullTagDisplay tag={tag} />
+  if (!resolved) {
+    console.error(
+      '[zzz-formula-ui] AbilityOptTargetLabel: tag is not an ability formula',
+      { charKey, tag }
+    )
+    return null
+  }
 
   const { skill } = resolved
   const abilityName = abilityDisplayTitle(charKey, tag)
@@ -281,11 +292,20 @@ function OptTalentSheetSectionHeaderContent({
 }
 
 /** Dev help icon: opens `DebugReadModal` for the current optimization target. */
-export function OptTargetDebugHelp({ tag }: { tag: Tag }) {
+export function OptTargetDebugHelp({
+  tag,
+  readByListingKey,
+}: {
+  tag: Tag
+  readByListingKey?: Map<string, Read<Tag>>
+}) {
   const setDebugTarget = useSetDebugTarget()
-  const calcRead = useMemo(() => formulaReadForTag(tag), [tag])
+  const calcRead = useMemo(
+    () => formulaReadForTag(tag, readByListingKey),
+    [tag, readByListingKey]
+  )
 
-  if (!shouldShowDevComponents) return null
+  if (!shouldShowDevComponents || !calcRead) return null
 
   return (
     <HelpIcon

@@ -1,7 +1,10 @@
 import { describe, expect, it } from 'vitest'
 import { hitId } from '@genshin-optimizer/zzz/formula'
 import { groupFieldsByTag } from '../bundledFormulaFields'
-import { charAbilityFormulaTags } from '../formulaFieldUtil'
+import {
+  charAbilityFormulaTags,
+  optTargetQFromField,
+} from '../formulaFieldUtil'
 import {
   buildAbilityFieldsBySkill,
   buildCharFormulaFields,
@@ -33,6 +36,13 @@ describe('buildAbilityFieldsBySkill', () => {
 })
 
 describe('buildCharFormulaFields', () => {
+  it('every built field resolves opt target q', () => {
+    const { fields } = buildCharFormulaFields('Anby', [])
+    for (const field of fields) {
+      expect(optTargetQFromField(field, undefined, 'Anby')).toBeTruthy()
+    }
+  })
+
   it('lists static ability hits when calc listing is empty', () => {
     const { fields, abilityFieldsBySkill } = buildCharFormulaFields(
       'Soldier0Anby',

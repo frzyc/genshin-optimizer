@@ -10,7 +10,11 @@ import {
   orderedFieldCategories,
   type TalentSheetElementKey,
 } from '../char/fieldCategory'
-import { filterNonStatFields, listStatReadsFromFormulas } from '../optTarget'
+import {
+  filterNonStatFields,
+  listStatReadsFromFormulas,
+  filterSelectableOptTargetFields,
+} from '../optTarget'
 
 const emptyGrouped = {
   reads: [] as Read<Tag>[],
@@ -49,11 +53,18 @@ export function useCharFormulaFields(
     }
 
     const { byCategory, other } = groupFieldsByCategory(charKey, built.fields)
+    const selectable = (fields: Field[]) =>
+      filterSelectableOptTargetFields(charKey, fields)
     return {
       ...built,
       statReads: listStatReadsFromFormulas(reads),
-      categorySections: orderedFieldCategories(byCategory),
-      otherFields: filterNonStatFields(other),
+      categorySections: orderedFieldCategories(byCategory).map(
+        ({ category, fields }) => ({
+          category,
+          fields: selectable(fields),
+        })
+      ),
+      otherFields: filterNonStatFields(selectable(other)),
     }
   }, [calc, charKey])
 }

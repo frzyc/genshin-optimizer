@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react'
-import { targetTag } from '@genshin-optimizer/zzz/db'
+import { resolveTargetTag } from '@genshin-optimizer/zzz/db'
 import { own } from '@genshin-optimizer/zzz/formula'
 import { describe, expect, it } from 'vitest'
 import { tagFieldSubset } from './char/tagFieldMap'
@@ -9,7 +9,7 @@ import { getTagLabel } from './tagLabel'
 
 describe('cappedCrit label resolution', () => {
   const listingTag = own.common.cappedCrit_.tag
-  const targetResolved = targetTag({ q: 'cappedCrit_', qt: 'common' })
+  const targetResolved = resolveTargetTag({ q: 'cappedCrit_', qt: 'common' })!
 
   it('maps capped crit tags to crit_ for display keys', () => {
     expect(statKeyFromListingTag(listingTag)).toBe('crit_')

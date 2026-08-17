@@ -1,23 +1,17 @@
+import { ColorText } from '@genshin-optimizer/common/ui'
 import type { TagField } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
-import { lazy, Suspense } from 'react'
+import { getVariant } from './char/util'
 import { TagFallbackLabel } from './components/TagFallbackLabel'
 
-const TagDisplay = lazy(() =>
-  import('./components/TagDisplay').then((m) => ({ default: m.TagDisplay }))
-)
-
-function TagFieldTitle({ tag }: { tag: Tag }) {
-  return (
-    <Suspense fallback={<TagFallbackLabel tag={tag} />}>
-      <TagDisplay tag={tag} />
-    </Suspense>
-  )
-}
-
+/** Sheet field row — uses fallback labels only (no tagFieldMap lookup). */
 export function tagToTagField(tag: Tag): TagField {
   return {
-    title: <TagFieldTitle tag={tag} />,
+    title: (
+      <ColorText color={getVariant(tag)}>
+        <TagFallbackLabel tag={tag} />
+      </ColorText>
+    ),
     fieldRef: tag,
   }
 }

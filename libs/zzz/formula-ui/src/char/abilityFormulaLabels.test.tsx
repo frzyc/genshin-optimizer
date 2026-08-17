@@ -1,7 +1,10 @@
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { i18n } from '@genshin-optimizer/zzz/i18n'
 import { describe, expect, it, vi } from 'vitest'
-import { abilityRowTitleString, resolveAbilityDisplay } from './abilityFormulaLabels'
+import {
+  abilityRowTitleString,
+  resolveAbilityDisplay,
+} from './abilityFormulaLabels'
 
 const anbyTurboVoltHit3: Tag = {
   et: 'own',

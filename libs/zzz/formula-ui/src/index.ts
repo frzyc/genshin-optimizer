@@ -11,6 +11,7 @@ export * from './formulaDimensionUi'
 export {
   abilityDimFromField,
   buildListingReadMap,
+  optTargetQFromField,
   primaryTagFromField,
 } from './formulaFieldUtil'
 export * from './formulaText'
@@ -22,5 +23,6 @@ export * from './optTarget'
 export * from './optTargetDisplay'
 export * from './tagLabel'
 export * from './teammate'
+export * from './tagToTagField'
 export * from './util'
 export * from './wengine'

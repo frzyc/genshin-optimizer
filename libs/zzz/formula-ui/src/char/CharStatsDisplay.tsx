@@ -21,6 +21,7 @@ import {
 } from '@genshin-optimizer/zzz/ui'
 import { ListItem } from '@mui/material'
 import { memo, useCallback, useContext, useMemo } from 'react'
+import { TagDisplay } from '../components/TagDisplay'
 import {
   useCharFormulaFields,
   useOptCategoryCollapse,
@@ -30,12 +31,11 @@ import {
 import { OptFormulaSections } from '../OptFormulaSections'
 import {
   formulaReadForTag,
+  isListingStatTag,
   mergeTagForOpt,
   statKeyFromListingTag,
   statReadTagKey,
 } from '../optTarget'
-import { tagToTagField } from '../util'
-import { tagFieldSubset } from './tagFieldMap'
 
 export function CharStatsDisplay() {
   const character = useCharacterContext()
@@ -124,7 +124,8 @@ const CharStatRow = memo(function CharStatRow({
   optTarget: TargetTag | undefined
   resolvedOptTag: Tag | undefined
 }) {
-  const baseTag = sourceField?.fieldRef ?? read!.tag
+  const baseTag = sourceField?.fieldRef ?? read?.tag
+  if (!baseTag) return null
 
   const mergedTag = useMemo(
     () => mergeTagForOpt(baseTag, resolvedOptTag, optTarget),
@@ -138,10 +139,18 @@ const CharStatRow = memo(function CharStatRow({
 
   const field = useMemo(() => {
     if (sourceField) return { ...sourceField, fieldRef: mergedTag }
-    const owned = tagFieldSubset(mergedTag)[0]
-    if (owned) return { ...owned, fieldRef: mergedTag }
-    return tagToTagField(mergedTag)
-  }, [mergedTag, sourceField])
+    if (read && isListingStatTag(mergedTag)) {
+      return {
+        title: <TagDisplay tag={mergedTag} />,
+        fieldRef: mergedTag,
+      }
+    }
+    console.error(
+      '[zzz-formula-ui] CharStatRow: formula listing row missing sourceField',
+      { mergedTag }
+    )
+    return null
+  }, [mergedTag, read, sourceField])
 
   const { statHighlight, setStatHighlight } = useContext(StatHighlightContext)
   const tagQStatKey = statKeyFromListingTag(mergedTag)
@@ -172,6 +181,8 @@ const CharStatRow = memo(function CharStatRow({
     [isHL]
   )
 
+  if (!field || !calcRead) return null
+
   return (
     <TagFieldDisplay
       field={field}
@@ -196,19 +207,19 @@ const MultiFormulaFieldRow = memo(function MultiFormulaFieldRow({
   optTarget: TargetTag | undefined
   resolvedOptTag: Tag | undefined
 }) {
-  const mergedField = useMemo(() => {
+  const mergedField = useMemo((): MultiTagField => {
     return {
       ...field,
       fieldRefs: field.fieldRefs.map(({ label, ref }) => ({
         label,
-        ref: mergeTagForOpt(ref, resolvedOptTag, optTarget),
+        ref: mergeTagForOpt(ref as Tag, resolvedOptTag, optTarget) as Tag,
       })),
     }
   }, [field, resolvedOptTag, optTarget])
 
   const getRead = useCallback(
     (fieldTag: GameOptTag) =>
-      formulaReadForTag(fieldTag as Tag, readByListingKey),
+      formulaReadForTag(fieldTag as Tag, readByListingKey)!,
     [readByListingKey]
   )
 

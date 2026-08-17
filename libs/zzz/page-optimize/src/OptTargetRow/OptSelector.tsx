@@ -1,6 +1,6 @@
 import { DropdownButton } from '@genshin-optimizer/common/ui'
 import type { ICachedCharacter, Team } from '@genshin-optimizer/zzz/db'
-import { getTeamFrame0, targetTag } from '@genshin-optimizer/zzz/db'
+import { getTeamFrame0 } from '@genshin-optimizer/zzz/db'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import {
   FullTagDisplay,
@@ -11,10 +11,10 @@ import {
   statReadToTargetTag,
   useCharFormulaFields,
   useOptCategoryCollapse,
+  useResolvedOptTarget,
   useZzzCalcContext,
 } from '@genshin-optimizer/zzz/formula-ui'
 import { Box, ListItemText, MenuItem } from '@mui/material'
-import { useMemo } from 'react'
 import { OptTargetFieldMenuItem } from './OptTargetFieldMenuItem'
 
 export function OptSelector({
@@ -27,15 +27,9 @@ export function OptSelector({
   const { tag: target } = getTeamFrame0(team)
   const { database } = useDatabaseContext()
   const calc = useZzzCalcContext()
-  const tag = useMemo(() => {
-    if (!target) return undefined
-    return targetTag(target)
-  }, [target])
-
-  const { statReads, categorySections, otherFields } = useCharFormulaFields(
-    characterKey,
-    calc
-  )
+  const { resolvedOptTag: tag } = useResolvedOptTarget()
+  const { statReads, readByListingKey, categorySections, otherFields } =
+    useCharFormulaFields(characterKey, calc)
   const collapse = useOptCategoryCollapse()
 
   const selectedTitle = tag ? (
@@ -59,7 +53,7 @@ export function OptSelector({
           >
             <strong>Target:</strong>
             {selectedTitle}
-            <OptTargetDebugHelp tag={tag} />
+            <OptTargetDebugHelp tag={tag} readByListingKey={readByListingKey} />
           </Box>
         ) : (
           'Select an Optimization Target'

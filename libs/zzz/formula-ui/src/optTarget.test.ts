@@ -1,6 +1,6 @@
 import { read as tagRead } from '@genshin-optimizer/pando/engine'
 import { listingId } from '@genshin-optimizer/zzz/formula'
-import { targetTag } from '@genshin-optimizer/zzz/db'
+import { resolveTargetTag } from '@genshin-optimizer/zzz/db'
 import { describe, expect, it } from 'vitest'
 import {
   formulaReadForTag,
@@ -43,7 +43,7 @@ describe('isOptTargetTag', () => {
       name: 'BasicAttackHarmonizingShot_0',
       q: 'standardDmg',
     }
-    const resolved = targetTag(persisted)
+    const resolved = resolveTargetTag(persisted)!
     expect(resolved.damageType2).toBe('aftershock')
     expect(isOptTargetTag(resolved, persisted)).toBe(true)
   })
@@ -60,10 +60,10 @@ describe('isOptTargetTag', () => {
       q: 'standardDmg',
     }
 
-    expect(isOptTargetTag(targetTag(normal), normal)).toBe(true)
-    expect(isOptTargetTag(targetTag(aftershock), aftershock)).toBe(true)
-    expect(isOptTargetTag(targetTag(aftershock), normal)).toBe(false)
-    expect(isOptTargetTag(targetTag(normal), aftershock)).toBe(false)
+    expect(isOptTargetTag(resolveTargetTag(normal)!, normal)).toBe(true)
+    expect(isOptTargetTag(resolveTargetTag(aftershock)!, aftershock)).toBe(true)
+    expect(isOptTargetTag(resolveTargetTag(aftershock)!, normal)).toBe(false)
+    expect(isOptTargetTag(resolveTargetTag(normal)!, aftershock)).toBe(false)
   })
 
   it('highlights the whole hit when aftershock shares name with normal row', () => {
@@ -92,7 +92,7 @@ describe('isOptTargetTag', () => {
       damageType1: 'basic',
       damageType2: 'aftershock',
     }
-    const resolved = targetTag(target)
+    const resolved = resolveTargetTag(target)!
     const wrongDmg = { ...resolved, damageType1: 'ult' as const }
 
     expect(isOptTargetTag(resolved, target)).toBe(true)
@@ -147,7 +147,7 @@ describe('mergeTagForOpt', () => {
       damageType1: 'ult' as const,
       damageType2: 'aftershock' as const,
     }
-    const resolvedInst = targetTag(optTarget)
+    const resolvedInst = resolveTargetTag(optTarget)!
 
     const merged = mergeTagForOpt(rowTag, resolvedInst, optTarget)
     expect(merged.damageType1).toBe('ult')
@@ -169,9 +169,46 @@ describe('mergeTagForOpt', () => {
       damageType1: 'ult' as const,
       damageType2: 'aftershock' as const,
     }
-    const resolvedInst = targetTag(instTarget)
+    const resolvedInst = resolveTargetTag(instTarget)!
 
-    expect(mergeTagForOpt(rowTag, resolvedInst, instTarget)).toBe(rowTag)
+    expect(mergeTagForOpt(rowTag, resolvedInst, instTarget)).toEqual(rowTag)
+  })
+
+  it('does not merge generic inst rows from a different sheet', () => {
+    const rowTag = {
+      sheet: 'Sigrid',
+      name: 'standardDmgInst',
+      q: 'standardDmg',
+      qt: 'formula' as const,
+    }
+    const optTarget = {
+      sheet: 'Anby',
+      name: 'standardDmgInst',
+      q: 'standardDmg',
+      damageType1: 'ult' as const,
+    }
+    const resolvedInst = resolveTargetTag(optTarget)!
+
+    expect(mergeTagForOpt(rowTag, resolvedInst, optTarget)).toEqual(rowTag)
+  })
+
+  it('does not merge generic inst when target sheet is unknown', () => {
+    const rowTag = {
+      sheet: 'Anby',
+      name: 'standardDmgInst',
+      q: 'standardDmg',
+      qt: 'formula' as const,
+    }
+    const resolvedInst = {
+      ...rowTag,
+      damageType1: 'ult' as const,
+    }
+    const optTarget = {
+      name: 'standardDmgInst',
+      q: 'standardDmg',
+    }
+
+    expect(mergeTagForOpt(rowTag, resolvedInst, optTarget)).toEqual(rowTag)
   })
 
   it('does not merge rows from a different aftershock bundle group', () => {
@@ -188,20 +225,26 @@ describe('mergeTagForOpt', () => {
       q: 'standardDmg',
     }
 
-    expect(mergeTagForOpt(aftershockRow, normalRow, optTarget)).toBe(
+    expect(mergeTagForOpt(aftershockRow, normalRow, optTarget)).toEqual(
       aftershockRow
     )
   })
 })
 
 describe('formulaReadForTag', () => {
-  it('falls back to a tag read when no listing read is passed', () => {
+  it('returns undefined for named formulas without a listing read map', () => {
     const tag = {
       sheet: 'Anby',
       name: 'BasicAttackTurboVolt_0',
       q: 'standardDmg',
+      qt: 'formula' as const,
     }
-    const result = formulaReadForTag(tag)
+    expect(formulaReadForTag(tag)).toBeUndefined()
+  })
+
+  it('falls back to a tag read for stat rows when no listing map is passed', () => {
+    const tag = { q: 'atk', qt: 'final' as const, attribute: 'atk' as const }
+    const result = formulaReadForTag(tag)!
     expect(result.tag).toEqual(tag)
     expect(result).not.toBe(tagRead(tag))
   })
@@ -210,8 +253,8 @@ describe('formulaReadForTag', () => {
     const tag = { sheet: 'Alice', q: 'atk', qt: 'final' as const }
     const plainRead = tagRead(tag)
     const merged = { ...tag, attribute: 'atk' as const }
-    const readByListingKey = new Map([[listingId(tag), plainRead as never]])
-    const result = formulaReadForTag(merged, readByListingKey)
+    const readByListingKey = new Map([[listingId(merged), plainRead as never]])
+    const result = formulaReadForTag(merged, readByListingKey)!
     expect(result.tag).toEqual(merged)
     expect(typeof (result as { withTag?: unknown }).withTag).toBe('undefined')
   })

@@ -9,15 +9,25 @@ import {
 import { isAbilityFormulaTag } from './abilityTag'
 import { AbilityRowTitle } from './char/abilityFormulaLabels'
 import { getVariant } from './char/util'
-import { TagDisplay } from './components/TagDisplay'
+import { TagFallbackLabel } from './components/TagFallbackLabel'
 import { ABILITY_DIM_LABEL } from './formulaDimensionUi'
 
 function bundleFieldRefs(byQ: Map<string, Tag>) {
-  const dmgQ = resolveBundleDmgQ(byQ)!
+  const dmgQ = resolveBundleDmgQ(byQ)
+  const dmgTag = dmgQ ? byQ.get(dmgQ) : undefined
+  const dazeTag = byQ.get('dazeBuildup')
+  const anomTag = byQ.get('anomBuildup')
+  if (!dmgQ || !dmgTag || !dazeTag || !anomTag) {
+    console.error(
+      '[zzz-formula-ui] bundleFieldRefs: incomplete ability bundle',
+      { byQ: [...byQ.entries()] }
+    )
+    return undefined
+  }
   return [
-    { label: ABILITY_DIM_LABEL[dmgQ], ref: byQ.get(dmgQ)! },
-    { label: ABILITY_DIM_LABEL.dazeBuildup, ref: byQ.get('dazeBuildup')! },
-    { label: ABILITY_DIM_LABEL.anomBuildup, ref: byQ.get('anomBuildup')! },
+    { label: ABILITY_DIM_LABEL[dmgQ], ref: dmgTag },
+    { label: ABILITY_DIM_LABEL.dazeBuildup, ref: dazeTag },
+    { label: ABILITY_DIM_LABEL.anomBuildup, ref: anomTag },
   ]
 }
 
@@ -31,7 +41,11 @@ export function formulaFieldTitle(tag: Tag) {
       </ColorText>
     )
   }
-  return <TagDisplay tag={tag} />
+  return (
+    <ColorText color={getVariant(tag)}>
+      <TagFallbackLabel tag={tag} />
+    </ColorText>
+  )
 }
 
 /**
@@ -50,10 +64,15 @@ export function groupFieldsByTag(tags: Tag[], sheet?: Sheet): Field[] {
       continue
     }
 
-    const dmgTag = part.byQ.get(part.dmgQ)!
+    const fieldRefs = bundleFieldRefs(part.byQ)
+    if (!fieldRefs) continue
+
+    const dmgTag = part.byQ.get(part.dmgQ)
+    if (!dmgTag) continue
+
     const multiField: MultiTagField = {
       title: formulaFieldTitle(dmgTag),
-      fieldRefs: bundleFieldRefs(part.byQ),
+      fieldRefs,
     }
     fields.push(multiField)
   }

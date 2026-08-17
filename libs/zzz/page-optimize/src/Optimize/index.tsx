@@ -10,7 +10,7 @@ import {
 import {
   getTeamFrame0,
   type ICachedDisc,
-  targetTag,
+  resolveTargetTag,
 } from '@genshin-optimizer/zzz/db'
 import {
   OptConfigContext,
@@ -165,10 +165,12 @@ function OptimizeWrapper() {
   const currentSolver = useRef<Solver<string> | null>(null)
   const cfg = useMemo(() => {
     if (!calc || !target) return
+    const resolvedTag = resolveTargetTag(target)
+    if (!resolvedTag) return
     return createOptimizeConfig({
       characterKey,
       calc,
-      frames: [{ tag: targetTag(target), multiplier: 1 }],
+      frames: [{ tag: resolvedTag, multiplier: 1 }],
       statFilters: (optConfig.statFilters ?? []).filter((s) => !s.disabled),
       setFilter2: optConfig.setFilter2,
       setFilter4: optConfig.setFilter4,

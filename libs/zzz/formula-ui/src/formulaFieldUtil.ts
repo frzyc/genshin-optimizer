@@ -30,10 +30,15 @@ export function buildListingReadMap(
 /** Primary formula tag for grouping / labels (dmg ability dim of a bundled row). */
 export function primaryTagFromField(field: Field): Tag | undefined {
   if (isMultiTagField(field)) {
-    return (
-      field.fieldRefs.find((r) => isDmgAbilityDim(r.ref['q']))?.ref ??
-      field.fieldRefs[0]?.ref
-    )
+    const dmgRef = field.fieldRefs.find((r) => isDmgAbilityDim(r.ref['q']))
+    if (!dmgRef) {
+      console.error(
+        '[zzz-formula-ui] primaryTagFromField: bundled field missing dmg dim',
+        { field }
+      )
+      return undefined
+    }
+    return dmgRef.ref
   }
   if (isTagField(field)) return field.fieldRef
   return undefined
@@ -57,6 +62,21 @@ export function abilityDimFromField(
   )
     return currentTarget.q
   if (isAbilityDim(ref.q)) return ref.q
+  return undefined
+}
+
+/** Persisted `q` for a named formula row in the opt-target picker. */
+export function optTargetQFromField(
+  field: Field,
+  currentTarget?: TargetTag,
+  sheetFallback?: string
+): string | undefined {
+  const ref = primaryTagFromField(field)
+  if (!ref) return undefined
+  if (isMultiTagField(field) || isAbilityFormulaTag(ref)) {
+    return abilityDimFromField(field, currentTarget, sheetFallback)
+  }
+  if (isTagField(field)) return field.fieldRef['q'] ?? undefined
   return undefined
 }
 

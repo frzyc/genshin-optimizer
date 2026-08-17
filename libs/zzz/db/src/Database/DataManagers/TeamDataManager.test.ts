@@ -1,7 +1,11 @@
 import { createTestDBStorage } from '@genshin-optimizer/common/database'
 import { allCharacterKeys } from '@genshin-optimizer/zzz/consts'
 import { ZzzDatabase } from '../Database'
-import { isGenericDmgInstTarget, targetTag } from './TeamDataManager'
+import {
+  isGenericDmgInstTarget,
+  resolveTargetTag,
+  sanitizeTargetTag,
+} from './TeamDataManager'
 
 describe('TeamDataManager', () => {
   let database: ZzzDatabase
@@ -82,7 +86,9 @@ describe('TeamDataManager', () => {
       name: 'BasicAttackHarmonizingShot_0',
       q: 'standardDmg',
     })
-    expect(targetTag(result!.frames[0]!.tag!).damageType2).toBe('aftershock')
+    expect(resolveTargetTag(result!.frames[0]!.tag!)!.damageType2).toBe(
+      'aftershock'
+    )
   })
 
   it('keeps damage types on generic inst opt targets', () => {
@@ -127,8 +133,42 @@ describe('TeamDataManager', () => {
       q: 'standardDmg',
     }
 
-    expect(targetTag(normal).name).toBe('UltimateVoidstrike_0')
-    expect(targetTag(aftershock).name).toBe('UltimateVoidstrike_aftershock0')
-    expect(targetTag(aftershock).damageType2).toBe('aftershock')
+    expect(resolveTargetTag(normal)!.name).toBe('UltimateVoidstrike_0')
+    expect(resolveTargetTag(aftershock)!.name).toBe(
+      'UltimateVoidstrike_aftershock0'
+    )
+    expect(resolveTargetTag(aftershock)!.damageType2).toBe('aftershock')
+  })
+
+  it('resolveTargetTag returns undefined for invalid stat targets', () => {
+    expect(resolveTargetTag({ q: 'INVALID', qt: 'final' })).toBeUndefined()
+    expect(resolveTargetTag({ q: 'atk' })).toBeUndefined()
+  })
+
+  it('sanitizeTargetTag returns undefined for unknown named formulas', () => {
+    expect(
+      sanitizeTargetTag({
+        sheet: 'Anby',
+        name: 'NotARealFormula_0',
+        q: 'standardDmg',
+      })
+    ).toBeUndefined()
+  })
+
+  it('setFrame0 rejects invalid opt targets', () => {
+    teams.set(mainKey, {
+      teammates: [{ characterKey: mainKey }],
+      frames: [{ tag: { q: 'atk', qt: 'final' }, enemyStats: [] }],
+      enemyLvl: 60,
+      enemyDef: 0,
+      enemyStunMultiplier: 1,
+    })
+    teams.setFrame0(mainKey, {
+      tag: { q: 'INVALID', qt: 'final' },
+    })
+    expect(teams.get(mainKey)?.frames[0]?.tag).toEqual({
+      q: 'atk',
+      qt: 'final',
+    })
   })
 })

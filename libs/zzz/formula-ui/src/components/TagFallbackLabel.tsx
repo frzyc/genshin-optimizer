@@ -1,16 +1,16 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
-import { getUnitStr } from '@genshin-optimizer/common/util'
-import type { CharacterKey, StatKey } from '@genshin-optimizer/zzz/consts'
 import {
-  allCharacterKeys,
-  statKeyTextMap,
-} from '@genshin-optimizer/zzz/consts'
+  getUnitStr,
+  shouldShowDevComponents,
+} from '@genshin-optimizer/common/util'
+import type { CharacterKey, StatKey } from '@genshin-optimizer/zzz/consts'
+import { allCharacterKeys, statKeyTextMap } from '@genshin-optimizer/zzz/consts'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { isAbilityDim } from '@genshin-optimizer/zzz/formula'
 import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
 import { StatDisplay } from '@genshin-optimizer/zzz/ui'
-import { AbilityRowTitle } from '../char/abilityFormulaLabels'
 import { isAbilityFormulaTag } from '../abilityTag'
+import { AbilityRowTitle } from '../char/abilityFormulaLabels'
 import {
   getTagLabel,
   namedAbilityDimLabel,
@@ -90,5 +90,6 @@ export function TagFallbackLabel({
   }
 
   warnUnresolvedTagLabel(tag, label)
+  if (shouldShowDevComponents) return null
   return <StatDisplay statKey={label as StatKey} showPercent={showPercent} />
 }

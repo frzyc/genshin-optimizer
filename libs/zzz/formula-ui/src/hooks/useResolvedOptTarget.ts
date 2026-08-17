@@ -1,4 +1,4 @@
-import { getTeamFrame0, targetTag } from '@genshin-optimizer/zzz/db'
+import { getTeamFrame0, resolveTargetTag } from '@genshin-optimizer/zzz/db'
 import { useCharacterContext, useTeam } from '@genshin-optimizer/zzz/db-ui'
 import { useMemo } from 'react'
 
@@ -8,7 +8,7 @@ export function useResolvedOptTarget() {
   const team = useTeam(character?.key)
   const optTarget = team ? getTeamFrame0(team).tag : undefined
   const resolvedOptTag = useMemo(
-    () => (optTarget ? targetTag(optTarget) : undefined),
+    () => (optTarget ? resolveTargetTag(optTarget) : undefined),
     [optTarget]
   )
   return { optTarget, resolvedOptTag }

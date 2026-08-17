@@ -1,10 +1,8 @@
 import type { CharacterKey, SkillKey } from '@genshin-optimizer/zzz/consts'
-import { isAbilityDim } from '@genshin-optimizer/zzz/formula'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { i18n } from '@genshin-optimizer/zzz/i18n'
 import type { ReactNode } from 'react'
 import { parseAbilityFromTag } from '../abilityTag'
-import { namedAbilityDimLabel } from '../tagLabel'
 import { trans } from '../sheetTranslate'
 
 export type AbilityDisplayResolved = {
@@ -148,7 +146,7 @@ export function abilityHitParamTitle(
 ): ReactNode | undefined {
   const resolved = resolveAbilityDisplay(tag)
   if (!resolved) return undefined
-  return rowLabelContent(charKey, resolved).node
+  return hitParamTitleNode(charKey, resolved)
 }
 
 /** Bundled / single ability row title (hit param or ability name). */
@@ -173,10 +171,5 @@ export function AbilityRowTitle({
     charKey,
     tag,
   })
-  if (tag.q && isAbilityDim(tag.q)) {
-    const label = namedAbilityDimLabel(tag)
-    if (label) return label
-  }
-  const resolved = resolveAbilityDisplay(tag)
-  return resolved?.abilityKey ?? tag.name ?? ''
+  return null
 }
