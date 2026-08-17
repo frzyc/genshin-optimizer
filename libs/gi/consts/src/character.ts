@@ -218,6 +218,7 @@ export const travelerElements = [
   'dendro',
   'hydro',
   'pyro',
+  'cryo',
 ] as const
 export type TravelerElementKey = (typeof travelerElements)[number]
 
