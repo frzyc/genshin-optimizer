@@ -95,7 +95,7 @@ jobs:
           yarn run nx run-many --target=typecheck
   gen-file:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v6
       - name: Get Cache Key
