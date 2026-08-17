@@ -23,9 +23,9 @@ import {
   prod,
   sum,
 } from '../utils'
-import { lunarDmg } from './lunar'
+import { lunarDmgNode } from './lunar'
 import { crystallizeHit, transMulti1, transMulti2 } from './multi'
-import { stellarDmg } from './stellar'
+import { stellarDmgNode } from './stellar'
 
 const trans = {
   ...objKeyMap(
@@ -166,7 +166,7 @@ const trans = {
     )
   }),
   lunarcharged: infoMut(
-    lunarDmg(
+    lunarDmgNode(
       constant(
         transformativeReactions.lunarcharged.multi,
         info('lunarcharged_multi_')
@@ -177,7 +177,7 @@ const trans = {
     { path: 'lunarcharged_hit' }
   ),
   lunarcrystallize: infoMut(
-    lunarDmg(
+    lunarDmgNode(
       constant(
         transformativeReactions.lunarcrystallize.multi,
         info('lunarcrystallize_multi_')
@@ -188,7 +188,7 @@ const trans = {
     { path: 'lunarcrystallize_hit' }
   ),
   stellarswirl: infoMut(
-    stellarDmg(
+    stellarDmgNode(
       constant(
         transformativeReactions.stellarswirl.multi,
         info('stellarswirl_multi_')
@@ -200,7 +200,7 @@ const trans = {
     { path: 'stellarswirl_hit' }
   ),
   stellarswirl_vortex1: infoMut(
-    stellarDmg(
+    stellarDmgNode(
       constant(2, info('stellarswirl_multi_')),
       'reaction',
       'stellarswirl',
@@ -209,7 +209,7 @@ const trans = {
     { path: 'stellarswirl_vortex1_hit' }
   ),
   stellarswirl_vortex2: infoMut(
-    stellarDmg(
+    stellarDmgNode(
       constant(3, info('stellarswirl_multi_')),
       'reaction',
       'stellarswirl',

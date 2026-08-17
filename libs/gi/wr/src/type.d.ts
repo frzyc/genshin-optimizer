@@ -61,7 +61,6 @@ export type Variant =
   | TransformativeReactionKey
   | AmplifyingReactionsKey
   | AdditiveReactionsKey
-  | 'stellarcryo'
   | 'heal'
 export type InfoVariant = Variant | 'invalid'
 
