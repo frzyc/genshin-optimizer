@@ -11,7 +11,7 @@ import {
   naught,
   percent,
   prod,
-  stellarDmg,
+  stellarDmgNode,
   subscript,
   target,
   unequal,
@@ -206,29 +206,37 @@ const c2_electro_dmg_ = greaterEq(
 const c2TeamHitStacksArr = range(1, 5)
 const [condC2TeamHitPath, condC2TeamHit] = cond(key, 'c2TeamHit')
 // TODO: Technically this only applies to certain hits
-const c2TeamHit_stellarconduct_dmg_ = greaterEq(
-  input.constellation,
-  2,
-  equal(
-    condLockRevelation,
-    'on',
+const c2TeamHit_stellarconduct_dmg_disp = infoMut(
+  greaterEq(
+    input.constellation,
+    2,
     equal(
-      condLockStellarRadianceSc,
+      condLockRevelation,
       'on',
       equal(
-        condC1Together,
+        condLockStellarRadianceSc,
         'on',
-        prod(
-          lookup(
-            condC2TeamHit,
-            objKeyMap(c2TeamHitStacksArr, (stack) => constant(stack)),
-            naught
-          ),
-          percent(dm.constellation2.stellarconduct_dmg_)
+        equal(
+          condC1Together,
+          'on',
+          prod(
+            lookup(
+              condC2TeamHit,
+              objKeyMap(c2TeamHitStacksArr, (stack) => constant(stack)),
+              naught
+            ),
+            percent(dm.constellation2.stellarconduct_dmg_)
+          )
         )
       )
     )
-  )
+  ),
+  { path: 'stellarconduct_dmg_', isTeamBuff: true }
+)
+const c2TeamHit_stellarconduct_dmg_ = equal(
+  input.activeCharKey,
+  target.charKey,
+  c2TeamHit_stellarconduct_dmg_disp
 )
 
 const dmgFormulas = {
@@ -308,7 +316,7 @@ const dmgFormulas = {
         equal(
           condLockStellarRadianceSc,
           'on',
-          stellarDmg(
+          stellarDmgNode(
             percent(dm.passive1.boltStellarDmg),
             'atk',
             'stellarconduct',
@@ -592,7 +600,7 @@ const sheet: TalentSheet = {
         on: {
           fields: [
             {
-              text: st('elementalReaction.gainRadianceSc'),
+              text: st('elementalReaction.stellar.gainRadianceSc'),
             },
           ],
         },
@@ -652,7 +660,7 @@ const sheet: TalentSheet = {
         name: st('hits', { count: stack }),
         fields: [
           {
-            node: c2TeamHit_stellarconduct_dmg_,
+            node: c2TeamHit_stellarconduct_dmg_disp,
           },
         ],
       })),

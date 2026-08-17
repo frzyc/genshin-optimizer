@@ -11,8 +11,10 @@ import {
   naught,
   percent,
   prod,
+  stellarDmgNode,
   subscript,
   sum,
+  unequal,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
@@ -57,10 +59,11 @@ const dm = {
   },
   skill: {
     contDmg: skillParam_gen.skill[s++],
-    swirl_dmg_: skillParam_gen.skill[s++],
+    swirl_dmg_: skillParam_gen.skill[s++].map((v) => v / 100),
     cd: skillParam_gen.skill[s++][0],
     skillDmg: skillParam_gen.skill[s++],
     duration: skillParam_gen.skill[s++][0],
+    stellarswirl_dmg_: skillParam_gen.skill[s++].map((v) => v / 100),
   },
   burst: {
     skillDmg: skillParam_gen.burst[b++],
@@ -79,13 +82,15 @@ const dm = {
     skillContDmgInc: skillParam_gen.lockedPassive![0][0],
     cd: skillParam_gen.lockedPassive![1][0],
     eleMas: skillParam_gen.lockedPassive![2][0],
-    durationIThink: skillParam_gen.lockedPassive![3][0],
+    ssDmg: skillParam_gen.lockedPassive![3][0],
   },
   constellation1: {
     swirl_dmgInc: skillParam_gen.constellation1[0],
     duration: skillParam_gen.constellation1[1],
     cd: skillParam_gen.constellation1[2],
     dmg: skillParam_gen.constellation1[3],
+    ssDmg: skillParam_gen.constellation1[4],
+    stellarswirl_dmgInc: skillParam_gen.constellation1[5],
   },
   constellation2: {
     phec_dmg_: skillParam_gen.constellation2[0],
@@ -103,8 +108,15 @@ const dm = {
     critDMG_: skillParam_gen.constellation6[3],
     maxCritRate_: skillParam_gen.constellation6[4],
     maxCritDMG_: skillParam_gen.constellation6[5],
+    stellarswirl_critRate_: skillParam_gen.constellation6[6],
+    stellarswirl_critDMG_: skillParam_gen.constellation6[7],
   },
 } as const
+
+const [condLockStellarRadiancePath, condLockStellarRadiance] = cond(
+  key,
+  'lockStellarRadiance'
+)
 
 const [condSkillDreamPath, condSkillDream] = cond(key, 'skillDream')
 const skillDream_swirl_dmg_ = equal(
@@ -112,6 +124,16 @@ const skillDream_swirl_dmg_ = equal(
   'on',
   prod(
     subscript(input.total.skillIndex, dm.skill.swirl_dmg_, { unit: '%' }),
+    input.total.eleMas
+  )
+)
+const skillDream_stellarswirl_dmg_ = equal(
+  condSkillDream,
+  'on',
+  prod(
+    subscript(input.total.skillIndex, dm.skill.stellarswirl_dmg_, {
+      unit: '%',
+    }),
     input.total.eleMas
   )
 )
@@ -141,6 +163,15 @@ const c1Awaiting_swirl_dmgInc = greaterEq(
     condC1Awaiting,
     'on',
     prod(percent(dm.constellation1.swirl_dmgInc), input.total.eleMas)
+  )
+)
+const c1Awaiting_stellarswirl_dmgInc = greaterEq(
+  input.constellation,
+  1,
+  equal(
+    condC1Awaiting,
+    'on',
+    prod(percent(dm.constellation1.stellarswirl_dmgInc), input.total.eleMas)
   )
 )
 
@@ -174,6 +205,16 @@ const c6Dream_swirlCritDMG_ = greaterEq(
   input.constellation,
   6,
   equal(condSkillDream, 'on', dm.constellation6.swirl_critDMG_)
+)
+const c6Dream_stellarswirl_critRate_ = greaterEq(
+  input.constellation,
+  6,
+  equal(condSkillDream, 'on', dm.constellation6.stellarswirl_critRate_)
+)
+const c6Dream_stellarswirl_critDMG_ = greaterEq(
+  input.constellation,
+  6,
+  equal(condSkillDream, 'on', dm.constellation6.stellarswirl_critDMG_)
 )
 // TODO: Verify if this reads premod or total
 const c6_critRate_ = greaterEq(
@@ -227,6 +268,7 @@ const dmgFormulas = {
     skillDmg: dmgNode('atk', dm.skill.skillDmg, 'skill'),
     contDmg: dmgNode('atk', dm.skill.contDmg, 'skill'),
     swirl_dmg_: skillDream_swirl_dmg_,
+    stellarswirl_dmg_: skillDream_stellarswirl_dmg_,
   },
   burst: {
     skillDmg: dmgNode('atk', dm.burst.skillDmg, 'burst'),
@@ -239,28 +281,68 @@ const dmgFormulas = {
     ),
   },
   lockedPassive: {
-    skillContDmg: dmgNode('atk', dm.skill.contDmg, 'skill', {
-      premod: {
-        skill_dmgInc: equal(
-          condLockRevelation,
-          'on',
-          prod(percent(dm.lockedPassive.skillContDmgInc), input.total.eleMas)
-        ),
-      },
-    }),
+    skillContDmg: equal(
+      condLockRevelation,
+      'on',
+      dmgNode('atk', dm.skill.contDmg, 'skill', {
+        premod: {
+          skill_dmgInc: prod(
+            percent(dm.lockedPassive.skillContDmgInc),
+            input.total.eleMas
+          ),
+        },
+      })
+    ),
+    skillContSsDmg: equal(
+      condLockRevelation,
+      'on',
+      equal(
+        condLockStellarRadiance,
+        'ss',
+        stellarDmgNode(
+          percent(dm.lockedPassive.ssDmg),
+          'eleMas',
+          'stellarswirl',
+          'anemo'
+        )
+      )
+    ),
     lockDream_eleMas,
   },
   constellation1: {
     c1Awaiting_swirl_dmgInc,
+    c1Awaiting_stellarswirl_dmgInc,
     dmg: greaterEq(
       input.constellation,
       1,
       equal(
         condLockRevelation,
         'on',
-        customDmgNode(
-          prod(percent(dm.constellation1.dmg), input.total.eleMas),
-          'elemental'
+        unequal(
+          condLockStellarRadiance,
+          'ss',
+          customDmgNode(
+            prod(percent(dm.constellation1.dmg), input.total.eleMas),
+            'elemental'
+          )
+        )
+      )
+    ),
+    ssDmg: greaterEq(
+      input.constellation,
+      1,
+      equal(
+        condLockRevelation,
+        'on',
+        equal(
+          condLockStellarRadiance,
+          'ss',
+          stellarDmgNode(
+            percent(dm.constellation1.ssDmg),
+            'eleMas',
+            'stellarswirl',
+            'anemo'
+          )
         )
       )
     ),
@@ -296,20 +378,26 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
     skillBoost: skillC3,
     eleMas: a4Phec_eleMas,
   },
+  total: {
+    critRate_: c6_critRate_,
+    critDMG_: c6_critDMG_,
+  },
   teamBuff: {
     premod: {
       swirl_dmg_: skillDream_swirl_dmg_,
+      stellarswirl_dmg_: skillDream_stellarswirl_dmg_,
       swirl_dmgInc: c1Awaiting_swirl_dmgInc,
+      stellarswirl_dmgInc: c1Awaiting_stellarswirl_dmgInc,
       ...c2Dream_dmg_, // Maybe should be total?
       ...c2Dream_res_,
       swirl_critRate_: c6Dream_swirlCritRate_,
       swirl_critDMG_: c6Dream_swirlCritDMG_,
+      stellarswirl_critRate_: c6Dream_stellarswirl_critRate_,
+      stellarswirl_critDMG_: c6Dream_stellarswirl_critDMG_,
     },
     // Maybe should be premod?
     total: {
       eleMas: lockDream_eleMas,
-      critRate_: c6_critRate_,
-      critDMG_: c6_critDMG_,
     },
   },
 })
@@ -402,6 +490,9 @@ const sheet: TalentSheet = {
             {
               node: skillDream_swirl_dmg_,
             },
+            {
+              node: skillDream_stellarswirl_dmg_,
+            },
           ],
         },
       },
@@ -431,6 +522,12 @@ const sheet: TalentSheet = {
         },
         {
           node: c6Dream_swirlCritDMG_,
+        },
+        {
+          node: c6Dream_stellarswirl_critRate_,
+        },
+        {
+          node: c6Dream_stellarswirl_critDMG_,
         },
       ],
     }),
@@ -513,12 +610,50 @@ const sheet: TalentSheet = {
                 name: ct.chg('skill.skillParams.1'),
               }),
             },
+            {
+              node: infoMut(dmgFormulas.lockedPassive.skillContSsDmg, {
+                name: st('otherDmg.stellarswirl'),
+              }),
+            },
+          ],
+        },
+      },
+    }),
+    ct.condTem('passive3', {
+      path: condLockStellarRadiancePath,
+      value: condLockStellarRadiance,
+      teamBuff: true,
+      canShow: equal(condLockRevelation, 'on', 1),
+      name: st('elementalReaction.stellarswirl'),
+      states: {
+        ss: {
+          fields: [
+            {
+              text: st('elementalReaction.stellar.gainRadianceSs'),
+            },
+            {
+              text: stg('duration'),
+              value: 8,
+              unit: 's',
+            },
           ],
         },
       },
     }),
   ]),
   constellation1: ct.talentTem('constellation1', [
+    ct.fieldsTem('constellation1', {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.constellation1.dmg, { name: st('dmg') }),
+        },
+        {
+          node: infoMut(dmgFormulas.constellation1.ssDmg, {
+            name: st('otherDmg.stellarswirl'),
+          }),
+        },
+      ],
+    }),
     ct.condTem('constellation1', {
       value: condC1Awaiting,
       path: condC1AwaitingPath,
@@ -529,6 +664,9 @@ const sheet: TalentSheet = {
           fields: [
             {
               node: c1Awaiting_swirl_dmgInc,
+            },
+            {
+              node: c1Awaiting_stellarswirl_dmgInc,
             },
             {
               text: stg('duration'),
