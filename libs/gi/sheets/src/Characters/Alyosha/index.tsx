@@ -14,7 +14,6 @@ import {
   prod,
   subscript,
   target,
-  unequal,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
@@ -123,7 +122,7 @@ const a0Precision_stellarconduct_dmg_disp = infoMut(
   equal(
     condA0StellarRadianceSc,
     'on',
-    unequal(condSkillPrecision, undefined, dm.passive3.stellarconduct_dmg_)
+    prod(skillPrecision, dm.passive3.stellarconduct_dmg_)
   ),
   { path: 'stellarconduct_dmg_', isTeamBuff: true }
 )
