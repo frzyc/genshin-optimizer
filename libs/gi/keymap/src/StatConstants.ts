@@ -122,7 +122,7 @@ export const transformativeReactions: Record<
     canCrit: true,
   },
   stellarswirl: {
-    name: 'Stellar-Swirl',
+    name: 'Stellar Swirl',
     multi: 0.75, // 2x or 3x for the vortex
     variants: ['anemo', 'cryo'],
     resist: 'anemo', // This can be anemo or cryo resist depending on type

@@ -91,12 +91,14 @@ const data = {
     vaporize: 3111567595,
     melt: 3497793651,
     // Technically this should be 'rupture', but I don't see a 'rupture' string
-    bloom: 1216168406,
+    bloom: 1216168406 - MediumTextMapOffset,
     burgeon: 2021015747,
     hyperbloom: 2697794115 - MediumTextMapOffset,
     quicken: 347446227 - MediumTextMapOffset,
     aggravate: 2961120579,
     spread: 2191579811 - MediumTextMapOffset,
+    stellarconduct: 1657351122,
+    stellarswirl: 1879060384,
   },
   stat: {
     def: 3591287138, //maybe it's 527947494 or 1575853882
@@ -115,9 +117,9 @@ const data = {
     // Normal Attack
     auto: 1171619685 - MediumTextMapOffset, // or 1653327868
     // Elemental Skill
-    skill: 3477257188 - MediumTextMapOffset, // or 4260972229
+    skill: 3477257188, // or 4260972229
     // Elemental Burst
-    burst: 3250738285, // 2453877364 3626565793 3152729845
+    burst: 3250738797, // 2453877364 3626565793 3152729845
     // Altenate Sprint
     altSprint: [3378550992, 'altSprint'], // mona's desc
   },
@@ -130,7 +132,7 @@ const data = {
   // Unlocks after completing the prerequisite quests
   unlockLockedPassive: 2816162158,
   // Witch's Homework
-  witchPassive: 3169849014 - MediumTextMapOffset,
+  witchPassive: 3169849014,
   // Moonsign
   moonsign: 47522259,
   // Hexerei

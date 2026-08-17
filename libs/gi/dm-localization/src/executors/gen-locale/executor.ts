@@ -330,7 +330,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
 
     if (candSkillDepotIds?.length) {
       //Traveler
-      const [_1, pyro, hydro, anemo, _5, geo, electro, dendro] =
+      const [_1, pyro, hydro, anemo, cryo, geo, electro, dendro] =
         candSkillDepotIds
       const gender = characterIdMap[charid] === 'TravelerF' ? 'F' : 'M'
       genTalentHash(
@@ -356,6 +356,10 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
       genTalentHash(
         ['char', `TravelerPyro${gender}`],
         avatarSkillDepotExcelConfigData[pyro]
+      )
+      genTalentHash(
+        ['char', `TravelerCryo${gender}`],
+        avatarSkillDepotExcelConfigData[cryo]
       )
     } else {
       genTalentHash(
@@ -519,6 +523,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
         'Dendro',
         'Hydro',
         'Pyro',
+        'Cryo',
       ] as const
       keys.forEach((ele) => {
         const transLocGenKey =
