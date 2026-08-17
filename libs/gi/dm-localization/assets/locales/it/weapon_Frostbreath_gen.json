@@ -1,0 +1,24 @@
+{
+  "name": "Gelorespiro",
+  "description": {
+    "0": "Una lancia di ghiaccio solido pervasa da un gelo intenso. Si dice che un tempo appartenesse allo Tsar Belyi, che regnò su Snezhnaya in un lontano passato."
+  },
+  "passiveName": "Lancio lontano",
+  "passiveDescription": {
+    "0": {
+      "0": "Innescare una reazione elementale di Cryo o di Hydro aumenta l'ATT del personaggio che equipaggia l'arma di un <cryo>20%</cryo> per 15 s e ripristina di <cryo>6</cryo> l'energia elementale degli altri membri del gruppo. Questo effetto può attivarsi una volta ogni 16 s."
+    },
+    "1": {
+      "0": "Innescare una reazione elementale di Cryo o di Hydro aumenta l'ATT del personaggio che equipaggia l'arma di un <cryo>25%</cryo> per 15 s e ripristina di <cryo>7,5</cryo> l'energia elementale degli altri membri del gruppo. Questo effetto può attivarsi una volta ogni 16 s."
+    },
+    "2": {
+      "0": "Innescare una reazione elementale di Cryo o di Hydro aumenta l'ATT del personaggio che equipaggia l'arma di un <cryo>30%</cryo> per 15 s e ripristina di <cryo>9</cryo> l'energia elementale degli altri membri del gruppo. Questo effetto può attivarsi una volta ogni 16 s."
+    },
+    "3": {
+      "0": "Innescare una reazione elementale di Cryo o di Hydro aumenta l'ATT del personaggio che equipaggia l'arma di un <cryo>35%</cryo> per 15 s e ripristina di <cryo>10,5</cryo> l'energia elementale degli altri membri del gruppo. Questo effetto può attivarsi una volta ogni 16 s."
+    },
+    "4": {
+      "0": "Innescare una reazione elementale di Cryo o di Hydro aumenta l'ATT del personaggio che equipaggia l'arma di un <cryo>40%</cryo> per 15 s e ripristina di <cryo>12</cryo> l'energia elementale degli altri membri del gruppo. Questo effetto può attivarsi una volta ogni 16 s."
+    }
+  }
+}

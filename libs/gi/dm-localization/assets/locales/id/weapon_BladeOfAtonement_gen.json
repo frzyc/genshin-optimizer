@@ -1,0 +1,24 @@
+{
+  "name": "Blade of Atonement",
+  "description": {
+    "0": "Pedang besar warisan Luchkin, konon hanya pejuang paling pemberani yang berhak mengangkatnya."
+  },
+  "passiveName": "Repentance and Redemption",
+  "passiveDescription": {
+    "0": {
+      "0": "Setelah memicu Reaksi Elemental, Elemental Mastery Karakter yang mengenakan +<cryo>64</cryo> poin selama 12 detik. Setelah memicu reaksi Stellar Glimmer, ATK Karakter yang mengenakan +<cryo>16%</cryo> selama 12 detik. Karakter yang mengenakan tetap dapat memicu efek di atas meski ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "1": {
+      "0": "Setelah memicu Reaksi Elemental, Elemental Mastery Karakter yang mengenakan +<cryo>80</cryo> poin selama 12 detik. Setelah memicu reaksi Stellar Glimmer, ATK Karakter yang mengenakan +<cryo>20%</cryo> selama 12 detik. Karakter yang mengenakan tetap dapat memicu efek di atas meski ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "2": {
+      "0": "Setelah memicu Reaksi Elemental, Elemental Mastery Karakter yang mengenakan +<cryo>96</cryo> poin selama 12 detik. Setelah memicu reaksi Stellar Glimmer, ATK Karakter yang mengenakan +<cryo>24%</cryo> selama 12 detik. Karakter yang mengenakan tetap dapat memicu efek di atas meski ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "3": {
+      "0": "Setelah memicu Reaksi Elemental, Elemental Mastery Karakter yang mengenakan +<cryo>112</cryo> poin selama 12 detik. Setelah memicu reaksi Stellar Glimmer, ATK Karakter yang mengenakan +<cryo>28%</cryo> selama 12 detik. Karakter yang mengenakan tetap dapat memicu efek di atas meski ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "4": {
+      "0": "Setelah memicu Reaksi Elemental, Elemental Mastery Karakter yang mengenakan +<cryo>128</cryo> poin selama 12 detik. Setelah memicu reaksi Stellar Glimmer, ATK Karakter yang mengenakan +<cryo>32%</cryo> selama 12 detik. Karakter yang mengenakan tetap dapat memicu efek di atas meski ada di dalam party namun sedang tidak berada di medan pertempuran."
+    }
+  }
+}

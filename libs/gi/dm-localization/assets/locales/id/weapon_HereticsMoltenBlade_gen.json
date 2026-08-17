@@ -1,0 +1,24 @@
+{
+  "name": "Heretic's Molten Blade",
+  "description": {
+    "0": "Senjata yang sudah terlalu lama tidak digunakan yang ia cabut kembali saat pertama kali bertemu dengan sang Dewa Api yang diberkati oleh banyak orang."
+  },
+  "passiveName": "Lone Light's Blessing",
+  "passiveDescription": {
+    "0": {
+      "0": "Setelah Karakter yang mengenakan melancarkan Elemental Skill, ia akan mendapatkan efek \"Gleam of First Light\": Selama efek berlangsung, jarak pergerakan Karakter yang mengenakan akan tercatat, setiap detiknya akan memberikan <cryo>18%</cryo>-<cryo>36%</cryo> ATK berdasarkan jarak yang tercatat pada detik sebelumnya. Efek ini berlangsung selama 14 detik dan dapat terpicu sekali setiap 14 detik. Efek akan terhapus saat Karakter yang mengenakan meninggalkan medan pertempuran."
+    },
+    "1": {
+      "0": "Setelah Karakter yang mengenakan melancarkan Elemental Skill, mendapatkan Gleam of First Light: Selama efek berlangsung, jarak pergerakan Karakter yang mengenakan akan tercatat, setiap detiknya akan memberikan <cryo>22,5%</cryo>-<cryo>45%</cryo> ATK berdasarkan jarak yang tercatat pada detik sebelumnya. Efek ini berlangsung selama 14 detik, dapat terpicu sekali setiap 14 detik, dan akan dihapus saat Karakter yang mengenakan meninggalkan medan pertempuran."
+    },
+    "2": {
+      "0": "Setelah Karakter yang mengenakan melancarkan Elemental Skill, mendapatkan Gleam of First Light: Selama efek berlangsung, jarak pergerakan Karakter yang mengenakan akan tercatat, setiap detiknya akan memberikan <cryo>27%</cryo>-<cryo>54%</cryo> ATK berdasarkan jarak yang tercatat pada detik sebelumnya. Efek ini berlangsung selama 14 detik, dapat terpicu sekali setiap 14 detik, dan akan dihapus saat Karakter yang mengenakan meninggalkan medan pertempuran."
+    },
+    "3": {
+      "0": "Setelah Karakter yang mengenakan melancarkan Elemental Skill, mendapatkan Gleam of First Light: Selama efek berlangsung, jarak pergerakan Karakter yang mengenakan akan tercatat, setiap detiknya akan memberikan <cryo>31,5%</cryo>-<cryo>63%</cryo> ATK berdasarkan jarak yang tercatat pada detik sebelumnya. Efek ini berlangsung selama 14 detik, dapat terpicu sekali setiap 14 detik, dan akan dihapus saat Karakter yang mengenakan meninggalkan medan pertempuran."
+    },
+    "4": {
+      "0": "Setelah Karakter yang mengenakan melancarkan Elemental Skill, mendapatkan Gleam of First Light: Selama efek berlangsung, jarak pergerakan Karakter yang mengenakan akan tercatat, setiap detiknya akan memberikan <cryo>36%</cryo>-<cryo>72%</cryo> ATK berdasarkan jarak yang tercatat pada detik sebelumnya. Efek ini berlangsung selama 14 detik, dapat terpicu sekali setiap 14 detik, dan akan dihapus saat Karakter yang mengenakan meninggalkan medan pertempuran."
+    }
+  }
+}

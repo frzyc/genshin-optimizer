@@ -1,0 +1,195 @@
+{
+  "name": "Odette",
+  "title": "La Danzarina Nívea",
+  "description": "Una célebre bailarina de ballet de Snezhnaya que florece en las nieves con una belleza tan nítida como la escarcha.",
+  "constellationName": "Cygnus Olor",
+  "auto": {
+    "name": "Variación del cisne níveo",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 5 ataques consecutivos con espada."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume cierta cantidad de Aguante para ejecutar un tajo cegador hacia delante."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de 5.º golpe",
+      "5": "Daño de ATQ Cargado",
+      "6": "Coste de Aguante de ATQ Cargado",
+      "7": "Daño de Caída",
+      "8": "Daño de impacto de caída baja/alta",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Adagio: Danza nocturna fantasmagórica",
+    "description": {
+      "0": "Con unos gráciles pasos de baile, inflige <cryo>Daño Cryo en el AdE</cryo> e invoca a una <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>doble bailarina</strong></tooltip> de sí misma.",
+      "1": "Si en el campo de batalla ya hay una <strong>doble bailarina</strong> invocada por Odette, volverá a invocarla y reiniciará su duración.",
+      "2": "<br/>",
+      "3": "<strong>Doble bailarina</strong>",
+      "4": "Alterna entre dos tipos de pasos de baile, el <strong>plumífero</strong> y el <strong>alado</strong>, para atacar cada cierto tiempo a los enemigos cercanos con unos movimientos gráciles y elegantes que infligen <cryo>Daño Cryo en el AdE</cryo>.",
+      "5": "Además, durante 6 s después de usar la Habilidad Elemental, <strong>Adagio: Danza nocturna fantasmagórica</strong>, esta se remplazará por la Habilidad Elemental especial <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Adagio: Coda del amanecer</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11500004 values=[]></tooltip>, con la cual realizará un dueto que inflige <cryo>Daño Cryo en el AdE</cryo> repetidas veces a los enemigos cercanos. Al finalizar el dueto, infligirá una vez <cryo>Daño Cryo en el AdE</cryo> considerado como daño de Superconductor Estelar o Torbellino Estelar."
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño continuo de Coda del amanecer",
+      "2": "Daño de Superconductor Estelar/Torbellino Estelar de Coda del amanecer",
+      "3": "Daño de paso de baile plumífero",
+      "4": "Daño de Superconductor Estelar/Torbellino Estelar de paso de baile plumífero",
+      "5": "Daño de paso de baile alado",
+      "6": "Daño de Superconductor Estelar/Torbellino Estelar de paso de baile alado",
+      "7": "TdE de Coda del amanecer",
+      "8": "Duración de doble bailarina",
+      "9": "TdE de habilidad",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Presto: Sueño de plumas umbrías",
+    "description": {
+      "0": "Con unos ágiles pasos de baile, inflige varias veces <cryo>Daño Cryo en el AdE</cryo>, invoca una <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>doble bailarina</strong></tooltip> de sí misma y obtiene el efecto de <strong>sueño del cisne níveo</strong>, el cual aumenta el daño de Destello Estelar infligido por Odette.",
+      "1": "Además, durante 6 s después de usar la Habilidad Definitiva, <strong>Presto: Sueño de plumas umbrías</strong>, la Habilidad Elemental de Odette, <strong>Adagio: Danza nocturna fantasmagórica</strong>, se remplazará por la Habilidad Elemental especial <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Adagio: Coda del amanecer</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11500004 values=[]></tooltip>.",
+      "2": "<br/>",
+      "3": "Si en el campo de batalla ya hay una doble bailarina invocada por Odette, aparecerá a su lado y reiniciará su duración."
+    },
+    "skillParams": {
+      "0": "Daño de tajo",
+      "1": "Daño del último tajo",
+      "2": "Aumento de daño de Destello Estelar de sueño del cisne níveo",
+      "3": "Duración de sueño del cisne níveo",
+      "4": "Duración de doble bailarina",
+      "5": "TdE",
+      "6": "Energía Elemental",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Primavera de la elegida",
+    "description": {
+      "0": "Cuando Odette invoque a su <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>doble bailarina</strong></tooltip>, obtendrá también 4 cargas de <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>cadenza</strong></tooltip>."
+    }
+  },
+  "passive2": {
+    "name": "Patética de la Patetícheskaya",
+    "description": {
+      "0": "Por cada 100 pts. de ATQ que tenga Odette por encima de los 1000 pts., el daño de Destello Estelar que inflige aumentará en un 1.5% adicional del daño original. Como máximo, podrá infligir un 30% adicional del daño original de esta manera."
+    }
+  },
+  "passive3": {
+    "name": "Bendición fulgorestelar: Danza de la aurora",
+    "description": {
+      "0": "Al estar dentro de un <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>campo estrellapolar</strong></tooltip> o durante 8 s después de que un personaje del equipo cause una reacción de Torbellino Estelar en las cercanías, Odette entrará en el estado de <strong>esplendor: Superconductor Estelar</strong> o el de <strong>esplendor: Torbellino Estelar</strong>, respectivamente.",
+      "1": "Cuando un personaje del equipo cause una reacción de Superconductor o Torbellino Cryo, esta se transformará respectivamente en una reacción de Superconductor Estelar o Torbellino Estelar. El daño base de estas reacciones de los personajes del equipo aumentará en un 0.7% por cada 100 pts. de ATQ que tenga Odette. Como máximo, dicho daño puede aumentar en un 14% de esta manera."
+    }
+  },
+  "passive": {
+    "name": "Eco del sueño invernal",
+    "description": {
+      "0": "Muestra la ubicación de los <strong>objetos típicos de Snezhnaya</strong> cercanos en el minimapa.",
+      "1": "Practicar danza en el tiempo libre podría activar otros efectos..."
+    }
+  },
+  "constellation1": {
+    "name": "“En una mañana sin danza, ella observó su reflejo”",
+    "description": {
+      "0": "Tras usar la Habilidad Elemental especial <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Adagio: Coda del amanecer</strong></tooltip>, al finalizar el dueto, Odette infligirá <cryo>Daño Cryo en el AdE</cryo> una vez más a los enemigos cercanos considerado de una naturaleza distinta:",
+      "1": [
+        "Al encontrarse en estado de <strong>esplendor: Superconductor Estelar</strong> o en ningún estado de esplendor, dicho daño se considerará de Superconductor Estelar y será equivalente al 300% del ATQ de Odette.",
+        "Al encontrarse en estado de <strong>esplendor: Torbellino Estelar</strong>, dicho daño se considerará de Torbellino Estelar y será equivalente al 450% del ATQ de Odette."
+      ],
+      "2": "<br/>",
+      "3": "Además, fortalece el talento de ascensión “Primavera de la elegida”, de manera que, al invocar a la <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>doble bailarina</strong></tooltip>, Odette obtendrá 2 cargas adicionales de <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>cadenza</strong></tooltip> y, cuando esté en tu equipo pero no en uso, la velocidad a la que se eliminan las cargas de <strong>cadenza</strong> aumentará a 2 cargas por segundo."
+    }
+  },
+  "constellation2": {
+    "name": "“Quiero ver los sueños nunca vistos por el cisne níveo”",
+    "description": {
+      "0": "Fortalece el talento de ascensión “Primavera de la elegida”, de manera que cada carga de <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>cadenza</strong></tooltip> también aumenta en un 7% el ATQ del personaje.",
+      "1": "Además, cuando la <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>doble bailarina</strong></tooltip> esté activa y Odette se encuentre en estado de <tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>esplendor: Destello Estelar</strong></tooltip>, las RES Elementales correspondientes de los enemigos cercanos a la <strong>doble bailarina</strong> se reducirán en un 20%:",
+      "2": [
+        "<strong>Esplendor: Superconductor Estelar</strong>"
+      ],
+      "3": "Reduce las RES <cryo>Cryo</cryo> y <electro>Electro</electro>.",
+      "4": [
+        "<strong>Esplendor: Torbellino Estelar</strong>"
+      ],
+      "5": "Reduce las RES <cryo>Cryo</cryo> y <anemo>Anemo</anemo>."
+    }
+  },
+  "constellation3": {
+    "name": "“Seguiré al viento aullante y ascenderé solitaria”",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_Odette_gen baseKey18=skill>Adagio: Danza nocturna fantasmagórica</tooltip></strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "“Hacia arriba, cayendo a un cielo borroso y ardiente”",
+    "description": {
+      "0": "Fortalece la Habilidad Definitiva, <strong>Presto: Sueño de plumas umbrías</strong>, de manera que, cuando Odette obtiene el efecto de <strong>sueño del cisne níveo</strong>, el daño de Destello Estelar de los demás personajes cercanos del equipo también aumenta en una cantidad equivalente al 50% del efecto de <strong>sueño del cisne níveo</strong>.",
+      "1": "<br/>",
+      "2": "Además, cuando un personaje del equipo inflija daño de Destello Estelar a un enemigo, Odette también realizará un ataque coordinado contra dicho enemigo que le infligirá una vez <cryo>Daño Cryo en el AdE</cryo>. Esto solo puede ocurrir una vez cada 3.5 s y la naturaleza del daño infligido será distinta dependiendo de lo siguiente:",
+      "3": [
+        "Al encontrarse en estado de <strong>esplendor: Superconductor Estelar</strong> o en ningún estado de esplendor, dicho daño se considerará daño de Superconductor Estelar y será equivalente al 66% del ATQ de Odette.",
+        "Al encontrarse en estado de <strong>esplendor: Torbellino Estelar</strong>, dicho daño se considerará daño de Torbellino Estelar y será equivalente al 99% del ATQ de Odette."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "“Observa, pues ya me he liberado del sufrimiento mundano”",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong><tooltip ns=char_Odette_gen baseKey18=burst>Presto: Sueño de plumas umbrías</tooltip></strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "“Extiende la mano y toca el rostro eterno del firmamento”",
+    "description": {
+      "0": "Fortalece el talento de ascensión “Primavera de la elegida”, de manera que, cuando Odette otorga <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>cadenza</strong></tooltip> a todos los personajes cercanos del equipo, la que ella tenga no se reducirá.",
+      "1": "Además, el daño de Destello Estelar que los personajes afectados por <strong>cadenza</strong> infligen a los enemigos <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>asciende</strong></tooltip> en un 25%, y el daño de Destello Estelar que Odette inflige a los enemigos asciende en un 20% adicional."
+    }
+  }
+}

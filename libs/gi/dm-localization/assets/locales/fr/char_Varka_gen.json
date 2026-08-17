@@ -118,7 +118,7 @@
   "passive2": {
     "name": "Avant-garde du vent",
     "description": {
-      "0": "Lorsqu'un membre de l'équipe à proximité déclenche une réaction de Dispersion, Varka obtient un cumul de <strong>serment de croc azur</strong>, augmentant les DGT de ses attaques normales, de ses attaques chargées, de ses attaques chargées spéciales <strong>Dévoreur azur</strong> et de ses compétences élémentaires spéciales <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Ascension des quatre vents</strong></tooltip> de 7,5 % pendant 8 s, cet effet pouvant être cumulé 4 fois maximum. Chaque personnage peut accorder un cumul de <strong>serment de croc azur</strong> toutes les secondes à Varka de cette manière."
+      "0": "Lorsqu'un membre de l'équipe à proximité déclenche une réaction de Dispersion ou d'Astrodispersion, Varka obtient un cumul de <strong>serment de croc azur</strong>, augmentant les DGT de ses attaques normales, de ses attaques chargées, de ses attaques chargées spéciales <strong>Dévoreur azur</strong> et de ses compétences élémentaires spéciales <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Ascension des quatre vents</strong></tooltip> de 7,5 % pendant 8 s, cet effet pouvant être cumulé 4 fois maximum. Chaque personnage peut accorder un cumul de <strong>serment de croc azur</strong> toutes les secondes à Varka de cette manière."
     }
   },
   "passive3": {
@@ -160,7 +160,7 @@
   "constellation4": {
     "name": "« Car personne ne peut nous priver de notre liberté de chanter... »",
     "description": {
-      "0": "Lorsque Varka déclenche une réaction de Dispersion, tous les personnages de l'équipe à proximité bénéficient d'un <anemo>bonus de DGT Anémo</anemo> et de l'élément correspondant de 20 % pendant 10 s."
+      "0": "Lorsque Varka déclenche une réaction de Dispersion ou d'Astrodispersion, tous les personnages de l'équipe à proximité bénéficient d'un <anemo>bonus de DGT Anémo</anemo> et de l'élément correspondant de 20 % pendant 10 s."
     }
   },
   "constellation5": {

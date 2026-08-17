@@ -1,0 +1,29 @@
+{
+  "setName": "Scarlet Proof",
+  "setEffects": {
+    "2": "ATK +18%.",
+    "4": "Setelah Karakter yang mengenakan memicu reaksi Stellar Swirl, maka CRIT Rate +16% dan DMG Stellar Swirl +40% selama 10 detik."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Honor to Your Devotion",
+      "desc": "Hiasan bunga berwarna merah cerah. Melambangkan kejayaan bagaikan bara api."
+    },
+    "plume": {
+      "name": "Glory to Your Legacy",
+      "desc": "Pena bulu berwarna merah cerah. Diberikan kepada darah termuda."
+    },
+    "sands": {
+      "name": "Time Gifted Unto You",
+      "desc": "Jam saku berwarna merah cerah. Mencatat batas waktu sebuah percakapan."
+    },
+    "goblet": {
+      "name": "Chalice of Your Blood and Sorrow",
+      "desc": "Botol anggur berwarna merah cerah. Semoga kamu tidak tahu apa yang pernah ada di dalamnya."
+    },
+    "circlet": {
+      "name": "Testament to Your Faith",
+      "desc": "Helm berwarna merah cerah. Semoga pernah melindungi seseorang."
+    }
+  }
+}

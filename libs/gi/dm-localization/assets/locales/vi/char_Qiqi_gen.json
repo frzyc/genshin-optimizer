@@ -150,7 +150,7 @@
     },
     "upgradedDescription": {
       "0": "Khi Tấn Công Thường và Trọng Kích của Qiqi đánh trúng kẻ địch, có 50% xác suất thêm cho kẻ địch một tấm Bùa Độ Ách Chân, kéo dài 6s. Hiệu quả này mỗi 30s chỉ kích hoạt 1 lần.",
-      "1": "<strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>: Xác suất kích hoạt hiệu quả này tăng đến 100%, CD giảm còn 15s."
+      "1": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Tỏa Sáng: Tinh Tú Lấp Lánh</strong></tooltip>: Xác suất kích hoạt hiệu quả này tăng đến 100%, CD giảm còn 15s."
     }
   },
   "passive3": {
@@ -163,8 +163,10 @@
     "name": "Thất Bảo Phụng Chân",
     "description": {
       "0": "CD của Kỹ Năng Nguyên Tố <strong>Tiên Pháp - Hàn Bệnh Quỷ Sai</strong> giảm còn 15s.",
-      "1": "<strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>: Trong thời gian duy trì Hàn Bệnh Quỷ Sai, nhân vật trong đội bản thân sẽ tăng 50% sát thương phản ứng Siêu Dẫn, Tinh-Siêu Dẫn.",
-      "2": "Ngoài ra, khi ở trong <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Vùng Trục Sao</strong></tooltip>, Qiqi sẽ vào trạng thái <strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>."
+      "1": "<strong>Tỏa Sáng: Tinh Tú Lấp Lánh</strong>: Trong thời gian duy trì Hàn Bệnh Quỷ Sai, nhân vật trong đội bản thân sẽ tăng sát thương phản ứng tương ứng:",
+      "2": "<strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>: Sát thương phản ứng Siêu Dẫn, Tinh-Siêu Dẫn tăng 50%.",
+      "3": "<strong>Tỏa Sáng: Tinh-Khuếch Tán</strong>: Sát thương phản ứng Khuếch Tán Nguyên Tố Băng, Tinh-Khuếch Tán tăng 50%.",
+      "4": "Ngoài ra, khi ở trong <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Vùng Trục Sao</strong></tooltip>/trong 8s sau khi nhân vật trong đội kích hoạt phản ứng Tinh-Khuếch Tán ở gần, Qiqi sẽ phân biệt tiến vào trạng thái <strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>/<strong>Tỏa Sáng: Tinh-Khuếch Tán</strong>."
     }
   },
   "constellation1": {
@@ -174,7 +176,7 @@
     },
     "upgradedDescription": {
       "0": "Khi Hàn Bệnh Quỷ Sai đánh trúng kẻ địch đang bị Bùa Độ Ách Chân đánh dấu, sẽ hồi phục 2 điểm Năng Lượng Nguyên Tố cho Qiqi.",
-      "1": "<strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>: Khi đòn tấn công và đòn đánh phối hợp của Hàn Bệnh Quỷ Sai đánh trúng kẻ địch, sẽ còn hồi phục 6 điểm Năng Lượng Nguyên Tố cho Qiqi. Hiệu quả này mỗi 6s tối đa kích hoạt một lần."
+      "1": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Tỏa Sáng: Tinh Tú Lấp Lánh</strong></tooltip>: Khi đòn tấn công và đòn đánh phối hợp của Hàn Bệnh Quỷ Sai đánh trúng kẻ địch, sẽ còn hồi phục 6 điểm Năng Lượng Nguyên Tố cho Qiqi. Hiệu quả này mỗi 6s tối đa kích hoạt một lần."
     }
   },
   "constellation2": {
@@ -184,7 +186,7 @@
     },
     "upgradedDescription": {
       "0": "Đối với kẻ địch bị ảnh hưởng bởi <cryo>Nguyên Tố Băng</cryo>, sát thương Tấn Công Thường và Trọng Kích mà Qiqi gây ra tăng 15%.",
-      "1": "<strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>: Tấn Công của Qiqi tăng 50%."
+      "1": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Tỏa Sáng: Tinh Tú Lấp Lánh</strong></tooltip>: Tấn Công của Qiqi tăng 50%."
     }
   },
   "constellation3": {
@@ -220,7 +222,7 @@
     "upgradedDescription": {
       "0": "Khi thi triển <strong>Tiên Pháp - Cứu Khổ Độ Ách</strong>, hồi sinh và phục hồi 50% HP cho tất cả các nhân vật trong đội ngã xuống.",
       "1": "Hiệu quả này mỗi 15 phút chỉ kích hoạt 1 lần.",
-      "2": "Ngoài ra, sau khi thi triển <strong>Tiên Pháp - Cứu Khổ Độ Ách</strong>, Qiqi sẽ còn nhận được 4 tầng <strong>Động Huyền</strong>: Ngoại trừ Qiqi, khi nhân vật ra trận hiện tại trong đội bản thân gây sát thương phản ứng Tinh-Siêu Dẫn, sẽ tiêu hao 1 tầng <strong>Động Huyền</strong> để tăng sát thương gây ra tương đương 600% Tấn Công của Qiqi. <strong>Động Huyền</strong> tối đa duy trì 12s, khi thi triển <strong>Tiên Pháp - Cứu Khổ Độ Ách</strong> sẽ làm mới số tầng."
+      "2": "Ngoài ra, sau khi thi triển <strong>Tiên Pháp - Cứu Khổ Độ Ách</strong>, Qiqi sẽ còn nhận được 4 tầng <strong>Động Huyền</strong>: Ngoại trừ Qiqi, khi nhân vật ra trận hiện tại trong đội bản thân thông qua Thiên Phú và Kỹ Năng để trực tiếp gây sát thương phản ứng Tinh-Siêu Dẫn hoặc Tinh-Khuếch Tán, sẽ tiêu hao 1 tầng <strong>Động Huyền</strong> để tăng sát thương gây ra tương đương 600% Tấn Công của Qiqi. <strong>Động Huyền</strong> tối đa duy trì 12s, khi thi triển <strong>Tiên Pháp - Cứu Khổ Độ Ách</strong> sẽ làm mới số tầng."
     }
   }
 }

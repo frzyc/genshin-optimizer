@@ -1,0 +1,24 @@
+{
+  "name": "Choc des rois",
+  "description": {
+    "0": "Un coffret doré richement incrusté de pierres précieuses. Il renferme un jeu fort prisé des rois des sables."
+  },
+  "passiveName": "Sans se soucier du jour ni de la nuit",
+  "passiveDescription": {
+    "0": {
+      "0": "Utiliser une compétence élémentaire accorde l'effet Lois du plateau pendant 6 s au personnage équipé de l'arme : augmente l'ATQ de <cryo>20 %</cryo> et la maîtrise élémentaire de <cryo>100</cryo> pts. Cet effet peut être déclenché une fois toutes les 12 s et ne peut pas se cumuler. Pendant l'effet, le personnage équipé de l'arme peut prolonger la durée de 6 s en touchant un ennemi avec une attaque chargée, la durée pouvant être prolongée une seule fois de cette manière."
+    },
+    "1": {
+      "0": "Utiliser une compétence élémentaire accorde l'effet Lois du plateau pendant 6 s au personnage équipé de l'arme : augmente l'ATQ de <cryo>25 %</cryo> et la maîtrise élémentaire de <cryo>125</cryo> pts. Cet effet peut être déclenché une fois toutes les 12 s et ne peut pas se cumuler. Pendant l'effet, le personnage équipé de l'arme peut prolonger la durée de 6 s en touchant un ennemi avec une attaque chargée, la durée pouvant être prolongée une seule fois de cette manière."
+    },
+    "2": {
+      "0": "Utiliser une compétence élémentaire accorde l'effet Lois du plateau pendant 6 s au personnage équipé de l'arme : augmente l'ATQ de <cryo>30 %</cryo> et la maîtrise élémentaire de <cryo>150</cryo> pts. Cet effet peut être déclenché une fois toutes les 12 s et ne peut pas se cumuler. Pendant l'effet, le personnage équipé de l'arme peut prolonger la durée de 6 s en touchant un ennemi avec une attaque chargée, la durée pouvant être prolongée une seule fois de cette manière."
+    },
+    "3": {
+      "0": "Utiliser une compétence élémentaire accorde l'effet Lois du plateau pendant 6 s au personnage équipé de l'arme : augmente l'ATQ de <cryo>35 %</cryo> et la maîtrise élémentaire de <cryo>175</cryo> pts. Cet effet peut être déclenché une fois toutes les 12 s et ne peut pas se cumuler. Pendant l'effet, le personnage équipé de l'arme peut prolonger la durée de 6 s en touchant un ennemi avec une attaque chargée, la durée pouvant être prolongée une seule fois de cette manière."
+    },
+    "4": {
+      "0": "Utiliser une compétence élémentaire accorde l'effet Lois du plateau pendant 6 s au personnage équipé de l'arme : augmente l'ATQ de <cryo>40 %</cryo> et la maîtrise élémentaire de <cryo>200</cryo> pts. Cet effet peut être déclenché une fois toutes les 12 s et ne peut pas se cumuler. Pendant l'effet, le personnage équipé de l'arme peut prolonger la durée de 6 s en touchant un ennemi avec une attaque chargée, la durée pouvant être prolongée une seule fois de cette manière."
+    }
+  }
+}

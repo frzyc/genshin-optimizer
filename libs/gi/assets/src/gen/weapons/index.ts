@@ -26,6 +26,7 @@ import BlackcliffSlasher from './BlackcliffSlasher'
 import BlackcliffWarbow from './BlackcliffWarbow'
 import BlackmarrowLantern from './BlackmarrowLantern'
 import BlackTassel from './BlackTassel'
+import BladeOfAtonement from './BladeOfAtonement'
 import BloodsoakedRuins from './BloodsoakedRuins'
 import BloodtaintedGreatsword from './BloodtaintedGreatsword'
 import CalamityOfEshu from './CalamityOfEshu'
@@ -33,9 +34,11 @@ import CalamityQueller from './CalamityQueller'
 import CashflowSupervision from './CashflowSupervision'
 import ChainBreaker from './ChainBreaker'
 import CinnabarSpindle from './CinnabarSpindle'
+import ClashOfKings from './ClashOfKings'
 import Cloudforged from './Cloudforged'
 import CompoundBow from './CompoundBow'
 import CoolSteel from './CoolSteel'
+import CovenantOfFrostAndSnow from './CovenantOfFrostAndSnow'
 import CranesEchoingCall from './CranesEchoingCall'
 import CrescentPike from './CrescentPike'
 import CrimsonMoonsSemblance from './CrimsonMoonsSemblance'
@@ -50,12 +53,15 @@ import DragonsBane from './DragonsBane'
 import DragonspineSpear from './DragonspineSpear'
 import DullBlade from './DullBlade'
 import EarthShaker from './EarthShaker'
+import EchoesOfTheHeart from './EchoesOfTheHeart'
 import ElegyForTheEnd from './ElegyForTheEnd'
+import Emberwell from './Emberwell'
 import EmeraldOrb from './EmeraldOrb'
 import EndOfTheLine from './EndOfTheLine'
 import EngulfingLightning from './EngulfingLightning'
 import EtherlightSpindlelute from './EtherlightSpindlelute'
 import EverlastingMoonglow from './EverlastingMoonglow'
+import ExaiphanesBlade from './ExaiphanesBlade'
 import EyeOfPerception from './EyeOfPerception'
 import FadingTwilight from './FadingTwilight'
 import FangOfTheMountainKing from './FangOfTheMountainKing'
@@ -75,9 +81,11 @@ import FlowingPurity from './FlowingPurity'
 import FluteOfEzpitzal from './FluteOfEzpitzal'
 import FootprintOfTheRainbow from './FootprintOfTheRainbow'
 import ForestRegalia from './ForestRegalia'
+import ForgedByTheGoldenMelody from './ForgedByTheGoldenMelody'
 import FracturedHalo from './FracturedHalo'
 import FreedomSworn from './FreedomSworn'
 import Frostbearer from './Frostbearer'
+import Frostbreath from './Frostbreath'
 import FruitfulHook from './FruitfulHook'
 import FruitOfFulfillment from './FruitOfFulfillment'
 import GestOfTheMightyWolf from './GestOfTheMightyWolf'
@@ -87,12 +95,14 @@ import Halberd from './Halberd'
 import Hamayumi from './Hamayumi'
 import HaranGeppakuFutsu from './HaranGeppakuFutsu'
 import HarbingerOfDawn from './HarbingerOfDawn'
+import HereticsMoltenBlade from './HereticsMoltenBlade'
 import HuntersBow from './HuntersBow'
 import HuntersPath from './HuntersPath'
 import IbisPiercer from './IbisPiercer'
 import IronPoint from './IronPoint'
 import IronSting from './IronSting'
 import JadefallsSplendor from './JadefallsSplendor'
+import JadeVista from './JadeVista'
 import KagotsurubeIsshin from './KagotsurubeIsshin'
 import KagurasVerity from './KagurasVerity'
 import KatsuragikiriNagamasa from './KatsuragikiriNagamasa'
@@ -184,6 +194,7 @@ import SnowTombedStarsilver from './SnowTombedStarsilver'
 import SolarPearl from './SolarPearl'
 import SongOfBrokenPines from './SongOfBrokenPines'
 import SongOfStillness from './SongOfStillness'
+import SongOfTheVigil from './SongOfTheVigil'
 import SplendorOfTranquilWaters from './SplendorOfTranquilWaters'
 import StaffOfHoma from './StaffOfHoma'
 import StaffOfTheScarletSands from './StaffOfTheScarletSands'
@@ -228,6 +239,7 @@ import WavebreakersFin from './WavebreakersFin'
 import WaveridingWhirl from './WaveridingWhirl'
 import Whiteblind from './Whiteblind'
 import WhiteIronGreatsword from './WhiteIronGreatsword'
+import WhitelakeFrostfeather from './WhitelakeFrostfeather'
 import WhiteTassel from './WhiteTassel'
 import WindblumeOde from './WindblumeOde'
 import WineAndSong from './WineAndSong'
@@ -263,6 +275,7 @@ const data = {
   BlackcliffSlasher,
   BlackcliffWarbow,
   BlackmarrowLantern,
+  BladeOfAtonement,
   BloodsoakedRuins,
   BloodtaintedGreatsword,
   CalamityOfEshu,
@@ -270,9 +283,11 @@ const data = {
   CashflowSupervision,
   ChainBreaker,
   CinnabarSpindle,
+  ClashOfKings,
   Cloudforged,
   CompoundBow,
   CoolSteel,
+  CovenantOfFrostAndSnow,
   CranesEchoingCall,
   CrescentPike,
   CrimsonMoonsSemblance,
@@ -287,12 +302,15 @@ const data = {
   DragonspineSpear,
   DullBlade,
   EarthShaker,
+  EchoesOfTheHeart,
   ElegyForTheEnd,
+  Emberwell,
   EmeraldOrb,
   EndOfTheLine,
   EngulfingLightning,
   EtherlightSpindlelute,
   EverlastingMoonglow,
+  ExaiphanesBlade,
   EyeOfPerception,
   FadingTwilight,
   FangOfTheMountainKing,
@@ -312,9 +330,11 @@ const data = {
   FluteOfEzpitzal,
   FootprintOfTheRainbow,
   ForestRegalia,
+  ForgedByTheGoldenMelody,
   FracturedHalo,
   FreedomSworn,
   Frostbearer,
+  Frostbreath,
   FruitOfFulfillment,
   FruitfulHook,
   GestOfTheMightyWolf,
@@ -324,11 +344,13 @@ const data = {
   Hamayumi,
   HaranGeppakuFutsu,
   HarbingerOfDawn,
+  HereticsMoltenBlade,
   HuntersBow,
   HuntersPath,
   IbisPiercer,
   IronPoint,
   IronSting,
+  JadeVista,
   JadefallsSplendor,
   KagotsurubeIsshin,
   KagurasVerity,
@@ -421,6 +443,7 @@ const data = {
   SolarPearl,
   SongOfBrokenPines,
   SongOfStillness,
+  SongOfTheVigil,
   SplendorOfTranquilWaters,
   StaffOfHoma,
   StaffOfTheScarletSands,
@@ -466,6 +489,7 @@ const data = {
   WhiteIronGreatsword,
   WhiteTassel,
   Whiteblind,
+  WhitelakeFrostfeather,
   WindblumeOde,
   WineAndSong,
   WolfFang,

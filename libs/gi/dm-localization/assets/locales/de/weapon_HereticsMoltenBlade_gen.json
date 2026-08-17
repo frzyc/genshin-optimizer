@@ -1,0 +1,24 @@
+{
+  "name": "Klinge des Ketzerjägers",
+  "description": {
+    "0": "Die Waffe, die er erneut gezogen hatte, als er zum ersten Mal jener von allen verehrten Feuergottheit begegnete – eine Waffe, die er seit so langer Zeit nicht mehr benutzt hatte."
+  },
+  "passiveName": "Gabe des einsamen Lichts",
+  "passiveDescription": {
+    "0": {
+      "0": "Verleiht dem Träger, nachdem er die Elementarfähigkeit angewendet hat, „Sich im Auge spiegelndes Licht“: Zeichnet während der Wirkungsdauer die zurückgelegte Bewegungsdistanz des Trägers auf und verleiht ihm jede Sekunde basierend auf der in der vorherigen Sekunde aufgezeichneten Bewegungsdistanz einen ANG-Bonus von mindestens <cryo>18 %</cryo> bis max. <cryo>36 %</cryo>. Dieser Effekt hält 14 s an, hat eine Abklingzeit von 14 s und wird beim Auswechseln der Figur entfernt."
+    },
+    "1": {
+      "0": "Verleiht dem Träger, nachdem er die Elementarfähigkeit angewendet hat, „Sich im Auge spiegelndes Licht“: Zeichnet während der Wirkungsdauer die zurückgelegte Bewegungsdistanz des Trägers auf und verleiht ihm jede Sekunde basierend auf der in der vorherigen Sekunde aufgezeichneten Bewegungsdistanz einen ANG-Bonus von mindestens <cryo>22,5 %</cryo> bis max. <cryo>45 %</cryo>. Dieser Effekt hält 14 s an, hat eine Abklingzeit von 14 s und wird beim Auswechseln der Figur entfernt."
+    },
+    "2": {
+      "0": "Verleiht dem Träger, nachdem er die Elementarfähigkeit angewendet hat, „Sich im Auge spiegelndes Licht“: Zeichnet während der Wirkungsdauer die zurückgelegte Bewegungsdistanz des Trägers auf und verleiht ihm jede Sekunde basierend auf der in der vorherigen Sekunde aufgezeichneten Bewegungsdistanz einen ANG-Bonus von mindestens <cryo>27 %</cryo> bis max. <cryo>54 %</cryo>. Dieser Effekt hält 14 s an, hat eine Abklingzeit von 14 s und wird beim Auswechseln der Figur entfernt."
+    },
+    "3": {
+      "0": "Verleiht dem Träger, nachdem er die Elementarfähigkeit angewendet hat, „Sich im Auge spiegelndes Licht“: Zeichnet während der Wirkungsdauer die zurückgelegte Bewegungsdistanz des Trägers auf und verleiht ihm jede Sekunde basierend auf der in der vorherigen Sekunde aufgezeichneten Bewegungsdistanz einen ANG-Bonus von mindestens <cryo>31,5 %</cryo> bis max. <cryo>63 %</cryo>. Dieser Effekt hält 14 s an, hat eine Abklingzeit von 14 s und wird beim Auswechseln der Figur entfernt."
+    },
+    "4": {
+      "0": "Verleiht dem Träger, nachdem er die Elementarfähigkeit angewendet hat, „Sich im Auge spiegelndes Licht“: Zeichnet während der Wirkungsdauer die zurückgelegte Bewegungsdistanz des Trägers auf und verleiht ihm jede Sekunde basierend auf der in der vorherigen Sekunde aufgezeichneten Bewegungsdistanz einen ANG-Bonus von mindestens <cryo>36 %</cryo> bis max. <cryo>72 %</cryo>. Dieser Effekt hält 14 s an, hat eine Abklingzeit von 14 s und wird beim Auswechseln der Figur entfernt."
+    }
+  }
+}

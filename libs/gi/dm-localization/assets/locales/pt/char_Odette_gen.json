@@ -1,0 +1,191 @@
+{
+  "name": "Odette",
+  "title": "Graça Girante na Neve",
+  "description": "Uma renomada bailarina de Snezhnaya, ela desabrocha em meio à paisagem congelada com uma beleza tão cortante quanto a geada.",
+  "constellationName": "Cygnus Olor",
+  "auto": {
+    "name": "Variação do Cisne da Neve",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza até 5 golpes rápidos."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina para brandir a espada em frente em um lampejo brilhante."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano do 5° Golpe",
+      "5": "Dano de Ataque Carregado",
+      "6": "Consumo de Stamina de Ataque Carregado",
+      "7": "Dano Durante a Queda",
+      "8": "Dano de Queda de Baixa/Alta Altitude",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Dança Lenta: Transe da Noite Fantasma",
+    "description": {
+      "0": "Com passos de dança lentos e graciosos, causa <cryo>Dano Cryo em AdE</cryo> e invoca <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Sombra Dançarina</strong></tooltip> ao seu lado.",
+      "1": "Se já houver uma <strong>Sombra Dançarina</strong> invocada por Odette em campo, invoca novamente e redefine sua duração.",
+      "2": "<br/>",
+      "3": "<strong>Sombra Dançarina</strong>",
+      "4": "Alterna entre os passos de dança <strong>Pluma</strong> e <strong>Asa</strong>, atacando os inimigos próximos periodicamente com passos de dança graciosos, causando <cryo>Dano Cryo em AdE</cryo>.",
+      "5": "Além disso, nos 6s após lançar a Habilidade Elemental <strong>Dança Lenta: Transe da Noite Fantasma</strong>, a Habilidade Elemental <strong>Dança Lenta: Transe da Noite Fantasma</strong> de Odette será substituída pela Habilidade Elemental especial <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Dança Lenta: Final da Alvorada</tooltip></strong><tooltip ns=tooltips_gen baseKey18=11500004 values=[]></tooltip>, fazendo uma valsa contra os inimigos próximos, causando continuamente <cryo>Dano Cryo em AdE</cryo>, e quando a valsa acabar, causa uma instância de <cryo>Dano Cryo em AdE</cryo> que é considerado Dano de Supercondutor Estelar ou Redemoinho Estelar."
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Dano Contínuo de Final da Alvorada",
+      "2": "Dano de Supercondutor Estelar/Redemoinho Estelar de Final da Alvorada",
+      "3": "Dano de Passo de Dança da Pluma",
+      "4": "Dano de Supercondutor Estelar/Redemoinho Estelar de Passo de Dança da Pluma",
+      "5": "Dano de Passo de Dança da Asa",
+      "6": "Dano de Supercondutor Estelar/Redemoinho Estelar de Passo de Dança da Asa",
+      "7": "Recarga de Final da Alvorada",
+      "8": "Duração de Sombra Dançarina",
+      "9": "Tempo de Recarga",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Dança Rápida: Sonho de Penas Escuras",
+    "description": {
+      "0": "Com passos rápidos de dança, causa várias instâncias de <cryo>Dano Cryo em AdE</cryo>, invoca <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Sombra Dançarina</strong></tooltip> e obtém <strong>Sonho do Cisne da Neve</strong>: aumenta o Dano de Brilho Estelar de Odette.",
+      "1": "Além disso, nos 6s após lançar o Supremo <strong>Dança Rápida: Sonho de Penas Escuras</strong>, a Habilidade Elemental <strong>Dança Lenta: Transe da Noite Fantasma</strong> de Odette será substituída pela Habilidade Elemental especial <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Dança Lenta: Final da Alvorada</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11500004 values=[]></tooltip>.",
+      "2": "<br/>",
+      "3": "Se houver uma Sombra Dançarina invocada por Odette, invocará ela para seu lado, e redefinirá sua duração."
+    },
+    "skillParams": {
+      "0": "Dano de Corte",
+      "1": "Dano do Corte Final",
+      "2": "Aumento de Dano de Brilho Estelar de Sonho do Cisne da Neve",
+      "3": "Duração de Sonho do Cisne da Neve",
+      "4": "Duração de Sombra Dançarina",
+      "5": "Tempo de Recarga",
+      "6": "Energia Elemental",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Primavera do Escolhido",
+    "description": {
+      "0": "Quando Odette invocar <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Sombra Dançarina</strong></tooltip>, obtém 4 acúmulos de <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Esplendor Maravilhoso</strong></tooltip>."
+    }
+  },
+  "passive2": {
+    "name": "Elegia da Sinceridade Escarlate",
+    "description": {
+      "0": "Com base no ATQ de Odette que ultrapassar 1.000, cada 100 de ATQ fazem o Dano de Brilho Estelar de Odette causar mais 1.5% de Dano adicional original. É possível causar até 30% de Dano adicional original dessa forma."
+    }
+  },
+  "passive3": {
+    "name": "Bênção das Estrelas: Dança da Manhã Prateada",
+    "description": {
+      "0": "Quando estiver dentro do <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Campo da Estrela Polar</strong></tooltip>/nos 8s após o personagem próximo da equipe desencadear Redemoinho Estelar, Odette entrará nos estados <strong>Brilho Reluzente: Supercondutor Estelar</strong>/<strong>Brilho Reluzente: Redemoinho Estelar</strong> respectivamente.",
+      "1": "Quando um personagem desencadear Supercondutor/Redemoinho Cryo, converterá para desencadear Supercondutor Estelar/Redemoinho Estelar, e aumenta o Dano Básico dessa reação com base no ATQ de Odette: cada 100 de ATQ aumenta o Dano Básico em 0.7%. É possível acumular até 14% dessa forma."
+    }
+  },
+  "passive": {
+    "name": "Eco de um Sonho de Inverno",
+    "description": {
+      "0": "Mostra a localização de <strong>Especialidades de Snezhnaya</strong> próximas no mapa.",
+      "1": "Ao praticar sua dança no tempo livre, talvez possa ter algum outro efeito..."
+    }
+  },
+  "constellation1": {
+    "name": "\"Nessa Manhã sem Dança, Ela Olha para sua Sombra\"",
+    "description": {
+      "0": "Ao lançar a Habilidade Elemental <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Dança Lenta: Final da Alvorada</strong></tooltip>, quando a valsa acabar, Odette causa uma instância adicional de <cryo>Dano Cryo em AdE</cryo> contra os inimigos próximos. Esse Dano é considerado:",
+      "1": [
+        " <strong>Brilho Reluzente: Supercondutor Estelar</strong> ou não está em Brilho Reluzente: causa 300% do ATQ de Odette como Dano de Supercondutor Estelar.",
+        " <strong>Brilho Reluzente: Redemoinho Estelar</strong>: causa 450% do ATQ de Odette como Dano de Redemoinho Estelar."
+      ],
+      "2": "<br/>",
+      "3": "Além disso, o Talento de Ascensão \"Primavera do Escolhido\" é fortalecido: ao invocar <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Sombra Dançarina</strong></tooltip>, Odette obtém 2 acúmulos adicionais de <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Esplendor Maravilhoso</strong></tooltip>, e quando Odette não for a personagem ativa, a velocidade de remoção de <strong>Esplendor Maravilhoso</strong> é aumentada para 2 acúmulos por segundo."
+    }
+  },
+  "constellation2": {
+    "name": "\"Devo Ver o Sonho do Cisne da Neve, Pensou Ela\"",
+    "description": {
+      "0": "O Talento de Ascensão \"Primavera do Escolhido\" é fortalecido: cada acúmulo de <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Esplendor Maravilhoso</strong></tooltip> aumenta o ATQ do personagem em 7%.",
+      "1": "Além disso, quando <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Sombra Dançarina</strong></tooltip> está em campo, se Odette estiver no estado <tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Brilho Reluzente: Brilho Estelar</strong></tooltip>, a <strong>Sombra Dançarina</strong> reduzirá a RES Elemental correspondente dos inimigos próximos em 20%.",
+      "2": [
+        " <strong>Brilho Reluzente: Supercondutor Estelar</strong>: <cryo>Cryo</cryo>, <electro>Electro</electro>.",
+        " <strong>Brilho Reluzente: Redemoinho Estelar</strong>: <cryo>Cryo</cryo>, <anemo>Anemo</anemo>."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "\"Preciso Seguir o Vento Uivante e Continuar Avançando por Conta Própria\"",
+    "description": {
+      "0": "Aumenta o nível da Habilidade Elemental <strong><tooltip ns=char_Odette_gen baseKey18=skill>Dança Lenta: Transe da Noite Fantasma</tooltip></strong> em 3 níveis. ",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "\"Para Cima, Enquanto Caio no Céu Enevoado e Ardente\"",
+    "description": {
+      "0": "O Supremo <strong>Dança Rápida: Sonho de Penas Escuras</strong> é fortalecido: quando Odette obter <strong>Sonho do Cisne da Neve</strong>, aumentará o Dano de Brilho Estelar dos outros personagens próximos. O aumento é de 50% do efeito <strong>Sonho do Cisne da Neve</strong>.",
+      "1": "<br/>",
+      "2": "Além disso, quando um personagem da equipe causar Dano de Brilho Estelar contra um inimigo, Odette faz um Ataque Coordenado contra o inimigo, causando <cryo>Dano Cryo em AdE</cryo> uma vez. Esse efeito pode ser desencadeado uma vez a cada 3.5s, e o Dano é considerado de: ",
+      "3": [
+        " Quando está em <strong>Brilho Reluzente: Supercondutor Estelar</strong> ou não está em Brilho Reluzente: 66% do ATQ de Odette como Dano de Supercondutor Estelar.",
+        " <strong>Brilho Reluzente: Redemoinho Estelar</strong>: 99% do ATQ de Odette como Dano de Redemoinho Estelar."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "\"Veja, Me Despedi do Sofrimento Terreno\"",
+    "description": {
+      "0": "Aumenta o nível de <strong><tooltip ns=char_Odette_gen baseKey18=burst>Dança Rápida: Sonho de Penas Escuras</tooltip></strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "\"Estenda sua Mão para Tocar o Céu\"",
+    "description": {
+      "0": "O Talento de Ascensão \"Primavera do Escolhido\" é fortalecido: quando Odette conceder <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Esplendor Maravilhoso</strong></tooltip> para todos os membros da equipe próximos, seu Esplendor Maravilhoso não será reduzido.",
+      "1": "Além disso, personagens sob efeito de <strong>Esplendor Maravilhoso</strong> têm seu Dano de Brilho Estelar causado contra inimigos <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>Elevado</strong></tooltip> em 25%, e Eleva o Dano de Brilho Estelar causado contra os inimigos por Odette em 20% adicionais."
+    }
+  }
+}

@@ -165,7 +165,7 @@
       "0": "Dopo aver completato <strong>Compiti della strega: Sul risveglio del vento</strong>, Venti acquisisce l'attributo <strong>Hexerei</strong>. Quando il gruppo include almeno 2 personaggi con attributo Hexerei, questi ultimi ottengono l'effetto di potenziamento <strong>Hexerei: Rito segreto</strong>.",
       "1": "<br/>",
       "2": "<strong>Hexerei: Rito segreto</strong>",
-      "3": "Mentre è attivo In mezzo alla tempesta creato dal Tripudio elementale <strong>Ode all'Archon di Anemo</strong>, dopo che il personaggio attivo vicino ha innescato una reazione di Turbinio, i DAN del suddetto personaggio aumentano di un 50% e In mezzo alla tempesta di Venti infligge un 135% dei suoi DAN originali. L'effetto dura 4 s."
+      "3": "Mentre è attivo In mezzo alla tempesta creato dal Tripudio elementale <strong>Ode all'Archon di Anemo</strong>, dopo che il personaggio attivo vicino ha innescato una reazione di Turbinio o di Turbinio astrale, i DAN del suddetto personaggio aumentano di un 50% e In mezzo alla tempesta di Venti infligge un 135% dei suoi DAN originali. L'effetto dura 4 s."
     }
   },
   "constellation1": {

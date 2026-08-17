@@ -1,0 +1,24 @@
+{
+  "name": "Vista da Jade Primordial",
+  "description": {
+    "0": "Um arco longo de imensa força. Ele brilha com o esplendor dos sonhos mesmo nas noites mais escuras."
+  },
+  "passiveName": "Uma Vela Tecida pela Noite",
+  "passiveDescription": {
+    "0": {
+      "0": "Para cada membro da equipe que não seja o portador: se possuir o mesmo Tipo Elemental que o portador: a Proficiência Elemental do portador aumenta em <cryo>64</cryo>; se não possuir o mesmo Tipo Elemental que o portador: o ATQ do portador aumenta em <cryo>12%</cryo>. Os dois efeitos descritos acima podem acumular até 3 vezes no total, com os bônus de Proficiência Elemental sendo aplicados primeiro."
+    },
+    "1": {
+      "0": "Para cada membro da equipe que não seja o portador: se possuir o mesmo Tipo Elemental que o portador: a Proficiência Elemental do portador aumenta em <cryo>80</cryo>; se não possuir o mesmo Tipo Elemental que o portador: o ATQ do portador aumenta em <cryo>15%</cryo>. Os dois efeitos descritos acima podem acumular até 3 vezes no total, com os bônus de Proficiência Elemental sendo aplicados primeiro."
+    },
+    "2": {
+      "0": "Para cada membro da equipe que não seja o portador: se possuir o mesmo Tipo Elemental que o portador: a Proficiência Elemental do portador aumenta em <cryo>96</cryo>; se não possuir o mesmo Tipo Elemental que o portador: o ATQ do portador aumenta em <cryo>18%</cryo>. Os dois efeitos descritos acima podem acumular até 3 vezes no total, com os bônus de Proficiência Elemental sendo aplicados primeiro."
+    },
+    "3": {
+      "0": "Para cada membro da equipe que não seja o portador: se possuir o mesmo Tipo Elemental que o portador: a Proficiência Elemental do portador aumenta em <cryo>112</cryo>; se não possuir o mesmo Tipo Elemental que o portador: o ATQ do portador aumenta em <cryo>21%</cryo>. Os dois efeitos descritos acima podem acumular até 3 vezes no total, com os bônus de Proficiência Elemental sendo aplicados primeiro."
+    },
+    "4": {
+      "0": "Para cada membro da equipe que não seja o portador: se possuir o mesmo Tipo Elemental que o portador: a Proficiência Elemental do portador aumenta em <cryo>128</cryo>; se não possuir o mesmo Tipo Elemental que o portador: o ATQ do portador aumenta em <cryo>24%</cryo>. Os dois efeitos descritos acima podem acumular até 3 vezes no total, com os bônus de Proficiência Elemental sendo aplicados primeiro."
+    }
+  }
+}
