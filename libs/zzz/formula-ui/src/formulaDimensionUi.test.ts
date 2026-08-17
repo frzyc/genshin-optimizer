@@ -1,4 +1,4 @@
-import { abilityDims, formulas } from '@genshin-optimizer/zzz/formula'
+import { abilityDims } from '@genshin-optimizer/zzz/formula'
 import { describe, expect, it } from 'vitest'
 import {
   ABILITY_DIM_LABEL,
@@ -9,24 +9,18 @@ import {
 } from './formulaDimensionUi'
 
 describe('resolveAbilityDim', () => {
-  const sheetFormulas = formulas.Yixuan
-
   it('picks sheerDmg when a hit has no standardDmg sibling', () => {
     expect(
-      resolveAbilityDim(sheetFormulas, 'BasicAttackCirrusStrike_0', 'dmg')
+      resolveAbilityDim('Yixuan', 'BasicAttackCirrusStrike_0', 'dmg')
     ).toBe('sheerDmg')
   })
 
   it('maps UI dimension buckets to the bundled ability dim that exists in meta', () => {
     expect(
-      resolveAbilityDim(sheetFormulas, 'BasicAttackCirrusStrike_0', 'daze')
+      resolveAbilityDim('Yixuan', 'BasicAttackCirrusStrike_0', 'daze')
     ).toBe('dazeBuildup')
     expect(
-      resolveAbilityDim(
-        sheetFormulas,
-        'BasicAttackCirrusStrike_0',
-        'anomBuildup'
-      )
+      resolveAbilityDim('Yixuan', 'BasicAttackCirrusStrike_0', 'anomBuildup')
     ).toBe('anomBuildup')
   })
 })

@@ -29,7 +29,7 @@ function flattenAbilityFieldsBySkill(bySkill: AbilityFieldsBySkill): Field[] {
 
 /** Group static ability tags into bundled fields per skill tab and ability key. */
 export function buildAbilityFieldsBySkill(
-  charKey: CharacterKey,
+  _charKey: CharacterKey,
   abilityTags: Tag[]
 ): AbilityFieldsBySkill {
   const result: AbilityFieldsBySkill = {}
@@ -49,7 +49,7 @@ export function buildAbilityFieldsBySkill(
       const tags = skillTags.filter(
         (tag) => parseAbilityFromTag(tag)?.abilityKey === abilityKey
       )
-      const fields = groupFieldsByTag(tags, { charKey, skill })
+      const fields = groupFieldsByTag(tags)
       if (fields.length) fieldsByAbility[abilityKey] = fields
     }
 
@@ -75,7 +75,7 @@ export function buildCharFormulaFields(
     reads,
     fields: [
       ...flattenAbilityFieldsBySkill(abilityFieldsBySkill),
-      ...groupFieldsByTag(extraTags, { sheet: charKey, charKey }),
+      ...groupFieldsByTag(extraTags, charKey),
     ],
     readByListingKey: buildListingReadMap(reads),
     abilityFieldsBySkill,

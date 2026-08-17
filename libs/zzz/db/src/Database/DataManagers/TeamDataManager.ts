@@ -25,11 +25,10 @@ import type {
   Tag,
 } from '@genshin-optimizer/zzz/formula'
 import {
-  bundledFormulaInSheet,
-  formulas,
   getConditional,
-  isAbilityDim,
   isMember,
+  lookupFormulaEntry,
+  resolveFormulaSheet,
 } from '@genshin-optimizer/zzz/formula'
 import { z } from 'zod'
 import type { ZzzDatabase } from '../..'
@@ -387,7 +386,7 @@ export class TeamDataManager extends DataManager<
 
     if (rawTarget.name) {
       const sheet = rawTarget.sheet ?? resolveFormulaSheet(rawTarget)
-      const formula = getFormula({ ...rawTarget, sheet })
+      const formula = lookupFormulaEntry({ ...rawTarget, sheet })
       if (formula) {
         const abilityName = formula.tag.name
         if (!abilityName) return undefined
@@ -802,82 +801,15 @@ export function withInstDamageType2<T extends TargetTag>(
   return (aftershock ? { ...rest, damageType2: 'aftershock' } : rest) as T
 }
 
-function resolveFormulaSheet(target: TargetTag): Sheet | undefined {
-  const { name, q, sheet } = target
-  if (!name) return undefined
-
-  const matches = (charSheet: string) => {
-    const sheetFormulas = (formulas as Record<string, Record<string, unknown>>)[
-      charSheet
-    ]
-    if (!sheetFormulas) return false
-    if (q) {
-      if (isAbilityDim(q))
-        return !!bundledFormulaInSheet(
-          sheetFormulas as Record<string, { tag?: Tag }>,
-          name,
-          q
-        )
-      return Object.values(sheetFormulas).some(
-        (entry) =>
-          (entry as { tag?: Tag }).tag?.name === name &&
-          (entry as { tag?: Tag }).tag?.q === q
-      )
-    }
-    return !!sheetFormulas[name]
-  }
-
-  if (
-    sheet &&
-    allCharacterKeys.includes(sheet as CharacterKey) &&
-    matches(sheet)
-  )
-    return sheet as Sheet
-
-  for (const charSheet of allCharacterKeys) {
-    if (matches(charSheet)) return charSheet as Sheet
-  }
-  return undefined
-}
-
-function getFormula(target: TargetTag) {
-  const { name, q, sheet: sheetHint } = target
-  if (!name) return
-  const sheet = sheetHint ?? resolveFormulaSheet(target)
-  if (!sheet) return
-  const sheetFormulas = (formulas as any)[sheet] as
-    | Record<
-        string,
-        {
-          sheet: Sheet
-          name: string
-          tag: Tag
-        }
-      >
-    | undefined
-  if (!sheetFormulas) return
-
-  if (q) {
-    if (isAbilityDim(q)) return bundledFormulaInSheet(sheetFormulas, name, q)
-    const byTagQ = Object.values(sheetFormulas).find(
-      (entry) => entry.tag?.name === name && entry.tag?.q === q
-    )
-    if (byTagQ) return byTagQ
-    return undefined
-  }
-
-  return sheetFormulas[name]
-}
-
 export function targetTag(target: TargetTag): Tag {
   const { attribute } = target
-  const formula = getFormula(target)
-  if (formula) {
+  const formulaTag = lookupFormulaEntry(target)?.tag
+  if (formulaTag) {
     if (isGenericDmgInstTarget(target.name)) {
       const { damageType1, damageType2 } = target
-      return applyDamageTypeToTag(formula.tag, damageType1, damageType2)
+      return applyDamageTypeToTag(formulaTag, damageType1, damageType2)
     }
-    return formula.tag
+    return formulaTag
   }
   const qt = target.qt ?? 'final'
   return {

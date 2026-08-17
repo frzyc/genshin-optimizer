@@ -3,16 +3,20 @@ import { getUnitStr } from '@genshin-optimizer/common/util'
 import type { CharacterKey, StatKey } from '@genshin-optimizer/zzz/consts'
 import {
   allCharacterKeys,
-  elementalData,
   statKeyTextMap,
 } from '@genshin-optimizer/zzz/consts'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
+import { isAbilityDim } from '@genshin-optimizer/zzz/formula'
 import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
 import { StatDisplay } from '@genshin-optimizer/zzz/ui'
-import { abilityTagDisplay } from '../char/abilityFormulaLabels'
-import { damageTypeKeysMap } from '../char/util'
-import { statKeyFromListingTag } from '../optTarget'
-import { getTagLabel, warnUnresolvedTagLabel } from '../tagLabel'
+import { AbilityRowTitle } from '../char/abilityFormulaLabels'
+import { isAbilityFormulaTag } from '../abilityTag'
+import {
+  getTagLabel,
+  namedAbilityDimLabel,
+  tagQualifierLabel,
+  warnUnresolvedTagLabel,
+} from '../tagLabel'
 import { qtMap } from './qtMap'
 
 const extraHandlingStats = ['hp', 'hp_', 'atk', 'atk_', 'def', 'def_'] as const
@@ -45,11 +49,18 @@ export function TagFallbackLabel({
   tag: Tag
   showPercent?: boolean
 }) {
-  const abilityTitle =
-    tag.sheet && allCharacterKeys.includes(tag.sheet as CharacterKey)
-      ? abilityTagDisplay(tag.sheet as CharacterKey, tag)
-      : undefined
-  if (abilityTitle) return abilityTitle
+  if (
+    tag.sheet &&
+    allCharacterKeys.includes(tag.sheet as CharacterKey) &&
+    isAbilityFormulaTag(tag)
+  ) {
+    return <AbilityRowTitle charKey={tag.sheet as CharacterKey} tag={tag} />
+  }
+
+  if (tag.name && tag.q && isAbilityDim(tag.q)) {
+    const label = namedAbilityDimLabel(tag)
+    if (label) return <span>{label}</span>
+  }
 
   const label = getTagLabel(tag)
   const labelMapKey = tag.attribute ? (tag.q ?? label) : label
@@ -66,16 +77,14 @@ export function TagFallbackLabel({
       </span>
     )
   if (labelMap[labelMapKey as keyof typeof labelMap]) {
-    const strs = [
-      ...(tag.attribute ? [elementalData[tag.attribute]] : []),
-      ...(tag.damageType1 ? [damageTypeKeysMap[tag.damageType1]] : []),
-      ...(tag.damageType2 ? [damageTypeKeysMap[tag.damageType2]] : []),
-      labelMap[labelMapKey as keyof typeof labelMap],
-    ]
-    return <span>{strs.join(' ')}</span>
+    return (
+      <span>
+        {tagQualifierLabel(tag, labelMap[labelMapKey as keyof typeof labelMap])}
+      </span>
+    )
   }
 
-  const displayStatKey = (statKeyFromListingTag(tag) || label) as StatKey
+  const displayStatKey = label as StatKey
   if (statKeyTextMap[displayStatKey]) {
     return <StatDisplay statKey={displayStatKey} showPercent={showPercent} />
   }

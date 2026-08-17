@@ -1,4 +1,5 @@
 import type { Read } from '@genshin-optimizer/game-opt/engine'
+import type { Tag as GameOptTag } from '@genshin-optimizer/game-opt/engine'
 import {
   type Field,
   FieldDisplayList,
@@ -20,7 +21,6 @@ import {
 } from '@genshin-optimizer/zzz/ui'
 import { ListItem } from '@mui/material'
 import { memo, useCallback, useContext, useMemo } from 'react'
-import { formulaListingTagKey } from '../formulaFieldUtil'
 import {
   useCharFormulaFields,
   useOptCategoryCollapse,
@@ -94,6 +94,7 @@ function FormulaFieldRow({
     return (
       <MultiFormulaFieldRow
         field={field}
+        readByListingKey={readByListingKey}
         optTarget={optTarget}
         resolvedOptTag={resolvedOptTag}
       />
@@ -102,7 +103,6 @@ function FormulaFieldRow({
     return (
       <CharStatRow
         sourceField={field}
-        listingRead={readByListingKey.get(formulaListingTagKey(field.fieldRef))}
         readByListingKey={readByListingKey}
         optTarget={optTarget}
         resolvedOptTag={resolvedOptTag}
@@ -114,19 +114,16 @@ function FormulaFieldRow({
 const CharStatRow = memo(function CharStatRow({
   read,
   sourceField,
-  listingRead,
   readByListingKey,
   optTarget,
   resolvedOptTag,
 }: {
   read?: Read<Tag>
   sourceField?: TagField
-  listingRead?: Read<Tag>
   readByListingKey?: Map<string, Read<Tag>>
   optTarget: TargetTag | undefined
   resolvedOptTag: Tag | undefined
 }) {
-  const calc = useZzzCalcContext()
   const baseTag = sourceField?.fieldRef ?? read!.tag
 
   const mergedTag = useMemo(
@@ -135,9 +132,8 @@ const CharStatRow = memo(function CharStatRow({
   )
 
   const calcRead = useMemo(
-    () =>
-      formulaReadForTag(calc, mergedTag, read ?? listingRead, readByListingKey),
-    [calc, mergedTag, read, listingRead, readByListingKey]
+    () => formulaReadForTag(mergedTag, readByListingKey),
+    [mergedTag, readByListingKey]
   )
 
   const field = useMemo(() => {
@@ -191,10 +187,12 @@ const CharStatRow = memo(function CharStatRow({
 
 const MultiFormulaFieldRow = memo(function MultiFormulaFieldRow({
   field,
+  readByListingKey,
   optTarget,
   resolvedOptTag,
 }: {
   field: MultiTagField
+  readByListingKey: Map<string, Read<Tag>>
   optTarget: TargetTag | undefined
   resolvedOptTag: Tag | undefined
 }) {
@@ -208,7 +206,18 @@ const MultiFormulaFieldRow = memo(function MultiFormulaFieldRow({
     }
   }, [field, resolvedOptTag, optTarget])
 
+  const getRead = useCallback(
+    (fieldTag: GameOptTag) =>
+      formulaReadForTag(fieldTag as Tag, readByListingKey),
+    [readByListingKey]
+  )
+
   return (
-    <MultiTagFieldDisplay field={mergedField} showZero component={ListItem} />
+    <MultiTagFieldDisplay
+      field={mergedField}
+      getRead={getRead}
+      showZero
+      component={ListItem}
+    />
   )
 })

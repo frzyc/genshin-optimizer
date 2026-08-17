@@ -1,27 +1,16 @@
 import { ColorText } from '@genshin-optimizer/common/ui'
-import type {
-  Field,
-  MultiTagField,
-  TagField,
-} from '@genshin-optimizer/game-opt/sheet-ui'
-import type { CharacterKey, SkillKey } from '@genshin-optimizer/zzz/consts'
-import type { TargetTag } from '@genshin-optimizer/zzz/db'
+import type { Field, MultiTagField } from '@genshin-optimizer/game-opt/sheet-ui'
+import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import type { Sheet, Tag } from '@genshin-optimizer/zzz/formula'
-import { type AbilityDim, isAbilityDim } from '@genshin-optimizer/zzz/formula'
-import type { ReactNode } from 'react'
-import { skillFromTag } from './abilityTag'
 import {
-  partitionBundlableTags,
+  partitionAbilityHits,
   resolveBundleDmgQ,
-} from './bundledFormulaGrouping'
-import {
-  abilityBundleTitle,
-  abilityTagDisplay,
-} from './char/abilityFormulaLabels'
+} from '@genshin-optimizer/zzz/formula'
+import { isAbilityFormulaTag } from './abilityTag'
+import { AbilityRowTitle } from './char/abilityFormulaLabels'
 import { getVariant } from './char/util'
 import { TagDisplay } from './components/TagDisplay'
 import { ABILITY_DIM_LABEL } from './formulaDimensionUi'
-import { primaryTagFromField } from './formulaFieldUtil'
 
 function bundleFieldRefs(byQ: Map<string, Tag>) {
   const dmgQ = resolveBundleDmgQ(byQ)!
@@ -32,97 +21,42 @@ function bundleFieldRefs(byQ: Map<string, Tag>) {
   ]
 }
 
-function listingFormulaTitle(tag: Tag): ReactNode {
+/** Row title for bundled opt-target / stats fields. */
+export function formulaFieldTitle(tag: Tag) {
+  const charKey = tag.sheet as CharacterKey | undefined
+  if (charKey && isAbilityFormulaTag(tag)) {
+    return (
+      <ColorText color={getVariant(tag)}>
+        <AbilityRowTitle charKey={charKey} tag={tag} />
+      </ColorText>
+    )
+  }
   return <TagDisplay tag={tag} />
-}
-
-function singleFormulaField(
-  tag: Tag,
-  charKey: CharacterKey | undefined,
-  skill: SkillKey | undefined
-): TagField {
-  if (charKey && skill) {
-    return {
-      title: (
-        <ColorText color={getVariant(tag)}>
-          {abilityTagDisplay(charKey, tag, skill) ?? tag.name ?? tag.q ?? ''}
-        </ColorText>
-      ),
-      fieldRef: tag,
-    }
-  }
-  return {
-    title: listingFormulaTitle(tag),
-    fieldRef: tag,
-  }
-}
-
-type GroupFieldsOpts = {
-  sheet?: Sheet
-  charKey?: CharacterKey
-  skill?: SkillKey
 }
 
 /**
  * Groups tags that share `name` with dmg/daze/anom `q` into one {@link MultiTagField}.
  */
-export function groupFieldsByTag(
-  tags: Tag[],
-  opts: GroupFieldsOpts = {}
-): Field[] {
-  const { sheet, charKey, skill } = opts
-
-  const bundledTitle = (tag: Tag) => {
-    const resolvedSkill = skill ?? skillFromTag(tag)
-    if (charKey && resolvedSkill) {
-      return (
-        <ColorText color={getVariant(tag)}>
-          {abilityBundleTitle(charKey, tag, resolvedSkill) ??
-            tag.name ??
-            tag.q ??
-            ''}
-        </ColorText>
-      )
-    }
-    return listingFormulaTitle(tag)
-  }
-
+export function groupFieldsByTag(tags: Tag[], sheet?: Sheet): Field[] {
   const fields: Field[] = []
 
-  for (const part of partitionBundlableTags(tags, sheet)) {
+  for (const part of partitionAbilityHits(tags, sheet)) {
     if (part.kind === 'single') {
-      fields.push(singleFormulaField(part.tag, charKey, skill))
+      const { tag } = part
+      fields.push({
+        title: formulaFieldTitle(tag),
+        fieldRef: tag,
+      })
       continue
     }
 
     const dmgTag = part.byQ.get(part.dmgQ)!
     const multiField: MultiTagField = {
-      title: bundledTitle(dmgTag),
+      title: formulaFieldTitle(dmgTag),
       fieldRefs: bundleFieldRefs(part.byQ),
     }
     fields.push(multiField)
   }
 
   return fields
-}
-
-/** Resolve bundled ability dim for an opt-target field row. */
-export function abilityDimFromField(
-  field: Field,
-  currentTarget?: TargetTag,
-  sheetFallback?: string
-): AbilityDim | undefined {
-  const ref = primaryTagFromField(field)
-  if (!ref?.name) return undefined
-  const sheet = ref.sheet ?? sheetFallback
-  const targetSheet = currentTarget?.sheet ?? sheetFallback
-  if (
-    currentTarget?.name === ref.name &&
-    targetSheet === sheet &&
-    currentTarget.q &&
-    isAbilityDim(currentTarget.q)
-  )
-    return currentTarget.q
-  if (isAbilityDim(ref.q)) return ref.q
-  return undefined
 }

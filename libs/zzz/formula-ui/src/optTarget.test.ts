@@ -1,4 +1,5 @@
 import { read as tagRead } from '@genshin-optimizer/pando/engine'
+import { listingId } from '@genshin-optimizer/zzz/formula'
 import { targetTag } from '@genshin-optimizer/zzz/db'
 import { describe, expect, it } from 'vitest'
 import {
@@ -65,7 +66,7 @@ describe('isOptTargetTag', () => {
     expect(isOptTargetTag(targetTag(normal), aftershock)).toBe(false)
   })
 
-  it('does not match aftershock vs normal rows that share name and q', () => {
+  it('highlights the whole hit when aftershock shares name with normal row', () => {
     const persisted = {
       sheet: 'Anby',
       name: 'Hit_0',
@@ -80,7 +81,7 @@ describe('isOptTargetTag', () => {
     const aftershockRow = { ...normalRow, damageType2: 'aftershock' as const }
 
     expect(isOptTargetTag(normalRow, persisted, normalRow)).toBe(true)
-    expect(isOptTargetTag(aftershockRow, persisted, normalRow)).toBe(false)
+    expect(isOptTargetTag(aftershockRow, persisted, normalRow)).toBe(true)
   })
 
   it('requires damage types for generic inst targets', () => {
@@ -200,7 +201,7 @@ describe('formulaReadForTag', () => {
       name: 'BasicAttackTurboVolt_0',
       q: 'standardDmg',
     }
-    const result = formulaReadForTag(undefined, tag)
+    const result = formulaReadForTag(tag)
     expect(result.tag).toEqual(tag)
     expect(result).not.toBe(tagRead(tag))
   })
@@ -209,7 +210,8 @@ describe('formulaReadForTag', () => {
     const tag = { sheet: 'Alice', q: 'atk', qt: 'final' as const }
     const plainRead = tagRead(tag)
     const merged = { ...tag, attribute: 'atk' as const }
-    const result = formulaReadForTag(undefined, merged, plainRead)
+    const readByListingKey = new Map([[listingId(tag), plainRead as never]])
+    const result = formulaReadForTag(merged, readByListingKey)
     expect(result.tag).toEqual(merged)
     expect(typeof (result as { withTag?: unknown }).withTag).toBe('undefined')
   })

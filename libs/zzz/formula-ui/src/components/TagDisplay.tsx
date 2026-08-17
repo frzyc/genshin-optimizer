@@ -5,7 +5,7 @@ import { Read, type Tag } from '@genshin-optimizer/zzz/formula'
 import { AttributeName } from '@genshin-optimizer/zzz/ui'
 import { getCondMap, tagFieldSubset } from '../char/tagFieldMap'
 import { damageTypeKeysMap, getDmgType, getVariant } from '../char/util'
-import { useZzzCalcContext } from '../hooks'
+import { useZzzCalcContext } from '../hooks/useZzzCalcContext'
 import { TagFallbackLabel } from './TagFallbackLabel'
 
 export function TagDisplay({

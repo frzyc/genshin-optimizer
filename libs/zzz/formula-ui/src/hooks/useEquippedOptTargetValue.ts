@@ -14,7 +14,7 @@ export function useEquippedOptTargetValue(): number | undefined {
     const { tag: target } = getTeamFrame0(team)
     if (!target) return undefined
     const tag = targetTag(target)
-    const read = formulaReadForTag(calc, tag)
+    const read = formulaReadForTag(tag)
     return calc
       .withTag({
         src: character.key,

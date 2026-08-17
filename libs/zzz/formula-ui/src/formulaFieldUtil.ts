@@ -6,21 +6,23 @@ import {
   isTagField,
 } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { formulas, isDmgAbilityDim } from '@genshin-optimizer/zzz/formula'
+import type { TargetTag } from '@genshin-optimizer/zzz/db'
+import {
+  type AbilityDim,
+  formulas,
+  isAbilityDim,
+  isDmgAbilityDim,
+  listingId,
+} from '@genshin-optimizer/zzz/formula'
 import type { Sheet, Tag } from '@genshin-optimizer/zzz/formula'
 import { isAbilityFormulaTag } from './abilityTag'
-
-/** Stable key for deduping / looking up listing formula tags. */
-export function formulaListingTagKey(tag: Tag): string {
-  return `${tag.sheet ?? ''}:${tag.name ?? ''}:${tag.q ?? ''}:${tag.qt ?? ''}:${tag.attribute ?? ''}:${tag.damageType1 ?? ''}:${tag.damageType2 ?? ''}`
-}
 
 export function buildListingReadMap(
   reads: Read<Tag>[]
 ): Map<string, Read<Tag>> {
   const map = new Map<string, Read<Tag>>()
   for (const read of reads) {
-    map.set(formulaListingTagKey(read.tag), read)
+    map.set(listingId(read.tag), read)
   }
   return map
 }
@@ -34,6 +36,27 @@ export function primaryTagFromField(field: Field): Tag | undefined {
     )
   }
   if (isTagField(field)) return field.fieldRef
+  return undefined
+}
+
+/** Resolve bundled ability dim for an opt-target field row. */
+export function abilityDimFromField(
+  field: Field,
+  currentTarget?: TargetTag,
+  sheetFallback?: string
+): AbilityDim | undefined {
+  const ref = primaryTagFromField(field)
+  if (!ref?.name) return undefined
+  const sheet = ref.sheet ?? sheetFallback
+  const targetSheet = currentTarget?.sheet ?? sheetFallback
+  if (
+    currentTarget?.name === ref.name &&
+    targetSheet === sheet &&
+    currentTarget.q &&
+    isAbilityDim(currentTarget.q)
+  )
+    return currentTarget.q
+  if (isAbilityDim(ref.q)) return ref.q
   return undefined
 }
 
@@ -61,10 +84,8 @@ export function listExtraOptFieldTags(
   reads: Read<Tag>[],
   abilityTags: Tag[]
 ): Tag[] {
-  const seen = new Set(abilityTags.map(formulaListingTagKey))
+  const seen = new Set(abilityTags.map(listingId))
   return reads
     .map((read) => read.tag)
-    .filter(
-      (tag) => !isAbilityFormulaTag(tag) && !seen.has(formulaListingTagKey(tag))
-    )
+    .filter((tag) => !isAbilityFormulaTag(tag) && !seen.has(listingId(tag)))
 }

@@ -16,6 +16,7 @@ export { Calculator } from './calculator'
 export * from './conditionalUtil'
 export * from './data/util'
 export * from './formulaMeta'
+export * from './hit'
 export * from './meta'
 export * from './util'
 

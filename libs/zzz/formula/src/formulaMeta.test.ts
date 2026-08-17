@@ -85,6 +85,18 @@ describe('formulaMetaKey', () => {
       expect(unique.size, key).toBeLessThanOrEqual(1)
     }
   })
+
+  it('includes skillType on every named ability hit listing', () => {
+    for (const [sheet, sheetFormulas] of Object.entries(formulas)) {
+      for (const entry of Object.values(sheetFormulas)) {
+        const tag = entry.tag
+        if (tag?.qt !== 'formula' || !tag.name || !isAbilityDim(tag.q)) continue
+        if (!tag.skillType?.endsWith('Skill')) continue
+
+        expect(tag.skillType, `${sheet}/${tag.name}:${tag.q}`).toBeTruthy()
+      }
+    }
+  })
 })
 
 describe('abilityBaseName', () => {

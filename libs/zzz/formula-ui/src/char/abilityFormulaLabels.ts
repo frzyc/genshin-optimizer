@@ -1,44 +1,23 @@
 import type { CharacterKey, SkillKey } from '@genshin-optimizer/zzz/consts'
-import { type AbilityDim, isAbilityDim } from '@genshin-optimizer/zzz/formula'
+import { isAbilityDim } from '@genshin-optimizer/zzz/formula'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { i18n } from '@genshin-optimizer/zzz/i18n'
 import type { ReactNode } from 'react'
-import { createElement } from 'react'
 import { parseAbilityFromTag } from '../abilityTag'
-import {
-  abilityDimTooltipLabel,
-  dimensionByAbilityDim,
-} from '../formulaDimensionUi'
-import { st, trans } from '../util'
+import { namedAbilityDimLabel } from '../tagLabel'
+import { trans } from '../sheetTranslate'
 
-type AbilitySheetDim = (typeof dimensionByAbilityDim)[AbilityDim]
-
-type AbilityDisplayResolved = {
+export type AbilityDisplayResolved = {
   skill: SkillKey
   abilityKey: string
   hitIndex?: string
-  abilityDim?: AbilityDim
-  sheetDim?: AbilitySheetDim
 }
 
-type AbilityLabelStyle = 'field' | 'name' | 'bundle'
+type AbilityLabelPresentation = 'row' | 'selected'
 
 type AbilityLabelContent = {
   string: string | undefined
   node: ReactNode | undefined
-}
-
-function effectiveAbilitySkillHint(
-  tag: Tag,
-  skillHint?: SkillKey
-): SkillKey | undefined {
-  return skillHint && !tag.skillType ? skillHint : undefined
-}
-
-function tagForAbilityParse(tag: Tag, skillHint?: SkillKey): Tag {
-  const hint = effectiveAbilitySkillHint(tag, skillHint)
-  if (hint) return { ...tag, skillType: `${hint}Skill` }
-  return tag
 }
 
 function nameI18nKey(resolved: AbilityDisplayResolved): string {
@@ -80,59 +59,18 @@ function abilityNameString(
   return translated || resolved.abilityKey
 }
 
-/** Parsed ability identity + display dims for a formula tag. */
+/** Parsed ability identity for a complete formula tag. */
 export function resolveAbilityDisplay(
-  tag: Tag,
-  skillHint?: SkillKey
+  tag: Tag
 ): AbilityDisplayResolved | undefined {
-  const parsed = parseAbilityFromTag(tagForAbilityParse(tag, skillHint))
+  const parsed = parseAbilityFromTag(tag)
   if (!parsed) return undefined
 
-  const abilityDim = tag.q && isAbilityDim(tag.q) ? tag.q : undefined
   return {
     skill: parsed.skill,
     abilityKey: parsed.abilityKey,
     hitIndex: parsed.hitIndex,
-    abilityDim,
-    sheetDim: abilityDim ? dimensionByAbilityDim[abilityDim] : undefined,
   }
-}
-
-function abilityDimSuffix(abilityDim: AbilityDim): string {
-  return abilityDimTooltipLabel(abilityDim)
-}
-
-function abilityHitLabelString(
-  charKey: CharacterKey,
-  resolved: AbilityDisplayResolved
-): string | undefined {
-  const paramKey = hitParamI18nKey(resolved)
-  if (!resolved.sheetDim || !paramKey || !resolved.hitIndex) return undefined
-
-  const paramTranslated = hitParamString(charKey, resolved)
-  if (!paramTranslated) return undefined
-  const dimSuffix = resolved.abilityDim
-    ? abilityDimSuffix(resolved.abilityDim)
-    : ''
-  const label = i18n.t(resolved.sheetDim, {
-    ns: 'sheet',
-    val: paramTranslated,
-    defaultValue: dimSuffix
-      ? `${paramTranslated}${dimSuffix}`
-      : paramTranslated,
-  })
-  return label || undefined
-}
-
-function abilityBaseNameString(
-  charKey: CharacterKey,
-  resolved: AbilityDisplayResolved
-): string {
-  const base = abilityNameString(charKey, resolved)
-  if (resolved.abilityDim) {
-    return `${base} ${abilityDimSuffix(resolved.abilityDim)}`
-  }
-  return base
 }
 
 function abilityDisplayNameNode(
@@ -145,18 +83,6 @@ function abilityDisplayNameNode(
   return chg(nameI18nKey(resolved))
 }
 
-function abilityHitLabelNode(
-  charKey: CharacterKey,
-  resolved: AbilityDisplayResolved
-): ReactNode | undefined {
-  if (!resolved.sheetDim || !hitParamString(charKey, resolved)) return undefined
-
-  const paramKey = hitParamI18nKey(resolved)!
-  return st(resolved.sheetDim, {
-    val: `$t(char_${charKey}_gen:${paramKey})`,
-  })
-}
-
 function hitParamTitleNode(
   charKey: CharacterKey,
   resolved: AbilityDisplayResolved
@@ -167,36 +93,12 @@ function hitParamTitleNode(
   return chg(paramKey)
 }
 
-function fieldLabelNode(
+function rowLabelContent(
   charKey: CharacterKey,
   resolved: AbilityDisplayResolved
-): ReactNode | undefined {
-  const hitLabel = abilityHitLabelNode(charKey, resolved)
-  if (hitLabel) return hitLabel
-  const name = abilityDisplayNameNode(charKey, resolved)
-  if (resolved.abilityDim) {
-    return createElement(
-      'span',
-      null,
-      name,
-      ' ',
-      abilityDimSuffix(resolved.abilityDim)
-    )
-  }
-  return name
-}
-
-/** Hit param and optional ability-name fallback (bundle row title vs opt-target hit crumb). */
-function bundleLabelContent(
-  charKey: CharacterKey,
-  resolved: AbilityDisplayResolved,
-  opts: { nameFallback: boolean }
 ): AbilityLabelContent {
   const hitParam = hitParamString(charKey, resolved)
   const hitNode = hitParamTitleNode(charKey, resolved)
-  if (!opts.nameFallback && !hitParam) {
-    return { string: undefined, node: undefined }
-  }
   return {
     string: hitParam ?? abilityNameString(charKey, resolved),
     node: hitNode ?? abilityDisplayNameNode(charKey, resolved),
@@ -206,99 +108,75 @@ function bundleLabelContent(
 function resolveAbilityLabelContent(
   charKey: CharacterKey,
   resolved: AbilityDisplayResolved,
-  style: AbilityLabelStyle
+  presentation: AbilityLabelPresentation
 ): AbilityLabelContent {
-  switch (style) {
-    case 'name':
-      return {
-        string: abilityBaseNameString(charKey, resolved),
-        node: abilityDisplayNameNode(charKey, resolved),
-      }
-    case 'bundle':
-      return bundleLabelContent(charKey, resolved, { nameFallback: true })
-    case 'field':
-      return {
-        string:
-          abilityHitLabelString(charKey, resolved) ??
-          abilityBaseNameString(charKey, resolved),
-        node: fieldLabelNode(charKey, resolved),
-      }
+  if (presentation === 'selected') {
+    return {
+      string: abilityNameString(charKey, resolved),
+      node: abilityDisplayNameNode(charKey, resolved),
+    }
   }
+  return rowLabelContent(charKey, resolved)
 }
 
 function abilityLabel(
   charKey: CharacterKey,
   tag: Tag,
-  style: AbilityLabelStyle,
-  output: 'react' | 'string',
-  skillHint?: SkillKey
+  presentation: AbilityLabelPresentation,
+  output: 'react' | 'string'
 ): ReactNode | string | undefined {
-  const resolved = resolveAbilityDisplay(tag, skillHint)
+  const resolved = resolveAbilityDisplay(tag)
   if (!resolved) return undefined
-  const content = resolveAbilityLabelContent(charKey, resolved, style)
+  const content = resolveAbilityLabelContent(charKey, resolved, presentation)
   return output === 'string' ? content.string : content.node
 }
 
-/** Translated ability name for a formula tag. */
+/** Ability name for selected opt-target rows. */
 export function abilityDisplayTitle(
   charKey: CharacterKey,
-  tag: Tag,
-  skillHint?: SkillKey
+  tag: Tag
 ): ReactNode | undefined {
-  return abilityLabel(charKey, tag, 'name', 'react', skillHint) as
+  return abilityLabel(charKey, tag, 'selected', 'react') as
     | ReactNode
     | undefined
 }
 
-/** Translated hit param only (no sheet dim suffix), for multi-part opt-target rows. */
+/** Hit param for selected opt-target rows (no dim suffix). */
 export function abilityHitParamTitle(
   charKey: CharacterKey,
-  tag: Tag,
-  skillHint?: SkillKey
+  tag: Tag
 ): ReactNode | undefined {
-  const resolved = resolveAbilityDisplay(tag, skillHint)
+  const resolved = resolveAbilityDisplay(tag)
   if (!resolved) return undefined
-  return bundleLabelContent(charKey, resolved, { nameFallback: false }).node
+  return rowLabelContent(charKey, resolved).node
 }
 
-function AbilityBundleTitleInner({
+/** Bundled / single ability row title (hit param or ability name). */
+export function abilityRowTitleString(
+  charKey: CharacterKey,
+  tag: Tag
+): string | undefined {
+  return abilityLabel(charKey, tag, 'row', 'string') as string | undefined
+}
+
+/** Bundled / single ability row title (hit param or ability name). */
+export function AbilityRowTitle({
   charKey,
   tag,
-  skillHint,
 }: {
   charKey: CharacterKey
   tag: Tag
-  skillHint?: SkillKey
 }) {
-  const label = abilityLabel(charKey, tag, 'bundle', 'react', skillHint)
-  return label ?? null
-}
-
-/** Lazy i18n bundle row title; defers lookup until render (sheet docs build at import). */
-export function abilityBundleTitle(
-  charKey: CharacterKey,
-  tag: Tag,
-  skillHint?: SkillKey
-): ReactNode {
-  return createElement(AbilityBundleTitleInner, { charKey, tag, skillHint })
-}
-
-export function abilityTagDisplay(
-  charKey: CharacterKey,
-  tag: Tag,
-  skillHint?: SkillKey
-): ReactNode | undefined {
-  return abilityLabel(charKey, tag, 'field', 'react', skillHint) as
-    | ReactNode
-    | undefined
-}
-
-export function abilityDisplayNameString(
-  charKey: CharacterKey,
-  tag: Tag,
-  skillHint?: SkillKey
-): string | undefined {
-  return abilityLabel(charKey, tag, 'field', 'string', skillHint) as
-    | string
-    | undefined
+  const label = abilityLabel(charKey, tag, 'row', 'react')
+  if (label) return label
+  console.error('[zzz-formula-ui] Ability formula tag missing row label', {
+    charKey,
+    tag,
+  })
+  if (tag.q && isAbilityDim(tag.q)) {
+    const label = namedAbilityDimLabel(tag)
+    if (label) return label
+  }
+  const resolved = resolveAbilityDisplay(tag)
+  return resolved?.abilityKey ?? tag.name ?? ''
 }

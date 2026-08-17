@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { formulaFieldGroupKey } from '../bundledFormulaGrouping'
+import { hitId } from '@genshin-optimizer/zzz/formula'
 import {
   buildFieldCategoryIndex,
   getFieldCategory,
@@ -13,26 +13,41 @@ describe('buildFieldCategoryIndex', () => {
     expect(
       getFieldCategory(
         'Anby',
-        { sheet: 'Anby', name: 'BasicAttackTurboVolt_0' },
+        {
+          sheet: 'Anby',
+          name: 'BasicAttackTurboVolt_0',
+          skillType: 'basicSkill',
+          q: 'standardDmg',
+        },
         index
       )
     ).toBe('basic')
   })
 
-  it('keys aftershock variants separately from normal hits with the same name', () => {
-    const index = buildFieldCategoryIndex('Anby')
-    const normalKey = formulaFieldGroupKey({
-      sheet: 'Anby',
-      name: 'BasicAttackTurboVolt_0',
-    })
-    const aftershockKey = formulaFieldGroupKey({
-      sheet: 'Anby',
-      name: 'BasicAttackTurboVolt_0',
-      damageType2: 'aftershock',
-    })
+  it('categorizes ability formulas via skillType on the tag', () => {
+    expect(
+      getFieldCategory('Anby', {
+        sheet: 'Anby',
+        name: 'BasicAttackTurboVolt_0',
+        skillType: 'basicSkill',
+        q: 'standardDmg',
+      })
+    ).toBe('basic')
+    expect(
+      getFieldCategory('Anby', {
+        sheet: 'Anby',
+        name: 'BasicAttackTurboVolt_0',
+        skillType: 'basicSkill',
+        q: 'standardDmg',
+        damageType2: 'aftershock',
+      })
+    ).toBe('basic')
+  })
 
-    expect(index.get(normalKey)).toBe('basic')
-    expect(index.get(aftershockKey)).toBeUndefined()
+  it('indexes static buff fields by hitId', () => {
+    const index = buildFieldCategoryIndex('Anby')
+    const buffKey = hitId({ sheet: 'Anby', name: 'some_buff_field' })
+    expect(index.has(buffKey)).toBe(false)
   })
 
   it('caches via getOrBuildCategoryIndex', () => {

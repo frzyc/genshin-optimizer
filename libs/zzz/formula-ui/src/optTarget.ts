@@ -5,14 +5,12 @@ import { read as tagRead } from '@genshin-optimizer/pando/engine'
 import type { AttributeKey, StatKey } from '@genshin-optimizer/zzz/consts'
 import {
   type TargetTag,
-  applyDamageTypeToTag,
   isGenericDmgInstTarget,
   targetTag,
 } from '@genshin-optimizer/zzz/db'
-import type { Calculator, Tag } from '@genshin-optimizer/zzz/formula'
-import { own } from '@genshin-optimizer/zzz/formula'
-import { formulaFieldGroupKey } from './bundledFormulaGrouping'
-import { formulaListingTagKey, primaryTagFromField } from './formulaFieldUtil'
+import type { Tag } from '@genshin-optimizer/zzz/formula'
+import { hitId, listingId } from '@genshin-optimizer/zzz/formula'
+import { primaryTagFromField } from './formulaFieldUtil'
 
 function readWithMergedTag(read: BaseRead | Read<Tag>, tag: Tag): Read<Tag> {
   if (typeof (read as Read<Tag>).withTag === 'function') {
@@ -21,24 +19,14 @@ function readWithMergedTag(read: BaseRead | Read<Tag>, tag: Tag): Read<Tag> {
   return { ...read, tag: { ...read.tag, ...tag } } as Read<Tag>
 }
 
-/** Resolve a listing `Read` for debug / compute (prefers `own.listing.formulas`). */
+/** Resolve a listing `Read` for debug / compute. */
 export function formulaReadForTag(
-  calc: Calculator | null | undefined,
   tag: Tag,
-  listingRead?: BaseRead | Read<Tag>,
   readByListingKey?: Map<string, Read<Tag>>
 ): Read<Tag> {
-  if (listingRead) return readWithMergedTag(listingRead, tag)
   if (readByListingKey) {
-    const match = readByListingKey.get(formulaListingTagKey(tag))
-    if (match) return match.withTag(tag)
-  }
-  if (calc) {
-    const key = formulaListingTagKey(tag)
-    const match = calc
-      .listFormulas(own.listing.formulas)
-      .find((read) => formulaListingTagKey(read.tag) === key)
-    if (match) return match.withTag(tag)
+    const match = readByListingKey.get(listingId(tag))
+    if (match) return readWithMergedTag(match, tag)
   }
   return tagRead(tag) as Read<Tag>
 }
@@ -67,7 +55,6 @@ export function listStatReadsFromFormulas(reads: Read<Tag>[]): Read<Tag>[] {
   const result: Read<Tag>[] = []
   for (const read of reads) {
     if (!isListingStatTag(read.tag)) continue
-    // Ignore Lumiflux DMG bonus since it doesn't exist
     if (read.tag.q === 'dmg_' && read.tag.attribute === 'lumiflux') continue
     const key = statReadTagKey(read.tag)
     if (seen.has(key)) continue
@@ -109,50 +96,21 @@ export function isOptTargetTag(
     )
   }
   const resolved = resolvedTag ?? targetTag(target)
-  if (
-    tag.sheet !== resolved.sheet ||
-    tag.name !== resolved.name ||
-    tag.q !== resolved.q ||
-    (tag.qt ?? undefined) !== (resolved.qt ?? undefined) ||
-    (tag.attribute ?? undefined) !== (resolved.attribute ?? undefined) ||
-    formulaFieldGroupKey(tag) !== formulaFieldGroupKey(resolved)
-  )
-    return false
   if (target.name && isGenericDmgInstTarget(target.name)) {
-    return (
-      (tag.damageType1 ?? undefined) === (resolved.damageType1 ?? undefined) &&
-      (tag.damageType2 ?? undefined) === (resolved.damageType2 ?? undefined)
-    )
+    return listingId(tag) === listingId(resolved)
   }
-  return true
+  return hitId(tag) === hitId(resolved)
 }
 
-/** Merge opt-target inst overrides onto a matching stat row tag for compute/highlight. */
+/** Use resolved generic-inst tag for compute/highlight on the selected row only. */
 export function mergeTagForOpt(
   tag: Tag,
   resolvedOptTag: Tag | undefined,
   optTarget: TargetTag | undefined
 ): Tag {
-  if (
-    !resolvedOptTag ||
-    tag.sheet !== resolvedOptTag.sheet ||
-    tag.name !== resolvedOptTag.name ||
-    tag.q !== resolvedOptTag.q
-  )
-    return tag
-
-  if (optTarget?.name && isGenericDmgInstTarget(optTarget.name)) {
-    return applyDamageTypeToTag(
-      tag,
-      optTarget.damageType1,
-      optTarget.damageType2
-    )
-  }
-
+  if (!optTarget?.name || !isGenericDmgInstTarget(optTarget.name)) return tag
+  if (!resolvedOptTag) return tag
+  if (tag.name === optTarget.name && tag.q === optTarget.q)
+    return resolvedOptTag
   return tag
 }
-
-/** Inset ring so opt-target rows show on striped `FieldDisplayList` rows. */
-export const optTargetRowSx = {
-  boxShadow: '0px 0px 0px 2px rgba(0, 200, 0, 0.55) inset',
-} as const

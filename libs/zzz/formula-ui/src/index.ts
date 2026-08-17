@@ -9,8 +9,8 @@ export * from './components'
 export * from './disc'
 export * from './formulaDimensionUi'
 export {
+  abilityDimFromField,
   buildListingReadMap,
-  formulaListingTagKey,
   primaryTagFromField,
 } from './formulaFieldUtil'
 export * from './formulaText'

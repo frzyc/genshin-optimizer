@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
+import { hitId } from '@genshin-optimizer/zzz/formula'
 import { groupFieldsByTag } from '../bundledFormulaFields'
-import { formulaFieldGroupKey } from '../bundledFormulaGrouping'
 import { charAbilityFormulaTags } from '../formulaFieldUtil'
 import {
   buildAbilityFieldsBySkill,
@@ -39,14 +39,12 @@ describe('buildCharFormulaFields', () => {
       []
     )
     const groupKeys = new Set(
-      charAbilityFormulaTags('Soldier0Anby').map((tag) =>
-        formulaFieldGroupKey(tag)
-      )
+      charAbilityFormulaTags('Soldier0Anby').map((tag) => hitId(tag))
     )
-    expect(groupKeys.has('Soldier0Anby:UltimateVoidstrike_0:')).toBe(true)
-    expect(
-      groupKeys.has('Soldier0Anby:UltimateVoidstrike_aftershock0:aftershock')
-    ).toBe(true)
+    expect(groupKeys.has('Soldier0Anby:UltimateVoidstrike_0')).toBe(true)
+    expect(groupKeys.has('Soldier0Anby:UltimateVoidstrike_aftershock0')).toBe(
+      true
+    )
     expect(abilityFieldsBySkill.chain?.UltimateVoidstrike?.length).toBe(2)
     expect(
       fields.filter((field) => {
@@ -63,10 +61,7 @@ describe('injectAllAbilityFieldsIntoSkillDocuments', () => {
     const tags = charAbilityFormulaTags('Soldier0Anby').filter((tag) =>
       tag.name?.startsWith('UltimateVoidstrike')
     )
-    const fields = groupFieldsByTag(tags, {
-      charKey: 'Soldier0Anby',
-      skill: 'chain',
-    })
+    const fields = groupFieldsByTag(tags, 'Soldier0Anby')
     const staticDocs = [
       skillAbilityTextDocument({
         abilityKey: 'UltimateVoidstrike',

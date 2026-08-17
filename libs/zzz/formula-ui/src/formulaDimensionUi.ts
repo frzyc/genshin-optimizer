@@ -1,10 +1,10 @@
+import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import type { TargetTag } from '@genshin-optimizer/zzz/db'
 import {
   type AbilityDim,
-  bundledFormulaInSheet,
   dmgAbilityDims,
   isAbilityDim,
-  type Tag,
+  lookupFormulaEntry,
 } from '@genshin-optimizer/zzz/formula'
 
 export const formulaDimensions = ['dmg', 'daze', 'anomBuildup'] as const
@@ -26,15 +26,14 @@ export function abilityDimsForDimension(
   return ['anomBuildup']
 }
 
-/** Pick ability dim for a dimension on an ability (e.g. standard vs sheer DMG). */
+/** Pick ability dim for a dimension on a character hit (e.g. standard vs sheer DMG). */
 export function resolveAbilityDim(
-  sheetFormulas: Record<string, { tag: Tag }> | undefined,
+  sheet: CharacterKey | string,
   baseName: string,
   dim: FormulaDimension
 ): AbilityDim | undefined {
-  if (!sheetFormulas) return undefined
   for (const q of abilityDimsForDimension(dim)) {
-    if (bundledFormulaInSheet(sheetFormulas, baseName, q)) return q
+    if (lookupFormulaEntry({ sheet, name: baseName, q })) return q
   }
   return undefined
 }
@@ -54,19 +53,8 @@ const FORMULA_DIMENSION_LABEL: Record<FormulaDimension, string> = {
   anomBuildup: 'Anomaly Buildup',
 }
 
-export function abilityDimLabel(q: AbilityDim): string {
-  return ABILITY_DIM_LABEL[q]
-}
-
 export function formulaDimensionLabel(dim: FormulaDimension): string {
   return FORMULA_DIMENSION_LABEL[dim]
-}
-
-/** Longer labels in formula breakdown tooltips. */
-export function abilityDimTooltipLabel(q: AbilityDim): string {
-  const dim = dimensionByAbilityDim[q]
-  if (dim === 'anomBuildup') return formulaDimensionLabel('anomBuildup')
-  return ABILITY_DIM_LABEL[q]
 }
 
 /** Short value prefix for generated build rows (e.g. DMG, Daze, ATK). */

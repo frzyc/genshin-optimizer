@@ -4,7 +4,7 @@ import {
   useDatabaseContext,
   useTeam,
 } from '@genshin-optimizer/zzz/db-ui'
-import { formulas, isAbilityDim } from '@genshin-optimizer/zzz/formula'
+import { isAbilityDim } from '@genshin-optimizer/zzz/formula'
 import {
   dimensionByAbilityDim,
   type FormulaDimension,
@@ -33,8 +33,7 @@ export function DimensionSelector() {
       value={formulaDimension}
       onChange={(_, dim: FormulaDimension | null) => {
         if (!dim || dim === formulaDimension) return
-        const sheetFormulas = formulas[sheet as keyof typeof formulas]
-        const nextAbilityDim = resolveAbilityDim(sheetFormulas, name, dim)
+        const nextAbilityDim = resolveAbilityDim(sheet, name, dim)
         if (!nextAbilityDim) return
         database.teams.setFrame0(character.key, {
           tag: {
