@@ -7,6 +7,8 @@
   "beam_critDMG_": "Charged Attack Condensed Beam CRIT DMG",
   "c2Cond": "Charged Attack Condensed Beams fired",
   "c4StellarDmg": "Coordinated Stellar-Conduct DMG",
+  "c4StellarSwirlDmg": "Coordinated Stellar Swirl DMG",
   "c6Dmg": "Additional Beam DMG",
-  "c6StellarDmg": "Additional Beam Stellar-Conduct DMG"
+  "c6StellarDmg": "Additional Beam Stellar-Conduct DMG",
+  "c6StellarSwirlDmg": "Additional Beam Stellar Swirl DMG"
 }
