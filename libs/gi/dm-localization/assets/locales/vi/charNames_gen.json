@@ -125,11 +125,13 @@
   "TravelerDendroF": "Lumine (Thảo)",
   "TravelerHydroF": "Lumine (Thủy)",
   "TravelerPyroF": "Lumine (Hỏa)",
+  "TravelerCryoF": "Lumine (Băng)",
   "TravelerAnemoM": "Aether (Phong)",
   "TravelerGeoM": "Aether (Nham)",
   "TravelerElectroM": "Aether (Lôi)",
   "TravelerDendroM": "Aether (Thảo)",
   "TravelerHydroM": "Aether (Thủy)",
   "TravelerPyroM": "Aether (Hỏa)",
+  "TravelerCryoM": "Aether (Băng)",
   "Somnia": "Somnia"
 }

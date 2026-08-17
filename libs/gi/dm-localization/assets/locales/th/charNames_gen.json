@@ -125,11 +125,13 @@
   "TravelerDendroF": "Lumine (ไม้)",
   "TravelerHydroF": "Lumine (น้ำ)",
   "TravelerPyroF": "Lumine (ไฟ)",
+  "TravelerCryoF": "Lumine (น้ำแข็ง)",
   "TravelerAnemoM": "Aether (ลม)",
   "TravelerGeoM": "Aether (หิน)",
   "TravelerElectroM": "Aether (ไฟฟ้า)",
   "TravelerDendroM": "Aether (ไม้)",
   "TravelerHydroM": "Aether (น้ำ)",
   "TravelerPyroM": "Aether (ไฟ)",
+  "TravelerCryoM": "Aether (น้ำแข็ง)",
   "Somnia": "Somnia"
 }

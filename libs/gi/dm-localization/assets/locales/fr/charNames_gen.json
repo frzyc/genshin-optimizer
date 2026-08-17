@@ -125,11 +125,13 @@
   "TravelerDendroF": "Lumine (Dendro)",
   "TravelerHydroF": "Lumine (Hydro)",
   "TravelerPyroF": "Lumine (Pyro)",
+  "TravelerCryoF": "Lumine (Cryo)",
   "TravelerAnemoM": "Aether (Anémo)",
   "TravelerGeoM": "Aether (Géo)",
   "TravelerElectroM": "Aether (Électro)",
   "TravelerDendroM": "Aether (Dendro)",
   "TravelerHydroM": "Aether (Hydro)",
   "TravelerPyroM": "Aether (Pyro)",
+  "TravelerCryoM": "Aether (Cryo)",
   "Somnia": "Somnia"
 }

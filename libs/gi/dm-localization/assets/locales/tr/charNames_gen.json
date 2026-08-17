@@ -125,11 +125,13 @@
   "TravelerDendroF": "Lumine (Doğa)",
   "TravelerHydroF": "Lumine (Su)",
   "TravelerPyroF": "Lumine (Ateş)",
+  "TravelerCryoF": "Lumine (Buz)",
   "TravelerAnemoM": "Aether (Rüzgar)",
   "TravelerGeoM": "Aether (Toprak)",
   "TravelerElectroM": "Aether (Elektrik)",
   "TravelerDendroM": "Aether (Doğa)",
   "TravelerHydroM": "Aether (Su)",
   "TravelerPyroM": "Aether (Ateş)",
+  "TravelerCryoM": "Aether (Buz)",
   "Somnia": "Somnia"
 }

@@ -150,8 +150,8 @@ const burst_stellar_dmg_obj = objKeyValMap(allStellarReactionKeys, (k) => [
 ])
 
 const maxSplendor = dm.passive1.stackGain + dm.constellation1.stackGain
-const a1TeamSplendorArr = range(1, dm.passive1.stackGain)
-const a1TeamSplendorMaxArr = range(1, maxSplendor)
+const a1TeamSplendorArr = range(0, dm.passive1.stackGain)
+const a1TeamSplendorMaxArr = range(0, maxSplendor)
 const [condA1TeamSplendorPath, condA1TeamSplendor] = cond(key, 'a1TeamSplendor')
 const a1TeamSplendor = lookup(
   condA1TeamSplendor,

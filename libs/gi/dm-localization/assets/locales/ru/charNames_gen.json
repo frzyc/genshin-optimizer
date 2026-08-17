@@ -125,11 +125,13 @@
   "TravelerDendroF": "Люмин (Дендро)",
   "TravelerHydroF": "Люмин (Гидро)",
   "TravelerPyroF": "Люмин (Пиро)",
+  "TravelerCryoF": "Люмин (Крио)",
   "TravelerAnemoM": "Итэр (Анемо)",
   "TravelerGeoM": "Итэр (Гео)",
   "TravelerElectroM": "Итэр (Электро)",
   "TravelerDendroM": "Итэр (Дендро)",
   "TravelerHydroM": "Итэр (Гидро)",
   "TravelerPyroM": "Итэр (Пиро)",
+  "TravelerCryoM": "Итэр (Крио)",
   "Somnia": "Somnia"
 }
