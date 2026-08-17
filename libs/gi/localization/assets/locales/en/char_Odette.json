@@ -6,5 +6,6 @@
   "wingStellarconductDmg": "\"Wing\" Dance Move Stellar-Conduct DMG",
   "wingStellarswirlDmg": "\"Wing\" Dance Move Stellar Swirl DMG",
   "a1Cond": "<strong>Marvelous Splendor</strong> stacks given to nearby party members",
-  "c2Cond": "Opponents near the <strong>Dance Double</strong>"
+  "c2Cond": "Opponents near the <strong>Dance Double</strong>",
+  "glimmerMult_": "Stellar Glimmer DMG Mult."
 }

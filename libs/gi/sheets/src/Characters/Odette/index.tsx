@@ -14,6 +14,7 @@ import {
   max,
   min,
   naught,
+  one,
   percent,
   prod,
   stellarDmgNode,
@@ -92,8 +93,8 @@ const dm = {
   },
   passive2: {
     atkThresh: skillParam_gen.passive2[0][0],
-    stellar_dmg_: skillParam_gen.passive2[1][0],
-    max_stellar_dmg_: skillParam_gen.passive2[2][0],
+    stellar_mult_: skillParam_gen.passive2[1][0],
+    max_stellar_mult_: skillParam_gen.passive2[2][0],
   },
   passive3: {
     base_stellar_dmg_: skillParam_gen.passive3![0][0],
@@ -206,24 +207,21 @@ const a1SelfSplendor_stellar_dmg_obj = objKeyValMap(
   (k) => [`${k}_dmg_`, { ...a1SelfSplendor_stellar_dmg_ }]
 )
 
-const a4_stellar_dmg_ = greaterEq(
+const a4_stellar_mult_disp = greaterEq(
   input.asc,
   4,
   max(
     min(
       prod(
         sum(input.total.atk, -dm.passive2.atkThresh),
-        percent(dm.passive2.stellar_dmg_ / 100)
+        percent(dm.passive2.stellar_mult_ / 100)
       ),
-      percent(dm.passive2.max_stellar_dmg_)
+      percent(dm.passive2.max_stellar_mult_)
     ),
     0
   )
 )
-const a4_stellar_dmg_obj = objKeyValMap(allStellarReactionKeys, (k) => [
-  `${k}_dmg_`,
-  { ...a4_stellar_dmg_ },
-])
+const a4_stellar_mult_ = sum(one, a4_stellar_mult_disp)
 
 const c2TeamSplendor_atk_ = greaterEq(
   input.constellation,
@@ -333,7 +331,9 @@ const dmgFormulas = {
         dm.skill.codaStellarconductDmg,
         'skill',
         'stellarconduct',
-        'cryo'
+        'cryo',
+        undefined,
+        a4_stellar_mult_
       )
     ),
     codaStellarswirlDmg: equal(
@@ -344,7 +344,9 @@ const dmgFormulas = {
         dm.skill.codaStellarswirlDmg,
         'skill',
         'stellarswirl',
-        'cryo'
+        'cryo',
+        undefined,
+        a4_stellar_mult_
       )
     ),
     plumeDmg: dmgNode('atk', dm.skill.plumeDmg, 'skill'),
@@ -356,7 +358,9 @@ const dmgFormulas = {
         dm.skill.plumeStellarconductDmg,
         'skill',
         'stellarconduct',
-        'cryo'
+        'cryo',
+        undefined,
+        a4_stellar_mult_
       )
     ),
     plumeStellarswirlDmg: equal(
@@ -367,7 +371,9 @@ const dmgFormulas = {
         dm.skill.plumeStellarswirlDmg,
         'skill',
         'stellarswirl',
-        'cryo'
+        'cryo',
+        undefined,
+        a4_stellar_mult_
       )
     ),
     wingDmg: dmgNode('atk', dm.skill.wingDmg, 'skill'),
@@ -379,7 +385,9 @@ const dmgFormulas = {
         dm.skill.wingStellarconductDmg,
         'skill',
         'stellarconduct',
-        'cryo'
+        'cryo',
+        undefined,
+        a4_stellar_mult_
       )
     ),
     wingStellarswirlDmg: equal(
@@ -390,7 +398,9 @@ const dmgFormulas = {
         dm.skill.wingStellarswirlDmg,
         'skill',
         'stellarswirl',
-        'cryo'
+        'cryo',
+        undefined,
+        a4_stellar_mult_
       )
     ),
   },
@@ -398,7 +408,7 @@ const dmgFormulas = {
     slashDmg: dmgNode('atk', dm.burst.slashDmg, 'burst'),
     finalDmg: dmgNode('atk', dm.burst.finalDmg, 'burst'),
   },
-  passive2: a4_stellar_dmg_obj,
+  passive2: { a4_stellar_mult_ },
   passive3: {
     a0_stellarconduct_baseDmg_,
     a0_stellarswirl_baseDmg_,
@@ -414,7 +424,9 @@ const dmgFormulas = {
           percent(dm.constellation1.stellarconduct_dmg),
           'atk',
           'stellarconduct',
-          'cryo'
+          'cryo',
+          undefined,
+          a4_stellar_mult_
         )
       )
     ),
@@ -428,7 +440,9 @@ const dmgFormulas = {
           percent(dm.constellation1.stellarswirl_dmg),
           'atk',
           'stellarswirl',
-          'cryo'
+          'cryo',
+          undefined,
+          a4_stellar_mult_
         )
       )
     ),
@@ -444,7 +458,9 @@ const dmgFormulas = {
           percent(dm.constellation4.stellarconduct_dmg),
           'atk',
           'stellarconduct',
-          'cryo'
+          'cryo',
+          undefined,
+          a4_stellar_mult_
         )
       )
     ),
@@ -458,7 +474,9 @@ const dmgFormulas = {
           percent(dm.constellation4.stellarswirl_dmg),
           'atk',
           'stellarswirl',
-          'cryo'
+          'cryo',
+          undefined,
+          a4_stellar_mult_
         )
       )
     ),
@@ -499,11 +517,6 @@ export const data = dataObjForCharacterSheet(
       premod: {
         ...c4Burst_stellar_dmg_obj,
       },
-    },
-  },
-  {
-    premod: {
-      ...a4_stellar_dmg_obj,
     },
   }
 )
@@ -727,7 +740,17 @@ const sheet: TalentSheet = {
   ]),
   passive2: ct.talentTem('passive2', [
     {
-      fields: Object.values(a4_stellar_dmg_obj).map((node) => ({ node })),
+      fields: [
+        {
+          node: infoMut(a4_stellar_mult_disp, {
+            name: ct.ch('glimmerMult_'),
+            unit: '%',
+            variant: 'stellarconduct',
+            subVariant: 'cryo',
+            pivot: true,
+          }),
+        },
+      ],
     },
   ]),
   passive3: ct.talentTem('passive3', [
