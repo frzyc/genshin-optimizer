@@ -408,7 +408,7 @@ const dmgFormulas = {
     slashDmg: dmgNode('atk', dm.burst.slashDmg, 'burst'),
     finalDmg: dmgNode('atk', dm.burst.finalDmg, 'burst'),
   },
-  passive2: { a4_stellar_mult_ },
+  passive2: { a4_stellar_mult_disp },
   passive3: {
     a0_stellarconduct_baseDmg_,
     a0_stellarswirl_baseDmg_,
