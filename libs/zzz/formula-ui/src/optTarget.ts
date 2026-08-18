@@ -1,4 +1,7 @@
-import type { Read } from '@genshin-optimizer/game-opt/engine'
+import type {
+  Tag as GameOptTag,
+  Read,
+} from '@genshin-optimizer/game-opt/engine'
 import type { Field, MultiTagField } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { BaseRead } from '@genshin-optimizer/pando/engine'
 import { read as tagRead } from '@genshin-optimizer/pando/engine'
@@ -146,7 +149,9 @@ export function mergeMultiTagFieldForDisplay(
   readByListingKey: Map<string, Read<Tag>>,
   resolvedOptTag: Tag | undefined,
   optTarget: TargetTag | undefined
-): { field: MultiTagField; getRead: (tag: Tag) => Read<Tag> } | undefined {
+):
+  | { field: MultiTagField; getRead: (tag: GameOptTag) => Read<Tag> }
+  | undefined {
   const readMap = new Map<string, Read<Tag>>()
   const fieldRefs: MultiTagField['fieldRefs'] = []
 
@@ -163,10 +168,10 @@ export function mergeMultiTagFieldForDisplay(
   return {
     field: { ...field, fieldRefs },
     getRead: (tag) => {
-      const read = readMap.get(listingId(tag))
+      const read = readMap.get(listingId(tag as Tag))
       if (!read) {
         throw new Error(
-          `[zzz-formula-ui] mergeMultiTagFieldForDisplay: missing read for ${listingId(tag)}`
+          `[zzz-formula-ui] mergeMultiTagFieldForDisplay: missing read for ${listingId(tag as Tag)}`
         )
       }
       return read
