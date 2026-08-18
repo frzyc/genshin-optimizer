@@ -158,7 +158,8 @@ export class ArtCharDatabase extends Database {
   }
   importGOOD(
     good: IGOOD & IGO,
-    keepNotInImport: boolean,
+    keepWepArtiNotInImport: boolean,
+    keepCharNotInImport: boolean,
     ignoreDups: boolean
   ): ImportResult {
     good = migrateGOOD(good)
@@ -172,7 +173,8 @@ export class ArtCharDatabase extends Database {
     }
     const result: ImportResult = newImportResult(
       source,
-      keepNotInImport,
+      keepWepArtiNotInImport,
+      keepCharNotInImport,
       ignoreDups
     )
 
