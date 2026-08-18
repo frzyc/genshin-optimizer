@@ -58,12 +58,12 @@ export function useCharFormulaFields(
     return {
       ...built,
       statReads: listStatReadsFromFormulas(reads),
-      categorySections: orderedFieldCategories(byCategory).map(
-        ({ category, fields }) => ({
+      categorySections: orderedFieldCategories(byCategory)
+        .map(({ category, fields }) => ({
           category,
           fields: selectable(fields),
-        })
-      ),
+        }))
+        .filter(({ fields }) => fields.length),
       otherFields: filterNonStatFields(selectable(other)),
     }
   }, [calc, charKey])
