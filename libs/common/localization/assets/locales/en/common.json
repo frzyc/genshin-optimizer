@@ -34,6 +34,8 @@
   "storage": {
     "title": "Storage Usage",
     "info": "Local storage is limited to 5 MB total, and this is shared across Genshin Optimizer and Zenless Optimizer. Each database stored will take up some space, and the currently active database will take additional space.\n\nIf you are nearing the storage limit, data may fail to save or may get erased.",
+    "category": "Category",
+    "size": "Space Used",
     "activeGo": "Active GO Database",
     "goDb1": "GO Database 1",
     "goDb2": "GO Database 2",

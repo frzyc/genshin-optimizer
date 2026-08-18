@@ -1,6 +1,7 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
+    "exactOptionalPropertyTypes": false,
     "outDir": "../../../dist/out-tsc",
     "types": ["node", "object-overrides"]
   },
