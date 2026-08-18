@@ -108,96 +108,114 @@ export function LocalStorageUsageCard() {
       <CardContent
         sx={{
           display: 'flex',
-          alignItems: 'center',
+          alignItems: 'start',
           justifyContent: 'center',
           flexWrap: 'wrap',
           gap: 2,
         }}
       >
-        <Typography width={'100%'}>{t('storage.info')}</Typography>
-        {/* Stack a bunch of circle bars together */}
-        <CircularProgress
-          size={100}
-          thickness={5}
-          variant="determinate"
-          value={100}
+        <Box
           sx={{
-            color: 'contentNormal.main',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexWrap: 'wrap',
+            flexBasis: 250,
+            flexGrow: 1,
+            gap: 2,
           }}
-        />
-        {Object.entries(percentByCategory)
-          .sort((a, b) => a[1] - b[1])
-          .filter(([, percent]) => percent > 1)
-          .map(([key, percent]) => {
-            const prog = (
-              <CircularProgress
-                key={key}
-                size={100}
-                thickness={5}
-                variant="determinate"
-                value={currentPercent}
-                sx={{ ml: '-116px', color: COLORS[key] }}
-              />
-            )
-            currentPercent -= percent
-            return prog
-          })}
-        {/* Text next to circle bars */}
-        <Typography variant="h6">
-          <Box
-            component="span"
-            color={
-              percent > 90 ? 'error' : percent > 75 ? 'warning.main' : undefined
-            }
-          >
-            {totalMB.toFixed(2)}MB
-          </Box>{' '}
-          /{' '}
-          <Box component="span" color="secondary.main">
-            {MAX_LOCAL_STORAGE_MB}MB
-          </Box>{' '}
-          <br />
-          {percent.toFixed(2)}%
-        </Typography>
-        {/* Table */}
-        <TableContainer sx={{ width: 'max-content' }}>
-          <Table
-            size="small"
+        >
+          <Typography pb={4}>{t('storage.info')}</Typography>
+          {/* Stack a bunch of circle bars together */}
+          <CircularProgress
+            size={100}
+            thickness={5}
+            variant="determinate"
+            value={100}
             sx={{
-              width: 'max-content',
-              [`& .${tableCellClasses.root}`]: {
-                borderBottom: 'none',
-              },
+              color: 'contentNormal.main',
             }}
-          >
-            <TableHead>
-              <TableRow>
-                <TableCell>{t('storage.category')}</TableCell>
-                <TableCell>{t('storage.size')}</TableCell>
-              </TableRow>
-              {Object.entries(MBByCategory)
-                .sort((a, b) => b[1] - a[1])
-                .map(([key, megabytes]) => (
-                  <TableRow>
-                    <TableCell>
-                      <Box
-                        display="inline-block"
-                        width="16px"
-                        height="16px"
-                        mr={2}
-                        sx={{ backgroundColor: COLORS[key] }}
-                      />
-                      {t(`storage.${key}`)}
-                    </TableCell>
-                    <TableCell>
-                      {megabytes.toFixed(2)}MB (
-                      {percentByCategory[key].toFixed(2)}%)
-                    </TableCell>
-                  </TableRow>
-                ))}
-            </TableHead>
-          </Table>
-        </TableContainer>
+          />
+          {Object.entries(percentByCategory)
+            .sort((a, b) => a[1] - b[1])
+            .filter(([, percent]) => percent > 1)
+            .map(([key, percent]) => {
+              const prog = (
+                <CircularProgress
+                  key={key}
+                  size={100}
+                  thickness={5}
+                  variant="determinate"
+                  value={currentPercent}
+                  sx={{ ml: '-116px', color: COLORS[key] }}
+                />
+              )
+              currentPercent -= percent
+              return prog
+            })}
+          {/* Text next to circle bars */}
+          <Typography variant="h6">
+            <Box
+              component="span"
+              color={
+                percent > 90
+                  ? 'error'
+                  : percent > 75
+                    ? 'warning.main'
+                    : undefined
+              }
+            >
+              {totalMB.toFixed(2)}MB
+            </Box>{' '}
+            /{' '}
+            <Box component="span" color="secondary.main">
+              {MAX_LOCAL_STORAGE_MB}MB
+            </Box>{' '}
+            <br />
+            {percent.toFixed(2)}%
+          </Typography>
+        </Box>
+        {/* Table */}
+        <Box display="flex">
+          <TableContainer sx={{ width: 'max-content' }}>
+            <Table
+              size="small"
+              sx={{
+                width: 'max-content',
+                [`& .${tableCellClasses.root}`]: {
+                  borderBottom: 'none',
+                },
+              }}
+            >
+              <TableHead>
+                <TableRow>
+                  <TableCell>{t('storage.category')}</TableCell>
+                  <TableCell>{t('storage.size')}</TableCell>
+                </TableRow>
+                {Object.entries(MBByCategory)
+                  .sort((a, b) => b[1] - a[1])
+                  .map(([key, megabytes]) => (
+                    <TableRow>
+                      <TableCell>
+                        <Box
+                          display="inline-block"
+                          width="16px"
+                          height="16px"
+                          mr={2}
+                          sx={{ backgroundColor: COLORS[key] }}
+                        />
+                        {t(`storage.${key}`)}
+                      </TableCell>
+                      <TableCell>
+                        {megabytes.toFixed(2)}MB (
+                        {percentByCategory[key].toFixed(2)}%)
+                      </TableCell>
+                    </TableRow>
+                  ))}
+              </TableHead>
+            </Table>
+          </TableContainer>
+        </Box>
       </CardContent>
     </CardThemed>
   )
