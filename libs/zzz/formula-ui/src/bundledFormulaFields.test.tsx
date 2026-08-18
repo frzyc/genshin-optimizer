@@ -1,7 +1,9 @@
-import { render } from '@testing-library/react'
 import { formulas } from '@genshin-optimizer/zzz/formula'
+import { render } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
+import { formulaFieldTitle } from './bundledFormulaFields'
 import { tagFieldSubset } from './char/tagFieldMap'
+import { TagDisplay } from './components/TagDisplay'
 import { TagFallbackLabel } from './components/TagFallbackLabel'
 
 const m6RuntimeTag = () => ({
@@ -15,6 +17,25 @@ describe('tagFieldSubset', () => {
     const tag = m6RuntimeTag()
     expect(tagFieldSubset(tag)[0]?.fieldRef.name).toBe('m6_additional_dmg')
     expect(tagFieldSubset(tag)[0]?.title).toBeDefined()
+  })
+})
+
+describe('formulaFieldTitle', () => {
+  it('uses CharBase title for anomaly inst formulas', () => {
+    const tag = formulas.Anby.anomalyDmgInst.tag
+    expect(tagFieldSubset(tag)[0]?.title).toBeDefined()
+    const { container } = render(formulaFieldTitle(tag))
+    expect(container.textContent).toContain('Anomaly')
+    expect(container.textContent).not.toBe('anomalyDmg')
+  })
+})
+
+describe('TagDisplay', () => {
+  it('uses CharBase title for inst formula tags', () => {
+    const tag = formulas.Anby.anomalyDmgInst.tag
+    const { container } = render(<TagDisplay tag={tag} />)
+    expect(container.textContent).toContain('Anomaly')
+    expect(container.textContent).not.toBe('anomalyDmg')
   })
 })
 

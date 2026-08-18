@@ -1,10 +1,13 @@
 import { ColorText, SqBadge } from '@genshin-optimizer/common/ui'
 import { evalIfFunc } from '@genshin-optimizer/common/util'
 import type { Calculator as GameOptCalculator } from '@genshin-optimizer/game-opt/engine'
-import { Read, type Tag } from '@genshin-optimizer/zzz/formula'
-import { stripCalcContextTag } from '@genshin-optimizer/zzz/formula'
+import {
+  Read,
+  stripCalcContextTag,
+  type Tag,
+} from '@genshin-optimizer/zzz/formula'
 import { AttributeName } from '@genshin-optimizer/zzz/ui'
-import { getCondMap, tagFieldSubset } from '../char/tagFieldMap'
+import { getCondMap, tagFieldTitle } from '../char/tagFieldMap'
 import { damageTypeKeysMap, getDmgType, getVariant } from '../char/util'
 import { useZzzCalcContext } from '../hooks/useZzzCalcContext'
 import { TagFallbackLabel } from './TagFallbackLabel'
@@ -55,10 +58,7 @@ function TagStrDisplay({
   const calc = useZzzCalcContext()
   const listingTag = stripCalcContextTag(tag)
 
-  const ownedTitle =
-    listingTag.qt !== 'formula'
-      ? tagFieldSubset(listingTag)[0]?.title
-      : undefined
+  const ownedTitle = tagFieldTitle(listingTag)
   if (ownedTitle) return ownedTitle
 
   if (tag.qt === 'cond' && tag.q && tag.sheet && calc) {

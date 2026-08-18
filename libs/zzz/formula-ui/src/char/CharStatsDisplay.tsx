@@ -1,5 +1,4 @@
 import type { Read } from '@genshin-optimizer/game-opt/engine'
-import type { Tag as GameOptTag } from '@genshin-optimizer/game-opt/engine'
 import {
   type Field,
   FieldDisplayList,
@@ -32,6 +31,7 @@ import { OptFormulaSections } from '../OptFormulaSections'
 import {
   formulaReadForTag,
   isListingStatTag,
+  mergeMultiTagFieldForDisplay,
   mergeTagForOpt,
   statKeyFromListingTag,
   statReadTagKey,
@@ -207,26 +207,23 @@ const MultiFormulaFieldRow = memo(function MultiFormulaFieldRow({
   optTarget: TargetTag | undefined
   resolvedOptTag: Tag | undefined
 }) {
-  const mergedField = useMemo((): MultiTagField => {
-    return {
-      ...field,
-      fieldRefs: field.fieldRefs.map(({ label, ref }) => ({
-        label,
-        ref: mergeTagForOpt(ref as Tag, resolvedOptTag, optTarget) as Tag,
-      })),
-    }
-  }, [field, resolvedOptTag, optTarget])
-
-  const getRead = useCallback(
-    (fieldTag: GameOptTag) =>
-      formulaReadForTag(fieldTag as Tag, readByListingKey)!,
-    [readByListingKey]
+  const resolved = useMemo(
+    () =>
+      mergeMultiTagFieldForDisplay(
+        field,
+        readByListingKey,
+        resolvedOptTag,
+        optTarget
+      ),
+    [field, readByListingKey, resolvedOptTag, optTarget]
   )
+
+  if (!resolved) return null
 
   return (
     <MultiTagFieldDisplay
-      field={mergedField}
-      getRead={getRead}
+      field={resolved.field}
+      getRead={resolved.getRead}
       showZero
       component={ListItem}
     />

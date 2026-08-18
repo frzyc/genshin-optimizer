@@ -4,7 +4,11 @@ import {
   shouldShowDevComponents,
 } from '@genshin-optimizer/common/util'
 import type { CharacterKey, StatKey } from '@genshin-optimizer/zzz/consts'
-import { allCharacterKeys, statKeyTextMap } from '@genshin-optimizer/zzz/consts'
+import {
+  allCharacterKeys,
+  elementalData,
+  statKeyTextMap,
+} from '@genshin-optimizer/zzz/consts'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { isAbilityDim } from '@genshin-optimizer/zzz/formula'
 import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
@@ -37,6 +41,48 @@ const labelMap = {
   buff_: 'Buff Bonus',
   sheer_dmg_: 'Sheer DMG',
 } as const
+
+function baseStatLabel(q: string): string | undefined {
+  return statKeyTextMap[q] ?? labelMap[q as keyof typeof labelMap] ?? undefined
+}
+
+function renderAttributedBaseStat(
+  tag: Tag,
+  baseQ: string,
+  baseLabel: string,
+  showPercent?: boolean
+) {
+  return (
+    <span>
+      {isExtraHandlingStats(baseQ as (typeof extraHandlingStats)[number]) && (
+        <StatIcon statKey={baseQ as StatKey} iconProps={iconInlineProps} />
+      )}{' '}
+      <span>
+        {(tag.qt && qtMap[tag.qt as keyof typeof qtMap]) ?? tag.qt}{' '}
+        {tagQualifierLabel(tag, baseLabel)}
+        {showPercent && getUnitStr(baseQ as StatKey)}
+      </span>
+    </span>
+  )
+}
+
+function attributedLabelFromCompositeKey(
+  label: string,
+  tag: Tag
+): { baseQ: string; baseLabel: string; tag: Tag } | undefined {
+  const sep = label.indexOf('_')
+  if (sep <= 0) return undefined
+  const attribute = label.slice(0, sep)
+  const baseQ = label.slice(sep + 1)
+  if (!(attribute in elementalData)) return undefined
+  const baseLabel = baseStatLabel(baseQ)
+  if (!baseLabel) return undefined
+  return {
+    baseQ,
+    baseLabel,
+    tag: { ...tag, attribute: attribute as Tag['attribute'], q: baseQ },
+  }
+}
 
 /**
  * Owned fallback label for a tag — ability i18n / stats / formula keys.
@@ -81,6 +127,29 @@ export function TagFallbackLabel({
       <span>
         {tagQualifierLabel(tag, labelMap[labelMapKey as keyof typeof labelMap])}
       </span>
+    )
+  }
+
+  const attributedBaseQ = tag.attribute ? tag.q : undefined
+  if (attributedBaseQ) {
+    const baseLabel = baseStatLabel(attributedBaseQ)
+    if (baseLabel) {
+      return renderAttributedBaseStat(
+        tag,
+        attributedBaseQ,
+        baseLabel,
+        showPercent
+      )
+    }
+  }
+
+  const composite = attributedLabelFromCompositeKey(label, tag)
+  if (composite) {
+    return renderAttributedBaseStat(
+      composite.tag,
+      composite.baseQ,
+      composite.baseLabel,
+      showPercent
     )
   }
 

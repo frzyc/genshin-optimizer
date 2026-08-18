@@ -1,15 +1,16 @@
 import { ImgIcon } from '@genshin-optimizer/common/ui'
 import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
+import type { Read } from '@genshin-optimizer/game-opt/engine'
 import { useSetDebugTarget } from '@genshin-optimizer/game-opt/formula-ui'
 import { commonDefIcon } from '@genshin-optimizer/zzz/assets'
 import { type CharacterKey, isSkillKey } from '@genshin-optimizer/zzz/consts'
-import type { Read } from '@genshin-optimizer/game-opt/engine'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import HelpIcon from '@mui/icons-material/Help'
 import { Box, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
 import { useMemo } from 'react'
 import { isAbilityFormulaTag } from './abilityTag'
+import { formulaFieldTitle } from './bundledFormulaFields'
 import {
   abilityDisplayTitle,
   abilityHitParamTitle,
@@ -126,11 +127,7 @@ export function OptTargetSelectedLabel({
   if (getFieldCategory(charKey, tag)) {
     return <OptTargetFormulaLabel charKey={charKey} tag={tag} inline={inline} />
   }
-  console.error(
-    '[zzz-formula-ui] OptTargetSelectedLabel: uncategorized opt target tag',
-    { charKey, tag }
-  )
-  return null
+  return formulaFieldTitle(tag)
 }
 
 function AbilityOptTargetSecondaryLine({

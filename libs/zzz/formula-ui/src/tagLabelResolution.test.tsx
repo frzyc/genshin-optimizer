@@ -1,6 +1,6 @@
-import { render } from '@testing-library/react'
 import { resolveTargetTag } from '@genshin-optimizer/zzz/db'
 import { own } from '@genshin-optimizer/zzz/formula'
+import { render } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 import { tagFieldSubset } from './char/tagFieldMap'
 import { TagFallbackLabel } from './components/TagFallbackLabel'
@@ -46,5 +46,29 @@ describe('cappedCrit label resolution', () => {
     expect(container.textContent).toContain('Fire')
     expect(container.textContent).toContain('DMG')
     expect(container.textContent).not.toContain('fire_dmg_')
+  })
+
+  it('renders attributed base stats such as electric DEF', () => {
+    const tag = {
+      et: 'own' as const,
+      qt: 'formula' as const,
+      q: 'electric_def',
+    }
+    const { container } = render(<TagFallbackLabel tag={tag} />)
+    expect(container.textContent).toContain('Electric')
+    expect(container.textContent).toContain('DEF')
+    expect(container.textContent).not.toContain('electric_def')
+  })
+
+  it('renders attributed final DEF with qt prefix', () => {
+    const tag = {
+      ...own.final.def.tag,
+      attribute: 'electric' as const,
+    }
+    const { container } = render(<TagFallbackLabel tag={tag} />)
+    expect(container.textContent).toContain('Final')
+    expect(container.textContent).toContain('Electric')
+    expect(container.textContent).toContain('DEF')
+    expect(container.textContent).not.toContain('electric_def')
   })
 })

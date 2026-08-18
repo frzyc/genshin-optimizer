@@ -1,10 +1,11 @@
 import { read as tagRead } from '@genshin-optimizer/pando/engine'
-import { listingId } from '@genshin-optimizer/zzz/formula'
 import { resolveTargetTag } from '@genshin-optimizer/zzz/db'
+import { listingId } from '@genshin-optimizer/zzz/formula'
 import { describe, expect, it } from 'vitest'
 import {
   formulaReadForTag,
   isOptTargetTag,
+  mergeMultiTagFieldForDisplay,
   mergeTagForOpt,
   statKeyFromListingTag,
 } from './optTarget'
@@ -257,5 +258,50 @@ describe('formulaReadForTag', () => {
     const result = formulaReadForTag(merged, readByListingKey)!
     expect(result.tag).toEqual(merged)
     expect(typeof (result as { withTag?: unknown }).withTag).toBe('undefined')
+  })
+})
+
+describe('mergeMultiTagFieldForDisplay', () => {
+  const dmgTag = {
+    sheet: 'Anby' as const,
+    name: 'BasicAttackTurboVolt_0',
+    q: 'standardDmg' as const,
+    qt: 'formula' as const,
+  }
+  const dazeTag = { ...dmgTag, q: 'dazeBuildup' as const }
+  const anomTag = { ...dmgTag, q: 'anomBuildup' as const }
+
+  it('returns undefined when no bundled dims have live listing reads', () => {
+    const field = {
+      title: 'test',
+      fieldRefs: [
+        { label: 'DMG', ref: dmgTag },
+        { label: 'Daze', ref: dazeTag },
+        { label: 'Anom', ref: anomTag },
+      ],
+    }
+    expect(
+      mergeMultiTagFieldForDisplay(field, new Map(), undefined, undefined)
+    ).toBeUndefined()
+  })
+
+  it('keeps only dims with listing reads', () => {
+    const dmgRead = tagRead(dmgTag)
+    const readByListingKey = new Map([[listingId(dmgTag), dmgRead as never]])
+    const resolved = mergeMultiTagFieldForDisplay(
+      {
+        title: 'test',
+        fieldRefs: [
+          { label: 'DMG', ref: dmgTag },
+          { label: 'Daze', ref: dazeTag },
+        ],
+      },
+      readByListingKey,
+      undefined,
+      undefined
+    )
+    expect(resolved?.field.fieldRefs).toHaveLength(1)
+    expect(resolved?.field.fieldRefs[0]?.ref).toEqual(dmgTag)
+    expect(resolved?.getRead(dmgTag).tag).toEqual(dmgTag)
   })
 })

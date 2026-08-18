@@ -8,6 +8,7 @@ import {
 } from '@genshin-optimizer/zzz/formula'
 import { isAbilityFormulaTag } from './abilityTag'
 import { AbilityRowTitle } from './char/abilityFormulaLabels'
+import { tagFieldTitle } from './char/tagFieldMap'
 import { getVariant } from './char/util'
 import { TagFallbackLabel } from './components/TagFallbackLabel'
 import { ABILITY_DIM_LABEL } from './formulaDimensionUi'
@@ -40,6 +41,10 @@ export function formulaFieldTitle(tag: Tag) {
         <AbilityRowTitle charKey={charKey} tag={tag} />
       </ColorText>
     )
+  }
+  const ownedTitle = tagFieldTitle(tag)
+  if (ownedTitle) {
+    return <ColorText color={getVariant(tag)}>{ownedTitle}</ColorText>
   }
   return (
     <ColorText color={getVariant(tag)}>

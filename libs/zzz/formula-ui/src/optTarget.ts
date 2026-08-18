@@ -1,5 +1,5 @@
 import type { Read } from '@genshin-optimizer/game-opt/engine'
-import type { Field } from '@genshin-optimizer/game-opt/sheet-ui'
+import type { Field, MultiTagField } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { BaseRead } from '@genshin-optimizer/pando/engine'
 import { read as tagRead } from '@genshin-optimizer/pando/engine'
 import type {
@@ -8,9 +8,9 @@ import type {
   StatKey,
 } from '@genshin-optimizer/zzz/consts'
 import {
-  type TargetTag,
   isGenericDmgInstTarget,
   resolveTargetTag,
+  type TargetTag,
 } from '@genshin-optimizer/zzz/db'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import {
@@ -47,13 +47,7 @@ export function formulaReadForTag(
       return undefined
     }
     const match = readByListingKey.get(listingId(listingTag))
-    if (!match) {
-      console.error(
-        '[zzz-formula-ui] formulaReadForTag: missing listing read for named formula',
-        { tag: listingTag }
-      )
-      return undefined
-    }
+    if (!match) return undefined
     return readWithMergedTag(match, tag)
   }
   if (readByListingKey) {
@@ -146,6 +140,40 @@ export function isOptTargetTag(
 }
 
 /** Use resolved generic-inst tag for compute/highlight on the selected row only. */
+/** Drop bundled dims with no live listing read (static meta vs calc gating). */
+export function mergeMultiTagFieldForDisplay(
+  field: MultiTagField,
+  readByListingKey: Map<string, Read<Tag>>,
+  resolvedOptTag: Tag | undefined,
+  optTarget: TargetTag | undefined
+): { field: MultiTagField; getRead: (tag: Tag) => Read<Tag> } | undefined {
+  const readMap = new Map<string, Read<Tag>>()
+  const fieldRefs: MultiTagField['fieldRefs'] = []
+
+  for (const { label, ref } of field.fieldRefs) {
+    const mergedRef = mergeTagForOpt(ref as Tag, resolvedOptTag, optTarget)
+    const calcRead = formulaReadForTag(mergedRef, readByListingKey)
+    if (!calcRead) continue
+    readMap.set(listingId(mergedRef), calcRead)
+    fieldRefs.push({ label, ref: mergedRef })
+  }
+
+  if (!fieldRefs.length) return undefined
+
+  return {
+    field: { ...field, fieldRefs },
+    getRead: (tag) => {
+      const read = readMap.get(listingId(tag))
+      if (!read) {
+        throw new Error(
+          `[zzz-formula-ui] mergeMultiTagFieldForDisplay: missing read for ${listingId(tag)}`
+        )
+      }
+      return read
+    },
+  }
+}
+
 export function mergeTagForOpt(
   tag: Tag,
   resolvedOptTag: Tag | undefined,
