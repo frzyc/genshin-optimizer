@@ -1,3 +1,4 @@
+export * from './assets'
 export * from './components'
 export * from './consts'
 export * from './GoAd'
