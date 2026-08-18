@@ -122,19 +122,27 @@ const [condSkillDreamPath, condSkillDream] = cond(key, 'skillDream')
 const skillDream_swirl_dmg_ = equal(
   condSkillDream,
   'on',
-  prod(
-    subscript(input.total.skillIndex, dm.skill.swirl_dmg_, { unit: '%' }),
-    input.total.eleMas
+  equal(
+    input.activeCharKey,
+    key,
+    prod(
+      subscript(input.total.skillIndex, dm.skill.swirl_dmg_, { unit: '%' }),
+      input.total.eleMas
+    )
   )
 )
 const skillDream_stellarswirl_dmg_ = equal(
   condSkillDream,
   'on',
-  prod(
-    subscript(input.total.skillIndex, dm.skill.stellarswirl_dmg_, {
-      unit: '%',
-    }),
-    input.total.eleMas
+  equal(
+    input.activeCharKey,
+    key,
+    prod(
+      subscript(input.total.skillIndex, dm.skill.stellarswirl_dmg_, {
+        unit: '%',
+      }),
+      input.total.eleMas
+    )
   )
 )
 
@@ -151,7 +159,11 @@ const lockDream_eleMas = equal(
   equal(
     condSkillDream,
     'on',
-    prod(percent(dm.lockedPassive.eleMas), input.premod.eleMas)
+    equal(
+      input.activeCharKey,
+      'on',
+      prod(percent(dm.lockedPassive.eleMas), input.premod.eleMas)
+    )
   )
 )
 
@@ -183,7 +195,11 @@ const c2Dream_dmg_ = objKeyValMap(absorbableEle, (ele) => [
     equal(
       condSkillDream,
       'on',
-      prod(percent(dm.constellation2.phec_dmg_), input.total.eleMas)
+      equal(
+        input.activeCharKey,
+        'on',
+        prod(percent(dm.constellation2.phec_dmg_), input.total.eleMas)
+      )
     )
   ),
 ])
@@ -199,22 +215,38 @@ const c2Dream_res_ = objKeyValMap([...absorbableEle, 'anemo'], (ele) => [
 const c6Dream_swirlCritRate_ = greaterEq(
   input.constellation,
   6,
-  equal(condSkillDream, 'on', dm.constellation6.swirl_critRate_)
+  equal(
+    condSkillDream,
+    'on',
+    equal(input.activeCharKey, key, dm.constellation6.swirl_critRate_)
+  )
 )
 const c6Dream_swirlCritDMG_ = greaterEq(
   input.constellation,
   6,
-  equal(condSkillDream, 'on', dm.constellation6.swirl_critDMG_)
+  equal(
+    condSkillDream,
+    'on',
+    equal(input.activeCharKey, key, dm.constellation6.swirl_critDMG_)
+  )
 )
 const c6Dream_stellarswirl_critRate_ = greaterEq(
   input.constellation,
   6,
-  equal(condSkillDream, 'on', dm.constellation6.stellarswirl_critRate_)
+  equal(
+    condSkillDream,
+    'on',
+    equal(input.activeCharKey, key, dm.constellation6.stellarswirl_critRate_)
+  )
 )
 const c6Dream_stellarswirl_critDMG_ = greaterEq(
   input.constellation,
   6,
-  equal(condSkillDream, 'on', dm.constellation6.stellarswirl_critDMG_)
+  equal(
+    condSkillDream,
+    'on',
+    equal(input.activeCharKey, key, dm.constellation6.stellarswirl_critDMG_)
+  )
 )
 // TODO: Verify if this reads premod or total
 const c6_critRate_ = greaterEq(
@@ -484,6 +516,7 @@ const sheet: TalentSheet = {
       value: condSkillDream,
       teamBuff: true,
       name: ct.ch('skillCond'),
+      canShow: equal(input.activeCharKey, key, 1),
       states: {
         on: {
           fields: [
@@ -498,7 +531,7 @@ const sheet: TalentSheet = {
       },
     }),
     ct.headerTem('lockedPassive', {
-      canShow: equal(condSkillDream, 'on', 1),
+      canShow: equal(condSkillDream, 'on', equal(input.activeCharKey, key, 1)),
       fields: [
         {
           node: lockDream_eleMas,
@@ -514,7 +547,7 @@ const sheet: TalentSheet = {
       ],
     }),
     ct.headerTem('constellation6', {
-      canShow: equal(condSkillDream, 'on', 1),
+      canShow: equal(condSkillDream, 'on', equal(input.activeCharKey, key, 1)),
       teamBuff: true,
       fields: [
         {
