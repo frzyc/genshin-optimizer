@@ -1,0 +1,189 @@
+{
+  "name": "阿羅夏",
+  "title": "疾掠弋緹",
+  "description": "縱橫於至冬雪原的「職業獵手」。其冷靜的外表下，似乎隱藏著別樣炙熱的「理想」。",
+  "constellationName": "迅捷犬座",
+  "auto": {
+    "name": "角槍馳弋",
+    "fields": {
+      "normal": {
+        "0": "<strong>普通攻擊</strong>",
+        "1": "進行至多四段的連續槍擊，並對最後一擊命中的敵人施加<tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>弋獵印記</strong></tooltip>效果。"
+      },
+      "charged": {
+        "0": "<strong>重擊</strong>",
+        "1": "消耗一定體力，向前方突進，對路徑上的敵人造成傷害。"
+      },
+      "plunging": {
+        "0": "<strong>下落攻擊</strong>",
+        "1": "從空中下墜衝擊地面，攻擊下落路徑上的敵人，並在落地時造成範圍傷害。"
+      }
+    },
+    "skillParams": {
+      "0": "一段傷害",
+      "1": "二段傷害",
+      "2": "三段傷害",
+      "3": "四段傷害",
+      "4": "重擊傷害",
+      "5": "重擊體力消耗",
+      "6": "下墜期間傷害",
+      "7": "低空/高空墜地衝擊傷害",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "伏襲霆擊",
+    "description": {
+      "0": "循藉獵人的本能，依據點按、長按，以不同的方式產生效果，並對命中的敵人施加<tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>弋獵印記</strong></tooltip>效果。",
+      "1": "<br/>",
+      "2": "<strong>點按</strong>",
+      "3": "向前方射擊，造成<electro>雷元素範圍傷害</electro>。",
+      "4": "<br/>",
+      "5": "<strong>長按</strong>",
+      "6": "進入瞄準狀態，並選定前方一定範圍內的敵人，在該狀態下提高阿羅夏的抗打斷能力。",
+      "7": "長按結束時，對選定的敵人造成<electro>雷元素傷害</electro>。",
+      "8": "<br/>",
+      "9": "<i>莽撞的獵手曾向槍尖攀爬，隨後，有幸熬過血的教訓，領悟雪原的生存至理。</i>"
+    },
+    "skillParams": {
+      "0": "點按傷害",
+      "1": "長按傷害",
+      "2": "冷卻時間",
+      "3": "弋獵印記持續時間",
+      "4": "獵者之準攻擊力提升",
+      "5": "獵者之準持續時間",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "守獵進踞",
+    "description": {
+      "0": "召喚信賴的好夥伴<strong>圖加林</strong>一同戰鬥，並將前方區域短暫變換為<strong>轟霆獵場</strong>。",
+      "1": "<br/>",
+      "2": "<strong>轟霆獵場</strong>",
+      "3": [
+        "持續嘲諷周圍的敵人，吸引敵人攻擊。",
+        "每隔2秒，對踏入其中的敵人造成一次<electro>雷元素範圍傷害</electro>。"
+      ],
+      "4": "<br/>",
+      "5": "<strong>圖加林</strong>",
+      "6": [
+        "若周圍存在敵人，每隔2秒，圖加林將快速移動至一名敵人附近，對其進行撕咬攻擊，造成<strong>雷元素傷害</strong>。",
+        "若命中的敵人處於<strong>弋獵印記</strong>效果影響下，還會啟動<strong>弋獵印記</strong>。",
+        "圖加林會優先攻擊處於<strong>弋獵印記</strong>效果影響下的敵人。"
+      ],
+      "7": "<br/>",
+      "8": "<i>等待，等待到不再心焦，便有赤腹蘭鴴飛越白樺林，迎接他的射擊。</i>"
+    },
+    "skillParams": {
+      "0": "轟霆獵場傷害",
+      "1": "圖加林傷害",
+      "2": "持續時間",
+      "3": "冷卻時間",
+      "4": "元素能量",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "驚醒沉睡的林線",
+    "description": {
+      "0": "<tooltip ns=tooltips_gen baseKey18=11480002 values=[]><strong>圖加林</strong></tooltip>進行攻擊時，還會為隊伍中附近的目前場上角色恢復生命值，回復量相當於阿羅夏攻擊力的120%。"
+    }
+  },
+  "passive2": {
+    "name": "告別冬麥與殘葉",
+    "description": {
+      "0": "基於阿羅夏的元素充能效率，提升阿羅夏的元素戰技與元素爆發造成的傷害：每1%元素充能效率都會使上述傷害提升0.35%，至多提升至70%。"
+    }
+  },
+  "passive3": {
+    "name": "星赴險域",
+    "description": {
+      "0": "處於<tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>極星輝域</strong></tooltip>中時，阿羅夏將會進入<strong>輝映·星超導</strong>狀態。",
+      "1": "<strong>輝映·星超導</strong>：啟動<tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>弋獵印記</strong></tooltip>時獲得的<strong>獵者之準</strong>效果還會使角色處於場上時造成的星超導反應傷害提升20%。"
+    }
+  },
+  "passive": {
+    "name": "樹梢察伺",
+    "description": {
+      "0": "在小地圖上顯示周圍的<strong>至冬區域特產</strong>的位置。"
+    }
+  },
+  "constellation1": {
+    "name": "寒谷轟雷",
+    "description": {
+      "0": "隊伍中附近的角色對敵人觸發<electro>雷元素相關反應</electro>後，將為阿羅夏恢復15點元素能量，該效果每18秒至多觸發一次。"
+    }
+  },
+  "constellation2": {
+    "name": "長嗥遠訊",
+    "description": {
+      "0": "元素爆發<strong>守獵進踞</strong>的持續時間延長6秒。",
+      "1": "此外，<tooltip ns=tooltips_gen baseKey18=11480002 values=[]><strong>圖加林</strong></tooltip>每次攻擊敵人前，還會為一名目標施加<tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>弋獵印記</strong></tooltip>。該效果不會啟動已有的<strong>弋獵印記</strong>。"
+    }
+  },
+  "constellation3": {
+    "name": "僚朋相喚",
+    "description": {
+      "0": "元素戰技<strong>伏襲霆擊</strong>的技能等級提高3級。",
+      "1": "至多提升至15級。"
+    }
+  },
+  "constellation4": {
+    "name": "銜取獵品",
+    "description": {
+      "0": "<tooltip ns=tooltips_gen baseKey18=11480002 values=[]><strong>圖加林</strong></tooltip>進行攻擊時，還會為隊伍中附近的生命值百分比最低的角色恢復生命值，回復量相當於阿羅夏攻擊力的60%。"
+    }
+  },
+  "constellation5": {
+    "name": "鶯啼止時",
+    "description": {
+      "0": "元素爆發<strong>守獵進踞</strong>的技能等級提高3級。",
+      "1": "至多提升至15級。"
+    }
+  },
+  "constellation6": {
+    "name": "復奪旌幡",
+    "description": {
+      "0": "啟動<tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>弋獵印記</strong></tooltip>時獲得的<strong>獵者之準</strong>效果可以疊加。該效果至多疊加2層，疊加至2層時，還會使處於該效果影響下的目前場上角色的元素精通提升100點。"
+    }
+  }
+}

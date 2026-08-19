@@ -1,10 +1,10 @@
 {
   "20002": [
-    0,
+    null,
     "InitiatesFeather"
   ],
   "20004": [
-    0,
+    null,
     "InitiatesFlower"
   ],
   "20412": [
@@ -168,123 +168,123 @@
     "TheSunkenYears"
   ],
   "23300": [
-    0,
+    null,
     ""
   ],
   "23301": [
-    0,
+    null,
     ""
   ],
   "23302": [
-    0,
+    null,
     ""
   ],
   "23303": [
-    0,
+    null,
     ""
   ],
   "23304": [
-    0,
+    null,
     ""
   ],
   "23305": [
-    0,
+    null,
     ""
   ],
   "23306": [
-    0,
+    null,
     ""
   ],
   "23307": [
-    0,
+    null,
     ""
   ],
   "23308": [
-    0,
+    null,
     ""
   ],
   "23309": [
-    0,
+    null,
     ""
   ],
   "23310": [
-    0,
+    null,
     ""
   ],
   "23311": [
-    0,
+    null,
     ""
   ],
   "23312": [
-    0,
+    null,
     ""
   ],
   "23313": [
-    0,
+    null,
     ""
   ],
   "23314": [
-    0,
+    null,
     ""
   ],
   "23315": [
-    0,
+    null,
     ""
   ],
   "23316": [
-    0,
+    null,
     ""
   ],
   "23317": [
-    0,
+    null,
     ""
   ],
   "23318": [
-    0,
+    null,
     ""
   ],
   "23329": [
-    0,
+    null,
     ""
   ],
   "23330": [
-    0,
+    null,
     ""
   ],
   "23331": [
-    0,
+    null,
     ""
   ],
   "23332": [
-    0,
+    null,
     ""
   ],
   "23334": [
-    0,
+    null,
     ""
   ],
   "23335": [
-    0,
+    null,
     ""
   ],
   "23336": [
-    0,
+    null,
     ""
   ],
   "23337": [
-    0,
+    null,
     ""
   ],
   "23338": [
-    0,
+    null,
     ""
   ],
   "23339": [
-    0,
+    null,
     ""
   ],
   "23340": [
-    0,
+    null,
     ""
   ],
   "23341": [
@@ -2286,6 +2286,86 @@
   "23840": [
     15046,
     "MomentThatCeasedUponWakingFromGrandDreams"
+  ],
+  "23841": [
+    15047,
+    "ChaliceOfYourBloodAndSorrow"
+  ],
+  "23842": [
+    15047,
+    "GloryToYourLegacy"
+  ],
+  "23843": [
+    15047,
+    "TestamentToYourFaith"
+  ],
+  "23844": [
+    15047,
+    "HonorToYourDevotion"
+  ],
+  "23845": [
+    15047,
+    "TimeGiftedUntoYou"
+  ],
+  "23846": [
+    15047,
+    "ChaliceOfYourBloodAndSorrow"
+  ],
+  "23847": [
+    15047,
+    "GloryToYourLegacy"
+  ],
+  "23848": [
+    15047,
+    "TestamentToYourFaith"
+  ],
+  "23849": [
+    15047,
+    "HonorToYourDevotion"
+  ],
+  "23850": [
+    15047,
+    "TimeGiftedUntoYou"
+  ],
+  "23851": [
+    15048,
+    "FoundrymansMagnanimity"
+  ],
+  "23852": [
+    15048,
+    "FoundrymansObservation"
+  ],
+  "23853": [
+    15048,
+    "FoundrymansLegacy"
+  ],
+  "23854": [
+    15048,
+    "FoundrymansConjecture"
+  ],
+  "23855": [
+    15048,
+    "FoundrymansCalculus"
+  ],
+  "23856": [
+    15048,
+    "FoundrymansMagnanimity"
+  ],
+  "23857": [
+    15048,
+    "FoundrymansObservation"
+  ],
+  "23858": [
+    15048,
+    "FoundrymansLegacy"
+  ],
+  "23859": [
+    15048,
+    "FoundrymansLegacy"
+  ],
+  "23860": [
+    15048,
+    "FoundrymansCalculus"
   ],
   "24101": [
     15001,
@@ -4886,6 +4966,166 @@
   "46554": [
     15046,
     "MomentThatCeasedUponWakingFromGrandDreams"
+  ],
+  "47412": [
+    15047,
+    "ChaliceOfYourBloodAndSorrow"
+  ],
+  "47413": [
+    15047,
+    "ChaliceOfYourBloodAndSorrow"
+  ],
+  "47422": [
+    15047,
+    "GloryToYourLegacy"
+  ],
+  "47423": [
+    15047,
+    "GloryToYourLegacy"
+  ],
+  "47432": [
+    15047,
+    "TestamentToYourFaith"
+  ],
+  "47433": [
+    15047,
+    "TestamentToYourFaith"
+  ],
+  "47442": [
+    15047,
+    "HonorToYourDevotion"
+  ],
+  "47443": [
+    15047,
+    "HonorToYourDevotion"
+  ],
+  "47452": [
+    15047,
+    "TimeGiftedUntoYou"
+  ],
+  "47453": [
+    15047,
+    "TimeGiftedUntoYou"
+  ],
+  "47513": [
+    15047,
+    "ChaliceOfYourBloodAndSorrow"
+  ],
+  "47514": [
+    15047,
+    "ChaliceOfYourBloodAndSorrow"
+  ],
+  "47523": [
+    15047,
+    "GloryToYourLegacy"
+  ],
+  "47524": [
+    15047,
+    "GloryToYourLegacy"
+  ],
+  "47533": [
+    15047,
+    "TestamentToYourFaith"
+  ],
+  "47534": [
+    15047,
+    "TestamentToYourFaith"
+  ],
+  "47543": [
+    15047,
+    "HonorToYourDevotion"
+  ],
+  "47544": [
+    15047,
+    "HonorToYourDevotion"
+  ],
+  "47553": [
+    15047,
+    "TimeGiftedUntoYou"
+  ],
+  "47554": [
+    15047,
+    "TimeGiftedUntoYou"
+  ],
+  "48412": [
+    15048,
+    "FoundrymansMagnanimity"
+  ],
+  "48413": [
+    15048,
+    "FoundrymansMagnanimity"
+  ],
+  "48422": [
+    15048,
+    "FoundrymansObservation"
+  ],
+  "48423": [
+    15048,
+    "FoundrymansObservation"
+  ],
+  "48432": [
+    15048,
+    "FoundrymansLegacy"
+  ],
+  "48433": [
+    15048,
+    "FoundrymansLegacy"
+  ],
+  "48442": [
+    15048,
+    "FoundrymansConjecture"
+  ],
+  "48443": [
+    15048,
+    "FoundrymansConjecture"
+  ],
+  "48452": [
+    15048,
+    "FoundrymansCalculus"
+  ],
+  "48453": [
+    15048,
+    "FoundrymansCalculus"
+  ],
+  "48513": [
+    15048,
+    "FoundrymansMagnanimity"
+  ],
+  "48514": [
+    15048,
+    "FoundrymansMagnanimity"
+  ],
+  "48523": [
+    15048,
+    "FoundrymansObservation"
+  ],
+  "48524": [
+    15048,
+    "FoundrymansObservation"
+  ],
+  "48533": [
+    15048,
+    "FoundrymansLegacy"
+  ],
+  "48534": [
+    15048,
+    "FoundrymansLegacy"
+  ],
+  "48543": [
+    15048,
+    "FoundrymansConjecture"
+  ],
+  "48544": [
+    15048,
+    "FoundrymansConjecture"
+  ],
+  "48553": [
+    15048,
+    "FoundrymansCalculus"
+  ],
+  "48554": [
+    15048,
+    "FoundrymansCalculus"
   ],
   "51110": [
     10001,

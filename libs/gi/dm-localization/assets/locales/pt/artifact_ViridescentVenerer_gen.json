@@ -2,7 +2,7 @@
   "setName": "Sombra Verde",
   "setEffects": {
     "2": "Bônus de Dano Anemo +15%",
-    "4": "Aumenta o Dano do Redemoinho em 60%. Dependendo do tipo elemento infundido, diminui a RES Elemental correspondente do oponente em 40% por 10s."
+    "4": "Aumenta o Dano causado por Redemoinho em 60% e aumenta o Dano causado por Redemoinho Estelar em 20%. De acordo com o Tipo Elemental do Redemoinho, reduz a RES Elemental correspondente do inimigo afetado em 40% por 10s. Ao desencadear Redemoinho Estelar, também reduz sua RES Cryo em 40%. Efeitos de redução de RES de mesmo Tipo Elemental não acumulam."
   },
   "pieces": {
     "flower": {

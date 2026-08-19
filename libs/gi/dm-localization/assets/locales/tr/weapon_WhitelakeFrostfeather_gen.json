@@ -1,0 +1,24 @@
+{
+  "name": "Beyaz Gölün Buz Tüyü",
+  "description": {
+    "0": "Bir kar kuğusunun tüyleri kadar hafif bir uzun kılıç. Her daim saf ve lekesiz kalır."
+  },
+  "passiveName": "Kar Kuğusunun Finali",
+  "passiveDescription": {
+    "0": {
+      "0": "Kuşanan karakter bir düşmana Element Becerisiyle vurduğunda \"Göl Rengi Ağıt\" etkisini kazanır: 8 saniyeliğine Saldırısı <cryo>%8</cryo> artar. Bu etki 0,1 saniyede bir tetiklenebilir. 3 kademeye kadar birikebilir ve her kademenin süresi birbirinden bağımsızdır. 3 kademe biriktiğinde kuşanan karakterin Yıldız Parıltısı Tepkimesi Hasarıyla verdiği Kritik Hasar <cryo>%50</cryo> artar ve Yıldız Parıltısı tepkimeleri tetiklemek ya da Yıldız Parıltısı Tepkimesi Hasarı vermek karaktere <cryo>4</cryo> Element Enerjisi yeniler. Bu Enerji yenileme etkisi 3,5 saniyede bir tetiklenebilir. Kuşanan karakter alanda olmasa da tetiklenebilir."
+    },
+    "1": {
+      "0": "Kuşanan karakter bir düşmana Element Becerisiyle vurduğunda \"Göl Rengi Ağıt\" etkisini kazanır: 8 saniyeliğine Saldırısı <cryo>%10</cryo> artar. Bu etki 0,1 saniyede bir tetiklenebilir. 3 kademeye kadar birikebilir ve her kademenin süresi birbirinden bağımsızdır. 3 kademe biriktiğinde kuşanan karakterin Yıldız Parıltısı Tepkimesi Hasarıyla verdiği Kritik Hasar <cryo>%65</cryo> artar ve Yıldız Parıltısı tepkimeleri tetiklediğinde ya da Yıldız Parıltısı Tepkimesi Hasarı verdiğinde karakter <cryo>4,5</cryo> Element Enerjisi yeniler. Bu Enerji yenileme etkisi 3,5 saniyede bir tetiklenebilir. Kuşanan karakter alanda olmasa da tetiklenebilir."
+    },
+    "2": {
+      "0": "Kuşanan karakter bir düşmana Element Becerisiyle vurduğunda \"Göl Rengi Ağıt\" etkisini kazanır: 8 saniyeliğine Saldırısı <cryo>%12</cryo> artar. Bu etki 0,1 saniyede bir tetiklenebilir. 3 kademeye kadar birikebilir ve her kademenin süresi birbirinden bağımsızdır. 3 kademe biriktiğinde kuşanan karakterin Yıldız Parıltısı Tepkimesi Hasarıyla verdiği Kritik Hasar <cryo>%80</cryo> artar ve Yıldız Parıltısı tepkimeleri tetiklediğinde ya da Yıldız Parıltısı Tepkimesi Hasarı verdiğinde karakter <cryo>5</cryo> Element Enerjisi yeniler. Bu Enerji yenileme etkisi 3,5 saniyede bir tetiklenebilir. Kuşanan karakter alanda olmasa da tetiklenebilir."
+    },
+    "3": {
+      "0": "Kuşanan karakter bir düşmana Element Becerisiyle vurduğunda \"Göl Rengi Ağıt\" etkisini kazanır: 8 saniyeliğine Saldırısı <cryo>%14</cryo> artar. Bu etki 0,1 saniyede bir tetiklenebilir. 3 kademeye kadar birikebilir ve her kademenin süresi birbirinden bağımsızdır. 3 kademe biriktiğinde kuşanan karakterin Yıldız Parıltısı Tepkimesi Hasarıyla verdiği Kritik Hasar <cryo>%95</cryo> artar ve Yıldız Parıltısı tepkimeleri tetiklediğinde ya da Yıldız Parıltısı Tepkimesi Hasarı verdiğinde karakter <cryo>5,5</cryo> Element Enerjisi yeniler. Bu Enerji yenileme etkisi 3,5 saniyede bir tetiklenebilir. Kuşanan karakter alanda olmasa da tetiklenebilir."
+    },
+    "4": {
+      "0": "Kuşanan karakter bir düşmana Element Becerisiyle vurduğunda \"Göl Rengi Ağıt\" etkisini kazanır: 8 saniyeliğine Saldırısı <cryo>%16</cryo> artar. Bu etki 0,1 saniyede bir tetiklenebilir. 3 kademeye kadar birikebilir ve her kademenin süresi birbirinden bağımsızdır. 3 kademe biriktiğinde kuşanan karakterin Yıldız Parıltısı Tepkimesi Hasarıyla verdiği Kritik Hasar <cryo>%110</cryo> artar ve Yıldız Parıltısı tepkimeleri tetiklediğinde ya da Yıldız Parıltısı Tepkimesi Hasarı verdiğinde karakter <cryo>6</cryo> Element Enerjisi yeniler. Bu Enerji yenileme etkisi 3,5 saniyede bir tetiklenebilir. Kuşanan karakter alanda olmasa da tetiklenebilir."
+    }
+  }
+}

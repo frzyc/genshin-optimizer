@@ -46,10 +46,10 @@
     "name": "Klingeling! Klang der Hexenjagd",
     "description": {
       "0": "Mit der Entschlossenheit, die böse Hexe zu besiegen und Descartes zu retten, entfessle die Kraft des Windes! Prune schlägt mit dem „Hammer des Jagdschwurs“ auf das „Köderglöckchen“ und verursacht <anemo>Anemo-SCH</anemo>.",
-      "1": "Wenn Prune durch diesen Angriff bei einem Gegner eine Verwirbelung auslöst, wird innerhalb der nächsten 6 s <strong>Klingeling! Klang der Hexenjagd</strong> durch <strong>Bumm-Bumm! Strafe des Hexenrichters</strong> ersetzt.",
+      "1": "Wenn Prune durch diesen Angriff bei einem Gegner eine Verwirbelung oder Stellar-Verwirbelung auslöst, wird innerhalb der nächsten 6 s <strong>Klingeling! Klang der Hexenjagd</strong> durch <strong>Bumm-Bumm! Strafe des Hexenrichters</strong> ersetzt.",
       "2": "<br/>",
       "3": "<strong>Bumm-Bumm! Strafe des Hexenrichters</strong>",
-      "4": "Die Elementarenergie vom Typ der vorigen Verwirbelung umhüllt jetzt den „Hammer des Jagdschwurs“, der nun eine Elementarumwandlung durchläuft. Bei Anwendung durch Drücken springt Prune hoch und tritt den <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Hammer des Jagdschwurs</strong></tooltip> nach vorne, wodurch sie Gegnern vor ihr SCH des entsprechenden Elementartyps zufügt."
+      "4": "Die Elementarenergie vom Typ der vorigen Verwirbelung oder Stellar-Verwirbelung umhüllt jetzt den „Hammer des Jagdschwurs“, der nun eine Elementarumwandlung durchläuft. Bei Anwendung durch Drücken springt Prune hoch und tritt den <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Hammer des Jagdschwurs</strong></tooltip> nach vorne, wodurch sie Gegnern vor ihr SCH des entsprechenden Elementartyps zufügt."
     },
     "skillParams": {
       "0": "SCH durch „Klingeling! Klang der Hexenjagd“",
@@ -108,7 +108,7 @@
   "passive1": {
     "name": "Entscheidung und Strafe",
     "description": {
-      "0": "Beschwört, wenn das „Köderglöckchen“ im Modus „Jagdsuche“ der Spezialfähigkeit <strong><tooltip ns=char_Prune_gen baseKey18=burst>Glockenläuten! Die Jagd ist eröffnet!</tooltip></strong> einem Gegner Schaden zufügt und dieser Schaden eine Verwirbelung auslöst, die den Gegner trifft, vor dem Gegner einen <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Hammer des Jagdschwurs</strong></tooltip>. Dieser führt eine Elementarumwandlung basierend auf der ausgelösten Verwirbelung durch, schlägt auf den Gegner ein und verursacht dabei Elementar-Schaden des entsprechenden Typs in Höhe von 150 % von Prunes ANG. Hierdurch verursachter Schaden gilt als Schaden der Spezialfähigkeit."
+      "0": "Beschwört, wenn das „Köderglöckchen“ im Modus „Jagdsuche“ der Spezialfähigkeit <strong><tooltip ns=char_Prune_gen baseKey18=burst>Glockenläuten! Die Jagd ist eröffnet!</tooltip></strong> einem Gegner Schaden zufügt und dieser Schaden die Reaktion Verwirbelung oder Stellar-Verwirbelung auslöst, die den Gegner trifft, vor dem Gegner einen <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Hammer des Jagdschwurs</strong></tooltip>. Dieser führt eine Elementarumwandlung basierend auf der ausgelösten Verwirbelung oder Stellar-Verwirbelung durch, schlägt auf den Gegner ein und verursacht dabei Elementar-Schaden des entsprechenden Typs in Höhe von 150 % von Prunes ANG. Hierdurch verursachter Schaden gilt als Schaden der Spezialfähigkeit."
     }
   },
   "passive2": {
@@ -129,7 +129,7 @@
       "0": "Wandelt Prune nach dem Abschluss von <strong>Aufgabe der Hexe – Von Widerlegung</strong> in eine <strong>Hexerei</strong>-Figur um. Verleiht, wenn sich in der Truppe mindestens 2 Hexerei-Figuren befinden, den Effekt <strong>Hexerei – Geheimes Ritual</strong>, der Hexerei-Figuren verstärkt.",
       "1": "<br/>",
       "2": "<strong>Hexerei – Geheimes Ritual</strong>",
-      "3": "Erhöht, nachdem eine Hexerei-Figur in der Truppe, die unter dem Einfluss von „Trommelwirbel“ steht, eine beliebige Elementarreaktion an einem Gegner auslöst, Prunes eigenen ANG 5 s lang um 60 %. Wenn es sich bei der Elementarreaktion der Figur um eine Verwirbelungsreaktion handelt, wird der ANG dieser Figur 5 s lang zusätzlich um 30 % erhöht."
+      "3": "Erhöht, nachdem eine Hexerei-Figur in der Truppe, die unter dem Einfluss von „Trommelwirbel“ steht, eine beliebige Elementarreaktion an einem Gegner auslöst, Prunes eigenen ANG 5 s lang um 60 %. Wenn es sich bei der Elementarreaktion der Figur um die Reaktion Verwirbelung oder Stellar-Verwirbelung handelt, wird der ANG dieser Figur 5 s lang zusätzlich um 30 % erhöht."
     }
   },
   "constellation1": {

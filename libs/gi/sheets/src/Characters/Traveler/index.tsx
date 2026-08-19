@@ -94,6 +94,7 @@ export function travelerSheet(
     'lockedPassive'
   )
   const allEleConds = objKeyMap(allElementKeys, (ele) => {
+    // Value automatically set in libs/gi/wr/src/api.ts
     const [path, value] = cond('Traveler', `traveler${ele}`)
     const buff = equal(
       condLockedPassive,

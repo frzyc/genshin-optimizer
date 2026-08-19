@@ -165,7 +165,7 @@
       "0": "Depois de completar <strong>Tarefa da Bruxa: No Despertar do Vento</strong>, Venti se tornará um personagem <strong>Mágico</strong>. Quando a equipe possuir pelo menos 2 personagens Mágicos, obterá o efeito <strong>Mágico: Ritual Secreto</strong>, fortalecendo os personagens Mágicos.",
       "1": "<br/>",
       "2": "<strong>Mágico: Ritual Secreto</strong>",
-      "3": "Enquanto o Olho da Tempestade criado pelo Supremo <strong>Grande Ode do Vento</strong> existir, e nos 4s após o personagem ativo causar Redemoinho, aumentará o Dano desse personagem em 50% e o Dano do Olho da Tempestade de Venti em 135% de seu valor original."
+      "3": "Enquanto o Olho da Tempestade criado pelo Supremo <strong>Grande Ode do Vento</strong> existir, e nos 4s após o personagem ativo causar Redemoinho ou Redemoinho Estelar, aumentará o Dano desse personagem em 50% e o Dano do Olho da Tempestade de Venti em 135% de seu valor original."
     }
   },
   "constellation1": {
