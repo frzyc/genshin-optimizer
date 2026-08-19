@@ -102,7 +102,7 @@ const dm = {
     dmg: skillParam_gen.constellation6[0],
     dmg2: skillParam_gen.constellation6[1],
     stellarconduct_specialDmg_: skillParam_gen.constellation6[2],
-    ssDmg: skillParam_gen.constellation6[1],
+    ssDmg: skillParam_gen.constellation6[3],
   },
 } as const
 
