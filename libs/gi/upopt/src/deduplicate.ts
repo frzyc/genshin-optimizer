@@ -20,6 +20,7 @@ export function deduplicate(
     if (n.type === 'substat') simplifySubstatNode(obj, n)
     else if (n.type === 'rolls') simplifyRollsNode(obj, n)
   })
+  nodes = nodes.filter(({ p }) => p > 0)
   nodes.sort((a, b) => -cmpNodes(a.n, b.n))
   let prev: weightedNode | undefined
   return nodes.filter((cur) => {
