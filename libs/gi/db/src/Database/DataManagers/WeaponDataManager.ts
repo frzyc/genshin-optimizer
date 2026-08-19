@@ -231,7 +231,7 @@ export class WeaponDataManager extends DataManager<
     const idtoRemoveArr = Array.from(idsToRemove).filter(
       (id) => this.get(id)?.key !== 'QuantumCatalyst'
     )
-    if (result.keepNotInImport || result.ignoreDups)
+    if (result.keepWepArtiNotInImport || result.ignoreDups)
       result.weapons.notInImport = idtoRemoveArr.length
     else idtoRemoveArr.forEach((k) => this.remove(k))
 
