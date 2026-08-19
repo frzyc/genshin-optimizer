@@ -1,15 +1,15 @@
 import { Link } from '@mui/material'
 import { Box } from '@mui/system'
 import type { ReactNode } from 'react'
+import { go_lootbar_banner } from '../assets'
 import type { AdDims } from '../type'
-import { isZOURL, ZO_LINK } from '../urlUtil'
-import zo_banner_chat from './zo_banner_chat.png'
+import { GO_LOOTBAR_LINK } from '../urlUtil'
 
-function ZOBannerAd({ children }: { children: ReactNode }) {
+function GOLootbarAd({ children }: { children: ReactNode }) {
   return (
     <Box
       component={Link}
-      href={ZO_LINK}
+      href={GO_LOOTBAR_LINK}
       target="_blank"
       sx={{
         position: 'relative',
@@ -25,7 +25,7 @@ function ZOBannerAd({ children }: { children: ReactNode }) {
       {children}
       <Box
         component="img"
-        src={zo_banner_chat}
+        src={go_lootbar_banner}
         sx={{
           objectFit: 'contain',
           maxWidth: '100%',
@@ -38,8 +38,7 @@ function ZOBannerAd({ children }: { children: ReactNode }) {
     </Box>
   )
 }
-export function getZOBannerAd(dims: AdDims) {
-  if (isZOURL()) return
-  if ((dims.height ?? 120) <= 120) return ZOBannerAd
+export function getGOLootbarAd(dims: AdDims) {
+  if ((dims.height ?? 120) <= 120) return GOLootbarAd
   return
 }
