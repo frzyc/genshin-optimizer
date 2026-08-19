@@ -2,6 +2,7 @@ import { CardThemed } from '@genshin-optimizer/common/ui'
 import { objMap } from '@genshin-optimizer/common/util'
 import { SdStorage } from '@mui/icons-material'
 import {
+  Alert,
   Box,
   CardContent,
   CircularProgress,
@@ -29,6 +30,9 @@ const COLORS = {
   zoDb3: '#2255aa',
   zoDb4: '#22aa55',
 }
+const DISPLAY_PERCENT_THRESH = 1
+const WARNING_PERCENT_THRESH = 75
+const ERROR_PERCENT_THRESH = 90
 export function LocalStorageUsageCard() {
   const { t } = useTranslation('common')
   let totalBytes = 0
@@ -114,6 +118,14 @@ export function LocalStorageUsageCard() {
           gap: 2,
         }}
       >
+        {percent > WARNING_PERCENT_THRESH && (
+          <Alert
+            sx={{ width: '100%' }}
+            severity={percent > ERROR_PERCENT_THRESH ? 'error' : 'warning'}
+          >
+            {t('storage.warning')}
+          </Alert>
+        )}
         <Box
           sx={{
             display: 'flex',
@@ -138,7 +150,7 @@ export function LocalStorageUsageCard() {
           />
           {Object.entries(percentByCategory)
             .sort((a, b) => a[1] - b[1])
-            .filter(([, percent]) => percent > 1)
+            .filter(([, percent]) => percent > DISPLAY_PERCENT_THRESH)
             .map(([key, percent]) => {
               const prog = (
                 <CircularProgress
@@ -158,21 +170,31 @@ export function LocalStorageUsageCard() {
             <Box
               component="span"
               color={
-                percent > 90
-                  ? 'error'
-                  : percent > 75
+                percent > ERROR_PERCENT_THRESH
+                  ? 'error.main'
+                  : percent > WARNING_PERCENT_THRESH
                     ? 'warning.main'
                     : undefined
               }
             >
               {totalMB.toFixed(2)}MB
             </Box>{' '}
-            /{' '}
             <Box component="span" color="secondary.main">
-              {MAX_LOCAL_STORAGE_MB}MB
+              / {MAX_LOCAL_STORAGE_MB}MB
             </Box>{' '}
             <br />
-            {percent.toFixed(2)}%
+            <Box
+              component="span"
+              color={
+                percent > ERROR_PERCENT_THRESH
+                  ? 'error.main'
+                  : percent > WARNING_PERCENT_THRESH
+                    ? 'warning.main'
+                    : undefined
+              }
+            >
+              {percent.toFixed(2)}%
+            </Box>
           </Typography>
         </Box>
         {/* Table */}
@@ -189,20 +211,32 @@ export function LocalStorageUsageCard() {
             >
               <TableHead>
                 <TableRow>
-                  <TableCell>{t('storage.category')}</TableCell>
+                  <TableCell sx={{ pl: 6 }}>{t('storage.category')}</TableCell>
                   <TableCell>{t('storage.size')}</TableCell>
                 </TableRow>
                 {Object.entries(MBByCategory)
                   .sort((a, b) => b[1] - a[1])
                   .map(([key, megabytes]) => (
-                    <TableRow>
+                    <TableRow
+                      sx={{
+                        opacity:
+                          percentByCategory[key] > DISPLAY_PERCENT_THRESH
+                            ? undefined
+                            : 0.5,
+                      }}
+                    >
                       <TableCell>
                         <Box
                           display="inline-block"
                           width="16px"
                           height="16px"
                           mr={2}
-                          sx={{ backgroundColor: COLORS[key] }}
+                          sx={{
+                            backgroundColor:
+                              percentByCategory[key] > DISPLAY_PERCENT_THRESH
+                                ? COLORS[key]
+                                : undefined,
+                          }}
                         />
                         {t(`storage.${key}`)}
                       </TableCell>
