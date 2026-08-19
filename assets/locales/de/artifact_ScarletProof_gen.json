@@ -1,0 +1,29 @@
+{
+  "setName": "Blutroter Beweis",
+  "setEffects": {
+    "2": "Erhöht den ANG um 18 %.",
+    "4": "Erhöht, wenn der Träger die Reaktion Stellar-Verwirbelung auslöst, seine KT 10 s lang um 16 % und den Schaden durch die Reaktion Stellar-Verwirbelung um 40 %."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Dank an deine Hingabe",
+      "desc": "Ein leuchtend roter Blumenschmuck. Er symbolisiert den feurigen Ruhm."
+    },
+    "plume": {
+      "name": "Gedenken an deine Verdienste",
+      "desc": "Eine leuchtend rote Schreibfeder. Sie ist ein Geschenk für das jüngste Blut."
+    },
+    "sands": {
+      "name": "Zeitgeschenk für dich",
+      "desc": "Eine leuchtend rote Taschenuhr. Sie hält die Frist von Gesprächen fest."
+    },
+    "goblet": {
+      "name": "Trank aus Tränen der Trauer",
+      "desc": "Eine knallrote Flasche. Mögest du nie erfahren, was darin war."
+    },
+    "circlet": {
+      "name": "Erinnerung an deinen Glauben",
+      "desc": "Ein leuchtend roter Helm. Möge er jemanden beschützt haben."
+    }
+  }
+}

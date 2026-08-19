@@ -1,0 +1,189 @@
+{
+  "name": "Alyosha",
+  "title": "Segugio dal passo rapido",
+  "description": "Un \"cacciatore professionista\" e maestro delle distese innevate di Snezhnaya. Sotto la sua apparente calma arde un idealismo fiero e inconfondibile.",
+  "constellationName": "Canis Borzoides",
+  "auto": {
+    "name": "Lancia della contesa",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attacco normale</strong>",
+        "1": "Sferra fino a 4 colpi di lancia consecutivi e applica il <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Marchio del cacciatore</strong></tooltip> all'avversario colpito con l'ultimo colpo."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per attaccare balzando in avanti, infliggendo DAN agli avversari lungo la traiettoria."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da ATT caricato",
+      "5": "Costo vigore ATT caricato",
+      "6": "DAN da ATT in picchiata",
+      "7": "DAN da ATT in picchiata basso/alto",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Imboscata saettante",
+    "description": {
+      "0": "Segue i propri istinti da cacciatore. Premi o tieni premuto per produrre effetti diversi e applicare l'effetto <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Marchio del cacciatore</strong></tooltip> agli avversari colpiti.",
+      "1": "<br/>",
+      "2": "<strong>Pressione</strong>",
+      "3": "Spara agli avversari di fronte a sé, infliggendo <electro>DAN da Electro ad area</electro>.",
+      "4": "<br/>",
+      "5": "<strong>Pressione prolungata</strong>",
+      "6": "Entra in modalità di mira e punta gli avversari presenti in una determinata area di fronte a sé. La RES all'interruzione di Alyosha viene potenziata quando si trova in questa modalità.",
+      "7": "Al termine della pressione prolungata, infligge <electro>DAN da Electro</electro> agli avversari puntati.",
+      "8": "<br/>",
+      "9": "<i>Una volta, il cacciatore temerario allungò la mano verso la punta della lancia e, solo dopo essere sopravvissuto a una lezione pagata col sangue, arrivò a comprendere le crude verità della sopravvivenza nelle gelide pianure.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da pressione",
+      "1": "DAN da pressione prolungata",
+      "2": "TdR",
+      "3": "Durata Marchio del cacciatore",
+      "4": "Bonus ATT Precisione del cacciatore",
+      "5": "Durata Precisione del cacciatore",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Avanzata del cacciatore",
+    "description": {
+      "0": "Evoca il suo fidato compagno <strong>Tugarin</strong> per combattere al suo fianco sul campo, trasformando per un breve periodo di tempo un'area davanti a sé in un <strong>Campo di caccia di Folgorite</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Campo di caccia di Folgorite</strong>",
+      "3": [
+        " Provoca continuamente gli avversari vicini per incitarli ad attaccare.",
+        " Ogni 2 s, infligge un'iterazione di <electro>DAN da Electro ad area</electro> a qualsiasi avversario presente nel campo."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Tugarin</strong>",
+      "6": [
+        " Se nelle vicinanze ci sono avversari, Tugarin si avvicina velocemente a uno di loro ogni 2 s per azzannarlo, infliggendo <strong>DAN da Electro</strong>.",
+        " Se viene colpito un avversario affetto dal <strong>Marchio del cacciatore</strong>, quest'ultimo viene attivato.",
+        " Quando ci sono più avversari, Tugarin attacca prima quelli affetti dal <strong>Marchio del cacciatore</strong>."
+      ],
+      "7": "<br/>",
+      "8": "<i>Attendi. Continua ad attendere finché l'impazienza non svanisce. È allora che il piviere dal ventre rosso attraverserà il bosco di betulle per presentarsi davanti alla freccia.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da Campo di caccia di Folgorite",
+      "1": "DAN da Tugarin",
+      "2": "Durata",
+      "3": "TdR",
+      "4": "Costo energia",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Risveglio dei segugi ululanti",
+    "description": {
+      "0": "Quando <tooltip ns=tooltips_gen baseKey18=11480002 values=[]><strong>Tugarin</strong></tooltip> attacca, ripristina anche i PS dei membri attivi del gruppo di una quantità pari a un 120% dell'ATT di Alyosha."
+    }
+  },
+  "passive2": {
+    "name": "L'inverno, e la sofferenza del frumento",
+    "description": {
+      "0": "Aumenta i DAN inflitti da Alyosha con la sua abilità elementale e il suo Tripudio elementale di uno 0,35% per ogni 1% della sua ricarica d'energia. In questo modo è possibile ottenere fino a un 70% di aumento massimo."
+    }
+  },
+  "passive3": {
+    "name": "Nella mischia",
+    "description": {
+      "0": "Alyosha entra nello stato di <strong>Splendore: Astroconduzione</strong> quando si trova all'interno di un <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Campo astropolare</strong></tooltip>.",
+      "1": "Nello stato di <strong>Splendore: Astroconduzione</strong>, l'effetto <strong>Precisione del cacciatore</strong> ottenuto all'attivazione del <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Marchio del cacciatore</strong></tooltip> aumenta di un 20% anche i DAN da Astroconduzione inflitti dal personaggio quando è in campo."
+    }
+  },
+  "passive": {
+    "name": "Vedetta arborea",
+    "description": {
+      "0": "Mostra sulla minimappa la posizione delle <strong>risorse uniche di Snezhnaya</strong> vicine."
+    }
+  },
+  "constellation1": {
+    "name": "Tuono della valle glaciale",
+    "description": {
+      "0": "L'energia elementale di Alyosha si ripristina di 15 quando i membri del gruppo vicini innescano una <electro>reazione di Electro</electro> su un avversario. Quest'effetto può attivarsi una volta ogni 18 s."
+    }
+  },
+  "constellation2": {
+    "name": "Ululato distante",
+    "description": {
+      "0": "La durata del Tripudio elementale <strong>Avanzata del cacciatore</strong> aumenta di 6 s.",
+      "1": "Inoltre, ogni volta che <tooltip ns=tooltips_gen baseKey18=11480002 values=[]><strong>Tugarin</strong></tooltip> attacca l'avversario, applica anche il <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Marchio del cacciatore</strong></tooltip> a un bersaglio. Quest'effetto non attiva i <strong>Marchi del cacciatore</strong> esistenti."
+    }
+  },
+  "constellation3": {
+    "name": "Richiamo amichevole",
+    "description": {
+      "0": "Aumenta di 3 il livello dell'abilità elementale <strong>Imboscata saettante</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Bottino di caccia",
+    "description": {
+      "0": "Quando <tooltip ns=tooltips_gen baseKey18=11480002 values=[]><strong>Tugarin</strong></tooltip> attacca, ripristina di una quantità pari a un 60% dell'ATT di Alyosha i PS del membro vicino del gruppo con la percentuale di PS più bassa."
+    }
+  },
+  "constellation5": {
+    "name": "Così cessò il canto dell'uccello notturno",
+    "description": {
+      "0": "Aumenta di 3 il livello del Tripudio elementale <strong>Avanzata del cacciatore</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Riconquista dello stendardo",
+    "description": {
+      "0": "L'effetto <strong>Precisione del cacciatore</strong> ottenuto dall'attivazione di <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Marchio del cacciatore</strong></tooltip> ora può accumularsi per un massimo di 2 volte. Una volta raggiunti i 2 accumuli, la maestria elementale dei personaggi del gruppo affetti da <strong>Precisione del cacciatore</strong> aumenta di 100, se sono in campo."
+    }
+  }
+}

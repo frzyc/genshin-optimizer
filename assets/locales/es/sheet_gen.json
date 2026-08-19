@@ -65,7 +65,9 @@
     "hyperbloom": "Sobreflorecimiento",
     "quicken": "Aceleración",
     "aggravate": "Intensificación",
-    "spread": "Propagación"
+    "spread": "Propagación",
+    "stellarconduct": "Superconductor Estelar",
+    "stellarswirl": "Torbellino Estelar"
   },
   "stat": {
     "def": "DEF",
@@ -77,15 +79,15 @@
   "talentLvl": "Niv. talento {{level}}",
   "talents": {
     "auto": "Ataque Normal",
-    "skill": "",
-    "burst": "",
+    "skill": "Habilidad Elemental",
+    "burst": "Habilidad Definitiva",
     "altSprint": "Reemplaza a Esprintar"
   },
   "unlockPassive1": "Se desbloquea al alcanzar Niv. de ascensión 1",
   "unlockPassive2": "Se desbloquea al alcanzar Niv. de ascensión 4",
   "unlockPassive3": "Talento pasivo",
   "unlockLockedPassive": "Se desbloquea tras completar las misiones requeridas",
-  "witchPassive": "",
+  "witchPassive": "Lecciones del Aquelarre",
   "moonsign": "Presagio lunar",
   "hexerei": "Taumaturgia"
 }

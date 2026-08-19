@@ -1,0 +1,24 @@
+{
+  "name": "Pluma Invernal Lagoblanco",
+  "description": {
+    "0": "Una espada larga y ligera como las suaves plumas de un cisne níveo. Es capaz de mantener en todo momento su pureza inmaculada."
+  },
+  "passiveName": "Danza final del cisne níveo",
+  "passiveDescription": {
+    "0": {
+      "0": "Cuando el portador de esta arma golpea a un enemigo con su Habilidad Elemental, obtiene el efecto de “súplica lacustre”, el cual aumenta el ATQ en un <cryo>8%</cryo> durante 8 s. Este efecto puede acumularse hasta 3 veces, solo puede activarse una vez cada 0.1 s y la duración de cada acumulación se calcula de forma independiente. Al tener 3 acumulaciones, el Daño CRIT de la reacción de Destello Estelar del portador de esta arma aumenta en un <cryo>50%</cryo>, y al causar una reacción de Destello Estelar o infligir daño de Destello Estelar, el portador recupera <cryo>4</cryo> pts. de Energía Elemental. La recuperación de Energía Elemental solo podrá ocurrir una vez cada 3.5 s. Los efectos anteriores se pueden activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "1": {
+      "0": "Cuando el portador de esta arma golpea a un enemigo con su Habilidad Elemental, obtiene el efecto de “súplica lacustre”, el cual aumenta el ATQ en un <cryo>10%</cryo> durante 8 s. Este efecto puede acumularse hasta 3 veces, solo puede activarse una vez cada 0.1 s y la duración de cada acumulación se calcula de forma independiente. Al tener 3 acumulaciones, el Daño CRIT de la reacción de Destello Estelar del portador de esta arma aumenta en un <cryo>65%</cryo>, y al causar una reacción de Destello Estelar o infligir daño de Destello Estelar, el portador recupera <cryo>4.5</cryo> pts. de Energía Elemental. La recuperación de Energía Elemental solo podrá ocurrir una vez cada 3.5 s. Los efectos anteriores se pueden activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "2": {
+      "0": "Cuando el portador de esta arma golpea a un enemigo con su Habilidad Elemental, obtiene el efecto de “súplica lacustre”, el cual aumenta el ATQ en un <cryo>12%</cryo> durante 8 s. Este efecto puede acumularse hasta 3 veces, solo puede activarse una vez cada 0.1 s y la duración de cada acumulación se calcula de forma independiente. Al tener 3 acumulaciones, el Daño CRIT de la reacción de Destello Estelar del portador de esta arma aumenta en un <cryo>80%</cryo>, y al causar una reacción de Destello Estelar o infligir daño de Destello Estelar, el portador recupera <cryo>5</cryo> pts. de Energía Elemental. La recuperación de Energía Elemental solo podrá ocurrir una vez cada 3.5 s. Los efectos anteriores se pueden activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "3": {
+      "0": "Cuando el portador de esta arma golpea a un enemigo con su Habilidad Elemental, obtiene el efecto de “súplica lacustre”, el cual aumenta el ATQ en un <cryo>14%</cryo> durante 8 s. Este efecto puede acumularse hasta 3 veces, solo puede activarse una vez cada 0.1 s y la duración de cada acumulación se calcula de forma independiente. Al tener 3 acumulaciones, el Daño CRIT de la reacción de Destello Estelar del portador de esta arma aumenta en un <cryo>95%</cryo>, y al causar una reacción de Destello Estelar o infligir daño de Destello Estelar, el portador recupera <cryo>5.5</cryo> pts. de Energía Elemental. La recuperación de Energía Elemental solo podrá ocurrir una vez cada 3.5 s. Los efectos anteriores se pueden activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    },
+    "4": {
+      "0": "Cuando el portador de esta arma golpea a un enemigo con su Habilidad Elemental, obtiene el efecto de “súplica lacustre”, el cual aumenta el ATQ en un <cryo>16%</cryo> durante 8 s. Este efecto puede acumularse hasta 3 veces, solo puede activarse una vez cada 0.1 s y la duración de cada acumulación se calcula de forma independiente. Al tener 3 acumulaciones, el Daño CRIT de la reacción de Destello Estelar del portador de esta arma aumenta en un <cryo>110%</cryo>, y al causar una reacción de Destello Estelar o infligir daño de Destello Estelar, el portador recupera <cryo>6</cryo> pts. de Energía Elemental. La recuperación de Energía Elemental solo podrá ocurrir una vez cada 3.5 s. Los efectos anteriores se pueden activar incluso cuando el portador de esta arma está en tu equipo pero no en uso."
+    }
+  }
+}

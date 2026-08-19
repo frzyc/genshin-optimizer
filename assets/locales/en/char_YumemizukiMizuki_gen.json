@@ -73,7 +73,7 @@
       "3": [
         "While in the Dreamdrifter state, Yumemizuki Mizuki will continuously drift forward, dealing <anemo>AoE Anemo DMG</anemo> to nearby opponents at regular intervals.",
         "During this time, Yumemizuki Mizuki can control her direction of drift, and the pick-up distance of <strong>Yumemi Style Special Snacks</strong> from the Elemental Burst <strong>Anraku Secret Spring Therapy</strong> will be increased.",
-        "Increases the Swirl DMG that nearby party members deal based on Yumemizuki Mizuki's Elemental Mastery.",
+        "Increases the Swirl DMG and Stellar Swirl reaction DMG that nearby party members deal based on Yumemizuki Mizuki's Elemental Mastery.",
         "Dreamdrifter will end when Mizuki leaves the field or uses her Elemental Skill again."
       ],
       "4": "<br/>",
@@ -84,8 +84,8 @@
       "1": "Continuous Attack DMG",
       "2": "Dreamdrifter Duration",
       "3": "Elemental Mastery-Based Swirl DMG Increase",
-      "4": "CD",
-      "5": "",
+      "4": "Elemental Mastery-Based Stellar Swirl DMG Increase",
+      "5": "CD",
       "6": "",
       "7": "",
       "8": "",
@@ -105,9 +105,9 @@
       "0": "{{3, percent(fixed: 1)}}%",
       "1": "{{0, percent(fixed: 1)}}%",
       "2": "{{4, fixed(fixed: 1)}}s",
-      "3": "{{1, percent(fixed: 2)}}% per Point",
-      "4": "{{2, fixed(fixed: 1)}}s",
-      "5": "",
+      "3": "{{1, percent(fixed: 2)}}% per 100 Points",
+      "4": "{{5, percent(fixed: 2)}}% per 100 Points",
+      "5": "{{2, fixed(fixed: 1)}}s",
       "6": "",
       "7": "",
       "8": "",
@@ -182,7 +182,7 @@
   "passive1": {
     "name": "Bright Moon's Restless Voice",
     "description": {
-      "0": "When Yumemizuki Mizuki triggers Swirl while in her Dreamdrifter state, Dreamdrifter's duration increases by 2.5s. This effect can trigger once every 0.3s for a maximum of 2 times per Dreamdrifter state."
+      "0": "When Yumemizuki Mizuki triggers a Swirl or Stellar Swirl reaction while in her Dreamdrifter state, Dreamdrifter's duration increases by 2.5s. This effect can trigger once every 0.3s for a maximum of 2 times per Dreamdrifter state."
     }
   },
   "passive2": {
@@ -200,17 +200,21 @@
   "lockedPassive": {
     "name": "Vast Be the Dream",
     "description": {
-      "0": "When Yumemizuki Mizuki triggers a Swirl reaction while in the Dreamdrifter state, the next instance of periodic <anemo>AoE Anemo DMG</anemo> she deals to nearby enemies during that same state will be increased by 1,000% of her Elemental Mastery. The aforementioned effect can trigger once every 2.5s.",
-      "1": "Additionally, while Yumemizuki Mizuki is in the Dreamdrifter state, the Elemental Mastery of nearby party characters is increased by 10% of Yumemizuki Mizuki's Elemental Mastery."
+      "0": "When Yumemizuki Mizuki triggers a Swirl or Stellar Swirl reaction while in the Dreamdrifter state, the next instance of periodic <anemo>AoE Anemo DMG</anemo> she deals to nearby enemies during that same state will be increased by 1,000% of her Elemental Mastery. The aforementioned effect can trigger once every 2.5s.",
+      "1": "<strong>Radiance: Stellar Swirl</strong>: When Yumemizuki Mizuki deals to an opponent the above enhanced <anemo>AoE Anemo DMG</anemo>, she will also deal an additional instance of <anemo>Anemo DMG</anemo> at 1,000% of her Elemental Mastery. This DMG is considered Stellar Swirl reaction DMG.",
+      "2": "<br/>",
+      "3": "Additionally, while Yumemizuki Mizuki is in the Dreamdrifter state, the Elemental Mastery of nearby party characters is also increased by 10% of her Elemental Mastery.",
+      "4": "Yumemizuki Mizuki will also enter the <<strong>Radiance: Stellar Swirl</strong> state for 8s when a nearby party member triggers a Stellar Swirl reaction."
     }
   },
   "constellation1": {
     "name": "In Mist-Like Waters",
     "description": {
-      "0": "When Yumemizuki Mizuki is in the Dreamdrifter state, she will continuously apply the \"Twenty-Three Nights' Awaiting\" effect to nearby opponents for 3s every 3.5s. When an opponent is affected by Anemo DMG-triggered Swirl reactions while the aforementioned effect is active, the effect will be canceled and this Swirl instance has its DMG against this opponent increased by 1,100% of Mizuki's Elemental Mastery."
+      "0": "When Yumemizuki Mizuki is in the Dreamdrifter state, she will continuously apply the \"Twenty-Three Nights' Awaiting\" effect to nearby opponents for 3s every 3.5s. When an opponent has a Swirl or Stellar Swirl reaction triggered against them by Anemo DMG while the aforementioned effect is active, the effect will be canceled, and this Swirl or Stellar Swirl instance deals DMG against this opponent increased by 1,100% and 550% of Mizuki's Elemental Mastery, respectively."
     },
     "upgradedDescription": {
-      "0": "When Yumemizuki Mizuki is in the Dreamdrifter state, she will continuously apply the \"Twenty-Three Nights' Awaiting\" effect to nearby opponents for 3s every 3.5s. When an opponent is affected by Anemo DMG-triggered Swirl reactions while the aforementioned effect is active, the effect will be canceled, and this Swirl instance has its DMG against this opponent increased by 1,100% of Mizuki's Elemental Mastery. She also launches an additional attack on the same opponent, dealing <anemo>Anemo DMG</anemo> equal to 1,000% of Yumemizuki Mizuki's Elemental Mastery."
+      "0": "When Yumemizuki Mizuki is in the Dreamdrifter state, she will continuously apply the \"Twenty-Three Nights' Awaiting\" effect to nearby opponents for 3s every 3.5s. When an opponent has a Swirl or Stellar Swirl reaction triggered against them by Anemo DMG while the aforementioned effect is active, the effect will be canceled, and this Swirl or Stellar Swirl instance has its DMG against this opponent increased by 1,100% and 550% of Mizuki's Elemental Mastery respectively. She also launches an additional attack on the same opponent, dealing <anemo>Anemo DMG</anemo> at 1,000% of Yumemizuki Mizuki's Elemental Mastery.",
+      "1": "<strong>Radiance: Stellar Swirl</strong>: The aforementioned additional DMG is changed to <anemo>Anemo DMG</anemo> at 400% of Yumemizuki Mizuki's Elemental Mastery. This DMG is considered Stellar Swirl reaction DMG."
     }
   },
   "constellation2": {
@@ -249,10 +253,10 @@
   "constellation6": {
     "name": "The Heart Lingers Long",
     "description": {
-      "0": "While Yumemizuki Mizuki is in the Dreamdrifter state, Swirl DMG dealt by nearby party members can score CRIT Hits, with CRIT Rate fixed at 30%, and CRIT DMG fixed at 100%."
+      "0": "While Yumemizuki Mizuki is in the Dreamdrifter state, Swirl reaction DMG dealt by nearby party members can score CRIT Hits, with CRIT Rate fixed at 30%, and CRIT DMG fixed at 100%. Any Stellar Swirl reaction DMG dealt by these characters will also have its CRIT Rate and CRIT DMG increased by 10% and 20%, respectively."
     },
     "upgradedDescription": {
-      "0": "While Yumemizuki Mizuki is in the Dreamdrifter state, Swirl DMG dealt by nearby party members can score CRIT Hits, with CRIT Rate fixed at 30%, and CRIT DMG fixed at 100%.",
+      "0": "While Yumemizuki Mizuki is in the Dreamdrifter state, Swirl DMG dealt by nearby party members can score CRIT Hits, with CRIT Rate fixed at 30%, and CRIT DMG fixed at 100%. The CRIT Rate of any Stellar Swirl DMG dealt by these party members is also increased by 10%, while CRIT DMG is increased by 20%.",
       "1": "Every point of Elemental Mastery Yumemizuki Mizuki has in excess of 500 increases her CRIT Rate by 0.04% and her CRIT DMG by 0.16%. Yumemizuki Mizuki's CRIT Rate and CRIT DMG can be increased by up to 20% and 80% in this way, respectively."
     }
   }

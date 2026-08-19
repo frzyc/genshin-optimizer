@@ -1,0 +1,189 @@
+{
+  "name": "Alyosha",
+  "title": "Chiến Khuyển Thần Tốc",
+  "description": "Thợ săn chuyên nghiệp tung hoành trên cánh đồng tuyết của Snezhnaya. Ẩn sau vẻ ngoài điềm tĩnh ấy, dường như là một \"lý tưởng\" cháy bỏng khác biệt.",
+  "constellationName": "Cung Tấn Tiệp Khuyển",
+  "auto": {
+    "name": "Ngọn Thương Chớp Nhoáng",
+    "fields": {
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 4 lần đánh liên tiếp, đồng thời áp dụng <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Dấu Ấn Săn Bắn</strong></tooltip> lên kẻ địch trúng đòn đánh cuối cùng."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, xông về phía trước, gây sát thương cho địch trên đường đi."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát thương lần 1",
+      "1": "Sát thương lần 2",
+      "2": "Sát thương lần 3",
+      "3": "Sát thương lần 4",
+      "4": "Sát thương Trọng Kích",
+      "5": "Thể lực Trọng Kích tiêu hao",
+      "6": "Sát thương khi đáp",
+      "7": "Sát thương khi đáp từ độ cao thấp/cao",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Phục Kích Sấm Sét",
+    "description": {
+      "0": "Dựa vào bản năng của một thợ săn, căn cứ vào nhấn, nhấn giữ để sản sinh hiệu quả khác nhau, đồng thời áp dụng <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Dấu Ấn Săn Bắn</strong></tooltip> lên kẻ địch trúng đòn.",
+      "1": "<br/>",
+      "2": "<strong>Nhấn</strong>",
+      "3": "Bắn về phía trước, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro>.",
+      "4": "<br/>",
+      "5": "<strong>Nhấn Giữ</strong>",
+      "6": "Vào trạng thái ngắm và chọn kẻ địch trong phạm vi nhất định phía trước, trong trạng thái này sẽ tăng Kháng Gián Đoạn của Alyosha.",
+      "7": "Khi kết thúc nhấn giữ, sẽ gây <electro>Sát Thương Nguyên Tố Lôi</electro> cho kẻ địch được chọn.",
+      "8": "<br/>",
+      "9": "<i>Thợ săn liều lĩnh từng trèo lên mũi thương, sau đó, có được may mắn trải qua bài học xương máu, lĩnh ngộ được nguyên lý sinh tồn giữa cánh đồng tuyết.</i>"
+    },
+    "skillParams": {
+      "0": "Sát thương nhấn",
+      "1": "Sát thương nhấn giữ",
+      "2": "CD",
+      "3": "Dấu Ấn Săn Bắn duy trì",
+      "4": "Mệnh Lệnh Thợ Săn tăng Tấn Công",
+      "5": "Mệnh Lệnh Thợ Săn duy trì",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Thợ Săn Tiến Bước",
+    "description": {
+      "0": "Triệu hồi đồng đội đáng tin cậy <strong>Tugarin</strong> cùng chiến đấu, đồng thời biến khu vực phía trước thành <strong>Bãi Săn Sấm Rền</strong> trong khoảng thời gian ngắn.",
+      "1": "<br/>",
+      "2": "<strong>Bãi Săn Sấm Rền</strong>",
+      "3": [
+        "Liên tục khiêu khích kẻ địch xung quanh, thu hút kẻ địch tấn công.",
+        "Mỗi 2s sẽ gây một lần <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> lên kẻ địch bước vào."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Tugarin</strong>",
+      "6": [
+        "Nếu xung quanh có kẻ địch, mỗi 2s, Tugarin sẽ nhanh chóng di chuyển đến một kẻ địch ở gần và cắn xé mục tiêu, gây <strong>Sát Thương Nguyên Tố Lôi</strong>.",
+        "Nếu kẻ địch trúng đòn đang bị áp dụng hiệu quả <strong>Dấu Ấn Săn Bắn</strong>, thì sẽ còn kích hoạt <strong>Dấu Ấn Săn Bắn</strong>.",
+        "Tugarin sẽ ưu tiên tấn công kẻ địch đang bị áp dụng <strong>Dấu Ấn Săn Bắn</strong>."
+      ],
+      "7": "<br/>",
+      "8": "<i>Chờ đợi, chờ đợi đến khi không còn nóng lòng, sẽ có chú chim choi choi ngực đỏ bay qua rừng bạch dương, đón lấy cú bắn của anh.</i>"
+    },
+    "skillParams": {
+      "0": "Sát thương Bãi Săn Sấm Rền",
+      "1": "Sát thương Tugarin",
+      "2": "Thời gian duy trì",
+      "3": "CD",
+      "4": "Năng Lượng Nguyên Tố",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Đánh Thức Cánh Rừng Ngủ Say",
+    "description": {
+      "0": "Khi <tooltip ns=tooltips_gen baseKey18=11480002 values=[]><strong>Tugarin</strong></tooltip> thực hiện tấn công, sẽ hồi phục HP cho nhân vật ra trận hiện tại trong đội ở gần, lượng hồi phục tương đương 120% Tấn Công của Alyosha."
+    }
+  },
+  "passive2": {
+    "name": "Tạm Biệt Lúa Mì Và Lá Khô",
+    "description": {
+      "0": "Dựa trên Hiệu Quả Nạp Nguyên Tố của Alyosha, tăng sát thương gây ra bởi Kỹ Năng Nguyên Tố và Kỹ Năng Nộ của Alyosha: Mỗi 1% Hiệu Quả Nạp Nguyên Tố sẽ tăng 0.35% sát thương kể trên, tối đa tăng đến 70%."
+    }
+  },
+  "passive3": {
+    "name": "Ngôi Sao Nơi Hiểm Cảnh",
+    "description": {
+      "0": "Khi ở trong <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Vùng Trục Sao</strong></tooltip>, Alyosha sẽ vào trạng thái <strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>.",
+      "1": "<strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>: Hiệu quả <strong>Mệnh Lệnh Thợ Săn</strong> nhận được khi kích hoạt <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Dấu Ấn Săn Bắn</strong></tooltip> sẽ còn khiến nhân vật khi ở trong trận sẽ tăng 20% sát thương phản ứng Tinh-Siêu Dẫn gây ra."
+    }
+  },
+  "passive": {
+    "name": "Quan Sát Từ Ngọn Cây",
+    "description": {
+      "0": "Hiển thị <strong>đặc sản khu vực Snezhnaya</strong> trên bản đồ nhỏ."
+    }
+  },
+  "constellation1": {
+    "name": "Sấm Rền Thung Lũng",
+    "description": {
+      "0": "Sau khi nhân vật trong đội ở gần kích hoạt <electro>phản ứng liên quan đến Nguyên Tố Lôi</electro> lên kẻ địch, sẽ hồi phục 15 điểm Năng Lượng Nguyên Tố cho Alyosha. Hiệu quả này mỗi 18s tối đa kích hoạt một lần."
+    }
+  },
+  "constellation2": {
+    "name": "Tiếng Hú Báo Tin",
+    "description": {
+      "0": "Thời gian duy trì Kỹ Năng Nộ <strong>Thợ Săn Tiến Bước</strong> kéo dài 6s.",
+      "1": "Ngoài ra, trước mỗi lần <tooltip ns=tooltips_gen baseKey18=11480002 values=[]><strong>Tugarin</strong></tooltip> tấn công kẻ địch, sẽ còn áp dụng <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Dấu Ấn Săn Bắn</strong></tooltip> lên một mục tiêu. Hiệu quả này sẽ không kích hoạt <strong>Dấu Ấn Săn Bắn</strong> đã có."
+    }
+  },
+  "constellation3": {
+    "name": "Tiếng Gọi Bạn Bè",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Phục Kích Sấm Sét</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Bắt Lấy Con Mồi",
+    "description": {
+      "0": "Khi <tooltip ns=tooltips_gen baseKey18=11480002 values=[]><strong>Tugarin</strong></tooltip> thực hiện tấn công, sẽ hồi phục HP cho nhân vật có phần trăm HP thấp nhất trong đội ở gần, lượng hồi phục tương đương 60% Tấn Công của Alyosha."
+    }
+  },
+  "constellation5": {
+    "name": "Thời Khắc Ngừng Hót",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Thợ Săn Tiến Bước</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Giương Cờ Tái Đấu",
+    "description": {
+      "0": "Hiệu quả <strong>Mệnh Lệnh Thợ Săn</strong> nhận được khi kích hoạt <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Dấu Ấn Săn Bắn</strong></tooltip> sẽ có thể cộng dồn. Hiệu quả này tối đa cộng dồn 2 tầng, khi cộng dồn đến tầng 2, sẽ còn tăng 100 điểm Tinh Thông Nguyên Tố cho nhân vật trong trận hiện tại đang áp dụng hiệu quả này."
+    }
+  }
+}

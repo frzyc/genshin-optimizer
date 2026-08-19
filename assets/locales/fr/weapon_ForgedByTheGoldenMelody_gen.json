@@ -1,0 +1,29 @@
+{
+  "name": "Forgée par la loi d'or",
+  "description": {
+    "0": "Une grande épée ornée d'or. La légende raconte qu'il s'agissait de l'arme de prédilection d'un certain accordeur exalté, dans un passé lointain."
+  },
+  "passiveName": "Jour et nuit en contrepoint",
+  "passiveDescription": {
+    "0": {
+      "0": "Toutes les 10 s, le personnage équipé de l'arme joue un mouvement harmonique correspondant, accordant un bonus dans l'ordre suivant : ATQ +<cryo>18 %</cryo>, maîtrise élémentaire +<cryo>120</cryo> pts, puis DGT de réaction astrale +<cryo>28 %</cryo>. Chaque mouvement harmonique dure 10 s et peut être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé.",
+      "1": "Déclencher une réaction astrale accorde également un mouvement harmonique « Contrapuntique » pendant 12 s, dont l'effet est identique au mouvement harmonique en cours lors du déclenchement de la réaction astrale. Cet effet peut se cumuler avec l'effet du mouvement harmonique d'origine et peut être déclenché une fois toutes les 12 s."
+    },
+    "1": {
+      "0": "Toutes les 10 s, le personnage équipé de l'arme joue un mouvement harmonique correspondant, accordant un bonus dans l'ordre suivant : ATQ +<cryo>22,5 %</cryo>, maîtrise élémentaire +<cryo>150</cryo> pts, puis DGT de réaction astrale +<cryo>35 %</cryo>. Chaque mouvement harmonique dure 10 s et peut être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé.",
+      "1": "Déclencher une réaction astrale accorde également un mouvement harmonique « Contrapuntique » pendant 12 s, dont l'effet est identique au mouvement harmonique en cours lors du déclenchement de la réaction astrale. Cet effet peut se cumuler avec l'effet du mouvement harmonique d'origine et peut être déclenché une fois toutes les 12 s."
+    },
+    "2": {
+      "0": "Toutes les 10 s, le personnage équipé de l'arme joue un mouvement harmonique correspondant, accordant un bonus dans l'ordre suivant : ATQ +<cryo>27 %</cryo>, maîtrise élémentaire +<cryo>180</cryo> pts, puis DGT de réaction astrale +<cryo>42 %</cryo>. Chaque mouvement harmonique dure 10 s et peut être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé.",
+      "1": "Déclencher une réaction astrale accorde également un mouvement harmonique « Contrapuntique » pendant 12 s, dont l'effet est identique au mouvement harmonique en cours lors du déclenchement de la réaction astrale. Cet effet peut se cumuler avec l'effet du mouvement harmonique d'origine et peut être déclenché une fois toutes les 12 s."
+    },
+    "3": {
+      "0": "Toutes les 10 s, le personnage équipé de l'arme joue un mouvement harmonique correspondant, accordant un bonus dans l'ordre suivant : ATQ +<cryo>31,5 %</cryo>, maîtrise élémentaire +<cryo>210</cryo> pts, puis DGT de réaction astrale +<cryo>49 %</cryo>. Chaque mouvement harmonique dure 10 s et peut être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé.",
+      "1": "Déclencher une réaction astrale accorde également un mouvement harmonique « Contrapuntique » pendant 12 s, dont l'effet est identique au mouvement harmonique en cours lors du déclenchement de la réaction astrale. Cet effet peut se cumuler avec l'effet du mouvement harmonique d'origine et peut être déclenché une fois toutes les 12 s."
+    },
+    "4": {
+      "0": "Toutes les 10 s, le personnage équipé de l'arme joue un mouvement harmonique correspondant, accordant un bonus dans l'ordre suivant : ATQ +<cryo>36 %</cryo>, maîtrise élémentaire +<cryo>240</cryo> pts, puis DGT de réaction astrale +<cryo>56 %</cryo>. Chaque mouvement harmonique dure 10 s et peut être déclenché même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé.",
+      "1": "Déclencher une réaction astrale accorde également un mouvement harmonique « Contrapuntique » pendant 12 s, dont l'effet est identique au mouvement harmonique en cours lors du déclenchement de la réaction astrale. Cet effet peut se cumuler avec l'effet du mouvement harmonique d'origine et peut être déclenché une fois toutes les 12 s."
+    }
+  }
+}

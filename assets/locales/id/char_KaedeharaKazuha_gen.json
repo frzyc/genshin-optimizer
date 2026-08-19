@@ -135,7 +135,7 @@
   "passive2": {
     "name": "Poetics of Fuubutsu",
     "description": {
-      "0": "Untuk setiap poin Elemental Mastery yang dimiliki Kaedehara Kazuha, setelah Kazuha memicu reaksi Swirl, seluruh anggota party akan mendapatkan peningkatan 0,04% Bonus Elemental DMG yang sesuai dengan reaksi Elemental Swirl yang terpicu selama 8 detik. Bonus DMG untuk elemen berbeda yang didapatkan dengan cara ini dapat aktif secara bersamaan."
+      "0": "Setelah Kaedehara Kazuha memicu reaksi Swirl atau Stellar Swirl, untuk setiap poin Elemental Mastery yang dimiliki olehnya, seluruh anggota party akan mendapatkan peningkatan 0,04% Bonus Elemental DMG untuk jenis elemen yang sesuai selama 8 detik. Bonus DMG untuk elemen berbeda yang didapatkan dengan cara ini dapat aktif secara bersamaan."
     }
   },
   "passive3": {

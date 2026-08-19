@@ -1,0 +1,24 @@
+{
+  "name": "Piuma gelata del lago bianco",
+  "description": {
+    "0": "Una spada lunga leggera come le piume di un cigno delle nevi, che rimane pura e incontaminata in ogni momento."
+  },
+  "passiveName": "Ultimo atto del cigno delle nevi",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando il personaggio che equipaggia l'arma colpisce un avversario con l'abilità elementale, ottiene l'effetto \"Lamento color lago\", che aumenta l'ATT di un <cryo>8%</cryo> per 8 s. Questo effetto può innescarsi una volta ogni 0,1 s e accumularsi fino a 3 volte, con ciascun accumulo conteggiato in modo indipendente. Quando il numero di accumuli raggiunge 3, i DAN da CRIT inflitti da qualsiasi reazione di Barlume astrale del personaggio che equipaggia l'arma aumentano di un <cryo>50%</cryo>. Inoltre, il suddetto personaggio ripristina <cryo>4</cryo> di energia elementale quando innesca reazioni di Barlume astrale o infligge DAN da Barlume astrale. Quest'ultimo effetto può attivarsi una volta ogni 3,5 s, anche se il personaggio non è in campo."
+    },
+    "1": {
+      "0": "Quando il personaggio che equipaggia l'arma colpisce un avversario con l'abilità elementale, ottiene l'effetto \"Lamento color lago\", che aumenta l'ATT di un <cryo>10%</cryo> per 8 s. Questo effetto può innescarsi una volta ogni 0,1 s e accumularsi fino a 3 volte, con la durata di ciascun accumulo calcolata in modo indipendente. Quando il numero di accumuli raggiunge 3, i DAN da CRIT inflitti da qualsiasi reazione di Barlume astrale del personaggio che equipaggia l'arma aumentano di un <cryo>65%</cryo>. Inoltre, il suddetto personaggio ripristina <cryo>4,5</cryo> di energia elementale quando innesca reazioni di Barlume astrale o infligge DAN da Barlume astrale. Quest'ultimo effetto può attivarsi una volta ogni 3,5 s. Può attivarsi anche se il personaggio non è in campo."
+    },
+    "2": {
+      "0": "Quando il personaggio che equipaggia l'arma colpisce un avversario con l'abilità elementale, ottiene l'effetto \"Lamento color lago\", che aumenta l'ATT di un <cryo>12%</cryo> per 8 s. Questo effetto può innescarsi una volta ogni 0,1 s e accumularsi fino a 3 volte, con ciascun accumulo conteggiato in modo indipendente. Quando il numero di accumuli raggiunge 3, i DAN da CRIT inflitti da qualsiasi reazione di Barlume astrale del personaggio che equipaggia l'arma aumentano di un <cryo>80%</cryo>. Inoltre, il suddetto personaggio ripristina <cryo>5</cryo> di energia elementale quando innesca reazioni di Barlume astrale o infligge DAN da Barlume astrale. Quest'ultimo effetto può attivarsi una volta ogni 3,5 s, anche se il personaggio non è in campo."
+    },
+    "3": {
+      "0": "Quando il personaggio che equipaggia l'arma colpisce un avversario con l'abilità elementale, ottiene l'effetto \"Lamento color lago\", che aumenta l'ATT di un <cryo>14%</cryo> per 8 s. Questo effetto può innescarsi una volta ogni 0,1 s e accumularsi fino a 3 volte, con ciascun accumulo conteggiato in modo indipendente. Quando il numero di accumuli raggiunge 3, i DAN da CRIT inflitti da qualsiasi reazione di Barlume astrale del personaggio che equipaggia l'arma aumentano di un <cryo>95%</cryo>. Inoltre, il suddetto personaggio ripristina <cryo>5,5</cryo> di energia elementale quando innesca reazioni di Barlume astrale o infligge DAN da Barlume astrale. Quest'ultimo effetto può attivarsi una volta ogni 3,5 s, anche se il personaggio non è in campo."
+    },
+    "4": {
+      "0": "Quando il personaggio che equipaggia l'arma colpisce un avversario con l'abilità elementale, ottiene l'effetto \"Lamento color lago\", che aumenta l'ATT di un <cryo>16%</cryo> per 8 s. Questo effetto può innescarsi una volta ogni 0,1 s e accumularsi fino a 3 volte, con ciascun accumulo conteggiato in modo indipendente. Quando il numero di accumuli raggiunge 3, i DAN da CRIT inflitti da qualsiasi reazione di Barlume astrale del personaggio che equipaggia l'arma aumentano di un <cryo>110%</cryo>. Inoltre, il suddetto personaggio ripristina <cryo>6</cryo> di energia elementale quando innesca reazioni di Barlume astrale o infligge DAN da Barlume astrale. Quest'ultimo effetto può attivarsi una volta ogni 3,5 s, anche se il personaggio non è in campo."
+    }
+  }
+}

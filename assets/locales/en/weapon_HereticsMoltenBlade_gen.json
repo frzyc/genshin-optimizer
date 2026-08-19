@@ -1,0 +1,24 @@
+{
+  "name": "Heretic's Molten Blade",
+  "description": {
+    "0": "He drew this weapon once more when he first met that God of Flame, revered by all, but it had been too long since he had last used it."
+  },
+  "passiveName": "Lone Light's Blessing",
+  "passiveDescription": {
+    "0": {
+      "0": "After the equipping character uses their Elemental Skill, they gain \"Gleam of First Light.\" While active, Gleam of First Light tracks their distance traveled. Each second, the equipping character gains an ATK Bonus ranging from <cryo>18%</cryo> to <cryo>36%</cryo> based on the distance traveled during the previous second. Gleam of First Light lasts 14s, can be triggered once every 14s, and is removed when the equipping character leaves the field."
+    },
+    "1": {
+      "0": "After the equipping character uses their Elemental Skill, they gain \"Gleam of First Light.\" While active, Gleam of First Light tracks their distance traveled. Each second, the equipping character gains an ATK Bonus ranging from <cryo>22.5%</cryo> to <cryo>45%</cryo> based on the distance traveled during the previous second. Gleam of First Light lasts 14s, can be triggered once every 14s, and is removed when the equipping character leaves the field."
+    },
+    "2": {
+      "0": "After the equipping character uses their Elemental Skill, they gain \"Gleam of First Light.\" While active, Gleam of First Light tracks their distance traveled. Each second, the equipping character gains an ATK Bonus ranging from <cryo>27%</cryo> to <cryo>54%</cryo> based on the distance traveled during the previous second. Gleam of First Light lasts 14s, can be triggered once every 14s, and is removed when the equipping character leaves the field."
+    },
+    "3": {
+      "0": "After the equipping character uses their Elemental Skill, they gain \"Gleam of First Light.\" While active, Gleam of First Light tracks their distance traveled. Each second, the equipping character gains an ATK Bonus ranging from <cryo>31.5%</cryo> to <cryo>63%</cryo> based on the distance traveled during the previous second. Gleam of First Light lasts 14s, can be triggered once every 14s, and is removed when the equipping character leaves the field."
+    },
+    "4": {
+      "0": "After the equipping character uses their Elemental Skill, they gain \"Gleam of First Light.\" While active, Gleam of First Light tracks their distance traveled. Each second, the equipping character gains an ATK Bonus ranging from <cryo>36%</cryo> to <cryo>72%</cryo> based on the distance traveled during the previous second. Gleam of First Light lasts 14s, can be triggered once every 14s, and is removed when the equipping character leaves the field."
+    }
+  }
+}

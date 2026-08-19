@@ -1,0 +1,24 @@
+{
+  "name": "Kar ve Ayazın Yemini",
+  "description": {
+    "0": "Düzeni korumak için üretilmiş bir uzun yay. Soğuk ışıltısı, mutlak eşitlik ve adalet ideallerini kusursuz biçimde yansıtıyor."
+  },
+  "passiveName": "Kanunun Dengesi",
+  "passiveDescription": {
+    "0": {
+      "0": "Kuşanan karakter bir Element Becerisi kullandıktan sonra 12sn boyunca Element Ustalığı <cryo>120</cryo> artar."
+    },
+    "1": {
+      "0": "Kuşanan karakter bir Element Becerisi kullandıktan sonra 12sn boyunca Element Ustalığı <cryo>150</cryo> artar."
+    },
+    "2": {
+      "0": "Kuşanan karakter bir Element Becerisi kullandıktan sonra 12sn boyunca Element Ustalığı <cryo>180</cryo> artar."
+    },
+    "3": {
+      "0": "Kuşanan karakter bir Element Becerisi kullandıktan sonra 12sn boyunca Element Ustalığı <cryo>210</cryo> artar."
+    },
+    "4": {
+      "0": "Kuşanan karakter bir Element Becerisi kullandıktan sonra 12sn boyunca Element Ustalığı <cryo>240</cryo> artar."
+    }
+  }
+}

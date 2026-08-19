@@ -51,7 +51,7 @@
       "3": [
         "Mientras está en este estado, Yumemizuki Mizuki flota continuamente hacia delante e inflige cada cierto tiempo <anemo>Daño Anemo en el AdE</anemo> a los enemigos cercanos.",
         "Mientras el estado de navegasueños está activo, Yumemizuki Mizuki puede controlar la dirección en la que flota y aumenta la distancia desde la que se pueden recoger los <strong>dulces especiales de Yumemizuki</strong> de la Habilidad Definitiva, <strong>Terapia del manantial de Anraku</strong>.",
-        "Aumenta el daño de la reacción de Torbellino causada por los personajes cercanos del equipo en función de la Maestría Elemental de Yumemizuki Mizuki.",
+        "Aumenta el daño de las reacciones de Torbellino y Torbellino Estelar causadas por los personajes cercanos del equipo en función de la Maestría Elemental de Yumemizuki Mizuki.",
         "El estado de navegasueños termina cuando Mizuki sea retirada del campo de batalla o utilice de nuevo su Habilidad Elemental."
       ],
       "4": "<br/>",
@@ -62,8 +62,8 @@
       "1": "Daño de ataque continuo",
       "2": "Duración de navegasueños",
       "3": "Aumento de daño de Torbellino",
-      "4": "TdE",
-      "5": "",
+      "4": "Aumento de daño de Torbellino Estelar",
+      "5": "TdE",
       "6": "",
       "7": "",
       "8": "",
@@ -116,7 +116,7 @@
   "passive1": {
     "name": "Voz trémula de la luna",
     "description": {
-      "0": "Cuando Yumemizuki Mizuki causa una reacción de Torbellino mientras se encuentra en estado de navegasueños, la duración de dicho estado aumenta en 2.5 s. Este efecto solo puede activarse una vez cada 0.3 s y puede ocurrir, como máximo, 2 veces durante un mismo estado de navegasueños."
+      "0": "Cuando Yumemizuki Mizuki causa una reacción de Torbellino o Torbellino Estelar mientras se encuentra en estado de navegasueños, la duración de dicho estado aumenta en 2.5 s. Este efecto solo puede activarse una vez cada 0.3 s y puede ocurrir, como máximo, 2 veces durante un mismo estado de navegasueños."
     }
   },
   "passive2": {
@@ -134,17 +134,23 @@
   "lockedPassive": {
     "name": "Inmensidad del ensueño",
     "description": {
-      "0": "Cuando Yumemizuki Mizuki cause una reacción de Torbellino en estado de navegasueños, el próximo <anemo>Daño Anemo en el AdE</anemo> periódico que inflija a los enemigos cercanos durante ese estado de navegasueños aumentará en una cantidad equivalente al 1000% de su Maestría Elemental. Este efecto solo se puede activar una vez cada 2.5 s.",
-      "1": "Además, mientras esté en estado de navegasueños, la Maestría Elemental de los personajes cercanos del equipo aumentará en una cantidad equivalente al 10% de la Maestría Elemental de Yumemizuki Mizuki."
+      "0": "Cuando Yumemizuki Mizuki cause una reacción de Torbellino o Torbellino Estelar en estado de navegasueños, el próximo <anemo>Daño Anemo en el AdE</anemo> periódico que inflija a los enemigos cercanos durante ese estado de navegasueños aumentará en una cantidad equivalente al 1000% de su Maestría Elemental. Este efecto solo se puede activar una vez cada 2.5 s.",
+      "1": "<strong>Esplendor: Torbellino Estelar</strong>",
+      "2": "Cuando Yumemizuki Mizuki inflija a un enemigo <anemo>Daño Anemo en el AdE</anemo> potenciado de la anterior manera, también infligirá una vez adicional <anemo>Daño Anemo</anemo> en una cantidad equivalente al 1000% de su Maestría Elemental. Este daño se considera daño de Torbellino Estelar.",
+      "3": "<br/>",
+      "4": "Además, mientras esté en estado de navegasueños, la Maestría Elemental de los personajes cercanos del equipo aumentará en una cantidad equivalente al 10% de la Maestría Elemental de Yumemizuki Mizuki.",
+      "5": "Durante 8 s después de que un personaje del equipo cause una reacción de Torbellino Estelar en las cercanías, Yumemizuki Mizuki entrará en el estado de <strong>esplendor: Torbellino Estelar</strong>."
     }
   },
   "constellation1": {
     "name": "Aguas brumosas",
     "description": {
-      "0": "Cuando Yumemizuki Mizuki se encuentra en estado de navegasueños, aplicará continuamente el efecto de “veintitrés noches de espera” a los enemigos cercanos durante 3 s cada 3.5 s. Cuando un enemigo se vea afectado por una reacción de Torbellino causada con Daño Anemo, este efecto se cancelará y el daño de dicha reacción de Torbellino contra este enemigo aumentará en una cantidad equivalente al 1100% de la Maestría Elemental de Mizuki."
+      "0": "Cuando Yumemizuki Mizuki se encuentra en estado de navegasueños, aplicará el efecto de “veintitrés noches de espera” a los enemigos cercanos durante 3 s cada 3.5 s. Al infligir Daño Anemo a estos enemigos y causar contra ellos una reacción de Torbellino o Torbellino Estelar, este efecto se cancelará y el daño de dicha reacción de Torbellino o Torbellino Estelar contra esos enemigos aumentará respectivamente en una cantidad equivalente al 1100/550% de la Maestría Elemental de Yumemizuki Mizuki."
     },
     "upgradedDescription": {
-      "0": "Cuando Yumemizuki Mizuki se encuentra en estado de navegasueños, aplicará el efecto de “veintitrés noches de espera” a los enemigos cercanos durante 3 s cada 3.5 s. Al infligir Daño Anemo a estos enemigos y causar contra ellos una reacción de Torbellino, este efecto se cancelará y el daño de dicha reacción de Torbellino contra esos enemigos aumentará en una cantidad equivalente al 1100% de la Maestría Elemental de Yumemizuki Mizuki, además de realizar un ataque adicional contra dichos enemigos que inflige <anemo>Daño Anemo</anemo> en una cantidad equivalente al 1000% de la Maestría Elemental de Yumemizuki Mizuki."
+      "0": "Cuando Yumemizuki Mizuki se encuentra en estado de navegasueños, aplicará el efecto de “veintitrés noches de espera” a los enemigos cercanos durante 3 s cada 3.5 s. Al infligir Daño Anemo a estos enemigos y causar contra ellos una reacción de Torbellino o Torbellino Estelar, este efecto se cancelará y el daño de dicha reacción de Torbellino o Torbellino Estelar contra esos enemigos aumentará respectivamente en una cantidad equivalente al 1100/550% de la Maestría Elemental de Yumemizuki Mizuki, además de realizar un ataque adicional contra dichos enemigos que inflige <anemo>Daño Anemo</anemo> en una cantidad equivalente al 1000% de la Maestría Elemental de Yumemizuki Mizuki.",
+      "1": "<strong>Esplendor: Torbellino Estelar</strong>",
+      "2": "El daño adicional anteriormente mencionado se convierte en <anemo>Daño Anemo</anemo> equivalente al 400% de la Maestría Elemental de Yumemizuki Mizuki, y se considera daño de Torbellino Estelar."
     }
   },
   "constellation2": {
@@ -183,10 +189,10 @@
   "constellation6": {
     "name": "Anhelo persistente",
     "description": {
-      "0": "Mientras Yumemizuki Mizuki esté en el estado de navegasueños, el daño de Torbellino infligido por los personajes cercanos del equipo puede asestar golpes CRIT, con un índice fijo de Prob. CRIT del 30% y un Daño CRIT del 100%."
+      "0": "Mientras Yumemizuki Mizuki esté en el estado de navegasueños, el daño de Torbellino infligido por los personajes cercanos del equipo puede asestar golpes CRIT, con un índice fijo de Prob. CRIT del 30% y un Daño CRIT del 100%, y además, aumenta en un 10% la Prob. CRIT y en un 20% el Daño CRIT del daño de Torbellino Estelar infligido por dichos personajes."
     },
     "upgradedDescription": {
-      "0": "Mientras Yumemizuki Mizuki esté en el estado de navegasueños, el daño de Torbellino infligido por los personajes cercanos del equipo puede asestar golpes CRIT, con unos índices fijos de Prob. CRIT y Daño CRIT del 30% y 100% respectivamente.",
+      "0": "Mientras Yumemizuki Mizuki esté en el estado de navegasueños, el daño de Torbellino infligido por los personajes cercanos del equipo podrá asestar golpes CRIT, con unos índices fijos de Prob. CRIT y Daño CRIT del 30% y 100% respectivamente. La Prob. CRIT y el Daño CRIT de las reacciones de Torbellino Estelar causadas por dichos personajes aumentarán en un 10% y un 20% respectivamente.",
       "1": "Por cada punto de Maestría Elemental que Yumemizuki Mizuki tenga por encima de los 500 pts., su Prob. CRIT aumentará en un 0.04% y su Daño CRIT en un 0.16%. Como máximo, la Prob. CRIT y el Daño CRIT de Yumemizuki Mizuki pueden aumentar en un 20% y un 80% respectivamente de esta forma."
     }
   }

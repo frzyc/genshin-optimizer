@@ -149,7 +149,7 @@
     },
     "upgradedDescription": {
       "0": "Quando Qiqi colpisce gli avversari con gli attacchi normali e caricati, ha un 50% di probabilità di marchiarli con un Talismano proteggi fortuna per 6 s. Si può verificare una sola volta ogni 30 s.",
-      "1": "Nello stato di <strong>Splendore: Astroconduzione</strong>, la probabilità di innescare l'effetto aumenta a un 100% e il TdR si riduce a 15 s."
+      "1": "Nello stato di <strong><tooltip ns=tooltips_gen baseKey18=11500004 values=[]>Splendore: Barlume astrale</strong></tooltip>, la probabilità di innescare l'effetto aumenta a un 100% e il TdR si riduce a 15 s."
     }
   },
   "passive3": {
@@ -162,8 +162,10 @@
     "name": "Sette tesori sacri",
     "description": {
       "0": "Il TdR dell'abilità elementale <strong>Arte dell'Adeptus: Messaggero del gelo</strong> si riduce a 15 s.",
-      "1": "Nello stato di <strong>Splendore: Astroconduzione</strong>, mentre Messaggero del gelo è in campo, i DAN delle reazioni di Superconduzione e Astroconduzione dei personaggi nel gruppo di Qiqi aumentano di un 50%.",
-      "2": "Inoltre, quando si trova all'interno di un <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Campo astropolare</strong></tooltip>, Qiqi entra nello stato di <strong>Splendore: Astroconduzione</strong>."
+      "1": "Nello stato di <strong>Splendore: Barlume astrale</strong>, mentre il Messaggero del gelo è in campo, i DAN delle reazioni corrispondenti dei membri del gruppo di Qiqi vengono potenziati.",
+      "2": "Nello stato di <strong>Splendore: Astroconduzione</strong>, i DAN da Superconduzione e Astroconduzione aumentano di un 50%.",
+      "3": "Nello stato di <strong>Splendore: Turbinio astrale</strong>, i DAN da Turbinio di Cryo e Turbinio astrale aumentano di un 50%.",
+      "4": "Inoltre, Qiqi entra nello stato di <strong>Splendore: Astroconduzione</strong> quando si trova all'interno di un <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Campo astropolare</strong></tooltip> o nello stato di <strong>Splendore: Turbinio astrale</strong> per 8 s dopo che un membro vicino del gruppo ha innescato una reazione di Turbinio astrale."
     }
   },
   "constellation1": {
@@ -173,7 +175,7 @@
     },
     "upgradedDescription": {
       "0": "Quando il Messaggero del gelo colpisce un avversario marchiato da un Talismano proteggi fortuna, l'energia di Qiqi si rigenera di 2.",
-      "1": "Nello stato di <strong>Splendore: Astroconduzione</strong>, l'energia elementale di Qiqi si rigenera di 6 quando gli attacchi e gli attacchi coordinati del Messaggero del gelo colpiscono gli avversari. Quest'effetto può attivarsi una volta ogni 6 s."
+      "1": "Nello stato di <tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Splendore: Barlume astrale</strong></tooltip>, l'energia elementale di Qiqi si rigenera di 6 quando gli attacchi e gli attacchi coordinati del Messaggero del gelo colpiscono gli avversari. Quest'effetto può attivarsi una volta ogni 6 s."
     }
   },
   "constellation2": {
@@ -183,7 +185,7 @@
     },
     "upgradedDescription": {
       "0": "I DAN degli attacchi normali e caricati di Qiqi contro gli avversari sotto l'effetto di <cryo>Cryo</cryo> aumentano di un 15%.",
-      "1": "Nello stato di <strong>Splendore: Astroconduzione</strong>, l'ATT di Qiqi aumenta di un 50%."
+      "1": "Nello stato di <tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Splendore: Barlume astrale</strong></tooltip>, l'ATT di Qiqi aumenta di un 50%."
     }
   },
   "constellation3": {
@@ -219,7 +221,7 @@
     "upgradedDescription": {
       "0": "<strong>Arte dell'Adeptus: Protettrice della fortuna</strong> rianima tutti i membri del gruppo sconfitti nelle vicinanze e rigenera un 50% dei loro PS.",
       "1": "Si può verificare una sola volta ogni 15 min.",
-      "2": "Inoltre, dopo aver usato <strong>Arte dell'Adeptus: Protettrice della fortuna</strong>, Qiqi ottiene 4 accumuli di <strong>Scorcio misterioso</strong>, e quando il tuo personaggio attivo attuale (diverso da Qiqi) infligge DAN da Astroconduzione, consuma 1 accumulo di <strong>Scorcio misterioso</strong> per aumentare i DAN inflitti di un 600% dell'ATT di Qiqi. L'effetto di <strong>Scorcio misterioso</strong> dura fino a 12 s, e sprigionare nuovamente <strong>Arte dell'Adeptus: Protettrice della fortuna</strong> ne ripristina gli accumuli."
+      "2": "Inoltre, dopo aver usato <strong>Arte dell'Adeptus: Protettrice della fortuna</strong>, Qiqi ottiene 4 accumuli di <strong>Scorcio misterioso</strong>, e quando il tuo personaggio attivo attuale (diverso da Qiqi) infligge DAN da Astroconduzione o Turbinio astrale con il proprio talento o abilità, consuma 1 accumulo di <strong>Scorcio misterioso</strong> per aumentare i DAN inflitti di un 600% dell'ATT di Qiqi. L'effetto di <strong>Scorcio misterioso</strong> dura fino a 12 s, e sprigionare nuovamente <strong>Arte dell'Adeptus: Protettrice della fortuna</strong> ne ripristina gli accumuli."
     }
   }
 }

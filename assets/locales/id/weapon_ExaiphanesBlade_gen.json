@@ -1,0 +1,24 @@
+{
+  "name": "Exaiphanes Blade",
+  "description": {
+    "0": "Pedang panjang yang pernah memancarkan cahaya dari Bintang Pucat. Di tangan seseorang yang memulai perjalanan, ia menjadi cahaya baru yang tidak termasuk dalam era lama mana pun."
+  },
+  "passiveName": "Traveler's Path",
+  "passiveDescription": {
+    "0": {
+      "0": "Saat dikenakan Pengembara, ATK +<cryo>16%</cryo> selama <cryo>8</cryo> detik dan memulihkan <cryo>3</cryo> poin Energy saat mengenai musuh. Efek ini dapat terpicu sekali setiap <cryo>5</cryo> detik. Efek ini tetap dapat terpicu meskipun Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "1": {
+      "0": "Saat dikenakan Pengembara, setiap kali Pengembara telah beresonansi dengan satu jenis elemen, CRIT DMG Pengembara +6%. Selain itu, setelah serangan Pengembara mengenai musuh, ATK +<cryo>20%</cryo> selama 8 detik, dan Pengembara memulihkan <cryo>3</cryo> poin Energy. Efek ini dapat terpicu sekali setiap 5 detik. Efek ini tetap dapat terpicu meskipun Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "2": {
+      "0": "Saat dikenakan Pengembara, setiap kali Pengembara telah beresonansi dengan satu jenis elemen, CRIT DMG Pengembara +6%. Selain itu, setelah serangan Pengembara mengenai musuh, ATK +<cryo>24%</cryo> selama 8 detik, dan Pengembara memulihkan <cryo>5</cryo> poin Energy. Efek ini dapat terpicu sekali setiap 5 detik. Efek ini tetap dapat terpicu meskipun Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "3": {
+      "0": "Saat dikenakan Pengembara, setiap kali Pengembara telah beresonansi dengan satu jenis elemen, CRIT DMG Pengembara +6%. Selain itu, setelah serangan Pengembara mengenai musuh, ATK +<cryo>32%</cryo> selama 8 detik, dan Pengembara memulihkan <cryo>5</cryo> poin Energy. Efek ini dapat terpicu sekali setiap 5 detik. Efek ini tetap dapat terpicu meskipun Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "4": {
+      "0": "Saat dikenakan Pengembara, setiap kali Pengembara telah beresonansi dengan satu jenis elemen, CRIT DMG Pengembara +6%. Selain itu, setelah serangan Pengembara mengenai musuh, ATK +<cryo>40%</cryo> selama 8 detik, dan Pengembara memulihkan <cryo>5</cryo> poin Energy. Efek ini dapat terpicu sekali setiap 5 detik. Efek ini tetap dapat terpicu meskipun Karakter ada di dalam party namun sedang tidak berada di medan pertempuran."
+    }
+  }
+}

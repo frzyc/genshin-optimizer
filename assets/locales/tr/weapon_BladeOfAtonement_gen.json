@@ -1,0 +1,24 @@
+{
+  "name": "Kefaret Kılıcı",
+  "description": {
+    "0": "Luchkinler tarafından nesilden nesile aktarılan bir büyük kılıç. Yalnızca en cesur savaşçının bu kılıcı kullanmaya layık olduğu söylenir."
+  },
+  "passiveName": "Tövbe ve Kurtuluş",
+  "passiveDescription": {
+    "0": {
+      "0": "Bir Element Tepkimesi tetiklediğinde 12sn boyunca kuşanan karakterin Element Ustalığı <cryo>64</cryo> artar. Bir Yıldız Parıltısı tepkimesi tetiklediğinde ise 12sn boyunca kuşanan karakterin Saldırısı <cryo>%16</cryo> artar. Bu etkiler karakter alanda olmasa bile tetiklenebilir."
+    },
+    "1": {
+      "0": "Bir Element Tepkimesi tetiklediğinde 12sn boyunca kuşanan karakterin Element Ustalığı <cryo>80</cryo> artar. Bir Yıldız Parıltısı tepkimesi tetiklediğinde ise 12sn boyunca kuşanan karakterin Saldırısı <cryo>%20</cryo> artar. Bu etkiler karakter alanda olmasa bile tetiklenebilir."
+    },
+    "2": {
+      "0": "Bir Element Tepkimesi tetiklediğinde 12sn boyunca kuşanan karakterin Element Ustalığı <cryo>96</cryo> artar. Bir Yıldız Parıltısı tepkimesi tetiklediğinde ise 12sn boyunca kuşanan karakterin Saldırısı <cryo>%24</cryo> artar. Bu etkiler karakter alanda olmasa bile tetiklenebilir."
+    },
+    "3": {
+      "0": "Bir Element Tepkimesi tetiklediğinde 12sn boyunca kuşanan karakterin Element Ustalığı <cryo>112</cryo> artar. Bir Yıldız Parıltısı tepkimesi tetiklediğinde ise 12sn boyunca kuşanan karakterin Saldırısı <cryo>%28</cryo> artar. Bu etkiler karakter alanda olmasa bile tetiklenebilir."
+    },
+    "4": {
+      "0": "Bir Element Tepkimesi tetiklediğinde 12sn boyunca kuşanan karakterin Element Ustalığı <cryo>128</cryo> artar. Bir Yıldız Parıltısı tepkimesi tetiklediğinde ise 12sn boyunca kuşanan karakterin Saldırısı <cryo>%32</cryo> artar. Bu etkiler karakter alanda olmasa bile tetiklenebilir."
+    }
+  }
+}
