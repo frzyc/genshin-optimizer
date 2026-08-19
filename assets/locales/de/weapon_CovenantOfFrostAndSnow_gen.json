@@ -1,0 +1,24 @@
+{
+  "name": "Frostschneeschwur",
+  "description": {
+    "0": "Ein Langbogen, geschmiedet, um die Ordnung zu wahren. Sein Glanz ist kalt, genau wie das gerechteste und unparteiischste Gesetz."
+  },
+  "passiveName": "Gleichgewicht der Gesetze",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht nach Anwenden der Elementarfähigkeit die Elementarkunde des Trägers 12 s lang um <cryo>120</cryo> Punkte."
+    },
+    "1": {
+      "0": "Erhöht nach Anwenden der Elementarfähigkeit die Elementarkunde des Trägers 12 s lang um <cryo>150</cryo> Punkte."
+    },
+    "2": {
+      "0": "Erhöht nach Anwenden der Elementarfähigkeit die Elementarkunde des Trägers 12 s lang um <cryo>180</cryo> Punkte."
+    },
+    "3": {
+      "0": "Erhöht nach Anwenden der Elementarfähigkeit die Elementarkunde des Trägers 12 s lang um <cryo>210</cryo> Punkte."
+    },
+    "4": {
+      "0": "Erhöht nach Anwenden der Elementarfähigkeit die Elementarkunde des Trägers 12 s lang um <cryo>240</cryo> Punkte."
+    }
+  }
+}

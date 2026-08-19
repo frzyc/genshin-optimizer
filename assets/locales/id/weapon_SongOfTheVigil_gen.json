@@ -1,0 +1,24 @@
+{
+  "name": "Song of the Vigil",
+  "description": {
+    "0": "Tombak yang dulu menjaga semua orang, kini memainkan peran penting dalam permainan anak-anak."
+  },
+  "passiveName": "Cadence of Days Gone By",
+  "passiveDescription": {
+    "0": {
+      "0": "Setelah memicu Reaksi Elemental, memulihkan <cryo>4</cryo> poin Energy untuk Karakter yang mengenakan, efek ini dapat terpicu sekali setiap 9 detik. Setelah memicu reaksi Stellar Glimmer, ATK Karakter yang mengenakan +<cryo>20%</cryo> selama 12 detik. Karakter yang mengenakan tetap dapat memicu efek di atas meskipun ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "1": {
+      "0": "Setelah memicu Reaksi Elemental, memulihkan <cryo>5</cryo> poin Energy untuk Karakter yang mengenakan, efek ini dapat terpicu sekali setiap 9 detik. Setelah memicu reaksi Stellar Glimmer, ATK Karakter yang mengenakan +<cryo>25%</cryo> selama 12 detik. Karakter yang mengenakan tetap dapat memicu efek di atas meskipun ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "2": {
+      "0": "Setelah memicu Reaksi Elemental, memulihkan <cryo>6</cryo> poin Energy untuk Karakter yang mengenakan, efek ini dapat terpicu sekali setiap 9 detik. Setelah memicu reaksi Stellar Glimmer, ATK Karakter yang mengenakan +<cryo>30%</cryo> selama 12 detik. Karakter yang mengenakan tetap dapat memicu efek di atas meskipun ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "3": {
+      "0": "Setelah memicu Reaksi Elemental, memulihkan <cryo>7</cryo> poin Energy untuk Karakter yang mengenakan, efek ini dapat terpicu sekali setiap 9 detik. Setelah memicu reaksi Stellar Glimmer, ATK Karakter yang mengenakan +<cryo>35%</cryo> selama 12 detik. Karakter yang mengenakan tetap dapat memicu efek di atas meskipun ada di dalam party namun sedang tidak berada di medan pertempuran."
+    },
+    "4": {
+      "0": "Setelah memicu Reaksi Elemental, memulihkan <cryo>8</cryo> poin Energy untuk Karakter yang mengenakan, efek ini dapat terpicu sekali setiap 9 detik. Setelah memicu reaksi Stellar Glimmer, ATK Karakter yang mengenakan +<cryo>40%</cryo> selama 12 detik. Karakter yang mengenakan tetap dapat memicu efek di atas meskipun ada di dalam party namun sedang tidak berada di medan pertempuran."
+    }
+  }
+}

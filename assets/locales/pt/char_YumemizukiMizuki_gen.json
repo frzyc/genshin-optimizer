@@ -51,7 +51,7 @@
       "3": [
         " Enquanto está no estado de Devaneio Onírico, Yumemizuki Mizuki flutua continuamente para frente, causando <anemo>Dano Anemo em uma AdE</anemo> aos oponentes próximos em intervalos regulares.",
         " Durante este período, Yumemizuki Mizuki pode controlar a direção que flutua, e a distância para coletar os <strong>Lanches Yumemikaze</strong> do Supremo <strong>Terapia da Nascente Secreta Anraku</strong> será aumentada.",
-        " Aumenta o Dano de Redemoinho causado pelos membros próximos do grupo com base na Proficiência Elemental de Yumemizuki Mizuki.",
+        " Aumenta o Dano de Redemoinho e Redemoinho Estelar causado pelos membros próximos do grupo com base na Proficiência Elemental de Yumemizuki Mizuki.",
         " O estado de Devaneio Onírico termina quando Mizuki sai do campo ou utiliza sua Habilidade Elemental novamente."
       ],
       "4": "<br/>",
@@ -61,9 +61,9 @@
       "0": "Dano de Habilidade",
       "1": "Dano de Ataques Contínuos",
       "2": "Duração do Devaneio Onírico",
-      "3": "Proporção de aumento de Dano de Redemoinho para cada ponto de Proficiência",
-      "4": "Tempo de Recarga",
-      "5": "",
+      "3": "Proporção de aumento de Dano de Redemoinho para cada 100 pontos de Proficiência",
+      "4": "Proporção de aumento de Dano de Redemoinho Estelar para cada 100 pontos de Proficiência",
+      "5": "Recarga",
       "6": "",
       "7": "",
       "8": "",
@@ -116,7 +116,7 @@
   "passive1": {
     "name": "A Voz Inquieta da Lua Brilhante",
     "description": {
-      "0": "Quando Yumemizuki Mizuki desencadeia Redemoinho enquanto está em seu estado de Devaneio Onírico, a duração de Devaneio Onírico aumenta em 2.5s. Este efeito pode ser ativado uma vez a cada 0.3s. Este efeito pode ser ativado até 2 vezes por estado de Devaneio Onírico."
+      "0": "Quando Yumemizuki Mizuki desencadeia Redemoinho ou Redemoinho Estelar enquanto está em seu estado de Devaneio Onírico, a duração de Devaneio Onírico aumenta em 2.5s. Este efeito pode ser ativado uma vez a cada 0.3s. Este efeito pode ser ativado até 2 vezes por estado de Devaneio Onírico."
     }
   },
   "passive2": {
@@ -134,17 +134,21 @@
   "lockedPassive": {
     "name": "Imensidade do Sonho",
     "description": {
-      "0": "Quando Yumemizuki Mizuki estiver no estado Devaneio Onírico e desencadear Redemoinho, aumentará a próxima instância periódica de <anemo>Dano Anemo em AdE</anemo> causado nessa duração de Devaneio Onírico. O aumento é de 1000% da Proficiência Elemental de Yumemizuki Mizuki. Esse efeito pode ser desencadeado uma vez a cada 2.5s.",
-      "1": "Além disso, quando está em Devaneio Onírico, aumenta a Proficiência Elemental dos personagens próximos em 10% da Proficiência Elemental de Yumemizuki Mizuki."
+      "0": "Quando Yumemizuki Mizuki desencadeia uma reação de Redemoinho ou Redemoinho Estelar enquanto está no estado de Devaneio Onírico, a próxima instância de <anemo>Dano Anemo em AdE</anemo> periódico causado a inimigos próximos durante esse mesmo estado será aumentada em 1.000% de sua Proficiência Elemental. O efeito mencionado acima pode ser desencadeado uma vez a cada 2.5s.",
+      "1": "<strong>Brilho Reluzente: Redemoinho Estelar</strong>: quando Yumemizuki Mizuki causa <anemo>Dano Anemo em AdE</anemo> elevado contra os inimigos, causa uma instância adicional de <anemo>Dano Anemo</anemo> baseado em 1000% de sua Proficiência Elemental. Esse Dano é considerado Dano de Redemoinho Estelar.",
+      "2": "<br/>",
+      "3": "Além disso, enquanto Yumemizuki Mizuki está no estado de Devaneio Onírico, a Proficiência Elemental dos personagens do grupo próximos também é aumentada em 10% da Proficiência Elemental de Yumemizuki Mizuki.",
+      "4": "Nos 8s após o personagem próximo desencadear Redemoinho Estelar, Yumemizuki Mizuki entrará no estado <strong>Brilho Reluzente: Redemoinho Estelar</strong>."
     }
   },
   "constellation1": {
     "name": "Águas Enevoadas",
     "description": {
-      "0": "Quando Yumemizuki Mizuki está no estado Devaneio Onírico, aplicará por 3s contra o inimigo o efeito \"Espera de 23 Noites\" a cada 3.5s. Inimigos afetados por Espera de 23 Noites ao sofrerem Dano Anemo ou ao desencadearem Redemoinho terão esse efeito removido, e essa reação de Redemoinho receberá um aumento de Dano. O aumento de Dano é de 1100% da Proficiência Elemental de Yumemizuki Mizuki."
+      "0": "Quando Yumemizuki Mizuki está no estado Devaneio Onírico, aplicará por 3s contra os inimigos próximos o efeito \"Espera de 23 Noites\" a cada 3.5s. Inimigos afetados por Espera de 23 Noites ao sofrerem Dano de Redemoinho/Redemoinho Estelar desencadeado por Dano Anemo terão esse efeito removido, e essa reação de Redemoinho/Redemoinho Estelar receberá um aumento de Dano. O aumento de Dano é de 1100%/550% respectivamente da Proficiência Elemental de Yumemizuki Mizuki."
     },
     "upgradedDescription": {
-      "0": "Quando Yumemizuki Mizuki está no estado Devaneio Onírico, aplicará por 3s contra os inimigos o efeito \"Espera de 23 Noites\" a cada 3.5s. Inimigos afetados por Espera de 23 Noites ao sofrerem Dano Anemo ou ao desencadearem Redemoinho terão esse efeito removido, e essa reação de Redemoinho receberá um aumento de Dano. O aumento de Dano é de 1100% da Proficiência Elemental de Yumemizuki Mizuki. Além disso, faz um ataque adicional contra o inimigo, causando 1000% da Proficiência Elemental de Yumemizuki Mizuki como <anemo>Dano Anemo</anemo>."
+      "0": "Quando Yumemizuki Mizuki está no estado Devaneio Onírico, aplicará por 3s contra os inimigos o efeito \"Espera de 23 Noites\" a cada 3.5s. Inimigos afetados por Espera de 23 Noites ao sofrerem Dano Anemo ou ao desencadearem Redemoinho ou Redemoinho Estelar terão esse efeito removido, e essa reação de Redemoinho/Redemoinho Estelar receberá um aumento de Dano. O aumento de Dano é de 1100%/550% respectivamente da Proficiência Elemental de Yumemizuki Mizuki. Além disso, faz um ataque adicional contra o inimigo, causando 1000% da Proficiência Elemental de Yumemizuki Mizuki como <anemo>Dano Anemo</anemo>.",
+      "1": "<strong>Brilho Reluzente: Redemoinho Estelar</strong>: o Dano adicional acima é convertido para 400% da Proficiência Elemental de Yumemizuki Mizuki como <anemo>Dano Anemo</anemo>. Esse Dano é considerado Dano de Redemoinho Estelar."
     }
   },
   "constellation2": {
@@ -183,10 +187,10 @@
   "constellation6": {
     "name": "O Coração Perdura Longamente",
     "description": {
-      "0": "Enquanto Yumemizuki Mizuki estiver no estado de Devaneio Onírico, o Dano de Redemoinho causado por membros próximos da equipe pode causar Acerto CRIT, com a Taxa CRIT fixa em 30% e o Dano CRIT fixo em 100%."
+      "0": "Enquanto Yumemizuki Mizuki estiver no estado de Devaneio Onírico, o Dano de Redemoinho causado por membros próximos da equipe pode causar Acerto CRIT, com a Taxa CRIT fixa em 30%, o Dano CRIT fixo em 100%, e aumenta a Taxa CRIT em 10% e o Dano CRIT em 20% de Redemoinho Estelar desses personagens."
     },
     "upgradedDescription": {
-      "0": "Quando Yumemizuki Mizuki está em Devaneio Onírico, o Dano de Redemoinho causado pelo personagem próximo da equipe pode causar Dano CRIT com Taxa CRIT fixa em 30%, e Dano CRIT fixo em 100%.",
+      "0": "Quando Yumemizuki Mizuki está em Devaneio Onírico, o Dano de Redemoinho causado por personagens próximos da equipe pode causar Dano CRIT com Taxa CRIT fixa em 30%, Dano CRIT fixo em 100%, e aumenta a Taxa CRIT de Dano de Redemoinho Estelar desses personagens em 10%, e o Dano CRIT em 20%.",
       "1": "Com base na Proficiência Elemental de Yumemizuki Mizuki que ultrapassar 500, cada ponto de Proficiência Elemental aumentará a Taxa CRIT em 0.04% e o Dano CRIT em 0.16%. É possível aumentar a Taxa CRIT em até 20% e o Dano CRIT em até 80% para Yumemizuki Mizuki dessa forma."
     }
   }

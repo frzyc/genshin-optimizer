@@ -1,0 +1,189 @@
+{
+  "name": "Odette",
+  "title": "Süzülen Kar",
+  "description": "Donuk topraklarda açan buzdan bir çiçek kadar etkileyici güzellikteki Snezhnayalı meşhur balerin.",
+  "constellationName": "Kar Kuğusu",
+  "auto": {
+    "name": "Kar Kuğusu Varyasyonu",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 5 kılıç saldırısı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcayarak önündeki düşmanlara göz kamaştıran bir kesme darbesi yapar."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "5 Vuruş Hasarı",
+      "5": "Yüklü Saldırı Hasarı",
+      "6": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "7": "Havadan Saldırı Hasarı",
+      "8": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Yavaş Tempo: Hayalet Gece Dansçıları",
+    "description": {
+      "0": "Odette, yavaş ve zarif dans adımlarıyla düşmana <cryo>Buz Alan Hasarı</cryo> verir ve alana <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Solo Dans Gölgesini</strong></tooltip> çağırır.",
+      "1": "Eğer alanda zaten Odette tarafından çağrılan bir <strong>Dans Gölgesi</strong> varsa bu beceri, mevcut Dans gölgesini yeniden çağırır ve süresini yeniler.",
+      "2": "<br/>",
+      "3": "<strong>Solo Dans Gölgesi</strong>",
+      "4": "<strong>Tüy</strong> ve <strong>Kanat</strong> olmak üzere iki dans hareketi arasında geçiş yapar, belirli aralıklarla yakındaki düşmanlara saldırarak <cryo>Buz Alan Hasarı</cryo> verir.",
+      "5": "Ayrıca <strong>Yavaş Tempo: Hayalet Gece Dansçıları</strong> Element Becerisi kullanıldıktan sonra bu Element Becerisi, 6 saniyeliğine <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Yavaş Tempo: Şafakla Gelen Son</strong></tooltip> özel Element Becerisine dönüşür. Bu özel Element Becerisinde bir dans düeti yakındaki düşmanlara zamanla <cryo>Buz Alan Hasarı</cryo> verir. Düet sona erdiğinde Odette bir defa daha <cryo>Buz Alan Hasarı</cryo> verir, bu Hasar Yıldız İletimi veya Yıldız Girdabı Hasarı sayılır."
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Şafakla Gelen Son Süreli Hasarı",
+      "2": "Şafakla Gelen Son Yıldız İletimi/Yıldız Girdabı Hasarı",
+      "3": "\"Tüy\" Dans Hareketi Hasarı",
+      "4": "\"Tüy\" Dans Hareketi Yıldız İletimi/Yıldız Girdabı Hasarı",
+      "5": "\"Kanat\" Dans Hareketi Hasarı",
+      "6": "\"Kanat\" Dans Hareketi Yıldız İletimi/Yıldız Girdabı Hasarı",
+      "7": "Şafakla Gelen Son Bekleme Süresi",
+      "8": "Solo Dans Gölgesi Süresi",
+      "9": "BS",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Hızlı Tempo: Mavi Kuşun Son Dansı",
+    "description": {
+      "0": "Odette, hızlı ve canlı dans adımlarıyla birden fazla defa <cryo>Buz Alan Hasarı</cryo> verir ve <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Solo Dans Gölgesini</strong></tooltip> çağırır. Ayrıca verdiği Yıldız Parıltısı Tepkimesi Hasarını artıran <strong>Kar Kuğusunun Rüyası</strong> etkisini kazanır.",
+      "1": "Buna ek olarak, <strong>Hızlı Tempo: Mavi Kuşun Son Dansı</strong> Element Patlaması kullanıldıktan sonra Odette'in <strong>Yavaş Tempo: Hayalet Gece Dansçıları</strong> Element Becerisi, 6 saniyeliğine <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Yavaş Tempo: Şafakla Gelen Son</strong></tooltip> özel Element Becerisine dönüşür.",
+      "2": "<br/>",
+      "3": "Alanda Odette'in çağırdığı bir Solo Dans Gölgesi varsa süresi yenilenmiş şekilde Odette'in yanına çağrılır."
+    },
+    "skillParams": {
+      "0": "Kesme Hasarı",
+      "1": "Son Kesme Hasarı",
+      "2": "Kar Kuğusunun Rüyası Yıldız Parıltısı Tepkimesi Hasarı Bonusu",
+      "3": "Kar Kuğusunun Rüyası Süresi",
+      "4": "Solo Dans Gölgesi Süresi",
+      "5": "BS",
+      "6": "Enerji Maliyeti",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Seçilmiş Kişinin Bahar Ayini",
+    "description": {
+      "0": "Odette <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Solo Dans Gölgesi</strong></tooltip> çağırdığında 4 kademe <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Mucizevi İhtişam</strong></tooltip> elde eder."
+    }
+  },
+  "passive2": {
+    "name": "Pateticheskaya'nın Patetiği",
+    "description": {
+      "0": "Odette'in verdiği Yıldız Parıltısı Hasarı, 1.000 üzerindeki her 100 Saldırısı için orijinal Hasarın %1,5'i kadar artar. Bu şekilde en fazla %30 artış elde edebilir."
+    }
+  },
+  "passive3": {
+    "name": "Yıldız Takdisi: Şafağın Dansı",
+    "description": {
+      "0": "Odette bir <strong><tooltip ns=tooltips_gen baseKey18=11330003 values=[]>Kutup Yıldızı Alanı</tooltip></strong> içindeyken <strong>Işıltı: Yıldız İletimi</strong> durumuna, yakındaki bir grup üyesi bir Yıldız Girdabı tepkimesi tetiklediğinde ise 8 saniyeliğine <strong>Işıltı: Yıldız Girdabı</strong> durumuna girer.",
+      "1": "Bir grup üyesi bir Süper İletim veya Buz Girdabı tepkimesi tetiklediğinde bu tepkime, Yıldız İletimi veya Yıldız Girdabı tepkimesine dönüşür ve Odette'in Saldırısının her 100 puanı için söz konusu tepkimenin Temel Hasarı %0,7 artar. Bu şekilde en fazla %14 artış elde edilebilir."
+    }
+  },
+  "passive": {
+    "name": "Kış Hayallerinin Yankısı",
+    "description": {
+      "0": "Mini haritada <strong>Snezhnaya'nın yöresel ürünlerini</strong> gösterir.",
+      "1": "Boş vakitlerinde dans pratiği yapmak başka etkiler de tetikleyebilir..."
+    }
+  },
+  "constellation1": {
+    "name": "\"Danssız Bir Sabahta Baktı Yansımasına\"",
+    "description": {
+      "0": "<tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Yavaş Tempo: Şafakla Gelen Son</strong></tooltip> özel Element Becerisi kullanıldığında, Odette dans düetini bitirdiğinde yakındaki düşmanlara ek bir <cryo>Buz Alan Hasarı</cryo> verir. Bu Hasar:",
+      "1": "<strong>Işıltı: Yıldız İletimi</strong> durumundayken veya bir Işıltı durumunda değilken Odette'in Saldırısının %300'ü oranında Yıldız İletimi Tepkimesi Hasarı olur;",
+      "2": "<strong>Işıltı: Yıldız Girdabı</strong> durumundayken ise Odette'in Saldırısının %450'si oranında Yıldız Girdabı Tepkimesi Hasarı olur.",
+      "3": "<br/>",
+      "4": "Ayrıca \"Seçilmiş Kişinin Bahar Ayini\" Yükseltme Yeteneği de gelişir: Artık <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Solo Dans Gölgesi</strong></tooltip> çağrıldığında Odette ek 2 kademe <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Mucizevi İhtişam</strong></tooltip> kazanır ve alanda değilken <strong>Mucizevi İhtişam</strong> kademelerini kaybetme hızı saniyede 2 kademeye çıkar."
+    }
+  },
+  "constellation2": {
+    "name": "\"Kar Kuğusunun Görülmeyen Rüyasını Bizzat Görmeliyim Diye Düşündü\"",
+    "description": {
+      "0": "\"Seçilmiş Kişinin Bahar Ayini\" Yükseltme Yeteneği gelişir: Her etkin <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Mucizevi İhtişam</strong></tooltip> kademesi ek olarak karakterin Saldırısını %7 artırır.",
+      "1": "Ayrıca eğer alanda bir <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Solo Dans Gölgesi</strong></tooltip> varken Odette <tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Işıltı: Yıldız Parıltısı</strong></tooltip> durumundaysa <strong>Dans Gölgesinin</strong> yakınındaki düşmanların ilgili Element Direnci %20 düşer.",
+      "2": [
+        "<strong>Işıltı: Yıldız İletimi</strong>: <cryo>Buz</cryo> ve <electro>Elektrik</electro> Dirençleri düşer.",
+        "<strong>Işıltı: Yıldız Girdabı</strong>: <cryo>Buz</cryo> ve <anemo>Rüzgar</anemo> Dirençleri düşer."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "\"Haykıran Rüzgarın Peşine Düşeceğim, Yalnız Tırmanacağım Yükseklere\"",
+    "description": {
+      "0": "<strong><tooltip ns=char_Odette_gen baseKey18=skill>Yavaş Tempo: Hayalet Gece Dansçıları</tooltip></strong> seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "\"Yukarıya; Uzun, Çılgın, Yanan Maviliğe\"",
+    "description": {
+      "0": "<strong>Hızlı Tempo: Mavi Kuşun Son Dansı</strong> Element Patlaması geliştirilir: Odette <strong>Kar Kuğusunun Rüyası</strong> elde ettiğinde, yakındaki diğer grup üyelerinin verdiği Yıldız Parıltısı Tepkimesi Hasarı, <strong>Kar Kuğusunun Rüyasının</strong> etkilerinin %50'si kadar artar.",
+      "1": "<br/>",
+      "2": "Ayrıca, bir grup üyesi bir düşmana Yıldız Parıltısı Tepkimesi Hasarı verdiğinde, Odette de bir ortak saldırı yaparak <cryo>Buz Alan Hasarı</cryo> verir. Her 3,5 saniyede bir tetiklenebilen bu etki:",
+      "3": [
+        "<strong>Işıltı: Yıldız İletimi</strong> durumundayken veya bir Işıltı durumunda değilken Odette'in Saldırısının %66'sı kadar Yıldız İletimi Tepkimesi Hasarı verir;",
+        "<strong>Işıltı: Yıldız Girdabı</strong> durumundayken Odette'in Saldırısının %99'u kadar Yıldız Girdabı Tepkimesi Hasarı verir."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "\"Heyhat! Yeryüzünün Acımasız Bağlarından Sıyrıldım\"",
+    "description": {
+      "0": "<strong><tooltip ns=char_Odette_gen baseKey18=burst>Hızlı Tempo: Mavi Kuşun Son Dansı</tooltip></strong> seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "\"Elimi Uzattım ve İlahi Olanın Yüzüne Dokundum\"",
+    "description": {
+      "0": "\"Seçilmiş Kişinin Bahar Ayini\" Yükseltme Yeteneği gelişir: Odette, yakındaki tüm grup üyelerine <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Mucizevi İhtişam</strong></tooltip> verdiğinde Odette'in kendi Mucizevi İhtişam kademeleri azalmaz.",
+      "1": "Ayrıca, <strong>Mucizevi İhtişam</strong> etkisindeki karakterlerin düşmanlara verdiği Yıldız Parıltısı Tepkimesi Hasarı %25 <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>yükselir</strong></tooltip> ve Odette'in verdiği Yıldız Parıltısı Tepkimesi Hasarı da ek olarak %20 yükselir."
+    }
+  }
+}

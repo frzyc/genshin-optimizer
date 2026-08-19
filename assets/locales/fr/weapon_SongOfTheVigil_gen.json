@@ -1,0 +1,24 @@
+{
+  "name": "Chant de la veillée",
+  "description": {
+    "0": "Une longue lance qui jadis veillait sur tout. Aujourd'hui, elle a trouvé une nouvelle utilité auprès des enfants et dans leurs jeux d'imagination."
+  },
+  "passiveName": "Cadence des jours passés",
+  "passiveDescription": {
+    "0": {
+      "0": "Déclencher une réaction élémentaire restaure <cryo>4</cryo> pts d'énergie élémentaire au personnage équipé de l'arme, cet effet pouvant être déclenché une fois toutes les 9 s. De plus, déclencher une réaction astrale augmente l'ATQ du personnage équipé de l'arme de <cryo>20 %</cryo> pendant 12 s. Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "1": {
+      "0": "Déclencher une réaction élémentaire restaure <cryo>5</cryo> pts d'énergie élémentaire au personnage équipé de l'arme, cet effet pouvant être déclenché une fois toutes les 9 s. De plus, déclencher une réaction astrale augmente l'ATQ du personnage équipé de l'arme de <cryo>25 %</cryo> pendant 12 s. Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "2": {
+      "0": "Déclencher une réaction élémentaire restaure <cryo>6</cryo> pts d'énergie élémentaire au personnage équipé de l'arme, cet effet pouvant être déclenché une fois toutes les 9 s. De plus, déclencher une réaction astrale augmente l'ATQ du personnage équipé de l'arme de <cryo>30 %</cryo> pendant 12 s. Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "3": {
+      "0": "Déclencher une réaction élémentaire restaure <cryo>7</cryo> pts d'énergie élémentaire au personnage équipé de l'arme, cet effet pouvant être déclenché une fois toutes les 9 s. De plus, déclencher une réaction astrale augmente l'ATQ du personnage équipé de l'arme de <cryo>35 %</cryo> pendant 12 s. Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    },
+    "4": {
+      "0": "Déclencher une réaction élémentaire restaure <cryo>8</cryo> pts d'énergie élémentaire au personnage équipé de l'arme, cet effet pouvant être déclenché une fois toutes les 9 s. De plus, déclencher une réaction astrale augmente l'ATQ du personnage équipé de l'arme de <cryo>40 %</cryo> pendant 12 s. Les effets susmentionnés peuvent être déclenchés même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    }
+  }
+}

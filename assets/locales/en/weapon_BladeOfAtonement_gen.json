@@ -1,0 +1,24 @@
+{
+  "name": "Blade of Atonement",
+  "description": {
+    "0": "A greatsword passed down by the Luchkin. It is said that only the bravest warrior is qualified to wield it."
+  },
+  "passiveName": "Repentance and Redemption",
+  "passiveDescription": {
+    "0": {
+      "0": "Triggering an Elemental Reaction increases the equipping character's Elemental Mastery by <cryo>64</cryo> for 12s, while triggering a Stellar Glimmer reaction increases their ATK by <cryo>16%</cryo> for 12s. The aforementioned effects can trigger even when the character is not on the field."
+    },
+    "1": {
+      "0": "Triggering an Elemental Reaction increases the equipping character's Elemental Mastery by <cryo>80</cryo> for 12s, while triggering a Stellar Glimmer reaction increases their ATK by <cryo>20%</cryo> for 12s. The aforementioned effects can trigger even when the character is not on the field."
+    },
+    "2": {
+      "0": "Triggering an Elemental Reaction increases the equipping character's Elemental Mastery by <cryo>96</cryo> for 12s, while triggering a Stellar Glimmer reaction increases their ATK by <cryo>24%</cryo> for 12s. The aforementioned effects can trigger even when the character is not on the field."
+    },
+    "3": {
+      "0": "Triggering an Elemental Reaction increases the equipping character's Elemental Mastery by <cryo>112</cryo> for 12s, while triggering a Stellar Glimmer reaction increases their ATK by <cryo>28%</cryo> for 12s. The aforementioned effects can trigger even when the character is not on the field."
+    },
+    "4": {
+      "0": "Triggering an Elemental Reaction increases the equipping character's Elemental Mastery by <cryo>128</cryo> for 12s, while triggering a Stellar Glimmer reaction increases their ATK by <cryo>32%</cryo> for 12s. The aforementioned effects can trigger even when the character is not on the field."
+    }
+  }
+}

@@ -137,7 +137,7 @@
     "name": "There Shall Be an Unveiling for Injustice",
     "description": {
       "0": "<strong>Radiance: Stellar-Conduct</strong>: Efek Talenta Ascension \"There Shall Be a Plea for Justice\" berubah menjadi:",
-      "1": "Saat HP Wriothesley berada di bawah 60%, akan mendapatkan \"Gracious Rebuke: Unveiling\". Efek ini membuat Charged Attack berikutnya dari <strong>Normal Attack: Forceful Fists of Frost</strong> diperkuat menjadi Luster: Vaulting Fist yang tidak mengonsumsi Stamina dan memulihkan 30% Max HP Wriothesley setelah mengenai target. HP Wriothesley dapat dipulihkan dengan cara ini sekali setiap 2 detik.",
+      "1": "Saat HP Wriothesley berada di bawah 60%, akan mendapatkan \"Gracious Rebuke: Unveiling\". Efek ini membuat Charged Attack dari <strong>Normal Attack: Forceful Fists of Frost</strong> diperkuat menjadi Luster: Vaulting Fist yang tidak mengonsumsi Stamina dan memulihkan 30% Max HP Wriothesley setelah mengenai target. HP Wriothesley dapat dipulihkan dengan cara ini sekali setiap 2 detik.",
       "2": "Selain itu, serangan Repelling Fist ke-3 dan ke-5 yang diperkuat oleh <strong>Chilling Penalty</strong> masing-masing akan mengakibatkan <cryo>Cryo DMG</cryo> sebesar 60% dan 80% dari DMG aslinya. Sedangkan Luster: Vaulting Fist akan mengakibatkan <cryo>Cryo DMG Area</cryo> sebesar 100% dari DMG aslinya. DMG di atas dianggap sebagai DMG Reaksi Stellar-Conduct, dan DMG reaksi Stellar-Conduct yang diakibatkan oleh Wriothesley meningkat 30%.",
       "3": "Selain itu, saat berada di dalam <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Polestar Field</strong></tooltip>, Wriothesley akan memasuki status <strong>Radiance: Stellar-Conduct</strong>."
     }
@@ -235,7 +235,7 @@
       "1": "<br/>",
       "2": "<strong>Radiance: Stellar-Conduct</strong>: Efek di atas berubah menjadi:",
       "3": [
-        "CRIT Rate Luster: Vaulting Fist dan Repelling Fist yang diperkuat oleh <strong>Chilling Penalty</strong> meningkat 10%, CRIT DMG-nya meningkat 80%. Selain itu, serangan ke-5 dari Repelling Fist dan juga Luster: Vaulting Fist yang diperkuat oleh <strong>Chilling Penalty</strong> akan menciptakan duri es tambahan yang mengakibatkan <cryo>Cryo DMG</cryo> sebesar 60% dari nilai aslinya. DMG ini dianggap sebagai DMG reaksi Stellar-Conduct."
+        "CRIT Rate Luster: Vaulting Fist dan Repelling Fist yang diperkuat oleh <strong>Chilling Penalty</strong> meningkat 10%, CRIT DMG-nya meningkat 80%. Selain itu, serangan ke-5 dari Repelling Fist dan juga Luster: Vaulting Fist yang diperkuat oleh <strong>Chilling Penalty</strong> akan menciptakan duri es tambahan yang mengakibatkan <cryo>Cryo DMG</cryo> sebesar 20% dari nilai aslinya. DMG ini dianggap sebagai DMG reaksi Stellar-Conduct."
       ],
       "4": "<br/>",
       "5": "Perlu membuka Talenta Ascension \"There Shall Be a Plea for Justice\" terlebih dahulu."

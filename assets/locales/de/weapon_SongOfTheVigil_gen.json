@@ -1,0 +1,24 @@
+{
+  "name": "Wächterlied",
+  "description": {
+    "0": "Ein Speer, der einst für alle Wacht hielt, spielt nun eine wichtige Rolle in den Rollenspielen der Kinder."
+  },
+  "passiveName": "Akkorde vergangener Tage",
+  "passiveDescription": {
+    "0": {
+      "0": "Stellt dem Träger nach dem Auslösen einer Elementarreaktion <cryo>4</cryo> Punkte Elementarenergie wieder her, 9 s Abklingzeit. Erhöht innerhalb von 12 s nach dem Auslösen einer Stellarfunkeln-Reaktion den ANG des Trägers um <cryo>20 %</cryo>. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+    },
+    "1": {
+      "0": "Stellt dem Träger nach dem Auslösen einer Elementarreaktion <cryo>5</cryo> Punkte Elementarenergie wieder her, 9 s Abklingzeit. Erhöht innerhalb von 12 s nach dem Auslösen einer Stellarfunkeln-Reaktion den ANG des Trägers um <cryo>25 %</cryo>. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+    },
+    "2": {
+      "0": "Stellt dem Träger nach dem Auslösen einer Elementarreaktion <cryo>6</cryo> Punkte Elementarenergie wieder her, 9 s Abklingzeit. Erhöht innerhalb von 12 s nach dem Auslösen einer Stellarfunkeln-Reaktion den ANG des Trägers um <cryo>30 %</cryo>. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+    },
+    "3": {
+      "0": "Stellt dem Träger nach dem Auslösen einer Elementarreaktion <cryo>7</cryo> Punkte Elementarenergie wieder her, 9 s Abklingzeit. Erhöht innerhalb von 12 s nach dem Auslösen einer Stellarfunkeln-Reaktion den ANG des Trägers um <cryo>35 %</cryo>. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+    },
+    "4": {
+      "0": "Stellt dem Träger nach dem Auslösen einer Elementarreaktion <cryo>8</cryo> Punkte Elementarenergie wieder her, 9 s Abklingzeit. Erhöht innerhalb von 12 s nach dem Auslösen einer Stellarfunkeln-Reaktion den ANG des Trägers um <cryo>40 %</cryo>. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv ist."
+    }
+  }
+}

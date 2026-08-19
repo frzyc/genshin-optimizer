@@ -12,6 +12,13 @@
       "7": "<cryo>Kryo</cryo>: Erhöht den kritischen Schaden um 20 %."
     }
   },
+  "10050002": {
+    "name": "Kälteglanz",
+    "description": {
+      "0": "Ein Spezialeffekt, den {F#die Reisende}{M#der Reisende} erhält, wenn ein durch <strong>Frostdurchbohrender Stern</strong> abgefeuerter Kryo-Kristall einen Gegner trifft oder wenn nach dem Freischalten des Talents <strong>Eis der Fremde</strong> ein <strong>Heftiger Schlag – Eiskondensation</strong> ausgeführt wird. Dieser Effekt ist bis zu 8-fach stapelbar.",
+      "1": "Beim Anwenden der Spezialfähigkeit <strong>Frostspeer</strong> verbraucht {F#die Reisende}{M#der Reisende} alle Stapelungen <strong>Kälteglanz</strong>, um den durch diese Spezialfähigkeit verursachten Schaden zu erhöhen. Werden dabei 8 Stapelungen verbraucht, erhöht sich zusätzlich die Trefferanzahl des durch diese Spezialfähigkeit verursachten Schadens."
+    }
+  },
   "11120001": {
     "name": "Modus „Kaltlagerung“",
     "description": {
@@ -47,7 +54,7 @@
   "11130002": {
     "name": "Rettungsprinzipien",
     "description": {
-      "0": "Auf 150 Punkte beschränkt. Erhöht den von Truppenmitgliedern in der Nähe mit den Reaktionen „Verwirbelung“ und „Unter Strom“ verursachten Schaden für jeden Punkt „Rettungsprinzipien“ von Ifa um 1,5 % und den durch die Reaktion „Mond unter Strom“ verursachten Schaden um 0,2 %. „Rettungsprinzipien“ werden entfernt, wenn Ifas Nachtseelensegen endet."
+      "0": "Auf 150 Punkte beschränkt. Erhöht den von Truppenmitgliedern in der Nähe mit den Reaktionen „Verwirbelung“ und „Unter Strom“ verursachten Schaden für jeden Punkt „Rettungsprinzipien“ von Ifa um 1,5 %, den durch die Reaktion „Mond unter Strom“ verursachten Schaden um 0,2 % und den durch die Reaktion „Stellar-Verwirbelung“ verursachten Schaden um 0.24 %. „Rettungsprinzipien“ werden entfernt, wenn Ifas Nachtseelensegen endet."
     }
   },
   "11130003": {
@@ -97,7 +104,7 @@
   "11130007": {
     "name": "Vernunft jenseits der Vernunft",
     "description": {
-      "0": "Erzeugt, wenn Truppenmitglieder in der Nähe an Gegnern die Reaktionen Gefroren, Supraleiter, Kryo-Verwirbelung oder Kryo-Kristall auslösen, in der Nähe des Gegners einen Leere-Riss, 2,5 s Abklingzeit. Es können gleichzeitig nur 3 von Skirk selbst erzeugte Leere-Risse auf dem Feld existieren.",
+      "0": "Erzeugt, wenn Truppenmitglieder in der Nähe an Gegnern die Reaktionen Gefroren, Supraleiter, Stellar-Supraleiter, Kryo-Verwirbelung, Stellar-Verwirbelung oder Kryo-Kristall auslösen, in der Nähe des Gegners einen Leere-Riss, 2,5 s Abklingzeit. Es können gleichzeitig nur 3 von Skirk selbst erzeugte Leere-Risse auf dem Feld existieren.",
       "1": "<br/>",
       "2": "Skirk kann auf die folgenden Weisen Leere-Risse in einem bestimmten Umkreis absorbieren:",
       "3": [
@@ -425,8 +432,8 @@
       "0": "Ein toller Gefährte der Hexenjägerin! Unter bestimmten Umständen findet eine Elementarumwandlung statt, bei der der gesamte vom „Hammer des Jagdschwurs“ verursachte Schaden in Schaden des entsprechenden Elementartyps umgewandelt wird.",
       "1": "Prune kann den „Hammer des Jagdschwurs“, der eine Elementarumwandlung durchläuft, auf folgende Art und Weise heraufbeschwören:",
       "2": [
-        " Ermöglicht innerhalb einer bestimmten Zeit, nachdem Prune mit ihrer Elementarfähigkeit <strong>Klingeling! Klang der Hexenjagd</strong> eine Verwirbelung gegen Gegner ausgelöst hat, die Anwendung der besonderen Elementarfähigkeit <strong>Bumm-Bumm! Strafe des Hexenrichters</strong>. Beim Anwenden dieser besonderen Elementarfähigkeit wandelt sich der „Hammer des Jagdschwurs“ in den anderen Elementartyp um, der an der vorherigen Verwirbelung beteiligt war.",
-        " Beschwört nach dem Freischalten des Aufstiegstalents „Entscheidung und Strafe“, wenn das „Köderglöckchen“ im Modus „Jagdsuche“ eine Verwirbelung gegen Gegner ausgelöst hat, einen „Hammer des Jagdschwurs“ herbei, der basierend auf dieser Verwirbelung eine Elementarumwandlung durchläuft und Gegner angreift."
+        " Ermöglicht innerhalb einer bestimmten Zeit, nachdem Prune mit ihrer Elementarfähigkeit <strong>Klingeling! Klang der Hexenjagd</strong> eine Verwirbelung oder Stellar-Verwirbelung gegen Gegner ausgelöst hat, die Anwendung der besonderen Elementarfähigkeit <strong>Bumm-Bumm! Strafe des Hexenrichters</strong>. Beim Anwenden dieser besonderen Elementarfähigkeit wandelt sich der „Hammer des Jagdschwurs“ in den anderen Elementartyp um, der an der vorherigen Verwirbelung oder Stellar-Verwirbelung beteiligt war.",
+        " Beschwört nach dem Freischalten des Aufstiegstalents „Entscheidung und Strafe“, wenn das „Köderglöckchen“ im Modus „Jagdsuche“ eine Verwirbelung gegen Gegner ausgelöst hat, einen „Hammer des Jagdschwurs“ herbei, der basierend auf dieser Verwirbelung oder Stellar-Verwirbelung eine Elementarumwandlung durchläuft und Gegner angreift."
       ]
     }
   },
@@ -447,7 +454,7 @@
     "description": {
       "0": "Der Modus, in den Fagio beim Ausführen heftiger Schläge wechselt.",
       "1": "In diesem Modus führt Fagio einen Streuangriff auf Gegner vorne aus und feuert in bestimmten zeitlichen Abständen einen Kondensationsstrahl ab, der <cryo>Kryo-Flächenschaden</cryo> verursacht.",
-      "2": "<strong>Leuchten – Stellar-Supraleiter</strong>: Wandelt den Kondensationsstrahl um und verursacht stattdessen <cryo>Kryo-Flächenschaden</cryo>, der als Schaden durch die Reaktion Stellar-Supraleiter gewertet wird."
+      "2": "<strong>Leuchten – Stellarfunkeln</strong>: Wandelt den Kondensationsstrahl um und verursacht stattdessen <cryo>Kryo-Flächenschaden</cryo>, der als Schaden durch die entsprechende Stellarfunkeln-Reaktion gewertet wird."
     }
   },
   "11330002": {
@@ -460,6 +467,59 @@
     "name": "Sternglanzfeld",
     "description": {
       "0": "Verwandelt beim Auslösen der Reaktion Stellar-Supraleiter den umliegenden Bereich kurzzeitig in ein <strong>Sternglanzfeld</strong>. Befindet sich eine bestimmte Figur innerhalb des Sternglanzfelds, tritt sie in den Zustand <strong>Leuchten – Stellar-Supraleiter</strong> ein, in dem ihre verschiedenen Fähigkeiten jeweils entsprechende Verstärkungseffekte erhalten."
+    }
+  },
+  "11400001": {
+    "name": "Geistschwert-Bewaffnung",
+    "description": {
+      "0": "Einführung in die Geistschwert-Bewaffnung"
+    }
+  },
+  "11480001": {
+    "name": "Mal der Jäger",
+    "description": {
+      "0": "Ein Spezialeffekt, den Alyosha auf Gegner anwendet.",
+      "1": "Aktiviert, wenn dieser Effekt auf einen Gegner angewendet wird, der bereits unter dem Einfluss von <strong>Mal der Jäger</strong> steht, den Effekt stattdessen: Entfernt das Mal und verleiht allen Truppenmitgliedern in der Nähe den Effekt <strong>Genauigkeit der Jäger</strong>, der, wenn sie sich auf dem Feld befinden, ihren ANG erhöht."
+    }
+  },
+  "11480002": {
+    "name": "Tugarin",
+    "description": {
+      "0": "Treuer Jagdhund und Gefährte von Alyosha, der durch Anwenden der Spezialfähigkeit <strong>Jagdrevier</strong> auf das Feld beschworen werden kann. Er bewegt sich in regelmäßigen Abständen schnell zu einem Gegner in der Nähe, führt Bissangriffe aus und aktiviert bereits vorhandene <strong>Male der Jäger</strong>."
+    }
+  },
+  "11500001": {
+    "name": "Solotanz-Schatten",
+    "description": {
+      "0": "Ein Spiegelbild, das gemeinsam mit Odette tanzt und durch die Anwendung der Elementarfähigkeit oder Spezialfähigkeit aufs Feld gerufen werden kann.",
+      "1": "Wechselt abwechselnd zwischen den Tanzschritten <strong>Federstreich</strong> und <strong>Flügelwirbel</strong>, greift Gegner in der Nähe in regelmäßigen Abständen elegant und leichtfüßig an und fügt diesen <cryo>Kryo-Flächenschaden</cryo> zu.",
+      "2": "Es kann jeweils nur ein von Odette selbst erschaffener <strong>Solotanz-Schatten</strong> existieren.",
+      "3": "<br/>",
+      "4": "Ersetzt zudem, solange sich ein von Odette selbst beschworener <strong>Solotanz-Schatten</strong> in der Nähe befindet, Odettes Elementarfähigkeit <strong>Langsamer Tanz – Phantomnacht</strong> durch die besondere Elementarfähigkeit <strong>Langsamer Tanz – Finale bei Tagesanbruch</strong>."
+    }
+  },
+  "11500002": {
+    "name": "Langsamer Tanz – Finale bei Tagesanbruch",
+    "description": {
+      "0": "Odettes besondere Elementarfähigkeit, die Gegnern in der Nähe fortlaufend <cryo>Kryo-Flächenschaden</cryo> zufügt und am Ende des Tanzes einmal <cryo>Kryo-Flächenschaden</cryo> verursacht, der als Schaden durch die Reaktion Stellar-Supraleiter gewertet wird. Während des Tanzes kann Odette die Richtung der Tanzschritte steuern.",
+      "1": "<strong>Leuchten – Stellarfunkeln</strong>: Verursacht am Ende des Tanzes stattdessen einmal <cryo>Kryo-Flächenschaden</cryo>, der als Schaden durch Stellarfunkeln-Reaktion gewertet wird.",
+      "2": "<br/>",
+      "3": "Verursacht zudem nach dem Anwenden der besonderen Elementarfähigkeit <strong>Langsamer Tanz – Finale bei Tagesanbruch</strong>, während der verbleibenden Dauer von <strong>Solotanz-Schatten</strong>, zusätzlich <cryo>Kryo-Flächenschaden</cryo> durch die zwei Tanzschritte, der als Schaden durch die entsprechende Stellarfunkeln-Reaktion gewertet wird, sofern sich Odette im Zustand <strong>Leuchten – Stellarfunkeln</strong> befindet."
+    }
+  },
+  "11500003": {
+    "name": "Farbenpracht",
+    "description": {
+      "0": "Ein Spezialeffekt, den Odette erhält, wenn sie nach dem Freischalten des Aufstiegstalents „Frühling der Auserwählten“ einen <strong>Solotanz-Schatten</strong> beschwört.",
+      "1": "Erhöht den durch die Figur mit Stellarfunkeln-Reaktionen verursachten Schaden für jede Stapelung von <strong>Farbenpracht</strong> um 15 %, bis der <strong>Solotanz-Schatten</strong> das Feld verlässt oder erneut beschworen wird.",
+      "2": "Entfernt, solange sie inaktiv in der Truppe ist, Odette pro Sekunde 1 Stapelung <strong>Farbenpracht</strong> und verleiht den anderen Truppenmitgliedern in der Nähe die entsprechende Anzahl an Stapelungen von <strong>Farbenpracht</strong>."
+    }
+  },
+  "11500004": {
+    "name": "Leuchten – Stellarfunkeln",
+    "description": {
+      "0": "<strong>Leuchten – Stellar-Supraleiter</strong> und <strong>Leuchten – Stellar-Verwirbelung</strong> werden zusammen als Zustand <strong>Leuchten – Stellarfunkeln</strong> bezeichnet.",
+      "1": "Eine Figur kann jeweils nur von einem Leuchten-Zustand beeinflusst werden, wobei <strong>Leuchten – Stellar-Supraleiter</strong> Vorrang hat."
     }
   }
 }

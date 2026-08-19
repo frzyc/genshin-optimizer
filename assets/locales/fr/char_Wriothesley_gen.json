@@ -137,7 +137,7 @@
     "name": "L'injustice sera dévoilée",
     "description": {
       "0": "<strong>Radiance « Astroconduction »</strong> : L'aptitude d'élévation « Plaidoirie pour la justice » est modifiée :",
-      "1": "Lorsque les PV de Wriothesley sont inférieurs à 60 %, il obtient une réprimande miséricordieuse « Dévoilement » qui convertit la prochaine attaque chargée de son <strong>attaque normale « Poing vigoureux du givre »</strong> en poing bondissant de lustre : ne consomme pas d'endurance, et restaure les PV de Wriothesley d'une valeur équivalant à 30 % de ses PV max en touchant, les PV pouvant être restaurés une fois toutes les 2 s de cette manière.",
+      "1": "Lorsque les PV de Wriothesley sont inférieurs à 60 %, il obtient une réprimande miséricordieuse « Dévoilement » qui convertit l'attaque chargée de son <strong>attaque normale « Poing vigoureux du givre »</strong> en poing bondissant de lustre : ne consomme pas d'endurance, et restaure les PV de Wriothesley d'une valeur équivalant à 30 % de ses PV max en touchant, les PV pouvant être restaurés une fois toutes les 2 s de cette manière.",
       "2": "La 3e attaque et la 5e attaque du poing repousseur renforcé par le <strong>châtiment algide</strong> infligent respectivement des <cryo>DGT Cryo</cryo> d'une valeur équivalant à 60 % et 80 % des DGT d'origine, tandis que le poing bondissant de lustre inflige des <cryo>DGT Cryo de zone</cryo> d'une valeur équivalant à 100 % des DGT d'origine, tous ces DGT étant considérés comme des DGT de réaction d'Astroconduction. De plus, les DGT de réaction d'Astroconduction infligés par Wriothesley augmentent de 30 %.",
       "3": "De plus, Wriothesley passe en <strong>radiance « Astroconduction »</strong> lorsqu'il est dans une <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>étendue polaris</strong></tooltip>."
     }
@@ -235,7 +235,7 @@
       "1": "<br/>",
       "2": "<strong>Radiance « Astroconduction »</strong> : L'effet précédent est modifié :",
       "3": [
-        " Le taux CRIT du poing de réprimande renforcé par le <strong>châtiment algide</strong> et le taux CRIT du poing bondissant de lustre augmentent de 10 % et leurs DGT CRIT de 80 %. De plus, la 5e attaque du poing de réprimande renforcé par le <strong>châtiment algide</strong> et le poing bondissant de lustre génèrent un pic de glace supplémentaire qui inflige des <cryo>DGT Cryo</cryo> d'une valeur équivalant à 60 % des DGT d'origine, ces DGT étant considérés comme des DGT de réaction d'Astroconduction."
+        " Le taux CRIT du poing de réprimande renforcé par le <strong>châtiment algide</strong> et le taux CRIT du poing bondissant de lustre augmentent de 10 % et leurs DGT CRIT de 80 %. De plus, la 5e attaque du poing de réprimande renforcé par le <strong>châtiment algide</strong> et le poing bondissant de lustre génèrent un pic de glace supplémentaire qui inflige des <cryo>DGT Cryo</cryo> d'une valeur équivalant à 20 % des DGT d'origine, ces DGT étant considérés comme des DGT de réaction d'Astroconduction."
       ],
       "4": "<br/>",
       "5": "L'aptitude d'élévation « Plaidoirie pour la justice » doit être déjà débloquée."

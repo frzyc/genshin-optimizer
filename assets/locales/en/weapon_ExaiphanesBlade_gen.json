@@ -1,0 +1,24 @@
+{
+  "name": "Exaiphanes Blade",
+  "description": {
+    "0": "A longsword that once shone with the light of the very stars. In the voyager's hand, it becomes a brand-new light that has nothing to do with any past era."
+  },
+  "passiveName": "Traveler's Path",
+  "passiveDescription": {
+    "0": {
+      "0": "When the Traveler equips this, their ATK will increase by <cryo>16%</cryo> for <cryo>8</cryo>s after they hit an opponent. At the same time, they will also regenerate <cryo>3</cryo> Elemental Energy. This effect can trigger once every <cryo>5</cryo>s. This can be triggered even when the character is not on the field."
+    },
+    "1": {
+      "0": "When the Traveler equips this, their CRIT DMG increases by 6% for every Element they have resonated with. Additionally, the Traveler's ATK will also increase by <cryo>20%</cryo> for 8s, and regenerate <cryo>3</cryo> Elemental Energy, after they attack and hit an opponent. This effect can trigger once every 5s. This can be triggered even when the character is not on the field."
+    },
+    "2": {
+      "0": "When the Traveler equips this, their CRIT DMG increases by 6% for every Element they have resonated with. Additionally, the Traveler's ATK will also increase by <cryo>24%</cryo> for 8s, and regenerate <cryo>5</cryo> Elemental Energy, after they attack and hit an opponent. This effect can trigger once every 5s. This can be triggered even when the character is not on the field."
+    },
+    "3": {
+      "0": "When the Traveler equips this, their CRIT DMG increases by 6% for every Element they have resonated with. Additionally, the Traveler's ATK will also increase by <cryo>32%</cryo> for 8s, and regenerate <cryo>5</cryo> Elemental Energy, after they attack and hit an opponent. This effect can trigger once every 5s. This can be triggered even when the character is not on the field."
+    },
+    "4": {
+      "0": "When the Traveler equips this, their CRIT DMG increases by 6% for every Element they have resonated with. Additionally, the Traveler's ATK will also increase by <cryo>40%</cryo> for 8s, and regenerate <cryo>5</cryo> Elemental Energy, after they attack and hit an opponent. This effect can trigger once every 5s. This can be triggered even when the character is not on the field."
+    }
+  }
+}
