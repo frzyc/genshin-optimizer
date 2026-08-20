@@ -2,6 +2,7 @@ import {
   DBLocalStorage,
   SandboxStorage,
 } from '@genshin-optimizer/common/database'
+import { unzipFromB64Gzip } from '@genshin-optimizer/common/util'
 import { ZzzDatabase } from '@genshin-optimizer/zzz/db'
 import type { ReactNode } from 'react'
 import { useCallback, useMemo, useState } from 'react'
@@ -17,7 +18,17 @@ export function DatabaseProvider({ children }: { children: ReactNode }) {
         return new ZzzDatabase(index, new DBLocalStorage(localStorage, 'zzz'))
       } else {
         const dbName = `zzz_extraDatabase_${index}`
-        const eDB = localStorage.getItem(dbName)
+        const rawDB = localStorage.getItem(dbName)
+        let eDB = ''
+        if (rawDB)
+          try {
+            // Handle if the DB is still an old uncompressed JSON string
+            JSON.parse(rawDB)
+            eDB = rawDB
+          } catch {
+            // If JSON parse fails, then it should be a compressed b64 gzip
+            eDB = unzipFromB64Gzip(rawDB)
+          }
         const dbObj = eDB ? JSON.parse(eDB) : {}
         const db = new ZzzDatabase(index, new SandboxStorage(dbObj, 'zzz'))
         db.toExtraLocalDB()

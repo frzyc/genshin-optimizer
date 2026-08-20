@@ -32,6 +32,7 @@ import {
   AdBlockContextWrapper,
   AdRailSticky,
 } from '@genshin-optimizer/common/ad'
+import { unzipFromB64Gzip } from '@genshin-optimizer/common/util'
 import ErrorBoundary from './ErrorBoundary'
 import Footer from './Footer'
 import Header from './Header'
@@ -114,7 +115,17 @@ function App() {
         return new ArtCharDatabase(index, new DBLocalStorage(localStorage))
       } else {
         const dbName = `extraDatabase_${index}`
-        const eDB = localStorage.getItem(dbName)
+        const rawDB = localStorage.getItem(dbName)
+        let eDB = ''
+        if (rawDB)
+          try {
+            // Handle if the DB is still an old uncompressed JSON string
+            JSON.parse(rawDB)
+            eDB = rawDB
+          } catch {
+            // If JSON parse fails, then it should be a compressed b64 gzip
+            eDB = unzipFromB64Gzip(rawDB)
+          }
         const dbObj = eDB ? JSON.parse(eDB) : {}
         const db = new ArtCharDatabase(index, new SandboxStorage(dbObj))
         db.toExtraLocalDB()
