@@ -7,25 +7,14 @@ import { TagFallbackLabel } from './components/TagFallbackLabel'
 import { statKeyFromListingTag } from './optTarget'
 import { getTagLabel } from './tagLabel'
 
-describe('cappedCrit label resolution', () => {
-  const listingTag = own.common.cappedCrit_.tag
-  const targetResolved = resolveTargetTag({ q: 'cappedCrit_', qt: 'common' })!
+describe('crit_ opt target label resolution', () => {
+  const listingTag = own.final.crit_.tag
+  const targetResolved = resolveTargetTag({ q: 'crit_', qt: 'final' })!
 
-  it('maps capped crit tags to crit_ for display keys', () => {
+  it('maps final crit listing tags to crit_ for display keys', () => {
     expect(statKeyFromListingTag(listingTag)).toBe('crit_')
     expect(getTagLabel(listingTag)).toBe('crit_')
     expect(getTagLabel(targetResolved)).toBe('crit_')
-  })
-
-  it('maps CharBase field for capped crit listing tags', () => {
-    expect(tagFieldSubset(listingTag)[0]?.fieldRef).toMatchObject({
-      q: 'cappedCrit_',
-      qt: 'common',
-    })
-    expect(tagFieldSubset(targetResolved)[0]?.fieldRef).toMatchObject({
-      q: 'cappedCrit_',
-      qt: 'common',
-    })
   })
 
   it('renders CRIT Rate via TagFallbackLabel', () => {
@@ -40,6 +29,34 @@ describe('cappedCrit label resolution', () => {
     expect(target.textContent).not.toContain('cappedCrit_')
   })
 
+  it('rejects legacy cappedCrit_ opt targets after migration', () => {
+    expect(resolveTargetTag({ q: 'cappedCrit_', qt: 'common' })).toBeUndefined()
+  })
+})
+
+describe('cappedCrit CharBase display labels', () => {
+  const charBaseTag = own.common.cappedCrit_.tag
+
+  it('maps capped crit tags to crit_ for display keys', () => {
+    expect(statKeyFromListingTag(charBaseTag)).toBe('crit_')
+    expect(getTagLabel(charBaseTag)).toBe('crit_')
+  })
+
+  it('maps CharBase field for capped crit tags', () => {
+    expect(tagFieldSubset(charBaseTag)[0]?.fieldRef).toMatchObject({
+      q: 'cappedCrit_',
+      qt: 'common',
+    })
+  })
+
+  it('renders CRIT Rate via TagFallbackLabel', () => {
+    const { container } = render(<TagFallbackLabel tag={charBaseTag} />)
+    expect(container.textContent).toContain('CRIT Rate')
+    expect(container.textContent).not.toContain('cappedCrit_')
+  })
+})
+
+describe('attributed stat label resolution', () => {
   it('preserves generic dmg_ labelMap for attributed tags', () => {
     const tag = { ...own.final.dmg_.tag, attribute: 'fire' as const }
     const { container } = render(<TagFallbackLabel tag={tag} />)
