@@ -75,7 +75,7 @@ export const targetQ = [
   'def',
   'impact',
   'sheerForce',
-  'cappedCrit_',
+  'crit_',
   'crit_dmg_',
   'pen_',
   'pen',
