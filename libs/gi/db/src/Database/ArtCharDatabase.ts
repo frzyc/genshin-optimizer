@@ -223,7 +223,7 @@ export class ArtCharDatabase extends Database {
     this.saveStorage()
     other.saveStorage()
   }
-  toExtraLocalDB() {
+  override toExtraLocalDB() {
     const key = `extraDatabase_${this.storage.getDBIndex()}`
     const other = new SandboxStorage()
     const oldstorage = this.storage

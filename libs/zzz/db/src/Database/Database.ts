@@ -186,7 +186,7 @@ export class ZzzDatabase extends Database {
     this.saveStorage()
     other.saveStorage()
   }
-  toExtraLocalDB() {
+  override toExtraLocalDB() {
     const key = `zzz_extraDatabase_${this.storage.getDBIndex()}`
     const other = new SandboxStorage(undefined, 'zzz')
     const oldstorage = this.storage
