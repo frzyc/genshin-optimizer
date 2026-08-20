@@ -12,7 +12,7 @@ import {
   naught,
   percent,
   prod,
-  stellarDmg,
+  stellarDmgNode,
   target,
   unequal,
 } from '@genshin-optimizer/gi/wr'
@@ -230,7 +230,7 @@ const dmgFormulas = {
         equal(
           condLockStellarRadianceSc,
           'on',
-          stellarDmg(
+          stellarDmgNode(
             percent(dm.passive1.stellarDmg),
             'atk',
             'stellarconduct',
@@ -304,7 +304,7 @@ const dmgFormulas = {
       equal(
         condLockStellarRadianceSc,
         'on',
-        stellarDmg(
+        stellarDmgNode(
           percent(dm.lockedPassive.stellarDmg),
           'atk',
           'stellarconduct',
@@ -583,7 +583,7 @@ const sheet: TalentSheet = {
         on: {
           fields: [
             {
-              text: st('elementalReaction.gainRadianceSc'),
+              text: st('elementalReaction.stellar.gainRadianceSc'),
             },
           ],
         },

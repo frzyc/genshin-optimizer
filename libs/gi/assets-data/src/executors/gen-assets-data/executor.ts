@@ -175,7 +175,7 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
       layeredAssignment(
         assetChar,
         [ck, 'burst'],
-        `${avatarSkillExcelConfigData[burst].skillIcon}_HD`
+        `${avatarSkillExcelConfigData[burst!].skillIcon}_HD`
       )
       if (sprint)
         layeredAssignment(
@@ -226,9 +226,10 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
       })
     }
 
-    if (candSkillDepotIds.length) {
+    if (candSkillDepotIds?.length) {
       // Traveler
-      const [, pyro, hydro, anemo, , geo, electro, dendro] = candSkillDepotIds
+      const [, pyro, hydro, anemo, cryo, geo, electro, dendro] =
+        candSkillDepotIds
       // const gender = characterIdMap[charid] === "TravelerF" ? "F" : "M"
       genTalentHash('TravelerAnemo', avatarSkillDepotExcelConfigData[anemo])
       genTalentHash('TravelerGeo', avatarSkillDepotExcelConfigData[geo])
@@ -236,6 +237,7 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
       genTalentHash('TravelerDendro', avatarSkillDepotExcelConfigData[dendro])
       genTalentHash('TravelerHydro', avatarSkillDepotExcelConfigData[hydro])
       genTalentHash('TravelerPyro', avatarSkillDepotExcelConfigData[pyro])
+      genTalentHash('TravelerCryo', avatarSkillDepotExcelConfigData[cryo])
     } else {
       genTalentHash(cKey, avatarSkillDepotExcelConfigData[skillDepotId])
     }

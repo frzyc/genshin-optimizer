@@ -23,7 +23,7 @@ import {
   sum,
 } from '../utils'
 
-export function specialReactionDmg(
+export function specialReactionDmgNode(
   multiplier: NumNode,
   base: 'reaction' | MainStatKey | SubstatKey,
   variant: LunarReactionKey | StellarReactionKey,

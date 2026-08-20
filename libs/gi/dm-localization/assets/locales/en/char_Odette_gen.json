@@ -1,0 +1,255 @@
+{
+  "name": "Odette",
+  "title": "Swirling Snow",
+  "description": "A famed Snezhnayan ballerina who blossoms against the frozen landscape with a beauty as sharp as frost.",
+  "constellationName": "Cygnus Olor",
+  "auto": {
+    "name": "Snow Swan Variation",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Unleashes a sword attack of up to 5 consecutive strikes."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to unleash a dazzling slash on opponents in front of her."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Attacks opponents in her path while plunging from mid-air, then deals AoE DMG upon landing."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "5-Hit DMG",
+      "5": "Charged Attack DMG",
+      "6": "Charged Attack Stamina Cost",
+      "7": "Plunge DMG",
+      "8": "Low/High Plunge DMG",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, percent(fixed: 1)}}%+{{3, percent(fixed: 1)}}%",
+      "3": "{{4, percent(fixed: 1)}}%",
+      "4": "{{5, percent(fixed: 1)}}%",
+      "5": "{{6, percent(fixed: 1)}}%",
+      "6": "{{7, fixed(fixed: 1)}}",
+      "7": "{{8, percent(fixed: 1)}}%",
+      "8": "{{9, percent}}%/{{10, percent}}%",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Adagio: Phantom Night Dancers",
+    "description": {
+      "0": "With slow, graceful dance steps, Odette deals <cryo>AoE Cryo DMG</cryo> to the opponent, and also summons her <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Solo Dance Double</strong></tooltip> to the field.",
+      "1": "If a <strong>Dance Double</strong> summoned by Odette is already on the field, this will re-summon the Dance Double and reset its duration.",
+      "2": "<br/>",
+      "3": "<strong>Solo Dance Double</strong>",
+      "4": "Alternates between the <strong>Plume</strong> and <strong>Wing</strong> dance moves, periodically attacking nearby opponents and dealing to them <cryo>AoE Cryo DMG</cryo>.",
+      "5": "Additionally, for 6s after unleashing the Elemental Skill <strong>Adagio: Phantom Night Dancers</strong>, Odette's Elemental Skill <strong>Adagio: Phantom Night Dancers</strong> will become the special Elemental Skill <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Adagio: Coda at Dawn's Tolling</strong></tooltip> instead, where a dance duet deals <cryo>AoE Cryo DMG</cryo> to nearby opponents over time. Then, when the duet ends, she deals another instance of <cryo>AoE Cryo DMG</cryo> that is considered Stellar-Conduct or Stellar Swirl DMG."
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Coda at Dawn's Tolling DoT",
+      "2": "Coda at Dawn's Tolling Stellar-Conduct/Stellar Swirl DMG",
+      "3": "\"Plume\" Dance Move DMG",
+      "4": "\"Plume\" Dance Move Stellar-Conduct/Stellar Swirl DMG",
+      "5": "\"Wing\" Dance Move DMG",
+      "6": "\"Wing\" Dance Move Stellar-Conduct/Stellar Swirl DMG",
+      "7": "Coda at Dawn's Tolling CD",
+      "8": "Solo Dance Double Duration",
+      "9": "CD",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, percent}}%/{{3, percent}}%",
+      "3": "{{4, percent(fixed: 1)}}%",
+      "4": "{{5, percent}}%/{{6, percent}}%",
+      "5": "{{7, percent(fixed: 1)}}%",
+      "6": "{{8, percent}}%/{{9, percent}}%",
+      "7": "{{12, fixed(fixed: 1)}}s",
+      "8": "{{10, fixed(fixed: 1)}}s",
+      "9": "{{11, fixed(fixed: 1)}}s",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Presto: Bluebird Finale",
+    "description": {
+      "0": "With quick, lively dance steps, Odette deals multiple instances of <cryo>AoE Cryo DMG</cryo>, and summons her <strong><tooltip ns=tooltips_gen baseKey18=11500001 values=[]>Solo Dance Double</strong></tooltip>. She also gains <strong>Snow Swan's Dream</strong>, which increases the Stellar Glimmer reaction DMG Odette deals.",
+      "1": "Additionally, for 6s after unleashing the Elemental Burst <strong>Presto: Bluebird Finale</strong>, Odette's Elemental Skill <strong>Adagio: Phantom Night Dancers</strong> will be replaced with the special Elemental Skill <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Adagio: Coda at Dawn's Tolling</strong></tooltip> instead.",
+      "2": "<br/>",
+      "3": "If there is a Solo Dance Double summoned by Odette on the field, it will be summoned to her side with its duration refreshed."
+    },
+    "skillParams": {
+      "0": "Slash DMG",
+      "1": "Final Slash DMG",
+      "2": "Snow Swan's Dream Stellar Glimmer Reaction DMG Bonus",
+      "3": "Snow Swan's Dream Duration",
+      "4": "Solo Dance Double Duration",
+      "5": "CD",
+      "6": "Energy Cost",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}% ×3",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, percent(fixed: 1)}}%",
+      "3": "{{3, fixed(fixed: 1)}}s",
+      "4": "{{4, fixed(fixed: 1)}}s",
+      "5": "{{5, fixed(fixed: 1)}}s",
+      "6": "{{6}}",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Spring Rite of the Chosen One",
+    "description": {
+      "0": "When Odette summons her <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Solo Dance Double</strong></tooltip>, she also obtains 4 stacks of <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Marvelous Splendor</strong></tooltip>."
+    }
+  },
+  "passive2": {
+    "name": "Pathetique of Pateticheskaya",
+    "description": {
+      "0": "For every 100 ATK Odette has over 1,000, her Stellar Glimmer DMG is additionally increased by 1.5% of the original DMG. She can deal up to 30% more additional DMG in this way."
+    }
+  },
+  "passive3": {
+    "name": "Stellar Jubilee: Dance of Aurore",
+    "description": {
+      "0": "Odette will enter the <strong>Radiance: Stellar-Conduct</strong> state when she is inside a <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Polestar Field</strong></tooltip>, or the <strong>Radiance: Stellar Swirl</strong> state for 8s after a nearby party member triggers a Stellar Swirl reaction.",
+      "1": "When a party member triggers a Superconduct or Cryo Swirl reaction, it becomes a Stellar-Conduct or Stellar Swirl reaction instead, and the Base DMG of said reaction is also increased by 0.7% for every 100 points of Odette's ATK. A maximum increase of 14% can be obtained in this way."
+    }
+  },
+  "passive": {
+    "name": "Echo of Winter Daydreams",
+    "description": {
+      "0": "Shows the locations of <strong>Snezhnaya's Local Specialties</strong> on the mini-map.",
+      "1": "Practicing dance in one's spare time might even trigger other effects..."
+    }
+  },
+  "constellation1": {
+    "name": "\"On This Danceless Morn, She Gazes at Her Reflection\"",
+    "description": {
+      "0": "After unleashing the special Elemental Skill <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Adagio: Coda at Dawn's Tolling</strong></tooltip>, at the dance duet's end Odette will deal an additional instance of <cryo>Cryo AoE DMG</cryo> to nearby opponents that is considered:",
+      "1": "<strong>Radiance: Stellar-Conduct</strong> or when not in a Radiance state: Stellar-Conduct reaction DMG at 300% of Odette's ATK;",
+      "2": "<strong>Radiance: Stellar Swirl</strong>: Stellar Swirl reaction DMG at 450% of Odette's ATK.",
+      "3": "<br/>",
+      "4": "Additionally, the Ascension Talent \"Spring Rite of the Chosen One\" is also enhanced: now, when the <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Solo Dance Double</strong></tooltip> is summoned, Odette also gains 2 stacks of <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Marvelous Splendor</strong></tooltip>. When Odette is off-field, the rate at which <strong>Marvelous Splendor</strong> is removed is sped up to 2 stacks per second."
+    }
+  },
+  "constellation2": {
+    "name": "\"I Must See the Snow Swan's Unseen Dream for Myself, She Thought\"",
+    "description": {
+      "0": "The Ascension Talent \"Spring Rite of the Chosen One\" is enhanced as follows: every stack of <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Marvelous Splendor</strong></tooltip> active also increases the character's ATK by 7%.",
+      "1": "Additionally, if Odette is in the <tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Radiance: Stellar Glimmer</strong></tooltip> state when there is a <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>Solo Dance Double</strong></tooltip> on the field, opponents near the <strong>Dance Double</strong> will also have their corresponding Elemental RES lowered by 20%.",
+      "2": [
+        "<strong>Radiance: Stellar-Conduct</strong>: <cryo>Cryo</cryo> and <electro>Electro</electro>.",
+        "<strong>Radiance: Stellar Swirl</strong>: <cryo>Cryo</cryo> and <anemo>Anemo</anemo>."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "\"I'll Chase the Shouting Wind Along, Climbing Alone As I Go\"",
+    "description": {
+      "0": "Increases the Level of <strong><tooltip ns=char_Odette_gen baseKey18=skill>Adagio: Phantom Night Dancers</tooltip></strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "\"Up, Up the Long, Delirious, Burning Blue\"",
+    "description": {
+      "0": "The Elemental Burst <strong>Presto: Bluebird Finale</strong> is enhanced as follows: when Odette obtains <strong>Snow Swan's Dream</strong>, Stellar Glimmer reaction DMG dealt by other nearby party members is increased by 50% of <strong>Snow Swan Dream</strong>'s effects.",
+      "1": "<br/>",
+      "2": "Additionally, when a party member deals Stellar Glimmer reaction DMG to an opponent, Odette will also join in with a coordinated attack, dealing an instance of <cryo>AoE Cryo DMG</cryo>. This effect, which can trigger once every 3.5s, will be considered:",
+      "3": [
+        "<strong>Radiance: Stellar-Conduct</strong> or when not in a Radiance state: Stellar-Conduct reaction DMG at 66% of Odette's ATK.",
+        "<strong>Radiance: Stellar Swirl</strong>: Stellar Swirl reaction DMG at 99% of Odette's ATK."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "\"Oh! I Have Slipped the Surly Bonds of Earth\"",
+    "description": {
+      "0": "Increases the Level of <strong><tooltip ns=char_Odette_gen baseKey18=burst>Presto: Bluebird Finale</tooltip> </strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "\"Put Out My Hand, and Touched the Face of the Divine\"",
+    "description": {
+      "0": "The Ascension Talent \"Spring Rite of the Chosen One\" is enhanced as follows: When Odette grants <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Marvelous Splendor</strong></tooltip> to all nearby party members, her own Marvelous Splendor stacks will no longer decrease.",
+      "1": "Additionally, characters affected by <strong>Marvelous Splendor</strong> have their Stellar Glimmer reaction DMG dealt to opponents <tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>elevated</strong></tooltip> by 25%, and Stellar Glimmer reaction DMG dealt by Odette is elevated by an additional 20%."
+    }
+  }
+}

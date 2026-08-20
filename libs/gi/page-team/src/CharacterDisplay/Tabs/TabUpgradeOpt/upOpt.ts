@@ -2,23 +2,25 @@ import { linspace, range } from '@genshin-optimizer/common/util'
 import {
   type ArtifactSetKey,
   type ArtifactSlotKey,
-  type MainStatKey,
-  type SubstatKey,
   allArtifactSlotKeys,
   allSubstatKeys,
+  type MainStatKey,
+  type SubstatKey,
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import type { ArtifactBuildData } from '@genshin-optimizer/gi/solver'
 import { compactArtifacts } from '@genshin-optimizer/gi/solver-tc'
 import type {
+  ElixirSimplifiedCache,
   EvaluatedMarkovNode,
   MarkovNode,
   Objective,
 } from '@genshin-optimizer/gi/upopt'
 import {
+  accumulateEvaluations,
   deduplicate,
   dustReshape,
-  elixirDefinition,
+  elixirDefinitionMemoSimplified,
   evalMarkovNode,
   expandNode,
   expandNodes,
@@ -106,6 +108,7 @@ export class UpOptCalculatorV2 {
   obj: Objective
   candidates: EvaluatedMarkovTree[] = []
   fixedIx = 0
+  cache: ElixirSimplifiedCache = new Map()
 
   /** Serializes exact-calc work so candidates are refined one at a time. */
   private exactQueue: Promise<unknown> = Promise.resolve()
@@ -183,9 +186,7 @@ export class UpOptCalculatorV2 {
 
   fromReshapeInfo(info: ReshapeInfo, art: ICachedArtifact) {
     return {
-      ...this.evaluateNodes(
-        dustReshape(art, this.build, info.affixes, info.mintotal)
-      ),
+      ...this.evaluateNodes(dustReshape({ art, ...info }, this.build)),
       info,
       evalMode: 'substat' as const,
       id: `${this.candidates.length}`,
@@ -228,7 +229,12 @@ export class UpOptCalculatorV2 {
   fromDefineInfo(info: DefineInfo) {
     return {
       ...this.evaluateNodes(
-        elixirDefinition({ ...info, prob_4line: 0.34 }, this.build)
+        elixirDefinitionMemoSimplified(
+          { ...info, prob_4line: 0.34 },
+          this.build,
+          this.obj,
+          this.cache
+        )
       ),
       info,
       evalMode: 'substat' as const,
@@ -446,24 +452,4 @@ function compare(a: EvaluatedMarkovTree, b: EvaluatedMarkovTree) {
     0
   )
   return meanB - meanA
-}
-
-function accumulateEvaluations(
-  evaluated: { p: number; n: EvaluatedMarkovNode }[]
-) {
-  const { p, upAvgAcc, lower, upper } = evaluated.reduce(
-    (acc, { p, n: { evaluation } }) => ({
-      p: acc.p + p * evaluation.prob,
-      upAvgAcc: acc.upAvgAcc + p * evaluation.prob * evaluation.upAvg,
-      lower: Math.min(acc.lower, evaluation.lower),
-      upper: Math.max(acc.upper, evaluation.upper),
-    }),
-    {
-      p: 0,
-      upAvgAcc: 0,
-      lower: Number.POSITIVE_INFINITY,
-      upper: Number.NEGATIVE_INFINITY,
-    }
-  )
-  return { p, upAvg: p < 1e-6 ? 0 : upAvgAcc / p, lower, upper }
 }

@@ -560,7 +560,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     ownBuff.listing.formulas.add(listingItem(own.final.def)),
     ownBuff.listing.formulas.add(listingItem(own.final.impact)),
     ownBuff.listing.formulas.add(listingItem(own.final.sheerForce)),
-    ownBuff.listing.formulas.add(listingItem(own.common.cappedCrit_)),
+    ownBuff.listing.formulas.add(listingItem(own.final.crit_)),
     ownBuff.listing.formulas.add(listingItem(own.final.crit_dmg_)),
     ownBuff.listing.formulas.add(listingItem(own.final.pen_)),
     ownBuff.listing.formulas.add(listingItem(own.final.pen)),

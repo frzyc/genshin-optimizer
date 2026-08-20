@@ -1,0 +1,24 @@
+{
+  "name": "Lưỡi Kiếm Dung Luyện Dị Đoan",
+  "description": {
+    "0": "Đó là món vũ khí mà anh đã rút ra một lần nữa khi lần đầu diện kiến vị thần của lửa được mọi người chúc phúc, dù đã quá lâu không được sử dụng."
+  },
+  "passiveName": "Chúc Phúc Ánh Sáng Cô Độc",
+  "passiveDescription": {
+    "0": {
+      "0": "Người trang bị sau khi thi triển Kỹ Năng Nguyên Tố, sẽ nhận được \"Ánh Sáng Ban Sơ Le Lói\": Trong thời gian duy trì, sẽ ghi lại khoảng cách di chuyển của người trang bị, mỗi giây sẽ dựa trên khoảng cách di chuyển được ghi lại giây trước đó, giúp người trang bị nhận buff Tấn Công tối thiểu là <cryo>18%</cryo> và tối đa là <cryo>36%</cryo>. Hiệu quả này duy trì 14s, mỗi 14s tối đa kích hoạt một lần, và sẽ xóa khi người trang bị rời trận."
+    },
+    "1": {
+      "0": "Người trang bị sau khi thi triển Kỹ Năng Nguyên Tố, sẽ nhận được \"Ánh Sáng Ban Sơ Le Lói\": Trong thời gian duy trì, sẽ ghi lại khoảng cách di chuyển của người trang bị, mỗi giây sẽ dựa trên khoảng cách di chuyển được ghi lại giây trước đó, giúp người trang bị nhận buff Tấn Công tối thiểu là <cryo>22.5%</cryo> và tối đa là <cryo>45%</cryo>. Hiệu quả này duy trì 14s, mỗi 14s tối đa kích hoạt một lần, và sẽ xóa khi người trang bị rời trận."
+    },
+    "2": {
+      "0": "Người trang bị sau khi thi triển Kỹ Năng Nguyên Tố, sẽ nhận được \"Ánh Sáng Ban Sơ Le Lói\": Trong thời gian duy trì, sẽ ghi lại khoảng cách di chuyển của người trang bị, mỗi giây sẽ dựa trên khoảng cách di chuyển được ghi lại giây trước đó, giúp người trang bị nhận buff Tấn Công tối thiểu là <cryo>27%</cryo> và tối đa là <cryo>54%</cryo>. Hiệu quả này duy trì 14s, mỗi 14s tối đa kích hoạt một lần, và sẽ xóa khi người trang bị rời trận."
+    },
+    "3": {
+      "0": "Người trang bị sau khi thi triển Kỹ Năng Nguyên Tố, sẽ nhận được \"Ánh Sáng Ban Sơ Le Lói\": Trong thời gian duy trì, sẽ ghi lại khoảng cách di chuyển của người trang bị, mỗi giây sẽ dựa trên khoảng cách di chuyển được ghi lại giây trước đó, giúp người trang bị nhận buff Tấn Công tối thiểu là <cryo>31.5%</cryo> và tối đa là <cryo>63%</cryo>. Hiệu quả này duy trì 14s, mỗi 14s tối đa kích hoạt một lần, và sẽ xóa khi người trang bị rời trận."
+    },
+    "4": {
+      "0": "Người trang bị sau khi thi triển Kỹ Năng Nguyên Tố, sẽ nhận được \"Ánh Sáng Ban Sơ Le Lói\": Trong thời gian duy trì, sẽ ghi lại khoảng cách di chuyển của người trang bị, mỗi giây sẽ dựa trên khoảng cách di chuyển được ghi lại giây trước đó, giúp người trang bị nhận buff Tấn Công tối thiểu là <cryo>36%</cryo> và tối đa là <cryo>72%</cryo>. Hiệu quả này duy trì 14s, mỗi 14s tối đa kích hoạt một lần, và sẽ xóa khi người trang bị rời trận."
+    }
+  }
+}

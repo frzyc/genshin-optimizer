@@ -148,7 +148,7 @@
     },
     "upgradedDescription": {
       "0": "Quando Qiqi atinge um Ataque Normal ou Carregado em um inimigo, possui 50% de chance de adicionar 1 Talismã da Preservação da Fortuna nesse inimigo por 6s. Esse efeito pode ser desencadeado uma vez a cada 30s.",
-      "1": "<strong>Brilho Reluzente: Supercondutor Estelar</strong>: aumenta a chance desse efeito para 100%, e reduz a recarga para 15s."
+      "1": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Brilho Reluzente: Brilho Estelar</strong></tooltip>: aumenta a chance desse efeito para 100%, e reduz a recarga para 15s."
     }
   },
   "passive3": {
@@ -160,9 +160,11 @@
   "lockedPassive": {
     "name": "Sete Tesouros Sagrados",
     "description": {
-      "0": "Reduz a recarga da Habilidade Elemental <strong>Arte do Adeptus: Arauto da Floresta</strong> para 15s.",
-      "1": "<strong>Brilho Reluzente: Supercondutor Estelar</strong>: aumenta o Dano das reações de Supercondutor e Supercondutor Estelar dos personagens da equipe em 50% na duração de Arauto da Floresta.",
-      "2": "Além disso, quando está no <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Campo da Estrela Polar</strong></tooltip>, Qiqi entrará no estado <strong>Brilho Reluzente: Supercondutor Estelar</strong>."
+      "0": "Reduz a recarga da Habilidade Elemental <strong>Arte do Adeptus: Arauto da Floresta</strong> em 15s.",
+      "1": "<strong>Brilho Reluzente: Brilho Estelar</strong>: na duração do Arauto da Floresta, aumenta o Dano causado pelas reações correspondentes dos seus personagens da equipe:",
+      "2": "<strong>Brilho Reluzente: Supercondutor Estelar</strong>: aumenta o Dano de Supercondutor e Supercondutor Estelar em 50%.",
+      "3": "<strong>Brilho Reluzente: Redemoinho Estelar</strong>: aumenta o Dano de Redemoinho Cryo e Redemoinho Estelar em 50%.",
+      "4": "Além disso, quando está em <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Campo da Estrela Polar</strong></tooltip>/nos 8s após um personagem próximo da equipe desencadear Redemoinho Estelar, Qiqi entra nos estados <strong>Brilho Reluzente: Supercondutor Estelar</strong>/<strong>Brilho Reluzente: Redemoinho Estelar</strong> respectivamente."
     }
   },
   "constellation1": {
@@ -172,7 +174,7 @@
     },
     "upgradedDescription": {
       "0": "Quando o Arauto da Floresta atinge um inimigo marcado pelo Talismã da Preservação da Fortuna, regenera 2 de Energia Elemental para Qiqi.",
-      "1": "<strong>Brilho Reluzente: Supercondutor Estelar</strong>: quando o ataque do Arauto da Floresta atingir o inimigo com um Ataque e Ataque Coordenado, regenerará 6 de Energia Elemental para Qiqi. Pode ser desencadeado uma vez a cada 6s."
+      "1": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Brilho Reluzente: Brilho Estelar</strong></tooltip>: quando o ataque do Arauto da Floresta atingir o inimigo com um Ataque e Ataque Coordenado, regenerará 6 de Energia Elemental para Qiqi. Pode ser desencadeado uma vez a cada 6s."
     }
   },
   "constellation2": {
@@ -182,7 +184,7 @@
     },
     "upgradedDescription": {
       "0": "O Dano do Ataque Normal e Ataque Carregado de Qiqi contra os inimigos afetados por <cryo>Cryo</cryo> aumentam 15%.",
-      "1": "<strong>Brilho Reluzente: Supercondutor Estelar</strong>: aumenta o ATQ de Qiqi em 50%."
+      "1": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Brilho Reluzente: Brilho Estelar</strong></tooltip>: aumenta o ATQ de Qiqi em 50%."
     }
   },
   "constellation3": {
@@ -218,7 +220,7 @@
     "upgradedDescription": {
       "0": "Ao lançar <strong>Arte do Adeptus: Preservador da Fortuna</strong>, revive todos os personagens próximos derrotados, e regenera sua Vida para 50%.",
       "1": "Esse efeito pode ser desencadeado uma vez a cada 15 minutos.",
-      "2": "Além disso, depois de lançar <strong>Arte do Adeptus: Preservador da Fortuna</strong>, Qiqi obtém 4 acúmulos de <strong>Vislumbre do Mistério</strong>. Quando o personagem ativo, exceto Qiqi, causar Dano de Supercondutor Estelar, consome 1 acúmulo de <strong>Vislumbre do Mistério</strong> e aumenta o Dano causado. O aumento de Dano é de 600% do ATQ de Qiqi. <strong>Vislumbre do Mistério</strong> dura até 12s, e ao lançar <strong>Arte do Adeptus: Preservador da Fortuna</strong>, seus acúmulos serão redefinidos."
+      "2": "Além disso, depois de lançar <strong>Arte do Adeptus: Preservador da Fortuna</strong>, Qiqi obtém 4 acúmulos de <strong>Vislumbre do Mistério</strong>. Quando o personagem ativo, exceto Qiqi, causar Dano de Supercondutor Estelar ou Redemoinho Estelar através do Talento e da Habilidade diretamente, consome 1 acúmulo de <strong>Vislumbre do Mistério</strong> e aumenta o Dano causado. O aumento de Dano é de 600% do ATQ de Qiqi. <strong>Vislumbre do Mistério</strong> dura até 12s, e ao lançar <strong>Arte do Adeptus: Preservador da Fortuna</strong>, seus acúmulos serão redefinidos."
     }
   }
 }

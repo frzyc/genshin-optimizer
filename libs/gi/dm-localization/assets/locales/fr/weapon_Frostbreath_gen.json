@@ -1,0 +1,24 @@
+{
+  "name": "Souffle de givre",
+  "description": {
+    "0": "Une lance de glace pure imprégnée d'un froid glacial. On raconte qu'elle appartenait jadis au Tsar Belyi, qui régna sur Snezhnaya dans un lointain passé."
+  },
+  "passiveName": "Envoi lointain",
+  "passiveDescription": {
+    "0": {
+      "0": "Pendant 15 s après avoir déclenché une réaction élémentaire liée à l'élément Cryo ou à l'élément Hydro, l'ATQ du personnage équipé de l'arme augmente de <cryo>20 %</cryo> et les autres personnages de votre équipe récupèrent <cryo>6</cryo> pts d'énergie élémentaire. Cet effet peut être déclenché une fois toutes les 16 s."
+    },
+    "1": {
+      "0": "Pendant 15 s après avoir déclenché une réaction élémentaire liée à l'élément Cryo ou à l'élément Hydro, l'ATQ du personnage équipé de l'arme augmente de <cryo>25 %</cryo> et les autres personnages de votre équipe récupèrent <cryo>7,5</cryo> pts d'énergie élémentaire. Cet effet peut être déclenché une fois toutes les 16 s."
+    },
+    "2": {
+      "0": "Pendant 15 s après avoir déclenché une réaction élémentaire liée à l'élément Cryo ou à l'élément Hydro, l'ATQ du personnage équipé de l'arme augmente de <cryo>30 %</cryo> et les autres personnages de votre équipe récupèrent <cryo>9</cryo> pts d'énergie élémentaire. Cet effet peut être déclenché une fois toutes les 16 s."
+    },
+    "3": {
+      "0": "Pendant 15 s après avoir déclenché une réaction élémentaire liée à l'élément Cryo ou à l'élément Hydro, l'ATQ du personnage équipé de l'arme augmente de <cryo>35 %</cryo> et les autres personnages de votre équipe récupèrent <cryo>10,5</cryo> pts d'énergie élémentaire. Cet effet peut être déclenché une fois toutes les 16 s."
+    },
+    "4": {
+      "0": "Pendant 15 s après avoir déclenché une réaction élémentaire liée à l'élément Cryo ou à l'élément Hydro, l'ATQ du personnage équipé de l'arme augmente de <cryo>40 %</cryo> et les autres personnages de votre équipe récupèrent <cryo>12</cryo> pts d'énergie élémentaire. Cet effet peut être déclenché une fois toutes les 16 s."
+    }
+  }
+}

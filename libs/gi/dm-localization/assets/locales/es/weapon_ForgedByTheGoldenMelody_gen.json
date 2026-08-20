@@ -1,0 +1,29 @@
+{
+  "name": "Sombra de la Melodía Dorada",
+  "description": {
+    "0": "Una espada pesada y ornamentada con oro. Cuenta la leyenda que, en un pasado remoto, fue el arma predilecta de un gran afinador."
+  },
+  "passiveName": "Contrapunto del día y la noche",
+  "passiveDescription": {
+    "0": {
+      "0": "Cada 10 s, el portador de esta arma interpreta una “serenata armoniosa” que otorga el efecto correspondiente en el siguiente orden: ATQ +<cryo>18%</cryo>/Maestría Elemental +<cryo>120</cryo> pts./daño de reacciones de Destello Estelar +<cryo>28%</cryo>. Cada efecto de la serenata dura 10 s y se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso.",
+      "1": "Tras causar una reacción de Destello Estelar, también otorgará una “serenata armoniosa: polifonía” durante 12 s con el mismo efecto que la serenata que se estaba interpretando al momento de causar la reacción de Destello Estelar. Este efecto se puede acumular con el efecto original de la serenata, y solo se puede activar una vez cada 12 s."
+    },
+    "1": {
+      "0": "Cada 10 s, el portador de esta arma interpreta una “serenata armoniosa” que otorga el efecto correspondiente en el siguiente orden: ATQ +<cryo>22.5%</cryo>/Maestría Elemental +<cryo>150</cryo> pts./daño de reacciones de Destello Estelar +<cryo>35%</cryo>. Cada efecto de la serenata dura 10 s y se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso.",
+      "1": "Tras causar una reacción de Destello Estelar, también otorgará una “serenata armoniosa: polifonía” durante 12 s con el mismo efecto que la serenata que se estaba interpretando al momento de causar la reacción de Destello Estelar. Este efecto se puede acumular con el efecto original de la serenata, y solo se puede activar una vez cada 12 s."
+    },
+    "2": {
+      "0": "Cada 10 s, el portador de esta arma interpreta una “serenata armoniosa” que otorga el efecto correspondiente en el siguiente orden: ATQ +<cryo>27%</cryo>/Maestría Elemental +<cryo>180</cryo> pts./daño de reacciones de Destello Estelar +<cryo>42%</cryo>. Cada efecto de la serenata dura 10 s y se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso.",
+      "1": "Tras causar una reacción de Destello Estelar, también otorgará una “serenata armoniosa: polifonía” durante 12 s con el mismo efecto que la serenata que se estaba interpretando al momento de causar la reacción de Destello Estelar. Este efecto se puede acumular con el efecto original de la serenata, y solo se puede activar una vez cada 12 s."
+    },
+    "3": {
+      "0": "Cada 10 s, el portador de esta arma interpreta una “serenata armoniosa” que otorga el efecto correspondiente en el siguiente orden: ATQ +<cryo>31.5%</cryo>/Maestría Elemental +<cryo>210</cryo> pts./daño de reacciones de Destello Estelar +<cryo>49%</cryo>. Cada efecto de la serenata dura 10 s y se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso.",
+      "1": "Tras causar una reacción de Destello Estelar, también otorgará una “serenata armoniosa: polifonía” durante 12 s con el mismo efecto que la serenata que se estaba interpretando al momento de causar la reacción de Destello Estelar. Este efecto se puede acumular con el efecto original de la serenata, y solo se puede activar una vez cada 12 s."
+    },
+    "4": {
+      "0": "Cada 10 s, el portador de esta arma interpreta una “serenata armoniosa” que otorga el efecto correspondiente en el siguiente orden: ATQ +<cryo>36%</cryo>/Maestría Elemental +<cryo>240</cryo> pts./daño de reacciones de Destello Estelar +<cryo>56%</cryo>. Cada efecto de la serenata dura 10 s y se puede activar incluso cuando el portador de esta arma está en tu equipo pero no en uso.",
+      "1": "Tras causar una reacción de Destello Estelar, también otorgará una “serenata armoniosa: polifonía” durante 12 s con el mismo efecto que la serenata que se estaba interpretando al momento de causar la reacción de Destello Estelar. Este efecto se puede acumular con el efecto original de la serenata, y solo se puede activar una vez cada 12 s."
+    }
+  }
+}

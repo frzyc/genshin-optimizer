@@ -466,7 +466,7 @@ const sheet: TalentSheet = {
         on: {
           fields: [
             {
-              text: st('elementalReaction.gainRadianceSc'),
+              text: st('elementalReaction.stellar.gainRadianceSc'),
             },
           ],
         },

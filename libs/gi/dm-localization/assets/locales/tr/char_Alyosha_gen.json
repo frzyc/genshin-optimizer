@@ -1,0 +1,189 @@
+{
+  "name": "Alyosha",
+  "title": "Çevik Pençe",
+  "description": "Snezhnaya'nın karlı ovalarının ustası ve bir \"profesyonel avcı\". Sakin görünüşünün altında hırçın ve kendine has bir \"idealizm\" yanmaktadır.",
+  "constellationName": "Yıldırım Tazısı",
+  "auto": {
+    "name": "Çatışma Mızrağı",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 4 mızrak saldırısı yapar ve son saldırının isabet ettiği düşmana <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Avcının İşareti</strong></tooltip> uygular."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcayarak ileri atılır ve yoluna çıkan düşmanlara Hasar verir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "Yüklü Saldırı Hasarı",
+      "5": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "6": "Havadan Saldırı Hasarı",
+      "7": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Yıldırım Pususu",
+    "description": {
+      "0": "Avcı içgüdülerini takip eder. Farklı etkiler yaratmak ve isabet alan düşmanlara <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Avcının İşareti</strong></tooltip> etkisini uygulamak için dokun veya basılı tut.",
+      "1": "<br/>",
+      "2": "<strong>Dokun</strong>",
+      "3": "Önündeki düşmanlara ateş ederek <electro>Elektrik Alan Hasarı</electro> verir.",
+      "4": "<br/>",
+      "5": "<strong>Basılı Tut</strong>",
+      "6": "Nişan alma moduna girer, ardından önündeki belirli bir alan içindeki düşmanları hedefler. Bu moddayken Alyosha'nın Müdahale Direnci artar.",
+      "7": "Basılı tutmayı bıraktığında hedeflenen düşmanlara <electro>Elektrik Hasarı</electro> verir.",
+      "8": "<br/>",
+      "9": "<i>Pervasız avcının eli bir zamanlar mızrağın ucuna uzanmıştı; donmuş düzlüklerde hayatta kalmanın acımasız gerçeklerini ise ancak kanla ödenen bir dersten sağ çıktıktan sonra anlayabilmişti.</i>"
+    },
+    "skillParams": {
+      "0": "Basma Hasarı",
+      "1": "Basılı Tutma Hasarı",
+      "2": "BS",
+      "3": "Avcının İşareti Süresi",
+      "4": "Avcının Keskinliği Saldırı Bonusu",
+      "5": "Avcının Keskinliği Süresi",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Avcının İlerleyişi",
+    "description": {
+      "0": "Alanda onunla birlikte savaşması için güvenilir yoldaşı <strong>Tugarin</strong>'i çağırır. Bu aynı zamanda önündeki bir alanı kısa bir süreliğine <strong>Fulgurit Av Sahasına</strong> dönüştürür.",
+      "1": "<br/>",
+      "2": "<strong>Fulgurit Av Sahası</strong>",
+      "3": [
+        "Yakındaki düşmanları saldırmaları için sürekli kışkırtır.",
+        "Her 2 saniyede bir, alana giren herhangi bir düşmana bir defa <electro>Elektrik Alan Hasarı</electro> verir."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Tugarin</strong>",
+      "6": [
+        "Yakında herhangi bir düşman varsa Tugarin, her 2 saniyede bir hızlıca bir düşmana yaklaşıp saldırarak <strong>Elektrik Hasarı</strong> verir.",
+        "<strong>Avcının İşareti</strong> etkisine sahip bir düşman isabet alırsa <strong>Avcının İşareti</strong> de etkinleşir.",
+        "Birden fazla düşmanın olduğu durumlarda Tugarin ilk olarak <strong>Avcının İşareti</strong> etkisine sahip olanlara saldırır."
+      ],
+      "7": "<br/>",
+      "8": "<i>Bekle. Sabırsızlık dinene kadar beklemeye devam et. İşte o zaman kızıl karınlı yağmur kuşu, kayın korusunu aşıp kendini okunun önüne sunacaktır.</i>"
+    },
+    "skillParams": {
+      "0": "Fulgurit Av Sahası Hasarı",
+      "1": "Tugarin Hasarı",
+      "2": "Süre",
+      "3": "BS",
+      "4": "Enerji Maliyeti",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Tazıların Ulumasına Uyan",
+    "description": {
+      "0": "<tooltip ns=tooltips_gen baseKey18=11480002 values=[]><strong>Tugarin</strong></tooltip> saldırdığında yakındaki aktif karakterlerin Canını Alyosha'nın Saldırısının %120'si kadar yeniler."
+    }
+  },
+  "passive2": {
+    "name": "Kış Buğdayı Acı Çekecek",
+    "description": {
+      "0": "Alyosha'nın Element Becerisi ve Element Patlaması ile verdiği Hasar, Enerji Yüklemesinin her %1'i için %0,35 artar. Bu şekilde en fazla %70 artış elde edilebilir."
+    }
+  },
+  "passive3": {
+    "name": "Savaşın Ortasına",
+    "description": {
+      "0": "Alyosha, bir <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Kutup Yıldızı Alanı</strong></tooltip> içindeyken <strong>Işıltı: Yıldız İletimi</strong> durumuna girer.",
+      "1": "<strong>Işıltı: Yıldız İletimi</strong>: <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Avcının İşareti</strong></tooltip> etkinleştirildiğinde elde edilen <strong>Avcının Keskinliği</strong> etkisi, karakterin alandayken verdiği Yıldız İletimi Tepkimesi Hasarını da %20 artırır."
+    }
+  },
+  "passive": {
+    "name": "Ağaç Tepesi Nöbeti",
+    "description": {
+      "0": "Yakınlardaki <strong>Snezhnaya'ya özgü kaynakların</strong> yerini mini haritada gösterir."
+    }
+  },
+  "constellation1": {
+    "name": "Buzlu Vadideki Gök Gürlemesi",
+    "description": {
+      "0": "Yakındaki grup üyeleri bir düşman üzerinde <electro>Elektrik ile ilgili bir tepkime</electro> tetiklediğinde Alyosha 15 Element Enerjisi yeniler. Bu etki 18 saniyede bir tetiklenebilir."
+    }
+  },
+  "constellation2": {
+    "name": "Uzaklardan Gelen Uluma",
+    "description": {
+      "0": "<strong>Avcının İlerleyişi</strong> Element Patlamasının süresi 6sn uzar.",
+      "1": "Ayrıca <tooltip ns=tooltips_gen baseKey18=11480002 values=[]><strong>Tugarin</strong></tooltip> düşmana her saldırdığında bir hedefe <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Avcının İşareti</strong></tooltip> uygular. Bu etki, mevcut <strong>Avcının İşaretlerini</strong> etkinleştirmez."
+    }
+  },
+  "constellation3": {
+    "name": "Dostane Çağrı",
+    "description": {
+      "0": "<strong>Yıldırım Pususu</strong> Element Becerisinin seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Ganimeti Topla",
+    "description": {
+      "0": "<tooltip ns=tooltips_gen baseKey18=11480002 values=[]><strong>Tugarin</strong></tooltip> saldırdığında, aynı zamanda yüzdesel olarak en düşük Cana sahip yakındaki grup üyesine Alyosha'nın Saldırısının %60'ı kadar Can yeniler."
+    }
+  },
+  "constellation5": {
+    "name": "Gece Kuşu Sustuğunda",
+    "description": {
+      "0": "<strong>Avcının İlerleyişi</strong> Element Patlamasının seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Geri Kazanılan Sancak",
+    "description": {
+      "0": "<tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>Avcının İşareti</strong></tooltip> etkinleştirildiğinde kazanılan <strong>Avcının Keskinliği</strong> etkisi artık en fazla 2 kademe birikebilir. Kademe sayısı 2'ye ulaştığında, <strong>Avcının Keskinliği</strong> etkisindeki karakterler alandaysa Element Ustalıkları 100 artar."
+    }
+  }
+}

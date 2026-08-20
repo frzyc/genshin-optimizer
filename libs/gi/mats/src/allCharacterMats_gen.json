@@ -4847,6 +4847,607 @@
       }
     }
   },
+  "TravelerCryo": {
+    "talents": {
+      "normal": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfCharity",
+              "amount": 3
+            },
+            {
+              "item": "ChimericCore",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToFortitude",
+              "amount": 2
+            },
+            {
+              "item": "SymbioticChimericNucleus",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToGlory",
+              "amount": 4
+            },
+            {
+              "item": "SymbioticChimericNucleus",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToCharity",
+              "amount": 6
+            },
+            {
+              "item": "SymbioticChimericNucleus",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToFortitude",
+              "amount": 9
+            },
+            {
+              "item": "SymbioticChimericNucleus",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfGlory",
+              "amount": 4
+            },
+            {
+              "item": "PrimeChimericNexus",
+              "amount": 4
+            },
+            {
+              "item": "AscendedSampleQueen",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfCharity",
+              "amount": 6
+            },
+            {
+              "item": "PrimeChimericNexus",
+              "amount": 6
+            },
+            {
+              "item": "AscendedSampleQueen",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfFortitude",
+              "amount": 12
+            },
+            {
+              "item": "PrimeChimericNexus",
+              "amount": 9
+            },
+            {
+              "item": "AscendedSampleQueen",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfGlory",
+              "amount": 16
+            },
+            {
+              "item": "PrimeChimericNexus",
+              "amount": 12
+            },
+            {
+              "item": "AscendedSampleQueen",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "skill": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfCharity",
+              "amount": 3
+            },
+            {
+              "item": "ChimericCore",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToFortitude",
+              "amount": 2
+            },
+            {
+              "item": "SymbioticChimericNucleus",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToGlory",
+              "amount": 4
+            },
+            {
+              "item": "SymbioticChimericNucleus",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToCharity",
+              "amount": 6
+            },
+            {
+              "item": "SymbioticChimericNucleus",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToFortitude",
+              "amount": 9
+            },
+            {
+              "item": "SymbioticChimericNucleus",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfGlory",
+              "amount": 4
+            },
+            {
+              "item": "PrimeChimericNexus",
+              "amount": 4
+            },
+            {
+              "item": "AscendedSampleQueen",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfCharity",
+              "amount": 6
+            },
+            {
+              "item": "PrimeChimericNexus",
+              "amount": 6
+            },
+            {
+              "item": "AscendedSampleQueen",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfFortitude",
+              "amount": 12
+            },
+            {
+              "item": "PrimeChimericNexus",
+              "amount": 9
+            },
+            {
+              "item": "AscendedSampleQueen",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfGlory",
+              "amount": 16
+            },
+            {
+              "item": "PrimeChimericNexus",
+              "amount": 12
+            },
+            {
+              "item": "AscendedSampleQueen",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "burst": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfCharity",
+              "amount": 3
+            },
+            {
+              "item": "ChimericCore",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToFortitude",
+              "amount": 2
+            },
+            {
+              "item": "SymbioticChimericNucleus",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToGlory",
+              "amount": 4
+            },
+            {
+              "item": "SymbioticChimericNucleus",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToCharity",
+              "amount": 6
+            },
+            {
+              "item": "SymbioticChimericNucleus",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToFortitude",
+              "amount": 9
+            },
+            {
+              "item": "SymbioticChimericNucleus",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfGlory",
+              "amount": 4
+            },
+            {
+              "item": "PrimeChimericNexus",
+              "amount": 4
+            },
+            {
+              "item": "AscendedSampleQueen",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfCharity",
+              "amount": 6
+            },
+            {
+              "item": "PrimeChimericNexus",
+              "amount": 6
+            },
+            {
+              "item": "AscendedSampleQueen",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfFortitude",
+              "amount": 12
+            },
+            {
+              "item": "PrimeChimericNexus",
+              "amount": 9
+            },
+            {
+              "item": "AscendedSampleQueen",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfGlory",
+              "amount": 16
+            },
+            {
+              "item": "PrimeChimericNexus",
+              "amount": 12
+            },
+            {
+              "item": "AscendedSampleQueen",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      }
+    },
+    "ascension": {
+      "0": {
+        "cost": 0,
+        "items": []
+      },
+      "1": {
+        "cost": 20000,
+        "items": [
+          {
+            "item": "BrilliantDiamondSliver",
+            "amount": 1
+          },
+          {
+            "item": "WindwheelAster",
+            "amount": 3
+          },
+          {
+            "item": "DamagedMask",
+            "amount": 3
+          }
+        ]
+      },
+      "2": {
+        "cost": 40000,
+        "items": [
+          {
+            "item": "BrilliantDiamondFragment",
+            "amount": 3
+          },
+          {
+            "item": "WindwheelAster",
+            "amount": 10
+          },
+          {
+            "item": "DamagedMask",
+            "amount": 15
+          }
+        ]
+      },
+      "3": {
+        "cost": 60000,
+        "items": [
+          {
+            "item": "BrilliantDiamondFragment",
+            "amount": 6
+          },
+          {
+            "item": "WindwheelAster",
+            "amount": 20
+          },
+          {
+            "item": "StainedMask",
+            "amount": 12
+          }
+        ]
+      },
+      "4": {
+        "cost": 80000,
+        "items": [
+          {
+            "item": "BrilliantDiamondChunk",
+            "amount": 3
+          },
+          {
+            "item": "WindwheelAster",
+            "amount": 30
+          },
+          {
+            "item": "StainedMask",
+            "amount": 18
+          }
+        ]
+      },
+      "5": {
+        "cost": 100000,
+        "items": [
+          {
+            "item": "BrilliantDiamondChunk",
+            "amount": 6
+          },
+          {
+            "item": "WindwheelAster",
+            "amount": 45
+          },
+          {
+            "item": "OminousMask",
+            "amount": 12
+          }
+        ]
+      },
+      "6": {
+        "cost": 120000,
+        "items": [
+          {
+            "item": "BrilliantDiamondGemstone",
+            "amount": 6
+          },
+          {
+            "item": "WindwheelAster",
+            "amount": 60
+          },
+          {
+            "item": "OminousMask",
+            "amount": 24
+          }
+        ]
+      }
+    }
+  },
   "Lisa": {
     "talents": {
       "normal": {
@@ -75635,6 +76236,1248 @@
           },
           {
             "item": "PrecisionDriveShaft",
+            "amount": 24
+          }
+        ]
+      }
+    }
+  },
+  "Alyosha": {
+    "talents": {
+      "normal": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfFortitude",
+              "amount": 3
+            },
+            {
+              "item": "ChimericCore",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToFortitude",
+              "amount": 2
+            },
+            {
+              "item": "SymbioticChimericNucleus",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToFortitude",
+              "amount": 4
+            },
+            {
+              "item": "SymbioticChimericNucleus",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToFortitude",
+              "amount": 6
+            },
+            {
+              "item": "SymbioticChimericNucleus",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToFortitude",
+              "amount": 9
+            },
+            {
+              "item": "SymbioticChimericNucleus",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfFortitude",
+              "amount": 4
+            },
+            {
+              "item": "PrimeChimericNexus",
+              "amount": 4
+            },
+            {
+              "item": "ElixirOfTheHeretic",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfFortitude",
+              "amount": 6
+            },
+            {
+              "item": "PrimeChimericNexus",
+              "amount": 6
+            },
+            {
+              "item": "ElixirOfTheHeretic",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfFortitude",
+              "amount": 12
+            },
+            {
+              "item": "PrimeChimericNexus",
+              "amount": 9
+            },
+            {
+              "item": "ElixirOfTheHeretic",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfFortitude",
+              "amount": 16
+            },
+            {
+              "item": "PrimeChimericNexus",
+              "amount": 12
+            },
+            {
+              "item": "ElixirOfTheHeretic",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "skill": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfFortitude",
+              "amount": 3
+            },
+            {
+              "item": "ChimericCore",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToFortitude",
+              "amount": 2
+            },
+            {
+              "item": "SymbioticChimericNucleus",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToFortitude",
+              "amount": 4
+            },
+            {
+              "item": "SymbioticChimericNucleus",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToFortitude",
+              "amount": 6
+            },
+            {
+              "item": "SymbioticChimericNucleus",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToFortitude",
+              "amount": 9
+            },
+            {
+              "item": "SymbioticChimericNucleus",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfFortitude",
+              "amount": 4
+            },
+            {
+              "item": "PrimeChimericNexus",
+              "amount": 4
+            },
+            {
+              "item": "ElixirOfTheHeretic",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfFortitude",
+              "amount": 6
+            },
+            {
+              "item": "PrimeChimericNexus",
+              "amount": 6
+            },
+            {
+              "item": "ElixirOfTheHeretic",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfFortitude",
+              "amount": 12
+            },
+            {
+              "item": "PrimeChimericNexus",
+              "amount": 9
+            },
+            {
+              "item": "ElixirOfTheHeretic",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfFortitude",
+              "amount": 16
+            },
+            {
+              "item": "PrimeChimericNexus",
+              "amount": 12
+            },
+            {
+              "item": "ElixirOfTheHeretic",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "burst": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfFortitude",
+              "amount": 3
+            },
+            {
+              "item": "ChimericCore",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToFortitude",
+              "amount": 2
+            },
+            {
+              "item": "SymbioticChimericNucleus",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToFortitude",
+              "amount": 4
+            },
+            {
+              "item": "SymbioticChimericNucleus",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToFortitude",
+              "amount": 6
+            },
+            {
+              "item": "SymbioticChimericNucleus",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToFortitude",
+              "amount": 9
+            },
+            {
+              "item": "SymbioticChimericNucleus",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfFortitude",
+              "amount": 4
+            },
+            {
+              "item": "PrimeChimericNexus",
+              "amount": 4
+            },
+            {
+              "item": "ElixirOfTheHeretic",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfFortitude",
+              "amount": 6
+            },
+            {
+              "item": "PrimeChimericNexus",
+              "amount": 6
+            },
+            {
+              "item": "ElixirOfTheHeretic",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfFortitude",
+              "amount": 12
+            },
+            {
+              "item": "PrimeChimericNexus",
+              "amount": 9
+            },
+            {
+              "item": "ElixirOfTheHeretic",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfFortitude",
+              "amount": 16
+            },
+            {
+              "item": "PrimeChimericNexus",
+              "amount": 12
+            },
+            {
+              "item": "ElixirOfTheHeretic",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      }
+    },
+    "ascension": {
+      "0": {
+        "cost": 0,
+        "items": []
+      },
+      "1": {
+        "cost": 20000,
+        "items": [
+          {
+            "item": "VajradaAmethystSliver",
+            "amount": 1
+          },
+          {
+            "item": "Flockingweed",
+            "amount": 3
+          },
+          {
+            "item": "ChimericCore",
+            "amount": 3
+          }
+        ]
+      },
+      "2": {
+        "cost": 40000,
+        "items": [
+          {
+            "item": "VajradaAmethystFragment",
+            "amount": 3
+          },
+          {
+            "item": "SeveredTailOfTheSkyRoamer",
+            "amount": 2
+          },
+          {
+            "item": "Flockingweed",
+            "amount": 10
+          },
+          {
+            "item": "ChimericCore",
+            "amount": 15
+          }
+        ]
+      },
+      "3": {
+        "cost": 60000,
+        "items": [
+          {
+            "item": "VajradaAmethystFragment",
+            "amount": 6
+          },
+          {
+            "item": "SeveredTailOfTheSkyRoamer",
+            "amount": 4
+          },
+          {
+            "item": "Flockingweed",
+            "amount": 20
+          },
+          {
+            "item": "SymbioticChimericNucleus",
+            "amount": 12
+          }
+        ]
+      },
+      "4": {
+        "cost": 80000,
+        "items": [
+          {
+            "item": "VajradaAmethystChunk",
+            "amount": 3
+          },
+          {
+            "item": "SeveredTailOfTheSkyRoamer",
+            "amount": 8
+          },
+          {
+            "item": "Flockingweed",
+            "amount": 30
+          },
+          {
+            "item": "SymbioticChimericNucleus",
+            "amount": 18
+          }
+        ]
+      },
+      "5": {
+        "cost": 100000,
+        "items": [
+          {
+            "item": "VajradaAmethystChunk",
+            "amount": 6
+          },
+          {
+            "item": "SeveredTailOfTheSkyRoamer",
+            "amount": 12
+          },
+          {
+            "item": "Flockingweed",
+            "amount": 45
+          },
+          {
+            "item": "PrimeChimericNexus",
+            "amount": 12
+          }
+        ]
+      },
+      "6": {
+        "cost": 120000,
+        "items": [
+          {
+            "item": "VajradaAmethystGemstone",
+            "amount": 6
+          },
+          {
+            "item": "SeveredTailOfTheSkyRoamer",
+            "amount": 20
+          },
+          {
+            "item": "Flockingweed",
+            "amount": 60
+          },
+          {
+            "item": "PrimeChimericNexus",
+            "amount": 24
+          }
+        ]
+      }
+    }
+  },
+  "Odette": {
+    "talents": {
+      "normal": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfCharity",
+              "amount": 3
+            },
+            {
+              "item": "EtherealGlimmershard",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToCharity",
+              "amount": 2
+            },
+            {
+              "item": "EtherealCrystal",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToCharity",
+              "amount": 4
+            },
+            {
+              "item": "EtherealCrystal",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToCharity",
+              "amount": 6
+            },
+            {
+              "item": "EtherealCrystal",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToCharity",
+              "amount": 9
+            },
+            {
+              "item": "EtherealCrystal",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfCharity",
+              "amount": 4
+            },
+            {
+              "item": "EtherealCrystalscaleStone",
+              "amount": 4
+            },
+            {
+              "item": "TwistedWitheredBranch",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfCharity",
+              "amount": 6
+            },
+            {
+              "item": "EtherealCrystalscaleStone",
+              "amount": 6
+            },
+            {
+              "item": "TwistedWitheredBranch",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfCharity",
+              "amount": 12
+            },
+            {
+              "item": "EtherealCrystalscaleStone",
+              "amount": 9
+            },
+            {
+              "item": "TwistedWitheredBranch",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfCharity",
+              "amount": 16
+            },
+            {
+              "item": "EtherealCrystalscaleStone",
+              "amount": 12
+            },
+            {
+              "item": "TwistedWitheredBranch",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "skill": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfCharity",
+              "amount": 3
+            },
+            {
+              "item": "EtherealGlimmershard",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToCharity",
+              "amount": 2
+            },
+            {
+              "item": "EtherealCrystal",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToCharity",
+              "amount": 4
+            },
+            {
+              "item": "EtherealCrystal",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToCharity",
+              "amount": 6
+            },
+            {
+              "item": "EtherealCrystal",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToCharity",
+              "amount": 9
+            },
+            {
+              "item": "EtherealCrystal",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfCharity",
+              "amount": 4
+            },
+            {
+              "item": "EtherealCrystalscaleStone",
+              "amount": 4
+            },
+            {
+              "item": "TwistedWitheredBranch",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfCharity",
+              "amount": 6
+            },
+            {
+              "item": "EtherealCrystalscaleStone",
+              "amount": 6
+            },
+            {
+              "item": "TwistedWitheredBranch",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfCharity",
+              "amount": 12
+            },
+            {
+              "item": "EtherealCrystalscaleStone",
+              "amount": 9
+            },
+            {
+              "item": "TwistedWitheredBranch",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfCharity",
+              "amount": 16
+            },
+            {
+              "item": "EtherealCrystalscaleStone",
+              "amount": 12
+            },
+            {
+              "item": "TwistedWitheredBranch",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "burst": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfCharity",
+              "amount": 3
+            },
+            {
+              "item": "EtherealGlimmershard",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToCharity",
+              "amount": 2
+            },
+            {
+              "item": "EtherealCrystal",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToCharity",
+              "amount": 4
+            },
+            {
+              "item": "EtherealCrystal",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToCharity",
+              "amount": 6
+            },
+            {
+              "item": "EtherealCrystal",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToCharity",
+              "amount": 9
+            },
+            {
+              "item": "EtherealCrystal",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfCharity",
+              "amount": 4
+            },
+            {
+              "item": "EtherealCrystalscaleStone",
+              "amount": 4
+            },
+            {
+              "item": "TwistedWitheredBranch",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfCharity",
+              "amount": 6
+            },
+            {
+              "item": "EtherealCrystalscaleStone",
+              "amount": 6
+            },
+            {
+              "item": "TwistedWitheredBranch",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfCharity",
+              "amount": 12
+            },
+            {
+              "item": "EtherealCrystalscaleStone",
+              "amount": 9
+            },
+            {
+              "item": "TwistedWitheredBranch",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfCharity",
+              "amount": 16
+            },
+            {
+              "item": "EtherealCrystalscaleStone",
+              "amount": 12
+            },
+            {
+              "item": "TwistedWitheredBranch",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      }
+    },
+    "ascension": {
+      "0": {
+        "cost": 0,
+        "items": []
+      },
+      "1": {
+        "cost": 20000,
+        "items": [
+          {
+            "item": "ShivadaJadeSliver",
+            "amount": 1
+          },
+          {
+            "item": "FrostfairyFlower",
+            "amount": 3
+          },
+          {
+            "item": "EtherealGlimmershard",
+            "amount": 3
+          }
+        ]
+      },
+      "2": {
+        "cost": 40000,
+        "items": [
+          {
+            "item": "ShivadaJadeFragment",
+            "amount": 3
+          },
+          {
+            "item": "UnscorchedBlossomBranch",
+            "amount": 2
+          },
+          {
+            "item": "FrostfairyFlower",
+            "amount": 10
+          },
+          {
+            "item": "EtherealGlimmershard",
+            "amount": 15
+          }
+        ]
+      },
+      "3": {
+        "cost": 60000,
+        "items": [
+          {
+            "item": "ShivadaJadeFragment",
+            "amount": 6
+          },
+          {
+            "item": "UnscorchedBlossomBranch",
+            "amount": 4
+          },
+          {
+            "item": "FrostfairyFlower",
+            "amount": 20
+          },
+          {
+            "item": "EtherealCrystal",
+            "amount": 12
+          }
+        ]
+      },
+      "4": {
+        "cost": 80000,
+        "items": [
+          {
+            "item": "ShivadaJadeChunk",
+            "amount": 3
+          },
+          {
+            "item": "UnscorchedBlossomBranch",
+            "amount": 8
+          },
+          {
+            "item": "FrostfairyFlower",
+            "amount": 30
+          },
+          {
+            "item": "EtherealCrystal",
+            "amount": 18
+          }
+        ]
+      },
+      "5": {
+        "cost": 100000,
+        "items": [
+          {
+            "item": "ShivadaJadeChunk",
+            "amount": 6
+          },
+          {
+            "item": "UnscorchedBlossomBranch",
+            "amount": 12
+          },
+          {
+            "item": "FrostfairyFlower",
+            "amount": 45
+          },
+          {
+            "item": "EtherealCrystalscaleStone",
+            "amount": 12
+          }
+        ]
+      },
+      "6": {
+        "cost": 120000,
+        "items": [
+          {
+            "item": "ShivadaJadeGemstone",
+            "amount": 6
+          },
+          {
+            "item": "UnscorchedBlossomBranch",
+            "amount": 20
+          },
+          {
+            "item": "FrostfairyFlower",
+            "amount": 60
+          },
+          {
+            "item": "EtherealCrystalscaleStone",
             "amount": 24
           }
         ]

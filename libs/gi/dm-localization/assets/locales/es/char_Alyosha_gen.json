@@ -1,0 +1,190 @@
+{
+  "name": "Aliosha",
+  "title": "El Sabueso Veloz",
+  "description": "Un cazador profesional que conoce a la perfección las llanuras nevadas de Snezhnaya. Bajo su disposición tranquila, arde un distintivo y fiero ideal.",
+  "constellationName": "Canis Borzoides",
+  "auto": {
+    "name": "Lanza de escaramuza",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 4 ataques rápidos con lanza y aplica el efecto de <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>marca de caza</strong></tooltip> al enemigo golpeado por el último ataque."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante para lanzarse al frente e infligir daño a los enemigos en el camino."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de ATQ Cargado",
+      "5": "Coste de Aguante de ATQ Cargado",
+      "6": "Daño de Caída",
+      "7": "Daño de impacto de caída baja/alta",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Emboscada fulminante",
+    "description": {
+      "0": "Siguiendo su instinto de cazador, produce diferentes efectos dependiendo de si se pulsa una vez o se mantiene pulsado, y aplica la <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>marca de caza</strong></tooltip> a los enemigos golpeados.",
+      "1": "<br/>",
+      "2": "<strong>Pulsar una vez</strong>",
+      "3": "Dispara hacia delante para infligir <electro>Daño Electro en el AdE</electro>.",
+      "4": "<br/>",
+      "5": "<strong>Mantener pulsado</strong>",
+      "6": "Entra en modo puntería y selecciona a los enemigos situados en cierta área frente a él. En este estado, la RES a interrupción de Aliosha aumenta.",
+      "7": "Al terminar de apuntar, inflige <electro>Daño Electro</electro> a los enemigos seleccionados.",
+      "8": "<br/>",
+      "9": "<i>Una vez, un cazador imprudente se acercó demasiado a la punta de una lanza. Tras haber tenido la suerte de sobrevivir a esa lección de sangre, comprendió la verdadera esencia de la supervivencia en las llanuras nevadas.</i>"
+    },
+    "skillParams": {
+      "0": "Daño al pulsar una vez",
+      "1": "Daño al mantener pulsado",
+      "2": "TdE",
+      "3": "Duración de la marca de caza",
+      "4": "Aumento de ATQ de precisión de cazador",
+      "5": "Duración de precisión de cazador",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Avance depredador",
+    "description": {
+      "0": "Invoca a su fiel compañero <strong>Tugarin</strong> para luchar junto a él y transforma brevemente el área de enfrente en un <strong>coto de caza tronador</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Coto de caza tronador</strong>",
+      "3": [
+        "Provoca continuamente a los enemigos cercanos para atraer sus ataques.",
+        "Cada 2 s, inflige una vez <electro>Daño Electro en el AdE</electro> a los enemigos que hayan entrado en él."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Tugarin</strong>",
+      "6": [
+        "Si hay enemigos cerca, Tugarin se desplazará rápidamente hacia uno de ellos cada 2 s y le morderá para infligirle <strong>Daño Electro</strong>.",
+        "Si el enemigo golpeado está afectado por una <strong>marca de caza</strong>, dicha marca se activará.",
+        "Tugarin atacará prioritariamente a los enemigos afectados por una <strong>marca de caza</strong>."
+      ],
+      "7": "<br/>",
+      "8": "<i>Espera. Espera hasta que no sientas nervios, y entonces el chorlito pechonaranja sobrevolará el bosque de abedules blancos para recibir el disparo.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de coto de caza tronador",
+      "1": "Daño de Tugarin",
+      "2": "Duración",
+      "3": "TdE",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Despertado por los sabuesos aullantes",
+    "description": {
+      "0": "Cuando <tooltip ns=tooltips_gen baseKey18=11480002 values=[]><strong>Tugarin</strong></tooltip> realice un ataque, también restaurará Vida al personaje en uso cercano del equipo en una cantidad equivalente al 120% del ATQ de Aliosha."
+    }
+  },
+  "passive2": {
+    "name": "Sufriendo la voluntad del trigo invernal",
+    "description": {
+      "0": "El daño de la Habilidad Elemental y Definitiva de Aliosha aumenta en un 0.35% por cada 1% de Recarga de Energía que tenga. Como máximo, el daño puede aumentar hasta un 70%."
+    }
+  },
+  "passive3": {
+    "name": "A la batalla",
+    "description": {
+      "0": "Cuando Aliosha esté dentro de un <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>campo estrellapolar</strong></tooltip>, entrará en el estado de <strong>esplendor: Superconductor Estelar</strong>.",
+      "1": "<strong>Esplendor: Superconductor Estelar</strong>",
+      "2": "El efecto de <strong>precisión de cazador</strong> obtenido al activar una <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>marca de caza</strong></tooltip> también aumentará en un 20% el daño de Superconductor Estelar infligido por los personajes mientras están en uso."
+    }
+  },
+  "passive": {
+    "name": "Vigía arbóreo",
+    "description": {
+      "0": "Muestra la ubicación de los <strong>objetos típicos de Snezhnaya</strong> cercanos en el minimapa."
+    }
+  },
+  "constellation1": {
+    "name": "Trueno del valle gélido",
+    "description": {
+      "0": "Cuando un personaje cercano del equipo causa una <electro>Reacción Elemental Electro</electro> contra un enemigo, Aliosha recupera 15 pts. de Energía Elemental. Este efecto solo se puede activar una vez cada 18 s."
+    }
+  },
+  "constellation2": {
+    "name": "Aullido lejano",
+    "description": {
+      "0": "Aumenta en 6 s la duración de la Habilidad Definitiva, <strong>Avance depredador</strong>.",
+      "1": "Además, antes de atacar a un enemigo, <tooltip ns=tooltips_gen baseKey18=11480002 values=[]><strong>Tugarin</strong></tooltip> aplicará a un objetivo una <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>marca de caza</strong></tooltip>. Este efecto no activará las <strong>marcas de caza</strong> ya existentes."
+    }
+  },
+  "constellation3": {
+    "name": "Llamada entre compañeros",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Emboscada fulminante</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Botín de caza",
+    "description": {
+      "0": "Cuando <tooltip ns=tooltips_gen baseKey18=11480002 values=[]><strong>Tugarin</strong></tooltip> realice un ataque, también restaurará Vida al personaje cercano del equipo con el menor porcentaje de Vida en una cantidad equivalente al 60% del ATQ de Aliosha."
+    }
+  },
+  "constellation5": {
+    "name": "Cese del canto del ruiseñor",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Avance depredador</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Estandarte reconquistado",
+    "description": {
+      "0": "El efecto de <strong>precisión de cazador</strong> obtenido al activar una <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>marca de caza</strong></tooltip> se puede acumular hasta 2 veces. Al alcanzar 2 acumulaciones, también aumentará en 100 pts. la Maestría Elemental del personaje en uso que haya obtenido este efecto."
+    }
+  }
+}
