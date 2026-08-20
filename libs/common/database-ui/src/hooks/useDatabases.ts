@@ -19,10 +19,12 @@ export function useDatabases<DB extends Database>(
     localStorage.setItem(newTabKey, 'debug')
     return ([1, 2, 3, 4] as const).map((index) => {
       if (index === dbIndex) {
-        return new DatabaseClass(
+        const db = new DatabaseClass(
           index,
           new DBLocalStorage(localStorage, storageType)
         )
+        db.toExtraLocalDB()
+        return db
       } else {
         const dbName = `${storageType ? `${storageType}_` : ''}extraDatabase_${index}`
         const dbObj = loadJsonOrB64GzipFromStorage(dbName)
