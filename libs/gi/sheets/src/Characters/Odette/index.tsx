@@ -737,6 +737,7 @@ const sheet: TalentSheet = {
         ),
     }),
     ct.headerTem('constellation2', {
+      canShow: unequal(condA1TeamSplendor, undefined, 1),
       teamBuff: true,
       fields: [
         {
@@ -748,6 +749,7 @@ const sheet: TalentSheet = {
       ],
     }),
     ct.headerTem('constellation6', {
+      canShow: unequal(condA1TeamSplendor, undefined, 1),
       teamBuff: true,
       fields: Object.values(c6Team_stellar_specialDmg_obj).map((node) => ({
         node,
