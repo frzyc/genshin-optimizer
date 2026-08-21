@@ -188,13 +188,17 @@ const a1TeamSplendor_stellar_dmg_obj = objKeyValMap(
   (k) => [`${k}_dmg_`, { ...a1TeamSplendor_stellar_dmg_ }]
 )
 
-const a1SelfSplendor = threshold(
-  input.constellation,
-  6,
-  maxSplendor,
-  sum(
-    threshold(input.constellation, 1, maxSplendor, dm.passive1.stackGain),
-    prod(-1, a1TeamSplendor)
+const a1SelfSplendor = unequal(
+  condA1TeamSplendor,
+  undefined,
+  threshold(
+    input.constellation,
+    6,
+    maxSplendor,
+    sum(
+      threshold(input.constellation, 1, maxSplendor, dm.passive1.stackGain),
+      prod(-1, a1TeamSplendor)
+    )
   )
 )
 const a1SelfSplendor_stellar_dmg_ = greaterEq(
@@ -223,10 +227,22 @@ const a4_stellar_mult_disp = greaterEq(
 )
 const a4_stellar_mult_ = sum(one, a4_stellar_mult_disp)
 
-const c2TeamSplendor_atk_ = greaterEq(
-  input.constellation,
-  2,
-  greaterEq(input.asc, 1, prod(a1TeamSplendor, percent(dm.constellation2.atk_)))
+const c2TeamSplendor_atk_disp = infoMut(
+  greaterEq(
+    input.constellation,
+    2,
+    greaterEq(
+      input.asc,
+      1,
+      prod(a1TeamSplendor, percent(dm.constellation2.atk_))
+    )
+  ),
+  { path: 'atk_', isTeamBuff: true }
+)
+const c2TeamSplendor_atk_ = unequal(
+  target.charKey,
+  key,
+  c2TeamSplendor_atk_disp
 )
 const c2SelfSplendor_atk_ = greaterEq(
   input.constellation,
@@ -721,17 +737,19 @@ const sheet: TalentSheet = {
         ),
     }),
     ct.headerTem('constellation2', {
+      canShow: unequal(condA1TeamSplendor, undefined, 1),
       teamBuff: true,
       fields: [
         {
           node: c2SelfSplendor_atk_,
         },
         {
-          node: c2TeamSplendor_atk_,
+          node: c2TeamSplendor_atk_disp,
         },
       ],
     }),
     ct.headerTem('constellation6', {
+      canShow: unequal(condA1TeamSplendor, undefined, 1),
       teamBuff: true,
       fields: Object.values(c6Team_stellar_specialDmg_obj).map((node) => ({
         node,
