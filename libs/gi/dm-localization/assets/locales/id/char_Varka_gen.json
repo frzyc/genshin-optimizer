@@ -118,7 +118,7 @@
   "passive2": {
     "name": "Wind's Vanguard",
     "description": {
-      "0": "Saat Karakter party di sekitar memicu reaksi Swirl, Varka mendapatkan 1 lapis <strong>Azure Fang's Oath</strong> yang akan meningkatkan DMG Normal Attack, Charged Attack, Charged Attack Khusus <strong>Azure Devour</strong>, dan Elemental Skill Khusus <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Four Winds' Ascension</strong></tooltip> milik Varka sebesar 7,5% selama 8 detik. Efek ini dapat ditumpuk sampai 4 lapis. Setiap Karakter dapat memberikan 1 lapis <strong>Azure Fang's Oath</strong> untuk Varka sekali setiap detik dengan cara ini."
+      "0": "Saat Karakter party di sekitar memicu reaksi Swirl atau Stellar Swirl, Varka mendapatkan 1 lapis <strong>Azure Fang's Oath</strong> yang akan meningkatkan DMG Normal Attack, Charged Attack, Charged Attack Khusus <strong>Azure Devour</strong>, dan Elemental Skill Khusus <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Four Winds' Ascension</strong></tooltip> milik Varka sebesar 7,5% selama 8 detik. Efek ini dapat ditumpuk sampai 4 lapis. Setiap Karakter dapat memberikan 1 lapis <strong>Azure Fang's Oath</strong> untuk Varka sekali setiap detik dengan cara ini."
     }
   },
   "passive3": {
@@ -160,7 +160,7 @@
   "constellation4": {
     "name": "\"For None May Take From Us Our Freedom of Song\"",
     "description": {
-      "0": "Saat Varka memicu reaksi Swirl, seluruh Karakter party di sekitar akan mendapatkan 20% <anemo>Anemo DMG Bonus</anemo> dan juga Elemental DMG Bonus untuk jenis elemen yang terlibat dalam reaksi tersebut, berlangsung selama 10 detik."
+      "0": "Saat Varka memicu reaksi Swirl atau Stellar Swirl, seluruh Karakter party di sekitar akan mendapatkan 20% <anemo>Anemo DMG Bonus</anemo> dan juga Elemental DMG Bonus untuk jenis elemen yang terlibat dalam reaksi tersebut, berlangsung selama 10 detik."
     }
   },
   "constellation5": {

@@ -12,7 +12,7 @@ import {
   one,
   percent,
   prod,
-  stellarDmg,
+  stellarDmgNode,
   subscript,
   sum,
   threshold,
@@ -383,7 +383,7 @@ const dmgFormulas = {
         equal(
           condLockStellarRadianceSc,
           'on',
-          stellarDmg(
+          stellarDmgNode(
             subscript(input.total.autoIndex, dm.normal.hitArr[2], {
               unit: '%',
             }),
@@ -414,7 +414,7 @@ const dmgFormulas = {
         equal(
           condLockStellarRadianceSc,
           'on',
-          stellarDmg(
+          stellarDmgNode(
             prod(
               subscript(input.total.autoIndex, dm.normal.hitArr[4], {
                 unit: '%',
@@ -449,7 +449,7 @@ const dmgFormulas = {
         equal(
           condLockStellarRadianceSc,
           'on',
-          stellarDmg(
+          stellarDmgNode(
             subscript(input.total.autoIndex, dm.charged.dmg, { unit: '%' }),
             'atk',
             'stellarconduct',
@@ -481,7 +481,7 @@ const dmgFormulas = {
           equal(
             condLockStellarRadianceSc,
             'on',
-            stellarDmg(
+            stellarDmgNode(
               prod(
                 subscript(input.total.autoIndex, dm.normal.hitArr[4], {
                   unit: '%',
@@ -525,7 +525,7 @@ const dmgFormulas = {
           equal(
             condLockStellarRadianceSc,
             'on',
-            stellarDmg(
+            stellarDmgNode(
               subscript(input.total.autoIndex, dm.charged.dmg, { unit: '%' }),
               'atk',
               'stellarconduct',
@@ -880,7 +880,7 @@ const sheet: TalentSheet = {
         on: {
           fields: [
             {
-              text: st('elementalReaction.gainRadianceSc'),
+              text: st('elementalReaction.stellar.gainRadianceSc'),
             },
           ],
         },

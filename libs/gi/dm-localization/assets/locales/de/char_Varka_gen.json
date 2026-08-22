@@ -118,7 +118,7 @@
   "passive2": {
     "name": "Vorhut des Windbanners",
     "description": {
-      "0": "Verleiht Varka, wenn Truppenmitglieder in der Nähe Verwirbelung auslösen, eine Stapelung <strong>Schwur des blauen Reißzahns</strong> und erhöht dadurch von Varka mit Standardangriffen, heftigen Schlägen, dem besonderen heftigen Schlag <strong>Azurbiss</strong> und der besonderen Elementarfähigkeit <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Aufkommen der vier Winde</strong></tooltip> verursachten Schaden um 7,5 %. Dieser Effekt hält 8 s an, ist bis zu 4-fach stapelbar. Jede Figur kann Varka höchstens einmal pro Sekunde eine Stapelung <strong>Schwur des blauen Reißzahns</strong> verleihen."
+      "0": "Verleiht Varka, wenn Truppenmitglieder in der Nähe die Reaktion Verwirbelung oder Stellar-Verwirbelung auslösen, eine Stapelung <strong>Schwur des blauen Reißzahns</strong> und erhöht dadurch von Varka mit Standardangriffen, heftigen Schlägen, dem besonderen heftigen Schlag <strong>Azurbiss</strong> und der besonderen Elementarfähigkeit <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Aufkommen der vier Winde</strong></tooltip> verursachten Schaden um 7,5 %. Dieser Effekt hält 8 s an, ist bis zu 4-fach stapelbar. Jede Figur kann Varka höchstens einmal pro Sekunde eine Stapelung <strong>Schwur des blauen Reißzahns</strong> verleihen."
     }
   },
   "passive3": {
@@ -160,7 +160,7 @@
   "constellation4": {
     "name": "„Denn niemand kann uns die Freiheit nehmen zu singen“",
     "description": {
-      "0": "Verleiht allen Truppenmitgliedern in der Nähe, wenn Varka eine Verwirbelung auslöst, basierend auf dem Elementartyp der Reaktion, 10 s lang jeweils einen <anemo>Anemo-SCH-Bonus</anemo> und einen SCH-Bonus des entsprechenden Elements von 20 %."
+      "0": "Verleiht allen Truppenmitgliedern in der Nähe, wenn Varka die Reaktion Verwirbelung oder Stellar-Verwirbelung auslöst, basierend auf dem Elementartyp der Reaktion, 10 s lang jeweils einen <anemo>Anemo-SCH-Bonus</anemo> und einen SCH-Bonus des entsprechenden Elements von 20 %."
     }
   },
   "constellation5": {

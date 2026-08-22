@@ -12,6 +12,13 @@
       "7": "<cryo>Cryo</cryo>: aumenta o Dano CRIT em 20%."
     }
   },
+  "10050002": {
+    "name": "Brilho Gélido",
+    "description": {
+      "0": "Quando um Cristal Cryo de uma <strong>Estrela do Gelo Feroz</strong> condensada pel{F#a}{M#o} Viajante atingir um inimigo, ou quando {F#a}{M#o} Viajante realizar um <strong>Ataque Carregado: Concentração de Gelo</strong> após desbloquear o Talento <strong>Gelo Profundo Forasteiro</strong>, obtém esse efeito especial. Pode ser acumulado até 8 vezes.",
+      "1": "Ao lançar o Supremo <strong>Dardo Gelado</strong>, {F#a}{M#o} Viajante consome todos os acúmulos de <strong>Brilho Gélido</strong> e aumenta o Dano causado por esse Supremo. Se consumir 8 acúmulos, aumenta ainda mais a quantidade de golpes do Supremo."
+    }
+  },
   "11120001": {
     "name": "Modo de Armazenamento Frio",
     "description": {
@@ -47,7 +54,7 @@
   "11130002": {
     "name": "Essencial do Resgate",
     "description": {
-      "0": "Máximo de 150 pontos. Cada ponto de Essencial do Resgate que Ifa possui aumenta o Dano causado por Reações de Redemoinho e Eletricamente Carregado dos membros próximos da equipe em 1.5%. O Dano causado por Reações de Eletricamente Carregado aumenta em 0.2% para cada ponto de Essencial do Resgate. Os pontos de Essencial do Resgate serão eliminados quando o estado Bênção do Espírito da Noite acabar."
+      "0": "Máximo de 150 pontos. De acordo com a quantidade de Essencial do Resgate que Ifa possui, cada 1 de Essencial do Resgate aumenta o Dano de Redemoinho e Eletricamente Carregado causados pelos personagens próximos seja aumentado em 1.5%, aumenta o Dano de Carga Lunar em 0.2%, aumenta o Dano de Redemoinho Estelar em 0.24%. Essencial do Resgate será removido quando o estado Bênção do Espírito da Noite de Ifa acabar."
     }
   },
   "11130003": {
@@ -97,7 +104,7 @@
   "11130007": {
     "name": "Razão Além da Razão",
     "description": {
-      "0": "Quando membros próximos da equipe desencadearem reações de Congelado, Supercondutor, Redemoinho Cryo ou Cristalização Cryo contra inimigos, uma Fenda do Vazio será criada próxima a esse inimigo. Esse efeito pode ser desencadeado uma vez a cada 2,5s. Um máximo de 3 Fendas do Vazio criadas pela própria Skirk pode existir simultaneamente em campo.",
+      "0": "Quando membros próximos da equipe desencadearem reações de Congelado, Supercondutor, Supercondutor Estelar, Redemoinho Cryo, Redemoinho Estelar ou Cristalização Cryo contra inimigos, uma Fenda do Vazio será criada próxima a esse inimigo. Esse efeito pode ser desencadeado uma vez a cada 2,5s. Um máximo de 3 Fendas do Vazio criadas pela própria Skirk pode existir simultaneamente em campo.",
       "1": "<br/>",
       "2": "Skirk pode usar os seguintes métodos para absorver Fendas do Vazio próximas:",
       "3": [
@@ -426,8 +433,8 @@
       "0": "A companheira confiável de uma caçadora de bruxas! O Martelo do Juramento Livrador Pode passar por Conversão Elemental sob certas circunstâncias, transformando todo seu Dano em Dano do Tipo Elemental correspondente.",
       "1": "Prune pode invocar o Martelo do Juramento Livrador que passou por Conversão Elemental das seguintes formas: ",
       "2": [
-        " Por um certo tempo após desencadear Redemoinho contra um oponente com a Habilidade Elemental <strong>Ding-ding! Tilintar Caçador de Magia!</strong>, pode lançar a Habilidade Elemental especial <strong>Ting-Ting! Retribuição das Bruxas!</strong>. Ao lançar a Habilidade Elemental especial, o Martelo do Juramento Livrador se converterá para o outro Tipo Elemental da reação de Redemoinho.",
-        " Depois de desbloquear o Talento Passivo \"Veredito e Punição\", se estiver no Modo Caçador e o Sino Chama-Bruxa causar Redemoinho nos inimigos, invoca um Martelo do Juramento Livrador que passou por Conversão Elemental de acordo com o Redemoinho atual para atacar o inimigo."
+        " Por um certo tempo após desencadear Redemoinho ou Redemoinho Estelar contra um oponente com a Habilidade Elemental <strong>Ding-ding! Tilintar Caçador de Magia!</strong>, pode lançar a Habilidade Elemental especial <strong>Ting-Ting! Retribuição das Bruxas!</strong>. Ao lançar a Habilidade Elemental especial, o Martelo do Juramento Livrador se converterá para o outro Tipo Elemental da reação de Redemoinho ou Redemoinho Estelar.",
+        " Depois de desbloquear o Talento Passivo \"Veredito e Punição\", se estiver no Modo Caçador e o Sino Chama-Bruxa causar Redemoinho ou Redemoinho Estelar nos inimigos, invoca um Martelo do Juramento Livrador que passou por Conversão Elemental de acordo com o Redemoinho ou o Redemoinho Estelar atual para atacar o inimigo."
       ]
     }
   },
@@ -448,7 +455,7 @@
     "description": {
       "0": "Ao realizar um Ataque Carregado, Fagio trocará para esse modo.",
       "1": "Quando estiver nesse modo, Fagio atacará com uma rajada contra os inimigos em frente, periodicamente disparando Raios Congelantes, causando <cryo>Dano Cryo em uma AdE</cryo>.",
-      "2": "<strong>Brilho Reluzente: Supercondutor Estelar</strong>: Raio Congelante será convertido para causar <cryo>Dano Cryo em uma AdE</cryo> considerado como Dano de Supercondutor Estelar."
+      "2": "<strong>Brilho Reluzente: Brilho Estelar</strong>: Raio Congelante será convertido para causar <cryo>Dano Cryo em uma AdE</cryo> considerado como Dano de Reação de Brilho Estelar."
     }
   },
   "11330002": {
@@ -461,6 +468,59 @@
     "name": "Campo da Estrela Polar",
     "description": {
       "0": "Ao desencadear Supercondutor Estelar, as áreas próximas serão temporariamente transformadas em <strong>Campo da Estrela Polar</strong>. Quando estiver dentro de um Campo da Estrela Polar, o personagem específico entrará no estado <strong>Brilho Reluzente: Supercondutor Estelar</strong>, com suas Habilidades obtendo bônus de fortalecimento diferentes."
+    }
+  },
+  "11400001": {
+    "name": "Pelo Poder do Espírito da Lâmina",
+    "description": {
+      "0": "Sobre \"Pelo Poder do Espírito da Lâmina\""
+    }
+  },
+  "11480001": {
+    "name": "Selo da Caçada",
+    "description": {
+      "0": "Alyosha aplica esse efeito especial no inimigo.",
+      "1": "Quando o inimigo já está afetado por <strong>Selo da Caçada</strong> e recebe esse efeito novamente, ativará o <strong>Selo da Caçada</strong>: remove o Selo e faz todos os membros da equipe próximos obterem o efeito <strong>Mira do Caçador</strong>, aumentando o ATQ quando estiverem em campo."
+    }
+  },
+  "11480002": {
+    "name": "Tugarin",
+    "description": {
+      "0": "O companheiro cão de caça confiável de Alyosha. Pode ser invocado para o campo de batalha através do Supremo <strong>Perseguição Caçadora</strong>, e periodicamente ataca até um inimigo próximo, mordendo-o e ativando o <strong>Selo da Caçada</strong> que já possui."
+    }
+  },
+  "11500001": {
+    "name": "Sombra Dançarina",
+    "description": {
+      "0": "Uma cópia psíquica de Odette que dança um dueto com ela. Pode ser invocada ao campo com sua Habilidade Elemental ou Supremo.",
+      "1": "Alterna entre os passos de dança <strong>Pluma</strong> e <strong>Asa</strong> para atacar periodicamente os inimigos próximos, causando <cryo>Dano Cryo em AdE</cryo>.",
+      "2": "Apenas uma <strong>Sombra Dançarina</strong> invocada por Odette pode estar no campo ao mesmo tempo.",
+      "3": "<br/>",
+      "4": "Além disso, quando há uma <strong>Sombra Dançarina</strong> invocada por Odette nas proximidades, a Habilidade Elemental dela <strong>Dança Lenta: Transe da Noite Fantasma</strong> é substituída pela Habilidade Elemental especial <strong>Dança Lenta: Final da Alvorada</strong>."
+    }
+  },
+  "11500002": {
+    "name": "Dança Lenta: Final da Alvorada",
+    "description": {
+      "0": "Habilidade Elemental especial de Odette, causa <cryo>Dano Cryo em AdE</cryo> contínuo contra os inimigos próximos, e, quando a valsa acabar, causa uma instância de <cryo>Dano Cryo em AdE</cryo> que é considerada como Dano de Supercondutor Estelar. Durante a valsa, Odette pode controlar a direção de sua dança.",
+      "1": "<strong>Brilho Reluzente: Brilho Estelar</strong>: quando a valsa acabar, muda para causar <cryo>Dano Cryo em AdE</cryo> da reação de Brilho Estelar correspondente.",
+      "2": "<br/>",
+      "3": "Além disso, ao lançar a Habilidade Elemental especial <strong>Dança Lenta: Final da Alvorada</strong>, se na duração restante de <strong>Sombra Dançarina</strong> Odette estiver em <strong>Brilho Reluzente: Brilho Estelar</strong>, os dois passos de dança de <strong>Sombra Dançarina</strong> causarão <cryo>Dano Cryo em AdE</cryo> adicional da reação de Brilho Estelar correspondente."
+    }
+  },
+  "11500003": {
+    "name": "Esplendor Maravilhoso",
+    "description": {
+      "0": "Depois de desbloquear o Talento de Ascensão \"Primavera do Escolhido\", quando Odette invocar <strong>Sombra Dançarina</strong>, obterá um efeito especial.",
+      "1": "Cada acúmulo de <strong>Esplendor Maravilhoso</strong> aumenta o Dano de Brilho Estelar causado pelo personagem em 15%, e dura até <strong>Sombra Dançarina</strong> sair de campo ou invocar <strong>Sombra Dançarina</strong> novamente.",
+      "2": "Quando Odette não for a personagem ativa do campo, remove 1 acúmulo de <strong>Esplendor Maravilhoso</strong> por segundo de Odette, fazendo com que os outros personagens próximos da equipe obtenham a quantidade de acúmulos correspondentes de <strong>Esplendor Maravilhoso</strong>."
+    }
+  },
+  "11500004": {
+    "name": "Brilho Reluzente: Brilho Estelar",
+    "description": {
+      "0": "<strong>Brilho Reluzente: Supercondutor Estelar</strong> e <strong>Brilho Reluzente: Redemoinho Estelar</strong> são unificados em <strong>Brilho Reluzente: Brilho Estelar</strong>.",
+      "1": "O personagem só pode ser afetado por um tipo de Brilho Reluzente simultaneamente, e será priorizada a influência de <strong>Brilho Reluzente: Supercondutor Estelar</strong>"
     }
   }
 }

@@ -47,7 +47,7 @@ function getUniformSubstatValues(key: SubstatKey, rarity: ArtifactRarity) {
 }
 // Memoized substat value variance lookup
 const substatMuVarCache: Record<string, { mu: number; sig2: number }> = {}
-function subMuVar(key: SubstatKey, rarity: ArtifactRarity) {
+export function subMuVar(key: SubstatKey, rarity: ArtifactRarity) {
   const cacheKey = `${key}_${rarity}`
   if (substatMuVarCache[cacheKey]) return substatMuVarCache[cacheKey]
 
@@ -75,29 +75,6 @@ function getReshapeIxs(
     }
     return ix
   })
-}
-
-/**
- * Given a list of indices, [i0, i2, ..., ik], return a list of swaps (i, j) that will
- * place a[0] at i0, a[1] at i1, ..., a[k] at ik.
- */
-function ixsToSwaps(ixs: number[], nmax: number): number[][] {
-  const tracker = Array.from({ length: nmax }, (_, i) => i)
-
-  const out: number[][] = []
-  ixs.forEach((i, j) => {
-    if (i === tracker[j]) return
-    out.push([i, tracker[j]])
-    swap(tracker, i, j)
-  })
-  return out
-}
-
-function swap(arr: any[], i: number, j: number) {
-  if (i === j) return
-  const tmp = arr[i]
-  arr[i] = arr[j]
-  arr[j] = tmp
 }
 
 export function makeRollsNode(
@@ -132,19 +109,14 @@ export function makeSubstatNode(info: SubstatLevelInfo): SubstatLevelNode {
   const { rollsLeft, subkeys, reshape } = info
   subkeys.sort((a, b) => a.key.localeCompare(b.key)) // Ensure consistent ordering
   reshape?.affixes.sort((a, b) => a.localeCompare(b)) // Ensure consistent ordering
+  const reshapeIxs: number[] = getReshapeIxs(subkeys, reshape)
   const { mu: muRoll, cov: covRoll } = rollCountMuVar(
     rollsLeft,
+    reshapeIxs,
     reshape
       ? { n: reshape.affixes.length, min: reshape.mintotal }
       : { n: 0, min: 0 }
   )
-  // Reorder mu, cov so that reshaped affixes are where they should be.
-  const reshapeIxs: number[] = getReshapeIxs(subkeys, reshape)
-  ixsToSwaps(reshapeIxs, 4).forEach(([i, j]) => {
-    swap(muRoll, i, j)
-    swap(covRoll, i, j)
-    covRoll.forEach((row) => swap(row, i, j))
-  })
 
   // Increment muRoll by base rolls
   subkeys.forEach(({ baseRolls }, i) => {

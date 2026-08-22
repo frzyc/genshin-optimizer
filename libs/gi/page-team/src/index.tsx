@@ -128,6 +128,8 @@ function Page({ teamId }: { teamId: string }) {
     'charNames_gen',
     'page_character',
     'page_team',
+    'tooltips_gen',
+    'sheet_gen',
   ])
 
   useTitle(

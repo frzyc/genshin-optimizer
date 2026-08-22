@@ -1,0 +1,29 @@
+{
+  "setName": "Trái Tim Lửa Nung",
+  "setEffects": {
+    "2": "Tấn Công tăng 18%.",
+    "4": "Trong 12s sau khi người trang bị kích hoạt phản ứng Tinh Tú Lấp Lánh hoặc gây sát thương Tinh Tú Lấp Lánh, Tấn Công tăng 12%, tất cả nhân vật trong đội ở gần tăng 50% sát thương phản ứng Tinh Tú Lấp Lánh. Người trang bị khi không ra trận cũng có thể kích hoạt hiệu quả nêu trên. Hiệu quả tăng sát thương sản sinh từ bộ Thánh Di Vật cùng tên sẽ không thể cộng dồn."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Phỏng Đoán Của Kẻ Rèn Đúc",
+      "desc": "Anh hiểu sự nóng lạnh của lòng người không giống như nhiệt độ lõi lò, có thể thấy rõ sự thay đổi thông qua việc đo lường."
+    },
+    "plume": {
+      "name": "Quan Sát Của Kẻ Rèn Đúc",
+      "desc": "Anh biết sự biến chuyển của thế sự không như màu sắc lõi lò, có thể nhìn thấu kết quả thông qua việc quan sát."
+    },
+    "sands": {
+      "name": "Suy Tính Của Kẻ Rèn Đúc",
+      "desc": "Anh hiểu rõ sự vận hành của quyền thế không giống như năng lượng lõi lò, có thể thông qua công tắc để kiểm soát sự tuôn trào."
+    },
+    "goblet": {
+      "name": "Độ Lượng Của Kẻ Rèn Đúc",
+      "desc": "Anh hiểu rằng tình bạn vốn ngắn ngủi, chẳng giống như ngọn lửa nơi lõi lò, chỉ cần cung cấp nguyên liệu là có thể cháy mãi không tắt."
+    },
+    "circlet": {
+      "name": "Ý Chí Của Kẻ Rèn Đúc",
+      "desc": "Anh biết rằng sự kiên định của ước mơ không giống như ánh sáng nơi lõi lò, chẳng thể như ngọn đuốc truyền đến tay người kế thừa."
+    }
+  }
+}

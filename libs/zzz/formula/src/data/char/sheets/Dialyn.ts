@@ -146,9 +146,7 @@ const sheet = register(
     'core_stun_',
     enemyDebuff.common.stun_.add(
       malicious_complaint.ifOn(percent(subscript(char.core, dm.core.stun_)))
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'ability_exSpecial_crit_dmg_',
@@ -162,9 +160,7 @@ const sheet = register(
       ability_check(
         overwhelmingly_positive.ifOn(percent(dm.ability.common_dmg_))
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'ability_attack_dmg',
@@ -188,17 +184,13 @@ const sheet = register(
         1,
         ability_check(overwhelmingly_positive.ifOn(percent(dm.m1.resIgn_)))
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm2_stun_',
     enemyDebuff.common.stun_.add(
       cmpGE(char.mindscape, 2, malicious_complaint.ifOn(percent(dm.m2.stun_)))
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm2_common_dmg_',
@@ -208,9 +200,7 @@ const sheet = register(
         2,
         malicious_complaint.ifOn(percent(dm.m2.common_dmg_))
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm4_atk',

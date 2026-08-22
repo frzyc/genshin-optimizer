@@ -110,7 +110,7 @@
   "passive1": {
     "name": "Catalyst Conversion",
     "description": {
-      "0": "Ketika Sucrose memicu Swirl, akan meningkatkan Elemental Mastery anggota party dengan tipe elemen yang sama (tidak termasuk Sucrose sendiri) sebesar 50, berlangsung selama 8 detik."
+      "0": "Ketika Sucrose memicu Swirl atau Stellar Swirl, akan meningkatkan Elemental Mastery anggota party dengan tipe elemen yang sama (tidak termasuk Sucrose sendiri) sebesar 50, berlangsung selama 8 detik."
     }
   },
   "passive2": {

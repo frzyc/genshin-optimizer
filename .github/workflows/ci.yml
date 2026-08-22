@@ -23,7 +23,7 @@ jobs:
           cache: 'yarn'
       - name: Yarn Install
         run: |
-          yarn install --immutable --immutable-cache
+          yarn install --immutable
       - name: Run lint
         run: |
           yarn run nx run-many -t lint --args=""
@@ -52,7 +52,7 @@ jobs:
           cache: 'yarn'
       - name: Yarn Install
         run: |
-          yarn install --immutable --immutable-cache
+          yarn install --immutable
       - name: Run Tests
         run: |
           yarn run nx run-many --target=test
@@ -74,7 +74,7 @@ jobs:
           cache: 'yarn'
       - name: Yarn Install
         run: |
-          yarn install --immutable --immutable-cache
+          yarn install --immutable
       - name: Check Formatting
         run: |
           yarn run nx run-many -t format --args=""
@@ -89,13 +89,13 @@ jobs:
           cache: 'yarn'
       - name: Yarn Install
         run: |
-          yarn install --immutable --immutable-cache
+          yarn install --immutable
       - name: Check types
         run: |
           yarn run nx run-many --target=typecheck
   gen-file:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v6
       - name: Get Cache Key
@@ -122,7 +122,7 @@ jobs:
           cache: 'yarn'
       - name: Yarn Install
         run: |
-          yarn install --immutable --immutable-cache
+          yarn install --immutable
       - name: Check Gen File
         run: |
           yarn run nx run-many -t gen-file

@@ -218,9 +218,7 @@ const sheet = register(
     'm2_pen_',
     teamBuff.combat.pen_.add(
       cmpGE(char.mindscape, 2, prod(thermal_penetration, percent(dm.m2.pen_)))
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm4_exSpecial_crit_',

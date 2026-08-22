@@ -140,8 +140,8 @@
   "lockedPassive": {
     "name": "珍选秘藏",
     "description": {
-      "0": "施放元素战技<strong>猫爪冻冻</strong>后的20秒内，队伍中的角色触发超导、星超导反应时，迪奥娜还会协同发射3枚<strong>冻冻猫猫爪</strong>；通过这种方式发射的<strong>冻冻猫猫爪</strong>无法产生元素微粒，在命中敌人时也无法产生护盾。该效果每3.5秒至多触发一次。",
-      "1": "此外，处于<tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>极星辉域</strong></tooltip>中时，迪奥娜将会进入<strong>辉映·星超导</strong>状态。"
+      "0": "施放元素战技<strong>猫爪冻冻</strong>后的20秒内，队伍中的角色触发星超导、超导、冰元素扩散、星扩散反应时，迪奥娜还会协同发射3枚<strong>冻冻猫猫爪</strong>；通过这种方式发射的<strong>冻冻猫猫爪</strong>无法产生元素微粒，在命中敌人时也无法产生护盾。该效果每3.5秒至多触发一次。",
+      "1": "此外，处于<tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>极星辉域</strong></tooltip>中时/队伍中的角色在附近触发星扩散反应后的8秒内，迪奥娜将分别进入<strong>辉映·星超导</strong>/<strong>辉映·星扩散</strong>状态。"
     }
   },
   "constellation1": {
@@ -194,8 +194,9 @@
       ],
       "2": "<br/>",
       "3": "此外，迪奥娜的生命值上限提升25%。",
-      "4": "<br/>",
-      "5": "<strong>辉映·星超导</strong>：处在<strong>最烈特调</strong>领域内的角色造成的超导、星超导反应伤害提升40%。"
+      "4": "<strong>辉映·星烁</strong>：处于最烈特调领域内的角色造成的对应反应的伤害提高：",
+      "5": "<strong>辉映·星超导</strong>：超导、星超导反应伤害提升40%；",
+      "6": "<strong>辉映·星扩散</strong>：冰元素扩散、星扩散反应伤害提升40%。"
     }
   }
 }

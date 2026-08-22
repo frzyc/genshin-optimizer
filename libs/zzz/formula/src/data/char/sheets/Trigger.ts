@@ -174,9 +174,7 @@ const sheet = register(
     'm2_crit_dmg_',
     teamBuff.combat.crit_dmg_.add(
       cmpGE(char.mindscape, 2, prod(hunters_gaze, percent(dm.m2.crit_dmg_)))
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm6_armor_break_rounds_dmg_',

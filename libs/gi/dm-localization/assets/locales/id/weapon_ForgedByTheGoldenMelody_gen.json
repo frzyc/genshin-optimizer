@@ -1,0 +1,29 @@
+{
+  "name": "Forged by the Golden Melody",
+  "description": {
+    "0": "Pedang besar berhiaskan emas yang konon di masa lampau pernah menjadi senjata andalan seorang Harmost agung."
+  },
+  "passiveName": "Day and Night in Counterpoint",
+  "passiveDescription": {
+    "0": {
+      "0": "Setiap 10 detik, Karakter yang mengenakan akan memainkan \"Harmonic Movement\" dengan efek yang berurutan sebagai berikut: ATK+<cryo>18%</cryo>/Elemental Mastery +<cryo>120</cryo>/DMG reaksi Stellar Glimmer +<cryo>28%</cryo>, setiap efek Harmonic Movement berlangsung selama 10 detik. Efek di atas juga dapat terpicu saat Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran.",
+      "1": "Setelah memicu reaksi Stellar Glimmer, Karakter juga akan mendapatkan efek \"Harmonic Movement: Contrapuntal\" tambahan selama 12 detik yang memiliki efek yang sama dengan Harmonic Movement saat reaksi Stellar Glimmer dipicu. Efek ini dapat ditumpuk dengan efek Harmonic Movement awal dan dapat terpicu sekali setiap 12 detik."
+    },
+    "1": {
+      "0": "Setiap 10 detik, Karakter yang mengenakan akan memainkan Harmonic Movement dengan efek yang berurutan sebagai berikut: ATK+<cryo>22,5%</cryo>/Elemental Mastery +<cryo>150</cryo>/DMG reaksi Stellar Glimmer +<cryo>35%</cryo>, setiap efek Harmonic Movement berlangsung selama 10 detik. Efek di atas juga dapat terpicu saat Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran.",
+      "1": "Setelah memicu reaksi Stellar Glimmer, akan mendapatkan efek \"Harmonic Movement: Contrapuntal\" tambahan selama 12 detik yang memiliki efek yang sama dengan Harmonic Movement saat reaksi Stellar Glimmer dipicu. Efek ini dapat ditumpuk dengan efek Harmonic Movement awal dan dapat terpicu sekali setiap 12 detik."
+    },
+    "2": {
+      "0": "Setiap 10 detik, Karakter yang mengenakan akan memainkan Harmonic Movement dengan efek yang berurutan sebagai berikut: ATK+<cryo>27%</cryo>/Elemental Mastery +<cryo>180</cryo>/DMG reaksi Stellar Glimmer +<cryo>42%</cryo>, setiap efek Harmonic Movement berlangsung selama 10 detik. Efek di atas juga dapat terpicu saat Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran.",
+      "1": "Setelah memicu reaksi Stellar Glimmer, akan mendapatkan efek \"Harmonic Movement: Contrapuntal\" tambahan selama 12 detik yang memiliki efek yang sama dengan Harmonic Movement saat reaksi Stellar Glimmer dipicu. Efek ini dapat ditumpuk dengan efek Harmonic Movement awal dan dapat terpicu sekali setiap 12 detik."
+    },
+    "3": {
+      "0": "Setiap 10 detik, Karakter yang mengenakan akan memainkan Harmonic Movement dengan efek yang berurutan sebagai berikut: ATK+<cryo>31,5%</cryo>/Elemental Mastery +<cryo>210</cryo>/DMG reaksi Stellar Glimmer +<cryo>49%</cryo>, setiap efek Harmonic Movement berlangsung selama 10 detik. Efek di atas juga dapat terpicu saat Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran.",
+      "1": "Setelah memicu reaksi Stellar Glimmer, akan mendapatkan efek \"Harmonic Movement: Contrapuntal\" tambahan selama 12 detik yang memiliki efek yang sama dengan Harmonic Movement saat reaksi Stellar Glimmer dipicu. Efek ini dapat ditumpuk dengan efek Harmonic Movement awal dan dapat terpicu sekali setiap 12 detik."
+    },
+    "4": {
+      "0": "Setiap 10 detik, Karakter yang mengenakan akan memainkan Harmonic Movement dengan efek yang berurutan sebagai berikut: ATK+<cryo>36%</cryo>/Elemental Mastery +<cryo>240</cryo>/DMG reaksi Stellar Glimmer +<cryo>56%</cryo>, setiap efek Harmonic Movement berlangsung selama 10 detik. Efek di atas juga dapat terpicu saat Karakter yang mengenakan ada di dalam party namun sedang tidak berada di medan pertempuran.",
+      "1": "Setelah memicu reaksi Stellar Glimmer, akan mendapatkan efek \"Harmonic Movement: Contrapuntal\" tambahan selama 12 detik yang memiliki efek yang sama dengan Harmonic Movement saat reaksi Stellar Glimmer dipicu. Efek ini dapat ditumpuk dengan efek Harmonic Movement awal dan dapat terpicu sekali setiap 12 detik."
+    }
+  }
+}

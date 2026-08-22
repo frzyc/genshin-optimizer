@@ -1,0 +1,29 @@
+{
+  "setName": "Corazón Forjado",
+  "setEffects": {
+    "2": "ATQ +18%.",
+    "4": "Durante 12 s después de que el portador de este conjunto de artefactos cause una reacción de Destello Estelar o inflija daño de Destello Estelar, su ATQ aumentará en un 12% y el daño de Destello Estelar de todos los personajes cercanos del equipo aumentará en un 50%. Este efecto se puede activar incluso cuando el portador está en tu equipo pero no en uso. Los bonos de daño otorgados por este conjunto de artefactos no se pueden acumular con los de otro conjunto del mismo tipo."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Conjetura del Forjador",
+      "desc": "Él sabía que los vaivenes del corazón humano no son como la temperatura de la forja, cuyos cambios pueden medirse con precisión."
+    },
+    "plume": {
+      "name": "Observación del Forjador",
+      "desc": "Él sabía que el devenir del mundo no es como el color de la forja, cuyo resultado se puede saber con solo pura observación."
+    },
+    "sands": {
+      "name": "Cálculo del Forjador",
+      "desc": "Él sabía que el funcionamiento del poder no es como la energía de la forja, cuyo flujo puede controlarse con un simple interruptor."
+    },
+    "goblet": {
+      "name": "Magnanimidad del Forjador",
+      "desc": "Él sabía que la fugacidad de la amistad no es como el fuego de una forja, pues este no dejará de arder mientras se le suministre combustible."
+    },
+    "circlet": {
+      "name": "Legado del Forjador",
+      "desc": "Él sabía que la firmeza de los sueños no es como la luz de la forja, la cual puede pasarse como una antorcha a un sucesor."
+    }
+  }
+}

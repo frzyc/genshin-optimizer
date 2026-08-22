@@ -5,6 +5,7 @@ import ATeaspoonOfTranscendence from './ATeaspoonOfTranscendence'
 import AThousandBlazingSuns from './AThousandBlazingSuns'
 import BeaconOfTheReedSea from './BeaconOfTheReedSea'
 import BlackcliffSlasher from './BlackcliffSlasher'
+import BladeOfAtonement from './BladeOfAtonement'
 import BloodtaintedGreatsword from './BloodtaintedGreatsword'
 import DebateClub from './DebateClub'
 import EarthShaker from './EarthShaker'
@@ -13,6 +14,7 @@ import FavoniusGreatsword from './FavoniusGreatsword'
 import FerrousShadow from './FerrousShadow'
 import FlameForgedInsight from './FlameForgedInsight'
 import ForestRegalia from './ForestRegalia'
+import ForgedByTheGoldenMelody from './ForgedByTheGoldenMelody'
 import FruitfulHook from './FruitfulHook'
 import GestOfTheMightyWolf from './GestOfTheMightyWolf'
 import KatsuragikiriNagamasa from './KatsuragikiriNagamasa'
@@ -50,6 +52,7 @@ const claymore: Record<WeaponClaymoreKey, WeaponSheet> = {
   AThousandBlazingSuns,
   BeaconOfTheReedSea,
   BlackcliffSlasher,
+  BladeOfAtonement,
   BloodtaintedGreatsword,
   DebateClub,
   EarthShaker,
@@ -58,6 +61,7 @@ const claymore: Record<WeaponClaymoreKey, WeaponSheet> = {
   FerrousShadow,
   FlameForgedInsight,
   ForestRegalia,
+  ForgedByTheGoldenMelody,
   FruitfulHook,
   GestOfTheMightyWolf,
   KatsuragikiriNagamasa,

@@ -1,0 +1,24 @@
+{
+  "name": "Covenant of Frost and Snow",
+  "description": {
+    "0": "Busur yang dibuat untuk menjaga ketertiban. Bercahaya dingin bagai hukum yang paling adil dan tanpa keberpihakan."
+  },
+  "passiveName": "The Law's Equilibrium",
+  "passiveDescription": {
+    "0": {
+      "0": "Setelah Karakter yang mengenakan melancarkan Elemental Skill, Elemental Mastery +<cryo>120</cryo> poin selama 12 detik."
+    },
+    "1": {
+      "0": "Setelah Karakter yang mengenakan melancarkan Elemental Skill, Elemental Mastery +<cryo>150</cryo> poin selama 12 detik."
+    },
+    "2": {
+      "0": "Setelah Karakter yang mengenakan melancarkan Elemental Skill, Elemental Mastery +<cryo>180</cryo> poin selama 12 detik."
+    },
+    "3": {
+      "0": "Setelah Karakter yang mengenakan melancarkan Elemental Skill, Elemental Mastery +<cryo>210</cryo> poin selama 12 detik."
+    },
+    "4": {
+      "0": "Setelah Karakter yang mengenakan melancarkan Elemental Skill, Elemental Mastery +<cryo>240</cryo> poin selama 12 detik."
+    }
+  }
+}

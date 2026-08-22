@@ -91,7 +91,7 @@ export default function characterMatData(): CharacterMatDatas {
     genTalents(
       [...talents, 'burst'],
       proudSkillExcelConfigData[
-        avatarSkillExcelConfigData[burst].proudSkillGroupId
+        avatarSkillExcelConfigData[burst!].proudSkillGroupId
       ]
     )
 
@@ -132,8 +132,8 @@ export default function characterMatData(): CharacterMatDatas {
     const { candSkillDepotIds, skillDepotId, avatarPromoteId } = charData
     const ascension = ascensionData[avatarPromoteId]
 
-    if (candSkillDepotIds.length) {
-      const [_1, pyro, hydro, anemo, _5, geo, electro, dendro] =
+    if (candSkillDepotIds?.length) {
+      const [_1, pyro, hydro, anemo, cryo, geo, electro, dendro] =
         candSkillDepotIds
 
       genMats(
@@ -160,6 +160,11 @@ export default function characterMatData(): CharacterMatDatas {
       genMats(
         ['TravelerPyro'],
         avatarSkillDepotExcelConfigData[pyro],
+        ascension
+      )
+      genMats(
+        ['TravelerCryo'],
+        avatarSkillDepotExcelConfigData[cryo],
         ascension
       )
     } else {

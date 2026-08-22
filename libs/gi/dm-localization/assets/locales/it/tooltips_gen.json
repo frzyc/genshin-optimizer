@@ -12,6 +12,13 @@
       "7": "<cryo>Cryo</cryo>: i DAN da CRIT aumentano di un 20%."
     }
   },
+  "10050002": {
+    "name": "Gelobagliore",
+    "description": {
+      "0": "Un effetto speciale ricevuto quando un cristallo di ghiaccio di una <strong>Stella perforagelo</strong> generata {F#dalla viaggiatrice}{M#dal viaggiatore} colpisce un avversario, o quando {F#la viaggiatrice}{M#il viaggiatore} sferra un <strong>Attacco caricato: Freddo glaciale</strong> dopo aver sbloccato il talento <strong>Permagelo straniero</strong>. Massimo 8 accumuli.",
+      "1": "L'uso del Tripudio elementale <strong>Giavellotto glaciale</strong> consuma tutti gli accumuli di <strong>Gelobagliore</strong> {F#della viaggiatrice}{M#del viaggiatore} per aumentare i DAN inflitti dall'attuale iterazione del Tripudio elementale. Consumare 8 accumuli ne aumenta anche il numero di colpi."
+    }
+  },
   "11120001": {
     "name": "Modalità Refrigerazione",
     "description": {
@@ -50,7 +57,7 @@
   "11130002": {
     "name": "Fondamentali di soccorso",
     "description": {
-      "0": "Massimo 150 punti. Ogni punto di Fondamentali di soccorso di Ifa aumenta di un 1,5% i DAN da Turbinio ed Electrocarica inflitti dai membri vicini del gruppo, e di uno 0,2% i loro DAN da Carica lunare. Questi punti si azzerano quando lo stato di Grazia dell'Anima della Notte di Ifa termina."
+      "0": "Massimo 150 punti. Ogni punto di Fondamentali di soccorso di Ifa aumenta di un 1,5% i DAN da Turbinio ed Electrocarica inflitti dai membri vicini del gruppo, di uno 0,2% i DAN da Carica lunare, e di un 0.24% i DAN da reazione di Turbinio astrale. Questi punti si azzerano quando lo stato di Grazia dell'Anima della Notte di Ifa termina."
     }
   },
   "11130003": {
@@ -100,7 +107,7 @@
   "11130007": {
     "name": "Oltre ogni logica",
     "description": {
-      "0": "Quando i membri del gruppo vicini innescano reazioni di Congelamento, Superconduzione, Turbinio di Cryo o Cristallizzazione di Cryo su un avversario, si genera un Varco nel Vuoto vicino a quest'ultimo. Quest'effetto può attivarsi una volta ogni 2,5 s. Nel campo possono coesistere fino a 3 Varchi nel Vuoto generati da Skirk.",
+      "0": "Quando i membri del gruppo vicini innescano reazioni di Congelamento, Superconduzione, Astroconduzione, Turbinio di Cryo, Turbinio astrale o Cristallizzazione di Cryo su un avversario, si genera un Varco nel Vuoto vicino a quest'ultimo. Quest'effetto può attivarsi una volta ogni 2,5 s. Nel campo possono coesistere fino a 3 Varchi nel Vuoto generati da Skirk.",
       "1": "<br/>",
       "2": "Per assorbire i Varchi nel Vuoto vicini, Skirk può usare i seguenti metodi:",
       "3": [
@@ -432,8 +439,8 @@
       "0": "Il fidato compagno di ogni Cacciastreghe! In determinate condizioni, il Martello Scacciamali viene sottoposto a una Conversione elementale, trasformando tutti i suoi DAN in DAN del tipo elementale corrispondente.",
       "1": "Prune può evocare il Martello Scacciamali sottoposto a Conversione elementale nei seguenti modi.",
       "2": [
-        " Per un certo periodo di tempo dopo aver innescato una reazione di Turbinio su un avversario tramite l'abilità elementale <strong>Din-din-dan! Scampanio Scacciastreghe</strong>, Prune può sferrare l'abilità elementale speciale <strong>Don don! Castigo della strega!</strong>. Usando quest'abilità speciale, il Martello Scacciamali viene convertito nell'altro tipo elementale coinvolto nella suddetta reazione di Turbinio.",
-        " Dopo aver sbloccato il talento d'ascensione \"Verdetto e punizione\", quando la Campana Ammaliastreghe in modalità Caccia innesca un Turbinio su un avversario, evoca un Martello Scacciamali sottoposto alla Conversione elementale corrispondente per attaccare l'avversario."
+        " Per un certo periodo di tempo dopo aver innescato una reazione di Turbinio o di Turbinio astrale su un avversario tramite l'abilità elementale <strong>Din-din-dan! Scampanio Scacciastreghe</strong>, Prune può sferrare l'abilità elementale speciale <strong>Don don! Castigo della strega!</strong>. Usando quest'abilità speciale, il Martello Scacciamali viene convertito nell'altro tipo elementale coinvolto nella suddetta reazione di Turbinio o di Turbinio astrale.",
+        " Dopo aver sbloccato il talento d'ascensione \"Verdetto e punizione\", quando la Campana Ammaliastreghe in modalità Caccia innesca un Turbinio o un Turbinio astrale su un avversario, evoca un Martello Scacciamali sottoposto alla Conversione elementale corrispondente per attaccare l'avversario."
       ]
     }
   },
@@ -454,7 +461,7 @@
     "description": {
       "0": "Una modalità attivata da Fagio quando si usa un attacco caricato.",
       "1": "In questa modalità, Fagio ingaggia gli avversari davanti a sé con una Raffica di fuoco e sparando Raggi condensati a intervalli, infliggendo <cryo>DAN da Cryo ad area</cryo>.",
-      "2": "Nello stato di <strong>Splendore: Astroconduzione</strong>, i Raggi condensati infliggono <cryo>DAN da Cryo ad area</cryo> considerati DAN da Astroconduzione."
+      "2": "Nello stato di <strong>Splendore: Barlume astrale</strong>, i Raggi condensati infliggono <cryo>DAN da Cryo ad area</cryo> considerati DAN da Barlume astrale corrispondenti."
     }
   },
   "11330002": {
@@ -467,6 +474,60 @@
     "name": "Campo astropolare",
     "description": {
       "0": "Quando viene innescata la reazione di Astroconduzione, l'area circostante si trasforma in un <strong>Campo astropolare</strong> per un breve periodo di tempo. Quando determinati personaggi si trovano all'interno di un Campo astropolare, entrano nello stato di <strong>Splendore: Astroconduzione</strong> che conferisce vari effetti positivi alle loro abilità."
+    }
+  },
+  "11400001": {
+    "name": "Lama spirituale",
+    "description": {
+      "0": "A proposito della \"Lama spirituale\""
+    }
+  },
+  "11480001": {
+    "name": "Marchio del cacciatore",
+    "description": {
+      "0": "Un effetto speciale che Alyosha può applicare all'avversario.",
+      "1": "Quando viene applicato a un avversario già affetto dal <strong>Marchio del cacciatore</strong>, quest'ultimo viene <strong>attivato</strong> e rimosso, conferendo a tutti i membri del gruppo nelle vicinanze l'effetto <strong>Precisione del cacciatore</strong>, che aumenta il loro ATT quando sono in campo."
+    }
+  },
+  "11480002": {
+    "name": "Tugarin",
+    "description": {
+      "0": "Il fedele cane da caccia e compagno di Alyosha, che può essere richiamato in campo tramite il Tripudio elementale <strong>Avanzata del cacciatore</strong>.",
+      "1": "Si avvicina periodicamente a un avversario per azzannarlo e attiva i <strong>Marchi del cacciatore</strong> presenti."
+    }
+  },
+  "11500001": {
+    "name": "Controfigura danzante solista",
+    "description": {
+      "0": "Una controfigura psichica di Odette che danza in un duetto insieme a lei. Può essere evocata sul campo tramite la sua abilità elementale o il suo Tripudio elementale.",
+      "1": "Alterna le mosse di danza <strong>Piuma</strong> e <strong>Ala</strong> per attaccare periodicamente gli avversari vicini, infliggendo <cryo>DAN da Cryo ad area</cryo>.",
+      "2": "Sul campo può essere presente non più di una <strong>Controfigura danzante solista</strong> evocata da Odette alla volta.",
+      "3": "<br/>",
+      "4": "Inoltre, quando è presente nelle vicinanze una <strong>Controfigura danzante</strong> evocata da Odette, la sua abilità elementale <strong>Adagio: Danza della Notte fantasma</strong> si trasforma nell'abilità elementale speciale <strong>Adagio: Gran finale dell'alba</strong>."
+    }
+  },
+  "11500002": {
+    "name": "Adagio: Gran finale dell'alba",
+    "description": {
+      "0": "L'abilità elementale speciale di Odette infligge agli avversari vicini <cryo>DAN da Cryo ad area</cryo> nel tempo. Quando il duetto di danza termina, infligge un'ulteriore iterazione di <cryo>DAN da Cryo ad area</cryo> considerati come DAN da Astroconduzione. Durante il duetto, Odette può controllare la direzione dei passi di danza.",
+      "1": "Nello stato di <strong>Splendore: Barlume astrale</strong>, i DAN inflitti al termine del duetto vengono convertiti in <cryo>DAN da Cryo ad area</cryo> del tipo di reazione astrale corrispondente.",
+      "2": "<br/>",
+      "3": "Inoltre, dopo che Odette ha usato la sua abilità elementale speciale <strong>Adagio: Gran finale dell'alba</strong>, se si trova nello stato di <strong>Splendore: Barlume astrale</strong> e la sua <strong>Controfigura danzante</strong> è ancora in campo, i due tipi di mosse di danza della <strong>Controfigura danzante</strong> infliggono anch'essi <cryo>DAN da Cryo ad area</cryo> aggiuntivi del tipo di reazione di Barlume astrale corrispondente."
+    }
+  },
+  "11500003": {
+    "name": "Splendore stupefacente",
+    "description": {
+      "0": "Dopo aver sbloccato il talento d'ascensione \"Rito primaverile della Prescelta\", Odette ottiene un effetto speciale quando evoca la sua <strong>Controfigura danzante solista</strong>.",
+      "1": "Ogni accumulo di <strong>Splendore stupefacente</strong> attivo aumenta i DAN da Barlume astrale del personaggio di un 15%. L'effetto dura finché la sua <strong>Controfigura danzante solista</strong> non esce dal campo o finché Odette non la evoca nuovamente.",
+      "2": "Quando Odette non è in campo, perde 1 accumulo di <strong>Splendore stupefacente</strong> ogni secondo; al tempo stesso, gli altri membri del gruppo vicini ottengono il numero corrispondente di accumuli di <strong>Splendore stupefacente</strong>."
+    }
+  },
+  "11500004": {
+    "name": "Splendore: Barlume astrale",
+    "description": {
+      "0": "Sia <strong>Splendore: Astroconduzione</strong> che <strong>Splendore: Turbinio astrale</strong> sono considerati stati di <strong>Splendore: Barlume astrale</strong>.",
+      "1": "I personaggi possono essere influenzati da un solo stato di Splendore alla volta, e laddove più di uno stato possa essere attivato, <strong>Splendore: Astroconduzione</strong> ha la precedenza."
     }
   }
 }

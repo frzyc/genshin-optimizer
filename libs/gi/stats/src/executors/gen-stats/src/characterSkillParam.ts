@@ -57,6 +57,8 @@ type SkillParamCharacterKey =
   | 'TravelerHydroM'
   | 'TravelerPyroF'
   | 'TravelerPyroM'
+  | 'TravelerCryoF'
+  | 'TravelerCryoM'
 export type SkillParamData = Record<
   SkillParamCharacterKey,
   CharacterSkillParams
@@ -126,10 +128,10 @@ export default function characterSkillParam() {
     parseSkillParams(
       [...keys, 'burst'],
       proudSkillExcelConfigData[
-        avatarSkillExcelConfigData[burst].proudSkillGroupId
+        avatarSkillExcelConfigData[burst!].proudSkillGroupId
       ]
     )
-    if (TextMapEN[avatarSkillExcelConfigData[burst].upgradedDescTextMapHash]) {
+    if (TextMapEN[avatarSkillExcelConfigData[burst!].upgradedDescTextMapHash]) {
       upgradeableSkills.push('burst')
     }
 
@@ -193,9 +195,9 @@ export default function characterSkillParam() {
     const charid: CharacterId = ci as unknown as CharacterId
     const { candSkillDepotIds, skillDepotId } = charData
 
-    if (candSkillDepotIds.length) {
+    if (candSkillDepotIds?.length) {
       //Traveler
-      const [_1, pyro, hydro, anemo, _5, geo, electro, dendro] =
+      const [_1, pyro, hydro, anemo, cryo, geo, electro, dendro] =
         candSkillDepotIds
       const gender = characterIdMap[charid] === 'TravelerF' ? 'F' : 'M'
       genTalentHash(
@@ -221,6 +223,10 @@ export default function characterSkillParam() {
       genTalentHash(
         [`TravelerPyro${gender}`],
         avatarSkillDepotExcelConfigData[pyro]
+      )
+      genTalentHash(
+        [`TravelerCryo${gender}`],
+        avatarSkillDepotExcelConfigData[cryo]
       )
     } else {
       genTalentHash(
@@ -256,10 +262,9 @@ function getDataFromHakushin(key: NonTravelerCharacterKey) {
     passive3: data.Passives[data.Passives.length - 1].ParamList.map((val) => [
       val,
     ]),
-    passive:
-      key === 'Ineffa'
-        ? data.Passives[2].ParamList.map((val) => [val])
-        : undefined,
+    ...(key === 'Ineffa'
+      ? { passive: data.Passives[2].ParamList.map((val) => [val]) }
+      : {}),
     constellation1: data.Constellations[0].ParamList,
     constellation2: data.Constellations[1].ParamList,
     constellation3: data.Constellations[2].ParamList,

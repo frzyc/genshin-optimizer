@@ -140,8 +140,8 @@
   "lockedPassive": {
     "name": "Trésors de choix",
     "description": {
-      "0": "Si un personnage de l'équipe déclenche une réaction de Supraconduction ou d'Astroconduction moins de 20 s après que Diona utilise sa compétence élémentaire <strong>Griffes Cryo</strong>, elle tire de façon coordonnée 3 <strong>griffes de chat Cryo</strong>. Les <strong>griffes de chat Cryo</strong> tirées de cette manière ne génèrent pas de particule, ni ne créent de bouclier en touchant un ennemi. Cet effet peut être déclenché une fois toutes les 3,5 s.",
-      "1": "De plus, Diona passe en <strong>radiance « Astroconduction »</strong> lorsqu'elle est dans une <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>étendue polaris</strong></tooltip>."
+      "0": "Si un personnage de l'équipe déclenche une réaction de Supraconduction, d'Astroconduction, de Dispersion Cryo ou d'Astrodispersion moins de 20 s après que Diona utilise sa compétence élémentaire <strong>Griffes Cryo</strong>, elle tire de façon coordonnée 3 <strong>griffes de chat Cryo</strong>. Les <strong>griffes de chat Cryo</strong> tirées de cette manière ne génèrent pas de particule, ni ne créent de bouclier en touchant un ennemi. Cet effet peut être déclenché une fois toutes les 3,5 s.",
+      "1": "De plus, Diona passe en <strong>radiance « Astroconduction »</strong> ou en <strong>radiance « Astrodispersion »</strong> lorsqu'elle est dans une <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>étendue polaris</strong></tooltip>, ou pendant 8 s lorsqu'un personnage de l'équipe a déclenché une réaction d'Astrodispersion à proximité, respectivement."
     }
   },
   "constellation1": {
@@ -194,7 +194,9 @@
       ],
       "2": "<br/>",
       "3": "De plus, les PV max de Diona augmentent de 25 %.",
-      "4": "<strong>Radiance « Astroconduction »</strong>: Les DGT infligés par les réactions de Supraconduction et d'Astroconduction des personnages à portée de <strong>Cuvée spéciale</strong> augmentent de 40 %."
+      "4": "<strong>Radiance astrale</strong> : Les DGT des réactions correspondantes des personnages à portée de Cuvée spéciale augmentent :",
+      "5": "<strong>Radiance « Astroconduction »</strong> : Les DGT de réaction de Supraconduction et les DGT de réaction d'Astroconduction augmentent de 40 %.",
+      "6": "<strong>Radiance « Astrodispersion »</strong> : Les DGT de réaction de Dispersion Cryo et les DGT de réaction d'Astrodispersion augmentent de 40 %."
     }
   }
 }

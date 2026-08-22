@@ -271,8 +271,7 @@ const sheet = register(
     teamBuff.combat.crit_.add(
       cmpGE(char.mindscape, 6, prod(fieldHitsEnemy, percent(dm.m6.crit_)))
     ),
-    cmpGE(char.mindscape, 6, 'infer', ''),
-    true
+    cmpGE(char.mindscape, 6, 'infer', '')
   )
 )
 export default sheet

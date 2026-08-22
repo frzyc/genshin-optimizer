@@ -173,9 +173,7 @@ const sheet = register(
           percent(-0.85)
         )
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'exSpecial_anom_flat_dmg',
@@ -189,9 +187,7 @@ const sheet = register(
           own.final.anomProf
         )
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'ult_anom_flat_dmg',
@@ -205,17 +201,13 @@ const sheet = register(
           own.final.anomProf
         )
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'core_addl_disorder_',
     teamBuff.combat.addl_disorder_.add(
       exSpecial_used.ifOn(percent(subscript(char.core, dm.core.addl_disorder_)))
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'core_electric_dmg_',
@@ -234,9 +226,7 @@ const sheet = register(
         3,
         basic_hit.ifOn(percent(dm.ability.electric_anomBuildup_))
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm1_anomProf',
@@ -255,9 +245,7 @@ const sheet = register(
     'm4_pen_',
     teamBuff.combat.pen_.add(
       cmpGE(char.mindscape, 4, exposed.ifOn(percent(dm.m4.pen_)))
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm6_exSpecial_dmg_',

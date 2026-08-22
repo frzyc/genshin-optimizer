@@ -226,9 +226,7 @@ const sheet = register(
           )
         )
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'exSpecial_harmony_dmg_',
@@ -239,9 +237,7 @@ const sheet = register(
   ),
   registerBuff(
     'core_hp_',
-    teamBuff.combat.hp_.add(etherVeil.ifOn(percent(dm.core.hp_))),
-    undefined,
-    true
+    teamBuff.combat.hp_.add(etherVeil.ifOn(percent(dm.core.hp_)))
   ),
   registerBuff(
     'core_common_dmg_',
@@ -262,9 +258,7 @@ const sheet = register(
         1,
         darkbreaker.ifOn(percent(dm.ability.crit_dmg_))
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm1_resIgn_',
@@ -274,9 +268,7 @@ const sheet = register(
         1,
         dreamersNurseryRhyme.ifOn(percent(dm.m1.resIgn_))
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff('m2_harmony_dmg_', m2_harmony_dmg_, undefined, false, false),
   registerBuff(
@@ -287,9 +279,7 @@ const sheet = register(
         2,
         darkbreaker.ifOn(etherVeil.ifOn(percent(dm.m2.sheer_dmg_)))
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm6_atk_',

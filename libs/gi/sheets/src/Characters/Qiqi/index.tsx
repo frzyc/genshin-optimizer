@@ -7,7 +7,7 @@ import {
   input,
   percent,
   prod,
-  stellarDmg,
+  stellarDmgNode,
   subscript,
   target,
   unequal,
@@ -101,7 +101,7 @@ const dm = {
   },
 } as const
 
-const [condLockStellarRadianceScPath, condLockStellarRadianceSc] = cond(
+const [condLockStellarRadiancePath, condLockStellarRadiance] = cond(
   key,
   'lockStellarRadianceSc'
 )
@@ -115,12 +115,22 @@ const nodeLkSuperconduct_dmg_ = equal(
   condLockRevelation,
   'on',
   equal(
-    condLockStellarRadianceSc,
+    condLockStellarRadiance,
     'on',
     equal(condLk, 'on', dm.lockedPassive.sc_dmg_)
   )
 )
 const nodeLkStellarconduct_dmg_ = { ...nodeLkSuperconduct_dmg_ }
+const nodeLkSwirl_dmg_ = equal(
+  condLockRevelation,
+  'on',
+  equal(
+    condLockStellarRadiance,
+    'ss',
+    equal(condLk, 'on', dm.lockedPassive.sc_dmg_)
+  )
+)
+const nodeLkStellarswirl_dmg_ = { ...nodeLkSwirl_dmg_ }
 // Values here doesn't exist in skillParam_gen
 const nodeA1HealingBonus_disp = greaterEq(
   input.asc,
@@ -148,7 +158,7 @@ const nodeC2Atk_ = greaterEq(
   equal(
     condLockRevelation,
     'on',
-    equal(condLockStellarRadianceSc, 'on', dm.constellation2.atk_)
+    unequal(condLockStellarRadiance, 'undefined', dm.constellation2.atk_)
   )
 )
 
@@ -212,9 +222,9 @@ const dmgFormulas = {
       condLockRevelation,
       'on',
       equal(
-        condLockStellarRadianceSc,
+        condLockStellarRadiance,
         'on',
-        stellarDmg(
+        stellarDmgNode(
           subscript(input.total.burstIndex, dm.burst.stellarDmg, { unit: '%' }),
           'atk',
           'stellarconduct',
@@ -254,6 +264,8 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       incHeal_: nodeA1HealingBonus,
       superconduct_dmg_: nodeLkSuperconduct_dmg_,
       stellarconduct_dmg_: nodeLkStellarconduct_dmg_,
+      swirl_dmg_: nodeLkSwirl_dmg_,
+      stellarswirl_dmg_: nodeLkStellarswirl_dmg_,
       stellarconduct_dmgInc: nodeC6Stellarconduct_dmgInc,
     },
   },
@@ -441,16 +453,30 @@ const sheet: TalentSheet = {
       },
     }),
     ct.condTem('lockedPassive', {
-      path: condLockStellarRadianceScPath,
-      value: condLockStellarRadianceSc,
+      path: condLockStellarRadiancePath,
+      value: condLockStellarRadiance,
       teamBuff: true,
       canShow: lockRevelation,
-      name: st('elementalReaction.polestar.inside'),
+      name: st('elementalReaction.stellar.radiance'),
       states: {
         on: {
+          name: st('elementalReaction.polestar.inside'),
           fields: [
             {
-              text: st('elementalReaction.gainRadianceSc'),
+              text: st('elementalReaction.stellar.gainRadianceSc'),
+            },
+          ],
+        },
+        ss: {
+          name: st('elementalReaction.stellarswirl'),
+          fields: [
+            {
+              text: st('elementalReaction.stellar.gainRadianceSs'),
+            },
+            {
+              text: stg('duration'),
+              value: 8,
+              unit: 's',
             },
           ],
         },
@@ -463,7 +489,7 @@ const sheet: TalentSheet = {
       canShow: equal(
         condLockRevelation,
         'on',
-        equal(condLockStellarRadianceSc, 'on', 1)
+        unequal(condLockStellarRadiance, 'undefined', 1)
       ),
       name: ct.ch('lockCond'),
       states: {
@@ -474,6 +500,12 @@ const sheet: TalentSheet = {
             },
             {
               node: nodeLkStellarconduct_dmg_,
+            },
+            {
+              node: nodeLkSwirl_dmg_,
+            },
+            {
+              node: nodeLkStellarswirl_dmg_,
             },
           ],
         },

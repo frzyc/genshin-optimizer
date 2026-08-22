@@ -5,7 +5,10 @@ import {
 } from '@genshin-optimizer/common/ui'
 import { evalIfFunc, valueString } from '@genshin-optimizer/common/util'
 import type { AmpReactionKey } from '@genshin-optimizer/gi/consts'
-import { allAmpReactionKeys } from '@genshin-optimizer/gi/consts'
+import {
+  allAmpReactionKeys,
+  allStellarReactionKeys,
+} from '@genshin-optimizer/gi/consts'
 import type {
   IBasicFieldDisplay,
   IFieldDisplay,
@@ -254,9 +257,17 @@ export function NodeFieldDisplay({
     </Box>
   )
 }
+
 export function NodeFieldDisplayText({ node }: { node: CalcResult }) {
-  const { textSuffix, icon, isTeamBuff, variant, name } = resolveInfo(node.info)
+  const { textSuffix, icon, isTeamBuff, variant, subVariant, name } =
+    resolveInfo(node.info)
   const suffixDisplay = textSuffix && <span> {textSuffix}</span>
+  const color =
+    variant !== 'invalid'
+      ? allStellarReactionKeys.includes(variant as any) && subVariant === 'cryo'
+        ? 'stellarcryo'
+        : variant
+      : undefined
   return (
     <Typography
       component="div"
@@ -269,7 +280,7 @@ export function NodeFieldDisplayText({ node }: { node: CalcResult }) {
     >
       {!!isTeamBuff && <GroupsIcon />}
       {icon}
-      <ColorText color={variant !== 'invalid' ? variant : undefined}>
+      <ColorText color={color}>
         {name}
         {suffixDisplay}
       </ColorText>

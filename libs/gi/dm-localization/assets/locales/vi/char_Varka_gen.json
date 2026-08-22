@@ -118,7 +118,7 @@
   "passive2": {
     "name": "Ngọn Cờ Gió Dẫn Đầu",
     "description": {
-      "0": "Khi nhân vật trong đội ở gần kích hoạt phản ứng Khuếch Tán, Varka sẽ nhận được một tầng <strong>Lời Thề Nanh Xanh</strong>, khiến Tấn Công Thường, Trọng Kích, Trọng Kích đặc biệt <strong>Trời Xanh Cắn Xé</strong> và Kỹ Năng Nguyên Tố đặc biệt <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Tứ Phong Trỗi Dậy</strong></tooltip> của Varka sẽ tăng 7.5% sát thương gây ra. Hiệu quả này duy trì 8s, tối đa cộng dồn 4 tầng, mỗi nhân vật mỗi 1s tối đa giúp Varka nhận một tầng <strong>Lời Thề Nanh Xanh</strong> theo cách này."
+      "0": "Khi nhân vật trong đội ở gần kích hoạt phản ứng Khuếch Tán hoặc Tinh-Khuếch Tán, Varka sẽ nhận được một tầng <strong>Lời Thề Nanh Xanh</strong>, khiến Tấn Công Thường, Trọng Kích, Trọng Kích đặc biệt <strong>Trời Xanh Cắn Xé</strong> và Kỹ Năng Nguyên Tố đặc biệt <tooltip ns=tooltips_gen baseKey18=11280002 values=[]><strong>Tứ Phong Trỗi Dậy</strong></tooltip> của Varka sẽ tăng 7.5% sát thương gây ra. Hiệu quả này duy trì 8s, tối đa cộng dồn 4 tầng, mỗi nhân vật mỗi 1s tối đa giúp Varka nhận một tầng <strong>Lời Thề Nanh Xanh</strong> theo cách này."
     }
   },
   "passive3": {
@@ -160,7 +160,7 @@
   "constellation4": {
     "name": "\"Không Ai Cướp Được, Tự Do Ca Hát Của Chúng Ta\"",
     "description": {
-      "0": "Khi Varka kích hoạt phản ứng Khuếch Tán, căn cứ vào loại nguyên tố tham gia phản ứng, tất cả nhân vật trong đội ở gần sẽ nhận 20% buff sát thương <anemo>Nguyên Tố Phong</anemo> và nguyên tố tương ứng, duy trì 10s."
+      "0": "Khi Varka kích hoạt phản ứng Khuếch Tán hoặc Tinh-Khuếch Tán, căn cứ vào loại nguyên tố tham gia phản ứng, tất cả nhân vật trong đội ở gần sẽ nhận 20% buff sát thương <anemo>Nguyên Tố Phong</anemo> và nguyên tố tương ứng, duy trì 10s."
     }
   },
   "constellation5": {

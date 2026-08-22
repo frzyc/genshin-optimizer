@@ -1,0 +1,24 @@
+{
+  "name": "Visión de Jade",
+  "description": {
+    "0": "Un arco largo y fuerte capaz de emitir un brillo onírico incluso en la más profunda de las oscuridades."
+  },
+  "passiveName": "Noche engalanada de velas",
+  "passiveDescription": {
+    "0": {
+      "0": "A excepción del portador de esta arma, por cada personaje que haya en el equipo: con el mismo tipo elemental que el portador, la Maestría Elemental de dicho portador aumenta en <cryo>64</cryo> pts.; con distinto tipo elemental al del portador, el ATQ de dicho portador aumenta en un <cryo>12%</cryo>. Estos dos efectos pueden acumularse hasta 3 veces en total, y el efecto del mismo tipo elemental tendrá prioridad."
+    },
+    "1": {
+      "0": "A excepción del portador de esta arma, por cada personaje que haya en el equipo: con el mismo tipo elemental que el portador, la Maestría Elemental de dicho portador aumenta en <cryo>80</cryo> pts.; con distinto tipo elemental al del portador, el ATQ de dicho portador aumenta en un <cryo>15%</cryo>. Estos dos efectos pueden acumularse hasta 3 veces en total, y el efecto del mismo tipo elemental tendrá prioridad."
+    },
+    "2": {
+      "0": "A excepción del portador de esta arma, por cada personaje que haya en el equipo: con el mismo tipo elemental que el portador, la Maestría Elemental de dicho portador aumenta en <cryo>96</cryo> pts.; con distinto tipo elemental al del portador, el ATQ de dicho portador aumenta en un <cryo>18%</cryo>. Estos dos efectos pueden acumularse hasta 3 veces en total, y el efecto del mismo tipo elemental tendrá prioridad."
+    },
+    "3": {
+      "0": "A excepción del portador de esta arma, por cada personaje que haya en el equipo: con el mismo tipo elemental que el portador, la Maestría Elemental de dicho portador aumenta en <cryo>112</cryo> pts.; con distinto tipo elemental al del portador, el ATQ de dicho portador aumenta en un <cryo>21%</cryo>. Estos dos efectos pueden acumularse hasta 3 veces en total, y el efecto del mismo tipo elemental tendrá prioridad."
+    },
+    "4": {
+      "0": "A excepción del portador de esta arma, por cada personaje que haya en el equipo: con el mismo tipo elemental que el portador, la Maestría Elemental de dicho portador aumenta en <cryo>128</cryo> pts.; con distinto tipo elemental al del portador, el ATQ de dicho portador aumenta en un <cryo>24%</cryo>. Estos dos efectos pueden acumularse hasta 3 veces en total, y el efecto del mismo tipo elemental tendrá prioridad."
+    }
+  }
+}

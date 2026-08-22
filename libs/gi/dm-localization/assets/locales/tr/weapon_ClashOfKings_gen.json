@@ -1,0 +1,24 @@
+{
+  "name": "Kralların Çarpışması",
+  "description": {
+    "0": "Değerli mücevherlerle süslenmiş lüks bir altın kutu. İçinde kumların kralları tarafından çok sevilen bir oyunu barındırır."
+  },
+  "passiveName": "Geceyi Gündüzü Düşünmeden",
+  "passiveDescription": {
+    "0": {
+      "0": "Bir Element Becerisi kullandığında kuşanan karakter \"Tahtanın Kanunları\" etkisi kazanır: Saldırısı <cryo>%20</cryo>, Element Ustalığı ise <cryo>100</cryo> artar. Bu etki 6sn sürer ve 12 saniyede bir tetiklenebilir. Birikmez. Kuşanan karakter bu etki aktifken bir düşmana Yüklü Saldırı ile vurursa etkinin süresi 6sn uzar. Bu etki, bu yöntemle en fazla 6sn uzatılabilir."
+    },
+    "1": {
+      "0": "Bir Element Becerisi kullandığında kuşanan karakter \"Tahtanın Kanunları\" etkisi kazanır: Saldırısı <cryo>%25</cryo>, Element Ustalığı ise <cryo>125</cryo> artar. Bu etki 6sn sürer ve 12 saniyede bir tetiklenebilir. Birikmez. Kuşanan karakter bu etki aktifken bir düşmana Yüklü Saldırı ile vurursa etkinin süresi 6sn uzar. Bu etki, bu yöntemle en fazla 6sn uzatılabilir."
+    },
+    "2": {
+      "0": "Bir Element Becerisi kullandığında kuşanan karakter \"Tahtanın Kanunları\" etkisi kazanır: Saldırısı <cryo>%30</cryo>, Element Ustalığı ise <cryo>150</cryo> artar. Birikmez. Bu etki 6sn sürer ve 12 saniyede bir tetiklenebilir. Kuşanan karakter bu etki aktifken bir düşmana Yüklü Saldırı ile vurursa etkinin süresi 6sn uzar. Bu etki, bu yöntemle en fazla 6sn uzatılabilir."
+    },
+    "3": {
+      "0": "Bir Element Becerisi kullandığında kuşanan karakter \"Tahtanın Kanunları\" etkisi kazanır: Saldırısı <cryo>%35</cryo>, Element Ustalığı ise <cryo>175</cryo> artar. Bu etki 6sn sürer ve 12 saniyede bir tetiklenebilir. Birikmez. Kuşanan karakter bu etki aktifken bir düşmana Yüklü Saldırı ile vurursa etkinin süresi 6sn uzar. Bu etki, bu yöntemle en fazla 6sn uzatılabilir."
+    },
+    "4": {
+      "0": "Bir Element Becerisi kullandığında kuşanan karakter \"Tahtanın Kanunları\" etkisi kazanır: Saldırısı <cryo>%40</cryo>, Element Ustalığı ise <cryo>200</cryo> artar. Bu etki 6sn sürer ve 12 saniyede bir tetiklenebilir. Birikmez. Kuşanan karakter bu etki aktifken bir düşmana Yüklü Saldırı ile vurursa etkinin süresi 6sn uzar. Bu etki, bu yöntemle en fazla 6sn uzatılabilir."
+    }
+  }
+}

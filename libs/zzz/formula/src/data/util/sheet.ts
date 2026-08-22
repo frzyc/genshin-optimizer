@@ -20,6 +20,32 @@ export type DmgTag = Partial<
   Pick<Tag, 'damageType1' | 'damageType2' | 'attribute' | 'skillType'>
 >
 
+/** Entry types that register on `teamBuff.listing` when `team` is omitted. */
+const TEAM_LISTING_ENTRY_TYPES = new Set<Tag['et']>([
+  'teamBuff',
+  'notOwnBuff',
+  'enemy',
+  'enemyDeBuff',
+])
+
+/** UI listing placement (not calc targeting). Explicit `team` overrides inference. */
+function resolveTeamBuffListing(
+  entry: TagMapNodeEntry,
+  team?: boolean
+): boolean {
+  return team ?? TEAM_LISTING_ENTRY_TYPES.has(entry.tag.et)
+}
+
+function getBuffListingRoot(useTeamListing: boolean) {
+  return useTeamListing ? teamBuff : ownBuff
+}
+
+function getDisplayNamedReader(entry: TagMapNodeEntry, name: string) {
+  // Cannot use `sheet: null`; namedReader is also used as a `Tag` in `listingItem`.
+  const { sheet: _sheet, ...tag } = entry.tag
+  return reader.withTag({ ...tag, et: 'display', name })
+}
+
 export function register(
   sheet: Sheet,
   ...data: (TagMapNodeEntry | TagMapNodeEntries)[]
@@ -41,7 +67,7 @@ export function register(
  * @param name Unqiue name of buff
  * @param entries Buff/Buffs to register
  * @param cond Hide this buff behind this check
- * @param team Add to team formula listings if true
+ * @param team Add to team buff listings if true, own buff listings if false, or infer from entry `et` if omitted
  * @param includeOriginalEntry Set to false for buffs that are applied as additional entries into specific moves, so this buff won't get added to the character's stats
  * @returns Listing components to register the buff + the buff itself so it can be passed to `register`.
  */
@@ -49,22 +75,17 @@ export function registerBuff(
   name: string,
   entries: TagMapNodeEntry | TagMapNodeEntry[],
   cond: string | StrNode = 'infer',
-  team = false,
+  team?: boolean,
   includeOriginalEntry = true
 ): TagMapNodeEntries {
   if (!Array.isArray(entries)) entries = [entries]
   return entries.flatMap((entry) => {
-    // Remove unused tags. We cannot use `sheet:null` here because
-    // `namedReader` is also used as a `Tag` inside `listingItem`.
-    const { sheet: _sheet, ...tag } = entry.tag
-    const namedReader = reader.withTag({ ...tag, et: 'display', name }) // register name:<name>
-    const listing = (team ? teamBuff : ownBuff).listing.buffs
+    const namedReader = getDisplayNamedReader(entry, name)
+    const buffListing = getBuffListingRoot(resolveTeamBuffListing(entry, team))
+      .listing.buffs
     return [
-      // Add this buff to listing listing
-      listing.add(listingItem(namedReader, cond)),
-      // Hook for listing
+      buffListing.add(listingItem(namedReader, cond)),
       namedReader.toEntry(entry.value),
-      // Still include the original entry
       ...(includeOriginalEntry ? [entry] : []),
     ]
   })
@@ -77,28 +98,21 @@ export function registerBuff(
  * @param name Unqiue name of buff
  * @param entry Buff to register
  * @param cond Hide this buff behind this check
- * @param team Add to team formula listings if true
+ * @param team Add to team buff listings if true, own buff listings if false, or infer from entry `et` if omitted
  * @returns Listing components to register the buff + the buff itself so it can be passed to `register`.
  */
 export function registerBuffFormula(
   name: string,
   entry: TagMapNodeEntry,
   cond: string | StrNode = 'infer',
-  team = false
+  team?: boolean
 ): TagMapNodeEntries {
-  // Remove unused tags. We cannot use `sheet:null` here because
-  // `namedReader` is also used as a `Tag` inside `listingItem`.
-  const { sheet: _sheet, ...tag } = entry.tag
-  const namedReader = reader.withTag({ ...tag, et: 'display', name }) // register name:<name>
-  const buffListing = (team ? teamBuff : ownBuff).listing.buffs
-  const formulaListing = (team ? teamBuff : ownBuff).listing.formulas
+  const namedReader = getDisplayNamedReader(entry, name)
+  const listingRoot = getBuffListingRoot(resolveTeamBuffListing(entry, team))
   return [
-    // Add this buff to listing listing
-    buffListing.add(listingItem(namedReader, cond)),
-    formulaListing.add(listingItem(namedReader, cond)),
-    // Hook for listing
+    listingRoot.listing.buffs.add(listingItem(namedReader, cond)),
+    listingRoot.listing.formulas.add(listingItem(namedReader, cond)),
     namedReader.toEntry(entry.value),
-    // Still include the original entry
     entry,
   ]
 }

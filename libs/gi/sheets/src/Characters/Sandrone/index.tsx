@@ -1,5 +1,8 @@
-import { objKeyMap, range } from '@genshin-optimizer/common/util'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+import { objKeyMap, objKeyValMap, range } from '@genshin-optimizer/common/util'
+import {
+  allStellarReactionKeys,
+  type CharacterKey,
+} from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   constant,
@@ -13,9 +16,10 @@ import {
   one,
   percent,
   prod,
-  stellarDmg,
+  stellarDmgNode,
   subscript,
   sum,
+  unequal,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
@@ -48,6 +52,7 @@ const dm = {
     sweepDmg: skillParam_gen.auto[a++],
     beamDmg: skillParam_gen.auto[a++],
     beamStellarDmg: skillParam_gen.auto[a++],
+    beamSsDmg: skillParam_gen.auto[skillParam_gen.auto.length - 1],
     overdriveDmg: skillParam_gen.auto[a++],
   },
   plunging: {
@@ -59,6 +64,7 @@ const dm = {
     prismDmg: skillParam_gen.skill[s++],
     prismStellarDmg: skillParam_gen.skill[s++],
     cd: skillParam_gen.skill[s++][0],
+    prismSsDmg: skillParam_gen.skill[s++],
   },
   burst: {
     bombardDmg: skillParam_gen.burst[b++], // x3
@@ -66,6 +72,7 @@ const dm = {
     rayStellarDmg: skillParam_gen.burst[b++],
     cd: skillParam_gen.burst[b++][0],
     enerCost: skillParam_gen.burst[b++][0],
+    raySsDmg: skillParam_gen.burst[b++],
   },
   passive1: {
     prismAddlMult: skillParam_gen.passive1[0][0],
@@ -89,11 +96,13 @@ const dm = {
   constellation4: {
     dmg: skillParam_gen.constellation4[0],
     cd: skillParam_gen.constellation4[1],
+    ssDmg: skillParam_gen.constellation4[2],
   },
   constellation6: {
     dmg: skillParam_gen.constellation6[0],
     dmg2: skillParam_gen.constellation6[1],
     stellarconduct_specialDmg_: skillParam_gen.constellation6[2],
+    ssDmg: skillParam_gen.constellation6[3],
   },
 } as const
 
@@ -101,7 +110,11 @@ const a0_stellarconduct_baseDmg_ = min(
   prod(percent(dm.passive3.base_stellarconduct_dmg_), input.total.atk, 1 / 100),
   percent(dm.passive3.maxBase_stellarconduct_dmg_)
 )
-const [condA0StellarRadianceScPath, condA0StellarRadianceSc] = cond(
+const a0_stellarswirl_baseDmg_ = min(
+  prod(percent(dm.passive3.base_stellarconduct_dmg_), input.total.atk, 1 / 100),
+  percent(dm.passive3.maxBase_stellarconduct_dmg_)
+)
+const [condA0StellarRadiancePath, condA0StellarRadiance] = cond(
   key,
   'a0StellarRadianceSc'
 )
@@ -145,11 +158,14 @@ const a4EleMas = greaterEq(
 )
 
 const [condC1DecodingPath, condC1Decoding] = cond(key, 'c1Decoding')
-const c1Decoding_stellarconduct_dmg_ = greaterEq(
-  input.constellation,
-  1,
-  equal(condC1Decoding, 'on', percent(dm.constellation1.stellarconduct_dmg_))
-)
+const c1Decoding_stellar_dmg_obj = objKeyValMap(allStellarReactionKeys, (k) => [
+  `${k}_dmg_`,
+  greaterEq(
+    input.constellation,
+    1,
+    equal(condC1Decoding, 'on', percent(dm.constellation1.stellarconduct_dmg_))
+  ),
+])
 
 const [condC2StacksPath, condC2Stacks] = cond(key, 'c2Stacks')
 const c2StacksArr = range(1, 3)
@@ -161,9 +177,9 @@ const c2Stacks_beam_critDMG1_ = greaterEq(
 const c2Stacks_beam_critDMG2_ = greaterEq(
   input.constellation,
   2,
-  equal(
-    condA0StellarRadianceSc,
-    'on',
+  unequal(
+    condA0StellarRadiance,
+    undefined,
     lookup(
       condC2Stacks,
       objKeyMap(c2StacksArr, (stack) =>
@@ -174,15 +190,14 @@ const c2Stacks_beam_critDMG2_ = greaterEq(
   )
 )
 
-const c6_stellarconduct_specialDmg_ = greaterEq(
-  input.constellation,
-  6,
-  equal(
-    condA0StellarRadianceSc,
-    'on',
+const c6_stellar_specialDmg_obj = objKeyValMap(allStellarReactionKeys, (k) => [
+  `${k}_specialDmg_`,
+  greaterEq(
+    input.constellation,
+    6,
     percent(dm.constellation6.stellarconduct_specialDmg_)
-  )
-)
+  ),
+])
 
 const beamAddl = {
   ...hitEle.cryo,
@@ -201,14 +216,27 @@ const dmgFormulas = {
     sweepDmg: dmgNode('atk', dm.charged.sweepDmg, 'charged', hitEle.cryo),
     beamDmg: dmgNode('atk', dm.charged.beamDmg, 'charged', beamAddl),
     beamStellarDmg: equal(
-      condA0StellarRadianceSc,
+      condA0StellarRadiance,
       'on',
-      stellarDmg(
+      stellarDmgNode(
         subscript(input.total.autoIndex, dm.charged.beamStellarDmg, {
           unit: '%',
         }),
         'atk',
         'stellarconduct',
+        'cryo',
+        beamAddl
+      )
+    ),
+    beamSsDmg: equal(
+      condA0StellarRadiance,
+      'ss',
+      stellarDmgNode(
+        subscript(input.total.autoIndex, dm.charged.beamStellarDmg, {
+          unit: '%',
+        }),
+        'atk',
+        'stellarswirl',
         'cryo',
         beamAddl
       )
@@ -231,9 +259,9 @@ const dmgFormulas = {
       a1Decoding_prism_mult_
     ),
     prismStellarDmg: equal(
-      condA0StellarRadianceSc,
+      condA0StellarRadiance,
       'on',
-      stellarDmg(
+      stellarDmgNode(
         subscript(input.total.skillIndex, dm.skill.prismStellarDmg, {
           unit: '%',
         }),
@@ -244,14 +272,28 @@ const dmgFormulas = {
         a1Decoding_prism_mult_
       )
     ),
+    prismSsDmg: equal(
+      condA0StellarRadiance,
+      'ss',
+      stellarDmgNode(
+        subscript(input.total.skillIndex, dm.skill.prismSsDmg, {
+          unit: '%',
+        }),
+        'atk',
+        'stellarswirl',
+        'cryo',
+        undefined,
+        a1Decoding_prism_mult_
+      )
+    ),
   },
   burst: {
     bombardDmg: dmgNode('atk', dm.burst.bombardDmg, 'burst'),
     rayDmg: dmgNode('atk', dm.burst.rayDmg, 'burst'),
     rayStellarDmg: equal(
-      condA0StellarRadianceSc,
+      condA0StellarRadiance,
       'on',
-      stellarDmg(
+      stellarDmgNode(
         subscript(input.total.burstIndex, dm.burst.rayStellarDmg, {
           unit: '%',
         }),
@@ -262,19 +304,52 @@ const dmgFormulas = {
         a1Decoding_ray_mult_
       )
     ),
+    raySsDmg: equal(
+      condA0StellarRadiance,
+      'ss',
+      stellarDmgNode(
+        subscript(input.total.burstIndex, dm.burst.raySsDmg, {
+          unit: '%',
+        }),
+        'atk',
+        'stellarswirl',
+        'cryo',
+        undefined,
+        a1Decoding_ray_mult_
+      )
+    ),
   },
   passive3: {
     a0_stellarconduct_baseDmg_,
+    a0_stellarswirl_baseDmg_,
   },
   constellation4: {
-    dmg: greaterEq(
-      input.constellation,
-      4,
-      stellarDmg(
-        percent(dm.constellation4.dmg),
-        'atk',
-        'stellarconduct',
-        'cryo'
+    dmg: equal(
+      condA0StellarRadiance,
+      'on',
+      greaterEq(
+        input.constellation,
+        4,
+        stellarDmgNode(
+          percent(dm.constellation4.dmg),
+          'atk',
+          'stellarconduct',
+          'cryo'
+        )
+      )
+    ),
+    ssDmg: equal(
+      condA0StellarRadiance,
+      'ss',
+      greaterEq(
+        input.constellation,
+        4,
+        stellarDmgNode(
+          percent(dm.constellation4.ssDmg),
+          'atk',
+          'stellarswirl',
+          'cryo'
+        )
       )
     ),
   },
@@ -291,11 +366,29 @@ const dmgFormulas = {
     dmg2: greaterEq(
       input.constellation,
       6,
-      stellarDmg(
-        percent(dm.constellation6.dmg2),
-        'atk',
-        'stellarconduct',
-        'cryo'
+      equal(
+        condA0StellarRadiance,
+        'on',
+        stellarDmgNode(
+          percent(dm.constellation6.dmg2),
+          'atk',
+          'stellarconduct',
+          'cryo'
+        )
+      )
+    ),
+    ssDmg: greaterEq(
+      input.constellation,
+      6,
+      equal(
+        condA0StellarRadiance,
+        'ss',
+        stellarDmgNode(
+          percent(dm.constellation6.ssDmg),
+          'atk',
+          'stellarswirl',
+          'cryo'
+        )
       )
     ),
   },
@@ -307,7 +400,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
   premod: {
     autoBoost: autoC3,
     burstBoost: burstC5,
-    stellarconduct_specialDmg_: c6_stellarconduct_specialDmg_,
+    ...c6_stellar_specialDmg_obj,
   },
   total: {
     eleMas: a4EleMas,
@@ -315,7 +408,8 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
   teamBuff: {
     premod: {
       stellarconduct_baseDmg_: a0_stellarconduct_baseDmg_,
-      stellarconduct_dmg_: c1Decoding_stellarconduct_dmg_,
+      stellarswirl_baseDmg_: a0_stellarswirl_baseDmg_,
+      ...c1Decoding_stellar_dmg_obj,
     },
   },
 })
@@ -353,8 +447,13 @@ const sheet: TalentSheet = {
           }),
         },
         {
-          node: infoMut(dmgFormulas.charged.overdriveDmg, {
+          node: infoMut(dmgFormulas.charged.beamSsDmg, {
             name: ct.chg('auto.skillParams.6'),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.charged.overdriveDmg, {
+            name: ct.chg('auto.skillParams.7'),
           }),
         },
       ],
@@ -404,6 +503,11 @@ const sheet: TalentSheet = {
           }),
         },
         {
+          node: infoMut(dmgFormulas.skill.prismSsDmg, {
+            name: ct.chg('skill.skillParams.2'),
+          }),
+        },
+        {
           text: stg('cd'),
           value: dm.skill.cd,
           unit: 's',
@@ -432,6 +536,11 @@ const sheet: TalentSheet = {
           }),
         },
         {
+          node: infoMut(dmgFormulas.burst.raySsDmg, {
+            name: ct.chg('burst.skillParams.3'),
+          }),
+        },
+        {
           text: stg('cd'),
           value: dm.burst.cd,
           unit: 's',
@@ -448,7 +557,7 @@ const sheet: TalentSheet = {
     ct.condTem('passive1', {
       path: condA1DecodingPath,
       value: condA1Decoding,
-      canShow: equal(condA0StellarRadianceSc, 'on', 1),
+      canShow: unequal(condA0StellarRadiance, undefined, 1),
       name: ct.ch('a1DecodingCond'),
       states: {
         on: {
@@ -467,7 +576,7 @@ const sheet: TalentSheet = {
     ct.condTem('passive1', {
       path: condA1TacticsPath,
       value: condA1Tactics,
-      canShow: equal(condA0StellarRadianceSc, 'on', 1),
+      canShow: unequal(condA0StellarRadiance, undefined, 1),
       name: ct.ch('a1TacticsCond'),
       states: objKeyMap(a1TacticsArr, (stack) => ({
         name: `${stack}`,
@@ -499,17 +608,34 @@ const sheet: TalentSheet = {
         {
           node: a0_stellarconduct_baseDmg_,
         },
+        {
+          node: a0_stellarswirl_baseDmg_,
+        },
       ],
     }),
     ct.condTem('passive3', {
-      path: condA0StellarRadianceScPath,
-      value: condA0StellarRadianceSc,
-      name: st('elementalReaction.polestar.inside'),
+      path: condA0StellarRadiancePath,
+      value: condA0StellarRadiance,
+      name: st('elementalReaction.stellar.radiance'),
       states: {
         on: {
+          name: st('elementalReaction.polestar.inside'),
           fields: [
             {
-              text: st('elementalReaction.gainRadianceSc'),
+              text: st('elementalReaction.stellar.gainRadianceSc'),
+            },
+          ],
+        },
+        ss: {
+          name: st('elementalReaction.stellarswirl'),
+          fields: [
+            {
+              text: st('elementalReaction.stellar.gainRadianceSs'),
+            },
+            {
+              text: stg('duration'),
+              value: 8,
+              unit: 's',
             },
           ],
         },
@@ -524,11 +650,9 @@ const sheet: TalentSheet = {
       teamBuff: true,
       states: {
         on: {
-          fields: [
-            {
-              node: c1Decoding_stellarconduct_dmg_,
-            },
-          ],
+          fields: Object.values(c1Decoding_stellar_dmg_obj).map((node) => ({
+            node,
+          })),
         },
       },
     }),
@@ -547,7 +671,7 @@ const sheet: TalentSheet = {
       path: condC2StacksPath,
       value: condC2Stacks,
       name: ct.ch('c2Cond'),
-      canShow: equal(condA0StellarRadianceSc, 'on', 1),
+      canShow: unequal(condA0StellarRadiance, undefined, 1),
       states: objKeyMap(c2StacksArr, (stack) => ({
         name: `${stack}`,
         fields: [
@@ -569,6 +693,11 @@ const sheet: TalentSheet = {
         {
           node: infoMut(dmgFormulas.constellation4.dmg, {
             name: ct.ch('c4StellarDmg'),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.constellation4.dmg, {
+            name: ct.ch('c4StellarSwirlDmg'),
           }),
         },
         {
@@ -595,15 +724,17 @@ const sheet: TalentSheet = {
             name: ct.ch('c6StellarDmg'),
           }),
         },
+        {
+          node: infoMut(dmgFormulas.constellation6.ssDmg, {
+            name: ct.ch('c6StellarSwirlDmg'),
+          }),
+        },
       ],
     }),
     ct.headerTem('constellation6', {
-      teamBuff: true,
-      fields: [
-        {
-          node: c6_stellarconduct_specialDmg_,
-        },
-      ],
+      fields: Object.values(c6_stellar_specialDmg_obj).map((node) => ({
+        node,
+      })),
     }),
   ]),
 }

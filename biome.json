@@ -60,7 +60,11 @@
           }
         },
         "noVoidTypeReturn": "info",
-        "noUnusedPrivateClassMembers": "off"
+        "noUnusedPrivateClassMembers": "off",
+        "noUnusedImports": {
+          "fix": "safe",
+          "level": "warn"
+        }
       },
       "performance": {
         "noAccumulatingSpread": "off"
@@ -111,6 +115,10 @@
   },
   "assist": {
     "enabled": null,
-    "actions": { "source": { "organizeImports": "on" } }
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
   }
 }

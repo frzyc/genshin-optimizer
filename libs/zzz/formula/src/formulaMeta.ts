@@ -76,9 +76,15 @@ export function bundledFormulaInSheet<T extends { tag?: Tag }>(
   q: AbilityDim
 ): T | undefined {
   if (!sheetFormulas) return undefined
+
   const colonKey = `${hitName}:${q}`
-  if (sheetFormulas[colonKey]) return sheetFormulas[colonKey]
+  const colonEntry = sheetFormulas[colonKey]
+  if (colonEntry) return colonEntry
+
   const bare = sheetFormulas[hitName]
   if (bare?.tag?.q === q) return bare
-  return undefined
+
+  return Object.values(sheetFormulas).find(
+    (entry) => entry.tag?.name === hitName && entry.tag?.q === q
+  )
 }

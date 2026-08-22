@@ -52,11 +52,17 @@ jobs:
       - name: Output date
         id: output-date
         run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
-      # - name: Maintain comment
-      #   uses: actions-cool/maintain-one-comment@v3
-      #   if: github.event_name != 'workflow_dispatch'
-      #   with:
-      #     body: |
-      #       [${{ steps.output-date.outputs.date }}] - Deleted deployment
-      #     body-include: '<!-- Created by actions-cool/maintain-one-comment -->'
-      #     update-mode: 'append'
+      - name: Find Comment
+        uses: peter-evans/find-comment@v3
+        id: fc
+        with:
+          issue-number: ${{ steps.build-info.outputs.deploy_path }}
+          comment-author: 'github-actions[bot]'
+          body-includes: Deployed
+      - name: Create or update comment
+        uses: peter-evans/create-or-update-comment@v5
+        with:
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          issue-number: ${{ steps.build-info.outputs.deploy_path }}
+          body: |
+            [${{ steps.output-date.outputs.date }}] - Deleted deployment

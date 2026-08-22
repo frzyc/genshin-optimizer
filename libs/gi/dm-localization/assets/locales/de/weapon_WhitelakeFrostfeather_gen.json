@@ -1,0 +1,24 @@
+{
+  "name": "Winterfeder des weißen Sees",
+  "description": {
+    "0": "Ein Langschwert, so leicht wie die sanften Federn eines Schneeschwans, das sich zu jeder Zeit seine makellose Reinheit bewahrt."
+  },
+  "passiveName": "Letzter Akt des Tanzes des Schneeschwans",
+  "passiveDescription": {
+    "0": {
+      "0": "Verleiht dem Träger, wenn dieser einen Gegner mit der Elementarfähigkeit trifft, „Klage der Seefarbe“: Erhöht den ANG 8 s lang um <cryo>8 %</cryo>, bis zu 3-fach stapelbar, 0,1 s Abklingzeit. Die Wirkungsdauer jeder Stapelung ist unabhängig. Erhöht bei 3 vorhandenen Stapelungen den Kritischen Schaden durch die Stellarfunkeln-Reaktion des Trägers um <cryo>50 %</cryo>. Stellt beim Auslösen der Stellarfunkeln-Reaktion oder Verursachen von Schaden damit dem Träger zudem <cryo>4</cryo> Punkte Elementarenergie wieder her. Der oben genannte Wiederherstellungseffekt hat eine Abklingzeit von 3,5 s und kann auch ausgelöst werden, wenn der Träger inaktiv ist."
+    },
+    "1": {
+      "0": "Verleiht dem Träger, wenn dieser einen Gegner mit der Elementarfähigkeit trifft, „Klage der Seefarbe“: Erhöht den ANG 8 s lang um <cryo>10 %</cryo>, bis zu 3-fach stapelbar, 0,1 s Abklingzeit. Die Wirkungsdauer jeder Stapelung ist unabhängig. Erhöht bei 3 vorhandenen Stapelungen den Kritischen Schaden durch die Stellarfunkeln-Reaktion des Trägers um <cryo>65 %</cryo>. Stellt beim Auslösen der Stellarfunkeln-Reaktion oder Verursachen von Schaden damit dem Träger zudem <cryo>4,5</cryo> Punkte Elementarenergie wieder her. Der oben genannte Wiederherstellungseffekt hat eine Abklingzeit von 3,5 s und kann auch ausgelöst werden, wenn der Träger inaktiv ist."
+    },
+    "2": {
+      "0": "Verleiht dem Träger, wenn dieser einen Gegner mit der Elementarfähigkeit trifft, „Klage der Seefarbe“: Erhöht den ANG 8 s lang um <cryo>12 %</cryo>, bis zu 3-fach stapelbar, 0,1 s Abklingzeit. Die Wirkungsdauer jeder Stapelung ist unabhängig. Erhöht bei 3 vorhandenen Stapelungen den Kritischen Schaden durch die Stellarfunkeln-Reaktion des Trägers um <cryo>80 %</cryo>. Stellt beim Auslösen der Stellarfunkeln-Reaktion oder Verursachen von Schaden damit dem Träger zudem <cryo>5</cryo> Punkte Elementarenergie wieder her. Der oben genannte Wiederherstellungseffekt hat eine Abklingzeit von 3,5 s und kann auch ausgelöst werden, wenn der Träger inaktiv ist."
+    },
+    "3": {
+      "0": "Verleiht dem Träger, wenn dieser einen Gegner mit der Elementarfähigkeit trifft, „Klage der Seefarbe“: Erhöht den ANG 8 s lang um <cryo>14 %</cryo>, bis zu 3-fach stapelbar, 0,1 s Abklingzeit. Die Wirkungsdauer jeder Stapelung ist unabhängig. Erhöht bei 3 vorhandenen Stapelungen den Kritischen Schaden durch die Stellarfunkeln-Reaktion des Trägers um <cryo>95 %</cryo>. Stellt beim Auslösen der Stellarfunkeln-Reaktion oder Verursachen von Schaden damit dem Träger zudem <cryo>5,5</cryo> Punkte Elementarenergie wieder her. Der oben genannte Wiederherstellungseffekt hat eine Abklingzeit von 3,5 s und kann auch ausgelöst werden, wenn der Träger inaktiv ist."
+    },
+    "4": {
+      "0": "Verleiht dem Träger, wenn dieser einen Gegner mit der Elementarfähigkeit trifft, „Klage der Seefarbe“: Erhöht den ANG 8 s lang um <cryo>16 %</cryo>, bis zu 3-fach stapelbar, 0,1 s Abklingzeit. Die Wirkungsdauer jeder Stapelung ist unabhängig. Erhöht bei 3 vorhandenen Stapelungen den Kritischen Schaden durch die Stellarfunkeln-Reaktion des Trägers um <cryo>110 %</cryo>. Stellt beim Auslösen der Stellarfunkeln-Reaktion oder Verursachen von Schaden damit dem Träger zudem <cryo>6</cryo> Punkte Elementarenergie wieder her. Der oben genannte Wiederherstellungseffekt hat eine Abklingzeit von 3,5 s und kann auch ausgelöst werden, wenn der Träger inaktiv ist."
+    }
+  }
+}
