@@ -5,22 +5,23 @@ import type {
 } from '@genshin-optimizer/gi/consts'
 import { input } from '../formula'
 import type { Data, NumNode } from '../type'
-import { one, sum } from '../utils'
+import { infoMut, one, sum } from '../utils'
 import { transMulti1 } from './multi'
-import { specialReactionDmg } from './special'
+import { specialReactionDmgNode } from './special'
 
-type StellarVariants = {
+export type StellarVariants = {
   stellarconduct: 'electro' | 'cryo'
+  stellarswirl: 'anemo' | 'cryo'
 }
-export function stellarDmg(
+export function stellarDmgNode<Variant extends StellarReactionKey>(
   multiplier: NumNode,
   base: 'reaction' | MainStatKey | SubstatKey,
-  variant: StellarReactionKey,
-  eleVariant: StellarVariants[typeof variant],
+  variant: Variant,
+  eleVariant: StellarVariants[Variant],
   additional: Data = {},
   specialMultiplier?: NumNode
 ) {
-  return specialReactionDmg(
+  const node = specialReactionDmgNode(
     multiplier,
     base,
     variant,
@@ -29,6 +30,9 @@ export function stellarDmg(
     specialMultiplier,
     eleVariant
   )
+  if (eleVariant === 'cryo') {
+    return infoMut(node, { subVariant: 'cryo' })
+  } else return node
 }
 
 function stellarDmgMultiplier(
@@ -38,6 +42,8 @@ function stellarDmgMultiplier(
   if (base === 'reaction') return transMulti1
   switch (variant) {
     case 'stellarconduct':
+      return sum(one, input.total[`${variant}_mult_`])
+    case 'stellarswirl':
       return sum(one, input.total[`${variant}_mult_`])
   }
 }

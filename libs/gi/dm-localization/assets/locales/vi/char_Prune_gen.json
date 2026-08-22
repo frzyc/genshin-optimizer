@@ -46,10 +46,10 @@
     "name": "Reng Reng - Âm Thanh Săn Ma",
     "description": {
       "0": "Với quyết tâm đánh bại ma nữ \"tà ác\" và giải cứu Descartes, giải phóng sức mạnh của gió nào! Prune dùng Búa Săn Tai Ương gõ vào Chuông Nhử Phù Thủy, gây <anemo>Sát Thương Nguyên Tố Phong</anemo>.",
-      "1": "Nếu Prune kích hoạt phản ứng Khuếch Tán lên kẻ địch thông qua lần tấn công này, thì trong 6s tiếp theo, <strong>Reng Reng - Âm Thanh Săn Ma</strong> sẽ được thay thế bằng <strong>Leng Keng - Trừng Phạt Ác Ma</strong>.",
+      "1": "Nếu Prune kích hoạt phản ứng Khuếch Tán hoặc Tinh-Khuếch Tán lên kẻ địch thông qua lần tấn công này, thì trong 6s tiếp theo, <strong>Reng Reng - Âm Thanh Săn Ma</strong> sẽ được thay thế bằng <strong>Leng Keng - Trừng Phạt Ác Ma</strong>.",
       "2": "<br/>",
       "3": "<strong>Leng Keng - Trừng Phạt Ác Ma</strong>",
-      "4": "Lấy Loại Nguyên Tố tham gia phản ứng Khuếch Tán trước đó cuốn quanh chiếc búa, chuyển hóa nguyên tố của <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Búa Săn Tai Ương</strong></tooltip>. Khi nhấn thi triển, Prune sẽ nhảy lên và đá Búa Săn Tai Ương về phía trước, gây Sát Thương Nguyên Tố tương ứng lên kẻ địch trước mặt."
+      "4": "Lấy Loại Nguyên Tố tham gia phản ứng Khuếch Tán hoặc Tinh-Khuếch Tán trước đó cuốn quanh chiếc búa, chuyển hóa nguyên tố của <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Búa Săn Tai Ương</strong></tooltip>. Khi nhấn thi triển, Prune sẽ nhảy lên và đá Búa Săn Tai Ương về phía trước, gây Sát Thương Nguyên Tố tương ứng lên kẻ địch trước mặt."
     },
     "skillParams": {
       "0": "Sát thương Reng Reng - Âm Thanh Săn Ma",
@@ -108,7 +108,7 @@
   "passive1": {
     "name": "Phán Quyết Truy Cứu",
     "description": {
-      "0": "Trong Kỹ Năng Nộ <strong><tooltip ns=char_Prune_gen baseKey18=burst>Chuông Reo - Thời Khắc Săn Ma</tooltip></strong>, sau khi Chuông Nhử Phù Thủy ở chế độ \"Săn Lùng\" gây sát thương lên kẻ địch, nếu lần sát thương này kích hoạt phản ứng Khuếch Tán, sẽ triệu hồi một <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Búa Săn Tai Ương</strong></tooltip> được chuyển hóa nguyên tố theo phản ứng Khuếch Tán lần này ở trước mặt kẻ địch và đập xuống, gây Sát Thương Nguyên Tố tương ứng bằng 150% Tấn Công của Prune. Sát thương này được xem là sát thương Kỹ Năng Nộ."
+      "0": "Trong Kỹ Năng Nộ <strong><tooltip ns=char_Prune_gen baseKey18=burst>Chuông Reo - Thời Khắc Săn Ma</tooltip></strong>, sau khi Chuông Nhử Phù Thủy ở chế độ \"Săn Lùng\" gây sát thương lên kẻ địch, nếu lần sát thương này kích hoạt phản ứng Khuếch Tán hoặc Tinh-Khuếch Tán, sẽ triệu hồi một <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>Búa Săn Tai Ương</strong></tooltip> được chuyển hóa nguyên tố theo phản ứng Khuếch Tán hoặc Tinh-Khuếch Tán lần này ở trước mặt kẻ địch và đập xuống, gây Sát Thương Nguyên Tố tương ứng bằng 150% Tấn Công của Prune. Sát thương này được xem là sát thương Kỹ Năng Nộ."
     }
   },
   "passive2": {
@@ -129,7 +129,7 @@
       "0": "Sau khi hoàn thành <strong>Bài Tập Của Ma Nữ - Về Chuyện Bác Bỏ</strong>, Prune sẽ trở thành nhân vật <strong>Hexerei</strong>. Khi đội hình có ít nhất 2 nhân vật Hexerei, sẽ nhận được hiệu quả <strong>Hexerei - Nghi Thức Bí Mật</strong>, giúp nhân vật Hexerei nhận được cường hóa.",
       "1": "<br/>",
       "2": "<strong>Hexerei - Nghi Thức Bí Mật</strong>",
-      "3": "Sau khi nhân vật Hexerei đang áp dụng Tiếng Chuông Khích Lệ trong đội kích hoạt phản ứng nguyên tố bất kỳ lên kẻ địch, bản thân Prune sẽ tăng 60% Tấn Công trong 5s. Nếu phản ứng do nhân vật này kích hoạt là phản ứng Khuếch Tán, thì nhân vật đó sẽ còn tăng thêm 30% Tấn Công trong 5s."
+      "3": "Sau khi nhân vật Hexerei đang áp dụng Tiếng Chuông Khích Lệ trong đội kích hoạt phản ứng nguyên tố bất kỳ lên kẻ địch, bản thân Prune sẽ tăng 60% Tấn Công trong 5s. Nếu phản ứng do nhân vật này kích hoạt là phản ứng Khuếch Tán hoặc Tinh-Khuếch Tán, thì nhân vật đó sẽ còn tăng thêm 30% Tấn Công trong 5s."
     }
   },
   "constellation1": {

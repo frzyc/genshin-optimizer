@@ -40,16 +40,14 @@ const sheet = registerWengine(
     teamBuff.combat.atk_.add(
       cmpSpecialtyAndEquipped(key, percent(subscript(phase, dm.atk_)))
     ),
-    showSpecialtyAndEquipped(key),
-    true
+    showSpecialtyAndEquipped(key)
   ),
   registerBuff(
     'passive_hp_',
     teamBuff.combat.hp_.add(
       cmpSpecialtyAndEquipped(key, percent(subscript(phase, dm.hp_)))
     ),
-    showSpecialtyAndEquipped(key),
-    true
+    showSpecialtyAndEquipped(key)
   ),
   registerBuff(
     'cond_crit_dmg_',
@@ -59,8 +57,7 @@ const sheet = registerWengine(
         activateExtendEtherVeil.ifOn(percent(subscript(phase, dm.crit_dmg_)))
       )
     ),
-    showSpecialtyAndEquipped(key),
-    true
+    showSpecialtyAndEquipped(key)
   )
 )
 export default sheet

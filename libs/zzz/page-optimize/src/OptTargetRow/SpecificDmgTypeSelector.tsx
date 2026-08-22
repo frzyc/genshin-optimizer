@@ -1,5 +1,10 @@
-import type { SpecificDmgTypeKey } from '@genshin-optimizer/zzz/db'
-import { getTeamFrame0, specificDmgTypeKeys } from '@genshin-optimizer/zzz/db'
+import {
+  type SpecificDmgTypeKey,
+  getTeamFrame0,
+  isGenericDmgInstTarget,
+  specificDmgTypeKeys,
+  withInstDamageType1,
+} from '@genshin-optimizer/zzz/db'
 import {
   useCharacterContext,
   useDatabaseContext,
@@ -17,16 +22,11 @@ export function SpecificDmgTypeSelector() {
     (dmgType?: SpecificDmgTypeKey) =>
       database.teams.setFrame0(character.key, (frame) => {
         const { tag: oldTarget = {} } = frame
-        const { damageType1, ...oTarget } = oldTarget
-        if (!dmgType) return { tag: oTarget }
-        return {
-          tag: { ...oTarget, damageType1: dmgType },
-        }
+        return { tag: withInstDamageType1(oldTarget, dmgType) }
       }),
     [database.teams, character.key]
   )
-  if (target?.name !== 'standardDmgInst' && target?.name !== 'sheerDmgInst')
-    return null
+  if (!isGenericDmgInstTarget(target?.name)) return null
   return (
     <DmgTypeDropdown
       dmgType={target?.damageType1 as SpecificDmgTypeKey}

@@ -172,9 +172,7 @@ const sheet = register(
       directStrike.ifOn(
         directStrikeCheck(subscript(char.core, dm.core.direct_strike_atk))
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'core_vanguard_crit_dmg_',
@@ -184,9 +182,7 @@ const sheet = register(
           percent(subscript(char.core, dm.core.direct_strike_crit_dmg_))
         )
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'core_dmg_',
@@ -241,9 +237,7 @@ const sheet = register(
     'm2_vanguard_defIgn_',
     notOwnBuff.combat.defIgn_.add(
       cmpGE(char.mindscape, 2, besiegeDisplay(percent(dm.m2.besiege_defIgn_)))
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm2_basic_dmg_',

@@ -1,0 +1,24 @@
+{
+  "name": "Exaiphanes Kılıcı",
+  "description": {
+    "0": "Bir zamanlar yıldızların ışığıyla parlayan bir uzun kılıç. Yolcunun elindeyken geçmiş çağlarla hiçbir bağlantısı kalmamış yepyeni bir ışığa bürünür."
+  },
+  "passiveName": "Gezginin Yolu",
+  "passiveDescription": {
+    "0": {
+      "0": "Gezgin bunu kuşandığında, bir düşmana vurduğunda <cryo>8</cryo> saniyeliğine Saldırısı <cryo>%16</cryo> artar. Aynı zamanda <cryo>3</cryo> Element Enerjisi yeniler. Bu etki her <cryo>5</cryo> saniyede bir ve karakter alanda olmasa da tetiklenebilir."
+    },
+    "1": {
+      "0": "Gezgin bunu kuşandığında etkileşime girdiği her Element başına Kritik Hasarı %6 artar. Ayrıca Gezgin bir düşmana saldırıp isabet ettirdiğinde 8 saniyeliğine Saldırısı <cryo>%20</cryo> artar ve <cryo>3</cryo> Element Enerjisi yeniler. Bu etki her 5 saniyede bir ve karakter alanda olmasa da tetiklenebilir."
+    },
+    "2": {
+      "0": "Gezgin bunu kuşandığında etkileşime girdiği her Element başına Kritik Hasarı %6 artar. Ayrıca Gezgin bir düşmana saldırıp isabet ettirdiğinde 8 saniyeliğine Saldırısı <cryo>%24</cryo> artar ve <cryo>5</cryo> Element Enerjisi yeniler. Bu etki her 5 saniyede bir ve karakter alanda olmasa da tetiklenebilir."
+    },
+    "3": {
+      "0": "Gezgin bunu kuşandığında etkileşime girdiği her Element başına Kritik Hasarı %6 artar. Ayrıca Gezgin bir düşmana saldırıp isabet ettirdiğinde 8 saniyeliğine Saldırısı <cryo>%32</cryo> artar ve <cryo>5</cryo> Element Enerjisi yeniler. Bu etki her 5 saniyede bir ve karakter alanda olmasa da tetiklenebilir."
+    },
+    "4": {
+      "0": "Gezgin bunu kuşandığında etkileşime girdiği her Element başına Kritik Hasarı %6 artar. Ayrıca Gezgin bir düşmana saldırıp isabet ettirdiğinde 8 saniyeliğine Saldırısı <cryo>%40</cryo> artar ve <cryo>5</cryo> Element Enerjisi yeniler. Bu etki her 5 saniyede bir ve karakter alanda olmasa da tetiklenebilir."
+    }
+  }
+}

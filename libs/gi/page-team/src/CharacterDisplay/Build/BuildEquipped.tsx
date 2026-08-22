@@ -38,18 +38,19 @@ export function BuildEquipped({
     }
   }, [active, database, teamId, teamCharId, onChangeBuild])
   const onDupe = () =>
-    database.teamChars.newBuild(teamCharId, {
+    database.builds.new({
+      characterKey,
       name: t('buildEqCard.copy.nameReal'),
       artifactIds: equippedArtifacts,
       weaponId: equippedWeapon,
+      srcTeamCharId: teamCharId,
     })
-  const weaponTypeKey = getCharStat(characterKey).weaponType
   const copyToTc = () => {
-    const newBuildTcId = database.teamChars.newBuildTcFromBuild(
-      teamCharId,
-      weaponTypeKey,
+    const newBuildTcId = database.buildTcs.newFromBuild(
+      characterKey,
       database.weapons.get(equippedWeapon),
-      Object.values(equippedArtifacts).map((id) => database.arts.get(id))
+      Object.values(equippedArtifacts).map((id) => database.arts.get(id)),
+      teamCharId
     )
     if (!newBuildTcId) return
     // copy over name

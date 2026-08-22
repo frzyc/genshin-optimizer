@@ -162,9 +162,7 @@ const sheet = register(
           )
         )
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'ability_ice_dmg_',
@@ -183,9 +181,7 @@ const sheet = register(
     'm4_ice_resRed_',
     enemyDebuff.common.resRed_.ice.add(
       cmpGE(char.mindscape, 4, flyTheFlagHit.ifOn(percent(dm.m4.ice_resRed_)))
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff('m6_common_dmg_', m6_dmg_, undefined, undefined, false)
 )

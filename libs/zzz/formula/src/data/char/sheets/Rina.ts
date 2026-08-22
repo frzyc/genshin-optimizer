@@ -104,9 +104,7 @@ const sheet = register(
           )
         )
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'ability_electric_dmg_',
@@ -119,9 +117,7 @@ const sheet = register(
         3,
         shocked_enemy.ifOn(percent(dm.ability.electric_dmg_))
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'm2_common_dmg_',
@@ -143,9 +139,7 @@ const sheet = register(
         6,
         exSpecial_chain_ult_hit.ifOn(percent(dm.m6.electric_dmg_))
       )
-    ),
-    undefined,
-    true
+    )
   )
 )
 export default sheet

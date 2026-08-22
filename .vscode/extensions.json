@@ -1,7 +1,7 @@
 {
   "recommendations": [
     "nrwl.angular-console",
-    "firsttris.vscode-jest-runner",
+    "vitest.explorer",
     "biomejs.biome"
   ]
 }

@@ -1,0 +1,24 @@
+{
+  "name": "Fonte ignea",
+  "description": {
+    "0": "Una spada lunga interamente forgiata con pietre preziose, si dice che sia stata forgiata per il sentiero della rettitudine. Una volta sguainata, risplende del bagliore di una fiamma blu."
+  },
+  "passiveName": "Fuoco stellare sulla neve",
+  "passiveDescription": {
+    "0": {
+      "0": "Innescare una reazione elementale aumenta l'ATT del personaggio che equipaggia l'arma di un <cryo>16%</cryo> per 12 s. Innescare una reazione di Barlume astrale aumenta i DAN inflitti dalle reazioni di Barlume astrale del personaggio di un <cryo>16%</cryo> per 12 s. Gli effetti sopracitati possono attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "1": {
+      "0": "Innescare una reazione elementale aumenta l'ATT del personaggio che equipaggia l'arma di un <cryo>20%</cryo> per 12 s. Innescare una reazione di Barlume astrale aumenta i DAN inflitti dalle reazioni di Barlume astrale del personaggio di un <cryo>20%</cryo> per 12 s. Gli effetti sopracitati possono attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "2": {
+      "0": "Innescare una reazione elementale aumenta l'ATT del personaggio che equipaggia l'arma di un <cryo>24%</cryo> per 12 s. Innescare una reazione di Barlume astrale aumenta i DAN inflitti dalle reazioni di Barlume astrale del personaggio di un <cryo>24%</cryo> per 12 s. Gli effetti sopracitati possono attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "3": {
+      "0": "Innescare una reazione elementale aumenta l'ATT del personaggio che equipaggia l'arma di un <cryo>28%</cryo> per 12 s. Innescare una reazione di Barlume astrale aumenta i DAN inflitti dalle reazioni di Barlume astrale del personaggio di un <cryo>28%</cryo> per 12 s. Gli effetti sopracitati possono attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    },
+    "4": {
+      "0": "Innescare una reazione elementale aumenta l'ATT del personaggio che equipaggia l'arma di un <cryo>32%</cryo> per 12 s. Innescare una reazione di Barlume astrale aumenta i DAN inflitti dalle reazioni di Barlume astrale del personaggio di un <cryo>32%</cryo> per 12 s. Gli effetti sopracitati possono attivarsi anche quando il personaggio che equipaggia l'arma non è in campo."
+    }
+  }
+}

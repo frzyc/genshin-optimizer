@@ -1,0 +1,29 @@
+{
+  "setName": "Prova Escarlate",
+  "setEffects": {
+    "2": "ATQ +18%",
+    "4": "Ao desencadear uma Reação de Redemoinho Estelar, aumenta a Taxa CRIT do portador em 16% e o Dano da Reação de Redemoinho Estelar causada por ele em 40% por 10s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Devoção Honrada",
+      "desc": "Um adereço vermelho. Glorioso como o fogo."
+    },
+    "plume": {
+      "name": "Glória ao Seu Legado",
+      "desc": "Uma pena vermelha. Um presente para sangue jovem."
+    },
+    "sands": {
+      "name": "Presente do Tempo",
+      "desc": "Um relógio de bolso vermelho. Registra o tempo de uma conversa."
+    },
+    "goblet": {
+      "name": "Cálice do Sangue e Sofrimento",
+      "desc": "Uma garrafa de vinho vermelha. Espero que você não saiba o que está dentro."
+    },
+    "circlet": {
+      "name": "Prova de Fé",
+      "desc": "Um capacete vermelho. Mas quem deve proteger?"
+    }
+  }
+}

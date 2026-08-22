@@ -1,0 +1,191 @@
+{
+  "name": "Odette",
+  "title": "วายุร่ายหิมะระบำ",
+  "description": "นักเต้นบัลเลต์ชื่อดังแห่ง Snezhnaya ดอกไม้อันเหน็บหนาวที่เบ่งบานท่ามกลางน้ำแข็งและหิมะ",
+  "constellationName": "Cygnus Olor",
+  "auto": {
+    "name": "Snow Swan Variation",
+    "fields": {
+      "normal": {
+        "0": "<strong>โจมตีปกติ</strong>",
+        "1": "โจมตีด้วยดาบต่อเนื่องมากสุด 5 ครั้ง"
+      },
+      "charged": {
+        "0": "<strong>ชาร์จโจมตี</strong>",
+        "1": "ใช้พลังกายส่วนหนึ่ง เพื่อปลดปล่อยการฟาดฟันอันน่าทึ่งไปข้างหน้า"
+      },
+      "plunging": {
+        "0": "<strong>โจมตีพุ่งลงจากอากาศ</strong>",
+        "1": "กระโจนจากกลางอากาศลงมายังพื้นดิน เพื่อโจมตีศัตรูที่อยู่ในเส้นทางการโจมตี โดยจะสร้างความเสียหายวงกว้างเมื่อลงถึงพื้น"
+      }
+    },
+    "skillParams": {
+      "0": "ความเสียหายขั้น 1",
+      "1": "ความเสียหายขั้น 2",
+      "2": "ความเสียหายขั้น 3",
+      "3": "ความเสียหายขั้น 4",
+      "4": "ความเสียหายขั้น 5",
+      "5": "ความเสียหายชาร์จโจมตี",
+      "6": "ชาร์จโจมตีใช้พลังกาย",
+      "7": "ความเสียหายพุ่งลง",
+      "8": "ความเสียหายพุ่งถึงพื้นจากที่ต่ำ/สูง",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Adagio: Phantom Night Dancers",
+    "description": {
+      "0": "แสดงท่วงท่าการเต้นรำอันนุ่มนวล สร้าง<cryo>ความเสียหายน้ำแข็งวงกว้าง</cryo> และอัญเชิญ<tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>เงาระบำเดี่ยว</strong></tooltip>ของตนออกมา",
+      "1": "หากบนสนามมี<strong>เงาระบำเดี่ยว</strong> ที่ Odette อัญเชิญออกมาด้วยตนเองอยู่ จะทำการอัญเชิญใหม่ และรีเซ็ตระยะเวลาต่อเนื่อง",
+      "2": "<br/>",
+      "3": "<strong>เงาระบำเดี่ยว</strong>",
+      "4": "แสดงท่วงท่าการเต้นรำ<strong>สะบัดขนนก</strong> และ<strong>ปีกหมุนวน</strong>สลับกันไปมา เพื่อทำการโจมตีศัตรูที่อยู่ใกล้เคียงเป็นระยะ ด้วยท่วงท่าที่สง่างามและพลิ้วไหว สร้าง<cryo>ความเสียหายน้ำแข็งวงกว้าง</cryo>",
+      "5": "นอกจากนี้ ภายใน 6 วินาทีหลังจากปล่อยสกิลธาตุ <strong>Adagio: Phantom Night Dancers</strong> สกิลธาตุ <strong>Adagio: Phantom Night Dancers</strong> ของ Odette จะถูกเปลี่ยนเป็นสกิลธาตุพิเศษ <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Adagio: Coda at Dawn's Tolling</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11500004 values=[]></tooltip> เพื่อร่วมเต้นรำและสร้าง<cryo>ความเสียหายน้ำแข็งวงกว้าง</cryo>อย่างต่อเนื่องแก่ศัตรูที่อยู่ใกล้เคียง และเมื่อการร่วมเต้นรำสิ้นสุดลง จะสร้าง<cryo>ความเสียหายน้ำแข็งวงกว้าง</cryo> ซึ่งถือเป็นความเสียหายของปฏิกิริยานำไฟฟ้าดารา หรือกระจายดารา 1 ครั้ง"
+    },
+    "skillParams": {
+      "0": "ความเสียหายสกิล",
+      "1": "ความเสียหายต่อเนื่องของ Coda at Dawn's Tolling",
+      "2": "ความเสียหายนำไฟฟ้าดารา/กระจายดารา ของ Coda at Dawn's Tolling",
+      "3": "ความเสียหายท่าสะบัดขนนก",
+      "4": "ความเสียหายนำไฟฟ้าดารา/กระจายดารา ของท่าสะบัดขนนก",
+      "5": "ความเสียหายท่าปีกหมุนวน",
+      "6": "ความเสียหายนำไฟฟ้าดารา/กระจายดารา ของท่าปีกหมุนวน",
+      "7": "คูลดาวน์ Coda at Dawn's Tolling",
+      "8": "ระยะเวลาของเงาระบำเดี่ยว",
+      "9": "คูลดาวน์",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Presto: Bluebird Finale",
+    "description": {
+      "0": "ร่ายรำด้วยท่วงท่าอันรวดเร็ว สร้าง<cryo>ความเสียหายน้ำแข็งวงกว้าง</cryo>หลายครั้ง อัญเชิญ<tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>เงาระบำเดี่ยว</strong></tooltip>ของตนเองออกมา และได้รับ <strong>Snow Swan's Dream</strong>: เพิ่มความเสียหายปฏิกิริยาประกายดาวที่ Odette สร้างขึ้น",
+      "1": "นอกจากนี้ ภายใน 6 วินาทีหลังจากปล่อยท่าไม้ตาย <strong>Presto: Bluebird Finale</strong> สกิลธาตุของ Odette <strong>Adagio: Phantom Night Dancers</strong> จะถูกเปลี่ยนเป็นสกิลธาตุพิเศษ <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Adagio: Coda at Dawn's Tolling</strong></tooltip><tooltip ns=tooltips_gen baseKey18=11500004 values=[]></tooltip>",
+      "2": "<br/>",
+      "3": "หากในสนามมีเงาระบำเดี่ยวที่ Odette อัญเชิญออกมา มันจะถูกเรียกมาอยู่ข้างกาย และรีเซ็ตช่วงเวลาต่อเนื่องของมัน"
+    },
+    "skillParams": {
+      "0": "ความเสียหายจากการฟัน",
+      "1": "ความเสียหายการฟันครั้งสุดท้าย",
+      "2": "เพิ่มความเสียหายปฏิกิริยาประกายดาว ของ Snow Swan's Dream",
+      "3": "ระยะเวลาของ Snow Swan's Dream",
+      "4": "ระยะเวลาของเงาระบำเดี่ยว",
+      "5": "คูลดาวน์",
+      "6": "พลังงานธาตุ",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Spring Rite of the Chosen One",
+    "description": {
+      "0": "เมื่อ Odette อัญเชิญ<tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>เงาระบำเดี่ยว</strong></tooltip> จะได้รับ <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Marvelous Splendor</strong></tooltip> 4 ชั้น"
+    }
+  },
+  "passive2": {
+    "name": "Pathetique of Pateticheskaya",
+    "description": {
+      "0": "สำหรับพลังโจมตีของ Odette ทุก 100 หน่วยที่เกินจาก 1,000 หน่วย จะทำให้ Odette สร้างความเสียหายปฏิกิริยาประกายดาวเพิ่มขึ้นอีก 1.5% ของความเสียหายเดิม โดยสามารถสร้างความเสียหายด้วยวิธีนี้ได้มากสุด 30% ของความเสียหายเดิม"
+    }
+  },
+  "passive3": {
+    "name": "Stellar Jubilee: Dance of Aurore",
+    "description": {
+      "0": "เมื่ออยู่ใน<tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>เขตแดนดาราฉาย</strong></tooltip> / ภายใน 8 วินาทีหลังจากตัวละครในทีมทำให้เกิดปฏิกิริยากระจายดาราในบริเวณใกล้เคียง Odette จะเข้าสู่สถานะ <strong>เจิดจรัส: นำไฟฟ้าดารา</strong> / <strong>เจิดจรัส: กระจายดารา</strong> ตามลำดับ",
+      "1": "เมื่อตัวละครในทีมทำให้เกิดปฏิกิริยานำไฟฟ้า / กระจายธาตุน้ำแข็ง จะเปลี่ยนเป็นการทำให้เกิดปฏิกิริยานำไฟฟ้าดารา / กระจายดาราแทน และเพิ่มความเสียหายพื้นฐานของปฏิกิริยาดังกล่าว ที่สร้างโดยตัวละครในทีม ตามพลังโจมตีของ Odette: พลังโจมตีทุก 100 หน่วย จะเพิ่มความเสียหายพื้นฐานของปฏิกิริยาดังกล่าว 0.7% โดยสามารถเพิ่มความเสียหายด้วยวิธีนี้ได้สูงสุด 14%"
+    }
+  },
+  "passive": {
+    "name": "Echo of Winter Daydreams",
+    "description": {
+      "0": "แสดงตำแหน่ง<strong>ของพิเศษเฉพาะในพื้นที่ Snezhnaya</strong> บนมินิแมป",
+      "1": "การซ้อมเต้นรำในเวลาว่าง ยังอาจทำให้เกิดเอฟเฟกต์อื่น ๆ อีกด้วย..."
+    }
+  },
+  "constellation1": {
+    "name": "\"On This Danceless Morn, She Gazes at Her Reflection\"",
+    "description": {
+      "0": "หลังจากใช้สกิลธาตุพิเศษ <tooltip ns=tooltips_gen baseKey18=11500002 values=[]><strong>Adagio: Coda at Dawn's Tolling</strong></tooltip> เมื่อการเต้นรำร่วมสิ้นสุดลง Odette จะสร้าง<cryo>ความเสียหายน้ำแข็งวงกว้าง</cryo>แก่ศัตรูที่อยู่ใกล้เคียงเพิ่มอีก 1 ครั้ง โดยความเสียหายนี้ถือเป็น:",
+      "1": [
+        "<strong>เจิดจรัส: นำไฟฟ้าดารา</strong> หรือไม่อยู่ในสถานะเจิดจรัส: ความเสียหายนำไฟฟ้าดารา เท่ากับ 300% ของพลังโจมตีของ Odette;",
+        "<strong>เจิดจรัส: กระจายดารา</strong>: ความเสียหายกระจายดารา เท่ากับ 450% ของพลังโจมตีของ Odette"
+      ],
+      "2": "<br/>",
+      "3": "นอกจากนี้ พรสวรรค์เพิ่มเติม \"Spring Rite of the Chosen One\" จะได้รับการเสริมพลัง: เมื่ออัญเชิญ <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>เงาระบำเดี่ยว</strong></tooltip> Odette จะได้รับ <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Marvelous Splendor</strong></tooltip> เพิ่มเติมอีก 2 ชั้น และเมื่อ Odette อยู่นอกสนาม ความเร็วในการลบล้าง <strong>Marvelous Splendor</strong> จะเพิ่มขึ้นเป็น 2 ชั้นต่อวินาที"
+    }
+  },
+  "constellation2": {
+    "name": "\"I Must See the Snow Swan's Unseen Dream for Myself, She Thought\"",
+    "description": {
+      "0": "พรสวรรค์เพิ่มเติม \"Spring Rite of the Chosen One\" ได้รับการเสริมพลัง: <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Marvelous Splendor</strong></tooltip> แต่ละชั้นจะทำให้พลังโจมตี ของตัวละครเพิ่มขึ้น 7%",
+      "1": "นอกจากนี้ เมื่อ <tooltip ns=tooltips_gen baseKey18=11500001 values=[]><strong>เงาระบำเดี่ยว</strong></tooltip> อยู่ในสนาม หาก Odette อยู่ในสถานะ <tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>เจิดจรัส: ประกายดาว</strong></tooltip> ความต้านทานธาตุที่เกี่ยวข้อง ของศัตรูที่อยู่ใกล้กับ<strong>เงาระบำเดี่ยว</strong> จะลดลง 20%:",
+      "2": [
+        "<strong>เจิดจรัส: นำไฟฟ้าดารา</strong>: <cryo>ธาตุน้ำแข็ง</cryo> และ <electro>ธาตุไฟฟ้า</electro>;",
+        "<strong>เจิดจรัส: กระจายดารา</strong>: <cryo>ธาตุน้ำแข็ง</cryo> และ <anemo>ธาตุลม</anemo>"
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "\"I'll Chase the Shouting Wind Along, Climbing Alone As I Go\"",
+    "description": {
+      "0": "เพิ่มเลเวลสกิลของสกิลธาตุ <strong><tooltip ns=char_Odette_gen baseKey18=skill>Adagio: Phantom Night Dancers</tooltip> </strong> ขึ้น 3 ระดับ",
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
+    }
+  },
+  "constellation4": {
+    "name": "\"Up, Up the Long, Delirious, Burning Blue\"",
+    "description": {
+      "0": "ท่าไม้ตาย <strong>Presto: Bluebird Finale</strong> ได้รับการเสริมพลัง: เมื่อ Odette ได้รับ <strong>Snow Swan's Dream</strong> จะทำให้ความเสียหายปฏิกิริยาประกายดาว ที่เกิดจากตัวละครอื่นในทีมที่อยู่ใกล้เคียงเพิ่มขึ้น โดยค่าที่เพิ่มขึ้นเท่ากับ 50% ของเอฟเฟกต์ <strong>Snow Swan's Dream</strong>",
+      "1": "<br/>",
+      "2": "นอกจากนี้ เมื่อตัวละครในทีมสร้างความเสียหายปฏิกิริยาประกายดาวแก่ศัตรู Odette จะทำการโจมตีประสานใส่ศัตรูหนึ่งครั้ง สร้าง<cryo>ความเสียหายน้ำแข็งวงกว้าง</cryo> หนึ่งครั้ง โดยทุก 3.5 วินาที จะเกิดขึ้นได้มากสุดหนึ่งครั้ง ซึ่งความเสียหายดังกล่าวจะถือเป็น:",
+      "3": [
+        "<strong>เจิดจรัส: นำไฟฟ้าดารา</strong> หรือไม่อยู่ในสถานะเจิดจรัส: ความเสียหายนำไฟฟ้าดารา เท่ากับ 66% ของพลังโจมตีของ Odette;",
+        "<strong>เจิดจรัส: กระจายดารา</strong>: ความเสียหายกระจายดารา เท่ากับ 99% ของพลังโจมตีของ Odette"
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "\"Oh! I Have Slipped the Surly Bonds of Earth\"",
+    "description": {
+      "0": "เพิ่มเลเวลสกิลของท่าไม้ตาย <strong><tooltip ns=char_Odette_gen baseKey18=burst>Presto: Bluebird Finale</tooltip></strong> ขึ้น 3 ระดับ",
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
+    }
+  },
+  "constellation6": {
+    "name": "\"Put Out My Hand, and Touched the Face of the Divine\"",
+    "description": {
+      "0": "พรสวรรค์เพิ่มเติม \"Spring Rite of the Chosen One\" ได้รับการเสริมพลัง: เมื่อ Odette มอบ <tooltip ns=tooltips_gen baseKey18=11500003 values=[\"0.15\",\"1\"]><strong>Marvelous Splendor</strong></tooltip> ให้แก่ตัวละครทั้งหมดในทีมที่อยู่ใกล้เคียง Marvelous Splendor ของตนเองจะไม่ลดลงอีก",
+      "1": "นอกจากนี้ ตัวละครที่ได้รับผลของ <strong>Marvelous Splendor</strong> ความเสียหายปฏิกิริยาประกายดาวที่สร้างต่อศัตรูจะได้รับการ<tooltip ns=tooltips_gen baseKey18=11190007 values=[]><strong>ยกระดับ</strong></tooltip> 25% และความเสียหายปฏิกิริยาประกายดาวที่ Odette สร้างต่อศัตรู จะได้รับการยกระดับเพิ่มเติมอีก 20%"
+    }
+  }
+}

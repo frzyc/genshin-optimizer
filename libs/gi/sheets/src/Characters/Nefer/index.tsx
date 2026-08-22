@@ -8,7 +8,7 @@ import {
   infoMut,
   input,
   lookup,
-  lunarDmg,
+  lunarDmgNode,
   min,
   naught,
   one,
@@ -240,7 +240,7 @@ const dmgFormulas = {
     nefer2Dmg: threshold(
       input.constellation,
       6,
-      lunarDmg(
+      lunarDmgNode(
         sum(percent(dm.constellation6.nefer2Dmg), c1_ppLunarbloom_addlMv),
         'eleMas',
         'lunarbloom',
@@ -256,7 +256,7 @@ const dmgFormulas = {
         'skill'
       )
     ),
-    shade1Dmg: lunarDmg(
+    shade1Dmg: lunarDmgNode(
       sum(
         subscript(input.total.skillIndex, dm.skill.shade1, { unit: '%' }),
         c1_ppLunarbloom_addlMv
@@ -266,7 +266,7 @@ const dmgFormulas = {
       undefined,
       a1VeilStacks_pp_mult_
     ),
-    shade2Dmg: lunarDmg(
+    shade2Dmg: lunarDmgNode(
       sum(
         subscript(input.total.skillIndex, dm.skill.shade2, { unit: '%' }),
         c1_ppLunarbloom_addlMv
@@ -276,7 +276,7 @@ const dmgFormulas = {
       undefined,
       a1VeilStacks_pp_mult_
     ),
-    shade3Dmg: lunarDmg(
+    shade3Dmg: lunarDmgNode(
       sum(
         subscript(input.total.skillIndex, dm.skill.shade3, { unit: '%' }),
         c1_ppLunarbloom_addlMv
@@ -303,7 +303,7 @@ const dmgFormulas = {
     dmg: greaterEq(
       input.constellation,
       6,
-      lunarDmg(
+      lunarDmgNode(
         sum(percent(dm.constellation6.dmg2), c1_ppLunarbloom_addlMv),
         'eleMas',
         'lunarbloom',

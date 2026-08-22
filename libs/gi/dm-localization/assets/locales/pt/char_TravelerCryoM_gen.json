@@ -1,0 +1,187 @@
+{
+  "auto": {
+    "name": "Gelo Estrangeiro",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza até 5 golpes rápidos."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina para desferir 2 golpes rápidos com a espada."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE no impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano do 5° Golpe",
+      "5": "Dano de Ataque Carregado",
+      "6": "Consumo de Stamina de Ataque Carregado",
+      "7": "Dano Durante a Queda",
+      "8": "Dano de Queda de Baixa/Alta Altitude",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Lâmina da Neblina Gelada",
+    "description": {
+      "0": "Perfura o oponente com a arma, que libera uma neblina gelada, causando <cryo>Dano Cryo</cryo> em frente e formando um condensado de Estrela do Gelo Feroz ao seu lado.",
+      "1": "<br/>",
+      "2": "<strong>Estrela do Gelo Feroz</strong>",
+      "3": [
+        " Segue o personagem da equipe e periodicamente dispara um ataque de Cristal Cryo contra os inimigos próximos, causando <cryo>Dano Cryo</cryo>."
+      ],
+      "4": "<strong>Brilho Reluzente: Supercondutor Estelar</strong>: Estrela do Gelo Feroz não disparará mais os Cristais Cryo periodicamente, mas quando o Ataque Normal, Carregado ou Imersivo d{F#a}{M#o} Viajante atingir um inimigo, dispara um Cristal Cryo para realizar um Ataque Coordenado contra o inimigo. Pode ser desencadeado uma vez a cada 0.2s",
+      "5": [
+        " Quando o Cristal Cryo atingir um inimigo, {F#a}{M#o} Viajante acumula 1 de <tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>Brilho Gélido</strong></tooltip>. Pode ser acumulado até 8 vezes.",
+        " Quando não está em combate, <strong>Brilho Gélido</strong> será removido depois de 30s."
+      ],
+      "6": "<br/>",
+      "7": "<i>Você e Paimon observaram junt{F#as}{M#os} a condensação da névoa.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Dano de Cristal Cryo",
+      "2": "Duração de Estrela do Gelo Feroz",
+      "3": "Recarga",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Dardo Gelado",
+    "description": {
+      "0": "Gera dardos de gelo com o poder de Cryo, e então os joga nos inimigos para causar <cryo>Dano Cryo</cryo> várias vezes.",
+      "1": "Ao lançar, {F#a}{M#o} Viajante consumirá todos os acúmulos de <tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>Brilho Gélido</strong></tooltip> para aumentar o Dano de Supremo dessa instância. Se consumir 8 acúmulos de <strong>Brilho Gélido</strong>, aumentará o número de instâncias de Dano causadas pelos dardos arremessados.",
+      "2": "<br/>",
+      "3": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Brilho Reluzente: Brilho Estelar</strong></tooltip>: Dano da instância atual do Supremo é mudado para <cryo>Dano Cryo</cryo> da reação de Brilho Estelar correspondente.",
+      "4": "<br/>",
+      "5": "<i>Você e Paimon sentiram a lâmina penetrante do gelo.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Dardo de Gelo por Golpe",
+      "1": "Aumento de Dano de Brilho Gélido",
+      "2": "Dano do Dardo de Gelo do Supercondutor Estelar",
+      "3": "Aumento de Dano de Supercondutor Estelar de Brilho Gélido",
+      "4": "Dano do Dardo de Gelo do Redemoinho Estelar",
+      "5": "Aumento de Dano de Redemoinho Estelar de Brilho Gélido",
+      "6": "Número de Golpes",
+      "7": "Golpes Adicionais de Brilho Gélido no Acúmulo Máximo",
+      "8": "Tempo de Recarga",
+      "9": "Energia Elemental",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Gelo Eternamente Afiado",
+    "description": {
+      "0": "<strong>Brilho Reluzente: Supercondutor Estelar</strong>: na duração de <strong>Estrela do Gelo Feroz</strong>, o Ataque Normal, Carregado e Imersivo d{F#a}{M#o} Viajante serão convertidos para <cryo>Dano Cryo</cryo> que não pode ser substituído, e aumenta o Dano causado em 80% do ATQ d{F#a}{M#o} Viajante."
+    }
+  },
+  "passive2": {
+    "name": "Gelo Translúcido",
+    "description": {
+      "0": "Aumenta a Proficiência Elemental d{F#a}{M#o} Viajante em 8% de seu ATQ. É possível aumentar sua Proficiência Elemental em até 160 dessa forma."
+    }
+  },
+  "passive3": {
+    "name": "Bênção das Estrelas: Espelho Ilusório Gelado",
+    "description": {
+      "0": "Quando estiver dentro de um <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Campo da Estrela Polar</strong></tooltip> nos 8s após um personagem próximo da equipe desencadear Redemoinho Estelar, {F#a}{M#o} Viajante entrará respectivamente nos estados <strong>Brilho Reluzente: Supercondutor Estelar</strong>/<strong>Brilho Reluzente: Redemoinho Estelar</strong>.",
+      "1": "Quando um personagem desencadear Supercondutor/Redemoinho Cryo, converterá para desencadear Supercondutor Estelar/Redemoinho Estelar, e aumenta o Dano Básico dessa reação com base no ATQ d{F#a}{M#o} Viajante: cada 100 de ATQ aumenta o Dano Básico em 0.35%. É possível acumular até 7% dessa forma."
+    }
+  },
+  "lockedPassive": {
+    "name": "Gelo Profundo Forasteiro",
+    "description": {
+      "0": "Retira sua nova força e poder de suas viagens passadas. Cada instância de Ressonância Elemental que ocorreu agora fornece um <tooltip ns=tooltips_gen baseKey18=10050001 values=[]><strong>efeito de fortalecimento</strong></tooltip> adicional.",
+      "1": "<br/>",
+      "2": "Além disso, quando um membro próximo da equipe causar Dano de Supercondutor Estelar ou Redemoinho Estelar, {F#a}{M#o} Viajante ganha 1 acúmulo de Lâmina Gelada. 1 acúmulo de Lâmina Gelada pode ser obtido a cada 2s dessa forma. Máximo de 3 acúmulos. Quando {F#a}{M#o} lançar um Ataque Carregado com 3 acúmulos de Lâmina Gelada, todos os acúmulos são consumidos para mudar o ataque para o especial <strong>Ataque Carregado: Concentração de Gelo</strong>.",
+      "3": "<br/>",
+      "4": "<strong>Ataque Carregado: Concentração de Gelo</strong>",
+      "5": [
+        " O <cryo>Dano Cryo</cryo> causado é aumentado em 140% do ATQ d{F#a}{M#o} Viajante, e {F#a}{M#o} ganha 2 acúmulos de <tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>Brilho Gélido</strong></tooltip>.",
+        " <strong>Ataque Carregado: Concentração de Gelo</strong> pode ser lançado uma vez a cada 15s. Além disso, o bônus de Dano do Talento de Ascensão \"Gelo Eternamente Afiado\" não é aplicado ao <strong>Ataque Carregado: Concentração de Gelo</strong>."
+      ],
+      "6": "<tooltip ns=tooltips_gen baseKey18=11500004 values=[]><strong>Brilho Reluzente: Brilho Estelar</strong></tooltip>: Dano do <strong>Ataque Carregado: Concentração de Gelo</strong> é alterado para <cryo>Dano Cryo</cryo> do tipo de Brilho Estelar correspondente."
+    }
+  },
+  "constellation1": {
+    "name": "Congelamento Sombrio",
+    "description": {
+      "0": "Quando {F#a}{M#o} Viajante causar Dano de Brilho Estelar, regenera 5 de Energia Elemental para si. Pode ser desencadeado uma vez a cada 0.5s."
+    }
+  },
+  "constellation2": {
+    "name": "Reverberação Gelada",
+    "description": {
+      "0": "Quando o <strong>Cristal Cryo</strong> disparado pela Habilidade Elemental <strong><tooltip ns=char_TravelerCryoM_gen baseKey18=skill>Lâmina da Neblina Gelada</tooltip></strong> atingir um inimigo, aumenta a Proficiência Elemental do personagem ativo em 60 por 5s.",
+      "1": "Além disso, se o personagem sob esse efeito desencadear uma reação de Brilho Estelar, ou causar Dano de Brilho Estelar, aumenta sua Proficiência Elemental em 120 na duração desse efeito."
+    }
+  },
+  "constellation3": {
+    "name": "Fragmento Glacial",
+    "description": {
+      "0": "Aumenta o nível do Supremo <strong><tooltip ns=char_TravelerCryoM_gen baseKey18=burst>Dardo Gelado</tooltip></strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Gelo Persistente",
+    "description": {
+      "0": "Prolonga a duração da <strong>Estrela do Gelo Feroz</strong> criada pela Habilidade Elemental <strong><tooltip ns=char_TravelerCryoM_gen baseKey18=skill>Lâmina da Neblina Gelada</tooltip></strong> em 25%."
+    }
+  },
+  "constellation5": {
+    "name": "Neblina Glacial",
+    "description": {
+      "0": "Aumenta o nível da Habilidade Elemental <strong><tooltip ns=char_TravelerCryoM_gen baseKey18=skill>Lâmina da Neblina Gelada</tooltip></strong> em 3 níveis. ",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Bruma Glacial",
+    "description": {
+      "0": "Ao lançar o Supremo <strong><tooltip ns=char_TravelerCryoM_gen baseKey18=burst>Dardo Gelado</tooltip></strong>, cada acúmulo de <tooltip ns=tooltips_gen baseKey18=10050002 values=[]><strong>Brilho Gélido</strong></tooltip> consumido aumenta o Dano causado de Brilho Estelar pelos outros personagens em 5%. É possível aumentar o Dano até 40% dessa forma por 15s."
+    }
+  }
+}

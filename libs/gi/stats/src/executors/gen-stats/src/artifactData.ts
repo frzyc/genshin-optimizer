@@ -55,7 +55,9 @@ function getDataFromHakushin(key: ArtifactSetKey) {
   const stats: ArtifactDataGen = {
     setNum: data.Need,
     rarities: data.Rank,
-    slots: Object.keys(data.Parts).map((part) => artifactSlotMap[part]),
+    slots: (Object.keys(data.Parts) as Array<keyof typeof artifactSlotMap>).map(
+      (part) => artifactSlotMap[part]
+    ),
   }
   return stats
 }

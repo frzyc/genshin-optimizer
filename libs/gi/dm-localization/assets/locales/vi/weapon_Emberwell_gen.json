@@ -1,0 +1,24 @@
+{
+  "name": "Ngọn Nguồn Dẫn Lửa",
+  "description": {
+    "0": "Thanh kiếm dài có thân làm từ đá quý, tương truyền được rèn ra vì con đường chính nghĩa, khi rút khỏi vỏ sẽ tỏa ra ánh sáng của ngọn lửa màu xanh lam."
+  },
+  "passiveName": "Lửa Tinh Tú Cháy Trên Tuyết Nguyên",
+  "passiveDescription": {
+    "0": {
+      "0": "Kích hoạt phản ứng nguyên tố sẽ tăng <cryo>16%</cryo> Tấn Công cho người trang bị trong 12s; Kích hoạt phản ứng Tinh Tú Lấp Lánh, người trang bị sẽ tăng <cryo>16%</cryo> sát thương phản ứng Tinh Tú Lấp Lánh trong 12s. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "1": {
+      "0": "Kích hoạt phản ứng nguyên tố sẽ tăng <cryo>20%</cryo> Tấn Công cho người trang bị trong 12s; Kích hoạt phản ứng Tinh Tú Lấp Lánh, người trang bị sẽ tăng <cryo>20%</cryo> sát thương phản ứng Tinh Tú Lấp Lánh trong 12s. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "2": {
+      "0": "Kích hoạt phản ứng nguyên tố sẽ tăng <cryo>24%</cryo> Tấn Công cho người trang bị trong 12s; Kích hoạt phản ứng Tinh Tú Lấp Lánh, người trang bị sẽ tăng <cryo>24%</cryo> sát thương phản ứng Tinh Tú Lấp Lánh trong 12s. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "3": {
+      "0": "Kích hoạt phản ứng nguyên tố sẽ tăng <cryo>28%</cryo> Tấn Công cho người trang bị trong 12s; Kích hoạt phản ứng Tinh Tú Lấp Lánh, người trang bị sẽ tăng <cryo>28%</cryo> sát thương phản ứng Tinh Tú Lấp Lánh trong 12s. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    },
+    "4": {
+      "0": "Kích hoạt phản ứng nguyên tố sẽ tăng <cryo>32%</cryo> Tấn Công cho người trang bị trong 12s; Kích hoạt phản ứng Tinh Tú Lấp Lánh, người trang bị sẽ tăng <cryo>32%</cryo> sát thương phản ứng Tinh Tú Lấp Lánh trong 12s. Người trang bị không ra trận cũng có thể kích hoạt hiệu quả nêu trên."
+    }
+  }
+}

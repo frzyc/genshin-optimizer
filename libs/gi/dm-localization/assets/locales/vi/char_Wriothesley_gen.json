@@ -137,7 +137,7 @@
     "name": "Oan Khuất Sẽ Phơi Bày",
     "description": {
       "0": "<strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>: Hiệu quả của thiên phú đột phá \"Ngày Biện Hộ Cho Công Lý\" sẽ thay đổi thành:",
-      "1": "Khi HP của Wriothesley thấp hơn 60% sẽ nhận được \"Ân Điển Trách Phạt - Sáng Tỏ\", cường hóa đòn Trọng Kích của <strong>Tấn Công Thường - Liệt Sương Quyền</strong> lần sau thành Cú Đấm Huy Hoàng: Không tiêu hao thể lực, sau khi đánh trúng sẽ hồi phục một lượng HP tương đương 30% HP tối đa cho Wriothesley, mỗi 2s tối đa hồi phục một lần HP cho Wriothesley theo cách này.",
+      "1": "Khi HP của Wriothesley thấp hơn 60% sẽ nhận được \"Ân Điển Trách Phạt - Sáng Tỏ\", cường hóa đòn Trọng Kích của <strong>Tấn Công Thường - Liệt Sương Quyền</strong> mà anh ấy thực hiện thành Cú Đấm Huy Hoàng: Không tiêu hao thể lực, sau khi đánh trúng sẽ hồi phục một lượng HP tương đương 30% HP tối đa cho Wriothesley, mỗi 2s tối đa hồi phục một lần HP cho Wriothesley theo cách này.",
       "2": "Ngoài ra, Cú Đấm Bài Xích đòn thứ 3, thứ 5 được cường hóa bởi <strong>Hàn Băng Phán Quyết</strong> sẽ lần lượt gây <cryo>Sát Thương Nguyên Tố Băng</cryo> bằng 60%/80% mức gốc, và Cú Đấm Huy Hoàng sẽ gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo> bằng 100% mức gốc. Sát thương kể trên được xem là sát thương phản ứng Tinh-Siêu Dẫn, và sát thương phản ứng Tinh-Siêu Dẫn do Wriothesley gây ra sẽ tăng 30%.",
       "3": "Ngoài ra, khi ở trong <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>Vùng Trục Sao</strong></tooltip>, Wriothesley sẽ vào trạng thái <strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>."
     }
@@ -235,7 +235,7 @@
       "1": "<br/>",
       "2": "<strong>Tỏa Sáng: Tinh-Siêu Dẫn</strong>: Hiệu quả nêu trên chuyển thành:",
       "3": [
-        "Cú Đấm Bài Xích được cường hóa bởi <strong>Hàn Băng Phán Quyết</strong> và Cú Đấm Huy Hoàng sẽ tăng 10% Tỷ Lệ Bạo Kích, Sát Thương Bạo Kích tăng 80%, đồng thời Cú Đấm Bài Xích đòn thứ 5 được cường hóa bởi <strong>Hàn Băng Phán Quyết</strong> và Cú Đấm Huy Hoàng sẽ sản sinh thêm nhũ băng, gây <cryo>Sát Thương Nguyên Tố Băng</cryo> bằng 60% mức gốc, và sát thương này được xem là sát thương phản ứng Tinh-Siêu Dẫn."
+        "Cú Đấm Bài Xích được cường hóa bởi <strong>Hàn Băng Phán Quyết</strong> và Cú Đấm Huy Hoàng sẽ tăng 10% Tỷ Lệ Bạo Kích, Sát Thương Bạo Kích tăng 80%, đồng thời Cú Đấm Bài Xích đòn thứ 5 được cường hóa bởi <strong>Hàn Băng Phán Quyết</strong> và Cú Đấm Huy Hoàng sẽ sản sinh thêm nhũ băng, gây <cryo>Sát Thương Nguyên Tố Băng</cryo> bằng 20% mức gốc, và sát thương này được xem là sát thương phản ứng Tinh-Siêu Dẫn."
       ],
       "4": "<br/>",
       "5": "Cần mở khóa Thiên Phú Đột Phá \"Ngày Biện Hộ Cho Công Lý\"."

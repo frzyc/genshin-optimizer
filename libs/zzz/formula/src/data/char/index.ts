@@ -38,9 +38,11 @@ import Promeia from './sheets/Promeia'
 import Pulchra from './sheets/Pulchra'
 import Pyrois from './sheets/Pyrois'
 import Qingyi from './sheets/Qingyi'
+import Remielle from './sheets/Remielle'
 import Rina from './sheets/Rina'
 import Seed from './sheets/Seed'
 import Seth from './sheets/Seth'
+import Sigrid from './sheets/Sigrid'
 import Soldier0Anby from './sheets/Soldier0Anby'
 import Soldier11 from './sheets/Soldier11'
 import Soukaku from './sheets/Soukaku'
@@ -96,9 +98,11 @@ const data: TagMapNodeEntries[] = [
   Pulchra,
   Pyrois,
   Qingyi,
+  Remielle,
   Rina,
   Seed,
   Seth,
+  Sigrid,
   Soldier0Anby,
   Soldier11,
   Soukaku,

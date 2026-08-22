@@ -1,0 +1,24 @@
+{
+  "name": "Asa Gelada do Lago Branco",
+  "description": {
+    "0": "Uma espada longa leve como as suaves plumas de um Cisne da Neve, que permanece pura e imaculada a qualquer momento."
+  },
+  "passiveName": "Finalização do Cisne da Neve",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando a Habilidade Elemental do portador atinge um inimigo, obtém Lamento da Cor do Lago: aumenta o ATQ em <cryo>8%</cryo> por 8s. Acumula até 3 vezes. Pode ser desencadeado uma vez a cada 0.1s. A duração de cada acúmulo é contada separadamente. Ao possuir 3 acúmulos, aumenta o Dano CRIT da reação de Brilho Estelar do portador em <cryo>50%</cryo>, e ao desencadear Brilho Estelar ou causar Dano de Brilho Estelar, regenera <cryo>4</cryo> de Energia Elemental para o portador. Esse efeito de regeneração pode ser desencadeado uma vez a cada 3.5s. Esse efeito pode ser desencadeado mesmo quando o portador não for o personagem ativo."
+    },
+    "1": {
+      "0": "Quando a Habilidade Elemental do portador atinge um inimigo, obtém Lamento da Cor do Lago: aumenta o ATQ em <cryo>10%</cryo> por 8s. Acumula até 3 vezes. Pode ser desencadeado uma vez a cada 0.1s. A duração de cada acúmulo é contada separadamente. Ao possuir 3 acúmulos, aumenta o Dano CRIT da reação de Brilho Estelar do portador em <cryo>65%</cryo>, e ao desencadear Brilho Estelar ou causar Dano de Brilho Estelar, regenera <cryo>4.5</cryo> de Energia Elemental para o portador. Esse efeito de regeneração pode ser desencadeado uma vez a cada 3.5s. Esse efeito pode ser desencadeado mesmo quando o portador não for o personagem ativo."
+    },
+    "2": {
+      "0": "Quando a Habilidade Elemental do portador atinge um inimigo, obtém Lamento da Cor do Lago: aumenta o ATQ em <cryo>12%</cryo> por 8s. Acumula até 3 vezes. Pode ser desencadeado uma vez a cada 0.1s. A duração de cada acúmulo é contada separadamente. Ao possuir 3 acúmulos, aumenta o Dano CRIT da reação de Brilho Estelar do portador em <cryo>80%</cryo>, e ao desencadear Brilho Estelar ou causar Dano de Brilho Estelar, regenera <cryo>5</cryo> de Energia Elemental para o portador. Esse efeito de regeneração pode ser desencadeado uma vez a cada 3.5s. Esse efeito pode ser desencadeado mesmo quando o portador não for o personagem ativo."
+    },
+    "3": {
+      "0": "Quando a Habilidade Elemental do portador atinge um inimigo, obtém Lamento da Cor do Lago: aumenta o ATQ em <cryo>14%</cryo> por 8s. Acumula até 3 vezes. Pode ser desencadeado uma vez a cada 0.1s. A duração de cada acúmulo é contada separadamente. Ao possuir 3 acúmulos, aumenta o Dano CRIT da reação de Brilho Estelar do portador em <cryo>95%</cryo>, e ao desencadear Brilho Estelar ou causar Dano de Brilho Estelar, regenera <cryo>5.5</cryo> de Energia Elemental para o portador. Esse efeito de regeneração pode ser desencadeado uma vez a cada 3.5s. Esse efeito pode ser desencadeado mesmo quando o portador não for o personagem ativo."
+    },
+    "4": {
+      "0": "Quando a Habilidade Elemental do portador atinge um inimigo, obtém Lamento da Cor do Lago: aumenta o ATQ em <cryo>16%</cryo> por 8s. Acumula até 3 vezes. Pode ser desencadeado uma vez a cada 0.1s. A duração de cada acúmulo é contada separadamente. Ao possuir 3 acúmulos, aumenta o Dano CRIT da reação de Brilho Estelar do portador em <cryo>110%</cryo>, e ao desencadear Brilho Estelar ou causar Dano de Brilho Estelar, regenera <cryo>6</cryo> de Energia Elemental para o portador. Esse efeito de regeneração pode ser desencadeado uma vez a cada 3.5s. Esse efeito pode ser desencadeado mesmo quando o portador não for o personagem ativo."
+    }
+  }
+}

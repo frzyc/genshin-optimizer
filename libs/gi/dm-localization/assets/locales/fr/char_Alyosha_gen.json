@@ -1,0 +1,189 @@
+{
+  "name": "Alyosha",
+  "title": "Limier au pas vif",
+  "description": "Un chasseur professionnel qui connaît mieux que quiconque les paysages enneigés de Snezhnaya. Derrière son tempérament calme, un idéal bien précis semble brûler avec ardeur.",
+  "constellationName": "Canis Borzoides",
+  "auto": {
+    "name": "Lance d'escarmouche",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 4 coups de lance et applique une <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>marque de broussailleur</strong></tooltip> à l'ennemi touché par le dernier coup."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour foncer en avant en infligeant des DGT."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT attaque chargée",
+      "5": "Coût d'endurance attaque chargée",
+      "6": "DGT durant la chute",
+      "7": "DGT chute basse/élevée",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "skill": {
+    "name": "Embuscade de foudre",
+    "description": {
+      "0": "Alyosha suit son instinct de broussailleur, différents effets se produisant selon la méthode de déclenchement, tout en appliquant une <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>marque de broussailleur</strong></tooltip> sur les ennemis touchés.",
+      "1": "<br/>",
+      "2": "<strong>Appui simple</strong>",
+      "3": "Tire en avant pour infliger des <electro>DGT Électro de zone</electro>.",
+      "4": "<br/>",
+      "5": "<strong>Appui long</strong>",
+      "6": "Bascule en mode visée pour verrouiller les ennemis sur une certaine zone en avant, la RÉS à l'interruption d'Alyosha augmentant pendant la visée.",
+      "7": "À la fin de l'appui long, Alyosha inflige des <electro>DGT Électro</electro> aux ennemis verrouillés.",
+      "8": "<br/>",
+      "9": "<i>Le broussailleur téméraire avait un jour saisi le tranchant de sa lance, et ce n'est qu'après avoir survécu à une leçon payée dans le sang qu'il comprit les dures réalités de la survie dans les plaines gelées.</i>"
+    },
+    "skillParams": {
+      "0": "DGT appui simple",
+      "1": "DGT appui long",
+      "2": "Temps de recharge",
+      "3": "Durée de marque de broussailleur",
+      "4": "Augmentation d'ATQ de précision de broussailleur",
+      "5": "Durée de précision de broussailleur",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "burst": {
+    "name": "Avancée du broussailleur",
+    "description": {
+      "0": "Alyosha invoque <strong>Tugarin</strong>, son partenaire de confiance, pour combattre à ses côtés et transforme temporairement la zone en avant en <strong>terrain de chasse de fulgurite</strong>.",
+      "1": "<br/>",
+      "2": "<strong>Terrain de chasse de fulgurite</strong>",
+      "3": [
+        " Nargue de façon continue les ennemis proches, attirant leurs attaques.",
+        " Toutes les 2 s, inflige une instance de <electro>DGT Électro de zone</electro> aux ennemis à l'intérieur."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Tugarin</strong>",
+      "6": [
+        " Si des ennemis sont à proximité, Tugarin se rapproche rapidement de l'un d'eux toutes les 2 s afin de le mordre et d'infliger des <strong>DGT Électro</strong>.",
+        " Toucher un ennemi affecté par une <strong>marque de broussailleur</strong> active la <strong>marque de broussailleur</strong>.",
+        " Tugari attaque en priorité les ennemis affectés par une <strong>marque de broussailleur</strong>."
+      ],
+      "7": "<br/>",
+      "8": "<i>Patientez. Continuez de patienter jusqu'à ce que l'impatience s'estompe. C'est alors que le pluvier à ventre roux traversera le bosquet de bouleaux et se présentera devant votre flèche.</i>"
+    },
+    "skillParams": {
+      "0": "DGT terrain de chasse de fulgurite",
+      "1": "DGT Tugarin",
+      "2": "Durée",
+      "3": "Temps de recharge",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+      "16": "",
+      "17": "",
+      "18": "",
+      "19": ""
+    }
+  },
+  "passive1": {
+    "name": "Réveillé par les aboiements",
+    "description": {
+      "0": "Lorsque <tooltip ns=tooltips_gen baseKey18=11480002 values=[]><strong>Tugarin</strong></tooltip> attaque, il restaure également les PV des personnages déployés de l'équipe à proximité d'une valeur équivalant à 120 % de l'ATQ d'Alyosha."
+    }
+  },
+  "passive2": {
+    "name": "Souffrir le blé d'hiver",
+    "description": {
+      "0": "Augmente les DGT infligés par les compétences élémentaires et les déchaînements élémentaires d'Alyosha de 0,35 % par tranche de 1 % de recharge d'énergie, les DGT pouvant être augmentés d'un maximum de 70 % de cette manière."
+    }
+  },
+  "passive3": {
+    "name": "Dans la mêlée",
+    "description": {
+      "0": "Alyosha passe en <strong>radiance « Astroconduction »</strong> lorsqu'il est dans une <tooltip ns=tooltips_gen baseKey18=11330003 values=[]><strong>étendue polaris</strong></tooltip>.",
+      "1": "<strong>Radiance « Astroconduction »</strong> : La <strong>précision de broussailleur</strong> obtenue en activant une <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>marque de broussailleur</strong></tooltip> augmente également les DGT de réaction d'Astroconduction du personnage sur le terrain de 20 %."
+    }
+  },
+  "passive": {
+    "name": "Observation des cimes",
+    "description": {
+      "0": "Affiche l'emplacement des <strong>produits de Snezhnaya</strong> sur la mini-carte."
+    }
+  },
+  "constellation1": {
+    "name": "Tonnerre de vallée de givre",
+    "description": {
+      "0": "Alyosha récupère 15 pts d'énergie élémentaire lorsqu'un personnage de l'équipe à proximité a déclenché une <electro>réaction liée à l'élément Électro</electro> sur un ennemi, cet effet pouvant être déclenché une fois toutes les 18 s."
+    }
+  },
+  "constellation2": {
+    "name": "Hurlement de loin",
+    "description": {
+      "0": "La durée du déchaînement élémentaire <strong>Avancée du broussailleur</strong> augmente de 6 s.",
+      "1": "De plus, <tooltip ns=tooltips_gen baseKey18=11480002 values=[]><strong>Tugarin</strong></tooltip> applique une <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>marque de broussailleur</strong></tooltip> à une cible avant chacune de ses attaques, cet effet ne pouvant cependant pas activer les <strong>marques de broussailleur</strong>."
+    }
+  },
+  "constellation3": {
+    "name": "Appel des congénères",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Embuscade de foudre</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Butins de la chasse",
+    "description": {
+      "0": "Lorsque <tooltip ns=tooltips_gen baseKey18=11480002 values=[]><strong>Tugarin</strong></tooltip> attaque, il restaure également les PV du personnage à proximité ayant le pourcentage de PV restant le plus bas d'une valeur équivalant à 60 % de l'ATQ d'Alyosha."
+    }
+  },
+  "constellation5": {
+    "name": "Quand les gazouillis se taisent",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Avancée du broussailleur</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Récupération d'étendard",
+    "description": {
+      "0": "La <strong>précision de broussailleur</strong> obtenue en activant une <tooltip ns=tooltips_gen baseKey18=11480001 values=[]><strong>marque de broussailleur</strong></tooltip> peut maintenant se cumuler jusqu'à 2 cumuls. Avec 2 cumuls, la maîtrise élémentaire des personnages sur le terrain sous cet effet augmente de 100 pts."
+    }
+  }
+}

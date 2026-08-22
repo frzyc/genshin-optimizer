@@ -46,10 +46,10 @@
     "name": "Ding ding ding ! Carillon de chasse aux sorcières",
     "description": {
       "0": "Libère la puissance du vent pour vaincre la sorcière maléfique et sauver Descartes ! Prune frappe sa cloche de l'ensorceleuse avec son marteau-serment de chasse des fléaux, infligeant des <anemo>DGT Anémo</anemo>.",
-      "1": "Si Prune déclenche une réaction de Dispersion sur un ennemi grâce à cette attaque, <strong>Ding ding ding ! Carillon de chasse aux sorcières</strong> est converti en <strong>Bang bang ! Arrivée de la rétribution de sorcière</strong> pendant 6 s.",
+      "1": "Si Prune déclenche une réaction de Dispersion ou d'Astrodispersion sur un ennemi grâce à cette attaque, <strong>Ding ding ding ! Carillon de chasse aux sorcières</strong> est converti en <strong>Bang bang ! Arrivée de la rétribution de sorcière</strong> pendant 6 s.",
       "2": "<br/>",
       "3": "<strong>Bang bang ! Arrivée de la rétribution de sorcière</strong>",
-      "4": "Le <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>marteau-serment de chasse des fléaux</strong></tooltip> subit une conversion de l'élément impliqué dans la réaction de Dispersion. Utiliser un appui simple permet à Prune de bondir et de propulser son marteau vers l'avant d'un coup de pied, infligeant des DGT de l'élément correspondant aux ennemis devant elle."
+      "4": "Le <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>marteau-serment de chasse des fléaux</strong></tooltip> subit une conversion de l'élément impliqué dans la réaction de Dispersion ou d'Astrodispersion. Utiliser un appui simple permet à Prune de bondir et de propulser son marteau vers l'avant d'un coup de pied, infligeant des DGT de l'élément correspondant aux ennemis devant elle."
     },
     "skillParams": {
       "0": "DGT de Ding ding ding ! Carillon de chasse aux sorcières",
@@ -108,7 +108,7 @@
   "passive1": {
     "name": "Verdict et peine",
     "description": {
-      "0": "Lorsque la cloche de l'ensorceleuse du mode Chasse-traque inflige des DGT à un ennemi pendant le déchaînement élémentaire <strong><tooltip ns=char_Prune_gen baseKey18=burst>Le glas sonne ! La chasse est ouverte</tooltip></strong>, déclencher par la même occasion une réaction de Dispersion sur l'ennemi invoque un <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>marteau-serment de chasse des fléaux</strong></tooltip> dont l'élément est converti selon la réaction élémentaire, infligeant des DGT élémentaires d'une valeur équivalant à 150 % de l'ATQ de Prune. Ces dégâts sont considérés comme des DGT de déchaînement élémentaire."
+      "0": "Lorsque la cloche de l'ensorceleuse du mode Chasse-traque inflige des DGT à un ennemi pendant le déchaînement élémentaire <strong><tooltip ns=char_Prune_gen baseKey18=burst>Le glas sonne ! La chasse est ouverte</tooltip></strong>, déclencher par la même occasion une réaction de Dispersion ou d'Astrodispersion sur l'ennemi invoque un <tooltip ns=tooltips_gen baseKey18=11320001 values=[]><strong>marteau-serment de chasse des fléaux</strong></tooltip> dont l'élément est converti selon la réaction élémentaire, infligeant des DGT élémentaires d'une valeur équivalant à 150 % de l'ATQ de Prune. Ces dégâts sont considérés comme des DGT de déchaînement élémentaire."
     }
   },
   "passive2": {
@@ -129,7 +129,7 @@
       "0": "Après avoir terminé le <strong>devoir de la sorcière « Sujet de réfutation »</strong>, Prune devient un personnage <strong>héxère</strong>. Si l'équipe contient au moins 2 personnages héxères, elle bénéficie de l'effet <strong>Hexerei : Rituel secret</strong> qui améliore les personnages héxères.",
       "1": "<br/>",
       "2": "<strong>Hexerei : Rituel secret</strong>",
-      "3": "Lorsqu'un personnage héxère de l'équipe affecté par l'effet Ralliement du glas a déclenché une réaction élémentaire sur un ennemi, l'ATQ de Prune augmente de 60 % pendant 5 s. Si la réaction élémentaire déclenchée est une Dispersion, l'ATQ du personnage concerné augmente également de 30 % pendant 5 s."
+      "3": "Lorsqu'un personnage héxère de l'équipe affecté par l'effet Ralliement du glas a déclenché une réaction élémentaire sur un ennemi, l'ATQ de Prune augmente de 60 % pendant 5 s. Si la réaction élémentaire déclenchée est une réaction de Dispersion ou d'Astrodispersion, l'ATQ du personnage concerné augmente également de 30 % pendant 5 s."
     }
   },
   "constellation1": {

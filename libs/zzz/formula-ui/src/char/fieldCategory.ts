@@ -5,6 +5,9 @@ import {
 } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import type { Sheet, Tag } from '@genshin-optimizer/zzz/formula'
+import { formulas } from '@genshin-optimizer/zzz/formula'
+import { isAbilityFormulaTag, skillFromTag } from '../abilityTag'
+import { formulaFieldGroupKey } from '../bundledFormulaGrouping'
 import { primaryTagFromField } from '../formulaFieldUtil'
 import { allTalentSheetElementKey, type TalentSheetElementKey } from './consts'
 import { charSheets } from './sheets'
@@ -13,10 +16,6 @@ export type { TalentSheetElementKey }
 export const FIELD_CATEGORY_ORDER = allTalentSheetElementKey
 
 export type FieldCategoryIndex = Map<string, TalentSheetElementKey>
-
-export function formulaTagKey(tag: Tag): string {
-  return `${tag.sheet ?? ''}:${tag.name ?? ''}`
-}
 
 function withCharSheet(tag: Tag, charKey: CharacterKey): Tag {
   return tag.sheet ? tag : { ...tag, sheet: charKey as Sheet }
@@ -41,22 +40,47 @@ function tagsFromDocuments(docs: Document[]): Tag[] {
   return tags
 }
 
-/** Index every formula tag listed in the character UI sheet by talent tab. */
-export function buildFieldCategoryIndex(
-  charKey: CharacterKey
-): FieldCategoryIndex {
-  const index: FieldCategoryIndex = new Map()
+/** Ability hits from static formula meta → skill tab (basic, chain, …). */
+function indexAbilityFormulaCategories(
+  charKey: CharacterKey,
+  index: FieldCategoryIndex
+) {
+  const sheetFormulas = formulas[charKey] as Record<string, { tag: Tag }>
+  for (const formula of Object.values(sheetFormulas)) {
+    const tag = withCharSheet(formula.tag, charKey)
+    if (!isAbilityFormulaTag(tag)) continue
+    const skill = skillFromTag(tag)
+    if (!skill) continue
+    index.set(formulaFieldGroupKey(tag), skill)
+  }
+}
+
+/** Buff / conditional fields still embedded in static CharUISheet docs. */
+function indexStaticSheetBuffCategories(
+  charKey: CharacterKey,
+  index: FieldCategoryIndex
+) {
   const uiSheet = charSheets[charKey]
-  if (!uiSheet) return index
+  if (!uiSheet) return
 
   for (const category of allTalentSheetElementKey) {
     const element = uiSheet[category]
     if (!element?.documents.length) continue
     for (const tag of tagsFromDocuments(element.documents)) {
-      index.set(formulaTagKey(withCharSheet(tag, charKey)), category)
+      const withSheet = withCharSheet(tag, charKey)
+      if (isAbilityFormulaTag(withSheet)) continue
+      index.set(formulaFieldGroupKey(withSheet), category)
     }
   }
+}
 
+/** Index formula tags by talent tab for opt-target grouping. */
+export function buildFieldCategoryIndex(
+  charKey: CharacterKey
+): FieldCategoryIndex {
+  const index: FieldCategoryIndex = new Map()
+  indexAbilityFormulaCategories(charKey, index)
+  indexStaticSheetBuffCategories(charKey, index)
   return index
 }
 
@@ -77,7 +101,7 @@ export function getFieldCategory(
   tag: Tag,
   index: FieldCategoryIndex = getOrBuildCategoryIndex(charKey)
 ): TalentSheetElementKey | undefined {
-  return index.get(formulaTagKey(withCharSheet(tag, charKey)))
+  return index.get(formulaFieldGroupKey(withCharSheet(tag, charKey)))
 }
 
 export function groupFieldsByCategory(

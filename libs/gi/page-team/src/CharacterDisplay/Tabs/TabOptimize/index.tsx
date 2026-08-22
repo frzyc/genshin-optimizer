@@ -52,7 +52,6 @@ import {
   mergePlot,
 } from '@genshin-optimizer/gi/solver'
 import { compactArtifacts } from '@genshin-optimizer/gi/solver-tc'
-import { getCharStat } from '@genshin-optimizer/gi/stats'
 import {
   ArtifactLevelSlider,
   BuildDisplayItem,
@@ -1059,19 +1058,18 @@ function CopyTcButton({ build }: { build: GeneratedBuild }) {
 
   const database = useDatabase()
   const {
-    teamCharId,
     loadoutDatum,
+    teamCharId,
     teamChar: { key: characterKey },
   } = useContext(TeamCharacterContext)
 
   const toTc = () => {
-    const weaponTypeKey = getCharStat(characterKey).weaponType
     const weapon = database.teams.getLoadoutWeapon(loadoutDatum)
-    const buildTcId = database.teamChars.newBuildTcFromBuild(
-      teamCharId,
-      weaponTypeKey,
+    const buildTcId = database.buildTcs.newFromBuild(
+      characterKey,
       weapon,
-      Object.values(build.artifactIds).map((id) => database.arts.get(id))
+      Object.values(build.artifactIds).map((id) => database.arts.get(id)),
+      teamCharId
     )
     if (buildTcId)
       database.buildTcs.set(buildTcId, {
@@ -1139,14 +1137,19 @@ function CopyBuildButton({
   const [showPrompt, onShowPrompt, OnHidePrompt] = useBoolState()
 
   const database = useDatabase()
-  const { teamCharId } = useContext(TeamCharacterContext)
+  const {
+    teamCharId,
+    teamChar: { key: characterKey },
+  } = useContext(TeamCharacterContext)
 
   const toLoadout: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault()
-    database.teamChars.newBuild(teamCharId, {
+    database.builds.new({
+      characterKey,
       name,
       artifactIds,
       weaponId,
+      srcTeamCharId: teamCharId,
     })
 
     setName('')

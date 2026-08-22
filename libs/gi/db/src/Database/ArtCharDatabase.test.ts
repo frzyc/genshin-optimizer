@@ -26,14 +26,14 @@ describe(
       const database1 = new ArtCharDatabase(1, dbStorage1)
 
       const input = structuredClone(testDatabaseJson) as any
-      database1.importGOOD(input, false, false)
+      database1.importGOOD(input, false, false, false)
       const firstExport = database1.exportGOOD()
 
       // Second cycle: import normalized data, export again
       const dbStorage2 = createTestDBStorage('go')
       const database2 = new ArtCharDatabase(1, dbStorage2)
 
-      database2.importGOOD(firstExport, false, false)
+      database2.importGOOD(firstExport, false, false, false)
       const secondExport = database2.exportGOOD()
 
       // The normalized JSON should be identical

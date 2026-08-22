@@ -1,0 +1,23 @@
+{
+  "name": "Ode of Resurrected Wings",
+  "desc": {
+    "0": "The wings scorched by the blazing sun once fell to the pale earth, into a lightless chasm.",
+    "1": "Then fall... She will bear it all. The weight, the darkness, those defiant follies, those lives that slipped away...",
+    "2": "In that long slumber forgotten by time, even sorrow faded away. Pain and despair faded too... As did joy. As did memory. All withered away, for all is vanity.",
+    "3": "A hundred years passed in the blink of an eye. Kingdoms upon the earth fell and rose anew, yet she never awoke.",
+    "4": "But no matter how much unspeakable darkness lay buried within her heart, a bird cannot pretend not to see the coming of spring.",
+    "5": "",
+    "6": "\"Spring flowers are winter's dream, and autumn clouds remember the summer breeze~\"",
+    "7": "—Beneath the quiet moonlit sky, a pink-haired girl softly hums an ancient nursery rhyme."
+  },
+  "desc2": "Equip to increase Anomaly Agents' combat capabilities",
+  "desc3": "Drifting through the cracks of time in search of the light.",
+  "phase": "Paradise Lost",
+  "phaseDescs": [
+    "Increases Anomaly Proficiency by <ct color=#2BAD00>96</ct>. When the equipper triggers a <ct color=#FFA9DD>Refringe</ct> reaction, they gain <ct color=#2BAD00>20%</ct> increased Anomaly DMG, and all squad members gain <ct color=#2BAD00>30%</ct> increased DMG dealt. Both effects last 30s. Repeated triggers reset the duration.",
+    "Increases Anomaly Proficiency by <ct color=#2BAD00>105</ct>. When the equipper triggers a <ct color=#FFA9DD>Refringe</ct> reaction, they gain <ct color=#2BAD00>23%</ct> increased Anomaly DMG, and all squad members gain <ct color=#2BAD00>34.5%</ct> increased DMG dealt. Both effects last 30s. Repeated triggers reset the duration.",
+    "Increases Anomaly Proficiency by <ct color=#2BAD00>115</ct>. When the equipper triggers a <ct color=#FFA9DD>Refringe</ct> reaction, they gain <ct color=#2BAD00>26%</ct> increased Anomaly DMG, and all squad members gain <ct color=#2BAD00>39%</ct> increased DMG dealt. Both effects last 30s. Repeated triggers reset the duration.",
+    "Increases Anomaly Proficiency by <ct color=#2BAD00>125</ct>. When the equipper triggers a <ct color=#FFA9DD>Refringe</ct> reaction, they gain <ct color=#2BAD00>29%</ct> increased Anomaly DMG, and all squad members gain <ct color=#2BAD00>43.5%</ct> increased DMG dealt. Both effects last 30s. Repeated triggers reset the duration.",
+    "Increases Anomaly Proficiency by <ct color=#2BAD00>135</ct>. When the equipper triggers a <ct color=#FFA9DD>Refringe</ct> reaction, they gain <ct color=#2BAD00>32%</ct> increased Anomaly DMG, and all squad members gain <ct color=#2BAD00>48%</ct> increased DMG dealt. Both effects last 30s. Repeated triggers reset the duration."
+  ]
+}
