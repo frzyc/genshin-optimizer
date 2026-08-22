@@ -80,8 +80,7 @@ export class BNBSplitWorker implements SplitWorker {
     this.callback = callback
     this.topN = topN
 
-    // make sure we can approximate it (incl. `plotBase`; on failure the
-    // caller falls back to `DefaultSplitWorker`, which never prunes)
+    // make sure we can approximate it
     linearUB(this.nodes, arts)
   }
 
@@ -220,14 +219,15 @@ export class BNBSplitWorker implements SplitWorker {
     )
     const newValues = objMap(arts.values, (arts, slot) => {
       const requiredConts = leadingConts.map((lc, i) => maxConts[i][slot] - lc)
-      if (plotIdx === undefined || !approxs.length)
+      if (plotIdx === undefined || !approxs.length) {
         return arts.filter(({ id }) =>
           approxs.every(({ conts }, i) => conts[id] >= requiredConts[i])
         )
+      }
       // When plotting, keep everything that could be on the Pareto frontier
       // of (plotBase, optTarget): hard constraints must still hold, but the
       // opt-target threshold may only remove an artifact when its best-case
-      // plotBase value is also below `plotThreshold` — otherwise its builds
+      // plotBase value is also below `plotThreshold`; otherwise its builds
       // are not necessarily dominated by the top-N build that set the
       // thresholds, and pruning would clip the frontier's extrema.
       return arts.filter(

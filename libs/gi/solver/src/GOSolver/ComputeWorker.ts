@@ -88,25 +88,25 @@ export class ComputeWorker {
           // Set `plot` on every kept build (not just plot-bin bests) so the
           // top-N builds carry the (plot, value) points used for
           // frontier-aware threshold pruning.
-          const x = plotData ? result[min.length + 1] : undefined
+          const plotValue = plotData ? result[min.length + 1] : undefined
           let build: SolverBuild | undefined
           if (value >= this.threshold) {
             build = {
               value,
-              plot: x,
+              plotValue,
               artifactIds: buffer.map((x) => x.id).filter((id) => id),
             }
             builds.push(build)
           }
           if (plotData) {
-            if (!plotData[x!] || plotData[x!]!.value < value) {
+            if (!plotData[plotValue!] || plotData[plotValue!]!.value < value) {
               if (!build)
                 build = {
                   value,
-                  plot: x,
+                  plotValue,
                   artifactIds: buffer.map((x) => x.id).filter((id) => id),
                 }
-              plotData[x!] = build
+              plotData[plotValue!] = build
             }
           }
         } else count.failed += 1
@@ -135,7 +135,7 @@ export class ComputeWorker {
       this.builds = this.builds.sort((a, b) => b.value - a.value).slice(0, topN)
       this.buildValues = this.builds.map((x) => x.value)
       this.buildPlots = this.plotData
-        ? this.builds.map((x) => x.plot ?? Number.NEGATIVE_INFINITY)
+        ? this.builds.map((x) => x.plotValue ?? Number.NEGATIVE_INFINITY)
         : undefined
       this.threshold = Math.max(
         this.threshold,
