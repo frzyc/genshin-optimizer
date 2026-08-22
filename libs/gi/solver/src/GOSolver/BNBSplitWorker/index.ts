@@ -43,14 +43,6 @@ export class BNBSplitWorker implements SplitWorker {
   nodes: OptNode[]
   arts: ArtifactsBySlot
   topN: number
-  /**
-   * Index of `plotBase` in `nodes` when plotting. The plot must show the
-   * Pareto frontier of (plotBase, optTarget), so regions below the opt-target
-   * threshold may only be pruned if they are also below `plotThreshold` in
-   * plotBase — i.e., only when they are Pareto-dominated by a known top-N
-   * build (whose plotBase value is `plotThreshold`, sent by `GOSolver`).
-   * Pruning on the threshold alone would truncate the frontier's extrema.
-   */
   plotNodeIdx: number | undefined
   plotThreshold = Number.NEGATIVE_INFINITY
 
