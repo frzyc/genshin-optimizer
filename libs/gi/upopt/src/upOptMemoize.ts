@@ -151,7 +151,8 @@ export function elixirDefinitionMemoSimplified(
 }
 
 /**
- * Memoized variant of `freshArtifact()`. For a fixed number of initial rolls, the substat crawl produces
+ * Memoized variant of `freshArtifact()`. Assumes we're generating 5* artifacts, so the only variable is the set key.
+ * For a fixed number of initial rolls, the substat crawl produces
  * the same node list down to the base stats; only the set key varies per query.
  * Entries are simplified against a specific objective, so all calls sharing a
  * cache MUST use the same objective; clear (or replace) the cache when it changes.
