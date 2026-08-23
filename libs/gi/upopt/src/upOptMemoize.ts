@@ -155,10 +155,6 @@ export function elixirDefinitionMemoSimplified(
  * the same node list down to the base stats; only the set key varies per query.
  * Entries are simplified against a specific objective, so all calls sharing a
  * cache MUST use the same objective; clear (or replace) the cache when it changes.
- *
- * Returns the same distribution as `deduplicate(obj, freshArtifact(...))` over the same set
- * of nodes, in a different (set, line count) grouping -- `deduplicate` groups by hash, so its
- * output order is its producer's, and neither order is meaningful.
  */
 export type FreshArtifactQuery = {
   sets: ArtifactSetKey[]
@@ -167,10 +163,9 @@ export type FreshArtifactQuery = {
 export type FreshArtifactCache = Map<string, WeightedNode[]>
 
 /**
- * Templates bake the build's contribution into each node's `base` (it differs per slot,
- * since `toStats` drops the piece being replaced), so entries are only valid for the build
- * they were built from. Key on the equipped artifact ids so a cache outlives a build change
- * instead of silently serving stale bases.
+ * FreshArtifactCache depends on the current build because the `base` stats of each node are baked in at
+ * the time of construction. The cache key is concatenates artifact ids, so we assume that the db is immutable
+ * and that the artifact ids are unique.
  */
 function buildCacheKey(currentBuild: Build): string {
   return allArtifactSlotKeys
