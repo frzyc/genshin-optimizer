@@ -11,10 +11,6 @@ type weightedNode = { p: number; n: MarkovNode }
 /**
  * Deduplicate nodes by merging identical nodes and summing their probabilities.
  * Note: modifies input nodes in place.
- *
- * Grouping is by hash, not by sort, so the result is in first-seen order rather than
- * `cmpNodes` order. Producers therefore don't have to emit any particular order to make
- * this a no-op: on a list with no duplicates it returns the same nodes, unchanged.
  */
 export function deduplicate(
   obj: Objective,
