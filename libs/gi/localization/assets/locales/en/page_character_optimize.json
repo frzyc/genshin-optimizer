@@ -42,7 +42,7 @@
     "substats": "Substats to consider for defining:",
     "sets": "Sets being considered:",
     "setsEmpty": "No sets are being considered. Enable Define with at least 2 substats, and pick an optimization target.",
-    "setsArbitrary": "No available set affects the optimization target in these slots, so an arbitrary set (highlighted above) was picked there just so results show up. Treat those candidates as set-agnostic — the set itself isn't a recommendation."
+    "setsArbitrary": "No available set affects the optimization target in these slots, so an arbitrary set (highlighted above) was picked just so results show up."
   },
   "upOptChart": {
     "est": " (est.)",
