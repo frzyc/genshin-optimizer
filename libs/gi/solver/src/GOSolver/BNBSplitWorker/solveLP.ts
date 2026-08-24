@@ -1,5 +1,6 @@
 // Matrix convention is row-major, indexed A_{ij} = A[i][j]
 type Pivot = { i: number; j: number }
+type Cmp = { b: number[]; a: number } // Pivot rule on lexicographically smallest (b / a) vector
 const zero = 1e-8 // Small number equivalent to 0 for numerical instability
 
 /** Checks that all constraints are satisfied (Ax <= b) */
@@ -33,9 +34,12 @@ export function solveLP(c: number[], Ab: number[][]) {
 
   const tableau = Array(rows)
     .fill(0)
-    .map((_) => Array(cols).fill(0))
+    .map((_) => Array(cols + Ab.length).fill(0))
   Ab.forEach((Ai, i) => Ai.forEach((Aij, j) => (tableau[i][j] = Aij)))
   c.forEach((cj, j) => (tableau[rows - 1][j] = cj))
+  Array(Ab.length)
+    .fill(0)
+    .forEach((_, i) => (tableau[i][cols + i] = 1)) // lexicographic tracking
 
   const pivotHistory: Pivot[] = [] // Keep track of all chosen pivots for backtracking later
 
@@ -80,14 +84,14 @@ function pivotInplace(A: number[][], { i, j }: Pivot) {
 /** Find a pivot according to Case 1 (Ferguson p23) */
 function findPiv1(A: number[][]) {
   const r = A.length,
-    c = A[0].length
-  let minloc = { i: -1, j: -1, cmp: Number.POSITIVE_INFINITY }
+    c = A[0].length - r + 1
+  let minloc = { i: -1, j: -1, cmp: { b: [Number.POSITIVE_INFINITY], a: 1 } }
   for (let j = 0; j < c - 1; j++) {
     if (A[r - 1][j] >= -zero) continue
     for (let i = 0; i < r - 1; i++) {
       if (A[i][j] > zero) {
-        const cmp = A[i][c - 1] / A[i][j]
-        if (cmp < minloc.cmp) minloc = { i, j, cmp }
+        const cmp = { b: A[i].slice(c - 1), a: A[i][j] }
+        if (lt(cmp, minloc.cmp)) minloc = { i, j, cmp }
       }
     }
 
@@ -100,14 +104,14 @@ function findPiv1(A: number[][]) {
 /** Find a pivot according to Case 2 (Ferguson p24) */
 function findPiv2(A: number[][]) {
   const r = A.length,
-    c = A[0].length
-  let minloc = { i: -1, j: -1, cmp: Number.POSITIVE_INFINITY }
+    c = A[0].length - r + 1
+  let minloc = { i: -1, j: -1, cmp: { b: [Number.POSITIVE_INFINITY], a: 1 } }
   for (let i = 0; i < r - 1; i++) {
     if (A[i][c - 1] >= -zero) continue
     for (let j = 0; j < c - 1; j++) {
       if (A[i][j] < -zero) {
-        const cmp = A[i][c - 1] / A[i][j]
-        if (cmp < minloc.cmp) minloc = { i, j, cmp }
+        const cmp = { b: A[i].slice(c - 1), a: A[i][j] }
+        if (lt(cmp, minloc.cmp)) minloc = { i, j, cmp }
       }
     }
 
@@ -130,6 +134,15 @@ function backtrack(tableau: number[][], pivotHistory: Pivot[], targ: number) {
     }
   })
 
-  const ncol = tableau[0].length
-  return side === 0 ? tableau[targ][ncol - 1] : 0
+  const bCol = tableau[0].length - tableau.length + 1
+  return side === 0 ? tableau[targ][bCol - 1] : 0
+}
+
+/** Lexicographic comparator (less than) */
+function lt(a: Cmp, b: Cmp) {
+  const len = Math.min(a.b.length, b.b.length)
+  for (let i = 0; i < len; i++) {
+    if (a.b[i] / a.a !== b.b[i] / b.a) return a.b[i] / a.a < b.b[i] / b.a
+  }
+  return false
 }

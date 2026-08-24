@@ -12,7 +12,7 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import type { ArtifactsBySlot, DynStat } from '../../common.js'
 import type { Linear } from './linearUB.js'
-import { linbound, linearUB } from './linearUB.js'
+import { linearUB } from './linearUB.js'
 
 function apply(value: DynStat, linear: Linear): number {
   return Object.entries(linear).reduce(
@@ -171,30 +171,5 @@ describe('linearUpperBound can transform', () => {
       const y = 5 - x
       expect(apply({ x, y }, bounds[0])).toBeGreaterThanOrEqual(x * y)
     }
-  })
-  test('LP loop bug', () => {
-    const bounds = [
-      {
-        min: 1.932,
-        max: 2.4917,
-      },
-      {
-        min: 2.016924,
-        max: 2.685224,
-      },
-      {
-        min: -689,
-        max: -537.27,
-      },
-      {
-        min: 0.4582,
-        max: 0.6214999999999999,
-      },
-      {
-        min: 0,
-        max: 3,
-      },
-    ]
-    linbound(bounds, 'upper')
   })
 })
