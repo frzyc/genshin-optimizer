@@ -1,7 +1,11 @@
+import { solveLPBland } from './solveLPBland.js'
+
 // Matrix convention is row-major, indexed A_{ij} = A[i][j]
 type Pivot = { i: number; j: number }
-type Cmp = { b: number[]; a: number } // Pivot rule on lexicographically smallest (b / a) vector
-const zero = 1e-8 // Small number equivalent to 0 for numerical instability
+export const zero = 1e-8 // Small number equivalent to 0 for numerical instability
+
+// Degenerate pivots leave the objective untouched, so a long enough run of them means we are cycling.
+const maxDegeneratePivots = 16
 
 /** Checks that all constraints are satisfied (Ax <= b) */
 export function isFeasible(Ab: number[][], x: number[]): boolean {
@@ -21,8 +25,8 @@ export function isFeasible(Ab: number[][], x: number[]): boolean {
  * Implemented according to the Simplex Method (Sec 4) of:
  *   Ferguson, https://www.math.ucla.edu/~tom/LP.pdf
  *
- * Does not implement any cycle detection, though that *shouldnt* be a problem for GO's use
- *   case. This algorithm will always return a feasible solution, though it may be suboptimal.
+ * The pivot rules here can cycle on degenerate problems. When that is detected, the problem is
+ *   handed to `solveLPBland`, whose rule is slower but provably terminates.
  *
  * @param c        Objective vector
  * @param Ab       Constraints matrix with thresholds. Inputted in block form [A, b]
@@ -34,12 +38,9 @@ export function solveLP(c: number[], Ab: number[][]) {
 
   const tableau = Array(rows)
     .fill(0)
-    .map((_) => Array(cols + Ab.length).fill(0))
+    .map((_) => Array(cols).fill(0))
   Ab.forEach((Ai, i) => Ai.forEach((Aij, j) => (tableau[i][j] = Aij)))
   c.forEach((cj, j) => (tableau[rows - 1][j] = cj))
-  Array(Ab.length)
-    .fill(0)
-    .forEach((_, i) => (tableau[i][cols + i] = 1)) // lexicographic tracking
 
   const pivotHistory: Pivot[] = [] // Keep track of all chosen pivots for backtracking later
 
@@ -49,8 +50,14 @@ export function solveLP(c: number[], Ab: number[][]) {
     pivotInplace(tableau, piv)
   }
 
+  let degenerate = 0
   while (tableau[rows - 1].some((t, j) => j < cols - 1 && t < -zero)) {
     const piv = findPiv1(tableau)
+    // The objective improves on every pivot except those in a row whose threshold is 0
+    //   (Ferguson p24), so an unbroken run of those means this is a cycle rather than progress.
+    if (Math.abs(tableau[piv.i][cols - 1]) <= zero) {
+      if (++degenerate > maxDegeneratePivots) return solveLPBland(c, Ab)
+    } else degenerate = 0
     pivotHistory.push(piv)
     pivotInplace(tableau, piv)
   }
@@ -61,7 +68,7 @@ export function solveLP(c: number[], Ab: number[][]) {
 }
 
 /** Standard `pivot` operation on LPs */
-function pivotInplace(A: number[][], { i, j }: Pivot) {
+export function pivotInplace(A: number[][], { i, j }: Pivot) {
   const Aij = A[i][j]
   for (let h = 0; h < A.length; h++) {
     if (h === i) continue
@@ -84,14 +91,14 @@ function pivotInplace(A: number[][], { i, j }: Pivot) {
 /** Find a pivot according to Case 1 (Ferguson p23) */
 function findPiv1(A: number[][]) {
   const r = A.length,
-    c = A[0].length - r + 1
-  let minloc = { i: -1, j: -1, cmp: { b: [Number.POSITIVE_INFINITY], a: 1 } }
+    c = A[0].length
+  let minloc = { i: -1, j: -1, cmp: Number.POSITIVE_INFINITY }
   for (let j = 0; j < c - 1; j++) {
     if (A[r - 1][j] >= -zero) continue
     for (let i = 0; i < r - 1; i++) {
       if (A[i][j] > zero) {
-        const cmp = { b: A[i].slice(c - 1), a: A[i][j] }
-        if (lt(cmp, minloc.cmp)) minloc = { i, j, cmp }
+        const cmp = A[i][c - 1] / A[i][j]
+        if (cmp < minloc.cmp) minloc = { i, j, cmp }
       }
     }
 
@@ -104,14 +111,14 @@ function findPiv1(A: number[][]) {
 /** Find a pivot according to Case 2 (Ferguson p24) */
 function findPiv2(A: number[][]) {
   const r = A.length,
-    c = A[0].length - r + 1
-  let minloc = { i: -1, j: -1, cmp: { b: [Number.POSITIVE_INFINITY], a: 1 } }
+    c = A[0].length
+  let minloc = { i: -1, j: -1, cmp: Number.POSITIVE_INFINITY }
   for (let i = 0; i < r - 1; i++) {
     if (A[i][c - 1] >= -zero) continue
     for (let j = 0; j < c - 1; j++) {
       if (A[i][j] < -zero) {
-        const cmp = { b: A[i].slice(c - 1), a: A[i][j] }
-        if (lt(cmp, minloc.cmp)) minloc = { i, j, cmp }
+        const cmp = A[i][c - 1] / A[i][j]
+        if (cmp < minloc.cmp) minloc = { i, j, cmp }
       }
     }
 
@@ -134,15 +141,6 @@ function backtrack(tableau: number[][], pivotHistory: Pivot[], targ: number) {
     }
   })
 
-  const bCol = tableau[0].length - tableau.length + 1
-  return side === 0 ? tableau[targ][bCol - 1] : 0
-}
-
-/** Lexicographic comparator (less than) */
-function lt(a: Cmp, b: Cmp) {
-  const len = Math.min(a.b.length, b.b.length)
-  for (let i = 0; i < len; i++) {
-    if (a.b[i] / a.a !== b.b[i] / b.a) return a.b[i] / a.a < b.b[i] / b.a
-  }
-  return false
+  const ncol = tableau[0].length
+  return side === 0 ? tableau[targ][ncol - 1] : 0
 }
