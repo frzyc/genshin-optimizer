@@ -12,7 +12,7 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import type { ArtifactsBySlot, DynStat } from '../../common.js'
 import type { Linear } from './linearUB.js'
-import { linearUB as linearUpperBound } from './linearUB.js'
+import { linbound, linearUB } from './linearUB.js'
 
 function apply(value: DynStat, linear: Linear): number {
   return Object.entries(linear).reduce(
@@ -51,11 +51,11 @@ describe('linearUpperBound can transform', () => {
     }
 
   test('constant nodes', () => {
-    const bounds = linearUpperBound([constant(88)], arts)
+    const bounds = linearUB([constant(88)], arts)
     expect(bounds[0]).toEqual({ $c: 88 })
   })
   test('read nodes', () => {
-    const bounds = linearUpperBound([rx], arts)
+    const bounds = linearUB([rx], arts)
     expect(bounds[0]).toEqual({ x: 1, $c: 0 })
   })
 
@@ -65,7 +65,7 @@ describe('linearUpperBound can transform', () => {
    * all optimal bounds.
    */
   test('min/max nodes', () => {
-    const bounds = linearUpperBound([min(rx, 3), max(rx, 3)], arts)
+    const bounds = linearUB([min(rx, 3), max(rx, 3)], arts)
 
     // Checking min/c/max
     expect(apply({ x: 0 }, bounds[0])).toBeGreaterThanOrEqual(Math.min(0, 3))
@@ -78,7 +78,7 @@ describe('linearUpperBound can transform', () => {
   })
   test('res nodes', () => {
     const op = allOperations.res,
-      bounds = linearUpperBound(
+      bounds = linearUB(
         [res(rx), res(sum(rx, -4)), res(sum(rx, 20)), res(sum(rx, -20))],
         arts
       )
@@ -100,7 +100,7 @@ describe('linearUpperBound can transform', () => {
     const op = allOperations.sum_frac,
       c = 4,
       loc = Math.sqrt((0 + c) * (5 + c))
-    const bounds = linearUpperBound([frac(rx, c)], arts)
+    const bounds = linearUB([frac(rx, c)], arts)
 
     // Checking min/loc/max
     expect(apply({ x: 0 }, bounds[0])).toBeGreaterThan(op([0, c]))
@@ -109,7 +109,7 @@ describe('linearUpperBound can transform', () => {
   })
   test('threshold nodes', () => {
     // All pass >= fail, pass <= fail and upper/lower bounds combinations
-    const bounds = linearUpperBound(
+    const bounds = linearUB(
       [
         threshold(rx, 4, 5, 10),
         threshold(rx, 4, 10, 5),
@@ -164,12 +164,37 @@ describe('linearUpperBound can transform', () => {
         },
       }
 
-    const bounds = linearUpperBound([prod(rx, ry)], arts)
+    const bounds = linearUB([prod(rx, ry)], arts)
 
     // x + y === 5
     for (let x = 0; x <= 5; x++) {
       const y = 5 - x
       expect(apply({ x, y }, bounds[0])).toBeGreaterThanOrEqual(x * y)
     }
+  })
+  test('LP loop bug', () => {
+    const bounds = [
+      {
+        min: 1.932,
+        max: 2.4917,
+      },
+      {
+        min: 2.016924,
+        max: 2.685224,
+      },
+      {
+        min: -689,
+        max: -537.27,
+      },
+      {
+        min: 0.4582,
+        max: 0.6214999999999999,
+      },
+      {
+        min: 0,
+        max: 3,
+      },
+    ]
+    linbound(bounds, 'upper')
   })
 })
