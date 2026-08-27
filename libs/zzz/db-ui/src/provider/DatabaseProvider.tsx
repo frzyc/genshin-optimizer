@@ -1,30 +1,17 @@
-import {
-  DBLocalStorage,
-  SandboxStorage,
-} from '@genshin-optimizer/common/database'
+import { useDatabases } from '@genshin-optimizer/common/database-ui'
 import { ZzzDatabase } from '@genshin-optimizer/zzz/db'
 import type { ReactNode } from 'react'
-import { useCallback, useMemo, useState } from 'react'
+import { useCallback, useMemo } from 'react'
 import { DatabaseContext, type DatabaseContextObj } from '../context'
 
 export function DatabaseProvider({ children }: { children: ReactNode }) {
   const dbIndex = Number.parseInt(localStorage.getItem('zzz_dbIndex') || '1')
-  const [databases, setDatabases] = useState(() => {
-    localStorage.removeItem('zzz_newTabDetection')
-    localStorage.setItem('zzz_newTabDetection', 'debug')
-    return ([1, 2, 3, 4] as const).map((index) => {
-      if (index === dbIndex) {
-        return new ZzzDatabase(index, new DBLocalStorage(localStorage, 'zzz'))
-      } else {
-        const dbName = `zzz_extraDatabase_${index}`
-        const eDB = localStorage.getItem(dbName)
-        const dbObj = eDB ? JSON.parse(eDB) : {}
-        const db = new ZzzDatabase(index, new SandboxStorage(dbObj, 'zzz'))
-        db.toExtraLocalDB()
-        return db
-      }
-    })
-  })
+  const [databases, setDatabases] = useDatabases(
+    ZzzDatabase,
+    dbIndex,
+    'zzz_newTabDetection',
+    'zzz'
+  )
   const setDatabase = useCallback(
     (index: number, db: ZzzDatabase) => {
       const dbs = [...databases]
