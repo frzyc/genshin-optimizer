@@ -698,7 +698,7 @@ const sheet: TalentSheet = {
           }),
         },
         {
-          node: infoMut(dmgFormulas.constellation4.dmg, {
+          node: infoMut(dmgFormulas.constellation4.ssDmg, {
             name: ct.ch('c4StellarSwirlDmg'),
           }),
         },
