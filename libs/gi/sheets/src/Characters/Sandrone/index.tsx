@@ -373,7 +373,8 @@ const dmgFormulas = {
           percent(dm.constellation6.dmg2),
           'atk',
           'stellarconduct',
-          'cryo'
+          'cryo',
+          beamAddl
         )
       )
     ),
@@ -387,7 +388,8 @@ const dmgFormulas = {
           percent(dm.constellation6.ssDmg),
           'atk',
           'stellarswirl',
-          'cryo'
+          'cryo',
+          beamAddl
         )
       )
     ),
