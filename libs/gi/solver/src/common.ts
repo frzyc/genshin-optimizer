@@ -567,7 +567,7 @@ export function mergePlot(plots: PlotData[]): PlotData {
     maxCount = 1500
   let keys = new Set(
     plots.flatMap((x) =>
-      Object.values(x).map((v) => v && Math.round(v.plot! / scale))
+      Object.values(x).map((v) => v && Math.round(v.plotValue! / scale))
     )
   )
   while (keys.size > maxCount) {
@@ -582,7 +582,7 @@ export function mergePlot(plots: PlotData[]): PlotData {
   for (const plot of plots)
     for (const build of Object.values(plot)) {
       if (!build) continue
-      const x = Math.round(build.plot! / scale) * scale
+      const x = Math.round(build.plotValue! / scale) * scale
       if (!result[x] || result[x]!.value < build.value) result[x] = build
     }
   return result
@@ -841,7 +841,7 @@ export type ArtifactsBySlot = {
 export type PlotData = Partial<Record<number, SolverBuild>>
 export interface SolverBuild {
   value: number
-  plot?: number
+  plotValue?: number
   artifactIds: string[]
 }
 
