@@ -1,4 +1,8 @@
-import type { SubstatKey } from '@genshin-optimizer/gi/consts'
+import type {
+  ArtifactSetKey,
+  ArtifactSlotKey,
+  SubstatKey,
+} from '@genshin-optimizer/gi/consts'
 import { allSubstatKeys } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { getMainStatValue, getSubstatValue } from '@genshin-optimizer/gi/util'
@@ -22,13 +26,22 @@ import {
   elixirDefinition,
   expandNode,
   expandNodes,
+  freshArtifact,
   levelUpArtifact,
 } from './upOpt'
 import type { MarkovNode, SubstatLevelNode } from './upOpt.types'
-import type { ElixirDefineQuery, ElixirSimplifiedCache } from './upOptMemoize'
-import { elixirDefinitionMemoSimplified } from './upOptMemoize'
+import type {
+  ElixirDefineQuery,
+  ElixirSimplifiedCache,
+  FreshArtifactCache,
+} from './upOptMemoize'
+import {
+  elixirDefinitionMemoSimplified,
+  freshArtifactMemoized,
+} from './upOptMemoize'
 
-const emptyBuild = {
+type Build = Record<ArtifactSlotKey, ICachedArtifact | undefined>
+const emptyBuild: Build = {
   flower: undefined,
   plume: undefined,
   sands: undefined,
@@ -72,6 +85,49 @@ function checkExpandedEvalCorrectness(
   const baseEval = evaluateGaussian(obj, g)
   expect(mean).toBeCloseTo(baseEval.f_mu[0])
   expect(sig2).toBeCloseTo(baseEval.f_cov[0][0])
+}
+
+/**
+ * Order-independent identity for a node: everything `deduplicate()` treats as
+ * distinguishing, with `base` canonicalized since key insertion order differs
+ * between the memoized and reference construction paths. Deliberately written
+ * independently of `deduplicate`'s own internal key, so these comparisons don't end up
+ * validating the implementation against itself.
+ */
+function canonicalNodeKey(n: SubstatLevelNode): string {
+  return JSON.stringify([
+    n.rarity,
+    n.rollsLeft,
+    n.reshape ?? null,
+    n.subkeys,
+    Object.entries(n.base).sort(([a], [b]) => a.localeCompare(b)),
+    n.subDistr.subs,
+    n.subDistr.mu,
+    n.subDistr.cov,
+  ])
+}
+
+/**
+ * Compares two weighted node lists as distributions: same set of distinct nodes,
+ * same total probability on each. Node order carries no meaning -- `deduplicate` groups by
+ * hash and hands back its producer's order -- so this is the real contract.
+ */
+function expectSameDistribution(
+  got: { p: number; n: SubstatLevelNode }[],
+  want: { p: number; n: MarkovNode }[]
+) {
+  const tally = (nodes: { p: number; n: MarkovNode }[]) => {
+    const m = new Map<string, number>()
+    nodes.forEach(({ p, n }) => {
+      const k = canonicalNodeKey(n as SubstatLevelNode)
+      m.set(k, (m.get(k) ?? 0) + p)
+    })
+    return m
+  }
+  const g = tally(got)
+  const w = tally(want)
+  expect([...g.keys()].sort()).toEqual([...w.keys()].sort())
+  g.forEach((p, k) => expect(p).toBeCloseTo(w.get(k)!, 12))
 }
 
 describe('upOpt components', () => {
@@ -545,7 +601,148 @@ describe('upOpt makeSubstatNode(s)', () => {
       })
     })
   })
-  test('fresh/domain/strongbox', () => {})
+  describe('fresh/domain/strongbox', () => {
+    const p3sub = 0.2
+    const rarity = 5 as const
+    const oneSet: ArtifactSetKey[] = ['GladiatorsFinale']
+    const twoSets: ArtifactSetKey[] = [
+      'GladiatorsFinale',
+      'ShimenawasReminiscence',
+    ]
+    // A build whose equipped pieces contribute to `base` (and, for the flower slot,
+    // get excluded from it) so cache entries are build-dependent.
+    const build: Build = {
+      ...emptyBuild,
+      flower: lvl20 as ICachedArtifact,
+      plume: {
+        ...lvl20,
+        id: 'lvl20-plume',
+        slotKey: 'plume',
+        mainStatKey: 'atk',
+      } as ICachedArtifact,
+    }
+
+    const reference = (sets: ArtifactSetKey[], currentBuild: Build, o = obj) =>
+      deduplicate(o, freshArtifact({ sets, p3sub, rarity }, currentBuild))
+    const memoized = (
+      sets: ArtifactSetKey[],
+      currentBuild: Build,
+      cache: FreshArtifactCache,
+      o = obj
+    ) => freshArtifactMemoized({ sets, p3sub }, currentBuild, o, cache)
+
+    test('sanity: reference is a distribution over 3- and 4-line starts', () => {
+      const fresh = freshArtifact({ sets: twoSets, p3sub, rarity }, emptyBuild)
+      expect(fresh.reduce((a, { p }) => a + p, 0)).toBeCloseTo(1, 8)
+      expect(
+        fresh.reduce((a, { p, n }) => (n.rollsLeft === 4 ? a + p : a), 0)
+      ).toBeCloseTo(p3sub, 8)
+      expect(
+        fresh.reduce((a, { p, n }) => (n.rollsLeft === 5 ? a + p : a), 0)
+      ).toBeCloseTo(1 - p3sub, 8)
+    })
+
+    test('memoized matches dedup(freshArtifact), single set', () => {
+      const cache: FreshArtifactCache = new Map()
+      const expected = reference(oneSet, emptyBuild)
+      expectSameDistribution(memoized(oneSet, emptyBuild, cache), expected)
+      // Second call goes through the populated cache.
+      expectSameDistribution(memoized(oneSet, emptyBuild, cache), expected)
+    })
+
+    test('memoized matches dedup(freshArtifact), multiple sets', () => {
+      const cache: FreshArtifactCache = new Map()
+      const expected = reference(twoSets, emptyBuild)
+      expectSameDistribution(memoized(twoSets, emptyBuild, cache), expected)
+      expectSameDistribution(memoized(twoSets, emptyBuild, cache), expected)
+    })
+
+    test('memoized matches dedup(freshArtifact), non-empty build', () => {
+      // `build` is all GladiatorsFinale, which is also in `twoSets` -- so some templates
+      // already carry the set key that `insertSetKey` adds, the case most likely to
+      // perturb `cmpBase`'s key-count comparison and hence the ordering.
+      const cache: FreshArtifactCache = new Map()
+      const expected = reference(twoSets, build)
+      expectSameDistribution(memoized(twoSets, build, cache), expected)
+      expectSameDistribution(memoized(twoSets, build, cache), expected)
+    })
+
+    test('memoized matches dedup(freshArtifact) under a different objective', () => {
+      // obj3 reads only critRate_, so `deduplicate` strips almost every substat and
+      // merges aggressively -- the hardest case for the template merge to reproduce.
+      const cache: FreshArtifactCache = new Map()
+      const expected = reference(twoSets, emptyBuild, obj3)
+      expectSameDistribution(
+        memoized(twoSets, emptyBuild, cache, obj3),
+        expected
+      )
+    })
+
+    test('memoized total probability is 1 and splits by line count', () => {
+      const cache: FreshArtifactCache = new Map()
+      const got = memoized(twoSets, emptyBuild, cache)
+      expect(got.reduce((a, { p }) => a + p, 0)).toBeCloseTo(1, 8)
+      expect(
+        got.reduce((a, { p, n }) => (n.rollsLeft === 4 ? a + p : a), 0)
+      ).toBeCloseTo(p3sub, 8)
+      expect(
+        got.reduce((a, { p, n }) => (n.rollsLeft === 5 ? a + p : a), 0)
+      ).toBeCloseTo(1 - p3sub, 8)
+    })
+
+    test('a cache warmed on one set list is reusable for another', () => {
+      const cache: FreshArtifactCache = new Map()
+      memoized(oneSet, emptyBuild, cache)
+      expectSameDistribution(
+        memoized(twoSets, emptyBuild, cache),
+        reference(twoSets, emptyBuild)
+      )
+    })
+
+    test('a cache warmed on one build is not reused for another', () => {
+      // Templates bake in build-dependent `base` stats, so the cache key must
+      // distinguish builds.
+      const cache: FreshArtifactCache = new Map()
+      memoized(oneSet, emptyBuild, cache)
+      expectSameDistribution(
+        memoized(oneSet, build, cache),
+        reference(oneSet, build)
+      )
+    })
+
+    test('downstream dedup does not corrupt the cache', () => {
+      const cache: FreshArtifactCache = new Map()
+      // `deduplicate` rewrites node/subDistr fields in place; the cached templates
+      // must survive it intact.
+      deduplicate(obj, memoized(oneSet, emptyBuild, cache))
+      expectSameDistribution(
+        memoized(oneSet, emptyBuild, cache),
+        reference(oneSet, emptyBuild)
+      )
+    })
+
+    test('result does not depend on the order `sets` is given in', () => {
+      const cache: FreshArtifactCache = new Map()
+      expectSameDistribution(
+        memoized([...twoSets].reverse(), emptyBuild, cache),
+        reference(twoSets, emptyBuild)
+      )
+    })
+
+    test('deduplicate() on the memoized output is a no-op', () => {
+      // The point of the exercise: callers can skip the second `deduplicate` pass.
+      // Equal length means nothing merged, which is the claim -- deliberately not
+      // asserting order, which is `deduplicate`'s business and not part of the contract.
+      const cache: FreshArtifactCache = new Map()
+      const got = memoized(twoSets, build, cache)
+      const redone = deduplicate(obj, [...got]) as {
+        p: number
+        n: SubstatLevelNode
+      }[]
+      expect(redone.length).toBe(got.length)
+      expectSameDistribution(redone, got)
+    })
+  })
   describe('reshape', () => {
     test('reshape/4line basic', () => {
       const [reshaped] = dustReshape(
