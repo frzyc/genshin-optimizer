@@ -119,8 +119,6 @@ export function elixirDefinitionMemoSimplified(
 ): WeightedNode[] {
   const base = toStats(currentBuild, { ...info, rarity })
   const affixes = info.affixes.sort((a, b) => a.localeCompare(b)) // Ensure consistent ordering
-  // deduplicate() sorts 4-line (rollsLeft 5) nodes ahead of 3-line, so concatenating the
-  // two template blocks reproduces its output ordering.
   const t4 = getSimplifiedTemplates(info.mainStatKey, affixes, 4, obj, cache)
   const t3 = getSimplifiedTemplates(info.mainStatKey, affixes, 3, obj, cache)
   return [

@@ -20,17 +20,47 @@ export function deduplicate(
     if (n.type === 'substat') simplifySubstatNode(obj, n)
     else if (n.type === 'rolls') simplifyRollsNode(obj, n)
   })
-  nodes = nodes.filter(({ p }) => p > 0)
-  nodes.sort((a, b) => -cmpNodes(a.n, b.n))
-  let prev: weightedNode | undefined
-  return nodes.filter((cur) => {
-    if (prev && cmpNodes(prev.n, cur.n) === 0) {
-      prev.p += cur.p
-      return false
-    }
-    prev = cur
-    return true
-  })
+  const groups = new Map<string, weightedNode>()
+  for (const cur of nodes) {
+    if (cur.p <= 0) continue
+    const key = nodeKey(cur.n)
+    const prev = groups.get(key)
+    if (prev) prev.p += cur.p
+    else groups.set(key, cur)
+  }
+  return [...groups.values()]
+}
+
+/**
+ * Identity of a node under `deduplicate`: two nodes share a key exactly when
+ * `cmpNodes` rates them equal. `:`/`,`/`;` are safe separators because stat keys, set keys
+ * and numeric literals never contain them.
+ */
+function nodeKey(n: MarkovNode): string {
+  if (n.type === 'substat') {
+    const subkeys = n.subkeys.map(({ key, baseRolls }) => `${key}:${baseRolls}`)
+    const reshape = n.reshape
+      ? `${n.reshape.mintotal}:${n.reshape.affixes.join(',')}`
+      : ''
+    return `s;${n.rarity};${n.rollsLeft};${reshape};${subkeys.join(',')};${baseKey(n.base)}`
+  }
+  if (n.type === 'rolls') {
+    const subs = n.subs.map(({ key, rolls }) => `${key}:${rolls}`)
+    return `r;${n.rarity};${subs.join(',')};${baseKey(n.base)}`
+  }
+  // `ValuesLevelNode` has no `base` of its own; `cmpValuesNode` reads the distribution's.
+  return `v;${baseKey(n.subDistr.base)}`
+}
+
+/**
+ * Mirrors `cmpBase`'s notion of equality: same key set, same values. Number->string is
+ * round-trippable for doubles, so this loses no precision.
+ */
+function baseKey(base: DynStat): string {
+  return Object.keys(base)
+    .sort()
+    .map((k) => `${k}:${base[k]}`)
+    .join(',')
 }
 
 function simplifySubstatNode(obj: Objective, node: SubstatLevelNode) {
@@ -57,7 +87,13 @@ function simplifyRollsNode(obj: Objective, node: RollsLevelNode) {
   )
 }
 
-function cmpNodes(a: MarkovNode, b: MarkovNode): number {
+/**
+ * Total order over nodes, whose `=== 0` case is the equivalence relation `deduplicate`
+ * merges on. `deduplicate` groups by `nodeKey` instead of sorting with this, so these
+ * comparators are now the independent specification of node identity -- they exist to hold
+ * `nodeKey` honest in tests rather than to be called on any hot path.
+ */
+export function cmpNodes(a: MarkovNode, b: MarkovNode): number {
   if (a.type === 'substat') {
     if (b.type !== 'substat') return -1
     return cmpSubstatNode(a, b)
