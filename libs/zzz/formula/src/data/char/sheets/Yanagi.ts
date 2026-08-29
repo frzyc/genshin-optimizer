@@ -125,7 +125,7 @@ const sheet = register(
   registerBuff('basic_pen_', ownBuff.combat.pen_.add(kagen.ifOn(percent(0.1)))),
   registerBuff(
     'exSpecial_anom_base_',
-    ownBuff.combat.anom_base_.addWithDmgType(
+    teamBuff.combat.anom_base_.addWithDmgType(
       'disorder',
       cmpEq(
         polarityDisorder.value,
@@ -146,9 +146,7 @@ const sheet = register(
           percent(-0.85)
         )
       )
-    ),
-    undefined,
-    true
+    )
   ),
   registerBuff(
     'ult_anom_base_',
