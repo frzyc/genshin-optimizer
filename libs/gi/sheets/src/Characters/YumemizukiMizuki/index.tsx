@@ -161,7 +161,7 @@ const lockDream_eleMas = equal(
     'on',
     equal(
       input.activeCharKey,
-      'on',
+      key,
       prod(percent(dm.lockedPassive.eleMas), input.premod.eleMas)
     )
   )
@@ -197,7 +197,7 @@ const c2Dream_dmg_ = objKeyValMap(absorbableEle, (ele) => [
       'on',
       equal(
         input.activeCharKey,
-        'on',
+        key,
         prod(percent(dm.constellation2.phec_dmg_), input.total.eleMas)
       )
     )
@@ -208,7 +208,15 @@ const c2Dream_res_ = objKeyValMap([...absorbableEle, 'anemo'], (ele) => [
   greaterEq(
     input.constellation,
     2,
-    equal(condLockRevelation, 'on', dm.constellation2.eleRes_)
+    equal(
+      condSkillDream,
+      'on',
+      equal(
+        condLockRevelation,
+        'on',
+        equal(input.activeCharKey, key, dm.constellation2.eleRes_)
+      )
+    )
   ),
 ])
 
@@ -652,7 +660,7 @@ const sheet: TalentSheet = {
         },
       },
     }),
-    ct.condTem('passive3', {
+    ct.condTem('lockedPassive', {
       path: condLockStellarRadiancePath,
       value: condLockStellarRadiance,
       teamBuff: true,

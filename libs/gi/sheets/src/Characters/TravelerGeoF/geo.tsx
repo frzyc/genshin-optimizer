@@ -35,7 +35,7 @@ export default function geo(
   const condCharKey = 'TravelerGeo'
   const ct = charTemplates(key)
   const [, ch] = trans('char', condCharKey)
-  const skillParam_gen = allStats.char.skillParam.TravelerGeoF
+  const skillParam_gen = allStats.char.skillParam[key]
   let s = 0,
     b = 0
   const dm = {

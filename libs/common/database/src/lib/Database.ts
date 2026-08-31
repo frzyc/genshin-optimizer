@@ -5,4 +5,5 @@ export class Database {
   constructor(storage: DBStorage) {
     this.storage = storage
   }
+  toExtraLocalDB() {}
 }

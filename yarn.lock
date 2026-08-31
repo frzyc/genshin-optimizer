@@ -10469,7 +10469,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fflate@npm:^0.8.1":
+"fflate@npm:^0.8.1, fflate@npm:^0.8.3":
   version: 0.8.3
   resolution: "fflate@npm:0.8.3"
   checksum: a2a417e8fb5128b946cb397ab59a90e089057cba492f2c17a89c4af6ba8568b3da72ed36ef1efe901df7858a20964ce56e84d282e60498be1947fcc6133bc891
@@ -10914,6 +10914,7 @@ __metadata:
     cypress: 15.8.0
     discord.js: ^14.16.1
     esbuild: 0.19.2
+    fflate: ^0.8.3
     gh-pages: ^5.0.0
     i18next: ^23.6.0
     i18next-browser-languagedetector: ^7.0.1
