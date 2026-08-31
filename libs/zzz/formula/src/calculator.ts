@@ -6,13 +6,10 @@ import type {
 import { Calculator as Base } from '@genshin-optimizer/game-opt/engine'
 import { createFilterDebug } from '@genshin-optimizer/game-opt/formula'
 import { DebugCalculator } from '@genshin-optimizer/pando/engine'
-import {
-  allAttributeAnomalyKeys,
-  allDiscSetKeys,
-  allWengineKeys,
-} from '@genshin-optimizer/zzz/consts'
+import { allDiscSetKeys, allWengineKeys } from '@genshin-optimizer/zzz/consts'
 import type { Read, Tag } from './data/util'
 import { enemyTag, ownTag, tagStr } from './data/util'
+import { isProductionFormulaListing } from './productionFormulaListing'
 
 export type CalcMeta = CalcMetaBase<Tag, never>
 
@@ -45,21 +42,7 @@ export class Calculator extends Base<Tag, never> {
     return super
       .listFormulas(read)
       .filter(
-        (r) =>
-          shouldShowDevComponents ||
-          r.tag.qt !== 'formula' ||
-          [
-            'standardDmgInst',
-            'sheerDmgInst',
-            'anomalyDmgInst',
-            'abloomDmgInst',
-            'anomalyBuildupInst',
-            'dazeInst',
-            ...allAttributeAnomalyKeys.map((k) => `disorderDmgInst_${k}`),
-            'disorderDmgInst_frost',
-            ...allAttributeAnomalyKeys.map((k) => `vortexDmgInst_${k}`),
-            'vortexDmgInst_frost',
-          ].includes(r.tag.name ?? '')
+        (r) => shouldShowDevComponents || isProductionFormulaListing(r.tag)
       )
   }
 }

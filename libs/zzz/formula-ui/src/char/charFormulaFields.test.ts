@@ -37,7 +37,9 @@ describe('buildAbilityFieldsBySkill', () => {
 
 describe('buildCharFormulaFields', () => {
   it('every built field resolves opt target q', () => {
-    const { fields } = buildCharFormulaFields('Anby', [])
+    const { fields } = buildCharFormulaFields('Anby', [], {
+      includeAbilityFields: true,
+    })
     for (const field of fields) {
       expect(optTargetQFromField(field, undefined, 'Anby')).toBeTruthy()
     }
@@ -46,7 +48,8 @@ describe('buildCharFormulaFields', () => {
   it('lists static ability hits when calc listing is empty', () => {
     const { fields, abilityFieldsBySkill } = buildCharFormulaFields(
       'Soldier0Anby',
-      []
+      [],
+      { includeAbilityFields: true }
     )
     const groupKeys = new Set(
       charAbilityFormulaTags('Soldier0Anby').map((tag) => hitId(tag))
@@ -63,6 +66,26 @@ describe('buildCharFormulaFields', () => {
         return name.startsWith('UltimateVoidstrike')
       })
     ).toHaveLength(2)
+  })
+
+  it('omits per-ability fields when ability listings are disabled', () => {
+    const { fields, abilityFieldsBySkill } = buildCharFormulaFields(
+      'Soldier0Anby',
+      [],
+      { includeAbilityFields: false }
+    )
+    expect(abilityFieldsBySkill).toEqual({})
+    expect(
+      fields.some((field) => {
+        const name =
+          'fieldRefs' in field
+            ? field.fieldRefs[0]?.ref.name
+            : 'fieldRef' in field
+              ? field.fieldRef.name
+              : undefined
+        return name?.startsWith('UltimateVoidstrike')
+      })
+    ).toBe(false)
   })
 })
 

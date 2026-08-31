@@ -1,5 +1,6 @@
 import type { Read } from '@genshin-optimizer/game-opt/engine'
 import type { Field } from '@genshin-optimizer/game-opt/sheet-ui'
+import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
 import type { CharacterKey, SkillKey } from '@genshin-optimizer/zzz/consts'
 import { allSkillKeys } from '@genshin-optimizer/zzz/consts'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
@@ -62,19 +63,23 @@ export function buildAbilityFieldsBySkill(
 /** Pure field builder shared by optimize stats and character mechanics. */
 export function buildCharFormulaFields(
   charKey: CharacterKey,
-  reads: Read<Tag>[]
+  reads: Read<Tag>[],
+  options?: { includeAbilityFields?: boolean }
 ) {
+  const includeAbilityFields =
+    options?.includeAbilityFields ?? shouldShowDevComponents
   const abilityFormulaTags = charAbilityFormulaTags(charKey)
-  const abilityFieldsBySkill = buildAbilityFieldsBySkill(
-    charKey,
-    abilityFormulaTags
-  )
+  const abilityFieldsBySkill = includeAbilityFields
+    ? buildAbilityFieldsBySkill(charKey, abilityFormulaTags)
+    : {}
   const extraTags = listExtraOptFieldTags(reads, abilityFormulaTags)
 
   return {
     reads,
     fields: [
-      ...flattenAbilityFieldsBySkill(abilityFieldsBySkill),
+      ...(includeAbilityFields
+        ? flattenAbilityFieldsBySkill(abilityFieldsBySkill)
+        : []),
       ...groupFieldsByTag(extraTags, charKey),
     ],
     readByListingKey: buildListingReadMap(reads),
