@@ -407,7 +407,29 @@ export function cachedArtifact(
       }
       substat.efficiency = efficiency(value, key)
 
-      const possibleRolls = getSubstatRolls(key, value, rarity)
+      let possibleRolls = getSubstatRolls(key, value, rarity)
+      // Pin the recorded initial roll as the first roll. If the initial value can't
+      // be applied to the current value (e.g. the value was just edited and `initialValue`
+      // hasn't been reconciled yet), fall back to any assumed decomposition.
+      if (substat.initialValue !== undefined && possibleRolls.length) {
+        const accurateValue = possibleRolls[0].reduce((a, b) => a + b, 0)
+        const ivAccurateValue = getSubstatRolls(
+          key,
+          substat.initialValue,
+          rarity
+        )[0]?.[0]
+        const lookupValue =
+          ivAccurateValue !== undefined ? accurateValue - ivAccurateValue : 0
+
+        if (ivAccurateValue !== undefined && lookupValue > 1e-3) {
+          const remainingRolls = getSubstatRolls(key, lookupValue, rarity)
+          if (remainingRolls.length)
+            possibleRolls = remainingRolls.map((roll) => [
+              ivAccurateValue,
+              ...roll,
+            ])
+        }
+      }
 
       if (possibleRolls.length) {
         // Valid Substat
