@@ -23,6 +23,31 @@ import {
 } from '@genshin-optimizer/zzz/formula'
 import { optTargetQFromField, primaryTagFromField } from './formulaFieldUtil'
 
+function lookupListingRead(
+  tag: Tag,
+  readByListingKey: Map<string, Read<Tag>>
+): Read<Tag> | undefined {
+  const listingTag = stripCalcContextTag(tag)
+  const direct = readByListingKey.get(listingId(listingTag))
+  if (direct) return direct
+
+  const hasInstDamageOverride =
+    isNamedFormulaListingTag(listingTag) &&
+    isGenericDmgInstTarget(listingTag.name ?? undefined) &&
+    !!(listingTag.damageType1 || listingTag.damageType2)
+  if (!hasInstDamageOverride) return undefined
+
+  const { damageType1: _, damageType2: __, ...baseTag } = listingTag
+  const baseRead = readByListingKey.get(listingId(baseTag))
+  if (!baseRead) {
+    console.error(
+      '[zzz-formula-ui] lookupListingRead: generic inst base read missing after damage-type override',
+      { tag: listingTag, baseTag }
+    )
+  }
+  return baseRead
+}
+
 function readWithMergedTag(read: BaseRead | Read<Tag>, tag: Tag): Read<Tag> {
   if (typeof (read as Read<Tag>).withTag === 'function') {
     return (read as Read<Tag>).withTag(tag)
@@ -49,12 +74,12 @@ export function formulaReadForTag(
       )
       return undefined
     }
-    const match = readByListingKey.get(listingId(listingTag))
+    const match = lookupListingRead(listingTag, readByListingKey)
     if (!match) return undefined
     return readWithMergedTag(match, tag)
   }
   if (readByListingKey) {
-    const match = readByListingKey.get(listingId(listingTag))
+    const match = lookupListingRead(listingTag, readByListingKey)
     if (match) return readWithMergedTag(match, tag)
   }
   return tagRead(tag) as Read<Tag>

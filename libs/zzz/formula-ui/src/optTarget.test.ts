@@ -259,6 +259,26 @@ describe('formulaReadForTag', () => {
     expect(result.tag).toEqual(merged)
     expect(typeof (result as { withTag?: unknown }).withTag).toBe('undefined')
   })
+
+  it('resolves generic inst reads when opt-target damage types are on the tag', () => {
+    const baseTag = {
+      sheet: 'Anby' as const,
+      name: 'standardDmgInst',
+      q: 'standardDmg' as const,
+      qt: 'formula' as const,
+      attribute: 'electric' as const,
+    }
+    const baseRead = tagRead(baseTag)
+    const readByListingKey = new Map([[listingId(baseTag), baseRead as never]])
+    const withDmgTypes = {
+      ...baseTag,
+      damageType1: 'basic' as const,
+      damageType2: 'aftershock' as const,
+    }
+
+    const result = formulaReadForTag(withDmgTypes, readByListingKey)!
+    expect(result.tag).toEqual(withDmgTypes)
+  })
 })
 
 describe('mergeMultiTagFieldForDisplay', () => {
