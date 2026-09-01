@@ -1,7 +1,7 @@
 import { formulas } from '@genshin-optimizer/zzz/formula'
 import { render } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
-import { formulaFieldTitle } from './bundledFormulaFields'
+import { resolveTagTitle } from './components/resolveTagTitle'
 import { OptTargetSelectedLabel } from './optTargetDisplay'
 
 describe('OptTargetSelectedLabel', () => {
@@ -15,13 +15,13 @@ describe('OptTargetSelectedLabel', () => {
   })
 })
 
-describe('opt target label parity with formulaFieldTitle', () => {
+describe('opt target label parity with resolveTagTitle', () => {
   it.each([
     ['Yixuan', formulas.Yixuan.sheerDmgInst.tag],
     ['Anby', formulas.Anby.anomalyDmgInst.tag],
     ['Anby', formulas.Anby.standardDmgInst.tag],
-  ] as const)('%s inst formula matches formulaFieldTitle', (charKey, tag) => {
-    const { container: field } = render(formulaFieldTitle(tag))
+  ] as const)('%s inst formula matches resolveTagTitle', (charKey, tag) => {
+    const { container: field } = render(resolveTagTitle(tag))
     const { container: selected } = render(
       <OptTargetSelectedLabel charKey={charKey} tag={tag} />
     )

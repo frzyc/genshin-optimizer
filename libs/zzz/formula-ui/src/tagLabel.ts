@@ -4,7 +4,7 @@ import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { isAbilityDim } from '@genshin-optimizer/zzz/formula'
 import { damageTypeKeysMap } from './char/util'
 import { ABILITY_DIM_LABEL } from './formulaDimensionUi'
-import { statKeyFromListingTag } from './optTarget'
+import { statKeyFromListingTag } from './listingStatLabels'
 
 const formulaBaseQs = new Set([
   'standardDmgBase',

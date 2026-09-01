@@ -1,8 +1,8 @@
 import { formulas } from '@genshin-optimizer/zzz/formula'
 import { render } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
-import { formulaFieldTitle } from './bundledFormulaFields'
 import { tagFieldSubset } from './char/tagFieldMap'
+import { resolveTagTitle } from './components/resolveTagTitle'
 import { TagDisplay } from './components/TagDisplay'
 import { TagFallbackLabel } from './components/TagFallbackLabel'
 
@@ -20,11 +20,11 @@ describe('tagFieldSubset', () => {
   })
 })
 
-describe('formulaFieldTitle', () => {
+describe('resolveTagTitle', () => {
   it('uses CharBase title for anomaly inst formulas', () => {
     const tag = formulas.Anby.anomalyDmgInst.tag
     expect(tagFieldSubset(tag)[0]?.title).toBeDefined()
-    const { container } = render(formulaFieldTitle(tag))
+    const { container } = render(resolveTagTitle(tag))
     expect(container.textContent).toContain('Anomaly')
     expect(container.textContent).not.toBe('anomalyDmg')
   })

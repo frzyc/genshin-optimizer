@@ -13,8 +13,8 @@ import {
 import {
   filterNonStatFields,
   listStatReadsFromFormulas,
-  filterSelectableOptTargetFields,
-} from '../optTarget'
+} from '../listingStatLabels'
+import { filterSelectableOptTargetFields } from '../optTarget'
 
 const emptyGrouped = {
   reads: [] as Read<Tag>[],

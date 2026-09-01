@@ -11,7 +11,7 @@ import type { Tag } from '@genshin-optimizer/zzz/formula'
 import type { ReactNode } from 'react'
 import { Fragment } from 'react'
 import { TagDisplay } from './components'
-import { statKeyFromListingTag } from './optTarget'
+import { statKeyFromListingTag } from './listingStatLabels'
 
 type Output = CalcMeta<Tag, never>
 

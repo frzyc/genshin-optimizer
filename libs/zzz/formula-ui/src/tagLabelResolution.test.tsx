@@ -4,7 +4,7 @@ import { render } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 import { tagFieldSubset } from './char/tagFieldMap'
 import { TagFallbackLabel } from './components/TagFallbackLabel'
-import { statKeyFromListingTag } from './optTarget'
+import { statKeyFromListingTag } from './listingStatLabels'
 import { getTagLabel } from './tagLabel'
 
 describe('crit_ opt target label resolution', () => {

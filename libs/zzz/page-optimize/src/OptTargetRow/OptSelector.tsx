@@ -3,12 +3,12 @@ import type { ICachedCharacter, Team } from '@genshin-optimizer/zzz/db'
 import { getTeamFrame0 } from '@genshin-optimizer/zzz/db'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import {
-  FullTagDisplay,
   OptFormulaSections,
   OptTargetDebugHelp,
   OptTargetSelectedLabel,
   statReadTagKey,
   statReadToTargetTag,
+  TagDisplay,
   useCharFormulaFields,
   useOptCategoryCollapse,
   useResolvedOptTarget,
@@ -83,7 +83,7 @@ export function OptSelector({
             }
           >
             <ListItemText>
-              <FullTagDisplay tag={read.tag} />
+              <TagDisplay tag={read.tag} />
             </ListItemText>
           </MenuItem>
         )}

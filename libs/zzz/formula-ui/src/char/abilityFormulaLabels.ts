@@ -11,13 +11,6 @@ export type AbilityDisplayResolved = {
   hitIndex?: string
 }
 
-type AbilityLabelPresentation = 'row' | 'selected'
-
-type AbilityLabelContent = {
-  string: string | undefined
-  node: ReactNode | undefined
-}
-
 function nameI18nKey(resolved: AbilityDisplayResolved): string {
   return `${resolved.skill}.${resolved.abilityKey}.name`
 }
@@ -81,52 +74,21 @@ function abilityDisplayNameNode(
   return chg(nameI18nKey(resolved))
 }
 
-function hitParamTitleNode(
+function abilityRowLabel(
   charKey: CharacterKey,
   resolved: AbilityDisplayResolved
-): ReactNode | undefined {
-  const paramKey = hitParamI18nKey(resolved)
-  if (!paramKey || !hitParamString(charKey, resolved)) return undefined
-  const [chg] = trans('char', charKey)
-  return chg(paramKey)
+): ReactNode {
+  return (
+    hitParamString(charKey, resolved) ??
+    abilityDisplayNameNode(charKey, resolved)
+  )
 }
 
-function rowLabelContent(
+function abilitySelectedLabel(
   charKey: CharacterKey,
   resolved: AbilityDisplayResolved
-): AbilityLabelContent {
-  const hitParam = hitParamString(charKey, resolved)
-  const hitNode = hitParamTitleNode(charKey, resolved)
-  return {
-    string: hitParam ?? abilityNameString(charKey, resolved),
-    node: hitNode ?? abilityDisplayNameNode(charKey, resolved),
-  }
-}
-
-function resolveAbilityLabelContent(
-  charKey: CharacterKey,
-  resolved: AbilityDisplayResolved,
-  presentation: AbilityLabelPresentation
-): AbilityLabelContent {
-  if (presentation === 'selected') {
-    return {
-      string: abilityNameString(charKey, resolved),
-      node: abilityDisplayNameNode(charKey, resolved),
-    }
-  }
-  return rowLabelContent(charKey, resolved)
-}
-
-function abilityLabel(
-  charKey: CharacterKey,
-  tag: Tag,
-  presentation: AbilityLabelPresentation,
-  output: 'react' | 'string'
-): ReactNode | string | undefined {
-  const resolved = resolveAbilityDisplay(tag)
-  if (!resolved) return undefined
-  const content = resolveAbilityLabelContent(charKey, resolved, presentation)
-  return output === 'string' ? content.string : content.node
+): ReactNode {
+  return abilityDisplayNameNode(charKey, resolved)
 }
 
 /** Ability name for selected opt-target rows. */
@@ -134,27 +96,17 @@ export function abilityDisplayTitle(
   charKey: CharacterKey,
   tag: Tag
 ): ReactNode | undefined {
-  return abilityLabel(charKey, tag, 'selected', 'react') as
-    | ReactNode
-    | undefined
-}
-
-/** Hit param for selected opt-target rows (no dim suffix). */
-export function abilityHitParamTitle(
-  charKey: CharacterKey,
-  tag: Tag
-): ReactNode | undefined {
   const resolved = resolveAbilityDisplay(tag)
   if (!resolved) return undefined
-  return hitParamTitleNode(charKey, resolved)
+  return abilitySelectedLabel(charKey, resolved)
 }
 
-/** Bundled / single ability row title (hit param or ability name). */
-export function abilityRowTitleString(
+/** Hit param label when `resolveAbilityDisplay` is already available. */
+export function abilityHitParamLabel(
   charKey: CharacterKey,
-  tag: Tag
-): string | undefined {
-  return abilityLabel(charKey, tag, 'row', 'string') as string | undefined
+  resolved: AbilityDisplayResolved
+): ReactNode | undefined {
+  return hitParamString(charKey, resolved)
 }
 
 /** Bundled / single ability row title (hit param or ability name). */
@@ -165,11 +117,13 @@ export function AbilityRowTitle({
   charKey: CharacterKey
   tag: Tag
 }) {
-  const label = abilityLabel(charKey, tag, 'row', 'react')
-  if (label) return label
-  console.error('[zzz-formula-ui] Ability formula tag missing row label', {
-    charKey,
-    tag,
-  })
-  return null
+  const resolved = resolveAbilityDisplay(tag)
+  if (!resolved) {
+    console.error('[zzz-formula-ui] Ability formula tag missing row label', {
+      charKey,
+      tag,
+    })
+    return null
+  }
+  return abilityRowLabel(charKey, resolved)
 }

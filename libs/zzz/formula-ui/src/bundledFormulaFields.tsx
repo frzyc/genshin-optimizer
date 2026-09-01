@@ -1,16 +1,10 @@
-import { ColorText } from '@genshin-optimizer/common/ui'
 import type { Field, MultiTagField } from '@genshin-optimizer/game-opt/sheet-ui'
-import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import type { Sheet, Tag } from '@genshin-optimizer/zzz/formula'
 import {
   partitionAbilityHits,
   resolveBundleDmgQ,
 } from '@genshin-optimizer/zzz/formula'
-import { isAbilityFormulaTag } from './abilityTag'
-import { AbilityRowTitle } from './char/abilityFormulaLabels'
-import { tagFieldTitle } from './char/tagFieldMap'
-import { getVariant } from './char/util'
-import { TagFallbackLabel } from './components/TagFallbackLabel'
+import { resolveTagTitle } from './components/resolveTagTitle'
 import { ABILITY_DIM_LABEL } from './formulaDimensionUi'
 
 function bundleFieldRefs(byQ: Map<string, Tag>) {
@@ -32,27 +26,6 @@ function bundleFieldRefs(byQ: Map<string, Tag>) {
   ]
 }
 
-/** Row title for bundled opt-target / stats fields. */
-export function formulaFieldTitle(tag: Tag) {
-  const charKey = tag.sheet as CharacterKey | undefined
-  if (charKey && isAbilityFormulaTag(tag)) {
-    return (
-      <ColorText color={getVariant(tag)}>
-        <AbilityRowTitle charKey={charKey} tag={tag} />
-      </ColorText>
-    )
-  }
-  const ownedTitle = tagFieldTitle(tag)
-  if (ownedTitle) {
-    return <ColorText color={getVariant(tag)}>{ownedTitle}</ColorText>
-  }
-  return (
-    <ColorText color={getVariant(tag)}>
-      <TagFallbackLabel tag={tag} />
-    </ColorText>
-  )
-}
-
 /**
  * Groups tags that share `name` with dmg/daze/anom `q` into one {@link MultiTagField}.
  */
@@ -63,7 +36,7 @@ export function groupFieldsByTag(tags: Tag[], sheet?: Sheet): Field[] {
     if (part.kind === 'single') {
       const { tag } = part
       fields.push({
-        title: formulaFieldTitle(tag),
+        title: resolveTagTitle(tag),
         fieldRef: tag,
       })
       continue
@@ -76,7 +49,7 @@ export function groupFieldsByTag(tags: Tag[], sheet?: Sheet): Field[] {
     if (!dmgTag) continue
 
     const multiField: MultiTagField = {
-      title: formulaFieldTitle(dmgTag),
+      title: resolveTagTitle(dmgTag),
       fieldRefs,
     }
     fields.push(multiField)

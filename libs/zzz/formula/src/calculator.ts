@@ -1,4 +1,3 @@
-import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
 import type {
   CalcMeta as CalcMetaBase,
   Read as ReadBase,
@@ -9,7 +8,7 @@ import { DebugCalculator } from '@genshin-optimizer/pando/engine'
 import { allDiscSetKeys, allWengineKeys } from '@genshin-optimizer/zzz/consts'
 import type { Read, Tag } from './data/util'
 import { enemyTag, ownTag, tagStr } from './data/util'
-import { isProductionFormulaListing } from './productionFormulaListing'
+import { filterExposedFormulaListings } from './formulaVisibility'
 
 export type CalcMeta = CalcMetaBase<Tag, never>
 
@@ -39,10 +38,6 @@ export class Calculator extends Base<Tag, never> {
   }
   // TODO: Remove me once we figure out what to do with character sheet listing explosion
   override listFormulas(read: ReadBase<Tag>): ReadBase<Tag>[] {
-    return super
-      .listFormulas(read)
-      .filter(
-        (r) => shouldShowDevComponents || isProductionFormulaListing(r.tag)
-      )
+    return filterExposedFormulaListings(super.listFormulas(read))
   }
 }

@@ -29,12 +29,14 @@ import {
 } from '../hooks'
 import { OptFormulaSections } from '../OptFormulaSections'
 import {
-  formulaReadForTag,
   isListingStatTag,
-  mergeMultiTagFieldForDisplay,
-  mergeTagForOpt,
   statKeyFromListingTag,
   statReadTagKey,
+} from '../listingStatLabels'
+import {
+  formulaReadForTag,
+  mergeMultiTagFieldForDisplay,
+  mergeTagForOpt,
 } from '../optTarget'
 
 export function CharStatsDisplay() {

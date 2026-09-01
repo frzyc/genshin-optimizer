@@ -1,9 +1,9 @@
 import type { Read } from '@genshin-optimizer/game-opt/engine'
 import type { Field } from '@genshin-optimizer/game-opt/sheet-ui'
-import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
 import type { CharacterKey, SkillKey } from '@genshin-optimizer/zzz/consts'
 import { allSkillKeys } from '@genshin-optimizer/zzz/consts'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
+import { shouldIncludeStaticAbilityFields } from '@genshin-optimizer/zzz/formula'
 import { parseAbilityFromTag, skillFromTag } from '../abilityTag'
 import { groupFieldsByTag } from '../bundledFormulaFields'
 import {
@@ -66,8 +66,7 @@ export function buildCharFormulaFields(
   reads: Read<Tag>[],
   options?: { includeAbilityFields?: boolean }
 ) {
-  const includeAbilityFields =
-    options?.includeAbilityFields ?? shouldShowDevComponents
+  const includeAbilityFields = shouldIncludeStaticAbilityFields(options)
   const abilityFormulaTags = charAbilityFormulaTags(charKey)
   const abilityFieldsBySkill = includeAbilityFields
     ? buildAbilityFieldsBySkill(charKey, abilityFormulaTags)

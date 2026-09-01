@@ -1,16 +1,8 @@
-import { ColorText, SqBadge } from '@genshin-optimizer/common/ui'
-import { evalIfFunc } from '@genshin-optimizer/common/util'
-import type { Calculator as GameOptCalculator } from '@genshin-optimizer/game-opt/engine'
-import {
-  Read,
-  stripCalcContextTag,
-  type Tag,
-} from '@genshin-optimizer/zzz/formula'
+import { SqBadge } from '@genshin-optimizer/common/ui'
+import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { AttributeName } from '@genshin-optimizer/zzz/ui'
-import { getCondMap, tagFieldTitle } from '../char/tagFieldMap'
-import { damageTypeKeysMap, getDmgType, getVariant } from '../char/util'
-import { useZzzCalcContext } from '../hooks/useZzzCalcContext'
-import { TagFallbackLabel } from './TagFallbackLabel'
+import { damageTypeKeysMap, getDmgType } from '../char/util'
+import { resolveTagTitle } from './resolveTagTitle'
 
 export function TagDisplay({
   tag,
@@ -19,11 +11,7 @@ export function TagDisplay({
   tag: Tag
   showPercent?: boolean
 }) {
-  return (
-    <ColorText color={getVariant(tag)}>
-      <TagStrDisplay tag={tag} showPercent={showPercent} />
-    </ColorText>
-  )
+  return resolveTagTitle(tag, { showPercent, includeCond: true })
 }
 
 export function FullTagDisplay({
@@ -46,30 +34,4 @@ export function FullTagDisplay({
       )}
     </>
   )
-}
-
-function TagStrDisplay({
-  tag,
-  showPercent,
-}: {
-  tag: Tag
-  showPercent?: boolean
-}) {
-  const calc = useZzzCalcContext()
-  const listingTag = stripCalcContextTag(tag)
-
-  const ownedTitle = tagFieldTitle(listingTag)
-  if (ownedTitle) return ownedTitle
-
-  if (tag.qt === 'cond' && tag.q && tag.sheet && calc) {
-    const cond = getCondMap().get(`${tag.sheet}:${tag.q}`)
-    if (cond)
-      return evalIfFunc(
-        cond.label,
-        calc as GameOptCalculator,
-        calc?.compute(new Read(tag, 'max')).val
-      )
-  }
-
-  return <TagFallbackLabel tag={tag} showPercent={showPercent} />
 }

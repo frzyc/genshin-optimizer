@@ -3,18 +3,12 @@ import {
   getUnitStr,
   shouldShowDevComponents,
 } from '@genshin-optimizer/common/util'
-import type { CharacterKey, StatKey } from '@genshin-optimizer/zzz/consts'
-import {
-  allCharacterKeys,
-  elementalData,
-  statKeyTextMap,
-} from '@genshin-optimizer/zzz/consts'
+import type { StatKey } from '@genshin-optimizer/zzz/consts'
+import { elementalData, statKeyTextMap } from '@genshin-optimizer/zzz/consts'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { isAbilityDim } from '@genshin-optimizer/zzz/formula'
 import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
 import { StatDisplay } from '@genshin-optimizer/zzz/ui'
-import { isAbilityFormulaTag } from '../abilityTag'
-import { AbilityRowTitle } from '../char/abilityFormulaLabels'
 import {
   getTagLabel,
   namedAbilityDimLabel,
@@ -85,8 +79,8 @@ function attributedLabelFromCompositeKey(
 }
 
 /**
- * Owned fallback label for a tag — ability i18n / stats / formula keys.
- * Does not read `tagFieldMap` (safe for sheet field titles that are stored in the map).
+ * Fallback label for stats / formula keys when no authored sheet title exists.
+ * Ability formula tags must be routed through `resolveTagTitle` first.
  */
 export function TagFallbackLabel({
   tag,
@@ -95,14 +89,6 @@ export function TagFallbackLabel({
   tag: Tag
   showPercent?: boolean
 }) {
-  if (
-    tag.sheet &&
-    allCharacterKeys.includes(tag.sheet as CharacterKey) &&
-    isAbilityFormulaTag(tag)
-  ) {
-    return <AbilityRowTitle charKey={tag.sheet as CharacterKey} tag={tag} />
-  }
-
   if (tag.name && tag.q && isAbilityDim(tag.q)) {
     const label = namedAbilityDimLabel(tag)
     if (label) return <span>{label}</span>

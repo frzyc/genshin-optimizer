@@ -1,10 +1,8 @@
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { i18n } from '@genshin-optimizer/zzz/i18n'
+import { render } from '@testing-library/react'
 import { describe, expect, it, vi } from 'vitest'
-import {
-  abilityRowTitleString,
-  resolveAbilityDisplay,
-} from './abilityFormulaLabels'
+import { AbilityRowTitle, resolveAbilityDisplay } from './abilityFormulaLabels'
 
 const anbyTurboVoltHit3: Tag = {
   et: 'own',
@@ -36,7 +34,8 @@ const s0AnbyUltHit0: Tag = {
 }
 
 function rowText(charKey: 'Anby' | 'Soldier0Anby', tag: Tag): string {
-  return abilityRowTitleString(charKey, tag) ?? ''
+  const { container } = render(<AbilityRowTitle charKey={charKey} tag={tag} />)
+  return container.textContent ?? ''
 }
 
 function mockBlankUltimateVoidstrikeParam() {

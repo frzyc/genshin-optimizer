@@ -10,16 +10,16 @@ import { Box, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
 import { useMemo } from 'react'
 import { isAbilityFormulaTag } from './abilityTag'
-import { formulaFieldTitle } from './bundledFormulaFields'
 import {
   abilityDisplayTitle,
-  abilityHitParamTitle,
+  abilityHitParamLabel,
   resolveAbilityDisplay,
 } from './char/abilityFormulaLabels'
 import type { TalentSheetElementKey } from './char/consts'
 import { getFieldCategory } from './char/fieldCategory'
 import { damageTypeKeysMap } from './char/util'
 import { TagDisplay } from './components'
+import { resolveTagTitle } from './components/resolveTagTitle'
 import {
   OptCollapsibleSectionHeader,
   skillSectionFlatIconKey,
@@ -127,7 +127,7 @@ export function OptTargetSelectedLabel({
   if (getFieldCategory(charKey, tag)) {
     return <OptTargetFormulaLabel charKey={charKey} tag={tag} inline={inline} />
   }
-  return formulaFieldTitle(tag)
+  return resolveTagTitle(tag)
 }
 
 function AbilityOptTargetSecondaryLine({
@@ -180,7 +180,7 @@ export function AbilityOptTargetLabel({
   const { skill } = resolved
   const abilityName = abilityDisplayTitle(charKey, tag)
   const skillName = st(`skills.${skill}`)
-  const hitLabel = abilityHitParamTitle(charKey, tag) ?? null
+  const hitLabel = abilityHitParamLabel(charKey, resolved) ?? null
   const damageType2Label =
     tag.damageType2 && tag.damageType2 in damageTypeKeysMap
       ? damageTypeKeysMap[tag.damageType2 as keyof typeof damageTypeKeysMap]
