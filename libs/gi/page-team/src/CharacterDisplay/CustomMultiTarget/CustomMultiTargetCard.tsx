@@ -72,6 +72,7 @@ export default function CustomMultiTargetCard({
       const target_ = { ...target }
       target_.targets = [...target_.targets, initCustomTarget(t, multi)]
       setTarget(target_)
+      setSelectedTarget(target_.targets.length - 1)
     },
     [target, setTarget]
   )
