@@ -188,11 +188,24 @@ export function getArtifactEfficiency(
   )
 
   const rollsRemaining = getRollsRemaining(level, rarity)
-  const emptySlotCount = substats.filter((s) => !s.key).length
+  // An unactivated substat (the dimmed 4th line of an artifact below +4) is
+  // stored outside of `substats`, but it still occupies the fourth substat
+  // slot: the slot is not empty, since the line already has a known key and
+  // can never be unlocked into a different stat.
+  const hasUnactivatedSubstat = !!unactivatedSubstats?.some(({ key }) => key)
+  const emptySlotCount = Math.max(
+    0,
+    substats.filter((s) => !s.key).length - (hasUnactivatedSubstat ? 1 : 0)
+  )
 
-  const matchedSlotCount = substats.filter(
-    (s) => s.key && filter.has(s.key)
-  ).length
+  const matchedUnactivatedSubstat =
+    hasUnactivatedSubstat &&
+    unactivatedSubstats!.some(({ key }) => key && filter.has(key))
+      ? 1
+      : 0
+  const matchedSlotCount =
+    substats.filter((s) => s.key && filter.has(s.key)).length +
+    matchedUnactivatedSubstat
   const unusedFilterCount =
     filter.size -
     matchedSlotCount -
@@ -200,8 +213,12 @@ export function getArtifactEfficiency(
   const unactivatedSubstatRoll =
     unactivatedSubstats?.filter((s) => s.key).length ?? 0
 
-  let maxEfficiency =
-    currentEfficiency + (artifactMeta.unactivatedSubstats[0]?.efficiency ?? 0)
+  let maxEfficiency = currentEfficiency
+  // The value of the unactivated substat only counts towards max efficiency
+  // when its stat is selected by the filter.
+  const unactivatedSubstatKey = unactivatedSubstats?.find(({ key }) => key)?.key
+  if (unactivatedSubstatKey && filter.has(unactivatedSubstatKey))
+    maxEfficiency += artifactMeta.unactivatedSubstats[0]?.efficiency ?? 0
   const maxRollEff = maxSubstatRollEfficiency[rarity]
   // Rolls into good empty slots, assuming max-level artifacts have no empty slots
   maxEfficiency += maxRollEff * Math.min(emptySlotCount, unusedFilterCount)
