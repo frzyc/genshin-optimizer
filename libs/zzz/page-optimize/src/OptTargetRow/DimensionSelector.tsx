@@ -1,66 +1,36 @@
-import { getTeamFrame0, resolveTargetTag } from '@genshin-optimizer/zzz/db'
 import {
   useCharacterContext,
   useDatabaseContext,
-  useTeam,
 } from '@genshin-optimizer/zzz/db-ui'
-import { isAbilityDim } from '@genshin-optimizer/zzz/formula'
+import { withDim } from '@genshin-optimizer/zzz/formula'
 import {
-  dimensionByAbilityDim,
-  type FormulaDimension,
-  formulaDimensionLabel,
-  formulaDimensions,
-  isAbilityFormulaTag,
-  resolveAbilityDim,
+  dimLabel,
+  useResolvedOptTarget,
 } from '@genshin-optimizer/zzz/formula-ui'
 import { ToggleButton, ToggleButtonGroup } from '@mui/material'
-import { useMemo } from 'react'
 
 export function DimensionSelector() {
   const { database } = useDatabaseContext()
   const character = useCharacterContext()!
-  const team = useTeam(character.key)!
-  const { tag: target } = getTeamFrame0(team)
-  const resolvedTag = useMemo(
-    () => (target ? resolveTargetTag(target) : undefined),
-    [target]
-  )
-
-  if (
-    !target?.name ||
-    !target.q ||
-    !isAbilityDim(target.q) ||
-    !resolvedTag ||
-    !isAbilityFormulaTag(resolvedTag)
-  )
-    return null
-
-  const { name, q } = target
-  const sheet = target.sheet ?? character.key
-  const formulaDimension = dimensionByAbilityDim[q]
+  const { ref, entry } = useResolvedOptTarget()
+  const dims = entry ? Object.keys(entry.dims) : []
+  if (!ref || !entry || dims.length < 2) return null
 
   return (
     <ToggleButtonGroup
       exclusive
       size="small"
-      value={formulaDimension}
-      onChange={(_, dim: FormulaDimension | null) => {
-        if (!dim || dim === formulaDimension) return
-        const nextAbilityDim = resolveAbilityDim(sheet, name, dim)
-        if (!nextAbilityDim) return
-        database.teams.setFrame0(character.key, {
-          tag: {
-            sheet,
-            name,
-            q: nextAbilityDim,
-          },
-        })
+      value={ref.dim}
+      onChange={(_, dim: string | null) => {
+        if (!dim || dim === ref.dim) return
+        const next = withDim(ref, dim)
+        if (next) database.teams.setFrame0(character.key, { ref: next })
       }}
       sx={{ flexShrink: 0 }}
     >
-      {formulaDimensions.map((dim) => (
+      {dims.map((dim) => (
         <ToggleButton key={dim} value={dim}>
-          {formulaDimensionLabel(dim)}
+          {dimLabel(dim)}
         </ToggleButton>
       ))}
     </ToggleButtonGroup>

@@ -2,7 +2,7 @@ import { SqBadge } from '@genshin-optimizer/common/ui'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { AttributeName } from '@genshin-optimizer/zzz/ui'
 import { damageTypeKeysMap, getDmgType } from '../char/util'
-import { resolveTagTitle } from './resolveTagTitle'
+import { TagTitle } from './TagTitle'
 
 export function TagDisplay({
   tag,
@@ -11,7 +11,7 @@ export function TagDisplay({
   tag: Tag
   showPercent?: boolean
 }) {
-  return resolveTagTitle(tag, { showPercent, includeCond: true })
+  return <TagTitle tag={tag} showPercent={showPercent} includeCond />
 }
 
 export function FullTagDisplay({

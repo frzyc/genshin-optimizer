@@ -19,17 +19,18 @@ import type {
   DamageType,
   Dst,
   enemy,
+  FormulaRef,
   own,
   Sheet,
   Src,
-  Tag,
 } from '@genshin-optimizer/zzz/formula'
 import {
+  specificDmgTypeKeys as formulaSpecificDmgTypeKeys,
   getConditional,
   isMember,
-  lookupFormulaEntry,
-  resolveFormulaSheet,
-  stripCalcContextTag,
+  type SpecificDmgTypeKey,
+  toTag,
+  validateFormulaRef,
 } from '@genshin-optimizer/zzz/formula'
 import { z } from 'zod'
 import type { ZzzDatabase } from '../..'
@@ -38,53 +39,10 @@ import { DataManager } from '../DataManager'
 export type critModeKey = 'avg' | 'crit' | 'nonCrit'
 export const critModeKeys = ['avg', 'crit', 'nonCrit'] as const
 
-export type SpecificDmgTypeKey = Exclude<
-  DamageType,
-  'anomaly' | 'disorder' | 'aftershock' | 'elemental' | 'vortex'
->
+export type { FormulaRef, SpecificDmgTypeKey }
 
-/** Inst formulas where the user picks damage bucket / aftershock in the opt row. */
-export const genericDmgInstNames = ['standardDmgInst', 'sheerDmgInst'] as const
-
-export function isGenericDmgInstTarget(
-  name: string | undefined
-): name is (typeof genericDmgInstNames)[number] {
-  return !!name && (genericDmgInstNames as readonly string[]).includes(name)
-}
-export const specificDmgTypeKeys: SpecificDmgTypeKey[] = [
-  'basic',
-  'dash',
-  'dodgeCounter',
-  'special',
-  'exSpecial',
-  'chain',
-  'ult',
-  'quickAssist',
-  'defensiveAssist',
-  'evasiveAssist',
-  'assistFollowUp',
-] as const
-
-function isSpecificDmgTypeKey(key: string): key is SpecificDmgTypeKey {
-  return specificDmgTypeKeys.includes(key as SpecificDmgTypeKey)
-}
-
-export const targetQ = [
-  'hp',
-  'atk',
-  'def',
-  'impact',
-  'sheerForce',
-  'crit_',
-  'crit_dmg_',
-  'pen_',
-  'pen',
-  'enerRegen',
-  'anomProf',
-  'anomMas',
-  'dmg_',
-] as const
-export const targetQt = ['initial', 'final', 'common'] as const
+export const specificDmgTypeKeys: SpecificDmgTypeKey[] =
+  formulaSpecificDmgTypeKeys
 
 export const bonusStatQtKeys = ['combat', 'base', 'initial'] as const
 export const bonusStatKeys: Array<keyof typeof own.final> = [
@@ -157,28 +115,6 @@ export const bonusStatDamageTypes: BonusStatDamageType[] = [
   'vortex',
 ] as const
 
-export type TargetTag = {
-  sheet?: string
-  name?: string
-  damageType1?: SpecificDmgTypeKey
-  damageType2?: 'aftershock' | 'abloom'
-  q?: string
-  qt?: (typeof targetQt)[number]
-  attribute?: AttributeKey
-}
-
-const targetTagSchema = z
-  .object({
-    sheet: z.string().optional(),
-    name: z.string().optional(),
-    damageType1: z.string().optional(),
-    damageType2: z.literal('aftershock').or(z.literal('abloom')).optional(),
-    q: z.string().optional(),
-    qt: z.enum(targetQt).optional(),
-    attribute: z.string().optional(),
-  })
-  .optional() as z.ZodType<TargetTag | undefined>
-
 const conditionalSchema = z.object({
   sheet: z.string() as z.ZodType<Sheet>,
   src: z.string() as z.ZodType<Src>,
@@ -230,8 +166,19 @@ const enemyStatSchema = z.object({
 
 export type TeamEnemyStat = z.infer<typeof enemyStatSchema>
 
+const formulaRefSchema = z
+  .object({
+    sheet: z.string(),
+    name: z.string(),
+    dim: z.string(),
+    damageType1: z.string().optional(),
+    damageType2: z.literal('aftershock').or(z.literal('abloom')).optional(),
+    attribute: z.string().optional(),
+  })
+  .optional()
+
 const optFrameSchema = z.object({
-  tag: targetTagSchema,
+  ref: formulaRefSchema,
   multiplier: z.number().positive().catch(1),
   critMode: zodEnumWithDefault(critModeKeys, 'avg'),
   bonusStats: z.array(bonusStatSchema).catch([]),
@@ -240,7 +187,12 @@ const optFrameSchema = z.object({
   description: z.string().optional(),
 })
 
-export type OptFrame = z.infer<typeof optFrameSchema>
+/** Zod persist shape. `ref` is untrusted until `validateFormulaRef`. */
+type ParsedOptFrame = z.infer<typeof optFrameSchema>
+
+export type OptFrame = Omit<ParsedOptFrame, 'ref'> & {
+  ref: FormulaRef | undefined
+}
 
 const teammateDatumSchema = z.object({
   characterKey: z.enum(allCharacterKeys),
@@ -258,7 +210,9 @@ const teamSchema = z.object({
   enemyStunMultiplier: z.number().catch(150),
 })
 
-export type Team = z.infer<typeof teamSchema>
+export type Team = Omit<z.infer<typeof teamSchema>, 'frames'> & {
+  frames: OptFrame[]
+}
 
 export class TeamDataManager extends DataManager<
   CharacterKey,
@@ -327,12 +281,12 @@ export class TeamDataManager extends DataManager<
     return teammates
   }
 
-  private validateOptFrame(raw: OptFrame): OptFrame | undefined {
+  private validateOptFrame(raw: ParsedOptFrame): OptFrame | undefined {
     const result = optFrameSchema.safeParse(raw)
     if (!result.success) return undefined
 
     const {
-      tag: rawTarget,
+      ref: rawRef,
       multiplier,
       critMode,
       bonusStats: rawBonusStats,
@@ -341,13 +295,13 @@ export class TeamDataManager extends DataManager<
       description,
     } = result.data
 
-    const tag = this.validateTargetTag(rawTarget)
+    const ref = validateFormulaRef(rawRef)
     const bonusStats = this.validateBonusStats(rawBonusStats)
     const conditionals = this.validateConditionals(rawConditionals)
     const enemyStats = this.validateEnemyStats(rawEnemyStats)
 
     return {
-      tag,
+      ref,
       multiplier,
       critMode,
       bonusStats,
@@ -378,12 +332,6 @@ export class TeamDataManager extends DataManager<
         }
       })
       .filter(notEmpty)
-  }
-
-  private validateTargetTag(
-    rawTarget: TargetTag | undefined
-  ): TargetTag | undefined {
-    return sanitizeTargetTag(rawTarget)
   }
 
   private validateConditionals(
@@ -595,15 +543,15 @@ export class TeamDataManager extends DataManager<
       const patch = typeof update === 'function' ? update(frame0) : update
       if (patch === false) return false
       let nextPatch = patch
-      if ('tag' in patch && patch.tag) {
-        const sanitized = sanitizeTargetTag(patch.tag)
-        if (!sanitized) {
+      if ('ref' in patch) {
+        const sanitized = patch.ref ? validateFormulaRef(patch.ref) : undefined
+        if (patch.ref && !sanitized) {
           console.error('[zzz-db] setFrame0: rejected invalid opt target', {
-            tag: patch.tag,
+            ref: patch.ref,
           })
           return false
         }
-        nextPatch = { ...patch, tag: sanitized }
+        nextPatch = { ...patch, ref: sanitized }
       }
       const frames = [...team.frames]
       frames[0] = { ...frame0, ...nextPatch }
@@ -662,7 +610,7 @@ export class TeamDataManager extends DataManager<
 }
 
 const emptyFrame0 = (): OptFrame => ({
-  tag: undefined,
+  ref: undefined,
   multiplier: 1,
   critMode: 'avg',
   bonusStats: [],
@@ -713,143 +661,14 @@ export function teamCharacterKeys(team: Team): CharacterKey[] {
 
 export function teamToSolverFrames(team: Team) {
   return team.frames
-    .map(({ tag, multiplier }) => {
+    .map(({ ref, multiplier }) => {
+      if (!ref) return undefined
+      const tag = toTag(ref)
       if (!tag) return undefined
-      const resolved = resolveTargetTag(tag)
-      if (!resolved) return undefined
-      return { tag: resolved, multiplier }
+      return { tag, multiplier }
     })
     .filter(notEmpty)
 }
-
-export function applyDamageTypeToTag(
-  tag: Tag,
-  damageType1: DamageType | undefined | null,
-  damageType2: DamageType | undefined | null
-): Tag {
-  return {
-    ...tag,
-    ...(damageType1 ? { damageType1 } : {}),
-    ...(damageType2 ? { damageType2 } : {}),
-  }
-}
-
-/** Set or clear `damageType1` on a generic inst opt target. */
-export function withInstDamageType1<T extends TargetTag>(
-  target: T,
-  damageType1: SpecificDmgTypeKey | undefined
-): T {
-  const { damageType1: _, ...rest } = target
-  return (damageType1 ? { ...rest, damageType1 } : rest) as T
-}
-
-/** Set or clear aftershock (`damageType2`) on a generic inst opt target. */
-export function withInstDamageType2<T extends TargetTag>(
-  target: T,
-  aftershock: boolean
-): T {
-  const { damageType2: _, ...rest } = target
-  return (aftershock ? { ...rest, damageType2: 'aftershock' } : rest) as T
-}
-
-/** Validate and normalize a persisted optimization target. */
-export function sanitizeTargetTag(
-  rawTarget: TargetTag | undefined
-): TargetTag | undefined {
-  if (!rawTarget) return undefined
-
-  if (rawTarget.name) {
-    const sheet = rawTarget.sheet ?? resolveFormulaSheet(rawTarget)
-    const formula = lookupFormulaEntry({ ...rawTarget, sheet })
-    if (formula) {
-      const abilityName = formula.tag.name
-      if (!abilityName) return undefined
-      const q = rawTarget.q ?? formula.tag.q ?? undefined
-      const base = removeUndefinedFields({
-        sheet: sheet ?? formula.sheet,
-        name: abilityName,
-        q,
-      }) as TargetTag
-      if (!isGenericDmgInstTarget(abilityName)) return base
-
-      let damageType1: SpecificDmgTypeKey | undefined
-      let damageType2: 'aftershock' | 'abloom' | undefined
-      if (rawTarget.damageType1 && isSpecificDmgTypeKey(rawTarget.damageType1))
-        damageType1 = rawTarget.damageType1
-      if (
-        rawTarget.damageType2 === 'aftershock' ||
-        rawTarget.damageType2 === 'abloom'
-      )
-        damageType2 = rawTarget.damageType2
-      return removeUndefinedFields({
-        sheet: sheet ?? formula.sheet,
-        name: abilityName,
-        q,
-        damageType1,
-        damageType2,
-      }) as TargetTag
-    }
-    return undefined
-  }
-
-  const { q, qt, attribute } = rawTarget
-  if (
-    q &&
-    qt &&
-    (targetQ as readonly string[]).includes(q) &&
-    targetQt.includes(qt)
-  ) {
-    let validAttribute: AttributeKey | undefined
-    if (q === 'dmg_' && attribute) {
-      validAttribute = validateValue(attribute, allAttributeKeys) as
-        | AttributeKey
-        | undefined
-      if (!validAttribute) return undefined
-    }
-    return removeUndefinedFields({
-      q,
-      qt,
-      attribute: validAttribute,
-    }) as TargetTag
-  }
-  return undefined
-}
-
-/** Resolve a validated opt target to a calculator tag. */
-export function resolveTargetTag(target: TargetTag): Tag | undefined {
-  const sanitized = sanitizeTargetTag(target)
-  if (!sanitized) return undefined
-
-  const { attribute } = sanitized
-
-  if (sanitized.name) {
-    const sheet = sanitized.sheet ?? resolveFormulaSheet(sanitized)
-    const formula = lookupFormulaEntry({ ...sanitized, sheet })
-    const formulaTag = formula?.tag
-    if (!formulaTag) return undefined
-    if (isGenericDmgInstTarget(sanitized.name)) {
-      const { damageType1, damageType2 } = sanitized
-      return stripCalcContextTag(
-        applyDamageTypeToTag(formulaTag, damageType1, damageType2)
-      )
-    }
-    return stripCalcContextTag(formulaTag)
-  }
-
-  const { q, qt } = sanitized
-  if (!q || !qt) return undefined
-
-  return stripCalcContextTag({
-    et: 'own',
-    q,
-    qt,
-    sheet: qt === 'common' ? 'iso' : 'agg',
-    ...(attribute ? { attribute } : {}),
-  })
-}
-
-/** @deprecated Use {@link resolveTargetTag} — returns `undefined` for invalid targets. */
-export const targetTag = resolveTargetTag
 
 export function newBonusStatTag(q: BonusStatKey): BonusStatTag {
   return {

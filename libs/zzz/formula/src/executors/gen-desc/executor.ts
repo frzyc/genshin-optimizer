@@ -13,10 +13,14 @@ import {
 import { workspaceRoot } from '@nx/devkit'
 import { data } from '../../data'
 import { commonSheets, type Tag } from '../../data/util'
+import type { CatalogListing } from '../../formulaCatalogBuild'
+import { buildFormulaCatalog } from '../../formulaCatalogBuild'
 import {
   normalizeSheetFormulaKeys,
   provisionalFormulaMetaKey,
 } from '../../formulaMeta'
+import { STAT_SHEET } from '../../formulaRef'
+import { stripCalcContextTag } from '../../hit'
 import type { GenDescExecutorSchema } from './schema'
 
 export default async function runExecutor(
@@ -99,6 +103,39 @@ export default async function runExecutor(
     }
   )
 
+  const catalogListings: CatalogListing[] = []
+  for (const { tag, value } of data) {
+    if (
+      tag.sheet === 'agg' ||
+      tag.sheet === 'disc' ||
+      tag.sheet === 'wengine' ||
+      tag.qt !== 'listing' ||
+      tag.q !== 'formulas' ||
+      value.op !== 'tag' ||
+      !('q' in value.tag)
+    )
+      continue
+
+    const inner = value.tag as Tag
+    if (inner.name) {
+      catalogListings.push({
+        catalogSheet: tag.sheet!,
+        name: inner.name,
+        dim: inner.q!,
+        tag: { ...tag, ...inner, name: inner.name },
+      })
+      continue
+    }
+    if (!inner.q || !inner.qt) continue
+    catalogListings.push({
+      catalogSheet: STAT_SHEET,
+      name: inner.q,
+      dim: inner.qt,
+      tag: stripCalcContextTag(inner),
+    })
+  }
+  const formulaCatalog = buildFormulaCatalog(catalogListings)
+
   const mapMeta = async (type: string, key: string) => {
     await dumpMeta(
       path.join(outputPath, type, key),
@@ -127,6 +164,15 @@ export default async function runExecutor(
       await mapMeta('common', key)
     }),
   ])
+
+  const catalogPath = path.join(workspaceRoot, outputPath, 'formulaCatalog.ts')
+  const catalogSrc = `
+// WARNING: Generated file, do not modify
+import type { FormulaCatalog } from '../formulaRef'
+
+export const formulaCatalog = ${JSON.stringify(formulaCatalog)} as FormulaCatalog
+`
+  await writeFile(catalogPath, await formatText('index.ts', catalogSrc))
 
   return { success: true }
 }

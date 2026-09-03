@@ -1,13 +1,5 @@
-import { allCharacterKeys } from '@genshin-optimizer/zzz/consts'
 import { describe, expect, it } from 'vitest'
-import {
-  type AbilityDim,
-  abilityBaseName,
-  bundledFormulaInSheet,
-  formulaMetaKey,
-  isAbilityDim,
-} from './formulaMeta'
-import { formulas } from './meta'
+import { abilityBaseName, formulaMetaKey, isAbilityDim } from './formulaMeta'
 
 describe('formulaMetaKey', () => {
   it('builds colon keys only when ambiguous', () => {
@@ -30,76 +22,6 @@ describe('formulaMetaKey', () => {
     expect(formulaMetaKey('anomalyDmgInst', 'anomalyDmg')).toBe(
       'anomalyDmgInst'
     )
-  })
-
-  it('resolves every bundled ability formula in generated meta', () => {
-    for (const [sheet, sheetFormulas] of Object.entries(formulas)) {
-      for (const entry of Object.values(sheetFormulas)) {
-        const tag = entry.tag
-        if (tag?.qt !== 'formula' || !tag.name || !isAbilityDim(tag.q)) continue
-
-        const q = tag.q as AbilityDim
-        const label = `${sheet}/${tag.name}:${q}`
-        expect(bundledFormulaInSheet(sheetFormulas, tag.name, q), label).toBe(
-          entry
-        )
-      }
-    }
-  })
-
-  it('round-trips persisted opt-target identity', () => {
-    const entry = formulas.Yixuan['BasicAttackCirrusStrike_0:sheerDmg']
-    const { tag } = entry
-    expect(
-      bundledFormulaInSheet(formulas.Yixuan, tag.name!, tag.q! as AbilityDim)
-    ).toBe(entry)
-  })
-
-  it('does not return a bare singleton for a different ability dim', () => {
-    const sheetFormulas = {
-      BasicAttack_0: {
-        tag: { name: 'BasicAttack_0', q: 'standardDmg' },
-      },
-    }
-    expect(
-      bundledFormulaInSheet(sheetFormulas, 'BasicAttack_0', 'sheerDmg')
-    ).toBeUndefined()
-  })
-
-  it('has at most one bundled ability entry per tag.name + ability dim', () => {
-    const collisions = new Map<string, string[]>()
-
-    for (const [sheet, sheetFormulas] of Object.entries(formulas)) {
-      for (const entry of Object.values(sheetFormulas)) {
-        const tag = entry.tag
-        if (tag?.qt !== 'formula' || !tag.name || !isAbilityDim(tag.q)) continue
-
-        const key = `${sheet}\0${tag.name}\0${tag.q}`
-        const variants = collisions.get(key) ?? []
-        variants.push(tag.damageType2 ?? '')
-        collisions.set(key, variants)
-      }
-    }
-
-    for (const [key, damageType2s] of collisions) {
-      const unique = new Set(damageType2s)
-      expect(unique.size, key).toBeLessThanOrEqual(1)
-    }
-  })
-
-  it('includes skillType on every named ability hit listing', () => {
-    for (const charKey of allCharacterKeys) {
-      const sheetFormulas = formulas[charKey as keyof typeof formulas]
-      if (!sheetFormulas) continue
-      for (const entry of Object.values(sheetFormulas)) {
-        const tag = entry.tag
-        if (tag?.qt !== 'formula' || !tag.name || !isAbilityDim(tag.q)) continue
-        if (!/_?(?:aftershock)?\d+$/.test(tag.name)) continue
-        expect(tag.skillType, `${charKey}/${tag.name}:${tag.q}`).toMatch(
-          /Skill$/
-        )
-      }
-    }
   })
 })
 

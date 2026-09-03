@@ -1,40 +1,21 @@
 import type { Tag } from '@genshin-optimizer/zzz/formula'
+import { formulaCatalog } from '@genshin-optimizer/zzz/formula'
 import { i18n } from '@genshin-optimizer/zzz/i18n'
 import { render } from '@testing-library/react'
 import { describe, expect, it, vi } from 'vitest'
-import { AbilityRowTitle, resolveAbilityDisplay } from './abilityFormulaLabels'
+import { AbilityRowTitle } from './abilityFormulaLabels'
 
-const anbyTurboVoltHit3: Tag = {
-  et: 'own',
-  qt: 'formula',
-  q: 'standardDmg',
-  sheet: 'Anby',
-  attribute: 'electric',
-  damageType1: 'basic',
-  skillType: 'basicSkill',
-  name: 'BasicAttackTurboVolt_3',
-}
+const anbyTurboVoltHit3 =
+  formulaCatalog.Anby.BasicAttackTurboVolt_3.dims.standardDmg
 
-const s0AnbyAftershockUlt: Tag = {
-  et: 'own',
-  qt: 'formula',
-  q: 'standardDmg',
-  sheet: 'Soldier0Anby',
-  attribute: 'electric',
-  damageType1: 'ult',
-  damageType2: 'aftershock',
-  skillType: 'chainSkill',
-  name: 'UltimateVoidstrike_aftershock0',
-}
+const s0AnbyAftershockUlt =
+  formulaCatalog.Soldier0Anby.UltimateVoidstrike_aftershock0.dims.standardDmg
 
-const s0AnbyUltHit0: Tag = {
-  ...s0AnbyAftershockUlt,
-  damageType2: undefined,
-  name: 'UltimateVoidstrike_0',
-}
+const s0AnbyUltHit0 =
+  formulaCatalog.Soldier0Anby.UltimateVoidstrike_0.dims.standardDmg
 
-function rowText(charKey: 'Anby' | 'Soldier0Anby', tag: Tag): string {
-  const { container } = render(<AbilityRowTitle charKey={charKey} tag={tag} />)
+function rowText(tag: Tag): string {
+  const { container } = render(<AbilityRowTitle tag={tag} />)
   return container.textContent ?? ''
 }
 
@@ -51,16 +32,10 @@ function mockBlankUltimateVoidstrikeParam() {
   })
 }
 
-describe('resolveAbilityDisplay', () => {
-  it('parses skill from tag.skillType', () => {
-    expect(resolveAbilityDisplay(anbyTurboVoltHit3)?.skill).toBe('basic')
-  })
-})
-
 describe('AbilityRowTitle', () => {
   it('uses hit-specific param labels for multi-hit abilities', () => {
-    const hitLabel = rowText('Anby', anbyTurboVoltHit3)
-    const baseLabel = rowText('Anby', {
+    const hitLabel = rowText(anbyTurboVoltHit3)
+    const baseLabel = rowText({
       ...anbyTurboVoltHit3,
       name: 'BasicAttackTurboVolt',
     })
@@ -70,25 +45,21 @@ describe('AbilityRowTitle', () => {
   })
 
   it('shows the parent ability name for aftershock suffix hits, not the raw meta name', () => {
-    expect(rowText('Soldier0Anby', s0AnbyAftershockUlt)).toBe(
-      'UltimateVoidstrike'
-    )
-    expect(rowText('Soldier0Anby', s0AnbyAftershockUlt)).not.toContain(
-      '_aftershock'
-    )
+    expect(rowText(s0AnbyAftershockUlt)).toBe('UltimateVoidstrike')
+    expect(rowText(s0AnbyAftershockUlt)).not.toContain('_aftershock')
   })
 
   it('falls back to ability name when hit param text is blank', () => {
     mockBlankUltimateVoidstrikeParam()
 
-    expect(rowText('Soldier0Anby', s0AnbyUltHit0)).toBe('UltimateVoidstrike')
+    expect(rowText(s0AnbyUltHit0)).toBe('UltimateVoidstrike')
 
     vi.restoreAllMocks()
   })
 
   it('falls back to abilityKey when ability name is not translated', () => {
     expect(
-      rowText('Anby', {
+      rowText({
         ...anbyTurboVoltHit3,
         name: 'UnknownAbilityName',
       })

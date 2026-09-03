@@ -1,23 +1,19 @@
-import { getTeamFrame0, resolveTargetTag } from '@genshin-optimizer/zzz/db'
-import { useCharacterContext, useTeam } from '@genshin-optimizer/zzz/db-ui'
+import { useCharacterContext } from '@genshin-optimizer/zzz/db-ui'
 import { useMemo } from 'react'
-import { formulaReadForTag } from '../optTarget'
-import { useCharFormulaFields } from './useCharFormulaFields'
+import { listingReadForRef } from '../catalogListing'
+import { useCharCatalogRows } from './useCharCatalogRows'
+import { useResolvedOptTarget } from './useResolvedOptTarget'
 import { useZzzCalcContext } from './useZzzCalcContext'
 
 /** Optimization-target value for the currently equipped build. */
 export function useEquippedOptTargetValue(): number | undefined {
   const character = useCharacterContext()
-  const team = useTeam(character?.key)
   const calc = useZzzCalcContext()
-  const { readByListingKey } = useCharFormulaFields(character?.key, calc)
+  const { ref } = useResolvedOptTarget()
+  const { rows } = useCharCatalogRows(character?.key, calc)
   return useMemo(() => {
-    if (!character || !team || !calc) return undefined
-    const { tag: target } = getTeamFrame0(team)
-    if (!target) return undefined
-    const tag = resolveTargetTag(target)
-    if (!tag) return undefined
-    const read = formulaReadForTag(tag, readByListingKey)
+    if (!character || !calc || !ref) return undefined
+    const read = listingReadForRef(ref, rows)
     if (!read) return undefined
     return calc
       .withTag({
@@ -26,5 +22,5 @@ export function useEquippedOptTargetValue(): number | undefined {
         preset: 'preset0',
       })
       .compute(read).val
-  }, [character, team, calc, readByListingKey])
+  }, [character, calc, ref, rows])
 }

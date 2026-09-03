@@ -1,15 +1,19 @@
-import { getTeamFrame0, resolveTargetTag } from '@genshin-optimizer/zzz/db'
+import { getTeamFrame0 } from '@genshin-optimizer/zzz/db'
 import { useCharacterContext, useTeam } from '@genshin-optimizer/zzz/db-ui'
+import { lookupFormulaRef } from '@genshin-optimizer/zzz/formula'
 import { useMemo } from 'react'
 
-/** Persisted team frame-0 opt target and its resolved formula tag. */
+/** Validated frame-0 FormulaRef, catalog entry, and compute tag. */
 export function useResolvedOptTarget() {
   const character = useCharacterContext()
   const team = useTeam(character?.key)
-  const optTarget = team ? getTeamFrame0(team).tag : undefined
-  const resolvedOptTag = useMemo(
-    () => (optTarget ? resolveTargetTag(optTarget) : undefined),
-    [optTarget]
-  )
-  return { optTarget, resolvedOptTag }
+  const raw = team ? getTeamFrame0(team).ref : undefined
+  return useMemo(() => {
+    const looked = lookupFormulaRef(raw)
+    return {
+      ref: looked?.ref,
+      tag: looked?.tag,
+      entry: looked?.entry,
+    }
+  }, [raw])
 }

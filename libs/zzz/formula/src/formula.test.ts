@@ -15,8 +15,8 @@ import {
   charTagMapNodeEntries,
   conditionals,
   discTagMapNodeEntries,
-  formulas,
   teamData,
+  toTag,
   Vivian,
   wengineTagMapNodeEntries,
   withMember,
@@ -262,15 +262,29 @@ describe('char+wengine test', () => {
     expect(calc.compute(anby.final.atk).val).toBeCloseTo(1597.696912)
 
     expect(
-      calc
-        .withTag({ src: 'Anby', dst: 'Anby' })
-        .compute(read(formulas.Anby.standardDmgInst.tag, undefined)).val
+      calc.withTag({ src: 'Anby', dst: 'Anby' }).compute(
+        read(
+          toTag({
+            sheet: 'Anby',
+            name: 'standardDmgInst',
+            dim: 'standardDmg',
+          })!,
+          undefined
+        )
+      ).val
     ).toBeCloseTo(expectedStandardDmg)
 
     expect(
-      calc
-        .withTag({ src: 'Anby', dst: 'Anby' })
-        .compute(read(formulas.Anby.anomalyDmgInst.tag, undefined)).val
+      calc.withTag({ src: 'Anby', dst: 'Anby' }).compute(
+        read(
+          toTag({
+            sheet: 'Anby',
+            name: 'anomalyDmgInst',
+            dim: 'anomalyDmg',
+          })!,
+          undefined
+        )
+      ).val
     ).toBeCloseTo(expectedAnomalyDmg)
   })
   it('calculate specific elemental damage bonus separate from common', () => {
@@ -357,12 +371,26 @@ describe('char+wengine test', () => {
 
     expect(
       calc.compute(
-        read(formulas.Anby['BasicAttackTurboVolt_0:dazeBuildup'].tag, undefined)
+        read(
+          toTag({
+            sheet: 'Anby',
+            name: 'BasicAttackTurboVolt_0',
+            dim: 'dazeBuildup',
+          })!,
+          undefined
+        )
       ).val
     ).toBeCloseTo(18.408)
     expect(
       calc.compute(
-        read(formulas.Anby['BasicAttackTurboVolt_0:anomBuildup'].tag, undefined)
+        read(
+          toTag({
+            sheet: 'Anby',
+            name: 'BasicAttackTurboVolt_0',
+            dim: 'anomBuildup',
+          })!,
+          undefined
+        )
       ).val
     ).toBeCloseTo(0)
   })

@@ -14,7 +14,7 @@ import type {
   IZZZDatabase,
 } from '../Interfaces'
 
-export const currentDBVersion = 3
+export const currentDBVersion = 4
 
 export function migrateZOOD(
   zood: IZenlessObjectDescription & IZZZDatabase
@@ -115,6 +115,14 @@ export function migrateZOOD(
     }
 
     migrateCharOpt()
+  })
+
+  migrateVersion(4, () => {
+    const teams = zood['teams'] as any[] | undefined
+    if (!teams) return
+    for (const team of teams) {
+      migrateTeamFramesToRef(team)
+    }
   })
 
   zood.dbVersion = currentDBVersion
@@ -250,7 +258,54 @@ export function migrateStorage(storage: DBStorage) {
     migrateCharOpt()
   })
 
+  migrateVersion(4, () => {
+    for (const key of storage.keys) {
+      if (!key.startsWith('zzz_team_')) continue
+      const team = storage.get(key)
+      migrateTeamFramesToRef(team)
+      storage.set(key, team)
+    }
+  })
+
   storage.setDBVersion(currentDBVersion)
   if (version > currentDBVersion)
     throw new Error(`Database version ${version} is not supported`)
+}
+
+/** Structural only: v3 frames[].tag bag → frames[].ref. No catalog. */
+function migrateTeamFramesToRef(team: { frames?: any[] } | undefined) {
+  if (!team?.frames) return
+  for (const frame of team.frames) {
+    if (!frame || typeof frame !== 'object') continue
+    if (frame.ref) {
+      delete frame.tag
+      continue
+    }
+    frame.ref = tagBagToRefShape(frame.tag)
+    delete frame.tag
+  }
+}
+
+function tagBagToRefShape(bag: any) {
+  if (!bag || typeof bag !== 'object') return undefined
+  if (bag.name) {
+    const ref: Record<string, unknown> = {
+      sheet: bag.sheet,
+      name: bag.name,
+      dim: bag.q,
+    }
+    if (bag['damageType1']) ref['damageType1'] = bag['damageType1']
+    if (bag['damageType2']) ref['damageType2'] = bag['damageType2']
+    return ref
+  }
+  if (bag.q && bag.qt) {
+    const ref: Record<string, unknown> = {
+      sheet: 'stat',
+      name: bag.q,
+      dim: bag.qt,
+    }
+    if (bag['attribute']) ref['attribute'] = bag['attribute']
+    return ref
+  }
+  return undefined
 }
