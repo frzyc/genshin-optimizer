@@ -12,7 +12,9 @@ import {
   AmpReactionModeText,
   DataContext,
 } from '@genshin-optimizer/gi/ui'
-import type { CalcResult } from '@genshin-optimizer/gi/uidata'
+import { type CalcResult, UIData } from '@genshin-optimizer/gi/uidata'
+import { createDataForTarget } from '@genshin-optimizer/gi/wr'
+import { ToggleOn } from '@mui/icons-material'
 import BarChartIcon from '@mui/icons-material/BarChart'
 import CommentIcon from '@mui/icons-material/Comment'
 import {
@@ -39,7 +41,7 @@ export default function CustomTargetDisplay({
   rank: number
 }) {
   const { t } = useTranslation('page_character')
-  const { data } = useContext(DataContext)
+  const dataContext = useContext(DataContext)
   const {
     path,
     weight,
@@ -48,64 +50,91 @@ export default function CustomTargetDisplay({
     infusionAura,
     bonusStats,
     description,
+    conditionals,
   } = customTarget
+  const targetData = createDataForTarget(customTarget, {
+    ...dataContext.data.data[0],
+  })
+  const uiDataWithConds = new UIData(targetData, undefined)
+  const dataContextWithConds = {
+    ...dataContext,
+    data: uiDataWithConds,
+  }
 
-  const node = objPathValue(data.getDisplay(), path) as CalcResult | undefined
+  const node = objPathValue(uiDataWithConds.getDisplay(), path) as
+    | CalcResult
+    | undefined
+
+  const condCount = Object.values(conditionals).reduce(
+    (count, namespace) => count + Object.keys(namespace).length,
+    0
+  )
 
   return (
-    <CardThemed
-      bgt="light"
-      sx={{ display: 'flex', border: selected ? '2px solid green' : undefined }}
-    >
-      <CardActionArea sx={{ p: 1, flexGrow: 1 }} onClick={setSelect}>
-        <Typography
-          component="div"
-          sx={{
-            display: 'flex',
-            gap: 1,
-            flexWrap: 'wrap',
-            alignItems: 'center',
-          }}
-        >
-          <Chip label={`#${rank}`} sx={{ minWidth: '4em' }} />
-          <Chip label={`x${weight}`} sx={{ minWidth: '5em' }} />
+    <DataContext.Provider value={dataContextWithConds}>
+      <CardThemed
+        bgt="light"
+        sx={{
+          display: 'flex',
+          border: selected ? '3px solid green' : undefined,
+        }}
+      >
+        <CardActionArea sx={{ p: 1, flexGrow: 1 }} onClick={setSelect}>
+          <Typography
+            component="div"
+            sx={{
+              display: 'flex',
+              gap: 1,
+              flexWrap: 'wrap',
+              alignItems: 'center',
+            }}
+          >
+            <Chip label={`#${rank}`} sx={{ minWidth: '4em' }} />
+            <Chip label={`x${weight}`} sx={{ minWidth: '5em' }} />
 
-          <OptimizationTargetDisplay
-            optimizationTarget={path}
-            showEmptyTargets
-          />
-          <Box sx={{ flexGrow: 1 }} />
-          {node && (
-            <ReactionChip
-              reaction={reaction}
-              node={node}
-              infusionAura={infusionAura}
+            <OptimizationTargetDisplay
+              optimizationTarget={path}
+              showEmptyTargets
             />
-          )}
-          {!!Object.values(bonusStats).length && (
-            <Chip
-              avatar={<BarChartIcon />}
-              label={<strong>{Object.values(bonusStats).length}</strong>}
-            />
-          )}
-          <Chip label={t(`hitmode.${hitMode}`)} />
-          {description && (
-            <Tooltip
-              arrow
-              title={
-                description.length > 100
-                  ? `${description.slice(0, 100)}...`
-                  : description
-              }
-            >
-              <Avatar style={{ backgroundColor: '#4C566A' }}>
-                <CommentIcon style={{ color: 'white' }} />
-              </Avatar>
-            </Tooltip>
-          )}
-        </Typography>
-      </CardActionArea>
-    </CardThemed>
+            <Box sx={{ flexGrow: 1 }} />
+            {node && (
+              <ReactionChip
+                reaction={reaction}
+                node={node}
+                infusionAura={infusionAura}
+              />
+            )}
+            {!!condCount && (
+              <Chip
+                avatar={<ToggleOn />}
+                label={<strong>{condCount}</strong>}
+              />
+            )}
+            {!!Object.values(bonusStats).length && (
+              <Chip
+                avatar={<BarChartIcon />}
+                label={<strong>{Object.values(bonusStats).length}</strong>}
+              />
+            )}
+            <Chip label={t(`hitmode.${hitMode}`)} />
+            {description && (
+              <Tooltip
+                arrow
+                title={
+                  description.length > 100
+                    ? `${description.slice(0, 100)}...`
+                    : description
+                }
+              >
+                <Avatar style={{ backgroundColor: '#4C566A' }}>
+                  <CommentIcon style={{ color: 'white' }} />
+                </Avatar>
+              </Tooltip>
+            )}
+          </Typography>
+        </CardActionArea>
+      </CardThemed>
+    </DataContext.Provider>
   )
 }
 

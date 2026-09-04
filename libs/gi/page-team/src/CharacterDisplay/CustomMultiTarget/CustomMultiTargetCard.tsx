@@ -34,6 +34,7 @@ import { TargetSelectorModal } from '../Tabs/TabOptimize/Components/TargetSelect
 import CustomTargetDisplay from './CustomTargetDisplay'
 import JsonDescWarning from './JsonDescWarning'
 import MTargetEditor from './MTargetEditor'
+
 export default function CustomMultiTargetCard({
   customMultiTarget: targetProp,
   setTarget: setTargetProp,
@@ -63,21 +64,27 @@ export default function CustomMultiTargetCard({
   }
 
   const onSave = useCallback(() => {
-    onHide()
     setTargetProp(target)
-  }, [onHide, setTargetProp, target])
+  }, [setTargetProp, target])
+  const onSaveAndClose = useCallback(() => {
+    onHide()
+    onSave()
+  }, [onHide, onSave])
 
+  const [selectedTarget, setSelectedTarget] = useState(-1)
   const addTarget = useCallback(
     (t: string[], multi?: number) => {
       const target_ = { ...target }
       target_.targets = [...target_.targets, initCustomTarget(t, multi)]
       setTarget(target_)
+      setSelectedTarget(target_.targets.length - 1)
     },
     [target, setTarget]
   )
 
   const setCustomTarget = useCallback(
     (index: number) => (ctarget: CustomTarget) => {
+      console.log(ctarget)
       const targets = [...target.targets]
       targets[index] = ctarget
       setTarget({ ...target, targets })
@@ -99,7 +106,6 @@ export default function CustomMultiTargetCard({
     [target, setTarget, t]
   )
 
-  const [selectedTarget, setSelectedTarget] = useState(-1)
   const setTargetIndex = useCallback(
     (oldInd: number) => (newRank?: number) => {
       if (newRank === undefined || newRank === 0) return
@@ -143,6 +149,9 @@ export default function CustomMultiTargetCard({
       )),
     [selectedTarget, target.targets]
   )
+
+  const [collapse, setcollapse] = useState(true)
+
   const selectedTargetValid = clamp(
     selectedTarget,
     -1,
@@ -177,12 +186,12 @@ export default function CustomMultiTargetCard({
           />
         </CardActionArea>
       </CardThemed>
-      <ModalWrapper open={show} onClose={onSave}>
+      <ModalWrapper open={show} onClose={onSaveAndClose}>
         <CardThemed sx={{ overflow: 'visible' }}>
           <CardHeader
             title={name}
             action={
-              <IconButton onClick={onSave}>
+              <IconButton onClick={onSaveAndClose}>
                 <CloseIcon />
               </IconButton>
             }
@@ -264,6 +273,10 @@ export default function CustomMultiTargetCard({
             <AddCustomTargetBtn setTarget={addTarget} />
             {target.targets[selectedTargetValid] && (
               <MTargetEditor
+                key={
+                  target.targets[selectedTargetValid].path.join() +
+                  selectedTargetValid
+                }
                 customTarget={target.targets[selectedTargetValid]}
                 setCustomTarget={setCustomTarget(selectedTargetValid)}
                 deleteCustomTarget={deleteCustomTarget(selectedTargetValid)}
@@ -271,6 +284,8 @@ export default function CustomMultiTargetCard({
                 maxRank={target.targets.length}
                 setTargetIndex={setTargetIndex(selectedTargetValid)}
                 onDup={dupCustomTarget(selectedTargetValid)}
+                collapse={collapse}
+                setcollapse={setcollapse}
               />
             )}
           </CardContent>

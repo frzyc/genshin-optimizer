@@ -5,8 +5,11 @@ import {
   evalIfFunc,
   layeredAssignment,
 } from '@genshin-optimizer/common/util'
-import type { ArtCharDatabase } from '@genshin-optimizer/gi/db'
-import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
+import {
+  MultiTargetContext,
+  TeamCharacterContext,
+  useDatabase,
+} from '@genshin-optimizer/gi/db-ui'
 import { Translate } from '@genshin-optimizer/gi/i18n'
 import type {
   DocumentConditional,
@@ -64,11 +67,9 @@ function SimpleConditionalSelector({
   conditional,
   disabled,
 }: SimpleConditionalSelectorProps) {
-  const { teamId, teamCharId } = useContext(TeamCharacterContext)
   const { data } = useContext(DataContext)
-  const database = useDatabase()
 
-  const setConditional = useSetConditionalCallback(database, teamId, teamCharId)
+  const setConditional = useSetConditionalCallback()
 
   const conditionalValue = data.get(conditional.value).value
   const [stateKey, st] = Object.entries(evalIfFunc(conditional.states, data))[0]
@@ -104,10 +105,8 @@ function ExclusiveConditionalSelector({
   conditional,
   disabled,
 }: ExclusiveConditionalSelectorProps) {
-  const { teamId, teamCharId } = useContext(TeamCharacterContext)
   const { data } = useContext(DataContext)
-  const database = useDatabase()
-  const setConditional = useSetConditionalCallback(database, teamId, teamCharId)
+  const setConditional = useSetConditionalCallback()
 
   const conditionalValue = data.get(conditional.value).value
   const condStates = evalIfFunc(conditional.states, data)
@@ -161,10 +160,8 @@ function MultipleConditionalSelector({
   conditional,
   disabled,
 }: MultipleConditionalSelectorProps) {
-  const { teamId, teamCharId } = useContext(TeamCharacterContext)
   const { data } = useContext(DataContext)
-  const database = useDatabase()
-  const setConditional = useSetConditionalCallback(database, teamId, teamCharId)
+  const setConditional = useSetConditionalCallback()
 
   return (
     <ButtonGroup
@@ -236,11 +233,10 @@ function getCondName(condName: ReactNode): ReactNode {
 }
 
 const teamConditionals = ['resonance', 'reaction']
-function useSetConditionalCallback(
-  database: ArtCharDatabase,
-  teamId: string,
-  teamCharId: string
-) {
+function useSetConditionalCallback() {
+  const database = useDatabase()
+  const { teamId, teamCharId } = useContext(TeamCharacterContext)
+  const { customTarget, setCustomTarget } = useContext(MultiTargetContext)
   return useCallback(
     (path: readonly string[], v?: string) => {
       if (teamConditionals.includes(path[0]))
@@ -253,7 +249,7 @@ function useSetConditionalCallback(
           }
           team.conditional = conditionalValues
         })
-      else
+      else if (!customTarget)
         database.teamChars.set(teamCharId, (teamChar) => {
           const conditionalValues = deepClone(teamChar.conditional)
           if (v) {
@@ -263,7 +259,19 @@ function useSetConditionalCallback(
           }
           teamChar.conditional = conditionalValues
         })
+      else {
+        const conditionalValues = deepClone(customTarget.conditionals)
+        if (v) {
+          layeredAssignment(conditionalValues, path, v)
+        } else {
+          deletePropPath(conditionalValues, path)
+        }
+        setCustomTarget({
+          ...customTarget,
+          conditionals: conditionalValues,
+        })
+      }
     },
-    [database, teamId, teamCharId]
+    [database, teamId, teamCharId, customTarget, setCustomTarget]
   )
 }
