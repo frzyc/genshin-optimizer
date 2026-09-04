@@ -1,6 +1,6 @@
 import type { Document, Field } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { SkillKey } from '@genshin-optimizer/zzz/consts'
-import type { AbilityFieldsBySkill } from './charFormulaFields'
+import type { AbilityFieldsBySkill } from '../catalogRowField'
 import { isSkillAbilityTextDocument } from './sheetDocuments'
 
 /** Insert render-time ability formula fields after each ability header text doc. */

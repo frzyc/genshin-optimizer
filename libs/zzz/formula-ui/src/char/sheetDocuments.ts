@@ -1,5 +1,7 @@
-import type { TextDocument } from '@genshin-optimizer/game-opt/sheet-ui'
-import type { Document } from '@genshin-optimizer/game-opt/sheet-ui'
+import type {
+  Document,
+  TextDocument,
+} from '@genshin-optimizer/game-opt/sheet-ui'
 
 /** Skill ability header doc; `abilityKey` matches `mappedStats` / i18n ability id. */
 export type SkillAbilityTextDocument = TextDocument & {

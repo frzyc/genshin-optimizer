@@ -1,188 +1,105 @@
-import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
+import { ImgIcon } from '@genshin-optimizer/common/ui'
 import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
+import type { Read } from '@genshin-optimizer/game-opt/engine'
 import { useSetDebugTarget } from '@genshin-optimizer/game-opt/formula-ui'
 import { commonDefIcon } from '@genshin-optimizer/zzz/assets'
-import {
-  type CharacterKey,
-  isSkillKey,
-  type SkillKey,
-} from '@genshin-optimizer/zzz/consts'
-import type { Tag } from '@genshin-optimizer/zzz/formula'
-import { isAbilityDim } from '@genshin-optimizer/zzz/formula'
+import { isSkillKey } from '@genshin-optimizer/zzz/consts'
+import type { FormulaRef, Tag } from '@genshin-optimizer/zzz/formula'
+import { lookupFormulaRef } from '@genshin-optimizer/zzz/formula'
 import HelpIcon from '@mui/icons-material/Help'
 import { Box, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
-import { useMemo } from 'react'
 import { isAbilityFormulaTag } from './abilityTag'
-import {
-  abilityDisplayTitle,
-  abilityHitParamTitle,
-  resolveAbilityDisplay,
-} from './char/abilityFormulaLabels'
+import { abilityLabelParts } from './char/abilityFormulaLabels'
 import type { TalentSheetElementKey } from './char/consts'
-import { getFieldCategory } from './char/fieldCategory'
-import { tagFieldSubset } from './char/tagFieldMap'
-import { damageTypeKeysMap } from './char/util'
-import { FullTagDisplay, TagFallbackLabel } from './components'
-import type { FormulaDimension } from './formulaDimensionUi'
-import { ABILITY_DIM_LABEL, formulaDimensionLabel } from './formulaDimensionUi'
-import { useZzzCalcContext } from './hooks'
+import { damageTypeKeysMap, getVariant } from './char/util'
+import { TagTitle } from './components/TagTitle'
 import {
   OptCollapsibleSectionHeader,
   skillSectionFlatIconKey,
   talentSheetElementIcon,
   talentSheetElementLabel,
 } from './optPanelSections'
-import { formulaReadForTag } from './optTarget'
 import { st } from './util'
 
-export type { FormulaDimension } from './formulaDimensionUi'
-export {
-  ABILITY_DIM_LABEL,
-  abilityDimLabel,
-  abilityDimsForDimension,
-  dimensionByAbilityDim,
-  formulaDimensionLabel,
-  formulaDimensions,
-  resolveAbilityDim,
-} from './formulaDimensionUi'
-
-function optTargetFormulaTitle(tag: Tag): ReactNode {
-  return tagFieldSubset(tag)[0]?.title ?? <TagFallbackLabel tag={tag} />
-}
-
-/** Label for sheet-listed formulas (heal, shield, etc.) with a display section. */
-export function OptTargetFormulaLabel({
-  charKey,
-  tag,
+export function OptTargetSelectedLabel({
+  formulaRef,
   inline = false,
 }: {
-  charKey: CharacterKey
-  tag: Tag
+  formulaRef: FormulaRef
   inline?: boolean
 }) {
-  const category = getFieldCategory(charKey, tag)
-  const formulaTitle = optTargetFormulaTitle(tag)
-
-  if (!category) {
-    return inline ? (
-      <Typography component="span" variant="body2" noWrap>
-        {formulaTitle}
-      </Typography>
-    ) : (
-      formulaTitle
-    )
+  const looked = lookupFormulaRef(formulaRef)
+  if (!looked) return null
+  const { tag } = looked
+  if (isAbilityFormulaTag(tag)) {
+    return <AbilityOptTargetLabel tag={tag} inline={inline} />
   }
+  return <TagTitle tag={tag} />
+}
 
-  const sectionName = isSkillKey(category)
-    ? st(`skills.${category}`)
-    : talentSheetElementLabel(category)
-  const iconSrc = isSkillKey(category)
-    ? commonDefIcon(
-        skillSectionFlatIconKey(category) as Parameters<typeof commonDefIcon>[0]
-      )
-    : talentSheetElementIcon(category)
-  const icon = iconSrc ? (
-    <ImgIcon src={iconSrc} size={inline ? 1.1 : 1.25} />
-  ) : null
-
-  if (inline) {
-    return (
-      <Box
-        sx={{
-          display: 'inline-flex',
-          gap: 0.75,
-          alignItems: 'center',
-          minWidth: 0,
-          overflow: 'hidden',
-        }}
-      >
-        {icon}
-        <Typography
-          component="span"
-          variant="body2"
-          noWrap
-          sx={{ minWidth: 0, overflow: 'hidden', textOverflow: 'ellipsis' }}
-        >
-          {sectionName}
-          <Typography component="span" variant="body2" color="text.secondary">
-            {' · '}
-            {formulaTitle}
-          </Typography>
-        </Typography>
-      </Box>
-    )
-  }
-
+function AbilityOptTargetSecondaryLine({
+  skillName,
+  hitLabel,
+  damageType2Label,
+}: {
+  skillName: ReactNode
+  hitLabel: ReactNode | null
+  damageType2Label: string | null
+}) {
   return (
-    <Box sx={{ display: 'flex', gap: 1, alignItems: 'center', minWidth: 0 }}>
-      {icon}
-      <Box sx={{ display: 'flex', flexDirection: 'column', minWidth: 0 }}>
-        <Typography component="span" variant="body2" noWrap>
-          {sectionName}
-        </Typography>
-        <Typography
-          component="span"
-          variant="caption"
-          color="text.secondary"
-          noWrap
-        >
-          {formulaTitle}
-        </Typography>
-      </Box>
-    </Box>
+    <>
+      {skillName}
+      {hitLabel && (
+        <>
+          {' · '}
+          {hitLabel}
+        </>
+      )}
+      {damageType2Label && (
+        <>
+          {' · '}
+          {damageType2Label}
+        </>
+      )}
+    </>
   )
 }
 
-export function OptTargetSelectedLabel({
-  charKey,
+function AbilityOptTargetLabel({
   tag,
   inline = false,
 }: {
-  charKey: CharacterKey
   tag: Tag
-  inline?: boolean
-}) {
-  if (isAbilityFormulaTag(tag)) {
-    return <AbilityOptTargetLabel charKey={charKey} tag={tag} inline={inline} />
-  }
-  if (getFieldCategory(charKey, tag) || tagFieldSubset(tag)[0]?.title) {
-    return <OptTargetFormulaLabel charKey={charKey} tag={tag} inline={inline} />
-  }
-  return <FullTagDisplay tag={tag} />
-}
-
-export function AbilityOptTargetLabel({
-  charKey,
-  tag,
-  formulaDimension,
-  showDimension = false,
-  inline = false,
-}: {
-  charKey: CharacterKey
-  tag: Tag
-  formulaDimension?: FormulaDimension
-  showDimension?: boolean
   /** Single-line layout for compact button titles. */
   inline?: boolean
 }) {
-  const category = getFieldCategory(charKey, tag)
-  const skillHint: SkillKey | undefined =
-    category && isSkillKey(category) ? category : undefined
-  const resolved = resolveAbilityDisplay(tag, skillHint)
-  if (!resolved) return <FullTagDisplay tag={tag} />
+  const parts = abilityLabelParts(tag)
+  if (!parts) {
+    console.error(
+      '[zzz-formula-ui] AbilityOptTargetLabel: tag missing ability identity',
+      { tag }
+    )
+    return null
+  }
 
-  const { skill } = resolved
-  const abilityName = abilityDisplayTitle(charKey, tag, skillHint)
+  const variant = getVariant(tag)
+  const { skill, name: abilityName } = parts
   const skillName = st(`skills.${skill}`)
-  const hitLabel = abilityHitParamTitle(charKey, tag, skillHint) ?? null
+  const hitLabel = parts.hitLabel ?? null
   const damageType2Label =
     tag.damageType2 && tag.damageType2 in damageTypeKeysMap
       ? damageTypeKeysMap[tag.damageType2 as keyof typeof damageTypeKeysMap]
       : null
-  const dimensionBadgeLabel =
-    (tag.q && isAbilityDim(tag.q) ? ABILITY_DIM_LABEL[tag.q] : undefined) ??
-    (formulaDimension ? formulaDimensionLabel(formulaDimension) : undefined)
+  const secondary = (
+    <AbilityOptTargetSecondaryLine
+      skillName={skillName}
+      hitLabel={hitLabel}
+      damageType2Label={damageType2Label}
+    />
+  )
+  const iconSize = inline ? 1.1 : 1.25
+  const colorSx = variant ? { color: `${variant}.main` } : undefined
 
   if (inline) {
     return (
@@ -193,9 +110,10 @@ export function AbilityOptTargetLabel({
           alignItems: 'center',
           minWidth: 0,
           overflow: 'hidden',
+          ...colorSx,
         }}
       >
-        <ImgIcon src={commonDefIcon(`${skill}Flat`)} size={1.1} />
+        <ImgIcon src={commonDefIcon(`${skill}Flat`)} size={iconSize} />
         <Typography
           component="span"
           variant="body2"
@@ -205,31 +123,24 @@ export function AbilityOptTargetLabel({
           {abilityName}
           <Typography component="span" variant="body2" color="text.secondary">
             {' · '}
-            {skillName}
-            {hitLabel && (
-              <>
-                {' · '}
-                {hitLabel}
-              </>
-            )}
-            {damageType2Label && (
-              <>
-                {' · '}
-                {damageType2Label}
-              </>
-            )}
+            {secondary}
           </Typography>
         </Typography>
-        {showDimension && dimensionBadgeLabel && (
-          <SqBadge>{dimensionBadgeLabel}</SqBadge>
-        )}
       </Box>
     )
   }
 
   return (
-    <Box sx={{ display: 'flex', gap: 1, alignItems: 'center', minWidth: 0 }}>
-      <ImgIcon src={commonDefIcon(`${skill}Flat`)} size={1.25} />
+    <Box
+      sx={{
+        display: 'flex',
+        gap: 1,
+        alignItems: 'center',
+        minWidth: 0,
+        ...colorSx,
+      }}
+    >
+      <ImgIcon src={commonDefIcon(`${skill}Flat`)} size={iconSize} />
       <Box sx={{ display: 'flex', flexDirection: 'column', minWidth: 0 }}>
         <Typography component="span" variant="body2" noWrap>
           {abilityName}
@@ -240,24 +151,9 @@ export function AbilityOptTargetLabel({
           color="text.secondary"
           noWrap
         >
-          {skillName}
-          {hitLabel && (
-            <>
-              {' · '}
-              {hitLabel}
-            </>
-          )}
-          {damageType2Label && (
-            <>
-              {' · '}
-              {damageType2Label}
-            </>
-          )}
+          {secondary}
         </Typography>
       </Box>
-      {showDimension && dimensionBadgeLabel && (
-        <SqBadge>{dimensionBadgeLabel}</SqBadge>
-      )}
     </Box>
   )
 }
@@ -309,12 +205,16 @@ function OptTalentSheetSectionHeaderContent({
 }
 
 /** Dev help icon: opens `DebugReadModal` for the current optimization target. */
-export function OptTargetDebugHelp({ tag }: { tag: Tag }) {
-  const calc = useZzzCalcContext()
+export function OptTargetDebugHelp({
+  tag,
+  calcRead,
+}: {
+  tag: Tag
+  calcRead?: Read<Tag>
+}) {
   const setDebugTarget = useSetDebugTarget()
-  const calcRead = useMemo(() => formulaReadForTag(calc, tag), [calc, tag])
 
-  if (!shouldShowDevComponents) return null
+  if (!shouldShowDevComponents || !calcRead) return null
 
   return (
     <HelpIcon

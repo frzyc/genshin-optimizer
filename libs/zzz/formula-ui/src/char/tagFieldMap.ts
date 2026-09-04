@@ -1,21 +1,18 @@
-import type { TagField } from '@genshin-optimizer/game-opt/sheet-ui'
-import type { TagMapSubset } from '@genshin-optimizer/pando/engine'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
+import { stripCalcContextTag } from '@genshin-optimizer/zzz/formula'
 import { buildTagFieldMaps } from './buildTagFieldMaps'
 
-type TagFieldMap = TagMapSubset<TagField>
+let tagFieldMaps: ReturnType<typeof buildTagFieldMaps> | undefined
 
-const { tagFieldMap: tagFieldMapInstance, condMap: condMapInstance } =
-  buildTagFieldMaps()
-
-export function getTagFieldMap(): TagFieldMap {
-  return tagFieldMapInstance
+function ensureTagFieldMaps() {
+  if (!tagFieldMaps) tagFieldMaps = buildTagFieldMaps()
+  return tagFieldMaps
 }
 
 export function tagFieldSubset(tag: Tag) {
-  return tagFieldMapInstance.subset(tag)
+  return ensureTagFieldMaps().tagFieldMap.subset(stripCalcContextTag(tag))
 }
 
 export function getCondMap() {
-  return condMapInstance
+  return ensureTagFieldMaps().condMap
 }
