@@ -1,0 +1,593 @@
+{
+  "val": 0,
+  "meta": {
+    "formula": "[0] gather 9 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] (Alice) Sunna own formula.standardDmg | physical [prod] } (for { #core_attack_physical_dmg Sunna own formula.standardDmg | physical })",
+    "deps": [
+      {
+        "readSeq": "{ own formula.standardDmg } <- { #core_attack_physical_dmg preset0 [Sunna] (Alice) Sunna own formula.standardDmg | physical }",
+        "formula": "[0] sum({ !dst agg own formula.standardDmgBase }, { !dst agg own final.flat_dmg })",
+        "deps": [
+          {
+            "formula": "[0] gather 1 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own formula.standardDmgBase | physical [sum] } (for { !dst agg own formula.standardDmgBase })",
+            "deps": [
+              {
+                "readSeq": "{ agg } <= { char } : { [Sunna] char } <= { Sunna } : { #core_attack_physical_dmg Sunna own formula.standardDmgBase } <- { #core_attack_physical_dmg preset0 [Sunna] Sunna own formula.standardDmgBase | physical }",
+                "formula": "[0] match(ERR, \"physical\", 0)",
+                "deps": [
+                  "Error: Ill-form read for { preset:preset0 et:target qt:char q:attribute sheet:iso attribute:physical }, found 0 entries: []"
+                ]
+              }
+            ]
+          },
+          {
+            "formula": "[0] gather 1 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own final.flat_dmg | physical [sum] } (for { !dst agg own final.flat_dmg })",
+            "deps": [
+              {
+                "readSeq": "{ agg own final.flat_dmg } <- { #core_attack_physical_dmg preset0 [Sunna] agg own final.flat_dmg | physical }",
+                "formula": "[0] sum({ !dst agg own initial.flat_dmg }, { !dst agg own combat.flat_dmg })",
+                "deps": [
+                  "[0] gather 0 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own initial.flat_dmg | physical [sum] } (for { !dst agg own initial.flat_dmg })",
+                  "[0] gather 0 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own combat.flat_dmg | physical [sum] } (for { !dst agg own combat.flat_dmg })"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "readSeq": "{ own formula.standardDmg } <- { #core_attack_physical_dmg preset0 [Sunna] (Alice) Sunna own formula.standardDmg | physical }",
+        "formula": "[2.1550000000000002] gather 1 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] static own dmg.crit_mult_ | physical [unique] } (for { !dst static own dmg.crit_mult_ })",
+        "deps": [
+          {
+            "readSeq": "{ static own dmg.crit_mult_ } <- { #core_attack_physical_dmg preset0 [Sunna] static own dmg.crit_mult_ | physical }",
+            "formula": "[2.1550000000000002] lookup({\"crit\":1,\"nonCrit\":2,\"avg\":3}, { !dst static own common.critMode }, sum(tag({ misc._ }, 1), prod({ !dst iso own common.cappedCrit_ }, { !dst agg own final.crit_dmg_ })))",
+            "deps": [
+              {
+                "formula": "[\"avg\"] gather 1 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] static own common.critMode | physical [unique] } (for { !dst static own common.critMode })",
+                "deps": [
+                  {
+                    "readSeq": "{ !dst static own common.critMode } <- { #core_attack_physical_dmg preset0 [Sunna] static own common.critMode | physical }",
+                    "formula": "[\"avg\"] \"avg\""
+                  }
+                ]
+              },
+              {
+                "formula": "[0.75] gather 1 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] iso own common.cappedCrit_ | physical [unique] } (for { !dst iso own common.cappedCrit_ })",
+                "deps": [
+                  {
+                    "readSeq": "{ iso own common.cappedCrit_ } <- { #core_attack_physical_dmg preset0 [Sunna] iso own common.cappedCrit_ | physical }",
+                    "formula": "[0.75] max(min({ !dst agg own final.crit_ }, tag({ misc._ }, 1)), tag({ misc._ }, 0))",
+                    "deps": [
+                      {
+                        "formula": "[0.75] gather 1 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own final.crit_ | physical [sum] } (for { !dst agg own final.crit_ })",
+                        "deps": [
+                          {
+                            "readSeq": "{ agg own final.crit_ } <- { #core_attack_physical_dmg preset0 [Sunna] agg own final.crit_ | physical }",
+                            "formula": "[0.75] sum({ !dst agg own initial.crit_ }, { !dst agg own combat.crit_ })",
+                            "deps": [
+                              {
+                                "formula": "[0.75] gather 2 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own initial.crit_ | physical [sum] } (for { !dst agg own initial.crit_ })",
+                                "deps": [
+                                  {
+                                    "readSeq": "{ agg own initial.crit_ } <- { #core_attack_physical_dmg preset0 [Sunna] agg own initial.crit_ | physical }",
+                                    "formula": "[0.05] gather 1 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own base.crit_ | physical [sum] } (for { agg own base.crit_ })",
+                                    "deps": [
+                                      {
+                                        "readSeq": "{ [Sunna] agg own base.crit_ } <- { #core_attack_physical_dmg preset0 [Sunna] agg own base.crit_ | physical }",
+                                        "formula": "[0.05] 0.05"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "readSeq": "{ [Sunna] agg own initial.crit_ } <- { #core_attack_physical_dmg preset0 [Sunna] agg own initial.crit_ | physical }",
+                                    "formula": "[0.7] 0.7"
+                                  }
+                                ]
+                              },
+                              {
+                                "formula": "[0] gather 1 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own combat.crit_ | physical [sum] } (for { !dst agg own combat.crit_ })",
+                                "deps": [
+                                  {
+                                    "readSeq": "{ agg } <= { char } : { [Sunna] char } <= { Sunna } : { Sunna own combat.crit_ } <- { #core_attack_physical_dmg preset0 [Sunna] Sunna own combat.crit_ | physical }",
+                                    "formula": "[0] thres({ !dst iso own char.mindscape }, 6, 0)",
+                                    "deps": [
+                                      {
+                                        "formula": "[0] gather 1 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] iso own char.mindscape | physical [unique] } (for { !dst iso own char.mindscape })",
+                                        "deps": [
+                                          {
+                                            "readSeq": "{ [Sunna] !dst iso own char.mindscape } <- { #core_attack_physical_dmg preset0 [Sunna] iso own char.mindscape | physical }",
+                                            "formula": "[0] 0"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "formula": "[1.54] gather 1 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own final.crit_dmg_ | physical [sum] } (for { !dst agg own final.crit_dmg_ })",
+                "deps": [
+                  {
+                    "readSeq": "{ agg own final.crit_dmg_ } <- { #core_attack_physical_dmg preset0 [Sunna] agg own final.crit_dmg_ | physical }",
+                    "formula": "[1.54] sum({ !dst agg own initial.crit_dmg_ }, { !dst agg own combat.crit_dmg_ })",
+                    "deps": [
+                      {
+                        "formula": "[1.54] gather 2 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own initial.crit_dmg_ | physical [sum] } (for { !dst agg own initial.crit_dmg_ })",
+                        "deps": [
+                          {
+                            "readSeq": "{ agg own initial.crit_dmg_ } <- { #core_attack_physical_dmg preset0 [Sunna] agg own initial.crit_dmg_ | physical }",
+                            "formula": "[0.5] gather 1 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own base.crit_dmg_ | physical [sum] } (for { agg own base.crit_dmg_ })",
+                            "deps": [
+                              {
+                                "readSeq": "{ [Sunna] agg own base.crit_dmg_ } <- { #core_attack_physical_dmg preset0 [Sunna] agg own base.crit_dmg_ | physical }",
+                                "formula": "[0.5] 0.5"
+                              }
+                            ]
+                          },
+                          {
+                            "readSeq": "{ [Sunna] agg own initial.crit_dmg_ } <- { #core_attack_physical_dmg preset0 [Sunna] agg own initial.crit_dmg_ | physical }",
+                            "formula": "[1.04] 1.04"
+                          }
+                        ]
+                      },
+                      {
+                        "formula": "[0] gather 3 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own combat.crit_dmg_ | physical [sum] } (for { !dst agg own combat.crit_dmg_ })",
+                        "deps": [
+                          {
+                            "readSeq": "{ agg } <= { char } : { [Sunna] char } <= { Sunna } : { Sunna own combat.crit_dmg_ } <- { #core_attack_physical_dmg preset0 [Sunna] Sunna own combat.crit_dmg_ | physical }",
+                            "formula": "[0] thres({ !dst iso own char.mindscape }, 6, 0)",
+                            "deps": [
+                              {
+                                "formula": "[0] gather 1 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] iso own char.mindscape | physical [unique] } (for { !dst iso own char.mindscape })",
+                                "deps": [
+                                  {
+                                    "readSeq": "{ [Sunna] !dst iso own char.mindscape } <- { #core_attack_physical_dmg preset0 [Sunna] iso own char.mindscape | physical }",
+                                    "formula": "[0] 0"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "readSeq": "{ [Sunna] agg own } <= { !name [Alice] (Sunna) agg teamBuff } : { agg teamBuff } <= { anomaly } : { anomaly teamBuff combat.crit_dmg_ } <- { preset0 [Alice] (Sunna) anomaly teamBuff combat.crit_dmg_ | physical }",
+                            "formula": "[0] thres({ !name !src !dst iso team common.count | ice !spec !fac }, 1, 0)",
+                            "deps": [
+                              {
+                                "formula": "[0] gather 2 node(s) matching { preset0 iso team common.count | ice [sum] } (for { !name !src !dst iso team common.count | ice !spec !fac })",
+                                "deps": [
+                                  {
+                                    "readSeq": "{ team } <- { preset0 iso team common.count | ice }",
+                                    "formula": "[0] gather 0 node(s) matching { preset0 [Alice] iso own common.count | ice [sum] } (for { [Alice] own })"
+                                  },
+                                  {
+                                    "readSeq": "{ team } <- { preset0 iso team common.count | ice }",
+                                    "formula": "[0] gather 0 node(s) matching { preset0 [Sunna] iso own common.count | ice [sum] } (for { [Sunna] own })"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "readSeq": "{ [Sunna] agg own } <= { !name [Sunna] (Sunna) agg teamBuff } : { agg teamBuff } <= { anomaly } : { anomaly teamBuff combat.crit_dmg_ } <- { preset0 [Sunna] (Sunna) anomaly teamBuff combat.crit_dmg_ | physical }",
+                            "formula": "[0] thres({ !name !src !dst iso team common.count | ice !spec !fac }, 1, 0)",
+                            "deps": [
+                              {
+                                "formula": "[0] gather 2 node(s) matching { preset0 iso team common.count | ice [sum] } (for { !name !src !dst iso team common.count | ice !spec !fac })",
+                                "deps": [
+                                  {
+                                    "readSeq": "{ team } <- { preset0 iso team common.count | ice }",
+                                    "formula": "[0] gather 0 node(s) matching { preset0 [Alice] iso own common.count | ice [sum] } (for { [Alice] own })"
+                                  },
+                                  {
+                                    "readSeq": "{ team } <- { preset0 iso team common.count | ice }",
+                                    "formula": "[0] gather 0 node(s) matching { preset0 [Sunna] iso own common.count | ice [sum] } (for { [Sunna] own })"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "readSeq": "{ own formula.standardDmg } <= { static own dmg.shared } : { static own dmg.shared } <- { #core_attack_physical_dmg preset0 [Sunna] (Alice) static own dmg.shared | physical }",
+        "formula": "[1] gather 1 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] (Alice) static own dmg.dmg_mult_ | physical [unique] } (for { static own dmg.dmg_mult_ })",
+        "deps": [
+          {
+            "readSeq": "{ static own dmg.dmg_mult_ } <- { #core_attack_physical_dmg preset0 [Sunna] (Alice) static own dmg.dmg_mult_ | physical }",
+            "formula": "[1] sum(tag({ misc._ }, 1), { !dst agg own final.dmg_ }, { !dst agg own final.common_dmg_ })",
+            "deps": [
+              {
+                "formula": "[0] gather 1 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own final.dmg_ | physical [sum] } (for { !dst agg own final.dmg_ })",
+                "deps": [
+                  {
+                    "readSeq": "{ agg own final.dmg_ } <- { #core_attack_physical_dmg preset0 [Sunna] agg own final.dmg_ | physical }",
+                    "formula": "[0] sum({ !dst agg own initial.dmg_ }, { !dst agg own combat.dmg_ })",
+                    "deps": [
+                      "[0] gather 0 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own initial.dmg_ | physical [sum] } (for { !dst agg own initial.dmg_ })",
+                      "[0] gather 0 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own combat.dmg_ | physical [sum] } (for { !dst agg own combat.dmg_ })"
+                    ]
+                  }
+                ]
+              },
+              {
+                "formula": "[0] gather 1 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own final.common_dmg_ | physical [sum] } (for { !dst agg own final.common_dmg_ })",
+                "deps": [
+                  {
+                    "readSeq": "{ agg own final.common_dmg_ } <- { #core_attack_physical_dmg preset0 [Sunna] agg own final.common_dmg_ | physical }",
+                    "formula": "[0] sum({ !dst agg own initial.common_dmg_ }, { !dst agg own combat.common_dmg_ })",
+                    "deps": [
+                      "[0] gather 0 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own initial.common_dmg_ | physical [sum] } (for { !dst agg own initial.common_dmg_ })",
+                      {
+                        "formula": "[0] gather 1 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own combat.common_dmg_ | physical [sum] } (for { !dst agg own combat.common_dmg_ })",
+                        "deps": [
+                          {
+                            "readSeq": "{ [Sunna] agg own } <= { !name [Sunna] (Sunna) agg teamBuff } : { agg } <= { char } : { [Sunna] char } <= { Sunna } : { Sunna teamBuff combat.common_dmg_ } <- { preset0 [Sunna] (Sunna) Sunna teamBuff combat.common_dmg_ | physical }",
+                            "formula": "[0] thres({ !dst iso own char.mindscape }, 4, 0)",
+                            "deps": [
+                              {
+                                "formula": "[0] gather 1 node(s) matching { preset0 [Sunna] iso own char.mindscape | physical [unique] } (for { !dst iso own char.mindscape })",
+                                "deps": [
+                                  {
+                                    "readSeq": "{ [Sunna] !dst iso own char.mindscape } <- { preset0 [Sunna] iso own char.mindscape | physical }",
+                                    "formula": "[0] 0"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "readSeq": "{ own formula.standardDmg } <= { static own dmg.shared } : { static own dmg.shared } <- { #core_attack_physical_dmg preset0 [Sunna] (Alice) static own dmg.shared | physical }",
+        "formula": "[1] gather 1 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] (Alice) static own dmg.buff_mult_ | physical [unique] } (for { static own dmg.buff_mult_ })",
+        "deps": [
+          {
+            "readSeq": "{ static own dmg.buff_mult_ } <- { #core_attack_physical_dmg preset0 [Sunna] (Alice) static own dmg.buff_mult_ | physical }",
+            "formula": "[1] sum(tag({ misc._ }, 1), { !dst agg own final.buff_ })",
+            "deps": [
+              {
+                "formula": "[0] gather 1 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own final.buff_ | physical [sum] } (for { !dst agg own final.buff_ })",
+                "deps": [
+                  {
+                    "readSeq": "{ agg own final.buff_ } <- { #core_attack_physical_dmg preset0 [Sunna] agg own final.buff_ | physical }",
+                    "formula": "[0] sum({ !dst agg own initial.buff_ }, { !dst agg own combat.buff_ })",
+                    "deps": [
+                      "[0] gather 0 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own initial.buff_ | physical [sum] } (for { !dst agg own initial.buff_ })",
+                      "[0] gather 0 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own combat.buff_ | physical [sum] } (for { !dst agg own combat.buff_ })"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "readSeq": "{ own formula.standardDmg } <= { static own dmg.shared } : { static own dmg.shared } <- { #core_attack_physical_dmg preset0 [Sunna] (Alice) static own dmg.shared | physical }",
+        "formula": "[1.07] gather 1 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] (Alice) static own dmg.res_mult_ | physical [unique] } (for { static own dmg.res_mult_ })",
+        "deps": [
+          {
+            "readSeq": "{ static own dmg.res_mult_ } <- { #core_attack_physical_dmg preset0 [Sunna] (Alice) static own dmg.res_mult_ | physical }",
+            "formula": "[1.07] sum(tag({ misc._ }, 1), prod(-1, { !name !src !dst agg enemy common.res_ }), { !name !src !dst agg enemy common.resRed_ }, { !dst agg own final.resIgn_ })",
+            "deps": [
+              {
+                "formula": "[0.1] gather 1 node(s) matching { preset0 agg enemy common.res_ | physical [sum] } (for { !name !src !dst agg enemy common.res_ })",
+                "deps": [
+                  {
+                    "readSeq": "{ !name !src !dst agg enemy common.res_ | physical } <- { preset0 agg enemy common.res_ | physical }",
+                    "formula": "[0.1] 0.1"
+                  }
+                ]
+              },
+              {
+                "formula": "[0.15] gather 1 node(s) matching { preset0 agg enemy common.resRed_ | physical [sum] } (for { !name !src !dst agg enemy common.resRed_ })",
+                "deps": [
+                  {
+                    "readSeq": "{ agg enemy common.resRed_ | physical } <- { preset0 agg enemy common.resRed_ | physical }",
+                    "formula": "[0.15] 0.15"
+                  }
+                ]
+              },
+              {
+                "formula": "[0.02] gather 1 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own final.resIgn_ | physical [sum] } (for { !dst agg own final.resIgn_ })",
+                "deps": [
+                  {
+                    "readSeq": "{ agg own final.resIgn_ } <- { #core_attack_physical_dmg preset0 [Sunna] agg own final.resIgn_ | physical }",
+                    "formula": "[0.02] sum({ !dst agg own initial.resIgn_ }, { !dst agg own combat.resIgn_ })",
+                    "deps": [
+                      {
+                        "formula": "[0.02] gather 1 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own initial.resIgn_ | physical [sum] } (for { !dst agg own initial.resIgn_ })",
+                        "deps": [
+                          {
+                            "readSeq": "{ [Sunna] agg own initial.resIgn_ } <- { #core_attack_physical_dmg preset0 [Sunna] agg own initial.resIgn_ | physical }",
+                            "formula": "[0.02] 0.02"
+                          }
+                        ]
+                      },
+                      "[0] gather 0 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own combat.resIgn_ | physical [sum] } (for { !dst agg own combat.resIgn_ })"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "readSeq": "{ own formula.standardDmg } <= { static own dmg.shared } : { static own dmg.shared } <- { #core_attack_physical_dmg preset0 [Sunna] (Alice) static own dmg.shared | physical }",
+        "formula": "[0.9500000000000001] gather 1 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] (Alice) static own dmg.dmg_taken_mult_ | physical [unique] } (for { static own dmg.dmg_taken_mult_ })",
+        "deps": [
+          {
+            "readSeq": "{ static own dmg.dmg_taken_mult_ } <- { #core_attack_physical_dmg preset0 [Sunna] (Alice) static own dmg.dmg_taken_mult_ | physical }",
+            "formula": "[0.9500000000000001] sum(tag({ misc._ }, 1), { !name !src !dst agg enemy common.dmgInc_ }, prod(-1, { !name !src !dst agg enemy common.dmgRed_ }))",
+            "deps": [
+              {
+                "formula": "[0.1] gather 1 node(s) matching { preset0 agg enemy common.dmgInc_ | physical [sum] } (for { !name !src !dst agg enemy common.dmgInc_ })",
+                "deps": [
+                  {
+                    "readSeq": "{ agg enemy common.dmgInc_ } <- { preset0 agg enemy common.dmgInc_ | physical }",
+                    "formula": "[0.1] 0.1"
+                  }
+                ]
+              },
+              {
+                "formula": "[0.15] gather 1 node(s) matching { preset0 agg enemy common.dmgRed_ | physical [sum] } (for { !name !src !dst agg enemy common.dmgRed_ })",
+                "deps": [
+                  {
+                    "readSeq": "{ agg enemy common.dmgRed_ } <- { preset0 agg enemy common.dmgRed_ | physical }",
+                    "formula": "[0.15] 0.15"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "readSeq": "{ own formula.standardDmg } <= { static own dmg.shared } : { static own dmg.shared } <- { #core_attack_physical_dmg preset0 [Sunna] (Alice) static own dmg.shared | physical }",
+        "formula": "[1] gather 1 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] (Alice) static own dmg.stunned_mult_ | physical [unique] } (for { static own dmg.stunned_mult_ })",
+        "deps": [
+          {
+            "readSeq": "{ static own dmg.stunned_mult_ } <- { #core_attack_physical_dmg preset0 [Sunna] (Alice) static own dmg.stunned_mult_ | physical }",
+            "formula": "[1] match({ !name enemy own cond.isStunned | !attr !dmg1 !dmg2 }, 0, { !name !src !dst agg enemy common.unstun_ })",
+            "deps": [
+              {
+                "formula": "[0] gather 1 node(s) matching { preset0 [Sunna] (Alice) enemy own cond.isStunned [max] } (for { !name enemy own cond.isStunned | !attr !dmg1 !dmg2 })",
+                "deps": [
+                  {
+                    "readSeq": "{ cond. } <- { preset0 [Sunna] (Alice) enemy own cond.isStunned }",
+                    "formula": "[0] 0"
+                  }
+                ]
+              },
+              {
+                "formula": "[1] gather 1 node(s) matching { preset0 agg enemy common.unstun_ | physical [sum] } (for { !name !src !dst agg enemy common.unstun_ })",
+                "deps": [
+                  {
+                    "readSeq": "{ agg enemy common.unstun_ } <- { preset0 agg enemy common.unstun_ | physical }",
+                    "formula": "[1] 1"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "readSeq": "{ own formula.standardDmg } <= { static own dmg.shared } : { static own dmg.shared } <- { #core_attack_physical_dmg preset0 [Sunna] (Alice) static own dmg.shared | physical }",
+        "formula": "[1] gather 1 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] (Alice) static own dmg.direct_dmg_mult_ | physical [unique] } (for { static own dmg.direct_dmg_mult_ })",
+        "deps": [
+          {
+            "readSeq": "{ static own dmg.direct_dmg_mult_ } <- { #core_attack_physical_dmg preset0 [Sunna] (Alice) static own dmg.direct_dmg_mult_ | physical }",
+            "formula": "[1] sum(tag({ misc._ }, 1), { !dst agg own final.direct_dmg_ })",
+            "deps": [
+              {
+                "formula": "[0] gather 1 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own final.direct_dmg_ | physical [sum] } (for { !dst agg own final.direct_dmg_ })",
+                "deps": [
+                  {
+                    "readSeq": "{ agg own final.direct_dmg_ } <- { #core_attack_physical_dmg preset0 [Sunna] agg own final.direct_dmg_ | physical }",
+                    "formula": "[0] sum({ !dst agg own initial.direct_dmg_ }, { !dst agg own combat.direct_dmg_ })",
+                    "deps": [
+                      "[0] gather 0 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own initial.direct_dmg_ | physical [sum] } (for { !dst agg own initial.direct_dmg_ })",
+                      {
+                        "formula": "[0] gather 2 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own combat.direct_dmg_ | physical [sum] } (for { !dst agg own combat.direct_dmg_ })",
+                        "deps": [
+                          {
+                            "readSeq": "{ [Sunna] agg own } <= { !name [Alice] (Sunna) agg teamBuff } : { agg teamBuff } <= { anomaly } : { anomaly teamBuff combat.direct_dmg_ } <- { preset0 [Alice] (Sunna) anomaly teamBuff combat.direct_dmg_ | physical }",
+                            "formula": "[0] thres({ !name !src !dst iso team common.count | wind !spec !fac }, 1, 0)",
+                            "deps": [
+                              {
+                                "formula": "[0] gather 2 node(s) matching { preset0 iso team common.count | wind [sum] } (for { !name !src !dst iso team common.count | wind !spec !fac })",
+                                "deps": [
+                                  {
+                                    "readSeq": "{ team } <- { preset0 iso team common.count | wind }",
+                                    "formula": "[0] gather 0 node(s) matching { preset0 [Alice] iso own common.count | wind [sum] } (for { [Alice] own })"
+                                  },
+                                  {
+                                    "readSeq": "{ team } <- { preset0 iso team common.count | wind }",
+                                    "formula": "[0] gather 0 node(s) matching { preset0 [Sunna] iso own common.count | wind [sum] } (for { [Sunna] own })"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "readSeq": "{ [Sunna] agg own } <= { !name [Sunna] (Sunna) agg teamBuff } : { agg teamBuff } <= { anomaly } : { anomaly teamBuff combat.direct_dmg_ } <- { preset0 [Sunna] (Sunna) anomaly teamBuff combat.direct_dmg_ | physical }",
+                            "formula": "[0] thres({ !name !src !dst iso team common.count | wind !spec !fac }, 1, 0)",
+                            "deps": [
+                              {
+                                "formula": "[0] gather 2 node(s) matching { preset0 iso team common.count | wind [sum] } (for { !name !src !dst iso team common.count | wind !spec !fac })",
+                                "deps": [
+                                  {
+                                    "readSeq": "{ team } <- { preset0 iso team common.count | wind }",
+                                    "formula": "[0] gather 0 node(s) matching { preset0 [Alice] iso own common.count | wind [sum] } (for { [Alice] own })"
+                                  },
+                                  {
+                                    "readSeq": "{ team } <- { preset0 iso team common.count | wind }",
+                                    "formula": "[0] gather 0 node(s) matching { preset0 [Sunna] iso own common.count | wind [sum] } (for { [Sunna] own })"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "readSeq": "{ own formula.standardDmg } <- { #core_attack_physical_dmg preset0 [Sunna] (Alice) Sunna own formula.standardDmg | physical }",
+        "formula": "[0.6073819085867279] gather 1 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] static own dmg.def_mult_ | physical [unique] } (for { !dst static own dmg.def_mult_ })",
+        "deps": [
+          {
+            "readSeq": "{ static own dmg.def_mult_ } <- { #core_attack_physical_dmg preset0 [Sunna] static own dmg.def_mult_ | physical }",
+            "formula": "[0.6073819085867279] sumfrac(subscript({ !dst iso own char.lvl }), max(sum(prod({ !name !src !dst agg enemy common.def }, sum(tag({ misc._ }, 1), prod(-1, { !name !src !dst agg enemy common.defRed_ }), prod(-1, { !dst agg own final.defIgn_ })), sum(tag({ misc._ }, 1), prod(-1, { !dst agg own final.pen_ }))), prod(-1, { !dst agg own final.pen })), 0))",
+            "deps": [
+              {
+                "formula": "[60] gather 1 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] iso own char.lvl | physical [unique] } (for { !dst iso own char.lvl })",
+                "deps": [
+                  {
+                    "readSeq": "{ [Sunna] !dst iso own char.lvl } <- { #core_attack_physical_dmg preset0 [Sunna] iso own char.lvl | physical }",
+                    "formula": "[60] 60"
+                  }
+                ]
+              },
+              {
+                "formula": "[635] gather 1 node(s) matching { preset0 agg enemy common.def | physical [sum] } (for { !name !src !dst agg enemy common.def })",
+                "deps": [
+                  {
+                    "readSeq": "{ !name !src !dst agg enemy common.def } <- { preset0 agg enemy common.def | physical }",
+                    "formula": "[635] 635"
+                  }
+                ]
+              },
+              {
+                "formula": "[0] gather 2 node(s) matching { preset0 agg enemy common.defRed_ | physical [sum] } (for { !name !src !dst agg enemy common.defRed_ })",
+                "deps": [
+                  {
+                    "readSeq": "{ agg enemy } <= { !name [Alice] !dst enemyDeBuff } : { agg } <= { char } : { [Alice] char } <= { Alice } : { Alice enemyDeBuff common.defRed_ } <- { preset0 [Alice] Alice enemyDeBuff common.defRed_ | physical }",
+                    "formula": "[0] thres({ !dst iso own char.mindscape }, 1, 0)",
+                    "deps": [
+                      {
+                        "formula": "[0] gather 1 node(s) matching { preset0 [Alice] iso own char.mindscape | physical [unique] } (for { !dst iso own char.mindscape })",
+                        "deps": [
+                          {
+                            "readSeq": "{ [Alice] !dst iso own char.mindscape } <- { preset0 [Alice] iso own char.mindscape | physical }",
+                            "formula": "[0] 0"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "readSeq": "{ agg enemy } <= { !name [Sunna] !dst enemyDeBuff } : { agg } <= { char } : { [Sunna] char } <= { Sunna } : { Sunna enemyDeBuff common.defRed_ } <- { preset0 [Sunna] Sunna enemyDeBuff common.defRed_ | physical }",
+                    "formula": "[0] thres({ !dst iso own char.mindscape }, 1, 0)",
+                    "deps": [
+                      {
+                        "formula": "[0] gather 1 node(s) matching { preset0 [Sunna] iso own char.mindscape | physical [unique] } (for { !dst iso own char.mindscape })",
+                        "deps": [
+                          {
+                            "readSeq": "{ [Sunna] !dst iso own char.mindscape } <- { preset0 [Sunna] iso own char.mindscape | physical }",
+                            "formula": "[0] 0"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "formula": "[0] gather 1 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own final.defIgn_ | physical [sum] } (for { !dst agg own final.defIgn_ })",
+                "deps": [
+                  {
+                    "readSeq": "{ agg own final.defIgn_ } <- { #core_attack_physical_dmg preset0 [Sunna] agg own final.defIgn_ | physical }",
+                    "formula": "[0] sum({ !dst agg own initial.defIgn_ }, { !dst agg own combat.defIgn_ })",
+                    "deps": [
+                      "[0] gather 0 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own initial.defIgn_ | physical [sum] } (for { !dst agg own initial.defIgn_ })",
+                      "[0] gather 0 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own combat.defIgn_ | physical [sum] } (for { !dst agg own combat.defIgn_ })"
+                    ]
+                  }
+                ]
+              },
+              {
+                "formula": "[0.05] gather 1 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own final.pen_ | physical [sum] } (for { !dst agg own final.pen_ })",
+                "deps": [
+                  {
+                    "readSeq": "{ agg own final.pen_ } <- { #core_attack_physical_dmg preset0 [Sunna] agg own final.pen_ | physical }",
+                    "formula": "[0.05] sum({ !dst agg own initial.pen_ }, { !dst agg own combat.pen_ })",
+                    "deps": [
+                      {
+                        "formula": "[0.05] gather 2 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own initial.pen_ | physical [sum] } (for { !dst agg own initial.pen_ })",
+                        "deps": [
+                          {
+                            "readSeq": "{ agg own initial.pen_ } <- { #core_attack_physical_dmg preset0 [Sunna] agg own initial.pen_ | physical }",
+                            "formula": "[0] gather 0 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own base.pen_ | physical [sum] } (for { agg own base.pen_ })"
+                          },
+                          {
+                            "readSeq": "{ [Sunna] agg own initial.pen_ } <- { #core_attack_physical_dmg preset0 [Sunna] agg own initial.pen_ | physical }",
+                            "formula": "[0.05] 0.05"
+                          }
+                        ]
+                      },
+                      "[0] gather 0 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own combat.pen_ | physical [sum] } (for { !dst agg own combat.pen_ })"
+                    ]
+                  }
+                ]
+              },
+              {
+                "formula": "[90] gather 1 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own final.pen | physical [sum] } (for { !dst agg own final.pen })",
+                "deps": [
+                  {
+                    "readSeq": "{ agg own final.pen } <- { #core_attack_physical_dmg preset0 [Sunna] agg own final.pen | physical }",
+                    "formula": "[90] sum({ !dst agg own initial.pen }, { !dst agg own combat.pen })",
+                    "deps": [
+                      {
+                        "formula": "[90] gather 1 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own initial.pen | physical [sum] } (for { !dst agg own initial.pen })",
+                        "deps": [
+                          {
+                            "readSeq": "{ [Sunna] agg own initial.pen } <- { #core_attack_physical_dmg preset0 [Sunna] agg own initial.pen | physical }",
+                            "formula": "[90] 90"
+                          }
+                        ]
+                      },
+                      "[0] gather 0 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] agg own combat.pen | physical [sum] } (for { !dst agg own combat.pen })"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

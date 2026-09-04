@@ -120,7 +120,7 @@ function registerFormula(
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
   reader.name(name) // register name:<name>
-  const { tag } = entry
+  const { sheet: _sheet, ...tag } = entry.tag
   const namedReader = reader.withTag({
     ...tag,
     et: 'display',
@@ -132,8 +132,8 @@ function registerFormula(
   console.log(namedReader.add(namedReader.withTag({ et: 'own' })))
   return [
     listing.add(listingItem(namedReader, cond)),
-    // namedReader.add(namedReader.withTag({ et: 'own' })),
-    namedReader.toEntry(entry.value),
+    namedReader.add(namedReader.withTag({ et: 'own' })),
+    // namedReader.toEntry(entry.value),
     ...[entry, ...extra].map(({ tag, value }) => ({
       tag: { ...tag, name },
       value,

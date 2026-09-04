@@ -637,6 +637,26 @@ describe('team', () => {
       path.resolve(__dirname, 'debug_output.json'),
       JSON.stringify(calc.toDebug().compute(r), undefined, 2)
     )
+    const r2 = read(Sunna.buffs.test.tag, undefined)
+    // Save debug output to file
+    writeFileSync(
+      path.resolve(__dirname, 'debug_output2.json'),
+      JSON.stringify(calc.toDebug().compute(r2), undefined, 2)
+    )
+    const r6 = read(
+      { ...Sunna.formulas.core_attack_physical_dmg.tag, et: 'own' },
+      undefined
+    )
+    writeFileSync(
+      path.resolve(__dirname, 'debug_output6.json'),
+      JSON.stringify(calc.toDebug().compute(r6), undefined, 2)
+    )
+    const r7 = read(Sunna.formulas.testForm.tag, undefined)
+    // Save debug output to file
+    writeFileSync(
+      path.resolve(__dirname, 'debug_output7.json'),
+      JSON.stringify(calc.toDebug().compute(r7), undefined, 2)
+    )
     // console.log(calc.toDebug().compute(r))
     expect(calc.compute(r).val).toBeCloseTo(1078.2, 1)
     // expect(calc.compute(target.final.atk).val).toBeCloseTo(821.76, 1)

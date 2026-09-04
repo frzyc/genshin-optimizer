@@ -1,0 +1,23 @@
+{
+  "val": 10000,
+  "meta": {
+    "formula": "[10000] gather 1 node(s) matching { #testForm preset0 [Sunna] (Alice) Sunna display final.atk [unique] } (for { #testForm Sunna display final.atk })",
+    "deps": [
+      {
+        "readSeq": "{ #testForm Sunna display final.atk } <- { #testForm preset0 [Sunna] (Alice) Sunna display final.atk }",
+        "formula": "[10000] match({ !name !src iso target char.attribute }, \"physical\", 10000)",
+        "deps": [
+          {
+            "formula": "[\"physical\"] gather 1 node(s) matching { preset0 (Alice) iso target char.attribute [unique] } (for { !name !src iso target char.attribute })",
+            "deps": [
+              {
+                "readSeq": "{ (Alice) target } <= { [Alice] !dst own } : { [Alice] iso } <= { Alice } : { Alice own char.attribute } <- { preset0 [Alice] Alice own char.attribute }",
+                "formula": "[\"physical\"] \"physical\""
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

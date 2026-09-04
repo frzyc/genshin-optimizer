@@ -5,6 +5,17 @@ export const buffs = {
     name: 'test',
     tag: { et: 'display', qt: 'final', q: 'atk', sheet: 'Sunna', name: 'test' },
   },
+  testForm: {
+    sheet: 'Sunna',
+    name: 'testForm',
+    tag: {
+      et: 'display',
+      qt: 'final',
+      q: 'atk',
+      sheet: 'Sunna',
+      name: 'testForm',
+    },
+  },
   exSpecial_atk: {
     sheet: 'Sunna',
     name: 'exSpecial_atk',

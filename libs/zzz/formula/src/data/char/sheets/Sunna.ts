@@ -19,6 +19,7 @@ import {
   percent,
   register,
   registerBuff,
+  registerBuffFormula,
   target,
   team,
   teamBuff,
@@ -89,6 +90,12 @@ const sheet = register(
   ),
   registerBuff(
     'test',
+    ownBuff.final.atk.add(cmpEq(target.char.attribute, 'physical', 10000)),
+    undefined,
+    true
+  ),
+  registerBuffFormula(
+    'testForm',
     ownBuff.final.atk.add(cmpEq(target.char.attribute, 'physical', 10000)),
     undefined,
     true

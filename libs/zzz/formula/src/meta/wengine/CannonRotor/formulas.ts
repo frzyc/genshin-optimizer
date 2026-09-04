@@ -6,7 +6,7 @@ export const formulas = {
     tag: {
       et: 'display',
       qt: 'formula',
-      q: 'standardDmg',
+      q: 'standardDmgBase',
       sheet: 'CannonRotor',
       damageType1: 'elemental',
       name: 'damage',

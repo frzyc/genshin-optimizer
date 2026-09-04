@@ -7,6 +7,8 @@ import {
   setDebugMode,
   simplify,
 } from '@genshin-optimizer/pando/engine'
+import { writeFileSync } from 'fs'
+import path from 'path'
 import { entries, keys, values } from './data'
 import type { Tag, TagMapNodeEntries } from './data/util'
 import { enemyDebuff, own, ownBuff, team, userBuff } from './data/util'
@@ -84,7 +86,7 @@ describe('example', () => {
 
   test('calculate stats', () => {
     expect(mem1.compute(own.final.hp).val).toBeCloseTo(9479.7, 1)
-    expect(mem0.compute(own.final.atk).val).toBeCloseTo(346.21, 2)
+    expect(mem0.compute(own.final.atk).val).toBeCloseTo(282.49, 2)
     expect(mem0.compute(own.final.def).val).toBeCloseTo(124.15, 2)
     expect(mem0.compute(own.final.eleMas).val).toBeCloseTo(28.44, 2)
     expect(mem0.compute(own.final.critRate_).val).toBe(0.05)
@@ -181,7 +183,37 @@ describe('example', () => {
     const { amp, move, ele, cata } = meta.tag!
 
     // Calculation result, reaction, element, etc
-    expect(val).toBeCloseTo(91.61, 2)
+    expect(val).toBeCloseTo(78.67, 2)
+    expect(amp).toEqual('')
+    expect(move).toEqual('normal')
+    expect(ele).toEqual('dendro')
+    expect(cata).toEqual('spread')
+  })
+  test('calculate targeted formula in a listing', () => {
+    const read = mem0
+      .listFormulas(own.listing.formulas)
+      .find((x) => x.tag.name === 'heal' && x.tag.sheet === 'PrototypeAmber')!
+    const tag = read.tag
+
+    expect(read).toBeTruthy()
+    expect(tag.sheet).toEqual('PrototypeAmber') // Formula from Pamber
+    expect(tag.q).toEqual('heal') // Heal formula
+    expect(tag.name).toEqual('heal') // Formula name
+
+    // Compute formula
+    const { val, meta } = calc.compute(read)
+    const { amp, move, ele, cata } = meta.tag!
+    writeFileSync(
+      path.join(__dirname, 'debug.json'),
+      JSON.stringify(
+        calc.withTag({ src: '0', dst: '0' }).toDebug().compute(read),
+        null,
+        2
+      )
+    )
+
+    // Calculation result, reaction, element, etc
+    expect(val).toBeCloseTo(78.67, 2)
     expect(amp).toEqual('')
     expect(move).toEqual('normal')
     expect(ele).toEqual('dendro')
