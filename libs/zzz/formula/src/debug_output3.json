@@ -1,0 +1,93 @@
+{
+  "val": 1.3696000000000002,
+  "meta": {
+    "formula": "[1.3696000000000002] gather 1 node(s) matching { #core_electric_abloom preset0 [Vivian] (Seth) Vivian display dmg.anom_mv_mult_ | electric 1:abloom [unique] } (for { #core_electric_abloom Vivian display dmg.anom_mv_mult_ | electric 1:abloom })",
+    "deps": [
+      {
+        "readSeq": "{ #core_electric_abloom Vivian display dmg.anom_mv_mult_ | electric 1:abloom } <- { #core_electric_abloom preset0 [Vivian] (Seth) Vivian display dmg.anom_mv_mult_ | electric 1:abloom }",
+        "formula": "[1.3696000000000002] match({ !name Vivian own cond.abloom | !attr !dmg1 !dmg2 }, 0, prod(tag({ misc._ }, subscript({ !dst agg own char.core })), tag({ misc._ }, 0.1), { !name !src agg target final.anomProf }))",
+        "deps": [
+          {
+            "formula": "[1] gather 2 node(s) matching { preset0 [Vivian] (Seth) Vivian own cond.abloom [max] } (for { !name Vivian own cond.abloom | !attr !dmg1 !dmg2 })",
+            "deps": [
+              {
+                "readSeq": "{ cond. } <- { preset0 [Vivian] (Seth) Vivian own cond.abloom }",
+                "formula": "[0] 0"
+              },
+              {
+                "readSeq": "{ [Vivian] (Seth) Vivian own cond.abloom } <- { preset0 [Vivian] (Seth) Vivian own cond.abloom }",
+                "formula": "[1] 1"
+              }
+            ]
+          },
+          {
+            "formula": "[6] gather 1 node(s) matching { #core_electric_abloom preset0 [Vivian] agg own char.core | electric 1:abloom [sum] } (for { !dst agg own char.core })",
+            "deps": [
+              {
+                "readSeq": "{ [Vivian] !dst agg own char.core } <- { #core_electric_abloom preset0 [Vivian] agg own char.core | electric 1:abloom }",
+                "formula": "[6] 6"
+              }
+            ]
+          },
+          {
+            "formula": "[428] gather 1 node(s) matching { preset0 (Seth) agg target final.anomProf | electric 1:abloom [sum] } (for { !name !src agg target final.anomProf })",
+            "deps": [
+              {
+                "readSeq": "{ (Seth) target } <= { [Seth] !dst own } : { agg own final.anomProf } <- { preset0 [Seth] agg own final.anomProf | electric 1:abloom }",
+                "formula": "[428] sum(prod({ !dst agg own initial.anomProf }, sum(tag({ misc._ }, 1), { !dst agg own combat.anomProf_ })), { !dst agg own combat.anomProf })",
+                "deps": [
+                  {
+                    "formula": "[428] gather 2 node(s) matching { preset0 [Seth] agg own initial.anomProf | electric 1:abloom [sum] } (for { !dst agg own initial.anomProf })",
+                    "deps": [
+                      {
+                        "readSeq": "{ agg own initial.anomProf } <- { preset0 [Seth] agg own initial.anomProf | electric 1:abloom }",
+                        "formula": "[90] prod({ !dst agg own base.anomProf }, sum(tag({ misc._ }, 1), { !dst agg own initial.anomProf_ }))",
+                        "deps": [
+                          {
+                            "formula": "[90] gather 1 node(s) matching { preset0 [Seth] agg own base.anomProf | electric 1:abloom [sum] } (for { !dst agg own base.anomProf })",
+                            "deps": [
+                              {
+                                "readSeq": "{ agg } <= { char } : { [Seth] char } <= { Seth } : { Seth own base.anomProf } <- { preset0 [Seth] Seth own base.anomProf | electric 1:abloom }",
+                                "formula": "[90] 90"
+                              }
+                            ]
+                          },
+                          "[0] gather 0 node(s) matching { preset0 [Seth] agg own initial.anomProf_ | electric 1:abloom [sum] } (for { !dst agg own initial.anomProf_ })"
+                        ]
+                      },
+                      {
+                        "readSeq": "{ [Seth] agg own initial.anomProf } <- { preset0 [Seth] agg own initial.anomProf | electric 1:abloom }",
+                        "formula": "[338] 338"
+                      }
+                    ]
+                  },
+                  "[0] gather 0 node(s) matching { preset0 [Seth] agg own combat.anomProf_ | electric 1:abloom [sum] } (for { !dst agg own combat.anomProf_ })",
+                  {
+                    "formula": "[0] gather 1 node(s) matching { preset0 [Seth] agg own combat.anomProf | electric 1:abloom [sum] } (for { !dst agg own combat.anomProf })",
+                    "deps": [
+                      {
+                        "readSeq": "{ [Seth] agg own } <= { !name [Seth] (Seth) agg teamBuff } : { agg } <= { char } : { [Seth] char } <= { Seth } : { Seth teamBuff combat.anomProf } <- { preset0 [Seth] (Seth) Seth teamBuff combat.anomProf | electric 1:abloom }",
+                        "formula": "[0] match({ !name Seth own cond.shield_active | !attr !dmg1 !dmg2 }, 0, 0)",
+                        "deps": [
+                          {
+                            "formula": "[0] gather 1 node(s) matching { preset0 [Seth] (Seth) Seth own cond.shield_active [max] } (for { !name Seth own cond.shield_active | !attr !dmg1 !dmg2 })",
+                            "deps": [
+                              {
+                                "readSeq": "{ cond. } <- { preset0 [Seth] (Seth) Seth own cond.shield_active }",
+                                "formula": "[0] 0"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

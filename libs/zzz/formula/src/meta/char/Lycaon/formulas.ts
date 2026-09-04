@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lycaon',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Lycaon',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'disorderDmgInst_ice',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Lycaon',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'vortexDmgInst_ice',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Lycaon',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Lycaon',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lycaon',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lycaon',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'BasicAttackMoonHunter_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lycaon',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'BasicAttackMoonHunter_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lycaon',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'BasicAttackMoonHunter_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lycaon',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'BasicAttackMoonHunter_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lycaon',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'BasicAttackMoonHunter_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lycaon',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'BasicAttackMoonHunter_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lycaon',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'BasicAttackMoonHunter_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lycaon',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'BasicAttackMoonHunter_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lycaon',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'BasicAttackMoonHunter_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lycaon',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'BasicAttackMoonHunter_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lycaon',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'BasicAttackMoonHunter_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lycaon',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'BasicAttackMoonHunter_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lycaon',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'BasicAttackMoonHunter_4:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lycaon',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'BasicAttackMoonHunter_4:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lycaon',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'BasicAttackMoonHunter_4:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lycaon',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'BasicAttackMoonHunter_5:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lycaon',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'BasicAttackMoonHunter_5:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lycaon',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'BasicAttackMoonHunter_5:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lycaon',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'BasicAttackMoonHunter_6:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lycaon',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'BasicAttackMoonHunter_6:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lycaon',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'BasicAttackMoonHunter_6:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lycaon',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'BasicAttackMoonHunter_7:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lycaon',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'BasicAttackMoonHunter_7:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lycaon',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'BasicAttackMoonHunter_7:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lycaon',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'BasicAttackMoonHunter_8:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lycaon',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'BasicAttackMoonHunter_8:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lycaon',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'BasicAttackMoonHunter_8:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lycaon',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'BasicAttackMoonHunter_9:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lycaon',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'BasicAttackMoonHunter_9:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lycaon',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'BasicAttackMoonHunter_9:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lycaon',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'BasicAttackMoonHunter_10:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lycaon',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'BasicAttackMoonHunter_10:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lycaon',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'BasicAttackMoonHunter_10:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lycaon',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'DashAttackKeepItClean_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lycaon',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'DashAttackKeepItClean_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lycaon',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'DashAttackKeepItClean_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lycaon',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'DodgeCounterEtiquetteManual_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lycaon',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'DodgeCounterEtiquetteManual_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lycaon',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'DodgeCounterEtiquetteManual_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lycaon',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'SpecialAttackTimeToHunt_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lycaon',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'SpecialAttackTimeToHunt_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lycaon',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'SpecialAttackTimeToHunt_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lycaon',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'SpecialAttackTimeToHunt_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lycaon',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'SpecialAttackTimeToHunt_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lycaon',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'SpecialAttackTimeToHunt_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lycaon',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'SpecialAttackTimeToHunt_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lycaon',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'SpecialAttackTimeToHunt_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lycaon',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'SpecialAttackTimeToHunt_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lycaon',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'EXSpecialAttackThrillOfTheHunt_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lycaon',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'EXSpecialAttackThrillOfTheHunt_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lycaon',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'EXSpecialAttackThrillOfTheHunt_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lycaon',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'EXSpecialAttackThrillOfTheHunt_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lycaon',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'EXSpecialAttackThrillOfTheHunt_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lycaon',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'EXSpecialAttackThrillOfTheHunt_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lycaon',
@@ -849,7 +849,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'EXSpecialAttackThrillOfTheHunt_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lycaon',
@@ -863,7 +863,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'EXSpecialAttackThrillOfTheHunt_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lycaon',
@@ -877,7 +877,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'EXSpecialAttackThrillOfTheHunt_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lycaon',
@@ -891,7 +891,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'ChainAttackAsYouWish_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lycaon',
@@ -905,7 +905,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'ChainAttackAsYouWish_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lycaon',
@@ -919,7 +919,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'ChainAttackAsYouWish_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lycaon',
@@ -933,7 +933,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'UltimateMissionComplete_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lycaon',
@@ -947,7 +947,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'UltimateMissionComplete_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lycaon',
@@ -961,7 +961,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'UltimateMissionComplete_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lycaon',
@@ -975,7 +975,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'QuickAssistWolfPack_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lycaon',
@@ -989,7 +989,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'QuickAssistWolfPack_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lycaon',
@@ -1003,7 +1003,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'QuickAssistWolfPack_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lycaon',
@@ -1017,7 +1017,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'DefensiveAssistDisruptedHunt_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lycaon',
@@ -1031,7 +1031,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'DefensiveAssistDisruptedHunt_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lycaon',
@@ -1045,7 +1045,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'DefensiveAssistDisruptedHunt_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lycaon',
@@ -1059,7 +1059,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'DefensiveAssistDisruptedHunt_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lycaon',
@@ -1073,7 +1073,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'DefensiveAssistDisruptedHunt_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lycaon',
@@ -1087,7 +1087,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'DefensiveAssistDisruptedHunt_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lycaon',
@@ -1101,7 +1101,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'DefensiveAssistDisruptedHunt_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lycaon',
@@ -1115,7 +1115,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'DefensiveAssistDisruptedHunt_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lycaon',
@@ -1129,7 +1129,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'DefensiveAssistDisruptedHunt_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lycaon',
@@ -1143,7 +1143,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'AssistFollowUpVengefulCounterattack_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lycaon',
@@ -1157,7 +1157,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'AssistFollowUpVengefulCounterattack_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lycaon',
@@ -1171,7 +1171,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'AssistFollowUpVengefulCounterattack_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lycaon',
@@ -1185,7 +1185,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'AssistFollowUpVengefulCounterattackGlacialWaltz_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lycaon',
@@ -1199,7 +1199,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'AssistFollowUpVengefulCounterattackGlacialWaltz_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lycaon',
@@ -1213,7 +1213,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'AssistFollowUpVengefulCounterattackGlacialWaltz_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lycaon',
@@ -1227,7 +1227,7 @@ export const formulas = {
     sheet: 'Lycaon',
     name: 'm4_shield',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'shield',
       sheet: 'Lycaon',

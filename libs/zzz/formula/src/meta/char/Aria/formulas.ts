@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Aria',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Aria',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'disorderDmgInst_ether',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Aria',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'vortexDmgInst_ether',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Aria',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Aria',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Aria',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Aria',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'BasicAttackSweetMelody_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Aria',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'BasicAttackSweetMelody_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Aria',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'BasicAttackSweetMelody_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Aria',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'BasicAttackSweetMelody_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Aria',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'BasicAttackSweetMelody_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Aria',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'BasicAttackSweetMelody_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Aria',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'BasicAttackSweetMelody_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Aria',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'BasicAttackSweetMelody_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Aria',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'BasicAttackSweetMelody_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Aria',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'BasicAttackSweetMelody_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Aria',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'BasicAttackSweetMelody_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Aria',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'BasicAttackSweetMelody_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Aria',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'BasicAttackPerfectPitch_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Aria',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'BasicAttackPerfectPitch_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Aria',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'BasicAttackPerfectPitch_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Aria',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'BasicAttackPerfectPitch_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Aria',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'BasicAttackPerfectPitch_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Aria',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'BasicAttackPerfectPitch_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Aria',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'BasicAttackPerfectPitch_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Aria',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'BasicAttackPerfectPitch_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Aria',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'BasicAttackPerfectPitch_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Aria',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'BasicAttackPerfectPitch_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Aria',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'BasicAttackPerfectPitch_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Aria',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'BasicAttackPerfectPitch_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Aria',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'BasicAttackPerfectPitch_4:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Aria',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'BasicAttackPerfectPitch_4:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Aria',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'BasicAttackPerfectPitch_4:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Aria',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'DashAttackSilkySmoothCombo_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Aria',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'DashAttackSilkySmoothCombo_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Aria',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'DashAttackSilkySmoothCombo_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Aria',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'DodgeCounterSlideShiftVariation_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Aria',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'DodgeCounterSlideShiftVariation_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Aria',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'DodgeCounterSlideShiftVariation_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Aria',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'SpecialAttackFullSugarElectronica_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Aria',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'SpecialAttackFullSugarElectronica_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Aria',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'SpecialAttackFullSugarElectronica_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Aria',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'SpecialAttackFullSugarElectronicaNoIce_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Aria',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'SpecialAttackFullSugarElectronicaNoIce_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Aria',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'SpecialAttackFullSugarElectronicaNoIce_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Aria',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'EXSpecialAttackFallIntoDelusion_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Aria',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'EXSpecialAttackFallIntoDelusion_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Aria',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'EXSpecialAttackFallIntoDelusion_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Aria',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'EXSpecialAttackInstantlyHooked_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Aria',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'EXSpecialAttackInstantlyHooked_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Aria',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'EXSpecialAttackInstantlyHooked_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Aria',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'ChainAttackDreamCollab_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Aria',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'ChainAttackDreamCollab_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Aria',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'ChainAttackDreamCollab_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Aria',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'Ultimate100Energy_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Aria',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'Ultimate100Energy_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Aria',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'Ultimate100Energy_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Aria',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'QuickAssistShatterFantasy_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Aria',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'QuickAssistShatterFantasy_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Aria',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'QuickAssistShatterFantasy_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Aria',
@@ -849,7 +849,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'DefensiveAssistClutchSave_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Aria',
@@ -863,7 +863,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'DefensiveAssistClutchSave_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Aria',
@@ -877,7 +877,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'DefensiveAssistClutchSave_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Aria',
@@ -891,7 +891,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'DefensiveAssistClutchSave_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Aria',
@@ -905,7 +905,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'DefensiveAssistClutchSave_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Aria',
@@ -919,7 +919,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'DefensiveAssistClutchSave_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Aria',
@@ -933,7 +933,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'DefensiveAssistClutchSave_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Aria',
@@ -947,7 +947,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'DefensiveAssistClutchSave_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Aria',
@@ -961,7 +961,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'DefensiveAssistClutchSave_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Aria',
@@ -975,7 +975,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'AssistFollowUpEncoreSong_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Aria',
@@ -989,7 +989,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'AssistFollowUpEncoreSong_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Aria',
@@ -1003,7 +1003,7 @@ export const formulas = {
     sheet: 'Aria',
     name: 'AssistFollowUpEncoreSong_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Aria',

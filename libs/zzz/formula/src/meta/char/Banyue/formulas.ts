@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'sheerDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Banyue',
@@ -17,7 +17,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Banyue',
@@ -30,7 +30,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'disorderDmgInst_fire',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Banyue',
@@ -43,7 +43,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'vortexDmgInst_fire',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Banyue',
@@ -56,7 +56,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Banyue',
@@ -70,7 +70,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Banyue',
@@ -82,7 +82,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Banyue',
@@ -94,7 +94,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'BasicAttackToweringPeaks_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Banyue',
@@ -108,7 +108,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'BasicAttackToweringPeaks_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Banyue',
@@ -122,7 +122,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'BasicAttackToweringPeaks_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Banyue',
@@ -136,7 +136,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'BasicAttackToweringPeaks_1:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Banyue',
@@ -150,7 +150,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'BasicAttackToweringPeaks_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Banyue',
@@ -164,7 +164,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'BasicAttackToweringPeaks_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Banyue',
@@ -178,7 +178,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'BasicAttackToweringPeaks_2:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Banyue',
@@ -192,7 +192,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'BasicAttackToweringPeaks_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Banyue',
@@ -206,7 +206,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'BasicAttackToweringPeaks_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Banyue',
@@ -220,7 +220,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'BasicAttackToweringPeaks_3:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Banyue',
@@ -234,7 +234,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'BasicAttackToweringPeaks_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Banyue',
@@ -248,7 +248,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'BasicAttackToweringPeaks_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Banyue',
@@ -262,7 +262,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'BasicAttackMajesticSummit_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Banyue',
@@ -276,7 +276,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'BasicAttackMajesticSummit_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Banyue',
@@ -290,7 +290,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'BasicAttackMajesticSummit_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Banyue',
@@ -304,7 +304,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'BasicAttackMajesticSummit_1:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Banyue',
@@ -318,7 +318,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'BasicAttackMajesticSummit_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Banyue',
@@ -332,7 +332,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'BasicAttackMajesticSummit_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Banyue',
@@ -346,7 +346,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'BasicAttackMajesticSummit_2:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Banyue',
@@ -360,7 +360,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'BasicAttackMajesticSummit_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Banyue',
@@ -374,7 +374,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'BasicAttackMajesticSummit_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Banyue',
@@ -388,7 +388,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'BasicAttackMajesticSummit_3:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Banyue',
@@ -402,7 +402,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'BasicAttackMajesticSummit_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Banyue',
@@ -416,7 +416,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'BasicAttackMajesticSummit_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Banyue',
@@ -430,7 +430,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'BasicAttackImmolate_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Banyue',
@@ -444,7 +444,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'BasicAttackImmolate_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Banyue',
@@ -458,7 +458,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'BasicAttackImmolate_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Banyue',
@@ -472,7 +472,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'BasicAttackTopplingMountain_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Banyue',
@@ -486,7 +486,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'BasicAttackTopplingMountain_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Banyue',
@@ -500,7 +500,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'BasicAttackTopplingMountain_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Banyue',
@@ -514,7 +514,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'BasicAttackCrushingPeaks_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Banyue',
@@ -528,7 +528,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'BasicAttackCrushingPeaks_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Banyue',
@@ -542,7 +542,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'BasicAttackCrushingPeaks_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Banyue',
@@ -556,7 +556,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'DodgeImmovableMountain_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Banyue',
@@ -570,7 +570,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'DodgeImmovableMountain_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Banyue',
@@ -584,7 +584,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'DodgeImmovableMountain_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Banyue',
@@ -598,7 +598,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'DashAttackScatteringSands_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Banyue',
@@ -612,7 +612,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'DashAttackScatteringSands_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Banyue',
@@ -626,7 +626,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'DashAttackScatteringSands_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Banyue',
@@ -640,7 +640,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'DodgeCounterStoneburst_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Banyue',
@@ -654,7 +654,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'DodgeCounterStoneburst_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Banyue',
@@ -668,7 +668,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'DodgeCounterStoneburst_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Banyue',
@@ -682,7 +682,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'EXSpecialAttackMountainTremor_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Banyue',
@@ -696,7 +696,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'EXSpecialAttackMountainTremor_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Banyue',
@@ -710,7 +710,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'EXSpecialAttackMountainTremor_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Banyue',
@@ -724,7 +724,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'EXSpecialAttackEarthShaker_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Banyue',
@@ -738,7 +738,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'EXSpecialAttackEarthShaker_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Banyue',
@@ -752,7 +752,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'EXSpecialAttackEarthShaker_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Banyue',
@@ -766,7 +766,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'EXSpecialAttackLionsRoar_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Banyue',
@@ -780,7 +780,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'EXSpecialAttackLionsRoar_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Banyue',
@@ -794,7 +794,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'EXSpecialAttackLionsRoar_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Banyue',
@@ -808,7 +808,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'EXSpecialAttackOnesPath_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Banyue',
@@ -822,7 +822,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'EXSpecialAttackOnesPath_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Banyue',
@@ -836,7 +836,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'EXSpecialAttackOnesPath_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Banyue',
@@ -850,7 +850,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'EXSpecialAttackLionsRoarWrath_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Banyue',
@@ -864,7 +864,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'EXSpecialAttackLionsRoarWrath_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Banyue',
@@ -878,7 +878,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'EXSpecialAttackLionsRoarWrath_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Banyue',
@@ -892,7 +892,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'EXSpecialAttackMountainTremorWrath_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Banyue',
@@ -906,7 +906,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'EXSpecialAttackMountainTremorWrath_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Banyue',
@@ -920,7 +920,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'EXSpecialAttackMountainTremorWrath_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Banyue',
@@ -934,7 +934,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'ChainAttackBlazingWrath_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Banyue',
@@ -948,7 +948,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'ChainAttackBlazingWrath_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Banyue',
@@ -962,7 +962,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'ChainAttackBlazingWrath_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Banyue',
@@ -976,7 +976,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'UltimateTheWorldTrembles_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Banyue',
@@ -990,7 +990,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'UltimateTheWorldTrembles_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Banyue',
@@ -1004,7 +1004,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'UltimateTheWorldTrembles_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Banyue',
@@ -1018,7 +1018,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'QuickAssistBatholith_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Banyue',
@@ -1032,7 +1032,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'QuickAssistBatholith_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Banyue',
@@ -1046,7 +1046,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'QuickAssistBatholith_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Banyue',
@@ -1060,7 +1060,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'DefensiveAssistIronBastion_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Banyue',
@@ -1074,7 +1074,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'DefensiveAssistIronBastion_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Banyue',
@@ -1088,7 +1088,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'DefensiveAssistIronBastion_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Banyue',
@@ -1102,7 +1102,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'DefensiveAssistIronBastion_1:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Banyue',
@@ -1116,7 +1116,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'DefensiveAssistIronBastion_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Banyue',
@@ -1130,7 +1130,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'DefensiveAssistIronBastion_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Banyue',
@@ -1144,7 +1144,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'DefensiveAssistIronBastion_2:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Banyue',
@@ -1158,7 +1158,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'DefensiveAssistIronBastion_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Banyue',
@@ -1172,7 +1172,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'DefensiveAssistIronBastion_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Banyue',
@@ -1186,7 +1186,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'AssistFollowUpLoftyAscent_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Banyue',
@@ -1200,7 +1200,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'AssistFollowUpLoftyAscent_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Banyue',
@@ -1214,7 +1214,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'AssistFollowUpLoftyAscent_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Banyue',
@@ -1228,7 +1228,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'AssistFollowUpPierceHeavens_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Banyue',
@@ -1242,7 +1242,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'AssistFollowUpPierceHeavens_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Banyue',
@@ -1256,7 +1256,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'AssistFollowUpPierceHeavens_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Banyue',
@@ -1270,7 +1270,7 @@ export const formulas = {
     sheet: 'Banyue',
     name: 'm6_dmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Banyue',

@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'BigCylinder',
     name: 'damage',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'BigCylinder',

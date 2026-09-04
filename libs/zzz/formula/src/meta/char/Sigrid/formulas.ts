@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sigrid',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Sigrid',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'disorderDmgInst_ice',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Sigrid',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'vortexDmgInst_ice',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Sigrid',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Sigrid',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sigrid',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sigrid',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'BasicAttackFrostTippedSpear_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sigrid',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'BasicAttackFrostTippedSpear_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sigrid',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'BasicAttackFrostTippedSpear_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sigrid',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'BasicAttackFrostTippedSpear_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sigrid',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'BasicAttackFrostTippedSpear_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sigrid',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'BasicAttackFrostTippedSpear_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sigrid',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'BasicAttackFrostTippedSpear_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sigrid',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'BasicAttackFrostTippedSpear_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sigrid',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'BasicAttackFrostTippedSpear_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sigrid',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'BasicAttackFrostTippedSpear_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sigrid',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'BasicAttackFrostTippedSpear_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sigrid',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'BasicAttackFrostTippedSpear_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sigrid',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'BasicAttackConvergingSpear1stStage_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sigrid',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'BasicAttackConvergingSpear1stStage_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sigrid',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'BasicAttackConvergingSpear1stStage_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sigrid',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'BasicAttackConvergingSpear2ndStage_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sigrid',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'BasicAttackConvergingSpear2ndStage_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sigrid',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'BasicAttackConvergingSpear2ndStage_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sigrid',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'BasicAttackConvergingSpear3rdStage_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sigrid',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'BasicAttackConvergingSpear3rdStage_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sigrid',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'BasicAttackConvergingSpear3rdStage_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sigrid',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'DashAttackWindchase_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sigrid',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'DashAttackWindchase_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sigrid',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'DashAttackWindchase_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sigrid',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'DodgeCounterCounterthrust_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sigrid',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'DodgeCounterCounterthrust_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sigrid',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'DodgeCounterCounterthrust_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sigrid',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'SpecialAttackFrostflower_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sigrid',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'SpecialAttackFrostflower_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sigrid',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'SpecialAttackFrostflower_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sigrid',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'EXSpecialAttackScatteredJade_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sigrid',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'EXSpecialAttackScatteredJade_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sigrid',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'EXSpecialAttackScatteredJade_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sigrid',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'EXSpecialAttackShatteredJade_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sigrid',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'EXSpecialAttackShatteredJade_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sigrid',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'EXSpecialAttackShatteredJade_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sigrid',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'ChainAttackEncroachingIce_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sigrid',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'ChainAttackEncroachingIce_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sigrid',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'ChainAttackEncroachingIce_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sigrid',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'UltimateFrozenHeavens_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sigrid',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'UltimateFrozenHeavens_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sigrid',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'UltimateFrozenHeavens_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sigrid',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'QuickAssistIronSentinel_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sigrid',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'QuickAssistIronSentinel_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sigrid',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'QuickAssistIronSentinel_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sigrid',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'DefensiveAssistDauntlessCold_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sigrid',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'DefensiveAssistDauntlessCold_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sigrid',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'DefensiveAssistDauntlessCold_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sigrid',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'DefensiveAssistDauntlessCold_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sigrid',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'DefensiveAssistDauntlessCold_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sigrid',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'DefensiveAssistDauntlessCold_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sigrid',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'DefensiveAssistDauntlessCold_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sigrid',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'DefensiveAssistDauntlessCold_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sigrid',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'DefensiveAssistDauntlessCold_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sigrid',
@@ -849,7 +849,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'AssistFollowUpDevouringFrost_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sigrid',
@@ -863,7 +863,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'AssistFollowUpDevouringFrost_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sigrid',
@@ -877,7 +877,7 @@ export const formulas = {
     sheet: 'Sigrid',
     name: 'AssistFollowUpDevouringFrost_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sigrid',

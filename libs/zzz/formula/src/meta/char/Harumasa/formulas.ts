@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Harumasa',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Harumasa',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'disorderDmgInst_electric',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Harumasa',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'vortexDmgInst_electric',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Harumasa',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Harumasa',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Harumasa',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Harumasa',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'BasicAttackCloudPiercer_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Harumasa',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'BasicAttackCloudPiercer_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Harumasa',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'BasicAttackCloudPiercer_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Harumasa',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'BasicAttackCloudPiercer_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Harumasa',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'BasicAttackCloudPiercer_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Harumasa',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'BasicAttackCloudPiercer_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Harumasa',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'BasicAttackCloudPiercer_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Harumasa',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'BasicAttackCloudPiercer_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Harumasa',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'BasicAttackCloudPiercer_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Harumasa',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'BasicAttackCloudPiercer_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Harumasa',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'BasicAttackCloudPiercer_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Harumasa',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'BasicAttackCloudPiercer_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Harumasa',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'BasicAttackCloudPiercer_4:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Harumasa',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'BasicAttackCloudPiercer_4:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Harumasa',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'BasicAttackCloudPiercer_4:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Harumasa',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'BasicAttackCloudPiercerDrift_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Harumasa',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'BasicAttackCloudPiercerDrift_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Harumasa',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'BasicAttackCloudPiercerDrift_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Harumasa',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'BasicAttackFallingFeather_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Harumasa',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'BasicAttackFallingFeather_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Harumasa',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'BasicAttackFallingFeather_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Harumasa',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'BasicAttackHaOtoNoYa_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Harumasa',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'BasicAttackHaOtoNoYa_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Harumasa',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'BasicAttackHaOtoNoYa_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Harumasa',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'DashAttackHitenNoTsuru_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Harumasa',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'DashAttackHitenNoTsuru_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Harumasa',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'DashAttackHitenNoTsuru_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Harumasa',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'DodgeCounterHiddenEdge_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Harumasa',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'DodgeCounterHiddenEdge_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Harumasa',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'DodgeCounterHiddenEdge_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Harumasa',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'DashAttackHitenNoTsuruSlash_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Harumasa',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'DashAttackHitenNoTsuruSlash_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Harumasa',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'DashAttackHitenNoTsuruSlash_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Harumasa',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'DashAttackHitenNoTsuruSlash_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Harumasa',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'DashAttackHitenNoTsuruSlash_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Harumasa',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'DashAttackHitenNoTsuruSlash_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Harumasa',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'DashAttackHitenNoTsuruSlash_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Harumasa',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'DashAttackHitenNoTsuruSlash_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Harumasa',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'DashAttackHitenNoTsuruSlash_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Harumasa',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'ChasingThunder_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Harumasa',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'ChasingThunder_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Harumasa',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'ChasingThunder_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Harumasa',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'SpecialAttackNowhereToHide_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Harumasa',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'SpecialAttackNowhereToHide_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Harumasa',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'SpecialAttackNowhereToHide_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Harumasa',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'EXSpecialAttackNowhereToRun_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Harumasa',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'EXSpecialAttackNowhereToRun_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Harumasa',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'EXSpecialAttackNowhereToRun_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Harumasa',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'EXSpecialAttackNowhereToRunPatrol_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Harumasa',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'EXSpecialAttackNowhereToRunPatrol_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Harumasa',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'EXSpecialAttackNowhereToRunPatrol_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Harumasa',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'ChainAttackKaiHanare_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Harumasa',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'ChainAttackKaiHanare_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Harumasa',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'ChainAttackKaiHanare_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Harumasa',
@@ -849,7 +849,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'UltimateZanshin_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Harumasa',
@@ -863,7 +863,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'UltimateZanshin_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Harumasa',
@@ -877,7 +877,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'UltimateZanshin_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Harumasa',
@@ -891,7 +891,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'ZanshinScatteredBlossoms_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Harumasa',
@@ -905,7 +905,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'ZanshinScatteredBlossoms_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Harumasa',
@@ -919,7 +919,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'ZanshinScatteredBlossoms_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Harumasa',
@@ -933,7 +933,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'QuickAssistBracedBow_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Harumasa',
@@ -947,7 +947,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'QuickAssistBracedBow_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Harumasa',
@@ -961,7 +961,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'QuickAssistBracedBow_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Harumasa',
@@ -975,7 +975,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'DefensiveAssistYugamae_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Harumasa',
@@ -989,7 +989,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'DefensiveAssistYugamae_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Harumasa',
@@ -1003,7 +1003,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'DefensiveAssistYugamae_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Harumasa',
@@ -1017,7 +1017,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'DefensiveAssistYugamae_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Harumasa',
@@ -1031,7 +1031,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'DefensiveAssistYugamae_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Harumasa',
@@ -1045,7 +1045,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'DefensiveAssistYugamae_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Harumasa',
@@ -1059,7 +1059,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'DefensiveAssistYugamae_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Harumasa',
@@ -1073,7 +1073,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'DefensiveAssistYugamae_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Harumasa',
@@ -1087,7 +1087,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'DefensiveAssistYugamae_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Harumasa',
@@ -1101,7 +1101,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'AssistFollowUpYugamaeSlash_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Harumasa',
@@ -1115,7 +1115,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'AssistFollowUpYugamaeSlash_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Harumasa',
@@ -1129,7 +1129,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'AssistFollowUpYugamaeSlash_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Harumasa',
@@ -1143,7 +1143,7 @@ export const formulas = {
     sheet: 'Harumasa',
     name: 'm6_dmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Harumasa',

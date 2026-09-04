@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Vivian',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Vivian',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'disorderDmgInst_ether',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Vivian',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'vortexDmgInst_ether',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Vivian',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Vivian',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Vivian',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Vivian',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'BasicAttackFeatheredStrike_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Vivian',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'BasicAttackFeatheredStrike_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Vivian',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'BasicAttackFeatheredStrike_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Vivian',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'BasicAttackFeatheredStrike_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Vivian',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'BasicAttackFeatheredStrike_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Vivian',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'BasicAttackFeatheredStrike_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Vivian',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'BasicAttackFeatheredStrike_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Vivian',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'BasicAttackFeatheredStrike_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Vivian',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'BasicAttackFeatheredStrike_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Vivian',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'BasicAttackFeatheredStrike_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Vivian',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'BasicAttackFeatheredStrike_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Vivian',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'BasicAttackFeatheredStrike_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Vivian',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'BasicAttackNoblewomanWaltz_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Vivian',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'BasicAttackNoblewomanWaltz_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Vivian',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'BasicAttackNoblewomanWaltz_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Vivian',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'BasicAttackFlutteringFrockSuspension_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Vivian',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'BasicAttackFlutteringFrockSuspension_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Vivian',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'BasicAttackFlutteringFrockSuspension_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Vivian',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'BasicAttackFeatherbloom_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Vivian',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'BasicAttackFeatherbloom_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Vivian',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'BasicAttackFeatherbloom_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Vivian',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'DashAttackSilverThornedMelody_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Vivian',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'DashAttackSilverThornedMelody_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Vivian',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'DashAttackSilverThornedMelody_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Vivian',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'DodgeCounterWingbladeReverb_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Vivian',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'DodgeCounterWingbladeReverb_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Vivian',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'DodgeCounterWingbladeReverb_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Vivian',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'SpecialAttackSongOfSilverWings_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Vivian',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'SpecialAttackSongOfSilverWings_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Vivian',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'SpecialAttackSongOfSilverWings_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Vivian',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'EXSpecialAttackVioletRequiem_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Vivian',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'EXSpecialAttackVioletRequiem_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Vivian',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'EXSpecialAttackVioletRequiem_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Vivian',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'ChainAttackChorusOfCelestialWings_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Vivian',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'ChainAttackChorusOfCelestialWings_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Vivian',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'ChainAttackChorusOfCelestialWings_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Vivian',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'UltimateSoaringBirdsSong_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Vivian',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'UltimateSoaringBirdsSong_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Vivian',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'UltimateSoaringBirdsSong_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Vivian',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'QuickAssistFrostwingGuard_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Vivian',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'QuickAssistFrostwingGuard_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Vivian',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'QuickAssistFrostwingGuard_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Vivian',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'DefensiveAssistSilverUmbrellaFormation_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Vivian',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'DefensiveAssistSilverUmbrellaFormation_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Vivian',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'DefensiveAssistSilverUmbrellaFormation_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Vivian',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'DefensiveAssistSilverUmbrellaFormation_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Vivian',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'DefensiveAssistSilverUmbrellaFormation_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Vivian',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'DefensiveAssistSilverUmbrellaFormation_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Vivian',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'DefensiveAssistSilverUmbrellaFormation_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Vivian',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'DefensiveAssistSilverUmbrellaFormation_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Vivian',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'DefensiveAssistSilverUmbrellaFormation_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Vivian',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'AssistFollowUpFeatherbladeExecution_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Vivian',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'AssistFollowUpFeatherbladeExecution_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Vivian',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'AssistFollowUpFeatherbladeExecution_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Vivian',
@@ -849,7 +849,7 @@ export const formulas = {
     sheet: 'Vivian',
     name: 'core_prophecy_dmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Vivian',

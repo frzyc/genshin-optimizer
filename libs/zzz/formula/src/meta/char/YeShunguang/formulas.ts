@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'YeShunguang',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'disorderDmgInst_physical',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'YeShunguang',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'vortexDmgInst_physical',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'YeShunguang',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'YeShunguang',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackSwiftedge_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackSwiftedge_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackSwiftedge_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackSwiftedge_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackSwiftedge_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackSwiftedge_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackSwiftedge_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackSwiftedge_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackSwiftedge_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackSwiftedge_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackSwiftedge_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackSwiftedge_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackCloudstreamSwordWill_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackCloudstreamSwordWill_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackCloudstreamSwordWill_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackEnlightenedMindSplittingCurrents_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackEnlightenedMindSplittingCurrents_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackEnlightenedMindSplittingCurrents_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackEnlightenedMindSplittingCurrents_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackEnlightenedMindSplittingCurrents_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackEnlightenedMindSplittingCurrents_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackEnlightenedMindSplittingCurrents_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackEnlightenedMindSplittingCurrents_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackEnlightenedMindSplittingCurrents_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackEnlightenedMindSkywardAscent_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackEnlightenedMindSkywardAscent_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackEnlightenedMindSkywardAscent_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackEnlightenedMindSunderlightMaximum_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackEnlightenedMindSunderlightMaximum_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackEnlightenedMindSunderlightMaximum_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackEnlightenedMindSunderlight_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackEnlightenedMindSunderlight_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackEnlightenedMindSunderlight_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackEnlightenedMindSunderlight_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackEnlightenedMindSunderlight_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackEnlightenedMindSunderlight_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackEnlightenedMindSunderlightAnnihilation_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackEnlightenedMindSunderlightAnnihilation_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackEnlightenedMindSunderlightAnnihilation_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackEnlightenedMindSunderlightAnnihilation_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackEnlightenedMindSunderlightAnnihilation_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'BasicAttackEnlightenedMindSunderlightAnnihilation_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'DashAttackPhantasmDash_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'DashAttackPhantasmDash_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'DashAttackPhantasmDash_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'DodgeCounterSwallowStrike_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'DodgeCounterSwallowStrike_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'DodgeCounterSwallowStrike_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'SpecialAttackGuidingTides_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'SpecialAttackGuidingTides_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'SpecialAttackGuidingTides_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'SpecialAttackGuidingTides_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'SpecialAttackGuidingTides_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'SpecialAttackGuidingTides_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',
@@ -849,7 +849,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'EXSpecialAttackGaleSuppression_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -863,7 +863,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'EXSpecialAttackGaleSuppression_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -877,7 +877,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'EXSpecialAttackGaleSuppression_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',
@@ -891,7 +891,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'SpecialAttackEnlightenedMindCleanExit_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -905,7 +905,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'SpecialAttackEnlightenedMindCleanExit_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -919,7 +919,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'SpecialAttackEnlightenedMindCleanExit_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',
@@ -933,7 +933,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'EXSpecialAttackEnlightenedMindSoaringLight_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -947,7 +947,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'EXSpecialAttackEnlightenedMindSoaringLight_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -961,7 +961,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'EXSpecialAttackEnlightenedMindSoaringLight_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',
@@ -975,7 +975,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'EXSpecialAttackEnlightenedMindReturnToDust_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -989,7 +989,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'EXSpecialAttackEnlightenedMindReturnToDust_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -1003,7 +1003,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'EXSpecialAttackEnlightenedMindReturnToDust_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',
@@ -1017,7 +1017,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'ChainAttackSmiteTheWicked_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -1031,7 +1031,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'ChainAttackSmiteTheWicked_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -1045,7 +1045,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'ChainAttackSmiteTheWicked_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',
@@ -1059,7 +1059,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'UltimateChasingStorms_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -1073,7 +1073,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'UltimateChasingStorms_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -1087,7 +1087,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'UltimateChasingStorms_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',
@@ -1101,7 +1101,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'ChainAttackEnlightenedMindLureThunder_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -1115,7 +1115,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'ChainAttackEnlightenedMindLureThunder_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -1129,7 +1129,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'ChainAttackEnlightenedMindLureThunder_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',
@@ -1143,7 +1143,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'UltimateCleavingHeavens_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -1157,7 +1157,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'UltimateCleavingHeavens_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -1171,7 +1171,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'UltimateCleavingHeavens_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',
@@ -1185,7 +1185,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'EntrySkillIlluminatingDarkness_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -1199,7 +1199,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'EntrySkillIlluminatingDarkness_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -1213,7 +1213,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'EntrySkillIlluminatingDarkness_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',
@@ -1227,7 +1227,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'QuickAssistSupportGuard_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -1241,7 +1241,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'QuickAssistSupportGuard_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -1255,7 +1255,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'QuickAssistSupportGuard_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',
@@ -1269,7 +1269,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'AssistFollowUpCeaseHostility_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -1283,7 +1283,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'AssistFollowUpCeaseHostility_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -1297,7 +1297,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'AssistFollowUpCeaseHostility_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',
@@ -1311,7 +1311,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'DefensiveAssistWhenIReturn_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -1325,7 +1325,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'DefensiveAssistWhenIReturn_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -1339,7 +1339,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'DefensiveAssistWhenIReturn_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',
@@ -1353,7 +1353,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'DefensiveAssistWhenIReturn_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -1367,7 +1367,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'DefensiveAssistWhenIReturn_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -1381,7 +1381,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'DefensiveAssistWhenIReturn_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',
@@ -1395,7 +1395,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'DefensiveAssistWhenIReturn_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -1409,7 +1409,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'DefensiveAssistWhenIReturn_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -1423,7 +1423,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'DefensiveAssistWhenIReturn_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',
@@ -1437,7 +1437,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'QuickAssistEnlightenedMindTacticalSupport_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -1451,7 +1451,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'QuickAssistEnlightenedMindTacticalSupport_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -1465,7 +1465,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'QuickAssistEnlightenedMindTacticalSupport_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',
@@ -1479,7 +1479,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'AssistFollowUpEnlightenedMindUnification_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'YeShunguang',
@@ -1493,7 +1493,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'AssistFollowUpEnlightenedMindUnification_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'YeShunguang',
@@ -1507,7 +1507,7 @@ export const formulas = {
     sheet: 'YeShunguang',
     name: 'AssistFollowUpEnlightenedMindUnification_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'YeShunguang',

@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'sheerDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'StarlightBilly',
@@ -17,7 +17,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'StarlightBilly',
@@ -30,7 +30,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'disorderDmgInst_physical',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'StarlightBilly',
@@ -43,7 +43,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'vortexDmgInst_physical',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'StarlightBilly',
@@ -56,7 +56,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'StarlightBilly',
@@ -70,7 +70,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'StarlightBilly',
@@ -82,7 +82,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'StarlightBilly',
@@ -94,7 +94,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'BasicAttackKnightsTechnique_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'StarlightBilly',
@@ -108,7 +108,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'BasicAttackKnightsTechnique_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'StarlightBilly',
@@ -122,7 +122,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'BasicAttackKnightsTechnique_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'StarlightBilly',
@@ -136,7 +136,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'BasicAttackKnightsTechnique_1:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'StarlightBilly',
@@ -150,7 +150,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'BasicAttackKnightsTechnique_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'StarlightBilly',
@@ -164,7 +164,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'BasicAttackKnightsTechnique_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'StarlightBilly',
@@ -178,7 +178,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'BasicAttackKnightsTechnique_2:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'StarlightBilly',
@@ -192,7 +192,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'BasicAttackKnightsTechnique_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'StarlightBilly',
@@ -206,7 +206,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'BasicAttackKnightsTechnique_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'StarlightBilly',
@@ -220,7 +220,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'BasicAttackKnightsTechnique_3:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'StarlightBilly',
@@ -234,7 +234,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'BasicAttackKnightsTechnique_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'StarlightBilly',
@@ -248,7 +248,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'BasicAttackKnightsTechnique_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'StarlightBilly',
@@ -262,7 +262,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'BasicAttackFullThrottleStarlight_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'StarlightBilly',
@@ -276,7 +276,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'BasicAttackFullThrottleStarlight_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'StarlightBilly',
@@ -290,7 +290,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'BasicAttackFullThrottleStarlight_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'StarlightBilly',
@@ -304,7 +304,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'DashAttackStarlightRetribution_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'StarlightBilly',
@@ -318,7 +318,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'DashAttackStarlightRetribution_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'StarlightBilly',
@@ -332,7 +332,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'DashAttackStarlightRetribution_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'StarlightBilly',
@@ -346,7 +346,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'DodgeCounterDuelKing_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'StarlightBilly',
@@ -360,7 +360,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'DodgeCounterDuelKing_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'StarlightBilly',
@@ -374,7 +374,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'DodgeCounterDuelKing_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'StarlightBilly',
@@ -388,7 +388,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'DodgeCounterAfterfireSpin_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'StarlightBilly',
@@ -402,7 +402,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'DodgeCounterAfterfireSpin_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'StarlightBilly',
@@ -416,7 +416,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'DodgeCounterAfterfireSpin_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'StarlightBilly',
@@ -430,7 +430,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'SpecialAttackDriveSuppression_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'StarlightBilly',
@@ -444,7 +444,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'SpecialAttackDriveSuppression_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'StarlightBilly',
@@ -458,7 +458,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'SpecialAttackDriveSuppression_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'StarlightBilly',
@@ -472,7 +472,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'SpecialAttackRunWild_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'StarlightBilly',
@@ -486,7 +486,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'SpecialAttackRunWild_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'StarlightBilly',
@@ -500,7 +500,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'SpecialAttackRunWild_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'StarlightBilly',
@@ -514,7 +514,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'EXSpecialAttackCoolWheelie_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'StarlightBilly',
@@ -528,7 +528,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'EXSpecialAttackCoolWheelie_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'StarlightBilly',
@@ -542,7 +542,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'EXSpecialAttackCoolWheelie_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'StarlightBilly',
@@ -556,7 +556,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'EXSpecialAttackHighTractionWheels_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'StarlightBilly',
@@ -570,7 +570,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'EXSpecialAttackHighTractionWheels_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'StarlightBilly',
@@ -584,7 +584,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'EXSpecialAttackHighTractionWheels_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'StarlightBilly',
@@ -598,7 +598,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'EXSpecialAttackRockingFootwork_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'StarlightBilly',
@@ -612,7 +612,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'EXSpecialAttackRockingFootwork_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'StarlightBilly',
@@ -626,7 +626,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'EXSpecialAttackRockingFootwork_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'StarlightBilly',
@@ -640,7 +640,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'ChainAttackKnightsSwagger_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'StarlightBilly',
@@ -654,7 +654,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'ChainAttackKnightsSwagger_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'StarlightBilly',
@@ -668,7 +668,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'ChainAttackKnightsSwagger_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'StarlightBilly',
@@ -682,7 +682,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'UltimateStarlightKnightFlyingKick_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'StarlightBilly',
@@ -696,7 +696,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'UltimateStarlightKnightFlyingKick_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'StarlightBilly',
@@ -710,7 +710,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'UltimateStarlightKnightFlyingKick_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'StarlightBilly',
@@ -724,7 +724,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'QuickAssistStarlightPowerOfBonds_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'StarlightBilly',
@@ -738,7 +738,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'QuickAssistStarlightPowerOfBonds_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'StarlightBilly',
@@ -752,7 +752,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'QuickAssistStarlightPowerOfBonds_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'StarlightBilly',
@@ -766,7 +766,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'DefensiveAssistHerosEntrance_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'StarlightBilly',
@@ -780,7 +780,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'DefensiveAssistHerosEntrance_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'StarlightBilly',
@@ -794,7 +794,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'DefensiveAssistHerosEntrance_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'StarlightBilly',
@@ -808,7 +808,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'DefensiveAssistHerosEntrance_1:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'StarlightBilly',
@@ -822,7 +822,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'DefensiveAssistHerosEntrance_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'StarlightBilly',
@@ -836,7 +836,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'DefensiveAssistHerosEntrance_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'StarlightBilly',
@@ -850,7 +850,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'DefensiveAssistHerosEntrance_2:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'StarlightBilly',
@@ -864,7 +864,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'DefensiveAssistHerosEntrance_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'StarlightBilly',
@@ -878,7 +878,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'DefensiveAssistHerosEntrance_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'StarlightBilly',
@@ -892,7 +892,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'AssistFollowUpVillainsExit_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'StarlightBilly',
@@ -906,7 +906,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'AssistFollowUpVillainsExit_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'StarlightBilly',
@@ -920,7 +920,7 @@ export const formulas = {
     sheet: 'StarlightBilly',
     name: 'AssistFollowUpVillainsExit_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'StarlightBilly',

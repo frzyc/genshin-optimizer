@@ -6,10 +6,7 @@ import {
   subscript,
   sum,
 } from '@genshin-optimizer/pando/engine'
-import {
-  allAttributeAnomalyKeys,
-  type CharacterKey,
-} from '@genshin-optimizer/zzz/consts'
+import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/zzz/stats'
 import {
   allBoolConditionals,
@@ -63,33 +60,39 @@ const sheet = register(
   customHeal('ult_heal', sum(-50, prod(char.chain, 250)), { team: true }),
 
   // // TODO: do this properly
-  // ...allAttributeAnomalyKeys.flatMap((attr) =>
-  //   ['anomaly' as const, 'attack' as const].map((type) =>
-  //     customDmg(
-  //       `core_${type}_${attr}_dmg`,
-  //       { damageType1: 'elemental', attribute: attr },
-  //       cmpEq(
-  //         target.char.attribute,
-  //         attr,
-  //         cmpEq(
-  //           target.char.specialty,
-  //           type,
-  //           prod(
-  //             target.final.atk,
-  //             sum(
-  //               percent(subscript(char.core, dm.core[`dmg_${type}`])),
-  //               cmpGE(char.mindscape, 2, percent(dm.m2[`dmg_${type}`]))
-  //             )
-  //           )
-  //         )
-  //       ),
-  //       { team: true },
-  //       core_crit_,
-  //       core_crit_dmg_,
-  //       m6_common_dmg_
-  //     )
-  //   )
-  // ),
+  ...['physical' as const].flatMap((attr) =>
+    ['anomaly' as const, 'attack' as const].map((type) =>
+      customDmg(
+        `core_${type}_${attr}_dmg`,
+        { attribute: attr },
+        cmpEq(
+          target.char.attribute,
+          attr,
+          cmpEq(
+            target.char.specialty,
+            type,
+            prod(
+              target.final.atk,
+              sum(
+                percent(subscript(char.core, dm.core[`dmg_${type}`])),
+                cmpGE(char.mindscape, 2, percent(dm.m2[`dmg_${type}`]))
+              )
+            )
+          )
+        ),
+        { team: true },
+        core_crit_,
+        core_crit_dmg_,
+        m6_common_dmg_
+      )
+    )
+  ),
+  registerBuff(
+    'test',
+    ownBuff.final.atk.add(cmpEq(target.char.attribute, 'physical', 10000)),
+    undefined,
+    true
+  ),
   customDmg(
     'm6_dmg',
     { ...baseTag, damageType1: 'elemental' },

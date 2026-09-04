@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'sheerDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Manato',
@@ -17,7 +17,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Manato',
@@ -30,7 +30,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'disorderDmgInst_fire',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Manato',
@@ -43,7 +43,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'vortexDmgInst_fire',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Manato',
@@ -56,7 +56,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Manato',
@@ -70,7 +70,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Manato',
@@ -82,7 +82,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Manato',
@@ -94,7 +94,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'BasicAttackBlazingWindSlash_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Manato',
@@ -108,7 +108,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'BasicAttackBlazingWindSlash_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Manato',
@@ -122,7 +122,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'BasicAttackBlazingWindSlash_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Manato',
@@ -136,7 +136,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'BasicAttackBlazingWindSlash_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Manato',
@@ -150,7 +150,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'BasicAttackBlazingWindSlash_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Manato',
@@ -164,7 +164,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'BasicAttackBlazingWindSlash_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Manato',
@@ -178,7 +178,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'BasicAttackBlazingWindSlash_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Manato',
@@ -192,7 +192,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'BasicAttackBlazingWindSlash_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Manato',
@@ -206,7 +206,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'BasicAttackBlazingWindSlash_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Manato',
@@ -220,7 +220,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'BasicAttackBlazingWindSlash_3:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Manato',
@@ -234,7 +234,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'BasicAttackBlazingWindSlash_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Manato',
@@ -248,7 +248,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'BasicAttackBlazingWindSlash_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Manato',
@@ -262,7 +262,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'BasicAttackBlazingWindSlash_4:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Manato',
@@ -276,7 +276,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'BasicAttackBlazingWindSlash_4:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Manato',
@@ -290,7 +290,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'BasicAttackBlazingWindSlash_4:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Manato',
@@ -304,7 +304,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'BasicAttackBlazingWindSlash_5:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Manato',
@@ -318,7 +318,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'BasicAttackBlazingWindSlash_5:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Manato',
@@ -332,7 +332,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'BasicAttackBlazingWindSlash_5:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Manato',
@@ -346,7 +346,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'BasicAttackBlazingWindMistySlash_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Manato',
@@ -360,7 +360,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'BasicAttackBlazingWindMistySlash_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Manato',
@@ -374,7 +374,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'BasicAttackBlazingWindMistySlash_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Manato',
@@ -388,7 +388,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'BasicAttackBlazingWindMistySlash_1:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Manato',
@@ -402,7 +402,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'BasicAttackBlazingWindMistySlash_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Manato',
@@ -416,7 +416,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'BasicAttackBlazingWindMistySlash_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Manato',
@@ -430,7 +430,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'BasicAttackBlazingWindMistySlash_2:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Manato',
@@ -444,7 +444,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'BasicAttackBlazingWindMistySlash_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Manato',
@@ -458,7 +458,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'BasicAttackBlazingWindMistySlash_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Manato',
@@ -472,7 +472,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'BasicAttackBlazingWindMistySlash_3:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Manato',
@@ -486,7 +486,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'BasicAttackBlazingWindMistySlash_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Manato',
@@ -500,7 +500,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'BasicAttackBlazingWindMistySlash_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Manato',
@@ -514,7 +514,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'DashAttackRadiantBladeZanshin_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Manato',
@@ -528,7 +528,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'DashAttackRadiantBladeZanshin_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Manato',
@@ -542,7 +542,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'DashAttackRadiantBladeZanshin_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Manato',
@@ -556,7 +556,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'DodgeCounterRadiantBladeBattleSweep_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Manato',
@@ -570,7 +570,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'DodgeCounterRadiantBladeBattleSweep_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Manato',
@@ -584,7 +584,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'DodgeCounterRadiantBladeBattleSweep_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Manato',
@@ -598,7 +598,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'SpecialAttackReturnToAshes_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Manato',
@@ -612,7 +612,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'SpecialAttackReturnToAshes_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Manato',
@@ -626,7 +626,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'SpecialAttackReturnToAshes_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Manato',
@@ -640,7 +640,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'SpecialAttackReturnToAshes_1:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Manato',
@@ -654,7 +654,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'SpecialAttackReturnToAshes_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Manato',
@@ -668,7 +668,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'SpecialAttackReturnToAshes_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Manato',
@@ -682,7 +682,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'EXSpecialAttackReturnToAshesFall_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Manato',
@@ -696,7 +696,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'EXSpecialAttackReturnToAshesFall_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Manato',
@@ -710,7 +710,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'EXSpecialAttackReturnToAshesFall_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Manato',
@@ -724,7 +724,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'ChainAttackBlazingEruption_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Manato',
@@ -738,7 +738,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'ChainAttackBlazingEruption_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Manato',
@@ -752,7 +752,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'ChainAttackBlazingEruption_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Manato',
@@ -766,7 +766,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'UltimateMusouAratama_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Manato',
@@ -780,7 +780,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'UltimateMusouAratama_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Manato',
@@ -794,7 +794,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'UltimateMusouAratama_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Manato',
@@ -808,7 +808,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'QuickAssistLoneShadowRegroup_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Manato',
@@ -822,7 +822,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'QuickAssistLoneShadowRegroup_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Manato',
@@ -836,7 +836,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'QuickAssistLoneShadowRegroup_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Manato',
@@ -850,7 +850,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'DefensiveAssistLoneShadowMountainStand_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Manato',
@@ -864,7 +864,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'DefensiveAssistLoneShadowMountainStand_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Manato',
@@ -878,7 +878,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'DefensiveAssistLoneShadowMountainStand_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Manato',
@@ -892,7 +892,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'DefensiveAssistLoneShadowMountainStand_1:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Manato',
@@ -906,7 +906,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'DefensiveAssistLoneShadowMountainStand_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Manato',
@@ -920,7 +920,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'DefensiveAssistLoneShadowMountainStand_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Manato',
@@ -934,7 +934,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'DefensiveAssistLoneShadowMountainStand_2:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Manato',
@@ -948,7 +948,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'DefensiveAssistLoneShadowMountainStand_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Manato',
@@ -962,7 +962,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'DefensiveAssistLoneShadowMountainStand_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Manato',
@@ -976,7 +976,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'DefensiveAssistLoneShadowMountainStand_3:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Manato',
@@ -990,7 +990,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'DefensiveAssistLoneShadowMountainStand_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Manato',
@@ -1004,7 +1004,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'DefensiveAssistLoneShadowMountainStand_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Manato',
@@ -1018,7 +1018,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'AssistFollowUpLoneShadowBreakingFang_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Manato',
@@ -1032,7 +1032,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'AssistFollowUpLoneShadowBreakingFang_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Manato',
@@ -1046,7 +1046,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'AssistFollowUpLoneShadowBreakingFang_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Manato',
@@ -1060,7 +1060,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'AssistFollowUpLoneShadowBreakingFang_1:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Manato',
@@ -1074,7 +1074,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'AssistFollowUpLoneShadowBreakingFang_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Manato',
@@ -1088,7 +1088,7 @@ export const formulas = {
     sheet: 'Manato',
     name: 'AssistFollowUpLoneShadowBreakingFang_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Manato',

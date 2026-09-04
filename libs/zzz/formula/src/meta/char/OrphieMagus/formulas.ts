@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'OrphieMagus',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'OrphieMagus',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'disorderDmgInst_fire',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'OrphieMagus',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'vortexDmgInst_fire',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'OrphieMagus',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'OrphieMagus',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'OrphieMagus',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'OrphieMagus',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'BasicAttackHighPressureFlamethrower_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'OrphieMagus',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'BasicAttackHighPressureFlamethrower_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'OrphieMagus',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'BasicAttackHighPressureFlamethrower_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'OrphieMagus',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'BasicAttackHighPressureFlamethrower_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'OrphieMagus',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'BasicAttackHighPressureFlamethrower_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'OrphieMagus',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'BasicAttackHighPressureFlamethrower_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'OrphieMagus',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'BasicAttackHighPressureFlamethrower_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'OrphieMagus',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'BasicAttackHighPressureFlamethrower_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'OrphieMagus',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'BasicAttackHighPressureFlamethrower_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'OrphieMagus',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'BasicAttackHighPressureFlamethrower_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'OrphieMagus',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'BasicAttackHighPressureFlamethrower_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'OrphieMagus',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'BasicAttackHighPressureFlamethrower_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'OrphieMagus',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'BasicAttackHighPressureFlamethrower_4:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'OrphieMagus',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'BasicAttackHighPressureFlamethrower_4:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'OrphieMagus',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'BasicAttackHighPressureFlamethrower_4:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'OrphieMagus',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'BasicAttackHighPressureFlamethrower_5:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'OrphieMagus',
@@ -318,7 +318,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'BasicAttackHighPressureFlamethrower_5:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'OrphieMagus',
@@ -333,7 +333,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'BasicAttackHighPressureFlamethrower_5:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'OrphieMagus',
@@ -348,7 +348,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'DashAttackRushCommand_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'OrphieMagus',
@@ -362,7 +362,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'DashAttackRushCommand_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'OrphieMagus',
@@ -376,7 +376,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'DashAttackRushCommand_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'OrphieMagus',
@@ -390,7 +390,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'DodgeCounterCounterStrikeOpportunity_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'OrphieMagus',
@@ -404,7 +404,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'DodgeCounterCounterStrikeOpportunity_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'OrphieMagus',
@@ -418,7 +418,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'DodgeCounterCounterStrikeOpportunity_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'OrphieMagus',
@@ -432,7 +432,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'SpecialAttackBlazingChamber_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'OrphieMagus',
@@ -446,7 +446,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'SpecialAttackBlazingChamber_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'OrphieMagus',
@@ -460,7 +460,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'SpecialAttackBlazingChamber_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'OrphieMagus',
@@ -474,7 +474,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'SpecialAttackCorrosiveFlash_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'OrphieMagus',
@@ -489,7 +489,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'SpecialAttackCorrosiveFlash_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'OrphieMagus',
@@ -504,7 +504,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'SpecialAttackCorrosiveFlash_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'OrphieMagus',
@@ -519,7 +519,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'EXSpecialAttackWatchYourStep_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'OrphieMagus',
@@ -534,7 +534,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'EXSpecialAttackWatchYourStep_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'OrphieMagus',
@@ -549,7 +549,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'EXSpecialAttackWatchYourStep_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'OrphieMagus',
@@ -564,7 +564,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'EXSpecialAttackCrimsonVortex_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'OrphieMagus',
@@ -579,7 +579,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'EXSpecialAttackCrimsonVortex_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'OrphieMagus',
@@ -594,7 +594,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'EXSpecialAttackCrimsonVortex_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'OrphieMagus',
@@ -609,7 +609,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'EXSpecialAttackHeatCharge_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'OrphieMagus',
@@ -624,7 +624,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'EXSpecialAttackHeatCharge_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'OrphieMagus',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'EXSpecialAttackHeatCharge_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'OrphieMagus',
@@ -654,7 +654,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'EXSpecialAttackFieryEruption_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'OrphieMagus',
@@ -669,7 +669,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'EXSpecialAttackFieryEruption_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'OrphieMagus',
@@ -684,7 +684,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'EXSpecialAttackFieryEruption_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'OrphieMagus',
@@ -699,7 +699,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'ChainAttackOverheatedBarrel_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'OrphieMagus',
@@ -714,7 +714,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'ChainAttackOverheatedBarrel_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'OrphieMagus',
@@ -729,7 +729,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'ChainAttackOverheatedBarrel_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'OrphieMagus',
@@ -744,7 +744,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'UltimateDanceWithFire_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'OrphieMagus',
@@ -759,7 +759,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'UltimateDanceWithFire_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'OrphieMagus',
@@ -774,7 +774,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'UltimateDanceWithFire_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'OrphieMagus',
@@ -789,7 +789,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'UltimateDanceWithFire_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'OrphieMagus',
@@ -803,7 +803,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'UltimateDanceWithFire_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'OrphieMagus',
@@ -817,7 +817,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'UltimateDanceWithFire_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'OrphieMagus',
@@ -831,7 +831,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'QuickAssistSearingSlash_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'OrphieMagus',
@@ -845,7 +845,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'QuickAssistSearingSlash_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'OrphieMagus',
@@ -859,7 +859,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'QuickAssistSearingSlash_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'OrphieMagus',
@@ -873,7 +873,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'DefensiveAssistBlazingGunblade_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'OrphieMagus',
@@ -887,7 +887,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'DefensiveAssistBlazingGunblade_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'OrphieMagus',
@@ -901,7 +901,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'DefensiveAssistBlazingGunblade_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'OrphieMagus',
@@ -915,7 +915,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'DefensiveAssistBlazingGunblade_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'OrphieMagus',
@@ -929,7 +929,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'DefensiveAssistBlazingGunblade_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'OrphieMagus',
@@ -943,7 +943,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'DefensiveAssistBlazingGunblade_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'OrphieMagus',
@@ -957,7 +957,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'DefensiveAssistBlazingGunblade_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'OrphieMagus',
@@ -971,7 +971,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'DefensiveAssistBlazingGunblade_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'OrphieMagus',
@@ -985,7 +985,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'DefensiveAssistBlazingGunblade_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'OrphieMagus',
@@ -999,7 +999,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'AssistFollowUpBoilingPierce_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'OrphieMagus',
@@ -1013,7 +1013,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'AssistFollowUpBoilingPierce_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'OrphieMagus',
@@ -1027,7 +1027,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'AssistFollowUpBoilingPierce_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'OrphieMagus',
@@ -1041,7 +1041,7 @@ export const formulas = {
     sheet: 'OrphieMagus',
     name: 'm6_dmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'OrphieMagus',

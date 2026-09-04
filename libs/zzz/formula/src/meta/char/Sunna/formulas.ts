@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sunna',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Sunna',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'disorderDmgInst_physical',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Sunna',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'vortexDmgInst_physical',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Sunna',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Sunna',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sunna',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sunna',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'BasicAttackMischiefMeteorHammer_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sunna',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'BasicAttackMischiefMeteorHammer_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sunna',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'BasicAttackMischiefMeteorHammer_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sunna',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'BasicAttackMischiefMeteorHammer_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sunna',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'BasicAttackMischiefMeteorHammer_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sunna',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'BasicAttackMischiefMeteorHammer_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sunna',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'BasicAttackMischiefMeteorHammer_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sunna',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'BasicAttackMischiefMeteorHammer_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sunna',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'BasicAttackMischiefMeteorHammer_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sunna',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'BasicAttackMischiefMeteorHammer_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sunna',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'BasicAttackMischiefMeteorHammer_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sunna',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'BasicAttackMischiefMeteorHammer_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sunna',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'BasicAttackNaughtyCatSpotted_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sunna',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'BasicAttackNaughtyCatSpotted_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sunna',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'BasicAttackNaughtyCatSpotted_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sunna',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'DashAttackSkywardHammer_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sunna',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'DashAttackSkywardHammer_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sunna',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'DashAttackSkywardHammer_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sunna',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'DodgeCounterDelusionStrikeout_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sunna',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'DodgeCounterDelusionStrikeout_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sunna',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'DodgeCounterDelusionStrikeout_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sunna',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'SpecialAttackStarShooter_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sunna',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'SpecialAttackStarShooter_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sunna',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'SpecialAttackStarShooter_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sunna',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'EXSpecialAttackBubblegumBarrage_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sunna',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'EXSpecialAttackBubblegumBarrage_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sunna',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'EXSpecialAttackBubblegumBarrage_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sunna',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'EXSpecialAttackBubblegumBarrage_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sunna',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'EXSpecialAttackBubblegumBarrage_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sunna',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'EXSpecialAttackBubblegumBarrage_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sunna',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'EXSpecialAttackSpecialPhotographyTechnique_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sunna',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'EXSpecialAttackSpecialPhotographyTechnique_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sunna',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'EXSpecialAttackSpecialPhotographyTechnique_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sunna',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'EXSpecialAttackSpecialPhotographyTechnique_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sunna',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'EXSpecialAttackSpecialPhotographyTechnique_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sunna',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'EXSpecialAttackSpecialPhotographyTechnique_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sunna',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'ChainAttackDontMessWithTheCat_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sunna',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'ChainAttackDontMessWithTheCat_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sunna',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'ChainAttackDontMessWithTheCat_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sunna',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'UltimateSmashItAll_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sunna',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'UltimateSmashItAll_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sunna',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'UltimateSmashItAll_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sunna',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'QuickAssistSonicBeatdown_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sunna',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'QuickAssistSonicBeatdown_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sunna',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'QuickAssistSonicBeatdown_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sunna',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'DefensiveAssistStageFright_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sunna',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'DefensiveAssistStageFright_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sunna',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'DefensiveAssistStageFright_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sunna',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'DefensiveAssistStageFright_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sunna',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'DefensiveAssistStageFright_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sunna',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'DefensiveAssistStageFright_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sunna',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'DefensiveAssistStageFright_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sunna',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'DefensiveAssistStageFright_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sunna',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'DefensiveAssistStageFright_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sunna',
@@ -849,7 +849,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'AssistFollowUpJumpTraining_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sunna',
@@ -863,7 +863,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'AssistFollowUpJumpTraining_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Sunna',
@@ -877,7 +877,7 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'AssistFollowUpJumpTraining_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Sunna',
@@ -891,18 +891,42 @@ export const formulas = {
     sheet: 'Sunna',
     name: 'ult_heal',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'heal',
       sheet: 'Sunna',
       name: 'ult_heal',
     },
   },
+  core_anomaly_physical_dmg: {
+    sheet: 'Sunna',
+    name: 'core_anomaly_physical_dmg',
+    tag: {
+      et: 'display',
+      qt: 'formula',
+      q: 'standardDmg',
+      sheet: 'Sunna',
+      attribute: 'physical',
+      name: 'core_anomaly_physical_dmg',
+    },
+  },
+  core_attack_physical_dmg: {
+    sheet: 'Sunna',
+    name: 'core_attack_physical_dmg',
+    tag: {
+      et: 'display',
+      qt: 'formula',
+      q: 'standardDmg',
+      sheet: 'Sunna',
+      attribute: 'physical',
+      name: 'core_attack_physical_dmg',
+    },
+  },
   m6_dmg: {
     sheet: 'Sunna',
     name: 'm6_dmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Sunna',

@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nicole',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Nicole',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'disorderDmgInst_ether',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Nicole',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'vortexDmgInst_ether',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Nicole',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Nicole',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nicole',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nicole',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'BasicAttackCunningCombo_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nicole',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'BasicAttackCunningCombo_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nicole',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'BasicAttackCunningCombo_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nicole',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'BasicAttackCunningCombo_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nicole',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'BasicAttackCunningCombo_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nicole',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'BasicAttackCunningCombo_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nicole',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'BasicAttackCunningCombo_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nicole',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'BasicAttackCunningCombo_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nicole',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'BasicAttackCunningCombo_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nicole',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'BasicAttackDoAsIPlease_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nicole',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'BasicAttackDoAsIPlease_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nicole',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'BasicAttackDoAsIPlease_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nicole',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'BasicAttackDoAsIPlease_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nicole',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'BasicAttackDoAsIPlease_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nicole',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'BasicAttackDoAsIPlease_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nicole',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'BasicAttackDoAsIPlease_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nicole',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'BasicAttackDoAsIPlease_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nicole',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'BasicAttackDoAsIPlease_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nicole',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'DashAttackJackInTheBox_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nicole',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'DashAttackJackInTheBox_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nicole',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'DashAttackJackInTheBox_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nicole',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'DashAttackJackInTheBox_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nicole',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'DashAttackJackInTheBox_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nicole',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'DashAttackJackInTheBox_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nicole',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'DodgeCounterDivertedBombard_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nicole',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'DodgeCounterDivertedBombard_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nicole',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'DodgeCounterDivertedBombard_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nicole',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'SpecialAttackSugarcoatedBullet_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nicole',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'SpecialAttackSugarcoatedBullet_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nicole',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'SpecialAttackSugarcoatedBullet_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nicole',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'EXSpecialAttackStuffedSugarcoatedBullet_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nicole',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'EXSpecialAttackStuffedSugarcoatedBullet_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nicole',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'EXSpecialAttackStuffedSugarcoatedBullet_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nicole',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'EXSpecialAttackStuffedSugarcoatedBullet_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nicole',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'EXSpecialAttackStuffedSugarcoatedBullet_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nicole',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'EXSpecialAttackStuffedSugarcoatedBullet_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nicole',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'EXSpecialAttackStuffedSugarcoatedBullet_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nicole',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'EXSpecialAttackStuffedSugarcoatedBullet_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nicole',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'EXSpecialAttackStuffedSugarcoatedBullet_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nicole',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'EXSpecialAttackStuffedSugarcoatedBullet_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nicole',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'EXSpecialAttackStuffedSugarcoatedBullet_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nicole',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'EXSpecialAttackStuffedSugarcoatedBullet_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nicole',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'ChainAttackEtherShellacking_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nicole',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'ChainAttackEtherShellacking_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nicole',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'ChainAttackEtherShellacking_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nicole',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'ChainAttackEtherShellacking_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nicole',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'ChainAttackEtherShellacking_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nicole',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'ChainAttackEtherShellacking_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nicole',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'UltimateEtherGrenade_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nicole',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'UltimateEtherGrenade_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nicole',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'UltimateEtherGrenade_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nicole',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'UltimateEtherGrenade_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nicole',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'UltimateEtherGrenade_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nicole',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'UltimateEtherGrenade_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nicole',
@@ -849,7 +849,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'QuickAssistEmergencyBombard_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nicole',
@@ -863,7 +863,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'QuickAssistEmergencyBombard_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nicole',
@@ -877,7 +877,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'QuickAssistEmergencyBombard_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nicole',
@@ -891,7 +891,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'DefensiveAssistTheHareStrikesBack_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nicole',
@@ -905,7 +905,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'DefensiveAssistTheHareStrikesBack_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nicole',
@@ -919,7 +919,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'DefensiveAssistTheHareStrikesBack_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nicole',
@@ -933,7 +933,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'DefensiveAssistTheHareStrikesBack_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nicole',
@@ -947,7 +947,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'DefensiveAssistTheHareStrikesBack_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nicole',
@@ -961,7 +961,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'DefensiveAssistTheHareStrikesBack_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nicole',
@@ -975,7 +975,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'DefensiveAssistTheHareStrikesBack_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nicole',
@@ -989,7 +989,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'DefensiveAssistTheHareStrikesBack_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nicole',
@@ -1003,7 +1003,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'DefensiveAssistTheHareStrikesBack_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nicole',
@@ -1017,7 +1017,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'AssistFollowUpWindowOfOpportunity_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nicole',
@@ -1031,7 +1031,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'AssistFollowUpWindowOfOpportunity_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nicole',
@@ -1045,7 +1045,7 @@ export const formulas = {
     sheet: 'Nicole',
     name: 'AssistFollowUpWindowOfOpportunity_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nicole',

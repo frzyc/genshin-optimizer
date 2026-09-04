@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ben',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Ben',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'disorderDmgInst_fire',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Ben',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'vortexDmgInst_fire',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Ben',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Ben',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ben',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ben',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'BasicAttackDebtReconciliation_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ben',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'BasicAttackDebtReconciliation_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ben',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'BasicAttackDebtReconciliation_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ben',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'BasicAttackDebtReconciliation_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ben',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'BasicAttackDebtReconciliation_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ben',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'BasicAttackDebtReconciliation_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ben',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'BasicAttackDebtReconciliation_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ben',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'BasicAttackDebtReconciliation_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ben',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'BasicAttackDebtReconciliation_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ben',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'DashAttackIncomingExpense_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ben',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'DashAttackIncomingExpense_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ben',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'DashAttackIncomingExpense_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ben',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'DodgeCounterAccountsSettled_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ben',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'DodgeCounterAccountsSettled_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ben',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'DodgeCounterAccountsSettled_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ben',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'SpecialAttackFiscalFist_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ben',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'SpecialAttackFiscalFist_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ben',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'SpecialAttackFiscalFist_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ben',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'SpecialAttackFiscalFist_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ben',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'SpecialAttackFiscalFist_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ben',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'SpecialAttackFiscalFist_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ben',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'EXSpecialAttackCashflowCounter_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ben',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'EXSpecialAttackCashflowCounter_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ben',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'EXSpecialAttackCashflowCounter_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ben',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'EXSpecialAttackCashflowCounter_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ben',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'EXSpecialAttackCashflowCounter_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ben',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'EXSpecialAttackCashflowCounter_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ben',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'EXSpecialAttackCashflowCounter_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ben',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'EXSpecialAttackCashflowCounter_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ben',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'EXSpecialAttackCashflowCounter_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ben',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'EXSpecialAttackCashflowCounter_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ben',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'EXSpecialAttackCashflowCounter_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ben',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'EXSpecialAttackCashflowCounter_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ben',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'ChainAttackSignedAndSealed_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ben',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'ChainAttackSignedAndSealed_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ben',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'ChainAttackSignedAndSealed_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ben',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'UltimateCompletePayback_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ben',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'UltimateCompletePayback_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ben',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'UltimateCompletePayback_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ben',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'QuickAssistJointAccount_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ben',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'QuickAssistJointAccount_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ben',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'QuickAssistJointAccount_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ben',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'DefensiveAssistRiskAllocation_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ben',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'DefensiveAssistRiskAllocation_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ben',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'DefensiveAssistRiskAllocation_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ben',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'DefensiveAssistRiskAllocation_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ben',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'DefensiveAssistRiskAllocation_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ben',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'DefensiveAssistRiskAllocation_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ben',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'DefensiveAssistRiskAllocation_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ben',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'DefensiveAssistRiskAllocation_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ben',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'DefensiveAssistRiskAllocation_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ben',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'AssistFollowUpDontBreakContract_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ben',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'AssistFollowUpDontBreakContract_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ben',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'AssistFollowUpDontBreakContract_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ben',
@@ -849,7 +849,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'special_shield',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'shield',
       sheet: 'Ben',
@@ -860,7 +860,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'core_shield',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'shield',
       sheet: 'Ben',
@@ -871,7 +871,7 @@ export const formulas = {
     sheet: 'Ben',
     name: 'm2_dmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ben',

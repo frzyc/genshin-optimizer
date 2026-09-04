@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Caesar',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Caesar',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'disorderDmgInst_physical',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Caesar',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'vortexDmgInst_physical',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Caesar',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Caesar',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Caesar',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Caesar',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'BasicAttackRampagingSlash_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Caesar',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'BasicAttackRampagingSlash_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Caesar',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'BasicAttackRampagingSlash_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Caesar',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'BasicAttackRampagingSlash_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Caesar',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'BasicAttackRampagingSlash_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Caesar',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'BasicAttackRampagingSlash_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Caesar',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'BasicAttackRampagingSlash_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Caesar',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'BasicAttackRampagingSlash_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Caesar',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'BasicAttackRampagingSlash_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Caesar',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'BasicAttackRampagingSlash_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Caesar',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'BasicAttackRampagingSlash_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Caesar',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'BasicAttackRampagingSlash_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Caesar',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'BasicAttackRampagingSlash_4:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Caesar',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'BasicAttackRampagingSlash_4:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Caesar',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'BasicAttackRampagingSlash_4:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Caesar',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'BasicAttackRampagingSlash_5:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Caesar',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'BasicAttackRampagingSlash_5:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Caesar',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'BasicAttackRampagingSlash_5:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Caesar',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'BasicAttackRampagingSlash_6:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Caesar',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'BasicAttackRampagingSlash_6:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Caesar',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'BasicAttackRampagingSlash_6:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Caesar',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'BasicAttackDeadEnd_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Caesar',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'BasicAttackDeadEnd_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Caesar',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'BasicAttackDeadEnd_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Caesar',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'DashAttackHogRush_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Caesar',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'DashAttackHogRush_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Caesar',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'DashAttackHogRush_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Caesar',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'DodgeCounterEyeForAnEye_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Caesar',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'DodgeCounterEyeForAnEye_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Caesar',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'DodgeCounterEyeForAnEye_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Caesar',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'SpecialAttackShockwaveShieldBash_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Caesar',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'SpecialAttackShockwaveShieldBash_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Caesar',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'SpecialAttackShockwaveShieldBash_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Caesar',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'SpecialAttackShockwaveShieldBash_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Caesar',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'SpecialAttackShockwaveShieldBash_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Caesar',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'SpecialAttackShockwaveShieldBash_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Caesar',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'SpecialAttackRoaringThrust_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Caesar',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'SpecialAttackRoaringThrust_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Caesar',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'SpecialAttackRoaringThrust_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Caesar',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'EXSpecialAttackParryCounter_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Caesar',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'EXSpecialAttackParryCounter_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Caesar',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'EXSpecialAttackParryCounter_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Caesar',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'EXSpecialAttackParryCounter_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Caesar',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'EXSpecialAttackParryCounter_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Caesar',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'EXSpecialAttackParryCounter_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Caesar',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'EXSpecialAttackParryCounter_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Caesar',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'EXSpecialAttackParryCounter_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Caesar',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'EXSpecialAttackParryCounter_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Caesar',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'EXSpecialAttackOverpoweredShieldBash_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Caesar',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'EXSpecialAttackOverpoweredShieldBash_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Caesar',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'EXSpecialAttackOverpoweredShieldBash_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Caesar',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'EXSpecialAttackOverpoweredShieldBash_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Caesar',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'EXSpecialAttackOverpoweredShieldBash_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Caesar',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'EXSpecialAttackOverpoweredShieldBash_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Caesar',
@@ -849,7 +849,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'ChainAttackRoadRageSlam_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Caesar',
@@ -863,7 +863,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'ChainAttackRoadRageSlam_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Caesar',
@@ -877,7 +877,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'ChainAttackRoadRageSlam_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Caesar',
@@ -891,7 +891,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'UltimateSavageSmash_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Caesar',
@@ -905,7 +905,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'UltimateSavageSmash_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Caesar',
@@ -919,7 +919,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'UltimateSavageSmash_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Caesar',
@@ -933,7 +933,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'QuickAssistLaneChange_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Caesar',
@@ -947,7 +947,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'QuickAssistLaneChange_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Caesar',
@@ -961,7 +961,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'QuickAssistLaneChange_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Caesar',
@@ -975,7 +975,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'DefensiveAssistAegisShield_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Caesar',
@@ -989,7 +989,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'DefensiveAssistAegisShield_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Caesar',
@@ -1003,7 +1003,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'DefensiveAssistAegisShield_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Caesar',
@@ -1017,7 +1017,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'DefensiveAssistAegisShield_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Caesar',
@@ -1031,7 +1031,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'DefensiveAssistAegisShield_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Caesar',
@@ -1045,7 +1045,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'DefensiveAssistAegisShield_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Caesar',
@@ -1059,7 +1059,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'DefensiveAssistAegisShield_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Caesar',
@@ -1073,7 +1073,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'DefensiveAssistAegisShield_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Caesar',
@@ -1087,7 +1087,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'DefensiveAssistAegisShield_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Caesar',
@@ -1101,7 +1101,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'AssistFollowUpAidingBlade_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Caesar',
@@ -1115,7 +1115,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'AssistFollowUpAidingBlade_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Caesar',
@@ -1129,7 +1129,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'AssistFollowUpAidingBlade_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Caesar',
@@ -1143,7 +1143,7 @@ export const formulas = {
     sheet: 'Caesar',
     name: 'core_shield',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'shield',
       sheet: 'Caesar',

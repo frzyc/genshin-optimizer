@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Remielle',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Remielle',
@@ -28,7 +28,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Remielle',
@@ -40,7 +40,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'BasicAttackLeap_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Remielle',
@@ -54,7 +54,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'BasicAttackLeap_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Remielle',
@@ -68,7 +68,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'BasicAttackLeap_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Remielle',
@@ -82,7 +82,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'BasicAttackLeap_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Remielle',
@@ -96,7 +96,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'BasicAttackLeap_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Remielle',
@@ -110,7 +110,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'BasicAttackLeap_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Remielle',
@@ -124,7 +124,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'BasicAttackLeap_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Remielle',
@@ -138,7 +138,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'BasicAttackLeap_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Remielle',
@@ -152,7 +152,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'BasicAttackLeap_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Remielle',
@@ -166,7 +166,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'BasicAttackLeap_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Remielle',
@@ -180,7 +180,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'BasicAttackLeap_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Remielle',
@@ -194,7 +194,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'BasicAttackLeap_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Remielle',
@@ -208,7 +208,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'BasicAttackSoloDance_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Remielle',
@@ -222,7 +222,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'BasicAttackSoloDance_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Remielle',
@@ -236,7 +236,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'BasicAttackSoloDance_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Remielle',
@@ -250,7 +250,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'BasicAttackRainbowsEnd_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Remielle',
@@ -264,7 +264,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'BasicAttackRainbowsEnd_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Remielle',
@@ -278,7 +278,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'BasicAttackRainbowsEnd_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Remielle',
@@ -292,7 +292,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'BasicAttackFleetingGrace_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Remielle',
@@ -306,7 +306,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'BasicAttackFleetingGrace_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Remielle',
@@ -320,7 +320,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'BasicAttackFleetingGrace_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Remielle',
@@ -334,7 +334,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'DashAttackKeenLight_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Remielle',
@@ -348,7 +348,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'DashAttackKeenLight_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Remielle',
@@ -362,7 +362,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'DashAttackKeenLight_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Remielle',
@@ -376,7 +376,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'DodgeCounterMirroredShadow_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Remielle',
@@ -390,7 +390,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'DodgeCounterMirroredShadow_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Remielle',
@@ -404,7 +404,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'DodgeCounterMirroredShadow_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Remielle',
@@ -418,7 +418,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'SpecialAttackSliverOfLight_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Remielle',
@@ -432,7 +432,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'SpecialAttackSliverOfLight_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Remielle',
@@ -446,7 +446,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'SpecialAttackSliverOfLight_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Remielle',
@@ -460,7 +460,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'EXSpecialAttackOdeToDawn_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Remielle',
@@ -474,7 +474,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'EXSpecialAttackOdeToDawn_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Remielle',
@@ -488,7 +488,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'EXSpecialAttackOdeToDawn_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Remielle',
@@ -502,7 +502,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'SpecialAttackOdeToDawnRadiantTurn_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Remielle',
@@ -516,7 +516,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'SpecialAttackOdeToDawnRadiantTurn_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Remielle',
@@ -530,7 +530,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'SpecialAttackOdeToDawnRadiantTurn_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Remielle',
@@ -544,7 +544,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'ChainAttackInterwovenDanceSteps_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Remielle',
@@ -558,7 +558,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'ChainAttackInterwovenDanceSteps_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Remielle',
@@ -572,7 +572,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'ChainAttackInterwovenDanceSteps_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Remielle',
@@ -586,7 +586,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'UltimateDazzlingCurtainCall_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Remielle',
@@ -600,7 +600,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'UltimateDazzlingCurtainCall_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Remielle',
@@ -614,7 +614,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'UltimateDazzlingCurtainCall_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Remielle',
@@ -628,7 +628,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'QuickAssistFeatherglowRebirth_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Remielle',
@@ -642,7 +642,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'QuickAssistFeatherglowRebirth_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Remielle',
@@ -656,7 +656,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'QuickAssistFeatherglowRebirth_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Remielle',
@@ -670,7 +670,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'DefensiveAssistFleetingLight_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Remielle',
@@ -684,7 +684,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'DefensiveAssistFleetingLight_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Remielle',
@@ -698,7 +698,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'DefensiveAssistFleetingLight_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Remielle',
@@ -712,7 +712,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'DefensiveAssistFleetingLight_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Remielle',
@@ -726,7 +726,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'DefensiveAssistFleetingLight_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Remielle',
@@ -740,7 +740,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'DefensiveAssistFleetingLight_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Remielle',
@@ -754,7 +754,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'DefensiveAssistFleetingLight_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Remielle',
@@ -768,7 +768,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'DefensiveAssistFleetingLight_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Remielle',
@@ -782,7 +782,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'DefensiveAssistFleetingLight_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Remielle',
@@ -796,7 +796,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'AssistFollowUpAwakeningGlimmer_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Remielle',
@@ -810,7 +810,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'AssistFollowUpAwakeningGlimmer_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Remielle',
@@ -824,7 +824,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'AssistFollowUpAwakeningGlimmer_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Remielle',
@@ -838,7 +838,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'AssistFlowerFeatherDance_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Remielle',
@@ -852,7 +852,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'AssistFlowerFeatherDance_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Remielle',
@@ -866,7 +866,7 @@ export const formulas = {
     sheet: 'Remielle',
     name: 'AssistFlowerFeatherDance_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Remielle',

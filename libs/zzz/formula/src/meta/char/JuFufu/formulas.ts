@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'JuFufu',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'JuFufu',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'disorderDmgInst_fire',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'JuFufu',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'vortexDmgInst_fire',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'JuFufu',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'JuFufu',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'JuFufu',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'JuFufu',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'BasicAttackTigerSevenFormsFlamingClaw_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'JuFufu',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'BasicAttackTigerSevenFormsFlamingClaw_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'JuFufu',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'BasicAttackTigerSevenFormsFlamingClaw_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'JuFufu',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'BasicAttackTigerSevenFormsFlamingClaw_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'JuFufu',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'BasicAttackTigerSevenFormsFlamingClaw_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'JuFufu',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'BasicAttackTigerSevenFormsFlamingClaw_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'JuFufu',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'BasicAttackTigerSevenFormsFlamingClaw_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'JuFufu',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'BasicAttackTigerSevenFormsFlamingClaw_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'JuFufu',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'BasicAttackTigerSevenFormsFlamingClaw_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'JuFufu',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'BasicAttackTigerSevenFormsFlamingClaw_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'JuFufu',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'BasicAttackTigerSevenFormsFlamingClaw_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'JuFufu',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'BasicAttackTigerSevenFormsFlamingClaw_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'JuFufu',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'BasicAttackHuWei_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'JuFufu',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'BasicAttackHuWei_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'JuFufu',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'BasicAttackHuWei_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'JuFufu',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'DashAttackTigerSevenFormsTigerCharge_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'JuFufu',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'DashAttackTigerSevenFormsTigerCharge_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'JuFufu',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'DashAttackTigerSevenFormsTigerCharge_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'JuFufu',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'DashAttackTigerSevenFormsMountainKingsGame_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'JuFufu',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'DashAttackTigerSevenFormsMountainKingsGame_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'JuFufu',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'DashAttackTigerSevenFormsMountainKingsGame_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'JuFufu',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'DodgeCounterTigerSevenFormsReignitedMountain_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'JuFufu',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'DodgeCounterTigerSevenFormsReignitedMountain_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'JuFufu',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'DodgeCounterTigerSevenFormsReignitedMountain_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'JuFufu',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'DashAttackTigerSevenFormsMountainKingsGameMomentum_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'JuFufu',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'DashAttackTigerSevenFormsMountainKingsGameMomentum_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'JuFufu',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'DashAttackTigerSevenFormsMountainKingsGameMomentum_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'JuFufu',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'SpecialAttackTigerSevenFormsMountainDescendingTiger_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'JuFufu',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'SpecialAttackTigerSevenFormsMountainDescendingTiger_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'JuFufu',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'SpecialAttackTigerSevenFormsMountainDescendingTiger_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'JuFufu',
@@ -514,7 +514,7 @@ export const formulas = {
       sheet: 'JuFufu',
       name: 'EXSpecialAttackTigerSevenFormsAltMountainDescendingSavageTiger_0:standardDmg',
       tag: {
-        et: 'own',
+        et: 'display',
         qt: 'formula',
         q: 'standardDmg',
         sheet: 'JuFufu',
@@ -529,7 +529,7 @@ export const formulas = {
       sheet: 'JuFufu',
       name: 'EXSpecialAttackTigerSevenFormsAltMountainDescendingSavageTiger_0:dazeBuildup',
       tag: {
-        et: 'own',
+        et: 'display',
         qt: 'formula',
         q: 'dazeBuildup',
         sheet: 'JuFufu',
@@ -544,7 +544,7 @@ export const formulas = {
       sheet: 'JuFufu',
       name: 'EXSpecialAttackTigerSevenFormsAltMountainDescendingSavageTiger_0:anomBuildup',
       tag: {
-        et: 'own',
+        et: 'display',
         qt: 'formula',
         q: 'anomBuildup',
         sheet: 'JuFufu',
@@ -558,7 +558,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'ChainAttackTigerCauldronCollapse_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'JuFufu',
@@ -572,7 +572,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'ChainAttackTigerCauldronCollapse_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'JuFufu',
@@ -586,7 +586,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'ChainAttackTigerCauldronCollapse_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'JuFufu',
@@ -600,7 +600,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'ChainAttackSuppressingTigerCauldron_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'JuFufu',
@@ -615,7 +615,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'ChainAttackSuppressingTigerCauldron_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'JuFufu',
@@ -630,7 +630,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'ChainAttackSuppressingTigerCauldron_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'JuFufu',
@@ -645,7 +645,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'UltimateTigerSevenFormsRagingTigerExplosion_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'JuFufu',
@@ -659,7 +659,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'UltimateTigerSevenFormsRagingTigerExplosion_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'JuFufu',
@@ -673,7 +673,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'UltimateTigerSevenFormsRagingTigerExplosion_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'JuFufu',
@@ -687,7 +687,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'QuickAssistDecisiveStomp_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'JuFufu',
@@ -701,7 +701,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'QuickAssistDecisiveStomp_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'JuFufu',
@@ -715,7 +715,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'QuickAssistDecisiveStomp_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'JuFufu',
@@ -729,7 +729,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'DefensiveAssistSteadfastCrouchingTiger_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'JuFufu',
@@ -743,7 +743,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'DefensiveAssistSteadfastCrouchingTiger_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'JuFufu',
@@ -757,7 +757,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'DefensiveAssistSteadfastCrouchingTiger_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'JuFufu',
@@ -771,7 +771,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'DefensiveAssistSteadfastCrouchingTiger_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'JuFufu',
@@ -785,7 +785,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'DefensiveAssistSteadfastCrouchingTiger_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'JuFufu',
@@ -799,7 +799,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'DefensiveAssistSteadfastCrouchingTiger_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'JuFufu',
@@ -813,7 +813,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'DefensiveAssistSteadfastCrouchingTiger_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'JuFufu',
@@ -827,7 +827,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'DefensiveAssistSteadfastCrouchingTiger_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'JuFufu',
@@ -841,7 +841,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'DefensiveAssistSteadfastCrouchingTiger_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'JuFufu',
@@ -855,7 +855,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'AssistFollowUpFeralBlazingMaw_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'JuFufu',
@@ -869,7 +869,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'AssistFollowUpFeralBlazingMaw_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'JuFufu',
@@ -883,7 +883,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'AssistFollowUpFeralBlazingMaw_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'JuFufu',
@@ -897,7 +897,7 @@ export const formulas = {
     sheet: 'JuFufu',
     name: 'm6_dmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'JuFufu',

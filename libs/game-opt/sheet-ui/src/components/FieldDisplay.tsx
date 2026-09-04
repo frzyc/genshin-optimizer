@@ -339,6 +339,8 @@ export function TagFieldDisplay({
     [calcReadOverride, field.fieldRef]
   )
 
+  console.log(contextTag)
+  console.log(fieldRead.tag)
   const valueCalcRes = useMemo(
     () => calc?.withTag(contextTag).compute(fieldRead),
     [calc, contextTag, fieldRead]

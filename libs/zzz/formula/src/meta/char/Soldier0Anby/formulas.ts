@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier0Anby',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Soldier0Anby',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'disorderDmgInst_electric',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Soldier0Anby',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'vortexDmgInst_electric',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Soldier0Anby',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Soldier0Anby',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier0Anby',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier0Anby',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'BasicAttackPenetratingShock_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier0Anby',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'BasicAttackPenetratingShock_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier0Anby',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'BasicAttackPenetratingShock_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier0Anby',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'BasicAttackPenetratingShock_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier0Anby',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'BasicAttackPenetratingShock_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier0Anby',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'BasicAttackPenetratingShock_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier0Anby',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'BasicAttackPenetratingShock_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier0Anby',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'BasicAttackPenetratingShock_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier0Anby',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'BasicAttackPenetratingShock_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier0Anby',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'BasicAttackPenetratingShock_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier0Anby',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'BasicAttackPenetratingShock_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier0Anby',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'BasicAttackPenetratingShock_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier0Anby',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'BasicAttackPenetratingShock_4:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier0Anby',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'BasicAttackPenetratingShock_4:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier0Anby',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'BasicAttackPenetratingShock_4:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier0Anby',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'BasicAttackPenetratingShock_5:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier0Anby',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'BasicAttackPenetratingShock_5:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier0Anby',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'BasicAttackPenetratingShock_5:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier0Anby',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'DashAttackTorrent_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier0Anby',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'DashAttackTorrent_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier0Anby',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'DashAttackTorrent_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier0Anby',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'DodgeCounterGroundFlashCounter_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier0Anby',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'DodgeCounterGroundFlashCounter_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier0Anby',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'DodgeCounterGroundFlashCounter_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier0Anby',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'SpecialAttackCelestialThunder_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier0Anby',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'SpecialAttackCelestialThunder_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier0Anby',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'SpecialAttackCelestialThunder_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier0Anby',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'SpecialAttackAzureFlash_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier0Anby',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'SpecialAttackAzureFlash_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier0Anby',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'SpecialAttackAzureFlash_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier0Anby',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'SpecialAttackAzureFlash_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier0Anby',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'SpecialAttackAzureFlash_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier0Anby',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'SpecialAttackAzureFlash_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier0Anby',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'SpecialAttackThunderSmite_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier0Anby',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'SpecialAttackThunderSmite_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier0Anby',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'SpecialAttackThunderSmite_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier0Anby',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'EXSpecialAttackSunderingBolt_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier0Anby',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'EXSpecialAttackSunderingBolt_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier0Anby',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'EXSpecialAttackSunderingBolt_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier0Anby',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'ChainAttackLeapingThunderstrike_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier0Anby',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'ChainAttackLeapingThunderstrike_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier0Anby',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'ChainAttackLeapingThunderstrike_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier0Anby',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'UltimateVoidstrike_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier0Anby',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'UltimateVoidstrike_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier0Anby',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'UltimateVoidstrike_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier0Anby',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'QuickAssistCloudFlash_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier0Anby',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'QuickAssistCloudFlash_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier0Anby',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'QuickAssistCloudFlash_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier0Anby',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'DefensiveAssistCounterSurge_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier0Anby',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'DefensiveAssistCounterSurge_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier0Anby',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'DefensiveAssistCounterSurge_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier0Anby',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'DefensiveAssistCounterSurge_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier0Anby',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'DefensiveAssistCounterSurge_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier0Anby',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'DefensiveAssistCounterSurge_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier0Anby',
@@ -849,7 +849,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'DefensiveAssistCounterSurge_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier0Anby',
@@ -863,7 +863,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'DefensiveAssistCounterSurge_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier0Anby',
@@ -877,7 +877,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'DefensiveAssistCounterSurge_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier0Anby',
@@ -891,7 +891,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'AssistFollowUpConductingBlow_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier0Anby',
@@ -905,7 +905,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'AssistFollowUpConductingBlow_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier0Anby',
@@ -919,7 +919,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'AssistFollowUpConductingBlow_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier0Anby',
@@ -933,7 +933,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'ChainAttackLeapingThunderstrike_aftershock0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier0Anby',
@@ -948,7 +948,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'ChainAttackLeapingThunderstrike_aftershock0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier0Anby',
@@ -963,7 +963,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'ChainAttackLeapingThunderstrike_aftershock0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier0Anby',
@@ -978,7 +978,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'UltimateVoidstrike_aftershock0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier0Anby',
@@ -993,7 +993,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'UltimateVoidstrike_aftershock0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier0Anby',
@@ -1008,7 +1008,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'UltimateVoidstrike_aftershock0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier0Anby',
@@ -1023,7 +1023,7 @@ export const formulas = {
     sheet: 'Soldier0Anby',
     name: 'm6_additional_dmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier0Anby',

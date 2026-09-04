@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nekomata',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Nekomata',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'disorderDmgInst_physical',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Nekomata',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'vortexDmgInst_physical',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Nekomata',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Nekomata',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nekomata',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nekomata',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'BasicAttackKittySlash_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nekomata',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'BasicAttackKittySlash_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nekomata',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'BasicAttackKittySlash_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nekomata',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'BasicAttackKittySlash_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nekomata',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'BasicAttackKittySlash_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nekomata',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'BasicAttackKittySlash_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nekomata',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'BasicAttackKittySlash_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nekomata',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'BasicAttackKittySlash_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nekomata',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'BasicAttackKittySlash_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nekomata',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'BasicAttackKittySlash_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nekomata',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'BasicAttackKittySlash_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nekomata',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'BasicAttackKittySlash_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nekomata',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'BasicAttackKittySlash_4:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nekomata',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'BasicAttackKittySlash_4:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nekomata',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'BasicAttackKittySlash_4:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nekomata',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'BasicAttackCrimsonBlade_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nekomata',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'BasicAttackCrimsonBlade_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nekomata',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'BasicAttackCrimsonBlade_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nekomata',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'DashAttackOverHere_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nekomata',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'DashAttackOverHere_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nekomata',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'DashAttackOverHere_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nekomata',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'DodgeCounterPhantomClaws_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nekomata',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'DodgeCounterPhantomClaws_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nekomata',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'DodgeCounterPhantomClaws_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nekomata',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'SpecialAttackSurpriseAttack_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nekomata',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'SpecialAttackSurpriseAttack_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nekomata',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'SpecialAttackSurpriseAttack_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nekomata',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'EXSpecialAttackSuperSurpriseAttack_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nekomata',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'EXSpecialAttackSuperSurpriseAttack_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nekomata',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'EXSpecialAttackSuperSurpriseAttack_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nekomata',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'ChainAttackClawSwipe_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nekomata',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'ChainAttackClawSwipe_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nekomata',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'ChainAttackClawSwipe_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nekomata',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'UltimateClawSmash_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nekomata',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'UltimateClawSmash_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nekomata',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'UltimateClawSmash_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nekomata',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'QuickAssistCatsPaw_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nekomata',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'QuickAssistCatsPaw_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nekomata',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'QuickAssistCatsPaw_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nekomata',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'DefensiveAssistDesperateDefense_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nekomata',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'DefensiveAssistDesperateDefense_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nekomata',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'DefensiveAssistDesperateDefense_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nekomata',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'DefensiveAssistDesperateDefense_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nekomata',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'DefensiveAssistDesperateDefense_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nekomata',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'DefensiveAssistDesperateDefense_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nekomata',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'DefensiveAssistDesperateDefense_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nekomata',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'DefensiveAssistDesperateDefense_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nekomata',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'DefensiveAssistDesperateDefense_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nekomata',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'AssistFollowUpShadowStrike_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Nekomata',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'AssistFollowUpShadowStrike_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Nekomata',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'Nekomata',
     name: 'AssistFollowUpShadowStrike_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Nekomata',

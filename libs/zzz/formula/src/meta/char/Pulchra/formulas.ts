@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pulchra',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Pulchra',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'disorderDmgInst_physical',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Pulchra',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'vortexDmgInst_physical',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Pulchra',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Pulchra',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pulchra',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pulchra',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'BasicAttackSwiftStrike_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pulchra',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'BasicAttackSwiftStrike_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pulchra',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'BasicAttackSwiftStrike_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pulchra',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'BasicAttackSwiftStrike_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pulchra',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'BasicAttackSwiftStrike_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pulchra',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'BasicAttackSwiftStrike_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pulchra',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'BasicAttackSwiftStrike_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pulchra',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'BasicAttackSwiftStrike_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pulchra',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'BasicAttackSwiftStrike_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pulchra',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'BasicAttackLeapingStrike_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pulchra',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'BasicAttackLeapingStrike_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pulchra',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'BasicAttackLeapingStrike_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pulchra',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'DashAttackFirstStrikeAdvantage_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pulchra',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'DashAttackFirstStrikeAdvantage_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pulchra',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'DashAttackFirstStrikeAdvantage_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pulchra',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'DodgeCounterRelentlessRetribution_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pulchra',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'DodgeCounterRelentlessRetribution_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pulchra',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'DodgeCounterRelentlessRetribution_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pulchra',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'SpecialAttackRendingClaw_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pulchra',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'SpecialAttackRendingClaw_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pulchra',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'SpecialAttackRendingClaw_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pulchra',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'SpecialAttackRendingClawNightmareShadow_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pulchra',
@@ -402,7 +402,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'SpecialAttackRendingClawNightmareShadow_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pulchra',
@@ -417,7 +417,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'SpecialAttackRendingClawNightmareShadow_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pulchra',
@@ -432,7 +432,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'SpecialAttackRendingClawNightmareShadow_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pulchra',
@@ -447,7 +447,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'SpecialAttackRendingClawNightmareShadow_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pulchra',
@@ -462,7 +462,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'SpecialAttackRendingClawNightmareShadow_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pulchra',
@@ -477,7 +477,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'EXSpecialAttackRendingClawFlashstep_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pulchra',
@@ -491,7 +491,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'EXSpecialAttackRendingClawFlashstep_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pulchra',
@@ -505,7 +505,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'EXSpecialAttackRendingClawFlashstep_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pulchra',
@@ -519,7 +519,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'ChainAttackHeyDidntExpectThatRight_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pulchra',
@@ -533,7 +533,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'ChainAttackHeyDidntExpectThatRight_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pulchra',
@@ -547,7 +547,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'ChainAttackHeyDidntExpectThatRight_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pulchra',
@@ -561,7 +561,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'UltimateOhTimeToPlay_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pulchra',
@@ -575,7 +575,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'UltimateOhTimeToPlay_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pulchra',
@@ -589,7 +589,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'UltimateOhTimeToPlay_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pulchra',
@@ -603,7 +603,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'QuickAssistContractBodyguard_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pulchra',
@@ -617,7 +617,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'QuickAssistContractBodyguard_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pulchra',
@@ -631,7 +631,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'QuickAssistContractBodyguard_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pulchra',
@@ -645,7 +645,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'AssistFollowUpIndependentPricing_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pulchra',
@@ -659,7 +659,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'AssistFollowUpIndependentPricing_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pulchra',
@@ -673,7 +673,7 @@ export const formulas = {
     sheet: 'Pulchra',
     name: 'AssistFollowUpIndependentPricing_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pulchra',

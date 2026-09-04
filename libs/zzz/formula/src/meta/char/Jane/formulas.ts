@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Jane',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Jane',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'disorderDmgInst_physical',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Jane',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'vortexDmgInst_physical',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Jane',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Jane',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Jane',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Jane',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'BasicAttackDancingBlades_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Jane',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'BasicAttackDancingBlades_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Jane',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'BasicAttackDancingBlades_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Jane',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'BasicAttackDancingBlades_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Jane',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'BasicAttackDancingBlades_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Jane',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'BasicAttackDancingBlades_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Jane',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'BasicAttackDancingBlades_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Jane',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'BasicAttackDancingBlades_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Jane',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'BasicAttackDancingBlades_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Jane',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'BasicAttackDancingBlades_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Jane',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'BasicAttackDancingBlades_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Jane',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'BasicAttackDancingBlades_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Jane',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'BasicAttackDancingBlades_4:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Jane',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'BasicAttackDancingBlades_4:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Jane',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'BasicAttackDancingBlades_4:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Jane',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'BasicAttackDancingBlades_5:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Jane',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'BasicAttackDancingBlades_5:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Jane',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'BasicAttackDancingBlades_5:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Jane',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'BasicAttackSalchowJump_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Jane',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'BasicAttackSalchowJump_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Jane',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'BasicAttackSalchowJump_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Jane',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'BasicAttackSalchowJump_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Jane',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'BasicAttackSalchowJump_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Jane',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'BasicAttackSalchowJump_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Jane',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'DashAttackEdgeJump_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Jane',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'DashAttackEdgeJump_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Jane',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'DashAttackEdgeJump_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Jane',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'DashAttackEdgeJump_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Jane',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'DashAttackEdgeJump_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Jane',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'DashAttackEdgeJump_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Jane',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'DashAttackPhantomThrust_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Jane',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'DashAttackPhantomThrust_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Jane',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'DashAttackPhantomThrust_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Jane',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'DodgeCounterSwiftShadow_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Jane',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'DodgeCounterSwiftShadow_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Jane',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'DodgeCounterSwiftShadow_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Jane',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'DodgeCounterSwiftShadow_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Jane',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'DodgeCounterSwiftShadow_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Jane',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'DodgeCounterSwiftShadow_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Jane',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'DodgeCounterSwiftShadowDance_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Jane',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'DodgeCounterSwiftShadowDance_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Jane',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'DodgeCounterSwiftShadowDance_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Jane',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'SpecialAttackAerialSweep_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Jane',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'SpecialAttackAerialSweep_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Jane',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'SpecialAttackAerialSweep_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Jane',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'EXSpecialAttackAerialSweepClearout_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Jane',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'EXSpecialAttackAerialSweepClearout_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Jane',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'EXSpecialAttackAerialSweepClearout_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Jane',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'ChainAttackFlowersOfSin_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Jane',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'ChainAttackFlowersOfSin_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Jane',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'ChainAttackFlowersOfSin_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Jane',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'UltimateFinalCurtain_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Jane',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'UltimateFinalCurtain_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Jane',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'UltimateFinalCurtain_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Jane',
@@ -849,7 +849,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'QuickAssistDarkThorn_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Jane',
@@ -863,7 +863,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'QuickAssistDarkThorn_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Jane',
@@ -877,7 +877,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'QuickAssistDarkThorn_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Jane',
@@ -891,7 +891,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'QuickAssistLutzJump_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Jane',
@@ -905,7 +905,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'QuickAssistLutzJump_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Jane',
@@ -919,7 +919,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'QuickAssistLutzJump_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Jane',
@@ -933,7 +933,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'DefensiveAssistLastDefense_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Jane',
@@ -947,7 +947,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'DefensiveAssistLastDefense_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Jane',
@@ -961,7 +961,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'DefensiveAssistLastDefense_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Jane',
@@ -975,7 +975,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'DefensiveAssistLastDefense_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Jane',
@@ -989,7 +989,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'DefensiveAssistLastDefense_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Jane',
@@ -1003,7 +1003,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'DefensiveAssistLastDefense_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Jane',
@@ -1017,7 +1017,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'DefensiveAssistLastDefense_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Jane',
@@ -1031,7 +1031,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'DefensiveAssistLastDefense_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Jane',
@@ -1045,7 +1045,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'DefensiveAssistLastDefense_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Jane',
@@ -1059,7 +1059,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'AssistFollowUpGaleSweep_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Jane',
@@ -1073,7 +1073,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'AssistFollowUpGaleSweep_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Jane',
@@ -1087,7 +1087,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'AssistFollowUpGaleSweep_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Jane',
@@ -1101,7 +1101,7 @@ export const formulas = {
     sheet: 'Jane',
     name: 'm6_additional_dmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Jane',

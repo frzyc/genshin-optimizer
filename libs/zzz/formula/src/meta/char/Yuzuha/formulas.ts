@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yuzuha',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Yuzuha',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'disorderDmgInst_physical',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Yuzuha',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'vortexDmgInst_physical',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Yuzuha',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Yuzuha',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yuzuha',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yuzuha',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'BasicAttackTanukiClaws_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yuzuha',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'BasicAttackTanukiClaws_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yuzuha',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'BasicAttackTanukiClaws_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yuzuha',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'BasicAttackTanukiClaws_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yuzuha',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'BasicAttackTanukiClaws_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yuzuha',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'BasicAttackTanukiClaws_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yuzuha',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'BasicAttackTanukiClaws_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yuzuha',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'BasicAttackTanukiClaws_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yuzuha',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'BasicAttackTanukiClaws_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yuzuha',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'BasicAttackTanukiClaws_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yuzuha',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'BasicAttackTanukiClaws_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yuzuha',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'BasicAttackTanukiClaws_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yuzuha',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'BasicAttackTanukiClaws_4:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yuzuha',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'BasicAttackTanukiClaws_4:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yuzuha',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'BasicAttackTanukiClaws_4:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yuzuha',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'BasicAttackTanukiCloak_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yuzuha',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'BasicAttackTanukiCloak_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yuzuha',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'BasicAttackTanukiCloak_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yuzuha',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'BasicAttackHardCandyShot_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yuzuha',
@@ -360,7 +360,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'BasicAttackHardCandyShot_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yuzuha',
@@ -375,7 +375,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'BasicAttackHardCandyShot_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yuzuha',
@@ -390,7 +390,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'BasicAttackSugarburstSparkles_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yuzuha',
@@ -404,7 +404,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'BasicAttackSugarburstSparkles_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yuzuha',
@@ -418,7 +418,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'BasicAttackSugarburstSparkles_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yuzuha',
@@ -432,7 +432,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'BasicAttackSugarburstSparklesMax_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yuzuha',
@@ -446,7 +446,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'BasicAttackSugarburstSparklesMax_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yuzuha',
@@ -460,7 +460,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'BasicAttackSugarburstSparklesMax_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yuzuha',
@@ -474,7 +474,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'BasicAttackTanukiHelper_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yuzuha',
@@ -488,7 +488,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'BasicAttackTanukiHelper_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yuzuha',
@@ -502,7 +502,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'BasicAttackTanukiHelper_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yuzuha',
@@ -516,7 +516,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'BasicAttackTanukiHelper_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yuzuha',
@@ -530,7 +530,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'BasicAttackTanukiHelper_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yuzuha',
@@ -544,7 +544,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'BasicAttackTanukiHelper_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yuzuha',
@@ -558,7 +558,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'DashAttackYoureOuttaLuck_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yuzuha',
@@ -572,7 +572,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'DashAttackYoureOuttaLuck_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yuzuha',
@@ -586,7 +586,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'DashAttackYoureOuttaLuck_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yuzuha',
@@ -600,7 +600,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'DodgeCounterTimeForPayback_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yuzuha',
@@ -614,7 +614,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'DodgeCounterTimeForPayback_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yuzuha',
@@ -628,7 +628,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'DodgeCounterTimeForPayback_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yuzuha',
@@ -642,7 +642,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'SpecialAttackGummyBombardment_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yuzuha',
@@ -656,7 +656,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'SpecialAttackGummyBombardment_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yuzuha',
@@ -670,7 +670,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'SpecialAttackGummyBombardment_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yuzuha',
@@ -684,7 +684,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'EXSpecialAttackCavityAlert_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yuzuha',
@@ -698,7 +698,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'EXSpecialAttackCavityAlert_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yuzuha',
@@ -712,7 +712,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'EXSpecialAttackCavityAlert_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yuzuha',
@@ -726,7 +726,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'EXSpecialAttackCavityAlertRightNow_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yuzuha',
@@ -740,7 +740,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'EXSpecialAttackCavityAlertRightNow_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yuzuha',
@@ -754,7 +754,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'EXSpecialAttackCavityAlertRightNow_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yuzuha',
@@ -768,7 +768,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'ChainAttackPrankAssault_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yuzuha',
@@ -782,7 +782,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'ChainAttackPrankAssault_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yuzuha',
@@ -796,7 +796,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'ChainAttackPrankAssault_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yuzuha',
@@ -810,7 +810,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'UltimateSurrenderOrSufferTheMischief_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yuzuha',
@@ -824,7 +824,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'UltimateSurrenderOrSufferTheMischief_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yuzuha',
@@ -838,7 +838,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'UltimateSurrenderOrSufferTheMischief_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yuzuha',
@@ -852,7 +852,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'QuickAssistDessertTime_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yuzuha',
@@ -866,7 +866,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'QuickAssistDessertTime_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yuzuha',
@@ -880,7 +880,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'QuickAssistDessertTime_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yuzuha',
@@ -894,7 +894,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'DefensiveAssistReplenishYourFun_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yuzuha',
@@ -908,7 +908,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'DefensiveAssistReplenishYourFun_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yuzuha',
@@ -922,7 +922,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'DefensiveAssistReplenishYourFun_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yuzuha',
@@ -936,7 +936,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'DefensiveAssistReplenishYourFun_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yuzuha',
@@ -950,7 +950,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'DefensiveAssistReplenishYourFun_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yuzuha',
@@ -964,7 +964,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'DefensiveAssistReplenishYourFun_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yuzuha',
@@ -978,7 +978,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'DefensiveAssistReplenishYourFun_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yuzuha',
@@ -992,7 +992,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'DefensiveAssistReplenishYourFun_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yuzuha',
@@ -1006,7 +1006,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'DefensiveAssistReplenishYourFun_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yuzuha',
@@ -1020,7 +1020,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'AssistFollowUpWeHaveCookies_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yuzuha',
@@ -1034,7 +1034,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'AssistFollowUpWeHaveCookies_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yuzuha',
@@ -1048,7 +1048,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'AssistFollowUpWeHaveCookies_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yuzuha',
@@ -1062,7 +1062,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'AssistFollowUpStuffedHardCandyShot_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yuzuha',
@@ -1076,7 +1076,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'AssistFollowUpStuffedHardCandyShot_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yuzuha',
@@ -1090,7 +1090,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'AssistFollowUpStuffedHardCandyShot_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yuzuha',
@@ -1104,7 +1104,7 @@ export const formulas = {
     sheet: 'Yuzuha',
     name: 'm6_dmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yuzuha',

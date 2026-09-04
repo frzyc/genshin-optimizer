@@ -132,8 +132,11 @@ export class Calculator<M = any> {
         if (ex !== n.ex) n = { ...n, ex }
 
         if (computed[ex]) return computed[ex]
+        // console.log(newCache.tag)
         if (isDebug('calc') && ex === 'unique' && pre.length !== 1)
-          throw new Error(`Ill-form read for ${tagString(newCache.tag)}`)
+          throw new Error(
+            `Ill-form read for ${tagString(newCache.tag)}, found ${pre.length} entries: ${JSON.stringify(pre, undefined, 2)}`
+          )
         const val = arithmetic[ex](getV(pre) as number[])
         return (computed[ex] = finalize(val, pre, [], newCache.tag))
       }

@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seth',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Seth',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'disorderDmgInst_electric',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Seth',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'vortexDmgInst_electric',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Seth',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Seth',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seth',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seth',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'BasicAttackLightningStrike_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seth',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'BasicAttackLightningStrike_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seth',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'BasicAttackLightningStrike_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seth',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'BasicAttackLightningStrike_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seth',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'BasicAttackLightningStrike_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seth',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'BasicAttackLightningStrike_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seth',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'BasicAttackLightningStrike_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seth',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'BasicAttackLightningStrike_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seth',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'BasicAttackLightningStrike_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seth',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'BasicAttackLightningStrike_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seth',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'BasicAttackLightningStrike_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seth',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'BasicAttackLightningStrike_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seth',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'BasicAttackLightningStrikeElectrified_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seth',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'BasicAttackLightningStrikeElectrified_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seth',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'BasicAttackLightningStrikeElectrified_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seth',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'BasicAttackLightningStrikeElectrified_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seth',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'BasicAttackLightningStrikeElectrified_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seth',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'BasicAttackLightningStrikeElectrified_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seth',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'DashAttackThunderAssault_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seth',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'DashAttackThunderAssault_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seth',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'DashAttackThunderAssault_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seth',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'DodgeCounterRetreatToAdvance_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seth',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'DodgeCounterRetreatToAdvance_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seth',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'DodgeCounterRetreatToAdvance_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seth',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'SpecialAttackThunderShieldRush_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seth',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'SpecialAttackThunderShieldRush_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seth',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'SpecialAttackThunderShieldRush_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seth',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'EXSpecialAttackThunderShieldRushHighVoltage_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seth',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'EXSpecialAttackThunderShieldRushHighVoltage_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seth',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'EXSpecialAttackThunderShieldRushHighVoltage_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seth',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'EXSpecialAttackThunderShieldRushHighVoltage_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seth',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'EXSpecialAttackThunderShieldRushHighVoltage_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seth',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'EXSpecialAttackThunderShieldRushHighVoltage_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seth',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'ChainAttackFinalJudgment_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seth',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'ChainAttackFinalJudgment_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seth',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'ChainAttackFinalJudgment_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seth',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'UltimateJusticePrevails_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seth',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'UltimateJusticePrevails_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seth',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'UltimateJusticePrevails_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seth',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'QuickAssistArmedSupport_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seth',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'QuickAssistArmedSupport_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seth',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'QuickAssistArmedSupport_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seth',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'DefensiveAssistThundershield_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seth',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'DefensiveAssistThundershield_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seth',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'DefensiveAssistThundershield_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seth',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'DefensiveAssistThundershield_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seth',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'DefensiveAssistThundershield_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seth',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'DefensiveAssistThundershield_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seth',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'DefensiveAssistThundershield_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seth',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'DefensiveAssistThundershield_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seth',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'DefensiveAssistThundershield_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seth',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'AssistFollowUpPublicSecurityRuling_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seth',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'AssistFollowUpPublicSecurityRuling_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seth',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'AssistFollowUpPublicSecurityRuling_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seth',
@@ -849,7 +849,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'core_shield',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'shield',
       sheet: 'Seth',
@@ -860,7 +860,7 @@ export const formulas = {
     sheet: 'Seth',
     name: 'm6_dmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seth',

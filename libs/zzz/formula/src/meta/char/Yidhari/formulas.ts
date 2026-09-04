@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'sheerDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yidhari',
@@ -17,7 +17,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Yidhari',
@@ -30,7 +30,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'disorderDmgInst_ice',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Yidhari',
@@ -43,7 +43,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'vortexDmgInst_ice',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Yidhari',
@@ -56,7 +56,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Yidhari',
@@ -70,7 +70,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yidhari',
@@ -82,7 +82,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yidhari',
@@ -94,7 +94,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'BasicAttackCrushingStrike_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yidhari',
@@ -108,7 +108,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'BasicAttackCrushingStrike_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yidhari',
@@ -122,7 +122,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'BasicAttackCrushingStrike_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yidhari',
@@ -136,7 +136,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'BasicAttackCrushingStrike_1:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yidhari',
@@ -150,7 +150,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'BasicAttackCrushingStrike_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yidhari',
@@ -164,7 +164,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'BasicAttackCrushingStrike_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yidhari',
@@ -178,7 +178,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'BasicAttackCrushingStrike_2:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yidhari',
@@ -192,7 +192,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'BasicAttackCrushingStrike_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yidhari',
@@ -206,7 +206,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'BasicAttackCrushingStrike_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yidhari',
@@ -220,7 +220,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'BasicAttackCrushingStrike_3:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yidhari',
@@ -234,7 +234,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'BasicAttackCrushingStrike_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yidhari',
@@ -248,7 +248,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'BasicAttackCrushingStrike_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yidhari',
@@ -262,7 +262,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'BasicAttackFrostbiteEmbrace_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yidhari',
@@ -276,7 +276,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'BasicAttackFrostbiteEmbrace_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yidhari',
@@ -290,7 +290,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'BasicAttackFrostbiteEmbrace_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yidhari',
@@ -304,7 +304,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'BasicAttackFrostbiteEmbrace_1:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yidhari',
@@ -318,7 +318,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'BasicAttackFrostbiteEmbrace_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yidhari',
@@ -332,7 +332,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'BasicAttackFrostbiteEmbrace_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yidhari',
@@ -346,7 +346,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'BasicAttackFrostbiteEmbrace_2:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yidhari',
@@ -360,7 +360,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'BasicAttackFrostbiteEmbrace_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yidhari',
@@ -374,7 +374,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'BasicAttackFrostbiteEmbrace_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yidhari',
@@ -388,7 +388,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'BasicAttackFrostbiteEmbrace_3:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yidhari',
@@ -402,7 +402,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'BasicAttackFrostbiteEmbrace_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yidhari',
@@ -416,7 +416,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'BasicAttackFrostbiteEmbrace_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yidhari',
@@ -430,7 +430,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'FrostsCrushingWeight_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yidhari',
@@ -444,7 +444,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'FrostsCrushingWeight_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yidhari',
@@ -458,7 +458,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'FrostsCrushingWeight_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yidhari',
@@ -472,7 +472,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'DashAttackFrostbloomImpact_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yidhari',
@@ -486,7 +486,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'DashAttackFrostbloomImpact_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yidhari',
@@ -500,7 +500,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'DashAttackFrostbloomImpact_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yidhari',
@@ -514,7 +514,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'DodgeCounterIcehaulReverb_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yidhari',
@@ -528,7 +528,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'DodgeCounterIcehaulReverb_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yidhari',
@@ -542,7 +542,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'DodgeCounterIcehaulReverb_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yidhari',
@@ -556,7 +556,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'SpecialAttackCeaseThoughts_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yidhari',
@@ -570,7 +570,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'SpecialAttackCeaseThoughts_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yidhari',
@@ -584,7 +584,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'SpecialAttackCeaseThoughts_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yidhari',
@@ -598,7 +598,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'EXSpecialAttackFrostCoil_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yidhari',
@@ -612,7 +612,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'EXSpecialAttackFrostCoil_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yidhari',
@@ -626,7 +626,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'EXSpecialAttackFrostCoil_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yidhari',
@@ -640,7 +640,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'SpecialAttackSurgingColdCrushingPursuit_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yidhari',
@@ -654,7 +654,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'SpecialAttackSurgingColdCrushingPursuit_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yidhari',
@@ -668,7 +668,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'SpecialAttackSurgingColdCrushingPursuit_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yidhari',
@@ -682,7 +682,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'EXSpecialAttackGlacialCrush_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yidhari',
@@ -696,7 +696,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'EXSpecialAttackGlacialCrush_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yidhari',
@@ -710,7 +710,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'EXSpecialAttackGlacialCrush_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yidhari',
@@ -724,7 +724,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'EXSpecialAttackGlacialCrush_1:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yidhari',
@@ -738,7 +738,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'EXSpecialAttackGlacialCrush_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yidhari',
@@ -752,7 +752,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'EXSpecialAttackGlacialCrush_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yidhari',
@@ -766,7 +766,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'ChainAttackFrostboundOath_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yidhari',
@@ -780,7 +780,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'ChainAttackFrostboundOath_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yidhari',
@@ -794,7 +794,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'ChainAttackFrostboundOath_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yidhari',
@@ -808,7 +808,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'ChainAttackFrostboundOath_1:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yidhari',
@@ -822,7 +822,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'ChainAttackFrostboundOath_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yidhari',
@@ -836,7 +836,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'ChainAttackFrostboundOath_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yidhari',
@@ -850,7 +850,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'UltimateFinalActCrossingTheRiverOfRegret_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yidhari',
@@ -864,7 +864,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'UltimateFinalActCrossingTheRiverOfRegret_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yidhari',
@@ -878,7 +878,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'UltimateFinalActCrossingTheRiverOfRegret_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yidhari',
@@ -892,7 +892,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'QuickAssistFrostshockReinforcement_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yidhari',
@@ -906,7 +906,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'QuickAssistFrostshockReinforcement_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yidhari',
@@ -920,7 +920,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'QuickAssistFrostshockReinforcement_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yidhari',
@@ -934,7 +934,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'DefensiveAssistFlashquakeRejection_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yidhari',
@@ -948,7 +948,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'DefensiveAssistFlashquakeRejection_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yidhari',
@@ -962,7 +962,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'DefensiveAssistFlashquakeRejection_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yidhari',
@@ -976,7 +976,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'DefensiveAssistFlashquakeRejection_1:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yidhari',
@@ -990,7 +990,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'DefensiveAssistFlashquakeRejection_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yidhari',
@@ -1004,7 +1004,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'DefensiveAssistFlashquakeRejection_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yidhari',
@@ -1018,7 +1018,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'DefensiveAssistFlashquakeRejection_2:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yidhari',
@@ -1032,7 +1032,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'DefensiveAssistFlashquakeRejection_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yidhari',
@@ -1046,7 +1046,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'DefensiveAssistFlashquakeRejection_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yidhari',
@@ -1060,7 +1060,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'AssistFollowUpGlacialOnslaught_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yidhari',
@@ -1074,7 +1074,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'AssistFollowUpGlacialOnslaught_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yidhari',
@@ -1088,7 +1088,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'AssistFollowUpGlacialOnslaught_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yidhari',
@@ -1102,7 +1102,7 @@ export const formulas = {
     sheet: 'Yidhari',
     name: 'm6_heal',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'heal',
       sheet: 'Yidhari',

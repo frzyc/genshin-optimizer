@@ -1,0 +1,784 @@
+[
+  [
+    {
+      "tag": {
+        "et": "teamBuff",
+        "qt": "listing",
+        "q": "formulas",
+        "sheet": "agg"
+      },
+      "value": {
+        "op": "tag",
+        "x": [
+          {
+            "op": "const",
+            "x": [],
+            "br": [],
+            "ex": "infer"
+          }
+        ],
+        "br": [],
+        "tag": {
+          "attribute": "physical",
+          "et": "display",
+          "qt": "formula",
+          "q": "standardDmg",
+          "name": "core_anomaly_physical_dmg"
+        }
+      }
+    },
+    {
+      "tag": {
+        "et": "display",
+        "qt": "formula",
+        "q": "standardDmg",
+        "name": "core_anomaly_physical_dmg"
+      },
+      "value": {
+        "op": "read",
+        "x": [],
+        "br": [],
+        "tag": {
+          "et": "own",
+          "qt": "formula",
+          "q": "standardDmg",
+          "name": "core_anomaly_physical_dmg"
+        }
+      }
+    },
+    {
+      "tag": {
+        "et": "own",
+        "qt": "formula",
+        "q": "standardDmgBase",
+        "sheet": "agg"
+      },
+      "value": {
+        "op": "match",
+        "x": [
+          {
+            "op": "match",
+            "x": [
+              {
+                "op": "prod",
+                "x": [
+                  {
+                    "op": "read",
+                    "x": [],
+                    "br": [],
+                    "tag": {
+                      "et": "target",
+                      "src": null,
+                      "name": null,
+                      "qt": "final",
+                      "q": "atk",
+                      "sheet": "agg"
+                    }
+                  },
+                  {
+                    "op": "sum",
+                    "x": [
+                      {
+                        "op": "tag",
+                        "x": [
+                          {
+                            "op": "subscript",
+                            "ex": [
+                              2.4,
+                              2.8,
+                              3.2,
+                              3.6,
+                              4,
+                              4.4,
+                              4.8
+                            ],
+                            "x": [],
+                            "br": [
+                              {
+                                "op": "read",
+                                "x": [],
+                                "br": [],
+                                "tag": {
+                                  "et": "own",
+                                  "dst": null,
+                                  "qt": "char",
+                                  "q": "core",
+                                  "sheet": "agg"
+                                }
+                              }
+                            ]
+                          }
+                        ],
+                        "br": [],
+                        "tag": {
+                          "qt": "misc",
+                          "q": "_"
+                        }
+                      },
+                      {
+                        "op": "thres",
+                        "x": [
+                          {
+                            "op": "tag",
+                            "x": [
+                              {
+                                "op": "const",
+                                "x": [],
+                                "br": [],
+                                "ex": 3
+                              }
+                            ],
+                            "br": [],
+                            "tag": {
+                              "qt": "misc",
+                              "q": "_"
+                            }
+                          },
+                          {
+                            "op": "const",
+                            "x": [],
+                            "br": [],
+                            "ex": 0
+                          }
+                        ],
+                        "br": [
+                          {
+                            "op": "read",
+                            "x": [],
+                            "br": [],
+                            "tag": {
+                              "et": "own",
+                              "dst": null,
+                              "qt": "char",
+                              "q": "mindscape",
+                              "sheet": "iso"
+                            }
+                          },
+                          {
+                            "op": "const",
+                            "x": [],
+                            "br": [],
+                            "ex": 2
+                          }
+                        ]
+                      }
+                    ],
+                    "br": []
+                  }
+                ],
+                "br": []
+              },
+              {
+                "op": "const",
+                "x": [],
+                "br": [],
+                "ex": 0
+              }
+            ],
+            "br": [
+              {
+                "op": "read",
+                "x": [],
+                "br": [],
+                "tag": {
+                  "et": "target",
+                  "src": null,
+                  "name": null,
+                  "qt": "char",
+                  "q": "specialty",
+                  "sheet": "iso"
+                }
+              },
+              {
+                "op": "const",
+                "x": [],
+                "br": [],
+                "ex": "anomaly"
+              }
+            ]
+          },
+          {
+            "op": "const",
+            "x": [],
+            "br": [],
+            "ex": 0
+          }
+        ],
+        "br": [
+          {
+            "op": "read",
+            "x": [],
+            "br": [],
+            "tag": {
+              "et": "target",
+              "src": null,
+              "name": null,
+              "qt": "char",
+              "q": "attribute",
+              "sheet": "iso"
+            }
+          },
+          {
+            "op": "const",
+            "x": [],
+            "br": [],
+            "ex": "physical"
+          }
+        ]
+      }
+    },
+    {
+      "tag": {
+        "et": "teamBuff",
+        "qt": "combat",
+        "q": "crit_",
+        "sheet": "agg",
+        "name": "core_anomaly_physical_dmg"
+      },
+      "value": {
+        "op": "tag",
+        "x": [
+          {
+            "op": "const",
+            "x": [],
+            "br": [],
+            "ex": 1
+          }
+        ],
+        "br": [],
+        "tag": {
+          "qt": "misc",
+          "q": "_"
+        }
+      }
+    },
+    {
+      "tag": {
+        "et": "teamBuff",
+        "qt": "combat",
+        "q": "crit_dmg_",
+        "sheet": "agg",
+        "name": "core_anomaly_physical_dmg"
+      },
+      "value": {
+        "op": "tag",
+        "x": [
+          {
+            "op": "subscript",
+            "ex": [
+              0.8,
+              0.9,
+              1,
+              1.2,
+              1.3,
+              1.4,
+              1.5
+            ],
+            "x": [],
+            "br": [
+              {
+                "op": "read",
+                "x": [],
+                "br": [],
+                "tag": {
+                  "et": "own",
+                  "dst": null,
+                  "qt": "char",
+                  "q": "core",
+                  "sheet": "agg"
+                }
+              }
+            ]
+          }
+        ],
+        "br": [],
+        "tag": {
+          "qt": "misc",
+          "q": "_"
+        }
+      }
+    },
+    {
+      "tag": {
+        "et": "teamBuff",
+        "qt": "combat",
+        "q": "common_dmg_",
+        "sheet": "agg",
+        "name": "core_anomaly_physical_dmg"
+      },
+      "value": {
+        "op": "thres",
+        "x": [
+          {
+            "op": "match",
+            "x": [
+              {
+                "op": "const",
+                "x": [],
+                "br": [],
+                "ex": 0
+              },
+              {
+                "op": "tag",
+                "x": [
+                  {
+                    "op": "const",
+                    "x": [],
+                    "br": [],
+                    "ex": 0.5
+                  }
+                ],
+                "br": [],
+                "tag": {
+                  "qt": "misc",
+                  "q": "_"
+                }
+              }
+            ],
+            "br": [
+              {
+                "op": "read",
+                "x": [],
+                "br": [],
+                "tag": {
+                  "et": "own",
+                  "sheet": "Sunna",
+                  "qt": "cond",
+                  "name": null,
+                  "attribute": null,
+                  "damageType1": null,
+                  "damageType2": null,
+                  "q": "focusedCreation"
+                },
+                "ex": "max"
+              },
+              {
+                "op": "const",
+                "x": [],
+                "br": [],
+                "ex": 0
+              }
+            ]
+          },
+          {
+            "op": "const",
+            "x": [],
+            "br": [],
+            "ex": 0
+          }
+        ],
+        "br": [
+          {
+            "op": "read",
+            "x": [],
+            "br": [],
+            "tag": {
+              "et": "own",
+              "dst": null,
+              "qt": "char",
+              "q": "mindscape",
+              "sheet": "iso"
+            }
+          },
+          {
+            "op": "const",
+            "x": [],
+            "br": [],
+            "ex": 6
+          }
+        ]
+      }
+    }
+  ],
+  [
+    {
+      "tag": {
+        "et": "teamBuff",
+        "qt": "listing",
+        "q": "formulas",
+        "sheet": "agg"
+      },
+      "value": {
+        "op": "tag",
+        "x": [
+          {
+            "op": "const",
+            "x": [],
+            "br": [],
+            "ex": "infer"
+          }
+        ],
+        "br": [],
+        "tag": {
+          "attribute": "physical",
+          "et": "display",
+          "qt": "formula",
+          "q": "standardDmg",
+          "name": "core_attack_physical_dmg"
+        }
+      }
+    },
+    {
+      "tag": {
+        "et": "display",
+        "qt": "formula",
+        "q": "standardDmg",
+        "name": "core_attack_physical_dmg"
+      },
+      "value": {
+        "op": "read",
+        "x": [],
+        "br": [],
+        "tag": {
+          "et": "own",
+          "qt": "formula",
+          "q": "standardDmg",
+          "name": "core_attack_physical_dmg"
+        }
+      }
+    },
+    {
+      "tag": {
+        "et": "own",
+        "qt": "formula",
+        "q": "standardDmgBase",
+        "sheet": "agg"
+      },
+      "value": {
+        "op": "match",
+        "x": [
+          {
+            "op": "match",
+            "x": [
+              {
+                "op": "prod",
+                "x": [
+                  {
+                    "op": "read",
+                    "x": [],
+                    "br": [],
+                    "tag": {
+                      "et": "target",
+                      "src": null,
+                      "name": null,
+                      "qt": "final",
+                      "q": "atk",
+                      "sheet": "agg"
+                    }
+                  },
+                  {
+                    "op": "sum",
+                    "x": [
+                      {
+                        "op": "tag",
+                        "x": [
+                          {
+                            "op": "subscript",
+                            "ex": [
+                              1.5,
+                              1.75,
+                              2,
+                              2.25,
+                              2.5,
+                              2.75,
+                              3
+                            ],
+                            "x": [],
+                            "br": [
+                              {
+                                "op": "read",
+                                "x": [],
+                                "br": [],
+                                "tag": {
+                                  "et": "own",
+                                  "dst": null,
+                                  "qt": "char",
+                                  "q": "core",
+                                  "sheet": "agg"
+                                }
+                              }
+                            ]
+                          }
+                        ],
+                        "br": [],
+                        "tag": {
+                          "qt": "misc",
+                          "q": "_"
+                        }
+                      },
+                      {
+                        "op": "thres",
+                        "x": [
+                          {
+                            "op": "tag",
+                            "x": [
+                              {
+                                "op": "const",
+                                "x": [],
+                                "br": [],
+                                "ex": 2
+                              }
+                            ],
+                            "br": [],
+                            "tag": {
+                              "qt": "misc",
+                              "q": "_"
+                            }
+                          },
+                          {
+                            "op": "const",
+                            "x": [],
+                            "br": [],
+                            "ex": 0
+                          }
+                        ],
+                        "br": [
+                          {
+                            "op": "read",
+                            "x": [],
+                            "br": [],
+                            "tag": {
+                              "et": "own",
+                              "dst": null,
+                              "qt": "char",
+                              "q": "mindscape",
+                              "sheet": "iso"
+                            }
+                          },
+                          {
+                            "op": "const",
+                            "x": [],
+                            "br": [],
+                            "ex": 2
+                          }
+                        ]
+                      }
+                    ],
+                    "br": []
+                  }
+                ],
+                "br": []
+              },
+              {
+                "op": "const",
+                "x": [],
+                "br": [],
+                "ex": 0
+              }
+            ],
+            "br": [
+              {
+                "op": "read",
+                "x": [],
+                "br": [],
+                "tag": {
+                  "et": "target",
+                  "src": null,
+                  "name": null,
+                  "qt": "char",
+                  "q": "specialty",
+                  "sheet": "iso"
+                }
+              },
+              {
+                "op": "const",
+                "x": [],
+                "br": [],
+                "ex": "attack"
+              }
+            ]
+          },
+          {
+            "op": "const",
+            "x": [],
+            "br": [],
+            "ex": 0
+          }
+        ],
+        "br": [
+          {
+            "op": "read",
+            "x": [],
+            "br": [],
+            "tag": {
+              "et": "target",
+              "src": null,
+              "name": null,
+              "qt": "char",
+              "q": "attribute",
+              "sheet": "iso"
+            }
+          },
+          {
+            "op": "const",
+            "x": [],
+            "br": [],
+            "ex": "physical"
+          }
+        ]
+      }
+    },
+    {
+      "tag": {
+        "et": "teamBuff",
+        "qt": "combat",
+        "q": "crit_",
+        "sheet": "agg",
+        "name": "core_attack_physical_dmg"
+      },
+      "value": {
+        "op": "tag",
+        "x": [
+          {
+            "op": "const",
+            "x": [],
+            "br": [],
+            "ex": 1
+          }
+        ],
+        "br": [],
+        "tag": {
+          "qt": "misc",
+          "q": "_"
+        }
+      }
+    },
+    {
+      "tag": {
+        "et": "teamBuff",
+        "qt": "combat",
+        "q": "crit_dmg_",
+        "sheet": "agg",
+        "name": "core_attack_physical_dmg"
+      },
+      "value": {
+        "op": "tag",
+        "x": [
+          {
+            "op": "subscript",
+            "ex": [
+              0.8,
+              0.9,
+              1,
+              1.2,
+              1.3,
+              1.4,
+              1.5
+            ],
+            "x": [],
+            "br": [
+              {
+                "op": "read",
+                "x": [],
+                "br": [],
+                "tag": {
+                  "et": "own",
+                  "dst": null,
+                  "qt": "char",
+                  "q": "core",
+                  "sheet": "agg"
+                }
+              }
+            ]
+          }
+        ],
+        "br": [],
+        "tag": {
+          "qt": "misc",
+          "q": "_"
+        }
+      }
+    },
+    {
+      "tag": {
+        "et": "teamBuff",
+        "qt": "combat",
+        "q": "common_dmg_",
+        "sheet": "agg",
+        "name": "core_attack_physical_dmg"
+      },
+      "value": {
+        "op": "thres",
+        "x": [
+          {
+            "op": "match",
+            "x": [
+              {
+                "op": "const",
+                "x": [],
+                "br": [],
+                "ex": 0
+              },
+              {
+                "op": "tag",
+                "x": [
+                  {
+                    "op": "const",
+                    "x": [],
+                    "br": [],
+                    "ex": 0.5
+                  }
+                ],
+                "br": [],
+                "tag": {
+                  "qt": "misc",
+                  "q": "_"
+                }
+              }
+            ],
+            "br": [
+              {
+                "op": "read",
+                "x": [],
+                "br": [],
+                "tag": {
+                  "et": "own",
+                  "sheet": "Sunna",
+                  "qt": "cond",
+                  "name": null,
+                  "attribute": null,
+                  "damageType1": null,
+                  "damageType2": null,
+                  "q": "focusedCreation"
+                },
+                "ex": "max"
+              },
+              {
+                "op": "const",
+                "x": [],
+                "br": [],
+                "ex": 0
+              }
+            ]
+          },
+          {
+            "op": "const",
+            "x": [],
+            "br": [],
+            "ex": 0
+          }
+        ],
+        "br": [
+          {
+            "op": "read",
+            "x": [],
+            "br": [],
+            "tag": {
+              "et": "own",
+              "dst": null,
+              "qt": "char",
+              "q": "mindscape",
+              "sheet": "iso"
+            }
+          },
+          {
+            "op": "const",
+            "x": [],
+            "br": [],
+            "ex": 6
+          }
+        ]
+      }
+    }
+  ]
+]

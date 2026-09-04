@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lighter',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Lighter',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'disorderDmgInst_fire',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Lighter',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'vortexDmgInst_fire',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Lighter',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Lighter',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lighter',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lighter',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lighter',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lighter',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lighter',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lighter',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lighter',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lighter',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lighter',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lighter',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lighter',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lighter',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lighter',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lighter',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_4:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lighter',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_4:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lighter',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_4:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lighter',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_5:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lighter',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_5:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lighter',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_5:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lighter',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_6:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lighter',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_6:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lighter',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_6:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lighter',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_7:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lighter',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_7:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lighter',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_7:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lighter',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_8:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lighter',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_8:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lighter',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_8:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lighter',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_9:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lighter',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_9:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lighter',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_9:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lighter',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_10:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lighter',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_10:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lighter',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_10:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lighter',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_11:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lighter',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_11:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lighter',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_11:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lighter',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_12:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lighter',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_12:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lighter',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_12:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lighter',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_13:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lighter',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_13:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lighter',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_13:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lighter',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_14:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lighter',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_14:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lighter',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_14:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lighter',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_15:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lighter',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_15:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lighter',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'BasicAttackLFormThunderingFist_15:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lighter',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'DashAttackChargingSlam_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lighter',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'DashAttackChargingSlam_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lighter',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'DashAttackChargingSlam_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lighter',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'DodgeCounterBlazingFlash_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lighter',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'DodgeCounterBlazingFlash_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lighter',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'DodgeCounterBlazingFlash_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lighter',
@@ -849,7 +849,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'SpecialAttackVFormSunriseUppercut_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lighter',
@@ -863,7 +863,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'SpecialAttackVFormSunriseUppercut_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lighter',
@@ -877,7 +877,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'SpecialAttackVFormSunriseUppercut_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lighter',
@@ -891,7 +891,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'EXSpecialAttackVFormSunriseUppercutFullDistance_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lighter',
@@ -905,7 +905,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'EXSpecialAttackVFormSunriseUppercutFullDistance_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lighter',
@@ -919,7 +919,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'EXSpecialAttackVFormSunriseUppercutFullDistance_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lighter',
@@ -933,7 +933,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'EXSpecialAttackVFormSunriseUppercutFullDistance_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lighter',
@@ -947,7 +947,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'EXSpecialAttackVFormSunriseUppercutFullDistance_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lighter',
@@ -961,7 +961,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'EXSpecialAttackVFormSunriseUppercutFullDistance_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lighter',
@@ -975,7 +975,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'ChainAttackVFormScorchingSun_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lighter',
@@ -989,7 +989,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'ChainAttackVFormScorchingSun_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lighter',
@@ -1003,7 +1003,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'ChainAttackVFormScorchingSun_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lighter',
@@ -1017,7 +1017,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'UltimateWFormCrownedInferno_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lighter',
@@ -1031,7 +1031,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'UltimateWFormCrownedInferno_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lighter',
@@ -1045,7 +1045,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'UltimateWFormCrownedInferno_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lighter',
@@ -1059,7 +1059,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'QuickAssistBlazingFlashGuard_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lighter',
@@ -1073,7 +1073,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'QuickAssistBlazingFlashGuard_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lighter',
@@ -1087,7 +1087,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'QuickAssistBlazingFlashGuard_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lighter',
@@ -1101,7 +1101,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'DefensiveAssistSwiftBreak_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lighter',
@@ -1115,7 +1115,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'DefensiveAssistSwiftBreak_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lighter',
@@ -1129,7 +1129,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'DefensiveAssistSwiftBreak_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lighter',
@@ -1143,7 +1143,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'DefensiveAssistSwiftBreak_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lighter',
@@ -1157,7 +1157,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'DefensiveAssistSwiftBreak_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lighter',
@@ -1171,7 +1171,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'DefensiveAssistSwiftBreak_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lighter',
@@ -1185,7 +1185,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'DefensiveAssistSwiftBreak_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lighter',
@@ -1199,7 +1199,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'DefensiveAssistSwiftBreak_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lighter',
@@ -1213,7 +1213,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'DefensiveAssistSwiftBreak_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lighter',
@@ -1227,7 +1227,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'AssistFollowUpChargingSlamStab_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lighter',
@@ -1241,7 +1241,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'AssistFollowUpChargingSlamStab_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lighter',
@@ -1255,7 +1255,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'AssistFollowUpChargingSlamStab_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lighter',
@@ -1269,7 +1269,7 @@ export const formulas = {
     sheet: 'Lighter',
     name: 'm6_blazing_impact_dmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lighter',

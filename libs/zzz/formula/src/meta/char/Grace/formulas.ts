@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Grace',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Grace',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'disorderDmgInst_electric',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Grace',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'vortexDmgInst_electric',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Grace',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Grace',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Grace',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Grace',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'BasicAttackHighPressureSpike_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Grace',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'BasicAttackHighPressureSpike_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Grace',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'BasicAttackHighPressureSpike_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Grace',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'BasicAttackHighPressureSpike_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Grace',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'BasicAttackHighPressureSpike_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Grace',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'BasicAttackHighPressureSpike_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Grace',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'BasicAttackHighPressureSpike_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Grace',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'BasicAttackHighPressureSpike_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Grace',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'BasicAttackHighPressureSpike_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Grace',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'BasicAttackHighPressureSpike_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Grace',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'BasicAttackHighPressureSpike_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Grace',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'BasicAttackHighPressureSpike_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Grace',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'BasicAttackHighPressureSpike_4:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Grace',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'BasicAttackHighPressureSpike_4:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Grace',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'BasicAttackHighPressureSpike_4:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Grace',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'DashAttackQuickInspection_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Grace',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'DashAttackQuickInspection_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Grace',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'DashAttackQuickInspection_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Grace',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'DodgeCounterViolationPenalty_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Grace',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'DodgeCounterViolationPenalty_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Grace',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'DodgeCounterViolationPenalty_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Grace',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'SpecialAttackObstructionRemoval_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Grace',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'SpecialAttackObstructionRemoval_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Grace',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'SpecialAttackObstructionRemoval_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Grace',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'EXSpecialAttackSuperchargedObstructionRemoval_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Grace',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'EXSpecialAttackSuperchargedObstructionRemoval_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Grace',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'EXSpecialAttackSuperchargedObstructionRemoval_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Grace',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'ChainAttackCollaborativeConstruction_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Grace',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'ChainAttackCollaborativeConstruction_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Grace',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'ChainAttackCollaborativeConstruction_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Grace',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'UltimateDemolitionBlastBeware_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Grace',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'UltimateDemolitionBlastBeware_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Grace',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'UltimateDemolitionBlastBeware_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Grace',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'QuickAssistIncidentManagement_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Grace',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'QuickAssistIncidentManagement_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Grace',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'QuickAssistIncidentManagement_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Grace',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'AssistFollowUpCounterVoltNeedle_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Grace',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'AssistFollowUpCounterVoltNeedle_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Grace',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Grace',
     name: 'AssistFollowUpCounterVoltNeedle_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Grace',

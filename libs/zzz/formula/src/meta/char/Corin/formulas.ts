@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Corin',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Corin',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'disorderDmgInst_physical',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Corin',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'vortexDmgInst_physical',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Corin',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Corin',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Corin',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Corin',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'BasicAttackWipeout_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Corin',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'BasicAttackWipeout_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Corin',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'BasicAttackWipeout_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Corin',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'BasicAttackWipeout_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Corin',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'BasicAttackWipeout_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Corin',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'BasicAttackWipeout_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Corin',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'BasicAttackWipeout_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Corin',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'BasicAttackWipeout_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Corin',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'BasicAttackWipeout_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Corin',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'BasicAttackWipeout_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Corin',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'BasicAttackWipeout_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Corin',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'BasicAttackWipeout_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Corin',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'BasicAttackWipeout_4:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Corin',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'BasicAttackWipeout_4:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Corin',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'BasicAttackWipeout_4:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Corin',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'DashAttackOopsyDaisy_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Corin',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'DashAttackOopsyDaisy_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Corin',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'DashAttackOopsyDaisy_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Corin',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'DodgeCounterNope_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Corin',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'DodgeCounterNope_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Corin',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'DodgeCounterNope_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Corin',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'DodgeCounterNope_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Corin',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'DodgeCounterNope_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Corin',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'DodgeCounterNope_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Corin',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'SpecialAttackCleanSweep_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Corin',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'SpecialAttackCleanSweep_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Corin',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'SpecialAttackCleanSweep_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Corin',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'SpecialAttackCleanSweep_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Corin',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'SpecialAttackCleanSweep_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Corin',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'SpecialAttackCleanSweep_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Corin',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'SpecialAttackCleanSweep_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Corin',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'SpecialAttackCleanSweep_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Corin',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'SpecialAttackCleanSweep_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Corin',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'EXSpecialAttackSkirtAlert_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Corin',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'EXSpecialAttackSkirtAlert_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Corin',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'EXSpecialAttackSkirtAlert_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Corin',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'EXSpecialAttackSkirtAlert_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Corin',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'EXSpecialAttackSkirtAlert_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Corin',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'EXSpecialAttackSkirtAlert_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Corin',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'EXSpecialAttackSkirtAlert_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Corin',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'EXSpecialAttackSkirtAlert_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Corin',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'EXSpecialAttackSkirtAlert_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Corin',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'ChainAttackSorry_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Corin',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'ChainAttackSorry_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Corin',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'ChainAttackSorry_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Corin',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'UltimateVeryVerySorry_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Corin',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'UltimateVeryVerySorry_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Corin',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'UltimateVeryVerySorry_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Corin',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'QuickAssistEmergencyMeasures_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Corin',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'QuickAssistEmergencyMeasures_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Corin',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'QuickAssistEmergencyMeasures_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Corin',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'QuickAssistEmergencyMeasures_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Corin',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'QuickAssistEmergencyMeasures_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Corin',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'QuickAssistEmergencyMeasures_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Corin',
@@ -849,7 +849,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'DefensiveAssistPPleaseAllowMe_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Corin',
@@ -863,7 +863,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'DefensiveAssistPPleaseAllowMe_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Corin',
@@ -877,7 +877,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'DefensiveAssistPPleaseAllowMe_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Corin',
@@ -891,7 +891,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'DefensiveAssistPPleaseAllowMe_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Corin',
@@ -905,7 +905,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'DefensiveAssistPPleaseAllowMe_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Corin',
@@ -919,7 +919,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'DefensiveAssistPPleaseAllowMe_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Corin',
@@ -933,7 +933,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'DefensiveAssistPPleaseAllowMe_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Corin',
@@ -947,7 +947,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'DefensiveAssistPPleaseAllowMe_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Corin',
@@ -961,7 +961,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'DefensiveAssistPPleaseAllowMe_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Corin',
@@ -975,7 +975,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'AssistFollowUpQuickSweep_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Corin',
@@ -989,7 +989,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'AssistFollowUpQuickSweep_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Corin',
@@ -1003,7 +1003,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'AssistFollowUpQuickSweep_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Corin',
@@ -1017,7 +1017,7 @@ export const formulas = {
     sheet: 'Corin',
     name: 'm6_dmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Corin',

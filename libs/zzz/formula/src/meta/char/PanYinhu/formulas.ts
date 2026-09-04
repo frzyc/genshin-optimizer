@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'PanYinhu',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'PanYinhu',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'disorderDmgInst_physical',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'PanYinhu',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'vortexDmgInst_physical',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'PanYinhu',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'PanYinhu',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'PanYinhu',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'PanYinhu',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'BasicAttackUnyieldingStrikes_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'PanYinhu',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'BasicAttackUnyieldingStrikes_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'PanYinhu',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'BasicAttackUnyieldingStrikes_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'PanYinhu',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'BasicAttackUnyieldingStrikes_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'PanYinhu',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'BasicAttackUnyieldingStrikes_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'PanYinhu',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'BasicAttackUnyieldingStrikes_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'PanYinhu',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'BasicAttackUnyieldingStrikes_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'PanYinhu',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'BasicAttackUnyieldingStrikes_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'PanYinhu',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'BasicAttackUnyieldingStrikes_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'PanYinhu',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'BasicAttackUnyieldingStrikes_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'PanYinhu',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'BasicAttackUnyieldingStrikes_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'PanYinhu',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'BasicAttackUnyieldingStrikes_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'PanYinhu',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'DashAttackSizzlingOilSupreme_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'PanYinhu',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'DashAttackSizzlingOilSupreme_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'PanYinhu',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'DashAttackSizzlingOilSupreme_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'PanYinhu',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'DodgeCounterMovingMountainsAndSeas_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'PanYinhu',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'DodgeCounterMovingMountainsAndSeas_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'PanYinhu',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'DodgeCounterMovingMountainsAndSeas_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'PanYinhu',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'SpecialAttackSonicPressurePointStrike_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'PanYinhu',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'SpecialAttackSonicPressurePointStrike_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'PanYinhu',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'SpecialAttackSonicPressurePointStrike_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'PanYinhu',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'SpecialAttackTouchOfDeath_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'PanYinhu',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'SpecialAttackTouchOfDeath_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'PanYinhu',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'SpecialAttackTouchOfDeath_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'PanYinhu',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'SpecialAttackTouchOfDeath_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'PanYinhu',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'SpecialAttackTouchOfDeath_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'PanYinhu',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'SpecialAttackTouchOfDeath_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'PanYinhu',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'SpecialAttackTouchOfDeath_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'PanYinhu',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'SpecialAttackTouchOfDeath_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'PanYinhu',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'SpecialAttackTouchOfDeath_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'PanYinhu',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'EXSpecialAttackMountainousPulseStrike_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'PanYinhu',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'EXSpecialAttackMountainousPulseStrike_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'PanYinhu',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'EXSpecialAttackMountainousPulseStrike_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'PanYinhu',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'ChainAttackAnointedWithWokSteam_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'PanYinhu',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'ChainAttackAnointedWithWokSteam_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'PanYinhu',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'ChainAttackAnointedWithWokSteam_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'PanYinhu',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'UltimateAFeastFitForAnEmperor_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'PanYinhu',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'UltimateAFeastFitForAnEmperor_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'PanYinhu',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'UltimateAFeastFitForAnEmperor_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'PanYinhu',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'QuickAssistLiftYourGazeToGoodFortune_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'PanYinhu',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'QuickAssistLiftYourGazeToGoodFortune_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'PanYinhu',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'QuickAssistLiftYourGazeToGoodFortune_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'PanYinhu',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'DefensiveAssistIntimidatingPresence_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'PanYinhu',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'DefensiveAssistIntimidatingPresence_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'PanYinhu',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'DefensiveAssistIntimidatingPresence_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'PanYinhu',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'DefensiveAssistIntimidatingPresence_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'PanYinhu',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'DefensiveAssistIntimidatingPresence_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'PanYinhu',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'DefensiveAssistIntimidatingPresence_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'PanYinhu',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'DefensiveAssistIntimidatingPresence_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'PanYinhu',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'DefensiveAssistIntimidatingPresence_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'PanYinhu',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'DefensiveAssistIntimidatingPresence_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'PanYinhu',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'AssistFollowUpRideTheMomentum_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'PanYinhu',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'AssistFollowUpRideTheMomentum_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'PanYinhu',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'AssistFollowUpRideTheMomentum_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'PanYinhu',
@@ -849,7 +849,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'ultimate_heal',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'heal',
       sheet: 'PanYinhu',
@@ -860,7 +860,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'ultimate_healOverTime',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'heal',
       sheet: 'PanYinhu',
@@ -871,7 +871,7 @@ export const formulas = {
     sheet: 'PanYinhu',
     name: 'm4_heal',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'heal',
       sheet: 'PanYinhu',

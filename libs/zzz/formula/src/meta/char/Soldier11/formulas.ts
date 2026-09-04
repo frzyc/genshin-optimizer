@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier11',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Soldier11',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'disorderDmgInst_fire',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Soldier11',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'vortexDmgInst_fire',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Soldier11',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Soldier11',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier11',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier11',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'BasicAttackWarmupSparks_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier11',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'BasicAttackWarmupSparks_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier11',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'BasicAttackWarmupSparks_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier11',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'BasicAttackWarmupSparks_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier11',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'BasicAttackWarmupSparks_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier11',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'BasicAttackWarmupSparks_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier11',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'BasicAttackWarmupSparks_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier11',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'BasicAttackWarmupSparks_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier11',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'BasicAttackWarmupSparks_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier11',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'BasicAttackWarmupSparks_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier11',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'BasicAttackWarmupSparks_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier11',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'BasicAttackWarmupSparks_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier11',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'BasicAttackFireSuppression_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier11',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'BasicAttackFireSuppression_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier11',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'BasicAttackFireSuppression_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier11',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'BasicAttackFireSuppression_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier11',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'BasicAttackFireSuppression_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier11',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'BasicAttackFireSuppression_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier11',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'BasicAttackFireSuppression_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier11',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'BasicAttackFireSuppression_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier11',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'BasicAttackFireSuppression_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier11',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'BasicAttackFireSuppression_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier11',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'BasicAttackFireSuppression_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier11',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'BasicAttackFireSuppression_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier11',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'BasicAttackFireSuppression_4:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier11',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'BasicAttackFireSuppression_4:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier11',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'BasicAttackFireSuppression_4:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier11',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'BasicAttackFireSuppression_5:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier11',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'BasicAttackFireSuppression_5:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier11',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'BasicAttackFireSuppression_5:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier11',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'BasicAttackFireSuppression_6:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier11',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'BasicAttackFireSuppression_6:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier11',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'BasicAttackFireSuppression_6:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier11',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'DashAttackBlazingFire_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier11',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'DashAttackBlazingFire_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier11',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'DashAttackBlazingFire_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier11',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'DashAttackFireSuppression_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier11',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'DashAttackFireSuppression_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier11',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'DashAttackFireSuppression_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier11',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'DodgeCounterBackdraft_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier11',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'DodgeCounterBackdraft_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier11',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'DodgeCounterBackdraft_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier11',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'SpecialAttackRagingFire_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier11',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'SpecialAttackRagingFire_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier11',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'SpecialAttackRagingFire_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier11',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'EXSpecialAttackFerventFire_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier11',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'EXSpecialAttackFerventFire_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier11',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'EXSpecialAttackFerventFire_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier11',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'ChainAttackUpliftingFlame_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier11',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'ChainAttackUpliftingFlame_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier11',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'ChainAttackUpliftingFlame_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier11',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'UltimateBellowingFlame_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier11',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'UltimateBellowingFlame_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier11',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'UltimateBellowingFlame_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier11',
@@ -849,7 +849,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'QuickAssistCoveringFire_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier11',
@@ -863,7 +863,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'QuickAssistCoveringFire_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier11',
@@ -877,7 +877,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'QuickAssistCoveringFire_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier11',
@@ -891,7 +891,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'DefensiveAssistHoldTheLine_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier11',
@@ -905,7 +905,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'DefensiveAssistHoldTheLine_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier11',
@@ -919,7 +919,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'DefensiveAssistHoldTheLine_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier11',
@@ -933,7 +933,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'DefensiveAssistHoldTheLine_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier11',
@@ -947,7 +947,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'DefensiveAssistHoldTheLine_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier11',
@@ -961,7 +961,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'DefensiveAssistHoldTheLine_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier11',
@@ -975,7 +975,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'DefensiveAssistHoldTheLine_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier11',
@@ -989,7 +989,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'DefensiveAssistHoldTheLine_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier11',
@@ -1003,7 +1003,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'DefensiveAssistHoldTheLine_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier11',
@@ -1017,7 +1017,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'AssistFollowUpReignition_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soldier11',
@@ -1031,7 +1031,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'AssistFollowUpReignition_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soldier11',
@@ -1045,7 +1045,7 @@ export const formulas = {
     sheet: 'Soldier11',
     name: 'AssistFollowUpReignition_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soldier11',

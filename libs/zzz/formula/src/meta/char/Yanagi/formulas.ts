@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yanagi',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Yanagi',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'disorderDmgInst_electric',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Yanagi',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'vortexDmgInst_electric',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Yanagi',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Yanagi',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yanagi',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yanagi',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'StanceJougen_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yanagi',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'StanceJougen_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yanagi',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'StanceJougen_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yanagi',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'StanceJougen_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yanagi',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'StanceJougen_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yanagi',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'StanceJougen_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yanagi',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'StanceJougen_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yanagi',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'StanceJougen_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yanagi',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'StanceJougen_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yanagi',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'StanceJougen_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yanagi',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'StanceJougen_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yanagi',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'StanceJougen_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yanagi',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'StanceJougen_4:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yanagi',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'StanceJougen_4:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yanagi',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'StanceJougen_4:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yanagi',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'StanceKagen_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yanagi',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'StanceKagen_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yanagi',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'StanceKagen_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yanagi',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'StanceKagen_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yanagi',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'StanceKagen_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yanagi',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'StanceKagen_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yanagi',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'StanceKagen_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yanagi',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'StanceKagen_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yanagi',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'StanceKagen_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yanagi',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'StanceKagen_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yanagi',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'StanceKagen_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yanagi',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'StanceKagen_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yanagi',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'StanceKagen_4:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yanagi',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'StanceKagen_4:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yanagi',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'StanceKagen_4:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yanagi',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'DashAttackFleetingFlight_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yanagi',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'DashAttackFleetingFlight_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yanagi',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'DashAttackFleetingFlight_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yanagi',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'DodgeCounterRapidRetaliation_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yanagi',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'DodgeCounterRapidRetaliation_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yanagi',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'DodgeCounterRapidRetaliation_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yanagi',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'SpecialAttackRuten_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yanagi',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'SpecialAttackRuten_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yanagi',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'SpecialAttackRuten_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yanagi',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'EXSpecialAttackGekkaRuten_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yanagi',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'EXSpecialAttackGekkaRuten_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yanagi',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'EXSpecialAttackGekkaRuten_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yanagi',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'EXSpecialAttackGekkaRuten_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yanagi',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'EXSpecialAttackGekkaRuten_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yanagi',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'EXSpecialAttackGekkaRuten_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yanagi',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'ChainAttackCelestialHarmony_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yanagi',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'ChainAttackCelestialHarmony_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yanagi',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'ChainAttackCelestialHarmony_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yanagi',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'UltimateRaieiTenge_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yanagi',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'UltimateRaieiTenge_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yanagi',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'UltimateRaieiTenge_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yanagi',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'QuickAssistBladeOfElegance_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yanagi',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'QuickAssistBladeOfElegance_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yanagi',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'QuickAssistBladeOfElegance_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yanagi',
@@ -849,7 +849,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'DefensiveAssistRadiantReversal_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yanagi',
@@ -863,7 +863,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'DefensiveAssistRadiantReversal_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yanagi',
@@ -877,7 +877,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'DefensiveAssistRadiantReversal_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yanagi',
@@ -891,7 +891,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'DefensiveAssistRadiantReversal_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yanagi',
@@ -905,7 +905,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'DefensiveAssistRadiantReversal_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yanagi',
@@ -919,7 +919,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'DefensiveAssistRadiantReversal_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yanagi',
@@ -933,7 +933,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'DefensiveAssistRadiantReversal_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yanagi',
@@ -947,7 +947,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'DefensiveAssistRadiantReversal_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yanagi',
@@ -961,7 +961,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'DefensiveAssistRadiantReversal_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yanagi',
@@ -975,7 +975,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'AssistFollowUpWeepingWillowStab_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Yanagi',
@@ -989,7 +989,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'AssistFollowUpWeepingWillowStab_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yanagi',
@@ -1003,7 +1003,7 @@ export const formulas = {
     sheet: 'Yanagi',
     name: 'AssistFollowUpWeepingWillowStab_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yanagi',

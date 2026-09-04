@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pyrois',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Pyrois',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'disorderDmgInst_ether',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Pyrois',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'vortexDmgInst_ether',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Pyrois',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Pyrois',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pyrois',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pyrois',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'BasicAttackEmberglow_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pyrois',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'BasicAttackEmberglow_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pyrois',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'BasicAttackEmberglow_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pyrois',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'BasicAttackEmberglow_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pyrois',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'BasicAttackEmberglow_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pyrois',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'BasicAttackEmberglow_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pyrois',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'BasicAttackEmberglow_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pyrois',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'BasicAttackEmberglow_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pyrois',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'BasicAttackEmberglow_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pyrois',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'BasicAttackCelestialLight_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pyrois',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'BasicAttackCelestialLight_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pyrois',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'BasicAttackCelestialLight_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pyrois',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'BasicAttackCelestialLight_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pyrois',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'BasicAttackCelestialLight_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pyrois',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'BasicAttackCelestialLight_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pyrois',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'BasicAttackCelestialLight_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pyrois',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'BasicAttackCelestialLight_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pyrois',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'BasicAttackCelestialLight_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pyrois',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'BasicAttackCelestialLight_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pyrois',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'BasicAttackCelestialLight_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pyrois',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'BasicAttackCelestialLight_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pyrois',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'DashAttackSunrise_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pyrois',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'DashAttackSunrise_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pyrois',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'DashAttackSunrise_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pyrois',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'DodgeCounterFirstLight_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pyrois',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'DodgeCounterFirstLight_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pyrois',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'DodgeCounterFirstLight_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pyrois',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'SpecialAttackFadingRays_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pyrois',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'SpecialAttackFadingRays_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pyrois',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'SpecialAttackFadingRays_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pyrois',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'EXSpecialAttackSunsHalo_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pyrois',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'EXSpecialAttackSunsHalo_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pyrois',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'EXSpecialAttackSunsHalo_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pyrois',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'SpecialAttackAssaultDirective_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pyrois',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'SpecialAttackAssaultDirective_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pyrois',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'SpecialAttackAssaultDirective_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pyrois',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'ChainAttackCeremonialMarch_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pyrois',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'ChainAttackCeremonialMarch_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pyrois',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'ChainAttackCeremonialMarch_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pyrois',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'UltimateTotalAnnihilation_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pyrois',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'UltimateTotalAnnihilation_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pyrois',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'UltimateTotalAnnihilation_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pyrois',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'UltimateTriumphantReturn_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pyrois',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'UltimateTriumphantReturn_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pyrois',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'UltimateTriumphantReturn_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pyrois',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'UltimateUnboundSwordstorm_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pyrois',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'UltimateUnboundSwordstorm_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pyrois',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'UltimateUnboundSwordstorm_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pyrois',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'UltimateEternalImprisonment_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pyrois',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'UltimateEternalImprisonment_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pyrois',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'UltimateEternalImprisonment_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pyrois',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'QuickAssistDuskguard_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pyrois',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'QuickAssistDuskguard_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pyrois',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'QuickAssistDuskguard_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pyrois',
@@ -849,7 +849,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'DefensiveAssistIronhideBehemoth_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pyrois',
@@ -863,7 +863,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'DefensiveAssistIronhideBehemoth_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pyrois',
@@ -877,7 +877,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'DefensiveAssistIronhideBehemoth_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pyrois',
@@ -891,7 +891,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'DefensiveAssistIronhideBehemoth_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pyrois',
@@ -905,7 +905,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'DefensiveAssistIronhideBehemoth_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pyrois',
@@ -919,7 +919,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'DefensiveAssistIronhideBehemoth_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pyrois',
@@ -933,7 +933,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'DefensiveAssistIronhideBehemoth_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pyrois',
@@ -947,7 +947,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'DefensiveAssistIronhideBehemoth_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pyrois',
@@ -961,7 +961,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'DefensiveAssistIronhideBehemoth_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pyrois',
@@ -975,7 +975,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'AssistFollowUpReturnToDaylight_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Pyrois',
@@ -989,7 +989,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'AssistFollowUpReturnToDaylight_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Pyrois',
@@ -1003,7 +1003,7 @@ export const formulas = {
     sheet: 'Pyrois',
     name: 'AssistFollowUpReturnToDaylight_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Pyrois',

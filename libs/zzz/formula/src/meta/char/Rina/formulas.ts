@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Rina',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Rina',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'disorderDmgInst_electric',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Rina',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'vortexDmgInst_electric',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Rina',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Rina',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Rina',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Rina',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'BasicAttackWhackTheDimwit_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Rina',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'BasicAttackWhackTheDimwit_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Rina',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'BasicAttackWhackTheDimwit_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Rina',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'BasicAttackWhackTheDimwit_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Rina',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'BasicAttackWhackTheDimwit_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Rina',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'BasicAttackWhackTheDimwit_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Rina',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'BasicAttackWhackTheDimwit_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Rina',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'BasicAttackWhackTheDimwit_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Rina',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'BasicAttackWhackTheDimwit_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Rina',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'BasicAttackWhackTheDimwit_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Rina',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'BasicAttackWhackTheDimwit_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Rina',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'BasicAttackWhackTheDimwit_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Rina',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'BasicAttackShooTheFool_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Rina',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'BasicAttackShooTheFool_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Rina',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'BasicAttackShooTheFool_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Rina',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'DashAttackSuddenSurprise_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Rina',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'DashAttackSuddenSurprise_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Rina',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'DashAttackSuddenSurprise_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Rina',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'DodgeCounterBangbooCallback_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Rina',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'DodgeCounterBangbooCallback_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Rina',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'DodgeCounterBangbooCallback_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Rina',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'SpecialAttackBeatTheBlockhead_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Rina',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'SpecialAttackBeatTheBlockhead_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Rina',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'SpecialAttackBeatTheBlockhead_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Rina',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'EXSpecialAttackDimwitDisappearingTrick_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Rina',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'EXSpecialAttackDimwitDisappearingTrick_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Rina',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'EXSpecialAttackDimwitDisappearingTrick_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Rina',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'ChainAttackCodeOfConduct_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Rina',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'ChainAttackCodeOfConduct_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Rina',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'ChainAttackCodeOfConduct_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Rina',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'UltimateTheQueensAttendants_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Rina',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'UltimateTheQueensAttendants_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Rina',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'UltimateTheQueensAttendants_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Rina',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'QuickAssistDupleMeterAllemande_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Rina',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'QuickAssistDupleMeterAllemande_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Rina',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'QuickAssistDupleMeterAllemande_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Rina',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'AssistFollowUpQuadrupleMeterGavotte_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Rina',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'AssistFollowUpQuadrupleMeterGavotte_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Rina',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Rina',
     name: 'AssistFollowUpQuadrupleMeterGavotte_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Rina',

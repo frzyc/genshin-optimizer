@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Trigger',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Trigger',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'disorderDmgInst_electric',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Trigger',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'vortexDmgInst_electric',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Trigger',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Trigger',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Trigger',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Trigger',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'BasicAttackColdBoreShot_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Trigger',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'BasicAttackColdBoreShot_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Trigger',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'BasicAttackColdBoreShot_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Trigger',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'BasicAttackColdBoreShot_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Trigger',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'BasicAttackColdBoreShot_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Trigger',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'BasicAttackColdBoreShot_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Trigger',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'BasicAttackColdBoreShot_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Trigger',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'BasicAttackColdBoreShot_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Trigger',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'BasicAttackColdBoreShot_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Trigger',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'BasicAttackColdBoreShot_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Trigger',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'BasicAttackColdBoreShot_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Trigger',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'BasicAttackColdBoreShot_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Trigger',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'BasicAttackSilencedShot_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Trigger',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'BasicAttackSilencedShot_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Trigger',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'BasicAttackSilencedShot_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Trigger',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'BasicAttackSilencedShot_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Trigger',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'BasicAttackSilencedShot_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Trigger',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'BasicAttackSilencedShot_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Trigger',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'BasicAttackSilencedShot_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Trigger',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'BasicAttackSilencedShot_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Trigger',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'BasicAttackSilencedShot_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Trigger',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'BasicAttackHarmonizingShot_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Trigger',
@@ -402,7 +402,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'BasicAttackHarmonizingShot_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Trigger',
@@ -417,7 +417,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'BasicAttackHarmonizingShot_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Trigger',
@@ -432,7 +432,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'BasicAttackHarmonizingShotTartarus_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Trigger',
@@ -447,7 +447,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'BasicAttackHarmonizingShotTartarus_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Trigger',
@@ -462,7 +462,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'BasicAttackHarmonizingShotTartarus_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Trigger',
@@ -477,7 +477,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'BasicAttackHarmonizingShotTartarus_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Trigger',
@@ -492,7 +492,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'BasicAttackHarmonizingShotTartarus_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Trigger',
@@ -507,7 +507,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'BasicAttackHarmonizingShotTartarus_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Trigger',
@@ -522,7 +522,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'DashAttackVengefulSpecter_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Trigger',
@@ -536,7 +536,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'DashAttackVengefulSpecter_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Trigger',
@@ -550,7 +550,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'DashAttackVengefulSpecter_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Trigger',
@@ -564,7 +564,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'DodgeCounterCondemnedSoul_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Trigger',
@@ -578,7 +578,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'DodgeCounterCondemnedSoul_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Trigger',
@@ -592,7 +592,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'DodgeCounterCondemnedSoul_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Trigger',
@@ -606,7 +606,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'SpecialAttackSpectralFlash_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Trigger',
@@ -620,7 +620,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'SpecialAttackSpectralFlash_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Trigger',
@@ -634,7 +634,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'SpecialAttackSpectralFlash_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Trigger',
@@ -648,7 +648,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'EXSpecialAttackFlashBurial_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Trigger',
@@ -662,7 +662,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'EXSpecialAttackFlashBurial_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Trigger',
@@ -676,7 +676,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'EXSpecialAttackFlashBurial_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Trigger',
@@ -690,7 +690,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'ChainAttackStygianGuide_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Trigger',
@@ -704,7 +704,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'ChainAttackStygianGuide_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Trigger',
@@ -718,7 +718,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'ChainAttackStygianGuide_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Trigger',
@@ -732,7 +732,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'UltimateUnderworldRequiem_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Trigger',
@@ -746,7 +746,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'UltimateUnderworldRequiem_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Trigger',
@@ -760,7 +760,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'UltimateUnderworldRequiem_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Trigger',
@@ -774,7 +774,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'QuickAssistColdBoreCoverFire_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Trigger',
@@ -788,7 +788,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'QuickAssistColdBoreCoverFire_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Trigger',
@@ -802,7 +802,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'QuickAssistColdBoreCoverFire_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Trigger',
@@ -816,7 +816,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'DefensiveAssistDelayingDemise_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Trigger',
@@ -830,7 +830,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'DefensiveAssistDelayingDemise_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Trigger',
@@ -844,7 +844,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'DefensiveAssistDelayingDemise_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Trigger',
@@ -858,7 +858,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'DefensiveAssistDelayingDemise_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Trigger',
@@ -872,7 +872,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'DefensiveAssistDelayingDemise_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Trigger',
@@ -886,7 +886,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'DefensiveAssistDelayingDemise_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Trigger',
@@ -900,7 +900,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'DefensiveAssistDelayingDemise_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Trigger',
@@ -914,7 +914,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'DefensiveAssistDelayingDemise_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Trigger',
@@ -928,7 +928,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'DefensiveAssistDelayingDemise_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Trigger',
@@ -942,7 +942,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'AssistFollowUpPiercingThunder_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Trigger',
@@ -956,7 +956,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'AssistFollowUpPiercingThunder_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Trigger',
@@ -970,7 +970,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'AssistFollowUpPiercingThunder_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Trigger',
@@ -984,7 +984,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'm4_disconnect_dmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Trigger',
@@ -996,7 +996,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'm4_disconnect_daze',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Trigger',
@@ -1008,7 +1008,7 @@ export const formulas = {
     sheet: 'Trigger',
     name: 'm6_armor_break_rounds_dmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Trigger',

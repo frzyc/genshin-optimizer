@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anby',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Anby',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'disorderDmgInst_electric',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Anby',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'vortexDmgInst_electric',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Anby',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Anby',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anby',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anby',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'BasicAttackTurboVolt_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anby',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'BasicAttackTurboVolt_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anby',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'BasicAttackTurboVolt_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anby',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'BasicAttackTurboVolt_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anby',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'BasicAttackTurboVolt_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anby',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'BasicAttackTurboVolt_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anby',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'BasicAttackTurboVolt_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anby',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'BasicAttackTurboVolt_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anby',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'BasicAttackTurboVolt_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anby',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'BasicAttackTurboVolt_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anby',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'BasicAttackTurboVolt_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anby',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'BasicAttackTurboVolt_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anby',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'BasicAttackThunderbolt_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anby',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'BasicAttackThunderbolt_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anby',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'BasicAttackThunderbolt_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anby',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'DashAttackTaserBlast_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anby',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'DashAttackTaserBlast_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anby',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'DashAttackTaserBlast_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anby',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'DodgeCounterThunderclap_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anby',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'DodgeCounterThunderclap_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anby',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'DodgeCounterThunderclap_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anby',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'SpecialAttackForkLightning_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anby',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'SpecialAttackForkLightning_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anby',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'SpecialAttackForkLightning_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anby',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'EXSpecialAttackLightningBolt_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anby',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'EXSpecialAttackLightningBolt_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anby',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'EXSpecialAttackLightningBolt_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anby',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'ChainAttackElectroEngine_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anby',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'ChainAttackElectroEngine_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anby',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'ChainAttackElectroEngine_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anby',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'UltimateOverdriveEngine_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anby',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'UltimateOverdriveEngine_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anby',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'UltimateOverdriveEngine_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anby',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'QuickAssistThunderfall_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anby',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'QuickAssistThunderfall_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anby',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'QuickAssistThunderfall_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anby',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'DefensiveAssistFlash_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anby',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'DefensiveAssistFlash_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anby',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'DefensiveAssistFlash_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anby',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'DefensiveAssistFlash_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anby',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'DefensiveAssistFlash_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anby',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'DefensiveAssistFlash_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anby',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'DefensiveAssistFlash_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anby',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'DefensiveAssistFlash_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anby',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'DefensiveAssistFlash_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anby',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'AssistFollowUpLightningWhirl_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anby',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'AssistFollowUpLightningWhirl_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anby',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Anby',
     name: 'AssistFollowUpLightningWhirl_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anby',

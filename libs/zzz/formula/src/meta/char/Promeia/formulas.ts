@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Promeia',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Promeia',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'disorderDmgInst_ice',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Promeia',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'vortexDmgInst_ice',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Promeia',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Promeia',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Promeia',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Promeia',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'BasicAttackSweepingEdge_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Promeia',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'BasicAttackSweepingEdge_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Promeia',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'BasicAttackSweepingEdge_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Promeia',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'BasicAttackSweepingEdge_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Promeia',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'BasicAttackSweepingEdge_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Promeia',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'BasicAttackSweepingEdge_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Promeia',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'BasicAttackSweepingEdge_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Promeia',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'BasicAttackSweepingEdge_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Promeia',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'BasicAttackSweepingEdge_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Promeia',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'BasicAttackSweepingEdge_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Promeia',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'BasicAttackSweepingEdge_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Promeia',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'BasicAttackSweepingEdge_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Promeia',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'BasicAttackSweepingEdge_4:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Promeia',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'BasicAttackSweepingEdge_4:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Promeia',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'BasicAttackSweepingEdge_4:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Promeia',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'BasicAttackSweepingEdge_5:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Promeia',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'BasicAttackSweepingEdge_5:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Promeia',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'BasicAttackSweepingEdge_5:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Promeia',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'BasicAttackWhirlingBlade_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Promeia',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'BasicAttackWhirlingBlade_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Promeia',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'BasicAttackWhirlingBlade_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Promeia',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'DashAttackGrimReap_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Promeia',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'DashAttackGrimReap_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Promeia',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'DashAttackGrimReap_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Promeia',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'DodgeCounterSoaringBat_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Promeia',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'DodgeCounterSoaringBat_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Promeia',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'DodgeCounterSoaringBat_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Promeia',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'SpecialAttackExecutionColdFlash_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Promeia',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'SpecialAttackExecutionColdFlash_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Promeia',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'SpecialAttackExecutionColdFlash_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Promeia',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'EXSpecialAttackExecutionGlacialDeath_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Promeia',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'EXSpecialAttackExecutionGlacialDeath_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Promeia',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'EXSpecialAttackExecutionGlacialDeath_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Promeia',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'SpecialAttackExecutionDescendingFrost_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Promeia',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'SpecialAttackExecutionDescendingFrost_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Promeia',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'SpecialAttackExecutionDescendingFrost_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Promeia',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'SpecialAttackExecutionLayeredFrost_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Promeia',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'SpecialAttackExecutionLayeredFrost_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Promeia',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'SpecialAttackExecutionLayeredFrost_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Promeia',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'SpecialAttackExecutionLayeredFrost_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Promeia',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'SpecialAttackExecutionLayeredFrost_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Promeia',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'SpecialAttackExecutionLayeredFrost_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Promeia',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'EXSpecialAttackExecutionMercilessJudgment_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Promeia',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'EXSpecialAttackExecutionMercilessJudgment_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Promeia',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'EXSpecialAttackExecutionMercilessJudgment_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Promeia',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'ChainAttackHangingJudgment_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Promeia',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'ChainAttackHangingJudgment_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Promeia',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'ChainAttackHangingJudgment_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Promeia',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'UltimateGlaciatingImpalement_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Promeia',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'UltimateGlaciatingImpalement_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Promeia',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'UltimateGlaciatingImpalement_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Promeia',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'QuickAssistAmbushingStrike_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Promeia',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'QuickAssistAmbushingStrike_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Promeia',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'QuickAssistAmbushingStrike_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Promeia',
@@ -849,7 +849,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'DefensiveAssistInjunction_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Promeia',
@@ -863,7 +863,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'DefensiveAssistInjunction_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Promeia',
@@ -877,7 +877,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'DefensiveAssistInjunction_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Promeia',
@@ -891,7 +891,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'DefensiveAssistInjunction_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Promeia',
@@ -905,7 +905,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'DefensiveAssistInjunction_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Promeia',
@@ -919,7 +919,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'DefensiveAssistInjunction_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Promeia',
@@ -933,7 +933,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'DefensiveAssistInjunction_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Promeia',
@@ -947,7 +947,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'DefensiveAssistInjunction_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Promeia',
@@ -961,7 +961,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'DefensiveAssistInjunction_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Promeia',
@@ -975,7 +975,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'AssistFollowUpInterceptingStrike_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Promeia',
@@ -989,7 +989,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'AssistFollowUpInterceptingStrike_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Promeia',
@@ -1003,7 +1003,7 @@ export const formulas = {
     sheet: 'Promeia',
     name: 'AssistFollowUpInterceptingStrike_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Promeia',

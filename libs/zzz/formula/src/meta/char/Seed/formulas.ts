@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seed',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Seed',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'disorderDmgInst_electric',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Seed',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'vortexDmgInst_electric',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Seed',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Seed',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seed',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seed',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'BasicAttackChrysanthemumWheelDance_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seed',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'BasicAttackChrysanthemumWheelDance_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seed',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'BasicAttackChrysanthemumWheelDance_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seed',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'BasicAttackChrysanthemumWheelDance_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seed',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'BasicAttackChrysanthemumWheelDance_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seed',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'BasicAttackChrysanthemumWheelDance_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seed',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'BasicAttackChrysanthemumWheelDance_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seed',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'BasicAttackChrysanthemumWheelDance_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seed',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'BasicAttackChrysanthemumWheelDance_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seed',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'BasicAttackChrysanthemumWheelDance_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seed',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'BasicAttackChrysanthemumWheelDance_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seed',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'BasicAttackChrysanthemumWheelDance_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seed',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'BasicAttackFallingPetalsSlaughter_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seed',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'BasicAttackFallingPetalsSlaughter_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seed',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'BasicAttackFallingPetalsSlaughter_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seed',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'BasicAttackFallingPetalsDownfallFirstForm_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seed',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'BasicAttackFallingPetalsDownfallFirstForm_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seed',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'BasicAttackFallingPetalsDownfallFirstForm_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seed',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'BasicAttackFallingPetalsDownfallSecondForm_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seed',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'BasicAttackFallingPetalsDownfallSecondForm_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seed',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'BasicAttackFallingPetalsDownfallSecondForm_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seed',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'DashAttackMagneticWheelDance_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seed',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'DashAttackMagneticWheelDance_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seed',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'DashAttackMagneticWheelDance_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seed',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'DodgeCounterBlossomBurst_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seed',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'DodgeCounterBlossomBurst_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seed',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'DodgeCounterBlossomBurst_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seed',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'SpecialAttackWitheredInFrost_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seed',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'SpecialAttackWitheredInFrost_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seed',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'SpecialAttackWitheredInFrost_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seed',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'EXSpecialAttackRainingIronPetals_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seed',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'EXSpecialAttackRainingIronPetals_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seed',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'EXSpecialAttackRainingIronPetals_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seed',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'EXSpecialAttackRainingIronPetalsAway_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seed',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'EXSpecialAttackRainingIronPetalsAway_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seed',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'EXSpecialAttackRainingIronPetalsAway_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seed',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'ChainAttackTempestOfFrostyPetals_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seed',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'ChainAttackTempestOfFrostyPetals_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seed',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'ChainAttackTempestOfFrostyPetals_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seed',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'UltimateClockworkGardenBloom_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seed',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'UltimateClockworkGardenBloom_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seed',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'UltimateClockworkGardenBloom_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seed',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'QuickAssistBarrageOfRainingFlowers_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seed',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'QuickAssistBarrageOfRainingFlowers_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seed',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'QuickAssistBarrageOfRainingFlowers_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seed',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'DefensiveAssistSproutingBarrier_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seed',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'DefensiveAssistSproutingBarrier_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seed',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'DefensiveAssistSproutingBarrier_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seed',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'DefensiveAssistSproutingBarrier_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seed',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'DefensiveAssistSproutingBarrier_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seed',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'DefensiveAssistSproutingBarrier_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seed',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'DefensiveAssistSproutingBarrier_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seed',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'DefensiveAssistSproutingBarrier_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seed',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'DefensiveAssistSproutingBarrier_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seed',
@@ -849,7 +849,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'AssistFollowUpCrimsonCoreBurst_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seed',
@@ -863,7 +863,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'AssistFollowUpCrimsonCoreBurst_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Seed',
@@ -877,7 +877,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'AssistFollowUpCrimsonCoreBurst_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Seed',
@@ -891,7 +891,7 @@ export const formulas = {
     sheet: 'Seed',
     name: 'm6_dmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Seed',

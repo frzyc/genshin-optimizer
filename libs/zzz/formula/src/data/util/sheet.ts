@@ -116,15 +116,28 @@ function registerFormula(
     | 'anomBuildup'
     | 'abloomDmg',
   cond: string | StrNode,
+  entry: TagMapNodeEntry,
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
   reader.name(name) // register name:<name>
+  const { tag } = entry
+  const namedReader = reader.withTag({
+    ...tag,
+    et: 'display',
+    qt: 'formula',
+    q,
+    name,
+  }) // register name:<name>
   const listing = (team ? teamBuff : ownBuff).listing.formulas
+  console.log(namedReader.add(namedReader.withTag({ et: 'own' })))
   return [
-    listing.add(
-      listingItem(reader.withTag({ name, et: 'own', qt: 'formula', q }), cond)
-    ),
-    ...extra.map(({ tag, value }) => ({ tag: { ...tag, name }, value })),
+    listing.add(listingItem(namedReader, cond)),
+    // namedReader.add(namedReader.withTag({ et: 'own' })),
+    namedReader.toEntry(entry.value),
+    ...[entry, ...extra].map(({ tag, value }) => ({
+      tag: { ...tag, name },
+      value,
+    })),
   ]
 }
 

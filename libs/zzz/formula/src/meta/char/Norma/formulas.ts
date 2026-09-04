@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Norma',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Norma',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'disorderDmgInst_fire',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Norma',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'vortexDmgInst_fire',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Norma',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Norma',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Norma',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Norma',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'BasicAttackEngineeringInsurance_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Norma',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'BasicAttackEngineeringInsurance_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Norma',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'BasicAttackEngineeringInsurance_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Norma',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'BasicAttackEngineeringInsurance_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Norma',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'BasicAttackEngineeringInsurance_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Norma',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'BasicAttackEngineeringInsurance_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Norma',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'BasicAttackEngineeringInsurance_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Norma',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'BasicAttackEngineeringInsurance_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Norma',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'BasicAttackEngineeringInsurance_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Norma',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'BasicAttackEngineeringInsurance_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Norma',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'BasicAttackEngineeringInsurance_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Norma',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'BasicAttackEngineeringInsurance_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Norma',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'BasicAttackHatTrick_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Norma',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'BasicAttackHatTrick_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Norma',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'BasicAttackHatTrick_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Norma',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'DashAttackDeadlineRush_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Norma',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'DashAttackDeadlineRush_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Norma',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'DashAttackDeadlineRush_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Norma',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'DodgeCounterComplianceTesting_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Norma',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'DodgeCounterComplianceTesting_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Norma',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'DodgeCounterComplianceTesting_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Norma',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'SpecialAttackThermalShutdown_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Norma',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'SpecialAttackThermalShutdown_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Norma',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'SpecialAttackThermalShutdown_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Norma',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'EXSpecialAttackEnNahBarrage_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Norma',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'EXSpecialAttackEnNahBarrage_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Norma',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'EXSpecialAttackEnNahBarrage_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Norma',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'EXSpecialAttackEnNahBarrage_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Norma',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'EXSpecialAttackEnNahBarrage_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Norma',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'EXSpecialAttackEnNahBarrage_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Norma',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'EXSpecialAttackEnNahBarrage_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Norma',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'EXSpecialAttackEnNahBarrage_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Norma',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'EXSpecialAttackEnNahBarrage_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Norma',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'EXSpecialAttackEnNahBarrage_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Norma',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'EXSpecialAttackEnNahBarrage_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Norma',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'EXSpecialAttackEnNahBarrage_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Norma',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'EXSpecialAttackEnNahBarrage_4:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Norma',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'EXSpecialAttackEnNahBarrage_4:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Norma',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'EXSpecialAttackEnNahBarrage_4:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Norma',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'EXSpecialAttackEnNahBarrage_5:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Norma',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'EXSpecialAttackEnNahBarrage_5:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Norma',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'EXSpecialAttackEnNahBarrage_5:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Norma',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'SpecialAttackTargetPractice_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Norma',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'SpecialAttackTargetPractice_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Norma',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'SpecialAttackTargetPractice_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Norma',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'EXSpecialAttackExplosiveExperiment_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Norma',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'EXSpecialAttackExplosiveExperiment_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Norma',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'EXSpecialAttackExplosiveExperiment_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Norma',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'EXSpecialAttackExplosiveExperiment_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Norma',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'EXSpecialAttackExplosiveExperiment_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Norma',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'EXSpecialAttackExplosiveExperiment_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Norma',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'ChainAttackImpactDrill_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Norma',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'ChainAttackImpactDrill_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Norma',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'ChainAttackImpactDrill_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Norma',
@@ -849,7 +849,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'UltimateDoctrineOfSuperiorFirepower_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Norma',
@@ -863,7 +863,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'UltimateDoctrineOfSuperiorFirepower_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Norma',
@@ -877,7 +877,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'UltimateDoctrineOfSuperiorFirepower_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Norma',
@@ -891,7 +891,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'QuickAssistRoaringBackup_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Norma',
@@ -905,7 +905,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'QuickAssistRoaringBackup_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Norma',
@@ -919,7 +919,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'QuickAssistRoaringBackup_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Norma',
@@ -933,7 +933,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'DefensiveAssistTechnologicalBastion_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Norma',
@@ -947,7 +947,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'DefensiveAssistTechnologicalBastion_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Norma',
@@ -961,7 +961,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'DefensiveAssistTechnologicalBastion_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Norma',
@@ -975,7 +975,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'DefensiveAssistTechnologicalBastion_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Norma',
@@ -989,7 +989,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'DefensiveAssistTechnologicalBastion_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Norma',
@@ -1003,7 +1003,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'DefensiveAssistTechnologicalBastion_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Norma',
@@ -1017,7 +1017,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'DefensiveAssistTechnologicalBastion_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Norma',
@@ -1031,7 +1031,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'DefensiveAssistTechnologicalBastion_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Norma',
@@ -1045,7 +1045,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'DefensiveAssistTechnologicalBastion_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Norma',
@@ -1059,7 +1059,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'AssistFollowUpTechnologicalSuppression_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Norma',
@@ -1073,7 +1073,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'AssistFollowUpTechnologicalSuppression_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Norma',
@@ -1087,7 +1087,7 @@ export const formulas = {
     sheet: 'Norma',
     name: 'AssistFollowUpTechnologicalSuppression_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Norma',

@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Dialyn',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Dialyn',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'disorderDmgInst_physical',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Dialyn',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'vortexDmgInst_physical',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Dialyn',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Dialyn',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Dialyn',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Dialyn',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'BasicAttackHappyToBeOfService_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Dialyn',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'BasicAttackHappyToBeOfService_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Dialyn',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'BasicAttackHappyToBeOfService_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Dialyn',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'BasicAttackHappyToBeOfService_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Dialyn',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'BasicAttackHappyToBeOfService_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Dialyn',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'BasicAttackHappyToBeOfService_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Dialyn',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'BasicAttackHappyToBeOfService_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Dialyn',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'BasicAttackHappyToBeOfService_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Dialyn',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'BasicAttackHappyToBeOfService_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Dialyn',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'BasicAttackHappyToBeOfService_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Dialyn',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'BasicAttackHappyToBeOfService_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Dialyn',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'BasicAttackHappyToBeOfService_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Dialyn',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'BasicAttackRockPaperScissors_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Dialyn',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'BasicAttackRockPaperScissors_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Dialyn',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'BasicAttackRockPaperScissors_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Dialyn',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'BasicAttackRockPaperScissors_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Dialyn',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'BasicAttackRockPaperScissors_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Dialyn',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'BasicAttackRockPaperScissors_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Dialyn',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'BasicAttackRockPaperScissors_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Dialyn',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'BasicAttackRockPaperScissors_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Dialyn',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'BasicAttackRockPaperScissors_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Dialyn',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'BasicAttackRockPaperScissors_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Dialyn',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'BasicAttackRockPaperScissors_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Dialyn',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'BasicAttackRockPaperScissors_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Dialyn',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'DashAttackSuddenCall_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Dialyn',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'DashAttackSuddenCall_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Dialyn',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'DashAttackSuddenCall_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Dialyn',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'DodgeCounterNumberUnavailable_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Dialyn',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'DodgeCounterNumberUnavailable_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Dialyn',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'DodgeCounterNumberUnavailable_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Dialyn',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'EXSpecialAttackGetLost_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Dialyn',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'EXSpecialAttackGetLost_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Dialyn',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'EXSpecialAttackGetLost_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Dialyn',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'SpecialAttackWelcomeGesture_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Dialyn',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'SpecialAttackWelcomeGesture_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Dialyn',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'SpecialAttackWelcomeGesture_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Dialyn',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'EXSpecialAttackRock_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Dialyn',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'EXSpecialAttackRock_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Dialyn',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'EXSpecialAttackRock_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Dialyn',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'EXSpecialAttackScissors_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Dialyn',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'EXSpecialAttackScissors_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Dialyn',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'EXSpecialAttackScissors_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Dialyn',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'EXSpecialAttackPaper_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Dialyn',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'EXSpecialAttackPaper_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Dialyn',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'EXSpecialAttackPaper_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Dialyn',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'ChainAttackWelcomeMat_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Dialyn',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'ChainAttackWelcomeMat_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Dialyn',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'ChainAttackWelcomeMat_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Dialyn',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'UltimateServiceStoppedForNumberDialed_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Dialyn',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'UltimateServiceStoppedForNumberDialed_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Dialyn',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'UltimateServiceStoppedForNumberDialed_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Dialyn',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'QuickAssistForwardCall_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Dialyn',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'QuickAssistForwardCall_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Dialyn',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'QuickAssistForwardCall_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Dialyn',
@@ -849,7 +849,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'DefensiveAssistDeclineCall_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Dialyn',
@@ -863,7 +863,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'DefensiveAssistDeclineCall_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Dialyn',
@@ -877,7 +877,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'DefensiveAssistDeclineCall_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Dialyn',
@@ -891,7 +891,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'DefensiveAssistDeclineCall_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Dialyn',
@@ -905,7 +905,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'DefensiveAssistDeclineCall_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Dialyn',
@@ -919,7 +919,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'DefensiveAssistDeclineCall_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Dialyn',
@@ -933,7 +933,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'DefensiveAssistDeclineCall_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Dialyn',
@@ -947,7 +947,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'DefensiveAssistDeclineCall_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Dialyn',
@@ -961,7 +961,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'DefensiveAssistDeclineCall_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Dialyn',
@@ -975,7 +975,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'AssistFollowUpBacktoBackCalls_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Dialyn',
@@ -989,7 +989,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'AssistFollowUpBacktoBackCalls_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Dialyn',
@@ -1003,7 +1003,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'AssistFollowUpBacktoBackCalls_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Dialyn',
@@ -1017,7 +1017,7 @@ export const formulas = {
     sheet: 'Dialyn',
     name: 'm6_dmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Dialyn',

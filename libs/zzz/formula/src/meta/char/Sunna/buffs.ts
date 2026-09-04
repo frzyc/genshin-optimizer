@@ -1,5 +1,10 @@
 // WARNING: Generated file, do not modify
 export const buffs = {
+  test: {
+    sheet: 'Sunna',
+    name: 'test',
+    tag: { et: 'display', qt: 'final', q: 'atk', sheet: 'Sunna', name: 'test' },
+  },
   exSpecial_atk: {
     sheet: 'Sunna',
     name: 'exSpecial_atk',

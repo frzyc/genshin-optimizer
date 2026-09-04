@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Qingyi',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Qingyi',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'disorderDmgInst_electric',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Qingyi',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'vortexDmgInst_electric',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Qingyi',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Qingyi',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Qingyi',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Qingyi',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'BasicAttackPenultimate_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Qingyi',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'BasicAttackPenultimate_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Qingyi',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'BasicAttackPenultimate_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Qingyi',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'BasicAttackPenultimate_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Qingyi',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'BasicAttackPenultimate_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Qingyi',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'BasicAttackPenultimate_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Qingyi',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'BasicAttackPenultimate_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Qingyi',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'BasicAttackPenultimate_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Qingyi',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'BasicAttackPenultimate_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Qingyi',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'BasicAttackPenultimate_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Qingyi',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'BasicAttackPenultimate_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Qingyi',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'BasicAttackPenultimate_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Qingyi',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'BasicAttackPenultimate_4:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Qingyi',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'BasicAttackPenultimate_4:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Qingyi',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'BasicAttackPenultimate_4:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Qingyi',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'BasicAttackPenultimate_5:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Qingyi',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'BasicAttackPenultimate_5:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Qingyi',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'BasicAttackPenultimate_5:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Qingyi',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'BasicAttackEnchantedBlossoms_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Qingyi',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'BasicAttackEnchantedBlossoms_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Qingyi',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'BasicAttackEnchantedBlossoms_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Qingyi',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'BasicAttackEnchantedMoonlitBlossoms_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Qingyi',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'BasicAttackEnchantedMoonlitBlossoms_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Qingyi',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'BasicAttackEnchantedMoonlitBlossoms_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Qingyi',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'BasicAttackEnchantedMoonlitBlossoms_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Qingyi',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'BasicAttackEnchantedMoonlitBlossoms_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Qingyi',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'BasicAttackEnchantedMoonlitBlossoms_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Qingyi',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'DashAttackBreach_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Qingyi',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'DashAttackBreach_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Qingyi',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'DashAttackBreach_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Qingyi',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'DodgeCounterLingeringSentiments_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Qingyi',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'DodgeCounterLingeringSentiments_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Qingyi',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'DodgeCounterLingeringSentiments_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Qingyi',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'SpecialAttackSunlitGlory_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Qingyi',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'SpecialAttackSunlitGlory_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Qingyi',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'SpecialAttackSunlitGlory_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Qingyi',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'EXSpecialAttackMoonlitBegonia_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Qingyi',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'EXSpecialAttackMoonlitBegonia_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Qingyi',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'EXSpecialAttackMoonlitBegonia_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Qingyi',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'EXSpecialAttackMoonlitBegonia_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Qingyi',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'EXSpecialAttackMoonlitBegonia_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Qingyi',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'EXSpecialAttackMoonlitBegonia_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Qingyi',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'EXSpecialAttackMoonlitBegonia_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Qingyi',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'EXSpecialAttackMoonlitBegonia_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Qingyi',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'EXSpecialAttackMoonlitBegonia_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Qingyi',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'ChainAttackTranquilSerenade_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Qingyi',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'ChainAttackTranquilSerenade_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Qingyi',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'ChainAttackTranquilSerenade_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Qingyi',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'UltimateEightSoundsOfGanzhou_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Qingyi',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'UltimateEightSoundsOfGanzhou_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Qingyi',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'UltimateEightSoundsOfGanzhou_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Qingyi',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'QuickAssistWindThroughThePines_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Qingyi',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'QuickAssistWindThroughThePines_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Qingyi',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'QuickAssistWindThroughThePines_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Qingyi',
@@ -849,7 +849,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'DefensiveAssistGracefulEmbellishment_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Qingyi',
@@ -863,7 +863,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'DefensiveAssistGracefulEmbellishment_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Qingyi',
@@ -877,7 +877,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'DefensiveAssistGracefulEmbellishment_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Qingyi',
@@ -891,7 +891,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'DefensiveAssistGracefulEmbellishment_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Qingyi',
@@ -905,7 +905,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'DefensiveAssistGracefulEmbellishment_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Qingyi',
@@ -919,7 +919,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'DefensiveAssistGracefulEmbellishment_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Qingyi',
@@ -933,7 +933,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'DefensiveAssistGracefulEmbellishment_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Qingyi',
@@ -947,7 +947,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'DefensiveAssistGracefulEmbellishment_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Qingyi',
@@ -961,7 +961,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'DefensiveAssistGracefulEmbellishment_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Qingyi',
@@ -975,7 +975,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'AssistFollowUpSongOfTheClearRiver_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Qingyi',
@@ -989,7 +989,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'AssistFollowUpSongOfTheClearRiver_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Qingyi',
@@ -1003,7 +1003,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'AssistFollowUpSongOfTheClearRiver_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Qingyi',
@@ -1017,7 +1017,7 @@ export const formulas = {
     sheet: 'Qingyi',
     name: 'm4_shield',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'shield',
       sheet: 'Qingyi',

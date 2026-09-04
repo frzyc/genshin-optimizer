@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'sheerDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yixuan',
@@ -17,7 +17,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Yixuan',
@@ -30,7 +30,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'disorderDmgInst_ether',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Yixuan',
@@ -43,7 +43,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'vortexDmgInst_ether',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Yixuan',
@@ -56,7 +56,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Yixuan',
@@ -70,7 +70,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yixuan',
@@ -82,7 +82,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yixuan',
@@ -94,7 +94,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'BasicAttackCirrusStrike_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yixuan',
@@ -108,7 +108,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'BasicAttackCirrusStrike_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yixuan',
@@ -122,7 +122,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'BasicAttackCirrusStrike_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yixuan',
@@ -136,7 +136,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'BasicAttackCirrusStrike_1:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yixuan',
@@ -150,7 +150,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'BasicAttackCirrusStrike_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yixuan',
@@ -164,7 +164,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'BasicAttackCirrusStrike_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yixuan',
@@ -178,7 +178,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'BasicAttackCirrusStrike_2:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yixuan',
@@ -192,7 +192,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'BasicAttackCirrusStrike_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yixuan',
@@ -206,7 +206,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'BasicAttackCirrusStrike_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yixuan',
@@ -220,7 +220,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'BasicAttackCirrusStrike_3:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yixuan',
@@ -234,7 +234,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'BasicAttackCirrusStrike_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yixuan',
@@ -248,7 +248,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'BasicAttackCirrusStrike_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yixuan',
@@ -262,7 +262,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'BasicAttackCirrusStrike_4:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yixuan',
@@ -276,7 +276,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'BasicAttackCirrusStrike_4:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yixuan',
@@ -290,7 +290,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'BasicAttackCirrusStrike_4:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yixuan',
@@ -304,7 +304,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'BasicAttackInkVeilCloudCoalescence_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yixuan',
@@ -318,7 +318,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'BasicAttackInkVeilCloudCoalescence_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yixuan',
@@ -332,7 +332,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'BasicAttackInkVeilCloudCoalescence_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yixuan',
@@ -346,7 +346,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'BasicAttackAuricArray_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yixuan',
@@ -360,7 +360,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'BasicAttackAuricArray_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yixuan',
@@ -374,7 +374,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'BasicAttackAuricArray_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yixuan',
@@ -388,7 +388,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'BasicAttackQingmingEruption_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yixuan',
@@ -402,7 +402,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'BasicAttackQingmingEruption_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yixuan',
@@ -416,7 +416,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'BasicAttackQingmingEruption_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yixuan',
@@ -430,7 +430,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'DashAttackSkybreaker_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yixuan',
@@ -444,7 +444,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'DashAttackSkybreaker_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yixuan',
@@ -458,7 +458,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'DashAttackSkybreaker_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yixuan',
@@ -472,7 +472,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'DodgeCounterBanishingBlow_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yixuan',
@@ -486,7 +486,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'DodgeCounterBanishingBlow_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yixuan',
@@ -500,7 +500,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'DodgeCounterBanishingBlow_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yixuan',
@@ -514,7 +514,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'SpecialAttackShadowIgnition_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yixuan',
@@ -528,7 +528,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'SpecialAttackShadowIgnition_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yixuan',
@@ -542,7 +542,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'SpecialAttackShadowIgnition_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yixuan',
@@ -556,7 +556,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'EXSpecialAttackInkManifestation_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yixuan',
@@ -570,7 +570,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'EXSpecialAttackInkManifestation_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yixuan',
@@ -584,7 +584,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'EXSpecialAttackInkManifestation_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yixuan',
@@ -598,7 +598,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'EXSpecialAttackInkManifestation_1:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yixuan',
@@ -612,7 +612,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'EXSpecialAttackInkManifestation_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yixuan',
@@ -626,7 +626,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'EXSpecialAttackInkManifestation_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yixuan',
@@ -640,7 +640,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'EXSpecialAttackInkManifestation_2:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yixuan',
@@ -654,7 +654,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'EXSpecialAttackInkManifestation_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yixuan',
@@ -668,7 +668,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'EXSpecialAttackInkManifestation_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yixuan',
@@ -682,7 +682,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'EXSpecialAttackInkManifestation_3:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yixuan',
@@ -696,7 +696,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'EXSpecialAttackInkManifestation_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yixuan',
@@ -710,7 +710,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'EXSpecialAttackInkManifestation_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yixuan',
@@ -724,7 +724,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'EXSpecialAttackCloudShaper_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yixuan',
@@ -738,7 +738,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'EXSpecialAttackCloudShaper_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yixuan',
@@ -752,7 +752,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'EXSpecialAttackCloudShaper_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yixuan',
@@ -766,7 +766,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'EXSpecialAttackAshenInkBecomesShadows_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yixuan',
@@ -780,7 +780,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'EXSpecialAttackAshenInkBecomesShadows_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yixuan',
@@ -794,7 +794,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'EXSpecialAttackAshenInkBecomesShadows_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yixuan',
@@ -808,7 +808,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'ChainAttackAuricInkRush_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yixuan',
@@ -822,7 +822,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'ChainAttackAuricInkRush_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yixuan',
@@ -836,7 +836,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'ChainAttackAuricInkRush_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yixuan',
@@ -850,7 +850,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'UltimateQingmingSkyshade_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yixuan',
@@ -864,7 +864,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'UltimateQingmingSkyshade_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yixuan',
@@ -878,7 +878,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'UltimateQingmingSkyshade_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yixuan',
@@ -892,7 +892,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'UltimateEndlessTalismanSuppression_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yixuan',
@@ -906,7 +906,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'UltimateEndlessTalismanSuppression_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yixuan',
@@ -920,7 +920,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'UltimateEndlessTalismanSuppression_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yixuan',
@@ -934,7 +934,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'QuickAssistCloudstreamShadow_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yixuan',
@@ -948,7 +948,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'QuickAssistCloudstreamShadow_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yixuan',
@@ -962,7 +962,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'QuickAssistCloudstreamShadow_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yixuan',
@@ -976,7 +976,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'DefensiveAssistClearSkySurge_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yixuan',
@@ -990,7 +990,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'DefensiveAssistClearSkySurge_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yixuan',
@@ -1004,7 +1004,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'DefensiveAssistClearSkySurge_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yixuan',
@@ -1018,7 +1018,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'DefensiveAssistClearSkySurge_1:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yixuan',
@@ -1032,7 +1032,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'DefensiveAssistClearSkySurge_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yixuan',
@@ -1046,7 +1046,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'DefensiveAssistClearSkySurge_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yixuan',
@@ -1060,7 +1060,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'DefensiveAssistClearSkySurge_2:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yixuan',
@@ -1074,7 +1074,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'DefensiveAssistClearSkySurge_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yixuan',
@@ -1088,7 +1088,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'DefensiveAssistClearSkySurge_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yixuan',
@@ -1102,7 +1102,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'AssistFollowUpCelestialCloudBlitz_0:sheerDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yixuan',
@@ -1116,7 +1116,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'AssistFollowUpCelestialCloudBlitz_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Yixuan',
@@ -1130,7 +1130,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'AssistFollowUpCelestialCloudBlitz_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Yixuan',
@@ -1144,7 +1144,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'ability_dmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yixuan',
@@ -1157,7 +1157,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'm1_dmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yixuan',
@@ -1170,7 +1170,7 @@ export const formulas = {
     sheet: 'Yixuan',
     name: 'm2_dmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'sheerDmg',
       sheet: 'Yixuan',

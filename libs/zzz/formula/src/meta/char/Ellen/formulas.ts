@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ellen',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Ellen',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'disorderDmgInst_ice',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Ellen',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'vortexDmgInst_ice',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Ellen',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Ellen',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ellen',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ellen',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'BasicAttackSawTeethTrimming_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ellen',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'BasicAttackSawTeethTrimming_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ellen',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'BasicAttackSawTeethTrimming_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ellen',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'BasicAttackSawTeethTrimming_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ellen',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'BasicAttackSawTeethTrimming_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ellen',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'BasicAttackSawTeethTrimming_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ellen',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'BasicAttackSawTeethTrimming_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ellen',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'BasicAttackSawTeethTrimming_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ellen',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'BasicAttackSawTeethTrimming_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ellen',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'BasicAttackFlashFreezeTrimming_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ellen',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'BasicAttackFlashFreezeTrimming_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ellen',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'BasicAttackFlashFreezeTrimming_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ellen',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'BasicAttackFlashFreezeTrimming_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ellen',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'BasicAttackFlashFreezeTrimming_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ellen',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'BasicAttackFlashFreezeTrimming_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ellen',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'BasicAttackFlashFreezeTrimming_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ellen',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'BasicAttackFlashFreezeTrimming_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ellen',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'BasicAttackFlashFreezeTrimming_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ellen',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'BasicAttackGlacialBladeWave_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ellen',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'BasicAttackGlacialBladeWave_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ellen',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'BasicAttackGlacialBladeWave_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ellen',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'BasicAttackGlacialBladeWave_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ellen',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'BasicAttackGlacialBladeWave_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ellen',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'BasicAttackGlacialBladeWave_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ellen',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'BasicAttackIcyBlade_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ellen',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'BasicAttackIcyBlade_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ellen',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'BasicAttackIcyBlade_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ellen',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'BasicAttackIcyBlade_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ellen',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'BasicAttackIcyBlade_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ellen',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'BasicAttackIcyBlade_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ellen',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'DashAttackArcticAmbush_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ellen',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'DashAttackArcticAmbush_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ellen',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'DashAttackArcticAmbush_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ellen',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'DashAttackArcticAmbush_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ellen',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'DashAttackArcticAmbush_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ellen',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'DashAttackArcticAmbush_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ellen',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'DashAttackArcticAmbush_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ellen',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'DashAttackArcticAmbush_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ellen',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'DashAttackArcticAmbush_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ellen',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'DashAttackMonstrousWave_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ellen',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'DashAttackMonstrousWave_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ellen',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'DashAttackMonstrousWave_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ellen',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'DashAttackColdSnap_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ellen',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'DashAttackColdSnap_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ellen',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'DashAttackColdSnap_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ellen',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'DodgeCounterReefRock_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ellen',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'DodgeCounterReefRock_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ellen',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'DodgeCounterReefRock_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ellen',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'SpecialAttackDrift_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ellen',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'SpecialAttackDrift_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ellen',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'SpecialAttackDrift_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ellen',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'EXSpecialAttackTailSwipe_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ellen',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'EXSpecialAttackTailSwipe_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ellen',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'EXSpecialAttackTailSwipe_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ellen',
@@ -849,7 +849,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'EXSpecialAttackSharknami_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ellen',
@@ -863,7 +863,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'EXSpecialAttackSharknami_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ellen',
@@ -877,7 +877,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'EXSpecialAttackSharknami_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ellen',
@@ -891,7 +891,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'ChainAttackAvalanche_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ellen',
@@ -905,7 +905,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'ChainAttackAvalanche_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ellen',
@@ -919,7 +919,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'ChainAttackAvalanche_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ellen',
@@ -933,7 +933,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'UltimateEndlessWinter_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ellen',
@@ -947,7 +947,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'UltimateEndlessWinter_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ellen',
@@ -961,7 +961,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'UltimateEndlessWinter_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ellen',
@@ -975,7 +975,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'QuickAssistSharkSentinel_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ellen',
@@ -989,7 +989,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'QuickAssistSharkSentinel_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ellen',
@@ -1003,7 +1003,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'QuickAssistSharkSentinel_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ellen',
@@ -1017,7 +1017,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'DefensiveAssistWavefrontImpact_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ellen',
@@ -1031,7 +1031,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'DefensiveAssistWavefrontImpact_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ellen',
@@ -1045,7 +1045,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'DefensiveAssistWavefrontImpact_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ellen',
@@ -1059,7 +1059,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'DefensiveAssistWavefrontImpact_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ellen',
@@ -1073,7 +1073,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'DefensiveAssistWavefrontImpact_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ellen',
@@ -1087,7 +1087,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'DefensiveAssistWavefrontImpact_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ellen',
@@ -1101,7 +1101,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'DefensiveAssistWavefrontImpact_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ellen',
@@ -1115,7 +1115,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'DefensiveAssistWavefrontImpact_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ellen',
@@ -1129,7 +1129,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'DefensiveAssistWavefrontImpact_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ellen',
@@ -1143,7 +1143,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'AssistFollowUpSharkCruiser_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Ellen',
@@ -1157,7 +1157,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'AssistFollowUpSharkCruiser_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Ellen',
@@ -1171,7 +1171,7 @@ export const formulas = {
     sheet: 'Ellen',
     name: 'AssistFollowUpSharkCruiser_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Ellen',

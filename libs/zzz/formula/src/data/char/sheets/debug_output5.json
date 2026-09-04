@@ -1,0 +1,120 @@
+[
+  {
+    "tag": {
+      "et": "teamBuff",
+      "qt": "listing",
+      "q": "buffs",
+      "sheet": "agg"
+    },
+    "value": {
+      "op": "tag",
+      "x": [
+        {
+          "op": "const",
+          "x": [],
+          "br": [],
+          "ex": "infer"
+        }
+      ],
+      "br": [],
+      "tag": {
+        "et": "display",
+        "qt": "final",
+        "q": "atk",
+        "name": "test"
+      }
+    }
+  },
+  {
+    "tag": {
+      "et": "display",
+      "qt": "final",
+      "q": "atk",
+      "name": "test"
+    },
+    "value": {
+      "op": "match",
+      "x": [
+        {
+          "op": "const",
+          "x": [],
+          "br": [],
+          "ex": 10000
+        },
+        {
+          "op": "const",
+          "x": [],
+          "br": [],
+          "ex": 0
+        }
+      ],
+      "br": [
+        {
+          "op": "read",
+          "x": [],
+          "br": [],
+          "tag": {
+            "et": "target",
+            "src": null,
+            "name": null,
+            "qt": "char",
+            "q": "attribute",
+            "sheet": "iso"
+          }
+        },
+        {
+          "op": "const",
+          "x": [],
+          "br": [],
+          "ex": "physical"
+        }
+      ]
+    }
+  },
+  {
+    "tag": {
+      "et": "teamBuff",
+      "qt": "final",
+      "q": "atk",
+      "sheet": "agg"
+    },
+    "value": {
+      "op": "match",
+      "x": [
+        {
+          "op": "const",
+          "x": [],
+          "br": [],
+          "ex": 10000
+        },
+        {
+          "op": "const",
+          "x": [],
+          "br": [],
+          "ex": 0
+        }
+      ],
+      "br": [
+        {
+          "op": "read",
+          "x": [],
+          "br": [],
+          "tag": {
+            "et": "target",
+            "src": null,
+            "name": null,
+            "qt": "char",
+            "q": "attribute",
+            "sheet": "iso"
+          }
+        },
+        {
+          "op": "const",
+          "x": [],
+          "br": [],
+          "ex": "physical"
+        }
+      ]
+    }
+  }
+]

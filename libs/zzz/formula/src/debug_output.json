@@ -1,0 +1,32 @@
+{
+  "val": 0,
+  "meta": {
+    "formula": "[0] gather 1 node(s) matching { #core_attack_physical_dmg preset0 [Sunna] (Alice) Sunna display formula.standardDmg | physical [unique] } (for { #core_attack_physical_dmg Sunna display formula.standardDmg | physical })",
+    "deps": [
+      {
+        "readSeq": "{ #core_attack_physical_dmg Sunna display formula.standardDmg } <- { #core_attack_physical_dmg preset0 [Sunna] (Alice) Sunna display formula.standardDmg | physical }",
+        "formula": "[0] match({ !name !src iso target char.attribute }, \"physical\", match({ !name !src iso target char.specialty }, \"attack\", 0))",
+        "deps": [
+          {
+            "formula": "[\"physical\"] gather 1 node(s) matching { preset0 (Alice) iso target char.attribute | physical [unique] } (for { !name !src iso target char.attribute })",
+            "deps": [
+              {
+                "readSeq": "{ (Alice) target } <= { [Alice] !dst own } : { [Alice] iso } <= { Alice } : { Alice own char.attribute } <- { preset0 [Alice] Alice own char.attribute | physical }",
+                "formula": "[\"physical\"] \"physical\""
+              }
+            ]
+          },
+          {
+            "formula": "[\"anomaly\"] gather 1 node(s) matching { preset0 (Alice) iso target char.specialty | physical [unique] } (for { !name !src iso target char.specialty })",
+            "deps": [
+              {
+                "readSeq": "{ (Alice) target } <= { [Alice] !dst own } : { [Alice] iso } <= { Alice } : { Alice own char.specialty } <- { preset0 [Alice] Alice own char.specialty | physical }",
+                "formula": "[\"anomaly\"] \"anomaly\""
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Burnice',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Burnice',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'disorderDmgInst_fire',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Burnice',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'vortexDmgInst_fire',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Burnice',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Burnice',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Burnice',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Burnice',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'BasicAttackDirectFlameBlend_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Burnice',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'BasicAttackDirectFlameBlend_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Burnice',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'BasicAttackDirectFlameBlend_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Burnice',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'BasicAttackDirectFlameBlend_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Burnice',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'BasicAttackDirectFlameBlend_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Burnice',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'BasicAttackDirectFlameBlend_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Burnice',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'BasicAttackDirectFlameBlend_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Burnice',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'BasicAttackDirectFlameBlend_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Burnice',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'BasicAttackDirectFlameBlend_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Burnice',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'BasicAttackDirectFlameBlend_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Burnice',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'BasicAttackDirectFlameBlend_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Burnice',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'BasicAttackDirectFlameBlend_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Burnice',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'BasicAttackDirectFlameBlend_4:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Burnice',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'BasicAttackDirectFlameBlend_4:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Burnice',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'BasicAttackDirectFlameBlend_4:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Burnice',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'BasicAttackMixedFlameBlend_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Burnice',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'BasicAttackMixedFlameBlend_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Burnice',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'BasicAttackMixedFlameBlend_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Burnice',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'BasicAttackMixedFlameBlend_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Burnice',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'BasicAttackMixedFlameBlend_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Burnice',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'BasicAttackMixedFlameBlend_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Burnice',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'DashAttackDangerousFermentation_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Burnice',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'DashAttackDangerousFermentation_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Burnice',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'DashAttackDangerousFermentation_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Burnice',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'DodgeCounterFlutteringSteps_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Burnice',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'DodgeCounterFlutteringSteps_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Burnice',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'DodgeCounterFlutteringSteps_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Burnice',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'SpecialAttackIntenseHeatAgingMethod_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Burnice',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'SpecialAttackIntenseHeatAgingMethod_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Burnice',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'SpecialAttackIntenseHeatAgingMethod_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Burnice',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'SpecialAttackIntenseHeatAgingMethod_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Burnice',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'SpecialAttackIntenseHeatAgingMethod_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Burnice',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'SpecialAttackIntenseHeatAgingMethod_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Burnice',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'EXSpecialAttackIntenseHeatStirringMethod_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Burnice',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'EXSpecialAttackIntenseHeatStirringMethod_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Burnice',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'EXSpecialAttackIntenseHeatStirringMethod_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Burnice',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'EXSpecialAttackIntenseHeatStirringMethod_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Burnice',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'EXSpecialAttackIntenseHeatStirringMethod_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Burnice',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'EXSpecialAttackIntenseHeatStirringMethod_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Burnice',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'EXSpecialAttackIntenseHeatStirringMethodDoubleShot_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Burnice',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'EXSpecialAttackIntenseHeatStirringMethodDoubleShot_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Burnice',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'EXSpecialAttackIntenseHeatStirringMethodDoubleShot_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Burnice',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'EXSpecialAttackIntenseHeatStirringMethodDoubleShot_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Burnice',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'EXSpecialAttackIntenseHeatStirringMethodDoubleShot_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Burnice',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'EXSpecialAttackIntenseHeatStirringMethodDoubleShot_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Burnice',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'ChainAttackFuelFedFlame_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Burnice',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'ChainAttackFuelFedFlame_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Burnice',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'ChainAttackFuelFedFlame_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Burnice',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'UltimateGloriousInferno_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Burnice',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'UltimateGloriousInferno_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Burnice',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'UltimateGloriousInferno_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Burnice',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'QuickAssistEnergizingSpecialtyDrink_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Burnice',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'QuickAssistEnergizingSpecialtyDrink_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Burnice',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'QuickAssistEnergizingSpecialtyDrink_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Burnice',
@@ -849,7 +849,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'DefensiveAssistSmokyCauldron_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Burnice',
@@ -863,7 +863,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'DefensiveAssistSmokyCauldron_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Burnice',
@@ -877,7 +877,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'DefensiveAssistSmokyCauldron_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Burnice',
@@ -891,7 +891,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'DefensiveAssistSmokyCauldron_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Burnice',
@@ -905,7 +905,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'DefensiveAssistSmokyCauldron_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Burnice',
@@ -919,7 +919,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'DefensiveAssistSmokyCauldron_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Burnice',
@@ -933,7 +933,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'DefensiveAssistSmokyCauldron_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Burnice',
@@ -947,7 +947,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'DefensiveAssistSmokyCauldron_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Burnice',
@@ -961,7 +961,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'DefensiveAssistSmokyCauldron_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Burnice',
@@ -975,7 +975,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'AssistFollowUpScorchingDew_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Burnice',
@@ -989,7 +989,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'AssistFollowUpScorchingDew_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Burnice',
@@ -1003,7 +1003,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'AssistFollowUpScorchingDew_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Burnice',
@@ -1017,7 +1017,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'core_afterburn_dmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Burnice',
@@ -1030,7 +1030,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'core_afterburn_anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Burnice',
@@ -1043,7 +1043,7 @@ export const formulas = {
     sheet: 'Burnice',
     name: 'm6_additional_afterburn_dmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Burnice',

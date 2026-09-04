@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucia',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Lucia',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'disorderDmgInst_ether',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Lucia',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'vortexDmgInst_ether',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Lucia',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Lucia',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucia',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucia',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'BasicAttackOrbitalCombo_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucia',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'BasicAttackOrbitalCombo_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucia',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'BasicAttackOrbitalCombo_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucia',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'BasicAttackOrbitalCombo_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucia',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'BasicAttackOrbitalCombo_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucia',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'BasicAttackOrbitalCombo_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucia',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'BasicAttackOrbitalCombo_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucia',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'BasicAttackOrbitalCombo_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucia',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'BasicAttackOrbitalCombo_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucia',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'BasicAttackOrbitalCombo_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucia',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'BasicAttackOrbitalCombo_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucia',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'BasicAttackOrbitalCombo_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucia',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'BasicAttackOrbitalCombo_4:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucia',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'BasicAttackOrbitalCombo_4:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucia',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'BasicAttackOrbitalCombo_4:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucia',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'BasicAttackOrbitalCombo_5:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucia',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'BasicAttackOrbitalCombo_5:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucia',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'BasicAttackOrbitalCombo_5:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucia',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'BasicAttackOrbitalCombo_6:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucia',
@@ -360,7 +360,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'BasicAttackOrbitalCombo_6:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucia',
@@ -375,7 +375,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'BasicAttackOrbitalCombo_6:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucia',
@@ -390,7 +390,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'DashAttackRefraction_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucia',
@@ -404,7 +404,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'DashAttackRefraction_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucia',
@@ -418,7 +418,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'DashAttackRefraction_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucia',
@@ -432,7 +432,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'DodgeCounterStardustEcho_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucia',
@@ -446,7 +446,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'DodgeCounterStardustEcho_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucia',
@@ -460,7 +460,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'DodgeCounterStardustEcho_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucia',
@@ -474,7 +474,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'DodgeCounterStardustEcho_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucia',
@@ -488,7 +488,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'DodgeCounterStardustEcho_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucia',
@@ -502,7 +502,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'DodgeCounterStardustEcho_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucia',
@@ -516,7 +516,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'SpecialAttackSymphonyOfTheReaperStorm_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucia',
@@ -530,7 +530,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'SpecialAttackSymphonyOfTheReaperStorm_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucia',
@@ -544,7 +544,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'SpecialAttackSymphonyOfTheReaperStorm_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucia',
@@ -558,7 +558,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'SpecialAttackSymphonyOfTheReaperStorm_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucia',
@@ -572,7 +572,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'SpecialAttackSymphonyOfTheReaperStorm_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucia',
@@ -586,7 +586,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'SpecialAttackSymphonyOfTheReaperStorm_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucia',
@@ -600,7 +600,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'SpecialAttackSymphonyOfTheReaperStorm_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucia',
@@ -615,7 +615,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'SpecialAttackSymphonyOfTheReaperStorm_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucia',
@@ -630,7 +630,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'SpecialAttackSymphonyOfTheReaperStorm_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucia',
@@ -645,7 +645,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'EXSpecialAttackSymphonyOfTheReaperDaybreak_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucia',
@@ -659,7 +659,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'EXSpecialAttackSymphonyOfTheReaperDaybreak_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucia',
@@ -673,7 +673,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'EXSpecialAttackSymphonyOfTheReaperDaybreak_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucia',
@@ -687,7 +687,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'ChainAttackStageOfBrilliance_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucia',
@@ -701,7 +701,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'ChainAttackStageOfBrilliance_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucia',
@@ -715,7 +715,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'ChainAttackStageOfBrilliance_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucia',
@@ -729,7 +729,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'UltimateChargeGreatArmor_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucia',
@@ -743,7 +743,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'UltimateChargeGreatArmor_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucia',
@@ -757,7 +757,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'UltimateChargeGreatArmor_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucia',
@@ -771,7 +771,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'UltimateChargeGreatArmor_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucia',
@@ -785,7 +785,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'UltimateChargeGreatArmor_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucia',
@@ -799,7 +799,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'UltimateChargeGreatArmor_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucia',
@@ -813,7 +813,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'QuickAssistCrushingMist_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucia',
@@ -827,7 +827,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'QuickAssistCrushingMist_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucia',
@@ -841,7 +841,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'QuickAssistCrushingMist_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucia',
@@ -855,7 +855,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'QuickAssistCrushingMist_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucia',
@@ -869,7 +869,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'QuickAssistCrushingMist_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucia',
@@ -883,7 +883,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'QuickAssistCrushingMist_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucia',
@@ -897,7 +897,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'QuickAssistCrushingMist_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucia',
@@ -912,7 +912,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'QuickAssistCrushingMist_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucia',
@@ -927,7 +927,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'QuickAssistCrushingMist_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucia',
@@ -942,7 +942,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'DefensiveAssistVoiceOfIllusoryDreams_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucia',
@@ -956,7 +956,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'DefensiveAssistVoiceOfIllusoryDreams_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucia',
@@ -970,7 +970,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'DefensiveAssistVoiceOfIllusoryDreams_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucia',
@@ -984,7 +984,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'DefensiveAssistVoiceOfIllusoryDreams_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucia',
@@ -998,7 +998,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'DefensiveAssistVoiceOfIllusoryDreams_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucia',
@@ -1012,7 +1012,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'DefensiveAssistVoiceOfIllusoryDreams_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucia',
@@ -1026,7 +1026,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'DefensiveAssistVoiceOfIllusoryDreams_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucia',
@@ -1040,7 +1040,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'DefensiveAssistVoiceOfIllusoryDreams_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucia',
@@ -1054,7 +1054,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'DefensiveAssistVoiceOfIllusoryDreams_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucia',
@@ -1068,7 +1068,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'AssistFollowUpHarmonyOfPaintedDreams_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucia',
@@ -1082,7 +1082,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'AssistFollowUpHarmonyOfPaintedDreams_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucia',
@@ -1096,7 +1096,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'AssistFollowUpHarmonyOfPaintedDreams_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucia',
@@ -1110,7 +1110,7 @@ export const formulas = {
     sheet: 'Lucia',
     name: 'ult_heal',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'heal',
       sheet: 'Lucia',

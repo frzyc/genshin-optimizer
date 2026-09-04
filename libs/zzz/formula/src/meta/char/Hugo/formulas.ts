@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Hugo',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Hugo',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'disorderDmgInst_ice',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Hugo',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'vortexDmgInst_ice',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Hugo',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Hugo',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Hugo',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Hugo',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'BasicAttackDarkAbyssQuartet_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Hugo',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'BasicAttackDarkAbyssQuartet_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Hugo',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'BasicAttackDarkAbyssQuartet_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Hugo',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'BasicAttackDarkAbyssQuartet_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Hugo',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'BasicAttackDarkAbyssQuartet_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Hugo',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'BasicAttackDarkAbyssQuartet_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Hugo',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'BasicAttackDarkAbyssQuartet_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Hugo',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'BasicAttackDarkAbyssQuartet_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Hugo',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'BasicAttackDarkAbyssQuartet_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Hugo',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'BasicAttackDarkAbyssQuartet_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Hugo',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'BasicAttackDarkAbyssQuartet_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Hugo',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'BasicAttackDarkAbyssQuartet_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Hugo',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'BasicAttackDarkAbyssQuartet_4:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Hugo',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'BasicAttackDarkAbyssQuartet_4:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Hugo',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'BasicAttackDarkAbyssQuartet_4:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Hugo',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'BasicAttackDarkAbyssQuartet_5:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Hugo',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'BasicAttackDarkAbyssQuartet_5:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Hugo',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'BasicAttackDarkAbyssQuartet_5:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Hugo',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'BasicAttackDarkAbyssConcerto_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Hugo',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'BasicAttackDarkAbyssConcerto_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Hugo',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'BasicAttackDarkAbyssConcerto_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Hugo',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'BasicAttackDarkAbyssConcerto_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Hugo',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'BasicAttackDarkAbyssConcerto_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Hugo',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'BasicAttackDarkAbyssConcerto_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Hugo',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'BasicAttackDarkAbyssConcerto_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Hugo',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'BasicAttackDarkAbyssConcerto_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Hugo',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'BasicAttackDarkAbyssConcerto_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Hugo',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'DashAttackPhantasmShatter_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Hugo',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'DashAttackPhantasmShatter_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Hugo',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'DashAttackPhantasmShatter_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Hugo',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'DodgeCounterPhantasmSlash_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Hugo',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'DodgeCounterPhantasmSlash_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Hugo',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'DodgeCounterPhantasmSlash_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Hugo',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'DodgeCounterPhantasmSlash_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Hugo',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'DodgeCounterPhantasmSlash_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Hugo',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'DodgeCounterPhantasmSlash_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Hugo',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'DodgeCounterPhantasmSlash_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Hugo',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'DodgeCounterPhantasmSlash_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Hugo',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'DodgeCounterPhantasmSlash_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Hugo',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'SpecialAttackSoulHunterJudgment_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Hugo',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'SpecialAttackSoulHunterJudgment_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Hugo',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'SpecialAttackSoulHunterJudgment_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Hugo',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'EXSpecialAttackSoulHunterPunishment_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Hugo',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'EXSpecialAttackSoulHunterPunishment_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Hugo',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'EXSpecialAttackSoulHunterPunishment_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Hugo',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'ChainAttackTrickOfFate_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Hugo',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'ChainAttackTrickOfFate_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Hugo',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'ChainAttackTrickOfFate_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Hugo',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'UltimateBlaspheme_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Hugo',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'UltimateBlaspheme_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Hugo',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'UltimateBlaspheme_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Hugo',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'QuickAssistElegy_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Hugo',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'QuickAssistElegy_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Hugo',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'QuickAssistElegy_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Hugo',
@@ -849,7 +849,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'QuickAssistElegy_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Hugo',
@@ -863,7 +863,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'QuickAssistElegy_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Hugo',
@@ -877,7 +877,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'QuickAssistElegy_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Hugo',
@@ -891,7 +891,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'QuickAssistElegy_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Hugo',
@@ -905,7 +905,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'QuickAssistElegy_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Hugo',
@@ -919,7 +919,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'QuickAssistElegy_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Hugo',
@@ -933,7 +933,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'DefensiveAssistTheEndHasNotCome_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Hugo',
@@ -947,7 +947,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'DefensiveAssistTheEndHasNotCome_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Hugo',
@@ -961,7 +961,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'DefensiveAssistTheEndHasNotCome_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Hugo',
@@ -975,7 +975,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'DefensiveAssistTheEndHasNotCome_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Hugo',
@@ -989,7 +989,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'DefensiveAssistTheEndHasNotCome_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Hugo',
@@ -1003,7 +1003,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'DefensiveAssistTheEndHasNotCome_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Hugo',
@@ -1017,7 +1017,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'DefensiveAssistTheEndHasNotCome_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Hugo',
@@ -1031,7 +1031,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'DefensiveAssistTheEndHasNotCome_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Hugo',
@@ -1045,7 +1045,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'DefensiveAssistTheEndHasNotCome_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Hugo',
@@ -1059,7 +1059,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'AssistFollowUpAceReversal_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Hugo',
@@ -1073,7 +1073,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'AssistFollowUpAceReversal_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Hugo',
@@ -1087,7 +1087,7 @@ export const formulas = {
     sheet: 'Hugo',
     name: 'AssistFollowUpAceReversal_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Hugo',

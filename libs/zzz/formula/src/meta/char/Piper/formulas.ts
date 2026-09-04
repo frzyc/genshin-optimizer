@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Piper',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Piper',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'disorderDmgInst_physical',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Piper',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'vortexDmgInst_physical',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Piper',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Piper',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Piper',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Piper',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'BasicAttackLoadUpAndRollOut_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Piper',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'BasicAttackLoadUpAndRollOut_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Piper',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'BasicAttackLoadUpAndRollOut_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Piper',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'BasicAttackLoadUpAndRollOut_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Piper',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'BasicAttackLoadUpAndRollOut_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Piper',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'BasicAttackLoadUpAndRollOut_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Piper',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'BasicAttackLoadUpAndRollOut_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Piper',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'BasicAttackLoadUpAndRollOut_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Piper',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'BasicAttackLoadUpAndRollOut_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Piper',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'BasicAttackLoadUpAndRollOut_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Piper',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'BasicAttackLoadUpAndRollOut_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Piper',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'BasicAttackLoadUpAndRollOut_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Piper',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'DashAttackPedalToTheMetal_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Piper',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'DashAttackPedalToTheMetal_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Piper',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'DashAttackPedalToTheMetal_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Piper',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'DodgeCounterPowerDrift_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Piper',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'DodgeCounterPowerDrift_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Piper',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'DodgeCounterPowerDrift_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Piper',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'SpecialAttackTireSpin_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Piper',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'SpecialAttackTireSpin_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Piper',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'SpecialAttackTireSpin_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Piper',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'SpecialAttackOneTrillionTons_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Piper',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'SpecialAttackOneTrillionTons_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Piper',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'SpecialAttackOneTrillionTons_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Piper',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'SpecialAttackOneTrillionTons_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Piper',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'SpecialAttackOneTrillionTons_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Piper',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'SpecialAttackOneTrillionTons_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Piper',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'SpecialAttackOneTrillionTons_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Piper',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'SpecialAttackOneTrillionTons_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Piper',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'SpecialAttackOneTrillionTons_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Piper',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'EXSpecialAttackEngineSpin_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Piper',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'EXSpecialAttackEngineSpin_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Piper',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'EXSpecialAttackEngineSpin_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Piper',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'EXSpecialAttackReallyHeavy_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Piper',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'EXSpecialAttackReallyHeavy_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Piper',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'EXSpecialAttackReallyHeavy_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Piper',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'ChainAttackBuckleUp_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Piper',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'ChainAttackBuckleUp_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Piper',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'ChainAttackBuckleUp_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Piper',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'UltimateHoldOnTight_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Piper',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'UltimateHoldOnTight_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Piper',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'UltimateHoldOnTight_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Piper',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'QuickAssistBrakeTap_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Piper',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'QuickAssistBrakeTap_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Piper',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'QuickAssistBrakeTap_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Piper',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'DefensiveAssistEmergencyBrake_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Piper',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'DefensiveAssistEmergencyBrake_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Piper',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'DefensiveAssistEmergencyBrake_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Piper',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'DefensiveAssistEmergencyBrake_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Piper',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'DefensiveAssistEmergencyBrake_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Piper',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'DefensiveAssistEmergencyBrake_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Piper',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'DefensiveAssistEmergencyBrake_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Piper',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'DefensiveAssistEmergencyBrake_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Piper',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'DefensiveAssistEmergencyBrake_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Piper',
@@ -849,7 +849,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'AssistFollowUpOvertakingManeuver_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Piper',
@@ -863,7 +863,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'AssistFollowUpOvertakingManeuver_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Piper',
@@ -877,7 +877,7 @@ export const formulas = {
     sheet: 'Piper',
     name: 'AssistFollowUpOvertakingManeuver_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Piper',

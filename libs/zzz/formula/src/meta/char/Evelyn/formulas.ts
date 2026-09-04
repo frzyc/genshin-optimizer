@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Evelyn',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Evelyn',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'disorderDmgInst_fire',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Evelyn',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'vortexDmgInst_fire',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Evelyn',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Evelyn',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Evelyn',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Evelyn',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'BasicAttackRazorWire_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Evelyn',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'BasicAttackRazorWire_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Evelyn',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'BasicAttackRazorWire_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Evelyn',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'BasicAttackRazorWire_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Evelyn',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'BasicAttackRazorWire_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Evelyn',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'BasicAttackRazorWire_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Evelyn',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'BasicAttackRazorWire_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Evelyn',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'BasicAttackRazorWire_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Evelyn',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'BasicAttackRazorWire_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Evelyn',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'BasicAttackRazorWire_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Evelyn',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'BasicAttackRazorWire_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Evelyn',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'BasicAttackRazorWire_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Evelyn',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'BasicAttackRazorWire_4:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Evelyn',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'BasicAttackRazorWire_4:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Evelyn',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'BasicAttackRazorWire_4:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Evelyn',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'BasicAttackGarroteFirstForm_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Evelyn',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'BasicAttackGarroteFirstForm_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Evelyn',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'BasicAttackGarroteFirstForm_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Evelyn',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'BasicAttackGarroteSecondForm_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Evelyn',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'BasicAttackGarroteSecondForm_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Evelyn',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'BasicAttackGarroteSecondForm_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Evelyn',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'DashAttackPiercingAmbush_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Evelyn',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'DashAttackPiercingAmbush_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Evelyn',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'DashAttackPiercingAmbush_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Evelyn',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'DodgeCounterStranglingReversal_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Evelyn',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'DodgeCounterStranglingReversal_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Evelyn',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'DodgeCounterStranglingReversal_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Evelyn',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'SpecialAttackLockedPosition_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Evelyn',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'SpecialAttackLockedPosition_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Evelyn',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'SpecialAttackLockedPosition_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Evelyn',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'SpecialAttackBindingSunderFirstForm_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Evelyn',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'SpecialAttackBindingSunderFirstForm_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Evelyn',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'SpecialAttackBindingSunderFirstForm_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Evelyn',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'SpecialAttackBindingSunderFirstForm_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Evelyn',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'SpecialAttackBindingSunderFirstForm_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Evelyn',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'SpecialAttackBindingSunderFirstForm_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Evelyn',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'EXSpecialAttackBindingSunderFinalForm_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Evelyn',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'EXSpecialAttackBindingSunderFinalForm_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Evelyn',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'EXSpecialAttackBindingSunderFinalForm_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Evelyn',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'EXSpecialAttackBindingSunderFinalForm_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Evelyn',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'EXSpecialAttackBindingSunderFinalForm_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Evelyn',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'EXSpecialAttackBindingSunderFinalForm_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Evelyn',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'ChainAttackLunaluxSnare_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Evelyn',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'ChainAttackLunaluxSnare_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Evelyn',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'ChainAttackLunaluxSnare_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Evelyn',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'UltimateLunaluxGarroteTimbre_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Evelyn',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'UltimateLunaluxGarroteTimbre_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Evelyn',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'UltimateLunaluxGarroteTimbre_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Evelyn',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'UltimateLunaluxGarroteShadow_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Evelyn',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'UltimateLunaluxGarroteShadow_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Evelyn',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'UltimateLunaluxGarroteShadow_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Evelyn',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'QuickAssistFierceBlade_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Evelyn',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'QuickAssistFierceBlade_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Evelyn',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'QuickAssistFierceBlade_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Evelyn',
@@ -849,7 +849,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'DefensiveAssistSilentProtection_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Evelyn',
@@ -863,7 +863,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'DefensiveAssistSilentProtection_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Evelyn',
@@ -877,7 +877,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'DefensiveAssistSilentProtection_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Evelyn',
@@ -891,7 +891,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'DefensiveAssistSilentProtection_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Evelyn',
@@ -905,7 +905,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'DefensiveAssistSilentProtection_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Evelyn',
@@ -919,7 +919,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'DefensiveAssistSilentProtection_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Evelyn',
@@ -933,7 +933,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'DefensiveAssistSilentProtection_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Evelyn',
@@ -947,7 +947,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'DefensiveAssistSilentProtection_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Evelyn',
@@ -961,7 +961,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'DefensiveAssistSilentProtection_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Evelyn',
@@ -975,7 +975,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'AssistFollowUpCourseDisruption_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Evelyn',
@@ -989,7 +989,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'AssistFollowUpCourseDisruption_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Evelyn',
@@ -1003,7 +1003,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'AssistFollowUpCourseDisruption_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Evelyn',
@@ -1017,7 +1017,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'm4_shield',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'shield',
       sheet: 'Evelyn',
@@ -1028,7 +1028,7 @@ export const formulas = {
     sheet: 'Evelyn',
     name: 'm6_follow_up_dmg_',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Evelyn',

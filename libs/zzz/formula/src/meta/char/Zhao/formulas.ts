@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Zhao',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Zhao',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'disorderDmgInst_ice',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Zhao',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'vortexDmgInst_ice',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Zhao',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Zhao',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Zhao',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Zhao',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'BasicAttackGlacialJudgment_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Zhao',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'BasicAttackGlacialJudgment_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Zhao',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'BasicAttackGlacialJudgment_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Zhao',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'BasicAttackGlacialJudgment_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Zhao',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'BasicAttackGlacialJudgment_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Zhao',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'BasicAttackGlacialJudgment_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Zhao',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'BasicAttackGlacialJudgment_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Zhao',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'BasicAttackGlacialJudgment_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Zhao',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'BasicAttackGlacialJudgment_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Zhao',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'BasicAttackGlacialJudgment_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Zhao',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'BasicAttackGlacialJudgment_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Zhao',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'BasicAttackGlacialJudgment_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Zhao',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'BasicAttackGlacialJudgment_4:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Zhao',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'BasicAttackGlacialJudgment_4:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Zhao',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'BasicAttackGlacialJudgment_4:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Zhao',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'BasicAttackGlacialJudgment_5:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Zhao',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'BasicAttackGlacialJudgment_5:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Zhao',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'BasicAttackGlacialJudgment_5:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Zhao',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'BasicAttackFinalVerdict_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Zhao',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'BasicAttackFinalVerdict_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Zhao',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'BasicAttackFinalVerdict_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Zhao',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'DashAttackBouncingDash_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Zhao',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'DashAttackBouncingDash_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Zhao',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'DashAttackBouncingDash_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Zhao',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'DodgeCounterSwiftBlink_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Zhao',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'DodgeCounterSwiftBlink_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Zhao',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'DodgeCounterSwiftBlink_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Zhao',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'SpecialAttackShatterfrostSurge_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Zhao',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'SpecialAttackShatterfrostSurge_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Zhao',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'SpecialAttackShatterfrostSurge_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Zhao',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'EXSpecialAttackFrostflowTundra_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Zhao',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'EXSpecialAttackFrostflowTundra_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Zhao',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'EXSpecialAttackFrostflowTundra_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Zhao',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'ChainAttackTemporaryAlliance_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Zhao',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'ChainAttackTemporaryAlliance_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Zhao',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'ChainAttackTemporaryAlliance_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Zhao',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'UltimateBunnyBarrage_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Zhao',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'UltimateBunnyBarrage_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Zhao',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'UltimateBunnyBarrage_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Zhao',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'UltimateBunnyBarrage_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Zhao',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'UltimateBunnyBarrage_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Zhao',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'UltimateBunnyBarrage_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Zhao',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'EntrySkillBurstOfFrost_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Zhao',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'EntrySkillBurstOfFrost_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Zhao',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'EntrySkillBurstOfFrost_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Zhao',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'QuickAssistPatchTheGaps_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Zhao',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'QuickAssistPatchTheGaps_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Zhao',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'QuickAssistPatchTheGaps_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Zhao',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'DefensiveAssistFrostveilSuppression_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Zhao',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'DefensiveAssistFrostveilSuppression_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Zhao',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'DefensiveAssistFrostveilSuppression_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Zhao',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'DefensiveAssistFrostveilSuppression_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Zhao',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'DefensiveAssistFrostveilSuppression_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Zhao',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'DefensiveAssistFrostveilSuppression_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Zhao',
@@ -849,7 +849,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'DefensiveAssistFrostveilSuppression_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Zhao',
@@ -863,7 +863,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'DefensiveAssistFrostveilSuppression_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Zhao',
@@ -877,7 +877,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'DefensiveAssistFrostveilSuppression_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Zhao',
@@ -891,7 +891,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'AssistFollowUpFrostlightReflection_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Zhao',
@@ -905,7 +905,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'AssistFollowUpFrostlightReflection_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Zhao',
@@ -919,7 +919,7 @@ export const formulas = {
     sheet: 'Zhao',
     name: 'AssistFollowUpFrostlightReflection_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Zhao',

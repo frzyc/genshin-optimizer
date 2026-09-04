@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soukaku',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Soukaku',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'disorderDmgInst_ice',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Soukaku',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'vortexDmgInst_ice',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Soukaku',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Soukaku',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soukaku',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soukaku',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'BasicAttackMakingRiceCakes_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soukaku',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'BasicAttackMakingRiceCakes_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soukaku',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'BasicAttackMakingRiceCakes_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soukaku',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'BasicAttackMakingRiceCakes_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soukaku',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'BasicAttackMakingRiceCakes_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soukaku',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'BasicAttackMakingRiceCakes_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soukaku',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'BasicAttackMakingRiceCakes_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soukaku',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'BasicAttackMakingRiceCakes_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soukaku',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'BasicAttackMakingRiceCakes_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soukaku',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'BasicAttackMakingRiceCakesFrostedBanner_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soukaku',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'BasicAttackMakingRiceCakesFrostedBanner_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soukaku',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'BasicAttackMakingRiceCakesFrostedBanner_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soukaku',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'BasicAttackMakingRiceCakesFrostedBanner_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soukaku',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'BasicAttackMakingRiceCakesFrostedBanner_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soukaku',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'BasicAttackMakingRiceCakesFrostedBanner_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soukaku',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'BasicAttackMakingRiceCakesFrostedBanner_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soukaku',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'BasicAttackMakingRiceCakesFrostedBanner_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soukaku',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'BasicAttackMakingRiceCakesFrostedBanner_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soukaku',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'DashAttack5050_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soukaku',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'DashAttack5050_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soukaku',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'DashAttack5050_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soukaku',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'DashAttack5050FrostedBanner_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soukaku',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'DashAttack5050FrostedBanner_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soukaku',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'DashAttack5050FrostedBanner_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soukaku',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'DodgeCounterAwayFromMySnacks_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soukaku',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'DodgeCounterAwayFromMySnacks_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soukaku',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'DodgeCounterAwayFromMySnacks_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soukaku',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'SpecialAttackCoolingBento_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soukaku',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'SpecialAttackCoolingBento_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soukaku',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'SpecialAttackCoolingBento_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soukaku',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'SpecialAttackCoolingBento_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soukaku',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'SpecialAttackCoolingBento_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soukaku',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'SpecialAttackCoolingBento_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soukaku',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'EXSpecialAttackFanningMosquitoes_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soukaku',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'EXSpecialAttackFanningMosquitoes_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soukaku',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'EXSpecialAttackFanningMosquitoes_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soukaku',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'EXSpecialAttackFanningMosquitoes_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soukaku',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'EXSpecialAttackFanningMosquitoes_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soukaku',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'EXSpecialAttackFanningMosquitoes_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soukaku',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'SpecialAttackRally_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soukaku',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'SpecialAttackRally_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soukaku',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'SpecialAttackRally_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soukaku',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'SpecialAttackRally_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soukaku',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'SpecialAttackRally_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soukaku',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'SpecialAttackRally_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soukaku',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'SpecialAttackRally_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soukaku',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'SpecialAttackRally_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soukaku',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'SpecialAttackRally_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soukaku',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'ChainAttackPuddingSlash_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soukaku',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'ChainAttackPuddingSlash_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soukaku',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'ChainAttackPuddingSlash_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soukaku',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'UltimateJumboPuddingSlash_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soukaku',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'UltimateJumboPuddingSlash_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soukaku',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'UltimateJumboPuddingSlash_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soukaku',
@@ -849,7 +849,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'QuickAssistASetForTwo_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soukaku',
@@ -863,7 +863,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'QuickAssistASetForTwo_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soukaku',
@@ -877,7 +877,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'QuickAssistASetForTwo_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soukaku',
@@ -891,7 +891,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'DefensiveAssistGuardingTactics_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soukaku',
@@ -905,7 +905,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'DefensiveAssistGuardingTactics_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soukaku',
@@ -919,7 +919,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'DefensiveAssistGuardingTactics_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soukaku',
@@ -933,7 +933,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'DefensiveAssistGuardingTactics_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soukaku',
@@ -947,7 +947,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'DefensiveAssistGuardingTactics_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soukaku',
@@ -961,7 +961,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'DefensiveAssistGuardingTactics_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soukaku',
@@ -975,7 +975,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'DefensiveAssistGuardingTactics_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soukaku',
@@ -989,7 +989,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'DefensiveAssistGuardingTactics_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soukaku',
@@ -1003,7 +1003,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'DefensiveAssistGuardingTactics_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soukaku',
@@ -1017,7 +1017,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'AssistFollowUpSweepingStrike_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Soukaku',
@@ -1031,7 +1031,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'AssistFollowUpSweepingStrike_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Soukaku',
@@ -1045,7 +1045,7 @@ export const formulas = {
     sheet: 'Soukaku',
     name: 'AssistFollowUpSweepingStrike_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Soukaku',

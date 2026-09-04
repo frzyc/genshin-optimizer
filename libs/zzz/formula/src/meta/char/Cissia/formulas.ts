@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Cissia',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Cissia',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'disorderDmgInst_electric',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Cissia',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'vortexDmgInst_electric',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Cissia',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Cissia',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Cissia',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Cissia',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'BasicAttackTongueFlick_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Cissia',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'BasicAttackTongueFlick_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Cissia',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'BasicAttackTongueFlick_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Cissia',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'BasicAttackTongueFlick_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Cissia',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'BasicAttackTongueFlick_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Cissia',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'BasicAttackTongueFlick_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Cissia',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'BasicAttackTongueFlick_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Cissia',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'BasicAttackTongueFlick_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Cissia',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'BasicAttackTongueFlick_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Cissia',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'BasicAttackTongueFlick_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Cissia',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'BasicAttackTongueFlick_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Cissia',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'BasicAttackTongueFlick_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Cissia',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'BasicAttackSerpentsKiss_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Cissia',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'BasicAttackSerpentsKiss_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Cissia',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'BasicAttackSerpentsKiss_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Cissia',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'CorrodeBone_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Cissia',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'CorrodeBone_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Cissia',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'CorrodeBone_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Cissia',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'DashAttackBiteMark_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Cissia',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'DashAttackBiteMark_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Cissia',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'DashAttackBiteMark_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Cissia',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'DodgeCounterBiteBack_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Cissia',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'DodgeCounterBiteBack_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Cissia',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'DodgeCounterBiteBack_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Cissia',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'SpecialAttackBaredFangs_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Cissia',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'SpecialAttackBaredFangs_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Cissia',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'SpecialAttackBaredFangs_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Cissia',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'EXSpecialAttackVenomousBite_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Cissia',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'EXSpecialAttackVenomousBite_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Cissia',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'EXSpecialAttackVenomousBite_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Cissia',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'EXSpecialAttackVenomousBite_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Cissia',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'EXSpecialAttackVenomousBite_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Cissia',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'EXSpecialAttackVenomousBite_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Cissia',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'ChainAttackGangOperation_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Cissia',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'ChainAttackGangOperation_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Cissia',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'ChainAttackGangOperation_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Cissia',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'UltimateOphidiophobia_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Cissia',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'UltimateOphidiophobia_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Cissia',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'UltimateOphidiophobia_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Cissia',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'QuickAssistAlarmSystem_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Cissia',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'QuickAssistAlarmSystem_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Cissia',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'QuickAssistAlarmSystem_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Cissia',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'DefensiveAssistExtraPrisonRations_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Cissia',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'DefensiveAssistExtraPrisonRations_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Cissia',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'DefensiveAssistExtraPrisonRations_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Cissia',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'DefensiveAssistExtraPrisonRations_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Cissia',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'DefensiveAssistExtraPrisonRations_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Cissia',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'DefensiveAssistExtraPrisonRations_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Cissia',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'DefensiveAssistExtraPrisonRations_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Cissia',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'DefensiveAssistExtraPrisonRations_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Cissia',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'DefensiveAssistExtraPrisonRations_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Cissia',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'AssistFollowUpPartnersInCrime_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Cissia',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'AssistFollowUpPartnersInCrime_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Cissia',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'Cissia',
     name: 'AssistFollowUpPartnersInCrime_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Cissia',

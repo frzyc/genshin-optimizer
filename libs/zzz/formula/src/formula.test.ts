@@ -1,4 +1,6 @@
 import { fail } from 'node:assert'
+import { writeFileSync } from 'node:fs'
+import path from 'node:path'
 import {
   compileTagMapValues,
   read,
@@ -16,6 +18,7 @@ import {
   conditionals,
   discTagMapNodeEntries,
   formulas,
+  Sunna,
   teamData,
   Vivian,
   wengineTagMapNodeEntries,
@@ -548,9 +551,112 @@ describe('team', () => {
         .compute(nextMember.final.anomProf).val
     ).toBeCloseTo(428, 1)
 
-    expect(
-      calc.compute(read(Vivian.buffs.core_electric_abloom.tag, undefined)).val
-    ).toBeCloseTo(428 * 0.1 * 0.032)
+    const r3 = read(Vivian.buffs.core_electric_abloom.tag, undefined)
+    // Save debug output to file
+    writeFileSync(
+      path.resolve(__dirname, 'debug_output3.json'),
+      JSON.stringify(calc.toDebug().compute(r3), undefined, 2)
+    )
+    expect(calc.compute(r3).val).toBeCloseTo(428 * 0.1 * 0.032)
+  })
+  test('targeted damage works', () => {
+    const data: TagMapNodeEntries = [
+      ...teamData(['Alice', 'Sunna']),
+      ...withMember(
+        'Sunna',
+        ...charTagMapNodeEntries({
+          level: 60,
+          promotion: 5,
+          key: 'Sunna',
+          mindscape: 0,
+          potential: 0,
+          basic: 0,
+          dodge: 0,
+          special: 0,
+          assist: 0,
+          chain: 0,
+          core: 6,
+        }),
+
+        ownBuff.initial.atk.add(25),
+        ownBuff.combat.atk.add(100),
+        ownBuff.combat.atk_.add(0.08),
+        ownBuff.initial.crit_.add(0.7),
+        ownBuff.initial.crit_dmg_.add(1.04),
+        ownBuff.initial.dmg_.electric.add(0.4),
+        ownBuff.initial.pen_.add(0.05),
+        ownBuff.initial.pen.add(90),
+        ownBuff.initial.resIgn_.add(0.02),
+        ownBuff.initial.anomProf.add(338)
+      ),
+      ...withMember(
+        'Alice',
+        ...charTagMapNodeEntries({
+          level: 60,
+          promotion: 5,
+          key: 'Alice',
+          mindscape: 0,
+          potential: 0,
+          basic: 0,
+          dodge: 0,
+          special: 0,
+          assist: 0,
+          chain: 0,
+          core: 6,
+        }),
+
+        ownBuff.initial.atk.add(25),
+        ownBuff.combat.atk.add(100),
+        ownBuff.combat.atk_.add(0.08),
+        ownBuff.initial.crit_.add(0.7),
+        ownBuff.initial.crit_dmg_.add(1.04),
+        ownBuff.initial.dmg_.physical.add(0.4),
+        ownBuff.initial.pen_.add(0.05),
+        ownBuff.initial.pen.add(90),
+        ownBuff.initial.resIgn_.add(0.02),
+        ownBuff.initial.anomProf.add(338)
+      ),
+      own.common.critMode.add('avg'),
+      enemy.common.def.add(635),
+      enemy.common.res_.physical.add(0.1),
+      enemyDebuff.common.resRed_.physical.add(0.15),
+      enemyDebuff.common.dmgInc_.add(0.1),
+      enemyDebuff.common.dmgRed_.add(0.15),
+      enemyDebuff.common.stun_.add(1.5),
+      enemyDebuff.common.unstun_.add(1),
+    ]
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Sunna', dst: 'Alice', preset: 'preset0' })
+    // expect(calc.compute(own.final.atk).val).toBeCloseTo(11108.08, 1)
+    const r = read(Sunna.formulas.core_attack_physical_dmg.tag, undefined)
+    // Save debug output to file
+    writeFileSync(
+      path.resolve(__dirname, 'debug_output.json'),
+      JSON.stringify(calc.toDebug().compute(r), undefined, 2)
+    )
+    // console.log(calc.toDebug().compute(r))
+    expect(calc.compute(r).val).toBeCloseTo(1078.2, 1)
+    // expect(calc.compute(target.final.atk).val).toBeCloseTo(821.76, 1)
+    // expect(calc.compute(target.final.anomProf).val).toBeCloseTo(428, 1)
+    // expect(calc.compute(member0.final.anomProf).val).toBeCloseTo(428, 1)
+
+    // expect(
+    //   calc
+    //     .withTag({ src: 'Vivian', dst: 'Vivian', preset: 'preset0' })
+    //     .compute(prevMember.final.anomProf).val
+    // ).toBeCloseTo(428, 1)
+    // expect(
+    //   calc
+    //     .withTag({ src: 'Vivian', dst: 'Vivian', preset: 'preset0' })
+    //     .compute(nextMember.final.anomProf).val
+    // ).toBeCloseTo(428, 1)
+
+    // expect(
+    //   calc.compute(read(Vivian.buffs.core_electric_abloom.tag, undefined)).val
+    // ).toBeCloseTo(428 * 0.1 * 0.032)
   })
 })
 

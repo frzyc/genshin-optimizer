@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Koleda',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Koleda',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'disorderDmgInst_fire',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Koleda',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'vortexDmgInst_fire',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Koleda',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Koleda',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Koleda',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Koleda',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'BasicAttackSmashNBash_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Koleda',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'BasicAttackSmashNBash_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Koleda',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'BasicAttackSmashNBash_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Koleda',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'BasicAttackSmashNBash_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Koleda',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'BasicAttackSmashNBash_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Koleda',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'BasicAttackSmashNBash_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Koleda',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'BasicAttackSmashNBash_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Koleda',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'BasicAttackSmashNBash_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Koleda',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'BasicAttackSmashNBash_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Koleda',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'BasicAttackSmashNBash_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Koleda',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'BasicAttackSmashNBash_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Koleda',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'BasicAttackSmashNBash_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Koleda',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'BasicAttackSmashNBash_4:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Koleda',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'BasicAttackSmashNBash_4:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Koleda',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'BasicAttackSmashNBash_4:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Koleda',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'BasicAttackSmashNBash_5:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Koleda',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'BasicAttackSmashNBash_5:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Koleda',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'BasicAttackSmashNBash_5:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Koleda',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'BasicAttackSmashNBash_6:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Koleda',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'BasicAttackSmashNBash_6:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Koleda',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'BasicAttackSmashNBash_6:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Koleda',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'DashAttackTremble_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Koleda',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'DashAttackTremble_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Koleda',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'DashAttackTremble_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Koleda',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'DodgeCounterDontLookDownOnMe_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Koleda',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'DodgeCounterDontLookDownOnMe_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Koleda',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'DodgeCounterDontLookDownOnMe_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Koleda',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'SpecialAttackHammerTime_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Koleda',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'SpecialAttackHammerTime_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Koleda',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'SpecialAttackHammerTime_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Koleda',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'SpecialAttackHammerTime_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Koleda',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'SpecialAttackHammerTime_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Koleda',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'SpecialAttackHammerTime_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Koleda',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'SpecialAttackHammerTime_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Koleda',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'SpecialAttackHammerTime_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Koleda',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'SpecialAttackHammerTime_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Koleda',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'EXSpecialAttackBoilingFurnace_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Koleda',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'EXSpecialAttackBoilingFurnace_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Koleda',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'EXSpecialAttackBoilingFurnace_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Koleda',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'EXSpecialAttackBoilingFurnace_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Koleda',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'EXSpecialAttackBoilingFurnace_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Koleda',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'EXSpecialAttackBoilingFurnace_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Koleda',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'EXSpecialAttackBoilingFurnace_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Koleda',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'EXSpecialAttackBoilingFurnace_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Koleda',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'EXSpecialAttackBoilingFurnace_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Koleda',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'ChainAttackNaturalDisaster_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Koleda',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'ChainAttackNaturalDisaster_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Koleda',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'ChainAttackNaturalDisaster_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Koleda',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'UltimateHammerquake_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Koleda',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'UltimateHammerquake_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Koleda',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'UltimateHammerquake_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Koleda',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'UltimateHammerquake_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Koleda',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'UltimateHammerquake_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Koleda',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'UltimateHammerquake_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Koleda',
@@ -849,7 +849,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'QuickAssistComingThru_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Koleda',
@@ -863,7 +863,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'QuickAssistComingThru_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Koleda',
@@ -877,7 +877,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'QuickAssistComingThru_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Koleda',
@@ -891,7 +891,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'DefensiveAssistProtectiveHammer_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Koleda',
@@ -905,7 +905,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'DefensiveAssistProtectiveHammer_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Koleda',
@@ -919,7 +919,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'DefensiveAssistProtectiveHammer_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Koleda',
@@ -933,7 +933,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'DefensiveAssistProtectiveHammer_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Koleda',
@@ -947,7 +947,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'DefensiveAssistProtectiveHammer_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Koleda',
@@ -961,7 +961,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'DefensiveAssistProtectiveHammer_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Koleda',
@@ -975,7 +975,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'DefensiveAssistProtectiveHammer_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Koleda',
@@ -989,7 +989,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'DefensiveAssistProtectiveHammer_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Koleda',
@@ -1003,7 +1003,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'DefensiveAssistProtectiveHammer_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Koleda',
@@ -1017,7 +1017,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'AssistFollowUpHammerBell_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Koleda',
@@ -1031,7 +1031,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'AssistFollowUpHammerBell_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Koleda',
@@ -1045,7 +1045,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'AssistFollowUpHammerBell_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Koleda',
@@ -1059,7 +1059,7 @@ export const formulas = {
     sheet: 'Koleda',
     name: 'm6_dmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Koleda',

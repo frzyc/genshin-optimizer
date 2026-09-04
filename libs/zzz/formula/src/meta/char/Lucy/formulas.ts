@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucy',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Lucy',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'disorderDmgInst_fire',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Lucy',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'vortexDmgInst_fire',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Lucy',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Lucy',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucy',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucy',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'BasicAttackLadysBat_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucy',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'BasicAttackLadysBat_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucy',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'BasicAttackLadysBat_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucy',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'BasicAttackLadysBat_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucy',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'BasicAttackLadysBat_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucy',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'BasicAttackLadysBat_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucy',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'BasicAttackLadysBat_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucy',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'BasicAttackLadysBat_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucy',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'BasicAttackLadysBat_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucy',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'BasicAttackLadysBat_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucy',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'BasicAttackLadysBat_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucy',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'BasicAttackLadysBat_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucy',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'BasicAttackLadysBat_4:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucy',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'BasicAttackLadysBat_4:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucy',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'BasicAttackLadysBat_4:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucy',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'GuardBoarsToArms_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucy',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'GuardBoarsToArms_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucy',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'GuardBoarsToArms_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucy',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'GuardBoarsToArms_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucy',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'GuardBoarsToArms_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucy',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'GuardBoarsToArms_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucy',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'GuardBoarsToArms_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucy',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'GuardBoarsToArms_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucy',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'GuardBoarsToArms_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucy',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'GuardBoarsSpinningSwing_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucy',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'GuardBoarsSpinningSwing_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucy',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'GuardBoarsSpinningSwing_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucy',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'DashAttackFearlessBoar_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucy',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'DashAttackFearlessBoar_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucy',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'DashAttackFearlessBoar_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucy',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'DodgeCounterReturningTusk_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucy',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'DodgeCounterReturningTusk_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucy',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'DodgeCounterReturningTusk_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucy',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'SpecialAttackSolidHit_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucy',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'SpecialAttackSolidHit_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucy',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'SpecialAttackSolidHit_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucy',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'SpecialAttackSolidHit_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucy',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'SpecialAttackSolidHit_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucy',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'SpecialAttackSolidHit_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucy',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'EXSpecialAttackHomeRun_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucy',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'EXSpecialAttackHomeRun_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucy',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'EXSpecialAttackHomeRun_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucy',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'EXSpecialAttackHomeRun_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucy',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'EXSpecialAttackHomeRun_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucy',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'EXSpecialAttackHomeRun_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucy',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'ChainAttackGrandSlam_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucy',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'ChainAttackGrandSlam_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucy',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'ChainAttackGrandSlam_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucy',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'UltimateWalkOffHomeRun_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucy',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'UltimateWalkOffHomeRun_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucy',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'UltimateWalkOffHomeRun_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucy',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'QuickAssistHitByPitch_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucy',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'QuickAssistHitByPitch_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucy',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'QuickAssistHitByPitch_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucy',
@@ -849,7 +849,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'DefensiveAssistSafeOnBase_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucy',
@@ -863,7 +863,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'DefensiveAssistSafeOnBase_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucy',
@@ -877,7 +877,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'DefensiveAssistSafeOnBase_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucy',
@@ -891,7 +891,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'DefensiveAssistSafeOnBase_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucy',
@@ -905,7 +905,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'DefensiveAssistSafeOnBase_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucy',
@@ -919,7 +919,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'DefensiveAssistSafeOnBase_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucy',
@@ -933,7 +933,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'DefensiveAssistSafeOnBase_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucy',
@@ -947,7 +947,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'DefensiveAssistSafeOnBase_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucy',
@@ -961,7 +961,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'DefensiveAssistSafeOnBase_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucy',
@@ -975,7 +975,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'AssistFollowUpScoredARun_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucy',
@@ -989,7 +989,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'AssistFollowUpScoredARun_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Lucy',
@@ -1003,7 +1003,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'AssistFollowUpScoredARun_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Lucy',
@@ -1017,7 +1017,7 @@ export const formulas = {
     sheet: 'Lucy',
     name: 'm6_dmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Lucy',

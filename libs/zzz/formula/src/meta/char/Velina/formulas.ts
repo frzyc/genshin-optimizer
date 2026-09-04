@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Velina',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Velina',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'disorderDmgInst_wind',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Velina',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'vortexDmgInst_electric',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Velina',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'vortexDmgInst_fire',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Velina',
@@ -68,7 +68,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'vortexDmgInst_ice',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Velina',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'vortexDmgInst_physical',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Velina',
@@ -94,7 +94,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'vortexDmgInst_ether',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Velina',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'vortexDmgInst_frost',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Velina',
@@ -120,7 +120,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Velina',
@@ -134,7 +134,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Velina',
@@ -146,7 +146,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Velina',
@@ -158,7 +158,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'BasicAttackDancingFans_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Velina',
@@ -172,7 +172,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'BasicAttackDancingFans_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Velina',
@@ -186,7 +186,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'BasicAttackDancingFans_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Velina',
@@ -200,7 +200,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'BasicAttackDancingFans_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Velina',
@@ -214,7 +214,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'BasicAttackDancingFans_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Velina',
@@ -228,7 +228,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'BasicAttackDancingFans_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Velina',
@@ -242,7 +242,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'BasicAttackDancingFans_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Velina',
@@ -256,7 +256,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'BasicAttackDancingFans_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Velina',
@@ -270,7 +270,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'BasicAttackDancingFans_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Velina',
@@ -284,7 +284,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'BasicAttackDancingFans_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Velina',
@@ -298,7 +298,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'BasicAttackDancingFans_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Velina',
@@ -312,7 +312,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'BasicAttackDancingFans_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Velina',
@@ -326,7 +326,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'BasicAttackDancingFans_4:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Velina',
@@ -340,7 +340,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'BasicAttackDancingFans_4:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Velina',
@@ -354,7 +354,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'BasicAttackDancingFans_4:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Velina',
@@ -368,7 +368,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'DashAttackGaleStep_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Velina',
@@ -382,7 +382,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'DashAttackGaleStep_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Velina',
@@ -396,7 +396,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'DashAttackGaleStep_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Velina',
@@ -410,7 +410,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'DodgeCounterCloudrend_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Velina',
@@ -424,7 +424,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'DodgeCounterCloudrend_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Velina',
@@ -438,7 +438,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'DodgeCounterCloudrend_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Velina',
@@ -452,7 +452,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'SpecialAttackWindShearPurgingSurge_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Velina',
@@ -466,7 +466,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'SpecialAttackWindShearPurgingSurge_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Velina',
@@ -480,7 +480,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'SpecialAttackWindShearPurgingSurge_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Velina',
@@ -494,7 +494,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'EXSpecialAttackWindShearPurifyingRise_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Velina',
@@ -508,7 +508,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'EXSpecialAttackWindShearPurifyingRise_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Velina',
@@ -522,7 +522,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'EXSpecialAttackWindShearPurifyingRise_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Velina',
@@ -536,7 +536,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'EXSpecialAttackWindShearTripleDeathblow_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Velina',
@@ -550,7 +550,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'EXSpecialAttackWindShearTripleDeathblow_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Velina',
@@ -564,7 +564,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'EXSpecialAttackWindShearTripleDeathblow_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Velina',
@@ -578,7 +578,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'EXSpecialAttackWindShearEyeOfTheStorm_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Velina',
@@ -592,7 +592,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'EXSpecialAttackWindShearEyeOfTheStorm_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Velina',
@@ -606,7 +606,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'EXSpecialAttackWindShearEyeOfTheStorm_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Velina',
@@ -620,7 +620,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'SweepingCyclone_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Velina',
@@ -634,7 +634,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'SweepingCyclone_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Velina',
@@ -648,7 +648,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'SweepingCyclone_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Velina',
@@ -662,7 +662,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'SweepingCyclone_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Velina',
@@ -676,7 +676,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'SweepingCyclone_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Velina',
@@ -690,7 +690,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'SweepingCyclone_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Velina',
@@ -704,7 +704,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'CondensedCyclone_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Velina',
@@ -718,7 +718,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'CondensedCyclone_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Velina',
@@ -732,7 +732,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'CondensedCyclone_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Velina',
@@ -746,7 +746,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'ChainAttackThousandfoldSpiral_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Velina',
@@ -760,7 +760,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'ChainAttackThousandfoldSpiral_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Velina',
@@ -774,7 +774,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'ChainAttackThousandfoldSpiral_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Velina',
@@ -788,7 +788,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'UltimateHeedTheTempest_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Velina',
@@ -802,7 +802,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'UltimateHeedTheTempest_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Velina',
@@ -816,7 +816,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'UltimateHeedTheTempest_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Velina',
@@ -830,7 +830,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'QuickAssistEmergencyProtocol_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Velina',
@@ -844,7 +844,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'QuickAssistEmergencyProtocol_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Velina',
@@ -858,7 +858,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'QuickAssistEmergencyProtocol_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Velina',
@@ -872,7 +872,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'DefensiveAssistJudiciousIntervention_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Velina',
@@ -886,7 +886,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'DefensiveAssistJudiciousIntervention_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Velina',
@@ -900,7 +900,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'DefensiveAssistJudiciousIntervention_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Velina',
@@ -914,7 +914,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'DefensiveAssistJudiciousIntervention_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Velina',
@@ -928,7 +928,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'DefensiveAssistJudiciousIntervention_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Velina',
@@ -942,7 +942,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'DefensiveAssistJudiciousIntervention_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Velina',
@@ -956,7 +956,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'DefensiveAssistJudiciousIntervention_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Velina',
@@ -970,7 +970,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'DefensiveAssistJudiciousIntervention_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Velina',
@@ -984,7 +984,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'DefensiveAssistJudiciousIntervention_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Velina',
@@ -998,7 +998,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'AssistFollowUpNegotiationTechniques_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Velina',
@@ -1012,7 +1012,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'AssistFollowUpNegotiationTechniques_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Velina',
@@ -1026,7 +1026,7 @@ export const formulas = {
     sheet: 'Velina',
     name: 'AssistFollowUpNegotiationTechniques_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Velina',

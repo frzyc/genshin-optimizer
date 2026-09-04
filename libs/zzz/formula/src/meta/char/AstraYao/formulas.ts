@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'AstraYao',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'AstraYao',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'disorderDmgInst_ether',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'AstraYao',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'vortexDmgInst_ether',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'AstraYao',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'AstraYao',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'AstraYao',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'AstraYao',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'BasicAttackCapriccio_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'AstraYao',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'BasicAttackCapriccio_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'AstraYao',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'BasicAttackCapriccio_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'AstraYao',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'BasicAttackCapriccio_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'AstraYao',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'BasicAttackCapriccio_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'AstraYao',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'BasicAttackCapriccio_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'AstraYao',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'BasicAttackCapriccio_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'AstraYao',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'BasicAttackCapriccio_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'AstraYao',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'BasicAttackCapriccio_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'AstraYao',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'BasicAttackCapriccio_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'AstraYao',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'BasicAttackCapriccio_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'AstraYao',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'BasicAttackCapriccio_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'AstraYao',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'BasicAttackInterlude_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'AstraYao',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'BasicAttackInterlude_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'AstraYao',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'BasicAttackInterlude_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'AstraYao',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'BasicAttackChorus_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'AstraYao',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'BasicAttackChorus_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'AstraYao',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'BasicAttackChorus_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'AstraYao',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'BasicAttackFinale_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'AstraYao',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'BasicAttackFinale_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'AstraYao',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'BasicAttackFinale_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'AstraYao',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'DashAttackLunarEclipseMelody_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'AstraYao',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'DashAttackLunarEclipseMelody_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'AstraYao',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'DashAttackLunarEclipseMelody_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'AstraYao',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'DodgeCounterUmbrellaWaltz_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'AstraYao',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'DodgeCounterUmbrellaWaltz_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'AstraYao',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'DodgeCounterUmbrellaWaltz_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'AstraYao',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'SpecialAttackWindchimesOaths_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'AstraYao',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'SpecialAttackWindchimesOaths_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'AstraYao',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'SpecialAttackWindchimesOaths_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'AstraYao',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'Chord_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'AstraYao',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'Chord_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'AstraYao',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'Chord_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'AstraYao',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'Chord_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'AstraYao',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'Chord_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'AstraYao',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'Chord_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'AstraYao',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'ChainAttackTipsyConcerto_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'AstraYao',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'ChainAttackTipsyConcerto_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'AstraYao',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'ChainAttackTipsyConcerto_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'AstraYao',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'UltimateFantasianSonata_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'AstraYao',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'UltimateFantasianSonata_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'AstraYao',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'UltimateFantasianSonata_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'AstraYao',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'QuickAssistOneLuminousSky_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'AstraYao',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'QuickAssistOneLuminousSky_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'AstraYao',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'QuickAssistOneLuminousSky_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'AstraYao',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'AssistFollowUpThreeLifetimesOfFate_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'AstraYao',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'AssistFollowUpThreeLifetimesOfFate_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'AstraYao',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'AssistFollowUpThreeLifetimesOfFate_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'AstraYao',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'AstraYao',
     name: 'ultimate_heal',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'heal',
       sheet: 'AstraYao',

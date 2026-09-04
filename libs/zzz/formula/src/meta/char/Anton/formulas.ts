@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anton',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Anton',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'disorderDmgInst_electric',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Anton',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'vortexDmgInst_electric',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Anton',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'Anton',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anton',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anton',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'BasicAttackEnthusiasticDrills_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anton',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'BasicAttackEnthusiasticDrills_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anton',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'BasicAttackEnthusiasticDrills_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anton',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'BasicAttackEnthusiasticDrills_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anton',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'BasicAttackEnthusiasticDrills_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anton',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'BasicAttackEnthusiasticDrills_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anton',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'BasicAttackEnthusiasticDrills_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anton',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'BasicAttackEnthusiasticDrills_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anton',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'BasicAttackEnthusiasticDrills_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anton',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'BasicAttackEnthusiasticDrills_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anton',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'BasicAttackEnthusiasticDrills_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anton',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'BasicAttackEnthusiasticDrills_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anton',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'BasicAttackEnthusiasticDrillsBurstMode_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anton',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'BasicAttackEnthusiasticDrillsBurstMode_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anton',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'BasicAttackEnthusiasticDrillsBurstMode_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anton',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'BasicAttackEnthusiasticDrillsBurstMode_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anton',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'BasicAttackEnthusiasticDrillsBurstMode_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anton',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'BasicAttackEnthusiasticDrillsBurstMode_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anton',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'BasicAttackEnthusiasticDrillsBurstMode_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anton',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'BasicAttackEnthusiasticDrillsBurstMode_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anton',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'BasicAttackEnthusiasticDrillsBurstMode_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anton',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'DashAttackFireWithFire_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anton',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'DashAttackFireWithFire_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anton',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'DashAttackFireWithFire_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anton',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'DodgeCounterRetaliation_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anton',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'DodgeCounterRetaliation_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anton',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'DodgeCounterRetaliation_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anton',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'DodgeCounterOverloadDrillBurstMode_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anton',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'DodgeCounterOverloadDrillBurstMode_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anton',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'DodgeCounterOverloadDrillBurstMode_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anton',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'SpecialAttackSpinBro_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anton',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'SpecialAttackSpinBro_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anton',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'SpecialAttackSpinBro_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anton',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'EXSpecialAttackSmashTheHorizonBro_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anton',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'EXSpecialAttackSmashTheHorizonBro_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anton',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'EXSpecialAttackSmashTheHorizonBro_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anton',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'SpecialAttackExplosiveDrillBurstMode_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anton',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'SpecialAttackExplosiveDrillBurstMode_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anton',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'SpecialAttackExplosiveDrillBurstMode_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anton',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'ChainAttackGoGoGo_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anton',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'ChainAttackGoGoGo_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anton',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'ChainAttackGoGoGo_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anton',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'UltimateGoGoGoGoGo_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anton',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'UltimateGoGoGoGoGo_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anton',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'UltimateGoGoGoGoGo_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anton',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'QuickAssistShoulderToShoulder_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anton',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'QuickAssistShoulderToShoulder_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anton',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'QuickAssistShoulderToShoulder_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anton',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'QuickAssistProtectiveDrillBurstMode_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anton',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'QuickAssistProtectiveDrillBurstMode_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anton',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'QuickAssistProtectiveDrillBurstMode_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anton',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'DefensiveAssistIronWrist_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anton',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'DefensiveAssistIronWrist_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anton',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'DefensiveAssistIronWrist_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anton',
@@ -849,7 +849,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'DefensiveAssistIronWrist_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anton',
@@ -863,7 +863,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'DefensiveAssistIronWrist_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anton',
@@ -877,7 +877,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'DefensiveAssistIronWrist_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anton',
@@ -891,7 +891,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'DefensiveAssistIronWrist_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anton',
@@ -905,7 +905,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'DefensiveAssistIronWrist_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anton',
@@ -919,7 +919,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'DefensiveAssistIronWrist_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anton',
@@ -933,7 +933,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'AssistFollowUpLimitBurst_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'Anton',
@@ -947,7 +947,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'AssistFollowUpLimitBurst_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'Anton',
@@ -961,7 +961,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'AssistFollowUpLimitBurst_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'Anton',
@@ -975,7 +975,7 @@ export const formulas = {
     sheet: 'Anton',
     name: 'm2_shield',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'shield',
       sheet: 'Anton',

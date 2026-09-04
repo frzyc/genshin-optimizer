@@ -4,7 +4,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'standardDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'NangongYu',
@@ -16,7 +16,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'anomalyDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'NangongYu',
@@ -29,7 +29,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'disorderDmgInst_ether',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'NangongYu',
@@ -42,7 +42,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'vortexDmgInst_ether',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'NangongYu',
@@ -55,7 +55,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'abloomDmgInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomalyDmg',
       sheet: 'NangongYu',
@@ -69,7 +69,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'anomalyBuildupInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'NangongYu',
@@ -81,7 +81,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'dazeInst',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'NangongYu',
@@ -93,7 +93,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'BasicAttackShootingStarStep_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'NangongYu',
@@ -107,7 +107,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'BasicAttackShootingStarStep_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'NangongYu',
@@ -121,7 +121,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'BasicAttackShootingStarStep_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'NangongYu',
@@ -135,7 +135,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'BasicAttackShootingStarStep_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'NangongYu',
@@ -149,7 +149,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'BasicAttackShootingStarStep_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'NangongYu',
@@ -163,7 +163,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'BasicAttackShootingStarStep_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'NangongYu',
@@ -177,7 +177,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'BasicAttackShootingStarStep_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'NangongYu',
@@ -191,7 +191,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'BasicAttackShootingStarStep_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'NangongYu',
@@ -205,7 +205,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'BasicAttackShootingStarStep_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'NangongYu',
@@ -219,7 +219,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'BasicAttackAdorableExplosiveImpact_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'NangongYu',
@@ -233,7 +233,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'BasicAttackAdorableExplosiveImpact_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'NangongYu',
@@ -247,7 +247,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'BasicAttackAdorableExplosiveImpact_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'NangongYu',
@@ -261,7 +261,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'BasicAttackAdorableExplosiveImpact_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'NangongYu',
@@ -275,7 +275,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'BasicAttackAdorableExplosiveImpact_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'NangongYu',
@@ -289,7 +289,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'BasicAttackAdorableExplosiveImpact_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'NangongYu',
@@ -303,7 +303,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'BasicAttackAdorableExplosiveImpact_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'NangongYu',
@@ -317,7 +317,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'BasicAttackAdorableExplosiveImpact_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'NangongYu',
@@ -331,7 +331,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'BasicAttackAdorableExplosiveImpact_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'NangongYu',
@@ -345,7 +345,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'BasicAttackAdorableExplosiveImpact_3:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'NangongYu',
@@ -359,7 +359,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'BasicAttackAdorableExplosiveImpact_3:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'NangongYu',
@@ -373,7 +373,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'BasicAttackAdorableExplosiveImpact_3:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'NangongYu',
@@ -387,7 +387,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'DashAttackSpinningMeteor_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'NangongYu',
@@ -401,7 +401,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'DashAttackSpinningMeteor_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'NangongYu',
@@ -415,7 +415,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'DashAttackSpinningMeteor_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'NangongYu',
@@ -429,7 +429,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'DodgeCounterAsteroidWaltz_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'NangongYu',
@@ -443,7 +443,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'DodgeCounterAsteroidWaltz_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'NangongYu',
@@ -457,7 +457,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'DodgeCounterAsteroidWaltz_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'NangongYu',
@@ -471,7 +471,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'SpecialAttackTheWeightOfLove_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'NangongYu',
@@ -485,7 +485,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'SpecialAttackTheWeightOfLove_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'NangongYu',
@@ -499,7 +499,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'SpecialAttackTheWeightOfLove_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'NangongYu',
@@ -513,7 +513,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'EXSpecialAttackTheUnbearableWeightOfLove_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'NangongYu',
@@ -527,7 +527,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'EXSpecialAttackTheUnbearableWeightOfLove_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'NangongYu',
@@ -541,7 +541,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'EXSpecialAttackTheUnbearableWeightOfLove_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'NangongYu',
@@ -555,7 +555,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'ChainAttackCometGravity_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'NangongYu',
@@ -569,7 +569,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'ChainAttackCometGravity_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'NangongYu',
@@ -583,7 +583,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'ChainAttackCometGravity_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'NangongYu',
@@ -597,7 +597,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'UltimateMeteorShower_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'NangongYu',
@@ -611,7 +611,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'UltimateMeteorShower_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'NangongYu',
@@ -625,7 +625,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'UltimateMeteorShower_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'NangongYu',
@@ -639,7 +639,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'QuickAssistEmergencySave_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'NangongYu',
@@ -653,7 +653,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'QuickAssistEmergencySave_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'NangongYu',
@@ -667,7 +667,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'QuickAssistEmergencySave_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'NangongYu',
@@ -681,7 +681,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'DefensiveAssistPerfectedChoreography_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'NangongYu',
@@ -695,7 +695,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'DefensiveAssistPerfectedChoreography_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'NangongYu',
@@ -709,7 +709,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'DefensiveAssistPerfectedChoreography_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'NangongYu',
@@ -723,7 +723,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'DefensiveAssistPerfectedChoreography_1:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'NangongYu',
@@ -737,7 +737,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'DefensiveAssistPerfectedChoreography_1:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'NangongYu',
@@ -751,7 +751,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'DefensiveAssistPerfectedChoreography_1:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'NangongYu',
@@ -765,7 +765,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'DefensiveAssistPerfectedChoreography_2:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'NangongYu',
@@ -779,7 +779,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'DefensiveAssistPerfectedChoreography_2:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'NangongYu',
@@ -793,7 +793,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'DefensiveAssistPerfectedChoreography_2:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'NangongYu',
@@ -807,7 +807,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'AssistFollowUpImprovisedPerformance_0:standardDmg',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'standardDmg',
       sheet: 'NangongYu',
@@ -821,7 +821,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'AssistFollowUpImprovisedPerformance_0:dazeBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'dazeBuildup',
       sheet: 'NangongYu',
@@ -835,7 +835,7 @@ export const formulas = {
     sheet: 'NangongYu',
     name: 'AssistFollowUpImprovisedPerformance_0:anomBuildup',
     tag: {
-      et: 'own',
+      et: 'display',
       qt: 'formula',
       q: 'anomBuildup',
       sheet: 'NangongYu',
