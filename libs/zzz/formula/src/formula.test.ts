@@ -18,6 +18,7 @@ import {
   conditionals,
   discTagMapNodeEntries,
   formulas,
+  Seth,
   Sunna,
   teamData,
   Vivian,
@@ -458,7 +459,7 @@ describe('team', () => {
       calc.compute(team.common.count.withFaction('StarsOfLyra')).val
     ).toEqual(0)
   })
-  test('target works', () => {
+  test('target conditional works', () => {
     const data: TagMapNodeEntries = [
       ...teamData(['Seth', 'Vivian']),
       ...withMember(
@@ -558,6 +559,18 @@ describe('team', () => {
       JSON.stringify(calc.toDebug().compute(r3), undefined, 2)
     )
     expect(calc.compute(r3).val).toBeCloseTo(428 * 0.1 * 0.032)
+    const r8 = read(Seth.formulas.anomalyDmgInst.tag, undefined)
+    writeFileSync(
+      path.resolve(__dirname, 'debug_output8.json'),
+      JSON.stringify(
+        calc
+          .withTag({ src: 'Seth', dst: 'Seth', preset: 'preset0' })
+          .toDebug()
+          .compute(r8),
+        undefined,
+        2
+      )
+    )
   })
   test('targeted damage works', () => {
     const data: TagMapNodeEntries = [

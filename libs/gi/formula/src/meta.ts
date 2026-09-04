@@ -2706,7 +2706,7 @@ export const formulas = {
       sheet: 'PrototypeAmber',
       name: 'heal',
       tag: {
-        et: 'own',
+        et: 'team',
         qt: 'formula',
         q: 'heal',
         sheet: 'PrototypeAmber',

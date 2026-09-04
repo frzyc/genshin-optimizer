@@ -123,7 +123,7 @@ function registerFormula(
   const { sheet: _sheet, ...tag } = entry.tag
   const namedReader = reader.withTag({
     ...tag,
-    et: 'display',
+    et: 'own',
     qt: 'formula',
     q,
     name,
@@ -132,7 +132,7 @@ function registerFormula(
   console.log(namedReader.add(namedReader.withTag({ et: 'own' })))
   return [
     listing.add(listingItem(namedReader, cond)),
-    namedReader.add(namedReader.withTag({ et: 'own' })),
+    // namedReader.add(namedReader.withTag({ et: 'own' })),
     // namedReader.toEntry(entry.value),
     ...[entry, ...extra].map(({ tag, value }) => ({
       tag: { ...tag, name },

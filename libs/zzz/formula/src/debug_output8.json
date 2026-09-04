@@ -1,0 +1,684 @@
+{
+  "val": 7600.24194809949,
+  "meta": {
+    "formula": "[7600.24194809949] gather 11 node(s) matching { #anomalyDmgInst preset0 [Seth] (Seth) Seth own formula.anomalyDmg | electric 1:anomaly [prod] } (for { #anomalyDmgInst Seth own formula.anomalyDmg | electric 1:anomaly })",
+    "deps": [
+      {
+        "readSeq": "{ own formula.anomalyDmg } <- { #anomalyDmgInst preset0 [Seth] (Seth) Seth own formula.anomalyDmg | electric 1:anomaly }",
+        "formula": "[1027.2032450000002] sum(prod({ !dst agg own formula.anomalyDmgBase }, { !dst static own dmg.anom_base_mult_ }), { !dst agg own final.anom_flat_dmg })",
+        "deps": [
+          {
+            "formula": "[1027.2032450000002] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own formula.anomalyDmgBase | electric 1:anomaly [sum] } (for { !dst agg own formula.anomalyDmgBase })",
+            "deps": [
+              {
+                "readSeq": "{ agg } <= { char } : { [Seth] char } <= { Seth } : { #anomalyDmgInst Seth own formula.anomalyDmgBase } <- { #anomalyDmgInst preset0 [Seth] Seth own formula.anomalyDmgBase | electric 1:anomaly }",
+                "formula": "[1027.2032450000002] prod(tag({ misc._ }, 1.25), { !dst agg own final.atk }, match({ !dst agg own dmg.anom_mv_mult_ }, 0, tag({ misc._ }, 1)))",
+                "deps": [
+                  {
+                    "formula": "[821.7625960000001] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own final.atk | electric 1:anomaly [sum] } (for { !dst agg own final.atk })",
+                    "deps": [
+                      {
+                        "readSeq": "{ agg own final.atk } <- { #anomalyDmgInst preset0 [Seth] agg own final.atk | electric 1:anomaly }",
+                        "formula": "[821.7625960000001] sum(prod({ !dst agg own initial.atk }, sum(tag({ misc._ }, 1), { !dst agg own combat.atk_ })), { !dst agg own combat.atk })",
+                        "deps": [
+                          {
+                            "formula": "[668.2987] gather 2 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own initial.atk | electric 1:anomaly [sum] } (for { !dst agg own initial.atk })",
+                            "deps": [
+                              {
+                                "readSeq": "{ agg own initial.atk } <- { #anomalyDmgInst preset0 [Seth] agg own initial.atk | electric 1:anomaly }",
+                                "formula": "[643.2987] prod({ !dst agg own base.atk }, sum(tag({ misc._ }, 1), { !dst agg own initial.atk_ }))",
+                                "deps": [
+                                  {
+                                    "formula": "[643.2987] gather 2 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own base.atk | electric 1:anomaly [sum] } (for { !dst agg own base.atk })",
+                                    "deps": [
+                                      {
+                                        "readSeq": "{ agg } <= { char } : { [Seth] char } <= { Seth } : { Seth own base.atk } <- { #anomalyDmgInst preset0 [Seth] Seth own base.atk | electric 1:anomaly }",
+                                        "formula": "[568.2987] sum(93, subscript({ !dst iso own char.promotion }), prod(sum(-1, { !dst iso own char.lvl }), 5.2593))",
+                                        "deps": [
+                                          {
+                                            "formula": "[5] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] iso own char.promotion | electric 1:anomaly [unique] } (for { !dst iso own char.promotion })",
+                                            "deps": [
+                                              {
+                                                "readSeq": "{ [Seth] !dst iso own char.promotion } <- { #anomalyDmgInst preset0 [Seth] iso own char.promotion | electric 1:anomaly }",
+                                                "formula": "[5] 5"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "formula": "[60] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] iso own char.lvl | electric 1:anomaly [unique] } (for { !dst iso own char.lvl })",
+                                            "deps": [
+                                              {
+                                                "readSeq": "{ [Seth] !dst iso own char.lvl } <- { #anomalyDmgInst preset0 [Seth] iso own char.lvl | electric 1:anomaly }",
+                                                "formula": "[60] 60"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "readSeq": "{ agg } <= { char } : { [Seth] char } <= { Seth } : { Seth own base.atk } <- { #anomalyDmgInst preset0 [Seth] Seth own base.atk | electric 1:anomaly }",
+                                        "formula": "[75] subscript({ !dst agg own char.core })",
+                                        "deps": [
+                                          {
+                                            "formula": "[6] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own char.core | electric 1:anomaly [sum] } (for { !dst agg own char.core })",
+                                            "deps": [
+                                              {
+                                                "readSeq": "{ [Seth] !dst agg own char.core } <- { #anomalyDmgInst preset0 [Seth] agg own char.core | electric 1:anomaly }",
+                                                "formula": "[6] 6"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  "[0] gather 0 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own initial.atk_ | electric 1:anomaly [sum] } (for { !dst agg own initial.atk_ })"
+                                ]
+                              },
+                              {
+                                "readSeq": "{ [Seth] agg own initial.atk } <- { #anomalyDmgInst preset0 [Seth] agg own initial.atk | electric 1:anomaly }",
+                                "formula": "[25] 25"
+                              }
+                            ]
+                          },
+                          {
+                            "formula": "[0.08] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own combat.atk_ | electric 1:anomaly [sum] } (for { !dst agg own combat.atk_ })",
+                            "deps": [
+                              {
+                                "readSeq": "{ [Seth] agg own combat.atk_ } <- { #anomalyDmgInst preset0 [Seth] agg own combat.atk_ | electric 1:anomaly }",
+                                "formula": "[0.08] 0.08"
+                              }
+                            ]
+                          },
+                          {
+                            "formula": "[100] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own combat.atk | electric 1:anomaly [sum] } (for { !dst agg own combat.atk })",
+                            "deps": [
+                              {
+                                "readSeq": "{ [Seth] agg own combat.atk } <- { #anomalyDmgInst preset0 [Seth] agg own combat.atk | electric 1:anomaly }",
+                                "formula": "[100] 100"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "formula": "[0] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own dmg.anom_mv_mult_ | electric 1:anomaly [sum] } (for { !dst agg own dmg.anom_mv_mult_ })",
+                    "deps": [
+                      {
+                        "readSeq": "{ [Seth] agg own } <= { !name [Vivian] (Seth) agg teamBuff } : { agg } <= { char } : { [Vivian] char } <= { Vivian } : { Vivian teamBuff dmg.anom_mv_mult_ } <- { preset0 [Vivian] (Seth) Vivian teamBuff dmg.anom_mv_mult_ | electric 1:anomaly }",
+                        "formula": "[0] thres({ !dst iso own char.mindscape }, 2, 0)",
+                        "deps": [
+                          {
+                            "formula": "[0] gather 1 node(s) matching { preset0 [Vivian] iso own char.mindscape | electric 1:anomaly [unique] } (for { !dst iso own char.mindscape })",
+                            "deps": [
+                              {
+                                "readSeq": "{ [Vivian] !dst iso own char.mindscape } <- { preset0 [Vivian] iso own char.mindscape | electric 1:anomaly }",
+                                "formula": "[0] 0"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "formula": "[1] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] static own dmg.anom_base_mult_ | electric 1:anomaly [unique] } (for { !dst static own dmg.anom_base_mult_ })",
+            "deps": [
+              {
+                "readSeq": "{ static own dmg.anom_base_mult_ } <- { #anomalyDmgInst preset0 [Seth] static own dmg.anom_base_mult_ | electric 1:anomaly }",
+                "formula": "[1] sum(tag({ misc._ }, 1), { !dst agg own final.anom_base_ })",
+                "deps": [
+                  {
+                    "formula": "[0] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own final.anom_base_ | electric 1:anomaly [sum] } (for { !dst agg own final.anom_base_ })",
+                    "deps": [
+                      {
+                        "readSeq": "{ agg own final.anom_base_ } <- { #anomalyDmgInst preset0 [Seth] agg own final.anom_base_ | electric 1:anomaly }",
+                        "formula": "[0] sum({ !dst agg own initial.anom_base_ }, { !dst agg own combat.anom_base_ })",
+                        "deps": [
+                          "[0] gather 0 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own initial.anom_base_ | electric 1:anomaly [sum] } (for { !dst agg own initial.anom_base_ })",
+                          "[0] gather 0 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own combat.anom_base_ | electric 1:anomaly [sum] } (for { !dst agg own combat.anom_base_ })"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "formula": "[0] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own final.anom_flat_dmg | electric 1:anomaly [sum] } (for { !dst agg own final.anom_flat_dmg })",
+            "deps": [
+              {
+                "readSeq": "{ agg own final.anom_flat_dmg } <- { #anomalyDmgInst preset0 [Seth] agg own final.anom_flat_dmg | electric 1:anomaly }",
+                "formula": "[0] sum({ !dst agg own initial.anom_flat_dmg }, { !dst agg own combat.anom_flat_dmg })",
+                "deps": [
+                  "[0] gather 0 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own initial.anom_flat_dmg | electric 1:anomaly [sum] } (for { !dst agg own initial.anom_flat_dmg })",
+                  "[0] gather 0 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own combat.anom_flat_dmg | electric 1:anomaly [sum] } (for { !dst agg own combat.anom_flat_dmg })"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "readSeq": "{ own formula.anomalyDmg } <- { #anomalyDmgInst preset0 [Seth] (Seth) Seth own formula.anomalyDmg | electric 1:anomaly }",
+        "formula": "[1] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] static own dmg.anomaly_crit_mult_ | electric 1:anomaly [unique] } (for { !dst static own dmg.anomaly_crit_mult_ })",
+        "deps": [
+          {
+            "readSeq": "{ static own dmg.anomaly_crit_mult_ } <- { #anomalyDmgInst preset0 [Seth] static own dmg.anomaly_crit_mult_ | electric 1:anomaly }",
+            "formula": "[1] lookup({\"crit\":1,\"nonCrit\":2,\"avg\":3}, { !dst static own common.critMode }, sum(tag({ misc._ }, 1), prod({ !dst iso own common.anom_cappedCrit_ }, { !dst agg own final.anom_crit_dmg_ })))",
+            "deps": [
+              {
+                "formula": "[\"avg\"] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] static own common.critMode | electric 1:anomaly [unique] } (for { !dst static own common.critMode })",
+                "deps": [
+                  {
+                    "readSeq": "{ !dst static own common.critMode } <- { #anomalyDmgInst preset0 [Seth] static own common.critMode | electric 1:anomaly }",
+                    "formula": "[\"avg\"] \"avg\""
+                  }
+                ]
+              },
+              {
+                "formula": "[0] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] iso own common.anom_cappedCrit_ | electric 1:anomaly [unique] } (for { !dst iso own common.anom_cappedCrit_ })",
+                "deps": [
+                  {
+                    "readSeq": "{ iso own common.anom_cappedCrit_ } <- { #anomalyDmgInst preset0 [Seth] iso own common.anom_cappedCrit_ | electric 1:anomaly }",
+                    "formula": "[0] max(min({ !dst agg own final.anom_crit_ }, tag({ misc._ }, 1)), tag({ misc._ }, 0))",
+                    "deps": [
+                      {
+                        "formula": "[0] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own final.anom_crit_ | electric 1:anomaly [sum] } (for { !dst agg own final.anom_crit_ })",
+                        "deps": [
+                          {
+                            "readSeq": "{ agg own final.anom_crit_ } <- { #anomalyDmgInst preset0 [Seth] agg own final.anom_crit_ | electric 1:anomaly }",
+                            "formula": "[0] sum({ !dst agg own initial.anom_crit_ }, { !dst agg own combat.anom_crit_ })",
+                            "deps": [
+                              "[0] gather 0 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own initial.anom_crit_ | electric 1:anomaly [sum] } (for { !dst agg own initial.anom_crit_ })",
+                              "[0] gather 0 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own combat.anom_crit_ | electric 1:anomaly [sum] } (for { !dst agg own combat.anom_crit_ })"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "formula": "[0] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own final.anom_crit_dmg_ | electric 1:anomaly [sum] } (for { !dst agg own final.anom_crit_dmg_ })",
+                "deps": [
+                  {
+                    "readSeq": "{ agg own final.anom_crit_dmg_ } <- { #anomalyDmgInst preset0 [Seth] agg own final.anom_crit_dmg_ | electric 1:anomaly }",
+                    "formula": "[0] sum({ !dst agg own initial.anom_crit_dmg_ }, { !dst agg own combat.anom_crit_dmg_ })",
+                    "deps": [
+                      "[0] gather 0 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own initial.anom_crit_dmg_ | electric 1:anomaly [sum] } (for { !dst agg own initial.anom_crit_dmg_ })",
+                      "[0] gather 0 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own combat.anom_crit_dmg_ | electric 1:anomaly [sum] } (for { !dst agg own combat.anom_crit_dmg_ })"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "readSeq": "{ own formula.anomalyDmg } <= { !dst static own dmg.shared } : { static own dmg.shared } <- { #anomalyDmgInst preset0 [Seth] static own dmg.shared | electric 1:anomaly }",
+        "formula": "[1.4] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] static own dmg.dmg_mult_ | electric 1:anomaly [unique] } (for { static own dmg.dmg_mult_ })",
+        "deps": [
+          {
+            "readSeq": "{ static own dmg.dmg_mult_ } <- { #anomalyDmgInst preset0 [Seth] static own dmg.dmg_mult_ | electric 1:anomaly }",
+            "formula": "[1.4] sum(tag({ misc._ }, 1), { !dst agg own final.dmg_ }, { !dst agg own final.common_dmg_ })",
+            "deps": [
+              {
+                "formula": "[0.4] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own final.dmg_ | electric 1:anomaly [sum] } (for { !dst agg own final.dmg_ })",
+                "deps": [
+                  {
+                    "readSeq": "{ agg own final.dmg_ } <- { #anomalyDmgInst preset0 [Seth] agg own final.dmg_ | electric 1:anomaly }",
+                    "formula": "[0.4] sum({ !dst agg own initial.dmg_ }, { !dst agg own combat.dmg_ })",
+                    "deps": [
+                      {
+                        "formula": "[0.4] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own initial.dmg_ | electric 1:anomaly [sum] } (for { !dst agg own initial.dmg_ })",
+                        "deps": [
+                          {
+                            "readSeq": "{ [Seth] agg own initial.dmg_ | electric } <- { #anomalyDmgInst preset0 [Seth] agg own initial.dmg_ | electric 1:anomaly }",
+                            "formula": "[0.4] 0.4"
+                          }
+                        ]
+                      },
+                      "[0] gather 0 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own combat.dmg_ | electric 1:anomaly [sum] } (for { !dst agg own combat.dmg_ })"
+                    ]
+                  }
+                ]
+              },
+              {
+                "formula": "[0] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own final.common_dmg_ | electric 1:anomaly [sum] } (for { !dst agg own final.common_dmg_ })",
+                "deps": [
+                  {
+                    "readSeq": "{ agg own final.common_dmg_ } <- { #anomalyDmgInst preset0 [Seth] agg own final.common_dmg_ | electric 1:anomaly }",
+                    "formula": "[0] sum({ !dst agg own initial.common_dmg_ }, { !dst agg own combat.common_dmg_ })",
+                    "deps": [
+                      "[0] gather 0 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own initial.common_dmg_ | electric 1:anomaly [sum] } (for { !dst agg own initial.common_dmg_ })",
+                      "[0] gather 0 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own combat.common_dmg_ | electric 1:anomaly [sum] } (for { !dst agg own combat.common_dmg_ })"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "readSeq": "{ own formula.anomalyDmg } <= { !dst static own dmg.shared } : { static own dmg.shared } <- { #anomalyDmgInst preset0 [Seth] static own dmg.shared | electric 1:anomaly }",
+        "formula": "[1] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] static own dmg.buff_mult_ | electric 1:anomaly [unique] } (for { static own dmg.buff_mult_ })",
+        "deps": [
+          {
+            "readSeq": "{ static own dmg.buff_mult_ } <- { #anomalyDmgInst preset0 [Seth] static own dmg.buff_mult_ | electric 1:anomaly }",
+            "formula": "[1] sum(tag({ misc._ }, 1), { !dst agg own final.buff_ })",
+            "deps": [
+              {
+                "formula": "[0] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own final.buff_ | electric 1:anomaly [sum] } (for { !dst agg own final.buff_ })",
+                "deps": [
+                  {
+                    "readSeq": "{ agg own final.buff_ } <- { #anomalyDmgInst preset0 [Seth] agg own final.buff_ | electric 1:anomaly }",
+                    "formula": "[0] sum({ !dst agg own initial.buff_ }, { !dst agg own combat.buff_ })",
+                    "deps": [
+                      "[0] gather 0 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own initial.buff_ | electric 1:anomaly [sum] } (for { !dst agg own initial.buff_ })",
+                      {
+                        "formula": "[0] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own combat.buff_ | electric 1:anomaly [sum] } (for { !dst agg own combat.buff_ })",
+                        "deps": [
+                          {
+                            "readSeq": "{ [Seth] agg own } <= { !name [Vivian] (Seth) agg teamBuff } : { agg } <= { char } : { [Vivian] char } <= { Vivian } : { Vivian teamBuff combat.buff_ | 1:anomaly } <- { preset0 [Vivian] (Seth) Vivian teamBuff combat.buff_ | electric 1:anomaly }",
+                            "formula": "[0] thres({ !dst iso own char.mindscape }, 1, 0)",
+                            "deps": [
+                              {
+                                "formula": "[0] gather 1 node(s) matching { preset0 [Vivian] iso own char.mindscape | electric 1:anomaly [unique] } (for { !dst iso own char.mindscape })",
+                                "deps": [
+                                  {
+                                    "readSeq": "{ [Vivian] !dst iso own char.mindscape } <- { preset0 [Vivian] iso own char.mindscape | electric 1:anomaly }",
+                                    "formula": "[0] 0"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "readSeq": "{ own formula.anomalyDmg } <= { !dst static own dmg.shared } : { static own dmg.shared } <- { #anomalyDmgInst preset0 [Seth] static own dmg.shared | electric 1:anomaly }",
+        "formula": "[1.07] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] static own dmg.res_mult_ | electric 1:anomaly [unique] } (for { static own dmg.res_mult_ })",
+        "deps": [
+          {
+            "readSeq": "{ static own dmg.res_mult_ } <- { #anomalyDmgInst preset0 [Seth] static own dmg.res_mult_ | electric 1:anomaly }",
+            "formula": "[1.07] sum(tag({ misc._ }, 1), prod(-1, { !name !src !dst agg enemy common.res_ }), { !name !src !dst agg enemy common.resRed_ }, { !dst agg own final.resIgn_ })",
+            "deps": [
+              {
+                "formula": "[0.1] gather 1 node(s) matching { preset0 agg enemy common.res_ | electric 1:anomaly [sum] } (for { !name !src !dst agg enemy common.res_ })",
+                "deps": [
+                  {
+                    "readSeq": "{ !name !src !dst agg enemy common.res_ | electric } <- { preset0 agg enemy common.res_ | electric 1:anomaly }",
+                    "formula": "[0.1] 0.1"
+                  }
+                ]
+              },
+              {
+                "formula": "[0.15] gather 1 node(s) matching { preset0 agg enemy common.resRed_ | electric 1:anomaly [sum] } (for { !name !src !dst agg enemy common.resRed_ })",
+                "deps": [
+                  {
+                    "readSeq": "{ agg enemy common.resRed_ | electric } <- { preset0 agg enemy common.resRed_ | electric 1:anomaly }",
+                    "formula": "[0.15] 0.15"
+                  }
+                ]
+              },
+              {
+                "formula": "[0.02] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own final.resIgn_ | electric 1:anomaly [sum] } (for { !dst agg own final.resIgn_ })",
+                "deps": [
+                  {
+                    "readSeq": "{ agg own final.resIgn_ } <- { #anomalyDmgInst preset0 [Seth] agg own final.resIgn_ | electric 1:anomaly }",
+                    "formula": "[0.02] sum({ !dst agg own initial.resIgn_ }, { !dst agg own combat.resIgn_ })",
+                    "deps": [
+                      {
+                        "formula": "[0.02] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own initial.resIgn_ | electric 1:anomaly [sum] } (for { !dst agg own initial.resIgn_ })",
+                        "deps": [
+                          {
+                            "readSeq": "{ [Seth] agg own initial.resIgn_ } <- { #anomalyDmgInst preset0 [Seth] agg own initial.resIgn_ | electric 1:anomaly }",
+                            "formula": "[0.02] 0.02"
+                          }
+                        ]
+                      },
+                      {
+                        "formula": "[0] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own combat.resIgn_ | electric 1:anomaly [sum] } (for { !dst agg own combat.resIgn_ })",
+                        "deps": [
+                          {
+                            "readSeq": "{ [Seth] agg own } <= { !name [Vivian] (Seth) agg teamBuff } : { agg } <= { char } : { [Vivian] char } <= { Vivian } : { Vivian teamBuff combat.resIgn_ | 1:anomaly } <- { preset0 [Vivian] (Seth) Vivian teamBuff combat.resIgn_ | electric 1:anomaly }",
+                            "formula": "[0] thres({ !dst iso own char.mindscape }, 2, 0)",
+                            "deps": [
+                              {
+                                "formula": "[0] gather 1 node(s) matching { preset0 [Vivian] iso own char.mindscape | electric 1:anomaly [unique] } (for { !dst iso own char.mindscape })",
+                                "deps": [
+                                  {
+                                    "readSeq": "{ [Vivian] !dst iso own char.mindscape } <- { preset0 [Vivian] iso own char.mindscape | electric 1:anomaly }",
+                                    "formula": "[0] 0"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "readSeq": "{ own formula.anomalyDmg } <= { !dst static own dmg.shared } : { static own dmg.shared } <- { #anomalyDmgInst preset0 [Seth] static own dmg.shared | electric 1:anomaly }",
+        "formula": "[0.9500000000000001] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] static own dmg.dmg_taken_mult_ | electric 1:anomaly [unique] } (for { static own dmg.dmg_taken_mult_ })",
+        "deps": [
+          {
+            "readSeq": "{ static own dmg.dmg_taken_mult_ } <- { #anomalyDmgInst preset0 [Seth] static own dmg.dmg_taken_mult_ | electric 1:anomaly }",
+            "formula": "[0.9500000000000001] sum(tag({ misc._ }, 1), { !name !src !dst agg enemy common.dmgInc_ }, prod(-1, { !name !src !dst agg enemy common.dmgRed_ }))",
+            "deps": [
+              {
+                "formula": "[0.1] gather 1 node(s) matching { preset0 agg enemy common.dmgInc_ | electric 1:anomaly [sum] } (for { !name !src !dst agg enemy common.dmgInc_ })",
+                "deps": [
+                  {
+                    "readSeq": "{ agg enemy common.dmgInc_ } <- { preset0 agg enemy common.dmgInc_ | electric 1:anomaly }",
+                    "formula": "[0.1] 0.1"
+                  }
+                ]
+              },
+              {
+                "formula": "[0.15] gather 1 node(s) matching { preset0 agg enemy common.dmgRed_ | electric 1:anomaly [sum] } (for { !name !src !dst agg enemy common.dmgRed_ })",
+                "deps": [
+                  {
+                    "readSeq": "{ agg enemy common.dmgRed_ } <- { preset0 agg enemy common.dmgRed_ | electric 1:anomaly }",
+                    "formula": "[0.15] 0.15"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "readSeq": "{ own formula.anomalyDmg } <= { !dst static own dmg.shared } : { static own dmg.shared } <- { #anomalyDmgInst preset0 [Seth] static own dmg.shared | electric 1:anomaly }",
+        "formula": "[1] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] static own dmg.stunned_mult_ | electric 1:anomaly [unique] } (for { static own dmg.stunned_mult_ })",
+        "deps": [
+          {
+            "readSeq": "{ static own dmg.stunned_mult_ } <- { #anomalyDmgInst preset0 [Seth] static own dmg.stunned_mult_ | electric 1:anomaly }",
+            "formula": "[1] match({ !name enemy own cond.isStunned | !attr !dmg1 !dmg2 }, 0, { !name !src !dst agg enemy common.unstun_ })",
+            "deps": [
+              {
+                "formula": "[0] gather 1 node(s) matching { preset0 [Seth] enemy own cond.isStunned [max] } (for { !name enemy own cond.isStunned | !attr !dmg1 !dmg2 })",
+                "deps": [
+                  {
+                    "readSeq": "{ cond. } <- { preset0 [Seth] enemy own cond.isStunned }",
+                    "formula": "[0] 0"
+                  }
+                ]
+              },
+              {
+                "formula": "[1] gather 1 node(s) matching { preset0 agg enemy common.unstun_ | electric 1:anomaly [sum] } (for { !name !src !dst agg enemy common.unstun_ })",
+                "deps": [
+                  {
+                    "readSeq": "{ agg enemy common.unstun_ } <- { preset0 agg enemy common.unstun_ | electric 1:anomaly }",
+                    "formula": "[1] 1"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "readSeq": "{ own formula.anomalyDmg } <= { !dst static own dmg.shared } : { static own dmg.shared } <- { #anomalyDmgInst preset0 [Seth] static own dmg.shared | electric 1:anomaly }",
+        "formula": "[1] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] static own dmg.direct_dmg_mult_ | electric 1:anomaly [unique] } (for { static own dmg.direct_dmg_mult_ })",
+        "deps": [
+          {
+            "readSeq": "{ static own dmg.direct_dmg_mult_ } <- { #anomalyDmgInst preset0 [Seth] static own dmg.direct_dmg_mult_ | electric 1:anomaly }",
+            "formula": "[1] sum(tag({ misc._ }, 1), { !dst agg own final.direct_dmg_ })",
+            "deps": [
+              {
+                "formula": "[0] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own final.direct_dmg_ | electric 1:anomaly [sum] } (for { !dst agg own final.direct_dmg_ })",
+                "deps": [
+                  {
+                    "readSeq": "{ agg own final.direct_dmg_ } <- { #anomalyDmgInst preset0 [Seth] agg own final.direct_dmg_ | electric 1:anomaly }",
+                    "formula": "[0] sum({ !dst agg own initial.direct_dmg_ }, { !dst agg own combat.direct_dmg_ })",
+                    "deps": [
+                      "[0] gather 0 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own initial.direct_dmg_ | electric 1:anomaly [sum] } (for { !dst agg own initial.direct_dmg_ })",
+                      {
+                        "formula": "[0] gather 2 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own combat.direct_dmg_ | electric 1:anomaly [sum] } (for { !dst agg own combat.direct_dmg_ })",
+                        "deps": [
+                          {
+                            "readSeq": "{ [Seth] agg own } <= { !name [Seth] (Seth) agg teamBuff } : { agg teamBuff } <= { anomaly } : { anomaly teamBuff combat.direct_dmg_ } <- { preset0 [Seth] (Seth) anomaly teamBuff combat.direct_dmg_ | electric 1:anomaly }",
+                            "formula": "[0] thres({ !name !src !dst iso team common.count | wind !spec !fac }, 1, 0)",
+                            "deps": [
+                              {
+                                "formula": "[0] gather 2 node(s) matching { preset0 iso team common.count | wind 1:anomaly [sum] } (for { !name !src !dst iso team common.count | wind !spec !fac })",
+                                "deps": [
+                                  {
+                                    "readSeq": "{ team } <- { preset0 iso team common.count | wind 1:anomaly }",
+                                    "formula": "[0] gather 0 node(s) matching { preset0 [Seth] iso own common.count | wind 1:anomaly [sum] } (for { [Seth] own })"
+                                  },
+                                  {
+                                    "readSeq": "{ team } <- { preset0 iso team common.count | wind 1:anomaly }",
+                                    "formula": "[0] gather 0 node(s) matching { preset0 [Vivian] iso own common.count | wind 1:anomaly [sum] } (for { [Vivian] own })"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "readSeq": "{ [Seth] agg own } <= { !name [Vivian] (Seth) agg teamBuff } : { agg teamBuff } <= { anomaly } : { anomaly teamBuff combat.direct_dmg_ } <- { preset0 [Vivian] (Seth) anomaly teamBuff combat.direct_dmg_ | electric 1:anomaly }",
+                            "formula": "[0] thres({ !name !src !dst iso team common.count | wind !spec !fac }, 1, 0)",
+                            "deps": [
+                              {
+                                "formula": "[0] gather 2 node(s) matching { preset0 iso team common.count | wind 1:anomaly [sum] } (for { !name !src !dst iso team common.count | wind !spec !fac })",
+                                "deps": [
+                                  {
+                                    "readSeq": "{ team } <- { preset0 iso team common.count | wind 1:anomaly }",
+                                    "formula": "[0] gather 0 node(s) matching { preset0 [Seth] iso own common.count | wind 1:anomaly [sum] } (for { [Seth] own })"
+                                  },
+                                  {
+                                    "readSeq": "{ team } <- { preset0 iso team common.count | wind 1:anomaly }",
+                                    "formula": "[0] gather 0 node(s) matching { preset0 [Vivian] iso own common.count | wind 1:anomaly [sum] } (for { [Vivian] own })"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "readSeq": "{ own formula.anomalyDmg } <- { #anomalyDmgInst preset0 [Seth] (Seth) Seth own formula.anomalyDmg | electric 1:anomaly }",
+        "formula": "[0.6073819085867279] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] static own dmg.def_mult_ | electric 1:anomaly [unique] } (for { !dst static own dmg.def_mult_ })",
+        "deps": [
+          {
+            "readSeq": "{ static own dmg.def_mult_ } <- { #anomalyDmgInst preset0 [Seth] static own dmg.def_mult_ | electric 1:anomaly }",
+            "formula": "[0.6073819085867279] sumfrac(subscript({ !dst iso own char.lvl }), max(sum(prod({ !name !src !dst agg enemy common.def }, sum(tag({ misc._ }, 1), prod(-1, { !name !src !dst agg enemy common.defRed_ }), prod(-1, { !dst agg own final.defIgn_ })), sum(tag({ misc._ }, 1), prod(-1, { !dst agg own final.pen_ }))), prod(-1, { !dst agg own final.pen })), 0))",
+            "deps": [
+              {
+                "formula": "[60] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] iso own char.lvl | electric 1:anomaly [unique] } (for { !dst iso own char.lvl })",
+                "deps": [
+                  {
+                    "readSeq": "{ [Seth] !dst iso own char.lvl } <- { #anomalyDmgInst preset0 [Seth] iso own char.lvl | electric 1:anomaly }",
+                    "formula": "[60] 60"
+                  }
+                ]
+              },
+              {
+                "formula": "[635] gather 1 node(s) matching { preset0 agg enemy common.def | electric 1:anomaly [sum] } (for { !name !src !dst agg enemy common.def })",
+                "deps": [
+                  {
+                    "readSeq": "{ !name !src !dst agg enemy common.def } <- { preset0 agg enemy common.def | electric 1:anomaly }",
+                    "formula": "[635] 635"
+                  }
+                ]
+              },
+              "[0] gather 0 node(s) matching { preset0 agg enemy common.defRed_ | electric 1:anomaly [sum] } (for { !name !src !dst agg enemy common.defRed_ })",
+              {
+                "formula": "[0] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own final.defIgn_ | electric 1:anomaly [sum] } (for { !dst agg own final.defIgn_ })",
+                "deps": [
+                  {
+                    "readSeq": "{ agg own final.defIgn_ } <- { #anomalyDmgInst preset0 [Seth] agg own final.defIgn_ | electric 1:anomaly }",
+                    "formula": "[0] sum({ !dst agg own initial.defIgn_ }, { !dst agg own combat.defIgn_ })",
+                    "deps": [
+                      "[0] gather 0 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own initial.defIgn_ | electric 1:anomaly [sum] } (for { !dst agg own initial.defIgn_ })",
+                      "[0] gather 0 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own combat.defIgn_ | electric 1:anomaly [sum] } (for { !dst agg own combat.defIgn_ })"
+                    ]
+                  }
+                ]
+              },
+              {
+                "formula": "[0.05] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own final.pen_ | electric 1:anomaly [sum] } (for { !dst agg own final.pen_ })",
+                "deps": [
+                  {
+                    "readSeq": "{ agg own final.pen_ } <- { #anomalyDmgInst preset0 [Seth] agg own final.pen_ | electric 1:anomaly }",
+                    "formula": "[0.05] sum({ !dst agg own initial.pen_ }, { !dst agg own combat.pen_ })",
+                    "deps": [
+                      {
+                        "formula": "[0.05] gather 2 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own initial.pen_ | electric 1:anomaly [sum] } (for { !dst agg own initial.pen_ })",
+                        "deps": [
+                          {
+                            "readSeq": "{ agg own initial.pen_ } <- { #anomalyDmgInst preset0 [Seth] agg own initial.pen_ | electric 1:anomaly }",
+                            "formula": "[0] gather 0 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own base.pen_ | electric 1:anomaly [sum] } (for { agg own base.pen_ })"
+                          },
+                          {
+                            "readSeq": "{ [Seth] agg own initial.pen_ } <- { #anomalyDmgInst preset0 [Seth] agg own initial.pen_ | electric 1:anomaly }",
+                            "formula": "[0.05] 0.05"
+                          }
+                        ]
+                      },
+                      "[0] gather 0 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own combat.pen_ | electric 1:anomaly [sum] } (for { !dst agg own combat.pen_ })"
+                    ]
+                  }
+                ]
+              },
+              {
+                "formula": "[90] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own final.pen | electric 1:anomaly [sum] } (for { !dst agg own final.pen })",
+                "deps": [
+                  {
+                    "readSeq": "{ agg own final.pen } <- { #anomalyDmgInst preset0 [Seth] agg own final.pen | electric 1:anomaly }",
+                    "formula": "[90] sum({ !dst agg own initial.pen }, { !dst agg own combat.pen })",
+                    "deps": [
+                      {
+                        "formula": "[90] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own initial.pen | electric 1:anomaly [sum] } (for { !dst agg own initial.pen })",
+                        "deps": [
+                          {
+                            "readSeq": "{ [Seth] agg own initial.pen } <- { #anomalyDmgInst preset0 [Seth] agg own initial.pen | electric 1:anomaly }",
+                            "formula": "[90] 90"
+                          }
+                        ]
+                      },
+                      "[0] gather 0 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own combat.pen | electric 1:anomaly [sum] } (for { !dst agg own combat.pen })"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "readSeq": "{ own formula.anomalyDmg } <- { #anomalyDmgInst preset0 [Seth] (Seth) Seth own formula.anomalyDmg | electric 1:anomaly }",
+        "formula": "[4.28] prod({ !dst agg own final.anomProf }, 0.01)",
+        "deps": [
+          {
+            "formula": "[428] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own final.anomProf | electric 1:anomaly [sum] } (for { !dst agg own final.anomProf })",
+            "deps": [
+              {
+                "readSeq": "{ agg own final.anomProf } <- { #anomalyDmgInst preset0 [Seth] agg own final.anomProf | electric 1:anomaly }",
+                "formula": "[428] sum(prod({ !dst agg own initial.anomProf }, sum(tag({ misc._ }, 1), { !dst agg own combat.anomProf_ })), { !dst agg own combat.anomProf })",
+                "deps": [
+                  {
+                    "formula": "[428] gather 2 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own initial.anomProf | electric 1:anomaly [sum] } (for { !dst agg own initial.anomProf })",
+                    "deps": [
+                      {
+                        "readSeq": "{ agg own initial.anomProf } <- { #anomalyDmgInst preset0 [Seth] agg own initial.anomProf | electric 1:anomaly }",
+                        "formula": "[90] prod({ !dst agg own base.anomProf }, sum(tag({ misc._ }, 1), { !dst agg own initial.anomProf_ }))",
+                        "deps": [
+                          {
+                            "formula": "[90] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own base.anomProf | electric 1:anomaly [sum] } (for { !dst agg own base.anomProf })",
+                            "deps": [
+                              {
+                                "readSeq": "{ agg } <= { char } : { [Seth] char } <= { Seth } : { Seth own base.anomProf } <- { #anomalyDmgInst preset0 [Seth] Seth own base.anomProf | electric 1:anomaly }",
+                                "formula": "[90] 90"
+                              }
+                            ]
+                          },
+                          "[0] gather 0 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own initial.anomProf_ | electric 1:anomaly [sum] } (for { !dst agg own initial.anomProf_ })"
+                        ]
+                      },
+                      {
+                        "readSeq": "{ [Seth] agg own initial.anomProf } <- { #anomalyDmgInst preset0 [Seth] agg own initial.anomProf | electric 1:anomaly }",
+                        "formula": "[338] 338"
+                      }
+                    ]
+                  },
+                  "[0] gather 0 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own combat.anomProf_ | electric 1:anomaly [sum] } (for { !dst agg own combat.anomProf_ })",
+                  {
+                    "formula": "[0] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] agg own combat.anomProf | electric 1:anomaly [sum] } (for { !dst agg own combat.anomProf })",
+                    "deps": [
+                      {
+                        "readSeq": "{ [Seth] agg own } <= { !name [Seth] (Seth) agg teamBuff } : { agg } <= { char } : { [Seth] char } <= { Seth } : { Seth teamBuff combat.anomProf } <- { preset0 [Seth] (Seth) Seth teamBuff combat.anomProf | electric 1:anomaly }",
+                        "formula": "[0] match({ !name Seth own cond.shield_active | !attr !dmg1 !dmg2 }, 0, 0)",
+                        "deps": [
+                          {
+                            "formula": "[0] gather 1 node(s) matching { preset0 [Seth] (Seth) Seth own cond.shield_active [max] } (for { !name Seth own cond.shield_active | !attr !dmg1 !dmg2 })",
+                            "deps": [
+                              {
+                                "readSeq": "{ cond. } <- { preset0 [Seth] (Seth) Seth own cond.shield_active }",
+                                "formula": "[0] 0"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "readSeq": "{ own formula.anomalyDmg } <- { #anomalyDmgInst preset0 [Seth] (Seth) Seth own formula.anomalyDmg | electric 1:anomaly }",
+        "formula": "[2] sum(1, prod(0.01694915254237288, sum({ !dst iso own char.lvl }, -1)))",
+        "deps": [
+          {
+            "formula": "[60] gather 1 node(s) matching { #anomalyDmgInst preset0 [Seth] iso own char.lvl | electric 1:anomaly [unique] } (for { !dst iso own char.lvl })",
+            "deps": [
+              {
+                "readSeq": "{ [Seth] !dst iso own char.lvl } <- { #anomalyDmgInst preset0 [Seth] iso own char.lvl | electric 1:anomaly }",
+                "formula": "[60] 60"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

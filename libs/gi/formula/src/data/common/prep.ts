@@ -7,7 +7,7 @@ import {
   sum,
 } from '@genshin-optimizer/pando/engine'
 import type { TagMapNodeEntries } from '../util'
-import { enemy, own, ownBuff, percent } from '../util'
+import { enemy, own, ownBuff, percent, teamBuff } from '../util'
 
 const { ele, amp, cata } = own.prep
 
@@ -24,9 +24,11 @@ const data: TagMapNodeEntries = [
   ownBuff.formula.shield.add(
     prod(own.formula.base, sum(percent(1), own.premod.shield_))
   ),
-  ownBuff.formula.heal.add(
-    prod(own.formula.base, sum(percent(1), own.premod.heal_))
+  teamBuff.formula.heal.add(
+    // prod(team.formula.base, sum(percent(1), own.premod.heal_))
+    100
   ),
+  ownBuff.formula.heal.add(100),
 
   // Transformative reactions
   // `prep.trans` and `prep.ele` are fixed on `trans`, `transCrit`, and `swirl`

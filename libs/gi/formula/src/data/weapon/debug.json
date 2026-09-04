@@ -1,0 +1,81 @@
+[
+  {
+    "tag": {
+      "et": "teamBuff",
+      "qt": "listing",
+      "q": "formulas",
+      "sheet": "agg"
+    },
+    "value": {
+      "op": "tag",
+      "x": [
+        {
+          "op": "const",
+          "x": [],
+          "br": [],
+          "ex": "infer"
+        }
+      ],
+      "br": [],
+      "tag": {
+        "name": "heal",
+        "et": "team",
+        "qt": "formula",
+        "q": "heal"
+      }
+    }
+  },
+  {
+    "tag": {
+      "et": "teamBuff",
+      "qt": "formula",
+      "q": "base",
+      "sheet": "agg",
+      "name": "heal"
+    },
+    "value": {
+      "op": "prod",
+      "x": [
+        {
+          "op": "read",
+          "x": [],
+          "br": [],
+          "tag": {
+            "et": "target",
+            "src": null,
+            "name": null,
+            "qt": "final",
+            "q": "hp",
+            "sheet": "agg"
+          }
+        },
+        {
+          "op": "subscript",
+          "ex": [
+            0.04,
+            0.045,
+            0.05,
+            0.055,
+            0.06
+          ],
+          "x": [],
+          "br": [
+            {
+              "op": "read",
+              "x": [],
+              "br": [],
+              "tag": {
+                "et": "own",
+                "dst": null,
+                "qt": "weapon",
+                "q": "refinement",
+                "sheet": "iso"
+              }
+            }
+          ]
+        }
+      ],
+      "br": []
+    }
+  }
+]

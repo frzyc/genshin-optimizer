@@ -1,45 +1,25 @@
 {
-  "val": 0,
+  "val": 200,
   "meta": {
-    "formula": "[0] gather 1 node(s) matching { #heal 0 (0) PrototypeAmber own formula.heal [unique] } (for { #heal 0 (0) PrototypeAmber own formula.heal })",
+    "formula": "[200] gather 2 node(s) matching { #heal 0 (0) PrototypeAmber team formula.heal [sum] } (for { #heal PrototypeAmber team formula.heal })",
     "deps": [
       {
-        "readSeq": "{ own formula.heal } <- { #heal 0 (0) PrototypeAmber own formula.heal }",
-        "formula": "[0] prod({ !dst agg own formula.base }, sum(tag({ misc._ }, 1), { !dst agg own premod.heal_ }))",
+        "readSeq": "{ team } <- { #heal 0 (0) PrototypeAmber team formula.heal }",
+        "formula": "[100] gather 1 node(s) matching { #heal 0 PrototypeAmber own formula.heal [unique] } (for { 0 !dst own })",
         "deps": [
           {
-            "formula": "[0] gather 1 node(s) matching { #heal 0 agg own formula.base [sum] } (for { !dst agg own formula.base })",
-            "deps": [
-              {
-                "readSeq": "{ 0 agg } <= { PrototypeAmber } : { #heal PrototypeAmber own formula.base } <- { #heal 0 PrototypeAmber own formula.base }",
-                "formula": "[0] prod({ !name !src agg target final.hp }, subscript({ !dst iso own weapon.refinement }))",
-                "deps": [
-                  "[0] gather 0 node(s) matching { agg target final.hp [sum] } (for { !name !src agg target final.hp })",
-                  {
-                    "formula": "[2] gather 1 node(s) matching { #heal 0 iso own weapon.refinement [unique] } (for { !dst iso own weapon.refinement })",
-                    "deps": [
-                      {
-                        "readSeq": "{ 0 !dst iso own weapon.refinement } <- { #heal 0 iso own weapon.refinement }",
-                        "formula": "[2] 2"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
+            "readSeq": "{ own formula.heal } <- { #heal 0 PrototypeAmber own formula.heal }",
+            "formula": "[100] 100"
+          }
+        ]
+      },
+      {
+        "readSeq": "{ team } <- { #heal 0 (0) PrototypeAmber team formula.heal }",
+        "formula": "[100] gather 1 node(s) matching { #heal 1 PrototypeAmber own formula.heal [unique] } (for { 1 !dst own })",
+        "deps": [
           {
-            "formula": "[0] gather 2 node(s) matching { #heal 0 agg own premod.heal_ [sum] } (for { !dst agg own premod.heal_ })",
-            "deps": [
-              {
-                "readSeq": "{ agg own premod. } <- { #heal 0 agg own premod.heal_ }",
-                "formula": "[0] gather 0 node(s) matching { #heal 0 agg own base.heal_ [sum] } (for { base. })"
-              },
-              {
-                "readSeq": "{ agg own premod. } <- { #heal 0 agg own premod.heal_ }",
-                "formula": "[0] gather 0 node(s) matching { #heal 0 agg own weaponRefinement.heal_ [sum] } (for { weaponRefinement. })"
-              }
-            ]
+            "readSeq": "{ own formula.heal } <- { #heal 1 PrototypeAmber own formula.heal }",
+            "formula": "[100] 100"
           }
         ]
       }

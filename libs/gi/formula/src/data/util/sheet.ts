@@ -91,7 +91,7 @@ export function customHeal(
     team,
     'heal',
     cond,
-    ownBuff.formula.base.add(base),
+    (team ? teamBuff : ownBuff).formula.base.add(base),
     ...extra
   )
 }
@@ -107,7 +107,10 @@ function registerFormula(
   const listing = (team ? teamBuff : ownBuff).listing.formulas
   return [
     listing.add(
-      listingItem(reader.withTag({ name, et: 'own', qt: 'formula', q }), cond)
+      listingItem(
+        reader.withTag({ name, et: team ? 'team' : 'own', qt: 'formula', q }),
+        cond
+      )
     ),
     ...extra.map(({ tag, value }) => ({ tag: { ...tag, name }, value })),
   ]

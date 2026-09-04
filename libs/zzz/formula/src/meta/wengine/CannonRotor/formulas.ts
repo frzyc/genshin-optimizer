@@ -4,9 +4,9 @@ export const formulas = {
     sheet: 'CannonRotor',
     name: 'damage',
     tag: {
-      et: 'display',
+      et: 'own',
       qt: 'formula',
-      q: 'standardDmgBase',
+      q: 'standardDmg',
       sheet: 'CannonRotor',
       damageType1: 'elemental',
       name: 'damage',

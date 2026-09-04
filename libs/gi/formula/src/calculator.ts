@@ -28,7 +28,9 @@ export class Calculator extends Base<Tag, 'res'> {
       case 'team':
         // everything else should provide explicit `accu`
         if (qt === 'common' && q === 'count') return 'sum'
-        throw new Error('non-explicit team value accumulator')
+        throw new Error(
+          `non-explicit team value accumulator for tag ${tagStr(tag)}`
+        )
     }
     return
   }

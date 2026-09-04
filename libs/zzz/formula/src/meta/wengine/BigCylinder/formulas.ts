@@ -4,9 +4,9 @@ export const formulas = {
     sheet: 'BigCylinder',
     name: 'damage',
     tag: {
-      et: 'display',
+      et: 'own',
       qt: 'formula',
-      q: 'standardDmgBase',
+      q: 'standardDmg',
       sheet: 'BigCylinder',
       damageType1: 'elemental',
       name: 'damage',

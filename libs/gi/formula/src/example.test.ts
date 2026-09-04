@@ -4,6 +4,7 @@ import {
   compile,
   compileTagMapValues,
   detach,
+  read,
   setDebugMode,
   simplify,
 } from '@genshin-optimizer/pando/engine'
@@ -14,7 +15,7 @@ import type { Tag, TagMapNodeEntries } from './data/util'
 import { enemyDebuff, own, ownBuff, team, userBuff } from './data/util'
 import rawData from './example.test.json'
 import { genshinCalculatorWithEntries } from './index'
-import { conditionals } from './meta'
+import { conditionals, formulas } from './meta'
 import {
   artifactsData,
   charData,
@@ -190,27 +191,25 @@ describe('example', () => {
     expect(cata).toEqual('spread')
   })
   test('calculate targeted formula in a listing', () => {
-    const read = mem0
-      .listFormulas(own.listing.formulas)
-      .find((x) => x.tag.name === 'heal' && x.tag.sheet === 'PrototypeAmber')!
-    const tag = read.tag
+    const tag = formulas.PrototypeAmber.heal.tag
+    const r = read(tag, 'sum')
 
-    expect(read).toBeTruthy()
+    expect(r).toBeTruthy()
     expect(tag.sheet).toEqual('PrototypeAmber') // Formula from Pamber
     expect(tag.q).toEqual('heal') // Heal formula
     expect(tag.name).toEqual('heal') // Formula name
 
     // Compute formula
-    const { val, meta } = calc.compute(read)
-    const { amp, move, ele, cata } = meta.tag!
     writeFileSync(
       path.join(__dirname, 'debug.json'),
       JSON.stringify(
-        calc.withTag({ src: '0', dst: '0' }).toDebug().compute(read),
+        calc.withTag({ src: '0', dst: '0' }).toDebug().compute(r),
         null,
         2
       )
     )
+    const { val, meta } = calc.compute(r)
+    const { amp, move, ele, cata } = meta.tag!
 
     // Calculation result, reaction, element, etc
     expect(val).toBeCloseTo(78.67, 2)
