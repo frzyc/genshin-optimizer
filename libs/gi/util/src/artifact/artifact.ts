@@ -172,6 +172,15 @@ const maxSubstatRollEfficiency = objKeyMap(allArtifactRarityKeys, (rarity) =>
   )
 )
 
+/**
+ * Computes the current and maximum possible substat efficiency ("Roll Value")
+ * of an artifact, relative to the given `filter` of useful substat keys.
+ *
+ * `currentEfficiency` sums the efficiency of the substats that already match
+ * the filter. `maxEfficiency` additionally counts the remaining upgrades as
+ * if they all roll into matched (or unlockable, filter-matched) slots. An
+ * unactivated substat is only counted when its key is selected by the filter.
+ */
 export function getArtifactEfficiency(
   artifact: IArtifact,
   filter: Set<SubstatKey> = new Set(allSubstatKeys)
