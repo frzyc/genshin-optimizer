@@ -67,6 +67,10 @@ export default function CustomMultiTargetCard({
     setTargetProp(target)
   }, [onHide, setTargetProp, target])
 
+  /**
+   * Appends a new custom target (optionally with `multi` variants) and
+   * selects it, so the newly added target is immediately shown for editing.
+   */
   const addTarget = useCallback(
     (t: string[], multi?: number) => {
       const target_ = { ...target }
