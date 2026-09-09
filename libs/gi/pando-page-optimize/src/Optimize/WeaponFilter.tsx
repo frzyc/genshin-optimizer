@@ -1,8 +1,24 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { CardThemed, ModalWrapper, SqBadge } from '@genshin-optimizer/common/ui'
-import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
-import { PandoOptConfigContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
-import { pandoCardSx } from '@genshin-optimizer/gi/formula-ui'
+import { stableArr } from '@genshin-optimizer/common/util'
+import type { WeaponKey } from '@genshin-optimizer/gi/consts'
+import { allWeaponKeys } from '@genshin-optimizer/gi/consts'
+import type {
+  ICachedWeapon,
+  PandoTeamConditional,
+} from '@genshin-optimizer/gi/db'
+import {
+  CharacterContext,
+  PandoOptConfigContext,
+  useDatabase,
+  usePandoTeam,
+} from '@genshin-optimizer/gi/db-ui'
+import {
+  CharCalcMockCountProvider,
+  pandoCardSx,
+  WeaponSheetDisplay,
+} from '@genshin-optimizer/gi/formula-ui'
+import { getCharStat, getWeaponStat } from '@genshin-optimizer/gi/stats'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
 import CloseIcon from '@mui/icons-material/Close'
@@ -11,12 +27,14 @@ import {
   CardContent,
   CardHeader,
   Divider,
+  Grid,
   IconButton,
   Skeleton,
   Stack,
+  Typography,
 } from '@mui/material'
 import { Box } from '@mui/system'
-import { Suspense, useContext } from 'react'
+import { Suspense, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { WeaponLevelFilter } from './WeaponLevelFilter'
 
@@ -74,6 +92,7 @@ export function WeaponFilter({
             show={show}
             onClose={onClose}
             disabled={disabled}
+            weapons={weapons}
           />
           <Button
             color="info"
@@ -90,10 +109,12 @@ export function WeaponFilter({
 }
 
 function WeaponFilterModal({
+  weapons,
   show,
   onClose,
   disabled,
 }: {
+  weapons: ICachedWeapon[]
   show: boolean
   onClose: () => void
   disabled?: boolean
@@ -128,10 +149,78 @@ function WeaponFilterModal({
               >
                 {t('useEquippedWeapon')}
               </Button>
+              <WeaponCondSelector weapons={weapons} />
             </Stack>
           </Suspense>
         </CardContent>
       </CardThemed>
     </ModalWrapper>
+  )
+}
+
+function WeaponCondSelector({ weapons }: { weapons: ICachedWeapon[] }) {
+  const { t } = useTranslation('page_optimize')
+  const { character } = useContext(CharacterContext)
+  const pandoTeam = usePandoTeam(character.key)
+  const conditionals =
+    pandoTeam?.conditionals ?? stableArr<PandoTeamConditional>()
+  const charWeaponType = getCharStat(character.key).weaponType
+  const weaponKeys = useMemo(
+    () =>
+      allWeaponKeys.filter(
+        (key) => getWeaponStat(key).weaponType === charWeaponType
+      ),
+    [charWeaponType]
+  )
+  return (
+    <Box>
+      <Typography variant="h6">{t('weaponCondConfig')}</Typography>
+      <Typography>{t('weaponCondMockHint')}</Typography>
+      <CharCalcMockCountProvider
+        character={character}
+        conditionals={conditionals}
+      >
+        <Grid container spacing={1} columns={{ xs: 2, md: 3, lg: 4 }}>
+          {weaponKeys.map((d) => (
+            <Grid item key={d} xs={1}>
+              <WeaponCondCard
+                weaponKey={d}
+                count={weapons.filter((w) => w.key === d).length}
+              />
+            </Grid>
+          ))}
+        </Grid>
+      </CharCalcMockCountProvider>
+    </Box>
+  )
+}
+
+function getMockWeapon(key: WeaponKey) {
+  return {
+    key,
+    level: 90,
+    ascension: 6 as const,
+    refinement: 1 as const,
+    location: '' as const,
+    lock: false,
+  }
+}
+
+function WeaponCondCard({
+  weaponKey,
+  count,
+}: {
+  weaponKey: WeaponKey
+  count: number
+}) {
+  const weapon = useMemo(() => getMockWeapon(weaponKey), [weaponKey])
+  return (
+    <WeaponSheetDisplay
+      weapon={weapon}
+      headerAction={
+        <SqBadge color={count ? 'primary' : 'secondary'}>{count}</SqBadge>
+      }
+      fade={!count}
+    />
   )
 }

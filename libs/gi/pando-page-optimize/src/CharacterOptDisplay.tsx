@@ -1,10 +1,13 @@
 import { CardThemed, useScrollRef } from '@genshin-optimizer/common/ui'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+import type { ArtifactSetKey, CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
   CharacterContext,
+  useArtifacts,
   useRequiredPandoTeam,
+  useWeapon,
 } from '@genshin-optimizer/gi/db-ui'
 import {
+  ArtSheetDisplay,
   CharacterCard,
   CharacterEditor,
   CharSheetDisplay,
@@ -12,6 +15,7 @@ import {
   EquippedGrid,
   isPortedCharacter,
   pandoCardSx,
+  WeaponSheetDisplay,
 } from '@genshin-optimizer/gi/formula-ui'
 import {
   Box,
@@ -37,10 +41,10 @@ import {
   STATS_STICKY_PAD_PX,
   TeamHeaderHeightContext,
 } from './context/TeamHeaderHeightContext'
-import { TeammatesSection } from './Teammates'
 import { EnemyStatsSection } from './EnemyStats'
 import Optimize from './Optimize'
 import GeneratedBuildsDisplay from './Optimize/GeneratedBuildsDisplay'
+import { TeammatesSection } from './Teammates'
 
 const BOT_PX = 0
 const SectionNumContext = createContext(0)
@@ -130,6 +134,14 @@ function CharacterSection() {
     useMemo(() => {
       const sections: Array<[key: string, content: ReactNode]> = [
         ['eq', <EquippedGrid key="eq" />],
+        ...(ported
+          ? [
+              ['conditionals', <EquippedConditionals key="conditionals" />] as [
+                string,
+                ReactNode,
+              ],
+            ]
+          : []),
         ['teammates', <TeammatesSection key="teammates" />],
         [
           'enemyStats',
@@ -239,6 +251,40 @@ function OptimizeSection() {
 
 function BuildsSection() {
   return <GeneratedBuildsDisplay />
+}
+
+function EquippedConditionals() {
+  const { character } = useContext(CharacterContext)
+  const weapon = useWeapon(character.equippedWeapon)
+  const arts = useArtifacts(character.equippedArtifacts)
+  const sets = useMemo(() => {
+    const counts: Partial<Record<ArtifactSetKey, number>> = {}
+    for (const art of Object.values(arts)) {
+      if (!art) continue
+      counts[art.setKey] = (counts[art.setKey] ?? 0) + 1
+    }
+    return counts
+  }, [arts])
+  return (
+    <Box>
+      <Grid container spacing={1} columns={{ xs: 1, sm: 1, md: 2, lg: 3 }}>
+        {weapon && (
+          <Grid item xs={1}>
+            <WeaponSheetDisplay weapon={weapon} />
+          </Grid>
+        )}
+        {Object.entries(sets).map(([setKey, count]) => (
+          <Grid item key={setKey} xs={1}>
+            <ArtSheetDisplay
+              setKey={setKey as ArtifactSetKey}
+              fade2={count < 2}
+              fade4={count < 4}
+            />
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
+  )
 }
 
 function UnportedBanner() {
