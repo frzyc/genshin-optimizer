@@ -27,6 +27,8 @@ const data: TagMapNodeEntries = [
   ownBuff.formula.heal.add(
     prod(own.formula.base, sum(percent(1), own.premod.heal_))
   ),
+  // Kit display rows (CD, duration, chance, stamina cost, …)
+  ownBuff.formula.param.add(own.formula.base),
 
   // Transformative reactions
   // `prep.trans` and `prep.ele` are fixed on `trans`, `transCrit`, and `swirl`

@@ -17,6 +17,7 @@ const stats = [
   'critDMG_',
   'dmg_',
   'heal_',
+  'staminaChargedDec_',
 ] as const
 
 export const sheets = [

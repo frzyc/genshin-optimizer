@@ -46,7 +46,7 @@ export function customDmg(
     name,
     team,
     'dmg',
-    tag(cond, { move }),
+    tag(cond, { move, ...(eleOverride ? { ele: eleOverride } : {}) }),
     ownBuff.formula.base.add(base),
     ownBuff.prep.ele.add(eleOverride ?? own.reaction.infusion),
     ...extra
@@ -96,10 +96,27 @@ export function customHeal(
   )
 }
 
+/** Talent-sheet scalar (CD, duration, chance, stamina). Not a heal/dmg/shield. */
+export function customParam(
+  name: string,
+  base: number | NumNode,
+  { team, cond = 'infer' }: FormulaArg = {},
+  ...extra: TagMapNodeEntries
+): TagMapNodeEntries {
+  return registerFormula(
+    name,
+    team,
+    'param',
+    cond,
+    ownBuff.formula.base.add(base),
+    ...extra
+  )
+}
+
 function registerFormula(
   name: string,
   team: boolean | undefined,
-  q: 'dmg' | 'heal' | 'shield',
+  q: 'dmg' | 'heal' | 'shield' | 'param',
   cond: string | StrNode,
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
@@ -115,6 +132,11 @@ function registerFormula(
 
 export function listingItem(t: Read, cond?: string | StrNode) {
   return tag(cond ?? t.ex ?? 'infer', t.tag)
+}
+
+/** This member's contribution to `team.common.hexerei` (0/1, often a Lock Homework cond). */
+export function hexereiTally(value: number | NumNode): TagMapNodeEntry {
+  return ownBuff.common.hexerei.add(value)
 }
 
 export function readStat(

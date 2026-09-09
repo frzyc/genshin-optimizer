@@ -36,18 +36,12 @@ export interface ICharacterTemplate {
 export const charTemplates = (cKey: CharacterSheetKey): ICharacterTemplate => {
   const [chg, ch] = trans('char', cKey)
   const characterKey = charSheetKeyToCharKey(cKey)
-  const wKey = getCharStat(characterKey).weaponType
-
-  const img = (tk: TalentSheetElementKey) => {
-    if (tk === 'auto') return imgAssets.weaponTypes[wKey]
-    return characterAsset(characterKey, tk, 'F') // Should be all genderless assets
-  }
 
   return {
     chg,
     ch,
     talentTem: (talentKey: TalentSheetElementKey, docSections?: Document[]) =>
-      talentTemplate(talentKey, chg, img(talentKey), docSections),
+      talentTemplate(characterKey, talentKey, chg, docSections),
     // headerTem: (
     //   talentKey: TalentSheetElementKey,
     //   partialSection: DocumentSection
@@ -63,21 +57,53 @@ export const charTemplates = (cKey: CharacterSheetKey): ICharacterTemplate => {
   }
 }
 
+/** Talent / constellation icon for sheet section headers and opt category headings. */
+export function talentSheetElementIcon(
+  characterKey: CharacterKey,
+  talentKey: TalentSheetElementKey
+): string {
+  if (talentKey === 'auto') {
+    const wKey = getCharStat(characterKey).weaponType
+    return imgAssets.weaponTypes[wKey]
+  }
+  return characterAsset(characterKey, talentKey, 'F')
+}
+
+/** Same icon + `char_*_gen` talent name used by `talentTem` and opt category headers. */
+export function talentSheetElement(
+  characterKey: CharacterKey,
+  talentKey: TalentSheetElementKey
+): { img: string; title: ReactNode } {
+  const [chg] = trans('char', characterKey as CharacterSheetKey)
+  return {
+    img: talentSheetElementIcon(characterKey, talentKey),
+    title: chg(`${talentKey}.name`),
+  }
+}
+
 const talentTemplate = (
+  characterKey: CharacterKey,
   talentKey: TalentSheetElementKey,
   tr: (i18key: string) => ReactNode,
-  img: string,
   documents?: Document[]
-): UISheetElement => ({
-  title: tr(`${talentKey}.name`),
-  img,
-  documents: [
-    ...(talentKey !== 'auto'
-      ? [{ type: 'text', text: tr(`${talentKey}.description`) } as TextDocument]
-      : []),
-    ...(documents || []),
-  ],
-})
+): UISheetElement => {
+  const { img, title } = talentSheetElement(characterKey, talentKey)
+  return {
+    title,
+    img,
+    documents: [
+      ...(talentKey !== 'auto'
+        ? [
+            {
+              type: 'text',
+              text: tr(`${talentKey}.description`),
+            } as TextDocument,
+          ]
+        : []),
+      ...(documents || []),
+    ],
+  }
+}
 
 function charSheetKeyToCharKey(csk: CharacterSheetKey): CharacterKey {
   if (

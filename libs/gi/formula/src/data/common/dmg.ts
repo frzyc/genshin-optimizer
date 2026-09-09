@@ -17,7 +17,7 @@ import {
 } from '../util'
 
 export const infusionPrio = {
-  nonOverridable: { hydro: 5, pyro: 6 },
+  nonOverridable: { hydro: 5, pyro: 6, geo: 7 },
   team: { hydro: 3, pyro: 4 },
   overridable: { physical: 0, hydro: 1, pyro: 2 },
 }
@@ -26,19 +26,17 @@ const infusionTable = priorityTable(infusionPrio),
 
 const data: TagMapNodeEntries = [
   enemyDebuff.common.postRes.add(custom('res', preRes)),
-  ownBuff.dmg.inDmg.add(
-    prod(
-      sumfrac(
-        sum(own.char.lvl, 100),
-        prod(
-          sum(enemy.common.lvl, 100),
-          sum(percent(1), prod(-1, enemy.common.defRed_)), // TODO: Cap
-          sum(percent(1), prod(-1, enemy.common.defIgn)) // TODO: Cap
-        )
-      ),
-      enemy.common.postRes
+  ownBuff.dmg.def_mult_.add(
+    sumfrac(
+      sum(own.char.lvl, 100),
+      prod(
+        sum(enemy.common.lvl, 100),
+        sum(percent(1), prod(-1, enemy.common.defRed_)), // TODO: Cap
+        sum(percent(1), prod(-1, enemy.common.defIgn)) // TODO: Cap
+      )
     )
   ),
+  ownBuff.dmg.inDmg.add(prod(own.dmg.def_mult_, enemy.common.postRes)),
   ownBuff.dmg.out.add(
     prod(
       own.reaction.ampMulti,

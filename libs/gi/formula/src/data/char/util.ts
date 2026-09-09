@@ -40,6 +40,44 @@ export function dataGenToCharInfo(
   }
 }
 
+/**
+ * Lookup a 0-indexed skillParam table with a 1-indexed GOOD/UI talent
+ * (`own.char.auto` / `skill` / `burst`). Matches WR `total.*Index = talent - 1`
+ * and ZZZ `sum(own.char[ability], -1)`. Keep `own.char.*` as the displayed level.
+ */
+export function talentSubscript(talent: NumNode, table: number[]): NumNode {
+  return subscript(sum(talent, -1), table)
+}
+
+const talentByMove = {
+  normal: own.char.auto,
+  charged: own.char.auto,
+  plunging: own.char.auto,
+  skill: own.char.skill,
+  burst: own.char.burst,
+} as const
+
+function inferHitEle(
+  info: CharInfo,
+  move: Exclude<MoveKey, 'elemental'>,
+  ele?: ElementWithPhyKey
+): ElementWithPhyKey | undefined {
+  if (ele) return ele
+  switch (move) {
+    case 'skill':
+    case 'burst':
+      return info.ele
+    default:
+      switch (info.weaponType) {
+        case 'catalyst':
+          return info.ele
+        case 'bow':
+          return 'physical'
+      }
+  }
+  return undefined
+}
+
 export function dmg(
   name: string,
   info: CharInfo,
@@ -49,40 +87,41 @@ export function dmg(
   arg: { ele?: ElementWithPhyKey; baseMulti?: NumNode } & FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
-  let { ele } = arg
-  if (!ele)
-    switch (move) {
-      case 'skill':
-      case 'burst':
-        ele = info.ele
-        break
-      default:
-        switch (info.weaponType) {
-          case 'catalyst':
-            ele = info.ele
-            break
-          case 'bow':
-            ele = 'physical'
-            break
-        }
-    }
-
-  const {
-    char: { auto, skill, burst },
-    final,
-  } = own
-  const talentByMove = {
-    normal: auto,
-    charged: auto,
-    plunging: auto,
-    skill,
-    burst,
-  } as const
-  const talentMulti = percent(subscript(talentByMove[move], levelScaling))
+  const ele = inferHitEle(info, move, arg.ele)
+  const talentMulti = percent(talentSubscript(talentByMove[move], levelScaling))
   const base = prod(
-    final[stat],
+    own.final[stat],
     talentMulti,
     ...(arg.baseMulti ? [arg.baseMulti] : [])
+  )
+  return customDmg(name, ele, move, base, arg, ...extra)
+}
+
+/**
+ * WR `splitScaleDmgNode`: one hit scaled by several stats (ATK+EM, …).
+ * Formula-local `premod` overlays go in `...extra` (name-scoped). Do not overlay
+ * `premod.atk_`/`hp_`/`def_` — fold that into the base instead.
+ */
+export function splitScaleDmg(
+  name: string,
+  info: CharInfo,
+  stats: Stat[],
+  levelScalings: number[][],
+  move: Exclude<MoveKey, 'elemental'>,
+  arg: { ele?: ElementWithPhyKey; baseMulti?: NumNode } & FormulaArg = {},
+  ...extra: TagMapNodeEntries
+): TagMapNodeEntries {
+  const ele = inferHitEle(info, move, arg.ele)
+  const talent = talentByMove[move]
+  const { final } = own
+  const base = sum(
+    ...stats.map((stat, i) =>
+      prod(
+        final[stat],
+        percent(talentSubscript(talent, levelScalings[i]!)),
+        ...(arg.baseMulti ? [arg.baseMulti] : [])
+      )
+    )
   )
   return customDmg(name, ele, move, base, arg, ...extra)
 }
@@ -101,8 +140,8 @@ export function shield(
     name,
     arg.ele,
     sum(
-      prod(percent(subscript(lvl, tlvlMulti)), own.final[stat]),
-      subscript(lvl, flat)
+      prod(percent(talentSubscript(lvl, tlvlMulti)), own.final[stat]),
+      talentSubscript(lvl, flat)
     ),
     arg,
     ...extra
@@ -127,6 +166,20 @@ export function fixedShield(
 }
 
 const baseStats = new Set(['atk', 'def', 'hp'])
+
+/** WR `flags.isMoonsign`. Written as `own.common.moonsign`; read `team.common.moonsign`. */
+const moonsignCharKeys = new Set<CharacterKey>([
+  'Aino',
+  'Columbina',
+  'Flins',
+  'Illuga',
+  'Ineffa',
+  'Jahoda',
+  'Lauma',
+  'Linnea',
+  'Nefer',
+  'Zibai',
+])
 
 export function entriesForChar(
   { key, ele, weaponType, region }: CharInfo,
@@ -157,6 +210,7 @@ export function entriesForChar(
     // Counters
     ownBuff.common.count[ele].add(1),
     ...(region !== '' ? [ownBuff.common.count[region].add(1)] : []),
+    ...(moonsignCharKeys.has(key) ? [ownBuff.common.moonsign.add(1)] : []),
 
     // Listing (formulas)
     ownBuff.listing.formulas.add(listingItem(own.final.hp)),

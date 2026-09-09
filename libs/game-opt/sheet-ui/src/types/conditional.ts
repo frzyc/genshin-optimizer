@@ -13,4 +13,6 @@ export type Conditional = {
   header?: Header
   fields?: Field[]
   targeted?: boolean
+  /** Show this conditional on teammate team-buff panels. */
+  teamBuff?: boolean
 }

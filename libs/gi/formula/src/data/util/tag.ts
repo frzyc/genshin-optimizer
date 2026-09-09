@@ -28,7 +28,7 @@ export function priorityTable(
   )
   const max = Math.max(...map.keys()),
     table: string[] = []
-  for (let i = 0; i < max; i++) table.push(map.get(i) ?? defaultValue)
+  for (let i = 0; i <= max; i++) table.push(map.get(i) ?? defaultValue)
   return table
 }
 
@@ -91,6 +91,7 @@ const stats: Record<Stat, Desc> = {
   critDMG_: agg,
   dmg_: agg,
   heal_: agg,
+  staminaChargedDec_: agg,
 } as const
 export const ownTag = {
   base: { atk: agg, def: agg, hp: agg },
@@ -121,6 +122,8 @@ export const ownTag = {
     cappedCritRate_: fixed,
     count: isoSum,
     eleCount: fixed,
+    moonsign: isoSum,
+    hexerei: isoSum,
   },
   reaction: {
     infusion: iso,
@@ -141,13 +144,14 @@ export const ownTag = {
     critDMG_: agg,
     critMulti: fixed,
   },
-  dmg: { out: fixed, inDmg: fixed, critMulti: fixed },
+  dmg: { out: fixed, inDmg: fixed, def_mult_: fixed, critMulti: fixed },
   prep: { ele: prep, move: prep, amp: prep, cata: prep, trans: prep },
   formula: {
     base: agg,
     dmg: prep,
     shield: prep,
     heal: prep,
+    param: prep,
     trans: prep,
     transCrit: prep,
     swirl: prep,

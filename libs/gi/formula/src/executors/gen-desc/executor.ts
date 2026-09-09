@@ -8,6 +8,11 @@ import {
 import { workspaceRoot } from '@nx/devkit'
 import { entries } from '../../data'
 import type { Tag } from '../../data/util'
+import {
+  type CatalogListing,
+  buildFormulaCatalog,
+} from '../../formulaCatalogBuild'
+import { STAT_SHEET, stripCalcContextTag } from '../../formulaRef'
 import type { GenDescExecutorSchema } from './schema'
 
 export default async function runExecutor(
@@ -39,6 +44,38 @@ export default async function runExecutor(
     return undefined
   })
 
+  const catalogListings: CatalogListing[] = []
+  for (const { tag, value } of entries) {
+    if (
+      tag.sheet === 'agg' ||
+      tag.sheet === 'art' ||
+      tag.qt !== 'listing' ||
+      tag.q !== 'formulas' ||
+      value.op !== 'tag' ||
+      !('q' in value.tag)
+    )
+      continue
+
+    const inner = value.tag as Tag
+    if (inner.name) {
+      catalogListings.push({
+        catalogSheet: tag.sheet!,
+        name: inner.name,
+        dim: inner.q!,
+        tag: { ...tag, ...inner, name: inner.name },
+      })
+      continue
+    }
+    if (!inner.q || !inner.qt) continue
+    catalogListings.push({
+      catalogSheet: STAT_SHEET,
+      name: inner['ele'] ? `${inner['ele']}_${inner.q}` : inner.q,
+      dim: inner.qt,
+      tag: stripCalcContextTag(inner),
+    })
+  }
+  const formulaCatalog = buildFormulaCatalog(catalogListings)
+
   const cwd = path.join(workspaceRoot, outputPath)
   const str = `
 // WARNING: Generated file, do not modify
@@ -47,6 +84,15 @@ export const formulas = ${JSON.stringify(formulas)} as const
 `
   const formatted = await formatText('index.ts', str)
   writeFileSync(cwd, formatted)
+
+  const catalogPath = path.join(path.dirname(cwd), 'formulaCatalog.ts')
+  const catalogSrc = `
+// WARNING: Generated file, do not modify
+import type { FormulaCatalog } from './formulaRef'
+
+export const formulaCatalog = ${JSON.stringify(formulaCatalog)} as FormulaCatalog
+`
+  writeFileSync(catalogPath, await formatText('index.ts', catalogSrc))
 
   return { success: true }
 }

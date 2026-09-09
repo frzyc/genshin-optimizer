@@ -4,9 +4,9 @@
       "key": "Nahida",
       "level": 12,
       "talent": {
-        "auto": 0,
-        "skill": 0,
-        "burst": 0
+        "auto": 1,
+        "skill": 1,
+        "burst": 1
       },
       "ascension": 0,
       "constellation": 2
@@ -43,9 +43,9 @@
       "key": "Nilou",
       "level": 33,
       "talent": {
-        "auto": 0,
-        "skill": 0,
-        "burst": 0
+        "auto": 1,
+        "skill": 1,
+        "burst": 1
       },
       "ascension": 1,
       "constellation": 3

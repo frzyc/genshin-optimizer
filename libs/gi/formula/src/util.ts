@@ -56,6 +56,7 @@ export function weaponData(data: IWeapon): TagMapNodeEntries {
 
   return [
     reader.sheet('agg').reread(reader.sheet(data.key)),
+    own.common.count.sheet(data.key).add(1),
 
     lvl.add(data.level),
     ascension.add(data.ascension),

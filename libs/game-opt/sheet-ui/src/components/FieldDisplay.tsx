@@ -27,14 +27,22 @@ import {
   styled,
   Typography,
 } from '@mui/material'
-import type { ElementType } from 'react'
-import { useCallback, useContext, useMemo, useState } from 'react'
+import type { ElementType, ReactNode } from 'react'
+import {
+  isValidElement,
+  useCallback,
+  useContext,
+  useMemo,
+  useState,
+} from 'react'
 import {
   CompareCalcContext,
   FormulaTextCacheContext,
   FormulaTextContext,
   FullTagDisplayContext,
   TagRowSxContext,
+  TagTitleColorContext,
+  type TagTitleColorFunc,
 } from '../context'
 import type { Field, MultiTagField, TagField, TextField } from '../types'
 import { isMultiTagField } from '../types'
@@ -76,6 +84,16 @@ export function CompareValueDisplay({
       )}
     </>
   )
+}
+
+function titleWithTagColor(
+  title: ReactNode,
+  tag: Tag | undefined,
+  getTitleColor: TagTitleColorFunc | undefined
+) {
+  if (isValidElement(title) && title.type === ColorText) return title
+  const color = getTitleColor?.(tag)
+  return color ? <ColorText color={color}>{title}</ColorText> : title
 }
 
 function useCompareCalcValue(
@@ -180,6 +198,7 @@ export function MultiTagFieldDisplay({
   const compareCalc = useContext(CompareCalcContext)
   const contextTag = useContext(TagContext)
   const getTagRowSx = useContext(TagRowSxContext)
+  const getTitleColor = useContext(TagTitleColorContext)
   const { icon, title, subtitle, fieldRefs } = field
 
   const taggedCalc = useMemo(
@@ -254,7 +273,11 @@ export function MultiTagFieldDisplay({
         }}
       >
         {icon}
-        {title}
+        {titleWithTagColor(
+          title,
+          computed[0]?.valueCalcRes.meta.tag,
+          getTitleColor
+        )}
         {subtitle}
       </Typography>
       <Typography
@@ -336,6 +359,7 @@ export function TagFieldDisplay({
   const calc = useContext(CalcContext)
   const contextTag = useContext(TagContext)
   const getTagRowSx = useContext(TagRowSxContext)
+  const getTitleColor = useContext(TagTitleColorContext)
   const contextRowSx = getTagRowSx?.(field.fieldRef)
   const fieldRead = useMemo(
     () => calcReadOverride ?? read(field.fieldRef),
@@ -350,14 +374,16 @@ export function TagFieldDisplay({
 
   if (!calc || !valueCalcRes) return null
 
-  const { multi, icon, title, subtitle } = field
+  const { multi, icon, title, subtitle, unit: unitOverride } = field
   const multiDisplay = multi && <span>{multi}&#215;</span>
 
   const calcValue = valueCalcRes.val
 
   if (!showZero && !calcValue && !compareCalcValue) return null
 
-  const unit = getUnitStr(fieldRead.tag['q'] || fieldRead.tag['name'] || '')
+  const unit =
+    unitOverride ??
+    getUnitStr(fieldRead.tag['q'] || fieldRead.tag['name'] || '')
 
   const fieldVal = (
     <CompareValueDisplay
@@ -400,7 +426,7 @@ export function TagFieldDisplay({
         }}
       >
         {icon}
-        {title}
+        {titleWithTagColor(title, valueCalcRes.meta.tag, getTitleColor)}
         {subtitle}
       </Typography>
       <Typography

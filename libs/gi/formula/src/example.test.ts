@@ -127,6 +127,8 @@ describe('example', () => {
      *   qt: 'formula'
      *   q: < 'dmg' / 'trans' / 'shield' / 'heal' >
      *   name: <formula name>
+     *   move?: <move>
+     *   ele?: <register-time element; omitted for infusion hits>
      * }
      * ```
      */
@@ -134,13 +136,14 @@ describe('example', () => {
 
     // Simple check that all tags are in the correct format
     const names: string[] = []
-    for (const { name, move, ...tag } of listing.filter(
+    for (const { name, move, ele, ...tag } of listing.filter(
       (x) => x.sheet === 'Nahida' && x.qt === 'formula' // exclude stats
     )) {
       names.push(name!)
       expect(name).toBeTruthy()
       expect(move).toBeTruthy()
       test(`with name ${name}`, () => {
+        expect(ele).toBe('dendro')
         expect(tag).toEqual({
           src: '0',
           et: 'own',
