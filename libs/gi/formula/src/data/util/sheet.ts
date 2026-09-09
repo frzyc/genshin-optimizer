@@ -22,6 +22,9 @@ export function register(
   const internal = ({ tag, value }: TagMapNodeEntry) => {
     // Sheet-specific `enemy` stats adds to `enemyDeBuff` instead
     if (tag.et === 'enemy') tag = { ...tag, et: 'enemyDeBuff' }
+    // Keep addOnce / stackToken channels on the non-stack group sheet.
+    if (tag.qt === 'stackIn' || tag.qt === 'stackTmp' || tag.qt === 'stackOut')
+      return { tag, value }
     return { tag: { ...tag, sheet }, value }
   }
   return data.flatMap((data) =>
@@ -143,7 +146,9 @@ export function readStat(
   list: Record<Stat | 'shield_', Read>,
   key: StatKey
 ): Read {
-  return key.endsWith('_dmg_')
-    ? list['dmg_'][key.slice(0, -5) as ElementWithPhyKey]
-    : list[key as Stat]
+  if (key.endsWith('_dmg_'))
+    return list['dmg_'][key.slice(0, -5) as ElementWithPhyKey]
+  if (key.endsWith('_res_') && !key.endsWith('_enemyRes_'))
+    return list['res_'][key.slice(0, -5) as ElementWithPhyKey]
+  return list[key as Stat]
 }

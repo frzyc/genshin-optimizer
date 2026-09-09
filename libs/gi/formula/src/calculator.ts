@@ -68,7 +68,10 @@ export class Calculator extends Base<Tag, 'res'> {
         // Count-like tallies default to sum; everything else needs explicit `accu`
         if (
           qt === 'common' &&
-          (q === 'count' || q === 'moonsign' || q === 'hexerei')
+          (q === 'count' ||
+            q === 'moonsign' ||
+            q === 'hexerei' ||
+            q === 'activeEle')
         )
           return 'sum'
         throw new Error('non-explicit team value accumulator')

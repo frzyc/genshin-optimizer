@@ -60,6 +60,13 @@ describe('party tallies', () => {
     expect(mem0.compute(isActive.ifOn(1)).val).toBe(0)
     expect(mem1.compute(isActive.ifOn(1)).val).toBe(1)
   })
+
+  test('activeEle follows the on-field member', () => {
+    expect(mem1.compute(own.common.activeEle.dendro).val).toBe(1)
+    expect(mem1.compute(own.common.activeEle.hydro).val).toBe(0)
+    expect(calc.compute(team.common.activeEle.dendro).val).toBe(1)
+    expect(calc.compute(team.common.activeEle.hydro).val).toBe(0)
+  })
 })
 
 describe('splitScale listing', () => {

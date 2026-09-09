@@ -91,6 +91,11 @@ const stats: Record<Stat, Desc> = {
   critDMG_: agg,
   dmg_: agg,
   heal_: agg,
+  incHeal_: agg,
+  atkSPD_: agg,
+  moveSPD_: agg,
+  weakspotDMG_: agg,
+  res_: agg,
   staminaChargedDec_: agg,
 } as const
 export const ownTag = {
@@ -101,6 +106,7 @@ export const ownTag = {
   char: {
     lvl: iso,
     ele: iso,
+    charKey: iso,
     ascension: iso,
     constellation: iso,
     auto: agg,
@@ -124,6 +130,8 @@ export const ownTag = {
     eleCount: fixed,
     moonsign: isoSum,
     hexerei: isoSum,
+    /** 1 when this member is on-field and has `ele`. Team max is `active.charEle`. */
+    activeEle: isoSum,
   },
   reaction: {
     infusion: iso,
@@ -218,5 +226,7 @@ for (const values of [...Object.values(ownTag), ...Object.values(enemyTag)])
   for (const q of Object.keys(values)) reader.with('q', q)
 
 export function tagToStat(tag: Tag): StatKey {
-  return (tag.q === 'dmg_' ? `${tag['ele']}_${tag.q}` : tag.q) as StatKey
+  return tag.q === 'dmg_' || tag.q === 'res_'
+    ? (`${tag['ele']}_${tag.q}` as StatKey)
+    : (tag.q as StatKey)
 }

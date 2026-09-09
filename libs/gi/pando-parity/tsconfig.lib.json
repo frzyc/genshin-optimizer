@@ -5,5 +5,10 @@
     "types": ["node", "object-overrides"]
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["vitest.config.mts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+  "exclude": [
+    "vitest.config.mts",
+    "src/**/*.spec.ts",
+    "src/**/*.test.ts",
+    "src/harness.ts"
+  ]
 }

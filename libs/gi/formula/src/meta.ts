@@ -1,60 +1,211 @@
 // WARNING: Generated file, do not modify
 export const conditionals = {
   ADayCarvedFromRisingWinds: {
-    someBoolConditional: {
-      sheet: 'ADayCarvedFromRisingWinds',
-      name: 'someBoolConditional',
-      type: 'bool',
+    set4: { sheet: 'ADayCarvedFromRisingWinds', name: 'set4', type: 'bool' },
+  },
+  ATeaspoonOfTranscendence: {
+    passive: {
+      sheet: 'ATeaspoonOfTranscendence',
+      name: 'passive',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 3,
     },
   },
-  Adventurer: {
-    someBoolConditional: {
-      sheet: 'Adventurer',
-      name: 'someBoolConditional',
+  AThousandBlazingSuns: {
+    nightsoul: {
+      sheet: 'AThousandBlazingSuns',
+      name: 'nightsoul',
       type: 'bool',
     },
+    passive: { sheet: 'AThousandBlazingSuns', name: 'passive', type: 'bool' },
+  },
+  Absolution: {
+    bondStacks: {
+      sheet: 'Absolution',
+      name: 'bondStacks',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 3,
+    },
+  },
+  Akuoumaru: {
+    WatatsumiWavewalker: {
+      sheet: 'Akuoumaru',
+      name: 'WatatsumiWavewalker',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 360,
+    },
+  },
+  AlleyHunter: {
+    OppidanAmbush: {
+      sheet: 'AlleyHunter',
+      name: 'OppidanAmbush',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 10,
+    },
+  },
+  AmosBow: {
+    StrongWilled: {
+      sheet: 'AmosBow',
+      name: 'StrongWilled',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 5,
+    },
+  },
+  AngelosHeptades: {
+    shield: { sheet: 'AngelosHeptades', name: 'shield', type: 'bool' },
+  },
+  AquaSimulacra: {
+    passive: { sheet: 'AquaSimulacra', name: 'passive', type: 'bool' },
   },
   ArchaicPetra: {
-    someBoolConditional: {
+    element: {
       sheet: 'ArchaicPetra',
-      name: 'someBoolConditional',
+      name: 'element',
+      type: 'list',
+      list: ['hydro', 'pyro', 'cryo', 'electro'],
+    },
+  },
+  AstralVulturesCrimsonPlumage: {
+    passive: {
+      sheet: 'AstralVulturesCrimsonPlumage',
+      name: 'passive',
       type: 'bool',
     },
+  },
+  AthameArtis: {
+    burstHit: { sheet: 'AthameArtis', name: 'burstHit', type: 'bool' },
   },
   AubadeOfMorningstarAndMoon: {
-    someBoolConditional: {
-      sheet: 'AubadeOfMorningstarAndMoon',
-      name: 'someBoolConditional',
+    set4: { sheet: 'AubadeOfMorningstarAndMoon', name: 'set4', type: 'bool' },
+  },
+  Azurelight: {
+    afterSkill: { sheet: 'Azurelight', name: 'afterSkill', type: 'bool' },
+    noEnergy: { sheet: 'Azurelight', name: 'noEnergy', type: 'bool' },
+  },
+  BalladOfTheBoundlessBlue: {
+    hits: {
+      sheet: 'BalladOfTheBoundlessBlue',
+      name: 'hits',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 3,
+    },
+  },
+  BeaconOfTheReedSea: {
+    afterDmg: { sheet: 'BeaconOfTheReedSea', name: 'afterDmg', type: 'bool' },
+    afterSkill: {
+      sheet: 'BeaconOfTheReedSea',
+      name: 'afterSkill',
       type: 'bool',
     },
+    noShield: { sheet: 'BeaconOfTheReedSea', name: 'noShield', type: 'bool' },
   },
   Berserker: {
-    someBoolConditional: {
-      sheet: 'Berserker',
-      name: 'someBoolConditional',
+    hp: { sheet: 'Berserker', name: 'hp', type: 'list', list: ['70'] },
+  },
+  BlackTassel: {
+    PressTheAdvantage: {
+      sheet: 'BlackTassel',
+      name: 'PressTheAdvantage',
       type: 'bool',
     },
+  },
+  BlackcliffAgate: {
+    PressTheAdvantage: {
+      sheet: 'BlackcliffAgate',
+      name: 'PressTheAdvantage',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 3,
+    },
+  },
+  BlackcliffLongsword: {
+    PressTheAdvantage: {
+      sheet: 'BlackcliffLongsword',
+      name: 'PressTheAdvantage',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 3,
+    },
+  },
+  BlackcliffPole: {
+    PressTheAdvantage: {
+      sheet: 'BlackcliffPole',
+      name: 'PressTheAdvantage',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 3,
+    },
+  },
+  BlackcliffSlasher: {
+    PressTheAdvantage: {
+      sheet: 'BlackcliffSlasher',
+      name: 'PressTheAdvantage',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 3,
+    },
+  },
+  BlackcliffWarbow: {
+    PressTheAdvantage: {
+      sheet: 'BlackcliffWarbow',
+      name: 'PressTheAdvantage',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 3,
+    },
+  },
+  BladeOfAtonement: {
+    react: { sheet: 'BladeOfAtonement', name: 'react', type: 'bool' },
   },
   BlizzardStrayer: {
-    someBoolConditional: {
+    state: {
       sheet: 'BlizzardStrayer',
-      name: 'someBoolConditional',
-      type: 'bool',
+      name: 'state',
+      type: 'list',
+      list: ['cryo', 'frozen'],
     },
   },
+  BloodsoakedRuins: {
+    afterBurst: { sheet: 'BloodsoakedRuins', name: 'afterBurst', type: 'bool' },
+    afterLc: { sheet: 'BloodsoakedRuins', name: 'afterLc', type: 'bool' },
+  },
   BloodstainedChivalry: {
-    someBoolConditional: {
+    defeat: {
       sheet: 'BloodstainedChivalry',
-      name: 'someBoolConditional',
+      name: 'defeat',
+      type: 'list',
+      list: ['hit'],
+    },
+  },
+  BloodtaintedGreatsword: {
+    BaneOfFireAndThunder: {
+      sheet: 'BloodtaintedGreatsword',
+      name: 'BaneOfFireAndThunder',
       type: 'bool',
     },
   },
   BraveHeart: {
-    someBoolConditional: {
-      sheet: 'BraveHeart',
-      name: 'someBoolConditional',
-      type: 'bool',
-    },
+    hp: { sheet: 'BraveHeart', name: 'hp', type: 'list', list: ['50'] },
+  },
+  CalamityOfEshu: {
+    passive: { sheet: 'CalamityOfEshu', name: 'passive', type: 'bool' },
   },
   CalamityQueller: {
     isActive: { sheet: 'CalamityQueller', name: 'isActive', type: 'bool' },
@@ -75,137 +226,473 @@ export const conditionals = {
       type: 'bool',
     },
   },
+  CashflowSupervision: {
+    hpChanges: {
+      sheet: 'CashflowSupervision',
+      name: 'hpChanges',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 3,
+    },
+  },
   CelestialGift: {
-    someBoolConditional: {
-      sheet: 'CelestialGift',
-      name: 'someBoolConditional',
+    set4: { sheet: 'CelestialGift', name: 'set4', type: 'bool' },
+  },
+  ChainBreaker: {
+    natlanOrNonEle: {
+      sheet: 'ChainBreaker',
+      name: 'natlanOrNonEle',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 4,
+    },
+  },
+  CinnabarSpindle: {
+    SpotlessHeart: {
+      sheet: 'CinnabarSpindle',
+      name: 'SpotlessHeart',
       type: 'bool',
+    },
+  },
+  ClashOfKings: {
+    skill: { sheet: 'ClashOfKings', name: 'skill', type: 'bool' },
+  },
+  Cloudforged: {
+    energyStacks: {
+      sheet: 'Cloudforged',
+      name: 'energyStacks',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  CompoundBow: {
+    InfusionArrow: {
+      sheet: 'CompoundBow',
+      name: 'InfusionArrow',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 4,
+    },
+  },
+  CoolSteel: {
+    BaneOfWaterAndIce: {
+      sheet: 'CoolSteel',
+      name: 'BaneOfWaterAndIce',
+      type: 'bool',
+    },
+  },
+  CovenantOfFrostAndSnow: {
+    passive: { sheet: 'CovenantOfFrostAndSnow', name: 'passive', type: 'bool' },
+  },
+  CranesEchoingCall: {
+    passive: { sheet: 'CranesEchoingCall', name: 'passive', type: 'bool' },
+  },
+  CrimsonMoonsSemblance: {
+    bond: {
+      sheet: 'CrimsonMoonsSemblance',
+      name: 'bond',
+      type: 'list',
+      list: ['1', '2'],
     },
   },
   CrimsonWitchOfFlames: {
-    someBoolConditional: {
+    stack: {
       sheet: 'CrimsonWitchOfFlames',
-      name: 'someBoolConditional',
-      type: 'bool',
+      name: 'stack',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 3,
+    },
+  },
+  DarkIronSword: {
+    Overloaded: { sheet: 'DarkIronSword', name: 'Overloaded', type: 'bool' },
+  },
+  DawningFrost: {
+    chargedHit: { sheet: 'DawningFrost', name: 'chargedHit', type: 'bool' },
+    skillHit: { sheet: 'DawningFrost', name: 'skillHit', type: 'bool' },
+  },
+  Deathmatch: {
+    stack: {
+      sheet: 'Deathmatch',
+      name: 'stack',
+      type: 'list',
+      list: ['oneOrNone', 'moreThanOne'],
     },
   },
   DeepwoodMemories: {
-    someBoolConditional: {
-      sheet: 'DeepwoodMemories',
-      name: 'someBoolConditional',
-      type: 'bool',
-    },
-  },
-  DefendersWill: {
-    someBoolConditional: {
-      sheet: 'DefendersWill',
-      name: 'someBoolConditional',
-      type: 'bool',
-    },
+    set4: { sheet: 'DeepwoodMemories', name: 'set4', type: 'bool' },
   },
   DesertPavilionChronicle: {
-    someBoolConditional: {
-      sheet: 'DesertPavilionChronicle',
-      name: 'someBoolConditional',
+    set4: { sheet: 'DesertPavilionChronicle', name: 'set4', type: 'bool' },
+  },
+  DisasterAndRemorse: {
+    irreparable: {
+      sheet: 'DisasterAndRemorse',
+      name: 'irreparable',
+      type: 'bool',
+    },
+    unforgivable: {
+      sheet: 'DisasterAndRemorse',
+      name: 'unforgivable',
       type: 'bool',
     },
   },
   DisenchantmentInDeepShadow: {
-    someBoolConditional: {
-      sheet: 'DisenchantmentInDeepShadow',
-      name: 'someBoolConditional',
+    state: { sheet: 'DisenchantmentInDeepShadow', name: 'state', type: 'bool' },
+  },
+  DodocoTales: {
+    DodoventureCharged: {
+      sheet: 'DodocoTales',
+      name: 'DodoventureCharged',
       type: 'bool',
     },
+    DodoventureNormal: {
+      sheet: 'DodocoTales',
+      name: 'DodoventureNormal',
+      type: 'bool',
+    },
+  },
+  DragonsBane: {
+    BaneOfFlameAndWater: {
+      sheet: 'DragonsBane',
+      name: 'BaneOfFlameAndWater',
+      type: 'bool',
+    },
+  },
+  EarthShaker: {
+    pyroReaction: { sheet: 'EarthShaker', name: 'pyroReaction', type: 'bool' },
   },
   EchoesOfAnOffering: {
-    someBoolConditional: {
+    mode: {
       sheet: 'EchoesOfAnOffering',
-      name: 'someBoolConditional',
+      name: 'mode',
+      type: 'list',
+      list: [
+        'on',
+        'avg',
+        '0.3',
+        '0.325',
+        '0.35000000000000003',
+        '0.37500000000000006',
+        '0.4000000000000001',
+        '0.4250000000000001',
+        '0.4500000000000001',
+        '0.47500000000000014',
+      ],
+    },
+  },
+  EchoesOfTheHeart: {
+    react: { sheet: 'EchoesOfTheHeart', name: 'react', type: 'bool' },
+    stellar: { sheet: 'EchoesOfTheHeart', name: 'stellar', type: 'bool' },
+  },
+  ElegyForTheEnd: {
+    ThePartingRefrain: {
+      sheet: 'ElegyForTheEnd',
+      name: 'ThePartingRefrain',
       type: 'bool',
     },
   },
-  EmblemOfSeveredFate: {
-    someBoolConditional: {
-      sheet: 'EmblemOfSeveredFate',
-      name: 'someBoolConditional',
+  Emberwell: {
+    react: { sheet: 'Emberwell', name: 'react', type: 'bool' },
+    stellar: { sheet: 'Emberwell', name: 'stellar', type: 'bool' },
+  },
+  EmeraldOrb: { Rapids: { sheet: 'EmeraldOrb', name: 'Rapids', type: 'bool' } },
+  EngulfingLightning: {
+    TimelessDream: {
+      sheet: 'EngulfingLightning',
+      name: 'TimelessDream',
       type: 'bool',
     },
+  },
+  EtherlightSpindlelute: {
+    condPassive: {
+      sheet: 'EtherlightSpindlelute',
+      name: 'condPassive',
+      type: 'bool',
+    },
+  },
+  ExaiphanesBlade: {
+    passive: { sheet: 'ExaiphanesBlade', name: 'passive', type: 'bool' },
+  },
+  FadingTwilight: {
+    state: {
+      sheet: 'FadingTwilight',
+      name: 'state',
+      type: 'list',
+      list: ['evengleam', 'afterglow', 'dawnblaze'],
+    },
+  },
+  FangOfTheMountainKing: {
+    stacks: {
+      sheet: 'FangOfTheMountainKing',
+      name: 'stacks',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 6,
+    },
+  },
+  FerrousShadow: {
+    Unbending: { sheet: 'FerrousShadow', name: 'Unbending', type: 'bool' },
+  },
+  FinaleOfTheDeep: {
+    afterSkill: { sheet: 'FinaleOfTheDeep', name: 'afterSkill', type: 'bool' },
+    bond: { sheet: 'FinaleOfTheDeep', name: 'bond', type: 'bool' },
   },
   FinaleOfTheDeepGalleries: {
-    someBoolConditional: {
+    '0EnergyNoBurst': {
       sheet: 'FinaleOfTheDeepGalleries',
-      name: 'someBoolConditional',
+      name: '0EnergyNoBurst',
+      type: 'bool',
+    },
+    '0EnergyNoNormal': {
+      sheet: 'FinaleOfTheDeepGalleries',
+      name: '0EnergyNoNormal',
+      type: 'bool',
+    },
+  },
+  FlameForgedInsight: {
+    passive: { sheet: 'FlameForgedInsight', name: 'passive', type: 'bool' },
+  },
+  FleuveCendreFerryman: {
+    afterSkill: {
+      sheet: 'FleuveCendreFerryman',
+      name: 'afterSkill',
       type: 'bool',
     },
   },
   FlowerOfParadiseLost: {
-    someBoolConditional: {
+    stacks: {
       sheet: 'FlowerOfParadiseLost',
-      name: 'someBoolConditional',
+      name: 'stacks',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 4,
+    },
+  },
+  FlowerWreathedFeathers: {
+    passive: {
+      sheet: 'FlowerWreathedFeathers',
+      name: 'passive',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 6,
+    },
+  },
+  FlowingPurity: {
+    afterSkill: { sheet: 'FlowingPurity', name: 'afterSkill', type: 'bool' },
+    bond: { sheet: 'FlowingPurity', name: 'bond', type: 'bool' },
+  },
+  FluteOfEzpitzal: {
+    afterSkill: { sheet: 'FluteOfEzpitzal', name: 'afterSkill', type: 'bool' },
+  },
+  FootprintOfTheRainbow: {
+    afterSkill: {
+      sheet: 'FootprintOfTheRainbow',
+      name: 'afterSkill',
+      type: 'bool',
+    },
+  },
+  ForestRegalia: {
+    passive: { sheet: 'ForestRegalia', name: 'passive', type: 'bool' },
+  },
+  ForgedByTheGoldenMelody: {
+    contra: {
+      sheet: 'ForgedByTheGoldenMelody',
+      name: 'contra',
+      type: 'list',
+      list: ['1', '2', '3'],
+    },
+    movement: {
+      sheet: 'ForgedByTheGoldenMelody',
+      name: 'movement',
+      type: 'list',
+      list: ['1', '2', '3'],
+    },
+  },
+  FracturedHalo: {
+    afterShield: { sheet: 'FracturedHalo', name: 'afterShield', type: 'bool' },
+    afterSkillBurst: {
+      sheet: 'FracturedHalo',
+      name: 'afterSkillBurst',
       type: 'bool',
     },
   },
   FragmentOfHarmonicWhimsy: {
-    someBoolConditional: {
+    stacks: {
       sheet: 'FragmentOfHarmonicWhimsy',
-      name: 'someBoolConditional',
+      name: 'stacks',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 3,
+    },
+  },
+  FreedomSworn: {
+    MillennialMovement: {
+      sheet: 'FreedomSworn',
+      name: 'MillennialMovement',
       type: 'bool',
     },
   },
-  Gambler: {
-    someBoolConditional: {
-      sheet: 'Gambler',
-      name: 'someBoolConditional',
+  Frostbreath: { react: { sheet: 'Frostbreath', name: 'react', type: 'bool' } },
+  FruitOfFulfillment: {
+    stacks: {
+      sheet: 'FruitOfFulfillment',
+      name: 'stacks',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 5,
+    },
+  },
+  FruitfulHook: {
+    afterPlunging: {
+      sheet: 'FruitfulHook',
+      name: 'afterPlunging',
       type: 'bool',
+    },
+  },
+  GestOfTheMightyWolf: {
+    stacks: {
+      sheet: 'GestOfTheMightyWolf',
+      name: 'stacks',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 4,
     },
   },
   GildedDreams: {
-    someBoolConditional: {
+    overrideOther: {
       sheet: 'GildedDreams',
-      name: 'someBoolConditional',
+      name: 'overrideOther',
+      type: 'list',
+      list: ['0', '1', '2', '3'],
+    },
+    overrideSame: {
+      sheet: 'GildedDreams',
+      name: 'overrideSame',
+      type: 'list',
+      list: ['0', '1', '2', '3'],
+    },
+    passive: { sheet: 'GildedDreams', name: 'passive', type: 'bool' },
+  },
+  GoldenFrostboundOath: {
+    moondrift: {
+      sheet: 'GoldenFrostboundOath',
+      name: 'moondrift',
+      type: 'bool',
+    },
+    skillOrLc: {
+      sheet: 'GoldenFrostboundOath',
+      name: 'skillOrLc',
       type: 'bool',
     },
   },
-  GladiatorsFinale: {
-    someBoolConditional: {
-      sheet: 'GladiatorsFinale',
-      name: 'someBoolConditional',
-      type: 'bool',
+  GoldenTroupe: { set4: { sheet: 'GoldenTroupe', name: 'set4', type: 'bool' } },
+  HakushinRing: {
+    SakuraSaiguu: {
+      sheet: 'HakushinRing',
+      name: 'SakuraSaiguu',
+      type: 'list',
+      list: ['anemo', 'geo', 'hydro', 'pyro', 'cryo', 'dendro'],
     },
   },
-  GoldenTroupe: {
-    someBoolConditional: {
-      sheet: 'GoldenTroupe',
-      name: 'someBoolConditional',
+  Hamayumi: { FullDraw: { sheet: 'Hamayumi', name: 'FullDraw', type: 'bool' } },
+  HaranGeppakuFutsu: {
+    HonedFlow: {
+      sheet: 'HaranGeppakuFutsu',
+      name: 'HonedFlow',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  HarbingerOfDawn: {
+    SkyPiercingMight: {
+      sheet: 'HarbingerOfDawn',
+      name: 'SkyPiercingMight',
       type: 'bool',
     },
   },
   HeartOfDepth: {
-    someBoolConditional: {
-      sheet: 'HeartOfDepth',
-      name: 'someBoolConditional',
-      type: 'bool',
-    },
+    skill: { sheet: 'HeartOfDepth', name: 'skill', type: 'bool' },
   },
   HeartOfTheFurnace: {
-    someBoolConditional: {
-      sheet: 'HeartOfTheFurnace',
-      name: 'someBoolConditional',
-      type: 'bool',
+    '4Stellar': { sheet: 'HeartOfTheFurnace', name: '4Stellar', type: 'bool' },
+  },
+  HereticsMoltenBlade: {
+    passive: {
+      sheet: 'HereticsMoltenBlade',
+      name: 'passive',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 18,
     },
+  },
+  HuntersPath: {
+    passive: { sheet: 'HuntersPath', name: 'passive', type: 'bool' },
   },
   HuskOfOpulentDreams: {
-    someBoolConditional: {
+    stack: {
       sheet: 'HuskOfOpulentDreams',
-      name: 'someBoolConditional',
+      name: 'stack',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 4,
+    },
+  },
+  IbisPiercer: {
+    passiveStacks: {
+      sheet: 'IbisPiercer',
+      name: 'passiveStacks',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Instructor: { set4: { sheet: 'Instructor', name: 'set4', type: 'bool' } },
+  IronSting: {
+    InfusionStinger: {
+      sheet: 'IronSting',
+      name: 'InfusionStinger',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  JadefallsSplendor: {
+    condPassive: {
+      sheet: 'JadefallsSplendor',
+      name: 'condPassive',
       type: 'bool',
     },
   },
-  Instructor: {
-    someBoolConditional: {
-      sheet: 'Instructor',
-      name: 'someBoolConditional',
-      type: 'bool',
+  KagotsurubeIsshin: {
+    passive: { sheet: 'KagotsurubeIsshin', name: 'passive', type: 'bool' },
+  },
+  KagurasVerity: {
+    KaguraDance: {
+      sheet: 'KagurasVerity',
+      name: 'KaguraDance',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 3,
     },
   },
   KeyOfKhajNisut: {
@@ -218,46 +705,190 @@ export const conditionals = {
       max: 3,
     },
   },
-  Lavawalker: {
-    someBoolConditional: {
-      sheet: 'Lavawalker',
-      name: 'someBoolConditional',
+  KingsSquire: {
+    passive: { sheet: 'KingsSquire', name: 'passive', type: 'bool' },
+  },
+  Lavawalker: { state: { sheet: 'Lavawalker', name: 'state', type: 'bool' } },
+  LightOfFoliarIncision: {
+    afterNormalEle: {
+      sheet: 'LightOfFoliarIncision',
+      name: 'afterNormalEle',
+      type: 'bool',
+    },
+  },
+  LightbearingMoonshard: {
+    passive: { sheet: 'LightbearingMoonshard', name: 'passive', type: 'bool' },
+  },
+  LionsRoar: {
+    BaneOfFireAndThunder: {
+      sheet: 'LionsRoar',
+      name: 'BaneOfFireAndThunder',
       type: 'bool',
     },
   },
   LongNightsOath: {
-    someBoolConditional: {
+    stacks: {
       sheet: 'LongNightsOath',
-      name: 'someBoolConditional',
-      type: 'bool',
+      name: 'stacks',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 5,
     },
   },
-  LuckyDog: {
-    someBoolConditional: {
-      sheet: 'LuckyDog',
-      name: 'someBoolConditional',
+  LostPrayerToTheSacredWinds: {
+    BoundlessBlessing: {
+      sheet: 'LostPrayerToTheSacredWinds',
+      name: 'BoundlessBlessing',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 4,
+    },
+  },
+  LumidouceElegy: {
+    stacks: {
+      sheet: 'LumidouceElegy',
+      name: 'stacks',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  MagicGuide: {
+    BaneOfStormAndTide: {
+      sheet: 'MagicGuide',
+      name: 'BaneOfStormAndTide',
       type: 'bool',
     },
   },
   MaidenBeloved: {
-    someBoolConditional: {
-      sheet: 'MaidenBeloved',
-      name: 'someBoolConditional',
-      type: 'bool',
+    state: { sheet: 'MaidenBeloved', name: 'state', type: 'bool' },
+  },
+  MailedFlower: {
+    passive: { sheet: 'MailedFlower', name: 'passive', type: 'bool' },
+  },
+  MappaMare: {
+    InfusionScroll: {
+      sheet: 'MappaMare',
+      name: 'InfusionScroll',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
     },
   },
   MarechausseeHunter: {
-    someBoolConditional: {
+    set4: {
       sheet: 'MarechausseeHunter',
-      name: 'someBoolConditional',
-      type: 'bool',
+      name: 'set4',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 3,
     },
   },
   MartialArtist: {
-    someBoolConditional: {
-      sheet: 'MartialArtist',
-      name: 'someBoolConditional',
+    state: { sheet: 'MartialArtist', name: 'state', type: 'bool' },
+  },
+  MemoryOfDust: {
+    GoldenMajesty: {
+      sheet: 'MemoryOfDust',
+      name: 'GoldenMajesty',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 5,
+    },
+    WithShield: {
+      sheet: 'MemoryOfDust',
+      name: 'WithShield',
+      type: 'list',
+      list: ['protected'],
+    },
+  },
+  MissiveWindspear: {
+    passive: { sheet: 'MissiveWindspear', name: 'passive', type: 'bool' },
+  },
+  MistsplitterReforged: {
+    MistsplittersEmblem: {
+      sheet: 'MistsplitterReforged',
+      name: 'MistsplittersEmblem',
+      type: 'list',
+      list: ['1', '2', '3'],
+    },
+  },
+  MitternachtsWaltz: {
+    EvernightDuetNormal: {
+      sheet: 'MitternachtsWaltz',
+      name: 'EvernightDuetNormal',
       type: 'bool',
+    },
+    EvernightDuetSkill: {
+      sheet: 'MitternachtsWaltz',
+      name: 'EvernightDuetSkill',
+      type: 'bool',
+    },
+  },
+  Moonpiercer: {
+    passive: { sheet: 'Moonpiercer', name: 'passive', type: 'bool' },
+  },
+  MoonweaversDawn: {
+    energy: {
+      sheet: 'MoonweaversDawn',
+      name: 'energy',
+      type: 'list',
+      list: ['60', '40'],
+    },
+  },
+  MountainBracingBolt: {
+    afterOtherSkill: {
+      sheet: 'MountainBracingBolt',
+      name: 'afterOtherSkill',
+      type: 'bool',
+    },
+  },
+  MouunsMoon: {
+    WatatsumiWavewalker: {
+      sheet: 'MouunsMoon',
+      name: 'WatatsumiWavewalker',
+      type: 'list',
+      list: [
+        '40',
+        '50',
+        '60',
+        '70',
+        '80',
+        '90',
+        '100',
+        '110',
+        '120',
+        '130',
+        '140',
+        '150',
+        '160',
+        '170',
+        '180',
+        '190',
+        '200',
+        '210',
+        '220',
+        '230',
+        '240',
+        '250',
+        '260',
+        '270',
+        '280',
+        '290',
+        '300',
+        '310',
+        '320',
+        '330',
+        '340',
+        '350',
+        '360',
+      ],
     },
   },
   Nahida: {
@@ -275,16 +906,33 @@ export const conditionals = {
     partyInBurst: { sheet: 'Nahida', name: 'partyInBurst', type: 'bool' },
   },
   NightOfTheSkysUnveiling: {
-    someBoolConditional: {
+    '4GleamingMoon': {
       sheet: 'NightOfTheSkysUnveiling',
-      name: 'someBoolConditional',
+      name: '4GleamingMoon',
       type: 'bool',
     },
   },
   NighttimeWhispersInTheEchoingWoods: {
-    someBoolConditional: {
+    afterSkill: {
       sheet: 'NighttimeWhispersInTheEchoingWoods',
-      name: 'someBoolConditional',
+      name: 'afterSkill',
+      type: 'bool',
+    },
+    crystallize: {
+      sheet: 'NighttimeWhispersInTheEchoingWoods',
+      name: 'crystallize',
+      type: 'bool',
+    },
+  },
+  NightweaversLookingGlass: {
+    afterHydroOrDendro: {
+      sheet: 'NightweaversLookingGlass',
+      name: 'afterHydroOrDendro',
+      type: 'bool',
+    },
+    afterLunarBloom: {
+      sheet: 'NightweaversLookingGlass',
+      name: 'afterLunarBloom',
       type: 'bool',
     },
   },
@@ -298,162 +946,665 @@ export const conditionals = {
   NoblesseOblige: {
     set4: { sheet: 'NoblesseOblige', name: 'set4', type: 'bool' },
   },
+  NocturnesCurtainCall: {
+    passive: { sheet: 'NocturnesCurtainCall', name: 'passive', type: 'bool' },
+  },
   Noelle: {
     SweepingTime: { sheet: 'Noelle', name: 'SweepingTime', type: 'bool' },
   },
   NymphsDream: {
-    someBoolConditional: {
+    set4: {
       sheet: 'NymphsDream',
-      name: 'someBoolConditional',
-      type: 'bool',
+      name: 'set4',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 3,
+    },
+  },
+  OathswornEye: {
+    faLight: {
+      sheet: 'OathswornEye',
+      name: 'faLight',
+      type: 'list',
+      list: ['skillBurst'],
     },
   },
   ObsidianCodex: {
-    someBoolConditional: {
+    '2NightsoulBlessing': {
       sheet: 'ObsidianCodex',
-      name: 'someBoolConditional',
+      name: '2NightsoulBlessing',
       type: 'bool',
     },
-  },
-  OceanHuedClam: {
-    someBoolConditional: {
-      sheet: 'OceanHuedClam',
-      name: 'someBoolConditional',
+    '4NightsoulConsume': {
+      sheet: 'ObsidianCodex',
+      name: '4NightsoulConsume',
       type: 'bool',
     },
   },
   PaleFlame: {
-    someBoolConditional: {
+    stacks: {
       sheet: 'PaleFlame',
-      name: 'someBoolConditional',
+      name: 'stacks',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  PeakPatrolSong: {
+    odeMaxed: { sheet: 'PeakPatrolSong', name: 'odeMaxed', type: 'bool' },
+    odeStacks: {
+      sheet: 'PeakPatrolSong',
+      name: 'odeStacks',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  PolarStar: {
+    GoldenMajesty: {
+      sheet: 'PolarStar',
+      name: 'GoldenMajesty',
+      type: 'list',
+      list: ['1', '2', '3', '4'],
+    },
+  },
+  PortablePowerSaw: {
+    symbolsConsumed: {
+      sheet: 'PortablePowerSaw',
+      name: 'symbolsConsumed',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 3,
+    },
+  },
+  Predator: {
+    PressTheAdvantage: {
+      sheet: 'Predator',
+      name: 'PressTheAdvantage',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  PrimordialJadeWingedSpear: {
+    stack: {
+      sheet: 'PrimordialJadeWingedSpear',
+      name: 'stack',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 7,
+    },
+  },
+  ProspectorsDrill: {
+    marksConsumed: {
+      sheet: 'ProspectorsDrill',
+      name: 'marksConsumed',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 3,
+    },
+  },
+  PrototypeCrescent: {
+    Unreturning: {
+      sheet: 'PrototypeCrescent',
+      name: 'Unreturning',
       type: 'bool',
     },
   },
-  PrayersForDestiny: {
-    someBoolConditional: {
-      sheet: 'PrayersForDestiny',
-      name: 'someBoolConditional',
+  PrototypeRancour: {
+    stack: {
+      sheet: 'PrototypeRancour',
+      name: 'stack',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 4,
+    },
+  },
+  PrototypeStarglitter: {
+    stack: {
+      sheet: 'PrototypeStarglitter',
+      name: 'stack',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  QuantumCatalyst: {
+    stacks: {
+      sheet: 'QuantumCatalyst',
+      name: 'stacks',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 5,
+    },
+  },
+  RainbowSerpentsRainBow: {
+    passive: { sheet: 'RainbowSerpentsRainBow', name: 'passive', type: 'bool' },
+  },
+  Rainslasher: {
+    BaneOfStormAndTide: {
+      sheet: 'Rainslasher',
+      name: 'BaneOfStormAndTide',
       type: 'bool',
     },
   },
-  PrayersForIllumination: {
-    someBoolConditional: {
-      sheet: 'PrayersForIllumination',
-      name: 'someBoolConditional',
+  RangeGauge: {
+    marksConsumed: {
+      sheet: 'RangeGauge',
+      name: 'marksConsumed',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 3,
+    },
+  },
+  RavenBow: {
+    BaneOfFlameAndWater: {
+      sheet: 'RavenBow',
+      name: 'BaneOfFlameAndWater',
       type: 'bool',
     },
   },
-  PrayersForWisdom: {
-    someBoolConditional: {
-      sheet: 'PrayersForWisdom',
-      name: 'someBoolConditional',
+  ReliquaryOfTruth: {
+    afterLunarBloom: {
+      sheet: 'ReliquaryOfTruth',
+      name: 'afterLunarBloom',
       type: 'bool',
     },
-  },
-  PrayersToSpringtime: {
-    someBoolConditional: {
-      sheet: 'PrayersToSpringtime',
-      name: 'someBoolConditional',
-      type: 'bool',
-    },
-  },
-  ResolutionOfSojourner: {
-    someBoolConditional: {
-      sheet: 'ResolutionOfSojourner',
-      name: 'someBoolConditional',
-      type: 'bool',
-    },
+    afterSkill: { sheet: 'ReliquaryOfTruth', name: 'afterSkill', type: 'bool' },
   },
   RetracingBolide: {
-    someBoolConditional: {
-      sheet: 'RetracingBolide',
-      name: 'someBoolConditional',
-      type: 'bool',
+    state: { sheet: 'RetracingBolide', name: 'state', type: 'bool' },
+  },
+  RingOfYaxche: {
+    afterSkill: { sheet: 'RingOfYaxche', name: 'afterSkill', type: 'bool' },
+  },
+  RoyalBow: {
+    Focus: {
+      sheet: 'RoyalBow',
+      name: 'Focus',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 5,
     },
   },
-  ScarletProof: {
-    someBoolConditional: {
-      sheet: 'ScarletProof',
-      name: 'someBoolConditional',
-      type: 'bool',
+  RoyalGreatsword: {
+    stack: {
+      sheet: 'RoyalGreatsword',
+      name: 'stack',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 5,
     },
   },
-  Scholar: {
-    someBoolConditional: {
-      sheet: 'Scholar',
-      name: 'someBoolConditional',
-      type: 'bool',
+  RoyalGrimoire: {
+    stack: {
+      sheet: 'RoyalGrimoire',
+      name: 'stack',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 5,
     },
+  },
+  RoyalLongsword: {
+    stack: {
+      sheet: 'RoyalLongsword',
+      name: 'stack',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 5,
+    },
+  },
+  RoyalSpear: {
+    stack: {
+      sheet: 'RoyalSpear',
+      name: 'stack',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 5,
+    },
+  },
+  SacrificersStaff: {
+    passive: {
+      sheet: 'SacrificersStaff',
+      name: 'passive',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 3,
+    },
+  },
+  SacrificialJade: {
+    offField: { sheet: 'SacrificialJade', name: 'offField', type: 'bool' },
+  },
+  SapwoodBlade: {
+    passive: { sheet: 'SapwoodBlade', name: 'passive', type: 'bool' },
+  },
+  ScarletProof: { '4Ss': { sheet: 'ScarletProof', name: '4Ss', type: 'bool' } },
+  ScionOfTheBlazingSun: {
+    afterHit: { sheet: 'ScionOfTheBlazingSun', name: 'afterHit', type: 'bool' },
   },
   ScrollOfTheHeroOfCinderCity: {
-    someBoolConditional: {
+    nightsoul_anemo: {
       sheet: 'ScrollOfTheHeroOfCinderCity',
-      name: 'someBoolConditional',
+      name: 'nightsoul_anemo',
       type: 'bool',
+    },
+    nightsoul_cryo: {
+      sheet: 'ScrollOfTheHeroOfCinderCity',
+      name: 'nightsoul_cryo',
+      type: 'bool',
+    },
+    nightsoul_dendro: {
+      sheet: 'ScrollOfTheHeroOfCinderCity',
+      name: 'nightsoul_dendro',
+      type: 'bool',
+    },
+    nightsoul_electro: {
+      sheet: 'ScrollOfTheHeroOfCinderCity',
+      name: 'nightsoul_electro',
+      type: 'bool',
+    },
+    nightsoul_geo: {
+      sheet: 'ScrollOfTheHeroOfCinderCity',
+      name: 'nightsoul_geo',
+      type: 'bool',
+    },
+    nightsoul_hydro: {
+      sheet: 'ScrollOfTheHeroOfCinderCity',
+      name: 'nightsoul_hydro',
+      type: 'bool',
+    },
+    nightsoul_pyro: {
+      sheet: 'ScrollOfTheHeroOfCinderCity',
+      name: 'nightsoul_pyro',
+      type: 'bool',
+    },
+    react_anemo: {
+      sheet: 'ScrollOfTheHeroOfCinderCity',
+      name: 'react_anemo',
+      type: 'bool',
+    },
+    react_cryo: {
+      sheet: 'ScrollOfTheHeroOfCinderCity',
+      name: 'react_cryo',
+      type: 'bool',
+    },
+    react_dendro: {
+      sheet: 'ScrollOfTheHeroOfCinderCity',
+      name: 'react_dendro',
+      type: 'bool',
+    },
+    react_electro: {
+      sheet: 'ScrollOfTheHeroOfCinderCity',
+      name: 'react_electro',
+      type: 'bool',
+    },
+    react_geo: {
+      sheet: 'ScrollOfTheHeroOfCinderCity',
+      name: 'react_geo',
+      type: 'bool',
+    },
+    react_hydro: {
+      sheet: 'ScrollOfTheHeroOfCinderCity',
+      name: 'react_hydro',
+      type: 'bool',
+    },
+    react_pyro: {
+      sheet: 'ScrollOfTheHeroOfCinderCity',
+      name: 'react_pyro',
+      type: 'bool',
+    },
+  },
+  SerpentSpine: {
+    Wavesplitter: {
+      sheet: 'SerpentSpine',
+      name: 'Wavesplitter',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 5,
     },
   },
   ShimenawasReminiscence: {
-    someBoolConditional: {
+    usedEnergy: {
       sheet: 'ShimenawasReminiscence',
-      name: 'someBoolConditional',
+      name: 'usedEnergy',
       type: 'bool',
     },
   },
   SilkenMoonsSerenade: {
-    someBoolConditional: {
+    '4GleamingMoon': {
       sheet: 'SilkenMoonsSerenade',
-      name: 'someBoolConditional',
+      name: '4GleamingMoon',
+      type: 'bool',
+    },
+  },
+  SilvershowerHeartstrings: {
+    blessingStacks: {
+      sheet: 'SilvershowerHeartstrings',
+      name: 'blessingStacks',
+      type: 'list',
+      list: ['1', '2', '3'],
+    },
+  },
+  SkyriderGreatsword: {
+    stack: {
+      sheet: 'SkyriderGreatsword',
+      name: 'stack',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 4,
+    },
+  },
+  SkyriderSword: {
+    Determination: {
+      sheet: 'SkyriderSword',
+      name: 'Determination',
+      type: 'bool',
+    },
+  },
+  SkywardBlade: {
+    SkyPiercingMight: {
+      sheet: 'SkywardBlade',
+      name: 'SkyPiercingMight',
+      type: 'bool',
+    },
+  },
+  Slingshot: {
+    Slingshot: {
+      sheet: 'Slingshot',
+      name: 'Slingshot',
+      type: 'list',
+      list: ['less', 'more'],
+    },
+  },
+  SolarPearl: {
+    solarShineNormal: {
+      sheet: 'SolarPearl',
+      name: 'solarShineNormal',
+      type: 'list',
+      list: ['normal'],
+    },
+    solarShineSkillBurst: {
+      sheet: 'SolarPearl',
+      name: 'solarShineSkillBurst',
+      type: 'list',
+      list: ['skillBurst'],
+    },
+  },
+  SongOfBrokenPines: {
+    RebelsBannerHymn: {
+      sheet: 'SongOfBrokenPines',
+      name: 'RebelsBannerHymn',
       type: 'bool',
     },
   },
   SongOfDaysPast: {
-    someBoolConditional: {
+    healing: {
       sheet: 'SongOfDaysPast',
-      name: 'someBoolConditional',
+      name: 'healing',
+      type: 'list',
+      list: [
+        '1000',
+        '2000',
+        '3000',
+        '4000',
+        '5000',
+        '6000',
+        '7000',
+        '8000',
+        '9000',
+        '10000',
+        '11000',
+        '12000',
+        '13000',
+        '14000',
+        '15000',
+      ],
+    },
+  },
+  SongOfStillness: {
+    afterHeal: { sheet: 'SongOfStillness', name: 'afterHeal', type: 'bool' },
+  },
+  SongOfTheVigil: {
+    stellar: { sheet: 'SongOfTheVigil', name: 'stellar', type: 'bool' },
+  },
+  SplendorOfTranquilWaters: {
+    selfHpChange: {
+      sheet: 'SplendorOfTranquilWaters',
+      name: 'selfHpChange',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 3,
+    },
+    teamHpChange: {
+      sheet: 'SplendorOfTranquilWaters',
+      name: 'teamHpChange',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  StaffOfHoma: {
+    RecklessCinnabar: {
+      sheet: 'StaffOfHoma',
+      name: 'RecklessCinnabar',
+      type: 'bool',
+    },
+  },
+  StaffOfTheScarletSands: {
+    stacks: {
+      sheet: 'StaffOfTheScarletSands',
+      name: 'stacks',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 3,
+    },
+  },
+  StarcallersWatch: {
+    shield: { sheet: 'StarcallersWatch', name: 'shield', type: 'bool' },
+  },
+  SturdyBone: {
+    afterSprint: { sheet: 'SturdyBone', name: 'afterSprint', type: 'bool' },
+  },
+  SummitShaper: {
+    GoldenMajesty: {
+      sheet: 'SummitShaper',
+      name: 'GoldenMajesty',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 5,
+    },
+    WithShield: {
+      sheet: 'SummitShaper',
+      name: 'WithShield',
+      type: 'list',
+      list: ['protected'],
+    },
+  },
+  SunnyMorningSleepIn: {
+    afterBurst: {
+      sheet: 'SunnyMorningSleepIn',
+      name: 'afterBurst',
+      type: 'bool',
+    },
+    afterSkill: {
+      sheet: 'SunnyMorningSleepIn',
+      name: 'afterSkill',
+      type: 'bool',
+    },
+    swirl: { sheet: 'SunnyMorningSleepIn', name: 'swirl', type: 'bool' },
+  },
+  SurfsUp: {
+    stacks: {
+      sheet: 'SurfsUp',
+      name: 'stacks',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 4,
+    },
+  },
+  SymphonistOfScents: {
+    healing: { sheet: 'SymphonistOfScents', name: 'healing', type: 'bool' },
+  },
+  TalkingStick: {
+    affectedOther: {
+      sheet: 'TalkingStick',
+      name: 'affectedOther',
+      type: 'bool',
+    },
+    affectedPyro: { sheet: 'TalkingStick', name: 'affectedPyro', type: 'bool' },
+  },
+  TamayurateiNoOhanashi: {
+    afterSkill: {
+      sheet: 'TamayurateiNoOhanashi',
+      name: 'afterSkill',
       type: 'bool',
     },
   },
   TenacityOfTheMillelith: {
-    someBoolConditional: {
-      sheet: 'TenacityOfTheMillelith',
-      name: 'someBoolConditional',
+    skill: { sheet: 'TenacityOfTheMillelith', name: 'skill', type: 'bool' },
+  },
+  TheAlleyFlash: {
+    ItinerantHero: {
+      sheet: 'TheAlleyFlash',
+      name: 'ItinerantHero',
       type: 'bool',
     },
   },
-  TheExile: {
-    someBoolConditional: {
-      sheet: 'TheExile',
-      name: 'someBoolConditional',
+  TheBell: {
+    RebelliousGuardian: {
+      sheet: 'TheBell',
+      name: 'RebelliousGuardian',
+      type: 'bool',
+    },
+    WithShield: {
+      sheet: 'TheBell',
+      name: 'WithShield',
+      type: 'list',
+      list: ['protected'],
+    },
+  },
+  TheDaybreakChronicles: {
+    passive: {
+      sheet: 'TheDaybreakChronicles',
+      name: 'passive',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 6,
+    },
+  },
+  TheDockhandsAssistant: {
+    symbolsConsumed: {
+      sheet: 'TheDockhandsAssistant',
+      name: 'symbolsConsumed',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 3,
+    },
+  },
+  TheUnforged: {
+    GoldenMajesty: {
+      sheet: 'TheUnforged',
+      name: 'GoldenMajesty',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 5,
+    },
+    WithShield: {
+      sheet: 'TheUnforged',
+      name: 'WithShield',
+      type: 'list',
+      list: ['protected'],
+    },
+  },
+  TheWidsith: {
+    Debut: {
+      sheet: 'TheWidsith',
+      name: 'Debut',
+      type: 'list',
+      list: ['aria', 'interlude', 'recitative'],
+    },
+  },
+  ThrillingTalesOfDragonSlayers: {
+    Heritage: {
+      sheet: 'ThrillingTalesOfDragonSlayers',
+      name: 'Heritage',
       type: 'bool',
     },
   },
-  ThunderingFury: {
-    someBoolConditional: {
-      sheet: 'ThunderingFury',
-      name: 'someBoolConditional',
-      type: 'bool',
+  ThunderingPulse: {
+    RuleByThunder: {
+      sheet: 'ThunderingPulse',
+      name: 'RuleByThunder',
+      type: 'list',
+      list: ['1', '2', '3'],
     },
   },
   Thundersoother: {
-    someBoolConditional: {
-      sheet: 'Thundersoother',
-      name: 'someBoolConditional',
-      type: 'bool',
-    },
+    state: { sheet: 'Thundersoother', name: 'state', type: 'bool' },
+  },
+  TidalShadow: {
+    afterHeal: { sheet: 'TidalShadow', name: 'afterHeal', type: 'bool' },
   },
   TinyMiracle: {
-    someBoolConditional: {
+    element: {
       sheet: 'TinyMiracle',
-      name: 'someBoolConditional',
-      type: 'bool',
+      name: 'element',
+      type: 'list',
+      list: ['anemo', 'geo', 'electro', 'hydro', 'pyro', 'cryo', 'dendro'],
     },
   },
-  TravelingDoctor: {
-    someBoolConditional: {
-      sheet: 'TravelingDoctor',
-      name: 'someBoolConditional',
+  TomeOfTheEternalFlow: {
+    hpChanges: {
+      sheet: 'TomeOfTheEternalFlow',
+      name: 'hpChanges',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 3,
+    },
+  },
+  ToukabouShigure: {
+    passive: { sheet: 'ToukabouShigure', name: 'passive', type: 'bool' },
+  },
+  Traveler: {
+    traveleranemo: { sheet: 'Traveler', name: 'traveleranemo', type: 'bool' },
+    travelercryo: { sheet: 'Traveler', name: 'travelercryo', type: 'bool' },
+    travelerdendro: { sheet: 'Traveler', name: 'travelerdendro', type: 'bool' },
+    travelerelectro: {
+      sheet: 'Traveler',
+      name: 'travelerelectro',
       type: 'bool',
     },
+    travelergeo: { sheet: 'Traveler', name: 'travelergeo', type: 'bool' },
+    travelerhydro: { sheet: 'Traveler', name: 'travelerhydro', type: 'bool' },
+    travelerpyro: { sheet: 'Traveler', name: 'travelerpyro', type: 'bool' },
   },
   TulaytullahsRemembrance: {
     hitPassive: {
@@ -473,38 +1624,209 @@ export const conditionals = {
       max: 12,
     },
   },
-  UnfinishedReverie: {
-    someBoolConditional: {
-      sheet: 'UnfinishedReverie',
-      name: 'someBoolConditional',
+  TwinNephrite: {
+    GuerillaTactics: {
+      sheet: 'TwinNephrite',
+      name: 'GuerillaTactics',
       type: 'bool',
+    },
+  },
+  UltimateOverlordsMegaMagicSword: {
+    melusines: {
+      sheet: 'UltimateOverlordsMegaMagicSword',
+      name: 'melusines',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 12,
+    },
+  },
+  UnfinishedReverie: {
+    stacks: {
+      sheet: 'UnfinishedReverie',
+      name: 'stacks',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 5,
+    },
+  },
+  UrakuMisugiri: {
+    teamGeo: { sheet: 'UrakuMisugiri', name: 'teamGeo', type: 'bool' },
+  },
+  Verdict: {
+    seals: {
+      sheet: 'Verdict',
+      name: 'seals',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
     },
   },
   VermillionHereafter: {
-    someBoolConditional: {
+    afterBurst: {
       sheet: 'VermillionHereafter',
-      name: 'someBoolConditional',
+      name: 'afterBurst',
       type: 'bool',
+    },
+    stacks: {
+      sheet: 'VermillionHereafter',
+      name: 'stacks',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 4,
     },
   },
   ViridescentVenerer: {
-    someBoolConditional: {
+    swirlcryo: { sheet: 'ViridescentVenerer', name: 'swirlcryo', type: 'bool' },
+    swirlelectro: {
       sheet: 'ViridescentVenerer',
-      name: 'someBoolConditional',
+      name: 'swirlelectro',
       type: 'bool',
+    },
+    swirlhydro: {
+      sheet: 'ViridescentVenerer',
+      name: 'swirlhydro',
+      type: 'bool',
+    },
+    swirlpyro: { sheet: 'ViridescentVenerer', name: 'swirlpyro', type: 'bool' },
+  },
+  VividNotions: {
+    dawn: { sheet: 'VividNotions', name: 'dawn', type: 'bool' },
+    twilight: { sheet: 'VividNotions', name: 'twilight', type: 'bool' },
+  },
+  VortexVanquisher: {
+    GoldenMajesty: {
+      sheet: 'VortexVanquisher',
+      name: 'GoldenMajesty',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 5,
+    },
+    WithShield: {
+      sheet: 'VortexVanquisher',
+      name: 'WithShield',
+      type: 'list',
+      list: ['protected'],
     },
   },
   VourukashasGlow: {
-    someBoolConditional: {
+    set4: {
       sheet: 'VourukashasGlow',
-      name: 'someBoolConditional',
+      name: 'set4',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 5,
+    },
+  },
+  WavebreakersFin: {
+    WatatsumiWavewalker: {
+      sheet: 'WavebreakersFin',
+      name: 'WatatsumiWavewalker',
+      type: 'list',
+      list: [
+        '40',
+        '50',
+        '60',
+        '70',
+        '80',
+        '90',
+        '100',
+        '110',
+        '120',
+        '130',
+        '140',
+        '150',
+        '160',
+        '170',
+        '180',
+        '190',
+        '200',
+        '210',
+        '220',
+        '230',
+        '240',
+        '250',
+        '260',
+        '270',
+        '280',
+        '290',
+        '300',
+        '310',
+        '320',
+        '330',
+        '340',
+        '350',
+        '360',
+      ],
+    },
+  },
+  WaveridingWhirl: {
+    passive: { sheet: 'WaveridingWhirl', name: 'passive', type: 'bool' },
+  },
+  WhiteIronGreatsword: {
+    CullTheWeak: {
+      sheet: 'WhiteIronGreatsword',
+      name: 'CullTheWeak',
       type: 'bool',
     },
   },
-  WanderersTroupe: {
-    someBoolConditional: {
-      sheet: 'WanderersTroupe',
-      name: 'someBoolConditional',
+  Whiteblind: {
+    stack: {
+      sheet: 'Whiteblind',
+      name: 'stack',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 4,
+    },
+  },
+  WhitelakeFrostfeather: {
+    passive: {
+      sheet: 'WhitelakeFrostfeather',
+      name: 'passive',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 3,
+    },
+  },
+  WindblumeOde: {
+    WindblumeWish: {
+      sheet: 'WindblumeOde',
+      name: 'WindblumeWish',
+      type: 'bool',
+    },
+  },
+  WineAndSong: {
+    EverChanging: { sheet: 'WineAndSong', name: 'EverChanging', type: 'bool' },
+  },
+  WolfFang: {
+    burstStacks: {
+      sheet: 'WolfFang',
+      name: 'burstStacks',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 4,
+    },
+    skillStacks: {
+      sheet: 'WolfFang',
+      name: 'skillStacks',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 4,
+    },
+  },
+  WolfsGravestone: {
+    WolfishTracker: {
+      sheet: 'WolfsGravestone',
+      name: 'WolfishTracker',
       type: 'bool',
     },
   },
@@ -519,6 +1841,34 @@ export const conditionals = {
   },
 } as const
 export const formulas = {
+  OceanHuedClam: {
+    foam: {
+      sheet: 'OceanHuedClam',
+      name: 'foam',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'OceanHuedClam',
+        move: 'elemental',
+        ele: 'physical',
+        name: 'foam',
+      },
+    },
+  },
+  TravelingDoctor: {
+    heal: {
+      sheet: 'TravelingDoctor',
+      name: 'heal',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'heal',
+        sheet: 'TravelingDoctor',
+        name: 'heal',
+      },
+    },
+  },
   Aino: {
     normal1: {
       sheet: 'Aino',
@@ -3146,6 +4496,520 @@ export const formulas = {
       },
     },
   },
+  AquilaFavonia: {
+    heal: {
+      sheet: 'AquilaFavonia',
+      name: 'heal',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'heal',
+        sheet: 'AquilaFavonia',
+        name: 'heal',
+      },
+    },
+    dmg: {
+      sheet: 'AquilaFavonia',
+      name: 'dmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'AquilaFavonia',
+        move: 'elemental',
+        ele: 'physical',
+        name: 'dmg',
+      },
+    },
+  },
+  FilletBlade: {
+    dmg_: {
+      sheet: 'FilletBlade',
+      name: 'dmg_',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'FilletBlade',
+        move: 'elemental',
+        ele: 'physical',
+        name: 'dmg_',
+      },
+    },
+  },
+  KagotsurubeIsshin: {
+    dmg: {
+      sheet: 'KagotsurubeIsshin',
+      name: 'dmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'KagotsurubeIsshin',
+        move: 'elemental',
+        ele: 'physical',
+        name: 'dmg',
+      },
+    },
+  },
+  SkywardBlade: {
+    dmg: {
+      sheet: 'SkywardBlade',
+      name: 'dmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'SkywardBlade',
+        move: 'elemental',
+        ele: 'physical',
+        name: 'dmg',
+      },
+    },
+  },
+  SwordOfDescension: {
+    dmg_: {
+      sheet: 'SwordOfDescension',
+      name: 'dmg_',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'SwordOfDescension',
+        move: 'elemental',
+        ele: 'physical',
+        name: 'dmg_',
+      },
+    },
+  },
+  SwordOfNarzissenkreuz: {
+    dmg: {
+      sheet: 'SwordOfNarzissenkreuz',
+      name: 'dmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'SwordOfNarzissenkreuz',
+        move: 'elemental',
+        ele: 'physical',
+        name: 'dmg',
+      },
+    },
+  },
+  TheBlackSword: {
+    heal: {
+      sheet: 'TheBlackSword',
+      name: 'heal',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'heal',
+        sheet: 'TheBlackSword',
+        name: 'heal',
+      },
+    },
+  },
+  TheFlute: {
+    dmg_: {
+      sheet: 'TheFlute',
+      name: 'dmg_',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'TheFlute',
+        move: 'elemental',
+        ele: 'physical',
+        name: 'dmg_',
+      },
+    },
+  },
+  TravelersHandySword: {
+    heal: {
+      sheet: 'TravelersHandySword',
+      name: 'heal',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'heal',
+        sheet: 'TravelersHandySword',
+        name: 'heal',
+      },
+    },
+  },
+  DebateClub: {
+    dmg: {
+      sheet: 'DebateClub',
+      name: 'dmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'DebateClub',
+        move: 'elemental',
+        ele: 'physical',
+        name: 'dmg',
+      },
+    },
+  },
+  LuxuriousSeaLord: {
+    dmg: {
+      sheet: 'LuxuriousSeaLord',
+      name: 'dmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'LuxuriousSeaLord',
+        move: 'elemental',
+        ele: 'physical',
+        name: 'dmg',
+      },
+    },
+  },
+  PrototypeArchaic: {
+    dmg: {
+      sheet: 'PrototypeArchaic',
+      name: 'dmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'PrototypeArchaic',
+        move: 'elemental',
+        ele: 'physical',
+        name: 'dmg',
+      },
+    },
+  },
+  SkywardPride: {
+    dmg: {
+      sheet: 'SkywardPride',
+      name: 'dmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'SkywardPride',
+        move: 'elemental',
+        ele: 'physical',
+        name: 'dmg',
+      },
+    },
+  },
+  SnowTombedStarsilver: {
+    dmgAoe: {
+      sheet: 'SnowTombedStarsilver',
+      name: 'dmgAoe',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'SnowTombedStarsilver',
+        move: 'elemental',
+        ele: 'physical',
+        name: 'dmgAoe',
+      },
+    },
+    dmgOnCryoOp: {
+      sheet: 'SnowTombedStarsilver',
+      name: 'dmgOnCryoOp',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'SnowTombedStarsilver',
+        move: 'elemental',
+        ele: 'physical',
+        name: 'dmgOnCryoOp',
+      },
+    },
+  },
+  TheBell: {
+    shield: {
+      sheet: 'TheBell',
+      name: 'shield',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'shield',
+        sheet: 'TheBell',
+        name: 'shield',
+      },
+    },
+  },
+  WhiteIronGreatsword: {
+    heal: {
+      sheet: 'WhiteIronGreatsword',
+      name: 'heal',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'heal',
+        sheet: 'WhiteIronGreatsword',
+        name: 'heal',
+      },
+    },
+  },
+  CrescentPike: {
+    hit: {
+      sheet: 'CrescentPike',
+      name: 'hit',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'CrescentPike',
+        move: 'elemental',
+        ele: 'physical',
+        name: 'hit',
+      },
+    },
+  },
+  DragonspineSpear: {
+    dmgAoe: {
+      sheet: 'DragonspineSpear',
+      name: 'dmgAoe',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'DragonspineSpear',
+        move: 'elemental',
+        ele: 'physical',
+        name: 'dmgAoe',
+      },
+    },
+    dmgOnCryoOp: {
+      sheet: 'DragonspineSpear',
+      name: 'dmgOnCryoOp',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'DragonspineSpear',
+        move: 'elemental',
+        ele: 'physical',
+        name: 'dmgOnCryoOp',
+      },
+    },
+  },
+  Halberd: {
+    dmg: {
+      sheet: 'Halberd',
+      name: 'dmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Halberd',
+        move: 'elemental',
+        ele: 'physical',
+        name: 'dmg',
+      },
+    },
+  },
+  SkywardSpine: {
+    dmg: {
+      sheet: 'SkywardSpine',
+      name: 'dmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'SkywardSpine',
+        move: 'elemental',
+        ele: 'physical',
+        name: 'dmg',
+      },
+    },
+  },
+  EndOfTheLine: {
+    dmg: {
+      sheet: 'EndOfTheLine',
+      name: 'dmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'EndOfTheLine',
+        move: 'elemental',
+        name: 'dmg',
+      },
+    },
+  },
+  KingsSquire: {
+    dmg: {
+      sheet: 'KingsSquire',
+      name: 'dmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'KingsSquire',
+        move: 'elemental',
+        name: 'dmg',
+      },
+    },
+  },
+  Messenger: {
+    dmg: {
+      sheet: 'Messenger',
+      name: 'dmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Messenger',
+        move: 'elemental',
+        ele: 'physical',
+        name: 'dmg',
+      },
+    },
+  },
+  RecurveBow: {
+    healing: {
+      sheet: 'RecurveBow',
+      name: 'healing',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'heal',
+        sheet: 'RecurveBow',
+        name: 'healing',
+      },
+    },
+  },
+  ScionOfTheBlazingSun: {
+    dmg: {
+      sheet: 'ScionOfTheBlazingSun',
+      name: 'dmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'ScionOfTheBlazingSun',
+        move: 'elemental',
+        name: 'dmg',
+      },
+    },
+  },
+  SequenceOfSolitude: {
+    dmg: {
+      sheet: 'SequenceOfSolitude',
+      name: 'dmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'SequenceOfSolitude',
+        move: 'elemental',
+        name: 'dmg',
+      },
+    },
+  },
+  SkywardHarp: {
+    dmg: {
+      sheet: 'SkywardHarp',
+      name: 'dmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'SkywardHarp',
+        move: 'elemental',
+        ele: 'physical',
+        name: 'dmg',
+      },
+    },
+  },
+  TheViridescentHunt: {
+    dmg: {
+      sheet: 'TheViridescentHunt',
+      name: 'dmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'TheViridescentHunt',
+        move: 'elemental',
+        ele: 'physical',
+        name: 'dmg',
+      },
+    },
+  },
+  AshGravenDrinkingHorn: {
+    dmg: {
+      sheet: 'AshGravenDrinkingHorn',
+      name: 'dmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'AshGravenDrinkingHorn',
+        move: 'elemental',
+        ele: 'physical',
+        name: 'dmg',
+      },
+    },
+  },
+  EyeOfPerception: {
+    dmg_: {
+      sheet: 'EyeOfPerception',
+      name: 'dmg_',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'EyeOfPerception',
+        move: 'elemental',
+        ele: 'physical',
+        name: 'dmg_',
+      },
+    },
+  },
+  Frostbearer: {
+    dmgAoe: {
+      sheet: 'Frostbearer',
+      name: 'dmgAoe',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Frostbearer',
+        move: 'elemental',
+        ele: 'physical',
+        name: 'dmgAoe',
+      },
+    },
+    dmgOnCryoOp: {
+      sheet: 'Frostbearer',
+      name: 'dmgOnCryoOp',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Frostbearer',
+        move: 'elemental',
+        ele: 'physical',
+        name: 'dmgOnCryoOp',
+      },
+    },
+  },
+  OtherworldlyStory: {
+    heal: {
+      sheet: 'OtherworldlyStory',
+      name: 'heal',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'heal',
+        sheet: 'OtherworldlyStory',
+        name: 'heal',
+      },
+    },
+  },
   PrototypeAmber: {
     heal: {
       sheet: 'PrototypeAmber',
@@ -3156,6 +5020,21 @@ export const formulas = {
         q: 'heal',
         sheet: 'PrototypeAmber',
         name: 'heal',
+      },
+    },
+  },
+  SkywardAtlas: {
+    dmg: {
+      sheet: 'SkywardAtlas',
+      name: 'dmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'SkywardAtlas',
+        move: 'elemental',
+        ele: 'physical',
+        name: 'dmg',
       },
     },
   },

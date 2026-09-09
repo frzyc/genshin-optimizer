@@ -24,6 +24,13 @@ export function registerEquipment<Tag_ extends Tag>(
   }: TagMapNodeEntry<Tag_>): TagMapNodeEntries<Tag_> {
     // Sheet-specific `enemy` stats adds to `enemyDeBuff` instead
     if (oldTag.et === 'enemy') oldTag = { ...oldTag, et: 'enemyDeBuff' }
+    // Keep addOnce / stackToken stackIn on the non-stack group sheet.
+    if (
+      oldTag.qt === 'stackIn' ||
+      oldTag.qt === 'stackTmp' ||
+      oldTag.qt === 'stackOut'
+    )
+      return [{ tag: oldTag, value }]
     // Special entries (usually stack count) that override `stack`
     if (oldTag.sheet === specificSheet) return [{ tag: oldTag, value }]
 

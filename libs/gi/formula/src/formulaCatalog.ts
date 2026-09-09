@@ -2,6 +2,40 @@
 import type { FormulaCatalog } from './formulaRef'
 
 export const formulaCatalog = {
+  OceanHuedClam: {
+    foam: {
+      sheet: 'OceanHuedClam',
+      name: 'foam',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'OceanHuedClam',
+          move: 'elemental',
+          ele: 'physical',
+          name: 'foam',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
+  TravelingDoctor: {
+    heal: {
+      sheet: 'TravelingDoctor',
+      name: 'heal',
+      dims: {
+        heal: {
+          et: 'own',
+          qt: 'formula',
+          q: 'heal',
+          sheet: 'TravelingDoctor',
+          name: 'heal',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
   stat: {
     hp: {
       sheet: 'stat',
@@ -3552,6 +3586,628 @@ export const formulaCatalog = {
       category: 'auto',
     },
   },
+  AquilaFavonia: {
+    heal: {
+      sheet: 'AquilaFavonia',
+      name: 'heal',
+      dims: {
+        heal: {
+          et: 'own',
+          qt: 'formula',
+          q: 'heal',
+          sheet: 'AquilaFavonia',
+          name: 'heal',
+        },
+      },
+      exposeInProd: true,
+    },
+    dmg: {
+      sheet: 'AquilaFavonia',
+      name: 'dmg',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'AquilaFavonia',
+          move: 'elemental',
+          ele: 'physical',
+          name: 'dmg',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
+  FilletBlade: {
+    dmg_: {
+      sheet: 'FilletBlade',
+      name: 'dmg_',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'FilletBlade',
+          move: 'elemental',
+          ele: 'physical',
+          name: 'dmg_',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
+  KagotsurubeIsshin: {
+    dmg: {
+      sheet: 'KagotsurubeIsshin',
+      name: 'dmg',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'KagotsurubeIsshin',
+          move: 'elemental',
+          ele: 'physical',
+          name: 'dmg',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
+  SkywardBlade: {
+    dmg: {
+      sheet: 'SkywardBlade',
+      name: 'dmg',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'SkywardBlade',
+          move: 'elemental',
+          ele: 'physical',
+          name: 'dmg',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
+  SwordOfDescension: {
+    dmg_: {
+      sheet: 'SwordOfDescension',
+      name: 'dmg_',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'SwordOfDescension',
+          move: 'elemental',
+          ele: 'physical',
+          name: 'dmg_',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
+  SwordOfNarzissenkreuz: {
+    dmg: {
+      sheet: 'SwordOfNarzissenkreuz',
+      name: 'dmg',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'SwordOfNarzissenkreuz',
+          move: 'elemental',
+          ele: 'physical',
+          name: 'dmg',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
+  TheBlackSword: {
+    heal: {
+      sheet: 'TheBlackSword',
+      name: 'heal',
+      dims: {
+        heal: {
+          et: 'own',
+          qt: 'formula',
+          q: 'heal',
+          sheet: 'TheBlackSword',
+          name: 'heal',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
+  TheFlute: {
+    dmg_: {
+      sheet: 'TheFlute',
+      name: 'dmg_',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'TheFlute',
+          move: 'elemental',
+          ele: 'physical',
+          name: 'dmg_',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
+  TravelersHandySword: {
+    heal: {
+      sheet: 'TravelersHandySword',
+      name: 'heal',
+      dims: {
+        heal: {
+          et: 'own',
+          qt: 'formula',
+          q: 'heal',
+          sheet: 'TravelersHandySword',
+          name: 'heal',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
+  DebateClub: {
+    dmg: {
+      sheet: 'DebateClub',
+      name: 'dmg',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'DebateClub',
+          move: 'elemental',
+          ele: 'physical',
+          name: 'dmg',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
+  LuxuriousSeaLord: {
+    dmg: {
+      sheet: 'LuxuriousSeaLord',
+      name: 'dmg',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'LuxuriousSeaLord',
+          move: 'elemental',
+          ele: 'physical',
+          name: 'dmg',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
+  PrototypeArchaic: {
+    dmg: {
+      sheet: 'PrototypeArchaic',
+      name: 'dmg',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'PrototypeArchaic',
+          move: 'elemental',
+          ele: 'physical',
+          name: 'dmg',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
+  SkywardPride: {
+    dmg: {
+      sheet: 'SkywardPride',
+      name: 'dmg',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'SkywardPride',
+          move: 'elemental',
+          ele: 'physical',
+          name: 'dmg',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
+  SnowTombedStarsilver: {
+    dmgAoe: {
+      sheet: 'SnowTombedStarsilver',
+      name: 'dmgAoe',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'SnowTombedStarsilver',
+          move: 'elemental',
+          ele: 'physical',
+          name: 'dmgAoe',
+        },
+      },
+      exposeInProd: true,
+    },
+    dmgOnCryoOp: {
+      sheet: 'SnowTombedStarsilver',
+      name: 'dmgOnCryoOp',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'SnowTombedStarsilver',
+          move: 'elemental',
+          ele: 'physical',
+          name: 'dmgOnCryoOp',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
+  TheBell: {
+    shield: {
+      sheet: 'TheBell',
+      name: 'shield',
+      dims: {
+        shield: {
+          et: 'own',
+          qt: 'formula',
+          q: 'shield',
+          sheet: 'TheBell',
+          name: 'shield',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
+  WhiteIronGreatsword: {
+    heal: {
+      sheet: 'WhiteIronGreatsword',
+      name: 'heal',
+      dims: {
+        heal: {
+          et: 'own',
+          qt: 'formula',
+          q: 'heal',
+          sheet: 'WhiteIronGreatsword',
+          name: 'heal',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
+  CrescentPike: {
+    hit: {
+      sheet: 'CrescentPike',
+      name: 'hit',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'CrescentPike',
+          move: 'elemental',
+          ele: 'physical',
+          name: 'hit',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
+  DragonspineSpear: {
+    dmgAoe: {
+      sheet: 'DragonspineSpear',
+      name: 'dmgAoe',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'DragonspineSpear',
+          move: 'elemental',
+          ele: 'physical',
+          name: 'dmgAoe',
+        },
+      },
+      exposeInProd: true,
+    },
+    dmgOnCryoOp: {
+      sheet: 'DragonspineSpear',
+      name: 'dmgOnCryoOp',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'DragonspineSpear',
+          move: 'elemental',
+          ele: 'physical',
+          name: 'dmgOnCryoOp',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
+  Halberd: {
+    dmg: {
+      sheet: 'Halberd',
+      name: 'dmg',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Halberd',
+          move: 'elemental',
+          ele: 'physical',
+          name: 'dmg',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
+  SkywardSpine: {
+    dmg: {
+      sheet: 'SkywardSpine',
+      name: 'dmg',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'SkywardSpine',
+          move: 'elemental',
+          ele: 'physical',
+          name: 'dmg',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
+  EndOfTheLine: {
+    dmg: {
+      sheet: 'EndOfTheLine',
+      name: 'dmg',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'EndOfTheLine',
+          move: 'elemental',
+          name: 'dmg',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
+  KingsSquire: {
+    dmg: {
+      sheet: 'KingsSquire',
+      name: 'dmg',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'KingsSquire',
+          move: 'elemental',
+          name: 'dmg',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
+  Messenger: {
+    dmg: {
+      sheet: 'Messenger',
+      name: 'dmg',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Messenger',
+          move: 'elemental',
+          ele: 'physical',
+          name: 'dmg',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
+  RecurveBow: {
+    healing: {
+      sheet: 'RecurveBow',
+      name: 'healing',
+      dims: {
+        heal: {
+          et: 'own',
+          qt: 'formula',
+          q: 'heal',
+          sheet: 'RecurveBow',
+          name: 'healing',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
+  ScionOfTheBlazingSun: {
+    dmg: {
+      sheet: 'ScionOfTheBlazingSun',
+      name: 'dmg',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'ScionOfTheBlazingSun',
+          move: 'elemental',
+          name: 'dmg',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
+  SequenceOfSolitude: {
+    dmg: {
+      sheet: 'SequenceOfSolitude',
+      name: 'dmg',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'SequenceOfSolitude',
+          move: 'elemental',
+          name: 'dmg',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
+  SkywardHarp: {
+    dmg: {
+      sheet: 'SkywardHarp',
+      name: 'dmg',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'SkywardHarp',
+          move: 'elemental',
+          ele: 'physical',
+          name: 'dmg',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
+  TheViridescentHunt: {
+    dmg: {
+      sheet: 'TheViridescentHunt',
+      name: 'dmg',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'TheViridescentHunt',
+          move: 'elemental',
+          ele: 'physical',
+          name: 'dmg',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
+  AshGravenDrinkingHorn: {
+    dmg: {
+      sheet: 'AshGravenDrinkingHorn',
+      name: 'dmg',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'AshGravenDrinkingHorn',
+          move: 'elemental',
+          ele: 'physical',
+          name: 'dmg',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
+  EyeOfPerception: {
+    dmg_: {
+      sheet: 'EyeOfPerception',
+      name: 'dmg_',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'EyeOfPerception',
+          move: 'elemental',
+          ele: 'physical',
+          name: 'dmg_',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
+  Frostbearer: {
+    dmgAoe: {
+      sheet: 'Frostbearer',
+      name: 'dmgAoe',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Frostbearer',
+          move: 'elemental',
+          ele: 'physical',
+          name: 'dmgAoe',
+        },
+      },
+      exposeInProd: true,
+    },
+    dmgOnCryoOp: {
+      sheet: 'Frostbearer',
+      name: 'dmgOnCryoOp',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Frostbearer',
+          move: 'elemental',
+          ele: 'physical',
+          name: 'dmgOnCryoOp',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
+  OtherworldlyStory: {
+    heal: {
+      sheet: 'OtherworldlyStory',
+      name: 'heal',
+      dims: {
+        heal: {
+          et: 'own',
+          qt: 'formula',
+          q: 'heal',
+          sheet: 'OtherworldlyStory',
+          name: 'heal',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
   PrototypeAmber: {
     heal: {
       sheet: 'PrototypeAmber',
@@ -3563,6 +4219,24 @@ export const formulaCatalog = {
           q: 'heal',
           sheet: 'PrototypeAmber',
           name: 'heal',
+        },
+      },
+      exposeInProd: true,
+    },
+  },
+  SkywardAtlas: {
+    dmg: {
+      sheet: 'SkywardAtlas',
+      name: 'dmg',
+      dims: {
+        dmg: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'SkywardAtlas',
+          move: 'elemental',
+          ele: 'physical',
+          name: 'dmg',
         },
       },
       exposeInProd: true,
