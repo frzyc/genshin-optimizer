@@ -60,8 +60,7 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
     }),
 
     chars: objMap(charactersDetailedJSONData, ({ icon }) => {
-      // get the last 2 digits of the icon name. this will likely break if ZZZ go over 2 digits.
-      const strKey = icon.slice(-2)
+      const strKey = icon.match(/\d+$/)?.[0]
       if (!strKey) throw Error(`Failed to parse character icon name: ${icon}`)
       return {
         full: `IconRole${strKey}.png`,

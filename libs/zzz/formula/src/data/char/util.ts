@@ -279,6 +279,8 @@ function inferDamageType(key: CharacterKey, abilityName: string): DamageType {
       return 'basic'
     if (key === 'Remielle' && abilityName === 'AssistFlowerFeatherDance')
       return 'entrySkill'
+    if (key === 'Roxy' && abilityName === 'EyeOfTheStorm') return 'exSpecial'
+    if (key === 'Roxy' && abilityName === 'AssistMoreOvertime') return 'basic'
     if (key === 'Yanagi' && abilityName === 'StanceJougen') return 'basic'
     if (key === 'Yanagi' && abilityName === 'StanceKagen') return 'basic'
     if (key === 'Yidhari' && abilityName === 'FrostsCrushingWeight')

@@ -20,6 +20,7 @@ export const WengineIdMap = {
   '12013': 'IdentityBase',
   '12014': 'IdentityInflection',
   '12015': 'CinderCobalt',
+  '12016': 'LunarSemiluna',
   '13001': 'StreetSuperstar',
   '13002': 'SliceOfTime',
   '13003': 'RainforestGourmet',
@@ -36,9 +37,11 @@ export const WengineIdMap = {
   '13014': 'RadiowaveJourney',
   '13015': 'MarcatoDesire',
   '13016': 'ReelProjector',
+  '13017': 'CattyLuck',
   '13018': 'BoisterousEchoes',
   '13019': 'CauldronOfClarity',
   '13020': 'TheSimmeringPot',
+  '13021': 'BloodmarrowCoffer',
   '13101': 'DemaraBatteryMarkII',
   '13103': 'TheVault',
   '13106': 'Housekeeper',
@@ -100,6 +103,8 @@ export const WengineIdMap = {
   '14157': 'ChiefSidekick',
   '14158': 'OdeOfResurrectedWings',
   '14159': 'KnightsExtolment',
+  '14161': 'CrimsonThirst',
+  '14162': 'CrimsonMoonCasket',
 } as const
 
 export const specialityMap: Record<number, SpecialityKey> = {
@@ -109,6 +114,7 @@ export const specialityMap: Record<number, SpecialityKey> = {
   4: 'support',
   5: 'defense',
   6: 'rupture',
+  7: 'armorer',
 } as const
 
 export const wengineRarityMap: Record<number, WengineRarityKey> = {

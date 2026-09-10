@@ -76,6 +76,7 @@ export const damageTypes = [
   'quickAssist',
   'defensiveAssist',
   'evasiveAssist',
+  'counterAssist',
   'assistFollowUp',
   'anomaly',
   'disorder',

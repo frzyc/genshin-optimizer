@@ -34,6 +34,7 @@ export const damageTypeKeysMap: Record<DamageType, string> = {
   quickAssist: 'Quick Assist',
   defensiveAssist: 'Defensive Assist',
   evasiveAssist: 'Evasive Assist',
+  counterAssist: 'Counter Assist',
   assistFollowUp: 'Assist Follow Up',
   anomaly: 'Anomaly',
   disorder: 'Disorder',

@@ -1,0 +1,439 @@
+{
+  "id": "1611",
+  "rarity": "S",
+  "attribute": "electric",
+  "specialty": "armorer",
+  "faction": "RoscaeliferExternalStrategyDepartment",
+  "stats": {
+    "atk_base": 101,
+    "atk_growth": 5.8479,
+    "def_base": 35,
+    "def_growth": 4.8155,
+    "hp_base": 454,
+    "hp_growth": 61.6711,
+    "anomMas": 80,
+    "anomProf": 79,
+    "impact": 93,
+    "enerRegen": 0
+  },
+  "promotionStats": [
+    { "hp": 0, "atk": 0, "def": 0 },
+    { "hp": 312, "atk": 36, "def": 24 },
+    { "hp": 624, "atk": 72, "def": 49 },
+    { "hp": 936, "atk": 108, "def": 73 },
+    { "hp": 1248, "atk": 144, "def": 97 },
+    { "hp": 1559, "atk": 180, "def": 122 }
+  ],
+  "coreStats": [
+    { "crit_": 0.048 },
+    { "crit_": 0.096 },
+    { "crit_": 0.144 },
+    { "crit_": 0.192 },
+    { "crit_": 0.24 },
+    { "crit_": 0.288 }
+  ],
+  "skillParams": {
+    "basic": {
+      "BasicAttackBloodforgingFourForms": [
+        {
+          "DamagePercentage": 0.544,
+          "DamagePercentageGrowth": 0.05,
+          "StunRatio": 0.347,
+          "StunRatioGrowth": 0.016,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 954.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 31.5
+        },
+        {
+          "DamagePercentage": 0.672,
+          "DamagePercentageGrowth": 0.062,
+          "StunRatio": 0.429,
+          "StunRatioGrowth": 0.02,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1179.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 38.99
+        },
+        {
+          "DamagePercentage": 0.952,
+          "DamagePercentageGrowth": 0.087,
+          "StunRatio": 0.609,
+          "StunRatioGrowth": 0.028,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1674.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 55.29
+        },
+        {
+          "DamagePercentage": 2.895,
+          "DamagePercentageGrowth": 0.264,
+          "StunRatio": 1.788,
+          "StunRatioGrowth": 0.082,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 4917,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 162.53
+        }
+      ],
+      "BasicAttackBloodbloomOathStarforging": [
+        {
+          "DamagePercentage": 1.077,
+          "DamagePercentageGrowth": 0.098,
+          "StunRatio": 0.55,
+          "StunRatioGrowth": 0.025,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1512.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 49.96
+        },
+        {
+          "DamagePercentage": 2.874,
+          "DamagePercentageGrowth": 0.262,
+          "StunRatio": 1.467,
+          "StunRatioGrowth": 0.067,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 4034.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 133.33
+        },
+        {
+          "DamagePercentage": 4.521,
+          "DamagePercentageGrowth": 0.411,
+          "StunRatio": 1.87,
+          "StunRatioGrowth": 0.085,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 5142.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 170
+        },
+        {
+          "DamagePercentage": 1.773,
+          "DamagePercentageGrowth": 0.162,
+          "StunRatio": 0.734,
+          "StunRatioGrowth": 0.034,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 2018.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 66.66
+        }
+      ],
+      "BasicAttackBloodbloomOathSubduingAxe": [
+        {
+          "DamagePercentage": 3.28,
+          "DamagePercentageGrowth": 0.299,
+          "StunRatio": 1.357,
+          "StunRatioGrowth": 0.062,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 3731.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 123.33
+        }
+      ]
+    },
+    "dodge": {
+      "DodgeNightVision": [],
+      "DashAttackTempering": [
+        {
+          "DamagePercentage": 0.529,
+          "DamagePercentageGrowth": 0.049,
+          "StunRatio": 0.431,
+          "StunRatioGrowth": 0.02,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1185.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 39.15
+        }
+      ],
+      "DodgeCounterReturningEdge": [
+        {
+          "DamagePercentage": 2.725,
+          "DamagePercentageGrowth": 0.248,
+          "StunRatio": 1.962,
+          "StunRatioGrowth": 0.09,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 2370.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 78.33
+        }
+      ],
+      "DodgeCounterBloodbloomOathReturningEdge": [
+        {
+          "DamagePercentage": 3.3,
+          "DamagePercentageGrowth": 0.3,
+          "StunRatio": 1.907,
+          "StunRatioGrowth": 0.087,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 2219.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 73.33
+        }
+      ]
+    },
+    "special": {
+      "SpecialAttackPorcelumesFirstCall": [
+        {
+          "DamagePercentage": 0.901,
+          "DamagePercentageGrowth": 0.082,
+          "StunRatio": 0.367,
+          "StunRatioGrowth": 0.017,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1009.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 33.34
+        }
+      ],
+      "EXSpecialAttackBloodbloomOathSecretForgingTechniques": [
+        {
+          "DamagePercentage": 6.248,
+          "DamagePercentageGrowth": 0.568,
+          "StunRatio": 2.585,
+          "StunRatioGrowth": 0.118,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 7108.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 234.96
+        }
+      ],
+      "SpecialAttackBloodbloomOathCleavingGoldAndIron": [
+        {
+          "DamagePercentage": 0.766,
+          "DamagePercentageGrowth": 0.07,
+          "StunRatio": 0.312,
+          "StunRatioGrowth": 0.015,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1716,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 0.877,
+          "DamagePercentageGrowth": 0.08,
+          "StunRatio": 0.358,
+          "StunRatioGrowth": 0.017,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1966.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 8.127,
+          "DamagePercentageGrowth": 0.739,
+          "StunRatio": 0,
+          "StunRatioGrowth": 0,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
+      ],
+      "SpecialAttackBloodbloomOathBloodBurialAssault": [
+        {
+          "DamagePercentage": 3.128,
+          "DamagePercentageGrowth": 0.285,
+          "StunRatio": 2.549,
+          "StunRatioGrowth": 0.116,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 7009.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
+      ]
+    },
+    "chain": {
+      "ChainAttackBloodbloomOathResonantBloodPact": [
+        {
+          "DamagePercentage": 10.58,
+          "DamagePercentageGrowth": 0.962,
+          "StunRatio": 2.769,
+          "StunRatioGrowth": 0.126,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 27731,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 451.16
+        }
+      ],
+      "UltimateBloodbloomOathTrialAfterTrial": [
+        {
+          "DamagePercentage": 22.52,
+          "DamagePercentageGrowth": 2.048,
+          "StunRatio": 3.538,
+          "StunRatioGrowth": 0.161,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 321.63
+        }
+      ]
+    },
+    "assist": {
+      "QuickAssistReturnOfTheDireMoon": [
+        {
+          "DamagePercentage": 0.529,
+          "DamagePercentageGrowth": 0.049,
+          "StunRatio": 0.431,
+          "StunRatioGrowth": 0.02,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1185.25,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 39.16
+        }
+      ],
+      "QuickAssistBloodbloomOathReturnOfTheDireMoon": [
+        {
+          "DamagePercentage": 1.158,
+          "DamagePercentageGrowth": 0.106,
+          "StunRatio": 0.404,
+          "StunRatioGrowth": 0.019,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 1111,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 36.66
+        }
+      ],
+      "DefensiveAssistUnyieldingHeartOfTheFurnace": [
+        {
+          "DamagePercentage": 0,
+          "DamagePercentageGrowth": 0,
+          "StunRatio": 2.713,
+          "StunRatioGrowth": 0.124,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 0,
+          "DamagePercentageGrowth": 0,
+          "StunRatio": 3.428,
+          "StunRatioGrowth": 0.156,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        },
+        {
+          "DamagePercentage": 0,
+          "DamagePercentageGrowth": 0,
+          "StunRatio": 1.668,
+          "StunRatioGrowth": 0.076,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 0,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 0
+        }
+      ],
+      "AssistFollowUpBloodbloomOathPureforgedEdge": [
+        {
+          "DamagePercentage": 4.462,
+          "DamagePercentageGrowth": 0.406,
+          "StunRatio": 3.158,
+          "StunRatioGrowth": 0.144,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 11310.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 308.72
+        }
+      ],
+      "CounterAssistGiveNotAnInchOfSteel": [
+        {
+          "DamagePercentage": 11.53,
+          "DamagePercentageGrowth": 1.049,
+          "StunRatio": 7.149,
+          "StunRatioGrowth": 0.325,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 25269.75,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 696.19
+        }
+      ],
+      "AssistFollowUpBloodbloomOathHammerIntoShape": [
+        {
+          "DamagePercentage": 8.563,
+          "DamagePercentageGrowth": 0.779,
+          "StunRatio": 5.264,
+          "StunRatioGrowth": 0.24,
+          "SpRecovery": 0,
+          "SpRecoveryGrowth": 0,
+          "FeverRecovery": 21873.5,
+          "FeverRecoveryGrowth": 0,
+          "AttributeInfliction": 539.63
+        }
+      ]
+    }
+  },
+  "calcedParams": {
+    "basic": {
+      "BasicAttackBloodforgingFourForms": [],
+      "BasicAttackBloodbloomOathStarforging": [],
+      "BasicAttackBloodbloomOathSubduingAxe": []
+    },
+    "dodge": {
+      "DodgeNightVision": [],
+      "DashAttackTempering": [],
+      "DodgeCounterReturningEdge": [],
+      "DodgeCounterBloodbloomOathReturningEdge": []
+    },
+    "special": {
+      "SpecialAttackPorcelumesFirstCall": [],
+      "EXSpecialAttackBloodbloomOathSecretForgingTechniques": [],
+      "SpecialAttackBloodbloomOathCleavingGoldAndIron": [],
+      "SpecialAttackBloodbloomOathBloodBurialAssault": []
+    },
+    "chain": {
+      "ChainAttackBloodbloomOathResonantBloodPact": [],
+      "UltimateBloodbloomOathTrialAfterTrial": []
+    },
+    "assist": {
+      "QuickAssistReturnOfTheDireMoon": [],
+      "QuickAssistBloodbloomOathReturnOfTheDireMoon": [],
+      "DefensiveAssistUnyieldingHeartOfTheFurnace": [],
+      "AssistFollowUpBloodbloomOathPureforgedEdge": [],
+      "CounterAssistGiveNotAnInchOfSteel": [],
+      "AssistFollowUpBloodbloomOathHammerIntoShape": []
+    }
+  },
+  "coreParams": [
+    [3, 3, 3, 3, 3, 3, 3],
+    [1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1],
+    [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
+    [0.0035, 0.0035, 0.0035, 0.0035, 0.0035, 0.0035, 0.0035],
+    [60, 60, 60, 60, 60, 60, 60],
+    [180, 180, 180, 180, 180, 180, 180],
+    [2, 2, 2, 2, 2, 2, 2],
+    [0.15, 0.175, 0.2, 0.225, 0.25, 0.275, 0.3],
+    [0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5],
+    [0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15]
+  ],
+  "abilityParams": [300, 18, 0.25, 40],
+  "mindscapeParams": [[0.2, 1.3], [2, 0.18], [2], [0.2], [2], [1]],
+  "potentialParams": []
+}

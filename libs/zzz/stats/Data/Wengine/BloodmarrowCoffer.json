@@ -1,0 +1,14 @@
+{
+  "rarity": "A",
+  "type": "armorer",
+  "atk_base": 24,
+  "second_statkey": "crit_",
+  "second_statvalue": 0.08,
+  "phase": [
+    { "params": [1, 0.01, 1, 0.0048, 0.24] },
+    { "params": [1, 0.01, 1, 0.0056, 0.28] },
+    { "params": [1, 0.01, 1, 0.0064, 0.32] },
+    { "params": [1, 0.01, 1, 0.0072, 0.36] },
+    { "params": [1, 0.01, 1, 0.008, 0.4] }
+  ]
+}

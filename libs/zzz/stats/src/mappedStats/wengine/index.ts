@@ -4,15 +4,19 @@ import BashfulDemon from './maps/BashfulDemon'
 import BellicoseBlaze from './maps/BellicoseBlaze'
 import BigCylinder from './maps/BigCylinder'
 import BlazingLaurel from './maps/BlazingLaurel'
+import BloodmarrowCoffer from './maps/BloodmarrowCoffer'
 import BoisterousEchoes from './maps/BoisterousEchoes'
 import BoxCutter from './maps/BoxCutter'
 import BunnyBand from './maps/BunnyBand'
 import CannonRotor from './maps/CannonRotor'
+import CattyLuck from './maps/CattyLuck'
 import CauldronOfClarity from './maps/CauldronOfClarity'
 import ChiefSidekick from './maps/ChiefSidekick'
 import CinderCobalt from './maps/CinderCobalt'
 import CloudcleaveRadiance from './maps/CloudcleaveRadiance'
 import CordisGermina from './maps/CordisGermina'
+import CrimsonMoonCasket from './maps/CrimsonMoonCasket'
+import CrimsonThirst from './maps/CrimsonThirst'
 import DeepSeaVisitor from './maps/DeepSeaVisitor'
 import DemaraBatteryMarkII from './maps/DemaraBatteryMarkII'
 import DreamlitHearth from './maps/DreamlitHearth'
@@ -40,6 +44,7 @@ import KrakensCradle from './maps/KrakensCradle'
 import LunarDecrescent from './maps/LunarDecrescent'
 import LunarNoviluna from './maps/LunarNoviluna'
 import LunarPleniluna from './maps/LunarPleniluna'
+import LunarSemiluna from './maps/LunarSemiluna'
 import MagneticStormAlpha from './maps/MagneticStormAlpha'
 import MagneticStormBravo from './maps/MagneticStormBravo'
 import MagneticStormCharlie from './maps/MagneticStormCharlie'
@@ -101,15 +106,19 @@ const maps = {
   BellicoseBlaze,
   BigCylinder,
   BlazingLaurel,
+  BloodmarrowCoffer,
   BoisterousEchoes,
   BoxCutter,
   BunnyBand,
   CannonRotor,
+  CattyLuck,
   CauldronOfClarity,
   ChiefSidekick,
   CinderCobalt,
   CloudcleaveRadiance,
   CordisGermina,
+  CrimsonMoonCasket,
+  CrimsonThirst,
   DeepSeaVisitor,
   DemaraBatteryMarkII,
   DreamlitHearth,
@@ -137,6 +146,7 @@ const maps = {
   LunarDecrescent,
   LunarNoviluna,
   LunarPleniluna,
+  LunarSemiluna,
   MagneticStormAlpha,
   MagneticStormBravo,
   MagneticStormCharlie,
