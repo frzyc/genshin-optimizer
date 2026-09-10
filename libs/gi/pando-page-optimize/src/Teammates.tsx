@@ -9,13 +9,18 @@ import {
 } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import type { PandoMember } from '@genshin-optimizer/gi/db'
-import { pandoMembers, pandoTeammateMembers } from '@genshin-optimizer/gi/db'
+import {
+  pandoMembers,
+  pandoTeammateMembers,
+  pandoTeamSrcKeys,
+} from '@genshin-optimizer/gi/db'
 import {
   CharacterContext,
   useDatabase,
   useDBMeta,
   useRequiredPandoTeam,
 } from '@genshin-optimizer/gi/db-ui'
+import { isMember, resolveActiveMember } from '@genshin-optimizer/gi/formula'
 import { TeammateBuffSheetDisplay } from '@genshin-optimizer/gi/formula-ui'
 import {
   CharacterName,
@@ -76,6 +81,10 @@ function OnFieldSelector() {
   const { character } = useContext(CharacterContext)
   const pandoTeam = useRequiredPandoTeam()
   const { gender } = useDBMeta()
+  const activeMember = resolveActiveMember(
+    pandoTeamSrcKeys(pandoTeam.teammates).filter(isMember),
+    pandoTeam.activeMember
+  )
   return (
     <Stack gap={0.5}>
       <Typography variant="subtitle2">{t('onField')}</Typography>
@@ -83,7 +92,7 @@ function OnFieldSelector() {
         exclusive
         fullWidth
         size="small"
-        value={pandoTeam.activeMember}
+        value={activeMember}
         onChange={(_, value: PandoMember | null) => {
           if (!value) return
           database.pandoTeams.setActiveMember(character.key, value)

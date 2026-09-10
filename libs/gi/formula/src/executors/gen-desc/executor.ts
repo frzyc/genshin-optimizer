@@ -9,8 +9,8 @@ import { workspaceRoot } from '@nx/devkit'
 import { entries } from '../../data'
 import type { Tag } from '../../data/util'
 import {
-  type CatalogListing,
   buildFormulaCatalog,
+  type CatalogListing,
 } from '../../formulaCatalogBuild'
 import { STAT_SHEET, stripCalcContextTag } from '../../formulaRef'
 import type { GenDescExecutorSchema } from './schema'

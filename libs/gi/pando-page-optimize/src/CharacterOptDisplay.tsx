@@ -13,7 +13,6 @@ import {
   CharSheetDisplay,
   CharStatsDisplay,
   EquippedGrid,
-  isPortedCharacter,
   pandoCardSx,
   WeaponSheetDisplay,
 } from '@genshin-optimizer/gi/formula-ui'
@@ -125,23 +124,15 @@ function CharacterSection() {
   const { key: characterKey } = character
   const pandoTeam = useRequiredPandoTeam()
   const headerHeight = useContext(TeamHeaderHeightContext)
-  const ported = isPortedCharacter(characterKey)
   const [editorKey, setEditorKey] = useState<CharacterKey | undefined>()
   const onClick = useCallback(() => {
     setEditorKey(characterKey)
   }, [characterKey])
   const characterInfoSections: Array<[key: string, content: ReactNode]> =
-    useMemo(() => {
-      const sections: Array<[key: string, content: ReactNode]> = [
+    useMemo(
+      () => [
         ['eq', <EquippedGrid key="eq" />],
-        ...(ported
-          ? [
-              ['conditionals', <EquippedConditionals key="conditionals" />] as [
-                string,
-                ReactNode,
-              ],
-            ]
-          : []),
+        ['conditionals', <EquippedConditionals key="conditionals" />],
         ['teammates', <TeammatesSection key="teammates" />],
         [
           'enemyStats',
@@ -151,17 +142,13 @@ function CharacterSection() {
             pandoTeam={pandoTeam}
           />,
         ],
-      ]
-      sections.push([
-        'charSheet',
-        ported ? (
-          <CharSheetDisplay key="charSheet" characterKey={characterKey} />
-        ) : (
-          <UnportedBanner key="charSheet" />
-        ),
-      ])
-      return sections
-    }, [characterKey, pandoTeam, ported])
+        [
+          'charSheet',
+          <CharSheetDisplay key="charSheet" characterKey={characterKey} />,
+        ],
+      ],
+      [characterKey, pandoTeam]
+    )
   const theme = useTheme()
   const isNotXs = useMediaQuery(theme.breakpoints.up('sm'))
 
@@ -199,26 +186,24 @@ function CharacterSection() {
             >
               <Stack spacing={1} sx={isNotXs ? { height: '100%' } : undefined}>
                 <CharacterCard characterKey={characterKey} onClick={onClick} />
-                {ported && (
-                  <Box sx={{ flexGrow: 1 }}>
-                    <Box
-                      sx={
-                        isNotXs
-                          ? {
-                              position: 'sticky',
-                              top:
-                                headerHeight +
-                                SECTION_SPACING_PX +
-                                STATS_STICKY_PAD_PX,
-                              bottom: 0,
-                            }
-                          : undefined
-                      }
-                    >
-                      <CharStatsDisplay characterKey={characterKey} />
-                    </Box>
+                <Box sx={{ flexGrow: 1 }}>
+                  <Box
+                    sx={
+                      isNotXs
+                        ? {
+                            position: 'sticky',
+                            top:
+                              headerHeight +
+                              SECTION_SPACING_PX +
+                              STATS_STICKY_PAD_PX,
+                            bottom: 0,
+                          }
+                        : undefined
+                    }
+                  >
+                    <CharStatsDisplay characterKey={characterKey} />
                   </Box>
-                )}
+                </Box>
               </Stack>
             </Grid>
             <Grid item xs={12} sm={5} md={7} lg={8} xl={9}>
@@ -284,16 +269,5 @@ function EquippedConditionals() {
         ))}
       </Grid>
     </Box>
-  )
-}
-
-function UnportedBanner() {
-  const { t } = useTranslation('page_optimize')
-  return (
-    <CardThemed bgt="light" sx={pandoCardSx}>
-      <CardContent>
-        <Typography>{t('unported')}</Typography>
-      </CardContent>
-    </CardThemed>
   )
 }

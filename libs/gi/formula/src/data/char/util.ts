@@ -7,6 +7,7 @@ import type {
   WeaponTypeKey,
 } from '@genshin-optimizer/gi/consts'
 import { locCharKeyToCharKey } from '@genshin-optimizer/gi/consts'
+import type { StatKey } from '@genshin-optimizer/gi/dm'
 import type { CharacterDataGen } from '@genshin-optimizer/gi/stats'
 import type { NumNode } from '@genshin-optimizer/pando/engine'
 import { prod, subscript, sum } from '@genshin-optimizer/pando/engine'
@@ -183,7 +184,7 @@ const moonsignCharKeys = new Set<CharacterKey>([
 
 export function entriesForChar(
   { key, ele, weaponType, region }: CharInfo,
-  { lvlCurves, ascensionBonus }: CharacterDataGen
+  { lvlCurves, ascensionBonus, baseStats: innateStats }: CharacterDataGen
 ): TagMapNodeEntries {
   const specialized = new Set(Object.keys(ascensionBonus))
   specialized.delete('atk')
@@ -202,10 +203,20 @@ export function entriesForChar(
         : readStat(ownBuff.premod, key)
       ).add(subscript(ascension, values))
     ),
+    // WR `baseStats` (e.g. Lauma/Nefer innate EM). Skip def to match dataUtil.
+    ...Object.entries(innateStats ?? {})
+      .filter(([stat, value]) => stat !== 'def' && value)
+      .map(([stat, value]) =>
+        (baseStats.has(stat)
+          ? ownBuff.base[stat as 'atk' | 'def' | 'hp']
+          : readStat(ownBuff.premod, stat as StatKey)
+        ).add(value)
+      ),
 
     // Constants
     ownBuff.common.weaponType.add(weaponType),
     ownBuff.char.ele.add(ele),
+    ownBuff.char.charKey.add(key),
 
     // Counters
     ownBuff.common.count[ele].add(1),

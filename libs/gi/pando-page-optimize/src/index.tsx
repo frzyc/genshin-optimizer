@@ -38,7 +38,6 @@ import {
 } from '@genshin-optimizer/gi/formula'
 import {
   CharCalcProvider,
-  isPortedCharacter,
   OptTargetTagRowSxProvider,
 } from '@genshin-optimizer/gi/formula-ui'
 import {
@@ -147,8 +146,6 @@ export default function PageOptimize() {
     [pandoTeam?.conditionals]
   )
 
-  const ported = isPortedCharacter(characterKey)
-
   return (
     <Box>
       <Suspense fallback={false}>
@@ -168,7 +165,7 @@ export default function PageOptimize() {
       >
         <Button
           fullWidth
-          color={ported ? 'success' : 'warning'}
+          color="success"
           sx={{ justifyContent: 'flex-start', pl: '6px' }}
           onClick={onShow}
         >
@@ -188,18 +185,14 @@ export default function PageOptimize() {
               <SrcDstDisplayContext.Provider value={srcDstDisplayContextValue}>
                 <ConditionalValuesContext.Provider value={conditionals}>
                   <SetConditionalContext.Provider value={setConditional}>
-                    {ported ? (
-                      <CharCalcProvider
-                        character={character}
-                        pandoTeam={pandoTeam}
-                      >
-                        <DebugReadProvider>
-                          <OptimizePageContent character={character} />
-                        </DebugReadProvider>
-                      </CharCalcProvider>
-                    ) : (
-                      <OptimizePageContent character={character} />
-                    )}
+                    <CharCalcProvider
+                      character={character}
+                      pandoTeam={pandoTeam}
+                    >
+                      <DebugReadProvider>
+                        <OptimizePageContent character={character} />
+                      </DebugReadProvider>
+                    </CharCalcProvider>
                   </SetConditionalContext.Provider>
                 </ConditionalValuesContext.Provider>
               </SrcDstDisplayContext.Provider>

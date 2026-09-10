@@ -8,8 +8,8 @@ import { range } from '@genshin-optimizer/common/util'
 import { characterAsset } from '@genshin-optimizer/gi/assets'
 import {
   allTravelerKeys,
-  talentLimits,
   type CharacterKey,
+  talentLimits,
 } from '@genshin-optimizer/gi/consts'
 import {
   CharacterContext,
@@ -40,7 +40,6 @@ import { useTranslation } from 'react-i18next'
 import { CharacterCardHeaderContent } from './CharacterCard'
 import { CharStatsDisplay } from './CharStatsDisplay'
 import { EquippedGrid } from './EquippedGrid'
-import { isPortedCharacter } from './portedSheets'
 import { talentSheetElementIcon } from './util'
 
 export function CharacterEditor({
@@ -104,7 +103,6 @@ function Content({ onClose }: { onClose?: () => void }) {
     character,
     character: { key: characterKey },
   } = useContext(CharacterContext)
-  const ported = isPortedCharacter(characterKey)
 
   return (
     <Box display="flex" flexDirection="column" gap={1}>
@@ -153,7 +151,7 @@ function Content({ onClose }: { onClose?: () => void }) {
             <Box sx={{ px: 1 }}>
               <ConstSelector />
             </Box>
-            {ported && <CharStatsDisplay characterKey={characterKey} />}
+            <CharStatsDisplay characterKey={characterKey} />
           </CardThemed>
         </Grid>
         <Grid

@@ -29,8 +29,8 @@ import type {
   PandoTeammates,
 } from '@genshin-optimizer/gi/db'
 import {
-  pandoTeamSrcKeys,
   pandoTeammateMembers,
+  pandoTeamSrcKeys,
 } from '@genshin-optimizer/gi/db'
 import {
   useArtifacts,
@@ -53,7 +53,10 @@ import {
   isSheet,
   ownBuff,
   ownTag,
+  pandoContextEntries,
   teamData,
+  travelerMemberSrcs,
+  unlockedTravelerKeys,
   weaponData,
   withMember,
 } from '@genshin-optimizer/gi/formula'
@@ -81,6 +84,7 @@ export function CharCalcProvider({
   equippedArtifacts?: Record<ArtifactSlotKey, string | undefined>
   children: ReactNode
 }) {
+  const database = useDatabase()
   const member0 = useCharacterAndEquipment(
     character,
     equippedWeapon,
@@ -106,11 +110,17 @@ export function CharCalcProvider({
     () => pandoTeamSrcKeys(teammates).filter(isMember),
     [teammates]
   )
-  const activeMember: Member = memberKeys.includes(
-    pandoTeam.activeMember as Member
+  const travelerSrcs = useMemo(
+    () =>
+      travelerMemberSrcs([
+        { src: '0', charKey: character.key },
+        ...pandoTeammateMembers.map((src, i) => ({
+          src,
+          charKey: teammates[i],
+        })),
+      ]),
+    [character.key, teammates]
   )
-    ? (pandoTeam.activeMember as Member)
-    : '0'
 
   const calc = useMemo(
     () =>
@@ -127,7 +137,14 @@ export function CharCalcProvider({
         enemyDebuff.reaction.amp.add(pandoTeam.amp),
         enemyDebuff.reaction.cata.add(pandoTeam.cata),
         ownBuff.common.critMode.add(pandoTeam.critMode),
-        conditionalEntries('dyn', activeMember, null)('isActive', 1),
+        ...pandoContextEntries({
+          memberKeys,
+          activeMember: pandoTeam.activeMember,
+          travelerSrcs,
+          unlockedTravelers: unlockedTravelerKeys(
+            (tk) => !!database.chars.get(tk)
+          ),
+        }),
         ...pandoTeam.conditionals.flatMap(
           ({ sheet, src, dst, condKey, condValue }) => {
             if (!isSheet(sheet) || !isMember(src)) return []
@@ -137,13 +154,15 @@ export function CharCalcProvider({
         ),
       ]).withTag({ src: '0' }),
     [
-      activeMember,
+      character.key,
+      database,
       member0,
       memberKeys,
       pandoTeam,
       teammate1,
       teammate2,
       teammate3,
+      travelerSrcs,
     ]
   )
 
@@ -174,6 +193,7 @@ export function CharCalcMockCountProvider({
   conditionals: readonly PandoTeamConditional[]
   children: ReactNode
 }) {
+  const database = useDatabase()
   const calc = useMemo(
     () =>
       genshinCalculatorWithEntries([
@@ -191,13 +211,22 @@ export function CharCalcMockCountProvider({
         ownBuff.common.critMode.add('avg'),
         enemyDebuff.common.lvl.add(100),
         enemyDebuff.common.preRes.add(0.1),
+        ...pandoContextEntries({
+          memberKeys: ['0'],
+          travelerSrcs: travelerMemberSrcs([
+            { src: '0', charKey: character.key },
+          ]),
+          unlockedTravelers: unlockedTravelerKeys(
+            (tk) => !!database.chars.get(tk)
+          ),
+        }),
         ...conditionals.flatMap(({ sheet, src, dst, condKey, condValue }) => {
           if (!isSheet(sheet) || !isMember(src)) return []
           if (dst !== null && !isMember(dst)) return []
           return [conditionalEntries(sheet, src, dst)(condKey, condValue)]
         }),
       ]).withTag({ src: '0' }),
-    [character, conditionals]
+    [character, conditionals, database]
   )
 
   const formulaTextCache = useMemo(

@@ -13,15 +13,7 @@ export function CharSheetDisplay({
   characterKey: CharacterKey
 }) {
   const sheet = uiSheets[characterKey]
-  if (!sheet) {
-    return (
-      <CardThemed bgt="light" sx={pandoCardSx}>
-        <CardContent>
-          <Typography>No Pando UISheet for this character.</Typography>
-        </CardContent>
-      </CardThemed>
-    )
-  }
+  if (!sheet) return null
   return (
     <Stack spacing={1}>
       {Object.entries(sheet).map(([talentKey, element]) =>

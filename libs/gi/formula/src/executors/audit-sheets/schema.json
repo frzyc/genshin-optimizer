@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "version": 2,
+  "title": "AuditSheets executor",
+  "description": "Scan gi-formula vs gi/sheets and print a port queue (JSON/CSV).",
+  "type": "object",
+  "properties": {
+    "outputPath": {
+      "type": "string",
+      "description": "Optional file to write the report"
+    },
+    "format": {
+      "type": "string",
+      "enum": ["json", "csv"],
+      "description": "Report format when writing or printing CSV",
+      "default": "json"
+    },
+    "stripArtifactPlaceholders": {
+      "type": "boolean",
+      "description": "Rewrite artifact stubs that still have fake percent(1) 2pc/4pc",
+      "default": false
+    }
+  },
+  "required": []
+}

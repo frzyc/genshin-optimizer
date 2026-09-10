@@ -16,24 +16,16 @@ export function TeammateBuffSheetDisplay({
 }) {
   const { t } = useTranslation('page_optimize')
   const sheet = uiSheets[characterKey]
-  if (!sheet) {
-    return (
-      <CardThemed bgt="light" sx={pandoCardSx}>
-        <CardContent>
-          <Typography>{t('unportedTeammate')}</Typography>
-        </CardContent>
-      </CardThemed>
-    )
-  }
-
-  const sections = Object.entries(sheet).flatMap(([talentKey, element]) => {
-    const documents =
-      element?.documents.filter(
-        (doc) => doc.type === 'conditional' && doc.conditional.teamBuff
-      ) ?? []
-    if (!documents.length) return []
-    return [{ talentKey: talentKey as TalentSheetElementKey, documents }]
-  })
+  const sections = Object.entries(sheet ?? {}).flatMap(
+    ([talentKey, element]) => {
+      const documents =
+        element?.documents.filter(
+          (doc) => doc.type === 'conditional' && doc.conditional.teamBuff
+        ) ?? []
+      if (!documents.length) return []
+      return [{ talentKey: talentKey as TalentSheetElementKey, documents }]
+    }
+  )
 
   if (!sections.length) {
     return (

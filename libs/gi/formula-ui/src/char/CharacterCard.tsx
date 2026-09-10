@@ -6,8 +6,8 @@ import {
 } from '@genshin-optimizer/common/ui'
 import {
   allArtifactSlotKeys,
-  getCharMaxLevel,
   type CharacterKey,
+  getCharMaxLevel,
 } from '@genshin-optimizer/gi/consts'
 import {
   useArtifacts,

@@ -3,8 +3,8 @@ import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { CardThemed, ImgIcon } from '@genshin-optimizer/common/ui'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import {
-  charKeyToLocCharKey,
   type ArtifactSlotKey,
+  charKeyToLocCharKey,
   type WeaponTypeKey,
 } from '@genshin-optimizer/gi/consts'
 import { CharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'

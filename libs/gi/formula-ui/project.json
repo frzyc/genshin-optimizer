@@ -5,6 +5,12 @@
   "projectType": "library",
   "tags": [],
   "targets": {
+    "gen-char-ui-index": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "ts-node --project libs/gi/formula-ui/tsconfig.lib.json libs/gi/formula-ui/scripts/gen-char-ui-index.ts"
+      }
+    },
     "test": {
       "executor": "@nx/vitest:test",
       "outputs": ["{options.reportsDirectory}"],

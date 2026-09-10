@@ -1,5 +1,5 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
-import type { Read, Tag as EngineTag } from '@genshin-optimizer/game-opt/engine'
+import type { Tag as EngineTag, Read } from '@genshin-optimizer/game-opt/engine'
 import {
   FieldDisplayList,
   MultiTagFieldDisplay,
@@ -19,8 +19,8 @@ import { TagDisplay } from '../components/TagDisplay'
 import { dimLabel } from '../dimLabels'
 import { useCharCatalogRows, useGiCalcContext } from '../hooks'
 import { OptFormulaSections } from '../OptFormulaSections'
-import { tagToTagField } from '../util'
 import { pandoCardSx } from '../pandoCardSx'
+import { tagToTagField } from '../util'
 
 export function CharStatsDisplay({
   characterKey,

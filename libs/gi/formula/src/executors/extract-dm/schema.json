@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "version": 2,
+  "title": "ExtractDm executor",
+  "description": "Copy the WR dm block (counters + skillParam_gen indices) into a gi-formula character sheet.",
+  "type": "object",
+  "properties": {
+    "sheet": {
+      "type": "string",
+      "description": "CharacterKey to extract (omit with --all)"
+    },
+    "all": {
+      "type": "boolean",
+      "description": "Process every CharacterKey",
+      "default": false
+    },
+    "force": {
+      "type": "boolean",
+      "description": "Overwrite an already-ported const dm block",
+      "default": false
+    },
+    "dryRun": {
+      "type": "boolean",
+      "description": "Parse and report without writing",
+      "default": false
+    }
+  },
+  "required": []
+}

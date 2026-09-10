@@ -8,10 +8,24 @@
  *
  * Writes: libs/gi/pando-parity/out/nahida-parity-latest.json
  */
-import { writeFileSync, mkdirSync } from 'node:fs'
+import { mkdirSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import type { ICachedCharacter, ICachedWeapon } from '@genshin-optimizer/gi/db'
+import type { TagMapNodeEntries } from '@genshin-optimizer/gi/formula'
+import {
+  artifactsData,
+  charData,
+  conditionalData,
+  enemyDebuff,
+  genshinCalculatorWithEntries,
+  own,
+  ownBuff,
+  teamData,
+  userBuff,
+  weaponData,
+  withMember,
+} from '@genshin-optimizer/gi/formula'
 import {
   allArtifactData,
   displayDataMap,
@@ -32,21 +46,7 @@ import {
   mergeData,
   percent,
 } from '@genshin-optimizer/gi/wr'
-import {
-  artifactsData,
-  charData,
-  conditionalData,
-  enemyDebuff,
-  genshinCalculatorWithEntries,
-  own,
-  ownBuff,
-  teamData,
-  userBuff,
-  weaponData,
-  withMember,
-} from '@genshin-optimizer/gi/formula'
-import type { TagMapNodeEntries } from '@genshin-optimizer/gi/formula'
-import { relDiff } from './index'
+import { relDiff } from './relDiff'
 
 type NormTree = {
   op?: string
