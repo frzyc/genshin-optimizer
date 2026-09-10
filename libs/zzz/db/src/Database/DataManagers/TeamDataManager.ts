@@ -84,6 +84,7 @@ export const targetQ = [
   'anomProf',
   'anomMas',
   'dmg_',
+  'laceration_dmg_',
 ] as const
 export const targetQt = ['initial', 'final', 'common'] as const
 
@@ -99,6 +100,7 @@ export const bonusStatKeys: Array<keyof typeof own.final> = [
   'enerRegen_',
   'crit_',
   'crit_dmg_',
+  'laceration_dmg_',
   'anomProf',
   'impact',
   'impact_',
@@ -111,6 +113,7 @@ export const bonusStatKeys: Array<keyof typeof own.final> = [
   'resIgn_',
   'sheerForce',
   'sheer_dmg_',
+  'sharp_dmg_',
 ] as const
 export type BonusStatKey = (typeof bonusStatKeys)[number]
 

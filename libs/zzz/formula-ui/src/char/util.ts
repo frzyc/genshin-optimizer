@@ -9,7 +9,9 @@ export function getVariant(tag: Tag) {
 }
 export function isDmg(tag: Tag) {
   const { q } = tag
-  return ['standardDmg', 'anomalyDmg', 'sheerDmg'].includes(q as string)
+  return ['standardDmg', 'anomalyDmg', 'sheerDmg', 'sharpDmg'].includes(
+    q as string
+  )
 }
 
 export function getDmgType(tag: Tag) {
@@ -43,4 +45,6 @@ export const damageTypeKeysMap: Record<DamageType, string> = {
   sheer: 'Sheer',
   abloom: 'Abloom',
   vortex: 'Vortex',
+  sharp: 'Sharp',
+  maim: 'Maim',
 }

@@ -19,6 +19,7 @@ export const stats = [
   'impact_',
   'crit_',
   'crit_dmg_',
+  'laceration_dmg_',
   'pen_',
   'pen',
   'enerRegen',
@@ -42,6 +43,7 @@ export const stats = [
   'dmg_red_',
   'sheerForce',
   'sheer_dmg_',
+  'sharp_dmg_',
   'flat_dmg',
   'anom_flat_dmg',
   'addl_disorder_',
@@ -85,6 +87,8 @@ export const damageTypes = [
   'sheer',
   'abloom',
   'vortex',
+  'sharp',
+  'maim',
 ] as const
 
 export const skillTypes = [

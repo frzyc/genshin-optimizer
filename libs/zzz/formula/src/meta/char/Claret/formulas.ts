@@ -89,13 +89,13 @@ export const formulas = {
       name: 'dazeInst',
     },
   },
-  'BasicAttackBloodforgingFourForms_0:standardDmg': {
+  'BasicAttackBloodforgingFourForms_0:sharpDmg': {
     sheet: 'Claret',
-    name: 'BasicAttackBloodforgingFourForms_0:standardDmg',
+    name: 'BasicAttackBloodforgingFourForms_0:sharpDmg',
     tag: {
       et: 'own',
       qt: 'formula',
-      q: 'standardDmg',
+      q: 'sharpDmg',
       sheet: 'Claret',
       attribute: 'electric',
       damageType1: 'basic',
@@ -131,13 +131,13 @@ export const formulas = {
       name: 'BasicAttackBloodforgingFourForms_0',
     },
   },
-  'BasicAttackBloodforgingFourForms_1:standardDmg': {
+  'BasicAttackBloodforgingFourForms_1:sharpDmg': {
     sheet: 'Claret',
-    name: 'BasicAttackBloodforgingFourForms_1:standardDmg',
+    name: 'BasicAttackBloodforgingFourForms_1:sharpDmg',
     tag: {
       et: 'own',
       qt: 'formula',
-      q: 'standardDmg',
+      q: 'sharpDmg',
       sheet: 'Claret',
       attribute: 'electric',
       damageType1: 'basic',
@@ -173,13 +173,13 @@ export const formulas = {
       name: 'BasicAttackBloodforgingFourForms_1',
     },
   },
-  'BasicAttackBloodforgingFourForms_2:standardDmg': {
+  'BasicAttackBloodforgingFourForms_2:sharpDmg': {
     sheet: 'Claret',
-    name: 'BasicAttackBloodforgingFourForms_2:standardDmg',
+    name: 'BasicAttackBloodforgingFourForms_2:sharpDmg',
     tag: {
       et: 'own',
       qt: 'formula',
-      q: 'standardDmg',
+      q: 'sharpDmg',
       sheet: 'Claret',
       attribute: 'electric',
       damageType1: 'basic',
@@ -215,13 +215,13 @@ export const formulas = {
       name: 'BasicAttackBloodforgingFourForms_2',
     },
   },
-  'BasicAttackBloodforgingFourForms_3:standardDmg': {
+  'BasicAttackBloodforgingFourForms_3:sharpDmg': {
     sheet: 'Claret',
-    name: 'BasicAttackBloodforgingFourForms_3:standardDmg',
+    name: 'BasicAttackBloodforgingFourForms_3:sharpDmg',
     tag: {
       et: 'own',
       qt: 'formula',
-      q: 'standardDmg',
+      q: 'sharpDmg',
       sheet: 'Claret',
       attribute: 'electric',
       damageType1: 'basic',
@@ -257,13 +257,13 @@ export const formulas = {
       name: 'BasicAttackBloodforgingFourForms_3',
     },
   },
-  'BasicAttackBloodbloomOathStarforging_0:standardDmg': {
+  'BasicAttackBloodbloomOathStarforging_0:sharpDmg': {
     sheet: 'Claret',
-    name: 'BasicAttackBloodbloomOathStarforging_0:standardDmg',
+    name: 'BasicAttackBloodbloomOathStarforging_0:sharpDmg',
     tag: {
       et: 'own',
       qt: 'formula',
-      q: 'standardDmg',
+      q: 'sharpDmg',
       sheet: 'Claret',
       attribute: 'electric',
       damageType1: 'basic',
@@ -299,13 +299,13 @@ export const formulas = {
       name: 'BasicAttackBloodbloomOathStarforging_0',
     },
   },
-  'BasicAttackBloodbloomOathStarforging_1:standardDmg': {
+  'BasicAttackBloodbloomOathStarforging_1:sharpDmg': {
     sheet: 'Claret',
-    name: 'BasicAttackBloodbloomOathStarforging_1:standardDmg',
+    name: 'BasicAttackBloodbloomOathStarforging_1:sharpDmg',
     tag: {
       et: 'own',
       qt: 'formula',
-      q: 'standardDmg',
+      q: 'sharpDmg',
       sheet: 'Claret',
       attribute: 'electric',
       damageType1: 'basic',
@@ -341,13 +341,13 @@ export const formulas = {
       name: 'BasicAttackBloodbloomOathStarforging_1',
     },
   },
-  'BasicAttackBloodbloomOathStarforging_2:standardDmg': {
+  'BasicAttackBloodbloomOathStarforging_2:sharpDmg': {
     sheet: 'Claret',
-    name: 'BasicAttackBloodbloomOathStarforging_2:standardDmg',
+    name: 'BasicAttackBloodbloomOathStarforging_2:sharpDmg',
     tag: {
       et: 'own',
       qt: 'formula',
-      q: 'standardDmg',
+      q: 'sharpDmg',
       sheet: 'Claret',
       attribute: 'electric',
       damageType1: 'basic',
@@ -383,13 +383,13 @@ export const formulas = {
       name: 'BasicAttackBloodbloomOathStarforging_2',
     },
   },
-  'BasicAttackBloodbloomOathStarforging_3:standardDmg': {
+  'BasicAttackBloodbloomOathStarforging_3:sharpDmg': {
     sheet: 'Claret',
-    name: 'BasicAttackBloodbloomOathStarforging_3:standardDmg',
+    name: 'BasicAttackBloodbloomOathStarforging_3:sharpDmg',
     tag: {
       et: 'own',
       qt: 'formula',
-      q: 'standardDmg',
+      q: 'sharpDmg',
       sheet: 'Claret',
       attribute: 'electric',
       damageType1: 'basic',
@@ -425,13 +425,13 @@ export const formulas = {
       name: 'BasicAttackBloodbloomOathStarforging_3',
     },
   },
-  'BasicAttackBloodbloomOathSubduingAxe_0:standardDmg': {
+  'BasicAttackBloodbloomOathSubduingAxe_0:sharpDmg': {
     sheet: 'Claret',
-    name: 'BasicAttackBloodbloomOathSubduingAxe_0:standardDmg',
+    name: 'BasicAttackBloodbloomOathSubduingAxe_0:sharpDmg',
     tag: {
       et: 'own',
       qt: 'formula',
-      q: 'standardDmg',
+      q: 'sharpDmg',
       sheet: 'Claret',
       attribute: 'electric',
       damageType1: 'basic',
@@ -467,13 +467,13 @@ export const formulas = {
       name: 'BasicAttackBloodbloomOathSubduingAxe_0',
     },
   },
-  'DashAttackTempering_0:standardDmg': {
+  'DashAttackTempering_0:sharpDmg': {
     sheet: 'Claret',
-    name: 'DashAttackTempering_0:standardDmg',
+    name: 'DashAttackTempering_0:sharpDmg',
     tag: {
       et: 'own',
       qt: 'formula',
-      q: 'standardDmg',
+      q: 'sharpDmg',
       sheet: 'Claret',
       attribute: 'electric',
       damageType1: 'dash',
@@ -509,13 +509,13 @@ export const formulas = {
       name: 'DashAttackTempering_0',
     },
   },
-  'DodgeCounterReturningEdge_0:standardDmg': {
+  'DodgeCounterReturningEdge_0:sharpDmg': {
     sheet: 'Claret',
-    name: 'DodgeCounterReturningEdge_0:standardDmg',
+    name: 'DodgeCounterReturningEdge_0:sharpDmg',
     tag: {
       et: 'own',
       qt: 'formula',
-      q: 'standardDmg',
+      q: 'sharpDmg',
       sheet: 'Claret',
       attribute: 'electric',
       damageType1: 'dodgeCounter',
@@ -551,13 +551,13 @@ export const formulas = {
       name: 'DodgeCounterReturningEdge_0',
     },
   },
-  'DodgeCounterBloodbloomOathReturningEdge_0:standardDmg': {
+  'DodgeCounterBloodbloomOathReturningEdge_0:sharpDmg': {
     sheet: 'Claret',
-    name: 'DodgeCounterBloodbloomOathReturningEdge_0:standardDmg',
+    name: 'DodgeCounterBloodbloomOathReturningEdge_0:sharpDmg',
     tag: {
       et: 'own',
       qt: 'formula',
-      q: 'standardDmg',
+      q: 'sharpDmg',
       sheet: 'Claret',
       attribute: 'electric',
       damageType1: 'dodgeCounter',
@@ -593,13 +593,13 @@ export const formulas = {
       name: 'DodgeCounterBloodbloomOathReturningEdge_0',
     },
   },
-  'SpecialAttackPorcelumesFirstCall_0:standardDmg': {
+  'SpecialAttackPorcelumesFirstCall_0:sharpDmg': {
     sheet: 'Claret',
-    name: 'SpecialAttackPorcelumesFirstCall_0:standardDmg',
+    name: 'SpecialAttackPorcelumesFirstCall_0:sharpDmg',
     tag: {
       et: 'own',
       qt: 'formula',
-      q: 'standardDmg',
+      q: 'sharpDmg',
       sheet: 'Claret',
       attribute: 'electric',
       damageType1: 'special',
@@ -635,13 +635,13 @@ export const formulas = {
       name: 'SpecialAttackPorcelumesFirstCall_0',
     },
   },
-  'EXSpecialAttackBloodbloomOathSecretForgingTechniques_0:standardDmg': {
+  'EXSpecialAttackBloodbloomOathSecretForgingTechniques_0:sharpDmg': {
     sheet: 'Claret',
-    name: 'EXSpecialAttackBloodbloomOathSecretForgingTechniques_0:standardDmg',
+    name: 'EXSpecialAttackBloodbloomOathSecretForgingTechniques_0:sharpDmg',
     tag: {
       et: 'own',
       qt: 'formula',
-      q: 'standardDmg',
+      q: 'sharpDmg',
       sheet: 'Claret',
       attribute: 'electric',
       damageType1: 'exSpecial',
@@ -677,13 +677,13 @@ export const formulas = {
       name: 'EXSpecialAttackBloodbloomOathSecretForgingTechniques_0',
     },
   },
-  'SpecialAttackBloodbloomOathCleavingGoldAndIron_0:standardDmg': {
+  'SpecialAttackBloodbloomOathCleavingGoldAndIron_0:sharpDmg': {
     sheet: 'Claret',
-    name: 'SpecialAttackBloodbloomOathCleavingGoldAndIron_0:standardDmg',
+    name: 'SpecialAttackBloodbloomOathCleavingGoldAndIron_0:sharpDmg',
     tag: {
       et: 'own',
       qt: 'formula',
-      q: 'standardDmg',
+      q: 'sharpDmg',
       sheet: 'Claret',
       attribute: 'electric',
       damageType1: 'special',
@@ -719,13 +719,13 @@ export const formulas = {
       name: 'SpecialAttackBloodbloomOathCleavingGoldAndIron_0',
     },
   },
-  'SpecialAttackBloodbloomOathCleavingGoldAndIron_1:standardDmg': {
+  'SpecialAttackBloodbloomOathCleavingGoldAndIron_1:sharpDmg': {
     sheet: 'Claret',
-    name: 'SpecialAttackBloodbloomOathCleavingGoldAndIron_1:standardDmg',
+    name: 'SpecialAttackBloodbloomOathCleavingGoldAndIron_1:sharpDmg',
     tag: {
       et: 'own',
       qt: 'formula',
-      q: 'standardDmg',
+      q: 'sharpDmg',
       sheet: 'Claret',
       attribute: 'electric',
       damageType1: 'special',
@@ -761,13 +761,13 @@ export const formulas = {
       name: 'SpecialAttackBloodbloomOathCleavingGoldAndIron_1',
     },
   },
-  'SpecialAttackBloodbloomOathCleavingGoldAndIron_2:standardDmg': {
+  'SpecialAttackBloodbloomOathCleavingGoldAndIron_2:sharpDmg': {
     sheet: 'Claret',
-    name: 'SpecialAttackBloodbloomOathCleavingGoldAndIron_2:standardDmg',
+    name: 'SpecialAttackBloodbloomOathCleavingGoldAndIron_2:sharpDmg',
     tag: {
       et: 'own',
       qt: 'formula',
-      q: 'standardDmg',
+      q: 'sharpDmg',
       sheet: 'Claret',
       attribute: 'electric',
       damageType1: 'special',
@@ -803,13 +803,13 @@ export const formulas = {
       name: 'SpecialAttackBloodbloomOathCleavingGoldAndIron_2',
     },
   },
-  'SpecialAttackBloodbloomOathBloodBurialAssault_0:standardDmg': {
+  'SpecialAttackBloodbloomOathBloodBurialAssault_0:sharpDmg': {
     sheet: 'Claret',
-    name: 'SpecialAttackBloodbloomOathBloodBurialAssault_0:standardDmg',
+    name: 'SpecialAttackBloodbloomOathBloodBurialAssault_0:sharpDmg',
     tag: {
       et: 'own',
       qt: 'formula',
-      q: 'standardDmg',
+      q: 'sharpDmg',
       sheet: 'Claret',
       attribute: 'electric',
       damageType1: 'special',
@@ -845,13 +845,13 @@ export const formulas = {
       name: 'SpecialAttackBloodbloomOathBloodBurialAssault_0',
     },
   },
-  'ChainAttackBloodbloomOathResonantBloodPact_0:standardDmg': {
+  'ChainAttackBloodbloomOathResonantBloodPact_0:sharpDmg': {
     sheet: 'Claret',
-    name: 'ChainAttackBloodbloomOathResonantBloodPact_0:standardDmg',
+    name: 'ChainAttackBloodbloomOathResonantBloodPact_0:sharpDmg',
     tag: {
       et: 'own',
       qt: 'formula',
-      q: 'standardDmg',
+      q: 'sharpDmg',
       sheet: 'Claret',
       attribute: 'electric',
       damageType1: 'chain',
@@ -887,13 +887,13 @@ export const formulas = {
       name: 'ChainAttackBloodbloomOathResonantBloodPact_0',
     },
   },
-  'UltimateBloodbloomOathTrialAfterTrial_0:standardDmg': {
+  'UltimateBloodbloomOathTrialAfterTrial_0:sharpDmg': {
     sheet: 'Claret',
-    name: 'UltimateBloodbloomOathTrialAfterTrial_0:standardDmg',
+    name: 'UltimateBloodbloomOathTrialAfterTrial_0:sharpDmg',
     tag: {
       et: 'own',
       qt: 'formula',
-      q: 'standardDmg',
+      q: 'sharpDmg',
       sheet: 'Claret',
       attribute: 'electric',
       damageType1: 'ult',
@@ -929,13 +929,13 @@ export const formulas = {
       name: 'UltimateBloodbloomOathTrialAfterTrial_0',
     },
   },
-  'QuickAssistReturnOfTheDireMoon_0:standardDmg': {
+  'QuickAssistReturnOfTheDireMoon_0:sharpDmg': {
     sheet: 'Claret',
-    name: 'QuickAssistReturnOfTheDireMoon_0:standardDmg',
+    name: 'QuickAssistReturnOfTheDireMoon_0:sharpDmg',
     tag: {
       et: 'own',
       qt: 'formula',
-      q: 'standardDmg',
+      q: 'sharpDmg',
       sheet: 'Claret',
       attribute: 'electric',
       damageType1: 'quickAssist',
@@ -971,13 +971,13 @@ export const formulas = {
       name: 'QuickAssistReturnOfTheDireMoon_0',
     },
   },
-  'QuickAssistBloodbloomOathReturnOfTheDireMoon_0:standardDmg': {
+  'QuickAssistBloodbloomOathReturnOfTheDireMoon_0:sharpDmg': {
     sheet: 'Claret',
-    name: 'QuickAssistBloodbloomOathReturnOfTheDireMoon_0:standardDmg',
+    name: 'QuickAssistBloodbloomOathReturnOfTheDireMoon_0:sharpDmg',
     tag: {
       et: 'own',
       qt: 'formula',
-      q: 'standardDmg',
+      q: 'sharpDmg',
       sheet: 'Claret',
       attribute: 'electric',
       damageType1: 'quickAssist',
@@ -1013,13 +1013,13 @@ export const formulas = {
       name: 'QuickAssistBloodbloomOathReturnOfTheDireMoon_0',
     },
   },
-  'DefensiveAssistUnyieldingHeartOfTheFurnace_0:standardDmg': {
+  'DefensiveAssistUnyieldingHeartOfTheFurnace_0:sharpDmg': {
     sheet: 'Claret',
-    name: 'DefensiveAssistUnyieldingHeartOfTheFurnace_0:standardDmg',
+    name: 'DefensiveAssistUnyieldingHeartOfTheFurnace_0:sharpDmg',
     tag: {
       et: 'own',
       qt: 'formula',
-      q: 'standardDmg',
+      q: 'sharpDmg',
       sheet: 'Claret',
       attribute: 'electric',
       damageType1: 'defensiveAssist',
@@ -1055,13 +1055,13 @@ export const formulas = {
       name: 'DefensiveAssistUnyieldingHeartOfTheFurnace_0',
     },
   },
-  'DefensiveAssistUnyieldingHeartOfTheFurnace_1:standardDmg': {
+  'DefensiveAssistUnyieldingHeartOfTheFurnace_1:sharpDmg': {
     sheet: 'Claret',
-    name: 'DefensiveAssistUnyieldingHeartOfTheFurnace_1:standardDmg',
+    name: 'DefensiveAssistUnyieldingHeartOfTheFurnace_1:sharpDmg',
     tag: {
       et: 'own',
       qt: 'formula',
-      q: 'standardDmg',
+      q: 'sharpDmg',
       sheet: 'Claret',
       attribute: 'electric',
       damageType1: 'defensiveAssist',
@@ -1097,13 +1097,13 @@ export const formulas = {
       name: 'DefensiveAssistUnyieldingHeartOfTheFurnace_1',
     },
   },
-  'DefensiveAssistUnyieldingHeartOfTheFurnace_2:standardDmg': {
+  'DefensiveAssistUnyieldingHeartOfTheFurnace_2:sharpDmg': {
     sheet: 'Claret',
-    name: 'DefensiveAssistUnyieldingHeartOfTheFurnace_2:standardDmg',
+    name: 'DefensiveAssistUnyieldingHeartOfTheFurnace_2:sharpDmg',
     tag: {
       et: 'own',
       qt: 'formula',
-      q: 'standardDmg',
+      q: 'sharpDmg',
       sheet: 'Claret',
       attribute: 'electric',
       damageType1: 'defensiveAssist',
@@ -1139,13 +1139,13 @@ export const formulas = {
       name: 'DefensiveAssistUnyieldingHeartOfTheFurnace_2',
     },
   },
-  'AssistFollowUpBloodbloomOathPureforgedEdge_0:standardDmg': {
+  'AssistFollowUpBloodbloomOathPureforgedEdge_0:sharpDmg': {
     sheet: 'Claret',
-    name: 'AssistFollowUpBloodbloomOathPureforgedEdge_0:standardDmg',
+    name: 'AssistFollowUpBloodbloomOathPureforgedEdge_0:sharpDmg',
     tag: {
       et: 'own',
       qt: 'formula',
-      q: 'standardDmg',
+      q: 'sharpDmg',
       sheet: 'Claret',
       attribute: 'electric',
       damageType1: 'assistFollowUp',
@@ -1181,13 +1181,13 @@ export const formulas = {
       name: 'AssistFollowUpBloodbloomOathPureforgedEdge_0',
     },
   },
-  'CounterAssistGiveNotAnInchOfSteel_0:standardDmg': {
+  'CounterAssistGiveNotAnInchOfSteel_0:sharpDmg': {
     sheet: 'Claret',
-    name: 'CounterAssistGiveNotAnInchOfSteel_0:standardDmg',
+    name: 'CounterAssistGiveNotAnInchOfSteel_0:sharpDmg',
     tag: {
       et: 'own',
       qt: 'formula',
-      q: 'standardDmg',
+      q: 'sharpDmg',
       sheet: 'Claret',
       attribute: 'electric',
       damageType1: 'counterAssist',
@@ -1223,13 +1223,13 @@ export const formulas = {
       name: 'CounterAssistGiveNotAnInchOfSteel_0',
     },
   },
-  'AssistFollowUpBloodbloomOathHammerIntoShape_0:standardDmg': {
+  'AssistFollowUpBloodbloomOathHammerIntoShape_0:sharpDmg': {
     sheet: 'Claret',
-    name: 'AssistFollowUpBloodbloomOathHammerIntoShape_0:standardDmg',
+    name: 'AssistFollowUpBloodbloomOathHammerIntoShape_0:sharpDmg',
     tag: {
       et: 'own',
       qt: 'formula',
-      q: 'standardDmg',
+      q: 'sharpDmg',
       sheet: 'Claret',
       attribute: 'electric',
       damageType1: 'assistFollowUp',

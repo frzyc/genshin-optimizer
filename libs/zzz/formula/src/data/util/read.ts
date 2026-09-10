@@ -246,6 +246,18 @@ export class Read extends BaseRead<Tag> {
       super.with('damageType2', 'vortex'),
     ]
   }
+  get sharp(): Read[] {
+    return [
+      super.with('damageType1', 'sharp'),
+      super.with('damageType2', 'sharp'),
+    ]
+  }
+  get maim(): Read[] {
+    return [
+      super.with('damageType1', 'maim'),
+      super.with('damageType2', 'maim'),
+    ]
+  }
 
   // For `count` usage, use lighter footprint so it doesn't pollute autocomplete
   // Specialty
