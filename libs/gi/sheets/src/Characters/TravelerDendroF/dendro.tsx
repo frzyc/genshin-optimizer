@@ -37,7 +37,7 @@ export default function dendro(
   const condCharKey = 'TravelerDendro'
   const ct = charTemplates(key)
 
-  const skillParam_gen = allStats.char.skillParam.TravelerDendroF
+  const skillParam_gen = allStats.char.skillParam[key]
   let s = 0,
     b = 0
   const dm = {

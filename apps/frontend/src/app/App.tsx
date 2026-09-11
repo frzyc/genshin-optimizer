@@ -1,7 +1,3 @@
-import {
-  DBLocalStorage,
-  SandboxStorage,
-} from '@genshin-optimizer/common/database'
 import { ScrollTop, useRefSize, useTitle } from '@genshin-optimizer/common/ui'
 import { ArtCharDatabase } from '@genshin-optimizer/gi/db'
 import { DatabaseContext } from '@genshin-optimizer/gi/db-ui'
@@ -24,7 +20,7 @@ import {
   useTheme,
 } from '@mui/material'
 import type { ComponentType } from 'react'
-import { lazy, Suspense, useCallback, useMemo, useState } from 'react'
+import { lazy, Suspense, useCallback, useMemo } from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import './App.scss'
 import {
@@ -32,6 +28,7 @@ import {
   AdBlockContextWrapper,
   AdRailSticky,
 } from '@genshin-optimizer/common/ad'
+import { useDatabases } from '@genshin-optimizer/common/database-ui'
 import ErrorBoundary from './ErrorBoundary'
 import Footer from './Footer'
 import Header from './Header'
@@ -106,22 +103,11 @@ const PageTeam = lazy(
 
 function App() {
   const dbIndex = Number.parseInt(localStorage.getItem('dbIndex') || '1')
-  const [databases, setDatabases] = useState(() => {
-    localStorage.removeItem('GONewTabDetection')
-    localStorage.setItem('GONewTabDetection', 'debug')
-    return ([1, 2, 3, 4] as const).map((index) => {
-      if (index === dbIndex) {
-        return new ArtCharDatabase(index, new DBLocalStorage(localStorage))
-      } else {
-        const dbName = `extraDatabase_${index}`
-        const eDB = localStorage.getItem(dbName)
-        const dbObj = eDB ? JSON.parse(eDB) : {}
-        const db = new ArtCharDatabase(index, new SandboxStorage(dbObj))
-        db.toExtraLocalDB()
-        return db
-      }
-    })
-  })
+  const [databases, setDatabases] = useDatabases(
+    ArtCharDatabase,
+    dbIndex,
+    'GONewTabDetection'
+  )
   const setDatabase = useCallback(
     (index: number, db: ArtCharDatabase) => {
       const dbs = [...databases]
