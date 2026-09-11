@@ -1,36 +1,25 @@
 // WARNING: Generated file, do not modify
 export const buffs = {
-  cond_dmg_: {
+  passive_def_: {
     sheet: 'CattyLuck',
-    name: 'cond_dmg_',
+    name: 'passive_def_',
     tag: {
       et: 'display',
       qt: 'combat',
-      q: 'common_dmg_',
+      q: 'def_',
       sheet: 'CattyLuck',
-      name: 'cond_dmg_',
+      name: 'passive_def_',
     },
   },
-  team_dmg_: {
+  cond_def_: {
     sheet: 'CattyLuck',
-    name: 'team_dmg_',
+    name: 'cond_def_',
     tag: {
       et: 'display',
       qt: 'combat',
-      q: 'common_dmg_',
+      q: 'def_',
       sheet: 'CattyLuck',
-      name: 'team_dmg_',
-    },
-  },
-  enemy_defIgn_: {
-    sheet: 'CattyLuck',
-    name: 'enemy_defIgn_',
-    tag: {
-      et: 'display',
-      qt: 'common',
-      q: 'dmgRed_',
-      sheet: 'CattyLuck',
-      name: 'enemy_defIgn_',
+      name: 'cond_def_',
     },
   },
 } as const

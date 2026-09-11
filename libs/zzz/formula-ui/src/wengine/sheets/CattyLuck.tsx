@@ -2,27 +2,14 @@ import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
 import { wengineAsset } from '@genshin-optimizer/zzz/assets'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import { CattyLuck } from '@genshin-optimizer/zzz/formula'
-import { mappedStats } from '@genshin-optimizer/zzz/stats'
-import { trans } from '../../util'
+import { fieldForBuff } from '../../char/sheetUtil'
+import { st, trans } from '../../util'
 import { PhaseWrapper } from '../components'
 
 const key: WengineKey = 'CattyLuck'
 const [chg, _ch] = trans('wengine', key)
-// TODO: Cleanup
-// biome-ignore lint/suspicious/noTsIgnore: temp
-//@ts-ignore
-// biome-ignore lint/correctness/noUnusedVariables: temp
-const dm = mappedStats.wengine[key]
 const icon = wengineAsset(key, 'icon')
-// TODO: Cleanup
-// biome-ignore lint/suspicious/noTsIgnore: temp
-//@ts-ignore
-// biome-ignore lint/correctness/noUnusedVariables: temp
 const cond = CattyLuck.conditionals
-// TODO: Cleanup
-// biome-ignore lint/suspicious/noTsIgnore: temp
-//@ts-ignore
-// biome-ignore lint/correctness/noUnusedVariables: temp
 const buff = CattyLuck.buffs
 
 const sheet: UISheetElement = {
@@ -36,6 +23,18 @@ const sheet: UISheetElement = {
           {(phase) => chg(`phaseDescs.${phase - 1}`)}
         </PhaseWrapper>
       ),
+    },
+    {
+      type: 'fields',
+      fields: [fieldForBuff(buff.passive_def_)],
+    },
+    {
+      type: 'conditional',
+      conditional: {
+        label: st('uponLaunch.1', { val1: '$t(skills.exSpecial)' }),
+        metadata: cond.exSpecialUsed,
+        fields: [fieldForBuff(buff.cond_def_)],
+      },
     },
   ],
 }

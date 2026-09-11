@@ -1,36 +1,38 @@
 // WARNING: Generated file, do not modify
 export const buffs = {
-  cond_dmg_: {
+  passive_crit_: {
     sheet: 'CrimsonThirst',
-    name: 'cond_dmg_',
+    name: 'passive_crit_',
     tag: {
       et: 'display',
       qt: 'combat',
-      q: 'common_dmg_',
+      q: 'crit_',
       sheet: 'CrimsonThirst',
-      name: 'cond_dmg_',
+      name: 'passive_crit_',
     },
   },
-  team_dmg_: {
+  passive_electric_dmg_: {
     sheet: 'CrimsonThirst',
-    name: 'team_dmg_',
+    name: 'passive_electric_dmg_',
     tag: {
       et: 'display',
       qt: 'combat',
-      q: 'common_dmg_',
+      q: 'dmg_',
       sheet: 'CrimsonThirst',
-      name: 'team_dmg_',
+      attribute: 'electric',
+      name: 'passive_electric_dmg_',
     },
   },
-  enemy_defIgn_: {
+  cond_electric_sharp_dmg_: {
     sheet: 'CrimsonThirst',
-    name: 'enemy_defIgn_',
+    name: 'cond_electric_sharp_dmg_',
     tag: {
       et: 'display',
-      qt: 'common',
-      q: 'dmgRed_',
+      qt: 'combat',
+      q: 'sharp_dmg_',
       sheet: 'CrimsonThirst',
-      name: 'enemy_defIgn_',
+      attribute: 'electric',
+      name: 'cond_electric_sharp_dmg_',
     },
   },
 } as const

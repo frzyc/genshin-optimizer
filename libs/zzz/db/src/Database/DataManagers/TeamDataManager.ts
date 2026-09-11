@@ -485,7 +485,12 @@ export class TeamDataManager extends DataManager<
 
         let { attribute, damageType1, damageType2 } = tag
 
-        if (q !== 'dmg_' && q !== 'sheer_dmg_' && q !== 'resIgn_')
+        if (
+          q !== 'dmg_' &&
+          q !== 'sheer_dmg_' &&
+          q !== 'resIgn_' &&
+          q !== 'sharp_dmg_'
+        )
           attribute = undefined
         if (attribute)
           attribute = validateValue(attribute, allAttributeKeys) as

@@ -1,22 +1,4 @@
 // WARNING: Generated file, do not modify
 export const conditionals = {
-  boolConditional: {
-    sheet: 'CattyLuck',
-    name: 'boolConditional',
-    type: 'bool',
-  },
-  listConditional: {
-    sheet: 'CattyLuck',
-    name: 'listConditional',
-    type: 'list',
-    list: ['val1', 'val2'],
-  },
-  numConditional: {
-    sheet: 'CattyLuck',
-    name: 'numConditional',
-    type: 'num',
-    int_only: true,
-    min: 0,
-    max: 2,
-  },
+  exSpecialUsed: { sheet: 'CattyLuck', name: 'exSpecialUsed', type: 'bool' },
 } as const

@@ -1,36 +1,48 @@
 // WARNING: Generated file, do not modify
 export const buffs = {
-  cond_dmg_: {
+  passive_crit_: {
     sheet: 'CrimsonMoonCasket',
-    name: 'cond_dmg_',
+    name: 'passive_crit_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'crit_',
+      sheet: 'CrimsonMoonCasket',
+      name: 'passive_crit_',
+    },
+  },
+  passive_wind_resIgn_: {
+    sheet: 'CrimsonMoonCasket',
+    name: 'passive_wind_resIgn_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'resIgn_',
+      sheet: 'CrimsonMoonCasket',
+      attribute: 'wind',
+      name: 'passive_wind_resIgn_',
+    },
+  },
+  cond_dazeInc_: {
+    sheet: 'CrimsonMoonCasket',
+    name: 'cond_dazeInc_',
+    tag: {
+      et: 'display',
+      qt: 'combat',
+      q: 'dazeInc_',
+      sheet: 'CrimsonMoonCasket',
+      name: 'cond_dazeInc_',
+    },
+  },
+  cond_common_dmg_: {
+    sheet: 'CrimsonMoonCasket',
+    name: 'cond_common_dmg_',
     tag: {
       et: 'display',
       qt: 'combat',
       q: 'common_dmg_',
       sheet: 'CrimsonMoonCasket',
-      name: 'cond_dmg_',
-    },
-  },
-  team_dmg_: {
-    sheet: 'CrimsonMoonCasket',
-    name: 'team_dmg_',
-    tag: {
-      et: 'display',
-      qt: 'combat',
-      q: 'common_dmg_',
-      sheet: 'CrimsonMoonCasket',
-      name: 'team_dmg_',
-    },
-  },
-  enemy_defIgn_: {
-    sheet: 'CrimsonMoonCasket',
-    name: 'enemy_defIgn_',
-    tag: {
-      et: 'display',
-      qt: 'common',
-      q: 'dmgRed_',
-      sheet: 'CrimsonMoonCasket',
-      name: 'enemy_defIgn_',
+      name: 'cond_common_dmg_',
     },
   },
 } as const

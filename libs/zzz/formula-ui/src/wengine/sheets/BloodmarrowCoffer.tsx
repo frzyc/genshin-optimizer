@@ -2,27 +2,13 @@ import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
 import { wengineAsset } from '@genshin-optimizer/zzz/assets'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import { BloodmarrowCoffer } from '@genshin-optimizer/zzz/formula'
-import { mappedStats } from '@genshin-optimizer/zzz/stats'
+import { fieldForBuff } from '../../char/sheetUtil'
 import { trans } from '../../util'
 import { PhaseWrapper } from '../components'
 
 const key: WengineKey = 'BloodmarrowCoffer'
 const [chg, _ch] = trans('wengine', key)
-// TODO: Cleanup
-// biome-ignore lint/suspicious/noTsIgnore: temp
-//@ts-ignore
-// biome-ignore lint/correctness/noUnusedVariables: temp
-const dm = mappedStats.wengine[key]
 const icon = wengineAsset(key, 'icon')
-// TODO: Cleanup
-// biome-ignore lint/suspicious/noTsIgnore: temp
-//@ts-ignore
-// biome-ignore lint/correctness/noUnusedVariables: temp
-const cond = BloodmarrowCoffer.conditionals
-// TODO: Cleanup
-// biome-ignore lint/suspicious/noTsIgnore: temp
-//@ts-ignore
-// biome-ignore lint/correctness/noUnusedVariables: temp
 const buff = BloodmarrowCoffer.buffs
 
 const sheet: UISheetElement = {
@@ -36,6 +22,10 @@ const sheet: UISheetElement = {
           {(phase) => chg(`phaseDescs.${phase - 1}`)}
         </PhaseWrapper>
       ),
+    },
+    {
+      type: 'fields',
+      fields: [fieldForBuff(buff.passive_common_dmg_)],
     },
   ],
 }
