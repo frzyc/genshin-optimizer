@@ -1,18 +1,10 @@
 // WARNING: Generated file, do not modify
 export const conditionals = {
-  boolConditional: { sheet: 'Claret', name: 'boolConditional', type: 'bool' },
-  listConditional: {
+  crimsonInscription: {
     sheet: 'Claret',
-    name: 'listConditional',
-    type: 'list',
-    list: ['val1', 'val2'],
+    name: 'crimsonInscription',
+    type: 'bool',
   },
-  numConditional: {
-    sheet: 'Claret',
-    name: 'numConditional',
-    type: 'num',
-    int_only: true,
-    min: 0,
-    max: 2,
-  },
+  perfectDodge: { sheet: 'Claret', name: 'perfectDodge', type: 'bool' },
+  remnantEdge: { sheet: 'Claret', name: 'remnantEdge', type: 'bool' },
 } as const

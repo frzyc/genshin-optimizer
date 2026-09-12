@@ -62,7 +62,8 @@ const sheet = registerWengine(
         windExSpecialUsed.ifOn(percent(subscript(phase, dm.dmg_)))
       )
     ),
-    showSpecialtyAndEquipped(key)
+    showSpecialtyAndEquipped(key),
+    true
   )
 )
 export default sheet
