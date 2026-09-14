@@ -52,12 +52,16 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.ch('rebukeDmg'),
-          fieldRef: formula.charged_rebuke.tag,
+          title: stg('plunging.dmg'),
+          fieldRef: formula.plunging_dmg.tag,
         },
         {
-          title: stg('healing'),
-          fieldRef: formula.a1_heal.tag,
+          title: stg('plunging.low'),
+          fieldRef: formula.plunging_low.tag,
+        },
+        {
+          title: stg('plunging.high'),
+          fieldRef: formula.plunging_high.tag,
         },
       ],
     },
@@ -114,33 +118,18 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
       ],
     },
+    charConditionalDocument(key, cond.lockRevelation, { teamBuff: true }),
+    charConditionalDocument(key, cond.lockStellarRadianceSc, {
+      teamBuff: true,
+    }),
   ]),
   burst: ct.talentTem('burst', [
     {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('burst.skillParams.0'),
-          fieldRef: formula.burst.tag,
-          multi: 5,
-        },
-        {
-          title: ct.chg('burst.skillParams.1'),
-          fieldRef: formula.burst_blade.tag,
-        },
-        {
-          title: ct.chg('burst.skillParams.2'),
-          fieldRef: formula.burst_cd.tag,
-          unit: 's',
-        },
-        {
-          title: ct.chg('burst.skillParams.3'),
-          fieldRef: formula.burst_bladeCd.tag,
-          unit: 's',
-        },
-        {
-          title: stg('energyCost'),
-          fieldRef: formula.burst_enerCost.tag,
+          title: st('elementalReaction.stellar.gainRadianceSc'),
+          fieldValue: '',
         },
       ],
     },
@@ -149,12 +138,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
   passive2: ct.talentTem('passive2', [
     charConditionalDocument(key, cond.a4EdictStacks),
   ]),
-  passive3: ct.talentTem('passive3', [
-    charConditionalDocument(key, cond.lockRevelation, { teamBuff: true }),
-    charConditionalDocument(key, cond.lockStellarRadianceSc, {
-      teamBuff: true,
-    }),
-  ]),
+  passive3: ct.talentTem('passive3', []),
   constellation1: ct.talentTem('constellation1'),
   constellation2: ct.talentTem('constellation2'),
   constellation3: ct.talentTem('constellation3'),

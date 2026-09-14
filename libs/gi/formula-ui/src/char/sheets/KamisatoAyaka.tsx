@@ -39,9 +39,8 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('auto.skillParams.5'),
-          fieldRef: formula.charged.tag,
-          multi: 3,
+          title: ct.chg('auto.skillParams.6'),
+          fieldValue: '',
         },
       ],
     },
@@ -75,33 +74,13 @@ const sheet: UISheet<TalentSheetElementKey> = {
           title: ct.chg('skill.skillParams.0'),
           fieldRef: formula.skill.tag,
         },
-      ],
-    },
-    charConditionalDocument(key, cond.afterSkillA1, {
-      label: st('afterUse.skill'),
-    }),
-  ]),
-  burst: ct.talentTem('burst', [
-    {
-      type: 'fields',
-      fields: [
         {
-          title: ct.chg('burst.skillParams.0'),
-          fieldRef: formula.burst_cutting.tag,
-          multi: 19,
-        },
-        {
-          title: ct.chg('burst.skillParams.1'),
-          fieldRef: formula.burst_bloom.tag,
+          title: ct.chg('skill.skillParams.1'),
+          fieldValue: '',
+          unit: 's',
         },
       ],
     },
-    charConditionalDocument(key, cond.afterBurst, {
-      label: ct.ch('dmgBySnowflake'),
-      teamBuff: true,
-    }),
-  ]),
-  sprint: ct.talentTem('sprint', [
     charConditionalDocument(key, cond.afterSprint, {
       label: st('afterSprint'),
       fields: [
@@ -110,14 +89,55 @@ const sheet: UISheet<TalentSheetElementKey> = {
           variant: 'cryo',
           fieldValue: '',
         },
+        {
+          title: stg('duration'),
+          fieldValue: '',
+          unit: 's',
+        },
       ],
     }),
+  ]),
+  burst: ct.talentTem('burst', [
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: ct.chg('burst.skillParams.0'),
+          multi: 19,
+          fieldRef: formula.burst_cutting.tag,
+        },
+        {
+          title: ct.chg('burst.skillParams.1'),
+          fieldRef: formula.burst_bloom.tag,
+        },
+        {
+          title: stg('duration'),
+          fieldValue: '',
+          unit: 's',
+        },
+        {
+          title: stg('cd'),
+          fieldValue: '',
+          unit: 's',
+        },
+        {
+          title: stg('energyCost'),
+          fieldValue: '',
+        },
+      ],
+    },
+  ]),
+  sprint: ct.talentTem('sprint', []),
+  passive1: ct.talentTem('passive1', [
+    charConditionalDocument(key, cond.afterSkillA1, {
+      label: st('afterUse.skill'),
+    }),
+  ]),
+  passive2: ct.talentTem('passive2', [
     charConditionalDocument(key, cond.afterApplySprint, {
       label: ct.ch('afterSprintCryo'),
     }),
   ]),
-  passive1: ct.talentTem('passive1'),
-  passive2: ct.talentTem('passive2'),
   passive3: ct.talentTem('passive3'),
   constellation1: ct.talentTem('constellation1'),
   constellation2: ct.talentTem('constellation2', [
@@ -138,7 +158,12 @@ const sheet: UISheet<TalentSheetElementKey> = {
     },
   ]),
   constellation3: ct.talentTem('constellation3'),
-  constellation4: ct.talentTem('constellation4'),
+  constellation4: ct.talentTem('constellation4', [
+    charConditionalDocument(key, cond.afterBurst, {
+      label: ct.ch('dmgBySnowflake'),
+      teamBuff: true,
+    }),
+  ]),
   constellation5: ct.talentTem('constellation5'),
   constellation6: ct.talentTem('constellation6', [
     charConditionalDocument(key, cond.C6, {

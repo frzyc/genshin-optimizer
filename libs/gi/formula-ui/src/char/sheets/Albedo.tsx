@@ -38,14 +38,6 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('auto.skillParams.5'),
-          fieldRef: formula.charged_1.tag,
-        },
-        {
-          title: ct.chg('auto.skillParams.5'),
-          fieldRef: formula.charged_2.tag,
-        },
-        {
           title: ct.chg('auto.skillParams.6'),
           fieldRef: formula.charged_stamina.tag,
         },
@@ -78,58 +70,55 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('skill.skillParams.0'),
-          fieldRef: formula.skill.tag,
-        },
-        {
           title: ct.chg('skill.skillParams.1'),
           fieldRef: formula.skill_blossom.tag,
         },
         {
-          title: ct.chg('skill.skillParams.2'),
-          fieldRef: formula.skill_duration.tag,
+          title: ct.ch('blossomCD'),
+          fieldValue: '',
           unit: 's',
         },
         {
-          title: stg('cd'),
-          fieldRef: formula.skill_cd.tag,
+          title: ct.chg('skill.skillParams.2'),
           unit: 's',
+          fieldRef: formula.skill_duration.tag,
+        },
+        {
+          title: stg('cd'),
+          unit: 's',
+          fieldRef: formula.skill_cd.tag,
         },
       ],
     },
-    charConditionalDocument(key, cond.p1EnemyHp),
+    charConditionalDocument(key, cond.lockHomework, { teamBuff: true }),
+    charConditionalDocument(key, cond.lockCreateSolar, { teamBuff: true }),
+    charConditionalDocument(key, cond.lockCreateSilver, { teamBuff: true }),
   ]),
   burst: ct.talentTem('burst', [
     {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('burst.skillParams.0'),
-          fieldRef: formula.burst.tag,
-        },
-        {
-          title: ct.chg('burst.skillParams.1'),
-          fieldRef: formula.burst_blossom.tag,
-        },
-        {
-          title: stg('cd'),
-          fieldRef: formula.burst_cd.tag,
+          title: stg('duration'),
+          fieldValue: '',
           unit: 's',
-        },
-        {
-          title: stg('energyCost'),
-          fieldRef: formula.burst_enerCost.tag,
         },
       ],
     },
-    charConditionalDocument(key, cond.burstUsed, { teamBuff: true }),
   ]),
   passive1: ct.talentTem('passive1', [
+    charConditionalDocument(key, cond.p1EnemyHp),
     charConditionalDocument(key, cond.a1LockSilver),
   ]),
-  passive2: ct.talentTem('passive2'),
+  passive2: ct.talentTem('passive2', [
+    charConditionalDocument(key, cond.burstUsed, { teamBuff: true }),
+  ]),
   passive3: ct.talentTem('passive3'),
   constellation1: ct.talentTem('constellation1', [
+    {
+      type: 'text',
+      text: ct.ch('enerPerBlossom'),
+    },
     charConditionalDocument(key, cond.c1LockAfterSkill),
   ]),
   constellation2: ct.talentTem('constellation2', [
@@ -137,8 +126,9 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: st('dmg'),
-          fieldRef: formula.c2.tag,
+          title: stg('duration'),
+          fieldValue: '',
+          unit: 's',
         },
       ],
     },
@@ -161,10 +151,15 @@ const sheet: UISheet<TalentSheetElementKey> = {
   constellation5: ct.talentTem('constellation5'),
   constellation6: ct.talentTem('constellation6', [
     charConditionalDocument(key, cond.c6Crystallize, { teamBuff: true }),
-    charConditionalDocument(key, cond.c6LockAfterDestroy),
-    charConditionalDocument(key, cond.lockHomework, { teamBuff: true }),
-    charConditionalDocument(key, cond.lockCreateSolar, { teamBuff: true }),
-    charConditionalDocument(key, cond.lockCreateSilver, { teamBuff: true }),
+    charConditionalDocument(key, cond.c6LockAfterDestroy, {
+      fields: [
+        {
+          title: stg('duration'),
+          fieldValue: '',
+          unit: 's',
+        },
+      ],
+    }),
   ]),
 }
 

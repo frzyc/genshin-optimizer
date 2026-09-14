@@ -42,6 +42,10 @@ const sheet: UISheet<TalentSheetElementKey> = {
           title: ct.chg('auto.skillParams.5'),
           fieldRef: formula.charged.tag,
         },
+        {
+          title: ct.chg('auto.skillParams.6'),
+          fieldValue: '',
+        },
       ],
     },
     {
@@ -71,20 +75,18 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('skill.skillParams.0'),
-          fieldRef: formula.skill_dmg0.tag,
-        },
-        {
-          title: ct.chg('skill.skillParams.1'),
-          fieldRef: formula.skill_dmg1.tag,
-        },
-        {
-          title: ct.chg('skill.skillParams.2'),
-          fieldRef: formula.skill_dmg2.tag,
-        },
-        {
           title: ct.chg('skill.skillParams.5'),
           fieldRef: formula.skill_illusionDmg.tag,
+        },
+        {
+          title: ct.chg('skill.skillParams.6'),
+          fieldValue: '',
+          unit: 's',
+        },
+        {
+          title: stg('cd'),
+          fieldValue: '',
+          unit: 's',
         },
       ],
     },
@@ -100,10 +102,23 @@ const sheet: UISheet<TalentSheetElementKey> = {
           title: ct.chg('burst.skillParams.0'),
           fieldRef: formula.burst.tag,
         },
+        {
+          title: stg('duration'),
+          fieldValue: '',
+          unit: 's',
+        },
+        {
+          title: stg('cd'),
+          fieldValue: '',
+          unit: 's',
+        },
+        {
+          title: stg('energyCost'),
+          fieldValue: '',
+        },
       ],
     },
     charConditionalDocument(key, cond.burstInArea, { teamBuff: true }),
-    charConditionalDocument(key, cond.c4AfterBurst, { teamBuff: true }),
   ]),
   passive1: ct.talentTem('passive1', [
     {
@@ -127,16 +142,18 @@ const sheet: UISheet<TalentSheetElementKey> = {
     },
   ]),
   constellation3: ct.talentTem('constellation3'),
-  constellation4: ct.talentTem('constellation4'),
+  constellation4: ct.talentTem('constellation4', [
+    charConditionalDocument(key, cond.c4AfterBurst, { teamBuff: true }),
+  ]),
   constellation5: ct.talentTem('constellation5'),
   constellation6: ct.talentTem('constellation6', [
     {
       type: 'fields',
       fields: [
         {
-          title: ct.ch('c6.dmg'),
-          fieldRef: formula.c6.tag,
-          multi: 2,
+          title: stg('duration'),
+          fieldValue: '',
+          unit: 's',
         },
       ],
     },

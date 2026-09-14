@@ -1,7 +1,7 @@
 import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { conditionals, formulas } from '@genshin-optimizer/gi/formula'
-import { st, stg } from '../../util'
+import { stg } from '../../util'
 import { charConditionalDocument } from '../charUiSheets'
 import type { TalentSheetElementKey } from '../consts'
 import { charTemplates } from '../util'
@@ -74,22 +74,18 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('skill.skillParams.0'),
-          fieldRef: formula.skill.tag,
-        },
-        {
           title: ct.chg('skill.skillParams.1'),
-          fieldRef: formula.skill_stamina.tag,
+          fieldValue: '',
           unit: '/s',
         },
         {
           title: ct.chg('skill.skillParams.2'),
-          fieldRef: formula.skill_duration.tag,
+          fieldValue: '',
           unit: 's',
         },
         {
           title: ct.chg('skill.skillParams.3'),
-          fieldRef: formula.skill_cd.tag,
+          fieldValue: '',
           unit: 's',
         },
       ],
@@ -104,10 +100,6 @@ const sheet: UISheet<TalentSheetElementKey> = {
           fieldRef: formula.burst.tag,
         },
         {
-          title: ct.chg('burst.skillParams.1'),
-          fieldRef: formula.burst_enterExit.tag,
-        },
-        {
           title: ct.chg('burst.skillParams.2'),
           fieldRef: formula.burst_regen.tag,
         },
@@ -117,31 +109,20 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
         {
           title: stg('duration'),
-          fieldRef: formula.burst_duration.tag,
+          fieldValue: '',
           unit: 's',
         },
         {
           title: ct.chg('burst.skillParams.4'),
-          fieldRef: formula.burst_cd.tag,
+          fieldValue: '',
           unit: 's',
         },
         {
           title: ct.chg('burst.skillParams.5'),
-          fieldRef: formula.burst_enerCost.tag,
+          fieldValue: '',
         },
       ],
     },
-    charConditionalDocument(key, cond.c4, { teamBuff: true }),
-    charConditionalDocument(key, cond.c6, {
-      teamBuff: true,
-      fields: [
-        {
-          title: st('dmgRed_'),
-          fieldRef: formula.c6_dmgRed_.tag,
-          unit: '%',
-        },
-      ],
-    }),
   ]),
   passive1: ct.talentTem('passive1', [
     {
@@ -177,9 +158,13 @@ const sheet: UISheet<TalentSheetElementKey> = {
     charConditionalDocument(key, cond.c2, { teamBuff: true }),
   ]),
   constellation3: ct.talentTem('constellation3'),
-  constellation4: ct.talentTem('constellation4'),
+  constellation4: ct.talentTem('constellation4', [
+    charConditionalDocument(key, cond.c4, { teamBuff: true }),
+  ]),
   constellation5: ct.talentTem('constellation5'),
-  constellation6: ct.talentTem('constellation6'),
+  constellation6: ct.talentTem('constellation6', [
+    charConditionalDocument(key, cond.c6, { teamBuff: true }),
+  ]),
 }
 
 export default sheet

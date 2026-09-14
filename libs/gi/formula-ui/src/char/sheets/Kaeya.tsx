@@ -80,13 +80,9 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('skill.skillParams.0'),
-          fieldRef: formula.skill.tag,
-        },
-        {
           title: ct.chg('skill.skillParams.1'),
-          fieldRef: formula.skill_cd.tag,
           unit: 's',
+          fieldRef: formula.skill_cd.tag,
         },
       ],
     },
@@ -100,14 +96,18 @@ const sheet: UISheet<TalentSheetElementKey> = {
           fieldRef: formula.burst.tag,
         },
         {
-          title: ct.chg('burst.skillParams.1'),
-          fieldRef: formula.burst_cd.tag,
+          title: ct.chg('burst.skillParams.2'),
           unit: 's',
+          fieldRef: formula.burst_duration.tag,
         },
         {
           title: ct.chg('burst.skillParams.2'),
-          fieldRef: formula.burst_duration.tag,
+          fieldValue: '',
+        },
+        {
+          title: ct.chg('burst.skillParams.1'),
           unit: 's',
+          fieldRef: formula.burst_cd.tag,
         },
         {
           title: ct.chg('burst.skillParams.3'),

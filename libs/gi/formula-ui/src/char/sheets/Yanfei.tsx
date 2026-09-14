@@ -19,12 +19,27 @@ const sheet: UISheet<TalentSheetElementKey> = {
     },
     {
       type: 'fields',
-      fields: [formula.normal_0, formula.normal_1, formula.normal_2].map(
-        ({ tag }, i) => ({
-          title: ct.chg(`auto.skillParams.${i}`),
-          fieldRef: tag,
-        })
-      ),
+      fields: [
+        {
+          title: ct.chg('auto.skillParams.4'),
+          fieldRef: formula.charged_stamina.tag,
+        },
+        {
+          title: st('staminaDec_'),
+          subtitle: ct.ch('perSeal'),
+          fieldValue: '',
+          unit: '%',
+        },
+        {
+          title: ct.ch('maxSeals'),
+          fieldValue: '',
+        },
+        {
+          title: ct.chg('auto.skillParams.6'),
+          fieldValue: '',
+          unit: 's',
+        },
+      ],
     },
     {
       type: 'text',
@@ -54,13 +69,20 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
       ],
     },
-    charConditionalDocument(key, cond.p1Seals),
     {
       type: 'fields',
       fields: [
         {
-          title: ct.ch('passive2.key'),
-          fieldRef: formula.a4.tag,
+          title: stg('plunging.dmg'),
+          fieldRef: formula.plunging_dmg.tag,
+        },
+        {
+          title: stg('plunging.low'),
+          fieldRef: formula.plunging_low.tag,
+        },
+        {
+          title: stg('plunging.high'),
+          fieldRef: formula.plunging_high.tag,
         },
       ],
     },
@@ -91,13 +113,9 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('skill.skillParams.0'),
-          fieldRef: formula.skill.tag,
-        },
-        {
           title: stg('cd'),
-          fieldRef: formula.skill_cd.tag,
           unit: 's',
+          fieldRef: formula.skill_cd.tag,
         },
       ],
     },
@@ -111,15 +129,23 @@ const sheet: UISheet<TalentSheetElementKey> = {
           fieldRef: formula.burst.tag,
         },
         {
+          title: ct.ch('burst.grantMax'),
+          fieldValue: '',
+        },
+        {
           title: stg('cd'),
-          fieldRef: formula.burst_cd.tag,
           unit: 's',
+          fieldRef: formula.burst_cd.tag,
         },
         {
           title: stg('energyCost'),
           fieldRef: formula.burst_enerCost.tag,
         },
       ],
+    },
+    {
+      type: 'text',
+      text: ct.ch('burst.grantMax'),
     },
     charConditionalDocument(key, cond.afterBurst, {
       fields: [
@@ -136,7 +162,9 @@ const sheet: UISheet<TalentSheetElementKey> = {
       ],
     }),
   ]),
-  passive1: ct.talentTem('passive1'),
+  passive1: ct.talentTem('passive1', [
+    charConditionalDocument(key, cond.p1Seals),
+  ]),
   passive2: ct.talentTem('passive2'),
   passive3: ct.talentTem('passive3'),
   constellation1: ct.talentTem('constellation1'),
@@ -149,18 +177,20 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: stg('dmgAbsorption'),
-          fieldRef: formula.c4_shield.tag,
-        },
-        {
-          title: st('dmgAbsorption.pyro'),
-          fieldRef: formula.c4_pyroShield.tag,
+          title: stg('duration'),
+          fieldValue: '',
+          unit: 's',
         },
       ],
     },
   ]),
   constellation5: ct.talentTem('constellation5'),
-  constellation6: ct.talentTem('constellation6'),
+  constellation6: ct.talentTem('constellation6', [
+    {
+      type: 'text',
+      text: ct.ch('c6.maxSealInc'),
+    },
+  ]),
 }
 
 export default sheet

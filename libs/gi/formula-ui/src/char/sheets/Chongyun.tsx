@@ -37,22 +37,14 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('auto.skillParams.4'),
-          fieldRef: formula.charged_spin.tag,
-        },
-        {
-          title: ct.chg('auto.skillParams.5'),
-          fieldRef: formula.charged_final.tag,
-        },
-        {
           title: ct.chg('auto.skillParams.6'),
-          fieldRef: formula.charged_stamina.tag,
           unit: '/s',
+          fieldRef: formula.charged_stamina.tag,
         },
         {
           title: ct.chg('auto.skillParams.7'),
-          fieldRef: formula.charged_duration.tag,
           unit: 's',
+          fieldRef: formula.charged_duration.tag,
         },
       ],
     },
@@ -83,18 +75,14 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('skill.skillParams.0'),
-          fieldRef: formula.skill.tag,
-        },
-        {
           title: ct.chg('skill.skillParams.2'),
-          fieldRef: formula.skill_fieldDuration.tag,
           unit: 's',
+          fieldRef: formula.skill_fieldDuration.tag,
         },
         {
           title: ct.chg('skill.skillParams.3'),
-          fieldRef: formula.skill_cd.tag,
           unit: 's',
+          fieldRef: formula.skill_cd.tag,
         },
       ],
     },
@@ -104,12 +92,11 @@ const sheet: UISheet<TalentSheetElementKey> = {
       fields: [
         {
           title: ct.ch('infusion'),
-          variant: 'cryo',
           fieldValue: '',
         },
         {
           title: ct.chg('skill.skillParams.1'),
-          fieldRef: formula.skill_infusionDuration.tag,
+          fieldValue: '',
           unit: 's',
         },
       ],
@@ -125,12 +112,16 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
         {
           title: ct.chg('burst.skillParams.1'),
-          fieldRef: formula.burst_cd.tag,
           unit: 's',
+          fieldRef: formula.burst_cd.tag,
         },
         {
           title: ct.chg('burst.skillParams.2'),
           fieldRef: formula.burst_enerCost.tag,
+        },
+        {
+          title: ct.ch('blades'),
+          fieldValue: '',
         },
       ],
     },

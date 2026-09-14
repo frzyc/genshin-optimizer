@@ -38,8 +38,8 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('auto.skillParams.5'),
-          fieldRef: formula.charged.tag,
+          title: ct.chg('auto.skillParams.6'),
+          fieldValue: '',
         },
       ],
     },
@@ -73,10 +73,13 @@ const sheet: UISheet<TalentSheetElementKey> = {
           title: ct.chg('skill.skillParams.0'),
           fieldRef: formula.skill.tag,
         },
+        {
+          title: ct.chg('skill.skillParams.1'),
+          fieldValue: '',
+          unit: 's',
+        },
       ],
     },
-    charConditionalDocument(key, cond.afterChili, { teamBuff: true }),
-    charConditionalDocument(key, cond.afterGuobaHit, { teamBuff: true }),
   ]),
   burst: ct.talentTem('burst', [
     {
@@ -98,21 +101,39 @@ const sheet: UISheet<TalentSheetElementKey> = {
           title: ct.chg('burst.skillParams.3'),
           fieldRef: formula.burst_dmgNado.tag,
         },
+        {
+          title: stg('duration'),
+          fieldValue: '',
+          unit: 's',
+        },
+        {
+          title: stg('cd'),
+          fieldValue: '',
+          unit: 's',
+        },
+        {
+          title: stg('energyCost'),
+          fieldValue: '',
+        },
       ],
     },
-    charConditionalDocument(key, cond.afterPyronado, { teamBuff: true }),
   ]),
   passive1: ct.talentTem('passive1'),
-  passive2: ct.talentTem('passive2'),
+  passive2: ct.talentTem('passive2', [
+    charConditionalDocument(key, cond.afterChili, { teamBuff: true }),
+  ]),
   passive3: ct.talentTem('passive3'),
-  constellation1: ct.talentTem('constellation1'),
+  constellation1: ct.talentTem('constellation1', [
+    charConditionalDocument(key, cond.afterGuobaHit, { teamBuff: true }),
+  ]),
   constellation2: ct.talentTem('constellation2', [
     {
       type: 'fields',
       fields: [
         {
-          title: ct.ch('explosionDMG'),
-          fieldRef: formula.c2.tag,
+          title: stg('duration'),
+          fieldValue: '',
+          unit: 's',
         },
       ],
     },
@@ -120,7 +141,9 @@ const sheet: UISheet<TalentSheetElementKey> = {
   constellation3: ct.talentTem('constellation3'),
   constellation4: ct.talentTem('constellation4'),
   constellation5: ct.talentTem('constellation5'),
-  constellation6: ct.talentTem('constellation6'),
+  constellation6: ct.talentTem('constellation6', [
+    charConditionalDocument(key, cond.afterPyronado, { teamBuff: true }),
+  ]),
 }
 
 export default sheet

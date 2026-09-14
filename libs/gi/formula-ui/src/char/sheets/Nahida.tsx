@@ -1,7 +1,7 @@
 import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { conditionals, formulas } from '@genshin-optimizer/gi/formula'
-import { stg } from '../../util'
+import { st, stg } from '../../util'
 import { charConditionalDocument } from '../charUiSheets'
 import type { TalentSheetElementKey } from '../consts'
 import { charTemplates } from '../util'
@@ -40,6 +40,10 @@ const sheet: UISheet<TalentSheetElementKey> = {
           title: ct.chg('auto.skillParams.4'),
           fieldRef: formula.charged.tag,
         },
+        {
+          title: ct.chg('auto.skillParams.5'),
+          fieldValue: '',
+        },
       ],
     },
     {
@@ -69,35 +73,70 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('skill.skillParams.0'),
-          fieldRef: formula.skill_press.tag,
+          title: ct.chg('skill.skillParams.3'),
+          fieldValue: '',
+          unit: 's',
         },
         {
-          title: ct.chg('skill.skillParams.1'),
-          fieldRef: formula.skill_hold.tag,
+          title: ct.chg('skill.skillParams.4'),
+          fieldValue: '',
+          unit: 's',
         },
         {
-          title: ct.chg('skill.skillParams.2'),
-          fieldRef: formula.karma_dmg.tag,
+          title: stg('press.cd'),
+          fieldValue: '',
+          unit: 's',
+        },
+        {
+          title: stg('hold.cd'),
+          fieldValue: '',
+          unit: 's',
         },
       ],
     },
+    charConditionalDocument(key, cond.a1ActiveInBurst, { teamBuff: true }),
   ]),
   burst: ct.talentTem('burst', [
-    charConditionalDocument(key, cond.partyInBurst),
-    charConditionalDocument(key, cond.a1ActiveInBurst, { teamBuff: true }),
+    {
+      type: 'text',
+      text: ct.ch('karmaIntervalDec'),
+    },
+    charConditionalDocument(key, cond.partyInBurst, {
+      fields: [
+        {
+          title: ct.ch('noBurstEffect'),
+          fieldValue: '',
+        },
+        {
+          title: st('durationInc'),
+          fieldValue: '',
+          unit: 's',
+        },
+      ],
+    }),
   ]),
   passive1: ct.talentTem('passive1'),
   passive2: ct.talentTem('passive2'),
   passive3: ct.talentTem('passive3'),
-  constellation1: ct.talentTem('constellation1'),
+  constellation1: ct.talentTem('constellation1', [
+    {
+      type: 'text',
+      text: ct.ch('c1Key'),
+    },
+  ]),
   constellation2: ct.talentTem('constellation2', [
-    charConditionalDocument(key, cond.c2Bloom, { teamBuff: true }),
-    charConditionalDocument(key, cond.c2QSA, { teamBuff: true }),
+    charConditionalDocument(key, cond.c2Bloom, {
+      teamBuff: true,
+    }),
+    charConditionalDocument(key, cond.c2QSA, {
+      teamBuff: true,
+    }),
   ]),
   constellation3: ct.talentTem('constellation3'),
   constellation4: ct.talentTem('constellation4', [
-    charConditionalDocument(key, cond.c4Count),
+    charConditionalDocument(key, cond.c4Count, {
+      teamBuff: true,
+    }),
   ]),
   constellation5: ct.talentTem('constellation5'),
   constellation6: ct.talentTem('constellation6'),

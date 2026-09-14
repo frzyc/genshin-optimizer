@@ -57,6 +57,10 @@ const sheet: UISheet<TalentSheetElementKey> = {
           title: ct.chg('auto.skillParams.6'),
           fieldRef: formula.charged.tag,
         },
+        {
+          title: ct.chg('auto.skillParams.7'),
+          fieldValue: '',
+        },
       ],
     },
     {
@@ -86,8 +90,14 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('skill.skillParams.2'),
-          fieldRef: formula.skill.tag,
+          title: ct.chg('skill.skillParams.3'),
+          fieldValue: '',
+          unit: 's',
+        },
+        {
+          title: ct.chg('skill.skillParams.5'),
+          fieldValue: '',
+          unit: 's',
         },
       ],
     },
@@ -118,16 +128,21 @@ const sheet: UISheet<TalentSheetElementKey> = {
           fieldRef: formula.burst.tag,
         },
         {
-          title: ct.chg('burst.skillParams.1'),
-          fieldRef: formula.burst_lowHp.tag,
-        },
-        {
           title: ct.chg('burst.skillParams.2'),
           fieldRef: formula.burst_regen.tag,
         },
         {
           title: ct.chg('burst.skillParams.3'),
           fieldRef: formula.burst_lowHpRegen.tag,
+        },
+        {
+          title: ct.chg('burst.skillParams.4'),
+          fieldValue: '',
+          unit: 's',
+        },
+        {
+          title: ct.chg('burst.skillParams.5'),
+          fieldValue: '',
         },
       ],
     },
@@ -140,7 +155,12 @@ const sheet: UISheet<TalentSheetElementKey> = {
   ]),
   passive3: ct.talentTem('passive3'),
   constellation1: ct.talentTem('constellation1'),
-  constellation2: ct.talentTem('constellation2'),
+  constellation2: ct.talentTem('constellation2', [
+    {
+      type: 'text',
+      text: ct.ch('constellation2.applyBloodBlossom'),
+    },
+  ]),
   constellation3: ct.talentTem('constellation3'),
   constellation4: ct.talentTem('constellation4', [
     charConditionalDocument(key, cond.GardenOfEternalRest, { teamBuff: true }),

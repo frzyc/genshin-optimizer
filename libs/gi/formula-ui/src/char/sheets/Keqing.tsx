@@ -39,17 +39,8 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('auto.skillParams.5'),
-          fieldRef: formula.charged_1.tag,
-        },
-        {
-          title: ct.chg('auto.skillParams.5'),
-          fieldRef: formula.charged_2.tag,
-        },
-        {
           title: ct.chg('auto.skillParams.6'),
           fieldRef: formula.charged_stamina.tag,
-          unit: '/s',
         },
       ],
     },
@@ -93,8 +84,8 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
         {
           title: stg('cd'),
-          fieldRef: formula.skill_cd.tag,
           unit: 's',
+          fieldRef: formula.skill_cd.tag,
         },
       ],
     },
@@ -102,7 +93,6 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [{ title: ct.ch('c1DMG'), fieldRef: formula.c1.tag }],
     },
-    charConditionalDocument(key, cond.afterRecast, { label: ct.ch('recast') }),
   ]),
   burst: ct.talentTem('burst', [
     {
@@ -114,6 +104,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
         {
           title: ct.chg('burst.skillParams.1'),
+          multi: 8,
           fieldRef: formula.burst_slash.tag,
         },
         {
@@ -122,19 +113,22 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
         {
           title: stg('cd'),
-          fieldRef: formula.burst_cd.tag,
           unit: 's',
+          fieldRef: formula.burst_cd.tag,
         },
         {
           title: stg('energyCost'),
-          fieldRef: formula.burst_enerCost.tag,
+          fieldValue: '',
         },
       ],
     },
+  ]),
+  passive1: ct.talentTem('passive1', [
+    charConditionalDocument(key, cond.afterRecast, { label: ct.ch('recast') }),
+  ]),
+  passive2: ct.talentTem('passive2', [
     charConditionalDocument(key, cond.afterBurst),
   ]),
-  passive1: ct.talentTem('passive1'),
-  passive2: ct.talentTem('passive2'),
   passive3: ct.talentTem('passive3'),
   constellation1: ct.talentTem('constellation1'),
   constellation2: ct.talentTem('constellation2'),

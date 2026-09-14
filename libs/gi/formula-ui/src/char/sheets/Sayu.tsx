@@ -47,8 +47,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
         {
           title: ct.chg('auto.skillParams.6'),
-          fieldRef: formula.charged_stamina.tag,
-          unit: '/s',
+          fieldValue: '',
         },
       ],
     },
@@ -79,30 +78,13 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('skill.skillParams.0'),
-          fieldRef: formula.wheelDmg.tag,
-        },
-        {
-          title: ct.chg('skill.skillParams.1'),
-          fieldRef: formula.kickPressDmg.tag,
-        },
-        {
-          title: ct.chg('skill.skillParams.2'),
-          fieldRef: formula.kickHoldDmg.tag,
-        },
-        {
           title: ct.chg('skill.skillParams.5'),
-          fieldRef: formula.skill_duration.tag,
           unit: 's',
+          fieldRef: formula.skill_duration.tag,
         },
         {
           title: stg('cd'),
-          fieldRef: formula.skill_cdMin.tag,
-          unit: 's',
-        },
-        {
-          title: stg('hold.cd'),
-          fieldRef: formula.skill_cdMax.tag,
+          fieldValue: '',
           unit: 's',
         },
       ],
@@ -144,47 +126,14 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
       ],
     }),
-    charConditionalDocument(key, cond.c2SkillStack, {
-      label: ct.ch('c2Cond'),
-    }),
   ]),
   burst: ct.talentTem('burst', [
     {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('burst.skillParams.0'),
-          fieldRef: formula.pressDmg.tag,
-        },
-        {
-          title: ct.chg('burst.skillParams.1'),
-          fieldRef: formula.pressHeal.tag,
-        },
-        {
-          title: ct.chg('burst.skillParams.2'),
-          fieldRef: formula.darumaDmg.tag,
-        },
-        {
-          title: ct.chg('burst.skillParams.3'),
-          fieldRef: formula.darumaHeal.tag,
-        },
-        {
           title: ct.ch('burstHits'),
-          fieldValue: '7',
-        },
-        {
-          title: ct.chg('burst.skillParams.4'),
-          fieldRef: formula.burst_duration.tag,
-          unit: 's',
-        },
-        {
-          title: ct.chg('burst.skillParams.5'),
-          fieldRef: formula.burst_cd.tag,
-          unit: 's',
-        },
-        {
-          title: ct.chg('burst.skillParams.6'),
-          fieldRef: formula.burst_enerCost.tag,
+          fieldValue: '',
         },
       ],
     },
@@ -213,7 +162,11 @@ const sheet: UISheet<TalentSheetElementKey> = {
   ]),
   passive3: ct.talentTem('passive3'),
   constellation1: ct.talentTem('constellation1'),
-  constellation2: ct.talentTem('constellation2'),
+  constellation2: ct.talentTem('constellation2', [
+    charConditionalDocument(key, cond.c2SkillStack, {
+      label: ct.ch('c2Cond'),
+    }),
+  ]),
   constellation3: ct.talentTem('constellation3'),
   constellation4: ct.talentTem('constellation4'),
   constellation5: ct.talentTem('constellation5'),

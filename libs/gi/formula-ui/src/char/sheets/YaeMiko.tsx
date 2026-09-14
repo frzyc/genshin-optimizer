@@ -19,12 +19,16 @@ const sheet: UISheet<TalentSheetElementKey> = {
     },
     {
       type: 'fields',
-      fields: [formula.normal_0, formula.normal_1, formula.normal_2].map(
-        ({ tag }, i) => ({
-          title: ct.chg(`auto.skillParams.${i}`),
-          fieldRef: tag,
-        })
-      ),
+      fields: [
+        {
+          title: ct.chg('auto.skillParams.3'),
+          fieldRef: formula.charged.tag,
+        },
+        {
+          title: ct.chg('auto.skillParams.4'),
+          fieldRef: formula.charged_stamina.tag,
+        },
+      ],
     },
     {
       type: 'text',
@@ -34,12 +38,16 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('auto.skillParams.3'),
-          fieldRef: formula.charged.tag,
+          title: stg('plunging.dmg'),
+          fieldRef: formula.plunging_dmg.tag,
         },
         {
-          title: ct.chg('auto.skillParams.4'),
-          fieldRef: formula.charged_stamina.tag,
+          title: stg('plunging.low'),
+          fieldRef: formula.plunging_low.tag,
+        },
+        {
+          title: stg('plunging.high'),
+          fieldRef: formula.plunging_high.tag,
         },
       ],
     },
@@ -70,40 +78,23 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('skill.skillParams.0'),
-          fieldRef: formula.skill_1.tag,
-        },
-        {
-          title: ct.chg('skill.skillParams.1'),
-          fieldRef: formula.skill_2.tag,
-        },
-        {
-          title: ct.chg('skill.skillParams.2'),
-          fieldRef: formula.skill_3.tag,
-        },
-        {
-          title: ct.chg('skill.skillParams.3'),
-          fieldRef: formula.skill_4.tag,
-        },
-        {
           title: ct.chg('skill.skillParams.4'),
-          fieldRef: formula.skill_duration.tag,
           unit: 's',
+          fieldRef: formula.skill_duration.tag,
         },
         {
           title: ct.chg('skill.skillParams.5'),
           fieldRef: formula.skill_cd.tag,
-          unit: 's',
         },
         {
           title: st('charges'),
-          fieldValue: '3',
+          fieldValue: '',
         },
       ],
     },
-    charConditionalDocument(key, cond.c4, {
+    charConditionalDocument(key, cond.lockRevelation, { teamBuff: true }),
+    charConditionalDocument(key, cond.lockStellarRadianceSc, {
       teamBuff: true,
-      label: ct.ch('c4'),
     }),
   ]),
   burst: ct.talentTem('burst', [
@@ -111,21 +102,8 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('burst.skillParams.0'),
-          fieldRef: formula.burst.tag,
-        },
-        {
-          title: ct.chg('burst.skillParams.1'),
-          fieldRef: formula.burst_tenko.tag,
-        },
-        {
-          title: ct.chg('burst.skillParams.2'),
-          fieldRef: formula.burst_cd.tag,
-          unit: 's',
-        },
-        {
-          title: ct.chg('burst.skillParams.3'),
-          fieldRef: formula.burst_enerCost.tag,
+          title: st('elementalReaction.stellar.gainRadianceSc'),
+          fieldValue: '',
         },
       ],
     },
@@ -147,7 +125,6 @@ const sheet: UISheet<TalentSheetElementKey> = {
   ]),
   passive2: ct.talentTem('passive2'),
   passive3: ct.talentTem('passive3', [
-    charConditionalDocument(key, cond.lockRevelation, { teamBuff: true }),
     {
       type: 'fields',
       fields: [
@@ -173,9 +150,6 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
       ],
     },
-    charConditionalDocument(key, cond.lockStellarRadianceSc, {
-      teamBuff: true,
-    }),
   ]),
   constellation1: ct.talentTem('constellation1', [
     charConditionalDocument(key, cond.c1, {
@@ -190,9 +164,19 @@ const sheet: UISheet<TalentSheetElementKey> = {
     }),
   ]),
   constellation3: ct.talentTem('constellation3'),
-  constellation4: ct.talentTem('constellation4'),
+  constellation4: ct.talentTem('constellation4', [
+    charConditionalDocument(key, cond.c4, {
+      teamBuff: true,
+      label: ct.ch('c4'),
+    }),
+  ]),
   constellation5: ct.talentTem('constellation5'),
-  constellation6: ct.talentTem('constellation6'),
+  constellation6: ct.talentTem('constellation6', [
+    {
+      type: 'text',
+      text: ct.ch('c6'),
+    },
+  ]),
 }
 
 export default sheet

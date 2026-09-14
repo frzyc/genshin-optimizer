@@ -73,10 +73,6 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('skill.skillParams.0'),
-          fieldRef: formula.skill.tag,
-        },
-        {
           title: ct.chg('skill.skillParams.1'),
           fieldRef: formula.skill_minShield.tag,
         },
@@ -94,13 +90,13 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
         {
           title: stg('duration'),
-          fieldRef: formula.skill_duration.tag,
+          fieldValue: '',
           unit: 's',
         },
         {
           title: stg('cd'),
-          fieldRef: formula.skill_cd.tag,
           unit: 's',
+          fieldRef: formula.skill_cd.tag,
         },
       ],
     },
@@ -109,14 +105,6 @@ const sheet: UISheet<TalentSheetElementKey> = {
     {
       type: 'fields',
       fields: [
-        {
-          title: ct.chg('burst.skillParams.0'),
-          fieldRef: formula.pressDmg.tag,
-        },
-        {
-          title: ct.chg('burst.skillParams.1'),
-          fieldRef: formula.collapseDmg.tag,
-        },
         {
           title: ct.chg('burst.skillParams.2'),
           fieldRef: formula.burst_shield.tag,
@@ -127,18 +115,18 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
         {
           title: ct.chg('burst.skillParams.3'),
-          fieldRef: formula.burst_shieldDuration.tag,
           unit: 's',
+          fieldRef: formula.burst_shieldDuration.tag,
         },
         {
           title: ct.chg('burst.skillParams.4'),
-          fieldRef: formula.burst_scorchingDuration.tag,
+          fieldValue: '',
           unit: 's',
         },
         {
           title: stg('cd'),
-          fieldRef: formula.burst_cd.tag,
           unit: 's',
+          fieldRef: formula.burst_cd.tag,
         },
         {
           title: stg('energyCost'),
@@ -146,16 +134,13 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
       ],
     },
+  ]),
+  passive1: ct.talentTem('passive1', [
     charConditionalDocument(key, cond.p1BarrierStacks, {
       teamBuff: true,
       label: ct.ch('refreshBarrier'),
     }),
-    charConditionalDocument(key, cond.c6AfterBarrier, {
-      teamBuff: true,
-      label: ct.ch('refreshBarrier'),
-    }),
   ]),
-  passive1: ct.talentTem('passive1'),
   passive2: ct.talentTem('passive2', [
     {
       type: 'fields',
@@ -180,6 +165,10 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
       ],
     },
+    {
+      type: 'text',
+      text: ct.ch('c2'),
+    },
   ]),
   constellation3: ct.talentTem('constellation3'),
   constellation4: ct.talentTem('constellation4', [
@@ -194,7 +183,12 @@ const sheet: UISheet<TalentSheetElementKey> = {
     },
   ]),
   constellation5: ct.talentTem('constellation5'),
-  constellation6: ct.talentTem('constellation6'),
+  constellation6: ct.talentTem('constellation6', [
+    charConditionalDocument(key, cond.c6AfterBarrier, {
+      teamBuff: true,
+      label: ct.ch('refreshBarrier'),
+    }),
+  ]),
 }
 
 export default sheet

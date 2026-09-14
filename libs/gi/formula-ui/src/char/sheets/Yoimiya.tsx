@@ -79,10 +79,14 @@ const sheet: UISheet<TalentSheetElementKey> = {
       fields: [
         {
           title: ct.chg('skill.skillParams.2'),
-          fieldRef: formula.skill_cd.tag,
           unit: 's',
+          fieldRef: formula.skill_cd.tag,
         },
       ],
+    },
+    {
+      type: 'text',
+      text: ct.ch('normPyroInfus'),
     },
     charConditionalDocument(key, cond.skill, {
       fields: [
@@ -97,9 +101,6 @@ const sheet: UISheet<TalentSheetElementKey> = {
           unit: 's',
         },
       ],
-    }),
-    charConditionalDocument(key, cond.a1, {
-      label: ct.chg('passive1.name'),
     }),
   ]),
   burst: ct.talentTem('burst', [
@@ -116,28 +117,33 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
         {
           title: ct.chg('burst.skillParams.2'),
-          fieldRef: formula.burst_duration.tag,
+          fieldValue: '',
           unit: 's',
         },
         {
           title: ct.chg('burst.skillParams.3'),
-          fieldRef: formula.burst_cd.tag,
           unit: 's',
+          fieldRef: formula.burst_cd.tag,
         },
         {
           title: ct.chg('burst.skillParams.4'),
-          fieldRef: formula.burst_enerCost.tag,
+          fieldValue: '',
         },
       ],
     },
-    charConditionalDocument(key, cond.c1, { label: ct.ch('c1') }),
   ]),
-  passive1: ct.talentTem('passive1'),
+  passive1: ct.talentTem('passive1', [
+    charConditionalDocument(key, cond.a1, {
+      label: ct.chg('passive1.name'),
+    }),
+  ]),
   passive2: ct.talentTem('passive2', [
     charConditionalDocument(key, cond.burst, { teamBuff: true }),
   ]),
   passive3: ct.talentTem('passive3'),
-  constellation1: ct.talentTem('constellation1'),
+  constellation1: ct.talentTem('constellation1', [
+    charConditionalDocument(key, cond.c1, { label: ct.ch('c1') }),
+  ]),
   constellation2: ct.talentTem('constellation2', [
     charConditionalDocument(key, cond.c2, { label: ct.ch('c2') }),
   ]),

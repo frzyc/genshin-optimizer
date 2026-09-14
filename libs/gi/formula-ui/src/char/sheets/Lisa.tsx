@@ -1,7 +1,7 @@
 import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { conditionals, formulas } from '@genshin-optimizer/gi/formula'
-import { stg } from '../../util'
+import { st, stg } from '../../util'
 import { charConditionalDocument } from '../charUiSheets'
 import type { TalentSheetElementKey } from '../consts'
 import { charTemplates } from '../util'
@@ -40,6 +40,10 @@ const sheet: UISheet<TalentSheetElementKey> = {
           title: ct.chg('auto.skillParams.4'),
           fieldRef: formula.charged.tag,
         },
+        {
+          title: ct.chg('auto.skillParams.5'),
+          fieldValue: '',
+        },
       ],
     },
     {
@@ -73,20 +77,14 @@ const sheet: UISheet<TalentSheetElementKey> = {
           fieldRef: formula.skill_press.tag,
         },
         {
-          title: ct.chg('skill.skillParams.2'),
-          fieldRef: formula.skill_stack0.tag,
+          title: stg('press.cd'),
+          fieldValue: '',
+          unit: 's',
         },
         {
-          title: ct.chg('skill.skillParams.3'),
-          fieldRef: formula.skill_stack1.tag,
-        },
-        {
-          title: ct.chg('skill.skillParams.4'),
-          fieldRef: formula.skill_stack2.tag,
-        },
-        {
-          title: ct.chg('skill.skillParams.5'),
-          fieldRef: formula.skill_stack3.tag,
+          title: stg('hold.cd'),
+          fieldValue: '',
+          unit: 's',
         },
       ],
     },
@@ -103,6 +101,20 @@ const sheet: UISheet<TalentSheetElementKey> = {
           title: ct.chg('burst.skillParams.0'),
           fieldRef: formula.burst_tick.tag,
         },
+        {
+          title: ct.chg('burst.skillParams.1'),
+          fieldValue: '',
+          unit: 's',
+        },
+        {
+          title: ct.chg('burst.skillParams.2'),
+          fieldValue: '',
+          unit: 's',
+        },
+        {
+          title: ct.chg('burst.skillParams.3'),
+          fieldValue: '',
+        },
       ],
     },
   ]),
@@ -113,7 +125,14 @@ const sheet: UISheet<TalentSheetElementKey> = {
   passive3: ct.talentTem('passive3'),
   constellation1: ct.talentTem('constellation1'),
   constellation2: ct.talentTem('constellation2', [
-    charConditionalDocument(key, cond.LisaC2),
+    charConditionalDocument(key, cond.LisaC2, {
+      fields: [
+        {
+          title: st('incInterRes'),
+          fieldValue: '',
+        },
+      ],
+    }),
   ]),
   constellation3: ct.talentTem('constellation3'),
   constellation4: ct.talentTem('constellation4'),

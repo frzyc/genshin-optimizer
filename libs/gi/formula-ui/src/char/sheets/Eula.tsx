@@ -38,22 +38,14 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('auto.skillParams.5'),
-          fieldRef: formula.charged_spin.tag,
-        },
-        {
-          title: ct.chg('auto.skillParams.6'),
-          fieldRef: formula.charged_final.tag,
-        },
-        {
           title: ct.chg('auto.skillParams.7'),
-          fieldRef: formula.charged_stamina.tag,
           unit: '/s',
+          fieldRef: formula.charged_stamina.tag,
         },
         {
           title: ct.chg('auto.skillParams.8'),
-          fieldRef: formula.charged_duration.tag,
           unit: 's',
+          fieldRef: formula.charged_duration.tag,
         },
       ],
     },
@@ -97,17 +89,17 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
         {
           title: ct.chg('skill.skillParams.8'),
-          fieldRef: formula.skill_pressCd.tag,
+          fieldValue: '',
           unit: 's',
         },
         {
           title: stg('hold.cd'),
-          fieldRef: formula.skill_holdCd.tag,
+          fieldValue: '',
           unit: 's',
         },
         {
           title: ct.chg('burst.skillParams.3'),
-          fieldValue: '2',
+          fieldValue: '',
         },
       ],
     },
@@ -128,29 +120,24 @@ const sheet: UISheet<TalentSheetElementKey> = {
           fieldRef: formula.burst.tag,
         },
         {
-          title: ct.ch('burstC.dmg'),
-          fieldRef: formula.burst_lightfall.tag,
-        },
-        {
           title: stg('duration'),
-          fieldValue: '7',
+          fieldValue: '',
           unit: 's',
         },
         {
           title: ct.chg('burst.skillParams.4'),
-          fieldRef: formula.burst_cd.tag,
+          fieldValue: '',
           unit: 's',
         },
         {
           title: ct.chg('burst.skillParams.5'),
-          fieldRef: formula.burst_enerCost.tag,
+          fieldValue: '',
         },
       ],
     },
     charConditionalDocument(key, cond.LightfallSword, {
       label: ct.ch('burstC.name'),
     }),
-    charConditionalDocument(key, cond.LightfallSwordC4),
   ]),
   passive1: ct.talentTem('passive1', [
     {
@@ -172,7 +159,9 @@ const sheet: UISheet<TalentSheetElementKey> = {
   ]),
   constellation2: ct.talentTem('constellation2'),
   constellation3: ct.talentTem('constellation3'),
-  constellation4: ct.talentTem('constellation4'),
+  constellation4: ct.talentTem('constellation4', [
+    charConditionalDocument(key, cond.LightfallSwordC4),
+  ]),
   constellation5: ct.talentTem('constellation5'),
   constellation6: ct.talentTem('constellation6', [
     {

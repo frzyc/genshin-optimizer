@@ -1,7 +1,7 @@
 import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { conditionals, formulas } from '@genshin-optimizer/gi/formula'
-import { st, stg } from '../../util'
+import { stg } from '../../util'
 import { charConditionalDocument } from '../charUiSheets'
 import type { TalentSheetElementKey } from '../consts'
 import { charTemplates } from '../util'
@@ -82,11 +82,13 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
         {
           title: ct.chg('skill.skillParams.2'),
-          fieldRef: formula.skill_cd.tag,
           unit: 's',
+          fieldRef: formula.skill_cd.tag,
         },
       ],
     },
+    charConditionalDocument(key, cond.lockHomework, { teamBuff: true }),
+    charConditionalDocument(key, cond.lockStacks, { teamBuff: true }),
   ]),
   burst: ct.talentTem('burst', [
     {
@@ -94,8 +96,8 @@ const sheet: UISheet<TalentSheetElementKey> = {
       fields: [
         {
           title: ct.chg('burst.skillParams.0'),
-          fieldRef: formula.burst_bubbleDuration.tag,
           unit: 's',
+          fieldRef: formula.burst_bubbleDuration.tag,
         },
         {
           title: ct.chg('burst.skillParams.1'),
@@ -103,8 +105,8 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
         {
           title: stg('cd'),
-          fieldRef: formula.burst_cd.tag,
           unit: 's',
+          fieldRef: formula.burst_cd.tag,
         },
         {
           title: stg('energyCost'),
@@ -119,13 +121,9 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: st('activationStam'),
-          fieldRef: formula.sprint_active_stam.tag,
-        },
-        {
-          title: st('stamDrain'),
-          fieldRef: formula.sprint_drain_stam.tag,
-          unit: '/s',
+          title: stg('duration'),
+          fieldValue: '',
+          unit: 's',
         },
       ],
     },
@@ -154,8 +152,6 @@ const sheet: UISheet<TalentSheetElementKey> = {
   constellation5: ct.talentTem('constellation5'),
   constellation6: ct.talentTem('constellation6', [
     charConditionalDocument(key, cond.RhetoricsOfCalamitas),
-    charConditionalDocument(key, cond.lockHomework, { teamBuff: true }),
-    charConditionalDocument(key, cond.lockStacks, { teamBuff: true }),
   ]),
 }
 

@@ -34,19 +34,6 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.ch('c6.dmg'),
-          fieldRef: formula.c6.tag,
-        },
-      ],
-    },
-    {
-      type: 'text',
-      text: ct.chg('auto.fields.charged'),
-    },
-    {
-      type: 'fields',
-      fields: [
-        {
           title: ct.chg('auto.skillParams.4'),
           fieldRef: formula.charged_aimed.tag,
         },
@@ -58,7 +45,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
     },
     {
       type: 'text',
-      text: ct.chg('auto.fields.breakthrough'),
+      text: ct.chg('auto.fields.charged'),
     },
     {
       type: 'fields',
@@ -66,6 +53,27 @@ const sheet: UISheet<TalentSheetElementKey> = {
         {
           title: ct.chg('auto.skillParams.6'),
           fieldRef: formula.charged_barb.tag,
+        },
+      ],
+    },
+    {
+      type: 'text',
+      text: ct.chg('auto.fields.breakthrough'),
+    },
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: stg('plunging.dmg'),
+          fieldRef: formula.plunging_dmg.tag,
+        },
+        {
+          title: stg('plunging.low'),
+          fieldRef: formula.plunging_low.tag,
+        },
+        {
+          title: stg('plunging.high'),
+          fieldRef: formula.plunging_high.tag,
         },
       ],
     },
@@ -96,46 +104,35 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('skill.skillParams.0'),
-          fieldRef: formula.skill.tag,
-        },
-        {
-          title: stg('cd'),
-          fieldRef: formula.skill_cd.tag,
+          title: ct.chg('skill.skillParams.1'),
+          fieldValue: '',
           unit: 's',
         },
         {
+          title: stg('cd'),
+          unit: 's',
+          fieldRef: formula.skill_cd.tag,
+        },
+        {
           title: st('charges'),
-          fieldValue: '2',
+          fieldValue: '',
         },
       ],
     },
-    charConditionalDocument(key, cond.c4Stacks, {
-      label: ct.ch('c4.condName'),
-      teamBuff: true,
-    }),
   ]),
   burst: ct.talentTem('burst', [
     {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('burst.skillParams.0'),
-          fieldRef: formula.burst_press.tag,
-        },
-        {
-          title: ct.chg('burst.skillParams.1'),
-          fieldRef: formula.burst_throw.tag,
-        },
-        {
           title: stg('duration'),
-          fieldRef: formula.burst_duration.tag,
           unit: 's',
+          fieldRef: formula.burst_duration.tag,
         },
         {
           title: stg('cd'),
-          fieldRef: formula.burst_cd.tag,
           unit: 's',
+          fieldRef: formula.burst_cd.tag,
         },
         {
           title: stg('energyCost'),
@@ -143,10 +140,6 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
       ],
     },
-    charConditionalDocument(key, cond.a4Stacks, {
-      label: st('afterUse.burst'),
-      teamBuff: true,
-    }),
     {
       type: 'fields',
       fields: [
@@ -158,7 +151,12 @@ const sheet: UISheet<TalentSheetElementKey> = {
     },
   ]),
   passive1: ct.talentTem('passive1'),
-  passive2: ct.talentTem('passive2'),
+  passive2: ct.talentTem('passive2', [
+    charConditionalDocument(key, cond.a4Stacks, {
+      label: st('afterUse.burst'),
+      teamBuff: true,
+    }),
+  ]),
   passive3: ct.talentTem('passive3'),
   constellation1: ct.talentTem('constellation1', [
     {
@@ -173,7 +171,12 @@ const sheet: UISheet<TalentSheetElementKey> = {
   ]),
   constellation2: ct.talentTem('constellation2'),
   constellation3: ct.talentTem('constellation3'),
-  constellation4: ct.talentTem('constellation4'),
+  constellation4: ct.talentTem('constellation4', [
+    charConditionalDocument(key, cond.c4Stacks, {
+      label: ct.ch('c4.condName'),
+      teamBuff: true,
+    }),
+  ]),
   constellation5: ct.talentTem('constellation5'),
   constellation6: ct.talentTem('constellation6'),
 }

@@ -21,26 +21,12 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('auto.skillParams.0'),
-          fieldRef: formula.normal_0.tag,
+          title: ct.chg('auto.skillParams.4'),
+          fieldRef: formula.charged.tag,
         },
         {
-          title: ct.chg('auto.skillParams.1'),
-          fieldRef: formula.normal_1.tag,
-        },
-        {
-          title: ct.chg('auto.skillParams.2'),
-          subtitle: '(1)',
-          fieldRef: formula.normal_2.tag,
-        },
-        {
-          title: ct.chg('auto.skillParams.2'),
-          subtitle: '(2)',
-          fieldRef: formula.normal_3.tag,
-        },
-        {
-          title: ct.chg('auto.skillParams.3'),
-          fieldRef: formula.normal_4.tag,
+          title: ct.chg('auto.skillParams.5'),
+          fieldRef: formula.charged_stamina.tag,
         },
       ],
     },
@@ -52,12 +38,16 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('auto.skillParams.4'),
-          fieldRef: formula.charged.tag,
+          title: stg('plunging.dmg'),
+          fieldRef: formula.plunging_dmg.tag,
         },
         {
-          title: ct.chg('auto.skillParams.5'),
-          fieldRef: formula.charged_stamina.tag,
+          title: stg('plunging.low'),
+          fieldRef: formula.plunging_low.tag,
+        },
+        {
+          title: stg('plunging.high'),
+          fieldRef: formula.plunging_high.tag,
         },
       ],
     },
@@ -88,27 +78,23 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('skill.skillParams.0'),
-          fieldRef: formula.skill.tag,
-        },
-        {
           title: ct.chg('skill.skillParams.1'),
           fieldRef: formula.skill_heal.tag,
         },
         {
           title: ct.chg('skill.skillParams.2'),
-          fieldRef: formula.skill_throwDuration.tag,
           unit: 's',
+          fieldRef: formula.skill_throwDuration.tag,
         },
         {
           title: ct.chg('skill.skillParams.3'),
-          fieldRef: formula.skill_radishDuration.tag,
           unit: 's',
+          fieldRef: formula.skill_radishDuration.tag,
         },
         {
           title: stg('cd'),
-          fieldRef: formula.skill_cd.tag,
           unit: 's',
+          fieldRef: formula.skill_cd.tag,
         },
       ],
     },
@@ -131,25 +117,15 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
         {
           title: stg('cd'),
-          fieldRef: formula.burst_cd.tag,
           unit: 's',
+          fieldRef: formula.burst_cd.tag,
         },
         {
           title: stg('energyCost'),
-          fieldRef: formula.burst_enerCost.tag,
+          fieldValue: '',
         },
       ],
     },
-    charConditionalDocument(key, cond.adeptalLegacy, {
-      label: ct.ch('inLegacy'),
-      fields: [
-        {
-          title: ct.chg('burst.skillParams.4'),
-          fieldRef: formula.burst_duration.tag,
-          unit: 's',
-        },
-      ],
-    }),
     {
       type: 'fields',
       fields: [
@@ -163,6 +139,16 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
       ],
     },
+    charConditionalDocument(key, cond.adeptalLegacy, {
+      label: ct.ch('inLegacy'),
+      fields: [
+        {
+          title: ct.chg('burst.skillParams.4'),
+          fieldValue: '',
+          unit: 's',
+        },
+      ],
+    }),
   ]),
   passive1: ct.talentTem('passive1'),
   passive2: ct.talentTem('passive2', [
@@ -193,8 +179,18 @@ const sheet: UISheet<TalentSheetElementKey> = {
       label: ct.ch('inExplosionAoE'),
       fields: [
         {
+          title: stg('duration'),
+          fieldValue: '',
+          unit: 's',
+        },
+        {
           title: st('stamRestored'),
-          fieldRef: formula.c1_staminaRestore.tag,
+          fieldValue: '',
+        },
+        {
+          title: stg('cd'),
+          fieldValue: '',
+          unit: 's',
         },
       ],
     }),
@@ -206,8 +202,9 @@ const sheet: UISheet<TalentSheetElementKey> = {
       label: st('afterUse.skillOrBurst'),
       fields: [
         {
-          title: stg('eleMas'),
-          fieldRef: formula.c4_eleMas.tag,
+          title: stg('duration'),
+          fieldValue: '',
+          unit: 's',
         },
       ],
     }),

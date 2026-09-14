@@ -1,7 +1,7 @@
 import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { conditionals, formulas } from '@genshin-optimizer/gi/formula'
-import { st, stg } from '../../util'
+import { stg } from '../../util'
 import { charConditionalDocument } from '../charUiSheets'
 import type { TalentSheetElementKey } from '../consts'
 import { charTemplates } from '../util'
@@ -37,14 +37,6 @@ const sheet: UISheet<TalentSheetElementKey> = {
     {
       type: 'fields',
       fields: [
-        {
-          title: ct.chg('auto.skillParams.5'),
-          fieldRef: formula.charged_1.tag,
-        },
-        {
-          title: ct.chg('auto.skillParams.5'),
-          fieldRef: formula.charged_2.tag,
-        },
         {
           title: ct.chg('auto.skillParams.6'),
           fieldRef: formula.charged_stamina.tag,
@@ -83,28 +75,32 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
         {
           title: stg('press.cd'),
-          fieldRef: formula.skill_cd_press.tag,
+          fieldValue: '',
           unit: 's',
         },
         {
           title: ct.chg('skill.skillParams.1'),
+          subtitle: '(1)',
           fieldRef: formula.skill_hold1_1.tag,
         },
         {
           title: ct.chg('skill.skillParams.1'),
+          subtitle: '(2)',
           fieldRef: formula.skill_hold1_2.tag,
         },
         {
           title: ct.ch('skill.lvl1CD'),
-          fieldRef: formula.skill_cd_hold1.tag,
+          fieldValue: '',
           unit: 's',
         },
         {
           title: ct.chg('skill.skillParams.2'),
+          subtitle: '(1)',
           fieldRef: formula.skill_hold2_1.tag,
         },
         {
           title: ct.chg('skill.skillParams.2'),
+          subtitle: '(2)',
           fieldRef: formula.skill_hold2_2.tag,
         },
         {
@@ -113,13 +109,8 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
         {
           title: ct.ch('skill.lvl2CD'),
-          fieldRef: formula.skill_cd_hold2.tag,
+          fieldValue: '',
           unit: 's',
-        },
-        {
-          title: st('skillCDRed'),
-          fieldRef: formula.a1_skillCDRed_.tag,
-          unit: '%',
         },
       ],
     },
@@ -138,13 +129,13 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
         {
           title: ct.chg('burst.skillParams.3'),
-          fieldRef: formula.burst_duration.tag,
           unit: 's',
+          fieldRef: formula.burst_duration.tag,
         },
         {
           title: ct.chg('burst.skillParams.4'),
-          fieldRef: formula.burst_cd.tag,
           unit: 's',
+          fieldRef: formula.burst_cd.tag,
         },
         {
           title: ct.chg('burst.skillParams.5'),
@@ -174,7 +165,12 @@ const sheet: UISheet<TalentSheetElementKey> = {
     },
   ]),
   constellation5: ct.talentTem('constellation5'),
-  constellation6: ct.talentTem('constellation6'),
+  constellation6: ct.talentTem('constellation6', [
+    {
+      type: 'text',
+      text: ct.ch('c6PyroInfusion'),
+    },
+  ]),
 }
 
 export default sheet

@@ -37,22 +37,14 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('auto.skillParams.4'),
-          fieldRef: formula.charged_spin.tag,
-        },
-        {
-          title: ct.chg('auto.skillParams.5'),
-          fieldRef: formula.charged_final.tag,
-        },
-        {
           title: ct.chg('auto.skillParams.6'),
-          fieldRef: formula.charged_stamina.tag,
           unit: '/s',
+          fieldRef: formula.charged_stamina.tag,
         },
         {
           title: ct.chg('auto.skillParams.7'),
-          fieldRef: formula.charged_duration.tag,
           unit: 's',
+          fieldRef: formula.charged_duration.tag,
         },
       ],
     },
@@ -88,7 +80,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
         {
           title: ct.chg('skill.skillParams.5'),
-          fieldRef: formula.skill_pressCd.tag,
+          fieldValue: '',
           unit: 's',
         },
         {
@@ -97,7 +89,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
         {
           title: ct.chg('skill.skillParams.6'),
-          fieldRef: formula.skill_holdCd.tag,
+          fieldValue: '',
           unit: 's',
         },
       ],
@@ -107,8 +99,8 @@ const sheet: UISheet<TalentSheetElementKey> = {
       fields: [
         {
           title: ct.chg('skill.skillParams.4'),
-          fieldRef: formula.skill_duration.tag,
           unit: 's',
+          fieldRef: formula.skill_duration.tag,
         },
         {
           title: ct.ch('electroSigilAbsorbed'),
@@ -116,39 +108,19 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
       ],
     }),
+    charConditionalDocument(key, cond.lockHomework, { teamBuff: true }),
   ]),
   burst: ct.talentTem('burst', [
     {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('burst.skillParams.0'),
-          fieldRef: formula.burst.tag,
+          title: st('hexerei.becomeHexerei', { val: key }),
+          fieldValue: '',
         },
         {
-          title: ct.ch('soulCompanion.1'),
-          fieldRef: formula.companionDmg1.tag,
-        },
-        {
-          title: ct.ch('soulCompanion.2'),
-          fieldRef: formula.companionDmg2.tag,
-        },
-        {
-          title: ct.ch('soulCompanion.3'),
-          fieldRef: formula.companionDmg3.tag,
-        },
-        {
-          title: ct.ch('soulCompanion.4'),
-          fieldRef: formula.companionDmg4.tag,
-        },
-        {
-          title: ct.chg('burst.skillParams.5'),
-          fieldRef: formula.burst_cd.tag,
-          unit: 's',
-        },
-        {
-          title: ct.chg('burst.skillParams.6'),
-          fieldRef: formula.burst_enerCost.tag,
+          title: st('hexerei.talentEnhance'),
+          fieldValue: '',
         },
       ],
     },
@@ -166,7 +138,15 @@ const sheet: UISheet<TalentSheetElementKey> = {
   passive2: ct.talentTem('passive2', [charConditionalDocument(key, cond.A4)]),
   passive3: ct.talentTem('passive3'),
   constellation1: ct.talentTem('constellation1', [
-    charConditionalDocument(key, cond.C1),
+    charConditionalDocument(key, cond.C1, {
+      fields: [
+        {
+          title: stg('duration'),
+          fieldValue: '',
+          unit: 's',
+        },
+      ],
+    }),
   ]),
   constellation2: ct.talentTem('constellation2', [
     charConditionalDocument(key, cond.C2),
@@ -181,16 +161,12 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: st('dmg'),
-          fieldRef: formula.c6.tag,
-        },
-        {
-          title: ct.ch('electroSigilPerProc'),
-          fieldRef: formula.skill_enerRegen.tag,
+          title: stg('duration'),
+          fieldValue: '',
+          unit: 's',
         },
       ],
     },
-    charConditionalDocument(key, cond.lockHomework, { teamBuff: true }),
     {
       type: 'fields',
       fields: [
@@ -200,7 +176,15 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
       ],
     },
-    charConditionalDocument(key, cond.lockC6Sigil),
+    charConditionalDocument(key, cond.lockC6Sigil, {
+      fields: [
+        {
+          title: stg('duration'),
+          fieldValue: '',
+          unit: 's',
+        },
+      ],
+    }),
   ]),
 }
 

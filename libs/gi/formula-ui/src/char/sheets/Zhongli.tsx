@@ -42,6 +42,10 @@ const sheet: UISheet<TalentSheetElementKey> = {
           title: ct.chg('auto.skillParams.6'),
           fieldRef: formula.charged.tag,
         },
+        {
+          title: ct.chg('auto.skillParams.7'),
+          fieldValue: '',
+        },
       ],
     },
     {
@@ -79,6 +83,10 @@ const sheet: UISheet<TalentSheetElementKey> = {
           fieldRef: formula.skill_resonance.tag,
         },
         {
+          title: ct.ch('skill.maxStele'),
+          fieldValue: '',
+        },
+        {
           title: ct.chg('skill.skillParams.2'),
           fieldRef: formula.skill_holdDMG.tag,
         },
@@ -86,10 +94,24 @@ const sheet: UISheet<TalentSheetElementKey> = {
           title: stg('dmgAbsorption'),
           fieldRef: formula.skill_shield.tag,
         },
+        {
+          title: stg('press.cd'),
+          fieldValue: '',
+          unit: 's',
+        },
+        {
+          title: stg('hold.cd'),
+          fieldValue: '',
+          unit: 's',
+        },
+        {
+          title: ct.chg('skill.skillParams.5'),
+          fieldValue: '',
+          unit: 's',
+        },
       ],
     },
     charConditionalDocument(key, cond.skill, { teamBuff: true }),
-    charConditionalDocument(key, cond.p1, { teamBuff: true }),
   ]),
   burst: ct.talentTem('burst', [
     {
@@ -99,10 +121,26 @@ const sheet: UISheet<TalentSheetElementKey> = {
           title: ct.chg('burst.skillParams.0'),
           fieldRef: formula.burst.tag,
         },
+        {
+          title: ct.chg('burst.skillParams.1'),
+          fieldValue: '',
+          unit: 's',
+        },
+        {
+          title: ct.chg('burst.skillParams.2'),
+          fieldValue: '',
+          unit: 's',
+        },
+        {
+          title: ct.chg('burst.skillParams.3'),
+          fieldValue: '',
+        },
       ],
     },
   ]),
-  passive1: ct.talentTem('passive1'),
+  passive1: ct.talentTem('passive1', [
+    charConditionalDocument(key, cond.p1, { teamBuff: true }),
+  ]),
   passive2: ct.talentTem('passive2', [
     {
       type: 'fields',

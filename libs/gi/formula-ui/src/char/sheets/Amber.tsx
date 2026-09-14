@@ -1,7 +1,7 @@
 import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { conditionals, formulas } from '@genshin-optimizer/gi/formula'
-import { stg } from '../../util'
+import { st, stg } from '../../util'
 import { charConditionalDocument } from '../charUiSheets'
 import type { TalentSheetElementKey } from '../consts'
 import { charTemplates } from '../util'
@@ -45,16 +45,6 @@ const sheet: UISheet<TalentSheetElementKey> = {
           title: ct.chg('auto.skillParams.6'),
           fieldRef: formula.charged_aimedCharged.tag,
         },
-        {
-          title: ct.chg('auto.skillParams.5'),
-          subtitle: ct.ch('secondArrow'),
-          fieldRef: formula.c1_secondAimed.tag,
-        },
-        {
-          title: ct.chg('auto.skillParams.6'),
-          subtitle: ct.ch('secondArrow'),
-          fieldRef: formula.c1_secondAimedCharged.tag,
-        },
       ],
     },
     {
@@ -88,17 +78,13 @@ const sheet: UISheet<TalentSheetElementKey> = {
           fieldRef: formula.skill_inheritedHp.tag,
         },
         {
-          title: ct.chg('skill.skillParams.1'),
-          fieldRef: formula.skill.tag,
-        },
-        {
-          title: ct.ch('manualDetonationDmg'),
-          fieldRef: formula.c2.tag,
-        },
-        {
           title: ct.chg('skill.skillParams.2'),
-          fieldRef: formula.skill_cd.tag,
+          fieldValue: '',
           unit: 's',
+        },
+        {
+          title: st('charges'),
+          fieldValue: '',
         },
       ],
     },
@@ -108,30 +94,21 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('burst.skillParams.0'),
-          fieldRef: formula.dmgPerWave.tag,
-        },
-        {
-          title: ct.chg('burst.skillParams.1'),
-          fieldRef: formula.rainDmg.tag,
-        },
-        {
           title: ct.chg('burst.skillParams.2'),
-          fieldRef: formula.burst_duration.tag,
           unit: 's',
+          fieldRef: formula.burst_duration.tag,
         },
         {
           title: ct.chg('burst.skillParams.3'),
-          fieldRef: formula.burst_cd.tag,
           unit: 's',
+          fieldRef: formula.burst_cd.tag,
         },
         {
           title: ct.chg('burst.skillParams.4'),
-          fieldRef: formula.burst_enerCost.tag,
+          fieldValue: '',
         },
       ],
     },
-    charConditionalDocument(key, cond.C6, { teamBuff: true }),
   ]),
   passive1: ct.talentTem('passive1'),
   passive2: ct.talentTem('passive2', [charConditionalDocument(key, cond.A4)]),
@@ -141,7 +118,9 @@ const sheet: UISheet<TalentSheetElementKey> = {
   constellation3: ct.talentTem('constellation3'),
   constellation4: ct.talentTem('constellation4'),
   constellation5: ct.talentTem('constellation5'),
-  constellation6: ct.talentTem('constellation6'),
+  constellation6: ct.talentTem('constellation6', [
+    charConditionalDocument(key, cond.C6, { teamBuff: true }),
+  ]),
 }
 
 export default sheet

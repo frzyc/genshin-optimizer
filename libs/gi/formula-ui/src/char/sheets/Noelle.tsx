@@ -2,6 +2,7 @@ import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { conditionals, formulas } from '@genshin-optimizer/gi/formula'
 import { st, stg } from '../../util'
+import { charConditionalDocument } from '../charUiSheets'
 import type { TalentSheetElementKey } from '../consts'
 import { charTemplates } from '../util'
 
@@ -36,22 +37,14 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('auto.skillParams.4'),
-          fieldRef: formula.charged_spinning.tag,
-        },
-        {
-          title: ct.chg('auto.skillParams.5'),
-          fieldRef: formula.charged_final.tag,
-        },
-        {
           title: ct.chg('auto.skillParams.6'),
-          fieldRef: formula.charged_stamina.tag,
           unit: '/s',
+          fieldRef: formula.charged_stamina.tag,
         },
         {
           title: ct.chg('auto.skillParams.7'),
-          fieldRef: formula.charged_duration.tag,
           unit: 's',
+          fieldRef: formula.charged_duration.tag,
         },
       ],
     },
@@ -81,7 +74,6 @@ const sheet: UISheet<TalentSheetElementKey> = {
     {
       type: 'fields',
       fields: [
-        { title: ct.chg('skill.skillParams.0'), fieldRef: formula.skill.tag },
         {
           title: ct.chg('skill.skillParams.1'),
           fieldRef: formula.skill_shield.tag,
@@ -91,19 +83,18 @@ const sheet: UISheet<TalentSheetElementKey> = {
           fieldRef: formula.skill_heal.tag,
         },
         {
-          title: ct.chg('skill.skillParams.3'),
-          fieldRef: formula.skill_healChance.tag,
-          unit: '%',
-        },
-        {
           title: ct.chg('skill.skillParams.4'),
-          fieldRef: formula.skill_duration.tag,
+          fieldValue: '',
           unit: 's',
         },
         {
           title: ct.chg('skill.skillParams.5'),
-          fieldRef: formula.skill_cd.tag,
           unit: 's',
+          fieldRef: formula.skill_cd.tag,
+        },
+        {
+          title: ct.chg('skill.skillParams.5'),
+          fieldValue: '',
         },
       ],
     },
@@ -112,20 +103,22 @@ const sheet: UISheet<TalentSheetElementKey> = {
     {
       type: 'fields',
       fields: [
-        { title: ct.chg('burst.skillParams.0'), fieldRef: formula.burst.tag },
         {
           title: ct.chg('burst.skillParams.1'),
-          fieldRef: formula.burst_skill.tag,
+          fieldRef: formula.burst.tag,
         },
         {
           title: ct.chg('burst.skillParams.3'),
-          fieldRef: formula.burst_duration.tag,
           unit: 's',
+          fieldRef: formula.burst_duration.tag,
+        },
+        {
+          title: ct.chg('burst.skillParams.3'),
+          fieldValue: '',
         },
         {
           title: ct.chg('burst.skillParams.4'),
           fieldRef: formula.burst_cd.tag,
-          unit: 's',
         },
         {
           title: ct.chg('burst.skillParams.5'),
@@ -133,19 +126,15 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
       ],
     },
-    {
-      type: 'conditional',
-      conditional: {
-        metadata: cond.SweepingTime,
-        label: ct.chg('burst.name'),
-        fields: [
-          {
-            title: ct.chg('burst.skillParams.2'),
-            fieldRef: formula.burst_atkFromDef.tag,
-          },
-        ],
-      },
-    },
+    charConditionalDocument(key, cond.SweepingTime, {
+      label: ct.chg('burst.name'),
+      fields: [
+        {
+          title: ct.chg('burst.skillParams.2'),
+          fieldRef: formula.burst_atkFromDef.tag,
+        },
+      ],
+    }),
   ]),
   passive1: ct.talentTem('passive1', [
     {

@@ -40,10 +40,6 @@ const sheet: UISheet<TalentSheetElementKey> = {
           title: ct.chg('auto.skillParams.4'),
           fieldRef: formula.charged_aimed.tag,
         },
-        {
-          title: ct.chg('auto.skillParams.5'),
-          fieldRef: formula.charged_aimedCharged.tag,
-        },
       ],
     },
     {
@@ -73,18 +69,14 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('skill.skillParams.0'),
-          fieldRef: formula.skill.tag,
-        },
-        {
           title: stg('duration'),
-          fieldRef: formula.skill_duration.tag,
           unit: 's',
+          fieldRef: formula.skill_duration.tag,
         },
         {
           title: stg('cd'),
-          fieldRef: formula.skill_cd.tag,
           unit: 's',
+          fieldRef: formula.skill_cd.tag,
         },
       ],
     },
@@ -107,18 +99,14 @@ const sheet: UISheet<TalentSheetElementKey> = {
           fieldRef: formula.burst.tag,
         },
         {
-          title: ct.chg('burst.skillParams.1'),
-          fieldRef: formula.crystalCollapse.tag,
-        },
-        {
           title: stg('duration'),
-          fieldRef: formula.burst_duration.tag,
           unit: 's',
+          fieldRef: formula.burst_duration.tag,
         },
         {
           title: stg('cd'),
-          fieldRef: formula.burst_cd.tag,
           unit: 's',
+          fieldRef: formula.burst_cd.tag,
         },
         {
           title: stg('energyCost'),
@@ -126,9 +114,10 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
       ],
     },
+  ]),
+  passive1: ct.talentTem('passive1', [
     charConditionalDocument(key, cond.afterBurst, { teamBuff: true }),
   ]),
-  passive1: ct.talentTem('passive1'),
   passive2: ct.talentTem('passive2'),
   passive3: ct.talentTem('passive3'),
   constellation1: ct.talentTem('constellation1'),
@@ -139,8 +128,9 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: stg('healing'),
-          fieldRef: formula.c4_heal.tag,
+          title: stg('duration'),
+          fieldValue: '',
+          unit: 's',
         },
       ],
     },

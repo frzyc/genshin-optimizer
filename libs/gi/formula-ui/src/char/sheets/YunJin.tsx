@@ -57,6 +57,10 @@ const sheet: UISheet<TalentSheetElementKey> = {
           title: ct.chg('auto.skillParams.5'),
           fieldRef: formula.charged.tag,
         },
+        {
+          title: ct.chg('auto.skillParams.6'),
+          fieldValue: '',
+        },
       ],
     },
     {
@@ -86,10 +90,6 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('skill.skillParams.0'),
-          fieldRef: formula.skill.tag,
-        },
-        {
           title: ct.chg('skill.skillParams.1'),
           fieldRef: formula.skill_dmg1.tag,
         },
@@ -100,6 +100,11 @@ const sheet: UISheet<TalentSheetElementKey> = {
         {
           title: ct.chg('skill.skillParams.3'),
           fieldRef: formula.skill_shield.tag,
+        },
+        {
+          title: ct.chg('skill.skillParams.4'),
+          fieldValue: '',
+          unit: 's',
         },
       ],
     },
@@ -112,6 +117,15 @@ const sheet: UISheet<TalentSheetElementKey> = {
           title: ct.chg('burst.skillParams.0'),
           fieldRef: formula.burst.tag,
         },
+        {
+          title: ct.chg('burst.skillParams.4'),
+          fieldValue: '',
+          unit: 's',
+        },
+        {
+          title: ct.chg('burst.skillParams.5'),
+          fieldValue: '',
+        },
       ],
     },
     charConditionalDocument(key, cond.skill, {
@@ -119,13 +133,15 @@ const sheet: UISheet<TalentSheetElementKey> = {
       label: ct.ch('burst'),
       fields: [
         {
-          fieldRef: formula.burst_dmgInc.tag,
+          title: ct.chg('burst.skillParams.2'),
+          fieldValue: '',
+          unit: 's',
+        },
+        {
+          title: ct.chg('burst.skillParams.3'),
+          fieldValue: '',
         },
       ],
-    }),
-    charConditionalDocument(key, cond.c4, {
-      teamBuff: true,
-      label: st('elementalReaction.crystallizeOrLunar'),
     }),
   ]),
   passive1: ct.talentTem('passive1'),
@@ -136,6 +152,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
   constellation3: ct.talentTem('constellation3'),
   constellation4: ct.talentTem('constellation4', [
     charConditionalDocument(key, cond.c4, {
+      teamBuff: true,
       label: st('elementalReaction.crystallizeOrLunar'),
     }),
   ]),

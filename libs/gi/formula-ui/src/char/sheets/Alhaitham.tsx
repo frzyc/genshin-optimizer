@@ -40,12 +40,12 @@ const sheet: UISheet<TalentSheetElementKey> = {
       fields: [
         {
           title: ct.chg('auto.skillParams.5'),
-          fieldRef: formula.charged.tag,
           multi: 2,
+          fieldRef: formula.charged.tag,
         },
         {
           title: ct.chg('auto.skillParams.6'),
-          fieldValue: '20',
+          fieldValue: '',
         },
       ],
     },
@@ -81,7 +81,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
         {
           title: ct.chg('skill.skillParams.1'),
-          fieldValue: '1.6',
+          fieldValue: '',
           unit: 's',
         },
         {
@@ -90,12 +90,12 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
         {
           title: ct.chg('skill.skillParams.5'),
-          fieldValue: '4',
+          fieldValue: '',
           unit: 's',
         },
         {
           title: stg('cd'),
-          fieldValue: '18',
+          fieldValue: '',
           unit: 's',
         },
       ],
@@ -105,7 +105,6 @@ const sheet: UISheet<TalentSheetElementKey> = {
       fields: [
         {
           title: st('infusion.dendro'),
-          variant: 'dendro',
           fieldValue: '',
         },
       ],
@@ -121,42 +120,31 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
         {
           title: ct.chg('burst.skillParams.1'),
-          fieldValue: '4',
+          fieldValue: '',
         },
         {
           title: ct.chg('burst.skillParams.2'),
-          fieldValue: '6',
+          fieldValue: '',
         },
         {
           title: ct.chg('burst.skillParams.3'),
-          fieldValue: '8',
+          fieldValue: '',
         },
         {
           title: ct.chg('burst.skillParams.4'),
-          fieldValue: '10',
+          fieldValue: '',
         },
         {
           title: stg('cd'),
-          fieldValue: '18',
+          fieldValue: '',
           unit: 's',
         },
         {
           title: stg('energyCost'),
-          fieldValue: '70',
+          fieldValue: '',
         },
       ],
     },
-    charConditionalDocument(key, cond.mirrorsConsumed, {
-      label: ct.ch('mirrorsConsumed'),
-      teamBuff: true,
-      fields: [
-        {
-          title: stg('duration'),
-          fieldValue: '15',
-          unit: 's',
-        },
-      ],
-    }),
   ]),
   passive1: ct.talentTem('passive1'),
   passive2: ct.talentTem('passive2'),
@@ -169,7 +157,19 @@ const sheet: UISheet<TalentSheetElementKey> = {
     }),
   ]),
   constellation3: ct.talentTem('constellation3'),
-  constellation4: ct.talentTem('constellation4'),
+  constellation4: ct.talentTem('constellation4', [
+    charConditionalDocument(key, cond.mirrorsConsumed, {
+      label: ct.ch('mirrorsConsumed'),
+      teamBuff: true,
+      fields: [
+        {
+          title: stg('duration'),
+          fieldValue: '15',
+          unit: 's',
+        },
+      ],
+    }),
+  ]),
   constellation5: ct.talentTem('constellation5'),
   constellation6: ct.talentTem('constellation6', [
     charConditionalDocument(key, cond.excessMirror, {
@@ -177,7 +177,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
       fields: [
         {
           title: stg('duration'),
-          fieldValue: '6',
+          fieldValue: '',
           unit: 's',
         },
       ],

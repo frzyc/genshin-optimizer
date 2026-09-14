@@ -19,12 +19,16 @@ const sheet: UISheet<TalentSheetElementKey> = {
     },
     {
       type: 'fields',
-      fields: [formula.normal_0, formula.normal_1, formula.normal_2].map(
-        ({ tag }, i) => ({
-          title: ct.chg(`auto.skillParams.${i}`),
-          fieldRef: tag,
-        })
-      ),
+      fields: [
+        {
+          title: ct.chg('auto.skillParams.3'),
+          fieldRef: formula.charged.tag,
+        },
+        {
+          title: ct.chg('auto.skillParams.4'),
+          fieldRef: formula.charged_stamina.tag,
+        },
+      ],
     },
     {
       type: 'text',
@@ -34,12 +38,16 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('auto.skillParams.3'),
-          fieldRef: formula.charged.tag,
+          title: stg('plunging.dmg'),
+          fieldRef: formula.plunging_dmg.tag,
         },
         {
-          title: ct.chg('auto.skillParams.4'),
-          fieldRef: formula.charged_stamina.tag,
+          title: stg('plunging.low'),
+          fieldRef: formula.plunging_low.tag,
+        },
+        {
+          title: stg('plunging.high'),
+          fieldRef: formula.plunging_high.tag,
         },
       ],
     },
@@ -70,47 +78,35 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('skill.skillParams.0'),
-          fieldRef: formula.jumptyDumptyDmg.tag,
-        },
-        {
-          title: ct.chg('skill.skillParams.1'),
-          fieldRef: formula.mineDmg.tag,
-        },
-        {
           title: ct.chg('skill.skillParams.2'),
-          fieldRef: formula.skill_mineDuration.tag,
+          fieldValue: '',
           unit: 's',
         },
         {
           title: ct.chg('skill.skillParams.3'),
-          fieldRef: formula.skill_cd.tag,
+          fieldValue: '',
           unit: 's',
+        },
+        {
+          title: st('charges'),
+          fieldValue: '',
         },
       ],
     },
+    charConditionalDocument(key, cond.lockHomework, { teamBuff: true }),
+    charConditionalDocument(key, cond.lockBadge),
   ]),
   burst: ct.talentTem('burst', [
     {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('burst.skillParams.0'),
-          fieldRef: formula.burst.tag,
+          title: st('hexerei.becomeHexerei', { val: key }),
+          fieldValue: '',
         },
         {
-          title: ct.chg('burst.skillParams.1'),
-          fieldRef: formula.burst_duration.tag,
-          unit: 's',
-        },
-        {
-          title: ct.chg('burst.skillParams.2'),
-          fieldRef: formula.burst_cd.tag,
-          unit: 's',
-        },
-        {
-          title: ct.chg('burst.skillParams.3'),
-          fieldRef: formula.burst_enerCost.tag,
+          title: st('hexerei.talentEnhance'),
+          fieldValue: '',
         },
       ],
     },
@@ -149,16 +145,15 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: st('dmg'),
-          fieldRef: formula.c4.tag,
+          title: stg('duration'),
+          fieldValue: '',
+          unit: 's',
         },
       ],
     },
   ]),
   constellation5: ct.talentTem('constellation5'),
   constellation6: ct.talentTem('constellation6', [
-    charConditionalDocument(key, cond.lockHomework, { teamBuff: true }),
-    charConditionalDocument(key, cond.lockBadge),
     charConditionalDocument(key, cond.BlazingDelight, { teamBuff: true }),
   ]),
 }

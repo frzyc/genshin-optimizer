@@ -39,6 +39,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
       fields: [
         {
           title: ct.chg('auto.skillParams.5'),
+          multi: 2,
           fieldRef: formula.charged.tag,
         },
         {
@@ -74,10 +75,6 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('skill.skillParams.0'),
-          fieldRef: formula.skill.tag,
-        },
-        {
           title: ct.chg('skill.skillParams.1'),
           fieldRef: formula.skill_hitRegen.tag,
         },
@@ -86,30 +83,30 @@ const sheet: UISheet<TalentSheetElementKey> = {
           fieldRef: formula.skill_contRegen.tag,
         },
         {
-          title: ct.chg('skill.skillParams.3'),
-          fieldRef: formula.skill_tick.tag,
-        },
-        {
-          title: ct.chg('skill.skillParams.6'),
-          fieldRef: formula.skill_frostCoord.tag,
-        },
-        {
           title: ct.chg('skill.skillParams.4'),
-          fieldRef: formula.skill_duration.tag,
           unit: 's',
+          fieldRef: formula.skill_duration.tag,
         },
         {
           title: ct.chg('skill.skillParams.7'),
-          fieldRef: formula.skill_frostCoordCd.tag,
           unit: 's',
+          fieldRef: formula.skill_frostCoordCd.tag,
         },
         {
           title: ct.chg('skill.skillParams.5'),
-          fieldRef: formula.skill_cd.tag,
+          fieldValue: '',
           unit: 's',
         },
       ],
     },
+    charConditionalDocument(key, cond.lockRevelation, { teamBuff: true }),
+    charConditionalDocument(key, cond.lockStellarRadianceSc, {
+      teamBuff: true,
+    }),
+    charConditionalDocument(key, cond.QiqiLk, {
+      teamBuff: true,
+      label: ct.ch('lockCond'),
+    }),
   ]),
   burst: ct.talentTem('burst', [
     {
@@ -124,22 +121,18 @@ const sheet: UISheet<TalentSheetElementKey> = {
           fieldRef: formula.burst_heal.tag,
         },
         {
-          title: ct.chg('burst.skillParams.5'),
-          fieldRef: formula.burst_stellar.tag,
-        },
-        {
           title: ct.chg('burst.skillParams.2'),
-          fieldRef: formula.burst_duration.tag,
           unit: 's',
+          fieldRef: formula.skill_duration.tag,
         },
         {
           title: ct.chg('burst.skillParams.3'),
-          fieldRef: formula.burst_cd.tag,
           unit: 's',
+          fieldRef: formula.skill_cd.tag,
         },
         {
           title: ct.chg('burst.skillParams.4'),
-          fieldRef: formula.burst_enerCost.tag,
+          fieldValue: '',
         },
       ],
     },
@@ -151,16 +144,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
     }),
   ]),
   passive2: ct.talentTem('passive2'),
-  passive3: ct.talentTem('passive3', [
-    charConditionalDocument(key, cond.lockRevelation, { teamBuff: true }),
-    charConditionalDocument(key, cond.lockStellarRadianceSc, {
-      teamBuff: true,
-    }),
-    charConditionalDocument(key, cond.QiqiLk, {
-      teamBuff: true,
-      label: ct.ch('lockCond'),
-    }),
-  ]),
+  passive3: ct.talentTem('passive3', []),
   constellation1: ct.talentTem('constellation1'),
   constellation2: ct.talentTem('constellation2', [
     charConditionalDocument(key, cond.QiqiC2, {

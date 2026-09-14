@@ -38,10 +38,12 @@ const sheet: UISheet<TalentSheetElementKey> = {
       fields: [
         {
           title: ct.chg('auto.skillParams.4'),
+          subtitle: '(1)',
           fieldRef: formula.charged_dmg1.tag,
         },
         {
           title: ct.chg('auto.skillParams.4'),
+          subtitle: '(2)',
           fieldRef: formula.charged_dmg2.tag,
         },
         {
@@ -77,31 +79,19 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('skill.skillParams.0'),
-          fieldRef: formula.pressDmg.tag,
-        },
-        {
-          title: ct.chg('skill.skillParams.1'),
-          fieldRef: formula.ringHeal.tag,
-        },
-        {
-          title: ct.chg('skill.skillParams.2'),
-          fieldRef: formula.ringDmg.tag,
-        },
-        {
           title: ct.chg('skill.skillParams.3'),
-          fieldRef: formula.skill_cost.tag,
           unit: st('percentCurrentHP'),
+          fieldRef: formula.skill_cost.tag,
         },
         {
           title: stg('duration'),
-          fieldRef: formula.skill_duration.tag,
+          fieldValue: '',
           unit: 's',
         },
         {
           title: stg('cd'),
-          fieldRef: formula.skill_cd.tag,
           unit: 's',
+          fieldRef: formula.skill_cd.tag,
         },
       ],
     },
@@ -111,41 +101,32 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('burst.skillParams.0'),
-          fieldRef: formula.singleDmg.tag,
-        },
-        {
           title: stg('duration'),
-          fieldRef: formula.burst_duration.tag,
+          fieldValue: '',
           unit: 's',
         },
         {
           title: stg('cd'),
-          fieldRef: formula.burst_cd.tag,
           unit: 's',
+          fieldRef: formula.burst_cd.tag,
         },
         {
           title: stg('energyCost'),
-          fieldRef: formula.burst_enerCost.tag,
+          fieldValue: '',
         },
       ],
     },
     charConditionalDocument(key, cond.underHP),
   ]),
-  passive1: ct.talentTem('passive1', [
-    charConditionalDocument(key, cond.underHP),
-  ]),
+  passive1: ct.talentTem('passive1', []),
   passive2: ct.talentTem('passive2', [
     {
       type: 'fields',
       fields: [
         {
-          title: ct.ch('a4.heal'),
-          fieldRef: formula.a4Skill_healInc.tag,
-        },
-        {
-          title: ct.chg('passive2.description.1.1'),
-          fieldRef: formula.a4Skill_dmgInc.tag,
+          title: st('durationInc'),
+          fieldValue: '',
+          unit: 's',
         },
       ],
     },

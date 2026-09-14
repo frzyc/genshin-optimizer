@@ -54,17 +54,8 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('auto.skillParams.8'),
-          fieldRef: formula.riptide_flash.tag,
-          multi: 3,
-        },
-        {
-          title: ct.chg('auto.skillParams.9'),
-          fieldRef: formula.riptide_burst.tag,
-        },
-        {
           title: ct.chg('auto.skillParams.10'),
-          fieldRef: formula.riptideDuration.tag,
+          fieldValue: '',
           unit: 's',
         },
       ],
@@ -95,10 +86,6 @@ const sheet: UISheet<TalentSheetElementKey> = {
     {
       type: 'fields',
       fields: [
-        {
-          title: ct.chg('skill.skillParams.0'),
-          fieldRef: formula.skill_stance.tag,
-        },
         {
           title: ct.chg('skill.skillParams.1'),
           fieldRef: formula.skill_normal1.tag,
@@ -140,16 +127,22 @@ const sheet: UISheet<TalentSheetElementKey> = {
           fieldRef: formula.skill_charged2.tag,
         },
         {
-          title: ct.chg('skill.skillParams.8'),
-          fieldRef: formula.skill_chargedStamina.tag,
-        },
-        {
           title: ct.chg('skill.skillParams.9'),
           fieldRef: formula.skill_riptideSlash.tag,
         },
         {
           title: ct.chg('skill.skillParams.10'),
+          unit: 's',
           fieldRef: formula.skill_duration.tag,
+        },
+        {
+          title: ct.chg('skill.skillParams.11'),
+          fieldValue: '',
+          unit: 's',
+        },
+        {
+          title: ct.chg('skill.skillParams.12'),
+          fieldValue: '',
           unit: 's',
         },
       ],
@@ -160,25 +153,17 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('burst.skillParams.0'),
-          fieldRef: formula.burst_melee.tag,
-        },
-        {
-          title: ct.chg('burst.skillParams.1'),
-          fieldRef: formula.burst_ranged.tag,
-        },
-        {
-          title: ct.chg('burst.skillParams.2'),
-          fieldRef: formula.burst_riptideBlast.tag,
-        },
-        {
           title: ct.chg('burst.skillParams.4'),
-          fieldRef: formula.burst_cd.tag,
+          fieldValue: '',
           unit: 's',
         },
         {
           title: ct.chg('burst.skillParams.5'),
-          fieldRef: formula.burst_enerCost.tag,
+          fieldValue: '',
+        },
+        {
+          title: ct.chg('burst.skillParams.3'),
+          fieldValue: '',
         },
       ],
     },

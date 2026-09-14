@@ -40,17 +40,8 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('auto.skillParams.5'),
-          fieldRef: formula.charged_1.tag,
-        },
-        {
-          title: ct.chg('auto.skillParams.5'),
-          fieldRef: formula.charged_2.tag,
-        },
-        {
           title: ct.chg('auto.skillParams.6'),
           fieldRef: formula.charged_stamina.tag,
-          unit: '/s',
         },
       ],
     },
@@ -86,7 +77,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
         {
           title: ct.chg('skill.skillParams.1'),
-          fieldRef: formula.skill_cd.tag,
+          fieldValue: '',
           unit: 's',
         },
         {
@@ -95,7 +86,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
         {
           title: stg('hold.cd'),
-          fieldRef: formula.skill_cdHold.tag,
+          fieldValue: '',
           unit: 's',
         },
       ],
@@ -117,27 +108,10 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
       ],
     },
-    charConditionalDocument(key, cond.skillAbsorption, {
-      label: st('eleAbsor'),
-      fields: [
-        {
-          title: stg('addEleDMG'),
-          fieldRef: formula.a1_absorb_hydro.tag,
-        },
-        {
-          title: stg('addEleDMG'),
-          fieldRef: formula.a1_absorb_pyro.tag,
-        },
-        {
-          title: stg('addEleDMG'),
-          fieldRef: formula.a1_absorb_cryo.tag,
-        },
-        {
-          title: stg('addEleDMG'),
-          fieldRef: formula.a1_absorb_electro.tag,
-        },
-      ],
-    }),
+    charConditionalDocument(key, cond.swirlpyro, { teamBuff: true }),
+    charConditionalDocument(key, cond.swirlhydro, { teamBuff: true }),
+    charConditionalDocument(key, cond.swirlelectro, { teamBuff: true }),
+    charConditionalDocument(key, cond.swirlcryo, { teamBuff: true }),
   ]),
   burst: ct.talentTem('burst', [
     {
@@ -153,13 +127,13 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
         {
           title: ct.chg('burst.skillParams.3'),
-          fieldRef: formula.burst_duration.tag,
           unit: 's',
+          fieldRef: formula.burst_duration.tag,
         },
         {
           title: ct.chg('burst.skillParams.4'),
-          fieldRef: formula.burst_cd.tag,
           unit: 's',
+          fieldRef: formula.burst_cd.tag,
         },
         {
           title: ct.chg('burst.skillParams.5'),
@@ -188,25 +162,31 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
       ],
     }),
-    charConditionalDocument(key, cond.c2, {
-      label: ct.ch('c2'),
-    }),
-    charConditionalDocument(key, cond.c2p, {
-      label: st('activeCharField'),
-      teamBuff: true,
+  ]),
+  passive1: ct.talentTem('passive1', [
+    charConditionalDocument(key, cond.skillAbsorption, {
+      label: st('eleAbsor'),
+      fields: [
+        {
+          title: stg('addEleDMG'),
+          fieldRef: formula.a1_absorb_hydro.tag,
+        },
+        {
+          title: stg('addEleDMG'),
+          fieldRef: formula.a1_absorb_pyro.tag,
+        },
+        {
+          title: stg('addEleDMG'),
+          fieldRef: formula.a1_absorb_cryo.tag,
+        },
+        {
+          title: stg('addEleDMG'),
+          fieldRef: formula.a1_absorb_electro.tag,
+        },
+      ],
     }),
   ]),
-  passive1: ct.talentTem('passive1'),
-  passive2: ct.talentTem('passive2', [
-    charConditionalDocument(key, cond.swirlpyro, { teamBuff: true }),
-    charConditionalDocument(key, cond.swirlhydro, { teamBuff: true }),
-    charConditionalDocument(key, cond.swirlelectro, { teamBuff: true }),
-    charConditionalDocument(key, cond.swirlcryo, { teamBuff: true }),
-    charConditionalDocument(key, cond.c2, {
-      label: ct.ch('c2'),
-      teamBuff: true,
-    }),
-  ]),
+  passive2: ct.talentTem('passive2', []),
   passive3: ct.talentTem('passive3', [
     {
       type: 'fields',
@@ -219,8 +199,22 @@ const sheet: UISheet<TalentSheetElementKey> = {
       ],
     },
   ]),
-  constellation1: ct.talentTem('constellation1'),
-  constellation2: ct.talentTem('constellation2'),
+  constellation1: ct.talentTem('constellation1', [
+    {
+      type: 'text',
+      text: ct.ch('c1'),
+    },
+  ]),
+  constellation2: ct.talentTem('constellation2', [
+    charConditionalDocument(key, cond.c2, {
+      label: ct.ch('c2'),
+      teamBuff: true,
+    }),
+    charConditionalDocument(key, cond.c2p, {
+      label: st('activeCharField'),
+      teamBuff: true,
+    }),
+  ]),
   constellation3: ct.talentTem('constellation3'),
   constellation4: ct.talentTem('constellation4'),
   constellation5: ct.talentTem('constellation5'),

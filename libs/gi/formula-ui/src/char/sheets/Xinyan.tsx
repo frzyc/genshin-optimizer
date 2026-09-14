@@ -37,12 +37,12 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('auto.skillParams.4'),
-          fieldRef: formula.charged_spinning.tag,
-        },
-        {
           title: ct.chg('auto.skillParams.5'),
           fieldRef: formula.charged_final.tag,
+        },
+        {
+          title: ct.chg('auto.skillParams.6'),
+          fieldValue: '',
         },
       ],
     },
@@ -73,36 +73,14 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('skill.skillParams.0'),
-          fieldRef: formula.skill.tag,
+          title: ct.chg('skill.skillParams.5'),
+          fieldValue: '',
+          unit: 's',
         },
         {
-          title: ct.chg('skill.skillParams.1'),
-          fieldRef: formula.normShield1.tag,
-        },
-        {
-          title: ct.ch('skill.pyroShield.1'),
-          fieldRef: formula.pyroShield1.tag,
-        },
-        {
-          title: ct.chg('skill.skillParams.2'),
-          fieldRef: formula.normShield2.tag,
-        },
-        {
-          title: ct.ch('skill.pyroShield.2'),
-          fieldRef: formula.pyroShield2.tag,
-        },
-        {
-          title: ct.chg('skill.skillParams.3'),
-          fieldRef: formula.normShield3.tag,
-        },
-        {
-          title: ct.ch('skill.pyroShield.3'),
-          fieldRef: formula.pyroShield3.tag,
-        },
-        {
-          title: ct.chg('skill.skillParams.4'),
-          fieldRef: formula.lvl3Dmg.tag,
+          title: stg('cd'),
+          fieldValue: '',
+          unit: 's',
         },
       ],
     },
@@ -110,32 +88,35 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'text',
       text: ct.ch('p1.desc'),
     },
-    charConditionalDocument(key, cond.p2Shield, {
-      teamBuff: true,
-      label: ct.ch('p2.activeShield'),
-    }),
-    charConditionalDocument(key, cond.c4Burst, {
-      teamBuff: true,
-      label: ct.ch('c4.swingHit'),
-    }),
   ]),
   burst: ct.talentTem('burst', [
     {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('burst.skillParams.0'),
-          fieldRef: formula.pressPhysDmg.tag,
+          title: stg('duration'),
+          fieldValue: '',
+          unit: 's',
         },
         {
-          title: ct.chg('burst.skillParams.1'),
-          fieldRef: formula.dotPyroDmg.tag,
+          title: stg('cd'),
+          fieldValue: '',
+          unit: 's',
+        },
+        {
+          title: stg('energyCost'),
+          fieldValue: '',
         },
       ],
     },
   ]),
   passive1: ct.talentTem('passive1'),
-  passive2: ct.talentTem('passive2'),
+  passive2: ct.talentTem('passive2', [
+    charConditionalDocument(key, cond.p2Shield, {
+      teamBuff: true,
+      label: ct.ch('p2.activeShield'),
+    }),
+  ]),
   passive3: ct.talentTem('passive3'),
   constellation1: ct.talentTem('constellation1', [
     charConditionalDocument(key, cond.c1Crit, {
@@ -149,7 +130,12 @@ const sheet: UISheet<TalentSheetElementKey> = {
     },
   ]),
   constellation3: ct.talentTem('constellation3'),
-  constellation4: ct.talentTem('constellation4'),
+  constellation4: ct.talentTem('constellation4', [
+    charConditionalDocument(key, cond.c4Burst, {
+      teamBuff: true,
+      label: ct.ch('c4.swingHit'),
+    }),
+  ]),
   constellation5: ct.talentTem('constellation5'),
   constellation6: ct.talentTem('constellation6', [
     charConditionalDocument(key, cond.c6Charged, {

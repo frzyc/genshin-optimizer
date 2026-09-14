@@ -81,18 +81,13 @@ const sheet: UISheet<TalentSheetElementKey> = {
           fieldRef: formula.skill_cregen.tag,
         },
         {
-          title: ct.chg('skill.skillParams.2'),
-          fieldRef: formula.skill.tag,
-        },
-        {
           title: ct.chg('skill.skillParams.3'),
-          fieldRef: formula.skill_duration.tag,
           unit: 's',
+          fieldRef: formula.skill_duration.tag,
         },
         {
           title: ct.chg('skill.skillParams.4'),
-          fieldRef: formula.skill_cd.tag,
-          unit: 's',
+          fieldValue: '',
         },
       ],
     },
@@ -108,7 +103,6 @@ const sheet: UISheet<TalentSheetElementKey> = {
         {
           title: ct.chg('burst.skillParams.1'),
           fieldRef: formula.burst_cd.tag,
-          unit: 's',
         },
         {
           title: ct.chg('burst.skillParams.2'),
@@ -133,7 +127,6 @@ const sheet: UISheet<TalentSheetElementKey> = {
   passive3: ct.talentTem('passive3'),
   constellation1: ct.talentTem('constellation1'),
   constellation2: ct.talentTem('constellation2', [
-    charConditionalDocument(key, cond.c2, { teamBuff: true }),
     {
       type: 'fields',
       fields: [
@@ -144,6 +137,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
       ],
     },
+    charConditionalDocument(key, cond.c2, { teamBuff: true }),
   ]),
   constellation3: ct.talentTem('constellation3'),
   constellation4: ct.talentTem('constellation4'),

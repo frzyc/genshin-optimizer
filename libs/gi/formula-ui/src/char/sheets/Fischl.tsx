@@ -51,8 +51,16 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.ch('a1Name'),
-          fieldRef: formula.a1_aimedChargedOz.tag,
+          title: stg('plunging.dmg'),
+          fieldRef: formula.plunging_dmg.tag,
+        },
+        {
+          title: stg('plunging.low'),
+          fieldRef: formula.plunging_low.tag,
+        },
+        {
+          title: stg('plunging.high'),
+          fieldRef: formula.plunging_high.tag,
         },
       ],
     },
@@ -83,12 +91,14 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('skill.skillParams.0'),
-          fieldRef: formula.skill_oz.tag,
+          title: ct.chg('skill.skillParams.2'),
+          fieldValue: '',
+          unit: 's',
         },
         {
-          title: ct.chg('skill.skillParams.1'),
-          fieldRef: formula.skill_summon.tag,
+          title: ct.chg('skill.skillParams.3'),
+          fieldValue: '',
+          unit: 's',
         },
       ],
     },
@@ -110,14 +120,18 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
       ],
     },
+    charConditionalDocument(key, cond.lockHomework, { teamBuff: true }),
+    charConditionalDocument(key, cond.lockOverload, { teamBuff: true }),
+    charConditionalDocument(key, cond.lockEcLc, { teamBuff: true }),
   ]),
   burst: ct.talentTem('burst', [
     {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('burst.skillParams.0'),
-          fieldRef: formula.burst.tag,
+          title: stg('duration'),
+          fieldValue: '',
+          unit: 's',
         },
       ],
     },
@@ -154,9 +168,6 @@ const sheet: UISheet<TalentSheetElementKey> = {
   constellation4: ct.talentTem('constellation4'),
   constellation5: ct.talentTem('constellation5'),
   constellation6: ct.talentTem('constellation6', [
-    charConditionalDocument(key, cond.lockHomework, { teamBuff: true }),
-    charConditionalDocument(key, cond.lockOverload, { teamBuff: true }),
-    charConditionalDocument(key, cond.lockEcLc, { teamBuff: true }),
     charConditionalDocument(key, cond.lockC6Oz, { teamBuff: true }),
   ]),
 }

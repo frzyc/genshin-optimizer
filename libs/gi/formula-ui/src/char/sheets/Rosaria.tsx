@@ -21,30 +21,12 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('auto.skillParams.0'),
-          fieldRef: formula.normal_0.tag,
+          title: ct.chg('auto.skillParams.5'),
+          fieldRef: formula.charged.tag,
         },
         {
-          title: ct.chg('auto.skillParams.1'),
-          fieldRef: formula.normal_1.tag,
-        },
-        {
-          title: ct.chg('auto.skillParams.2'),
-          fieldRef: formula.normal_2.tag,
-        },
-        {
-          title: ct.chg('auto.skillParams.3'),
-          fieldRef: formula.normal_3.tag,
-        },
-        {
-          title: ct.chg('auto.skillParams.4'),
-          subtitle: '(1)',
-          fieldRef: formula.normal_4.tag,
-        },
-        {
-          title: ct.chg('auto.skillParams.4'),
-          subtitle: '(2)',
-          fieldRef: formula.normal_5.tag,
+          title: ct.chg('auto.skillParams.6'),
+          fieldValue: '',
         },
       ],
     },
@@ -56,8 +38,16 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('auto.skillParams.5'),
-          fieldRef: formula.charged.tag,
+          title: stg('plunging.dmg'),
+          fieldRef: formula.plunging_dmg.tag,
+        },
+        {
+          title: stg('plunging.low'),
+          fieldRef: formula.plunging_low.tag,
+        },
+        {
+          title: stg('plunging.high'),
+          fieldRef: formula.plunging_high.tag,
         },
       ],
     },
@@ -97,6 +87,11 @@ const sheet: UISheet<TalentSheetElementKey> = {
           subtitle: '(2)',
           fieldRef: formula.skill_hit2.tag,
         },
+        {
+          title: ct.chg('skill.skillParams.1'),
+          fieldValue: '',
+          unit: 's',
+        },
       ],
     },
   ]),
@@ -118,25 +113,55 @@ const sheet: UISheet<TalentSheetElementKey> = {
           title: ct.chg('burst.skillParams.1'),
           fieldRef: formula.burst_dotDmg.tag,
         },
+        {
+          title: ct.chg('burst.skillParams.3'),
+          fieldValue: '',
+          unit: 's',
+        },
+        {
+          title: ct.chg('burst.skillParams.4'),
+          fieldValue: '',
+        },
       ],
     },
-    charConditionalDocument(key, cond.DilucC6, { teamBuff: true }),
   ]),
   passive1: ct.talentTem('passive1', [
-    charConditionalDocument(key, cond.RosariaA1),
+    charConditionalDocument(key, cond.RosariaA1, {
+      fields: [
+        {
+          title: stg('duration'),
+          fieldValue: '',
+          unit: 's',
+        },
+      ],
+    }),
   ]),
   passive2: ct.talentTem('passive2', [
-    charConditionalDocument(key, cond.RosariaA4, { teamBuff: true }),
+    charConditionalDocument(key, cond.RosariaA4, {
+      teamBuff: true,
+    }),
   ]),
   passive3: ct.talentTem('passive3'),
   constellation1: ct.talentTem('constellation1', [
-    charConditionalDocument(key, cond.RosariaC1),
+    charConditionalDocument(key, cond.RosariaC1, {
+      fields: [
+        {
+          title: stg('duration'),
+          fieldValue: '',
+          unit: 's',
+        },
+      ],
+    }),
   ]),
   constellation2: ct.talentTem('constellation2'),
   constellation3: ct.talentTem('constellation3'),
   constellation4: ct.talentTem('constellation4'),
   constellation5: ct.talentTem('constellation5'),
-  constellation6: ct.talentTem('constellation6'),
+  constellation6: ct.talentTem('constellation6', [
+    charConditionalDocument(key, cond.DilucC6, {
+      teamBuff: true,
+    }),
+  ]),
 }
 
 export default sheet

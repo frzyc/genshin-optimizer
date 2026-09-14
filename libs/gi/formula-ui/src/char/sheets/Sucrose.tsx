@@ -78,33 +78,31 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
         {
           title: ct.chg('skill.skillParams.1'),
-          fieldRef: formula.skill_cd.tag,
           unit: 's',
+          fieldRef: formula.skill_cd.tag,
+        },
+        {
+          title: st('charges'),
+          fieldValue: '',
         },
       ],
     },
+    charConditionalDocument(key, cond.swirlpyro, { teamBuff: true }),
+    charConditionalDocument(key, cond.swirlhydro, { teamBuff: true }),
+    charConditionalDocument(key, cond.swirlelectro, { teamBuff: true }),
+    charConditionalDocument(key, cond.swirlcryo, { teamBuff: true }),
+    charConditionalDocument(key, cond.lockHomework, { teamBuff: true }),
+    charConditionalDocument(key, cond.lockAfterSkill, { teamBuff: true }),
+    charConditionalDocument(key, cond.lockAfterBurst, { teamBuff: true }),
   ]),
   burst: ct.talentTem('burst', [
     {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('burst.skillParams.0'),
-          fieldRef: formula.burst_dot.tag,
-        },
-        {
-          title: ct.chg('burst.skillParams.2'),
-          fieldRef: formula.burst_duration.tag,
+          title: stg('duration'),
+          fieldValue: '',
           unit: 's',
-        },
-        {
-          title: ct.chg('burst.skillParams.3'),
-          fieldRef: formula.burst_cd.tag,
-          unit: 's',
-        },
-        {
-          title: ct.chg('burst.skillParams.4'),
-          fieldRef: formula.burst_enerCost.tag,
         },
       ],
     },
@@ -130,12 +128,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
       ],
     }),
   ]),
-  passive1: ct.talentTem('passive1', [
-    charConditionalDocument(key, cond.swirlpyro, { teamBuff: true }),
-    charConditionalDocument(key, cond.swirlhydro, { teamBuff: true }),
-    charConditionalDocument(key, cond.swirlelectro, { teamBuff: true }),
-    charConditionalDocument(key, cond.swirlcryo, { teamBuff: true }),
-  ]),
+  passive1: ct.talentTem('passive1', []),
   passive2: ct.talentTem('passive2', [
     charConditionalDocument(key, cond.skillHit, {
       teamBuff: true,
@@ -153,11 +146,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
   constellation3: ct.talentTem('constellation3'),
   constellation4: ct.talentTem('constellation4'),
   constellation5: ct.talentTem('constellation5'),
-  constellation6: ct.talentTem('constellation6', [
-    charConditionalDocument(key, cond.lockHomework, { teamBuff: true }),
-    charConditionalDocument(key, cond.lockAfterSkill, { teamBuff: true }),
-    charConditionalDocument(key, cond.lockAfterBurst, { teamBuff: true }),
-  ]),
+  constellation6: ct.talentTem('constellation6', []),
 }
 
 export default sheet

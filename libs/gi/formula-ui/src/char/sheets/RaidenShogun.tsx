@@ -1,7 +1,7 @@
 import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { conditionals, formulas } from '@genshin-optimizer/gi/formula'
-import { stg } from '../../util'
+import { st, stg } from '../../util'
 import { charConditionalDocument } from '../charUiSheets'
 import type { TalentSheetElementKey } from '../consts'
 import { charTemplates } from '../util'
@@ -77,22 +77,18 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.chg('skill.skillParams.0'),
-          fieldRef: formula.skill.tag,
-        },
-        {
           title: ct.chg('skill.skillParams.1'),
           fieldRef: formula.skill_coorDmg.tag,
         },
         {
           title: ct.chg('skill.skillParams.2'),
-          fieldRef: formula.skill_duration.tag,
           unit: 's',
+          fieldRef: formula.skill_duration.tag,
         },
         {
           title: ct.chg('skill.skillParams.4'),
-          fieldRef: formula.skill_cd.tag,
           unit: 's',
+          fieldRef: formula.skill_cd.tag,
         },
       ],
     },
@@ -121,10 +117,12 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
         {
           title: ct.chg('burst.skillParams.6'),
+          subtitle: '(1)',
           fieldRef: formula.burst_hit41.tag,
         },
         {
           title: ct.chg('burst.skillParams.6'),
+          subtitle: '(2)',
           fieldRef: formula.burst_hit42.tag,
         },
         {
@@ -133,10 +131,12 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
         {
           title: ct.chg('burst.skillParams.8'),
+          subtitle: '(1)',
           fieldRef: formula.burst_charged1.tag,
         },
         {
           title: ct.chg('burst.skillParams.8'),
+          subtitle: '(2)',
           fieldRef: formula.burst_charged2.tag,
         },
         {
@@ -161,13 +161,13 @@ const sheet: UISheet<TalentSheetElementKey> = {
         },
         {
           title: ct.chg('burst.skillParams.13'),
-          fieldRef: formula.burst_duration.tag,
           unit: 's',
+          fieldRef: formula.burst_duration.tag,
         },
         {
           title: ct.chg('burst.skillParams.14'),
-          fieldRef: formula.burst_cd.tag,
           unit: 's',
+          fieldRef: formula.burst_cd.tag,
         },
         {
           title: ct.chg('burst.skillParams.15'),
@@ -184,9 +184,16 @@ const sheet: UISheet<TalentSheetElementKey> = {
       type: 'fields',
       fields: [
         {
-          title: ct.ch('a4.enerRest'),
-          fieldRef: formula.a4_energyRestore.tag,
-          unit: '%',
+          title: st('infusion.electro'),
+          fieldValue: '',
+        },
+        {
+          title: st('incInterRes'),
+          fieldValue: '',
+        },
+        {
+          title: st('immuneToElectroCharged'),
+          fieldValue: '',
         },
       ],
     },
