@@ -1,31 +1,25 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import {
-  allBoolConditionals,
-  allListConditionals,
-  allNumConditionals,
-  own,
-  register,
-} from '../util'
+import { prod, subscript } from '@genshin-optimizer/pando/engine'
+import { allNumConditionals, own, ownBuff, percent, register } from '../util'
 import { entriesForWeapon } from './util'
 
 const key: WeaponKey = 'WolfFang'
+const skillBurst_dmg_arr = [-1, 0.16, 0.2, 0.24, 0.28, 0.32]
+const skillBurst_critRate_arr = [-1, 0.02, 0.025, 0.03, 0.035, 0.04]
 
 const {
-  weapon: { refinement: _refinement },
+  weapon: { refinement },
 } = own
-// TODO: Conditionals
-const { _someBoolConditional } = allBoolConditionals(key)
-const { _someListConditional } = allListConditionals(key, [])
-const { _someNumConditional } = allNumConditionals(key)
+const { skillStacks, burstStacks } = allNumConditionals(key, true, 0, 4)
+
+const dmg_ = percent(subscript(refinement, skillBurst_dmg_arr))
+const critRate_ = percent(subscript(refinement, skillBurst_critRate_arr))
 
 export default register(
   key,
-  entriesForWeapon(key)
-
-  // TODO:
-  // - Add member's own formulas using `ownBuff.<buff target>.add(<buff value>)`
-  // - Add teambuff formulas using `teamBuff.<buff target>.add(<buff value>)
-  // - Add enemy debuff using `enemyDebuff.<debuff target>.add(<debuff value>)`
-  //
-  // TODO: Add refinement bonus
+  entriesForWeapon(key),
+  ownBuff.premod.dmg_.skill.add(dmg_),
+  ownBuff.premod.dmg_.burst.add(dmg_),
+  ownBuff.premod.critRate_.skill.add(prod(skillStacks, critRate_)),
+  ownBuff.premod.critRate_.burst.add(prod(burstStacks, critRate_))
 )

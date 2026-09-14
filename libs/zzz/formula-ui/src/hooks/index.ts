@@ -1,5 +1,5 @@
+export * from './useCharCatalogRows'
 export * from './useEquippedOptTargetValue'
-export * from './useCharFormulaFields'
 export * from './useOptCategoryCollapse'
 export * from './useResolvedOptTarget'
 export * from './useZzzCalcContext'

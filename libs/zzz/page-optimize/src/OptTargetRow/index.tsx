@@ -1,30 +1,12 @@
-import { DropdownButton } from '@genshin-optimizer/common/ui'
-import type { ICachedCharacter, Team } from '@genshin-optimizer/zzz/db'
-import {
-  getTeamFrame0,
-  isGenericDmgInstTarget,
-  withInstDamageType2,
-} from '@genshin-optimizer/zzz/db'
-import {
-  useCharacterContext,
-  useDatabaseContext,
-  useTeam,
-} from '@genshin-optimizer/zzz/db-ui'
-import { qtMap } from '@genshin-optimizer/zzz/formula-ui'
-import { Box, MenuItem } from '@mui/material'
-import { useCallback } from 'react'
-import { AfterShockToggleButton } from '../AfterShockToggleButton'
+import { Box } from '@mui/material'
+import { AfterShockOverlayToggle } from './AfterShockOverlayToggle'
+import { AttributeOverlaySelector } from './AttributeOverlaySelector'
 import { CritModeSelector } from './CritModeSelector'
 import { DimensionSelector } from './DimensionSelector'
 import { OptSelector } from './OptSelector'
 import { SpecificDmgTypeSelector } from './SpecificDmgTypeSelector'
-export function OptTargetRow({
-  character,
-  team,
-}: {
-  character: ICachedCharacter
-  team: Team
-}) {
+
+export function OptTargetRow() {
   return (
     <Box
       display="flex"
@@ -36,58 +18,12 @@ export function OptTargetRow({
         background: '#0C1020',
       }}
     >
-      <OptSelector character={character} team={team} />
+      <OptSelector />
       <DimensionSelector />
-      <StatQtDropDown />
       <SpecificDmgTypeSelector />
-      <AfterShockToggle />
+      <AttributeOverlaySelector />
+      <AfterShockOverlayToggle />
       <CritModeSelector />
     </Box>
-  )
-}
-
-function AfterShockToggle() {
-  const { database } = useDatabaseContext()
-  const character = useCharacterContext()!
-  const team = useTeam(character.key)!
-  const { tag: target } = getTeamFrame0(team)
-  const setAfterShock = useCallback(
-    (aftershock: boolean) =>
-      database.teams.setFrame0(character.key, (frame) => {
-        const { tag: oldTarget = {} } = frame
-        return { tag: withInstDamageType2(oldTarget, aftershock) }
-      }),
-    [database, character.key]
-  )
-  if (!isGenericDmgInstTarget(target?.name)) return null
-  return (
-    <AfterShockToggleButton
-      isAftershock={target?.damageType2 === 'aftershock'}
-      setAftershock={setAfterShock}
-    />
-  )
-}
-function StatQtDropDown() {
-  const { database } = useDatabaseContext()
-  const character = useCharacterContext()!
-  const team = useTeam(character.key)!
-  const { tag: target } = getTeamFrame0(team)
-  const { q, qt } = target ?? {}
-  if (!q || !qt) return null
-  return (
-    <DropdownButton title={qtMap[qt as 'final' | 'initial']}>
-      {(['final', 'initial'] as const).map((mqt) => (
-        <MenuItem
-          key={mqt}
-          selected={mqt === qt}
-          disabled={mqt === qt}
-          onClick={() =>
-            database.teams.setFrame0(character.key, { tag: { q, qt: mqt } })
-          }
-        >
-          {qtMap[mqt]}
-        </MenuItem>
-      ))}
-    </DropdownButton>
   )
 }

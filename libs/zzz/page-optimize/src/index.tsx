@@ -21,7 +21,6 @@ import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allCharacterKeys } from '@genshin-optimizer/zzz/consts'
 import type {
   ICachedCharacter,
-  Team,
   TeamConditional,
 } from '@genshin-optimizer/zzz/db'
 import {
@@ -49,13 +48,7 @@ import { CharacterOptDisplay } from './CharacterOptDisplay'
 import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
 import { OptTargetRow } from './OptTargetRow'
 
-function OptimizePageContent({
-  character,
-  team,
-}: {
-  character: ICachedCharacter
-  team: Team
-}) {
+function OptimizePageContent({ character }: { character: ICachedCharacter }) {
   return (
     <Box
       sx={{
@@ -65,7 +58,7 @@ function OptimizePageContent({
         mt: 1,
       }}
     >
-      <OptTargetRow character={character} team={team} />
+      <OptTargetRow />
       <TeamHeaderHeightContext.Provider value={74}>
         <CharacterOptDisplay key={character.key} />
       </TeamHeaderHeightContext.Provider>
@@ -199,13 +192,10 @@ export default function PageOptimize() {
                   <SetConditionalContext.Provider value={setConditional}>
                     {shouldShowDevComponents ? (
                       <DebugReadProvider>
-                        <OptimizePageContent
-                          character={character}
-                          team={team}
-                        />
+                        <OptimizePageContent character={character} />
                       </DebugReadProvider>
                     ) : (
-                      <OptimizePageContent character={character} team={team} />
+                      <OptimizePageContent character={character} />
                     )}
                   </SetConditionalContext.Provider>
                 </ConditionalValuesContext.Provider>

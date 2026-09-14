@@ -1,8 +1,16 @@
 import { allElementKeys } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { max, min, prod, subscript, sum } from '@genshin-optimizer/pando/engine'
+import {
+  cmpEq,
+  max,
+  min,
+  prod,
+  subscript,
+  sum,
+} from '@genshin-optimizer/pando/engine'
 import type { TagMapNodeEntries } from '../util'
 import { allStatics, own, ownBuff, percent, reader, team } from '../util'
+import { isActive } from './conds'
 import dmg from './dmg'
 import prep from './prep'
 import reaction from './reaction'
@@ -52,6 +60,13 @@ const data: TagMapNodeEntries = [
   // Total element count; this is NOT a `team` stat
   ownBuff.common.eleCount.add(
     sum(...allElementKeys.map((ele) => team.common.count[ele].max))
+  ),
+
+  // On-field member's element (WR `active.charEle`)
+  ...allElementKeys.map((ele) =>
+    ownBuff.common.activeEle[ele].add(
+      cmpEq(own.char.ele, ele, isActive.ifOn(1))
+    )
   ),
 
   // Default conditionals to 0

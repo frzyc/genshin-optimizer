@@ -9,7 +9,14 @@ import {
 } from '@genshin-optimizer/pando/engine'
 import { entries, keys, values } from './data'
 import type { Tag, TagMapNodeEntries } from './data/util'
-import { enemyDebuff, own, ownBuff, team, userBuff } from './data/util'
+import {
+  conditionalEntries,
+  enemyDebuff,
+  own,
+  ownBuff,
+  team,
+  userBuff,
+} from './data/util'
 import rawData from './example.test.json'
 import { genshinCalculatorWithEntries } from './index'
 import { conditionals } from './meta'
@@ -56,6 +63,8 @@ describe('example', () => {
       // Conditionals
       ...conditionalData('0', rawData[0].conditionals),
       ...conditionalData('1', rawData[1].conditionals),
+      // addOnce stackIn is own-scoped; match UI `dst: null` weapon conds.
+      conditionalEntries('KeyOfKhajNisut', '1', null)('afterSkillStacks', 3),
 
       // Enemy
       enemyDebuff.reaction.cata.add('spread'),
@@ -127,6 +136,8 @@ describe('example', () => {
      *   qt: 'formula'
      *   q: < 'dmg' / 'trans' / 'shield' / 'heal' >
      *   name: <formula name>
+     *   move?: <move>
+     *   ele?: <register-time element; omitted for infusion hits>
      * }
      * ```
      */
@@ -134,13 +145,14 @@ describe('example', () => {
 
     // Simple check that all tags are in the correct format
     const names: string[] = []
-    for (const { name, move, ...tag } of listing.filter(
+    for (const { name, move, ele, ...tag } of listing.filter(
       (x) => x.sheet === 'Nahida' && x.qt === 'formula' // exclude stats
     )) {
       names.push(name!)
       expect(name).toBeTruthy()
       expect(move).toBeTruthy()
       test(`with name ${name}`, () => {
+        expect(ele).toBe('dendro')
         expect(tag).toEqual({
           src: '0',
           et: 'own',
@@ -191,8 +203,9 @@ describe('example', () => {
     const result = mem0.compute(own.dmg.critMulti.burgeon)
     const conds = result.meta.conds
 
-    // conds[dst][src][sheet][name] == cond value
-    expect(conds).toEqual({ 0: { 0: { Nahida: { c2Bloom: 1 } } } })
+    // conds[dst][src][sheet][name] == cond value.
+    // Artifact 4pc conds that write critRate_/dmg_ also attach to critMulti.
+    expect(conds['0']?.['0']?.['Nahida']?.['c2Bloom']).toEqual(1)
   })
   test('list conditionals affecting a member', () => {
     // all conditionals affecting all formulas

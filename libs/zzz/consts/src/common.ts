@@ -2,8 +2,9 @@ import { objKeyMap } from '@genshin-optimizer/common/util'
 import { allDiscMainStatKeys, allDiscSubStatKeys } from './disc'
 
 export const otherStatKeys = [
-  // Used by calc, likely will be bundled into pando
-  'charLvl',
+  'char_lvl',
+  'wengine_lvl',
+  'common_lvl',
   'enemyDef', // Enemy DEF
   'enemyDefRed_', // Enemy DEF shred
   'enemyRes_', // Enemy Resistance
@@ -157,7 +158,11 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   flat_dmg: 'Flat DMG Bonus',
   buff_: 'Buff Bonus',
   dmg_red_: 'DMG Taken Reduction',
-  charLvl: 'Character Level',
+  char_lvl: 'Character Level',
+  wengine_lvl: 'W-Engine Level',
+  common_lvl: 'Enemy Level',
+  phase: 'Phase',
+  modification: 'Modification',
   enemyDef: 'Enemy DEF',
   defRed_: 'Enemy DEF Reduction',
   enemyRes_: 'Enemy Resistance',
@@ -220,8 +225,13 @@ export const elementalData: Record<AttributeKey, string> = {
   lumiflux: 'Lumiflux',
 } as const
 
+const attributedBaseStats = ['hp', 'hp_', 'atk', 'atk_', 'def', 'def_'] as const
 Object.entries(elementalData).forEach(([e, name]) => {
   statKeyTextMap[`${e}_dmg_`] = `${name} DMG Bonus`
+  for (const base of attributedBaseStats) {
+    const stem = statKeyTextMap[base]
+    if (stem) statKeyTextMap[`${e}_${base}`] = `${name} ${stem}`
+  }
 })
 
 export const rarityColor = {

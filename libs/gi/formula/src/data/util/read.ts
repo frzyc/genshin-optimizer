@@ -6,6 +6,7 @@ import {
   Read as BaseRead,
   reader as baseReader,
   entryTypes,
+  stackToken as gameOptStackToken,
   presets,
   setReader,
 } from '@genshin-optimizer/game-opt/engine'
@@ -17,8 +18,14 @@ import {
   allRegionKeys,
   allTransformativeReactionKeys,
 } from '@genshin-optimizer/gi/consts'
+import type { NumNode } from '@genshin-optimizer/pando/engine'
 import type { Dst, Sheet, Src } from './listing'
 import { members, sheets } from './listing'
+
+export {
+  stackListingNulls,
+  stackReadTag,
+} from '@genshin-optimizer/game-opt/engine'
 
 export const fixedTags = {
   preset: presets,
@@ -178,6 +185,13 @@ export class Read extends BaseRead<Tag> {
 // Need to instantiate with gi-specific reader
 setReader<Tag>(new Read({}, undefined))
 export const reader = baseReader as Read
+
+export function stackToken(sheet: Sheet, value: number | NumNode) {
+  return gameOptStackToken(sheet, value) as {
+    entries: import('./tagMapType').TagMapNodeEntries
+    out: Read
+  }
+}
 
 export function tagStr(tag: Tag, ex?: any): string {
   const {

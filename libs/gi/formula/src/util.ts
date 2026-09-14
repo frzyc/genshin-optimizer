@@ -1,8 +1,11 @@
 import type { Preset, SrcCondInfo } from '@genshin-optimizer/game-opt/engine'
-import type {
-  ArtifactSetKey,
-  MainStatKey,
-  SubstatKey,
+import { stackListingNulls } from '@genshin-optimizer/game-opt/engine'
+import {
+  type ArtifactSetKey,
+  allTravelerKeys,
+  type MainStatKey,
+  type SubstatKey,
+  type TravelerKey,
 } from '@genshin-optimizer/gi/consts'
 import type { ICharacter, IWeapon } from '@genshin-optimizer/gi/good'
 import { cmpEq, cmpNE } from '@genshin-optimizer/pando/engine'
@@ -28,6 +31,79 @@ export function withMember(
   ...data: TagMapNodeEntries
 ): TagMapNodeEntries {
   return data.map(({ tag, value }) => ({ tag: { ...tag, src }, value }))
+}
+
+/** Solo teams always treat that member as on-field. */
+export function resolveActiveMember(
+  memberKeys: readonly Member[],
+  requested?: string
+): Member {
+  if (memberKeys.length === 1) {
+    const only = memberKeys[0]
+    if (only) return only
+  }
+  if (requested && memberKeys.includes(requested as Member))
+    return requested as Member
+  return memberKeys[0] ?? '0'
+}
+
+export function dynIsActiveEntry(src: Member) {
+  return conditionalEntries('dyn', src, null)('isActive', 1)
+}
+
+/** WR `conditional.Traveler.${tk.toLowerCase()}`. */
+export function travelerEleCondName(key: TravelerKey): string {
+  return key.toLowerCase()
+}
+
+export function travelerEleCondEntries(
+  members: readonly Member[],
+  unlocked: readonly TravelerKey[]
+): TagMapNodeEntries {
+  return members.flatMap((src) =>
+    unlocked.map((tk) =>
+      conditionalEntries('Traveler', src, null)(travelerEleCondName(tk), 1)
+    )
+  )
+}
+
+export function unlockedTravelerKeys(
+  hasChar: (key: TravelerKey) => boolean
+): TravelerKey[] {
+  return allTravelerKeys.filter(hasChar)
+}
+
+export function travelerMemberSrcs(
+  members: ReadonlyArray<{ src: Member; charKey?: string }>
+): Member[] {
+  return members
+    .filter(
+      (m) =>
+        !!m.charKey &&
+        (allTravelerKeys as readonly string[]).includes(m.charKey)
+    )
+    .map((m) => m.src)
+}
+
+/** Solo teams always mark the only member on-field. Traveler ele conds match WR. */
+export function pandoContextEntries({
+  memberKeys,
+  activeMember,
+  travelerSrcs = [],
+  unlockedTravelers = [],
+}: {
+  memberKeys: readonly Member[]
+  activeMember?: string
+  travelerSrcs?: readonly Member[]
+  unlockedTravelers?: readonly TravelerKey[]
+}): TagMapNodeEntries {
+  const injectActive = memberKeys.length === 1 || activeMember !== undefined
+  return [
+    ...(injectActive
+      ? [dynIsActiveEntry(resolveActiveMember(memberKeys, activeMember))]
+      : []),
+    ...travelerEleCondEntries(travelerSrcs, unlockedTravelers),
+  ]
 }
 
 export function charData(data: ICharacter): TagMapNodeEntries {
@@ -56,6 +132,7 @@ export function weaponData(data: IWeapon): TagMapNodeEntries {
 
   return [
     reader.sheet('agg').reread(reader.sheet(data.key)),
+    own.common.count.sheet(data.key).add(1),
 
     lvl.add(data.level),
     ascension.add(data.ascension),
@@ -161,15 +238,22 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
     own.reread(teamBuff.withTag({ et: 'teamBuff', sheet: 'reso', name: null })),
     // Non-stacking
     members.flatMap((src, i) => {
-      const { stackIn, stackTmp } = reader.withAll('qt', [])
+      const stackIn = reader.withTag({ qt: 'stackIn', ...stackListingNulls })
+      const stackTmp = reader.withTag({ qt: 'stackTmp', ...stackListingNulls })
       // Make sure not to use `sheet:agg` here to match `stackOut` on the `reader.addOnce` side
-      const own = reader.withTag({ src, et: 'own' })
+      const own = reader.withTag({ src, et: 'own', ...stackListingNulls })
       // Use `i + 1` for priority so that `0` means no buff
       return [
         own.with('qt', 'stackTmp').add(cmpNE(stackIn, 0, i + 1)),
         own
           .with('qt', 'stackOut')
-          .add(cmpEq(stackTmp.max.with('et', 'team'), i + 1, stackIn)),
+          .add(
+            cmpEq(
+              stackTmp.max.withTag({ et: 'team', ...stackListingNulls }),
+              i + 1,
+              stackIn
+            )
+          ),
       ]
     }),
 

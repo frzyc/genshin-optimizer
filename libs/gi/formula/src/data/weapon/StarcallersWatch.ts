@@ -1,31 +1,23 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
-import {
-  allBoolConditionals,
-  allListConditionals,
-  allNumConditionals,
-  own,
-  register,
-} from '../util'
+import { subscript } from '@genshin-optimizer/pando/engine'
+import { destIsActive } from '../common/conds'
+import { allBoolConditionals, own, percent, register, teamBuff } from '../util'
 import { entriesForWeapon } from './util'
 
 const key: WeaponKey = 'StarcallersWatch'
+const dmg_arr = [-1, 0.28, 0.35, 0.42, 0.49, 0.56]
 
 const {
-  weapon: { refinement: _refinement },
+  weapon: { refinement },
 } = own
-// TODO: Conditionals
-const { _someBoolConditional } = allBoolConditionals(key)
-const { _someListConditional } = allListConditionals(key, [])
-const { _someNumConditional } = allNumConditionals(key)
+const { shield } = allBoolConditionals(key)
 
 export default register(
   key,
-  entriesForWeapon(key)
-
-  // TODO:
-  // - Add member's own formulas using `ownBuff.<buff target>.add(<buff value>)`
-  // - Add teambuff formulas using `teamBuff.<buff target>.add(<buff value>)
-  // - Add enemy debuff using `enemyDebuff.<debuff target>.add(<debuff value>)`
-  //
-  // TODO: Add refinement bonus
+  entriesForWeapon(key),
+  teamBuff.premod.dmg_.addOnce(
+    'starcaller',
+    shield.ifOn(percent(subscript(refinement, dmg_arr))),
+    destIsActive
+  )
 )

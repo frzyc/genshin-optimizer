@@ -1,11 +1,16 @@
 import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
-import { formulas } from '@genshin-optimizer/gi/formula'
+import { conditionals, formulas } from '@genshin-optimizer/gi/formula'
+import { st, stg } from '../../util'
+import { charConditionalDocument } from '../charUiSheets'
 import type { TalentSheetElementKey } from '../consts'
 import { charTemplates } from '../util'
 
 const key: CharacterKey = 'Nahida'
 const ct = charTemplates(key)
+const formula = formulas.Nahida
+const cond = conditionals.Nahida
+
 const sheet: UISheet<TalentSheetElementKey> = {
   auto: ct.talentTem('auto', [
     {
@@ -14,53 +19,127 @@ const sheet: UISheet<TalentSheetElementKey> = {
     },
     {
       type: 'fields',
-      fields: Object.entries(formulas.Nahida)
-        .filter(([key]) => key.startsWith('normal'))
-        .map(([_, { tag }], i) => ({
-          title: ct.chg(`auto.skillParams.${i}`),
-          fieldRef: tag,
-        })),
+      fields: [
+        formula.normal_0,
+        formula.normal_1,
+        formula.normal_2,
+        formula.normal_3,
+      ].map(({ tag }, i) => ({
+        title: ct.chg(`auto.skillParams.${i}`),
+        fieldRef: tag,
+      })),
     },
     {
       type: 'text',
       text: ct.chg('auto.fields.charged'),
     },
-    // {
-    //   fields: [
-    //     {
-    //       node: infoMut(dmgFormulas.charged.dmg, {
-    //         name: ct.chg(`auto.skillParams.4`),
-    //       }),
-    //     },
-    //     {
-    //       text: ct.chg('auto.skillParams.5'),
-    //       value: dm.charged.stamina,
-    //     },
-    //   ],
-    // },
-    // {
-    //   text: ct.chg(`auto.fields.plunging`),
-    // },
-    // {
-    //   fields: [
-    //     {
-    //       node: infoMut(dmgFormulas.plunging.dmg, {
-    //         name: stg('plunging.dmg'),
-    //       }),
-    //     },
-    //     {
-    //       node: infoMut(dmgFormulas.plunging.low, {
-    //         name: stg('plunging.low'),
-    //       }),
-    //     },
-    //     {
-    //       node: infoMut(dmgFormulas.plunging.high, {
-    //         name: stg('plunging.high'),
-    //       }),
-    //     },
-    //   ],
-    // },
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: ct.chg('auto.skillParams.4'),
+          fieldRef: formula.charged.tag,
+        },
+        {
+          title: ct.chg('auto.skillParams.5'),
+          fieldValue: '',
+        },
+      ],
+    },
+    {
+      type: 'text',
+      text: ct.chg('auto.fields.plunging'),
+    },
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: stg('plunging.dmg'),
+          fieldRef: formula.plunging_dmg.tag,
+        },
+        {
+          title: stg('plunging.low'),
+          fieldRef: formula.plunging_low.tag,
+        },
+        {
+          title: stg('plunging.high'),
+          fieldRef: formula.plunging_high.tag,
+        },
+      ],
+    },
   ]),
+  skill: ct.talentTem('skill', [
+    {
+      type: 'fields',
+      fields: [
+        {
+          title: ct.chg('skill.skillParams.3'),
+          fieldValue: '',
+          unit: 's',
+        },
+        {
+          title: ct.chg('skill.skillParams.4'),
+          fieldValue: '',
+          unit: 's',
+        },
+        {
+          title: stg('press.cd'),
+          fieldValue: '',
+          unit: 's',
+        },
+        {
+          title: stg('hold.cd'),
+          fieldValue: '',
+          unit: 's',
+        },
+      ],
+    },
+    charConditionalDocument(key, cond.a1ActiveInBurst, { teamBuff: true }),
+  ]),
+  burst: ct.talentTem('burst', [
+    {
+      type: 'text',
+      text: ct.ch('karmaIntervalDec'),
+    },
+    charConditionalDocument(key, cond.partyInBurst, {
+      fields: [
+        {
+          title: ct.ch('noBurstEffect'),
+          fieldValue: '',
+        },
+        {
+          title: st('durationInc'),
+          fieldValue: '',
+          unit: 's',
+        },
+      ],
+    }),
+  ]),
+  passive1: ct.talentTem('passive1'),
+  passive2: ct.talentTem('passive2'),
+  passive3: ct.talentTem('passive3'),
+  constellation1: ct.talentTem('constellation1', [
+    {
+      type: 'text',
+      text: ct.ch('c1Key'),
+    },
+  ]),
+  constellation2: ct.talentTem('constellation2', [
+    charConditionalDocument(key, cond.c2Bloom, {
+      teamBuff: true,
+    }),
+    charConditionalDocument(key, cond.c2QSA, {
+      teamBuff: true,
+    }),
+  ]),
+  constellation3: ct.talentTem('constellation3'),
+  constellation4: ct.talentTem('constellation4', [
+    charConditionalDocument(key, cond.c4Count, {
+      teamBuff: true,
+    }),
+  ]),
+  constellation5: ct.talentTem('constellation5'),
+  constellation6: ct.talentTem('constellation6'),
 }
 
 export default sheet
