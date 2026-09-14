@@ -1,10 +1,10 @@
+// biome-ignore lint/style/noRestrictedImports: codegen reads formula source directly
+import { formulaCatalog } from '../../formula/src/formulaCatalog'
 import {
   readWrSheetSource,
   TALENT_SECTIONS,
   type TalentSection,
 } from './wr-text-extract'
-// biome-ignore lint/style/noRestrictedImports: codegen reads formula source directly
-import { formulaCatalog } from '../../formula/src/formulaCatalog'
 
 export type WrFormulaRow = {
   kind: 'formula'
@@ -174,7 +174,8 @@ function hitArrCount(wrSrc: string, area: 'normal' | 'skill'): number {
     new RegExp(`${area}:\\s*\\{[\\s\\S]*?hitArr:\\s*\\[([\\s\\S]*?)\\]`)
   )
   if (!m) return 0
-  return (m[1].match(/skillParam_gen\.(?:auto|skill)\[[ab]\+\+\]/g) ?? []).length
+  return (m[1].match(/skillParam_gen\.(?:auto|skill)\[[ab]\+\+\]/g) ?? [])
+    .length
 }
 
 const TITLE_RE =

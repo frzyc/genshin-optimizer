@@ -1,10 +1,10 @@
+// biome-ignore lint/style/noRestrictedImports: codegen reads formula source directly
+import { formulaCatalog } from '../../formula/src/formulaCatalog'
 import {
   readWrSheetSource,
   TALENT_SECTIONS,
   type TalentSection,
 } from './wr-text-extract'
-// biome-ignore lint/style/noRestrictedImports: codegen reads formula source directly
-import { formulaCatalog } from '../../formula/src/formulaCatalog'
 
 export type WrFieldGroup = {
   section: TalentSection
@@ -51,7 +51,9 @@ function dmgFormulaPathToCandidates(path: string): string[] {
     case 'plunging':
       return [`plunging_${field}`]
     case 'skill':
-      return field === 'press' ? ['skill', `skill_${field}`] : [`skill_${field}`]
+      return field === 'press'
+        ? ['skill', `skill_${field}`]
+        : [`skill_${field}`]
     case 'burst':
       return field === 'dmg' ? ['burst', `burst_${field}`] : [`burst_${field}`]
     case 'passive1':
@@ -117,7 +119,10 @@ function dmPathToCandidates(dmPath: string): string[] {
   }
 
   if (known[area]?.[field]) return known[area][field]
-  return [`${area}_${field}`, `${area}${field.charAt(0).toUpperCase()}${field.slice(1)}`]
+  return [
+    `${area}_${field}`,
+    `${area}${field.charAt(0).toUpperCase()}${field.slice(1)}`,
+  ]
 }
 
 function splitTopLevelElements(content: string): string[] {
@@ -255,7 +260,9 @@ function extractSectionFieldGroups(
 }
 
 /** WR field row order per section (multiple groups for auto subsections). */
-export function extractWrFieldLayout(key: string): Map<TalentSection, string[][]> {
+export function extractWrFieldLayout(
+  key: string
+): Map<TalentSection, string[][]> {
   const result = new Map<TalentSection, string[][]>()
   for (const section of TALENT_SECTIONS) result.set(section, [])
 

@@ -11,6 +11,18 @@
         "command": "ts-node --project libs/gi/formula-ui/tsconfig.lib.json libs/gi/formula-ui/scripts/gen-char-ui-index.ts"
       }
     },
+    "gen-ui-sheets": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "ts-node --project libs/gi/formula-ui/tsconfig.lib.json libs/gi/formula-ui/scripts/gen-ui-sheets.ts"
+      }
+    },
+    "check-ui-coverage": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "ts-node --project libs/gi/formula-ui/tsconfig.lib.json libs/gi/formula-ui/scripts/check-ui-coverage.ts"
+      }
+    },
     "test": {
       "executor": "@nx/vitest:test",
       "outputs": ["{options.reportsDirectory}"],

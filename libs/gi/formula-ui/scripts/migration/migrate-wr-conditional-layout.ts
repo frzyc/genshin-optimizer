@@ -3,8 +3,8 @@
  */
 import { readdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
-import { extractWrCondLayout } from './wr-conditional-extract'
-import { findClosingBracket, type TalentSection } from './wr-text-extract'
+import { extractWrCondLayout } from '../wr-conditional-extract'
+import { findClosingBracket, type TalentSection } from '../wr-text-extract'
 
 const sheetsDir = join(process.cwd(), 'libs/gi/formula-ui/src/char/sheets')
 

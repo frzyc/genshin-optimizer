@@ -10,7 +10,7 @@ import {
   TALENT_SECTIONS,
   type TalentSection,
   textDocLine,
-} from './wr-text-extract'
+} from '../wr-text-extract'
 
 const sheetsDir = join(process.cwd(), 'libs/gi/formula-ui/src/char/sheets')
 
